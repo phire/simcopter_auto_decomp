@@ -400,7 +400,7 @@ _T18:
 	__asm        jge    _Tdd;
 // LINE 76:
 	__asm        mov    eax, i;
-	__asm        mov    eax, [eax*4+0x608F80];
+	__asm        mov    eax, cars[0][eax*4];
 	__asm        mov    pCar, eax;
 // LINE 87:
 	__asm        mov    eax, pCar;
@@ -569,17 +569,17 @@ _T36:
 	__asm        jge    _Taa;
 // LINE 156:
 	__asm        mov    eax, i;
-	__asm        mov    eax, [eax*4+0x62B9B8];
+	__asm        mov    eax, ambulances[0][eax*4];
 	__asm        test   byte ptr [eax+8], 2;
 	__asm        je     _Ta5;
 
 	__asm        mov    eax, i;
-	__asm        mov    eax, [eax*4+0x62B9B8];
+	__asm        mov    eax, ambulances[0][eax*4];
 	__asm        test   byte ptr [eax+8], 0x20;
 	__asm        je     _Ta5;
 // LINE 158:
 	__asm        mov    eax, i;
-	__asm        mov    eax, [eax*4+0x62B9B8];
+	__asm        mov    eax, ambulances[0][eax*4];
 	__asm        mov    ax, [eax+0x7C];
 	__asm        mov    reinterpret_cast<uint16_t>(here.x), ax;
 // LINE 159:
@@ -615,7 +615,7 @@ _Taa:
 // LINE 171:
 _Tc3:
 	__asm        mov    eax, carID;
-	__asm        mov    eax, [eax*4+0x62B9B8];
+	__asm        mov    eax, ambulances[0][eax*4];
 	__asm        add    eax, 0xC;
 	__asm        jmp    _T316;
 // LINE 174:
@@ -629,17 +629,17 @@ _Te4:
 	__asm        jge    _T158;
 // LINE 177:
 	__asm        mov    eax, i;
-	__asm        mov    eax, [eax*4+0x62B9E8];
+	__asm        mov    eax, policeCars[0][eax*4];
 	__asm        test   byte ptr [eax+8], 2;
 	__asm        je     _T153;
 
 	__asm        mov    eax, i;
-	__asm        mov    eax, [eax*4+0x62B9E8];
+	__asm        mov    eax, policeCars[0][eax*4];
 	__asm        test   byte ptr [eax+8], 0x20;
 	__asm        je     _T153;
 // LINE 179:
 	__asm        mov    eax, i;
-	__asm        mov    eax, [eax*4+0x62B9E8];
+	__asm        mov    eax, policeCars[0][eax*4];
 	__asm        mov    ax, [eax+0x7C];
 	__asm        mov    reinterpret_cast<uint16_t>(here.x), ax;
 // LINE 180:
@@ -675,7 +675,7 @@ _T158:
 // LINE 192:
 _T171:
 	__asm        mov    eax, carID;
-	__asm        mov    eax, [eax*4+0x62B9E8];
+	__asm        mov    eax, policeCars[0][eax*4];
 	__asm        add    eax, 0xC;
 	__asm        jmp    _T316;
 // LINE 195:
@@ -689,17 +689,17 @@ _T192:
 	__asm        jge    _T206;
 // LINE 198:
 	__asm        mov    eax, i;
-	__asm        mov    eax, [eax*4+0x62B9D0];
+	__asm        mov    eax, fireTrucks[0][eax*4];
 	__asm        test   byte ptr [eax+8], 2;
 	__asm        je     _T201;
 
 	__asm        mov    eax, i;
-	__asm        mov    eax, [eax*4+0x62B9D0];
+	__asm        mov    eax, fireTrucks[0][eax*4];
 	__asm        test   byte ptr [eax+8], 0x20;
 	__asm        je     _T201;
 // LINE 200:
 	__asm        mov    eax, i;
-	__asm        mov    eax, [eax*4+0x62B9D0];
+	__asm        mov    eax, fireTrucks[0][eax*4];
 	__asm        mov    ax, [eax+0x7C];
 	__asm        mov    reinterpret_cast<uint16_t>(here.x), ax;
 // LINE 201:
@@ -735,7 +735,7 @@ _T206:
 // LINE 213:
 _T21f:
 	__asm        mov    eax, carID;
-	__asm        mov    eax, [eax*4+0x62B9D0];
+	__asm        mov    eax, fireTrucks[0][eax*4];
 	__asm        add    eax, 0xC;
 	__asm        jmp    _T316;
 // LINE 216:
@@ -749,17 +749,17 @@ _T240:
 	__asm        jge    _T2b4;
 // LINE 219:
 	__asm        mov    eax, i;
-	__asm        mov    eax, [eax*4+0x62B9A0];
+	__asm        mov    eax, CriminalEvaderCarClass::criminalCars[0][eax*4];
 	__asm        test   byte ptr [eax+8], 2;
 	__asm        je     _T2af;
 
 	__asm        mov    eax, i;
-	__asm        mov    eax, [eax*4+0x62B9A0];
+	__asm        mov    eax, CriminalEvaderCarClass::criminalCars[0][eax*4];
 	__asm        test   byte ptr [eax+8], 0x20;
 	__asm        je     _T2af;
 // LINE 221:
 	__asm        mov    eax, i;
-	__asm        mov    eax, [eax*4+0x62B9A0];
+	__asm        mov    eax, CriminalEvaderCarClass::criminalCars[0][eax*4];
 	__asm        mov    ax, [eax+0x7C];
 	__asm        mov    reinterpret_cast<uint16_t>(here.x), ax;
 // LINE 222:
@@ -795,7 +795,7 @@ _T2b4:
 // LINE 234:
 _T2cd:
 	__asm        mov    eax, carID;
-	__asm        mov    eax, [eax*4+0x62B9A0];
+	__asm        mov    eax, CriminalEvaderCarClass::criminalCars[0][eax*4];
 	__asm        add    eax, 0xC;
 	__asm        jmp    _T316;
 // LINE 237:
@@ -809,7 +809,7 @@ _T2eb:
 	__asm        ja     _T2df;
 
 	__asm        mov    eax, [ebp-0x1C];
-	__asm        jmp    dword ptr [eax*4+0x501A6D];
+	__asm        jmp    SwitchPointers5249645[0][eax*4];
 // Switch pointers
 // LINE 240:
 _T30f:
@@ -825,7 +825,7 @@ int32_t AutomobileClass::S3AutoMessage(short vehicleID, short messID) {
 	__asm        mov    eax, reinterpret_cast<uint32_t>(messID);
 	__asm        push   eax;
 	__asm        movsx  eax, vehicleID;
-	__asm        mov    ecx, [eax*4+0x608F80];
+	__asm        mov    ecx, cars[0][eax*4];
 	__asm        call   AutomobileClass::AutoMessage;
 	__asm        jmp    near ptr 0x00501AA8;
 // LINE 247:
@@ -1096,7 +1096,7 @@ _T36:
 // LINE 456:
 _T4c:
 	__asm        mov    eax, index;
-	__asm        mov    eax, [eax*4+0x608F80];
+	__asm        mov    eax, cars[0][eax*4];
 	__asm        jmp    _T5b;
 // LINE 457:
 _T5b:
@@ -1183,7 +1183,7 @@ _T18:
 	__asm        jge    _T36;
 // LINE 545:
 	__asm        mov    eax, currentCarIndex;
-	__asm        mov    ecx, [eax*4+0x608F80];
+	__asm        mov    ecx, cars[0][eax*4];
 	__asm        call   AutomobileClass::Reset;
 // LINE 546:
 	__asm        jmp    _T15;
@@ -1206,7 +1206,7 @@ _T18:
 	__asm        jge    _T36;
 // LINE 576:
 	__asm        mov    eax, currentCarIndex;
-	__asm        mov    ecx, [eax*4+0x608F80];
+	__asm        mov    ecx, cars[0][eax*4];
 	__asm        call   AutomobileClass::Itterate;
 // LINE 577:
 	__asm        jmp    _T15;
@@ -1658,7 +1658,7 @@ _Tfd:
 // LINE 849:
 	__asm        mov    eax, dyblock;
 	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    eax, [eax*4+0x608F80];
+	__asm        mov    eax, cars[0][eax*4];
 	__asm        mov    carblock, eax;
 // LINE 852:
 	__asm        mov    eax, carblock;
@@ -1996,7 +1996,7 @@ _T573:
 	__asm        ja     _T556;
 
 	__asm        mov    eax, [ebp-0x58];
-	__asm        jmp    dword ptr [eax*4+0x502837];
+	__asm        jmp    SwitchPointers5253175[0][eax*4];
 // Switch pointers
 // LINE 949:
 _T59f:
@@ -2065,7 +2065,7 @@ _T59f:
 	__asm        mov    ecx, [ebp-0x40];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        cmp    dword ptr [ebp-0x38], 0;
 	__asm        jne    _T68b;
@@ -2208,7 +2208,7 @@ void AutomobileClass::UnlinkFromCell(const struct _GridCoordinates& point) {
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax];
 	__asm        shl    edx, 0xA;
-	__asm        mov    eax, [edx+ecx*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][edx+ecx*4];
 	__asm        mov    pCell, eax;
 // LINE 1055:
 	__asm        cmp    pCell, 0;
@@ -2290,7 +2290,7 @@ void AutomobileClass::LinkToCell(const struct _GridCoordinates& point) {
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax];
 	__asm        shl    edx, 0xA;
-	__asm        mov    eax, [edx+ecx*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][edx+ecx*4];
 	__asm        mov    pCell, eax;
 // LINE 1087:
 	__asm        cmp    pCell, 0;
@@ -2355,7 +2355,7 @@ _Td5:
 	__asm        ja     _Tf9;
 
 	__asm        mov    eax, [ebp-0x14];
-	__asm        jmp    dword ptr [eax*4+0x502C5D];
+	__asm        jmp    SwitchPointers5254237[0][eax*4];
 // Switch pointers
 // LINE 1107:
 _Tf9:
@@ -2384,7 +2384,7 @@ enum TurnIndex AutomobileClass::PickTurnDir(struct Goal* pGoal) {
 	__asm        mov    eax, [eax+0x12];
 	__asm        sub    eax, 2;
 	__asm        and    eax, 3;
-	__asm        mov    eax, [eax*4+0x592D00];
+	__asm        mov    eax, IndexToType[0][eax*4];
 	__asm        not    eax;
 	__asm        mov    ecx, pGoal;
 	__asm        and    eax, [ecx+0x1A];
@@ -2416,7 +2416,7 @@ _T60:
 // LINE 1166:
 	__asm        mov    eax, pGoal;
 	__asm        mov    eax, [eax+0x12];
-	__asm        mov    eax, [eax*4+0x592D00];
+	__asm        mov    eax, IndexToType[0][eax*4];
 	__asm        test   possibleTurnDir, eax;
 	__asm        je     _T81;
 
@@ -2425,8 +2425,8 @@ _T60:
 _T81:
 	__asm        mov    eax, pGoal;
 	__asm        mov    eax, [eax+0x12];
-	__asm        mov    eax, [eax*4+0x592CD0];
-	__asm        mov    eax, [eax*4+0x592D00];
+	__asm        mov    eax, TurnTable2[1][0][eax*4];
+	__asm        mov    eax, IndexToType[0][eax*4];
 	__asm        test   possibleTurnDir, eax;
 	__asm        je     _Ta2;
 
@@ -2435,8 +2435,8 @@ _T81:
 _Ta2:
 	__asm        mov    eax, pGoal;
 	__asm        mov    eax, [eax+0x12];
-	__asm        mov    eax, [eax*4+0x592CE0];
-	__asm        mov    eax, [eax*4+0x592D00];
+	__asm        mov    eax, TurnTable2[2][0][eax*4];
+	__asm        mov    eax, IndexToType[0][eax*4];
 	__asm        test   possibleTurnDir, eax;
 	__asm        je     _Tc3;
 
@@ -2571,7 +2571,7 @@ _T23d:
 	__asm        ja     _T217;
 
 	__asm        mov    eax, [ebp-0x14];
-	__asm        jmp    dword ptr [eax*4+0x502EE6];
+	__asm        jmp    SwitchPointers5254886[0][eax*4];
 // Switch pointers
 // LINE 1193:
 _T270:
@@ -2791,7 +2791,7 @@ _T7c:
 _T87:
 	__asm        xor    eax, eax;
 	__asm        mov    al, scanLoc.x;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, scanLoc.y;
 	__asm        xor    edx, edx;
@@ -2801,7 +2801,7 @@ _T87:
 	__asm        shl    eax, 0xE;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, scanLoc.x;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        xor    edx, edx;
 	__asm        mov    dl, scanLoc.y;
 	__asm        xor    ebx, ebx;
@@ -2896,7 +2896,7 @@ _T1ac:
 	__asm        mov    ecx, [ebp-0xF4];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-0xEC], eax;
 	__asm        cmp    dword ptr [ebp-0xEC], 0;
 	__asm        jne    _T238;
@@ -2955,7 +2955,7 @@ _T2bc:
 _T2ca:
 	__asm        xor    eax, eax;
 	__asm        mov    al, scanLoc.x;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, scanLoc.y;
 	__asm        xor    edx, edx;
@@ -2965,7 +2965,7 @@ _T2ca:
 	__asm        shl    eax, 0xE;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, scanLoc.x;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        xor    edx, edx;
 	__asm        mov    dl, scanLoc.y;
 	__asm        xor    ebx, ebx;
@@ -3062,7 +3062,7 @@ _T3f8:
 	__asm        mov    ecx, [ebp-0xD4];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-0xCC], eax;
 	__asm        cmp    dword ptr [ebp-0xCC], 0;
 	__asm        jne    _T47a;
@@ -3194,7 +3194,7 @@ _T623:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0xD2];
-	__asm        mov    eax, [ecx*4+0x638F70];
+	__asm        mov    eax, BitsMap[ecx*4];
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0xD3];
@@ -3206,7 +3206,7 @@ _T623:
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0xD2];
-	__asm        mov    ecx, [edx*4+0x639850];
+	__asm        mov    ecx, BuildMap[edx*4];
 	__asm        mov    edx, this;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [edx+0xD3];
@@ -3341,7 +3341,7 @@ _T7fc:
 	__asm        ja     _T826;
 
 	__asm        mov    eax, [ebp-0x114];
-	__asm        jmp    dword ptr [eax*4+0x5038C0];
+	__asm        jmp    SwitchPointers5257408[0][eax*4];
 // Switch pointers
 // LINE 1539:
 _T826:
@@ -3370,7 +3370,7 @@ _T860:
 _T86e:
 	__asm        xor    eax, eax;
 	__asm        mov    al, nextLoc.x;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, nextLoc.y;
 	__asm        xor    edx, edx;
@@ -3380,7 +3380,7 @@ _T86e:
 	__asm        shl    eax, 0xE;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, nextLoc.x;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        xor    edx, edx;
 	__asm        mov    dl, nextLoc.y;
 	__asm        xor    ebx, ebx;
@@ -3414,7 +3414,7 @@ _T8eb:
 _T8f9:
 	__asm        xor    eax, eax;
 	__asm        mov    al, scanLoc.x;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, scanLoc.y;
 	__asm        xor    edx, edx;
@@ -3424,7 +3424,7 @@ _T8f9:
 	__asm        shl    eax, 0xE;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, scanLoc.x;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        xor    edx, edx;
 	__asm        mov    dl, scanLoc.y;
 	__asm        xor    ebx, ebx;
@@ -3546,7 +3546,7 @@ _Ta9a:
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0xE2];
 	__asm        shl    ecx, 4;
-	__asm        mov    eax, [ecx+eax*4+0x592D10];
+	__asm        mov    eax, TILUT[0][0][ecx+eax*4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xE6], eax;
 // LINE 1584:
@@ -3561,7 +3561,7 @@ _Ta9a:
 	__asm        shl    ecx, 3;
 	__asm        lea    ecx, [ecx+ecx*2];
 	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        mov    eax, [ecx+eax*4+0x62BB34];
+	__asm        mov    eax, DTT[0][0][1][ecx+eax*4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x86], eax;
 // LINE 1593:
@@ -3573,7 +3573,7 @@ _Tb35:
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0xE2];
 	__asm        shl    ecx, 4;
-	__asm        mov    eax, [ecx+eax*4+0x592D10];
+	__asm        mov    eax, TILUT[0][0][ecx+eax*4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xE6], eax;
 // LINE 1596:
@@ -3589,7 +3589,7 @@ _Tb35:
 	__asm        shl    ecx, 3;
 	__asm        lea    ecx, [ecx+ecx*2];
 	__asm        lea    ecx, [ecx+ecx*4];
-	__asm        mov    eax, [eax+ecx+0x62BB30];
+	__asm        mov    eax, DTT[0][0][eax+ecx];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x86], eax;
 // LINE 1597:
@@ -3656,7 +3656,7 @@ _Tc65:
 	__asm        ja     _Tc8f;
 
 	__asm        mov    eax, [ebp-0x118];
-	__asm        jmp    dword ptr [eax*4+0x503D29];
+	__asm        jmp    SwitchPointers5258537[0][eax*4];
 // Switch pointers
 // LINE 1615:
 _Tc8f:
@@ -3665,7 +3665,7 @@ _Tc8f:
 	__asm        shl    eax, 0xA;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, nextLoc.y;
-	__asm        mov    eax, [eax+ecx*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][eax+ecx*4];
 	__asm        mov    [ebp-0xD8], eax;
 	__asm        cmp    dword ptr [ebp-0xD8], 0;
 	__asm        jne    _Tcd2;
@@ -4032,7 +4032,7 @@ _T21:
 	__asm        mov    ecx, [ebp-0x28];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-0x20], eax;
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        jne    _T75;
@@ -4072,7 +4072,7 @@ _T88:
 _Tae:
 	__asm        mov    eax, currentObject;
 	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    eax, [eax*4+0x608F80];
+	__asm        mov    eax, cars[0][eax*4];
 	__asm        mov    pCar, eax;
 // LINE 1831:
 	__asm        mov    eax, currentObject;
@@ -4340,7 +4340,7 @@ _T1d9:
 _T1f8:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, instanceID;
-	__asm        mov    [ecx*4+0x608F80], eax;
+	__asm        mov    cars[0][ecx*4], eax;
 // LINE 1950:
 	__asm        mov    eax, this;
 	__asm        or     dword ptr [eax+8], 1;
@@ -4423,7 +4423,7 @@ _T5f:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x7C];
-	__asm        mov    eax, [ecx*4+0x638F70];
+	__asm        mov    eax, BitsMap[ecx*4];
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0x7D];
@@ -4435,7 +4435,7 @@ _T5f:
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0x7C];
-	__asm        mov    ecx, [edx*4+0x639850];
+	__asm        mov    ecx, BuildMap[edx*4];
 	__asm        mov    edx, this;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [edx+0x7D];
@@ -4538,7 +4538,7 @@ _T1a2:
 _T1ad:
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, y;
 	__asm        xor    edx, edx;
@@ -4548,7 +4548,7 @@ _T1ad:
 	__asm        shl    eax, 0xE;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, x;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        xor    edx, edx;
 	__asm        mov    dl, y;
 	__asm        xor    ebx, ebx;
@@ -4596,7 +4596,7 @@ _T234:
 	__asm        mov    ecx, [ebp-0x28];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-0x20], eax;
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        jne    _T28e;
@@ -4641,7 +4641,7 @@ _T2c7:
 	class AutomobileClass* car;
 	__asm        mov    eax, currentObject;
 	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    eax, [eax*4+0x608F80];
+	__asm        mov    eax, cars[0][eax*4];
 	__asm        mov    car, eax;
 // LINE 2139:
 	__asm        mov    eax, car;
@@ -4775,7 +4775,7 @@ int32_t AutomobileClass::CanIPullOut() {
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    _T66;
@@ -4818,7 +4818,7 @@ _T9f:
 // LINE 2195:
 	__asm        mov    eax, currentObject;
 	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    eax, [eax*4+0x608F80];
+	__asm        mov    eax, cars[0][eax*4];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x82];
 	__asm        cmp    [eax+0x82], ecx;
@@ -4826,7 +4826,7 @@ _T9f:
 
 	__asm        mov    eax, currentObject;
 	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    eax, [eax*4+0x608F80];
+	__asm        mov    eax, cars[0][eax*4];
 	__asm        test   byte ptr [eax+8], 0x20;
 	__asm        jne    _Tf0;
 // LINE 2196:
@@ -4888,7 +4888,7 @@ void AutomobileClass::TransitionBetweenGoals() {
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0xEE];
 	__asm        lea    ecx, [ecx+ecx*2];
-	__asm        mov    eax, [eax+ecx*4+0x62BB30];
+	__asm        mov    eax, DTT[0][0][eax+ecx*4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x86], eax;
 // LINE 2235:
@@ -4944,14 +4944,14 @@ _Td9:
 	__asm        ja     _Tfd;
 
 	__asm        mov    eax, [ebp-0x2C];
-	__asm        jmp    dword ptr [eax*4+0x504C35];
+	__asm        jmp    SwitchPointers5262389[0][eax*4];
 // Switch pointers
 // LINE 2250:
 _Tfd:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x7C];
-	__asm        mov    eax, [ecx*4+0x639510];
+	__asm        mov    eax, AltMap[ecx*4];
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0x7D];
@@ -4966,7 +4966,7 @@ _Tfd:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x7C];
-	__asm        mov    eax, [ecx*4+0x639850];
+	__asm        mov    eax, BuildMap[ecx*4];
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0x7D];
@@ -5091,7 +5091,7 @@ _T238:
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0xE6];
 	__asm        shl    ecx, 4;
-	__asm        mov    eax, [ecx+eax*4+0x592CC0];
+	__asm        mov    eax, TurnTable2[0][0][ecx+eax*4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x7E], eax;
 	__asm        mov    eax, this;
@@ -5110,7 +5110,7 @@ _T238:
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0xEE];
 	__asm        lea    ecx, [ecx+ecx*2];
-	__asm        mov    eax, [eax+ecx*4+0x62BB34];
+	__asm        mov    eax, DTT[0][0][1][eax+ecx*4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x86], eax;
 // LINE 2290:
@@ -5140,7 +5140,7 @@ _T347:
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0xE2];
 	__asm        shl    ecx, 4;
-	__asm        mov    eax, [ecx+eax*4+0x592D10];
+	__asm        mov    eax, TILUT[0][0][ecx+eax*4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xE6], eax;
 // LINE 2314:
@@ -5155,7 +5155,7 @@ _T347:
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0xEE];
 	__asm        lea    ecx, [ecx+ecx*2];
-	__asm        mov    eax, [eax+ecx*4+0x62BB30];
+	__asm        mov    eax, DTT[0][0][eax+ecx*4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x86], eax;
 // LINE 2321:
@@ -5229,7 +5229,7 @@ _T3e0:
 	__asm        mov    ecx, [ebp-0x1C];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-0x14], eax;
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        jne    _T4ac;
@@ -5281,7 +5281,7 @@ void AutomobileClass::DoDiagonalRoadFixup() {
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x7C];
-	__asm        mov    eax, [ecx*4+0x639850];
+	__asm        mov    eax, BuildMap[ecx*4];
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0x7D];
@@ -5314,7 +5314,7 @@ _T5c:
 	__asm        mov    ecx, roadTile;
 	__asm        shl    ecx, 4;
 	__asm        lea    ecx, [ecx+ecx*2];
-	__asm        mov    eax, [ecx+eax*4+0x635114];
+	__asm        mov    eax, DiagOffset[0][0].y[ecx+eax*4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x86], eax;
 // LINE 2383:
@@ -5340,7 +5340,7 @@ _Tbd:
 	__asm        mov    ecx, roadTile;
 	__asm        shl    ecx, 4;
 	__asm        lea    ecx, [ecx+ecx*2];
-	__asm        mov    eax, [ecx+eax*4+0x635114];
+	__asm        mov    eax, DiagOffset[0][0].y[ecx+eax*4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x86], eax;
 // LINE 2388:
@@ -5366,7 +5366,7 @@ _T11e:
 	__asm        mov    ecx, roadTile;
 	__asm        shl    ecx, 4;
 	__asm        lea    ecx, [ecx+ecx*2];
-	__asm        mov    eax, [ecx+eax*4+0x635114];
+	__asm        mov    eax, DiagOffset[0][0].y[ecx+eax*4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x86], eax;
 // LINE 2393:
@@ -5392,7 +5392,7 @@ _T17f:
 	__asm        mov    ecx, roadTile;
 	__asm        shl    ecx, 4;
 	__asm        lea    ecx, [ecx+ecx*2];
-	__asm        mov    eax, [ecx+eax*4+0x635114];
+	__asm        mov    eax, DiagOffset[0][0].y[ecx+eax*4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x86], eax;
 // LINE 2398:
@@ -5406,7 +5406,7 @@ _T1c7:
 	__asm        ja     _T1eb;
 
 	__asm        mov    eax, [ebp-0x10];
-	__asm        jmp    dword ptr [eax*4+0x50521A];
+	__asm        jmp    SwitchPointers5263898[0][eax*4];
 // Switch pointers
 // LINE 2404:
 _T1eb:
@@ -5437,7 +5437,7 @@ void AutomobileClass::MoveAuto(int32_t dist) {
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        jne    _T66;
@@ -5476,7 +5476,7 @@ _T6b:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x7C];
-	__asm        mov    eax, [ecx*4+0x639850];
+	__asm        mov    eax, BuildMap[ecx*4];
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0x7D];
@@ -5549,7 +5549,7 @@ _T197:
 	__asm        ja     _T1bb;
 
 	__asm        mov    eax, [ebp-0x2C];
-	__asm        jmp    dword ptr [eax*4+0x5053DF];
+	__asm        jmp    SwitchPointers5264351[0][eax*4];
 // Switch pointers
 // LINE 2456:
 _T1bb:
@@ -5558,7 +5558,7 @@ _T1bb:
 	__asm        mov    ecx, roadTile;
 	__asm        shl    ecx, 4;
 	__asm        lea    ecx, [ecx+ecx*2];
-	__asm        mov    eax, [ecx+eax*4+0x635110];
+	__asm        mov    eax, DiagOffset[0][0].x[ecx+eax*4];
 	__asm        mov    xOffset, eax;
 // LINE 2457:
 	__asm        mov    eax, diagRoad;
@@ -5566,12 +5566,12 @@ _T1bb:
 	__asm        mov    ecx, roadTile;
 	__asm        shl    ecx, 4;
 	__asm        lea    ecx, [ecx+ecx*2];
-	__asm        mov    eax, [ecx+eax*4+0x635118];
+	__asm        mov    eax, DiagOffset[0][0].z[ecx+eax*4];
 	__asm        mov    zOffset, eax;
 // LINE 2458:
 	__asm        mov    eax, diagRoad;
 	__asm        lea    eax, [eax+eax*2];
-	__asm        lea    eax, [eax*4+0x62BB00];
+	__asm        lea    eax, DiagVector[0].x[eax*4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xF2], eax;
 // LINE 2459:
@@ -5601,7 +5601,7 @@ _T216:
 	__asm        lea    ecx, [ecx+ecx*4];
 	__asm        lea    ecx, [edx+ecx*2];
 	__asm        shl    ecx, 5;
-	__asm        mov    eax, [eax+ecx+0x62D390];
+	__asm        mov    eax, OTT[0][0][0].x[eax+ecx];
 	__asm        mov    xOffset, eax;
 // LINE 2465:
 	__asm        mov    eax, this;
@@ -5619,7 +5619,7 @@ _T216:
 	__asm        lea    ecx, [ecx+ecx*4];
 	__asm        lea    ecx, [edx+ecx*2];
 	__asm        shl    ecx, 5;
-	__asm        mov    eax, [eax+ecx+0x62D394];
+	__asm        mov    eax, OTT[0][0][0].z[eax+ecx];
 	__asm        mov    zOffset, eax;
 // LINE 2466:
 	__asm        mov    eax, this;
@@ -5675,7 +5675,7 @@ _T348:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x82];
 	__asm        shl    eax, 4;
-	__asm        fld    qword ptr [eax+0x592D50];
+	__asm        fld    OT[0].x[eax];
 	__asm        fmul   qword ptr ds:[0x592D90];
 	__asm        call   0x0056EBE8;
 	__asm        mov    xOffset, eax;
@@ -5683,7 +5683,7 @@ _T348:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x82];
 	__asm        shl    eax, 4;
-	__asm        fld    qword ptr [eax+0x592D58];
+	__asm        fld    OT[0].z[eax];
 	__asm        fmul   qword ptr ds:[0x592D90];
 	__asm        call   0x0056EBE8;
 	__asm        mov    zOffset, eax;
@@ -5768,7 +5768,7 @@ _T466:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x7C];
-	__asm        mov    eax, [ecx*4+0x639510];
+	__asm        mov    eax, AltMap[ecx*4];
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0x7D];
@@ -5871,7 +5871,7 @@ _Tbb:
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0xEE];
 	__asm        lea    ecx, [ecx+ecx*2];
-	__asm        mov    eax, [eax+ecx*4+0x62BB30];
+	__asm        mov    eax, DTT[0][0][eax+ecx*4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x86], eax;
 // LINE 2544:
@@ -6025,7 +6025,7 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x7C];
-	__asm        mov    eax, [ecx*4+0x639510];
+	__asm        mov    eax, AltMap[ecx*4];
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0x7D];
@@ -6125,7 +6125,7 @@ _T3c:
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, currentLocation.x;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-0x54], eax;
 	__asm        cmp    dword ptr [ebp-0x54], 0;
 	__asm        jne    _T163;
@@ -6169,7 +6169,7 @@ _T1ad:
 _T1b8:
 	__asm        xor    eax, eax;
 	__asm        mov    al, currentLocation.x;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, currentLocation.y;
 	__asm        xor    edx, edx;
@@ -6179,7 +6179,7 @@ _T1b8:
 	__asm        shl    eax, 0xE;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, currentLocation.x;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        xor    edx, edx;
 	__asm        mov    dl, currentLocation.y;
 	__asm        xor    ebx, ebx;
@@ -6292,7 +6292,7 @@ _T30b:
 _T316:
 	__asm        xor    eax, eax;
 	__asm        mov    al, nextLocation.x;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, nextLocation.y;
 	__asm        xor    edx, edx;
@@ -6302,7 +6302,7 @@ _T316:
 	__asm        shl    eax, 0xE;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, nextLocation.x;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        xor    edx, edx;
 	__asm        mov    dl, nextLocation.y;
 	__asm        xor    ebx, ebx;
@@ -6338,7 +6338,7 @@ _T396:
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, nextLocation.x;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        cmp    dword ptr [ebp-0x3C], 0;
 	__asm        jne    _T3d3;
@@ -6400,7 +6400,7 @@ _T42e:
 // LINE 2707:
 	__asm        mov    eax, currentObject;
 	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    eax, [eax*4+0x608F80];
+	__asm        mov    eax, cars[0][eax*4];
 	__asm        mov    carblock, eax;
 // LINE 2713:
 	__asm        mov    eax, this;
@@ -6566,19 +6566,19 @@ _T577:
 // LINE 2793:
 	__asm        mov    eax, currentObject;
 	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    eax, [eax*4+0x608F80];
+	__asm        mov    eax, cars[0][eax*4];
 	__asm        test   byte ptr [eax+8], 0x10;
 	__asm        jne    _T654;
 
 	__asm        mov    eax, currentObject;
 	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    eax, [eax*4+0x608F80];
+	__asm        mov    eax, cars[0][eax*4];
 	__asm        test   byte ptr [eax+8], 0x20;
 	__asm        jne    _T654;
 // LINE 2804:
 	__asm        mov    eax, currentObject;
 	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    eax, [eax*4+0x608F80];
+	__asm        mov    eax, cars[0][eax*4];
 	__asm        mov    eax, [eax+0xF2];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
@@ -6657,7 +6657,7 @@ _T6f6:
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, nextLocation.x;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-0x40], eax;
 	__asm        cmp    dword ptr [ebp-0x40], 0;
 	__asm        jne    _T733;
@@ -6774,19 +6774,19 @@ _T7b9:
 // LINE 2884:
 	__asm        mov    eax, currentObject;
 	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    eax, [eax*4+0x608F80];
+	__asm        mov    eax, cars[0][eax*4];
 	__asm        test   byte ptr [eax+8], 0x10;
 	__asm        jne    _T896;
 
 	__asm        mov    eax, currentObject;
 	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    eax, [eax*4+0x608F80];
+	__asm        mov    eax, cars[0][eax*4];
 	__asm        test   byte ptr [eax+8], 0x20;
 	__asm        jne    _T896;
 // LINE 2895:
 	__asm        mov    eax, currentObject;
 	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    eax, [eax*4+0x608F80];
+	__asm        mov    eax, cars[0][eax*4];
 	__asm        mov    eax, [eax+0xF2];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
@@ -7079,7 +7079,7 @@ _Td9:
 	__asm        ja     _T12d;
 
 	__asm        mov    eax, [ebp-8];
-	__asm        jmp    dword ptr [eax*4+0x506500];
+	__asm        jmp    SwitchPointers5268736[0][eax*4];
 // Switch pointers
 // LINE 3075:
 _T12d:
@@ -7099,7 +7099,7 @@ void AutoHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DYO
 	__asm        push   eax;
 	__asm        mov    eax, dyhittee;
 	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    ecx, [eax*4+0x608F80];
+	__asm        mov    ecx, cars[0][eax*4];
 	__asm        call   AutomobileClass::HitDispatch;
 // LINE 3087:
 	__asm        jmp    near ptr 0x0050657A;
@@ -7146,7 +7146,7 @@ _T18:
 	__asm        jge    _T53;
 // LINE 3130:
 	__asm        mov    eax, currentCarIndex;
-	__asm        mov    eax, [eax*4+0x608F80];
+	__asm        mov    eax, cars[0][eax*4];
 	__asm        mov    targcar, eax;
 // LINE 3131:
 	__asm        mov    eax, targcar;
@@ -7210,7 +7210,7 @@ _T18:
 	__asm        jge    _T53;
 // LINE 3163:
 	__asm        mov    eax, currentCarIndex;
-	__asm        mov    eax, [eax*4+0x608F80];
+	__asm        mov    eax, cars[0][eax*4];
 	__asm        mov    targcar, eax;
 // LINE 3164:
 	__asm        mov    eax, targcar;
@@ -7275,7 +7275,7 @@ _T1e:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x7C];
-	__asm        mov    eax, [ecx*4+0x639510];
+	__asm        mov    eax, AltMap[ecx*4];
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0x7D];
@@ -7340,7 +7340,7 @@ _T4c:
 	__asm        mov    ecx, celloc.x;
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x112], eax;
 // LINE 3223:
@@ -7384,7 +7384,7 @@ _T1e:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x7C];
-	__asm        mov    eax, [ecx*4+0x639510];
+	__asm        mov    eax, AltMap[ecx*4];
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0x7D];
@@ -7430,7 +7430,7 @@ _T4c:
 	__asm        mov    ecx, celloc.x;
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x112], eax;
 // LINE 3271:
@@ -7776,7 +7776,7 @@ _T18:
 	__asm        jge    _T77;
 // LINE 3467:
 	__asm        mov    eax, currentCarIndex;
-	__asm        mov    eax, [eax*4+0x608F80];
+	__asm        mov    eax, cars[0][eax*4];
 	__asm        mov    targcar, eax;
 // LINE 3470:
 	__asm        mov    eax, targcar;
@@ -7831,7 +7831,7 @@ _T18:
 	__asm        jge    _T60;
 // LINE 3513:
 	__asm        mov    eax, currentCarIndex;
-	__asm        mov    eax, [eax*4+0x608F80];
+	__asm        mov    eax, cars[0][eax*4];
 	__asm        mov    targcar, eax;
 // LINE 3514:
 	__asm        mov    eax, targcar;
@@ -8084,7 +8084,7 @@ _Tcb:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0xD2];
-	__asm        mov    eax, [ecx*4+0x638F70];
+	__asm        mov    eax, BitsMap[ecx*4];
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0xD3];
@@ -8096,7 +8096,7 @@ _Tcb:
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0xD2];
-	__asm        mov    ecx, [edx*4+0x639850];
+	__asm        mov    ecx, BuildMap[edx*4];
 	__asm        mov    edx, this;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [edx+0xD3];
@@ -8159,7 +8159,7 @@ _T1c0:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0xD2];
-	__asm        mov    eax, [ecx*4+0x638F70];
+	__asm        mov    eax, BitsMap[ecx*4];
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0xD3];
@@ -8171,7 +8171,7 @@ _T1c0:
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0xD2];
-	__asm        mov    ecx, [edx*4+0x639850];
+	__asm        mov    ecx, BuildMap[edx*4];
 	__asm        mov    edx, this;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [edx+0xD3];
@@ -8234,7 +8234,7 @@ _T2b5:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0xD2];
-	__asm        mov    eax, [ecx*4+0x638F74];
+	__asm        mov    eax, BitsMap[1][ecx*4];
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0xD3];
@@ -8246,7 +8246,7 @@ _T2b5:
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0xD2];
-	__asm        mov    ecx, [edx*4+0x639854];
+	__asm        mov    ecx, BuildMap[1][edx*4];
 	__asm        mov    edx, this;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [edx+0xD3];
@@ -8321,7 +8321,7 @@ _T3a8:
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0xD2];
-	__asm        mov    ecx, [edx*4+0x63984C];
+	__asm        mov    ecx, NeighborFame[edx*4];
 	__asm        mov    edx, this;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [edx+0xD3];
@@ -8400,8 +8400,8 @@ _T4b2:
 
 	__asm        mov    eax, [ebp-0x30];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0x507464];
-	__asm        jmp    dword ptr [ecx*4+0x507440];
+	__asm        mov    cl, SwitchTable5272676[0][eax];
+	__asm        jmp    SwitchPointers5272640[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 3706:
@@ -8685,7 +8685,7 @@ void AutomobileClass::AdjustCurrentHiwayPosition() {
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    _T6c;
@@ -8813,7 +8813,7 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-0x28], eax;
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        jne    _T6c;
@@ -8862,7 +8862,7 @@ _Tdb:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0xD2];
-	__asm        mov    eax, [ecx*4+0x638F70];
+	__asm        mov    eax, BitsMap[ecx*4];
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0xD3];
@@ -8874,7 +8874,7 @@ _Tdb:
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0xD2];
-	__asm        mov    ecx, [edx*4+0x639850];
+	__asm        mov    ecx, BuildMap[edx*4];
 	__asm        mov    edx, this;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [edx+0xD3];
@@ -8915,7 +8915,7 @@ _T192:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0xD4];
-	__asm        mov    eax, [ecx*4+0x638F70];
+	__asm        mov    eax, BitsMap[ecx*4];
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0xD5];
@@ -8927,7 +8927,7 @@ _T192:
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0xD4];
-	__asm        mov    ecx, [edx*4+0x639850];
+	__asm        mov    ecx, BuildMap[edx*4];
 	__asm        mov    edx, this;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [edx+0xD5];
@@ -9004,7 +9004,7 @@ _T2b7:
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0xD4];
 	__asm        and    ecx, 0xFE;
-	__asm        mov    eax, [ecx*4+0x638F70];
+	__asm        mov    eax, BitsMap[ecx*4];
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0xD5];
@@ -9018,7 +9018,7 @@ _T2b7:
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0xD4];
 	__asm        and    edx, 0xFE;
-	__asm        mov    ecx, [edx*4+0x639850];
+	__asm        mov    ecx, BuildMap[edx*4];
 	__asm        mov    edx, this;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [edx+0xD5];
@@ -9430,7 +9430,7 @@ _T7a0:
 	__asm        ja     _T7fb;
 
 	__asm        mov    eax, [ebp-0x64];
-	__asm        jmp    dword ptr [eax*4+0x5080D8];
+	__asm        jmp    SwitchPointers5275864[0][eax*4];
 // Switch pointers
 // LINE 3998:
 _T7fb:
@@ -9562,7 +9562,7 @@ _Tdd:
 	__asm        mov    eax, point;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax];
-	__asm        mov    eax, [ecx*4+0x638F70];
+	__asm        mov    eax, BitsMap[ecx*4];
 	__asm        mov    ecx, point;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+1];
@@ -9574,7 +9574,7 @@ _Tdd:
 	__asm        mov    ecx, point;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx];
-	__asm        mov    ecx, [edx*4+0x639850];
+	__asm        mov    ecx, BuildMap[edx*4];
 	__asm        mov    edx, point;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [edx+1];
@@ -9651,7 +9651,7 @@ _T1e6:
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax];
 	__asm        and    ecx, 0xFE;
-	__asm        mov    eax, [ecx*4+0x638F70];
+	__asm        mov    eax, BitsMap[ecx*4];
 	__asm        mov    ecx, point;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+1];
@@ -9665,7 +9665,7 @@ _T1e6:
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx];
 	__asm        and    edx, 0xFE;
-	__asm        mov    ecx, [edx*4+0x639850];
+	__asm        mov    ecx, BuildMap[edx*4];
 	__asm        mov    edx, point;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [edx+1];
@@ -9773,7 +9773,7 @@ _T32f:
 	__asm        ja     _T367;
 
 	__asm        mov    eax, [ebp-0x28];
-	__asm        jmp    dword ptr [eax*4+0x5084C7];
+	__asm        jmp    SwitchPointers5276871[0][eax*4];
 // Switch pointers
 // LINE 4103:
 _T367:
@@ -9807,7 +9807,7 @@ _T3c6:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0xD6];
-	__asm        mov    eax, [ecx*4+0x638F70];
+	__asm        mov    eax, BitsMap[ecx*4];
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0xD7];
@@ -9819,7 +9819,7 @@ _T3c6:
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0xD6];
-	__asm        mov    ecx, [edx*4+0x639850];
+	__asm        mov    ecx, BuildMap[edx*4];
 	__asm        mov    edx, this;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [edx+0xD7];
@@ -9860,7 +9860,7 @@ _T47d:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0xD8];
-	__asm        mov    eax, [ecx*4+0x638F70];
+	__asm        mov    eax, BitsMap[ecx*4];
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0xD9];
@@ -9872,7 +9872,7 @@ _T47d:
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0xD8];
-	__asm        mov    ecx, [edx*4+0x639850];
+	__asm        mov    ecx, BuildMap[edx*4];
 	__asm        mov    edx, this;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [edx+0xD9];
@@ -9913,7 +9913,7 @@ _T534:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0xDA];
-	__asm        mov    eax, [ecx*4+0x638F70];
+	__asm        mov    eax, BitsMap[ecx*4];
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0xDB];
@@ -9925,7 +9925,7 @@ _T534:
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0xDA];
-	__asm        mov    ecx, [edx*4+0x639850];
+	__asm        mov    ecx, BuildMap[edx*4];
 	__asm        mov    edx, this;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [edx+0xDB];
@@ -9966,7 +9966,7 @@ _T5eb:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0xDC];
-	__asm        mov    eax, [ecx*4+0x638F70];
+	__asm        mov    eax, BitsMap[ecx*4];
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0xDD];
@@ -9978,7 +9978,7 @@ _T5eb:
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0xDC];
-	__asm        mov    ecx, [edx*4+0x639850];
+	__asm        mov    ecx, BuildMap[edx*4];
 	__asm        mov    edx, this;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [edx+0xDD];
@@ -10028,7 +10028,7 @@ _T6ba:
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0xDC];
 	__asm        and    ecx, 0xFE;
-	__asm        mov    eax, [ecx*4+0x638F70];
+	__asm        mov    eax, BitsMap[ecx*4];
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0xDD];
@@ -10042,7 +10042,7 @@ _T6ba:
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0xDC];
 	__asm        and    edx, 0xFE;
-	__asm        mov    ecx, [edx*4+0x639850];
+	__asm        mov    ecx, BuildMap[edx*4];
 	__asm        mov    edx, this;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [edx+0xDD];
@@ -10430,8 +10430,8 @@ _T18e:
 
 	__asm        mov    eax, [ebp-8];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0x508CA6];
-	__asm        jmp    dword ptr [ecx*4+0x508C7E];
+	__asm        mov    cl, SwitchTable5278886[0][eax];
+	__asm        jmp    SwitchPointers5278846[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 4325:
@@ -10740,9 +10740,9 @@ _T47:
 	__asm        push   0x608C28;
 	__asm        mov    eax, i;
 	__asm        mov    ecx, i;
-	__asm        mov    ecx, [ecx*4+0x608F80];
+	__asm        mov    ecx, cars[0][ecx*4];
 	__asm        mov    edx, [ecx];
-	__asm        mov    ecx, [eax*4+0x608F80];
+	__asm        mov    ecx, cars[0][eax*4];
 	__asm        call   dword ptr [edx+0x18];
 // LINE 4561:
 	__asm        push   0x344;
@@ -10790,9 +10790,9 @@ _T18:
 	__asm        push   0x608C28;
 	__asm        mov    eax, i;
 	__asm        mov    ecx, i;
-	__asm        mov    ecx, [ecx*4+0x608F80];
+	__asm        mov    ecx, cars[0][ecx*4];
 	__asm        mov    edx, [ecx];
-	__asm        mov    ecx, [eax*4+0x608F80];
+	__asm        mov    ecx, cars[0][eax*4];
 	__asm        call   dword ptr [edx+0x14];
 // LINE 4588:
 	__asm        push   0x344;
@@ -11266,7 +11266,7 @@ _T1d:
 	__asm        mov    eax, sd;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x92];
-	__asm        mov    eax, [ecx*4+0x5C3828];
+	__asm        mov    eax, gRoadGraph.RGArray[0][ecx*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, yindex;
 	__asm        mov    edx, ecx;
@@ -11295,7 +11295,7 @@ _T1d:
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    _T370;
@@ -11338,7 +11338,7 @@ _T39c:
 	__asm        mov    ecx, [ebp-0x1C];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-0x14], eax;
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        jne    _T3f6;
@@ -11958,8 +11958,8 @@ _T1ab:
 
 	__asm        mov    eax, [ebp-0x64];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0x509EE1];
-	__asm        jmp    dword ptr [ecx*4+0x509EC5];
+	__asm        mov    cl, SwitchTable5283553[0][eax];
+	__asm        jmp    SwitchPointers5283525[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 4986:

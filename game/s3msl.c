@@ -479,7 +479,7 @@ _T2de:
 	__asm        mov    eax, i;
 	__asm        cdq;
 	__asm        idiv   S_num_debris_types;
-	__asm        mov    eax, [edx*4+0x5B7328];
+	__asm        mov    eax, S_debris_types[edx*4];
 	__asm        mov    j, eax;
 // LINE 289:
 	__asm        mov    eax, j;
@@ -1709,7 +1709,7 @@ _Tab6:
 	__asm        mov    ecx, [ecx];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 793:
 	__asm        mov    eax, celloc;
@@ -2273,7 +2273,7 @@ _T16d:
 	__asm        mov    ecx, [ecx+0x2C];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 976:
 	__asm        mov    eax, md;
@@ -2649,7 +2649,7 @@ _T4c1:
 	__asm        mov    ecx, [ecx+0x2C];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    lcptr, eax;
 // LINE 1084:
 	__asm        mov    eax, newpos.y;
@@ -2657,7 +2657,7 @@ _T4c1:
 	__asm        mov    ecx, newpos.x;
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 1087:
 	__asm        xor    eax, eax;
@@ -3028,7 +3028,7 @@ _Ta73:
 	__asm        mov    ecx, [ecx+0x2C];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 1208:
 	__asm        mov    eax, cptr;
@@ -3219,7 +3219,7 @@ _Tb7f:
 	__asm        mov    ecx, [ecx+0x2C];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    lcptr, eax;
 // LINE 1253:
 	__asm        mov    eax, newpos.y;
@@ -3227,7 +3227,7 @@ _Tb7f:
 	__asm        mov    ecx, newpos.x;
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 1256:
 	__asm        xor    eax, eax;
@@ -3296,7 +3296,7 @@ _Td91:
 	__asm        sub    ecx, tmploc.z;
 	__asm        shr    ecx, 0x16;
 	__asm        and    ecx, 0xFF;
-	__asm        mov    eax, [eax+ecx*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][eax+ecx*4];
 	__asm        mov    tmpcptr, eax;
 // LINE 1273:
 	__asm        push   9;
@@ -3620,7 +3620,7 @@ _T116e:
 	__asm        mov    ecx, [ecx+0x2C];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 1379:
 	__asm        mov    eax, cptr;
@@ -3730,7 +3730,7 @@ _T1225:
 	__asm        mov    ecx, [ecx+0x2C];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    lcptr, eax;
 // LINE 1405:
 	__asm        mov    eax, newpos.y;
@@ -3738,7 +3738,7 @@ _T1225:
 	__asm        mov    ecx, newpos.x;
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 1408:
 	__asm        xor    eax, eax;
@@ -3970,7 +3970,7 @@ _T1569:
 	__asm        mov    ecx, [ecx+0x2C];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 1488:
 	__asm        mov    eax, cptr;
@@ -4080,7 +4080,7 @@ _T1620:
 	__asm        mov    ecx, [ecx+0x2C];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    lcptr, eax;
 // LINE 1514:
 	__asm        mov    eax, newpos.y;
@@ -4088,7 +4088,7 @@ _T1620:
 	__asm        mov    ecx, newpos.x;
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 1517:
 	__asm        mov    eax, lcptr;
@@ -4298,7 +4298,7 @@ _T1922:
 	__asm        mov    ecx, [ecx+0x2C];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 1587:
 	__asm        mov    eax, cptr;
@@ -4563,7 +4563,7 @@ _T1bd9:
 	__asm        mov    ecx, [ecx+0x2C];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    lcptr, eax;
 // LINE 1653:
 	__asm        mov    eax, newpos.y;
@@ -4571,7 +4571,7 @@ _T1bd9:
 	__asm        mov    ecx, newpos.x;
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 1656:
 	__asm        mov    eax, lcptr;
@@ -4910,7 +4910,7 @@ _T1f1d:
 	__asm        mov    ecx, [ecx+0x2C];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    lcptr, eax;
 // LINE 1745:
 	__asm        mov    eax, newpos.y;
@@ -4918,7 +4918,7 @@ _T1f1d:
 	__asm        mov    ecx, newpos.x;
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 1748:
 	__asm        xor    eax, eax;
@@ -6033,7 +6033,7 @@ _T990:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        mov    j, edx;
 // LINE 2172:
 	__asm        cmp    j, 0;
@@ -6772,7 +6772,7 @@ _T53:
 	__asm        mov    ecx, [ecx+0x2C];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 2710:
 	__asm        mov    eax, cptr;
@@ -6871,12 +6871,12 @@ void S3MissileDebrisFire(struct _CELL_INFO* cptr, struct Point3d* loc, long * se
 // LINE 2755:
 	__asm        mov    eax, seq;
 	__asm        mov    eax, [eax];
-	__asm        mov    eax, [eax*4+0x5B7300];
+	__asm        mov    eax, S_debris_firealt[eax*4];
 	__asm        add    tmploc.y, eax;
 // LINE 2757:
 	__asm        mov    eax, seq;
 	__asm        mov    eax, [eax];
-	__asm        mov    eax, [eax*4+0x5B72E0];
+	__asm        mov    eax, S_debris_fireseq[eax*4];
 	__asm        push   eax;
 	__asm        lea    eax, tmploc.x;
 	__asm        push   eax;
@@ -7017,7 +7017,7 @@ _T4e:
 	__asm        mov    ecx, [ecx+0x2C];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 2813:
 	__asm        mov    eax, cptr;
@@ -7179,7 +7179,7 @@ _T20c:
 	__asm        mov    ecx, [ecx+0x2C];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 2859:
 	__asm        mov    eax, cptr;
@@ -7242,7 +7242,7 @@ _T18:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 3;
 	__asm        mov    edi, 0x62A530;
-	__asm        lea    esi, [eax+eax*8+0x66C5C0];
+	__asm        lea    esi, S_teargas[0].flags[eax+eax*8];
 	__asm        mov    ecx, 0x12;
 	__asm        rep movsd;
 // LINE 2885:
@@ -7288,7 +7288,7 @@ _T9c:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 3;
 	__asm        mov    edi, 0x62A530;
-	__asm        lea    esi, [eax+eax*8+0x66E270];
+	__asm        lea    esi, S_debris[0].flags[eax+eax*8];
 	__asm        mov    ecx, 0x12;
 	__asm        rep movsd;
 // LINE 2901:

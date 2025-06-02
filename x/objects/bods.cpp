@@ -747,7 +747,7 @@ _T32:
 	__asm        movsx  eax, byte ptr [eax+2];
 	__asm        shl    eax, 2;
 	__asm        lea    edi, transinfo.startPoint.v;
-	__asm        lea    esi, [eax+eax*4+0x6376D0];
+	__asm        lea    esi, sTransformedInfo[0].startPoint.v[eax+eax*4];
 	__asm        mov    ecx, 5;
 	__asm        rep movsd;
 // LINE 2105:
@@ -1044,7 +1044,7 @@ _T350:
 	__asm        ja     _T32a;
 
 	__asm        mov    eax, [ebp-0x4C];
-	__asm        jmp    dword ptr [eax*4+0x5615E9];
+	__asm        jmp    SwitchPointers5641705[0][eax*4];
 // Switch pointers
 // LINE 2176:
 _T384:
@@ -1113,13 +1113,13 @@ _T83:
 // LINE 2189:
 	__asm        movsx  eax, count;
 	__asm        shl    eax, 2;
-	__asm        mov    byte ptr [eax+eax*4+0x6376DD], 0;
+	__asm        mov    sTransformedInfo[0].bEndTransformed[eax+eax*4], 0;
 	__asm        movsx  eax, count;
 	__asm        shl    eax, 2;
-	__asm        mov    al, [eax+eax*4+0x6376DD];
+	__asm        mov    al, sTransformedInfo[0].bEndTransformed[eax+eax*4];
 	__asm        movsx  ecx, count;
 	__asm        shl    ecx, 2;
-	__asm        mov    [ecx+ecx*4+0x6376DC], al;
+	__asm        mov    sTransformedInfo[0].bStartTransformed[ecx+ecx*4], al;
 	__asm        jmp    _T7f;
 // LINE 2196:
 _Tc0:
@@ -1478,7 +1478,7 @@ _T45e:
 // LINE 2268:
 	__asm        mov    eax, part;
 	__asm        mov    ecx, drawordercount;
-	__asm        mov    [ecx*4+0x638670], eax;
+	__asm        mov    cCopterBody::fsDrawOrderParts[0][ecx*4], eax;
 	__asm        inc    drawordercount;
 // LINE 2270:
 // Block end:
@@ -1509,7 +1509,7 @@ _T4d7:
 	__asm        jge    _T557;
 // LINE 2277:
 	__asm        movsx  eax, orderID;
-	__asm        mov    eax, [eax*4+0x638670];
+	__asm        mov    eax, cCopterBody::fsDrawOrderParts[0][eax*4];
 	__asm        mov    part, eax;
 // LINE 2278:
 	__asm        cmp    part, 0;

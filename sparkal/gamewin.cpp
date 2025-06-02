@@ -1771,7 +1771,7 @@ _T345:
 	__asm        ja     _T459;
 
 	__asm        mov    eax, [ebp-8];
-	__asm        jmp    dword ptr [eax*4+0x467F09];
+	__asm        jmp    SwitchPointers4620041[0][eax*4];
 // Switch pointers
 // LINE 610:
 _T459:

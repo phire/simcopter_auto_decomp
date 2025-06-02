@@ -298,7 +298,7 @@ void $E7() {
 // FUNCTION: COPTER_D 0x0052ddba
 void $E3() {
 
-	__asm        mov    TrainClass::lsTrain.<vftable>, 0x593238;
+	__asm        mov    TrainClass::lsTrain<vftable>, 0x593238;
 	__asm        jmp    near ptr 0x0052DDCF;
 
 	__asm        jmp    near ptr 0x0052DDD4;
@@ -619,7 +619,7 @@ class TrainClass* TrainClass::GetTrainPointer(long index) {
 // LINE 338:
 _T17:
 	__asm        mov    eax, index;
-	__asm        mov    eax, [eax*4+0x62B994];
+	__asm        mov    eax, trains[0][eax*4];
 	__asm        jmp    _T26;
 // LINE 339:
 _T26:
@@ -730,7 +730,7 @@ _T18:
 	__asm        jge    _T36;
 // LINE 594:
 	__asm        mov    eax, currentTrainIndex;
-	__asm        mov    ecx, [eax*4+0x62B994];
+	__asm        mov    ecx, trains[0][eax*4];
 	__asm        call   TrainClass::Reset;
 // LINE 595:
 	__asm        jmp    _T15;
@@ -753,7 +753,7 @@ _T18:
 	__asm        jge    _T36;
 // LINE 643:
 	__asm        mov    eax, currentTrainIndex;
-	__asm        mov    ecx, [eax*4+0x62B994];
+	__asm        mov    ecx, trains[0][eax*4];
 	__asm        call   TrainClass::Itterate;
 // LINE 644:
 	__asm        jmp    _T15;
@@ -778,7 +778,7 @@ _T18:
 	__asm        jmp    near ptr 0x0052E305;
 
 	__asm        mov    eax, currentTrainIndex;
-	__asm        mov    eax, [eax*4+0x62B994];
+	__asm        mov    eax, trains[0][eax*4];
 	__asm        movsx  eax, byte ptr [eax+0xA];
 	__asm        test   eax, eax;
 	__asm        jne    _T84;
@@ -786,13 +786,13 @@ _T18:
 	__asm        jmp    near ptr 0x0052E320;
 
 	__asm        mov    eax, currentTrainIndex;
-	__asm        mov    eax, [eax*4+0x62B994];
+	__asm        mov    eax, trains[0][eax*4];
 	__asm        movsx  eax, byte ptr [eax+0xB];
 	__asm        test   eax, eax;
 	__asm        jne    _T84;
 // LINE 676:
 	__asm        mov    eax, currentTrainIndex;
-	__asm        mov    eax, [eax*4+0x62B994];
+	__asm        mov    eax, trains[0][eax*4];
 	__asm        mov    [ebp-8], eax;
 // LINE 677:
 	__asm        mov    eax, [ebp-8];
@@ -1448,7 +1448,7 @@ void TrainClass::TrainCrashMovement() {
 	__asm        mov    ecx, [ecx+0x35];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-0x88], eax;
 	__asm        cmp    dword ptr [ebp-0x88], 0;
 	__asm        jne    _T86;
@@ -2324,7 +2324,7 @@ void TrainClass::AdjustSpeed() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x2D], eax;
 // LINE 1426:
-	__asm        cmp    dword ptr ds:[0x5B7838], 0;
+	__asm        cmp    speedAdjustor, 0;
 	__asm        jne    _T2f;
 // LINE 1428:
 	__asm        mov    eax, this;
@@ -2455,7 +2455,7 @@ _T73:
 	__asm        mov    eax, [eax];
 	__asm        add    eax, 0x20000000;
 	__asm        sar    eax, 0x16;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, 0x20000000;
 	__asm        mov    edx, collisionPoint;
 	__asm        sub    ecx, [edx+8];
@@ -2469,7 +2469,7 @@ _T73:
 	__asm        mov    ecx, [ecx];
 	__asm        add    ecx, 0x20000000;
 	__asm        sar    ecx, 0x16;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        mov    edx, 0x20000000;
 	__asm        mov    ebx, collisionPoint;
 	__asm        sub    edx, [ebx+8];
@@ -2488,7 +2488,7 @@ _Td6:
 	__asm        mov    ecx, [ecx+0x35];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-0x20], eax;
 	__asm        cmp    dword ptr [ebp-0x20], 0;
 	__asm        jne    _T120;
@@ -2664,7 +2664,7 @@ _T2ae:
 	__asm        mov    ecx, [ecx+0x55];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        jne    _T2f8;
@@ -3506,7 +3506,7 @@ _T5e4:
 	__asm        ja     _T608;
 
 	__asm        mov    eax, [ebp-0x24];
-	__asm        jmp    dword ptr [eax*4+0x53007D];
+	__asm        jmp    SwitchPointers5439613[0][eax*4];
 // Switch pointers
 // LINE 2021:
 _T608:
@@ -3758,8 +3758,8 @@ _T859:
 
 	__asm        mov    eax, [ebp-0x10];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0x530381];
-	__asm        jmp    dword ptr [ecx*4+0x530311];
+	__asm        mov    cl, SwitchTable5440385[0][eax];
+	__asm        jmp    SwitchPointers5440273[0][ecx*4];
 // Switch pointers
 // Switch table
 
@@ -3787,7 +3787,7 @@ _T978:
 _T983:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x55];
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x59];
 	__asm        xor    edx, edx;
@@ -3797,7 +3797,7 @@ _T983:
 	__asm        shl    eax, 0xE;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x55];
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        mov    edx, this;
 	__asm        mov    edx, [edx+0x59];
 	__asm        xor    ebx, ebx;
@@ -4432,7 +4432,7 @@ _T1017:
 	__asm        ja     _T103b;
 
 	__asm        mov    eax, [ebp-0x40];
-	__asm        jmp    dword ptr [eax*4+0x530AB0];
+	__asm        jmp    SwitchPointers5442224[0][eax*4];
 // Switch pointers
 // LINE 2479:
 _T103b:
@@ -4684,8 +4684,8 @@ _T128c:
 
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0x530DB4];
-	__asm        jmp    dword ptr [ecx*4+0x530D44];
+	__asm        mov    cl, SwitchTable5442996[0][eax];
+	__asm        jmp    SwitchPointers5442884[0][ecx*4];
 // Switch pointers
 // Switch table
 
@@ -4817,7 +4817,7 @@ _T127:
 	__asm        mov    eax, [eax+0x18];
 	__asm        add    eax, 0x20000000;
 	__asm        sar    eax, 0x16;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, 0x20000000;
 	__asm        mov    edx, this;
 	__asm        mov    edx, [edx+0x1CD];
@@ -4833,7 +4833,7 @@ _T127:
 	__asm        mov    ecx, [ecx+0x18];
 	__asm        add    ecx, 0x20000000;
 	__asm        sar    ecx, 0x16;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        mov    edx, 0x20000000;
 	__asm        mov    ebx, this;
 	__asm        mov    ebx, [ebx+0x1CD];
@@ -4955,7 +4955,7 @@ _T9e:
 _Ta9:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4D];
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x51];
 	__asm        xor    edx, edx;
@@ -4965,7 +4965,7 @@ _Ta9:
 	__asm        shl    eax, 0xE;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x4D];
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        mov    edx, this;
 	__asm        mov    edx, [edx+0x51];
 	__asm        xor    ebx, ebx;
@@ -5049,7 +5049,7 @@ void TrainClass::UnlinkFromCell(const struct Point2d& point, struct _DYOBJ_INST*
 	__asm        mov    ecx, [ecx];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        jne    _T55;
@@ -5146,7 +5146,7 @@ void TrainClass::LinkToCell(const struct Point2d& point, struct _DYOBJ_INST* dyo
 	__asm        mov    ecx, [ecx];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    _T55;
@@ -5267,7 +5267,7 @@ _Tb3:
 _Tbe:
 	__asm        mov    eax, point;
 	__asm        mov    eax, [eax];
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, point;
 	__asm        mov    ecx, [ecx+4];
 	__asm        xor    edx, edx;
@@ -5277,7 +5277,7 @@ _Tbe:
 	__asm        shl    eax, 0xE;
 	__asm        mov    ecx, point;
 	__asm        mov    ecx, [ecx];
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        mov    edx, point;
 	__asm        mov    edx, [edx+4];
 	__asm        xor    ebx, ebx;
@@ -5308,7 +5308,7 @@ _T13a:
 _T145:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x75];
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x79];
 	__asm        xor    edx, edx;
@@ -5318,7 +5318,7 @@ _T145:
 	__asm        shl    eax, 0xE;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x75];
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        mov    edx, this;
 	__asm        mov    edx, [edx+0x79];
 	__asm        xor    ebx, ebx;
@@ -5349,7 +5349,7 @@ _T1c9:
 _T1d4:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x7D];
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x81];
 	__asm        xor    edx, edx;
@@ -5359,7 +5359,7 @@ _T1d4:
 	__asm        shl    eax, 0xE;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x7D];
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        mov    edx, this;
 	__asm        mov    edx, [edx+0x81];
 	__asm        xor    ebx, ebx;
@@ -5390,7 +5390,7 @@ _T264:
 _T26f:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x85];
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x89];
 	__asm        xor    edx, edx;
@@ -5400,7 +5400,7 @@ _T26f:
 	__asm        shl    eax, 0xE;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x85];
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        mov    edx, this;
 	__asm        mov    edx, [edx+0x89];
 	__asm        xor    ebx, ebx;
@@ -5431,7 +5431,7 @@ _T305:
 _T310:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x8D];
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x91];
 	__asm        xor    edx, edx;
@@ -5441,7 +5441,7 @@ _T310:
 	__asm        shl    eax, 0xE;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x8D];
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        mov    edx, this;
 	__asm        mov    edx, [edx+0x91];
 	__asm        xor    ebx, ebx;
@@ -6353,7 +6353,7 @@ _T181:
 	__asm        ja     _T15b;
 
 	__asm        mov    eax, [ebp-8];
-	__asm        jmp    dword ptr [eax*4+0x53211D];
+	__asm        jmp    SwitchPointers5447965[0][eax*4];
 // Switch pointers
 // LINE 3229:
 _T1b5:
@@ -6384,7 +6384,7 @@ _T46:
 _T51:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x35];
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x39];
 	__asm        xor    edx, edx;
@@ -6394,7 +6394,7 @@ _T51:
 	__asm        shl    eax, 0xE;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x35];
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        mov    edx, this;
 	__asm        mov    edx, [edx+0x39];
 	__asm        xor    ebx, ebx;
@@ -7019,7 +7019,7 @@ void TrainClass::AdjustCurrentPosition() {
 	__asm        mov    ecx, [ecx+0x35];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    _T56;
@@ -7159,7 +7159,7 @@ void TrainClass::AdjustNextPosition() {
 	__asm        mov    ecx, [ecx+0x55];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-0x28], eax;
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        jne    _T56;
@@ -7199,7 +7199,7 @@ _Ta0:
 _Tab:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x35];
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x39];
 	__asm        xor    edx, edx;
@@ -7209,7 +7209,7 @@ _Tab:
 	__asm        shl    eax, 0xE;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x35];
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        mov    edx, this;
 	__asm        mov    edx, [edx+0x39];
 	__asm        xor    ebx, ebx;
@@ -7240,7 +7240,7 @@ _T129:
 _T134:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x55];
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x59];
 	__asm        xor    edx, edx;
@@ -7250,7 +7250,7 @@ _T134:
 	__asm        shl    eax, 0xE;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x55];
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        mov    edx, this;
 	__asm        mov    edx, [edx+0x59];
 	__asm        xor    ebx, ebx;
@@ -7607,7 +7607,7 @@ _T50f:
 	__asm        ja     _T56a;
 
 	__asm        mov    eax, [ebp-0x44];
-	__asm        jmp    dword ptr [eax*4+0x532FE6];
+	__asm        jmp    SwitchPointers5451750[0][eax*4];
 // Switch pointers
 // LINE 3624:
 _T56a:
@@ -8195,7 +8195,7 @@ _T203:
 	__asm        ja     _T22b;
 
 	__asm        mov    eax, [ebp-0x5C];
-	__asm        jmp    dword ptr [eax*4+0x533639];
+	__asm        jmp    SwitchPointers5453369[0][eax*4];
 // Switch pointers
 // LINE 3902:
 _T22b:
@@ -8235,7 +8235,7 @@ _T28a:
 	__asm        jmp    _T2cd;
 _T295:
 	__asm        mov    eax, x;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, y;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
@@ -8243,7 +8243,7 @@ _T295:
 	__asm        movsx  eax, dx;
 	__asm        shl    eax, 0xE;
 	__asm        mov    ecx, x;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        mov    edx, y;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [ecx+edx];
@@ -8324,7 +8324,7 @@ _T38d:
 	__asm        mov    ecx, beampoint.x;
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-0x48], eax;
 	__asm        cmp    dword ptr [ebp-0x48], 0;
 	__asm        jne    _T3dd;
@@ -8453,7 +8453,7 @@ _T502:
 _T50d:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x35];
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x39];
 	__asm        xor    edx, edx;
@@ -8463,7 +8463,7 @@ _T50d:
 	__asm        shl    eax, 0xE;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x35];
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        mov    edx, this;
 	__asm        mov    edx, [edx+0x39];
 	__asm        xor    ebx, ebx;
@@ -8620,7 +8620,7 @@ _Ta7:
 	__asm        ja     _Tcf;
 
 	__asm        mov    eax, [ebp-0x4C];
-	__asm        jmp    dword ptr [eax*4+0x533AF6];
+	__asm        jmp    SwitchPointers5454582[0][eax*4];
 // Switch pointers
 // LINE 4066:
 _Tcf:
@@ -8660,7 +8660,7 @@ _T12e:
 	__asm        jmp    _T171;
 _T139:
 	__asm        mov    eax, x;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, y;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
@@ -8668,7 +8668,7 @@ _T139:
 	__asm        movsx  eax, dx;
 	__asm        shl    eax, 0xE;
 	__asm        mov    ecx, x;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        mov    edx, y;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [ecx+edx];
@@ -8749,7 +8749,7 @@ _T231:
 	__asm        mov    ecx, beampoint.x;
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        cmp    dword ptr [ebp-0x3C], 0;
 	__asm        jne    _T281;
@@ -8879,7 +8879,7 @@ _T3a8:
 _T3b3:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x35];
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x39];
 	__asm        xor    edx, edx;
@@ -8889,7 +8889,7 @@ _T3b3:
 	__asm        shl    eax, 0xE;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x35];
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        mov    edx, this;
 	__asm        mov    edx, [edx+0x39];
 	__asm        xor    ebx, ebx;
@@ -9243,7 +9243,7 @@ _T3af:
 _T3ba:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x35];
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x39];
 	__asm        xor    edx, edx;
@@ -9253,7 +9253,7 @@ _T3ba:
 	__asm        shl    eax, 0xE;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x35];
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        mov    edx, this;
 	__asm        mov    edx, [edx+0x39];
 	__asm        xor    ebx, ebx;
@@ -9293,7 +9293,7 @@ _T439:
 _T440:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, instanceID;
-	__asm        mov    [ecx*4+0x62B994], eax;
+	__asm        mov    trains[0][ecx*4], eax;
 // LINE 4575:
 	__asm        mov    eax, this;
 	__asm        mov    byte ptr [eax+4], 1;
@@ -9392,7 +9392,7 @@ _T18:
 	__asm        jge    _T1d1;
 // LINE 4745:
 	__asm        mov    eax, currentTrainIndex;
-	__asm        mov    eax, [eax*4+0x62B994];
+	__asm        mov    eax, trains[0][eax*4];
 	__asm        mov    t, eax;
 // LINE 4750:
 	__asm        jmp    near ptr 0x005343B9;
@@ -9625,7 +9625,7 @@ _T47:
 	__asm        jge    _T353;
 // LINE 4865:
 	__asm        mov    eax, i;
-	__asm        mov    eax, [eax*4+0x62B994];
+	__asm        mov    eax, trains[0][eax*4];
 	__asm        mov    t, eax;
 // LINE 4866:
 	__asm        mov    eax, 0x62B7B8;
@@ -9913,7 +9913,7 @@ _T18:
 // LINE 4933:
 	__asm        push   0x1D9;
 	__asm        mov    eax, i;
-	__asm        mov    eax, [eax*4+0x62B994];
+	__asm        mov    eax, trains[0][eax*4];
 	__asm        push   eax;
 	__asm        push   0x5452414E;
 	__asm        mov    eax, miffWriter;

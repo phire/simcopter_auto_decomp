@@ -46,7 +46,7 @@ short VRInitGridObj(long ViewSize) {
 // LINE 132:
 	__asm        mov    plotter, 0;
 // LINE 134:
-	__asm        cmp    dword ptr ds:[0x59D2D8], 0;
+	__asm        cmp    b_FirstTime, 0;
 	__asm        je     _T38;
 // LINE 136:
 	__asm        call   InitGridPool;
@@ -295,7 +295,7 @@ _T31d:
 	__asm        lea    ecx, [ecx+ecx*8];
 	__asm        add    ecx, edx;
 	__asm        mov    edx, x;
-	__asm        mov    [ecx+edx*4+0x662880], eax;
+	__asm        mov    GridCellOffsets[0][ecx+edx*4], eax;
 // LINE 231:
 	__asm        mov    eax, GridFaceSize;
 	__asm        add    eax, eax;
@@ -573,7 +573,7 @@ _T63f:
 	__asm        jmp    _T494;
 // LINE 350:
 _T644:
-	__asm        cmp    dword ptr ds:[0x59D2D8], 0;
+	__asm        cmp    b_FirstTime, 0;
 	__asm        je     _T68a;
 // LINE 352:
 	__asm        mov    eax, 0x666300;
@@ -588,7 +588,7 @@ _T644:
 	__asm        mov    eax, GridPos.loc.y;
 	__asm        mov    GridPos.loc.x, eax;
 // LINE 354:
-	__asm        mov    dword ptr ds:[0x59D2D8], 0;
+	__asm        mov    b_FirstTime, 0;
 // LINE 357:
 _T68a:
 	__asm        xor    ax, ax;

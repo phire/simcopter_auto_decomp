@@ -553,7 +553,7 @@ _T2c0:
 	__asm        je     _T2de;
 // LINE 215:
 	__asm        movsx  eax, chIndex;
-	__asm        mov    al, [eax+0x598360];
+	__asm        mov    al, chExtraArray[eax];
 	__asm        jmp    _T302;
 // LINE 216:
 	__asm        jmp    _T2e6;

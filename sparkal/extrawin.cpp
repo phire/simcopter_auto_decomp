@@ -6832,7 +6832,7 @@ _T652:
 	__asm        lea    ecx, sGroundPreviewFilePath.c_str_ptr;
 	__asm        call   basic_string<char>::c_str;
 	__asm        push   eax;
-	__asm        lea    ecx, tempGroundImage.<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempGroundImage<CBackBuffer+0x00>;
 	__asm        call   CBackBuffer::CBackBuffer;
 // LINE 842:
 	__asm        push   0x42;
@@ -6871,7 +6871,7 @@ _T652:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        push   eax;
-	__asm        lea    ecx, tempGroundImage.<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempGroundImage<CBackBuffer+0x00>;
 	__asm        call   CBackBuffer::Compose;
 // LINE 846:
 	__asm        jmp    near ptr 0x00454EE6;
@@ -6900,7 +6900,7 @@ _T652:
 	__asm        mov    ecx, [eax+0xA0];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 847:
-	__asm        lea    ecx, tempGroundImage.<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempGroundImage<CBackBuffer+0x00>;
 	__asm        call   CBackBuffer::~CBackBuffer;
 	__asm        lea    ecx, sBuildingPreviewFilePath.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
@@ -7935,7 +7935,7 @@ _T1a8:
 	__asm        ja     _T1e7;
 
 	__asm        mov    eax, [ebp-8];
-	__asm        jmp    dword ptr [eax*4+0x455BC5];
+	__asm        jmp    SwitchPointers4545477[0][eax*4];
 // Switch pointers
 // LINE 935:
 _T1e7:
@@ -21173,7 +21173,7 @@ _Ta3:
 	__asm        ja     _Tce;
 
 	__asm        mov    eax, [ebp-8];
-	__asm        jmp    dword ptr [eax*4+0x460902];
+	__asm        jmp    SwitchPointers4589826[0][eax*4];
 // Switch pointers
 // LINE 2699:
 _Tce:

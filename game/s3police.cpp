@@ -577,7 +577,7 @@ _T145:
 // LINE 175:
 	__asm        mov    eax, youveWonABrandNewCar;
 	__asm        mov    ecx, curPoliceCars;
-	__asm        mov    [ecx*4+0x62B9E8], eax;
+	__asm        mov    policeCars[0][ecx*4], eax;
 	__asm        inc    curPoliceCars;
 // LINE 177:
 	__asm        mov    eax, youveWonABrandNewCar;
@@ -739,7 +739,7 @@ _Td4:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x322];
 	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    eax, [eax*4+0x608F80];
+	__asm        mov    eax, cars[0][eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x7C];
 	__asm        mov    mp.maploc.x, ecx;
@@ -747,7 +747,7 @@ _Td4:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x322];
 	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    eax, [eax*4+0x608F80];
+	__asm        mov    eax, cars[0][eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x7D];
 	__asm        mov    mp.maploc.y, ecx;
@@ -835,7 +835,7 @@ _T22b:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x322];
 	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    eax, [eax*4+0x608F80];
+	__asm        mov    eax, cars[0][eax*4];
 	__asm        test   byte ptr [eax+8], 0x10;
 	__asm        je     _T2a0;
 // LINE 326:
@@ -859,7 +859,7 @@ _T2a0:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x322];
 	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    eax, [eax*4+0x608F80];
+	__asm        mov    eax, cars[0][eax*4];
 	__asm        test   byte ptr [eax+8], 0x20;
 	__asm        je     _T37e;
 
@@ -996,7 +996,7 @@ _T41d:
 	__asm        shl    eax, 0xA;
 	__asm        mov    ecx, [ebp-0x3C];
 	__asm        and    ecx, 0xFF;
-	__asm        mov    eax, [eax+ecx*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][eax+ecx*4];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        cmp    dword ptr [ebp-0x38], 0;
 	__asm        jne    _T491;
@@ -1309,14 +1309,14 @@ _T7ac:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x322];
 	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    eax, [eax*4+0x608F80];
+	__asm        mov    eax, cars[0][eax*4];
 	__asm        test   byte ptr [eax+9], 0x10;
 	__asm        je     _T842;
 // LINE 498:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x322];
 	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    eax, [eax*4+0x608F80];
+	__asm        mov    eax, cars[0][eax*4];
 	__asm        or     dword ptr [eax+8], 0x2000;
 // LINE 501:
 _T842:
@@ -1414,7 +1414,7 @@ _T940:
 	__asm        ja     _T915;
 
 	__asm        mov    eax, [ebp-0x48];
-	__asm        jmp    dword ptr [eax*4+0x537A0A];
+	__asm        jmp    SwitchPointers5470730[0][eax*4];
 // Switch pointers
 // LINE 535:
 _T96f:
@@ -1559,7 +1559,7 @@ _T14e:
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0xE2];
 	__asm        shl    ecx, 4;
-	__asm        mov    eax, [ecx+eax*4+0x5932D0];
+	__asm        mov    eax, TILUT[0][0][ecx+eax*4];
 	__asm        jmp    _T3fc;
 // LINE 579:
 	__asm        jmp    _T28d;
@@ -1595,7 +1595,7 @@ _T1c4:
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0xE2];
 	__asm        shl    ecx, 4;
-	__asm        mov    eax, [ecx+eax*4+0x5932D0];
+	__asm        mov    eax, TILUT[0][0][ecx+eax*4];
 	__asm        jmp    _T3fc;
 // LINE 584:
 	__asm        jmp    _T28d;
@@ -1734,7 +1734,7 @@ _T3a6:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xE2];
 	__asm        shl    eax, 4;
-	__asm        mov    eax, [eax+edx*4+0x5932D0];
+	__asm        mov    eax, TILUT[0][0][eax+edx*4];
 	__asm        jmp    _T3fc;
 // LINE 630:
 	__asm        jmp    _T3eb;
@@ -1806,7 +1806,7 @@ _T7f:
 _T8b:
 	__asm        xor    eax, eax;
 	__asm        mov    al, loc.x;
-	__asm        mov    eax, [eax*4+0x639850];
+	__asm        mov    eax, BuildMap[eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, loc.y;
 	__asm        movzx  ax, byte ptr [eax+ecx];
@@ -1922,7 +1922,7 @@ _T16:
 	__asm        shl    eax, 0xA;
 	__asm        mov    ecx, [ebp-0x2C];
 	__asm        and    ecx, 0xFF;
-	__asm        mov    eax, [eax+ecx*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][eax+ecx*4];
 	__asm        mov    [ebp-0x28], eax;
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        jne    _T6f;
@@ -1977,7 +1977,7 @@ _Tcd:
 
 	__asm        mov    eax, dyptr;
 	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    ecx, [eax*4+0x608F80];
+	__asm        mov    ecx, cars[0][eax*4];
 	__asm        call   AutomobileClass::AmIABadGuy;
 	__asm        test   eax, eax;
 	__asm        je     _T10a;
@@ -2183,7 +2183,7 @@ _Td8:
 	__asm        mov    eax, sd;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x2E6];
-	__asm        mov    eax, [ecx*4+0x5C3828];
+	__asm        mov    eax, gRoadGraph.RGArray[0][ecx*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, yindex;
 	__asm        mov    edx, ecx;
@@ -2209,7 +2209,7 @@ _Td8:
 	__asm        mov    eax, sd;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x312];
-	__asm        mov    eax, [ecx*4+0x5C3828];
+	__asm        mov    eax, gRoadGraph.RGArray[0][ecx*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, yindex;
 	__asm        mov    edx, ecx;
@@ -2235,7 +2235,7 @@ _Td8:
 	__asm        mov    eax, sd;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x33E];
-	__asm        mov    eax, [ecx*4+0x5C3828];
+	__asm        mov    eax, gRoadGraph.RGArray[0][ecx*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, yindex;
 	__asm        mov    edx, ecx;

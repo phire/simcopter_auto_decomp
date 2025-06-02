@@ -575,7 +575,7 @@ unsigned long PFile::Checksum(char * name) {
 // LINE 182:
 	__asm        mov    tempPFile.Handle, 0xFFFFFFFF;
 	__asm        mov    tempPFile.ShouldClose, 1;
-	__asm        mov    tempPFile.<vftable>, 0x590468;
+	__asm        mov    tempPFile<vftable>, 0x590468;
 	__asm        mov    _fmode, 0x8000;
 	__asm        cmp    name, 0;
 	__asm        je     _T5e;
@@ -596,12 +596,12 @@ _T65:
 	__asm        push   0x100;
 	__asm        push   0;
 	__asm        push   0;
-	__asm        lea    ecx, tempPFile.<vftable>;
+	__asm        lea    ecx, tempPFile<vftable>;
 	__asm        call   PFile::Open;
 	__asm        test   eax, eax;
 	__asm        je     _T1da;
 // LINE 184:
-	__asm        lea    ecx, tempPFile.<vftable>;
+	__asm        lea    ecx, tempPFile<vftable>;
 	__asm        call   PFile::Length;
 	__asm        mov    lFileLength, eax;
 // LINE 186:
@@ -708,13 +708,13 @@ _T196:
 	__asm        jmp    _T190;
 // LINE 211:
 _T1cf:
-	__asm        lea    ecx, tempPFile.<vftable>;
+	__asm        lea    ecx, tempPFile<vftable>;
 	__asm        call   PFile::Close;
 // LINE 213:
 _T1da:
 	__asm        mov    eax, lCurrentValue;
 	__asm        mov    [ebp-0x138], eax;
-	__asm        mov    tempPFile.<vftable>, 0x590468;
+	__asm        mov    tempPFile<vftable>, 0x590468;
 	__asm        cmp    tempPFile.Handle, 0xFFFFFFFF;
 	__asm        jle    _T1fc;
 

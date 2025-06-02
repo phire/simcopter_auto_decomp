@@ -195,7 +195,7 @@ struct tagCitySettings* GetCurrentCitySettings() {
 _T1d:
 	__asm        mov    eax, gCurrentCareerCityInfo.lCurrentCityIndex;
 	__asm        shl    eax, 3;
-	__asm        lea    eax, [eax+eax*8+0x5C2B1C];
+	__asm        lea    eax, gAllCareerCities[0].citySettings.lDifficulty[eax+eax*8];
 	__asm        jmp    _T31;
 // LINE 150:
 _T31:
@@ -470,7 +470,7 @@ _T27:
 	__asm        push   eax;
 	__asm        mov    eax, lNewCareerCityIndex;
 	__asm        shl    eax, 3;
-	__asm        mov    eax, [eax+eax*8+0x5C2B5C];
+	__asm        mov    eax, gAllCareerCities[0].chCityFileNameBase[eax+eax*8];
 	__asm        push   eax;
 	__asm        push   1;
 	__asm        call   MakeCityFileName;
@@ -513,7 +513,7 @@ _T27:
 // LINE 323:
 	__asm        mov    eax, lNewCareerCityIndex;
 	__asm        shl    eax, 3;
-	__asm        mov    eax, [eax+eax*8+0x5C2B3C];
+	__asm        mov    eax, gAllCareerCities[0].citySettings.lDaytime[eax+eax*8];
 	__asm        push   eax;
 	__asm        call   S3SetDayNight;
 	__asm        add    esp, 4;
@@ -722,7 +722,7 @@ void MoveToNextCareerCity(long lNewCareerCityIndex) {
 	__asm        push   eax;
 	__asm        mov    eax, lNewCareerCityIndex;
 	__asm        shl    eax, 3;
-	__asm        mov    eax, [eax+eax*8+0x5C2B5C];
+	__asm        mov    eax, gAllCareerCities[0].chCityFileNameBase[eax+eax*8];
 	__asm        push   eax;
 	__asm        push   1;
 	__asm        call   MakeCityFileName;
@@ -738,17 +738,17 @@ void MoveToNextCareerCity(long lNewCareerCityIndex) {
 // LINE 401:
 	__asm        mov    eax, lOriginalIndex;
 	__asm        shl    eax, 3;
-	__asm        mov    eax, [eax+eax*8+0x5C2B40];
+	__asm        mov    eax, gAllCareerCities[0].lNextCities[eax+eax*8];
 	__asm        mov    gCurrentCareerCityInfo.lCurrentCities[0], eax;
 // LINE 402:
 	__asm        mov    eax, lOriginalIndex;
 	__asm        shl    eax, 3;
-	__asm        mov    eax, [eax+eax*8+0x5C2B44];
+	__asm        mov    eax, gAllCareerCities[0].lNextCities[1][eax+eax*8];
 	__asm        mov    gCurrentCareerCityInfo.lCurrentCities[1], eax;
 // LINE 403:
 	__asm        mov    eax, lOriginalIndex;
 	__asm        shl    eax, 3;
-	__asm        mov    eax, [eax+eax*8+0x5C2B48];
+	__asm        mov    eax, gAllCareerCities[0].lNextCities[2][eax+eax*8];
 	__asm        mov    gCurrentCareerCityInfo.lCurrentCities[2], eax;
 // LINE 404:
 	__asm        mov    eax, lNewCareerCityIndex;
@@ -756,7 +756,7 @@ void MoveToNextCareerCity(long lNewCareerCityIndex) {
 // LINE 405:
 	__asm        mov    eax, lNewCareerCityIndex;
 	__asm        shl    eax, 3;
-	__asm        mov    eax, [eax+eax*8+0x5C2B3C];
+	__asm        mov    eax, gAllCareerCities[0].citySettings.lDaytime[eax+eax*8];
 	__asm        push   eax;
 	__asm        call   S3SetDayNight;
 	__asm        add    esp, 4;
@@ -1446,39 +1446,39 @@ _Tb58:
 	__asm        idiv   ecx;
 	__asm        mov    ecx, i;
 	__asm        shl    ecx, 3;
-	__asm        mov    [ecx+ecx*8+0x5C2B1C], eax;
+	__asm        mov    gAllCareerCities[0].citySettings.lDifficulty[ecx+ecx*8], eax;
 // LINE 746:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 3;
-	__asm        mov    dword ptr [eax+eax*8+0x5C2B20], 0x1A;
+	__asm        mov    gAllCareerCities[0].citySettings.lMissionFrequencyFire[eax+eax*8], 0x1A;
 // LINE 747:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 3;
-	__asm        mov    dword ptr [eax+eax*8+0x5C2B24], 0x14;
+	__asm        mov    gAllCareerCities[0].citySettings.lMissionFrequencyCrime[eax+eax*8], 0x14;
 // LINE 748:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 3;
-	__asm        mov    dword ptr [eax+eax*8+0x5C2B28], 8;
+	__asm        mov    gAllCareerCities[0].citySettings.lMissionFrequencyRescue[eax+eax*8], 8;
 // LINE 749:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 3;
-	__asm        mov    dword ptr [eax+eax*8+0x5C2B2C], 0xC;
+	__asm        mov    gAllCareerCities[0].citySettings.lMissionFrequencyRiot[eax+eax*8], 0xC;
 // LINE 750:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 3;
-	__asm        mov    dword ptr [eax+eax*8+0x5C2B30], 0x14;
+	__asm        mov    gAllCareerCities[0].citySettings.lMissionFrequencyTraffic[eax+eax*8], 0x14;
 // LINE 751:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 3;
-	__asm        mov    dword ptr [eax+eax*8+0x5C2B34], 0xE;
+	__asm        mov    gAllCareerCities[0].citySettings.lMissionFrequencyMedEvac[eax+eax*8], 0xE;
 // LINE 752:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 3;
-	__asm        mov    dword ptr [eax+eax*8+0x5C2B38], 0;
+	__asm        mov    gAllCareerCities[0].citySettings.lMissionFrequencyTransport[eax+eax*8], 0;
 // LINE 753:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 3;
-	__asm        mov    dword ptr [eax+eax*8+0x5C2B3C], 1;
+	__asm        mov    gAllCareerCities[0].citySettings.lDaytime[eax+eax*8], 1;
 // LINE 754:
 	__asm        jmp    _Tb55;
 // LINE 755:

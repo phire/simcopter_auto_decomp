@@ -1334,7 +1334,7 @@ _T18:
 	__asm        jge    _Ta7;
 // LINE 520:
 	__asm        movsx  eax, i;
-	__asm        mov    eax, [eax*4+0x59AFB0];
+	__asm        mov    eax, GraphStart[eax*4];
 	__asm        movsx  ecx, i;
 	__asm        mov    edx, GraphMax;
 	__asm        mov    [edx+ecx*4], eax;
@@ -1349,7 +1349,7 @@ _T4c:
 	__asm        jge    _Ta2;
 // LINE 522:
 	__asm        movsx  eax, i;
-	__asm        mov    eax, [eax*4+0x639FE0];
+	__asm        mov    eax, GraphData[eax*4];
 	__asm        movsx  ecx, j;
 	__asm        movsx  edx, i;
 	__asm        mov    ebx, GraphMax;
@@ -1358,7 +1358,7 @@ _T4c:
 	__asm        jbe    _T9d;
 // LINE 523:
 	__asm        movsx  eax, i;
-	__asm        mov    eax, [eax*4+0x639FE0];
+	__asm        mov    eax, GraphData[eax*4];
 	__asm        movsx  ecx, j;
 	__asm        mov    eax, [eax+ecx*4];
 	__asm        movsx  ecx, i;
@@ -1891,7 +1891,7 @@ _T493:
 	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, i;
-	__asm        mov    [ecx*2+0x63A6D0], ax;
+	__asm        mov    BondRate[ecx*2], ax;
 	__asm        inc    ix;
 // LINE 706:
 	__asm        jmp    _T48f;
@@ -1931,7 +1931,7 @@ _T4d1:
 // LINE 713:
 	__asm        movsx  eax, i;
 	__asm        shl    eax, 5;
-	__asm        mov    byte ptr [eax+0x639250], 5;
+	__asm        mov    Neighbor[0][eax], 5;
 // LINE 715:
 	__asm        jmp    _T58e;
 // LINE 716:
@@ -1958,7 +1958,7 @@ _T541:
 	__asm        add    esp, 4;
 	__asm        movsx  ecx, i;
 	__asm        shl    ecx, 5;
-	__asm        mov    [ecx+0x639250], al;
+	__asm        mov    Neighbor[0][ecx], al;
 // LINE 720:
 _T58e:
 	__asm        movsx  eax, ix;
@@ -2001,7 +2001,7 @@ _T5fc:
 	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, i;
-	__asm        mov    [ecx*2+0x639A90], ax;
+	__asm        mov    Valve[ecx*2], ax;
 	__asm        inc    ix;
 	__asm        jmp    _T5f8;
 // LINE 728:
@@ -2019,7 +2019,7 @@ _T63a:
 	__asm        mov    ecx, MiscInfo;
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, i;
-	__asm        mov    [ecx*2+0x63A580], ax;
+	__asm        mov    Invent[ecx*2], ax;
 	__asm        inc    ix;
 	__asm        jmp    _T636;
 // LINE 731:
@@ -4261,7 +4261,7 @@ _T45d:
 	__asm        jge    _T48c;
 // LINE 1354:
 	__asm        movsx  eax, i;
-	__asm        movsx  eax, word ptr [eax*2+0x63A6D0];
+	__asm        movsx  eax, BondRate[eax*2];
 	__asm        movsx  ecx, ix;
 	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
@@ -4323,7 +4323,7 @@ _T535:
 	__asm        jge    _T564;
 // LINE 1362:
 	__asm        movsx  eax, i;
-	__asm        movsx  eax, word ptr [eax*2+0x639A90];
+	__asm        movsx  eax, Valve[eax*2];
 	__asm        movsx  ecx, ix;
 	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
@@ -4341,7 +4341,7 @@ _T573:
 	__asm        jge    _T5a2;
 // LINE 1364:
 	__asm        movsx  eax, i;
-	__asm        movsx  eax, word ptr [eax*2+0x63A580];
+	__asm        movsx  eax, Invent[eax*2];
 	__asm        movsx  ecx, ix;
 	__asm        mov    edx, MiscInfo;
 	__asm        mov    [edx+ecx*4], eax;
@@ -5455,7 +5455,7 @@ _T30e:
 	__asm        shl    eax, 4;
 	__asm        add    eax, GraphData[0];
 	__asm        mov    ecx, i;
-	__asm        mov    [ecx*4+0x639FE0], eax;
+	__asm        mov    GraphData[ecx*4], eax;
 // LINE 1817:
 	__asm        mov    j, 0;
 	__asm        jmp    _T345;
@@ -5466,7 +5466,7 @@ _T345:
 	__asm        jge    _T368;
 // LINE 1818:
 	__asm        mov    eax, i;
-	__asm        mov    eax, [eax*4+0x639FE0];
+	__asm        mov    eax, GraphData[eax*4];
 	__asm        mov    ecx, j;
 	__asm        mov    dword ptr [eax+ecx*4], 0;
 	__asm        jmp    _T342;
@@ -5516,7 +5516,7 @@ _T3eb:
 	__asm        shl    eax, 8;
 	__asm        add    eax, AltMap[0];
 	__asm        mov    ecx, cnt;
-	__asm        mov    [ecx*4+0x639510], eax;
+	__asm        mov    AltMap[ecx*4], eax;
 	__asm        jmp    _T3e8;
 // LINE 1830:
 _T413:
@@ -5545,7 +5545,7 @@ _T451:
 	__asm        shl    eax, 7;
 	__asm        add    eax, S_ptr1;
 	__asm        mov    ecx, cnt;
-	__asm        mov    [ecx*4+0x639850], eax;
+	__asm        mov    BuildMap[ecx*4], eax;
 	__asm        jmp    _T44e;
 // LINE 1834:
 _T479:
@@ -5574,7 +5574,7 @@ _T4b7:
 	__asm        shl    eax, 7;
 	__asm        add    eax, S_ptr2;
 	__asm        mov    ecx, cnt;
-	__asm        mov    [ecx*4+0x639DE0], eax;
+	__asm        mov    ZoneMap[ecx*4], eax;
 	__asm        jmp    _T4b4;
 // LINE 1838:
 _T4df:
@@ -5603,7 +5603,7 @@ _T51d:
 	__asm        shl    eax, 7;
 	__asm        add    eax, S_ptr3;
 	__asm        mov    ecx, cnt;
-	__asm        mov    [ecx*4+0x63A270], eax;
+	__asm        mov    TerrainMap[ecx*4], eax;
 	__asm        jmp    _T51a;
 // LINE 1842:
 _T545:
@@ -5632,7 +5632,7 @@ _T583:
 	__asm        shl    eax, 7;
 	__asm        add    eax, S_ptr4;
 	__asm        mov    ecx, cnt;
-	__asm        mov    [ecx*4+0x63A030], eax;
+	__asm        mov    UnderMap[ecx*4], eax;
 	__asm        jmp    _T580;
 // LINE 1846:
 _T5ab:
@@ -5661,7 +5661,7 @@ _T5e9:
 	__asm        shl    eax, 7;
 	__asm        add    eax, S_ptr5;
 	__asm        mov    ecx, cnt;
-	__asm        mov    [ecx*4+0x639AD0], eax;
+	__asm        mov    TextMap[ecx*4], eax;
 	__asm        jmp    _T5e6;
 // LINE 1850:
 _T611:
@@ -5726,37 +5726,37 @@ _T6d1:
 // LINE 1860:
 	__asm        mov    ax, z;
 	__asm        movsx  ecx, x;
-	__asm        mov    ecx, [ecx*4+0x639510];
+	__asm        mov    ecx, AltMap[ecx*4];
 	__asm        movsx  edx, y;
 	__asm        mov    [ecx+edx*2], ax;
 // LINE 1861:
 	__asm        mov    al, reinterpret_cast<uint8_t>(z);
 	__asm        movsx  ecx, x;
-	__asm        mov    ecx, [ecx*4+0x63A270];
+	__asm        mov    ecx, TerrainMap[ecx*4];
 	__asm        movsx  edx, y;
 	__asm        mov    [ecx+edx], al;
 // LINE 1862:
 	__asm        mov    al, reinterpret_cast<uint8_t>(z);
 	__asm        movsx  ecx, x;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        movsx  edx, y;
 	__asm        mov    [ecx+edx], al;
 // LINE 1863:
 	__asm        mov    al, reinterpret_cast<uint8_t>(z);
 	__asm        movsx  ecx, x;
-	__asm        mov    ecx, [ecx*4+0x639DE0];
+	__asm        mov    ecx, ZoneMap[ecx*4];
 	__asm        movsx  edx, y;
 	__asm        mov    [ecx+edx], al;
 // LINE 1864:
 	__asm        mov    al, reinterpret_cast<uint8_t>(z);
 	__asm        movsx  ecx, x;
-	__asm        mov    ecx, [ecx*4+0x63A030];
+	__asm        mov    ecx, UnderMap[ecx*4];
 	__asm        movsx  edx, y;
 	__asm        mov    [ecx+edx], al;
 // LINE 1865:
 	__asm        mov    al, reinterpret_cast<uint8_t>(z);
 	__asm        movsx  ecx, x;
-	__asm        mov    ecx, [ecx*4+0x639AD0];
+	__asm        mov    ecx, TextMap[ecx*4];
 	__asm        movsx  edx, y;
 	__asm        mov    [ecx+edx], al;
 // LINE 1866:
@@ -5908,13 +5908,13 @@ _T94f:
 	__asm        shl    eax, 8;
 	__asm        add    eax, TMap[0];
 	__asm        mov    ecx, i;
-	__asm        mov    [ecx*4+0x639310], eax;
+	__asm        mov    TMap[ecx*4], eax;
 // LINE 1892:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 7;
 	__asm        add    eax, BitsMap[0];
 	__asm        mov    ecx, i;
-	__asm        mov    [ecx*4+0x638F70], eax;
+	__asm        mov    BitsMap[ecx*4], eax;
 // LINE 1893:
 	__asm        jmp    _T94c;
 // LINE 1894:
@@ -5931,25 +5931,25 @@ _T99c:
 	__asm        shl    eax, 6;
 	__asm        add    eax, TrafficMap[0];
 	__asm        mov    ecx, i;
-	__asm        mov    [ecx*4+0x639730], eax;
+	__asm        mov    TrafficMap[ecx*4], eax;
 // LINE 1896:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 6;
 	__asm        add    eax, PolluteMap[0];
 	__asm        mov    ecx, i;
-	__asm        mov    [ecx*4+0x639CD0], eax;
+	__asm        mov    PolluteMap[ecx*4], eax;
 // LINE 1897:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 6;
 	__asm        add    eax, ValueMap[0];
 	__asm        mov    ecx, i;
-	__asm        mov    [ecx*4+0x63A470], eax;
+	__asm        mov    ValueMap[ecx*4], eax;
 // LINE 1898:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 6;
 	__asm        add    eax, CrimeMap[0];
 	__asm        mov    ecx, i;
-	__asm        mov    [ecx*4+0x63A750], eax;
+	__asm        mov    CrimeMap[ecx*4], eax;
 // LINE 1899:
 	__asm        jmp    _T999;
 // LINE 1900:
@@ -5966,25 +5966,25 @@ _Ta12:
 	__asm        shl    eax, 5;
 	__asm        add    eax, PoliceMap[0];
 	__asm        mov    ecx, i;
-	__asm        mov    [ecx*4+0x639170], eax;
+	__asm        mov    PoliceMap[ecx*4], eax;
 // LINE 1902:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 5;
 	__asm        add    eax, FireMap[0];
 	__asm        mov    ecx, i;
-	__asm        mov    [ecx*4+0x63A5B0], eax;
+	__asm        mov    FireMap[ecx*4], eax;
 // LINE 1903:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 5;
 	__asm        add    eax, PopMap[0];
 	__asm        mov    ecx, i;
-	__asm        mov    [ecx*4+0x638EE0], eax;
+	__asm        mov    PopMap[ecx*4], eax;
 // LINE 1904:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 5;
 	__asm        add    eax, ROGMap[0];
 	__asm        mov    ecx, i;
-	__asm        mov    [ecx*4+0x63A640], eax;
+	__asm        mov    ROGMap[ecx*4], eax;
 // LINE 1905:
 	__asm        jmp    _Ta0f;
 // LINE 1906:

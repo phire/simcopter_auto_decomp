@@ -248,10 +248,10 @@ void $E58() {
 // FUNCTION: COPTER_D 0x00441e74
 void $E57() {
 
-	__asm        mov    gSoundChangeNotificationSink.<SoundChangeNotificationSink+0x00>, 0x58F5C8;
+	__asm        mov    gSoundChangeNotificationSink<SoundChangeNotificationSink+0x00>, 0x58F5C8;
 	__asm        jmp    near ptr 0x00441E89;
 
-	__asm        mov    gSoundChangeNotificationSink.<SoundChangeNotificationSink+0x00>, 0x58F5C0;
+	__asm        mov    gSoundChangeNotificationSink<SoundChangeNotificationSink+0x00>, 0x58F5C0;
 	__asm        jmp    near ptr 0x00441E98;
 
 	__asm        jmp    near ptr 0x00441E9D;
@@ -316,11 +316,11 @@ _T55:
 	__asm        jge    _Tc4;
 // LINE 90:
 	__asm        mov    eax, i;
-	__asm        cmp    dword ptr [eax*4+0x604604], 0;
+	__asm        cmp    gSoundManager.sound[0][eax*4], 0;
 	__asm        je     _Tbf;
 
 	__asm        mov    eax, i;
-	__asm        mov    eax, [eax*4+0x5C3628];
+	__asm        mov    eax, lOriginalSoundVolumes[eax*4];
 	__asm        mov    [ebp-0x14], eax;
 // LINE 91:
 	__asm        mov    eax, glMasterVolume;
@@ -339,9 +339,9 @@ _T55:
 	__asm        push   eax;
 	__asm        mov    eax, i;
 	__asm        mov    ecx, i;
-	__asm        mov    ecx, [ecx*4+0x604604];
+	__asm        mov    ecx, gSoundManager.sound[0][ecx*4];
 	__asm        mov    edx, [ecx];
-	__asm        mov    ecx, [eax*4+0x604604];
+	__asm        mov    ecx, gSoundManager.sound[0][eax*4];
 	__asm        call   dword ptr [edx+0x24];
 // LINE 94:
 _Tbf:
@@ -365,7 +365,7 @@ _T18:
 	__asm        jge    _T35;
 // LINE 132:
 	__asm        mov    eax, i;
-	__asm        mov    dword ptr [eax*4+0x5C3628], 0x2710;
+	__asm        mov    lOriginalSoundVolumes[eax*4], 0x2710;
 // LINE 133:
 	__asm        jmp    _T15;
 // LINE 134:
@@ -5163,7 +5163,7 @@ void S3DSSetFile(int32_t nSoundIndex, char * szSoundFile) {
 
 // LINE 472:
 	__asm        mov    eax, nSoundIndex;
-	__asm        mov    eax, [eax*4+0x604604];
+	__asm        mov    eax, gSoundManager.sound[0][eax*4];
 	__asm        mov    theSound, eax;
 // LINE 473:
 	__asm        cmp    theSound, 0;
@@ -5324,7 +5324,7 @@ int32_t S3DSPlay(int32_t nSoundIndex, struct Point3d* loc, int32_t nFlags) {
 
 // LINE 500:
 	__asm        mov    eax, nSoundIndex;
-	__asm        mov    eax, [eax*4+0x604604];
+	__asm        mov    eax, gSoundManager.sound[0][eax*4];
 	__asm        mov    theSound, eax;
 // LINE 503:
 	__asm        mov    eax, loc;
@@ -5371,7 +5371,7 @@ _T65:
 // LINE 514:
 	__asm        mov    eax, lNewVolume;
 	__asm        mov    ecx, nSoundIndex;
-	__asm        mov    [ecx*4+0x5C3628], eax;
+	__asm        mov    lOriginalSoundVolumes[ecx*4], eax;
 	__asm        mov    eax, lNewVolume;
 	__asm        mov    [ebp-0x28], eax;
 // LINE 515:
@@ -5462,7 +5462,7 @@ void S3SoundAdjFreq(int32_t nSoundIndex, long lFrequencyAdjustment) {
 
 // LINE 589:
 	__asm        mov    eax, nSoundIndex;
-	__asm        mov    eax, [eax*4+0x604604];
+	__asm        mov    eax, gSoundManager.sound[0][eax*4];
 	__asm        mov    theSound, eax;
 // LINE 591:
 	__asm        cmp    theSound, 0;
@@ -5505,19 +5505,19 @@ void S3SoundAdjVol(int32_t nSoundIndex, long lNewVolume) {
 // LINE 616:
 	__asm        mov    eax, lNewVolume;
 	__asm        mov    ecx, nSoundIndex;
-	__asm        mov    [ecx*4+0x5C3628], eax;
+	__asm        mov    lOriginalSoundVolumes[ecx*4], eax;
 // LINE 617:
 	__asm        mov    eax, nSoundIndex;
-	__asm        cmp    dword ptr [eax*4+0x604604], 0;
+	__asm        cmp    gSoundManager.sound[0][eax*4], 0;
 	__asm        je     _T76;
 // LINE 618:
 	__asm        mov    eax, lNewVolume;
 	__asm        push   eax;
 	__asm        mov    eax, nSoundIndex;
 	__asm        mov    ecx, nSoundIndex;
-	__asm        mov    ecx, [ecx*4+0x604604];
+	__asm        mov    ecx, gSoundManager.sound[0][ecx*4];
 	__asm        mov    edx, [ecx];
-	__asm        mov    ecx, [eax*4+0x604604];
+	__asm        mov    ecx, gSoundManager.sound[0][eax*4];
 	__asm        call   dword ptr [edx+0x24];
 // LINE 619:
 _T76:
@@ -5528,14 +5528,14 @@ _T76:
 int32_t S3SoundIsPlaying(int32_t nSoundIndex) {
 // LINE 638:
 	__asm        mov    eax, nSoundIndex;
-	__asm        cmp    dword ptr [eax*4+0x604604], 0;
+	__asm        cmp    gSoundManager.sound[0][eax*4], 0;
 	__asm        je     _T35;
 // LINE 639:
 	__asm        mov    eax, nSoundIndex;
 	__asm        mov    ecx, nSoundIndex;
-	__asm        mov    ecx, [ecx*4+0x604604];
+	__asm        mov    ecx, gSoundManager.sound[0][ecx*4];
 	__asm        mov    edx, [ecx];
-	__asm        mov    ecx, [eax*4+0x604604];
+	__asm        mov    ecx, gSoundManager.sound[0][eax*4];
 	__asm        call   dword ptr [edx+0x10];
 	__asm        jmp    _T3c;
 // LINE 640:
@@ -5557,7 +5557,7 @@ void S3SoundSetPosition(int32_t nSoundIndex, struct Point3d* loc) {
 
 // LINE 680:
 	__asm        mov    eax, nSoundIndex;
-	__asm        mov    eax, [eax*4+0x604604];
+	__asm        mov    eax, gSoundManager.sound[0][eax*4];
 	__asm        mov    theSound, eax;
 // LINE 686:
 	__asm        cmp    theSound, 0;
@@ -5665,7 +5665,7 @@ _Tf5:
 // LINE 724:
 	__asm        mov    eax, lVolume;
 	__asm        mov    ecx, nSoundIndex;
-	__asm        mov    [ecx*4+0x5C3628], eax;
+	__asm        mov    lOriginalSoundVolumes[ecx*4], eax;
 	__asm        mov    eax, lVolume;
 	__asm        mov    [ebp-0x2C], eax;
 // LINE 725:
@@ -5706,7 +5706,7 @@ void S3SoundAddToQueue(int32_t nQueue, int32_t nSoundIndex, int32_t nDelayBefore
 
 // LINE 737:
 	__asm        mov    eax, nSoundIndex;
-	__asm        mov    eax, [eax*4+0x604604];
+	__asm        mov    eax, gSoundManager.sound[0][eax*4];
 	__asm        mov    theSound, eax;
 	__asm        mov    dword ptr [ebp-0x14], 0x2710;
 // LINE 738:
@@ -5755,7 +5755,7 @@ _T93:
 	__asm        push   eax;
 	__asm        mov    eax, nQueue;
 	__asm        lea    eax, [eax+eax*2];
-	__asm        lea    ecx, [eax*8+0x604450];
+	__asm        lea    ecx, gSoundQueue[0]<vftable>[eax*8];
 	__asm        call   SoundQueue::operator+=;
 // LINE 744:
 _Ta9:

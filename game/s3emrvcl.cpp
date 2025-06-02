@@ -368,7 +368,7 @@ int32_t EmergencyVehicleClass::S3UpdateCar(int32_t id, int32_t status) {
 	__asm        mov    eax, status;
 	__asm        push   eax;
 	__asm        mov    eax, id;
-	__asm        mov    ecx, [eax*4+0x608F80];
+	__asm        mov    ecx, cars[0][eax*4];
 	__asm        call   EmergencyVehicleClass::UpdateCar;
 	__asm        jmp    near ptr 0x0054154E;
 // LINE 72:
@@ -402,12 +402,12 @@ _T43:
 struct _DYOBJ_INST* EmergencyVehicleClass::S3GetCar(int32_t id) {
 // LINE 90:
 	__asm        mov    eax, id;
-	__asm        mov    eax, [eax*4+0x608F80];
+	__asm        mov    eax, cars[0][eax*4];
 	__asm        test   byte ptr [eax+8], 2;
 	__asm        je     _T2c;
 // LINE 92:
 	__asm        mov    eax, id;
-	__asm        mov    eax, [eax*4+0x608F80];
+	__asm        mov    eax, cars[0][eax*4];
 	__asm        add    eax, 0xC;
 	__asm        jmp    _T33;
 // LINE 95:
@@ -728,7 +728,7 @@ _T2b0:
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0xE2];
 	__asm        shl    ecx, 4;
-	__asm        mov    eax, [ecx+eax*4+0x593480];
+	__asm        mov    eax, TILUT[0][0][ecx+eax*4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xE6], eax;
 // LINE 348:
@@ -740,7 +740,7 @@ _T2b0:
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0xEE];
 	__asm        lea    ecx, [ecx+ecx*2];
-	__asm        mov    eax, [eax+ecx*4+0x62BB34];
+	__asm        mov    eax, DTT[0][0][1][eax+ecx*4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x86], eax;
 // LINE 349:
@@ -1136,7 +1136,7 @@ _T3e3:
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0xE2];
 	__asm        shl    ecx, 4;
-	__asm        mov    eax, [ecx+eax*4+0x593480];
+	__asm        mov    eax, TILUT[0][0][ecx+eax*4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xE6], eax;
 // LINE 481:
@@ -1148,7 +1148,7 @@ _T3e3:
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0xEE];
 	__asm        lea    ecx, [ecx+ecx*2];
-	__asm        mov    eax, [eax+ecx*4+0x62BB34];
+	__asm        mov    eax, DTT[0][0][1][eax+ecx*4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x86], eax;
 // LINE 482:
@@ -1238,7 +1238,7 @@ _T50e:
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        jne    _T594;
@@ -1460,7 +1460,7 @@ int32_t EmergencyVehicleClass::AreThereMoreSeats(struct _DYOBJ_INST* carInst) {
 // LINE 568:
 	__asm        mov    eax, carInst;
 	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    eax, [eax*4+0x608F80];
+	__asm        mov    eax, cars[0][eax*4];
 	__asm        mov    eax, [eax+0x29C];
 	__asm        jmp    near ptr 0x005421FE;
 // LINE 569:
@@ -1471,7 +1471,7 @@ void EmergencyVehicleClass::FillSeat(struct _DYOBJ_INST* carInst) {
 // LINE 574:
 	__asm        mov    eax, carInst;
 	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    eax, [eax*4+0x608F80];
+	__asm        mov    eax, cars[0][eax*4];
 	__asm        cmp    dword ptr [eax+0x29C], 2;
 	__asm        jl     near ptr 0x00542224;
 // LINE 576:
@@ -1525,7 +1525,7 @@ _T8b:
 	__asm        ja     _Tb6;
 
 	__asm        mov    eax, [ebp-8];
-	__asm        jmp    dword ptr [eax*4+0x5422D0];
+	__asm        jmp    SwitchPointers5513936[0][eax*4];
 // Switch pointers
 // LINE 641:
 _Tb6:
@@ -1622,7 +1622,7 @@ _T65:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xE2];
 	__asm        shl    eax, 4;
-	__asm        mov    eax, [eax+edx*4+0x593480];
+	__asm        mov    eax, TILUT[0][0][eax+edx*4];
 	__asm        jmp    _Ta3;
 // LINE 684:
 _Ta3:
@@ -1657,7 +1657,7 @@ void EmergencyVehicleClass::UnLinkIconFromCell(struct _GridCoordinates point) {
 	__asm        shl    eax, 0xA;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, point.y;
-	__asm        mov    eax, [eax+ecx*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][eax+ecx*4];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        jne    _T49;
@@ -1753,7 +1753,7 @@ void EmergencyVehicleClass::LinkIconToCell(struct _GridCoordinates point) {
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, point.x;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    _T49;
@@ -1956,7 +1956,7 @@ _T118:
 	__asm        ja     _Ted;
 
 	__asm        mov    eax, [ebp-0xC];
-	__asm        jmp    dword ptr [eax*4+0x5427D7];
+	__asm        jmp    SwitchPointers5515223[0][eax*4];
 // Switch pointers
 // LINE 1396:
 _T140:
@@ -1995,7 +1995,7 @@ _T1e:
 _T42:
 	__asm        xor    eax, eax;
 	__asm        mov    al, index.x;
-	__asm        mov    eax, [eax*4+0x5C3828];
+	__asm        mov    eax, gRoadGraph.RGArray[0][eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, index.yindex;
 	__asm        mov    edx, ecx;
@@ -2056,7 +2056,7 @@ _Te5:
 // LINE 1436:
 	__asm        xor    eax, eax;
 	__asm        mov    al, index.x;
-	__asm        mov    eax, [eax*4+0x5C3828];
+	__asm        mov    eax, gRoadGraph.RGArray[0][eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, index.yindex;
 	__asm        mov    edx, ecx;

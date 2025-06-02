@@ -246,7 +246,7 @@ void $E8() {
 // FUNCTION: COPTER_D 0x0052b0da
 void $E4() {
 
-	__asm        mov    PlaneClass::lsPlane.<vftable>, 0x593220;
+	__asm        mov    PlaneClass::lsPlane<vftable>, 0x593220;
 	__asm        jmp    near ptr 0x0052B0EF;
 
 	__asm        jmp    near ptr 0x0052B0F4;
@@ -396,7 +396,7 @@ class PlaneClass* PlaneClass::GetPlanePointer(long index) {
 // LINE 269:
 _T17:
 	__asm        mov    eax, index;
-	__asm        mov    eax, [eax*4+0x62B7A8];
+	__asm        mov    eax, planes[0][eax*4];
 	__asm        jmp    _T26;
 // LINE 270:
 _T26:
@@ -507,7 +507,7 @@ _T18:
 	__asm        jge    _T36;
 // LINE 500:
 	__asm        mov    eax, currentPlaneIndex;
-	__asm        mov    ecx, [eax*4+0x62B7A8];
+	__asm        mov    ecx, planes[0][eax*4];
 	__asm        call   PlaneClass::Reset;
 // LINE 501:
 	__asm        jmp    _T15;
@@ -530,7 +530,7 @@ _T18:
 	__asm        jge    _T36;
 // LINE 550:
 	__asm        mov    eax, currentPlaneIndex;
-	__asm        mov    ecx, [eax*4+0x62B7A8];
+	__asm        mov    ecx, planes[0][eax*4];
 	__asm        call   PlaneClass::Itterate;
 // LINE 551:
 	__asm        jmp    _T15;
@@ -555,7 +555,7 @@ _T18:
 	__asm        jmp    near ptr 0x0052B437;
 
 	__asm        mov    eax, currentPlaneIndex;
-	__asm        mov    eax, [eax*4+0x62B7A8];
+	__asm        mov    eax, planes[0][eax*4];
 	__asm        movsx  eax, byte ptr [eax+6];
 	__asm        test   eax, eax;
 	__asm        jne    _Tb4;
@@ -563,13 +563,13 @@ _T18:
 	__asm        jmp    near ptr 0x0052B452;
 
 	__asm        mov    eax, currentPlaneIndex;
-	__asm        mov    eax, [eax*4+0x62B7A8];
+	__asm        mov    eax, planes[0][eax*4];
 	__asm        movsx  eax, byte ptr [eax+7];
 	__asm        test   eax, eax;
 	__asm        jne    _Tb4;
 
 	__asm        mov    eax, currentPlaneIndex;
-	__asm        mov    eax, [eax*4+0x62B7A8];
+	__asm        mov    eax, planes[0][eax*4];
 	__asm        cmp    dword ptr [eax+0x54], 0x12E;
 	__asm        jne    _T74;
 
@@ -584,7 +584,7 @@ _T74:
 // LINE 585:
 _T88:
 	__asm        mov    eax, currentPlaneIndex;
-	__asm        mov    eax, [eax*4+0x62B7A8];
+	__asm        mov    eax, planes[0][eax*4];
 	__asm        mov    [ebp-0xC], eax;
 // LINE 586:
 	__asm        mov    eax, [ebp-0xC];
@@ -1204,7 +1204,7 @@ void PlaneClass::AdjustSpeed() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x18], eax;
 // LINE 956:
-	__asm        cmp    dword ptr ds:[0x5B769C], 0;
+	__asm        cmp    speedAdjustor, 0;
 	__asm        jne    _T2f;
 // LINE 958:
 	__asm        mov    eax, this;
@@ -1348,7 +1348,7 @@ _Tc6:
 	__asm        mov    ecx, [ecx+0x40];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        cmp    dword ptr [ebp-0x3C], 0;
 	__asm        jne    _T15c;
@@ -1682,7 +1682,7 @@ _Ta0:
 	__asm        mov    ecx, [ecx+0x20];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        jne    _T160;
@@ -1706,7 +1706,7 @@ _T165:
 	__asm        mov    ecx, newpos.x;
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-0x28], eax;
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        jne    _T1b4;
@@ -2619,7 +2619,7 @@ void PlaneClass::UnlinkFromCell(const struct Point2d& point) {
 	__asm        mov    ecx, [ecx];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        jne    _T55;
@@ -2717,7 +2717,7 @@ void PlaneClass::LinkToCell(const struct Point2d& point) {
 	__asm        mov    ecx, [ecx];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-8], eax;
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    _T55;
@@ -2778,7 +2778,7 @@ void PlaneClass::AdjustCurrentPosition() {
 	__asm        mov    ecx, [ecx+0x20];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        jne    _T56;
@@ -2864,7 +2864,7 @@ void PlaneClass::AdjustNextPosition() {
 	__asm        mov    ecx, CameraCell.x;
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-0x54], eax;
 	__asm        cmp    dword ptr [ebp-0x54], 0;
 	__asm        jne    _T55;
@@ -3069,7 +3069,7 @@ _Tb2:
 	__asm        mov    ecx, nextcell.x;
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-0x68], eax;
 	__asm        cmp    dword ptr [ebp-0x68], 0;
 	__asm        jne    _T138;
@@ -3348,7 +3348,7 @@ _T23a:
 	__asm        ja     _T262;
 
 	__asm        mov    eax, [ebp-0x50];
-	__asm        jmp    dword ptr [eax*4+0x52D2D9];
+	__asm        jmp    SwitchPointers5427929[0][eax*4];
 // Switch pointers
 // LINE 2153:
 _T262:
@@ -3649,7 +3649,7 @@ _T196:
 _T19d:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, instanceID;
-	__asm        mov    [ecx*4+0x62B7A8], eax;
+	__asm        mov    planes[0][ecx*4], eax;
 // LINE 2451:
 	__asm        mov    eax, this;
 	__asm        mov    byte ptr [eax+4], 1;
@@ -3774,7 +3774,7 @@ void PlaneClass::HitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, str
 // LINE 2644:
 	__asm        mov    eax, dyhittee;
 	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    eax, [eax*4+0x62B7A8];
+	__asm        mov    eax, planes[0][eax*4];
 	__asm        cmp    dword ptr [eax+0x54], 0x12E;
 	__asm        jne    _T48;
 
@@ -3790,28 +3790,28 @@ _T48:
 _T57:
 	__asm        mov    eax, dyhittee;
 	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    eax, [eax*4+0x62B7A8];
+	__asm        mov    eax, planes[0][eax*4];
 	__asm        mov    dword ptr [eax+0x4C], 3;
 // LINE 2647:
 	__asm        mov    eax, dyhittee;
 	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    ecx, [eax*4+0x62B7A8];
+	__asm        mov    ecx, planes[0][eax*4];
 	__asm        call   PlaneClass::TurnOnShields;
 // LINE 2648:
 	__asm        mov    eax, dyhittee;
 	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    eax, [eax*4+0x62B7A8];
+	__asm        mov    eax, planes[0][eax*4];
 	__asm        inc    dword ptr [eax+0x50];
 // LINE 2649:
 	__asm        mov    eax, dyhittee;
 	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    eax, [eax*4+0x62B7A8];
+	__asm        mov    eax, planes[0][eax*4];
 	__asm        cmp    dword ptr [eax+0x50], 0xA;
 	__asm        jl     _Tcf;
 // LINE 2650:
 	__asm        mov    eax, dyhittee;
 	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    eax, [eax*4+0x62B7A8];
+	__asm        mov    eax, planes[0][eax*4];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    byte ptr [eax+6], 1;
@@ -3825,11 +3825,11 @@ _Tcf:
 _Td4:
 	__asm        mov    eax, dyhittee;
 	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    eax, [eax*4+0x62B7A8];
+	__asm        mov    eax, planes[0][eax*4];
 	__asm        mov    dword ptr [eax+0x50], 1;
 	__asm        mov    eax, dyhittee;
 	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    eax, [eax*4+0x62B7A8];
+	__asm        mov    eax, planes[0][eax*4];
 	__asm        mov    [ebp-0x10], eax;
 // LINE 2656:
 	__asm        mov    eax, [ebp-0x10];
@@ -3849,7 +3849,7 @@ _T110:
 // LINE 2666:
 	__asm        mov    eax, dyhittee;
 	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    eax, [eax*4+0x62B7A8];
+	__asm        mov    eax, planes[0][eax*4];
 	__asm        cmp    dword ptr [eax+0x54], 0x12E;
 	__asm        jne    _T149;
 
@@ -3865,12 +3865,12 @@ _T149:
 _T158:
 	__asm        mov    eax, dyhittee;
 	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    eax, [eax*4+0x62B7A8];
+	__asm        mov    eax, planes[0][eax*4];
 	__asm        mov    dword ptr [eax+0x4C], 3;
 // LINE 2669:
 	__asm        mov    eax, dyhittee;
 	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    ecx, [eax*4+0x62B7A8];
+	__asm        mov    ecx, planes[0][eax*4];
 	__asm        call   PlaneClass::TurnOnShields;
 // LINE 2671:
 	__asm        jmp    _T1c1;
@@ -3878,11 +3878,11 @@ _T158:
 _T185:
 	__asm        mov    eax, dyhittee;
 	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    eax, [eax*4+0x62B7A8];
+	__asm        mov    eax, planes[0][eax*4];
 	__asm        mov    dword ptr [eax+0x50], 1;
 	__asm        mov    eax, dyhittee;
 	__asm        movsx  eax, word ptr [eax+0xE];
-	__asm        mov    eax, [eax*4+0x62B7A8];
+	__asm        mov    eax, planes[0][eax*4];
 	__asm        mov    [ebp-0x14], eax;
 // LINE 2675:
 	__asm        mov    eax, [ebp-0x14];
@@ -3918,7 +3918,7 @@ _T1f8:
 	__asm        ja     _T24c;
 
 	__asm        mov    eax, [ebp-0x18];
-	__asm        jmp    dword ptr [eax*4+0x52D92B];
+	__asm        jmp    SwitchPointers5429547[0][eax*4];
 // Switch pointers
 // LINE 2698:
 _T24c:
@@ -4128,7 +4128,7 @@ _T47:
 	__asm        jge    _T1d0;
 // LINE 2812:
 	__asm        mov    eax, i;
-	__asm        mov    eax, [eax*4+0x62B7A8];
+	__asm        mov    eax, planes[0][eax*4];
 	__asm        mov    p, eax;
 // LINE 2813:
 	__asm        mov    eax, 0x62B6E8;
@@ -4288,7 +4288,7 @@ _T18:
 // LINE 2864:
 	__asm        push   0xBC;
 	__asm        mov    eax, i;
-	__asm        mov    eax, [eax*4+0x62B7A8];
+	__asm        mov    eax, planes[0][eax*4];
 	__asm        push   eax;
 	__asm        push   0x504C414E;
 	__asm        mov    eax, miffWriter;

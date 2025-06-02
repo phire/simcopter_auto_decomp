@@ -666,15 +666,15 @@ _T363:
 _T375:
 	__asm        jmp    near ptr 0x004AAB7A;
 
-	__asm        lea    ecx, InputFile.<ifstream+0x0c>;
+	__asm        lea    ecx, InputFile<ifstream+0x0c>;
 	__asm        call   ifstream::~ifstream;
-	__asm        lea    ecx, InputFile.<ifstream+0x0c>;
+	__asm        lea    ecx, InputFile<ifstream+0x0c>;
 	__asm        call   ios::~ios;
 	__asm        jmp    near ptr 0x004AAB95;
 
-	__asm        lea    ecx, NameOut.<ostrstream+0x08>;
+	__asm        lea    ecx, NameOut<ostrstream+0x08>;
 	__asm        call   ostrstream::~ostrstream;
-	__asm        lea    ecx, NameOut.<ostrstream+0x08>;
+	__asm        lea    ecx, NameOut<ostrstream+0x08>;
 	__asm        call   ios::~ios;
 	__asm        jmp    near ptr 0x004AABAA;
 
@@ -1291,7 +1291,7 @@ _T14e:
 	__asm        ja     _T175;
 
 	__asm        mov    eax, [ebp-0x20];
-	__asm        jmp    dword ptr [eax*4+0x4AB1D8];
+	__asm        jmp    SwitchPointers4895192[0][eax*4];
 // Switch pointers
 // LINE 398:
 // Block end:
@@ -1629,7 +1629,7 @@ _T2e6:
 	__asm        ja     _T30d;
 
 	__asm        mov    eax, [ebp-0x20];
-	__asm        jmp    dword ptr [eax*4+0x4AB4F4];
+	__asm        jmp    SwitchPointers4895988[0][eax*4];
 // Switch pointers
 // LINE 576:
 _T30d:

@@ -582,9 +582,9 @@ _T28:
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    near ptr 0x0041FB4B;
 
-	__asm        lea    ecx, strtemp.<ostrstream+0x08>;
+	__asm        lea    ecx, strtemp<ostrstream+0x08>;
 	__asm        call   ostrstream::~ostrstream;
-	__asm        lea    ecx, strtemp.<ostrstream+0x08>;
+	__asm        lea    ecx, strtemp<ostrstream+0x08>;
 	__asm        call   ios::~ios;
 	__asm        mov    eax, [ebp-0x60];
 	__asm        jmp    near ptr 0x0041FB63;
@@ -767,8 +767,8 @@ _T211:
 
 	__asm        mov    eax, [ebp-0x128];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0x41FDE4];
-	__asm        jmp    dword ptr [ecx*4+0x41FDA4];
+	__asm        mov    cl, SwitchTable4324836[0][eax];
+	__asm        jmp    SwitchPointers4324772[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 104:
@@ -786,9 +786,9 @@ _T29f:
 	__asm        mov    [ebp-0x118], eax;
 	__asm        jmp    near ptr 0x0041FE31;
 
-	__asm        lea    ecx, out.<ostrstream+0x08>;
+	__asm        lea    ecx, out<ostrstream+0x08>;
 	__asm        call   ostrstream::~ostrstream;
-	__asm        lea    ecx, out.<ostrstream+0x08>;
+	__asm        lea    ecx, out<ostrstream+0x08>;
 	__asm        call   ios::~ios;
 	__asm        mov    eax, [ebp-0x118];
 	__asm        jmp    near ptr 0x0041FE52;
@@ -1044,9 +1044,9 @@ _T3a:
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    near ptr 0x0042012D;
 
-	__asm        lea    ecx, strtemp.<ostrstream+0x08>;
+	__asm        lea    ecx, strtemp<ostrstream+0x08>;
 	__asm        call   ostrstream::~ostrstream;
-	__asm        lea    ecx, strtemp.<ostrstream+0x08>;
+	__asm        lea    ecx, strtemp<ostrstream+0x08>;
 	__asm        call   ios::~ios;
 	__asm        mov    eax, [ebp-0x60];
 	__asm        jmp    near ptr 0x00420145;
@@ -1429,8 +1429,8 @@ _T155:
 
 	__asm        mov    eax, [ebp-0x58];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0x42058B];
-	__asm        jmp    dword ptr [ecx*4+0x420547];
+	__asm        mov    cl, SwitchPointers4326727[68][eax];
+	__asm        jmp    SwitchPointers4326727[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 403:

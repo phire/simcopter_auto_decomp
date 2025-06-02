@@ -780,7 +780,7 @@ void  CGameApp::ShowVersion() {
 	class basic_string<char> sMessage;
 
 // LINE 106:
-	__asm        lea    ecx, tempVersion.<vftable>;
+	__asm        lea    ecx, tempVersion<vftable>;
 	__asm        call   Version::Version;
 // LINE 107:
 	__asm        push   0x10;
@@ -968,7 +968,7 @@ _T22f:
 // LINE 124:
 	__asm        lea    eax, szVersionInformation;
 	__asm        push   eax;
-	__asm        lea    ecx, tempVersion.<vftable>;
+	__asm        lea    ecx, tempVersion<vftable>;
 	__asm        call   Version::GetApplicationVersion;
 	__asm        test   eax, eax;
 	__asm        je     _T3da;
@@ -1065,7 +1065,7 @@ _T3a5:
 _T3da:
 	__asm        lea    eax, szVersionInformation;
 	__asm        push   eax;
-	__asm        lea    ecx, tempVersion.<vftable>;
+	__asm        lea    ecx, tempVersion<vftable>;
 	__asm        call   Version::GetApplicationDebugVersion;
 	__asm        test   eax, eax;
 	__asm        je     _T513;
@@ -1607,7 +1607,7 @@ _Taaf:
 _Taea:
 	__asm        jmp    near ptr 0x0043ED94;
 
-	__asm        lea    ecx, tempVersion.<vftable>;
+	__asm        lea    ecx, tempVersion<vftable>;
 	__asm        call   Version::~Version;
 	__asm        jmp    near ptr 0x0043EDA1;
 }
@@ -1949,7 +1949,7 @@ _T3b7:
 	__asm        ja     _T355;
 
 	__asm        mov    eax, [ebp-0x9C];
-	__asm        jmp    dword ptr [eax*4+0x43F17E];
+	__asm        jmp    SwitchPointers4452734[0][eax*4];
 // Switch pointers
 // LINE 264:
 _T3f8:
@@ -2885,7 +2885,7 @@ _T184:
 	__asm        mov    ecx, eax;
 	__asm        lea    eax, [eax+eax*4];
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    eax, [eax*8+0x5B49B8];
+	__asm        mov    eax, S_helitype_data[0].fuel_capacity[eax*8];
 	__asm        mov    ecx, G_uheli;
 	__asm        mov    [ecx+0x320], eax;
 // LINE 381:

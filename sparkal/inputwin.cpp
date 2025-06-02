@@ -10306,7 +10306,7 @@ _T330:
 	__asm        ja     _T383;
 
 	__asm        mov    eax, [ebp-0x4C];
-	__asm        jmp    dword ptr [eax*4+0x40810B];
+	__asm        jmp    SwitchPointers4227339[0][eax*4];
 // Switch pointers
 // LINE 1243:
 _T383:
@@ -13115,7 +13115,7 @@ void UserInputWindow::ClearDeviceArea() {
 // LINE 1722:
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
-	__asm        lea    ecx, tempImage.<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempImage<CBackBuffer+0x00>;
 	__asm        call   CBackBuffer::CBackBuffer;
 // LINE 1724:
 	__asm        jmp    near ptr 0x0040A4B9;
@@ -13135,10 +13135,10 @@ void UserInputWindow::ClearDeviceArea() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        push   eax;
-	__asm        lea    ecx, tempImage.<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempImage<CBackBuffer+0x00>;
 	__asm        call   CBackBuffer::Compose;
 // LINE 1725:
-	__asm        lea    ecx, tempImage.<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempImage<CBackBuffer+0x00>;
 	__asm        call   CBackBuffer::~CBackBuffer;
 	__asm        jmp    near ptr 0x0040A503;
 }
@@ -15641,7 +15641,7 @@ void ControlDisplayWindow::ReadShortcuts(class list<Shortcut>* addedShortcutList
 	__asm        mov    tempLongSet.t.node_count, 0;
 	__asm        mov    tempLongSet.t.insert_always, 0;
 	__asm        mov    al, [ebp-0x40];
-	__asm        mov    tempLongSet.t.key_compare.<less<long>+0x00>, al;
+	__asm        mov    tempLongSet.t.key_compare<less<long>+0x00>, al;
 	__asm        lea    ecx, tempLongSet.t.header;
 	__asm        call   rb_tree<long,long,ident<long,long>,less<long>>::init;
 	__asm        jmp    near ptr 0x0040C5E9;

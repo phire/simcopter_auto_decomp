@@ -173,7 +173,7 @@ _T1b0:
 // LINE 240:
 	__asm        mov    eax, ptr;
 	__asm        mov    ecx, i;
-	__asm        mov    [ecx*4+0x608BD0], eax;
+	__asm        mov    S_icons[ecx*4], eax;
 // LINE 241:
 	__asm        mov    eax, S_icon_dim;
 	__asm        add    ptr, eax;
@@ -215,7 +215,7 @@ _T220:
 // LINE 257:
 	__asm        mov    eax, ptr;
 	__asm        mov    ecx, i;
-	__asm        mov    [ecx*4+0x608C18], eax;
+	__asm        mov    S_dicons[ecx*4], eax;
 // LINE 258:
 	__asm        mov    eax, S_dicon_dim;
 	__asm        add    ptr, eax;
@@ -233,7 +233,7 @@ _T253:
 // LINE 264:
 	__asm        mov    eax, i;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    dword ptr [eax*8+0x6BED40], 0;
+	__asm        mov    S_carinfo[0].flags[eax*8], 0;
 // LINE 265:
 	__asm        jmp    _T250;
 // LINE 267:
@@ -359,7 +359,7 @@ _T13e:
 // LINE 345:
 _T14a:
 	__asm        mov    eax, x;
-	__asm        mov    eax, [eax*4+0x639850];
+	__asm        mov    eax, BuildMap[eax*4];
 	__asm        mov    ecx, y;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
@@ -371,7 +371,7 @@ _T15f:
 	__asm        shl    eax, 0xA;
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
-	__asm        mov    eax, [eax+ecx*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][eax+ecx*4];
 	__asm        mov    cptr, eax;
 // LINE 352:
 	__asm        mov    eax, cptr;
@@ -483,7 +483,7 @@ _T2a0:
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        shl    ecx, 8;
-	__asm        mov    al, [eax+ecx+0x66EB10];
+	__asm        mov    al, G_texmap[0][eax+ecx];
 	__asm        mov    texid, al;
 // LINE 403:
 	__asm        movsx  eax, texid;
@@ -676,7 +676,7 @@ _T4ec:
 // LINE 455:
 _T4f8:
 	__asm        mov    eax, x;
-	__asm        mov    eax, [eax*4+0x639850];
+	__asm        mov    eax, BuildMap[eax*4];
 	__asm        mov    ecx, y;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
@@ -688,7 +688,7 @@ _T50d:
 	__asm        shl    eax, 0xA;
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
-	__asm        mov    eax, [eax+ecx*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][eax+ecx*4];
 	__asm        mov    cptr, eax;
 // LINE 462:
 	__asm        mov    eax, cptr;
@@ -834,7 +834,7 @@ _T69f:
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        shl    ecx, 8;
-	__asm        mov    al, [eax+ecx+0x66EB10];
+	__asm        mov    al, G_texmap[0][eax+ecx];
 	__asm        mov    texid, al;
 // LINE 520:
 	__asm        movsx  eax, texid;
@@ -1091,7 +1091,7 @@ _T991:
 // LINE 587:
 _T99d:
 	__asm        mov    eax, x;
-	__asm        mov    eax, [eax*4+0x639850];
+	__asm        mov    eax, BuildMap[eax*4];
 	__asm        mov    ecx, y;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
@@ -1103,7 +1103,7 @@ _T9b2:
 	__asm        shl    eax, 0xA;
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
-	__asm        mov    eax, [eax+ecx*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][eax+ecx*4];
 	__asm        mov    cptr, eax;
 // LINE 594:
 	__asm        mov    eax, cptr;
@@ -1315,7 +1315,7 @@ _Tbdd:
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        shl    ecx, 8;
-	__asm        mov    al, [eax+ecx+0x66EB10];
+	__asm        mov    al, G_texmap[0][eax+ecx];
 	__asm        mov    texid, al;
 // LINE 668:
 	__asm        movsx  eax, texid;
@@ -1655,7 +1655,7 @@ _Tfa2:
 // LINE 752:
 _Tfae:
 	__asm        mov    eax, x;
-	__asm        mov    eax, [eax*4+0x639850];
+	__asm        mov    eax, BuildMap[eax*4];
 	__asm        mov    ecx, y;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
@@ -1667,7 +1667,7 @@ _Tfc3:
 	__asm        shl    eax, 0xA;
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
-	__asm        mov    eax, [eax+ecx*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][eax+ecx*4];
 	__asm        mov    cptr, eax;
 // LINE 759:
 	__asm        mov    eax, cptr;
@@ -2015,7 +2015,7 @@ _T1332:
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        shl    ecx, 8;
-	__asm        mov    al, [eax+ecx+0x66EB10];
+	__asm        mov    al, G_texmap[0][eax+ecx];
 	__asm        mov    texid, al;
 // LINE 866:
 	__asm        movsx  eax, texid;
@@ -2401,7 +2401,7 @@ _T176a:
 	__asm        ja     _T178e;
 
 	__asm        mov    eax, [ebp-0x2C];
-	__asm        jmp    dword ptr [eax*4+0x500191];
+	__asm        jmp    SwitchPointers5243281[0][eax*4];
 // Switch pointers
 // LINE 949:
 _T178e:
@@ -3182,7 +3182,7 @@ _T1f:
 // LINE 1292:
 	__asm        mov    eax, i;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        lea    eax, [eax*8+0x6BED40];
+	__asm        lea    eax, S_carinfo[0].flags[eax*8];
 	__asm        mov    ci, eax;
 // LINE 1293:
 	__asm        mov    eax, ci;
@@ -3344,7 +3344,7 @@ _Ta2:
 	__asm        mov    bufptr, eax;
 // LINE 1401:
 	__asm        mov    eax, icon_id;
-	__asm        mov    eax, [eax*4+0x608BD0];
+	__asm        mov    eax, S_icons[eax*4];
 	__asm        mov    iptr, eax;
 // LINE 1403:
 	__asm        mov    mapy, 0;
@@ -3762,7 +3762,7 @@ _T18:
 // LINE 1569:
 	__asm        mov    eax, i;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        lea    eax, [eax*8+0x6BED40];
+	__asm        lea    eax, S_carinfo[0].flags[eax*8];
 	__asm        mov    ci, eax;
 // LINE 1570:
 	__asm        mov    eax, ci;
@@ -3823,12 +3823,12 @@ _T18:
 	__asm        mov    eax, i;
 	__asm        lea    eax, [eax+eax*4];
 	__asm        mov    ecx, car_id;
-	__asm        cmp    [eax*8+0x6BED44], ecx;
+	__asm        cmp    S_carinfo[0].car_id[eax*8], ecx;
 	__asm        jne    _T4b;
 // LINE 1605:
 	__asm        mov    eax, i;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        and    dword ptr [eax*8+0x6BED40], 0xFFFFFFFE;
+	__asm        and    S_carinfo[0].flags[eax*8], 0xFFFFFFFE;
 // LINE 1606:
 	__asm        jmp    _T50;
 // LINE 1608:
@@ -3857,7 +3857,7 @@ _T18:
 // LINE 1633:
 	__asm        mov    eax, i;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        lea    eax, [eax*8+0x6BED40];
+	__asm        lea    eax, S_carinfo[0].flags[eax*8];
 	__asm        mov    ci, eax;
 // LINE 1634:
 	__asm        mov    eax, ci;
@@ -4063,7 +4063,7 @@ _T18:
 	__asm        mov    bufptr, eax;
 // LINE 1711:
 	__asm        mov    eax, icon_id;
-	__asm        mov    eax, [eax*4+0x608C18];
+	__asm        mov    eax, S_dicons[eax*4];
 	__asm        mov    iptr, eax;
 // LINE 1713:
 	__asm        mov    mapy, 0;

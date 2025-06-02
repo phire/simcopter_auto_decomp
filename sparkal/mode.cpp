@@ -52,19 +52,19 @@ _T18:
 	__asm        mov    eax, i;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        mov    ecx, lWidth;
-	__asm        cmp    [eax*4+0x604818], ecx;
+	__asm        cmp    gModeList[0].lWidth[eax*4], ecx;
 	__asm        jne    _T73;
 
 	__asm        mov    eax, i;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        mov    ecx, lHeight;
-	__asm        cmp    [eax*4+0x60481C], ecx;
+	__asm        cmp    gModeList[0].lHeight[eax*4], ecx;
 	__asm        jne    _T73;
 
 	__asm        mov    eax, i;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        mov    ecx, lBPP;
-	__asm        cmp    [eax*4+0x604820], ecx;
+	__asm        cmp    gModeList[0].lBPP[eax*4], ecx;
 	__asm        jne    _T73;
 // LINE 66:
 	__asm        mov    eax, 1;
@@ -140,19 +140,19 @@ _T1a:
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, gNumModes;
 	__asm        lea    ecx, [ecx+ecx*2];
-	__asm        mov    [ecx*4+0x604818], eax;
+	__asm        mov    gModeList[0].lWidth[ecx*4], eax;
 // LINE 107:
 	__asm        mov    eax, pddsd;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, gNumModes;
 	__asm        lea    ecx, [ecx+ecx*2];
-	__asm        mov    [ecx*4+0x60481C], eax;
+	__asm        mov    gModeList[0].lHeight[ecx*4], eax;
 // LINE 108:
 	__asm        mov    eax, pddsd;
 	__asm        mov    eax, [eax+0x54];
 	__asm        mov    ecx, gNumModes;
 	__asm        lea    ecx, [ecx+ecx*2];
-	__asm        mov    [ecx*4+0x604820], eax;
+	__asm        mov    gModeList[0].lBPP[ecx*4], eax;
 // LINE 109:
 	__asm        inc    gNumModes;
 // LINE 111:

@@ -937,7 +937,7 @@ _T176:
 	__asm        ja     _T162;
 
 	__asm        mov    eax, [ebp-0x2C];
-	__asm        jmp    dword ptr [eax*4+0x524266];
+	__asm        jmp    SwitchPointers5390950[0][eax*4];
 // Switch pointers
 // LINE 388:
 _T1b6:
@@ -1017,7 +1017,7 @@ _Ta7:
 	__asm        push   eax;
 	__asm        mov    eax, j;
 	__asm        lea    eax, [eax+eax*2];
-	__asm        lea    eax, [eax*4+0x62A988];
+	__asm        lea    eax, S_spark_vectors[0].x[eax*4];
 	__asm        push   eax;
 	__asm        mov    eax, ed;
 	__asm        add    eax, 0xC;
@@ -1088,7 +1088,7 @@ _T17e:
 // LINE 461:
 	__asm        mov    eax, ed;
 	__asm        mov    eax, [eax+0x18];
-	__asm        mov    eax, [eax*4+0x62AA30];
+	__asm        mov    eax, S_explseq[0][eax*4];
 	__asm        mov    finfo.Bitmap, eax;
 // LINE 462:
 	__asm        lea    eax, finfo.Face;

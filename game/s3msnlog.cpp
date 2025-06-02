@@ -1086,24 +1086,24 @@ int32_t LogManager::ReadLogFromFile(char * szFilePath) {
 // LINE 67:
 	__asm        mov    eax, szFilePath;
 	__asm        push   eax;
-	__asm        lea    ecx, tempMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, tempMIFF<MIFF+0x00>;
 	__asm        call   MIFF::MIFF;
 // LINE 70:
-	__asm        lea    ecx, tempMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, tempMIFF<MIFF+0x00>;
 	__asm        call   MIFF::OpenForReading;
 // LINE 71:
-	__asm        lea    eax, tempMIFF.<MIFF+0x00>;
+	__asm        lea    eax, tempMIFF<MIFF+0x00>;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   LogManager::ReadFromMIFF;
 	__asm        mov    nReturnValue, eax;
 // LINE 72:
-	__asm        lea    ecx, tempMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, tempMIFF<MIFF+0x00>;
 	__asm        call   MIFF::Close;
 // LINE 73:
 	__asm        mov    eax, nReturnValue;
 	__asm        mov    [ebp-0x150], eax;
-	__asm        lea    ecx, tempMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, tempMIFF<MIFF+0x00>;
 	__asm        call   MIFF::~MIFF;
 	__asm        mov    eax, [ebp-0x150];
 	__asm        jmp    near ptr 0x004EC15E;
@@ -1118,24 +1118,24 @@ int32_t LogManager::WriteLogToFile(char * szFilePath) {
 // LINE 82:
 	__asm        mov    eax, szFilePath;
 	__asm        push   eax;
-	__asm        lea    ecx, tempMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, tempMIFF<MIFF+0x00>;
 	__asm        call   MIFF::MIFF;
 // LINE 85:
-	__asm        lea    ecx, tempMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, tempMIFF<MIFF+0x00>;
 	__asm        call   MIFF::OpenForAppending;
 // LINE 86:
-	__asm        lea    eax, tempMIFF.<MIFF+0x00>;
+	__asm        lea    eax, tempMIFF<MIFF+0x00>;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   LogManager::WriteToMIFF;
 	__asm        mov    nReturnValue, eax;
 // LINE 87:
-	__asm        lea    ecx, tempMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, tempMIFF<MIFF+0x00>;
 	__asm        call   MIFF::Close;
 // LINE 88:
 	__asm        mov    eax, nReturnValue;
 	__asm        mov    [ebp-0x150], eax;
-	__asm        lea    ecx, tempMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, tempMIFF<MIFF+0x00>;
 	__asm        call   MIFF::~MIFF;
 	__asm        mov    eax, [ebp-0x150];
 	__asm        jmp    near ptr 0x004EC1D6;
@@ -3329,13 +3329,13 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x268], eax;
 // LINE 370:
-	__asm        mov    tempTime.<MTimeLocalized+0x08>, 0;
+	__asm        mov    tempTime<MTimeLocalized+0x08>, 0;
 	__asm        mov    eax, [ebp-0x268];
-	__asm        mov    tempTime.<MTimeLocalized+0x04>, eax;
+	__asm        mov    tempTime<MTimeLocalized+0x04>, eax;
 	__asm        jmp    near ptr 0x004EDBD8;
 
 	__asm        mov    tempTime.nLanguage, 0;
-	__asm        mov    tempTime.<vftable>, 0x592680;
+	__asm        mov    tempTime<vftable>, 0x592680;
 	__asm        jmp    near ptr 0x004EDBF1;
 // LINE 372:
 	__asm        cmp    bPrintTime, 0;
@@ -3344,7 +3344,7 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 	__asm        push   0;
 	__asm        lea    eax, szTime[0];
 	__asm        push   eax;
-	__asm        lea    ecx, tempTime.<vftable>;
+	__asm        lea    ecx, tempTime<vftable>;
 	__asm        call   MTimeLocalized::PrintStringLocalized;
 // LINE 374:
 	__asm        jmp    near ptr 0x004EDC14;

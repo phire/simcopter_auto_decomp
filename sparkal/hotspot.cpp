@@ -3431,14 +3431,14 @@ int32_t LoadListFromResource(class list<HotSpot>& hotSpotList, int32_t nResource
 	__asm        push   1;
 	__asm        mov    eax, nResourceID;
 	__asm        push   eax;
-	__asm        lea    ecx, resourceHangarHotspots.<vftable>;
+	__asm        lea    ecx, resourceHangarHotspots<vftable>;
 	__asm        call   ResourceRCData::ResourceRCData;
 // LINE 278:
-	__asm        lea    ecx, resourceHangarHotspots.<vftable>;
+	__asm        lea    ecx, resourceHangarHotspots<vftable>;
 	__asm        call   ResourceRCData::DataReference;
 	__asm        mov    fileImage, eax;
 // LINE 279:
-	__asm        lea    ecx, resourceHangarHotspots.<vftable>;
+	__asm        lea    ecx, resourceHangarHotspots<vftable>;
 	__asm        call   ResourceRCData::DataReference;
 	__asm        mov    chFileImage, eax;
 // LINE 280:
@@ -3446,7 +3446,7 @@ int32_t LoadListFromResource(class list<HotSpot>& hotSpotList, int32_t nResource
 	__asm        jne    _T51;
 // LINE 281:
 	__asm        mov    dword ptr [ebp-0x38], 0;
-	__asm        lea    ecx, resourceHangarHotspots.<vftable>;
+	__asm        lea    ecx, resourceHangarHotspots<vftable>;
 	__asm        call   ResourceRCData::~ResourceRCData;
 	__asm        mov    eax, [ebp-0x38];
 	__asm        jmp    _T4a7;
@@ -3457,7 +3457,7 @@ _T51:
 	__asm        je     _T75;
 // LINE 283:
 	__asm        mov    dword ptr [ebp-0x3C], 0;
-	__asm        lea    ecx, resourceHangarHotspots.<vftable>;
+	__asm        lea    ecx, resourceHangarHotspots<vftable>;
 	__asm        call   ResourceRCData::~ResourceRCData;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        jmp    _T4a7;
@@ -3468,7 +3468,7 @@ _T75:
 	__asm        je     _T9b;
 // LINE 285:
 	__asm        mov    dword ptr [ebp-0x40], 0;
-	__asm        lea    ecx, resourceHangarHotspots.<vftable>;
+	__asm        lea    ecx, resourceHangarHotspots<vftable>;
 	__asm        call   ResourceRCData::~ResourceRCData;
 	__asm        mov    eax, [ebp-0x40];
 	__asm        jmp    _T4a7;
@@ -3760,7 +3760,7 @@ _T453:
 // LINE 293:
 _T490:
 	__asm        mov    dword ptr [ebp-0x58], 1;
-	__asm        lea    ecx, resourceHangarHotspots.<vftable>;
+	__asm        lea    ecx, resourceHangarHotspots<vftable>;
 	__asm        call   ResourceRCData::~ResourceRCData;
 	__asm        mov    eax, [ebp-0x58];
 	__asm        jmp    _T4a7;

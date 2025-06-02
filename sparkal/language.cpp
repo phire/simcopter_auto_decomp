@@ -4010,7 +4010,7 @@ _T196:
 	__asm        ja     _T187;
 
 	__asm        mov    eax, [ebp-0xC];
-	__asm        jmp    dword ptr [eax*4+0x42D247];
+	__asm        jmp    SwitchPointers4379207[0][eax*4];
 // Switch pointers
 // Switch table
 

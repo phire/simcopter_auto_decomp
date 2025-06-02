@@ -44,7 +44,7 @@ _T29:
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
-	__asm        mov    [ecx*8+0x62D390], eax;
+	__asm        mov    OTT[0][0][0].x[ecx*8], eax;
 // LINE 57:
 	__asm        mov    eax, leg;
 	__asm        mov    [ebp-0x3C], eax;
@@ -54,7 +54,7 @@ _T29:
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
-	__asm        mov    [ecx*8+0x62D394], eax;
+	__asm        mov    OTT[0][0][0].z[ecx*8], eax;
 // LINE 58:
 	__asm        jmp    _T26;
 // LINE 59:
@@ -75,13 +75,13 @@ _T89:
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
-	__asm        mov    [ecx*8+0x62D3E8], eax;
+	__asm        mov    OTT[0][1][0].x[ecx*8], eax;
 // LINE 62:
 	__asm        fld    OT[1].z;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
-	__asm        mov    [ecx*8+0x62D3EC], eax;
+	__asm        mov    OTT[0][1][0].z[ecx*8], eax;
 // LINE 63:
 	__asm        jmp    _T86;
 // LINE 64:
@@ -98,7 +98,7 @@ _Te9:
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
-	__asm        mov    [ecx*8+0x62D440], eax;
+	__asm        mov    OTT[0][2][0].x[ecx*8], eax;
 // LINE 67:
 	__asm        mov    eax, leg;
 	__asm        mov    [ebp-0x44], eax;
@@ -108,7 +108,7 @@ _Te9:
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
-	__asm        mov    [ecx*8+0x62D444], eax;
+	__asm        mov    OTT[0][2][0].z[ecx*8], eax;
 // LINE 68:
 	__asm        jmp    _Te6;
 // LINE 69:
@@ -129,13 +129,13 @@ _T149:
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
-	__asm        mov    [ecx*8+0x62D498], eax;
+	__asm        mov    OTT[0][3][0].x[ecx*8], eax;
 // LINE 72:
 	__asm        fld    OT[3].z;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
-	__asm        mov    [ecx*8+0x62D49C], eax;
+	__asm        mov    OTT[0][3][0].z[ecx*8], eax;
 // LINE 73:
 	__asm        jmp    _T146;
 // LINE 85:
@@ -322,7 +322,7 @@ _T433:
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
-	__asm        mov    [ecx*8+0x62D4F0], eax;
+	__asm        mov    OTT[1][0][0].x[ecx*8], eax;
 // LINE 156:
 	__asm        mov    eax, leg;
 	__asm        mov    [ebp-0x50], eax;
@@ -334,7 +334,7 @@ _T433:
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
-	__asm        mov    [ecx*8+0x62D4F4], eax;
+	__asm        mov    OTT[1][0][0].z[ecx*8], eax;
 // LINE 157:
 	__asm        jmp    _T430;
 // LINE 158:
@@ -357,7 +357,7 @@ _T4af:
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
-	__asm        mov    [ecx*8+0x62D548], eax;
+	__asm        mov    OTT[1][1][0].x[ecx*8], eax;
 // LINE 161:
 	__asm        mov    eax, leg;
 	__asm        mov    [ebp-0x58], eax;
@@ -369,7 +369,7 @@ _T4af:
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
-	__asm        mov    [ecx*8+0x62D54C], eax;
+	__asm        mov    OTT[1][1][0].z[ecx*8], eax;
 // LINE 162:
 	__asm        jmp    _T4ac;
 // LINE 163:
@@ -392,7 +392,7 @@ _T52b:
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
-	__asm        mov    [ecx*8+0x62D5A0], eax;
+	__asm        mov    OTT[1][2][0].x[ecx*8], eax;
 // LINE 166:
 	__asm        mov    eax, leg;
 	__asm        mov    [ebp-0x60], eax;
@@ -404,7 +404,7 @@ _T52b:
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
-	__asm        mov    [ecx*8+0x62D5A4], eax;
+	__asm        mov    OTT[1][2][0].z[ecx*8], eax;
 // LINE 167:
 	__asm        jmp    _T528;
 // LINE 168:
@@ -427,7 +427,7 @@ _T5a7:
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
-	__asm        mov    [ecx*8+0x62D5F8], eax;
+	__asm        mov    OTT[1][3][0].x[ecx*8], eax;
 // LINE 171:
 	__asm        mov    eax, leg;
 	__asm        mov    [ebp-0x68], eax;
@@ -439,7 +439,7 @@ _T5a7:
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
-	__asm        mov    [ecx*8+0x62D5FC], eax;
+	__asm        mov    OTT[1][3][0].z[ecx*8], eax;
 // LINE 172:
 	__asm        jmp    _T5a4;
 // LINE 176:
@@ -469,7 +469,7 @@ _T640:
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
-	__asm        mov    [ecx*8+0x62D650], eax;
+	__asm        mov    OTT[2][0][0].x[ecx*8], eax;
 // LINE 181:
 	__asm        mov    eax, leg;
 	__asm        mov    [ebp-0x70], eax;
@@ -481,7 +481,7 @@ _T640:
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
-	__asm        mov    [ecx*8+0x62D654], eax;
+	__asm        mov    OTT[2][0][0].z[ecx*8], eax;
 // LINE 182:
 	__asm        jmp    _T63d;
 // LINE 183:
@@ -504,7 +504,7 @@ _T6bc:
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
-	__asm        mov    [ecx*8+0x62D6A8], eax;
+	__asm        mov    OTT[2][1][0].x[ecx*8], eax;
 // LINE 186:
 	__asm        mov    eax, leg;
 	__asm        mov    [ebp-0x78], eax;
@@ -516,7 +516,7 @@ _T6bc:
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
-	__asm        mov    [ecx*8+0x62D6AC], eax;
+	__asm        mov    OTT[2][1][0].z[ecx*8], eax;
 // LINE 187:
 	__asm        jmp    _T6b9;
 // LINE 188:
@@ -539,7 +539,7 @@ _T738:
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
-	__asm        mov    [ecx*8+0x62D700], eax;
+	__asm        mov    OTT[2][2][0].x[ecx*8], eax;
 // LINE 191:
 	__asm        mov    eax, leg;
 	__asm        mov    [ebp-0x80], eax;
@@ -551,7 +551,7 @@ _T738:
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
-	__asm        mov    [ecx*8+0x62D704], eax;
+	__asm        mov    OTT[2][2][0].z[ecx*8], eax;
 // LINE 192:
 	__asm        jmp    _T735;
 // LINE 193:
@@ -574,7 +574,7 @@ _T7b4:
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
-	__asm        mov    [ecx*8+0x62D758], eax;
+	__asm        mov    OTT[2][3][0].x[ecx*8], eax;
 // LINE 196:
 	__asm        mov    eax, leg;
 	__asm        mov    [ebp-0x88], eax;
@@ -586,7 +586,7 @@ _T7b4:
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
-	__asm        mov    [ecx*8+0x62D75C], eax;
+	__asm        mov    OTT[2][3][0].z[ecx*8], eax;
 // LINE 197:
 	__asm        jmp    _T7b1;
 // LINE 201:
@@ -625,7 +625,7 @@ _T884:
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
-	__asm        mov    [ecx*8+0x62D7B0], eax;
+	__asm        mov    OTT[3][0][0].x[ecx*8], eax;
 // LINE 209:
 	__asm        mov    eax, leg;
 	__asm        dec    eax;
@@ -637,7 +637,7 @@ _T884:
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
-	__asm        mov    [ecx*8+0x62D7B4], eax;
+	__asm        mov    OTT[3][0][0].z[ecx*8], eax;
 // LINE 210:
 	__asm        jmp    _T881;
 // LINE 211:
@@ -674,7 +674,7 @@ _T942:
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
-	__asm        mov    [ecx*8+0x62D808], eax;
+	__asm        mov    OTT[3][1][0].x[ecx*8], eax;
 // LINE 219:
 	__asm        mov    eax, leg;
 	__asm        dec    eax;
@@ -687,7 +687,7 @@ _T942:
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
-	__asm        mov    [ecx*8+0x62D80C], eax;
+	__asm        mov    OTT[3][1][0].z[ecx*8], eax;
 // LINE 220:
 	__asm        jmp    _T93f;
 // LINE 221:
@@ -725,7 +725,7 @@ _Ta02:
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
-	__asm        mov    [ecx*8+0x62D860], eax;
+	__asm        mov    OTT[3][2][0].x[ecx*8], eax;
 // LINE 229:
 	__asm        mov    eax, leg;
 	__asm        dec    eax;
@@ -738,7 +738,7 @@ _Ta02:
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
-	__asm        mov    [ecx*8+0x62D864], eax;
+	__asm        mov    OTT[3][2][0].z[ecx*8], eax;
 // LINE 230:
 	__asm        jmp    _T9ff;
 // LINE 231:
@@ -776,7 +776,7 @@ _Tac4:
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
-	__asm        mov    [ecx*8+0x62D8B8], eax;
+	__asm        mov    OTT[3][3][0].x[ecx*8], eax;
 // LINE 239:
 	__asm        mov    eax, leg;
 	__asm        dec    eax;
@@ -788,7 +788,7 @@ _Tac4:
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, leg;
-	__asm        mov    [ecx*8+0x62D8BC], eax;
+	__asm        mov    OTT[3][3][0].z[ecx*8], eax;
 // LINE 240:
 	__asm        jmp    _Tac1;
 // LINE 241:
@@ -845,7 +845,7 @@ _Tbaa:
 	__asm        lea    ecx, [ecx+ecx*4];
 	__asm        lea    ecx, [edx+ecx*2];
 	__asm        shl    ecx, 5;
-	__asm        mov    eax, [eax+ecx+0x62D390];
+	__asm        mov    eax, OTT[0][0][0].x[eax+ecx];
 	__asm        mov    ecx, dir;
 	__asm        mov    edx, ecx;
 	__asm        lea    ecx, [ecx+ecx*4];
@@ -858,7 +858,7 @@ _Tbaa:
 	__asm        lea    edx, [edx+edx*4];
 	__asm        lea    edx, [ebx+edx*2];
 	__asm        shl    edx, 5;
-	__asm        sub    eax, [ecx+edx+0x62D390];
+	__asm        sub    eax, OTT[0][0][0].x[ecx+edx];
 	__asm        mov    ecx, incline;
 	__asm        lea    ecx, [ecx+ecx*2];
 	__asm        mov    edx, leg;
@@ -874,7 +874,7 @@ _Tbaa:
 	__asm        lea    edx, [edx+edx*4];
 	__asm        shl    edx, 3;
 	__asm        lea    edx, [edx+edx*8];
-	__asm        mov    [ecx+edx+0x62BD10], eax;
+	__asm        mov    DVT[0][0][0][0].x[ecx+edx], eax;
 // LINE 260:
 	__asm        mov    eax, leg;
 	__asm        mov    ecx, dir;
@@ -888,7 +888,7 @@ _Tbaa:
 	__asm        lea    ecx, [ecx+ecx*4];
 	__asm        lea    ecx, [edx+ecx*2];
 	__asm        shl    ecx, 5;
-	__asm        mov    eax, [eax+ecx+0x62D394];
+	__asm        mov    eax, OTT[0][0][0].z[eax+ecx];
 	__asm        mov    ecx, dir;
 	__asm        mov    edx, ecx;
 	__asm        lea    ecx, [ecx+ecx*4];
@@ -901,7 +901,7 @@ _Tbaa:
 	__asm        lea    edx, [edx+edx*4];
 	__asm        lea    edx, [ebx+edx*2];
 	__asm        shl    edx, 5;
-	__asm        sub    eax, [ecx+edx+0x62D394];
+	__asm        sub    eax, OTT[0][0][0].z[ecx+edx];
 	__asm        mov    ecx, incline;
 	__asm        lea    ecx, [ecx+ecx*2];
 	__asm        mov    edx, leg;
@@ -917,7 +917,7 @@ _Tbaa:
 	__asm        lea    edx, [edx+edx*4];
 	__asm        shl    edx, 3;
 	__asm        lea    edx, [edx+edx*8];
-	__asm        mov    [ecx+edx+0x62BD18], eax;
+	__asm        mov    DVT[0][0][0][0].z[ecx+edx], eax;
 // LINE 263:
 	__asm        mov    eax, incline;
 	__asm        dec    eax;
@@ -941,7 +941,7 @@ _Tbaa:
 	__asm        lea    edx, [edx+edx*4];
 	__asm        shl    edx, 3;
 	__asm        lea    edx, [edx+edx*8];
-	__asm        mov    [ecx+edx+0x62BD14], eax;
+	__asm        mov    DVT[0][0][0][0].y[ecx+edx], eax;
 // LINE 267:
 	__asm        mov    eax, incline;
 	__asm        lea    eax, [eax+eax*2];
@@ -972,7 +972,7 @@ _Tbaa:
 	__asm        shl    edx, 3;
 	__asm        lea    edx, [edx+edx*2];
 	__asm        lea    edx, [edx+edx*4];
-	__asm        mov    [ecx+edx+0x62BB30], eax;
+	__asm        mov    DTT[0][0][ecx+edx], eax;
 // LINE 270:
 	__asm        mov    eax, incline;
 	__asm        lea    eax, [eax+eax*2];
@@ -1050,7 +1050,7 @@ _T37:
 	__asm        jmp    _T7a;
 _T42:
 	__asm        mov    eax, x;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, y;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
@@ -1058,7 +1058,7 @@ _T42:
 	__asm        movsx  eax, dx;
 	__asm        shl    eax, 0xE;
 	__asm        mov    ecx, x;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        mov    edx, y;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [ecx+edx];
@@ -1147,7 +1147,7 @@ _T149:
 	__asm        movsx  eax, dx;
 	__asm        shl    eax, 0xE;
 	__asm        mov    ecx, x;
-	__asm        mov    ecx, [ecx*4+0x63984C];
+	__asm        mov    ecx, NeighborFame[ecx*4];
 	__asm        mov    edx, y;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [ecx+edx];
@@ -1193,7 +1193,7 @@ _T1ef:
 	__asm        jmp    _T232;
 _T1fa:
 	__asm        mov    eax, x;
-	__asm        mov    eax, [eax*4+0x638F78];
+	__asm        mov    eax, BitsMap[2][eax*4];
 	__asm        mov    ecx, y;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
@@ -1201,7 +1201,7 @@ _T1fa:
 	__asm        movsx  eax, dx;
 	__asm        shl    eax, 0xE;
 	__asm        mov    ecx, x;
-	__asm        mov    ecx, [ecx*4+0x639858];
+	__asm        mov    ecx, BuildMap[2][ecx*4];
 	__asm        mov    edx, y;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [ecx+edx];
@@ -1259,7 +1259,7 @@ _T2be:
 	__asm        jmp    _T303;
 _T2c9:
 	__asm        mov    eax, x;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, y;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx-1];
@@ -1267,7 +1267,7 @@ _T2c9:
 	__asm        movsx  eax, dx;
 	__asm        shl    eax, 0xE;
 	__asm        mov    ecx, x;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        mov    edx, y;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [ecx+edx-1];
@@ -1313,7 +1313,7 @@ _T36d:
 	__asm        jmp    _T3b2;
 _T378:
 	__asm        mov    eax, x;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, y;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx+2];
@@ -1321,7 +1321,7 @@ _T378:
 	__asm        movsx  eax, dx;
 	__asm        shl    eax, 0xE;
 	__asm        mov    ecx, x;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        mov    edx, y;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [ecx+edx+2];
@@ -1522,7 +1522,7 @@ _T1df:
 	__asm        ja     _T246;
 
 	__asm        mov    eax, [ebp-0x2C];
-	__asm        jmp    dword ptr [eax*4+0x539854];
+	__asm        jmp    SwitchPointers5478484[0][eax*4];
 // Switch pointers
 // LINE 516:
 _T246:
@@ -1587,7 +1587,7 @@ _T2d4:
 	__asm        ja     _T2ae;
 
 	__asm        mov    eax, [ebp-0x30];
-	__asm        jmp    dword ptr [eax*4+0x539949];
+	__asm        jmp    SwitchPointers5478729[0][eax*4];
 // Switch pointers
 // LINE 529:
 _T33b:
@@ -1664,8 +1664,8 @@ _T401:
 
 	__asm        mov    eax, [ebp-0x34];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0x539A7E];
-	__asm        jmp    dword ptr [ecx*4+0x539A6A];
+	__asm        mov    cl, SwitchTable5479038[0][eax];
+	__asm        jmp    SwitchPointers5479018[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 547:

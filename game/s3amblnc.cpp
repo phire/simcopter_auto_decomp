@@ -587,7 +587,7 @@ _T145:
 // LINE 163:
 	__asm        mov    eax, youveWonABrandNewCar;
 	__asm        mov    ecx, curAmbulances;
-	__asm        mov    [ecx*4+0x62B9B8], eax;
+	__asm        mov    ambulances[0][ecx*4], eax;
 	__asm        inc    curAmbulances;
 // LINE 165:
 	__asm        mov    eax, youveWonABrandNewCar;
@@ -674,7 +674,7 @@ _T37:
 	__asm        jmp    _T96;
 _T41:
 	__asm        mov    eax, mapX;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, mapY;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
@@ -682,7 +682,7 @@ _T41:
 	__asm        movsx  eax, dx;
 	__asm        shl    eax, 0xE;
 	__asm        mov    ecx, mapX;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        mov    edx, mapY;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [ecx+edx];
@@ -1016,7 +1016,7 @@ _T384:
 	__asm        ja     _T359;
 
 	__asm        mov    eax, [ebp-0x18];
-	__asm        jmp    dword ptr [eax*4+0x535FBC];
+	__asm        jmp    SwitchPointers5463996[0][eax*4];
 // Switch pointers
 // LINE 404:
 _T3af:

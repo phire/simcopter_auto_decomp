@@ -586,7 +586,7 @@ _T27:
 	__asm        je     _T45;
 _T36:
 	__asm        mov    eax, weekDayNumber;
-	__asm        mov    eax, [eax*4+0x59ACF4];
+	__asm        mov    eax, UCMonthNames[11][eax*4];
 	__asm        jmp    _T47;
 _T45:
 	__asm        xor    eax, eax;
@@ -1382,9 +1382,9 @@ char * MDate::PrintString(char * szDate) {
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        jmp    near ptr 0x004BCE54;
 
-	__asm        lea    ecx, strtemp.<ostrstream+0x08>;
+	__asm        lea    ecx, strtemp<ostrstream+0x08>;
 	__asm        call   ostrstream::~ostrstream;
-	__asm        lea    ecx, strtemp.<ostrstream+0x08>;
+	__asm        lea    ecx, strtemp<ostrstream+0x08>;
 	__asm        call   ios::~ios;
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        jmp    near ptr 0x004BCE6C;
@@ -2068,7 +2068,7 @@ _T259:
 	__asm        ja     _T287;
 
 	__asm        mov    eax, [ebp-0xC0];
-	__asm        jmp    dword ptr [eax*4+0x4BD60D];
+	__asm        jmp    SwitchPointers4969997[0][eax*4];
 // Switch pointers
 // LINE 658:
 _T287:
@@ -2081,9 +2081,9 @@ _T287:
 	__asm        mov    [ebp-0xAC], eax;
 	__asm        jmp    near ptr 0x004BD63B;
 
-	__asm        lea    ecx, out.<ostrstream+0x08>;
+	__asm        lea    ecx, out<ostrstream+0x08>;
 	__asm        call   ostrstream::~ostrstream;
-	__asm        lea    ecx, out.<ostrstream+0x08>;
+	__asm        lea    ecx, out<ostrstream+0x08>;
 	__asm        call   ios::~ios;
 	__asm        mov    eax, [ebp-0xAC];
 	__asm        jmp    near ptr 0x004BD65C;

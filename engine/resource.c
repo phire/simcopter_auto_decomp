@@ -496,7 +496,7 @@ _T49c:
 	__asm        ja     _T490;
 
 	__asm        mov    eax, [ebp-0xC];
-	__asm        jmp    dword ptr [eax*4+0x4D5809];
+	__asm        jmp    SwitchPointers5068809[0][eax*4];
 // Switch pointers
 // LINE 256:
 _T4c3:
@@ -1198,7 +1198,7 @@ _T24:
 // LINE 1124:
 	__asm        mov    eax, res;
 	__asm        mov    ecx, NextResource;
-	__asm        mov    [ecx*4+0x666500], eax;
+	__asm        mov    ResourceArray[0][ecx*4], eax;
 	__asm        inc    NextResource;
 // LINE 1125:
 	__asm        mov    eax, 1;
@@ -1219,7 +1219,7 @@ void UnRegisterResource(struct VRResource* res) {
 // LINE 1147:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, res;
-	__asm        cmp    [eax*4+0x666500], ecx;
+	__asm        cmp    ResourceArray[0][eax*4], ecx;
 	__asm        je     _T2a;
 // LINE 1148:
 	__asm        jmp    _T5c;
@@ -1228,11 +1228,11 @@ _T2a:
 	__asm        dec    NextResource;
 // LINE 1150:
 	__asm        mov    eax, NextResource;
-	__asm        mov    eax, [eax*4+0x666500];
+	__asm        mov    eax, ResourceArray[0][eax*4];
 	__asm        mov    ecx, i;
-	__asm        mov    [ecx*4+0x666500], eax;
+	__asm        mov    ResourceArray[0][ecx*4], eax;
 	__asm        mov    eax, i;
-	__asm        mov    eax, [eax*4+0x666500];
+	__asm        mov    eax, ResourceArray[0][eax*4];
 	__asm        mov    r, eax;
 // LINE 1151:
 	__asm        mov    eax, i;

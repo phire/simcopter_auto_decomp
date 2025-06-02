@@ -823,7 +823,7 @@ _T1e9:
 	__asm        ja     _T1bd;
 
 	__asm        mov    eax, [ebp-0x24];
-	__asm        jmp    dword ptr [eax*4+0x55D137];
+	__asm        jmp    SwitchPointers5624119[0][eax*4];
 // Switch pointers
 // LINE 173:
 _T214:

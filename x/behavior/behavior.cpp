@@ -702,7 +702,7 @@ _T4c:
 	__asm        ja     _T70;
 
 	__asm        mov    eax, [ebp-8];
-	__asm        jmp    dword ptr [eax*4+0x5607DD];
+	__asm        jmp    SwitchPointers5638109[0][eax*4];
 // Switch pointers
 // LINE 205:
 _T70:
@@ -744,7 +744,7 @@ _T4c:
 	__asm        ja     _T70;
 
 	__asm        mov    eax, [ebp-8];
-	__asm        jmp    dword ptr [eax*4+0x56085B];
+	__asm        jmp    SwitchPointers5638235[0][eax*4];
 // Switch pointers
 // LINE 224:
 _T70:
@@ -846,7 +846,7 @@ _T56:
 	__asm        ja     _T45;
 
 	__asm        mov    eax, [ebp-8];
-	__asm        jmp    dword ptr [eax*4+0x56098E];
+	__asm        jmp    SwitchPointers5638542[0][eax*4];
 // Switch pointers
 // LINE 258:
 _T7a:

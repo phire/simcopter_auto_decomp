@@ -1963,7 +1963,7 @@ _T414:
 	__asm        ja     _T468;
 
 	__asm        mov    eax, [ebp-0x70];
-	__asm        jmp    dword ptr [eax*4+0x481A89];
+	__asm        jmp    SwitchPointers4725385[0][eax*4];
 // Switch pointers
 // LINE 705:
 _T468:

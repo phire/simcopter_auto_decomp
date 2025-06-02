@@ -2368,14 +2368,14 @@ int32_t GraphicWindowManager::DeleteAllWindowsInDeletionList() {
 	class list<GraphicWindow *>::iterator tempGraphicWindowPtrListIterator;
 
 // LINE 165:
-	__asm        cmp    dword ptr ds:[0x59A96C], 0;
+	__asm        cmp    nReentrancyCount, 0;
 	__asm        jle    _T20;
 // LINE 166:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T1df;
 // LINE 167:
 _T20:
-	__asm        inc    dword ptr ds:[0x59A96C];
+	__asm        inc    nReentrancyCount;
 // LINE 169:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
@@ -2535,7 +2535,7 @@ _T1ca:
 	__asm        jmp    _T1cf;
 // LINE 177:
 _T1cf:
-	__asm        dec    dword ptr ds:[0x59A96C];
+	__asm        dec    nReentrancyCount;
 // LINE 178:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T1df;

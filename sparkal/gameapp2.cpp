@@ -536,15 +536,15 @@ int32_t IsActualTimeDaytime() {
 	class MTime tempTime;
 
 // LINE 99:
-	__asm        lea    ecx, tempTime.<MTime+0x00:None>;
+	__asm        lea    ecx, tempTime<MTime+0x00:None>;
 	__asm        call   MTime::MTime;
 // LINE 101:
-	__asm        lea    ecx, tempTime.<MTime+0x00:None>;
+	__asm        lea    ecx, tempTime<MTime+0x00:None>;
 	__asm        call   MTime::Hour;
 	__asm        cmp    eax, 6;
 	__asm        jb     _T33;
 
-	__asm        lea    ecx, tempTime.<MTime+0x00:None>;
+	__asm        lea    ecx, tempTime<MTime+0x00:None>;
 	__asm        call   MTime::Hour;
 	__asm        cmp    eax, 0x12;
 	__asm        jbe    _T3a;
@@ -903,7 +903,7 @@ unsigned long  CGameApp::TickGame() {
 	long lElapsedMilliSeconds;
 
 // LINE 222:
-	__asm        inc    dword ptr ds:[0x599294];
+	__asm        inc    lFramesSinceLastSecond;
 // LINE 223:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x416C];
@@ -984,7 +984,7 @@ _T10a:
 	__asm        cmp    lElapsedMilliSeconds, 0x3E8;
 	__asm        jl     _T203;
 // LINE 226:
-	__asm        mov    eax, ds:[0x599294];
+	__asm        mov    eax, lFramesSinceLastSecond;
 	__asm        mov    [ebp-0x34], eax;
 	__asm        fild   dword ptr [ebp-0x34];
 	__asm        fmul   dword ptr ds:[0x590464];
@@ -994,7 +994,7 @@ _T10a:
 	__asm        mov    eax, this;
 	__asm        fstp   dword ptr [eax+0x4344];
 // LINE 227:
-	__asm        mov    dword ptr ds:[0x599294], 0;
+	__asm        mov    lFramesSinceLastSecond, 0;
 // LINE 229:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x416C], 0;
@@ -1466,7 +1466,7 @@ _T536:
 	__asm        ja     _T582;
 
 	__asm        mov    eax, [ebp-0x24C];
-	__asm        jmp    dword ptr [eax*4+0x461DF9];
+	__asm        jmp    SwitchPointers4595193[0][eax*4];
 // Switch pointers
 // LINE 385:
 _T582:
@@ -1520,7 +1520,7 @@ void  CGameApp::ComposePlayFrame() {
 	static const long lFrameCount = { /* <data@0x005992a0> */ };
 
 // LINE 406:
-	__asm        inc    dword ptr ds:[0x5992A0];
+	__asm        inc    lFrameCount;
 // LINE 408:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xA4], 0;
@@ -1531,10 +1531,10 @@ void  CGameApp::ComposePlayFrame() {
 	__asm        call   CommandSystem::PollJoysticksForCommands;
 // LINE 410:
 	__asm        call   dword ptr ds:[0x6C3614];
-	__asm        mov    ds:[0x59929C], eax;
+	__asm        mov    lThisLoopTickCount, eax;
 // LINE 411:
-	__asm        mov    eax, ds:[0x59929C];
-	__asm        sub    eax, ds:[0x599298];
+	__asm        mov    eax, lThisLoopTickCount;
+	__asm        sub    eax, lLastLoopTickCount;
 	__asm        mov    LoopTime, eax;
 // LINE 412:
 	__asm        shl    LoopTime, 0x10;
@@ -1559,15 +1559,15 @@ _T7b:
 _T95:
 	__asm        call   VRAppNextFrame;
 // LINE 419:
-	__asm        mov    eax, ds:[0x59929C];
-	__asm        mov    ds:[0x599298], eax;
+	__asm        mov    eax, lThisLoopTickCount;
+	__asm        mov    lLastLoopTickCount, eax;
 // LINE 420:
-	__asm        mov    eax, ds:[0x5992A0];
+	__asm        mov    eax, lFrameCount;
 	__asm        and    al, 3;
 	__asm        cmp    al, 3;
 	__asm        jne    _T542;
 // LINE 421:
-	__asm        mov    eax, ds:[0x5992A0];
+	__asm        mov    eax, lFrameCount;
 	__asm        and    al, 0x3F;
 	__asm        cmp    al, 0x3F;
 	__asm        jne    _T3f6;
@@ -1927,7 +1927,7 @@ _T551:
 	__asm        cmp    dword ptr [eax+0xA4], 0;
 	__asm        je     _T570;
 
-	__asm        mov    eax, ds:[0x5992A0];
+	__asm        mov    eax, lFrameCount;
 	__asm        and    al, 7;
 	__asm        cmp    al, 7;
 	__asm        jne    _T601;
@@ -2736,10 +2736,10 @@ _T9e2:
 	__asm        call   dword ptr [eax+0x10];
 // LINE 599:
 _Ta07:
-	__asm        cmp    dword ptr ds:[0x5992A4], 0;
+	__asm        cmp    bDoneJoystickChangeCheckAlready, 0;
 	__asm        jne    _Ta4b;
 // LINE 600:
-	__asm        mov    dword ptr ds:[0x5992A4], 1;
+	__asm        mov    bDoneJoystickChangeCheckAlready, 1;
 // LINE 601:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -3788,7 +3788,7 @@ _T16d:
 	__asm        ja     _T1a5;
 
 	__asm        mov    eax, [ebp-0x34];
-	__asm        jmp    dword ptr [eax*4+0x463D7E];
+	__asm        jmp    SwitchPointers4603262[0][eax*4];
 // Switch pointers
 // LINE 781:
 _T1a5:
@@ -7264,7 +7264,7 @@ int  CGameApp::StartVideoForCitySelection(long lCurrentCitySelection) {
 	__asm        push   eax;
 	__asm        mov    eax, lCurrentCitySelection;
 	__asm        shl    eax, 3;
-	__asm        mov    eax, [eax+eax*8+0x5C2B5C];
+	__asm        mov    eax, gAllCareerCities[0].chCityFileNameBase[eax+eax*8];
 	__asm        push   eax;
 	__asm        push   3;
 	__asm        call   MakeCityFileName;

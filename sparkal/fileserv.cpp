@@ -2115,7 +2115,7 @@ _T231:
 	__asm        mov    [ebp-0x184], eax;
 	__asm        mov    tempPFile.Handle, 0xFFFFFFFF;
 	__asm        mov    tempPFile.ShouldClose, 1;
-	__asm        mov    tempPFile.<vftable>, 0x590468;
+	__asm        mov    tempPFile<vftable>, 0x590468;
 	__asm        mov    _fmode, 0x8000;
 	__asm        cmp    dword ptr [ebp-0x184], 0;
 	__asm        je     _T2cf;
@@ -2133,13 +2133,13 @@ _T2d6:
 	__asm        jmp    near ptr 0x004926A1;
 // LINE 143:
 	__asm        push   0;
-	__asm        lea    ecx, tempPFile.<vftable>;
+	__asm        lea    ecx, tempPFile<vftable>;
 	__asm        call   PFile::FileExists;
 	__asm        test   eax, eax;
 	__asm        jne    _T3cf;
 // LINE 144:
 	__asm        mov    dword ptr [ebp-0x11C], 0;
-	__asm        mov    tempPFile.<vftable>, 0x590468;
+	__asm        mov    tempPFile<vftable>, 0x590468;
 	__asm        cmp    tempPFile.Handle, 0xFFFFFFFF;
 	__asm        jle    _T313;
 
@@ -2204,19 +2204,19 @@ _T3cf:
 	__asm        push   0x180;
 	__asm        push   0;
 	__asm        push   0;
-	__asm        lea    ecx, tempPFile.<vftable>;
+	__asm        lea    ecx, tempPFile<vftable>;
 	__asm        call   PFile::Open;
 // LINE 146:
-	__asm        lea    ecx, tempPFile.<vftable>;
+	__asm        lea    ecx, tempPFile<vftable>;
 	__asm        call   PFile::Length;
 	__asm        cmp    eax, 0x4C4B40;
 	__asm        jge    _T4e5;
 // LINE 147:
-	__asm        lea    ecx, tempPFile.<vftable>;
+	__asm        lea    ecx, tempPFile<vftable>;
 	__asm        call   PFile::Close;
 // LINE 148:
 	__asm        mov    dword ptr [ebp-0x120], 0;
-	__asm        mov    tempPFile.<vftable>, 0x590468;
+	__asm        mov    tempPFile<vftable>, 0x590468;
 	__asm        cmp    tempPFile.Handle, 0xFFFFFFFF;
 	__asm        jle    _T429;
 
@@ -2277,11 +2277,11 @@ _T4d5:
 	__asm        jmp    _T5cf;
 // LINE 150:
 _T4e5:
-	__asm        lea    ecx, tempPFile.<vftable>;
+	__asm        lea    ecx, tempPFile<vftable>;
 	__asm        call   PFile::Close;
 // LINE 151:
 	__asm        mov    dword ptr [ebp-0x124], 1;
-	__asm        mov    tempPFile.<vftable>, 0x590468;
+	__asm        mov    tempPFile<vftable>, 0x590468;
 	__asm        cmp    tempPFile.Handle, 0xFFFFFFFF;
 	__asm        jle    _T513;
 
@@ -2358,7 +2358,7 @@ void FileServices::RefreshLocalPathCache(class basic_string<char>& sDirectoryBas
 	__asm        push   0;
 	__asm        mov    eax, sDirectoryBase;
 	__asm        push   eax;
-	__asm        lea    ecx, tempDirectory.<Directory+0x00:None>;
+	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
 	__asm        call   Directory::Directory;
 // LINE 166:
 	__asm        mov    tempStringListDirectories.length, 0;
@@ -2399,7 +2399,7 @@ _T96:
 	__asm        push   8;
 	__asm        lea    eax, tempStringListFiles.node;
 	__asm        push   eax;
-	__asm        lea    ecx, tempDirectory.<Directory+0x00:None>;
+	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
 	__asm        call   Directory::ReadDirectorySpecificEntriesIntoStringList;
 	__asm        jmp    near ptr 0x00492A4F;
 
@@ -2411,7 +2411,7 @@ _T96:
 	__asm        push   eax;
 	__asm        lea    eax, tempStringListDirectories.node;
 	__asm        push   eax;
-	__asm        lea    ecx, tempDirectory.<Directory+0x00:None>;
+	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
 	__asm        call   Directory::ReadDirectorySpecificEntriesIntoStringList;
 	__asm        jmp    near ptr 0x00492A7F;
 // LINE 173:
@@ -2705,7 +2705,7 @@ _T47b:
 
 	__asm        lea    ecx, [ebp-0x34];
 	__asm        call   basic_string<char>::~basic_string<char>;
-	__asm        lea    ecx, tempDirectory.<Directory+0x00:None>;
+	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
 	__asm        call   list<DirectoryEntry>::~list<DirectoryEntry>;
 	__asm        jmp    near ptr 0x00492E2F;
 }

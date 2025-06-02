@@ -502,7 +502,7 @@ _T43:
 _T6c:
 	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
-	__asm        mov    eax, [eax*4+0x6BF160];
+	__asm        mov    eax, S_chase[0].dist[eax*4];
 	__asm        neg    eax;
 	__asm        mov    cameraDistance, eax;
 // LINE 334:
@@ -645,12 +645,12 @@ _T21a:
 	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        mov    ecx, AccelAdjust;
-	__asm        cmp    [eax*4+0x6BF164], ecx;
+	__asm        cmp    S_chase[0].height[eax*4], ecx;
 	__asm        jle    _T24a;
 // LINE 381:
 	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
-	__asm        mov    eax, [eax*4+0x6BF164];
+	__asm        mov    eax, S_chase[0].height[eax*4];
 	__asm        sub    eax, AccelAdjust;
 	__asm        add    CameraIdeal.y, eax;
 // LINE 395:
@@ -1274,7 +1274,7 @@ _T139:
 // LINE 679:
 	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
-	__asm        mov    eax, [eax*4+0x6BF168];
+	__asm        mov    eax, S_chase[0].focus[eax*4];
 	__asm        mov    ecx, G_uheli;
 	__asm        mov    ecx, [ecx+0xA4];
 	__asm        add    eax, [ecx+0x1C];
@@ -1327,59 +1327,59 @@ void S3CameraChaseAdjust(int32_t camevent) {
 // LINE 746:
 	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
-	__asm        sub    dword ptr [eax*4+0x6BF160], 0x40000;
+	__asm        sub    S_chase[0].dist[eax*4], 0x40000;
 // LINE 747:
 	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        mov    ecx, S_ctwk_min_dist;
-	__asm        cmp    [eax*4+0x6BF160], ecx;
+	__asm        cmp    S_chase[0].dist[eax*4], ecx;
 	__asm        jge    _T57;
 // LINE 748:
 	__asm        mov    eax, S_ctwk_min_dist;
 	__asm        mov    ecx, S_curr_chase;
 	__asm        lea    ecx, [ecx+ecx*2];
-	__asm        mov    [ecx*4+0x6BF160], eax;
+	__asm        mov    S_chase[0].dist[ecx*4], eax;
 // LINE 749:
 _T57:
 	__asm        jmp    _T137;
 // LINE 751:
 	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
-	__asm        add    dword ptr [eax*4+0x6BF160], 0x40000;
+	__asm        add    S_chase[0].dist[eax*4], 0x40000;
 // LINE 752:
 	__asm        jmp    _T137;
 // LINE 754:
 	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
-	__asm        add    dword ptr [eax*4+0x6BF164], 0x40000;
+	__asm        add    S_chase[0].height[eax*4], 0x40000;
 // LINE 755:
 	__asm        jmp    _T137;
 // LINE 757:
 	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
-	__asm        sub    dword ptr [eax*4+0x6BF164], 0x40000;
+	__asm        sub    S_chase[0].height[eax*4], 0x40000;
 // LINE 759:
 	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
-	__asm        cmp    dword ptr [eax*4+0x6BF164], 0;
+	__asm        cmp    S_chase[0].height[eax*4], 0;
 	__asm        jge    _Tc8;
 // LINE 760:
 	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
-	__asm        mov    dword ptr [eax*4+0x6BF164], 0;
+	__asm        mov    S_chase[0].height[eax*4], 0;
 // LINE 761:
 _Tc8:
 	__asm        jmp    _T137;
 // LINE 763:
 	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
-	__asm        sub    dword ptr [eax*4+0x6BF168], 0x40000;
+	__asm        sub    S_chase[0].focus[eax*4], 0x40000;
 // LINE 764:
 	__asm        jmp    _T137;
 // LINE 766:
 	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
-	__asm        add    dword ptr [eax*4+0x6BF168], 0x40000;
+	__asm        add    S_chase[0].focus[eax*4], 0x40000;
 // LINE 767:
 	__asm        jmp    _T137;
 // LINE 770:
@@ -1392,7 +1392,7 @@ _T107:
 	__asm        ja     _T137;
 
 	__asm        mov    eax, [ebp-4];
-	__asm        jmp    dword ptr [eax*4+0x4F9A31];
+	__asm        jmp    SwitchPointers5216817[0][eax*4];
 // Switch pointers
 // LINE 772:
 _T137:
@@ -1460,7 +1460,7 @@ int32_t S3CameraGetBldAlt(struct Point3d* loc) {
 	__asm        mov    ecx, x;
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 830:
 	__asm        mov    eax, loc;

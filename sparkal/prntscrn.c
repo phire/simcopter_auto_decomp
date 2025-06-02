@@ -187,19 +187,19 @@ _T171:
 	__asm        jge    _T1bf;
 // LINE 116:
 	__asm        mov    eax, y;
-	__asm        mov    al, [eax*4+0x603E48];
+	__asm        mov    al, ppe[0].peRed[eax*4];
 	__asm        mov    ecx, y;
-	__asm        mov    [ecx+ecx*2+0x603AC0], al;
+	__asm        mov    wpal[ecx+ecx*2], al;
 // LINE 117:
 	__asm        mov    eax, y;
-	__asm        mov    al, [eax*4+0x603E49];
+	__asm        mov    al, ppe[0].peGreen[eax*4];
 	__asm        mov    ecx, y;
-	__asm        mov    [ecx+ecx*2+0x603AC1], al;
+	__asm        mov    wpal[1][ecx+ecx*2], al;
 // LINE 118:
 	__asm        mov    eax, y;
-	__asm        mov    al, [eax*4+0x603E4A];
+	__asm        mov    al, ppe[0].peBlue[eax*4];
 	__asm        mov    ecx, y;
-	__asm        mov    [ecx+ecx*2+0x603AC2], al;
+	__asm        mov    wpal[2][ecx+ecx*2], al;
 // LINE 119:
 	__asm        jmp    _T16e;
 // LINE 120:

@@ -124,7 +124,7 @@ _Tb1:
 	__asm        ja     _Td5;
 
 	__asm        mov    eax, [ebp-0xC];
-	__asm        jmp    dword ptr [eax*4+0x542EC8];
+	__asm        jmp    SwitchPointers5517000[0][eax*4];
 // Switch pointers
 // LINE 44:
 _Td5:

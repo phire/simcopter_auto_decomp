@@ -2515,7 +2515,7 @@ void $E71() {
 	__asm        mov    ecx, 0x636BB8;
 	__asm        call   FlatFile::FlatFile;
 	__asm        mov    dword ptr [ebp-4], 0;
-	__asm        mov    cYObject::sFile.<NResFile+0x00>, 0x593508;
+	__asm        mov    cYObject::sFile<NResFile+0x00>, 0x593508;
 	__asm        mov    cYObject::sFile.fError, 0;
 	__asm        mov    cYObject::sFile.fMap, 0;
 	__asm        jmp    near ptr 0x00543FDC;
@@ -2529,7 +2529,7 @@ _L55004:
 	__asm        ret;
 _T70:
 	__asm        mov    dword ptr [ebp-4], 1;
-	__asm        mov    cYObject::sFile.<NResFile+0x00>, 0x593518;
+	__asm        mov    cYObject::sFile<NResFile+0x00>, 0x593518;
 	__asm        jmp    near ptr 0x00544010;
 
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
@@ -2546,7 +2546,7 @@ _Ta4:
 	__asm        jmp    near ptr 0x0054404D;
 
 	__asm        mov    byte ptr [ebp-4], 3;
-	__asm        mov    cYObject::sFile.<NResFile+0x00>, 0x591218;
+	__asm        mov    cYObject::sFile<NResFile+0x00>, 0x591218;
 	__asm        jmp    near ptr 0x00544060;
 
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
@@ -2615,7 +2615,7 @@ void $E77() {
 	__asm        mov    ecx, 0x635590;
 	__asm        call   FlatFile::FlatFile;
 	__asm        mov    dword ptr [ebp-4], 0;
-	__asm        mov    cYObject::sErrorFile.<ResFile+0x00>, 0x593508;
+	__asm        mov    cYObject::sErrorFile<ResFile+0x00>, 0x593508;
 	__asm        mov    cYObject::sErrorFile.fError, 0;
 	__asm        mov    cYObject::sErrorFile.fMap, 0;
 	__asm        jmp    near ptr 0x00544160;
@@ -2629,7 +2629,7 @@ _L55025:
 	__asm        ret;
 _T70:
 	__asm        mov    dword ptr [ebp-4], 1;
-	__asm        mov    cYObject::sErrorFile.<ResFile+0x00>, 0x593518;
+	__asm        mov    cYObject::sErrorFile<ResFile+0x00>, 0x593518;
 	__asm        jmp    near ptr 0x00544194;
 
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
@@ -2951,7 +2951,7 @@ _T3e:
 	__asm        add    esp, 0x10;
 _T5a:
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(personID);
-	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
+	__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 	__asm        jne    _T88;
 
 	__asm        push   0x8C085;
@@ -2962,7 +2962,7 @@ _T5a:
 	__asm        add    esp, 0x10;
 _T88:
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(personID);
-	__asm        mov    eax, [eax*4+0x636D40];
+	__asm        mov    eax, cYObject::sObjects[0][eax*4];
 	__asm        mov    obj, eax;
 	__asm        jmp    _Ta1;
 
@@ -3193,7 +3193,7 @@ _T61:
 	__asm        add    esp, 0x10;
 _T7d:
 	__asm        movsx  eax, count;
-	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
+	__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 	__asm        jne    _Tab;
 
 	__asm        push   0x8C085;
@@ -3204,7 +3204,7 @@ _T7d:
 	__asm        add    esp, 0x10;
 _Tab:
 	__asm        movsx  eax, count;
-	__asm        mov    eax, [eax*4+0x636D40];
+	__asm        mov    eax, cYObject::sObjects[0][eax*4];
 	__asm        mov    obj, eax;
 	__asm        jmp    _Tc4;
 
@@ -3292,7 +3292,7 @@ _T198:
 	__asm        add    esp, 0x10;
 _T1b4:
 	__asm        movsx  eax, word ptr [ebp-0x14];
-	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
+	__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 	__asm        jne    _T1e2;
 
 	__asm        push   0x8C085;
@@ -3304,7 +3304,7 @@ _T1b4:
 _T1e2:
 	__asm        movsx  eax, word ptr [ebp-0x14];
 	__asm        mov    ecx, foundobj;
-	__asm        cmp    [eax*4+0x636D40], ecx;
+	__asm        cmp    cYObject::sObjects[0][eax*4], ecx;
 	__asm        je     _T223;
 
 	__asm        jmp    _T207;
@@ -3347,7 +3347,7 @@ _T260:
 	__asm        add    esp, 0x10;
 _T27c:
 	__asm        movsx  eax, word ptr [ebp-0x1C];
-	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
+	__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 	__asm        jne    _T2aa;
 
 	__asm        push   0x8C085;
@@ -3358,7 +3358,7 @@ _T27c:
 	__asm        add    esp, 0x10;
 _T2aa:
 	__asm        movsx  eax, word ptr [ebp-0x1C];
-	__asm        mov    eax, [eax*4+0x636D40];
+	__asm        mov    eax, cYObject::sObjects[0][eax*4];
 	__asm        jmp    _T2bd;
 
 	__asm        mov    eax, [ebp-0x20];
@@ -3386,7 +3386,7 @@ struct _DYOBJ_INST* cYObject::SearchForDynObj(short objtypeflag, short numcellst
 	__asm        movsx  ecx, cellx;
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    eax, [eax+0x10];
 	__asm        mov    [ebp-0x10], eax;
 _T4d:
@@ -4612,7 +4612,7 @@ _T94a:
 	__asm        ja     _T929;
 
 	__asm        mov    eax, [ebp-0x19C];
-	__asm        jmp    dword ptr [eax*4+0x5459AD];
+	__asm        jmp    SwitchPointers5527981[0][eax*4];
 // Switch pointers
 // LINE 379:
 _T974:
@@ -4722,7 +4722,7 @@ _Taa8:
 	__asm        jmp    _Tb1b;
 _Tab3:
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(centcellx);
-	__asm        mov    eax, [eax*4+0x639850];
+	__asm        mov    eax, BuildMap[eax*4];
 	__asm        movsx  ecx, reinterpret_cast<uint16_t>(centcelly);
 	__asm        movzx  ax, byte ptr [eax+ecx];
 	__asm        mov    [ebp-0x16C], ax;
@@ -4766,7 +4766,7 @@ _Tb4d:
 	__asm        jmp    _Tbc0;
 _Tb58:
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(offcellx);
-	__asm        mov    eax, [eax*4+0x639850];
+	__asm        mov    eax, BuildMap[eax*4];
 	__asm        movsx  ecx, reinterpret_cast<uint16_t>(offcelly);
 	__asm        movzx  ax, byte ptr [eax+ecx];
 	__asm        mov    [ebp-0x170], ax;
@@ -4893,7 +4893,7 @@ _T1f:
 	__asm        fadd   qword ptr ds:[0x593528];
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, i;
-	__asm        mov    [ecx*4+0x6361C8], eax;
+	__asm        mov    g_sqrtTable[ecx*4], eax;
 	__asm        jmp    _T1c;
 // LINE 412:
 _T5d:
@@ -4983,7 +4983,7 @@ _T5a:
 	__asm        add    esp, 0x10;
 _T76:
 	__asm        movsx  eax, count;
-	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
+	__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 	__asm        jne    _Ta4;
 
 	__asm        push   0x8C085;
@@ -4994,7 +4994,7 @@ _T76:
 	__asm        add    esp, 0x10;
 _Ta4:
 	__asm        movsx  eax, count;
-	__asm        mov    eax, [eax*4+0x636D40];
+	__asm        mov    eax, cYObject::sObjects[0][eax*4];
 	__asm        mov    obj, eax;
 	__asm        jmp    _Tbd;
 
@@ -5282,7 +5282,7 @@ _Ta3:
 	__asm        jge    _Td9;
 
 	__asm        movsx  eax, word ptr [ebp-0x14];
-	__asm        movsx  eax, word ptr [eax*2+0x6356C8];
+	__asm        movsx  eax, cYObject::sSoundChannels[12][eax*2];
 	__asm        test   eax, eax;
 	__asm        jne    _Td4;
 
@@ -5387,7 +5387,7 @@ void S3PersonUserAppear(int32_t x, int32_t y, int32_t dx, int32_t dz) {
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, reinterpret_cast<uint8_t>(x);
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        movsx  eax, word ptr [eax+2];
@@ -5618,7 +5618,7 @@ _T70:
 	__asm        add    esp, 0x10;
 _T8c:
 	__asm        movsx  eax, id;
-	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
+	__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 	__asm        jne    _Tba;
 
 	__asm        push   0x8C085;
@@ -5629,7 +5629,7 @@ _T8c:
 	__asm        add    esp, 0x10;
 _Tba:
 	__asm        movsx  eax, id;
-	__asm        mov    eax, [eax*4+0x636D40];
+	__asm        mov    eax, cYObject::sObjects[0][eax*4];
 	__asm        mov    obj, eax;
 	__asm        jmp    _Td3;
 
@@ -6089,7 +6089,7 @@ struct _HELI_DATA* S3PersonGetLandedHeli(struct Point3d* loc) {
 	__asm        mov    ecx, x;
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 659:
 	__asm        mov    eax, cptr;
@@ -6208,7 +6208,7 @@ _T3b:
 	__asm        jmp    _Ta2;
 _T46:
 	__asm        movsx  eax, cellx;
-	__asm        mov    eax, [eax*4+0x639850];
+	__asm        mov    eax, BuildMap[eax*4];
 	__asm        movsx  ecx, celly;
 	__asm        movzx  ax, byte ptr [eax+ecx];
 	__asm        mov    [ebp-0x10], ax;
@@ -6267,7 +6267,7 @@ _Tf3:
 	__asm        add    esp, 0x10;
 _T10f:
 	__asm        movsx  eax, count;
-	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
+	__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 	__asm        jne    _T13d;
 
 	__asm        push   0x8C085;
@@ -6278,7 +6278,7 @@ _T10f:
 	__asm        add    esp, 0x10;
 _T13d:
 	__asm        movsx  eax, count;
-	__asm        mov    eax, [eax*4+0x636D40];
+	__asm        mov    eax, cYObject::sObjects[0][eax*4];
 	__asm        mov    obj, eax;
 	__asm        jmp    _T156;
 
@@ -6351,7 +6351,7 @@ unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, e
 	__asm        movsx  ecx, cellx;
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-0x34], eax;
 // LINE 711:
 	__asm        mov    eax, [ebp-0x34];
@@ -6534,7 +6534,7 @@ _T61:
 	__asm        jmp    _Tc8;
 _T6c:
 	__asm        movsx  eax, cellx;
-	__asm        mov    eax, [eax*4+0x639850];
+	__asm        mov    eax, BuildMap[eax*4];
 	__asm        movsx  ecx, celly;
 	__asm        movzx  ax, byte ptr [eax+ecx];
 	__asm        mov    [ebp-0x14], ax;
@@ -6658,7 +6658,7 @@ _T61:
 	__asm        jmp    _Tc8;
 _T6c:
 	__asm        movsx  eax, cellx;
-	__asm        mov    eax, [eax*4+0x639850];
+	__asm        mov    eax, BuildMap[eax*4];
 	__asm        movsx  ecx, celly;
 	__asm        movzx  ax, byte ptr [eax+ecx];
 	__asm        mov    [ebp-0x44], ax;
@@ -6686,7 +6686,7 @@ _Tc8:
 	__asm        shl    eax, 0xA;
 	__asm        movsx  ecx, celly;
 	__asm        and    ecx, 0xFF;
-	__asm        mov    eax, [eax+ecx*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][eax+ecx*4];
 	__asm        mov    [ebp-0x40], eax;
 // LINE 752:
 	__asm        mov    eax, [ebp-0x40];
@@ -6787,7 +6787,7 @@ _T1ed:
 	__asm        add    esp, 0x10;
 _T209:
 	__asm        movsx  eax, ret;
-	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
+	__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 	__asm        jne    _T237;
 
 	__asm        push   0x8C085;
@@ -6798,7 +6798,7 @@ _T209:
 	__asm        add    esp, 0x10;
 _T237:
 	__asm        movsx  eax, ret;
-	__asm        mov    eax, [eax*4+0x636D40];
+	__asm        mov    eax, cYObject::sObjects[0][eax*4];
 	__asm        mov    obj, eax;
 	__asm        jmp    _T250;
 
@@ -6851,7 +6851,7 @@ _T3b:
 	__asm        jmp    _Ta2;
 _T46:
 	__asm        movsx  eax, cellx;
-	__asm        mov    eax, [eax*4+0x639850];
+	__asm        mov    eax, BuildMap[eax*4];
 	__asm        movsx  ecx, celly;
 	__asm        movzx  ax, byte ptr [eax+ecx];
 	__asm        mov    [ebp-0x1C], ax;
@@ -7239,8 +7239,8 @@ _T490:
 
 	__asm        mov    eax, [ebp-0x20];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0x547907];
-	__asm        jmp    dword ptr [ecx*4+0x5478F3];
+	__asm        mov    cl, SwitchTable5536007[0][eax];
+	__asm        jmp    SwitchPointers5535987[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 832:
@@ -7481,7 +7481,7 @@ _T113:
 	__asm        add    esp, 0x10;
 _T12f:
 	__asm        movsx  eax, id;
-	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
+	__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 	__asm        jne    _T15d;
 
 	__asm        push   0x8C085;
@@ -7492,7 +7492,7 @@ _T12f:
 	__asm        add    esp, 0x10;
 _T15d:
 	__asm        movsx  eax, id;
-	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
+	__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 	__asm        jne    _T19a;
 
 	__asm        jmp    _T17e;
@@ -7589,7 +7589,7 @@ _T61:
 	__asm        add    esp, 0x10;
 _T7d:
 	__asm        movsx  eax, count;
-	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
+	__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 	__asm        jne    _Tab;
 
 	__asm        push   0x8C085;
@@ -7600,7 +7600,7 @@ _T7d:
 	__asm        add    esp, 0x10;
 _Tab:
 	__asm        movsx  eax, count;
-	__asm        mov    eax, [eax*4+0x636D40];
+	__asm        mov    eax, cYObject::sObjects[0][eax*4];
 	__asm        mov    test, eax;
 	__asm        jmp    _Tc4;
 
@@ -7760,7 +7760,7 @@ _T8e:
 	__asm        add    esp, 0x10;
 _Taa:
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(newnum);
-	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
+	__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 	__asm        jne    _Td8;
 
 	__asm        push   0x8C085;
@@ -7771,7 +7771,7 @@ _Taa:
 	__asm        add    esp, 0x10;
 _Td8:
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(newnum);
-	__asm        mov    eax, [eax*4+0x636D40];
+	__asm        mov    eax, cYObject::sObjects[0][eax*4];
 	__asm        mov    personobj, eax;
 	__asm        jmp    _Tf1;
 
@@ -7890,7 +7890,7 @@ _Tdd:
 // LINE 993:
 	__asm        movsx  eax, count;
 	__asm        lea    eax, [eax+eax*2];
-	__asm        mov    dword ptr [eax*4+0x636CE4], 0;
+	__asm        mov    cYObject::sUnitVectorTable[0].y[eax*4], 0;
 	__asm        jmp    _Td9;
 // LINE 995:
 _T101:
@@ -7906,35 +7906,35 @@ _T110:
 	__asm        push   0xC0000;
 	__asm        movsx  eax, count;
 	__asm        lea    eax, [eax+eax*2];
-	__asm        mov    eax, [eax*4+0x636CE0];
+	__asm        mov    eax, cYObject::sUnitVectorTable[0].x[eax*4];
 	__asm        push   eax;
 	__asm        call   0x004D19DF;
 	__asm        add    esp, 8;
 	__asm        movsx  ecx, count;
 	__asm        lea    ecx, [ecx+ecx*2];
-	__asm        mov    [ecx*4+0x635530], eax;
+	__asm        mov    cYObject::sMoveTable[0].x[ecx*4], eax;
 // LINE 997:
 	__asm        push   0xC0000;
 	__asm        movsx  eax, count;
 	__asm        lea    eax, [eax+eax*2];
-	__asm        mov    eax, [eax*4+0x636CE8];
+	__asm        mov    eax, cYObject::sUnitVectorTable[0].z[eax*4];
 	__asm        push   eax;
 	__asm        call   0x004D19DF;
 	__asm        add    esp, 8;
 	__asm        movsx  ecx, count;
 	__asm        lea    ecx, [ecx+ecx*2];
-	__asm        mov    [ecx*4+0x635538], eax;
+	__asm        mov    cYObject::sMoveTable[0].z[ecx*4], eax;
 // LINE 998:
 	__asm        push   0xC0000;
 	__asm        movsx  eax, count;
 	__asm        lea    eax, [eax+eax*2];
-	__asm        mov    eax, [eax*4+0x636CE4];
+	__asm        mov    eax, cYObject::sUnitVectorTable[0].y[eax*4];
 	__asm        push   eax;
 	__asm        call   0x004D19DF;
 	__asm        add    esp, 8;
 	__asm        movsx  ecx, count;
 	__asm        lea    ecx, [ecx+ecx*2];
-	__asm        mov    [ecx*4+0x635534], eax;
+	__asm        mov    cYObject::sMoveTable[0].y[ecx*4], eax;
 // LINE 999:
 	__asm        jmp    _T10c;
 // LINE 1003:
@@ -7955,56 +7955,56 @@ _T1b8:
 	__asm        jmp    _T2cd;
 // LINE 1008:
 	__asm        movsx  eax, count;
-	__asm        mov    word ptr [eax*2+0x636B98], 0x352;
+	__asm        mov    cYObject::sInitBhav[eax*2], 0x352;
 	__asm        jmp    _T314;
 // LINE 1010:
 	__asm        movsx  eax, count;
-	__asm        mov    word ptr [eax*2+0x636B98], 0x2BC;
+	__asm        mov    cYObject::sInitBhav[eax*2], 0x2BC;
 	__asm        jmp    _T314;
 // LINE 1012:
 	__asm        movsx  eax, count;
-	__asm        mov    word ptr [eax*2+0x636B98], 0x2BC;
+	__asm        mov    cYObject::sInitBhav[eax*2], 0x2BC;
 	__asm        jmp    _T314;
 // LINE 1014:
 	__asm        movsx  eax, count;
-	__asm        mov    word ptr [eax*2+0x636B98], 0x2EE;
+	__asm        mov    cYObject::sInitBhav[eax*2], 0x2EE;
 	__asm        jmp    _T314;
 // LINE 1016:
 	__asm        movsx  eax, count;
-	__asm        mov    word ptr [eax*2+0x636B98], 0x320;
+	__asm        mov    cYObject::sInitBhav[eax*2], 0x320;
 	__asm        jmp    _T314;
 // LINE 1018:
 	__asm        movsx  eax, count;
-	__asm        mov    word ptr [eax*2+0x636B98], 0x321;
+	__asm        mov    cYObject::sInitBhav[eax*2], 0x321;
 	__asm        jmp    _T314;
 // LINE 1022:
 	__asm        movsx  eax, count;
-	__asm        mov    word ptr [eax*2+0x636B98], 0x325;
+	__asm        mov    cYObject::sInitBhav[eax*2], 0x325;
 	__asm        jmp    _T314;
 // LINE 1024:
 	__asm        movsx  eax, count;
-	__asm        mov    word ptr [eax*2+0x636B98], 0x514;
+	__asm        mov    cYObject::sInitBhav[eax*2], 0x514;
 	__asm        jmp    _T314;
 // LINE 1026:
 	__asm        movsx  eax, count;
-	__asm        mov    word ptr [eax*2+0x636B98], 0x515;
+	__asm        mov    cYObject::sInitBhav[eax*2], 0x515;
 	__asm        jmp    _T314;
 // LINE 1028:
 	__asm        movsx  eax, count;
-	__asm        mov    word ptr [eax*2+0x636B98], 0x516;
+	__asm        mov    cYObject::sInitBhav[eax*2], 0x516;
 	__asm        jmp    _T314;
 // LINE 1030:
 	__asm        movsx  eax, count;
-	__asm        mov    word ptr [eax*2+0x636B98], 0x578;
+	__asm        mov    cYObject::sInitBhav[eax*2], 0x578;
 	__asm        jmp    _T314;
 // LINE 1032:
 	__asm        movsx  eax, count;
-	__asm        mov    word ptr [eax*2+0x636B98], 0x579;
+	__asm        mov    cYObject::sInitBhav[eax*2], 0x579;
 	__asm        jmp    _T314;
 // LINE 1034:
 _T2b5:
 	__asm        movsx  eax, count;
-	__asm        mov    word ptr [eax*2+0x636B98], 0x258;
+	__asm        mov    cYObject::sInitBhav[eax*2], 0x258;
 	__asm        jmp    _T314;
 // LINE 1035:
 	__asm        jmp    _T314;
@@ -8014,7 +8014,7 @@ _T2cd:
 	__asm        ja     _T2b5;
 
 	__asm        mov    eax, [ebp-0x28];
-	__asm        jmp    dword ptr [eax*4+0x54832B];
+	__asm        jmp    SwitchPointers5538603[0][eax*4];
 // Switch pointers
 // LINE 1036:
 _T314:
@@ -8046,7 +8046,7 @@ _T34e:
 	__asm        add    esp, 0x10;
 _T36a:
 	__asm        movsx  eax, count;
-	__asm        mov    word ptr [eax*2+0x6352D8], 0xFFFF;
+	__asm        mov    cYObject::sHitRxnTree[eax*2], 0xFFFF;
 	__asm        jmp    near ptr 0x005483C4;
 // LINE 1041:
 	__asm        jmp    _T324;
@@ -8271,7 +8271,7 @@ _T6b0:
 // LINE 1080:
 	__asm        movsx  eax, count;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    dword ptr [eax*8+0x635300], 2;
+	__asm        mov    cYObject::sNeutralMissionLocs[0][0][eax*8], 2;
 // LINE 1081:
 	__asm        mov    n, 1;
 	__asm        jmp    _T6ea;
@@ -8286,7 +8286,7 @@ _T6ea:
 	__asm        lea    eax, [eax+eax*4];
 	__asm        movsx  ecx, n;
 	__asm        shl    ecx, 2;
-	__asm        mov    dword ptr [ecx+eax*8+0x635300], 0;
+	__asm        mov    cYObject::sNeutralMissionLocs[0][0][ecx+eax*8], 0;
 	__asm        jmp    _T6e6;
 // LINE 1082:
 _T715:
@@ -8294,19 +8294,19 @@ _T715:
 // LINE 1084:
 	__asm        movsx  eax, count;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    dword ptr [eax*8+0x635300], 0xD;
+	__asm        mov    cYObject::sNeutralMissionLocs[0][0][eax*8], 0xD;
 // LINE 1085:
 	__asm        movsx  eax, count;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    dword ptr [eax*8+0x635304], 0xB;
+	__asm        mov    cYObject::sNeutralMissionLocs[0][1][eax*8], 0xB;
 // LINE 1086:
 	__asm        movsx  eax, count;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    dword ptr [eax*8+0x635308], 0xA;
+	__asm        mov    cYObject::sNeutralMissionLocs[0][2][eax*8], 0xA;
 // LINE 1087:
 	__asm        movsx  eax, count;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    dword ptr [eax*8+0x63530C], 0xC;
+	__asm        mov    cYObject::sNeutralMissionLocs[0][3][eax*8], 0xC;
 // LINE 1088:
 	__asm        mov    n, 4;
 	__asm        jmp    _T771;
@@ -8321,7 +8321,7 @@ _T771:
 	__asm        lea    eax, [eax+eax*4];
 	__asm        movsx  ecx, n;
 	__asm        shl    ecx, 2;
-	__asm        mov    dword ptr [ecx+eax*8+0x635300], 0;
+	__asm        mov    cYObject::sNeutralMissionLocs[0][0][ecx+eax*8], 0;
 	__asm        jmp    _T76d;
 // LINE 1089:
 _T79c:
@@ -8329,7 +8329,7 @@ _T79c:
 // LINE 1092:
 	__asm        movsx  eax, count;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    dword ptr [eax*8+0x635304], 7;
+	__asm        mov    cYObject::sNeutralMissionLocs[0][1][eax*8], 7;
 // LINE 1094:
 	__asm        mov    n, 3;
 	__asm        jmp    _T7c2;
@@ -8344,7 +8344,7 @@ _T7c2:
 	__asm        lea    eax, [eax+eax*4];
 	__asm        movsx  ecx, n;
 	__asm        shl    ecx, 2;
-	__asm        mov    dword ptr [ecx+eax*8+0x635300], 0;
+	__asm        mov    cYObject::sNeutralMissionLocs[0][0][ecx+eax*8], 0;
 	__asm        jmp    _T7be;
 // LINE 1095:
 _T7ed:
@@ -8352,7 +8352,7 @@ _T7ed:
 // LINE 1097:
 	__asm        movsx  eax, count;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    dword ptr [eax*8+0x635300], 0xC;
+	__asm        mov    cYObject::sNeutralMissionLocs[0][0][eax*8], 0xC;
 // LINE 1098:
 	__asm        mov    n, 1;
 	__asm        jmp    _T813;
@@ -8367,7 +8367,7 @@ _T813:
 	__asm        lea    eax, [eax+eax*4];
 	__asm        movsx  ecx, n;
 	__asm        shl    ecx, 2;
-	__asm        mov    dword ptr [ecx+eax*8+0x635300], 0;
+	__asm        mov    cYObject::sNeutralMissionLocs[0][0][ecx+eax*8], 0;
 	__asm        jmp    _T80f;
 // LINE 1099:
 _T83e:
@@ -8376,23 +8376,23 @@ _T83e:
 _T843:
 	__asm        movsx  eax, count;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    dword ptr [eax*8+0x635300], 0xD;
+	__asm        mov    cYObject::sNeutralMissionLocs[0][0][eax*8], 0xD;
 // LINE 1109:
 	__asm        movsx  eax, count;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    dword ptr [eax*8+0x635304], 0xB;
+	__asm        mov    cYObject::sNeutralMissionLocs[0][1][eax*8], 0xB;
 // LINE 1110:
 	__asm        movsx  eax, count;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    dword ptr [eax*8+0x635308], 0xA;
+	__asm        mov    cYObject::sNeutralMissionLocs[0][2][eax*8], 0xA;
 // LINE 1111:
 	__asm        movsx  eax, count;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    dword ptr [eax*8+0x63530C], 0xC;
+	__asm        mov    cYObject::sNeutralMissionLocs[0][3][eax*8], 0xC;
 // LINE 1112:
 	__asm        movsx  eax, count;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    dword ptr [eax*8+0x635310], 7;
+	__asm        mov    cYObject::sNeutralMissionLocs[0][4][eax*8], 7;
 // LINE 1113:
 	__asm        mov    n, 5;
 	__asm        jmp    _T8ac;
@@ -8407,7 +8407,7 @@ _T8ac:
 	__asm        lea    eax, [eax+eax*4];
 	__asm        movsx  ecx, n;
 	__asm        shl    ecx, 2;
-	__asm        mov    dword ptr [ecx+eax*8+0x635300], 0;
+	__asm        mov    cYObject::sNeutralMissionLocs[0][0][ecx+eax*8], 0;
 	__asm        jmp    _T8a8;
 // LINE 1114:
 _T8d7:
@@ -8420,7 +8420,7 @@ _T8e1:
 	__asm        ja     _T843;
 
 	__asm        mov    eax, [ebp-0x2C];
-	__asm        jmp    dword ptr [eax*4+0x54893F];
+	__asm        jmp    SwitchPointers5540159[0][eax*4];
 // Switch pointers
 // LINE 1117:
 _T90c:
@@ -8443,7 +8443,7 @@ _T920:
 _T939:
 	__asm        movsx  eax, count;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    dword ptr [eax*8+0x6372D0], 0xD;
+	__asm        mov    cYObject::sNeutralPersonLocs[0][0][eax*8], 0xD;
 // LINE 1123:
 	__asm        mov    n, 1;
 	__asm        jmp    _T95a;
@@ -8458,7 +8458,7 @@ _T95a:
 	__asm        lea    eax, [eax+eax*4];
 	__asm        movsx  ecx, n;
 	__asm        shl    ecx, 2;
-	__asm        mov    dword ptr [ecx+eax*8+0x6372D0], 0;
+	__asm        mov    cYObject::sNeutralPersonLocs[0][0][ecx+eax*8], 0;
 	__asm        jmp    _T956;
 // LINE 1124:
 _T985:
@@ -8467,15 +8467,15 @@ _T985:
 _T98a:
 	__asm        movsx  eax, count;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    dword ptr [eax*8+0x6372D0], 5;
+	__asm        mov    cYObject::sNeutralPersonLocs[0][0][eax*8], 5;
 // LINE 1127:
 	__asm        movsx  eax, count;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    dword ptr [eax*8+0x6372D4], 4;
+	__asm        mov    cYObject::sNeutralPersonLocs[0][1][eax*8], 4;
 // LINE 1128:
 	__asm        movsx  eax, count;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    dword ptr [eax*8+0x6372D8], 3;
+	__asm        mov    cYObject::sNeutralPersonLocs[0][2][eax*8], 3;
 // LINE 1129:
 	__asm        mov    n, 3;
 	__asm        jmp    _T9cf;
@@ -8490,7 +8490,7 @@ _T9cf:
 	__asm        lea    eax, [eax+eax*4];
 	__asm        movsx  ecx, n;
 	__asm        shl    ecx, 2;
-	__asm        mov    dword ptr [ecx+eax*8+0x6372D0], 0;
+	__asm        mov    cYObject::sNeutralPersonLocs[0][0][ecx+eax*8], 0;
 	__asm        jmp    _T9cb;
 // LINE 1130:
 _T9fa:
@@ -8499,19 +8499,19 @@ _T9fa:
 _T9ff:
 	__asm        movsx  eax, count;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    dword ptr [eax*8+0x6372D0], 0xC;
+	__asm        mov    cYObject::sNeutralPersonLocs[0][0][eax*8], 0xC;
 // LINE 1138:
 	__asm        movsx  eax, count;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    dword ptr [eax*8+0x6372D4], 0xD;
+	__asm        mov    cYObject::sNeutralPersonLocs[0][1][eax*8], 0xD;
 // LINE 1139:
 	__asm        movsx  eax, count;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    dword ptr [eax*8+0x6372D8], 0xB;
+	__asm        mov    cYObject::sNeutralPersonLocs[0][2][eax*8], 0xB;
 // LINE 1140:
 	__asm        movsx  eax, count;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        mov    dword ptr [eax*8+0x6372DC], 0xA;
+	__asm        mov    cYObject::sNeutralPersonLocs[0][3][eax*8], 0xA;
 // LINE 1142:
 	__asm        mov    n, 4;
 	__asm        jmp    _Ta56;
@@ -8526,7 +8526,7 @@ _Ta56:
 	__asm        lea    eax, [eax+eax*4];
 	__asm        movsx  ecx, n;
 	__asm        shl    ecx, 2;
-	__asm        mov    dword ptr [ecx+eax*8+0x6372D0], 0;
+	__asm        mov    cYObject::sNeutralPersonLocs[0][0][ecx+eax*8], 0;
 	__asm        jmp    _Ta52;
 // LINE 1143:
 _Ta81:
@@ -8575,30 +8575,30 @@ _Tab3:
 // LINE 1147:
 _Tb01:
 	__asm        movsx  eax, count;
-	__asm        mov    dword ptr [eax*8+0x635268], 1;
+	__asm        mov    cYObject::sLocInfo[0].searchType[eax*8], 1;
 // LINE 1148:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 4;
 	__asm        jne    _Tb30;
 // LINE 1149:
 	__asm        movsx  eax, count;
-	__asm        mov    word ptr [eax*8+0x63526C], 2;
+	__asm        mov    cYObject::sLocInfo[0].maxNormalLoiterers[eax*8], 2;
 // LINE 1150:
 	__asm        jmp    _Tb3e;
 // LINE 1151:
 _Tb30:
 	__asm        movsx  eax, count;
-	__asm        mov    word ptr [eax*8+0x63526C], 4;
+	__asm        mov    cYObject::sLocInfo[0].maxNormalLoiterers[eax*8], 4;
 // LINE 1153:
 _Tb3e:
 	__asm        jmp    _Tb60;
 // LINE 1154:
 _Tb43:
 	__asm        movsx  eax, count;
-	__asm        mov    dword ptr [eax*8+0x635268], 0;
+	__asm        mov    cYObject::sLocInfo[0].searchType[eax*8], 0;
 // LINE 1155:
 	__asm        movsx  eax, count;
-	__asm        mov    word ptr [eax*8+0x63526C], 4;
+	__asm        mov    cYObject::sLocInfo[0].maxNormalLoiterers[eax*8], 4;
 // LINE 1157:
 _Tb60:
 	__asm        jmp    _Taaf;
@@ -8618,7 +8618,7 @@ _Tb74:
 	__asm        jne    _Tba3;
 // LINE 1164:
 	__asm        movsx  eax, count;
-	__asm        mov    dword ptr [eax*4+0x636ED0], 2;
+	__asm        mov    cYObject::sLocType[0][eax*4], 2;
 // LINE 1165:
 	__asm        jmp    _T103d;
 _Tba3:
@@ -8631,7 +8631,7 @@ _Tba3:
 	__asm        jg     _Tbd1;
 // LINE 1166:
 	__asm        movsx  eax, count;
-	__asm        mov    dword ptr [eax*4+0x636ED0], 4;
+	__asm        mov    cYObject::sLocType[0][eax*4], 4;
 // LINE 1167:
 	__asm        jmp    _T103d;
 _Tbd1:
@@ -8644,7 +8644,7 @@ _Tbd1:
 	__asm        jg     _Tbff;
 // LINE 1168:
 	__asm        movsx  eax, count;
-	__asm        mov    dword ptr [eax*4+0x636ED0], 3;
+	__asm        mov    cYObject::sLocType[0][eax*4], 3;
 // LINE 1169:
 	__asm        jmp    _T103d;
 _Tbff:
@@ -8662,7 +8662,7 @@ _Tbff:
 // LINE 1170:
 _Tc2a:
 	__asm        movsx  eax, count;
-	__asm        mov    dword ptr [eax*4+0x636ED0], 5;
+	__asm        mov    cYObject::sLocType[0][eax*4], 5;
 // LINE 1171:
 	__asm        jmp    _T103d;
 _Tc3e:
@@ -8675,7 +8675,7 @@ _Tc3e:
 	__asm        jg     _Tc6c;
 // LINE 1172:
 	__asm        movsx  eax, count;
-	__asm        mov    dword ptr [eax*4+0x636ED0], 6;
+	__asm        mov    cYObject::sLocType[0][eax*4], 6;
 // LINE 1173:
 	__asm        jmp    _T103d;
 _Tc6c:
@@ -8713,7 +8713,7 @@ _Tcba:
 // LINE 1174:
 _Tcd4:
 	__asm        movsx  eax, count;
-	__asm        mov    dword ptr [eax*4+0x636ED0], 7;
+	__asm        mov    cYObject::sLocType[0][eax*4], 7;
 // LINE 1175:
 	__asm        jmp    _T103d;
 _Tce8:
@@ -8739,7 +8739,7 @@ _Td02:
 // LINE 1176:
 _Td29:
 	__asm        movsx  eax, count;
-	__asm        mov    dword ptr [eax*4+0x636ED0], 8;
+	__asm        mov    cYObject::sLocType[0][eax*4], 8;
 // LINE 1177:
 	__asm        jmp    _T103d;
 _Td3d:
@@ -8777,7 +8777,7 @@ _Td8b:
 // LINE 1178:
 _Tda5:
 	__asm        movsx  eax, count;
-	__asm        mov    dword ptr [eax*4+0x636ED0], 9;
+	__asm        mov    cYObject::sLocType[0][eax*4], 9;
 // LINE 1179:
 	__asm        jmp    _T103d;
 _Tdb9:
@@ -8815,7 +8815,7 @@ _Te0f:
 // LINE 1180:
 _Te2d:
 	__asm        movsx  eax, count;
-	__asm        mov    dword ptr [eax*4+0x636ED0], 0xA;
+	__asm        mov    cYObject::sLocType[0][eax*4], 0xA;
 // LINE 1181:
 	__asm        jmp    _T103d;
 _Te41:
@@ -8857,7 +8857,7 @@ _Te7d:
 // LINE 1182:
 _Tec8:
 	__asm        movsx  eax, count;
-	__asm        mov    dword ptr [eax*4+0x636ED0], 0xC;
+	__asm        mov    cYObject::sLocType[0][eax*4], 0xC;
 // LINE 1183:
 	__asm        jmp    _T103d;
 _Tedc:
@@ -8919,7 +8919,7 @@ _Tf63:
 // LINE 1184:
 _Tfae:
 	__asm        movsx  eax, count;
-	__asm        mov    dword ptr [eax*4+0x636ED0], 0xD;
+	__asm        mov    cYObject::sLocType[0][eax*4], 0xD;
 // LINE 1185:
 	__asm        jmp    _T103d;
 _Tfc2:
@@ -8949,13 +8949,13 @@ _Tffc:
 // LINE 1186:
 _T101a:
 	__asm        movsx  eax, count;
-	__asm        mov    dword ptr [eax*4+0x636ED0], 0xB;
+	__asm        mov    cYObject::sLocType[0][eax*4], 0xB;
 // LINE 1187:
 	__asm        jmp    _T103d;
 // LINE 1188:
 _T102e:
 	__asm        movsx  eax, count;
-	__asm        mov    dword ptr [eax*4+0x636ED0], 1;
+	__asm        mov    cYObject::sLocType[0][eax*4], 1;
 // LINE 1189:
 _T103d:
 	__asm        jmp    _Tb70;
@@ -8971,7 +8971,7 @@ _T1051:
 	__asm        jge    _T1072;
 // LINE 1193:
 	__asm        movsx  eax, count;
-	__asm        mov    dword ptr [eax*4+0x636D40], 0;
+	__asm        mov    cYObject::sObjects[0][eax*4], 0;
 	__asm        jmp    _T104d;
 // LINE 1194:
 _T1072:
@@ -9071,7 +9071,7 @@ _T11ab:
 	__asm        jge    _T11cc;
 // LINE 1209:
 	__asm        movsx  eax, count;
-	__asm        mov    dword ptr [eax*4+0x6375A8], 0;
+	__asm        mov    cYObject::PrimProcs[0][eax*4], 0;
 	__asm        jmp    _T11a7;
 // LINE 1210:
 _T11cc:
@@ -9928,7 +9928,7 @@ _T1f3:
 	__asm        ja     _T21b;
 
 	__asm        mov    eax, [ebp-0x48];
-	__asm        jmp    dword ptr [eax*4+0x549DE4];
+	__asm        jmp    SwitchPointers5545444[0][eax*4];
 // Switch pointers
 // LINE 1369:
 _T21b:
@@ -10368,7 +10368,7 @@ _T5a:
 	__asm        add    esp, 0x10;
 _T76:
 	__asm        movsx  eax, count;
-	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
+	__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 	__asm        jne    _Ta4;
 
 	__asm        push   0x8C085;
@@ -10379,7 +10379,7 @@ _T76:
 	__asm        add    esp, 0x10;
 _Ta4:
 	__asm        movsx  eax, count;
-	__asm        mov    eax, [eax*4+0x636D40];
+	__asm        mov    eax, cYObject::sObjects[0][eax*4];
 	__asm        mov    obj, eax;
 	__asm        jmp    _Tbd;
 
@@ -10469,7 +10469,7 @@ _T75:
 	__asm        add    esp, 0x10;
 _T91:
 	__asm        movsx  eax, count;
-	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
+	__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 	__asm        jne    _Tbf;
 
 	__asm        push   0x8C085;
@@ -10480,7 +10480,7 @@ _T91:
 	__asm        add    esp, 0x10;
 _Tbf:
 	__asm        movsx  eax, count;
-	__asm        mov    eax, [eax*4+0x636D40];
+	__asm        mov    eax, cYObject::sObjects[0][eax*4];
 	__asm        mov    obj, eax;
 	__asm        jmp    _Td8;
 
@@ -10692,7 +10692,7 @@ _T56:
 	__asm        jmp    _Tbd;
 _T61:
 	__asm        movsx  eax, cellx;
-	__asm        mov    eax, [eax*4+0x639850];
+	__asm        mov    eax, BuildMap[eax*4];
 	__asm        movsx  ecx, celly;
 	__asm        movzx  ax, byte ptr [eax+ecx];
 	__asm        mov    [ebp-0x18], ax;
@@ -10766,7 +10766,7 @@ _T11d:
 	__asm        lea    ecx, [ecx+ecx*4];
 	__asm        shl    ecx, 3;
 	__asm        mov    edx, loctype;
-	__asm        cmp    [ecx+eax*4+0x635300], edx;
+	__asm        cmp    cYObject::sNeutralMissionLocs[0][0][ecx+eax*4], edx;
 	__asm        jne    _T152;
 // LINE 1553:
 	__asm        mov    ret, 1;
@@ -10977,7 +10977,7 @@ _T26a:
 	__asm        je     _T2fb;
 
 	__asm        mov    eax, loctype;
-	__asm        mov    eax, [eax*8+0x635268];
+	__asm        mov    eax, cYObject::sLocInfo[0].searchType[eax*8];
 	__asm        push   eax;
 	__asm        lea    eax, offsetz;
 	__asm        push   eax;
@@ -10988,7 +10988,7 @@ _T26a:
 	__asm        shl    eax, 0xA;
 	__asm        movsx  ecx, celly;
 	__asm        and    ecx, 0xFF;
-	__asm        mov    eax, [eax+ecx*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][eax+ecx*4];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::SearchForPersonSpot;
@@ -11318,7 +11318,7 @@ _T673:
 	__asm        je     _T8fd;
 
 	__asm        mov    eax, loctype;
-	__asm        mov    eax, [eax*8+0x635268];
+	__asm        mov    eax, cYObject::sLocInfo[0].searchType[eax*8];
 	__asm        push   eax;
 	__asm        lea    eax, offsetz;
 	__asm        push   eax;
@@ -11329,7 +11329,7 @@ _T673:
 	__asm        shl    eax, 0xA;
 	__asm        movsx  ecx, celly;
 	__asm        and    ecx, 0xFF;
-	__asm        mov    eax, [eax+ecx*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][eax+ecx*4];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::SearchForPersonSpot;
@@ -11585,7 +11585,7 @@ _T925:
 	__asm        shl    eax, 0xA;
 	__asm        movsx  ecx, celly;
 	__asm        and    ecx, 0xFF;
-	__asm        mov    eax, [eax+ecx*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][eax+ecx*4];
 	__asm        movsx  eax, word ptr [eax];
 	__asm        test   al, 0x20;
 	__asm        jne    _T974;
@@ -11630,7 +11630,7 @@ _T9c0:
 	__asm        shl    eax, 0xA;
 	__asm        movsx  ecx, celly;
 	__asm        and    ecx, 0xFF;
-	__asm        mov    eax, [eax+ecx*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][eax+ecx*4];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::SearchForPersonSpot;
@@ -11879,7 +11879,7 @@ _Tc95:
 	__asm        shl    eax, 0xA;
 	__asm        movsx  ecx, celly;
 	__asm        and    ecx, 0xFF;
-	__asm        mov    eax, [eax+ecx*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][eax+ecx*4];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::SearchForPersonSpot;
@@ -11940,7 +11940,7 @@ _Td60:
 	__asm        ja     _Tbb9;
 
 	__asm        mov    eax, [ebp-0xEC];
-	__asm        jmp    dword ptr [eax*4+0x54B51F];
+	__asm        jmp    SwitchPointers5551391[0][eax*4];
 // Switch pointers
 // LINE 1793:
 _Td96:
@@ -12480,7 +12480,7 @@ _T5d:
 	__asm        add    esp, 0x10;
 _T79:
 	__asm        movsx  eax, word ptr [ebp-0x18];
-	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
+	__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 	__asm        jne    _Ta7;
 
 	__asm        push   0x8C085;
@@ -12491,7 +12491,7 @@ _T79:
 	__asm        add    esp, 0x10;
 _Ta7:
 	__asm        movsx  eax, word ptr [ebp-0x18];
-	__asm        mov    eax, [eax*4+0x636D40];
+	__asm        mov    eax, cYObject::sObjects[0][eax*4];
 	__asm        mov    obj, eax;
 	__asm        jmp    _Tc0;
 
@@ -12592,7 +12592,7 @@ _T1df:
 
 	__asm        mov    eax, obj;
 	__asm        movsx  eax, word ptr [eax+0x102];
-	__asm        mov    word ptr [eax*2+0x6356B0], 0;
+	__asm        mov    cYObject::sSoundChannels[eax*2], 0;
 	__asm        mov    eax, obj;
 	__asm        mov    word ptr [eax+0x102], 0xFFFF;
 _T204:
@@ -12645,7 +12645,7 @@ _T27c:
 	__asm        jge    _T2af;
 
 	__asm        movsx  eax, word ptr [ebp-0x24];
-	__asm        movsx  eax, word ptr [eax*2+0x6356B0];
+	__asm        movsx  eax, cYObject::sSoundChannels[eax*2];
 	__asm        test   eax, eax;
 	__asm        jne    _T2aa;
 
@@ -12722,7 +12722,7 @@ _T72:
 	__asm        add    esp, 0x10;
 _T8e:
 	__asm        movsx  eax, word ptr [ebp-0x18];
-	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
+	__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 	__asm        jne    _Tbc;
 
 	__asm        push   0x8C085;
@@ -12733,7 +12733,7 @@ _T8e:
 	__asm        add    esp, 0x10;
 _Tbc:
 	__asm        movsx  eax, word ptr [ebp-0x18];
-	__asm        mov    eax, [eax*4+0x636D40];
+	__asm        mov    eax, cYObject::sObjects[0][eax*4];
 	__asm        mov    obj, eax;
 	__asm        jmp    _Td5;
 
@@ -12803,7 +12803,7 @@ _T176:
 	__asm        jge    _T1a9;
 
 	__asm        movsx  eax, word ptr [ebp-0x1C];
-	__asm        movsx  eax, word ptr [eax*2+0x6356B0];
+	__asm        movsx  eax, cYObject::sSoundChannels[eax*2];
 	__asm        test   eax, eax;
 	__asm        jne    _T1a4;
 
@@ -12859,7 +12859,7 @@ _T41:
 // LINE 1890:
 _T6f:
 	__asm        movsx  eax, soundchannel;
-	__asm        movsx  eax, word ptr [eax*2+0x6356B0];
+	__asm        movsx  eax, cYObject::sSoundChannels[eax*2];
 	__asm        test   eax, eax;
 	__asm        je     _T9f;
 
@@ -12885,7 +12885,7 @@ _T9f:
 // LINE 1892:
 _Tce:
 	__asm        movsx  eax, soundchannel;
-	__asm        mov    word ptr [eax*2+0x6356B0], 1;
+	__asm        mov    cYObject::sSoundChannels[eax*2], 1;
 // LINE 1893:
 	__asm        mov    ax, soundchannel;
 	__asm        mov    ecx, this;
@@ -12958,7 +12958,7 @@ _Tb7:
 	__asm        jmp    near ptr 0x0054C299;
 // LINE 1907:
 	__asm        movsx  eax, actualchannel;
-	__asm        mov    eax, [eax*4+0x604604];
+	__asm        mov    eax, gSoundManager.sound[0][eax*4];
 	__asm        mov    theSound, eax;
 // LINE 1908:
 	__asm        cmp    theSound, 0;
@@ -13022,7 +13022,7 @@ _T177:
 	__asm        jge    _T1b3;
 
 	__asm        movsx  eax, word ptr [ebp-0x2C];
-	__asm        movsx  eax, word ptr [eax*2+0x6356C8];
+	__asm        movsx  eax, cYObject::sSoundChannels[12][eax*2];
 	__asm        test   eax, eax;
 	__asm        jne    _T1ae;
 
@@ -13171,8 +13171,8 @@ _T346:
 
 	__asm        mov    eax, [ebp-0x38];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0x54C54B];
-	__asm        jmp    dword ptr [ecx*4+0x54C53F];
+	__asm        mov    cl, SwitchTable5555531[0][eax];
+	__asm        jmp    SwitchPointers5555519[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 2003:
@@ -13204,7 +13204,7 @@ _T3c7:
 	__asm        ja     _T3a6;
 
 	__asm        mov    eax, [ebp-0x34];
-	__asm        jmp    dword ptr [eax*4+0x54C5BB];
+	__asm        jmp    SwitchPointers5555643[0][eax*4];
 // Switch pointers
 // LINE 2009:
 _T42e:
@@ -13316,7 +13316,7 @@ _Tb9:
 	__asm        add    esp, 0x10;
 _Td5:
 	__asm        movsx  eax, count;
-	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
+	__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 	__asm        jne    _T103;
 
 	__asm        push   0x8C085;
@@ -13327,7 +13327,7 @@ _Td5:
 	__asm        add    esp, 0x10;
 _T103:
 	__asm        movsx  eax, count;
-	__asm        mov    eax, [eax*4+0x636D40];
+	__asm        mov    eax, cYObject::sObjects[0][eax*4];
 	__asm        mov    obj, eax;
 	__asm        jmp    _T11f;
 
@@ -13444,7 +13444,7 @@ _T249:
 	__asm        add    esp, 0x10;
 _T265:
 	__asm        movsx  eax, count;
-	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
+	__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 	__asm        jne    _T293;
 
 	__asm        push   0x8C085;
@@ -13455,7 +13455,7 @@ _T265:
 	__asm        add    esp, 0x10;
 _T293:
 	__asm        movsx  eax, count;
-	__asm        mov    eax, [eax*4+0x636D40];
+	__asm        mov    eax, cYObject::sObjects[0][eax*4];
 	__asm        mov    obj, eax;
 	__asm        jmp    _T2af;
 
@@ -13607,7 +13607,7 @@ _T4af:
 
 	__asm        mov    eax, obj;
 	__asm        movsx  eax, word ptr [eax+0x102];
-	__asm        mov    word ptr [eax*2+0x6356B0], 0;
+	__asm        mov    cYObject::sSoundChannels[eax*2], 0;
 	__asm        mov    eax, obj;
 	__asm        mov    word ptr [eax+0x102], 0xFFFF;
 _T4d4:
@@ -13845,7 +13845,7 @@ _T5d:
 	__asm        add    esp, 0x10;
 _T79:
 	__asm        movsx  eax, count;
-	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
+	__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 	__asm        jne    _Ta7;
 
 	__asm        push   0x8C085;
@@ -13856,7 +13856,7 @@ _T79:
 	__asm        add    esp, 0x10;
 _Ta7:
 	__asm        movsx  eax, count;
-	__asm        mov    eax, [eax*4+0x636D40];
+	__asm        mov    eax, cYObject::sObjects[0][eax*4];
 	__asm        mov    obj, eax;
 	__asm        jmp    _Tc0;
 
@@ -14109,7 +14109,7 @@ _T86:
 	__asm        jmp    _T14d;
 _T92:
 	__asm        mov    eax, cellx;
-	__asm        mov    eax, [eax*4+0x63984C];
+	__asm        mov    eax, NeighborFame[eax*4];
 	__asm        mov    ecx, celly;
 	__asm        movzx  ax, byte ptr [eax+ecx];
 	__asm        mov    [ebp-0xC], ax;
@@ -14208,7 +14208,7 @@ _T1d4:
 	__asm        jmp    _T29b;
 _T1e0:
 	__asm        mov    eax, cellx;
-	__asm        mov    eax, [eax*4+0x639854];
+	__asm        mov    eax, BuildMap[1][eax*4];
 	__asm        mov    ecx, celly;
 	__asm        movzx  ax, byte ptr [eax+ecx];
 	__asm        mov    [ebp-0x18], ax;
@@ -14307,7 +14307,7 @@ _T322:
 	__asm        jmp    _T3ea;
 _T32e:
 	__asm        mov    eax, cellx;
-	__asm        mov    eax, [eax*4+0x639850];
+	__asm        mov    eax, BuildMap[eax*4];
 	__asm        mov    ecx, celly;
 	__asm        movzx  ax, byte ptr [eax+ecx-1];
 	__asm        mov    [ebp-0x24], ax;
@@ -14406,7 +14406,7 @@ _T471:
 	__asm        jmp    _T539;
 _T47d:
 	__asm        mov    eax, cellx;
-	__asm        mov    eax, [eax*4+0x639850];
+	__asm        mov    eax, BuildMap[eax*4];
 	__asm        mov    ecx, celly;
 	__asm        movzx  ax, byte ptr [eax+ecx+1];
 	__asm        mov    [ebp-0x30], ax;
@@ -14503,7 +14503,7 @@ unsigned short cYObject::GetNeutralLoc(int32_t * cellx, int32_t * celly, int32_t
 	__asm        mov    ecx, [ecx];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 2244:
 	__asm        mov    eax, cptr;
@@ -14548,7 +14548,7 @@ _T8a:
 	__asm        movsx  ecx, word ptr [ebp-0x68];
 	__asm        shl    ecx, 2;
 	__asm        mov    edx, loctype;
-	__asm        cmp    [ecx+eax*8+0x6372D0], edx;
+	__asm        cmp    cYObject::sNeutralPersonLocs[0][0][ecx+eax*8], edx;
 	__asm        jne    _Tc9;
 
 	__asm        mov    word ptr [ebp-0x64], 1;
@@ -14582,7 +14582,7 @@ _T112:
 	__asm        jmp    near ptr 0x0054D779;
 
 	__asm        mov    eax, loctype;
-	__asm        movsx  eax, word ptr [eax*8+0x63526C];
+	__asm        movsx  eax, cYObject::sLocInfo[0].maxNormalLoiterers[eax*8];
 	__asm        movsx  ecx, word ptr [ebp-0x70];
 	__asm        cmp    eax, ecx;
 	__asm        jle    _T139;
@@ -14615,7 +14615,7 @@ _T17a:
 // LINE 2254:
 _T182:
 	__asm        mov    eax, loctype;
-	__asm        mov    eax, [eax*8+0x635268];
+	__asm        mov    eax, cYObject::sLocInfo[0].searchType[eax*8];
 	__asm        push   eax;
 	__asm        mov    eax, offsetz;
 	__asm        push   eax;
@@ -14634,7 +14634,7 @@ _T182:
 // LINE 2256:
 _T1b7:
 	__asm        mov    eax, loctype;
-	__asm        cmp    dword ptr [eax*8+0x635268], 0;
+	__asm        cmp    cYObject::sLocInfo[0].searchType[eax*8], 0;
 	__asm        jne    _T27b;
 // Block start:
 	struct Point3d pos;
@@ -14733,7 +14733,7 @@ _T27b:
 	__asm        shl    eax, 0xA;
 	__asm        movsx  ecx, cy;
 	__asm        and    ecx, 0xFF;
-	__asm        mov    eax, [eax+ecx*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][eax+ecx*4];
 	__asm        mov    newcptr, eax;
 // LINE 2268:
 	__asm        mov    eax, cptr;
@@ -14774,7 +14774,7 @@ _T349:
 	__asm        jmp    _T3b0;
 _T354:
 	__asm        movsx  eax, word ptr [ebp-0x80];
-	__asm        mov    eax, [eax*4+0x639850];
+	__asm        mov    eax, BuildMap[eax*4];
 	__asm        movsx  ecx, word ptr [ebp-0x7C];
 	__asm        movzx  ax, byte ptr [eax+ecx];
 	__asm        mov    [ebp-0x78], ax;
@@ -14818,7 +14818,7 @@ _T3e2:
 	__asm        jmp    _T455;
 _T3ed:
 	__asm        movsx  eax, cx;
-	__asm        mov    eax, [eax*4+0x639850];
+	__asm        mov    eax, BuildMap[eax*4];
 	__asm        movsx  ecx, cy;
 	__asm        movzx  ax, byte ptr [eax+ecx];
 	__asm        mov    [ebp-0x84], ax;
@@ -16913,7 +16913,7 @@ _T117f:
 	__asm        ja     _T1157;
 
 	__asm        mov    eax, [ebp-0x14];
-	__asm        jmp    dword ptr [eax*4+0x54F70C];
+	__asm        jmp    SwitchPointers5568268[0][eax*4];
 // Switch pointers
 // LINE 2484:
 _T11b3:
@@ -17156,7 +17156,7 @@ _T1525:
 	__asm        ja     _T14d4;
 
 	__asm        mov    eax, [ebp-0xC];
-	__asm        jmp    dword ptr [eax*4+0x54FAB2];
+	__asm        jmp    SwitchPointers5569202[0][eax*4];
 // Switch pointers
 // LINE 2498:
 _T1569:
@@ -17369,7 +17369,7 @@ void cYObject::SetCellAndLoc(unsigned char x, unsigned char y, int32_t dx, int32
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, x;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        movsx  eax, word ptr [eax+2];
@@ -17476,7 +17476,7 @@ _T3a:
 	__asm        mov    [ecx+0xD8], ax;
 // LINE 2575:
 	__asm        mov    eax, type;
-	__asm        mov    ax, [eax*2+0x636B98];
+	__asm        mov    ax, cYObject::sInitBhav[eax*2];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x10A], ax;
 // LINE 2577:
@@ -17505,8 +17505,8 @@ _Tb2:
 
 	__asm        mov    eax, [ebp-8];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0x54FF24];
-	__asm        jmp    dword ptr [ecx*4+0x54FF14];
+	__asm        mov    cl, SwitchTable5570340[0][eax];
+	__asm        jmp    SwitchPointers5570324[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 2596:
@@ -17830,7 +17830,7 @@ _T309:
 	__asm        ja     _T2e8;
 
 	__asm        mov    eax, [ebp-0x44];
-	__asm        jmp    dword ptr [eax*4+0x5502D4];
+	__asm        jmp    SwitchPointers5571284[0][eax*4];
 // Switch pointers
 // LINE 2725:
 _T365:
@@ -18036,11 +18036,11 @@ _T28:
 	__asm        jge    _T7c;
 // LINE 2764:
 	__asm        movsx  eax, cnt;
-	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
+	__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 	__asm        je     _T77;
 
 	__asm        movsx  eax, cnt;
-	__asm        mov    eax, [eax*4+0x636D40];
+	__asm        mov    eax, cYObject::sObjects[0][eax*4];
 	__asm        mov    [ebp-0xC], eax;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-8], eax;
@@ -18200,7 +18200,7 @@ _T103:
 	__asm        mov    eax, this;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+0x89];
-	__asm        mov    eax, [ecx+edx*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+edx*4];
 	__asm        mov    ncptr, eax;
 // LINE 2787:
 	__asm        mov    eax, ncptr;
@@ -18248,7 +18248,7 @@ _T3e:
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+0x88];
 	__asm        shl    edx, 0xA;
-	__asm        mov    eax, [edx+ecx*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][edx+ecx*4];
 	__asm        mov    cptr, eax;
 // LINE 2800:
 	__asm        mov    eax, cptr;
@@ -18407,7 +18407,7 @@ _T59:
 	__asm        jge    _T8c;
 // LINE 2829:
 	__asm        movsx  eax, id;
-	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
+	__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 	__asm        je     _T82;
 
 	__asm        jmp    _T55;
@@ -18427,7 +18427,7 @@ _T8c:
 // Block start:
 	class cYObject** newObj;
 	__asm        movsx  eax, id;
-	__asm        lea    eax, [eax*4+0x636D40];
+	__asm        lea    eax, cYObject::sObjects[0][eax*4];
 	__asm        mov    newObj, eax;
 // LINE 2835:
 	__asm        push   0x168;
@@ -18622,7 +18622,7 @@ _T3e:
 	__asm        add    esp, 0x10;
 _T5a:
 	__asm        movsx  eax, id;
-	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
+	__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 	__asm        jne    _T88;
 
 	__asm        push   0x8C085;
@@ -18633,7 +18633,7 @@ _T5a:
 	__asm        add    esp, 0x10;
 _T88:
 	__asm        movsx  eax, id;
-	__asm        mov    eax, [eax*4+0x636D40];
+	__asm        mov    eax, cYObject::sObjects[0][eax*4];
 	__asm        mov    obj, eax;
 	__asm        jmp    _Ta1;
 
@@ -18660,7 +18660,7 @@ _Tc7:
 _Td6:
 	__asm        mov    eax, obj;
 	__asm        movsx  eax, word ptr [eax+0xBC];
-	__asm        mov    dword ptr [eax*4+0x636D40], 0;
+	__asm        mov    cYObject::sObjects[0][eax*4], 0;
 // LINE 2879:
 	__asm        mov    eax, obj;
 	__asm        mov    [ebp-0xC], eax;
@@ -18693,10 +18693,10 @@ void cYObject::cYObject(short type, class Behavior* pBehavior, struct Point3d lo
 	__asm        mov    eax, pBehavior;
 	__asm        push   eax;
 	__asm        movsx  eax, type;
-	__asm        mov    ax, [eax*2+0x636B98];
+	__asm        mov    ax, cYObject::sInitBhav[eax*2];
 	__asm        push   eax;
 	__asm        movsx  eax, type;
-	__asm        mov    ax, [eax*2+0x6361C0];
+	__asm        mov    ax, cYObject::sStackSize[eax*2];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   TreeSim::TreeSim;
@@ -19025,7 +19025,7 @@ _T26b:
 
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x102];
-	__asm        mov    word ptr [eax*2+0x6356B0], 0;
+	__asm        mov    cYObject::sSoundChannels[eax*2], 0;
 	__asm        mov    eax, this;
 	__asm        mov    word ptr [eax+0x102], 0xFFFF;
 _T290:
@@ -19349,7 +19349,7 @@ _T2dd:
 _T30f:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x9C];
-	__asm        mov    ax, [eax*2+0x6376B0];
+	__asm        mov    ax, PersonFaceNums[eax*2];
 	__asm        mov    [ebp-0x7C], ax;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x90];
@@ -19450,7 +19450,7 @@ _T460:
 	__asm        mov    ecx, eax;
 	__asm        shl    eax, 3;
 	__asm        sub    eax, ecx;
-	__asm        lea    edi, [eax*4+0x6356D0];
+	__asm        lea    edi, gBodyDebugInfo[0].screenx[eax*4];
 	__asm        mov    ecx, 7;
 	__asm        rep movsd;
 	__asm        inc    gBodyDebugInfoIndex;
@@ -19487,7 +19487,7 @@ _T2d:
 	__asm        shl    eax, 3;
 	__asm        sub    eax, ecx;
 	__asm        lea    edi, bdi.screenx;
-	__asm        lea    esi, [eax*4+0x6356D0];
+	__asm        lea    esi, gBodyDebugInfo[0].screenx[eax*4];
 	__asm        mov    ecx, 7;
 	__asm        rep movsd;
 // LINE 3054:
@@ -19828,7 +19828,7 @@ int32_t S3PUtilsGetAlt(int32_t x, int32_t y, int32_t z) {
 	__asm        shr    ecx, 0x16;
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 3161:
 	__asm        cmp    cptr, 0;

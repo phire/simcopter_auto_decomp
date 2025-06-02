@@ -1913,7 +1913,7 @@ unsigned short _cArray::Resize(long newxSize, long newySize, char zeropad) {
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    [ebp-0x7C], eax;
 // LINE 468:
-	__asm        mov    temp.<vftable>, 0x593738;
+	__asm        mov    temp<vftable>, 0x593738;
 	__asm        jmp    _T4d;
 
 	__asm        call   _cArray::MakeTable;
@@ -1927,13 +1927,13 @@ _T4d:
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x7C];
 	__asm        push   eax;
-	__asm        lea    ecx, temp.<vftable>;
+	__asm        lea    ecx, temp<vftable>;
 	__asm        call   _cArray::BeginCreate;
 	__asm        jmp    near ptr 0x0056871B;
 
 	__asm        mov    dword ptr [ebp-4], 0;
 // LINE 469:
-	__asm        lea    eax, temp.<vftable>;
+	__asm        lea    eax, temp<vftable>;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   _cArray::CopyTo;
@@ -2046,7 +2046,7 @@ _T18b:
 	__asm        jmp    _T1b9;
 // LINE 490:
 _L27257:
-	__asm        lea    ecx, temp.<vftable>;
+	__asm        lea    ecx, temp<vftable>;
 	__asm        call   _cArray::~_cArray;
 	__asm        ret;
 _L27256:
@@ -2821,7 +2821,7 @@ _T7d:
 	__asm        mov    eax, ft.file;
 	__asm        mov    ecx, ft.type;
 	__asm        movsx  edx, foundcount;
-	__asm        lea    edx, [edx*8+0x638998];
+	__asm        lea    edx, _cArray::fsLoaded[0].file[edx*8];
 	__asm        mov    [edx], eax;
 	__asm        mov    [edx+4], ecx;
 // LINE 717:
@@ -3021,12 +3021,12 @@ _T2a:
 // LINE 782:
 	__asm        movsx  eax, cnt;
 	__asm        mov    ecx, ft.file;
-	__asm        cmp    [eax*8+0x638998], ecx;
+	__asm        cmp    _cArray::fsLoaded[0].file[eax*8], ecx;
 	__asm        jne    _Ta4;
 
 	__asm        movsx  eax, cnt;
 	__asm        mov    ecx, ft.type;
-	__asm        cmp    [eax*8+0x63899C], ecx;
+	__asm        cmp    _cArray::fsLoaded[0].type[eax*8], ecx;
 	__asm        jne    _Ta4;
 // LINE 784:
 	__asm        cmp    ft.file, 0;

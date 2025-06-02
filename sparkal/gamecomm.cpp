@@ -1870,37 +1870,37 @@ int32_t ReadShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 // LINE 557:
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
-	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::MIFF;
 // LINE 558:
-	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::OpenForReading;
 	__asm        test   eax, eax;
 	__asm        je     _T498;
 // LINE 561:
-	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::VerifyFile;
 	__asm        test   eax, eax;
 	__asm        je     _T46d;
 
-	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::ReadFileCreator;
 	__asm        cmp    eax, 0x53435554;
 	__asm        jne    _T46d;
 
-	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::ReadFileType;
 	__asm        cmp    eax, 0x53435554;
 	__asm        jne    _T46d;
 // LINE 563:
-	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::GoToFirstRecord;
 // LINE 565:
 _Tb1:
 	__asm        push   0x18;
 	__asm        lea    eax, tempShortcut.lDeviceID;
 	__asm        push   eax;
-	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::ReadPresentRecordData;
 // LINE 566:
 	__asm        lea    eax, tempShortcut.lDeviceID;
@@ -2128,24 +2128,24 @@ _T3f4:
 	__asm        jmp    _T45a;
 // LINE 573:
 _T45a:
-	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::GoToNextRecord;
 	__asm        test   eax, eax;
 	__asm        jne    _Tb1;
 // LINE 575:
 _T46d:
-	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::Close;
 // LINE 576:
 	__asm        mov    dword ptr [ebp-0x268], 1;
-	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::~MIFF;
 	__asm        mov    eax, [ebp-0x268];
 	__asm        jmp    _T4b8;
 // LINE 578:
 _T498:
 	__asm        mov    dword ptr [ebp-0x26C], 0;
-	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::~MIFF;
 	__asm        mov    eax, [ebp-0x26C];
 	__asm        jmp    _T4b8;
@@ -2183,13 +2183,13 @@ int32_t WriteShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 // LINE 592:
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
-	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::MIFF;
 // LINE 593:
 	__asm        push   1;
 	__asm        push   0x53435554;
 	__asm        push   0x53435554;
-	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::OpenForWriting;
 	__asm        test   eax, eax;
 	__asm        je     _T1a7;
@@ -2251,7 +2251,7 @@ _T10b:
 	__asm        lea    eax, tempShortcut.lDeviceID;
 	__asm        push   eax;
 	__asm        push   0;
-	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::WriteDataRecord;
 // LINE 598:
 	__asm        mov    eax, tempShortcutListIterator.node;
@@ -2268,14 +2268,14 @@ _T10b:
 	__asm        jmp    _Ta0;
 // LINE 600:
 _T171:
-	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::WriteEnd;
 // LINE 601:
-	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::Close;
 // LINE 602:
 	__asm        mov    dword ptr [ebp-0x278], 1;
-	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::~MIFF;
 	__asm        mov    eax, [ebp-0x278];
 	__asm        jmp    _T1c7;
@@ -2283,7 +2283,7 @@ _T171:
 // Block end:
 _T1a7:
 	__asm        mov    dword ptr [ebp-0x27C], 0;
-	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::~MIFF;
 	__asm        mov    eax, [ebp-0x27C];
 	__asm        jmp    _T1c7;

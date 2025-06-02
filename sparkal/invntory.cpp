@@ -3079,7 +3079,7 @@ _T20:
 // LINE 336:
 _T27:
 	__asm        mov    eax, lColumn;
-	__asm        mov    eax, [eax*4+0x591810];
+	__asm        mov    eax, lColumnStart[eax*4];
 	__asm        jmp    _T36;
 // LINE 337:
 _T36:
@@ -3102,7 +3102,7 @@ _T20:
 // LINE 350:
 _T27:
 	__asm        mov    eax, lRow;
-	__asm        mov    eax, [eax*4+0x591828];
+	__asm        mov    eax, lRowStart[eax*4];
 	__asm        jmp    _T36;
 // LINE 351:
 _T36:
@@ -3125,12 +3125,12 @@ _T20:
 // LINE 365:
 _T27:
 	__asm        mov    eax, lEquipmentIndex;
-	__asm        mov    eax, [eax*4+0x591858];
+	__asm        mov    eax, lXPositions[eax*4];
 	__asm        mov    ecx, ptEquipment;
 	__asm        mov    [ecx], eax;
 // LINE 366:
 	__asm        mov    eax, lEquipmentIndex;
-	__asm        mov    eax, [eax*4+0x591870];
+	__asm        mov    eax, lYPositions[eax*4];
 	__asm        mov    ecx, ptEquipment;
 	__asm        mov    [ecx+4], eax;
 // LINE 367:

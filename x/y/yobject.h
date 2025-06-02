@@ -28,7 +28,7 @@ _T38:
 // LINE 517:
 _T54:
 	__asm        movsx  eax, id;
-	__asm        cmp    dword ptr [eax*4+0x636D40], 0;
+	__asm        cmp    cYObject::sObjects[0][eax*4], 0;
 	__asm        jne    _T82;
 
 	__asm        push   0x8C085;
@@ -40,7 +40,7 @@ _T54:
 // LINE 519:
 _T82:
 	__asm        movsx  eax, id;
-	__asm        mov    eax, [eax*4+0x636D40];
+	__asm        mov    eax, cYObject::sObjects[0][eax*4];
 	__asm        jmp    _T92;
 // LINE 520:
 _T92:

@@ -164,7 +164,7 @@ _Tff:
 	__asm        mov    eax, tptr;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax];
-	__asm        inc    dword ptr [ecx*4+0x606A78];
+	__asm        inc    S_ctrs[ecx*4];
 // LINE 159:
 	__asm        inc    tptr;
 // LINE 160:
@@ -183,11 +183,11 @@ _T140:
 // LINE 165:
 	__asm        mov    eax, j;
 	__asm        mov    ecx, maxval;
-	__asm        cmp    [eax*4+0x606A78], ecx;
+	__asm        cmp    S_ctrs[eax*4], ecx;
 	__asm        jle    _T173;
 // LINE 167:
 	__asm        mov    eax, j;
-	__asm        mov    eax, [eax*4+0x606A78];
+	__asm        mov    eax, S_ctrs[eax*4];
 	__asm        mov    maxval, eax;
 // LINE 168:
 	__asm        mov    eax, j;
@@ -313,7 +313,7 @@ _Tdb:
 	__asm        mov    eax, tptr;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax];
-	__asm        inc    dword ptr [ecx*4+0x606A78];
+	__asm        inc    S_ctrs[ecx*4];
 // LINE 236:
 	__asm        inc    tptr;
 // LINE 237:
@@ -340,11 +340,11 @@ _T127:
 // LINE 246:
 	__asm        mov    eax, j;
 	__asm        mov    ecx, maxval;
-	__asm        cmp    [eax*4+0x606A78], ecx;
+	__asm        cmp    S_ctrs[eax*4], ecx;
 	__asm        jle    _T15a;
 // LINE 248:
 	__asm        mov    eax, j;
-	__asm        mov    eax, [eax*4+0x606A78];
+	__asm        mov    eax, S_ctrs[eax*4];
 	__asm        mov    maxval, eax;
 // LINE 249:
 	__asm        mov    eax, j;

@@ -416,7 +416,7 @@ _T311:
 	__asm        sub    edx, i;
 	__asm        imul   ecx, edx;
 	__asm        sub    eax, ecx;
-	__asm        mov    eax, [eax*4+0x6361C8];
+	__asm        mov    eax, g_sqrtTable[eax*4];
 	__asm        mov    xOffset, eax;
 // LINE 240:
 	__asm        mov    eax, centerPt.x;
@@ -558,7 +558,7 @@ _T519:
 	__asm        sub    edx, i;
 	__asm        imul   ecx, edx;
 	__asm        sub    eax, ecx;
-	__asm        mov    eax, [eax*4+0x6361C8];
+	__asm        mov    eax, g_sqrtTable[eax*4];
 	__asm        mov    xOffset, eax;
 // LINE 274:
 	__asm        mov    eax, centerPt.x;
@@ -621,7 +621,7 @@ _T5f5:
 	__asm        sub    edx, i;
 	__asm        imul   ecx, edx;
 	__asm        sub    eax, ecx;
-	__asm        mov    eax, [eax*4+0x6361C8];
+	__asm        mov    eax, g_sqrtTable[eax*4];
 	__asm        mov    xOffset, eax;
 // LINE 297:
 	__asm        mov    eax, centerPt.x;
@@ -677,7 +677,7 @@ _T6a1:
 	__asm        sub    edx, i;
 	__asm        imul   ecx, edx;
 	__asm        sub    eax, ecx;
-	__asm        mov    eax, [eax*4+0x6361C8];
+	__asm        mov    eax, g_sqrtTable[eax*4];
 	__asm        mov    xOffset, eax;
 // LINE 315:
 	__asm        mov    eax, centerPt.x;
@@ -863,7 +863,7 @@ _T10d:
 	__asm        fsubr  qword ptr ds:[0x5939B0];
 	__asm        fmul   aSquared;
 	__asm        call   0x0056EBE8;
-	__asm        mov    eax, [eax*4+0x6361C8];
+	__asm        mov    eax, g_sqrtTable[eax*4];
 	__asm        mov    offset.x, eax;
 // LINE 463:
 	__asm        mov    eax, centerPt.x;

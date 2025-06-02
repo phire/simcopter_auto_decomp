@@ -109,7 +109,7 @@ _T87:
 // LINE 140:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(processor);
 	__asm        and    eax, 0xFFFF;
-	__asm        mov    eax, [eax*4+0x598F28];
+	__asm        mov    eax, processor_cycles[eax*4];
 	__asm        lea    eax, [eax+eax*4];
 	__asm        lea    eax, [eax+eax*4];
 	__asm        lea    eax, [eax+eax*4];

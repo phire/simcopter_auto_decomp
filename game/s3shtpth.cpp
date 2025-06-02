@@ -115,7 +115,7 @@ int32_t ShortestPath::BreadthFirstSearch(struct _RGIndex startVertex, struct _RG
 // LINE 37:
 	__asm        xor    eax, eax;
 	__asm        mov    al, destVertex.x;
-	__asm        mov    eax, [eax*4+0x5C3828];
+	__asm        mov    eax, gRoadGraph.RGArray[0][eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, destVertex.yindex;
 	__asm        mov    edx, ecx;
@@ -183,14 +183,14 @@ _Tc2:
 _Tc5:
 	__asm        mov    eax, x;
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0x5C3A28];
+	__asm        mov    cl, gRoadGraph.RGLength[eax];
 	__asm        cmp    ecx, yindex;
 	__asm        jle    _T113;
 // LINE 61:
 // Block start:
 	struct RGVertex* pRGV;
 	__asm        mov    eax, x;
-	__asm        mov    eax, [eax*4+0x5C3828];
+	__asm        mov    eax, gRoadGraph.RGArray[0][eax*4];
 	__asm        mov    ecx, yindex;
 	__asm        mov    edx, ecx;
 	__asm        lea    ecx, [ecx+ecx*4];
@@ -250,7 +250,7 @@ _T143:
 // LINE 87:
 	__asm        xor    eax, eax;
 	__asm        mov    al, path.xCurr;
-	__asm        mov    eax, [eax*4+0x5C3828];
+	__asm        mov    eax, gRoadGraph.RGArray[0][eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, path.yindexCurr;
 	__asm        mov    edx, ecx;
@@ -316,7 +316,7 @@ _T1f8:
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, al;
 	__asm        mov    eax, i;
-	__asm        test   [eax*4+0x5934F8], ecx;
+	__asm        test   IndexToType[0][eax*4], ecx;
 	__asm        jne    _T223;
 // LINE 112:
 	__asm        jmp    _T1f5;
@@ -332,7 +332,7 @@ _T223:
 	__asm        mov    eax, pEdge;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+1];
-	__asm        mov    eax, [ecx*4+0x5C3828];
+	__asm        mov    eax, gRoadGraph.RGArray[0][ecx*4];
 	__asm        mov    ecx, pEdge;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx];
@@ -399,7 +399,7 @@ int32_t ShortestPath::DepthFirstSearch(struct _RGIndex startVertex, struct _RGIn
 // LINE 139:
 	__asm        xor    eax, eax;
 	__asm        mov    al, destVertex.x;
-	__asm        mov    eax, [eax*4+0x5C3828];
+	__asm        mov    eax, gRoadGraph.RGArray[0][eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, destVertex.yindex;
 	__asm        mov    edx, ecx;
@@ -475,14 +475,14 @@ _Td3:
 _Td6:
 	__asm        mov    eax, x;
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0x5C3A28];
+	__asm        mov    cl, gRoadGraph.RGLength[eax];
 	__asm        cmp    ecx, yindex;
 	__asm        jle    _T124;
 // LINE 167:
 // Block start:
 	struct RGVertex* pRGV;
 	__asm        mov    eax, x;
-	__asm        mov    eax, [eax*4+0x5C3828];
+	__asm        mov    eax, gRoadGraph.RGArray[0][eax*4];
 	__asm        mov    ecx, yindex;
 	__asm        mov    edx, ecx;
 	__asm        lea    ecx, [ecx+ecx*4];
@@ -510,7 +510,7 @@ _T124:
 _T129:
 	__asm        xor    eax, eax;
 	__asm        mov    al, startVertex.x;
-	__asm        mov    eax, [eax*4+0x5C3828];
+	__asm        mov    eax, gRoadGraph.RGArray[0][eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, startVertex.yindex;
 	__asm        mov    edx, ecx;
@@ -568,7 +568,7 @@ _T192:
 // LINE 197:
 	__asm        xor    eax, eax;
 	__asm        mov    al, path.xCurr;
-	__asm        mov    eax, [eax*4+0x5C3828];
+	__asm        mov    eax, gRoadGraph.RGArray[0][eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, path.yindexCurr;
 	__asm        mov    edx, ecx;
@@ -635,7 +635,7 @@ _T247:
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, al;
 	__asm        mov    eax, i;
-	__asm        test   [eax*4+0x5934F8], ecx;
+	__asm        test   IndexToType[0][eax*4], ecx;
 	__asm        jne    _T272;
 // LINE 223:
 	__asm        jmp    _T244;
@@ -651,7 +651,7 @@ _T272:
 	__asm        mov    eax, pEdge;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+1];
-	__asm        mov    eax, [ecx*4+0x5C3828];
+	__asm        mov    eax, gRoadGraph.RGArray[0][ecx*4];
 	__asm        mov    ecx, pEdge;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx];

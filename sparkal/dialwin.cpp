@@ -3588,7 +3588,7 @@ _T42:
 // LINE 620:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, nDamageInRangeOf0to15;
-	__asm        cmp    [eax*8+0x598F80], ecx;
+	__asm        cmp    nDamageArray[0][eax*8], ecx;
 	__asm        jg     _T6b;
 // LINE 621:
 	__asm        mov    nSourceImageX, 0;
@@ -3597,7 +3597,7 @@ _T42:
 _T6b:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, nDamageInRangeOf0to15;
-	__asm        cmp    [eax*8+0x598F84], ecx;
+	__asm        cmp    nDamageArray[0][1][eax*8], ecx;
 	__asm        jg     _T8a;
 // LINE 623:
 	__asm        mov    nSourceImageX, 0xF;
@@ -3894,9 +3894,9 @@ int32_t DialWindow::ComposeSelf() {
 	__asm        jmp    _Tebc;
 // LINE 707:
 _T3d:
-	__asm        inc    dword ptr ds:[0x598FB0];
+	__asm        inc    lFrameCounter;
 // LINE 708:
-	__asm        test   byte ptr ds:[0x598FB0], 1;
+	__asm        test   reinterpret_cast<uint8_t>(lFrameCounter), 1;
 	__asm        je     _Te55;
 // LINE 709:
 	__asm        mov    eax, G_uheli;
@@ -4826,7 +4826,7 @@ void DialWindow::SetNewDialPositions() {
 	long lNewAltitude;
 
 // LINE 816:
-	__asm        mov    eax, ds:[0x598FB4];
+	__asm        mov    eax, lFrameCounter;
 	__asm        and    al, 7;
 	__asm        cmp    al, 7;
 	__asm        jne    _T1d7;
@@ -4837,7 +4837,7 @@ void DialWindow::SetNewDialPositions() {
 	__asm        mov    ecx, eax;
 	__asm        lea    eax, [eax+eax*4];
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    eax, [eax*8+0x5B49B8];
+	__asm        mov    eax, S_helitype_data[0].fuel_capacity[eax*8];
 	__asm        push   eax;
 	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0x320];
@@ -4973,7 +4973,7 @@ _T183:
 	__asm        call   dword ptr [edx+0xC];
 // LINE 832:
 _T1d7:
-	__asm        mov    eax, ds:[0x598FB4];
+	__asm        mov    eax, lFrameCounter;
 	__asm        and    al, 3;
 	__asm        cmp    al, 3;
 	__asm        jne    _T3df;
@@ -5140,7 +5140,7 @@ _T38b:
 	__asm        call   dword ptr [edx+0xC];
 // LINE 845:
 _T3df:
-	__asm        inc    dword ptr ds:[0x598FB4];
+	__asm        inc    lFrameCounter;
 // LINE 846:
 	__asm        jmp    near ptr 0x0044BE45;
 }
@@ -7260,9 +7260,9 @@ int32_t MapWindow::ComposeSelf() {
 	__asm        jmp    _T17c;
 // LINE 1408:
 _T20:
-	__asm        inc    dword ptr ds:[0x598FC8];
+	__asm        inc    lFrameCounter;
 // LINE 1409:
-	__asm        test   byte ptr ds:[0x598FC8], 1;
+	__asm        test   reinterpret_cast<uint8_t>(lFrameCounter), 1;
 	__asm        je     _T7a;
 // LINE 1410:
 	__asm        mov    eax, this;
@@ -7295,7 +7295,7 @@ _T20:
 	__asm        call   dword ptr [edx+4];
 // LINE 1414:
 _T7a:
-	__asm        mov    eax, ds:[0x598FC8];
+	__asm        mov    eax, lFrameCounter;
 	__asm        and    al, 7;
 	__asm        cmp    al, 7;
 	__asm        jne    _T12a;
@@ -8198,7 +8198,7 @@ int32_t MapWindow::GetStringIDForVehicleName(int32_t nAutoID) {
 // LINE 1598:
 _T1d:
 	__asm        mov    eax, nAutoID;
-	__asm        mov    eax, [eax*4+0x608F80];
+	__asm        mov    eax, cars[0][eax*4];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    lCarModel, eax;
 	__asm        jmp    near ptr 0x0044E35F;
@@ -8223,7 +8223,7 @@ _T1d:
 // LINE 1606:
 _T77:
 	__asm        mov    eax, nAutoID;
-	__asm        mov    eax, [eax*4+0x608F80];
+	__asm        mov    eax, cars[0][eax*4];
 	__asm        test   byte ptr [eax+9], 0x10;
 	__asm        je     _T95;
 // LINE 1607:
@@ -8718,7 +8718,7 @@ int32_t EquipmentPanelWindow::DoesWindowNeedUpdating() {
 	static const long lFrameCounter = { /* <data@0x00598fdc> */ };
 
 // LINE 1780:
-	__asm        test   byte ptr ds:[0x598FDC], 4;
+	__asm        test   reinterpret_cast<uint8_t>(lFrameCounter), 4;
 	__asm        je     _Tab;
 // LINE 1781:
 	__asm        mov    eax, this;
@@ -8736,7 +8736,7 @@ int32_t EquipmentPanelWindow::DoesWindowNeedUpdating() {
 	__asm        lea    ecx, [ecx+ecx*4];
 	__asm        lea    ecx, [edx+ecx*2];
 	__asm        cdq;
-	__asm        idiv   dword ptr [ecx*8+0x5B4980];
+	__asm        idiv   S_helitype_data[0].max_load[ecx*8];
 	__asm        mov    ecx, this;
 	__asm        cmp    eax, [ecx+0xC4];
 	__asm        je     _T6a;
@@ -8768,7 +8768,7 @@ _Ta6:
 	__asm        jmp    _Tbe;
 // LINE 1786:
 _Tab:
-	__asm        inc    dword ptr ds:[0x598FDC];
+	__asm        inc    lFrameCounter;
 // LINE 1788:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::DoesWindowNeedUpdating;
@@ -9047,7 +9047,7 @@ void EquipmentPanelWindow::DrawBucketWaterGuage() {
 	__asm        lea    ecx, [ecx+ecx*4];
 	__asm        lea    ecx, [edx+ecx*2];
 	__asm        cdq;
-	__asm        idiv   dword ptr [ecx*8+0x5B4980];
+	__asm        idiv   S_helitype_data[0].max_load[ecx*8];
 	__asm        mov    iLitEnd, eax;
 // LINE 1873:
 	__asm        mov    eax, iLitEnd;

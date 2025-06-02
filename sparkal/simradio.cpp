@@ -3734,7 +3734,7 @@ _T69:
 	__asm        push   0;
 	__asm        lea    eax, [ebp-0x28];
 	__asm        push   eax;
-	__asm        lea    ecx, tempDirectory.<Directory+0x00:None>;
+	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
 	__asm        call   Directory::Directory;
 	__asm        lea    ecx, [ebp-0x28];
 	__asm        call   basic_string<char>::delete_ref;
@@ -3777,7 +3777,7 @@ _T10b:
 	__asm        push   0;
 	__asm        lea    eax, [ebp-0x30];
 	__asm        push   eax;
-	__asm        lea    ecx, tempDirectory.<Directory+0x00:None>;
+	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
 	__asm        call   Directory::SetNewDirectoryEntryFilter;
 	__asm        lea    ecx, [ebp-0x30];
 	__asm        call   basic_string<char>::delete_ref;
@@ -3865,14 +3865,14 @@ _T231:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x48;
 	__asm        push   eax;
-	__asm        lea    ecx, tempDirectory.<Directory+0x00:None>;
+	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
 	__asm        call   Directory::ChangeDirectory;
 // LINE 324:
 	__asm        push   8;
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x50;
 	__asm        push   eax;
-	__asm        lea    ecx, tempDirectory.<Directory+0x00:None>;
+	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
 	__asm        call   Directory::ReadDirectorySpecificEntriesIntoStringList;
 	__asm        jmp    near ptr 0x00435645;
 // LINE 326:
@@ -3946,14 +3946,14 @@ _T343:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x5C;
 	__asm        push   eax;
-	__asm        lea    ecx, tempDirectory.<Directory+0x00:None>;
+	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
 	__asm        call   Directory::ChangeDirectory;
 // LINE 328:
 	__asm        push   8;
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x64;
 	__asm        push   eax;
-	__asm        lea    ecx, tempDirectory.<Directory+0x00:None>;
+	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
 	__asm        call   Directory::ReadDirectorySpecificEntriesIntoStringList;
 	__asm        jmp    near ptr 0x00435757;
 // LINE 330:
@@ -4027,14 +4027,14 @@ _T455:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x70;
 	__asm        push   eax;
-	__asm        lea    ecx, tempDirectory.<Directory+0x00:None>;
+	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
 	__asm        call   Directory::ChangeDirectory;
 // LINE 332:
 	__asm        push   8;
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x78;
 	__asm        push   eax;
-	__asm        lea    ecx, tempDirectory.<Directory+0x00:None>;
+	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
 	__asm        call   Directory::ReadDirectorySpecificEntriesIntoStringList;
 	__asm        jmp    near ptr 0x00435869;
 // LINE 334:
@@ -4108,14 +4108,14 @@ _T570:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x84;
 	__asm        push   eax;
-	__asm        lea    ecx, tempDirectory.<Directory+0x00:None>;
+	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
 	__asm        call   Directory::ChangeDirectory;
 // LINE 336:
 	__asm        push   8;
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x8C;
 	__asm        push   eax;
-	__asm        lea    ecx, tempDirectory.<Directory+0x00:None>;
+	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
 	__asm        call   Directory::ReadDirectorySpecificEntriesIntoStringList;
 	__asm        jmp    near ptr 0x00435988;
 // LINE 337:
@@ -4139,7 +4139,7 @@ _T5e1:
 
 	__asm        lea    ecx, [ebp-0x18];
 	__asm        call   basic_string<char>::~basic_string<char>;
-	__asm        lea    ecx, tempDirectory.<Directory+0x00:None>;
+	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
 	__asm        call   list<DirectoryEntry>::~list<DirectoryEntry>;
 	__asm        jmp    near ptr 0x004359DD;
 }
@@ -6241,7 +6241,7 @@ _T69:
 	__asm        push   0;
 	__asm        lea    eax, [ebp-0x2C];
 	__asm        push   eax;
-	__asm        lea    ecx, tempDirectory.<Directory+0x00:None>;
+	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
 	__asm        call   Directory::Directory;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        dec    dword ptr [eax+0xC];
@@ -6354,7 +6354,7 @@ _T1bb:
 	__asm        push   0;
 	__asm        lea    eax, [ebp-0x34];
 	__asm        push   eax;
-	__asm        lea    ecx, tempDirectory.<Directory+0x00:None>;
+	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
 	__asm        call   Directory::SetNewDirectoryEntryFilter;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        dec    dword ptr [eax+0xC];
@@ -6401,7 +6401,7 @@ _T248:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x40;
 	__asm        push   eax;
-	__asm        lea    ecx, tempDirectory.<Directory+0x00:None>;
+	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
 	__asm        call   Directory::ChangeDirectory;
 // LINE 549:
 	__asm        jmp    near ptr 0x0043759D;
@@ -6412,7 +6412,7 @@ _T248:
 	__asm        je     _T30e;
 // LINE 550:
 	__asm        push   0;
-	__asm        lea    ecx, tempDirectory.<Directory+0x00:None>;
+	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
 	__asm        call   Directory::GetNthEntry;
 	__asm        mov    tempDirectoryEntry, eax;
 // LINE 551:
@@ -6457,7 +6457,7 @@ _T2ca:
 _T2f9:
 	__asm        jmp    near ptr 0x00437635;
 
-	__asm        lea    ecx, tempDirectory.<Directory+0x00:None>;
+	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
 	__asm        call   list<DirectoryEntry>::~list<DirectoryEntry>;
 	__asm        mov    eax, [ebp-0x38];
 	__asm        jmp    _T3a0;
@@ -6498,7 +6498,7 @@ _T350:
 _T38b:
 	__asm        jmp    near ptr 0x004376C7;
 
-	__asm        lea    ecx, tempDirectory.<Directory+0x00:None>;
+	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
 	__asm        call   list<DirectoryEntry>::~list<DirectoryEntry>;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        jmp    _T3a0;
@@ -6588,7 +6588,7 @@ _T131:
 	__asm        jge    _T358;
 
 	__asm        mov    eax, i;
-	__asm        mov    eax, [eax*4+0x598488];
+	__asm        mov    eax, StationDirectoryNameArray[eax*4];
 	__asm        mov    [ebp-0x84], eax;
 // LINE 571:
 	__asm        push   0x10;
@@ -7743,7 +7743,7 @@ _T1b:
 	__asm        jge    _T1b9;
 
 	__asm        mov    eax, i;
-	__asm        mov    eax, [eax*4+0x598488];
+	__asm        mov    eax, StationDirectoryNameArray[eax*4];
 	__asm        mov    [ebp-0x24], eax;
 // LINE 899:
 	__asm        jmp    near ptr 0x004384ED;
@@ -7926,7 +7926,7 @@ int  Radio::SetupStations() {
 // LINE 921:
 	__asm        jmp    near ptr 0x004386D3;
 // LINE 922:
-	__asm        lea    ecx, tempRadioStation.<vftable>;
+	__asm        lea    ecx, tempRadioStation<vftable>;
 	__asm        call   RadioStation::RadioStation;
 // LINE 923:
 	__asm        push   0;
@@ -7935,7 +7935,7 @@ int  Radio::SetupStations() {
 	__asm        lea    ecx, [ebp-0xF8];
 	__asm        call   basic_string<char>::basic_string<char>;
 	__asm        push   eax;
-	__asm        lea    ecx, tempDirectory.<Directory+0x00:None>;
+	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
 	__asm        call   Directory::Directory;
 	__asm        lea    ecx, [ebp-0xF8];
 	__asm        call   basic_string<char>::~basic_string<char>;
@@ -7988,13 +7988,13 @@ int  Radio::SetupStations() {
 	__asm        push   0;
 	__asm        lea    eax, sStationDirectory.c_str_ptr;
 	__asm        push   eax;
-	__asm        lea    ecx, tempDirectory.<Directory+0x00:None>;
+	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
 	__asm        call   Directory::ChangeDirectory;
 // LINE 933:
 	__asm        push   0;
 	__asm        lea    eax, radioStationStringList.node;
 	__asm        push   eax;
-	__asm        lea    ecx, tempDirectory.<Directory+0x00:None>;
+	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
 	__asm        call   Directory::ReadDirectoryDirectoryEntriesIntoStringList;
 // LINE 936:
 	__asm        jmp    near ptr 0x004387D2;
@@ -8079,12 +8079,12 @@ _T20f:
 	__asm        lea    ecx, [ebp-0x120];
 	__asm        call   basic_string<char>::~basic_string<char>;
 // LINE 947:
-	__asm        lea    ecx, tempRadioStation.<vftable>;
+	__asm        lea    ecx, tempRadioStation<vftable>;
 	__asm        call   RadioStation::ReadCallSignFromDisk;
 	__asm        test   eax, eax;
 	__asm        je     _Td4f;
 // LINE 948:
-	__asm        lea    ecx, tempRadioStation.<vftable>;
+	__asm        lea    ecx, tempRadioStation<vftable>;
 	__asm        call   RadioStation::DetectRadioStationType;
 // LINE 952:
 	__asm        mov    eax, SZ_RADIO_STATIONS_MUSIC_DIRECTORY_NAME;
@@ -8833,7 +8833,7 @@ _Tcb5:
 	__asm        cmp    [eax+0xC], ecx;
 	__asm        je     _Td26;
 
-	__asm        lea    eax, tempRadioStation.<vftable>;
+	__asm        lea    eax, tempRadioStation<vftable>;
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
@@ -8846,7 +8846,7 @@ _Tcb5:
 _Td26:
 	__asm        jmp    near ptr 0x004393A8;
 
-	__asm        lea    eax, tempRadioStation.<vftable>;
+	__asm        lea    eax, tempRadioStation<vftable>;
 	__asm        push   eax;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
@@ -8901,9 +8901,9 @@ _Tdc0:
 	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        lea    ecx, [ebp-0xD0];
 	__asm        call   basic_string<char>::~basic_string<char>;
-	__asm        lea    ecx, tempDirectory.<Directory+0x00:None>;
+	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
 	__asm        call   list<DirectoryEntry>::~list<DirectoryEntry>;
-	__asm        lea    ecx, tempRadioStation.<vftable>;
+	__asm        lea    ecx, tempRadioStation<vftable>;
 	__asm        call   RadioStation::~RadioStation;
 	__asm        mov    eax, radioStationStringList.node;
 	__asm        mov    [ebp-0x1A8], eax;

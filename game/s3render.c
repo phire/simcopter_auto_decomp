@@ -920,7 +920,7 @@ _T1b7:
 	__asm        lea    eax, [eax+eax*8];
 	__asm        lea    eax, [eax+eax*8];
 	__asm        add    eax, ecx;
-	__asm        lea    eax, [eax*2+0x6BF1D0];
+	__asm        lea    eax, G_helidata[0].type[eax*2];
 	__asm        cmp    eax, G_uheli;
 	__asm        je     _T1ff;
 // LINE 653:
@@ -930,7 +930,7 @@ _T1b7:
 	__asm        lea    eax, [eax+eax*8];
 	__asm        lea    eax, [eax+eax*8];
 	__asm        add    eax, ecx;
-	__asm        mov    dword ptr [eax*2+0x6BF1D8], 0;
+	__asm        mov    G_helidata[0].flags[eax*2], 0;
 // LINE 658:
 _T1ff:
 	__asm        cmp    i, 2;
@@ -949,7 +949,7 @@ _T1ff:
 	__asm        lea    eax, [eax+eax*8];
 	__asm        lea    eax, [eax+eax*8];
 	__asm        add    eax, ecx;
-	__asm        lea    eax, [eax*2+0x6BF1D0];
+	__asm        lea    eax, G_helidata[0].type[eax*2];
 	__asm        push   eax;
 	__asm        call   S3HeliGenInit;
 	__asm        add    esp, 0xC;
@@ -982,7 +982,7 @@ _T24e:
 	__asm        lea    eax, [eax+eax*8];
 	__asm        lea    eax, [eax+eax*8];
 	__asm        add    eax, ecx;
-	__asm        lea    eax, [eax*2+0x6BF1D0];
+	__asm        lea    eax, G_helidata[0].type[eax*2];
 	__asm        push   eax;
 	__asm        call   S3HeliGenInit;
 	__asm        add    esp, 0xC;

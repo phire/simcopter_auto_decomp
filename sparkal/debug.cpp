@@ -1314,12 +1314,12 @@ _Tbe:
 	__asm        jmp    near ptr 0x00422A4A;
 
 	__asm        mov    eax, [ebp-0x54];
-	__asm        mov    ds:[0x5C2908], eax;
+	__asm        mov    help_command.command_string.reference, eax;
 	__asm        jmp    _T173;
 _T169:
-	__asm        mov    dword ptr ds:[0x5C2908], 0;
+	__asm        mov    help_command.command_string.reference, 0;
 _T173:
-	__asm        mov    dword ptr ds:[0x5C2904], 0;
+	__asm        mov    help_command.command_string.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x00422A70;
 
 	__asm        push   0x10;
@@ -1331,20 +1331,20 @@ _T173:
 
 	__asm        mov    ecx, [ebp-0x58];
 	__asm        call   basic_string_ref<char>::basic_string_ref<char>;
-	__asm        mov    ds:[0x5C2910], eax;
+	__asm        mov    help_command.usage_string.reference, eax;
 	__asm        jmp    _T1b5;
 _T1ab:
-	__asm        mov    dword ptr ds:[0x5C2910], 0;
+	__asm        mov    help_command.usage_string.reference, 0;
 _T1b5:
-	__asm        mov    dword ptr ds:[0x5C290C], 0;
+	__asm        mov    help_command.usage_string.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x00422AB2;
 
-	__asm        mov    dword ptr ds:[0x5C2900], 0x58F420;
+	__asm        mov    help_command<class_debugger<CDebugWindow,CDebugWindowhelp_text>+0x00>, 0x58F420;
 	__asm        jmp    near ptr 0x00422AC1;
 
-	__asm        mov    dword ptr ds:[0x5C2900], 0x58F41C;
+	__asm        mov    help_command<class_debugger<CDebugWindow,CDebugWindowhelp_text>+0x00>, 0x58F41C;
 	__asm        mov    eax, this;
-	__asm        mov    ds:[0x5C2914], eax;
+	__asm        mov    help_command.m_instance, eax;
 	__asm        mov    eax, CDebugWindowusage_text;
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x00422AE0;
@@ -1374,7 +1374,7 @@ _T1b5:
 _T23d:
 	__asm        jmp    near ptr 0x00422B30;
 
-	__asm        mov    eax, ds:[0x5C2910];
+	__asm        mov    eax, help_command.usage_string.reference;
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     _T271;
 
@@ -1383,7 +1383,7 @@ _T23d:
 
 	__asm        jmp    near ptr 0x00422B4E;
 
-	__asm        mov    eax, ds:[0x5C2910];
+	__asm        mov    eax, help_command.usage_string.reference;
 	__asm        mov    ecx, [ebp-0x34];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    _T2bf;
@@ -1406,10 +1406,10 @@ _T271:
 _T2a0:
 	__asm        mov    dword ptr [ebp-0x24], 0;
 _T2a7:
-	__asm        lea    ecx, ds:[0x5C290C];
+	__asm        lea    ecx, help_command.usage_string.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, [ebp-0x24];
-	__asm        mov    ds:[0x5C2910], eax;
+	__asm        mov    help_command.usage_string.reference, eax;
 	__asm        jmp    _T2f1;
 _T2bf:
 	__asm        cmp    dword ptr [ebp-0x34], 0;
@@ -1417,7 +1417,7 @@ _T2bf:
 
 	__asm        jmp    near ptr 0x00422BBC;
 
-	__asm        mov    eax, ds:[0x5C2910];
+	__asm        mov    eax, help_command.usage_string.reference;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        mov    eax, [ebp-0x34];
@@ -1431,7 +1431,7 @@ _T2bf:
 	__asm        jmp    _T2f1;
 _T2f1:
 	__asm        mov    eax, [ebp-0x34];
-	__asm        mov    ecx, ds:[0x5C2910];
+	__asm        mov    ecx, help_command.usage_string.reference;
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x00422BF0;
 
@@ -1466,7 +1466,7 @@ _T2f1:
 _T35f:
 	__asm        jmp    near ptr 0x00422C52;
 
-	__asm        mov    eax, ds:[0x5C2908];
+	__asm        mov    eax, help_command.command_string.reference;
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     _T393;
 
@@ -1475,7 +1475,7 @@ _T35f:
 
 	__asm        jmp    near ptr 0x00422C70;
 
-	__asm        mov    eax, ds:[0x5C2908];
+	__asm        mov    eax, help_command.command_string.reference;
 	__asm        mov    ecx, [ebp-0x4C];
 	__asm        cmp    [eax+8], ecx;
 	__asm        jae    _T3e1;
@@ -1498,10 +1498,10 @@ _T393:
 _T3c2:
 	__asm        mov    dword ptr [ebp-0x3C], 0;
 _T3c9:
-	__asm        lea    ecx, ds:[0x5C2904];
+	__asm        lea    ecx, help_command.command_string.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
 	__asm        mov    eax, [ebp-0x3C];
-	__asm        mov    ds:[0x5C2908], eax;
+	__asm        mov    help_command.command_string.reference, eax;
 	__asm        jmp    _T413;
 _T3e1:
 	__asm        cmp    dword ptr [ebp-0x4C], 0;
@@ -1509,7 +1509,7 @@ _T3e1:
 
 	__asm        jmp    near ptr 0x00422CDE;
 
-	__asm        mov    eax, ds:[0x5C2908];
+	__asm        mov    eax, help_command.command_string.reference;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x44], eax;
 	__asm        mov    eax, [ebp-0x4C];
@@ -1523,7 +1523,7 @@ _T3e1:
 	__asm        jmp    _T413;
 _T413:
 	__asm        mov    eax, [ebp-0x4C];
-	__asm        mov    ecx, ds:[0x5C2908];
+	__asm        mov    ecx, help_command.command_string.reference;
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x00422D12;
 
@@ -2807,7 +2807,7 @@ _T60:
 	__asm        ja     _T8c;
 
 	__asm        mov    eax, [ebp-0x14];
-	__asm        jmp    dword ptr [eax*4+0x423C19];
+	__asm        jmp    SwitchPointers4340761[0][eax*4];
 // Switch pointers
 // LINE 233:
 _T8c:

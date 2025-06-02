@@ -67,7 +67,7 @@ void HeliPassengerInit(struct tagHeliPassengerData* heliPassengerData, int32_t n
 	__asm        mov    ecx, eax;
 	__asm        lea    eax, [eax+eax*4];
 	__asm        lea    eax, [ecx+eax*2];
-	__asm        mov    eax, [eax*8+0x5B497C];
+	__asm        mov    eax, S_helitype_data[0].max_seats[eax*8];
 	__asm        mov    lSeatsTotal, eax;
 	__asm        mov    eax, lSeatsTotal;
 	__asm        mov    ecx, heliPassengerData;

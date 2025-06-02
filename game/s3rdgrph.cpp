@@ -159,7 +159,7 @@ _Tb9:
 	__asm        jmp    _Tfc;
 _Tc4:
 	__asm        mov    eax, x;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, y;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
@@ -167,7 +167,7 @@ _Tc4:
 	__asm        movsx  eax, dx;
 	__asm        shl    eax, 0xE;
 	__asm        mov    ecx, x;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        mov    edx, y;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [ecx+edx];
@@ -306,7 +306,7 @@ _T270:
 	__asm        jmp    _T2b3;
 _T27b:
 	__asm        mov    eax, x;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, y;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
@@ -314,7 +314,7 @@ _T27b:
 	__asm        movsx  eax, dx;
 	__asm        shl    eax, 0xE;
 	__asm        mov    ecx, x;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        mov    edx, y;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [ecx+edx];
@@ -871,7 +871,7 @@ _T234:
 	__asm        mov    eax, pGoal;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0xC];
-	__asm        mov    eax, [ecx*4+0x63A270];
+	__asm        mov    eax, TerrainMap[ecx*4];
 	__asm        mov    ecx, pGoal;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+0xD];
@@ -934,7 +934,7 @@ _T320:
 	__asm        ja     _T314;
 
 	__asm        mov    eax, [ebp-0x24];
-	__asm        jmp    dword ptr [eax*4+0x53C668];
+	__asm        jmp    SwitchPointers5490280[0][eax*4];
 // Switch pointers
 // LINE 321:
 _T347:
@@ -1016,7 +1016,7 @@ _T44:
 _T92:
 	__asm        mov    eax, pGoal;
 	__asm        mov    eax, [eax+0xE];
-	__asm        mov    eax, [eax*4+0x593430];
+	__asm        mov    eax, IndexToType[0][eax*4];
 	__asm        mov    tempDir, eax;
 // LINE 357:
 	__asm        mov    eax, pRGV;
@@ -1070,7 +1070,7 @@ _T116:
 	__asm        ja     _T13a;
 
 	__asm        mov    eax, [ebp-0x2C];
-	__asm        jmp    dword ptr [eax*4+0x53C7C8];
+	__asm        jmp    SwitchPointers5490632[0][eax*4];
 // Switch pointers
 // LINE 375:
 _T13a:
@@ -1159,7 +1159,7 @@ _T20e:
 	__asm        ja     _T232;
 
 	__asm        mov    eax, [ebp-0x30];
-	__asm        jmp    dword ptr [eax*4+0x53C8C0];
+	__asm        jmp    SwitchPointers5490880[0][eax*4];
 // Switch pointers
 // LINE 391:
 _T232:
@@ -1282,7 +1282,7 @@ _T46:
 _T51:
 	__asm        xor    eax, eax;
 	__asm        mov    al, startLoc.x;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, startLoc.y;
 	__asm        xor    edx, edx;
@@ -1292,7 +1292,7 @@ _T51:
 	__asm        shl    eax, 0xE;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, startLoc.x;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        xor    edx, edx;
 	__asm        mov    dl, startLoc.y;
 	__asm        xor    ebx, ebx;
@@ -1457,7 +1457,7 @@ _T21b:
 _T226:
 	__asm        xor    eax, eax;
 	__asm        mov    al, startLoc.x;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, startLoc.y;
 	__asm        xor    edx, edx;
@@ -1467,7 +1467,7 @@ _T226:
 	__asm        shl    eax, 0xE;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, startLoc.x;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        xor    edx, edx;
 	__asm        mov    dl, startLoc.y;
 	__asm        xor    ebx, ebx;
@@ -1546,7 +1546,7 @@ _T31a:
 	__asm        xor    eax, eax;
 	__asm        mov    al, startLoc.x;
 	__asm        add    eax, stepSize;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, startLoc.y;
 	__asm        xor    edx, edx;
@@ -1557,7 +1557,7 @@ _T31a:
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, startLoc.x;
 	__asm        add    ecx, stepSize;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        xor    edx, edx;
 	__asm        mov    dl, startLoc.y;
 	__asm        xor    ebx, ebx;
@@ -1670,7 +1670,7 @@ _T45f:
 	__asm        add    eax, stepSize;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, startLoc.x;
-	__asm        mov    ecx, [ecx*4+0x638F70];
+	__asm        mov    ecx, BitsMap[ecx*4];
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
 	__asm        and    edx, 2;
@@ -1678,7 +1678,7 @@ _T45f:
 	__asm        shl    eax, 0xE;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, startLoc.x;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        xor    edx, edx;
 	__asm        mov    dl, startLoc.y;
 	__asm        add    edx, stepSize;
@@ -1797,7 +1797,7 @@ _T599:
 	__asm        shl    eax, 0xE;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, startLoc.x;
-	__asm        mov    ecx, [ecx*4+0x63984C];
+	__asm        mov    ecx, NeighborFame[ecx*4];
 	__asm        xor    edx, edx;
 	__asm        mov    dl, startLoc.y;
 	__asm        xor    ebx, ebx;
@@ -1956,7 +1956,7 @@ _Taa:
 	__asm        ja     _Tce;
 
 	__asm        mov    eax, [ebp-0x10];
-	__asm        jmp    dword ptr [eax*4+0x53D0EA];
+	__asm        jmp    SwitchPointers5492970[0][eax*4];
 // Switch pointers
 // LINE 578:
 _Tce:
@@ -2076,7 +2076,7 @@ int32_t RoadGraph::FindIntersection(struct Goal& goal, unsigned char x, unsigned
 
 // LINE 632:
 	__asm        mov    eax, currentDirType;
-	__asm        mov    eax, [eax*4+0x593440];
+	__asm        mov    eax, TypeToIndex2[0][eax*4];
 	__asm        mov    currentDir, eax;
 // LINE 634:
 	__asm        mov    returnVal, 0;
@@ -2157,7 +2157,7 @@ _Tce:
 	__asm        ja     _Tf2;
 
 	__asm        mov    eax, [ebp-0x20];
-	__asm        jmp    dword ptr [eax*4+0x53D2FD];
+	__asm        jmp    SwitchPointers5493501[0][eax*4];
 // Switch pointers
 // LINE 668:
 _Tf2:
@@ -2329,7 +2329,7 @@ _Ta4:
 	__asm        jmp    _Te7;
 _Taf:
 	__asm        mov    eax, x;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, y;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
@@ -2337,7 +2337,7 @@ _Taf:
 	__asm        movsx  eax, dx;
 	__asm        shl    eax, 0xE;
 	__asm        mov    ecx, x;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        mov    edx, y;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [ecx+edx];
@@ -2386,7 +2386,7 @@ _T155:
 	__asm        jmp    _T19a;
 _T160:
 	__asm        mov    eax, x;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, y;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx-1];
@@ -2394,7 +2394,7 @@ _T160:
 	__asm        movsx  eax, dx;
 	__asm        shl    eax, 0xE;
 	__asm        mov    ecx, x;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        mov    edx, y;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [ecx+edx-1];
@@ -2468,7 +2468,7 @@ _T242:
 _T24d:
 	__asm        mov    eax, x;
 	__asm        add    eax, stepSize;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, y;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
@@ -2477,7 +2477,7 @@ _T24d:
 	__asm        shl    eax, 0xE;
 	__asm        mov    ecx, x;
 	__asm        add    ecx, stepSize;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        mov    edx, y;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [ecx+edx];
@@ -2550,7 +2550,7 @@ _T333:
 	__asm        jmp    _T37c;
 _T33e:
 	__asm        mov    eax, x;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, y;
 	__asm        add    ecx, stepSize;
 	__asm        xor    edx, edx;
@@ -2559,7 +2559,7 @@ _T33e:
 	__asm        movsx  eax, dx;
 	__asm        shl    eax, 0xE;
 	__asm        mov    ecx, x;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        mov    edx, y;
 	__asm        add    edx, stepSize;
 	__asm        xor    ebx, ebx;
@@ -2640,7 +2640,7 @@ _T426:
 	__asm        movsx  eax, dx;
 	__asm        shl    eax, 0xE;
 	__asm        mov    ecx, x;
-	__asm        mov    ecx, [ecx*4+0x63984C];
+	__asm        mov    ecx, NeighborFame[ecx*4];
 	__asm        mov    edx, y;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [ecx+edx];
@@ -2791,7 +2791,7 @@ _Tcd:
 	__asm        ja     _Tf1;
 
 	__asm        mov    eax, [ebp-0x18];
-	__asm        jmp    dword ptr [eax*4+0x53D9B6];
+	__asm        jmp    SwitchPointers5495222[0][eax*4];
 // Switch pointers
 // LINE 802:
 _Tf1:
@@ -2826,7 +2826,7 @@ _T3a:
 	__asm        jmp    _T7d;
 _T45:
 	__asm        mov    eax, x;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, y;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
@@ -2834,7 +2834,7 @@ _T45:
 	__asm        movsx  eax, dx;
 	__asm        shl    eax, 0xE;
 	__asm        mov    ecx, x;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        mov    edx, y;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [ecx+edx];
@@ -2925,7 +2925,7 @@ _T16d:
 	__asm        jmp    _T1b2;
 _T178:
 	__asm        mov    eax, x;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, y;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx-1];
@@ -2933,7 +2933,7 @@ _T178:
 	__asm        movsx  eax, dx;
 	__asm        shl    eax, 0xE;
 	__asm        mov    ecx, x;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        mov    edx, y;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [ecx+edx-1];
@@ -3075,8 +3075,8 @@ _T361:
 
 	__asm        mov    eax, [ebp-0x38];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0x53DD66];
-	__asm        jmp    dword ptr [ecx*4+0x53DD56];
+	__asm        mov    cl, SwitchTable5496166[0][eax];
+	__asm        jmp    SwitchPointers5496150[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 839:
@@ -3141,7 +3141,7 @@ _T451:
 _T45c:
 	__asm        mov    eax, stepSize;
 	__asm        add    eax, x;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, y;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
@@ -3150,7 +3150,7 @@ _T45c:
 	__asm        shl    eax, 0xE;
 	__asm        mov    ecx, stepSize;
 	__asm        add    ecx, x;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        mov    edx, y;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [ecx+edx];
@@ -3292,8 +3292,8 @@ _T649:
 
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0x53E04E];
-	__asm        jmp    dword ptr [ecx*4+0x53E03E];
+	__asm        mov    cl, SwitchTable5496910[0][eax];
+	__asm        jmp    SwitchPointers5496894[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 850:
@@ -3357,7 +3357,7 @@ _T739:
 	__asm        jmp    _T782;
 _T744:
 	__asm        mov    eax, x;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, stepSize;
 	__asm        add    ecx, y;
 	__asm        xor    edx, edx;
@@ -3366,7 +3366,7 @@ _T744:
 	__asm        movsx  eax, dx;
 	__asm        shl    eax, 0xE;
 	__asm        mov    ecx, x;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        mov    edx, stepSize;
 	__asm        add    edx, y;
 	__asm        xor    ebx, ebx;
@@ -3468,7 +3468,7 @@ _T85c:
 	__asm        movsx  eax, dx;
 	__asm        shl    eax, 0xE;
 	__asm        mov    ecx, x;
-	__asm        mov    ecx, [ecx*4+0x63984C];
+	__asm        mov    ecx, NeighborFame[ecx*4];
 	__asm        mov    edx, y;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [ecx+edx];
@@ -3661,7 +3661,7 @@ _T111:
 	__asm        ja     _T135;
 
 	__asm        mov    eax, [ebp-0x28];
-	__asm        jmp    dword ptr [eax*4+0x53E42A];
+	__asm        jmp    SwitchPointers5497898[0][eax*4];
 // Switch pointers
 // LINE 931:
 _T135:
@@ -3702,7 +3702,7 @@ _T180:
 	__asm        ja     _T1a4;
 
 	__asm        mov    eax, [ebp-0x2C];
-	__asm        jmp    dword ptr [eax*4+0x53E499];
+	__asm        jmp    SwitchPointers5498009[0][eax*4];
 // Switch pointers
 // LINE 951:
 _T1a4:
@@ -3782,7 +3782,7 @@ _T252:
 _T25d:
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, y;
 	__asm        xor    edx, edx;
@@ -3792,7 +3792,7 @@ _T25d:
 	__asm        shl    eax, 0xE;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, x;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        xor    edx, edx;
 	__asm        mov    dl, y;
 	__asm        xor    ebx, ebx;
@@ -3920,8 +3920,8 @@ _T427:
 
 	__asm        mov    eax, [ebp-0x30];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0x53E75F];
-	__asm        jmp    dword ptr [ecx*4+0x53E74F];
+	__asm        mov    cl, SwitchTable5498719[0][eax];
+	__asm        jmp    SwitchPointers5498703[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 970:
@@ -4005,7 +4005,7 @@ _T549:
 	__asm        ja     _T56d;
 
 	__asm        mov    eax, [ebp-0x34];
-	__asm        jmp    dword ptr [eax*4+0x53E862];
+	__asm        jmp    SwitchPointers5498978[0][eax*4];
 // Switch pointers
 // LINE 998:
 _T56d:
@@ -4064,7 +4064,7 @@ _T46:
 _T51:
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, y;
 	__asm        xor    edx, edx;
@@ -4074,7 +4074,7 @@ _T51:
 	__asm        shl    eax, 0xE;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, x;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        xor    edx, edx;
 	__asm        mov    dl, y;
 	__asm        xor    ebx, ebx;
@@ -4086,7 +4086,7 @@ _T51:
 _T91:
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
-	__asm        mov    eax, [eax*4+0x639510];
+	__asm        mov    eax, AltMap[eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, y;
 	__asm        xor    edx, edx;
@@ -4183,7 +4183,7 @@ _T199:
 _T1a4:
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, y;
 	__asm        xor    edx, edx;
@@ -4193,7 +4193,7 @@ _T1a4:
 	__asm        shl    eax, 0xE;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, x;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        xor    edx, edx;
 	__asm        mov    dl, y;
 	__asm        xor    ebx, ebx;
@@ -4237,7 +4237,7 @@ _T236:
 _T241:
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, y;
 	__asm        xor    edx, edx;
@@ -4247,7 +4247,7 @@ _T241:
 	__asm        shl    eax, 0xE;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, x;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        xor    edx, edx;
 	__asm        mov    dl, y;
 	__asm        xor    ebx, ebx;
@@ -4258,7 +4258,7 @@ _T241:
 _T283:
 	__asm        push   1;
 	__asm        mov    eax, currentDir;
-	__asm        mov    eax, [eax*4+0x593430];
+	__asm        mov    eax, IndexToType[0][eax*4];
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        push   eax;
@@ -4331,7 +4331,7 @@ _T34c:
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
 	__asm        add    eax, stepSize;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, y;
 	__asm        xor    edx, edx;
@@ -4342,7 +4342,7 @@ _T34c:
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, x;
 	__asm        add    ecx, stepSize;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        xor    edx, edx;
 	__asm        mov    dl, y;
 	__asm        xor    ebx, ebx;
@@ -4353,7 +4353,7 @@ _T34c:
 _T392:
 	__asm        push   2;
 	__asm        mov    eax, currentDir;
-	__asm        mov    eax, [eax*4+0x593430];
+	__asm        mov    eax, IndexToType[0][eax*4];
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        push   eax;
@@ -4433,7 +4433,7 @@ _T455:
 	__asm        shl    eax, 0xE;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, x;
-	__asm        mov    ecx, [ecx*4+0x63984C];
+	__asm        mov    ecx, NeighborFame[ecx*4];
 	__asm        xor    edx, edx;
 	__asm        mov    dl, y;
 	__asm        xor    ebx, ebx;
@@ -4444,7 +4444,7 @@ _T455:
 _T495:
 	__asm        push   8;
 	__asm        mov    eax, currentDir;
-	__asm        mov    eax, [eax*4+0x593430];
+	__asm        mov    eax, IndexToType[0][eax*4];
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        push   eax;
@@ -4516,7 +4516,7 @@ _T556:
 _T561:
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, y;
 	__asm        add    ecx, stepSize;
@@ -4527,7 +4527,7 @@ _T561:
 	__asm        shl    eax, 0xE;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, x;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        xor    edx, edx;
 	__asm        mov    dl, y;
 	__asm        add    edx, stepSize;
@@ -4539,7 +4539,7 @@ _T561:
 _T5a7:
 	__asm        push   4;
 	__asm        mov    eax, currentDir;
-	__asm        mov    eax, [eax*4+0x593430];
+	__asm        mov    eax, IndexToType[0][eax*4];
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        push   eax;
@@ -4786,8 +4786,8 @@ _T24f:
 
 	__asm        mov    eax, [ebp-0x30];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0x53F158];
-	__asm        jmp    dword ptr [ecx*4+0x53F148];
+	__asm        mov    cl, SwitchTable5501272[0][eax];
+	__asm        jmp    SwitchPointers5501256[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 1110:
@@ -4978,8 +4978,8 @@ _T4f2:
 
 	__asm        mov    eax, [ebp-0x34];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0x53F3FB];
-	__asm        jmp    dword ptr [ecx*4+0x53F3EB];
+	__asm        mov    cl, SwitchPointers5501931[16][eax];
+	__asm        jmp    SwitchPointers5501931[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 1121:
@@ -5168,8 +5168,8 @@ _T794:
 
 	__asm        mov    eax, [ebp-0x38];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0x53F69D];
-	__asm        jmp    dword ptr [ecx*4+0x53F68D];
+	__asm        mov    cl, SwitchTable5502621[0][eax];
+	__asm        jmp    SwitchPointers5502605[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 1132:
@@ -5358,8 +5358,8 @@ _Ta37:
 
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0x53F940];
-	__asm        jmp    dword ptr [ecx*4+0x53F930];
+	__asm        mov    cl, SwitchPointers5503280[16][eax];
+	__asm        jmp    SwitchPointers5503280[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 1143:
@@ -5549,8 +5549,8 @@ _Tcd5:
 
 	__asm        mov    eax, [ebp-0x40];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0x53FBDE];
-	__asm        jmp    dword ptr [ecx*4+0x53FBCE];
+	__asm        mov    cl, SwitchPointers5503950[16][eax];
+	__asm        jmp    SwitchPointers5503950[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 1154:
@@ -5740,8 +5740,8 @@ _Tf72:
 
 	__asm        mov    eax, [ebp-0x44];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0x53FE7B];
-	__asm        jmp    dword ptr [ecx*4+0x53FE6B];
+	__asm        mov    cl, SwitchPointers5504619[16][eax];
+	__asm        jmp    SwitchPointers5504619[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 1165:
@@ -5930,8 +5930,8 @@ _T1210:
 
 	__asm        mov    eax, [ebp-0x48];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0x540119];
-	__asm        jmp    dword ptr [ecx*4+0x540109];
+	__asm        mov    cl, SwitchPointers5505289[16][eax];
+	__asm        jmp    SwitchPointers5505289[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 1176:
@@ -6120,8 +6120,8 @@ _T14af:
 
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0x5403B8];
-	__asm        jmp    dword ptr [ecx*4+0x5403A8];
+	__asm        mov    cl, SwitchTable5505976[0][eax];
+	__asm        jmp    SwitchPointers5505960[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 1187:
@@ -6151,7 +6151,7 @@ _T1544:
 	__asm        ja     _T151e;
 
 	__asm        mov    eax, [ebp-0x2C];
-	__asm        jmp    dword ptr [eax*4+0x540445];
+	__asm        jmp    SwitchPointers5506117[0][eax*4];
 // Switch pointers
 // LINE 1192:
 _T15ab:
@@ -6181,7 +6181,7 @@ _T3a:
 	__asm        jmp    _T7d;
 _T45:
 	__asm        mov    eax, x;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, y;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
@@ -6189,7 +6189,7 @@ _T45:
 	__asm        movsx  eax, dx;
 	__asm        shl    eax, 0xE;
 	__asm        mov    ecx, x;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        mov    edx, y;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [ecx+edx];
@@ -6342,7 +6342,7 @@ void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, al;
 	__asm        mov    eax, currentDir;
-	__asm        and    ecx, [eax*4+0x593430];
+	__asm        and    ecx, IndexToType[0][eax*4];
 	__asm        mov    deadEnd, ecx;
 // LINE 1262:
 	__asm        mov    decrementFlag, 0;
@@ -6437,7 +6437,7 @@ _T11d:
 _T128:
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, y;
 	__asm        xor    edx, edx;
@@ -6447,7 +6447,7 @@ _T128:
 	__asm        shl    eax, 0xE;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, x;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        xor    edx, edx;
 	__asm        mov    dl, y;
 	__asm        xor    ebx, ebx;
@@ -6526,7 +6526,7 @@ _T232:
 _T23e:
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
-	__asm        mov    eax, [eax*4+0x639850];
+	__asm        mov    eax, BuildMap[eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, y;
 	__asm        xor    edx, edx;
@@ -6592,7 +6592,7 @@ _T309:
 	__asm        ja     _T2f8;
 
 	__asm        mov    eax, [ebp-0x5C];
-	__asm        jmp    dword ptr [eax*4+0x540957];
+	__asm        jmp    SwitchPointers5507415[0][eax*4];
 // Switch pointers
 // LINE 1290:
 	__asm        jmp    _Taf3;
@@ -6651,7 +6651,7 @@ _T3c6:
 	__asm        ja     _T3ea;
 
 	__asm        mov    eax, [ebp-0x60];
-	__asm        jmp    dword ptr [eax*4+0x540A10];
+	__asm        jmp    SwitchPointers5507600[0][eax*4];
 // Switch pointers
 // LINE 1315:
 _T3ea:
@@ -6714,7 +6714,7 @@ _T46f:
 _T47a:
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, y;
 	__asm        xor    edx, edx;
@@ -6724,7 +6724,7 @@ _T47a:
 	__asm        shl    eax, 0xE;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, x;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        xor    edx, edx;
 	__asm        mov    dl, y;
 	__asm        xor    ebx, ebx;
@@ -6803,7 +6803,7 @@ _T584:
 _T590:
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
-	__asm        mov    eax, [eax*4+0x639850];
+	__asm        mov    eax, BuildMap[eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, y;
 	__asm        xor    edx, edx;
@@ -6869,14 +6869,14 @@ _T65b:
 	__asm        ja     _T64a;
 
 	__asm        mov    eax, [ebp-0x68];
-	__asm        jmp    dword ptr [eax*4+0x540CA9];
+	__asm        jmp    SwitchPointers5508265[0][eax*4];
 // Switch pointers
 // LINE 1333:
 	__asm        mov    fStart, 1;
 // LINE 1336:
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
-	__asm        mov    eax, [eax*4+0x639510];
+	__asm        mov    eax, AltMap[eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, y;
 	__asm        xor    edx, edx;
@@ -6948,7 +6948,7 @@ _T75d:
 	__asm        ja     _T781;
 
 	__asm        mov    eax, [ebp-0x6C];
-	__asm        jmp    dword ptr [eax*4+0x540DA7];
+	__asm        jmp    SwitchPointers5508519[0][eax*4];
 // Switch pointers
 // LINE 1359:
 _T781:
@@ -7040,7 +7040,7 @@ _T84c:
 _T857:
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, y;
 	__asm        xor    edx, edx;
@@ -7050,7 +7050,7 @@ _T857:
 	__asm        shl    eax, 0xE;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, x;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        xor    edx, edx;
 	__asm        mov    dl, y;
 	__asm        xor    ebx, ebx;
@@ -7129,7 +7129,7 @@ _T961:
 _T96d:
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
-	__asm        mov    eax, [eax*4+0x639850];
+	__asm        mov    eax, BuildMap[eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, y;
 	__asm        xor    edx, edx;
@@ -7195,13 +7195,13 @@ _Ta38:
 	__asm        ja     _Ta27;
 
 	__asm        mov    eax, [ebp-0x74];
-	__asm        jmp    dword ptr [eax*4+0x541086];
+	__asm        jmp    SwitchPointers5509254[0][eax*4];
 // Switch pointers
 // LINE 1396:
 _Ta77:
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
-	__asm        mov    eax, [eax*4+0x639510];
+	__asm        mov    eax, AltMap[eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, y;
 	__asm        xor    edx, edx;
@@ -7231,7 +7231,7 @@ _Tac5:
 	__asm        ja     _Tae9;
 
 	__asm        mov    eax, [ebp-0x78];
-	__asm        jmp    dword ptr [eax*4+0x54110F];
+	__asm        jmp    SwitchPointers5509391[0][eax*4];
 // Switch pointers
 // LINE 1404:
 _Tae9:
@@ -7320,7 +7320,7 @@ _Tb4:
 	__asm        ja     _Td8;
 
 	__asm        mov    eax, [ebp-0xC];
-	__asm        jmp    dword ptr [eax*4+0x5411F8];
+	__asm        jmp    SwitchPointers5509624[0][eax*4];
 // Switch pointers
 // LINE 1427:
 _Td8:

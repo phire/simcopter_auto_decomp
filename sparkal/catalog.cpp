@@ -3166,7 +3166,7 @@ _T6f9:
 
 	__asm        mov    eax, sTempMainGraphicFilePath.c_str_ptr;
 	__asm        push   eax;
-	__asm        lea    ecx, tempHelicopterBuffer.<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempHelicopterBuffer<CBackBuffer+0x00>;
 	__asm        call   CBackBuffer::CBackBuffer;
 // LINE 196:
 	__asm        cmp    sTempTabFilePath.c_str_ptr, 0;
@@ -3252,7 +3252,7 @@ _T841:
 
 	__asm        mov    eax, sTempTabFilePath.c_str_ptr;
 	__asm        push   eax;
-	__asm        lea    ecx, tempTabBuffer.<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempTabBuffer<CBackBuffer+0x00>;
 	__asm        call   CBackBuffer::CBackBuffer;
 // LINE 199:
 	__asm        jmp    near ptr 0x0047750D;
@@ -3274,7 +3274,7 @@ _T841:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        push   eax;
-	__asm        lea    ecx, tempHelicopterBuffer.<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempHelicopterBuffer<CBackBuffer+0x00>;
 	__asm        call   CBackBuffer::Compose;
 // LINE 202:
 	__asm        jmp    near ptr 0x00477558;
@@ -3296,7 +3296,7 @@ _T841:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        push   eax;
-	__asm        lea    ecx, tempTabBuffer.<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempTabBuffer<CBackBuffer+0x00>;
 	__asm        call   CBackBuffer::Compose;
 // LINE 205:
 	__asm        push   0;
@@ -4418,9 +4418,9 @@ _T1920:
 	__asm        call   CatalogWindow::SetButtonStates;
 // LINE 268:
 _T1a28:
-	__asm        lea    ecx, tempTabBuffer.<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempTabBuffer<CBackBuffer+0x00>;
 	__asm        call   CBackBuffer::~CBackBuffer;
-	__asm        lea    ecx, tempHelicopterBuffer.<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempHelicopterBuffer<CBackBuffer+0x00>;
 	__asm        call   CBackBuffer::~CBackBuffer;
 // LINE 269:
 // Block end:
@@ -4709,7 +4709,7 @@ _T1df3:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x64];
 	__asm        push   eax;
-	__asm        lea    ecx, tempTabBuffer.<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempTabBuffer<CBackBuffer+0x00>;
 	__asm        call   CBackBuffer::CBackBuffer;
 // LINE 283:
 	__asm        jmp    near ptr 0x00478AC8;
@@ -4731,7 +4731,7 @@ _T1df3:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        push   eax;
-	__asm        lea    ecx, tempTabBuffer.<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempTabBuffer<CBackBuffer+0x00>;
 	__asm        call   CBackBuffer::Compose;
 // LINE 285:
 	__asm        mov    rectEquipmentDescriptionTitles[0].left, 0xA2;
@@ -5476,7 +5476,7 @@ _T2a0b:
 	__asm        call   CatalogWindow::SetButtonStates;
 // LINE 362:
 _T2b13:
-	__asm        lea    ecx, tempTabBuffer.<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempTabBuffer<CBackBuffer+0x00>;
 	__asm        call   CBackBuffer::~CBackBuffer;
 // LINE 365:
 // Block end:
@@ -5502,13 +5502,13 @@ _T2b1e:
 // LINE 367:
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
-	__asm        lea    ecx, tempStainImage.<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempStainImage<CBackBuffer+0x00>;
 	__asm        call   CBackBuffer::CBackBuffer;
 // LINE 368:
 	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
 	__asm        push   1;
-	__asm        lea    ecx, tempStainImage.<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempStainImage<CBackBuffer+0x00>;
 	__asm        call   CBackBuffer::SetTransparentColor;
 // LINE 369:
 	__asm        mov    i, 0;
@@ -5547,14 +5547,14 @@ _T2b91:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        push   eax;
-	__asm        lea    ecx, tempStainImage.<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempStainImage<CBackBuffer+0x00>;
 	__asm        call   CBackBuffer::Compose;
 // LINE 374:
 _T2c1c:
 	__asm        jmp    _T2b8b;
 // LINE 375:
 _T2c21:
-	__asm        lea    ecx, tempStainImage.<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempStainImage<CBackBuffer+0x00>;
 	__asm        call   CBackBuffer::~CBackBuffer;
 // LINE 376:
 // Block end:
@@ -5580,13 +5580,13 @@ _T2c2c:
 // LINE 378:
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
-	__asm        lea    ecx, tempPaperClipImage.<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempPaperClipImage<CBackBuffer+0x00>;
 	__asm        call   CBackBuffer::CBackBuffer;
 // LINE 379:
 	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
 	__asm        push   1;
-	__asm        lea    ecx, tempPaperClipImage.<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempPaperClipImage<CBackBuffer+0x00>;
 	__asm        call   CBackBuffer::SetTransparentColor;
 // LINE 380:
 	__asm        mov    i, 0;
@@ -5625,14 +5625,14 @@ _T2c9f:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        push   eax;
-	__asm        lea    ecx, tempPaperClipImage.<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempPaperClipImage<CBackBuffer+0x00>;
 	__asm        call   CBackBuffer::Compose;
 // LINE 385:
 _T2d2a:
 	__asm        jmp    _T2c99;
 // LINE 386:
 _T2d2f:
-	__asm        lea    ecx, tempPaperClipImage.<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempPaperClipImage<CBackBuffer+0x00>;
 	__asm        call   CBackBuffer::~CBackBuffer;
 // LINE 387:
 // Block end:
@@ -5915,22 +5915,22 @@ void CatalogWindow::DrawCurrentEquipmentSelection() {
 	__asm        mov    lIndexArray[4], 0x9F;
 	__asm        mov    lIndexArray[5], 0xC7;
 // LINE 404:
-	__asm        mov    eax, ds:[0x599838];
-	__asm        add    ds:[0x599834], eax;
+	__asm        mov    eax, nColorDirection;
+	__asm        add    nColorArrayCurrentIndex, eax;
 // LINE 405:
-	__asm        cmp    dword ptr ds:[0x599834], 5;
+	__asm        cmp    nColorArrayCurrentIndex, 5;
 	__asm        je     _T72;
 
-	__asm        cmp    dword ptr ds:[0x599834], 0;
+	__asm        cmp    nColorArrayCurrentIndex, 0;
 	__asm        jne    _T7e;
 // LINE 406:
 _T72:
-	__asm        mov    eax, ds:[0x599838];
+	__asm        mov    eax, nColorDirection;
 	__asm        neg    eax;
-	__asm        mov    ds:[0x599838], eax;
+	__asm        mov    nColorDirection, eax;
 // LINE 407:
 _T7e:
-	__asm        mov    eax, ds:[0x599834];
+	__asm        mov    eax, nColorArrayCurrentIndex;
 	__asm        mov    eax, [ebp+eax*4-0x18];
 	__asm        mov    [ebp-0x60], eax;
 	__asm        mov    eax, this;

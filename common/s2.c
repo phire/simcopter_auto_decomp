@@ -38,7 +38,7 @@ _T3d:
 // LINE 53:
 _T53:
 	__asm        mov    eax, tile;
-	__asm        movsx  eax, word ptr [eax*2+0x59BF68];
+	__asm        movsx  eax, graphRect[6].top[eax*2];
 	__asm        mov    size, eax;
 // LINE 55:
 _T61:

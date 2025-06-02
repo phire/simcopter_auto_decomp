@@ -66,7 +66,7 @@ _T22:
 	__asm        lea    eax, [eax+eax*2];
 	__asm        lea    eax, [ecx+eax*4];
 	__asm        lea    eax, [ecx+eax*4];
-	__asm        mov    dword ptr [eax*4+0x60733C], 0;
+	__asm        mov    S_mstatics.missions[0].flags[eax*4], 0;
 // LINE 144:
 	__asm        jmp    _T1f;
 // LINE 146:
@@ -676,7 +676,7 @@ _T18:
 	__asm        lea    eax, [eax+eax*2];
 	__asm        lea    eax, [ecx+eax*4];
 	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [eax*4+0x6072B8];
+	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
 	__asm        add    eax, 0x38;
 	__asm        mov    md, eax;
 // LINE 442:
@@ -1109,7 +1109,7 @@ _T1f:
 	__asm        lea    eax, [eax+eax*2];
 	__asm        lea    eax, [ecx+eax*4];
 	__asm        lea    eax, [ecx+eax*4];
-	__asm        test   byte ptr [eax*4+0x60733C], 1;
+	__asm        test   reinterpret_cast<uint8_t>(S_mstatics.missions[0].flags)[eax*4], 1;
 	__asm        jne    _T65;
 // LINE 667:
 	__asm        mov    eax, i;
@@ -1117,7 +1117,7 @@ _T1f:
 	__asm        lea    eax, [eax+eax*2];
 	__asm        lea    eax, [ecx+eax*4];
 	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [eax*4+0x6072B8];
+	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
 	__asm        add    eax, 0x38;
 	__asm        mov    md, eax;
 // LINE 668:
@@ -1796,7 +1796,7 @@ _T7a7:
 	__asm        shl    eax, 0xA;
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
-	__asm        mov    eax, [eax+ecx*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][eax+ecx*4];
 	__asm        mov    ecx, cfd;
 	__asm        mov    [ecx], eax;
 // LINE 896:
@@ -2466,7 +2466,7 @@ _T29:
 	__asm        lea    eax, [eax+eax*2];
 	__asm        lea    eax, [ecx+eax*4];
 	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [eax*4+0x6072B8];
+	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
 	__asm        add    eax, 0x38;
 	__asm        mov    md, eax;
 // LINE 1088:
@@ -2501,7 +2501,7 @@ _T29:
 	__asm        lea    eax, [eax+eax*2];
 	__asm        lea    eax, [ecx+eax*4];
 	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [eax*4+0x6072B8];
+	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
 	__asm        add    eax, 0x38;
 	__asm        mov    md, eax;
 // LINE 1115:
@@ -2544,7 +2544,7 @@ _T29:
 	__asm        lea    eax, [eax+eax*2];
 	__asm        lea    eax, [ecx+eax*4];
 	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [eax*4+0x6072B8];
+	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
 	__asm        add    eax, 0x38;
 	__asm        mov    md, eax;
 // LINE 1146:
@@ -2654,7 +2654,7 @@ _T28:
 	__asm        lea    eax, [eax+eax*2];
 	__asm        lea    eax, [ecx+eax*4];
 	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [eax*4+0x6072B8];
+	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
 	__asm        add    eax, 0x38;
 	__asm        mov    md, eax;
 // LINE 1229:
@@ -3031,7 +3031,7 @@ _T41d:
 	__asm        ja     _T4c9;
 
 	__asm        mov    eax, [ebp-0xC];
-	__asm        jmp    dword ptr [eax*4+0x4FC17B];
+	__asm        jmp    SwitchPointers5226875[0][eax*4];
 // Switch pointers
 // LINE 1387:
 _T4c9:
@@ -3048,7 +3048,7 @@ void S3MissionEnd(long mission_id) {
 	__asm        lea    eax, [eax+eax*2];
 	__asm        lea    eax, [ecx+eax*4];
 	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [eax*4+0x6072B8];
+	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
 	__asm        add    eax, 0x38;
 	__asm        mov    md, eax;
 // LINE 1402:
@@ -3084,7 +3084,7 @@ _T6d:
 	__asm        lea    eax, [eax+eax*2];
 	__asm        lea    eax, [ecx+eax*4];
 	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [eax*4+0x6072B8];
+	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
 	__asm        add    eax, 0x38;
 	__asm        mov    md, eax;
 // LINE 1416:
@@ -3130,7 +3130,7 @@ _T29:
 	__asm        lea    eax, [eax+eax*2];
 	__asm        lea    eax, [ecx+eax*4];
 	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [eax*4+0x6072F0];
+	__asm        lea    eax, S_mstatics.missions[0].mtext[eax*4];
 	__asm        jmp    _T43;
 // LINE 1442:
 _T43:
@@ -3156,7 +3156,7 @@ _T18:
 	__asm        lea    eax, [eax+eax*2];
 	__asm        lea    eax, [ecx+eax*4];
 	__asm        lea    eax, [ecx+eax*4];
-	__asm        mov    eax, [eax*4+0x607314];
+	__asm        mov    eax, S_mstatics.missions[0].key[eax*4];
 	__asm        push   eax;
 	__asm        call   S3MissionIsType;
 	__asm        add    esp, 8;
@@ -3168,7 +3168,7 @@ _T18:
 	__asm        lea    eax, [eax+eax*2];
 	__asm        lea    eax, [ecx+eax*4];
 	__asm        lea    eax, [ecx+eax*4];
-	__asm        mov    eax, [eax*4+0x607314];
+	__asm        mov    eax, S_mstatics.missions[0].key[eax*4];
 	__asm        jmp    _T75;
 // LINE 1454:
 _T66:
@@ -3236,7 +3236,7 @@ _T23:
 	__asm        mov    ecx, x;
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 1492:
 	__asm        mov    eax, cptr;
@@ -3296,7 +3296,7 @@ _Tc7:
 	__asm        mov    y, eax;
 // LINE 1515:
 	__asm        mov    eax, x;
-	__asm        mov    eax, [eax*4+0x639850];
+	__asm        mov    eax, BuildMap[eax*4];
 	__asm        mov    ecx, y;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
@@ -3712,7 +3712,7 @@ _T45:
 	__asm        lea    eax, [eax+eax*2];
 	__asm        lea    eax, [ecx+eax*4];
 	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [eax*4+0x6072B8];
+	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
 	__asm        add    eax, 0x38;
 	__asm        mov    md, eax;
 // LINE 1609:
@@ -3753,7 +3753,7 @@ _Ta5:
 	__asm        lea    eax, [eax+eax*2];
 	__asm        lea    eax, [ecx+eax*4];
 	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [eax*4+0x6072B8];
+	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
 	__asm        add    eax, 0x38;
 	__asm        mov    md, eax;
 // LINE 1619:
@@ -3811,7 +3811,7 @@ _T45:
 	__asm        lea    eax, [eax+eax*2];
 	__asm        lea    eax, [ecx+eax*4];
 	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [eax*4+0x6072B8];
+	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
 	__asm        add    eax, 0x38;
 	__asm        mov    md, eax;
 // LINE 1644:
@@ -3852,7 +3852,7 @@ _Ta5:
 	__asm        lea    eax, [eax+eax*2];
 	__asm        lea    eax, [ecx+eax*4];
 	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [eax*4+0x6072B8];
+	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
 	__asm        add    eax, 0x38;
 	__asm        mov    md, eax;
 // LINE 1654:
@@ -3899,7 +3899,7 @@ _T29:
 	__asm        lea    eax, [eax+eax*2];
 	__asm        lea    eax, [ecx+eax*4];
 	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [eax*4+0x6072B8];
+	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
 	__asm        add    eax, 0x38;
 	__asm        mov    md, eax;
 // LINE 1682:
@@ -4007,7 +4007,7 @@ void S3MissionCancel(long mission_id) {
 	__asm        lea    eax, [eax+eax*2];
 	__asm        lea    eax, [ecx+eax*4];
 	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [eax*4+0x6072B8];
+	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
 	__asm        add    eax, 0x38;
 	__asm        mov    md, eax;
 // LINE 1847:
@@ -4106,7 +4106,7 @@ _T18:
 	__asm        lea    eax, [eax+eax*2];
 	__asm        lea    eax, [ecx+eax*4];
 	__asm        lea    eax, [ecx+eax*4];
-	__asm        test   byte ptr [eax*4+0x60733C], 1;
+	__asm        test   reinterpret_cast<uint8_t>(S_mstatics.missions[0].flags)[eax*4], 1;
 	__asm        jne    _T5e;
 // LINE 1902:
 	__asm        mov    eax, i;
@@ -4114,7 +4114,7 @@ _T18:
 	__asm        lea    eax, [eax+eax*2];
 	__asm        lea    eax, [ecx+eax*4];
 	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [eax*4+0x6072B8];
+	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
 	__asm        add    eax, 0x38;
 	__asm        mov    md, eax;
 // LINE 1903:
@@ -4483,7 +4483,7 @@ _T52:
 	__asm        lea    eax, [eax+eax*2];
 	__asm        lea    eax, [ecx+eax*4];
 	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [eax*4+0x6072B8];
+	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
 	__asm        add    eax, 0x38;
 	__asm        mov    md, eax;
 // LINE 2033:
@@ -4912,7 +4912,7 @@ _T53f:
 	__asm        ja     _T5f2;
 
 	__asm        mov    eax, [ebp-0x1C];
-	__asm        jmp    dword ptr [eax*4+0x4FD63C];
+	__asm        jmp    SwitchPointers5232188[0][eax*4];
 // Switch pointers
 // LINE 2191:
 _T5f2:
@@ -5413,7 +5413,7 @@ _T2c:
 	__asm        lea    eax, [eax+eax*2];
 	__asm        lea    eax, [ecx+eax*4];
 	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [eax*4+0x6072B8];
+	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
 	__asm        add    eax, 0x38;
 	__asm        mov    md, eax;
 // LINE 2448:
@@ -5461,7 +5461,7 @@ _T21:
 	__asm        lea    eax, [eax+eax*2];
 	__asm        lea    eax, [ecx+eax*4];
 	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [eax*4+0x6072F0];
+	__asm        lea    eax, S_mstatics.missions[0].mtext[eax*4];
 	__asm        jmp    _T3b;
 // LINE 2472:
 _T3b:
@@ -5506,7 +5506,7 @@ _T52:
 	__asm        lea    eax, [eax+eax*2];
 	__asm        lea    eax, [ecx+eax*4];
 	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [eax*4+0x6072B8];
+	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
 	__asm        add    eax, 0x38;
 	__asm        mov    md, eax;
 // LINE 2504:
@@ -5601,7 +5601,7 @@ _T35:
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   ecx;
-	__asm        mov    eax, [edx*4+0x5B4F08];
+	__asm        mov    eax, S_msg_general[edx*4];
 	__asm        mov    sid3, eax;
 // LINE 2565:
 	__asm        jmp    _T7a5;
@@ -5630,7 +5630,7 @@ _Ta0:
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   ecx;
-	__asm        mov    eax, [edx*4+0x5B4F08];
+	__asm        mov    eax, S_msg_general[edx*4];
 	__asm        mov    sid3, eax;
 // LINE 2576:
 	__asm        jmp    _Tf5;
@@ -5675,7 +5675,7 @@ _T119:
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   ecx;
-	__asm        mov    eax, [edx*4+0x5B4F08];
+	__asm        mov    eax, S_msg_general[edx*4];
 	__asm        mov    sid3, eax;
 // LINE 2591:
 	__asm        jmp    _T16e;
@@ -5720,7 +5720,7 @@ _T192:
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   ecx;
-	__asm        mov    eax, [edx*4+0x5B4F08];
+	__asm        mov    eax, S_msg_general[edx*4];
 	__asm        mov    sid3, eax;
 // LINE 2611:
 	__asm        jmp    _T1e7;
@@ -5765,7 +5765,7 @@ _T20b:
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   ecx;
-	__asm        mov    eax, [edx*4+0x5B4F08];
+	__asm        mov    eax, S_msg_general[edx*4];
 	__asm        mov    sid3, eax;
 // LINE 2626:
 	__asm        jmp    _T276;
@@ -5818,7 +5818,7 @@ _T29a:
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   ecx;
-	__asm        mov    eax, [edx*4+0x5B4F08];
+	__asm        mov    eax, S_msg_general[edx*4];
 	__asm        mov    sid3, eax;
 // LINE 2644:
 	__asm        jmp    _T2c3;
@@ -5847,7 +5847,7 @@ _T2e7:
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   ecx;
-	__asm        mov    eax, [edx*4+0x5B4F08];
+	__asm        mov    eax, S_msg_general[edx*4];
 	__asm        mov    sid3, eax;
 // LINE 2653:
 	__asm        jmp    _T33c;
@@ -5892,7 +5892,7 @@ _T360:
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   ecx;
-	__asm        mov    eax, [edx*4+0x5B4F08];
+	__asm        mov    eax, S_msg_general[edx*4];
 	__asm        mov    sid3, eax;
 // LINE 2668:
 	__asm        jmp    _T3b5;
@@ -5937,7 +5937,7 @@ _T3d9:
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   ecx;
-	__asm        mov    eax, [edx*4+0x5B4F08];
+	__asm        mov    eax, S_msg_general[edx*4];
 	__asm        mov    sid3, eax;
 // LINE 2683:
 	__asm        jmp    _T444;
@@ -5990,7 +5990,7 @@ _T468:
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   ecx;
-	__asm        mov    eax, [edx*4+0x5B4F08];
+	__asm        mov    eax, S_msg_general[edx*4];
 	__asm        mov    sid3, eax;
 // LINE 2701:
 	__asm        jmp    _T4d3;
@@ -6043,7 +6043,7 @@ _T4f7:
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   ecx;
-	__asm        mov    eax, [edx*4+0x5B4F08];
+	__asm        mov    eax, S_msg_general[edx*4];
 	__asm        mov    sid3, eax;
 // LINE 2719:
 	__asm        jmp    _T562;
@@ -6096,7 +6096,7 @@ _T586:
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   ecx;
-	__asm        mov    eax, [edx*4+0x5B4F08];
+	__asm        mov    eax, S_msg_general[edx*4];
 	__asm        mov    sid3, eax;
 // LINE 2737:
 	__asm        jmp    _T5f1;
@@ -6149,7 +6149,7 @@ _T615:
 	__asm        movsx  eax, ax;
 	__asm        cdq;
 	__asm        idiv   ecx;
-	__asm        mov    eax, [edx*4+0x5B4F08];
+	__asm        mov    eax, S_msg_general[edx*4];
 	__asm        mov    sid3, eax;
 // LINE 2755:
 	__asm        jmp    _T654;

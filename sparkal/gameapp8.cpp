@@ -937,7 +937,7 @@ _T1d2:
 	__asm        mov    eax, gCurrentCareerCityInfo.lCurrentCityIndex;
 	__asm        shl    eax, 3;
 	__asm        lea    edi, tempCitySettings.lDifficulty;
-	__asm        lea    esi, [eax+eax*8+0x5C2B1C];
+	__asm        lea    esi, gAllCareerCities[0].citySettings.lDifficulty[eax+eax*8];
 	__asm        mov    ecx, 9;
 	__asm        rep movsd;
 // LINE 261:
@@ -1824,43 +1824,43 @@ long  CGameApp::ValidateCopterSaveGameFile(char * szGamePath) {
 // LINE 422:
 	__asm        mov    eax, szGamePath;
 	__asm        push   eax;
-	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::MIFF;
 // LINE 425:
-	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::OpenForReading;
 	__asm        test   eax, eax;
 	__asm        jne    _T54;
 // LINE 426:
 	__asm        mov    dword ptr [ebp-0x150], 0;
-	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::~MIFF;
 	__asm        mov    eax, [ebp-0x150];
 	__asm        jmp    _T1bd;
 // LINE 428:
 _T54:
-	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::VerifyFile;
 	__asm        test   eax, eax;
 	__asm        je     _T7d;
 
-	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::ReadFileCreator;
 	__asm        cmp    eax, 0x43505452;
 	__asm        je     _Ta8;
 // LINE 429:
 _T7d:
-	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::Close;
 // LINE 430:
 	__asm        mov    dword ptr [ebp-0x154], 0;
-	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::~MIFF;
 	__asm        mov    eax, [ebp-0x154];
 	__asm        jmp    _T1bd;
 // LINE 433:
 _Ta8:
-	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::ReadFileType;
 	__asm        mov    lFileType, eax;
 // LINE 435:
@@ -1870,27 +1870,27 @@ _Ta8:
 	__asm        cmp    lFileType, 0x55534552;
 	__asm        je     _Tfb;
 // LINE 437:
-	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::Close;
 // LINE 438:
 	__asm        mov    dword ptr [ebp-0x158], 0;
-	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::~MIFF;
 	__asm        mov    eax, [ebp-0x158];
 	__asm        jmp    _T1bd;
 // LINE 443:
 _Tfb:
 	__asm        push   0x4346494C;
-	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::GoToFirstRecordOfGivenType;
 	__asm        test   eax, eax;
 	__asm        jne    _T13e;
 // LINE 444:
-	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::Close;
 // LINE 445:
 	__asm        mov    dword ptr [ebp-0x15C], 0;
-	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::~MIFF;
 	__asm        mov    eax, [ebp-0x15C];
 	__asm        jmp    _T1bd;
@@ -1900,7 +1900,7 @@ _T13e:
 	__asm        jne    _T170;
 // LINE 451:
 	__asm        mov    dword ptr [ebp-0x160], 3;
-	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::~MIFF;
 	__asm        mov    eax, [ebp-0x160];
 	__asm        jmp    _T1bd;
@@ -1911,14 +1911,14 @@ _T170:
 	__asm        jne    _T19d;
 // LINE 453:
 	__asm        mov    dword ptr [ebp-0x164], 4;
-	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::~MIFF;
 	__asm        mov    eax, [ebp-0x164];
 	__asm        jmp    _T1bd;
 // LINE 454:
 _T19d:
 	__asm        mov    dword ptr [ebp-0x168], 0;
-	__asm        lea    ecx, myMIFF.<MIFF+0x00>;
+	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::~MIFF;
 	__asm        mov    eax, [ebp-0x168];
 	__asm        jmp    _T1bd;

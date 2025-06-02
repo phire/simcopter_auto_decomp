@@ -1260,7 +1260,7 @@ _T219:
 	__asm        call   SoundQueue::DeInitialize;
 // LINE 171:
 	__asm        push   1;
-	__asm        lea    ecx, gSoundQueue[1].<vftable>;
+	__asm        lea    ecx, gSoundQueue[1]<vftable>;
 	__asm        call   SoundQueue::DeInitialize;
 // LINE 176:
 	__asm        cmp    G_VRAppInitCalled, 0;
@@ -2489,7 +2489,7 @@ _Tb3f:
 	__asm        mov    ecx, 0x604450;
 	__asm        call   SoundQueue::Initialize;
 // LINE 343:
-	__asm        lea    ecx, gSoundQueue[1].<vftable>;
+	__asm        lea    ecx, gSoundQueue[1]<vftable>;
 	__asm        call   SoundQueue::Initialize;
 // LINE 346:
 	__asm        lea    eax, szButtonWindowSoundFilePath[0];
@@ -2776,7 +2776,7 @@ _T35:
 	__asm        jge    _T52;
 // LINE 393:
 	__asm        mov    eax, i;
-	__asm        mov    dword ptr [eax*4+0x5C3808], 0;
+	__asm        mov    G_CheatCodes[eax*4], 0;
 	__asm        jmp    _T32;
 // LINE 396:
 _T52:
@@ -3410,33 +3410,33 @@ _Tae:
 	__asm        inc    i;
 _Tb2:
 	__asm        movsx  eax, i;
-	__asm        movsx  eax, byte ptr [eax+0x5C2848];
+	__asm        movsx  eax, gszCommandLine[eax];
 	__asm        test   eax, eax;
 	__asm        je     _T212;
 // LINE 614:
 	__asm        movsx  eax, i;
-	__asm        movsx  eax, byte ptr [eax+0x5C2848];
+	__asm        movsx  eax, gszCommandLine[eax];
 	__asm        cmp    eax, 0x2F;
 	__asm        je     _T101;
 
 	__asm        movsx  eax, i;
-	__asm        movsx  eax, byte ptr [eax+0x5C2848];
+	__asm        movsx  eax, gszCommandLine[eax];
 	__asm        cmp    eax, 0x5C;
 	__asm        je     _T101;
 
 	__asm        movsx  eax, i;
-	__asm        movsx  eax, byte ptr [eax+0x5C2848];
+	__asm        movsx  eax, gszCommandLine[eax];
 	__asm        cmp    eax, 0x2D;
 	__asm        jne    _T20d;
 _T101:
 	__asm        movsx  eax, i;
-	__asm        movsx  eax, byte ptr [eax+0x5C2849];
+	__asm        movsx  eax, gszCommandLine[1][eax];
 	__asm        movsx  ecx, chLowerToCheck;
 	__asm        cmp    eax, ecx;
 	__asm        je     _T12f;
 
 	__asm        movsx  eax, i;
-	__asm        movsx  eax, byte ptr [eax+0x5C2849];
+	__asm        movsx  eax, gszCommandLine[1][eax];
 	__asm        movsx  ecx, chUpperToCheck;
 	__asm        cmp    eax, ecx;
 	__asm        jne    _T20d;
@@ -3456,7 +3456,7 @@ _T14f:
 	__asm        inc    j;
 _T157:
 	__asm        movsx  eax, j;
-	__asm        movsx  eax, byte ptr [eax+0x5C2848];
+	__asm        movsx  eax, gszCommandLine[eax];
 	__asm        test   eax, eax;
 	__asm        je     _T1f8;
 
@@ -3465,12 +3465,12 @@ _T157:
 	__asm        jge    _T1f8;
 
 	__asm        movsx  eax, j;
-	__asm        movsx  eax, byte ptr [eax+0x5C2848];
+	__asm        movsx  eax, gszCommandLine[eax];
 	__asm        cmp    eax, 9;
 	__asm        je     _T1f8;
 // LINE 621:
 	__asm        movsx  eax, j;
-	__asm        movsx  eax, byte ptr [eax+0x5C2848];
+	__asm        movsx  eax, gszCommandLine[eax];
 	__asm        cmp    eax, 0x20;
 	__asm        jne    _T1ae;
 // LINE 622:
@@ -3481,7 +3481,7 @@ _T157:
 // LINE 625:
 _T1ae:
 	__asm        movsx  eax, j;
-	__asm        movsx  eax, byte ptr [eax+0x5C2848];
+	__asm        movsx  eax, gszCommandLine[eax];
 	__asm        cmp    eax, 0x22;
 	__asm        jne    _T1df;
 // LINE 626:
@@ -3495,7 +3495,7 @@ _T1d8:
 // LINE 627:
 _T1df:
 	__asm        movsx  eax, j;
-	__asm        mov    al, [eax+0x5C2848];
+	__asm        mov    al, gszCommandLine[eax];
 	__asm        movsx  ecx, k;
 	__asm        mov    edx, szResult;
 	__asm        mov    [ecx+edx], al;
@@ -3543,12 +3543,12 @@ void  CGameApp::DisplayDebugSystemInformation() {
 	struct _MEMORYSTATUS tempMemoryStatus;
 
 // LINE 662:
-	__asm        lea    ecx, tempVersion.<vftable>;
+	__asm        lea    ecx, tempVersion<vftable>;
 	__asm        call   Version::Version;
 // LINE 667:
 	__asm        lea    eax, szVersionInformation;
 	__asm        push   eax;
-	__asm        lea    ecx, tempVersion.<vftable>;
+	__asm        lea    ecx, tempVersion<vftable>;
 	__asm        call   Version::GetApplicationName;
 	__asm        test   eax, eax;
 	__asm        je     _T5b;
@@ -3569,7 +3569,7 @@ void  CGameApp::DisplayDebugSystemInformation() {
 _T5b:
 	__asm        lea    eax, szVersionInformation;
 	__asm        push   eax;
-	__asm        lea    ecx, tempVersion.<vftable>;
+	__asm        lea    ecx, tempVersion<vftable>;
 	__asm        call   Version::GetApplicationVersion;
 	__asm        test   eax, eax;
 	__asm        je     _T9c;
@@ -3590,7 +3590,7 @@ _T5b:
 _T9c:
 	__asm        lea    eax, szVersionInformation;
 	__asm        push   eax;
-	__asm        lea    ecx, tempVersion.<vftable>;
+	__asm        lea    ecx, tempVersion<vftable>;
 	__asm        call   Version::GetApplicationDebugVersion;
 	__asm        test   eax, eax;
 	__asm        je     _Tdd;
@@ -3687,7 +3687,7 @@ _T11e:
 	__asm        call   DebugOutput;
 	__asm        add    esp, 8;
 // LINE 704:
-	__asm        lea    ecx, tempVersion.<vftable>;
+	__asm        lea    ecx, tempVersion<vftable>;
 	__asm        call   Version::~Version;
 	__asm        jmp    near ptr 0x0048A36B;
 }

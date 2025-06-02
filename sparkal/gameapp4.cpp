@@ -344,7 +344,7 @@ int  CGameApp::BackgroundVRAppInit() {
 
 	__asm        jmp    near ptr 0x004BBB59;
 // LINE 99:
-	__asm        lea    ecx, tempHourglassVideoBuffer.<SmackerBackBuffer+0x00>;
+	__asm        lea    ecx, tempHourglassVideoBuffer<SmackerBackBuffer+0x00>;
 	__asm        call   SmackerBackBuffer::SmackerBackBuffer;
 // LINE 102:
 	__asm        mov    lCurrentInitializationFlag, 1;
@@ -434,7 +434,7 @@ _Td6:
 	__asm        mov    ecx, 0x604C00;
 	__asm        call   FileServices::GetPathForFile;
 // LINE 111:
-	__asm        lea    ecx, tempHourglassVideoBuffer.<SmackerBackBuffer+0x00>;
+	__asm        lea    ecx, tempHourglassVideoBuffer<SmackerBackBuffer+0x00>;
 	__asm        call   SmackerBackBuffer::SetDirectBlit;
 // LINE 112:
 	__asm        mov    tempHourglassVideoBuffer.bLoopVideo, 1;
@@ -443,7 +443,7 @@ _Td6:
 	__asm        push   0xFE000;
 	__asm        lea    eax, szVideoPath[0];
 	__asm        push   eax;
-	__asm        lea    ecx, tempHourglassVideoBuffer.<SmackerBackBuffer+0x00>;
+	__asm        lea    ecx, tempHourglassVideoBuffer<SmackerBackBuffer+0x00>;
 	__asm        call   SmackerBackBuffer::Open;
 // LINE 114:
 	__asm        jmp    near ptr 0x004BBCF8;
@@ -530,7 +530,7 @@ _T2c5:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x34];
 	__asm        push   eax;
-	__asm        lea    ecx, tempHourglassVideoBuffer.<SmackerBackBuffer+0x140>;
+	__asm        lea    ecx, tempHourglassVideoBuffer<SmackerBackBuffer+0x140>;
 	__asm        call   SmackerBackBuffer::Compose;
 // LINE 130:
 	__asm        mov    eax, G_InitializationProgress;
@@ -778,7 +778,7 @@ _T661:
 	__asm        jmp    _T2c5;
 // LINE 142:
 _T685:
-	__asm        lea    ecx, tempHourglassVideoBuffer.<SmackerBackBuffer+0x00>;
+	__asm        lea    ecx, tempHourglassVideoBuffer<SmackerBackBuffer+0x00>;
 	__asm        call   SmackerBuffer::Close;
 // LINE 144:
 	__asm        cmp    tempVRAppInitThreadStruct.nReturnValue, 0;
@@ -844,7 +844,7 @@ _T75a:
 _T793:
 	__asm        jmp    near ptr 0x004BC2AF;
 
-	__asm        lea    ecx, tempHourglassVideoBuffer.<SmackerBackBuffer+0x00>;
+	__asm        lea    ecx, tempHourglassVideoBuffer<SmackerBackBuffer+0x00>;
 	__asm        call   SmackerBackBuffer::~SmackerBackBuffer;
 	__asm        mov    eax, [ebp-0x4BC];
 	__asm        jmp    _T8bf;
@@ -910,7 +910,7 @@ _T86b:
 _T8a4:
 	__asm        jmp    near ptr 0x004BC3C0;
 
-	__asm        lea    ecx, tempHourglassVideoBuffer.<SmackerBackBuffer+0x00>;
+	__asm        lea    ecx, tempHourglassVideoBuffer<SmackerBackBuffer+0x00>;
 	__asm        call   SmackerBackBuffer::~SmackerBackBuffer;
 	__asm        mov    eax, [ebp-0x4C0];
 	__asm        jmp    _T8bf;

@@ -542,7 +542,7 @@ _Te0:
 	__asm        ja     _Td4;
 
 	__asm        mov    eax, [ebp-0x50];
-	__asm        jmp    dword ptr [eax*4+0x49A92A];
+	__asm        jmp    SwitchPointers4827434[0][eax*4];
 // Switch pointers
 // LINE 263:
 _T10c:
@@ -670,7 +670,7 @@ _T55:
 // LINE 318:
 _Ta0:
 	__asm        mov    eax, nButton;
-	__asm        mov    eax, [eax*4+0x591228];
+	__asm        mov    eax, dwJoystickButtonConstants[eax*4];
 	__asm        mov    ecx, joyInfoExToUse;
 	__asm        and    eax, [ecx+0x20];
 	__asm        jmp    _Tb5;

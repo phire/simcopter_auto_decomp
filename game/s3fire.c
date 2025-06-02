@@ -105,10 +105,10 @@ _T5a:
 	__asm        jge    _T88;
 // LINE 121:
 	__asm        mov    eax, i;
-	__asm        mov    dword ptr [eax*8+0x66BE90], 0;
+	__asm        mov    S_cfdata[0].cptr[eax*8], 0;
 // LINE 122:
 	__asm        mov    eax, i;
-	__asm        mov    dword ptr [eax*8+0x66BE94], 0;
+	__asm        mov    S_cfdata[0].fire_count[eax*8], 0;
 // LINE 123:
 	__asm        jmp    _T57;
 // LINE 126:
@@ -252,10 +252,10 @@ _T179:
 	__asm        jge    _T1a7;
 // LINE 183:
 	__asm        mov    eax, i;
-	__asm        mov    dword ptr [eax*8+0x66BE90], 0;
+	__asm        mov    S_cfdata[0].cptr[eax*8], 0;
 // LINE 184:
 	__asm        mov    eax, i;
-	__asm        mov    dword ptr [eax*8+0x66BE94], 0;
+	__asm        mov    S_cfdata[0].fire_count[eax*8], 0;
 // LINE 185:
 	__asm        jmp    _T176;
 // LINE 187:
@@ -305,7 +305,7 @@ _T5d:
 	__asm        mov    ecx, cellx;
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 225:
 	__asm        mov    eax, cptr;
@@ -856,7 +856,7 @@ _T350:
 	__asm        mov    ecx, [ecx+0x8C];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 455:
 	__asm        mov    eax, cptr;
@@ -1107,13 +1107,13 @@ void S3FireSpread(struct _FIRE_DATA* fd) {
 	__asm        mov    i, eax;
 // LINE 584:
 	__asm        mov    eax, i;
-	__asm        mov    eax, [eax*8+0x5B73A8];
+	__asm        mov    eax, S_dirs[0].x[eax*8];
 	__asm        mov    ecx, fd;
 	__asm        add    eax, [ecx+0x8C];
 	__asm        mov    cellx, eax;
 // LINE 585:
 	__asm        mov    eax, i;
-	__asm        mov    eax, [eax*8+0x5B73AC];
+	__asm        mov    eax, S_dirs[0].y[eax*8];
 	__asm        mov    ecx, fd;
 	__asm        add    eax, [ecx+0x90];
 	__asm        mov    celly, eax;
@@ -1123,7 +1123,7 @@ void S3FireSpread(struct _FIRE_DATA* fd) {
 	__asm        mov    ecx, cellx;
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 589:
 	__asm        mov    eax, cptr;
@@ -1204,11 +1204,11 @@ _T18:
 	__asm        jge    _T4a;
 // LINE 623:
 	__asm        mov    eax, i;
-	__asm        cmp    dword ptr [eax*8+0x66BE94], 0;
+	__asm        cmp    S_cfdata[0].fire_count[eax*8], 0;
 	__asm        jne    _T45;
 // LINE 624:
 	__asm        mov    eax, i;
-	__asm        lea    eax, [eax*8+0x66BE90];
+	__asm        lea    eax, S_cfdata[0].cptr[eax*8];
 	__asm        jmp    _T51;
 // LINE 625:
 _T45:
@@ -2706,7 +2706,7 @@ _Ta18:
 // LINE 926:
 _Taac:
 	__asm        mov    eax, cellx;
-	__asm        mov    eax, [eax*4+0x639850];
+	__asm        mov    eax, BuildMap[eax*4];
 	__asm        mov    ecx, celly;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
@@ -3191,7 +3191,7 @@ _T31:
 // LINE 1203:
 _T38:
 	__asm        mov    eax, cellx;
-	__asm        mov    eax, [eax*4+0x639850];
+	__asm        mov    eax, BuildMap[eax*4];
 	__asm        mov    ecx, celly;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
@@ -3273,7 +3273,7 @@ void S3FireDestroyCell(struct _FIRE_DATA* fd) {
 // LINE 1246:
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x8C];
-	__asm        mov    eax, [eax*4+0x639850];
+	__asm        mov    eax, BuildMap[eax*4];
 	__asm        mov    ecx, fd;
 	__asm        mov    ecx, [ecx+0x90];
 	__asm        movzx  ax, byte ptr [eax+ecx];
@@ -3304,7 +3304,7 @@ _T9a:
 	__asm        mov    edx, fd;
 	__asm        mov    edx, [edx+0x98];
 	__asm        mov    edx, [edx];
-	__asm        cmp    [ecx+eax*4+0x67ED30], edx;
+	__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
 	__asm        jne    _Tce;
 
 	__asm        jmp    _T9a;
@@ -3322,7 +3322,7 @@ _Td1:
 	__asm        mov    edx, fd;
 	__asm        mov    edx, [edx+0x98];
 	__asm        mov    edx, [edx];
-	__asm        cmp    [ecx+eax*4+0x67ED30], edx;
+	__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
 	__asm        jne    _T105;
 
 	__asm        jmp    _Td1;
@@ -3359,14 +3359,14 @@ _T13f:
 	__asm        jle    _T181;
 // LINE 1264:
 	__asm        mov    eax, i;
-	__asm        mov    eax, [eax*4+0x639850];
+	__asm        mov    eax, BuildMap[eax*4];
 	__asm        mov    ecx, j;
 	__asm        mov    byte ptr [eax+ecx], 0;
 // LINE 1265:
 	__asm        mov    eax, j;
 	__asm        mov    ecx, i;
 	__asm        shl    ecx, 8;
-	__asm        mov    byte ptr [eax+ecx+0x66EB10], 0xA;
+	__asm        mov    G_texmap[0][eax+ecx], 0xA;
 // LINE 1266:
 	__asm        jmp    _T13c;
 _T181:
@@ -3378,7 +3378,7 @@ _T186:
 _T18b:
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x8C];
-	__asm        mov    eax, [eax*4+0x639850];
+	__asm        mov    eax, BuildMap[eax*4];
 	__asm        mov    ecx, fd;
 	__asm        mov    ecx, [ecx+0x90];
 	__asm        mov    byte ptr [eax+ecx], 0;
@@ -3388,7 +3388,7 @@ _T18b:
 	__asm        mov    ecx, fd;
 	__asm        mov    ecx, [ecx+0x8C];
 	__asm        shl    ecx, 8;
-	__asm        mov    byte ptr [eax+ecx+0x66EB10], 0xA;
+	__asm        mov    G_texmap[0][eax+ecx], 0xA;
 // LINE 1275:
 _T1c5:
 	__asm        movsx  eax, tile;
@@ -3536,7 +3536,7 @@ _T352:
 	__asm        ja     _T341;
 
 	__asm        mov    eax, [ebp-0x7C];
-	__asm        jmp    dword ptr [eax*4+0x5269CA];
+	__asm        jmp    SwitchPointers5401034[0][eax*4];
 // Switch pointers
 // LINE 1333:
 _T379:
@@ -3577,7 +3577,7 @@ _T38b:
 	__asm        mov    ecx, fd;
 	__asm        mov    ecx, [ecx+0x8C];
 	__asm        shl    ecx, 8;
-	__asm        mov    byte ptr [eax+ecx+0x66EB10], 0xA;
+	__asm        mov    G_texmap[0][eax+ecx], 0xA;
 // LINE 1346:
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x9C];
@@ -3776,7 +3776,7 @@ _Ta2:
 	__asm        ja     _Tca;
 
 	__asm        mov    eax, [ebp-0x38];
-	__asm        jmp    dword ptr [eax*4+0x526C4C];
+	__asm        jmp    SwitchPointers5401676[0][eax*4];
 // Switch pointers
 // LINE 1445:
 _Tca:
@@ -3809,7 +3809,7 @@ _Tef:
 	__asm        shl    eax, 0xA;
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
-	__asm        mov    eax, [eax+ecx*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][eax+ecx*4];
 	__asm        mov    cptr, eax;
 // LINE 1457:
 	__asm        mov    eax, cptr;
@@ -4251,7 +4251,7 @@ _T18d:
 // LINE 1671:
 	__asm        mov    eax, lscfd.fire_count;
 	__asm        mov    ecx, i;
-	__asm        mov    [ecx*8+0x66BE94], eax;
+	__asm        mov    S_cfdata[0].fire_count[ecx*8], eax;
 // LINE 1678:
 	__asm        push   8;
 	__asm        push   0x62B548;
@@ -4299,7 +4299,7 @@ _T22d:
 // LINE 1695:
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x98];
-	__asm        lea    eax, [eax*8+0x66BE90];
+	__asm        lea    eax, S_cfdata[0].cptr[eax*8];
 	__asm        mov    ecx, fd;
 	__asm        mov    [ecx+0x98], eax;
 // LINE 1697:
@@ -4318,7 +4318,7 @@ _T22d:
 	__asm        mov    ecx, [ecx+0x8C];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    ecx, fd;
 	__asm        mov    ecx, [ecx+0x98];
 	__asm        mov    [ecx], eax;
@@ -4438,7 +4438,7 @@ _T18:
 	__asm        lea    eax, [eax+eax*4];
 	__asm        shl    eax, 5;
 	__asm        mov    edi, 0x62B550;
-	__asm        lea    esi, [eax+0x6666F0];
+	__asm        lea    esi, S_fires[0].flags[eax];
 	__asm        mov    ecx, 0x28;
 	__asm        rep movsd;
 // LINE 1739:
@@ -4487,7 +4487,7 @@ _T92:
 _Tc2:
 	__asm        push   8;
 	__asm        mov    eax, i;
-	__asm        lea    eax, [eax*8+0x66BE90];
+	__asm        lea    eax, S_cfdata[0].cptr[eax*8];
 	__asm        push   eax;
 	__asm        mov    eax, CfdMIFFID;
 	__asm        push   eax;

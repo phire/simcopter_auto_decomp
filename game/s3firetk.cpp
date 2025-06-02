@@ -562,7 +562,7 @@ _T145:
 // LINE 169:
 	__asm        mov    eax, youveWonABrandNewCar;
 	__asm        mov    ecx, curFireTrucks;
-	__asm        mov    [ecx*4+0x62B9D0], eax;
+	__asm        mov    fireTrucks[0][ecx*4], eax;
 	__asm        inc    curFireTrucks;
 // LINE 171:
 	__asm        mov    eax, youveWonABrandNewCar;
@@ -649,7 +649,7 @@ _T37:
 	__asm        jmp    _T96;
 _T41:
 	__asm        mov    eax, mapX;
-	__asm        mov    eax, [eax*4+0x638F70];
+	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, mapY;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
@@ -657,7 +657,7 @@ _T41:
 	__asm        movsx  eax, dx;
 	__asm        shl    eax, 0xE;
 	__asm        mov    ecx, mapX;
-	__asm        mov    ecx, [ecx*4+0x639850];
+	__asm        mov    ecx, BuildMap[ecx*4];
 	__asm        mov    edx, mapY;
 	__asm        xor    ebx, ebx;
 	__asm        mov    bl, [ecx+edx];
@@ -1104,7 +1104,7 @@ _T3f:
 	__asm        mov    ecx, [ebp-0x40];
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 0xA;
-	__asm        mov    eax, [ecx+eax*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        cmp    dword ptr [ebp-0x38], 0;
 	__asm        jne    _Ta7;

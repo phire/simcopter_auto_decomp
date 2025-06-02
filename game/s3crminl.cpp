@@ -414,7 +414,7 @@ _T3a:
 // LINE 135:
 	__asm        mov    eax, youveWonABrandNewCar;
 	__asm        mov    ecx, CriminalEvaderCarClass::curCriminalCars;
-	__asm        mov    [ecx*4+0x62B9A0], eax;
+	__asm        mov    CriminalEvaderCarClass::criminalCars[0][ecx*4], eax;
 	__asm        inc    CriminalEvaderCarClass::curCriminalCars;
 // LINE 138:
 	__asm        mov    eax, youveWonABrandNewCar;
@@ -466,14 +466,14 @@ _T24:
 	__asm        jge    _T118;
 // LINE 167:
 	__asm        mov    eax, i;
-	__asm        mov    eax, [eax*4+0x62B9A0];
+	__asm        mov    eax, CriminalEvaderCarClass::criminalCars[0][eax*4];
 	__asm        test   byte ptr [eax+8], 2;
 	__asm        jne    _T113;
 // LINE 170:
 	__asm        lea    eax, startLoc.x;
 	__asm        push   eax;
 	__asm        mov    eax, i;
-	__asm        mov    ecx, [eax*4+0x62B9A0];
+	__asm        mov    ecx, CriminalEvaderCarClass::criminalCars[0][eax*4];
 	__asm        call   AutomobileClass::BeamToLocation;
 	__asm        test   eax, eax;
 	__asm        je     _T10c;
@@ -484,13 +484,13 @@ _T24:
 	__asm        mov    mp.id, eax;
 // LINE 180:
 	__asm        mov    eax, i;
-	__asm        mov    eax, [eax*4+0x62B9A0];
+	__asm        mov    eax, CriminalEvaderCarClass::criminalCars[0][eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x7C];
 	__asm        mov    mp.maploc.x, ecx;
 // LINE 181:
 	__asm        mov    eax, i;
-	__asm        mov    eax, [eax*4+0x62B9A0];
+	__asm        mov    eax, CriminalEvaderCarClass::criminalCars[0][eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x7D];
 	__asm        mov    mp.maploc.y, ecx;
@@ -502,16 +502,16 @@ _T24:
 // LINE 185:
 	__asm        movsx  eax, mID;
 	__asm        mov    ecx, i;
-	__asm        mov    ecx, [ecx*4+0x62B9A0];
+	__asm        mov    ecx, CriminalEvaderCarClass::criminalCars[0][ecx*4];
 	__asm        mov    [ecx+0x10E], eax;
 // LINE 186:
 	__asm        mov    eax, i;
-	__asm        mov    eax, [eax*4+0x62B9A0];
+	__asm        mov    eax, CriminalEvaderCarClass::criminalCars[0][eax*4];
 	__asm        mov    dword ptr [eax+0x11A], 0;
 // LINE 187:
 	__asm        movsx  eax, mType;
 	__asm        mov    ecx, i;
-	__asm        mov    ecx, [ecx*4+0x62B9A0];
+	__asm        mov    ecx, CriminalEvaderCarClass::criminalCars[0][ecx*4];
 	__asm        mov    [ecx+0x11E], eax;
 // LINE 189:
 	__asm        call   rand;
@@ -521,7 +521,7 @@ _T24:
 	__asm        mov    eax, CriminalEvaderCarClass::baseTimeBetweenCriminalActivities;
 	__asm        add    eax, edx;
 	__asm        mov    ecx, i;
-	__asm        mov    ecx, [ecx*4+0x62B9A0];
+	__asm        mov    ecx, CriminalEvaderCarClass::criminalCars[0][ecx*4];
 	__asm        mov    [ecx+0x122], eax;
 // LINE 190:
 	__asm        mov    eax, 1;
@@ -619,7 +619,7 @@ void CriminalEvaderCarClass::ItterateFSM() {
 	__asm        shl    eax, 0xA;
 	__asm        mov    ecx, [ebp-0x5C];
 	__asm        and    ecx, 0xFF;
-	__asm        mov    eax, [eax+ecx*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][eax+ecx*4];
 	__asm        mov    [ebp-0x58], eax;
 	__asm        cmp    dword ptr [ebp-0x58], 0;
 	__asm        jne    _T10e;
@@ -946,7 +946,7 @@ _T4b7:
 	__asm        ja     _T4df;
 
 	__asm        mov    eax, [ebp-0x68];
-	__asm        jmp    dword ptr [eax*4+0x535110];
+	__asm        jmp    SwitchPointers5460240[0][eax*4];
 // Switch pointers
 // LINE 387:
 _T4df:
@@ -1045,7 +1045,7 @@ int32_t CriminalEvaderCarClass::NearToBuilding() {
 _T27:
 	__asm        xor    eax, eax;
 	__asm        mov    al, scanLoc.x;
-	__asm        mov    eax, [eax*4+0x639850];
+	__asm        mov    eax, BuildMap[eax*4];
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, scanLoc.y;
 	__asm        movzx  ax, byte ptr [eax+ecx];
@@ -1077,8 +1077,8 @@ _T80:
 
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0x5352C5];
-	__asm        jmp    dword ptr [ecx*4+0x5352A5];
+	__asm        mov    cl, SwitchPointers5460645[32][eax];
+	__asm        jmp    SwitchPointers5460645[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 484:
@@ -1106,8 +1106,8 @@ _T186:
 
 	__asm        mov    eax, [ebp-0x40];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0x5353DC];
-	__asm        jmp    dword ptr [ecx*4+0x5353A8];
+	__asm        mov    cl, SwitchPointers5460904[52][eax];
+	__asm        jmp    SwitchPointers5460904[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 513:
@@ -1135,8 +1135,8 @@ _T288:
 
 	__asm        mov    eax, [ebp-0x44];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0x5354C9];
-	__asm        jmp    dword ptr [ecx*4+0x5354AD];
+	__asm        mov    cl, SwitchPointers5461165[28][eax];
+	__asm        jmp    SwitchPointers5461165[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 534:
@@ -1164,8 +1164,8 @@ _T323:
 
 	__asm        mov    eax, [ebp-0x48];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0x53557C];
-	__asm        jmp    dword ptr [ecx*4+0x535548];
+	__asm        mov    cl, SwitchPointers5461320[52][eax];
+	__asm        jmp    SwitchPointers5461320[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 575:
@@ -1193,8 +1193,8 @@ _T420:
 
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0x535675];
-	__asm        jmp    dword ptr [ecx*4+0x535645];
+	__asm        mov    cl, SwitchTable5461621[0][eax];
+	__asm        jmp    SwitchPointers5461573[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 616:
@@ -1207,7 +1207,7 @@ _T4b2:
 	__asm        ja     _T4da;
 
 	__asm        mov    eax, [ebp-0x38];
-	__asm        jmp    dword ptr [eax*4+0x5356C8];
+	__asm        jmp    SwitchPointers5461704[0][eax*4];
 // Switch pointers
 // LINE 619:
 // Block end:

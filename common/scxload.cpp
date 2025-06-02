@@ -913,7 +913,7 @@ _T16b:
 // LINE 247:
 	__asm        mov    eax, loop;
 	__asm        shl    eax, 5;
-	__asm        mov    byte ptr [eax+0x639250], 5;
+	__asm        mov    Neighbor[0][eax], 5;
 // LINE 249:
 	__asm        jmp    _T221;
 // LINE 250:
@@ -940,7 +940,7 @@ _T1d8:
 	__asm        add    esp, 4;
 	__asm        mov    ecx, loop;
 	__asm        shl    ecx, 5;
-	__asm        mov    [ecx+0x639250], al;
+	__asm        mov    Neighbor[0][ecx], al;
 // LINE 254:
 _T221:
 	__asm        mov    eax, loop;
@@ -1031,18 +1031,18 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        add    esp, 4;
 	__asm        mov    scxbuf, eax;
 // LINE 301:
-	__asm        lea    ecx, fileStream.<cLZAPFileBitStream+0x00>;
+	__asm        lea    ecx, fileStream<cLZAPFileBitStream+0x00>;
 	__asm        call   cLZAPFileBitStream::cLZAPFileBitStream;
 // LINE 302:
 	__asm        mov    eax, filePath;
 	__asm        push   eax;
-	__asm        lea    ecx, fileStream.<cLZAPFileBitStream+0x00>;
+	__asm        lea    ecx, fileStream<cLZAPFileBitStream+0x00>;
 	__asm        call   cLZAPFileBitStream::OpenRead;
 	__asm        test   eax, eax;
 	__asm        jne    _T6a;
 // LINE 303:
 	__asm        mov    dword ptr [ebp-0x580], 0;
-	__asm        lea    ecx, fileStream.<cLZAPFileBitStream+0x00>;
+	__asm        lea    ecx, fileStream<cLZAPFileBitStream+0x00>;
 	__asm        call   cLZAPFileBitStream::~cLZAPFileBitStream;
 	__asm        mov    eax, [ebp-0x580];
 	__asm        jmp    _T152e;
@@ -1051,16 +1051,16 @@ _T6a:
 	__asm        push   0x2C;
 	__asm        lea    eax, header.type[0];
 	__asm        push   eax;
-	__asm        lea    ecx, fileStream.<cLZAPFileBitStream+0x00>;
+	__asm        lea    ecx, fileStream<cLZAPFileBitStream+0x00>;
 	__asm        call   cLZAPFileBitStream::Read;
 // LINE 308:
 	__asm        push   0xFFFF;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::cGZXParamBitstream<t_alloc,t_free>;
 // LINE 309:
-	__asm        lea    eax, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    eax, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        push   eax;
-	__asm        lea    eax, fileStream.<cLZAPFileBitStream+0x00>;
+	__asm        lea    eax, fileStream<cLZAPFileBitStream+0x00>;
 	__asm        push   eax;
 	__asm        call   LZAExpand;
 	__asm        add    esp, 8;
@@ -1069,14 +1069,14 @@ _T6a:
 	__asm        je     _Te2;
 // LINE 310:
 	__asm        mov    dword ptr [ebp-0x584], 0;
-	__asm        mov    memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>, 0x592440;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        mov    memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>, 0x592440;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::FreeAll;
 	__asm        jmp    near ptr 0x004CC0C7;
 
 	__asm        lea    ecx, memstrm.nodeList.start;
 	__asm        call   vector<tGZXBitstreamNode>::~vector<tGZXBitstreamNode>;
-	__asm        lea    ecx, fileStream.<cLZAPFileBitStream+0x00>;
+	__asm        lea    ecx, fileStream<cLZAPFileBitStream+0x00>;
 	__asm        call   cLZAPFileBitStream::~cLZAPFileBitStream;
 	__asm        mov    eax, [ebp-0x584];
 	__asm        jmp    _T152e;
@@ -1155,7 +1155,7 @@ _T1bd:
 // LINE 319:
 	__asm        mov    eax, scxbuf;
 	__asm        push   eax;
-	__asm        lea    eax, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    eax, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        push   eax;
 	__asm        call   SCXReadPlayer;
 	__asm        add    esp, 8;
@@ -1164,21 +1164,21 @@ _T1bd:
 _T1e3:
 	__asm        mov    eax, budgetList;
 	__asm        push   eax;
-	__asm        lea    eax, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    eax, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        push   eax;
 	__asm        call   SCXReadBudget;
 	__asm        add    esp, 8;
 // LINE 325:
 	__asm        mov    eax, scxbuf;
 	__asm        push   eax;
-	__asm        lea    eax, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    eax, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        push   eax;
 	__asm        call   SCXReadNeighbors;
 	__asm        add    esp, 8;
 // LINE 328:
 	__asm        mov    eax, scxbuf;
 	__asm        push   eax;
-	__asm        lea    eax, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    eax, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        push   eax;
 	__asm        call   SCXReadContracts;
 	__asm        add    esp, 8;
@@ -1352,7 +1352,7 @@ _T41a:
 	__asm        mov    ecx, memstrm.curPos;
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    ecx, [ebp-0x5A4];
-	__asm        mov    [ecx+0x639A90], al;
+	__asm        mov    reinterpret_cast<uint8_t>(Valve[0])[ecx], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5A4];
 	__asm        jmp    _T3a4;
@@ -1410,7 +1410,7 @@ _T4d3:
 	__asm        mov    ecx, memstrm.curPos;
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    ecx, [ebp-0x5A8];
-	__asm        mov    [ecx+0x63A580], al;
+	__asm        mov    reinterpret_cast<uint8_t>(Invent[0])[ecx], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5A8];
 	__asm        jmp    _T45d;
@@ -1468,7 +1468,7 @@ _T58c:
 	__asm        mov    ecx, memstrm.curPos;
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    ecx, [ebp-0x5AC];
-	__asm        mov    [ecx+0x63A850], al;
+	__asm        mov    reinterpret_cast<uint8_t>(TotalFunds)[ecx], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5AC];
 	__asm        jmp    _T516;
@@ -1526,7 +1526,7 @@ _T645:
 	__asm        mov    ecx, memstrm.curPos;
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    ecx, [ebp-0x5B0];
-	__asm        mov    [ecx+0x639AB4], al;
+	__asm        mov    reinterpret_cast<uint8_t>(TotalBonds)[ecx], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5B0];
 	__asm        jmp    _T5cf;
@@ -1584,7 +1584,7 @@ _T6fe:
 	__asm        mov    ecx, memstrm.curPos;
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    ecx, [ebp-0x5B4];
-	__asm        mov    [ecx+0x63A740], al;
+	__asm        mov    reinterpret_cast<uint8_t>(TotalPop)[ecx], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5B4];
 	__asm        jmp    _T688;
@@ -1661,7 +1661,7 @@ _T803:
 	__asm        mov    eax, loop;
 	__asm        mov    eax, [ebp+eax*4-0x134];
 	__asm        mov    ecx, loop;
-	__asm        mov    [ecx*2+0x63A6D0], ax;
+	__asm        mov    BondRate[ecx*2], ax;
 	__asm        jmp    _T800;
 // LINE 359:
 _T827:
@@ -1715,7 +1715,7 @@ _T8a7:
 	__asm        mov    ecx, memstrm.curPos;
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    ecx, [ebp-0x5BC];
-	__asm        mov    [ecx+0x63A5A4], al;
+	__asm        mov    reinterpret_cast<uint8_t>(TotalRate)[ecx], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5BC];
 	__asm        jmp    _T831;
@@ -1773,7 +1773,7 @@ _T960:
 	__asm        mov    ecx, memstrm.curPos;
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    ecx, [ebp-0x5C0];
-	__asm        mov    [ecx+0x59B584], al;
+	__asm        mov    reinterpret_cast<uint8_t>(baseYear)[ecx], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5C0];
 	__asm        jmp    _T8ea;
@@ -1831,7 +1831,7 @@ _Ta19:
 	__asm        mov    ecx, memstrm.curPos;
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    ecx, [ebp-0x5C4];
-	__asm        mov    [ecx+0x639AAE], al;
+	__asm        mov    reinterpret_cast<uint8_t>(month)[ecx], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5C4];
 	__asm        jmp    _T9a3;
@@ -1889,7 +1889,7 @@ _Tad2:
 	__asm        mov    ecx, memstrm.curPos;
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    ecx, [ebp-0x5C8];
-	__asm        mov    [ecx+0x6391F0], al;
+	__asm        mov    reinterpret_cast<uint8_t>(year)[ecx], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5C8];
 	__asm        jmp    _Ta5c;
@@ -1947,7 +1947,7 @@ _Tb8b:
 	__asm        mov    ecx, memstrm.curPos;
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    ecx, [ebp-0x5CC];
-	__asm        mov    [ecx+0x63A250], al;
+	__asm        mov    reinterpret_cast<uint8_t>(season)[ecx], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5CC];
 	__asm        jmp    _Tb15;
@@ -2005,7 +2005,7 @@ _Tc44:
 	__asm        mov    ecx, memstrm.curPos;
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    ecx, [ebp-0x5D0];
-	__asm        mov    [ecx+0x639238], al;
+	__asm        mov    reinterpret_cast<uint8_t>(CityStatus)[ecx], al;
 	__asm        inc    memstrm.curPos;
 	__asm        inc    dword ptr [ebp-0x5D0];
 	__asm        jmp    _Tbce;
@@ -2260,103 +2260,103 @@ _Tfa5:
 	__asm        push   0x400;
 	__asm        mov    eax, PoliceMap[0];
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 384:
 	__asm        push   0x400;
 	__asm        mov    eax, FireMap[0];
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 385:
 	__asm        push   0x400;
 	__asm        mov    eax, PopMap[0];
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 386:
 	__asm        push   0x400;
 	__asm        mov    eax, ROGMap[0];
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 389:
 	__asm        push   0x4000;
 	__asm        mov    eax, BitsMap[0];
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 390:
 	__asm        push   0x4000;
 	__asm        mov    eax, BuildMap[0];
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 391:
 	__asm        push   0x4000;
 	__asm        mov    eax, scxbuf;
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 392:
 	__asm        push   0x4000;
 	__asm        mov    eax, ZoneMap[0];
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 393:
 	__asm        push   0x4000;
 	__asm        mov    eax, TerrainMap[0];
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 394:
 	__asm        push   0x4000;
 	__asm        mov    eax, UnderMap[0];
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 395:
 	__asm        push   0x4000;
 	__asm        mov    eax, TextMap[0];
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 396:
 	__asm        push   0x8000;
 	__asm        mov    eax, AltMap[0];
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 400:
 	__asm        push   4;
 	__asm        lea    eax, tempLong;
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 401:
 	__asm        push   4;
 	__asm        lea    eax, tempLong;
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 404:
 	__asm        push   4;
 	__asm        lea    eax, tempLong;
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 405:
 	__asm        push   4;
 	__asm        lea    eax, tempLong;
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 409:
 	__asm        push   0x400;
 	__asm        lea    eax, scxTileCount[0];
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 410:
 	__asm        mov    loop, 0;
@@ -2378,7 +2378,7 @@ _T1119:
 	__asm        push   4;
 	__asm        lea    eax, tempLong;
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 415:
 	__asm        mov    eax, tempLong;
@@ -2387,7 +2387,7 @@ _T1119:
 	__asm        push   4;
 	__asm        lea    eax, tempLong;
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 419:
 	__asm        mov    eax, tempLong;
@@ -2395,36 +2395,36 @@ _T1119:
 // LINE 422:
 	__asm        push   4;
 	__asm        push   0x638F60;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 425:
 	__asm        push   4;
 	__asm        push   0x63930C;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 428:
 	__asm        push   0x50;
 	__asm        mov    eax, PopRatio;
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 431:
 	__asm        push   0x50;
 	__asm        mov    eax, EducateRatio;
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 434:
 	__asm        push   0x50;
 	__asm        mov    eax, HealthRatio;
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 437:
 	__asm        push   4;
 	__asm        lea    eax, tempLong;
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 438:
 	__asm        mov    eax, tempLong;
@@ -2444,7 +2444,7 @@ _T11cd:
 	__asm        lea    eax, [eax+eax*4];
 	__asm        add    eax, LabelArray;
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 	__asm        jmp    _T11ca;
 // LINE 452:
@@ -2460,7 +2460,7 @@ _T1205:
 	__asm        push   9;
 	__asm        lea    eax, SCXMicroRecord.type;
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 455:
 	__asm        mov    al, SCXMicroRecord.type;
@@ -2493,28 +2493,28 @@ _T1205:
 _T128c:
 	__asm        push   1;
 	__asm        push   0x639AB2;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 464:
 	__asm        push   1;
 	__asm        push   0x638EDA;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 465:
 	__asm        push   1;
 	__asm        push   0x63A6C0;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 466:
 	__asm        push   1;
 	__asm        push   0x63924A;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 470:
 	__asm        push   4;
 	__asm        lea    eax, tempLong;
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 471:
 	__asm        mov    eax, tempLong;
@@ -2523,7 +2523,7 @@ _T128c:
 	__asm        push   4;
 	__asm        lea    eax, tempLong;
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 475:
 	__asm        mov    eax, tempLong;
@@ -2532,7 +2532,7 @@ _T128c:
 	__asm        push   4;
 	__asm        lea    eax, tempLong;
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 479:
 	__asm        mov    eax, tempLong;
@@ -2541,7 +2541,7 @@ _T128c:
 	__asm        push   4;
 	__asm        lea    eax, tempLong;
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 483:
 	__asm        mov    eax, tempLong;
@@ -2550,7 +2550,7 @@ _T128c:
 	__asm        push   4;
 	__asm        lea    eax, tempLong;
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 485:
 	__asm        mov    eax, tempLong;
@@ -2558,23 +2558,23 @@ _T128c:
 // LINE 488:
 	__asm        push   4;
 	__asm        push   0x639234;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 491:
 	__asm        push   4;
 	__asm        push   0x639DD8;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 494:
 	__asm        push   4;
 	__asm        push   0x639AA0;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 497:
 	__asm        push   4;
 	__asm        lea    eax, tempLong;
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 498:
 	__asm        mov    eax, tempLong;
@@ -2583,7 +2583,7 @@ _T128c:
 	__asm        push   4;
 	__asm        lea    eax, tempLong;
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 502:
 	__asm        mov    eax, tempLong;
@@ -2592,7 +2592,7 @@ _T128c:
 	__asm        push   4;
 	__asm        lea    eax, tempLong;
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 506:
 	__asm        mov    eax, tempLong;
@@ -2601,7 +2601,7 @@ _T128c:
 	__asm        push   4;
 	__asm        lea    eax, tempLong;
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 510:
 	__asm        mov    eax, tempLong;
@@ -2610,7 +2610,7 @@ _T128c:
 	__asm        push   0x2C;
 	__asm        lea    eax, scxInd[0];
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 515:
 	__asm        mov    loop, 0;
@@ -2632,7 +2632,7 @@ _T1440:
 	__asm        push   0x2C;
 	__asm        lea    eax, scxInd[0];
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 520:
 	__asm        mov    loop, 0;
@@ -2654,7 +2654,7 @@ _T1486:
 	__asm        push   0x40;
 	__asm        mov    eax, GraphMax;
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 525:
 	__asm        mov    loop, 0;
@@ -2667,9 +2667,9 @@ _T14a5:
 // LINE 526:
 	__asm        push   0xD0;
 	__asm        mov    eax, loop;
-	__asm        mov    eax, [eax*4+0x639FE0];
+	__asm        mov    eax, GraphData[eax*4];
 	__asm        push   eax;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 	__asm        jmp    _T14a2;
 // LINE 528:
@@ -2684,14 +2684,14 @@ _T14cc:
 	__asm        add    esp, 4;
 // LINE 530:
 	__asm        mov    dword ptr [ebp-0x58C], 1;
-	__asm        mov    memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>, 0x592440;
-	__asm        lea    ecx, memstrm.<cGZXParamBitstream<t_alloc,t_free>+0x00>;
+	__asm        mov    memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>, 0x592440;
+	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::FreeAll;
 	__asm        jmp    near ptr 0x004CD513;
 
 	__asm        lea    ecx, memstrm.nodeList.start;
 	__asm        call   vector<tGZXBitstreamNode>::~vector<tGZXBitstreamNode>;
-	__asm        lea    ecx, fileStream.<cLZAPFileBitStream+0x00>;
+	__asm        lea    ecx, fileStream<cLZAPFileBitStream+0x00>;
 	__asm        call   cLZAPFileBitStream::~cLZAPFileBitStream;
 	__asm        mov    eax, [ebp-0x58C];
 	__asm        jmp    _T152e;

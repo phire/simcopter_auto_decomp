@@ -62,7 +62,7 @@ _T3f:
 // LINE 100:
 _T47:
 	__asm        mov    eax, x;
-	__asm        mov    eax, [eax*4+0x639510];
+	__asm        mov    eax, AltMap[eax*4];
 	__asm        mov    ecx, y;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx*2];
@@ -70,7 +70,7 @@ _T47:
 	__asm        mov    alt, dx;
 // LINE 101:
 	__asm        mov    eax, x;
-	__asm        mov    eax, [eax*4+0x639510];
+	__asm        mov    eax, AltMap[eax*4];
 	__asm        mov    ecx, y;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [eax+ecx*2];
@@ -84,7 +84,7 @@ _T47:
 	__asm        jge    _Tb7;
 
 	__asm        mov    eax, x;
-	__asm        mov    eax, [eax*4+0x63A270];
+	__asm        mov    eax, TerrainMap[eax*4];
 	__asm        mov    ecx, y;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
@@ -125,12 +125,12 @@ _T2f:
 	__asm        mov    eax, i;
 	__asm        or     eax, 0x140000;
 	__asm        mov    ecx, i;
-	__asm        mov    [ecx*4+0x67EB20], eax;
+	__asm        mov    G_terr2bmp[ecx*4], eax;
 // LINE 138:
 	__asm        mov    eax, i;
 	__asm        or     eax, 0xD0000;
 	__asm        mov    ecx, i;
-	__asm        mov    [ecx*4+0x67EC20], eax;
+	__asm        mov    G_terr2bmp[64][ecx*4], eax;
 // LINE 139:
 	__asm        jmp    _T2c;
 // LINE 143:
@@ -220,7 +220,7 @@ _Tcc:
 	__asm        mov    alt, ax;
 // LINE 195:
 	__asm        mov    eax, x;
-	__asm        mov    eax, [eax*4+0x63A270];
+	__asm        mov    eax, TerrainMap[eax*4];
 	__asm        mov    ecx, y;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
@@ -228,7 +228,7 @@ _Tcc:
 	__asm        je     _T123;
 
 	__asm        mov    eax, x;
-	__asm        mov    eax, [eax*4+0x63A270];
+	__asm        mov    eax, TerrainMap[eax*4];
 	__asm        mov    ecx, y;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
@@ -1065,7 +1065,7 @@ _Tbf2:
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        shl    ecx, 8;
-	__asm        mov    byte ptr [eax+ecx+0x66EB10], 0x30;
+	__asm        mov    G_texmap[0][eax+ecx], 0x30;
 // LINE 396:
 	__asm        jmp    _Tbef;
 // LINE 397:
@@ -1090,7 +1090,7 @@ _Tc45:
 	__asm        jge    _Td88;
 // LINE 406:
 	__asm        mov    eax, x;
-	__asm        mov    eax, [eax*4+0x639850];
+	__asm        mov    eax, BuildMap[eax*4];
 	__asm        mov    ecx, y;
 	__asm        movzx  ax, byte ptr [eax+ecx];
 	__asm        mov    tile, ax;
@@ -1115,7 +1115,7 @@ _Tc45:
 	__asm        mov    ecx, y;
 	__asm        mov    edx, x;
 	__asm        shl    edx, 8;
-	__asm        mov    [ecx+edx+0x66EB10], al;
+	__asm        mov    G_texmap[0][ecx+edx], al;
 // LINE 412:
 	__asm        jmp    _Td83;
 _Tcad:
@@ -1135,12 +1135,12 @@ _Tcd6:
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        shl    ecx, 8;
-	__asm        mov    byte ptr [eax+ecx+0x66EB10], 0x20;
+	__asm        mov    G_texmap[0][eax+ecx], 0x20;
 // LINE 416:
 	__asm        jmp    _Td83;
 _Tcec:
 	__asm        mov    eax, x;
-	__asm        mov    eax, [eax*4+0x63A270];
+	__asm        mov    eax, TerrainMap[eax*4];
 	__asm        mov    ecx, y;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
@@ -1150,7 +1150,7 @@ _Tcec:
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        shl    ecx, 8;
-	__asm        mov    byte ptr [eax+ecx+0x66EB10], 5;
+	__asm        mov    G_texmap[0][eax+ecx], 5;
 // LINE 420:
 	__asm        test   reinterpret_cast<uint8_t>(x), 1;
 	__asm        jne    _Td83;
@@ -1209,7 +1209,7 @@ _Tdb5:
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        shl    ecx, 8;
-	__asm        mov    al, [eax+ecx+0x66EB10];
+	__asm        mov    al, G_texmap[0][eax+ecx];
 	__asm        mov    texid, al;
 // LINE 436:
 	__asm        xor    eax, eax;
@@ -1254,7 +1254,7 @@ _Tdee:
 	__asm        dec    ecx;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 5;
 	__asm        je     _Tecc;
 
@@ -1263,7 +1263,7 @@ _Tdee:
 	__asm        inc    ecx;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 5;
 	__asm        je     _Tecc;
 
@@ -1272,7 +1272,7 @@ _Tdee:
 	__asm        dec    ecx;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB11];
+	__asm        mov    dl, G_texmap[0][1][eax+ecx];
 	__asm        cmp    edx, 5;
 	__asm        je     _Tecc;
 
@@ -1280,7 +1280,7 @@ _Tdee:
 	__asm        mov    ecx, x;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB11];
+	__asm        mov    dl, G_texmap[0][1][eax+ecx];
 	__asm        cmp    edx, 5;
 	__asm        je     _Tecc;
 
@@ -1289,7 +1289,7 @@ _Tdee:
 	__asm        inc    ecx;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB11];
+	__asm        mov    dl, G_texmap[0][1][eax+ecx];
 	__asm        cmp    edx, 5;
 	__asm        jne    _Tedd;
 // LINE 447:
@@ -1297,7 +1297,7 @@ _Tecc:
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        shl    ecx, 8;
-	__asm        mov    byte ptr [eax+ecx+0x66EB10], 0x10;
+	__asm        mov    G_texmap[0][eax+ecx], 0x10;
 // LINE 450:
 // Block end:
 _Tedd:
@@ -1328,7 +1328,7 @@ _Tf0f:
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        shl    ecx, 8;
-	__asm        mov    al, [eax+ecx+0x66EB10];
+	__asm        mov    al, G_texmap[0][eax+ecx];
 	__asm        mov    texid, al;
 // LINE 462:
 	__asm        xor    eax, eax;
@@ -1367,7 +1367,7 @@ _Tf0f:
 	__asm        dec    ecx;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x10;
 	__asm        je     _T1018;
 
@@ -1376,7 +1376,7 @@ _Tf0f:
 	__asm        inc    ecx;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x10;
 	__asm        je     _T1018;
 
@@ -1385,7 +1385,7 @@ _Tf0f:
 	__asm        dec    ecx;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB11];
+	__asm        mov    dl, G_texmap[0][1][eax+ecx];
 	__asm        cmp    edx, 0x10;
 	__asm        je     _T1018;
 
@@ -1393,7 +1393,7 @@ _Tf0f:
 	__asm        mov    ecx, x;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB11];
+	__asm        mov    dl, G_texmap[0][1][eax+ecx];
 	__asm        cmp    edx, 0x10;
 	__asm        je     _T1018;
 
@@ -1402,7 +1402,7 @@ _Tf0f:
 	__asm        inc    ecx;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB11];
+	__asm        mov    dl, G_texmap[0][1][eax+ecx];
 	__asm        cmp    edx, 0x10;
 	__asm        jne    _T1029;
 // LINE 473:
@@ -1410,7 +1410,7 @@ _T1018:
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        shl    ecx, 8;
-	__asm        mov    byte ptr [eax+ecx+0x66EB10], 0x20;
+	__asm        mov    G_texmap[0][eax+ecx], 0x20;
 // LINE 476:
 // Block end:
 _T1029:
@@ -1440,7 +1440,7 @@ _T105e:
 	__asm        mov    ecx, x;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 5;
 	__asm        je     _T108b;
 // LINE 488:
@@ -1457,7 +1457,7 @@ _T108b:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        test   edx, edx;
 	__asm        jl     _T10e0;
 
@@ -1469,7 +1469,7 @@ _T108b:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 5;
 	__asm        jl     _T113b;
 _T10e0:
@@ -1481,7 +1481,7 @@ _T10e0:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 5;
 	__asm        jl     _T1130;
 
@@ -1493,7 +1493,7 @@ _T10e0:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0xA;
 	__asm        jl     _T113b;
 // LINE 494:
@@ -1510,7 +1510,7 @@ _T113b:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        test   edx, edx;
 	__asm        jl     _T1188;
 
@@ -1521,7 +1521,7 @@ _T113b:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 5;
 	__asm        jl     _T11e1;
 _T1188:
@@ -1532,7 +1532,7 @@ _T1188:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 5;
 	__asm        jl     _T11d6;
 
@@ -1543,7 +1543,7 @@ _T1188:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0xA;
 	__asm        jl     _T11e1;
 // LINE 496:
@@ -1561,7 +1561,7 @@ _T11e1:
 	__asm        dec    ecx;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        test   edx, edx;
 	__asm        jl     _T1230;
 
@@ -1573,7 +1573,7 @@ _T11e1:
 	__asm        dec    ecx;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 5;
 	__asm        jl     _T128b;
 _T1230:
@@ -1585,7 +1585,7 @@ _T1230:
 	__asm        dec    ecx;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 5;
 	__asm        jl     _T1280;
 
@@ -1597,7 +1597,7 @@ _T1230:
 	__asm        dec    ecx;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0xA;
 	__asm        jl     _T128b;
 // LINE 498:
@@ -1614,7 +1614,7 @@ _T128b:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        test   edx, edx;
 	__asm        jl     _T12d8;
 
@@ -1625,7 +1625,7 @@ _T128b:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 5;
 	__asm        jl     _T1331;
 _T12d8:
@@ -1636,7 +1636,7 @@ _T12d8:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 5;
 	__asm        jl     _T1326;
 
@@ -1647,7 +1647,7 @@ _T12d8:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0xA;
 	__asm        jl     _T1331;
 // LINE 500:
@@ -1664,7 +1664,7 @@ _T1331:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        test   edx, edx;
 	__asm        jl     _T137e;
 
@@ -1675,7 +1675,7 @@ _T1331:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 5;
 	__asm        jl     _T13d7;
 _T137e:
@@ -1686,7 +1686,7 @@ _T137e:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 5;
 	__asm        jl     _T13cc;
 
@@ -1697,7 +1697,7 @@ _T137e:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0xA;
 	__asm        jl     _T13d7;
 // LINE 502:
@@ -1715,7 +1715,7 @@ _T13d7:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        test   edx, edx;
 	__asm        jl     _T1426;
 
@@ -1727,7 +1727,7 @@ _T13d7:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 5;
 	__asm        jl     _T1481;
 _T1426:
@@ -1739,7 +1739,7 @@ _T1426:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 5;
 	__asm        jl     _T1476;
 
@@ -1751,7 +1751,7 @@ _T1426:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0xA;
 	__asm        jl     _T1481;
 // LINE 504:
@@ -1768,7 +1768,7 @@ _T1481:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        test   edx, edx;
 	__asm        jl     _T14ce;
 
@@ -1779,7 +1779,7 @@ _T1481:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 5;
 	__asm        jl     _T1527;
 _T14ce:
@@ -1790,7 +1790,7 @@ _T14ce:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 5;
 	__asm        jl     _T151c;
 
@@ -1801,7 +1801,7 @@ _T14ce:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0xA;
 	__asm        jl     _T1527;
 // LINE 506:
@@ -1819,7 +1819,7 @@ _T1527:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        test   edx, edx;
 	__asm        jl     _T1576;
 
@@ -1831,7 +1831,7 @@ _T1527:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 5;
 	__asm        jl     _T15d3;
 _T1576:
@@ -1843,7 +1843,7 @@ _T1576:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 5;
 	__asm        jl     _T15c6;
 
@@ -1855,7 +1855,7 @@ _T1576:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0xA;
 	__asm        jl     _T15d3;
 // LINE 508:
@@ -1872,7 +1872,7 @@ _T15d3:
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        shl    ecx, 8;
-	__asm        mov    byte ptr [eax+ecx+0x66EB10], 0;
+	__asm        mov    G_texmap[0][eax+ecx], 0;
 // LINE 513:
 _T15f0:
 	__asm        jmp    _T105b;
@@ -1898,7 +1898,7 @@ _T1625:
 	__asm        jge    _T17d7;
 // LINE 525:
 	__asm        mov    eax, x;
-	__asm        mov    eax, [eax*4+0x639850];
+	__asm        mov    eax, BuildMap[eax*4];
 	__asm        mov    ecx, y;
 	__asm        movzx  ax, byte ptr [eax+ecx];
 	__asm        mov    tile, ax;
@@ -1923,8 +1923,8 @@ _T1670:
 
 	__asm        mov    eax, [ebp-0x34];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0x515521];
-	__asm        jmp    dword ptr [ecx*4+0x515511];
+	__asm        mov    cl, SwitchPointers5330193[16][eax];
+	__asm        jmp    SwitchPointers5330193[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 562:
@@ -1938,7 +1938,7 @@ _T16be:
 	__asm        mov    alt, ax;
 // LINE 563:
 	__asm        mov    eax, x;
-	__asm        mov    eax, [eax*4+0x63A270];
+	__asm        mov    eax, TerrainMap[eax*4];
 	__asm        mov    ecx, y;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
@@ -1946,7 +1946,7 @@ _T16be:
 	__asm        je     _T1708;
 
 	__asm        mov    eax, x;
-	__asm        mov    eax, [eax*4+0x63A270];
+	__asm        mov    eax, TerrainMap[eax*4];
 	__asm        mov    ecx, y;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [eax+ecx];
@@ -2128,7 +2128,7 @@ _T184d:
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        shl    ecx, 8;
-	__asm        mov    byte ptr [eax+ecx+0x66EB10], 0;
+	__asm        mov    G_texmap[0][eax+ecx], 0;
 // LINE 601:
 _T1952:
 	__asm        jmp    _T181e;
@@ -2224,7 +2224,7 @@ _T1987:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x30;
 	__asm        jne    _T1b67;
 // LINE 627:
@@ -2235,7 +2235,7 @@ _T1987:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        test   edx, edx;
 	__asm        je     _T1b2d;
 
@@ -2246,7 +2246,7 @@ _T1987:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        test   edx, edx;
 	__asm        je     _T1b2d;
 
@@ -2257,7 +2257,7 @@ _T1987:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        test   edx, edx;
 	__asm        je     _T1b2d;
 
@@ -2268,7 +2268,7 @@ _T1987:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        test   edx, edx;
 	__asm        jne    _T1b3e;
 // LINE 629:
@@ -2276,7 +2276,7 @@ _T1b2d:
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        shl    ecx, 8;
-	__asm        mov    byte ptr [eax+ecx+0x66EB10], 0x10;
+	__asm        mov    G_texmap[0][eax+ecx], 0x10;
 // LINE 634:
 _T1b3e:
 	__asm        movsx  eax, alt2;
@@ -2289,7 +2289,7 @@ _T1b3e:
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        shl    ecx, 8;
-	__asm        mov    byte ptr [eax+ecx+0x66EB10], 0x10;
+	__asm        mov    G_texmap[0][eax+ecx], 0x10;
 // LINE 637:
 _T1b67:
 	__asm        jmp    _T1984;
@@ -2385,7 +2385,7 @@ _T1b9c:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x30;
 	__asm        jne    _T1d81;
 // LINE 663:
@@ -2396,7 +2396,7 @@ _T1b9c:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x10;
 	__asm        je     _T1d46;
 
@@ -2407,7 +2407,7 @@ _T1b9c:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x10;
 	__asm        je     _T1d46;
 
@@ -2418,7 +2418,7 @@ _T1b9c:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x10;
 	__asm        je     _T1d46;
 
@@ -2429,7 +2429,7 @@ _T1b9c:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x10;
 	__asm        jne    _T1d57;
 // LINE 665:
@@ -2437,7 +2437,7 @@ _T1d46:
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        shl    ecx, 8;
-	__asm        mov    byte ptr [eax+ecx+0x66EB10], 0x20;
+	__asm        mov    G_texmap[0][eax+ecx], 0x20;
 // LINE 669:
 _T1d57:
 	__asm        movsx  eax, alt2;
@@ -2450,7 +2450,7 @@ _T1d57:
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        shl    ecx, 8;
-	__asm        mov    byte ptr [eax+ecx+0x66EB10], 0x20;
+	__asm        mov    G_texmap[0][eax+ecx], 0x20;
 // LINE 672:
 _T1d81:
 	__asm        jmp    _T1b99;
@@ -2478,7 +2478,7 @@ _T1db6:
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        shl    ecx, 8;
-	__asm        mov    byte ptr [eax+ecx+0x66EB10], 0x20;
+	__asm        mov    G_texmap[0][eax+ecx], 0x20;
 // LINE 682:
 	__asm        jmp    _T1db3;
 // LINE 683:
@@ -2508,7 +2508,7 @@ _T1e09:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x30;
 	__asm        je     _T1e41;
 // LINE 697:
@@ -2599,7 +2599,7 @@ _T1f3d:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x30;
 	__asm        je     _T1f8b;
 
@@ -2610,7 +2610,7 @@ _T1f3d:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x40;
 	__asm        jne    _T2086;
 _T1f8b:
@@ -2621,7 +2621,7 @@ _T1f8b:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x30;
 	__asm        je     _T1fd9;
 
@@ -2632,7 +2632,7 @@ _T1f8b:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x40;
 	__asm        jne    _T2086;
 _T1fd9:
@@ -2643,7 +2643,7 @@ _T1fd9:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x30;
 	__asm        je     _T2027;
 
@@ -2654,7 +2654,7 @@ _T1fd9:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x40;
 	__asm        jne    _T2086;
 _T2027:
@@ -2665,7 +2665,7 @@ _T2027:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x30;
 	__asm        je     _T2075;
 
@@ -2676,7 +2676,7 @@ _T2027:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x40;
 	__asm        jne    _T2086;
 // LINE 721:
@@ -2684,7 +2684,7 @@ _T2075:
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        shl    ecx, 8;
-	__asm        mov    byte ptr [eax+ecx+0x66EB10], 0x40;
+	__asm        mov    G_texmap[0][eax+ecx], 0x40;
 // LINE 724:
 _T2086:
 	__asm        jmp    _T1e06;
@@ -2715,7 +2715,7 @@ _T20bb:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x40;
 	__asm        je     _T20f3;
 // LINE 739:
@@ -2805,7 +2805,7 @@ _T21ed:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x50;
 	__asm        je     _T223b;
 
@@ -2816,7 +2816,7 @@ _T21ed:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x40;
 	__asm        jne    _T2336;
 _T223b:
@@ -2827,7 +2827,7 @@ _T223b:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x50;
 	__asm        je     _T2289;
 
@@ -2838,7 +2838,7 @@ _T223b:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x40;
 	__asm        jne    _T2336;
 _T2289:
@@ -2849,7 +2849,7 @@ _T2289:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x50;
 	__asm        je     _T22d7;
 
@@ -2860,7 +2860,7 @@ _T2289:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x40;
 	__asm        jne    _T2336;
 _T22d7:
@@ -2871,7 +2871,7 @@ _T22d7:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x50;
 	__asm        je     _T2325;
 
@@ -2882,7 +2882,7 @@ _T22d7:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x40;
 	__asm        jne    _T2336;
 // LINE 763:
@@ -2890,7 +2890,7 @@ _T2325:
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        shl    ecx, 8;
-	__asm        mov    byte ptr [eax+ecx+0x66EB10], 0x50;
+	__asm        mov    G_texmap[0][eax+ecx], 0x50;
 // LINE 766:
 _T2336:
 	__asm        jmp    _T20b8;
@@ -2921,7 +2921,7 @@ _T236b:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x50;
 	__asm        je     _T23a3;
 // LINE 781:
@@ -3009,7 +3009,7 @@ _T2499:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x50;
 	__asm        je     _T24e7;
 
@@ -3020,7 +3020,7 @@ _T2499:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x60;
 	__asm        jne    _T25e2;
 _T24e7:
@@ -3031,7 +3031,7 @@ _T24e7:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x50;
 	__asm        je     _T2535;
 
@@ -3042,7 +3042,7 @@ _T24e7:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x60;
 	__asm        jne    _T25e2;
 _T2535:
@@ -3053,7 +3053,7 @@ _T2535:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x50;
 	__asm        je     _T2583;
 
@@ -3064,7 +3064,7 @@ _T2535:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x60;
 	__asm        jne    _T25e2;
 _T2583:
@@ -3075,7 +3075,7 @@ _T2583:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x50;
 	__asm        je     _T25d1;
 
@@ -3086,7 +3086,7 @@ _T2583:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x60;
 	__asm        jne    _T25e2;
 // LINE 805:
@@ -3094,7 +3094,7 @@ _T25d1:
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        shl    ecx, 8;
-	__asm        mov    byte ptr [eax+ecx+0x66EB10], 0x60;
+	__asm        mov    G_texmap[0][eax+ecx], 0x60;
 // LINE 808:
 _T25e2:
 	__asm        jmp    _T2368;
@@ -3125,7 +3125,7 @@ _T2617:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x10;
 	__asm        jne    _T28fc;
 // LINE 818:
@@ -3138,7 +3138,7 @@ _T2617:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        test   edx, edx;
 	__asm        jl     _T269b;
 
@@ -3149,7 +3149,7 @@ _T2617:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 5;
 	__asm        jl     _T26e9;
 _T269b:
@@ -3160,7 +3160,7 @@ _T269b:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 5;
 	__asm        jl     _T26f2;
 
@@ -3171,7 +3171,7 @@ _T269b:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0xA;
 	__asm        jge    _T26f2;
 // LINE 822:
@@ -3189,7 +3189,7 @@ _T26f2:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        test   edx, edx;
 	__asm        jl     _T273f;
 
@@ -3200,7 +3200,7 @@ _T26f2:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 5;
 	__asm        jl     _T278d;
 _T273f:
@@ -3211,7 +3211,7 @@ _T273f:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 5;
 	__asm        jl     _T2798;
 
@@ -3222,7 +3222,7 @@ _T273f:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0xA;
 	__asm        jge    _T2798;
 // LINE 825:
@@ -3240,7 +3240,7 @@ _T2798:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        test   edx, edx;
 	__asm        jl     _T27e5;
 
@@ -3251,7 +3251,7 @@ _T2798:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 5;
 	__asm        jl     _T2833;
 _T27e5:
@@ -3262,7 +3262,7 @@ _T27e5:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 5;
 	__asm        jl     _T283e;
 
@@ -3273,7 +3273,7 @@ _T27e5:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0xA;
 	__asm        jge    _T283e;
 // LINE 828:
@@ -3291,7 +3291,7 @@ _T283e:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        test   edx, edx;
 	__asm        jl     _T288b;
 
@@ -3302,7 +3302,7 @@ _T283e:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 5;
 	__asm        jl     _T28d9;
 _T288b:
@@ -3313,7 +3313,7 @@ _T288b:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 5;
 	__asm        jl     _T28e4;
 
@@ -3324,7 +3324,7 @@ _T288b:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0xA;
 	__asm        jge    _T28e4;
 // LINE 831:
@@ -3339,7 +3339,7 @@ _T28e4:
 	__asm        mov    ecx, y;
 	__asm        mov    edx, x;
 	__asm        shl    edx, 8;
-	__asm        mov    [ecx+edx+0x66EB10], al;
+	__asm        mov    G_texmap[0][ecx+edx], al;
 // LINE 834:
 	__asm        jmp    _T312b;
 _T28fc:
@@ -3349,7 +3349,7 @@ _T28fc:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x20;
 	__asm        jne    _T2aa0;
 // LINE 836:
@@ -3362,7 +3362,7 @@ _T28fc:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x10;
 	__asm        jl     _T297d;
 
@@ -3373,7 +3373,7 @@ _T28fc:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x20;
 	__asm        jge    _T297d;
 // LINE 840:
@@ -3390,7 +3390,7 @@ _T297d:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x10;
 	__asm        jl     _T29d6;
 
@@ -3401,7 +3401,7 @@ _T297d:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x20;
 	__asm        jge    _T29d6;
 // LINE 843:
@@ -3418,7 +3418,7 @@ _T29d6:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x10;
 	__asm        jl     _T2a2f;
 
@@ -3429,7 +3429,7 @@ _T29d6:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x20;
 	__asm        jge    _T2a2f;
 // LINE 846:
@@ -3446,7 +3446,7 @@ _T2a2f:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x10;
 	__asm        jl     _T2a88;
 
@@ -3457,7 +3457,7 @@ _T2a2f:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x20;
 	__asm        jge    _T2a88;
 // LINE 849:
@@ -3471,7 +3471,7 @@ _T2a88:
 	__asm        mov    ecx, y;
 	__asm        mov    edx, x;
 	__asm        shl    edx, 8;
-	__asm        mov    [ecx+edx+0x66EB10], al;
+	__asm        mov    G_texmap[0][ecx+edx], al;
 // LINE 852:
 	__asm        jmp    _T312b;
 _T2aa0:
@@ -3481,7 +3481,7 @@ _T2aa0:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x30;
 	__asm        jne    _T2c44;
 // LINE 854:
@@ -3494,7 +3494,7 @@ _T2aa0:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x20;
 	__asm        jl     _T2b21;
 
@@ -3505,7 +3505,7 @@ _T2aa0:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x30;
 	__asm        jge    _T2b21;
 // LINE 858:
@@ -3522,7 +3522,7 @@ _T2b21:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x20;
 	__asm        jl     _T2b7a;
 
@@ -3533,7 +3533,7 @@ _T2b21:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x30;
 	__asm        jge    _T2b7a;
 // LINE 861:
@@ -3550,7 +3550,7 @@ _T2b7a:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x20;
 	__asm        jl     _T2bd3;
 
@@ -3561,7 +3561,7 @@ _T2b7a:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x30;
 	__asm        jge    _T2bd3;
 // LINE 864:
@@ -3578,7 +3578,7 @@ _T2bd3:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x20;
 	__asm        jl     _T2c2c;
 
@@ -3589,7 +3589,7 @@ _T2bd3:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x30;
 	__asm        jge    _T2c2c;
 // LINE 867:
@@ -3603,7 +3603,7 @@ _T2c2c:
 	__asm        mov    ecx, y;
 	__asm        mov    edx, x;
 	__asm        shl    edx, 8;
-	__asm        mov    [ecx+edx+0x66EB10], al;
+	__asm        mov    G_texmap[0][ecx+edx], al;
 // LINE 870:
 	__asm        jmp    _T312b;
 _T2c44:
@@ -3613,7 +3613,7 @@ _T2c44:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x40;
 	__asm        jne    _T2de8;
 // LINE 872:
@@ -3626,7 +3626,7 @@ _T2c44:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x30;
 	__asm        jl     _T2cc5;
 
@@ -3637,7 +3637,7 @@ _T2c44:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x40;
 	__asm        jge    _T2cc5;
 // LINE 876:
@@ -3654,7 +3654,7 @@ _T2cc5:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x30;
 	__asm        jl     _T2d1e;
 
@@ -3665,7 +3665,7 @@ _T2cc5:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x40;
 	__asm        jge    _T2d1e;
 // LINE 879:
@@ -3682,7 +3682,7 @@ _T2d1e:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x30;
 	__asm        jl     _T2d77;
 
@@ -3693,7 +3693,7 @@ _T2d1e:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x40;
 	__asm        jge    _T2d77;
 // LINE 882:
@@ -3710,7 +3710,7 @@ _T2d77:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x30;
 	__asm        jl     _T2dd0;
 
@@ -3721,7 +3721,7 @@ _T2d77:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x40;
 	__asm        jge    _T2dd0;
 // LINE 885:
@@ -3735,7 +3735,7 @@ _T2dd0:
 	__asm        mov    ecx, y;
 	__asm        mov    edx, x;
 	__asm        shl    edx, 8;
-	__asm        mov    [ecx+edx+0x66EB10], al;
+	__asm        mov    G_texmap[0][ecx+edx], al;
 // LINE 888:
 	__asm        jmp    _T312b;
 _T2de8:
@@ -3745,7 +3745,7 @@ _T2de8:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x50;
 	__asm        jne    _T2f8c;
 // LINE 890:
@@ -3758,7 +3758,7 @@ _T2de8:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x40;
 	__asm        jl     _T2e69;
 
@@ -3769,7 +3769,7 @@ _T2de8:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x50;
 	__asm        jge    _T2e69;
 // LINE 894:
@@ -3786,7 +3786,7 @@ _T2e69:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x40;
 	__asm        jl     _T2ec2;
 
@@ -3797,7 +3797,7 @@ _T2e69:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x50;
 	__asm        jge    _T2ec2;
 // LINE 897:
@@ -3814,7 +3814,7 @@ _T2ec2:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x40;
 	__asm        jl     _T2f1b;
 
@@ -3825,7 +3825,7 @@ _T2ec2:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x50;
 	__asm        jge    _T2f1b;
 // LINE 900:
@@ -3842,7 +3842,7 @@ _T2f1b:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x40;
 	__asm        jl     _T2f74;
 
@@ -3853,7 +3853,7 @@ _T2f1b:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x50;
 	__asm        jge    _T2f74;
 // LINE 903:
@@ -3867,7 +3867,7 @@ _T2f74:
 	__asm        mov    ecx, y;
 	__asm        mov    edx, x;
 	__asm        shl    edx, 8;
-	__asm        mov    [ecx+edx+0x66EB10], al;
+	__asm        mov    G_texmap[0][ecx+edx], al;
 // LINE 906:
 	__asm        jmp    _T312b;
 _T2f8c:
@@ -3877,7 +3877,7 @@ _T2f8c:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x60;
 	__asm        jne    _T312b;
 // LINE 908:
@@ -3890,7 +3890,7 @@ _T2f8c:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x50;
 	__asm        jl     _T300d;
 
@@ -3901,7 +3901,7 @@ _T2f8c:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x60;
 	__asm        jge    _T300d;
 // LINE 912:
@@ -3918,7 +3918,7 @@ _T300d:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x50;
 	__asm        jl     _T3066;
 
@@ -3929,7 +3929,7 @@ _T300d:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x60;
 	__asm        jge    _T3066;
 // LINE 915:
@@ -3946,7 +3946,7 @@ _T3066:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x50;
 	__asm        jl     _T30bf;
 
@@ -3957,7 +3957,7 @@ _T3066:
 	__asm        and    ecx, 0xFF;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x60;
 	__asm        jge    _T30bf;
 // LINE 918:
@@ -3974,7 +3974,7 @@ _T30bf:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x50;
 	__asm        jl     _T3118;
 
@@ -3985,7 +3985,7 @@ _T30bf:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x60;
 	__asm        jge    _T3118;
 // LINE 921:
@@ -3999,7 +3999,7 @@ _T3118:
 	__asm        mov    ecx, y;
 	__asm        mov    edx, x;
 	__asm        shl    edx, 8;
-	__asm        mov    [ecx+edx+0x66EB10], al;
+	__asm        mov    G_texmap[0][ecx+edx], al;
 // LINE 925:
 _T312b:
 	__asm        jmp    _T2614;
@@ -4030,7 +4030,7 @@ _T3160:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x10;
 	__asm        jne    _T31d5;
 // LINE 936:
@@ -4053,7 +4053,7 @@ _T3160:
 	__asm        mov    ecx, y;
 	__asm        mov    edx, x;
 	__asm        shl    edx, 8;
-	__asm        mov    [ecx+edx+0x66EB10], al;
+	__asm        mov    G_texmap[0][ecx+edx], al;
 // LINE 941:
 _T31d0:
 	__asm        jmp    _T3370;
@@ -4064,7 +4064,7 @@ _T31d5:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x20;
 	__asm        jne    _T323d;
 // LINE 943:
@@ -4087,7 +4087,7 @@ _T31d5:
 	__asm        mov    ecx, y;
 	__asm        mov    edx, x;
 	__asm        shl    edx, 8;
-	__asm        mov    [ecx+edx+0x66EB10], al;
+	__asm        mov    G_texmap[0][ecx+edx], al;
 // LINE 948:
 _T3238:
 	__asm        jmp    _T3370;
@@ -4098,7 +4098,7 @@ _T323d:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x30;
 	__asm        jne    _T32a5;
 // LINE 950:
@@ -4121,7 +4121,7 @@ _T323d:
 	__asm        mov    ecx, y;
 	__asm        mov    edx, x;
 	__asm        shl    edx, 8;
-	__asm        mov    [ecx+edx+0x66EB10], al;
+	__asm        mov    G_texmap[0][ecx+edx], al;
 // LINE 955:
 _T32a0:
 	__asm        jmp    _T3370;
@@ -4132,7 +4132,7 @@ _T32a5:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x40;
 	__asm        jne    _T330d;
 // LINE 957:
@@ -4155,7 +4155,7 @@ _T32a5:
 	__asm        mov    ecx, y;
 	__asm        mov    edx, x;
 	__asm        shl    edx, 8;
-	__asm        mov    [ecx+edx+0x66EB10], al;
+	__asm        mov    G_texmap[0][ecx+edx], al;
 // LINE 962:
 _T3308:
 	__asm        jmp    _T3370;
@@ -4166,7 +4166,7 @@ _T330d:
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 0x60;
 	__asm        jne    _T3370;
 // LINE 964:
@@ -4189,7 +4189,7 @@ _T330d:
 	__asm        mov    ecx, y;
 	__asm        mov    edx, x;
 	__asm        shl    edx, 8;
-	__asm        mov    [ecx+edx+0x66EB10], al;
+	__asm        mov    G_texmap[0][ecx+edx], al;
 // LINE 970:
 _T3370:
 	__asm        jmp    _T315d;
@@ -5485,26 +5485,26 @@ _T317:
 // LINE 1238:
 	__asm        mov    eax, G_morphno;
 	__asm        and    eax, 3;
-	__asm        mov    al, [eax*2+0x5B5CC8];
+	__asm        mov    al, reinterpret_cast<uint8_t>(S_texcycle[0])[eax*2];
 	__asm        mov    ecx, G_morphcell.y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, reinterpret_cast<uint16_t>(G_morphcell.x);
 	__asm        mov    dh, dl;
-	__asm        mov    [ecx+edx+0x66EB10], al;
+	__asm        mov    G_texmap[0][ecx+edx], al;
 // LINE 1240:
 	__asm        jmp    _T38c;
 // LINE 1242:
 _T356:
 	__asm        movsx  eax, S_texlast;
 	__asm        and    eax, 3;
-	__asm        mov    al, [eax*2+0x5B5CC8];
+	__asm        mov    al, reinterpret_cast<uint8_t>(S_texcycle[0])[eax*2];
 	__asm        mov    ecx, G_morphcell.y;
 	__asm        and    ecx, 0xFF;
 	__asm        xor    edx, edx;
 	__asm        mov    dx, reinterpret_cast<uint16_t>(G_morphcell.x);
 	__asm        mov    dh, dl;
-	__asm        mov    [ecx+edx+0x66EB10], al;
+	__asm        mov    G_texmap[0][ecx+edx], al;
 // LINE 1243:
 	__asm        inc    S_texlast;
 // LINE 1249:
@@ -5707,7 +5707,7 @@ _Ta0:
 	__asm        ja     _Tc4;
 
 	__asm        mov    eax, [ebp-0x20];
-	__asm        jmp    dword ptr [eax*4+0x51854D];
+	__asm        jmp    SwitchPointers5342541[0][eax*4];
 // Switch pointers
 // LINE 1466:
 _Tc4:
@@ -5752,7 +5752,7 @@ _T129:
 	__asm        mov    ecx, x;
 	__asm        shl    ecx, 8;
 	__asm        xor    edx, edx;
-	__asm        mov    dl, [eax+ecx+0x66EB10];
+	__asm        mov    dl, G_texmap[0][eax+ecx];
 	__asm        cmp    edx, 5;
 	__asm        jne    _T1a9;
 // LINE 1483:
@@ -6548,7 +6548,7 @@ int32_t S3ObjectPrecisionAlt(int32_t cityx, int32_t cityy) {
 	__asm        sub    ecx, cityy;
 	__asm        shr    ecx, 0x16;
 	__asm        and    ecx, 0xFF;
-	__asm        mov    eax, [eax+ecx*4+0x67ED30];
+	__asm        mov    eax, G_omap[0][0][eax+ecx*4];
 	__asm        mov    cptr, eax;
 // LINE 1831:
 	__asm        mov    eax, cityx;

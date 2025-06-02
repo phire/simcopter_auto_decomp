@@ -1105,8 +1105,8 @@ _Tb3:
 
 	__asm        mov    eax, [ebp-8];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, [eax+0x5625E6];
-	__asm        jmp    dword ptr [ecx*4+0x5625D2];
+	__asm        mov    cl, SwitchTable5645798[0][eax];
+	__asm        jmp    SwitchPointers5645778[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 69:

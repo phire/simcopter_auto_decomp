@@ -60,7 +60,7 @@ _T46:
 	__asm        shl    edx, 8;
 	__asm        sub    edx, ebx;
 	__asm        sub    edx, ebx;
-	__asm        mov    [edx+ecx*4+0x63A860], eax;
+	__asm        mov    TWKQueue[0].pValues[edx+ecx*4], eax;
 	__asm        jmp    _T43;
 // LINE 52:
 _T79:
@@ -83,7 +83,7 @@ _T79:
 	__asm        shl    ecx, 8;
 	__asm        sub    ecx, edx;
 	__asm        sub    ecx, edx;
-	__asm        mov    [ecx+0x63A928], eax;
+	__asm        mov    TWKQueue[0].nNumCtrls[ecx], eax;
 // LINE 54:
 	__asm        inc    g_nNextTWKQueueSlot;
 // LINE 56:
@@ -429,7 +429,7 @@ _T7e:
 	__asm        shl    edx, 8;
 	__asm        sub    edx, ebx;
 	__asm        sub    edx, ebx;
-	__asm        mov    ecx, [edx+ecx*4+0x63A860];
+	__asm        mov    ecx, TWKQueue[0].pValues[edx+ecx*4];
 	__asm        mov    [ecx], eax;
 // LINE 227:
 	__asm        jmp    _T1e5;
@@ -453,7 +453,7 @@ _T176:
 	__asm        shl    ecx, 8;
 	__asm        sub    ecx, edx;
 	__asm        sub    ecx, edx;
-	__asm        mov    eax, [ecx+eax*4+0x63A860];
+	__asm        mov    eax, TWKQueue[0].pValues[ecx+eax*4];
 	__asm        fstp   qword ptr [eax];
 // LINE 230:
 	__asm        jmp    _T1e5;
@@ -469,7 +469,7 @@ _T1be:
 	__asm        shl    edx, 8;
 	__asm        sub    edx, ebx;
 	__asm        sub    edx, ebx;
-	__asm        mov    ecx, [edx+ecx*4+0x63A860];
+	__asm        mov    ecx, TWKQueue[0].pValues[edx+ecx*4];
 	__asm        mov    [ecx], eax;
 // LINE 232:
 _T1e5:
@@ -481,7 +481,7 @@ _T1ea:
 _T1ef:
 	__asm        mov    eax, nTweakQueueSlotIdx;
 	__asm        mov    ecx, g_nNextTWKErrorSlot;
-	__asm        mov    [ecx*4+0x646EE0], eax;
+	__asm        mov    TWKErrorSlot[ecx*4], eax;
 // LINE 246:
 	__asm        inc    g_nNextTWKErrorSlot;
 // LINE 249:
