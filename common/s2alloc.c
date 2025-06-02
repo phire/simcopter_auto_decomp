@@ -13,10 +13,12 @@
 // Type: unsigned long;
 
 // Type: struct alloc_handle_t (forward reference);
+// alloc_handle_t Class implementation not found
 
 // Type: char *;
 
 // Type: struct alloc_hdr_s (forward reference);
+// alloc_hdr_s Class implementation not found
 
 // Type: unsigned short;
 

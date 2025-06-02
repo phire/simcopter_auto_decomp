@@ -29,12 +29,15 @@ struct Point2d{
 };
 
 // Type: struct Point3d (forward reference);
+// Point3d Class implementation not found
 
 // Type: short *;
 
 // Type: struct _CELL_INFO (forward reference);
+// _CELL_INFO Class implementation not found
 
 // Type: struct _STOBJ_INST (forward reference);
+// _STOBJ_INST Class implementation not found
 
 
 

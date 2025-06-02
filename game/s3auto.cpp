@@ -106,17 +106,17 @@ public:
 
 // Type: class AutomobileClass (forward reference);
 class AutomobileClass{
-		enum CarType {
+		enum AutomobileClass::CarType {
 			kCarAmbulance = 0,
 			kCarCop = 1,
 			kCarFiretruck = 2,
 			kCarCriminal = 3,
 		};
-		enum AutoMessageID {
+		enum AutomobileClass::AutoMessageID {
 			AM_NO_MESSAGE = 0,
 			AM_CANCEL_AUTO_MISSION = 1,
 		};
-		enum __unnamed {
+		enum AutomobileClass::__unnamed {
 			CAR_TYPES = 7,
 			PERCENTAGE_OF_AUTO1 = 10,
 			PERCENTAGE_OF_AUTO2 = 20,
@@ -127,7 +127,7 @@ class AutomobileClass{
 			PERCENTAGE_OF_AUTO7 = 20,
 			TOTAL_PERCENTAGE = 110,
 		};
-		enum __unnamed {
+		enum AutomobileClass::__unnamed {
 			NO_X_POSITION = -1,
 			STARTING_X = 3,
 			ENDING_X = 125,
@@ -135,7 +135,7 @@ class AutomobileClass{
 			STARTING_Y = 3,
 			ENDING_Y = 125,
 		};
-		enum IntersectionTypes {
+		enum AutomobileClass::IntersectionTypes {
 			DEAD_END = 0,
 			STRAIGHT_AHEAD = 1,
 			LEFT_ONLY = 2,
@@ -146,7 +146,7 @@ class AutomobileClass{
 			LEFT_STRAIGHT_OR_RIGHT = 7,
 			DEAD_END_HIWAY = 16,
 		};
-		enum StoppedReasons {
+		enum AutomobileClass::StoppedReasons {
 			NO_REASON = 0,
 			TRAFFIC = 1,
 			STOPPED_TRAFFIC = 2,
@@ -160,11 +160,11 @@ class AutomobileClass{
 			INTERSECTION_FULL = 10,
 			BEEN_PULLED_OVER = 11,
 		};
-		enum RoadTileOffsets {
+		enum AutomobileClass::RoadTileOffsets {
 			RD_CENTOFF = 851968,
 			RD_EDGEOFF = 131072,
 		};
-		enum HiwayOffsets {
+		enum AutomobileClass::HiwayOffsets {
 			HW_CENTOFF_LANE1 = 851968,
 			HW_EDGEOFF_LANE1 = 131072,
 			HW_CENTOFF_LANE2 = 851968,
@@ -176,7 +176,7 @@ public:
 	static int32_t policeSirenDist;
 	static int32_t ambSirenDist;
 	static int32_t fireHoseDist;
-		enum __unnamed {
+		enum AutomobileClass::__unnamed {
 			CAR_RADIUS = 327680,
 			COLLISION_SPACE = 655360,
 			ROAD_SPEED = 2621440,
@@ -189,7 +189,7 @@ public:
 			MAX_TIME_TO_WAIT_PULLED_OVER = 196608,
 			MAX_TIME_TO_WAIT_BEFORE_BEAMING = 235,
 		};
-		enum Flags {
+		enum AutomobileClass::Flags {
 			AUTO_INITIALIZED = 1,
 			AUTO_PLACED = 2,
 			AUTO_NEEDS_TO_PULL_OVER = 4,
@@ -356,6 +356,7 @@ struct _GridCoordinates{
 };
 
 // Type: struct _DYOBJ_INST (forward reference);
+// _DYOBJ_INST Class implementation not found
 
 // Type: short;
 
@@ -378,6 +379,7 @@ struct Point3d{
 };
 
 // Type: struct MISSION_DATA (forward reference);
+// MISSION_DATA Class implementation not found
 
 // Type: struct _MISSION_PARMS;
 struct _MISSION_PARMS{
@@ -389,12 +391,21 @@ struct _MISSION_PARMS{
 };
 
 // Type: struct _GridCoordinates (forward reference);
+// _GridCoordinates Class implementation not found
 
 // Type: struct _CELL_INFO (forward reference);
+// _CELL_INFO Class implementation not found
 
 // Type: struct Goal (forward reference);
+// Goal Class implementation not found
 
 // Type: enum TurnIndex;
+	enum TurnIndex {
+		iTS = 0,
+		iTR = 1,
+		iTL = 2,
+		iTU = 3,
+	};
 
 // Type: unsigned short;
 
@@ -447,10 +458,26 @@ struct VRObjInfo{
 // Type: int32_t[4][4];
 
 // Type: enum AutomobileClass::StoppedReasons;
+	enum AutomobileClass::StoppedReasons {
+		NO_REASON = 0,
+		TRAFFIC = 1,
+		STOPPED_TRAFFIC = 2,
+		PERSON_IN_WAY = 3,
+		AUTO_IN_WAY = 4,
+		DEBRIS_IN_WAY = 5,
+		UNIDENTIFIED_IN_WAY = 6,
+		HELI_IN_WAY = 7,
+		END_OF_ROAD = 8,
+		END_OF_HIWAY = 9,
+		INTERSECTION_FULL = 10,
+		BEEN_PULLED_OVER = 11,
+	};
 
 // Type: struct Point3d (forward reference);
+// Point3d Class implementation not found
 
 // Type: struct Point2d (forward reference);
+// Point2d Class implementation not found
 
 // Type: struct Point2d;
 struct Point2d{
@@ -473,12 +500,40 @@ struct VRFaceInfo{
 // Type: enum DirectionTypes[8];
 
 // Type: enum DirectionTypes;
+	enum DirectionTypes {
+		NO_DIRECTION = 0,
+		NORTH = 1,
+		EAST = 2,
+		SOUTH = 4,
+		WEST = 8,
+		RISING = 16,
+		RISING_NORTH = 17,
+		RISING_SOUTH = 20,
+		RISING_EAST = 18,
+		RISING_WEST = 24,
+		NORTH_EAST = 3,
+		SOUTH_EAST = 6,
+		SOUTH_WEST = 12,
+		NORTH_WEST = 9,
+	};
 
 // Type: enum AutomobileClass::IntersectionTypes;
+	enum AutomobileClass::IntersectionTypes {
+		DEAD_END = 0,
+		STRAIGHT_AHEAD = 1,
+		LEFT_ONLY = 2,
+		RIGHT_ONLY = 4,
+		LEFT_OR_STRAIGHT = 3,
+		LEFT_OR_RIGHT = 6,
+		RIGHT_OR_STRAIGHT = 5,
+		LEFT_STRAIGHT_OR_RIGHT = 7,
+		DEAD_END_HIWAY = 16,
+	};
 
 // Type: void * __ptr32;
 
 // Type: struct _AUTO_LOAD_SAVE (forward reference);
+// _AUTO_LOAD_SAVE Class implementation not found
 
 // Type: uint32_t;
 

@@ -44,10 +44,13 @@ struct _FringeHeapNode{
 };
 
 // Type: struct RGVertex (forward reference);
+// RGVertex Class implementation not found
 
 // Type: struct Edge (forward reference);
+// Edge Class implementation not found
 
 // Type: struct _FringeHeapNode (forward reference);
+// _FringeHeapNode Class implementation not found
 
 // Type: void;
 

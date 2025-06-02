@@ -9,6 +9,7 @@
 // Type: long;
 
 // Type: struct PrivAnimPartInfo (forward reference);
+// PrivAnimPartInfo Class implementation not found
 
 // Type: void;
 
@@ -29,14 +30,17 @@ struct TinyXZY{
 };
 
 // Type: struct TinyXZY (forward reference);
+// TinyXZY Class implementation not found
 
 // Type: struct DXZY (forward reference);
+// DXZY Class implementation not found
 
 // Type: char;
 
 // Type: float;
 
 // Type: struct Point (forward reference);
+// Point Class implementation not found
 
 // Type: char[260];
 
@@ -167,6 +171,7 @@ public:
 };
 
 // Type: struct PtrList<cBBase>::PtrNode (forward reference);
+// PtrList<cBBase>::PtrNode Class implementation not found
 
 // Type: class PtrList<cCopterAnim>::Iter (forward reference);
 class PtrList<cCopterAnim>::Iter{
@@ -182,6 +187,7 @@ public:
 };
 
 // Type: class cBList<cCopterAnim> (forward reference);
+// cBList<cCopterAnim> Class implementation not found
 
 // Type: class PtrList<cCopterAnim> (forward reference);
 class PtrList<cCopterAnim>{
@@ -250,10 +256,12 @@ public:
 // Type: unsigned long;
 
 // Type: class cBList<cBBase> (forward reference);
+// cBList<cBBase> Class implementation not found
 
 // Type: uint32_t;
 
 // Type: class cCopterBody (forward reference);
+// cCopterBody Class implementation not found
 
 // Type: class PtrList<cCopterBody> (forward reference);
 class PtrList<cCopterBody>{
@@ -411,7 +419,7 @@ public:
 
 // Type: class FlatFile;
 class FlatFile{
-		enum __unnamed {
+		enum FlatFile::__unnamed {
 			kMaxNameLen = 255,
 		};
 protected:

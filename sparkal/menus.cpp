@@ -45,10 +45,12 @@ protected:
 // Type: void;
 
 // Type: struct UserMenuWindowDescription (forward reference);
+// UserMenuWindowDescription Class implementation not found
 
 // Type: int32_t;
 
 // Type: class GraphicWindow (forward reference);
+// GraphicWindow Class implementation not found
 
 // Type: class GraphicWindowOwner (forward reference);
 class GraphicWindowOwner{

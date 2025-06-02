@@ -105,7 +105,7 @@ protected:
 // Type: class GameModePickCareerCityData (forward reference);
 class GameModePickCareerCityData : public GameModeCoreData
 {
-		enum PickCareerCitySubMode {
+		enum GameModePickCareerCityData::PickCareerCitySubMode {
 			nPickCareerCitySubModeSelect = 0,
 			nPickCareerCitySubModeVideo = 1,
 		};
@@ -171,7 +171,7 @@ protected:
 // Type: class GameModePlayData (forward reference);
 class GameModePlayData : public GameModeCoreData
 {
-		enum ExceptionState {
+		enum GameModePlayData::ExceptionState {
 			nExceptionStateNone = 0,
 			nExceptionStateVRAppInit = 1,
 			nExceptionStateGamePlay = 2,
@@ -303,6 +303,7 @@ public:
 };
 
 // Type: struct tagUserPersonalInfo (forward reference);
+// tagUserPersonalInfo Class implementation not found
 
 // Type: long;
 
@@ -421,6 +422,7 @@ public:
 };
 
 // Type: class GraphicWindow (forward reference);
+// GraphicWindow Class implementation not found
 
 // Type: struct SparkalRect;
 struct SparkalRect{

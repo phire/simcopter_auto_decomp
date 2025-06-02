@@ -35,6 +35,7 @@ struct SparkalColor{
 // Type: long;
 
 // Type: struct tagPALETTEENTRY (forward reference);
+// tagPALETTEENTRY Class implementation not found
 
 // Type: char[256];
 

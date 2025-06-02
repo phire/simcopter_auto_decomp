@@ -45,6 +45,7 @@ protected:
 // Type: int32_t;
 
 // Type: struct tagVS_FIXEDFILEINFO (forward reference);
+// tagVS_FIXEDFILEINFO Class implementation not found
 
 // Type: long;
 

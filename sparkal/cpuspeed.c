@@ -23,6 +23,7 @@ struct FREQ_INFO{
 // Type: unsigned short;
 
 // Type: struct FREQ_INFO (forward reference);
+// FREQ_INFO Class implementation not found
 
 // Type: unsigned short[12];
 

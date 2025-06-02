@@ -80,6 +80,7 @@ struct tagRECT{
 };
 
 // Type: class CSparkalWindow (forward reference);
+// CSparkalWindow Class implementation not found
 
 // Type: struct SparkalRect (forward reference);
 struct SparkalRect{
@@ -122,6 +123,7 @@ public:
 };
 
 // Type: struct VRBmpHdr (forward reference);
+// VRBmpHdr Class implementation not found
 
 // Type: class SmackerBackBuffer (forward reference);
 class SmackerBackBuffer : public SmackerBuffer, public CBackBuffer

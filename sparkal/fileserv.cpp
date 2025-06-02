@@ -18,7 +18,7 @@ public:
 	int32_t CopyFileFromRemoteToLocal(char *);
 	int32_t IsFileAvailableLocally(char *);
 	int32_t IsFileAvailableRemotely(char *);
-		enum AppBaseType {
+		enum FileServices::AppBaseType {
 			nAppBaseTypeUnknown = 0,
 			nAppBaseTypeLocal = 1,
 			nAppBaseTypeRemote = 2,
@@ -54,7 +54,7 @@ public:
 	int32_t CopyFileFromRemoteToLocal(char *);
 	int32_t IsFileAvailableLocally(char *);
 	int32_t IsFileAvailableRemotely(char *);
-		enum AppBaseType {
+		enum FileServices::AppBaseType {
 			nAppBaseTypeUnknown = 0,
 			nAppBaseTypeLocal = 1,
 			nAppBaseTypeRemote = 2,
@@ -177,15 +177,15 @@ public:
 
 // Type: class PFile;
 class PFile{
-		enum __unnamed {
+		enum PFile::__unnamed {
 			FileNull = -1,
 		};
-		enum SeekTypes {
+		enum PFile::SeekTypes {
 			N_SEEK_FROM_FILE_START = 0,
 			N_SEEK_FROM_FILE_CURRENT = 1,
 			N_SEEK_FROM_FILE_END = 2,
 		};
-		enum AccessTypes {
+		enum PFile::AccessTypes {
 			ReadOnly = 0,
 			ReadWrite = 2,
 			WriteOnly = 1,
@@ -200,12 +200,12 @@ class PFile{
 			DenyRdWr = 16,
 			NoInherit = 128,
 		};
-		enum PermissionTypes {
+		enum PFile::PermissionTypes {
 			PermRead = 256,
 			PermWrite = 128,
 			PermRdWr = 384,
 		};
-		enum seek_dir {
+		enum PFile::seek_dir {
 			beg = 0,
 			cur = 1,
 			end = 2,
@@ -351,6 +351,7 @@ public:
 };
 
 // Type: class Directory (forward reference);
+// Directory Class implementation not found
 
 // Type: class list<basic_string<char>>;
 class list<basic_string<char>>{

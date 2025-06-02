@@ -174,6 +174,7 @@ public:
 // Type: int32_t;
 
 // Type: class GraphicWindow (forward reference);
+// GraphicWindow Class implementation not found
 
 // Type: char *;
 
@@ -199,6 +200,7 @@ protected:
 };
 
 // Type: class ButtonGroup (forward reference);
+// ButtonGroup Class implementation not found
 
 // Type: class SoundCheckBoxWindow (forward reference);
 class SoundCheckBoxWindow : public CheckBoxWindow
@@ -232,11 +234,15 @@ protected:
 };
 
 // Type: enum SliderWindow::SliderWindowDirection;
+	enum SliderWindow::SliderWindowDirection {
+		nSliderWindowDirectionHorizontal = 0,
+		nSliderWindowDirectionVertical = 1,
+	};
 
 // Type: class ButtonWindow (forward reference);
 class ButtonWindow : public GraphicWindow
 {
-		enum ButtonState {
+		enum ButtonWindow::ButtonState {
 			nButtonStateDisabled = 0,
 			nButtonStateOff = 1,
 			nButtonStateOn = 2,
@@ -278,7 +284,7 @@ protected:
 // Type: class ButtonWindow;
 class ButtonWindow : public GraphicWindow
 {
-		enum ButtonState {
+		enum ButtonWindow::ButtonState {
 			nButtonStateDisabled = 0,
 			nButtonStateOff = 1,
 			nButtonStateOn = 2,
@@ -317,13 +323,13 @@ protected:
 
 // Type: class Sound;
 class Sound{
-		enum SoundSourceType {
+		enum Sound::SoundSourceType {
 			nSoundSourceTypeResource = 0,
 			nSoundSourceTypeFile = 1,
 		};
 public:
 	enum Sound::SoundSourceType nSoundSourceType;
-		enum SoundDuplicateType {
+		enum Sound::SoundDuplicateType {
 			nSoundDuplicateDefault = 0,
 			nSoundDuplicateInterrupt = 1,
 			nSoundDuplicateContinue = 2,
@@ -368,10 +374,34 @@ public:
 	static unsigned long lTotalMemoryUsage;
 };
 
+// Type: struct SparkalRect;
+struct SparkalRect{
+	long left;
+	long top;
+	long right;
+	long bottom;
+	void SparkalRect(long, long, long, long);
+	void SparkalRect();
+};
+
+// Type: class CheckBoxWindow;
+class CheckBoxWindow : public ButtonWindow
+{
+public:
+	void CheckBoxWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
+	void CheckBoxWindow();
+	virtual int32_t ComposeSelf();
+	virtual int32_t GetImageCount();
+	virtual void SetState(int32_t);
+	virtual long DoCursorDown(long, long, unsigned long);
+	virtual long DoCursorUp(long, long, unsigned long);
+	virtual long DoCursorMove(long, long);
+};
+
 // Type: class ScrollBarWindow;
 class ScrollBarWindow : public SliderWindow
 {
-		enum ScrollHitTestResult {
+		enum ScrollBarWindow::ScrollHitTestResult {
 			nScrollHitTestResultNone = 0,
 			nScrollHitTestResultLinePrevious = 1,
 			nScrollHitTestResultLineNext = 2,
@@ -422,30 +452,6 @@ protected:
 	int32_t bCursorIsOnInitialHitTestResult;
 };
 
-// Type: struct SparkalRect;
-struct SparkalRect{
-	long left;
-	long top;
-	long right;
-	long bottom;
-	void SparkalRect(long, long, long, long);
-	void SparkalRect();
-};
-
-// Type: class CheckBoxWindow;
-class CheckBoxWindow : public ButtonWindow
-{
-public:
-	void CheckBoxWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
-	void CheckBoxWindow();
-	virtual int32_t ComposeSelf();
-	virtual int32_t GetImageCount();
-	virtual void SetState(int32_t);
-	virtual long DoCursorDown(long, long, unsigned long);
-	virtual long DoCursorUp(long, long, unsigned long);
-	virtual long DoCursorMove(long, long);
-};
-
 // Type: class RadioButtonWindow;
 class RadioButtonWindow : public ButtonWindow
 {
@@ -471,7 +477,7 @@ protected:
 // Type: class SliderWindow;
 class SliderWindow : public GraphicWindow
 {
-		enum SliderWindowDirection {
+		enum SliderWindow::SliderWindowDirection {
 			nSliderWindowDirectionHorizontal = 0,
 			nSliderWindowDirectionVertical = 1,
 		};

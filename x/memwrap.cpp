@@ -8,7 +8,7 @@
 class Memory{
 	using MemPool = long;
 	using HState = long;
-		enum __unnamed {
+		enum Memory::__unnamed {
 			kLocked = 128,
 			kPurgeable = 64,
 			kResrc = 32,
@@ -62,7 +62,7 @@ public:
 	static void HCopy(void * __ptr32*);
 	// calltype: NearC
 	static void * __ptr32 HGetCopy(void * __ptr32);
-		enum PoolType {
+		enum Memory::PoolType {
 			kAnyBlockSize = 0,
 			kUniformBlockSize = 1,
 		};
@@ -98,6 +98,10 @@ public:
 // Type: unsigned short;
 
 // Type: enum Memory::PoolType;
+	enum Memory::PoolType {
+		kAnyBlockSize = 0,
+		kUniformBlockSize = 1,
+	};
 
 
 

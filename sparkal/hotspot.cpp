@@ -31,6 +31,7 @@ protected:
 // Type: int32_t;
 
 // Type: struct HotSpotResourceRecord (forward reference);
+// HotSpotResourceRecord Class implementation not found
 
 // Type: struct SparkalRect (forward reference);
 struct SparkalRect{
@@ -235,6 +236,7 @@ public:
 // Type: char *;
 
 // Type: struct HotSpotResourceFileHeader (forward reference);
+// HotSpotResourceFileHeader Class implementation not found
 
 // Type: class ResourceRCData;
 class ResourceRCData{

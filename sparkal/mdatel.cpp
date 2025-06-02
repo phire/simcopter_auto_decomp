@@ -183,10 +183,11 @@ private:
 };
 
 // Type: class MTime (forward reference);
+// MTime Class implementation not found
 
 // Type: class MDate (forward reference);
 class MDate{
-		enum HowToPrint {
+		enum MDate::HowToPrint {
 			Normal = 0,
 			Terse = 1,
 			Numbers = 2,
@@ -267,13 +268,13 @@ protected:
 
 // Type: class ios;
 class ios{
-		enum io_state {
+		enum ios::io_state {
 			goodbit = 0,
 			eofbit = 1,
 			failbit = 2,
 			badbit = 4,
 		};
-		enum open_mode {
+		enum ios::open_mode {
 			in = 1,
 			out = 2,
 			ate = 4,
@@ -283,12 +284,12 @@ class ios{
 			noreplace = 64,
 			binary = 128,
 		};
-		enum seek_dir {
+		enum ios::seek_dir {
 			beg = 0,
 			cur = 1,
 			end = 2,
 		};
-		enum __unnamed {
+		enum ios::__unnamed {
 			skipws = 1,
 			left = 2,
 			right = 4,
@@ -361,7 +362,7 @@ public:
 protected:
 	class ios& operator=(const class ios&);
 	void init(class streambuf*);
-		enum __unnamed {
+		enum ios::__unnamed {
 			skipping = 0,
 			tied = 1,
 		};
@@ -451,7 +452,7 @@ private:
 
 // Type: class MDate;
 class MDate{
-		enum HowToPrint {
+		enum MDate::HowToPrint {
 			Normal = 0,
 			Terse = 1,
 			Numbers = 2,

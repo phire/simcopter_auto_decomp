@@ -44,10 +44,12 @@ public:
 };
 
 // Type: class cCopterBody (forward reference);
+// cCopterBody Class implementation not found
 
 // Type: unsigned long;
 
 // Type: struct AnimLookup (forward reference);
+// AnimLookup Class implementation not found
 
 // Type: class cCopterAnim (forward reference);
 class cCopterAnim : public cBBase
@@ -82,6 +84,7 @@ public:
 // Type: unsigned short;
 
 // Type: struct cCopterBody::Part (forward reference);
+// cCopterBody::Part Class implementation not found
 
 // Type: unsigned char *;
 
@@ -112,14 +115,21 @@ struct Point3d{
 };
 
 // Type: enum SPHERE_SHADE_FLAG;
+	enum SPHERE_SHADE_FLAG {
+		NO_SHADE = 0,
+		GRAD_SHADE = 1,
+		GRAD_DITHER_SHADE = 2,
+	};
 
 // Type: struct PrivAnimPartInfo (forward reference);
+// PrivAnimPartInfo Class implementation not found
 
 // Type: int32_t;
 
 // Type: long;
 
 // Type: struct TransformedInfo (forward reference);
+// TransformedInfo Class implementation not found
 
 // Type: struct DXZY;
 struct DXZY{

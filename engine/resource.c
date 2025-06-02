@@ -7,8 +7,10 @@
 // Type: void;
 
 // Type: struct VRResource (forward reference);
+// VRResource Class implementation not found
 
 // Type: struct GEOM_Resource (forward reference);
+// GEOM_Resource Class implementation not found
 
 // Type: char *;
 

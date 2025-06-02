@@ -9,6 +9,7 @@
 // Type: void;
 
 // Type: class CGameApp (forward reference);
+// CGameApp Class implementation not found
 
 // Type: char[64];
 
@@ -321,6 +322,7 @@ protected:
 // Type: uint32_t;
 
 // Type: struct Point2d (forward reference);
+// Point2d Class implementation not found
 
 // Type: char[3];
 
@@ -468,7 +470,7 @@ protected:
 // Type: class UserInputWindow (forward reference);
 class UserInputWindow : public GraphicWindow
 {
-		enum KeyUsageType {
+		enum UserInputWindow::KeyUsageType {
 			nKeyUsageTypeFree = 0,
 			nKeyUsageTypeReserved = 1,
 			nKeyUsageTypeCurrentCommand = 2,
@@ -647,16 +649,17 @@ protected:
 // Type: long[3];
 
 // Type: class GraphicWindow (forward reference);
+// GraphicWindow Class implementation not found
 
 // Type: class Sound;
 class Sound{
-		enum SoundSourceType {
+		enum Sound::SoundSourceType {
 			nSoundSourceTypeResource = 0,
 			nSoundSourceTypeFile = 1,
 		};
 public:
 	enum Sound::SoundSourceType nSoundSourceType;
-		enum SoundDuplicateType {
+		enum Sound::SoundDuplicateType {
 			nSoundDuplicateDefault = 0,
 			nSoundDuplicateInterrupt = 1,
 			nSoundDuplicateContinue = 2,

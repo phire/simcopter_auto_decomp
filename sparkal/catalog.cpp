@@ -81,6 +81,7 @@ protected:
 // Type: int32_t;
 
 // Type: class GraphicWindow (forward reference);
+// GraphicWindow Class implementation not found
 
 // Type: class GraphicWindowOwner (forward reference);
 class GraphicWindowOwner{
@@ -211,6 +212,7 @@ public:
 // Type: long;
 
 // Type: struct tagUserPersonalInfo (forward reference);
+// tagUserPersonalInfo Class implementation not found
 
 // Type: class MRect[5];
 
@@ -287,6 +289,7 @@ public:
 // Type: char[260];
 
 // Type: class CBackBuffer (forward reference);
+// CBackBuffer Class implementation not found
 
 // Type: unsigned long[6];
 

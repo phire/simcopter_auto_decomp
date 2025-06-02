@@ -49,6 +49,7 @@ struct tagLogString{
 // Type: void;
 
 // Type: struct tagCitySettings (forward reference);
+// tagCitySettings Class implementation not found
 
 // Type: float;
 
@@ -66,16 +67,22 @@ struct tagCitySettings{
 };
 
 // Type: struct MISSION_DATA (forward reference);
+// MISSION_DATA Class implementation not found
 
 // Type: struct _CELL_FIRE_DATA (forward reference);
+// _CELL_FIRE_DATA Class implementation not found
 
 // Type: struct _DYOBJ_INST (forward reference);
+// _DYOBJ_INST Class implementation not found
 
 // Type: struct Point2d (forward reference);
+// Point2d Class implementation not found
 
 // Type: struct _MISSION_PARMS (forward reference);
+// _MISSION_PARMS Class implementation not found
 
 // Type: struct _CELL_INFO (forward reference);
+// _CELL_INFO Class implementation not found
 
 // Type: char *;
 

@@ -55,8 +55,10 @@ public:
 };
 
 // Type: struct list<tagLogBase *>::list_node_buffer (forward reference);
+// list<tagLogBase *>::list_node_buffer Class implementation not found
 
 // Type: struct list<tagLogBase *>::list_node (forward reference);
+// list<tagLogBase *>::list_node Class implementation not found
 
 // Type: uint32_t;
 
@@ -65,6 +67,7 @@ public:
 // Type: void;
 
 // Type: struct tagLogBase (forward reference);
+// tagLogBase Class implementation not found
 
 // Type: int32_t;
 
@@ -266,14 +269,17 @@ public:
 };
 
 // Type: struct tagLogString (forward reference);
+// tagLogString Class implementation not found
 
 // Type: char[276];
 
 // Type: char[56];
 
 // Type: struct tagLogMissionEvent (forward reference);
+// tagLogMissionEvent Class implementation not found
 
 // Type: struct tagLogCityEnterExit (forward reference);
+// tagLogCityEnterExit Class implementation not found
 
 // Type: class basic_string<char>;
 class basic_string<char>{
@@ -626,15 +632,15 @@ public:
 
 // Type: class PFile;
 class PFile{
-		enum __unnamed {
+		enum PFile::__unnamed {
 			FileNull = -1,
 		};
-		enum SeekTypes {
+		enum PFile::SeekTypes {
 			N_SEEK_FROM_FILE_START = 0,
 			N_SEEK_FROM_FILE_CURRENT = 1,
 			N_SEEK_FROM_FILE_END = 2,
 		};
-		enum AccessTypes {
+		enum PFile::AccessTypes {
 			ReadOnly = 0,
 			ReadWrite = 2,
 			WriteOnly = 1,
@@ -649,12 +655,12 @@ class PFile{
 			DenyRdWr = 16,
 			NoInherit = 128,
 		};
-		enum PermissionTypes {
+		enum PFile::PermissionTypes {
 			PermRead = 256,
 			PermWrite = 128,
 			PermRdWr = 384,
 		};
-		enum seek_dir {
+		enum PFile::seek_dir {
 			beg = 0,
 			cur = 1,
 			end = 2,
@@ -693,6 +699,7 @@ private:
 };
 
 // Type: class MTime (forward reference);
+// MTime Class implementation not found
 
 // Type: struct bidirectional_iterator<tagLogBase *,int>;
 struct bidirectional_iterator<tagLogBase *,int>{

@@ -104,8 +104,10 @@ public:
 // Type: long;
 
 // Type: class GraphicWindow (forward reference);
+// GraphicWindow Class implementation not found
 
 // Type: class Radio (forward reference);
+// Radio Class implementation not found
 
 // Type: class GraphicWindowOwner (forward reference);
 class GraphicWindowOwner{
@@ -332,11 +334,11 @@ public:
 // Type: class PassengerWindow (forward reference);
 class PassengerWindow : public GraphicWindow
 {
-		enum Position {
+		enum PassengerWindow::Position {
 			nPositionUp = 0,
 			nPositionDown = 1,
 		};
-		enum PositionChangeDirection {
+		enum PassengerWindow::PositionChangeDirection {
 			nPositionChangeDirectionDown = -1,
 			nPositionChangeDirectionNone = 0,
 			nPositionChangeDirectionUp = 1,
@@ -376,6 +378,7 @@ protected:
 };
 
 // Type: struct tagHeliPassengerData (forward reference);
+// tagHeliPassengerData Class implementation not found
 
 // Type: class MRect;
 class MRect : public SparkalRect
@@ -480,6 +483,7 @@ public:
 };
 
 // Type: struct MISSION_DATA (forward reference);
+// MISSION_DATA Class implementation not found
 
 // Type: void * __ptr32;
 
@@ -564,7 +568,7 @@ protected:
 
 // Type: class DialHand (forward reference);
 class DialHand{
-		enum DialDirection {
+		enum DialHand::DialDirection {
 			nDialDirectionClockwise = -1,
 			nDialDirectionCounterClockwise = 1,
 		};

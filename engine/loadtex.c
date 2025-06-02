@@ -15,12 +15,16 @@ struct BMPFileHdr{
 };
 
 // Type: struct TEXT_Resource (forward reference);
+// TEXT_Resource Class implementation not found
 
 // Type: struct VRBmpInfo (forward reference);
+// VRBmpInfo Class implementation not found
 
 // Type: struct VRResource (forward reference);
+// VRResource Class implementation not found
 
 // Type: struct VRBmpHdr (forward reference);
+// VRBmpHdr Class implementation not found
 
 // Type: unsigned char *;
 

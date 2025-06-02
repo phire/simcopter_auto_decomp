@@ -42,22 +42,28 @@ struct VRwindowType{
 // Type: char *[3];
 
 // Type: struct VRBmpHdr (forward reference);
+// VRBmpHdr Class implementation not found
 
 // Type: void;
 
 // Type: unsigned short;
 
 // Type: struct _CELL_INFO (forward reference);
+// _CELL_INFO Class implementation not found
 
 // Type: struct Point2d (forward reference);
+// Point2d Class implementation not found
 
 // Type: long *;
 
 // Type: struct _MAP_CARINFO (forward reference);
+// _MAP_CARINFO Class implementation not found
 
 // Type: struct MISSION_DATA (forward reference);
+// MISSION_DATA Class implementation not found
 
 // Type: struct _GridCoordinates (forward reference);
+// _GridCoordinates Class implementation not found
 
 
 

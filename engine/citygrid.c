@@ -11,10 +11,13 @@
 // Type: short;
 
 // Type: struct MapVert (forward reference);
+// MapVert Class implementation not found
 
 // Type: struct GridFaceHdrType (forward reference);
+// GridFaceHdrType Class implementation not found
 
 // Type: struct Point3d (forward reference);
+// Point3d Class implementation not found
 
 // Type: long *;
 

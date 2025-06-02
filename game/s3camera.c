@@ -16,8 +16,10 @@ struct Point3d{
 // Type: int32_t;
 
 // Type: struct Point3d (forward reference);
+// Point3d Class implementation not found
 
 // Type: struct _DYOBJ_INST (forward reference);
+// _DYOBJ_INST Class implementation not found
 
 // Type: int32_t[4][4];
 
@@ -28,10 +30,13 @@ struct Point3d{
 // Type: int32_t *[10];
 
 // Type: struct _CHASE_INFO (forward reference);
+// _CHASE_INFO Class implementation not found
 
 // Type: struct _CELL_INFO (forward reference);
+// _CELL_INFO Class implementation not found
 
 // Type: struct _STOBJ_INST (forward reference);
+// _STOBJ_INST Class implementation not found
 
 
 

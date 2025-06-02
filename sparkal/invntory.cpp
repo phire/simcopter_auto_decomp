@@ -46,6 +46,7 @@ protected:
 // Type: int32_t;
 
 // Type: class GraphicWindow (forward reference);
+// GraphicWindow Class implementation not found
 
 // Type: class GraphicWindowOwner (forward reference);
 class GraphicWindowOwner{
@@ -98,6 +99,7 @@ public:
 // Type: long;
 
 // Type: struct tagUserPersonalInfo (forward reference);
+// tagUserPersonalInfo Class implementation not found
 
 // Type: class MRect;
 class MRect : public SparkalRect

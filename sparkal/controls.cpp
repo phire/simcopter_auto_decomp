@@ -5,8 +5,10 @@
 // Type: char *;
 
 // Type: struct list<RadioButtonWindow *>::list_node_buffer (forward reference);
+// list<RadioButtonWindow *>::list_node_buffer Class implementation not found
 
 // Type: struct list<RadioButtonWindow *>::list_node (forward reference);
+// list<RadioButtonWindow *>::list_node Class implementation not found
 
 // Type: uint32_t;
 
@@ -101,6 +103,7 @@ public:
 // Type: int32_t;
 
 // Type: class GraphicWindow (forward reference);
+// GraphicWindow Class implementation not found
 
 // Type: class GraphicWindowOwner (forward reference);
 class GraphicWindowOwner{
@@ -334,7 +337,7 @@ public:
 // Type: class ButtonWindow (forward reference);
 class ButtonWindow : public GraphicWindow
 {
-		enum ButtonState {
+		enum ButtonWindow::ButtonState {
 			nButtonStateDisabled = 0,
 			nButtonStateOff = 1,
 			nButtonStateOn = 2,
@@ -439,6 +442,7 @@ protected:
 };
 
 // Type: class ButtonGroup (forward reference);
+// ButtonGroup Class implementation not found
 
 // Type: class list<RadioButtonWindow *>::iterator;
 class list<RadioButtonWindow *>::iterator : public bidirectional_iterator<RadioButtonWindow *,int>
@@ -461,7 +465,7 @@ public:
 // Type: class SliderWindow (forward reference);
 class SliderWindow : public GraphicWindow
 {
-		enum SliderWindowDirection {
+		enum SliderWindow::SliderWindowDirection {
 			nSliderWindowDirectionHorizontal = 0,
 			nSliderWindowDirectionVertical = 1,
 		};
@@ -509,6 +513,10 @@ public:
 };
 
 // Type: enum SliderWindow::SliderWindowDirection;
+	enum SliderWindow::SliderWindowDirection {
+		nSliderWindowDirectionHorizontal = 0,
+		nSliderWindowDirectionVertical = 1,
+	};
 
 // Type: class basic_string<char>;
 class basic_string<char>{
@@ -618,7 +626,7 @@ public:
 // Type: class ScrollBarWindow (forward reference);
 class ScrollBarWindow : public SliderWindow
 {
-		enum ScrollHitTestResult {
+		enum ScrollBarWindow::ScrollHitTestResult {
 			nScrollHitTestResultNone = 0,
 			nScrollHitTestResultLinePrevious = 1,
 			nScrollHitTestResultLineNext = 2,
@@ -670,6 +678,14 @@ protected:
 };
 
 // Type: enum ScrollBarWindow::ScrollHitTestResult;
+	enum ScrollBarWindow::ScrollHitTestResult {
+		nScrollHitTestResultNone = 0,
+		nScrollHitTestResultLinePrevious = 1,
+		nScrollHitTestResultLineNext = 2,
+		nScrollHitTestResultPagePrevious = 3,
+		nScrollHitTestResultPageNext = 4,
+		nScrollHitTestResultThumb = 5,
+	};
 
 // Type: class ListBoxWindow (forward reference);
 class ListBoxWindow : public GraphicWindow
@@ -937,6 +953,7 @@ public:
 };
 
 // Type: struct list<basic_string<char>>::list_node_buffer (forward reference);
+// list<basic_string<char>>::list_node_buffer Class implementation not found
 
 // Type: struct SparkalRect;
 struct SparkalRect{
@@ -951,7 +968,7 @@ struct SparkalRect{
 // Type: class SliderWindow;
 class SliderWindow : public GraphicWindow
 {
-		enum SliderWindowDirection {
+		enum SliderWindow::SliderWindowDirection {
 			nSliderWindowDirectionHorizontal = 0,
 			nSliderWindowDirectionVertical = 1,
 		};
@@ -1001,7 +1018,7 @@ public:
 // Type: class ButtonWindow;
 class ButtonWindow : public GraphicWindow
 {
-		enum ButtonState {
+		enum ButtonWindow::ButtonState {
 			nButtonStateDisabled = 0,
 			nButtonStateOff = 1,
 			nButtonStateOn = 2,

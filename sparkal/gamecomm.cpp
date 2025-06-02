@@ -310,14 +310,17 @@ struct Shortcut{
 // Type: char[260];
 
 // Type: struct Shortcut (forward reference);
+// Shortcut Class implementation not found
 
 // Type: long *;
 
 // Type: class CGameApp (forward reference);
+// CGameApp Class implementation not found
 
 // Type: uint32_t;
 
 // Type: struct list<Shortcut>::list_node (forward reference);
+// list<Shortcut>::list_node Class implementation not found
 
 // Type: class list<Shortcut>::iterator (forward reference);
 class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
@@ -343,15 +346,15 @@ struct bidirectional_iterator<Shortcut,int>{
 
 // Type: class PFile;
 class PFile{
-		enum __unnamed {
+		enum PFile::__unnamed {
 			FileNull = -1,
 		};
-		enum SeekTypes {
+		enum PFile::SeekTypes {
 			N_SEEK_FROM_FILE_START = 0,
 			N_SEEK_FROM_FILE_CURRENT = 1,
 			N_SEEK_FROM_FILE_END = 2,
 		};
-		enum AccessTypes {
+		enum PFile::AccessTypes {
 			ReadOnly = 0,
 			ReadWrite = 2,
 			WriteOnly = 1,
@@ -366,12 +369,12 @@ class PFile{
 			DenyRdWr = 16,
 			NoInherit = 128,
 		};
-		enum PermissionTypes {
+		enum PFile::PermissionTypes {
 			PermRead = 256,
 			PermWrite = 128,
 			PermRdWr = 384,
 		};
-		enum seek_dir {
+		enum PFile::seek_dir {
 			beg = 0,
 			cur = 1,
 			end = 2,

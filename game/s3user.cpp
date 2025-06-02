@@ -39,14 +39,17 @@ struct tagUserCityInfo{
 // Type: void;
 
 // Type: struct tagUserPersonalInfo (forward reference);
+// tagUserPersonalInfo Class implementation not found
 
 // Type: struct tagCitySettings (forward reference);
+// tagCitySettings Class implementation not found
 
 // Type: int32_t;
 
 // Type: int32_t *[9];
 
 // Type: struct tagCareerCityInfo (forward reference);
+// tagCareerCityInfo Class implementation not found
 
 // Type: char[256];
 

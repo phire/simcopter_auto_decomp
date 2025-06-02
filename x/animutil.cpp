@@ -13,6 +13,7 @@ struct DXZY{
 };
 
 // Type: struct DXZY (forward reference);
+// DXZY Class implementation not found
 
 // Type: void;
 
@@ -21,12 +22,14 @@ struct DXZY{
 // Type: unsigned short;
 
 // Type: struct XZY (forward reference);
+// XZY Class implementation not found
 
 // Type: float *;
 
 // Type: short *;
 
 // Type: struct Polar (forward reference);
+// Polar Class implementation not found
 
 // Type: struct Polar;
 struct Polar{
@@ -43,8 +46,10 @@ struct Polar{
 // Type: double;
 
 // Type: struct Rect (forward reference);
+// Rect Class implementation not found
 
 // Type: struct Point (forward reference);
+// Point Class implementation not found
 
 // Type: struct Point;
 struct Point{
@@ -63,6 +68,10 @@ struct Rect{
 // Type: unsigned long;
 
 // Type: enum UseDrawGrid;
+	enum UseDrawGrid {
+		kReturnPosition = 0,
+		kActuallyDrawGrid = 1,
+	};
 
 // Type: void * __ptr32;
 

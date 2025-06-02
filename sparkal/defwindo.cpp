@@ -58,8 +58,10 @@ protected:
 };
 
 // Type: class ICommander (forward reference);
+// ICommander Class implementation not found
 
 // Type: class ScreenBuffer (forward reference);
+// ScreenBuffer Class implementation not found
 
 // Type: unsigned long;
 

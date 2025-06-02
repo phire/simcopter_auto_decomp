@@ -5,6 +5,7 @@
 // Type: char *;
 
 // Type: class CGameApp (forward reference);
+// CGameApp Class implementation not found
 
 // Type: long;
 
@@ -208,8 +209,10 @@ public:
 };
 
 // Type: class SmackerBackBuffer (forward reference);
+// SmackerBackBuffer Class implementation not found
 
 // Type: struct VRAppInitThreadStruct (forward reference);
+// VRAppInitThreadStruct Class implementation not found
 
 // Type: void;
 

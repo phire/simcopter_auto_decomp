@@ -15,6 +15,7 @@
 // Type: char;
 
 // Type: struct Rect (forward reference);
+// Rect Class implementation not found
 
 // Type: short *;
 

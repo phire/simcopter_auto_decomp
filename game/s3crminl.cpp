@@ -17,14 +17,14 @@ class CriminalEvaderCarClass : public AutomobileClass
 {
 public:
 	static class CriminalEvaderCarClass* criminalCars[0];
-		enum MissionState {
+		enum CriminalEvaderCarClass::MissionState {
 			CRUISING = 0,
 			SEARCHING = 1,
 			ON_THE_RUN = 2,
 			OUT_OF_CAR = 3,
 			MISSION_OVER = 4,
 		};
-		enum CriminalType {
+		enum CriminalEvaderCarClass::CriminalType {
 			BURGLAR = 0,
 			DRUG_PUSHER = 1,
 			SNIPER = 2,
@@ -106,12 +106,13 @@ private:
 // Type: unsigned short;
 
 // Type: struct _AUTO_LOAD_SAVE (forward reference);
+// _AUTO_LOAD_SAVE Class implementation not found
 
 // Type: uint32_t;
 
 // Type: class AutomobileClass;
 class AutomobileClass{
-		enum __unnamed {
+		enum AutomobileClass::__unnamed {
 			CAR_TYPES = 7,
 			PERCENTAGE_OF_AUTO1 = 10,
 			PERCENTAGE_OF_AUTO2 = 20,
@@ -122,7 +123,7 @@ class AutomobileClass{
 			PERCENTAGE_OF_AUTO7 = 20,
 			TOTAL_PERCENTAGE = 110,
 		};
-		enum __unnamed {
+		enum AutomobileClass::__unnamed {
 			NO_X_POSITION = -1,
 			STARTING_X = 3,
 			ENDING_X = 125,
@@ -130,7 +131,7 @@ class AutomobileClass{
 			STARTING_Y = 3,
 			ENDING_Y = 125,
 		};
-		enum IntersectionTypes {
+		enum AutomobileClass::IntersectionTypes {
 			DEAD_END = 0,
 			STRAIGHT_AHEAD = 1,
 			LEFT_ONLY = 2,
@@ -141,7 +142,7 @@ class AutomobileClass{
 			LEFT_STRAIGHT_OR_RIGHT = 7,
 			DEAD_END_HIWAY = 16,
 		};
-		enum StoppedReasons {
+		enum AutomobileClass::StoppedReasons {
 			NO_REASON = 0,
 			TRAFFIC = 1,
 			STOPPED_TRAFFIC = 2,
@@ -155,25 +156,25 @@ class AutomobileClass{
 			INTERSECTION_FULL = 10,
 			BEEN_PULLED_OVER = 11,
 		};
-		enum RoadTileOffsets {
+		enum AutomobileClass::RoadTileOffsets {
 			RD_CENTOFF = 851968,
 			RD_EDGEOFF = 131072,
 		};
-		enum HiwayOffsets {
+		enum AutomobileClass::HiwayOffsets {
 			HW_CENTOFF_LANE1 = 851968,
 			HW_EDGEOFF_LANE1 = 131072,
 			HW_CENTOFF_LANE2 = 851968,
 			HW_EDGEOFF_LANE2 = 131072,
 			HW_HEIGHT = 2031616,
 		};
-		enum PersonState {
+		enum AutomobileClass::PersonState {
 			PS_IN_VEHICLE = 0,
 			PS_OUT_OF_VEHICLE = 1,
 			PS_BACK_IN_VEHICLE = 2,
 			PS_GOT_AWAY = 3,
 			PS_MISSION_OVER = 4,
 		};
-		enum __unnamed {
+		enum AutomobileClass::__unnamed {
 			CAR_RADIUS = 327680,
 			COLLISION_SPACE = 655360,
 			ROAD_SPEED = 2621440,
@@ -186,7 +187,7 @@ class AutomobileClass{
 			MAX_TIME_TO_WAIT_PULLED_OVER = 196608,
 			MAX_TIME_TO_WAIT_BEFORE_BEAMING = 235,
 		};
-		enum Flags {
+		enum AutomobileClass::Flags {
 			AUTO_INITIALIZED = 1,
 			AUTO_PLACED = 2,
 			AUTO_TURNING = 4,

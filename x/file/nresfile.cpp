@@ -108,7 +108,7 @@ public:
 
 // Type: class FlatFile;
 class FlatFile{
-		enum __unnamed {
+		enum FlatFile::__unnamed {
 			kMaxNameLen = 255,
 		};
 protected:

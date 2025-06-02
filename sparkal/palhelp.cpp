@@ -51,7 +51,7 @@ struct SparkalColor{
 
 // Type: class MTimer;
 class MTimer{
-		enum TimerResolution {
+		enum MTimer::TimerResolution {
 			nTimerResolutionMicroseconds = 0,
 			nTimerResolutionMilliseconds = 1,
 			nTimerResolutionSeconds = 2,
@@ -89,6 +89,7 @@ struct SparkalColor{
 };
 
 // Type: struct SparkalPalette::FadeToPalette::TempPalette (forward reference);
+// SparkalPalette::FadeToPalette::TempPalette Class implementation not found
 
 // Type: class CopterSparkalPalette (forward reference);
 class CopterSparkalPalette : public SparkalPalette

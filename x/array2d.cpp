@@ -9,7 +9,7 @@ class _cArray{
 	using ArrayName = unsigned char[16];
 	using TinyName = unsigned long;
 	using FileNameStr = unsigned char[16];
-		enum __unnamed {
+		enum _cArray::__unnamed {
 			kHeaderSize = 8,
 			kMaxArrays = 1024,
 			kMaxLoadable = 64,
@@ -122,6 +122,7 @@ public:
 // Type: char *;
 
 // Type: struct _cArray::Header (forward reference);
+// _cArray::Header Class implementation not found
 
 // Type: unsigned char[256];
 
@@ -140,7 +141,7 @@ class _cArray{
 	using ArrayName = unsigned char[16];
 	using TinyName = unsigned long;
 	using FileNameStr = unsigned char[16];
-		enum __unnamed {
+		enum _cArray::__unnamed {
 			kHeaderSize = 8,
 			kMaxArrays = 1024,
 			kMaxLoadable = 64,
@@ -283,7 +284,7 @@ public:
 
 // Type: class FlatFile;
 class FlatFile{
-		enum __unnamed {
+		enum FlatFile::__unnamed {
 			kMaxNameLen = 255,
 		};
 protected:

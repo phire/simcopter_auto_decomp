@@ -42,6 +42,7 @@ struct _CELL_FIRE_DATA{
 };
 
 // Type: struct _FIRE_DATA (forward reference);
+// _FIRE_DATA Class implementation not found
 
 // Type: void;
 
@@ -61,8 +62,10 @@ struct VRObjInfo{
 };
 
 // Type: struct _CELL_FIRE_DATA (forward reference);
+// _CELL_FIRE_DATA Class implementation not found
 
 // Type: struct _CELL_INFO (forward reference);
+// _CELL_INFO Class implementation not found
 
 // Type: struct _MISSION_PARMS;
 struct _MISSION_PARMS{
@@ -74,6 +77,7 @@ struct _MISSION_PARMS{
 };
 
 // Type: struct _STOBJ_INST (forward reference);
+// _STOBJ_INST Class implementation not found
 
 // Type: struct Point3d;
 struct Point3d{
@@ -83,12 +87,16 @@ struct Point3d{
 };
 
 // Type: struct Point2d (forward reference);
+// Point2d Class implementation not found
 
 // Type: struct Point3d (forward reference);
+// Point3d Class implementation not found
 
 // Type: struct _DYOBJ_INST (forward reference);
+// _DYOBJ_INST Class implementation not found
 
 // Type: struct _LZ_INFO (forward reference);
+// _LZ_INFO Class implementation not found
 
 // Type: struct Point2d;
 struct Point2d{

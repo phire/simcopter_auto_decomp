@@ -86,6 +86,7 @@ public:
 // Type: char *;
 
 // Type: struct SoundPreferences (forward reference);
+// SoundPreferences Class implementation not found
 
 // Type: void * __ptr32;
 
@@ -172,6 +173,7 @@ protected:
 };
 
 // Type: struct Point3d (forward reference);
+// Point3d Class implementation not found
 
 // Type: struct Point3d;
 struct Point3d{
@@ -189,13 +191,13 @@ public:
 
 // Type: class Sound;
 class Sound{
-		enum SoundSourceType {
+		enum Sound::SoundSourceType {
 			nSoundSourceTypeResource = 0,
 			nSoundSourceTypeFile = 1,
 		};
 public:
 	enum Sound::SoundSourceType nSoundSourceType;
-		enum SoundDuplicateType {
+		enum Sound::SoundDuplicateType {
 			nSoundDuplicateDefault = 0,
 			nSoundDuplicateInterrupt = 1,
 			nSoundDuplicateContinue = 2,

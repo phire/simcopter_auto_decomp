@@ -19,6 +19,7 @@
 // Type: struct Point2d[256];
 
 // Type: struct Point2d (forward reference);
+// Point2d Class implementation not found
 
 // Type: struct Point2d[16384];
 
@@ -66,18 +67,23 @@ struct tagLogCityEnterExit{
 // Type: void;
 
 // Type: struct VRBmpHdr (forward reference);
+// VRBmpHdr Class implementation not found
 
 // Type: struct _STOBJ_INST (forward reference);
+// _STOBJ_INST Class implementation not found
 
 // Type: struct _CELL_INFO (forward reference);
+// _CELL_INFO Class implementation not found
 
 // Type: struct Point3d (forward reference);
+// Point3d Class implementation not found
 
 // Type: double;
 
 // Type: unsigned short;
 
 // Type: struct _DYOBJ_INST (forward reference);
+// _DYOBJ_INST Class implementation not found
 
 
 

@@ -9,12 +9,14 @@
 // Type: long;
 
 // Type: struct tagMode (forward reference);
+// tagMode Class implementation not found
 
 // Type: void * __ptr32;
 
 // Type: void;
 
 // Type: struct _DDSURFACEDESC (forward reference);
+// _DDSURFACEDESC Class implementation not found
 
 
 

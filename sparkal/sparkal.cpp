@@ -23,7 +23,7 @@ public:
 	unsigned long ResetFlag(unsigned long);
 	int32_t GetRuntimePlatform();
 	int32_t DecideRuntimePlatform();
-		enum PlatfromType {
+		enum CSparkalApp::PlatfromType {
 			Unknown = 0,
 			Win32s = 1,
 			WinNT31 = 2,
@@ -39,6 +39,7 @@ protected:
 };
 
 // Type: class CSparkalApp (forward reference);
+// CSparkalApp Class implementation not found
 
 // Type: float;
 
@@ -50,7 +51,7 @@ protected:
 
 // Type: class MTimer;
 class MTimer{
-		enum TimerResolution {
+		enum MTimer::TimerResolution {
 			nTimerResolutionMicroseconds = 0,
 			nTimerResolutionMilliseconds = 1,
 			nTimerResolutionSeconds = 2,

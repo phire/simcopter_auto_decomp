@@ -118,6 +118,7 @@ struct joyinfoex_tag{
 // Type: unsigned long;
 
 // Type: struct joyinfoex_tag (forward reference);
+// joyinfoex_tag Class implementation not found
 
 // Type: unsigned long *;
 

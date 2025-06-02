@@ -24,14 +24,17 @@ public:
 // Type: unsigned long *;
 
 // Type: struct tLZSSBinaryForest (forward reference);
+// tLZSSBinaryForest Class implementation not found
 
 // Type: short;
 
 // Type: struct tCompressState (forward reference);
+// tCompressState Class implementation not found
 
 // Type: unsigned char[5];
 
 // Type: struct tACompModel (forward reference);
+// tACompModel Class implementation not found
 
 // Type: unsigned char;
 

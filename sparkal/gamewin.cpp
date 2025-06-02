@@ -162,6 +162,7 @@ public:
 };
 
 // Type: struct tagMINMAXINFO (forward reference);
+// tagMINMAXINFO Class implementation not found
 
 // Type: class CSparkalWindow (forward reference);
 class CSparkalWindow{

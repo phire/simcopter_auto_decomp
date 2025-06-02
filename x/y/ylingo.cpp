@@ -17,7 +17,7 @@ public:
 	// calltype: NearC
 	static void SwizzleTree(void * __ptr32, long);
 	virtual void (*)(void * __ptr32, long) GetSwizzler();
-		enum __unnamed {
+		enum YObjLang::__unnamed {
 			kIdle = 0,
 			kSetAnim = 1,
 			kAttr = 2,
@@ -86,7 +86,7 @@ public:
 		};
 public:
 	virtual short CountPrimitives();
-		enum __unnamed {
+		enum YObjLang::__unnamed {
 			kMyself = 0,
 			kTreeParam = 1,
 			kTargetObj = 2,
@@ -229,7 +229,7 @@ public:
 		[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
 		 rhsOwner;
 	};
-		enum __unnamed {
+		enum YObjLang::__unnamed {
 			kGreaterThan = 0,
 			kLessThan = 1,
 			kEquals = 2,
@@ -251,7 +251,7 @@ public:
 	};
 	// TODO: Unknown nested type: <class 'tpi.LfUnion'>
 	// union YObjLang::Param Param
-		enum TreeNum {
+		enum YObjLang::TreeNum {
 			kNoTree = -1,
 			kSpotlightTree = 900,
 			kMegaphoneTree = 901,
@@ -261,7 +261,7 @@ public:
 			kRunOrSwoonTree = 905,
 			kSwoonTree = 906,
 		};
-		enum __unnamed {
+		enum YObjLang::__unnamed {
 			kWeightStringsID = 140,
 			kPrimitiveStringsID = 139,
 			kDataLabelsID = 129,
@@ -328,16 +328,20 @@ public:
 // Type: short;
 
 // Type: struct Behavior::NodeParameter (forward reference);
+// Behavior::NodeParameter Class implementation not found
 
 // Type: struct YObjLang::AttrParam (forward reference);
+// YObjLang::AttrParam Class implementation not found
 
 // Type: void * __ptr32;
 
 // Type: long;
 
 // Type: struct Behavior::Tree (forward reference);
+// Behavior::Tree Class implementation not found
 
 // Type: struct Behavior::Node (forward reference);
+// Behavior::Node Class implementation not found
 
 // Type: unsigned short;
 
@@ -350,7 +354,7 @@ protected:
 	class StdResLoader* fPrivateTrees;
 	class Language* fLanguage;
 	void (*fSwizzler)(void * __ptr32, long);
-		enum __unnamed {
+		enum Behavior::__unnamed {
 			kPrimitiveBase = 0,
 			kPrimitiveMax = 255,
 			kActionBase = 256,
@@ -380,7 +384,7 @@ protected:
 		char falseTrans;
 		struct Behavior::NodeParameter param;
 	};
-		enum __unnamed {
+		enum Behavior::__unnamed {
 			kUndefined = -3,
 			kPopOutTrue = -2,
 			kPopOutFalse = -1,
@@ -425,6 +429,7 @@ public:
 };
 
 // Type: class Language (forward reference);
+// Language Class implementation not found
 
 
 

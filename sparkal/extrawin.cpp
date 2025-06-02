@@ -79,6 +79,7 @@ public:
 // Type: int32_t;
 
 // Type: class GraphicWindow (forward reference);
+// GraphicWindow Class implementation not found
 
 // Type: class GraphicWindowOwner (forward reference);
 class GraphicWindowOwner{
@@ -197,7 +198,7 @@ public:
 // Type: class ButtonWindow (forward reference);
 class ButtonWindow : public GraphicWindow
 {
-		enum ButtonState {
+		enum ButtonWindow::ButtonState {
 			nButtonStateDisabled = 0,
 			nButtonStateOff = 1,
 			nButtonStateOn = 2,
@@ -344,12 +345,12 @@ public:
 // Type: class AnimationWindow (forward reference);
 class AnimationWindow : public GraphicWindow
 {
-		enum AnimationLoopType {
+		enum AnimationWindow::AnimationLoopType {
 			nAnimationLoopTypeOnce = 0,
 			nAnimationLoopTypeCircular = 1,
 			nAnimationLoopTypeBackAndForth = 2,
 		};
-		enum AnimationDirection {
+		enum AnimationWindow::AnimationDirection {
 			nAnimationDirectionForward = 1,
 			nAnimationDirectionBackward = -1,
 		};
@@ -570,6 +571,11 @@ public:
 };
 
 // Type: enum AnimationWindow::AnimationLoopType;
+	enum AnimationWindow::AnimationLoopType {
+		nAnimationLoopTypeOnce = 0,
+		nAnimationLoopTypeCircular = 1,
+		nAnimationLoopTypeBackAndForth = 2,
+	};
 
 // Type: class RenderSettingsWindow (forward reference);
 class RenderSettingsWindow : public GraphicWindow
@@ -663,6 +669,7 @@ protected:
 };
 
 // Type: class CBackBuffer (forward reference);
+// CBackBuffer Class implementation not found
 
 // Type: class SoundSettingsWindow (forward reference);
 class SoundSettingsWindow : public GraphicWindow
@@ -689,8 +696,10 @@ protected:
 };
 
 // Type: struct SoundPreferences (forward reference);
+// SoundPreferences Class implementation not found
 
 // Type: struct RadioPreferences (forward reference);
+// RadioPreferences Class implementation not found
 
 // Type: class CitySettingsWindow (forward reference);
 class CitySettingsWindow : public GraphicWindow
@@ -707,6 +716,7 @@ protected:
 };
 
 // Type: struct tagCitySettings (forward reference);
+// tagCitySettings Class implementation not found
 
 // Type: class PopupMenuExtra (forward reference);
 class PopupMenuExtra : public PopupMenuWindow
@@ -1004,7 +1014,7 @@ protected:
 // Type: class ButtonWindow;
 class ButtonWindow : public GraphicWindow
 {
-		enum ButtonState {
+		enum ButtonWindow::ButtonState {
 			nButtonStateDisabled = 0,
 			nButtonStateOff = 1,
 			nButtonStateOn = 2,

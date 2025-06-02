@@ -27,6 +27,7 @@ public:
 // Type: void;
 
 // Type: class Directory (forward reference);
+// Directory Class implementation not found
 
 // Type: class basic_string<char> (forward reference);
 class basic_string<char>{
@@ -565,6 +566,7 @@ public:
 };
 
 // Type: struct list<DirectoryEntry>::list_node (forward reference);
+// list<DirectoryEntry>::list_node Class implementation not found
 
 // Type: class list<basic_string<char>>::iterator;
 class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_string<char>,int>
@@ -585,6 +587,7 @@ public:
 };
 
 // Type: struct list<basic_string<char>>::list_node (forward reference);
+// list<basic_string<char>>::list_node Class implementation not found
 
 // Type: class list<basic_string<char>>::iterator (forward reference);
 class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_string<char>,int>

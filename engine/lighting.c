@@ -16,22 +16,27 @@ struct Point3d{
 // Type: int32_t;
 
 // Type: struct TEXT_Resource (forward reference);
+// TEXT_Resource Class implementation not found
 
 // Type: struct VRResource (forward reference);
+// VRResource Class implementation not found
 
 // Type: unsigned char *;
 
 // Type: struct VRBmpHdr (forward reference);
+// VRBmpHdr Class implementation not found
 
 // Type: uint32_t *;
 
 // Type: int32_t *;
 
 // Type: struct _FaceHdr (forward reference);
+// _FaceHdr Class implementation not found
 
 // Type: void;
 
 // Type: struct COLOR_SHADE (forward reference);
+// COLOR_SHADE Class implementation not found
 
 // Type: struct VRObjInfo;
 struct VRObjInfo{
@@ -49,8 +54,10 @@ struct VRObjInfo{
 // Type: int32_t[4][4];
 
 // Type: struct ObjectHdr (forward reference);
+// ObjectHdr Class implementation not found
 
 // Type: struct Point3d (forward reference);
+// Point3d Class implementation not found
 
 
 

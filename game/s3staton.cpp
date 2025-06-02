@@ -42,6 +42,7 @@ struct _GridCoordinates{
 };
 
 // Type: struct _GridCoordinates (forward reference);
+// _GridCoordinates Class implementation not found
 
 // Type: short;
 
@@ -70,7 +71,7 @@ struct _StationHeapStruct{
 // Type: class EmergencyVehicleClass (forward reference);
 class EmergencyVehicleClass : public AutomobileClass
 {
-		enum __unnamed {
+		enum EmergencyVehicleClass::__unnamed {
 			MAXIMUM_DISTANCE_FROM_BASE = 7,
 			MAXIMUM_TIME_TO_EMERGENCY = 3932160,
 			AMBULANCE_CAPACITY = 2,
@@ -141,14 +142,32 @@ struct Point3d{
 };
 
 // Type: enum EmergencyLevel;
+	enum EmergencyLevel {
+		ES_UNDEFINED = 0,
+		ES_STAKEOUT = 1,
+		ES_RETURN = 2,
+		ES_PURSUIT = 3,
+		ES_DISPATCHED = 4,
+		ES_AT_SCENE = 5,
+		ES_COP_CHASE = 6,
+	};
 
 // Type: struct _StationHeapStruct (forward reference);
+// _StationHeapStruct Class implementation not found
 
 // Type: struct _VehicleHeapStruct (forward reference);
+// _VehicleHeapStruct Class implementation not found
 
 // Type: long;
 
 // Type: enum EmergencyType;
+	enum EmergencyType {
+		NO_EMERGENCY = 0,
+		FIRE_TRUCK = 1,
+		AMBULANCE_CAR = 2,
+		POLICE_CHASING_CAR = 3,
+		POLICE_ON_PATROL = 4,
+	};
 
 // Type: struct Goal;
 struct Goal{
@@ -357,14 +376,16 @@ protected:
 };
 
 // Type: struct _StructStation (forward reference);
+// _StructStation Class implementation not found
 
 // Type: struct RGVertex (forward reference);
+// RGVertex Class implementation not found
 
 // Type: unsigned char *;
 
 // Type: class AutomobileClass;
 class AutomobileClass{
-		enum __unnamed {
+		enum AutomobileClass::__unnamed {
 			CAR_TYPES = 7,
 			PERCENTAGE_OF_AUTO1 = 10,
 			PERCENTAGE_OF_AUTO2 = 20,
@@ -375,7 +396,7 @@ class AutomobileClass{
 			PERCENTAGE_OF_AUTO7 = 20,
 			TOTAL_PERCENTAGE = 110,
 		};
-		enum __unnamed {
+		enum AutomobileClass::__unnamed {
 			NO_X_POSITION = -1,
 			STARTING_X = 3,
 			ENDING_X = 125,
@@ -383,7 +404,7 @@ class AutomobileClass{
 			STARTING_Y = 3,
 			ENDING_Y = 125,
 		};
-		enum IntersectionTypes {
+		enum AutomobileClass::IntersectionTypes {
 			DEAD_END = 0,
 			STRAIGHT_AHEAD = 1,
 			LEFT_ONLY = 2,
@@ -394,7 +415,7 @@ class AutomobileClass{
 			LEFT_STRAIGHT_OR_RIGHT = 7,
 			DEAD_END_HIWAY = 16,
 		};
-		enum StoppedReasons {
+		enum AutomobileClass::StoppedReasons {
 			NO_REASON = 0,
 			TRAFFIC = 1,
 			STOPPED_TRAFFIC = 2,
@@ -408,25 +429,25 @@ class AutomobileClass{
 			INTERSECTION_FULL = 10,
 			BEEN_PULLED_OVER = 11,
 		};
-		enum RoadTileOffsets {
+		enum AutomobileClass::RoadTileOffsets {
 			RD_CENTOFF = 851968,
 			RD_EDGEOFF = 131072,
 		};
-		enum HiwayOffsets {
+		enum AutomobileClass::HiwayOffsets {
 			HW_CENTOFF_LANE1 = 851968,
 			HW_EDGEOFF_LANE1 = 131072,
 			HW_CENTOFF_LANE2 = 851968,
 			HW_EDGEOFF_LANE2 = 131072,
 			HW_HEIGHT = 2031616,
 		};
-		enum PersonState {
+		enum AutomobileClass::PersonState {
 			PS_IN_VEHICLE = 0,
 			PS_OUT_OF_VEHICLE = 1,
 			PS_BACK_IN_VEHICLE = 2,
 			PS_GOT_AWAY = 3,
 			PS_MISSION_OVER = 4,
 		};
-		enum __unnamed {
+		enum AutomobileClass::__unnamed {
 			CAR_RADIUS = 327680,
 			COLLISION_SPACE = 655360,
 			ROAD_SPEED = 2621440,
@@ -439,7 +460,7 @@ class AutomobileClass{
 			MAX_TIME_TO_WAIT_PULLED_OVER = 196608,
 			MAX_TIME_TO_WAIT_BEFORE_BEAMING = 235,
 		};
-		enum Flags {
+		enum AutomobileClass::Flags {
 			AUTO_INITIALIZED = 1,
 			AUTO_PLACED = 2,
 			AUTO_TURNING = 4,
@@ -575,13 +596,13 @@ public:
 
 // Type: class Sound;
 class Sound{
-		enum SoundSourceType {
+		enum Sound::SoundSourceType {
 			nSoundSourceTypeResource = 0,
 			nSoundSourceTypeFile = 1,
 		};
 public:
 	enum Sound::SoundSourceType nSoundSourceType;
-		enum SoundDuplicateType {
+		enum Sound::SoundDuplicateType {
 			nSoundDuplicateDefault = 0,
 			nSoundDuplicateInterrupt = 1,
 			nSoundDuplicateContinue = 2,

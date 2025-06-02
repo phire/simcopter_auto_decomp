@@ -32,12 +32,14 @@ struct _MISSILE_DATA{
 // Type: int32_t;
 
 // Type: struct _MISSILE_DATA (forward reference);
+// _MISSILE_DATA Class implementation not found
 
 // Type: void;
 
 // Type: char *;
 
 // Type: struct Point3d (forward reference);
+// Point3d Class implementation not found
 
 // Type: struct VRObjInfo;
 struct VRObjInfo{
@@ -53,8 +55,10 @@ struct VRObjInfo{
 };
 
 // Type: struct Point2d (forward reference);
+// Point2d Class implementation not found
 
 // Type: struct _DYOBJ_INST (forward reference);
+// _DYOBJ_INST Class implementation not found
 
 // Type: struct VRview;
 struct VRview{
@@ -64,6 +68,7 @@ struct VRview{
 };
 
 // Type: struct _CELL_INFO (forward reference);
+// _CELL_INFO Class implementation not found
 
 // Type: struct _MISSION_PARMS;
 struct _MISSION_PARMS{
@@ -100,10 +105,12 @@ struct Point2d{
 };
 
 // Type: struct _CELL_FIRE_DATA (forward reference);
+// _CELL_FIRE_DATA Class implementation not found
 
 // Type: int32_t[4][4];
 
 // Type: struct _STOBJ_INST (forward reference);
+// _STOBJ_INST Class implementation not found
 
 // Type: struct FP3D;
 struct FP3D{
@@ -115,6 +122,7 @@ struct FP3D{
 // Type: double;
 
 // Type: struct VRBlit (forward reference);
+// VRBlit Class implementation not found
 
 // Type: long *;
 

@@ -32,6 +32,7 @@ protected:
 // Type: void;
 
 // Type: class CSparkalWindow (forward reference);
+// CSparkalWindow Class implementation not found
 
 // Type: class CDefaultCommander (forward reference);
 class CDefaultCommander : public ICommander

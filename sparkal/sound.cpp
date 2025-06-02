@@ -94,13 +94,13 @@ public:
 
 // Type: class Sound (forward reference);
 class Sound{
-		enum SoundSourceType {
+		enum Sound::SoundSourceType {
 			nSoundSourceTypeResource = 0,
 			nSoundSourceTypeFile = 1,
 		};
 public:
 	enum Sound::SoundSourceType nSoundSourceType;
-		enum SoundDuplicateType {
+		enum Sound::SoundDuplicateType {
 			nSoundDuplicateDefault = 0,
 			nSoundDuplicateInterrupt = 1,
 			nSoundDuplicateContinue = 2,
@@ -354,6 +354,7 @@ struct _DSBUFFERDESC{
 };
 
 // Type: struct _DSBUFFERDESC (forward reference);
+// _DSBUFFERDESC Class implementation not found
 
 // Type: struct IDirectSoundBuffer (forward reference);
 struct IDirectSoundBuffer : public IUnknown
@@ -447,13 +448,13 @@ struct IUnknown{
 
 // Type: class Sound;
 class Sound{
-		enum SoundSourceType {
+		enum Sound::SoundSourceType {
 			nSoundSourceTypeResource = 0,
 			nSoundSourceTypeFile = 1,
 		};
 public:
 	enum Sound::SoundSourceType nSoundSourceType;
-		enum SoundDuplicateType {
+		enum Sound::SoundDuplicateType {
 			nSoundDuplicateDefault = 0,
 			nSoundDuplicateInterrupt = 1,
 			nSoundDuplicateContinue = 2,

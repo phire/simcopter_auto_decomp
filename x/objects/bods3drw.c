@@ -50,6 +50,7 @@ struct BmpLineInfo{
 // Type: unsigned char *;
 
 // Type: struct VRBmpHdr (forward reference);
+// VRBmpHdr Class implementation not found
 
 // Type: struct Point3D;
 struct Point3D{
@@ -59,8 +60,10 @@ struct Point3D{
 };
 
 // Type: struct BmpLineInfo (forward reference);
+// BmpLineInfo Class implementation not found
 
 // Type: struct Point3d (forward reference);
+// Point3d Class implementation not found
 
 // Type: char[26];
 

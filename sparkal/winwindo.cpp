@@ -127,6 +127,7 @@ struct tagSIZE{
 // Type: struct tagPALETTEENTRY[256];
 
 // Type: struct tagPALETTEENTRY (forward reference);
+// tagPALETTEENTRY Class implementation not found
 
 // Type: unsigned char[256];
 

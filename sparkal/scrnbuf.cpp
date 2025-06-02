@@ -54,6 +54,7 @@ struct SparkalRect{
 // Type: void;
 
 // Type: class CSparkalWindow (forward reference);
+// CSparkalWindow Class implementation not found
 
 // Type: long;
 
@@ -70,6 +71,10 @@ struct SparkalColor{
 // Type: int32_t;
 
 // Type: enum tagModeType;
+	enum tagModeType {
+		nModeTypeFullScreen = 0,
+		nModeTypeWindowed = 1,
+	};
 
 // Type: struct _DDSCAPS;
 struct _DDSCAPS{

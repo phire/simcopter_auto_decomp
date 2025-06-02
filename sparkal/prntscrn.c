@@ -47,6 +47,7 @@ struct PCXHEAD{
 // Type: void;
 
 // Type: struct _iobuf (forward reference);
+// _iobuf Class implementation not found
 
 // Type: int32_t;
 

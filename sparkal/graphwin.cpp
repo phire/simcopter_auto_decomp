@@ -17,6 +17,7 @@ struct GraphicWindowColorConstants{
 };
 
 // Type: class GraphicWindow (forward reference);
+// GraphicWindow Class implementation not found
 
 // Type: class list<GraphicWindow *>;
 class list<GraphicWindow *>{
@@ -184,8 +185,10 @@ protected:
 // Type: void ();
 
 // Type: struct list<GraphicWindow *>::list_node_buffer (forward reference);
+// list<GraphicWindow *>::list_node_buffer Class implementation not found
 
 // Type: struct list<GraphicWindow *>::list_node (forward reference);
+// list<GraphicWindow *>::list_node Class implementation not found
 
 // Type: uint32_t;
 
@@ -486,6 +489,7 @@ public:
 // Type: char[261];
 
 // Type: class CBackBuffer (forward reference);
+// CBackBuffer Class implementation not found
 
 // Type: struct SparkalColor (forward reference);
 struct SparkalColor{

@@ -7,7 +7,7 @@
 // Type: class SkyImage (forward reference);
 class SkyImage : public CBackBuffer
 {
-		enum SkyType {
+		enum SkyImage::SkyType {
 			nSkyTypeDay = 0,
 			nSkyTypeNight = 1,
 		};
@@ -34,12 +34,18 @@ protected:
 // Type: void;
 
 // Type: enum SkyImage::SkyType;
+	enum SkyImage::SkyType {
+		nSkyTypeDay = 0,
+		nSkyTypeNight = 1,
+	};
 
 // Type: struct VRResource (forward reference);
+// VRResource Class implementation not found
 
 // Type: char[260];
 
 // Type: struct VRBmpHdr (forward reference);
+// VRBmpHdr Class implementation not found
 
 // Type: class CBackBuffer (forward reference);
 class CBackBuffer : public IBackBuffer

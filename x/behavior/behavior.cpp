@@ -11,7 +11,7 @@ protected:
 	class StdResLoader* fPrivateTrees;
 	class Language* fLanguage;
 	void (*fSwizzler)(void * __ptr32, long);
-		enum __unnamed {
+		enum Behavior::__unnamed {
 			kPrimitiveBase = 0,
 			kPrimitiveMax = 255,
 			kActionBase = 256,
@@ -41,7 +41,7 @@ protected:
 		char falseTrans;
 		struct Behavior::NodeParameter param;
 	};
-		enum __unnamed {
+		enum Behavior::__unnamed {
 			kUndefined = -3,
 			kPopOutTrue = -2,
 			kPopOutFalse = -1,
@@ -86,6 +86,7 @@ public:
 };
 
 // Type: class Language (forward reference);
+// Language Class implementation not found
 
 // Type: class NResFile (forward reference);
 class NResFile : public ResFile
@@ -108,6 +109,7 @@ public:
 };
 
 // Type: struct Behavior::Tree (forward reference);
+// Behavior::Tree Class implementation not found
 
 // Type: long;
 
@@ -116,6 +118,7 @@ public:
 // Type: short;
 
 // Type: struct Behavior::Node (forward reference);
+// Behavior::Node Class implementation not found
 
 // Type: unsigned char *;
 
@@ -183,7 +186,7 @@ public:
 
 // Type: class FlatFile;
 class FlatFile{
-		enum __unnamed {
+		enum FlatFile::__unnamed {
 			kMaxNameLen = 255,
 		};
 protected:

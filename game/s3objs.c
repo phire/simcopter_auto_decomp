@@ -27,6 +27,7 @@ struct VRFaceInfo{
 };
 
 // Type: struct VRBmpHdr (forward reference);
+// VRBmpHdr Class implementation not found
 
 // Type: struct VRObjInfo;
 struct VRObjInfo{
@@ -44,12 +45,15 @@ struct VRObjInfo{
 // Type: void;
 
 // Type: struct VRBlit (forward reference);
+// VRBlit Class implementation not found
 
 // Type: char;
 
 // Type: struct _LZ_INFO (forward reference);
+// _LZ_INFO Class implementation not found
 
 // Type: struct _DYOBJ_INST (forward reference);
+// _DYOBJ_INST Class implementation not found
 
 
 

@@ -7,8 +7,10 @@
 // Type: void * __ptr32;
 
 // Type: struct tWAVEFORMATEX (forward reference);
+// tWAVEFORMATEX Class implementation not found
 
 // Type: struct _MMCKINFO (forward reference);
+// _MMCKINFO Class implementation not found
 
 // Type: unsigned short;
 

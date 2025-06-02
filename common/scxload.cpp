@@ -56,6 +56,7 @@ public:
 };
 
 // Type: struct SCXNeighborData (forward reference);
+// SCXNeighborData Class implementation not found
 
 // Type: long[11];
 

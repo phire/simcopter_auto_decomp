@@ -280,12 +280,15 @@ struct TypefaceTestStruct{
 // Type: unsigned long;
 
 // Type: struct tagENUMLOGFONTA (forward reference);
+// tagENUMLOGFONTA Class implementation not found
 
 // Type: struct tagNEWTEXTMETRICA (forward reference);
+// tagNEWTEXTMETRICA Class implementation not found
 
 // Type: long;
 
 // Type: struct TypefaceTestStruct (forward reference);
+// TypefaceTestStruct Class implementation not found
 
 
 
