@@ -1351,22 +1351,22 @@ _T76:
 
 // Contribution: 3:00020ca8-00020d15 Module: 161, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005b7ca8
-int32_t CriminalEvaderCarClass::baseTimeBetweenCriminalActivities = { /* <data@0x005b7ca8> */ };
+int32_t CriminalEvaderCarClass::baseTimeBetweenCriminalActivities = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b7cac
-int32_t CriminalEvaderCarClass::maxTimeBetweenCriminalActivities = { /* <data@0x005b7cac> */ };
+int32_t CriminalEvaderCarClass::maxTimeBetweenCriminalActivities = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b7cb0
-int32_t CriminalEvaderCarClass::constantTimeToBeOnTheRun = { /* <data@0x005b7cb0> */ };
+int32_t CriminalEvaderCarClass::constantTimeToBeOnTheRun = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b7cb4
-int32_t CriminalEvaderCarClass::evasionSpeedMultiplier = { /* <data@0x005b7cb4> */ };
+int32_t CriminalEvaderCarClass::evasionSpeedMultiplier = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b7cb8
-short CriminalEvaderCarClass::maxSearchForBuildingRadius = { /* <data@0x005b7cb8> */ };
+short CriminalEvaderCarClass::maxSearchForBuildingRadius = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b7cbc
-int32_t CriminalEvaderCarClass::curCriminalCars = { /* <data@0x005b7cbc> */ };
+int32_t CriminalEvaderCarClass::curCriminalCars = { 0 /* todo */ };
 
 
 

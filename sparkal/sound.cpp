@@ -6113,11 +6113,11 @@ _T38:
 
 // Contribution: 3:00000e58-0000134d Module: 64, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00597e58
-unsigned long SoundSystem::dwMaxWaveFormatExSize = { /* <data@0x00597e58> */ };
+unsigned long SoundSystem::dwMaxWaveFormatExSize = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597e5c
-unsigned long Sound::lTotalMemoryUsage = { /* <data@0x00597e5c> */ };
+unsigned long Sound::lTotalMemoryUsage = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597e60
-struct IDirectSound* DigitalSound::lpDirectSound = { /* <data@0x00597e60> */ };
+struct IDirectSound* DigitalSound::lpDirectSound = { 0 /* todo */ };
 

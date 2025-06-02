@@ -1401,28 +1401,28 @@ void VRFaceSetColor(int32_t face, int32_t color) {
 
 // Contribution: 3:00016c10-00016d6b Module: 132, 8 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005adc10
-struct COLOR_SHADE G_shadetab[36] = { /* <data@0x005adc10> */ };
+struct COLOR_SHADE G_shadetab[36] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005add30
-struct Point3d G_litevect1 = { /* <data@0x005add30> */ };
+struct Point3d G_litevect1 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005add40
-struct Point3d G_litevect2 = { /* <data@0x005add40> */ };
+struct Point3d G_litevect2 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005add50
-struct Point3d G_litevect3 = { /* <data@0x005add50> */ };
+struct Point3d G_litevect3 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005add5c
-static int32_t S_ambient = { /* <data@0x005add5c> */ };
+static int32_t S_ambient = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005add60
-static int32_t S_intensity1 = { /* <data@0x005add60> */ };
+static int32_t S_intensity1 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005add64
-static int32_t S_intensity2 = { /* <data@0x005add64> */ };
+static int32_t S_intensity2 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005add68
-static int32_t S_intensity3 = { /* <data@0x005add68> */ };
+static int32_t S_intensity3 = { 0 /* todo */ };
 
 
 

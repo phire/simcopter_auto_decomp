@@ -4496,16 +4496,16 @@ _T66:
 
 // Contribution: 3:000000a8-000000ab Module: 163, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005970a8
-static void (*$S9)() = { /* <data@0x005970a8> */ };
+static void (*$S9)() = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00020690-0002080a Module: 163, 8 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005b7690
-struct Point2d PlaneClass::lastScannedLocation = { /* <data@0x005b7690> */ };
+struct Point2d PlaneClass::lastScannedLocation = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b7698
-int32_t PlaneClass::sPlaneModelSet = { /* <data@0x005b7698> */ };
+int32_t PlaneClass::sPlaneModelSet = { 0 /* todo */ };
 
 
 

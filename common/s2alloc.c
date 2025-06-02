@@ -570,22 +570,22 @@ void S2FreeAligned(void * __ptr32 mem) {
 
 // Contribution: 3:00004524-0000454a Module: 91, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0059b524
-uint32_t G_alloc_curr = { /* <data@0x0059b524> */ };
+uint32_t G_alloc_curr = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059b528
-uint32_t G_alloc_free = { /* <data@0x0059b528> */ };
+uint32_t G_alloc_free = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059b52c
-uint32_t G_alloc_max = { /* <data@0x0059b52c> */ };
+uint32_t G_alloc_max = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059b530
-uint32_t G_alloc_used = { /* <data@0x0059b530> */ };
+uint32_t G_alloc_used = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059b534
-static int32_t poolCount = { /* <data@0x0059b534> */ };
+static int32_t poolCount = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059b538
-static void * __ptr32 S_alignmem = { /* <data@0x0059b538> */ };
+static void * __ptr32 S_alignmem = { 0 /* todo */ };
 
 
 

@@ -4600,43 +4600,43 @@ _T118:
 
 // Contribution: 3:0000006c-00000083 Module: 28, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0059706c
-static void (*$S119)() = { /* <data@0x0059706c> */ };
+static void (*$S119)() = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597070
-static void (*$S124)() = { /* <data@0x00597070> */ };
+static void (*$S124)() = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597074
-static void (*$S129)() = { /* <data@0x00597074> */ };
+static void (*$S129)() = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597078
-static void (*$S134)() = { /* <data@0x00597078> */ };
+static void (*$S134)() = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059707c
-static void (*$S139)() = { /* <data@0x0059707c> */ };
+static void (*$S139)() = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597080
-static void (*$S144)() = { /* <data@0x00597080> */ };
+static void (*$S144)() = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00002bbc-00002d72 Module: 28, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00599bbc
-class CGameApp* gGameApp = { /* <data@0x00599bbc> */ };
+class CGameApp* gGameApp = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00599bc0
-class CGameCommander* gGameCommander = { /* <data@0x00599bc0> */ };
+class CGameCommander* gGameCommander = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00599bc4
-class NotificationPreferenceManager* gPreferenceManager = { /* <data@0x00599bc4> */ };
+class NotificationPreferenceManager* gPreferenceManager = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00599bc8
-char * SZ_SOUND_BUTTON_WINDOW_SOUND_FILE = { /* <data@0x00599bc8> */ };
+char * SZ_SOUND_BUTTON_WINDOW_SOUND_FILE = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00002d74-00002d77 Module: 28, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00599d74
-uint32_t list<CopterGameMode>::number_of_lists = { /* <data@0x00599d74> */ };
+uint32_t list<CopterGameMode>::number_of_lists = { 0 /* todo */ };
 
 
 

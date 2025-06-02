@@ -326,5 +326,5 @@ _T2c5:
 
 // Contribution: 3:000286d4-0002874b Module: 181, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005bf6d4
-class cBList<cCopterAnim>* cCopterAnim::fsList = { /* <data@0x005bf6d4> */ };
+class cBList<cCopterAnim>* cCopterAnim::fsList = { 0 /* todo */ };
 

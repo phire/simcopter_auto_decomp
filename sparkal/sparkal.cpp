@@ -312,5 +312,5 @@ _T1a5:
 
 // Contribution: 3:00001580-00001583 Module: 56, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00598580
-class CSparkalApp* _gSparkalApp = { /* <data@0x00598580> */ };
+class CSparkalApp* _gSparkalApp = { 0 /* todo */ };
 

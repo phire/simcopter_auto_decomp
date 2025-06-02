@@ -1266,10 +1266,10 @@ _T347:
 
 // Contribution: 3:00020380-00020387 Module: 166, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005b7380
-static long S_num_expls = { /* <data@0x005b7380> */ };
+static long S_num_expls = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b7384
-static long S_num_smoke = { /* <data@0x005b7384> */ };
+static long S_num_smoke = { 0 /* todo */ };
 
 
 

@@ -5459,80 +5459,80 @@ _T85:
 
 // Contribution: 3:00001680-00001970 Module: 53, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00598680
-char * SZ_PLAY_MENU_IMAGE_FILE_NAME = { /* <data@0x00598680> */ };
+char * SZ_PLAY_MENU_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598684
-char * SZ_ABOUT_BOX_IMAGE_FILE_NAME_0 = { /* <data@0x00598684> */ };
+char * SZ_ABOUT_BOX_IMAGE_FILE_NAME_0 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598688
-char * SZ_ABOUT_BOX_IMAGE_FILE_NAME_1 = { /* <data@0x00598688> */ };
+char * SZ_ABOUT_BOX_IMAGE_FILE_NAME_1 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059868c
-char * SZ_ABOUT_BOX_IMAGE_FILE_NAME_2N = { /* <data@0x0059868c> */ };
+char * SZ_ABOUT_BOX_IMAGE_FILE_NAME_2N = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598690
-char * SZ_ABOUT_BOX_IMAGE_FILE_NAME_2D = { /* <data@0x00598690> */ };
+char * SZ_ABOUT_BOX_IMAGE_FILE_NAME_2D = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598694
-char * SZ_ABOUT_BOX_IMAGE_FILE_NAME_3 = { /* <data@0x00598694> */ };
+char * SZ_ABOUT_BOX_IMAGE_FILE_NAME_3 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598698
-char * SZ_ABOUT_BOX_IMAGE_FILE_NAME_4 = { /* <data@0x00598698> */ };
+char * SZ_ABOUT_BOX_IMAGE_FILE_NAME_4 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059869c
-char * SZ_ABOUT_BOX_IMAGE_FILE_NAME_5 = { /* <data@0x0059869c> */ };
+char * SZ_ABOUT_BOX_IMAGE_FILE_NAME_5 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005986a0
-char * SZ_ABOUT_BOX_IMAGE_FILE_NAME_6 = { /* <data@0x005986a0> */ };
+char * SZ_ABOUT_BOX_IMAGE_FILE_NAME_6 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005986a4
-char * SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_0 = { /* <data@0x005986a4> */ };
+char * SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_0 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005986a8
-char * SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_1 = { /* <data@0x005986a8> */ };
+char * SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_1 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005986ac
-char * SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_2N = { /* <data@0x005986ac> */ };
+char * SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_2N = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005986b0
-char * SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_2D = { /* <data@0x005986b0> */ };
+char * SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_2D = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005986b4
-char * SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_3 = { /* <data@0x005986b4> */ };
+char * SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_3 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005986b8
-char * SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_4 = { /* <data@0x005986b8> */ };
+char * SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_4 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005986bc
-char * SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_5 = { /* <data@0x005986bc> */ };
+char * SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_5 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005986c0
-char * SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_6 = { /* <data@0x005986c0> */ };
+char * SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_6 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005986c4
-char * SZ_ABOUT_BOX_ANIMATION_FILE_NAME_0 = { /* <data@0x005986c4> */ };
+char * SZ_ABOUT_BOX_ANIMATION_FILE_NAME_0 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005986c8
-char * SZ_ABOUT_BOX_ANIMATION_FILE_NAME_1 = { /* <data@0x005986c8> */ };
+char * SZ_ABOUT_BOX_ANIMATION_FILE_NAME_1 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005986cc
-char * SZ_ABOUT_BOX_ANIMATION_FILE_NAME_2N = { /* <data@0x005986cc> */ };
+char * SZ_ABOUT_BOX_ANIMATION_FILE_NAME_2N = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005986d0
-char * SZ_ABOUT_BOX_ANIMATION_FILE_NAME_2D = { /* <data@0x005986d0> */ };
+char * SZ_ABOUT_BOX_ANIMATION_FILE_NAME_2D = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005986d4
-char * SZ_ABOUT_BOX_ANIMATION_FILE_NAME_3 = { /* <data@0x005986d4> */ };
+char * SZ_ABOUT_BOX_ANIMATION_FILE_NAME_3 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005986d8
-char * SZ_ABOUT_BOX_ANIMATION_FILE_NAME_4 = { /* <data@0x005986d8> */ };
+char * SZ_ABOUT_BOX_ANIMATION_FILE_NAME_4 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005986dc
-char * SZ_ABOUT_BOX_ANIMATION_FILE_NAME_5 = { /* <data@0x005986dc> */ };
+char * SZ_ABOUT_BOX_ANIMATION_FILE_NAME_5 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005986e0
-char * SZ_ABOUT_BOX_ANIMATION_FILE_NAME_6 = { /* <data@0x005986e0> */ };
+char * SZ_ABOUT_BOX_ANIMATION_FILE_NAME_6 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005986e4
-char * SZ_CHEAT_BOX_TEXT_IMAGE_FILE_NAME = { /* <data@0x005986e4> */ };
+char * SZ_CHEAT_BOX_TEXT_IMAGE_FILE_NAME = { 0 /* todo */ };
 

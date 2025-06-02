@@ -4111,5 +4111,5 @@ _T4d:
 
 // Contribution: 3:00000664-000006a7 Module: 66, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00597664
-int32_t gDefaultLanguage = { /* <data@0x00597664> */ };
+int32_t gDefaultLanguage = { 0 /* todo */ };
 

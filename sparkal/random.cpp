@@ -213,7 +213,7 @@ unsigned long Random::operator()(unsigned long limit) {
 
 // Contribution: 3:00000084-00000087 Module: 22, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00597084
-static void (*$S3)() = { /* <data@0x00597084> */ };
+static void (*$S3)() = { 0 /* todo */ };
 
 
 

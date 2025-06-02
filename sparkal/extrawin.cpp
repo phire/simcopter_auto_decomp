@@ -21380,82 +21380,82 @@ _T45:
 
 // Contribution: 3:00000044-00000053 Module: 45, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00597044
-static void (*$S67)() = { /* <data@0x00597044> */ };
+static void (*$S67)() = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597048
-static void (*$S70)() = { /* <data@0x00597048> */ };
+static void (*$S70)() = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059704c
-static void (*$S73)() = { /* <data@0x0059704c> */ };
+static void (*$S73)() = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597050
-static void (*$S76)() = { /* <data@0x00597050> */ };
+static void (*$S76)() = { 0 /* todo */ };
 
 
 
 // Contribution: 3:0000213c-00002283 Module: 45, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0059913c
-char * SZ_MESSAGE_BOX_IMAGE_FILE_NAME = { /* <data@0x0059913c> */ };
+char * SZ_MESSAGE_BOX_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00599140
-char * SZ_RENDER_WINDOW_IMAGE_FILE_NAME = { /* <data@0x00599140> */ };
+char * SZ_RENDER_WINDOW_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00599144
-char * SZ_SKY_FILE_NAME_BASE = { /* <data@0x00599144> */ };
+char * SZ_SKY_FILE_NAME_BASE = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00599148
-char * SZ_GROUND_FILE_NAME_BASE = { /* <data@0x00599148> */ };
+char * SZ_GROUND_FILE_NAME_BASE = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059914c
-char * SZ_BUILDING_FILE_NAME_BASE = { /* <data@0x0059914c> */ };
+char * SZ_BUILDING_FILE_NAME_BASE = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00599150
-char * SZ_LO_RES = { /* <data@0x00599150> */ };
+char * SZ_LO_RES = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00599154
-char * SZ_HI_RES = { /* <data@0x00599154> */ };
+char * SZ_HI_RES = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00599158
-char * SZ_TEXTURE = { /* <data@0x00599158> */ };
+char * SZ_TEXTURE = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059915c
-char * SZ_NO_TEXTURE = { /* <data@0x0059915c> */ };
+char * SZ_NO_TEXTURE = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00599160
-char * SZ_SKY_COOL = { /* <data@0x00599160> */ };
+char * SZ_SKY_COOL = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00599164
-char * SZ_SKY_GRAY = { /* <data@0x00599164> */ };
+char * SZ_SKY_GRAY = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00599168
-char * SZ_RENDER_WINDOW_SCROLL_BAR_IMAGE_FILE_NAME = { /* <data@0x00599168> */ };
+char * SZ_RENDER_WINDOW_SCROLL_BAR_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059916c
-char * SZ_SOUND_WINDOW_IMAGE_FILE_NAME = { /* <data@0x0059916c> */ };
+char * SZ_SOUND_WINDOW_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00599170
-char * SZ_SOUND_WINDOW_STATION_IMAGE_FILE_NAME = { /* <data@0x00599170> */ };
+char * SZ_SOUND_WINDOW_STATION_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00599174
-char * SZ_SOUND_WINDOW_STATION_THUMB_FILE_NAME = { /* <data@0x00599174> */ };
+char * SZ_SOUND_WINDOW_STATION_THUMB_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00599178
-char * SZ_CITY_SETTINGS_WINDOW_IMAGE_FILE_NAME = { /* <data@0x00599178> */ };
+char * SZ_CITY_SETTINGS_WINDOW_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059917c
-char * SZ_CITY_SETTINGS_SLIDER_IMAGE_FILE_NAME = { /* <data@0x0059917c> */ };
+char * SZ_CITY_SETTINGS_SLIDER_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00599180
-char * SZ_POPUP_EXTRA_BACKGROUND_IMAGE_FILE_NAME = { /* <data@0x00599180> */ };
+char * SZ_POPUP_EXTRA_BACKGROUND_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00599184
-char * SZ_TOOLTIP_BACKGROUND_IMAGE_FILE_NAME = { /* <data@0x00599184> */ };
+char * SZ_TOOLTIP_BACKGROUND_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00599188
-char * SZ_CHECKUP_WINDOW_IMAGE_FILE_NAME = { /* <data@0x00599188> */ };
+char * SZ_CHECKUP_WINDOW_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059918c
-char * SZ_CHECKUP_SLIDER_IMAGE_FILE_NAME = { /* <data@0x0059918c> */ };
+char * SZ_CHECKUP_SLIDER_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 
 

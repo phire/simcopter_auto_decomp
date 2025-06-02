@@ -2811,5 +2811,5 @@ void  ResMap::SwapResEntry(struct ResMap::Entry* resEntry) {
 
 // Contribution: 3:00024edc-0002512c Module: 199, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005bbedc
-class ResMap* ResMap::sMaps = { /* <data@0x005bbedc> */ };
+class ResMap* ResMap::sMaps = { 0 /* todo */ };
 

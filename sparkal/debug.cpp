@@ -5089,22 +5089,22 @@ _T683:
 
 // Contribution: 3:00000368-0000041d Module: 70, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00597368
-char * CDebugWindow::m_className = { /* <data@0x00597368> */ };
+char * CDebugWindow::m_className = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059736c
-char * CDebugWindowhelp_text = { /* <data@0x0059736c> */ };
+char * CDebugWindowhelp_text = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597370
-char * CDebugWindowusage_text = { /* <data@0x00597370> */ };
+char * CDebugWindowusage_text = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597374
-class CDebugWindow* gDebugWindow = { /* <data@0x00597374> */ };
+class CDebugWindow* gDebugWindow = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00000420-00000423 Module: 70, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597420
-uint32_t deque<basic_string<char>>::buffer_size = { /* <data@0x00597420> */ };
+uint32_t deque<basic_string<char>>::buffer_size = { 0 /* todo */ };
 
 
 

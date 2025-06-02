@@ -6657,43 +6657,43 @@ _T109:
 
 // Contribution: 3:0001ecb8-0001ee74 Module: 169, 8 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005b5cb8
-long G_tdim = { /* <data@0x005b5cb8> */ };
+long G_tdim = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5cbc
-long G_tmask = { /* <data@0x005b5cbc> */ };
+long G_tmask = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5cc0
-long G_tshift = { /* <data@0x005b5cc0> */ };
+long G_tshift = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5cc4
-long G_morphno = { /* <data@0x005b5cc4> */ };
+long G_morphno = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5cc8
-static unsigned short S_texcycle[4] = { /* <data@0x005b5cc8> */ };
+static unsigned short S_texcycle[4] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5cd0
-static short S_texlast = { /* <data@0x005b5cd0> */ };
+static short S_texlast = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5cd4
-static short S_watercycle1 = { /* <data@0x005b5cd4> */ };
+static short S_watercycle1 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5cd8
-static short S_watercycle2 = { /* <data@0x005b5cd8> */ };
+static short S_watercycle2 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5cdc
-static int32_t S_looptime = { /* <data@0x005b5cdc> */ };
+static int32_t S_looptime = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5ce0
-static int32_t S_checktime = { /* <data@0x005b5ce0> */ };
+static int32_t S_checktime = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5ce4
-static short S_cycle = { /* <data@0x005b5ce4> */ };
+static short S_cycle = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5ce8
-static short S_array1[32] = { /* <data@0x005b5ce8> */ };
+static short S_array1[32] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5d28
-static short S_array2[32] = { /* <data@0x005b5d28> */ };
+static short S_array2[32] = { 0 /* todo */ };
 
 
 

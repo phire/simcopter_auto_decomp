@@ -1162,8 +1162,8 @@ _Te1:
 
 // Contribution: 3:0000394c-0000395d Module: 11, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0059a94c
-char * SZ_DEFAULT_TEST_STRING = { /* <data@0x0059a94c> */ };
+char * SZ_DEFAULT_TEST_STRING = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059a950
-char * SZ_DEFAULT_FACE_NAME = { /* <data@0x0059a950> */ };
+char * SZ_DEFAULT_FACE_NAME = { 0 /* todo */ };
 

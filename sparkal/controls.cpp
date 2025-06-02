@@ -16960,56 +16960,56 @@ _T22c:
 
 // Contribution: 3:00003ba0-00003c2e Module: 5, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0059aba0
-char * SZ_DEFAULT_BUTTON_IMAGE_FILE_NAME = { /* <data@0x0059aba0> */ };
+char * SZ_DEFAULT_BUTTON_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059aba4
-char * SZ_DEFAULT_CHECKBOX_IMAGE_FILE_NAME = { /* <data@0x0059aba4> */ };
+char * SZ_DEFAULT_CHECKBOX_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059aba8
-char * SZ_DEFAULT_RADIO_IMAGE_FILE_NAME = { /* <data@0x0059aba8> */ };
+char * SZ_DEFAULT_RADIO_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059abac
-char * SZ_SLIDER_THUMB_IMAGE_V_FILE_NAME = { /* <data@0x0059abac> */ };
+char * SZ_SLIDER_THUMB_IMAGE_V_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059abb0
-char * SZ_SLIDER_THUMB_IMAGE_H_FILE_NAME = { /* <data@0x0059abb0> */ };
+char * SZ_SLIDER_THUMB_IMAGE_H_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059abb4
-char * SZ_SLIDER_BACKGROUND_IMAGE_V_FILE_NAME = { /* <data@0x0059abb4> */ };
+char * SZ_SLIDER_BACKGROUND_IMAGE_V_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059abb8
-char * SZ_SLIDER_BACKGROUND_IMAGE_H_FILE_NAME = { /* <data@0x0059abb8> */ };
+char * SZ_SLIDER_BACKGROUND_IMAGE_H_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059abbc
-char * SZ_DEFAULT_SCROLLBAR_SLIDER_IMAGE_FILE_NAME = { /* <data@0x0059abbc> */ };
+char * SZ_DEFAULT_SCROLLBAR_SLIDER_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00003c30-00003c33 Module: 5, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059ac30
-uint32_t list<RadioButtonWindow *>::number_of_lists = { /* <data@0x0059ac30> */ };
+uint32_t list<RadioButtonWindow *>::number_of_lists = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00003c34-00003c37 Module: 5, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059ac34
-struct list<RadioButtonWindow *>::list_node* list<RadioButtonWindow *>::last = { /* <data@0x0059ac34> */ };
+struct list<RadioButtonWindow *>::list_node* list<RadioButtonWindow *>::last = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00003c38-00003c3b Module: 5, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059ac38
-struct list<RadioButtonWindow *>::list_node* list<RadioButtonWindow *>::next_avail = { /* <data@0x0059ac38> */ };
+struct list<RadioButtonWindow *>::list_node* list<RadioButtonWindow *>::next_avail = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00003c3c-00003c3f Module: 5, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059ac3c
-struct list<RadioButtonWindow *>::list_node* list<RadioButtonWindow *>::free_list = { /* <data@0x0059ac3c> */ };
+struct list<RadioButtonWindow *>::list_node* list<RadioButtonWindow *>::free_list = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00003c40-00003c43 Module: 5, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059ac40
-struct list<RadioButtonWindow *>::list_node_buffer* list<RadioButtonWindow *>::buffer_list = { /* <data@0x0059ac40> */ };
+struct list<RadioButtonWindow *>::list_node_buffer* list<RadioButtonWindow *>::buffer_list = { 0 /* todo */ };
 

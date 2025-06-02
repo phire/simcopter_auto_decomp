@@ -5806,10 +5806,10 @@ _Ta9:
 
 // Contribution: 3:00000034-0000003b Module: 52, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00597034
-static void (*$S56)() = { /* <data@0x00597034> */ };
+static void (*$S56)() = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597038
-static void (*$S59)() = { /* <data@0x00597038> */ };
+static void (*$S59)() = { 0 /* todo */ };
 
 
 

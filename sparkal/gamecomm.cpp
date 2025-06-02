@@ -4785,5 +4785,5 @@ _T1ca:
 
 // Contribution: 3:00002d84-00002d9c Module: 26, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00599d84
-char * SZ_SHORTCUT_PREFS_FILE_NAME = { /* <data@0x00599d84> */ };
+char * SZ_SHORTCUT_PREFS_FILE_NAME = { 0 /* todo */ };
 

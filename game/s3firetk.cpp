@@ -1524,7 +1524,7 @@ _Tf4:
 
 // Contribution: 3:00020dc8-00020eac Module: 159, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005b7dc8
-int32_t curFireTrucks = { /* <data@0x005b7dc8> */ };
+int32_t curFireTrucks = { 0 /* todo */ };
 
 
 

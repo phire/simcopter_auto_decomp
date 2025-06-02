@@ -3228,59 +3228,59 @@ _Tdb:
 
 // Contribution: 3:00002a5c-00002a5f Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00599a5c
-uint32_t list<PreferenceItem>::number_of_lists = { /* <data@0x00599a5c> */ };
+uint32_t list<PreferenceItem>::number_of_lists = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00002a60-00002a63 Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00599a60
-struct list<PreferenceItem>::list_node* list<PreferenceItem>::last = { /* <data@0x00599a60> */ };
+struct list<PreferenceItem>::list_node* list<PreferenceItem>::last = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00002a64-00002a67 Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00599a64
-struct list<PreferenceItem>::list_node* list<PreferenceItem>::next_avail = { /* <data@0x00599a64> */ };
+struct list<PreferenceItem>::list_node* list<PreferenceItem>::next_avail = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00002a68-00002a6b Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00599a68
-struct list<PreferenceItem>::list_node* list<PreferenceItem>::free_list = { /* <data@0x00599a68> */ };
+struct list<PreferenceItem>::list_node* list<PreferenceItem>::free_list = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00002a6c-00002a6f Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00599a6c
-struct list<PreferenceItem>::list_node_buffer* list<PreferenceItem>::buffer_list = { /* <data@0x00599a6c> */ };
+struct list<PreferenceItem>::list_node_buffer* list<PreferenceItem>::buffer_list = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00002a70-00002a73 Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00599a70
-uint32_t list<NotificationItem>::number_of_lists = { /* <data@0x00599a70> */ };
+uint32_t list<NotificationItem>::number_of_lists = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00002a74-00002a77 Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00599a74
-struct list<NotificationItem>::list_node* list<NotificationItem>::last = { /* <data@0x00599a74> */ };
+struct list<NotificationItem>::list_node* list<NotificationItem>::last = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00002a78-00002a7b Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00599a78
-struct list<NotificationItem>::list_node* list<NotificationItem>::next_avail = { /* <data@0x00599a78> */ };
+struct list<NotificationItem>::list_node* list<NotificationItem>::next_avail = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00002a7c-00002a7f Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00599a7c
-struct list<NotificationItem>::list_node* list<NotificationItem>::free_list = { /* <data@0x00599a7c> */ };
+struct list<NotificationItem>::list_node* list<NotificationItem>::free_list = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00002a80-00002a83 Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00599a80
-struct list<NotificationItem>::list_node_buffer* list<NotificationItem>::buffer_list = { /* <data@0x00599a80> */ };
+struct list<NotificationItem>::list_node_buffer* list<NotificationItem>::buffer_list = { 0 /* todo */ };
 

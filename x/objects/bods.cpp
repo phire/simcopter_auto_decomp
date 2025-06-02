@@ -2430,13 +2430,13 @@ _T2f:
 
 // Contribution: 3:00027628-00027ad3 Module: 189, 8 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005be628
-struct Rect standardAnimRect = { /* <data@0x005be628> */ };
+struct Rect standardAnimRect = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005be630
-class cBList<cCopterBody>* cCopterBody::fsList = { /* <data@0x005be630> */ };
+class cBList<cCopterBody>* cCopterBody::fsList = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005be634
-short sTestPersonFrameNum = { /* <data@0x005be634> */ };
+short sTestPersonFrameNum = { 0 /* todo */ };
 
 
 

@@ -3367,22 +3367,22 @@ _T109:
 
 // Contribution: 3:00000064-0000006b Module: 31, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00597064
-static void (*$S65)() = { /* <data@0x00597064> */ };
+static void (*$S65)() = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597068
-static void (*$S68)() = { /* <data@0x00597068> */ };
+static void (*$S68)() = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00002a84-00002ab3 Module: 31, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00599a84
-char * SZ_CAREER_WINDOW_IMAGE_FILE_NAME = { /* <data@0x00599a84> */ };
+char * SZ_CAREER_WINDOW_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00599a88
-char * SZ_CAREER_WINDOW_SELECTION_FILE_NAME = { /* <data@0x00599a88> */ };
+char * SZ_CAREER_WINDOW_SELECTION_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00599a8c
-char * SZ_CAREER_WINDOW_BUTTON_FILE_NAME = { /* <data@0x00599a8c> */ };
+char * SZ_CAREER_WINDOW_BUTTON_FILE_NAME = { 0 /* todo */ };
 
 
 

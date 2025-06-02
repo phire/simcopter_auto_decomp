@@ -1130,7 +1130,7 @@ _T7a:
 
 // Contribution: 3:00020d18-00020dc5 Module: 160, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005b7d18
-int32_t curAmbulances = { /* <data@0x005b7d18> */ };
+int32_t curAmbulances = { 0 /* todo */ };
 
 
 

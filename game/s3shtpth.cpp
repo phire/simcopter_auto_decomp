@@ -992,5 +992,5 @@ _T176:
 
 // Contribution: 2:000044f8-00004507 Module: 151, 8 byte alignment, initialized_data, read, 
 // GLOBAL: COPTER_D 0x005934f8
-static const enum DirectionTypes IndexToType[4] = { /* <data@0x005934f8> */ };
+static const enum DirectionTypes IndexToType[4] = { 0 /* todo */ };
 

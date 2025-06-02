@@ -7132,20 +7132,20 @@ _T5f4:
 
 // Contribution: 3:00002b8c-00002bb9 Module: 29, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00599b8c
-char * SZ_DEFAULT_FILTER = { /* <data@0x00599b8c> */ };
+char * SZ_DEFAULT_FILTER = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00599b90
-char * SZ_CURRENT_DIR_NAME = { /* <data@0x00599b90> */ };
+char * SZ_CURRENT_DIR_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00599b94
-char * SZ_PARENT_DIR_NAME = { /* <data@0x00599b94> */ };
+char * SZ_PARENT_DIR_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00599b98
-char * SZ_ROOT_DIR_NAME = { /* <data@0x00599b98> */ };
+char * SZ_ROOT_DIR_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00599b9c
-char * SZ_DIR_SEPARATOR_1 = { /* <data@0x00599b9c> */ };
+char * SZ_DIR_SEPARATOR_1 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00599ba0
-char * SZ_DIR_SEPARATOR_2 = { /* <data@0x00599ba0> */ };
+char * SZ_DIR_SEPARATOR_2 = { 0 /* todo */ };
 

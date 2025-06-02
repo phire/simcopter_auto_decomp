@@ -636,10 +636,10 @@ _T157:
 
 // Contribution: 3:00000264-00000297 Module: 74, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00597264
-struct IDirectDraw* lpDD = { /* <data@0x00597264> */ };
+struct IDirectDraw* lpDD = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597268
-struct IDirectDrawPalette* lpPalette = { /* <data@0x00597268> */ };
+struct IDirectDrawPalette* lpPalette = { 0 /* todo */ };
 
 
 

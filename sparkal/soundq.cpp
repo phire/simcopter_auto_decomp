@@ -2803,29 +2803,29 @@ void SoundQueue::ReleaseMutex() {
 
 // Contribution: 3:00000354-00000357 Module: 71, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597354
-uint32_t list<SoundQueueItem *>::number_of_lists = { /* <data@0x00597354> */ };
+uint32_t list<SoundQueueItem *>::number_of_lists = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00000358-0000035b Module: 71, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597358
-struct list<SoundQueueItem *>::list_node* list<SoundQueueItem *>::last = { /* <data@0x00597358> */ };
+struct list<SoundQueueItem *>::list_node* list<SoundQueueItem *>::last = { 0 /* todo */ };
 
 
 
 // Contribution: 3:0000035c-0000035f Module: 71, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059735c
-struct list<SoundQueueItem *>::list_node* list<SoundQueueItem *>::next_avail = { /* <data@0x0059735c> */ };
+struct list<SoundQueueItem *>::list_node* list<SoundQueueItem *>::next_avail = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00000360-00000363 Module: 71, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597360
-struct list<SoundQueueItem *>::list_node* list<SoundQueueItem *>::free_list = { /* <data@0x00597360> */ };
+struct list<SoundQueueItem *>::list_node* list<SoundQueueItem *>::free_list = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00000364-00000367 Module: 71, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597364
-struct list<SoundQueueItem *>::list_node_buffer* list<SoundQueueItem *>::buffer_list = { /* <data@0x00597364> */ };
+struct list<SoundQueueItem *>::list_node_buffer* list<SoundQueueItem *>::buffer_list = { 0 /* todo */ };
 

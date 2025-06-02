@@ -1826,13 +1826,13 @@ _T5a4:
 
 // Contribution: 2:00004338-0000442f Module: 157, 8 byte alignment, initialized_data, read, 
 // GLOBAL: COPTER_D 0x00593338
-static const struct _dPoint2d OT[4] = { /* <data@0x00593338> */ };
+static const struct _dPoint2d OT[4] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00593378
-static const struct _dPoint2d RRT[4] = { /* <data@0x00593378> */ };
+static const struct _dPoint2d RRT[4] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005933b8
-static const struct _dPoint2d LRT[4] = { /* <data@0x005933b8> */ };
+static const struct _dPoint2d LRT[4] = { 0 /* todo */ };
 
 
 

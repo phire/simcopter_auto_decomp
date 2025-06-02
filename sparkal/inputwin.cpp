@@ -17949,46 +17949,46 @@ _T57a:
 
 // Contribution: 3:00000018-0000001f Module: 75, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00597018
-static void (*$S98)() = { /* <data@0x00597018> */ };
+static void (*$S98)() = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059701c
-static void (*$S101)() = { /* <data@0x0059701c> */ };
+static void (*$S101)() = { 0 /* todo */ };
 
 
 
 // Contribution: 3:000000f0-000001a9 Module: 75, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005970f0
-char * SZ_KEYBOARD_IMAGE_FILE_NAME = { /* <data@0x005970f0> */ };
+char * SZ_KEYBOARD_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005970f4
-char * SZ_KEYBOARD_LIGHT_IMAGE_FILE_NAME = { /* <data@0x005970f4> */ };
+char * SZ_KEYBOARD_LIGHT_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005970f8
-char * SZ_KEYBOARD_NON_TEXT_IMAGE_FILE_NAME = { /* <data@0x005970f8> */ };
+char * SZ_KEYBOARD_NON_TEXT_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005970fc
-char * SZ_JOYSTICK_IMAGE_FILE_NAME = { /* <data@0x005970fc> */ };
+char * SZ_JOYSTICK_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597100
-char * SZ_JOYSTICK_BUTTON_IMAGE_FILE_NAME = { /* <data@0x00597100> */ };
+char * SZ_JOYSTICK_BUTTON_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597104
-char * SZ_JOYSTICK_SLIDER_IMAGE_FILE_NAME = { /* <data@0x00597104> */ };
+char * SZ_JOYSTICK_SLIDER_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597108
-char * SZ_JOYSTICK_HANDLE_IMAGE_FILE_NAME = { /* <data@0x00597108> */ };
+char * SZ_JOYSTICK_HANDLE_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059710c
-char * SZ_JOYSTICK_HANDLE_BASE_IMAGE_FILE_NAME = { /* <data@0x0059710c> */ };
+char * SZ_JOYSTICK_HANDLE_BASE_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597110
-char * SZ_USER_INPUT_WINDOW_IMAGE_FILE_NAME = { /* <data@0x00597110> */ };
+char * SZ_USER_INPUT_WINDOW_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597114
-char * SZ_USER_INPUT_WINDOW_BACKGROUND_FILE_NAME = { /* <data@0x00597114> */ };
+char * SZ_USER_INPUT_WINDOW_BACKGROUND_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597118
-char * SZ_CONTROL_DISPLAY_WINDOW_IMAGE_FILE_NAME = { /* <data@0x00597118> */ };
+char * SZ_CONTROL_DISPLAY_WINDOW_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 
 
@@ -18000,61 +18000,61 @@ char * SZ_CONTROL_DISPLAY_WINDOW_IMAGE_FILE_NAME = { /* <data@0x00597118> */ };
 
 // Contribution: 3:000001bc-000001bf Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005971bc
-uint32_t list<KeyColors>::number_of_lists = { /* <data@0x005971bc> */ };
+uint32_t list<KeyColors>::number_of_lists = { 0 /* todo */ };
 
 
 
 // Contribution: 3:000001c0-000001c3 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005971c0
-struct list<KeyColors>::list_node* list<KeyColors>::last = { /* <data@0x005971c0> */ };
+struct list<KeyColors>::list_node* list<KeyColors>::last = { 0 /* todo */ };
 
 
 
 // Contribution: 3:000001c4-000001c7 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005971c4
-struct list<KeyColors>::list_node* list<KeyColors>::next_avail = { /* <data@0x005971c4> */ };
+struct list<KeyColors>::list_node* list<KeyColors>::next_avail = { 0 /* todo */ };
 
 
 
 // Contribution: 3:000001c8-000001cb Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005971c8
-struct list<KeyColors>::list_node* list<KeyColors>::free_list = { /* <data@0x005971c8> */ };
+struct list<KeyColors>::list_node* list<KeyColors>::free_list = { 0 /* todo */ };
 
 
 
 // Contribution: 3:000001cc-000001cf Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005971cc
-uint32_t list<HotSpot>::number_of_lists = { /* <data@0x005971cc> */ };
+uint32_t list<HotSpot>::number_of_lists = { 0 /* todo */ };
 
 
 
 // Contribution: 3:000001d0-000001d3 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005971d0
-struct list<HotSpot>::list_node* list<HotSpot>::last = { /* <data@0x005971d0> */ };
+struct list<HotSpot>::list_node* list<HotSpot>::last = { 0 /* todo */ };
 
 
 
 // Contribution: 3:000001d4-000001d7 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005971d4
-struct list<HotSpot>::list_node* list<HotSpot>::next_avail = { /* <data@0x005971d4> */ };
+struct list<HotSpot>::list_node* list<HotSpot>::next_avail = { 0 /* todo */ };
 
 
 
 // Contribution: 3:000001d8-000001db Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005971d8
-struct list<HotSpot>::list_node* list<HotSpot>::free_list = { /* <data@0x005971d8> */ };
+struct list<HotSpot>::list_node* list<HotSpot>::free_list = { 0 /* todo */ };
 
 
 
 // Contribution: 3:000001dc-000001df Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005971dc
-struct list<HotSpot>::list_node_buffer* list<HotSpot>::buffer_list = { /* <data@0x005971dc> */ };
+struct list<HotSpot>::list_node_buffer* list<HotSpot>::buffer_list = { 0 /* todo */ };
 
 
 
 // Contribution: 3:000001e0-000001e3 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005971e0
-struct list<KeyColors>::list_node_buffer* list<KeyColors>::buffer_list = { /* <data@0x005971e0> */ };
+struct list<KeyColors>::list_node_buffer* list<KeyColors>::buffer_list = { 0 /* todo */ };
 
 
 
@@ -18072,61 +18072,61 @@ struct list<KeyColors>::list_node_buffer* list<KeyColors>::buffer_list = { /* <d
 
 // Contribution: 3:00000204-00000207 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597204
-uint32_t list<StringIDAssociation>::number_of_lists = { /* <data@0x00597204> */ };
+uint32_t list<StringIDAssociation>::number_of_lists = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00000208-0000020b Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597208
-struct list<StringIDAssociation>::list_node* list<StringIDAssociation>::last = { /* <data@0x00597208> */ };
+struct list<StringIDAssociation>::list_node* list<StringIDAssociation>::last = { 0 /* todo */ };
 
 
 
 // Contribution: 3:0000020c-0000020f Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059720c
-struct list<StringIDAssociation>::list_node* list<StringIDAssociation>::next_avail = { /* <data@0x0059720c> */ };
+struct list<StringIDAssociation>::list_node* list<StringIDAssociation>::next_avail = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00000210-00000213 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597210
-struct list<StringIDAssociation>::list_node* list<StringIDAssociation>::free_list = { /* <data@0x00597210> */ };
+struct list<StringIDAssociation>::list_node* list<StringIDAssociation>::free_list = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00000214-00000217 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597214
-struct list<StringIDAssociation>::list_node_buffer* list<StringIDAssociation>::buffer_list = { /* <data@0x00597214> */ };
+struct list<StringIDAssociation>::list_node_buffer* list<StringIDAssociation>::buffer_list = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00000218-0000021b Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597218
-uint32_t list<Shortcut>::number_of_lists = { /* <data@0x00597218> */ };
+uint32_t list<Shortcut>::number_of_lists = { 0 /* todo */ };
 
 
 
 // Contribution: 3:0000021c-0000021f Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059721c
-struct list<Shortcut>::list_node* list<Shortcut>::last = { /* <data@0x0059721c> */ };
+struct list<Shortcut>::list_node* list<Shortcut>::last = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00000220-00000223 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597220
-struct list<Shortcut>::list_node* list<Shortcut>::next_avail = { /* <data@0x00597220> */ };
+struct list<Shortcut>::list_node* list<Shortcut>::next_avail = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00000224-00000227 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597224
-struct list<Shortcut>::list_node* list<Shortcut>::free_list = { /* <data@0x00597224> */ };
+struct list<Shortcut>::list_node* list<Shortcut>::free_list = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00000228-0000022b Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597228
-struct list<Shortcut>::list_node_buffer* list<Shortcut>::buffer_list = { /* <data@0x00597228> */ };
+struct list<Shortcut>::list_node_buffer* list<Shortcut>::buffer_list = { 0 /* todo */ };
 
 
 
@@ -18138,37 +18138,37 @@ struct list<Shortcut>::list_node_buffer* list<Shortcut>::buffer_list = { /* <dat
 
 // Contribution: 3:0000024c-0000024f Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059724c
-struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* rb_tree<long,long,ident<long,long>,less<long>>::NIL = { /* <data@0x0059724c> */ };
+struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* rb_tree<long,long,ident<long,long>,less<long>>::NIL = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00000250-00000253 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597250
-uint32_t rb_tree<long,long,ident<long,long>,less<long>>::number_of_trees = { /* <data@0x00597250> */ };
+uint32_t rb_tree<long,long,ident<long,long>,less<long>>::number_of_trees = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00000254-00000257 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597254
-struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* rb_tree<long,long,ident<long,long>,less<long>>::last = { /* <data@0x00597254> */ };
+struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* rb_tree<long,long,ident<long,long>,less<long>>::last = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00000258-0000025b Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597258
-struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* rb_tree<long,long,ident<long,long>,less<long>>::next_avail = { /* <data@0x00597258> */ };
+struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* rb_tree<long,long,ident<long,long>,less<long>>::next_avail = { 0 /* todo */ };
 
 
 
 // Contribution: 3:0000025c-0000025f Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059725c
-struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* rb_tree<long,long,ident<long,long>,less<long>>::free_list = { /* <data@0x0059725c> */ };
+struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* rb_tree<long,long,ident<long,long>,less<long>>::free_list = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00000260-00000263 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597260
-struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node_buffer* rb_tree<long,long,ident<long,long>,less<long>>::buffer_list = { /* <data@0x00597260> */ };
+struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node_buffer* rb_tree<long,long,ident<long,long>,less<long>>::buffer_list = { 0 /* todo */ };
 
 
 

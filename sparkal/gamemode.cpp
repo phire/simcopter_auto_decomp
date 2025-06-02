@@ -8015,47 +8015,47 @@ _T621:
 
 // Contribution: 3:00003ec4-00003fad Module: 1, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0059aec4
-char * SZ_VR_APP_PALETTE_FILE_NAME = { /* <data@0x0059aec4> */ };
+char * SZ_VR_APP_PALETTE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059aec8
-char * SZ_VR_APP_PALETTE_CHUNK_TYPE = { /* <data@0x0059aec8> */ };
+char * SZ_VR_APP_PALETTE_CHUNK_TYPE = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059aecc
-char * SZ_MAIN_MENU_IMAGE_FILE_NAME = { /* <data@0x0059aecc> */ };
+char * SZ_MAIN_MENU_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059aed0
-char * SZ_CAREER_PALETTE_IMAGE_FILE_NAME = { /* <data@0x0059aed0> */ };
+char * SZ_CAREER_PALETTE_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059aed4
-char * SZ_PANEL0_IMAGE_FILE_NAME = { /* <data@0x0059aed4> */ };
+char * SZ_PANEL0_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059aed8
-char * SZ_PANEL1_IMAGE_FILE_NAME = { /* <data@0x0059aed8> */ };
+char * SZ_PANEL1_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059aedc
-char * SZ_PANEL2_IMAGE_FILE_NAME = { /* <data@0x0059aedc> */ };
+char * SZ_PANEL2_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059aee0
-char * SZ_PANEL3_IMAGE_FILE_NAME = { /* <data@0x0059aee0> */ };
+char * SZ_PANEL3_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059aee4
-char * SZ_PANEL4_IMAGE_FILE_NAME = { /* <data@0x0059aee4> */ };
+char * SZ_PANEL4_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059aee8
-char * SZ_PANEL5_IMAGE_FILE_NAME = { /* <data@0x0059aee8> */ };
+char * SZ_PANEL5_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059aeec
-char * SZ_PANEL6_IMAGE_FILE_NAME = { /* <data@0x0059aeec> */ };
+char * SZ_PANEL6_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059aef0
-char * SZ_FLAP0_IMAGE_FILE_NAME = { /* <data@0x0059aef0> */ };
+char * SZ_FLAP0_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059aef4
-char * SZ_FLAP1_IMAGE_FILE_NAME = { /* <data@0x0059aef4> */ };
+char * SZ_FLAP1_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059aef8
-char * SZ_FLAP2_IMAGE_FILE_NAME = { /* <data@0x0059aef8> */ };
+char * SZ_FLAP2_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059aefc
-char * SZ_FLAP3_IMAGE_FILE_NAME = { /* <data@0x0059aefc> */ };
+char * SZ_FLAP3_IMAGE_FILE_NAME = { 0 /* todo */ };
 

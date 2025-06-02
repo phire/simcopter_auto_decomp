@@ -7755,40 +7755,40 @@ _T7c:
 
 // Contribution: 3:00002284-00002300 Module: 44, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00599284
-char * SZ_SMACKER_INTRO_FILE_NAME = { /* <data@0x00599284> */ };
+char * SZ_SMACKER_INTRO_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00599288
-char * SZ_COPTER_MAIN_PREFERENCES_FILE_NAME = { /* <data@0x00599288> */ };
+char * SZ_COPTER_MAIN_PREFERENCES_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059928c
-char * SZ_MAIN_MENU_VIDEO_FILE_NAME = { /* <data@0x0059928c> */ };
+char * SZ_MAIN_MENU_VIDEO_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00599290
-char * SZ_GRADUATION_NOTIFICATION_SOUND_FILE_NAME = { /* <data@0x00599290> */ };
+char * SZ_GRADUATION_NOTIFICATION_SOUND_FILE_NAME = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00002304-00002307 Module: 44, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00599304
-struct list<CopterGameMode>::list_node* list<CopterGameMode>::last = { /* <data@0x00599304> */ };
+struct list<CopterGameMode>::list_node* list<CopterGameMode>::last = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00002308-0000230b Module: 44, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00599308
-struct list<CopterGameMode>::list_node* list<CopterGameMode>::next_avail = { /* <data@0x00599308> */ };
+struct list<CopterGameMode>::list_node* list<CopterGameMode>::next_avail = { 0 /* todo */ };
 
 
 
 // Contribution: 3:0000230c-0000230f Module: 44, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059930c
-struct list<CopterGameMode>::list_node* list<CopterGameMode>::free_list = { /* <data@0x0059930c> */ };
+struct list<CopterGameMode>::list_node* list<CopterGameMode>::free_list = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00002310-00002313 Module: 44, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00599310
-struct list<CopterGameMode>::list_node_buffer* list<CopterGameMode>::buffer_list = { /* <data@0x00599310> */ };
+struct list<CopterGameMode>::list_node_buffer* list<CopterGameMode>::buffer_list = { 0 /* todo */ };
 
 
 

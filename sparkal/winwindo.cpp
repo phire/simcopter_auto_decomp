@@ -2002,5 +2002,5 @@ _T483:
 
 // Contribution: 3:00002ab8-00002b8b Module: 30, 8 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00599ab8
-char gWindowClassName[8] = { /* <data@0x00599ab8> */ };
+char gWindowClassName[8] = { 0 /* todo */ };
 

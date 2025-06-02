@@ -3856,14 +3856,14 @@ void HangarWindow::LoadHotSpots() {
 
 // Contribution: 3:000027c8-00002818 Module: 36, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005997c8
-char * SZ_HANGAR_DAY_IMAGE_FILE_NAME = { /* <data@0x005997c8> */ };
+char * SZ_HANGAR_DAY_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005997cc
-char * SZ_HANGAR_NIGHT_IMAGE_FILE_NAME = { /* <data@0x005997cc> */ };
+char * SZ_HANGAR_NIGHT_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005997d0
-char * SZ_HANGAR_DAY_BUTTON_FILE_NAME = { /* <data@0x005997d0> */ };
+char * SZ_HANGAR_DAY_BUTTON_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005997d4
-char * SZ_HANGAR_NIGHT_BUTTON_FILE_NAME = { /* <data@0x005997d4> */ };
+char * SZ_HANGAR_NIGHT_BUTTON_FILE_NAME = { 0 /* todo */ };
 

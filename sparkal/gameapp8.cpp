@@ -1959,41 +1959,41 @@ int  CGameApp::DisplayFileOpenError(unsigned long nResult) {
 
 // Contribution: 3:00000484-000004ab Module: 68, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00597484
-char * SZ_CITY_DATA_FILE_SUFFIX = { /* <data@0x00597484> */ };
+char * SZ_CITY_DATA_FILE_SUFFIX = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597488
-char * SZ_CAREER_DATA_FILE_SUFFIX = { /* <data@0x00597488> */ };
+char * SZ_CAREER_DATA_FILE_SUFFIX = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059748c
-char * SZ_USER_DATA_FILE_SUFFIX = { /* <data@0x0059748c> */ };
+char * SZ_USER_DATA_FILE_SUFFIX = { 0 /* todo */ };
 
 
 
 // Contribution: 3:000004ac-000004af Module: 68, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005974ac
-uint32_t list<DirectoryEntry>::number_of_lists = { /* <data@0x005974ac> */ };
+uint32_t list<DirectoryEntry>::number_of_lists = { 0 /* todo */ };
 
 
 
 // Contribution: 3:000004b0-000004b3 Module: 68, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005974b0
-struct list<DirectoryEntry>::list_node* list<DirectoryEntry>::last = { /* <data@0x005974b0> */ };
+struct list<DirectoryEntry>::list_node* list<DirectoryEntry>::last = { 0 /* todo */ };
 
 
 
 // Contribution: 3:000004b4-000004b7 Module: 68, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005974b4
-struct list<DirectoryEntry>::list_node* list<DirectoryEntry>::next_avail = { /* <data@0x005974b4> */ };
+struct list<DirectoryEntry>::list_node* list<DirectoryEntry>::next_avail = { 0 /* todo */ };
 
 
 
 // Contribution: 3:000004b8-000004bb Module: 68, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005974b8
-struct list<DirectoryEntry>::list_node* list<DirectoryEntry>::free_list = { /* <data@0x005974b8> */ };
+struct list<DirectoryEntry>::list_node* list<DirectoryEntry>::free_list = { 0 /* todo */ };
 
 
 
 // Contribution: 3:000004bc-000004bf Module: 68, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005974bc
-struct list<DirectoryEntry>::list_node_buffer* list<DirectoryEntry>::buffer_list = { /* <data@0x005974bc> */ };
+struct list<DirectoryEntry>::list_node_buffer* list<DirectoryEntry>::buffer_list = { 0 /* todo */ };
 

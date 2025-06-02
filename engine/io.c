@@ -8,13 +8,13 @@
 
 // Contribution: 3:00016d6c-00016d77 Module: 131, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005add6c
-int32_t VRClearBuf = { /* <data@0x005add6c> */ };
+int32_t VRClearBuf = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005add70
-int32_t KeyCommands = { /* <data@0x005add70> */ };
+int32_t KeyCommands = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005add74
-int32_t VRDebugMode = { /* <data@0x005add74> */ };
+int32_t VRDebugMode = { 0 /* todo */ };
 
 
 

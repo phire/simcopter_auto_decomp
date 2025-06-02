@@ -5922,13 +5922,13 @@ _T66:
 
 // Contribution: 3:000000a4-000000a7 Module: 164, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005970a4
-static void (*$S8)() = { /* <data@0x005970a4> */ };
+static void (*$S8)() = { 0 /* todo */ };
 
 
 
 // Contribution: 3:000203e8-00020664 Module: 164, 8 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005b73e8
-struct Point2d BoatClass::lastScannedLocation = { /* <data@0x005b73e8> */ };
+struct Point2d BoatClass::lastScannedLocation = { 0 /* todo */ };
 
 
 

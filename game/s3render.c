@@ -1341,94 +1341,94 @@ void SetUserVars(int32_t * user) {
 
 // Contribution: 2:00003470-0000367f Module: 179, 8 byte alignment, initialized_data, read, 
 // GLOBAL: COPTER_D 0x00592470
-static const int32_t TurnTable3[4][8] = { /* <data@0x00592470> */ };
+static const int32_t TurnTable3[4][8] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005924f0
-static const int32_t TurnTable2[4][4] = { /* <data@0x005924f0> */ };
+static const int32_t TurnTable2[4][4] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00592530
-static const int32_t IndexToType[4] = { /* <data@0x00592530> */ };
+static const int32_t IndexToType[4] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00592540
-static const int32_t TypeToIndex2[16] = { /* <data@0x00592540> */ };
+static const int32_t TypeToIndex2[16] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00592580
-static const int32_t TILUT[4][4] = { /* <data@0x00592580> */ };
+static const int32_t TILUT[4][4] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005925c0
-static const struct _dPoint2d OT[4] = { /* <data@0x005925c0> */ };
+static const struct _dPoint2d OT[4] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00592600
-static const struct _dPoint2d RRT[4] = { /* <data@0x00592600> */ };
+static const struct _dPoint2d RRT[4] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00592640
-static const struct _dPoint2d LRT[4] = { /* <data@0x00592640> */ };
+static const struct _dPoint2d LRT[4] = { 0 /* todo */ };
 
 
 
 // Contribution: 3:0001d744-0001d876 Module: 179, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005b4744
-int32_t keyRotateXp = { /* <data@0x005b4744> */ };
+int32_t keyRotateXp = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4748
-int32_t keyRotateXm = { /* <data@0x005b4748> */ };
+int32_t keyRotateXm = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b474c
-int32_t keyRotateYp = { /* <data@0x005b474c> */ };
+int32_t keyRotateYp = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4750
-int32_t keyRotateYm = { /* <data@0x005b4750> */ };
+int32_t keyRotateYm = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4754
-int32_t keyRotateZp = { /* <data@0x005b4754> */ };
+int32_t keyRotateZp = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4758
-int32_t keyRotateZm = { /* <data@0x005b4758> */ };
+int32_t keyRotateZm = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b475c
-int32_t LoopTimer = { /* <data@0x005b475c> */ };
+int32_t LoopTimer = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4760
-int32_t LoopTime = { /* <data@0x005b4760> */ };
+int32_t LoopTime = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4764
-int32_t AlwaysTimer = { /* <data@0x005b4764> */ };
+int32_t AlwaysTimer = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4768
-int32_t G_AvLoopTime = { /* <data@0x005b4768> */ };
+int32_t G_AvLoopTime = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b476c
-struct VRResource* G_restex = { /* <data@0x005b476c> */ };
+struct VRResource* G_restex = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4770
-struct VRResource* G_respal = { /* <data@0x005b4770> */ };
+struct VRResource* G_respal = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4774
-struct VRResource* G_resgeo1 = { /* <data@0x005b4774> */ };
+struct VRResource* G_resgeo1 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4778
-struct VRResource* G_resgeo2 = { /* <data@0x005b4778> */ };
+struct VRResource* G_resgeo2 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b477c
-struct VRResource* G_resgeo3 = { /* <data@0x005b477c> */ };
+struct VRResource* G_resgeo3 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4780
-struct VRMemPool* G_main_mp = { /* <data@0x005b4780> */ };
+struct VRMemPool* G_main_mp = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4784
-char * buffer = { /* <data@0x005b4784> */ };
+char * buffer = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4788
-long G_framectr = { /* <data@0x005b4788> */ };
+long G_framectr = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b478c
-long G_maptics = { /* <data@0x005b478c> */ };
+long G_maptics = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4790
-long G_InitializationProgress = { /* <data@0x005b4790> */ };
+long G_InitializationProgress = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4794
-long G_VRAppInitCalled = { /* <data@0x005b4794> */ };
+long G_VRAppInitCalled = { 0 /* todo */ };
 
 
 

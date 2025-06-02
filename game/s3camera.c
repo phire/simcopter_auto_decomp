@@ -1553,34 +1553,34 @@ _Tff:
 
 // Contribution: 3:0001ddb8-0001de10 Module: 175, 8 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005b4db8
-long G_camera_mode = { /* <data@0x005b4db8> */ };
+long G_camera_mode = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4dc0
-struct Point3d S_camera_targpos2 = { /* <data@0x005b4dc0> */ };
+struct Point3d S_camera_targpos2 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4dd0
-struct Point3d S_camera_targpos1 = { /* <data@0x005b4dd0> */ };
+struct Point3d S_camera_targpos1 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4de0
-struct Point3d S_camera_targpos3 = { /* <data@0x005b4de0> */ };
+struct Point3d S_camera_targpos3 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4dec
-unsigned short InClose = { /* <data@0x005b4dec> */ };
+unsigned short InClose = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4df0
-int32_t S_ctwk_min_dist = { /* <data@0x005b4df0> */ };
+int32_t S_ctwk_min_dist = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4df4
-int32_t S_ctwk_max_dist = { /* <data@0x005b4df4> */ };
+int32_t S_ctwk_max_dist = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4df8
-int32_t S_ctwk_height = { /* <data@0x005b4df8> */ };
+int32_t S_ctwk_height = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4dfc
-long S_curr_chase = { /* <data@0x005b4dfc> */ };
+long S_curr_chase = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4e00
-int32_t S_altdiff = { /* <data@0x005b4e00> */ };
+int32_t S_altdiff = { 0 /* todo */ };
 
 
 

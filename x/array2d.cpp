@@ -3069,10 +3069,10 @@ _Ta9:
 
 // Contribution: 3:0002874c-0002950a Module: 180, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005bf74c
-class _cArray** _cArray::sArrayTable = { /* <data@0x005bf74c> */ };
+class _cArray** _cArray::sArrayTable = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005bf750
-unsigned short _cArray::sAllLoaded = { /* <data@0x005bf750> */ };
+unsigned short _cArray::sAllLoaded = { 0 /* todo */ };
 
 
 

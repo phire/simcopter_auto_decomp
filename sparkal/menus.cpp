@@ -4578,23 +4578,23 @@ int32_t UserMenuWindow::GetLineCount() {
 
 // Contribution: 3:000032d0-0000333e Module: 13, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0059a2d0
-char * SZ_MENU_SELECTION_SOUND = { /* <data@0x0059a2d0> */ };
+char * SZ_MENU_SELECTION_SOUND = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059a2d4
-char * SZ_MAIN_PART_1_IMAGE_FILE_NAME = { /* <data@0x0059a2d4> */ };
+char * SZ_MAIN_PART_1_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059a2d8
-char * SZ_MAIN_PART_2_IMAGE_FILE_NAME = { /* <data@0x0059a2d8> */ };
+char * SZ_MAIN_PART_2_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059a2dc
-char * SZ_MAIN_LIGHT_IMAGE_FILE_NAME = { /* <data@0x0059a2dc> */ };
+char * SZ_MAIN_LIGHT_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059a2e0
-char * SZ_MAIN_RATCHET_IMAGE_FILE_NAME = { /* <data@0x0059a2e0> */ };
+char * SZ_MAIN_RATCHET_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059a2e4
-char * SZ_PLAY_RATCHET_IMAGE_FILE_NAME = { /* <data@0x0059a2e4> */ };
+char * SZ_PLAY_RATCHET_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059a2e8
-char * SZ_PLAY_BACKGROUND_IMAGE_FILE_NAME = { /* <data@0x0059a2e8> */ };
+char * SZ_PLAY_BACKGROUND_IMAGE_FILE_NAME = { 0 /* todo */ };
 

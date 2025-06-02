@@ -1882,11 +1882,11 @@ _T5e:
 
 // Contribution: 3:000044f8-00004523 Module: 92, 8 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0059b4f8
-struct Point3d X_axis = { /* <data@0x0059b4f8> */ };
+struct Point3d X_axis = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059b508
-struct Point3d Y_axis = { /* <data@0x0059b508> */ };
+struct Point3d Y_axis = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059b518
-struct Point3d Z_axis = { /* <data@0x0059b518> */ };
+struct Point3d Z_axis = { 0 /* todo */ };
 

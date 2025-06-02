@@ -7199,7 +7199,7 @@ _T9d:
 
 // Contribution: 3:00003fb0-000043a6 Module: 94, 8 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0059afb0
-static long GraphStart[16] = { /* <data@0x0059afb0> */ };
+static long GraphStart[16] = { 0 /* todo */ };
 
 
 

@@ -833,8 +833,8 @@ _T38:
 
 // Contribution: 3:00026dd8-00026e98 Module: 195, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005bddd8
-class FlatFile* FlatFile::sList = { /* <data@0x005bddd8> */ };
+class FlatFile* FlatFile::sList = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005bdddc
-long FlatFile::sLastFileID = { /* <data@0x005bdddc> */ };
+long FlatFile::sLastFileID = { 0 /* todo */ };
 

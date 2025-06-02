@@ -10603,58 +10603,58 @@ int32_t ScreenWindow::DrawSelf() {
 
 // Contribution: 3:00000090-0000009f Module: 9, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00597090
-static void (*$S49)() = { /* <data@0x00597090> */ };
+static void (*$S49)() = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597094
-static void (*$S54)() = { /* <data@0x00597094> */ };
+static void (*$S54)() = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597098
-static void (*$S59)() = { /* <data@0x00597098> */ };
+static void (*$S59)() = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059709c
-static void (*$S62)() = { /* <data@0x0059709c> */ };
+static void (*$S62)() = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00003960-0000396f Module: 9, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0059a960
-class GraphicWindow* GraphicWindow::windowCursorCapture = { /* <data@0x0059a960> */ };
+class GraphicWindow* GraphicWindow::windowCursorCapture = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059a964
-class GraphicWindowManager* GraphicWindow::windowManager = { /* <data@0x0059a964> */ };
+class GraphicWindowManager* GraphicWindow::windowManager = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059a968
-class GraphicWindow* GraphicWindow::screenWindow = { /* <data@0x0059a968> */ };
+class GraphicWindow* GraphicWindow::screenWindow = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00003970-00003973 Module: 9, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059a970
-uint32_t list<GraphicWindow *>::number_of_lists = { /* <data@0x0059a970> */ };
+uint32_t list<GraphicWindow *>::number_of_lists = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00003974-00003977 Module: 9, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059a974
-struct list<GraphicWindow *>::list_node* list<GraphicWindow *>::last = { /* <data@0x0059a974> */ };
+struct list<GraphicWindow *>::list_node* list<GraphicWindow *>::last = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00003978-0000397b Module: 9, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059a978
-struct list<GraphicWindow *>::list_node* list<GraphicWindow *>::next_avail = { /* <data@0x0059a978> */ };
+struct list<GraphicWindow *>::list_node* list<GraphicWindow *>::next_avail = { 0 /* todo */ };
 
 
 
 // Contribution: 3:0000397c-0000397f Module: 9, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059a97c
-struct list<GraphicWindow *>::list_node* list<GraphicWindow *>::free_list = { /* <data@0x0059a97c> */ };
+struct list<GraphicWindow *>::list_node* list<GraphicWindow *>::free_list = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00003980-00003983 Module: 9, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059a980
-struct list<GraphicWindow *>::list_node_buffer* list<GraphicWindow *>::buffer_list = { /* <data@0x0059a980> */ };
+struct list<GraphicWindow *>::list_node_buffer* list<GraphicWindow *>::buffer_list = { 0 /* todo */ };
 
 
 

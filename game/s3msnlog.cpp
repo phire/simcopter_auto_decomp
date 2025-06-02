@@ -3969,7 +3969,7 @@ long LogManager::GetStringIDFromLogEvent(const struct tagLogMissionEvent* lME) {
 
 // Contribution: 3:000000a0-000000a3 Module: 178, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005970a0
-static void (*$S58)() = { /* <data@0x005970a0> */ };
+static void (*$S58)() = { 0 /* todo */ };
 
 
 
@@ -3978,31 +3978,31 @@ static void (*$S58)() = { /* <data@0x005970a0> */ };
 
 // Contribution: 3:0001d884-0001d887 Module: 178, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005b4884
-uint32_t list<tagLogBase *>::number_of_lists = { /* <data@0x005b4884> */ };
+uint32_t list<tagLogBase *>::number_of_lists = { 0 /* todo */ };
 
 
 
 // Contribution: 3:0001d888-0001d88b Module: 178, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005b4888
-struct list<tagLogBase *>::list_node* list<tagLogBase *>::last = { /* <data@0x005b4888> */ };
+struct list<tagLogBase *>::list_node* list<tagLogBase *>::last = { 0 /* todo */ };
 
 
 
 // Contribution: 3:0001d88c-0001d88f Module: 178, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005b488c
-struct list<tagLogBase *>::list_node* list<tagLogBase *>::next_avail = { /* <data@0x005b488c> */ };
+struct list<tagLogBase *>::list_node* list<tagLogBase *>::next_avail = { 0 /* todo */ };
 
 
 
 // Contribution: 3:0001d890-0001d893 Module: 178, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005b4890
-struct list<tagLogBase *>::list_node* list<tagLogBase *>::free_list = { /* <data@0x005b4890> */ };
+struct list<tagLogBase *>::list_node* list<tagLogBase *>::free_list = { 0 /* todo */ };
 
 
 
 // Contribution: 3:0001d894-0001d897 Module: 178, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005b4894
-struct list<tagLogBase *>::list_node_buffer* list<tagLogBase *>::buffer_list = { /* <data@0x005b4894> */ };
+struct list<tagLogBase *>::list_node_buffer* list<tagLogBase *>::buffer_list = { 0 /* todo */ };
 
 
 

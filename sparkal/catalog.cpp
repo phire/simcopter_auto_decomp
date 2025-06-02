@@ -7896,22 +7896,22 @@ _Tfc:
 
 // Contribution: 3:0000281c-000029cc Module: 34, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0059981c
-char * SZ_CATALOG_IMAGE_FILE_NAME = { /* <data@0x0059981c> */ };
+char * SZ_CATALOG_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00599820
-char * SZ_CATALOG_EQUIPMENT_IMAGE_FILE_NAME = { /* <data@0x00599820> */ };
+char * SZ_CATALOG_EQUIPMENT_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00599824
-char * SZ_STAIN_IMAGE_FILE_NAME = { /* <data@0x00599824> */ };
+char * SZ_STAIN_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00599828
-char * SZ_CATALOG_WINDOW_BUTTON_IMAGE_FILE_NAME = { /* <data@0x00599828> */ };
+char * SZ_CATALOG_WINDOW_BUTTON_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059982c
-char * SZ_CATALOG_WINDOW_PAPER_CLIP_IMAGEFILE_NAME = { /* <data@0x0059982c> */ };
+char * SZ_CATALOG_WINDOW_PAPER_CLIP_IMAGEFILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00599830
-char * SZ_CATALOG_WINDOW_TEXT_NAME = { /* <data@0x00599830> */ };
+char * SZ_CATALOG_WINDOW_TEXT_NAME = { 0 /* todo */ };
 
 
 

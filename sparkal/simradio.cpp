@@ -9507,59 +9507,59 @@ _T342:
 
 // Contribution: 3:00001488-0000155c Module: 59, 8 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00598488
-char * StationDirectoryNameArray[9] = { /* <data@0x00598488> */ };
+char * StationDirectoryNameArray[9] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005984ac
-char * SZ_RADIO_DIRECTORY_NAME = { /* <data@0x005984ac> */ };
+char * SZ_RADIO_DIRECTORY_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005984b0
-char * SZ_RADIO_COMMERCIAL_DIRECTORY_NAME = { /* <data@0x005984b0> */ };
+char * SZ_RADIO_COMMERCIAL_DIRECTORY_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005984b4
-char * SZ_RADIO_STATIONS_DIRECTORY_NAME = { /* <data@0x005984b4> */ };
+char * SZ_RADIO_STATIONS_DIRECTORY_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005984b8
-char * SZ_RADIO_STATIONS_MUSIC_DIRECTORY_NAME = { /* <data@0x005984b8> */ };
+char * SZ_RADIO_STATIONS_MUSIC_DIRECTORY_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005984bc
-char * SZ_RADIO_STATIONS_DJ_DIRECTORY_NAME = { /* <data@0x005984bc> */ };
+char * SZ_RADIO_STATIONS_DJ_DIRECTORY_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005984c0
-char * SZ_RADIO_STATIONS_JINGLE_DIRECTORY_NAME = { /* <data@0x005984c0> */ };
+char * SZ_RADIO_STATIONS_JINGLE_DIRECTORY_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005984c4
-char * SZ_SOUND_FILE_FILTER = { /* <data@0x005984c4> */ };
+char * SZ_SOUND_FILE_FILTER = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005984c8
-char * SZ_CALL_ID_FILTER = { /* <data@0x005984c8> */ };
+char * SZ_CALL_ID_FILTER = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00001560-00001563 Module: 59, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00598560
-uint32_t list<basic_string<char>>::number_of_lists = { /* <data@0x00598560> */ };
+uint32_t list<basic_string<char>>::number_of_lists = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00001564-00001567 Module: 59, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00598564
-struct list<basic_string<char>>::list_node* list<basic_string<char>>::last = { /* <data@0x00598564> */ };
+struct list<basic_string<char>>::list_node* list<basic_string<char>>::last = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00001568-0000156b Module: 59, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00598568
-struct list<basic_string<char>>::list_node* list<basic_string<char>>::next_avail = { /* <data@0x00598568> */ };
+struct list<basic_string<char>>::list_node* list<basic_string<char>>::next_avail = { 0 /* todo */ };
 
 
 
 // Contribution: 3:0000156c-0000156f Module: 59, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059856c
-struct list<basic_string<char>>::list_node* list<basic_string<char>>::free_list = { /* <data@0x0059856c> */ };
+struct list<basic_string<char>>::list_node* list<basic_string<char>>::free_list = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00001570-00001573 Module: 59, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00598570
-struct list<basic_string<char>>::list_node_buffer* list<basic_string<char>>::buffer_list = { /* <data@0x00598570> */ };
+struct list<basic_string<char>>::list_node_buffer* list<basic_string<char>>::buffer_list = { 0 /* todo */ };
 

@@ -20473,103 +20473,103 @@ _T51:
 
 // Contribution: 3:000000b0-000000bb Module: 200, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005970b0
-static void (*$S76)() = { /* <data@0x005970b0> */ };
+static void (*$S76)() = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005970b4
-static void (*$S82)() = { /* <data@0x005970b4> */ };
+static void (*$S82)() = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005970b8
-static void (*$S87)() = { /* <data@0x005970b8> */ };
+static void (*$S87)() = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00021644-00024974 Module: 200, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005b8644
-short gPersonBeamingSlices = { /* <data@0x005b8644> */ };
+short gPersonBeamingSlices = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b8648
-short gPersonBeamingForwardWeight = { /* <data@0x005b8648> */ };
+short gPersonBeamingForwardWeight = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b864c
-short gPersonBeamingSlicesSlice = { /* <data@0x005b864c> */ };
+short gPersonBeamingSlicesSlice = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b8650
-int32_t gFarLimit = { /* <data@0x005b8650> */ };
+int32_t gFarLimit = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b8654
-int32_t gFarBoundary = { /* <data@0x005b8654> */ };
+int32_t gFarBoundary = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b8658
-int32_t gMidBoundary = { /* <data@0x005b8658> */ };
+int32_t gMidBoundary = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b865c
-int32_t gNearBoundary = { /* <data@0x005b865c> */ };
+int32_t gNearBoundary = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b8660
-int32_t gNearLimit = { /* <data@0x005b8660> */ };
+int32_t gNearLimit = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b8664
-int32_t CopterDir = { /* <data@0x005b8664> */ };
+int32_t CopterDir = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b8668
-unsigned short cYObject::sInited = { /* <data@0x005b8668> */ };
+unsigned short cYObject::sInited = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b866c
-unsigned short cYObject::sAllAmbientStarted = { /* <data@0x005b866c> */ };
+unsigned short cYObject::sAllAmbientStarted = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b8670
-short cYObject::sNumMissionAwake = { /* <data@0x005b8670> */ };
+short cYObject::sNumMissionAwake = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b8674
-short cYObject::sNumAmbientAwake = { /* <data@0x005b8674> */ };
+short cYObject::sNumAmbientAwake = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b8678
-short cYObject::sAmbientTopOff = { /* <data@0x005b8678> */ };
+short cYObject::sAmbientTopOff = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b867c
-short cYObject::sAmbientAbsoluteMax = { /* <data@0x005b867c> */ };
+short cYObject::sAmbientAbsoluteMax = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b8680
-class cAvatar* gAvatar = { /* <data@0x005b8680> */ };
+class cAvatar* gAvatar = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b8684
-class cYObject* cYObject::sList = { /* <data@0x005b8684> */ };
+class cYObject* cYObject::sList = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b8688
-short cYObject::sBeamed = { /* <data@0x005b8688> */ };
+short cYObject::sBeamed = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b868c
-short cYObject::sDebugNumBeamed = { /* <data@0x005b868c> */ };
+short cYObject::sDebugNumBeamed = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b8690
-long cYObject::sSimTicks = { /* <data@0x005b8690> */ };
+long cYObject::sSimTicks = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b8694
-int32_t gPersonBeamSlice = { /* <data@0x005b8694> */ };
+int32_t gPersonBeamSlice = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b8698
-int32_t gNextTime = { /* <data@0x005b8698> */ };
+int32_t gNextTime = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b869c
-int32_t gCumTime = { /* <data@0x005b869c> */ };
+int32_t gCumTime = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b86a0
-short gBodyDebugInfoIndex = { /* <data@0x005b86a0> */ };
+short gBodyDebugInfoIndex = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b86a4
-short cYObject::sScurkRectRad = { /* <data@0x005b86a4> */ };
+short cYObject::sScurkRectRad = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b86a8
-static short sAvLastCellX = { /* <data@0x005b86a8> */ };
+static short sAvLastCellX = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b86ac
-static short sAvLastCellY = { /* <data@0x005b86ac> */ };
+static short sAvLastCellY = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b86b0
-static short gPersonSoundBeamSlice = { /* <data@0x005b86b0> */ };
+static short gPersonSoundBeamSlice = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b86b4
-static short sCheckTotedCount = { /* <data@0x005b86b4> */ };
+static short sCheckTotedCount = { 0 /* todo */ };
 
 
 

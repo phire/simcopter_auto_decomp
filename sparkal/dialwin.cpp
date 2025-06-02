@@ -10221,56 +10221,56 @@ _T10b:
 
 // Contribution: 3:00001f58-000020e0 Module: 47, 8 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00598f58
-char * SZ_RADIO_COMPASS_WINDOW_IMAGE_FILE_NAME = { /* <data@0x00598f58> */ };
+char * SZ_RADIO_COMPASS_WINDOW_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598f5c
-char * SZ_COMPASS_IMAGE_FILE_NAME = { /* <data@0x00598f5c> */ };
+char * SZ_COMPASS_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598f60
-char * SZ_DIAL_WINDOW_IMAGE_FILE_NAME = { /* <data@0x00598f60> */ };
+char * SZ_DIAL_WINDOW_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598f64
-char * SZ_DIAL_WINDOW_DAMAGE_FILE_NAME = { /* <data@0x00598f64> */ };
+char * SZ_DIAL_WINDOW_DAMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598f68
-char * SZ_DIAL_WINDOW_FUEL_LIGHT_FILE_NAME = { /* <data@0x00598f68> */ };
+char * SZ_DIAL_WINDOW_FUEL_LIGHT_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598f6c
-char * SZ_DIAL_WINDOW_MONEY_FONT_FILE_NAME = { /* <data@0x00598f6c> */ };
+char * SZ_DIAL_WINDOW_MONEY_FONT_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598f70
-char * SZ_DIAL_WINDOW_MANA_FILE_NAME = { /* <data@0x00598f70> */ };
+char * SZ_DIAL_WINDOW_MANA_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598f74
-char * SZ_DIAL_WINDOW_ALTITUDE_NBR_FILE_NAME = { /* <data@0x00598f74> */ };
+char * SZ_DIAL_WINDOW_ALTITUDE_NBR_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598f78
-char * SZ_DIAL_WINDOW_BOOT_FILE_NAME = { /* <data@0x00598f78> */ };
+char * SZ_DIAL_WINDOW_BOOT_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598f7c
-char * SZ_DIAL_WINDOW_BOOT_BACK_FILE_NAME = { /* <data@0x00598f7c> */ };
+char * SZ_DIAL_WINDOW_BOOT_BACK_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598fb8
-char * SZ_PASSENGER_WINDOW_IMAGE_FILE_NAME = { /* <data@0x00598fb8> */ };
+char * SZ_PASSENGER_WINDOW_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598fbc
-char * SZ_PASSENGER_IMAGE_FILE_NAME = { /* <data@0x00598fbc> */ };
+char * SZ_PASSENGER_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598fc0
-char * SZ_MAP_WINDOW_IMAGE_FILE_NAME = { /* <data@0x00598fc0> */ };
+char * SZ_MAP_WINDOW_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598fc4
-char * SZ_MAP_WINDOW_BUTTON_FILE_NAME = { /* <data@0x00598fc4> */ };
+char * SZ_MAP_WINDOW_BUTTON_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598fcc
-char * SZ_BUCKET_WATER_GUAGE_IMAGE = { /* <data@0x00598fcc> */ };
+char * SZ_BUCKET_WATER_GUAGE_IMAGE = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598fd0
-char * SZ_EQUIPMENT_BUTTON_IMAGE_0 = { /* <data@0x00598fd0> */ };
+char * SZ_EQUIPMENT_BUTTON_IMAGE_0 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598fd4
-char * SZ_EQUIPMENT_BUTTON_IMAGE_1 = { /* <data@0x00598fd4> */ };
+char * SZ_EQUIPMENT_BUTTON_IMAGE_1 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598fd8
-char * SZ_EQUIPMENT_BUTTON_IMAGE_2 = { /* <data@0x00598fd8> */ };
+char * SZ_EQUIPMENT_BUTTON_IMAGE_2 = { 0 /* todo */ };
 

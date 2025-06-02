@@ -1523,115 +1523,115 @@ _Tc0a:
 
 // Contribution: 3:00000020-00000023 Module: 67, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00597020
-static void (*$S49)() = { /* <data@0x00597020> */ };
+static void (*$S49)() = { 0 /* todo */ };
 
 
 
 // Contribution: 3:000004c0-00000662 Module: 67, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005974c0
-char * SZ_CAREER_CITY_FILE_NAME_BASE_0 = { /* <data@0x005974c0> */ };
+char * SZ_CAREER_CITY_FILE_NAME_BASE_0 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005974c4
-char * SZ_CAREER_CITY_FILE_NAME_BASE_1 = { /* <data@0x005974c4> */ };
+char * SZ_CAREER_CITY_FILE_NAME_BASE_1 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005974c8
-char * SZ_CAREER_CITY_FILE_NAME_BASE_2 = { /* <data@0x005974c8> */ };
+char * SZ_CAREER_CITY_FILE_NAME_BASE_2 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005974cc
-char * SZ_CAREER_CITY_FILE_NAME_BASE_3 = { /* <data@0x005974cc> */ };
+char * SZ_CAREER_CITY_FILE_NAME_BASE_3 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005974d0
-char * SZ_CAREER_CITY_FILE_NAME_BASE_4 = { /* <data@0x005974d0> */ };
+char * SZ_CAREER_CITY_FILE_NAME_BASE_4 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005974d4
-char * SZ_CAREER_CITY_FILE_NAME_BASE_5 = { /* <data@0x005974d4> */ };
+char * SZ_CAREER_CITY_FILE_NAME_BASE_5 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005974d8
-char * SZ_CAREER_CITY_FILE_NAME_BASE_6 = { /* <data@0x005974d8> */ };
+char * SZ_CAREER_CITY_FILE_NAME_BASE_6 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005974dc
-char * SZ_CAREER_CITY_FILE_NAME_BASE_7 = { /* <data@0x005974dc> */ };
+char * SZ_CAREER_CITY_FILE_NAME_BASE_7 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005974e0
-char * SZ_CAREER_CITY_FILE_NAME_BASE_8 = { /* <data@0x005974e0> */ };
+char * SZ_CAREER_CITY_FILE_NAME_BASE_8 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005974e4
-char * SZ_CAREER_CITY_FILE_NAME_BASE_9 = { /* <data@0x005974e4> */ };
+char * SZ_CAREER_CITY_FILE_NAME_BASE_9 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005974e8
-char * SZ_CAREER_CITY_FILE_NAME_BASE_10 = { /* <data@0x005974e8> */ };
+char * SZ_CAREER_CITY_FILE_NAME_BASE_10 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005974ec
-char * SZ_CAREER_CITY_FILE_NAME_BASE_11 = { /* <data@0x005974ec> */ };
+char * SZ_CAREER_CITY_FILE_NAME_BASE_11 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005974f0
-char * SZ_CAREER_CITY_FILE_NAME_BASE_12 = { /* <data@0x005974f0> */ };
+char * SZ_CAREER_CITY_FILE_NAME_BASE_12 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005974f4
-char * SZ_CAREER_CITY_FILE_NAME_BASE_13 = { /* <data@0x005974f4> */ };
+char * SZ_CAREER_CITY_FILE_NAME_BASE_13 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005974f8
-char * SZ_CAREER_CITY_FILE_NAME_BASE_14 = { /* <data@0x005974f8> */ };
+char * SZ_CAREER_CITY_FILE_NAME_BASE_14 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005974fc
-char * SZ_CAREER_CITY_FILE_NAME_BASE_15 = { /* <data@0x005974fc> */ };
+char * SZ_CAREER_CITY_FILE_NAME_BASE_15 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597500
-char * SZ_CAREER_CITY_FILE_NAME_BASE_16 = { /* <data@0x00597500> */ };
+char * SZ_CAREER_CITY_FILE_NAME_BASE_16 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597504
-char * SZ_CAREER_CITY_FILE_NAME_BASE_17 = { /* <data@0x00597504> */ };
+char * SZ_CAREER_CITY_FILE_NAME_BASE_17 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597508
-char * SZ_CAREER_CITY_FILE_NAME_BASE_18 = { /* <data@0x00597508> */ };
+char * SZ_CAREER_CITY_FILE_NAME_BASE_18 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059750c
-char * SZ_CAREER_CITY_FILE_NAME_BASE_19 = { /* <data@0x0059750c> */ };
+char * SZ_CAREER_CITY_FILE_NAME_BASE_19 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597510
-char * SZ_CAREER_CITY_FILE_NAME_BASE_20 = { /* <data@0x00597510> */ };
+char * SZ_CAREER_CITY_FILE_NAME_BASE_20 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597514
-char * SZ_CAREER_CITY_FILE_NAME_BASE_21 = { /* <data@0x00597514> */ };
+char * SZ_CAREER_CITY_FILE_NAME_BASE_21 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597518
-char * SZ_CAREER_CITY_FILE_NAME_BASE_22 = { /* <data@0x00597518> */ };
+char * SZ_CAREER_CITY_FILE_NAME_BASE_22 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059751c
-char * SZ_CAREER_CITY_FILE_NAME_BASE_23 = { /* <data@0x0059751c> */ };
+char * SZ_CAREER_CITY_FILE_NAME_BASE_23 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597520
-char * SZ_CAREER_CITY_FILE_NAME_BASE_24 = { /* <data@0x00597520> */ };
+char * SZ_CAREER_CITY_FILE_NAME_BASE_24 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597524
-char * SZ_CAREER_CITY_FILE_NAME_BASE_25 = { /* <data@0x00597524> */ };
+char * SZ_CAREER_CITY_FILE_NAME_BASE_25 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597528
-char * SZ_CAREER_CITY_FILE_NAME_BASE_26 = { /* <data@0x00597528> */ };
+char * SZ_CAREER_CITY_FILE_NAME_BASE_26 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059752c
-char * SZ_CAREER_CITY_FILE_NAME_BASE_27 = { /* <data@0x0059752c> */ };
+char * SZ_CAREER_CITY_FILE_NAME_BASE_27 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597530
-char * SZ_CAREER_CITY_FILE_NAME_BASE_28 = { /* <data@0x00597530> */ };
+char * SZ_CAREER_CITY_FILE_NAME_BASE_28 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597534
-char * SZ_CAREER_CITY_FILE_NAME_BASE_29 = { /* <data@0x00597534> */ };
+char * SZ_CAREER_CITY_FILE_NAME_BASE_29 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597538
-char * SZ_CAREER_CITY_FILE_NAME_BASE_30 = { /* <data@0x00597538> */ };
+char * SZ_CAREER_CITY_FILE_NAME_BASE_30 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059753c
-char * SZ_CAREER_CITY_FILE_NAME_BASE_31 = { /* <data@0x0059753c> */ };
+char * SZ_CAREER_CITY_FILE_NAME_BASE_31 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597540
-char * SZ_CITY_DATA_SUFFIX = { /* <data@0x00597540> */ };
+char * SZ_CITY_DATA_SUFFIX = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597544
-char * SZ_CITY_SMALL_VIDEO_SUFFIX = { /* <data@0x00597544> */ };
+char * SZ_CITY_SMALL_VIDEO_SUFFIX = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597548
-char * SZ_CITY_BIG_VIDEO_SUFFIX = { /* <data@0x00597548> */ };
+char * SZ_CITY_BIG_VIDEO_SUFFIX = { 0 /* todo */ };
 
 
 

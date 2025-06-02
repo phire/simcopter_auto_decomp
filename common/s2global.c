@@ -54,202 +54,202 @@
 
 // Contribution: 3:00004550-00005167 Module: 90, 8 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0059b550
-short GameSpeed = { /* <data@0x0059b550> */ };
+short GameSpeed = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059b554
-short NewDisaster = { /* <data@0x0059b554> */ };
+short NewDisaster = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059b558
-short DisasterObject = { /* <data@0x0059b558> */ };
+short DisasterObject = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059b55c
-unsigned short AutoBudget = { /* <data@0x0059b55c> */ };
+unsigned short AutoBudget = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059b560
-unsigned short AutoGo = { /* <data@0x0059b560> */ };
+unsigned short AutoGo = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059b564
-unsigned short UserSoundOn = { /* <data@0x0059b564> */ };
+unsigned short UserSoundOn = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059b568
-unsigned short UserMusicOn = { /* <data@0x0059b568> */ };
+unsigned short UserMusicOn = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059b56c
-unsigned short NoDisasters = { /* <data@0x0059b56c> */ };
+unsigned short NoDisasters = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059b570
-short VMax[8] = { /* <data@0x0059b570> */ };
+short VMax[8] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059b580
-long simCycle = { /* <data@0x0059b580> */ };
+long simCycle = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059b584
-short baseYear = { /* <data@0x0059b584> */ };
+short baseYear = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059b588
-unsigned char WthrState[4][12][8] = { /* <data@0x0059b588> */ };
+unsigned char WthrState[4][12][8] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059b708
-unsigned char WthrHeat[12] = { /* <data@0x0059b708> */ };
+unsigned char WthrHeat[12] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059b718
-unsigned char WthrWind[12] = { /* <data@0x0059b718> */ };
+unsigned char WthrWind[12] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059b728
-unsigned char WthrHumid[12] = { /* <data@0x0059b728> */ };
+unsigned char WthrHumid[12] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059b738
-unsigned char ToolSize[18][12] = { /* <data@0x0059b738> */ };
+unsigned char ToolSize[18][12] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059b810
-long ToolCost[18][12] = { /* <data@0x0059b810> */ };
+long ToolCost[18][12] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bb70
-unsigned long ToolActive[18] = { /* <data@0x0059bb70> */ };
+unsigned long ToolActive[18] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bbb8
-unsigned long MapActive[9] = { /* <data@0x0059bbb8> */ };
+unsigned long MapActive[9] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bbdc
-short mapValue = { /* <data@0x0059bbdc> */ };
+short mapValue = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bbe0
-short toolValue = { /* <data@0x0059bbe0> */ };
+short toolValue = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bbe4
-short emerValue = { /* <data@0x0059bbe4> */ };
+short emerValue = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bbe8
-short terValue = { /* <data@0x0059bbe8> */ };
+short terValue = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bbec
-unsigned char Military = { /* <data@0x0059bbec> */ };
+unsigned char Military = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bbf0
-unsigned short terCoast = { /* <data@0x0059bbf0> */ };
+unsigned short terCoast = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bbf4
-unsigned short terRiver = { /* <data@0x0059bbf4> */ };
+unsigned short terRiver = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bbf8
-short terHills = { /* <data@0x0059bbf8> */ };
+short terHills = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bbfc
-short terWater = { /* <data@0x0059bbfc> */ };
+short terWater = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bc00
-short terTrees = { /* <data@0x0059bc00> */ };
+short terTrees = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bc04
-short popDisplay = { /* <data@0x0059bc04> */ };
+short popDisplay = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bc08
-short indDisplay = { /* <data@0x0059bc08> */ };
+short indDisplay = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bc0c
-short graphDisplay = { /* <data@0x0059bc0c> */ };
+short graphDisplay = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bc10
-unsigned long graphOn = { /* <data@0x0059bc10> */ };
+unsigned long graphOn = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bc14
-short GameMode = { /* <data@0x0059bc14> */ };
+short GameMode = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bc18
-short Compass = { /* <data@0x0059bc18> */ };
+short Compass = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bc1c
-short Scale = { /* <data@0x0059bc1c> */ };
+short Scale = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bc20
-unsigned short DisplayLayer[5] = { /* <data@0x0059bc20> */ };
+unsigned short DisplayLayer[5] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bc30
-unsigned short StashLayer[10] = { /* <data@0x0059bc30> */ };
+unsigned short StashLayer[10] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bc48
-short CompFaceTab[4] = { /* <data@0x0059bc48> */ };
+short CompFaceTab[4] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bc50
-short FaceTab[4][4] = { /* <data@0x0059bc50> */ };
+short FaceTab[4][4] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bc70
-struct _rect toolRect[35] = { /* <data@0x0059bc70> */ };
+struct _rect toolRect[35] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bd88
-struct _rect emerRect[11] = { /* <data@0x0059bd88> */ };
+struct _rect emerRect[11] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bde0
-struct _rect terRect[23] = { /* <data@0x0059bde0> */ };
+struct _rect terRect[23] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059be98
-struct _rect mapRect[10] = { /* <data@0x0059be98> */ };
+struct _rect mapRect[10] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bee8
-struct _rect bigRect[10] = { /* <data@0x0059bee8> */ };
+struct _rect bigRect[10] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bf38
-struct S2Rect graphRect[19] = { /* <data@0x0059bf38> */ };
+struct S2Rect graphRect[19] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bfd0
-struct S2Rect popRect[3] = { /* <data@0x0059bfd0> */ };
+struct S2Rect popRect[3] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bfe8
-struct S2Rect indRect[3] = { /* <data@0x0059bfe8> */ };
+struct S2Rect indRect[3] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059c000
-short EditData = { /* <data@0x0059c000> */ };
+short EditData = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059c004
-short ClipXlow = { /* <data@0x0059c004> */ };
+short ClipXlow = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059c008
-short ClipYlow = { /* <data@0x0059c008> */ };
+short ClipYlow = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059c00c
-short ClipXhigh = { /* <data@0x0059c00c> */ };
+short ClipXhigh = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059c010
-short ClipYhigh = { /* <data@0x0059c010> */ };
+short ClipYhigh = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059c014
-unsigned short YearEnd = { /* <data@0x0059c014> */ };
+unsigned short YearEnd = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059c018
-long oldResPop = { /* <data@0x0059c018> */ };
+long oldResPop = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059c01c
-short CityCentX = { /* <data@0x0059c01c> */ };
+short CityCentX = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059c020
-short CityCentY = { /* <data@0x0059c020> */ };
+short CityCentY = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059c024
-short CurrentDisaster = { /* <data@0x0059c024> */ };
+short CurrentDisaster = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059c028
-short HOFFX = { /* <data@0x0059c028> */ };
+short HOFFX = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059c02c
-short HOFFY = { /* <data@0x0059c02c> */ };
+short HOFFY = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059c030
-short WINCENTERY = { /* <data@0x0059c030> */ };
+short WINCENTERY = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059c034
-short WINCENTERX = { /* <data@0x0059c034> */ };
+short WINCENTERX = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059c038
-unsigned short PaperExtra = { /* <data@0x0059c038> */ };
+unsigned short PaperExtra = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059c03c
-unsigned short PaperDeliver = { /* <data@0x0059c03c> */ };
+unsigned short PaperDeliver = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059c040
-short HurricaneCnt = { /* <data@0x0059c040> */ };
+short HurricaneCnt = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059c048
-short TileSize[144] = { /* <data@0x0059c048> */ };
+short TileSize[144] = { 0 /* todo */ };
 
 
 

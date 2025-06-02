@@ -1656,5 +1656,5 @@ _T328:
 
 // Contribution: 3:000039d4-00003b9d Module: 7, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0059a9d4
-unsigned short * CRLECompressedImage::RLEGraphicsPool = { /* <data@0x0059a9d4> */ };
+unsigned short * CRLECompressedImage::RLEGraphicsPool = { 0 /* todo */ };
 

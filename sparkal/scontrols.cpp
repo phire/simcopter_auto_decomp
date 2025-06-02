@@ -1206,31 +1206,31 @@ _T3f:
 
 // Contribution: 3:00000054-00000063 Module: 38, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00597054
-static void (*$S66)() = { /* <data@0x00597054> */ };
+static void (*$S66)() = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597058
-static void (*$S71)() = { /* <data@0x00597058> */ };
+static void (*$S71)() = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059705c
-static void (*$S76)() = { /* <data@0x0059705c> */ };
+static void (*$S76)() = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597060
-static void (*$S81)() = { /* <data@0x00597060> */ };
+static void (*$S81)() = { 0 /* todo */ };
 
 
 
 // Contribution: 3:000027b8-000027c7 Module: 38, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005997b8
-long SoundButtonWindow::lButtonSoundReferenceCount = { /* <data@0x005997b8> */ };
+long SoundButtonWindow::lButtonSoundReferenceCount = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005997bc
-long SoundRadioButtonWindow::lRadioSoundReferenceCount = { /* <data@0x005997bc> */ };
+long SoundRadioButtonWindow::lRadioSoundReferenceCount = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005997c0
-long SoundCheckBoxWindow::lCheckBoxSoundReferenceCount = { /* <data@0x005997c0> */ };
+long SoundCheckBoxWindow::lCheckBoxSoundReferenceCount = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005997c4
-long SoundScrollBarWindow::lScrollBarSoundReferenceCount = { /* <data@0x005997c4> */ };
+long SoundScrollBarWindow::lScrollBarSoundReferenceCount = { 0 /* todo */ };
 
 
 

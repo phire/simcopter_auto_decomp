@@ -185,103 +185,103 @@ void $E6() {
 
 // Contribution: 3:0000003c-00000043 Module: 51, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0059703c
-static void (*$S5)() = { /* <data@0x0059703c> */ };
+static void (*$S5)() = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597040
-static void (*$S8)() = { /* <data@0x00597040> */ };
+static void (*$S8)() = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00001e50-00001f13 Module: 51, 8 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00598e50
-void * __ptr32 stack = { /* <data@0x00598e50> */ };
+void * __ptr32 stack = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598e54
-char * VRRenderBuf = { /* <data@0x00598e54> */ };
+char * VRRenderBuf = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598e58
-int32_t Stretch2Fit = { /* <data@0x00598e58> */ };
+int32_t Stretch2Fit = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598e5c
-int32_t G_water_anim = { /* <data@0x00598e5c> */ };
+int32_t G_water_anim = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598e60
-struct VRwindowType VRCurrentWindow = { /* <data@0x00598e60> */ };
+struct VRwindowType VRCurrentWindow = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598e7c
-int32_t G_run_old = { /* <data@0x00598e7c> */ };
+int32_t G_run_old = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598e80
-int32_t G_use_mouse = { /* <data@0x00598e80> */ };
+int32_t G_use_mouse = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598e84
-int32_t G_fract_blurr = { /* <data@0x00598e84> */ };
+int32_t G_fract_blurr = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598e88
-int32_t G_texobjs = { /* <data@0x00598e88> */ };
+int32_t G_texobjs = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598e8c
-int32_t G_texterr = { /* <data@0x00598e8c> */ };
+int32_t G_texterr = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598e90
-long G_daynight = { /* <data@0x00598e90> */ };
+long G_daynight = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598e94
-long G_freemem = { /* <data@0x00598e94> */ };
+long G_freemem = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598e98
-int32_t G_artmode = { /* <data@0x00598e98> */ };
+int32_t G_artmode = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598e9c
-int32_t G_testmode = { /* <data@0x00598e9c> */ };
+int32_t G_testmode = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598ea0
-long G_ClearColor = { /* <data@0x00598ea0> */ };
+long G_ClearColor = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598ea4
-long G_numcellsrej = { /* <data@0x00598ea4> */ };
+long G_numcellsrej = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598ea8
-int32_t G_use_height_backplane = { /* <data@0x00598ea8> */ };
+int32_t G_use_height_backplane = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598eac
-char * buffer1 = { /* <data@0x00598eac> */ };
+char * buffer1 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598eb0
-long G_diff_level = { /* <data@0x00598eb0> */ };
+long G_diff_level = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598eb4
-long G_max_emptycel_size = { /* <data@0x00598eb4> */ };
+long G_max_emptycel_size = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598eb8
-long gIDOfBuildingAvatarIsIn = { /* <data@0x00598eb8> */ };
+long gIDOfBuildingAvatarIsIn = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598ebc
-long G_video_mode = { /* <data@0x00598ebc> */ };
+long G_video_mode = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598ec0
-struct VRwindowType qwindow = { /* <data@0x00598ec0> */ };
+struct VRwindowType qwindow = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598ee0
-struct VRwindowType swindow = { /* <data@0x00598ee0> */ };
+struct VRwindowType swindow = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598efc
-char * S_pal = { /* <data@0x00598efc> */ };
+char * S_pal = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598f00
-enum tagResolution gameResolution = { /* <data@0x00598f00> */ };
+enum tagResolution gameResolution = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598f04
-char * gszAppDirectory = { /* <data@0x00598f04> */ };
+char * gszAppDirectory = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598f08
-int32_t bDone = { /* <data@0x00598f08> */ };
+int32_t bDone = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598f0c
-int32_t bIsActive = { /* <data@0x00598f0c> */ };
+int32_t bIsActive = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598f10
-int32_t bFullScreen = { /* <data@0x00598f10> */ };
+int32_t bFullScreen = { 0 /* todo */ };
 
 
 

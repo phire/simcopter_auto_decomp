@@ -9177,25 +9177,25 @@ _Tcb:
 
 // Contribution: 3:0001ee78-000202c3 Module: 168, 8 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005b5e78
-int32_t G_dyobjmempool = { /* <data@0x005b5e78> */ };
+int32_t G_dyobjmempool = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5e80
-static char S_hires_fire[8] = { /* <data@0x005b5e80> */ };
+static char S_hires_fire[8] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5e88
-static char S_hires_smoke_day[8] = { /* <data@0x005b5e88> */ };
+static char S_hires_smoke_day[8] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5e90
-static char S_hires_smoke_night[8] = { /* <data@0x005b5e90> */ };
+static char S_hires_smoke_night[8] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5e98
-static char S_hires_water[8] = { /* <data@0x005b5e98> */ };
+static char S_hires_water[8] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5ea0
-static struct _LZ_INFO S_objlzinfo[256] = { /* <data@0x005b5ea0> */ };
+static struct _LZ_INFO S_objlzinfo[256] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b72a0
-static long S_color_no = { /* <data@0x005b72a0> */ };
+static long S_color_no = { 0 /* todo */ };
 
 
 

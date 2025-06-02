@@ -2666,44 +2666,44 @@ _T19a:
 
 // Contribution: 2:000047a0-00004a17 Module: 186, 8 byte alignment, initialized_data, read, 
 // GLOBAL: COPTER_D 0x005937a0
-static const int32_t TurnTable3[4][8] = { /* <data@0x005937a0> */ };
+static const int32_t TurnTable3[4][8] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00593820
-static const int32_t TurnTable2[4][4] = { /* <data@0x00593820> */ };
+static const int32_t TurnTable2[4][4] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00593860
-static const int32_t IndexToType[4] = { /* <data@0x00593860> */ };
+static const int32_t IndexToType[4] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00593870
-static const int32_t TypeToIndex2[16] = { /* <data@0x00593870> */ };
+static const int32_t TypeToIndex2[16] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005938b0
-static const int32_t TILUT[4][4] = { /* <data@0x005938b0> */ };
+static const int32_t TILUT[4][4] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005938f0
-static const struct _dPoint2d OT[4] = { /* <data@0x005938f0> */ };
+static const struct _dPoint2d OT[4] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00593930
-static const struct _dPoint2d RRT[4] = { /* <data@0x00593930> */ };
+static const struct _dPoint2d RRT[4] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00593970
-static const struct _dPoint2d LRT[4] = { /* <data@0x00593970> */ };
+static const struct _dPoint2d LRT[4] = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00027f28-00028474 Module: 186, 8 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005bef28
-long Pbufwidth = { /* <data@0x005bef28> */ };
+long Pbufwidth = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005bef2c
-long Pwinwidth = { /* <data@0x005bef2c> */ };
+long Pwinwidth = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005bef30
-long Pwinheight = { /* <data@0x005bef30> */ };
+long Pwinheight = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005bef38
-double G_figureHeadShapeRatio = { /* <data@0x005bef38> */ };
+double G_figureHeadShapeRatio = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005bef40
-double G_figureShadeSpread = { /* <data@0x005bef40> */ };
+double G_figureShadeSpread = { 0 /* todo */ };
 

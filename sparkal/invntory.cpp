@@ -3196,17 +3196,17 @@ void InventoryWindow::GetTitleAndAddressRects(class MRect& rectTitle, class MRec
 
 // Contribution: 3:00003984-000039d1 Module: 8, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0059a984
-char * SZ_INVENTORY_IMAGE_FILE_NAME = { /* <data@0x0059a984> */ };
+char * SZ_INVENTORY_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059a988
-char * SZ_INVENTORY_CHECKMARK_IMAGE_FILE_NAME = { /* <data@0x0059a988> */ };
+char * SZ_INVENTORY_CHECKMARK_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059a98c
-char * SZ_INVENTORY_WINDOW_HELICOPTER_TEXT_NAME = { /* <data@0x0059a98c> */ };
+char * SZ_INVENTORY_WINDOW_HELICOPTER_TEXT_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059a990
-char * SZ_INVENTORY_WINDOW_TITLE_TEXT_NAME = { /* <data@0x0059a990> */ };
+char * SZ_INVENTORY_WINDOW_TITLE_TEXT_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059a994
-char * SZ_INVENTORY_WINDOW_ADDRESS_TEXT_NAME = { /* <data@0x0059a994> */ };
+char * SZ_INVENTORY_WINDOW_ADDRESS_TEXT_NAME = { 0 /* todo */ };
 

@@ -925,10 +925,10 @@ _T244:
 
 // Contribution: 3:00003120-0000313c Module: 20, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0059a120
-char * SZ_SKY_DAY_IMAGE_FILE_NAME = { /* <data@0x0059a120> */ };
+char * SZ_SKY_DAY_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059a124
-char * SZ_SKY_NIGHT_IMAGE_FILE_NAME = { /* <data@0x0059a124> */ };
+char * SZ_SKY_NIGHT_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 
 

@@ -4455,91 +4455,91 @@ _T10b:
 
 // Contribution: 2:00003ab0-00003cbf Module: 172, 8 byte alignment, initialized_data, read, 
 // GLOBAL: COPTER_D 0x00592ab0
-static const int32_t TurnTable3[4][8] = { /* <data@0x00592ab0> */ };
+static const int32_t TurnTable3[4][8] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00592b30
-static const int32_t TurnTable2[4][4] = { /* <data@0x00592b30> */ };
+static const int32_t TurnTable2[4][4] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00592b70
-static const int32_t IndexToType[4] = { /* <data@0x00592b70> */ };
+static const int32_t IndexToType[4] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00592b80
-static const int32_t TypeToIndex2[16] = { /* <data@0x00592b80> */ };
+static const int32_t TypeToIndex2[16] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00592bc0
-static const int32_t TILUT[4][4] = { /* <data@0x00592bc0> */ };
+static const int32_t TILUT[4][4] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00592c00
-static const struct _dPoint2d OT[4] = { /* <data@0x00592c00> */ };
+static const struct _dPoint2d OT[4] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00592c40
-static const struct _dPoint2d RRT[4] = { /* <data@0x00592c40> */ };
+static const struct _dPoint2d RRT[4] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00592c80
-static const struct _dPoint2d LRT[4] = { /* <data@0x00592c80> */ };
+static const struct _dPoint2d LRT[4] = { 0 /* todo */ };
 
 
 
 // Contribution: 3:0001e200-0001e2c3 Module: 172, 8 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005b5200
-int32_t G_mapmode = { /* <data@0x005b5200> */ };
+int32_t G_mapmode = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5208
-struct VRwindowType mwindow = { /* <data@0x005b5208> */ };
+struct VRwindowType mwindow = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5228
-struct VRwindowType save_window = { /* <data@0x005b5228> */ };
+struct VRwindowType save_window = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5248
-struct Point2d S_mapmin = { /* <data@0x005b5248> */ };
+struct Point2d S_mapmin = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5250
-struct Point2d S_mapmax = { /* <data@0x005b5250> */ };
+struct Point2d S_mapmax = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5258
-struct Point2d S_bordermin = { /* <data@0x005b5258> */ };
+struct Point2d S_bordermin = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5260
-struct Point2d S_bordermax = { /* <data@0x005b5260> */ };
+struct Point2d S_bordermax = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5268
-static long S_borderdimx = { /* <data@0x005b5268> */ };
+static long S_borderdimx = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b526c
-static long S_borderdimy = { /* <data@0x005b526c> */ };
+static long S_borderdimy = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5270
-static char * S_mapbuf = { /* <data@0x005b5270> */ };
+static char * S_mapbuf = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5274
-static char * S_borderbuf = { /* <data@0x005b5274> */ };
+static char * S_borderbuf = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5278
-static char * S_mapbufctr = { /* <data@0x005b5278> */ };
+static char * S_mapbufctr = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b527c
-static long S_mapdimx = { /* <data@0x005b527c> */ };
+static long S_mapdimx = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5280
-static long S_mapdimy = { /* <data@0x005b5280> */ };
+static long S_mapdimy = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5284
-static char S_fire_cycle = { /* <data@0x005b5284> */ };
+static char S_fire_cycle = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5288
-static long S_dirlen = { /* <data@0x005b5288> */ };
+static long S_dirlen = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b528c
-static char * S_savebuffer1 = { /* <data@0x005b528c> */ };
+static char * S_savebuffer1 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5290
-static int32_t S_save_aspect = { /* <data@0x005b5290> */ };
+static int32_t S_save_aspect = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5294
-static int32_t S_save_width = { /* <data@0x005b5294> */ };
+static int32_t S_save_width = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5298
-static int32_t S_mapzoom = { /* <data@0x005b5298> */ };
+static int32_t S_mapzoom = { 0 /* todo */ };
 
 
 
