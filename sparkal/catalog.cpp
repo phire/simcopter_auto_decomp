@@ -8023,9 +8023,58 @@ _Tfc:
 
 
 // Contribution: 2:00001ce8-00001dab Module: 34, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00590ce8
-// Demangled: const CatalogWindow::`vftable'
-// ??_7CatalogWindow@@6B@
+// vftable for CatalogWindow @ 0x00590ce8
+//   00: CatalogWindow::DoMessage @ 0x0047b0d8
+//   01: CatalogWindow::Initialize @ 0x00476517
+//   02: GraphicWindow::CreateAllImages @ 0x004a6dc5
+//   03: GraphicWindow::DestroyAllImages @ 0x004a6ea7
+//   04: CatalogWindow::CreateImage @ 0x0047aaf5
+//   05: GraphicWindow::DestroyImage @ 0x004a4cab
+//   06: CatalogWindow::ComposeSelf @ 0x0047ab4e
+//   07: GraphicWindow::SetImageToDrawOnto @ 0x004a6bcd
+//   08: GraphicWindow::SetAllImagesToDrawOnto @ 0x004a6cf0
+//   09: GraphicWindow::SetTransparentColor @ 0x004a4d1c
+//   10: GraphicWindow::SetBorderDrawing @ 0x0040d810
+//   11: GraphicWindow::DrawBorder @ 0x004a6f7c
+//   12: GraphicWindow::SetChanged @ 0x004a50e0
+//   13: GraphicWindow::MoveWindow @ 0x004a4d7e
+//   14: GraphicWindow::SetWidthAndHeight @ 0x004a4df1
+//   15: GraphicWindow::CenterWindow @ 0x004a4ea8
+//   16: GraphicWindow::CenterWindow @ 0x004a4e55
+//   17: GraphicWindow::SetWindowPosition @ 0x0040d840
+//   18: GraphicWindow::SetWindowTitle @ 0x004a51d0
+//   19: GraphicWindow::InvalidateAllOverlaps @ 0x004a6256
+//   20: GraphicWindow::InvalidateAllChildren @ 0x004a6399
+//   21: GraphicWindow::AddChild @ 0x004a53be
+//   22: GraphicWindow::DeleteChild @ 0x004a5837
+//   23: GraphicWindow::DeleteChild @ 0x004a569a
+//   24: GraphicWindow::RemoveChild @ 0x004a5a11
+//   25: GraphicWindow::DeleteAllChildren @ 0x004a5b58
+//   26: GraphicWindow::RemoveAllChildren @ 0x004a5cd8
+//   27: GraphicWindow::DeleteSelf @ 0x004a603c
+//   28: GraphicWindow::RemoveSelf @ 0x004a606b
+//   29: GraphicWindow::FindChild @ 0x004a5dd1
+//   30: GraphicWindow::SetParent @ 0x0040d7e0
+//   31: GraphicWindow::CanWeRespondToMessage @ 0x004a786b
+//   32: GraphicWindow::DoCharacter @ 0x004a6568
+//   33: CatalogWindow::DoKeyDown @ 0x0047adce
+//   34: GraphicWindow::DoKeyUp @ 0x004a659c
+//   35: CatalogWindow::DoCursorDown @ 0x0047ae0e
+//   36: CatalogWindow::DoCursorUp @ 0x0047ae9c
+//   37: CatalogWindow::DoCursorMove @ 0x0047aeb9
+//   38: GraphicWindow::CaptureCursorStart @ 0x004a6607
+//   39: GraphicWindow::CaptureCursorEnd @ 0x004a6640
+//   40: GraphicWindow::WindowToScreenCoordinates @ 0x004a667d
+//   41: GraphicWindow::ScreenToWindowCoordinates @ 0x004a66cc
+//   42: GraphicWindow::IsPointInWindow @ 0x0040d8b0
+//   43: CatalogWindow::`scalar deleting destructor' @ 0x0047b600
+//   44: GraphicWindow::GetImage @ 0x004a6720
+//   45: GraphicWindow::GetImagePath @ 0x004a673c
+//   46: GraphicWindow::DrawChildren @ 0x004a6180
+//   47: GraphicWindow::DrawSelf @ 0x004a6168
+//   48: GraphicWindow::DoesWindowNeedUpdating @ 0x004a646b
+//   49 entries
+
 
 
 // Contribution: 3:0000281c-000029cc Module: 34, 4 byte alignment, initialized_data, read, write, 

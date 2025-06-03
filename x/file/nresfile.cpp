@@ -628,24 +628,22 @@ _T230:
 
 
 // Contribution: 2:00002218-00002227 Module: 16, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00591218
-// Demangled: const NResFile::`vftable'
-// ??_7NResFile@@6B@
+// vftable for NResFile @ 0x00591218
+//   00: NResFile::`scalar deleting destructor' @ 0x0049a440
+//   01: FlatResFile::Open @ 0x00552ec5
+//   02: FlatResFile::Open @ 0x00552e51
+//   03: FlatResFile::Close @ 0x00552f5f
+//   4 entries
+
 
 
 // Contribution: 3:0000324c-00003252 Module: 16, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x0059a24c
-// Demangled: "whoops"
-// ??_C@_06BBEO@whoops?$AA@
+// string literal: "whoops"
 
 
 // Contribution: 3:00003254-00003270 Module: 16, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x0059a254
-// Demangled: "c:\\copter\\source\\x\\PtrList.h"
-// ??_C@_0BN@BGMO@c?3?2copter?2source?2x?2PtrList?4h?$AA@
+// string literal: "c:\copter\source\x\PtrList.h"
 
 
 // Contribution: 3:00003274-0000328a Module: 16, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x0059a274
-// Demangled: "count error in ptrlist"
-// ??_C@_0BH@OELJ@count?5error?5in?5ptrlist?$AA@
+// string literal: "count error in ptrlist"

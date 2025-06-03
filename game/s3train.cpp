@@ -10226,9 +10226,16 @@ _T66:
 
 
 // Contribution: 2:00004238-00004253 Module: 162, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00593238
-// Demangled: const TrainClass::`vftable'
-// ??_7TrainClass@@6B@
+// vftable for TrainClass @ 0x00593238
+//   00: TrainClass::`scalar deleting destructor' @ 0x00534980
+//   01: TrainClass::ItterateFSM @ 0x0052e671
+//   02: TrainClass::AdjustSpeed @ 0x0052f41b
+//   03: TrainClass::IsPathClear @ 0x0052f454
+//   04: TrainClass::PickTurnDirection @ 0x005313f2
+//   05: TrainClass::BeamToWithinCameraRange @ 0x00533422
+//   06: TrainClass::BeamToLocation @ 0x00533a3b
+//   7 entries
+
 
 
 // Contribution: 3:000000ac-000000af Module: 162, 4 byte alignment, initialized_data, read, write, 

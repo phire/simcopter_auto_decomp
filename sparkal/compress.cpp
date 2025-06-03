@@ -508,7 +508,7 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 	__asm        or     InputMode, 0x20;
 // LINE 65:
 	__asm        push   1;
-	__asm        mov    eax, filebuf::openprot;
+	__asm        mov    eax, Function(void *  ifstream::`scalar deleting destructor'(uint32_t __flags), 0x56fc10);
 	__asm        push   eax;
 	__asm        mov    eax, InputMode;
 	__asm        push   eax;

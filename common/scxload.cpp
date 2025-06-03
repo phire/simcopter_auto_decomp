@@ -2745,21 +2745,44 @@ _T152e:
 
 
 // Contribution: 2:000033f8-00003413 Module: 89, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x005923f8
-// Demangled: const cGZXBitstream::`vftable'
-// ??_7cGZXBitstream@@6B@
+// vftable for cGZXBitstream @ 0x005923f8
+//   00: _purecall @ 0x0056cfa0
+//   01: _purecall @ 0x0056cfa0
+//   02: _purecall @ 0x0056cfa0
+//   03: _purecall @ 0x0056cfa0
+//   04: _purecall @ 0x0056cfa0
+//   05: _purecall @ 0x0056cfa0
+//   06: _purecall @ 0x0056cfa0
+//   7 entries
+
 
 
 // Contribution: 2:00003418-0000343b Module: 89, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00592418
-// Demangled: const cLZAPFileBitStream::`vftable'
-// ??_7cLZAPFileBitStream@@6B@
+// vftable for cLZAPFileBitStream @ 0x00592418
+//   00: cLZAPFileBitStream::Read @ 0x004cba1c
+//   01: cLZAPFileBitStream::Write @ 0x004cba9c
+//   02: cLZAPFileBitStream::Rewind @ 0x004cbb1c
+//   03: cLZAPFileBitStream::RewindToMark @ 0x004cbb63
+//   04: cLZAPFileBitStream::Mark @ 0x004cbbb5
+//   05: cLZAPFileBitStream::Size @ 0x004cbc0d
+//   06: cLZAPFileBitStream::FreeAll @ 0x004cbc42
+//   07: cLZAPFileBitStream::OpenRead @ 0x004cb90d
+//   08: cLZAPFileBitStream::Close @ 0x004cb9d2
+//   9 entries
+
 
 
 // Contribution: 2:00003440-0000345b Module: 89, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00592440
-// Demangled: const cGZXParamBitstream<struct t_alloc, struct t_free>::`vftable'
-// ??_7?$cGZXParamBitstream@Ut_alloc@@Ut_free@@@@6B@
+// vftable for t_free> @ 0x00592440
+//   00: cGZXParamBitstream<t_alloc,t_free>::Read @ 0x004ce100
+//   01: cGZXParamBitstream<t_alloc,t_free>::Write @ 0x004ce200
+//   02: cGZXParamBitstream<t_alloc,t_free>::Rewind @ 0x004cdf70
+//   03: cGZXParamBitstream<t_alloc,t_free>::RewindToMark @ 0x004cdfa0
+//   04: cGZXParamBitstream<t_alloc,t_free>::Mark @ 0x004cdfd0
+//   05: cGZXParamBitstream<t_alloc,t_free>::Size @ 0x004cef40
+//   06: cGZXParamBitstream<t_alloc,t_free>::FreeAll @ 0x004ce000
+//   7 entries
+
 
 
 // Contribution: 3:00005168-0000516d Module: 89, 4 byte alignment, initialized_data, read, write, 

@@ -10665,21 +10665,133 @@ int32_t ScreenWindow::DrawSelf() {
 
 
 // Contribution: 2:00002648-0000267f Module: 9, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00591648
-// Demangled: const GraphicWindowManager::`vftable'
-// ??_7GraphicWindowManager@@6B@
+// vftable for GraphicWindowManager @ 0x00591648
+//   00: GraphicWindowManager::SetNewBaseWindow @ 0x004a1c21
+//   01: GraphicWindowManager::DeleteWindow @ 0x004a1c42
+//   02: GraphicWindowManager::DoCharacter @ 0x004a24f3
+//   03: GraphicWindowManager::DoKeyDown @ 0x004a22c1
+//   04: GraphicWindowManager::DoKeyUp @ 0x004a23da
+//   05: GraphicWindowManager::DoCursorDown @ 0x004a2608
+//   06: GraphicWindowManager::DoCursorUp @ 0x004a268c
+//   07: GraphicWindowManager::DoCursorMove @ 0x004a2710
+//   08: GraphicWindowManager::SendCursorMessageToChildWindow @ 0x004a278e
+//   09: GraphicWindowManager::ComposeAllWindows @ 0x004a29cd
+//   10: GraphicWindowManager::IsWindowValid @ 0x004a2a1b
+//   11: GraphicWindowManager::IsWindowOrParentInDeletionList @ 0x004a21d6
+//   12: GraphicWindowManager::IncrementBusyCount @ 0x004a7b60
+//   13: GraphicWindowManager::DecrementBusyCount @ 0x004a7b90
+//   14 entries
+
 
 
 // Contribution: 2:00002680-00002743 Module: 9, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00591680
-// Demangled: const GraphicWindow::`vftable'
-// ??_7GraphicWindow@@6B@
+// vftable for GraphicWindow @ 0x00591680
+//   00: GraphicWindowOwner::DoMessage @ 0x004a17be
+//   01: GraphicWindow::Initialize @ 0x004a44d4
+//   02: GraphicWindow::CreateAllImages @ 0x004a6dc5
+//   03: GraphicWindow::DestroyAllImages @ 0x004a6ea7
+//   04: GraphicWindow::CreateImage @ 0x004a4aa0
+//   05: GraphicWindow::DestroyImage @ 0x004a4cab
+//   06: GraphicWindow::ComposeSelf @ 0x004a60a3
+//   07: GraphicWindow::SetImageToDrawOnto @ 0x004a6bcd
+//   08: GraphicWindow::SetAllImagesToDrawOnto @ 0x004a6cf0
+//   09: GraphicWindow::SetTransparentColor @ 0x004a4d1c
+//   10: GraphicWindow::SetBorderDrawing @ 0x0040d810
+//   11: GraphicWindow::DrawBorder @ 0x004a6f7c
+//   12: GraphicWindow::SetChanged @ 0x004a50e0
+//   13: GraphicWindow::MoveWindow @ 0x004a4d7e
+//   14: GraphicWindow::SetWidthAndHeight @ 0x004a4df1
+//   15: GraphicWindow::CenterWindow @ 0x004a4ea8
+//   16: GraphicWindow::CenterWindow @ 0x004a4e55
+//   17: GraphicWindow::SetWindowPosition @ 0x0040d840
+//   18: GraphicWindow::SetWindowTitle @ 0x004a51d0
+//   19: GraphicWindow::InvalidateAllOverlaps @ 0x004a6256
+//   20: GraphicWindow::InvalidateAllChildren @ 0x004a6399
+//   21: GraphicWindow::AddChild @ 0x004a53be
+//   22: GraphicWindow::DeleteChild @ 0x004a5837
+//   23: GraphicWindow::DeleteChild @ 0x004a569a
+//   24: GraphicWindow::RemoveChild @ 0x004a5a11
+//   25: GraphicWindow::DeleteAllChildren @ 0x004a5b58
+//   26: GraphicWindow::RemoveAllChildren @ 0x004a5cd8
+//   27: GraphicWindow::DeleteSelf @ 0x004a603c
+//   28: GraphicWindow::RemoveSelf @ 0x004a606b
+//   29: GraphicWindow::FindChild @ 0x004a5dd1
+//   30: GraphicWindow::SetParent @ 0x0040d7e0
+//   31: GraphicWindow::CanWeRespondToMessage @ 0x004a786b
+//   32: GraphicWindow::DoCharacter @ 0x004a6568
+//   33: GraphicWindow::DoKeyDown @ 0x004a6582
+//   34: GraphicWindow::DoKeyUp @ 0x004a659c
+//   35: GraphicWindow::DoCursorDown @ 0x004a65b6
+//   36: GraphicWindow::DoCursorUp @ 0x004a65d0
+//   37: GraphicWindow::DoCursorMove @ 0x004a65ed
+//   38: GraphicWindow::CaptureCursorStart @ 0x004a6607
+//   39: GraphicWindow::CaptureCursorEnd @ 0x004a6640
+//   40: GraphicWindow::WindowToScreenCoordinates @ 0x004a667d
+//   41: GraphicWindow::ScreenToWindowCoordinates @ 0x004a66cc
+//   42: GraphicWindow::IsPointInWindow @ 0x0040d8b0
+//   43: GraphicWindow::`scalar deleting destructor' @ 0x004a7de0
+//   44: GraphicWindow::GetImage @ 0x004a6720
+//   45: GraphicWindow::GetImagePath @ 0x004a673c
+//   46: GraphicWindow::DrawChildren @ 0x004a6180
+//   47: GraphicWindow::DrawSelf @ 0x004a6168
+//   48: GraphicWindow::DoesWindowNeedUpdating @ 0x004a646b
+//   49 entries
+
 
 
 // Contribution: 2:00002748-0000280b Module: 9, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00591748
-// Demangled: const ScreenWindow::`vftable'
-// ??_7ScreenWindow@@6B@
+// vftable for ScreenWindow @ 0x00591748
+//   00: GraphicWindowOwner::DoMessage @ 0x004a17be
+//   01: GraphicWindow::Initialize @ 0x004a44d4
+//   02: GraphicWindow::CreateAllImages @ 0x004a6dc5
+//   03: GraphicWindow::DestroyAllImages @ 0x004a6ea7
+//   04: GraphicWindow::CreateImage @ 0x004a4aa0
+//   05: GraphicWindow::DestroyImage @ 0x004a4cab
+//   06: ScreenWindow::ComposeSelf @ 0x004a7a51
+//   07: GraphicWindow::SetImageToDrawOnto @ 0x004a6bcd
+//   08: GraphicWindow::SetAllImagesToDrawOnto @ 0x004a6cf0
+//   09: GraphicWindow::SetTransparentColor @ 0x004a4d1c
+//   10: GraphicWindow::SetBorderDrawing @ 0x0040d810
+//   11: GraphicWindow::DrawBorder @ 0x004a6f7c
+//   12: GraphicWindow::SetChanged @ 0x004a50e0
+//   13: GraphicWindow::MoveWindow @ 0x004a4d7e
+//   14: GraphicWindow::SetWidthAndHeight @ 0x004a4df1
+//   15: GraphicWindow::CenterWindow @ 0x004a4ea8
+//   16: GraphicWindow::CenterWindow @ 0x004a4e55
+//   17: GraphicWindow::SetWindowPosition @ 0x0040d840
+//   18: GraphicWindow::SetWindowTitle @ 0x004a51d0
+//   19: GraphicWindow::InvalidateAllOverlaps @ 0x004a6256
+//   20: GraphicWindow::InvalidateAllChildren @ 0x004a6399
+//   21: GraphicWindow::AddChild @ 0x004a53be
+//   22: GraphicWindow::DeleteChild @ 0x004a5837
+//   23: GraphicWindow::DeleteChild @ 0x004a569a
+//   24: GraphicWindow::RemoveChild @ 0x004a5a11
+//   25: GraphicWindow::DeleteAllChildren @ 0x004a5b58
+//   26: GraphicWindow::RemoveAllChildren @ 0x004a5cd8
+//   27: GraphicWindow::DeleteSelf @ 0x004a603c
+//   28: GraphicWindow::RemoveSelf @ 0x004a606b
+//   29: GraphicWindow::FindChild @ 0x004a5dd1
+//   30: GraphicWindow::SetParent @ 0x0040d7e0
+//   31: GraphicWindow::CanWeRespondToMessage @ 0x004a786b
+//   32: GraphicWindow::DoCharacter @ 0x004a6568
+//   33: GraphicWindow::DoKeyDown @ 0x004a6582
+//   34: GraphicWindow::DoKeyUp @ 0x004a659c
+//   35: GraphicWindow::DoCursorDown @ 0x004a65b6
+//   36: GraphicWindow::DoCursorUp @ 0x004a65d0
+//   37: GraphicWindow::DoCursorMove @ 0x004a65ed
+//   38: GraphicWindow::CaptureCursorStart @ 0x004a6607
+//   39: GraphicWindow::CaptureCursorEnd @ 0x004a6640
+//   40: GraphicWindow::WindowToScreenCoordinates @ 0x004a667d
+//   41: GraphicWindow::ScreenToWindowCoordinates @ 0x004a66cc
+//   42: GraphicWindow::IsPointInWindow @ 0x0040d8b0
+//   43: ScreenWindow::`scalar deleting destructor' @ 0x004a7f40
+//   44: GraphicWindow::GetImage @ 0x004a6720
+//   45: GraphicWindow::GetImagePath @ 0x004a673c
+//   46: GraphicWindow::DrawChildren @ 0x004a6180
+//   47: ScreenWindow::DrawSelf @ 0x004a7b38
+//   48: GraphicWindow::DoesWindowNeedUpdating @ 0x004a646b
+//   49 entries
+
 
 
 // Contribution: 3:00000090-0000009f Module: 9, 4 byte alignment, initialized_data, read, write, 

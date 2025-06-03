@@ -2800,9 +2800,20 @@ void SoundQueue::ReleaseMutex() {
 
 
 // Contribution: 2:000003f0-0000041b Module: 71, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x0058f3f0
-// Demangled: const SoundQueue::`vftable'
-// ??_7SoundQueue@@6B@
+// vftable for SoundQueue @ 0x0058f3f0
+//   00: SoundQueue::Initialize @ 0x00421484
+//   01: SoundQueue::DeInitialize @ 0x004214c9
+//   02: SoundQueue::ClearQueue @ 0x0042151a
+//   03: SoundQueue::StartPauseCallback @ 0x00421b84
+//   04: SoundQueue::EndPauseCallback @ 0x00421bbf
+//   05: SoundQueue::PlayNextSoundInQueue @ 0x00421bf9
+//   06: SoundQueue::RemoveNextSoundInQueue @ 0x00421d19
+//   07: SoundQueue::SoundQueueCompletionCallback @ 0x00421f5c
+//   08: SoundQueue::SoundQueueWaitTimeCallback @ 0x00422019
+//   09: SoundQueue::GetMutex @ 0x00422056
+//   10: SoundQueue::ReleaseMutex @ 0x00422258
+//   11 entries
+
 
 
 // Contribution: 3:00000318-00000353 Module: 71, 4 byte alignment, initialized_data, read, write, 

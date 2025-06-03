@@ -691,9 +691,34 @@ unsigned long PaletteBuffer::Compose(class IFlatImage* pDestImage, long DestLeft
 
 
 // Contribution: 2:000005e0-00000643 Module: 50, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x0058f5e0
-// Demangled: const PaletteBuffer::`vftable'
-// ??_7PaletteBuffer@@6B@
+// vftable for PaletteBuffer @ 0x0058f5e0
+//   00: CBackBuffer::Lock @ 0x0047006f
+//   01: CBackBuffer::Unlock @ 0x00470149
+//   02: CBackBuffer::SetTransparentColor @ 0x0046ffe6
+//   03: PaletteBuffer::Compose @ 0x0044774b
+//   04: CBackBuffer::StretchCompose @ 0x0046fe13
+//   05: IFlatImage::StretchCompose @ 0x0048f32e
+//   06: IFlatImage::FillRect @ 0x0048f56b
+//   07: CBackBuffer::Swap @ 0x0046f7bb
+//   08: CBackBuffer::SwapRect @ 0x0046f828
+//   09: CBackBuffer::StretchRect @ 0x0046ffcc
+//   10: CBackBuffer::InitializeMemberVariables @ 0x0046eb58
+//   11: CBackBuffer::Compose @ 0x0046fd33
+//   12: CBackBuffer::StretchCompose @ 0x0046fd82
+//   13: CBackBuffer::Duplicate @ 0x0046fe7c
+//   14: CBackBuffer::ComposeNoClip @ 0x0046fce4
+//   15: CBackBuffer::ComposeNoClip @ 0x0046fbb1
+//   16: CBackBuffer::DrawLine @ 0x0046f5c6
+//   17: CBackBuffer::FillRect @ 0x004702f1
+//   18: CBackBuffer::DrawBufferText @ 0x0046f403
+//   19: CBackBuffer::DrawBufferText @ 0x0046f1bd
+//   20: CBackBuffer::DrawLineUnclipped @ 0x00470864
+//   21: CBackBuffer::DrawLineClipped @ 0x00470c22
+//   22: CBackBuffer::DrawRectangleOutline @ 0x004706e4
+//   23: CBackBuffer::DrawRectangleOutlineUnclipped @ 0x004707a4
+//   24: CBackBuffer::GetDDSurface @ 0x004704a7
+//   25 entries
+
 
 
 // Contribution: 3:00001f14-00001f24 Module: 50, 4 byte alignment, initialized_data, read, write, 

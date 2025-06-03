@@ -307,15 +307,33 @@ unsigned long CDefaultCommander::OnWindowDeactivate() {
 
 
 // Contribution: 2:000022a8-000022cb Module: 14, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x005912a8
-// Demangled: const ICommander::`vftable'
-// ??_7ICommander@@6B@
+// vftable for ICommander @ 0x005912a8
+//   00: ICommander::`scalar deleting destructor' @ 0x0049af00
+//   01: _purecall @ 0x0056cfa0
+//   02: _purecall @ 0x0056cfa0
+//   03: _purecall @ 0x0056cfa0
+//   04: _purecall @ 0x0056cfa0
+//   05: _purecall @ 0x0056cfa0
+//   06: _purecall @ 0x0056cfa0
+//   07: _purecall @ 0x0056cfa0
+//   08: ICommander::SetWindow @ 0x0049ad7b
+//   9 entries
+
 
 
 // Contribution: 2:000022d0-000022f3 Module: 14, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x005912d0
-// Demangled: const CDefaultCommander::`vftable'
-// ??_7CDefaultCommander@@6B@
+// vftable for CDefaultCommander @ 0x005912d0
+//   00: CDefaultCommander::`scalar deleting destructor' @ 0x0049af40
+//   01: CDefaultCommander::Idle @ 0x0049ae14
+//   02: CDefaultCommander::OnCharacter @ 0x0049ae2c
+//   03: CDefaultCommander::OnMouseDown @ 0x0049ae46
+//   04: CDefaultCommander::OnMouseUp @ 0x0049ae60
+//   05: CDefaultCommander::OnMouseMove @ 0x0049ae7a
+//   06: CDefaultCommander::OnWindowActivate @ 0x0049ae94
+//   07: CDefaultCommander::OnWindowDeactivate @ 0x0049aee8
+//   08: ICommander::SetWindow @ 0x0049ad7b
+//   9 entries
+
 
 
 // Contribution: 3:0000329c-000032cc Module: 14, 4 byte alignment, initialized_data, read, write, 

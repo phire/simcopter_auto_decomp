@@ -1619,9 +1619,19 @@ _Tf4:
 
 
 // Contribution: 2:000042a8-000042cf Module: 159, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x005932a8
-// Demangled: const FireEngineClass::`vftable'
-// ??_7FireEngineClass@@6B@
+// vftable for FireEngineClass @ 0x005932a8
+//   00: FireEngineClass::`scalar deleting destructor' @ 0x00536dc0
+//   01: AutomobileClass::PullOver @ 0x005048cd
+//   02: EmergencyVehicleClass::AdjustSpeed @ 0x0054222e
+//   03: EmergencyVehicleClass::PickTurnDir @ 0x00542373
+//   04: FireEngineClass::ItterateFSM @ 0x0053648e
+//   05: FireEngineClass::SetSaveData @ 0x00536c3d
+//   06: FireEngineClass::LoadSaveData @ 0x00536cb8
+//   07: EmergencyVehicleClass::BeamToWithinCameraRange @ 0x005360a0
+//   08: AutomobileClass::BeamToLocation @ 0x005030aa
+//   09: EmergencyVehicleClass::Reset @ 0x00542631
+//   10 entries
+
 
 
 // Contribution: 3:00020dc8-00020eac Module: 159, 4 byte alignment, initialized_data, read, write, 

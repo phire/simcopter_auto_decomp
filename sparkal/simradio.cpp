@@ -9507,15 +9507,52 @@ _T342:
 
 
 // Contribution: 2:00000518-0000055b Module: 59, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x0058f518
-// Demangled: const RadioStation::`vftable'
-// ??_7RadioStation@@6B@
+// vftable for RadioStation @ 0x0058f518
+//   00: RadioStation::`scalar deleting destructor' @ 0x0043a040
+//   01: RadioStation::Initialize @ 0x00434581
+//   02: RadioStation::StationSet @ 0x004345bd
+//   03: RadioStation::DoState @ 0x00434605
+//   04: RadioStation::LoadAllPlaylists @ 0x004353e2
+//   05: RadioStation::ShufflePlaylist @ 0x004359e2
+//   06: RadioStation::RandomizeStringList @ 0x0043678e
+//   07: RadioStation::ShuffleCycle @ 0x00436bcd
+//   08: RadioStation::SetPlayStatus @ 0x0043459c
+//   09: RadioStation::IsPlaying @ 0x004345e9
+//   10: RadioStation::GetStationCallSign @ 0x00436d80
+//   11: RadioStation::GetRadioStationType @ 0x00436f5f
+//   12: RadioStation::IsCycleTypePresent @ 0x00436f7b
+//   13: RadioStation::MoveToNextPlaylistItem @ 0x00437054
+//   14: RadioStation::ReadCallSignFromDisk @ 0x00437337
+//   15: RadioStation::DetectRadioStationType @ 0x004376dc
+//   16: RadioStation::StartPlayingNextSelectionOfGivenType @ 0x00434a46
+//   17 entries
+
 
 
 // Contribution: 2:00000560-000005af Module: 59, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x0058f560
-// Demangled: const Radio::`vftable'
-// ??_7Radio@@6B@
+// vftable for Radio @ 0x0058f560
+//   00: Radio::`scalar deleting destructor' @ 0x0043a450
+//   01: Radio::Initialize @ 0x00437c57
+//   02: Radio::DeInitialize @ 0x00437c88
+//   03: Radio::SetPreferences @ 0x00437cbd
+//   04: Radio::GetPreferences @ 0x00437d4c
+//   05: Radio::GetPreferences @ 0x00437db7
+//   06: Radio::SavePreferences @ 0x00437e67
+//   07: Radio::SetOn @ 0x00437ee7
+//   08: Radio::SetMute @ 0x00438005
+//   09: Radio::SetOption @ 0x004380a0
+//   10: Radio::GetOption @ 0x004380fb
+//   11: Radio::SetVolume @ 0x0043815e
+//   12: Radio::SetStation @ 0x004382ca
+//   13: Radio::SetStation @ 0x004381cc
+//   14: Radio::IsStationTypeAvailable @ 0x00438379
+//   15: Radio::GetStationCount @ 0x0043841e
+//   16: Radio::DoState @ 0x00438457
+//   17: Radio::SetupStations @ 0x0043867d
+//   18: Radio::StationDirectoryNameIsValid @ 0x004384b6
+//   19: Radio::DoesAtLeastOneSoundEntryExistForTheGivenDirectory @ 0x00439663
+//   20 entries
+
 
 
 // Contribution: 3:00001488-0000155c Module: 59, 8 byte alignment, initialized_data, read, write, 

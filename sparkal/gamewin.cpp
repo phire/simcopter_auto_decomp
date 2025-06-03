@@ -1813,9 +1813,32 @@ _T477:
 
 
 // Contribution: 2:00001470-000014cb Module: 43, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00590470
-// Demangled: const GameWindow::`vftable'
-// ??_7GameWindow@@6B@
+// vftable for GameWindow @ 0x00590470
+//   00: GameWindow::`scalar deleting destructor' @ 0x00468060
+//   01: CSparkalWindow::GetClientSize @ 0x00480dca
+//   02: GameWindow::Draw @ 0x00467336
+//   03: CSparkalWindow::SetCursor @ 0x00480e74
+//   04: CSparkalWindow::SetCursorFromIndex @ 0x00480f32
+//   05: CSparkalWindow::LoadGameCursors @ 0x00480f80
+//   06: CSparkalWindow::FreeGameCursors @ 0x00480f9b
+//   07: CSparkalWindow::Sleep @ 0x00468020
+//   08: CSparkalWindow::WakeUp @ 0x00468040
+//   09: CSparkalWindow::SwapBuffer @ 0x0043238c
+//   10: GameWindow::SwapBuffer @ 0x00467390
+//   11: GameWindow::UpdatePalette @ 0x004676a1
+//   12: GameWindow::MySparkalWindowProc @ 0x00467b9c
+//   13: GameWindow::Initialize @ 0x00467310
+//   14: GameWindow::CreateSparkalWindow @ 0x004670df
+//   15: GameWindow::MakePalette @ 0x004673ea
+//   16: GameWindow::ProcessWindowMove @ 0x004676d0
+//   17: GameWindow::CenterWindow @ 0x00467a48
+//   18: GameWindow::PlaceWindowRect @ 0x00467af9
+//   19: GameWindow::PrepareForSwitchToWindowedMode @ 0x004677ae
+//   20: GameWindow::CompleteSwitchToWindowedMode @ 0x004677c9
+//   21: GameWindow::PrepareForSwitchToFullScreenMode @ 0x00467918
+//   22: GameWindow::CompleteSwitchToFullScreenMode @ 0x00467933
+//   23 entries
+
 
 
 // Contribution: 3:00002314-00002351 Module: 43, 4 byte alignment, initialized_data, read, write, 

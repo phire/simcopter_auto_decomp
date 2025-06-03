@@ -1421,9 +1421,18 @@ _T76:
 
 
 // Contribution: 2:00004258-0000427b Module: 161, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00593258
-// Demangled: const CriminalEvaderCarClass::`vftable'
-// ??_7CriminalEvaderCarClass@@6B@
+// vftable for CriminalEvaderCarClass @ 0x00593258
+//   00: CriminalEvaderCarClass::`scalar deleting destructor' @ 0x00535860
+//   01: CriminalEvaderCarClass::PullOver @ 0x0053512e
+//   02: CriminalEvaderCarClass::AdjustSpeed @ 0x005351b3
+//   03: AutomobileClass::PickTurnDir @ 0x00502c92
+//   04: CriminalEvaderCarClass::ItterateFSM @ 0x00534c45
+//   05: CriminalEvaderCarClass::SetSaveData @ 0x00535754
+//   06: CriminalEvaderCarClass::LoadSaveData @ 0x005357c0
+//   07: CriminalEvaderCarClass::BeamToWithinCameraRange @ 0x00535840
+//   08: AutomobileClass::BeamToLocation @ 0x005030aa
+//   9 entries
+
 
 
 // Contribution: 3:00020ca8-00020d15 Module: 161, 4 byte alignment, initialized_data, read, write, 

@@ -2019,6 +2019,34 @@ long MIFF::WriteEnd() {
 
 
 // Contribution: 2:00002950-000029bf Module: 6, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00591950
-// Demangled: const MIFF::`vftable'
-// ??_7MIFF@@6B@
+// vftable for MIFF @ 0x00591950
+//   00: MIFF::`scalar deleting destructor' @ 0x004aca50
+//   01: MIFF::OpenForReading @ 0x004ab878
+//   02: MIFF::OpenForWriting @ 0x004ab937
+//   03: MIFF::OpenForAppending @ 0x004aba2c
+//   04: MIFF::Close @ 0x004abb47
+//   05: MIFF::GetPresentRecordType @ 0x004ac9c0
+//   06: MIFF::GetPresentRecordSize @ 0x004ac9e0
+//   07: MIFF::GetPresentRecordDataSize @ 0x004aca00
+//   08: MIFF::GetPresentRecordIndex @ 0x004aca30
+//   09: MIFF::VerifyFile @ 0x004abb95
+//   10: MIFF::ReadMIFFHeader @ 0x004abc32
+//   11: MIFF::ReadRecordHeader @ 0x004abed6
+//   12: MIFF::ReadFileCreator @ 0x004abcba
+//   13: MIFF::ReadFileType @ 0x004abd6e
+//   14: MIFF::ReadFileVersion @ 0x004abe22
+//   15: MIFF::ReadPresentRecord @ 0x004ac44e
+//   16: MIFF::ReadPresentRecordData @ 0x004ac544
+//   17: MIFF::GoToFirstRecord @ 0x004ac0b4
+//   18: MIFF::GoToNextRecord @ 0x004ac14f
+//   19: MIFF::GoToPreviousRecord @ 0x004ac2f1
+//   20: MIFF::GoToFirstRecordOfGivenType @ 0x004ac332
+//   21: MIFF::GoToNextRecordOfGivenType @ 0x004ac3ab
+//   22: MIFF::GoToNthRecord @ 0x004ac3fb
+//   23: MIFF::CountRecords @ 0x004abfcc
+//   24: MIFF::WriteMIFFRecord @ 0x004ac758
+//   25: MIFF::WriteDataRecord @ 0x004ac811
+//   26: MIFF::WriteFileHeader @ 0x004ac63b
+//   27: MIFF::WriteEnd @ 0x004ac8fb
+//   28 entries
+

@@ -1169,9 +1169,13 @@ unsigned short ExtSim::Simulate(long ticks, unsigned short bOnceOnly) {
 
 
 // Contribution: 2:00004630-0000463f Module: 194, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00593630
-// Demangled: const TreeSim::`vftable'
-// ??_7TreeSim@@6B@
+// vftable for TreeSim @ 0x00593630
+//   00: _purecall @ 0x0056cfa0
+//   01: _purecall @ 0x0056cfa0
+//   02: TreeSim::`scalar deleting destructor' @ 0x0055d4c0
+//   03: TreeSim::Simulate @ 0x0055cf37
+//   4 entries
+
 
 
 // Contribution: 3:00026e9c-00026fdb Module: 194, 4 byte alignment, initialized_data, read, write, 

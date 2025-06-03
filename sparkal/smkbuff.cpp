@@ -3580,27 +3580,82 @@ _Tcc:
 
 
 // Contribution: 2:00002138-00002157 Module: 17, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00591138
-// Demangled: const SmackerBuffer::`vftable'
-// ??_7SmackerBuffer@@6B@
+// vftable for SmackerBuffer @ 0x00591138
+//   00: SmackerBuffer::`scalar deleting destructor' @ 0x00499e30
+//   01: SmackerBuffer::Initialize @ 0x00497dc8
+//   02: SmackerBuffer::CreateSurface @ 0x00497e25
+//   03: SmackerBuffer::ClearBuffer @ 0x00498043
+//   04: SmackerBuffer::Open @ 0x00497f22
+//   05: SmackerBuffer::Close @ 0x00497f91
+//   06: SmackerBuffer::ComposeToWindow @ 0x00498188
+//   07: SmackerBuffer::SetPalette @ 0x00497de9
+//   8 entries
+
 
 
 // Contribution: 2:00002158-00002187 Module: 17, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00591158
-// Demangled: const VRBmpSmackerBuffer::`vftable'
-// ??_7VRBmpSmackerBuffer@@6B@
+// vftable for VRBmpSmackerBuffer @ 0x00591158
+//   00: VRBmpSmackerBuffer::`scalar deleting destructor' @ 0x00499e70
+//   01: SmackerBuffer::Initialize @ 0x00497dc8
+//   02: SmackerBuffer::CreateSurface @ 0x00497e25
+//   03: VRBmpSmackerBuffer::ClearBuffer @ 0x00498a0b
+//   04: VRBmpSmackerBuffer::Open @ 0x0049898a
+//   05: SmackerBuffer::Close @ 0x00497f91
+//   06: SmackerBuffer::ComposeToWindow @ 0x00498188
+//   07: SmackerBuffer::SetPalette @ 0x00497de9
+//   08: VRBmpSmackerBuffer::CreateSurface @ 0x0049873d
+//   09: VRBmpSmackerBuffer::DeleteSurface @ 0x0049891f
+//   10: VRBmpSmackerBuffer::SetDefaultVRBmp @ 0x00498c00
+//   11: VRBmpSmackerBuffer::DrawDefaultVRBmp @ 0x00498ca3
+//   12 entries
+
 
 
 // Contribution: 2:00002188-000021eb Module: 17, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00591188
-// Demangled: const SmackerBackBuffer::`vftable'{for `CBackBuffer'}
-// ??_7SmackerBackBuffer@@6BCBackBuffer@@@
+// vftable for SmackerBackBuffer @ 0x00591188
+//   00: CBackBuffer::Lock @ 0x0047006f
+//   01: CBackBuffer::Unlock @ 0x00470149
+//   02: CBackBuffer::SetTransparentColor @ 0x0046ffe6
+//   03: SmackerBackBuffer::Compose @ 0x00499396
+//   04: SmackerBackBuffer::StretchCompose @ 0x0049976d
+//   05: IFlatImage::StretchCompose @ 0x0048f32e
+//   06: IFlatImage::FillRect @ 0x0048f56b
+//   07: CBackBuffer::Swap @ 0x0046f7bb
+//   08: CBackBuffer::SwapRect @ 0x0046f828
+//   09: CBackBuffer::StretchRect @ 0x0046ffcc
+//   10: CBackBuffer::InitializeMemberVariables @ 0x0046eb58
+//   11: CBackBuffer::Compose @ 0x0046fd33
+//   12: CBackBuffer::StretchCompose @ 0x0046fd82
+//   13: CBackBuffer::Duplicate @ 0x0046fe7c
+//   14: CBackBuffer::ComposeNoClip @ 0x0046fce4
+//   15: CBackBuffer::ComposeNoClip @ 0x0046fbb1
+//   16: CBackBuffer::DrawLine @ 0x0046f5c6
+//   17: CBackBuffer::FillRect @ 0x004702f1
+//   18: CBackBuffer::DrawBufferText @ 0x0046f403
+//   19: CBackBuffer::DrawBufferText @ 0x0046f1bd
+//   20: CBackBuffer::DrawLineUnclipped @ 0x00470864
+//   21: CBackBuffer::DrawLineClipped @ 0x00470c22
+//   22: CBackBuffer::DrawRectangleOutline @ 0x004706e4
+//   23: CBackBuffer::DrawRectangleOutlineUnclipped @ 0x004707a4
+//   24: CBackBuffer::GetDDSurface @ 0x004704a7
+//   25 entries
+
 
 
 // Contribution: 2:000021f0-00002217 Module: 17, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x005911f0
-// Demangled: const SmackerBackBuffer::`vftable'{for `SmackerBuffer'}
-// ??_7SmackerBackBuffer@@6BSmackerBuffer@@@
+// vftable for SmackerBackBuffer @ 0x005911f0
+//   00: SmackerBackBuffer::`scalar deleting destructor' @ 0x00499eb0
+//   01: SmackerBackBuffer::Initialize @ 0x00499097
+//   02: SmackerBackBuffer::CreateSurface @ 0x0049920a
+//   03: SmackerBuffer::ClearBuffer @ 0x00498043
+//   04: SmackerBackBuffer::Open @ 0x00499149
+//   05: SmackerBuffer::Close @ 0x00497f91
+//   06: SmackerBuffer::ComposeToWindow @ 0x00498188
+//   07: SmackerBuffer::SetPalette @ 0x00497de9
+//   08: SmackerBackBuffer::SetBackBufferData @ 0x004990d2
+//   09: SmackerBackBuffer::SetDirectBlit @ 0x00499074
+//   10 entries
+
 
 
 // Contribution: 3:00003208-00003249 Module: 17, 4 byte alignment, initialized_data, read, write, 

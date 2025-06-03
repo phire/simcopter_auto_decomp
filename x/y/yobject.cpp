@@ -20510,42 +20510,74 @@ _T51:
 
 
 // Contribution: 2:00004508-00004517 Module: 200, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00593508
-// Demangled: const FlatResFile::`vftable'
-// ??_7FlatResFile@@6B@
+// vftable for FlatResFile @ 0x00593508
+//   00: FlatResFile::`scalar deleting destructor' @ 0x00551da0
+//   01: FlatResFile::Open @ 0x00552ec5
+//   02: FlatResFile::Open @ 0x00552e51
+//   03: FlatResFile::Close @ 0x00552f5f
+//   4 entries
+
 
 
 // Contribution: 2:00004518-00004527 Module: 200, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00593518
-// Demangled: const ResFile::`vftable'
-// ??_7ResFile@@6B@
+// vftable for ResFile @ 0x00593518
+//   00: ResFile::`scalar deleting destructor' @ 0x00551ec0
+//   01: FlatResFile::Open @ 0x00552ec5
+//   02: FlatResFile::Open @ 0x00552e51
+//   03: FlatResFile::Close @ 0x00552f5f
+//   4 entries
+
 
 
 // Contribution: 2:00004528-0000458f Module: 200, 8 byte alignment, initialized_data, read, 
 
 
 // Contribution: 2:00004590-000045a3 Module: 200, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00593590
-// Demangled: const cAvatar::`vftable'{for `YObjLang'}
-// ??_7cAvatar@@6BYObjLang@@@
+// vftable for cAvatar @ 0x00593590
+//   00: YObjLang::GetNodeText @ 0x00560b8a
+//   01: YObjLang::GetPrimName @ 0x00560b57
+//   02: YObjLang::CountPrimitives @ 0x00560b3d
+//   03: YObjLang::IsSingleExit @ 0x00560b6f
+//   04: YObjLang::GetSwizzler @ 0x00551fa0
+//   5 entries
+
 
 
 // Contribution: 2:000045a8-000045c3 Module: 200, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x005935a8
-// Demangled: const cAvatar::`vftable'{for `TreeSim'}
-// ??_7cAvatar@@6BTreeSim@@@
+// vftable for cAvatar @ 0x005935a8
+//   00: cYObject::TryElement @ 0x0055b84d
+//   01: cYObject::Error @ 0x00562500
+//   02: cAvatar::`scalar deleting destructor' @ 0x00552a90
+//   03: TreeSim::Simulate @ 0x0055cf37
+//   04: cYObject::HandleOverflow @ 0x0055bfef
+//   05: cYObject::InterpValue @ 0x0055c021
+//   06: cAvatar::Reset @ 0x00550f18
+//   7 entries
+
 
 
 // Contribution: 2:000045c8-000045db Module: 200, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x005935c8
-// Demangled: const cYObject::`vftable'{for `YObjLang'}
-// ??_7cYObject@@6BYObjLang@@@
+// vftable for cYObject @ 0x005935c8
+//   00: YObjLang::GetNodeText @ 0x00560b8a
+//   01: YObjLang::GetPrimName @ 0x00560b57
+//   02: YObjLang::CountPrimitives @ 0x00560b3d
+//   03: YObjLang::IsSingleExit @ 0x00560b6f
+//   04: YObjLang::GetSwizzler @ 0x00551fa0
+//   5 entries
+
 
 
 // Contribution: 2:000045e0-000045fb Module: 200, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x005935e0
-// Demangled: const cYObject::`vftable'{for `TreeSim'}
-// ??_7cYObject@@6BTreeSim@@@
+// vftable for cYObject @ 0x005935e0
+//   00: cYObject::TryElement @ 0x0055b84d
+//   01: cYObject::Error @ 0x00562500
+//   02: cYObject::`scalar deleting destructor' @ 0x00551fc0
+//   03: TreeSim::Simulate @ 0x0055cf37
+//   04: cYObject::HandleOverflow @ 0x0055bfef
+//   05: cYObject::InterpValue @ 0x0055c021
+//   06: cYObject::Reset @ 0x00550f9f
+//   7 entries
+
 
 
 // Contribution: 2:00006d38-00006eb7 Module: 200, 8 byte alignment, initialized_data, read, 
@@ -20663,225 +20695,151 @@ static short sCheckTotedCount = 0;
 
 
 // Contribution: 3:00024978-00024997 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bb978
-// Demangled: "couldn\'t set master object to 0"
-// ??_C@_0CA@OCDF@couldn?8t?5set?5master?5object?5to?50?$AA@
+// string literal: "couldn't set master object to 0"
 
 
 // Contribution: 3:00024998-000249cc Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bb998
-// Demangled: "trying to get off master object "...
-// ??_C@_0DF@MDL@trying?5to?5get?5off?5master?5object?5@
+// string literal: "trying to get off master object without being on one"
 
 
 // Contribution: 3:000249d0-000249f3 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bb9d0
-// Demangled: "I thought all people were alloca"...
-// ??_C@_0CE@BCHG@I?5thought?5all?5people?5were?5alloca@
+// string literal: "I thought all people were allocated"
 
 
 // Contribution: 3:000249f4-00024a12 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bb9f4
-// Demangled: "can\'t find person with that id"
-// ??_C@_0BP@EABK@can?8t?5find?5person?5with?5that?5id?$AA@
+// string literal: "can't find person with that id"
 
 
 // Contribution: 3:00024a14-00024a32 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bba14
-// Demangled: "C:\\Copter\\Source\\X\\Y\\YObject.h"
-// ??_C@_0BP@GAKH@C?3?2Copter?2Source?2X?2Y?2YObject?4h?$AA@
+// string literal: "C:\Copter\Source\X\Y\YObject.h"
 
 
 // Contribution: 3:00024a34-00024a53 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bba34
-// Demangled: "out-of-range scurkID for a tile"
-// ??_C@_0CA@JOHG@out?9of?9range?5scurkID?5for?5a?5tile?$AA@
+// string literal: "out-of-range scurkID for a tile"
 
 
 // Contribution: 3:00024a54-00024a7b Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bba54
-// Demangled: "must set cell location before wa"...
-// ??_C@_0CI@FJMN@must?5set?5cell?5location?5before?5wa@
+// string literal: "must set cell location before waking up"
 
 
 // Contribution: 3:00024a7c-00024a9b Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bba7c
-// Demangled: "how\'d you wake up past the max?"
-// ??_C@_0CA@BGFC@how?8d?5you?5wake?5up?5past?5the?5max?$DP?$AA@
+// string literal: "how'd you wake up past the max?"
 
 
 // Contribution: 3:00024a9c-00024abb Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bba9c
-// Demangled: "trying to wake up already awake"
-// ??_C@_0CA@MKGD@trying?5to?5wake?5up?5already?5awake?$AA@
+// string literal: "trying to wake up already awake"
 
 
 // Contribution: 3:00024abc-00024ad0 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bbabc
-// Demangled: "y and x out of sync?"
-// ??_C@_0BF@KBDF@y?5and?5x?5out?5of?5sync?$DP?$AA@
+// string literal: "y and x out of sync?"
 
 
 // Contribution: 3:00024ad4-00024ae8 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bbad4
-// Demangled: "x and y out of sync?"
-// ??_C@_0BF@ECJK@x?5and?5y?5out?5of?5sync?$DP?$AA@
+// string literal: "x and y out of sync?"
 
 
 // Contribution: 3:00024aec-00024b17 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bbaec
-// Demangled: "why positioning unlinked object "...
-// ??_C@_0CM@FHJC@why?5positioning?5unlinked?5object?5@
+// string literal: "why positioning unlinked object for engine?"
 
 
 // Contribution: 3:00024b18-00024b30 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bbb18
-// Demangled: "rxn tree id out of range"
-// ??_C@_0BJ@LCNK@rxn?5tree?5id?5out?5of?5range?$AA@
+// string literal: "rxn tree id out of range"
 
 
 // Contribution: 3:00024b34-00024b72 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bbb34
-// Demangled: "-1 missionid for other than ambi"...
-// ??_C@_0DP@CAPD@?91?5missionid?5for?5other?5than?5ambi@
+// string literal: "-1 missionid for other than ambient or paramedic or CopAerial?"
 
 
 // Contribution: 3:00024b74-00024b99 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bbb74
-// Demangled: "couldn\'t get private anim for an"...
-// ??_C@_0CG@LEML@couldn?8t?5get?5private?5anim?5for?5an@
+// string literal: "couldn't get private anim for an anim"
 
 
 // Contribution: 3:00024b9c-00024bb5 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bbb9c
-// Demangled: "must set body before anim"
-// ??_C@_0BK@OHDB@must?5set?5body?5before?5anim?$AA@
+// string literal: "must set body before anim"
 
 
 // Contribution: 3:00024bb8-00024bec Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bbbb8
-// Demangled: "you must unlink before setting c"...
-// ??_C@_0DF@BIBF@you?5must?5unlink?5before?5setting?5c@
+// string literal: "you must unlink before setting cell, then link again"
 
 
 // Contribution: 3:00024bf0-00024c22 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bbbf0
-// Demangled: "use changemission only when pers"...
-// ??_C@_0DD@LLLA@use?5changemission?5only?5when?5pers@
+// string literal: "use changemission only when person's already awake"
 
 
 // Contribution: 3:00024c24-00024c3b Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bbc24
-// Demangled: "how did that happen????"
-// ??_C@_0BI@MBEM@how?5did?5that?5happen?$DP?$DP?$DP?$DP?$AA@
+// string literal: "how did that happen????"
 
 
 // Contribution: 3:00024c3c-00024c59 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bbc3c
-// Demangled: "just one more paranoid assert"
-// ??_C@_0BO@EKBK@just?5one?5more?5paranoid?5assert?$AA@
+// string literal: "just one more paranoid assert"
 
 
 // Contribution: 3:00024c5c-00024c87 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bbc5c
-// Demangled: "how could you have been awake ye"...
-// ??_C@_0CM@JKOD@how?5could?5you?5have?5been?5awake?5ye@
+// string literal: "how could you have been awake yet unlinked?"
 
 
 // Contribution: 3:00024c88-00024ca8 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bbc88
-// Demangled: "trying to sleep already sleeping"...
-// ??_C@_0CB@NMCE@trying?5to?5sleep?5already?5sleeping@
+// string literal: "trying to sleep already sleeping"
 
 
 // Contribution: 3:00024cac-00024cc9 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bbcac
-// Demangled: "can\'t simanim without an anim"
-// ??_C@_0BO@NCHD@can?8t?5simanim?5without?5an?5anim?$AA@
+// string literal: "can't simanim without an anim"
 
 
 // Contribution: 3:00024ccc-00024cfa Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bbccc
-// Demangled: "couldn\'t move with the dyn objec"...
-// ??_C@_0CP@EHMM@couldn?8t?5move?5with?5the?5dyn?5objec@
+// string literal: "couldn't move with the dyn object master--why?"
 
 
 // Contribution: 3:00024cfc-00024d1e Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bbcfc
-// Demangled: "can\'t follow master with no mast"...
-// ??_C@_0CD@GJNN@can?8t?5follow?5master?5with?5no?5mast@
+// string literal: "can't follow master with no master"
 
 
 // Contribution: 3:00024d20-00024d3a Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bbd20
-// Demangled: "following master unlinked?"
-// ??_C@_0BL@EOGE@following?5master?5unlinked?$DP?$AA@
+// string literal: "following master unlinked?"
 
 
 // Contribution: 3:00024d3c-00024d64 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bbd3c
-// Demangled: "stack size about to go too high "...
-// ??_C@_0CJ@GJOA@stack?5size?5about?5to?5go?5too?5high?5@
+// string literal: "stack size about to go too high in gosub"
 
 
 // Contribution: 3:00024d68-00024d7b Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bbd68
-// Demangled: "couldn\'t get a body"
-// ??_C@_0BE@HILD@couldn?8t?5get?5a?5body?$AA@
+// string literal: "couldn't get a body"
 
 
 // Contribution: 3:00024d7c-00024da0 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bbd7c
-// Demangled: "weird number of characters shift"...
-// ??_C@_0CF@DHKG@weird?5number?5of?5characters?5shift@
+// string literal: "weird number of characters shifting?"
 
 
 // Contribution: 3:00024da4-00024dc6 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bbda4
-// Demangled: "c:\\copter\\source\\x\\objects\\bList"...
-// ??_C@_0CD@NHHN@c?3?2copter?2source?2x?2objects?2bList@
+// string literal: "c:\copter\source\x\objects\bList.h"
 
 
 // Contribution: 3:00024dc8-00024de1 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bbdc8
-// Demangled: "didn\'t make obj invisible"
-// ??_C@_0BK@HKFL@didn?8t?5make?5obj?5invisible?$AA@
+// string literal: "didn't make obj invisible"
 
 
 // Contribution: 3:00024de4-00024e22 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bbde4
-// Demangled: "couldn\'t add new to thing--didn\'"...
-// ??_C@_0DP@HCDA@couldn?8t?5add?5new?5to?5thing?9?9didn?8@
+// string literal: "couldn't add new to thing--didn't check for enough room first?"
 
 
 // Contribution: 3:00024e24-00024e40 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bbe24
-// Demangled: "not very close to that heli!"
-// ??_C@_0BN@MPEK@not?5very?5close?5to?5that?5heli?$CB?$AA@
+// string literal: "not very close to that heli!"
 
 
 // Contribution: 3:00024e44-00024e6d Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bbe44
-// Demangled: "toted object\'s master not this o"...
-// ??_C@_0CK@BLNM@toted?5object?8s?5master?5not?5this?5o@
+// string literal: "toted object's master not this one's dyn!"
 
 
 // Contribution: 3:00024e70-00024e8d Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bbe70
-// Demangled: "toted obj not medevac victim!"
-// ??_C@_0BO@GDCN@toted?5obj?5not?5medevac?5victim?$CB?$AA@
+// string literal: "toted obj not medevac victim!"
 
 
 // Contribution: 3:00024e90-00024eba Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bbe90
-// Demangled: "must have thing to put aught on "...
-// ??_C@_0CL@LIPB@must?5have?5thing?5to?5put?5aught?5on?5@
+// string literal: "must have thing to put aught on said thing"
 
 
 // Contribution: 3:00024ebc-00024ed8 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bbebc
-// Demangled: "getting distance to null dyn"
-// ??_C@_0BN@OBNK@getting?5distance?5to?5null?5dyn?$AA@
+// string literal: "getting distance to null dyn"
 
 
 // Contribution: 3:0009e250-000a05a4 Module: 200, 8 byte alignment, uninitialized_data, read, write, 

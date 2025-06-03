@@ -3917,15 +3917,68 @@ _Tcc:
 
 
 // Contribution: 2:00001708-000017cb Module: 40, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00590708
-// Demangled: const MissionLogWindow::`vftable'
-// ??_7MissionLogWindow@@6B@
+// vftable for MissionLogWindow @ 0x00590708
+//   00: MissionLogWindow::DoMessage @ 0x0046ccb5
+//   01: MissionLogWindow::Initialize @ 0x0046bfe3
+//   02: GraphicWindow::CreateAllImages @ 0x004a6dc5
+//   03: GraphicWindow::DestroyAllImages @ 0x004a6ea7
+//   04: MissionLogWindow::CreateImage @ 0x0046ca4c
+//   05: MissionLogWindow::DestroyImage @ 0x0046caf6
+//   06: MissionLogWindow::ComposeSelf @ 0x0046cb62
+//   07: GraphicWindow::SetImageToDrawOnto @ 0x004a6bcd
+//   08: GraphicWindow::SetAllImagesToDrawOnto @ 0x004a6cf0
+//   09: GraphicWindow::SetTransparentColor @ 0x004a4d1c
+//   10: GraphicWindow::SetBorderDrawing @ 0x0040d810
+//   11: GraphicWindow::DrawBorder @ 0x004a6f7c
+//   12: GraphicWindow::SetChanged @ 0x004a50e0
+//   13: GraphicWindow::MoveWindow @ 0x004a4d7e
+//   14: GraphicWindow::SetWidthAndHeight @ 0x004a4df1
+//   15: GraphicWindow::CenterWindow @ 0x004a4ea8
+//   16: GraphicWindow::CenterWindow @ 0x004a4e55
+//   17: GraphicWindow::SetWindowPosition @ 0x0040d840
+//   18: GraphicWindow::SetWindowTitle @ 0x004a51d0
+//   19: GraphicWindow::InvalidateAllOverlaps @ 0x004a6256
+//   20: GraphicWindow::InvalidateAllChildren @ 0x004a6399
+//   21: GraphicWindow::AddChild @ 0x004a53be
+//   22: GraphicWindow::DeleteChild @ 0x004a5837
+//   23: GraphicWindow::DeleteChild @ 0x004a569a
+//   24: GraphicWindow::RemoveChild @ 0x004a5a11
+//   25: GraphicWindow::DeleteAllChildren @ 0x004a5b58
+//   26: GraphicWindow::RemoveAllChildren @ 0x004a5cd8
+//   27: GraphicWindow::DeleteSelf @ 0x004a603c
+//   28: GraphicWindow::RemoveSelf @ 0x004a606b
+//   29: GraphicWindow::FindChild @ 0x004a5dd1
+//   30: GraphicWindow::SetParent @ 0x0040d7e0
+//   31: GraphicWindow::CanWeRespondToMessage @ 0x004a786b
+//   32: GraphicWindow::DoCharacter @ 0x004a6568
+//   33: GraphicWindow::DoKeyDown @ 0x004a6582
+//   34: GraphicWindow::DoKeyUp @ 0x004a659c
+//   35: GraphicWindow::DoCursorDown @ 0x004a65b6
+//   36: GraphicWindow::DoCursorUp @ 0x004a65d0
+//   37: GraphicWindow::DoCursorMove @ 0x004a65ed
+//   38: GraphicWindow::CaptureCursorStart @ 0x004a6607
+//   39: GraphicWindow::CaptureCursorEnd @ 0x004a6640
+//   40: GraphicWindow::WindowToScreenCoordinates @ 0x004a667d
+//   41: GraphicWindow::ScreenToWindowCoordinates @ 0x004a66cc
+//   42: GraphicWindow::IsPointInWindow @ 0x0040d8b0
+//   43: MissionLogWindow::`scalar deleting destructor' @ 0x0046e500
+//   44: GraphicWindow::GetImage @ 0x004a6720
+//   45: GraphicWindow::GetImagePath @ 0x004a673c
+//   46: GraphicWindow::DrawChildren @ 0x004a6180
+//   47: GraphicWindow::DrawSelf @ 0x004a6168
+//   48: GraphicWindow::DoesWindowNeedUpdating @ 0x004a646b
+//   49 entries
+
 
 
 // Contribution: 2:000017d0-000017df Module: 40, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x005907d0
-// Demangled: const MessageDisplayManager::`vftable'
-// ??_7MessageDisplayManager@@6B@
+// vftable for MessageDisplayManager @ 0x005907d0
+//   00: MessageDisplayManager::Initialize @ 0x0046d612
+//   01: MessageDisplayManager::DisplayCurrentMessages @ 0x0046d802
+//   02: MessageDisplayManager::AddNewMessage @ 0x0046e3ca
+//   03: MessageDisplayManager::AddNewMessage @ 0x0046dccd
+//   4 entries
+
 
 
 // Contribution: 3:00002448-00002494 Module: 40, 4 byte alignment, initialized_data, read, write, 

@@ -2017,9 +2017,44 @@ void ScreenBuffer::SetWindowRect(struct SparkalRect* rectWindow) {
 
 
 // Contribution: 2:000025b0-0000263b Module: 12, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x005915b0
-// Demangled: const ScreenBuffer::`vftable'
-// ??_7ScreenBuffer@@6B@
+// vftable for ScreenBuffer @ 0x005915b0
+//   00: CBackBuffer::Lock @ 0x0047006f
+//   01: CBackBuffer::Unlock @ 0x00470149
+//   02: CBackBuffer::SetTransparentColor @ 0x0046ffe6
+//   03: CBackBuffer::Compose @ 0x0046f948
+//   04: CBackBuffer::StretchCompose @ 0x0046fe13
+//   05: IFlatImage::StretchCompose @ 0x0048f32e
+//   06: ScreenBuffer::FillRect @ 0x0049f472
+//   07: ScreenBuffer::Swap @ 0x0049ee15
+//   08: CBackBuffer::SwapRect @ 0x0046f828
+//   09: CBackBuffer::StretchRect @ 0x0046ffcc
+//   10: CBackBuffer::InitializeMemberVariables @ 0x0046eb58
+//   11: CBackBuffer::Compose @ 0x0046fd33
+//   12: CBackBuffer::StretchCompose @ 0x0046fd82
+//   13: CBackBuffer::Duplicate @ 0x0046fe7c
+//   14: CBackBuffer::ComposeNoClip @ 0x0046fce4
+//   15: CBackBuffer::ComposeNoClip @ 0x0046fbb1
+//   16: CBackBuffer::DrawLine @ 0x0046f5c6
+//   17: CBackBuffer::FillRect @ 0x004702f1
+//   18: CBackBuffer::DrawBufferText @ 0x0046f403
+//   19: CBackBuffer::DrawBufferText @ 0x0046f1bd
+//   20: CBackBuffer::DrawLineUnclipped @ 0x00470864
+//   21: CBackBuffer::DrawLineClipped @ 0x00470c22
+//   22: CBackBuffer::DrawRectangleOutline @ 0x004706e4
+//   23: CBackBuffer::DrawRectangleOutlineUnclipped @ 0x004707a4
+//   24: CBackBuffer::GetDDSurface @ 0x004704a7
+//   25: ScreenBuffer::`scalar deleting destructor' @ 0x0049f740
+//   26: ScreenBuffer::DeleteSurfaces @ 0x0049ea6a
+//   27: ScreenBuffer::CreateSurfaces @ 0x0049e69e
+//   28: ScreenBuffer::ClearSurfaces @ 0x0049eb58
+//   29: ScreenBuffer::UsePalette @ 0x0049f0fa
+//   30: ScreenBuffer::FreePalette @ 0x0049f42b
+//   31: ScreenBuffer::SetPalette @ 0x0049f040
+//   32: ScreenBuffer::SetWindowRect @ 0x0049f690
+//   33: ScreenBuffer::SetNewModeType @ 0x0049f710
+//   34: ScreenBuffer::WaitTillReadyToFlip @ 0x0049efff
+//   35 entries
+
 
 
 // Contribution: 2:00006c58-00006cdf Module: 12, 8 byte alignment, initialized_data, read, 

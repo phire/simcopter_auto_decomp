@@ -1200,9 +1200,19 @@ _T7a:
 
 
 // Contribution: 2:00004280-000042a7 Module: 160, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00593280
-// Demangled: const AmbulanceClass::`vftable'
-// ??_7AmbulanceClass@@6B@
+// vftable for AmbulanceClass @ 0x00593280
+//   00: AmbulanceClass::`scalar deleting destructor' @ 0x005360c0
+//   01: AutomobileClass::PullOver @ 0x005048cd
+//   02: EmergencyVehicleClass::AdjustSpeed @ 0x0054222e
+//   03: EmergencyVehicleClass::PickTurnDir @ 0x00542373
+//   04: AmbulanceClass::ItterateFSM @ 0x00535c21
+//   05: AmbulanceClass::SetSaveData @ 0x00535ff9
+//   06: AmbulanceClass::LoadSaveData @ 0x0053601d
+//   07: EmergencyVehicleClass::BeamToWithinCameraRange @ 0x005360a0
+//   08: AutomobileClass::BeamToLocation @ 0x005030aa
+//   09: EmergencyVehicleClass::Reset @ 0x00542631
+//   10 entries
+
 
 
 // Contribution: 3:00020d18-00020dc5 Module: 160, 4 byte alignment, initialized_data, read, write, 

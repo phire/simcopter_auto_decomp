@@ -1568,33 +1568,64 @@ _T3a3:
 
 
 // Contribution: 2:00004650-00004653 Module: 192, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00593650
-// Demangled: const cBList<class cCopterBody>::`vftable'
-// ??_7?$cBList@VcCopterBody@@@@6B@
+// vftable for cCopterBody> @ 0x00593650
+//   00: cBList<cCopterBody>::Add @ 0x0055fee0
+//   1 entries
+
 
 
 // Contribution: 2:00004654-00004657 Module: 192, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00593654
-// Demangled: const cBList<class cCopterAnim>::`vftable'
-// ??_7?$cBList@VcCopterAnim@@@@6B@
+// vftable for cCopterAnim> @ 0x00593654
+//   00: cBList<cCopterAnim>::Add @ 0x0055eac0
+//   1 entries
+
 
 
 // Contribution: 2:00004658-00004683 Module: 192, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00593658
-// Demangled: const cCopterAnim::`vftable'
-// ??_7cCopterAnim@@6B@
+// vftable for cCopterAnim @ 0x00593658
+//   00: cCopterAnim::GetBodyType @ 0x0055f660
+//   01: cCopterAnim::GetList @ 0x0055f6a0
+//   02: cBBase::CanDestroy @ 0x0055f260
+//   03: cCopterAnim::InstallArrayPointers @ 0x00567200
+//   04: cCopterAnim::`scalar deleting destructor' @ 0x0055f830
+//   05: cCopterAnim::Destroy @ 0x0055f5b0
+//   06: cBBase::Dirty @ 0x0055f4e0
+//   07: cCopterAnim::IsDirty @ 0x0055f620
+//   08: cCopterAnim::WriteToDisk @ 0x0055f5f0
+//   09: cCopterAnim::GetPartInfo @ 0x0055f6c0
+//   10: cCopterAnim::GetPartInfoBasePtr @ 0x0055f780
+//   11 entries
+
 
 
 // Contribution: 2:00004688-000046ab Module: 192, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00593688
-// Demangled: const cBBase::`vftable'
-// ??_7cBBase@@6B@
+// vftable for cBBase @ 0x00593688
+//   00: cBBase::GetBodyType @ 0x0055f1e0
+//   01: cBBase::GetList @ 0x0055f220
+//   02: cBBase::CanDestroy @ 0x0055f260
+//   03: cBBase::InstallArrayPointers @ 0x0055f280
+//   04: cBBase::`scalar deleting destructor' @ 0x0055f540
+//   05: cBBase::Destroy @ 0x0055f310
+//   06: cBBase::Dirty @ 0x0055f4e0
+//   07: cBBase::IsDirty @ 0x0055f500
+//   08: cBBase::WriteToDisk @ 0x0055f520
+//   9 entries
+
 
 
 // Contribution: 2:000046b0-000046d3 Module: 192, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x005936b0
-// Demangled: const cCopterBody::`vftable'
-// ??_7cCopterBody@@6B@
+// vftable for cCopterBody @ 0x005936b0
+//   00: cBBase::GetBodyType @ 0x0055f1e0
+//   01: cCopterBody::GetList @ 0x0055fc90
+//   02: cBBase::CanDestroy @ 0x0055f260
+//   03: cCopterBody::InstallArrayPointers @ 0x00561b74
+//   04: cCopterBody::`scalar deleting destructor' @ 0x00560120
+//   05: cBBase::Destroy @ 0x0055f310
+//   06: cBBase::Dirty @ 0x0055f4e0
+//   07: cBBase::IsDirty @ 0x0055f500
+//   08: cCopterBody::WriteToDisk @ 0x0055fc70
+//   9 entries
+
 
 
 // Contribution: 2:00006fa8-00007007 Module: 192, 8 byte alignment, initialized_data, read, 
@@ -1628,159 +1659,107 @@ _T3a3:
 
 
 // Contribution: 3:00027148-00027165 Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005be148
-// Demangled: "couldn\'t load an indexed body"
-// ??_C@_0BO@NBMC@couldn?8t?5load?5an?5indexed?5body?$AA@
+// string literal: "couldn't load an indexed body"
 
 
 // Contribution: 3:00027168-00027184 Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005be168
-// Demangled: "must set type before loading"
-// ??_C@_0BN@NCLL@must?5set?5type?5before?5loading?$AA@
+// string literal: "must set type before loading"
 
 
 // Contribution: 3:00027188-000271a5 Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005be188
-// Demangled: "must load bodies from a file?"
-// ??_C@_0BO@DKFM@must?5load?5bodies?5from?5a?5file?$DP?$AA@
+// string literal: "must load bodies from a file?"
 
 
 // Contribution: 3:000271a8-000271ba Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005be1a8
-// Demangled: "couldn\'t open file"
-// ??_C@_0BD@JOEE@couldn?8t?5open?5file?$AA@
+// string literal: "couldn't open file"
 
 
 // Contribution: 3:000271bc-000271eb Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005be1bc
-// Demangled: "make a new resfile and then it\'s"...
-// ??_C@_0DA@MJOK@make?5a?5new?5resfile?5and?5then?5it?8s@
+// string literal: "make a new resfile and then it's valid already?"
 
 
 // Contribution: 3:000271ec-0002720e Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005be1ec
-// Demangled: "C:\\Copter\\Source\\X\\Objects\\bList"...
-// ??_C@_0CD@JLCJ@C?3?2Copter?2Source?2X?2Objects?2bList@
+// string literal: "C:\Copter\Source\X\Objects\bList.h"
 
 
 // Contribution: 3:00027210-0002722d Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005be210
-// Demangled: "count not 0 in cBList delete!"
-// ??_C@_0BO@ELJL@count?5not?50?5in?5cBList?5delete?$CB?$AA@
+// string literal: "count not 0 in cBList delete!"
 
 
 // Contribution: 3:00027230-00027255 Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005be230
-// Demangled: "bad size passed to SwizzleBBaseH"...
-// ??_C@_0CG@OOAA@bad?5size?5passed?5to?5SwizzleBBaseH@
+// string literal: "bad size passed to SwizzleBBaseHeader"
 
 
 // Contribution: 3:00027258-0002727a Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005be258
-// Demangled: "C:\\Copter\\Source\\X\\Objects\\bBase"...
-// ??_C@_0CD@DJLO@C?3?2Copter?2Source?2X?2Objects?2bBase@
+// string literal: "C:\Copter\Source\X\Objects\bBase.h"
 
 
 // Contribution: 3:0002727c-0002729d Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005be27c
-// Demangled: "count not 0 in cBList destructor"...
-// ??_C@_0CC@HJGL@count?5not?50?5in?5cBList?5destructor@
+// string literal: "count not 0 in cBList destructor!"
 
 
 // Contribution: 3:000272a0-000272d3 Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005be2a0
-// Demangled: "the first 3 letters of a body\'s "...
-// ??_C@_0DE@JMMG@the?5first?53?5letters?5of?5a?5body?8s?5@
+// string literal: "the first 3 letters of a body's name must be unique"
 
 
 // Contribution: 3:000272d4-000272f8 Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005be2d4
-// Demangled: "somehow, blank name on disk in b"...
-// ??_C@_0CF@OINM@somehow?0?5blank?5name?5on?5disk?5in?5b@
+// string literal: "somehow, blank name on disk in bbase"
 
 
 // Contribution: 3:000272fc-0002730c Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005be2fc
-// Demangled: "whoops, bad type"
-// ??_C@_0BB@FDOF@whoops?0?5bad?5type?$AA@
+// string literal: "whoops, bad type"
 
 
 // Contribution: 3:00027310-0002731e Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005be310
-// Demangled: "file not newed"
-// ??_C@_0P@PBGB@file?5not?5newed?$AA@
+// string literal: "file not newed"
 
 
 // Contribution: 3:00027320-0002732e Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005be320
-// Demangled: "must have list"
-// ??_C@_0P@JNMJ@must?5have?5list?$AA@
+// string literal: "must have list"
 
 
 // Contribution: 3:00027330-00027354 Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005be330
-// Demangled: "GetBodyType undefined for this c"...
-// ??_C@_0CF@MIO@GetBodyType?5undefined?5for?5this?5c@
+// string literal: "GetBodyType undefined for this class"
 
 
 // Contribution: 3:00027358-0002737a Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005be358
-// Demangled: "got down to base list in basecla"...
-// ??_C@_0CD@ENGP@got?5down?5to?5base?5list?5in?5basecla@
+// string literal: "got down to base list in baseclass"
 
 
 // Contribution: 3:0002737c-000273aa Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005be37c
-// Demangled: "got down to base class in Instal"...
-// ??_C@_0CP@JKCB@got?5down?5to?5base?5class?5in?5Instal@
+// string literal: "got down to base class in InstallArrayPointers"
 
 
 // Contribution: 3:000273ac-000273d6 Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005be3ac
-// Demangled: "resID in anim but no resource of"...
-// ??_C@_0CL@KPEF@resID?5in?5anim?5but?5no?5resource?5of@
+// string literal: "resID in anim but no resource of its type?"
 
 
 // Contribution: 3:000273d8-000273f9 Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005be3d8
-// Demangled: "C:\\Copter\\Source\\X\\Objects\\Anim."...
-// ??_C@_0CC@KAHE@C?3?2Copter?2Source?2X?2Objects?2Anim?4@
+// string literal: "C:\Copter\Source\X\Objects\Anim.h"
 
 
 // Contribution: 3:000273fc-0002744b Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005be3fc
-// Demangled: "shouldn\'t destroy privanims one "...
-// ??_C@_0FA@GBAP@shouldn?8t?5destroy?5privanims?5one?5@
+// string literal: "shouldn't destroy privanims one by one--clean them all out and then start fresh"
 
 
 // Contribution: 3:0002744c-0002746c Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005be44c
-// Demangled: "don\'t call IsDirty for privanims"...
-// ??_C@_0CB@EMHA@don?8t?5call?5IsDirty?5for?5privanims@
+// string literal: "don't call IsDirty for privanims"
 
 
 // Contribution: 3:00027470-00027499 Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005be470
-// Demangled: "can\'t ask for body type of a pri"...
-// ??_C@_0CK@JLOF@can?8t?5ask?5for?5body?5type?5of?5a?5pri@
+// string literal: "can't ask for body type of a private anim"
 
 
 // Contribution: 3:0002749c-000274b4 Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005be49c
-// Demangled: "array read out of bounds"
-// ??_C@_0BJ@BNBN@array?5read?5out?5of?5bounds?$AA@
+// string literal: "array read out of bounds"
 
 
 // Contribution: 3:000274b8-000274ee Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005be4b8
-// Demangled: "fData is no longer pointing to o"...
-// ??_C@_0DH@OICG@fData?5is?5no?5longer?5pointing?5to?5o@
+// string literal: "fData is no longer pointing to offset from fDataHandle"
 
 
 // Contribution: 3:000274f0-0002750c Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005be4f0
-// Demangled: "c:\\copter\\source\\x\\Array2d.h"
-// ??_C@_0BN@MICO@c?3?2copter?2source?2x?2Array2d?4h?$AA@
+// string literal: "c:\copter\source\x\Array2d.h"
 
 
 // Contribution: 3:000a06b0-000a06c5 Module: 192, 8 byte alignment, uninitialized_data, read, write, 

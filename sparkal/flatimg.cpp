@@ -1391,15 +1391,30 @@ _Teb:
 
 
 // Contribution: 2:00002050-0000206b Module: 24, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00591050
-// Demangled: const IFlatImage::`vftable'
-// ??_7IFlatImage@@6B@
+// vftable for IFlatImage @ 0x00591050
+//   00: _purecall @ 0x0056cfa0
+//   01: _purecall @ 0x0056cfa0
+//   02: IFlatImage::SetTransparentColor @ 0x00471570
+//   03: IFlatImage::Compose @ 0x0048f3b1
+//   04: IFlatImage::StretchCompose @ 0x0048f174
+//   05: IFlatImage::StretchCompose @ 0x0048f32e
+//   06: IFlatImage::FillRect @ 0x0048f56b
+//   7 entries
+
 
 
 // Contribution: 2:00002070-0000208f Module: 24, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00591070
-// Demangled: const CFlatImage::`vftable'
-// ??_7CFlatImage@@6B@
+// vftable for CFlatImage @ 0x00591070
+//   00: CFlatImage::Lock @ 0x0048fcc6
+//   01: CFlatImage::Unlock @ 0x0048fd88
+//   02: IFlatImage::SetTransparentColor @ 0x00471570
+//   03: IFlatImage::Compose @ 0x0048f3b1
+//   04: IFlatImage::StretchCompose @ 0x0048f174
+//   05: IFlatImage::StretchCompose @ 0x0048f32e
+//   06: IFlatImage::FillRect @ 0x0048f56b
+//   07: CFlatImage::`scalar deleting destructor' @ 0x0048fe90
+//   8 entries
+
 
 
 // Contribution: 3:00002da0-00003066 Module: 24, 4 byte alignment, initialized_data, read, write, 
@@ -1412,18 +1427,12 @@ unsigned long IFlatImage::lTotalLockCount = 0;
 
 
 // Contribution: 3:00003068-0000307f Module: 24, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x0059a068
-// Demangled: "theHandle && lockedData"
-// ??_C@_0BI@MJPB@theHandle?5?$CG?$CG?5lockedData?$AA@
+// string literal: "theHandle && lockedData"
 
 
 // Contribution: 3:00003080-0000308e Module: 24, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x0059a080
-// Demangled: "(int)theHandle"
-// ??_C@_0P@EIPH@?$CIint?$CJtheHandle?$AA@
+// string literal: "(int)theHandle"
 
 
 // Contribution: 3:00003090-000030a1 Module: 24, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x0059a090
-// Demangled: "theHandle && size"
-// ??_C@_0BC@NODK@theHandle?5?$CG?$CG?5size?$AA@
+// string literal: "theHandle && size"

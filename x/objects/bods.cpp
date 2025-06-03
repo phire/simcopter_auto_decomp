@@ -2437,21 +2437,24 @@ _T2f:
 
 
 // Contribution: 2:00004730-00004733 Module: 189, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00593730
-// Demangled: const cArray<struct AnimLookup>::`vftable'
-// ??_7?$cArray@UAnimLookup@@@@6B@
+// vftable for AnimLookup> @ 0x00593730
+//   00: _cArray::WriteToDisk @ 0x00567be1
+//   1 entries
+
 
 
 // Contribution: 2:00004734-00004737 Module: 189, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00593734
-// Demangled: const cArray<struct cCopterBody::Part>::`vftable'
-// ??_7?$cArray@UPart@cCopterBody@@@@6B@
+// vftable for cCopterBody @ 0x00593734
+//   00: _cArray::WriteToDisk @ 0x00567be1
+//   1 entries
+
 
 
 // Contribution: 2:00004738-0000473b Module: 189, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00593738
-// Demangled: const _cArray::`vftable'
-// ??_7_cArray@@6B@
+// vftable for _cArray @ 0x00593738
+//   00: _cArray::WriteToDisk @ 0x00567be1
+//   1 entries
+
 
 
 // Contribution: 2:00007170-000071af Module: 189, 8 byte alignment, initialized_data, read, 
@@ -2470,33 +2473,23 @@ short sTestPersonFrameNum = 0;
 
 
 // Contribution: 3:00027ad4-00027aee Module: 189, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005bead4
-// Demangled: "couldn\'t get or make array"
-// ??_C@_0BL@GEOL@couldn?8t?5get?5or?5make?5array?$AA@
+// string literal: "couldn't get or make array"
 
 
 // Contribution: 3:00027af0-00027b18 Module: 189, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005beaf0
-// Demangled: "about to create a very unfortuna"...
-// ??_C@_0CJ@IDHA@about?5to?5create?5a?5very?5unfortuna@
+// string literal: "about to create a very unfortunate array"
 
 
 // Contribution: 3:00027b1c-00027b57 Module: 189, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005beb1c
-// Demangled: "array found on disk even though "...
-// ??_C@_0DM@LMC@array?5found?5on?5disk?5even?5though?5@
+// string literal: "array found on disk even though creating owner from scratch"
 
 
 // Contribution: 3:00027b58-00027b8b Module: 189, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005beb58
-// Demangled: "didn\'t find array on disk--will "...
-// ??_C@_0DE@OFFD@didn?8t?5find?5array?5on?5disk?9?9will?5@
+// string literal: "didn't find array on disk--will go ahead and create"
 
 
 // Contribution: 3:00027b8c-00027bab Module: 189, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005beb8c
-// Demangled: "bad entry size of desired array"
-// ??_C@_0CA@LLAI@bad?5entry?5size?5of?5desired?5array?$AA@
+// string literal: "bad entry size of desired array"
 
 
 // Contribution: 3:000a06c8-000a1991 Module: 189, 8 byte alignment, uninitialized_data, read, write, 

@@ -5213,15 +5213,50 @@ _T92d:
 
 
 // Contribution: 2:000017e0-00001807 Module: 39, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x005907e0
-// Demangled: const IBackBuffer::`vftable'
-// ??_7IBackBuffer@@6B@
+// vftable for IBackBuffer @ 0x005907e0
+//   00: _purecall @ 0x0056cfa0
+//   01: _purecall @ 0x0056cfa0
+//   02: IFlatImage::SetTransparentColor @ 0x00471570
+//   03: IFlatImage::Compose @ 0x0048f3b1
+//   04: IFlatImage::StretchCompose @ 0x0048f174
+//   05: IFlatImage::StretchCompose @ 0x0048f32e
+//   06: IFlatImage::FillRect @ 0x0048f56b
+//   07: IBackBuffer::Swap @ 0x00471590
+//   08: _purecall @ 0x0056cfa0
+//   09: _purecall @ 0x0056cfa0
+//   10 entries
+
 
 
 // Contribution: 2:00001808-0000186b Module: 39, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00590808
-// Demangled: const CBackBuffer::`vftable'
-// ??_7CBackBuffer@@6B@
+// vftable for CBackBuffer @ 0x00590808
+//   00: CBackBuffer::Lock @ 0x0047006f
+//   01: CBackBuffer::Unlock @ 0x00470149
+//   02: CBackBuffer::SetTransparentColor @ 0x0046ffe6
+//   03: CBackBuffer::Compose @ 0x0046f948
+//   04: CBackBuffer::StretchCompose @ 0x0046fe13
+//   05: IFlatImage::StretchCompose @ 0x0048f32e
+//   06: IFlatImage::FillRect @ 0x0048f56b
+//   07: CBackBuffer::Swap @ 0x0046f7bb
+//   08: CBackBuffer::SwapRect @ 0x0046f828
+//   09: CBackBuffer::StretchRect @ 0x0046ffcc
+//   10: CBackBuffer::InitializeMemberVariables @ 0x0046eb58
+//   11: CBackBuffer::Compose @ 0x0046fd33
+//   12: CBackBuffer::StretchCompose @ 0x0046fd82
+//   13: CBackBuffer::Duplicate @ 0x0046fe7c
+//   14: CBackBuffer::ComposeNoClip @ 0x0046fce4
+//   15: CBackBuffer::ComposeNoClip @ 0x0046fbb1
+//   16: CBackBuffer::DrawLine @ 0x0046f5c6
+//   17: CBackBuffer::FillRect @ 0x004702f1
+//   18: CBackBuffer::DrawBufferText @ 0x0046f403
+//   19: CBackBuffer::DrawBufferText @ 0x0046f1bd
+//   20: CBackBuffer::DrawLineUnclipped @ 0x00470864
+//   21: CBackBuffer::DrawLineClipped @ 0x00470c22
+//   22: CBackBuffer::DrawRectangleOutline @ 0x004706e4
+//   23: CBackBuffer::DrawRectangleOutlineUnclipped @ 0x004707a4
+//   24: CBackBuffer::GetDDSurface @ 0x004704a7
+//   25 entries
+
 
 
 // Contribution: 3:00002498-000027b5 Module: 39, 4 byte alignment, initialized_data, read, write, 

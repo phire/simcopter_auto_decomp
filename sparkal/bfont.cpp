@@ -4614,9 +4614,18 @@ int32_t BitmappedFont::GetPathForBitmapFile(char * chFontInfoPath, char * chBitm
 
 
 // Contribution: 2:000014d0-000014f3 Module: 42, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x005904d0
-// Demangled: const BitmappedFont::`vftable'
-// ??_7BitmappedFont@@6B@
+// vftable for BitmappedFont @ 0x005904d0
+//   00: BitmappedFont::Initialize @ 0x00468976
+//   01: BitmappedFont::DeInitialize @ 0x00468997
+//   02: BitmappedFont::IsCharBreakingChar @ 0x0046af23
+//   03: BitmappedFont::IsCharReturnChar @ 0x0046af61
+//   04: BitmappedFont::IsCharWhitespace @ 0x0046af92
+//   05: BitmappedFont::CreateImage @ 0x00469d3d
+//   06: BitmappedFont::DestroyImage @ 0x0046a0f5
+//   07: BitmappedFont::LoadFontInfo @ 0x004689b8
+//   08: BitmappedFont::CalculateCharacterRects @ 0x00469532
+//   9 entries
+
 
 
 // Contribution: 3:00002354-0000242c Module: 42, 4 byte alignment, initialized_data, read, write, 

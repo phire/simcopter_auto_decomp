@@ -1155,9 +1155,11 @@ _Te1:
 
 
 // Contribution: 2:00002640-00002647 Module: 11, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00591640
-// Demangled: const MFont::`vftable'
-// ??_7MFont@@6B@
+// vftable for MFont @ 0x00591640
+//   00: MFont::CreateFontA @ 0x0049ff74
+//   01: MFont::DestroyFont @ 0x004a01e9
+//   2 entries
+
 
 
 // Contribution: 3:0000394c-0000395d Module: 11, 4 byte alignment, initialized_data, read, write, 

@@ -2636,9 +2636,19 @@ static const enum TurnIndex TILUT[4][4] = { 0 /* todo */ };
 
 
 // Contribution: 2:000044c0-000044e7 Module: 154, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x005934c0
-// Demangled: const EmergencyVehicleClass::`vftable'
-// ??_7EmergencyVehicleClass@@6B@
+// vftable for EmergencyVehicleClass @ 0x005934c0
+//   00: EmergencyVehicleClass::`scalar deleting destructor' @ 0x00542d80
+//   01: AutomobileClass::PullOver @ 0x005048cd
+//   02: EmergencyVehicleClass::AdjustSpeed @ 0x0054222e
+//   03: EmergencyVehicleClass::PickTurnDir @ 0x00542373
+//   04: AutomobileClass::ItterateFSM @ 0x005022b0
+//   05: EmergencyVehicleClass::SetSaveData @ 0x00542a75
+//   06: EmergencyVehicleClass::LoadSaveData @ 0x00542b90
+//   07: EmergencyVehicleClass::BeamToWithinCameraRange @ 0x005360a0
+//   08: AutomobileClass::BeamToLocation @ 0x005030aa
+//   09: EmergencyVehicleClass::Reset @ 0x00542631
+//   10 entries
+
 
 
 // Contribution: 3:00021268-00021641 Module: 154, 4 byte alignment, initialized_data, read, write, 

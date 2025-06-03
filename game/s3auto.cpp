@@ -12294,9 +12294,18 @@ static const struct _dPoint2d OT[4] = { 0 /* todo */ };
 
 
 // Contribution: 2:00003d98-00003dbb Module: 171, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00592d98
-// Demangled: const AutomobileClass::`vftable'
-// ??_7AutomobileClass@@6B@
+// vftable for AutomobileClass @ 0x00592d98
+//   00: AutomobileClass::`scalar deleting destructor' @ 0x00509fc0
+//   01: AutomobileClass::PullOver @ 0x005048cd
+//   02: AutomobileClass::AdjustSpeed @ 0x0050409a
+//   03: AutomobileClass::PickTurnDir @ 0x00502c92
+//   04: AutomobileClass::ItterateFSM @ 0x005022b0
+//   05: AutomobileClass::SetSaveData @ 0x0050917e
+//   06: AutomobileClass::LoadSaveData @ 0x00509489
+//   07: AutomobileClass::BeamToWithinCameraRange @ 0x00502f11
+//   08: AutomobileClass::BeamToLocation @ 0x005030aa
+//   9 entries
+
 
 
 // Contribution: 3:0001e2c4-0001e7b5 Module: 171, 4 byte alignment, initialized_data, read, write, 
@@ -12309,15 +12318,11 @@ int32_t curAutos = 50;
 
 
 // Contribution: 3:0001e7b8-0001e7c3 Module: 171, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005b57b8
-// Demangled: "cellPointer"
-// ??_C@_0M@DOIM@cellPointer?$AA@
+// string literal: "cellPointer"
 
 
 // Contribution: 3:0001e7c4-0001e7e4 Module: 171, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005b57c4
-// Demangled: "C:\\Copter\\source\\game\\S3MOBILE.H"...
-// ??_C@_0CB@DNKM@C?3?2Copter?2source?2game?2S3MOBILE?4H@
+// string literal: "C:\Copter\source\game\S3MOBILE.H"
 
 
 // Contribution: 3:0001e7e8-0001e9cf Module: 171, 8 byte alignment, initialized_data, (comdat), read, write, 

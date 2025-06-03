@@ -5938,9 +5938,16 @@ _T66:
 
 
 // Contribution: 2:00004200-0000421b Module: 164, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00593200
-// Demangled: const BoatClass::`vftable'
-// ??_7BoatClass@@6B@
+// vftable for BoatClass @ 0x00593200
+//   00: BoatClass::`scalar deleting destructor' @ 0x0052b080
+//   01: BoatClass::ItterateFSM @ 0x005279ef
+//   02: BoatClass::AdjustSpeed @ 0x00527c7a
+//   03: BoatClass::IsWaterPathClear @ 0x00527cb3
+//   04: BoatClass::PickTurnDirection @ 0x00528918
+//   05: BoatClass::BeamBoatToWithinCameraRange @ 0x00529a51
+//   06: BoatClass::BeamBoatToLocation @ 0x00529f2b
+//   7 entries
+
 
 
 // Contribution: 3:000000a4-000000a7 Module: 164, 4 byte alignment, initialized_data, read, write, 
@@ -5956,9 +5963,7 @@ struct Point2d BoatClass::lastScannedLocation = { 0 /* todo */ };
 
 
 // Contribution: 3:00020668-00020688 Module: 164, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005b7668
-// Demangled: "C:\\Copter\\Source\\Game\\S3WMOBIL.H"...
-// ??_C@_0CB@MIJI@C?3?2Copter?2Source?2Game?2S3WMOBIL?4H@
+// string literal: "C:\Copter\Source\Game\S3WMOBIL.H"
 
 
 // Contribution: 3:000945f0-000946e4 Module: 164, 8 byte alignment, uninitialized_data, read, write, 

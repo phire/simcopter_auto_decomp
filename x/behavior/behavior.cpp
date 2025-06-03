@@ -881,9 +881,13 @@ _T7a:
 
 
 // Contribution: 2:000046d8-000046e7 Module: 191, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x005936d8
-// Demangled: const Behavior::`vftable'
-// ??_7Behavior@@6B@
+// vftable for Behavior @ 0x005936d8
+//   00: Behavior::GetNodeRef @ 0x0056040a
+//   01: Behavior::GetNodeText @ 0x005605c4
+//   02: Behavior::GetTreeName @ 0x0056063d
+//   03: Behavior::GetResFile @ 0x0056072f
+//   4 entries
+
 
 
 // Contribution: 3:00027510-00027627 Module: 191, 4 byte alignment, initialized_data, read, write, 

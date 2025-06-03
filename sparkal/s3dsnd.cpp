@@ -5797,15 +5797,18 @@ _Ta9:
 
 
 // Contribution: 2:000005c0-000005c7 Module: 52, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x0058f5c0
-// Demangled: const SoundChangeNotificationSink::`vftable'
-// ??_7SoundChangeNotificationSink@@6B@
+// vftable for SoundChangeNotificationSink @ 0x0058f5c0
+//   00: SoundChangeNotificationSink::DoNotificationChange @ 0x00441ee5
+//   01: SoundChangeNotificationSink::Initialize @ 0x00441ea2
+//   2 entries
+
 
 
 // Contribution: 2:000005c8-000005cb Module: 52, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x0058f5c8
-// Demangled: const NotificationSink::`vftable'
-// ??_7NotificationSink@@6B@
+// vftable for NotificationSink @ 0x0058f5c8
+//   00: _purecall @ 0x0056cfa0
+//   1 entries
+
 
 
 // Contribution: 2:000005d0-000005df Module: 52, 8 byte alignment, initialized_data, read, 

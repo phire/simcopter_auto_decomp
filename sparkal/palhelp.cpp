@@ -2063,15 +2063,29 @@ _T110:
 
 
 // Contribution: 2:000020f8-00002113 Module: 18, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x005910f8
-// Demangled: const SparkalPalette::`vftable'
-// ??_7SparkalPalette@@6B@
+// vftable for SparkalPalette @ 0x005910f8
+//   00: SparkalPalette::`scalar deleting destructor' @ 0x00497b80
+//   01: SparkalPalette::GetRGBValue @ 0x00497b50
+//   02: SparkalPalette::GetNearestIndex @ 0x00496483
+//   03: SparkalPalette::FadeToWhite @ 0x004965b0
+//   04: SparkalPalette::FadeToBlack @ 0x00496a14
+//   05: SparkalPalette::FadeToPalette @ 0x004972e7
+//   06: SparkalPalette::ImplementNewPalette @ 0x004978e9
+//   7 entries
+
 
 
 // Contribution: 2:00002118-00002133 Module: 18, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00591118
-// Demangled: const CopterSparkalPalette::`vftable'
-// ??_7CopterSparkalPalette@@6B@
+// vftable for CopterSparkalPalette @ 0x00591118
+//   00: CopterSparkalPalette::`scalar deleting destructor' @ 0x00497bc0
+//   01: SparkalPalette::GetRGBValue @ 0x00497b50
+//   02: SparkalPalette::GetNearestIndex @ 0x00496483
+//   03: SparkalPalette::FadeToWhite @ 0x004965b0
+//   04: SparkalPalette::FadeToBlack @ 0x00496a14
+//   05: SparkalPalette::FadeToPalette @ 0x004972e7
+//   06: SparkalPalette::ImplementNewPalette @ 0x004978e9
+//   7 entries
+
 
 
 // Contribution: 3:000031c8-00003207 Module: 18, 4 byte alignment, initialized_data, read, write, 

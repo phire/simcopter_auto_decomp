@@ -4789,9 +4789,30 @@ _T1ca:
 
 
 // Contribution: 2:00001ff8-0000204b Module: 26, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00590ff8
-// Demangled: const CGameCommander::`vftable'
-// ??_7CGameCommander@@6B@
+// vftable for CGameCommander @ 0x00590ff8
+//   00: CGameCommander::`scalar deleting destructor' @ 0x0048e8d0
+//   01: CGameCommander::Idle @ 0x0048bbe3
+//   02: CDefaultCommander::OnCharacter @ 0x0049ae2c
+//   03: CDefaultCommander::OnMouseDown @ 0x0049ae46
+//   04: CDefaultCommander::OnMouseUp @ 0x0049ae60
+//   05: CGameCommander::OnMouseMove @ 0x0048bcdb
+//   06: CGameCommander::OnWindowActivate @ 0x0048bd11
+//   07: CGameCommander::OnWindowDeactivate @ 0x0048bd44
+//   08: ICommander::SetWindow @ 0x0049ad7b
+//   09: CGameCommander::ProcessSetFocus @ 0x0048bd77
+//   10: CGameCommander::ProcessKeyDown @ 0x0048be6f
+//   11: CGameCommander::ProcessKeyDown @ 0x0048bddd
+//   12: CGameCommander::ProcessKeyUp @ 0x0048c064
+//   13: CGameCommander::ProcessKeyUp @ 0x0048be26
+//   14: CGameCommander::OnCharacter @ 0x0048bdab
+//   15: CGameCommander::OnLMouseDown @ 0x0048bbfb
+//   16: CGameCommander::OnLMouseUp @ 0x0048bc33
+//   17: CGameCommander::OnRMouseDown @ 0x0048bc6b
+//   18: CGameCommander::OnRMouseUp @ 0x0048bca3
+//   19: CGameCommander::ProcessSystemCloseRequest @ 0x0048c213
+//   20: CGameCommander::SetNewGameApp @ 0x0048e8a0
+//   21 entries
+
 
 
 // Contribution: 3:00002d84-00002d9c Module: 26, 4 byte alignment, initialized_data, read, write, 

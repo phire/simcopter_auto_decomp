@@ -3342,15 +3342,65 @@ _T109:
 
 
 // Contribution: 2:00001e30-00001ef3 Module: 31, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00590e30
-// Demangled: const CareerWindow::`vftable'
-// ??_7CareerWindow@@6B@
+// vftable for CareerWindow @ 0x00590e30
+//   00: CareerWindow::DoMessage @ 0x0047fd2d
+//   01: CareerWindow::Initialize @ 0x0047e19e
+//   02: GraphicWindow::CreateAllImages @ 0x004a6dc5
+//   03: GraphicWindow::DestroyAllImages @ 0x004a6ea7
+//   04: CareerWindow::CreateImage @ 0x0047f391
+//   05: CareerWindow::DestroyImage @ 0x0047f75a
+//   06: GraphicWindow::ComposeSelf @ 0x004a60a3
+//   07: GraphicWindow::SetImageToDrawOnto @ 0x004a6bcd
+//   08: GraphicWindow::SetAllImagesToDrawOnto @ 0x004a6cf0
+//   09: GraphicWindow::SetTransparentColor @ 0x004a4d1c
+//   10: GraphicWindow::SetBorderDrawing @ 0x0040d810
+//   11: GraphicWindow::DrawBorder @ 0x004a6f7c
+//   12: GraphicWindow::SetChanged @ 0x004a50e0
+//   13: GraphicWindow::MoveWindow @ 0x004a4d7e
+//   14: GraphicWindow::SetWidthAndHeight @ 0x004a4df1
+//   15: GraphicWindow::CenterWindow @ 0x004a4ea8
+//   16: GraphicWindow::CenterWindow @ 0x004a4e55
+//   17: GraphicWindow::SetWindowPosition @ 0x0040d840
+//   18: GraphicWindow::SetWindowTitle @ 0x004a51d0
+//   19: GraphicWindow::InvalidateAllOverlaps @ 0x004a6256
+//   20: GraphicWindow::InvalidateAllChildren @ 0x004a6399
+//   21: GraphicWindow::AddChild @ 0x004a53be
+//   22: GraphicWindow::DeleteChild @ 0x004a5837
+//   23: GraphicWindow::DeleteChild @ 0x004a569a
+//   24: GraphicWindow::RemoveChild @ 0x004a5a11
+//   25: GraphicWindow::DeleteAllChildren @ 0x004a5b58
+//   26: GraphicWindow::RemoveAllChildren @ 0x004a5cd8
+//   27: GraphicWindow::DeleteSelf @ 0x004a603c
+//   28: GraphicWindow::RemoveSelf @ 0x004a606b
+//   29: GraphicWindow::FindChild @ 0x004a5dd1
+//   30: GraphicWindow::SetParent @ 0x0040d7e0
+//   31: GraphicWindow::CanWeRespondToMessage @ 0x004a786b
+//   32: GraphicWindow::DoCharacter @ 0x004a6568
+//   33: CareerWindow::DoKeyDown @ 0x0047fa75
+//   34: GraphicWindow::DoKeyUp @ 0x004a659c
+//   35: CareerWindow::DoCursorDown @ 0x0047fb14
+//   36: GraphicWindow::DoCursorUp @ 0x004a65d0
+//   37: CareerWindow::DoCursorMove @ 0x0047fc47
+//   38: GraphicWindow::CaptureCursorStart @ 0x004a6607
+//   39: GraphicWindow::CaptureCursorEnd @ 0x004a6640
+//   40: GraphicWindow::WindowToScreenCoordinates @ 0x004a667d
+//   41: GraphicWindow::ScreenToWindowCoordinates @ 0x004a66cc
+//   42: GraphicWindow::IsPointInWindow @ 0x0040d8b0
+//   43: CareerWindow::`scalar deleting destructor' @ 0x00480610
+//   44: GraphicWindow::GetImage @ 0x004a6720
+//   45: GraphicWindow::GetImagePath @ 0x004a673c
+//   46: GraphicWindow::DrawChildren @ 0x004a6180
+//   47: CareerWindow::DrawSelf @ 0x0047f7cf
+//   48: GraphicWindow::DoesWindowNeedUpdating @ 0x004a646b
+//   49 entries
+
 
 
 // Contribution: 2:00001ef4-00001ef7 Module: 31, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00590ef4
-// Demangled: const CareerWindow::CitySelectionFrame::`vftable'
-// ??_7CitySelectionFrame@CareerWindow@@6B@
+// vftable for CareerWindow @ 0x00590ef4
+//   00: CareerWindow::CitySelectionFrame::`scalar deleting destructor' @ 0x00480650
+//   1 entries
+
 
 
 // Contribution: 3:00000064-0000006b Module: 31, 4 byte alignment, initialized_data, read, write, 

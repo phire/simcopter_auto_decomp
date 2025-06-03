@@ -634,9 +634,10 @@ long Version::GetCPUSpeed() {
 
 
 // Contribution: 2:000005b8-000005bb Module: 55, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x0058f5b8
-// Demangled: const Version::`vftable'
-// ??_7Version@@6B@
+// vftable for Version @ 0x0058f5b8
+//   00: Version::`scalar deleting destructor' @ 0x0043e120
+//   1 entries
+
 
 
 // Contribution: 3:00001584-0000167d Module: 55, 4 byte alignment, initialized_data, read, write, 

@@ -1994,9 +1994,22 @@ _T483:
 
 
 // Contribution: 2:00001ef8-00001f2b Module: 30, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00590ef8
-// Demangled: const CSparkalWindow::`vftable'
-// ??_7CSparkalWindow@@6B@
+// vftable for CSparkalWindow @ 0x00590ef8
+//   00: CSparkalWindow::`scalar deleting destructor' @ 0x00481ae0
+//   01: CSparkalWindow::GetClientSize @ 0x00480dca
+//   02: CSparkalWindow::Draw @ 0x00432304
+//   03: CSparkalWindow::SetCursor @ 0x00480e74
+//   04: CSparkalWindow::SetCursorFromIndex @ 0x00480f32
+//   05: CSparkalWindow::LoadGameCursors @ 0x00480f80
+//   06: CSparkalWindow::FreeGameCursors @ 0x00480f9b
+//   07: CSparkalWindow::Sleep @ 0x00468020
+//   08: CSparkalWindow::WakeUp @ 0x00468040
+//   09: CSparkalWindow::SwapBuffer @ 0x0043238c
+//   10: CSparkalWindow::SwapBuffer @ 0x00432325
+//   11: CSparkalWindow::UpdatePalette @ 0x00481265
+//   12: CSparkalWindow::MySparkalWindowProc @ 0x00481647
+//   13 entries
+
 
 
 // Contribution: 3:00002ab8-00002b8b Module: 30, 8 byte alignment, initialized_data, read, write, 

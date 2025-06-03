@@ -3226,15 +3226,45 @@ _Tdb:
 
 
 // Contribution: 2:00001db0-00001de3 Module: 32, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00590db0
-// Demangled: const PreferenceManager::`vftable'
-// ??_7PreferenceManager@@6B@
+// vftable for PreferenceManager @ 0x00590db0
+//   00: PreferenceManager::`scalar deleting destructor' @ 0x0047dab0
+//   01: PreferenceManager::SaveAllPrefs @ 0x0047c4ad
+//   02: PreferenceManager::LoadAllPrefs @ 0x0047c670
+//   03: PreferenceManager::ClearPrefsMemory @ 0x0047c834
+//   04: PreferenceManager::EnumeratePrefs @ 0x0047c3e2
+//   05: PreferenceManager::GetPrefPointer @ 0x0047cae0
+//   06: PreferenceManager::GetPrefCopy @ 0x0047cbc3
+//   07: PreferenceManager::GetPrefDataPointer @ 0x0047cc0c
+//   08: PreferenceManager::GetPrefDataCopy @ 0x0047cc4d
+//   09: PreferenceManager::GetPrefDataLength @ 0x0047ccb7
+//   10: PreferenceManager::SetPref @ 0x0047cf57
+//   11: PreferenceManager::SetPref @ 0x0047ccf8
+//   12: PreferenceManager::RemovePref @ 0x0047c970
+//   13 entries
+
 
 
 // Contribution: 2:00001de8-00001e2b Module: 32, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00590de8
-// Demangled: const NotificationPreferenceManager::`vftable'
-// ??_7NotificationPreferenceManager@@6B@
+// vftable for NotificationPreferenceManager @ 0x00590de8
+//   00: NotificationPreferenceManager::`scalar deleting destructor' @ 0x0047dca0
+//   01: PreferenceManager::SaveAllPrefs @ 0x0047c4ad
+//   02: PreferenceManager::LoadAllPrefs @ 0x0047c670
+//   03: PreferenceManager::ClearPrefsMemory @ 0x0047c834
+//   04: PreferenceManager::EnumeratePrefs @ 0x0047c3e2
+//   05: PreferenceManager::GetPrefPointer @ 0x0047cae0
+//   06: PreferenceManager::GetPrefCopy @ 0x0047cbc3
+//   07: PreferenceManager::GetPrefDataPointer @ 0x0047cc0c
+//   08: PreferenceManager::GetPrefDataCopy @ 0x0047cc4d
+//   09: PreferenceManager::GetPrefDataLength @ 0x0047ccb7
+//   10: NotificationPreferenceManager::SetPref @ 0x0047d97a
+//   11: NotificationPreferenceManager::SetPref @ 0x0047d92f
+//   12: PreferenceManager::RemovePref @ 0x0047c970
+//   13: NotificationPreferenceManager::AddNotification @ 0x0047d506
+//   14: NotificationPreferenceManager::AddNotification @ 0x0047d4cf
+//   15: NotificationPreferenceManager::RemoveNotification @ 0x0047d7c7
+//   16: NotificationPreferenceManager::DoNotification @ 0x0047d9bf
+//   17 entries
+
 
 
 // Contribution: 3:00002a30-00002a58 Module: 32, 4 byte alignment, initialized_data, read, write, 

@@ -7974,51 +7974,59 @@ _T621:
 
 
 // Contribution: 2:000033c0-000033c3 Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x005923c0
-// Demangled: const GameModeCoreData::`vftable'
-// ??_7GameModeCoreData@@6B@
+// vftable for GameModeCoreData @ 0x005923c0
+//   00: GameModeCoreData::`scalar deleting destructor' @ 0x004c37e0
+//   1 entries
+
 
 
 // Contribution: 2:000033c4-000033c7 Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x005923c4
-// Demangled: const GameModeMainMenuData::`vftable'
-// ??_7GameModeMainMenuData@@6B@
+// vftable for GameModeMainMenuData @ 0x005923c4
+//   00: GameModeMainMenuData::`scalar deleting destructor' @ 0x004c3820
+//   1 entries
+
 
 
 // Contribution: 2:000033c8-000033cb Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x005923c8
-// Demangled: const GameModePickCareerCityData::`vftable'
-// ??_7GameModePickCareerCityData@@6B@
+// vftable for GameModePickCareerCityData @ 0x005923c8
+//   00: GameModePickCareerCityData::`scalar deleting destructor' @ 0x004c3860
+//   1 entries
+
 
 
 // Contribution: 2:000033cc-000033cf Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x005923cc
-// Demangled: const GameModePlayData::`vftable'
-// ??_7GameModePlayData@@6B@
+// vftable for GameModePlayData @ 0x005923cc
+//   00: GameModePlayData::`scalar deleting destructor' @ 0x004c38a0
+//   1 entries
+
 
 
 // Contribution: 2:000033d0-000033d3 Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x005923d0
-// Demangled: const GameModeHangarData::`vftable'
-// ??_7GameModeHangarData@@6B@
+// vftable for GameModeHangarData @ 0x005923d0
+//   00: GameModeHangarData::`scalar deleting destructor' @ 0x004c3aa0
+//   1 entries
+
 
 
 // Contribution: 2:000033d4-000033d7 Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x005923d4
-// Demangled: const GameModeCatalogData::`vftable'
-// ??_7GameModeCatalogData@@6B@
+// vftable for GameModeCatalogData @ 0x005923d4
+//   00: GameModeCatalogData::`scalar deleting destructor' @ 0x004c3ca0
+//   1 entries
+
 
 
 // Contribution: 2:000033d8-000033db Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x005923d8
-// Demangled: const GameModeMissionLogData::`vftable'
-// ??_7GameModeMissionLogData@@6B@
+// vftable for GameModeMissionLogData @ 0x005923d8
+//   00: GameModeMissionLogData::`scalar deleting destructor' @ 0x004c3ea0
+//   1 entries
+
 
 
 // Contribution: 2:000033dc-000033df Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x005923dc
-// Demangled: const GameModeInventoryData::`vftable'
-// ??_7GameModeInventoryData@@6B@
+// vftable for GameModeInventoryData @ 0x005923dc
+//   00: GameModeInventoryData::`scalar deleting destructor' @ 0x004c40a0
+//   1 entries
+
 
 
 // Contribution: 3:00003ec4-00003fad Module: 1, 4 byte alignment, initialized_data, read, write, 

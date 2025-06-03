@@ -4517,9 +4517,14 @@ _T66:
 
 
 // Contribution: 2:00004220-00004233 Module: 163, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00593220
-// Demangled: const PlaneClass::`vftable'
-// ??_7PlaneClass@@6B@
+// vftable for PlaneClass @ 0x00593220
+//   00: PlaneClass::`scalar deleting destructor' @ 0x0052dd60
+//   01: PlaneClass::ItterateFSM @ 0x0052b9a3
+//   02: PlaneClass::AdjustSpeed @ 0x0052baf5
+//   03: PlaneClass::IsPathClear @ 0x0052bb2e
+//   04: PlaneClass::BeamToWithinCameraRange @ 0x0052d08b
+//   5 entries
+
 
 
 // Contribution: 3:000000a8-000000ab Module: 163, 4 byte alignment, initialized_data, read, write, 
@@ -4538,9 +4543,7 @@ int32_t PlaneClass::sPlaneModelSet = 0;
 
 
 // Contribution: 3:0002080c-0002082c Module: 163, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x005b780c
-// Demangled: "C:\\Copter\\Source\\Game\\S3MOBILE.H"...
-// ??_C@_0CB@DLKO@C?3?2Copter?2Source?2Game?2S3MOBILE?4H@
+// string literal: "C:\Copter\Source\Game\S3MOBILE.H"
 
 
 // Contribution: 3:000946e8-000947b0 Module: 163, 8 byte alignment, uninitialized_data, read, write, 

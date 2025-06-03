@@ -6094,27 +6094,79 @@ _T38:
 
 
 // Contribution: 2:00000440-00000447 Module: 64, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x0058f440
-// Demangled: const SoundSystem::`vftable'
-// ??_7SoundSystem@@6B@
+// vftable for SoundSystem @ 0x0058f440
+//   00: SoundSystem::GetVolume @ 0x0042e32e
+//   01: SoundSystem::SetVolume @ 0x0042e374
+//   2 entries
+
 
 
 // Contribution: 2:00000448-00000457 Module: 64, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x0058f448
-// Demangled: const SoundManager::`vftable'
-// ??_7SoundManager@@6B@
+// vftable for SoundManager @ 0x0058f448
+//   00: SoundManager::PlaySoundA @ 0x0042e612
+//   01: SoundManager::StopSound @ 0x0042e663
+//   02: SoundManager::StopAllSounds @ 0x0042e6a5
+//   03: SoundManager::DeleteAllSounds @ 0x0042e419
+//   4 entries
+
 
 
 // Contribution: 2:00000458-00000483 Module: 64, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x0058f458
-// Demangled: const Sound::`vftable'
-// ??_7Sound@@6B@
+// vftable for Sound @ 0x0058f458
+//   00: Sound::`scalar deleting destructor' @ 0x00431ac0
+//   01: Sound::SetSoundFile @ 0x0042ed67
+//   02: _purecall @ 0x0056cfa0
+//   03: _purecall @ 0x0056cfa0
+//   04: _purecall @ 0x0056cfa0
+//   05: _purecall @ 0x0056cfa0
+//   06: _purecall @ 0x0056cfa0
+//   07: _purecall @ 0x0056cfa0
+//   08: _purecall @ 0x0056cfa0
+//   09: _purecall @ 0x0056cfa0
+//   10: Sound::GetSoundType @ 0x0042ef5a
+//   11 entries
+
 
 
 // Contribution: 2:00000488-00000513 Module: 64, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x0058f488
-// Demangled: const DigitalSound::`vftable'
-// ??_7DigitalSound@@6B@
+// vftable for DigitalSound @ 0x0058f488
+//   00: DigitalSound::`scalar deleting destructor' @ 0x00431b20
+//   01: Sound::SetSoundFile @ 0x0042ed67
+//   02: DigitalSound::Play @ 0x0043005a
+//   03: DigitalSound::Stop @ 0x0043041b
+//   04: DigitalSound::IsPlaying @ 0x0042ff6d
+//   05: DigitalSound::SetCompletionNotification @ 0x00431821
+//   06: DigitalSound::StopCompletionNotification @ 0x00431850
+//   07: DigitalSound::EstimateRemainingPlayTime @ 0x0043188b
+//   08: DigitalSound::GetVolume @ 0x0042fdb2
+//   09: DigitalSound::SetVolume @ 0x0042fe2e
+//   10: DigitalSound::GetSoundType @ 0x00431b00
+//   11: DigitalSound::SetSoundFile @ 0x0042f318
+//   12: DigitalSound::Load @ 0x0042f5fc
+//   13: DigitalSound::LoadFromResource @ 0x0042f66a
+//   14: DigitalSound::LoadFromFile @ 0x0042f682
+//   15: DigitalSound::Unload @ 0x0042f549
+//   16: DigitalSound::ShouldWeStream @ 0x004304ec
+//   17: DigitalSound::PlayStream @ 0x00430a74
+//   18: DigitalSound::StopStream @ 0x00430fb6
+//   19: DigitalSound::IsPlaying @ 0x0042ff90
+//   20: DigitalSound::GetPan @ 0x0042fbb5
+//   21: DigitalSound::SetPan @ 0x0042fc21
+//   22: DigitalSound::SetPosition @ 0x0042feb1
+//   23: DigitalSound::GetOriginalFrequency @ 0x0042ff51
+//   24: DigitalSound::GetFrequency @ 0x0042fcb5
+//   25: DigitalSound::SetFrequency @ 0x0042fd21
+//   26: DigitalSound::GetSoundAliasToPlay @ 0x004302f9
+//   27: DigitalSound::CreateSoundBuffer @ 0x0042f9da
+//   28: DigitalSound::CreatePrimarySoundBuffer @ 0x0042f989
+//   29: DigitalSound::ReleaseSoundBuffer @ 0x0042fb2a
+//   30: DigitalSound::InitializeStreamBuffer @ 0x004306ca
+//   31: DigitalSound::ProcessStreamingBufferTimerCallback @ 0x004310cb
+//   32: DigitalSound::ProcessCompletionEstimationTimerCallback @ 0x00431970
+//   33: DigitalSound::StopCompletionNotificationEstimationTimer @ 0x00431a7d
+//   34: DigitalSound::StartCompletionNotificationEstimationTimer @ 0x004319e5
+//   35 entries
+
 
 
 // Contribution: 3:00000e58-0000134d Module: 64, 4 byte alignment, initialized_data, read, write, 

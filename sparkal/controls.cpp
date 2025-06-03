@@ -16907,63 +16907,681 @@ _T22c:
 
 
 // Contribution: 2:000029c0-00002a8b Module: 5, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x005919c0
-// Demangled: const BoxWindow::`vftable'
-// ??_7BoxWindow@@6B@
+// vftable for BoxWindow @ 0x005919c0
+//   00: GraphicWindowOwner::DoMessage @ 0x004a17be
+//   01: GraphicWindow::Initialize @ 0x004a44d4
+//   02: GraphicWindow::CreateAllImages @ 0x004a6dc5
+//   03: GraphicWindow::DestroyAllImages @ 0x004a6ea7
+//   04: GraphicWindow::CreateImage @ 0x004a4aa0
+//   05: GraphicWindow::DestroyImage @ 0x004a4cab
+//   06: GraphicWindow::ComposeSelf @ 0x004a60a3
+//   07: GraphicWindow::SetImageToDrawOnto @ 0x004a6bcd
+//   08: GraphicWindow::SetAllImagesToDrawOnto @ 0x004a6cf0
+//   09: GraphicWindow::SetTransparentColor @ 0x004a4d1c
+//   10: GraphicWindow::SetBorderDrawing @ 0x0040d810
+//   11: GraphicWindow::DrawBorder @ 0x004a6f7c
+//   12: GraphicWindow::SetChanged @ 0x004a50e0
+//   13: GraphicWindow::MoveWindow @ 0x004a4d7e
+//   14: GraphicWindow::SetWidthAndHeight @ 0x004a4df1
+//   15: GraphicWindow::CenterWindow @ 0x004a4ea8
+//   16: GraphicWindow::CenterWindow @ 0x004a4e55
+//   17: GraphicWindow::SetWindowPosition @ 0x0040d840
+//   18: GraphicWindow::SetWindowTitle @ 0x004a51d0
+//   19: GraphicWindow::InvalidateAllOverlaps @ 0x004a6256
+//   20: GraphicWindow::InvalidateAllChildren @ 0x004a6399
+//   21: GraphicWindow::AddChild @ 0x004a53be
+//   22: GraphicWindow::DeleteChild @ 0x004a5837
+//   23: GraphicWindow::DeleteChild @ 0x004a569a
+//   24: GraphicWindow::RemoveChild @ 0x004a5a11
+//   25: GraphicWindow::DeleteAllChildren @ 0x004a5b58
+//   26: GraphicWindow::RemoveAllChildren @ 0x004a5cd8
+//   27: GraphicWindow::DeleteSelf @ 0x004a603c
+//   28: GraphicWindow::RemoveSelf @ 0x004a606b
+//   29: GraphicWindow::FindChild @ 0x004a5dd1
+//   30: GraphicWindow::SetParent @ 0x0040d7e0
+//   31: GraphicWindow::CanWeRespondToMessage @ 0x004a786b
+//   32: GraphicWindow::DoCharacter @ 0x004a6568
+//   33: GraphicWindow::DoKeyDown @ 0x004a6582
+//   34: GraphicWindow::DoKeyUp @ 0x004a659c
+//   35: GraphicWindow::DoCursorDown @ 0x004a65b6
+//   36: GraphicWindow::DoCursorUp @ 0x004a65d0
+//   37: GraphicWindow::DoCursorMove @ 0x004a65ed
+//   38: GraphicWindow::CaptureCursorStart @ 0x004a6607
+//   39: GraphicWindow::CaptureCursorEnd @ 0x004a6640
+//   40: GraphicWindow::WindowToScreenCoordinates @ 0x004a667d
+//   41: GraphicWindow::ScreenToWindowCoordinates @ 0x004a66cc
+//   42: GraphicWindow::IsPointInWindow @ 0x0040d8b0
+//   43: BoxWindow::`scalar deleting destructor' @ 0x004b8250
+//   44: GraphicWindow::GetImage @ 0x004a6720
+//   45: GraphicWindow::GetImagePath @ 0x004a673c
+//   46: GraphicWindow::DrawChildren @ 0x004a6180
+//   47: BoxWindow::DrawSelf @ 0x004acb86
+//   48: GraphicWindow::DoesWindowNeedUpdating @ 0x004a646b
+//   49: BoxWindow::SetColors @ 0x004acbea
+//   50: BoxWindow::SetOutlineAndFillDrawing @ 0x004acc19
+//   51 entries
+
 
 
 // Contribution: 2:00002a90-00002b77 Module: 5, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00591a90
-// Demangled: const TextWindow::`vftable'
-// ??_7TextWindow@@6B@
+// vftable for TextWindow @ 0x00591a90
+//   00: GraphicWindowOwner::DoMessage @ 0x004a17be
+//   01: GraphicWindow::Initialize @ 0x004a44d4
+//   02: GraphicWindow::CreateAllImages @ 0x004a6dc5
+//   03: GraphicWindow::DestroyAllImages @ 0x004a6ea7
+//   04: GraphicWindow::CreateImage @ 0x004a4aa0
+//   05: GraphicWindow::DestroyImage @ 0x004a4cab
+//   06: GraphicWindow::ComposeSelf @ 0x004a60a3
+//   07: GraphicWindow::SetImageToDrawOnto @ 0x004a6bcd
+//   08: GraphicWindow::SetAllImagesToDrawOnto @ 0x004a6cf0
+//   09: GraphicWindow::SetTransparentColor @ 0x004a4d1c
+//   10: GraphicWindow::SetBorderDrawing @ 0x0040d810
+//   11: GraphicWindow::DrawBorder @ 0x004a6f7c
+//   12: GraphicWindow::SetChanged @ 0x004a50e0
+//   13: GraphicWindow::MoveWindow @ 0x004a4d7e
+//   14: GraphicWindow::SetWidthAndHeight @ 0x004a4df1
+//   15: GraphicWindow::CenterWindow @ 0x004a4ea8
+//   16: GraphicWindow::CenterWindow @ 0x004a4e55
+//   17: GraphicWindow::SetWindowPosition @ 0x0040d840
+//   18: GraphicWindow::SetWindowTitle @ 0x004a51d0
+//   19: GraphicWindow::InvalidateAllOverlaps @ 0x004a6256
+//   20: GraphicWindow::InvalidateAllChildren @ 0x004a6399
+//   21: GraphicWindow::AddChild @ 0x004a53be
+//   22: GraphicWindow::DeleteChild @ 0x004a5837
+//   23: GraphicWindow::DeleteChild @ 0x004a569a
+//   24: GraphicWindow::RemoveChild @ 0x004a5a11
+//   25: GraphicWindow::DeleteAllChildren @ 0x004a5b58
+//   26: GraphicWindow::RemoveAllChildren @ 0x004a5cd8
+//   27: GraphicWindow::DeleteSelf @ 0x004a603c
+//   28: GraphicWindow::RemoveSelf @ 0x004a606b
+//   29: GraphicWindow::FindChild @ 0x004a5dd1
+//   30: GraphicWindow::SetParent @ 0x0040d7e0
+//   31: GraphicWindow::CanWeRespondToMessage @ 0x004a786b
+//   32: GraphicWindow::DoCharacter @ 0x004a6568
+//   33: GraphicWindow::DoKeyDown @ 0x004a6582
+//   34: GraphicWindow::DoKeyUp @ 0x004a659c
+//   35: GraphicWindow::DoCursorDown @ 0x004a65b6
+//   36: GraphicWindow::DoCursorUp @ 0x004a65d0
+//   37: GraphicWindow::DoCursorMove @ 0x004a65ed
+//   38: GraphicWindow::CaptureCursorStart @ 0x004a6607
+//   39: GraphicWindow::CaptureCursorEnd @ 0x004a6640
+//   40: GraphicWindow::WindowToScreenCoordinates @ 0x004a667d
+//   41: GraphicWindow::ScreenToWindowCoordinates @ 0x004a66cc
+//   42: GraphicWindow::IsPointInWindow @ 0x0040d8b0
+//   43: TextWindow::`scalar deleting destructor' @ 0x004b8290
+//   44: GraphicWindow::GetImage @ 0x004a6720
+//   45: GraphicWindow::GetImagePath @ 0x004a673c
+//   46: GraphicWindow::DrawChildren @ 0x004a6180
+//   47: TextWindow::DrawSelf @ 0x004ad9a4
+//   48: GraphicWindow::DoesWindowNeedUpdating @ 0x004a646b
+//   49: TextWindow::SetWindowTitle @ 0x004ad7b6
+//   50: TextWindow::SetWindowTitle @ 0x004ad775
+//   51: TextWindow::SetFontCharacteristics @ 0x004adba4
+//   52: TextWindow::SetTextDrawStyle @ 0x004adbe5
+//   53: TextWindow::SetTextColor @ 0x004add6f
+//   54: TextWindow::SetBackgroundDrawing @ 0x004adb83
+//   55: TextWindow::LoadStrings @ 0x004ad01e
+//   56: TextWindow::FitWindowToText @ 0x004adc18
+//   57: TextWindow::ResizeWindowForExactLineHeights @ 0x004adda1
+//   58 entries
+
 
 
 // Contribution: 2:00002b78-00002c53 Module: 5, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00591b78
-// Demangled: const ButtonWindow::`vftable'
-// ??_7ButtonWindow@@6B@
+// vftable for ButtonWindow @ 0x00591b78
+//   00: GraphicWindowOwner::DoMessage @ 0x004a17be
+//   01: ButtonWindow::Initialize @ 0x004ae385
+//   02: GraphicWindow::CreateAllImages @ 0x004a6dc5
+//   03: GraphicWindow::DestroyAllImages @ 0x004a6ea7
+//   04: ButtonWindow::CreateImage @ 0x004ae416
+//   05: GraphicWindow::DestroyImage @ 0x004a4cab
+//   06: ButtonWindow::ComposeSelf @ 0x004aeb6b
+//   07: GraphicWindow::SetImageToDrawOnto @ 0x004a6bcd
+//   08: GraphicWindow::SetAllImagesToDrawOnto @ 0x004a6cf0
+//   09: GraphicWindow::SetTransparentColor @ 0x004a4d1c
+//   10: GraphicWindow::SetBorderDrawing @ 0x0040d810
+//   11: GraphicWindow::DrawBorder @ 0x004a6f7c
+//   12: GraphicWindow::SetChanged @ 0x004a50e0
+//   13: GraphicWindow::MoveWindow @ 0x004a4d7e
+//   14: GraphicWindow::SetWidthAndHeight @ 0x004a4df1
+//   15: GraphicWindow::CenterWindow @ 0x004a4ea8
+//   16: GraphicWindow::CenterWindow @ 0x004a4e55
+//   17: GraphicWindow::SetWindowPosition @ 0x0040d840
+//   18: GraphicWindow::SetWindowTitle @ 0x004a51d0
+//   19: GraphicWindow::InvalidateAllOverlaps @ 0x004a6256
+//   20: GraphicWindow::InvalidateAllChildren @ 0x004a6399
+//   21: GraphicWindow::AddChild @ 0x004a53be
+//   22: GraphicWindow::DeleteChild @ 0x004a5837
+//   23: GraphicWindow::DeleteChild @ 0x004a569a
+//   24: GraphicWindow::RemoveChild @ 0x004a5a11
+//   25: GraphicWindow::DeleteAllChildren @ 0x004a5b58
+//   26: GraphicWindow::RemoveAllChildren @ 0x004a5cd8
+//   27: GraphicWindow::DeleteSelf @ 0x004a603c
+//   28: GraphicWindow::RemoveSelf @ 0x004a606b
+//   29: GraphicWindow::FindChild @ 0x004a5dd1
+//   30: GraphicWindow::SetParent @ 0x0040d7e0
+//   31: ButtonWindow::CanWeRespondToMessage @ 0x004aede3
+//   32: GraphicWindow::DoCharacter @ 0x004a6568
+//   33: GraphicWindow::DoKeyDown @ 0x004a6582
+//   34: GraphicWindow::DoKeyUp @ 0x004a659c
+//   35: ButtonWindow::DoCursorDown @ 0x004aec47
+//   36: ButtonWindow::DoCursorUp @ 0x004aec9a
+//   37: ButtonWindow::DoCursorMove @ 0x004aed4d
+//   38: GraphicWindow::CaptureCursorStart @ 0x004a6607
+//   39: GraphicWindow::CaptureCursorEnd @ 0x004a6640
+//   40: GraphicWindow::WindowToScreenCoordinates @ 0x004a667d
+//   41: GraphicWindow::ScreenToWindowCoordinates @ 0x004a66cc
+//   42: GraphicWindow::IsPointInWindow @ 0x0040d8b0
+//   43: ButtonWindow::`scalar deleting destructor' @ 0x004b82e0
+//   44: GraphicWindow::GetImage @ 0x004a6720
+//   45: GraphicWindow::GetImagePath @ 0x004a673c
+//   46: GraphicWindow::DrawChildren @ 0x004a6180
+//   47: GraphicWindow::DrawSelf @ 0x004a6168
+//   48: GraphicWindow::DoesWindowNeedUpdating @ 0x004a646b
+//   49: ButtonWindow::GetImageCount @ 0x004ae3fb
+//   50: ButtonWindow::SetState @ 0x004aeace
+//   51: ButtonWindow::GetState @ 0x00471d20
+//   52: ButtonWindow::Enable @ 0x004aeb0d
+//   53: ButtonWindow::Disable @ 0x004aeb3c
+//   54: ButtonWindow::SetTextColor @ 0x004ae3b3
+//   55 entries
+
 
 
 // Contribution: 2:00002c58-00002d33 Module: 5, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00591c58
-// Demangled: const CheckBoxWindow::`vftable'
-// ??_7CheckBoxWindow@@6B@
+// vftable for CheckBoxWindow @ 0x00591c58
+//   00: GraphicWindowOwner::DoMessage @ 0x004a17be
+//   01: ButtonWindow::Initialize @ 0x004ae385
+//   02: GraphicWindow::CreateAllImages @ 0x004a6dc5
+//   03: GraphicWindow::DestroyAllImages @ 0x004a6ea7
+//   04: ButtonWindow::CreateImage @ 0x004ae416
+//   05: GraphicWindow::DestroyImage @ 0x004a4cab
+//   06: CheckBoxWindow::ComposeSelf @ 0x004af5c1
+//   07: GraphicWindow::SetImageToDrawOnto @ 0x004a6bcd
+//   08: GraphicWindow::SetAllImagesToDrawOnto @ 0x004a6cf0
+//   09: GraphicWindow::SetTransparentColor @ 0x004a4d1c
+//   10: GraphicWindow::SetBorderDrawing @ 0x0040d810
+//   11: GraphicWindow::DrawBorder @ 0x004a6f7c
+//   12: GraphicWindow::SetChanged @ 0x004a50e0
+//   13: GraphicWindow::MoveWindow @ 0x004a4d7e
+//   14: GraphicWindow::SetWidthAndHeight @ 0x004a4df1
+//   15: GraphicWindow::CenterWindow @ 0x004a4ea8
+//   16: GraphicWindow::CenterWindow @ 0x004a4e55
+//   17: GraphicWindow::SetWindowPosition @ 0x0040d840
+//   18: GraphicWindow::SetWindowTitle @ 0x004a51d0
+//   19: GraphicWindow::InvalidateAllOverlaps @ 0x004a6256
+//   20: GraphicWindow::InvalidateAllChildren @ 0x004a6399
+//   21: GraphicWindow::AddChild @ 0x004a53be
+//   22: GraphicWindow::DeleteChild @ 0x004a5837
+//   23: GraphicWindow::DeleteChild @ 0x004a569a
+//   24: GraphicWindow::RemoveChild @ 0x004a5a11
+//   25: GraphicWindow::DeleteAllChildren @ 0x004a5b58
+//   26: GraphicWindow::RemoveAllChildren @ 0x004a5cd8
+//   27: GraphicWindow::DeleteSelf @ 0x004a603c
+//   28: GraphicWindow::RemoveSelf @ 0x004a606b
+//   29: GraphicWindow::FindChild @ 0x004a5dd1
+//   30: GraphicWindow::SetParent @ 0x0040d7e0
+//   31: ButtonWindow::CanWeRespondToMessage @ 0x004aede3
+//   32: GraphicWindow::DoCharacter @ 0x004a6568
+//   33: GraphicWindow::DoKeyDown @ 0x004a6582
+//   34: GraphicWindow::DoKeyUp @ 0x004a659c
+//   35: CheckBoxWindow::DoCursorDown @ 0x004af74d
+//   36: CheckBoxWindow::DoCursorUp @ 0x004af7bd
+//   37: CheckBoxWindow::DoCursorMove @ 0x004af7da
+//   38: GraphicWindow::CaptureCursorStart @ 0x004a6607
+//   39: GraphicWindow::CaptureCursorEnd @ 0x004a6640
+//   40: GraphicWindow::WindowToScreenCoordinates @ 0x004a667d
+//   41: GraphicWindow::ScreenToWindowCoordinates @ 0x004a66cc
+//   42: GraphicWindow::IsPointInWindow @ 0x0040d8b0
+//   43: CheckBoxWindow::`scalar deleting destructor' @ 0x004b8320
+//   44: GraphicWindow::GetImage @ 0x004a6720
+//   45: GraphicWindow::GetImagePath @ 0x004a673c
+//   46: GraphicWindow::DrawChildren @ 0x004a6180
+//   47: GraphicWindow::DrawSelf @ 0x004a6168
+//   48: GraphicWindow::DoesWindowNeedUpdating @ 0x004a646b
+//   49: CheckBoxWindow::GetImageCount @ 0x004af5a6
+//   50: CheckBoxWindow::SetState @ 0x004af6ab
+//   51: ButtonWindow::GetState @ 0x00471d20
+//   52: ButtonWindow::Enable @ 0x004aeb0d
+//   53: ButtonWindow::Disable @ 0x004aeb3c
+//   54: ButtonWindow::SetTextColor @ 0x004ae3b3
+//   55 entries
+
 
 
 // Contribution: 2:00002d38-00002e1b Module: 5, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00591d38
-// Demangled: const RadioButtonWindow::`vftable'
-// ??_7RadioButtonWindow@@6B@
+// vftable for RadioButtonWindow @ 0x00591d38
+//   00: GraphicWindowOwner::DoMessage @ 0x004a17be
+//   01: RadioButtonWindow::Initialize @ 0x004afd2a
+//   02: GraphicWindow::CreateAllImages @ 0x004a6dc5
+//   03: GraphicWindow::DestroyAllImages @ 0x004a6ea7
+//   04: ButtonWindow::CreateImage @ 0x004ae416
+//   05: GraphicWindow::DestroyImage @ 0x004a4cab
+//   06: RadioButtonWindow::ComposeSelf @ 0x004afd6a
+//   07: GraphicWindow::SetImageToDrawOnto @ 0x004a6bcd
+//   08: GraphicWindow::SetAllImagesToDrawOnto @ 0x004a6cf0
+//   09: GraphicWindow::SetTransparentColor @ 0x004a4d1c
+//   10: GraphicWindow::SetBorderDrawing @ 0x0040d810
+//   11: GraphicWindow::DrawBorder @ 0x004a6f7c
+//   12: GraphicWindow::SetChanged @ 0x004a50e0
+//   13: GraphicWindow::MoveWindow @ 0x004a4d7e
+//   14: GraphicWindow::SetWidthAndHeight @ 0x004a4df1
+//   15: GraphicWindow::CenterWindow @ 0x004a4ea8
+//   16: GraphicWindow::CenterWindow @ 0x004a4e55
+//   17: GraphicWindow::SetWindowPosition @ 0x0040d840
+//   18: GraphicWindow::SetWindowTitle @ 0x004a51d0
+//   19: GraphicWindow::InvalidateAllOverlaps @ 0x004a6256
+//   20: GraphicWindow::InvalidateAllChildren @ 0x004a6399
+//   21: GraphicWindow::AddChild @ 0x004a53be
+//   22: GraphicWindow::DeleteChild @ 0x004a5837
+//   23: GraphicWindow::DeleteChild @ 0x004a569a
+//   24: GraphicWindow::RemoveChild @ 0x004a5a11
+//   25: GraphicWindow::DeleteAllChildren @ 0x004a5b58
+//   26: GraphicWindow::RemoveAllChildren @ 0x004a5cd8
+//   27: GraphicWindow::DeleteSelf @ 0x004a603c
+//   28: GraphicWindow::RemoveSelf @ 0x004a606b
+//   29: GraphicWindow::FindChild @ 0x004a5dd1
+//   30: GraphicWindow::SetParent @ 0x0040d7e0
+//   31: ButtonWindow::CanWeRespondToMessage @ 0x004aede3
+//   32: GraphicWindow::DoCharacter @ 0x004a6568
+//   33: GraphicWindow::DoKeyDown @ 0x004a6582
+//   34: GraphicWindow::DoKeyUp @ 0x004a659c
+//   35: RadioButtonWindow::DoCursorDown @ 0x004affd4
+//   36: RadioButtonWindow::DoCursorUp @ 0x004b0049
+//   37: RadioButtonWindow::DoCursorMove @ 0x004b0066
+//   38: GraphicWindow::CaptureCursorStart @ 0x004a6607
+//   39: GraphicWindow::CaptureCursorEnd @ 0x004a6640
+//   40: GraphicWindow::WindowToScreenCoordinates @ 0x004a667d
+//   41: GraphicWindow::ScreenToWindowCoordinates @ 0x004a66cc
+//   42: GraphicWindow::IsPointInWindow @ 0x0040d8b0
+//   43: RadioButtonWindow::`scalar deleting destructor' @ 0x004b8370
+//   44: GraphicWindow::GetImage @ 0x004a6720
+//   45: GraphicWindow::GetImagePath @ 0x004a673c
+//   46: GraphicWindow::DrawChildren @ 0x004a6180
+//   47: GraphicWindow::DrawSelf @ 0x004a6168
+//   48: GraphicWindow::DoesWindowNeedUpdating @ 0x004a646b
+//   49: RadioButtonWindow::GetImageCount @ 0x004afe54
+//   50: RadioButtonWindow::SetState @ 0x004afee3
+//   51: ButtonWindow::GetState @ 0x00471d20
+//   52: ButtonWindow::Enable @ 0x004aeb0d
+//   53: ButtonWindow::Disable @ 0x004aeb3c
+//   54: ButtonWindow::SetTextColor @ 0x004ae3b3
+//   55: RadioButtonWindow::AddToGroup @ 0x004afe6f
+//   56: RadioButtonWindow::RemoveFromGroup @ 0x004afe9f
+//   57 entries
+
 
 
 // Contribution: 2:00002e20-00002ee3 Module: 5, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00591e20
-// Demangled: const ButtonGroup::`vftable'
-// ??_7ButtonGroup@@6B@
+// vftable for ButtonGroup @ 0x00591e20
+//   00: GraphicWindowOwner::DoMessage @ 0x004a17be
+//   01: GraphicWindow::Initialize @ 0x004a44d4
+//   02: GraphicWindow::CreateAllImages @ 0x004a6dc5
+//   03: GraphicWindow::DestroyAllImages @ 0x004a6ea7
+//   04: GraphicWindow::CreateImage @ 0x004a4aa0
+//   05: GraphicWindow::DestroyImage @ 0x004a4cab
+//   06: GraphicWindow::ComposeSelf @ 0x004a60a3
+//   07: GraphicWindow::SetImageToDrawOnto @ 0x004a6bcd
+//   08: GraphicWindow::SetAllImagesToDrawOnto @ 0x004a6cf0
+//   09: GraphicWindow::SetTransparentColor @ 0x004a4d1c
+//   10: GraphicWindow::SetBorderDrawing @ 0x0040d810
+//   11: GraphicWindow::DrawBorder @ 0x004a6f7c
+//   12: GraphicWindow::SetChanged @ 0x004a50e0
+//   13: GraphicWindow::MoveWindow @ 0x004a4d7e
+//   14: GraphicWindow::SetWidthAndHeight @ 0x004a4df1
+//   15: GraphicWindow::CenterWindow @ 0x004a4ea8
+//   16: GraphicWindow::CenterWindow @ 0x004a4e55
+//   17: GraphicWindow::SetWindowPosition @ 0x0040d840
+//   18: GraphicWindow::SetWindowTitle @ 0x004a51d0
+//   19: GraphicWindow::InvalidateAllOverlaps @ 0x004a6256
+//   20: GraphicWindow::InvalidateAllChildren @ 0x004a6399
+//   21: GraphicWindow::AddChild @ 0x004a53be
+//   22: GraphicWindow::DeleteChild @ 0x004a5837
+//   23: GraphicWindow::DeleteChild @ 0x004a569a
+//   24: GraphicWindow::RemoveChild @ 0x004a5a11
+//   25: GraphicWindow::DeleteAllChildren @ 0x004a5b58
+//   26: GraphicWindow::RemoveAllChildren @ 0x004a5cd8
+//   27: GraphicWindow::DeleteSelf @ 0x004a603c
+//   28: GraphicWindow::RemoveSelf @ 0x004a606b
+//   29: GraphicWindow::FindChild @ 0x004a5dd1
+//   30: GraphicWindow::SetParent @ 0x0040d7e0
+//   31: GraphicWindow::CanWeRespondToMessage @ 0x004a786b
+//   32: GraphicWindow::DoCharacter @ 0x004a6568
+//   33: GraphicWindow::DoKeyDown @ 0x004a6582
+//   34: GraphicWindow::DoKeyUp @ 0x004a659c
+//   35: GraphicWindow::DoCursorDown @ 0x004a65b6
+//   36: GraphicWindow::DoCursorUp @ 0x004a65d0
+//   37: GraphicWindow::DoCursorMove @ 0x004a65ed
+//   38: GraphicWindow::CaptureCursorStart @ 0x004a6607
+//   39: GraphicWindow::CaptureCursorEnd @ 0x004a6640
+//   40: GraphicWindow::WindowToScreenCoordinates @ 0x004a667d
+//   41: GraphicWindow::ScreenToWindowCoordinates @ 0x004a66cc
+//   42: GraphicWindow::IsPointInWindow @ 0x0040d8b0
+//   43: ButtonGroup::`scalar deleting destructor' @ 0x004b83b0
+//   44: GraphicWindow::GetImage @ 0x004a6720
+//   45: GraphicWindow::GetImagePath @ 0x004a673c
+//   46: GraphicWindow::DrawChildren @ 0x004a6180
+//   47: GraphicWindow::DrawSelf @ 0x004a6168
+//   48: GraphicWindow::DoesWindowNeedUpdating @ 0x004a646b
+//   49 entries
+
 
 
 // Contribution: 2:00002ee8-00002fbf Module: 5, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00591ee8
-// Demangled: const SliderWindow::`vftable'
-// ??_7SliderWindow@@6B@
+// vftable for SliderWindow @ 0x00591ee8
+//   00: GraphicWindowOwner::DoMessage @ 0x004a17be
+//   01: SliderWindow::Initialize @ 0x004b1adc
+//   02: GraphicWindow::CreateAllImages @ 0x004a6dc5
+//   03: GraphicWindow::DestroyAllImages @ 0x004a6ea7
+//   04: SliderWindow::CreateImage @ 0x004b1b65
+//   05: SliderWindow::DestroyImage @ 0x004b1e64
+//   06: SliderWindow::ComposeSelf @ 0x004b1f45
+//   07: GraphicWindow::SetImageToDrawOnto @ 0x004a6bcd
+//   08: GraphicWindow::SetAllImagesToDrawOnto @ 0x004a6cf0
+//   09: GraphicWindow::SetTransparentColor @ 0x004a4d1c
+//   10: GraphicWindow::SetBorderDrawing @ 0x0040d810
+//   11: GraphicWindow::DrawBorder @ 0x004a6f7c
+//   12: GraphicWindow::SetChanged @ 0x004a50e0
+//   13: SliderWindow::MoveWindow @ 0x004b1ed9
+//   14: SliderWindow::SetWidthAndHeight @ 0x004b1f0f
+//   15: GraphicWindow::CenterWindow @ 0x004a4ea8
+//   16: GraphicWindow::CenterWindow @ 0x004a4e55
+//   17: GraphicWindow::SetWindowPosition @ 0x0040d840
+//   18: GraphicWindow::SetWindowTitle @ 0x004a51d0
+//   19: GraphicWindow::InvalidateAllOverlaps @ 0x004a6256
+//   20: GraphicWindow::InvalidateAllChildren @ 0x004a6399
+//   21: GraphicWindow::AddChild @ 0x004a53be
+//   22: GraphicWindow::DeleteChild @ 0x004a5837
+//   23: GraphicWindow::DeleteChild @ 0x004a569a
+//   24: GraphicWindow::RemoveChild @ 0x004a5a11
+//   25: GraphicWindow::DeleteAllChildren @ 0x004a5b58
+//   26: GraphicWindow::RemoveAllChildren @ 0x004a5cd8
+//   27: GraphicWindow::DeleteSelf @ 0x004a603c
+//   28: GraphicWindow::RemoveSelf @ 0x004a606b
+//   29: GraphicWindow::FindChild @ 0x004a5dd1
+//   30: GraphicWindow::SetParent @ 0x0040d7e0
+//   31: GraphicWindow::CanWeRespondToMessage @ 0x004a786b
+//   32: GraphicWindow::DoCharacter @ 0x004a6568
+//   33: GraphicWindow::DoKeyDown @ 0x004a6582
+//   34: GraphicWindow::DoKeyUp @ 0x004a659c
+//   35: SliderWindow::DoCursorDown @ 0x004b2202
+//   36: SliderWindow::DoCursorUp @ 0x004b226b
+//   37: SliderWindow::DoCursorMove @ 0x004b22ef
+//   38: GraphicWindow::CaptureCursorStart @ 0x004a6607
+//   39: GraphicWindow::CaptureCursorEnd @ 0x004a6640
+//   40: GraphicWindow::WindowToScreenCoordinates @ 0x004a667d
+//   41: GraphicWindow::ScreenToWindowCoordinates @ 0x004a66cc
+//   42: GraphicWindow::IsPointInWindow @ 0x0040d8b0
+//   43: SliderWindow::`scalar deleting destructor' @ 0x004b8590
+//   44: GraphicWindow::GetImage @ 0x004a6720
+//   45: GraphicWindow::GetImagePath @ 0x004a673c
+//   46: GraphicWindow::DrawChildren @ 0x004a6180
+//   47: GraphicWindow::DrawSelf @ 0x004a6168
+//   48: GraphicWindow::DoesWindowNeedUpdating @ 0x004a646b
+//   49: SliderWindow::ConvertCursorPositionToValue @ 0x004b2361
+//   50: SliderWindow::CalculateThumbPosition @ 0x004b2560
+//   51: SliderWindow::CalculateAllMetrics @ 0x004b24a0
+//   52: SliderWindow::GetThumbWidth @ 0x004b28b0
+//   53: SliderWindow::GetThumbHeight @ 0x004b28d4
+//   54 entries
+
 
 
 // Contribution: 2:00002fc0-000030c7 Module: 5, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00591fc0
-// Demangled: const ScrollBarWindow::`vftable'
-// ??_7ScrollBarWindow@@6B@
+// vftable for ScrollBarWindow @ 0x00591fc0
+//   00: GraphicWindowOwner::DoMessage @ 0x004a17be
+//   01: ScrollBarWindow::Initialize @ 0x004b300d
+//   02: GraphicWindow::CreateAllImages @ 0x004a6dc5
+//   03: GraphicWindow::DestroyAllImages @ 0x004a6ea7
+//   04: SliderWindow::CreateImage @ 0x004b1b65
+//   05: SliderWindow::DestroyImage @ 0x004b1e64
+//   06: ScrollBarWindow::ComposeSelf @ 0x004b30ae
+//   07: GraphicWindow::SetImageToDrawOnto @ 0x004a6bcd
+//   08: GraphicWindow::SetAllImagesToDrawOnto @ 0x004a6cf0
+//   09: GraphicWindow::SetTransparentColor @ 0x004a4d1c
+//   10: GraphicWindow::SetBorderDrawing @ 0x0040d810
+//   11: GraphicWindow::DrawBorder @ 0x004a6f7c
+//   12: GraphicWindow::SetChanged @ 0x004a50e0
+//   13: SliderWindow::MoveWindow @ 0x004b1ed9
+//   14: SliderWindow::SetWidthAndHeight @ 0x004b1f0f
+//   15: GraphicWindow::CenterWindow @ 0x004a4ea8
+//   16: GraphicWindow::CenterWindow @ 0x004a4e55
+//   17: GraphicWindow::SetWindowPosition @ 0x0040d840
+//   18: GraphicWindow::SetWindowTitle @ 0x004a51d0
+//   19: GraphicWindow::InvalidateAllOverlaps @ 0x004a6256
+//   20: GraphicWindow::InvalidateAllChildren @ 0x004a6399
+//   21: GraphicWindow::AddChild @ 0x004a53be
+//   22: GraphicWindow::DeleteChild @ 0x004a5837
+//   23: GraphicWindow::DeleteChild @ 0x004a569a
+//   24: GraphicWindow::RemoveChild @ 0x004a5a11
+//   25: GraphicWindow::DeleteAllChildren @ 0x004a5b58
+//   26: GraphicWindow::RemoveAllChildren @ 0x004a5cd8
+//   27: GraphicWindow::DeleteSelf @ 0x004a603c
+//   28: GraphicWindow::RemoveSelf @ 0x004a606b
+//   29: GraphicWindow::FindChild @ 0x004a5dd1
+//   30: GraphicWindow::SetParent @ 0x0040d7e0
+//   31: GraphicWindow::CanWeRespondToMessage @ 0x004a786b
+//   32: GraphicWindow::DoCharacter @ 0x004a6568
+//   33: GraphicWindow::DoKeyDown @ 0x004a6582
+//   34: GraphicWindow::DoKeyUp @ 0x004a659c
+//   35: ScrollBarWindow::DoCursorDown @ 0x004b35dd
+//   36: ScrollBarWindow::DoCursorUp @ 0x004b3850
+//   37: ScrollBarWindow::DoCursorMove @ 0x004b38e4
+//   38: GraphicWindow::CaptureCursorStart @ 0x004a6607
+//   39: GraphicWindow::CaptureCursorEnd @ 0x004a6640
+//   40: GraphicWindow::WindowToScreenCoordinates @ 0x004a667d
+//   41: GraphicWindow::ScreenToWindowCoordinates @ 0x004a66cc
+//   42: GraphicWindow::IsPointInWindow @ 0x0040d8b0
+//   43: ScrollBarWindow::`scalar deleting destructor' @ 0x004b85d0
+//   44: GraphicWindow::GetImage @ 0x004a6720
+//   45: GraphicWindow::GetImagePath @ 0x004a673c
+//   46: GraphicWindow::DrawChildren @ 0x004a6180
+//   47: GraphicWindow::DrawSelf @ 0x004a6168
+//   48: GraphicWindow::DoesWindowNeedUpdating @ 0x004a646b
+//   49: SliderWindow::ConvertCursorPositionToValue @ 0x004b2361
+//   50: SliderWindow::CalculateThumbPosition @ 0x004b2560
+//   51: ScrollBarWindow::CalculateAllMetrics @ 0x004b3f73
+//   52: ScrollBarWindow::GetThumbWidth @ 0x004b404b
+//   53: ScrollBarWindow::GetThumbHeight @ 0x004b4077
+//   54: ScrollBarWindow::SetLineAndPageCount @ 0x004b3bac
+//   55: ScrollBarWindow::MoveLinePrevious @ 0x004b39d0
+//   56: ScrollBarWindow::MoveLineNext @ 0x004b3a46
+//   57: ScrollBarWindow::MovePagePrevious @ 0x004b3abe
+//   58: ScrollBarWindow::MovePageNext @ 0x004b3b34
+//   59: ScrollBarWindow::DoCursorPositionHitTest @ 0x004b3db8
+//   60: ScrollBarWindow::GetPrevNextButtonWidth @ 0x004b409b
+//   61: ScrollBarWindow::GetPrevNextButtonHeight @ 0x004b40bf
+//   62: ScrollBarWindow::GetCurrentLine @ 0x004b3c48
+//   63: ScrollBarWindow::GetValueOfGivenLine @ 0x004b3ca4
+//   64: ScrollBarWindow::GetCurrentPage @ 0x004b3d00
+//   65: ScrollBarWindow::GetValueOfGivenPage @ 0x004b3d5c
+//   66 entries
+
 
 
 // Contribution: 2:000030c8-0000321f Module: 5, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x005920c8
-// Demangled: const ListBoxWindow::`vftable'
-// ??_7ListBoxWindow@@6B@
+// vftable for ListBoxWindow @ 0x005920c8
+//   00: ListBoxWindow::DoMessage @ 0x004b4822
+//   01: ListBoxWindow::Initialize @ 0x004b47f7
+//   02: GraphicWindow::CreateAllImages @ 0x004a6dc5
+//   03: GraphicWindow::DestroyAllImages @ 0x004a6ea7
+//   04: GraphicWindow::CreateImage @ 0x004a4aa0
+//   05: GraphicWindow::DestroyImage @ 0x004a4cab
+//   06: GraphicWindow::ComposeSelf @ 0x004a60a3
+//   07: GraphicWindow::SetImageToDrawOnto @ 0x004a6bcd
+//   08: GraphicWindow::SetAllImagesToDrawOnto @ 0x004a6cf0
+//   09: GraphicWindow::SetTransparentColor @ 0x004a4d1c
+//   10: GraphicWindow::SetBorderDrawing @ 0x0040d810
+//   11: GraphicWindow::DrawBorder @ 0x004a6f7c
+//   12: GraphicWindow::SetChanged @ 0x004a50e0
+//   13: GraphicWindow::MoveWindow @ 0x004a4d7e
+//   14: GraphicWindow::SetWidthAndHeight @ 0x004a4df1
+//   15: GraphicWindow::CenterWindow @ 0x004a4ea8
+//   16: GraphicWindow::CenterWindow @ 0x004a4e55
+//   17: GraphicWindow::SetWindowPosition @ 0x0040d840
+//   18: GraphicWindow::SetWindowTitle @ 0x004a51d0
+//   19: GraphicWindow::InvalidateAllOverlaps @ 0x004a6256
+//   20: GraphicWindow::InvalidateAllChildren @ 0x004a6399
+//   21: GraphicWindow::AddChild @ 0x004a53be
+//   22: GraphicWindow::DeleteChild @ 0x004a5837
+//   23: GraphicWindow::DeleteChild @ 0x004a569a
+//   24: GraphicWindow::RemoveChild @ 0x004a5a11
+//   25: GraphicWindow::DeleteAllChildren @ 0x004a5b58
+//   26: GraphicWindow::RemoveAllChildren @ 0x004a5cd8
+//   27: GraphicWindow::DeleteSelf @ 0x004a603c
+//   28: GraphicWindow::RemoveSelf @ 0x004a606b
+//   29: GraphicWindow::FindChild @ 0x004a5dd1
+//   30: GraphicWindow::SetParent @ 0x0040d7e0
+//   31: GraphicWindow::CanWeRespondToMessage @ 0x004a786b
+//   32: ListBoxWindow::DoCharacter @ 0x004b6aaf
+//   33: ListBoxWindow::DoKeyDown @ 0x004b6ac9
+//   34: GraphicWindow::DoKeyUp @ 0x004a659c
+//   35: ListBoxWindow::DoCursorDown @ 0x004b6b8e
+//   36: GraphicWindow::DoCursorUp @ 0x004a65d0
+//   37: GraphicWindow::DoCursorMove @ 0x004a65ed
+//   38: GraphicWindow::CaptureCursorStart @ 0x004a6607
+//   39: GraphicWindow::CaptureCursorEnd @ 0x004a6640
+//   40: GraphicWindow::WindowToScreenCoordinates @ 0x004a667d
+//   41: GraphicWindow::ScreenToWindowCoordinates @ 0x004a66cc
+//   42: GraphicWindow::IsPointInWindow @ 0x0040d8b0
+//   43: ListBoxWindow::`scalar deleting destructor' @ 0x004b8620
+//   44: GraphicWindow::GetImage @ 0x004a6720
+//   45: GraphicWindow::GetImagePath @ 0x004a673c
+//   46: GraphicWindow::DrawChildren @ 0x004a6180
+//   47: ListBoxWindow::DrawSelf @ 0x004b4a9a
+//   48: GraphicWindow::DoesWindowNeedUpdating @ 0x004a646b
+//   49: ListBoxWindow::RemoveString @ 0x004b5262
+//   50: ListBoxWindow::RemoveString @ 0x004b520e
+//   51: ListBoxWindow::RemoveAllStrings @ 0x004b5347
+//   52: ListBoxWindow::InsertString @ 0x004b55ee
+//   53: ListBoxWindow::InsertString @ 0x004b550e
+//   54: ListBoxWindow::ResizeWindowForExactLineHeights @ 0x004b4921
+//   55: ListBoxWindow::SetSelection @ 0x004b6c11
+//   56: ListBoxWindow::GetSelection @ 0x004b6d4e
+//   57: ListBoxWindow::SetShouldSort @ 0x004b73e9
+//   58: ListBoxWindow::Sort @ 0x004b742a
+//   59: ListBoxWindow::MoveLineUp @ 0x004b6ffd
+//   60: ListBoxWindow::MoveLineDown @ 0x004b706a
+//   61: ListBoxWindow::ScrollToStart @ 0x004b6f47
+//   62: ListBoxWindow::ScrollToEnd @ 0x004b6f85
+//   63: ListBoxWindow::ScrollPageUp @ 0x004b70da
+//   64: ListBoxWindow::ScrollPageDown @ 0x004b714e
+//   65: ListBoxWindow::IsIndexInView @ 0x004b6d6d
+//   66: ListBoxWindow::PutIndexInView @ 0x004b6dbe
+//   67: ListBoxWindow::ScrollToFirstLetter @ 0x004b71f4
+//   68: ListBoxWindow::SetIndexOfTopLine @ 0x004b6e56
+//   69: ListBoxWindow::GetLineCount @ 0x004b78e5
+//   70: ListBoxWindow::GetIndexOfTopLine @ 0x004b7906
+//   71: ListBoxWindow::SetBackgroundDrawing @ 0x004b49b6
+//   72: ListBoxWindow::SetBackgroundPaletteIndex @ 0x004b4a11
+//   73: ListBoxWindow::SetTextColor @ 0x004b4a55
+//   74: ListBoxWindow::SetFontCharacteristics @ 0x004b48d2
+//   75: ListBoxWindow::AddScrollBar @ 0x004b7925
+//   76: ListBoxWindow::RemoveScrollBar @ 0x004b7a29
+//   77: ListBoxWindow::CalculateAllMetrics @ 0x004b4867
+//   78: ListBoxWindow::GetStringAddressFromIndex @ 0x004b5e21
+//   79: ListBoxWindow::GetStringFromIndex @ 0x004b5edc
+//   80: ListBoxWindow::GetIndexFromString @ 0x004b60de
+//   81: ListBoxWindow::RemoveStringAtIndex @ 0x004b6266
+//   82: ListBoxWindow::InsertStringAtIndex @ 0x004b6585
+//   83: ListBoxWindow::ModifyString @ 0x004b5c06
+//   84: ListBoxWindow::SetScrollBarValue @ 0x004b7a99
+//   85: ListBoxWindow::SetScrollBarSizes @ 0x004b7b61
+//   86 entries
+
 
 
 // Contribution: 2:00003220-0000337b Module: 5, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00592220
-// Demangled: const PopupMenuWindow::`vftable'
-// ??_7PopupMenuWindow@@6B@
+// vftable for PopupMenuWindow @ 0x00592220
+//   00: ListBoxWindow::DoMessage @ 0x004b4822
+//   01: PopupMenuWindow::Initialize @ 0x004b7c65
+//   02: GraphicWindow::CreateAllImages @ 0x004a6dc5
+//   03: GraphicWindow::DestroyAllImages @ 0x004a6ea7
+//   04: GraphicWindow::CreateImage @ 0x004a4aa0
+//   05: GraphicWindow::DestroyImage @ 0x004a4cab
+//   06: GraphicWindow::ComposeSelf @ 0x004a60a3
+//   07: GraphicWindow::SetImageToDrawOnto @ 0x004a6bcd
+//   08: GraphicWindow::SetAllImagesToDrawOnto @ 0x004a6cf0
+//   09: GraphicWindow::SetTransparentColor @ 0x004a4d1c
+//   10: GraphicWindow::SetBorderDrawing @ 0x0040d810
+//   11: GraphicWindow::DrawBorder @ 0x004a6f7c
+//   12: GraphicWindow::SetChanged @ 0x004a50e0
+//   13: GraphicWindow::MoveWindow @ 0x004a4d7e
+//   14: GraphicWindow::SetWidthAndHeight @ 0x004a4df1
+//   15: GraphicWindow::CenterWindow @ 0x004a4ea8
+//   16: GraphicWindow::CenterWindow @ 0x004a4e55
+//   17: GraphicWindow::SetWindowPosition @ 0x0040d840
+//   18: GraphicWindow::SetWindowTitle @ 0x004a51d0
+//   19: GraphicWindow::InvalidateAllOverlaps @ 0x004a6256
+//   20: GraphicWindow::InvalidateAllChildren @ 0x004a6399
+//   21: GraphicWindow::AddChild @ 0x004a53be
+//   22: GraphicWindow::DeleteChild @ 0x004a5837
+//   23: GraphicWindow::DeleteChild @ 0x004a569a
+//   24: GraphicWindow::RemoveChild @ 0x004a5a11
+//   25: GraphicWindow::DeleteAllChildren @ 0x004a5b58
+//   26: GraphicWindow::RemoveAllChildren @ 0x004a5cd8
+//   27: GraphicWindow::DeleteSelf @ 0x004a603c
+//   28: GraphicWindow::RemoveSelf @ 0x004a606b
+//   29: GraphicWindow::FindChild @ 0x004a5dd1
+//   30: GraphicWindow::SetParent @ 0x0040d7e0
+//   31: GraphicWindow::CanWeRespondToMessage @ 0x004a786b
+//   32: ListBoxWindow::DoCharacter @ 0x004b6aaf
+//   33: PopupMenuWindow::DoKeyDown @ 0x004b7cc1
+//   34: GraphicWindow::DoKeyUp @ 0x004a659c
+//   35: PopupMenuWindow::DoCursorDown @ 0x004b7d92
+//   36: PopupMenuWindow::DoCursorUp @ 0x004b7e63
+//   37: PopupMenuWindow::DoCursorMove @ 0x004b7edf
+//   38: GraphicWindow::CaptureCursorStart @ 0x004a6607
+//   39: GraphicWindow::CaptureCursorEnd @ 0x004a6640
+//   40: GraphicWindow::WindowToScreenCoordinates @ 0x004a667d
+//   41: GraphicWindow::ScreenToWindowCoordinates @ 0x004a66cc
+//   42: GraphicWindow::IsPointInWindow @ 0x0040d8b0
+//   43: PopupMenuWindow::`scalar deleting destructor' @ 0x004b8950
+//   44: GraphicWindow::GetImage @ 0x004a6720
+//   45: GraphicWindow::GetImagePath @ 0x004a673c
+//   46: GraphicWindow::DrawChildren @ 0x004a6180
+//   47: ListBoxWindow::DrawSelf @ 0x004b4a9a
+//   48: GraphicWindow::DoesWindowNeedUpdating @ 0x004a646b
+//   49: ListBoxWindow::RemoveString @ 0x004b5262
+//   50: ListBoxWindow::RemoveString @ 0x004b520e
+//   51: ListBoxWindow::RemoveAllStrings @ 0x004b5347
+//   52: ListBoxWindow::InsertString @ 0x004b55ee
+//   53: ListBoxWindow::InsertString @ 0x004b550e
+//   54: ListBoxWindow::ResizeWindowForExactLineHeights @ 0x004b4921
+//   55: ListBoxWindow::SetSelection @ 0x004b6c11
+//   56: ListBoxWindow::GetSelection @ 0x004b6d4e
+//   57: ListBoxWindow::SetShouldSort @ 0x004b73e9
+//   58: ListBoxWindow::Sort @ 0x004b742a
+//   59: ListBoxWindow::MoveLineUp @ 0x004b6ffd
+//   60: ListBoxWindow::MoveLineDown @ 0x004b706a
+//   61: ListBoxWindow::ScrollToStart @ 0x004b6f47
+//   62: ListBoxWindow::ScrollToEnd @ 0x004b6f85
+//   63: ListBoxWindow::ScrollPageUp @ 0x004b70da
+//   64: ListBoxWindow::ScrollPageDown @ 0x004b714e
+//   65: ListBoxWindow::IsIndexInView @ 0x004b6d6d
+//   66: ListBoxWindow::PutIndexInView @ 0x004b6dbe
+//   67: ListBoxWindow::ScrollToFirstLetter @ 0x004b71f4
+//   68: ListBoxWindow::SetIndexOfTopLine @ 0x004b6e56
+//   69: ListBoxWindow::GetLineCount @ 0x004b78e5
+//   70: ListBoxWindow::GetIndexOfTopLine @ 0x004b7906
+//   71: ListBoxWindow::SetBackgroundDrawing @ 0x004b49b6
+//   72: ListBoxWindow::SetBackgroundPaletteIndex @ 0x004b4a11
+//   73: ListBoxWindow::SetTextColor @ 0x004b4a55
+//   74: ListBoxWindow::SetFontCharacteristics @ 0x004b48d2
+//   75: ListBoxWindow::AddScrollBar @ 0x004b7925
+//   76: ListBoxWindow::RemoveScrollBar @ 0x004b7a29
+//   77: ListBoxWindow::CalculateAllMetrics @ 0x004b4867
+//   78: ListBoxWindow::GetStringAddressFromIndex @ 0x004b5e21
+//   79: ListBoxWindow::GetStringFromIndex @ 0x004b5edc
+//   80: ListBoxWindow::GetIndexFromString @ 0x004b60de
+//   81: PopupMenuWindow::RemoveStringAtIndex @ 0x004b7f18
+//   82: PopupMenuWindow::InsertStringAtIndex @ 0x004b7f59
+//   83: ListBoxWindow::ModifyString @ 0x004b5c06
+//   84: ListBoxWindow::SetScrollBarValue @ 0x004b7a99
+//   85: ListBoxWindow::SetScrollBarSizes @ 0x004b7b61
+//   86: PopupMenuWindow::ResizeWindowToFitMenuItems @ 0x004b7f9e
+//   87 entries
+
 
 
 // Contribution: 3:00003ba0-00003c2e Module: 5, 4 byte alignment, initialized_data, read, write, 

@@ -4615,21 +4615,69 @@ _T118:
 
 
 // Contribution: 2:00001f2c-00001f2f Module: 28, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00590f2c
-// Demangled: const GraphicWindowOwner::`vftable'
-// ??_7GraphicWindowOwner@@6B@
+// vftable for GraphicWindowOwner @ 0x00590f2c
+//   00: GraphicWindowOwner::DoMessage @ 0x004a17be
+//   1 entries
+
 
 
 // Contribution: 2:00001f30-00001f33 Module: 28, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00590f30
-// Demangled: const CGameApp::`vftable'{for `GraphicWindowOwner'}
-// ??_7CGameApp@@6BGraphicWindowOwner@@@
+// vftable for CGameApp @ 0x00590f30
+//   00: CGameApp::DoMessage @ 0x004654a4
+//   1 entries
+
 
 
 // Contribution: 2:00001f38-00001fef Module: 28, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00590f38
-// Demangled: const CGameApp::`vftable'{for `CSparkalApp'}
-// ??_7CGameApp@@6BCSparkalApp@@@
+// vftable for CGameApp @ 0x00590f38
+//   00: CGameApp::`scalar deleting destructor' @ 0x0048aaa0
+//   01: CGameApp::NewWindow @ 0x004896d1
+//   02: CGameApp::PrepareGame @ 0x004887b7
+//   03: CGameApp::TickGame @ 0x00461629
+//   04: CGameApp::FinishGame @ 0x004bba30
+//   05: CGameApp::Initialize @ 0x00489726
+//   06: CGameApp::InitializeCommandSystem @ 0x0048a409
+//   07: CGameApp::InitializeJoysticks @ 0x0048a943
+//   08: CGameApp::HaveAnyJoysticksChangedSinceLastPlay @ 0x0048a980
+//   09: CGameApp::GetPreferences @ 0x00461208
+//   10: CGameApp::SavePreferences @ 0x004614de
+//   11: CGameApp::GetSoundPreferences @ 0x004613cb
+//   12: CGameApp::SetSoundPreferences @ 0x00461494
+//   13: CGameApp::CreateDisplaySurfaces @ 0x00432900
+//   14: CGameApp::DestroyDisplaySurfaces @ 0x00432aee
+//   15: CGameApp::DoRecurringTasks @ 0x004624de
+//   16: CGameApp::ParseCommandLine @ 0x00489c43
+//   17: CGameApp::CanWeSwitchToWindowedMode @ 0x004324e0
+//   18: CGameApp::CanWeSwitchToFullScreenMode @ 0x00432538
+//   19: CGameApp::SwitchToWindowedMode @ 0x00432553
+//   20: CGameApp::SwitchToFullScreenMode @ 0x004326cb
+//   21: CGameApp::ConvertMonitorToWindowedMode @ 0x00432843
+//   22: CGameApp::ConvertMonitorToFullScreenMode @ 0x00432871
+//   23: CGameApp::ToggleScreenMode @ 0x004328bd
+//   24: CGameApp::ComposeFrame @ 0x004618a3
+//   25: CGameApp::ComposePlayFrame @ 0x00461eb9
+//   26: CGameApp::EnterMode @ 0x00462582
+//   27: CGameApp::ExitMode @ 0x00463608
+//   28: CGameApp::CreateModeSurfaces @ 0x00432bcc
+//   29: CGameApp::DestroyModeSurfaces @ 0x00432ce2
+//   30: CGameApp::DestroyAllModes @ 0x00463bf9
+//   31: CGameApp::DoPlayMenuMessage @ 0x004662fa
+//   32: CGameApp::DoMainMenuMessage @ 0x00465edb
+//   33: CGameApp::CheckForWarpToCareerLevel @ 0x00464db3
+//   34: CGameApp::WarpToCareerLevel @ 0x00464e02
+//   35: CGameApp::GraduateUserToNextCareerLevel @ 0x00464eb2
+//   36: CGameApp::GraduateUserFromAllCareerLevels @ 0x0046501e
+//   37: CGameApp::NotifyUserOfGraduation @ 0x00465081
+//   38: CGameApp::ClearCommands @ 0x00464b65
+//   39: CGameApp::ProcessCommand @ 0x00463dcb
+//   40: CGameApp::DoKeyDown @ 0x0046444d
+//   41: CGameApp::DoKeyUp @ 0x0046487f
+//   42: CGameApp::DoCharacter @ 0x00464aa5
+//   43: CGameApp::DoCursorDown @ 0x00464ad0
+//   44: CGameApp::DoCursorUp @ 0x00464b03
+//   45: CGameApp::DoCursorMove @ 0x00464b36
+//   46 entries
+
 
 
 // Contribution: 2:00001ff0-00001ff7 Module: 28, 4 byte alignment, initialized_data, read, 
@@ -4678,9 +4726,7 @@ uint32_t list<CopterGameMode>::number_of_lists = 0;
 
 
 // Contribution: 3:00002d78-00002d7c Module: 28, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00599d78
-// Demangled: "2.0y"
-// ??_C@_04JEFE@2?40y?$AA@
+// string literal: "2.0y"
 
 
 // Contribution: 3:0006d450-0006d817 Module: 28, 8 byte alignment, uninitialized_data, read, write, 

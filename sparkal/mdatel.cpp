@@ -1453,15 +1453,23 @@ _T1e0:
 
 
 // Contribution: 2:000003d0-000003e7 Module: 72, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x0058f3d0
-// Demangled: const MDateLocalized::`vftable'
-// ??_7MDateLocalized@@6B@
+// vftable for MDateLocalized @ 0x0058f3d0
+//   00: MDate::PrintString @ 0x004bce07
+//   01: MDate::Previous @ 0x004bccce
+//   02: MDateLocalized::NameOfDayLocalized @ 0x0041fff4
+//   03: MDateLocalized::NameOfMonthLocalized @ 0x0042004a
+//   04: MDateLocalized::PrintStringLocalized @ 0x004200a0
+//   05: MDateLocalized::PreviousLocalized @ 0x0042014c
+//   6 entries
+
 
 
 // Contribution: 2:000003e8-000003ef Module: 72, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x0058f3e8
-// Demangled: const MDate::`vftable'
-// ??_7MDate@@6B@
+// vftable for MDate @ 0x0058f3e8
+//   00: MDate::PrintString @ 0x004bce07
+//   01: MDate::Previous @ 0x004bccce
+//   2 entries
+
 
 
 // Contribution: 3:00000298-00000317 Module: 72, 4 byte alignment, initialized_data, read, write, 

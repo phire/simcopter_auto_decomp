@@ -826,9 +826,13 @@ _T38:
 
 
 // Contribution: 2:00004620-0000462f Module: 195, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00593620
-// Demangled: const FlatFile::`vftable'
-// ??_7FlatFile@@6B@
+// vftable for FlatFile @ 0x00593620
+//   00: FlatFile::`scalar deleting destructor' @ 0x0055cad0
+//   01: FlatFile::Open @ 0x0055c3c7
+//   02: FlatFile::Open @ 0x0055c36a
+//   03: FlatFile::Close @ 0x0055c5cb
+//   4 entries
+
 
 
 // Contribution: 3:00026dd8-00026e98 Module: 195, 4 byte alignment, initialized_data, read, write, 

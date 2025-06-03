@@ -4569,21 +4569,195 @@ int32_t UserMenuWindow::GetLineCount() {
 
 
 // Contribution: 2:000022f8-000023df Module: 13, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x005912f8
-// Demangled: const UserMenuWindow::`vftable'
-// ??_7UserMenuWindow@@6B@
+// vftable for UserMenuWindow @ 0x005912f8
+//   00: GraphicWindowOwner::DoMessage @ 0x004a17be
+//   01: UserMenuWindow::Initialize @ 0x0049b858
+//   02: GraphicWindow::CreateAllImages @ 0x004a6dc5
+//   03: GraphicWindow::DestroyAllImages @ 0x004a6ea7
+//   04: GraphicWindow::CreateImage @ 0x004a4aa0
+//   05: GraphicWindow::DestroyImage @ 0x004a4cab
+//   06: GraphicWindow::ComposeSelf @ 0x004a60a3
+//   07: GraphicWindow::SetImageToDrawOnto @ 0x004a6bcd
+//   08: GraphicWindow::SetAllImagesToDrawOnto @ 0x004a6cf0
+//   09: GraphicWindow::SetTransparentColor @ 0x004a4d1c
+//   10: GraphicWindow::SetBorderDrawing @ 0x0040d810
+//   11: GraphicWindow::DrawBorder @ 0x004a6f7c
+//   12: GraphicWindow::SetChanged @ 0x004a50e0
+//   13: GraphicWindow::MoveWindow @ 0x004a4d7e
+//   14: GraphicWindow::SetWidthAndHeight @ 0x004a4df1
+//   15: GraphicWindow::CenterWindow @ 0x004a4ea8
+//   16: GraphicWindow::CenterWindow @ 0x004a4e55
+//   17: GraphicWindow::SetWindowPosition @ 0x0040d840
+//   18: GraphicWindow::SetWindowTitle @ 0x004a51d0
+//   19: GraphicWindow::InvalidateAllOverlaps @ 0x004a6256
+//   20: GraphicWindow::InvalidateAllChildren @ 0x004a6399
+//   21: GraphicWindow::AddChild @ 0x004a53be
+//   22: GraphicWindow::DeleteChild @ 0x004a5837
+//   23: GraphicWindow::DeleteChild @ 0x004a569a
+//   24: GraphicWindow::RemoveChild @ 0x004a5a11
+//   25: GraphicWindow::DeleteAllChildren @ 0x004a5b58
+//   26: GraphicWindow::RemoveAllChildren @ 0x004a5cd8
+//   27: GraphicWindow::DeleteSelf @ 0x004a603c
+//   28: GraphicWindow::RemoveSelf @ 0x004a606b
+//   29: GraphicWindow::FindChild @ 0x004a5dd1
+//   30: GraphicWindow::SetParent @ 0x0040d7e0
+//   31: GraphicWindow::CanWeRespondToMessage @ 0x004a786b
+//   32: UserMenuWindow::DoCharacter @ 0x0049c6f4
+//   33: UserMenuWindow::DoKeyDown @ 0x0049c9a7
+//   34: GraphicWindow::DoKeyUp @ 0x004a659c
+//   35: UserMenuWindow::DoCursorDown @ 0x0049cb8d
+//   36: GraphicWindow::DoCursorUp @ 0x004a65d0
+//   37: UserMenuWindow::DoCursorMove @ 0x0049cc1a
+//   38: GraphicWindow::CaptureCursorStart @ 0x004a6607
+//   39: GraphicWindow::CaptureCursorEnd @ 0x004a6640
+//   40: GraphicWindow::WindowToScreenCoordinates @ 0x004a667d
+//   41: GraphicWindow::ScreenToWindowCoordinates @ 0x004a66cc
+//   42: GraphicWindow::IsPointInWindow @ 0x0040d8b0
+//   43: UserMenuWindow::`scalar deleting destructor' @ 0x0049e2e0
+//   44: GraphicWindow::GetImage @ 0x004a6720
+//   45: GraphicWindow::GetImagePath @ 0x004a673c
+//   46: GraphicWindow::DrawChildren @ 0x004a6180
+//   47: UserMenuWindow::DrawSelf @ 0x0049c3ad
+//   48: GraphicWindow::DoesWindowNeedUpdating @ 0x004a646b
+//   49: UserMenuWindow::SetSelectionIndex @ 0x0049c43c
+//   50: UserMenuWindow::SetSelectionValue @ 0x0049c55b
+//   51: UserMenuWindow::GetSelectionIndex @ 0x0049e290
+//   52: UserMenuWindow::GetSelectionValue @ 0x0049e2b0
+//   53: UserMenuWindow::GetLineCount @ 0x0049e320
+//   54: UserMenuWindow::ExecuteSelection @ 0x0049cc6b
+//   55: UserMenuWindow::DrawSelectionIndicators @ 0x0049c595
+//   56: UserMenuWindow::DoCursorHitTest @ 0x0049c5ab
+//   57: UserMenuWindow::GetPositionOfNthItem @ 0x0049c6ad
+//   58 entries
+
 
 
 // Contribution: 2:000023e0-000024c7 Module: 13, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x005913e0
-// Demangled: const CopterMainMenu::`vftable'
-// ??_7CopterMainMenu@@6B@
+// vftable for CopterMainMenu @ 0x005913e0
+//   00: GraphicWindowOwner::DoMessage @ 0x004a17be
+//   01: CopterMainMenu::Initialize @ 0x0049cd72
+//   02: GraphicWindow::CreateAllImages @ 0x004a6dc5
+//   03: GraphicWindow::DestroyAllImages @ 0x004a6ea7
+//   04: CopterMainMenu::CreateImage @ 0x0049ce9b
+//   05: CopterMainMenu::DestroyImage @ 0x0049d3fd
+//   06: GraphicWindow::ComposeSelf @ 0x004a60a3
+//   07: GraphicWindow::SetImageToDrawOnto @ 0x004a6bcd
+//   08: GraphicWindow::SetAllImagesToDrawOnto @ 0x004a6cf0
+//   09: GraphicWindow::SetTransparentColor @ 0x004a4d1c
+//   10: GraphicWindow::SetBorderDrawing @ 0x0040d810
+//   11: GraphicWindow::DrawBorder @ 0x004a6f7c
+//   12: GraphicWindow::SetChanged @ 0x004a50e0
+//   13: GraphicWindow::MoveWindow @ 0x004a4d7e
+//   14: GraphicWindow::SetWidthAndHeight @ 0x004a4df1
+//   15: GraphicWindow::CenterWindow @ 0x004a4ea8
+//   16: GraphicWindow::CenterWindow @ 0x004a4e55
+//   17: GraphicWindow::SetWindowPosition @ 0x0040d840
+//   18: GraphicWindow::SetWindowTitle @ 0x004a51d0
+//   19: GraphicWindow::InvalidateAllOverlaps @ 0x004a6256
+//   20: GraphicWindow::InvalidateAllChildren @ 0x004a6399
+//   21: GraphicWindow::AddChild @ 0x004a53be
+//   22: GraphicWindow::DeleteChild @ 0x004a5837
+//   23: GraphicWindow::DeleteChild @ 0x004a569a
+//   24: GraphicWindow::RemoveChild @ 0x004a5a11
+//   25: GraphicWindow::DeleteAllChildren @ 0x004a5b58
+//   26: GraphicWindow::RemoveAllChildren @ 0x004a5cd8
+//   27: GraphicWindow::DeleteSelf @ 0x004a603c
+//   28: GraphicWindow::RemoveSelf @ 0x004a606b
+//   29: GraphicWindow::FindChild @ 0x004a5dd1
+//   30: GraphicWindow::SetParent @ 0x0040d7e0
+//   31: GraphicWindow::CanWeRespondToMessage @ 0x004a786b
+//   32: UserMenuWindow::DoCharacter @ 0x0049c6f4
+//   33: UserMenuWindow::DoKeyDown @ 0x0049c9a7
+//   34: GraphicWindow::DoKeyUp @ 0x004a659c
+//   35: UserMenuWindow::DoCursorDown @ 0x0049cb8d
+//   36: GraphicWindow::DoCursorUp @ 0x004a65d0
+//   37: UserMenuWindow::DoCursorMove @ 0x0049cc1a
+//   38: GraphicWindow::CaptureCursorStart @ 0x004a6607
+//   39: GraphicWindow::CaptureCursorEnd @ 0x004a6640
+//   40: GraphicWindow::WindowToScreenCoordinates @ 0x004a667d
+//   41: GraphicWindow::ScreenToWindowCoordinates @ 0x004a66cc
+//   42: GraphicWindow::IsPointInWindow @ 0x0040d8b0
+//   43: CopterMainMenu::`scalar deleting destructor' @ 0x0049e360
+//   44: GraphicWindow::GetImage @ 0x004a6720
+//   45: GraphicWindow::GetImagePath @ 0x004a673c
+//   46: GraphicWindow::DrawChildren @ 0x004a6180
+//   47: CopterMainMenu::DrawSelf @ 0x0049d4c9
+//   48: GraphicWindow::DoesWindowNeedUpdating @ 0x004a646b
+//   49: UserMenuWindow::SetSelectionIndex @ 0x0049c43c
+//   50: UserMenuWindow::SetSelectionValue @ 0x0049c55b
+//   51: UserMenuWindow::GetSelectionIndex @ 0x0049e290
+//   52: UserMenuWindow::GetSelectionValue @ 0x0049e2b0
+//   53: UserMenuWindow::GetLineCount @ 0x0049e320
+//   54: UserMenuWindow::ExecuteSelection @ 0x0049cc6b
+//   55: UserMenuWindow::DrawSelectionIndicators @ 0x0049c595
+//   56: UserMenuWindow::DoCursorHitTest @ 0x0049c5ab
+//   57: UserMenuWindow::GetPositionOfNthItem @ 0x0049c6ad
+//   58 entries
+
 
 
 // Contribution: 2:000024c8-000025af Module: 13, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x005914c8
-// Demangled: const CopterPlayMenu::`vftable'
-// ??_7CopterPlayMenu@@6B@
+// vftable for CopterPlayMenu @ 0x005914c8
+//   00: GraphicWindowOwner::DoMessage @ 0x004a17be
+//   01: CopterPlayMenu::Initialize @ 0x0049da9d
+//   02: GraphicWindow::CreateAllImages @ 0x004a6dc5
+//   03: GraphicWindow::DestroyAllImages @ 0x004a6ea7
+//   04: CopterPlayMenu::CreateImage @ 0x0049dac8
+//   05: CopterPlayMenu::DestroyImage @ 0x0049e04f
+//   06: GraphicWindow::ComposeSelf @ 0x004a60a3
+//   07: GraphicWindow::SetImageToDrawOnto @ 0x004a6bcd
+//   08: GraphicWindow::SetAllImagesToDrawOnto @ 0x004a6cf0
+//   09: GraphicWindow::SetTransparentColor @ 0x004a4d1c
+//   10: GraphicWindow::SetBorderDrawing @ 0x0040d810
+//   11: GraphicWindow::DrawBorder @ 0x004a6f7c
+//   12: GraphicWindow::SetChanged @ 0x004a50e0
+//   13: GraphicWindow::MoveWindow @ 0x004a4d7e
+//   14: GraphicWindow::SetWidthAndHeight @ 0x004a4df1
+//   15: GraphicWindow::CenterWindow @ 0x004a4ea8
+//   16: GraphicWindow::CenterWindow @ 0x004a4e55
+//   17: GraphicWindow::SetWindowPosition @ 0x0040d840
+//   18: GraphicWindow::SetWindowTitle @ 0x004a51d0
+//   19: GraphicWindow::InvalidateAllOverlaps @ 0x004a6256
+//   20: GraphicWindow::InvalidateAllChildren @ 0x004a6399
+//   21: GraphicWindow::AddChild @ 0x004a53be
+//   22: GraphicWindow::DeleteChild @ 0x004a5837
+//   23: GraphicWindow::DeleteChild @ 0x004a569a
+//   24: GraphicWindow::RemoveChild @ 0x004a5a11
+//   25: GraphicWindow::DeleteAllChildren @ 0x004a5b58
+//   26: GraphicWindow::RemoveAllChildren @ 0x004a5cd8
+//   27: GraphicWindow::DeleteSelf @ 0x004a603c
+//   28: GraphicWindow::RemoveSelf @ 0x004a606b
+//   29: GraphicWindow::FindChild @ 0x004a5dd1
+//   30: GraphicWindow::SetParent @ 0x0040d7e0
+//   31: GraphicWindow::CanWeRespondToMessage @ 0x004a786b
+//   32: UserMenuWindow::DoCharacter @ 0x0049c6f4
+//   33: UserMenuWindow::DoKeyDown @ 0x0049c9a7
+//   34: GraphicWindow::DoKeyUp @ 0x004a659c
+//   35: UserMenuWindow::DoCursorDown @ 0x0049cb8d
+//   36: GraphicWindow::DoCursorUp @ 0x004a65d0
+//   37: UserMenuWindow::DoCursorMove @ 0x0049cc1a
+//   38: GraphicWindow::CaptureCursorStart @ 0x004a6607
+//   39: GraphicWindow::CaptureCursorEnd @ 0x004a6640
+//   40: GraphicWindow::WindowToScreenCoordinates @ 0x004a667d
+//   41: GraphicWindow::ScreenToWindowCoordinates @ 0x004a66cc
+//   42: GraphicWindow::IsPointInWindow @ 0x0040d8b0
+//   43: CopterPlayMenu::`scalar deleting destructor' @ 0x0049e3a0
+//   44: GraphicWindow::GetImage @ 0x004a6720
+//   45: GraphicWindow::GetImagePath @ 0x004a673c
+//   46: GraphicWindow::DrawChildren @ 0x004a6180
+//   47: CopterPlayMenu::DrawSelf @ 0x0049e11b
+//   48: GraphicWindow::DoesWindowNeedUpdating @ 0x004a646b
+//   49: UserMenuWindow::SetSelectionIndex @ 0x0049c43c
+//   50: UserMenuWindow::SetSelectionValue @ 0x0049c55b
+//   51: UserMenuWindow::GetSelectionIndex @ 0x0049e290
+//   52: UserMenuWindow::GetSelectionValue @ 0x0049e2b0
+//   53: UserMenuWindow::GetLineCount @ 0x0049e320
+//   54: UserMenuWindow::ExecuteSelection @ 0x0049cc6b
+//   55: UserMenuWindow::DrawSelectionIndicators @ 0x0049c595
+//   56: UserMenuWindow::DoCursorHitTest @ 0x0049c5ab
+//   57: UserMenuWindow::GetPositionOfNthItem @ 0x0049c6ad
+//   58 entries
+
 
 
 // Contribution: 3:000032d0-0000333e Module: 13, 4 byte alignment, initialized_data, read, write, 

@@ -652,12 +652,22 @@ void YObjLang::GetNodeText(class Behavior* bhav, struct Behavior::Node* node, un
 
 
 // Contribution: 2:000046e8-000046fb Module: 190, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x005936e8
-// Demangled: const YObjLang::`vftable'
-// ??_7YObjLang@@6B@
+// vftable for YObjLang @ 0x005936e8
+//   00: YObjLang::GetNodeText @ 0x00560b8a
+//   01: YObjLang::GetPrimName @ 0x00560b57
+//   02: YObjLang::CountPrimitives @ 0x00560b3d
+//   03: YObjLang::IsSingleExit @ 0x00560b6f
+//   04: YObjLang::GetSwizzler @ 0x00551fa0
+//   5 entries
+
 
 
 // Contribution: 2:00004700-00004713 Module: 190, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00593700
-// Demangled: const Language::`vftable'
-// ??_7Language@@6B@
+// vftable for Language @ 0x00593700
+//   00: _purecall @ 0x0056cfa0
+//   01: _purecall @ 0x0056cfa0
+//   02: _purecall @ 0x0056cfa0
+//   03: Language::IsSingleExit @ 0x00560bb0
+//   04: Language::GetSwizzler @ 0x00560bd0
+//   5 entries
+
