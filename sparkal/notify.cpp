@@ -18,10 +18,10 @@ public:
 // Type: long;
 
 // Type: class NotificationSink (forward reference);
+// VTABLE: COPTER_D 0x0058f5c8
 class NotificationSink{
 public:
-	// vtable: 0
-	intro void DoNotificationChange(long, class PreferenceManager*);
+	virtual void DoNotificationChange(long, class PreferenceManager*); // vtable+0x0
 };
 
 // Type: int32_t;

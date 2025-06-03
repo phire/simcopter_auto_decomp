@@ -6,6 +6,7 @@
 // Radio Class implementation not found
 
 // Type: class CopterSparkalPalette;
+// VTABLE: COPTER_D 0x00591118
 class CopterSparkalPalette : public SparkalPalette
 {
 public:
@@ -21,61 +22,48 @@ public:
 // CGameApp Class implementation not found
 
 // Type: class CGameCommander (forward reference);
+// VTABLE: COPTER_D 0x00590ff8
 class CGameCommander : public CDefaultCommander
 {
 public:
 	void CGameCommander();
-	virtual void ~CGameCommander();
-	virtual unsigned long Idle();
-	// vtable: 36
-	intro void ProcessSetFocus();
-	// vtable: 40
-	intro void ProcessKeyDown(long, struct CommandSystem&, int32_t&, int32_t&);
-	// vtable: 44
-	intro void ProcessKeyDown(long);
-	// vtable: 48
-	intro void ProcessKeyUp(long, struct CommandSystem&);
-	// vtable: 52
-	intro void ProcessKeyUp(long);
-	// vtable: 56
-	intro unsigned long OnCharacter(long);
-	// vtable: 60
-	intro unsigned long OnLMouseDown(int32_t, int32_t);
-	// vtable: 64
-	intro unsigned long OnLMouseUp(int32_t, int32_t);
-	// vtable: 68
-	intro unsigned long OnRMouseDown(int32_t, int32_t);
-	// vtable: 72
-	intro unsigned long OnRMouseUp(int32_t, int32_t);
-	virtual unsigned long OnMouseMove(int32_t, int32_t);
-	virtual unsigned long OnWindowActivate();
-	virtual unsigned long OnWindowDeactivate();
-	// vtable: 76
-	intro void ProcessSystemCloseRequest();
-	// vtable: 80
-	intro void SetNewGameApp(class CGameApp*);
+	virtual void ~CGameCommander() /* override */;
+	virtual unsigned long Idle() /* override */;
+	virtual void ProcessSetFocus(); // vtable+0x24
+	virtual void ProcessKeyDown(long, struct CommandSystem&, int32_t&, int32_t&); // vtable+0x28
+	virtual void ProcessKeyDown(long); // vtable+0x2c
+	virtual void ProcessKeyUp(long, struct CommandSystem&); // vtable+0x30
+	virtual void ProcessKeyUp(long); // vtable+0x34
+	virtual unsigned long OnCharacter(long); // vtable+0x38
+	virtual unsigned long OnLMouseDown(int32_t, int32_t); // vtable+0x3c
+	virtual unsigned long OnLMouseUp(int32_t, int32_t); // vtable+0x40
+	virtual unsigned long OnRMouseDown(int32_t, int32_t); // vtable+0x44
+	virtual unsigned long OnRMouseUp(int32_t, int32_t); // vtable+0x48
+	virtual unsigned long OnMouseMove(int32_t, int32_t) /* override */;
+	virtual unsigned long OnWindowActivate() /* override */;
+	virtual unsigned long OnWindowDeactivate() /* override */;
+	virtual void ProcessSystemCloseRequest(); // vtable+0x4c
+	virtual void SetNewGameApp(class CGameApp*); // vtable+0x50
 	class CGameApp* myGameApp;
 };
 
 // Type: class NotificationPreferenceManager (forward reference);
+// VTABLE: COPTER_D 0x00590de8
 class NotificationPreferenceManager : public PreferenceManager
 {
 public:
 	class list<NotificationItem> myNotifications;
 	void NotificationPreferenceManager(long, long, long, int32_t);
-	virtual long SetPref(class PreferenceItem*);
-	virtual long SetPref(long, char *, long);
-	// vtable: 52
-	intro int32_t AddNotification(class NotificationItem&);
-	// vtable: 56
-	intro int32_t AddNotification(long, class NotificationSink*);
-	// vtable: 60
-	intro int32_t RemoveNotification(class NotificationSink*, long);
-	// vtable: 64
-	intro void DoNotification(long);
+	virtual long SetPref(class PreferenceItem*) /* override */;
+	virtual long SetPref(long, char *, long) /* override */;
+	virtual int32_t AddNotification(class NotificationItem&); // vtable+0x34
+	virtual int32_t AddNotification(long, class NotificationSink*); // vtable+0x38
+	virtual int32_t RemoveNotification(class NotificationSink*, long); // vtable+0x3c
+	virtual void DoNotification(long); // vtable+0x40
 };
 
 // Type: class CopterSparkalPalette;
+// VTABLE: COPTER_D 0x00591118
 class CopterSparkalPalette : public SparkalPalette
 {
 public:
@@ -83,22 +71,21 @@ public:
 	void CopterSparkalPalette();
 	int32_t GetNextDarkerColorIndex(int32_t);
 	int32_t GetNextLighterColorIndex(int32_t);
-	virtual void ~CopterSparkalPalette(); // synthetic
+	virtual void ~CopterSparkalPalette() /* override */; // synthetic
 };
 
 // Type: void ();
 
 // Type: class SoundSystem;
+// VTABLE: COPTER_D 0x0058f440
 class SoundSystem{
 public:
 	void SoundSystem();
 	void ~SoundSystem();
 	int32_t Initialize(void * __ptr32);
 	void DeInitialize();
-	// vtable: 0
-	intro int32_t GetVolume(long *);
-	// vtable: 4
-	intro int32_t SetVolume(long);
+	virtual int32_t GetVolume(long *); // vtable+0x0
+	virtual int32_t SetVolume(long); // vtable+0x4
 	void EnableSound();
 	void DisableSound();
 	long IsSoundEnabled();
@@ -112,58 +99,45 @@ protected:
 };
 
 // Type: class SoundManager;
+// VTABLE: COPTER_D 0x0058f448
 class SoundManager{
 public:
 	class Sound* sound[128];
 	void AddSound(class Sound*, int32_t);
 	void AddDigitalSound(const class basic_string<char>&, int32_t, int32_t);
 	void AddDigitalSound(long, int32_t);
-	// vtable: 0
-	intro long PlaySoundA(int32_t, long, int32_t);
-	// vtable: 4
-	intro void StopSound(int32_t);
-	// vtable: 8
-	intro void StopAllSounds();
+	virtual long PlaySoundA(int32_t, long, int32_t); // vtable+0x0
+	virtual void StopSound(int32_t); // vtable+0x4
+	virtual void StopAllSounds(); // vtable+0x8
 	class Sound* GetSound(int32_t);
 	void SoundManager();
 	void ~SoundManager();
-	// vtable: 12
-	intro void DeleteAllSounds();
+	virtual void DeleteAllSounds(); // vtable+0xc
 };
 
 // Type: class SoundQueue (forward reference);
+// VTABLE: COPTER_D 0x0058f3f0
 class SoundQueue{
 public:
 	void SoundQueue();
 	void ~SoundQueue();
-	// vtable: 0
-	intro int32_t Initialize();
-	// vtable: 4
-	intro void DeInitialize(int32_t);
-	// vtable: 8
-	intro void ClearQueue(int32_t);
+	virtual int32_t Initialize(); // vtable+0x0
+	virtual void DeInitialize(int32_t); // vtable+0x4
+	virtual void ClearQueue(int32_t); // vtable+0x8
 	class SoundQueue& operator+=(struct SoundQueueItem*);
 	class SoundQueue& operator+=(class Sound*);
-	// vtable: 12
-	intro int32_t StartPauseCallback(long);
-	// vtable: 16
-	intro void EndPauseCallback();
-	// vtable: 20
-	intro void PlayNextSoundInQueue();
-	// vtable: 24
-	intro void RemoveNextSoundInQueue();
-	// vtable: 28
-	intro void SoundQueueCompletionCallback();
+	virtual int32_t StartPauseCallback(long); // vtable+0xc
+	virtual void EndPauseCallback(); // vtable+0x10
+	virtual void PlayNextSoundInQueue(); // vtable+0x14
+	virtual void RemoveNextSoundInQueue(); // vtable+0x18
+	virtual void SoundQueueCompletionCallback(); // vtable+0x1c
 	// calltype: NearC
 	static void StaticSoundQueueCompletionCallback(long);
-	// vtable: 32
-	intro void SoundQueueWaitTimeCallback();
+	virtual void SoundQueueWaitTimeCallback(); // vtable+0x20
 	// calltype: NearC
 	static void StaticSoundQueueWaitTimeCallback(long);
-	// vtable: 36
-	intro int32_t GetMutex(unsigned long);
-	// vtable: 40
-	intro void ReleaseMutex();
+	virtual int32_t GetMutex(unsigned long); // vtable+0x24
+	virtual void ReleaseMutex(); // vtable+0x28
 protected:
 	class list<SoundQueueItem *> mySoundQueueItemList;
 	int32_t bOK;
@@ -176,18 +150,15 @@ protected:
 };
 
 // Type: class MessageDisplayManager;
+// VTABLE: COPTER_D 0x005907d0
 class MessageDisplayManager{
 public:
 	void MessageDisplayManager();
 	void ~MessageDisplayManager();
-	// vtable: 0
-	intro int32_t Initialize();
-	// vtable: 4
-	intro void DisplayCurrentMessages(class CBackBuffer*);
-	// vtable: 8
-	intro void AddNewMessage(class basic_string<char>&);
-	// vtable: 12
-	intro void AddNewMessage(char *);
+	virtual int32_t Initialize(); // vtable+0x0
+	virtual void DisplayCurrentMessages(class CBackBuffer*); // vtable+0x4
+	virtual void AddNewMessage(class basic_string<char>&); // vtable+0x8
+	virtual void AddNewMessage(char *); // vtable+0xc
 	class MPoint ptFirstMessage;
 	long lMaximumMessageCount;
 protected:
@@ -204,23 +175,20 @@ protected:
 // Type: char *;
 
 // Type: class SoundManager;
+// VTABLE: COPTER_D 0x0058f448
 class SoundManager{
 public:
 	class Sound* sound[128];
 	void AddSound(class Sound*, int32_t);
 	void AddDigitalSound(const class basic_string<char>&, int32_t, int32_t);
 	void AddDigitalSound(long, int32_t);
-	// vtable: 0
-	intro long PlaySoundA(int32_t, long, int32_t);
-	// vtable: 4
-	intro void StopSound(int32_t);
-	// vtable: 8
-	intro void StopAllSounds();
+	virtual long PlaySoundA(int32_t, long, int32_t); // vtable+0x0
+	virtual void StopSound(int32_t); // vtable+0x4
+	virtual void StopAllSounds(); // vtable+0x8
 	class Sound* GetSound(int32_t);
 	void SoundManager();
 	void ~SoundManager();
-	// vtable: 12
-	intro void DeleteAllSounds();
+	virtual void DeleteAllSounds(); // vtable+0xc
 };
 
 // Type: void;
@@ -373,11 +341,11 @@ struct SparkalColor{
 // Type: short;
 
 // Type: class Version;
+// VTABLE: COPTER_D 0x0058f5b8
 class Version{
 public:
 	void Version();
-	// vtable: 0
-	intro void ~Version();
+	virtual void ~Version(); // vtable+0x0
 	int32_t GetApplicationName(char *&);
 	long GetApplicationVersion(int32_t);
 	int32_t GetApplicationVersion(char *&);
@@ -738,18 +706,19 @@ struct bidirectional_iterator<Shortcut,int>{
 };
 
 // Type: class CDefaultCommander;
+// VTABLE: COPTER_D 0x005912d0
 class CDefaultCommander : public ICommander
 {
 public:
 	void CDefaultCommander();
-	virtual void ~CDefaultCommander();
-	virtual unsigned long Idle();
-	virtual unsigned long OnCharacter(char, int32_t);
-	virtual unsigned long OnMouseDown(int32_t, int32_t);
-	virtual unsigned long OnMouseUp(int32_t, int32_t);
-	virtual unsigned long OnMouseMove(int32_t, int32_t);
-	virtual unsigned long OnWindowActivate();
-	virtual unsigned long OnWindowDeactivate();
+	virtual void ~CDefaultCommander() /* override */;
+	virtual unsigned long Idle() /* override */;
+	virtual unsigned long OnCharacter(char, int32_t) /* override */;
+	virtual unsigned long OnMouseDown(int32_t, int32_t) /* override */;
+	virtual unsigned long OnMouseUp(int32_t, int32_t) /* override */;
+	virtual unsigned long OnMouseMove(int32_t, int32_t) /* override */;
+	virtual unsigned long OnWindowActivate() /* override */;
+	virtual unsigned long OnWindowDeactivate() /* override */;
 };
 
 // Type: struct bidirectional_iterator<CopterGameMode,int>;
@@ -757,6 +726,7 @@ struct bidirectional_iterator<CopterGameMode,int>{
 };
 
 // Type: class PreferenceManager;
+// VTABLE: COPTER_D 0x00590db0
 class PreferenceManager{
 protected:
 	int32_t bSaveFileAtAllChanges;
@@ -770,35 +740,23 @@ protected:
 public:
 	void PreferenceManager(long, long, long, int32_t);
 	int32_t IPreferenceManager(char *);
-	// vtable: 0
-	intro void ~PreferenceManager();
-	// vtable: 4
-	intro long SaveAllPrefs();
-	// vtable: 8
-	intro long LoadAllPrefs();
-	// vtable: 12
-	intro long ClearPrefsMemory();
-	// vtable: 16
-	intro void EnumeratePrefs();
-	// vtable: 20
-	intro class PreferenceItem* GetPrefPointer(long);
-	// vtable: 24
-	intro class PreferenceItem* GetPrefCopy(long);
-	// vtable: 28
-	intro char * GetPrefDataPointer(long);
-	// vtable: 32
-	intro char * GetPrefDataCopy(long);
-	// vtable: 36
-	intro long GetPrefDataLength(long);
-	// vtable: 40
-	intro long SetPref(class PreferenceItem*);
-	// vtable: 44
-	intro long SetPref(long, char *, long);
-	// vtable: 48
-	intro long RemovePref(long);
+	virtual void ~PreferenceManager(); // vtable+0x0
+	virtual long SaveAllPrefs(); // vtable+0x4
+	virtual long LoadAllPrefs(); // vtable+0x8
+	virtual long ClearPrefsMemory(); // vtable+0xc
+	virtual void EnumeratePrefs(); // vtable+0x10
+	virtual class PreferenceItem* GetPrefPointer(long); // vtable+0x14
+	virtual class PreferenceItem* GetPrefCopy(long); // vtable+0x18
+	virtual char * GetPrefDataPointer(long); // vtable+0x1c
+	virtual char * GetPrefDataCopy(long); // vtable+0x20
+	virtual long GetPrefDataLength(long); // vtable+0x24
+	virtual long SetPref(class PreferenceItem*); // vtable+0x28
+	virtual long SetPref(long, char *, long); // vtable+0x2c
+	virtual long RemovePref(long); // vtable+0x30
 };
 
 // Type: class SparkalPalette;
+// VTABLE: COPTER_D 0x005910f8
 class SparkalPalette{
 public:
 	struct SparkalColor* pColors;
@@ -806,8 +764,7 @@ public:
 	int32_t bOwnColors;
 	void SparkalPalette(struct SparkalColor*, int32_t, unsigned long);
 	void SparkalPalette();
-	// vtable: 0
-	intro void ~SparkalPalette();
+	virtual void ~SparkalPalette(); // vtable+0x0
 	void GetRGBValue(int32_t, struct SparkalColor&);
 	void GetNearestIndex(struct SparkalColor&, int32_t&);
 	void FadeToWhite(long);
@@ -817,27 +774,19 @@ public:
 };
 
 // Type: class ICommander;
+// VTABLE: COPTER_D 0x005912a8
 class ICommander{
 public:
 	void ICommander();
-	// vtable: 0
-	intro void ~ICommander();
-	// vtable: 4
-	intro unsigned long Idle();
-	// vtable: 8
-	intro unsigned long OnCharacter(char, int32_t);
-	// vtable: 12
-	intro unsigned long OnMouseDown(int32_t, int32_t);
-	// vtable: 16
-	intro unsigned long OnMouseUp(int32_t, int32_t);
-	// vtable: 20
-	intro unsigned long OnMouseMove(int32_t, int32_t);
-	// vtable: 24
-	intro unsigned long OnWindowActivate();
-	// vtable: 28
-	intro unsigned long OnWindowDeactivate();
-	// vtable: 32
-	intro class CSparkalWindow* SetWindow(class CSparkalWindow*);
+	virtual void ~ICommander(); // vtable+0x0
+	virtual unsigned long Idle(); // vtable+0x4
+	virtual unsigned long OnCharacter(char, int32_t); // vtable+0x8
+	virtual unsigned long OnMouseDown(int32_t, int32_t); // vtable+0xc
+	virtual unsigned long OnMouseUp(int32_t, int32_t); // vtable+0x10
+	virtual unsigned long OnMouseMove(int32_t, int32_t); // vtable+0x14
+	virtual unsigned long OnWindowActivate(); // vtable+0x18
+	virtual unsigned long OnWindowDeactivate(); // vtable+0x1c
+	virtual class CSparkalWindow* SetWindow(class CSparkalWindow*); // vtable+0x20
 	class CSparkalWindow* GetWindow();
 protected:
 	class CSparkalWindow* mpWindow;

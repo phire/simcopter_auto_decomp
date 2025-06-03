@@ -20,46 +20,30 @@ struct list<basic_string<char>>::list_node{
 // Type: char *;
 
 // Type: class RadioStation (forward reference);
+// VTABLE: COPTER_D 0x0058f518
 class RadioStation{
 public:
 	void RadioStation(const class RadioStation&);
 	void RadioStation();
 	class RadioStation& operator=(const class RadioStation&);
-	// vtable: 0
-	intro void ~RadioStation();
-	// vtable: 4
-	intro int32_t Initialize();
-	// vtable: 8
-	intro void StationSet();
-	// vtable: 12
-	intro int32_t DoState();
-	// vtable: 16
-	intro void LoadAllPlaylists();
-	// vtable: 20
-	intro void ShufflePlaylist();
-	// vtable: 24
-	intro void RandomizeStringList(class list<basic_string<char>>&);
-	// vtable: 28
-	intro void ShuffleCycle();
-	// vtable: 32
-	intro void SetPlayStatus(int32_t);
-	// vtable: 36
-	intro int32_t IsPlaying();
-	// vtable: 40
-	intro void GetStationCallSign(class basic_string<char>&);
-	// vtable: 44
-	intro enum RadioStationType GetRadioStationType();
-	// vtable: 48
-	intro int32_t IsCycleTypePresent(enum RadioStationCycleType);
+	virtual void ~RadioStation(); // vtable+0x0
+	virtual int32_t Initialize(); // vtable+0x4
+	virtual void StationSet(); // vtable+0x8
+	virtual int32_t DoState(); // vtable+0xc
+	virtual void LoadAllPlaylists(); // vtable+0x10
+	virtual void ShufflePlaylist(); // vtable+0x14
+	virtual void RandomizeStringList(class list<basic_string<char>>&); // vtable+0x18
+	virtual void ShuffleCycle(); // vtable+0x1c
+	virtual void SetPlayStatus(int32_t); // vtable+0x20
+	virtual int32_t IsPlaying(); // vtable+0x24
+	virtual void GetStationCallSign(class basic_string<char>&); // vtable+0x28
+	virtual enum RadioStationType GetRadioStationType(); // vtable+0x2c
+	virtual int32_t IsCycleTypePresent(enum RadioStationCycleType); // vtable+0x30
 protected:
-	// vtable: 52
-	intro void MoveToNextPlaylistItem(enum RadioStationCycleType);
-	// vtable: 56
-	intro int32_t ReadCallSignFromDisk();
-	// vtable: 60
-	intro int32_t DetectRadioStationType();
-	// vtable: 64
-	intro int32_t StartPlayingNextSelectionOfGivenType(enum RadioStationCycleType);
+	virtual void MoveToNextPlaylistItem(enum RadioStationCycleType); // vtable+0x34
+	virtual int32_t ReadCallSignFromDisk(); // vtable+0x38
+	virtual int32_t DetectRadioStationType(); // vtable+0x3c
+	virtual int32_t StartPlayingNextSelectionOfGivenType(enum RadioStationCycleType); // vtable+0x40
 	int32_t bPlaying;
 	struct RadioStationState myRadioStationState;
 	enum RadioStationType myRadioStationType;
@@ -696,46 +680,30 @@ public:
 };
 
 // Type: class RadioStation;
+// VTABLE: COPTER_D 0x0058f518
 class RadioStation{
 public:
 	void RadioStation(const class RadioStation&);
 	void RadioStation();
 	class RadioStation& operator=(const class RadioStation&);
-	// vtable: 0
-	intro void ~RadioStation();
-	// vtable: 4
-	intro int32_t Initialize();
-	// vtable: 8
-	intro void StationSet();
-	// vtable: 12
-	intro int32_t DoState();
-	// vtable: 16
-	intro void LoadAllPlaylists();
-	// vtable: 20
-	intro void ShufflePlaylist();
-	// vtable: 24
-	intro void RandomizeStringList(class list<basic_string<char>>&);
-	// vtable: 28
-	intro void ShuffleCycle();
-	// vtable: 32
-	intro void SetPlayStatus(int32_t);
-	// vtable: 36
-	intro int32_t IsPlaying();
-	// vtable: 40
-	intro void GetStationCallSign(class basic_string<char>&);
-	// vtable: 44
-	intro enum RadioStationType GetRadioStationType();
-	// vtable: 48
-	intro int32_t IsCycleTypePresent(enum RadioStationCycleType);
+	virtual void ~RadioStation(); // vtable+0x0
+	virtual int32_t Initialize(); // vtable+0x4
+	virtual void StationSet(); // vtable+0x8
+	virtual int32_t DoState(); // vtable+0xc
+	virtual void LoadAllPlaylists(); // vtable+0x10
+	virtual void ShufflePlaylist(); // vtable+0x14
+	virtual void RandomizeStringList(class list<basic_string<char>>&); // vtable+0x18
+	virtual void ShuffleCycle(); // vtable+0x1c
+	virtual void SetPlayStatus(int32_t); // vtable+0x20
+	virtual int32_t IsPlaying(); // vtable+0x24
+	virtual void GetStationCallSign(class basic_string<char>&); // vtable+0x28
+	virtual enum RadioStationType GetRadioStationType(); // vtable+0x2c
+	virtual int32_t IsCycleTypePresent(enum RadioStationCycleType); // vtable+0x30
 protected:
-	// vtable: 52
-	intro void MoveToNextPlaylistItem(enum RadioStationCycleType);
-	// vtable: 56
-	intro int32_t ReadCallSignFromDisk();
-	// vtable: 60
-	intro int32_t DetectRadioStationType();
-	// vtable: 64
-	intro int32_t StartPlayingNextSelectionOfGivenType(enum RadioStationCycleType);
+	virtual void MoveToNextPlaylistItem(enum RadioStationCycleType); // vtable+0x34
+	virtual int32_t ReadCallSignFromDisk(); // vtable+0x38
+	virtual int32_t DetectRadioStationType(); // vtable+0x3c
+	virtual int32_t StartPlayingNextSelectionOfGivenType(enum RadioStationCycleType); // vtable+0x40
 	int32_t bPlaying;
 	struct RadioStationState myRadioStationState;
 	enum RadioStationType myRadioStationType;

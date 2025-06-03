@@ -176,6 +176,7 @@ public:
 // Type: uint32_t;
 
 // Type: class PFile;
+// VTABLE: COPTER_D 0x00590468
 class PFile{
 	enum /* __unnamed */ {
 		FileNull = -1,
@@ -215,8 +216,7 @@ public:
 	void PFile(const class PFile&);
 	void PFile(int32_t);
 	void PFile();
-	// vtable: 0
-	intro void ~PFile();
+	virtual void ~PFile(); // vtable+0x0
 	int32_t Open(char *, unsigned short, unsigned short, int32_t);
 	int32_t Close();
 	int32_t GetHandle();

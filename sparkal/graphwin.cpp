@@ -142,38 +142,25 @@ public:
 };
 
 // Type: class GraphicWindowManager (forward reference);
+// VTABLE: COPTER_D 0x00591648
 class GraphicWindowManager{
 public:
 	void GraphicWindowManager(class GraphicWindow*);
 	void ~GraphicWindowManager();
-	// vtable: 0
-	intro void SetNewBaseWindow(class GraphicWindow*);
-	// vtable: 4
-	intro int32_t DeleteWindow(class GraphicWindow*);
-	// vtable: 8
-	intro long DoCharacter(long);
-	// vtable: 12
-	intro long DoKeyDown(long, char);
-	// vtable: 16
-	intro long DoKeyUp(long, char);
-	// vtable: 20
-	intro long DoCursorDown(long, long, unsigned long);
-	// vtable: 24
-	intro long DoCursorUp(long, long, unsigned long);
-	// vtable: 28
-	intro long DoCursorMove(long, long);
-	// vtable: 32
-	intro int32_t SendCursorMessageToChildWindow(class GraphicWindow*, int32_t, long, long, unsigned long);
-	// vtable: 36
-	intro int32_t ComposeAllWindows();
-	// vtable: 40
-	intro int32_t IsWindowValid(class GraphicWindow*);
-	// vtable: 44
-	intro int32_t IsWindowOrParentInDeletionList(class GraphicWindow*);
-	// vtable: 48
-	intro int32_t IncrementBusyCount();
-	// vtable: 52
-	intro int32_t DecrementBusyCount();
+	virtual void SetNewBaseWindow(class GraphicWindow*); // vtable+0x0
+	virtual int32_t DeleteWindow(class GraphicWindow*); // vtable+0x4
+	virtual long DoCharacter(long); // vtable+0x8
+	virtual long DoKeyDown(long, char); // vtable+0xc
+	virtual long DoKeyUp(long, char); // vtable+0x10
+	virtual long DoCursorDown(long, long, unsigned long); // vtable+0x14
+	virtual long DoCursorUp(long, long, unsigned long); // vtable+0x18
+	virtual long DoCursorMove(long, long); // vtable+0x1c
+	virtual int32_t SendCursorMessageToChildWindow(class GraphicWindow*, int32_t, long, long, unsigned long); // vtable+0x20
+	virtual int32_t ComposeAllWindows(); // vtable+0x24
+	virtual int32_t IsWindowValid(class GraphicWindow*); // vtable+0x28
+	virtual int32_t IsWindowOrParentInDeletionList(class GraphicWindow*); // vtable+0x2c
+	virtual int32_t IncrementBusyCount(); // vtable+0x30
+	virtual int32_t DecrementBusyCount(); // vtable+0x34
 protected:
 	int32_t DeleteWindowAndRemoveItsTraces(class GraphicWindow*);
 	int32_t DeleteAllWindowsInDeletionList();
@@ -216,10 +203,10 @@ struct GraphicWindowColorConstants{
 };
 
 // Type: class GraphicWindowOwner (forward reference);
+// VTABLE: COPTER_D 0x00590f2c
 class GraphicWindowOwner{
 public:
-	// vtable: 0
-	intro int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32);
+	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
 };
 
 // Type: long;
@@ -494,59 +481,46 @@ public:
 };
 
 // Type: class CBackBuffer (forward reference);
+// VTABLE: COPTER_D 0x00590808
 class CBackBuffer : public IBackBuffer
 {
 public:
 	void CBackBuffer(long, long, const struct SparkalColor*);
 	void CBackBuffer(char *);
 	void CBackBuffer();
-	// vtable: 40
-	intro void InitializeMemberVariables();
+	virtual void InitializeMemberVariables(); // vtable+0x28
 	void ~CBackBuffer();
 	unsigned long Load();
-	virtual unsigned long Lock();
-	virtual unsigned long Unlock();
+	virtual unsigned long Lock() /* override */;
+	virtual unsigned long Unlock() /* override */;
 	// calltype: NearC
 	static int32_t GetPaletteFromImage(char *, struct SparkalColor*);
-	virtual unsigned long Swap(class CSparkalWindow*, long, long);
-	virtual unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long);
-	virtual unsigned long StretchRect(class CSparkalWindow*, long, long, long, long, long, long, long, long);
-	// vtable: 44
-	intro unsigned long Compose(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&);
-	virtual unsigned long Compose(class IFlatImage*, long, long, long, long, long, long);
-	virtual unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long);
-	// vtable: 48
-	intro unsigned long StretchCompose(class IFlatImage*, const struct SparkalRect&, const struct SparkalRect&);
-	// vtable: 52
-	intro unsigned long Duplicate(class CBackBuffer*, int32_t);
-	// vtable: 56
-	intro unsigned long ComposeNoClip(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&);
-	// vtable: 60
-	intro unsigned long ComposeNoClip(class IFlatImage*, long, long, long, long, long, long);
+	virtual unsigned long Swap(class CSparkalWindow*, long, long) /* override */;
+	virtual unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long) /* override */;
+	virtual unsigned long StretchRect(class CSparkalWindow*, long, long, long, long, long, long, long, long) /* override */;
+	virtual unsigned long Compose(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&); // vtable+0x2c
+	virtual unsigned long Compose(class IFlatImage*, long, long, long, long, long, long) /* override */;
+	virtual unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long) /* override */;
+	virtual unsigned long StretchCompose(class IFlatImage*, const struct SparkalRect&, const struct SparkalRect&); // vtable+0x30
+	virtual unsigned long Duplicate(class CBackBuffer*, int32_t); // vtable+0x34
+	virtual unsigned long ComposeNoClip(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&); // vtable+0x38
+	virtual unsigned long ComposeNoClip(class IFlatImage*, long, long, long, long, long, long); // vtable+0x3c
 	void UpdatePalette(long, long, const struct SparkalColor*);
-	virtual void SetTransparentColor(int32_t, long);
+	virtual void SetTransparentColor(int32_t, long) /* override */;
 	unsigned long GetTransparentColor(long&);
 	unsigned long SetFont(class MFont*);
 	void SetFontColor(struct SparkalColor&);
 	void SetFontIndex(int32_t);
 	void SetColor(struct SparkalColor&);
 	void SetColorIndex(int32_t);
-	// vtable: 64
-	intro unsigned long DrawLine(long, long, long, long, long);
-	// vtable: 68
-	intro unsigned long FillRect(long, const struct SparkalRect*);
-	// vtable: 72
-	intro unsigned long DrawBufferText(char *, long, unsigned long, const class MRect&, class MFont*);
-	// vtable: 76
-	intro unsigned long DrawBufferText(char *, unsigned long, long *, long *, long *, long *, class MFont*);
-	// vtable: 80
-	intro unsigned long DrawLineUnclipped(long, long, long, long, long);
-	// vtable: 84
-	intro unsigned long DrawLineClipped(long, long, long, long, long);
-	// vtable: 88
-	intro unsigned long DrawRectangleOutline(const struct SparkalRect&, long);
-	// vtable: 92
-	intro unsigned long DrawRectangleOutlineUnclipped(const struct SparkalRect&, long);
+	virtual unsigned long DrawLine(long, long, long, long, long); // vtable+0x40
+	virtual unsigned long FillRect(long, const struct SparkalRect*); // vtable+0x44
+	virtual unsigned long DrawBufferText(char *, long, unsigned long, const class MRect&, class MFont*); // vtable+0x48
+	virtual unsigned long DrawBufferText(char *, unsigned long, long *, long *, long *, long *, class MFont*); // vtable+0x4c
+	virtual unsigned long DrawLineUnclipped(long, long, long, long, long); // vtable+0x50
+	virtual unsigned long DrawLineClipped(long, long, long, long, long); // vtable+0x54
+	virtual unsigned long DrawRectangleOutline(const struct SparkalRect&, long); // vtable+0x58
+	virtual unsigned long DrawRectangleOutlineUnclipped(const struct SparkalRect&, long); // vtable+0x5c
 	long IsLost();
 	long Restore();
 	char * szFilePath;
@@ -568,8 +542,7 @@ protected:
 	void * __ptr32 hPen;
 	int32_t nPenThickness;
 	struct SparkalColor colorPenCurrent;
-	// vtable: 96
-	intro struct IDirectDrawSurface* GetDDSurface();
+	virtual struct IDirectDrawSurface* GetDDSurface(); // vtable+0x60
 };
 
 // Type: struct SparkalColor (forward reference);
@@ -583,16 +556,17 @@ struct SparkalColor{
 };
 
 // Type: class ScreenWindow (forward reference);
+// VTABLE: COPTER_D 0x00591748
 class ScreenWindow : public GraphicWindow
 {
 public:
 	void ScreenWindow(class MRect&, int32_t, class CBackBuffer*, class GraphicWindowOwner*, int32_t);
 	void ScreenWindow(const class ScreenWindow&);
 	void ScreenWindow();
-	virtual void ~ScreenWindow();
+	virtual void ~ScreenWindow() /* override */;
 	class ScreenWindow& operator=(const class ScreenWindow&);
-	virtual int32_t ComposeSelf();
-	virtual int32_t DrawSelf();
+	virtual int32_t ComposeSelf() /* override */;
+	virtual int32_t DrawSelf() /* override */;
 	void SetParentBuffer(class CBackBuffer*);
 protected:
 	class CBackBuffer* bufferParent;

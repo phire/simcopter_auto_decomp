@@ -5,19 +5,20 @@
 // Type: char *;
 
 // Type: class InventoryWindow (forward reference);
+// VTABLE: COPTER_D 0x00591888
 class InventoryWindow : public GraphicWindow
 {
 public:
 	void InventoryWindow(int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
-	virtual void ~InventoryWindow();
-	virtual int32_t Initialize();
-	virtual int32_t ComposeSelf();
-	virtual long DoKeyDown(long, char);
-	virtual long DoCursorDown(long, long, unsigned long);
-	virtual long DoCursorUp(long, long, unsigned long);
-	virtual long DoCursorMove(long, long);
-	virtual int32_t CreateImage(int32_t);
-	virtual void DestroyImage();
+	virtual void ~InventoryWindow() /* override */;
+	virtual int32_t Initialize() /* override */;
+	virtual int32_t ComposeSelf() /* override */;
+	virtual long DoKeyDown(long, char) /* override */;
+	virtual long DoCursorDown(long, long, unsigned long) /* override */;
+	virtual long DoCursorUp(long, long, unsigned long) /* override */;
+	virtual long DoCursorMove(long, long) /* override */;
+	virtual int32_t CreateImage(int32_t) /* override */;
+	virtual void DestroyImage() /* override */;
 	int32_t ReadPalette(struct SparkalColor*);
 	void DrawTitleText();
 	void DrawInventory();
@@ -49,10 +50,10 @@ protected:
 // GraphicWindow Class implementation not found
 
 // Type: class GraphicWindowOwner (forward reference);
+// VTABLE: COPTER_D 0x00590f2c
 class GraphicWindowOwner{
 public:
-	// vtable: 0
-	intro int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32);
+	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
 };
 
 // Type: void;

@@ -72,6 +72,7 @@ struct _StationHeapStruct{
 };
 
 // Type: class EmergencyVehicleClass (forward reference);
+// VTABLE: COPTER_D 0x005934c0
 class EmergencyVehicleClass : public AutomobileClass
 {
 	enum /* __unnamed */ {
@@ -96,7 +97,7 @@ protected:
 public:
 	void EmergencyVehicleClass(const class EmergencyVehicleClass&);
 	void EmergencyVehicleClass();
-	virtual void ~EmergencyVehicleClass();
+	virtual void ~EmergencyVehicleClass() /* override */;
 	enum EmergencyLevel GetEmergencyState();
 	void InitializePlacedVehicleForDispatch(struct Goal, struct Goal, struct Goal, struct Goal, struct _GridCoordinates, struct Goal, enum EmergencyType, enum EmergencyLevel);
 	void InitializeStationVehicleForDispatch(int32_t, struct Goal, struct Goal, struct _GridCoordinates, struct Goal, struct Goal, struct _GridCoordinates, int32_t, struct Goal, enum EmergencyType, enum EmergencyLevel);
@@ -110,12 +111,11 @@ public:
 	static struct _DYOBJ_INST* S3GetCar(int32_t);
 	void CancelEmergencyDispatch();
 protected:
-	// vtable: 36
-	intro void Reset();
-	virtual void AdjustSpeed();
-	virtual enum TurnIndex PickTurnDir(struct Goal*);
-	virtual void SetSaveData(struct _AUTO_LOAD_SAVE*);
-	virtual void LoadSaveData(struct _AUTO_LOAD_SAVE*);
+	virtual void Reset(); // vtable+0x24
+	virtual void AdjustSpeed() /* override */;
+	virtual enum TurnIndex PickTurnDir(struct Goal*) /* override */;
+	virtual void SetSaveData(struct _AUTO_LOAD_SAVE*) /* override */;
+	virtual void LoadSaveData(struct _AUTO_LOAD_SAVE*) /* override */;
 	void ArriveOnScene();
 	void UnLinkIconFromCell(const struct _GridCoordinates);
 	void LinkIconToCell(const struct _GridCoordinates);
@@ -125,7 +125,7 @@ protected:
 	void TurnOnStrobe();
 	void TurnOffStrobe();
 	int32_t UpdateCar(int32_t);
-	virtual void BeamToWithinCameraRange();
+	virtual void BeamToWithinCameraRange() /* override */;
 public:
 	class EmergencyVehicleClass operator=(const class EmergencyVehicleClass&);
 };
@@ -306,6 +306,7 @@ public:
 };
 
 // Type: class DigitalSound;
+// VTABLE: COPTER_D 0x0058f488
 class DigitalSound : public Sound
 {
 protected:
@@ -321,68 +322,44 @@ public:
 	void DigitalSound(long);
 	void DigitalSound(const class basic_string<char>&, int32_t);
 	void DigitalSound();
-	virtual void ~DigitalSound();
+	virtual void ~DigitalSound() /* override */;
 	class DigitalSound& operator=(class DigitalSound&);
-	// vtable: 44
-	intro void SetSoundFile(const class basic_string<char>&, int32_t);
-	// vtable: 48
-	intro int32_t Load();
-	// vtable: 52
-	intro int32_t LoadFromResource();
-	// vtable: 56
-	intro int32_t LoadFromFile();
-	// vtable: 60
-	intro void Unload();
-	virtual long Play(long, int32_t);
-	virtual long Stop();
-	// vtable: 64
-	intro long ShouldWeStream();
-	// vtable: 68
-	intro long PlayStream();
-	// vtable: 72
-	intro long StopStream();
+	virtual void SetSoundFile(const class basic_string<char>&, int32_t); // vtable+0x2c
+	virtual int32_t Load(); // vtable+0x30
+	virtual int32_t LoadFromResource(); // vtable+0x34
+	virtual int32_t LoadFromFile(); // vtable+0x38
+	virtual void Unload(); // vtable+0x3c
+	virtual long Play(long, int32_t) /* override */;
+	virtual long Stop() /* override */;
+	virtual long ShouldWeStream(); // vtable+0x40
+	virtual long PlayStream(); // vtable+0x44
+	virtual long StopStream(); // vtable+0x48
 protected:
-	// vtable: 76
-	intro long IsPlaying(struct IDirectSoundBuffer**);
+	virtual long IsPlaying(struct IDirectSoundBuffer**); // vtable+0x4c
 public:
-	virtual long IsPlaying();
-	virtual int32_t GetVolume(long *);
-	virtual int32_t SetVolume(long);
-	// vtable: 80
-	intro int32_t GetPan(long *);
-	// vtable: 84
-	intro int32_t SetPan(long);
-	// vtable: 88
-	intro int32_t SetPosition(long, long, long);
-	// vtable: 92
-	intro long GetOriginalFrequency();
-	// vtable: 96
-	intro int32_t GetFrequency(long *);
-	// vtable: 100
-	intro int32_t SetFrequency(long);
-	virtual int32_t GetSoundType();
-	virtual int32_t SetCompletionNotification(void (*)(long), long);
-	virtual void StopCompletionNotification();
-	virtual long EstimateRemainingPlayTime();
+	virtual long IsPlaying() /* override */;
+	virtual int32_t GetVolume(long *) /* override */;
+	virtual int32_t SetVolume(long) /* override */;
+	virtual int32_t GetPan(long *); // vtable+0x50
+	virtual int32_t SetPan(long); // vtable+0x54
+	virtual int32_t SetPosition(long, long, long); // vtable+0x58
+	virtual long GetOriginalFrequency(); // vtable+0x5c
+	virtual int32_t GetFrequency(long *); // vtable+0x60
+	virtual int32_t SetFrequency(long); // vtable+0x64
+	virtual int32_t GetSoundType() /* override */;
+	virtual int32_t SetCompletionNotification(void (*)(long), long) /* override */;
+	virtual void StopCompletionNotification() /* override */;
+	virtual long EstimateRemainingPlayTime() /* override */;
 protected:
-	// vtable: 104
-	intro int32_t GetSoundAliasToPlay(struct IDirectSoundBuffer**);
-	// vtable: 108
-	intro int32_t CreateSoundBuffer(struct _DSBUFFERDESC*);
-	// vtable: 112
-	intro int32_t CreatePrimarySoundBuffer();
-	// vtable: 116
-	intro int32_t ReleaseSoundBuffer();
-	// vtable: 120
-	intro long InitializeStreamBuffer(long);
-	// vtable: 124
-	intro void ProcessStreamingBufferTimerCallback();
-	// vtable: 128
-	intro void ProcessCompletionEstimationTimerCallback();
-	// vtable: 132
-	intro void StopCompletionNotificationEstimationTimer();
-	// vtable: 136
-	intro int32_t StartCompletionNotificationEstimationTimer();
+	virtual int32_t GetSoundAliasToPlay(struct IDirectSoundBuffer**); // vtable+0x68
+	virtual int32_t CreateSoundBuffer(struct _DSBUFFERDESC*); // vtable+0x6c
+	virtual int32_t CreatePrimarySoundBuffer(); // vtable+0x70
+	virtual int32_t ReleaseSoundBuffer(); // vtable+0x74
+	virtual long InitializeStreamBuffer(long); // vtable+0x78
+	virtual void ProcessStreamingBufferTimerCallback(); // vtable+0x7c
+	virtual void ProcessCompletionEstimationTimerCallback(); // vtable+0x80
+	virtual void StopCompletionNotificationEstimationTimer(); // vtable+0x84
+	virtual int32_t StartCompletionNotificationEstimationTimer(); // vtable+0x88
 };
 
 // Type: struct _StructStation (forward reference);
@@ -424,6 +401,7 @@ struct RGVertex{
 // Type: unsigned char *;
 
 // Type: class AutomobileClass;
+// VTABLE: COPTER_D 0x00592d98
 class AutomobileClass{
 	enum /* __unnamed */ {
 		CAR_TYPES = 7,
@@ -559,8 +537,7 @@ protected:
 public:
 	void AutomobileClass(const class AutomobileClass&);
 	void AutomobileClass();
-	// vtable: 0
-	intro void ~AutomobileClass();
+	virtual void ~AutomobileClass(); // vtable+0x0
 	// calltype: NearC
 	static class AutomobileClass* CreateInstance(int32_t);
 	// calltype: NearC
@@ -591,15 +568,12 @@ public:
 	int32_t CanIPullOut();
 protected:
 	void Itterate();
-	// vtable: 4
-	intro void AdjustSpeed();
+	virtual void AdjustSpeed(); // vtable+0x4
 	void Reset();
-	// vtable: 8
-	intro enum TurnIndex PickTurnDir(struct Goal*);
+	virtual enum TurnIndex PickTurnDir(struct Goal*); // vtable+0x8
 	void UnPlaceCar();
 	void PullOverCiviliansInWay();
-	// vtable: 12
-	intro void ItterateFSM();
+	virtual void ItterateFSM(); // vtable+0xc
 	int32_t InitializeInstance(int32_t);
 	void LinkToCell(const struct _GridCoordinates&);
 	int32_t AreCarsHeadOn(struct Point3d*);
@@ -618,10 +592,8 @@ protected:
 	void TurnRight();
 	void MoveForwardOnHiway();
 	void DoDiagonalRoadFixup();
-	// vtable: 16
-	intro void BeamToWithinCameraRange();
-	// vtable: 20
-	intro int32_t BeamToLocation(const struct _GridCoordinates&);
+	virtual void BeamToWithinCameraRange(); // vtable+0x10
+	virtual int32_t BeamToLocation(const struct _GridCoordinates&); // vtable+0x14
 	void MoveAuto(int32_t);
 private:
 	void UnlinkFromCell(const struct _GridCoordinates&);
@@ -635,6 +607,7 @@ public:
 };
 
 // Type: class Sound;
+// VTABLE: COPTER_D 0x0058f458
 class Sound{
 	enum SoundSourceType {
 		nSoundSourceTypeResource = 0,
@@ -659,29 +632,18 @@ public:
 	void (*soundCompletionFunction)(long);
 	long lSoundCompletionData;
 	void Sound();
-	// vtable: 0
-	intro void ~Sound();
+	virtual void ~Sound(); // vtable+0x0
 	class Sound& operator=(const class Sound&);
-	// vtable: 4
-	intro void SetSoundFile(const class basic_string<char>&);
-	// vtable: 8
-	intro long Play(long, int32_t);
-	// vtable: 12
-	intro long Stop();
-	// vtable: 16
-	intro long IsPlaying();
-	// vtable: 20
-	intro int32_t SetCompletionNotification(void (*)(long), long);
-	// vtable: 24
-	intro void StopCompletionNotification();
-	// vtable: 28
-	intro long EstimateRemainingPlayTime();
-	// vtable: 32
-	intro int32_t GetVolume(long *);
-	// vtable: 36
-	intro int32_t SetVolume(long);
-	// vtable: 40
-	intro int32_t GetSoundType();
+	virtual void SetSoundFile(const class basic_string<char>&); // vtable+0x4
+	virtual long Play(long, int32_t); // vtable+0x8
+	virtual long Stop(); // vtable+0xc
+	virtual long IsPlaying(); // vtable+0x10
+	virtual int32_t SetCompletionNotification(void (*)(long), long); // vtable+0x14
+	virtual void StopCompletionNotification(); // vtable+0x18
+	virtual long EstimateRemainingPlayTime(); // vtable+0x1c
+	virtual int32_t GetVolume(long *); // vtable+0x20
+	virtual int32_t SetVolume(long); // vtable+0x24
+	virtual int32_t GetSoundType(); // vtable+0x28
 	// calltype: NearC
 	static unsigned long GetTotalMemoryUsage();
 	static unsigned long lTotalMemoryUsage;

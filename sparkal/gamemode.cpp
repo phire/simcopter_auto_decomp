@@ -19,11 +19,11 @@ public:
 // Type: int32_t;
 
 // Type: class GameModeCoreData (forward reference);
+// VTABLE: COPTER_D 0x005923c0
 class GameModeCoreData{
 public:
 	void GameModeCoreData();
-	// vtable: 0
-	intro void ~GameModeCoreData();
+	virtual void ~GameModeCoreData(); // vtable+0x0
 	long lPauseCount;
 	struct SparkalColor* pColorTable;
 	class CGameApp* pGameApp;
@@ -31,6 +31,7 @@ public:
 };
 
 // Type: class GameModeMainMenuData (forward reference);
+// VTABLE: COPTER_D 0x005923c4
 class GameModeMainMenuData : public GameModeCoreData
 {
 public:
@@ -65,37 +66,29 @@ struct UserMenuWindowDescription{
 };
 
 // Type: class UserMenuWindow (forward reference);
+// VTABLE: COPTER_D 0x005912f8
 class UserMenuWindow : public GraphicWindow
 {
 public:
 	void UserMenuWindow(struct UserMenuWindowDescription&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	void UserMenuWindow();
-	virtual void ~UserMenuWindow();
-	virtual int32_t Initialize();
-	virtual int32_t DrawSelf();
-	// vtable: 196
-	intro int32_t SetSelectionIndex(int32_t);
-	// vtable: 200
-	intro int32_t SetSelectionValue(int32_t);
-	// vtable: 204
-	intro int32_t GetSelectionIndex();
-	// vtable: 208
-	intro int32_t GetSelectionValue();
-	// vtable: 212
-	intro int32_t GetLineCount();
-	virtual long DoCharacter(long);
-	virtual long DoKeyDown(long, char);
-	virtual long DoCursorDown(long, long, unsigned long);
-	virtual long DoCursorMove(long, long);
-	// vtable: 216
-	intro int32_t ExecuteSelection(int32_t);
+	virtual void ~UserMenuWindow() /* override */;
+	virtual int32_t Initialize() /* override */;
+	virtual int32_t DrawSelf() /* override */;
+	virtual int32_t SetSelectionIndex(int32_t); // vtable+0xc4
+	virtual int32_t SetSelectionValue(int32_t); // vtable+0xc8
+	virtual int32_t GetSelectionIndex(); // vtable+0xcc
+	virtual int32_t GetSelectionValue(); // vtable+0xd0
+	virtual int32_t GetLineCount(); // vtable+0xd4
+	virtual long DoCharacter(long) /* override */;
+	virtual long DoKeyDown(long, char) /* override */;
+	virtual long DoCursorDown(long, long, unsigned long) /* override */;
+	virtual long DoCursorMove(long, long) /* override */;
+	virtual int32_t ExecuteSelection(int32_t); // vtable+0xd8
 protected:
-	// vtable: 220
-	intro void DrawSelectionIndicators();
-	// vtable: 224
-	intro int32_t DoCursorHitTest(int32_t&, long, long);
-	// vtable: 228
-	intro int32_t GetPositionOfNthItem(int32_t, class MPoint&);
+	virtual void DrawSelectionIndicators(); // vtable+0xdc
+	virtual int32_t DoCursorHitTest(int32_t&, long, long); // vtable+0xe0
+	virtual int32_t GetPositionOfNthItem(int32_t, class MPoint&); // vtable+0xe4
 	struct UserMenuWindowDescription myUserMenuWindowDescription;
 	class vector<TextWindow *> myTextWindowPtrArray;
 	int32_t nCurrentSelection;
@@ -103,6 +96,7 @@ protected:
 };
 
 // Type: class GameModePickCareerCityData (forward reference);
+// VTABLE: COPTER_D 0x005923c8
 class GameModePickCareerCityData : public GameModeCoreData
 {
 	enum PickCareerCitySubMode {
@@ -124,26 +118,26 @@ public:
 };
 
 // Type: class CareerWindow (forward reference);
+// VTABLE: COPTER_D 0x00590ef4
 class CareerWindow : public GraphicWindow
 {
 public:
 	void CareerWindow(class MRect&, int32_t, void * __ptr32, long *, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t);
-	virtual void ~CareerWindow();
-	virtual int32_t Initialize();
-	virtual int32_t DrawSelf();
-	virtual int32_t CreateImage(int32_t);
-	virtual void DestroyImage();
-	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32);
-	virtual long DoKeyDown(long, char);
-	virtual long DoCursorDown(long, long, unsigned long);
-	virtual long DoCursorMove(long, long);
+	virtual void ~CareerWindow() /* override */;
+	virtual int32_t Initialize() /* override */;
+	virtual int32_t DrawSelf() /* override */;
+	virtual int32_t CreateImage(int32_t) /* override */;
+	virtual void DestroyImage() /* override */;
+	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32) /* override */;
+	virtual long DoKeyDown(long, char) /* override */;
+	virtual long DoCursorDown(long, long, unsigned long) /* override */;
+	virtual long DoCursorMove(long, long) /* override */;
 	long SetCurrentCitySelection(long);
 	long GetCurrentCitySelection();
 	class CareerWindow::CitySelectionFrame{
 	public:
 		void CitySelectionFrame(int32_t, int32_t, int32_t);
-		// vtable: 0
-		intro void ~CitySelectionFrame();
+		virtual void ~CitySelectionFrame(); // vtable+0x0
 		void FillDestinationPoints(class MPoint*);
 		void FillSourceRects(class MRect*);
 		int32_t bLeft;
@@ -169,6 +163,7 @@ protected:
 // Type: long *;
 
 // Type: class GameModePlayData (forward reference);
+// VTABLE: COPTER_D 0x005923cc
 class GameModePlayData : public GameModeCoreData
 {
 	enum ExceptionState {
@@ -344,6 +339,7 @@ struct Shortcut{
 };
 
 // Type: class GameModeHangarData (forward reference);
+// VTABLE: COPTER_D 0x005923d0
 class GameModeHangarData : public GameModeCoreData
 {
 public:
@@ -361,6 +357,7 @@ public:
 };
 
 // Type: class GameModeCatalogData (forward reference);
+// VTABLE: COPTER_D 0x005923d4
 class GameModeCatalogData : public GameModeCoreData
 {
 public:
@@ -378,6 +375,7 @@ public:
 };
 
 // Type: class GameModeMissionLogData (forward reference);
+// VTABLE: COPTER_D 0x005923d8
 class GameModeMissionLogData : public GameModeCoreData
 {
 public:
@@ -395,6 +393,7 @@ public:
 };
 
 // Type: class GameModeInventoryData (forward reference);
+// VTABLE: COPTER_D 0x005923dc
 class GameModeInventoryData : public GameModeCoreData
 {
 public:
@@ -418,11 +417,11 @@ struct bidirectional_iterator<Shortcut,int>{
 };
 
 // Type: class GameModeCoreData;
+// VTABLE: COPTER_D 0x005923c0
 class GameModeCoreData{
 public:
 	void GameModeCoreData();
-	// vtable: 0
-	intro void ~GameModeCoreData();
+	virtual void ~GameModeCoreData(); // vtable+0x0
 	long lPauseCount;
 	struct SparkalColor* pColorTable;
 	class CGameApp* pGameApp;

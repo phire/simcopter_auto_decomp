@@ -56,39 +56,28 @@ public:
 };
 
 // Type: class CGameCommander (forward reference);
+// VTABLE: COPTER_D 0x00590ff8
 class CGameCommander : public CDefaultCommander
 {
 public:
 	void CGameCommander();
-	virtual void ~CGameCommander();
-	virtual unsigned long Idle();
-	// vtable: 36
-	intro void ProcessSetFocus();
-	// vtable: 40
-	intro void ProcessKeyDown(long, struct CommandSystem&, int32_t&, int32_t&);
-	// vtable: 44
-	intro void ProcessKeyDown(long);
-	// vtable: 48
-	intro void ProcessKeyUp(long, struct CommandSystem&);
-	// vtable: 52
-	intro void ProcessKeyUp(long);
-	// vtable: 56
-	intro unsigned long OnCharacter(long);
-	// vtable: 60
-	intro unsigned long OnLMouseDown(int32_t, int32_t);
-	// vtable: 64
-	intro unsigned long OnLMouseUp(int32_t, int32_t);
-	// vtable: 68
-	intro unsigned long OnRMouseDown(int32_t, int32_t);
-	// vtable: 72
-	intro unsigned long OnRMouseUp(int32_t, int32_t);
-	virtual unsigned long OnMouseMove(int32_t, int32_t);
-	virtual unsigned long OnWindowActivate();
-	virtual unsigned long OnWindowDeactivate();
-	// vtable: 76
-	intro void ProcessSystemCloseRequest();
-	// vtable: 80
-	intro void SetNewGameApp(class CGameApp*);
+	virtual void ~CGameCommander() /* override */;
+	virtual unsigned long Idle() /* override */;
+	virtual void ProcessSetFocus(); // vtable+0x24
+	virtual void ProcessKeyDown(long, struct CommandSystem&, int32_t&, int32_t&); // vtable+0x28
+	virtual void ProcessKeyDown(long); // vtable+0x2c
+	virtual void ProcessKeyUp(long, struct CommandSystem&); // vtable+0x30
+	virtual void ProcessKeyUp(long); // vtable+0x34
+	virtual unsigned long OnCharacter(long); // vtable+0x38
+	virtual unsigned long OnLMouseDown(int32_t, int32_t); // vtable+0x3c
+	virtual unsigned long OnLMouseUp(int32_t, int32_t); // vtable+0x40
+	virtual unsigned long OnRMouseDown(int32_t, int32_t); // vtable+0x44
+	virtual unsigned long OnRMouseUp(int32_t, int32_t); // vtable+0x48
+	virtual unsigned long OnMouseMove(int32_t, int32_t) /* override */;
+	virtual unsigned long OnWindowActivate() /* override */;
+	virtual unsigned long OnWindowDeactivate() /* override */;
+	virtual void ProcessSystemCloseRequest(); // vtable+0x4c
+	virtual void SetNewGameApp(class CGameApp*); // vtable+0x50
 	class CGameApp* myGameApp;
 };
 
@@ -227,66 +216,40 @@ public:
 };
 
 // Type: class MIFF;
+// VTABLE: COPTER_D 0x00591950
 class MIFF : public PFile
 {
 public:
 	void MIFF(char *);
 	void MIFF();
-	virtual void ~MIFF();
-	// vtable: 4
-	intro long OpenForReading();
-	// vtable: 8
-	intro long OpenForWriting(long, long, long);
-	// vtable: 12
-	intro long OpenForAppending();
-	// vtable: 16
-	intro long Close();
-	// vtable: 20
-	intro long GetPresentRecordType();
-	// vtable: 24
-	intro long GetPresentRecordSize();
-	// vtable: 28
-	intro long GetPresentRecordDataSize();
-	// vtable: 32
-	intro long GetPresentRecordIndex();
-	// vtable: 36
-	intro long VerifyFile();
-	// vtable: 40
-	intro long ReadMIFFHeader();
-	// vtable: 44
-	intro long ReadRecordHeader();
-	// vtable: 48
-	intro long ReadFileCreator();
-	// vtable: 52
-	intro long ReadFileType();
-	// vtable: 56
-	intro long ReadFileVersion();
-	// vtable: 60
-	intro long ReadPresentRecord(struct MIFFRecord*, long);
-	// vtable: 64
-	intro long ReadPresentRecordData(char *, long);
-	// vtable: 68
-	intro long GoToFirstRecord();
-	// vtable: 72
-	intro long GoToNextRecord();
-	// vtable: 76
-	intro long GoToPreviousRecord();
-	// vtable: 80
-	intro long GoToFirstRecordOfGivenType(long);
-	// vtable: 84
-	intro long GoToNextRecordOfGivenType(long);
-	// vtable: 88
-	intro long GoToNthRecord(long);
-	// vtable: 92
-	intro long CountRecords();
-	// vtable: 96
-	intro long WriteMIFFRecord(struct MIFFRecord*, long);
-	// vtable: 100
-	intro long WriteDataRecord(long, char *, long);
-	// vtable: 104
-	intro long WriteFileHeader(long, long, long);
-	// vtable: 108
-	intro long WriteEnd();
+	virtual void ~MIFF() /* override */;
+	virtual long OpenForReading(); // vtable+0x4
+	virtual long OpenForWriting(long, long, long); // vtable+0x8
+	virtual long OpenForAppending(); // vtable+0xc
+	virtual long Close(); // vtable+0x10
+	virtual long GetPresentRecordType(); // vtable+0x14
+	virtual long GetPresentRecordSize(); // vtable+0x18
+	virtual long GetPresentRecordDataSize(); // vtable+0x1c
+	virtual long GetPresentRecordIndex(); // vtable+0x20
+	virtual long VerifyFile(); // vtable+0x24
+	virtual long ReadMIFFHeader(); // vtable+0x28
+	virtual long ReadRecordHeader(); // vtable+0x2c
+	virtual long ReadFileCreator(); // vtable+0x30
+	virtual long ReadFileType(); // vtable+0x34
+	virtual long ReadFileVersion(); // vtable+0x38
+	virtual long ReadPresentRecord(struct MIFFRecord*, long); // vtable+0x3c
+	virtual long ReadPresentRecordData(char *, long); // vtable+0x40
+	virtual long GoToFirstRecord(); // vtable+0x44
+	virtual long GoToNextRecord(); // vtable+0x48
+	virtual long GoToPreviousRecord(); // vtable+0x4c
+	virtual long GoToFirstRecordOfGivenType(long); // vtable+0x50
+	virtual long GoToNextRecordOfGivenType(long); // vtable+0x54
+	virtual long GoToNthRecord(long); // vtable+0x58
+	virtual long CountRecords(); // vtable+0x5c
+	virtual long WriteMIFFRecord(struct MIFFRecord*, long); // vtable+0x60
+	virtual long WriteDataRecord(long, char *, long); // vtable+0x64
+	virtual long WriteFileHeader(long, long, long); // vtable+0x68
+	virtual long WriteEnd(); // vtable+0x6c
 	long lPresentRecordStart;
 	long lPresentRecordType;
 	long lPresentRecordLength;
@@ -356,6 +319,7 @@ struct bidirectional_iterator<Shortcut,int>{
 };
 
 // Type: class PFile;
+// VTABLE: COPTER_D 0x00590468
 class PFile{
 	enum /* __unnamed */ {
 		FileNull = -1,
@@ -395,8 +359,7 @@ public:
 	void PFile(const class PFile&);
 	void PFile(int32_t);
 	void PFile();
-	// vtable: 0
-	intro void ~PFile();
+	virtual void ~PFile(); // vtable+0x0
 	int32_t Open(char *, unsigned short, unsigned short, int32_t);
 	int32_t Close();
 	int32_t GetHandle();
@@ -424,42 +387,35 @@ private:
 };
 
 // Type: class CDefaultCommander;
+// VTABLE: COPTER_D 0x005912d0
 class CDefaultCommander : public ICommander
 {
 public:
 	void CDefaultCommander();
-	virtual void ~CDefaultCommander();
-	virtual unsigned long Idle();
-	virtual unsigned long OnCharacter(char, int32_t);
-	virtual unsigned long OnMouseDown(int32_t, int32_t);
-	virtual unsigned long OnMouseUp(int32_t, int32_t);
-	virtual unsigned long OnMouseMove(int32_t, int32_t);
-	virtual unsigned long OnWindowActivate();
-	virtual unsigned long OnWindowDeactivate();
+	virtual void ~CDefaultCommander() /* override */;
+	virtual unsigned long Idle() /* override */;
+	virtual unsigned long OnCharacter(char, int32_t) /* override */;
+	virtual unsigned long OnMouseDown(int32_t, int32_t) /* override */;
+	virtual unsigned long OnMouseUp(int32_t, int32_t) /* override */;
+	virtual unsigned long OnMouseMove(int32_t, int32_t) /* override */;
+	virtual unsigned long OnWindowActivate() /* override */;
+	virtual unsigned long OnWindowDeactivate() /* override */;
 };
 
 // Type: class ICommander;
+// VTABLE: COPTER_D 0x005912a8
 class ICommander{
 public:
 	void ICommander();
-	// vtable: 0
-	intro void ~ICommander();
-	// vtable: 4
-	intro unsigned long Idle();
-	// vtable: 8
-	intro unsigned long OnCharacter(char, int32_t);
-	// vtable: 12
-	intro unsigned long OnMouseDown(int32_t, int32_t);
-	// vtable: 16
-	intro unsigned long OnMouseUp(int32_t, int32_t);
-	// vtable: 20
-	intro unsigned long OnMouseMove(int32_t, int32_t);
-	// vtable: 24
-	intro unsigned long OnWindowActivate();
-	// vtable: 28
-	intro unsigned long OnWindowDeactivate();
-	// vtable: 32
-	intro class CSparkalWindow* SetWindow(class CSparkalWindow*);
+	virtual void ~ICommander(); // vtable+0x0
+	virtual unsigned long Idle(); // vtable+0x4
+	virtual unsigned long OnCharacter(char, int32_t); // vtable+0x8
+	virtual unsigned long OnMouseDown(int32_t, int32_t); // vtable+0xc
+	virtual unsigned long OnMouseUp(int32_t, int32_t); // vtable+0x10
+	virtual unsigned long OnMouseMove(int32_t, int32_t); // vtable+0x14
+	virtual unsigned long OnWindowActivate(); // vtable+0x18
+	virtual unsigned long OnWindowDeactivate(); // vtable+0x1c
+	virtual class CSparkalWindow* SetWindow(class CSparkalWindow*); // vtable+0x20
 	class CSparkalWindow* GetWindow();
 protected:
 	class CSparkalWindow* mpWindow;

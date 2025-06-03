@@ -53,11 +53,11 @@ struct tagWNDCLASSA{
 };
 
 // Type: struct debug_command (forward reference);
+// VTABLE: COPTER_D 0x0058f420
 struct debug_command{
 	class basic_string<char> command_string;
 	class basic_string<char> usage_string;
-	// vtable: 0
-	intro void execute(char *);
+	virtual void execute(char *); // vtable+0x0
 };
 
 // Type: class vector<basic_string<char>>;
@@ -124,7 +124,7 @@ struct class_debugger<CDebugWindow,CDebugWindowhelp_text> : public debug_command
 {
 	void class_debugger<CDebugWindow,CDebugWindowhelp_text>(class CDebugWindow*);
 	class CDebugWindow* m_instance;
-	virtual void execute(char *);
+	virtual void execute(char *) /* override */;
 };
 
 // Type: struct _iobuf (forward reference);
@@ -384,7 +384,7 @@ struct class_debugger<CDebugWindow,CDebugWindowhelp_text> : public debug_command
 {
 	void class_debugger<CDebugWindow,CDebugWindowhelp_text>(class CDebugWindow*);
 	class CDebugWindow* m_instance;
-	virtual void execute(char *);
+	virtual void execute(char *) /* override */;
 };
 
 // Type: class deque<basic_string<char>>::iterator (forward reference);
@@ -696,11 +696,11 @@ struct random_access_iterator<basic_string<char>,int>{
 };
 
 // Type: struct debug_command;
+// VTABLE: COPTER_D 0x0058f420
 struct debug_command{
 	class basic_string<char> command_string;
 	class basic_string<char> usage_string;
-	// vtable: 0
-	intro void execute(char *);
+	virtual void execute(char *); // vtable+0x0
 };
 
 

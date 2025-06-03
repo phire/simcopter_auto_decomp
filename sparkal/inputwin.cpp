@@ -88,43 +88,36 @@ struct list<KeyColors>::list_node{
 // Type: void;
 
 // Type: class KeyboardWindow (forward reference);
+// VTABLE: COPTER_D 0x0058f058
 class KeyboardWindow : public GraphicWindow
 {
 public:
 	void KeyboardWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
-	virtual void ~KeyboardWindow();
-	virtual int32_t Initialize();
-	virtual int32_t CreateImage(int32_t);
-	virtual void DestroyImage();
-	virtual int32_t ComposeSelf();
-	virtual int32_t DoesWindowNeedUpdating();
-	// vtable: 196
-	intro int32_t DoesKeyExistOnKeyboard(long);
-	virtual long DoKeyDown(long, char);
-	virtual long DoKeyUp(long, char);
-	virtual long DoCursorDown(long, long, unsigned long);
-	virtual long DoCursorUp(long, long, unsigned long);
-	virtual long DoCursorMove(long, long);
+	virtual void ~KeyboardWindow() /* override */;
+	virtual int32_t Initialize() /* override */;
+	virtual int32_t CreateImage(int32_t) /* override */;
+	virtual void DestroyImage() /* override */;
+	virtual int32_t ComposeSelf() /* override */;
+	virtual int32_t DoesWindowNeedUpdating() /* override */;
+	virtual int32_t DoesKeyExistOnKeyboard(long); // vtable+0xc4
+	virtual long DoKeyDown(long, char) /* override */;
+	virtual long DoKeyUp(long, char) /* override */;
+	virtual long DoCursorDown(long, long, unsigned long) /* override */;
+	virtual long DoCursorUp(long, long, unsigned long) /* override */;
+	virtual long DoCursorMove(long, long) /* override */;
 	class list<HotSpot> myHotSpotList;
 	class list<HotSpot> myNumLockOnHotSpotList;
 	class list<HotSpot> myNumLockOffHotSpotList;
 	class list<HotSpot>* myCurrentlyUsedNumLockHotSpotList;
 	class list<KeyColors> myKeyColorsList;
 protected:
-	// vtable: 200
-	intro void DrawKeyColorsOnKeyboard();
-	// vtable: 204
-	intro void DrawCharactersOnKeyboard();
-	// vtable: 208
-	intro void DrawLightsOnKeyboard();
-	// vtable: 212
-	intro int32_t DoesKeyRequireTextDraw(long);
-	// vtable: 216
-	intro int32_t DoesPositionHitKey(long, long, long&);
-	// vtable: 220
-	intro int32_t ConvertKeyToString(int32_t, long, class basic_string<char>&);
-	// vtable: 224
-	intro int32_t GetRectOfNonTextImage(long, class MRect&);
+	virtual void DrawKeyColorsOnKeyboard(); // vtable+0xc8
+	virtual void DrawCharactersOnKeyboard(); // vtable+0xcc
+	virtual void DrawLightsOnKeyboard(); // vtable+0xd0
+	virtual int32_t DoesKeyRequireTextDraw(long); // vtable+0xd4
+	virtual int32_t DoesPositionHitKey(long, long, long&); // vtable+0xd8
+	virtual int32_t ConvertKeyToString(int32_t, long, class basic_string<char>&); // vtable+0xdc
+	virtual int32_t GetRectOfNonTextImage(long, class MRect&); // vtable+0xe0
 	class CBackBuffer* myKeyLightImage;
 	class CBackBuffer* myNonTextKeyImage;
 	class MFont* mFontToUse;
@@ -207,10 +200,10 @@ public:
 // GraphicWindow Class implementation not found
 
 // Type: class GraphicWindowOwner (forward reference);
+// VTABLE: COPTER_D 0x00590f2c
 class GraphicWindowOwner{
 public:
-	// vtable: 0
-	intro int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32);
+	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
 };
 
 // Type: class basic_string<char>;
@@ -540,41 +533,33 @@ struct KeyboardWindowMessage{
 };
 
 // Type: class JoystickWindow (forward reference);
+// VTABLE: COPTER_D 0x0058f140
 class JoystickWindow : public GraphicWindow
 {
 public:
 	void JoystickWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
-	virtual void ~JoystickWindow();
-	virtual int32_t Initialize();
-	virtual int32_t CreateImage(int32_t);
-	virtual void DestroyImage();
-	virtual int32_t ComposeSelf();
-	virtual int32_t DoesWindowNeedUpdating();
-	virtual long DoCursorDown(long, long, unsigned long);
-	virtual long DoCursorUp(long, long, unsigned long);
-	virtual long DoCursorMove(long, long);
-	// vtable: 196
-	intro void SetCurrentJoystick(int32_t);
+	virtual void ~JoystickWindow() /* override */;
+	virtual int32_t Initialize() /* override */;
+	virtual int32_t CreateImage(int32_t) /* override */;
+	virtual void DestroyImage() /* override */;
+	virtual int32_t ComposeSelf() /* override */;
+	virtual int32_t DoesWindowNeedUpdating() /* override */;
+	virtual long DoCursorDown(long, long, unsigned long) /* override */;
+	virtual long DoCursorUp(long, long, unsigned long) /* override */;
+	virtual long DoCursorMove(long, long) /* override */;
+	virtual void SetCurrentJoystick(int32_t); // vtable+0xc4
 	int32_t nCurrentJoystick;
 	long lJoystickControlStates[14];
 	char lJoystickControlColors[14];
 protected:
-	// vtable: 200
-	intro int32_t GetHandleImageToUse();
-	// vtable: 204
-	intro void DrawCurrentJoystick();
-	// vtable: 208
-	intro void DrawButton(int32_t);
-	// vtable: 212
-	intro void DrawSlider(int32_t);
-	// vtable: 216
-	intro void DrawHandle();
-	// vtable: 220
-	intro void GetNewJoystickControlStates(long *);
-	// vtable: 224
-	intro int32_t DoesPositionHitKey(long, long, long&);
-	// vtable: 228
-	intro void GetSourceHandleBaseRects(class MRect*);
+	virtual int32_t GetHandleImageToUse(); // vtable+0xc8
+	virtual void DrawCurrentJoystick(); // vtable+0xcc
+	virtual void DrawButton(int32_t); // vtable+0xd0
+	virtual void DrawSlider(int32_t); // vtable+0xd4
+	virtual void DrawHandle(); // vtable+0xd8
+	virtual void GetNewJoystickControlStates(long *); // vtable+0xdc
+	virtual int32_t DoesPositionHitKey(long, long, long&); // vtable+0xe0
+	virtual void GetSourceHandleBaseRects(class MRect*); // vtable+0xe4
 	class MRect rectButtons[8];
 	class MRect rectSliders[4];
 	class MRect rectHandle;
@@ -588,6 +573,7 @@ protected:
 // Type: long *;
 
 // Type: class UserInputWindow (forward reference);
+// VTABLE: COPTER_D 0x0058f228
 class UserInputWindow : public GraphicWindow
 {
 	enum KeyUsageType {
@@ -598,17 +584,13 @@ class UserInputWindow : public GraphicWindow
 	};
 public:
 	void UserInputWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
-	virtual int32_t Initialize();
-	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32);
-	virtual long DoKeyDown(long, char);
-	// vtable: 196
-	intro void SetupAllInputDevices();
-	// vtable: 200
-	intro void SetupAllCommands();
-	// vtable: 204
-	intro void ReadShortcuts(class list<Shortcut>&);
-	// vtable: 208
-	intro void WriteShortcutsToPreferenceFile();
+	virtual int32_t Initialize() /* override */;
+	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32) /* override */;
+	virtual long DoKeyDown(long, char) /* override */;
+	virtual void SetupAllInputDevices(); // vtable+0xc4
+	virtual void SetupAllCommands(); // vtable+0xc8
+	virtual void ReadShortcuts(class list<Shortcut>&); // vtable+0xcc
+	virtual void WriteShortcutsToPreferenceFile(); // vtable+0xd0
 	int32_t HaveCommandsChanged();
 	long GetCurrentDevice();
 	long GetCurrentCommand();
@@ -639,6 +621,7 @@ protected:
 };
 
 // Type: class ButtonWindow (forward reference);
+// VTABLE: COPTER_D 0x00591b78
 class ButtonWindow : public GraphicWindow
 {
 	enum ButtonState {
@@ -649,25 +632,19 @@ class ButtonWindow : public GraphicWindow
 public:
 	void ButtonWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
 	void ButtonWindow();
-	virtual int32_t Initialize();
-	// vtable: 196
-	intro int32_t GetImageCount();
-	// vtable: 200
-	intro void SetState(int32_t);
-	// vtable: 204
-	intro int32_t GetState();
-	// vtable: 208
-	intro void Enable();
-	// vtable: 212
-	intro void Disable();
-	virtual int32_t ComposeSelf();
-	virtual int32_t CreateImage(int32_t);
-	virtual long DoCursorDown(long, long, unsigned long);
-	virtual long DoCursorUp(long, long, unsigned long);
-	virtual long DoCursorMove(long, long);
-	// vtable: 216
-	intro void SetTextColor(const struct SparkalColor*, const struct SparkalColor*);
-	virtual int32_t CanWeRespondToMessage();
+	virtual int32_t Initialize() /* override */;
+	virtual int32_t GetImageCount(); // vtable+0xc4
+	virtual void SetState(int32_t); // vtable+0xc8
+	virtual int32_t GetState(); // vtable+0xcc
+	virtual void Enable(); // vtable+0xd0
+	virtual void Disable(); // vtable+0xd4
+	virtual int32_t ComposeSelf() /* override */;
+	virtual int32_t CreateImage(int32_t) /* override */;
+	virtual long DoCursorDown(long, long, unsigned long) /* override */;
+	virtual long DoCursorUp(long, long, unsigned long) /* override */;
+	virtual long DoCursorMove(long, long) /* override */;
+	virtual void SetTextColor(const struct SparkalColor*, const struct SparkalColor*); // vtable+0xd8
+	virtual int32_t CanWeRespondToMessage() /* override */;
 protected:
 	int32_t nButtonState;
 	int32_t bEnabled;
@@ -681,14 +658,14 @@ protected:
 // Type: void * __ptr32;
 
 // Type: class ControlDisplayWindow (forward reference);
+// VTABLE: COPTER_D 0x0058f300
 class ControlDisplayWindow : public GraphicWindow
 {
 public:
 	void ControlDisplayWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
-	virtual int32_t Initialize();
-	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32);
-	// vtable: 196
-	intro void ReadShortcuts(class list<Shortcut>*);
+	virtual int32_t Initialize() /* override */;
+	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32) /* override */;
+	virtual void ReadShortcuts(class list<Shortcut>*); // vtable+0xc4
 protected:
 	void GetCommandString(class basic_string<char>&, long);
 	void AppendKeysString(class basic_string<char>&, long, long, int32_t);
@@ -785,59 +762,46 @@ public:
 };
 
 // Type: class CBackBuffer (forward reference);
+// VTABLE: COPTER_D 0x00590808
 class CBackBuffer : public IBackBuffer
 {
 public:
 	void CBackBuffer(long, long, const struct SparkalColor*);
 	void CBackBuffer(char *);
 	void CBackBuffer();
-	// vtable: 40
-	intro void InitializeMemberVariables();
+	virtual void InitializeMemberVariables(); // vtable+0x28
 	void ~CBackBuffer();
 	unsigned long Load();
-	virtual unsigned long Lock();
-	virtual unsigned long Unlock();
+	virtual unsigned long Lock() /* override */;
+	virtual unsigned long Unlock() /* override */;
 	// calltype: NearC
 	static int32_t GetPaletteFromImage(char *, struct SparkalColor*);
-	virtual unsigned long Swap(class CSparkalWindow*, long, long);
-	virtual unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long);
-	virtual unsigned long StretchRect(class CSparkalWindow*, long, long, long, long, long, long, long, long);
-	// vtable: 44
-	intro unsigned long Compose(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&);
-	virtual unsigned long Compose(class IFlatImage*, long, long, long, long, long, long);
-	virtual unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long);
-	// vtable: 48
-	intro unsigned long StretchCompose(class IFlatImage*, const struct SparkalRect&, const struct SparkalRect&);
-	// vtable: 52
-	intro unsigned long Duplicate(class CBackBuffer*, int32_t);
-	// vtable: 56
-	intro unsigned long ComposeNoClip(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&);
-	// vtable: 60
-	intro unsigned long ComposeNoClip(class IFlatImage*, long, long, long, long, long, long);
+	virtual unsigned long Swap(class CSparkalWindow*, long, long) /* override */;
+	virtual unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long) /* override */;
+	virtual unsigned long StretchRect(class CSparkalWindow*, long, long, long, long, long, long, long, long) /* override */;
+	virtual unsigned long Compose(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&); // vtable+0x2c
+	virtual unsigned long Compose(class IFlatImage*, long, long, long, long, long, long) /* override */;
+	virtual unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long) /* override */;
+	virtual unsigned long StretchCompose(class IFlatImage*, const struct SparkalRect&, const struct SparkalRect&); // vtable+0x30
+	virtual unsigned long Duplicate(class CBackBuffer*, int32_t); // vtable+0x34
+	virtual unsigned long ComposeNoClip(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&); // vtable+0x38
+	virtual unsigned long ComposeNoClip(class IFlatImage*, long, long, long, long, long, long); // vtable+0x3c
 	void UpdatePalette(long, long, const struct SparkalColor*);
-	virtual void SetTransparentColor(int32_t, long);
+	virtual void SetTransparentColor(int32_t, long) /* override */;
 	unsigned long GetTransparentColor(long&);
 	unsigned long SetFont(class MFont*);
 	void SetFontColor(struct SparkalColor&);
 	void SetFontIndex(int32_t);
 	void SetColor(struct SparkalColor&);
 	void SetColorIndex(int32_t);
-	// vtable: 64
-	intro unsigned long DrawLine(long, long, long, long, long);
-	// vtable: 68
-	intro unsigned long FillRect(long, const struct SparkalRect*);
-	// vtable: 72
-	intro unsigned long DrawBufferText(char *, long, unsigned long, const class MRect&, class MFont*);
-	// vtable: 76
-	intro unsigned long DrawBufferText(char *, unsigned long, long *, long *, long *, long *, class MFont*);
-	// vtable: 80
-	intro unsigned long DrawLineUnclipped(long, long, long, long, long);
-	// vtable: 84
-	intro unsigned long DrawLineClipped(long, long, long, long, long);
-	// vtable: 88
-	intro unsigned long DrawRectangleOutline(const struct SparkalRect&, long);
-	// vtable: 92
-	intro unsigned long DrawRectangleOutlineUnclipped(const struct SparkalRect&, long);
+	virtual unsigned long DrawLine(long, long, long, long, long); // vtable+0x40
+	virtual unsigned long FillRect(long, const struct SparkalRect*); // vtable+0x44
+	virtual unsigned long DrawBufferText(char *, long, unsigned long, const class MRect&, class MFont*); // vtable+0x48
+	virtual unsigned long DrawBufferText(char *, unsigned long, long *, long *, long *, long *, class MFont*); // vtable+0x4c
+	virtual unsigned long DrawLineUnclipped(long, long, long, long, long); // vtable+0x50
+	virtual unsigned long DrawLineClipped(long, long, long, long, long); // vtable+0x54
+	virtual unsigned long DrawRectangleOutline(const struct SparkalRect&, long); // vtable+0x58
+	virtual unsigned long DrawRectangleOutlineUnclipped(const struct SparkalRect&, long); // vtable+0x5c
 	long IsLost();
 	long Restore();
 	char * szFilePath;
@@ -859,8 +823,7 @@ protected:
 	void * __ptr32 hPen;
 	int32_t nPenThickness;
 	struct SparkalColor colorPenCurrent;
-	// vtable: 96
-	intro struct IDirectDrawSurface* GetDDSurface();
+	virtual struct IDirectDrawSurface* GetDDSurface(); // vtable+0x60
 };
 
 // Type: class list<Shortcut> (forward reference);
@@ -986,31 +949,23 @@ public:
 };
 
 // Type: class TextWindow (forward reference);
+// VTABLE: COPTER_D 0x00591a90
 class TextWindow : public GraphicWindow
 {
 public:
 	void TextWindow(class MRect&, int32_t, const class basic_string<char>&, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	void TextWindow(class MRect&, int32_t, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	void TextWindow();
-	virtual int32_t DrawSelf();
-	// vtable: 196
-	intro void SetWindowTitle(const class basic_string<char>&);
-	// vtable: 200
-	intro void SetWindowTitle(int32_t);
-	// vtable: 204
-	intro void SetFontCharacteristics(long, long, long);
-	// vtable: 208
-	intro void SetTextDrawStyle(unsigned long);
-	// vtable: 212
-	intro void SetTextColor(const struct SparkalColor&);
-	// vtable: 216
-	intro void SetBackgroundDrawing(int32_t);
-	// vtable: 220
-	intro void LoadStrings();
-	// vtable: 224
-	intro void FitWindowToText();
-	// vtable: 228
-	intro int32_t ResizeWindowForExactLineHeights();
+	virtual int32_t DrawSelf() /* override */;
+	virtual void SetWindowTitle(const class basic_string<char>&); // vtable+0xc4
+	virtual void SetWindowTitle(int32_t); // vtable+0xc8
+	virtual void SetFontCharacteristics(long, long, long); // vtable+0xcc
+	virtual void SetTextDrawStyle(unsigned long); // vtable+0xd0
+	virtual void SetTextColor(const struct SparkalColor&); // vtable+0xd4
+	virtual void SetBackgroundDrawing(int32_t); // vtable+0xd8
+	virtual void LoadStrings(); // vtable+0xdc
+	virtual void FitWindowToText(); // vtable+0xe0
+	virtual int32_t ResizeWindowForExactLineHeights(); // vtable+0xe4
 protected:
 	int32_t bDrawOpaqueBackground;
 	struct SparkalColor colorFont;
@@ -1155,6 +1110,7 @@ public:
 };
 
 // Type: class ostream (forward reference);
+// VTABLE: COPTER_D 0x00593a44
 class ostream : public virtual ios
 {
 public:
@@ -1163,7 +1119,7 @@ public:
 	void ostream(const class ostream&);
 	void ostream();
 	void ostream(class streambuf*);
-	virtual void ~ostream();
+	virtual void ~ostream() /* override */;
 	class ostream& flush();
 	int32_t opfx();
 	void osfx();
@@ -1924,6 +1880,7 @@ struct bidirectional_iterator<StringIDAssociation,int>{
 };
 
 // Type: class ios;
+// VTABLE: COPTER_D 0x00593ad4
 class ios{
 	enum io_state {
 		goodbit = 0,
@@ -1972,8 +1929,7 @@ protected:
 	void ios();
 public:
 	void ios(class streambuf*);
-	// vtable: 0
-	intro void ~ios();
+	virtual void ~ios(); // vtable+0x0
 	long flags(long);
 	long flags();
 	long setf(long);

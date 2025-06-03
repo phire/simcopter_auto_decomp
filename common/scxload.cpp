@@ -5,22 +5,21 @@
 // Type: unsigned char *;
 
 // Type: class cLZAPFileBitStream (forward reference);
+// VTABLE: COPTER_D 0x00592418
 class cLZAPFileBitStream : public cGZXBitstream
 {
 public:
 	void cLZAPFileBitStream();
 	void ~cLZAPFileBitStream();
-	// vtable: 28
-	intro int32_t OpenRead(char *);
-	// vtable: 32
-	intro void Close();
-	virtual unsigned long Read(unsigned char *, unsigned long);
-	virtual unsigned long Write(unsigned char *, unsigned long);
-	virtual void Rewind();
-	virtual void RewindToMark();
-	virtual void Mark();
-	virtual long Size();
-	virtual void FreeAll();
+	virtual int32_t OpenRead(char *); // vtable+0x1c
+	virtual void Close(); // vtable+0x20
+	virtual unsigned long Read(unsigned char *, unsigned long) /* override */;
+	virtual unsigned long Write(unsigned char *, unsigned long) /* override */;
+	virtual void Rewind() /* override */;
+	virtual void RewindToMark() /* override */;
+	virtual void Mark() /* override */;
+	virtual long Size() /* override */;
+	virtual void FreeAll() /* override */;
 private:
 	class PFile* m_file;
 	unsigned long m_mark;
@@ -37,22 +36,16 @@ private:
 // Type: long;
 
 // Type: class cGZXBitstream (forward reference);
+// VTABLE: COPTER_D 0x005923f8
 class cGZXBitstream{
 public:
-	// vtable: 0
-	intro unsigned long Read(unsigned char *, unsigned long);
-	// vtable: 4
-	intro unsigned long Write(unsigned char *, unsigned long);
-	// vtable: 8
-	intro void Rewind();
-	// vtable: 12
-	intro void RewindToMark();
-	// vtable: 16
-	intro void Mark();
-	// vtable: 20
-	intro long Size();
-	// vtable: 24
-	intro void FreeAll();
+	virtual unsigned long Read(unsigned char *, unsigned long); // vtable+0x0
+	virtual unsigned long Write(unsigned char *, unsigned long); // vtable+0x4
+	virtual void Rewind(); // vtable+0x8
+	virtual void RewindToMark(); // vtable+0xc
+	virtual void Mark(); // vtable+0x10
+	virtual long Size(); // vtable+0x14
+	virtual void FreeAll(); // vtable+0x18
 };
 
 // Type: struct SCXNeighborData (forward reference);
@@ -65,22 +58,21 @@ struct SCXNeighborData{
 };
 
 // Type: class cLZAPFileBitStream;
+// VTABLE: COPTER_D 0x00592418
 class cLZAPFileBitStream : public cGZXBitstream
 {
 public:
 	void cLZAPFileBitStream();
 	void ~cLZAPFileBitStream();
-	// vtable: 28
-	intro int32_t OpenRead(char *);
-	// vtable: 32
-	intro void Close();
-	virtual unsigned long Read(unsigned char *, unsigned long);
-	virtual unsigned long Write(unsigned char *, unsigned long);
-	virtual void Rewind();
-	virtual void RewindToMark();
-	virtual void Mark();
-	virtual long Size();
-	virtual void FreeAll();
+	virtual int32_t OpenRead(char *); // vtable+0x1c
+	virtual void Close(); // vtable+0x20
+	virtual unsigned long Read(unsigned char *, unsigned long) /* override */;
+	virtual unsigned long Write(unsigned char *, unsigned long) /* override */;
+	virtual void Rewind() /* override */;
+	virtual void RewindToMark() /* override */;
+	virtual void Mark() /* override */;
+	virtual long Size() /* override */;
+	virtual void FreeAll() /* override */;
 private:
 	class PFile* m_file;
 	unsigned long m_mark;
@@ -149,13 +141,13 @@ public:
 	void cGZXParamBitstream<t_alloc,t_free>(struct tGZXBitstreamNode*);
 	void cGZXParamBitstream<t_alloc,t_free>(uint32_t);
 	void ~cGZXParamBitstream<t_alloc,t_free>();
-	virtual void FreeAll();
-	virtual unsigned long Read(unsigned char *, unsigned long);
-	virtual unsigned long Write(unsigned char *, unsigned long);
-	virtual void Rewind();
-	virtual void RewindToMark();
-	virtual void Mark();
-	virtual long Size();
+	virtual void FreeAll() /* override */;
+	virtual unsigned long Read(unsigned char *, unsigned long) /* override */;
+	virtual unsigned long Write(unsigned char *, unsigned long) /* override */;
+	virtual void Rewind() /* override */;
+	virtual void RewindToMark() /* override */;
+	virtual void Mark() /* override */;
+	virtual long Size() /* override */;
 	class CPropertyType<long> PageSize;
 };
 
@@ -275,13 +267,13 @@ public:
 	void cGZXParamBitstream<t_alloc,t_free>(struct tGZXBitstreamNode*);
 	void cGZXParamBitstream<t_alloc,t_free>(uint32_t);
 	void ~cGZXParamBitstream<t_alloc,t_free>();
-	virtual void FreeAll();
-	virtual unsigned long Read(unsigned char *, unsigned long);
-	virtual unsigned long Write(unsigned char *, unsigned long);
-	virtual void Rewind();
-	virtual void RewindToMark();
-	virtual void Mark();
-	virtual long Size();
+	virtual void FreeAll() /* override */;
+	virtual unsigned long Read(unsigned char *, unsigned long) /* override */;
+	virtual unsigned long Write(unsigned char *, unsigned long) /* override */;
+	virtual void Rewind() /* override */;
+	virtual void RewindToMark() /* override */;
+	virtual void Mark() /* override */;
+	virtual long Size() /* override */;
 	class CPropertyType<long> PageSize;
 };
 
@@ -295,22 +287,16 @@ struct tGZXBitstreamNode{
 };
 
 // Type: class cGZXBitstream;
+// VTABLE: COPTER_D 0x005923f8
 class cGZXBitstream{
 public:
-	// vtable: 0
-	intro unsigned long Read(unsigned char *, unsigned long);
-	// vtable: 4
-	intro unsigned long Write(unsigned char *, unsigned long);
-	// vtable: 8
-	intro void Rewind();
-	// vtable: 12
-	intro void RewindToMark();
-	// vtable: 16
-	intro void Mark();
-	// vtable: 20
-	intro long Size();
-	// vtable: 24
-	intro void FreeAll();
+	virtual unsigned long Read(unsigned char *, unsigned long); // vtable+0x0
+	virtual unsigned long Write(unsigned char *, unsigned long); // vtable+0x4
+	virtual void Rewind(); // vtable+0x8
+	virtual void RewindToMark(); // vtable+0xc
+	virtual void Mark(); // vtable+0x10
+	virtual long Size(); // vtable+0x14
+	virtual void FreeAll(); // vtable+0x18
 };
 
 

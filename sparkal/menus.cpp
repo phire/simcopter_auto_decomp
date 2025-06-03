@@ -5,37 +5,29 @@
 // Type: char *;
 
 // Type: class UserMenuWindow (forward reference);
+// VTABLE: COPTER_D 0x005912f8
 class UserMenuWindow : public GraphicWindow
 {
 public:
 	void UserMenuWindow(struct UserMenuWindowDescription&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	void UserMenuWindow();
-	virtual void ~UserMenuWindow();
-	virtual int32_t Initialize();
-	virtual int32_t DrawSelf();
-	// vtable: 196
-	intro int32_t SetSelectionIndex(int32_t);
-	// vtable: 200
-	intro int32_t SetSelectionValue(int32_t);
-	// vtable: 204
-	intro int32_t GetSelectionIndex();
-	// vtable: 208
-	intro int32_t GetSelectionValue();
-	// vtable: 212
-	intro int32_t GetLineCount();
-	virtual long DoCharacter(long);
-	virtual long DoKeyDown(long, char);
-	virtual long DoCursorDown(long, long, unsigned long);
-	virtual long DoCursorMove(long, long);
-	// vtable: 216
-	intro int32_t ExecuteSelection(int32_t);
+	virtual void ~UserMenuWindow() /* override */;
+	virtual int32_t Initialize() /* override */;
+	virtual int32_t DrawSelf() /* override */;
+	virtual int32_t SetSelectionIndex(int32_t); // vtable+0xc4
+	virtual int32_t SetSelectionValue(int32_t); // vtable+0xc8
+	virtual int32_t GetSelectionIndex(); // vtable+0xcc
+	virtual int32_t GetSelectionValue(); // vtable+0xd0
+	virtual int32_t GetLineCount(); // vtable+0xd4
+	virtual long DoCharacter(long) /* override */;
+	virtual long DoKeyDown(long, char) /* override */;
+	virtual long DoCursorDown(long, long, unsigned long) /* override */;
+	virtual long DoCursorMove(long, long) /* override */;
+	virtual int32_t ExecuteSelection(int32_t); // vtable+0xd8
 protected:
-	// vtable: 220
-	intro void DrawSelectionIndicators();
-	// vtable: 224
-	intro int32_t DoCursorHitTest(int32_t&, long, long);
-	// vtable: 228
-	intro int32_t GetPositionOfNthItem(int32_t, class MPoint&);
+	virtual void DrawSelectionIndicators(); // vtable+0xdc
+	virtual int32_t DoCursorHitTest(int32_t&, long, long); // vtable+0xe0
+	virtual int32_t GetPositionOfNthItem(int32_t, class MPoint&); // vtable+0xe4
 	struct UserMenuWindowDescription myUserMenuWindowDescription;
 	class vector<TextWindow *> myTextWindowPtrArray;
 	int32_t nCurrentSelection;
@@ -69,10 +61,10 @@ struct UserMenuWindowDescription{
 // GraphicWindow Class implementation not found
 
 // Type: class GraphicWindowOwner (forward reference);
+// VTABLE: COPTER_D 0x00590f2c
 class GraphicWindowOwner{
 public:
-	// vtable: 0
-	intro int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32);
+	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
 };
 
 // Type: class MRect;
@@ -144,31 +136,23 @@ public:
 };
 
 // Type: class TextWindow (forward reference);
+// VTABLE: COPTER_D 0x00591a90
 class TextWindow : public GraphicWindow
 {
 public:
 	void TextWindow(class MRect&, int32_t, const class basic_string<char>&, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	void TextWindow(class MRect&, int32_t, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	void TextWindow();
-	virtual int32_t DrawSelf();
-	// vtable: 196
-	intro void SetWindowTitle(const class basic_string<char>&);
-	// vtable: 200
-	intro void SetWindowTitle(int32_t);
-	// vtable: 204
-	intro void SetFontCharacteristics(long, long, long);
-	// vtable: 208
-	intro void SetTextDrawStyle(unsigned long);
-	// vtable: 212
-	intro void SetTextColor(const struct SparkalColor&);
-	// vtable: 216
-	intro void SetBackgroundDrawing(int32_t);
-	// vtable: 220
-	intro void LoadStrings();
-	// vtable: 224
-	intro void FitWindowToText();
-	// vtable: 228
-	intro int32_t ResizeWindowForExactLineHeights();
+	virtual int32_t DrawSelf() /* override */;
+	virtual void SetWindowTitle(const class basic_string<char>&); // vtable+0xc4
+	virtual void SetWindowTitle(int32_t); // vtable+0xc8
+	virtual void SetFontCharacteristics(long, long, long); // vtable+0xcc
+	virtual void SetTextDrawStyle(unsigned long); // vtable+0xd0
+	virtual void SetTextColor(const struct SparkalColor&); // vtable+0xd4
+	virtual void SetBackgroundDrawing(int32_t); // vtable+0xd8
+	virtual void LoadStrings(); // vtable+0xdc
+	virtual void FitWindowToText(); // vtable+0xe0
+	virtual int32_t ResizeWindowForExactLineHeights(); // vtable+0xe4
 protected:
 	int32_t bDrawOpaqueBackground;
 	struct SparkalColor colorFont;
@@ -212,15 +196,16 @@ public:
 // Type: unsigned long;
 
 // Type: class CopterMainMenu (forward reference);
+// VTABLE: COPTER_D 0x005913e0
 class CopterMainMenu : public UserMenuWindow
 {
 public:
 	void CopterMainMenu(struct UserMenuWindowDescription&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
-	virtual void ~CopterMainMenu();
-	virtual int32_t Initialize();
-	virtual int32_t CreateImage(int32_t);
-	virtual void DestroyImage();
-	virtual int32_t DrawSelf();
+	virtual void ~CopterMainMenu() /* override */;
+	virtual int32_t Initialize() /* override */;
+	virtual int32_t CreateImage(int32_t) /* override */;
+	virtual void DestroyImage() /* override */;
+	virtual int32_t DrawSelf() /* override */;
 protected:
 	void DrawRatchetAndLights();
 	void GetCoordinatesForLights(class MPoint*, class MRect*);
@@ -404,15 +389,16 @@ public:
 };
 
 // Type: class CopterPlayMenu (forward reference);
+// VTABLE: COPTER_D 0x005914c8
 class CopterPlayMenu : public UserMenuWindow
 {
 public:
 	void CopterPlayMenu(struct UserMenuWindowDescription&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
-	virtual void ~CopterPlayMenu();
-	virtual int32_t Initialize();
-	virtual int32_t CreateImage(int32_t);
-	virtual void DestroyImage();
-	virtual int32_t DrawSelf();
+	virtual void ~CopterPlayMenu() /* override */;
+	virtual int32_t Initialize() /* override */;
+	virtual int32_t CreateImage(int32_t) /* override */;
+	virtual void DestroyImage() /* override */;
+	virtual int32_t DrawSelf() /* override */;
 protected:
 	void GetCoordinatesForRatchet(class MPoint&);
 	void DrawRatchet();
@@ -450,37 +436,29 @@ public:
 // Type: uint32_t;
 
 // Type: class UserMenuWindow;
+// VTABLE: COPTER_D 0x005912f8
 class UserMenuWindow : public GraphicWindow
 {
 public:
 	void UserMenuWindow(struct UserMenuWindowDescription&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	void UserMenuWindow();
-	virtual void ~UserMenuWindow();
-	virtual int32_t Initialize();
-	virtual int32_t DrawSelf();
-	// vtable: 196
-	intro int32_t SetSelectionIndex(int32_t);
-	// vtable: 200
-	intro int32_t SetSelectionValue(int32_t);
-	// vtable: 204
-	intro int32_t GetSelectionIndex();
-	// vtable: 208
-	intro int32_t GetSelectionValue();
-	// vtable: 212
-	intro int32_t GetLineCount();
-	virtual long DoCharacter(long);
-	virtual long DoKeyDown(long, char);
-	virtual long DoCursorDown(long, long, unsigned long);
-	virtual long DoCursorMove(long, long);
-	// vtable: 216
-	intro int32_t ExecuteSelection(int32_t);
+	virtual void ~UserMenuWindow() /* override */;
+	virtual int32_t Initialize() /* override */;
+	virtual int32_t DrawSelf() /* override */;
+	virtual int32_t SetSelectionIndex(int32_t); // vtable+0xc4
+	virtual int32_t SetSelectionValue(int32_t); // vtable+0xc8
+	virtual int32_t GetSelectionIndex(); // vtable+0xcc
+	virtual int32_t GetSelectionValue(); // vtable+0xd0
+	virtual int32_t GetLineCount(); // vtable+0xd4
+	virtual long DoCharacter(long) /* override */;
+	virtual long DoKeyDown(long, char) /* override */;
+	virtual long DoCursorDown(long, long, unsigned long) /* override */;
+	virtual long DoCursorMove(long, long) /* override */;
+	virtual int32_t ExecuteSelection(int32_t); // vtable+0xd8
 protected:
-	// vtable: 220
-	intro void DrawSelectionIndicators();
-	// vtable: 224
-	intro int32_t DoCursorHitTest(int32_t&, long, long);
-	// vtable: 228
-	intro int32_t GetPositionOfNthItem(int32_t, class MPoint&);
+	virtual void DrawSelectionIndicators(); // vtable+0xdc
+	virtual int32_t DoCursorHitTest(int32_t&, long, long); // vtable+0xe0
+	virtual int32_t GetPositionOfNthItem(int32_t, class MPoint&); // vtable+0xe4
 	struct UserMenuWindowDescription myUserMenuWindowDescription;
 	class vector<TextWindow *> myTextWindowPtrArray;
 	int32_t nCurrentSelection;

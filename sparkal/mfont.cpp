@@ -5,6 +5,7 @@
 // Type: char *;
 
 // Type: class MFont (forward reference);
+// VTABLE: COPTER_D 0x00591640
 class MFont{
 public:
 	class basic_string<char> sName;
@@ -24,10 +25,8 @@ public:
 	static int32_t UnloadFont(char *);
 	void SetFontCharacteristics(long, long, long);
 	int32_t GetTextDimensions(char *, long&, long&);
-	// vtable: 0
-	intro int32_t CreateFontA();
-	// vtable: 4
-	intro void DestroyFont();
+	virtual int32_t CreateFontA(); // vtable+0x0
+	virtual void DestroyFont(); // vtable+0x4
 	void * __ptr32 operator void *();
 protected:
 	void * __ptr32 hFont;

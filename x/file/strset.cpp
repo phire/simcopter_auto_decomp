@@ -21,6 +21,7 @@ public:
 };
 
 // Type: class ResFile (forward reference);
+// VTABLE: COPTER_D 0x00593518
 class ResFile : public FlatResFile
 {
 public:
@@ -38,6 +39,7 @@ public:
 // Type: unsigned char *;
 
 // Type: class FlatResFile;
+// VTABLE: COPTER_D 0x00593508
 class FlatResFile : public FlatFile
 {
 protected:
@@ -46,13 +48,13 @@ protected:
 	short _alignPad;
 public:
 	void FlatResFile();
-	virtual void ~FlatResFile();
+	virtual void ~FlatResFile() /* override */;
 	void LoadResMap(void * __ptr32*, short *, long *);
 	unsigned short FileEquals(class FlatResFile*);
-	virtual long Open(unsigned char *);
-	virtual long Open(char *);
+	virtual long Open(unsigned char *) /* override */;
+	virtual long Open(char *) /* override */;
 	long OpenFromName();
-	virtual long Close();
+	virtual long Close() /* override */;
 	short CountTypes();
 	unsigned long GetIndType(short);
 	short Count(unsigned long);
@@ -78,6 +80,7 @@ public:
 };
 
 // Type: class FlatFile;
+// VTABLE: COPTER_D 0x00593620
 class FlatFile{
 	enum /* __unnamed */ {
 		kMaxNameLen = 255,
@@ -96,17 +99,13 @@ private:
 	unsigned short Exclusive();
 public:
 	void FlatFile();
-	// vtable: 0
-	intro void ~FlatFile();
+	virtual void ~FlatFile(); // vtable+0x0
 	// calltype: NearC
 	static class FlatFile* FindByName(unsigned char *);
 	unsigned short SameFile(class FlatFile*);
-	// vtable: 4
-	intro long Open(unsigned char *);
-	// vtable: 8
-	intro long Open(char *);
-	// vtable: 12
-	intro long Close();
+	virtual long Open(unsigned char *); // vtable+0x4
+	virtual long Open(char *); // vtable+0x8
+	virtual long Close(); // vtable+0xc
 	void OpenFromOtherFile(class FlatFile*);
 	long GetFileName(unsigned char *);
 	unsigned short ValidFile();

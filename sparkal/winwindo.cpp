@@ -5,44 +5,33 @@
 // Type: char;
 
 // Type: class CSparkalWindow (forward reference);
+// VTABLE: COPTER_D 0x00590ef8
 class CSparkalWindow{
 public:
 	void CSparkalWindow(unsigned long, unsigned long, unsigned long, const struct SparkalColor*, char *);
 	void CSparkalWindow();
-	// vtable: 0
-	intro void ~CSparkalWindow();
+	virtual void ~CSparkalWindow(); // vtable+0x0
 	void * __ptr32 GetPlatformData();
 	long GetWidth();
 	long GetHeight();
-	// vtable: 4
-	intro unsigned long GetClientSize(long *, long *);
+	virtual unsigned long GetClientSize(long *, long *); // vtable+0x4
 	class ScreenBuffer* GetBackBuffer();
 	class ScreenBuffer* SetBackBuffer(class ScreenBuffer*);
 	class ICommander* GetCommander();
 	class ICommander* SetCommander(class ICommander*);
-	// vtable: 8
-	intro unsigned long Draw();
-	// vtable: 12
-	intro unsigned long SetCursor(unsigned long);
-	// vtable: 16
-	intro unsigned long SetCursorFromIndex(int32_t);
-	// vtable: 20
-	intro unsigned long LoadGameCursors();
-	// vtable: 24
-	intro void FreeGameCursors();
+	virtual unsigned long Draw(); // vtable+0x8
+	virtual unsigned long SetCursor(unsigned long); // vtable+0xc
+	virtual unsigned long SetCursorFromIndex(int32_t); // vtable+0x10
+	virtual unsigned long LoadGameCursors(); // vtable+0x14
+	virtual void FreeGameCursors(); // vtable+0x18
 	unsigned long DrawBufferText(const const char*, unsigned long, long, long, long *, long *, long *, long *);
-	// vtable: 28
-	intro unsigned long Sleep();
-	// vtable: 32
-	intro unsigned long WakeUp();
+	virtual unsigned long Sleep(); // vtable+0x1c
+	virtual unsigned long WakeUp(); // vtable+0x20
 	unsigned long ScreenScroll(long, long, long, long, long, long);
 	unsigned long RectSlideUp(long, long, long, long);
-	// vtable: 36
-	intro unsigned long SwapBuffer(long, long, long, long);
-	// vtable: 40
-	intro unsigned long SwapBuffer();
-	// vtable: 44
-	intro void UpdatePalette(long, long, struct SparkalColor*);
+	virtual unsigned long SwapBuffer(long, long, long, long); // vtable+0x24
+	virtual unsigned long SwapBuffer(); // vtable+0x28
+	virtual void UpdatePalette(long, long, struct SparkalColor*); // vtable+0x2c
 protected:
 	long mHeight;
 	long mWidth;
@@ -50,9 +39,8 @@ protected:
 	class ICommander* mpCommander;
 	class ScreenBuffer* mpBackBuffer;
 	void * __ptr32 mWindow;
-	// vtable: 48
 	// calltype: NearStd
-	intro long MySparkalWindowProc(void * __ptr32, uint32_t, uint32_t, long);
+	virtual long MySparkalWindowProc(void * __ptr32, uint32_t, uint32_t, long); // vtable+0x30
 	void * __ptr32 mPalette;
 	void * __ptr32 mhCurrentCursor;
 	void * __ptr32 mhCustomCursor;

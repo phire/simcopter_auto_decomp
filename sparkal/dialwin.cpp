@@ -5,18 +5,18 @@
 // Type: char *;
 
 // Type: class RadioCompassWindow (forward reference);
+// VTABLE: COPTER_D 0x0058f650
 class RadioCompassWindow : public GraphicWindow
 {
 public:
 	void RadioCompassWindow(class MRect&, long, class GraphicWindow*, class Radio*, class GraphicWindowOwner*, int32_t);
-	virtual void ~RadioCompassWindow();
-	virtual int32_t Initialize();
-	// vtable: 196
-	intro void InitializeCachedSettings();
-	virtual int32_t CreateImage(int32_t);
-	virtual void DestroyImage();
-	virtual int32_t ComposeSelf();
-	virtual long DoCursorDown(long, long, unsigned long);
+	virtual void ~RadioCompassWindow() /* override */;
+	virtual int32_t Initialize() /* override */;
+	virtual void InitializeCachedSettings(); // vtable+0xc4
+	virtual int32_t CreateImage(int32_t) /* override */;
+	virtual void DestroyImage() /* override */;
+	virtual int32_t ComposeSelf() /* override */;
+	virtual long DoCursorDown(long, long, unsigned long) /* override */;
 	int32_t GetCurrentCompassPosition();
 	void SetNewRadioStation(int32_t);
 	void SetNewRadioStationVolume(long);
@@ -110,10 +110,10 @@ public:
 // Radio Class implementation not found
 
 // Type: class GraphicWindowOwner (forward reference);
+// VTABLE: COPTER_D 0x00590f2c
 class GraphicWindowOwner{
 public:
-	// vtable: 0
-	intro int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32);
+	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
 };
 
 // Type: int32_t;
@@ -228,21 +228,21 @@ public:
 // Type: unsigned long;
 
 // Type: class DialWindow (forward reference);
+// VTABLE: COPTER_D 0x0058f738
 class DialWindow : public GraphicWindow
 {
 public:
 	void DialWindow(class MRect&, long, struct CommandSystem*, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
-	virtual void ~DialWindow();
-	virtual int32_t Initialize();
-	// vtable: 196
-	intro void InitializeCachedSettings();
-	virtual int32_t CreateImage(int32_t);
-	virtual void DestroyImage();
-	virtual int32_t ComposeSelf();
-	virtual long DoCursorDown(long, long, unsigned long);
-	virtual long DoCursorUp(long, long, unsigned long);
-	virtual long DoCursorMove(long, long);
-	virtual int32_t DoesWindowNeedUpdating();
+	virtual void ~DialWindow() /* override */;
+	virtual int32_t Initialize() /* override */;
+	virtual void InitializeCachedSettings(); // vtable+0xc4
+	virtual int32_t CreateImage(int32_t) /* override */;
+	virtual void DestroyImage() /* override */;
+	virtual int32_t ComposeSelf() /* override */;
+	virtual long DoCursorDown(long, long, unsigned long) /* override */;
+	virtual long DoCursorUp(long, long, unsigned long) /* override */;
+	virtual long DoCursorMove(long, long) /* override */;
+	virtual int32_t DoesWindowNeedUpdating() /* override */;
 	void SetNewDialPositions();
 	void DrawCurrentDamage();
 	void CheckForChangedDamage();
@@ -328,6 +328,7 @@ public:
 };
 
 // Type: class PassengerWindow (forward reference);
+// VTABLE: COPTER_D 0x0058f800
 class PassengerWindow : public GraphicWindow
 {
 	enum Position {
@@ -341,23 +342,19 @@ class PassengerWindow : public GraphicWindow
 	};
 public:
 	void PassengerWindow(class MRect&, long, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
-	virtual void ~PassengerWindow();
-	virtual int32_t Initialize();
-	// vtable: 196
-	intro void InitializeCachedSettings();
-	virtual int32_t CreateImage(int32_t);
-	virtual void DestroyImage();
-	virtual int32_t ComposeSelf();
-	virtual int32_t DoesWindowNeedUpdating();
-	// vtable: 200
-	intro void MoveToUpPosition();
-	// vtable: 204
-	intro void MoveToDownPosition();
-	// vtable: 208
-	intro void TogglePosition();
-	virtual long DoCursorDown(long, long, unsigned long);
-	virtual long DoCursorUp(long, long, unsigned long);
-	virtual long DoCursorMove(long, long);
+	virtual void ~PassengerWindow() /* override */;
+	virtual int32_t Initialize() /* override */;
+	virtual void InitializeCachedSettings(); // vtable+0xc4
+	virtual int32_t CreateImage(int32_t) /* override */;
+	virtual void DestroyImage() /* override */;
+	virtual int32_t ComposeSelf() /* override */;
+	virtual int32_t DoesWindowNeedUpdating() /* override */;
+	virtual void MoveToUpPosition(); // vtable+0xc8
+	virtual void MoveToDownPosition(); // vtable+0xcc
+	virtual void TogglePosition(); // vtable+0xd0
+	virtual long DoCursorDown(long, long, unsigned long) /* override */;
+	virtual long DoCursorUp(long, long, unsigned long) /* override */;
+	virtual long DoCursorMove(long, long) /* override */;
 protected:
 	void DrawPassengers();
 	void GetRectOfPassengerGraphic(int32_t, int32_t, class MRect&);
@@ -454,26 +451,23 @@ public:
 };
 
 // Type: class MapWindow (forward reference);
+// VTABLE: COPTER_D 0x0058f8d8
 class MapWindow : public GraphicWindow
 {
 public:
 	void MapWindow(class MRect&, long, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
-	virtual void ~MapWindow();
-	virtual int32_t Initialize();
-	// vtable: 196
-	intro void InitializeCachedSettings();
-	virtual int32_t CreateImage(int32_t);
-	virtual void DestroyImage();
-	virtual int32_t ComposeSelf();
-	// vtable: 200
-	intro void DrawButton(int32_t, int32_t);
-	virtual long DoCursorDown(long, long, unsigned long);
-	virtual long DoCursorUp(long, long, unsigned long);
-	// vtable: 204
-	intro void CreateAutoMessageSelectionPopupWindow(int32_t, int32_t, class MPoint&);
-	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32);
-	// vtable: 208
-	intro int32_t GetStringIDForVehicleName(int32_t);
+	virtual void ~MapWindow() /* override */;
+	virtual int32_t Initialize() /* override */;
+	virtual void InitializeCachedSettings(); // vtable+0xc4
+	virtual int32_t CreateImage(int32_t) /* override */;
+	virtual void DestroyImage() /* override */;
+	virtual int32_t ComposeSelf() /* override */;
+	virtual void DrawButton(int32_t, int32_t); // vtable+0xc8
+	virtual long DoCursorDown(long, long, unsigned long) /* override */;
+	virtual long DoCursorUp(long, long, unsigned long) /* override */;
+	virtual void CreateAutoMessageSelectionPopupWindow(int32_t, int32_t, class MPoint&); // vtable+0xcc
+	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32) /* override */;
+	virtual int32_t GetStringIDForVehicleName(int32_t); // vtable+0xd0
 	class CBackBuffer* myButtonImage;
 	int32_t bCurrentMissionFilter;
 	int32_t bOtherMissionFilter;
@@ -532,41 +526,40 @@ public:
 };
 
 // Type: class PopupMenuWindow (forward reference);
+// VTABLE: COPTER_D 0x00592220
 class PopupMenuWindow : public ListBoxWindow
 {
 public:
 	void PopupMenuWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
-	virtual int32_t Initialize();
-	virtual long DoKeyDown(long, char);
-	virtual long DoCursorDown(long, long, unsigned long);
-	virtual long DoCursorUp(long, long, unsigned long);
-	virtual long DoCursorMove(long, long);
+	virtual int32_t Initialize() /* override */;
+	virtual long DoKeyDown(long, char) /* override */;
+	virtual long DoCursorDown(long, long, unsigned long) /* override */;
+	virtual long DoCursorUp(long, long, unsigned long) /* override */;
+	virtual long DoCursorMove(long, long) /* override */;
 protected:
-	// vtable: 344
-	intro void ResizeWindowToFitMenuItems();
-	virtual int32_t RemoveStringAtIndex(long);
-	virtual int32_t InsertStringAtIndex(long, class basic_string<char>&);
+	virtual void ResizeWindowToFitMenuItems(); // vtable+0x158
+	virtual int32_t RemoveStringAtIndex(long) /* override */;
+	virtual int32_t InsertStringAtIndex(long, class basic_string<char>&) /* override */;
 };
 
 // Type: class EquipmentPanelWindow (forward reference);
+// VTABLE: COPTER_D 0x0058f9b0
 class EquipmentPanelWindow : public GraphicWindow
 {
 public:
 	void EquipmentPanelWindow(char *, class MRect&, long, struct CommandSystem*, class GraphicWindow*, class GraphicWindowOwner*);
-	virtual void ~EquipmentPanelWindow();
-	virtual int32_t Initialize();
-	// vtable: 196
-	intro void InitializeCachedSettings();
-	virtual int32_t CreateImage(int32_t);
-	virtual void DestroyImage();
-	virtual int32_t DrawSelf();
-	// vtable: 200
-	intro void DrawButton(int32_t, int32_t);
-	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32);
-	virtual long DoCursorDown(long, long, unsigned long);
-	virtual long DoCursorUp(long, long, unsigned long);
+	virtual void ~EquipmentPanelWindow() /* override */;
+	virtual int32_t Initialize() /* override */;
+	virtual void InitializeCachedSettings(); // vtable+0xc4
+	virtual int32_t CreateImage(int32_t) /* override */;
+	virtual void DestroyImage() /* override */;
+	virtual int32_t DrawSelf() /* override */;
+	virtual void DrawButton(int32_t, int32_t); // vtable+0xc8
+	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32) /* override */;
+	virtual long DoCursorDown(long, long, unsigned long) /* override */;
+	virtual long DoCursorUp(long, long, unsigned long) /* override */;
 	void CreateMegaphoneSelectionPopupWindow();
-	virtual int32_t DoesWindowNeedUpdating();
+	virtual int32_t DoesWindowNeedUpdating() /* override */;
 protected:
 	void DoCurrentControlStart();
 	void DoCurrentControlEnd();
@@ -638,92 +631,56 @@ struct SparkalPoint{
 };
 
 // Type: class ListBoxWindow;
+// VTABLE: COPTER_D 0x005920c8
 class ListBoxWindow : public GraphicWindow
 {
 public:
 	void ListBoxWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	void ListBoxWindow();
-	virtual int32_t Initialize();
-	virtual int32_t DrawSelf();
-	// vtable: 196
-	intro int32_t RemoveString(long);
-	// vtable: 200
-	intro int32_t RemoveString(class basic_string<char>&);
-	// vtable: 204
-	intro void RemoveAllStrings();
-	// vtable: 208
-	intro int32_t InsertString(long, long);
-	// vtable: 212
-	intro int32_t InsertString(class basic_string<char>&, long);
-	// vtable: 216
-	intro int32_t ResizeWindowForExactLineHeights();
-	// vtable: 220
-	intro int32_t SetSelection(long);
-	// vtable: 224
-	intro long GetSelection();
-	// vtable: 228
-	intro void SetShouldSort();
-	// vtable: 232
-	intro void Sort();
-	// vtable: 236
-	intro int32_t MoveLineUp();
-	// vtable: 240
-	intro int32_t MoveLineDown();
-	// vtable: 244
-	intro int32_t ScrollToStart();
-	// vtable: 248
-	intro int32_t ScrollToEnd();
-	// vtable: 252
-	intro int32_t ScrollPageUp();
-	// vtable: 256
-	intro int32_t ScrollPageDown();
-	// vtable: 260
-	intro int32_t IsIndexInView(long);
-	// vtable: 264
-	intro void PutIndexInView(long);
-	// vtable: 268
-	intro int32_t ScrollToFirstLetter(char);
-	// vtable: 272
-	intro void SetIndexOfTopLine(long);
-	// vtable: 276
-	intro long GetLineCount();
-	// vtable: 280
-	intro long GetIndexOfTopLine();
-	virtual long DoCharacter(long);
-	virtual long DoKeyDown(long, char);
-	virtual long DoCursorDown(long, long, unsigned long);
-	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32);
-	// vtable: 284
-	intro void SetBackgroundDrawing(int32_t);
-	// vtable: 288
-	intro void SetBackgroundPaletteIndex(int32_t, int32_t);
-	// vtable: 292
-	intro void SetTextColor(const struct SparkalColor*, const struct SparkalColor*);
-	// vtable: 296
-	intro void SetFontCharacteristics(long, long, long);
-	// vtable: 300
-	intro int32_t AddScrollBar(int32_t, int32_t, char *);
-	// vtable: 304
-	intro void RemoveScrollBar(int32_t, int32_t);
+	virtual int32_t Initialize() /* override */;
+	virtual int32_t DrawSelf() /* override */;
+	virtual int32_t RemoveString(long); // vtable+0xc4
+	virtual int32_t RemoveString(class basic_string<char>&); // vtable+0xc8
+	virtual void RemoveAllStrings(); // vtable+0xcc
+	virtual int32_t InsertString(long, long); // vtable+0xd0
+	virtual int32_t InsertString(class basic_string<char>&, long); // vtable+0xd4
+	virtual int32_t ResizeWindowForExactLineHeights(); // vtable+0xd8
+	virtual int32_t SetSelection(long); // vtable+0xdc
+	virtual long GetSelection(); // vtable+0xe0
+	virtual void SetShouldSort(); // vtable+0xe4
+	virtual void Sort(); // vtable+0xe8
+	virtual int32_t MoveLineUp(); // vtable+0xec
+	virtual int32_t MoveLineDown(); // vtable+0xf0
+	virtual int32_t ScrollToStart(); // vtable+0xf4
+	virtual int32_t ScrollToEnd(); // vtable+0xf8
+	virtual int32_t ScrollPageUp(); // vtable+0xfc
+	virtual int32_t ScrollPageDown(); // vtable+0x100
+	virtual int32_t IsIndexInView(long); // vtable+0x104
+	virtual void PutIndexInView(long); // vtable+0x108
+	virtual int32_t ScrollToFirstLetter(char); // vtable+0x10c
+	virtual void SetIndexOfTopLine(long); // vtable+0x110
+	virtual long GetLineCount(); // vtable+0x114
+	virtual long GetIndexOfTopLine(); // vtable+0x118
+	virtual long DoCharacter(long) /* override */;
+	virtual long DoKeyDown(long, char) /* override */;
+	virtual long DoCursorDown(long, long, unsigned long) /* override */;
+	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32) /* override */;
+	virtual void SetBackgroundDrawing(int32_t); // vtable+0x11c
+	virtual void SetBackgroundPaletteIndex(int32_t, int32_t); // vtable+0x120
+	virtual void SetTextColor(const struct SparkalColor*, const struct SparkalColor*); // vtable+0x124
+	virtual void SetFontCharacteristics(long, long, long); // vtable+0x128
+	virtual int32_t AddScrollBar(int32_t, int32_t, char *); // vtable+0x12c
+	virtual void RemoveScrollBar(int32_t, int32_t); // vtable+0x130
 protected:
-	// vtable: 308
-	intro void CalculateAllMetrics();
-	// vtable: 312
-	intro int32_t GetStringAddressFromIndex(long, class basic_string<char>*&);
-	// vtable: 316
-	intro int32_t GetStringFromIndex(long, class basic_string<char>&);
-	// vtable: 320
-	intro int32_t GetIndexFromString(long&, class basic_string<char>&);
-	// vtable: 324
-	intro int32_t RemoveStringAtIndex(long);
-	// vtable: 328
-	intro int32_t InsertStringAtIndex(long, class basic_string<char>&);
-	// vtable: 332
-	intro int32_t ModifyString(long, class basic_string<char>&);
-	// vtable: 336
-	intro void SetScrollBarValue();
-	// vtable: 340
-	intro void SetScrollBarSizes();
+	virtual void CalculateAllMetrics(); // vtable+0x134
+	virtual int32_t GetStringAddressFromIndex(long, class basic_string<char>*&); // vtable+0x138
+	virtual int32_t GetStringFromIndex(long, class basic_string<char>&); // vtable+0x13c
+	virtual int32_t GetIndexFromString(long&, class basic_string<char>&); // vtable+0x140
+	virtual int32_t RemoveStringAtIndex(long); // vtable+0x144
+	virtual int32_t InsertStringAtIndex(long, class basic_string<char>&); // vtable+0x148
+	virtual int32_t ModifyString(long, class basic_string<char>&); // vtable+0x14c
+	virtual void SetScrollBarValue(); // vtable+0x150
+	virtual void SetScrollBarSizes(); // vtable+0x154
 	class list<basic_string<char>> myStringList;
 	struct SparkalColor colorFont;
 	struct SparkalColor colorFontHighlighted;

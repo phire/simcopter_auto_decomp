@@ -15,6 +15,7 @@ struct Point2d{
 };
 
 // Type: class TrainClass;
+// VTABLE: COPTER_D 0x00593238
 class TrainClass{
 	enum /* __unnamed */ {
 		TRAIN_TYPES = 1,
@@ -113,8 +114,7 @@ public:
 	void TrainClass(const class TrainClass&);
 	void TrainClass(long, long);
 	void TrainClass();
-	// vtable: 0
-	intro void ~TrainClass();
+	virtual void ~TrainClass(); // vtable+0x0
 	// calltype: NearC
 	static class TrainClass* CreateInstance(long, long, int32_t);
 	// calltype: NearC
@@ -166,12 +166,9 @@ protected:
 	void SetSpeed(int32_t);
 	int32_t Initialize(int32_t);
 	void Itterate();
-	// vtable: 4
-	intro void ItterateFSM();
-	// vtable: 8
-	intro void AdjustSpeed();
-	// vtable: 12
-	intro enum TrainClass::StoppedReasons IsPathClear();
+	virtual void ItterateFSM(); // vtable+0x4
+	virtual void AdjustSpeed(); // vtable+0x8
+	virtual enum TrainClass::StoppedReasons IsPathClear(); // vtable+0xc
 	enum TrainClass::StoppedReasons CheckDynamicObjectsAt(const struct Point2d&, const struct Point3d&);
 	int32_t IsTrainOutOfCameraRange();
 	void SetTrainDirection(unsigned short);
@@ -186,8 +183,7 @@ protected:
 	void UnlinkFromCell(const struct Point2d&, struct _DYOBJ_INST*);
 	void LinkToCell(const struct Point2d&, struct _DYOBJ_INST*);
 	int32_t IsLocationAnIntersection(struct Point2d&);
-	// vtable: 16
-	intro enum TrainClass::IntersectionTypes PickTurnDirection(const struct Point2d&);
+	virtual enum TrainClass::IntersectionTypes PickTurnDirection(const struct Point2d&); // vtable+0x10
 	int32_t DoRailTilesConnect(unsigned short, unsigned short, enum DirectionTypes);
 	void MakeATurn(enum TrainClass::IntersectionTypes);
 	void GetNewPredictedLocation();
@@ -212,10 +208,8 @@ protected:
 	static void SetTrainTypesAndLocations();
 	// calltype: NearC
 	static void PlaceInitialTrains();
-	// vtable: 20
-	intro void BeamToWithinCameraRange();
-	// vtable: 24
-	intro int32_t BeamToLocation(long, long);
+	virtual void BeamToWithinCameraRange(); // vtable+0x14
+	virtual int32_t BeamToLocation(long, long); // vtable+0x18
 private:
 	int32_t InitializeInstance(long, long, int32_t);
 public:
@@ -223,6 +217,7 @@ public:
 };
 
 // Type: class TrainClass (forward reference);
+// VTABLE: COPTER_D 0x00593238
 class TrainClass{
 	enum /* __unnamed */ {
 		TRAIN_TYPES = 1,
@@ -321,8 +316,7 @@ public:
 	void TrainClass(const class TrainClass&);
 	void TrainClass(long, long);
 	void TrainClass();
-	// vtable: 0
-	intro void ~TrainClass();
+	virtual void ~TrainClass(); // vtable+0x0
 	// calltype: NearC
 	static class TrainClass* CreateInstance(long, long, int32_t);
 	// calltype: NearC
@@ -374,12 +368,9 @@ protected:
 	void SetSpeed(int32_t);
 	int32_t Initialize(int32_t);
 	void Itterate();
-	// vtable: 4
-	intro void ItterateFSM();
-	// vtable: 8
-	intro void AdjustSpeed();
-	// vtable: 12
-	intro enum TrainClass::StoppedReasons IsPathClear();
+	virtual void ItterateFSM(); // vtable+0x4
+	virtual void AdjustSpeed(); // vtable+0x8
+	virtual enum TrainClass::StoppedReasons IsPathClear(); // vtable+0xc
 	enum TrainClass::StoppedReasons CheckDynamicObjectsAt(const struct Point2d&, const struct Point3d&);
 	int32_t IsTrainOutOfCameraRange();
 	void SetTrainDirection(unsigned short);
@@ -394,8 +385,7 @@ protected:
 	void UnlinkFromCell(const struct Point2d&, struct _DYOBJ_INST*);
 	void LinkToCell(const struct Point2d&, struct _DYOBJ_INST*);
 	int32_t IsLocationAnIntersection(struct Point2d&);
-	// vtable: 16
-	intro enum TrainClass::IntersectionTypes PickTurnDirection(const struct Point2d&);
+	virtual enum TrainClass::IntersectionTypes PickTurnDirection(const struct Point2d&); // vtable+0x10
 	int32_t DoRailTilesConnect(unsigned short, unsigned short, enum DirectionTypes);
 	void MakeATurn(enum TrainClass::IntersectionTypes);
 	void GetNewPredictedLocation();
@@ -420,10 +410,8 @@ protected:
 	static void SetTrainTypesAndLocations();
 	// calltype: NearC
 	static void PlaceInitialTrains();
-	// vtable: 20
-	intro void BeamToWithinCameraRange();
-	// vtable: 24
-	intro int32_t BeamToLocation(long, long);
+	virtual void BeamToWithinCameraRange(); // vtable+0x14
+	virtual int32_t BeamToLocation(long, long); // vtable+0x18
 private:
 	int32_t InitializeInstance(long, long, int32_t);
 public:

@@ -209,20 +209,20 @@ public:
 };
 
 // Type: class SmackerBackBuffer (forward reference);
+// VTABLE: COPTER_D 0x005911f0
 class SmackerBackBuffer : public SmackerBuffer, public CBackBuffer
 {
 public:
 	int32_t bUseSmackBuf;
 	void SmackerBackBuffer(char *, int32_t, int32_t, int32_t, int32_t, int32_t);
 	void SmackerBackBuffer();
-	virtual void ~SmackerBackBuffer();
-	virtual int32_t Initialize();
-	// vtable: 32
-	intro void SetBackBufferData(char *, int32_t, int32_t, int32_t, int32_t, int32_t);
-	virtual int32_t Open(char *, unsigned long, unsigned long);
-	virtual int32_t CreateSurface();
-	virtual unsigned long Compose(class IFlatImage*, long, long, long, long, long, long);
-	virtual unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long);
+	virtual void ~SmackerBackBuffer() /* override */;
+	virtual int32_t Initialize() /* override */;
+	virtual void SetBackBufferData(char *, int32_t, int32_t, int32_t, int32_t, int32_t); // vtable+0x20
+	virtual int32_t Open(char *, unsigned long, unsigned long) /* override */;
+	virtual int32_t CreateSurface() /* override */;
+	virtual unsigned long Compose(class IFlatImage*, long, long, long, long, long, long) /* override */;
+	virtual unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long) /* override */;
 protected:
 	void BltParts(class IFlatImage*, long, long, long, long, long, long);
 	void BltAll(class IFlatImage*, long, long, long, long, long, long);

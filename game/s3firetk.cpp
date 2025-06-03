@@ -5,6 +5,7 @@
 // Type: int32_t;
 
 // Type: class FireEngineClass (forward reference);
+// VTABLE: COPTER_D 0x005932a8
 class FireEngineClass : public EmergencyVehicleClass
 {
 private:
@@ -17,7 +18,7 @@ private:
 public:
 	void FireEngineClass(const class FireEngineClass&);
 	void FireEngineClass();
-	virtual void ~FireEngineClass();
+	virtual void ~FireEngineClass() /* override */;
 	// calltype: NearC
 	static class FireEngineClass* CreateInstance(int32_t);
 	// calltype: NearC
@@ -28,9 +29,9 @@ public:
 	static int32_t IsThisAFireStation(unsigned short);
 	class FireEngineClass operator=(const class FireEngineClass&);
 protected:
-	virtual void ItterateFSM();
-	virtual void SetSaveData(struct _AUTO_LOAD_SAVE*);
-	virtual void LoadSaveData(struct _AUTO_LOAD_SAVE*);
+	virtual void ItterateFSM() /* override */;
+	virtual void SetSaveData(struct _AUTO_LOAD_SAVE*) /* override */;
+	virtual void LoadSaveData(struct _AUTO_LOAD_SAVE*) /* override */;
 private:
 	int32_t ScanForFire(struct _GridCoordinates);
 	void PointStreamAtFire();
@@ -226,6 +227,7 @@ public:
 // Type: uint32_t;
 
 // Type: class EmergencyVehicleClass;
+// VTABLE: COPTER_D 0x005934c0
 class EmergencyVehicleClass : public AutomobileClass
 {
 	enum /* __unnamed */ {
@@ -255,7 +257,7 @@ protected:
 public:
 	void EmergencyVehicleClass(const class EmergencyVehicleClass&);
 	void EmergencyVehicleClass();
-	virtual void ~EmergencyVehicleClass();
+	virtual void ~EmergencyVehicleClass() /* override */;
 	enum EmergencyLevel GetEmergencyState();
 	void InitializePlacedVehicleForDispatch(struct Goal, struct Goal, struct Goal, struct Goal, struct _GridCoordinates, struct Goal, enum EmergencyType);
 	void InitializeStationVehicleForDispatch(int32_t, struct Goal, struct Goal, struct _GridCoordinates, struct Goal, struct Goal, struct _GridCoordinates, int32_t, struct Goal, enum EmergencyType);
@@ -266,10 +268,9 @@ public:
 	// calltype: NearC
 	static void FinishedCarMission(struct _DYOBJ_INST*, int32_t);
 protected:
-	// vtable: 24
-	intro void Reset();
-	virtual void AdjustSpeed();
-	virtual enum TurnIndex PickTurnDir(struct Goal*);
+	virtual void Reset(); // vtable+0x18
+	virtual void AdjustSpeed() /* override */;
+	virtual enum TurnIndex PickTurnDir(struct Goal*) /* override */;
 	void ArriveOnScene();
 	void UnLinkIconFromCell(const struct _GridCoordinates);
 	void LinkIconToCell(const struct _GridCoordinates);
@@ -278,12 +279,13 @@ protected:
 	void BuildPath(struct _RGIndex, struct _RGIndex);
 	void TurnOnStrobe();
 	void TurnOffStrobe();
-	virtual void BeamToWithinCameraRange();
+	virtual void BeamToWithinCameraRange() /* override */;
 public:
 	class EmergencyVehicleClass operator=(const class EmergencyVehicleClass&);
 };
 
 // Type: class AutomobileClass;
+// VTABLE: COPTER_D 0x00592d98
 class AutomobileClass{
 	enum /* __unnamed */ {
 		CAR_TYPES = 7,
@@ -419,8 +421,7 @@ protected:
 public:
 	void AutomobileClass(const class AutomobileClass&);
 	void AutomobileClass();
-	// vtable: 0
-	intro void ~AutomobileClass();
+	virtual void ~AutomobileClass(); // vtable+0x0
 	// calltype: NearC
 	static class AutomobileClass* CreateInstance(int32_t);
 	// calltype: NearC
@@ -451,15 +452,12 @@ public:
 	int32_t CanIPullOut();
 protected:
 	void Itterate();
-	// vtable: 4
-	intro void AdjustSpeed();
+	virtual void AdjustSpeed(); // vtable+0x4
 	void Reset();
-	// vtable: 8
-	intro enum TurnIndex PickTurnDir(struct Goal*);
+	virtual enum TurnIndex PickTurnDir(struct Goal*); // vtable+0x8
 	void UnPlaceCar();
 	void PullOverCiviliansInWay();
-	// vtable: 12
-	intro void ItterateFSM();
+	virtual void ItterateFSM(); // vtable+0xc
 	int32_t InitializeInstance(int32_t);
 	void LinkToCell(const struct _GridCoordinates&);
 	int32_t AreCarsHeadOn(struct Point3d*);
@@ -478,10 +476,8 @@ protected:
 	void TurnRight();
 	void MoveForwardOnHiway();
 	void DoDiagonalRoadFixup();
-	// vtable: 16
-	intro void BeamToWithinCameraRange();
-	// vtable: 20
-	intro int32_t BeamToLocation(const struct _GridCoordinates&);
+	virtual void BeamToWithinCameraRange(); // vtable+0x10
+	virtual int32_t BeamToLocation(const struct _GridCoordinates&); // vtable+0x14
 	void MoveAuto(int32_t);
 private:
 	void UnlinkFromCell(const struct _GridCoordinates&);

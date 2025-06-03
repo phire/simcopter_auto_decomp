@@ -5,26 +5,27 @@
 // Type: char *;
 
 // Type: class HangarWindow (forward reference);
+// VTABLE: COPTER_D 0x00590c20
 class HangarWindow : public GraphicWindow
 {
 public:
 	void HangarWindow(int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
-	virtual void ~HangarWindow();
-	virtual int32_t Initialize();
-	virtual int32_t ComposeSelf();
-	virtual long DoKeyDown(long, char);
-	virtual long DoCursorDown(long, long, unsigned long);
-	virtual long DoCursorUp(long, long, unsigned long);
-	virtual long DoCursorMove(long, long);
-	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32);
-	virtual int32_t CreateImage(int32_t);
-	virtual void DestroyImage();
+	virtual void ~HangarWindow() /* override */;
+	virtual int32_t Initialize() /* override */;
+	virtual int32_t ComposeSelf() /* override */;
+	virtual long DoKeyDown(long, char) /* override */;
+	virtual long DoCursorDown(long, long, unsigned long) /* override */;
+	virtual long DoCursorUp(long, long, unsigned long) /* override */;
+	virtual long DoCursorMove(long, long) /* override */;
+	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32) /* override */;
+	virtual int32_t CreateImage(int32_t) /* override */;
+	virtual void DestroyImage() /* override */;
 	int32_t ReadPalette(struct SparkalColor*);
 	void ScrollHangarView(long);
 	int32_t IsDaytime();
 	int32_t IsNighttime();
 protected:
-	virtual void GetImagePath();
+	virtual void GetImagePath() /* override */;
 	void LoadHotSpots();
 	void ConvertWindowToHangar(class MRect&);
 	void ConvertWindowToHangar(class MPoint&);
@@ -59,15 +60,16 @@ protected:
 // GraphicWindow Class implementation not found
 
 // Type: class GraphicWindowOwner (forward reference);
+// VTABLE: COPTER_D 0x00590f2c
 class GraphicWindowOwner{
 public:
-	// vtable: 0
-	intro int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32);
+	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
 };
 
 // Type: void;
 
 // Type: class ButtonWindow (forward reference);
+// VTABLE: COPTER_D 0x00591b78
 class ButtonWindow : public GraphicWindow
 {
 	enum ButtonState {
@@ -78,25 +80,19 @@ class ButtonWindow : public GraphicWindow
 public:
 	void ButtonWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
 	void ButtonWindow();
-	virtual int32_t Initialize();
-	// vtable: 196
-	intro int32_t GetImageCount();
-	// vtable: 200
-	intro void SetState(int32_t);
-	// vtable: 204
-	intro int32_t GetState();
-	// vtable: 208
-	intro void Enable();
-	// vtable: 212
-	intro void Disable();
-	virtual int32_t ComposeSelf();
-	virtual int32_t CreateImage(int32_t);
-	virtual long DoCursorDown(long, long, unsigned long);
-	virtual long DoCursorUp(long, long, unsigned long);
-	virtual long DoCursorMove(long, long);
-	// vtable: 216
-	intro void SetTextColor(const struct SparkalColor*, const struct SparkalColor*);
-	virtual int32_t CanWeRespondToMessage();
+	virtual int32_t Initialize() /* override */;
+	virtual int32_t GetImageCount(); // vtable+0xc4
+	virtual void SetState(int32_t); // vtable+0xc8
+	virtual int32_t GetState(); // vtable+0xcc
+	virtual void Enable(); // vtable+0xd0
+	virtual void Disable(); // vtable+0xd4
+	virtual int32_t ComposeSelf() /* override */;
+	virtual int32_t CreateImage(int32_t) /* override */;
+	virtual long DoCursorDown(long, long, unsigned long) /* override */;
+	virtual long DoCursorUp(long, long, unsigned long) /* override */;
+	virtual long DoCursorMove(long, long) /* override */;
+	virtual void SetTextColor(const struct SparkalColor*, const struct SparkalColor*); // vtable+0xd8
+	virtual int32_t CanWeRespondToMessage() /* override */;
 protected:
 	int32_t nButtonState;
 	int32_t bEnabled;

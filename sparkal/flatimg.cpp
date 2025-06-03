@@ -5,29 +5,23 @@
 // Type: unsigned long;
 
 // Type: class IFlatImage (forward reference);
+// VTABLE: COPTER_D 0x00591050
 class IFlatImage{
 public:
 	void IFlatImage();
-	// vtable: 0
-	intro unsigned long Lock();
-	// vtable: 4
-	intro unsigned long Unlock();
+	virtual unsigned long Lock(); // vtable+0x0
+	virtual unsigned long Unlock(); // vtable+0x4
 	unsigned long GetLockCount();
-	// vtable: 8
-	intro void SetTransparentColor(int32_t, long);
+	virtual void SetTransparentColor(int32_t, long); // vtable+0x8
 	long GetHeight();
 	long GetWidth();
 	void * __ptr32 GetBitsPointer();
 	long GetStride();
-	// vtable: 12
-	intro unsigned long Compose(class IFlatImage*, long, long, long, long, long, long);
+	virtual unsigned long Compose(class IFlatImage*, long, long, long, long, long, long); // vtable+0xc
 	unsigned long Compose(class IFlatImage*, long, long);
-	// vtable: 16
-	intro unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long);
-	// vtable: 20
-	intro unsigned long StretchCompose(class IFlatImage*, struct SparkalRect, struct SparkalRect);
-	// vtable: 24
-	intro unsigned long FillRect(long, struct SparkalRect*);
+	virtual unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long); // vtable+0x10
+	virtual unsigned long StretchCompose(class IFlatImage*, struct SparkalRect, struct SparkalRect); // vtable+0x14
+	virtual unsigned long FillRect(long, struct SparkalRect*); // vtable+0x18
 	void DrawPixel(unsigned char, long, long);
 	unsigned char GetPixel(long, long);
 	static unsigned long lTotalMemoryUsage;
@@ -69,16 +63,16 @@ struct SparkalRect{
 // Type: int32_t;
 
 // Type: class CFlatImage (forward reference);
+// VTABLE: COPTER_D 0x00591070
 class CFlatImage : public IFlatImage
 {
 public:
 	void CFlatImage(class IFlatImage*, long, long, long, long);
 	void CFlatImage(long, long, unsigned char);
 	void CFlatImage();
-	// vtable: 28
-	intro void ~CFlatImage();
-	virtual unsigned long Lock();
-	virtual unsigned long Unlock();
+	virtual void ~CFlatImage(); // vtable+0x1c
+	virtual unsigned long Lock() /* override */;
+	virtual unsigned long Unlock() /* override */;
 protected:
 	void * __ptr32 mBitsHandle;
 };
@@ -88,29 +82,23 @@ protected:
 // Type: uint32_t;
 
 // Type: class IFlatImage;
+// VTABLE: COPTER_D 0x00591050
 class IFlatImage{
 public:
 	void IFlatImage();
-	// vtable: 0
-	intro unsigned long Lock();
-	// vtable: 4
-	intro unsigned long Unlock();
+	virtual unsigned long Lock(); // vtable+0x0
+	virtual unsigned long Unlock(); // vtable+0x4
 	unsigned long GetLockCount();
-	// vtable: 8
-	intro void SetTransparentColor(int32_t, long);
+	virtual void SetTransparentColor(int32_t, long); // vtable+0x8
 	long GetHeight();
 	long GetWidth();
 	void * __ptr32 GetBitsPointer();
 	long GetStride();
-	// vtable: 12
-	intro unsigned long Compose(class IFlatImage*, long, long, long, long, long, long);
+	virtual unsigned long Compose(class IFlatImage*, long, long, long, long, long, long); // vtable+0xc
 	unsigned long Compose(class IFlatImage*, long, long);
-	// vtable: 16
-	intro unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long);
-	// vtable: 20
-	intro unsigned long StretchCompose(class IFlatImage*, struct SparkalRect, struct SparkalRect);
-	// vtable: 24
-	intro unsigned long FillRect(long, struct SparkalRect*);
+	virtual unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long); // vtable+0x10
+	virtual unsigned long StretchCompose(class IFlatImage*, struct SparkalRect, struct SparkalRect); // vtable+0x14
+	virtual unsigned long FillRect(long, struct SparkalRect*); // vtable+0x18
 	void DrawPixel(unsigned char, long, long);
 	unsigned char GetPixel(long, long);
 	static unsigned long lTotalMemoryUsage;

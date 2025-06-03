@@ -5,6 +5,7 @@
 // Type: void ();
 
 // Type: class MDate;
+// VTABLE: COPTER_D 0x0058f3e8
 class MDate{
 	enum HowToPrint {
 		Normal = 0,
@@ -22,8 +23,7 @@ public:
 	void MDate(uint32_t, char *, uint32_t);
 	void MDate(uint32_t, uint32_t);
 	void MDate();
-	// vtable: 0
-	intro char * PrintString(char *);
+	virtual char * PrintString(char *); // vtable+0x0
 	int32_t Between(const class MDate&, const class MDate&);
 	int32_t CompareTo(const class MDate&);
 	uint32_t Day();
@@ -39,8 +39,7 @@ public:
 	char * NameOfDay();
 	char * NameOfMonth();
 	class MDate Previous(uint32_t);
-	// vtable: 4
-	intro class MDate Previous(char *);
+	virtual class MDate Previous(char *); // vtable+0x4
 	uint32_t WeekDay();
 	uint32_t Year();
 	uint32_t YearLastTwoDigits();
@@ -86,6 +85,7 @@ protected:
 // Type: void;
 
 // Type: class MDate (forward reference);
+// VTABLE: COPTER_D 0x0058f3e8
 class MDate{
 	enum HowToPrint {
 		Normal = 0,
@@ -103,8 +103,7 @@ public:
 	void MDate(uint32_t, char *, uint32_t);
 	void MDate(uint32_t, uint32_t);
 	void MDate();
-	// vtable: 0
-	intro char * PrintString(char *);
+	virtual char * PrintString(char *); // vtable+0x0
 	int32_t Between(const class MDate&, const class MDate&);
 	int32_t CompareTo(const class MDate&);
 	uint32_t Day();
@@ -120,8 +119,7 @@ public:
 	char * NameOfDay();
 	char * NameOfMonth();
 	class MDate Previous(uint32_t);
-	// vtable: 4
-	intro class MDate Previous(char *);
+	virtual class MDate Previous(char *); // vtable+0x4
 	uint32_t WeekDay();
 	uint32_t Year();
 	uint32_t YearLastTwoDigits();
@@ -191,18 +189,20 @@ struct tm{
 // Type: char *;
 
 // Type: class ostrstream;
+// VTABLE: COPTER_D 0x00593b34
 class ostrstream : public virtual ios, public ostream, public virtual <indirect> ios
 {
 public:
 	void ostrstream(char *, int32_t, int32_t);
 	void ostrstream();
-	virtual void ~ostrstream();
+	virtual void ~ostrstream() /* override */;
 	int32_t pcount();
 	class strstreambuf* rdbuf();
 	char * str();
 };
 
 // Type: class ostream (forward reference);
+// VTABLE: COPTER_D 0x00593a44
 class ostream : public virtual ios
 {
 public:
@@ -211,7 +211,7 @@ public:
 	void ostream(const class ostream&);
 	void ostream();
 	void ostream(class streambuf*);
-	virtual void ~ostream();
+	virtual void ~ostream() /* override */;
 	class ostream& flush();
 	int32_t opfx();
 	void osfx();
@@ -256,6 +256,7 @@ private:
 // Type: char;
 
 // Type: class ios (forward reference);
+// VTABLE: COPTER_D 0x00593ad4
 class ios{
 	enum io_state {
 		goodbit = 0,
@@ -304,8 +305,7 @@ protected:
 	void ios();
 public:
 	void ios(class streambuf*);
-	// vtable: 0
-	intro void ~ios();
+	virtual void ~ios(); // vtable+0x0
 	long flags(long);
 	long flags();
 	long setf(long);
@@ -389,6 +389,7 @@ private:
 };
 
 // Type: class ios;
+// VTABLE: COPTER_D 0x00593ad4
 class ios{
 	enum io_state {
 		goodbit = 0,
@@ -437,8 +438,7 @@ protected:
 	void ios();
 public:
 	void ios(class streambuf*);
-	// vtable: 0
-	intro void ~ios();
+	virtual void ~ios(); // vtable+0x0
 	long flags(long);
 	long flags();
 	long setf(long);
@@ -522,6 +522,7 @@ private:
 };
 
 // Type: class ostream;
+// VTABLE: COPTER_D 0x00593a44
 class ostream : public virtual ios
 {
 public:
@@ -530,7 +531,7 @@ public:
 	void ostream(const class ostream&);
 	void ostream();
 	void ostream(class streambuf*);
-	virtual void ~ostream();
+	virtual void ~ostream() /* override */;
 	class ostream& flush();
 	int32_t opfx();
 	void osfx();

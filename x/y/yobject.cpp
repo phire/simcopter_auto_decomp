@@ -5,6 +5,7 @@
 // Type: long;
 
 // Type: class cYObject (forward reference);
+// VTABLE: COPTER_D 0x005935e0
 class cYObject : public TreeSim, public YObjLang
 {
 	using DataType = short;
@@ -354,11 +355,9 @@ public:
 		kLastRxnTree = 30,
 	};
 protected:
-	virtual enum TreeSim::ReturnCode TryElement(struct TreeSim::StackElem*, struct Behavior::Node*);
-	// vtable: 16
-	intro void HandleOverflow();
-	// vtable: 20
-	intro short InterpValue(short, short, short **);
+	virtual enum TreeSim::ReturnCode TryElement(struct TreeSim::StackElem*, struct Behavior::Node*) /* override */;
+	virtual void HandleOverflow(); // vtable+0x10
+	virtual short InterpValue(short, short, short **); // vtable+0x14
 	enum TreeSim::ReturnCode TryExpression(struct YObjLang::AttrParam*);
 public:
 	enum cYObject::MoveErrorCode TryVectorMove(struct Point3d, int32_t, struct cYObject::MoveInfo*);
@@ -447,11 +446,10 @@ public:
 	static void RandomEdgeOffset(short, int32_t *, int32_t *);
 	// calltype: NearC
 	static void RandomOffset(short, int32_t *, int32_t *);
-	// vtable: 24
-	intro void Reset();
-	virtual void ~cYObject();
+	virtual void Reset(); // vtable+0x18
+	virtual void ~cYObject() /* override */;
 protected:
-	virtual void Error(short);
+	virtual void Error(short) /* override */;
 	void cYObject(short, class Behavior*, struct Point3d, short);
 public:
 	struct cYObject::ObjDefHeader* GetDef();
@@ -688,6 +686,7 @@ struct Point3d{
 // Type: short;
 
 // Type: class cAvatar (forward reference);
+// VTABLE: COPTER_D 0x005935a8
 class cAvatar : public cYObject
 {
 public:
@@ -700,7 +699,7 @@ public:
 	void Start(int32_t, int32_t, int32_t, int32_t);
 	void Simulate();
 	enum cYObject::MoveErrorCode AvatarMove(struct cYObject::MoveInfo*);
-	virtual void Reset();
+	virtual void Reset() /* override */;
 	void ResetView();
 	short GetScurkID();
 };
@@ -721,17 +720,19 @@ struct BodyDebugInfo{
 // Type: unsigned short;
 
 // Type: class NResFile;
+// VTABLE: COPTER_D 0x00591218
 class NResFile : public ResFile
 {
 private:
 	class PtrList<StdResLoader> fLoaders;
 public:
-	virtual void ~NResFile();
+	virtual void ~NResFile() /* override */;
 	class StdResLoader* GetLoader(unsigned long, void (*)(void * __ptr32, long));
 	void ReleaseLoader(class StdResLoader*);
 };
 
 // Type: class ResFile;
+// VTABLE: COPTER_D 0x00593518
 class ResFile : public FlatResFile
 {
 public:
@@ -739,20 +740,21 @@ public:
 };
 
 // Type: class YObjLang (forward reference);
+// VTABLE: COPTER_D 0x005936e8
 class YObjLang : public Language
 {
 public:
 	void YObjLang(class YObjLang&);
 	void YObjLang(unsigned char *);
 	void ~YObjLang();
-	virtual void GetNodeText(class Behavior*, struct Behavior::Node*, unsigned char *);
-	virtual void GetPrimName(short, unsigned char *);
-	virtual unsigned short IsSingleExit(struct Behavior::Node*);
+	virtual void GetNodeText(class Behavior*, struct Behavior::Node*, unsigned char *) /* override */;
+	virtual void GetPrimName(short, unsigned char *) /* override */;
+	virtual unsigned short IsSingleExit(struct Behavior::Node*) /* override */;
 	// calltype: NearC
 	static void SwizzleTreeParam(short, struct Behavior::NodeParameter*);
 	// calltype: NearC
 	static void SwizzleTree(void * __ptr32, long);
-	virtual void (*)(void * __ptr32, long) GetSwizzler();
+	virtual void (*)(void * __ptr32, long) GetSwizzler() /* override */;
 	enum /* __unnamed */ {
 		kIdle = 0,
 		kSetAnim = 1,
@@ -821,7 +823,7 @@ public:
 		kNumPrimitives = 64,
 	};
 public:
-	virtual short CountPrimitives();
+	virtual short CountPrimitives() /* override */;
 	enum /* __unnamed */ {
 		kMyself = 0,
 		kTreeParam = 1,
@@ -1058,6 +1060,7 @@ public:
 };
 
 // Type: class Behavior (forward reference);
+// VTABLE: COPTER_D 0x005936d8
 class Behavior{
 protected:
 	class NResFile* fGlobFile;
@@ -1109,19 +1112,15 @@ public:
 	void Behavior(class Language*, class NResFile*, class NResFile*);
 	void ~Behavior();
 	void GetNode(short, short, struct Behavior::Node*);
-	// vtable: 0
-	intro const struct Behavior::Node* GetNodeRef(short, short);
-	// vtable: 4
-	intro void GetNodeText(short, short, unsigned char *);
+	virtual const struct Behavior::Node* GetNodeRef(short, short); // vtable+0x0
+	virtual void GetNodeText(short, short, unsigned char *); // vtable+0x4
 	void GetNodeText(struct Behavior::Node*, unsigned char *);
-	// vtable: 8
-	intro void GetTreeName(short, unsigned char *);
+	virtual void GetTreeName(short, unsigned char *); // vtable+0x8
 	short CountPrimitives();
 	class Language* GetLanguage();
 	class ResFile* GetPrivFile();
 	class ResFile* GetGlobFile();
-	// vtable: 12
-	intro class ResFile* GetResFile(short);
+	virtual class ResFile* GetResFile(short); // vtable+0xc
 	// calltype: NearC
 	static short GetBaseID(short);
 	// calltype: NearC
@@ -1414,6 +1413,7 @@ enum SoundNum {
 };
 
 // Type: class DigitalSound (forward reference);
+// VTABLE: COPTER_D 0x0058f488
 class DigitalSound : public Sound
 {
 protected:
@@ -1429,68 +1429,44 @@ public:
 	void DigitalSound(long);
 	void DigitalSound(const class basic_string<char>&, int32_t);
 	void DigitalSound();
-	virtual void ~DigitalSound();
+	virtual void ~DigitalSound() /* override */;
 	class DigitalSound& operator=(class DigitalSound&);
-	// vtable: 44
-	intro void SetSoundFile(const class basic_string<char>&, int32_t);
-	// vtable: 48
-	intro int32_t Load();
-	// vtable: 52
-	intro int32_t LoadFromResource();
-	// vtable: 56
-	intro int32_t LoadFromFile();
-	// vtable: 60
-	intro void Unload();
-	virtual long Play(long, int32_t);
-	virtual long Stop();
-	// vtable: 64
-	intro long ShouldWeStream();
-	// vtable: 68
-	intro long PlayStream();
-	// vtable: 72
-	intro long StopStream();
+	virtual void SetSoundFile(const class basic_string<char>&, int32_t); // vtable+0x2c
+	virtual int32_t Load(); // vtable+0x30
+	virtual int32_t LoadFromResource(); // vtable+0x34
+	virtual int32_t LoadFromFile(); // vtable+0x38
+	virtual void Unload(); // vtable+0x3c
+	virtual long Play(long, int32_t) /* override */;
+	virtual long Stop() /* override */;
+	virtual long ShouldWeStream(); // vtable+0x40
+	virtual long PlayStream(); // vtable+0x44
+	virtual long StopStream(); // vtable+0x48
 protected:
-	// vtable: 76
-	intro long IsPlaying(struct IDirectSoundBuffer**);
+	virtual long IsPlaying(struct IDirectSoundBuffer**); // vtable+0x4c
 public:
-	virtual long IsPlaying();
-	virtual int32_t GetVolume(long *);
-	virtual int32_t SetVolume(long);
-	// vtable: 80
-	intro int32_t GetPan(long *);
-	// vtable: 84
-	intro int32_t SetPan(long);
-	// vtable: 88
-	intro int32_t SetPosition(long, long, long);
-	// vtable: 92
-	intro long GetOriginalFrequency();
-	// vtable: 96
-	intro int32_t GetFrequency(long *);
-	// vtable: 100
-	intro int32_t SetFrequency(long);
-	virtual int32_t GetSoundType();
-	virtual int32_t SetCompletionNotification(void (*)(long), long);
-	virtual void StopCompletionNotification();
-	virtual long EstimateRemainingPlayTime();
+	virtual long IsPlaying() /* override */;
+	virtual int32_t GetVolume(long *) /* override */;
+	virtual int32_t SetVolume(long) /* override */;
+	virtual int32_t GetPan(long *); // vtable+0x50
+	virtual int32_t SetPan(long); // vtable+0x54
+	virtual int32_t SetPosition(long, long, long); // vtable+0x58
+	virtual long GetOriginalFrequency(); // vtable+0x5c
+	virtual int32_t GetFrequency(long *); // vtable+0x60
+	virtual int32_t SetFrequency(long); // vtable+0x64
+	virtual int32_t GetSoundType() /* override */;
+	virtual int32_t SetCompletionNotification(void (*)(long), long) /* override */;
+	virtual void StopCompletionNotification() /* override */;
+	virtual long EstimateRemainingPlayTime() /* override */;
 protected:
-	// vtable: 104
-	intro int32_t GetSoundAliasToPlay(struct IDirectSoundBuffer**);
-	// vtable: 108
-	intro int32_t CreateSoundBuffer(struct _DSBUFFERDESC*);
-	// vtable: 112
-	intro int32_t CreatePrimarySoundBuffer();
-	// vtable: 116
-	intro int32_t ReleaseSoundBuffer();
-	// vtable: 120
-	intro long InitializeStreamBuffer(long);
-	// vtable: 124
-	intro void ProcessStreamingBufferTimerCallback();
-	// vtable: 128
-	intro void ProcessCompletionEstimationTimerCallback();
-	// vtable: 132
-	intro void StopCompletionNotificationEstimationTimer();
-	// vtable: 136
-	intro int32_t StartCompletionNotificationEstimationTimer();
+	virtual int32_t GetSoundAliasToPlay(struct IDirectSoundBuffer**); // vtable+0x68
+	virtual int32_t CreateSoundBuffer(struct _DSBUFFERDESC*); // vtable+0x6c
+	virtual int32_t CreatePrimarySoundBuffer(); // vtable+0x70
+	virtual int32_t ReleaseSoundBuffer(); // vtable+0x74
+	virtual long InitializeStreamBuffer(long); // vtable+0x78
+	virtual void ProcessStreamingBufferTimerCallback(); // vtable+0x7c
+	virtual void ProcessCompletionEstimationTimerCallback(); // vtable+0x80
+	virtual void StopCompletionNotificationEstimationTimer(); // vtable+0x84
+	virtual int32_t StartCompletionNotificationEstimationTimer(); // vtable+0x88
 };
 
 // Type: struct tagPassengerInfo;
@@ -1559,59 +1535,46 @@ struct BodyDebugInfo{
 };
 
 // Type: class CBackBuffer (forward reference);
+// VTABLE: COPTER_D 0x00590808
 class CBackBuffer : public IBackBuffer
 {
 public:
 	void CBackBuffer(long, long, const struct SparkalColor*);
 	void CBackBuffer(char *);
 	void CBackBuffer();
-	// vtable: 40
-	intro void InitializeMemberVariables();
+	virtual void InitializeMemberVariables(); // vtable+0x28
 	void ~CBackBuffer();
 	unsigned long Load();
-	virtual unsigned long Lock();
-	virtual unsigned long Unlock();
+	virtual unsigned long Lock() /* override */;
+	virtual unsigned long Unlock() /* override */;
 	// calltype: NearC
 	static int32_t GetPaletteFromImage(char *, struct SparkalColor*);
-	virtual unsigned long Swap(class CSparkalWindow*, long, long);
-	virtual unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long);
-	virtual unsigned long StretchRect(class CSparkalWindow*, long, long, long, long, long, long, long, long);
-	// vtable: 44
-	intro unsigned long Compose(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&);
-	virtual unsigned long Compose(class IFlatImage*, long, long, long, long, long, long);
-	virtual unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long);
-	// vtable: 48
-	intro unsigned long StretchCompose(class IFlatImage*, const struct SparkalRect&, const struct SparkalRect&);
-	// vtable: 52
-	intro unsigned long Duplicate(class CBackBuffer*, int32_t);
-	// vtable: 56
-	intro unsigned long ComposeNoClip(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&);
-	// vtable: 60
-	intro unsigned long ComposeNoClip(class IFlatImage*, long, long, long, long, long, long);
+	virtual unsigned long Swap(class CSparkalWindow*, long, long) /* override */;
+	virtual unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long) /* override */;
+	virtual unsigned long StretchRect(class CSparkalWindow*, long, long, long, long, long, long, long, long) /* override */;
+	virtual unsigned long Compose(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&); // vtable+0x2c
+	virtual unsigned long Compose(class IFlatImage*, long, long, long, long, long, long) /* override */;
+	virtual unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long) /* override */;
+	virtual unsigned long StretchCompose(class IFlatImage*, const struct SparkalRect&, const struct SparkalRect&); // vtable+0x30
+	virtual unsigned long Duplicate(class CBackBuffer*, int32_t); // vtable+0x34
+	virtual unsigned long ComposeNoClip(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&); // vtable+0x38
+	virtual unsigned long ComposeNoClip(class IFlatImage*, long, long, long, long, long, long); // vtable+0x3c
 	void UpdatePalette(long, long, const struct SparkalColor*);
-	virtual void SetTransparentColor(int32_t, long);
+	virtual void SetTransparentColor(int32_t, long) /* override */;
 	unsigned long GetTransparentColor(long&);
 	unsigned long SetFont(class MFont*);
 	void SetFontColor(struct SparkalColor&);
 	void SetFontIndex(int32_t);
 	void SetColor(struct SparkalColor&);
 	void SetColorIndex(int32_t);
-	// vtable: 64
-	intro unsigned long DrawLine(long, long, long, long, long);
-	// vtable: 68
-	intro unsigned long FillRect(long, const struct SparkalRect*);
-	// vtable: 72
-	intro unsigned long DrawBufferText(char *, long, unsigned long, const class MRect&, class MFont*);
-	// vtable: 76
-	intro unsigned long DrawBufferText(char *, unsigned long, long *, long *, long *, long *, class MFont*);
-	// vtable: 80
-	intro unsigned long DrawLineUnclipped(long, long, long, long, long);
-	// vtable: 84
-	intro unsigned long DrawLineClipped(long, long, long, long, long);
-	// vtable: 88
-	intro unsigned long DrawRectangleOutline(const struct SparkalRect&, long);
-	// vtable: 92
-	intro unsigned long DrawRectangleOutlineUnclipped(const struct SparkalRect&, long);
+	virtual unsigned long DrawLine(long, long, long, long, long); // vtable+0x40
+	virtual unsigned long FillRect(long, const struct SparkalRect*); // vtable+0x44
+	virtual unsigned long DrawBufferText(char *, long, unsigned long, const class MRect&, class MFont*); // vtable+0x48
+	virtual unsigned long DrawBufferText(char *, unsigned long, long *, long *, long *, long *, class MFont*); // vtable+0x4c
+	virtual unsigned long DrawLineUnclipped(long, long, long, long, long); // vtable+0x50
+	virtual unsigned long DrawLineClipped(long, long, long, long, long); // vtable+0x54
+	virtual unsigned long DrawRectangleOutline(const struct SparkalRect&, long); // vtable+0x58
+	virtual unsigned long DrawRectangleOutlineUnclipped(const struct SparkalRect&, long); // vtable+0x5c
 	char * szFilePath;
 protected:
 	int32_t bSurfacePrimary;
@@ -1633,6 +1596,7 @@ struct _STOBJ_INST{
 };
 
 // Type: class FlatResFile (forward reference);
+// VTABLE: COPTER_D 0x00593508
 class FlatResFile : public FlatFile
 {
 protected:
@@ -1641,13 +1605,13 @@ protected:
 	short _alignPad;
 public:
 	void FlatResFile();
-	virtual void ~FlatResFile();
+	virtual void ~FlatResFile() /* override */;
 	void LoadResMap(void * __ptr32*, short *, long *);
 	unsigned short FileEquals(class FlatResFile*);
-	virtual long Open(unsigned char *);
-	virtual long Open(char *);
+	virtual long Open(unsigned char *) /* override */;
+	virtual long Open(char *) /* override */;
 	long OpenFromName();
-	virtual long Close();
+	virtual long Close() /* override */;
 	short CountTypes();
 	unsigned long GetIndType(short);
 	short Count(unsigned long);
@@ -1707,6 +1671,7 @@ public:
 };
 
 // Type: class ResFile (forward reference);
+// VTABLE: COPTER_D 0x00593518
 class ResFile : public FlatResFile
 {
 public:
@@ -1801,6 +1766,7 @@ enum ReturnCode {
 };
 
 // Type: class TreeSim;
+// VTABLE: COPTER_D 0x00593630
 class TreeSim{
 	enum /* __unnamed */ {
 		kNumLocals = 4,
@@ -1839,10 +1805,8 @@ private:
 		kStackErrorMax = 1004,
 	};
 protected:
-	// vtable: 0
-	intro enum TreeSim::ReturnCode TryElement(struct TreeSim::StackElem*, struct Behavior::Node*);
-	// vtable: 4
-	intro void Error(short);
+	virtual enum TreeSim::ReturnCode TryElement(struct TreeSim::StackElem*, struct Behavior::Node*); // vtable+0x0
+	virtual void Error(short); // vtable+0x4
 	void GetCurrentNode(short *, short *);
 	void Reset(class Behavior*, short);
 	char NodeComplete(unsigned short);
@@ -1850,10 +1814,8 @@ protected:
 public:
 	void TreeSim(short, short *);
 	void TreeSim(short, short, class Behavior*, short *);
-	// vtable: 8
-	intro void ~TreeSim();
-	// vtable: 12
-	intro unsigned short Simulate(long, unsigned short);
+	virtual void ~TreeSim(); // vtable+0x8
+	virtual unsigned short Simulate(long, unsigned short); // vtable+0xc
 	struct TreeSim::StackElem* GetHighLevelAction();
 	struct TreeSim::StackElem* GetCurElem();
 	struct TreeSim::StackElem* GetNthElem(short);
@@ -1862,20 +1824,21 @@ public:
 };
 
 // Type: class YObjLang;
+// VTABLE: COPTER_D 0x005936e8
 class YObjLang : public Language
 {
 public:
 	void YObjLang(class YObjLang&);
 	void YObjLang(unsigned char *);
 	void ~YObjLang();
-	virtual void GetNodeText(class Behavior*, struct Behavior::Node*, unsigned char *);
-	virtual void GetPrimName(short, unsigned char *);
-	virtual unsigned short IsSingleExit(struct Behavior::Node*);
+	virtual void GetNodeText(class Behavior*, struct Behavior::Node*, unsigned char *) /* override */;
+	virtual void GetPrimName(short, unsigned char *) /* override */;
+	virtual unsigned short IsSingleExit(struct Behavior::Node*) /* override */;
 	// calltype: NearC
 	static void SwizzleTreeParam(short, struct Behavior::NodeParameter*);
 	// calltype: NearC
 	static void SwizzleTree(void * __ptr32, long);
-	virtual void (*)(void * __ptr32, long) GetSwizzler();
+	virtual void (*)(void * __ptr32, long) GetSwizzler() /* override */;
 	enum /* __unnamed */ {
 		kIdle = 0,
 		kSetAnim = 1,
@@ -1941,7 +1904,7 @@ public:
 		kNumPrimitives = 61,
 	};
 public:
-	virtual short CountPrimitives();
+	virtual short CountPrimitives() /* override */;
 	enum /* __unnamed */ {
 		kMyself = 0,
 		kTreeParam = 1,
@@ -2178,6 +2141,7 @@ public:
 };
 
 // Type: class ResFile;
+// VTABLE: COPTER_D 0x00593518
 class ResFile : public FlatResFile
 {
 public:
@@ -2188,6 +2152,7 @@ public:
 // Language Class implementation not found
 
 // Type: class FlatResFile;
+// VTABLE: COPTER_D 0x00593508
 class FlatResFile : public FlatFile
 {
 protected:
@@ -2196,13 +2161,13 @@ protected:
 	short _alignPad;
 public:
 	void FlatResFile();
-	virtual void ~FlatResFile();
+	virtual void ~FlatResFile() /* override */;
 	void LoadResMap(void * __ptr32*, short *, long *);
 	unsigned short FileEquals(class FlatResFile*);
-	virtual long Open(unsigned char *);
-	virtual long Open(char *);
+	virtual long Open(unsigned char *) /* override */;
+	virtual long Open(char *) /* override */;
 	long OpenFromName();
-	virtual long Close();
+	virtual long Close() /* override */;
 	short CountTypes();
 	unsigned long GetIndType(short);
 	short Count(unsigned long);
@@ -2228,6 +2193,7 @@ public:
 };
 
 // Type: class cYObject;
+// VTABLE: COPTER_D 0x005935e0
 class cYObject : public TreeSim, public YObjLang
 {
 	using DataType = short;
@@ -2554,11 +2520,9 @@ public:
 		kSpecificToScurkID = 22,
 	};
 protected:
-	virtual enum TreeSim::ReturnCode TryElement(struct TreeSim::StackElem*, struct Behavior::Node*);
-	// vtable: 16
-	intro void HandleOverflow();
-	// vtable: 20
-	intro short InterpValue(short, short, short **);
+	virtual enum TreeSim::ReturnCode TryElement(struct TreeSim::StackElem*, struct Behavior::Node*) /* override */;
+	virtual void HandleOverflow(); // vtable+0x10
+	virtual short InterpValue(short, short, short **); // vtable+0x14
 	enum TreeSim::ReturnCode TryExpression(struct YObjLang::AttrParam*);
 public:
 	enum cYObject::MoveErrorCode TryVectorMove(struct Point3d, int32_t, struct cYObject::MoveInfo*);
@@ -2603,11 +2567,10 @@ public:
 	static void RandomEdgeOffset(short, int32_t *, int32_t *);
 	// calltype: NearC
 	static void RandomOffset(short, int32_t *, int32_t *);
-	// vtable: 24
-	intro void Reset();
-	virtual void ~cYObject();
+	virtual void Reset(); // vtable+0x18
+	virtual void ~cYObject() /* override */;
 protected:
-	virtual void Error(short);
+	virtual void Error(short) /* override */;
 	void cYObject(short, class Behavior*, struct Point3d, short);
 public:
 	struct cYObject::ObjDefHeader* GetDef();
@@ -2641,6 +2604,7 @@ public:
 };
 
 // Type: class FlatFile;
+// VTABLE: COPTER_D 0x00593620
 class FlatFile{
 	enum /* __unnamed */ {
 		kMaxNameLen = 255,
@@ -2659,17 +2623,13 @@ private:
 	unsigned short Exclusive();
 public:
 	void FlatFile();
-	// vtable: 0
-	intro void ~FlatFile();
+	virtual void ~FlatFile(); // vtable+0x0
 	// calltype: NearC
 	static class FlatFile* FindByName(unsigned char *);
 	unsigned short SameFile(class FlatFile*);
-	// vtable: 4
-	intro long Open(unsigned char *);
-	// vtable: 8
-	intro long Open(char *);
-	// vtable: 12
-	intro long Close();
+	virtual long Open(unsigned char *); // vtable+0x4
+	virtual long Open(char *); // vtable+0x8
+	virtual long Close(); // vtable+0xc
 	void OpenFromOtherFile(class FlatFile*);
 	long GetFileName(unsigned char *);
 	unsigned short ValidFile();
@@ -2686,6 +2646,7 @@ public:
 };
 
 // Type: class Sound;
+// VTABLE: COPTER_D 0x0058f458
 class Sound{
 	enum SoundSourceType {
 		nSoundSourceTypeResource = 0,
@@ -2710,70 +2671,51 @@ public:
 	void (*soundCompletionFunction)(long);
 	long lSoundCompletionData;
 	void Sound();
-	// vtable: 0
-	intro void ~Sound();
+	virtual void ~Sound(); // vtable+0x0
 	class Sound& operator=(const class Sound&);
-	// vtable: 4
-	intro void SetSoundFile(const class basic_string<char>&);
-	// vtable: 8
-	intro long Play(long, int32_t);
-	// vtable: 12
-	intro long Stop();
-	// vtable: 16
-	intro long IsPlaying();
-	// vtable: 20
-	intro int32_t SetCompletionNotification(void (*)(long), long);
-	// vtable: 24
-	intro void StopCompletionNotification();
-	// vtable: 28
-	intro long EstimateRemainingPlayTime();
-	// vtable: 32
-	intro int32_t GetVolume(long *);
-	// vtable: 36
-	intro int32_t SetVolume(long);
-	// vtable: 40
-	intro int32_t GetSoundType();
+	virtual void SetSoundFile(const class basic_string<char>&); // vtable+0x4
+	virtual long Play(long, int32_t); // vtable+0x8
+	virtual long Stop(); // vtable+0xc
+	virtual long IsPlaying(); // vtable+0x10
+	virtual int32_t SetCompletionNotification(void (*)(long), long); // vtable+0x14
+	virtual void StopCompletionNotification(); // vtable+0x18
+	virtual long EstimateRemainingPlayTime(); // vtable+0x1c
+	virtual int32_t GetVolume(long *); // vtable+0x20
+	virtual int32_t SetVolume(long); // vtable+0x24
+	virtual int32_t GetSoundType(); // vtable+0x28
 	// calltype: NearC
 	static unsigned long GetTotalMemoryUsage();
 	static unsigned long lTotalMemoryUsage;
 };
 
 // Type: class IBackBuffer;
+// VTABLE: COPTER_D 0x005907e0
 class IBackBuffer : public IFlatImage
 {
 public:
-	// vtable: 28
-	intro unsigned long Swap(class CSparkalWindow*, long, long);
-	// vtable: 32
-	intro unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long);
-	// vtable: 36
-	intro unsigned long StretchRect(class CSparkalWindow*, long, long, long, long, long, long, long, long);
+	virtual unsigned long Swap(class CSparkalWindow*, long, long); // vtable+0x1c
+	virtual unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long); // vtable+0x20
+	virtual unsigned long StretchRect(class CSparkalWindow*, long, long, long, long, long, long, long, long); // vtable+0x24
 };
 
 // Type: class IFlatImage;
+// VTABLE: COPTER_D 0x00591050
 class IFlatImage{
 public:
 	void IFlatImage();
-	// vtable: 0
-	intro unsigned long Lock();
-	// vtable: 4
-	intro unsigned long Unlock();
+	virtual unsigned long Lock(); // vtable+0x0
+	virtual unsigned long Unlock(); // vtable+0x4
 	unsigned long GetLockCount();
-	// vtable: 8
-	intro void SetTransparentColor(int32_t, long);
+	virtual void SetTransparentColor(int32_t, long); // vtable+0x8
 	long GetHeight();
 	long GetWidth();
 	void * __ptr32 GetBitsPointer();
 	long GetStride();
-	// vtable: 12
-	intro unsigned long Compose(class IFlatImage*, long, long, long, long, long, long);
+	virtual unsigned long Compose(class IFlatImage*, long, long, long, long, long, long); // vtable+0xc
 	unsigned long Compose(class IFlatImage*, long, long);
-	// vtable: 16
-	intro unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long);
-	// vtable: 20
-	intro unsigned long StretchCompose(class IFlatImage*, struct SparkalRect, struct SparkalRect);
-	// vtable: 24
-	intro unsigned long FillRect(long, struct SparkalRect*);
+	virtual unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long); // vtable+0x10
+	virtual unsigned long StretchCompose(class IFlatImage*, struct SparkalRect, struct SparkalRect); // vtable+0x14
+	virtual unsigned long FillRect(long, struct SparkalRect*); // vtable+0x18
 	void DrawPixel(unsigned char, long, long);
 	unsigned char GetPixel(long, long);
 	static unsigned long lTotalMemoryUsage;

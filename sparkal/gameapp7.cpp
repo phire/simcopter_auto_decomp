@@ -14,11 +14,11 @@
 // Type: char;
 
 // Type: class Version;
+// VTABLE: COPTER_D 0x0058f5b8
 class Version{
 public:
 	void Version();
-	// vtable: 0
-	intro void ~Version();
+	virtual void ~Version(); // vtable+0x0
 	int32_t GetApplicationName(char *&);
 	long GetApplicationVersion(int32_t);
 	int32_t GetApplicationVersion(char *&);
@@ -274,23 +274,20 @@ struct SparkalColor{
 };
 
 // Type: class MessageBoxWindow (forward reference);
+// VTABLE: COPTER_D 0x0058fa80
 class MessageBoxWindow : public GraphicWindow
 {
 public:
 	void MessageBoxWindow(class MPoint&, unsigned long, class basic_string<char>&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *);
 	void MessageBoxWindow(class MPoint&, unsigned long, unsigned long, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *);
-	virtual int32_t Initialize();
-	virtual long DoKeyDown(long, char);
-	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32);
-	// vtable: 196
-	intro void SetTextColor(const struct SparkalColor&);
-	// vtable: 200
-	intro void SetButtonTextColor(const struct SparkalColor*, const struct SparkalColor*);
+	virtual int32_t Initialize() /* override */;
+	virtual long DoKeyDown(long, char) /* override */;
+	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32) /* override */;
+	virtual void SetTextColor(const struct SparkalColor&); // vtable+0xc4
+	virtual void SetButtonTextColor(const struct SparkalColor*, const struct SparkalColor*); // vtable+0xc8
 protected:
-	// vtable: 204
-	intro int32_t ConvertTypeToStringID(long);
-	// vtable: 208
-	intro void DrawTextOntoBox();
+	virtual int32_t ConvertTypeToStringID(long); // vtable+0xcc
+	virtual void DrawTextOntoBox(); // vtable+0xd0
 	long lMessageID;
 	class basic_string<char> sMessage;
 	class basic_string<char> sButtonImageFileName;
@@ -303,16 +300,15 @@ protected:
 };
 
 // Type: class MessageBoxWindowEdit (forward reference);
+// VTABLE: COPTER_D 0x005901f8
 class MessageBoxWindowEdit : public MessageBoxWindow
 {
 public:
 	void MessageBoxWindowEdit(class MPoint&, unsigned long, class basic_string<char>&, const class basic_string<char>&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *, char *);
 	void MessageBoxWindowEdit(class MPoint&, unsigned long, unsigned long, const class basic_string<char>&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *, char *);
-	virtual int32_t Initialize();
-	// vtable: 212
-	intro void GetEditText(char *, unsigned long);
-	// vtable: 216
-	intro void GetEditText(class basic_string<char>&);
+	virtual int32_t Initialize() /* override */;
+	virtual void GetEditText(char *, unsigned long); // vtable+0xd4
+	virtual void GetEditText(class basic_string<char>&); // vtable+0xd8
 protected:
 	class BoneheadTextEditWindow* myTextEditWindow;
 };
@@ -326,6 +322,7 @@ struct Point2d{
 };
 
 // Type: class DigitalSound (forward reference);
+// VTABLE: COPTER_D 0x0058f488
 class DigitalSound : public Sound
 {
 protected:
@@ -341,68 +338,44 @@ public:
 	void DigitalSound(long);
 	void DigitalSound(const class basic_string<char>&, int32_t);
 	void DigitalSound();
-	virtual void ~DigitalSound();
+	virtual void ~DigitalSound() /* override */;
 	class DigitalSound& operator=(class DigitalSound&);
-	// vtable: 44
-	intro void SetSoundFile(const class basic_string<char>&, int32_t);
-	// vtable: 48
-	intro int32_t Load();
-	// vtable: 52
-	intro int32_t LoadFromResource();
-	// vtable: 56
-	intro int32_t LoadFromFile();
-	// vtable: 60
-	intro void Unload();
-	virtual long Play(long, int32_t);
-	virtual long Stop();
-	// vtable: 64
-	intro long ShouldWeStream();
-	// vtable: 68
-	intro long PlayStream();
-	// vtable: 72
-	intro long StopStream();
+	virtual void SetSoundFile(const class basic_string<char>&, int32_t); // vtable+0x2c
+	virtual int32_t Load(); // vtable+0x30
+	virtual int32_t LoadFromResource(); // vtable+0x34
+	virtual int32_t LoadFromFile(); // vtable+0x38
+	virtual void Unload(); // vtable+0x3c
+	virtual long Play(long, int32_t) /* override */;
+	virtual long Stop() /* override */;
+	virtual long ShouldWeStream(); // vtable+0x40
+	virtual long PlayStream(); // vtable+0x44
+	virtual long StopStream(); // vtable+0x48
 protected:
-	// vtable: 76
-	intro long IsPlaying(struct IDirectSoundBuffer**);
+	virtual long IsPlaying(struct IDirectSoundBuffer**); // vtable+0x4c
 public:
-	virtual long IsPlaying();
-	virtual int32_t GetVolume(long *);
-	virtual int32_t SetVolume(long);
-	// vtable: 80
-	intro int32_t GetPan(long *);
-	// vtable: 84
-	intro int32_t SetPan(long);
-	// vtable: 88
-	intro int32_t SetPosition(long, long, long);
-	// vtable: 92
-	intro long GetOriginalFrequency();
-	// vtable: 96
-	intro int32_t GetFrequency(long *);
-	// vtable: 100
-	intro int32_t SetFrequency(long);
-	virtual int32_t GetSoundType();
-	virtual int32_t SetCompletionNotification(void (*)(long), long);
-	virtual void StopCompletionNotification();
-	virtual long EstimateRemainingPlayTime();
+	virtual long IsPlaying() /* override */;
+	virtual int32_t GetVolume(long *) /* override */;
+	virtual int32_t SetVolume(long) /* override */;
+	virtual int32_t GetPan(long *); // vtable+0x50
+	virtual int32_t SetPan(long); // vtable+0x54
+	virtual int32_t SetPosition(long, long, long); // vtable+0x58
+	virtual long GetOriginalFrequency(); // vtable+0x5c
+	virtual int32_t GetFrequency(long *); // vtable+0x60
+	virtual int32_t SetFrequency(long); // vtable+0x64
+	virtual int32_t GetSoundType() /* override */;
+	virtual int32_t SetCompletionNotification(void (*)(long), long) /* override */;
+	virtual void StopCompletionNotification() /* override */;
+	virtual long EstimateRemainingPlayTime() /* override */;
 protected:
-	// vtable: 104
-	intro int32_t GetSoundAliasToPlay(struct IDirectSoundBuffer**);
-	// vtable: 108
-	intro int32_t CreateSoundBuffer(struct _DSBUFFERDESC*);
-	// vtable: 112
-	intro int32_t CreatePrimarySoundBuffer();
-	// vtable: 116
-	intro int32_t ReleaseSoundBuffer();
-	// vtable: 120
-	intro long InitializeStreamBuffer(long);
-	// vtable: 124
-	intro void ProcessStreamingBufferTimerCallback();
-	// vtable: 128
-	intro void ProcessCompletionEstimationTimerCallback();
-	// vtable: 132
-	intro void StopCompletionNotificationEstimationTimer();
-	// vtable: 136
-	intro int32_t StartCompletionNotificationEstimationTimer();
+	virtual int32_t GetSoundAliasToPlay(struct IDirectSoundBuffer**); // vtable+0x68
+	virtual int32_t CreateSoundBuffer(struct _DSBUFFERDESC*); // vtable+0x6c
+	virtual int32_t CreatePrimarySoundBuffer(); // vtable+0x70
+	virtual int32_t ReleaseSoundBuffer(); // vtable+0x74
+	virtual long InitializeStreamBuffer(long); // vtable+0x78
+	virtual void ProcessStreamingBufferTimerCallback(); // vtable+0x7c
+	virtual void ProcessCompletionEstimationTimerCallback(); // vtable+0x80
+	virtual void StopCompletionNotificationEstimationTimer(); // vtable+0x84
+	virtual int32_t StartCompletionNotificationEstimationTimer(); // vtable+0x88
 };
 
 // Type: struct UserMenuWindowDescription;
@@ -425,37 +398,29 @@ struct UserMenuWindowDescription{
 };
 
 // Type: class UserMenuWindow (forward reference);
+// VTABLE: COPTER_D 0x005912f8
 class UserMenuWindow : public GraphicWindow
 {
 public:
 	void UserMenuWindow(struct UserMenuWindowDescription&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	void UserMenuWindow();
-	virtual void ~UserMenuWindow();
-	virtual int32_t Initialize();
-	virtual int32_t DrawSelf();
-	// vtable: 196
-	intro int32_t SetSelectionIndex(int32_t);
-	// vtable: 200
-	intro int32_t SetSelectionValue(int32_t);
-	// vtable: 204
-	intro int32_t GetSelectionIndex();
-	// vtable: 208
-	intro int32_t GetSelectionValue();
-	// vtable: 212
-	intro int32_t GetLineCount();
-	virtual long DoCharacter(long);
-	virtual long DoKeyDown(long, char);
-	virtual long DoCursorDown(long, long, unsigned long);
-	virtual long DoCursorMove(long, long);
-	// vtable: 216
-	intro int32_t ExecuteSelection(int32_t);
+	virtual void ~UserMenuWindow() /* override */;
+	virtual int32_t Initialize() /* override */;
+	virtual int32_t DrawSelf() /* override */;
+	virtual int32_t SetSelectionIndex(int32_t); // vtable+0xc4
+	virtual int32_t SetSelectionValue(int32_t); // vtable+0xc8
+	virtual int32_t GetSelectionIndex(); // vtable+0xcc
+	virtual int32_t GetSelectionValue(); // vtable+0xd0
+	virtual int32_t GetLineCount(); // vtable+0xd4
+	virtual long DoCharacter(long) /* override */;
+	virtual long DoKeyDown(long, char) /* override */;
+	virtual long DoCursorDown(long, long, unsigned long) /* override */;
+	virtual long DoCursorMove(long, long) /* override */;
+	virtual int32_t ExecuteSelection(int32_t); // vtable+0xd8
 protected:
-	// vtable: 220
-	intro void DrawSelectionIndicators();
-	// vtable: 224
-	intro int32_t DoCursorHitTest(int32_t&, long, long);
-	// vtable: 228
-	intro int32_t GetPositionOfNthItem(int32_t, class MPoint&);
+	virtual void DrawSelectionIndicators(); // vtable+0xdc
+	virtual int32_t DoCursorHitTest(int32_t&, long, long); // vtable+0xe0
+	virtual int32_t GetPositionOfNthItem(int32_t, class MPoint&); // vtable+0xe4
 	struct UserMenuWindowDescription myUserMenuWindowDescription;
 	class vector<TextWindow *> myTextWindowPtrArray;
 	int32_t nCurrentSelection;
@@ -463,6 +428,7 @@ protected:
 };
 
 // Type: class UserInputWindow (forward reference);
+// VTABLE: COPTER_D 0x0058f228
 class UserInputWindow : public GraphicWindow
 {
 	enum KeyUsageType {
@@ -473,17 +439,13 @@ class UserInputWindow : public GraphicWindow
 	};
 public:
 	void UserInputWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
-	virtual int32_t Initialize();
-	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32);
-	virtual long DoKeyDown(long, char);
-	// vtable: 196
-	intro void SetupAllInputDevices();
-	// vtable: 200
-	intro void SetupAllCommands();
-	// vtable: 204
-	intro void ReadShortcuts(class list<Shortcut>&);
-	// vtable: 208
-	intro void WriteShortcutsToPreferenceFile();
+	virtual int32_t Initialize() /* override */;
+	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32) /* override */;
+	virtual long DoKeyDown(long, char) /* override */;
+	virtual void SetupAllInputDevices(); // vtable+0xc4
+	virtual void SetupAllCommands(); // vtable+0xc8
+	virtual void ReadShortcuts(class list<Shortcut>&); // vtable+0xcc
+	virtual void WriteShortcutsToPreferenceFile(); // vtable+0xd0
 	int32_t HaveCommandsChanged();
 	long GetCurrentDevice();
 	long GetCurrentCommand();
@@ -514,19 +476,20 @@ protected:
 };
 
 // Type: class RenderSettingsWindow (forward reference);
+// VTABLE: COPTER_D 0x0058fc20
 class RenderSettingsWindow : public GraphicWindow
 {
 public:
 	void RenderSettingsWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
-	virtual void ~RenderSettingsWindow();
-	virtual int32_t Initialize();
-	virtual int32_t CreateImage(int32_t);
-	virtual void DestroyImage();
-	virtual int32_t DrawSelf();
+	virtual void ~RenderSettingsWindow() /* override */;
+	virtual int32_t Initialize() /* override */;
+	virtual int32_t CreateImage(int32_t) /* override */;
+	virtual void DestroyImage() /* override */;
+	virtual int32_t DrawSelf() /* override */;
 	int32_t SetCurrentSettings(long, long, long, long, long);
 	void GetCurrentSettings(long&, long&, long&, long&, long&);
-	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32);
-	virtual long DoKeyDown(long, char);
+	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32) /* override */;
+	virtual long DoKeyDown(long, char) /* override */;
 	long bShowBuildingTextures;
 	long bShowGroundTextures;
 	long bShowSkyAndClouds;
@@ -548,17 +511,18 @@ protected:
 };
 
 // Type: class SoundSettingsWindow (forward reference);
+// VTABLE: COPTER_D 0x0058fce8
 class SoundSettingsWindow : public GraphicWindow
 {
 public:
 	void SoundSettingsWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
-	virtual int32_t Initialize();
+	virtual int32_t Initialize() /* override */;
 	int32_t SetCurrentVolumeSettings(struct SoundPreferences&);
 	int32_t SetCurrentRadioSettings(struct RadioPreferences&, long);
 	void GetCurrentVolumeSettings(struct SoundPreferences&);
 	void GetCurrentRadioSettings(struct RadioPreferences&);
-	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32);
-	virtual long DoKeyDown(long, char);
+	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32) /* override */;
+	virtual long DoKeyDown(long, char) /* override */;
 	// calltype: NearC
 	static long ConvertSoundValueToSliderValue(long);
 	// calltype: NearC
@@ -591,28 +555,29 @@ struct SoundPreferences{
 };
 
 // Type: class CitySettingsWindow (forward reference);
+// VTABLE: COPTER_D 0x0058fdd0
 class CitySettingsWindow : public GraphicWindow
 {
 public:
 	void CitySettingsWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
-	virtual int32_t Initialize();
+	virtual int32_t Initialize() /* override */;
 	void SetCurrentCitySettings(struct tagCitySettings*);
 	void GetCurrentCitySettings(struct tagCitySettings*);
-	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32);
-	virtual long DoKeyDown(long, char);
+	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32) /* override */;
+	virtual long DoKeyDown(long, char) /* override */;
 protected:
 	class SliderWindow* mySliderWindows[8];
 };
 
 // Type: class ControlDisplayWindow (forward reference);
+// VTABLE: COPTER_D 0x0058f300
 class ControlDisplayWindow : public GraphicWindow
 {
 public:
 	void ControlDisplayWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
-	virtual int32_t Initialize();
-	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32);
-	// vtable: 196
-	intro void ReadShortcuts(class list<Shortcut>*);
+	virtual int32_t Initialize() /* override */;
+	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32) /* override */;
+	virtual void ReadShortcuts(class list<Shortcut>*); // vtable+0xc4
 protected:
 	void GetCommandString(class basic_string<char>&, long);
 	void AppendKeysString(class basic_string<char>&, long, long, int32_t);
@@ -622,15 +587,16 @@ protected:
 };
 
 // Type: class CheckupWindow (forward reference);
+// VTABLE: COPTER_D 0x005903a0
 class CheckupWindow : public GraphicWindow
 {
 public:
 	void CheckupWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
-	virtual int32_t Initialize();
+	virtual int32_t Initialize() /* override */;
 	void SetCurrentSettings(long *);
 	void GetCurrentSettings(long *);
-	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32);
-	virtual long DoKeyDown(long, char);
+	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32) /* override */;
+	virtual long DoKeyDown(long, char) /* override */;
 	void SetTextControlsBasedOnCurrentSliderValues();
 	void SetAllControlValuesToDefaults();
 	// calltype: NearC
@@ -645,6 +611,7 @@ protected:
 // GraphicWindow Class implementation not found
 
 // Type: class Sound;
+// VTABLE: COPTER_D 0x0058f458
 class Sound{
 	enum SoundSourceType {
 		nSoundSourceTypeResource = 0,
@@ -669,52 +636,38 @@ public:
 	void (*soundCompletionFunction)(long);
 	long lSoundCompletionData;
 	void Sound();
-	// vtable: 0
-	intro void ~Sound();
+	virtual void ~Sound(); // vtable+0x0
 	class Sound& operator=(const class Sound&);
-	// vtable: 4
-	intro void SetSoundFile(const class basic_string<char>&);
-	// vtable: 8
-	intro long Play(long, int32_t);
-	// vtable: 12
-	intro long Stop();
-	// vtable: 16
-	intro long IsPlaying();
-	// vtable: 20
-	intro int32_t SetCompletionNotification(void (*)(long), long);
-	// vtable: 24
-	intro void StopCompletionNotification();
-	// vtable: 28
-	intro long EstimateRemainingPlayTime();
-	// vtable: 32
-	intro int32_t GetVolume(long *);
-	// vtable: 36
-	intro int32_t SetVolume(long);
-	// vtable: 40
-	intro int32_t GetSoundType();
+	virtual void SetSoundFile(const class basic_string<char>&); // vtable+0x4
+	virtual long Play(long, int32_t); // vtable+0x8
+	virtual long Stop(); // vtable+0xc
+	virtual long IsPlaying(); // vtable+0x10
+	virtual int32_t SetCompletionNotification(void (*)(long), long); // vtable+0x14
+	virtual void StopCompletionNotification(); // vtable+0x18
+	virtual long EstimateRemainingPlayTime(); // vtable+0x1c
+	virtual int32_t GetVolume(long *); // vtable+0x20
+	virtual int32_t SetVolume(long); // vtable+0x24
+	virtual int32_t GetSoundType(); // vtable+0x28
 	// calltype: NearC
 	static unsigned long GetTotalMemoryUsage();
 	static unsigned long lTotalMemoryUsage;
 };
 
 // Type: class MessageBoxWindow;
+// VTABLE: COPTER_D 0x0058fa80
 class MessageBoxWindow : public GraphicWindow
 {
 public:
 	void MessageBoxWindow(class MPoint&, unsigned long, class basic_string<char>&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *);
 	void MessageBoxWindow(class MPoint&, unsigned long, unsigned long, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *);
-	virtual int32_t Initialize();
-	virtual long DoKeyDown(long, char);
-	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32);
-	// vtable: 196
-	intro void SetTextColor(const struct SparkalColor&);
-	// vtable: 200
-	intro void SetButtonTextColor(const struct SparkalColor*, const struct SparkalColor*);
+	virtual int32_t Initialize() /* override */;
+	virtual long DoKeyDown(long, char) /* override */;
+	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32) /* override */;
+	virtual void SetTextColor(const struct SparkalColor&); // vtable+0xc4
+	virtual void SetButtonTextColor(const struct SparkalColor*, const struct SparkalColor*); // vtable+0xc8
 protected:
-	// vtable: 204
-	intro int32_t ConvertTypeToStringID(long);
-	// vtable: 208
-	intro void DrawTextOntoBox();
+	virtual int32_t ConvertTypeToStringID(long); // vtable+0xcc
+	virtual void DrawTextOntoBox(); // vtable+0xd0
 	long lMessageID;
 	class basic_string<char> sMessage;
 	class basic_string<char> sButtonImageFileName;

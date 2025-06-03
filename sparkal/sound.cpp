@@ -8,48 +8,39 @@
 struct IDirectSound : public IUnknown
 {
 	// calltype: NearStd
-	virtual long QueryInterface(const struct _GUID&, void * __ptr32*);
+	virtual long QueryInterface(const struct _GUID&, void * __ptr32*) /* override */;
 	// calltype: NearStd
-	virtual unsigned long AddRef();
+	virtual unsigned long AddRef() /* override */;
 	// calltype: NearStd
-	virtual unsigned long Release();
-	// vtable: 12
+	virtual unsigned long Release() /* override */;
 	// calltype: NearStd
-	intro long CreateSoundBuffer(struct _DSBUFFERDESC*, struct IDirectSoundBuffer**, struct IUnknown*);
-	// vtable: 16
+	virtual long CreateSoundBuffer(struct _DSBUFFERDESC*, struct IDirectSoundBuffer**, struct IUnknown*); // vtable+0xc
 	// calltype: NearStd
-	intro long GetCaps(struct _DSCAPS*);
-	// vtable: 20
+	virtual long GetCaps(struct _DSCAPS*); // vtable+0x10
 	// calltype: NearStd
-	intro long DuplicateSoundBuffer(struct IDirectSoundBuffer*, struct IDirectSoundBuffer**);
-	// vtable: 24
+	virtual long DuplicateSoundBuffer(struct IDirectSoundBuffer*, struct IDirectSoundBuffer**); // vtable+0x14
 	// calltype: NearStd
-	intro long SetCooperativeLevel(void * __ptr32, unsigned long);
-	// vtable: 28
+	virtual long SetCooperativeLevel(void * __ptr32, unsigned long); // vtable+0x18
 	// calltype: NearStd
-	intro long Compact();
-	// vtable: 32
+	virtual long Compact(); // vtable+0x1c
 	// calltype: NearStd
-	intro long GetSpeakerConfig(unsigned long *);
-	// vtable: 36
+	virtual long GetSpeakerConfig(unsigned long *); // vtable+0x20
 	// calltype: NearStd
-	intro long SetSpeakerConfig(unsigned long);
-	// vtable: 40
+	virtual long SetSpeakerConfig(unsigned long); // vtable+0x24
 	// calltype: NearStd
-	intro long Initialize(struct _GUID*);
+	virtual long Initialize(struct _GUID*); // vtable+0x28
 };
 
 // Type: class SoundSystem (forward reference);
+// VTABLE: COPTER_D 0x0058f440
 class SoundSystem{
 public:
 	void SoundSystem();
 	void ~SoundSystem();
 	int32_t Initialize(void * __ptr32);
 	void DeInitialize();
-	// vtable: 0
-	intro int32_t GetVolume(long *);
-	// vtable: 4
-	intro int32_t SetVolume(long);
+	virtual int32_t GetVolume(long *); // vtable+0x0
+	virtual int32_t SetVolume(long); // vtable+0x4
 	void EnableSound();
 	void DisableSound();
 	long IsSoundEnabled();
@@ -73,26 +64,24 @@ protected:
 // Type: long *;
 
 // Type: class SoundManager (forward reference);
+// VTABLE: COPTER_D 0x0058f448
 class SoundManager{
 public:
 	class Sound* sound[128];
 	void AddSound(class Sound*, int32_t);
 	void AddDigitalSound(const class basic_string<char>&, int32_t, int32_t);
 	void AddDigitalSound(long, int32_t);
-	// vtable: 0
-	intro long PlaySoundA(int32_t, long, int32_t);
-	// vtable: 4
-	intro void StopSound(int32_t);
-	// vtable: 8
-	intro void StopAllSounds();
+	virtual long PlaySoundA(int32_t, long, int32_t); // vtable+0x0
+	virtual void StopSound(int32_t); // vtable+0x4
+	virtual void StopAllSounds(); // vtable+0x8
 	class Sound* GetSound(int32_t);
 	void SoundManager();
 	void ~SoundManager();
-	// vtable: 12
-	intro void DeleteAllSounds();
+	virtual void DeleteAllSounds(); // vtable+0xc
 };
 
 // Type: class Sound (forward reference);
+// VTABLE: COPTER_D 0x0058f458
 class Sound{
 	enum SoundSourceType {
 		nSoundSourceTypeResource = 0,
@@ -118,35 +107,25 @@ public:
 	long lSoundCompletionData;
 	int32_t bUnloadBeforeNextPlay;
 	void Sound();
-	// vtable: 0
-	intro void ~Sound();
+	virtual void ~Sound(); // vtable+0x0
 	class Sound& operator=(const class Sound&);
-	// vtable: 4
-	intro void SetSoundFile(const class basic_string<char>&);
-	// vtable: 8
-	intro long Play(long, int32_t);
-	// vtable: 12
-	intro long Stop();
-	// vtable: 16
-	intro long IsPlaying();
-	// vtable: 20
-	intro int32_t SetCompletionNotification(void (*)(long), long);
-	// vtable: 24
-	intro void StopCompletionNotification();
-	// vtable: 28
-	intro long EstimateRemainingPlayTime();
-	// vtable: 32
-	intro int32_t GetVolume(long *);
-	// vtable: 36
-	intro int32_t SetVolume(long);
-	// vtable: 40
-	intro int32_t GetSoundType();
+	virtual void SetSoundFile(const class basic_string<char>&); // vtable+0x4
+	virtual long Play(long, int32_t); // vtable+0x8
+	virtual long Stop(); // vtable+0xc
+	virtual long IsPlaying(); // vtable+0x10
+	virtual int32_t SetCompletionNotification(void (*)(long), long); // vtable+0x14
+	virtual void StopCompletionNotification(); // vtable+0x18
+	virtual long EstimateRemainingPlayTime(); // vtable+0x1c
+	virtual int32_t GetVolume(long *); // vtable+0x20
+	virtual int32_t SetVolume(long); // vtable+0x24
+	virtual int32_t GetSoundType(); // vtable+0x28
 	// calltype: NearC
 	static unsigned long GetTotalMemoryUsage();
 	static unsigned long lTotalMemoryUsage;
 };
 
 // Type: class DigitalSound (forward reference);
+// VTABLE: COPTER_D 0x0058f488
 class DigitalSound : public Sound
 {
 protected:
@@ -162,68 +141,44 @@ public:
 	void DigitalSound(long);
 	void DigitalSound(const class basic_string<char>&, int32_t);
 	void DigitalSound();
-	virtual void ~DigitalSound();
+	virtual void ~DigitalSound() /* override */;
 	class DigitalSound& operator=(class DigitalSound&);
-	// vtable: 44
-	intro void SetSoundFile(const class basic_string<char>&, int32_t);
-	// vtable: 48
-	intro int32_t Load();
-	// vtable: 52
-	intro int32_t LoadFromResource();
-	// vtable: 56
-	intro int32_t LoadFromFile();
-	// vtable: 60
-	intro void Unload();
-	virtual long Play(long, int32_t);
-	virtual long Stop();
-	// vtable: 64
-	intro long ShouldWeStream();
-	// vtable: 68
-	intro long PlayStream();
-	// vtable: 72
-	intro long StopStream();
+	virtual void SetSoundFile(const class basic_string<char>&, int32_t); // vtable+0x2c
+	virtual int32_t Load(); // vtable+0x30
+	virtual int32_t LoadFromResource(); // vtable+0x34
+	virtual int32_t LoadFromFile(); // vtable+0x38
+	virtual void Unload(); // vtable+0x3c
+	virtual long Play(long, int32_t) /* override */;
+	virtual long Stop() /* override */;
+	virtual long ShouldWeStream(); // vtable+0x40
+	virtual long PlayStream(); // vtable+0x44
+	virtual long StopStream(); // vtable+0x48
 protected:
-	// vtable: 76
-	intro long IsPlaying(struct IDirectSoundBuffer**);
+	virtual long IsPlaying(struct IDirectSoundBuffer**); // vtable+0x4c
 public:
-	virtual long IsPlaying();
-	virtual int32_t GetVolume(long *);
-	virtual int32_t SetVolume(long);
-	// vtable: 80
-	intro int32_t GetPan(long *);
-	// vtable: 84
-	intro int32_t SetPan(long);
-	// vtable: 88
-	intro int32_t SetPosition(long, long, long);
-	// vtable: 92
-	intro long GetOriginalFrequency();
-	// vtable: 96
-	intro int32_t GetFrequency(long *);
-	// vtable: 100
-	intro int32_t SetFrequency(long);
-	virtual int32_t GetSoundType();
-	virtual int32_t SetCompletionNotification(void (*)(long), long);
-	virtual void StopCompletionNotification();
-	virtual long EstimateRemainingPlayTime();
+	virtual long IsPlaying() /* override */;
+	virtual int32_t GetVolume(long *) /* override */;
+	virtual int32_t SetVolume(long) /* override */;
+	virtual int32_t GetPan(long *); // vtable+0x50
+	virtual int32_t SetPan(long); // vtable+0x54
+	virtual int32_t SetPosition(long, long, long); // vtable+0x58
+	virtual long GetOriginalFrequency(); // vtable+0x5c
+	virtual int32_t GetFrequency(long *); // vtable+0x60
+	virtual int32_t SetFrequency(long); // vtable+0x64
+	virtual int32_t GetSoundType() /* override */;
+	virtual int32_t SetCompletionNotification(void (*)(long), long) /* override */;
+	virtual void StopCompletionNotification() /* override */;
+	virtual long EstimateRemainingPlayTime() /* override */;
 protected:
-	// vtable: 104
-	intro int32_t GetSoundAliasToPlay(struct IDirectSoundBuffer**);
-	// vtable: 108
-	intro int32_t CreateSoundBuffer(struct _DSBUFFERDESC*);
-	// vtable: 112
-	intro int32_t CreatePrimarySoundBuffer();
-	// vtable: 116
-	intro int32_t ReleaseSoundBuffer();
-	// vtable: 120
-	intro long InitializeStreamBuffer(long);
-	// vtable: 124
-	intro void ProcessStreamingBufferTimerCallback();
-	// vtable: 128
-	intro void ProcessCompletionEstimationTimerCallback();
-	// vtable: 132
-	intro void StopCompletionNotificationEstimationTimer();
-	// vtable: 136
-	intro int32_t StartCompletionNotificationEstimationTimer();
+	virtual int32_t GetSoundAliasToPlay(struct IDirectSoundBuffer**); // vtable+0x68
+	virtual int32_t CreateSoundBuffer(struct _DSBUFFERDESC*); // vtable+0x6c
+	virtual int32_t CreatePrimarySoundBuffer(); // vtable+0x70
+	virtual int32_t ReleaseSoundBuffer(); // vtable+0x74
+	virtual long InitializeStreamBuffer(long); // vtable+0x78
+	virtual void ProcessStreamingBufferTimerCallback(); // vtable+0x7c
+	virtual void ProcessCompletionEstimationTimerCallback(); // vtable+0x80
+	virtual void StopCompletionNotificationEstimationTimer(); // vtable+0x84
+	virtual int32_t StartCompletionNotificationEstimationTimer(); // vtable+0x88
 };
 
 // Type: class basic_string<char> (forward reference);
@@ -366,65 +321,47 @@ struct _DSBUFFERDESC{
 struct IDirectSoundBuffer : public IUnknown
 {
 	// calltype: NearStd
-	virtual long QueryInterface(const struct _GUID&, void * __ptr32*);
+	virtual long QueryInterface(const struct _GUID&, void * __ptr32*) /* override */;
 	// calltype: NearStd
-	virtual unsigned long AddRef();
+	virtual unsigned long AddRef() /* override */;
 	// calltype: NearStd
-	virtual unsigned long Release();
-	// vtable: 12
+	virtual unsigned long Release() /* override */;
 	// calltype: NearStd
-	intro long GetCaps(struct _DSBCAPS*);
-	// vtable: 16
+	virtual long GetCaps(struct _DSBCAPS*); // vtable+0xc
 	// calltype: NearStd
-	intro long GetCurrentPosition(unsigned long *, unsigned long *);
-	// vtable: 20
+	virtual long GetCurrentPosition(unsigned long *, unsigned long *); // vtable+0x10
 	// calltype: NearStd
-	intro long GetFormat(struct tWAVEFORMATEX*, unsigned long, unsigned long *);
-	// vtable: 24
+	virtual long GetFormat(struct tWAVEFORMATEX*, unsigned long, unsigned long *); // vtable+0x14
 	// calltype: NearStd
-	intro long GetVolume(long *);
-	// vtable: 28
+	virtual long GetVolume(long *); // vtable+0x18
 	// calltype: NearStd
-	intro long GetPan(long *);
-	// vtable: 32
+	virtual long GetPan(long *); // vtable+0x1c
 	// calltype: NearStd
-	intro long GetFrequency(unsigned long *);
-	// vtable: 36
+	virtual long GetFrequency(unsigned long *); // vtable+0x20
 	// calltype: NearStd
-	intro long GetStatus(unsigned long *);
-	// vtable: 40
+	virtual long GetStatus(unsigned long *); // vtable+0x24
 	// calltype: NearStd
-	intro long Initialize(struct IDirectSound*, struct _DSBUFFERDESC*);
-	// vtable: 44
+	virtual long Initialize(struct IDirectSound*, struct _DSBUFFERDESC*); // vtable+0x28
 	// calltype: NearStd
-	intro long Lock(unsigned long, unsigned long, void * __ptr32, unsigned long *, void * __ptr32, unsigned long *, unsigned long);
-	// vtable: 48
+	virtual long Lock(unsigned long, unsigned long, void * __ptr32, unsigned long *, void * __ptr32, unsigned long *, unsigned long); // vtable+0x2c
 	// calltype: NearStd
-	intro long Play(unsigned long, unsigned long, unsigned long);
-	// vtable: 52
+	virtual long Play(unsigned long, unsigned long, unsigned long); // vtable+0x30
 	// calltype: NearStd
-	intro long SetCurrentPosition(unsigned long);
-	// vtable: 56
+	virtual long SetCurrentPosition(unsigned long); // vtable+0x34
 	// calltype: NearStd
-	intro long SetFormat(struct tWAVEFORMATEX*);
-	// vtable: 60
+	virtual long SetFormat(struct tWAVEFORMATEX*); // vtable+0x38
 	// calltype: NearStd
-	intro long SetVolume(long);
-	// vtable: 64
+	virtual long SetVolume(long); // vtable+0x3c
 	// calltype: NearStd
-	intro long SetPan(long);
-	// vtable: 68
+	virtual long SetPan(long); // vtable+0x40
 	// calltype: NearStd
-	intro long SetFrequency(unsigned long);
-	// vtable: 72
+	virtual long SetFrequency(unsigned long); // vtable+0x44
 	// calltype: NearStd
-	intro long Stop();
-	// vtable: 76
+	virtual long Stop(); // vtable+0x48
 	// calltype: NearStd
-	intro long Unlock(void * __ptr32, unsigned long, void * __ptr32, unsigned long);
-	// vtable: 80
+	virtual long Unlock(void * __ptr32, unsigned long, void * __ptr32, unsigned long); // vtable+0x4c
 	// calltype: NearStd
-	intro long Restore();
+	virtual long Restore(); // vtable+0x50
 };
 
 // Type: struct _OFSTRUCT;
@@ -441,18 +378,16 @@ struct _OFSTRUCT{
 
 // Type: struct IUnknown;
 struct IUnknown{
-	// vtable: 0
 	// calltype: NearStd
-	intro long QueryInterface(const struct _GUID&, void * __ptr32*);
-	// vtable: 4
+	virtual long QueryInterface(const struct _GUID&, void * __ptr32*); // vtable+0x0
 	// calltype: NearStd
-	intro unsigned long AddRef();
-	// vtable: 8
+	virtual unsigned long AddRef(); // vtable+0x4
 	// calltype: NearStd
-	intro unsigned long Release();
+	virtual unsigned long Release(); // vtable+0x8
 };
 
 // Type: class Sound;
+// VTABLE: COPTER_D 0x0058f458
 class Sound{
 	enum SoundSourceType {
 		nSoundSourceTypeResource = 0,
@@ -477,29 +412,18 @@ public:
 	void (*soundCompletionFunction)(long);
 	long lSoundCompletionData;
 	void Sound();
-	// vtable: 0
-	intro void ~Sound();
+	virtual void ~Sound(); // vtable+0x0
 	class Sound& operator=(const class Sound&);
-	// vtable: 4
-	intro void SetSoundFile(const class basic_string<char>&);
-	// vtable: 8
-	intro long Play(long, int32_t);
-	// vtable: 12
-	intro long Stop();
-	// vtable: 16
-	intro long IsPlaying();
-	// vtable: 20
-	intro int32_t SetCompletionNotification(void (*)(long), long);
-	// vtable: 24
-	intro void StopCompletionNotification();
-	// vtable: 28
-	intro long EstimateRemainingPlayTime();
-	// vtable: 32
-	intro int32_t GetVolume(long *);
-	// vtable: 36
-	intro int32_t SetVolume(long);
-	// vtable: 40
-	intro int32_t GetSoundType();
+	virtual void SetSoundFile(const class basic_string<char>&); // vtable+0x4
+	virtual long Play(long, int32_t); // vtable+0x8
+	virtual long Stop(); // vtable+0xc
+	virtual long IsPlaying(); // vtable+0x10
+	virtual int32_t SetCompletionNotification(void (*)(long), long); // vtable+0x14
+	virtual void StopCompletionNotification(); // vtable+0x18
+	virtual long EstimateRemainingPlayTime(); // vtable+0x1c
+	virtual int32_t GetVolume(long *); // vtable+0x20
+	virtual int32_t SetVolume(long); // vtable+0x24
+	virtual int32_t GetSoundType(); // vtable+0x28
 	// calltype: NearC
 	static unsigned long GetTotalMemoryUsage();
 	static unsigned long lTotalMemoryUsage;

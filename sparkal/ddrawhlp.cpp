@@ -6,94 +6,70 @@
 struct IDirectDraw : public IUnknown
 {
 	// calltype: NearStd
-	virtual long QueryInterface(const struct _GUID&, void * __ptr32*);
+	virtual long QueryInterface(const struct _GUID&, void * __ptr32*) /* override */;
 	// calltype: NearStd
-	virtual unsigned long AddRef();
+	virtual unsigned long AddRef() /* override */;
 	// calltype: NearStd
-	virtual unsigned long Release();
-	// vtable: 12
+	virtual unsigned long Release() /* override */;
 	// calltype: NearStd
-	intro long Compact();
-	// vtable: 16
+	virtual long Compact(); // vtable+0xc
 	// calltype: NearStd
-	intro long CreateClipper(unsigned long, struct IDirectDrawClipper**, struct IUnknown*);
-	// vtable: 20
+	virtual long CreateClipper(unsigned long, struct IDirectDrawClipper**, struct IUnknown*); // vtable+0x10
 	// calltype: NearStd
-	intro long CreatePalette(unsigned long, struct tagPALETTEENTRY*, struct IDirectDrawPalette**, struct IUnknown*);
-	// vtable: 24
+	virtual long CreatePalette(unsigned long, struct tagPALETTEENTRY*, struct IDirectDrawPalette**, struct IUnknown*); // vtable+0x14
 	// calltype: NearStd
-	intro long CreateSurface(struct _DDSURFACEDESC*, struct IDirectDrawSurface**, struct IUnknown*);
-	// vtable: 28
+	virtual long CreateSurface(struct _DDSURFACEDESC*, struct IDirectDrawSurface**, struct IUnknown*); // vtable+0x18
 	// calltype: NearStd
-	intro long DuplicateSurface(struct IDirectDrawSurface*, struct IDirectDrawSurface**);
-	// vtable: 32
+	virtual long DuplicateSurface(struct IDirectDrawSurface*, struct IDirectDrawSurface**); // vtable+0x1c
 	// calltype: NearStd
-	intro long EnumDisplayModes(unsigned long, struct _DDSURFACEDESC*, void * __ptr32, long (*)(struct _DDSURFACEDESC*, void * __ptr32));
-	// vtable: 36
+	virtual long EnumDisplayModes(unsigned long, struct _DDSURFACEDESC*, void * __ptr32, long (*)(struct _DDSURFACEDESC*, void * __ptr32)); // vtable+0x20
 	// calltype: NearStd
-	intro long EnumSurfaces(unsigned long, struct _DDSURFACEDESC*, void * __ptr32, long (*)(struct IDirectDrawSurface*, struct _DDSURFACEDESC*, void * __ptr32));
-	// vtable: 40
+	virtual long EnumSurfaces(unsigned long, struct _DDSURFACEDESC*, void * __ptr32, long (*)(struct IDirectDrawSurface*, struct _DDSURFACEDESC*, void * __ptr32)); // vtable+0x24
 	// calltype: NearStd
-	intro long FlipToGDISurface();
-	// vtable: 44
+	virtual long FlipToGDISurface(); // vtable+0x28
 	// calltype: NearStd
-	intro long GetCaps(struct _DDCAPS*, struct _DDCAPS*);
-	// vtable: 48
+	virtual long GetCaps(struct _DDCAPS*, struct _DDCAPS*); // vtable+0x2c
 	// calltype: NearStd
-	intro long GetDisplayMode(struct _DDSURFACEDESC*);
-	// vtable: 52
+	virtual long GetDisplayMode(struct _DDSURFACEDESC*); // vtable+0x30
 	// calltype: NearStd
-	intro long GetFourCCCodes(unsigned long *, unsigned long *);
-	// vtable: 56
+	virtual long GetFourCCCodes(unsigned long *, unsigned long *); // vtable+0x34
 	// calltype: NearStd
-	intro long GetGDISurface(struct IDirectDrawSurface**);
-	// vtable: 60
+	virtual long GetGDISurface(struct IDirectDrawSurface**); // vtable+0x38
 	// calltype: NearStd
-	intro long GetMonitorFrequency(unsigned long *);
-	// vtable: 64
+	virtual long GetMonitorFrequency(unsigned long *); // vtable+0x3c
 	// calltype: NearStd
-	intro long GetScanLine(unsigned long *);
-	// vtable: 68
+	virtual long GetScanLine(unsigned long *); // vtable+0x40
 	// calltype: NearStd
-	intro long GetVerticalBlankStatus(int32_t *);
-	// vtable: 72
+	virtual long GetVerticalBlankStatus(int32_t *); // vtable+0x44
 	// calltype: NearStd
-	intro long Initialize(struct _GUID*);
-	// vtable: 76
+	virtual long Initialize(struct _GUID*); // vtable+0x48
 	// calltype: NearStd
-	intro long RestoreDisplayMode();
-	// vtable: 80
+	virtual long RestoreDisplayMode(); // vtable+0x4c
 	// calltype: NearStd
-	intro long SetCooperativeLevel(void * __ptr32, unsigned long);
-	// vtable: 84
+	virtual long SetCooperativeLevel(void * __ptr32, unsigned long); // vtable+0x50
 	// calltype: NearStd
-	intro long SetDisplayMode(unsigned long, unsigned long, unsigned long);
-	// vtable: 88
+	virtual long SetDisplayMode(unsigned long, unsigned long, unsigned long); // vtable+0x54
 	// calltype: NearStd
-	intro long WaitForVerticalBlank(unsigned long, void * __ptr32);
+	virtual long WaitForVerticalBlank(unsigned long, void * __ptr32); // vtable+0x58
 };
 
 // Type: struct IDirectDrawPalette (forward reference);
 struct IDirectDrawPalette : public IUnknown
 {
 	// calltype: NearStd
-	virtual long QueryInterface(const struct _GUID&, void * __ptr32*);
+	virtual long QueryInterface(const struct _GUID&, void * __ptr32*) /* override */;
 	// calltype: NearStd
-	virtual unsigned long AddRef();
+	virtual unsigned long AddRef() /* override */;
 	// calltype: NearStd
-	virtual unsigned long Release();
-	// vtable: 12
+	virtual unsigned long Release() /* override */;
 	// calltype: NearStd
-	intro long GetCaps(unsigned long *);
-	// vtable: 16
+	virtual long GetCaps(unsigned long *); // vtable+0xc
 	// calltype: NearStd
-	intro long GetEntries(unsigned long, unsigned long, unsigned long, struct tagPALETTEENTRY*);
-	// vtable: 20
+	virtual long GetEntries(unsigned long, unsigned long, unsigned long, struct tagPALETTEENTRY*); // vtable+0x10
 	// calltype: NearStd
-	intro long Initialize(struct IDirectDraw*, unsigned long, struct tagPALETTEENTRY*);
-	// vtable: 24
+	virtual long Initialize(struct IDirectDraw*, unsigned long, struct tagPALETTEENTRY*); // vtable+0x14
 	// calltype: NearStd
-	intro long SetEntries(unsigned long, unsigned long, unsigned long, struct tagPALETTEENTRY*);
+	virtual long SetEntries(unsigned long, unsigned long, unsigned long, struct tagPALETTEENTRY*); // vtable+0x18
 };
 
 // Type: struct _DDCAPS;
@@ -144,110 +120,77 @@ struct _DDCAPS{
 struct IDirectDrawSurface : public IUnknown
 {
 	// calltype: NearStd
-	virtual long QueryInterface(const struct _GUID&, void * __ptr32*);
+	virtual long QueryInterface(const struct _GUID&, void * __ptr32*) /* override */;
 	// calltype: NearStd
-	virtual unsigned long AddRef();
+	virtual unsigned long AddRef() /* override */;
 	// calltype: NearStd
-	virtual unsigned long Release();
-	// vtable: 12
+	virtual unsigned long Release() /* override */;
 	// calltype: NearStd
-	intro long AddAttachedSurface(struct IDirectDrawSurface*);
-	// vtable: 16
+	virtual long AddAttachedSurface(struct IDirectDrawSurface*); // vtable+0xc
 	// calltype: NearStd
-	intro long AddOverlayDirtyRect(struct tagRECT*);
-	// vtable: 20
+	virtual long AddOverlayDirtyRect(struct tagRECT*); // vtable+0x10
 	// calltype: NearStd
-	intro long Blt(struct tagRECT*, struct IDirectDrawSurface*, struct tagRECT*, unsigned long, struct _DDBLTFX*);
-	// vtable: 24
+	virtual long Blt(struct tagRECT*, struct IDirectDrawSurface*, struct tagRECT*, unsigned long, struct _DDBLTFX*); // vtable+0x14
 	// calltype: NearStd
-	intro long BltBatch(struct _DDBLTBATCH*, unsigned long, unsigned long);
-	// vtable: 28
+	virtual long BltBatch(struct _DDBLTBATCH*, unsigned long, unsigned long); // vtable+0x18
 	// calltype: NearStd
-	intro long BltFast(unsigned long, unsigned long, struct IDirectDrawSurface*, struct tagRECT*, unsigned long);
-	// vtable: 32
+	virtual long BltFast(unsigned long, unsigned long, struct IDirectDrawSurface*, struct tagRECT*, unsigned long); // vtable+0x1c
 	// calltype: NearStd
-	intro long DeleteAttachedSurface(unsigned long, struct IDirectDrawSurface*);
-	// vtable: 36
+	virtual long DeleteAttachedSurface(unsigned long, struct IDirectDrawSurface*); // vtable+0x20
 	// calltype: NearStd
-	intro long EnumAttachedSurfaces(void * __ptr32, long (*)(struct IDirectDrawSurface*, struct _DDSURFACEDESC*, void * __ptr32));
-	// vtable: 40
+	virtual long EnumAttachedSurfaces(void * __ptr32, long (*)(struct IDirectDrawSurface*, struct _DDSURFACEDESC*, void * __ptr32)); // vtable+0x24
 	// calltype: NearStd
-	intro long EnumOverlayZOrders(unsigned long, void * __ptr32, long (*)(struct IDirectDrawSurface*, struct _DDSURFACEDESC*, void * __ptr32));
-	// vtable: 44
+	virtual long EnumOverlayZOrders(unsigned long, void * __ptr32, long (*)(struct IDirectDrawSurface*, struct _DDSURFACEDESC*, void * __ptr32)); // vtable+0x28
 	// calltype: NearStd
-	intro long Flip(struct IDirectDrawSurface*, unsigned long);
-	// vtable: 48
+	virtual long Flip(struct IDirectDrawSurface*, unsigned long); // vtable+0x2c
 	// calltype: NearStd
-	intro long GetAttachedSurface(struct _DDSCAPS*, struct IDirectDrawSurface**);
-	// vtable: 52
+	virtual long GetAttachedSurface(struct _DDSCAPS*, struct IDirectDrawSurface**); // vtable+0x30
 	// calltype: NearStd
-	intro long GetBltStatus(unsigned long);
-	// vtable: 56
+	virtual long GetBltStatus(unsigned long); // vtable+0x34
 	// calltype: NearStd
-	intro long GetCaps(struct _DDSCAPS*);
-	// vtable: 60
+	virtual long GetCaps(struct _DDSCAPS*); // vtable+0x38
 	// calltype: NearStd
-	intro long GetClipper(struct IDirectDrawClipper**);
-	// vtable: 64
+	virtual long GetClipper(struct IDirectDrawClipper**); // vtable+0x3c
 	// calltype: NearStd
-	intro long GetColorKey(unsigned long, struct _DDCOLORKEY*);
-	// vtable: 68
+	virtual long GetColorKey(unsigned long, struct _DDCOLORKEY*); // vtable+0x40
 	// calltype: NearStd
-	intro long GetDC(void * __ptr32*);
-	// vtable: 72
+	virtual long GetDC(void * __ptr32*); // vtable+0x44
 	// calltype: NearStd
-	intro long GetFlipStatus(unsigned long);
-	// vtable: 76
+	virtual long GetFlipStatus(unsigned long); // vtable+0x48
 	// calltype: NearStd
-	intro long GetOverlayPosition(long *, long *);
-	// vtable: 80
+	virtual long GetOverlayPosition(long *, long *); // vtable+0x4c
 	// calltype: NearStd
-	intro long GetPalette(struct IDirectDrawPalette**);
-	// vtable: 84
+	virtual long GetPalette(struct IDirectDrawPalette**); // vtable+0x50
 	// calltype: NearStd
-	intro long GetPixelFormat(struct _DDPIXELFORMAT*);
-	// vtable: 88
+	virtual long GetPixelFormat(struct _DDPIXELFORMAT*); // vtable+0x54
 	// calltype: NearStd
-	intro long GetSurfaceDesc(struct _DDSURFACEDESC*);
-	// vtable: 92
+	virtual long GetSurfaceDesc(struct _DDSURFACEDESC*); // vtable+0x58
 	// calltype: NearStd
-	intro long Initialize(struct IDirectDraw*, struct _DDSURFACEDESC*);
-	// vtable: 96
+	virtual long Initialize(struct IDirectDraw*, struct _DDSURFACEDESC*); // vtable+0x5c
 	// calltype: NearStd
-	intro long IsLost();
-	// vtable: 100
+	virtual long IsLost(); // vtable+0x60
 	// calltype: NearStd
-	intro long Lock(struct tagRECT*, struct _DDSURFACEDESC*, unsigned long, void * __ptr32);
-	// vtable: 104
+	virtual long Lock(struct tagRECT*, struct _DDSURFACEDESC*, unsigned long, void * __ptr32); // vtable+0x64
 	// calltype: NearStd
-	intro long ReleaseDC(void * __ptr32);
-	// vtable: 108
+	virtual long ReleaseDC(void * __ptr32); // vtable+0x68
 	// calltype: NearStd
-	intro long Restore();
-	// vtable: 112
+	virtual long Restore(); // vtable+0x6c
 	// calltype: NearStd
-	intro long SetClipper(struct IDirectDrawClipper*);
-	// vtable: 116
+	virtual long SetClipper(struct IDirectDrawClipper*); // vtable+0x70
 	// calltype: NearStd
-	intro long SetColorKey(unsigned long, struct _DDCOLORKEY*);
-	// vtable: 120
+	virtual long SetColorKey(unsigned long, struct _DDCOLORKEY*); // vtable+0x74
 	// calltype: NearStd
-	intro long SetOverlayPosition(long, long);
-	// vtable: 124
+	virtual long SetOverlayPosition(long, long); // vtable+0x78
 	// calltype: NearStd
-	intro long SetPalette(struct IDirectDrawPalette*);
-	// vtable: 128
+	virtual long SetPalette(struct IDirectDrawPalette*); // vtable+0x7c
 	// calltype: NearStd
-	intro long Unlock(void * __ptr32);
-	// vtable: 132
+	virtual long Unlock(void * __ptr32); // vtable+0x80
 	// calltype: NearStd
-	intro long UpdateOverlay(struct tagRECT*, struct IDirectDrawSurface*, struct tagRECT*, unsigned long, struct _DDOVERLAYFX*);
-	// vtable: 136
+	virtual long UpdateOverlay(struct tagRECT*, struct IDirectDrawSurface*, struct tagRECT*, unsigned long, struct _DDOVERLAYFX*); // vtable+0x84
 	// calltype: NearStd
-	intro long UpdateOverlayDisplay(unsigned long);
-	// vtable: 140
+	virtual long UpdateOverlayDisplay(unsigned long); // vtable+0x88
 	// calltype: NearStd
-	intro long UpdateOverlayZOrder(unsigned long, struct IDirectDrawSurface*);
+	virtual long UpdateOverlayZOrder(unsigned long, struct IDirectDrawSurface*); // vtable+0x8c
 };
 
 // Type: unsigned long;
@@ -292,15 +235,12 @@ struct ReadPalFile::__unnamed{
 
 // Type: struct IUnknown;
 struct IUnknown{
-	// vtable: 0
 	// calltype: NearStd
-	intro long QueryInterface(const struct _GUID&, void * __ptr32*);
-	// vtable: 4
+	virtual long QueryInterface(const struct _GUID&, void * __ptr32*); // vtable+0x0
 	// calltype: NearStd
-	intro unsigned long AddRef();
-	// vtable: 8
+	virtual unsigned long AddRef(); // vtable+0x4
 	// calltype: NearStd
-	intro unsigned long Release();
+	virtual unsigned long Release(); // vtable+0x8
 };
 
 

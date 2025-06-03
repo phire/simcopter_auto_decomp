@@ -248,6 +248,7 @@ struct HotSpotResourceFileHeader{
 };
 
 // Type: class ResourceRCData;
+// VTABLE: COPTER_D 0x0058f648
 class ResourceRCData{
 public:
 	void ResourceRCData(class ResourceRCData&);
@@ -255,10 +256,8 @@ public:
 	void ResourceRCData();
 	void ~ResourceRCData();
 	class ResourceRCData& operator=(class ResourceRCData&);
-	// vtable: 0
-	intro void Reset();
-	// vtable: 4
-	intro int32_t ReadResource();
+	virtual void Reset(); // vtable+0x0
+	virtual int32_t ReadResource(); // vtable+0x4
 	unsigned long DataSize();
 	char * DataReference();
 protected:

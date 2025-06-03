@@ -60,8 +60,7 @@ public:
 	class cCopterBody* GetByBodyType(unsigned long, long);
 	long GetIndexInBodyType(class cCopterBody*);
 	class cCopterBody* GetByName(unsigned long, long);
-	// vtable: 0
-	intro void Add(class cCopterBody*);
+	virtual void Add(class cCopterBody*); // vtable+0x0
 	void WriteToDisk();
 	void WriteToDiskIfDirty();
 	class ResFile* fFile;
@@ -84,22 +83,21 @@ struct AnimLookup{
 };
 
 // Type: class cCopterAnim (forward reference);
+// VTABLE: COPTER_D 0x00593658
 class cCopterAnim : public cBBase
 {
 public:
 	void cCopterAnim();
-	virtual void ~cCopterAnim();
-	virtual void Destroy();
-	virtual void WriteToDisk();
-	virtual unsigned short IsDirty();
-	virtual unsigned long GetBodyType();
-	virtual void InstallArrayPointers(unsigned short);
+	virtual void ~cCopterAnim() /* override */;
+	virtual void Destroy() /* override */;
+	virtual void WriteToDisk() /* override */;
+	virtual unsigned short IsDirty() /* override */;
+	virtual unsigned long GetBodyType() /* override */;
+	virtual void InstallArrayPointers(unsigned short) /* override */;
 	static class cBList<cCopterAnim>* fsList;
-	virtual class cBList<cBBase>* GetList();
-	// vtable: 36
-	intro struct PrivAnimPartInfo* GetPartInfo(short, short);
-	// vtable: 40
-	intro struct PrivAnimPartInfo* GetPartInfoBasePtr(short);
+	virtual class cBList<cBBase>* GetList() /* override */;
+	virtual struct PrivAnimPartInfo* GetPartInfo(short, short); // vtable+0x24
+	virtual struct PrivAnimPartInfo* GetPartInfoBasePtr(short); // vtable+0x28
 	class cArray<PrivAnimPartInfo>* fPrivPartInfo;
 	short GetNumParts();
 	short GetNumFrames();
@@ -175,35 +173,27 @@ struct DXZY{
 // Type: void;
 
 // Type: class cBBase;
+// VTABLE: COPTER_D 0x00593688
 class cBBase{
 public:
-	// vtable: 0
-	intro unsigned long GetBodyType();
+	virtual unsigned long GetBodyType(); // vtable+0x0
 	unsigned long GetName();
 	unsigned long GetResType();
-	// vtable: 4
-	intro class cBList<cBBase>* GetList();
+	virtual class cBList<cBBase>* GetList(); // vtable+0x4
 	unsigned long operator unsigned long();
-	// vtable: 8
-	intro unsigned short CanDestroy();
+	virtual unsigned short CanDestroy(); // vtable+0x8
 	// calltype: NearC
 	static class cBBase* MakeNew(void * __ptr32);
 	// calltype: NearC
 	static void LoadAllRelatedArrays(class ResFile*);
-	// vtable: 12
-	intro void InstallArrayPointers(unsigned short);
+	virtual void InstallArrayPointers(unsigned short); // vtable+0xc
 	void FinishMake(unsigned short);
 	void Delete();
-	// vtable: 16
-	intro void ~cBBase();
-	// vtable: 20
-	intro void Destroy();
-	// vtable: 24
-	intro void Dirty();
-	// vtable: 28
-	intro unsigned short IsDirty();
-	// vtable: 32
-	intro void WriteToDisk();
+	virtual void ~cBBase(); // vtable+0x10
+	virtual void Destroy(); // vtable+0x14
+	virtual void Dirty(); // vtable+0x18
+	virtual unsigned short IsDirty(); // vtable+0x1c
+	virtual void WriteToDisk(); // vtable+0x20
 	void cBBase();
 	void Init(void * __ptr32);
 	void Init(unsigned char *);

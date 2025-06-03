@@ -32,6 +32,7 @@ protected:
 // Type: int32_t;
 
 // Type: class ifstream;
+// VTABLE: COPTER_D 0x00593e2c
 class ifstream : public virtual ios, public istream, public virtual <indirect> ios
 {
 public:
@@ -39,7 +40,7 @@ public:
 	void ifstream(int32_t);
 	void ifstream(char *, int32_t, int32_t);
 	void ifstream();
-	virtual void ~ifstream();
+	virtual void ~ifstream() /* override */;
 	class streambuf* setbuf(char *, int32_t);
 	class filebuf* rdbuf();
 	void attach(int32_t);
@@ -53,12 +54,13 @@ public:
 // Type: char;
 
 // Type: class ostrstream;
+// VTABLE: COPTER_D 0x00593b34
 class ostrstream : public virtual ios, public ostream, public virtual <indirect> ios
 {
 public:
 	void ostrstream(char *, int32_t, int32_t);
 	void ostrstream();
-	virtual void ~ostrstream();
+	virtual void ~ostrstream() /* override */;
 	int32_t pcount();
 	class strstreambuf* rdbuf();
 	char * str();
@@ -77,44 +79,38 @@ struct RLEHeader{
 // Type: void;
 
 // Type: class CFlatImage (forward reference);
+// VTABLE: COPTER_D 0x00591070
 class CFlatImage : public IFlatImage
 {
 public:
 	void CFlatImage(class IFlatImage*, long, long, long, long);
 	void CFlatImage(long, long, unsigned char);
 	void CFlatImage();
-	// vtable: 28
-	intro void ~CFlatImage();
-	virtual unsigned long Lock();
-	virtual unsigned long Unlock();
+	virtual void ~CFlatImage(); // vtable+0x1c
+	virtual unsigned long Lock() /* override */;
+	virtual unsigned long Unlock() /* override */;
 protected:
 	void * __ptr32 mBitsHandle;
 };
 
 // Type: class IFlatImage (forward reference);
+// VTABLE: COPTER_D 0x00591050
 class IFlatImage{
 public:
 	void IFlatImage();
-	// vtable: 0
-	intro unsigned long Lock();
-	// vtable: 4
-	intro unsigned long Unlock();
+	virtual unsigned long Lock(); // vtable+0x0
+	virtual unsigned long Unlock(); // vtable+0x4
 	unsigned long GetLockCount();
-	// vtable: 8
-	intro void SetTransparentColor(int32_t, long);
+	virtual void SetTransparentColor(int32_t, long); // vtable+0x8
 	long GetHeight();
 	long GetWidth();
 	void * __ptr32 GetBitsPointer();
 	long GetStride();
-	// vtable: 12
-	intro unsigned long Compose(class IFlatImage*, long, long, long, long, long, long);
+	virtual unsigned long Compose(class IFlatImage*, long, long, long, long, long, long); // vtable+0xc
 	unsigned long Compose(class IFlatImage*, long, long);
-	// vtable: 16
-	intro unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long);
-	// vtable: 20
-	intro unsigned long StretchCompose(class IFlatImage*, struct SparkalRect, struct SparkalRect);
-	// vtable: 24
-	intro unsigned long FillRect(long, struct SparkalRect*);
+	virtual unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long); // vtable+0x10
+	virtual unsigned long StretchCompose(class IFlatImage*, struct SparkalRect, struct SparkalRect); // vtable+0x14
+	virtual unsigned long FillRect(long, struct SparkalRect*); // vtable+0x18
 	void DrawPixel(unsigned char, long, long);
 	unsigned char GetPixel(long, long);
 	static unsigned long lTotalMemoryUsage;
@@ -134,29 +130,23 @@ protected:
 // Type: unsigned char;
 
 // Type: class IFlatImage;
+// VTABLE: COPTER_D 0x00591050
 class IFlatImage{
 public:
 	void IFlatImage();
-	// vtable: 0
-	intro unsigned long Lock();
-	// vtable: 4
-	intro unsigned long Unlock();
+	virtual unsigned long Lock(); // vtable+0x0
+	virtual unsigned long Unlock(); // vtable+0x4
 	unsigned long GetLockCount();
-	// vtable: 8
-	intro void SetTransparentColor(int32_t, long);
+	virtual void SetTransparentColor(int32_t, long); // vtable+0x8
 	long GetHeight();
 	long GetWidth();
 	void * __ptr32 GetBitsPointer();
 	long GetStride();
-	// vtable: 12
-	intro unsigned long Compose(class IFlatImage*, long, long, long, long, long, long);
+	virtual unsigned long Compose(class IFlatImage*, long, long, long, long, long, long); // vtable+0xc
 	unsigned long Compose(class IFlatImage*, long, long);
-	// vtable: 16
-	intro unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long);
-	// vtable: 20
-	intro unsigned long StretchCompose(class IFlatImage*, struct SparkalRect, struct SparkalRect);
-	// vtable: 24
-	intro unsigned long FillRect(long, struct SparkalRect*);
+	virtual unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long); // vtable+0x10
+	virtual unsigned long StretchCompose(class IFlatImage*, struct SparkalRect, struct SparkalRect); // vtable+0x14
+	virtual unsigned long FillRect(long, struct SparkalRect*); // vtable+0x18
 	void DrawPixel(unsigned char, long, long);
 	unsigned char GetPixel(long, long);
 	static unsigned long lTotalMemoryUsage;
@@ -170,6 +160,7 @@ protected:
 };
 
 // Type: class ios;
+// VTABLE: COPTER_D 0x00593ad4
 class ios{
 	enum io_state {
 		goodbit = 0,
@@ -218,8 +209,7 @@ protected:
 	void ios();
 public:
 	void ios(class streambuf*);
-	// vtable: 0
-	intro void ~ios();
+	virtual void ~ios(); // vtable+0x0
 	long flags(long);
 	long flags();
 	long setf(long);
@@ -303,6 +293,7 @@ private:
 };
 
 // Type: class istream;
+// VTABLE: COPTER_D 0x00593ea4
 class istream : public virtual ios
 {
 public:
@@ -314,7 +305,7 @@ protected:
 	void istream();
 public:
 	void istream(class streambuf*);
-	virtual void ~istream();
+	virtual void ~istream() /* override */;
 	int32_t ipfx(int32_t);
 	void isfx();
 	class istream& operator>>(class streambuf*);
@@ -373,6 +364,7 @@ private:
 };
 
 // Type: class ostream;
+// VTABLE: COPTER_D 0x00593a44
 class ostream : public virtual ios
 {
 public:
@@ -381,7 +373,7 @@ public:
 	void ostream(const class ostream&);
 	void ostream();
 	void ostream(class streambuf*);
-	virtual void ~ostream();
+	virtual void ~ostream() /* override */;
 	class ostream& flush();
 	int32_t opfx();
 	void osfx();

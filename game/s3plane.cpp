@@ -11,6 +11,7 @@ struct Point2d{
 // Type: int32_t;
 
 // Type: class PlaneClass;
+// VTABLE: COPTER_D 0x00593220
 class PlaneClass{
 	enum /* __unnamed */ {
 		NO_X_POSITION = -1,
@@ -82,8 +83,7 @@ public:
 	void PlaneClass(const class PlaneClass&);
 	void PlaneClass(long, long);
 	void PlaneClass();
-	// vtable: 0
-	intro void ~PlaneClass();
+	virtual void ~PlaneClass(); // vtable+0x0
 	// calltype: NearC
 	static class PlaneClass* CreateInstance(long, long, int32_t);
 	// calltype: NearC
@@ -121,12 +121,9 @@ protected:
 	int32_t Initialize(int32_t);
 	void Reset();
 	void Itterate();
-	// vtable: 4
-	intro void ItterateFSM();
-	// vtable: 8
-	intro void AdjustSpeed();
-	// vtable: 12
-	intro enum PlaneClass::StoppedReasons IsPathClear();
+	virtual void ItterateFSM(); // vtable+0x4
+	virtual void AdjustSpeed(); // vtable+0x8
+	virtual enum PlaneClass::StoppedReasons IsPathClear(); // vtable+0xc
 	enum PlaneClass::StoppedReasons CheckDynamicObjectsAt(const struct Point2d&, const struct Point3d&);
 	int32_t IsPlaneOutOfCameraRange();
 	void SlowDown();
@@ -152,8 +149,7 @@ protected:
 	static void SetPlaneTypesAndLocations();
 	// calltype: NearC
 	static void PlaceInitialPlanes();
-	// vtable: 16
-	intro void BeamToWithinCameraRange();
+	virtual void BeamToWithinCameraRange(); // vtable+0x10
 private:
 	int32_t InitializeInstance(long, long, int32_t);
 public:
@@ -161,6 +157,7 @@ public:
 };
 
 // Type: class PlaneClass (forward reference);
+// VTABLE: COPTER_D 0x00593220
 class PlaneClass{
 	enum /* __unnamed */ {
 		NO_X_POSITION = -1,
@@ -232,8 +229,7 @@ public:
 	void PlaneClass(const class PlaneClass&);
 	void PlaneClass(long, long);
 	void PlaneClass();
-	// vtable: 0
-	intro void ~PlaneClass();
+	virtual void ~PlaneClass(); // vtable+0x0
 	// calltype: NearC
 	static class PlaneClass* CreateInstance(long, long, int32_t);
 	// calltype: NearC
@@ -271,12 +267,9 @@ protected:
 	int32_t Initialize(int32_t);
 	void Reset();
 	void Itterate();
-	// vtable: 4
-	intro void ItterateFSM();
-	// vtable: 8
-	intro void AdjustSpeed();
-	// vtable: 12
-	intro enum PlaneClass::StoppedReasons IsPathClear();
+	virtual void ItterateFSM(); // vtable+0x4
+	virtual void AdjustSpeed(); // vtable+0x8
+	virtual enum PlaneClass::StoppedReasons IsPathClear(); // vtable+0xc
 	enum PlaneClass::StoppedReasons CheckDynamicObjectsAt(const struct Point2d&, const struct Point3d&);
 	int32_t IsPlaneOutOfCameraRange();
 	void SlowDown();
@@ -302,8 +295,7 @@ protected:
 	static void SetPlaneTypesAndLocations();
 	// calltype: NearC
 	static void PlaceInitialPlanes();
-	// vtable: 16
-	intro void BeamToWithinCameraRange();
+	virtual void BeamToWithinCameraRange(); // vtable+0x10
 private:
 	int32_t InitializeInstance(long, long, int32_t);
 public:

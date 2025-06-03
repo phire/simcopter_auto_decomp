@@ -49,6 +49,7 @@ public:
 // Type: int32_t;
 
 // Type: class PreferenceManager (forward reference);
+// VTABLE: COPTER_D 0x00590db0
 class PreferenceManager{
 protected:
 	int32_t bSaveFileAtAllChanges;
@@ -62,32 +63,19 @@ protected:
 public:
 	void PreferenceManager(long, long, long, int32_t);
 	int32_t IPreferenceManager(char *);
-	// vtable: 0
-	intro void ~PreferenceManager();
-	// vtable: 4
-	intro long SaveAllPrefs();
-	// vtable: 8
-	intro long LoadAllPrefs();
-	// vtable: 12
-	intro long ClearPrefsMemory();
-	// vtable: 16
-	intro void EnumeratePrefs();
-	// vtable: 20
-	intro class PreferenceItem* GetPrefPointer(long);
-	// vtable: 24
-	intro class PreferenceItem* GetPrefCopy(long);
-	// vtable: 28
-	intro char * GetPrefDataPointer(long);
-	// vtable: 32
-	intro char * GetPrefDataCopy(long);
-	// vtable: 36
-	intro long GetPrefDataLength(long);
-	// vtable: 40
-	intro long SetPref(class PreferenceItem*);
-	// vtable: 44
-	intro long SetPref(long, char *, long);
-	// vtable: 48
-	intro long RemovePref(long);
+	virtual void ~PreferenceManager(); // vtable+0x0
+	virtual long SaveAllPrefs(); // vtable+0x4
+	virtual long LoadAllPrefs(); // vtable+0x8
+	virtual long ClearPrefsMemory(); // vtable+0xc
+	virtual void EnumeratePrefs(); // vtable+0x10
+	virtual class PreferenceItem* GetPrefPointer(long); // vtable+0x14
+	virtual class PreferenceItem* GetPrefCopy(long); // vtable+0x18
+	virtual char * GetPrefDataPointer(long); // vtable+0x1c
+	virtual char * GetPrefDataCopy(long); // vtable+0x20
+	virtual long GetPrefDataLength(long); // vtable+0x24
+	virtual long SetPref(class PreferenceItem*); // vtable+0x28
+	virtual long SetPref(long, char *, long); // vtable+0x2c
+	virtual long RemovePref(long); // vtable+0x30
 };
 
 // Type: long;
@@ -129,28 +117,25 @@ public:
 };
 
 // Type: class NotificationPreferenceManager (forward reference);
+// VTABLE: COPTER_D 0x00590de8
 class NotificationPreferenceManager : public PreferenceManager
 {
 public:
 	class list<NotificationItem> myNotifications;
 	void NotificationPreferenceManager(long, long, long, int32_t);
-	virtual long SetPref(class PreferenceItem*);
-	virtual long SetPref(long, char *, long);
-	// vtable: 52
-	intro int32_t AddNotification(class NotificationItem&);
-	// vtable: 56
-	intro int32_t AddNotification(long, class NotificationSink*);
-	// vtable: 60
-	intro int32_t RemoveNotification(class NotificationSink*, long);
-	// vtable: 64
-	intro void DoNotification(long);
+	virtual long SetPref(class PreferenceItem*) /* override */;
+	virtual long SetPref(long, char *, long) /* override */;
+	virtual int32_t AddNotification(class NotificationItem&); // vtable+0x34
+	virtual int32_t AddNotification(long, class NotificationSink*); // vtable+0x38
+	virtual int32_t RemoveNotification(class NotificationSink*, long); // vtable+0x3c
+	virtual void DoNotification(long); // vtable+0x40
 };
 
 // Type: class NotificationSink (forward reference);
+// VTABLE: COPTER_D 0x0058f5c8
 class NotificationSink{
 public:
-	// vtable: 0
-	intro void DoNotificationChange(long, class PreferenceManager*);
+	virtual void DoNotificationChange(long, class PreferenceManager*); // vtable+0x0
 };
 
 // Type: class NotificationItem;
@@ -316,6 +301,7 @@ public:
 };
 
 // Type: class PreferenceManager;
+// VTABLE: COPTER_D 0x00590db0
 class PreferenceManager{
 protected:
 	int32_t bSaveFileAtAllChanges;
@@ -329,32 +315,19 @@ protected:
 public:
 	void PreferenceManager(long, long, long, int32_t);
 	int32_t IPreferenceManager(char *);
-	// vtable: 0
-	intro void ~PreferenceManager();
-	// vtable: 4
-	intro long SaveAllPrefs();
-	// vtable: 8
-	intro long LoadAllPrefs();
-	// vtable: 12
-	intro long ClearPrefsMemory();
-	// vtable: 16
-	intro void EnumeratePrefs();
-	// vtable: 20
-	intro class PreferenceItem* GetPrefPointer(long);
-	// vtable: 24
-	intro class PreferenceItem* GetPrefCopy(long);
-	// vtable: 28
-	intro char * GetPrefDataPointer(long);
-	// vtable: 32
-	intro char * GetPrefDataCopy(long);
-	// vtable: 36
-	intro long GetPrefDataLength(long);
-	// vtable: 40
-	intro long SetPref(class PreferenceItem*);
-	// vtable: 44
-	intro long SetPref(long, char *, long);
-	// vtable: 48
-	intro long RemovePref(long);
+	virtual void ~PreferenceManager(); // vtable+0x0
+	virtual long SaveAllPrefs(); // vtable+0x4
+	virtual long LoadAllPrefs(); // vtable+0x8
+	virtual long ClearPrefsMemory(); // vtable+0xc
+	virtual void EnumeratePrefs(); // vtable+0x10
+	virtual class PreferenceItem* GetPrefPointer(long); // vtable+0x14
+	virtual class PreferenceItem* GetPrefCopy(long); // vtable+0x18
+	virtual char * GetPrefDataPointer(long); // vtable+0x1c
+	virtual char * GetPrefDataCopy(long); // vtable+0x20
+	virtual long GetPrefDataLength(long); // vtable+0x24
+	virtual long SetPref(class PreferenceItem*); // vtable+0x28
+	virtual long SetPref(long, char *, long); // vtable+0x2c
+	virtual long RemovePref(long); // vtable+0x30
 };
 
 // Type: struct bidirectional_iterator<NotificationItem,int>;

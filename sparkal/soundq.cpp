@@ -34,6 +34,7 @@ struct SoundQueueItem{
 // Type: void;
 
 // Type: class Sound (forward reference);
+// VTABLE: COPTER_D 0x0058f458
 class Sound{
 	enum SoundSourceType {
 		nSoundSourceTypeResource = 0,
@@ -59,29 +60,18 @@ public:
 	long lSoundCompletionData;
 	int32_t bUnloadBeforeNextPlay;
 	void Sound();
-	// vtable: 0
-	intro void ~Sound();
+	virtual void ~Sound(); // vtable+0x0
 	class Sound& operator=(const class Sound&);
-	// vtable: 4
-	intro void SetSoundFile(const class basic_string<char>&);
-	// vtable: 8
-	intro long Play(long, int32_t);
-	// vtable: 12
-	intro long Stop();
-	// vtable: 16
-	intro long IsPlaying();
-	// vtable: 20
-	intro int32_t SetCompletionNotification(void (*)(long), long);
-	// vtable: 24
-	intro void StopCompletionNotification();
-	// vtable: 28
-	intro long EstimateRemainingPlayTime();
-	// vtable: 32
-	intro int32_t GetVolume(long *);
-	// vtable: 36
-	intro int32_t SetVolume(long);
-	// vtable: 40
-	intro int32_t GetSoundType();
+	virtual void SetSoundFile(const class basic_string<char>&); // vtable+0x4
+	virtual long Play(long, int32_t); // vtable+0x8
+	virtual long Stop(); // vtable+0xc
+	virtual long IsPlaying(); // vtable+0x10
+	virtual int32_t SetCompletionNotification(void (*)(long), long); // vtable+0x14
+	virtual void StopCompletionNotification(); // vtable+0x18
+	virtual long EstimateRemainingPlayTime(); // vtable+0x1c
+	virtual int32_t GetVolume(long *); // vtable+0x20
+	virtual int32_t SetVolume(long); // vtable+0x24
+	virtual int32_t GetSoundType(); // vtable+0x28
 	// calltype: NearC
 	static unsigned long GetTotalMemoryUsage();
 	static unsigned long lTotalMemoryUsage;
@@ -207,38 +197,28 @@ struct DigitalSoundQueueItem : public SoundQueueItem
 };
 
 // Type: class SoundQueue (forward reference);
+// VTABLE: COPTER_D 0x0058f3f0
 class SoundQueue{
 public:
 	void SoundQueue();
 	void ~SoundQueue();
-	// vtable: 0
-	intro int32_t Initialize();
-	// vtable: 4
-	intro void DeInitialize(int32_t);
-	// vtable: 8
-	intro void ClearQueue(int32_t);
+	virtual int32_t Initialize(); // vtable+0x0
+	virtual void DeInitialize(int32_t); // vtable+0x4
+	virtual void ClearQueue(int32_t); // vtable+0x8
 	class SoundQueue& operator+=(struct SoundQueueItem*);
 	class SoundQueue& operator+=(class Sound*);
-	// vtable: 12
-	intro int32_t StartPauseCallback(long);
-	// vtable: 16
-	intro void EndPauseCallback();
-	// vtable: 20
-	intro void PlayNextSoundInQueue();
-	// vtable: 24
-	intro void RemoveNextSoundInQueue();
-	// vtable: 28
-	intro void SoundQueueCompletionCallback();
+	virtual int32_t StartPauseCallback(long); // vtable+0xc
+	virtual void EndPauseCallback(); // vtable+0x10
+	virtual void PlayNextSoundInQueue(); // vtable+0x14
+	virtual void RemoveNextSoundInQueue(); // vtable+0x18
+	virtual void SoundQueueCompletionCallback(); // vtable+0x1c
 	// calltype: NearC
 	static void StaticSoundQueueCompletionCallback(long);
-	// vtable: 32
-	intro void SoundQueueWaitTimeCallback();
+	virtual void SoundQueueWaitTimeCallback(); // vtable+0x20
 	// calltype: NearC
 	static void StaticSoundQueueWaitTimeCallback(long);
-	// vtable: 36
-	intro int32_t GetMutex(unsigned long);
-	// vtable: 40
-	intro void ReleaseMutex();
+	virtual int32_t GetMutex(unsigned long); // vtable+0x24
+	virtual void ReleaseMutex(); // vtable+0x28
 protected:
 	class list<SoundQueueItem *> mySoundQueueItemList;
 	int32_t bOK;
