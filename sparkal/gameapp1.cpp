@@ -848,7 +848,7 @@ protected:
 // Contribution: 1:00086830-00089a9c Module: 28, 16 byte alignment, code, execute, read, 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00487830
-void $E118() {
+static void $E118() {
 
 	__asm        call   $E115;
 	__asm        call   $E117;
@@ -857,7 +857,7 @@ void $E118() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0048784a
-void $E115() {
+static void $E115() {
 
 	__asm        mov    ecx, 0x604808;
 	__asm        call   CopterSparkalPalette::CopterSparkalPalette;
@@ -866,7 +866,7 @@ void $E115() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00487864
-void $E117() {
+static void $E117() {
 
 	__asm        push   0x487881;
 	__asm        call   atexit;
@@ -876,7 +876,7 @@ void $E117() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00487881
-void $E116() {
+static void $E116() {
 
 	__asm        jmp    near ptr 0x0048788C;
 
@@ -887,7 +887,7 @@ void $E116() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004878a0
-void $E123() {
+static void $E123() {
 
 	__asm        call   $E120;
 	__asm        call   $E122;
@@ -896,7 +896,7 @@ void $E123() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004878ba
-void $E120() {
+static void $E120() {
 
 	__asm        mov    ecx, 0x604588;
 	__asm        call   SoundSystem::SoundSystem;
@@ -905,7 +905,7 @@ void $E120() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004878d4
-void $E122() {
+static void $E122() {
 
 	__asm        push   0x4878F1;
 	__asm        call   atexit;
@@ -915,7 +915,7 @@ void $E122() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004878f1
-void $E121() {
+static void $E121() {
 
 	__asm        mov    ecx, 0x604588;
 	__asm        call   SoundSystem::~SoundSystem;
@@ -924,7 +924,7 @@ void $E121() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0048790b
-void $E128() {
+static void $E128() {
 
 	__asm        call   $E125;
 	__asm        call   $E127;
@@ -933,7 +933,7 @@ void $E128() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00487925
-void $E125() {
+static void $E125() {
 
 	__asm        mov    ecx, 0x604600;
 	__asm        call   SoundManager::SoundManager;
@@ -942,7 +942,7 @@ void $E125() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0048793f
-void $E127() {
+static void $E127() {
 
 	__asm        push   0x48795C;
 	__asm        call   atexit;
@@ -952,7 +952,7 @@ void $E127() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0048795c
-void $E126() {
+static void $E126() {
 
 	__asm        mov    ecx, 0x604600;
 	__asm        call   SoundManager::~SoundManager;
@@ -961,7 +961,7 @@ void $E126() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00487976
-void $E133() {
+static void $E133() {
 
 	__asm        call   $E130;
 	__asm        call   $E132;
@@ -970,7 +970,7 @@ void $E133() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00487990
-void $E130() {
+static void $E130() {
 
 	__asm        mov    ecx, 0x604480;
 	__asm        call   Radio::Radio;
@@ -979,7 +979,7 @@ void $E130() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004879aa
-void $E132() {
+static void $E132() {
 
 	__asm        push   0x4879C7;
 	__asm        call   atexit;
@@ -989,7 +989,7 @@ void $E132() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004879c7
-void $E131() {
+static void $E131() {
 
 	__asm        mov    ecx, 0x604480;
 	__asm        call   Radio::~Radio;
@@ -998,7 +998,7 @@ void $E131() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004879e1
-void $E138() {
+static void $E138() {
 
 	__asm        call   $E135;
 	__asm        call   $E137;
@@ -1007,7 +1007,7 @@ void $E138() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004879fb
-void $E135() {
+static void $E135() {
 
 	__asm        mov    dword ptr [ebp-4], 2;
 	__asm        mov    dword ptr [ebp-8], 0x604450;
@@ -1027,7 +1027,7 @@ _T31:
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00487a3b
-void $E137() {
+static void $E137() {
 
 	__asm        push   0x487A58;
 	__asm        call   atexit;
@@ -1037,7 +1037,7 @@ void $E137() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00487a58
-void $E136() {
+static void $E136() {
 
 	__asm        mov    dword ptr [ebp-4], 2;
 	__asm        mov    dword ptr [ebp-8], 0x604450;
@@ -1061,7 +1061,7 @@ _T3d:
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00487aa4
-void $E143() {
+static void $E143() {
 
 	__asm        call   $E140;
 	__asm        call   $E142;
@@ -1070,7 +1070,7 @@ void $E143() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00487abe
-void $E140() {
+static void $E140() {
 
 	__asm        mov    ecx, 0x604530;
 	__asm        call   MessageDisplayManager::MessageDisplayManager;
@@ -1079,7 +1079,7 @@ void $E140() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00487ad8
-void $E142() {
+static void $E142() {
 
 	__asm        push   0x487AF5;
 	__asm        call   atexit;
@@ -1089,7 +1089,7 @@ void $E142() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00487af5
-void $E141() {
+static void $E141() {
 
 	__asm        mov    ecx, 0x604530;
 	__asm        call   MessageDisplayManager::~MessageDisplayManager;

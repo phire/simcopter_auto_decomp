@@ -626,7 +626,7 @@ uint32_t MDate::DayOfWeek(char * nameOfDay) {
 }
 
 // FUNCTION: COPTER_D 0x004bc673
-int32_t FindMatch(char * str, char ** candidates, int32_t icand) {
+static int32_t FindMatch(char * str, char ** candidates, int32_t icand) {
 	uint32_t len;
 
 // LINE 56:
@@ -1696,7 +1696,7 @@ _T2fb:
 }
 
 // FUNCTION: COPTER_D 0x004bd175
-void SkipDelim(class istream& strm) {
+static void SkipDelim(class istream& strm) {
 	char c;
 
 // LINE 527:
@@ -1791,7 +1791,7 @@ _T102:
 }
 
 // FUNCTION: COPTER_D 0x004bd27c
-char * ParseMonth(class istream& s) {
+static char * ParseMonth(class istream& s) {
 	char c;
 	static const char month[12] = { /* <data@0x006069a8> */ };
 	char * p;

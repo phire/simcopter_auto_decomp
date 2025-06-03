@@ -368,7 +368,7 @@ unsigned short getdllversion() {
 }
 
 // FUNCTION: COPTER_D 0x0047b94a
-unsigned short check_clone() {
+static unsigned short check_clone() {
 	short cpu_type;
 
 // LINE 382:
@@ -414,7 +414,7 @@ _T2a:
 }
 
 // FUNCTION: COPTER_D 0x0047b999
-unsigned short check_8086() {
+static unsigned short check_8086() {
 	unsigned short cpu_type;
 
 // LINE 424:
@@ -460,7 +460,7 @@ _T3c:
 }
 
 // FUNCTION: COPTER_D 0x0047b9eb
-unsigned short check_80286() {
+static unsigned short check_80286() {
 	unsigned short cpu_type;
 
 // LINE 467:
@@ -504,7 +504,7 @@ _T39:
 }
 
 // FUNCTION: COPTER_D 0x0047ba3a
-unsigned short check_80386() {
+static unsigned short check_80386() {
 	unsigned short cpu_type;
 
 // LINE 513:
@@ -556,7 +556,7 @@ _T37:
 }
 
 // FUNCTION: COPTER_D 0x0047ba8d
-unsigned short check_IDProc() {
+static unsigned short check_IDProc() {
 	unsigned char intel_id[12];
 	unsigned char stepping;
 	int32_t i;

@@ -1128,13 +1128,13 @@ _T253:
 }
 
 // FUNCTION: COPTER_D 0x004ab063
-void ConvertCompressedByteOrdering(struct RLEHeader* pCompressedImage) {
+static void ConvertCompressedByteOrdering(struct RLEHeader* pCompressedImage) {
 // LINE 312:
 	__asm        jmp    near ptr 0x004AB06E;
 }
 
 // FUNCTION: COPTER_D 0x004ab073
-void RLEDecompressUnclippedX(unsigned char * pDestBuffer, long DestStride, unsigned char * pSource, short Height, unsigned char TransparentColor) {
+static void RLEDecompressUnclippedX(unsigned char * pDestBuffer, long DestStride, unsigned char * pSource, short Height, unsigned char TransparentColor) {
 	unsigned char * pDestinationEdge;
 	unsigned char * pDest;
 	unsigned char * pNextSourceLine;
@@ -1311,7 +1311,7 @@ _T17a:
 }
 
 // FUNCTION: COPTER_D 0x004ab1f7
-void RLEDecompressClippedX(unsigned char * pDestBuffer, long DestStride, unsigned char * pSource, short LeftClip, short Width, short Height, unsigned char TransparentColor) {
+static void RLEDecompressClippedX(unsigned char * pDestBuffer, long DestStride, unsigned char * pSource, short LeftClip, short Width, short Height, unsigned char TransparentColor) {
 	short PixelCount;
 	unsigned char * pDestinationEdge;
 	unsigned char * pDest;

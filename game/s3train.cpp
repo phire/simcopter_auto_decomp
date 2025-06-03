@@ -566,7 +566,7 @@ struct VRObjInfo{
 // Contribution: 1:0012cda0-00133970 Module: 162, 16 byte alignment, code, execute, read, 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0052dda0
-void $E7() {
+static void $E7() {
 
 	__asm        call   $E3;
 	__asm        call   $E6;
@@ -575,7 +575,7 @@ void $E7() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0052ddba
-void $E3() {
+static void $E3() {
 
 	__asm        mov    TrainClass::lsTrain<vftable>, 0x593238;
 	__asm        jmp    near ptr 0x0052DDCF;
@@ -585,7 +585,7 @@ void $E3() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0052ddd9
-void $E6() {
+static void $E6() {
 
 	__asm        push   0x52DDF6;
 	__asm        call   atexit;
@@ -595,7 +595,7 @@ void $E6() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0052ddf6
-void $E4() {
+static void $E4() {
 
 	__asm        xor    eax, eax;
 	__asm        mov    al, ds:[0x62B998];

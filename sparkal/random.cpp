@@ -41,7 +41,7 @@ protected:
 // Contribution: 1:0008ff90-00090171 Module: 22, 16 byte alignment, code, execute, read, 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00490f90
-void $E2() {
+static void $E2() {
 
 	__asm        call   $E1;
 	__asm        jmp    near ptr 0x00490FA0;
@@ -49,7 +49,7 @@ void $E2() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00490fa5
-void $E1() {
+static void $E1() {
 
 	__asm        call   clock;
 	__asm        mov    [ebp-4], eax;

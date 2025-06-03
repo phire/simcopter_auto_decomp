@@ -359,7 +359,7 @@ void SetPortDC(void * __ptr32 dc) {
 }
 
 // FUNCTION: COPTER_D 0x00566ccf
-void CleanUpPort() {
+static void CleanUpPort() {
 // LINE 85:
 	__asm        cmp    gPort.window, 0;
 	__asm        je     _T4b;

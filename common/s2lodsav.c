@@ -405,7 +405,7 @@ _T1b5:
 }
 
 // FUNCTION: COPTER_D 0x004c49d8
-long stol(char * tag) {
+static long stol(char * tag) {
 	long buildval;
 	char * s;
 
@@ -1234,7 +1234,7 @@ _T8b8:
 }
 
 // FUNCTION: COPTER_D 0x004c5373
-void label_kludge() {
+static void label_kludge() {
 	short len;
 	short i;
 
@@ -1454,7 +1454,7 @@ void S2CityMakeFileNameFromCityName(char * cityName, char * fileName) {
 }
 
 // FUNCTION: COPTER_D 0x004c55f2
-unsigned short S2CityReadHeader(struct _iobuf* filNum, long * length) {
+static unsigned short S2CityReadHeader(struct _iobuf* filNum, long * length) {
 	long data;
 
 // LINE 591:
@@ -1550,7 +1550,7 @@ _Teb:
 }
 
 // FUNCTION: COPTER_D 0x004c56e2
-unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
+static unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
 	long lval;
 	short j;
 	short i;
@@ -2641,7 +2641,7 @@ _Tef8:
 }
 
 // FUNCTION: COPTER_D 0x004c65df
-unsigned short S2CityGameReadUncompressed(struct _iobuf* filNum, long size, char * data) {
+static unsigned short S2CityGameReadUncompressed(struct _iobuf* filNum, long size, char * data) {
 // LINE 863:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
@@ -2666,7 +2666,7 @@ _T35:
 }
 
 // FUNCTION: COPTER_D 0x004c6619
-unsigned short S2CityBucketGameRead(struct _iobuf* filNum, long size) {
+static unsigned short S2CityBucketGameRead(struct _iobuf* filNum, long size) {
 	char * temp;
 	long count;
 
@@ -2722,7 +2722,7 @@ _T86:
 }
 
 // FUNCTION: COPTER_D 0x004c66a4
-unsigned short S2CityGameReadCompressed(struct _iobuf* filNum, long size, char * data, long dataSize) {
+static unsigned short S2CityGameReadCompressed(struct _iobuf* filNum, long size, char * data, long dataSize) {
 	char * temp;
 	long tp;
 	long dp;
@@ -3314,7 +3314,7 @@ _T4eb:
 }
 
 // FUNCTION: COPTER_D 0x004c6cfe
-unsigned short S2CityWriteName(struct _iobuf* filNum, long head, char * data) {
+static unsigned short S2CityWriteName(struct _iobuf* filNum, long head, char * data) {
 	long count;
 	long size;
 
@@ -3402,7 +3402,7 @@ _Td2:
 }
 
 // FUNCTION: COPTER_D 0x004c6dd5
-unsigned short S2CityGameWriteUncompressed(struct _iobuf* filNum, long head, char * data, long dataSize) {
+static unsigned short S2CityGameWriteUncompressed(struct _iobuf* filNum, long head, char * data, long dataSize) {
 	long count;
 	long size;
 
@@ -3512,7 +3512,7 @@ _T101:
 }
 
 // FUNCTION: COPTER_D 0x004c6edb
-unsigned short S2CityWriteHeader(struct _iobuf* filNum, long length) {
+static unsigned short S2CityWriteHeader(struct _iobuf* filNum, long length) {
 	long count;
 	long data;
 
@@ -3619,7 +3619,7 @@ _T106:
 }
 
 // FUNCTION: COPTER_D 0x004c6fe6
-unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char * data, long count) {
+static unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char * data, long count) {
 	char * temp;
 	long tp;
 	long dp;
@@ -3949,7 +3949,7 @@ _T343:
 }
 
 // FUNCTION: COPTER_D 0x004c732e
-unsigned short S2CityMiscWrite(struct _iobuf* filNum) {
+static unsigned short S2CityMiscWrite(struct _iobuf* filNum) {
 	short j;
 	short i;
 	short ix;

@@ -502,7 +502,7 @@ _T452:
 }
 
 // FUNCTION: COPTER_D 0x00447fce
-unsigned long NormFreq(unsigned short processor, unsigned long freq) {
+static unsigned long NormFreq(unsigned short processor, unsigned long freq) {
 	unsigned short iPentiumSpeeds[12];
 	unsigned short * speeds;
 	unsigned short i486Speeds[7];

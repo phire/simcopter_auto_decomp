@@ -577,7 +577,7 @@ private:
 // Contribution: 1:0003b710-0003c389 Module: 58, 16 byte alignment, code, execute, read, 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0043c710
-void $E14() {
+static void $E14() {
 
 	__asm        call   $E13;
 	__asm        jmp    near ptr 0x0043C720;
@@ -585,7 +585,7 @@ void $E14() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0043c725
-void $E13() {
+static void $E13() {
 
 	__asm        call   _tzset;
 	__asm        jmp    near ptr 0x0043C735;
@@ -633,7 +633,7 @@ _T65:
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0043c7b3
-void $E17() {
+static void $E17() {
 
 	__asm        call   $E16;
 	__asm        jmp    near ptr 0x0043C7C3;
@@ -641,7 +641,7 @@ void $E17() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0043c7c8
-void $E16() {
+static void $E16() {
 
 	__asm        push   0;
 	__asm        push   0;
@@ -652,7 +652,7 @@ void $E16() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0043c7e6
-void $E20() {
+static void $E20() {
 
 	__asm        call   $E19;
 	__asm        jmp    near ptr 0x0043C7F6;
@@ -660,7 +660,7 @@ void $E20() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0043c7fb
-void $E19() {
+static void $E19() {
 
 	__asm        push   0;
 	__asm        push   0xC22D;

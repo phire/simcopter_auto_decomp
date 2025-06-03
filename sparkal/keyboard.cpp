@@ -88,7 +88,7 @@ public:
 // Contribution: 1:00030c50-00031258 Module: 62, 16 byte alignment, code, execute, read, 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00431c50
-void $E4() {
+static void $E4() {
 
 	__asm        call   $E1;
 	__asm        call   $E3;
@@ -97,7 +97,7 @@ void $E4() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00431c6a
-void $E1() {
+static void $E1() {
 
 	__asm        mov    ecx, 0x5C34F0;
 	__asm        call   Keyboard::Keyboard;
@@ -106,7 +106,7 @@ void $E1() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00431c84
-void $E3() {
+static void $E3() {
 
 	__asm        push   0x431CA1;
 	__asm        call   atexit;
@@ -116,7 +116,7 @@ void $E3() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00431ca1
-void $E2() {
+static void $E2() {
 
 	__asm        jmp    near ptr 0x00431CAC;
 

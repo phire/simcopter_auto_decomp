@@ -254,7 +254,7 @@ public:
 // Contribution: 1:00040e30-000461ac Module: 52, 16 byte alignment, code, execute, read, 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00441e30
-void $E55() {
+static void $E55() {
 
 	__asm        call   $E54;
 	__asm        jmp    near ptr 0x00441E40;
@@ -262,7 +262,7 @@ void $E55() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00441e45
-void $E54() {
+static void $E54() {
 
 	__asm        mov    glMasterVolume, 0x2710;
 	__asm        jmp    near ptr 0x00441E5A;
@@ -270,7 +270,7 @@ void $E54() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00441e5f
-void $E58() {
+static void $E58() {
 
 	__asm        call   $E57;
 	__asm        jmp    near ptr 0x00441E6F;
@@ -278,7 +278,7 @@ void $E58() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00441e74
-void $E57() {
+static void $E57() {
 
 	__asm        mov    gSoundChangeNotificationSink<SoundChangeNotificationSink+0x00>, 0x58F5C8;
 	__asm        jmp    near ptr 0x00441E89;

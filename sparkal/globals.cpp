@@ -155,7 +155,7 @@ struct VRwindowType{
 // Contribution: 1:000461b0-00046235 Module: 51, 16 byte alignment, code, execute, read, 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004471b0
-void $E4() {
+static void $E4() {
 
 	__asm        call   $E1;
 	__asm        call   $E3;
@@ -164,7 +164,7 @@ void $E4() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004471ca
-void $E1() {
+static void $E1() {
 
 	__asm        jmp    near ptr 0x004471D5;
 
@@ -173,7 +173,7 @@ void $E1() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004471df
-void $E3() {
+static void $E3() {
 
 	__asm        push   0x4471FC;
 	__asm        call   atexit;
@@ -183,7 +183,7 @@ void $E3() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004471fc
-void $E2() {
+static void $E2() {
 
 	__asm        jmp    near ptr 0x00447207;
 
@@ -192,7 +192,7 @@ void $E2() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00447211
-void $E7() {
+static void $E7() {
 
 	__asm        call   $E6;
 	__asm        jmp    near ptr 0x00447221;
@@ -200,7 +200,7 @@ void $E7() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00447226
-void $E6() {
+static void $E6() {
 
 	__asm        jmp    near ptr 0x00447231;
 }

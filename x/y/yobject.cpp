@@ -2791,7 +2791,7 @@ protected:
 // Contribution: 1:00142f70-00150d97 Module: 200, 16 byte alignment, code, execute, read, 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00543f70
-void $E75() {
+static void $E75() {
 
 	__asm        call   $E71;
 	__asm        call   $E74;
@@ -2800,7 +2800,7 @@ void $E75() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00543f8a
-void $E71() {
+static void $E71() {
 	// Function registers exception cleanup function at 0x00544088
 
 	__asm        mov    ecx, 0x636BB8;
@@ -2862,7 +2862,7 @@ _T108:
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x005440a0
-void $E74() {
+static void $E74() {
 
 	__asm        push   0x5440BD;
 	__asm        call   atexit;
@@ -2872,7 +2872,7 @@ void $E74() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x005440bd
-void $E72() {
+static void $E72() {
 
 	__asm        xor    eax, eax;
 	__asm        mov    al, ds:[0x6375A0];
@@ -2891,7 +2891,7 @@ _T2d:
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x005440f4
-void $E81() {
+static void $E81() {
 
 	__asm        call   $E77;
 	__asm        call   $E80;
@@ -2900,7 +2900,7 @@ void $E81() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0054410e
-void $E77() {
+static void $E77() {
 	// Function registers exception cleanup function at 0x005441b0
 
 	__asm        mov    ecx, 0x635590;
@@ -2941,7 +2941,7 @@ _Tac:
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x005441c8
-void $E80() {
+static void $E80() {
 
 	__asm        push   0x5441E5;
 	__asm        call   atexit;
@@ -2951,7 +2951,7 @@ void $E80() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x005441e5
-void $E78() {
+static void $E78() {
 	// Function registers exception cleanup function at 0x0054424a
 
 	__asm        xor    eax, eax;
@@ -2997,7 +2997,7 @@ _T1d:
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00544289
-void $E86() {
+static void $E86() {
 
 	__asm        call   $E83;
 	__asm        call   $E85;
@@ -3006,7 +3006,7 @@ void $E86() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x005442a3
-void $E83() {
+static void $E83() {
 
 	__asm        mov    gXTimer.nTimerResolution, 1;
 	__asm        mov    gXTimer.lStartTime, 0;
@@ -3031,7 +3031,7 @@ _T5b:
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0054430d
-void $E85() {
+static void $E85() {
 
 	__asm        push   0x54432A;
 	__asm        call   atexit;
@@ -3041,7 +3041,7 @@ void $E85() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0054432a
-void $E84() {
+static void $E84() {
 
 	__asm        jmp    near ptr 0x00544335;
 

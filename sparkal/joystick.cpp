@@ -143,7 +143,7 @@ struct joyinfoex_tag{
 // Contribution: 1:00099480-00099d21 Module: 15, 16 byte alignment, code, execute, read, 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0049a480
-void $E2() {
+static void $E2() {
 
 	__asm        call   $E1;
 	__asm        jmp    near ptr 0x0049A490;
@@ -151,7 +151,7 @@ void $E2() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0049a495
-void $E1() {
+static void $E1() {
 
 	__asm        mov    ecx, 0x604C78;
 	__asm        call   JoystickManager::JoystickManager;

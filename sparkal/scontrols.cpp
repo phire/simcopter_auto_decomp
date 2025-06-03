@@ -529,7 +529,7 @@ public:
 // Contribution: 1:000705e0-00070d19 Module: 38, 16 byte alignment, code, execute, read, 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004715e0
-void $E65() {
+static void $E65() {
 
 	__asm        call   $E61;
 	__asm        call   $E64;
@@ -538,7 +538,7 @@ void $E65() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004715fa
-void $E61() {
+static void $E61() {
 
 	__asm        mov    ecx, 0x6042C8;
 	__asm        call   DigitalSound::DigitalSound;
@@ -547,7 +547,7 @@ void $E61() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00471614
-void $E64() {
+static void $E64() {
 
 	__asm        push   0x471631;
 	__asm        call   atexit;
@@ -557,7 +557,7 @@ void $E64() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00471631
-void $E62() {
+static void $E62() {
 
 	__asm        xor    eax, eax;
 	__asm        mov    al, ds:[0x604444];
@@ -576,7 +576,7 @@ _T2d:
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00471668
-void $E70() {
+static void $E70() {
 
 	__asm        call   $E67;
 	__asm        call   $E69;
@@ -585,7 +585,7 @@ void $E70() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00471682
-void $E67() {
+static void $E67() {
 
 	__asm        mov    ecx, 0x6043C8;
 	__asm        call   DigitalSound::DigitalSound;
@@ -594,7 +594,7 @@ void $E67() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0047169c
-void $E69() {
+static void $E69() {
 
 	__asm        push   0x4716B9;
 	__asm        call   atexit;
@@ -604,7 +604,7 @@ void $E69() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004716b9
-void $E68() {
+static void $E68() {
 
 	__asm        xor    eax, eax;
 	__asm        mov    al, ds:[0x604444];
@@ -623,7 +623,7 @@ _T2d:
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004716f0
-void $E75() {
+static void $E75() {
 
 	__asm        call   $E72;
 	__asm        call   $E74;
@@ -632,7 +632,7 @@ void $E75() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0047170a
-void $E72() {
+static void $E72() {
 
 	__asm        mov    ecx, 0x604348;
 	__asm        call   DigitalSound::DigitalSound;
@@ -641,7 +641,7 @@ void $E72() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00471724
-void $E74() {
+static void $E74() {
 
 	__asm        push   0x471741;
 	__asm        call   atexit;
@@ -651,7 +651,7 @@ void $E74() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00471741
-void $E73() {
+static void $E73() {
 
 	__asm        xor    eax, eax;
 	__asm        mov    al, ds:[0x604444];
@@ -670,7 +670,7 @@ _T2d:
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00471778
-void $E80() {
+static void $E80() {
 
 	__asm        call   $E77;
 	__asm        call   $E79;
@@ -679,7 +679,7 @@ void $E80() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00471792
-void $E77() {
+static void $E77() {
 
 	__asm        mov    ecx, 0x604248;
 	__asm        call   DigitalSound::DigitalSound;
@@ -688,7 +688,7 @@ void $E77() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004717ac
-void $E79() {
+static void $E79() {
 
 	__asm        push   0x4717C9;
 	__asm        call   atexit;
@@ -698,7 +698,7 @@ void $E79() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004717c9
-void $E78() {
+static void $E78() {
 
 	__asm        xor    eax, eax;
 	__asm        mov    al, ds:[0x604444];

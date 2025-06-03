@@ -3184,7 +3184,7 @@ _Te01:
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x0053b99b
-void $E36() {
+static void $E36() {
 
 	__asm        mov    ecx, 0x6351D0;
 	__asm        call   DigitalSound::~DigitalSound;

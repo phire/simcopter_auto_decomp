@@ -1615,7 +1615,7 @@ _T4ab:
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x00422dba
-void $E20() {
+static void $E20() {
 
 	__asm        jmp    near ptr 0x00422DC8;
 

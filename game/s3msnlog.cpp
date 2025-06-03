@@ -733,7 +733,7 @@ struct bidirectional_iterator<tagLogBase *,int>{
 // Contribution: 1:000eabc0-000ed27d Module: 178, 16 byte alignment, code, execute, read, 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004ebbc0
-void $E57() {
+static void $E57() {
 
 	__asm        call   $E54;
 	__asm        call   $E56;
@@ -742,7 +742,7 @@ void $E57() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004ebbda
-void $E54() {
+static void $E54() {
 
 	__asm        mov    ecx, 0x606E78;
 	__asm        call   LogManager::LogManager;
@@ -751,7 +751,7 @@ void $E54() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004ebbf4
-void $E56() {
+static void $E56() {
 
 	__asm        push   0x4EBC11;
 	__asm        call   atexit;
@@ -761,7 +761,7 @@ void $E56() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004ebc11
-void $E55() {
+static void $E55() {
 
 	__asm        mov    ecx, 0x606E78;
 	__asm        call   LogManager::~LogManager;

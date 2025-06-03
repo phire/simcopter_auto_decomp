@@ -795,7 +795,7 @@ struct SparkalRect{
 // Contribution: 1:0009fa00-000a6b52 Module: 9, 16 byte alignment, code, execute, read, 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004a0a00
-void $E48() {
+static void $E48() {
 
 	__asm        call   $E44;
 	__asm        call   $E47;
@@ -804,7 +804,7 @@ void $E48() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004a0a1a
-void $E44() {
+static void $E44() {
 
 	__asm        mov    GraphicWindow::listModalWindows.length, 0;
 	__asm        inc    list<GraphicWindow *>::number_of_lists;
@@ -987,7 +987,7 @@ _T222:
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004a0c73
-void $E47() {
+static void $E47() {
 
 	__asm        push   0x4A0C90;
 	__asm        call   atexit;
@@ -997,7 +997,7 @@ void $E47() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004a0c90
-void $E45() {
+static void $E45() {
 
 	__asm        xor    eax, eax;
 	__asm        mov    al, ds:[0x606998];
@@ -1146,7 +1146,7 @@ _T1c5:
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004a0e5f
-void $E53() {
+static void $E53() {
 
 	__asm        call   $E50;
 	__asm        call   $E52;
@@ -1155,7 +1155,7 @@ void $E53() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004a0e79
-void $E50() {
+static void $E50() {
 
 	__asm        mov    GraphicWindow::listFocusWindows.length, 0;
 	__asm        inc    list<GraphicWindow *>::number_of_lists;
@@ -1338,7 +1338,7 @@ _T222:
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004a10d2
-void $E52() {
+static void $E52() {
 
 	__asm        push   0x4A10EF;
 	__asm        call   atexit;
@@ -1348,7 +1348,7 @@ void $E52() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004a10ef
-void $E51() {
+static void $E51() {
 
 	__asm        xor    eax, eax;
 	__asm        mov    al, ds:[0x606998];
@@ -1497,7 +1497,7 @@ _T1c5:
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004a12be
-void $E58() {
+static void $E58() {
 
 	__asm        call   $E55;
 	__asm        call   $E57;
@@ -1506,7 +1506,7 @@ void $E58() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004a12d8
-void $E55() {
+static void $E55() {
 
 	__asm        mov    GraphicWindow::listValidWindows.length, 0;
 	__asm        inc    list<GraphicWindow *>::number_of_lists;
@@ -1689,7 +1689,7 @@ _T222:
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004a1531
-void $E57() {
+static void $E57() {
 
 	__asm        push   0x4A154E;
 	__asm        call   atexit;
@@ -1699,7 +1699,7 @@ void $E57() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004a154e
-void $E56() {
+static void $E56() {
 
 	__asm        xor    eax, eax;
 	__asm        mov    al, ds:[0x606998];
@@ -1848,7 +1848,7 @@ _T1c5:
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004a171d
-void $E61() {
+static void $E61() {
 
 	__asm        call   $E60;
 	__asm        jmp    near ptr 0x004A172D;
@@ -1856,7 +1856,7 @@ void $E61() {
 
 // STATIC INITIALIZER:
 // FUNCTION: COPTER_D 0x004a1732
-void $E60() {
+static void $E60() {
 
 	__asm        mov    ecx, 0x606968;
 	__asm        call   GraphicWindowColorConstants::GraphicWindowColorConstants;

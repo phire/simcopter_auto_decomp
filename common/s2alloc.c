@@ -89,7 +89,7 @@ _T90:
 }
 
 // FUNCTION: COPTER_D 0x004cb34d
-struct alloc_hdr_s* S2AllocHdr(unsigned long size) {
+static struct alloc_hdr_s* S2AllocHdr(unsigned long size) {
 	char * block;
 	struct alloc_hdr_s* hdr;
 
