@@ -3918,13 +3918,13 @@ _Tcc:
 
 // Contribution: 2:00001708-000017cb Module: 40, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00590708
-// GLOBAL: COPTER_D 0x00590708
+// Demangled: const MissionLogWindow::`vftable'
 // ??_7MissionLogWindow@@6B@
 
 
 // Contribution: 2:000017d0-000017df Module: 40, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x005907d0
-// GLOBAL: COPTER_D 0x005907d0
+// Demangled: const MessageDisplayManager::`vftable'
 // ??_7MessageDisplayManager@@6B@
 
 

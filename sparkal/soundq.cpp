@@ -2801,7 +2801,7 @@ void SoundQueue::ReleaseMutex() {
 
 // Contribution: 2:000003f0-0000041b Module: 71, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x0058f3f0
-// GLOBAL: COPTER_D 0x0058f3f0
+// Demangled: const SoundQueue::`vftable'
 // ??_7SoundQueue@@6B@
 
 

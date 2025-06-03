@@ -3850,7 +3850,7 @@ void HangarWindow::LoadHotSpots() {
 
 // Contribution: 2:00001c20-00001ce3 Module: 36, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00590c20
-// GLOBAL: COPTER_D 0x00590c20
+// Demangled: const HangarWindow::`vftable'
 // ??_7HangarWindow@@6B@
 
 

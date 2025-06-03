@@ -9508,13 +9508,13 @@ _T342:
 
 // Contribution: 2:00000518-0000055b Module: 59, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x0058f518
-// GLOBAL: COPTER_D 0x0058f518
+// Demangled: const RadioStation::`vftable'
 // ??_7RadioStation@@6B@
 
 
 // Contribution: 2:00000560-000005af Module: 59, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x0058f560
-// GLOBAL: COPTER_D 0x0058f560
+// Demangled: const Radio::`vftable'
 // ??_7Radio@@6B@
 
 

@@ -16908,61 +16908,61 @@ _T22c:
 
 // Contribution: 2:000029c0-00002a8b Module: 5, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x005919c0
-// GLOBAL: COPTER_D 0x005919c0
+// Demangled: const BoxWindow::`vftable'
 // ??_7BoxWindow@@6B@
 
 
 // Contribution: 2:00002a90-00002b77 Module: 5, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00591a90
-// GLOBAL: COPTER_D 0x00591a90
+// Demangled: const TextWindow::`vftable'
 // ??_7TextWindow@@6B@
 
 
 // Contribution: 2:00002b78-00002c53 Module: 5, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00591b78
-// GLOBAL: COPTER_D 0x00591b78
+// Demangled: const ButtonWindow::`vftable'
 // ??_7ButtonWindow@@6B@
 
 
 // Contribution: 2:00002c58-00002d33 Module: 5, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00591c58
-// GLOBAL: COPTER_D 0x00591c58
+// Demangled: const CheckBoxWindow::`vftable'
 // ??_7CheckBoxWindow@@6B@
 
 
 // Contribution: 2:00002d38-00002e1b Module: 5, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00591d38
-// GLOBAL: COPTER_D 0x00591d38
+// Demangled: const RadioButtonWindow::`vftable'
 // ??_7RadioButtonWindow@@6B@
 
 
 // Contribution: 2:00002e20-00002ee3 Module: 5, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00591e20
-// GLOBAL: COPTER_D 0x00591e20
+// Demangled: const ButtonGroup::`vftable'
 // ??_7ButtonGroup@@6B@
 
 
 // Contribution: 2:00002ee8-00002fbf Module: 5, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00591ee8
-// GLOBAL: COPTER_D 0x00591ee8
+// Demangled: const SliderWindow::`vftable'
 // ??_7SliderWindow@@6B@
 
 
 // Contribution: 2:00002fc0-000030c7 Module: 5, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00591fc0
-// GLOBAL: COPTER_D 0x00591fc0
+// Demangled: const ScrollBarWindow::`vftable'
 // ??_7ScrollBarWindow@@6B@
 
 
 // Contribution: 2:000030c8-0000321f Module: 5, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x005920c8
-// GLOBAL: COPTER_D 0x005920c8
+// Demangled: const ListBoxWindow::`vftable'
 // ??_7ListBoxWindow@@6B@
 
 
 // Contribution: 2:00003220-0000337b Module: 5, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00592220
-// GLOBAL: COPTER_D 0x00592220
+// Demangled: const PopupMenuWindow::`vftable'
 // ??_7PopupMenuWindow@@6B@
 
 

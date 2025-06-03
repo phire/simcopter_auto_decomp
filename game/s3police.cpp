@@ -2420,7 +2420,7 @@ static const enum TurnIndex TILUT[4][4] = { 0 /* todo */ };
 
 // Contribution: 2:00004310-00004337 Module: 158, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00593310
-// GLOBAL: COPTER_D 0x00593310
+// Demangled: const PoliceCarClass::`vftable'
 // ??_7PoliceCarClass@@6B@
 
 

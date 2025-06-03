@@ -3190,7 +3190,7 @@ void InventoryWindow::GetTitleAndAddressRects(class MRect& rectTitle, class MRec
 
 // Contribution: 2:00002888-0000294b Module: 8, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00591888
-// GLOBAL: COPTER_D 0x00591888
+// Demangled: const InventoryWindow::`vftable'
 // ??_7InventoryWindow@@6B@
 
 

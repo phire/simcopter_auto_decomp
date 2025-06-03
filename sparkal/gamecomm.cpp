@@ -4790,7 +4790,7 @@ _T1ca:
 
 // Contribution: 2:00001ff8-0000204b Module: 26, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00590ff8
-// GLOBAL: COPTER_D 0x00590ff8
+// Demangled: const CGameCommander::`vftable'
 // ??_7CGameCommander@@6B@
 
 

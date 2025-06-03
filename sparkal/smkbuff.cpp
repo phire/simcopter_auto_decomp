@@ -3581,25 +3581,25 @@ _Tcc:
 
 // Contribution: 2:00002138-00002157 Module: 17, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00591138
-// GLOBAL: COPTER_D 0x00591138
+// Demangled: const SmackerBuffer::`vftable'
 // ??_7SmackerBuffer@@6B@
 
 
 // Contribution: 2:00002158-00002187 Module: 17, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00591158
-// GLOBAL: COPTER_D 0x00591158
+// Demangled: const VRBmpSmackerBuffer::`vftable'
 // ??_7VRBmpSmackerBuffer@@6B@
 
 
 // Contribution: 2:00002188-000021eb Module: 17, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00591188
-// GLOBAL: COPTER_D 0x00591188
+// Demangled: const SmackerBackBuffer::`vftable'{for `CBackBuffer'}
 // ??_7SmackerBackBuffer@@6BCBackBuffer@@@
 
 
 // Contribution: 2:000021f0-00002217 Module: 17, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x005911f0
-// GLOBAL: COPTER_D 0x005911f0
+// Demangled: const SmackerBackBuffer::`vftable'{for `SmackerBuffer'}
 // ??_7SmackerBackBuffer@@6BSmackerBuffer@@@
 
 

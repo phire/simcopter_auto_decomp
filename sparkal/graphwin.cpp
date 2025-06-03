@@ -10666,19 +10666,19 @@ int32_t ScreenWindow::DrawSelf() {
 
 // Contribution: 2:00002648-0000267f Module: 9, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00591648
-// GLOBAL: COPTER_D 0x00591648
+// Demangled: const GraphicWindowManager::`vftable'
 // ??_7GraphicWindowManager@@6B@
 
 
 // Contribution: 2:00002680-00002743 Module: 9, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00591680
-// GLOBAL: COPTER_D 0x00591680
+// Demangled: const GraphicWindow::`vftable'
 // ??_7GraphicWindow@@6B@
 
 
 // Contribution: 2:00002748-0000280b Module: 9, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00591748
-// GLOBAL: COPTER_D 0x00591748
+// Demangled: const ScreenWindow::`vftable'
 // ??_7ScreenWindow@@6B@
 
 
@@ -10750,7 +10750,6 @@ struct GraphicWindowColorConstants GraphicWindow::colorConstants;
 class list<GraphicWindow *> GraphicWindow::listModalWindows;
 
 // GLOBAL: COPTER_D 0x00606998
-// LOCAL: COPTER_D 0x00606998
 // $S46
 // GLOBAL: COPTER_D 0x006069a0
 class list<GraphicWindow *> GraphicWindow::listValidWindows;

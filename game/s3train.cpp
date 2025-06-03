@@ -10227,7 +10227,7 @@ _T66:
 
 // Contribution: 2:00004238-00004253 Module: 162, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00593238
-// GLOBAL: COPTER_D 0x00593238
+// Demangled: const TrainClass::`vftable'
 // ??_7TrainClass@@6B@
 
 
@@ -10257,7 +10257,6 @@ class TrainClass TrainClass::lsTrain;
 class TrainClass* trains[1];
 
 // GLOBAL: COPTER_D 0x0062b998
-// LOCAL: COPTER_D 0x0062b998
 // $S5
 
 

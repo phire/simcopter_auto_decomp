@@ -5798,13 +5798,13 @@ _Ta9:
 
 // Contribution: 2:000005c0-000005c7 Module: 52, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x0058f5c0
-// GLOBAL: COPTER_D 0x0058f5c0
+// Demangled: const SoundChangeNotificationSink::`vftable'
 // ??_7SoundChangeNotificationSink@@6B@
 
 
 // Contribution: 2:000005c8-000005cb Module: 52, 4 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x0058f5c8
-// GLOBAL: COPTER_D 0x0058f5c8
+// Demangled: const NotificationSink::`vftable'
 // ??_7NotificationSink@@6B@
 
 

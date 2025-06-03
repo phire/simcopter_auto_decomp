@@ -1392,13 +1392,13 @@ _Teb:
 
 // Contribution: 2:00002050-0000206b Module: 24, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00591050
-// GLOBAL: COPTER_D 0x00591050
+// Demangled: const IFlatImage::`vftable'
 // ??_7IFlatImage@@6B@
 
 
 // Contribution: 2:00002070-0000208f Module: 24, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00591070
-// GLOBAL: COPTER_D 0x00591070
+// Demangled: const CFlatImage::`vftable'
 // ??_7CFlatImage@@6B@
 
 
@@ -1413,17 +1413,17 @@ unsigned long IFlatImage::lTotalLockCount = 0;
 
 // Contribution: 3:00003068-0000307f Module: 24, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059a068
-// GLOBAL: COPTER_D 0x0059a068
+// Demangled: "theHandle && lockedData"
 // ??_C@_0BI@MJPB@theHandle?5?$CG?$CG?5lockedData?$AA@
 
 
 // Contribution: 3:00003080-0000308e Module: 24, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059a080
-// GLOBAL: COPTER_D 0x0059a080
+// Demangled: "(int)theHandle"
 // ??_C@_0P@EIPH@?$CIint?$CJtheHandle?$AA@
 
 
 // Contribution: 3:00003090-000030a1 Module: 24, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059a090
-// GLOBAL: COPTER_D 0x0059a090
+// Demangled: "theHandle && size"
 // ??_C@_0BC@NODK@theHandle?5?$CG?$CG?5size?$AA@

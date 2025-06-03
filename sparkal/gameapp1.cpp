@@ -4616,19 +4616,19 @@ _T118:
 
 // Contribution: 2:00001f2c-00001f2f Module: 28, 4 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00590f2c
-// GLOBAL: COPTER_D 0x00590f2c
+// Demangled: const GraphicWindowOwner::`vftable'
 // ??_7GraphicWindowOwner@@6B@
 
 
 // Contribution: 2:00001f30-00001f33 Module: 28, 4 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00590f30
-// GLOBAL: COPTER_D 0x00590f30
+// Demangled: const CGameApp::`vftable'{for `GraphicWindowOwner'}
 // ??_7CGameApp@@6BGraphicWindowOwner@@@
 
 
 // Contribution: 2:00001f38-00001fef Module: 28, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00590f38
-// GLOBAL: COPTER_D 0x00590f38
+// Demangled: const CGameApp::`vftable'{for `CSparkalApp'}
 // ??_7CGameApp@@6BCSparkalApp@@@
 
 
@@ -4679,7 +4679,7 @@ uint32_t list<CopterGameMode>::number_of_lists = 0;
 
 // Contribution: 3:00002d78-00002d7c Module: 28, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00599d78
-// GLOBAL: COPTER_D 0x00599d78
+// Demangled: "2.0y"
 // ??_C@_04JEFE@2?40y?$AA@
 
 

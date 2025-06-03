@@ -1422,7 +1422,7 @@ _T76:
 
 // Contribution: 2:00004258-0000427b Module: 161, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00593258
-// GLOBAL: COPTER_D 0x00593258
+// Demangled: const CriminalEvaderCarClass::`vftable'
 // ??_7CriminalEvaderCarClass@@6B@
 
 

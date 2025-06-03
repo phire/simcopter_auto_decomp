@@ -8024,7 +8024,7 @@ _Tfc:
 
 // Contribution: 2:00001ce8-00001dab Module: 34, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00590ce8
-// GLOBAL: COPTER_D 0x00590ce8
+// Demangled: const CatalogWindow::`vftable'
 // ??_7CatalogWindow@@6B@
 
 

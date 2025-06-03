@@ -317,7 +317,7 @@ _T2c5:
 
 // Contribution: 2:00004a30-00004a33 Module: 181, 4 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00593a30
-// GLOBAL: COPTER_D 0x00593a30
+// Demangled: const cArray<struct PrivAnimPartInfo>::`vftable'
 // ??_7?$cArray@UPrivAnimPartInfo@@@@6B@
 
 

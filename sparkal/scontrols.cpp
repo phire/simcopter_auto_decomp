@@ -1182,25 +1182,25 @@ _T3f:
 
 // Contribution: 2:00001870-0000194b Module: 38, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00590870
-// GLOBAL: COPTER_D 0x00590870
+// Demangled: const SoundButtonWindow::`vftable'
 // ??_7SoundButtonWindow@@6B@
 
 
 // Contribution: 2:00001950-00001a33 Module: 38, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00590950
-// GLOBAL: COPTER_D 0x00590950
+// Demangled: const SoundRadioButtonWindow::`vftable'
 // ??_7SoundRadioButtonWindow@@6B@
 
 
 // Contribution: 2:00001a38-00001b13 Module: 38, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00590a38
-// GLOBAL: COPTER_D 0x00590a38
+// Demangled: const SoundCheckBoxWindow::`vftable'
 // ??_7SoundCheckBoxWindow@@6B@
 
 
 // Contribution: 2:00001b18-00001c1f Module: 38, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00590b18
-// GLOBAL: COPTER_D 0x00590b18
+// Demangled: const SoundScrollBarWindow::`vftable'
 // ??_7SoundScrollBarWindow@@6B@
 
 
@@ -1248,5 +1248,4 @@ class DigitalSound SoundCheckBoxWindow::checkBoxSound;
 class DigitalSound SoundRadioButtonWindow::radioButtonSound;
 
 // GLOBAL: COPTER_D 0x00604444
-// LOCAL: COPTER_D 0x00604444
 // $S63

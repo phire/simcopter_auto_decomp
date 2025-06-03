@@ -4570,19 +4570,19 @@ int32_t UserMenuWindow::GetLineCount() {
 
 // Contribution: 2:000022f8-000023df Module: 13, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x005912f8
-// GLOBAL: COPTER_D 0x005912f8
+// Demangled: const UserMenuWindow::`vftable'
 // ??_7UserMenuWindow@@6B@
 
 
 // Contribution: 2:000023e0-000024c7 Module: 13, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x005913e0
-// GLOBAL: COPTER_D 0x005913e0
+// Demangled: const CopterMainMenu::`vftable'
 // ??_7CopterMainMenu@@6B@
 
 
 // Contribution: 2:000024c8-000025af Module: 13, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x005914c8
-// GLOBAL: COPTER_D 0x005914c8
+// Demangled: const CopterPlayMenu::`vftable'
 // ??_7CopterPlayMenu@@6B@
 
 

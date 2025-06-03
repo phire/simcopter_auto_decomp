@@ -3227,13 +3227,13 @@ _Tdb:
 
 // Contribution: 2:00001db0-00001de3 Module: 32, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00590db0
-// GLOBAL: COPTER_D 0x00590db0
+// Demangled: const PreferenceManager::`vftable'
 // ??_7PreferenceManager@@6B@
 
 
 // Contribution: 2:00001de8-00001e2b Module: 32, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00590de8
-// GLOBAL: COPTER_D 0x00590de8
+// Demangled: const NotificationPreferenceManager::`vftable'
 // ??_7NotificationPreferenceManager@@6B@
 
 

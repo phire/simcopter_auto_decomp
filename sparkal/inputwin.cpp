@@ -18033,25 +18033,25 @@ _T57a:
 
 // Contribution: 2:00000058-0000013b Module: 75, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x0058f058
-// GLOBAL: COPTER_D 0x0058f058
+// Demangled: const KeyboardWindow::`vftable'
 // ??_7KeyboardWindow@@6B@
 
 
 // Contribution: 2:00000140-00000227 Module: 75, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x0058f140
-// GLOBAL: COPTER_D 0x0058f140
+// Demangled: const JoystickWindow::`vftable'
 // ??_7JoystickWindow@@6B@
 
 
 // Contribution: 2:00000228-000002fb Module: 75, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x0058f228
-// GLOBAL: COPTER_D 0x0058f228
+// Demangled: const UserInputWindow::`vftable'
 // ??_7UserInputWindow@@6B@
 
 
 // Contribution: 2:00000300-000003c7 Module: 75, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x0058f300
-// GLOBAL: COPTER_D 0x0058f300
+// Demangled: const ControlDisplayWindow::`vftable'
 // ??_7ControlDisplayWindow@@6B@
 
 
@@ -18102,7 +18102,7 @@ char * SZ_CONTROL_DISPLAY_WINDOW_IMAGE_FILE_NAME = { 0 /* todo */ };
 
 // Contribution: 3:000001ac-000001b9 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005971ac
-// GLOBAL: COPTER_D 0x005971ac
+// Demangled: "out of memory"
 // ??_C@_0O@OAFC@out?5of?5memory?$AA@
 
 
@@ -18168,13 +18168,13 @@ struct list<KeyColors>::list_node_buffer* list<KeyColors>::buffer_list = { 0 /* 
 
 // Contribution: 3:000001e4-000001fd Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005971e4
-// GLOBAL: COPTER_D 0x005971e4
+// Demangled: "Length exception occurred"
 // ??_C@_0BK@CLOL@Length?5exception?5occurred?$AA@
 
 
 // Contribution: 3:00000200-00000203 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597200
-// GLOBAL: COPTER_D 0x00597200
+// Demangled: "(!)"
 // ??_C@_03LNFH@?$CI?$CB?$CJ?$AA@
 
 
@@ -18240,7 +18240,7 @@ struct list<Shortcut>::list_node_buffer* list<Shortcut>::buffer_list = { 0 /* to
 
 // Contribution: 3:0000022c-0000024b Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059722c
-// GLOBAL: COPTER_D 0x0059722c
+// Demangled: "Out of range exception occurred"
 // ??_C@_0CA@KCID@Out?5of?5range?5exception?5occurred?$AA@
 
 

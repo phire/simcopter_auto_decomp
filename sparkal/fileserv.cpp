@@ -5672,61 +5672,61 @@ static void (*$S33)() = { 0 /* todo */ };
 
 // Contribution: 3:000030c4-000030ca Module: 21, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059a0c4
-// GLOBAL: COPTER_D 0x0059a0c4
+// Demangled: "tweak\\"
 // ??_C@_06GHGC@tweak?2?$AA@
 
 
 // Contribution: 3:000030cc-000030ce Module: 21, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059a0cc
-// GLOBAL: COPTER_D 0x0059a0cc
+// Demangled: "X\\"
 // ??_C@_02IHAM@X?2?$AA@
 
 
 // Contribution: 3:000030d0-000030d6 Module: 21, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059a0d0
-// GLOBAL: COPTER_D 0x0059a0d0
+// Demangled: "fonts\\"
 // ??_C@_06LEOC@fonts?2?$AA@
 
 
 // Contribution: 3:000030d8-000030dc Module: 21, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059a0d8
-// GLOBAL: COPTER_D 0x0059a0d8
+// Demangled: "geo\\"
 // ??_C@_04IAOI@geo?2?$AA@
 
 
 // Contribution: 3:000030e0-000030e4 Module: 21, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059a0e0
-// GLOBAL: COPTER_D 0x0059a0e0
+// Demangled: "bmp\\"
 // ??_C@_04BOOP@bmp?2?$AA@
 
 
 // Contribution: 3:000030e8-000030f6 Module: 21, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059a0e8
-// GLOBAL: COPTER_D 0x0059a0e8
+// Demangled: "cities\\career\\"
 // ??_C@_0P@CBA@cities?2career?2?$AA@
 
 
 // Contribution: 3:000030f8-000030ff Module: 21, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059a0f8
-// GLOBAL: COPTER_D 0x0059a0f8
+// Demangled: "cities\\"
 // ??_C@_07JPDD@cities?2?$AA@
 
 
 // Contribution: 3:00003100-0000310c Module: 21, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059a100
-// GLOBAL: COPTER_D 0x0059a100
+// Demangled: "sound\\radio\\"
 // ??_C@_0N@HBG@sound?2radio?2?$AA@
 
 
 // Contribution: 3:00003110-00003116 Module: 21, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059a110
-// GLOBAL: COPTER_D 0x0059a110
+// Demangled: "sound\\"
 // ??_C@_06CDIJ@sound?2?$AA@
 
 
 // Contribution: 3:00003118-0000311c Module: 21, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059a118
-// GLOBAL: COPTER_D 0x0059a118
+// Demangled: "smk\\"
 // ??_C@_04IKJO@smk?2?$AA@
 
 

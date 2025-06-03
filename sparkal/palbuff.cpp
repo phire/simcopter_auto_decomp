@@ -692,7 +692,7 @@ unsigned long PaletteBuffer::Compose(class IFlatImage* pDestImage, long DestLeft
 
 // Contribution: 2:000005e0-00000643 Module: 50, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x0058f5e0
-// GLOBAL: COPTER_D 0x0058f5e0
+// Demangled: const PaletteBuffer::`vftable'
 // ??_7PaletteBuffer@@6B@
 
 

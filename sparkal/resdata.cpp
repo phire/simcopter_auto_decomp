@@ -362,5 +362,5 @@ char * ResourceRCData::DataReference() {
 
 // Contribution: 2:00000648-0000064f Module: 49, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x0058f648
-// GLOBAL: COPTER_D 0x0058f648
+// Demangled: const ResourceRCData::`vftable'
 // ??_7ResourceRCData@@6B@

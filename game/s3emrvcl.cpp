@@ -2637,7 +2637,7 @@ static const enum TurnIndex TILUT[4][4] = { 0 /* todo */ };
 
 // Contribution: 2:000044c0-000044e7 Module: 154, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x005934c0
-// GLOBAL: COPTER_D 0x005934c0
+// Demangled: const EmergencyVehicleClass::`vftable'
 // ??_7EmergencyVehicleClass@@6B@
 
 

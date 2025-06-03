@@ -21398,25 +21398,25 @@ _T45:
 
 // Contribution: 2:00000a80-00000b53 Module: 45, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x0058fa80
-// GLOBAL: COPTER_D 0x0058fa80
+// Demangled: const MessageBoxWindow::`vftable'
 // ??_7MessageBoxWindow@@6B@
 
 
 // Contribution: 2:00000b58-00000c1b Module: 45, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x0058fb58
-// GLOBAL: COPTER_D 0x0058fb58
+// Demangled: const AnimationWindow::`vftable'
 // ??_7AnimationWindow@@6B@
 
 
 // Contribution: 2:00000c20-00000ce3 Module: 45, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x0058fc20
-// GLOBAL: COPTER_D 0x0058fc20
+// Demangled: const RenderSettingsWindow::`vftable'
 // ??_7RenderSettingsWindow@@6B@
 
 
 // Contribution: 2:00000ce8-00000dab Module: 45, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x0058fce8
-// GLOBAL: COPTER_D 0x0058fce8
+// Demangled: const SoundSettingsWindow::`vftable'
 // ??_7SoundSettingsWindow@@6B@
 
 
@@ -21425,43 +21425,43 @@ _T45:
 
 // Contribution: 2:00000dd0-00000e93 Module: 45, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x0058fdd0
-// GLOBAL: COPTER_D 0x0058fdd0
+// Demangled: const CitySettingsWindow::`vftable'
 // ??_7CitySettingsWindow@@6B@
 
 
 // Contribution: 2:00000e98-00000ff7 Module: 45, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x0058fe98
-// GLOBAL: COPTER_D 0x0058fe98
+// Demangled: const PopupMenuExtra::`vftable'
 // ??_7PopupMenuExtra@@6B@
 
 
 // Contribution: 2:00000ff8-000010eb Module: 45, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x0058fff8
-// GLOBAL: COPTER_D 0x0058fff8
+// Demangled: const TooltipWindow::`vftable'
 // ??_7TooltipWindow@@6B@
 
 
 // Contribution: 2:000010f0-000011f3 Module: 45, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x005900f0
-// GLOBAL: COPTER_D 0x005900f0
+// Demangled: const BoneheadTextEditWindow::`vftable'
 // ??_7BoneheadTextEditWindow@@6B@
 
 
 // Contribution: 2:000011f8-000012d3 Module: 45, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x005901f8
-// GLOBAL: COPTER_D 0x005901f8
+// Demangled: const MessageBoxWindowEdit::`vftable'
 // ??_7MessageBoxWindowEdit@@6B@
 
 
 // Contribution: 2:000012d8-0000139b Module: 45, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x005902d8
-// GLOBAL: COPTER_D 0x005902d8
+// Demangled: const ScrollingCreditWindow::`vftable'
 // ??_7ScrollingCreditWindow@@6B@
 
 
 // Contribution: 2:000013a0-00001463 Module: 45, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x005903a0
-// GLOBAL: COPTER_D 0x005903a0
+// Demangled: const CheckupWindow::`vftable'
 // ??_7CheckupWindow@@6B@
 
 

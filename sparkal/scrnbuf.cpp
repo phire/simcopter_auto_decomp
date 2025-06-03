@@ -2018,7 +2018,7 @@ void ScreenBuffer::SetWindowRect(struct SparkalRect* rectWindow) {
 
 // Contribution: 2:000025b0-0000263b Module: 12, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x005915b0
-// GLOBAL: COPTER_D 0x005915b0
+// Demangled: const ScreenBuffer::`vftable'
 // ??_7ScreenBuffer@@6B@
 
 

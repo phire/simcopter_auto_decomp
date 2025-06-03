@@ -1620,7 +1620,7 @@ _Tf4:
 
 // Contribution: 2:000042a8-000042cf Module: 159, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x005932a8
-// GLOBAL: COPTER_D 0x005932a8
+// Demangled: const FireEngineClass::`vftable'
 // ??_7FireEngineClass@@6B@
 
 

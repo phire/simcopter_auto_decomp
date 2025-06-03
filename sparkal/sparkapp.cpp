@@ -764,35 +764,35 @@ unsigned long CSparkalApp::FinishGame() {
 
 // Contribution: 2:00000428-0000043b Module: 69, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x0058f428
-// GLOBAL: COPTER_D 0x0058f428
+// Demangled: const CSparkalApp::`vftable'
 // ??_7CSparkalApp@@6B@
 
 
 // Contribution: 3:00000424-0000042e Module: 69, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597424
-// GLOBAL: COPTER_D 0x00597424
+// Demangled: "(int)pPool"
 // ??_C@_0L@JPFL@?$CIint?$CJpPool?$AA@
 
 
 // Contribution: 3:00000430-00000442 Module: 69, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597430
-// GLOBAL: COPTER_D 0x00597430
+// Demangled: "thePointer && size"
 // ??_C@_0BD@OKOA@thePointer?5?$CG?$CG?5size?$AA@
 
 
 // Contribution: 3:00000444-00000467 Module: 69, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597444
-// GLOBAL: COPTER_D 0x00597444
+// Demangled: "C:\\Copter\\source\\sparkal\\memory."...
 // ??_C@_0CE@KOME@C?3?2Copter?2source?2sparkal?2memory?4@
 
 
 // Contribution: 3:00000468-00000471 Module: 69, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597468
-// GLOBAL: COPTER_D 0x00597468
+// Demangled: "(int)Pool"
 // ??_C@_09IHHC@?$CIint?$CJPool?$AA@
 
 
 // Contribution: 3:00000474-00000483 Module: 69, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597474
-// GLOBAL: COPTER_D 0x00597474
+// Demangled: "(int)thePointer"
 // ??_C@_0BA@CGBB@?$CIint?$CJthePointer?$AA@

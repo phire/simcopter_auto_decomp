@@ -308,13 +308,13 @@ unsigned long CDefaultCommander::OnWindowDeactivate() {
 
 // Contribution: 2:000022a8-000022cb Module: 14, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x005912a8
-// GLOBAL: COPTER_D 0x005912a8
+// Demangled: const ICommander::`vftable'
 // ??_7ICommander@@6B@
 
 
 // Contribution: 2:000022d0-000022f3 Module: 14, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x005912d0
-// GLOBAL: COPTER_D 0x005912d0
+// Demangled: const CDefaultCommander::`vftable'
 // ??_7CDefaultCommander@@6B@
 
 

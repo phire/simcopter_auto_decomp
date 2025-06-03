@@ -1201,7 +1201,7 @@ _T7a:
 
 // Contribution: 2:00004280-000042a7 Module: 160, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00593280
-// GLOBAL: COPTER_D 0x00593280
+// Demangled: const AmbulanceClass::`vftable'
 // ??_7AmbulanceClass@@6B@
 
 

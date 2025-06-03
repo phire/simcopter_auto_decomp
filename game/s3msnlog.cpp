@@ -3986,7 +3986,7 @@ long LogManager::GetStringIDFromLogEvent(const struct tagLogMissionEvent* lME) {
 
 // Contribution: 2:00003680-00003683 Module: 178, 4 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00592680
-// GLOBAL: COPTER_D 0x00592680
+// Demangled: const MTimeLocalized::`vftable'
 // ??_7MTimeLocalized@@6B@
 
 

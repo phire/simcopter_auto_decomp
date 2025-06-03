@@ -2064,13 +2064,13 @@ _T110:
 
 // Contribution: 2:000020f8-00002113 Module: 18, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x005910f8
-// GLOBAL: COPTER_D 0x005910f8
+// Demangled: const SparkalPalette::`vftable'
 // ??_7SparkalPalette@@6B@
 
 
 // Contribution: 2:00002118-00002133 Module: 18, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00591118
-// GLOBAL: COPTER_D 0x00591118
+// Demangled: const CopterSparkalPalette::`vftable'
 // ??_7CopterSparkalPalette@@6B@
 
 

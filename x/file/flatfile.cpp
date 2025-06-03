@@ -827,7 +827,7 @@ _T38:
 
 // Contribution: 2:00004620-0000462f Module: 195, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00593620
-// GLOBAL: COPTER_D 0x00593620
+// Demangled: const FlatFile::`vftable'
 // ??_7FlatFile@@6B@
 
 

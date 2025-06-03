@@ -927,7 +927,7 @@ _T244:
 
 // Contribution: 2:00002090-000020f7 Module: 20, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00591090
-// GLOBAL: COPTER_D 0x00591090
+// Demangled: const SkyImage::`vftable'
 // ??_7SkyImage@@6B@
 
 

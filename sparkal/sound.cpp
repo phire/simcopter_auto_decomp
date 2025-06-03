@@ -6095,25 +6095,25 @@ _T38:
 
 // Contribution: 2:00000440-00000447 Module: 64, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x0058f440
-// GLOBAL: COPTER_D 0x0058f440
+// Demangled: const SoundSystem::`vftable'
 // ??_7SoundSystem@@6B@
 
 
 // Contribution: 2:00000448-00000457 Module: 64, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x0058f448
-// GLOBAL: COPTER_D 0x0058f448
+// Demangled: const SoundManager::`vftable'
 // ??_7SoundManager@@6B@
 
 
 // Contribution: 2:00000458-00000483 Module: 64, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x0058f458
-// GLOBAL: COPTER_D 0x0058f458
+// Demangled: const Sound::`vftable'
 // ??_7Sound@@6B@
 
 
 // Contribution: 2:00000488-00000513 Module: 64, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x0058f488
-// GLOBAL: COPTER_D 0x0058f488
+// Demangled: const DigitalSound::`vftable'
 // ??_7DigitalSound@@6B@
 
 

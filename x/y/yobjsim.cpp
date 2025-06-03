@@ -11123,13 +11123,13 @@ int32_t radiusReduction = 131072;
 
 // Contribution: 3:00026d88-00026dba Module: 196, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005bdd88
-// GLOBAL: COPTER_D 0x005bdd88
+// Demangled: "must have master object to test "...
 // ??_C@_0DD@OACJ@must?5have?5master?5object?5to?5test?5@
 
 
 // Contribution: 3:00026dbc-00026dd5 Module: 196, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005bddbc
-// GLOBAL: COPTER_D 0x005bddbc
+// Demangled: "local number out of range"
 // ??_C@_0BK@BPAL@local?5number?5out?5of?5range?$AA@
 
 

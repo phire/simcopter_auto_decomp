@@ -5939,7 +5939,7 @@ _T66:
 
 // Contribution: 2:00004200-0000421b Module: 164, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00593200
-// GLOBAL: COPTER_D 0x00593200
+// Demangled: const BoatClass::`vftable'
 // ??_7BoatClass@@6B@
 
 
@@ -5957,7 +5957,7 @@ struct Point2d BoatClass::lastScannedLocation = { 0 /* todo */ };
 
 // Contribution: 3:00020668-00020688 Module: 164, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005b7668
-// GLOBAL: COPTER_D 0x005b7668
+// Demangled: "C:\\Copter\\Source\\Game\\S3WMOBIL.H"...
 // ??_C@_0CB@MIJI@C?3?2Copter?2Source?2Game?2S3WMOBIL?4H@
 
 
@@ -5969,7 +5969,6 @@ class BoatClass BoatClass::lsBoat;
 class BoatClass* boats[3];
 
 // GLOBAL: COPTER_D 0x0062b6e4
-// LOCAL: COPTER_D 0x0062b6e4
 // $S5
 
 

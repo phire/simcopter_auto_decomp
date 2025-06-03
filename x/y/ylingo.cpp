@@ -653,11 +653,11 @@ void YObjLang::GetNodeText(class Behavior* bhav, struct Behavior::Node* node, un
 
 // Contribution: 2:000046e8-000046fb Module: 190, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x005936e8
-// GLOBAL: COPTER_D 0x005936e8
+// Demangled: const YObjLang::`vftable'
 // ??_7YObjLang@@6B@
 
 
 // Contribution: 2:00004700-00004713 Module: 190, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00593700
-// GLOBAL: COPTER_D 0x00593700
+// Demangled: const Language::`vftable'
 // ??_7Language@@6B@

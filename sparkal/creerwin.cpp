@@ -3343,13 +3343,13 @@ _T109:
 
 // Contribution: 2:00001e30-00001ef3 Module: 31, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00590e30
-// GLOBAL: COPTER_D 0x00590e30
+// Demangled: const CareerWindow::`vftable'
 // ??_7CareerWindow@@6B@
 
 
 // Contribution: 2:00001ef4-00001ef7 Module: 31, 4 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00590ef4
-// GLOBAL: COPTER_D 0x00590ef4
+// Demangled: const CareerWindow::CitySelectionFrame::`vftable'
 // ??_7CitySelectionFrame@CareerWindow@@6B@
 
 

@@ -7975,49 +7975,49 @@ _T621:
 
 // Contribution: 2:000033c0-000033c3 Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x005923c0
-// GLOBAL: COPTER_D 0x005923c0
+// Demangled: const GameModeCoreData::`vftable'
 // ??_7GameModeCoreData@@6B@
 
 
 // Contribution: 2:000033c4-000033c7 Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x005923c4
-// GLOBAL: COPTER_D 0x005923c4
+// Demangled: const GameModeMainMenuData::`vftable'
 // ??_7GameModeMainMenuData@@6B@
 
 
 // Contribution: 2:000033c8-000033cb Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x005923c8
-// GLOBAL: COPTER_D 0x005923c8
+// Demangled: const GameModePickCareerCityData::`vftable'
 // ??_7GameModePickCareerCityData@@6B@
 
 
 // Contribution: 2:000033cc-000033cf Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x005923cc
-// GLOBAL: COPTER_D 0x005923cc
+// Demangled: const GameModePlayData::`vftable'
 // ??_7GameModePlayData@@6B@
 
 
 // Contribution: 2:000033d0-000033d3 Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x005923d0
-// GLOBAL: COPTER_D 0x005923d0
+// Demangled: const GameModeHangarData::`vftable'
 // ??_7GameModeHangarData@@6B@
 
 
 // Contribution: 2:000033d4-000033d7 Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x005923d4
-// GLOBAL: COPTER_D 0x005923d4
+// Demangled: const GameModeCatalogData::`vftable'
 // ??_7GameModeCatalogData@@6B@
 
 
 // Contribution: 2:000033d8-000033db Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x005923d8
-// GLOBAL: COPTER_D 0x005923d8
+// Demangled: const GameModeMissionLogData::`vftable'
 // ??_7GameModeMissionLogData@@6B@
 
 
 // Contribution: 2:000033dc-000033df Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x005923dc
-// GLOBAL: COPTER_D 0x005923dc
+// Demangled: const GameModeInventoryData::`vftable'
 // ??_7GameModeInventoryData@@6B@
 
 

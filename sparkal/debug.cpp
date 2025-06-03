@@ -5086,13 +5086,13 @@ _T683:
 
 // Contribution: 2:0000041c-0000041f Module: 70, 4 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x0058f41c
-// GLOBAL: COPTER_D 0x0058f41c
+// Demangled: const class_debugger<class CDebugWindow, &char const *CDebugWindowhelp_text, &char const *CDebugWindowusage_text>::`vftable'
 // ??_7?$class_debugger@VCDebugWindow@@$1?CDebugWindowhelp_text@@3PBDB$1?CDebugWindowusage_text@@3PBDB@@6B@
 
 
 // Contribution: 2:00000420-00000423 Module: 70, 4 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x0058f420
-// GLOBAL: COPTER_D 0x0058f420
+// Demangled: const debug_command::`vftable'
 // ??_7debug_command@@6B@
 
 

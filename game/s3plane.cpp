@@ -4518,7 +4518,7 @@ _T66:
 
 // Contribution: 2:00004220-00004233 Module: 163, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00593220
-// GLOBAL: COPTER_D 0x00593220
+// Demangled: const PlaneClass::`vftable'
 // ??_7PlaneClass@@6B@
 
 
@@ -4539,7 +4539,7 @@ int32_t PlaneClass::sPlaneModelSet = 0;
 
 // Contribution: 3:0002080c-0002082c Module: 163, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005b780c
-// GLOBAL: COPTER_D 0x005b780c
+// Demangled: "C:\\Copter\\Source\\Game\\S3MOBILE.H"...
 // ??_C@_0CB@DLKO@C?3?2Copter?2Source?2Game?2S3MOBILE?4H@
 
 
@@ -4551,5 +4551,4 @@ class PlaneClass PlaneClass::lsPlane;
 class PlaneClass* planes[2];
 
 // GLOBAL: COPTER_D 0x0062b7b0
-// LOCAL: COPTER_D 0x0062b7b0
 // $S6

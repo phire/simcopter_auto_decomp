@@ -7748,7 +7748,7 @@ _T7c:
 
 // Contribution: 2:00001468-0000146b Module: 44, 4 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00590468
-// GLOBAL: COPTER_D 0x00590468
+// Demangled: const PFile::`vftable'
 // ??_7PFile@@6B@
 
 

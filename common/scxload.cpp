@@ -2746,19 +2746,19 @@ _T152e:
 
 // Contribution: 2:000033f8-00003413 Module: 89, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x005923f8
-// GLOBAL: COPTER_D 0x005923f8
+// Demangled: const cGZXBitstream::`vftable'
 // ??_7cGZXBitstream@@6B@
 
 
 // Contribution: 2:00003418-0000343b Module: 89, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00592418
-// GLOBAL: COPTER_D 0x00592418
+// Demangled: const cLZAPFileBitStream::`vftable'
 // ??_7cLZAPFileBitStream@@6B@
 
 
 // Contribution: 2:00003440-0000345b Module: 89, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00592440
-// GLOBAL: COPTER_D 0x00592440
+// Demangled: const cGZXParamBitstream<struct t_alloc, struct t_free>::`vftable'
 // ??_7?$cGZXParamBitstream@Ut_alloc@@Ut_free@@@@6B@
 
 

@@ -10205,7 +10205,7 @@ _T10b:
 
 // Contribution: 2:00000650-00000717 Module: 47, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x0058f650
-// GLOBAL: COPTER_D 0x0058f650
+// Demangled: const RadioCompassWindow::`vftable'
 // ??_7RadioCompassWindow@@6B@
 
 
@@ -10214,25 +10214,25 @@ _T10b:
 
 // Contribution: 2:00000738-000007ff Module: 47, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x0058f738
-// GLOBAL: COPTER_D 0x0058f738
+// Demangled: const DialWindow::`vftable'
 // ??_7DialWindow@@6B@
 
 
 // Contribution: 2:00000800-000008d3 Module: 47, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x0058f800
-// GLOBAL: COPTER_D 0x0058f800
+// Demangled: const PassengerWindow::`vftable'
 // ??_7PassengerWindow@@6B@
 
 
 // Contribution: 2:000008d8-000009ab Module: 47, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x0058f8d8
-// GLOBAL: COPTER_D 0x0058f8d8
+// Demangled: const MapWindow::`vftable'
 // ??_7MapWindow@@6B@
 
 
 // Contribution: 2:000009b0-00000a7b Module: 47, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x0058f9b0
-// GLOBAL: COPTER_D 0x0058f9b0
+// Demangled: const EquipmentPanelWindow::`vftable'
 // ??_7EquipmentPanelWindow@@6B@
 
 

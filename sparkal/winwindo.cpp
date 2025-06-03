@@ -1995,7 +1995,7 @@ _T483:
 
 // Contribution: 2:00001ef8-00001f2b Module: 30, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00590ef8
-// GLOBAL: COPTER_D 0x00590ef8
+// Demangled: const CSparkalWindow::`vftable'
 // ??_7CSparkalWindow@@6B@
 
 
