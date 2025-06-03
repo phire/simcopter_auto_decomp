@@ -508,7 +508,7 @@ struct _MISSION_PARMS{
 
 // Contribution: 1:00126470-0012a074 Module: 164, 16 byte alignment, code, execute, read, 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x00527470
+// SYNTHETIC: COPTER_D 0x00527470
 static void $E7() {
 
 	__asm        call   $E3;
@@ -517,7 +517,7 @@ static void $E7() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x0052748a
+// SYNTHETIC: COPTER_D 0x0052748a
 static void $E3() {
 
 	__asm        mov    BoatClass::lsBoat<vftable>, 0x593200;
@@ -527,7 +527,7 @@ static void $E3() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x005274a9
+// SYNTHETIC: COPTER_D 0x005274a9
 static void $E6() {
 
 	__asm        push   0x5274C6;
@@ -537,7 +537,7 @@ static void $E6() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x005274c6
+// SYNTHETIC: COPTER_D 0x005274c6
 static void $E4() {
 
 	__asm        xor    eax, eax;

@@ -83,7 +83,7 @@ public:
 	void CopterSparkalPalette();
 	int32_t GetNextDarkerColorIndex(int32_t);
 	int32_t GetNextLighterColorIndex(int32_t);
-	virtual void ~CopterSparkalPalette();
+	virtual void ~CopterSparkalPalette(); // synthetic
 };
 
 // Type: void ();
@@ -847,7 +847,7 @@ protected:
 
 // Contribution: 1:00086830-00089a9c Module: 28, 16 byte alignment, code, execute, read, 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x00487830
+// SYNTHETIC: COPTER_D 0x00487830
 static void $E118() {
 
 	__asm        call   $E115;
@@ -856,7 +856,7 @@ static void $E118() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x0048784a
+// SYNTHETIC: COPTER_D 0x0048784a
 static void $E115() {
 
 	__asm        mov    ecx, 0x604808;
@@ -865,7 +865,7 @@ static void $E115() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x00487864
+// SYNTHETIC: COPTER_D 0x00487864
 static void $E117() {
 
 	__asm        push   0x487881;
@@ -875,7 +875,7 @@ static void $E117() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x00487881
+// SYNTHETIC: COPTER_D 0x00487881
 static void $E116() {
 
 	__asm        jmp    near ptr 0x0048788C;
@@ -886,7 +886,7 @@ static void $E116() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x004878a0
+// SYNTHETIC: COPTER_D 0x004878a0
 static void $E123() {
 
 	__asm        call   $E120;
@@ -895,7 +895,7 @@ static void $E123() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x004878ba
+// SYNTHETIC: COPTER_D 0x004878ba
 static void $E120() {
 
 	__asm        mov    ecx, 0x604588;
@@ -904,7 +904,7 @@ static void $E120() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x004878d4
+// SYNTHETIC: COPTER_D 0x004878d4
 static void $E122() {
 
 	__asm        push   0x4878F1;
@@ -914,7 +914,7 @@ static void $E122() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x004878f1
+// SYNTHETIC: COPTER_D 0x004878f1
 static void $E121() {
 
 	__asm        mov    ecx, 0x604588;
@@ -923,7 +923,7 @@ static void $E121() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x0048790b
+// SYNTHETIC: COPTER_D 0x0048790b
 static void $E128() {
 
 	__asm        call   $E125;
@@ -932,7 +932,7 @@ static void $E128() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x00487925
+// SYNTHETIC: COPTER_D 0x00487925
 static void $E125() {
 
 	__asm        mov    ecx, 0x604600;
@@ -941,7 +941,7 @@ static void $E125() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x0048793f
+// SYNTHETIC: COPTER_D 0x0048793f
 static void $E127() {
 
 	__asm        push   0x48795C;
@@ -951,7 +951,7 @@ static void $E127() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x0048795c
+// SYNTHETIC: COPTER_D 0x0048795c
 static void $E126() {
 
 	__asm        mov    ecx, 0x604600;
@@ -960,7 +960,7 @@ static void $E126() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x00487976
+// SYNTHETIC: COPTER_D 0x00487976
 static void $E133() {
 
 	__asm        call   $E130;
@@ -969,7 +969,7 @@ static void $E133() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x00487990
+// SYNTHETIC: COPTER_D 0x00487990
 static void $E130() {
 
 	__asm        mov    ecx, 0x604480;
@@ -978,7 +978,7 @@ static void $E130() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x004879aa
+// SYNTHETIC: COPTER_D 0x004879aa
 static void $E132() {
 
 	__asm        push   0x4879C7;
@@ -988,7 +988,7 @@ static void $E132() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x004879c7
+// SYNTHETIC: COPTER_D 0x004879c7
 static void $E131() {
 
 	__asm        mov    ecx, 0x604480;
@@ -997,7 +997,7 @@ static void $E131() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x004879e1
+// SYNTHETIC: COPTER_D 0x004879e1
 static void $E138() {
 
 	__asm        call   $E135;
@@ -1006,7 +1006,7 @@ static void $E138() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x004879fb
+// SYNTHETIC: COPTER_D 0x004879fb
 static void $E135() {
 
 	__asm        mov    dword ptr [ebp-4], 2;
@@ -1026,7 +1026,7 @@ _T31:
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x00487a3b
+// SYNTHETIC: COPTER_D 0x00487a3b
 static void $E137() {
 
 	__asm        push   0x487A58;
@@ -1036,7 +1036,7 @@ static void $E137() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x00487a58
+// SYNTHETIC: COPTER_D 0x00487a58
 static void $E136() {
 
 	__asm        mov    dword ptr [ebp-4], 2;
@@ -1060,7 +1060,7 @@ _T3d:
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x00487aa4
+// SYNTHETIC: COPTER_D 0x00487aa4
 static void $E143() {
 
 	__asm        call   $E140;
@@ -1069,7 +1069,7 @@ static void $E143() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x00487abe
+// SYNTHETIC: COPTER_D 0x00487abe
 static void $E140() {
 
 	__asm        mov    ecx, 0x604530;
@@ -1078,7 +1078,7 @@ static void $E140() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x00487ad8
+// SYNTHETIC: COPTER_D 0x00487ad8
 static void $E142() {
 
 	__asm        push   0x487AF5;
@@ -1088,7 +1088,7 @@ static void $E142() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x00487af5
+// SYNTHETIC: COPTER_D 0x00487af5
 static void $E141() {
 
 	__asm        mov    ecx, 0x604530;

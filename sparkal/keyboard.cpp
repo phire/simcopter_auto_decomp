@@ -46,7 +46,7 @@ protected:
 public:
 	class CharList myCharDownList;
 	char chKeyStates[256];
-	void ~Keyboard();
+	void ~Keyboard(); // synthetic
 };
 
 // Type: void ();
@@ -78,7 +78,7 @@ protected:
 public:
 	class CharList myCharDownList;
 	char chKeyStates[256];
-	void ~Keyboard();
+	void ~Keyboard(); // synthetic
 };
 
 // Type: char;
@@ -87,7 +87,7 @@ public:
 
 // Contribution: 1:00030c50-00031258 Module: 62, 16 byte alignment, code, execute, read, 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x00431c50
+// SYNTHETIC: COPTER_D 0x00431c50
 static void $E4() {
 
 	__asm        call   $E1;
@@ -96,7 +96,7 @@ static void $E4() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x00431c6a
+// SYNTHETIC: COPTER_D 0x00431c6a
 static void $E1() {
 
 	__asm        mov    ecx, 0x5C34F0;
@@ -105,7 +105,7 @@ static void $E1() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x00431c84
+// SYNTHETIC: COPTER_D 0x00431c84
 static void $E3() {
 
 	__asm        push   0x431CA1;
@@ -115,7 +115,7 @@ static void $E3() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x00431ca1
+// SYNTHETIC: COPTER_D 0x00431ca1
 static void $E2() {
 
 	__asm        jmp    near ptr 0x00431CAC;
@@ -138,7 +138,7 @@ int32_t IsModifierSet(unsigned char chModifiers) {
 // LINE 18:
 }
 
-// FUNCTION: COPTER_D 0x00431ce4
+// SYNTHETIC: COPTER_D 0x00431ce4
 void Keyboard::Keyboard() {
 
 	__asm        mov    ecx, this;
@@ -247,7 +247,7 @@ _T3a:
 	__asm        jmp    near ptr 0x00431E12;
 }
 
-// FUNCTION: COPTER_D 0x00431e19
+// SYNTHETIC: COPTER_D 0x00431e19
 void Keyboard::ClearSettings() {
 	int32_t i;
 

@@ -576,7 +576,7 @@ private:
 
 // Contribution: 1:0003b710-0003c389 Module: 58, 16 byte alignment, code, execute, read, 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x0043c710
+// SYNTHETIC: COPTER_D 0x0043c710
 static void $E14() {
 
 	__asm        call   $E13;
@@ -584,7 +584,7 @@ static void $E14() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x0043c725
+// SYNTHETIC: COPTER_D 0x0043c725
 static void $E13() {
 
 	__asm        call   _tzset;
@@ -632,7 +632,7 @@ _T65:
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x0043c7b3
+// SYNTHETIC: COPTER_D 0x0043c7b3
 static void $E17() {
 
 	__asm        call   $E16;
@@ -640,7 +640,7 @@ static void $E17() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x0043c7c8
+// SYNTHETIC: COPTER_D 0x0043c7c8
 static void $E16() {
 
 	__asm        push   0;
@@ -651,7 +651,7 @@ static void $E16() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x0043c7e6
+// SYNTHETIC: COPTER_D 0x0043c7e6
 static void $E20() {
 
 	__asm        call   $E19;
@@ -659,7 +659,7 @@ static void $E20() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x0043c7fb
+// SYNTHETIC: COPTER_D 0x0043c7fb
 static void $E19() {
 
 	__asm        push   0;

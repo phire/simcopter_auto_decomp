@@ -794,7 +794,7 @@ struct SparkalRect{
 
 // Contribution: 1:0009fa00-000a6b52 Module: 9, 16 byte alignment, code, execute, read, 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x004a0a00
+// SYNTHETIC: COPTER_D 0x004a0a00
 static void $E48() {
 
 	__asm        call   $E44;
@@ -803,7 +803,7 @@ static void $E48() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x004a0a1a
+// SYNTHETIC: COPTER_D 0x004a0a1a
 static void $E44() {
 
 	__asm        mov    GraphicWindow::listModalWindows.length, 0;
@@ -986,7 +986,7 @@ _T222:
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x004a0c73
+// SYNTHETIC: COPTER_D 0x004a0c73
 static void $E47() {
 
 	__asm        push   0x4A0C90;
@@ -996,7 +996,7 @@ static void $E47() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x004a0c90
+// SYNTHETIC: COPTER_D 0x004a0c90
 static void $E45() {
 
 	__asm        xor    eax, eax;
@@ -1145,7 +1145,7 @@ _T1c5:
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x004a0e5f
+// SYNTHETIC: COPTER_D 0x004a0e5f
 static void $E53() {
 
 	__asm        call   $E50;
@@ -1154,7 +1154,7 @@ static void $E53() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x004a0e79
+// SYNTHETIC: COPTER_D 0x004a0e79
 static void $E50() {
 
 	__asm        mov    GraphicWindow::listFocusWindows.length, 0;
@@ -1337,7 +1337,7 @@ _T222:
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x004a10d2
+// SYNTHETIC: COPTER_D 0x004a10d2
 static void $E52() {
 
 	__asm        push   0x4A10EF;
@@ -1347,7 +1347,7 @@ static void $E52() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x004a10ef
+// SYNTHETIC: COPTER_D 0x004a10ef
 static void $E51() {
 
 	__asm        xor    eax, eax;
@@ -1496,7 +1496,7 @@ _T1c5:
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x004a12be
+// SYNTHETIC: COPTER_D 0x004a12be
 static void $E58() {
 
 	__asm        call   $E55;
@@ -1505,7 +1505,7 @@ static void $E58() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x004a12d8
+// SYNTHETIC: COPTER_D 0x004a12d8
 static void $E55() {
 
 	__asm        mov    GraphicWindow::listValidWindows.length, 0;
@@ -1688,7 +1688,7 @@ _T222:
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x004a1531
+// SYNTHETIC: COPTER_D 0x004a1531
 static void $E57() {
 
 	__asm        push   0x4A154E;
@@ -1698,7 +1698,7 @@ static void $E57() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x004a154e
+// SYNTHETIC: COPTER_D 0x004a154e
 static void $E56() {
 
 	__asm        xor    eax, eax;
@@ -1847,7 +1847,7 @@ _T1c5:
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x004a171d
+// SYNTHETIC: COPTER_D 0x004a171d
 static void $E61() {
 
 	__asm        call   $E60;
@@ -1855,7 +1855,7 @@ static void $E61() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x004a1732
+// SYNTHETIC: COPTER_D 0x004a1732
 static void $E60() {
 
 	__asm        mov    ecx, 0x606968;

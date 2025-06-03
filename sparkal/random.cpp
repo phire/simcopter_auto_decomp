@@ -40,7 +40,7 @@ protected:
 
 // Contribution: 1:0008ff90-00090171 Module: 22, 16 byte alignment, code, execute, read, 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x00490f90
+// SYNTHETIC: COPTER_D 0x00490f90
 static void $E2() {
 
 	__asm        call   $E1;
@@ -48,7 +48,7 @@ static void $E2() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x00490fa5
+// SYNTHETIC: COPTER_D 0x00490fa5
 static void $E1() {
 
 	__asm        call   clock;

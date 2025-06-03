@@ -3183,7 +3183,7 @@ _Te01:
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x0053b99b
+// SYNTHETIC: COPTER_D 0x0053b99b
 static void $E36() {
 
 	__asm        mov    ecx, 0x6351D0;

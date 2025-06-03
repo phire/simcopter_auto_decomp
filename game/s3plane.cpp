@@ -429,7 +429,7 @@ struct VRFaceInfo{
 
 // Contribution: 1:0012a0c0-0012cd5c Module: 163, 16 byte alignment, code, execute, read, 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x0052b0c0
+// SYNTHETIC: COPTER_D 0x0052b0c0
 static void $E8() {
 
 	__asm        call   $E4;
@@ -438,7 +438,7 @@ static void $E8() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x0052b0da
+// SYNTHETIC: COPTER_D 0x0052b0da
 static void $E4() {
 
 	__asm        mov    PlaneClass::lsPlane<vftable>, 0x593220;
@@ -448,7 +448,7 @@ static void $E4() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x0052b0f9
+// SYNTHETIC: COPTER_D 0x0052b0f9
 static void $E7() {
 
 	__asm        push   0x52B116;
@@ -458,7 +458,7 @@ static void $E7() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x0052b116
+// SYNTHETIC: COPTER_D 0x0052b116
 static void $E5() {
 
 	__asm        xor    eax, eax;

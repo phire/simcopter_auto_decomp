@@ -732,7 +732,7 @@ struct bidirectional_iterator<tagLogBase *,int>{
 
 // Contribution: 1:000eabc0-000ed27d Module: 178, 16 byte alignment, code, execute, read, 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x004ebbc0
+// SYNTHETIC: COPTER_D 0x004ebbc0
 static void $E57() {
 
 	__asm        call   $E54;
@@ -741,7 +741,7 @@ static void $E57() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x004ebbda
+// SYNTHETIC: COPTER_D 0x004ebbda
 static void $E54() {
 
 	__asm        mov    ecx, 0x606E78;
@@ -750,7 +750,7 @@ static void $E54() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x004ebbf4
+// SYNTHETIC: COPTER_D 0x004ebbf4
 static void $E56() {
 
 	__asm        push   0x4EBC11;
@@ -760,7 +760,7 @@ static void $E56() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x004ebc11
+// SYNTHETIC: COPTER_D 0x004ebc11
 static void $E55() {
 
 	__asm        mov    ecx, 0x606E78;

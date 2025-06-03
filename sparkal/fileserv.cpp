@@ -503,7 +503,7 @@ struct bidirectional_iterator<basic_string<char>,int>{
 
 // Contribution: 1:00090180-000943f1 Module: 21, 16 byte alignment, code, execute, read, 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x00491180
+// SYNTHETIC: COPTER_D 0x00491180
 static void $E32() {
 
 	__asm        call   $E29;
@@ -512,7 +512,7 @@ static void $E32() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x0049119a
+// SYNTHETIC: COPTER_D 0x0049119a
 static void $E29() {
 
 	__asm        push   0x10;
@@ -779,7 +779,7 @@ _T389:
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x00491548
+// SYNTHETIC: COPTER_D 0x00491548
 static void $E31() {
 
 	__asm        push   0x491565;
@@ -789,7 +789,7 @@ static void $E31() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x00491565
+// SYNTHETIC: COPTER_D 0x00491565
 static void $E30() {
 
 	__asm        jmp    near ptr 0x00491573;

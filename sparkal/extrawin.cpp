@@ -1250,7 +1250,7 @@ protected:
 
 // Contribution: 1:0004f050-0005f979 Module: 45, 16 byte alignment, code, execute, read, 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x00450050
+// SYNTHETIC: COPTER_D 0x00450050
 static void $E66() {
 
 	__asm        call   $E65;
@@ -1258,7 +1258,7 @@ static void $E66() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x00450065
+// SYNTHETIC: COPTER_D 0x00450065
 static void $E65() {
 
 	__asm        mov    colorTextGamePaletteNormal.Blue, 0xA;
@@ -1270,7 +1270,7 @@ static void $E65() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x0045008f
+// SYNTHETIC: COPTER_D 0x0045008f
 static void $E69() {
 
 	__asm        call   $E68;
@@ -1278,7 +1278,7 @@ static void $E69() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x004500a4
+// SYNTHETIC: COPTER_D 0x004500a4
 static void $E68() {
 
 	__asm        mov    colorTextGamePaletteHighlighted.Blue, 0x6F;
@@ -18425,7 +18425,7 @@ int32_t ScrollingCreditWindow::DoMessage(class GraphicWindow* gwSource, long lWi
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x0045e126
+// SYNTHETIC: COPTER_D 0x0045e126
 static void $E72() {
 
 	__asm        call   $E71;
@@ -18433,7 +18433,7 @@ static void $E72() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x0045e13b
+// SYNTHETIC: COPTER_D 0x0045e13b
 static void $E71() {
 
 	__asm        mov    colorTextCheckupNormal.Blue, 0x40;
@@ -18445,7 +18445,7 @@ static void $E71() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x0045e165
+// SYNTHETIC: COPTER_D 0x0045e165
 static void $E75() {
 
 	__asm        call   $E74;
@@ -18453,7 +18453,7 @@ static void $E75() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x0045e17a
+// SYNTHETIC: COPTER_D 0x0045e17a
 static void $E74() {
 
 	__asm        mov    colorTextCheckupHighlighted.Blue, 0xEF;

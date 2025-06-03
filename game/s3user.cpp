@@ -78,7 +78,7 @@ struct tagCitySettings{
 
 // Contribution: 1:00027e80-000294ea Module: 67, 16 byte alignment, code, execute, read, 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x00428e80
+// SYNTHETIC: COPTER_D 0x00428e80
 static void $E48() {
 
 	__asm        call   $E45;
@@ -87,7 +87,7 @@ static void $E48() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x00428e9a
+// SYNTHETIC: COPTER_D 0x00428e9a
 static void $E45() {
 
 	__asm        mov    gGraduationState.timerGraduationState.nTimerResolution, 1;
@@ -115,7 +115,7 @@ _T5b:
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x00428f13
+// SYNTHETIC: COPTER_D 0x00428f13
 static void $E47() {
 
 	__asm        push   0x428F30;
@@ -125,7 +125,7 @@ static void $E47() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x00428f30
+// SYNTHETIC: COPTER_D 0x00428f30
 static void $E46() {
 
 	__asm        jmp    near ptr 0x00428F3B;

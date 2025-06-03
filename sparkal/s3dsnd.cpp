@@ -22,7 +22,7 @@ public:
 	// vtable: 4
 	intro int32_t Initialize();
 	virtual void DoNotificationChange(long, class PreferenceManager*);
-	void SoundChangeNotificationSink();
+	void SoundChangeNotificationSink(); // synthetic
 };
 
 // Type: void;
@@ -34,7 +34,7 @@ public:
 	// vtable: 4
 	intro int32_t Initialize();
 	virtual void DoNotificationChange(long, class PreferenceManager*);
-	void SoundChangeNotificationSink();
+	void SoundChangeNotificationSink(); // synthetic
 };
 
 // Type: int32_t;
@@ -253,7 +253,7 @@ public:
 
 // Contribution: 1:00040e30-000461ac Module: 52, 16 byte alignment, code, execute, read, 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x00441e30
+// SYNTHETIC: COPTER_D 0x00441e30
 static void $E55() {
 
 	__asm        call   $E54;
@@ -261,7 +261,7 @@ static void $E55() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x00441e45
+// SYNTHETIC: COPTER_D 0x00441e45
 static void $E54() {
 
 	__asm        mov    glMasterVolume, 0x2710;
@@ -269,7 +269,7 @@ static void $E54() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x00441e5f
+// SYNTHETIC: COPTER_D 0x00441e5f
 static void $E58() {
 
 	__asm        call   $E57;
@@ -277,7 +277,7 @@ static void $E58() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x00441e74
+// SYNTHETIC: COPTER_D 0x00441e74
 static void $E57() {
 
 	__asm        mov    gSoundChangeNotificationSink<SoundChangeNotificationSink+0x00>, 0x58F5C8;

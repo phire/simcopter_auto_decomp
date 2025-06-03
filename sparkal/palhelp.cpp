@@ -107,7 +107,7 @@ public:
 	void CopterSparkalPalette();
 	int32_t GetNextDarkerColorIndex(int32_t);
 	int32_t GetNextLighterColorIndex(int32_t);
-	virtual void ~CopterSparkalPalette();
+	virtual void ~CopterSparkalPalette(); // synthetic
 };
 
 // Type: void * __ptr32;
@@ -1927,7 +1927,7 @@ _Tda:
 	__asm        jmp    near ptr 0x004979C8;
 }
 
-// FUNCTION: COPTER_D 0x004979cf
+// SYNTHETIC: COPTER_D 0x004979cf
 void CopterSparkalPalette::CopterSparkalPalette() {
 
 	__asm        mov    ecx, this;

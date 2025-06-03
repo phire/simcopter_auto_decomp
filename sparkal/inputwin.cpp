@@ -2094,7 +2094,7 @@ struct bidirectional_iterator<KeyColors,int>{
 
 // Contribution: 1:00000280-0000c7d4 Module: 75, 16 byte alignment, code, execute, read, 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x00401280
+// SYNTHETIC: COPTER_D 0x00401280
 static void $E97() {
 
 	__asm        call   $E96;
@@ -2102,7 +2102,7 @@ static void $E97() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x00401295
+// SYNTHETIC: COPTER_D 0x00401295
 static void $E96() {
 
 	__asm        mov    colorTextGamePaletteNormal.Blue, 0xA;
@@ -2114,7 +2114,7 @@ static void $E96() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x004012bf
+// SYNTHETIC: COPTER_D 0x004012bf
 static void $E100() {
 
 	__asm        call   $E99;
@@ -2122,7 +2122,7 @@ static void $E100() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x004012d4
+// SYNTHETIC: COPTER_D 0x004012d4
 static void $E99() {
 
 	__asm        mov    colorTextGamePaletteHighlighted.Blue, 0x6F;

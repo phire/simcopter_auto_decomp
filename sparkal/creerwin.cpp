@@ -375,7 +375,7 @@ struct SparkalPoint{
 
 // Contribution: 1:0007ce80-0007f60b Module: 31, 16 byte alignment, code, execute, read, 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x0047de80
+// SYNTHETIC: COPTER_D 0x0047de80
 static void $E64() {
 
 	__asm        call   $E63;
@@ -383,7 +383,7 @@ static void $E64() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x0047de95
+// SYNTHETIC: COPTER_D 0x0047de95
 static void $E63() {
 
 	__asm        mov    colorTextGamePaletteNormal.Blue, 0xA;
@@ -395,7 +395,7 @@ static void $E63() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x0047debf
+// SYNTHETIC: COPTER_D 0x0047debf
 static void $E67() {
 
 	__asm        call   $E66;
@@ -403,7 +403,7 @@ static void $E67() {
 }
 
 // STATIC INITIALIZER:
-// FUNCTION: COPTER_D 0x0047ded4
+// SYNTHETIC: COPTER_D 0x0047ded4
 static void $E66() {
 
 	__asm        mov    colorTextGamePaletteHighlighted.Blue, 0x6F;
