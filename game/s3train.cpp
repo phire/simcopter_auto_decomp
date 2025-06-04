@@ -2484,7 +2484,7 @@ _T82:
 
 // FUNCTION: COPTER_D 0x0052f41b
 void TrainClass::AdjustSpeed() {
-	static const int32_t speedAdjustor = { /* todo */ };
+	static int32_t speedAdjustor = 1;
 
 // LINE 1424:
 	this->speed = this->desiredSpeed;

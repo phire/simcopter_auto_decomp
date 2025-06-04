@@ -1320,7 +1320,7 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct Sparka
 	struct SparkalPalette::FadeToPalette::TempPalette *paletteArray;
 	int32_t j;
 	int32_t i;
-	 typedef struct SparkalPalette::FadeToPalette::TempPalette SparkalPalette::FadeToPalette::TempPalette;
+	typedef struct SparkalPalette::FadeToPalette::TempPalette SparkalPalette::FadeToPalette::TempPalette;
 	const int32_t nLastStepIndex;
 	int32_t nOriginalPriority;
 	int32_t nMultiplier;

@@ -3445,7 +3445,7 @@ _T49f:
 void DialWindow::DrawCurrentDamage() {
 	int32_t nSourceImageX;
 	int32_t i;
-	static const int32_t nDamageArray[6][2] = { /* todo */ };
+	static int32_t nDamageArray[6][2] = {{14, 8}, {13, 7}, {12, 6}, {11, 5}, {10, 4}, {9, 3}};
 	int32_t nDamageInRangeOf0to15;
 
 // LINE 618:
@@ -3754,7 +3754,7 @@ _T10f:
 int32_t DialWindow::ComposeSelf() {
 	class MPoint ptSpotLightPositionLocalCoordinates;
 	long lStringLength;
-	static const long lFrameCounter = { /* todo */ };
+	static long lFrameCounter = 12;
 	class MPoint ptSpotLightBackPositionCoordinates;
 	char szMoneyString[16];
 
@@ -4691,7 +4691,7 @@ _T71:
 // FUNCTION: COPTER_D 0x0044ba5b
 void DialWindow::SetNewDialPositions() {
 	long lNewFuelLight;
-	static const long lFrameCounter = { /* todo */ };
+	static long lFrameCounter = 7;
 	long lNewAltitude;
 
 // LINE 816:
@@ -7071,7 +7071,7 @@ _Ta8:
 // FUNCTION: COPTER_D 0x0044d7cb
 int32_t MapWindow::ComposeSelf() {
 	struct MISSION_DATA *md;
-	static const int32_t lFrameCounter = { /* todo */ };
+	static int32_t lFrameCounter = 3;
 	long lNewMissionID;
 
 // LINE 1405:
@@ -8521,7 +8521,7 @@ _T3b:
 
 // FUNCTION: COPTER_D 0x0044eaa7
 int32_t EquipmentPanelWindow::DoesWindowNeedUpdating() {
-	static const long lFrameCounter = { /* todo */ };
+	static long lFrameCounter = 37;
 
 // LINE 1780:
 	__asm        test   reinterpret_cast<uint8_t>(lFrameCounter), 4;

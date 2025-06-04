@@ -1719,7 +1719,7 @@ _Tee3:
 	__asm        add    ecx, 0x338;
 	__asm        call   dword ptr [eax+0x10];
 // LINE 178:
-	this->mySmackerBackBuffers[1].nBlankColorIndex = 0x1;
+	this->mySmackerBackBuffers[1].bBlankAtEndOfVideo = 0x1;
 // LINE 181:
 	__asm        lea    eax, szFullCityVideoFileName[0];
 	__asm        push   eax;
@@ -1751,7 +1751,7 @@ _Tee3:
 	__asm        add    ecx, 0x5B4;
 	__asm        call   dword ptr [eax+0x10];
 // LINE 185:
-	reinterpret_cast<uint32_t>(this->mySmackerBackBuffers[2].colorWindowFill.Blue) = 0x1;
+	this->mySmackerBackBuffers[2].bBlankAtEndOfVideo = 0x1;
 // LINE 187:
 	__asm        push   1;
 	__asm        mov    eax, this;

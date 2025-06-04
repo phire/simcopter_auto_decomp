@@ -3058,7 +3058,7 @@ void InventoryWindow::LoadHotSpots() {
 
 // FUNCTION: COPTER_D 0x004aa656
 long InventoryWindow::GetColumnStartPixel(long lColumn) {
-	static const const long lColumnStart[6] = { /* todo */ };
+	static const long lColumnStart[6] = {171, 297, 322, 348, 376, 404};
 
 // LINE 334:
 	__asm        cmp    lColumn, 6;
@@ -3081,7 +3081,7 @@ _T36:
 
 // FUNCTION: COPTER_D 0x004aa693
 long InventoryWindow::GetRowStartPixel(long lRow) {
-	static const const long lRowStart[11] = { /* todo */ };
+	static const long lRowStart[11] = {240, 258, 276, 294, 313, 332, 351, 369, 388, 407, 426};
 
 // LINE 348:
 	__asm        cmp    lRow, 0xB;
@@ -3104,8 +3104,8 @@ _T36:
 
 // FUNCTION: COPTER_D 0x004aa6d0
 void InventoryWindow::GetEquipmentTextPosition(long lEquipmentIndex, class MPoint& ptEquipment) {
-	static const const long lXPositions[5] = { /* todo */ };
-	static const const long lYPositions[5] = { /* todo */ };
+	static const long lXPositions[5] = {333, 357, 382, 407, 409};
+	static const long lYPositions[5] = {166, 181, 196, 210, 225};
 
 // LINE 363:
 	__asm        cmp    lEquipmentIndex, 5;

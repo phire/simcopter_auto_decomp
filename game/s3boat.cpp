@@ -1209,7 +1209,7 @@ _T286:
 
 // FUNCTION: COPTER_D 0x00527c7a
 void BoatClass::AdjustSpeed() {
-	static const int32_t speedAdjustor = { /* todo */ };
+	static int32_t speedAdjustor = 1;
 
 // LINE 861:
 	this->speed = this->desiredSpeed;
