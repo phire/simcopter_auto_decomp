@@ -5,7 +5,7 @@
 // Type: struct list<Shortcut>::list_node_buffer (forward reference);
 struct list<Shortcut>::list_node_buffer{
 	void * __ptr32 next_buffer;
-	struct list<Shortcut>::list_node* buffer;
+	struct list<Shortcut>::list_node *buffer;
 };
 
 // Type: struct list<Shortcut>::list_node (forward reference);
@@ -20,7 +20,7 @@ struct list<Shortcut>::list_node{
 // Type: struct list<HotSpot>::list_node_buffer (forward reference);
 struct list<HotSpot>::list_node_buffer{
 	void * __ptr32 next_buffer;
-	struct list<HotSpot>::list_node* buffer;
+	struct list<HotSpot>::list_node *buffer;
 };
 
 // Type: struct list<HotSpot>::list_node (forward reference);
@@ -35,7 +35,7 @@ struct list<HotSpot>::list_node{
 // Type: struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node_buffer (forward reference);
 struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node_buffer{
 	void * __ptr32 next_buffer;
-	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* buffer;
+	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *buffer;
 };
 
 // Type: struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node (forward reference);
@@ -62,7 +62,7 @@ struct SparkalColor{
 // Type: struct list<StringIDAssociation>::list_node_buffer (forward reference);
 struct list<StringIDAssociation>::list_node_buffer{
 	void * __ptr32 next_buffer;
-	struct list<StringIDAssociation>::list_node* buffer;
+	struct list<StringIDAssociation>::list_node *buffer;
 };
 
 // Type: struct list<StringIDAssociation>::list_node (forward reference);
@@ -75,7 +75,7 @@ struct list<StringIDAssociation>::list_node{
 // Type: struct list<KeyColors>::list_node_buffer (forward reference);
 struct list<KeyColors>::list_node_buffer{
 	void * __ptr32 next_buffer;
-	struct list<KeyColors>::list_node* buffer;
+	struct list<KeyColors>::list_node *buffer;
 };
 
 // Type: struct list<KeyColors>::list_node (forward reference);
@@ -108,7 +108,7 @@ public:
 	class list<HotSpot> myHotSpotList;
 	class list<HotSpot> myNumLockOnHotSpotList;
 	class list<HotSpot> myNumLockOffHotSpotList;
-	class list<HotSpot>* myCurrentlyUsedNumLockHotSpotList;
+	class list<HotSpot> *myCurrentlyUsedNumLockHotSpotList;
 	class list<KeyColors> myKeyColorsList;
 protected:
 	virtual void DrawKeyColorsOnKeyboard(); // vtable+0xc8
@@ -118,9 +118,9 @@ protected:
 	virtual int32_t DoesPositionHitKey(long, long, long&); // vtable+0xd8
 	virtual int32_t ConvertKeyToString(int32_t, long, class basic_string<char>&); // vtable+0xdc
 	virtual int32_t GetRectOfNonTextImage(long, class MRect&); // vtable+0xe0
-	class CBackBuffer* myKeyLightImage;
-	class CBackBuffer* myNonTextKeyImage;
-	class MFont* mFontToUse;
+	class CBackBuffer *myKeyLightImage;
+	class CBackBuffer *myNonTextKeyImage;
+	class MFont *mFontToUse;
 	int32_t bNumLockLastSetting;
 	int32_t bCapsLockLastSetting;
 	int32_t bScrollLockLastSetting;
@@ -212,7 +212,7 @@ class basic_string<char>{
 	using reference_pointer = class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char>* reference;
+	class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -319,7 +319,7 @@ class basic_string<char>{
 	using reference_pointer = class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char>* reference;
+	class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -422,7 +422,7 @@ public:
 class list<HotSpot>::iterator : public bidirectional_iterator<HotSpot,int>
 {
 protected:
-	struct list<HotSpot>::list_node* node;
+	struct list<HotSpot>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -440,7 +440,7 @@ public:
 class list<KeyColors>::iterator : public bidirectional_iterator<KeyColors,int>
 {
 protected:
-	struct list<KeyColors>::list_node* node;
+	struct list<KeyColors>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -564,10 +564,10 @@ protected:
 	class MRect rectSliders[4];
 	class MRect rectHandle;
 	class MRect rectHandleBaseGraphics[4];
-	class CBackBuffer* myButtonImage;
-	class CBackBuffer* mySliderImage;
-	class CBackBuffer* myHandleImage;
-	class CBackBuffer* myHandleBaseImage;
+	class CBackBuffer *myButtonImage;
+	class CBackBuffer *mySliderImage;
+	class CBackBuffer *myHandleImage;
+	class CBackBuffer *myHandleBaseImage;
 };
 
 // Type: long *;
@@ -607,11 +607,11 @@ protected:
 	void AddJoystickTwinCommand(long, long, long);
 	void RemoveJoystickTwinCommand(long, long, long);
 	int32_t DoesTwinCommandExistForShortcut(long, long, long);
-	class JoystickWindow* myJoystickWindow;
-	class KeyboardWindow* myKeyboardWindow;
-	class ListBoxWindow* myInputDeviceListBoxWindow;
-	class ListBoxWindow* myCommandListBoxWindow;
-	class TextWindow* myStatusTextWindow;
+	class JoystickWindow *myJoystickWindow;
+	class KeyboardWindow *myKeyboardWindow;
+	class ListBoxWindow *myInputDeviceListBoxWindow;
+	class ListBoxWindow *myCommandListBoxWindow;
+	class TextWindow *myStatusTextWindow;
 	class list<StringIDAssociation> myInputDeviceStringIDAssociationList;
 	class list<StringIDAssociation> myCommandStringIDAssociationList;
 	class list<Shortcut> myShortcutListNonConfigurable;
@@ -670,8 +670,8 @@ protected:
 	void GetCommandString(class basic_string<char>&, long);
 	void AppendKeysString(class basic_string<char>&, long, long, int32_t);
 	int32_t bInitializing;
-	class ListBoxWindow* myCommandListBoxWindow;
-	class ListBoxWindow* myKeysListBoxWindow;
+	class ListBoxWindow *myCommandListBoxWindow;
+	class ListBoxWindow *myKeysListBoxWindow;
 };
 
 // Type: enum UserInputWindow::KeyUsageType;
@@ -696,7 +696,7 @@ struct Shortcut{
 class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
 {
 protected:
-	struct list<Shortcut>::list_node* node;
+	struct list<Shortcut>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -714,7 +714,7 @@ public:
 class list<StringIDAssociation>::iterator : public bidirectional_iterator<StringIDAssociation,int>
 {
 protected:
-	struct list<StringIDAssociation>::list_node* node;
+	struct list<StringIDAssociation>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -809,15 +809,15 @@ public:
 protected:
 	int32_t bSurfacePrimary;
 	int32_t bSurfaceTransparent;
-	class MFont* mFont;
+	class MFont *mFont;
 	struct SparkalColor colorFontCurrent;
 	struct SparkalColor colorCurrent;
 	int32_t nColorIndexFontCurrent;
 	int32_t nColorIndexCurrent;
 	int32_t nColorIndexTransparent;
-	struct IDirectDrawSurface* mpFrontSurface;
-	struct IDirectDrawSurface* mpBackSurface;
-	struct IDirectDrawPalette* mpPalette;
+	struct IDirectDrawSurface *mpFrontSurface;
+	struct IDirectDrawSurface *mpBackSurface;
+	struct IDirectDrawPalette *mpPalette;
 	struct _DDSURFACEDESC mDDdesc;
 	struct _DDBLTFX mDDBltFx;
 	void * __ptr32 hPen;
@@ -850,27 +850,27 @@ protected:
 	uint32_t buffer_size();
 	struct list<Shortcut>::list_node_buffer{
 		void * __ptr32 next_buffer;
-		struct list<Shortcut>::list_node* buffer;
+		struct list<Shortcut>::list_node *buffer;
 	};
 	using buffer_allocator_type = class allocator<list<Shortcut>::list_node_buffer>;
 	using buffer_pointer = struct list<Shortcut>::list_node_buffer*;
 protected:
 	static class allocator<list<Shortcut>::list_node_buffer> buffer_allocator;
-	static struct list<Shortcut>::list_node_buffer* buffer_list;
-	static struct list<Shortcut>::list_node* free_list;
-	static struct list<Shortcut>::list_node* next_avail;
-	static struct list<Shortcut>::list_node* last;
+	static struct list<Shortcut>::list_node_buffer *buffer_list;
+	static struct list<Shortcut>::list_node *free_list;
+	static struct list<Shortcut>::list_node *next_avail;
+	static struct list<Shortcut>::list_node *last;
 	void add_new_buffer();
 	static uint32_t number_of_lists;
 	void deallocate_buffers();
 	struct list<Shortcut>::list_node* get_node();
 	void put_node(struct list<Shortcut>::list_node*);
-	struct list<Shortcut>::list_node* node;
+	struct list<Shortcut>::list_node *node;
 	uint32_t length;
 	class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
 	{
 	protected:
-		struct list<Shortcut>::list_node* node;
+		struct list<Shortcut>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -886,7 +886,7 @@ protected:
 	class list<Shortcut>::const_iterator : public bidirectional_iterator<Shortcut,int>
 	{
 	protected:
-		struct list<Shortcut>::list_node* node;
+		struct list<Shortcut>::list_node *node;
 	public:
 		void const_iterator(const class list<Shortcut>::iterator&);
 		void const_iterator();
@@ -1028,7 +1028,7 @@ public:
 class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator : public bidirectional_iterator<long,int>
 {
 protected:
-	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* node;
+	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *node;
 public:
 	void const_iterator(const class rb_tree<long,long,ident<long,long>,less<long>>::iterator&);
 	void const_iterator();
@@ -1114,7 +1114,7 @@ public:
 class ostream : public virtual ios
 {
 public:
-	int32_t[0]* ios;
+	int32_t *ios[0];
 	void ostream(class ios&);
 	void ostream(const class ostream&);
 	void ostream();
@@ -1214,27 +1214,27 @@ protected:
 	uint32_t buffer_size();
 	struct list<KeyColors>::list_node_buffer{
 		void * __ptr32 next_buffer;
-		struct list<KeyColors>::list_node* buffer;
+		struct list<KeyColors>::list_node *buffer;
 	};
 	using buffer_allocator_type = class allocator<list<KeyColors>::list_node_buffer>;
 	using buffer_pointer = struct list<KeyColors>::list_node_buffer*;
 protected:
 	static class allocator<list<KeyColors>::list_node_buffer> buffer_allocator;
-	static struct list<KeyColors>::list_node_buffer* buffer_list;
-	static struct list<KeyColors>::list_node* free_list;
-	static struct list<KeyColors>::list_node* next_avail;
-	static struct list<KeyColors>::list_node* last;
+	static struct list<KeyColors>::list_node_buffer *buffer_list;
+	static struct list<KeyColors>::list_node *free_list;
+	static struct list<KeyColors>::list_node *next_avail;
+	static struct list<KeyColors>::list_node *last;
 	void add_new_buffer();
 	static uint32_t number_of_lists;
 	void deallocate_buffers();
 	struct list<KeyColors>::list_node* get_node();
 	void put_node(struct list<KeyColors>::list_node*);
-	struct list<KeyColors>::list_node* node;
+	struct list<KeyColors>::list_node *node;
 	uint32_t length;
 	class list<KeyColors>::iterator : public bidirectional_iterator<KeyColors,int>
 	{
 	protected:
-		struct list<KeyColors>::list_node* node;
+		struct list<KeyColors>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -1250,7 +1250,7 @@ protected:
 	class list<KeyColors>::const_iterator : public bidirectional_iterator<KeyColors,int>
 	{
 	protected:
-		struct list<KeyColors>::list_node* node;
+		struct list<KeyColors>::list_node *node;
 	public:
 		void const_iterator(const class list<KeyColors>::iterator&);
 		void const_iterator();
@@ -1316,7 +1316,7 @@ public:
 class list<HotSpot>::iterator : public bidirectional_iterator<HotSpot,int>
 {
 protected:
-	struct list<HotSpot>::list_node* node;
+	struct list<HotSpot>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -1354,27 +1354,27 @@ protected:
 	uint32_t buffer_size();
 	struct list<HotSpot>::list_node_buffer{
 		void * __ptr32 next_buffer;
-		struct list<HotSpot>::list_node* buffer;
+		struct list<HotSpot>::list_node *buffer;
 	};
 	using buffer_allocator_type = class allocator<list<HotSpot>::list_node_buffer>;
 	using buffer_pointer = struct list<HotSpot>::list_node_buffer*;
 protected:
 	static class allocator<list<HotSpot>::list_node_buffer> buffer_allocator;
-	static struct list<HotSpot>::list_node_buffer* buffer_list;
-	static struct list<HotSpot>::list_node* free_list;
-	static struct list<HotSpot>::list_node* next_avail;
-	static struct list<HotSpot>::list_node* last;
+	static struct list<HotSpot>::list_node_buffer *buffer_list;
+	static struct list<HotSpot>::list_node *free_list;
+	static struct list<HotSpot>::list_node *next_avail;
+	static struct list<HotSpot>::list_node *last;
 	void add_new_buffer();
 	static uint32_t number_of_lists;
 	void deallocate_buffers();
 	struct list<HotSpot>::list_node* get_node();
 	void put_node(struct list<HotSpot>::list_node*);
-	struct list<HotSpot>::list_node* node;
+	struct list<HotSpot>::list_node *node;
 	uint32_t length;
 	class list<HotSpot>::iterator : public bidirectional_iterator<HotSpot,int>
 	{
 	protected:
-		struct list<HotSpot>::list_node* node;
+		struct list<HotSpot>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -1390,7 +1390,7 @@ protected:
 	class list<HotSpot>::const_iterator : public bidirectional_iterator<HotSpot,int>
 	{
 	protected:
-		struct list<HotSpot>::list_node* node;
+		struct list<HotSpot>::list_node *node;
 	public:
 		void const_iterator(const class list<HotSpot>::iterator&);
 		void const_iterator();
@@ -1456,7 +1456,7 @@ public:
 class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
 {
 protected:
-	struct list<Shortcut>::list_node* node;
+	struct list<Shortcut>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -1474,7 +1474,7 @@ public:
 class list<StringIDAssociation>::iterator : public bidirectional_iterator<StringIDAssociation,int>
 {
 protected:
-	struct list<StringIDAssociation>::list_node* node;
+	struct list<StringIDAssociation>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -1512,27 +1512,27 @@ protected:
 	uint32_t buffer_size();
 	struct list<StringIDAssociation>::list_node_buffer{
 		void * __ptr32 next_buffer;
-		struct list<StringIDAssociation>::list_node* buffer;
+		struct list<StringIDAssociation>::list_node *buffer;
 	};
 	using buffer_allocator_type = class allocator<list<StringIDAssociation>::list_node_buffer>;
 	using buffer_pointer = struct list<StringIDAssociation>::list_node_buffer*;
 protected:
 	static class allocator<list<StringIDAssociation>::list_node_buffer> buffer_allocator;
-	static struct list<StringIDAssociation>::list_node_buffer* buffer_list;
-	static struct list<StringIDAssociation>::list_node* free_list;
-	static struct list<StringIDAssociation>::list_node* next_avail;
-	static struct list<StringIDAssociation>::list_node* last;
+	static struct list<StringIDAssociation>::list_node_buffer *buffer_list;
+	static struct list<StringIDAssociation>::list_node *free_list;
+	static struct list<StringIDAssociation>::list_node *next_avail;
+	static struct list<StringIDAssociation>::list_node *last;
 	void add_new_buffer();
 	static uint32_t number_of_lists;
 	void deallocate_buffers();
 	struct list<StringIDAssociation>::list_node* get_node();
 	void put_node(struct list<StringIDAssociation>::list_node*);
-	struct list<StringIDAssociation>::list_node* node;
+	struct list<StringIDAssociation>::list_node *node;
 	uint32_t length;
 	class list<StringIDAssociation>::iterator : public bidirectional_iterator<StringIDAssociation,int>
 	{
 	protected:
-		struct list<StringIDAssociation>::list_node* node;
+		struct list<StringIDAssociation>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -1548,7 +1548,7 @@ protected:
 	class list<StringIDAssociation>::const_iterator : public bidirectional_iterator<StringIDAssociation,int>
 	{
 	protected:
-		struct list<StringIDAssociation>::list_node* node;
+		struct list<StringIDAssociation>::list_node *node;
 	public:
 		void const_iterator(const class list<StringIDAssociation>::iterator&);
 		void const_iterator();
@@ -1622,7 +1622,7 @@ struct StringIDAssociation{
 class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator : public bidirectional_iterator<long,int>
 {
 protected:
-	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* node;
+	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *node;
 public:
 	void const_iterator(const class rb_tree<long,long,ident<long,long>,less<long>>::iterator&);
 	void const_iterator();
@@ -1668,22 +1668,22 @@ protected:
 	uint32_t buffer_size();
 	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node_buffer{
 		void * __ptr32 next_buffer;
-		struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* buffer;
+		struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *buffer;
 	};
 	using buffer_allocator_type = class allocator<rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node_buffer>;
 	using buffer_pointer = struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node_buffer*;
 protected:
 	static class allocator<rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node_buffer> buffer_allocator;
-	static struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node_buffer* buffer_list;
-	static struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* free_list;
-	static struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* next_avail;
-	static struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* last;
+	static struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node_buffer *buffer_list;
+	static struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *free_list;
+	static struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *next_avail;
+	static struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *last;
 	void add_new_buffer();
 	static uint32_t number_of_trees;
 	void deallocate_buffers();
 	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* get_node();
 	void put_node(struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*);
-	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* header;
+	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *header;
 	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*& root();
 	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*& root();
 	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*& leftmost();
@@ -1693,7 +1693,7 @@ protected:
 	uint32_t node_count;
 	int32_t insert_always;
 	struct less<long> key_compare;
-	static struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* NIL;
+	static struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *NIL;
 	// calltype: NearC
 	static struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*& left(struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*);
 	// calltype: NearC
@@ -1713,7 +1713,7 @@ protected:
 	class rb_tree<long,long,ident<long,long>,less<long>>::iterator : public bidirectional_iterator<long,int>
 	{
 	protected:
-		struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* node;
+		struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *node;
 	public:
 		void iterator();
 	protected:
@@ -1729,7 +1729,7 @@ protected:
 	class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator : public bidirectional_iterator<long,int>
 	{
 	protected:
-		struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* node;
+		struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *node;
 	public:
 		void const_iterator(const class rb_tree<long,long,ident<long,long>,less<long>>::iterator&);
 		void const_iterator();
@@ -1801,7 +1801,7 @@ public:
 class rb_tree<long,long,ident<long,long>,less<long>>::iterator : public bidirectional_iterator<long,int>
 {
 protected:
-	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* node;
+	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *node;
 public:
 	void iterator();
 protected:
@@ -1828,7 +1828,7 @@ enum capacity {
 class rb_tree<long,long,ident<long,long>,less<long>>::iterator : public bidirectional_iterator<long,int>
 {
 protected:
-	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* node;
+	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *node;
 public:
 	void iterator();
 protected:
@@ -1980,14 +1980,14 @@ protected:
 		tied = 1,
 	};
 protected:
-	class streambuf* bp;
+	class streambuf *bp;
 	int32_t state;
 	int32_t ispecial;
 	int32_t ospecial;
 	int32_t isfx_special;
 	int32_t osfx_special;
 	int32_t x_delbuf;
-	class ostream* x_tie;
+	class ostream *x_tie;
 	long x_flags;
 	int32_t x_precision;
 	char x_fill;
@@ -2090,7 +2090,7 @@ static void $E99() {
 }
 
 // FUNCTION: COPTER_D 0x004012fe
-void KeyboardWindow::KeyboardWindow(class MRect& rectNewPosition, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+void KeyboardWindow::KeyboardWindow(class MRect& rectNewPosition, int32_t nNewID, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
 	__asm        push   0xFFFFFFFF;
 	__asm        mov    eax, bAddToParentList;
@@ -6147,7 +6147,7 @@ _T66:
 }
 
 // FUNCTION: COPTER_D 0x004046b8
-void JoystickWindow::JoystickWindow(class MRect& rectNewPosition, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+void JoystickWindow::JoystickWindow(class MRect& rectNewPosition, int32_t nNewID, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 	int32_t i;
 
 
@@ -7574,7 +7574,7 @@ _Te0:
 }
 
 // FUNCTION: COPTER_D 0x004059eb
-void JoystickWindow::GetSourceHandleBaseRects(class MRect* rectHandleBaseSources) {
+void JoystickWindow::GetSourceHandleBaseRects(class MRect *rectHandleBaseSources) {
 // LINE 872:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+0xB0];
@@ -8172,7 +8172,7 @@ _T32f:
 }
 
 // FUNCTION: COPTER_D 0x004061a4
-void UserInputWindow::UserInputWindow(class MRect& rectNewPosition, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+void UserInputWindow::UserInputWindow(class MRect& rectNewPosition, int32_t nNewID, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
 	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
@@ -8692,7 +8692,7 @@ _T788:
 
 // FUNCTION: COPTER_D 0x004069bb
 int32_t UserInputWindow::Initialize() {
-	class ButtonWindow* tempButtonWindow;
+	class ButtonWindow *tempButtonWindow;
 	class basic_string<char> sText;
 	int32_t nFullStringID;
 
@@ -10117,8 +10117,8 @@ _T63:
 }
 
 // FUNCTION: COPTER_D 0x00407db1
-int32_t UserInputWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
-	class ControlDisplayWindow* tempControlDisplayWindow;
+int32_t UserInputWindow::DoMessage(class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
+	class ControlDisplayWindow *tempControlDisplayWindow;
 
 // LINE 1198:
 	__asm        mov    eax, this;
@@ -14433,7 +14433,7 @@ void UserInputWindow::DisplayError(int32_t nErrorType) {
 }
 
 // FUNCTION: COPTER_D 0x0040b4b0
-void ControlDisplayWindow::ControlDisplayWindow(class MRect& rectNewPosition, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+void ControlDisplayWindow::ControlDisplayWindow(class MRect& rectNewPosition, int32_t nNewID, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
 	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
@@ -14467,8 +14467,8 @@ void ControlDisplayWindow::ControlDisplayWindow(class MRect& rectNewPosition, in
 
 // FUNCTION: COPTER_D 0x0040b51a
 int32_t ControlDisplayWindow::Initialize() {
-	class ButtonWindow* tempButtonWindow;
-	class TextWindow* tempTextWindow;
+	class ButtonWindow *tempButtonWindow;
+	class TextWindow *tempTextWindow;
 	class basic_string<char> sText;
 	int32_t nFullStringID;
 
@@ -15518,7 +15518,7 @@ _Te23:
 }
 
 // FUNCTION: COPTER_D 0x0040c352
-int32_t ControlDisplayWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
+int32_t ControlDisplayWindow::DoMessage(class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 // LINE 1932:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x74], 0;
@@ -15728,14 +15728,14 @@ _T258:
 }
 
 // FUNCTION: COPTER_D 0x0040c5b1
-void ControlDisplayWindow::ReadShortcuts(class list<Shortcut>* addedShortcutList) {
+void ControlDisplayWindow::ReadShortcuts(class list<Shortcut> *addedShortcutList) {
 	class list<Shortcut>::iterator shortcutIterator;
 	class basic_string<char> sCurrentCommand;
 	class set<long,less<long>> tempLongSet;
 	int32_t nFirstShowableCommandIndex;
 	class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator tempLongSetIterator;
 	class basic_string<char> sCurrentKeys;
-	struct Shortcut* tempShortcut;
+	struct Shortcut *tempShortcut;
 	int32_t nTempForDebugging;
 	int32_t nKeyCountForCommand;
 	int32_t nLastShowableCommandIndex;
@@ -18286,19 +18286,19 @@ uint32_t list<KeyColors>::number_of_lists = 0;
 
 // Contribution: 3:000001c0-000001c3 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005971c0
-struct list<KeyColors>::list_node* list<KeyColors>::last = { 0 /* todo */ };
+struct list<KeyColors>::list_node *list<KeyColors>::last = { 0 /* todo */ };
 
 
 
 // Contribution: 3:000001c4-000001c7 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005971c4
-struct list<KeyColors>::list_node* list<KeyColors>::next_avail = { 0 /* todo */ };
+struct list<KeyColors>::list_node *list<KeyColors>::next_avail = { 0 /* todo */ };
 
 
 
 // Contribution: 3:000001c8-000001cb Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005971c8
-struct list<KeyColors>::list_node* list<KeyColors>::free_list = { 0 /* todo */ };
+struct list<KeyColors>::list_node *list<KeyColors>::free_list = { 0 /* todo */ };
 
 
 
@@ -18310,31 +18310,31 @@ uint32_t list<HotSpot>::number_of_lists = 0;
 
 // Contribution: 3:000001d0-000001d3 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005971d0
-struct list<HotSpot>::list_node* list<HotSpot>::last = { 0 /* todo */ };
+struct list<HotSpot>::list_node *list<HotSpot>::last = { 0 /* todo */ };
 
 
 
 // Contribution: 3:000001d4-000001d7 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005971d4
-struct list<HotSpot>::list_node* list<HotSpot>::next_avail = { 0 /* todo */ };
+struct list<HotSpot>::list_node *list<HotSpot>::next_avail = { 0 /* todo */ };
 
 
 
 // Contribution: 3:000001d8-000001db Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005971d8
-struct list<HotSpot>::list_node* list<HotSpot>::free_list = { 0 /* todo */ };
+struct list<HotSpot>::list_node *list<HotSpot>::free_list = { 0 /* todo */ };
 
 
 
 // Contribution: 3:000001dc-000001df Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005971dc
-struct list<HotSpot>::list_node_buffer* list<HotSpot>::buffer_list = { 0 /* todo */ };
+struct list<HotSpot>::list_node_buffer *list<HotSpot>::buffer_list = { 0 /* todo */ };
 
 
 
 // Contribution: 3:000001e0-000001e3 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005971e0
-struct list<KeyColors>::list_node_buffer* list<KeyColors>::buffer_list = { 0 /* todo */ };
+struct list<KeyColors>::list_node_buffer *list<KeyColors>::buffer_list = { 0 /* todo */ };
 
 
 
@@ -18354,25 +18354,25 @@ uint32_t list<StringIDAssociation>::number_of_lists = 0;
 
 // Contribution: 3:00000208-0000020b Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597208
-struct list<StringIDAssociation>::list_node* list<StringIDAssociation>::last = { 0 /* todo */ };
+struct list<StringIDAssociation>::list_node *list<StringIDAssociation>::last = { 0 /* todo */ };
 
 
 
 // Contribution: 3:0000020c-0000020f Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059720c
-struct list<StringIDAssociation>::list_node* list<StringIDAssociation>::next_avail = { 0 /* todo */ };
+struct list<StringIDAssociation>::list_node *list<StringIDAssociation>::next_avail = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00000210-00000213 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597210
-struct list<StringIDAssociation>::list_node* list<StringIDAssociation>::free_list = { 0 /* todo */ };
+struct list<StringIDAssociation>::list_node *list<StringIDAssociation>::free_list = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00000214-00000217 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597214
-struct list<StringIDAssociation>::list_node_buffer* list<StringIDAssociation>::buffer_list = { 0 /* todo */ };
+struct list<StringIDAssociation>::list_node_buffer *list<StringIDAssociation>::buffer_list = { 0 /* todo */ };
 
 
 
@@ -18384,25 +18384,25 @@ uint32_t list<Shortcut>::number_of_lists = 0;
 
 // Contribution: 3:0000021c-0000021f Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059721c
-struct list<Shortcut>::list_node* list<Shortcut>::last = { 0 /* todo */ };
+struct list<Shortcut>::list_node *list<Shortcut>::last = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00000220-00000223 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597220
-struct list<Shortcut>::list_node* list<Shortcut>::next_avail = { 0 /* todo */ };
+struct list<Shortcut>::list_node *list<Shortcut>::next_avail = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00000224-00000227 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597224
-struct list<Shortcut>::list_node* list<Shortcut>::free_list = { 0 /* todo */ };
+struct list<Shortcut>::list_node *list<Shortcut>::free_list = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00000228-0000022b Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597228
-struct list<Shortcut>::list_node_buffer* list<Shortcut>::buffer_list = { 0 /* todo */ };
+struct list<Shortcut>::list_node_buffer *list<Shortcut>::buffer_list = { 0 /* todo */ };
 
 
 
@@ -18412,7 +18412,7 @@ struct list<Shortcut>::list_node_buffer* list<Shortcut>::buffer_list = { 0 /* to
 
 // Contribution: 3:0000024c-0000024f Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059724c
-struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* rb_tree<long,long,ident<long,long>,less<long>>::NIL = { 0 /* todo */ };
+struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *rb_tree<long,long,ident<long,long>,less<long>>::NIL = { 0 /* todo */ };
 
 
 
@@ -18424,25 +18424,25 @@ uint32_t rb_tree<long,long,ident<long,long>,less<long>>::number_of_trees = 0;
 
 // Contribution: 3:00000254-00000257 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597254
-struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* rb_tree<long,long,ident<long,long>,less<long>>::last = { 0 /* todo */ };
+struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *rb_tree<long,long,ident<long,long>,less<long>>::last = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00000258-0000025b Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597258
-struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* rb_tree<long,long,ident<long,long>,less<long>>::next_avail = { 0 /* todo */ };
+struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *rb_tree<long,long,ident<long,long>,less<long>>::next_avail = { 0 /* todo */ };
 
 
 
 // Contribution: 3:0000025c-0000025f Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059725c
-struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* rb_tree<long,long,ident<long,long>,less<long>>::free_list = { 0 /* todo */ };
+struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *rb_tree<long,long,ident<long,long>,less<long>>::free_list = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00000260-00000263 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597260
-struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node_buffer* rb_tree<long,long,ident<long,long>,less<long>>::buffer_list = { 0 /* todo */ };
+struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node_buffer *rb_tree<long,long,ident<long,long>,less<long>>::buffer_list = { 0 /* todo */ };
 
 
 

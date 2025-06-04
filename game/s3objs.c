@@ -25,10 +25,10 @@ struct VRFaceInfo{
 	int32_t Verts;
 	int32_t Attribute;
 	int32_t Plotter;
-	struct VRBmpHdr* Bitmap;
+	struct VRBmpHdr *Bitmap;
 	int32_t * VertList;
-	struct MapVert* MapVList;
-	struct MapVert* BarryPtr;
+	struct MapVert *MapVList;
+	struct MapVert *BarryPtr;
 };
 
 // Type: struct VRBmpHdr (forward reference);
@@ -43,11 +43,11 @@ struct VRObjInfo{
 	int32_t Verts;
 	int32_t Attribute;
 	int32_t Radius;
-	struct Point3d* ObjCenter;
-	struct Point3d* VertsPtr;
-	struct Xform3d* VertsXfm;
-	struct Point3d* OrgVerts;
-	int32_t[4][4]* Matrix;
+	struct Point3d *ObjCenter;
+	struct Point3d *VertsPtr;
+	struct Xform3d *VertsXfm;
+	struct Point3d *OrgVerts;
+	int32_t *Matrix[4][4];
 };
 
 // Type: void;
@@ -55,15 +55,15 @@ struct VRObjInfo{
 // Type: struct VRBlit (forward reference);
 struct VRBlit{
 	int32_t nverts;
-	struct Proj2d* verts;
+	struct Proj2d *verts;
 	int32_t notused;
 	int32_t user1;
 };
 
 // Type: struct _DYOBJ_INST (forward reference);
 struct _DYOBJ_INST{
-	struct _DYOBJ_INST* next;
-	struct _DYOBJ_INST* vnext;
+	struct _DYOBJ_INST *next;
+	struct _DYOBJ_INST *vnext;
 	void * __ptr32 mesh;
 	short flags;
 	short user1;
@@ -87,7 +87,7 @@ void S3ObjInit() {
 	struct VRFaceInfo finfo;
 	long objcount;
 	int32_t face;
-	struct VRBmpHdr* bhdr;
+	struct VRBmpHdr *bhdr;
 	struct VRObjInfo oinfo;
 
 // LINE 390:
@@ -851,7 +851,7 @@ void S3ObjLinkLowRes() {
 }
 
 // FUNCTION: COPTER_D 0x00519aa4
-void S3DrawBlinkingLight(struct VRBlit* blit) {
+void S3DrawBlinkingLight(struct VRBlit *blit) {
 	long winheight;
 	int32_t ctr;
 	int32_t y;
@@ -1042,7 +1042,7 @@ _T1dd:
 }
 
 // FUNCTION: COPTER_D 0x00519c86
-void S3DrawWaterPoint(struct VRBlit* blit) {
+void S3DrawWaterPoint(struct VRBlit *blit) {
 	long winheight;
 	long num;
 	int32_t z;
@@ -8173,7 +8173,7 @@ _T36:
 }
 
 // FUNCTION: COPTER_D 0x0051da96
-void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DYOBJ_INST* dyhittee, long mission_id, long xtra_msg) {
+void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST *dyhitter, struct _DYOBJ_INST *dyhittee, long mission_id, long xtra_msg) {
 	static const <NoType> = { /* <data@0x0051e624> */ };
 	static const <NoType> = { /* <data@0x0051e581> */ };
 	static const <NoType> = { /* <data@0x0051e4de> */ };

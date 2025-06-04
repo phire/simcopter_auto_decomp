@@ -6,7 +6,7 @@
 class NotificationItem{
 public:
 	long lPreferenceType;
-	class NotificationSink* myNotificationSink;
+	class NotificationSink *myNotificationSink;
 	void NotificationItem(long, class NotificationSink*);
 	void NotificationItem(const class NotificationItem&);
 	void NotificationItem();
@@ -56,7 +56,7 @@ void NotificationItem::NotificationItem(const class NotificationItem& newNotific
 }
 
 // FUNCTION: COPTER_D 0x0043e1b3
-void NotificationItem::NotificationItem(long lNewPreferenceType, class NotificationSink* newNotificationSink) {
+void NotificationItem::NotificationItem(long lNewPreferenceType, class NotificationSink *newNotificationSink) {
 
 	__asm        mov    eax, lNewPreferenceType;
 	__asm        mov    ecx, this;

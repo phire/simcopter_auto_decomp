@@ -72,7 +72,7 @@ class basic_string<char>{
 	using reference_pointer = class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char>* reference;
+	class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -251,7 +251,7 @@ class basic_string<char>{
 	using reference_pointer = class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char>* reference;
+	class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -377,27 +377,27 @@ protected:
 	uint32_t buffer_size();
 	struct list<basic_string<char>>::list_node_buffer{
 		void * __ptr32 next_buffer;
-		struct list<basic_string<char>>::list_node* buffer;
+		struct list<basic_string<char>>::list_node *buffer;
 	};
 	using buffer_allocator_type = class allocator<list<basic_string<char>>::list_node_buffer>;
 	using buffer_pointer = struct list<basic_string<char>>::list_node_buffer*;
 protected:
 	static class allocator<list<basic_string<char>>::list_node_buffer> buffer_allocator;
-	static struct list<basic_string<char>>::list_node_buffer* buffer_list;
-	static struct list<basic_string<char>>::list_node* free_list;
-	static struct list<basic_string<char>>::list_node* next_avail;
-	static struct list<basic_string<char>>::list_node* last;
+	static struct list<basic_string<char>>::list_node_buffer *buffer_list;
+	static struct list<basic_string<char>>::list_node *free_list;
+	static struct list<basic_string<char>>::list_node *next_avail;
+	static struct list<basic_string<char>>::list_node *last;
 	void add_new_buffer();
 	static uint32_t number_of_lists;
 	void deallocate_buffers();
 	struct list<basic_string<char>>::list_node* get_node();
 	void put_node(struct list<basic_string<char>>::list_node*);
-	struct list<basic_string<char>>::list_node* node;
+	struct list<basic_string<char>>::list_node *node;
 	uint32_t length;
 	class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_string<char>,int>
 	{
 	protected:
-		struct list<basic_string<char>>::list_node* node;
+		struct list<basic_string<char>>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -413,7 +413,7 @@ protected:
 	class list<basic_string<char>>::const_iterator : public bidirectional_iterator<basic_string<char>,int>
 	{
 	protected:
-		struct list<basic_string<char>>::list_node* node;
+		struct list<basic_string<char>>::list_node *node;
 	public:
 		void const_iterator(const class list<basic_string<char>>::iterator&);
 		void const_iterator();
@@ -479,7 +479,7 @@ public:
 class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_string<char>,int>
 {
 protected:
-	struct list<basic_string<char>>::list_node* node;
+	struct list<basic_string<char>>::list_node *node;
 public:
 	void iterator();
 protected:

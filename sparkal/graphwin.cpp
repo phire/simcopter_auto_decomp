@@ -25,7 +25,7 @@ class list<GraphicWindow *>{
 	struct list<GraphicWindow *>::list_node{
 		void * __ptr32 next;
 		void * __ptr32 prev;
-		class GraphicWindow* data;
+		class GraphicWindow *data;
 	};
 protected:
 	static class allocator<list<GraphicWindow *>::list_node> list_node_allocator;
@@ -43,27 +43,27 @@ protected:
 	uint32_t buffer_size();
 	struct list<GraphicWindow *>::list_node_buffer{
 		void * __ptr32 next_buffer;
-		struct list<GraphicWindow *>::list_node* buffer;
+		struct list<GraphicWindow *>::list_node *buffer;
 	};
 	using buffer_allocator_type = class allocator<list<GraphicWindow *>::list_node_buffer>;
 	using buffer_pointer = struct list<GraphicWindow *>::list_node_buffer*;
 protected:
 	static class allocator<list<GraphicWindow *>::list_node_buffer> buffer_allocator;
-	static struct list<GraphicWindow *>::list_node_buffer* buffer_list;
-	static struct list<GraphicWindow *>::list_node* free_list;
-	static struct list<GraphicWindow *>::list_node* next_avail;
-	static struct list<GraphicWindow *>::list_node* last;
+	static struct list<GraphicWindow *>::list_node_buffer *buffer_list;
+	static struct list<GraphicWindow *>::list_node *free_list;
+	static struct list<GraphicWindow *>::list_node *next_avail;
+	static struct list<GraphicWindow *>::list_node *last;
 	void add_new_buffer();
 	static uint32_t number_of_lists;
 	void deallocate_buffers();
 	struct list<GraphicWindow *>::list_node* get_node();
 	void put_node(struct list<GraphicWindow *>::list_node*);
-	struct list<GraphicWindow *>::list_node* node;
+	struct list<GraphicWindow *>::list_node *node;
 	uint32_t length;
 	class list<GraphicWindow *>::iterator : public bidirectional_iterator<GraphicWindow *,int>
 	{
 	protected:
-		struct list<GraphicWindow *>::list_node* node;
+		struct list<GraphicWindow *>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -79,7 +79,7 @@ protected:
 	class list<GraphicWindow *>::const_iterator : public bidirectional_iterator<GraphicWindow *,int>
 	{
 	protected:
-		struct list<GraphicWindow *>::list_node* node;
+		struct list<GraphicWindow *>::list_node *node;
 	public:
 		void const_iterator(const class list<GraphicWindow *>::iterator&);
 		void const_iterator();
@@ -165,7 +165,7 @@ protected:
 	int32_t DeleteWindowAndRemoveItsTraces(class GraphicWindow*);
 	int32_t DeleteAllWindowsInDeletionList();
 	int32_t nBusyIteratingCount;
-	class GraphicWindow* baseWindow;
+	class GraphicWindow *baseWindow;
 	class list<GraphicWindow *> listWindowsToDelete;
 };
 
@@ -174,14 +174,14 @@ protected:
 // Type: struct list<GraphicWindow *>::list_node_buffer (forward reference);
 struct list<GraphicWindow *>::list_node_buffer{
 	void * __ptr32 next_buffer;
-	struct list<GraphicWindow *>::list_node* buffer;
+	struct list<GraphicWindow *>::list_node *buffer;
 };
 
 // Type: struct list<GraphicWindow *>::list_node (forward reference);
 struct list<GraphicWindow *>::list_node{
 	void * __ptr32 next;
 	void * __ptr32 prev;
-	class GraphicWindow* data;
+	class GraphicWindow *data;
 };
 
 // Type: uint32_t;
@@ -219,7 +219,7 @@ public:
 class list<GraphicWindow *>::iterator : public bidirectional_iterator<GraphicWindow *,int>
 {
 protected:
-	struct list<GraphicWindow *>::list_node* node;
+	struct list<GraphicWindow *>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -381,7 +381,7 @@ class basic_string<char>{
 	using reference_pointer = class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char>* reference;
+	class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -528,15 +528,15 @@ public:
 protected:
 	int32_t bSurfacePrimary;
 	int32_t bSurfaceTransparent;
-	class MFont* mFont;
+	class MFont *mFont;
 	struct SparkalColor colorFontCurrent;
 	struct SparkalColor colorCurrent;
 	int32_t nColorIndexFontCurrent;
 	int32_t nColorIndexCurrent;
 	int32_t nColorIndexTransparent;
-	struct IDirectDrawSurface* mpFrontSurface;
-	struct IDirectDrawSurface* mpBackSurface;
-	struct IDirectDrawPalette* mpPalette;
+	struct IDirectDrawSurface *mpFrontSurface;
+	struct IDirectDrawSurface *mpBackSurface;
+	struct IDirectDrawPalette *mpPalette;
 	struct _DDSURFACEDESC mDDdesc;
 	struct _DDBLTFX mDDBltFx;
 	void * __ptr32 hPen;
@@ -569,7 +569,7 @@ public:
 	virtual int32_t DrawSelf() /* override */;
 	void SetParentBuffer(class CBackBuffer*);
 protected:
-	class CBackBuffer* bufferParent;
+	class CBackBuffer *bufferParent;
 };
 
 // Type: class list<GraphicWindow *> (forward reference);
@@ -578,7 +578,7 @@ class list<GraphicWindow *>{
 	struct list<GraphicWindow *>::list_node{
 		void * __ptr32 next;
 		void * __ptr32 prev;
-		class GraphicWindow* data;
+		class GraphicWindow *data;
 	};
 protected:
 	static class allocator<list<GraphicWindow *>::list_node> list_node_allocator;
@@ -596,27 +596,27 @@ protected:
 	uint32_t buffer_size();
 	struct list<GraphicWindow *>::list_node_buffer{
 		void * __ptr32 next_buffer;
-		struct list<GraphicWindow *>::list_node* buffer;
+		struct list<GraphicWindow *>::list_node *buffer;
 	};
 	using buffer_allocator_type = class allocator<list<GraphicWindow *>::list_node_buffer>;
 	using buffer_pointer = struct list<GraphicWindow *>::list_node_buffer*;
 protected:
 	static class allocator<list<GraphicWindow *>::list_node_buffer> buffer_allocator;
-	static struct list<GraphicWindow *>::list_node_buffer* buffer_list;
-	static struct list<GraphicWindow *>::list_node* free_list;
-	static struct list<GraphicWindow *>::list_node* next_avail;
-	static struct list<GraphicWindow *>::list_node* last;
+	static struct list<GraphicWindow *>::list_node_buffer *buffer_list;
+	static struct list<GraphicWindow *>::list_node *free_list;
+	static struct list<GraphicWindow *>::list_node *next_avail;
+	static struct list<GraphicWindow *>::list_node *last;
 	void add_new_buffer();
 	static uint32_t number_of_lists;
 	void deallocate_buffers();
 	struct list<GraphicWindow *>::list_node* get_node();
 	void put_node(struct list<GraphicWindow *>::list_node*);
-	struct list<GraphicWindow *>::list_node* node;
+	struct list<GraphicWindow *>::list_node *node;
 	uint32_t length;
 	class list<GraphicWindow *>::iterator : public bidirectional_iterator<GraphicWindow *,int>
 	{
 	protected:
-		struct list<GraphicWindow *>::list_node* node;
+		struct list<GraphicWindow *>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -632,7 +632,7 @@ protected:
 	class list<GraphicWindow *>::const_iterator : public bidirectional_iterator<GraphicWindow *,int>
 	{
 	protected:
-		struct list<GraphicWindow *>::list_node* node;
+		struct list<GraphicWindow *>::list_node *node;
 	public:
 		void const_iterator(const class list<GraphicWindow *>::iterator&);
 		void const_iterator();
@@ -698,7 +698,7 @@ public:
 class list<GraphicWindow *>::iterator : public bidirectional_iterator<GraphicWindow *,int>
 {
 protected:
-	struct list<GraphicWindow *>::list_node* node;
+	struct list<GraphicWindow *>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -716,7 +716,7 @@ public:
 class list<GraphicWindow *>::const_iterator : public bidirectional_iterator<GraphicWindow *,int>
 {
 protected:
-	struct list<GraphicWindow *>::list_node* node;
+	struct list<GraphicWindow *>::list_node *node;
 public:
 	void const_iterator(const class list<GraphicWindow *>::iterator&);
 	void const_iterator();
@@ -735,7 +735,7 @@ public:
 class list<GraphicWindow *>::const_iterator : public bidirectional_iterator<GraphicWindow *,int>
 {
 protected:
-	struct list<GraphicWindow *>::list_node* node;
+	struct list<GraphicWindow *>::list_node *node;
 public:
 	void const_iterator(const class list<GraphicWindow *>::iterator&);
 	void const_iterator();
@@ -1873,7 +1873,7 @@ void GraphicWindowColorConstants::GraphicWindowColorConstants() {
 }
 
 // FUNCTION: COPTER_D 0x004a17be
-int32_t GraphicWindowOwner::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
+int32_t GraphicWindowOwner::DoMessage(class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 // LINE 62:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x004A17D1;
@@ -1881,7 +1881,7 @@ int32_t GraphicWindowOwner::DoMessage(class GraphicWindow* gwSource, long lWindo
 }
 
 // FUNCTION: COPTER_D 0x004a17d8
-void GraphicWindowManager::GraphicWindowManager(class GraphicWindow* newBaseWindow) {
+void GraphicWindowManager::GraphicWindowManager(class GraphicWindow *newBaseWindow) {
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
@@ -2228,7 +2228,7 @@ _T1b7:
 }
 
 // FUNCTION: COPTER_D 0x004a1c21
-void GraphicWindowManager::SetNewBaseWindow(class GraphicWindow* newBaseWindow) {
+void GraphicWindowManager::SetNewBaseWindow(class GraphicWindow *newBaseWindow) {
 // LINE 98:
 	__asm        mov    eax, newBaseWindow;
 	__asm        mov    ecx, this;
@@ -2238,7 +2238,7 @@ void GraphicWindowManager::SetNewBaseWindow(class GraphicWindow* newBaseWindow) 
 }
 
 // FUNCTION: COPTER_D 0x004a1c42
-int32_t GraphicWindowManager::DeleteWindow(class GraphicWindow* windowToDelete) {
+int32_t GraphicWindowManager::DeleteWindow(class GraphicWindow *windowToDelete) {
 // LINE 114:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -2494,8 +2494,8 @@ _T305:
 }
 
 // FUNCTION: COPTER_D 0x004a1f4e
-int32_t GraphicWindowManager::DeleteWindowAndRemoveItsTraces(class GraphicWindow* windowToDelete) {
-	class GraphicWindow* windowParent;
+int32_t GraphicWindowManager::DeleteWindowAndRemoveItsTraces(class GraphicWindow *windowToDelete) {
+	class GraphicWindow *windowParent;
 
 // LINE 139:
 	__asm        mov    eax, windowToDelete;
@@ -2741,8 +2741,8 @@ _T1df:
 }
 
 // FUNCTION: COPTER_D 0x004a21d6
-int32_t GraphicWindowManager::IsWindowOrParentInDeletionList(class GraphicWindow* windowToCheck) {
-	class GraphicWindow* currentGraphicWindowToCheck;
+int32_t GraphicWindowManager::IsWindowOrParentInDeletionList(class GraphicWindow *windowToCheck) {
+	class GraphicWindow *currentGraphicWindowToCheck;
 	class list<GraphicWindow *>::iterator tempGraphicWindowPtrListIterator;
 
 // LINE 192:
@@ -2838,7 +2838,7 @@ _Te4:
 long GraphicWindowManager::DoKeyDown(long lKey, char chModifiers) {
 	class list<GraphicWindow *>::iterator iterator;
 	int32_t nReturnValue;
-	class GraphicWindow* windowCurrent;
+	class GraphicWindow *windowCurrent;
 
 // LINE 219:
 	__asm        mov    eax, GraphicWindow::listFocusWindows.node;
@@ -2947,7 +2947,7 @@ _T10a:
 long GraphicWindowManager::DoKeyUp(long lKey, char chModifiers) {
 	class list<GraphicWindow *>::iterator iterator;
 	int32_t nReturnValue;
-	class GraphicWindow* windowCurrent;
+	class GraphicWindow *windowCurrent;
 
 // LINE 251:
 	__asm        mov    eax, GraphicWindow::listFocusWindows.node;
@@ -3056,7 +3056,7 @@ _T10a:
 long GraphicWindowManager::DoCharacter(long lCharacter) {
 	class list<GraphicWindow *>::iterator iterator;
 	int32_t nReturnValue;
-	class GraphicWindow* windowCurrent;
+	class GraphicWindow *windowCurrent;
 
 // LINE 278:
 	__asm        mov    eax, GraphicWindow::listFocusWindows.node;
@@ -3298,7 +3298,7 @@ _T77:
 }
 
 // FUNCTION: COPTER_D 0x004a278e
-int32_t GraphicWindowManager::SendCursorMessageToChildWindow(class GraphicWindow* childWindow, int32_t nMessage, long nCursorX, long nCursorY, unsigned long nButton) {
+int32_t GraphicWindowManager::SendCursorMessageToChildWindow(class GraphicWindow *childWindow, int32_t nMessage, long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 361:
 	__asm        jmp    near ptr 0x004A279F;
 
@@ -3550,7 +3550,7 @@ _T41:
 }
 
 // FUNCTION: COPTER_D 0x004a2a1b
-int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestForValidity) {
+int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow *windowToTestForValidity) {
 // LINE 415:
 	__asm        mov    eax, windowToTestForValidity;
 	__asm        push   eax;
@@ -4319,7 +4319,7 @@ _T42f:
 }
 
 // FUNCTION: COPTER_D 0x004a33ee
- GraphicWindow::GraphicWindow(class MRect& rectNewWindow, long lNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+ GraphicWindow::GraphicWindow(class MRect& rectNewWindow, long lNewID, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590F2C;
@@ -4744,7 +4744,7 @@ _T538:
 }
 
 // FUNCTION: COPTER_D 0x004a393d
- GraphicWindow::GraphicWindow(char * szImageFileName, class MRect& rectNewWindow, long lNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, int32_t nNewTransparentIndex) {
+ GraphicWindow::GraphicWindow(char * szImageFileName, class MRect& rectNewWindow, long lNewID, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList, int32_t nNewTransparentIndex) {
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590F2C;
@@ -6499,7 +6499,7 @@ _T3e:
 }
 
 // FUNCTION: COPTER_D 0x004a4e55
-void  GraphicWindow::CenterWindow(class GraphicWindow* windowToCenterOn) {
+void  GraphicWindow::CenterWindow(class GraphicWindow *windowToCenterOn) {
 // LINE 716:
 	__asm        jmp    near ptr 0x004A4E66;
 
@@ -7010,7 +7010,7 @@ _T1ce:
 }
 
 // FUNCTION: COPTER_D 0x004a53be
-int  GraphicWindow::AddChild(class GraphicWindow* windowNewChild) {
+int  GraphicWindow::AddChild(class GraphicWindow *windowNewChild) {
 // LINE 818:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x30];
@@ -7248,7 +7248,7 @@ _T269:
 }
 
 // FUNCTION: COPTER_D 0x004a569a
-int  GraphicWindow::DeleteChild(class GraphicWindow* windowChild) {
+int  GraphicWindow::DeleteChild(class GraphicWindow *windowChild) {
 	int32_t nReturnValue;
 	class list<GraphicWindow *>::iterator i;
 
@@ -7404,7 +7404,7 @@ _T18e:
 // FUNCTION: COPTER_D 0x004a5837
 class GraphicWindow *  GraphicWindow::DeleteChild(long lChildID) {
 	class list<GraphicWindow *>::iterator i;
-	class GraphicWindow* windowFound;
+	class GraphicWindow *windowFound;
 
 // LINE 862:
 	__asm        mov    eax, this;
@@ -7577,7 +7577,7 @@ _T1cb:
 }
 
 // FUNCTION: COPTER_D 0x004a5a11
-int  GraphicWindow::RemoveChild(class GraphicWindow* windowNewChild) {
+int  GraphicWindow::RemoveChild(class GraphicWindow *windowNewChild) {
 	int32_t nReturnValue;
 	class list<GraphicWindow *>::iterator i;
 
@@ -7702,7 +7702,7 @@ _T138:
 // FUNCTION: COPTER_D 0x004a5b58
 void  GraphicWindow::DeleteAllChildren() {
 	class list<GraphicWindow *>::iterator i;
-	class GraphicWindow* windowToDelete;
+	class GraphicWindow *windowToDelete;
 
 // LINE 914:
 	__asm        mov    eax, this;
@@ -8095,7 +8095,7 @@ _Tca:
 }
 
 // FUNCTION: COPTER_D 0x004a5f76
-int  GraphicWindow::FindWindowA(class GraphicWindow* windowToFind) {
+int  GraphicWindow::FindWindowA(class GraphicWindow *windowToFind) {
 	class list<GraphicWindow *>::iterator i;
 
 // LINE 984:
@@ -8294,7 +8294,7 @@ int  GraphicWindow::DrawSelf() {
 // FUNCTION: COPTER_D 0x004a6180
 void  GraphicWindow::DrawChildren() {
 	class list<GraphicWindow *>::iterator i;
-	class GraphicWindow* gwCurrentChild;
+	class GraphicWindow *gwCurrentChild;
 
 // LINE 1078:
 	__asm        mov    eax, this;
@@ -8378,8 +8378,8 @@ _Td1:
 
 // FUNCTION: COPTER_D 0x004a6256
 void  GraphicWindow::InvalidateAllOverlaps(class list<GraphicWindow *>::iterator windowChildListItem) {
-	class GraphicWindow* windowNextChild;
-	class GraphicWindow* windowCurrentChild;
+	class GraphicWindow *windowNextChild;
+	class GraphicWindow *windowCurrentChild;
 
 // LINE 1117:
 	__asm        jmp    near ptr 0x004A6267;
@@ -8726,7 +8726,7 @@ long  GraphicWindow::DoCursorMove(long nCursorX, long nCursorY) {
 }
 
 // FUNCTION: COPTER_D 0x004a6607
-int  GraphicWindow::CaptureCursorStart(class GraphicWindow* windowCapture) {
+int  GraphicWindow::CaptureCursorStart(class GraphicWindow *windowCapture) {
 // LINE 1270:
 	__asm        cmp    GraphicWindow::windowCursorCapture, 0;
 	__asm        je     _T20;
@@ -8745,7 +8745,7 @@ _T32:
 }
 
 // FUNCTION: COPTER_D 0x004a6640
-int  GraphicWindow::CaptureCursorEnd(class GraphicWindow* windowCapture) {
+int  GraphicWindow::CaptureCursorEnd(class GraphicWindow *windowCapture) {
 // LINE 1282:
 	__asm        mov    eax, windowCapture;
 	__asm        cmp    GraphicWindow::windowCursorCapture, eax;
@@ -8765,7 +8765,7 @@ _T36:
 
 // FUNCTION: COPTER_D 0x004a667d
 void  GraphicWindow::WindowToScreenCoordinates(long& nXPosition, long& nYPosition) {
-	class GraphicWindow* currentWindow;
+	class GraphicWindow *currentWindow;
 
 // LINE 1299:
 	__asm        mov    eax, this;
@@ -9149,8 +9149,8 @@ _T46b:
 // FUNCTION: COPTER_D 0x004a6bcd
 int  GraphicWindow::SetImageToDrawOnto() {
 	class MRect rectNewPosition;
-	class GraphicWindow* gwCurrentParent;
-	class CBackBuffer* imageCurrentParent;
+	class GraphicWindow *gwCurrentParent;
+	class CBackBuffer *imageCurrentParent;
 
 // LINE 1367:
 	__asm        mov    eax, this;
@@ -9512,7 +9512,7 @@ _Tcb:
 }
 
 // FUNCTION: COPTER_D 0x004a6f7c
-void  GraphicWindow::DrawBorder(struct SparkalColor* colorBorder) {
+void  GraphicWindow::DrawBorder(struct SparkalColor *colorBorder) {
 // LINE 1456:
 	__asm        cmp    colorBorder, 0;
 	__asm        je     _T2f;
@@ -9613,7 +9613,7 @@ _T2f:
 }
 
 // FUNCTION: COPTER_D 0x004a7075
-int  GraphicWindow::MakeModal(class GraphicWindow* windowModal) {
+int  GraphicWindow::MakeModal(class GraphicWindow *windowModal) {
 // LINE 1485:
 	__asm        mov    eax, windowModal;
 	__asm        push   eax;
@@ -9843,7 +9843,7 @@ _T273:
 }
 
 // FUNCTION: COPTER_D 0x004a7340
-int  GraphicWindow::RemoveModal(class GraphicWindow* windowModal) {
+int  GraphicWindow::RemoveModal(class GraphicWindow *windowModal) {
 	class list<GraphicWindow *>::iterator i;
 
 // LINE 1500:
@@ -9956,7 +9956,7 @@ _T121:
 }
 
 // FUNCTION: COPTER_D 0x004a7470
-int  GraphicWindow::MakeFocus(class GraphicWindow* windowFocus) {
+int  GraphicWindow::MakeFocus(class GraphicWindow *windowFocus) {
 // LINE 1531:
 	__asm        mov    eax, windowFocus;
 	__asm        push   eax;
@@ -10186,7 +10186,7 @@ _T273:
 }
 
 // FUNCTION: COPTER_D 0x004a773b
-int  GraphicWindow::RemoveFocus(class GraphicWindow* windowFocus) {
+int  GraphicWindow::RemoveFocus(class GraphicWindow *windowFocus) {
 	class list<GraphicWindow *>::iterator i;
 
 // LINE 1545:
@@ -10300,8 +10300,8 @@ _T121:
 
 // FUNCTION: COPTER_D 0x004a786b
 int  GraphicWindow::CanWeRespondToMessage() {
-	class GraphicWindow* gwModal;
-	class GraphicWindow* gwCurrentTest;
+	class GraphicWindow *gwModal;
+	class GraphicWindow *gwCurrentTest;
 	int32_t nModalWindowCount;
 
 // LINE 1572:
@@ -10403,7 +10403,7 @@ void ScreenWindow::ScreenWindow(const class ScreenWindow& copyScreenWindow) {
 }
 
 // FUNCTION: COPTER_D 0x004a7989
-void ScreenWindow::ScreenWindow(class MRect& rectNewWindow, int32_t nNewID, class CBackBuffer* bufferNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+void ScreenWindow::ScreenWindow(class MRect& rectNewWindow, int32_t nNewID, class CBackBuffer *bufferNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
@@ -10474,7 +10474,7 @@ class ScreenWindow& ScreenWindow::operator=(const class ScreenWindow& copyScreen
 // FUNCTION: COPTER_D 0x004a7a51
 int32_t ScreenWindow::ComposeSelf() {
 	class list<GraphicWindow *>::iterator i;
-	class GraphicWindow* gwCurrentChild;
+	class GraphicWindow *gwCurrentChild;
 
 // LINE 1665:
 	__asm        mov    eax, this;
@@ -10785,13 +10785,13 @@ static void (*$S62)() = { 0 /* todo */ };
 
 // Contribution: 3:00003960-0000396f Module: 9, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0059a960
-class GraphicWindow* GraphicWindow::windowCursorCapture = { 0 /* todo */ };
+class GraphicWindow *GraphicWindow::windowCursorCapture = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059a964
-class GraphicWindowManager* GraphicWindow::windowManager = { 0 /* todo */ };
+class GraphicWindowManager *GraphicWindow::windowManager = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059a968
-class GraphicWindow* GraphicWindow::screenWindow = { 0 /* todo */ };
+class GraphicWindow *GraphicWindow::screenWindow = { 0 /* todo */ };
 
 
 
@@ -10803,25 +10803,25 @@ uint32_t list<GraphicWindow *>::number_of_lists = 0;
 
 // Contribution: 3:00003974-00003977 Module: 9, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059a974
-struct list<GraphicWindow *>::list_node* list<GraphicWindow *>::last = { 0 /* todo */ };
+struct list<GraphicWindow *>::list_node *list<GraphicWindow *>::last = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00003978-0000397b Module: 9, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059a978
-struct list<GraphicWindow *>::list_node* list<GraphicWindow *>::next_avail = { 0 /* todo */ };
+struct list<GraphicWindow *>::list_node *list<GraphicWindow *>::next_avail = { 0 /* todo */ };
 
 
 
 // Contribution: 3:0000397c-0000397f Module: 9, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059a97c
-struct list<GraphicWindow *>::list_node* list<GraphicWindow *>::free_list = { 0 /* todo */ };
+struct list<GraphicWindow *>::list_node *list<GraphicWindow *>::free_list = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00003980-00003983 Module: 9, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059a980
-struct list<GraphicWindow *>::list_node_buffer* list<GraphicWindow *>::buffer_list = { 0 /* todo */ };
+struct list<GraphicWindow *>::list_node_buffer *list<GraphicWindow *>::buffer_list = { 0 /* todo */ };
 
 
 

@@ -5,7 +5,7 @@
 // Type: class StringSet (forward reference);
 class StringSet{
 private:
-	class ResFile* fResFile;
+	class ResFile *fResFile;
 	long fNumStrings;
 	void * __ptr32 fStringHandle;
 	unsigned char * fStringPtr;
@@ -43,7 +43,7 @@ public:
 class FlatResFile : public FlatFile
 {
 protected:
-	class ResMap* fMap;
+	class ResMap *fMap;
 	long fError;
 	short _alignPad;
 public:
@@ -86,13 +86,13 @@ class FlatFile{
 		kMaxNameLen = 255,
 	};
 protected:
-	class FlatFile* fNext;
+	class FlatFile *fNext;
 	unsigned char fName[256];
 	long fFileID;
-	struct _iobuf* fFile;
+	struct _iobuf *fFile;
 	long UniqueID();
 private:
-	static class FlatFile* sList;
+	static class FlatFile *sList;
 	static long sLastFileID;
 	void Link();
 	void Unlink();
@@ -125,7 +125,7 @@ public:
 
 // Contribution: 1:00164a40-00164c90 Module: 185, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00565a40
-void StringSet::StringSet(class ResFile* file, short resID) {
+void StringSet::StringSet(class ResFile *file, short resID) {
 // LINE 13:
 	__asm        mov    eax, file;
 	__asm        mov    ecx, this;
@@ -142,7 +142,7 @@ void StringSet::StringSet(class ResFile* file, short resID) {
 }
 
 // FUNCTION: COPTER_D 0x00565a6f
-void StringSet::StringSet(class ResFile* file, short resID, short numStrings) {
+void StringSet::StringSet(class ResFile *file, short resID, short numStrings) {
 // LINE 21:
 	__asm        mov    eax, file;
 	__asm        mov    ecx, this;

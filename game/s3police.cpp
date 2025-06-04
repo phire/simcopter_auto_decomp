@@ -21,7 +21,7 @@ private:
 	struct Goal destGoal1;
 	struct Goal destGoal2;
 	int32_t foundRoad;
-	struct _DYOBJ_INST* pBadGuyDyOb;
+	struct _DYOBJ_INST *pBadGuyDyOb;
 public:
 	void PoliceCarClass(const class PoliceCarClass&);
 	void PoliceCarClass();
@@ -52,11 +52,11 @@ struct VRObjInfo{
 	int32_t Verts;
 	int32_t Attribute;
 	int32_t Radius;
-	struct Point3d* ObjCenter;
-	struct Point3d* VertsPtr;
-	struct Xform3d* VertsXfm;
-	struct Point3d* OrgVerts;
-	int32_t[4][4]* Matrix;
+	struct Point3d *ObjCenter;
+	struct Point3d *VertsPtr;
+	struct Xform3d *VertsXfm;
+	struct Point3d *OrgVerts;
+	int32_t *Matrix[4][4];
 };
 
 // Type: enum EmergencyType;
@@ -97,9 +97,9 @@ struct _CELL_INFO{
 	short z;
 	short size;
 	short ctr;
-	struct _STOBJ_INST* stptr;
-	struct _DYOBJ_INST* dyptr;
-	struct _DYOBJ_INST* vwptr;
+	struct _STOBJ_INST *stptr;
+	struct _DYOBJ_INST *dyptr;
+	struct _DYOBJ_INST *vwptr;
 };
 
 // Type: struct _MISSION_PARMS;
@@ -120,7 +120,7 @@ struct Point3d{
 
 // Type: struct Goal (forward reference);
 struct Goal{
-	struct RGVertex* pRGV;
+	struct RGVertex *pRGV;
 	int32_t elementIndex;
 	int32_t gridIndex;
 	struct _GridCoordinates gridLoc;
@@ -161,8 +161,8 @@ struct _GridCoordinates{
 
 // Type: struct _DYOBJ_INST (forward reference);
 struct _DYOBJ_INST{
-	struct _DYOBJ_INST* next;
-	struct _DYOBJ_INST* vnext;
+	struct _DYOBJ_INST *next;
+	struct _DYOBJ_INST *vnext;
 	void * __ptr32 mesh;
 	short flags;
 	short user1;
@@ -200,7 +200,7 @@ struct _AUTO_LOAD_SAVE{
 	long turnIndex;
 	int32_t currDist;
 	int32_t legOfTurn;
-	struct Point3d* pDirVector;
+	struct Point3d *pDirVector;
 	int32_t personDone;
 	int32_t personState;
 	int32_t personTimer;
@@ -279,7 +279,7 @@ protected:
 	long timeOfArrival;
 	struct _DYOBJ_INST dispatchIcon;
 	int32_t timeToEmergency;
-	class AutomobileClass* dispatchTarget;
+	class AutomobileClass *dispatchTarget;
 	unsigned char dispatchPath[256];
 	unsigned char dispatchPathIndex;
 	unsigned char dispatchPathLength;
@@ -440,12 +440,12 @@ protected:
 	enum TurnIndex turnIndex;
 	int32_t currDist;
 	int32_t legOfTurn;
-	struct Point3d* pDirVector;
+	struct Point3d *pDirVector;
 	int32_t timeToLive;
 	int32_t fireTime;
 	long fireSeq;
 	long missionId;
-	struct _CELL_INFO* cptr;
+	struct _CELL_INFO *cptr;
 	enum AutomobileClass::PersonState personState;
 	int32_t spotlightHitCounter;
 	int32_t IsCarPersistant();
@@ -577,7 +577,7 @@ void PoliceCarClass::~PoliceCarClass() {
 // FUNCTION: COPTER_D 0x00536e98
 class PoliceCarClass* PoliceCarClass::CreateInstance(int32_t instanceID) {
 	int32_t object;
-	class PoliceCarClass* youveWonABrandNewCar;
+	class PoliceCarClass *youveWonABrandNewCar;
 	char * objectMemory;
 
 // LINE 125:
@@ -769,7 +769,7 @@ unsigned char PoliceCarClass::Dispatch(enum EmergencyType responseType, enum Eme
 // FUNCTION: COPTER_D 0x005370b3
 void PoliceCarClass::ItterateFSM() {
 	struct _GridCoordinates oldemergencyloc;
-	struct _CELL_INFO* cptr;
+	struct _CELL_INFO *cptr;
 	struct _MISSION_PARMS mp;
 	struct Point3d vec;
 	int32_t dist;
@@ -1562,7 +1562,7 @@ _T974:
 }
 
 // FUNCTION: COPTER_D 0x00537a2c
-enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
+enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal *pGoal) {
 	struct _GridCoordinates startLoc;
 
 // LINE 545:
@@ -2037,8 +2037,8 @@ _T61:
 
 // FUNCTION: COPTER_D 0x00537fd9
 struct _DYOBJ_INST* PoliceCarClass::ScanForBadGuys(struct _GridCoordinates& scanLoc) {
-	struct _CELL_INFO* cptr;
-	struct _DYOBJ_INST* dyptr;
+	struct _CELL_INFO *cptr;
+	struct _DYOBJ_INST *dyptr;
 	class SpiralScan spiral;
 
 // LINE 690:
@@ -2153,7 +2153,7 @@ _T13f:
 }
 
 // FUNCTION: COPTER_D 0x0053811f
-void PoliceCarClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
+void PoliceCarClass::SetSaveData(struct _AUTO_LOAD_SAVE *sd) {
 // LINE 730:
 	__asm        mov    esi, this;
 	__asm        mov    edi, sd;
@@ -2234,7 +2234,7 @@ _Tf7:
 }
 
 // FUNCTION: COPTER_D 0x0053822e
-void PoliceCarClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
+void PoliceCarClass::LoadSaveData(struct _AUTO_LOAD_SAVE *sd) {
 	unsigned char yindex;
 	struct _GridCoordinates badGuyLoc;
 
@@ -2438,5 +2438,5 @@ int32_t curPoliceCars = 0;
 
 // Contribution: 3:000949e8-000949fb Module: 158, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0062b9e8
-class PoliceCarClass* policeCars[5];
+class PoliceCarClass *policeCars[5];
 

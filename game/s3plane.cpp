@@ -353,9 +353,9 @@ struct _CELL_INFO{
 	short z;
 	short size;
 	short ctr;
-	struct _STOBJ_INST* stptr;
-	struct _DYOBJ_INST* dyptr;
-	struct _DYOBJ_INST* vwptr;
+	struct _STOBJ_INST *stptr;
+	struct _DYOBJ_INST *dyptr;
+	struct _DYOBJ_INST *vwptr;
 };
 
 // Type: struct _MISSION_PARMS;
@@ -369,7 +369,7 @@ struct _MISSION_PARMS{
 
 // Type: struct _STOBJ_INST (forward reference);
 struct _STOBJ_INST{
-	struct _STOBJ_INST* next;
+	struct _STOBJ_INST *next;
 	void * __ptr32 mesh;
 	long user1;
 	long user2;
@@ -381,17 +381,17 @@ struct VRObjInfo{
 	int32_t Verts;
 	int32_t Attribute;
 	int32_t Radius;
-	struct Point3d* ObjCenter;
-	struct Point3d* VertsPtr;
-	struct Xform3d* VertsXfm;
-	struct Point3d* OrgVerts;
-	int32_t[4][4]* Matrix;
+	struct Point3d *ObjCenter;
+	struct Point3d *VertsPtr;
+	struct Xform3d *VertsXfm;
+	struct Point3d *OrgVerts;
+	int32_t *Matrix[4][4];
 };
 
 // Type: struct _DYOBJ_INST (forward reference);
 struct _DYOBJ_INST{
-	struct _DYOBJ_INST* next;
-	struct _DYOBJ_INST* vnext;
+	struct _DYOBJ_INST *next;
+	struct _DYOBJ_INST *vnext;
 	void * __ptr32 mesh;
 	short flags;
 	short user1;
@@ -407,10 +407,10 @@ struct VRFaceInfo{
 	int32_t Verts;
 	int32_t Attribute;
 	int32_t Plotter;
-	struct VRBmpHdr* Bitmap;
+	struct VRBmpHdr *Bitmap;
 	int32_t * VertList;
-	struct MapVert* MapVList;
-	struct MapVert* BarryPtr;
+	struct MapVert *MapVList;
+	struct MapVert *BarryPtr;
 };
 
 // Type: void * __ptr32;
@@ -604,7 +604,7 @@ class PlaneClass* PlaneClass::CreateInstance(int32_t instanceID) {
 
 // FUNCTION: COPTER_D 0x0052b2be
 class PlaneClass* PlaneClass::CreateInstance(long mapx, long mapy, int32_t instanceID) {
-	class PlaneClass* newplane;
+	class PlaneClass *newplane;
 
 // LINE 353:
 	__asm        push   0xBC;
@@ -1421,7 +1421,7 @@ enum PlaneClass::StoppedReasons PlaneClass::CheckDynamicObjectsAt(const struct P
 void PlaneClass::SetCrashWhenReady() {
 	int32_t deltaY;
 	int32_t deltaX;
-	struct _CELL_INFO* cptr;
+	struct _CELL_INFO *cptr;
 	int32_t z;
 	struct _MISSION_PARMS mp;
 	int32_t x;
@@ -1749,8 +1749,8 @@ void PlaneClass::Stop() {
 
 // FUNCTION: COPTER_D 0x0052beda
 void PlaneClass::MoveForward() {
-	struct _CELL_INFO* lcptr;
-	struct _CELL_INFO* cptr;
+	struct _CELL_INFO *lcptr;
+	struct _CELL_INFO *cptr;
 	struct Point2d newpos;
 	struct Point3d newloc;
 	int32_t dist;
@@ -2017,7 +2017,7 @@ _T2c4:
 }
 
 // FUNCTION: COPTER_D 0x0052c1a3
-int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
+int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO *cptr) {
 	long new_mission_id;
 	long num_debris;
 	int32_t newdist;
@@ -2029,11 +2029,11 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
 	struct Point3d center;
 	struct Point3d vec;
 	int32_t refmat[4][4];
-	struct _STOBJ_INST* stobj;
+	struct _STOBJ_INST *stobj;
 	struct Point3d cloc;
 	struct Point3d sloc;
 	struct VRObjInfo oinfo;
-	struct Point3d* norm;
+	struct Point3d *norm;
 	int32_t speed;
 
 // LINE 1490:
@@ -2796,7 +2796,7 @@ _T69:
 
 // FUNCTION: COPTER_D 0x0052cacb
 void PlaneClass::UnlinkFromCell(const struct Point2d& point) {
-	struct _CELL_INFO* cellPointer;
+	struct _CELL_INFO *cellPointer;
 
 // LINE 1830:
 	__asm        mov    eax, point;
@@ -2842,7 +2842,7 @@ _T90:
 	__asm        je     _T10a;
 // LINE 1836:
 // Block start:
-	struct _DYOBJ_INST** dyptrptr;
+	struct _DYOBJ_INST **dyptrptr;
 	__asm        mov    eax, cellPointer;
 	__asm        add    eax, 0x10;
 	__asm        mov    dyptrptr, eax;
@@ -2894,7 +2894,7 @@ _T10f:
 
 // FUNCTION: COPTER_D 0x0052cbe1
 void PlaneClass::LinkToCell(const struct Point2d& point) {
-	struct _CELL_INFO* cellPointer;
+	struct _CELL_INFO *cellPointer;
 
 // LINE 1878:
 	__asm        mov    eax, point;
@@ -2954,7 +2954,7 @@ _T98:
 
 // FUNCTION: COPTER_D 0x0052cc9d
 void PlaneClass::AdjustCurrentPosition() {
-	struct _CELL_INFO* cellPointer;
+	struct _CELL_INFO *cellPointer;
 	int32_t alt;
 
 // LINE 1905:
@@ -3041,7 +3041,7 @@ _Tfa:
 
 // FUNCTION: COPTER_D 0x0052cda1
 void PlaneClass::AdjustNextPosition() {
-	struct _CELL_INFO* cellPointer;
+	struct _CELL_INFO *cellPointer;
 	struct Point3d nextFineLocation;
 	int32_t mat[4][4];
 
@@ -3154,7 +3154,7 @@ _T13a:
 
 // FUNCTION: COPTER_D 0x0052cee5
 void PlaneClass::AdjustNextAltitude() {
-	struct _CELL_INFO* cellPointer;
+	struct _CELL_INFO *cellPointer;
 	struct Point2d nextcell;
 	int32_t alt;
 	int32_t altdiff;
@@ -3947,7 +3947,7 @@ void ItterateAllPlanes() {
 }
 
 // FUNCTION: COPTER_D 0x0052d71f
-void PlaneClass::HitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DYOBJ_INST* dyhittee, long mission_id, long xtra_msg) {
+void PlaneClass::HitDispatch(long hitter_type, struct _DYOBJ_INST *dyhitter, struct _DYOBJ_INST *dyhittee, long mission_id, long xtra_msg) {
 // LINE 2635:
 	__asm        mov    eax, hitter_type;
 	__asm        mov    [ebp-0x18], eax;
@@ -4113,7 +4113,7 @@ _T24c:
 }
 
 // FUNCTION: COPTER_D 0x0052d975
-void PlaneHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DYOBJ_INST* dyhittee, long mission_id, long xtra_msg) {
+void PlaneHitDispatch(long hitter_type, struct _DYOBJ_INST *dyhitter, struct _DYOBJ_INST *dyhittee, long mission_id, long xtra_msg) {
 // LINE 2708:
 	__asm        mov    eax, xtra_msg;
 	__asm        push   eax;
@@ -4287,7 +4287,7 @@ int32_t S3PlaneMIFFSave(void * __ptr32 miffWriter) {
 int32_t PlaneClass::MIFFLoad(void * __ptr32 miffReader) {
 	int32_t i;
 	int32_t ret;
-	class PlaneClass* p;
+	class PlaneClass *p;
 
 // LINE 2805:
 	__asm        push   0xBC;
@@ -4543,7 +4543,7 @@ int32_t PlaneClass::sPlaneModelSet = 0;
 class PlaneClass PlaneClass::lsPlane;
 
 // GLOBAL: COPTER_D 0x0062b7a8
-class PlaneClass* planes[2];
+class PlaneClass *planes[2];
 
 // GLOBAL: COPTER_D 0x0062b7b0
 // $S6

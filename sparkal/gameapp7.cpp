@@ -59,7 +59,7 @@ class basic_string<char>{
 	using reference_pointer = class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char>* reference;
+	class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -164,7 +164,7 @@ class basic_string<char>{
 	using reference_pointer = class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char>* reference;
+	class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -310,7 +310,7 @@ public:
 	virtual void GetEditText(char *, unsigned long); // vtable+0xd4
 	virtual void GetEditText(class basic_string<char>&); // vtable+0xd8
 protected:
-	class BoneheadTextEditWindow* myTextEditWindow;
+	class BoneheadTextEditWindow *myTextEditWindow;
 };
 
 // Type: uint32_t;
@@ -328,11 +328,11 @@ class DigitalSound : public Sound
 protected:
 	int32_t nStreamingType;
 	int32_t nCompletionEstimationTimerSet;
-	static struct IDirectSound* lpDirectSound;
+	static struct IDirectSound *lpDirectSound;
 	uint32_t cbSize;
 	struct tWAVEFORMATEX waveFormatEx;
-	struct IDirectSoundBuffer* lpSound[8];
-	struct _STREAMBUFINFO* lpStreamBufferInfo;
+	struct IDirectSoundBuffer *lpSound[8];
+	struct _STREAMBUFINFO *lpStreamBufferInfo;
 	unsigned long dwDesiredBufferDescFlags;
 public:
 	void DigitalSound(long);
@@ -462,11 +462,11 @@ protected:
 	void AddJoystickTwinCommand(long, long, long);
 	void RemoveJoystickTwinCommand(long, long, long);
 	int32_t DoesTwinCommandExistForShortcut(long, long, long);
-	class JoystickWindow* myJoystickWindow;
-	class KeyboardWindow* myKeyboardWindow;
-	class ListBoxWindow* myInputDeviceListBoxWindow;
-	class ListBoxWindow* myCommandListBoxWindow;
-	class TextWindow* myStatusTextWindow;
+	class JoystickWindow *myJoystickWindow;
+	class KeyboardWindow *myKeyboardWindow;
+	class ListBoxWindow *myInputDeviceListBoxWindow;
+	class ListBoxWindow *myCommandListBoxWindow;
+	class TextWindow *myStatusTextWindow;
 	class list<StringIDAssociation> myInputDeviceStringIDAssociationList;
 	class list<StringIDAssociation> myCommandStringIDAssociationList;
 	class list<Shortcut> myShortcutListNonConfigurable;
@@ -499,13 +499,13 @@ protected:
 	void SetControlsBasedOnCurrentSettings();
 	void DrawPreviewBasedOnCurrentSettings();
 	void GetPreviewFileNames(class basic_string<char>&, class basic_string<char>&, class basic_string<char>&);
-	class CheckBoxWindow* myBuildingTexturesCheckBoxWindow;
-	class CheckBoxWindow* myObjectTexturesCheckBoxWindow;
-	class CheckBoxWindow* mySkyDisplayCheckBoxWindow;
-	class ButtonGroup* myDisplayResolutionButtonGroup;
-	class SliderWindow* myFogSliderWindow;
-	class CBackBuffer* mySkyImage;
-	class CBackBuffer* myBuildingImage;
+	class CheckBoxWindow *myBuildingTexturesCheckBoxWindow;
+	class CheckBoxWindow *myObjectTexturesCheckBoxWindow;
+	class CheckBoxWindow *mySkyDisplayCheckBoxWindow;
+	class ButtonGroup *myDisplayResolutionButtonGroup;
+	class SliderWindow *myFogSliderWindow;
+	class CBackBuffer *mySkyImage;
+	class CBackBuffer *myBuildingImage;
 	class MTimer mySkyTimer;
 	long lSkyImagePanX;
 };
@@ -528,11 +528,11 @@ public:
 	// calltype: NearC
 	static long ConvertSliderValueToSoundValue(long);
 protected:
-	class SliderWindow* myMasterVolumeSliderWindow;
-	class SliderWindow* myRadioStationSliderWindow;
-	class SliderWindow* myRadioVolumeSliderWindow;
-	class CheckBoxWindow* myDJCheckBoxWindow;
-	class CheckBoxWindow* myCommercialCheckBoxWindow;
+	class SliderWindow *myMasterVolumeSliderWindow;
+	class SliderWindow *myRadioStationSliderWindow;
+	class SliderWindow *myRadioVolumeSliderWindow;
+	class CheckBoxWindow *myDJCheckBoxWindow;
+	class CheckBoxWindow *myCommercialCheckBoxWindow;
 };
 
 // Type: struct RadioPreferences;
@@ -566,7 +566,7 @@ public:
 	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32) /* override */;
 	virtual long DoKeyDown(long, char) /* override */;
 protected:
-	class SliderWindow* mySliderWindows[8];
+	class SliderWindow *mySliderWindows[8];
 };
 
 // Type: class ControlDisplayWindow (forward reference);
@@ -582,8 +582,8 @@ protected:
 	void GetCommandString(class basic_string<char>&, long);
 	void AppendKeysString(class basic_string<char>&, long, long, int32_t);
 	int32_t bInitializing;
-	class ListBoxWindow* myCommandListBoxWindow;
-	class ListBoxWindow* myKeysListBoxWindow;
+	class ListBoxWindow *myCommandListBoxWindow;
+	class ListBoxWindow *myKeysListBoxWindow;
 };
 
 // Type: class CheckupWindow (forward reference);
@@ -603,8 +603,8 @@ public:
 	static int32_t ShouldWeDisplayCheckupWindow();
 	int32_t CanUserAffordCurrentSliderValues();
 protected:
-	class SliderWindow* mySliderWindows[3];
-	class TextWindow* myTextWindows[5];
+	class SliderWindow *mySliderWindows[3];
+	class TextWindow *myTextWindows[5];
 };
 
 // Type: class GraphicWindow (forward reference);
@@ -1569,7 +1569,7 @@ int  CGameApp::CreateMessageBox(long lID, class basic_string<char>& sMessage, lo
 	struct SparkalColor colorButtonFontHighlighted;
 	char * szAnimationFileNameToUse;
 	struct SparkalColor colorMessageFont;
-	class MessageBoxWindow* tempMessageBoxWindow;
+	class MessageBoxWindow *tempMessageBoxWindow;
 
 // LINE 190:
 	__asm        jmp    near ptr 0x0043EDBD;
@@ -2463,7 +2463,7 @@ _T32:
 // FUNCTION: COPTER_D 0x0043f908
 int  CGameApp::CreateCheatCodeEntryMessageBox() {
 	struct SparkalColor colorButtonFont;
-	class MessageBoxWindowEdit* tempMessageBoxWindowEdit;
+	class MessageBoxWindowEdit *tempMessageBoxWindowEdit;
 	struct SparkalColor colorButtonFontHighlighted;
 	struct SparkalColor colorMessageFont;
 
@@ -2910,7 +2910,7 @@ _T246:
 	__asm        jne    _T2b7;
 // LINE 398:
 // Block start:
-	struct Point2d* position2d;
+	struct Point2d *position2d;
 	__asm        call   S3HeliGetFreePad;
 	__asm        mov    position2d, eax;
 // LINE 399:
@@ -3643,7 +3643,7 @@ _Tc80:
 	__asm        je     _Tf4f;
 // LINE 484:
 // Block start:
-	class DigitalSound* tempCheatCodeSound;
+	class DigitalSound *tempCheatCodeSound;
 	char szFullPath[260];
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
@@ -4231,7 +4231,7 @@ _T6b:
 // FUNCTION: COPTER_D 0x0044106f
 void  CGameApp::CreatePlayMenu() {
 	struct UserMenuWindowDescription tempUMWD;
-	class UserMenuWindow* myUserMenuWindow;
+	class UserMenuWindow *myUserMenuWindow;
 
 // LINE 602:
 	__asm        push   0x10;
@@ -4484,7 +4484,7 @@ _T367:
 
 // FUNCTION: COPTER_D 0x004413e5
 void  CGameApp::CreateUserInputWindow() {
-	class UserInputWindow* myUserInputWindow;
+	class UserInputWindow *myUserInputWindow;
 	int32_t nCurrentGameMode;
 
 // LINE 634:
@@ -4584,7 +4584,7 @@ _Te8:
 }
 
 // FUNCTION: COPTER_D 0x0044150b
-void  CGameApp::DestroyUserInputWindow(class UserInputWindow* windowToDestroy, int32_t bUseData) {
+void  CGameApp::DestroyUserInputWindow(class UserInputWindow *windowToDestroy, int32_t bUseData) {
 	int32_t nCurrentGameMode;
 
 // LINE 650:
@@ -4650,7 +4650,7 @@ _Ta5:
 
 // FUNCTION: COPTER_D 0x004415c7
 void  CGameApp::CreateRenderSettingsWindow() {
-	class RenderSettingsWindow* myRenderSettingsWindow;
+	class RenderSettingsWindow *myRenderSettingsWindow;
 	int32_t nCurrentGameMode;
 
 // LINE 670:
@@ -4762,7 +4762,7 @@ _Te8:
 }
 
 // FUNCTION: COPTER_D 0x00441715
-void  CGameApp::DestroyRenderSettingsWindow(class RenderSettingsWindow* windowToDestroy, int32_t bUseData) {
+void  CGameApp::DestroyRenderSettingsWindow(class RenderSettingsWindow *windowToDestroy, int32_t bUseData) {
 	long lQuadPixelType;
 	int32_t nCurrentGameMode;
 	long bShowGroundTextures;
@@ -4852,7 +4852,7 @@ _Td2:
 
 // FUNCTION: COPTER_D 0x004417fe
 void  CGameApp::CreateSoundSettingsWindow() {
-	class SoundSettingsWindow* mySoundSettingsWindow;
+	class SoundSettingsWindow *mySoundSettingsWindow;
 	struct RadioPreferences tempRadioPreferences;
 	int32_t nCurrentGameMode;
 	char * chPrefData;
@@ -5006,7 +5006,7 @@ _T17f:
 }
 
 // FUNCTION: COPTER_D 0x004419b8
-void  CGameApp::DestroySoundSettingsWindow(class SoundSettingsWindow* windowToDestroy, int32_t bUseData) {
+void  CGameApp::DestroySoundSettingsWindow(class SoundSettingsWindow *windowToDestroy, int32_t bUseData) {
 	struct RadioPreferences tempRadioPreferences;
 	int32_t nCurrentGameMode;
 	struct SoundPreferences tempSoundPreferences;
@@ -5089,7 +5089,7 @@ _Tba:
 
 // FUNCTION: COPTER_D 0x00441a89
 void  CGameApp::CreateCitySettingsWindow() {
-	class CitySettingsWindow* myCitySettingsWindow;
+	class CitySettingsWindow *myCitySettingsWindow;
 
 // LINE 808:
 	__asm        mov    eax, this;
@@ -5159,7 +5159,7 @@ _Ta1:
 }
 
 // FUNCTION: COPTER_D 0x00441b5f
-void  CGameApp::DestroyCitySettingsWindow(class CitySettingsWindow* windowToDestroy, int32_t bUseData) {
+void  CGameApp::DestroyCitySettingsWindow(class CitySettingsWindow *windowToDestroy, int32_t bUseData) {
 // LINE 825:
 	__asm        mov    eax, this;
 	__asm        dec    dword ptr [eax+0xA4];
@@ -5192,7 +5192,7 @@ _T4a:
 
 // FUNCTION: COPTER_D 0x00441bc0
 void  CGameApp::CreateControlDisplayWindow() {
-	class ControlDisplayWindow* tempControlDisplayWindow;
+	class ControlDisplayWindow *tempControlDisplayWindow;
 
 // LINE 838:
 	__asm        mov    eax, this;
@@ -5275,7 +5275,7 @@ void  CGameApp::DestroyControlDisplayWindow() {
 
 // FUNCTION: COPTER_D 0x00441cbe
 void  CGameApp::CreateCheckupWindow() {
-	class CheckupWindow* tempCheckupWindow;
+	class CheckupWindow *tempCheckupWindow;
 
 // LINE 859:
 	__asm        mov    eax, this;
@@ -5340,7 +5340,7 @@ _Ta1:
 }
 
 // FUNCTION: COPTER_D 0x00441d86
-void  CGameApp::DestroyCheckupWindow(class CheckupWindow* windowToDestroy, int32_t bUseData) {
+void  CGameApp::DestroyCheckupWindow(class CheckupWindow *windowToDestroy, int32_t bUseData) {
 	long lSettings[3];
 
 // LINE 873:

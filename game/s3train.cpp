@@ -107,9 +107,9 @@ protected:
 	struct _DYOBJ_INST dyObj1;
 	struct _DYOBJ_INST dyObj2;
 	struct _DYOBJ_INST dyObj3;
-	struct _DYOBJ_INST* leadcar;
-	struct _DYOBJ_INST* midcar;
-	struct _DYOBJ_INST* endcar;
+	struct _DYOBJ_INST *leadcar;
+	struct _DYOBJ_INST *midcar;
+	struct _DYOBJ_INST *endcar;
 public:
 	void TrainClass(const class TrainClass&);
 	void TrainClass(long, long);
@@ -309,9 +309,9 @@ protected:
 	struct _DYOBJ_INST dyObj1;
 	struct _DYOBJ_INST dyObj2;
 	struct _DYOBJ_INST dyObj3;
-	struct _DYOBJ_INST* leadcar;
-	struct _DYOBJ_INST* midcar;
-	struct _DYOBJ_INST* endcar;
+	struct _DYOBJ_INST *leadcar;
+	struct _DYOBJ_INST *midcar;
+	struct _DYOBJ_INST *endcar;
 public:
 	void TrainClass(const class TrainClass&);
 	void TrainClass(long, long);
@@ -457,9 +457,9 @@ struct _CELL_INFO{
 	short z;
 	short size;
 	short ctr;
-	struct _STOBJ_INST* stptr;
-	struct _DYOBJ_INST* dyptr;
-	struct _DYOBJ_INST* vwptr;
+	struct _STOBJ_INST *stptr;
+	struct _DYOBJ_INST *dyptr;
+	struct _DYOBJ_INST *vwptr;
 };
 
 // Type: enum TrainClass::StoppedReasons;
@@ -489,8 +489,8 @@ struct Point3d{
 
 // Type: struct _DYOBJ_INST (forward reference);
 struct _DYOBJ_INST{
-	struct _DYOBJ_INST* next;
-	struct _DYOBJ_INST* vnext;
+	struct _DYOBJ_INST *next;
+	struct _DYOBJ_INST *vnext;
 	void * __ptr32 mesh;
 	short flags;
 	short user1;
@@ -536,11 +536,11 @@ struct VRObjInfo{
 	int32_t Verts;
 	int32_t Attribute;
 	int32_t Radius;
-	struct Point3d* ObjCenter;
-	struct Point3d* VertsPtr;
-	struct Xform3d* VertsXfm;
-	struct Point3d* OrgVerts;
-	int32_t[4][4]* Matrix;
+	struct Point3d *ObjCenter;
+	struct Point3d *VertsPtr;
+	struct Xform3d *VertsXfm;
+	struct Point3d *OrgVerts;
+	int32_t *Matrix[4][4];
 };
 
 // Type: short;
@@ -907,7 +907,7 @@ class TrainClass* TrainClass::CreateInstance(int32_t instanceID) {
 
 // FUNCTION: COPTER_D 0x0052e18c
 class TrainClass* TrainClass::CreateInstance(long mapx, long mapy, int32_t instanceID) {
-	class TrainClass* newtrain;
+	class TrainClass *newtrain;
 
 // LINE 447:
 	__asm        push   0x1D9;
@@ -1688,7 +1688,7 @@ _T8f:
 // FUNCTION: COPTER_D 0x0052e9a4
 void TrainClass::TrainCrashMovement() {
 	int32_t num_debris;
-	struct _CELL_INFO* cptr;
+	struct _CELL_INFO *cptr;
 	int32_t j;
 	struct _MISSION_PARMS mp;
 	struct Point3d loc;
@@ -2682,8 +2682,8 @@ enum TrainClass::StoppedReasons TrainClass::CheckDynamicObjectsAt(const struct P
 	int32_t xdiff;
 	int32_t zdiff;
 	unsigned short cellType;
-	struct _CELL_INFO* currentCell;
-	struct _DYOBJ_INST* currentObject;
+	struct _CELL_INFO *currentCell;
+	struct _DYOBJ_INST *currentObject;
 	int32_t ydiff;
 
 // LINE 1486:
@@ -5305,8 +5305,8 @@ _T1a5:
 }
 
 // FUNCTION: COPTER_D 0x0053122b
-void TrainClass::UnlinkFromCell(const struct Point2d& point, struct _DYOBJ_INST* dyobj) {
-	struct _CELL_INFO* cellPointer;
+void TrainClass::UnlinkFromCell(const struct Point2d& point, struct _DYOBJ_INST *dyobj) {
+	struct _CELL_INFO *cellPointer;
 
 // LINE 2817:
 	__asm        mov    eax, point;
@@ -5352,7 +5352,7 @@ _T90:
 	__asm        je     _T106;
 // LINE 2823:
 // Block start:
-	struct _DYOBJ_INST** dyptrptr;
+	struct _DYOBJ_INST **dyptrptr;
 	__asm        mov    eax, cellPointer;
 	__asm        add    eax, 0x10;
 	__asm        mov    dyptrptr, eax;
@@ -5402,8 +5402,8 @@ _T10b:
 }
 
 // FUNCTION: COPTER_D 0x0053133d
-void TrainClass::LinkToCell(const struct Point2d& point, struct _DYOBJ_INST* dyobj) {
-	struct _CELL_INFO* cellPointer;
+void TrainClass::LinkToCell(const struct Point2d& point, struct _DYOBJ_INST *dyobj) {
+	struct _CELL_INFO *cellPointer;
 
 // LINE 2865:
 	__asm        mov    eax, point;
@@ -7276,7 +7276,7 @@ _T3c8:
 
 // FUNCTION: COPTER_D 0x00532903
 void TrainClass::AdjustCurrentPosition() {
-	struct _CELL_INFO* cellPointer;
+	struct _CELL_INFO *cellPointer;
 
 // LINE 3416:
 	__asm        mov    eax, this;
@@ -7411,7 +7411,7 @@ _T19e:
 
 // FUNCTION: COPTER_D 0x00532aab
 void TrainClass::AdjustNextPosition() {
-	struct _CELL_INFO* cellPointer;
+	struct _CELL_INFO *cellPointer;
 	unsigned short tile;
 	unsigned short ntile;
 	struct Point3d nextFineLocation;
@@ -8256,7 +8256,7 @@ _T120:
 void TrainClass::BeamToWithinCameraRange() {
 	int32_t foundcell;
 	int32_t stop_now;
-	struct _CELL_INFO* cptr;
+	struct _CELL_INFO *cptr;
 	int32_t curr_dir;
 	int32_t i;
 	int32_t y;
@@ -8816,7 +8816,7 @@ _T81:
 int32_t TrainClass::BeamToLocation(long mapx, long mapy) {
 	int32_t foundcell;
 	int32_t stop_now;
-	struct _CELL_INFO* cptr;
+	struct _CELL_INFO *cptr;
 	int32_t curr_dir;
 	int32_t i;
 	int32_t y;
@@ -9646,7 +9646,7 @@ int32_t TrainClass::FindTrainForRescue(long mission_id, int32_t timetolive) {
 	long y;
 	long x;
 	long count;
-	class TrainClass* t;
+	class TrainClass *t;
 	long totalpersons;
 
 // LINE 4743:
@@ -9864,7 +9864,7 @@ int32_t S3TrainMIFFSave(void * __ptr32 miffWriter) {
 int32_t TrainClass::MIFFLoad(void * __ptr32 miffReader) {
 	int32_t i;
 	int32_t ret;
-	class TrainClass* t;
+	class TrainClass *t;
 
 // LINE 4858:
 	__asm        push   0x1D9;
@@ -10249,7 +10249,7 @@ struct CONNECTION_INFO_TYPE connections[30] = { 0 /* todo */ };
 class TrainClass TrainClass::lsTrain;
 
 // GLOBAL: COPTER_D 0x0062b994
-class TrainClass* trains[1];
+class TrainClass *trains[1];
 
 // GLOBAL: COPTER_D 0x0062b998
 // $S5

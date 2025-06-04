@@ -9,11 +9,11 @@ class DigitalSound : public Sound
 protected:
 	int32_t nStreamingType;
 	int32_t nCompletionEstimationTimerSet;
-	static struct IDirectSound* lpDirectSound;
+	static struct IDirectSound *lpDirectSound;
 	uint32_t cbSize;
 	struct tWAVEFORMATEX waveFormatEx;
-	struct IDirectSoundBuffer* lpSound[8];
-	struct _STREAMBUFINFO* lpStreamBufferInfo;
+	struct IDirectSoundBuffer *lpSound[8];
+	struct _STREAMBUFINFO *lpStreamBufferInfo;
 	unsigned long dwDesiredBufferDescFlags;
 public:
 	void DigitalSound(long);
@@ -421,7 +421,7 @@ public:
 	virtual long DoCursorUp(long, long, unsigned long) /* override */;
 	virtual long DoCursorMove(long, long) /* override */;
 protected:
-	class ButtonGroup* myRadioButtonGroup;
+	class ButtonGroup *myRadioButtonGroup;
 };
 
 // Type: class SliderWindow;
@@ -465,7 +465,7 @@ public:
 	long lMaximumThumbPosition;
 	long lThumbLimitIndentation;
 	class MRect rectThumbImage;
-	class CBackBuffer* myBackgroundImage;
+	class CBackBuffer *myBackgroundImage;
 	class basic_string<char> sBackgroundFile;
 	int32_t bBusySettingValue;
 };
@@ -684,7 +684,7 @@ _T34:
 }
 
 // FUNCTION: COPTER_D 0x00471847
-void SoundButtonWindow::SoundButtonWindow(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, char * szImageFileName, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+void SoundButtonWindow::SoundButtonWindow(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow *windowNewParent, char * szImageFileName, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
@@ -770,7 +770,7 @@ _T43:
 }
 
 // FUNCTION: COPTER_D 0x00471945
-void SoundRadioButtonWindow::SoundRadioButtonWindow(class ButtonGroup* myNewRadioButtonGroup, class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, char * szImageFileName, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+void SoundRadioButtonWindow::SoundRadioButtonWindow(class ButtonGroup *myNewRadioButtonGroup, class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow *windowNewParent, char * szImageFileName, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
@@ -879,7 +879,7 @@ _T34:
 }
 
 // FUNCTION: COPTER_D 0x00471a8c
-void SoundCheckBoxWindow::SoundCheckBoxWindow(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, char * szImageFileName, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+void SoundCheckBoxWindow::SoundCheckBoxWindow(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow *windowNewParent, char * szImageFileName, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
@@ -986,7 +986,7 @@ _T34:
 }
 
 // FUNCTION: COPTER_D 0x00471bcc
-void SoundScrollBarWindow::SoundScrollBarWindow(class MRect& rectNewWindow, int32_t nNewID, enum SliderWindow::SliderWindowDirection newSliderWindowDirection, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, char * szImageFileName) {
+void SoundScrollBarWindow::SoundScrollBarWindow(class MRect& rectNewWindow, int32_t nNewID, enum SliderWindow::SliderWindowDirection newSliderWindowDirection, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList, char * szImageFileName) {
 
 	__asm        mov    eax, szImageFileName;
 	__asm        push   eax;

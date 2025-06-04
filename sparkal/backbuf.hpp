@@ -1,6 +1,6 @@
 // Function in module: ddbuffer.obj
 // FUNCTION: COPTER_D 0x00471590
-unsigned long IBackBuffer::Swap(class CSparkalWindow* pDest, long DestLeft, long DestTop) {
+unsigned long IBackBuffer::Swap(class CSparkalWindow *pDest, long DestLeft, long DestTop) {
 // LINE 67:
 	__asm        mov    eax, DestTop;
 	__asm        push   eax;

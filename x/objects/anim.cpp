@@ -17,11 +17,11 @@ public:
 	virtual unsigned short IsDirty() /* override */;
 	virtual unsigned long GetBodyType() /* override */;
 	virtual void InstallArrayPointers(unsigned short) /* override */;
-	static class cBList<cCopterAnim>* fsList;
+	static class cBList<cCopterAnim> *fsList;
 	virtual class cBList<cBBase>* GetList() /* override */;
 	virtual struct PrivAnimPartInfo* GetPartInfo(short, short); // vtable+0x24
 	virtual struct PrivAnimPartInfo* GetPartInfoBasePtr(short); // vtable+0x28
-	class cArray<PrivAnimPartInfo>* fPrivPartInfo;
+	class cArray<PrivAnimPartInfo> *fPrivPartInfo;
 	short GetNumParts();
 	short GetNumFrames();
 	// calltype: NearC
@@ -77,7 +77,7 @@ public:
 		long _win8pad[15];
 	};
 public:
-	struct cBBase::BBaseHeader* fHeader;
+	struct cBBase::BBaseHeader *fHeader;
 	// calltype: NearC
 	static void SwizzleBBaseHeader(void * __ptr32, long);
 };
@@ -318,5 +318,5 @@ _T2c5:
 
 // Contribution: 3:000286d4-0002874b Module: 181, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005bf6d4
-class cBList<cCopterAnim>* cCopterAnim::fsList = { 0 /* todo */ };
+class cBList<cCopterAnim> *cCopterAnim::fsList = { 0 /* todo */ };
 

@@ -16,7 +16,7 @@
 
 // Contribution: 1:000c8ad0-000c90b4 Module: 93, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004c9ad0
-int32_t TWKEnQueue(int32_t ** pValues, int32_t nNumValues, char * pszSection) {
+int32_t TWKEnQueue(int32_t * *pValues, int32_t nNumValues, char * pszSection) {
 	int32_t nCt;
 
 // LINE 43:

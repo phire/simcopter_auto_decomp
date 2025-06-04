@@ -771,7 +771,7 @@ void DrawFaceTwo(struct Point3d centerPt, long vertRad, float psi, double scaleF
 	struct Point3d offset;
 	unsigned char * pixPtr;
 	double bSquared;
-	struct VRBmpHdr* bhdr;
+	struct VRBmpHdr *bhdr;
 	long endX;
 	double aSquared;
 	struct Point3d faceCenter;
@@ -1011,7 +1011,7 @@ long ComputeViewToFigureOffset(struct Point3D view, int32_t index) {
 }
 
 // FUNCTION: COPTER_D 0x005649d3
-void DrawLineOnFace(long startX, long endX, long yLine, struct Point3d offset, struct Point3d faceCenter, struct BmpLineInfo* pixLine) {
+void DrawLineOnFace(long startX, long endX, long yLine, struct Point3d offset, struct Point3d faceCenter, struct BmpLineInfo *pixLine) {
 	long loBitmapLimit;
 	struct Point3d scaledOffset;
 	long begin;
@@ -1222,7 +1222,7 @@ _T1e0:
 }
 
 // FUNCTION: COPTER_D 0x00564bb8
-void FindFaceQuadrant(struct VRBmpHdr* bhdr, long dir, struct Point3D viewPos, struct Point3d* faceCenter) {
+void FindFaceQuadrant(struct VRBmpHdr *bhdr, long dir, struct Point3D viewPos, struct Point3d *faceCenter) {
 	double widthOverTwo;
 
 // LINE 586:
@@ -1256,7 +1256,7 @@ _T2f:
 }
 
 // FUNCTION: COPTER_D 0x00564c10
-void FindFaceQuadrant2(struct VRBmpHdr* bhdr, float psi, struct Point3d* faceCenter) {
+void FindFaceQuadrant2(struct VRBmpHdr *bhdr, float psi, struct Point3d *faceCenter) {
 	double widthOverTwo;
 	double mydir;
 

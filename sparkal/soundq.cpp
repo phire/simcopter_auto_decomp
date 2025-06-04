@@ -5,14 +5,14 @@
 // Type: struct list<SoundQueueItem *>::list_node_buffer (forward reference);
 struct list<SoundQueueItem *>::list_node_buffer{
 	void * __ptr32 next_buffer;
-	struct list<SoundQueueItem *>::list_node* buffer;
+	struct list<SoundQueueItem *>::list_node *buffer;
 };
 
 // Type: struct list<SoundQueueItem *>::list_node (forward reference);
 struct list<SoundQueueItem *>::list_node{
 	void * __ptr32 next;
 	void * __ptr32 prev;
-	struct SoundQueueItem* data;
+	struct SoundQueueItem *data;
 };
 
 // Type: uint32_t;
@@ -24,7 +24,7 @@ struct SoundQueueItem{
 	void SoundQueueItem(class Sound*, long, long, int32_t);
 	void SoundQueueItem(class Sound*, long, int32_t);
 	void SoundQueueItem();
-	class Sound* mySound;
+	class Sound *mySound;
 	long lSoundResourceID;
 	class basic_string<char> sSoundFile;
 	long lTimeToWaitBeforePlaying;
@@ -87,7 +87,7 @@ class basic_string<char>{
 	using reference_pointer = class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char>* reference;
+	class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -234,7 +234,7 @@ protected:
 class list<SoundQueueItem *>::iterator : public bidirectional_iterator<SoundQueueItem *,int>
 {
 protected:
-	struct list<SoundQueueItem *>::list_node* node;
+	struct list<SoundQueueItem *>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -288,7 +288,7 @@ struct SoundQueueItem{
 	void SoundQueueItem(class Sound*, long, long, int32_t);
 	void SoundQueueItem(class Sound*, long, int32_t);
 	void SoundQueueItem();
-	class Sound* mySound;
+	class Sound *mySound;
 	long lSoundResourceID;
 	class basic_string<char> sSoundFile;
 	long lTimeToWaitBeforePlaying;
@@ -338,7 +338,7 @@ _T69:
 }
 
 // FUNCTION: COPTER_D 0x00420675
-void SoundQueueItem::SoundQueueItem(class Sound* sound, long lNewTimeToWaitBeforePlaying, int32_t bNewDeleteSoundWhenFinished) {
+void SoundQueueItem::SoundQueueItem(class Sound *sound, long lNewTimeToWaitBeforePlaying, int32_t bNewDeleteSoundWhenFinished) {
 
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -392,7 +392,7 @@ _T69:
 }
 
 // FUNCTION: COPTER_D 0x00420720
-void SoundQueueItem::SoundQueueItem(class Sound* sound, long lNewSoundResourceID, long lNewTimeToWaitBeforePlaying, int32_t bNewDeleteSoundWhenFinished) {
+void SoundQueueItem::SoundQueueItem(class Sound *sound, long lNewSoundResourceID, long lNewTimeToWaitBeforePlaying, int32_t bNewDeleteSoundWhenFinished) {
 
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -447,7 +447,7 @@ _T69:
 }
 
 // FUNCTION: COPTER_D 0x004207ca
-void SoundQueueItem::SoundQueueItem(class Sound* sound, const class basic_string<char>& sNewSoundFile, long lNewTimeToWaitBeforePlaying, int32_t bNewDeleteSoundWhenFinished) {
+void SoundQueueItem::SoundQueueItem(class Sound *sound, const class basic_string<char>& sNewSoundFile, long lNewTimeToWaitBeforePlaying, int32_t bNewDeleteSoundWhenFinished) {
 
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -654,7 +654,7 @@ _T242:
 }
 
 // FUNCTION: COPTER_D 0x00420a3c
-void SoundQueueItem::SoundQueueItem(class Sound* sound, char * szNewSoundFile, long lNewTimeToWaitBeforePlaying, int32_t bNewDeleteSoundWhenFinished) {
+void SoundQueueItem::SoundQueueItem(class Sound *sound, char * szNewSoundFile, long lNewTimeToWaitBeforePlaying, int32_t bNewDeleteSoundWhenFinished) {
 
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -1564,7 +1564,7 @@ _T36:
 
 // FUNCTION: COPTER_D 0x0042151a
 void SoundQueue::ClearQueue(int32_t bStopCurrentlyPlayingSound) {
-	struct SoundQueueItem* currentSoundQueueItem;
+	struct SoundQueueItem *currentSoundQueueItem;
 
 // LINE 199:
 	__asm        push   0x3E8;
@@ -1824,7 +1824,7 @@ _T2a5:
 }
 
 // FUNCTION: COPTER_D 0x004217d6
-class SoundQueue& SoundQueue::operator+=(class Sound* newSoundItem) {
+class SoundQueue& SoundQueue::operator+=(class Sound *newSoundItem) {
 // LINE 225:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC], 0;
@@ -1871,7 +1871,7 @@ _T76:
 }
 
 // FUNCTION: COPTER_D 0x0042185b
-class SoundQueue& SoundQueue::operator+=(struct SoundQueueItem* newSoundQueueItem) {
+class SoundQueue& SoundQueue::operator+=(struct SoundQueueItem *newSoundQueueItem) {
 // LINE 240:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC], 0;
@@ -2179,7 +2179,7 @@ _T30:
 
 // FUNCTION: COPTER_D 0x00421bf9
 void SoundQueue::PlayNextSoundInQueue() {
-	struct SoundQueueItem* currentSoundQueueItem;
+	struct SoundQueueItem *currentSoundQueueItem;
 
 // LINE 302:
 	__asm        push   0x3E8;
@@ -2295,7 +2295,7 @@ _T10b:
 
 // FUNCTION: COPTER_D 0x00421d19
 void SoundQueue::RemoveNextSoundInQueue() {
-	struct SoundQueueItem* currentSoundQueueItem;
+	struct SoundQueueItem *currentSoundQueueItem;
 
 // LINE 336:
 	__asm        push   0x3E8;
@@ -2504,7 +2504,7 @@ void SoundQueue::StaticSoundQueueCompletionCallback(long lData) {
 
 // FUNCTION: COPTER_D 0x00421f5c
 void SoundQueue::SoundQueueCompletionCallback() {
-	struct SoundQueueItem* currentSoundQueueItem;
+	struct SoundQueueItem *currentSoundQueueItem;
 
 // LINE 390:
 	__asm        jmp    near ptr 0x00421F6D;
@@ -2807,23 +2807,23 @@ uint32_t list<SoundQueueItem *>::number_of_lists = 0;
 
 // Contribution: 3:00000358-0000035b Module: 71, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597358
-struct list<SoundQueueItem *>::list_node* list<SoundQueueItem *>::last = { 0 /* todo */ };
+struct list<SoundQueueItem *>::list_node *list<SoundQueueItem *>::last = { 0 /* todo */ };
 
 
 
 // Contribution: 3:0000035c-0000035f Module: 71, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059735c
-struct list<SoundQueueItem *>::list_node* list<SoundQueueItem *>::next_avail = { 0 /* todo */ };
+struct list<SoundQueueItem *>::list_node *list<SoundQueueItem *>::next_avail = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00000360-00000363 Module: 71, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597360
-struct list<SoundQueueItem *>::list_node* list<SoundQueueItem *>::free_list = { 0 /* todo */ };
+struct list<SoundQueueItem *>::list_node *list<SoundQueueItem *>::free_list = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00000364-00000367 Module: 71, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00597364
-struct list<SoundQueueItem *>::list_node_buffer* list<SoundQueueItem *>::buffer_list = { 0 /* todo */ };
+struct list<SoundQueueItem *>::list_node_buffer *list<SoundQueueItem *>::buffer_list = { 0 /* todo */ };
 

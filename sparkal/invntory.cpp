@@ -30,8 +30,8 @@ protected:
 	void GetEquipmentTextPosition(long, class MPoint&);
 	void GetTitleAndAddressRects(class MRect&, class MRect&, class MRect&);
 	class list<HotSpot> myHotSpots;
-	class CBackBuffer* mySecondImage;
-	class CBackBuffer* myCheckmarkImage;
+	class CBackBuffer *mySecondImage;
+	class CBackBuffer *myCheckmarkImage;
 	class DigitalSound mySound;
 	class basic_string<char> sHelicopterNames[9];
 	class basic_string<char> sEquipmentNames[5];
@@ -252,7 +252,7 @@ public:
 class list<HotSpot>::iterator : public bidirectional_iterator<HotSpot,int>
 {
 protected:
-	struct list<HotSpot>::list_node* node;
+	struct list<HotSpot>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -321,7 +321,7 @@ struct SparkalPoint{
 
 // Contribution: 1:000a7360-000a97bd Module: 8, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004a8360
-void InventoryWindow::InventoryWindow(int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+void InventoryWindow::InventoryWindow(int32_t nNewID, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
 	__asm        jmp    near ptr 0x004A8377;
 
@@ -1819,7 +1819,7 @@ _T9a9:
 }
 
 // FUNCTION: COPTER_D 0x004a981d
-int32_t InventoryWindow::ReadPalette(struct SparkalColor* pColorTable) {
+int32_t InventoryWindow::ReadPalette(struct SparkalColor *pColorTable) {
 // LINE 113:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x64], 0;
@@ -2643,7 +2643,7 @@ void InventoryWindow::DrawInventory() {
 	long lCurrentHeliType;
 	const long lCheckmarkWidth;
 	const long lCheckmarkHeight;
-	struct tagUserPersonalInfo* currentUserPersonalInfo;
+	struct tagUserPersonalInfo *currentUserPersonalInfo;
 	class MRect rectDestination;
 	long lCurrentRow;
 

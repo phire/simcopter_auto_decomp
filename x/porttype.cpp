@@ -84,7 +84,7 @@ struct Point{
 
 // Contribution: 1:00165a10-001661fc Module: 182, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00566a10
-void GlobalToLocal(struct Point* pt) {
+void GlobalToLocal(struct Point *pt) {
 	struct tagPOINT wpt;
 
 // LINE 10:
@@ -114,7 +114,7 @@ void GlobalToLocal(struct Point* pt) {
 }
 
 // FUNCTION: COPTER_D 0x00566a59
-void LocalToGlobal(struct Point* pt) {
+void LocalToGlobal(struct Point *pt) {
 	struct tagPOINT wpt;
 
 // LINE 19:
@@ -251,7 +251,7 @@ _T2e:
 }
 
 // FUNCTION: COPTER_D 0x00566ba8
-void OffsetRect(struct Rect* rect, short hoff, short voff) {
+void OffsetRect(struct Rect *rect, short hoff, short voff) {
 // LINE 61:
 	__asm        mov    eax, rect;
 	__asm        movsx  eax, word ptr [eax];
@@ -285,7 +285,7 @@ void OffsetRect(struct Rect* rect, short hoff, short voff) {
 }
 
 // FUNCTION: COPTER_D 0x00566c06
-unsigned short SectRect(struct Rect* rect1, struct Rect* rect2, struct Rect* result) {
+unsigned short SectRect(struct Rect *rect1, struct Rect *rect2, struct Rect *result) {
 	struct tagRECT lrect2;
 	struct tagRECT lresult;
 	struct tagRECT lrect1;
@@ -431,7 +431,7 @@ _T37:
 }
 
 // FUNCTION: COPTER_D 0x00566da7
-void GetPort(struct GrafPtr* pPort) {
+void GetPort(struct GrafPtr *pPort) {
 // LINE 131:
 	__asm        mov    eax, gPort.window;
 	__asm        mov    ecx, gPort.dc;
@@ -443,7 +443,7 @@ void GetPort(struct GrafPtr* pPort) {
 }
 
 // FUNCTION: COPTER_D 0x00566dca
-void EraseRect(struct tagRECT* rect) {
+void EraseRect(struct tagRECT *rect) {
 	unsigned long bk;
 	void * __ptr32 tempBrush;
 	struct tagRECT lRect;
@@ -499,7 +499,7 @@ _T32:
 }
 
 // FUNCTION: COPTER_D 0x00566e67
-void EraseRect(struct Rect* r) {
+void EraseRect(struct Rect *r) {
 	struct tagRECT lRect;
 
 // LINE 148:
@@ -525,7 +525,7 @@ void EraseRect(struct Rect* r) {
 }
 
 // FUNCTION: COPTER_D 0x00566ead
-void FrameRect(struct Rect* rect) {
+void FrameRect(struct Rect *rect) {
 	unsigned long bk;
 	void * __ptr32 tempBrush;
 	struct tagRECT lRect;
@@ -578,7 +578,7 @@ _T32:
 }
 
 // FUNCTION: COPTER_D 0x00566f42
-void SetRect(struct Rect* rect, short left, short top, short right, short bottom) {
+void SetRect(struct Rect *rect, short left, short top, short right, short bottom) {
 // LINE 165:
 	__asm        mov    ax, left;
 	__asm        mov    ecx, rect;
@@ -600,7 +600,7 @@ void SetRect(struct Rect* rect, short left, short top, short right, short bottom
 }
 
 // FUNCTION: COPTER_D 0x00566f7d
-void UnionRect(struct Rect* rect1, struct Rect* rect2, struct Rect* result) {
+void UnionRect(struct Rect *rect1, struct Rect *rect2, struct Rect *result) {
 // LINE 173:
 	__asm        mov    eax, rect2;
 	__asm        movsx  eax, word ptr [eax];
@@ -690,7 +690,7 @@ _Tdc:
 }
 
 // FUNCTION: COPTER_D 0x00567063
-unsigned short EqualRect(struct Rect* rect1, struct Rect* rect2) {
+unsigned short EqualRect(struct Rect *rect1, struct Rect *rect2) {
 // LINE 196:
 	__asm        mov    eax, rect2;
 	__asm        mov    ecx, rect1;
@@ -719,7 +719,7 @@ _T41:
 }
 
 // FUNCTION: COPTER_D 0x005670a9
-void InsetRect(struct Rect* r, short hdelta, short vdelta) {
+void InsetRect(struct Rect *r, short hdelta, short vdelta) {
 // LINE 203:
 	__asm        mov    eax, r;
 	__asm        movsx  eax, word ptr [eax];
@@ -753,7 +753,7 @@ void InsetRect(struct Rect* r, short hdelta, short vdelta) {
 }
 
 // FUNCTION: COPTER_D 0x00567107
-unsigned short PtInRect(struct Point p, struct Rect* r) {
+unsigned short PtInRect(struct Point p, struct Rect *r) {
 // LINE 211:
 	__asm        mov    eax, r;
 	__asm        movsx  eax, word ptr [eax+2];
@@ -791,7 +791,7 @@ _T67:
 }
 
 // FUNCTION: COPTER_D 0x00567173
-unsigned short EmptyRect(struct Rect* r) {
+unsigned short EmptyRect(struct Rect *r) {
 // LINE 217:
 	__asm        mov    eax, r;
 	__asm        movsx  eax, word ptr [eax+4];

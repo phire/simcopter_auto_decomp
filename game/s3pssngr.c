@@ -35,7 +35,7 @@ struct tagPassengerInfo{
 
 // Contribution: 1:000f8bc0-000f9082 Module: 174, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004f9bc0
-int32_t HeliPassengerHasChanged(struct tagHeliPassengerData* heliPassengerData) {
+int32_t HeliPassengerHasChanged(struct tagHeliPassengerData *heliPassengerData) {
 // LINE 30:
 	__asm        mov    eax, heliPassengerData;
 	__asm        mov    eax, [eax];
@@ -44,7 +44,7 @@ int32_t HeliPassengerHasChanged(struct tagHeliPassengerData* heliPassengerData) 
 }
 
 // FUNCTION: COPTER_D 0x004f9bd5
-void HeliPassengerSetChanged(struct tagHeliPassengerData* heliPassengerData) {
+void HeliPassengerSetChanged(struct tagHeliPassengerData *heliPassengerData) {
 // LINE 38:
 	__asm        mov    eax, heliPassengerData;
 	__asm        mov    dword ptr [eax], 1;
@@ -52,7 +52,7 @@ void HeliPassengerSetChanged(struct tagHeliPassengerData* heliPassengerData) {
 }
 
 // FUNCTION: COPTER_D 0x004f9be9
-void HeliPassengerClearChanged(struct tagHeliPassengerData* heliPassengerData) {
+void HeliPassengerClearChanged(struct tagHeliPassengerData *heliPassengerData) {
 // LINE 46:
 	__asm        mov    eax, heliPassengerData;
 	__asm        mov    dword ptr [eax], 0;
@@ -60,7 +60,7 @@ void HeliPassengerClearChanged(struct tagHeliPassengerData* heliPassengerData) {
 }
 
 // FUNCTION: COPTER_D 0x004f9bfd
-void HeliPassengerInit(struct tagHeliPassengerData* heliPassengerData, int32_t nHeliType) {
+void HeliPassengerInit(struct tagHeliPassengerData *heliPassengerData, int32_t nHeliType) {
 	long lSeatsTotal;
 	long lRowWidth;
 	int32_t i;
@@ -151,7 +151,7 @@ _Tf8:
 }
 
 // FUNCTION: COPTER_D 0x004f9cfa
-int32_t HeliPassengerCanAdd(struct tagHeliPassengerData* heliPassengerData, struct tagPassengerInfo* passenger) {
+int32_t HeliPassengerCanAdd(struct tagHeliPassengerData *heliPassengerData, struct tagPassengerInfo *passenger) {
 // LINE 95:
 	__asm        mov    eax, heliPassengerData;
 	__asm        mov    eax, [eax+4];
@@ -162,7 +162,7 @@ int32_t HeliPassengerCanAdd(struct tagHeliPassengerData* heliPassengerData, stru
 }
 
 // FUNCTION: COPTER_D 0x004f9d16
-int32_t HeliPassengerAdd(struct tagHeliPassengerData* heliPassengerData, struct tagPassengerInfo* passenger) {
+int32_t HeliPassengerAdd(struct tagHeliPassengerData *heliPassengerData, struct tagPassengerInfo *passenger) {
 	int32_t i;
 
 // LINE 111:
@@ -256,7 +256,7 @@ _Te9:
 }
 
 // FUNCTION: COPTER_D 0x004f9e04
-int32_t HeliPassengerGetIndexInHeli(struct tagHeliPassengerData* heliPassengerData, long id) {
+int32_t HeliPassengerGetIndexInHeli(struct tagHeliPassengerData *heliPassengerData, long id) {
 	int32_t i;
 
 // LINE 147:
@@ -290,7 +290,7 @@ _T52:
 }
 
 // FUNCTION: COPTER_D 0x004f9e5b
-int32_t HeliPassengerSetExpression(struct tagHeliPassengerData* heliPassengerData, long id, int32_t expression) {
+int32_t HeliPassengerSetExpression(struct tagHeliPassengerData *heliPassengerData, long id, int32_t expression) {
 	int32_t i;
 
 // LINE 160:
@@ -323,7 +323,7 @@ _T4a:
 }
 
 // FUNCTION: COPTER_D 0x004f9eaa
-int32_t HeliPassengerRemove(struct tagHeliPassengerData* heliPassengerData, long id) {
+int32_t HeliPassengerRemove(struct tagHeliPassengerData *heliPassengerData, long id) {
 	int32_t i;
 
 // LINE 174:
@@ -395,7 +395,7 @@ _Tbf:
 }
 
 // FUNCTION: COPTER_D 0x004f9f6e
-long HeliPassengerCountFreeSeats(struct tagHeliPassengerData* heliPassengerData) {
+long HeliPassengerCountFreeSeats(struct tagHeliPassengerData *heliPassengerData) {
 // LINE 204:
 	__asm        mov    eax, heliPassengerData;
 	__asm        mov    eax, [eax+4];
@@ -406,7 +406,7 @@ long HeliPassengerCountFreeSeats(struct tagHeliPassengerData* heliPassengerData)
 }
 
 // FUNCTION: COPTER_D 0x004f9f8a
-void HeliPassengerFitToSeats(struct tagHeliPassengerData* heliPassengerData) {
+void HeliPassengerFitToSeats(struct tagHeliPassengerData *heliPassengerData) {
 	int32_t i;
 	int32_t nSeat;
 	int32_t bSeats[16];

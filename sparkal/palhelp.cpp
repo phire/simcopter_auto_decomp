@@ -6,7 +6,7 @@
 // VTABLE: COPTER_D 0x005910f8
 class SparkalPalette{
 public:
-	struct SparkalColor* pColors;
+	struct SparkalColor *pColors;
 	long lColors;
 	int32_t bOwnColors;
 	void SparkalPalette(struct SparkalColor*, int32_t, unsigned long);
@@ -120,7 +120,7 @@ struct ClearWindowsSystemPalette::__unnamed{
 // VTABLE: COPTER_D 0x005910f8
 class SparkalPalette{
 public:
-	struct SparkalColor* pColors;
+	struct SparkalColor *pColors;
 	long lColors;
 	int32_t bOwnColors;
 	void SparkalPalette(struct SparkalColor*, int32_t, unsigned long);
@@ -138,7 +138,7 @@ public:
 
 // Contribution: 1:000953b0-00096b4b Module: 18, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004963b0
-void SparkalPalette::SparkalPalette(struct SparkalColor* pNewColors, int32_t bNewOwnColors, unsigned long lNewColors) {
+void SparkalPalette::SparkalPalette(struct SparkalColor *pNewColors, int32_t bNewOwnColors, unsigned long lNewColors) {
 
 	__asm        mov    eax, pNewColors;
 	__asm        mov    ecx, this;
@@ -1318,11 +1318,11 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, long lFadeTim
 }
 
 // FUNCTION: COPTER_D 0x0049731a
-void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct SparkalColor* paletteDestination, long lFadeTime, long lSteps) {
+void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct SparkalColor *paletteDestination, long lFadeTime, long lSteps) {
 	const unsigned long lDelayTime;
 	class MTimer timerFade;
 	int32_t nDifference;
-	struct SparkalPalette::FadeToPalette::TempPalette* paletteArray;
+	struct SparkalPalette::FadeToPalette::TempPalette *paletteArray;
 	int32_t j;
 	int32_t i;
 	 typedef struct SparkalPalette::FadeToPalette::TempPalette SparkalPalette::FadeToPalette::TempPalette;
@@ -1854,7 +1854,7 @@ _T67:
 }
 
 // FUNCTION: COPTER_D 0x004978e9
-void SparkalPalette::ImplementNewPalette(struct SparkalColor* pNewColors) {
+void SparkalPalette::ImplementNewPalette(struct SparkalColor *pNewColors) {
 	long hResult;
 	struct tagPALETTEENTRY palEntries[256];
 	int32_t i;
@@ -1936,7 +1936,7 @@ void CopterSparkalPalette::CopterSparkalPalette() {
 }
 
 // FUNCTION: COPTER_D 0x004979f9
-void CopterSparkalPalette::CopterSparkalPalette(struct SparkalColor* pNewColors, int32_t bNewOwnColors) {
+void CopterSparkalPalette::CopterSparkalPalette(struct SparkalColor *pNewColors, int32_t bNewOwnColors) {
 
 	__asm        push   0x100;
 	__asm        mov    eax, bNewOwnColors;

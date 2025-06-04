@@ -18,7 +18,7 @@ class _cArray{
 		kArrayNameLength = 15,
 	};
 	struct _cArray::FileAndType{
-		class ResFile* file;
+		class ResFile *file;
 		unsigned long type;
 	};
 	struct _cArray::Header{
@@ -28,7 +28,7 @@ class _cArray{
 		short _pad;
 	};
 public:
-	static class _cArray** sArrayTable;
+	static class _cArray **sArrayTable;
 	// calltype: NearC
 	static void MakeTable();
 	// calltype: NearC
@@ -41,7 +41,7 @@ private:
 	void SetSizeAndHeaders(long, long);
 	unsigned char * _GetPointer(long, long);
 protected:
-	void * __ptr32* fData;
+	void * __ptr32 *fData;
 public:
 	void * __ptr32 fDataHandle;
 	unsigned char * fDataPtr;
@@ -52,7 +52,7 @@ protected:
 	unsigned long fDataHandleSize;
 	short fResID;
 	short _pad;
-	class ResFile* fFile;
+	class ResFile *fFile;
 	unsigned long fType;
 	unsigned char fFileName[16];
 	unsigned char fName[16];
@@ -106,7 +106,7 @@ public:
 
 // Type: struct _cArray::FileAndType (forward reference);
 struct _cArray::FileAndType{
-	class ResFile* file;
+	class ResFile *file;
 	unsigned long type;
 };
 
@@ -160,7 +160,7 @@ class _cArray{
 		kArrayNameLength = 15,
 	};
 	struct _cArray::FileAndType{
-		class ResFile* file;
+		class ResFile *file;
 		unsigned long type;
 	};
 	struct _cArray::Header{
@@ -170,7 +170,7 @@ class _cArray{
 		short _pad;
 	};
 public:
-	static class _cArray** sArrayTable;
+	static class _cArray **sArrayTable;
 	// calltype: NearC
 	static void MakeTable();
 	// calltype: NearC
@@ -183,7 +183,7 @@ private:
 	void SetSizeAndHeaders(long, long);
 	unsigned char * _GetPointer(long, long);
 protected:
-	void * __ptr32* fData;
+	void * __ptr32 *fData;
 public:
 	void * __ptr32 fDataHandle;
 	unsigned char * fDataPtr;
@@ -194,7 +194,7 @@ protected:
 	unsigned long fDataHandleSize;
 	short fResID;
 	short _pad;
-	class ResFile* fFile;
+	class ResFile *fFile;
 	unsigned long fType;
 	unsigned char fFileName[16];
 	unsigned char fName[16];
@@ -248,7 +248,7 @@ public:
 
 // Type: struct _cArray::FileAndType;
 struct _cArray::FileAndType{
-	class ResFile* file;
+	class ResFile *file;
 	unsigned long type;
 };
 
@@ -257,7 +257,7 @@ struct _cArray::FileAndType{
 class FlatResFile : public FlatFile
 {
 protected:
-	class ResMap* fMap;
+	class ResMap *fMap;
 	long fError;
 	short _alignPad;
 public:
@@ -300,13 +300,13 @@ class FlatFile{
 		kMaxNameLen = 255,
 	};
 protected:
-	class FlatFile* fNext;
+	class FlatFile *fNext;
 	unsigned char fName[256];
 	long fFileID;
-	struct _iobuf* fFile;
+	struct _iobuf *fFile;
 	long UniqueID();
 private:
-	static class FlatFile* sList;
+	static class FlatFile *sList;
 	static long sLastFileID;
 	void Link();
 	void Unlink();
@@ -339,7 +339,7 @@ public:
 
 // Contribution: 1:001664e0-001683d3 Module: 180, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x005674e0
-unsigned short OpenFile(class ResFile* pFile) {
+unsigned short OpenFile(class ResFile *pFile) {
 // LINE 17:
 	__asm        mov    ecx, pFile;
 	__asm        call   FlatFile::ValidFile;
@@ -381,10 +381,10 @@ _T6d:
 }
 
 // FUNCTION: COPTER_D 0x00567552
-void _cArray::FromDiskCreate(void * __ptr32 hArray, class ResFile* pFile, long entrySize, void (*Swizzler)(void * __ptr32, long)) {
+void _cArray::FromDiskCreate(void * __ptr32 hArray, class ResFile *pFile, long entrySize, void (*Swizzler)(void * __ptr32, long)) {
 	unsigned short fileOpened;
 	char * data;
-	struct _cArray::Header* header;
+	struct _cArray::Header *header;
 	unsigned char tmpname[256];
 
 // LINE 30:
@@ -662,7 +662,7 @@ _T3a2:
 }
 
 // FUNCTION: COPTER_D 0x00567900
-void _cArray::BeginCreate(long entrySize, long xSize, long ySize, unsigned char * name, class ResFile* pFile, unsigned long rType) {
+void _cArray::BeginCreate(long entrySize, long xSize, long ySize, unsigned char * name, class ResFile *pFile, unsigned long rType) {
 // LINE 123:
 	__asm        cmp    pFile, 0;
 	__asm        jne    _T20;
@@ -1005,7 +1005,7 @@ _T111:
 // FUNCTION: COPTER_D 0x00567d12
 void _cArray::FillHeader() {
 	unsigned long debugsize;
-	struct _cArray::Header* header;
+	struct _cArray::Header *header;
 
 // LINE 305:
 	__asm        mov    eax, this;
@@ -2255,7 +2255,7 @@ void _cArray::CopyFrom(unsigned char * fromName) {
 
 // FUNCTION: COPTER_D 0x00568a95
 void _cArray::CopyFrom(unsigned long oldname) {
-	class _cArray* src;
+	class _cArray *src;
 
 // LINE 543:
 	__asm        push   0xFFFFFFFF;
@@ -2274,7 +2274,7 @@ void _cArray::CopyFrom(unsigned long oldname) {
 }
 
 // FUNCTION: COPTER_D 0x00568aca
-void _cArray::CopyFrom(class _cArray* src) {
+void _cArray::CopyFrom(class _cArray *src) {
 	long howmuch;
 
 // LINE 549:
@@ -2366,7 +2366,7 @@ _T112:
 }
 
 // FUNCTION: COPTER_D 0x00568be8
-void _cArray::CopyTo(class _cArray* dest) {
+void _cArray::CopyTo(class _cArray *dest) {
 	long howmuch;
 
 // LINE 569:
@@ -2459,7 +2459,7 @@ _T112:
 
 // FUNCTION: COPTER_D 0x00568d06
 void _cArray::CopyTo(unsigned long oldname) {
-	class _cArray* dest;
+	class _cArray *dest;
 
 // LINE 581:
 	__asm        push   0xFFFFFFFF;
@@ -2638,7 +2638,7 @@ _T16f:
 class _cArray* _cArray::GetArrayByType(unsigned long rType, short which) {
 	short found;
 	short count;
-	class _cArray* arr;
+	class _cArray *arr;
 
 // LINE 630:
 	__asm        call   _cArray::MakeTable;
@@ -2707,7 +2707,7 @@ _T23:
 	__asm        jge    _T5a;
 // LINE 650:
 // Block start:
-	class _cArray* tmp;
+	class _cArray *tmp;
 	__asm        movsx  eax, cnt;
 	__asm        mov    ecx, _cArray::sArrayTable;
 	__asm        mov    eax, [ecx+eax*4];
@@ -2731,10 +2731,10 @@ _T5a:
 }
 
 // FUNCTION: COPTER_D 0x00569010
-short _cArray::GetArrayIndexInType(class _cArray* findarr) {
+short _cArray::GetArrayIndexInType(class _cArray *findarr) {
 	short found;
 	short count;
-	class _cArray* arr;
+	class _cArray *arr;
 
 // LINE 659:
 	__asm        call   _cArray::MakeTable;
@@ -2784,14 +2784,14 @@ _T80:
 }
 
 // FUNCTION: COPTER_D 0x00569095
-void _cArray::LoadAllArrays(class ResFile* pFile, unsigned long rType, short entrySize, void (*Swizzler)(void * __ptr32, long)) {
+void _cArray::LoadAllArrays(class ResFile *pFile, unsigned long rType, short entrySize, void (*Swizzler)(void * __ptr32, long)) {
 	short numArrays;
 	short diskEntrySize;
 	short foundcount;
 	unsigned short fileOpened;
 	short count;
 	struct _cArray::FileAndType ft;
-	struct _cArray::Header* header;
+	struct _cArray::Header *header;
 
 	// Function registers exception cleanup function at 0x00569305
 // LINE 706:
@@ -2861,7 +2861,7 @@ _Tce:
 // Block start:
 	unsigned char * dataPtr;
 	void * __ptr32 hArray;
-	class _cArray* tmp;
+	class _cArray *tmp;
 	__asm        push   0;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(count);
 	__asm        push   eax;
@@ -3008,7 +3008,7 @@ _T27a:
 }
 
 // FUNCTION: COPTER_D 0x0056931d
-short _cArray::GetLoadedIndex(class ResFile* pFile, unsigned long rType) {
+short _cArray::GetLoadedIndex(class ResFile *pFile, unsigned long rType) {
 	short foundcount;
 	short cnt;
 	struct _cArray::FileAndType ft;
@@ -3077,7 +3077,7 @@ _Ta9:
 
 // Contribution: 3:0002874c-0002950a Module: 180, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005bf74c
-class _cArray** _cArray::sArrayTable = { 0 /* todo */ };
+class _cArray **_cArray::sArrayTable = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005bf750
 unsigned short _cArray::sAllLoaded = 0;

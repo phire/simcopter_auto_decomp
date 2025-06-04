@@ -49,7 +49,7 @@ public:
 	int32_t GetPathForBitmapFile(char *, char *, char *);
 	class basic_string<char> sFontInfoFilePath;
 	class basic_string<char> sFontBitmapFile;
-	class CBackBuffer* myFontImage;
+	class CBackBuffer *myFontImage;
 	long lLanguage;
 	long lCharacterSet;
 	long lPitchType;
@@ -69,7 +69,7 @@ class basic_string<char>{
 	using reference_pointer = class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char>* reference;
+	class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -296,15 +296,15 @@ public:
 protected:
 	int32_t bSurfacePrimary;
 	int32_t bSurfaceTransparent;
-	class MFont* mFont;
+	class MFont *mFont;
 	struct SparkalColor colorFontCurrent;
 	struct SparkalColor colorCurrent;
 	int32_t nColorIndexFontCurrent;
 	int32_t nColorIndexCurrent;
 	int32_t nColorIndexTransparent;
-	struct IDirectDrawSurface* mpFrontSurface;
-	struct IDirectDrawSurface* mpBackSurface;
-	struct IDirectDrawPalette* mpPalette;
+	struct IDirectDrawSurface *mpFrontSurface;
+	struct IDirectDrawSurface *mpBackSurface;
+	struct IDirectDrawPalette *mpPalette;
 	struct _DDSURFACEDESC mDDdesc;
 	struct _DDBLTFX mDDBltFx;
 	void * __ptr32 hPen;
@@ -398,9 +398,9 @@ class vector<MRect>{
 	using reverse_iterator = class reverse_iterator<MRect *,MRect,MRect &,int>;
 protected:
 	static class allocator<MRect> static_allocator;
-	class MRect* start;
-	class MRect* finish;
-	class MRect* end_of_storage;
+	class MRect *start;
+	class MRect *finish;
+	class MRect *end_of_storage;
 	void insert_aux(class MRect*, const class MRect&);
 public:
 	const class MRect* begin();
@@ -3464,7 +3464,7 @@ _T191:
 }
 
 // FUNCTION: COPTER_D 0x0046a5e3
-void BitmappedFont::DrawTextLine(class CBackBuffer* destination, long x, long y, char * chText, const unsigned long nStringLength) {
+void BitmappedFont::DrawTextLine(class CBackBuffer *destination, long x, long y, char * chText, const unsigned long nStringLength) {
 	char * chEnd;
 
 // LINE 393:
@@ -3652,7 +3652,7 @@ _T1ed:
 }
 
 // FUNCTION: COPTER_D 0x0046a7dc
-void BitmappedFont::DrawTextLineNoClip(class CBackBuffer* destination, long x, long y, char * chText, const unsigned long nStringLength) {
+void BitmappedFont::DrawTextLineNoClip(class CBackBuffer *destination, long x, long y, char * chText, const unsigned long nStringLength) {
 	char * chEnd;
 
 // LINE 410:
@@ -3840,7 +3840,7 @@ _T1ed:
 }
 
 // FUNCTION: COPTER_D 0x0046a9d5
-void BitmappedFont::DrawTextPara(class CBackBuffer* destination, class MRect& rectPara, char * chText, const unsigned long nStringLength) {
+void BitmappedFont::DrawTextPara(class CBackBuffer *destination, class MRect& rectPara, char * chText, const unsigned long nStringLength) {
 	const long lRectWidth;
 	long lCurrentXPosition;
 	const long lRectHeight;
@@ -3915,7 +3915,7 @@ _T9e:
 }
 
 // FUNCTION: COPTER_D 0x0046aa7f
-void BitmappedFont::DrawTextParaNoClip(class CBackBuffer* destination, class MRect& rectPara, char * chText, const unsigned long nStringLength) {
+void BitmappedFont::DrawTextParaNoClip(class CBackBuffer *destination, class MRect& rectPara, char * chText, const unsigned long nStringLength) {
 	const long lRectWidth;
 	long lCurrentXPosition;
 	const long lRectHeight;
@@ -3990,7 +3990,7 @@ _T9e:
 }
 
 // FUNCTION: COPTER_D 0x0046ab29
-void BitmappedFont::DrawTextLineFormat(class CBackBuffer* destination, class MRect& rectLine, char * chText, const unsigned long nStringLength, const unsigned long nFormat) {
+void BitmappedFont::DrawTextLineFormat(class CBackBuffer *destination, class MRect& rectLine, char * chText, const unsigned long nStringLength, const unsigned long nFormat) {
 	unsigned long nVisibleStringWidth;
 	unsigned long nVisibleStringLength;
 
@@ -4110,7 +4110,7 @@ _T111:
 }
 
 // FUNCTION: COPTER_D 0x0046ac46
-void BitmappedFont::DrawTextLineFormatNoClip(class CBackBuffer* destination, class MRect& rectLine, char * chText, const unsigned long nStringLength, const unsigned long nFormat) {
+void BitmappedFont::DrawTextLineFormatNoClip(class CBackBuffer *destination, class MRect& rectLine, char * chText, const unsigned long nStringLength, const unsigned long nFormat) {
 	unsigned long nVisibleStringWidth;
 	unsigned long nVisibleStringLength;
 
@@ -4230,7 +4230,7 @@ _T111:
 }
 
 // FUNCTION: COPTER_D 0x0046ad63
-void BitmappedFont::DrawTextParaFormat(class CBackBuffer* destination, class MRect& rectPara, char * chText, const unsigned long nStringLength, const unsigned long nFormat) {
+void BitmappedFont::DrawTextParaFormat(class CBackBuffer *destination, class MRect& rectPara, char * chText, const unsigned long nStringLength, const unsigned long nFormat) {
 	const long lRectWidth;
 	long lCurrentXPosition;
 	const long lRectHeight;
@@ -4324,7 +4324,7 @@ _Td4:
 }
 
 // FUNCTION: COPTER_D 0x0046ae43
-void BitmappedFont::DrawTextParaFormatNoClip(class CBackBuffer* destination, class MRect& rectPara, char * chText, const unsigned long nStringLength, const unsigned long nFormat) {
+void BitmappedFont::DrawTextParaFormatNoClip(class CBackBuffer *destination, class MRect& rectPara, char * chText, const unsigned long nStringLength, const unsigned long nFormat) {
 	const long lRectWidth;
 	long lCurrentXPosition;
 	const long lRectHeight;

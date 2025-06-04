@@ -193,8 +193,8 @@ protected:
 	long mHeight;
 	long mWidth;
 	unsigned long mStyle;
-	class ICommander* mpCommander;
-	class ScreenBuffer* mpBackBuffer;
+	class ICommander *mpCommander;
+	class ScreenBuffer *mpBackBuffer;
 	void * __ptr32 mWindow;
 	// calltype: NearStd
 	virtual long MySparkalWindowProc(void * __ptr32, uint32_t, uint32_t, long); // vtable+0x30
@@ -236,8 +236,8 @@ protected:
 	long mHeight;
 	long mWidth;
 	unsigned long mStyle;
-	class ICommander* mpCommander;
-	class ScreenBuffer* mpBackBuffer;
+	class ICommander *mpCommander;
+	class ScreenBuffer *mpBackBuffer;
 	void * __ptr32 mWindow;
 	// calltype: NearStd
 	virtual long MySparkalWindowProc(void * __ptr32, uint32_t, uint32_t, long); // vtable+0x30
@@ -261,7 +261,7 @@ struct SparkalRect{
 
 // Contribution: 1:00065f70-00067019 Module: 43, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00466f70
-void GameWindow::GameWindow(unsigned long Width, unsigned long Height, unsigned long Style, const struct SparkalColor* pColors, char * Caption) {
+void GameWindow::GameWindow(unsigned long Width, unsigned long Height, unsigned long Style, const struct SparkalColor *pColors, char * Caption) {
 	struct tagWNDCLASSA ClassInfo;
 
 
@@ -679,7 +679,7 @@ _T4e:
 }
 
 // FUNCTION: COPTER_D 0x004673ea
-unsigned long GameWindow::MakePalette(const struct SparkalColor* pColors) {
+unsigned long GameWindow::MakePalette(const struct SparkalColor *pColors) {
 	struct GameWindow::MakePalette::__unnamed LogPalette;
 	void * __ptr32 hdc;
 	int32_t StaticCount;
@@ -925,7 +925,7 @@ _T2b0:
 }
 
 // FUNCTION: COPTER_D 0x004676a1
-void GameWindow::UpdatePalette(long start, long count, struct SparkalColor* pColor) {
+void GameWindow::UpdatePalette(long start, long count, struct SparkalColor *pColor) {
 // LINE 287:
 	__asm        mov    eax, pColor;
 	__asm        push   eax;
@@ -1341,7 +1341,7 @@ void GameWindow::CenterWindow() {
 }
 
 // FUNCTION: COPTER_D 0x00467af9
-void GameWindow::PlaceWindowRect(class MRect* rectWindowToPlace) {
+void GameWindow::PlaceWindowRect(class MRect *rectWindowToPlace) {
 	unsigned long nWindowWidth;
 	unsigned long nScreenWidth;
 	unsigned long nWindowHeight;
@@ -1407,7 +1407,7 @@ void GameWindow::PlaceWindowRect(class MRect* rectWindowToPlace) {
 
 // FUNCTION: COPTER_D 0x00467b9c
 long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, uint32_t wParam, long lParam) {
-	struct tagMINMAXINFO* lpMinMaxInfo;
+	struct tagMINMAXINFO *lpMinMaxInfo;
 
 // LINE 496:
 	__asm        mov    eax, Message;

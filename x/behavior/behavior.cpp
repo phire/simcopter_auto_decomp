@@ -6,11 +6,11 @@
 // VTABLE: COPTER_D 0x005936d8
 class Behavior{
 protected:
-	class NResFile* fGlobFile;
-	class NResFile* fPrivFile;
-	class StdResLoader* fGlobalTrees;
-	class StdResLoader* fPrivateTrees;
-	class Language* fLanguage;
+	class NResFile *fGlobFile;
+	class NResFile *fPrivFile;
+	class StdResLoader *fGlobalTrees;
+	class StdResLoader *fPrivateTrees;
+	class Language *fLanguage;
 	void (*fSwizzler)(void * __ptr32, long);
 	enum /* __unnamed */ {
 		kPrimitiveBase = 0,
@@ -150,7 +150,7 @@ struct Behavior::Node{
 class FlatResFile : public FlatFile
 {
 protected:
-	class ResMap* fMap;
+	class ResMap *fMap;
 	long fError;
 	short _alignPad;
 public:
@@ -201,13 +201,13 @@ class FlatFile{
 		kMaxNameLen = 255,
 	};
 protected:
-	class FlatFile* fNext;
+	class FlatFile *fNext;
 	unsigned char fName[256];
 	long fFileID;
-	struct _iobuf* fFile;
+	struct _iobuf *fFile;
 	long UniqueID();
 private:
-	static class FlatFile* sList;
+	static class FlatFile *sList;
 	static long sLastFileID;
 	void Link();
 	void Unlink();
@@ -240,7 +240,7 @@ public:
 
 // Contribution: 1:0015f290-0015f9c8 Module: 191, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00560290
-void Behavior::Behavior(class Language* lang, class NResFile* globFile, class NResFile* privFile) {
+void Behavior::Behavior(class Language *lang, class NResFile *globFile, class NResFile *privFile) {
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xC], 0;
@@ -321,7 +321,7 @@ class ResFile* Behavior::GetGlobFile() {
 }
 
 // FUNCTION: COPTER_D 0x00560385
-void Behavior::StdTreeSwizzle(struct Behavior::Tree* tree, long size, void (*paramswizzler)(short, struct Behavior::NodeParameter*)) {
+void Behavior::StdTreeSwizzle(struct Behavior::Tree *tree, long size, void (*paramswizzler)(short, struct Behavior::NodeParameter*)) {
 	short count;
 
 // LINE 49:
@@ -372,7 +372,7 @@ _T7b:
 
 // FUNCTION: COPTER_D 0x0056040a
 const struct Behavior::Node* Behavior::GetNodeRef(short treeID, short nodeNum) {
-	struct Behavior::Tree* tree;
+	struct Behavior::Tree *tree;
 
 // LINE 74:
 	__asm        movsx  eax, treeID;
@@ -516,7 +516,7 @@ _T188:
 }
 
 // FUNCTION: COPTER_D 0x005605ac
-void Behavior::GetNodeText(struct Behavior::Node* node, unsigned char * str) {
+void Behavior::GetNodeText(struct Behavior::Node *node, unsigned char * str) {
 // LINE 128:
 	__asm        jmp    near ptr 0x005605BD;
 }
@@ -568,7 +568,7 @@ short Behavior::CountPrimitives() {
 
 // FUNCTION: COPTER_D 0x0056063d
 void Behavior::GetTreeName(short treeID, unsigned char * name) {
-	class ResFile* pFile;
+	class ResFile *pFile;
 	void * __ptr32 tree;
 
 // LINE 149:

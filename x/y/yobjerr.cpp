@@ -179,10 +179,10 @@ public:
 	void ResetTree();
 	void ResetTree(short);
 	struct cYObject::MoveInfo{
-		enum cYObject::LocationType* locType;
+		enum cYObject::LocationType *locType;
 		char * roadDir;
-		struct _DYOBJ_INST* dyBlock;
-		struct _STOBJ_INST* stBlock;
+		struct _DYOBJ_INST *dyBlock;
+		struct _STOBJ_INST *stBlock;
 	};
 	struct cYObject::_ControlInput{
 		struct Point3d vector;
@@ -198,15 +198,15 @@ public:
 	};
 private:
 	static unsigned short sInited;
-	static class cYObject* sObjects[100];
+	static class cYObject *sObjects[100];
 	static enum cYObject::LocationType sNeutralPersonLocs[18][10];
 	static enum cYObject::LocationType sNeutralMissionLocs[14][10];
-	static class cYObject* sList;
+	static class cYObject *sList;
 	static class NResFile sFile;
 	static class ResFile sErrorFile;
 public:
-	static class YObjLang* sLanguage;
-	static class Behavior* sBehavior;
+	static class YObjLang *sLanguage;
+	static class Behavior *sBehavior;
 	static struct Point3d sMoveTable[8];
 	static struct Point3d sUnitVectorTable[8];
 	// calltype: NearC
@@ -262,9 +262,9 @@ public:
 	unsigned char fCellX;
 	unsigned char fCellY;
 	unsigned long fBodyName;
-	class cCopterBody* fBody;
+	class cCopterBody *fBody;
 	unsigned long fAnimName;
-	class cCopterAnim* fAnim;
+	class cCopterAnim *fAnim;
 	short fFace;
 	void SetFace(short);
 	struct Point3d fLastMasterLoc;
@@ -304,8 +304,8 @@ public:
 	unsigned long GetAnim();
 	void SetAnim(unsigned long);
 	unsigned short fSimulate;
-	class Behavior* fBehavior;
-	class cYObject* fNext;
+	class Behavior *fBehavior;
+	class cYObject *fNext;
 	short fID;
 	short _pad;
 	short fTemp[8];
@@ -672,11 +672,11 @@ class TreeSim{
 		short _pad;
 		unsigned char * objectPtr;
 		short locals[4];
-		class Behavior* pBehavior;
+		class Behavior *pBehavior;
 		void GetTreeName(unsigned char *);
 	};
 private:
-	struct TreeSim::StackElem* fStack;
+	struct TreeSim::StackElem *fStack;
 	short fStackSize;
 	short fMaxStackSize;
 	short fIterations;

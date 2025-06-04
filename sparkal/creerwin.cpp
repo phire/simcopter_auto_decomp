@@ -56,9 +56,9 @@ protected:
 	int32_t bAllowCancel;
 	class SmackerBackBuffer mySmackerBackBuffers[3];
 	void * __ptr32 myPlatformWindow;
-	class TextWindow* cityNameTextWindow;
-	class TextWindow* cityLevelTextWindow;
-	class CBackBuffer* mySelectionImage;
+	class TextWindow *cityNameTextWindow;
+	class TextWindow *cityLevelTextWindow;
+	class CBackBuffer *mySelectionImage;
 };
 
 // Type: class MRect (forward reference);
@@ -155,7 +155,7 @@ class basic_string<char>{
 	using reference_pointer = class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char>* reference;
+	class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -408,7 +408,7 @@ static void $E66() {
 }
 
 // FUNCTION: COPTER_D 0x0047defe
-void CareerWindow::CareerWindow(class MRect& rectNewPosition, int32_t nNewID, void * __ptr32 myNewPlatformWindow, long * lNewCities, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, int32_t bNewAllowCancel) {
+void CareerWindow::CareerWindow(class MRect& rectNewPosition, int32_t nNewID, void * __ptr32 myNewPlatformWindow, long * lNewCities, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList, int32_t bNewAllowCancel) {
 
 	__asm        push   0xFFFFFFFF;
 	__asm        mov    eax, bAddToParentList;
@@ -640,8 +640,8 @@ _T85:
 	__asm        je     _T6fe;
 // LINE 115:
 // Block start:
-	class ButtonWindow* tempButtonWindow2;
-	class ButtonWindow* tempButtonWindow1;
+	class ButtonWindow *tempButtonWindow2;
+	class ButtonWindow *tempButtonWindow1;
 	__asm        push   0x94;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
@@ -1084,7 +1084,7 @@ _T6b5:
 	__asm        jmp    _T9df;
 // LINE 134:
 // Block start:
-	class ButtonWindow* tempButtonWindow1;
+	class ButtonWindow *tempButtonWindow1;
 _T6fe:
 	__asm        push   0x94;
 	__asm        call   operator new;
@@ -2640,7 +2640,7 @@ _Tdf:
 }
 
 // FUNCTION: COPTER_D 0x0047fd2d
-int32_t CareerWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
+int32_t CareerWindow::DoMessage(class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 // LINE 339:
 	__asm        mov    eax, lWindowID;
 	__asm        mov    [ebp-8], eax;
@@ -2810,7 +2810,7 @@ _T130:
 }
 
 // FUNCTION: COPTER_D 0x0047ff29
-void CareerWindow::GetCoordinatesForCitySelections(class MPoint[4]* ptDestinations, class MRect[4]* rectSources) {
+void CareerWindow::GetCoordinatesForCitySelections(class MPoint *ptDestinations[4], class MRect *rectSources[4]) {
 	class CareerWindow::CitySelectionFrame lowerLeft;
 	class CareerWindow::CitySelectionFrame upperLeft;
 	class CareerWindow::CitySelectionFrame upperRight;
@@ -3190,7 +3190,7 @@ _T459:
 }
 
 // FUNCTION: COPTER_D 0x0048049d
-void CareerWindow::CitySelectionFrame::FillDestinationPoints(class MPoint* ptDest) {
+void CareerWindow::CitySelectionFrame::FillDestinationPoints(class MPoint *ptDest) {
 	int32_t nN;
 
 // LINE 427:
@@ -3223,7 +3223,7 @@ _T4e:
 }
 
 // FUNCTION: COPTER_D 0x004804f7
-void CareerWindow::CitySelectionFrame::FillSourceRects(class MRect* rectSrc) {
+void CareerWindow::CitySelectionFrame::FillSourceRects(class MRect *rectSrc) {
 	int32_t nN;
 
 // LINE 435:

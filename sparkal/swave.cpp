@@ -75,7 +75,7 @@ struct _MMIOINFO{
 
 // Contribution: 1:0008dbb0-0008e11e Module: 25, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0048ebb0
-int32_t WaveOpenFile(char * pszFileName, void * __ptr32* phmmioIn, struct tWAVEFORMATEX* pwfxInfo, struct _MMCKINFO* pckInRIFF) {
+int32_t WaveOpenFile(char * pszFileName, void * __ptr32 *phmmioIn, struct tWAVEFORMATEX *pwfxInfo, struct _MMCKINFO *pckInRIFF) {
 	unsigned short cbExtraAlloc;
 	struct pcmwaveformat_tag pcmWaveFormat;
 	void * __ptr32 hmmioIn;
@@ -280,7 +280,7 @@ _T204:
 }
 
 // FUNCTION: COPTER_D 0x0048edb9
-int32_t WaveStartDataRead(void * __ptr32* phmmioIn, struct _MMCKINFO* pckIn, struct _MMCKINFO* pckInRIFF) {
+int32_t WaveStartDataRead(void * __ptr32 *phmmioIn, struct _MMCKINFO *pckIn, struct _MMCKINFO *pckInRIFF) {
 	int32_t nError;
 
 // LINE 160:
@@ -327,7 +327,7 @@ _T67:
 }
 
 // FUNCTION: COPTER_D 0x0048ee25
-int32_t WaveReadFile(void * __ptr32 hmmioIn, uint32_t cbRead, unsigned char * pbDest, struct _MMCKINFO* pckIn, uint32_t * cbActualRead) {
+int32_t WaveReadFile(void * __ptr32 hmmioIn, uint32_t cbRead, unsigned char * pbDest, struct _MMCKINFO *pckIn, uint32_t * cbActualRead) {
 	struct _MMIOINFO mmioinfoIn;
 	uint32_t cT;
 	int32_t nError;
@@ -469,7 +469,7 @@ _T145:
 }
 
 // FUNCTION: COPTER_D 0x0048ef6f
-int32_t WaveCloseReadFile(void * __ptr32* phmmio) {
+int32_t WaveCloseReadFile(void * __ptr32 *phmmio) {
 // LINE 252:
 	__asm        mov    eax, phmmio;
 	__asm        cmp    dword ptr [eax], 0;
@@ -491,7 +491,7 @@ _T29:
 }
 
 // FUNCTION: COPTER_D 0x0048efa4
-int32_t WaveLoadFile(char * pszFileName, uint32_t * cbSize, struct tWAVEFORMATEX* pwfxInfo, unsigned char ** ppbData) {
+int32_t WaveLoadFile(char * pszFileName, uint32_t * cbSize, struct tWAVEFORMATEX *pwfxInfo, unsigned char * *ppbData) {
 	uint32_t cbActualRead;
 	void * __ptr32 hmmioIn;
 	struct _MMCKINFO ckInRiff;

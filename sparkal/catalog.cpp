@@ -52,9 +52,9 @@ protected:
 	class MRect rectSpecialtiesText;
 	class MRect rectDescriptionText;
 	class MRect rectCostText;
-	class SoundButtonWindow* buttonWindowBuy;
-	class SoundButtonWindow* buttonWindowSell;
-	class SoundButtonWindow* buttonWindowDone;
+	class SoundButtonWindow *buttonWindowBuy;
+	class SoundButtonWindow *buttonWindowSell;
+	class SoundButtonWindow *buttonWindowDone;
 	class MRect rectHelicopterHistoryTitle;
 	class MRect rectHelicopterSpecialtiesTitle;
 	class MRect rectHelicopterDescriptionTitle;
@@ -111,7 +111,7 @@ class basic_string<char>{
 	using reference_pointer = class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char>* reference;
+	class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -365,7 +365,7 @@ class basic_string<char>{
 	using reference_pointer = class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char>* reference;
+	class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -514,15 +514,15 @@ public:
 protected:
 	int32_t bSurfacePrimary;
 	int32_t bSurfaceTransparent;
-	class MFont* mFont;
+	class MFont *mFont;
 	struct SparkalColor colorFontCurrent;
 	struct SparkalColor colorCurrent;
 	int32_t nColorIndexFontCurrent;
 	int32_t nColorIndexCurrent;
 	int32_t nColorIndexTransparent;
-	struct IDirectDrawSurface* mpFrontSurface;
-	struct IDirectDrawSurface* mpBackSurface;
-	struct IDirectDrawPalette* mpPalette;
+	struct IDirectDrawSurface *mpFrontSurface;
+	struct IDirectDrawSurface *mpBackSurface;
+	struct IDirectDrawPalette *mpPalette;
 	struct _DDSURFACEDESC mDDdesc;
 	struct _DDBLTFX mDDBltFx;
 	void * __ptr32 hPen;
@@ -596,7 +596,7 @@ struct SparkalPoint{
 
 // Contribution: 1:00073960-0007a5d0 Module: 34, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00474960
-void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 	class Random tempRandom;
 	int32_t i;
 	int32_t nFullStringID;
@@ -2816,7 +2816,7 @@ _T73b:
 // FUNCTION: COPTER_D 0x00476c64
 void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 	class basic_string<char> sTempMainGraphicFilePath;
-	struct tagUserPersonalInfo* currentUserPersonalInfo;
+	struct tagUserPersonalInfo *currentUserPersonalInfo;
 	class basic_string<char> sTempMainGraphicFileName;
 	int32_t i;
 	class MRect rectEquipmentDescriptions[5];
@@ -6223,7 +6223,7 @@ _T26b:
 
 // FUNCTION: COPTER_D 0x0047a09f
 void CatalogWindow::SetNewEquipmentSelection(long lNewEquipmentSelection) {
-	struct tagUserPersonalInfo* currentUserPersonalInfo;
+	struct tagUserPersonalInfo *currentUserPersonalInfo;
 	class MRect rectFill;
 
 // LINE 443:
@@ -6932,7 +6932,7 @@ _T5d0:
 }
 
 // FUNCTION: COPTER_D 0x0047a9b3
-int32_t CatalogWindow::ReadPalette(struct SparkalColor* pColorTable) {
+int32_t CatalogWindow::ReadPalette(struct SparkalColor *pColorTable) {
 // LINE 522:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x64], 0;
@@ -7375,7 +7375,7 @@ long CatalogWindow::DoCursorMove(long nCursorX, long nCursorY) {
 
 // FUNCTION: COPTER_D 0x0047aed6
 void CatalogWindow::SetButtonStates() {
-	const struct tagUserPersonalInfo* currentUserPersonalInfo;
+	const struct tagUserPersonalInfo *currentUserPersonalInfo;
 
 // LINE 655:
 	__asm        call   GetCurrentUserPersonalInfo;
@@ -7531,7 +7531,7 @@ _T1f8:
 }
 
 // FUNCTION: COPTER_D 0x0047b0d8
-int32_t CatalogWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
+int32_t CatalogWindow::DoMessage(class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 	long lMyMessage[2];
 
 // LINE 704:
@@ -7755,7 +7755,7 @@ _T7d:
 
 // FUNCTION: COPTER_D 0x0047b353
 int32_t CatalogWindow::CanUserSell() {
-	const struct tagUserPersonalInfo* currentUserPersonalInfo;
+	const struct tagUserPersonalInfo *currentUserPersonalInfo;
 
 // LINE 784:
 	__asm        call   GetCurrentUserPersonalInfo;
@@ -7799,7 +7799,7 @@ _T79:
 
 // FUNCTION: COPTER_D 0x0047b3d1
 int32_t CatalogWindow::DoCatalogWindowBuy() {
-	struct tagUserPersonalInfo* currentUserPersonalInfo;
+	struct tagUserPersonalInfo *currentUserPersonalInfo;
 	long lCurrentValue;
 	long lCurrentHelicopter;
 	long lCurrentFunds;
@@ -7899,7 +7899,7 @@ _Tfa:
 
 // FUNCTION: COPTER_D 0x0047b4d0
 int32_t CatalogWindow::DoCatalogWindowSell() {
-	struct tagUserPersonalInfo* currentUserPersonalInfo;
+	struct tagUserPersonalInfo *currentUserPersonalInfo;
 	long lCurrentValue;
 	long lCurrentHelicopter;
 	long lCurrentFunds;

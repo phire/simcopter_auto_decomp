@@ -34,8 +34,8 @@ protected:
 	long mHeight;
 	long mWidth;
 	unsigned long mStyle;
-	class ICommander* mpCommander;
-	class ScreenBuffer* mpBackBuffer;
+	class ICommander *mpCommander;
+	class ScreenBuffer *mpBackBuffer;
 	void * __ptr32 mWindow;
 	// calltype: NearStd
 	virtual long MySparkalWindowProc(void * __ptr32, uint32_t, uint32_t, long); // vtable+0x30
@@ -61,7 +61,7 @@ public:
 	virtual class CSparkalWindow* SetWindow(class CSparkalWindow*); // vtable+0x20
 	class CSparkalWindow* GetWindow();
 protected:
-	class CSparkalWindow* mpWindow;
+	class CSparkalWindow *mpWindow;
 };
 
 // Type: class ScreenBuffer (forward reference);
@@ -69,7 +69,7 @@ protected:
 class ScreenBuffer : public CBackBuffer
 {
 public:
-	class CSparkalWindow* pWindow;
+	class CSparkalWindow *pWindow;
 	long bOK;
 	void ScreenBuffer(class CSparkalWindow*, long, long, struct SparkalColor*, int32_t, enum tagModeType, int32_t);
 	void ScreenBuffer();
@@ -90,7 +90,7 @@ protected:
 	short nBackBuffers;
 	enum tagModeType nCurrentModeType;
 	int32_t bUsingFlipping;
-	struct IDirectDrawClipper* lpClipper;
+	struct IDirectDrawClipper *lpClipper;
 	struct tagRECT rectDirectDrawBackBuffer;
 };
 
@@ -102,8 +102,8 @@ protected:
 
 // Contribution: 1:00031260-000314d4 Module: 61, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00432260
-class ICommander* CSparkalWindow::SetCommander(class ICommander* pCommander) {
-	class ICommander* ReturnCommander;
+class ICommander* CSparkalWindow::SetCommander(class ICommander *pCommander) {
+	class ICommander *ReturnCommander;
 
 // LINE 19:
 	__asm        mov    eax, this;
@@ -151,8 +151,8 @@ _T68:
 }
 
 // FUNCTION: COPTER_D 0x004322d7
-class ScreenBuffer* CSparkalWindow::SetBackBuffer(class ScreenBuffer* pBuffer) {
-	class ScreenBuffer* ReturnBuffer;
+class ScreenBuffer* CSparkalWindow::SetBackBuffer(class ScreenBuffer *pBuffer) {
+	class ScreenBuffer *ReturnBuffer;
 
 // LINE 42:
 	__asm        mov    eax, this;

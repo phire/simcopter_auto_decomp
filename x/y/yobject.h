@@ -98,8 +98,8 @@ _Ta4:
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552190
-class cYObject* cYObject::PutTotedMedVicOn(struct _DYOBJ_INST* thing) {
-	class cYObject* obj;
+class cYObject* cYObject::PutTotedMedVicOn(struct _DYOBJ_INST *thing) {
+	class cYObject *obj;
 
 // LINE 1023:
 	__asm        cmp    thing, 0;
@@ -250,7 +250,7 @@ _T1d3:
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552370
-enum TreeSim::ReturnCode cYObject::sIdle(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sIdle(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -263,7 +263,7 @@ enum TreeSim::ReturnCode cYObject::sIdle(class cYObject* obj, struct TreeSim::St
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552390
-enum TreeSim::ReturnCode cYObject::sSetAnim(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sSetAnim(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -276,7 +276,7 @@ enum TreeSim::ReturnCode cYObject::sSetAnim(class cYObject* obj, struct TreeSim:
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005523b0
-enum TreeSim::ReturnCode cYObject::sAttr(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sAttr(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -289,7 +289,7 @@ enum TreeSim::ReturnCode cYObject::sAttr(class cYObject* obj, struct TreeSim::St
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005523d0
-enum TreeSim::ReturnCode cYObject::sWalk(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sWalk(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -302,7 +302,7 @@ enum TreeSim::ReturnCode cYObject::sWalk(class cYObject* obj, struct TreeSim::St
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005523f0
-enum TreeSim::ReturnCode cYObject::sSetBody(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sSetBody(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -315,7 +315,7 @@ enum TreeSim::ReturnCode cYObject::sSetBody(class cYObject* obj, struct TreeSim:
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552410
-enum TreeSim::ReturnCode cYObject::sRandom(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sRandom(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -328,7 +328,7 @@ enum TreeSim::ReturnCode cYObject::sRandom(class cYObject* obj, struct TreeSim::
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552430
-enum TreeSim::ReturnCode cYObject::sWalkToAndGrabOntoStackObject(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sWalkToAndGrabOntoStackObject(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -341,7 +341,7 @@ enum TreeSim::ReturnCode cYObject::sWalkToAndGrabOntoStackObject(class cYObject*
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552450
-enum TreeSim::ReturnCode cYObject::sUpdateMyMission(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sUpdateMyMission(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -354,7 +354,7 @@ enum TreeSim::ReturnCode cYObject::sUpdateMyMission(class cYObject* obj, struct 
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552470
-enum TreeSim::ReturnCode cYObject::sCheckForTrue(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sCheckForTrue(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -367,7 +367,7 @@ enum TreeSim::ReturnCode cYObject::sCheckForTrue(class cYObject* obj, struct Tre
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552490
-enum TreeSim::ReturnCode cYObject::sCompareMyLocWith(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sCompareMyLocWith(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -380,7 +380,7 @@ enum TreeSim::ReturnCode cYObject::sCompareMyLocWith(class cYObject* obj, struct
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005524b0
-enum TreeSim::ReturnCode cYObject::sSelfDecommission(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sSelfDecommission(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -393,7 +393,7 @@ enum TreeSim::ReturnCode cYObject::sSelfDecommission(class cYObject* obj, struct
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005524d0
-enum TreeSim::ReturnCode cYObject::sGetOffMasterObject(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sGetOffMasterObject(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -406,7 +406,7 @@ enum TreeSim::ReturnCode cYObject::sGetOffMasterObject(class cYObject* obj, stru
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005524f0
-enum TreeSim::ReturnCode cYObject::sTurnTowardsStackObject(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sTurnTowardsStackObject(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -419,7 +419,7 @@ enum TreeSim::ReturnCode cYObject::sTurnTowardsStackObject(class cYObject* obj, 
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552510
-enum TreeSim::ReturnCode cYObject::sIsThisLocType(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sIsThisLocType(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -432,7 +432,7 @@ enum TreeSim::ReturnCode cYObject::sIsThisLocType(class cYObject* obj, struct Tr
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552530
-enum TreeSim::ReturnCode cYObject::sIsThisLocTypeNeutral(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sIsThisLocTypeNeutral(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -445,7 +445,7 @@ enum TreeSim::ReturnCode cYObject::sIsThisLocTypeNeutral(class cYObject* obj, st
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552550
-enum TreeSim::ReturnCode cYObject::sCanJumpOffHere(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sCanJumpOffHere(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -458,7 +458,7 @@ enum TreeSim::ReturnCode cYObject::sCanJumpOffHere(class cYObject* obj, struct T
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552570
-enum TreeSim::ReturnCode cYObject::sCheckForSpotlightInMyCell(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sCheckForSpotlightInMyCell(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -471,7 +471,7 @@ enum TreeSim::ReturnCode cYObject::sCheckForSpotlightInMyCell(class cYObject* ob
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552590
-enum TreeSim::ReturnCode cYObject::sIncrementRiotVal(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sIncrementRiotVal(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -484,7 +484,7 @@ enum TreeSim::ReturnCode cYObject::sIncrementRiotVal(class cYObject* obj, struct
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005525b0
-enum TreeSim::ReturnCode cYObject::sGetSurroundingRiotVal(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sGetSurroundingRiotVal(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -497,7 +497,7 @@ enum TreeSim::ReturnCode cYObject::sGetSurroundingRiotVal(class cYObject* obj, s
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005525d0
-enum TreeSim::ReturnCode cYObject::sIsThisScurkID(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sIsThisScurkID(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -510,7 +510,7 @@ enum TreeSim::ReturnCode cYObject::sIsThisScurkID(class cYObject* obj, struct Tr
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005525f0
-enum TreeSim::ReturnCode cYObject::sGosubToInitbhav(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sGosubToInitbhav(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -523,7 +523,7 @@ enum TreeSim::ReturnCode cYObject::sGosubToInitbhav(class cYObject* obj, struct 
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552610
-enum TreeSim::ReturnCode cYObject::sAdjustRadiusForRiotVal(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sAdjustRadiusForRiotVal(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -536,7 +536,7 @@ enum TreeSim::ReturnCode cYObject::sAdjustRadiusForRiotVal(class cYObject* obj, 
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552630
-enum TreeSim::ReturnCode cYObject::sJoinRiot(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sJoinRiot(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -549,7 +549,7 @@ enum TreeSim::ReturnCode cYObject::sJoinRiot(class cYObject* obj, struct TreeSim
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552650
-enum TreeSim::ReturnCode cYObject::sSetDirection(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sSetDirection(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -562,7 +562,7 @@ enum TreeSim::ReturnCode cYObject::sSetDirection(class cYObject* obj, struct Tre
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552670
-enum TreeSim::ReturnCode cYObject::sThrowProjectile(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sThrowProjectile(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -575,7 +575,7 @@ enum TreeSim::ReturnCode cYObject::sThrowProjectile(class cYObject* obj, struct 
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552690
-enum TreeSim::ReturnCode cYObject::sTurnFromStackObject(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sTurnFromStackObject(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -588,7 +588,7 @@ enum TreeSim::ReturnCode cYObject::sTurnFromStackObject(class cYObject* obj, str
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005526b0
-enum TreeSim::ReturnCode cYObject::sTurnFromLastHitter(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sTurnFromLastHitter(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -601,7 +601,7 @@ enum TreeSim::ReturnCode cYObject::sTurnFromLastHitter(class cYObject* obj, stru
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005526d0
-enum TreeSim::ReturnCode cYObject::sTurnTowardsLastHitter(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sTurnTowardsLastHitter(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -614,7 +614,7 @@ enum TreeSim::ReturnCode cYObject::sTurnTowardsLastHitter(class cYObject* obj, s
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005526f0
-enum TreeSim::ReturnCode cYObject::sGetOutOfRoadEtc(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sGetOutOfRoadEtc(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -627,7 +627,7 @@ enum TreeSim::ReturnCode cYObject::sGetOutOfRoadEtc(class cYObject* obj, struct 
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552710
-enum TreeSim::ReturnCode cYObject::sGenerateMedevacAndSetSelfAsVictim(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sGenerateMedevacAndSetSelfAsVictim(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -640,7 +640,7 @@ enum TreeSim::ReturnCode cYObject::sGenerateMedevacAndSetSelfAsVictim(class cYOb
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552730
-enum TreeSim::ReturnCode cYObject::sTurnToNearbyFire(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sTurnToNearbyFire(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -653,7 +653,7 @@ enum TreeSim::ReturnCode cYObject::sTurnToNearbyFire(class cYObject* obj, struct
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552750
-enum TreeSim::ReturnCode cYObject::sDie(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sDie(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -666,7 +666,7 @@ enum TreeSim::ReturnCode cYObject::sDie(class cYObject* obj, struct TreeSim::Sta
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552770
-enum TreeSim::ReturnCode cYObject::sWalkToStackObject(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sWalkToStackObject(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -679,7 +679,7 @@ enum TreeSim::ReturnCode cYObject::sWalkToStackObject(class cYObject* obj, struc
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552790
-enum TreeSim::ReturnCode cYObject::sPutObjIntoTreeNum(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sPutObjIntoTreeNum(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -692,7 +692,7 @@ enum TreeSim::ReturnCode cYObject::sPutObjIntoTreeNum(class cYObject* obj, struc
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005527b0
-enum TreeSim::ReturnCode cYObject::sVisitOz(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sVisitOz(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -705,7 +705,7 @@ enum TreeSim::ReturnCode cYObject::sVisitOz(class cYObject* obj, struct TreeSim:
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005527d0
-enum TreeSim::ReturnCode cYObject::sMakeMyMedevacVictimVisible(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sMakeMyMedevacVictimVisible(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -718,7 +718,7 @@ enum TreeSim::ReturnCode cYObject::sMakeMyMedevacVictimVisible(class cYObject* o
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005527f0
-enum TreeSim::ReturnCode cYObject::sMakeMyMedevacVictimInvisible(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sMakeMyMedevacVictimInvisible(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -731,7 +731,7 @@ enum TreeSim::ReturnCode cYObject::sMakeMyMedevacVictimInvisible(class cYObject*
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552810
-enum TreeSim::ReturnCode cYObject::sMakeMeMasterOfStackObject(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sMakeMeMasterOfStackObject(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -744,7 +744,7 @@ enum TreeSim::ReturnCode cYObject::sMakeMeMasterOfStackObject(class cYObject* ob
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552830
-enum TreeSim::ReturnCode cYObject::sMakeMyStackObjectVisitOz(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sMakeMyStackObjectVisitOz(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -757,7 +757,7 @@ enum TreeSim::ReturnCode cYObject::sMakeMyStackObjectVisitOz(class cYObject* obj
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552850
-enum TreeSim::ReturnCode cYObject::sPutTotedMedVicOnStackObject(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sPutTotedMedVicOnStackObject(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -770,7 +770,7 @@ enum TreeSim::ReturnCode cYObject::sPutTotedMedVicOnStackObject(class cYObject* 
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552870
-enum TreeSim::ReturnCode cYObject::sTakeAnyMedVicOffStackObject(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sTakeAnyMedVicOffStackObject(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -783,7 +783,7 @@ enum TreeSim::ReturnCode cYObject::sTakeAnyMedVicOffStackObject(class cYObject* 
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552890
-enum TreeSim::ReturnCode cYObject::sGetOnStackObject(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sGetOnStackObject(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -796,7 +796,7 @@ enum TreeSim::ReturnCode cYObject::sGetOnStackObject(class cYObject* obj, struct
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005528b0
-enum TreeSim::ReturnCode cYObject::sUpdateStackVictimToted(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sUpdateStackVictimToted(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -809,7 +809,7 @@ enum TreeSim::ReturnCode cYObject::sUpdateStackVictimToted(class cYObject* obj, 
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005528d0
-enum TreeSim::ReturnCode cYObject::sGetNumSpacesOnStackObject(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sGetNumSpacesOnStackObject(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -822,7 +822,7 @@ enum TreeSim::ReturnCode cYObject::sGetNumSpacesOnStackObject(class cYObject* ob
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005528f0
-enum TreeSim::ReturnCode cYObject::sDropToted(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sDropToted(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -835,7 +835,7 @@ enum TreeSim::ReturnCode cYObject::sDropToted(class cYObject* obj, struct TreeSi
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552910
-enum TreeSim::ReturnCode cYObject::sUpdateStackVictimPickedUp(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sUpdateStackVictimPickedUp(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -848,7 +848,7 @@ enum TreeSim::ReturnCode cYObject::sUpdateStackVictimPickedUp(class cYObject* ob
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552930
-enum TreeSim::ReturnCode cYObject::sCloseToHeli(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sCloseToHeli(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -861,7 +861,7 @@ enum TreeSim::ReturnCode cYObject::sCloseToHeli(class cYObject* obj, struct Tree
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552950
-enum TreeSim::ReturnCode cYObject::sSetMyExpression(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sSetMyExpression(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -874,7 +874,7 @@ enum TreeSim::ReturnCode cYObject::sSetMyExpression(class cYObject* obj, struct 
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552970
-enum TreeSim::ReturnCode cYObject::sGetHeliSpeedPlusDamage(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sGetHeliSpeedPlusDamage(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -887,7 +887,7 @@ enum TreeSim::ReturnCode cYObject::sGetHeliSpeedPlusDamage(class cYObject* obj, 
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552990
-enum TreeSim::ReturnCode cYObject::sIsThisCellSafe(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sIsThisCellSafe(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -900,7 +900,7 @@ enum TreeSim::ReturnCode cYObject::sIsThisCellSafe(class cYObject* obj, struct T
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005529b0
-enum TreeSim::ReturnCode cYObject::sPlaySound(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sPlaySound(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -913,7 +913,7 @@ enum TreeSim::ReturnCode cYObject::sPlaySound(class cYObject* obj, struct TreeSi
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005529d0
-enum TreeSim::ReturnCode cYObject::sGetOnHeliIfHarnessRaised(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sGetOnHeliIfHarnessRaised(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -926,7 +926,7 @@ enum TreeSim::ReturnCode cYObject::sGetOnHeliIfHarnessRaised(class cYObject* obj
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x005529f0
-enum TreeSim::ReturnCode cYObject::sAmIOnHeli(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sAmIOnHeli(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -939,7 +939,7 @@ enum TreeSim::ReturnCode cYObject::sAmIOnHeli(class cYObject* obj, struct TreeSi
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552a10
-enum TreeSim::ReturnCode cYObject::sThrowFieryProjectile(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sThrowFieryProjectile(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -952,7 +952,7 @@ enum TreeSim::ReturnCode cYObject::sThrowFieryProjectile(class cYObject* obj, st
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552a30
-enum TreeSim::ReturnCode cYObject::sTellStartingObjectTrueOrFalse(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sTellStartingObjectTrueOrFalse(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -965,7 +965,7 @@ enum TreeSim::ReturnCode cYObject::sTellStartingObjectTrueOrFalse(class cYObject
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552a50
-enum TreeSim::ReturnCode cYObject::sPutMyCarInStack(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sPutMyCarInStack(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -978,7 +978,7 @@ enum TreeSim::ReturnCode cYObject::sPutMyCarInStack(class cYObject* obj, struct 
 
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552a70
-enum TreeSim::ReturnCode cYObject::sDoIHaveAMaster(class cYObject* obj, struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode cYObject::sDoIHaveAMaster(class cYObject *obj, struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 
 	__asm        mov    eax, node;
 	__asm        push   eax;

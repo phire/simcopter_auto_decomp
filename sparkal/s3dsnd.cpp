@@ -45,7 +45,7 @@ class PreferenceManager{
 protected:
 	int32_t bSaveFileAtAllChanges;
 	class list<PreferenceItem> myPreferences;
-	class MIFF* miffPrefsFile;
+	class MIFF *miffPrefsFile;
 	long lFileCreator;
 	long lFileType;
 	long lFileVersion;
@@ -90,11 +90,11 @@ class DigitalSound : public Sound
 protected:
 	int32_t nStreamingType;
 	int32_t nCompletionEstimationTimerSet;
-	static struct IDirectSound* lpDirectSound;
+	static struct IDirectSound *lpDirectSound;
 	uint32_t cbSize;
 	struct tWAVEFORMATEX waveFormatEx;
-	struct IDirectSoundBuffer* lpSound[8];
-	struct _STREAMBUFINFO* lpStreamBufferInfo;
+	struct IDirectSoundBuffer *lpSound[8];
+	struct _STREAMBUFINFO *lpStreamBufferInfo;
 	unsigned long dwDesiredBufferDescFlags;
 public:
 	void DigitalSound(long);
@@ -267,10 +267,10 @@ _T3e:
 }
 
 // FUNCTION: COPTER_D 0x00441ee5
-void SoundChangeNotificationSink::DoNotificationChange(long lPreferenceType, class PreferenceManager* thePreferenceManager) {
+void SoundChangeNotificationSink::DoNotificationChange(long lPreferenceType, class PreferenceManager *thePreferenceManager) {
 	long lNewVolume;
 	char * chPrefsData;
-	struct SoundPreferences* currentSoundPreferences;
+	struct SoundPreferences *currentSoundPreferences;
 	int32_t i;
 
 // LINE 84:
@@ -5145,7 +5145,7 @@ _T4a5a:
 
 // FUNCTION: COPTER_D 0x00446a6b
 void S3DSSetFile(int32_t nSoundIndex, char * szSoundFile) {
-	class DigitalSound* theSound;
+	class DigitalSound *theSound;
 	char szFullSoundPath[260];
 
 // LINE 472:
@@ -5300,14 +5300,14 @@ _T24d:
 }
 
 // FUNCTION: COPTER_D 0x00446cc2
-int32_t S3DSPlay(int32_t nSoundIndex, struct Point3d* loc, int32_t nFlags) {
+int32_t S3DSPlay(int32_t nSoundIndex, struct Point3d *loc, int32_t nFlags) {
 	long lNewVolume;
 	long midparam;
 	int32_t nReturnValue;
 	struct Point3d viewvect;
 	int32_t fpDistance;
 	int32_t lastparam;
-	class DigitalSound* theSound;
+	class DigitalSound *theSound;
 
 // LINE 500:
 	__asm        mov    eax, nSoundIndex;
@@ -5445,7 +5445,7 @@ void S3DSStopAllSounds() {
 
 // FUNCTION: COPTER_D 0x00446e3c
 void S3SoundAdjFreq(int32_t nSoundIndex, long lFrequencyAdjustment) {
-	class DigitalSound* theSound;
+	class DigitalSound *theSound;
 
 // LINE 589:
 	__asm        mov    eax, nSoundIndex;
@@ -5534,12 +5534,12 @@ _T3c:
 }
 
 // FUNCTION: COPTER_D 0x00446f43
-void S3SoundSetPosition(int32_t nSoundIndex, struct Point3d* loc) {
+void S3SoundSetPosition(int32_t nSoundIndex, struct Point3d *loc) {
 	long lVolume;
 	long lPan;
 	struct Point3d positionRelative;
 	int32_t fpDistance;
-	class DigitalSound* theSound;
+	class DigitalSound *theSound;
 	struct Point3d positionTemp;
 
 // LINE 680:
@@ -5689,7 +5689,7 @@ _T1b2:
 // FUNCTION: COPTER_D 0x004470fa
 void S3SoundAddToQueue(int32_t nQueue, int32_t nSoundIndex, int32_t nDelayBeforePlay) {
 	long lNewVolume;
-	class DigitalSound* theSound;
+	class DigitalSound *theSound;
 
 // LINE 737:
 	__asm        mov    eax, nSoundIndex;

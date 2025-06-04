@@ -35,7 +35,7 @@ enum DirIndex2 {
 // Type: class RoadGraph (forward reference);
 class RoadGraph{
 public:
-	struct RGVertex* RGArray[128];
+	struct RGVertex *RGArray[128];
 	unsigned char RGLength[128];
 	void RoadGraph();
 	void Init();
@@ -94,7 +94,7 @@ struct RGVertex{
 
 // Type: struct Goal (forward reference);
 struct Goal{
-	struct RGVertex* pRGV;
+	struct RGVertex *pRGV;
 	int32_t elementIndex;
 	int32_t gridIndex;
 	struct _GridCoordinates gridLoc;
@@ -113,7 +113,7 @@ struct Edge{
 	unsigned char x;
 	unsigned short Time;
 	unsigned short numElementsToPath;
-	struct Road* roadArray;
+	struct Road *roadArray;
 };
 
 // Type: enum SlopeIndex;
@@ -159,7 +159,7 @@ struct _GridCoordinates{
 
 // Type: struct Goal;
 struct Goal{
-	struct RGVertex* pRGV;
+	struct RGVertex *pRGV;
 	int32_t elementIndex;
 	int32_t gridIndex;
 	struct _GridCoordinates gridLoc;
@@ -617,7 +617,7 @@ _T4ad:
 	__asm        jle    _T51c;
 // LINE 160:
 // Block start:
-	struct RGVertex* pRGV;
+	struct RGVertex *pRGV;
 	__asm        mov    eax, x;
 	__asm        mov    ecx, this;
 	__asm        mov    eax, [ecx+eax*4];
@@ -679,7 +679,7 @@ _T549:
 	__asm        jle    _T5b8;
 // LINE 171:
 // Block start:
-	struct RGVertex* pRGV;
+	struct RGVertex *pRGV;
 	__asm        mov    eax, x;
 	__asm        mov    ecx, this;
 	__asm        mov    eax, [ecx+eax*4];
@@ -722,11 +722,11 @@ _T5bd:
 }
 
 // FUNCTION: COPTER_D 0x0053c331
-void RoadGraph::GetNextGoal(struct Goal* pGoal) {
-	struct Edge* pEdge;
+void RoadGraph::GetNextGoal(struct Goal *pGoal) {
+	struct Edge *pEdge;
 	enum SlopeIndex slope;
-	struct RGVertex* pRGV;
-	struct Road* pRoad;
+	struct RGVertex *pRGV;
+	struct Road *pRoad;
 
 // LINE 199:
 	__asm        mov    eax, pGoal;
@@ -844,7 +844,7 @@ IntersectionKludge:
 // Block start:
 	unsigned char yindex;
 	unsigned char x;
-	struct RGVertex* pRGV;
+	struct RGVertex *pRGV;
 _T118:
 	__asm        mov    eax, pGoal;
 	__asm        mov    eax, [eax];
@@ -1052,12 +1052,12 @@ _T366:
 }
 
 // FUNCTION: COPTER_D 0x0053c69e
-void RoadGraph::PickPlaceOnRoad(struct Goal* pGoal, int32_t x, int32_t y) {
+void RoadGraph::PickPlaceOnRoad(struct Goal *pGoal, int32_t x, int32_t y) {
 	enum DirectionTypes tempDir;
 	int32_t validTurn;
 	unsigned char yindex;
-	struct Edge* pEdge;
-	struct RGVertex* pRGV;
+	struct Edge *pEdge;
+	struct RGVertex *pRGV;
 	int32_t loopCounter;
 
 // LINE 338:
@@ -1143,7 +1143,7 @@ _T92:
 // LINE 366:
 // Block start:
 	int32_t i;
-	struct Road* pRoad;
+	struct Road *pRoad;
 	__asm        mov    eax, pGoal;
 	__asm        mov    eax, [eax+0xE];
 	__asm        mov    [ebp-0x2C], eax;
@@ -1423,7 +1423,7 @@ _T91:
 	__asm        je     _T1a1;
 // LINE 435:
 // Block start:
-	struct RGVertex* pRGV;
+	struct RGVertex *pRGV;
 	__asm        xor    eax, eax;
 	__asm        mov    al, startLoc.y;
 	__asm        push   eax;
@@ -1983,7 +1983,7 @@ _T68d:
 }
 
 // FUNCTION: COPTER_D 0x0053d02c
-void RoadGraph::SamePlaceOtherDirection(struct Goal* pGoal) {
+void RoadGraph::SamePlaceOtherDirection(struct Goal *pGoal) {
 	enum DirIndex2 prevDir;
 	struct _GridCoordinates here;
 
@@ -2393,7 +2393,7 @@ _T37:
 // LINE 717:
 // Block start:
 	unsigned short fromTile;
-	struct RGVertex* pRGV;
+	struct RGVertex *pRGV;
 	__asm        mov    eax, x;
 	__asm        mov    ecx, this;
 	__asm        mov    eax, [ecx+eax*4];
@@ -2898,12 +2898,12 @@ _Tf6:
 }
 
 // FUNCTION: COPTER_D 0x0053d9d2
-void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
+void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex *pRGV) {
 	static const <NoType> = { /* <data@0x0053e04e> */ };
 	static const <NoType> = { /* <data@0x0053dd66> */ };
 	int32_t stepSize;
 	int32_t Offset;
-	struct Edge* pEdge;
+	struct Edge *pEdge;
 	unsigned short fromTile;
 
 // LINE 810:
@@ -3639,7 +3639,7 @@ _T927:
 }
 
 // FUNCTION: COPTER_D 0x0053e305
-void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, enum DirIndex2 currentDir, unsigned char x, unsigned char y, int32_t fDeadEnd) {
+void RoadGraph::FindNumRoadElements(struct RGVertex *pRGV, struct Edge *pEdge, enum DirIndex2 currentDir, unsigned char x, unsigned char y, int32_t fDeadEnd) {
 	static const <NoType> = { /* <data@0x0053e75f> */ };
 	int32_t repeatCount;
 	enum DirIndex2 returnStatus;
@@ -4130,7 +4130,7 @@ _T5a4:
 }
 
 // FUNCTION: COPTER_D 0x0053e8b0
-enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum DirIndex2* pNextDir, unsigned char x, unsigned char y) {
+enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum DirIndex2 *pNextDir, unsigned char x, unsigned char y) {
 	int32_t stepSize;
 	int32_t Offset;
 	unsigned short LocalTile;
@@ -6256,7 +6256,7 @@ _T15ab:
 }
 
 // FUNCTION: COPTER_D 0x0054048d
-void RoadGraph::FindRoads(int32_t x, int32_t y, struct RGVertex* pRGV) {
+void RoadGraph::FindRoads(int32_t x, int32_t y, struct RGVertex *pRGV) {
 	int32_t stepSize;
 	int32_t Offset;
 	unsigned short fromTile;
@@ -6414,17 +6414,17 @@ _T19d:
 }
 
 // FUNCTION: COPTER_D 0x00540636
-void RoadGraph::MakeRoad(struct RGVertex* pRGV, unsigned char x, unsigned char y, enum DirIndex2 currentDir) {
+void RoadGraph::MakeRoad(struct RGVertex *pRGV, unsigned char x, unsigned char y, enum DirIndex2 currentDir) {
 	int32_t repeatCount;
 	enum DirIndex2 returnStatus;
 	int32_t element;
-	struct Edge* pEdge;
+	struct Edge *pEdge;
 	enum DirIndex2 returnDir;
 	int32_t decrementFlag;
 	struct _GridCoordinates startLoc;
 	int32_t fStart;
 	short lastAlt;
-	struct Road* pRoad;
+	struct Road *pRoad;
 	int32_t deadEnd;
 
 // LINE 1259:
@@ -7341,7 +7341,7 @@ _Taf3:
 
 // FUNCTION: COPTER_D 0x00541130
 void RoadGraph::FindPlaceOnRoad(struct Goal& goal, struct _GridCoordinates currLoc) {
-	struct Road* pRoad;
+	struct Road *pRoad;
 
 // LINE 1414:
 	__asm        mov    eax, goal;

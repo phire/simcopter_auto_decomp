@@ -16,11 +16,11 @@ public:
 	short GetNextNearest(struct _GridCoordinates*);
 	void DecrementQuantityOfVehicleDispatched(int32_t);
 private:
-	struct _StructStation* stationList;
+	struct _StructStation *stationList;
 	int32_t quantityOfStations;
-	struct _StationHeapStruct* stationHeap;
+	struct _StationHeapStruct *stationHeap;
 	int32_t stationHeapSize;
-	struct _VehicleHeapStruct* vehicleHeap;
+	struct _VehicleHeapStruct *vehicleHeap;
 	int32_t vehicleHeapSize;
 	int32_t maxVehicles;
 	int32_t FindNearestRoadToStation(struct _GridCoordinates&);
@@ -87,7 +87,7 @@ protected:
 	long timeOfArrival;
 	struct _DYOBJ_INST dispatchIcon;
 	int32_t timeToEmergency;
-	class AutomobileClass* dispatchTarget;
+	class AutomobileClass *dispatchTarget;
 	unsigned char dispatchPath[256];
 	unsigned char dispatchPathIndex;
 	unsigned char dispatchPathLength;
@@ -133,7 +133,7 @@ public:
 // Type: struct _VehicleHeapStruct;
 struct _VehicleHeapStruct{
 	long cost;
-	class EmergencyVehicleClass* pVehicle;
+	class EmergencyVehicleClass *pVehicle;
 	struct _GridCoordinates loc;
 };
 
@@ -164,7 +164,7 @@ struct _StationHeapStruct{
 // Type: struct _VehicleHeapStruct (forward reference);
 struct _VehicleHeapStruct{
 	long cost;
-	class EmergencyVehicleClass* pVehicle;
+	class EmergencyVehicleClass *pVehicle;
 	struct _GridCoordinates loc;
 };
 
@@ -181,7 +181,7 @@ enum EmergencyType {
 
 // Type: struct Goal;
 struct Goal{
-	struct RGVertex* pRGV;
+	struct RGVertex *pRGV;
 	int32_t elementIndex;
 	int32_t gridIndex;
 	struct _GridCoordinates gridLoc;
@@ -206,7 +206,7 @@ class basic_string<char>{
 	using reference_pointer = class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char>* reference;
+	class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -312,11 +312,11 @@ class DigitalSound : public Sound
 protected:
 	int32_t nStreamingType;
 	int32_t nCompletionEstimationTimerSet;
-	static struct IDirectSound* lpDirectSound;
+	static struct IDirectSound *lpDirectSound;
 	uint32_t cbSize;
 	struct tWAVEFORMATEX waveFormatEx;
-	struct IDirectSoundBuffer* lpSound[8];
-	struct _STREAMBUFINFO* lpStreamBufferInfo;
+	struct IDirectSoundBuffer *lpSound[8];
+	struct _STREAMBUFINFO *lpStreamBufferInfo;
 	unsigned long dwDesiredBufferDescFlags;
 public:
 	void DigitalSound(long);
@@ -524,12 +524,12 @@ protected:
 	enum TurnIndex turnIndex;
 	int32_t currDist;
 	int32_t legOfTurn;
-	struct Point3d* pDirVector;
+	struct Point3d *pDirVector;
 	int32_t timeToLive;
 	int32_t fireTime;
 	long fireSeq;
 	long missionId;
-	struct _CELL_INFO* cptr;
+	struct _CELL_INFO *cptr;
 	enum AutomobileClass::PersonState personState;
 	int32_t spotlightHitCounter;
 	int32_t IsCarPersistant();
@@ -767,7 +767,7 @@ _Ta2:
 }
 
 // FUNCTION: COPTER_D 0x00539d67
-short S3GetNearestStation(class Station* station, struct _GridCoordinates gc, struct _GridCoordinates* result) {
+short S3GetNearestStation(class Station *station, struct _GridCoordinates gc, struct _GridCoordinates *result) {
 // LINE 49:
 	__asm        mov    eax, result;
 	__asm        push   eax;
@@ -780,7 +780,7 @@ short S3GetNearestStation(class Station* station, struct _GridCoordinates gc, st
 }
 
 // FUNCTION: COPTER_D 0x00539d87
-short S3GetNextNearest(class Station* station, struct _GridCoordinates* result) {
+short S3GetNextNearest(class Station *station, struct _GridCoordinates *result) {
 // LINE 57:
 	__asm        mov    eax, result;
 	__asm        push   eax;
@@ -1306,7 +1306,7 @@ _T151:
 }
 
 // FUNCTION: COPTER_D 0x0053a358
-void Station::SortVehiclesByDistanceFromDestination(struct _GridCoordinates destLoc, class EmergencyVehicleClass** vehicleList, int32_t vehicleListLength) {
+void Station::SortVehiclesByDistanceFromDestination(struct _GridCoordinates destLoc, class EmergencyVehicleClass **vehicleList, int32_t vehicleListLength) {
 	int32_t deltay;
 	int32_t deltax;
 	int32_t i;
@@ -1446,7 +1446,7 @@ _T13c:
 }
 
 // FUNCTION: COPTER_D 0x0053a4a0
-class EmergencyVehicleClass* Station::FindAvailableVehicle(enum EmergencyLevel responseLevel, class EmergencyVehicleClass** vehicleList, int32_t vehicleListLength) {
+class EmergencyVehicleClass* Station::FindAvailableVehicle(enum EmergencyLevel responseLevel, class EmergencyVehicleClass **vehicleList, int32_t vehicleListLength) {
 	int32_t code;
 	int32_t i;
 
@@ -1521,7 +1521,7 @@ _Tbf:
 }
 
 // FUNCTION: COPTER_D 0x0053a566
-void Station::StationHeapInsert(const struct _StationHeapStruct* pInsertStruct) {
+void Station::StationHeapInsert(const struct _StationHeapStruct *pInsertStruct) {
 	int32_t index;
 	struct _StationHeapStruct tempStruct;
 
@@ -1606,7 +1606,7 @@ _Tc5:
 }
 
 // FUNCTION: COPTER_D 0x0053a637
-void Station::StationHeapRemove(struct _StationHeapStruct* pRemovedStruct) {
+void Station::StationHeapRemove(struct _StationHeapStruct *pRemovedStruct) {
 	int32_t index;
 	int32_t child;
 	int32_t parent;
@@ -1745,7 +1745,7 @@ _T13e:
 }
 
 // FUNCTION: COPTER_D 0x0053a798
-void Station::VehicleHeapInsert(const struct _VehicleHeapStruct* pInsertStruct) {
+void Station::VehicleHeapInsert(const struct _VehicleHeapStruct *pInsertStruct) {
 	int32_t index;
 	struct _VehicleHeapStruct tempStruct;
 
@@ -1847,7 +1847,7 @@ _Tfc:
 }
 
 // FUNCTION: COPTER_D 0x0053a8a0
-void Station::VehicleHeapRemove(struct _VehicleHeapStruct* pRemovedStruct) {
+void Station::VehicleHeapRemove(struct _VehicleHeapStruct *pRemovedStruct) {
 	int32_t index;
 	int32_t child;
 	int32_t parent;
@@ -2014,7 +2014,7 @@ _T18f:
 }
 
 // FUNCTION: COPTER_D 0x0053aa5f
-short Station::GetNearestStation(struct _GridCoordinates gc, struct _GridCoordinates* result) {
+short Station::GetNearestStation(struct _GridCoordinates gc, struct _GridCoordinates *result) {
 // LINE 385:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(gc.x);
 	__asm        push   eax;
@@ -2057,7 +2057,7 @@ _T67:
 }
 
 // FUNCTION: COPTER_D 0x0053aacd
-short Station::GetNextNearest(struct _GridCoordinates* result) {
+short Station::GetNextNearest(struct _GridCoordinates *result) {
 // LINE 404:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC], 0;
@@ -2126,7 +2126,7 @@ _T46:
 }
 
 // FUNCTION: COPTER_D 0x0053ab93
-int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum EmergencyType responseType, enum EmergencyLevel responseLevel, class EmergencyVehicleClass** vehicleList, int32_t vehicleListLength) {
+int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum EmergencyType responseType, enum EmergencyLevel responseLevel, class EmergencyVehicleClass **vehicleList, int32_t vehicleListLength) {
 	struct Goal startGoal1;
 	struct Goal startGoal2;
 	struct _RGIndex destVert;
@@ -2136,7 +2136,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	struct Goal destGoal1;
 	int32_t pathFound;
 	struct Goal destGoal2;
-	class EmergencyVehicleClass* availableVehicle;
+	class EmergencyVehicleClass *availableVehicle;
 	static const class DigitalSound errorMsgSound = { /* <data@0x006351d0> */ };
 	struct _StationHeapStruct stationHeapStruct;
 	struct Goal result;
@@ -2739,7 +2739,7 @@ _T873:
 	__asm        je     _Ta84;
 // LINE 532:
 // Block start:
-	struct _StructStation* sS;
+	struct _StructStation *sS;
 	__asm        lea    eax, stationHeapStruct.cost;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
@@ -2772,7 +2772,7 @@ _T873:
 	__asm        jne    _T9ac;
 // LINE 541:
 // Block start:
-	struct RGVertex* pRGV;
+	struct RGVertex *pRGV;
 	__asm        lea    eax, destGoal2.pRGV;
 	__asm        push   eax;
 	__asm        lea    eax, destGoal1.pRGV;
@@ -3346,7 +3346,7 @@ _T1fa:
 	__asm        jne    _T2c2;
 // LINE 654:
 // Block start:
-	struct _StructStation* pStation;
+	struct _StructStation *pStation;
 	int32_t direction;
 	__asm        mov    eax, x;
 	__asm        inc    eax;

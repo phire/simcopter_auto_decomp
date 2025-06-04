@@ -25,9 +25,9 @@ public:
 	void GameModeCoreData();
 	virtual void ~GameModeCoreData(); // vtable+0x0
 	long lPauseCount;
-	struct SparkalColor* pColorTable;
-	class CGameApp* pGameApp;
-	class ScreenWindow* pScreenWindow;
+	struct SparkalColor *pColorTable;
+	class CGameApp *pGameApp;
+	class ScreenWindow *pScreenWindow;
 };
 
 // Type: class GameModeMainMenuData (forward reference);
@@ -41,7 +41,7 @@ public:
 	int32_t CreateAllSurfaces();
 	int32_t DestroyAllSurfaces();
 	void Shutdown();
-	class SmackerBackBuffer* myVideoBuffer;
+	class SmackerBackBuffer *myVideoBuffer;
 };
 
 // Type: char;
@@ -111,7 +111,7 @@ public:
 	int32_t CreateAllSurfaces();
 	int32_t DestroyAllSurfaces();
 	void Shutdown();
-	class SmackerBackBuffer* myVideoBuffer;
+	class SmackerBackBuffer *myVideoBuffer;
 	int32_t nSubMode;
 	class MRect rectVideo;
 	int32_t bFirstCareerCityData;
@@ -155,9 +155,9 @@ protected:
 	int32_t bAllowCancel;
 	class SmackerBackBuffer mySmackerBackBuffers[3];
 	void * __ptr32 myPlatformWindow;
-	class TextWindow* cityNameTextWindow;
-	class TextWindow* cityLevelTextWindow;
-	class CBackBuffer* mySelectionImage;
+	class TextWindow *cityNameTextWindow;
+	class TextWindow *cityLevelTextWindow;
+	class CBackBuffer *mySelectionImage;
 };
 
 // Type: long *;
@@ -212,20 +212,20 @@ public:
 	int32_t bShowingPanels;
 	int32_t bShowingEquipment;
 	int32_t bUserWasInHelicopterOnLastCheck;
-	class CBackBuffer* pStretchBuffer;
-	class SkyImage* pSkyImage;
-	class GraphicWindow* pPanel0;
-	class GraphicWindow* pPanel1;
-	class GraphicWindow* pPanel2;
-	class GraphicWindow* pPanel3;
-	class RadioCompassWindow* pPanel4;
-	class MapWindow* pPanel5;
-	class DialWindow* pPanel6;
-	class GraphicWindow* pFlap0;
-	class GraphicWindow* pFlap1;
-	class GraphicWindow* pFlap2;
-	class GraphicWindow* pFlap3;
-	class PassengerWindow* pPassengerWindow;
+	class CBackBuffer *pStretchBuffer;
+	class SkyImage *pSkyImage;
+	class GraphicWindow *pPanel0;
+	class GraphicWindow *pPanel1;
+	class GraphicWindow *pPanel2;
+	class GraphicWindow *pPanel3;
+	class RadioCompassWindow *pPanel4;
+	class MapWindow *pPanel5;
+	class DialWindow *pPanel6;
+	class GraphicWindow *pFlap0;
+	class GraphicWindow *pFlap1;
+	class GraphicWindow *pFlap2;
+	class GraphicWindow *pFlap3;
+	class PassengerWindow *pPassengerWindow;
 	struct CommandSystem commandSystem;
 };
 
@@ -314,7 +314,7 @@ struct tagUserPersonalInfo{
 class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
 {
 protected:
-	struct list<Shortcut>::list_node* node;
+	struct list<Shortcut>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -352,7 +352,7 @@ public:
 	void Awake();
 	void CreatePalette();
 	void UsePalette();
-	class HangarWindow* pHangarWindow;
+	class HangarWindow *pHangarWindow;
 	struct CommandSystem commandSystem;
 };
 
@@ -370,7 +370,7 @@ public:
 	void Awake();
 	void CreatePalette();
 	void UsePalette();
-	class CatalogWindow* pCatalogWindow;
+	class CatalogWindow *pCatalogWindow;
 	struct CommandSystem commandSystem;
 };
 
@@ -388,7 +388,7 @@ public:
 	void Awake();
 	void CreatePalette();
 	void UsePalette();
-	class MissionLogWindow* pMissionLogWindow;
+	class MissionLogWindow *pMissionLogWindow;
 	struct CommandSystem commandSystem;
 };
 
@@ -406,7 +406,7 @@ public:
 	void Awake();
 	void CreatePalette();
 	void UsePalette();
-	class InventoryWindow* pInventoryWindow;
+	class InventoryWindow *pInventoryWindow;
 	struct CommandSystem commandSystem;
 };
 
@@ -423,9 +423,9 @@ public:
 	void GameModeCoreData();
 	virtual void ~GameModeCoreData(); // vtable+0x0
 	long lPauseCount;
-	struct SparkalColor* pColorTable;
-	class CGameApp* pGameApp;
-	class ScreenWindow* pScreenWindow;
+	struct SparkalColor *pColorTable;
+	class CGameApp *pGameApp;
+	class ScreenWindow *pScreenWindow;
 };
 
 // Type: class GraphicWindow (forward reference);
@@ -670,7 +670,7 @@ void GameModeMainMenuData::UsePalette() {
 // FUNCTION: COPTER_D 0x004bd94a
 int32_t GameModeMainMenuData::CreateAllSurfaces() {
 	struct UserMenuWindowDescription tempUMWD;
-	class UserMenuWindow* myUserMenuWindow;
+	class UserMenuWindow *myUserMenuWindow;
 
 // LINE 198:
 	__asm        push   0x10;
@@ -1062,7 +1062,7 @@ void GameModePickCareerCityData::UsePalette() {
 
 // FUNCTION: COPTER_D 0x004bde8b
 int32_t GameModePickCareerCityData::CreateAllSurfaces() {
-	class CareerWindow* myCareerWindow;
+	class CareerWindow *myCareerWindow;
 	long * lNewCitiesPointer;
 
 // LINE 303:
@@ -2447,7 +2447,7 @@ _T73e:
 void GameModePlayData::MakeSureHeliHasProperFlaps() {
 	class MRect rectFlap0;
 	class MRect rectFlap2;
-	struct tagUserPersonalInfo* userPersonalInfo;
+	struct tagUserPersonalInfo *userPersonalInfo;
 	class MRect rectFlap1;
 	class MRect rectFlap3;
 

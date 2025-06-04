@@ -23,8 +23,8 @@ public:
 	static void MakeStringFromLogData(struct tagLogBase*, class basic_string<char>&, int32_t);
 	// calltype: NearC
 	static long GetStringIDFromLogEvent(const struct tagLogMissionEvent*);
-	class list<tagLogBase *>* myLogBasePtrList;
-	class MessageDisplayManager* myMessageDisplayManager;
+	class list<tagLogBase *> *myLogBasePtrList;
+	class MessageDisplayManager *myMessageDisplayManager;
 	long lMaxEntries;
 };
 
@@ -49,22 +49,22 @@ public:
 	static void MakeStringFromLogData(struct tagLogBase*, class basic_string<char>&, int32_t);
 	// calltype: NearC
 	static long GetStringIDFromLogEvent(const struct tagLogMissionEvent*);
-	class list<tagLogBase *>* myLogBasePtrList;
-	class MessageDisplayManager* myMessageDisplayManager;
+	class list<tagLogBase *> *myLogBasePtrList;
+	class MessageDisplayManager *myMessageDisplayManager;
 	long lMaxEntries;
 };
 
 // Type: struct list<tagLogBase *>::list_node_buffer (forward reference);
 struct list<tagLogBase *>::list_node_buffer{
 	void * __ptr32 next_buffer;
-	struct list<tagLogBase *>::list_node* buffer;
+	struct list<tagLogBase *>::list_node *buffer;
 };
 
 // Type: struct list<tagLogBase *>::list_node (forward reference);
 struct list<tagLogBase *>::list_node{
 	void * __ptr32 next;
 	void * __ptr32 prev;
-	struct tagLogBase* data;
+	struct tagLogBase *data;
 };
 
 // Type: uint32_t;
@@ -103,8 +103,8 @@ public:
 	static void MakeStringFromLogData(struct tagLogBase*, class basic_string<char>&, int32_t);
 	// calltype: NearC
 	static long GetStringIDFromLogEvent(const struct tagLogMissionEvent*);
-	class list<tagLogBase *>* myLogBasePtrList;
-	class MessageDisplayManager* myMessageDisplayManager;
+	class list<tagLogBase *> *myLogBasePtrList;
+	class MessageDisplayManager *myMessageDisplayManager;
 	long lMaxEntries;
 };
 
@@ -213,7 +213,7 @@ struct tagLogBase{
 class list<tagLogBase *>::iterator : public bidirectional_iterator<tagLogBase *,int>
 {
 protected:
-	struct list<tagLogBase *>::list_node* node;
+	struct list<tagLogBase *>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -262,7 +262,7 @@ class basic_string<char>{
 	using reference_pointer = class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char>* reference;
+	class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -367,7 +367,7 @@ class list<tagLogBase *>{
 	struct list<tagLogBase *>::list_node{
 		void * __ptr32 next;
 		void * __ptr32 prev;
-		struct tagLogBase* data;
+		struct tagLogBase *data;
 	};
 protected:
 	static class allocator<list<tagLogBase *>::list_node> list_node_allocator;
@@ -385,27 +385,27 @@ protected:
 	uint32_t buffer_size();
 	struct list<tagLogBase *>::list_node_buffer{
 		void * __ptr32 next_buffer;
-		struct list<tagLogBase *>::list_node* buffer;
+		struct list<tagLogBase *>::list_node *buffer;
 	};
 	using buffer_allocator_type = class allocator<list<tagLogBase *>::list_node_buffer>;
 	using buffer_pointer = struct list<tagLogBase *>::list_node_buffer*;
 protected:
 	static class allocator<list<tagLogBase *>::list_node_buffer> buffer_allocator;
-	static struct list<tagLogBase *>::list_node_buffer* buffer_list;
-	static struct list<tagLogBase *>::list_node* free_list;
-	static struct list<tagLogBase *>::list_node* next_avail;
-	static struct list<tagLogBase *>::list_node* last;
+	static struct list<tagLogBase *>::list_node_buffer *buffer_list;
+	static struct list<tagLogBase *>::list_node *free_list;
+	static struct list<tagLogBase *>::list_node *next_avail;
+	static struct list<tagLogBase *>::list_node *last;
 	void add_new_buffer();
 	static uint32_t number_of_lists;
 	void deallocate_buffers();
 	struct list<tagLogBase *>::list_node* get_node();
 	void put_node(struct list<tagLogBase *>::list_node*);
-	struct list<tagLogBase *>::list_node* node;
+	struct list<tagLogBase *>::list_node *node;
 	uint32_t length;
 	class list<tagLogBase *>::iterator : public bidirectional_iterator<tagLogBase *,int>
 	{
 	protected:
-		struct list<tagLogBase *>::list_node* node;
+		struct list<tagLogBase *>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -421,7 +421,7 @@ protected:
 	class list<tagLogBase *>::const_iterator : public bidirectional_iterator<tagLogBase *,int>
 	{
 	protected:
-		struct list<tagLogBase *>::list_node* node;
+		struct list<tagLogBase *>::list_node *node;
 	public:
 		void const_iterator(const class list<tagLogBase *>::iterator&);
 		void const_iterator();
@@ -489,7 +489,7 @@ class basic_string<char>{
 	using reference_pointer = class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char>* reference;
+	class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -717,7 +717,7 @@ static void $E55() {
 }
 
 // FUNCTION: COPTER_D 0x004ebc2b
-void S3AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMessage) {
+void S3AddLogEntry(struct tagLogBase *logData, int32_t bShowUserMessage) {
 // LINE 37:
 	__asm        push   1;
 	__asm        mov    eax, bShowUserMessage;
@@ -1177,7 +1177,7 @@ int32_t LogManager::WriteLogToFile(char * szFilePath) {
 }
 
 // FUNCTION: COPTER_D 0x004ec1dd
-int32_t LogManager::ReadFromMIFF(class MIFF* miffReader) {
+int32_t LogManager::ReadFromMIFF(class MIFF *miffReader) {
 	struct tagLogBase tempLogBase;
 	long lPresentRecordDataLength;
 
@@ -1246,7 +1246,7 @@ _T96:
 }
 
 // FUNCTION: COPTER_D 0x004ec284
-int32_t LogManager::WriteToMIFF(class MIFF* miffWriter) {
+int32_t LogManager::WriteToMIFF(class MIFF *miffWriter) {
 	class list<tagLogBase *>::iterator iterator;
 
 
@@ -1310,8 +1310,8 @@ _Tbc:
 // LINE 130:
 // Block start:
 	long lStringLength;
-	struct tagLogString* tempLogStringDestination;
-	struct tagLogString* tempLogStringSource;
+	struct tagLogString *tempLogStringDestination;
+	struct tagLogString *tempLogStringSource;
 	char chStringBuffer[276];
 	__asm        jmp    near ptr 0x004EC359;
 
@@ -1507,7 +1507,7 @@ _T356:
 }
 
 // FUNCTION: COPTER_D 0x004ec5f0
-long LogManager::GetSizeOfLogRecord(struct tagLogBase* logRecord) {
+long LogManager::GetSizeOfLogRecord(struct tagLogBase *logRecord) {
 // LINE 158:
 	__asm        mov    eax, logRecord;
 	__asm        cmp    dword ptr [eax], 1;
@@ -1544,7 +1544,7 @@ _T64:
 }
 
 // FUNCTION: COPTER_D 0x004ec65b
-int32_t LogManager::ReadCurrentRecordFromMIFF(class MIFF* miffReader) {
+int32_t LogManager::ReadCurrentRecordFromMIFF(class MIFF *miffReader) {
 	struct tagLogBase tempLogBase;
 	char chBuffer[56];
 
@@ -1561,7 +1561,7 @@ int32_t LogManager::ReadCurrentRecordFromMIFF(class MIFF* miffReader) {
 	__asm        jne    _T7d;
 // LINE 188:
 // Block start:
-	struct tagLogString* tempLogString;
+	struct tagLogString *tempLogString;
 	char chStringBuffer[276];
 	__asm        push   0x114;
 	__asm        lea    eax, chStringBuffer[0];
@@ -1612,7 +1612,7 @@ _Ta1:
 }
 
 // FUNCTION: COPTER_D 0x004ec70d
-int32_t LogManager::ValidateLogEntry(struct tagLogBase* logData) {
+int32_t LogManager::ValidateLogEntry(struct tagLogBase *logData) {
 // LINE 208:
 	__asm        mov    eax, logData;
 	__asm        cmp    dword ptr [eax], 0;
@@ -1632,7 +1632,7 @@ _T30:
 }
 
 // FUNCTION: COPTER_D 0x004ec749
-int32_t LogManager::AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMessage, int32_t bSetTime) {
+int32_t LogManager::AddLogEntry(struct tagLogBase *logData, int32_t bShowUserMessage, int32_t bSetTime) {
 // LINE 220:
 	__asm        jmp    near ptr 0x004EC760;
 
@@ -1664,7 +1664,7 @@ _T5e:
 	__asm        jne    _T179;
 // LINE 227:
 // Block start:
-	struct tagLogString* newLogString;
+	struct tagLogString *newLogString;
 	char * szNewStringPointer;
 	__asm        push   0x14;
 	__asm        call   operator new;
@@ -1777,7 +1777,7 @@ _T179:
 	__asm        ja     _T24c;
 // LINE 236:
 // Block start:
-	struct tagLogMissionEvent* newLogMissionEvent;
+	struct tagLogMissionEvent *newLogMissionEvent;
 	__asm        push   0x14;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
@@ -1850,7 +1850,7 @@ _T24c:
 	__asm        jne    _T32e;
 // LINE 241:
 // Block start:
-	struct tagLogCityEnterExit* newLogCityEnterExit;
+	struct tagLogCityEnterExit *newLogCityEnterExit;
 	__asm        push   0x30;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
@@ -1919,7 +1919,7 @@ _T24c:
 	__asm        jmp    _T41f;
 // LINE 246:
 // Block start:
-	struct tagLogBase* newLogBase;
+	struct tagLogBase *newLogBase;
 _T32e:
 	__asm        push   0xC;
 	__asm        call   operator new;
@@ -2093,7 +2093,7 @@ _T577:
 int32_t LogManager::SortLogEntriesByDate() {
 	class list<tagLogBase *>::iterator currentLowest;
 	class list<tagLogBase *>::iterator iterator;
-	class list<tagLogBase *>* newLogBasePtrList;
+	class list<tagLogBase *> *newLogBasePtrList;
 
 // LINE 266:
 	__asm        push   8;
@@ -2510,7 +2510,7 @@ _T512:
 int32_t LogManager::SortLogEntriesByType() {
 	class list<tagLogBase *>::iterator currentLowest;
 	class list<tagLogBase *>::iterator iterator;
-	class list<tagLogBase *>* newLogBasePtrList;
+	class list<tagLogBase *> *newLogBasePtrList;
 
 // LINE 292:
 	__asm        push   8;
@@ -3325,7 +3325,7 @@ _T1f1:
 }
 
 // FUNCTION: COPTER_D 0x004edb4e
-void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_string<char>& sCurrentText, int32_t bPrintTime) {
+void LogManager::MakeStringFromLogData(struct tagLogBase *logData, class basic_string<char>& sCurrentText, int32_t bPrintTime) {
 	class MTimeLocalized tempTime;
 	char szBuffer1[256];
 	char szTime[64];
@@ -3599,7 +3599,7 @@ _T39f:
 	__asm        jne    _T3fb;
 // LINE 381:
 // Block start:
-	const struct tagLogString* lS;
+	const struct tagLogString *lS;
 	__asm        mov    eax, logData;
 	__asm        mov    lS, eax;
 	__asm        mov    eax, lS;
@@ -3635,7 +3635,7 @@ _T3fb:
 	__asm        ja     _T4ed;
 // LINE 386:
 // Block start:
-	const struct tagLogMissionEvent* lME;
+	const struct tagLogMissionEvent *lME;
 	__asm        mov    eax, logData;
 	__asm        mov    lME, eax;
 // LINE 387:
@@ -3709,7 +3709,7 @@ _T4ed:
 	__asm        jne    _T606;
 // LINE 392:
 // Block start:
-	const struct tagLogCityEnterExit* lCEE;
+	const struct tagLogCityEnterExit *lCEE;
 	__asm        mov    eax, logData;
 	__asm        mov    lCEE, eax;
 // LINE 393:
@@ -3885,7 +3885,7 @@ _T711:
 }
 
 // FUNCTION: COPTER_D 0x004ee264
-long LogManager::GetStringIDFromLogEvent(const struct tagLogMissionEvent* lME) {
+long LogManager::GetStringIDFromLogEvent(const struct tagLogMissionEvent *lME) {
 // LINE 416:
 	__asm        mov    eax, lME;
 	__asm        mov    eax, [eax];
@@ -3956,25 +3956,25 @@ uint32_t list<tagLogBase *>::number_of_lists = 0;
 
 // Contribution: 3:0001d888-0001d88b Module: 178, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005b4888
-struct list<tagLogBase *>::list_node* list<tagLogBase *>::last = { 0 /* todo */ };
+struct list<tagLogBase *>::list_node *list<tagLogBase *>::last = { 0 /* todo */ };
 
 
 
 // Contribution: 3:0001d88c-0001d88f Module: 178, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005b488c
-struct list<tagLogBase *>::list_node* list<tagLogBase *>::next_avail = { 0 /* todo */ };
+struct list<tagLogBase *>::list_node *list<tagLogBase *>::next_avail = { 0 /* todo */ };
 
 
 
 // Contribution: 3:0001d890-0001d893 Module: 178, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005b4890
-struct list<tagLogBase *>::list_node* list<tagLogBase *>::free_list = { 0 /* todo */ };
+struct list<tagLogBase *>::list_node *list<tagLogBase *>::free_list = { 0 /* todo */ };
 
 
 
 // Contribution: 3:0001d894-0001d897 Module: 178, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005b4894
-struct list<tagLogBase *>::list_node_buffer* list<tagLogBase *>::buffer_list = { 0 /* todo */ };
+struct list<tagLogBase *>::list_node_buffer *list<tagLogBase *>::buffer_list = { 0 /* todo */ };
 
 
 

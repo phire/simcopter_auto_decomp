@@ -395,11 +395,11 @@ struct Behavior::Node{
 // VTABLE: COPTER_D 0x005936d8
 class Behavior{
 protected:
-	class NResFile* fGlobFile;
-	class NResFile* fPrivFile;
-	class StdResLoader* fGlobalTrees;
-	class StdResLoader* fPrivateTrees;
-	class Language* fLanguage;
+	class NResFile *fGlobFile;
+	class NResFile *fPrivFile;
+	class StdResLoader *fGlobalTrees;
+	class StdResLoader *fPrivateTrees;
+	class Language *fLanguage;
 	void (*fSwizzler)(void * __ptr32, long);
 	enum /* __unnamed */ {
 		kPrimitiveBase = 0,
@@ -493,7 +493,7 @@ void YObjLang::YObjLang(unsigned char * fileName) {
 }
 
 // FUNCTION: COPTER_D 0x00560a02
-void YObjLang::SwizzleTreeParam(short id, struct Behavior::NodeParameter* param) {
+void YObjLang::SwizzleTreeParam(short id, struct Behavior::NodeParameter *param) {
 // LINE 53:
 	__asm        movsx  eax, id;
 	__asm        mov    [ebp-8], eax;
@@ -508,7 +508,7 @@ _T15:
 	__asm        jmp    _Tb2;
 // LINE 59:
 // Block start:
-	struct YObjLang::AttrParam* par;
+	struct YObjLang::AttrParam *par;
 _T26:
 	__asm        mov    eax, param;
 	__asm        mov    par, eax;
@@ -572,7 +572,7 @@ _Tb2:
 
 // FUNCTION: COPTER_D 0x00560abe
 void YObjLang::SwizzleTree(void * __ptr32 treevoid, long size) {
-	struct Behavior::Tree* tree;
+	struct Behavior::Tree *tree;
 
 // LINE 76:
 	__asm        mov    eax, treevoid;
@@ -628,7 +628,7 @@ void YObjLang::GetPrimName(short primCode, unsigned char * str) {
 }
 
 // FUNCTION: COPTER_D 0x00560b6f
-unsigned short YObjLang::IsSingleExit(struct Behavior::Node* node) {
+unsigned short YObjLang::IsSingleExit(struct Behavior::Node *node) {
 // LINE 129:
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x00560B83;
@@ -636,7 +636,7 @@ unsigned short YObjLang::IsSingleExit(struct Behavior::Node* node) {
 }
 
 // FUNCTION: COPTER_D 0x00560b8a
-void YObjLang::GetNodeText(class Behavior* bhav, struct Behavior::Node* node, unsigned char * str) {
+void YObjLang::GetNodeText(class Behavior *bhav, struct Behavior::Node *node, unsigned char * str) {
 // LINE 478:
 	__asm        jmp    near ptr 0x00560B9B;
 }

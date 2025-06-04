@@ -7,7 +7,7 @@
 class PaletteBuffer : public CBackBuffer
 {
 public:
-	struct SparkalColor* paletteColors;
+	struct SparkalColor *paletteColors;
 	void PaletteBuffer(struct SparkalColor*);
 	void PaletteBuffer();
 	void ~PaletteBuffer();
@@ -133,15 +133,15 @@ public:
 protected:
 	int32_t bSurfacePrimary;
 	int32_t bSurfaceTransparent;
-	class MFont* mFont;
+	class MFont *mFont;
 	struct SparkalColor colorFontCurrent;
 	struct SparkalColor colorCurrent;
 	int32_t nColorIndexFontCurrent;
 	int32_t nColorIndexCurrent;
 	int32_t nColorIndexTransparent;
-	struct IDirectDrawSurface* mpFrontSurface;
-	struct IDirectDrawSurface* mpBackSurface;
-	struct IDirectDrawPalette* mpPalette;
+	struct IDirectDrawSurface *mpFrontSurface;
+	struct IDirectDrawSurface *mpBackSurface;
+	struct IDirectDrawPalette *mpPalette;
 	struct _DDSURFACEDESC mDDdesc;
 	struct _DDBLTFX mDDBltFx;
 	void * __ptr32 hPen;
@@ -280,7 +280,7 @@ _Tdf:
 }
 
 // FUNCTION: COPTER_D 0x00447340
-void PaletteBuffer::PaletteBuffer(struct SparkalColor* newSparkalColors) {
+void PaletteBuffer::PaletteBuffer(struct SparkalColor *newSparkalColors) {
 	char szTypeFaceName[64];
 
 
@@ -400,7 +400,7 @@ _T43:
 }
 
 // FUNCTION: COPTER_D 0x004474ab
-int32_t PaletteBuffer::SetPalette(const struct SparkalColor* pColors) {
+int32_t PaletteBuffer::SetPalette(const struct SparkalColor *pColors) {
 	int32_t i;
 
 // LINE 81:
@@ -432,7 +432,7 @@ _T45:
 int32_t PaletteBuffer::SetPalette() {
 	long hResult;
 	int32_t i;
-	struct tagPALETTEENTRY* paletteEntries;
+	struct tagPALETTEENTRY *paletteEntries;
 
 // LINE 100:
 	__asm        push   0x400;
@@ -636,7 +636,7 @@ _T15f:
 }
 
 // FUNCTION: COPTER_D 0x0044774b
-unsigned long PaletteBuffer::Compose(class IFlatImage* pDestImage, long DestLeft, long DestTop, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
+unsigned long PaletteBuffer::Compose(class IFlatImage *pDestImage, long DestLeft, long DestTop, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
 // LINE 162:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];

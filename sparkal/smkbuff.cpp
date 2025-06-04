@@ -39,8 +39,8 @@ public:
 	int32_t nDestWidth;
 	int32_t nDestHeight;
 protected:
-	struct SmackBufTag* smkbuf;
-	struct SmackTag* smk;
+	struct SmackBufTag *smkbuf;
+	struct SmackTag *smk;
 	char szSmackFilePath[260];
 };
 
@@ -104,8 +104,8 @@ protected:
 	long mHeight;
 	long mWidth;
 	unsigned long mStyle;
-	class ICommander* mpCommander;
-	class ScreenBuffer* mpBackBuffer;
+	class ICommander *mpCommander;
+	class ScreenBuffer *mpBackBuffer;
 	void * __ptr32 mWindow;
 	// calltype: NearStd
 	virtual long MySparkalWindowProc(void * __ptr32, uint32_t, uint32_t, long); // vtable+0x30
@@ -132,11 +132,11 @@ class VRBmpSmackerBuffer : public SmackerBuffer
 public:
 	char * szVRBmpName;
 	int32_t nVRBmpFlags;
-	struct VRResource* vrOriginalResource;
-	struct VRBmpHdr* bmpOriginalHeader;
+	struct VRResource *vrOriginalResource;
+	struct VRBmpHdr *bmpOriginalHeader;
 	int32_t bPreserveBmp;
 	char * chVRBmpHeader;
-	struct VRBmpHdr* bmpHeader;
+	struct VRBmpHdr *bmpHeader;
 	char * bmpDataStart;
 	int32_t bPreserveSmackerBuffer;
 	void VRBmpSmackerBuffer(char *, int32_t, int32_t, int32_t);
@@ -251,8 +251,8 @@ public:
 	int32_t nDestWidth;
 	int32_t nDestHeight;
 protected:
-	struct SmackBufTag* smkbuf;
-	struct SmackTag* smk;
+	struct SmackBufTag *smkbuf;
+	struct SmackTag *smk;
 	char szSmackFilePath[260];
 };
 
@@ -304,15 +304,15 @@ public:
 protected:
 	int32_t bSurfacePrimary;
 	int32_t bSurfaceTransparent;
-	class MFont* mFont;
+	class MFont *mFont;
 	struct SparkalColor colorFontCurrent;
 	struct SparkalColor colorCurrent;
 	int32_t nColorIndexFontCurrent;
 	int32_t nColorIndexCurrent;
 	int32_t nColorIndexTransparent;
-	struct IDirectDrawSurface* mpFrontSurface;
-	struct IDirectDrawSurface* mpBackSurface;
-	struct IDirectDrawPalette* mpPalette;
+	struct IDirectDrawSurface *mpFrontSurface;
+	struct IDirectDrawSurface *mpBackSurface;
+	struct IDirectDrawPalette *mpPalette;
 	struct _DDSURFACEDESC mDDdesc;
 	struct _DDBLTFX mDDBltFx;
 	void * __ptr32 hPen;
@@ -792,7 +792,7 @@ void SmackerBuffer::SetWindow(void * __ptr32 myNewWindow) {
 }
 
 // FUNCTION: COPTER_D 0x004980b3
-void SmackerBuffer::SetWindow(class CSparkalWindow* myNewWindow) {
+void SmackerBuffer::SetWindow(class CSparkalWindow *myNewWindow) {
 // LINE 252:
 	__asm        jmp    near ptr 0x004980C4;
 
@@ -806,7 +806,7 @@ void SmackerBuffer::SetWindow(class CSparkalWindow* myNewWindow) {
 }
 
 // FUNCTION: COPTER_D 0x004980df
-void SmackerBuffer::CenterBufferInRect(struct SparkalRect* rectParent) {
+void SmackerBuffer::CenterBufferInRect(struct SparkalRect *rectParent) {
 	int32_t nActualDestinationHeight;
 	int32_t nActualDestinationWidth;
 
@@ -1176,7 +1176,7 @@ _T2fc:
 
 // FUNCTION: COPTER_D 0x00498489
 void * __ptr32 VRSmackerInit(char * szSmackerFilePath, int32_t bPreserveBufferMemory) {
-	class VRBmpSmackerBuffer* tempVRBmpSmackerBuffer;
+	class VRBmpSmackerBuffer *tempVRBmpSmackerBuffer;
 
 // LINE 427:
 	__asm        push   0x164;
@@ -2449,7 +2449,7 @@ _T187:
 }
 
 // FUNCTION: COPTER_D 0x00499396
-unsigned long SmackerBackBuffer::Compose(class IFlatImage* pDestImage, long DestLeft, long DestTop, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
+unsigned long SmackerBackBuffer::Compose(class IFlatImage *pDestImage, long DestLeft, long DestTop, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
 // LINE 1015:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax-0x13C], 0;
@@ -2814,7 +2814,7 @@ _T3d0:
 }
 
 // FUNCTION: COPTER_D 0x0049976d
-unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage* pDestImage, long DestLeft, long DestTop, long DestRight, long DestBottom, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
+unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage *pDestImage, long DestLeft, long DestTop, long DestRight, long DestBottom, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
 // LINE 1105:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax-0x13C], 0;
@@ -3175,7 +3175,7 @@ _T3c1:
 }
 
 // FUNCTION: COPTER_D 0x00499b35
-void SmackerBackBuffer::BltParts(class IFlatImage* pDestImage, long DestLeft, long DestTop, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
+void SmackerBackBuffer::BltParts(class IFlatImage *pDestImage, long DestLeft, long DestTop, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
 	char * pOriginalSourceImageBits;
 	unsigned long nLastRecty2;
 	unsigned long nLastRectw;
@@ -3408,7 +3408,7 @@ _T220:
 }
 
 // FUNCTION: COPTER_D 0x00499d5c
-void SmackerBackBuffer::BltAll(class IFlatImage* pDestImage, long DestLeft, long DestTop, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
+void SmackerBackBuffer::BltAll(class IFlatImage *pDestImage, long DestLeft, long DestTop, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
 	int32_t nSourceImageWidth;
 	int32_t nSourceImageHeight;
 	int32_t i;

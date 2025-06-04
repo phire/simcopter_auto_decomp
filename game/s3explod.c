@@ -10,19 +10,19 @@ struct _EXPLODE_DATA{
 	struct Point3d loc;
 	long animseq;
 	int32_t firstface;
-	struct _DYOBJ_INST* dy2d;
-	struct _DYOBJ_INST* dysmoke;
+	struct _DYOBJ_INST *dy2d;
+	struct _DYOBJ_INST *dysmoke;
 	long scale;
-	struct _CELL_INFO* cptr;
+	struct _CELL_INFO *cptr;
 	long mission_id;
 };
 
 // Type: struct _SMOKE_DATA (forward reference);
 struct _SMOKE_DATA{
 	long flags;
-	struct _DYOBJ_INST* dysmoke;
+	struct _DYOBJ_INST *dysmoke;
 	int32_t timetolive;
-	struct _CELL_INFO* cptr;
+	struct _CELL_INFO *cptr;
 	int32_t firstface;
 	int32_t speed;
 	long mission_id;
@@ -64,9 +64,9 @@ struct _CELL_INFO{
 	short z;
 	short size;
 	short ctr;
-	struct _STOBJ_INST* stptr;
-	struct _DYOBJ_INST* dyptr;
-	struct _DYOBJ_INST* vwptr;
+	struct _STOBJ_INST *stptr;
+	struct _DYOBJ_INST *dyptr;
+	struct _DYOBJ_INST *vwptr;
 };
 
 // Type: struct VRFaceInfo;
@@ -75,10 +75,10 @@ struct VRFaceInfo{
 	int32_t Verts;
 	int32_t Attribute;
 	int32_t Plotter;
-	struct VRBmpHdr* Bitmap;
+	struct VRBmpHdr *Bitmap;
 	int32_t * VertList;
-	struct MapVert* MapVList;
-	struct MapVert* BarryPtr;
+	struct MapVert *MapVList;
+	struct MapVert *BarryPtr;
 };
 
 // Type: struct VRview;
@@ -90,8 +90,8 @@ struct VRview{
 
 // Type: struct _DYOBJ_INST (forward reference);
 struct _DYOBJ_INST{
-	struct _DYOBJ_INST* next;
-	struct _DYOBJ_INST* vnext;
+	struct _DYOBJ_INST *next;
+	struct _DYOBJ_INST *vnext;
 	void * __ptr32 mesh;
 	short flags;
 	short user1;
@@ -112,9 +112,9 @@ struct Point2d{
 // Contribution: 1:00122910-001235ed Module: 166, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00523910
 void S3ExplosionReset() {
-	struct _EXPLODE_DATA* ed;
+	struct _EXPLODE_DATA *ed;
 	long i;
-	struct _SMOKE_DATA* sd;
+	struct _SMOKE_DATA *sd;
 
 // LINE 59:
 	__asm        mov    S_num_expls, 0;
@@ -157,10 +157,10 @@ _T81:
 
 // FUNCTION: COPTER_D 0x00523996
 void S3ExplosionInit() {
-	struct _EXPLODE_DATA* ed;
+	struct _EXPLODE_DATA *ed;
 	char * mem;
 	long i;
-	struct _SMOKE_DATA* sd;
+	struct _SMOKE_DATA *sd;
 	struct Point3d vec;
 	long size;
 	int32_t mat[4][4];
@@ -684,8 +684,8 @@ _T236:
 }
 
 // FUNCTION: COPTER_D 0x00523f50
-void S3ExplosionStart(struct _CELL_INFO* cptr, int32_t x, int32_t y, int32_t z, long scale, long mission_id) {
-	struct _EXPLODE_DATA* ed;
+void S3ExplosionStart(struct _CELL_INFO *cptr, int32_t x, int32_t y, int32_t z, long scale, long mission_id) {
+	struct _EXPLODE_DATA *ed;
 	long i;
 	struct VRFaceInfo finfo;
 	long dim;
@@ -843,10 +843,10 @@ _T187:
 }
 
 // FUNCTION: COPTER_D 0x005240dc
-void S3ExplosionSmokeStart(struct _CELL_INFO* cptr, struct Point3d* loc, long smoke_size) {
+void S3ExplosionSmokeStart(struct _CELL_INFO *cptr, struct Point3d *loc, long smoke_size) {
 	long i;
 	struct VRFaceInfo finfo;
-	struct _SMOKE_DATA* sd;
+	struct _SMOKE_DATA *sd;
 
 // LINE 319:
 	__asm        mov    i, 0;
@@ -1001,14 +1001,14 @@ _T1bc:
 
 // FUNCTION: COPTER_D 0x0052429d
 void S3ExplosionDriver() {
-	struct _EXPLODE_DATA* ed;
+	struct _EXPLODE_DATA *ed;
 	struct VRview pos;
-	struct _DYOBJ_INST** dyptrptr;
+	struct _DYOBJ_INST **dyptrptr;
 	long j;
 	long i;
 	struct Point2d celloc;
 	struct VRFaceInfo finfo;
-	struct _SMOKE_DATA* sd;
+	struct _SMOKE_DATA *sd;
 
 // LINE 410:
 	__asm        mov    i, 0;
@@ -1321,7 +1321,7 @@ static struct _EXPLODE_DATA S_explosions[20];
 static struct Point3d S_spark_vectors[14];
 
 // GLOBAL: COPTER_D 0x0062aa30
-static struct VRBmpHdr* S_explseq[9];
+static struct VRBmpHdr *S_explseq[9];
 
 // GLOBAL: COPTER_D 0x0062aa58
 static struct _SMOKE_DATA S_smoke[100];

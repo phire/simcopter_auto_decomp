@@ -136,7 +136,7 @@ void IFlatImage::IFlatImage() {
 }
 
 // FUNCTION: COPTER_D 0x0048f174
-unsigned long IFlatImage::StretchCompose(class IFlatImage* pDest, long SourceLeft, long SourceTop, long SourceWidth, long SourceHeight, long DestLeft, long DestTop, long DestWidth, long DestHeight) {
+unsigned long IFlatImage::StretchCompose(class IFlatImage *pDest, long SourceLeft, long SourceTop, long SourceWidth, long SourceHeight, long DestLeft, long DestTop, long DestWidth, long DestHeight) {
 	long YError;
 	long DestStride;
 	unsigned char * pDestBits;
@@ -329,7 +329,7 @@ _T195:
 }
 
 // FUNCTION: COPTER_D 0x0048f32e
-unsigned long IFlatImage::StretchCompose(class IFlatImage* pDestImage, struct SparkalRect destRect, struct SparkalRect srcRect) {
+unsigned long IFlatImage::StretchCompose(class IFlatImage *pDestImage, struct SparkalRect destRect, struct SparkalRect srcRect) {
 	long SrcWidth;
 	long SrcHeight;
 	long DestHeight;
@@ -395,7 +395,7 @@ unsigned long IFlatImage::StretchCompose(class IFlatImage* pDestImage, struct Sp
 }
 
 // FUNCTION: COPTER_D 0x0048f3b1
-unsigned long IFlatImage::Compose(class IFlatImage* pDest, long DestLeft, long DestTop, long ClipLeft, long ClipTop, long ClipRight, long ClipBottom) {
+unsigned long IFlatImage::Compose(class IFlatImage *pDest, long DestLeft, long DestTop, long ClipLeft, long ClipTop, long ClipRight, long ClipBottom) {
 	unsigned char * pSource;
 	long DestStride;
 	unsigned char * pDestBits;
@@ -578,7 +578,7 @@ _T195:
 }
 
 // FUNCTION: COPTER_D 0x0048f56b
-unsigned long IFlatImage::FillRect(long nPaletteIndex, struct SparkalRect* rectFill) {
+unsigned long IFlatImage::FillRect(long nPaletteIndex, struct SparkalRect *rectFill) {
 	int32_t Left;
 	int32_t Top;
 	int32_t Right;
@@ -857,7 +857,7 @@ _T1c0:
 }
 
 // FUNCTION: COPTER_D 0x0048f86d
-void CFlatImage::CFlatImage(class IFlatImage* pImage, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
+void CFlatImage::CFlatImage(class IFlatImage *pImage, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
 
 	__asm        mov    ecx, this;
 	__asm        call   IFlatImage::IFlatImage;

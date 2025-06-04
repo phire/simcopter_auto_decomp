@@ -56,8 +56,8 @@ void InitResource() {
 }
 
 // FUNCTION: COPTER_D 0x004d530f
-void VRResFreeBarrys(struct VRResource* res) {
-	struct GEOM_Resource* geo;
+void VRResFreeBarrys(struct VRResource *res) {
+	struct GEOM_Resource *geo;
 
 // LINE 113:
 	__asm        mov    eax, res;
@@ -89,7 +89,7 @@ _T42:
 // FUNCTION: COPTER_D 0x004d5356
 struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 misc) {
 	int32_t i;
-	struct VRResource* res;
+	struct VRResource *res;
 
 // LINE 142:
 	__asm        mov    eax, Flags;
@@ -520,7 +520,7 @@ _T4ca:
 
 // FUNCTION: COPTER_D 0x004d5825
 int32_t VRUnLoadAllResources() {
-	struct VRResource* res;
+	struct VRResource *res;
 
 // LINE 278:
 _T09:
@@ -551,8 +551,8 @@ _T48:
 }
 
 // FUNCTION: COPTER_D 0x004d5872
-int32_t VRUnLoadResource(struct VRResource* res) {
-	struct GEOM_Resource* geo;
+int32_t VRUnLoadResource(struct VRResource *res) {
+	struct GEOM_Resource *geo;
 
 // LINE 305:
 	__asm        mov    eax, res;
@@ -1193,7 +1193,7 @@ _T3c:
 }
 
 // FUNCTION: COPTER_D 0x004d5fa9
-int32_t RegisterResource(struct VRResource* res) {
+int32_t RegisterResource(struct VRResource *res) {
 // LINE 1119:
 	__asm        cmp    NextResource, 0x64;
 	__asm        jl     _T24;
@@ -1220,9 +1220,9 @@ _T4f:
 }
 
 // FUNCTION: COPTER_D 0x004d5ffd
-void UnRegisterResource(struct VRResource* res) {
+void UnRegisterResource(struct VRResource *res) {
 	int32_t i;
-	struct VRResource* r;
+	struct VRResource *r;
 
 // LINE 1146:
 	__asm        mov    eax, res;
@@ -1283,31 +1283,31 @@ struct CMAP_Header CMAP_hdr; // Contrib missing
 int32_t ResourceFilePtr; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0066669c
-struct GEOM_DirId* GEOM_IDdir; // Contrib missing
+struct GEOM_DirId *GEOM_IDdir; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00666698
-struct GEOM_DirGroup* GEOM_GPdir; // Contrib missing
+struct GEOM_DirGroup *GEOM_GPdir; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00666694
 struct DIRC_Header ResourceDirHdr; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00666690
-struct CMAP_Dir* CMAP_directory; // Contrib missing
+struct CMAP_Dir *CMAP_directory; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00666500
-struct VRResource* ResourceArray[100]; // Contrib missing
+struct VRResource *ResourceArray[100]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006663f0
 char ResourceFileName[260]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006663ec
-struct DIRC_Dir* ResourceDir; // Contrib missing
+struct DIRC_Dir *ResourceDir; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006663f0
 char ResourceFileName[260]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006663ec
-struct DIRC_Dir* ResourceDir; // Contrib missing
+struct DIRC_Dir *ResourceDir; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006666a0
 int32_t ResourceFilePtr; // Contrib missing
@@ -1316,5 +1316,5 @@ int32_t ResourceFilePtr; // Contrib missing
 struct DIRC_Header ResourceDirHdr; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00666500
-struct VRResource* ResourceArray[100]; // Contrib missing
+struct VRResource *ResourceArray[100]; // Contrib missing
 

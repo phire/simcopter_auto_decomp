@@ -152,7 +152,7 @@ _T29:
 }
 
 // FUNCTION: COPTER_D 0x00428f78
-void SetCurrentUserPersonalInfo(struct tagUserPersonalInfo* newUserPersonalInfo) {
+void SetCurrentUserPersonalInfo(struct tagUserPersonalInfo *newUserPersonalInfo) {
 // LINE 93:
 	__asm        cmp    gCurrentCityType, 1;
 	__asm        jne    _T23;
@@ -256,8 +256,8 @@ _T31:
 }
 
 // FUNCTION: COPTER_D 0x004290ab
-void SetCurrentCitySettings(struct tagCitySettings* newCitySettings) {
-	struct tagCitySettings* tempCitySettings;
+void SetCurrentCitySettings(struct tagCitySettings *newCitySettings) {
+	struct tagCitySettings *tempCitySettings;
 
 // LINE 157:
 	__asm        call   GetCurrentCitySettings;
@@ -435,7 +435,7 @@ void CareerCityTweakInit() {
 	const int32_t nPvals;
 	int32_t * pvals[9];
 	int32_t i;
-	struct tagCareerCityInfo* currentCareerCityInfo;
+	struct tagCareerCityInfo *currentCareerCityInfo;
 
 // LINE 268:
 	__asm        mov    nPvals, 9;

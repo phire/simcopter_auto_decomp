@@ -4,10 +4,10 @@
 
 // Type: struct _BSPtree (forward reference);
 struct _BSPtree{
-	struct _FaceHdr* Polygon;
+	struct _FaceHdr *Polygon;
 	struct _PlaneType Plane;
-	struct _BSPtree* infront;
-	struct _BSPtree* behind;
+	struct _BSPtree *infront;
+	struct _BSPtree *behind;
 };
 
 // Type: unsigned short;
@@ -93,18 +93,18 @@ struct FileBSPTreeHdrType{
 
 // Type: struct _FaceHdr (forward reference);
 struct _FaceHdr{
-	struct _FaceHdr* NextFace;
+	struct _FaceHdr *NextFace;
 	int32_t Nverts;
 	int32_t Attrib1;
 	int32_t Attrib2;
 	int32_t Plotter;
 	int32_t Count2d;
-	struct Clip3d* Verts2d;
+	struct Clip3d *Verts2d;
 	int32_t PlyVerts;
-	struct MapVert* MapVerts;
+	struct MapVert *MapVerts;
 	int32_t Bitmap;
-	struct MapVert* Barrys;
-	struct Project3d* Normal;
+	struct MapVert *Barrys;
+	struct Project3d *Normal;
 };
 
 // Type: struct FileFaceHdrType;
@@ -122,20 +122,20 @@ struct FileFaceHdrType{
 struct ObjectHdr{
 	int32_t Attrib;
 	int32_t NVerts;
-	struct Point3d* VertsPtr;
+	struct Point3d *VertsPtr;
 	int32_t MemPool;
 	int32_t NFaces;
 	int32_t PolyVerts;
 	struct Point3d CenterOrg;
 	struct Point3d Center;
 	int32_t Radius;
-	struct _BSPtree* bsptree;
+	struct _BSPtree *bsptree;
 	int32_t StaticCnt;
 	int32_t StaticPtr;
 	int32_t MiscReg1;
 	int32_t ID;
 	int32_t Entry;
-	struct _FaceHdr* FacePtr;
+	struct _FaceHdr *FacePtr;
 	int32_t Matrix[4][4];
 };
 
@@ -160,11 +160,11 @@ struct VRObjInfo{
 	int32_t Verts;
 	int32_t Attribute;
 	int32_t Radius;
-	struct Point3d* ObjCenter;
-	struct Point3d* VertsPtr;
-	struct Xform3d* VertsXfm;
-	struct Point3d* OrgVerts;
-	int32_t[4][4]* Matrix;
+	struct Point3d *ObjCenter;
+	struct Point3d *VertsPtr;
+	struct Xform3d *VertsXfm;
+	struct Point3d *OrgVerts;
+	int32_t *Matrix[4][4];
 };
 
 // Type: struct VRBmpHdr (forward reference);
@@ -184,7 +184,7 @@ struct Project3d{
 	int32_t x;
 	int32_t y;
 	int32_t z;
-	struct Point3d* p;
+	struct Point3d *p;
 };
 
 // Type: struct FPoint3d;
@@ -200,9 +200,9 @@ struct FPoint3d{
 
 // Contribution: 1:000d1180-000d42ba Module: 147, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004d2180
-struct VRResource* LoadGroup(struct ObjInfo* info, int32_t objs) {
+struct VRResource* LoadGroup(struct ObjInfo *info, int32_t objs) {
 	int32_t i;
-	struct GEOM_Resource* res;
+	struct GEOM_Resource *res;
 	char * group;
 
 // LINE 152:
@@ -382,8 +382,8 @@ _T1f4:
 }
 
 // FUNCTION: COPTER_D 0x004d2379
-void VRAssignMemPoolToRes(struct VRResource* res, struct VRMemPool* mem) {
-	struct GEOM_Resource* geo;
+void VRAssignMemPoolToRes(struct VRResource *res, struct VRMemPool *mem) {
+	struct GEOM_Resource *geo;
 	int32_t i;
 
 // LINE 229:
@@ -415,8 +415,8 @@ _T49:
 }
 
 // FUNCTION: COPTER_D 0x004d23c7
-int32_t VRGetResObjectCnt(struct VRResource* res) {
-	struct GEOM_Resource* geo;
+int32_t VRGetResObjectCnt(struct VRResource *res) {
+	struct GEOM_Resource *geo;
 
 // LINE 247:
 	__asm        mov    eax, res;
@@ -429,8 +429,8 @@ int32_t VRGetResObjectCnt(struct VRResource* res) {
 }
 
 // FUNCTION: COPTER_D 0x004d23e6
-int32_t VRGetResObject(struct VRResource* res, int32_t i) {
-	struct GEOM_Resource* geo;
+int32_t VRGetResObject(struct VRResource *res, int32_t i) {
+	struct GEOM_Resource *geo;
 
 // LINE 264:
 	__asm        mov    eax, res;
@@ -445,10 +445,10 @@ int32_t VRGetResObject(struct VRResource* res, int32_t i) {
 
 // FUNCTION: COPTER_D 0x004d2409
 int32_t LoadObjtType(int32_t barrymempool) {
-	struct Point3d* v0;
+	struct Point3d *v0;
 	char * dataptr;
 	struct GameObjectHdrType fileobjhdr;
-	struct Point3d* vlst;
+	struct Point3d *vlst;
 	int32_t VertCount;
 	int32_t y;
 	int32_t hibyte;
@@ -457,11 +457,11 @@ int32_t LoadObjtType(int32_t barrymempool) {
 	short w[128];
 	struct FileBSPTreeHdrType treehdr;
 	int32_t lobyte;
-	struct _FaceHdr* faceptr;
+	struct _FaceHdr *faceptr;
 	struct FileFaceHdrType filefacehdr;
-	struct ObjectHdr* ObjectPtr;
+	struct ObjectHdr *ObjectPtr;
 	int32_t uses_gouraud;
-	struct Point3d* v1;
+	struct Point3d *v1;
 
 // LINE 296:
 	__asm        mov    uses_gouraud, 0;
@@ -1025,7 +1025,7 @@ _T6b8:
 }
 
 // FUNCTION: COPTER_D 0x004d2ac6
-int32_t VRGetDyObjAlt(int32_t obj, int32_t[4][4]* dymat, struct Point3d* loc, int32_t dim) {
+int32_t VRGetDyObjAlt(int32_t obj, int32_t *dymat[4][4], struct Point3d *loc, int32_t dim) {
 	struct Point3d tloc;
 	int32_t tmat[4][4];
 	int32_t flags;
@@ -1070,7 +1070,7 @@ int32_t VRGetDyObjAlt(int32_t obj, int32_t[4][4]* dymat, struct Point3d* loc, in
 }
 
 // FUNCTION: COPTER_D 0x004d2b28
-int32_t VRGetObjAlt(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * flags, int32_t dim, struct Point3d* collisvec, int32_t * landable) {
+int32_t VRGetObjAlt(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * flags, int32_t dim, struct Point3d *collisvec, int32_t * landable) {
 	char * dataptr;
 	int32_t maxz;
 	int32_t maxy;
@@ -1079,7 +1079,7 @@ int32_t VRGetObjAlt(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * flag
 	int32_t maxx;
 	int32_t overhang;
 	int32_t minz;
-	struct ObjectHdr* oh;
+	struct ObjectHdr *oh;
 	int32_t j;
 	int32_t miny;
 	int32_t i;
@@ -1088,11 +1088,11 @@ int32_t VRGetObjAlt(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * flag
 	int32_t scalar;
 	int32_t planed;
 	int32_t altydown;
-	struct Point3d* vert;
+	struct Point3d *vert;
 	int32_t normaldir;
 	int32_t * vertno;
-	struct Point3d* vert2;
-	struct _FaceHdr* faceptr;
+	struct Point3d *vert2;
+	struct _FaceHdr *faceptr;
 	int32_t check_for_overhang;
 
 // LINE 776:
@@ -1745,7 +1745,7 @@ _T6ba:
 }
 
 // FUNCTION: COPTER_D 0x004d31e7
-int32_t VRGetObjAlt2(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * flags, int32_t dim, int32_t ydim, struct Point3d* collisvec, int32_t * landable) {
+int32_t VRGetObjAlt2(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * flags, int32_t dim, int32_t ydim, struct Point3d *collisvec, int32_t * landable) {
 	char * dataptr;
 	int32_t maxz;
 	int32_t maxy;
@@ -1754,7 +1754,7 @@ int32_t VRGetObjAlt2(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * fla
 	int32_t maxx;
 	int32_t overhang;
 	int32_t minz;
-	struct ObjectHdr* oh;
+	struct ObjectHdr *oh;
 	int32_t j;
 	int32_t miny;
 	int32_t i;
@@ -1763,11 +1763,11 @@ int32_t VRGetObjAlt2(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * fla
 	int32_t scalar;
 	int32_t planed;
 	int32_t altydown;
-	struct Point3d* vert;
+	struct Point3d *vert;
 	int32_t normaldir;
 	int32_t * vertno;
-	struct Point3d* vert2;
-	struct _FaceHdr* faceptr;
+	struct Point3d *vert2;
+	struct _FaceHdr *faceptr;
 	int32_t check_for_overhang;
 
 // LINE 1088:
@@ -2482,15 +2482,15 @@ int32_t VRGetObjZdist(int32_t obj, int32_t x, int32_t y, int32_t dir, int32_t di
 	int32_t distz;
 	int32_t maxx;
 	int32_t minz;
-	struct ObjectHdr* oh;
+	struct ObjectHdr *oh;
 	int32_t j;
 	int32_t miny;
 	int32_t i;
 	int32_t minx;
 	int32_t facez;
-	struct Point3d* vert;
+	struct Point3d *vert;
 	int32_t * vertno;
-	struct _FaceHdr* faceptr;
+	struct _FaceHdr *faceptr;
 
 // LINE 1424:
 	__asm        mov    eax, obj;
@@ -2706,15 +2706,15 @@ int32_t VRGetObjXdist(int32_t obj, int32_t y, int32_t z, int32_t dir, int32_t di
 	int32_t maxx;
 	int32_t minz;
 	int32_t distx;
-	struct ObjectHdr* oh;
+	struct ObjectHdr *oh;
 	int32_t j;
 	int32_t miny;
 	int32_t i;
 	int32_t minx;
-	struct Point3d* vert;
+	struct Point3d *vert;
 	int32_t facex;
 	int32_t * vertno;
-	struct _FaceHdr* faceptr;
+	struct _FaceHdr *faceptr;
 
 // LINE 1526:
 	__asm        mov    eax, obj;
@@ -2925,12 +2925,12 @@ _T20d:
 // FUNCTION: COPTER_D 0x004d3d55
 void VRObjResize2dFace(int32_t obj, int32_t width, int32_t height) {
 	char * dataptr;
-	struct ObjectHdr* oh;
+	struct ObjectHdr *oh;
 	int32_t i;
 	int32_t * vertno;
-	struct Point3d* vert2;
-	struct _FaceHdr* faceptr;
-	struct Point3d* vert1;
+	struct Point3d *vert2;
+	struct _FaceHdr *faceptr;
+	struct Point3d *vert1;
 
 // LINE 1630:
 	__asm        mov    eax, obj;
@@ -3019,9 +3019,9 @@ _Tca:
 
 // FUNCTION: COPTER_D 0x004d3e24
 void VR3dObjLocate(int32_t obj, int32_t x, int32_t y, int32_t z) {
-	struct ObjectHdr* oh;
+	struct ObjectHdr *oh;
 	int32_t i;
-	struct Point3d* vert;
+	struct Point3d *vert;
 
 // LINE 1685:
 	__asm        mov    eax, obj;
@@ -3073,9 +3073,9 @@ _T59:
 // FUNCTION: COPTER_D 0x004d3e9d
 int32_t VRObjGetHeight(int32_t obj) {
 	int32_t maxy;
-	struct ObjectHdr* oh;
+	struct ObjectHdr *oh;
 	int32_t i;
-	struct Point3d* vert;
+	struct Point3d *vert;
 
 // LINE 1713:
 	__asm        mov    eax, obj;
@@ -3118,12 +3118,12 @@ _T5e:
 // FUNCTION: COPTER_D 0x004d3f08
 void VR2dObjLocate(int32_t obj, int32_t x, int32_t y, int32_t z) {
 	char * dataptr;
-	struct ObjectHdr* oh;
+	struct ObjectHdr *oh;
 	int32_t xdiff;
 	int32_t * vertno;
-	struct Point3d* vert2;
-	struct _FaceHdr* faceptr;
-	struct Point3d* vert1;
+	struct Point3d *vert2;
+	struct _FaceHdr *faceptr;
+	struct Point3d *vert1;
 	int32_t ydiff;
 
 // LINE 1740:
@@ -3305,11 +3305,11 @@ _Tf2:
 }
 
 // FUNCTION: COPTER_D 0x004d40e1
-void NormalizeObj(struct ObjectHdr* obj) {
+void NormalizeObj(struct ObjectHdr *obj) {
 	int32_t i;
-	struct Point3d* d;
+	struct Point3d *d;
 	struct Point3d c;
-	struct Point3d* s;
+	struct Point3d *s;
 
 // LINE 1848:
 	__asm        mov    eax, obj;
@@ -3379,15 +3379,15 @@ _T8a:
 }
 
 // FUNCTION: COPTER_D 0x004d4192
-int32_t VRAssignTextureResToGroup(struct VRResource* g, struct VRResource* b) {
+int32_t VRAssignTextureResToGroup(struct VRResource *g, struct VRResource *b) {
 	int32_t obj;
 	int32_t k;
-	struct GEOM_Resource* geo;
-	struct TEXT_Resource* bmp;
+	struct GEOM_Resource *geo;
+	struct TEXT_Resource *bmp;
 	int32_t hiword;
 	int32_t j;
 	int32_t i;
-	struct _FaceHdr* fh;
+	struct _FaceHdr *fh;
 	int32_t face;
 	struct VRObjInfo oinfo;
 	int32_t loword;
@@ -3552,12 +3552,12 @@ _T1a0:
 }
 
 // FUNCTION: COPTER_D 0x004d4337
-void VRBCApplyTiledMap(struct _FaceHdr* fh, struct VRBmpHdr* bmp, int32_t tileid) {
+void VRBCApplyTiledMap(struct _FaceHdr *fh, struct VRBmpHdr *bmp, int32_t tileid) {
 	int32_t i;
 	int32_t h;
 	int32_t w;
-	struct MapVert* barry;
-	struct MapVert* mv;
+	struct MapVert *barry;
+	struct MapVert *mv;
 
 // LINE 1937:
 	__asm        mov    eax, fh;
@@ -3616,7 +3616,7 @@ _T75:
 
 // FUNCTION: COPTER_D 0x004d43c3
 struct VRMemPool* VRCreateMemPool(int32_t xf, int32_t d2) {
-	struct VRMemPool* mp;
+	struct VRMemPool *mp;
 
 // LINE 1975:
 	__asm        mov    eax, d2;
@@ -3702,7 +3702,7 @@ _Tf3:
 }
 
 // FUNCTION: COPTER_D 0x004d44bb
-void VRFreeMemPool(struct VRMemPool* mp) {
+void VRFreeMemPool(struct VRMemPool *mp) {
 // LINE 2010:
 	__asm        mov    eax, mp;
 	__asm        push   eax;
@@ -3717,7 +3717,7 @@ void VRFreeMemPool(struct VRMemPool* mp) {
 }
 
 // FUNCTION: COPTER_D 0x004d44de
-void FaceCalcNormal(struct Point3d* v0, struct Point3d* v1, struct Point3d* vlst, struct Project3d* norm) {
+void FaceCalcNormal(struct Point3d *v0, struct Point3d *v1, struct Point3d *vlst, struct Project3d *norm) {
 	struct FPoint3d fvlst;
 	double length;
 	double tmpZ;
@@ -3872,11 +3872,11 @@ void FaceCalcNormal(struct Point3d* v0, struct Point3d* v1, struct Point3d* vlst
 }
 
 // FUNCTION: COPTER_D 0x004d46bc
-void ObjCalcVnormsAndShade(struct ObjectHdr* obj) {
-	struct _FaceHdr* fp;
+void ObjCalcVnormsAndShade(struct ObjectHdr *obj) {
+	struct _FaceHdr *fp;
 	int32_t k;
 	int32_t j;
-	struct Point3d* vnorms;
+	struct Point3d *vnorms;
 	int32_t i;
 	int32_t * faceverts;
 	double length;
@@ -3931,7 +3931,7 @@ _T7e:
 	__asm        jle    _T23f;
 // LINE 2118:
 // Block start:
-	struct Point3d* vn;
+	struct Point3d *vn;
 	int32_t no_vert_faces;
 	__asm        mov    no_vert_faces, 0;
 // LINE 2119:
@@ -3971,7 +3971,7 @@ _Te5:
 	__asm        jle    _T172;
 // LINE 2139:
 // Block start:
-	struct Project3d* fn;
+	struct Project3d *fn;
 	__asm        mov    eax, fp;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        mov    fn, eax;
@@ -4133,7 +4133,7 @@ _T28b:
 
 // FUNCTION: COPTER_D 0x004d494c
 void VRObjAssignLowRes(int32_t dest, int32_t src) {
-	struct ObjectHdr* destptr;
+	struct ObjectHdr *destptr;
 
 // LINE 2204:
 	__asm        mov    eax, dest;
@@ -4150,11 +4150,11 @@ void VRObjAssignLowRes(int32_t dest, int32_t src) {
 // FUNCTION: COPTER_D 0x004d496e
 int32_t VRObjCreateRope(int32_t nverts, int32_t color, int32_t seglen) {
 	char * dataptr;
-	struct MapVert* mvert;
-	struct ObjectHdr* oh;
+	struct MapVert *mvert;
+	struct ObjectHdr *oh;
 	int32_t i;
-	struct _FaceHdr* fh;
-	struct Point3d* vert;
+	struct _FaceHdr *fh;
+	struct Point3d *vert;
 	int32_t * iptr;
 	char * ptr;
 
@@ -4366,11 +4366,11 @@ _T20d:
 // FUNCTION: COPTER_D 0x004d4b80
 int32_t VRObjCreatePoint(int32_t nverts, int32_t plotter) {
 	char * dataptr;
-	struct MapVert* mvert;
-	struct ObjectHdr* oh;
+	struct MapVert *mvert;
+	struct ObjectHdr *oh;
 	int32_t i;
-	struct _FaceHdr* fh;
-	struct Point3d* vert;
+	struct _FaceHdr *fh;
+	struct Point3d *vert;
 	int32_t * iptr;
 	char * ptr;
 
@@ -4568,7 +4568,7 @@ _T1ee:
 // FUNCTION: COPTER_D 0x004d4d73
 int32_t VRGetObjDupMemReq(int32_t obj) {
 	int32_t size3;
-	struct ObjectHdr* oh;
+	struct ObjectHdr *oh;
 	int32_t size2;
 	int32_t size1;
 
@@ -4602,11 +4602,11 @@ int32_t VRGetObjDupMemReq(int32_t obj) {
 
 // FUNCTION: COPTER_D 0x004d4dbf
 int32_t VRCreateObjDuplicate(int32_t obj, char * mem) {
-	struct ObjectHdr* oh2;
-	struct ObjectHdr* oh;
-	struct _FaceHdr* fh2;
+	struct ObjectHdr *oh2;
+	struct ObjectHdr *oh;
+	struct _FaceHdr *fh2;
 	int32_t i;
-	struct _FaceHdr* fh;
+	struct _FaceHdr *fh;
 	char * to;
 
 // LINE 2452:
@@ -4756,20 +4756,20 @@ _T161:
 }
 
 // FUNCTION: COPTER_D 0x004d4f25
-int32_t VRStObjPolyHit(struct Point3d* sloc, struct Point3d* svec, int32_t dist, struct Point3d* tloc, int32_t tobj, struct Point3d** nptrptr) {
-	struct Point3d* v0;
+int32_t VRStObjPolyHit(struct Point3d *sloc, struct Point3d *svec, int32_t dist, struct Point3d *tloc, int32_t tobj, struct Point3d **nptrptr) {
+	struct Point3d *v0;
 	int32_t maxz;
 	int32_t maxy;
 	int32_t maxx;
 	int32_t tval;
 	int32_t minz;
-	struct ObjectHdr* oh;
+	struct ObjectHdr *oh;
 	int32_t j;
 	int32_t miny;
 	struct Point3d loc;
 	int32_t i;
 	int32_t minx;
-	struct _FaceHdr* fh;
+	struct _FaceHdr *fh;
 	int32_t * vertno;
 	int32_t dotp3;
 	int32_t dotp2;
@@ -5151,7 +5151,7 @@ static int32_t ObjDataSize;
 static char * ObjData;
 
 // GLOBAL: COPTER_D 0x00606a64
-static struct _BSPtree* Tree;
+static struct _BSPtree *Tree;
 
 // GLOBAL: COPTER_D 0x00606a68
 static unsigned short BSPIndex;
@@ -5178,12 +5178,12 @@ struct GEOM_Header GEOM_hdr; // Contrib missing
 
 // WARNING: this global might actually belong to: C:\Copter\source\engine\Resource.c
 // GLOBAL: COPTER_D 0x00666698
-struct GEOM_DirGroup* GEOM_GPdir; // Contrib missing
+struct GEOM_DirGroup *GEOM_GPdir; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\engine\Resource.c
 // GLOBAL: COPTER_D 0x0066669c
-struct GEOM_DirId* GEOM_IDdir; // Contrib missing
+struct GEOM_DirId *GEOM_IDdir; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\engine\Resource.c
@@ -5193,10 +5193,10 @@ struct CMAP_Header CMAP_hdr; // Contrib missing
 
 // WARNING: this global might actually belong to: C:\Copter\source\engine\Resource.c
 // GLOBAL: COPTER_D 0x00666690
-struct CMAP_Dir* CMAP_directory; // Contrib missing
+struct CMAP_Dir *CMAP_directory; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\engine\Resource.c
 // GLOBAL: COPTER_D 0x006666c0
-struct _FaceHdr** FaceArray; // Contrib missing
+struct _FaceHdr **FaceArray; // Contrib missing
 

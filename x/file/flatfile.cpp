@@ -9,13 +9,13 @@ class FlatFile{
 		kMaxNameLen = 255,
 	};
 protected:
-	class FlatFile* fNext;
+	class FlatFile *fNext;
 	unsigned char fName[256];
 	long fFileID;
-	struct _iobuf* fFile;
+	struct _iobuf *fFile;
 	long UniqueID();
 private:
-	static class FlatFile* sList;
+	static class FlatFile *sList;
 	static long sLastFileID;
 	void Link();
 	void Unlink();
@@ -118,7 +118,7 @@ _T2d:
 
 // FUNCTION: COPTER_D 0x0055c2fa
 class FlatFile* FlatFile::FindByName(unsigned char * name) {
-	class FlatFile* srch;
+	class FlatFile *srch;
 
 // LINE 44:
 	__asm        mov    eax, FlatFile::sList;
@@ -191,7 +191,7 @@ long FlatFile::Open(char * name) {
 
 // FUNCTION: COPTER_D 0x0055c3c7
 long FlatFile::Open(unsigned char * name) {
-	class FlatFile* same;
+	class FlatFile *same;
 	long err;
 
 // LINE 61:
@@ -333,7 +333,7 @@ _T1b8:
 }
 
 // FUNCTION: COPTER_D 0x0055c586
-void FlatFile::OpenFromOtherFile(class FlatFile* other) {
+void FlatFile::OpenFromOtherFile(class FlatFile *other) {
 	unsigned char otherName[256];
 
 // LINE 112:
@@ -554,7 +554,7 @@ _T32:
 }
 
 // FUNCTION: COPTER_D 0x0055c814
-unsigned short FlatFile::SameFile(class FlatFile* other) {
+unsigned short FlatFile::SameFile(class FlatFile *other) {
 // LINE 235:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0;
@@ -680,7 +680,7 @@ void FlatFile::Link() {
 
 // FUNCTION: COPTER_D 0x0055c96e
 void FlatFile::Unlink() {
-	class FlatFile** srch;
+	class FlatFile **srch;
 
 // LINE 271:
 	__asm        mov    srch, 0x5BDDD8;
@@ -725,7 +725,7 @@ _T70:
 
 // FUNCTION: COPTER_D 0x0055c9e3
 unsigned short FlatFile::Exclusive() {
-	class FlatFile* srch;
+	class FlatFile *srch;
 
 // LINE 285:
 	__asm        mov    eax, FlatFile::sList;
@@ -788,7 +788,7 @@ long FlatFile::GetFileName(unsigned char * name) {
 // FUNCTION: COPTER_D 0x0055ca7f
 short FlatFile::CheckForLeaks() {
 	short total;
-	class FlatFile* list;
+	class FlatFile *list;
 
 // LINE 302:
 	__asm        mov    total, 0;
@@ -834,7 +834,7 @@ _T38:
 
 // Contribution: 3:00026dd8-00026e98 Module: 195, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005bddd8
-class FlatFile* FlatFile::sList = { 0 /* todo */ };
+class FlatFile *FlatFile::sList = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005bdddc
 long FlatFile::sLastFileID = 10;

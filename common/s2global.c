@@ -310,10 +310,10 @@ unsigned char wind; // Contrib missing
 unsigned char humid; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a744
-struct Micro* MicroRecord; // Contrib missing
+struct Micro *MicroRecord; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639834
-unsigned char[25]* LabelArray; // Contrib missing
+unsigned char *LabelArray[25]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639840
 short GlobalSeaLevel; // Contrib missing
@@ -442,7 +442,7 @@ char * CityNameString; // Contrib missing
 
 // WARNING: this global might actually belong to: C:\Copter\source\common\S2lodsav.c
 // GLOBAL: COPTER_D 0x00639830
-struct budgetStats* budgetList; // Contrib missing
+struct budgetStats *budgetList; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a570
 char * CityNameString; // Contrib missing
@@ -654,17 +654,17 @@ unsigned char * TextMap[128]; // Contrib missing
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00639834
-unsigned char[25]* LabelArray; // Contrib missing
+unsigned char *LabelArray[25]; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x0063a744
-struct Micro* MicroRecord; // Contrib missing
+struct Micro *MicroRecord; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00639830
-struct budgetStats* budgetList; // Contrib missing
+struct budgetStats *budgetList; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
@@ -740,7 +740,7 @@ unsigned long * ZonePop; // Contrib missing
 unsigned long WorkerHealth; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a25c
-struct News* NewsList; // Contrib missing
+struct News *NewsList; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a258
 short GlobalHills; // Contrib missing
@@ -809,16 +809,16 @@ unsigned long TrafficCount; // Contrib missing
 unsigned long CityValue; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639720
-struct Things* ThingList; // Contrib missing
+struct Things *ThingList; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063971c
 short TeamsActive; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639718
-struct S2Point* StackPts; // Contrib missing
+struct S2Point *StackPts; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639714
-struct Paper* PaperList; // Contrib missing
+struct Paper *PaperList; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639310
 short * TMap[128]; // Contrib missing
@@ -863,7 +863,7 @@ short GameLevel; // Contrib missing
 struct S2Point DisasterLoc; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639718
-struct S2Point* StackPts; // Contrib missing
+struct S2Point *StackPts; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639a82
 short FTop; // Contrib missing
@@ -935,10 +935,10 @@ unsigned long * ZonePop; // Contrib missing
 unsigned long * TaxPop; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a25c
-struct News* NewsList; // Contrib missing
+struct News *NewsList; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639714
-struct Paper* PaperList; // Contrib missing
+struct Paper *PaperList; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639a58
 short * IndRates; // Contrib missing
@@ -953,7 +953,7 @@ short toolNum[18]; // Contrib missing
 short mapNum[9]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639720
-struct Things* ThingList; // Contrib missing
+struct Things *ThingList; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639200
 struct scenario ScenarioData; // Contrib missing

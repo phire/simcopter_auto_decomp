@@ -387,7 +387,7 @@ _T8b:
 // FUNCTION: COPTER_D 0x0043de9f
 long Version::GetApplicationVersion(int32_t nVersionComponent) {
 	int32_t nReturnValue;
-	struct tagVS_FIXEDFILEINFO* vsFixedFileInfo;
+	struct tagVS_FIXEDFILEINFO *vsFixedFileInfo;
 	uint32_t vSize;
 
 // LINE 193:

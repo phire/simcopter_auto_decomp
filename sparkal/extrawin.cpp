@@ -91,7 +91,7 @@ class basic_string<char>{
 	using reference_pointer = class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char>* reference;
+	class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -299,7 +299,7 @@ class basic_string<char>{
 	using reference_pointer = class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char>* reference;
+	class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -587,13 +587,13 @@ protected:
 	void SetControlsBasedOnCurrentSettings();
 	void DrawPreviewBasedOnCurrentSettings();
 	void GetPreviewFileNames(class basic_string<char>&, class basic_string<char>&, class basic_string<char>&);
-	class CheckBoxWindow* myBuildingTexturesCheckBoxWindow;
-	class CheckBoxWindow* myObjectTexturesCheckBoxWindow;
-	class CheckBoxWindow* mySkyDisplayCheckBoxWindow;
-	class ButtonGroup* myDisplayResolutionButtonGroup;
-	class SliderWindow* myFogSliderWindow;
-	class CBackBuffer* mySkyImage;
-	class CBackBuffer* myBuildingImage;
+	class CheckBoxWindow *myBuildingTexturesCheckBoxWindow;
+	class CheckBoxWindow *myObjectTexturesCheckBoxWindow;
+	class CheckBoxWindow *mySkyDisplayCheckBoxWindow;
+	class ButtonGroup *myDisplayResolutionButtonGroup;
+	class SliderWindow *myFogSliderWindow;
+	class CBackBuffer *mySkyImage;
+	class CBackBuffer *myBuildingImage;
 	class MTimer mySkyTimer;
 	long lSkyImagePanX;
 };
@@ -643,7 +643,7 @@ public:
 	virtual long DoCursorUp(long, long, unsigned long) /* override */;
 	virtual long DoCursorMove(long, long) /* override */;
 protected:
-	class ButtonGroup* myRadioButtonGroup;
+	class ButtonGroup *myRadioButtonGroup;
 };
 
 // Type: class CBackBuffer (forward reference);
@@ -694,15 +694,15 @@ public:
 protected:
 	int32_t bSurfacePrimary;
 	int32_t bSurfaceTransparent;
-	class MFont* mFont;
+	class MFont *mFont;
 	struct SparkalColor colorFontCurrent;
 	struct SparkalColor colorCurrent;
 	int32_t nColorIndexFontCurrent;
 	int32_t nColorIndexCurrent;
 	int32_t nColorIndexTransparent;
-	struct IDirectDrawSurface* mpFrontSurface;
-	struct IDirectDrawSurface* mpBackSurface;
-	struct IDirectDrawPalette* mpPalette;
+	struct IDirectDrawSurface *mpFrontSurface;
+	struct IDirectDrawSurface *mpBackSurface;
+	struct IDirectDrawPalette *mpPalette;
 	struct _DDSURFACEDESC mDDdesc;
 	struct _DDBLTFX mDDBltFx;
 	void * __ptr32 hPen;
@@ -729,11 +729,11 @@ public:
 	// calltype: NearC
 	static long ConvertSliderValueToSoundValue(long);
 protected:
-	class SliderWindow* myMasterVolumeSliderWindow;
-	class SliderWindow* myRadioStationSliderWindow;
-	class SliderWindow* myRadioVolumeSliderWindow;
-	class CheckBoxWindow* myDJCheckBoxWindow;
-	class CheckBoxWindow* myCommercialCheckBoxWindow;
+	class SliderWindow *myMasterVolumeSliderWindow;
+	class SliderWindow *myRadioStationSliderWindow;
+	class SliderWindow *myRadioVolumeSliderWindow;
+	class CheckBoxWindow *myDJCheckBoxWindow;
+	class CheckBoxWindow *myCommercialCheckBoxWindow;
 };
 
 // Type: struct SoundPreferences (forward reference);
@@ -767,7 +767,7 @@ public:
 	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32) /* override */;
 	virtual long DoKeyDown(long, char) /* override */;
 protected:
-	class SliderWindow* mySliderWindows[8];
+	class SliderWindow *mySliderWindows[8];
 };
 
 // Type: struct tagCitySettings (forward reference);
@@ -797,7 +797,7 @@ public:
 	virtual void CalculateAllMetrics() /* override */;
 protected:
 	virtual void ResizeWindowToFitMenuItems() /* override */;
-	class CBackBuffer* myBackgroundImage;
+	class CBackBuffer *myBackgroundImage;
 	class basic_string<char> myBackgroundImageFileName;
 };
 
@@ -805,7 +805,7 @@ protected:
 class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_string<char>,int>
 {
 protected:
-	struct list<basic_string<char>>::list_node* node;
+	struct list<basic_string<char>>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -863,7 +863,7 @@ public:
 	virtual void SetTextAndShow(class MPoint&, int32_t); // vtable+0xec
 	virtual void SetTextAndShow(class MPoint&, class basic_string<char>&); // vtable+0xf0
 protected:
-	class CBackBuffer* myBackgroundImage;
+	class CBackBuffer *myBackgroundImage;
 	class basic_string<char> myBackgroundImageFileName;
 };
 
@@ -891,7 +891,7 @@ protected:
 	virtual int32_t DoesWindowNeedUpdating() /* override */;
 	virtual int32_t ProcessBackspace(); // vtable+0xfc
 	virtual int32_t ProcessReturn(); // vtable+0x100
-	class CBackBuffer* mySecondImage;
+	class CBackBuffer *mySecondImage;
 	class MTimer myCaretTimer;
 	unsigned long lCaretTimerPeriod;
 	int32_t bCaretTimerExpired;
@@ -911,7 +911,7 @@ public:
 	virtual void GetEditText(char *, unsigned long); // vtable+0xd4
 	virtual void GetEditText(class basic_string<char>&); // vtable+0xd8
 protected:
-	class BoneheadTextEditWindow* myTextEditWindow;
+	class BoneheadTextEditWindow *myTextEditWindow;
 };
 
 // Type: class ScrollingCreditWindow (forward reference);
@@ -957,8 +957,8 @@ public:
 	static int32_t ShouldWeDisplayCheckupWindow();
 	int32_t CanUserAffordCurrentSliderValues();
 protected:
-	class SliderWindow* mySliderWindows[3];
-	class TextWindow* myTextWindows[5];
+	class SliderWindow *mySliderWindows[3];
+	class TextWindow *myTextWindows[5];
 };
 
 // Type: long *;
@@ -1155,8 +1155,8 @@ protected:
 	long lFirstVisibleLine;
 	long lLineHeight;
 	int32_t bAlwaysSort;
-	class ScrollBarWindow* myVerticalScrollBarWindow;
-	class ScrollBarWindow* myHorizontalScrollBarWindow;
+	class ScrollBarWindow *myVerticalScrollBarWindow;
+	class ScrollBarWindow *myHorizontalScrollBarWindow;
 	int32_t bBusySettingSelection;
 };
 
@@ -1204,7 +1204,7 @@ static void $E68() {
 }
 
 // FUNCTION: COPTER_D 0x004500ce
-void MessageBoxWindow::MessageBoxWindow(class MPoint& ptNewPosition, unsigned long lNewType, unsigned long lNewMessageID, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, int32_t bNewSelfDeleting, char * szImageFileName, char * szButtonImageFileName, char * szAnimationImageFileName) {
+void MessageBoxWindow::MessageBoxWindow(class MPoint& ptNewPosition, unsigned long lNewType, unsigned long lNewMessageID, int32_t nNewID, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList, int32_t bNewSelfDeleting, char * szImageFileName, char * szButtonImageFileName, char * szAnimationImageFileName) {
 
 	__asm        cmp    szImageFileName, 0;
 	__asm        je     _T21;
@@ -1573,7 +1573,7 @@ _T496:
 }
 
 // FUNCTION: COPTER_D 0x00450573
-void MessageBoxWindow::MessageBoxWindow(class MPoint& ptNewPosition, unsigned long lNewType, class basic_string<char>& sNewMessage, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, int32_t bNewSelfDeleting, char * szImageFileName, char * szButtonImageFileName, char * szAnimationImageFileName) {
+void MessageBoxWindow::MessageBoxWindow(class MPoint& ptNewPosition, unsigned long lNewType, class basic_string<char>& sNewMessage, int32_t nNewID, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList, int32_t bNewSelfDeleting, char * szImageFileName, char * szButtonImageFileName, char * szAnimationImageFileName) {
 
 	__asm        cmp    szImageFileName, 0;
 	__asm        je     _T21;
@@ -2055,7 +2055,7 @@ _T5db:
 // FUNCTION: COPTER_D 0x00450b5d
 int32_t MessageBoxWindow::Initialize() {
 	int32_t nButtonID[2];
-	class ButtonWindow* tempButtonWindow;
+	class ButtonWindow *tempButtonWindow;
 	unsigned long i;
 	int32_t nButtonCount;
 	class MRect rectButtons[2];
@@ -2737,7 +2737,7 @@ _T956:
 	__asm        je     _Ta22;
 // LINE 141:
 // Block start:
-	class AnimationWindow* tempAnimationWindow;
+	class AnimationWindow *tempAnimationWindow;
 	__asm        push   0xA4;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
@@ -2919,7 +2919,7 @@ _Tae:
 }
 
 // FUNCTION: COPTER_D 0x0045171a
-int32_t MessageBoxWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
+int32_t MessageBoxWindow::DoMessage(class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 // LINE 187:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x38], 0;
@@ -3012,7 +3012,7 @@ _T8b:
 // FUNCTION: COPTER_D 0x00451817
 void MessageBoxWindow::DrawTextOntoBox() {
 	class MRect rectText;
-	class MFont* fontText;
+	class MFont *fontText;
 	char szTypeface[64];
 	int32_t nFullStringID;
 
@@ -3495,7 +3495,7 @@ void MessageBoxWindow::SetTextColor(const struct SparkalColor& colorNewFont) {
 }
 
 // FUNCTION: COPTER_D 0x00451ed9
-void MessageBoxWindow::SetButtonTextColor(const struct SparkalColor* colorNewFont, const struct SparkalColor* colorNewFontHighlighted) {
+void MessageBoxWindow::SetButtonTextColor(const struct SparkalColor *colorNewFont, const struct SparkalColor *colorNewFontHighlighted) {
 // LINE 264:
 	__asm        cmp    colorNewFont, 0;
 	__asm        je     _T24;
@@ -3568,7 +3568,7 @@ void AnimationWindow::AnimationWindow() {
 }
 
 // FUNCTION: COPTER_D 0x00451fde
-void AnimationWindow::AnimationWindow(char * szImageFileName, class MRect& rectNewWindow, long lNewWidthOfSingleFrame, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, long lNewTransparentIndex, enum AnimationWindow::AnimationLoopType nNewAnimationLoopType) {
+void AnimationWindow::AnimationWindow(char * szImageFileName, class MRect& rectNewWindow, long lNewWidthOfSingleFrame, int32_t nNewID, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList, long lNewTransparentIndex, enum AnimationWindow::AnimationLoopType nNewAnimationLoopType) {
 
 	__asm        push   0xFFFFFFFF;
 	__asm        mov    eax, bAddToParentList;
@@ -3959,7 +3959,7 @@ _T72:
 }
 
 // FUNCTION: COPTER_D 0x004524ad
-void RenderSettingsWindow::RenderSettingsWindow(class MRect& rectNewPosition, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+void RenderSettingsWindow::RenderSettingsWindow(class MRect& rectNewPosition, int32_t nNewID, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
 	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
@@ -4054,9 +4054,9 @@ void RenderSettingsWindow::~RenderSettingsWindow() {
 
 // FUNCTION: COPTER_D 0x00452637
 int32_t RenderSettingsWindow::Initialize() {
-	class ButtonWindow* tempButtonWindow;
-	class TextWindow* tempTextWindow;
-	class RadioButtonWindow* tempRadioButtonWindow;
+	class ButtonWindow *tempButtonWindow;
+	class TextWindow *tempTextWindow;
+	class RadioButtonWindow *tempRadioButtonWindow;
 	class basic_string<char> sText;
 	int32_t nFullStringID;
 
@@ -7811,7 +7811,7 @@ _T92b:
 }
 
 // FUNCTION: COPTER_D 0x00455a06
-int32_t RenderSettingsWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
+int32_t RenderSettingsWindow::DoMessage(class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 // LINE 890:
 	__asm        mov    eax, lWindowID;
 	__asm        mov    [ebp-8], eax;
@@ -7969,7 +7969,7 @@ _T1ee:
 }
 
 // FUNCTION: COPTER_D 0x00455bfb
-void SoundSettingsWindow::SoundSettingsWindow(class MRect& rectNewPosition, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+void SoundSettingsWindow::SoundSettingsWindow(class MRect& rectNewPosition, int32_t nNewID, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
 	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
@@ -8007,9 +8007,9 @@ void SoundSettingsWindow::SoundSettingsWindow(class MRect& rectNewPosition, int3
 
 // FUNCTION: COPTER_D 0x00455c7f
 int32_t SoundSettingsWindow::Initialize() {
-	class TextWindow* tempTextWindow;
-	class ButtonWindow* tempButtonWindow2;
-	class ButtonWindow* tempButtonWindow1;
+	class TextWindow *tempTextWindow;
+	class ButtonWindow *tempButtonWindow2;
+	class ButtonWindow *tempButtonWindow1;
 	class basic_string<char> sText;
 	int32_t nFullStringID;
 
@@ -9562,7 +9562,7 @@ _Tf8:
 }
 
 // FUNCTION: COPTER_D 0x004571ed
-int32_t SoundSettingsWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
+int32_t SoundSettingsWindow::DoMessage(class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 // LINE 1220:
 	__asm        mov    eax, lWindowID;
 	__asm        mov    [ebp-8], eax;
@@ -9671,7 +9671,7 @@ long SoundSettingsWindow::ConvertSliderValueToSoundValue(long lSliderValue) {
 }
 
 // FUNCTION: COPTER_D 0x00457331
-void CitySettingsWindow::CitySettingsWindow(class MRect& rectNewPosition, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+void CitySettingsWindow::CitySettingsWindow(class MRect& rectNewPosition, int32_t nNewID, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 	int32_t i;
 
 
@@ -9715,8 +9715,8 @@ _T69:
 
 // FUNCTION: COPTER_D 0x004573a9
 int32_t CitySettingsWindow::Initialize() {
-	class ButtonWindow* tempButtonWindow;
-	class TextWindow* tempTextWindow;
+	class ButtonWindow *tempButtonWindow;
+	class TextWindow *tempTextWindow;
 	class basic_string<char> sText;
 	int32_t nFullStringID;
 
@@ -11807,7 +11807,7 @@ _T1e37:
 }
 
 // FUNCTION: COPTER_D 0x004591f5
-void CitySettingsWindow::SetCurrentCitySettings(struct tagCitySettings* newCitySettings) {
+void CitySettingsWindow::SetCurrentCitySettings(struct tagCitySettings *newCitySettings) {
 // LINE 1470:
 	__asm        mov    eax, newCitySettings;
 	__asm        mov    eax, [eax];
@@ -11869,7 +11869,7 @@ void CitySettingsWindow::SetCurrentCitySettings(struct tagCitySettings* newCityS
 }
 
 // FUNCTION: COPTER_D 0x004592ab
-void CitySettingsWindow::GetCurrentCitySettings(struct tagCitySettings* currentCitySettings) {
+void CitySettingsWindow::GetCurrentCitySettings(struct tagCitySettings *currentCitySettings) {
 // LINE 1486:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x74];
@@ -11923,7 +11923,7 @@ void CitySettingsWindow::GetCurrentCitySettings(struct tagCitySettings* currentC
 }
 
 // FUNCTION: COPTER_D 0x00459359
-int32_t CitySettingsWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
+int32_t CitySettingsWindow::DoMessage(class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 // LINE 1504:
 	__asm        mov    eax, lWindowID;
 	__asm        mov    [ebp-8], eax;
@@ -12023,7 +12023,7 @@ _T45:
 }
 
 // FUNCTION: COPTER_D 0x00459464
-void PopupMenuExtra::PopupMenuExtra(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, char * szNewBackgroundImageFileName) {
+void PopupMenuExtra::PopupMenuExtra(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList, char * szNewBackgroundImageFileName) {
 
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
@@ -13822,7 +13822,7 @@ _Tfa:
 }
 
 // FUNCTION: COPTER_D 0x0045aab4
-void TooltipWindow::TooltipWindow(class MRect& rectNewWindow, int32_t nNewID, int32_t nNewWindowTitleTextID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, char * szNewBackgroundImageFileName) {
+void TooltipWindow::TooltipWindow(class MRect& rectNewWindow, int32_t nNewID, int32_t nNewWindowTitleTextID, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList, char * szNewBackgroundImageFileName) {
 
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
@@ -14137,7 +14137,7 @@ _T3d8:
 }
 
 // FUNCTION: COPTER_D 0x0045ae9b
-void TooltipWindow::TooltipWindow(class MRect& rectNewWindow, int32_t nNewID, class basic_string<char>& sNewWindowTitle, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, char * szNewBackgroundImageFileName) {
+void TooltipWindow::TooltipWindow(class MRect& rectNewWindow, int32_t nNewID, class basic_string<char>& sNewWindowTitle, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList, char * szNewBackgroundImageFileName) {
 
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
@@ -15212,7 +15212,7 @@ _T86:
 }
 
 // FUNCTION: COPTER_D 0x0045bb50
-void BoneheadTextEditWindow::BoneheadTextEditWindow(class MRect& rectNewWindow, int32_t nNewID, int32_t nNewWindowTitleTextID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, char * szNewImageFileName) {
+void BoneheadTextEditWindow::BoneheadTextEditWindow(class MRect& rectNewWindow, int32_t nNewID, int32_t nNewWindowTitleTextID, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList, char * szNewImageFileName) {
 
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
@@ -15473,7 +15473,7 @@ _T337:
 }
 
 // FUNCTION: COPTER_D 0x0045be96
-void BoneheadTextEditWindow::BoneheadTextEditWindow(class MRect& rectNewWindow, int32_t nNewID, const class basic_string<char>& sNewWindowTitle, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, char * szNewImageFileName) {
+void BoneheadTextEditWindow::BoneheadTextEditWindow(class MRect& rectNewWindow, int32_t nNewID, const class basic_string<char>& sNewWindowTitle, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList, char * szNewImageFileName) {
 
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
@@ -17733,7 +17733,7 @@ _T6a:
 }
 
 // FUNCTION: COPTER_D 0x0045d955
-void MessageBoxWindowEdit::MessageBoxWindowEdit(class MPoint& ptNewPosition, unsigned long lNewType, unsigned long lNewMessageID, const class basic_string<char>& sNewInitialEditText, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, int32_t bNewSelfDeleting, char * szTextEditBackgroundImageFileName, char * szImageFileName, char * szButtonImageFileName, char * szAnimationImageFileName) {
+void MessageBoxWindowEdit::MessageBoxWindowEdit(class MPoint& ptNewPosition, unsigned long lNewType, unsigned long lNewMessageID, const class basic_string<char>& sNewInitialEditText, int32_t nNewID, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList, int32_t bNewSelfDeleting, char * szTextEditBackgroundImageFileName, char * szImageFileName, char * szButtonImageFileName, char * szAnimationImageFileName) {
 
 	__asm        mov    eax, szAnimationImageFileName;
 	__asm        push   eax;
@@ -17817,7 +17817,7 @@ _Td1:
 }
 
 // FUNCTION: COPTER_D 0x0045da55
-void MessageBoxWindowEdit::MessageBoxWindowEdit(class MPoint& ptNewPosition, unsigned long lNewType, class basic_string<char>& sNewMessage, const class basic_string<char>& sNewInitialEditText, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, int32_t bNewSelfDeleting, char * szTextEditBackgroundImageFileName, char * szImageFileName, char * szButtonImageFileName, char * szAnimationImageFileName) {
+void MessageBoxWindowEdit::MessageBoxWindowEdit(class MPoint& ptNewPosition, unsigned long lNewType, class basic_string<char>& sNewMessage, const class basic_string<char>& sNewInitialEditText, int32_t nNewID, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList, int32_t bNewSelfDeleting, char * szTextEditBackgroundImageFileName, char * szImageFileName, char * szButtonImageFileName, char * szAnimationImageFileName) {
 
 	__asm        mov    eax, szAnimationImageFileName;
 	__asm        push   eax;
@@ -17927,7 +17927,7 @@ int32_t MessageBoxWindowEdit::Initialize() {
 }
 
 // FUNCTION: COPTER_D 0x0045dbae
-void ScrollingCreditWindow::ScrollingCreditWindow(int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+void ScrollingCreditWindow::ScrollingCreditWindow(int32_t nNewID, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
 	__asm        jmp    near ptr 0x0045DBBF;
 
@@ -18331,7 +18331,7 @@ int32_t ScrollingCreditWindow::Scroll() {
 }
 
 // FUNCTION: COPTER_D 0x0045e10c
-int32_t ScrollingCreditWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
+int32_t ScrollingCreditWindow::DoMessage(class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 // LINE 2381:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x0045E11F;
@@ -18379,7 +18379,7 @@ static void $E74() {
 }
 
 // FUNCTION: COPTER_D 0x0045e1a4
-void CheckupWindow::CheckupWindow(class MRect& rectNewPosition, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+void CheckupWindow::CheckupWindow(class MRect& rectNewPosition, int32_t nNewID, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 	int32_t i;
 
 
@@ -18437,8 +18437,8 @@ _T98:
 
 // FUNCTION: COPTER_D 0x0045e24b
 int32_t CheckupWindow::Initialize() {
-	class ButtonWindow* tempButtonWindow;
-	class TextWindow* tempTextWindow;
+	class ButtonWindow *tempButtonWindow;
+	class TextWindow *tempTextWindow;
 	class basic_string<char> sText;
 	int32_t nFullStringID;
 
@@ -21133,7 +21133,7 @@ _T7c2:
 }
 
 // FUNCTION: COPTER_D 0x00460848
-int32_t CheckupWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
+int32_t CheckupWindow::DoMessage(class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 // LINE 2680:
 	__asm        mov    eax, lWindowID;
 	__asm        mov    [ebp-8], eax;

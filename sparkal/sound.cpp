@@ -47,9 +47,9 @@ public:
 	long bSoundEnabled;
 	static unsigned long dwMaxWaveFormatExSize;
 protected:
-	class DigitalSound* primarySound;
-	struct IDirectSoundBuffer* lpPrimarySound;
-	struct IDirectSound* lpDirectSound;
+	class DigitalSound *primarySound;
+	struct IDirectSoundBuffer *lpPrimarySound;
+	struct IDirectSound *lpDirectSound;
 	struct _DSCAPS dsCapabilities;
 };
 
@@ -67,7 +67,7 @@ protected:
 // VTABLE: COPTER_D 0x0058f448
 class SoundManager{
 public:
-	class Sound* sound[128];
+	class Sound *sound[128];
 	void AddSound(class Sound*, int32_t);
 	void AddDigitalSound(const class basic_string<char>&, int32_t, int32_t);
 	void AddDigitalSound(long, int32_t);
@@ -131,11 +131,11 @@ class DigitalSound : public Sound
 protected:
 	int32_t nStreamingType;
 	int32_t nCompletionEstimationTimerSet;
-	static struct IDirectSound* lpDirectSound;
+	static struct IDirectSound *lpDirectSound;
 	uint32_t cbSize;
 	struct tWAVEFORMATEX waveFormatEx;
-	struct IDirectSoundBuffer* lpSound[8];
-	struct _STREAMBUFINFO* lpStreamBufferInfo;
+	struct IDirectSoundBuffer *lpSound[8];
+	struct _STREAMBUFINFO *lpStreamBufferInfo;
 	unsigned long dwDesiredBufferDescFlags;
 public:
 	void DigitalSound(long);
@@ -187,7 +187,7 @@ class basic_string<char>{
 	using reference_pointer = class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char>* reference;
+	class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -305,7 +305,7 @@ struct _DSBUFFERDESC{
 	unsigned long dwFlags;
 	unsigned long dwBufferBytes;
 	unsigned long dwReserved;
-	struct tWAVEFORMATEX* lpwfxFormat;
+	struct tWAVEFORMATEX *lpwfxFormat;
 };
 
 // Type: struct _DSBUFFERDESC (forward reference);
@@ -314,7 +314,7 @@ struct _DSBUFFERDESC{
 	unsigned long dwFlags;
 	unsigned long dwBufferBytes;
 	unsigned long dwReserved;
-	struct tWAVEFORMATEX* lpwfxFormat;
+	struct tWAVEFORMATEX *lpwfxFormat;
 };
 
 // Type: struct IDirectSoundBuffer (forward reference);
@@ -899,7 +899,7 @@ _T5b:
 }
 
 // FUNCTION: COPTER_D 0x0042e47e
-void SoundManager::AddSound(class Sound* soundToAdd, int32_t nIndex) {
+void SoundManager::AddSound(class Sound *soundToAdd, int32_t nIndex) {
 // LINE 316:
 	__asm        mov    eax, nIndex;
 	__asm        mov    ecx, this;
@@ -933,7 +933,7 @@ _T4b:
 
 // FUNCTION: COPTER_D 0x0042e4e2
 void SoundManager::AddDigitalSound(long lResID, int32_t nIndex) {
-	class DigitalSound* newDigitalSound;
+	class DigitalSound *newDigitalSound;
 
 // LINE 341:
 	__asm        push   0x7A;
@@ -985,7 +985,7 @@ _T7d:
 
 // FUNCTION: COPTER_D 0x0042e578
 void SoundManager::AddDigitalSound(const class basic_string<char>& sNewSoundFile, int32_t nIndex, int32_t nStreamingType) {
-	class DigitalSound* newDigitalSound;
+	class DigitalSound *newDigitalSound;
 
 // LINE 348:
 	__asm        push   0x7A;
@@ -2808,7 +2808,7 @@ int32_t DigitalSound::CreatePrimarySoundBuffer() {
 }
 
 // FUNCTION: COPTER_D 0x0042f9da
-int32_t DigitalSound::CreateSoundBuffer(struct _DSBUFFERDESC* dsNewBufferDescription) {
+int32_t DigitalSound::CreateSoundBuffer(struct _DSBUFFERDESC *dsNewBufferDescription) {
 	long hResult;
 	struct _DSBUFFERDESC dsBufferDescription;
 
@@ -3357,7 +3357,7 @@ long DigitalSound::IsPlaying() {
 }
 
 // FUNCTION: COPTER_D 0x0042ff90
-long DigitalSound::IsPlaying(struct IDirectSoundBuffer** lplpSoundPlaying) {
+long DigitalSound::IsPlaying(struct IDirectSoundBuffer **lplpSoundPlaying) {
 	long hResult;
 	int32_t i;
 	unsigned long dwStatus;
@@ -3440,7 +3440,7 @@ _Tc3:
 long DigitalSound::Play(long bPlayLooping, int32_t nDuplicateType) {
 	long hResult;
 	unsigned long dwLooped;
-	struct IDirectSoundBuffer* lpSoundBufferToPlay;
+	struct IDirectSoundBuffer *lpSoundBufferToPlay;
 
 // LINE 1271:
 	__asm        mov    dwLooped, 0;
@@ -3689,7 +3689,7 @@ _T298:
 }
 
 // FUNCTION: COPTER_D 0x004302f9
-int32_t DigitalSound::GetSoundAliasToPlay(struct IDirectSoundBuffer** lplpSoundBufferToPlay) {
+int32_t DigitalSound::GetSoundAliasToPlay(struct IDirectSoundBuffer **lplpSoundBufferToPlay) {
 	long hResult;
 	int32_t i;
 	unsigned long dwStatus;
@@ -4981,7 +4981,7 @@ _Tea:
 
 // FUNCTION: COPTER_D 0x004310a5
 void StreamingBufferTimerCallback(uint32_t __formal, uint32_t __formal, unsigned long dwUser, unsigned long __formal, unsigned long __formal) {
-	class DigitalSound* digitalSoundObject;
+	class DigitalSound *digitalSoundObject;
 
 // LINE 1798:
 	__asm        mov    eax, dwUser;
@@ -5861,7 +5861,7 @@ _Tb7:
 
 // FUNCTION: COPTER_D 0x00431947
 void CompletionEstimationTimerCallback(uint32_t nTimerID, uint32_t __formal, unsigned long dwUser, unsigned long __formal, unsigned long __formal) {
-	class DigitalSound* digitalSoundObject;
+	class DigitalSound *digitalSoundObject;
 
 // LINE 2107:
 	__asm        mov    eax, dwUser;
@@ -6101,5 +6101,5 @@ unsigned long SoundSystem::dwMaxWaveFormatExSize = 0;
 unsigned long Sound::lTotalMemoryUsage = 0;
 
 // GLOBAL: COPTER_D 0x00597e60
-struct IDirectSound* DigitalSound::lpDirectSound = { 0 /* todo */ };
+struct IDirectSound *DigitalSound::lpDirectSound = { 0 /* todo */ };
 

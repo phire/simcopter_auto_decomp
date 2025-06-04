@@ -47,18 +47,18 @@ struct VRBmpHdr{
 
 // Type: struct _FaceHdr (forward reference);
 struct _FaceHdr{
-	struct _FaceHdr* NextFace;
+	struct _FaceHdr *NextFace;
 	int32_t Nverts;
 	int32_t Attrib1;
 	int32_t Attrib2;
 	int32_t Plotter;
 	int32_t Count2d;
-	struct Clip3d* Verts2d;
+	struct Clip3d *Verts2d;
 	int32_t PlyVerts;
-	struct MapVert* MapVerts;
+	struct MapVert *MapVerts;
 	int32_t Bitmap;
-	struct MapVert* Barrys;
-	struct Project3d* Normal;
+	struct MapVert *Barrys;
+	struct Project3d *Normal;
 };
 
 // Type: void;
@@ -69,31 +69,31 @@ struct VRObjInfo{
 	int32_t Verts;
 	int32_t Attribute;
 	int32_t Radius;
-	struct Point3d* ObjCenter;
-	struct Point3d* VertsPtr;
-	struct Xform3d* VertsXfm;
-	struct Point3d* OrgVerts;
-	int32_t[4][4]* Matrix;
+	struct Point3d *ObjCenter;
+	struct Point3d *VertsPtr;
+	struct Xform3d *VertsXfm;
+	struct Point3d *OrgVerts;
+	int32_t *Matrix[4][4];
 };
 
 // Type: struct ObjectHdr (forward reference);
 struct ObjectHdr{
 	int32_t Attrib;
 	int32_t NVerts;
-	struct Point3d* VertsPtr;
+	struct Point3d *VertsPtr;
 	int32_t MemPool;
 	int32_t NFaces;
 	int32_t PolyVerts;
 	struct Point3d CenterOrg;
 	struct Point3d Center;
 	int32_t Radius;
-	struct _BSPtree* bsptree;
+	struct _BSPtree *bsptree;
 	int32_t StaticCnt;
 	int32_t StaticPtr;
 	int32_t MiscReg1;
 	int32_t ID;
 	int32_t Entry;
-	struct _FaceHdr* FacePtr;
+	struct _FaceHdr *FacePtr;
 	int32_t Matrix[4][4];
 };
 
@@ -108,14 +108,14 @@ struct Point3d{
 
 // Contribution: 1:000d7cc0-000d89a4 Module: 132, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004d8cc0
-int32_t VRCreateTexColors(struct VRResource* res, int32_t create_new) {
+int32_t VRCreateTexColors(struct VRResource *res, int32_t create_new) {
 	unsigned char * tptr;
 	int32_t maxcolor;
-	struct TEXT_Resource* hdr;
+	struct TEXT_Resource *hdr;
 	int32_t j;
 	int32_t i;
 	int32_t maxval;
-	struct VRBmpHdr* bhdr;
+	struct VRBmpHdr *bhdr;
 
 // LINE 122:
 	__asm        mov    eax, res;
@@ -269,7 +269,7 @@ _T193:
 }
 
 // FUNCTION: COPTER_D 0x004d8e58
-int32_t CreateTiledTexColors(uint32_t * tabentry, struct VRBmpHdr* bhdr, struct VRResource* res, int32_t create_new) {
+int32_t CreateTiledTexColors(uint32_t * tabentry, struct VRBmpHdr *bhdr, struct VRResource *res, int32_t create_new) {
 	unsigned char * tptr;
 	unsigned char * ltptr;
 	int32_t maxcolor;
@@ -428,7 +428,7 @@ _T17a:
 void VRFaceSetTexColor(int32_t face) {
 	int32_t hiword;
 	int32_t * tilebmpcolors;
-	struct _FaceHdr* fh;
+	struct _FaceHdr *fh;
 	int32_t loword;
 
 // LINE 272:
@@ -547,7 +547,7 @@ _T5a:
 
 // FUNCTION: COPTER_D 0x004d90fa
 struct COLOR_SHADE* VRGetColorShade(int32_t color) {
-	struct COLOR_SHADE* cptr;
+	struct COLOR_SHADE *cptr;
 
 // LINE 348:
 	__asm        mov    cptr, 0x5ADC10;
@@ -605,10 +605,10 @@ void VRSetIntensities(int32_t ambient, int32_t var1, int32_t var2, int32_t var3)
 
 // FUNCTION: COPTER_D 0x004d918b
 void VRObjSetShading(int32_t obj) {
-	struct COLOR_SHADE* cptr;
+	struct COLOR_SHADE *cptr;
 	int32_t intensity;
 	int32_t i;
-	struct _FaceHdr* fh;
+	struct _FaceHdr *fh;
 	int32_t color;
 	int32_t face;
 	struct VRObjInfo oinfo;
@@ -835,13 +835,13 @@ _T246:
 }
 
 // FUNCTION: COPTER_D 0x004d93d6
-void VRDyObjSetShading(int32_t obj, int32_t[4][4]* tmat) {
+void VRDyObjSetShading(int32_t obj, int32_t *tmat[4][4]) {
 	struct Point3d rotlitevect;
-	struct COLOR_SHADE* cptr;
-	struct ObjectHdr* oh;
+	struct COLOR_SHADE *cptr;
+	struct ObjectHdr *oh;
 	int32_t intensity;
 	int32_t i;
-	struct _FaceHdr* fh;
+	struct _FaceHdr *fh;
 	int32_t color;
 	int32_t diffuse;
 	int32_t level;
@@ -1017,10 +1017,10 @@ _T1b1:
 }
 
 // FUNCTION: COPTER_D 0x004d958c
-void VRTexTileSqFace(int32_t face, struct VRResource* res, int32_t tf) {
+void VRTexTileSqFace(int32_t face, struct VRResource *res, int32_t tf) {
 	int32_t i;
 	int32_t minv;
-	struct _FaceHdr* fh;
+	struct _FaceHdr *fh;
 	int32_t stvert;
 	int32_t minu;
 
@@ -1166,14 +1166,14 @@ _T181:
 }
 
 // FUNCTION: COPTER_D 0x004d9712
-void VRObjSetGouraudShade(struct ObjectHdr* oh, struct Point3d* vnorms) {
-	struct Point3d* vn;
-	struct COLOR_SHADE* cptr;
+void VRObjSetGouraudShade(struct ObjectHdr *oh, struct Point3d *vnorms) {
+	struct Point3d *vn;
+	struct COLOR_SHADE *cptr;
 	int32_t j;
 	int32_t intensity;
 	int32_t i;
 	int32_t * faceverts;
-	struct _FaceHdr* fh;
+	struct _FaceHdr *fh;
 	int32_t color;
 	int32_t diffuse;
 	int32_t level;
@@ -1373,11 +1373,11 @@ _T1f0:
 }
 
 // FUNCTION: COPTER_D 0x004d9907
-void VRObjSetTranslucent(int32_t obj, struct VRResource* res, int32_t bitmap) {
-	struct ObjectHdr* oh;
+void VRObjSetTranslucent(int32_t obj, struct VRResource *res, int32_t bitmap) {
+	struct ObjectHdr *oh;
 	int32_t i;
-	struct _FaceHdr* fh;
-	struct VRBmpHdr* bhdr;
+	struct _FaceHdr *fh;
+	struct VRBmpHdr *bhdr;
 
 // LINE 699:
 	__asm        mov    eax, obj;
@@ -1426,7 +1426,7 @@ _T73:
 
 // FUNCTION: COPTER_D 0x004d997f
 void VRFaceSetColor(int32_t face, int32_t color) {
-	struct _FaceHdr* fh;
+	struct _FaceHdr *fh;
 
 // LINE 728:
 	__asm        mov    eax, face;
@@ -1473,7 +1473,7 @@ static int32_t S_intensity3 = 52428;
 
 // Contribution: 3:0006fa70-0006fe77 Module: 132, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00606a70
-static struct TEXT_Resource* S_texres;
+static struct TEXT_Resource *S_texres;
 
 // GLOBAL: COPTER_D 0x00606a78
 static int32_t S_ctrs[256];

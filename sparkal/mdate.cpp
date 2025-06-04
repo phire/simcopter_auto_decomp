@@ -134,7 +134,7 @@ public:
 class istream : public virtual ios
 {
 public:
-	int32_t[0]* ios;
+	int32_t *ios[0];
 	void istream(class ios&);
 	void istream(const class istream&);
 	void istream();
@@ -202,7 +202,7 @@ private:
 class ostream : public virtual ios
 {
 public:
-	int32_t[0]* ios;
+	int32_t *ios[0];
 	void ostream(class ios&);
 	void ostream(const class ostream&);
 	void ostream();
@@ -350,14 +350,14 @@ protected:
 		tied = 1,
 	};
 protected:
-	class streambuf* bp;
+	class streambuf *bp;
 	int32_t state;
 	int32_t ispecial;
 	int32_t ospecial;
 	int32_t isfx_special;
 	int32_t osfx_special;
 	int32_t x_delbuf;
-	class ostream* x_tie;
+	class ostream *x_tie;
 	long x_flags;
 	int32_t x_precision;
 	char x_fill;
@@ -387,7 +387,7 @@ private:
 class ostream : public virtual ios
 {
 public:
-	int32_t[0]* ios;
+	int32_t *ios[0];
 	void ostream(class ios&);
 	void ostream(const class ostream&);
 	void ostream();
@@ -439,7 +439,7 @@ private:
 // Contribution: 1:000bb460-000bc660 Module: 2, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004bc460
 void MDate::MDate() {
-	struct tm* now;
+	struct tm *now;
 	long clk;
 
 
@@ -629,7 +629,7 @@ uint32_t MDate::DayOfWeek(char * nameOfDay) {
 }
 
 // FUNCTION: COPTER_D 0x004bc673
-static int32_t FindMatch(char * str, char ** candidates, int32_t icand) {
+static int32_t FindMatch(char * str, char * *candidates, int32_t icand) {
 	uint32_t len;
 
 // LINE 56:

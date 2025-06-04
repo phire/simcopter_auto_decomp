@@ -206,7 +206,7 @@ public:
 class ostream : public virtual ios
 {
 public:
-	int32_t[0]* ios;
+	int32_t *ios[0];
 	void ostream(class ios&);
 	void ostream(const class ostream&);
 	void ostream();
@@ -356,14 +356,14 @@ protected:
 		tied = 1,
 	};
 protected:
-	class streambuf* bp;
+	class streambuf *bp;
 	int32_t state;
 	int32_t ispecial;
 	int32_t ospecial;
 	int32_t isfx_special;
 	int32_t osfx_special;
 	int32_t x_delbuf;
-	class ostream* x_tie;
+	class ostream *x_tie;
 	long x_flags;
 	int32_t x_precision;
 	char x_fill;
@@ -489,14 +489,14 @@ protected:
 		tied = 1,
 	};
 protected:
-	class streambuf* bp;
+	class streambuf *bp;
 	int32_t state;
 	int32_t ispecial;
 	int32_t ospecial;
 	int32_t isfx_special;
 	int32_t osfx_special;
 	int32_t x_delbuf;
-	class ostream* x_tie;
+	class ostream *x_tie;
 	long x_flags;
 	int32_t x_precision;
 	char x_fill;
@@ -526,7 +526,7 @@ private:
 class ostream : public virtual ios
 {
 public:
-	int32_t[0]* ios;
+	int32_t *ios[0];
 	void ostream(class ios&);
 	void ostream(const class ostream&);
 	void ostream();
@@ -894,7 +894,7 @@ class MTime  MTime::EndDST(uint32_t year) {
 // FUNCTION: COPTER_D 0x0043ca79
  MTime::MTime() {
 	class MDate today;
-	struct tm* t;
+	struct tm *t;
 	long ltime;
 
 

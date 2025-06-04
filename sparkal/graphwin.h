@@ -22,7 +22,7 @@ int32_t GraphicWindowManager::DecrementBusyCount() {
 
 // Function in module: Inputwin.obj
 // FUNCTION: COPTER_D 0x0040d7e0
-void  GraphicWindow::SetParent(class GraphicWindow* windowNewParent) {
+void  GraphicWindow::SetParent(class GraphicWindow *windowNewParent) {
 // LINE 324:
 	__asm        mov    eax, windowNewParent;
 	__asm        mov    ecx, this;

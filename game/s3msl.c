@@ -10,11 +10,11 @@ struct _MISSILE_DATA{
 	int32_t speed;
 	struct Point3d vector;
 	struct Point3d targloc;
-	struct _DYOBJ_INST* dymissile;
+	struct _DYOBJ_INST *dymissile;
 	struct Point2d celloc;
 	long animseq;
 	int32_t gas_on;
-	struct _DYOBJ_INST* dystarter;
+	struct _DYOBJ_INST *dystarter;
 	long mission_id;
 	long scale;
 };
@@ -33,11 +33,11 @@ struct _MISSILE_DATA{
 	int32_t speed;
 	struct Point3d vector;
 	struct Point3d targloc;
-	struct _DYOBJ_INST* dymissile;
+	struct _DYOBJ_INST *dymissile;
 	struct Point2d celloc;
 	long animseq;
 	int32_t gas_on;
-	struct _DYOBJ_INST* dystarter;
+	struct _DYOBJ_INST *dystarter;
 	long mission_id;
 	long scale;
 };
@@ -59,11 +59,11 @@ struct VRObjInfo{
 	int32_t Verts;
 	int32_t Attribute;
 	int32_t Radius;
-	struct Point3d* ObjCenter;
-	struct Point3d* VertsPtr;
-	struct Xform3d* VertsXfm;
-	struct Point3d* OrgVerts;
-	int32_t[4][4]* Matrix;
+	struct Point3d *ObjCenter;
+	struct Point3d *VertsPtr;
+	struct Xform3d *VertsXfm;
+	struct Point3d *OrgVerts;
+	int32_t *Matrix[4][4];
 };
 
 // Type: struct Point2d (forward reference);
@@ -74,8 +74,8 @@ struct Point2d{
 
 // Type: struct _DYOBJ_INST (forward reference);
 struct _DYOBJ_INST{
-	struct _DYOBJ_INST* next;
-	struct _DYOBJ_INST* vnext;
+	struct _DYOBJ_INST *next;
+	struct _DYOBJ_INST *vnext;
 	void * __ptr32 mesh;
 	short flags;
 	short user1;
@@ -100,9 +100,9 @@ struct _CELL_INFO{
 	short z;
 	short size;
 	short ctr;
-	struct _STOBJ_INST* stptr;
-	struct _DYOBJ_INST* dyptr;
-	struct _DYOBJ_INST* vwptr;
+	struct _STOBJ_INST *stptr;
+	struct _DYOBJ_INST *dyptr;
+	struct _DYOBJ_INST *vwptr;
 };
 
 // Type: struct _MISSION_PARMS;
@@ -120,10 +120,10 @@ struct VRFaceInfo{
 	int32_t Verts;
 	int32_t Attribute;
 	int32_t Plotter;
-	struct VRBmpHdr* Bitmap;
+	struct VRBmpHdr *Bitmap;
 	int32_t * VertList;
-	struct MapVert* MapVList;
-	struct MapVert* BarryPtr;
+	struct MapVert *MapVList;
+	struct MapVert *BarryPtr;
 };
 
 // Type: struct Point3d;
@@ -141,13 +141,13 @@ struct Point2d{
 
 // Type: struct _CELL_FIRE_DATA (forward reference);
 struct _CELL_FIRE_DATA{
-	struct _CELL_INFO* cptr;
+	struct _CELL_INFO *cptr;
 	long fire_count;
 };
 
 // Type: struct _STOBJ_INST (forward reference);
 struct _STOBJ_INST{
-	struct _STOBJ_INST* next;
+	struct _STOBJ_INST *next;
 	void * __ptr32 mesh;
 	long user1;
 	long user2;
@@ -165,7 +165,7 @@ struct FP3D{
 // Type: struct VRBlit (forward reference);
 struct VRBlit{
 	int32_t nverts;
-	struct Proj2d* verts;
+	struct Proj2d *verts;
 	int32_t notused;
 	int32_t user1;
 };
@@ -179,7 +179,7 @@ struct VRBlit{
 // Contribution: 1:0011d770-0012290d Module: 167, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0051e770
 void S3MissileReset() {
-	struct _MISSILE_DATA* md;
+	struct _MISSILE_DATA *md;
 	long i;
 
 // LINE 116:
@@ -295,12 +295,12 @@ _T16b:
 
 // FUNCTION: COPTER_D 0x0051e8e0
 void S3MissileInit() {
-	struct _MISSILE_DATA* md;
+	struct _MISSILE_DATA *md;
 	int32_t obj;
 	long j;
 	char * mem;
 	long i;
-	struct Point3d* verts;
+	struct Point3d *verts;
 	long size;
 	struct VRObjInfo oinfo;
 
@@ -843,10 +843,10 @@ _T600:
 }
 
 // FUNCTION: COPTER_D 0x0051eee5
-struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, struct Point3d* loc, struct Point3d* vect, long scale, struct _DYOBJ_INST* dystarter, int32_t speed, long mission_id) {
-	struct _MISSILE_DATA* md;
+struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d *celloc, struct Point3d *loc, struct Point3d *vect, long scale, struct _DYOBJ_INST *dystarter, int32_t speed, long mission_id) {
+	struct _MISSILE_DATA *md;
 	struct VRview pos;
-	struct _CELL_INFO* cptr;
+	struct _CELL_INFO *cptr;
 	int32_t rdist;
 	struct _MISSION_PARMS mp;
 	long i;
@@ -2193,12 +2193,12 @@ _Tfa0:
 
 // FUNCTION: COPTER_D 0x0051fe8a
 void S3MissileDriver() {
-	struct _CELL_INFO* tmpcptr;
-	struct _MISSILE_DATA* md;
+	struct _CELL_INFO *tmpcptr;
+	struct _MISSILE_DATA *md;
 	struct VRview pos;
-	struct _DYOBJ_INST** dyptrptr;
-	struct _CELL_INFO* cptr;
-	struct _CELL_INFO* lcptr;
+	struct _DYOBJ_INST **dyptrptr;
+	struct _CELL_INFO *cptr;
+	struct _CELL_INFO *lcptr;
 	int32_t alt;
 	struct _MISSION_PARMS mp;
 	long i;
@@ -2206,8 +2206,8 @@ void S3MissileDriver() {
 	struct Point3d newloc;
 	struct Point3d tmploc;
 	int32_t dist;
-	struct _DYOBJ_INST* dyobj;
-	struct _CELL_FIRE_DATA* cfd;
+	struct _DYOBJ_INST *dyobj;
+	struct _CELL_FIRE_DATA *cfd;
 
 // LINE 926:
 	__asm        cmp    S_msl_fire_delay, 0;
@@ -5105,7 +5105,7 @@ _T2202:
 }
 
 // FUNCTION: COPTER_D 0x00522096
-int32_t S3MissileCollisionCheck(struct _MISSILE_DATA* md, int32_t dist, struct _CELL_INFO* cptr) {
+int32_t S3MissileCollisionCheck(struct _MISSILE_DATA *md, int32_t dist, struct _CELL_INFO *cptr) {
 	long num_debris;
 	struct Point3d newvector;
 	int32_t newdist;
@@ -5116,14 +5116,14 @@ int32_t S3MissileCollisionCheck(struct _MISSILE_DATA* md, int32_t dist, struct _
 	struct Point3d center;
 	struct Point3d vec;
 	int32_t refmat[4][4];
-	struct _STOBJ_INST* stobj;
-	struct _DYOBJ_INST* dyobj;
+	struct _STOBJ_INST *stobj;
+	struct _DYOBJ_INST *dyobj;
 	struct Point3d cloc;
 	struct Point3d sloc;
 	long hit_type;
-	struct _CELL_FIRE_DATA* cfd;
+	struct _CELL_FIRE_DATA *cfd;
 	struct VRObjInfo oinfo;
-	struct Point3d* norm;
+	struct Point3d *norm;
 
 // LINE 1807:
 	__asm        mov    eax, cptr;
@@ -6355,7 +6355,7 @@ _Td21:
 }
 
 // FUNCTION: COPTER_D 0x00522dbc
-int32_t S3MissileGroundHit(struct Point3d* sp, struct Point3d* sv, int32_t dist, struct Point3d* cloc) {
+int32_t S3MissileGroundHit(struct Point3d *sp, struct Point3d *sv, int32_t dist, struct Point3d *cloc) {
 	int32_t alt;
 	struct Point3d endp;
 	int32_t alt2;
@@ -6454,7 +6454,7 @@ _Tf2:
 }
 
 // FUNCTION: COPTER_D 0x00522eb3
-int32_t S3MissileSphereHit(struct Point3d* sp, struct Point3d* sv, int32_t dist, struct Point3d* tc, int32_t r) {
+int32_t S3MissileSphereHit(struct Point3d *sp, struct Point3d *sv, int32_t dist, struct Point3d *tc, int32_t r) {
 	struct FP3D s_to_t;
 	struct FP3D ftc;
 	double newdist;
@@ -6695,7 +6695,7 @@ _T30a:
 }
 
 // FUNCTION: COPTER_D 0x005231c2
-void S3DrawPoint(struct VRBlit* blit) {
+void S3DrawPoint(struct VRBlit *blit) {
 	long winheight;
 	int32_t y;
 	int32_t x;
@@ -6772,7 +6772,7 @@ _Ta9:
 
 // FUNCTION: COPTER_D 0x00523270
 struct _MISSILE_DATA* S3DebrisGetByMission(long mission_id) {
-	struct _MISSILE_DATA* md;
+	struct _MISSILE_DATA *md;
 	long i;
 
 // LINE 2667:
@@ -6809,10 +6809,10 @@ _T5c:
 }
 
 // FUNCTION: COPTER_D 0x005232d1
-void S3MissileDebrisDouse(struct _DYOBJ_INST* dyobj) {
-	struct _MISSILE_DATA* md;
-	struct _DYOBJ_INST** dyptrptr;
-	struct _CELL_INFO* cptr;
+void S3MissileDebrisDouse(struct _DYOBJ_INST *dyobj) {
+	struct _MISSILE_DATA *md;
+	struct _DYOBJ_INST **dyptrptr;
+	struct _CELL_INFO *cptr;
 	struct _MISSION_PARMS mp;
 
 // LINE 2693:
@@ -6929,7 +6929,7 @@ _T129:
 }
 
 // FUNCTION: COPTER_D 0x005233ff
-void S3MissileDebrisFire(struct _CELL_INFO* cptr, struct Point3d* loc, long * seq) {
+void S3MissileDebrisFire(struct _CELL_INFO *cptr, struct Point3d *loc, long * seq) {
 	struct Point3d tmploc;
 
 // LINE 2751:
@@ -6968,8 +6968,8 @@ void S3MissileDebrisFire(struct _CELL_INFO* cptr, struct Point3d* loc, long * se
 
 // FUNCTION: COPTER_D 0x0052345a
 int32_t S3MissileMIFFLoad(void * __ptr32 miffReader) {
-	struct _MISSILE_DATA* md;
-	struct _CELL_INFO* cptr;
+	struct _MISSILE_DATA *md;
+	struct _CELL_INFO *cptr;
 	long i;
 	long ret;
 

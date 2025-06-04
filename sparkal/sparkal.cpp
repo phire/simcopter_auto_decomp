@@ -28,7 +28,7 @@ public:
 		MacSystem7 = 5,
 	};
 protected:
-	struct SparkalColor* mpColorTable;
+	struct SparkalColor *mpColorTable;
 	int32_t _mRuntimePlatform;
 	unsigned long _mFlags;
 	int32_t mbUseDirectDraw;
@@ -60,7 +60,7 @@ public:
 		MacSystem7 = 5,
 	};
 protected:
-	struct SparkalColor* mpColorTable;
+	struct SparkalColor *mpColorTable;
 	int32_t _mRuntimePlatform;
 	unsigned long _mFlags;
 	int32_t mbUseDirectDraw;
@@ -337,5 +337,5 @@ _T1a5:
 
 // Contribution: 3:00001580-00001583 Module: 56, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00598580
-class CSparkalApp* _gSparkalApp = { 0 /* todo */ };
+class CSparkalApp *_gSparkalApp = { 0 /* todo */ };
 

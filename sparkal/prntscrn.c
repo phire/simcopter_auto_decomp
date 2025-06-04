@@ -101,7 +101,7 @@ void S3PrintScreen() {
 
 // FUNCTION: COPTER_D 0x0046b8db
 void S3BufferPrint(char * fname, char * chPalette) {
-	struct _iobuf* hFileOut;
+	struct _iobuf *hFileOut;
 	int32_t ydim;
 	int32_t pitch;
 	int32_t xdim;
@@ -271,7 +271,7 @@ _T1e3:
 }
 
 // FUNCTION: COPTER_D 0x0046bac3
-int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
+int32_t S3WritePCXLine(struct _iobuf *fp, char * p, unsigned short n) {
 	unsigned short j;
 	unsigned short i;
 	unsigned short t;

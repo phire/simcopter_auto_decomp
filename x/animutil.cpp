@@ -106,7 +106,7 @@ enum UseDrawGrid {
 
 // Contribution: 1:00161610-00162e95 Module: 187, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00562610
-void GetAxis(float XY2Par, float XZ2Par, struct DXZY paraxis, struct DXZY* childaxis) {
+void GetAxis(float XY2Par, float XZ2Par, struct DXZY paraxis, struct DXZY *childaxis) {
 // LINE 47:
 	__asm        mov    eax, childaxis;
 	__asm        push   eax;
@@ -154,7 +154,7 @@ void GetAxis(float XY2Par, float XZ2Par, struct DXZY paraxis, struct DXZY* child
 }
 
 // FUNCTION: COPTER_D 0x0056269d
-void GetAxes(float XY2Par, float XZ2Par, struct DXZY parmaj, struct DXZY parmin, struct DXZY* maj, struct DXZY* min, float majrad, float minrad) {
+void GetAxes(float XY2Par, float XZ2Par, struct DXZY parmaj, struct DXZY parmin, struct DXZY *maj, struct DXZY *min, float majrad, float minrad) {
 // LINE 52:
 	__asm        mov    eax, maj;
 	__asm        push   eax;
@@ -194,7 +194,7 @@ void GetAxes(float XY2Par, float XZ2Par, struct DXZY parmaj, struct DXZY parmin,
 }
 
 // FUNCTION: COPTER_D 0x005626f5
-unsigned short PutInPerspective(struct DXZY* xzy, short cH) {
+unsigned short PutInPerspective(struct DXZY *xzy, short cH) {
 // LINE 59:
 	__asm        mov    eax, xzy;
 	__asm        fld    dword ptr [eax+8];
@@ -234,7 +234,7 @@ _T6c:
 }
 
 // FUNCTION: COPTER_D 0x00562766
-unsigned short PutInPerspective(struct XZY* xzy, short cH) {
+unsigned short PutInPerspective(struct XZY *xzy, short cH) {
 	struct DXZY dxzy;
 
 // LINE 68:
@@ -374,7 +374,7 @@ void XY2Cartesian(float radius, float phi, float psi, float * xres, float * zres
 }
 
 // FUNCTION: COPTER_D 0x005628eb
-void XYIncrementCartesian(float sinXangle, float cosXangle, float sinYangle, float cosYangle, struct DXZY dpt, struct DXZY* transformed) {
+void XYIncrementCartesian(float sinXangle, float cosXangle, float sinYangle, float cosYangle, struct DXZY dpt, struct DXZY *transformed) {
 // LINE 94:
 	__asm        fld    dpt.x;
 	__asm        fmul   cosYangle;
@@ -414,7 +414,7 @@ void XYIncrementCartesian(float sinXangle, float cosXangle, float sinYangle, flo
 }
 
 // FUNCTION: COPTER_D 0x00562950
-void TransformToAxes(struct DXZY* xAxis, struct DXZY* zAxis, struct DXZY* yAxis, struct DXZY prist, struct DXZY* real) {
+void TransformToAxes(struct DXZY *xAxis, struct DXZY *zAxis, struct DXZY *yAxis, struct DXZY prist, struct DXZY *real) {
 // LINE 103:
 	__asm        mov    eax, real;
 	__asm        mov    dword ptr [eax], 0;
@@ -499,7 +499,7 @@ void TransformToAxes(struct DXZY* xAxis, struct DXZY* zAxis, struct DXZY* yAxis,
 }
 
 // FUNCTION: COPTER_D 0x00562a31
-void AxisTransformToScreen(struct DXZY* xAxis, struct DXZY* zAxis, struct DXZY* yAxis, struct DXZY* centeroffset, struct DXZY* dxzy) {
+void AxisTransformToScreen(struct DXZY *xAxis, struct DXZY *zAxis, struct DXZY *yAxis, struct DXZY *centeroffset, struct DXZY *dxzy) {
 	struct DXZY tf;
 
 // LINE 121:
@@ -641,7 +641,7 @@ _Tb3:
 }
 
 // FUNCTION: COPTER_D 0x00562b82
-void IncrementXY(struct Polar* inc, struct Polar* partPolar) {
+void IncrementXY(struct Polar *inc, struct Polar *partPolar) {
 // LINE 152:
 	__asm        push   0x8C085;
 	__asm        push   0x5BED14;
@@ -710,7 +710,7 @@ _T5c:
 }
 
 // FUNCTION: COPTER_D 0x00562c41
-void Keep0to2pi(struct Polar* polar) {
+void Keep0to2pi(struct Polar *polar) {
 // LINE 168:
 	__asm        mov    eax, polar;
 	__asm        push   eax;
@@ -746,7 +746,7 @@ float Keep0to2pi(float radians) {
 }
 
 // FUNCTION: COPTER_D 0x00562c9a
-void IncrementFloat(struct Polar inc, struct Polar* partPolar) {
+void IncrementFloat(struct Polar inc, struct Polar *partPolar) {
 // LINE 181:
 	__asm        mov    eax, partPolar;
 	__asm        fld    dword ptr [eax];
@@ -869,7 +869,7 @@ _T104:
 }
 
 // FUNCTION: COPTER_D 0x00562df2
-void NormalizeTo1(struct DXZY* vec) {
+void NormalizeTo1(struct DXZY *vec) {
 // LINE 209:
 	__asm        jmp    near ptr 0x00562DFD;
 }
@@ -905,7 +905,7 @@ double GetLength(float x, float z, float y) {
 }
 
 // FUNCTION: COPTER_D 0x00562e50
-void DrawDirectionDisk(struct Rect* rect, short latint, short lngint, short latincs, short lngincs, unsigned short polarAngles, struct Point* ctr, short length) {
+void DrawDirectionDisk(struct Rect *rect, short latint, short lngint, short latincs, short lngincs, unsigned short polarAngles, struct Point *ctr, short length) {
 	float junk;
 	float phi;
 	float psi;
@@ -949,7 +949,7 @@ void DrawDirectionDisk(struct Rect* rect, short latint, short lngint, short lati
 }
 
 // FUNCTION: COPTER_D 0x00562eab
-void DrawDirectionDisk(struct Rect* rect, float phi, float psi, unsigned short polarAngles, struct Point* ctr, short length) {
+void DrawDirectionDisk(struct Rect *rect, float phi, float psi, unsigned short polarAngles, struct Point *ctr, short length) {
 	float xdist;
 	float zdist;
 	float rad;
@@ -1290,8 +1290,8 @@ unsigned short DrawGrid(float phiOff, float psiOff, short cntrh, short cntrv, un
 }
 
 // FUNCTION: COPTER_D 0x00563204
-void GetChildIncrement(struct Polar* passedInc, struct Polar* parentPolar, struct Polar* partPolar) {
-	struct Polar* amountToInc;
+void GetChildIncrement(struct Polar *passedInc, struct Polar *parentPolar, struct Polar *partPolar) {
+	struct Polar *amountToInc;
 	struct Polar incFromParent;
 	float phiComp;
 	float tauComp;
@@ -1573,7 +1573,7 @@ _Tc2:
 }
 
 // FUNCTION: COPTER_D 0x005634fc
-void IncrementPhiPsi(struct Polar* inc, struct Polar* parentPolar, struct Polar* partPolar) {
+void IncrementPhiPsi(struct Polar *inc, struct Polar *parentPolar, struct Polar *partPolar) {
 // LINE 584:
 	__asm        mov    eax, inc;
 	__asm        movsx  eax, word ptr [eax+0x12];
@@ -1768,7 +1768,7 @@ _T1b1:
 }
 
 // FUNCTION: COPTER_D 0x005636d5
-void FillLatLngTrq(struct Polar* polar, short latincs, short lngIncs, short trqincs) {
+void FillLatLngTrq(struct Polar *polar, short latincs, short lngIncs, short trqincs) {
 // LINE 624:
 	__asm        mov    eax, polar;
 	__asm        movsx  eax, word ptr [eax+0x12];
@@ -1817,7 +1817,7 @@ _T61:
 }
 
 // FUNCTION: COPTER_D 0x0056374c
-void FillPhiPsiTau(struct Polar* polar, short latincs, short lngIncs, short trqincs) {
+void FillPhiPsiTau(struct Polar *polar, short latincs, short lngIncs, short trqincs) {
 // LINE 632:
 	__asm        mov    eax, polar;
 	__asm        fld    dword ptr [eax];
@@ -1869,7 +1869,7 @@ _T71:
 }
 
 // FUNCTION: COPTER_D 0x005637d3
-void SnapToIncs(struct Polar* polar, short latIncs, short lngIncs, short trqIncs) {
+void SnapToIncs(struct Polar *polar, short latIncs, short lngIncs, short trqIncs) {
 // LINE 640:
 	__asm        mov    eax, polar;
 	__asm        mov    word ptr [eax+0x14], 0;
@@ -2172,7 +2172,7 @@ void Polar2Cartesian(float radius, float phi, float psi, float * x, float * z, f
 }
 
 // FUNCTION: COPTER_D 0x00563aec
-void Polar2Cartesian(float radius, struct Polar* polar, struct DXZY* dxzy) {
+void Polar2Cartesian(float radius, struct Polar *polar, struct DXZY *dxzy) {
 // LINE 697:
 	__asm        mov    eax, dxzy;
 	__asm        add    eax, 8;
@@ -2197,7 +2197,7 @@ void Polar2Cartesian(float radius, struct Polar* polar, struct DXZY* dxzy) {
 }
 
 // FUNCTION: COPTER_D 0x00563b27
-void PolarTransformToScreen(float phiOff, float psiOff, float scale, struct DXZY* donttouch, struct DXZY* origin, short * ptH, short * ptV, short * ptDepth, unsigned short perspective) {
+void PolarTransformToScreen(float phiOff, float psiOff, float scale, struct DXZY *donttouch, struct DXZY *origin, short * ptH, short * ptV, short * ptDepth, unsigned short perspective) {
 	struct DXZY dpt;
 	float radius;
 	float phi;
@@ -2391,7 +2391,7 @@ _Tb5:
 }
 
 // FUNCTION: COPTER_D 0x00563cf6
-void Cartesian2Polar(struct DXZY dxzy, struct Polar* polar, float * radius) {
+void Cartesian2Polar(struct DXZY dxzy, struct Polar *polar, float * radius) {
 // LINE 764:
 	__asm        mov    eax, radius;
 	__asm        push   eax;
@@ -2416,7 +2416,7 @@ void Cartesian2Polar(struct DXZY dxzy, struct Polar* polar, float * radius) {
 }
 
 // FUNCTION: COPTER_D 0x00563d33
-void IncrementTorque(float dinc, struct Polar* parentPolar, struct Polar* childPolar) {
+void IncrementTorque(float dinc, struct Polar *parentPolar, struct Polar *childPolar) {
 	struct Polar parPolar;
 	float parPhiToZero;
 	struct Polar inc;
@@ -2481,7 +2481,7 @@ void IncrementTorque(float dinc, struct Polar* parentPolar, struct Polar* childP
 }
 
 // FUNCTION: COPTER_D 0x00563dd3
-void IncrementXYTorque(float dinc, struct Polar* parentPolar, struct Polar* childPolar) {
+void IncrementXYTorque(float dinc, struct Polar *parentPolar, struct Polar *childPolar) {
 	struct Polar parPolar;
 	float parX20;
 	float parY20;

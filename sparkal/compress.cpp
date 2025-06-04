@@ -23,7 +23,7 @@ public:
 	unsigned long Compose(class IFlatImage*, long, long);
 protected:
 	void * __ptr32 mhRLEImage;
-	struct RLEHeader* mpLockedImage;
+	struct RLEHeader *mpLockedImage;
 	unsigned long mLockCount;
 };
 
@@ -260,14 +260,14 @@ protected:
 		tied = 1,
 	};
 protected:
-	class streambuf* bp;
+	class streambuf *bp;
 	int32_t state;
 	int32_t ispecial;
 	int32_t ospecial;
 	int32_t isfx_special;
 	int32_t osfx_special;
 	int32_t x_delbuf;
-	class ostream* x_tie;
+	class ostream *x_tie;
 	long x_flags;
 	int32_t x_precision;
 	char x_fill;
@@ -292,12 +292,64 @@ private:
 	struct _CRT_CRITICAL_SECTION x_lock;
 };
 
+// Type: class ostream;
+// VTABLE: COPTER_D 0x00593a44
+class ostream : public virtual ios
+{
+public:
+	int32_t *ios[0];
+	void ostream(class ios&);
+	void ostream(const class ostream&);
+	void ostream();
+	void ostream(class streambuf*);
+	virtual void ~ostream() /* override */;
+	class ostream& flush();
+	int32_t opfx();
+	void osfx();
+	class ostream& operator<<(class streambuf*);
+	class ostream& operator<<(void * __ptr32);
+	class ostream& operator<<(double);
+	class ostream& operator<<(double);
+	class ostream& operator<<(float);
+	class ostream& operator<<(unsigned long);
+	class ostream& operator<<(long);
+	class ostream& operator<<(uint32_t);
+	class ostream& operator<<(int32_t);
+	class ostream& operator<<(unsigned short);
+	class ostream& operator<<(short);
+	class ostream& operator<<(char);
+	class ostream& operator<<(unsigned char);
+	class ostream& operator<<(char);
+	class ostream& operator<<(char *);
+	class ostream& operator<<(unsigned char *);
+	class ostream& operator<<(char *);
+	class ostream& operator<<(class ios& (*)(class ios&));
+	class ostream& operator<<(class ostream& (*)(class ostream&));
+	class ostream& put(char);
+	class ostream& put(unsigned char);
+	class ostream& put(char);
+	class ostream& write(char *, int32_t);
+	class ostream& write(unsigned char *, int32_t);
+	class ostream& write(char *, int32_t);
+	class ostream& seekp(long, enum ios::seek_dir);
+	class ostream& seekp(long);
+	long tellp();
+protected:
+	class ostream& operator=(const class ostream&);
+	class ostream& operator=(class streambuf*);
+	int32_t do_opfx(int32_t);
+	void do_osfx();
+private:
+	class ostream& writepad(char *, char *);
+	int32_t x_floatused;
+};
+
 // Type: class istream;
 // VTABLE: COPTER_D 0x00593ea4
 class istream : public virtual ios
 {
 public:
-	int32_t[0]* ios;
+	int32_t *ios[0];
 private:
 	void istream(class ios&);
 protected:
@@ -361,58 +413,6 @@ private:
 	int32_t getdouble(char *, int32_t);
 	int32_t _fGline;
 	int32_t x_gcount;
-};
-
-// Type: class ostream;
-// VTABLE: COPTER_D 0x00593a44
-class ostream : public virtual ios
-{
-public:
-	int32_t[0]* ios;
-	void ostream(class ios&);
-	void ostream(const class ostream&);
-	void ostream();
-	void ostream(class streambuf*);
-	virtual void ~ostream() /* override */;
-	class ostream& flush();
-	int32_t opfx();
-	void osfx();
-	class ostream& operator<<(class streambuf*);
-	class ostream& operator<<(void * __ptr32);
-	class ostream& operator<<(double);
-	class ostream& operator<<(double);
-	class ostream& operator<<(float);
-	class ostream& operator<<(unsigned long);
-	class ostream& operator<<(long);
-	class ostream& operator<<(uint32_t);
-	class ostream& operator<<(int32_t);
-	class ostream& operator<<(unsigned short);
-	class ostream& operator<<(short);
-	class ostream& operator<<(char);
-	class ostream& operator<<(unsigned char);
-	class ostream& operator<<(char);
-	class ostream& operator<<(char *);
-	class ostream& operator<<(unsigned char *);
-	class ostream& operator<<(char *);
-	class ostream& operator<<(class ios& (*)(class ios&));
-	class ostream& operator<<(class ostream& (*)(class ostream&));
-	class ostream& put(char);
-	class ostream& put(unsigned char);
-	class ostream& put(char);
-	class ostream& write(char *, int32_t);
-	class ostream& write(unsigned char *, int32_t);
-	class ostream& write(char *, int32_t);
-	class ostream& seekp(long, enum ios::seek_dir);
-	class ostream& seekp(long);
-	long tellp();
-protected:
-	class ostream& operator=(const class ostream&);
-	class ostream& operator=(class streambuf*);
-	int32_t do_opfx(int32_t);
-	void do_osfx();
-private:
-	class ostream& writepad(char *, char *);
-	int32_t x_floatused;
 };
 
 
@@ -577,7 +577,7 @@ _T21e:
 	__asm        je     _T375;
 // LINE 79:
 // Block start:
-	struct RLEHeader* pCompressedImage;
+	struct RLEHeader *pCompressedImage;
 	__asm        mov    pCompressedImage, 0;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -682,7 +682,7 @@ _T375:
 }
 
 // FUNCTION: COPTER_D 0x004aabb7
-void CRLECompressedImage::CRLECompressedImage(const class CFlatImage* pImage, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom, int32_t TransparentIndex) {
+void CRLECompressedImage::CRLECompressedImage(const class CFlatImage *pImage, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom, int32_t TransparentIndex) {
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0;
@@ -875,7 +875,7 @@ _Tb8:
 }
 
 // FUNCTION: COPTER_D 0x004aae02
-unsigned long CRLECompressedImage::Compose(class IFlatImage* pDest, long DestLeft, long DestTop, long ClipLeft, long ClipTop, long ClipRight, long ClipBottom) {
+unsigned long CRLECompressedImage::Compose(class IFlatImage *pDest, long DestLeft, long DestTop, long ClipLeft, long ClipTop, long ClipRight, long ClipBottom) {
 // LINE 157:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -1120,7 +1120,7 @@ _T253:
 }
 
 // FUNCTION: COPTER_D 0x004ab063
-static void ConvertCompressedByteOrdering(struct RLEHeader* pCompressedImage) {
+static void ConvertCompressedByteOrdering(struct RLEHeader *pCompressedImage) {
 // LINE 312:
 	__asm        jmp    near ptr 0x004AB06E;
 }

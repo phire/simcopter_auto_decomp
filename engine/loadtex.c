@@ -54,11 +54,11 @@ struct VRResource* LoadImages(char * name) {
 	int32_t file;
 	struct BMPFileHdr bmp;
 	int32_t i;
-	struct TEXT_Resource* res;
+	struct TEXT_Resource *res;
 	char * byteptr;
 	char * group;
 	int32_t s;
-	struct VRBmpInfo* bhdr;
+	struct VRBmpInfo *bhdr;
 	int32_t r;
 
 // LINE 77:
@@ -242,10 +242,10 @@ _T1e1:
 }
 
 // FUNCTION: COPTER_D 0x004d6246
-struct VRBmpHdr* VRInt2BmpHdr(struct VRResource* res, int32_t i) {
-	struct TEXT_Resource* hdr;
+struct VRBmpHdr* VRInt2BmpHdr(struct VRResource *res, int32_t i) {
+	struct TEXT_Resource *hdr;
 	int32_t j;
-	struct VRBmpHdr* bhdr;
+	struct VRBmpHdr *bhdr;
 
 // LINE 228:
 	__asm        mov    eax, res;
@@ -282,8 +282,8 @@ _T5a:
 }
 
 // FUNCTION: COPTER_D 0x004d62a5
-int32_t VRGetResTextureCnt(struct VRResource* res) {
-	struct TEXT_Resource* hdr;
+int32_t VRGetResTextureCnt(struct VRResource *res) {
+	struct TEXT_Resource *hdr;
 
 // LINE 257:
 	__asm        mov    eax, res;
@@ -296,13 +296,13 @@ int32_t VRGetResTextureCnt(struct VRResource* res) {
 }
 
 // FUNCTION: COPTER_D 0x004d62c4
-int32_t VRSetBmpToTiled(struct VRResource* res, int32_t mask, int32_t bmpid, unsigned char * basearg) {
+int32_t VRSetBmpToTiled(struct VRResource *res, int32_t mask, int32_t bmpid, unsigned char * basearg) {
 	unsigned char * baseptr;
 	unsigned char * tptr;
-	struct TEXT_Resource* hdr;
+	struct TEXT_Resource *hdr;
 	int32_t i;
 	int32_t colmask;
-	struct VRBmpHdr* bhdr;
+	struct VRBmpHdr *bhdr;
 	int32_t notiles;
 	int32_t row;
 	int32_t col;
@@ -458,11 +458,11 @@ _T197:
 }
 
 // FUNCTION: COPTER_D 0x004d6460
-int32_t VRLoadAlignedBmp(char * name, struct VRResource* res, int32_t mask, int32_t bmpid) {
+int32_t VRLoadAlignedBmp(char * name, struct VRResource *res, int32_t mask, int32_t bmpid) {
 	int32_t file;
 	struct BMPFileHdr bmp;
 	unsigned char * alignptr;
-	struct VRBmpInfo* bhdr;
+	struct VRBmpInfo *bhdr;
 	int32_t r;
 
 // LINE 391:

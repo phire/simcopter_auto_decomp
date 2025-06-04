@@ -65,15 +65,15 @@ public:
 protected:
 	int32_t bSurfacePrimary;
 	int32_t bSurfaceTransparent;
-	class MFont* mFont;
+	class MFont *mFont;
 	struct SparkalColor colorFontCurrent;
 	struct SparkalColor colorCurrent;
 	int32_t nColorIndexFontCurrent;
 	int32_t nColorIndexCurrent;
 	int32_t nColorIndexTransparent;
-	struct IDirectDrawSurface* mpFrontSurface;
-	struct IDirectDrawSurface* mpBackSurface;
-	struct IDirectDrawPalette* mpPalette;
+	struct IDirectDrawSurface *mpFrontSurface;
+	struct IDirectDrawSurface *mpBackSurface;
+	struct IDirectDrawPalette *mpPalette;
 	struct _DDSURFACEDESC mDDdesc;
 	struct _DDBLTFX mDDBltFx;
 	void * __ptr32 hPen;
@@ -521,7 +521,7 @@ _Tc3:
 }
 
 // FUNCTION: COPTER_D 0x00495fc4
-void  CGameApp::DrawCrosshairs(class CBackBuffer* bufferToDrawTo) {
+void  CGameApp::DrawCrosshairs(class CBackBuffer *bufferToDrawTo) {
 	char * pBufferStart;
 	int32_t nMidXPosition;
 	int32_t nMidYPosition;
@@ -706,7 +706,7 @@ _T42:
 	__asm        jmp    _T292;
 // LINE 305:
 // Block start:
-	struct MISSION_DATA* md;
+	struct MISSION_DATA *md;
 _T112:
 	__asm        mov    eax, GridProjectEnd;
 	__asm        sub    eax, NextProject;

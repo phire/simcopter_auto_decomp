@@ -210,9 +210,9 @@ protected:
 	void DrawRatchetAndLights();
 	void GetCoordinatesForLights(class MPoint*, class MRect*);
 	void GetCoordinatesForRatchets(class MPoint*, class MRect*);
-	class GraphicWindow* mySiblingWindows[2];
-	class CBackBuffer* myRatchetImage;
-	class CBackBuffer* myLightImage;
+	class GraphicWindow *mySiblingWindows[2];
+	class CBackBuffer *myRatchetImage;
+	class CBackBuffer *myLightImage;
 };
 
 // Type: class basic_string<char>;
@@ -221,7 +221,7 @@ class basic_string<char>{
 	using reference_pointer = class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char>* reference;
+	class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -402,8 +402,8 @@ public:
 protected:
 	void GetCoordinatesForRatchet(class MPoint&);
 	void DrawRatchet();
-	class CBackBuffer* myRatchetImage;
-	class CBackBuffer* myBackgroundImage;
+	class CBackBuffer *myRatchetImage;
+	class CBackBuffer *myBackgroundImage;
 };
 
 // Type: class MPoint;
@@ -686,7 +686,7 @@ _T260:
 }
 
 // FUNCTION: COPTER_D 0x0049b1fb
-void UserMenuWindow::UserMenuWindow(struct UserMenuWindowDescription& newUserMenuWindowDescription, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+void UserMenuWindow::UserMenuWindow(struct UserMenuWindowDescription& newUserMenuWindowDescription, int32_t nNewID, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
 	__asm        mov    eax, newUserMenuWindowDescription;
 	__asm        add    eax, 0xC;
@@ -1224,7 +1224,7 @@ _T1ce:
 // FUNCTION: COPTER_D 0x0049b858
 int32_t UserMenuWindow::Initialize() {
 	class MRect rectTextWindow;
-	class TextWindow* tempTextWindow;
+	class TextWindow *tempTextWindow;
 	int32_t i;
 	char szFullSoundPath[260];
 
@@ -2752,7 +2752,7 @@ int32_t UserMenuWindow::ExecuteSelection(int32_t nIndex) {
 }
 
 // FUNCTION: COPTER_D 0x0049ccbb
-void CopterMainMenu::CopterMainMenu(struct UserMenuWindowDescription& newUserMenuWindowDescription, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+void CopterMainMenu::CopterMainMenu(struct UserMenuWindowDescription& newUserMenuWindowDescription, int32_t nNewID, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
@@ -3583,7 +3583,7 @@ _T244:
 }
 
 // FUNCTION: COPTER_D 0x0049d742
-void CopterMainMenu::GetCoordinatesForLights(class MPoint* ptDestinationArray, class MRect* rectSourceArray) {
+void CopterMainMenu::GetCoordinatesForLights(class MPoint *ptDestinationArray, class MRect *rectSourceArray) {
 // LINE 502:
 	__asm        mov    eax, ptDestinationArray;
 	__asm        mov    dword ptr [eax], 0x14E;
@@ -3691,7 +3691,7 @@ void CopterMainMenu::GetCoordinatesForLights(class MPoint* ptDestinationArray, c
 }
 
 // FUNCTION: COPTER_D 0x0049d8ab
-void CopterMainMenu::GetCoordinatesForRatchets(class MPoint* ptDestinationArray, class MRect* rectSourceArray) {
+void CopterMainMenu::GetCoordinatesForRatchets(class MPoint *ptDestinationArray, class MRect *rectSourceArray) {
 // LINE 546:
 	__asm        mov    eax, ptDestinationArray;
 	__asm        mov    dword ptr [eax], 0x21;
@@ -3799,7 +3799,7 @@ void CopterMainMenu::GetCoordinatesForRatchets(class MPoint* ptDestinationArray,
 }
 
 // FUNCTION: COPTER_D 0x0049da14
-void CopterPlayMenu::CopterPlayMenu(struct UserMenuWindowDescription& newUserMenuWindowDescription, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+void CopterPlayMenu::CopterPlayMenu(struct UserMenuWindowDescription& newUserMenuWindowDescription, int32_t nNewID, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;

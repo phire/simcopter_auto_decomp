@@ -35,7 +35,7 @@ struct cCopterBody::Part{
 	char _pad3;
 	unsigned long tinyName;
 	unsigned long parentName;
-	struct cCopterBody::Part* parent;
+	struct cCopterBody::Part *parent;
 	struct Point tmpCenterPt;
 	struct Point tmpEndPt;
 	short tmpCenterDepth;
@@ -63,7 +63,7 @@ public:
 	virtual void Add(class cCopterBody*); // vtable+0x0
 	void WriteToDisk();
 	void WriteToDiskIfDirty();
-	class ResFile* fFile;
+	class ResFile *fFile;
 	unsigned long fType;
 	void CompactFile();
 	// calltype: NearC
@@ -94,11 +94,11 @@ public:
 	virtual unsigned short IsDirty() /* override */;
 	virtual unsigned long GetBodyType() /* override */;
 	virtual void InstallArrayPointers(unsigned short) /* override */;
-	static class cBList<cCopterAnim>* fsList;
+	static class cBList<cCopterAnim> *fsList;
 	virtual class cBList<cBBase>* GetList() /* override */;
 	virtual struct PrivAnimPartInfo* GetPartInfo(short, short); // vtable+0x24
 	virtual struct PrivAnimPartInfo* GetPartInfoBasePtr(short); // vtable+0x28
-	class cArray<PrivAnimPartInfo>* fPrivPartInfo;
+	class cArray<PrivAnimPartInfo> *fPrivPartInfo;
 	short GetNumParts();
 	short GetNumFrames();
 	// calltype: NearC
@@ -209,7 +209,7 @@ public:
 		long _win8pad[15];
 	};
 public:
-	struct cBBase::BBaseHeader* fHeader;
+	struct cBBase::BBaseHeader *fHeader;
 	// calltype: NearC
 	static void SwizzleBBaseHeader(void * __ptr32, long);
 };
@@ -218,8 +218,8 @@ public:
 class PtrList<cCopterBody>{
 	class PtrList<cCopterBody>::Iter{
 	private:
-		class PtrList<cCopterBody>* fObject;
-		struct PtrList<cCopterBody>::PtrNode* fCur;
+		class PtrList<cCopterBody> *fObject;
+		struct PtrList<cCopterBody>::PtrNode *fCur;
 	public:
 		void Iter(class PtrList<cCopterBody>*);
 		class cCopterBody* Current();
@@ -228,11 +228,11 @@ class PtrList<cCopterBody>{
 		class cCopterBody* First();
 	};
 	struct PtrList<cCopterBody>::PtrNode{
-		class cCopterBody* data;
-		struct PtrList<cCopterBody>::PtrNode* next;
+		class cCopterBody *data;
+		struct PtrList<cCopterBody>::PtrNode *next;
 	};
 private:
-	struct PtrList<cCopterBody>::PtrNode* fFirst;
+	struct PtrList<cCopterBody>::PtrNode *fFirst;
 	short fCount;
 public:
 	void PtrList<cCopterBody>();
@@ -265,7 +265,7 @@ _T1b:
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        jle    _T27a;
 // Block start:
-	struct AnimLookup* al;
+	struct AnimLookup *al;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x2C];
 	__asm        mov    [ebp-0x10], eax;
@@ -318,7 +318,7 @@ _Tad:
 	__asm        cmp    [eax], ecx;
 	__asm        jne    _T275;
 // Block start:
-	class cCopterAnim* privanim;
+	class cCopterAnim *privanim;
 	__asm        mov    eax, al;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x34], eax;
@@ -498,7 +498,7 @@ _T41:
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        jle    _T181;
 // Block start:
-	struct cCopterBody::Part* part;
+	struct cCopterBody::Part *part;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x28];
 	__asm        mov    [ebp-0xC], eax;
@@ -741,7 +741,7 @@ _T17e:
 
 // FUNCTION: COPTER_D 0x00561190
 struct cCopterBody::Part *  cCopterBody::GetPartByName(unsigned long partname) {
-	struct cCopterBody::Part* part;
+	struct cCopterBody::Part *part;
 	short count;
 
 // LINE 2093:
@@ -823,7 +823,7 @@ _Tea:
 }
 
 // FUNCTION: COPTER_D 0x00561281
-void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Part* part, short screenx, short screeny, float scale, short colorIndexShift) {
+void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Part *part, short screenx, short screeny, float scale, short colorIndexShift) {
 	struct TransformedInfo transinfo;
 	struct Point cpt;
 	struct Point ept;
@@ -1152,12 +1152,12 @@ _T384:
 }
 
 // FUNCTION: COPTER_D 0x00561611
-void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, short framenum, short screenx, short screeny, float scale, short nearMedFar, short colorIndexShift) {
+void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim *privanim, short framenum, short screenx, short screeny, float scale, short nearMedFar, short colorIndexShift) {
 	float cosY;
 	float cosX;
-	struct PrivAnimPartInfo* privpartinfos;
+	struct PrivAnimPartInfo *privpartinfos;
 	int32_t drawordercount;
-	struct cCopterBody::Part* part;
+	struct cCopterBody::Part *part;
 	long numParts;
 	short orderID;
 	short count;
@@ -1326,10 +1326,10 @@ _T1c4:
 	__asm        je     _T4a1;
 // LINE 2218:
 // Block start:
-	struct TransformedInfo* transinfo;
+	struct TransformedInfo *transinfo;
 	struct DXZY start;
 	struct DXZY end;
-	struct PrivAnimPartInfo* partinfo;
+	struct PrivAnimPartInfo *partinfo;
 	unsigned short parentendtransformed;
 	__asm        cmp    part, 0;
 	__asm        je     _T224;
@@ -1420,7 +1420,7 @@ _T240:
 	__asm        je     _T35b;
 // LINE 2227:
 // Block start:
-	struct TransformedInfo* parenttransinfo;
+	struct TransformedInfo *parenttransinfo;
 	__asm        mov    eax, part;
 	__asm        mov    eax, [eax+0xC];
 	__asm        movsx  eax, byte ptr [eax+2];
@@ -2335,7 +2335,7 @@ _T39:
 
 // FUNCTION: COPTER_D 0x0056240b
 void SwizzleCopterBodyPart(void * __ptr32 val, long size) {
-	struct cCopterBody::Part* part;
+	struct cCopterBody::Part *part;
 	short debugbodypartsize;
 
 // LINE 2334:
@@ -2390,7 +2390,7 @@ _T35:
 
 // FUNCTION: COPTER_D 0x0056249b
 void SwizzleAnimLookup(void * __ptr32 val, long size) {
-	struct AnimLookup* al;
+	struct AnimLookup *al;
 
 // LINE 2348:
 	__asm        cmp    size, 8;
@@ -2455,7 +2455,7 @@ _T2f:
 struct Rect standardAnimRect = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005be630
-class cBList<cCopterBody>* cCopterBody::fsList = { 0 /* todo */ };
+class cBList<cCopterBody> *cCopterBody::fsList = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005be634
 short sTestPersonFrameNum = 0;
@@ -2487,5 +2487,5 @@ short sTestPersonFrameNum = 0;
 struct TransformedInfo sTransformedInfo[200];
 
 // GLOBAL: COPTER_D 0x00638670
-struct cCopterBody::Part* cCopterBody::fsDrawOrderParts[200];
+struct cCopterBody::Part *cCopterBody::fsDrawOrderParts[200];
 

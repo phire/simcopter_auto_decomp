@@ -24,8 +24,8 @@ struct Point3d{
 
 // Type: struct _DYOBJ_INST (forward reference);
 struct _DYOBJ_INST{
-	struct _DYOBJ_INST* next;
-	struct _DYOBJ_INST* vnext;
+	struct _DYOBJ_INST *next;
+	struct _DYOBJ_INST *vnext;
 	void * __ptr32 mesh;
 	short flags;
 	short user1;
@@ -54,14 +54,14 @@ struct _CELL_INFO{
 	short z;
 	short size;
 	short ctr;
-	struct _STOBJ_INST* stptr;
-	struct _DYOBJ_INST* dyptr;
-	struct _DYOBJ_INST* vwptr;
+	struct _STOBJ_INST *stptr;
+	struct _DYOBJ_INST *dyptr;
+	struct _DYOBJ_INST *vwptr;
 };
 
 // Type: struct _STOBJ_INST (forward reference);
 struct _STOBJ_INST{
-	struct _STOBJ_INST* next;
+	struct _STOBJ_INST *next;
 	void * __ptr32 mesh;
 	long user1;
 	long user2;
@@ -71,9 +71,9 @@ struct _STOBJ_INST{
 
 // Contribution: 1:000f7af0-000f8bb0 Module: 175, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004f8af0
-void S3CameraMove(struct Point3d* P) {
+void S3CameraMove(struct Point3d *P) {
 	struct Point3d CameraDelta;
-	struct _DYOBJ_INST* u_dyobj;
+	struct _DYOBJ_INST *u_dyobj;
 	int32_t alt;
 	int32_t altdiff;
 	int32_t Velocity;
@@ -459,7 +459,7 @@ _T474:
 }
 
 // FUNCTION: COPTER_D 0x004f8f69
-void NormalizeGridPoint(struct Point3d* P) {
+void NormalizeGridPoint(struct Point3d *P) {
 // LINE 284:
 	__asm        mov    eax, P;
 	__asm        cmp    dword ptr [eax], 0xD0000000;
@@ -699,7 +699,7 @@ _T259:
 }
 
 // FUNCTION: COPTER_D 0x004f9240
-void GetIdealCameraPos(struct Point3d* P) {
+void GetIdealCameraPos(struct Point3d *P) {
 // LINE 404:
 	__asm        mov    eax, 0x6BF1A0;
 	__asm        mov    ecx, P;
@@ -713,7 +713,7 @@ void GetIdealCameraPos(struct Point3d* P) {
 }
 
 // FUNCTION: COPTER_D 0x004f9263
-void CalcCameraAngles(struct Point3d* Vector) {
+void CalcCameraAngles(struct Point3d *Vector) {
 	int32_t sinePitch;
 	int32_t cosinePitch;
 	int32_t sineYaw;
@@ -1003,7 +1003,7 @@ _T2f7:
 }
 
 // FUNCTION: COPTER_D 0x004f955f
-void S3AngleRotMat(int32_t[4]* matrix, int32_t Yaw, int32_t Pitch, int32_t Roll) {
+void S3AngleRotMat(int32_t *matrix[4], int32_t Yaw, int32_t Pitch, int32_t Roll) {
 	int32_t sinePitch;
 	int32_t cosinePitch;
 	int32_t sineYaw;
@@ -1206,7 +1206,7 @@ void S3CameraRotate() {
 	__asm        jne    _T5c;
 // LINE 608:
 // Block start:
-	struct _DYOBJ_INST* dyobj;
+	struct _DYOBJ_INST *dyobj;
 	__asm        call   GetAvatarDYOBJ;
 	__asm        mov    dyobj, eax;
 // LINE 613:
@@ -1456,7 +1456,7 @@ struct _CHASE_INFO* S3CameraGetChaseInfo() {
 }
 
 // FUNCTION: COPTER_D 0x004f9a8b
-void S3CameraSetChaseInfo(struct _CHASE_INFO* cinfo) {
+void S3CameraSetChaseInfo(struct _CHASE_INFO *cinfo) {
 // LINE 806:
 	__asm        mov    edi, 0x6BF160;
 	__asm        mov    esi, cinfo;
@@ -1466,14 +1466,14 @@ void S3CameraSetChaseInfo(struct _CHASE_INFO* cinfo) {
 }
 
 // FUNCTION: COPTER_D 0x004f9aa5
-int32_t S3CameraGetBldAlt(struct Point3d* loc) {
+int32_t S3CameraGetBldAlt(struct Point3d *loc) {
 	int32_t normy;
 	int32_t normx;
-	struct _CELL_INFO* cptr;
+	struct _CELL_INFO *cptr;
 	int32_t objy;
 	int32_t y;
 	int32_t x;
-	struct _STOBJ_INST* stobj;
+	struct _STOBJ_INST *stobj;
 	int32_t maxobjy;
 	int32_t normz;
 	int32_t flags;

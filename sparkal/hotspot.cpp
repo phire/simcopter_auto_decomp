@@ -139,27 +139,27 @@ protected:
 	uint32_t buffer_size();
 	struct list<HotSpot>::list_node_buffer{
 		void * __ptr32 next_buffer;
-		struct list<HotSpot>::list_node* buffer;
+		struct list<HotSpot>::list_node *buffer;
 	};
 	using buffer_allocator_type = class allocator<list<HotSpot>::list_node_buffer>;
 	using buffer_pointer = struct list<HotSpot>::list_node_buffer*;
 protected:
 	static class allocator<list<HotSpot>::list_node_buffer> buffer_allocator;
-	static struct list<HotSpot>::list_node_buffer* buffer_list;
-	static struct list<HotSpot>::list_node* free_list;
-	static struct list<HotSpot>::list_node* next_avail;
-	static struct list<HotSpot>::list_node* last;
+	static struct list<HotSpot>::list_node_buffer *buffer_list;
+	static struct list<HotSpot>::list_node *free_list;
+	static struct list<HotSpot>::list_node *next_avail;
+	static struct list<HotSpot>::list_node *last;
 	void add_new_buffer();
 	static uint32_t number_of_lists;
 	void deallocate_buffers();
 	struct list<HotSpot>::list_node* get_node();
 	void put_node(struct list<HotSpot>::list_node*);
-	struct list<HotSpot>::list_node* node;
+	struct list<HotSpot>::list_node *node;
 	uint32_t length;
 	class list<HotSpot>::iterator : public bidirectional_iterator<HotSpot,int>
 	{
 	protected:
-		struct list<HotSpot>::list_node* node;
+		struct list<HotSpot>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -175,7 +175,7 @@ protected:
 	class list<HotSpot>::const_iterator : public bidirectional_iterator<HotSpot,int>
 	{
 	protected:
-		struct list<HotSpot>::list_node* node;
+		struct list<HotSpot>::list_node *node;
 	public:
 		void const_iterator(const class list<HotSpot>::iterator&);
 		void const_iterator();
@@ -704,7 +704,7 @@ _T3ec:
 }
 
 // FUNCTION: COPTER_D 0x004b948a
-void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long[2]* lCoordinates) {
+void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long *lCoordinates[2]) {
 	int32_t i;
 
 
@@ -1098,7 +1098,7 @@ _T4d7:
 }
 
 // FUNCTION: COPTER_D 0x004b9973
-void HotSpot::HotSpot(struct HotSpotResourceRecord* hotSpotResourceRecord) {
+void HotSpot::HotSpot(struct HotSpotResourceRecord *hotSpotResourceRecord) {
 	int32_t i;
 	long lCount;
 
@@ -3432,9 +3432,9 @@ int32_t LoadListFromResource(class list<HotSpot>& hotSpotList, int32_t nResource
 	int32_t i;
 	int32_t nHotspotRecordCount;
 	char * chFileImage;
-	struct HotSpotResourceRecord* currentHotspotRecord;
+	struct HotSpotResourceRecord *currentHotspotRecord;
 	int32_t nCurrentRecordStart;
-	struct HotSpotResourceFileHeader* fileImage;
+	struct HotSpotResourceFileHeader *fileImage;
 	class ResourceRCData resourceHangarHotspots;
 
 // LINE 270:

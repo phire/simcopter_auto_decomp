@@ -25,8 +25,8 @@ protected:
 	void SortByTimeDate();
 	void SortByType();
 	void DrawBackground();
-	class ListBoxWindow* myListBoxWindow;
-	class CBackBuffer* myBackgroundBuffer;
+	class ListBoxWindow *myListBoxWindow;
+	class CBackBuffer *myBackgroundBuffer;
 	enum MissionLogWindow::MissionLogWindowSortType nCurrentSort;
 };
 
@@ -85,7 +85,7 @@ class basic_string<char>{
 	using reference_pointer = class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char>* reference;
+	class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -214,7 +214,7 @@ struct SparkalColor{
 class list<tagLogBase *>::iterator : public bidirectional_iterator<tagLogBase *,int>
 {
 protected:
-	struct list<tagLogBase *>::list_node* node;
+	struct list<tagLogBase *>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -243,7 +243,7 @@ public:
 	class MPoint ptFirstMessage;
 	long lMaximumMessageCount;
 protected:
-	class basic_string<char>* sMessages;
+	class basic_string<char> *sMessages;
 	class MTimer timerMessageDisplay;
 	class MFont fontMessages;
 	long lVerticalSpaceBetweenMessages;
@@ -303,15 +303,15 @@ public:
 protected:
 	int32_t bSurfacePrimary;
 	int32_t bSurfaceTransparent;
-	class MFont* mFont;
+	class MFont *mFont;
 	struct SparkalColor colorFontCurrent;
 	struct SparkalColor colorCurrent;
 	int32_t nColorIndexFontCurrent;
 	int32_t nColorIndexCurrent;
 	int32_t nColorIndexTransparent;
-	struct IDirectDrawSurface* mpFrontSurface;
-	struct IDirectDrawSurface* mpBackSurface;
-	struct IDirectDrawPalette* mpPalette;
+	struct IDirectDrawSurface *mpFrontSurface;
+	struct IDirectDrawSurface *mpBackSurface;
+	struct IDirectDrawPalette *mpPalette;
 	struct _DDSURFACEDESC mDDdesc;
 	struct _DDBLTFX mDDBltFx;
 	void * __ptr32 hPen;
@@ -394,7 +394,7 @@ class basic_string<char>{
 	using reference_pointer = class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char>* reference;
+	class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -511,7 +511,7 @@ struct SparkalRect{
 
 // Contribution: 1:0006aca0-0006d4f0 Module: 40, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0046bca0
-void MissionLogWindow::MissionLogWindow(int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+void MissionLogWindow::MissionLogWindow(int32_t nNewID, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
 	__asm        jmp    near ptr 0x0046BCB1;
 
@@ -786,7 +786,7 @@ void MissionLogWindow::~MissionLogWindow() {
 
 // FUNCTION: COPTER_D 0x0046bfe3
 int32_t MissionLogWindow::Initialize() {
-	class ButtonWindow* tempButtonWindow;
+	class ButtonWindow *tempButtonWindow;
 	class basic_string<char> sText;
 	int32_t nFullStringID;
 	struct SparkalColor tempSparkalColor;
@@ -1482,7 +1482,7 @@ _T915:
 }
 
 // FUNCTION: COPTER_D 0x0046c90a
-int32_t MissionLogWindow::ReadPalette(struct SparkalColor* pColorTable) {
+int32_t MissionLogWindow::ReadPalette(struct SparkalColor *pColorTable) {
 // LINE 119:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x64], 0;
@@ -1810,7 +1810,7 @@ _T67:
 }
 
 // FUNCTION: COPTER_D 0x0046ccb5
-int32_t MissionLogWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
+int32_t MissionLogWindow::DoMessage(class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 	long lMyMessage;
 
 // LINE 206:
@@ -2793,7 +2793,7 @@ _T1d7:
 }
 
 // FUNCTION: COPTER_D 0x0046d802
-void MessageDisplayManager::DisplayCurrentMessages(class CBackBuffer* bufferDestination) {
+void MessageDisplayManager::DisplayCurrentMessages(class CBackBuffer *bufferDestination) {
 	int32_t i;
 	class MRect rectCurrentMessage;
 

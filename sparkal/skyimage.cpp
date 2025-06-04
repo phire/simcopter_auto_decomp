@@ -103,15 +103,15 @@ public:
 protected:
 	int32_t bSurfacePrimary;
 	int32_t bSurfaceTransparent;
-	class MFont* mFont;
+	class MFont *mFont;
 	struct SparkalColor colorFontCurrent;
 	struct SparkalColor colorCurrent;
 	int32_t nColorIndexFontCurrent;
 	int32_t nColorIndexCurrent;
 	int32_t nColorIndexTransparent;
-	struct IDirectDrawSurface* mpFrontSurface;
-	struct IDirectDrawSurface* mpBackSurface;
-	struct IDirectDrawPalette* mpPalette;
+	struct IDirectDrawSurface *mpFrontSurface;
+	struct IDirectDrawSurface *mpBackSurface;
+	struct IDirectDrawPalette *mpPalette;
 	struct _DDSURFACEDESC mDDdesc;
 	struct _DDBLTFX mDDBltFx;
 	void * __ptr32 hPen;
@@ -192,15 +192,15 @@ public:
 protected:
 	int32_t bSurfacePrimary;
 	int32_t bSurfaceTransparent;
-	class MFont* mFont;
+	class MFont *mFont;
 	struct SparkalColor colorFontCurrent;
 	struct SparkalColor colorCurrent;
 	int32_t nColorIndexFontCurrent;
 	int32_t nColorIndexCurrent;
 	int32_t nColorIndexTransparent;
-	struct IDirectDrawSurface* mpFrontSurface;
-	struct IDirectDrawSurface* mpBackSurface;
-	struct IDirectDrawPalette* mpPalette;
+	struct IDirectDrawSurface *mpFrontSurface;
+	struct IDirectDrawSurface *mpBackSurface;
+	struct IDirectDrawPalette *mpPalette;
 	struct _DDSURFACEDESC mDDdesc;
 	struct _DDBLTFX mDDBltFx;
 	void * __ptr32 hPen;
@@ -357,11 +357,11 @@ _T5f:
 // FUNCTION: COPTER_D 0x00495575
 int32_t SkyImage::LoadImageA() {
 	char * pDestinationImage;
-	struct VRResource* vrResource;
+	struct VRResource *vrResource;
 	int32_t i;
 	char szFullSkyImagePath[260];
 	char * pSourceImage;
-	struct VRBmpHdr* bmpHeader;
+	struct VRBmpHdr *bmpHeader;
 
 // LINE 102:
 	__asm        mov    eax, this;
@@ -654,7 +654,7 @@ _T36d:
 }
 
 // FUNCTION: COPTER_D 0x004958e7
-unsigned long SkyImage::Compose(class CBackBuffer* pDestImage, int32_t nDestinationWidth) {
+unsigned long SkyImage::Compose(class CBackBuffer *pDestImage, int32_t nDestinationWidth) {
 	long len2;
 	int32_t pitch;
 	long start_col;

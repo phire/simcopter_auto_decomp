@@ -333,7 +333,7 @@ _T47:
 }
 
 // FUNCTION: COPTER_D 0x0041f5f1
-unsigned long DDColorMatch(struct IDirectDrawSurface* pdds, unsigned long rgb) {
+unsigned long DDColorMatch(struct IDirectDrawSurface *pdds, unsigned long rgb) {
 	unsigned long rgbT;
 	unsigned long dw;
 	void * __ptr32 hdc;
@@ -450,7 +450,7 @@ struct IDirectDrawPalette* ReadPalFile(char * fname) {
 	long ddrval;
 	int32_t i;
 	int32_t fh;
-	struct IDirectDrawPalette* ppal;
+	struct IDirectDrawPalette *ppal;
 
 // LINE 143:
 	__asm        mov    pal.dwRiff, 0;
@@ -576,10 +576,10 @@ _T157:
 
 // Contribution: 3:00000264-00000297 Module: 74, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00597264
-struct IDirectDraw* lpDD = { 0 /* todo */ };
+struct IDirectDraw *lpDD = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597268
-struct IDirectDrawPalette* lpPalette = { 0 /* todo */ };
+struct IDirectDrawPalette *lpPalette = { 0 /* todo */ };
 
 
 

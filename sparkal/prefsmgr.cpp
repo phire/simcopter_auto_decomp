@@ -5,7 +5,7 @@
 // Type: struct list<NotificationItem>::list_node_buffer (forward reference);
 struct list<NotificationItem>::list_node_buffer{
 	void * __ptr32 next_buffer;
-	struct list<NotificationItem>::list_node* buffer;
+	struct list<NotificationItem>::list_node *buffer;
 };
 
 // Type: struct list<NotificationItem>::list_node (forward reference);
@@ -20,7 +20,7 @@ struct list<NotificationItem>::list_node{
 // Type: struct list<PreferenceItem>::list_node_buffer (forward reference);
 struct list<PreferenceItem>::list_node_buffer{
 	void * __ptr32 next_buffer;
-	struct list<PreferenceItem>::list_node* buffer;
+	struct list<PreferenceItem>::list_node *buffer;
 };
 
 // Type: struct list<PreferenceItem>::list_node (forward reference);
@@ -54,7 +54,7 @@ class PreferenceManager{
 protected:
 	int32_t bSaveFileAtAllChanges;
 	class list<PreferenceItem> myPreferences;
-	class MIFF* miffPrefsFile;
+	class MIFF *miffPrefsFile;
 	long lFileCreator;
 	long lFileType;
 	long lFileVersion;
@@ -86,7 +86,7 @@ public:
 class list<PreferenceItem>::iterator : public bidirectional_iterator<PreferenceItem,int>
 {
 protected:
-	struct list<PreferenceItem>::list_node* node;
+	struct list<PreferenceItem>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -142,7 +142,7 @@ public:
 class NotificationItem{
 public:
 	long lPreferenceType;
-	class NotificationSink* myNotificationSink;
+	class NotificationSink *myNotificationSink;
 	void NotificationItem(long, class NotificationSink*);
 	void NotificationItem(const class NotificationItem&);
 	void NotificationItem();
@@ -153,7 +153,7 @@ public:
 class NotificationItem{
 public:
 	long lPreferenceType;
-	class NotificationSink* myNotificationSink;
+	class NotificationSink *myNotificationSink;
 	void NotificationItem(long, class NotificationSink*);
 	void NotificationItem(const class NotificationItem&);
 	void NotificationItem();
@@ -164,7 +164,7 @@ public:
 class list<NotificationItem>::iterator : public bidirectional_iterator<NotificationItem,int>
 {
 protected:
-	struct list<NotificationItem>::list_node* node;
+	struct list<NotificationItem>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -202,27 +202,27 @@ protected:
 	uint32_t buffer_size();
 	struct list<PreferenceItem>::list_node_buffer{
 		void * __ptr32 next_buffer;
-		struct list<PreferenceItem>::list_node* buffer;
+		struct list<PreferenceItem>::list_node *buffer;
 	};
 	using buffer_allocator_type = class allocator<list<PreferenceItem>::list_node_buffer>;
 	using buffer_pointer = struct list<PreferenceItem>::list_node_buffer*;
 protected:
 	static class allocator<list<PreferenceItem>::list_node_buffer> buffer_allocator;
-	static struct list<PreferenceItem>::list_node_buffer* buffer_list;
-	static struct list<PreferenceItem>::list_node* free_list;
-	static struct list<PreferenceItem>::list_node* next_avail;
-	static struct list<PreferenceItem>::list_node* last;
+	static struct list<PreferenceItem>::list_node_buffer *buffer_list;
+	static struct list<PreferenceItem>::list_node *free_list;
+	static struct list<PreferenceItem>::list_node *next_avail;
+	static struct list<PreferenceItem>::list_node *last;
 	void add_new_buffer();
 	static uint32_t number_of_lists;
 	void deallocate_buffers();
 	struct list<PreferenceItem>::list_node* get_node();
 	void put_node(struct list<PreferenceItem>::list_node*);
-	struct list<PreferenceItem>::list_node* node;
+	struct list<PreferenceItem>::list_node *node;
 	uint32_t length;
 	class list<PreferenceItem>::iterator : public bidirectional_iterator<PreferenceItem,int>
 	{
 	protected:
-		struct list<PreferenceItem>::list_node* node;
+		struct list<PreferenceItem>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -238,7 +238,7 @@ protected:
 	class list<PreferenceItem>::const_iterator : public bidirectional_iterator<PreferenceItem,int>
 	{
 	protected:
-		struct list<PreferenceItem>::list_node* node;
+		struct list<PreferenceItem>::list_node *node;
 	public:
 		void const_iterator(const class list<PreferenceItem>::iterator&);
 		void const_iterator();
@@ -306,7 +306,7 @@ class PreferenceManager{
 protected:
 	int32_t bSaveFileAtAllChanges;
 	class list<PreferenceItem> myPreferences;
-	class MIFF* miffPrefsFile;
+	class MIFF *miffPrefsFile;
 	long lFileCreator;
 	long lFileType;
 	long lFileVersion;
@@ -554,7 +554,7 @@ _T22:
 
 // FUNCTION: COPTER_D 0x0047bdaa
 class PreferenceItem* PreferenceItem::DuplicatePointer() {
-	class PreferenceItem* prefItemReturn;
+	class PreferenceItem *prefItemReturn;
 
 // LINE 132:
 	__asm        push   0xC;
@@ -1855,8 +1855,8 @@ _Tdc:
 
 // FUNCTION: COPTER_D 0x0047cbc3
 class PreferenceItem* PreferenceManager::GetPrefCopy(long lPrefType) {
-	class PreferenceItem* prefItemReturn;
-	class PreferenceItem* prefItemTemp;
+	class PreferenceItem *prefItemReturn;
+	class PreferenceItem *prefItemTemp;
 
 // LINE 379:
 	__asm        mov    eax, lPrefType;
@@ -1886,7 +1886,7 @@ _T42:
 
 // FUNCTION: COPTER_D 0x0047cc0c
 char * PreferenceManager::GetPrefDataPointer(long lPrefType) {
-	class PreferenceItem* prefItemTemp;
+	class PreferenceItem *prefItemTemp;
 
 // LINE 404:
 	__asm        mov    eax, lPrefType;
@@ -1913,7 +1913,7 @@ _T3a:
 
 // FUNCTION: COPTER_D 0x0047cc4d
 char * PreferenceManager::GetPrefDataCopy(long lPrefType) {
-	class PreferenceItem* prefItemTemp;
+	class PreferenceItem *prefItemTemp;
 	char * chDataCopy;
 
 // LINE 426:
@@ -1958,7 +1958,7 @@ _T63:
 
 // FUNCTION: COPTER_D 0x0047ccb7
 long PreferenceManager::GetPrefDataLength(long lPrefType) {
-	class PreferenceItem* prefItemTemp;
+	class PreferenceItem *prefItemTemp;
 
 // LINE 453:
 	__asm        mov    eax, lPrefType;
@@ -1985,7 +1985,7 @@ _T3a:
 
 // FUNCTION: COPTER_D 0x0047ccf8
 long PreferenceManager::SetPref(long lPrefType, char * chPref, long lSizeofPref) {
-	class PreferenceItem* prefItemToSet;
+	class PreferenceItem *prefItemToSet;
 
 // LINE 472:
 	__asm        mov    eax, this;
@@ -2198,7 +2198,7 @@ _T258:
 }
 
 // FUNCTION: COPTER_D 0x0047cf57
-long PreferenceManager::SetPref(class PreferenceItem* prefItemToUse) {
+long PreferenceManager::SetPref(class PreferenceItem *prefItemToUse) {
 // LINE 511:
 	__asm        mov    eax, prefItemToUse;
 	__asm        mov    eax, [eax];
@@ -2647,7 +2647,7 @@ _T237:
 }
 
 // FUNCTION: COPTER_D 0x0047d4cf
-int32_t NotificationPreferenceManager::AddNotification(long lPreferenceType, class NotificationSink* newNotificationSink) {
+int32_t NotificationPreferenceManager::AddNotification(long lPreferenceType, class NotificationSink *newNotificationSink) {
 	class NotificationItem tempNewNotificationItem;
 
 // LINE 547:
@@ -2894,7 +2894,7 @@ _T267:
 }
 
 // FUNCTION: COPTER_D 0x0047d7c7
-int32_t NotificationPreferenceManager::RemoveNotification(class NotificationSink* theNotificationSink, long lPreferenceType) {
+int32_t NotificationPreferenceManager::RemoveNotification(class NotificationSink *theNotificationSink, long lPreferenceType) {
 	class list<NotificationItem>::iterator iterator;
 	int32_t nFound;
 
@@ -3062,7 +3062,7 @@ _T3c:
 }
 
 // FUNCTION: COPTER_D 0x0047d97a
-long NotificationPreferenceManager::SetPref(class PreferenceItem* prefItemToUse) {
+long NotificationPreferenceManager::SetPref(class PreferenceItem *prefItemToUse) {
 	long lReturnValue;
 
 // LINE 605:
@@ -3251,25 +3251,25 @@ uint32_t list<PreferenceItem>::number_of_lists = 0;
 
 // Contribution: 3:00002a60-00002a63 Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00599a60
-struct list<PreferenceItem>::list_node* list<PreferenceItem>::last = { 0 /* todo */ };
+struct list<PreferenceItem>::list_node *list<PreferenceItem>::last = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00002a64-00002a67 Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00599a64
-struct list<PreferenceItem>::list_node* list<PreferenceItem>::next_avail = { 0 /* todo */ };
+struct list<PreferenceItem>::list_node *list<PreferenceItem>::next_avail = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00002a68-00002a6b Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00599a68
-struct list<PreferenceItem>::list_node* list<PreferenceItem>::free_list = { 0 /* todo */ };
+struct list<PreferenceItem>::list_node *list<PreferenceItem>::free_list = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00002a6c-00002a6f Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00599a6c
-struct list<PreferenceItem>::list_node_buffer* list<PreferenceItem>::buffer_list = { 0 /* todo */ };
+struct list<PreferenceItem>::list_node_buffer *list<PreferenceItem>::buffer_list = { 0 /* todo */ };
 
 
 
@@ -3281,23 +3281,23 @@ uint32_t list<NotificationItem>::number_of_lists = 0;
 
 // Contribution: 3:00002a74-00002a77 Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00599a74
-struct list<NotificationItem>::list_node* list<NotificationItem>::last = { 0 /* todo */ };
+struct list<NotificationItem>::list_node *list<NotificationItem>::last = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00002a78-00002a7b Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00599a78
-struct list<NotificationItem>::list_node* list<NotificationItem>::next_avail = { 0 /* todo */ };
+struct list<NotificationItem>::list_node *list<NotificationItem>::next_avail = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00002a7c-00002a7f Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00599a7c
-struct list<NotificationItem>::list_node* list<NotificationItem>::free_list = { 0 /* todo */ };
+struct list<NotificationItem>::list_node *list<NotificationItem>::free_list = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00002a80-00002a83 Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00599a80
-struct list<NotificationItem>::list_node_buffer* list<NotificationItem>::buffer_list = { 0 /* todo */ };
+struct list<NotificationItem>::list_node_buffer *list<NotificationItem>::buffer_list = { 0 /* todo */ };
 

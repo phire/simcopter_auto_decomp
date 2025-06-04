@@ -41,14 +41,14 @@ struct _CELL_INFO{
 	short z;
 	short size;
 	short ctr;
-	struct _STOBJ_INST* stptr;
-	struct _DYOBJ_INST* dyptr;
-	struct _DYOBJ_INST* vwptr;
+	struct _STOBJ_INST *stptr;
+	struct _DYOBJ_INST *dyptr;
+	struct _DYOBJ_INST *vwptr;
 };
 
 // Type: struct _STOBJ_INST (forward reference);
 struct _STOBJ_INST{
-	struct _STOBJ_INST* next;
+	struct _STOBJ_INST *next;
 	void * __ptr32 mesh;
 	long user1;
 	long user2;
@@ -5281,7 +5281,7 @@ _T10e:
 // FUNCTION: COPTER_D 0x00517f70
 void S3TerrainMorph() {
 	struct Point2d mcell;
-	struct Point3d* v;
+	struct Point3d *v;
 	struct Point2d ulp;
 
 // LINE 1199:
@@ -6554,10 +6554,10 @@ unsigned char S3TerrGetShadeIndex(long x, long y) {
 int32_t S3ObjectPrecisionAlt(int32_t cityx, int32_t cityy) {
 	int32_t normy;
 	int32_t normx;
-	struct _CELL_INFO* cptr;
+	struct _CELL_INFO *cptr;
 	int32_t alt;
 	int32_t objy;
-	struct _STOBJ_INST* stobj;
+	struct _STOBJ_INST *stobj;
 	int32_t maxobjy;
 	int32_t normz;
 	int32_t flags;

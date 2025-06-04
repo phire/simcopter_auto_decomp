@@ -10,8 +10,8 @@ class FireEngineClass : public EmergencyVehicleClass
 {
 private:
 	int32_t dousingFire;
-	struct _FIRE_DATA* currentFire;
-	struct _DYOBJ_INST* currentDyObjFire;
+	struct _FIRE_DATA *currentFire;
+	struct _DYOBJ_INST *currentDyObjFire;
 	int32_t distToFire;
 	struct Point3d firevec;
 	int32_t pathID;
@@ -48,11 +48,11 @@ struct VRObjInfo{
 	int32_t Verts;
 	int32_t Attribute;
 	int32_t Radius;
-	struct Point3d* ObjCenter;
-	struct Point3d* VertsPtr;
-	struct Xform3d* VertsXfm;
-	struct Point3d* OrgVerts;
-	int32_t[4][4]* Matrix;
+	struct Point3d *ObjCenter;
+	struct Point3d *VertsPtr;
+	struct Xform3d *VertsXfm;
+	struct Point3d *OrgVerts;
+	int32_t *Matrix[4][4];
 };
 
 // Type: enum EmergencyType;
@@ -100,14 +100,14 @@ struct _CELL_INFO{
 	short z;
 	short size;
 	short ctr;
-	struct _STOBJ_INST* stptr;
-	struct _DYOBJ_INST* dyptr;
-	struct _DYOBJ_INST* vwptr;
+	struct _STOBJ_INST *stptr;
+	struct _DYOBJ_INST *dyptr;
+	struct _DYOBJ_INST *vwptr;
 };
 
 // Type: struct _STOBJ_INST (forward reference);
 struct _STOBJ_INST{
-	struct _STOBJ_INST* next;
+	struct _STOBJ_INST *next;
 	void * __ptr32 mesh;
 	long user1;
 	long user2;
@@ -115,8 +115,8 @@ struct _STOBJ_INST{
 
 // Type: struct _DYOBJ_INST (forward reference);
 struct _DYOBJ_INST{
-	struct _DYOBJ_INST* next;
-	struct _DYOBJ_INST* vnext;
+	struct _DYOBJ_INST *next;
+	struct _DYOBJ_INST *vnext;
 	void * __ptr32 mesh;
 	short flags;
 	short user1;
@@ -168,7 +168,7 @@ struct _AUTO_LOAD_SAVE{
 	long turnIndex;
 	int32_t currDist;
 	int32_t legOfTurn;
-	struct Point3d* pDirVector;
+	struct Point3d *pDirVector;
 	int32_t personDone;
 	int32_t personState;
 	int32_t personTimer;
@@ -247,7 +247,7 @@ protected:
 	long timeOfArrival;
 	struct _DYOBJ_INST dispatchIcon;
 	int32_t timeToEmergency;
-	class AutomobileClass* dispatchTarget;
+	class AutomobileClass *dispatchTarget;
 	unsigned char dispatchPath[256];
 	unsigned char dispatchPathIndex;
 	unsigned char dispatchPathLength;
@@ -408,12 +408,12 @@ protected:
 	enum TurnIndex turnIndex;
 	int32_t currDist;
 	int32_t legOfTurn;
-	struct Point3d* pDirVector;
+	struct Point3d *pDirVector;
 	int32_t timeToLive;
 	int32_t fireTime;
 	long fireSeq;
 	long missionId;
-	struct _CELL_INFO* cptr;
+	struct _CELL_INFO *cptr;
 	enum AutomobileClass::PersonState personState;
 	int32_t spotlightHitCounter;
 	int32_t IsCarPersistant();
@@ -542,7 +542,7 @@ void FireEngineClass::~FireEngineClass() {
 // FUNCTION: COPTER_D 0x0053618b
 class FireEngineClass* FireEngineClass::CreateInstance(int32_t instanceID) {
 	int32_t object;
-	class FireEngineClass* youveWonABrandNewCar;
+	class FireEngineClass *youveWonABrandNewCar;
 	char * objectMemory;
 
 // LINE 117:
@@ -1183,11 +1183,11 @@ _T150:
 
 // FUNCTION: COPTER_D 0x005368cd
 int32_t FireEngineClass::ScanForFire(struct _GridCoordinates fireloc) {
-	struct _CELL_INFO* cptr;
+	struct _CELL_INFO *cptr;
 	int32_t fires_found;
 	struct _GridCoordinates dyfireloc;
-	struct _STOBJ_INST* stobj;
-	struct _DYOBJ_INST* dyobj;
+	struct _STOBJ_INST *stobj;
+	struct _DYOBJ_INST *dyobj;
 	class SpiralScan spiral;
 
 // LINE 424:
@@ -1486,7 +1486,7 @@ _Tfe:
 }
 
 // FUNCTION: COPTER_D 0x00536c3d
-void FireEngineClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
+void FireEngineClass::SetSaveData(struct _AUTO_LOAD_SAVE *sd) {
 // LINE 554:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x2A0];
@@ -1523,7 +1523,7 @@ void FireEngineClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 }
 
 // FUNCTION: COPTER_D 0x00536cb8
-void FireEngineClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
+void FireEngineClass::LoadSaveData(struct _AUTO_LOAD_SAVE *sd) {
 // LINE 575:
 	__asm        mov    eax, sd;
 	__asm        test   byte ptr [eax], 2;
@@ -1638,5 +1638,5 @@ int32_t curFireTrucks = 0;
 
 // Contribution: 3:000949d0-000949e3 Module: 159, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0062b9d0
-class FireEngineClass* fireTrucks[5];
+class FireEngineClass *fireTrucks[5];
 

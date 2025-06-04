@@ -40,7 +40,7 @@ protected:
 	void HideHelp();
 	int32_t GetSoundFileNameFromHelpID(long, class basic_string<char>&);
 	int32_t GetHotspotFromPosition(long&, class MPoint&);
-	class TextWindow* myTextHelpWindow;
+	class TextWindow *myTextHelpWindow;
 	class DigitalSound myHelpSound;
 	int32_t bDaytime;
 	int32_t bUsingGraphicHelp;
@@ -49,7 +49,7 @@ protected:
 	int32_t nScrollingHangar;
 	class MTimer myTimer;
 	class list<HotSpot> myHotSpots;
-	class CBackBuffer* mySecondImage;
+	class CBackBuffer *mySecondImage;
 	class MPoint ptSavedCursorPosition;
 	long lWindowPositionInHangar;
 };
@@ -109,7 +109,7 @@ class basic_string<char>{
 	using reference_pointer = class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char>* reference;
+	class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -257,7 +257,7 @@ public:
 class list<HotSpot>::iterator : public bidirectional_iterator<HotSpot,int>
 {
 protected:
-	struct list<HotSpot>::list_node* node;
+	struct list<HotSpot>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -413,7 +413,7 @@ class basic_string<char>{
 	using reference_pointer = class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char>* reference;
+	class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -540,7 +540,7 @@ struct bidirectional_iterator<HotSpot,int>{
 
 // Contribution: 1:00070f70-00073776 Module: 36, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00471f70
-void HangarWindow::HangarWindow(int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+void HangarWindow::HangarWindow(int32_t nNewID, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
 	__asm        jmp    near ptr 0x00471F81;
 
@@ -1051,7 +1051,7 @@ _T240:
 
 // FUNCTION: COPTER_D 0x00472611
 int32_t HangarWindow::Initialize() {
-	class ButtonWindow* tempButtonWindow;
+	class ButtonWindow *tempButtonWindow;
 	char * szButtonFileName;
 	class basic_string<char> sText;
 	int32_t nFullStringID;
@@ -1758,7 +1758,7 @@ _T93e:
 }
 
 // FUNCTION: COPTER_D 0x00472f61
-int32_t HangarWindow::ReadPalette(struct SparkalColor* pColorTable) {
+int32_t HangarWindow::ReadPalette(struct SparkalColor *pColorTable) {
 // LINE 122:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x64], 0;
@@ -2234,7 +2234,7 @@ _T252:
 }
 
 // FUNCTION: COPTER_D 0x004734ed
-int32_t HangarWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
+int32_t HangarWindow::DoMessage(class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 	long lOwnerMessage;
 
 // LINE 186:

@@ -44,7 +44,7 @@ public:
 	virtual unsigned long OnWindowDeactivate() /* override */;
 	virtual void ProcessSystemCloseRequest(); // vtable+0x4c
 	virtual void SetNewGameApp(class CGameApp*); // vtable+0x50
-	class CGameApp* myGameApp;
+	class CGameApp *myGameApp;
 };
 
 // Type: class NotificationPreferenceManager (forward reference);
@@ -92,9 +92,9 @@ public:
 	long bSoundEnabled;
 	static unsigned long dwMaxWaveFormatExSize;
 protected:
-	class DigitalSound* primarySound;
-	struct IDirectSoundBuffer* lpPrimarySound;
-	struct IDirectSound* lpDirectSound;
+	class DigitalSound *primarySound;
+	struct IDirectSoundBuffer *lpPrimarySound;
+	struct IDirectSound *lpDirectSound;
 	struct _DSCAPS dsCapabilities;
 };
 
@@ -102,7 +102,7 @@ protected:
 // VTABLE: COPTER_D 0x0058f448
 class SoundManager{
 public:
-	class Sound* sound[128];
+	class Sound *sound[128];
 	void AddSound(class Sound*, int32_t);
 	void AddDigitalSound(const class basic_string<char>&, int32_t, int32_t);
 	void AddDigitalSound(long, int32_t);
@@ -162,7 +162,7 @@ public:
 	class MPoint ptFirstMessage;
 	long lMaximumMessageCount;
 protected:
-	class basic_string<char>* sMessages;
+	class basic_string<char> *sMessages;
 	class MTimer timerMessageDisplay;
 	class MFont fontMessages;
 	long lVerticalSpaceBetweenMessages;
@@ -178,7 +178,7 @@ protected:
 // VTABLE: COPTER_D 0x0058f448
 class SoundManager{
 public:
-	class Sound* sound[128];
+	class Sound *sound[128];
 	void AddSound(class Sound*, int32_t);
 	void AddDigitalSound(const class basic_string<char>&, int32_t, int32_t);
 	void AddDigitalSound(long, int32_t);
@@ -223,7 +223,7 @@ class basic_string<char>{
 	using reference_pointer = class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char>* reference;
+	class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -414,27 +414,27 @@ protected:
 	uint32_t buffer_size();
 	struct list<Shortcut>::list_node_buffer{
 		void * __ptr32 next_buffer;
-		struct list<Shortcut>::list_node* buffer;
+		struct list<Shortcut>::list_node *buffer;
 	};
 	using buffer_allocator_type = class allocator<list<Shortcut>::list_node_buffer>;
 	using buffer_pointer = struct list<Shortcut>::list_node_buffer*;
 protected:
 	static class allocator<list<Shortcut>::list_node_buffer> buffer_allocator;
-	static struct list<Shortcut>::list_node_buffer* buffer_list;
-	static struct list<Shortcut>::list_node* free_list;
-	static struct list<Shortcut>::list_node* next_avail;
-	static struct list<Shortcut>::list_node* last;
+	static struct list<Shortcut>::list_node_buffer *buffer_list;
+	static struct list<Shortcut>::list_node *free_list;
+	static struct list<Shortcut>::list_node *next_avail;
+	static struct list<Shortcut>::list_node *last;
 	void add_new_buffer();
 	static uint32_t number_of_lists;
 	void deallocate_buffers();
 	struct list<Shortcut>::list_node* get_node();
 	void put_node(struct list<Shortcut>::list_node*);
-	struct list<Shortcut>::list_node* node;
+	struct list<Shortcut>::list_node *node;
 	uint32_t length;
 	class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
 	{
 	protected:
-		struct list<Shortcut>::list_node* node;
+		struct list<Shortcut>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -450,7 +450,7 @@ protected:
 	class list<Shortcut>::const_iterator : public bidirectional_iterator<Shortcut,int>
 	{
 	protected:
-		struct list<Shortcut>::list_node* node;
+		struct list<Shortcut>::list_node *node;
 	public:
 		void const_iterator(const class list<Shortcut>::iterator&);
 		void const_iterator();
@@ -516,7 +516,7 @@ public:
 class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
 {
 protected:
-	struct list<Shortcut>::list_node* node;
+	struct list<Shortcut>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -541,7 +541,7 @@ struct list<Shortcut>::list_node{
 class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
 {
 protected:
-	struct list<Shortcut>::list_node* node;
+	struct list<Shortcut>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -579,27 +579,27 @@ protected:
 	uint32_t buffer_size();
 	struct list<CopterGameMode>::list_node_buffer{
 		void * __ptr32 next_buffer;
-		struct list<CopterGameMode>::list_node* buffer;
+		struct list<CopterGameMode>::list_node *buffer;
 	};
 	using buffer_allocator_type = class allocator<list<CopterGameMode>::list_node_buffer>;
 	using buffer_pointer = struct list<CopterGameMode>::list_node_buffer*;
 protected:
 	static class allocator<list<CopterGameMode>::list_node_buffer> buffer_allocator;
-	static struct list<CopterGameMode>::list_node_buffer* buffer_list;
-	static struct list<CopterGameMode>::list_node* free_list;
-	static struct list<CopterGameMode>::list_node* next_avail;
-	static struct list<CopterGameMode>::list_node* last;
+	static struct list<CopterGameMode>::list_node_buffer *buffer_list;
+	static struct list<CopterGameMode>::list_node *free_list;
+	static struct list<CopterGameMode>::list_node *next_avail;
+	static struct list<CopterGameMode>::list_node *last;
 	void add_new_buffer();
 	static uint32_t number_of_lists;
 	void deallocate_buffers();
 	struct list<CopterGameMode>::list_node* get_node();
 	void put_node(struct list<CopterGameMode>::list_node*);
-	struct list<CopterGameMode>::list_node* node;
+	struct list<CopterGameMode>::list_node *node;
 	uint32_t length;
 	class list<CopterGameMode>::iterator : public bidirectional_iterator<CopterGameMode,int>
 	{
 	protected:
-		struct list<CopterGameMode>::list_node* node;
+		struct list<CopterGameMode>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -615,7 +615,7 @@ protected:
 	class list<CopterGameMode>::const_iterator : public bidirectional_iterator<CopterGameMode,int>
 	{
 	protected:
-		struct list<CopterGameMode>::list_node* node;
+		struct list<CopterGameMode>::list_node *node;
 	public:
 		void const_iterator(const class list<CopterGameMode>::iterator&);
 		void const_iterator();
@@ -680,14 +680,14 @@ public:
 // Type: struct list<CopterGameMode>::list_node_buffer (forward reference);
 struct list<CopterGameMode>::list_node_buffer{
 	void * __ptr32 next_buffer;
-	struct list<CopterGameMode>::list_node* buffer;
+	struct list<CopterGameMode>::list_node *buffer;
 };
 
 // Type: class list<CopterGameMode>::iterator;
 class list<CopterGameMode>::iterator : public bidirectional_iterator<CopterGameMode,int>
 {
 protected:
-	struct list<CopterGameMode>::list_node* node;
+	struct list<CopterGameMode>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -731,7 +731,7 @@ class PreferenceManager{
 protected:
 	int32_t bSaveFileAtAllChanges;
 	class list<PreferenceItem> myPreferences;
-	class MIFF* miffPrefsFile;
+	class MIFF *miffPrefsFile;
 	long lFileCreator;
 	long lFileType;
 	long lFileVersion;
@@ -759,7 +759,7 @@ public:
 // VTABLE: COPTER_D 0x005910f8
 class SparkalPalette{
 public:
-	struct SparkalColor* pColors;
+	struct SparkalColor *pColors;
 	long lColors;
 	int32_t bOwnColors;
 	void SparkalPalette(struct SparkalColor*, int32_t, unsigned long);
@@ -789,7 +789,7 @@ public:
 	virtual class CSparkalWindow* SetWindow(class CSparkalWindow*); // vtable+0x20
 	class CSparkalWindow* GetWindow();
 protected:
-	class CSparkalWindow* mpWindow;
+	class CSparkalWindow *mpWindow;
 };
 
 
@@ -2994,7 +2994,7 @@ _Tf15:
 }
 
 // FUNCTION: COPTER_D 0x004896d1
-class CSparkalWindow *  CGameApp::NewWindow(unsigned long Width, unsigned long Height, unsigned long Style, const struct SparkalColor* pColors, char * Caption) {
+class CSparkalWindow *  CGameApp::NewWindow(unsigned long Width, unsigned long Height, unsigned long Style, const struct SparkalColor *pColors, char * Caption) {
 // LINE 374:
 	__asm        push   0x9C;
 	__asm        call   operator new;
@@ -4655,13 +4655,13 @@ static void (*$S144)() = { 0 /* todo */ };
 
 // Contribution: 3:00002bbc-00002d72 Module: 28, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00599bbc
-class CGameApp* gGameApp = { 0 /* todo */ };
+class CGameApp *gGameApp = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00599bc0
-class CGameCommander* gGameCommander = { 0 /* todo */ };
+class CGameCommander *gGameCommander = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00599bc4
-class NotificationPreferenceManager* gPreferenceManager = { 0 /* todo */ };
+class NotificationPreferenceManager *gPreferenceManager = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00599bc8
 char * SZ_SOUND_BUTTON_WINDOW_SOUND_FILE = { 0 /* todo */ };

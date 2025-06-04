@@ -167,7 +167,7 @@ void Swizzle2(void * __ptr32 val) {
 }
 
 // FUNCTION: COPTER_D 0x00566990
-void SwizzleRect(struct Rect* rect) {
+void SwizzleRect(struct Rect *rect) {
 	short * pShort;
 
 // LINE 64:

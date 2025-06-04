@@ -7,7 +7,7 @@
 class ScreenBuffer : public CBackBuffer
 {
 public:
-	class CSparkalWindow* pWindow;
+	class CSparkalWindow *pWindow;
 	long bOK;
 	void ScreenBuffer(class CSparkalWindow*, long, long, struct SparkalColor*, int32_t, enum tagModeType, int32_t);
 	void ScreenBuffer();
@@ -28,7 +28,7 @@ protected:
 	short nBackBuffers;
 	enum tagModeType nCurrentModeType;
 	int32_t bUsingFlipping;
-	struct IDirectDrawClipper* lpClipper;
+	struct IDirectDrawClipper *lpClipper;
 	struct tagRECT rectDirectDrawBackBuffer;
 };
 
@@ -76,8 +76,8 @@ protected:
 	long mHeight;
 	long mWidth;
 	unsigned long mStyle;
-	class ICommander* mpCommander;
-	class ScreenBuffer* mpBackBuffer;
+	class ICommander *mpCommander;
+	class ScreenBuffer *mpBackBuffer;
 	void * __ptr32 mWindow;
 	// calltype: NearStd
 	virtual long MySparkalWindowProc(void * __ptr32, uint32_t, uint32_t, long); // vtable+0x30
@@ -125,21 +125,21 @@ struct _DDBLTFX{
 	unsigned long dwZBufferBaseDest;
 	unsigned long dwZDestConstBitDepth;
 	unsigned long dwZDestConst;
-	struct IDirectDrawSurface* lpDDSZBufferDest;
+	struct IDirectDrawSurface *lpDDSZBufferDest;
 	unsigned long dwZSrcConstBitDepth;
 	unsigned long dwZSrcConst;
-	struct IDirectDrawSurface* lpDDSZBufferSrc;
+	struct IDirectDrawSurface *lpDDSZBufferSrc;
 	unsigned long dwAlphaEdgeBlendBitDepth;
 	unsigned long dwAlphaEdgeBlend;
 	unsigned long dwReserved;
 	unsigned long dwAlphaDestConstBitDepth;
 	unsigned long dwAlphaDestConst;
-	struct IDirectDrawSurface* lpDDSAlphaDest;
+	struct IDirectDrawSurface *lpDDSAlphaDest;
 	unsigned long dwAlphaSrcConstBitDepth;
 	unsigned long dwAlphaSrcConst;
-	struct IDirectDrawSurface* lpDDSAlphaSrc;
+	struct IDirectDrawSurface *lpDDSAlphaSrc;
 	unsigned long dwFillColor;
-	struct IDirectDrawSurface* lpDDSPattern;
+	struct IDirectDrawSurface *lpDDSPattern;
 	struct _DDCOLORKEY ddckDestColorkey;
 	struct _DDCOLORKEY ddckSrcColorkey;
 };
@@ -224,15 +224,15 @@ public:
 protected:
 	int32_t bSurfacePrimary;
 	int32_t bSurfaceTransparent;
-	class MFont* mFont;
+	class MFont *mFont;
 	struct SparkalColor colorFontCurrent;
 	struct SparkalColor colorCurrent;
 	int32_t nColorIndexFontCurrent;
 	int32_t nColorIndexCurrent;
 	int32_t nColorIndexTransparent;
-	struct IDirectDrawSurface* mpFrontSurface;
-	struct IDirectDrawSurface* mpBackSurface;
-	struct IDirectDrawPalette* mpPalette;
+	struct IDirectDrawSurface *mpFrontSurface;
+	struct IDirectDrawSurface *mpBackSurface;
+	struct IDirectDrawPalette *mpPalette;
 	struct _DDSURFACEDESC mDDdesc;
 	struct _DDBLTFX mDDBltFx;
 	void * __ptr32 hPen;
@@ -350,7 +350,7 @@ void ScreenBuffer::ScreenBuffer() {
 }
 
 // FUNCTION: COPTER_D 0x0049e534
-void ScreenBuffer::ScreenBuffer(class CSparkalWindow* pNewWindow, long nNewWidth, long nNewHeight, struct SparkalColor* pColors, int32_t nNewBackBuffers, enum tagModeType nNewCurrentModeType, int32_t bNewUsingFlipping) {
+void ScreenBuffer::ScreenBuffer(class CSparkalWindow *pNewWindow, long nNewWidth, long nNewHeight, struct SparkalColor *pColors, int32_t nNewBackBuffers, enum tagModeType nNewCurrentModeType, int32_t bNewUsingFlipping) {
 	struct SparkalRect rectWindowTemp;
 
 
@@ -1158,7 +1158,7 @@ _T2b6:
 }
 
 // FUNCTION: COPTER_D 0x0049ee15
-unsigned long ScreenBuffer::Swap(class CSparkalWindow* __formal, long __formal, long __formal) {
+unsigned long ScreenBuffer::Swap(class CSparkalWindow *__formal, long __formal, long __formal) {
 	long hResult;
 
 // LINE 365:
@@ -1437,7 +1437,7 @@ _Tb5:
 }
 
 // FUNCTION: COPTER_D 0x0049f0fa
-int32_t ScreenBuffer::UsePalette(struct SparkalColor* pColors) {
+int32_t ScreenBuffer::UsePalette(struct SparkalColor *pColors) {
 	long hResult;
 
 	// Function registers exception cleanup function at 0x0049f410
@@ -1722,7 +1722,7 @@ _T3d:
 }
 
 // FUNCTION: COPTER_D 0x0049f472
-unsigned long ScreenBuffer::FillRect(long nPaletteIndex, struct SparkalRect* rectFill) {
+unsigned long ScreenBuffer::FillRect(long nPaletteIndex, struct SparkalRect *rectFill) {
 	long hResult;
 	struct tagRECT rectFillTemp;
 
@@ -1925,7 +1925,7 @@ _T217:
 }
 
 // FUNCTION: COPTER_D 0x0049f690
-void ScreenBuffer::SetWindowRect(struct SparkalRect* rectWindow) {
+void ScreenBuffer::SetWindowRect(struct SparkalRect *rectWindow) {
 // LINE 721:
 	__asm        mov    eax, rectWindow;
 	__asm        mov    ecx, this;

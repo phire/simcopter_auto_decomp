@@ -41,11 +41,11 @@ struct VRObjInfo{
 	int32_t Verts;
 	int32_t Attribute;
 	int32_t Radius;
-	struct Point3d* ObjCenter;
-	struct Point3d* VertsPtr;
-	struct Xform3d* VertsXfm;
-	struct Point3d* OrgVerts;
-	int32_t[4][4]* Matrix;
+	struct Point3d *ObjCenter;
+	struct Point3d *VertsPtr;
+	struct Xform3d *VertsXfm;
+	struct Point3d *OrgVerts;
+	int32_t *Matrix[4][4];
 };
 
 // Type: enum EmergencyType;
@@ -109,7 +109,7 @@ struct _AUTO_LOAD_SAVE{
 	long turnIndex;
 	int32_t currDist;
 	int32_t legOfTurn;
-	struct Point3d* pDirVector;
+	struct Point3d *pDirVector;
 	int32_t personDone;
 	int32_t personState;
 	int32_t personTimer;
@@ -181,7 +181,7 @@ protected:
 	long timeOfArrival;
 	struct _DYOBJ_INST dispatchIcon;
 	int32_t timeToEmergency;
-	class AutomobileClass* dispatchTarget;
+	class AutomobileClass *dispatchTarget;
 	unsigned char dispatchPath[256];
 	unsigned char dispatchPathIndex;
 	unsigned char dispatchPathLength;
@@ -350,12 +350,12 @@ protected:
 	enum TurnIndex turnIndex;
 	int32_t currDist;
 	int32_t legOfTurn;
-	struct Point3d* pDirVector;
+	struct Point3d *pDirVector;
 	int32_t timeToLive;
 	int32_t fireTime;
 	long fireSeq;
 	long missionId;
-	struct _CELL_INFO* cptr;
+	struct _CELL_INFO *cptr;
 	enum AutomobileClass::PersonState personState;
 	int32_t spotlightHitCounter;
 	int32_t IsCarPersistant();
@@ -453,7 +453,7 @@ protected:
 	long timeOfArrival;
 	struct _DYOBJ_INST dispatchIcon;
 	int32_t timeToEmergency;
-	class AutomobileClass* dispatchTarget;
+	class AutomobileClass *dispatchTarget;
 	unsigned char dispatchPath[256];
 	unsigned char dispatchPathIndex;
 	unsigned char dispatchPathLength;
@@ -542,7 +542,7 @@ void AmbulanceClass::~AmbulanceClass() {
 // FUNCTION: COPTER_D 0x0053592b
 class AmbulanceClass* AmbulanceClass::CreateInstance(int32_t instanceID) {
 	int32_t object;
-	class AmbulanceClass* youveWonABrandNewCar;
+	class AmbulanceClass *youveWonABrandNewCar;
 	char * objectMemory;
 
 // LINE 113:
@@ -1128,7 +1128,7 @@ int32_t AmbulanceClass::AtScene() {
 }
 
 // FUNCTION: COPTER_D 0x00535ff9
-void AmbulanceClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
+void AmbulanceClass::SetSaveData(struct _AUTO_LOAD_SAVE *sd) {
 // LINE 424:
 	__asm        mov    eax, sd;
 	__asm        push   eax;
@@ -1139,7 +1139,7 @@ void AmbulanceClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 }
 
 // FUNCTION: COPTER_D 0x0053601d
-void AmbulanceClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
+void AmbulanceClass::LoadSaveData(struct _AUTO_LOAD_SAVE *sd) {
 // LINE 439:
 	__asm        mov    eax, sd;
 	__asm        test   byte ptr [eax], 2;
@@ -1219,5 +1219,5 @@ int32_t curAmbulances = 0;
 
 // Contribution: 3:000949b8-000949cb Module: 160, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0062b9b8
-class AmbulanceClass* ambulances[5];
+class AmbulanceClass *ambulances[5];
 

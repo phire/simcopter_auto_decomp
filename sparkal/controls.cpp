@@ -7,14 +7,14 @@
 // Type: struct list<RadioButtonWindow *>::list_node_buffer (forward reference);
 struct list<RadioButtonWindow *>::list_node_buffer{
 	void * __ptr32 next_buffer;
-	struct list<RadioButtonWindow *>::list_node* buffer;
+	struct list<RadioButtonWindow *>::list_node *buffer;
 };
 
 // Type: struct list<RadioButtonWindow *>::list_node (forward reference);
 struct list<RadioButtonWindow *>::list_node{
 	void * __ptr32 next;
 	void * __ptr32 prev;
-	class RadioButtonWindow* data;
+	class RadioButtonWindow *data;
 };
 
 // Type: uint32_t;
@@ -161,7 +161,7 @@ class basic_string<char>{
 	using reference_pointer = class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char>* reference;
+	class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -430,7 +430,7 @@ public:
 	virtual long DoCursorUp(long, long, unsigned long) /* override */;
 	virtual long DoCursorMove(long, long) /* override */;
 protected:
-	class ButtonGroup* myRadioButtonGroup;
+	class ButtonGroup *myRadioButtonGroup;
 };
 
 // Type: class ButtonGroup (forward reference);
@@ -440,7 +440,7 @@ protected:
 class list<RadioButtonWindow *>::iterator : public bidirectional_iterator<RadioButtonWindow *,int>
 {
 protected:
-	struct list<RadioButtonWindow *>::list_node* node;
+	struct list<RadioButtonWindow *>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -495,7 +495,7 @@ public:
 	long lMaximumThumbPosition;
 	long lThumbLimitIndentation;
 	class MRect rectThumbImage;
-	class CBackBuffer* myBackgroundImage;
+	class CBackBuffer *myBackgroundImage;
 	class basic_string<char> sBackgroundFile;
 	int32_t bBusySettingValue;
 };
@@ -512,7 +512,7 @@ class basic_string<char>{
 	using reference_pointer = class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char>* reference;
+	class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -727,8 +727,8 @@ protected:
 	long lFirstVisibleLine;
 	long lLineHeight;
 	int32_t bAlwaysSort;
-	class ScrollBarWindow* myVerticalScrollBarWindow;
-	class ScrollBarWindow* myHorizontalScrollBarWindow;
+	class ScrollBarWindow *myVerticalScrollBarWindow;
+	class ScrollBarWindow *myHorizontalScrollBarWindow;
 	int32_t bBusySettingSelection;
 };
 
@@ -738,7 +738,7 @@ protected:
 class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_string<char>,int>
 {
 protected:
-	struct list<basic_string<char>>::list_node* node;
+	struct list<basic_string<char>>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -793,27 +793,27 @@ protected:
 	uint32_t buffer_size();
 	struct list<basic_string<char>>::list_node_buffer{
 		void * __ptr32 next_buffer;
-		struct list<basic_string<char>>::list_node* buffer;
+		struct list<basic_string<char>>::list_node *buffer;
 	};
 	using buffer_allocator_type = class allocator<list<basic_string<char>>::list_node_buffer>;
 	using buffer_pointer = struct list<basic_string<char>>::list_node_buffer*;
 protected:
 	static class allocator<list<basic_string<char>>::list_node_buffer> buffer_allocator;
-	static struct list<basic_string<char>>::list_node_buffer* buffer_list;
-	static struct list<basic_string<char>>::list_node* free_list;
-	static struct list<basic_string<char>>::list_node* next_avail;
-	static struct list<basic_string<char>>::list_node* last;
+	static struct list<basic_string<char>>::list_node_buffer *buffer_list;
+	static struct list<basic_string<char>>::list_node *free_list;
+	static struct list<basic_string<char>>::list_node *next_avail;
+	static struct list<basic_string<char>>::list_node *last;
 	void add_new_buffer();
 	static uint32_t number_of_lists;
 	void deallocate_buffers();
 	struct list<basic_string<char>>::list_node* get_node();
 	void put_node(struct list<basic_string<char>>::list_node*);
-	struct list<basic_string<char>>::list_node* node;
+	struct list<basic_string<char>>::list_node *node;
 	uint32_t length;
 	class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_string<char>,int>
 	{
 	protected:
-		struct list<basic_string<char>>::list_node* node;
+		struct list<basic_string<char>>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -829,7 +829,7 @@ protected:
 	class list<basic_string<char>>::const_iterator : public bidirectional_iterator<basic_string<char>,int>
 	{
 	protected:
-		struct list<basic_string<char>>::list_node* node;
+		struct list<basic_string<char>>::list_node *node;
 	public:
 		void const_iterator(const class list<basic_string<char>>::iterator&);
 		void const_iterator();
@@ -894,7 +894,7 @@ public:
 // Type: struct list<basic_string<char>>::list_node_buffer (forward reference);
 struct list<basic_string<char>>::list_node_buffer{
 	void * __ptr32 next_buffer;
-	struct list<basic_string<char>>::list_node* buffer;
+	struct list<basic_string<char>>::list_node *buffer;
 };
 
 // Type: struct SparkalRect;
@@ -948,7 +948,7 @@ public:
 	long lMaximumThumbPosition;
 	long lThumbLimitIndentation;
 	class MRect rectThumbImage;
-	class CBackBuffer* myBackgroundImage;
+	class CBackBuffer *myBackgroundImage;
 	class basic_string<char> sBackgroundFile;
 	int32_t bBusySettingValue;
 };
@@ -1055,8 +1055,8 @@ protected:
 	long lFirstVisibleLine;
 	long lLineHeight;
 	int32_t bAlwaysSort;
-	class ScrollBarWindow* myVerticalScrollBarWindow;
-	class ScrollBarWindow* myHorizontalScrollBarWindow;
+	class ScrollBarWindow *myVerticalScrollBarWindow;
+	class ScrollBarWindow *myHorizontalScrollBarWindow;
 	int32_t bBusySettingSelection;
 };
 
@@ -1101,7 +1101,7 @@ void BoxWindow::BoxWindow() {
 }
 
 // FUNCTION: COPTER_D 0x004acb00
-void BoxWindow::BoxWindow(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+void BoxWindow::BoxWindow(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
@@ -1259,7 +1259,7 @@ void TextWindow::TextWindow() {
 }
 
 // FUNCTION: COPTER_D 0x004acce6
-void TextWindow::TextWindow(class MRect& rectNewWindow, int32_t nNewID, int32_t nNewWindowTitleTextID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+void TextWindow::TextWindow(class MRect& rectNewWindow, int32_t nNewID, int32_t nNewWindowTitleTextID, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
@@ -1320,7 +1320,7 @@ void TextWindow::TextWindow(class MRect& rectNewWindow, int32_t nNewID, int32_t 
 }
 
 // FUNCTION: COPTER_D 0x004acda2
-void TextWindow::TextWindow(class MRect& rectNewWindow, int32_t nNewID, const class basic_string<char>& sNewWindowTitle, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+void TextWindow::TextWindow(class MRect& rectNewWindow, int32_t nNewID, const class basic_string<char>& sNewWindowTitle, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
@@ -2817,7 +2817,7 @@ _T1fd:
 }
 
 // FUNCTION: COPTER_D 0x004ae05d
-void ButtonWindow::ButtonWindow(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, char * szImageFileName, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+void ButtonWindow::ButtonWindow(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow *windowNewParent, char * szImageFileName, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
@@ -3089,7 +3089,7 @@ int32_t ButtonWindow::Initialize() {
 }
 
 // FUNCTION: COPTER_D 0x004ae3b3
-void ButtonWindow::SetTextColor(const struct SparkalColor* colorNewFont, const struct SparkalColor* colorNewFontHighlighted) {
+void ButtonWindow::SetTextColor(const struct SparkalColor *colorNewFont, const struct SparkalColor *colorNewFontHighlighted) {
 // LINE 329:
 	__asm        cmp    colorNewFont, 0;
 	__asm        je     _T24;
@@ -3123,7 +3123,7 @@ int32_t ButtonWindow::GetImageCount() {
 // FUNCTION: COPTER_D 0x004ae416
 int32_t ButtonWindow::CreateImage(int32_t __formal) {
 	int32_t nReturnValue;
-	class MFont* fontText;
+	class MFont *fontText;
 	char szTypeface[64];
 	int32_t nWindowWidth;
 	int32_t nWindowHeight;
@@ -4171,7 +4171,7 @@ _T25f:
 }
 
 // FUNCTION: COPTER_D 0x004af0ab
-void CheckBoxWindow::CheckBoxWindow(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, char * szImageFileName, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+void CheckBoxWindow::CheckBoxWindow(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow *windowNewParent, char * szImageFileName, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
@@ -4815,7 +4815,7 @@ long CheckBoxWindow::DoCursorMove(long __formal, long __formal) {
 }
 
 // FUNCTION: COPTER_D 0x004af7f7
-void RadioButtonWindow::RadioButtonWindow(class ButtonGroup* myNewRadioButtonGroup, class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, char * szImageFileName, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+void RadioButtonWindow::RadioButtonWindow(class ButtonGroup *myNewRadioButtonGroup, class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow *windowNewParent, char * szImageFileName, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
@@ -5383,7 +5383,7 @@ int32_t RadioButtonWindow::GetImageCount() {
 }
 
 // FUNCTION: COPTER_D 0x004afe6f
-void RadioButtonWindow::AddToGroup(class ButtonGroup* myNewRadioButtonGroup) {
+void RadioButtonWindow::AddToGroup(class ButtonGroup *myNewRadioButtonGroup) {
 // LINE 760:
 	__asm        mov    eax, myNewRadioButtonGroup;
 	__asm        mov    ecx, this;
@@ -5760,7 +5760,7 @@ _T22d:
 }
 
 // FUNCTION: COPTER_D 0x004b030d
- ButtonGroup::ButtonGroup(long lNewID, class GraphicWindow* windowNewParent, class GraphicWindow* gwMyNewOwner, int32_t bAddToParentList) {
+ ButtonGroup::ButtonGroup(long lNewID, class GraphicWindow *windowNewParent, class GraphicWindow *gwMyNewOwner, int32_t bAddToParentList) {
 
 	__asm        jmp    near ptr 0x004B031E;
 
@@ -5981,7 +5981,7 @@ _T267:
 }
 
 // FUNCTION: COPTER_D 0x004b05e2
-void  ButtonGroup::AddButton(class RadioButtonWindow* buttonNew) {
+void  ButtonGroup::AddButton(class RadioButtonWindow *buttonNew) {
 // LINE 879:
 	__asm        mov    eax, buttonNew;
 	__asm        push   eax;
@@ -6213,7 +6213,7 @@ _T2c6:
 }
 
 // FUNCTION: COPTER_D 0x004b08b4
-void  ButtonGroup::RemoveButton(class RadioButtonWindow* buttonToRemove) {
+void  ButtonGroup::RemoveButton(class RadioButtonWindow *buttonToRemove) {
 	class list<RadioButtonWindow *>::iterator iterator;
 
 // LINE 893:
@@ -6330,7 +6330,7 @@ _T132:
 }
 
 // FUNCTION: COPTER_D 0x004b09ed
-void  ButtonGroup::SetSelection(class RadioButtonWindow* buttonToSelect) {
+void  ButtonGroup::SetSelection(class RadioButtonWindow *buttonToSelect) {
 	class list<RadioButtonWindow *>::iterator iterator;
 
 // LINE 920:
@@ -6841,7 +6841,7 @@ _Ted:
 
 // FUNCTION: COPTER_D 0x004b0f41
 int  ButtonGroup::GetSelection(long& lCurrentSelection) {
-	class RadioButtonWindow* tempRadioButtonWindow;
+	class RadioButtonWindow *tempRadioButtonWindow;
 
 // LINE 1035:
 	__asm        lea    eax, tempRadioButtonWindow;
@@ -6953,7 +6953,7 @@ _Te9:
 }
 
 // FUNCTION: COPTER_D 0x004b1067
-int  ButtonGroup::IsButtonInGroup(class RadioButtonWindow* buttonToFind) {
+int  ButtonGroup::IsButtonInGroup(class RadioButtonWindow *buttonToFind) {
 	class list<RadioButtonWindow *>::iterator i;
 
 // LINE 1069:
@@ -7100,7 +7100,7 @@ _Ted:
 }
 
 // FUNCTION: COPTER_D 0x004b1256
-void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum SliderWindow::SliderWindowDirection newSliderWindowDirection, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, char * szThumbImageFileName, char * szBackgroundImageFileName, long lNewThumbLimitIndentation) {
+void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum SliderWindow::SliderWindowDirection newSliderWindowDirection, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList, char * szThumbImageFileName, char * szBackgroundImageFileName, long lNewThumbLimitIndentation) {
 
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
@@ -9321,7 +9321,7 @@ _T2fd:
 }
 
 // FUNCTION: COPTER_D 0x004b2c25
-void ScrollBarWindow::ScrollBarWindow(class MRect& rectNewWindow, int32_t nNewID, enum SliderWindow::SliderWindowDirection newSliderWindowDirection, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, char * szImageFileName) {
+void ScrollBarWindow::ScrollBarWindow(class MRect& rectNewWindow, int32_t nNewID, enum SliderWindow::SliderWindowDirection newSliderWindowDirection, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList, char * szImageFileName) {
 
 	__asm        push   8;
 	__asm        push   0;
@@ -11455,7 +11455,7 @@ _T227:
 }
 
 // FUNCTION: COPTER_D 0x004b4462
-void ListBoxWindow::ListBoxWindow(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+void ListBoxWindow::ListBoxWindow(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
@@ -11746,7 +11746,7 @@ int32_t ListBoxWindow::Initialize() {
 }
 
 // FUNCTION: COPTER_D 0x004b4822
-int32_t ListBoxWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
+int32_t ListBoxWindow::DoMessage(class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 // LINE 2142:
 	__asm        cmp    lWindowID, 1;
 	__asm        jne    _T37;
@@ -11944,7 +11944,7 @@ _T38:
 }
 
 // FUNCTION: COPTER_D 0x004b4a55
-void ListBoxWindow::SetTextColor(const struct SparkalColor* colorNewFont, const struct SparkalColor* colorNewFontHighlighted) {
+void ListBoxWindow::SetTextColor(const struct SparkalColor *colorNewFont, const struct SparkalColor *colorNewFontHighlighted) {
 // LINE 2242:
 	__asm        cmp    colorNewFont, 0;
 	__asm        je     _T21;
@@ -13369,7 +13369,7 @@ _T604:
 
 // FUNCTION: COPTER_D 0x004b5c06
 int32_t ListBoxWindow::ModifyString(long lIndex, class basic_string<char>& sNew) {
-	class basic_string<char>* sAddress;
+	class basic_string<char> *sAddress;
 
 // LINE 2448:
 	__asm        lea    eax, sAddress;
@@ -13633,7 +13633,7 @@ _Tb4:
 
 // FUNCTION: COPTER_D 0x004b5edc
 int32_t ListBoxWindow::GetStringFromIndex(long lIndex, class basic_string<char>& sFound) {
-	class basic_string<char>* sAddress;
+	class basic_string<char> *sAddress;
 
 // LINE 2498:
 	__asm        lea    eax, sAddress;
@@ -16129,7 +16129,7 @@ _Tba:
 }
 
 // FUNCTION: COPTER_D 0x004b7c25
-void PopupMenuWindow::PopupMenuWindow(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+void PopupMenuWindow::PopupMenuWindow(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
 	__asm        mov    eax, bAddToParentList;
 	__asm        push   eax;
@@ -17508,23 +17508,23 @@ uint32_t list<RadioButtonWindow *>::number_of_lists = 0;
 
 // Contribution: 3:00003c34-00003c37 Module: 5, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059ac34
-struct list<RadioButtonWindow *>::list_node* list<RadioButtonWindow *>::last = { 0 /* todo */ };
+struct list<RadioButtonWindow *>::list_node *list<RadioButtonWindow *>::last = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00003c38-00003c3b Module: 5, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059ac38
-struct list<RadioButtonWindow *>::list_node* list<RadioButtonWindow *>::next_avail = { 0 /* todo */ };
+struct list<RadioButtonWindow *>::list_node *list<RadioButtonWindow *>::next_avail = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00003c3c-00003c3f Module: 5, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059ac3c
-struct list<RadioButtonWindow *>::list_node* list<RadioButtonWindow *>::free_list = { 0 /* todo */ };
+struct list<RadioButtonWindow *>::list_node *list<RadioButtonWindow *>::free_list = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00003c40-00003c43 Module: 5, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059ac40
-struct list<RadioButtonWindow *>::list_node_buffer* list<RadioButtonWindow *>::buffer_list = { 0 /* todo */ };
+struct list<RadioButtonWindow *>::list_node_buffer *list<RadioButtonWindow *>::buffer_list = { 0 /* todo */ };
 

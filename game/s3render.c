@@ -831,9 +831,9 @@ _T944:
 
 // FUNCTION: COPTER_D 0x004eb5ca
 int32_t VRAppCityInit(int32_t reload) {
-	struct tagUserPersonalInfo* up;
+	struct tagUserPersonalInfo *up;
 	long i;
-	struct Point2d* pad;
+	struct Point2d *pad;
 
 // LINE 553:
 	__asm        cmp    reload, 1;
@@ -1433,22 +1433,22 @@ int32_t AlwaysTimer = 0;
 int32_t G_AvLoopTime = 0;
 
 // GLOBAL: COPTER_D 0x005b476c
-struct VRResource* G_restex = { 0 /* todo */ };
+struct VRResource *G_restex = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4770
-struct VRResource* G_respal = { 0 /* todo */ };
+struct VRResource *G_respal = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4774
-struct VRResource* G_resgeo1 = { 0 /* todo */ };
+struct VRResource *G_resgeo1 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4778
-struct VRResource* G_resgeo2 = { 0 /* todo */ };
+struct VRResource *G_resgeo2 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b477c
-struct VRResource* G_resgeo3 = { 0 /* todo */ };
+struct VRResource *G_resgeo3 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4780
-struct VRMemPool* G_main_mp = { 0 /* todo */ };
+struct VRMemPool *G_main_mp = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4784
 char * buffer = { 0 /* todo */ };

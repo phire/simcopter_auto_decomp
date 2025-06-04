@@ -28,7 +28,7 @@ protected:
 	long timeOfArrival;
 	struct _DYOBJ_INST dispatchIcon;
 	int32_t timeToEmergency;
-	class AutomobileClass* dispatchTarget;
+	class AutomobileClass *dispatchTarget;
 	unsigned char dispatchPath[256];
 	unsigned char dispatchPathIndex;
 	unsigned char dispatchPathLength;
@@ -73,8 +73,8 @@ public:
 
 // Type: struct _DYOBJ_INST (forward reference);
 struct _DYOBJ_INST{
-	struct _DYOBJ_INST* next;
-	struct _DYOBJ_INST* vnext;
+	struct _DYOBJ_INST *next;
+	struct _DYOBJ_INST *vnext;
 	void * __ptr32 mesh;
 	short flags;
 	short user1;
@@ -88,7 +88,7 @@ struct _DYOBJ_INST{
 
 // Type: struct Goal;
 struct Goal{
-	struct RGVertex* pRGV;
+	struct RGVertex *pRGV;
 	int32_t elementIndex;
 	int32_t gridIndex;
 	struct _GridCoordinates gridLoc;
@@ -139,7 +139,7 @@ struct Edge{
 	unsigned char x;
 	unsigned short Time;
 	unsigned short numElementsToPath;
-	struct Road* roadArray;
+	struct Road *roadArray;
 };
 
 // Type: unsigned char;
@@ -153,7 +153,7 @@ struct VRview{
 
 // Type: struct Goal (forward reference);
 struct Goal{
-	struct RGVertex* pRGV;
+	struct RGVertex *pRGV;
 	int32_t elementIndex;
 	int32_t gridIndex;
 	struct _GridCoordinates gridLoc;
@@ -174,9 +174,9 @@ struct _CELL_INFO{
 	short z;
 	short size;
 	short ctr;
-	struct _STOBJ_INST* stptr;
-	struct _DYOBJ_INST* dyptr;
-	struct _DYOBJ_INST* vwptr;
+	struct _STOBJ_INST *stptr;
+	struct _DYOBJ_INST *dyptr;
+	struct _DYOBJ_INST *vwptr;
 };
 
 // Type: long;
@@ -213,10 +213,10 @@ struct VRFaceInfo{
 	int32_t Verts;
 	int32_t Attribute;
 	int32_t Plotter;
-	struct VRBmpHdr* Bitmap;
+	struct VRBmpHdr *Bitmap;
 	int32_t * VertList;
-	struct MapVert* MapVList;
-	struct MapVert* BarryPtr;
+	struct MapVert *MapVList;
+	struct MapVert *BarryPtr;
 };
 
 // Type: struct VRObjInfo;
@@ -225,11 +225,11 @@ struct VRObjInfo{
 	int32_t Verts;
 	int32_t Attribute;
 	int32_t Radius;
-	struct Point3d* ObjCenter;
-	struct Point3d* VertsPtr;
-	struct Xform3d* VertsXfm;
-	struct Point3d* OrgVerts;
-	int32_t[4][4]* Matrix;
+	struct Point3d *ObjCenter;
+	struct Point3d *VertsPtr;
+	struct Xform3d *VertsXfm;
+	struct Point3d *OrgVerts;
+	int32_t *Matrix[4][4];
 };
 
 // Type: struct _AUTO_LOAD_SAVE (forward reference);
@@ -260,7 +260,7 @@ struct _AUTO_LOAD_SAVE{
 	long turnIndex;
 	int32_t currDist;
 	int32_t legOfTurn;
-	struct Point3d* pDirVector;
+	struct Point3d *pDirVector;
 	int32_t personDone;
 	int32_t personState;
 	int32_t personTimer;
@@ -442,12 +442,12 @@ protected:
 	enum TurnIndex turnIndex;
 	int32_t currDist;
 	int32_t legOfTurn;
-	struct Point3d* pDirVector;
+	struct Point3d *pDirVector;
 	int32_t timeToLive;
 	int32_t fireTime;
 	long fireSeq;
 	long missionId;
-	struct _CELL_INFO* cptr;
+	struct _CELL_INFO *cptr;
 	enum AutomobileClass::PersonState personState;
 	int32_t spotlightHitCounter;
 	int32_t IsCarPersistant();
@@ -641,7 +641,7 @@ _T28:
 	__asm        jne    _T20e;
 // LINE 271:
 // Block start:
-	struct Edge* pEdge;
+	struct Edge *pEdge;
 	__asm        mov    eax, startGoal1.pRGV;
 	__asm        mov    al, [eax];
 	__asm        mov    startIndex.x, al;
@@ -1057,7 +1057,7 @@ _T179:
 	__asm        jne    _T2ff;
 // LINE 406:
 // Block start:
-	struct Edge* pEdge;
+	struct Edge *pEdge;
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x192];
@@ -1621,7 +1621,7 @@ void EmergencyVehicleClass::CancelEmergencyDispatch() {
 }
 
 // FUNCTION: COPTER_D 0x005421df
-int32_t EmergencyVehicleClass::AreThereMoreSeats(struct _DYOBJ_INST* carInst) {
+int32_t EmergencyVehicleClass::AreThereMoreSeats(struct _DYOBJ_INST *carInst) {
 // LINE 568:
 	__asm        mov    eax, carInst;
 	__asm        movsx  eax, word ptr [eax+0xE];
@@ -1632,7 +1632,7 @@ int32_t EmergencyVehicleClass::AreThereMoreSeats(struct _DYOBJ_INST* carInst) {
 }
 
 // FUNCTION: COPTER_D 0x00542203
-void EmergencyVehicleClass::FillSeat(struct _DYOBJ_INST* carInst) {
+void EmergencyVehicleClass::FillSeat(struct _DYOBJ_INST *carInst) {
 // LINE 574:
 	__asm        mov    eax, carInst;
 	__asm        movsx  eax, word ptr [eax+0xE];
@@ -1745,7 +1745,7 @@ void EmergencyVehicleClass::PositionIcon() {
 }
 
 // FUNCTION: COPTER_D 0x00542373
-enum TurnIndex EmergencyVehicleClass::PickTurnDir(struct Goal* pGoal) {
+enum TurnIndex EmergencyVehicleClass::PickTurnDir(struct Goal *pGoal) {
 // LINE 676:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x294], 1;
@@ -1814,7 +1814,7 @@ void EmergencyVehicleClass::ArriveOnScene() {
 
 // FUNCTION: COPTER_D 0x00542461
 void EmergencyVehicleClass::UnLinkIconFromCell(struct _GridCoordinates point) {
-	struct _CELL_INFO* cellPointer;
+	struct _CELL_INFO *cellPointer;
 
 // LINE 945:
 	__asm        xor    eax, eax;
@@ -1858,7 +1858,7 @@ _T84:
 	__asm        je     _T103;
 // LINE 950:
 // Block start:
-	struct _DYOBJ_INST** dyptrptr;
+	struct _DYOBJ_INST **dyptrptr;
 	__asm        mov    eax, cellPointer;
 	__asm        add    eax, 0x10;
 	__asm        mov    dyptrptr, eax;
@@ -1910,7 +1910,7 @@ _T108:
 
 // FUNCTION: COPTER_D 0x00542570
 void EmergencyVehicleClass::LinkIconToCell(struct _GridCoordinates point) {
-	struct _CELL_INFO* cellPointer;
+	struct _CELL_INFO *cellPointer;
 
 // LINE 986:
 	__asm        xor    eax, eax;
@@ -2133,7 +2133,7 @@ _T145:
 void EmergencyVehicleClass::BuildPath(struct _RGIndex startVertex, struct _RGIndex destVertex) {
 	struct _RGIndex index;
 	int32_t i;
-	struct RGVertex* pRGV;
+	struct RGVertex *pRGV;
 
 // LINE 1409:
 	__asm        mov    eax, this;
@@ -2382,7 +2382,7 @@ _T95:
 }
 
 // FUNCTION: COPTER_D 0x00542a75
-void EmergencyVehicleClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
+void EmergencyVehicleClass::SetSaveData(struct _AUTO_LOAD_SAVE *sd) {
 // LINE 1508:
 	__asm        mov    eax, this;
 	__asm        mov    ax, [eax+0x11A];
@@ -2461,7 +2461,7 @@ void EmergencyVehicleClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 }
 
 // FUNCTION: COPTER_D 0x00542b90
-void EmergencyVehicleClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
+void EmergencyVehicleClass::LoadSaveData(struct _AUTO_LOAD_SAVE *sd) {
 	int32_t car_type;
 
 // LINE 1548:
@@ -2654,5 +2654,5 @@ static const enum TurnIndex TILUT[4][4] = { 0 /* todo */ };
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Game\S3rdgrph.cpp
 // GLOBAL: COPTER_D 0x0067ed30
-struct _CELL_INFO* G_omap[256][256]; // Contrib missing
+struct _CELL_INFO *G_omap[256][256]; // Contrib missing
 

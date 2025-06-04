@@ -28,7 +28,7 @@ public:
 		MacSystem7 = 5,
 	};
 protected:
-	struct SparkalColor* mpColorTable;
+	struct SparkalColor *mpColorTable;
 	int32_t _mRuntimePlatform;
 	unsigned long _mFlags;
 	int32_t mbUseDirectDraw;
@@ -86,8 +86,8 @@ protected:
 	long mHeight;
 	long mWidth;
 	unsigned long mStyle;
-	class ICommander* mpCommander;
-	class ScreenBuffer* mpBackBuffer;
+	class ICommander *mpCommander;
+	class ScreenBuffer *mpBackBuffer;
 	void * __ptr32 mWindow;
 	// calltype: NearStd
 	virtual long MySparkalWindowProc(void * __ptr32, uint32_t, uint32_t, long); // vtable+0x30
@@ -175,15 +175,15 @@ public:
 protected:
 	int32_t bSurfacePrimary;
 	int32_t bSurfaceTransparent;
-	class MFont* mFont;
+	class MFont *mFont;
 	struct SparkalColor colorFontCurrent;
 	struct SparkalColor colorCurrent;
 	int32_t nColorIndexFontCurrent;
 	int32_t nColorIndexCurrent;
 	int32_t nColorIndexTransparent;
-	struct IDirectDrawSurface* mpFrontSurface;
-	struct IDirectDrawSurface* mpBackSurface;
-	struct IDirectDrawPalette* mpPalette;
+	struct IDirectDrawSurface *mpFrontSurface;
+	struct IDirectDrawSurface *mpBackSurface;
+	struct IDirectDrawPalette *mpPalette;
 	struct _DDSURFACEDESC mDDdesc;
 	struct _DDBLTFX mDDBltFx;
 	void * __ptr32 hPen;
@@ -454,8 +454,8 @@ _Ta4:
 }
 
 // FUNCTION: COPTER_D 0x00427257
-class CSparkalWindow* CSparkalApp::NewWindow(unsigned long Width, unsigned long Height, unsigned long Style, const struct SparkalColor* pColors, char * Caption) {
-	class CSparkalWindow* Window;
+class CSparkalWindow* CSparkalApp::NewWindow(unsigned long Width, unsigned long Height, unsigned long Style, const struct SparkalColor *pColors, char * Caption) {
+	class CSparkalWindow *Window;
 
 // LINE 97:
 	__asm        mov    Window, 0;
@@ -492,7 +492,7 @@ _T58:
 
 // FUNCTION: COPTER_D 0x004272be
 class IFlatImage* CSparkalApp::NewImage(char * fileName) {
-	class IFlatImage* pBitmap;
+	class IFlatImage *pBitmap;
 
 // LINE 117:
 	__asm        mov    pBitmap, 0;
@@ -502,7 +502,7 @@ class IFlatImage* CSparkalApp::NewImage(char * fileName) {
 	__asm        je     _T60;
 // LINE 121:
 // Block start:
-	class CBackBuffer* pDDBitmap;
+	class CBackBuffer *pDDBitmap;
 	__asm        push   0x134;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
@@ -527,7 +527,7 @@ _T55:
 	__asm        jmp    _T9b;
 // LINE 125:
 // Block start:
-	class CBackBuffer* pBBitmap;
+	class CBackBuffer *pBBitmap;
 _T60:
 	__asm        push   0x134;
 	__asm        call   operator new;
@@ -557,8 +557,8 @@ _T9b:
 }
 
 // FUNCTION: COPTER_D 0x00427368
-class IFlatImage* CSparkalApp::NewImage(long width, long height, const const struct SparkalColor* pColors) {
-	class IFlatImage* pBitmap;
+class IFlatImage* CSparkalApp::NewImage(long width, long height, const const struct SparkalColor *pColors) {
+	class IFlatImage *pBitmap;
 
 // LINE 142:
 	__asm        mov    pBitmap, 0;
@@ -568,7 +568,7 @@ class IFlatImage* CSparkalApp::NewImage(long width, long height, const const str
 	__asm        je     _Tb7;
 // LINE 147:
 // Block start:
-	class CBackBuffer* pDDBitmap;
+	class CBackBuffer *pDDBitmap;
 	__asm        cmp    pColors, 0;
 	__asm        je     _T6c;
 // LINE 148:
@@ -625,7 +625,7 @@ _Tac:
 	__asm        jmp    _T149;
 // LINE 155:
 // Block start:
-	class CBackBuffer* pBBitmap;
+	class CBackBuffer *pBBitmap;
 _Tb7:
 	__asm        cmp    pColors, 0;
 	__asm        je     _T103;

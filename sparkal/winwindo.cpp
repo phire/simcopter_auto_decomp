@@ -36,8 +36,8 @@ protected:
 	long mHeight;
 	long mWidth;
 	unsigned long mStyle;
-	class ICommander* mpCommander;
-	class ScreenBuffer* mpBackBuffer;
+	class ICommander *mpCommander;
+	class ScreenBuffer *mpBackBuffer;
 	void * __ptr32 mWindow;
 	// calltype: NearStd
 	virtual long MySparkalWindowProc(void * __ptr32, uint32_t, uint32_t, long); // vtable+0x30
@@ -192,7 +192,7 @@ _T9b:
 }
 
 // FUNCTION: COPTER_D 0x00480738
-void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, unsigned long Style, const struct SparkalColor* pColors, char * Caption) {
+void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, unsigned long Style, const struct SparkalColor *pColors, char * Caption) {
 	int32_t Left;
 	int32_t Top;
 	struct tagRECT WindowRect;
@@ -964,7 +964,7 @@ void CSparkalWindow::FreeGameCursors() {
 }
 
 // FUNCTION: COPTER_D 0x00480fb1
-unsigned long CSparkalWindow::DrawBufferText(const const char* pText, unsigned long Style, long Left, long Top, long * pRectLeft, long * pRectTop, long * pRectRight, long * pRectBottom) {
+unsigned long CSparkalWindow::DrawBufferText(const const char *pText, unsigned long Style, long Left, long Top, long * pRectLeft, long * pRectTop, long * pRectRight, long * pRectBottom) {
 	void * __ptr32 DeviceContext;
 	long ClientHeight;
 	uint32_t Length;
@@ -1248,7 +1248,7 @@ _T9c:
 }
 
 // FUNCTION: COPTER_D 0x00481265
-void CSparkalWindow::UpdatePalette(long start, long count, struct SparkalColor* pColor) {
+void CSparkalWindow::UpdatePalette(long start, long count, struct SparkalColor *pColor) {
 	int32_t i;
 	struct tagPALETTEENTRY palColors[256];
 
@@ -1308,7 +1308,7 @@ _Tba:
 }
 
 // FUNCTION: COPTER_D 0x0048132b
-int32_t CheckIdentityPalette(void * __ptr32 hdc, void * __ptr32 hPalette, struct tagPALETTEENTRY* pColors) {
+int32_t CheckIdentityPalette(void * __ptr32 hdc, void * __ptr32 hPalette, struct tagPALETTEENTRY *pColors) {
 	int32_t nReturnValue;
 	int32_t i;
 	int32_t IsID;
@@ -1501,7 +1501,7 @@ _T2a2:
 
 // FUNCTION: COPTER_D 0x004815dd
 long SparkalWindowProc(void * __ptr32 Window, uint32_t Message, uint32_t wParam, long lParam) {
-	class CSparkalWindow* pWindow;
+	class CSparkalWindow *pWindow;
 
 // LINE 585:
 	__asm        jmp    near ptr 0x004815EB;

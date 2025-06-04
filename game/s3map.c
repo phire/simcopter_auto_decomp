@@ -51,9 +51,9 @@ struct _CELL_INFO{
 	short z;
 	short size;
 	short ctr;
-	struct _STOBJ_INST* stptr;
-	struct _DYOBJ_INST* dyptr;
-	struct _DYOBJ_INST* vwptr;
+	struct _STOBJ_INST *stptr;
+	struct _DYOBJ_INST *dyptr;
+	struct _DYOBJ_INST *vwptr;
 };
 
 // Type: struct Point2d (forward reference);
@@ -70,8 +70,8 @@ struct _MAP_CARINFO{
 	long car_id;
 	long car_type;
 	long mission_id;
-	struct _GridCoordinates* currpos;
-	struct _GridCoordinates* disppos;
+	struct _GridCoordinates *currpos;
+	struct _GridCoordinates *disppos;
 	long top;
 	long bottom;
 	long left;
@@ -107,7 +107,7 @@ struct _GridCoordinates{
 // FUNCTION: COPTER_D 0x004fe790
 void S3MapInit() {
 	long i;
-	struct VRBmpHdr* bhdr;
+	struct VRBmpHdr *bhdr;
 	char * ptr;
 
 // LINE 192:
@@ -319,7 +319,7 @@ void S3MapRender(long posx, long posy) {
 	long county;
 	char * lineptr;
 	unsigned short alt;
-	struct _CELL_INFO* cptr;
+	struct _CELL_INFO *cptr;
 	char texid;
 	long y;
 	long x;
@@ -2493,7 +2493,7 @@ _T17b3:
 
 // FUNCTION: COPTER_D 0x005001cb
 void S3MapDrawPosLines(long posx, long posy) {
-	struct Point2d* maploc;
+	struct Point2d *maploc;
 	long desticon;
 	long y;
 	long i;
@@ -3232,7 +3232,7 @@ _T3a:
 
 // FUNCTION: COPTER_D 0x005008ea
 int32_t S3MapCursorDown(long posx, long posy) {
-	struct _MAP_CARINFO* ci;
+	struct _MAP_CARINFO *ci;
 	long i;
 	long car_id;
 
@@ -3684,10 +3684,10 @@ _T279:
 
 // FUNCTION: COPTER_D 0x00500de3
 void S3MapDrawMissionIcons(long posx, long posy) {
-	struct MISSION_DATA* md;
+	struct MISSION_DATA *md;
 	long desticon;
 	long i;
-	struct MISSION_DATA* currmd;
+	struct MISSION_DATA *currmd;
 	long pickicon;
 
 // LINE 1508:
@@ -3814,8 +3814,8 @@ _T14c:
 }
 
 // FUNCTION: COPTER_D 0x00500f34
-void S3MapAddCarInfo(long car_id, long car_type, long mission_id, struct _GridCoordinates* currpos, struct _GridCoordinates* disppos) {
-	struct _MAP_CARINFO* ci;
+void S3MapAddCarInfo(long car_id, long car_type, long mission_id, struct _GridCoordinates *currpos, struct _GridCoordinates *disppos) {
+	struct _MAP_CARINFO *ci;
 	long i;
 
 // LINE 1567:
@@ -3909,7 +3909,7 @@ _T50:
 void S3MapDrawCarIcons() {
 	long dy;
 	long dx;
-	struct _MAP_CARINFO* ci;
+	struct _MAP_CARINFO *ci;
 	long i;
 	long color;
 
@@ -4611,7 +4611,7 @@ static char * S_dicons[3];
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3auto.cpp
 // GLOBAL: COPTER_D 0x0067ed30
-struct _CELL_INFO* G_omap[256][256]; // Contrib missing
+struct _CELL_INFO *G_omap[256][256]; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3viewer.c

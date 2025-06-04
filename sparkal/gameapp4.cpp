@@ -109,7 +109,7 @@ class basic_string<char>{
 	using reference_pointer = class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char>* reference;
+	class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -945,7 +945,7 @@ _T8bf:
 
 // FUNCTION: COPTER_D 0x004bc3db
 void AppInitThreadStartRoutine(void * __ptr32 pVRAppInitThreadStruct) {
-	struct VRAppInitThreadStruct* tempVRAppInitThreadStruct;
+	struct VRAppInitThreadStruct *tempVRAppInitThreadStruct;
 
 	// Function registers exception cleanup function at 0x004bc440
 

@@ -41,7 +41,7 @@ struct CommandSystem{
 class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
 {
 protected:
-	struct list<Shortcut>::list_node* node;
+	struct list<Shortcut>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -78,7 +78,7 @@ public:
 	virtual unsigned long OnWindowDeactivate() /* override */;
 	virtual void ProcessSystemCloseRequest(); // vtable+0x4c
 	virtual void SetNewGameApp(class CGameApp*); // vtable+0x50
-	class CGameApp* myGameApp;
+	class CGameApp *myGameApp;
 };
 
 // Type: unsigned long;
@@ -87,8 +87,8 @@ public:
 class CharData{
 public:
 	unsigned char chValue;
-	class CharData* previousCharData;
-	class CharData* nextCharData;
+	class CharData *previousCharData;
+	class CharData *nextCharData;
 	void CharData(unsigned char);
 	void CharData();
 };
@@ -117,27 +117,27 @@ protected:
 	uint32_t buffer_size();
 	struct list<Shortcut>::list_node_buffer{
 		void * __ptr32 next_buffer;
-		struct list<Shortcut>::list_node* buffer;
+		struct list<Shortcut>::list_node *buffer;
 	};
 	using buffer_allocator_type = class allocator<list<Shortcut>::list_node_buffer>;
 	using buffer_pointer = struct list<Shortcut>::list_node_buffer*;
 protected:
 	static class allocator<list<Shortcut>::list_node_buffer> buffer_allocator;
-	static struct list<Shortcut>::list_node_buffer* buffer_list;
-	static struct list<Shortcut>::list_node* free_list;
-	static struct list<Shortcut>::list_node* next_avail;
-	static struct list<Shortcut>::list_node* last;
+	static struct list<Shortcut>::list_node_buffer *buffer_list;
+	static struct list<Shortcut>::list_node *free_list;
+	static struct list<Shortcut>::list_node *next_avail;
+	static struct list<Shortcut>::list_node *last;
 	void add_new_buffer();
 	static uint32_t number_of_lists;
 	void deallocate_buffers();
 	struct list<Shortcut>::list_node* get_node();
 	void put_node(struct list<Shortcut>::list_node*);
-	struct list<Shortcut>::list_node* node;
+	struct list<Shortcut>::list_node *node;
 	uint32_t length;
 	class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
 	{
 	protected:
-		struct list<Shortcut>::list_node* node;
+		struct list<Shortcut>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -153,7 +153,7 @@ protected:
 	class list<Shortcut>::const_iterator : public bidirectional_iterator<Shortcut,int>
 	{
 	protected:
-		struct list<Shortcut>::list_node* node;
+		struct list<Shortcut>::list_node *node;
 	public:
 		void const_iterator(const class list<Shortcut>::iterator&);
 		void const_iterator();
@@ -300,7 +300,7 @@ struct list<Shortcut>::list_node{
 class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
 {
 protected:
-	struct list<Shortcut>::list_node* node;
+	struct list<Shortcut>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -418,7 +418,7 @@ public:
 	virtual class CSparkalWindow* SetWindow(class CSparkalWindow*); // vtable+0x20
 	class CSparkalWindow* GetWindow();
 protected:
-	class CSparkalWindow* mpWindow;
+	class CSparkalWindow *mpWindow;
 };
 
 
@@ -1474,7 +1474,7 @@ void CGameCommander::ProcessKeyDown(long lKey, struct CommandSystem& commandSyst
 	__asm        je     _T13b;
 // LINE 426:
 // Block start:
-	class CharData* currentCharData;
+	class CharData *currentCharData;
 	__asm        mov    eax, commandSystem;
 	__asm        mov    eax, [eax+0xCC];
 	__asm        mov    currentCharData, eax;
@@ -1657,7 +1657,7 @@ void CGameCommander::ProcessKeyUp(long lKey, struct CommandSystem& commandSystem
 	__asm        je     _T129;
 // LINE 488:
 // Block start:
-	class CharData* currentCharData;
+	class CharData *currentCharData;
 	__asm        mov    eax, commandSystem;
 	__asm        mov    eax, [eax+0xCC];
 	__asm        mov    currentCharData, eax;

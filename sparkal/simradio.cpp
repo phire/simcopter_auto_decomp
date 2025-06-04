@@ -5,7 +5,7 @@
 // Type: struct list<basic_string<char>>::list_node_buffer (forward reference);
 struct list<basic_string<char>>::list_node_buffer{
 	void * __ptr32 next_buffer;
-	struct list<basic_string<char>>::list_node* buffer;
+	struct list<basic_string<char>>::list_node *buffer;
 };
 
 // Type: struct list<basic_string<char>>::list_node (forward reference);
@@ -47,7 +47,7 @@ protected:
 	int32_t bPlaying;
 	struct RadioStationState myRadioStationState;
 	enum RadioStationType myRadioStationType;
-	class Radio* myRadio;
+	class Radio *myRadio;
 	class basic_string<char> sCallSign;
 	class basic_string<char> sStationBaseDirectory;
 	class basic_string<char> sMusicDirectory;
@@ -86,7 +86,7 @@ class basic_string<char>{
 	using reference_pointer = class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char>* reference;
+	class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -212,27 +212,27 @@ protected:
 	uint32_t buffer_size();
 	struct list<basic_string<char>>::list_node_buffer{
 		void * __ptr32 next_buffer;
-		struct list<basic_string<char>>::list_node* buffer;
+		struct list<basic_string<char>>::list_node *buffer;
 	};
 	using buffer_allocator_type = class allocator<list<basic_string<char>>::list_node_buffer>;
 	using buffer_pointer = struct list<basic_string<char>>::list_node_buffer*;
 protected:
 	static class allocator<list<basic_string<char>>::list_node_buffer> buffer_allocator;
-	static struct list<basic_string<char>>::list_node_buffer* buffer_list;
-	static struct list<basic_string<char>>::list_node* free_list;
-	static struct list<basic_string<char>>::list_node* next_avail;
-	static struct list<basic_string<char>>::list_node* last;
+	static struct list<basic_string<char>>::list_node_buffer *buffer_list;
+	static struct list<basic_string<char>>::list_node *free_list;
+	static struct list<basic_string<char>>::list_node *next_avail;
+	static struct list<basic_string<char>>::list_node *last;
 	void add_new_buffer();
 	static uint32_t number_of_lists;
 	void deallocate_buffers();
 	struct list<basic_string<char>>::list_node* get_node();
 	void put_node(struct list<basic_string<char>>::list_node*);
-	struct list<basic_string<char>>::list_node* node;
+	struct list<basic_string<char>>::list_node *node;
 	uint32_t length;
 	class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_string<char>,int>
 	{
 	protected:
-		struct list<basic_string<char>>::list_node* node;
+		struct list<basic_string<char>>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -248,7 +248,7 @@ protected:
 	class list<basic_string<char>>::const_iterator : public bidirectional_iterator<basic_string<char>,int>
 	{
 	protected:
-		struct list<basic_string<char>>::list_node* node;
+		struct list<basic_string<char>>::list_node *node;
 	public:
 		void const_iterator(const class list<basic_string<char>>::iterator&);
 		void const_iterator();
@@ -314,7 +314,7 @@ public:
 class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_string<char>,int>
 {
 protected:
-	struct list<basic_string<char>>::list_node* node;
+	struct list<basic_string<char>>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -343,9 +343,9 @@ class vector<basic_string<char>>{
 	using reverse_iterator = class reverse_iterator<basic_string<char> *,basic_string<char>,basic_string<char> &,int>;
 protected:
 	static class allocator<basic_string<char>> static_allocator;
-	class basic_string<char>* start;
-	class basic_string<char>* finish;
-	class basic_string<char>* end_of_storage;
+	class basic_string<char> *start;
+	class basic_string<char> *finish;
+	class basic_string<char> *end_of_storage;
 	void insert_aux(class basic_string<char>*, const class basic_string<char>&);
 public:
 	const class basic_string<char>* begin();
@@ -389,7 +389,7 @@ class basic_string<char>{
 	using reference_pointer = class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char>* reference;
+	class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -518,7 +518,7 @@ public:
 	int32_t CreatePhysicalEntry();
 	int32_t GetEntryExtension(class basic_string<char>&);
 	int32_t GetEntryMinusExtension(class basic_string<char>&);
-	class Directory* directoryParent;
+	class Directory *directoryParent;
 	class basic_string<char> sName;
 	long lType;
 };
@@ -581,27 +581,27 @@ protected:
 	uint32_t buffer_size();
 	struct list<basic_string<char>>::list_node_buffer{
 		void * __ptr32 next_buffer;
-		struct list<basic_string<char>>::list_node* buffer;
+		struct list<basic_string<char>>::list_node *buffer;
 	};
 	using buffer_allocator_type = class allocator<list<basic_string<char>>::list_node_buffer>;
 	using buffer_pointer = struct list<basic_string<char>>::list_node_buffer*;
 protected:
 	static class allocator<list<basic_string<char>>::list_node_buffer> buffer_allocator;
-	static struct list<basic_string<char>>::list_node_buffer* buffer_list;
-	static struct list<basic_string<char>>::list_node* free_list;
-	static struct list<basic_string<char>>::list_node* next_avail;
-	static struct list<basic_string<char>>::list_node* last;
+	static struct list<basic_string<char>>::list_node_buffer *buffer_list;
+	static struct list<basic_string<char>>::list_node *free_list;
+	static struct list<basic_string<char>>::list_node *next_avail;
+	static struct list<basic_string<char>>::list_node *last;
 	void add_new_buffer();
 	static uint32_t number_of_lists;
 	void deallocate_buffers();
 	struct list<basic_string<char>>::list_node* get_node();
 	void put_node(struct list<basic_string<char>>::list_node*);
-	struct list<basic_string<char>>::list_node* node;
+	struct list<basic_string<char>>::list_node *node;
 	uint32_t length;
 	class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_string<char>,int>
 	{
 	protected:
-		struct list<basic_string<char>>::list_node* node;
+		struct list<basic_string<char>>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -617,7 +617,7 @@ protected:
 	class list<basic_string<char>>::const_iterator : public bidirectional_iterator<basic_string<char>,int>
 	{
 	protected:
-		struct list<basic_string<char>>::list_node* node;
+		struct list<basic_string<char>>::list_node *node;
 	public:
 		void const_iterator(const class list<basic_string<char>>::iterator&);
 		void const_iterator();
@@ -707,7 +707,7 @@ protected:
 	int32_t bPlaying;
 	struct RadioStationState myRadioStationState;
 	enum RadioStationType myRadioStationType;
-	class Radio* myRadio;
+	class Radio *myRadio;
 	class basic_string<char> sCallSign;
 	class basic_string<char> sStationBaseDirectory;
 	class basic_string<char> sMusicDirectory;
@@ -817,7 +817,7 @@ public:
 class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_string<char>,int>
 {
 protected:
-	struct list<basic_string<char>>::list_node* node;
+	struct list<basic_string<char>>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -846,9 +846,9 @@ class vector<RadioStation>{
 	using reverse_iterator = class reverse_iterator<RadioStation *,RadioStation,RadioStation &,int>;
 protected:
 	static class allocator<RadioStation> static_allocator;
-	class RadioStation* start;
-	class RadioStation* finish;
-	class RadioStation* end_of_storage;
+	class RadioStation *start;
+	class RadioStation *finish;
+	class RadioStation *end_of_storage;
 	void insert_aux(class RadioStation*, const class RadioStation&);
 public:
 	const class RadioStation* begin();
@@ -892,7 +892,7 @@ public:
 class list<basic_string<char>>::const_iterator : public bidirectional_iterator<basic_string<char>,int>
 {
 protected:
-	struct list<basic_string<char>>::list_node* node;
+	struct list<basic_string<char>>::list_node *node;
 public:
 	void const_iterator(const class list<basic_string<char>>::iterator&);
 	void const_iterator();
@@ -6224,7 +6224,7 @@ _T2d7:
 // FUNCTION: COPTER_D 0x00437337
 int32_t RadioStation::ReadCallSignFromDisk() {
 	class Directory tempDirectory;
-	class DirectoryEntry* tempDirectoryEntry;
+	class DirectoryEntry *tempDirectoryEntry;
 
 // LINE 543:
 	__asm        push   0x10;
@@ -9561,23 +9561,23 @@ uint32_t list<basic_string<char>>::number_of_lists = 0;
 
 // Contribution: 3:00001564-00001567 Module: 59, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00598564
-struct list<basic_string<char>>::list_node* list<basic_string<char>>::last = { 0 /* todo */ };
+struct list<basic_string<char>>::list_node *list<basic_string<char>>::last = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00001568-0000156b Module: 59, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00598568
-struct list<basic_string<char>>::list_node* list<basic_string<char>>::next_avail = { 0 /* todo */ };
+struct list<basic_string<char>>::list_node *list<basic_string<char>>::next_avail = { 0 /* todo */ };
 
 
 
 // Contribution: 3:0000156c-0000156f Module: 59, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059856c
-struct list<basic_string<char>>::list_node* list<basic_string<char>>::free_list = { 0 /* todo */ };
+struct list<basic_string<char>>::list_node *list<basic_string<char>>::free_list = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00001570-00001573 Module: 59, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00598570
-struct list<basic_string<char>>::list_node_buffer* list<basic_string<char>>::buffer_list = { 0 /* todo */ };
+struct list<basic_string<char>>::list_node_buffer *list<basic_string<char>>::buffer_list = { 0 /* todo */ };
 

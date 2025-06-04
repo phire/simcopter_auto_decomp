@@ -37,8 +37,8 @@ struct tCompressState{
 	unsigned long getMask;
 	unsigned long textsize;
 	unsigned long codesize;
-	class cGZXBitstream* infile;
-	class cGZXBitstream* outfile;
+	class cGZXBitstream *infile;
+	class cGZXBitstream *outfile;
 };
 
 // Type: unsigned char;
@@ -68,12 +68,12 @@ struct tACompModel{
 
 // Contribution: 1:000ce090-000cfa4b Module: 88, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004cf090
-short LZACompress(class cGZXBitstream* inStream, class cGZXBitstream* outStream, unsigned long * cSize) {
-	struct tLZSSBinaryForest* forest;
+short LZACompress(class cGZXBitstream *inStream, class cGZXBitstream *outStream, unsigned long * cSize) {
+	struct tLZSSBinaryForest *forest;
 	short retVal;
-	struct tCompressState* state;
+	struct tCompressState *state;
 	unsigned char header[5];
-	struct tACompModel* model;
+	struct tACompModel *model;
 
 // LINE 648:
 	__asm        mov    header[0], 0;
@@ -301,7 +301,7 @@ _T258:
 }
 
 // FUNCTION: COPTER_D 0x004cf2ed
-static short Encode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct tCompressState* state) {
+static short Encode(struct tACompModel *model, struct tLZSSBinaryForest *forest, struct tCompressState *state) {
 	unsigned char tempByte;
 	long len;
 	long tempDebug;
@@ -617,7 +617,7 @@ _T315:
 }
 
 // FUNCTION: COPTER_D 0x004cf607
-static void InitTree(struct tLZSSBinaryForest* forest) {
+static void InitTree(struct tLZSSBinaryForest *forest) {
 	long i;
 
 // LINE 206:
@@ -653,7 +653,7 @@ _T6d:
 }
 
 // FUNCTION: COPTER_D 0x004cf67e
-static void InsertNode(long r, struct tLZSSBinaryForest* forest) {
+static void InsertNode(long r, struct tLZSSBinaryForest *forest) {
 	long cmp;
 	long i;
 	long temp;
@@ -889,7 +889,7 @@ _T2e7:
 }
 
 // FUNCTION: COPTER_D 0x004cf96a
-static void DeleteNode(long p, struct tLZSSBinaryForest* forest) {
+static void DeleteNode(long p, struct tLZSSBinaryForest *forest) {
 	long q;
 
 // LINE 269:
@@ -1036,7 +1036,7 @@ _T204:
 }
 
 // FUNCTION: COPTER_D 0x004cfb73
-static void StartModel(struct tACompModel* model) {
+static void StartModel(struct tACompModel *model) {
 	long ch;
 	long i;
 	long sym;
@@ -1117,7 +1117,7 @@ _Tf5:
 }
 
 // FUNCTION: COPTER_D 0x004cfc72
-static short EncodeChar(long ch, struct tACompModel* model, struct tCompressState* dest) {
+static short EncodeChar(long ch, struct tACompModel *model, struct tCompressState *dest) {
 	unsigned long range;
 	long sym;
 
@@ -1254,7 +1254,7 @@ _T16b:
 }
 
 // FUNCTION: COPTER_D 0x004cfde2
-static void UpdateModel(long sym, struct tACompModel* model) {
+static void UpdateModel(long sym, struct tACompModel *model) {
 	long i;
 	long ch_i;
 	long c;
@@ -1372,7 +1372,7 @@ _T14f:
 }
 
 // FUNCTION: COPTER_D 0x004cff3b
-static short Output(long bit, struct tACompModel* model, struct tCompressState* dest) {
+static short Output(long bit, struct tACompModel *model, struct tCompressState *dest) {
 // LINE 347:
 	__asm        mov    eax, dest;
 	__asm        push   eax;
@@ -1423,7 +1423,7 @@ _T78:
 }
 
 // FUNCTION: COPTER_D 0x004cffb8
-static short PutBit(long bit, struct tCompressState* dest) {
+static short PutBit(long bit, struct tCompressState *dest) {
 	unsigned char tempByte;
 
 // LINE 127:
@@ -1479,7 +1479,7 @@ _T84:
 }
 
 // FUNCTION: COPTER_D 0x004d0041
-static short EncodePosition(long position, struct tACompModel* model, struct tCompressState* dest) {
+static short EncodePosition(long position, struct tACompModel *model, struct tCompressState *dest) {
 	unsigned long range;
 
 // LINE 389:
@@ -1603,7 +1603,7 @@ _T14e:
 }
 
 // FUNCTION: COPTER_D 0x004d0194
-static short EncodeEnd(struct tACompModel* model, struct tCompressState* dest) {
+static short EncodeEnd(struct tACompModel *model, struct tCompressState *dest) {
 // LINE 413:
 	__asm        mov    eax, model;
 	__asm        inc    dword ptr [eax+0xC];
@@ -1655,7 +1655,7 @@ _T7d:
 }
 
 // FUNCTION: COPTER_D 0x004d0216
-static short FlushBitBuffer(struct tCompressState* dest) {
+static short FlushBitBuffer(struct tCompressState *dest) {
 	short retVal;
 	long i;
 
@@ -1693,11 +1693,11 @@ _T56:
 }
 
 // FUNCTION: COPTER_D 0x004d0271
-short LZAExpand(class cGZXBitstream* inStream, class cGZXBitstream* outStream) {
-	struct tLZSSBinaryForest* forest;
+short LZAExpand(class cGZXBitstream *inStream, class cGZXBitstream *outStream) {
+	struct tLZSSBinaryForest *forest;
 	short retVal;
-	struct tCompressState* state;
-	struct tACompModel* model;
+	struct tCompressState *state;
+	struct tACompModel *model;
 
 // LINE 737:
 	__asm        push   0x53C0;
@@ -1835,7 +1835,7 @@ _T170:
 }
 
 // FUNCTION: COPTER_D 0x004d03e6
-static short Decode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct tCompressState* state) {
+static short Decode(struct tACompModel *model, struct tLZSSBinaryForest *forest, struct tCompressState *state) {
 	unsigned char tempByte;
 	long k;
 	long j;
@@ -2023,7 +2023,7 @@ _T1cd:
 }
 
 // FUNCTION: COPTER_D 0x004d05b8
-static void StartDecode(struct tACompModel* model, struct tCompressState* src) {
+static void StartDecode(struct tACompModel *model, struct tCompressState *src) {
 	long i;
 
 // LINE 458:
@@ -2051,7 +2051,7 @@ _T42:
 }
 
 // FUNCTION: COPTER_D 0x004d0604
-static long GetBit(struct tCompressState* source) {
+static long GetBit(struct tCompressState *source) {
 	unsigned char tempByte;
 	unsigned char kludger;
 
@@ -2117,7 +2117,7 @@ _T97:
 }
 
 // FUNCTION: COPTER_D 0x004d06a5
-static long DecodeChar(struct tACompModel* model, struct tCompressState* src) {
+static long DecodeChar(struct tACompModel *model, struct tCompressState *src) {
 	long ch;
 	unsigned long range;
 	long sym;
@@ -2252,7 +2252,7 @@ _T14a:
 }
 
 // FUNCTION: COPTER_D 0x004d081c
-static long BinarySearchSym(unsigned long x, struct tACompModel* model) {
+static long BinarySearchSym(unsigned long x, struct tACompModel *model) {
 	long k;
 	long j;
 	long i;
@@ -2298,7 +2298,7 @@ _T5f:
 }
 
 // FUNCTION: COPTER_D 0x004d0888
-static long DecodePosition(struct tACompModel* model, struct tCompressState* src) {
+static long DecodePosition(struct tACompModel *model, struct tCompressState *src) {
 	unsigned long range;
 	long position;
 
@@ -2420,7 +2420,7 @@ _T14a:
 }
 
 // FUNCTION: COPTER_D 0x004d09df
-static long BinarySearchPos(unsigned long x, struct tACompModel* model) {
+static long BinarySearchPos(unsigned long x, struct tACompModel *model) {
 	long k;
 	long j;
 	long i;

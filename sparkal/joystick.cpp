@@ -503,7 +503,7 @@ int32_t JoystickManager::GetPositionQuantitative(int32_t nJoystick, int32_t nAxi
 	int32_t nReturnValue;
 	struct joyinfoex_tag joyInfoEx;
 	unsigned long dwFlagToUse;
-	struct joyinfoex_tag* joyInfoExToUse;
+	struct joyinfoex_tag *joyInfoExToUse;
 	uint32_t mmResult;
 	unsigned long * dwResultToUse;
 
@@ -662,7 +662,7 @@ _T1a0:
 // FUNCTION: COPTER_D 0x0049a9dd
 int32_t JoystickManager::GetButtonState(int32_t nJoystick, int32_t nButton, int32_t bUseCache) {
 	struct joyinfoex_tag joyInfoEx;
-	struct joyinfoex_tag* joyInfoExToUse;
+	struct joyinfoex_tag *joyInfoExToUse;
 	uint32_t mmResult;
 
 // LINE 304:
@@ -791,7 +791,7 @@ _T9a:
 // FUNCTION: COPTER_D 0x0049ab3a
 int32_t JoystickManager::GetPointOfView(int32_t nJoystick, int32_t bUseCache) {
 	struct joyinfoex_tag joyInfoEx;
-	struct joyinfoex_tag* joyInfoExToUse;
+	struct joyinfoex_tag *joyInfoExToUse;
 	uint32_t mmResult;
 
 // LINE 382:

@@ -27,7 +27,7 @@ struct _MISSION_STATICS{
 	long num_active_missions;
 	long num_delayed_missions;
 	long key_ctr;
-	struct MISSION_DATA* curr_mission;
+	struct MISSION_DATA *curr_mission;
 	struct MISSION_DATA missions[31];
 };
 
@@ -89,14 +89,14 @@ struct MISSION_DATA{
 
 // Type: struct _CELL_FIRE_DATA (forward reference);
 struct _CELL_FIRE_DATA{
-	struct _CELL_INFO* cptr;
+	struct _CELL_INFO *cptr;
 	long fire_count;
 };
 
 // Type: struct _DYOBJ_INST (forward reference);
 struct _DYOBJ_INST{
-	struct _DYOBJ_INST* next;
-	struct _DYOBJ_INST* vnext;
+	struct _DYOBJ_INST *next;
+	struct _DYOBJ_INST *vnext;
 	void * __ptr32 mesh;
 	short flags;
 	short user1;
@@ -129,9 +129,9 @@ struct _CELL_INFO{
 	short z;
 	short size;
 	short ctr;
-	struct _STOBJ_INST* stptr;
-	struct _DYOBJ_INST* dyptr;
-	struct _DYOBJ_INST* vwptr;
+	struct _STOBJ_INST *stptr;
+	struct _DYOBJ_INST *dyptr;
+	struct _DYOBJ_INST *vwptr;
 };
 
 // Type: char *;
@@ -201,7 +201,7 @@ _T4a:
 }
 
 // FUNCTION: COPTER_D 0x004fa175
-void ConvertCitySettingsToSteppedPercentages(struct tagCitySettings* citySettingsIn, struct tagCitySettings* citySettingsOut) {
+void ConvertCitySettingsToSteppedPercentages(struct tagCitySettings *citySettingsIn, struct tagCitySettings *citySettingsOut) {
 	float fSumOfAllValues;
 	float fMultiplier;
 
@@ -369,7 +369,7 @@ _T1c1:
 // FUNCTION: COPTER_D 0x004fa33b
 void S3MissionGenerator() {
 	long pct;
-	struct tagCitySettings* currentCitySettings;
+	struct tagCitySettings *currentCitySettings;
 	struct tagCitySettings currentCitySettingPercentages;
 	long adjustor;
 
@@ -746,7 +746,7 @@ _T3dd:
 // FUNCTION: COPTER_D 0x004fa71d
 void S3MissionDriver() {
 	int32_t personriot_done;
-	struct MISSION_DATA* md;
+	struct MISSION_DATA *md;
 	int32_t persontrans_done;
 	int32_t personfire_done;
 	int32_t speeder_done;
@@ -1183,12 +1183,12 @@ _T54b:
 
 // FUNCTION: COPTER_D 0x004fac6d
 long S3MissionStart(long x, long y, long type) {
-	struct MISSION_DATA* md;
+	struct MISSION_DATA *md;
 	int32_t numtostart;
 	int32_t startthismission;
 	long i;
 	int32_t count;
-	struct _CELL_FIRE_DATA* cfd;
+	struct _CELL_FIRE_DATA *cfd;
 
 // LINE 659:
 	__asm        mov    startthismission, 0;
@@ -1541,7 +1541,7 @@ _T3d1:
 	__asm        jmp    _Te60;
 // LINE 779:
 // Block start:
-	struct _DYOBJ_INST* boat;
+	struct _DYOBJ_INST *boat;
 _T3d6:
 	__asm        push   0x12C0000;
 	__asm        mov    eax, md;
@@ -2541,7 +2541,7 @@ _Tf04:
 
 // FUNCTION: COPTER_D 0x004fbb76
 struct Point2d* S3MissionGetMapLoc(long key) {
-	struct MISSION_DATA* md;
+	struct MISSION_DATA *md;
 	long mission_id;
 
 // LINE 1075:
@@ -2576,7 +2576,7 @@ _T4f:
 
 // FUNCTION: COPTER_D 0x004fbbca
 struct Point2d* S3MissionGetDestMapLoc(long key) {
-	struct MISSION_DATA* md;
+	struct MISSION_DATA *md;
 	long mission_id;
 
 // LINE 1102:
@@ -2619,7 +2619,7 @@ _T63:
 
 // FUNCTION: COPTER_D 0x004fbc32
 struct Point2d* S3MissionGetPickupLoc(long key) {
-	struct MISSION_DATA* md;
+	struct MISSION_DATA *md;
 	long mission_id;
 
 // LINE 1133:
@@ -2728,8 +2728,8 @@ _T3d:
 }
 
 // FUNCTION: COPTER_D 0x004fbd4a
-void S3MissionUpdate(struct _MISSION_PARMS* mp) {
-	struct MISSION_DATA* md;
+void S3MissionUpdate(struct _MISSION_PARMS *mp) {
+	struct MISSION_DATA *md;
 	long mission_id;
 
 // LINE 1220:
@@ -3136,7 +3136,7 @@ _T4c9:
 
 // FUNCTION: COPTER_D 0x004fc218
 void S3MissionEnd(long mission_id) {
-	struct MISSION_DATA* md;
+	struct MISSION_DATA *md;
 	long i;
 
 // LINE 1400:
@@ -3289,7 +3289,7 @@ struct MISSION_DATA* S3MissionGetCurr() {
 // FUNCTION: COPTER_D 0x004fc3b2
 void S3MissionGenerate(long type) {
 	long tile;
-	struct _CELL_INFO* cptr;
+	struct _CELL_INFO *cptr;
 	long y;
 	long i;
 	long x;
@@ -3776,7 +3776,7 @@ _T4e4:
 
 // FUNCTION: COPTER_D 0x004fc89b
 void S3MissionSetCurrNext() {
-	struct MISSION_DATA* md;
+	struct MISSION_DATA *md;
 	long i;
 
 // LINE 1601:
@@ -3875,7 +3875,7 @@ _T10c:
 
 // FUNCTION: COPTER_D 0x004fc9ac
 void S3MissionSetCurrPrev() {
-	struct MISSION_DATA* md;
+	struct MISSION_DATA *md;
 	long i;
 
 // LINE 1636:
@@ -3974,7 +3974,7 @@ _T10c:
 
 // FUNCTION: COPTER_D 0x004fcabd
 int32_t S3MissionIsType(long key, long mission_type) {
-	struct MISSION_DATA* md;
+	struct MISSION_DATA *md;
 	long mission_id;
 
 // LINE 1674:
@@ -4024,7 +4024,7 @@ _T78:
 }
 
 // FUNCTION: COPTER_D 0x004fcb3a
-void S3MissionDebugString(struct MISSION_DATA* md, char * p) {
+void S3MissionDebugString(struct MISSION_DATA *md, char * p) {
 // LINE 1803:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x4C], 1;
@@ -4096,7 +4096,7 @@ _Tab:
 
 // FUNCTION: COPTER_D 0x004fcbea
 void S3MissionCancel(long mission_id) {
-	struct MISSION_DATA* md;
+	struct MISSION_DATA *md;
 
 // LINE 1844:
 	__asm        mov    eax, mission_id;
@@ -4186,7 +4186,7 @@ _Te1:
 
 // FUNCTION: COPTER_D 0x004fccd0
 long S3MissionStartDirect(long type) {
-	struct MISSION_DATA* md;
+	struct MISSION_DATA *md;
 	long i;
 
 // LINE 1898:
@@ -4536,8 +4536,8 @@ _T411:
 }
 
 // FUNCTION: COPTER_D 0x004fd0e6
-void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
-	struct MISSION_DATA* md;
+void S3MissionScoreUpdate(struct _MISSION_PARMS *mp, long * mission_id) {
+	struct MISSION_DATA *md;
 	int32_t points;
 	char * mname;
 	int32_t key;
@@ -5061,7 +5061,7 @@ _T66a:
 }
 
 // FUNCTION: COPTER_D 0x004fd755
-void S3MissionScoreEnd(struct MISSION_DATA* md) {
+void S3MissionScoreEnd(struct MISSION_DATA *md) {
 	long total_money;
 	int32_t timetmp;
 	long total_pts;
@@ -5486,7 +5486,7 @@ void S3MissionTweakInit() {
 
 // FUNCTION: COPTER_D 0x004fdc2d
 long S3MissionGetIDByKey(long key) {
-	struct MISSION_DATA* md;
+	struct MISSION_DATA *md;
 	long i;
 
 // LINE 2440:
@@ -5566,7 +5566,7 @@ _T3b:
 
 // FUNCTION: COPTER_D 0x004fdcfb
 int32_t S3MissionMIFFLoad(void * __ptr32 miffReader) {
-	struct MISSION_DATA* md;
+	struct MISSION_DATA *md;
 	long i;
 	long ret;
 
@@ -6741,12 +6741,12 @@ static struct _MISSION_STATICS S_mstatics;
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3explod.c
 // GLOBAL: COPTER_D 0x0066be70
-struct VRBmpHdr* G_fireseq[6]; // Contrib missing
+struct VRBmpHdr *G_fireseq[6]; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3explod.c
 // GLOBAL: COPTER_D 0x006666d0
-struct VRBmpHdr* G_smokeseq[7]; // Contrib missing
+struct VRBmpHdr *G_smokeseq[7]; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3map.c

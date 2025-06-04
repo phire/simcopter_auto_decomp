@@ -49,7 +49,7 @@ struct mv{
 
 // Contribution: 1:00141f80-00142684 Module: 152, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00542f80
-int32_t Magnitude(struct Point3d* V) {
+int32_t Magnitude(struct Point3d *V) {
 	double k;
 	double j;
 	double i;
@@ -91,7 +91,7 @@ int32_t Magnitude(struct Point3d* V) {
 }
 
 // FUNCTION: COPTER_D 0x00542ff4
-int32_t Distance(struct Point3d* p1, struct Point3d* p2) {
+int32_t Distance(struct Point3d *p1, struct Point3d *p2) {
 	double k;
 	double j;
 	double i;
@@ -146,7 +146,7 @@ int32_t Distance(struct Point3d* p1, struct Point3d* p2) {
 }
 
 // FUNCTION: COPTER_D 0x0054308e
-int32_t Normalize(struct Point3d* V) {
+int32_t Normalize(struct Point3d *V) {
 	double k;
 	double j;
 	double i;
@@ -233,7 +233,7 @@ _Tdd:
 }
 
 // FUNCTION: COPTER_D 0x00543183
-void CreatePlane(struct Plane* plane, struct Point3d* V, struct Point3d* p) {
+void CreatePlane(struct Plane *plane, struct Point3d *V, struct Point3d *p) {
 // LINE 106:
 	__asm        mov    eax, V;
 	__asm        mov    eax, [eax];
@@ -284,7 +284,7 @@ void CreatePlane(struct Plane* plane, struct Point3d* V, struct Point3d* p) {
 }
 
 // FUNCTION: COPTER_D 0x005431fe
-int32_t SideOfPlane(struct Point3d* V, struct Point3d* p, struct Point3d* q) {
+int32_t SideOfPlane(struct Point3d *V, struct Point3d *p, struct Point3d *q) {
 	struct Plane plane;
 	struct Point3d d;
 	int32_t s;
@@ -347,7 +347,7 @@ int32_t SideOfPlane(struct Point3d* V, struct Point3d* p, struct Point3d* q) {
 }
 
 // FUNCTION: COPTER_D 0x00543292
-void CreateVelocity(struct Point3d* p1, struct Point3d* p2, struct Point3d* V, int32_t t) {
+void CreateVelocity(struct Point3d *p1, struct Point3d *p2, struct Point3d *V, int32_t t) {
 	int32_t i;
 
 // LINE 163:
@@ -410,7 +410,7 @@ int32_t SameSigns(int32_t s1, int32_t s2) {
 }
 
 // FUNCTION: COPTER_D 0x00543328
-int32_t VectorBounds(struct Point3d* V, int32_t m) {
+int32_t VectorBounds(struct Point3d *V, int32_t m) {
 	int32_t r;
 
 // LINE 205:
@@ -472,7 +472,7 @@ _T91:
 }
 
 // FUNCTION: COPTER_D 0x005433be
-void Apply_Force(struct Point3d* F, struct mv* p, int32_t t) {
+void Apply_Force(struct Point3d *F, struct mv *p, int32_t t) {
 	struct Point3d A;
 
 // LINE 234:
@@ -536,7 +536,7 @@ void Apply_Force(struct Point3d* F, struct mv* p, int32_t t) {
 }
 
 // FUNCTION: COPTER_D 0x00543455
-void Apply_Friction(int32_t F, struct mv* p, int32_t t) {
+void Apply_Friction(int32_t F, struct mv *p, int32_t t) {
 	int32_t j;
 	int32_t v;
 	int32_t f;

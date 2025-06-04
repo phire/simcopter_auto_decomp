@@ -33,7 +33,7 @@ enum tagResolution {
 // Type: class RoadGraph;
 class RoadGraph{
 public:
-	struct RGVertex* RGArray[128];
+	struct RGVertex *RGArray[128];
 	unsigned char RGLength[128];
 	void RoadGraph();
 	void Init();
@@ -72,11 +72,11 @@ public:
 	short GetNextNearest(struct _GridCoordinates*);
 	void DecrementQuantityOfVehicleDispatched(int32_t);
 private:
-	struct _StructStation* stationList;
+	struct _StructStation *stationList;
 	int32_t quantityOfStations;
-	struct _StationHeapStruct* stationHeap;
+	struct _StationHeapStruct *stationHeap;
 	int32_t stationHeapSize;
-	struct _VehicleHeapStruct* vehicleHeap;
+	struct _VehicleHeapStruct *vehicleHeap;
 	int32_t vehicleHeapSize;
 	int32_t maxVehicles;
 	int32_t FindNearestRoadToStation(struct _GridCoordinates&);
@@ -94,7 +94,7 @@ private:
 // Type: class ShortestPath;
 class ShortestPath{
 private:
-	struct _FringeHeapNode* heap;
+	struct _FringeHeapNode *heap;
 	long heapSize;
 public:
 	void Init();
@@ -118,11 +118,11 @@ public:
 	short GetNextNearest(struct _GridCoordinates*);
 	void DecrementQuantityOfVehicleDispatched(int32_t);
 private:
-	struct _StructStation* stationList;
+	struct _StructStation *stationList;
 	int32_t quantityOfStations;
-	struct _StationHeapStruct* stationHeap;
+	struct _StationHeapStruct *stationHeap;
 	int32_t stationHeapSize;
-	struct _VehicleHeapStruct* vehicleHeap;
+	struct _VehicleHeapStruct *vehicleHeap;
 	int32_t vehicleHeapSize;
 	int32_t maxVehicles;
 	int32_t FindNearestRoadToStation(struct _GridCoordinates&);
@@ -314,19 +314,19 @@ int32_t bFullScreen = 1;
 class ShortestPath gShortestPath;
 
 // GLOBAL: COPTER_D 0x005c3800
-class Station* gPoliceStations;
+class Station *gPoliceStations;
 
 // GLOBAL: COPTER_D 0x005c3808
 long G_CheatCodes[6];
 
 // GLOBAL: COPTER_D 0x005c3820
-class Station* gHospitals;
+class Station *gHospitals;
 
 // GLOBAL: COPTER_D 0x005c3828
 class RoadGraph gRoadGraph;
 
 // GLOBAL: COPTER_D 0x005c3aa8
-class Station* gFireStations;
+class Station *gFireStations;
 
 // GLOBAL: COPTER_D 0x005c3ab0
 char gScratchBuffer[262144];

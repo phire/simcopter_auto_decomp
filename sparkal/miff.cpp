@@ -1483,7 +1483,7 @@ _T42:
 }
 
 // FUNCTION: COPTER_D 0x004ac44e
-long MIFF::ReadPresentRecord(struct MIFFRecord* miffRecordToRead, long lMaxBytesToRead) {
+long MIFF::ReadPresentRecord(struct MIFFRecord *miffRecordToRead, long lMaxBytesToRead) {
 	long lReturnValue;
 	long lActualDataBytesToRead;
 
@@ -1756,7 +1756,7 @@ _T116:
 }
 
 // FUNCTION: COPTER_D 0x004ac758
-long MIFF::WriteMIFFRecord(struct MIFFRecord* miffRecordToWrite, long lSizeOfMIFFRecordData) {
+long MIFF::WriteMIFFRecord(struct MIFFRecord *miffRecordToWrite, long lSizeOfMIFFRecordData) {
 	long lReturnValue;
 	long lAmountOfDataToWrite;
 

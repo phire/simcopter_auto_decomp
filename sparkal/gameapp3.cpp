@@ -81,7 +81,7 @@ public:
 class list<CopterGameMode>::iterator : public bidirectional_iterator<CopterGameMode,int>
 {
 protected:
-	struct list<CopterGameMode>::list_node* node;
+	struct list<CopterGameMode>::list_node *node;
 public:
 	void iterator();
 protected:

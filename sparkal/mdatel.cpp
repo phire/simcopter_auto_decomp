@@ -37,7 +37,7 @@ public:
 class ostream : public virtual ios
 {
 public:
-	int32_t[0]* ios;
+	int32_t *ios[0];
 	void ostream(class ios&);
 	void ostream(const class ostream&);
 	void ostream();
@@ -121,7 +121,7 @@ public:
 class istream : public virtual ios
 {
 public:
-	int32_t[0]* ios;
+	int32_t *ios[0];
 	void istream(class ios&);
 	void istream(const class istream&);
 	void istream();
@@ -364,14 +364,14 @@ protected:
 		tied = 1,
 	};
 protected:
-	class streambuf* bp;
+	class streambuf *bp;
 	int32_t state;
 	int32_t ispecial;
 	int32_t ospecial;
 	int32_t isfx_special;
 	int32_t osfx_special;
 	int32_t x_delbuf;
-	class ostream* x_tie;
+	class ostream *x_tie;
 	long x_flags;
 	int32_t x_precision;
 	char x_fill;
@@ -401,7 +401,7 @@ private:
 class ostream : public virtual ios
 {
 public:
-	int32_t[0]* ios;
+	int32_t *ios[0];
 	void ostream(class ios&);
 	void ostream(const class ostream&);
 	void ostream();

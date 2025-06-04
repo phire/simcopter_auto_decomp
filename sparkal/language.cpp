@@ -57,7 +57,7 @@ class basic_string<char>{
 	using reference_pointer = class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char>* reference;
+	class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -166,7 +166,7 @@ class basic_string<char>{
 	using reference_pointer = class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char>* reference;
+	class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -4104,8 +4104,8 @@ _T3d:
 }
 
 // FUNCTION: COPTER_D 0x0042d3c9
-int32_t EnumFontFamilyProcecure(struct tagENUMLOGFONTA* lpelf, struct tagNEWTEXTMETRICA* lpntm, int32_t FontType, long lParam) {
-	struct TypefaceTestStruct* tempTypefaceTestStruct;
+int32_t EnumFontFamilyProcecure(struct tagENUMLOGFONTA *lpelf, struct tagNEWTEXTMETRICA *lpntm, int32_t FontType, long lParam) {
+	struct TypefaceTestStruct *tempTypefaceTestStruct;
 	char * szEnumeratedFaceName;
 
 // LINE 627:

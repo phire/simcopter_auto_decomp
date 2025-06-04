@@ -1206,7 +1206,7 @@ _T3e:
 }
 
 // FUNCTION: COPTER_D 0x0056677d
-void MyTextBox(char * cString, long strLen, struct Rect* rect, short justType) {
+void MyTextBox(char * cString, long strLen, struct Rect *rect, short justType) {
 // LINE 1076:
 	__asm        movsx  eax, justType;
 	__asm        cmp    eax, 1;
@@ -1255,7 +1255,7 @@ _T54:
 }
 
 // FUNCTION: COPTER_D 0x005667fe
-struct Point center(struct Rect* pRect) {
+struct Point center(struct Rect *pRect) {
 	struct Point tmp;
 
 // LINE 1255:

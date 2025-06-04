@@ -6,8 +6,8 @@
 class CharData{
 public:
 	unsigned char chValue;
-	class CharData* previousCharData;
-	class CharData* nextCharData;
+	class CharData *previousCharData;
+	class CharData *nextCharData;
 	void CharData(unsigned char);
 	void CharData();
 };
@@ -20,8 +20,8 @@ public:
 class CharList{
 public:
 	int32_t nCharDataCount;
-	class CharData* firstCharData;
-	class CharData* lastCharData;
+	class CharData *firstCharData;
+	class CharData *lastCharData;
 	void CharList();
 	void ~CharList();
 	void AddItem(class CharData*);
@@ -33,7 +33,7 @@ public:
 	class CharData* FindCharDataByIndex(int32_t);
 	class CharData* FindCharDataByValue(unsigned char);
 protected:
-	class CharData* presentCharData;
+	class CharData *presentCharData;
 };
 
 // Type: int32_t;
@@ -88,7 +88,7 @@ void CharList::CharList() {
 
 // FUNCTION: COPTER_D 0x0043d476
 void CharList::~CharList() {
-	class CharData* nextCharData;
+	class CharData *nextCharData;
 
 // LINE 35:
 	__asm        mov    eax, this;
@@ -133,7 +133,7 @@ _T6b:
 
 // FUNCTION: COPTER_D 0x0043d4eb
 void CharList::AddItem(unsigned char chNewValue) {
-	class CharData* tempCharData;
+	class CharData *tempCharData;
 
 // LINE 52:
 	__asm        push   9;
@@ -162,7 +162,7 @@ _T3e:
 }
 
 // FUNCTION: COPTER_D 0x0043d541
-void CharList::AddItem(class CharData* charDataToAdd) {
+void CharList::AddItem(class CharData *charDataToAdd) {
 // LINE 60:
 	__asm        mov    eax, this;
 	__asm        inc    dword ptr [eax];
@@ -214,7 +214,7 @@ _T7c:
 }
 
 // FUNCTION: COPTER_D 0x0043d5c9
-void CharList::DeleteItem(class CharData* charDataToDelete) {
+void CharList::DeleteItem(class CharData *charDataToDelete) {
 // LINE 80:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax], 1;
@@ -285,7 +285,7 @@ _T8d:
 
 // FUNCTION: COPTER_D 0x0043d67f
 void CharList::DeleteItem(unsigned char chValue) {
-	class CharData* charDataToDelete;
+	class CharData *charDataToDelete;
 
 // LINE 103:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(chValue);
@@ -311,7 +311,7 @@ _T3b:
 
 // FUNCTION: COPTER_D 0x0043d6c1
 void CharList::DeleteItem(int32_t nIndex) {
-	class CharData* charDataToDelete;
+	class CharData *charDataToDelete;
 
 // LINE 113:
 	__asm        mov    eax, nIndex;
@@ -367,7 +367,7 @@ _T40:
 // FUNCTION: COPTER_D 0x0043d74d
 class CharData* CharList::FindCharDataByIndex(int32_t nIndex) {
 	int32_t nPresentIndex;
-	class CharData* nextCharData;
+	class CharData *nextCharData;
 
 // LINE 133:
 	__asm        mov    eax, this;
@@ -417,7 +417,7 @@ _T7a:
 
 // FUNCTION: COPTER_D 0x0043d7ce
 class CharData* CharList::FindCharDataByValue(unsigned char chValue) {
-	class CharData* nextCharData;
+	class CharData *nextCharData;
 
 // LINE 152:
 	__asm        mov    eax, this;

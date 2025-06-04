@@ -104,7 +104,7 @@ _T7f:
 }
 
 // FUNCTION: COPTER_D 0x0048b1c4
-void GetCurrentScreenMode(struct tagMode* modeCurrent, int32_t __formal) {
+void GetCurrentScreenMode(struct tagMode *modeCurrent, int32_t __formal) {
 	void * __ptr32 hdcScreen;
 	int32_t nPlanes;
 	int32_t nBitsPerPixel;
@@ -150,7 +150,7 @@ void GetCurrentScreenMode(struct tagMode* modeCurrent, int32_t __formal) {
 }
 
 // FUNCTION: COPTER_D 0x0048b234
-long EnumDisplayModesCallback(struct _DDSURFACEDESC* pddsd, void * __ptr32 Context) {
+long EnumDisplayModesCallback(struct _DDSURFACEDESC *pddsd, void * __ptr32 Context) {
 // LINE 104:
 	__asm        cmp    gNumModes, 0x40;
 	__asm        jl     _T1a;

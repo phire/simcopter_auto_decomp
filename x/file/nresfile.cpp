@@ -28,8 +28,8 @@ public:
 // Type: class PtrList<StdResLoader>::Iter;
 class PtrList<StdResLoader>::Iter{
 private:
-	class PtrList<StdResLoader>* fObject;
-	struct PtrList<StdResLoader>::PtrNode* fCur;
+	class PtrList<StdResLoader> *fObject;
+	struct PtrList<StdResLoader>::PtrNode *fCur;
 public:
 	void Iter(class PtrList<StdResLoader>*);
 	class StdResLoader* Current();
@@ -46,8 +46,8 @@ public:
 class ResLoader<unsigned char,StdResInfo>{
 private:
 	long fCount;
-	struct StdResInfo* fResInfo;
-	class ResFile* fFile;
+	struct StdResInfo *fResInfo;
+	class ResFile *fFile;
 	unsigned long fType;
 public:
 	unsigned long Type();
@@ -73,7 +73,7 @@ public:
 class FlatResFile : public FlatFile
 {
 protected:
-	class ResMap* fMap;
+	class ResMap *fMap;
 	long fError;
 	short _alignPad;
 public:
@@ -116,13 +116,13 @@ class FlatFile{
 		kMaxNameLen = 255,
 	};
 protected:
-	class FlatFile* fNext;
+	class FlatFile *fNext;
 	unsigned char fName[256];
 	long fFileID;
-	struct _iobuf* fFile;
+	struct _iobuf *fFile;
 	long UniqueID();
 private:
-	static class FlatFile* sList;
+	static class FlatFile *sList;
 	static long sLastFileID;
 	void Link();
 	void Unlink();
@@ -156,7 +156,7 @@ public:
 // Contribution: 1:00098ef0-0009943b Module: 16, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00499ef0
 class StdResLoader* NResFile::GetLoader(unsigned long type, void (*swizzler)(void * __ptr32, long)) {
-	class StdResLoader* loader;
+	class StdResLoader *loader;
 
 // LINE 13:
 // Block start:

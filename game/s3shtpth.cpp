@@ -23,7 +23,7 @@ enum DirectionTypes {
 // Type: class ShortestPath (forward reference);
 class ShortestPath{
 private:
-	struct _FringeHeapNode* heap;
+	struct _FringeHeapNode *heap;
 	long heapSize;
 public:
 	void Init();
@@ -91,7 +91,7 @@ struct Edge{
 	unsigned char x;
 	unsigned short Time;
 	unsigned short numElementsToPath;
-	struct Road* roadArray;
+	struct Road *roadArray;
 };
 
 // Type: struct _FringeHeapNode (forward reference);
@@ -166,7 +166,7 @@ int32_t ShortestPath::BreadthFirstSearch(struct _RGIndex startVertex, struct _RG
 	int32_t pathFoundFlag;
 	int32_t x;
 	struct _FringeHeapNode path;
-	struct RGVertex* pRGV;
+	struct RGVertex *pRGV;
 	struct _FringeHeapNode scratch;
 
 // LINE 37:
@@ -245,7 +245,7 @@ _Tc5:
 	__asm        jle    _T113;
 // LINE 61:
 // Block start:
-	struct RGVertex* pRGV;
+	struct RGVertex *pRGV;
 	__asm        mov    eax, x;
 	__asm        mov    eax, gRoadGraph.RGArray[0][eax*4];
 	__asm        mov    ecx, yindex;
@@ -366,7 +366,7 @@ _T1f8:
 	__asm        jge    _T2a3;
 // LINE 111:
 // Block start:
-	struct Edge* pEdge;
+	struct Edge *pEdge;
 	__asm        mov    eax, pRGV;
 	__asm        mov    al, [eax+2];
 	__asm        and    al, 0xF;
@@ -450,7 +450,7 @@ int32_t ShortestPath::DepthFirstSearch(struct _RGIndex startVertex, struct _RGIn
 	struct _GridCoordinates currLoc;
 	int32_t x;
 	struct _FringeHeapNode path;
-	struct RGVertex* pRGV;
+	struct RGVertex *pRGV;
 	struct _FringeHeapNode scratch;
 
 // LINE 139:
@@ -537,7 +537,7 @@ _Td6:
 	__asm        jle    _T124;
 // LINE 167:
 // Block start:
-	struct RGVertex* pRGV;
+	struct RGVertex *pRGV;
 	__asm        mov    eax, x;
 	__asm        mov    eax, gRoadGraph.RGArray[0][eax*4];
 	__asm        mov    ecx, yindex;
@@ -684,8 +684,8 @@ _T247:
 	__asm        jge    _T30e;
 // LINE 222:
 // Block start:
-	struct RGVertex* pCurrRGV;
-	struct Edge* pEdge;
+	struct RGVertex *pCurrRGV;
+	struct Edge *pEdge;
 	__asm        mov    eax, pRGV;
 	__asm        mov    al, [eax+2];
 	__asm        and    al, 0xF;
@@ -777,7 +777,7 @@ _T31b:
 }
 
 // FUNCTION: COPTER_D 0x00543cdd
-void ShortestPath::PriorityHeapInsert(const struct _FringeHeapNode* pInsertNode) {
+void ShortestPath::PriorityHeapInsert(const struct _FringeHeapNode *pInsertNode) {
 	int32_t index;
 	struct _FringeHeapNode tempNode;
 
@@ -874,7 +874,7 @@ _Te2:
 }
 
 // FUNCTION: COPTER_D 0x00543dcb
-void ShortestPath::PriorityHeapRemove(struct _FringeHeapNode* pRemovedNode) {
+void ShortestPath::PriorityHeapRemove(struct _FringeHeapNode *pRemovedNode) {
 	int32_t index;
 	int32_t child;
 	int32_t parent;

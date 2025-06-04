@@ -118,7 +118,7 @@ _Tff:
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055eac0
-void cBList<class cCopterAnim>::Add(class cCopterAnim *) cBList<cCopterAnim>::Add(class cCopterAnim* thing) {
+void cBList<class cCopterAnim>::Add(class cCopterAnim *) cBList<cCopterAnim>::Add(class cCopterAnim *thing) {
 // LINE 119:
 	__asm        jmp    near ptr 0x0055EAD1;
 
@@ -764,7 +764,7 @@ _Tff:
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055fee0
-void cBList<cCopterBody>::Add(class cCopterBody* thing) {
+void cBList<cCopterBody>::Add(class cCopterBody *thing) {
 // LINE 119:
 	__asm        jmp    near ptr 0x0055FEF1;
 

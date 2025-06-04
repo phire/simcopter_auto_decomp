@@ -1,8 +1,8 @@
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055e740
-void PtrList<cBBase>::Remove(class cBBase* data) {
-	struct PtrList<cBBase>::PtrNode** srch;
-	struct PtrList<cBBase>::PtrNode* del;
+void PtrList<cBBase>::Remove(class cBBase *data) {
+	struct PtrList<cBBase>::PtrNode **srch;
+	struct PtrList<cBBase>::PtrNode *del;
 
 // LINE 43:
 	__asm        mov    eax, this;

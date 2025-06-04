@@ -1,6 +1,6 @@
 // Function in module: Gamecomm.obj
 // FUNCTION: COPTER_D 0x0048e8a0
-void CGameCommander::SetNewGameApp(class CGameApp* newGameApp) {
+void CGameCommander::SetNewGameApp(class CGameApp *newGameApp) {
 
 	__asm        mov    eax, newGameApp;
 	__asm        mov    ecx, this;

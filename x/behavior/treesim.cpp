@@ -16,11 +16,11 @@ class TreeSim{
 		short _pad;
 		unsigned char * objectPtr;
 		short locals[4];
-		class Behavior* pBehavior;
+		class Behavior *pBehavior;
 		void GetTreeName(unsigned char *);
 	};
 private:
-	struct TreeSim::StackElem* fStack;
+	struct TreeSim::StackElem *fStack;
 	short fStackSize;
 	short fMaxStackSize;
 	short fIterations;
@@ -66,11 +66,11 @@ public:
 // VTABLE: COPTER_D 0x005936d8
 class Behavior{
 protected:
-	class NResFile* fGlobFile;
-	class NResFile* fPrivFile;
-	class StdResLoader* fGlobalTrees;
-	class StdResLoader* fPrivateTrees;
-	class Language* fLanguage;
+	class NResFile *fGlobFile;
+	class NResFile *fPrivFile;
+	class StdResLoader *fGlobalTrees;
+	class StdResLoader *fPrivateTrees;
+	class Language *fLanguage;
 	void (*fSwizzler)(void * __ptr32, long);
 	enum /* __unnamed */ {
 		kPrimitiveBase = 0,
@@ -154,7 +154,7 @@ struct TreeSim::StackElem{
 	short _pad;
 	unsigned char * objectPtr;
 	short locals[4];
-	class Behavior* pBehavior;
+	class Behavior *pBehavior;
 	void GetTreeName(unsigned char *);
 };
 
@@ -186,7 +186,7 @@ enum ReturnCode {
 class ExtSim : public TreeSim
 {
 private:
-	class TreeSim* fExt;
+	class TreeSim *fExt;
 public:
 	void ExtSim(class TreeSim*, short);
 	virtual enum TreeSim::ReturnCode TryElement(struct TreeSim::StackElem*, struct Behavior::Node*) /* override */;
@@ -210,11 +210,11 @@ class TreeSim{
 		short _pad;
 		unsigned char * objectPtr;
 		short locals[4];
-		class Behavior* pBehavior;
+		class Behavior *pBehavior;
 		void GetTreeName(unsigned char *);
 	};
 private:
-	struct TreeSim::StackElem* fStack;
+	struct TreeSim::StackElem *fStack;
 	short fStackSize;
 	short fMaxStackSize;
 	short fIterations;
@@ -258,7 +258,7 @@ public:
 
 // Contribution: 1:0015bb10-0015c4b2 Module: 194, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0055cb10
-void TreeSim::TreeSim(short maxStackSize, short startTreeID, class Behavior* startBehavior, short * autoStackArea) {
+void TreeSim::TreeSim(short maxStackSize, short startTreeID, class Behavior *startBehavior, short * autoStackArea) {
 
 	__asm        mov    ax, maxStackSize;
 	__asm        mov    ecx, this;
@@ -366,8 +366,8 @@ void TreeSim::~TreeSim() {
 }
 
 // FUNCTION: COPTER_D 0x0055cc58
-void TreeSim::Reset(class Behavior* startBehavior, short startTreeID) {
-	struct TreeSim::StackElem* bottom;
+void TreeSim::Reset(class Behavior *startBehavior, short startTreeID) {
+	struct TreeSim::StackElem *bottom;
 
 // LINE 44:
 	__asm        mov    eax, this;
@@ -420,7 +420,7 @@ _T41:
 // FUNCTION: COPTER_D 0x0055ccef
 struct TreeSim::StackElem* TreeSim::GetHighLevelAction() {
 	short stackSize;
-	class Behavior* curBeh;
+	class Behavior *curBeh;
 
 // LINE 63:
 	__asm        jmp    near ptr 0x0055CD00;
@@ -542,7 +542,7 @@ _T143:
 }
 
 // FUNCTION: COPTER_D 0x0055ce37
-unsigned short TreeSim::Gosub(class Behavior* pTransfer, short * stack, short treeID) {
+unsigned short TreeSim::Gosub(class Behavior *pTransfer, short * stack, short treeID) {
 // LINE 84:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
@@ -552,7 +552,7 @@ unsigned short TreeSim::Gosub(class Behavior* pTransfer, short * stack, short tr
 	__asm        jge    _Te1;
 // LINE 86:
 // Block start:
-	struct TreeSim::StackElem* fill;
+	struct TreeSim::StackElem *fill;
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        shl    eax, 2;
@@ -639,9 +639,9 @@ _Tf9:
 
 // FUNCTION: COPTER_D 0x0055cf37
 unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
-	struct TreeSim::StackElem* elem;
+	struct TreeSim::StackElem *elem;
 	unsigned short done;
-	const struct Behavior::Node* node;
+	const struct Behavior::Node *node;
 	enum TreeSim::ReturnCode result;
 
 // LINE 120:
@@ -879,9 +879,9 @@ _T285:
 // FUNCTION: COPTER_D 0x0055d1c3
 char TreeSim::NodeComplete(unsigned short success) {
 	char trans;
-	struct TreeSim::StackElem* elem;
+	struct TreeSim::StackElem *elem;
 	unsigned short done;
-	const struct Behavior::Node* node;
+	const struct Behavior::Node *node;
 
 // LINE 202:
 	__asm        mov    done, 0;
@@ -998,7 +998,7 @@ _T133:
 
 // FUNCTION: COPTER_D 0x0055d2fd
 void TreeSim::GetCurrentNode(short * treeID, short * nodeNum) {
-	struct TreeSim::StackElem* elem;
+	struct TreeSim::StackElem *elem;
 
 // LINE 240:
 	__asm        mov    eax, this;
@@ -1051,7 +1051,7 @@ _T69:
 }
 
 // FUNCTION: COPTER_D 0x0055d3a5
-enum TreeSim::ReturnCode ExtSim::TryElement(struct TreeSim::StackElem* elem, struct Behavior::Node* node) {
+enum TreeSim::ReturnCode ExtSim::TryElement(struct TreeSim::StackElem *elem, struct Behavior::Node *node) {
 // LINE 256:
 	__asm        mov    eax, node;
 	__asm        push   eax;
@@ -1084,7 +1084,7 @@ void ExtSim::Error(short errNum) {
 
 // FUNCTION: COPTER_D 0x0055d402
 unsigned short ExtSim::Simulate(long ticks, unsigned short bOnceOnly) {
-	struct TreeSim::StackElem* savestack;
+	struct TreeSim::StackElem *savestack;
 	unsigned short ret;
 	short savemaxstacksize;
 	short savestacksize;

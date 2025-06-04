@@ -67,7 +67,7 @@ struct Point{
 class FlatResFile : public FlatFile
 {
 protected:
-	class ResMap* fMap;
+	class ResMap *fMap;
 	long fError;
 	short _alignPad;
 public:
@@ -140,7 +140,7 @@ public:
 		long _win8pad[15];
 	};
 public:
-	struct cBBase::BBaseHeader* fHeader;
+	struct cBBase::BBaseHeader *fHeader;
 	// calltype: NearC
 	static void SwizzleBBaseHeader(void * __ptr32, long);
 };
@@ -149,8 +149,8 @@ public:
 class PtrList<cBBase>{
 	class PtrList<cBBase>::Iter{
 	private:
-		class PtrList<cBBase>* fObject;
-		struct PtrList<cBBase>::PtrNode* fCur;
+		class PtrList<cBBase> *fObject;
+		struct PtrList<cBBase>::PtrNode *fCur;
 	public:
 		void Iter(class PtrList<cBBase>*);
 		class cBBase* Current();
@@ -159,11 +159,11 @@ class PtrList<cBBase>{
 		class cBBase* First();
 	};
 	struct PtrList<cBBase>::PtrNode{
-		class cBBase* data;
-		struct PtrList<cBBase>::PtrNode* next;
+		class cBBase *data;
+		struct PtrList<cBBase>::PtrNode *next;
 	};
 private:
-	struct PtrList<cBBase>::PtrNode* fFirst;
+	struct PtrList<cBBase>::PtrNode *fFirst;
 	short fCount;
 public:
 	void PtrList<cBBase>();
@@ -179,15 +179,15 @@ public:
 
 // Type: struct PtrList<cBBase>::PtrNode (forward reference);
 struct PtrList<cBBase>::PtrNode{
-	class cBBase* data;
-	struct PtrList<cBBase>::PtrNode* next;
+	class cBBase *data;
+	struct PtrList<cBBase>::PtrNode *next;
 };
 
 // Type: class PtrList<cCopterAnim>::Iter (forward reference);
 class PtrList<cCopterAnim>::Iter{
 private:
-	class PtrList<cCopterAnim>* fObject;
-	struct PtrList<cCopterAnim>::PtrNode* fCur;
+	class PtrList<cCopterAnim> *fObject;
+	struct PtrList<cCopterAnim>::PtrNode *fCur;
 public:
 	void Iter(class PtrList<cCopterAnim>*);
 	class cCopterAnim* Current();
@@ -203,8 +203,8 @@ public:
 class PtrList<cCopterAnim>{
 	class PtrList<cCopterAnim>::Iter{
 	private:
-		class PtrList<cCopterAnim>* fObject;
-		struct PtrList<cCopterAnim>::PtrNode* fCur;
+		class PtrList<cCopterAnim> *fObject;
+		struct PtrList<cCopterAnim>::PtrNode *fCur;
 	public:
 		void Iter(class PtrList<cCopterAnim>*);
 		class cCopterAnim* Current();
@@ -213,11 +213,11 @@ class PtrList<cCopterAnim>{
 		class cCopterAnim* First();
 	};
 	struct PtrList<cCopterAnim>::PtrNode{
-		class cCopterAnim* data;
-		struct PtrList<cCopterAnim>::PtrNode* next;
+		class cCopterAnim *data;
+		struct PtrList<cCopterAnim>::PtrNode *next;
 	};
 private:
-	struct PtrList<cCopterAnim>::PtrNode* fFirst;
+	struct PtrList<cCopterAnim>::PtrNode *fFirst;
 	short fCount;
 public:
 	void PtrList<cCopterAnim>();
@@ -243,11 +243,11 @@ public:
 	virtual unsigned short IsDirty() /* override */;
 	virtual unsigned long GetBodyType() /* override */;
 	virtual void InstallArrayPointers(unsigned short) /* override */;
-	static class cBList<cCopterAnim>* fsList;
+	static class cBList<cCopterAnim> *fsList;
 	virtual class cBList<cBBase>* GetList() /* override */;
 	virtual struct PrivAnimPartInfo* GetPartInfo(short, short); // vtable+0x24
 	virtual struct PrivAnimPartInfo* GetPartInfoBasePtr(short); // vtable+0x28
-	class cArray<PrivAnimPartInfo>* fPrivPartInfo;
+	class cArray<PrivAnimPartInfo> *fPrivPartInfo;
 	short GetNumParts();
 	short GetNumFrames();
 	// calltype: NearC
@@ -276,8 +276,8 @@ public:
 class PtrList<cCopterBody>{
 	class PtrList<cCopterBody>::Iter{
 	private:
-		class PtrList<cCopterBody>* fObject;
-		struct PtrList<cCopterBody>::PtrNode* fCur;
+		class PtrList<cCopterBody> *fObject;
+		struct PtrList<cCopterBody>::PtrNode *fCur;
 	public:
 		void Iter(class PtrList<cCopterBody>*);
 		class cCopterBody* Current();
@@ -286,11 +286,11 @@ class PtrList<cCopterBody>{
 		class cCopterBody* First();
 	};
 	struct PtrList<cCopterBody>::PtrNode{
-		class cCopterBody* data;
-		struct PtrList<cCopterBody>::PtrNode* next;
+		class cCopterBody *data;
+		struct PtrList<cCopterBody>::PtrNode *next;
 	};
 private:
-	struct PtrList<cCopterBody>::PtrNode* fFirst;
+	struct PtrList<cCopterBody>::PtrNode *fFirst;
 	short fCount;
 public:
 	void PtrList<cCopterBody>();
@@ -307,8 +307,8 @@ public:
 // Type: class PtrList<cCopterBody>::Iter (forward reference);
 class PtrList<cCopterBody>::Iter{
 private:
-	class PtrList<cCopterBody>* fObject;
-	struct PtrList<cCopterBody>::PtrNode* fCur;
+	class PtrList<cCopterBody> *fObject;
+	struct PtrList<cCopterBody>::PtrNode *fCur;
 public:
 	void Iter(class PtrList<cCopterBody>*);
 	class cCopterBody* Current();
@@ -335,7 +335,7 @@ public:
 	virtual void Add(class cCopterBody*); // vtable+0x0
 	void WriteToDisk();
 	void WriteToDiskIfDirty();
-	class ResFile* fFile;
+	class ResFile *fFile;
 	unsigned long fType;
 	void CompactFile();
 	// calltype: NearC
@@ -380,7 +380,7 @@ public:
 		long _win8pad[15];
 	};
 public:
-	struct cBBase::BBaseHeader* fHeader;
+	struct cBBase::BBaseHeader *fHeader;
 	// calltype: NearC
 	static void SwizzleBBaseHeader(void * __ptr32, long);
 };
@@ -389,8 +389,8 @@ public:
 class PtrList<cCopterBody>{
 	class PtrList<cCopterBody>::Iter{
 	private:
-		class PtrList<cCopterBody>* fObject;
-		struct PtrList<cCopterBody>::PtrNode* fCur;
+		class PtrList<cCopterBody> *fObject;
+		struct PtrList<cCopterBody>::PtrNode *fCur;
 	public:
 		void Iter(class PtrList<cCopterBody>*);
 		class cCopterBody* Current();
@@ -399,11 +399,11 @@ class PtrList<cCopterBody>{
 		class cCopterBody* First();
 	};
 	struct PtrList<cCopterBody>::PtrNode{
-		class cCopterBody* data;
-		struct PtrList<cCopterBody>::PtrNode* next;
+		class cCopterBody *data;
+		struct PtrList<cCopterBody>::PtrNode *next;
 	};
 private:
-	struct PtrList<cCopterBody>::PtrNode* fFirst;
+	struct PtrList<cCopterBody>::PtrNode *fFirst;
 	short fCount;
 public:
 	void PtrList<cCopterBody>();
@@ -424,13 +424,13 @@ class FlatFile{
 		kMaxNameLen = 255,
 	};
 protected:
-	class FlatFile* fNext;
+	class FlatFile *fNext;
 	unsigned char fName[256];
 	long fFileID;
-	struct _iobuf* fFile;
+	struct _iobuf *fFile;
 	long UniqueID();
 private:
-	static class FlatFile* sList;
+	static class FlatFile *sList;
 	static long sLastFileID;
 	void Link();
 	void Unlink();
@@ -464,7 +464,7 @@ public:
 // Contribution: 1:0015c950-0015d654 Module: 192, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0055d950
 void SwizzlePrivAnimPartInfo(void * __ptr32 val, long size) {
-	struct PrivAnimPartInfo* pinfo;
+	struct PrivAnimPartInfo *pinfo;
 
 // LINE 111:
 	__asm        cmp    size, 8;
@@ -591,7 +591,7 @@ _T4a:
 
 // FUNCTION: COPTER_D 0x0055daa7
 void SwizzlePoint(void * __ptr32 val, long size) {
-	struct Point* pt;
+	struct Point *pt;
 
 // LINE 167:
 	__asm        cmp    size, 4;

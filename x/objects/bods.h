@@ -1,7 +1,7 @@
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f920
 class cBBase *  cCopterBody::MakeNew(void * __ptr32 h) {
-	class cCopterBody* thing;
+	class cCopterBody *thing;
 
 	// Function registers exception cleanup function at 0x0055fc56
 // LINE 111:

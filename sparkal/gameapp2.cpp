@@ -5,7 +5,7 @@
 // Type: struct list<CopterGameMode>::list_node_buffer (forward reference);
 struct list<CopterGameMode>::list_node_buffer{
 	void * __ptr32 next_buffer;
-	struct list<CopterGameMode>::list_node* buffer;
+	struct list<CopterGameMode>::list_node *buffer;
 };
 
 // Type: struct list<CopterGameMode>::list_node (forward reference);
@@ -51,7 +51,7 @@ struct SoundPreferences{
 class list<CopterGameMode>::iterator : public bidirectional_iterator<CopterGameMode,int>
 {
 protected:
-	struct list<CopterGameMode>::list_node* node;
+	struct list<CopterGameMode>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -72,11 +72,11 @@ class DigitalSound : public Sound
 protected:
 	int32_t nStreamingType;
 	int32_t nCompletionEstimationTimerSet;
-	static struct IDirectSound* lpDirectSound;
+	static struct IDirectSound *lpDirectSound;
 	uint32_t cbSize;
 	struct tWAVEFORMATEX waveFormatEx;
-	struct IDirectSoundBuffer* lpSound[8];
-	struct _STREAMBUFINFO* lpStreamBufferInfo;
+	struct IDirectSoundBuffer *lpSound[8];
+	struct _STREAMBUFINFO *lpStreamBufferInfo;
 	unsigned long dwDesiredBufferDescFlags;
 public:
 	void DigitalSound(long);
@@ -135,7 +135,7 @@ class basic_string<char>{
 	using reference_pointer = class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char>* reference;
+	class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -332,27 +332,27 @@ protected:
 	uint32_t buffer_size();
 	struct list<CopterGameMode>::list_node_buffer{
 		void * __ptr32 next_buffer;
-		struct list<CopterGameMode>::list_node* buffer;
+		struct list<CopterGameMode>::list_node *buffer;
 	};
 	using buffer_allocator_type = class allocator<list<CopterGameMode>::list_node_buffer>;
 	using buffer_pointer = struct list<CopterGameMode>::list_node_buffer*;
 protected:
 	static class allocator<list<CopterGameMode>::list_node_buffer> buffer_allocator;
-	static struct list<CopterGameMode>::list_node_buffer* buffer_list;
-	static struct list<CopterGameMode>::list_node* free_list;
-	static struct list<CopterGameMode>::list_node* next_avail;
-	static struct list<CopterGameMode>::list_node* last;
+	static struct list<CopterGameMode>::list_node_buffer *buffer_list;
+	static struct list<CopterGameMode>::list_node *free_list;
+	static struct list<CopterGameMode>::list_node *next_avail;
+	static struct list<CopterGameMode>::list_node *last;
 	void add_new_buffer();
 	static uint32_t number_of_lists;
 	void deallocate_buffers();
 	struct list<CopterGameMode>::list_node* get_node();
 	void put_node(struct list<CopterGameMode>::list_node*);
-	struct list<CopterGameMode>::list_node* node;
+	struct list<CopterGameMode>::list_node *node;
 	uint32_t length;
 	class list<CopterGameMode>::iterator : public bidirectional_iterator<CopterGameMode,int>
 	{
 	protected:
-		struct list<CopterGameMode>::list_node* node;
+		struct list<CopterGameMode>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -368,7 +368,7 @@ protected:
 	class list<CopterGameMode>::const_iterator : public bidirectional_iterator<CopterGameMode,int>
 	{
 	protected:
-		struct list<CopterGameMode>::list_node* node;
+		struct list<CopterGameMode>::list_node *node;
 	public:
 		void const_iterator(const class list<CopterGameMode>::iterator&);
 		void const_iterator();
@@ -5450,7 +5450,7 @@ _T5e:
 
 // FUNCTION: COPTER_D 0x00465081
 void  CGameApp::NotifyUserOfGraduation() {
-	class DigitalSound* tempNotificationSound;
+	class DigitalSound *tempNotificationSound;
 	char szString[128];
 	char szFullPath[260];
 	int32_t nFullStringID;
@@ -5733,7 +5733,7 @@ _T3d0:
 }
 
 // FUNCTION: COPTER_D 0x004654a4
-int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
+int  CGameApp::DoMessage(class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 	unsigned long nResult;
 	int32_t nCurrentGameMode;
 
@@ -6640,7 +6640,7 @@ _Ta30:
 }
 
 // FUNCTION: COPTER_D 0x00465edb
-int  CGameApp::DoMainMenuMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
+int  CGameApp::DoMainMenuMessage(class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 	char szSplitPathFilename[256];
 	char szSplitPathDirectory[256];
 	int32_t nCurrentGameMode;
@@ -6977,7 +6977,7 @@ _T418:
 }
 
 // FUNCTION: COPTER_D 0x004662fa
-int  CGameApp::DoPlayMenuMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
+int  CGameApp::DoPlayMenuMessage(class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 	unsigned long nResult;
 	int32_t nCurrentGameMode;
 
@@ -7740,25 +7740,25 @@ char * SZ_GRADUATION_NOTIFICATION_SOUND_FILE_NAME = { 0 /* todo */ };
 
 // Contribution: 3:00002304-00002307 Module: 44, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00599304
-struct list<CopterGameMode>::list_node* list<CopterGameMode>::last = { 0 /* todo */ };
+struct list<CopterGameMode>::list_node *list<CopterGameMode>::last = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00002308-0000230b Module: 44, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00599308
-struct list<CopterGameMode>::list_node* list<CopterGameMode>::next_avail = { 0 /* todo */ };
+struct list<CopterGameMode>::list_node *list<CopterGameMode>::next_avail = { 0 /* todo */ };
 
 
 
 // Contribution: 3:0000230c-0000230f Module: 44, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0059930c
-struct list<CopterGameMode>::list_node* list<CopterGameMode>::free_list = { 0 /* todo */ };
+struct list<CopterGameMode>::list_node *list<CopterGameMode>::free_list = { 0 /* todo */ };
 
 
 
 // Contribution: 3:00002310-00002313 Module: 44, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00599310
-struct list<CopterGameMode>::list_node_buffer* list<CopterGameMode>::buffer_list = { 0 /* todo */ };
+struct list<CopterGameMode>::list_node_buffer *list<CopterGameMode>::buffer_list = { 0 /* todo */ };
 
 
 

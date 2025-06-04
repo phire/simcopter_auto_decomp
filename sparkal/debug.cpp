@@ -75,9 +75,9 @@ class vector<basic_string<char>>{
 	using reverse_iterator = class reverse_iterator<basic_string<char> *,basic_string<char>,basic_string<char> &,int>;
 protected:
 	static class allocator<basic_string<char>> static_allocator;
-	class basic_string<char>* start;
-	class basic_string<char>* finish;
-	class basic_string<char>* end_of_storage;
+	class basic_string<char> *start;
+	class basic_string<char> *finish;
+	class basic_string<char> *end_of_storage;
 	void insert_aux(class basic_string<char>*, const class basic_string<char>&);
 public:
 	const class basic_string<char>* begin();
@@ -123,7 +123,7 @@ public:
 struct class_debugger<CDebugWindow,CDebugWindowhelp_text> : public debug_command
 {
 	void class_debugger<CDebugWindow,CDebugWindowhelp_text>(class CDebugWindow*);
-	class CDebugWindow* m_instance;
+	class CDebugWindow *m_instance;
 	virtual void execute(char *) /* override */;
 };
 
@@ -143,10 +143,10 @@ struct _iobuf{
 class deque<basic_string<char>>::iterator : public random_access_iterator<basic_string<char>,int>
 {
 protected:
-	class basic_string<char>* current;
-	class basic_string<char>* first;
-	class basic_string<char>* last;
-	class basic_string<char>** node;
+	class basic_string<char> *current;
+	class basic_string<char> *first;
+	class basic_string<char> *last;
+	class basic_string<char> **node;
 public:
 	void iterator();
 protected:
@@ -221,7 +221,7 @@ class basic_string<char>{
 	using reference_pointer = class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char>* reference;
+	class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -339,9 +339,9 @@ class vector<basic_string<char>>{
 	using reverse_iterator = class reverse_iterator<basic_string<char> *,basic_string<char>,basic_string<char> &,int>;
 protected:
 	static class allocator<basic_string<char>> static_allocator;
-	class basic_string<char>* start;
-	class basic_string<char>* finish;
-	class basic_string<char>* end_of_storage;
+	class basic_string<char> *start;
+	class basic_string<char> *finish;
+	class basic_string<char> *end_of_storage;
 	void insert_aux(class basic_string<char>*, const class basic_string<char>&);
 public:
 	const class basic_string<char>* begin();
@@ -383,7 +383,7 @@ public:
 struct class_debugger<CDebugWindow,CDebugWindowhelp_text> : public debug_command
 {
 	void class_debugger<CDebugWindow,CDebugWindowhelp_text>(class CDebugWindow*);
-	class CDebugWindow* m_instance;
+	class CDebugWindow *m_instance;
 	virtual void execute(char *) /* override */;
 };
 
@@ -391,10 +391,10 @@ struct class_debugger<CDebugWindow,CDebugWindowhelp_text> : public debug_command
 class deque<basic_string<char>>::iterator : public random_access_iterator<basic_string<char>,int>
 {
 protected:
-	class basic_string<char>* current;
-	class basic_string<char>* first;
-	class basic_string<char>* last;
-	class basic_string<char>** node;
+	class basic_string<char> *current;
+	class basic_string<char> *first;
+	class basic_string<char> *last;
+	class basic_string<char> **node;
 public:
 	void iterator();
 protected:
@@ -421,7 +421,7 @@ class basic_string<char>{
 	using reference_pointer = class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char>* reference;
+	class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -525,10 +525,10 @@ class deque<basic_string<char>>{
 	class deque<basic_string<char>>::iterator : public random_access_iterator<basic_string<char>,int>
 	{
 	protected:
-		class basic_string<char>* current;
-		class basic_string<char>* first;
-		class basic_string<char>* last;
-		class basic_string<char>** node;
+		class basic_string<char> *current;
+		class basic_string<char> *first;
+		class basic_string<char> *last;
+		class basic_string<char> **node;
 	public:
 		void iterator();
 	protected:
@@ -551,10 +551,10 @@ class deque<basic_string<char>>{
 	class deque<basic_string<char>>::const_iterator : public random_access_iterator<basic_string<char>,int>
 	{
 	protected:
-		class basic_string<char>* current;
-		class basic_string<char>* first;
-		class basic_string<char>* last;
-		class basic_string<char>** node;
+		class basic_string<char> *current;
+		class basic_string<char> *first;
+		class basic_string<char> *last;
+		class basic_string<char> **node;
 	public:
 		void const_iterator(const class deque<basic_string<char>>::iterator&);
 		void const_iterator();
@@ -594,7 +594,7 @@ protected:
 	class deque<basic_string<char>>::iterator start;
 	class deque<basic_string<char>>::iterator finish;
 	uint32_t length;
-	class basic_string<char>** map;
+	class basic_string<char> **map;
 	uint32_t map_size;
 	void allocate_at_begin();
 	void allocate_at_end();
@@ -651,9 +651,9 @@ class vector<debug_command *>{
 	using reverse_iterator = class reverse_iterator<debug_command * *,debug_command *,debug_command * &,int>;
 protected:
 	static class allocator<debug_command *> static_allocator;
-	struct debug_command** start;
-	struct debug_command** finish;
-	struct debug_command** end_of_storage;
+	struct debug_command **start;
+	struct debug_command **finish;
+	struct debug_command **end_of_storage;
 	void insert_aux(struct debug_command**, const struct debug_command*&);
 public:
 	const struct debug_command** begin();
@@ -708,7 +708,7 @@ struct debug_command{
 // Contribution: 1:00021280-000246c8 Module: 70, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00422280
 void CDebugWindow::HandleDebugCommand(char * data) {
-	struct debug_command** it;
+	struct debug_command **it;
 	class vector<basic_string<char>> commands;
 	int32_t num;
 
@@ -2131,7 +2131,7 @@ void CDebugWindow::HideWindow() {
 
 // FUNCTION: COPTER_D 0x004233b1
 int32_t CDebugWindow::Save(char * filePath) {
-	struct _iobuf* file;
+	struct _iobuf *file;
 	class deque<basic_string<char>>::iterator it;
 
 // LINE 153:
@@ -3462,7 +3462,7 @@ void CDebugWindow::OnEditChange() {
 	__asm        jle    _T5bd;
 // LINE 308:
 // Block start:
-	struct debug_command** it;
+	struct debug_command **it;
 	class vector<basic_string<char>> command_vector;
 	int32_t num;
 	char comBuf[256];
@@ -3931,7 +3931,7 @@ _T114:
 
 // FUNCTION: COPTER_D 0x004249ef
 long CDebugWindow::WindowProcedure(void * __ptr32 hWindow, uint32_t Message, uint32_t WParam, long LParam) {
-	class CDebugWindow* debugWin;
+	class CDebugWindow *debugWin;
 
 // LINE 363:
 	__asm        push   0xFFFFFFEB;
@@ -4060,7 +4060,7 @@ _T4e:
 }
 
 // FUNCTION: COPTER_D 0x00424b6c
-void RegisterDebugCommand(struct debug_command* aCommand) {
+void RegisterDebugCommand(struct debug_command *aCommand) {
 // LINE 412:
 	__asm        cmp    gDebugWindow, 0;
 	__asm        je     _T3ba;
@@ -4403,7 +4403,7 @@ _T3ba:
 }
 
 // FUNCTION: COPTER_D 0x00424f30
-void UnregisterDebugCommand(struct debug_command* aCommand) {
+void UnregisterDebugCommand(struct debug_command *aCommand) {
 // LINE 418:
 	__asm        cmp    gDebugWindow, 0;
 	__asm        je     _Tdb;
@@ -5109,7 +5109,7 @@ char * CDebugWindowhelp_text = { 0 /* todo */ };
 char * CDebugWindowusage_text = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00597374
-class CDebugWindow* gDebugWindow = { 0 /* todo */ };
+class CDebugWindow *gDebugWindow = { 0 /* todo */ };
 
 
 

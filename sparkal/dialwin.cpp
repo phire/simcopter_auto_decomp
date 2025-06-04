@@ -23,10 +23,10 @@ public:
 	void CheckForRadioChange();
 protected:
 	long lFrameCount;
-	class Radio* myRadio;
+	class Radio *myRadio;
 	int32_t nRadioStationIndex;
 	long lRadioStationVolume;
-	class CBackBuffer* myCompassImage;
+	class CBackBuffer *myCompassImage;
 	class basic_string<char> sCompassFile;
 	int32_t nLastCompassPosition;
 	class MRect rectRadioStations;
@@ -126,7 +126,7 @@ class basic_string<char>{
 	using reference_pointer = class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char>* reference;
+	class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -249,15 +249,15 @@ public:
 	void TurnOffSpotlightCommand(int32_t);
 	void TurnOnSpotlightCommand(int32_t);
 protected:
-	struct CommandSystem* myCommandSystem;
-	class BitmappedFont* myMoneyGuageFont;
-	class CBackBuffer* mySecondImage;
-	class CBackBuffer* myDamageImage;
-	class CBackBuffer* myFuelLightImage;
-	class CBackBuffer* myPointsLightImage;
-	class CBackBuffer* myAltitudeHundredsImage;
-	class CBackBuffer* mySpotlightBootImage;
-	class CBackBuffer* mySpotlightBootBackImage;
+	struct CommandSystem *myCommandSystem;
+	class BitmappedFont *myMoneyGuageFont;
+	class CBackBuffer *mySecondImage;
+	class CBackBuffer *myDamageImage;
+	class CBackBuffer *myFuelLightImage;
+	class CBackBuffer *myPointsLightImage;
+	class CBackBuffer *myAltitudeHundredsImage;
+	class CBackBuffer *mySpotlightBootImage;
+	class CBackBuffer *mySpotlightBootBackImage;
 	int32_t nCurrentDamage;
 	long lCurrentFuelPercentage;
 	long lCurrentFuelLight;
@@ -366,7 +366,7 @@ protected:
 	int32_t nChangingPosition;
 	long lPassengerDraggedID;
 	class MPoint ptLastCursorPosition;
-	class CBackBuffer* myPassengerImage;
+	class CBackBuffer *myPassengerImage;
 	class basic_string<char> sPassengerFile;
 };
 
@@ -468,7 +468,7 @@ public:
 	virtual void CreateAutoMessageSelectionPopupWindow(int32_t, int32_t, class MPoint&); // vtable+0xcc
 	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32) /* override */;
 	virtual int32_t GetStringIDForVehicleName(int32_t); // vtable+0xd0
-	class CBackBuffer* myButtonImage;
+	class CBackBuffer *myButtonImage;
 	int32_t bCurrentMissionFilter;
 	int32_t bOtherMissionFilter;
 	int32_t nTrackingButton;
@@ -567,9 +567,9 @@ protected:
 	void DrawTeargasUsage();
 	class MRect rectControls[4];
 	long lCurrentSelectedControl;
-	struct CommandSystem* myCommandSystem;
-	class CBackBuffer* myBucketWaterGuageImage;
-	class CBackBuffer* myButtonImage;
+	struct CommandSystem *myCommandSystem;
+	class CBackBuffer *myBucketWaterGuageImage;
+	class CBackBuffer *myButtonImage;
 	long lLastBucketWaterGuageLevel;
 	long lLastTeargasCount;
 };
@@ -693,8 +693,8 @@ protected:
 	long lFirstVisibleLine;
 	long lLineHeight;
 	int32_t bAlwaysSort;
-	class ScrollBarWindow* myVerticalScrollBarWindow;
-	class ScrollBarWindow* myHorizontalScrollBarWindow;
+	class ScrollBarWindow *myVerticalScrollBarWindow;
+	class ScrollBarWindow *myHorizontalScrollBarWindow;
 	int32_t bBusySettingSelection;
 };
 
@@ -702,7 +702,7 @@ protected:
 
 // Contribution: 1:00047270-0004ec1a Module: 47, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00448270
-void RadioCompassWindow::RadioCompassWindow(class MRect& rectNewWindow, long lNewID, class GraphicWindow* windowNewParent, class Radio* myNewRadio, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+void RadioCompassWindow::RadioCompassWindow(class MRect& rectNewWindow, long lNewID, class GraphicWindow *windowNewParent, class Radio *myNewRadio, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
 	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
@@ -1967,7 +1967,7 @@ _T67:
 }
 
 // FUNCTION: COPTER_D 0x004490d7
-void DialWindow::DialWindow(class MRect& rectNewWindow, long lNewID, struct CommandSystem* myNewCommandSystem, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+void DialWindow::DialWindow(class MRect& rectNewWindow, long lNewID, struct CommandSystem *myNewCommandSystem, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
 	__asm        push   0xFFFFFFFF;
 	__asm        mov    eax, bAddToParentList;
@@ -5124,7 +5124,7 @@ _T3df:
 }
 
 // FUNCTION: COPTER_D 0x0044be4a
-void PassengerWindow::PassengerWindow(class MRect& rectNewPosition, long lNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+void PassengerWindow::PassengerWindow(class MRect& rectNewPosition, long lNewID, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
 	__asm        push   0xFFFFFFFF;
 	__asm        mov    eax, bAddToParentList;
@@ -5912,7 +5912,7 @@ _T222:
 	__asm        je     _T40f;
 // LINE 1034:
 // Block start:
-	struct tagHeliPassengerData* tempHeliPassengerData;
+	struct tagHeliPassengerData *tempHeliPassengerData;
 	class MRect rectSource;
 	class MPoint ptGraphicIconPosition;
 	long lPassengerIndex;
@@ -6067,7 +6067,7 @@ _T419:
 void PassengerWindow::DrawPassengers() {
 	class MRect rectDestination;
 	int32_t i;
-	struct tagHeliPassengerData* tempHeliPassengerData;
+	struct tagHeliPassengerData *tempHeliPassengerData;
 	int32_t nCurrentSeat;
 	class MRect rectSource;
 	int32_t bSeats[16];
@@ -6778,7 +6778,7 @@ long PassengerWindow::DoCursorMove(long nCursorX, long nCursorY) {
 int32_t PassengerWindow::DoesPositionHitPassenger(long nCursorX, long nCursorY, long& lPassengerID) {
 	int32_t i;
 	int32_t nCurrentSeat;
-	struct tagHeliPassengerData* tempHeliPassengerData;
+	struct tagHeliPassengerData *tempHeliPassengerData;
 	class MRect rectCurrent;
 
 // LINE 1251:
@@ -6890,7 +6890,7 @@ _T122:
 }
 
 // FUNCTION: COPTER_D 0x0044d2c4
-void MapWindow::MapWindow(class MRect& rectNewPosition, long lNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+void MapWindow::MapWindow(class MRect& rectNewPosition, long lNewID, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
 	__asm        push   0xFFFFFFFF;
 	__asm        mov    eax, bAddToParentList;
@@ -7225,7 +7225,7 @@ _Ta8:
 
 // FUNCTION: COPTER_D 0x0044d7cb
 int32_t MapWindow::ComposeSelf() {
-	struct MISSION_DATA* md;
+	struct MISSION_DATA *md;
 	static const int32_t lFrameCounter = { /* <data@0x00598fc8> */ };
 	long lNewMissionID;
 
@@ -8027,7 +8027,7 @@ _T287:
 }
 
 // FUNCTION: COPTER_D 0x0044e1b7
-int32_t MapWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
+int32_t MapWindow::DoMessage(class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 	long lMessageData;
 
 // LINE 1560:
@@ -8060,7 +8060,7 @@ _T49:
 // FUNCTION: COPTER_D 0x0044e211
 void MapWindow::CreateAutoMessageSelectionPopupWindow(int32_t nAutoID, int32_t nType, class MPoint& ptPosition) {
 	int32_t StringID;
-	class PopupMenuWindow* tempPopupMenuWindow;
+	class PopupMenuWindow *tempPopupMenuWindow;
 
 // LINE 1575:
 	__asm        mov    eax, ptPosition;
@@ -8252,7 +8252,7 @@ _T116:
 }
 
 // FUNCTION: COPTER_D 0x0044e44a
-void EquipmentPanelWindow::EquipmentPanelWindow(char * szImageFileName, class MRect& rectNewPosition, long lNewID, struct CommandSystem* myNewCommandSystem, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner) {
+void EquipmentPanelWindow::EquipmentPanelWindow(char * szImageFileName, class MRect& rectNewPosition, long lNewID, struct CommandSystem *myNewCommandSystem, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner) {
 
 	__asm        push   0xFFFFFFFF;
 	__asm        push   1;
@@ -9251,7 +9251,7 @@ _T173:
 }
 
 // FUNCTION: COPTER_D 0x0044f1bd
-int32_t EquipmentPanelWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
+int32_t EquipmentPanelWindow::DoMessage(class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 // LINE 1923:
 	__asm        cmp    lWindowID, 1;
 	__asm        jne    _T31;
@@ -10021,7 +10021,7 @@ void EquipmentPanelWindow::CreateMegaphoneSelectionPopupWindow() {
 	long nMenuYPosition;
 	int32_t i;
 	long nMenuXPosition;
-	class PopupMenuWindow* tempPopupMenuWindow;
+	class PopupMenuWindow *tempPopupMenuWindow;
 
 // LINE 2063:
 	__asm        mov    eax, this;

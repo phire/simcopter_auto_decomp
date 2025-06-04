@@ -21,7 +21,7 @@ public:
 	virtual long Size() /* override */;
 	virtual void FreeAll() /* override */;
 private:
-	class PFile* m_file;
+	class PFile *m_file;
 	unsigned long m_mark;
 };
 
@@ -74,7 +74,7 @@ public:
 	virtual long Size() /* override */;
 	virtual void FreeAll() /* override */;
 private:
-	class PFile* m_file;
+	class PFile *m_file;
 	unsigned long m_mark;
 };
 
@@ -114,7 +114,7 @@ protected:
 		class cGZXParamBitstream<t_alloc,t_free>::stream_iterator& operator++();
 		class cGZXParamBitstream<t_alloc,t_free>::stream_iterator operator++(int32_t);
 	private:
-		class cGZXParamBitstream<t_alloc,t_free>* m_stream;
+		class cGZXParamBitstream<t_alloc,t_free> *m_stream;
 		class CPropertyType<unsigned long> m_pos;
 		class CPropertyType<short> m_node;
 	};
@@ -129,7 +129,7 @@ protected:
 		class cGZXParamBitstream<t_alloc,t_free>::stream_iterator& operator++();
 		class cGZXParamBitstream<t_alloc,t_free>::stream_iterator operator++(int32_t);
 	private:
-		class cGZXParamBitstream<t_alloc,t_free>* m_stream;
+		class cGZXParamBitstream<t_alloc,t_free> *m_stream;
 		class CPropertyType<unsigned long> m_pos;
 		class CPropertyType<short> m_node;
 	};
@@ -174,9 +174,9 @@ class vector<tGZXBitstreamNode>{
 	using reverse_iterator = class reverse_iterator<tGZXBitstreamNode *,tGZXBitstreamNode,tGZXBitstreamNode &,int>;
 protected:
 	static class allocator<tGZXBitstreamNode> static_allocator;
-	struct tGZXBitstreamNode* start;
-	struct tGZXBitstreamNode* finish;
-	struct tGZXBitstreamNode* end_of_storage;
+	struct tGZXBitstreamNode *start;
+	struct tGZXBitstreamNode *finish;
+	struct tGZXBitstreamNode *end_of_storage;
 	void insert_aux(struct tGZXBitstreamNode*, const struct tGZXBitstreamNode&);
 public:
 	const struct tGZXBitstreamNode* begin();
@@ -240,7 +240,7 @@ protected:
 		class cGZXParamBitstream<t_alloc,t_free>::stream_iterator& operator++();
 		class cGZXParamBitstream<t_alloc,t_free>::stream_iterator operator++(int32_t);
 	private:
-		class cGZXParamBitstream<t_alloc,t_free>* m_stream;
+		class cGZXParamBitstream<t_alloc,t_free> *m_stream;
 		class CPropertyType<unsigned long> m_pos;
 		class CPropertyType<short> m_node;
 	};
@@ -255,7 +255,7 @@ protected:
 		class cGZXParamBitstream<t_alloc,t_free>::stream_iterator& operator++();
 		class cGZXParamBitstream<t_alloc,t_free>::stream_iterator operator++(int32_t);
 	private:
-		class cGZXParamBitstream<t_alloc,t_free>* m_stream;
+		class cGZXParamBitstream<t_alloc,t_free> *m_stream;
 		class CPropertyType<unsigned long> m_pos;
 		class CPropertyType<short> m_node;
 	};
@@ -627,7 +627,7 @@ void cLZAPFileBitStream::FreeAll() {
 }
 
 // FUNCTION: COPTER_D 0x004cbc58
-void SCXReadBudget(class cGZXBitstream* AStream, unsigned char * data) {
+void SCXReadBudget(class cGZXBitstream *AStream, unsigned char * data) {
 // LINE 170:
 	__asm        push   0x71A;
 	__asm        mov    eax, data;
@@ -641,7 +641,7 @@ void SCXReadBudget(class cGZXBitstream* AStream, unsigned char * data) {
 }
 
 // FUNCTION: COPTER_D 0x004cbc7b
-void SCXReadGraphData(class cGZXBitstream* AStream, unsigned char * data) {
+void SCXReadGraphData(class cGZXBitstream *AStream, unsigned char * data) {
 // LINE 185:
 	__asm        push   0xD40;
 	__asm        mov    eax, data;
@@ -655,7 +655,7 @@ void SCXReadGraphData(class cGZXBitstream* AStream, unsigned char * data) {
 }
 
 // FUNCTION: COPTER_D 0x004cbc9e
-void SCXReadPlayer(class cGZXBitstream* AStream, unsigned char * data) {
+void SCXReadPlayer(class cGZXBitstream *AStream, unsigned char * data) {
 // LINE 197:
 	__asm        mov    eax, scxbuf;
 	__asm        push   eax;
@@ -723,10 +723,10 @@ void SCXReadPlayer(class cGZXBitstream* AStream, unsigned char * data) {
 }
 
 // FUNCTION: COPTER_D 0x004cbd38
-void SCXReadNeighbors(class cGZXBitstream* AStream, unsigned char * data) {
+void SCXReadNeighbors(class cGZXBitstream *AStream, unsigned char * data) {
 	long num;
 	long loop;
-	struct SCXNeighborData* pData;
+	struct SCXNeighborData *pData;
 
 // LINE 225:
 	__asm        mov    eax, data;
@@ -970,7 +970,7 @@ _T286:
 }
 
 // FUNCTION: COPTER_D 0x004cbfc8
-void SCXReadContracts(class cGZXBitstream* AStream, unsigned char * data) {
+void SCXReadContracts(class cGZXBitstream *AStream, unsigned char * data) {
 	long num;
 
 // LINE 282:

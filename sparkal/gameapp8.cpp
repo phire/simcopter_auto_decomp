@@ -5,7 +5,7 @@
 // Type: struct list<DirectoryEntry>::list_node_buffer (forward reference);
 struct list<DirectoryEntry>::list_node_buffer{
 	void * __ptr32 next_buffer;
-	struct list<DirectoryEntry>::list_node* buffer;
+	struct list<DirectoryEntry>::list_node *buffer;
 };
 
 // Type: struct list<DirectoryEntry>::list_node (forward reference);
@@ -127,27 +127,27 @@ protected:
 	uint32_t buffer_size();
 	struct list<DirectoryEntry>::list_node_buffer{
 		void * __ptr32 next_buffer;
-		struct list<DirectoryEntry>::list_node* buffer;
+		struct list<DirectoryEntry>::list_node *buffer;
 	};
 	using buffer_allocator_type = class allocator<list<DirectoryEntry>::list_node_buffer>;
 	using buffer_pointer = struct list<DirectoryEntry>::list_node_buffer*;
 protected:
 	static class allocator<list<DirectoryEntry>::list_node_buffer> buffer_allocator;
-	static struct list<DirectoryEntry>::list_node_buffer* buffer_list;
-	static struct list<DirectoryEntry>::list_node* free_list;
-	static struct list<DirectoryEntry>::list_node* next_avail;
-	static struct list<DirectoryEntry>::list_node* last;
+	static struct list<DirectoryEntry>::list_node_buffer *buffer_list;
+	static struct list<DirectoryEntry>::list_node *free_list;
+	static struct list<DirectoryEntry>::list_node *next_avail;
+	static struct list<DirectoryEntry>::list_node *last;
 	void add_new_buffer();
 	static uint32_t number_of_lists;
 	void deallocate_buffers();
 	struct list<DirectoryEntry>::list_node* get_node();
 	void put_node(struct list<DirectoryEntry>::list_node*);
-	struct list<DirectoryEntry>::list_node* node;
+	struct list<DirectoryEntry>::list_node *node;
 	uint32_t length;
 	class list<DirectoryEntry>::iterator : public bidirectional_iterator<DirectoryEntry,int>
 	{
 	protected:
-		struct list<DirectoryEntry>::list_node* node;
+		struct list<DirectoryEntry>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -163,7 +163,7 @@ protected:
 	class list<DirectoryEntry>::const_iterator : public bidirectional_iterator<DirectoryEntry,int>
 	{
 	protected:
-		struct list<DirectoryEntry>::list_node* node;
+		struct list<DirectoryEntry>::list_node *node;
 	public:
 		void const_iterator(const class list<DirectoryEntry>::iterator&);
 		void const_iterator();
@@ -1954,23 +1954,23 @@ uint32_t list<DirectoryEntry>::number_of_lists = 0;
 
 // Contribution: 3:000004b0-000004b3 Module: 68, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005974b0
-struct list<DirectoryEntry>::list_node* list<DirectoryEntry>::last = { 0 /* todo */ };
+struct list<DirectoryEntry>::list_node *list<DirectoryEntry>::last = { 0 /* todo */ };
 
 
 
 // Contribution: 3:000004b4-000004b7 Module: 68, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005974b4
-struct list<DirectoryEntry>::list_node* list<DirectoryEntry>::next_avail = { 0 /* todo */ };
+struct list<DirectoryEntry>::list_node *list<DirectoryEntry>::next_avail = { 0 /* todo */ };
 
 
 
 // Contribution: 3:000004b8-000004bb Module: 68, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005974b8
-struct list<DirectoryEntry>::list_node* list<DirectoryEntry>::free_list = { 0 /* todo */ };
+struct list<DirectoryEntry>::list_node *list<DirectoryEntry>::free_list = { 0 /* todo */ };
 
 
 
 // Contribution: 3:000004bc-000004bf Module: 68, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x005974bc
-struct list<DirectoryEntry>::list_node_buffer* list<DirectoryEntry>::buffer_list = { 0 /* todo */ };
+struct list<DirectoryEntry>::list_node_buffer *list<DirectoryEntry>::buffer_list = { 0 /* todo */ };
 

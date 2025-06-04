@@ -18,7 +18,7 @@ public:
 	virtual class CSparkalWindow* SetWindow(class CSparkalWindow*); // vtable+0x20
 	class CSparkalWindow* GetWindow();
 protected:
-	class CSparkalWindow* mpWindow;
+	class CSparkalWindow *mpWindow;
 };
 
 // Type: void;
@@ -55,8 +55,8 @@ protected:
 	long mHeight;
 	long mWidth;
 	unsigned long mStyle;
-	class ICommander* mpCommander;
-	class ScreenBuffer* mpBackBuffer;
+	class ICommander *mpCommander;
+	class ScreenBuffer *mpBackBuffer;
 	void * __ptr32 mWindow;
 	// calltype: NearStd
 	virtual long MySparkalWindowProc(void * __ptr32, uint32_t, uint32_t, long); // vtable+0x30
@@ -106,7 +106,7 @@ public:
 	virtual class CSparkalWindow* SetWindow(class CSparkalWindow*); // vtable+0x20
 	class CSparkalWindow* GetWindow();
 protected:
-	class CSparkalWindow* mpWindow;
+	class CSparkalWindow *mpWindow;
 };
 
 
@@ -136,8 +136,8 @@ void ICommander::~ICommander() {
 }
 
 // FUNCTION: COPTER_D 0x0049ad7b
-class CSparkalWindow* ICommander::SetWindow(class CSparkalWindow* pWindow) {
-	class CSparkalWindow* ReturnWindow;
+class CSparkalWindow* ICommander::SetWindow(class CSparkalWindow *pWindow) {
+	class CSparkalWindow *ReturnWindow;
 
 // LINE 29:
 	__asm        mov    eax, this;

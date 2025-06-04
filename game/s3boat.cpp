@@ -385,9 +385,9 @@ struct _CELL_INFO{
 	short z;
 	short size;
 	short ctr;
-	struct _STOBJ_INST* stptr;
-	struct _DYOBJ_INST* dyptr;
-	struct _DYOBJ_INST* vwptr;
+	struct _STOBJ_INST *stptr;
+	struct _DYOBJ_INST *dyptr;
+	struct _DYOBJ_INST *vwptr;
 };
 
 // Type: struct Point3d;
@@ -424,8 +424,8 @@ struct Point3d{
 
 // Type: struct _DYOBJ_INST (forward reference);
 struct _DYOBJ_INST{
-	struct _DYOBJ_INST* next;
-	struct _DYOBJ_INST* vnext;
+	struct _DYOBJ_INST *next;
+	struct _DYOBJ_INST *vnext;
 	void * __ptr32 mesh;
 	short flags;
 	short user1;
@@ -470,11 +470,11 @@ struct VRObjInfo{
 	int32_t Verts;
 	int32_t Attribute;
 	int32_t Radius;
-	struct Point3d* ObjCenter;
-	struct Point3d* VertsPtr;
-	struct Xform3d* VertsXfm;
-	struct Point3d* OrgVerts;
-	int32_t[4][4]* Matrix;
+	struct Point3d *ObjCenter;
+	struct Point3d *VertsPtr;
+	struct Xform3d *VertsXfm;
+	struct Point3d *OrgVerts;
+	int32_t *Matrix[4][4];
 };
 
 // Type: char *;
@@ -720,7 +720,7 @@ class BoatClass* BoatClass::CreateInstance(int32_t instanceID) {
 
 // FUNCTION: COPTER_D 0x005276d5
 class BoatClass* BoatClass::CreateInstance(long mapx, long mapy, int32_t instanceID) {
-	class BoatClass* newboat;
+	class BoatClass *newboat;
 
 // LINE 344:
 	__asm        push   0xE3;
@@ -1048,7 +1048,7 @@ _T39:
 	__asm        jge    _T141;
 // LINE 707:
 // Block start:
-	struct _CELL_INFO* cptr;
+	struct _CELL_INFO *cptr;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x37];
 	__asm        and    eax, 0xFF;
@@ -1342,8 +1342,8 @@ enum BoatClass::StoppedReasons BoatClass::CheckWaterDynamicObjectsAt(const struc
 	int32_t xdiff;
 	int32_t zdiff;
 	unsigned short cellType;
-	struct _CELL_INFO* currentCell;
-	struct _DYOBJ_INST* currentObject;
+	struct _CELL_INFO *currentCell;
+	struct _DYOBJ_INST *currentObject;
 	int32_t ydiff;
 
 // LINE 923:
@@ -2213,7 +2213,7 @@ _Te5:
 
 // FUNCTION: COPTER_D 0x00528746
 void BoatClass::UnlinkFromCell(const struct Point2d& point) {
-	struct _CELL_INFO* cellPointer;
+	struct _CELL_INFO *cellPointer;
 
 // LINE 1373:
 	__asm        mov    eax, point;
@@ -2259,7 +2259,7 @@ _T90:
 	__asm        je     _T10a;
 // LINE 1379:
 // Block start:
-	struct _DYOBJ_INST** dyptrptr;
+	struct _DYOBJ_INST **dyptrptr;
 	__asm        mov    eax, cellPointer;
 	__asm        add    eax, 0x10;
 	__asm        mov    dyptrptr, eax;
@@ -2311,7 +2311,7 @@ _T10f:
 
 // FUNCTION: COPTER_D 0x0052885c
 void BoatClass::LinkToCell(const struct Point2d& point) {
-	struct _CELL_INFO* cellPointer;
+	struct _CELL_INFO *cellPointer;
 
 // LINE 1421:
 	__asm        mov    eax, point;
@@ -2371,15 +2371,15 @@ _T98:
 
 // FUNCTION: COPTER_D 0x00528918
 enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Point2d& point) {
-	struct _CELL_INFO* ncptr;
+	struct _CELL_INFO *ncptr;
 	unsigned short southTile;
 	unsigned short westTile;
 	unsigned short currentTile;
 	unsigned short eastTile;
-	struct _CELL_INFO* wcptr;
-	struct _CELL_INFO* scptr;
+	struct _CELL_INFO *wcptr;
+	struct _CELL_INFO *scptr;
 	long intersection;
-	struct _CELL_INFO* ecptr;
+	struct _CELL_INFO *ecptr;
 	unsigned short northTile;
 
 // LINE 1465:
@@ -3909,7 +3909,7 @@ int32_t BoatClass::FinishedUturn() {
 void BoatClass::BeamBoatToWithinCameraRange() {
 	int32_t foundcell;
 	int32_t stop_now;
-	struct _CELL_INFO* cptr;
+	struct _CELL_INFO *cptr;
 	int32_t curr_dir;
 	int32_t currentFlag;
 	int32_t i;
@@ -4367,7 +4367,7 @@ _T3b:
 int32_t BoatClass::BeamBoatToLocation(long mapx, long mapy) {
 	int32_t foundcell;
 	int32_t stop_now;
-	struct _CELL_INFO* cptr;
+	struct _CELL_INFO *cptr;
 	int32_t curr_dir;
 	int32_t currentFlag;
 	int32_t i;
@@ -5431,7 +5431,7 @@ struct _DYOBJ_INST* BoatClass::StartCapsizedBoat(long mission_id, int32_t timeto
 	long x;
 	long count;
 	long totalpersons;
-	class BoatClass* capboat;
+	class BoatClass *capboat;
 
 // LINE 3066:
 	__asm        mov    eax, boats[0];
@@ -5586,7 +5586,7 @@ _T178:
 
 // FUNCTION: COPTER_D 0x0052acfb
 struct _DYOBJ_INST* BoatClass::GetCapsizedBoat() {
-	class BoatClass* capboat;
+	class BoatClass *capboat;
 
 // LINE 3129:
 	__asm        mov    eax, boats[0];
@@ -5657,7 +5657,7 @@ int32_t S3BoatMIFFSave(void * __ptr32 miffWriter) {
 int32_t BoatClass::MIFFLoad(void * __ptr32 miffReader) {
 	int32_t i;
 	int32_t ret;
-	class BoatClass* b;
+	class BoatClass *b;
 
 // LINE 3207:
 	__asm        push   0xE3;
@@ -5959,7 +5959,7 @@ struct Point2d BoatClass::lastScannedLocation = { 0 /* todo */ };
 class BoatClass BoatClass::lsBoat;
 
 // GLOBAL: COPTER_D 0x0062b6d8
-class BoatClass* boats[3];
+class BoatClass *boats[3];
 
 // GLOBAL: COPTER_D 0x0062b6e4
 // $S5
