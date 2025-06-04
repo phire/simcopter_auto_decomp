@@ -5994,9 +5994,9 @@ _T3146:
 // FUNCTION: COPTER_D 0x00479dbb
 void CatalogWindow::DrawCurrentEquipmentSelection() {
 	class MRect rectOutline;
-	static const int32_t nColorDirection = { /* <data@0x00599838> */ };
+	static const int32_t nColorDirection = { /* todo */ };
 	const int32_t nColorArraySize;
-	static const int32_t nColorArrayCurrentIndex = { /* <data@0x00599834> */ };
+	static const int32_t nColorArrayCurrentIndex = { /* todo */ };
 	unsigned long lIndexArray[6];
 
 // LINE 397:

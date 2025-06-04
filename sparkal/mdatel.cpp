@@ -583,7 +583,6 @@ _T28:
 
 // FUNCTION: COPTER_D 0x0041fb6a
 class ostream& operator<<(class ostream& s, const class MTimeLocalized& t) {
-	static const <NoType> = { /* <data@0x0041fde4> */ };
 	uint32_t hh;
 	uint32_t mm;
 	int32_t nLanguageToUse;
@@ -1268,7 +1267,6 @@ _T8a:
 
 // FUNCTION: COPTER_D 0x004203d3
 class ostream& operator<<(class ostream& s, const class MDateLocalized& d) {
-	static const <NoType> = { /* <data@0x0042058b> */ };
 	int32_t nLanguageToUse;
 	char buf[80];
 

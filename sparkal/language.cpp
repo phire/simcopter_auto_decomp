@@ -3884,7 +3884,6 @@ _T5b:
 
 // FUNCTION: COPTER_D 0x0042d083
 int32_t LanguageManager::GetCurrentSystemLocale() {
-	static const <NoType> = { /* <data@0x0042d309> */ };
 	unsigned short currentLanguageID;
 	unsigned long currentLCID;
 

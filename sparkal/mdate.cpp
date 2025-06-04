@@ -1786,7 +1786,7 @@ _T102:
 // FUNCTION: COPTER_D 0x004bd27c
 static char * ParseMonth(class istream& s) {
 	char c;
-	static const char month[12] = { /* <data@0x006069a8> */ };
+	static const char month[12] = { /* todo */ };
 	char * p;
 
 // LINE 549:

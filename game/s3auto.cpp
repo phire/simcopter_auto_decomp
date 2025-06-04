@@ -8114,7 +8114,6 @@ _T5c:
 
 // FUNCTION: COPTER_D 0x00506f6f
 void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
-	static const <NoType> = { /* <data@0x00507464> */ };
 	unsigned short tile;
 	enum DirectionTypes validdirs[8];
 	int32_t i;
@@ -10349,8 +10348,6 @@ _T94d:
 
 // FUNCTION: COPTER_D 0x00508ad4
 void AutomobileClass::MakeAHiwayTurn(enum AutomobileClass::IntersectionTypes intersectionType) {
-	static const <NoType> = { /* <data@0x00508ca6> */ };
-
 // LINE 4237:
 	__asm        mov    eax, intersectionType;
 	__asm        mov    [ebp-8], eax;
@@ -11617,7 +11614,6 @@ _T36a:
 
 // FUNCTION: COPTER_D 0x00509cf7
 void AutomobileClass::ChangeAutoColor() {
-	static const <NoType> = { /* <data@0x00509ee1> */ };
 	int32_t base;
 	int32_t index;
 	struct VRFaceInfo finfo;

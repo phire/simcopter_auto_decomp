@@ -2484,7 +2484,7 @@ _T82:
 
 // FUNCTION: COPTER_D 0x0052f41b
 void TrainClass::AdjustSpeed() {
-	static const int32_t speedAdjustor = { /* <data@0x005b7838> */ };
+	static const int32_t speedAdjustor = { /* todo */ };
 
 // LINE 1424:
 	this->speed = this->desiredSpeed;
@@ -3049,9 +3049,6 @@ _Te8:
 
 // FUNCTION: COPTER_D 0x0052fa85
 void TrainClass::SetTrainDirection(unsigned short tileType) {
-	static const <NoType> = { /* <data@0x00530db4> */ };
-	static const <NoType> = { /* <data@0x00530381> */ };
-
 // LINE 1723:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x35;

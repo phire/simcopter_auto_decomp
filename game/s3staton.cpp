@@ -378,14 +378,12 @@ struct RGVertex{
 	unsigned char y;
 	LfBitfield @ 0x11f58:
 	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x4
-	[90m   LB.[95msymbols[m = []
 	[90m   LB.[95mTI[m = 0x1771
 	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x0
 	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
 	 turnFlags;
 	LfBitfield @ 0x11f60:
 	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x4
-	[90m   LB.[95msymbols[m = []
 	[90m   LB.[95mTI[m = 0x1772
 	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x4
 	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
@@ -2127,7 +2125,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	int32_t pathFound;
 	struct Goal destGoal2;
 	class EmergencyVehicleClass *availableVehicle;
-	static const class DigitalSound errorMsgSound = { /* <data@0x006351d0> */ };
+	static const class DigitalSound errorMsgSound = { /* todo */ };
 	struct _StationHeapStruct stationHeapStruct;
 	struct Goal result;
 	struct _RGIndex startVertex;

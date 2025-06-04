@@ -1388,7 +1388,6 @@ _T3e5:
 
 // FUNCTION: COPTER_D 0x0053964a
 int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum DirectionTypes CurDir, enum DirectionTypes TestDir) {
-	static const <NoType> = { /* <data@0x00539a7e> */ };
 	enum DirectionTypes fromConnections;
 	enum DirectionTypes toConnections;
 

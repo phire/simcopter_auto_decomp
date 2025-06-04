@@ -2534,7 +2534,7 @@ _T9d:
 
 // FUNCTION: COPTER_D 0x004a1ff2
 int32_t GraphicWindowManager::DeleteAllWindowsInDeletionList() {
-	static const int32_t nReentrancyCount = { /* <data@0x0059a96c> */ };
+	static const int32_t nReentrancyCount = { /* todo */ };
 	class list<GraphicWindow *>::iterator tempGraphicWindowPtrListIterator;
 
 // LINE 165:

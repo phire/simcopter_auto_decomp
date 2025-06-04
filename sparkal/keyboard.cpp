@@ -348,9 +348,9 @@ _T61:
 
 // FUNCTION: COPTER_D 0x00431f1f
 char Keyboard::ConvertKeyToCharacter(unsigned char chKey, unsigned char chModifiers) {
-	static const char chExtraArray[11] = { /* <data@0x00598360> */ };
+	static const char chExtraArray[11] = { /* todo */ };
 	char chIndex;
-	static const char chNumberArray[10] = { /* <data@0x00598350> */ };
+	static const char chNumberArray[10] = { /* todo */ };
 
 // LINE 171:
 	__asm        xor    eax, eax;

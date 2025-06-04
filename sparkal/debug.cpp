@@ -1242,7 +1242,7 @@ _T63c:
 
 // FUNCTION: COPTER_D 0x004228ee
 void CDebugWindow::CDebugWindow() {
-	static const struct class_debugger<CDebugWindow,CDebugWindowhelp_text> help_command = { /* <data@0x005c2900> */ };
+	static const struct class_debugger<CDebugWindow,CDebugWindowhelp_text> help_command = { /* todo */ };
 
 
 	__asm        mov    eax, this;

@@ -165,7 +165,6 @@ _T62:
 
 // FUNCTION: COPTER_D 0x00513e81
 short S3TerrainInitMap() {
-	static const <NoType> = { /* <data@0x00515521> */ };
 	short tile;
 	short alt;
 	long y;

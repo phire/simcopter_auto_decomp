@@ -72,14 +72,12 @@ struct RGVertex{
 	unsigned char y;
 	LfBitfield @ 0x11f58:
 	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x4
-	[90m   LB.[95msymbols[m = []
 	[90m   LB.[95mTI[m = 0x1771
 	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x0
 	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
 	 turnFlags;
 	LfBitfield @ 0x11f60:
 	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x4
-	[90m   LB.[95msymbols[m = []
 	[90m   LB.[95mTI[m = 0x1772
 	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x4
 	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
@@ -127,21 +125,18 @@ enum SlopeIndex {
 struct Road{
 	LfBitfield @ 0x11b34:
 	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x2
-	[90m   LB.[95msymbols[m = []
 	[90m   LB.[95mTI[m = 0x174e
 	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x0
 	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
 	 direction;
 	LfBitfield @ 0x11b3c:
 	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x2
-	[90m   LB.[95msymbols[m = []
 	[90m   LB.[95mTI[m = 0x174f
 	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x2
 	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
 	 slope;
 	LfBitfield @ 0x11b44:
 	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x1
-	[90m   LB.[95msymbols[m = []
 	[90m   LB.[95mTI[m = 0x1750
 	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x4
 	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
@@ -2850,8 +2845,6 @@ _Tf6:
 
 // FUNCTION: COPTER_D 0x0053d9d2
 void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex *pRGV) {
-	static const <NoType> = { /* <data@0x0053e04e> */ };
-	static const <NoType> = { /* <data@0x0053dd66> */ };
 	int32_t stepSize;
 	int32_t Offset;
 	struct Edge *pEdge;
@@ -3591,7 +3584,6 @@ _T927:
 
 // FUNCTION: COPTER_D 0x0053e305
 void RoadGraph::FindNumRoadElements(struct RGVertex *pRGV, struct Edge *pEdge, enum DirIndex2 currentDir, unsigned char x, unsigned char y, int32_t fDeadEnd) {
-	static const <NoType> = { /* <data@0x0053e75f> */ };
 	int32_t repeatCount;
 	enum DirIndex2 returnStatus;
 	enum DirIndex2 returnDir;
@@ -4614,14 +4606,6 @@ _T61f:
 
 // FUNCTION: COPTER_D 0x0053eed6
 void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) {
-	static const <NoType> = { /* <data@0x005403b8> */ };
-	static const <NoType> = { /* <data@0x00540119> */ };
-	static const <NoType> = { /* <data@0x0053fe7b> */ };
-	static const <NoType> = { /* <data@0x0053fbde> */ };
-	static const <NoType> = { /* <data@0x0053f940> */ };
-	static const <NoType> = { /* <data@0x0053f69d> */ };
-	static const <NoType> = { /* <data@0x0053f3fb> */ };
-	static const <NoType> = { /* <data@0x0053f158> */ };
 	unsigned char yindex;
 
 // LINE 1099:

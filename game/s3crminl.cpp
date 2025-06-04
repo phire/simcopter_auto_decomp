@@ -1071,11 +1071,6 @@ _T45:
 
 // FUNCTION: COPTER_D 0x00535202
 int32_t CriminalEvaderCarClass::NearToBuilding() {
-	static const <NoType> = { /* <data@0x00535675> */ };
-	static const <NoType> = { /* <data@0x0053557c> */ };
-	static const <NoType> = { /* <data@0x005354c9> */ };
-	static const <NoType> = { /* <data@0x005353dc> */ };
-	static const <NoType> = { /* <data@0x005352c5> */ };
 	struct _GridCoordinates scanLoc;
 	class SpiralScan scan;
 

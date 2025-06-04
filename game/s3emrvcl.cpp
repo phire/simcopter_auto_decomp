@@ -187,14 +187,12 @@ struct RGVertex{
 	unsigned char y;
 	LfBitfield @ 0x11f58:
 	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x4
-	[90m   LB.[95msymbols[m = []
 	[90m   LB.[95mTI[m = 0x1771
 	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x0
 	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
 	 turnFlags;
 	LfBitfield @ 0x11f60:
 	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x4
-	[90m   LB.[95msymbols[m = []
 	[90m   LB.[95mTI[m = 0x1772
 	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x4
 	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206

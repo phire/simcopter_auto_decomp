@@ -78,8 +78,6 @@ struct _DYOBJ_INST{
 // Contribution: 1:00117f90-0011d769 Module: 168, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00518f90
 void S3ObjInit() {
-	static const <NoType> = { /* <data@0x00519437> */ };
-	static const <NoType> = { /* <data@0x005191e8> */ };
 	char msg[80];
 	int32_t obj;
 	long j;
@@ -8163,22 +8161,6 @@ _T36:
 
 // FUNCTION: COPTER_D 0x0051da96
 void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST *dyhitter, struct _DYOBJ_INST *dyhittee, long mission_id, long xtra_msg) {
-	static const <NoType> = { /* <data@0x0051e624> */ };
-	static const <NoType> = { /* <data@0x0051e581> */ };
-	static const <NoType> = { /* <data@0x0051e4de> */ };
-	static const <NoType> = { /* <data@0x0051e43b> */ };
-	static const <NoType> = { /* <data@0x0051e398> */ };
-	static const <NoType> = { /* <data@0x0051e2f5> */ };
-	static const <NoType> = { /* <data@0x0051e252> */ };
-	static const <NoType> = { /* <data@0x0051e1af> */ };
-	static const <NoType> = { /* <data@0x0051e10c> */ };
-	static const <NoType> = { /* <data@0x0051e069> */ };
-	static const <NoType> = { /* <data@0x0051dfc6> */ };
-	static const <NoType> = { /* <data@0x0051df23> */ };
-	static const <NoType> = { /* <data@0x0051de64> */ };
-	static const <NoType> = { /* <data@0x0051ddc1> */ };
-	static const <NoType> = { /* <data@0x0051dd1e> */ };
-	static const <NoType> = { /* <data@0x0051dc7b> */ };
 	long hittee_type;
 
 // LINE 3707:

@@ -1,8 +1,6 @@
 // Function in module: S3rdgrph.obj
 // FUNCTION: COPTER_D 0x00541360
 int32_t TimeOfTravelTable(unsigned short t) {
-	static const <NoType> = { /* <data@0x0054150d> */ };
-
 // LINE 779:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(t);
 	__asm        and    eax, 0xFFFF;

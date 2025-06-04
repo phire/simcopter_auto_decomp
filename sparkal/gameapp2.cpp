@@ -870,7 +870,7 @@ _T141:
 
 // FUNCTION: COPTER_D 0x00461629
 unsigned long  CGameApp::TickGame() {
-	static const long lFramesSinceLastSecond = { /* <data@0x00599294> */ };
+	static const long lFramesSinceLastSecond = { /* todo */ };
 	long lElapsedMilliSeconds;
 
 // LINE 222:
@@ -1477,10 +1477,10 @@ _T608:
 
 // FUNCTION: COPTER_D 0x00461eb9
 void  CGameApp::ComposePlayFrame() {
-	static const long lThisLoopTickCount = { /* <data@0x0059929c> */ };
+	static const long lThisLoopTickCount = { /* todo */ };
 	long lBuildingID;
-	static const long lLastLoopTickCount = { /* <data@0x00599298> */ };
-	static const long lFrameCount = { /* <data@0x005992a0> */ };
+	static const long lLastLoopTickCount = { /* todo */ };
+	static const long lFrameCount = { /* todo */ };
 
 // LINE 406:
 	__asm        inc    lFrameCount;
@@ -2496,7 +2496,7 @@ _T733:
 	__asm        jne    _Ta7c;
 // LINE 549:
 // Block start:
-	static const int32_t bDoneJoystickChangeCheckAlready = { /* <data@0x005992a4> */ };
+	static const int32_t bDoneJoystickChangeCheckAlready = { /* todo */ };
 	int32_t bCheckForCommandLineCheatCodes;
 	bCheckForCommandLineCheatCodes = 0x0;
 // LINE 551:

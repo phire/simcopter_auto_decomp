@@ -1209,7 +1209,7 @@ _T286:
 
 // FUNCTION: COPTER_D 0x00527c7a
 void BoatClass::AdjustSpeed() {
-	static const int32_t speedAdjustor = { /* <data@0x005b73f0> */ };
+	static const int32_t speedAdjustor = { /* todo */ };
 
 // LINE 861:
 	this->speed = this->desiredSpeed;
@@ -1676,7 +1676,6 @@ _Te8:
 
 // FUNCTION: COPTER_D 0x005281a8
 void BoatClass::SetBoatDirection(unsigned short tileType) {
-	static const <NoType> = { /* <data@0x00528466> */ };
 	unsigned short tile;
 	enum DirectionTypes validdirs[4];
 	int32_t i;

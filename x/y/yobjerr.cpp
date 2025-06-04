@@ -914,28 +914,24 @@ public:
 		short rhsData;
 		LfBitfield @ 0x5d5b4:
 		[90m   LB.[32m[  0.  1][m [95mlength[m = 0x8
-		[90m   LB.[95msymbols[m = []
 		[90m   LB.[95mTI[m = 0x3565
 		[90m   LB.[32m[  1.  1][m [95mposition[m = 0x0
 		[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
 		 isSigned;
 		LfBitfield @ 0x5d5bc:
 		[90m   LB.[32m[  0.  1][m [95mlength[m = 0x8
-		[90m   LB.[95msymbols[m = []
 		[90m   LB.[95mTI[m = 0x3566
 		[90m   LB.[32m[  1.  1][m [95mposition[m = 0x8
 		[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
 		 opType;
 		LfBitfield @ 0x5d5b4:
 		[90m   LB.[32m[  0.  1][m [95mlength[m = 0x8
-		[90m   LB.[95msymbols[m = []
 		[90m   LB.[95mTI[m = 0x3565
 		[90m   LB.[32m[  1.  1][m [95mposition[m = 0x0
 		[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
 		 lhsOwner;
 		LfBitfield @ 0x5d5bc:
 		[90m   LB.[32m[  0.  1][m [95mlength[m = 0x8
-		[90m   LB.[95msymbols[m = []
 		[90m   LB.[95mTI[m = 0x3566
 		[90m   LB.[32m[  1.  1][m [95mposition[m = 0x8
 		[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
@@ -1041,8 +1037,6 @@ public:
 // Contribution: 1:00161500-0016160a Module: 188, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00562500
 void cYObject::Error(short errNum) {
-	static const <NoType> = { /* <data@0x005625e6> */ };
-
 // LINE 14:
 	__asm        movsx  eax, errNum;
 	__asm        mov    [ebp-8], eax;

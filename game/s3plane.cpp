@@ -1355,7 +1355,7 @@ _T14d:
 
 // FUNCTION: COPTER_D 0x0052baf5
 void PlaneClass::AdjustSpeed() {
-	static const int32_t speedAdjustor = { /* <data@0x005b769c> */ };
+	static const int32_t speedAdjustor = { /* todo */ };
 
 // LINE 954:
 	this->speed = this->desiredSpeed;
