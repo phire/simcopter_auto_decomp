@@ -38,14 +38,11 @@ struct _GridCoordinates{
 // FUNCTION: COPTER_D 0x00542dc0
 void SpiralScan::SpiralScan(int32_t radius) {
 // LINE 10:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0;
+	this->currDist = 0x0;
 // LINE 11:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
+	this->currDir = 0x0;
 // LINE 12:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 1;
+	this->currDia = 0x1;
 // LINE 13:
 	__asm        mov    eax, radius;
 	__asm        add    eax, eax;
@@ -85,8 +82,7 @@ _T25:
 	__asm        mov    eax, [ebp-4];
 	__asm        and    dword ptr [eax], 3;
 // LINE 30:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0;
+	this->currDist = 0x0;
 // LINE 32:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;

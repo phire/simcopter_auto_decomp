@@ -81,11 +81,9 @@ void Version::Version() {
 	char szFileName[260];
 
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F5B8;
+	this-><vftable> = 0x58f5b8;
 // LINE 31:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->lpFVData = 0x0;
 // LINE 35:
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C363C];
@@ -151,8 +149,7 @@ void Version::Version() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 45:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->lpFVData = 0x0;
 // LINE 50:
 _T120:
 	__asm        jmp    near ptr 0x0043DC05;
@@ -163,8 +160,7 @@ _T120:
 // FUNCTION: COPTER_D 0x0043dc10
 void Version::~Version() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F5B8;
+	this-><vftable> = 0x58f5b8;
 // LINE 59:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -518,7 +514,7 @@ int32_t Version::GetSystemType() {
 	unsigned long dwVersion;
 
 // LINE 268:
-	__asm        mov    nSystemType, 0;
+	nSystemType = 0x0;
 // LINE 271:
 	__asm        call   dword ptr ds:[0x6C3644];
 	__asm        mov    dwVersion, eax;
@@ -526,12 +522,12 @@ int32_t Version::GetSystemType() {
 	__asm        cmp    dwVersion, 0x80000000;
 	__asm        jae    _T32;
 // LINE 274:
-	__asm        mov    nSystemType, 4;
+	nSystemType = 0x4;
 // LINE 275:
 	__asm        jmp    _T39;
 // LINE 276:
 _T32:
-	__asm        mov    nSystemType, 3;
+	nSystemType = 0x3;
 // LINE 285:
 _T39:
 	__asm        mov    eax, nSystemType;
@@ -582,7 +578,7 @@ long Version::GetCPUVersion() {
 	__asm        cmp    lReturnValue, 0xA;
 	__asm        jle    _T25;
 // LINE 341:
-	__asm        mov    lReturnValue, 0xA;
+	lReturnValue = 0xa;
 // LINE 342:
 _T25:
 	__asm        mov    eax, lReturnValue;

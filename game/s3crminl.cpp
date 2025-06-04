@@ -441,8 +441,7 @@ void CriminalEvaderCarClass::CriminalEvaderCarClass() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593258;
 // LINE 98:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0x11E;
+	this->flags = 0x11e;
 // LINE 99:
 	__asm        jmp    near ptr 0x00534A44;
 
@@ -477,7 +476,7 @@ class CriminalEvaderCarClass* CriminalEvaderCarClass::CreateInstance(int32_t ins
 	__asm        mov    youveWonABrandNewCar, eax;
 	__asm        jmp    _T3a;
 _T33:
-	__asm        mov    youveWonABrandNewCar, 0;
+	youveWonABrandNewCar = 0x0;
 // LINE 130:
 _T3a:
 	__asm        cmp    youveWonABrandNewCar, 0;
@@ -529,11 +528,9 @@ int32_t CriminalEvaderCarClass::StartCriminalMission(short mID, short mType, lon
 	struct _GridCoordinates startLoc;
 
 // LINE 159:
-	__asm        mov    al, reinterpret_cast<uint8_t>(x);
-	__asm        mov    startLoc.x, al;
+	startLoc.x = reinterpret_cast<uint8_t>(x);
 // LINE 160:
-	__asm        mov    al, reinterpret_cast<uint8_t>(y);
-	__asm        mov    startLoc.y, al;
+	startLoc.y = reinterpret_cast<uint8_t>(y);
 // LINE 165:
 	__asm        mov    i, 0;
 	__asm        jmp    _T24;
@@ -556,7 +553,7 @@ _T24:
 	__asm        test   eax, eax;
 	__asm        je     _T10c;
 // LINE 175:
-	__asm        mov    mp.op, 0xA;
+	mp.op = 0xa;
 // LINE 176:
 	__asm        movsx  eax, mID;
 	__asm        mov    mp.id, eax;
@@ -638,8 +635,7 @@ void CriminalEvaderCarClass::ItterateFSM() {
 	__asm        cmp    dword ptr [eax+0x116], 0;
 	__asm        je     _T141;
 // LINE 216:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x11A], 2;
+	this->timeToLeaveCar = 0x2;
 // LINE 218:
 	__asm        push   0x30;
 	__asm        call   S3SoundIsPlaying;
@@ -713,9 +709,7 @@ _T10e:
 _T113:
 	__asm        jmp    near ptr 0x00534D5D;
 
-	__asm        mov    eax, [ebp-0x58];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x112], eax;
+	reinterpret_cast<uint32_t>(this->missionID) = None;
 // LINE 228:
 	__asm        push   6;
 	__asm        lea    eax, loc.x;
@@ -735,8 +729,7 @@ _T141:
 	__asm        cmp    dword ptr [eax+0x122], 0;
 	__asm        jge    _T182;
 // LINE 235:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x11A], 1;
+	this->timeToLeaveCar = 0x1;
 // LINE 236:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
@@ -769,8 +762,7 @@ _T195:
 	__asm        cmp    dword ptr [eax+0x116], 0;
 	__asm        je     _T1cc;
 // LINE 251:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x11A], 2;
+	this->timeToLeaveCar = 0x2;
 // LINE 253:
 	__asm        jmp    _T2a5;
 _T1cc:
@@ -807,14 +799,11 @@ _T20b:
 	__asm        test   eax, eax;
 	__asm        je     _T258;
 // LINE 261:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x11A], 3;
+	this->timeToLeaveCar = 0x3;
 // LINE 262:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xF6], 0;
+	this->fireTime = 0x0;
 // LINE 263:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xFE], 0x780000;
+	this->missionId = 0x780000;
 // LINE 265:
 	__asm        jmp    _T2a0;
 // LINE 269:
@@ -831,16 +820,13 @@ _T258:
 	__asm        jmp    _T279;
 // LINE 270:
 _T279:
-	__asm        mov    mp.op, 0x1D;
+	mp.op = 0x1d;
 // LINE 271:
-	__asm        mov    mp.i2num, 8;
+	mp.i2num = 0x8;
 // LINE 272:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10E];
-	__asm        mov    mp.id, eax;
+	mp.id = this->missionState;
 // LINE 274:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x11A], 4;
+	this->timeToLeaveCar = 0x4;
 // LINE 277:
 // Block end:
 _T2a0:
@@ -871,16 +857,13 @@ _T2e5:
 	__asm        cmp    dword ptr [eax+0xFA], 0;
 	__asm        jne    _T321;
 // LINE 295:
-	__asm        mov    mp.op, 0x1D;
+	mp.op = 0x1d;
 // LINE 296:
-	__asm        mov    mp.i2num, 8;
+	mp.i2num = 0x8;
 // LINE 297:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10E];
-	__asm        mov    mp.id, eax;
+	mp.id = this->missionState;
 // LINE 299:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x11A], 4;
+	this->timeToLeaveCar = 0x4;
 // LINE 300:
 	__asm        jmp    _T4e4;
 // LINE 304:
@@ -902,8 +885,7 @@ _T346:
 	__asm        test   byte ptr [eax+8], 0x60;
 	__asm        jne    _T360;
 // LINE 313:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x11A], 0;
+	this->timeToLeaveCar = 0x0;
 // LINE 316:
 _T360:
 	__asm        mov    ecx, this;
@@ -933,14 +915,11 @@ _T368:
 	__asm        test   eax, eax;
 	__asm        je     _T3da;
 // LINE 330:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x11A], 3;
+	this->timeToLeaveCar = 0x3;
 // LINE 331:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xF6], 0;
+	this->fireTime = 0x0;
 // LINE 332:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xFE], 0x780000;
+	this->missionId = 0x780000;
 // LINE 334:
 	__asm        jmp    _T422;
 // LINE 338:
@@ -957,16 +936,13 @@ _T3da:
 	__asm        jmp    _T3fb;
 // LINE 339:
 _T3fb:
-	__asm        mov    mp.op, 0x1D;
+	mp.op = 0x1d;
 // LINE 340:
-	__asm        mov    mp.i2num, 8;
+	mp.i2num = 0x8;
 // LINE 341:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10E];
-	__asm        mov    mp.id, eax;
+	mp.id = this->missionState;
 // LINE 343:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x11A], 4;
+	this->timeToLeaveCar = 0x4;
 // LINE 346:
 // Block end:
 _T422:
@@ -977,9 +953,7 @@ _T427:
 	__asm        cmp    dword ptr [eax+0x116], 0;
 	__asm        je     _T44a;
 // LINE 352:
-	__asm        mov    eax, CriminalEvaderCarClass::constantTimeToBeOnTheRun;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x126], eax;
+	this-><CriminalEvaderCarClass+0x126> = CriminalEvaderCarClass::constantTimeToBeOnTheRun;
 // LINE 354:
 	__asm        jmp    _T48d;
 _T44a:
@@ -987,12 +961,9 @@ _T44a:
 	__asm        cmp    dword ptr [eax+0x126], 0;
 	__asm        jge    _T47a;
 // LINE 356:
-	__asm        mov    eax, CriminalEvaderCarClass::constantTimeToBeOnTheRun;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x126], eax;
+	this-><CriminalEvaderCarClass+0x126> = CriminalEvaderCarClass::constantTimeToBeOnTheRun;
 // LINE 357:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x11A], 0;
+	this->timeToLeaveCar = 0x0;
 // LINE 359:
 	__asm        jmp    _T48d;
 // LINE 360:
@@ -1114,9 +1085,7 @@ int32_t CriminalEvaderCarClass::NearToBuilding() {
 	__asm        lea    ecx, scan.currDist;
 	__asm        call   SpiralScan::SpiralScan;
 // LINE 443:
-	__asm        mov    eax, this;
-	__asm        mov    ax, [eax+0x7C];
-	__asm        mov    reinterpret_cast<uint16_t>(scanLoc.x), ax;
+	reinterpret_cast<uint16_t>(scanLoc.x) = *reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&this->goal.edgeIndex) + 2);
 // LINE 447:
 // Block start:
 	unsigned short tt;
@@ -1311,11 +1280,9 @@ void CriminalEvaderCarClass::ShowWhereWeAre() {
 	struct _MISSION_PARMS mp;
 
 // LINE 649:
-	__asm        mov    mp.op, 0xA;
+	mp.op = 0xa;
 // LINE 650:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10E];
-	__asm        mov    mp.id, eax;
+	mp.id = this->missionState;
 // LINE 654:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -1338,25 +1305,13 @@ void CriminalEvaderCarClass::ShowWhereWeAre() {
 // FUNCTION: COPTER_D 0x00535754
 void CriminalEvaderCarClass::SetSaveData(struct _AUTO_LOAD_SAVE *sd) {
 // LINE 669:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x11A];
-	__asm        mov    ecx, sd;
-	__asm        mov    [ecx+0x10E], eax;
+	sd->c.missionState = this->timeToLeaveCar;
 // LINE 670:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x11E];
-	__asm        mov    ecx, sd;
-	__asm        mov    [ecx+0x112], eax;
+	sd->c.criminalType = this->timeToBeOnTheRun;
 // LINE 671:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x122];
-	__asm        mov    ecx, sd;
-	__asm        mov    [ecx+0x116], eax;
+	sd->c.timeToLeaveCar = this-><CriminalEvaderCarClass+0x122>;
 // LINE 672:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x126];
-	__asm        mov    ecx, sd;
-	__asm        mov    [ecx+0x11A], eax;
+	sd->c.timeToBeOnTheRun = this-><CriminalEvaderCarClass+0x126>;
 // LINE 675:
 	__asm        mov    eax, sd;
 	__asm        push   eax;
@@ -1381,25 +1336,13 @@ _T1d:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::LoadSaveData;
 // LINE 698:
-	__asm        mov    eax, sd;
-	__asm        mov    eax, [eax+0x10E];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x11A], eax;
+	this->timeToLeaveCar = sd->c.missionState;
 // LINE 699:
-	__asm        mov    eax, sd;
-	__asm        mov    eax, [eax+0x112];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x11E], eax;
+	this->timeToBeOnTheRun = sd->c.criminalType;
 // LINE 700:
-	__asm        mov    eax, sd;
-	__asm        mov    eax, [eax+0x116];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x122], eax;
+	this-><CriminalEvaderCarClass+0x122> = sd->c.timeToLeaveCar;
 // LINE 701:
-	__asm        mov    eax, sd;
-	__asm        mov    eax, [eax+0x11A];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x126], eax;
+	this-><CriminalEvaderCarClass+0x126> = sd->c.timeToBeOnTheRun;
 // LINE 702:
 	__asm        jmp    _T76;
 _T76:

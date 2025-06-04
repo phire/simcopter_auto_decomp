@@ -43,15 +43,15 @@ void InitResource() {
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 94:
-	__asm        mov    ResourceFilePtr, 0;
+	ResourceFilePtr = 0x0;
 // LINE 95:
-	__asm        mov    ResourceDir, 0;
+	ResourceDir = 0x0;
 // LINE 96:
-	__asm        mov    GEOM_GPdir, 0;
+	GEOM_GPdir = 0x0;
 // LINE 97:
-	__asm        mov    GEOM_IDdir, 0;
+	GEOM_IDdir = 0x0;
 // LINE 98:
-	__asm        mov    CMAP_directory, 0;
+	CMAP_directory = 0x0;
 // LINE 100:
 }
 
@@ -60,8 +60,7 @@ void VRResFreeBarrys(struct VRResource *res) {
 	struct GEOM_Resource *geo;
 
 // LINE 113:
-	__asm        mov    eax, res;
-	__asm        mov    geo, eax;
+	geo = res;
 // LINE 115:
 	__asm        mov    eax, res;
 	__asm        cmp    dword ptr [eax+8], 1;
@@ -129,7 +128,7 @@ _T3e:
 	__asm        test   eax, eax;
 	__asm        jne    _T136;
 // LINE 151:
-	__asm        mov    bufferBad, 1;
+	bufferBad = 0x1;
 // LINE 153:
 	__asm        push   0;
 	__asm        mov    eax, i;
@@ -146,7 +145,7 @@ _T3e:
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    _Tbd;
 // LINE 154:
-	__asm        mov    GlobalError, 3;
+	GlobalError = 0x3;
 // LINE 155:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T4ca;
@@ -173,9 +172,7 @@ _Te3:
 	__asm        jmp    _T4ca;
 // LINE 162:
 _Tfc:
-	__asm        mov    eax, G_currmempool;
-	__asm        mov    ecx, res;
-	__asm        mov    [ecx+4], eax;
+	res->mempoolid = G_currmempool;
 // LINE 163:
 	__asm        mov    eax, res;
 	__asm        push   eax;
@@ -200,7 +197,7 @@ _T136:
 	__asm        jmp    _T3b;
 // LINE 170:
 _T13b:
-	__asm        mov    GlobalError, 7;
+	GlobalError = 0x7;
 // LINE 171:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T4ca;
@@ -231,9 +228,7 @@ _T177:
 	__asm        jmp    _T4ca;
 // LINE 181:
 _T197:
-	__asm        mov    eax, G_currmempool;
-	__asm        mov    ecx, res;
-	__asm        mov    [ecx+4], eax;
+	res->mempoolid = G_currmempool;
 // LINE 182:
 	__asm        mov    eax, res;
 	__asm        push   eax;
@@ -288,7 +283,7 @@ _T1fb:
 	__asm        test   eax, eax;
 	__asm        jne    _T32d;
 // LINE 196:
-	__asm        mov    bufferBad, 1;
+	bufferBad = 0x1;
 // LINE 198:
 	__asm        push   0;
 	__asm        mov    eax, i;
@@ -306,7 +301,7 @@ _T1fb:
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    _T280;
 // LINE 199:
-	__asm        mov    GlobalError, 3;
+	GlobalError = 0x3;
 // LINE 200:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T4ca;
@@ -350,9 +345,7 @@ _T2a6:
 	__asm        jmp    _T4ca;
 // LINE 207:
 _T2f3:
-	__asm        mov    eax, G_currmempool;
-	__asm        mov    ecx, res;
-	__asm        mov    [ecx+4], eax;
+	res->mempoolid = G_currmempool;
 // LINE 208:
 	__asm        mov    eax, res;
 	__asm        push   eax;
@@ -377,7 +370,7 @@ _T32d:
 	__asm        jmp    _T1f8;
 // LINE 215:
 _T332:
-	__asm        mov    GlobalError, 7;
+	GlobalError = 0x7;
 // LINE 216:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T4ca;
@@ -412,7 +405,7 @@ _T372:
 	__asm        cmp    [eax+ecx], edx;
 	__asm        jne    _T475;
 // LINE 227:
-	__asm        mov    bufferBad, 1;
+	bufferBad = 0x1;
 // LINE 229:
 	__asm        push   0;
 	__asm        mov    eax, i;
@@ -428,7 +421,7 @@ _T372:
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    _T3e4;
 // LINE 230:
-	__asm        mov    GlobalError, 3;
+	GlobalError = 0x3;
 // LINE 231:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T4ca;
@@ -463,9 +456,7 @@ _T40a:
 	__asm        jmp    _T4ca;
 // LINE 238:
 _T43b:
-	__asm        mov    eax, G_currmempool;
-	__asm        mov    ecx, res;
-	__asm        mov    [ecx+4], eax;
+	res->mempoolid = G_currmempool;
 // LINE 239:
 	__asm        mov    eax, res;
 	__asm        push   eax;
@@ -490,7 +481,7 @@ _T475:
 	__asm        jmp    _T36f;
 // LINE 246:
 _T47a:
-	__asm        mov    GlobalError, 8;
+	GlobalError = 0x8;
 // LINE 247:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T4ca;
@@ -527,8 +518,7 @@ _T09:
 	__asm        cmp    NextResource, 0;
 	__asm        je     _T3e;
 // LINE 279:
-	__asm        mov    eax, ResourceArray[0];
-	__asm        mov    res, eax;
+	res = ResourceArray[0];
 // LINE 280:
 	__asm        mov    eax, res;
 	__asm        push   eax;
@@ -561,8 +551,7 @@ int32_t VRUnLoadResource(struct VRResource *res) {
 	__asm        jmp    _T66;
 // LINE 308:
 _T17:
-	__asm        mov    eax, res;
-	__asm        mov    geo, eax;
+	geo = res;
 // LINE 309:
 	__asm        mov    eax, res;
 	__asm        push   eax;
@@ -588,7 +577,7 @@ _T3f:
 	__asm        jmp    _T89;
 // LINE 328:
 _T50:
-	__asm        mov    GlobalError, 0xB;
+	GlobalError = 0xb;
 // LINE 329:
 	__asm        xor    eax, eax;
 	__asm        jmp    _Taf;
@@ -665,7 +654,7 @@ _T57:
 	__asm        cmp    dword ptr [ecx+eax*8], 0x4D4F4547;
 	__asm        jne    _T26e;
 // LINE 379:
-	__asm        mov    bufferBad, 1;
+	bufferBad = 0x1;
 // LINE 381:
 	__asm        push   0;
 	__asm        mov    eax, i;
@@ -679,7 +668,7 @@ _T57:
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    _Tbe;
 // LINE 382:
-	__asm        mov    GlobalError, 3;
+	GlobalError = 0x3;
 // LINE 383:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T284;
@@ -700,7 +689,7 @@ _Tdb:
 	__asm        cmp    chunk.Id, 0x4D4F4547;
 	__asm        je     _Tf9;
 // LINE 404:
-	__asm        mov    GlobalError, 6;
+	GlobalError = 0x6;
 // LINE 405:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T284;
@@ -745,17 +734,17 @@ _T117:
 	__asm        cmp    GEOM_IDdir, 0;
 	__asm        jne    _T199;
 // LINE 442:
-	__asm        mov    GEOM_IDdir, 0;
+	GEOM_IDdir = 0x0;
 // LINE 443:
-	__asm        mov    GEOM_GPdir, 0;
+	GEOM_GPdir = 0x0;
 // LINE 444:
-	__asm        mov    GlobalError, 4;
+	GlobalError = 0x4;
 // LINE 445:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T284;
 // LINE 449:
 _T199:
-	__asm        mov    bufferBad, 1;
+	bufferBad = 0x1;
 // LINE 451:
 	__asm        push   0;
 	__asm        mov    eax, GEOM_hdr.Dir_Group_Offset;
@@ -767,7 +756,7 @@ _T199:
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    _T1d3;
 // LINE 452:
-	__asm        mov    GlobalError, 3;
+	GlobalError = 0x3;
 // LINE 453:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T284;
@@ -790,7 +779,7 @@ _T1d3:
 	__asm        jmp    _T284;
 // LINE 533:
 _T201:
-	__asm        mov    bufferBad, 1;
+	bufferBad = 0x1;
 // LINE 535:
 	__asm        push   0;
 	__asm        mov    eax, GEOM_hdr.Dir_Id_Offset;
@@ -802,7 +791,7 @@ _T201:
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    _T23b;
 // LINE 536:
-	__asm        mov    GlobalError, 3;
+	GlobalError = 0x3;
 // LINE 537:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T284;
@@ -830,7 +819,7 @@ _T26e:
 	__asm        jmp    _T54;
 // LINE 612:
 _T273:
-	__asm        mov    GlobalError, 5;
+	GlobalError = 0x5;
 // LINE 613:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T284;
@@ -876,7 +865,7 @@ _T4a:
 	__asm        cmp    dword ptr [ecx+eax*8], 0x50414D43;
 	__asm        jne    _T17e;
 // LINE 655:
-	__asm        mov    bufferBad, 1;
+	bufferBad = 0x1;
 // LINE 657:
 	__asm        push   0;
 	__asm        mov    eax, i;
@@ -890,7 +879,7 @@ _T4a:
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    _Tb1;
 // LINE 658:
-	__asm        mov    GlobalError, 3;
+	GlobalError = 0x3;
 // LINE 659:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T194;
@@ -911,7 +900,7 @@ _Tce:
 	__asm        cmp    chunk.Id, 0x50414D43;
 	__asm        je     _Tec;
 // LINE 679:
-	__asm        mov    GlobalError, 6;
+	GlobalError = 0x6;
 // LINE 680:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T194;
@@ -942,7 +931,7 @@ _T10a:
 	__asm        cmp    CMAP_directory, 0;
 	__asm        jne    _T149;
 // LINE 696:
-	__asm        mov    GlobalError, 4;
+	GlobalError = 0x4;
 // LINE 697:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T194;
@@ -971,7 +960,7 @@ _T17e:
 	__asm        jmp    _T47;
 // LINE 729:
 _T183:
-	__asm        mov    GlobalError, 5;
+	GlobalError = 0x5;
 // LINE 730:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T194;
@@ -999,7 +988,7 @@ int32_t GetResourceDir(char * name) {
 	__asm        jmp    _T134;
 // LINE 766:
 _T39:
-	__asm        mov    bufferBad, 1;
+	bufferBad = 0x1;
 // LINE 768:
 	__asm        push   0;
 	__asm        push   0;
@@ -1010,7 +999,7 @@ _T39:
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    _T6f;
 // LINE 769:
-	__asm        mov    GlobalError, 3;
+	GlobalError = 0x3;
 // LINE 770:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T134;
@@ -1065,7 +1054,7 @@ _Tca:
 	__asm        cmp    ResourceDir, 0;
 	__asm        jne    _T104;
 // LINE 817:
-	__asm        mov    GlobalError, 4;
+	GlobalError = 0x4;
 // LINE 818:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T134;
@@ -1105,7 +1094,7 @@ int32_t OpenResourceFile(char * name) {
 	__asm        cmp    ResourceFilePtr, 0xFFFFFFFF;
 	__asm        jne    _T3f;
 // LINE 874:
-	__asm        mov    GlobalError, 1;
+	GlobalError = 0x1;
 // LINE 875:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T98;
@@ -1123,7 +1112,7 @@ _T3f:
 	__asm        call   _close;
 	__asm        add    esp, 4;
 // LINE 881:
-	__asm        mov    GlobalError, 1;
+	GlobalError = 0x1;
 // LINE 882:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T98;
@@ -1155,7 +1144,7 @@ int32_t ReadResource(void * __ptr32 buf, int32_t s) {
 	__asm        cmp    eax, s;
 	__asm        je     _T36;
 // LINE 1059:
-	__asm        mov    GlobalError, 2;
+	GlobalError = 0x2;
 // LINE 1060:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T40;
@@ -1198,15 +1187,13 @@ int32_t RegisterResource(struct VRResource *res) {
 	__asm        cmp    NextResource, 0x64;
 	__asm        jl     _T24;
 // LINE 1120:
-	__asm        mov    GlobalError, 0xC;
+	GlobalError = 0xc;
 // LINE 1121:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T4f;
 // LINE 1123:
 _T24:
-	__asm        mov    eax, NextResource;
-	__asm        mov    ecx, res;
-	__asm        mov    [ecx+0xC], eax;
+	res->entry = NextResource;
 // LINE 1124:
 	__asm        mov    eax, res;
 	__asm        mov    ecx, NextResource;
@@ -1225,9 +1212,7 @@ void UnRegisterResource(struct VRResource *res) {
 	struct VRResource *r;
 
 // LINE 1146:
-	__asm        mov    eax, res;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    i, eax;
+	i = res->entry;
 // LINE 1147:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, res;
@@ -1247,9 +1232,7 @@ _T2a:
 	__asm        mov    eax, ResourceArray[0][eax*4];
 	__asm        mov    r, eax;
 // LINE 1151:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, r;
-	__asm        mov    [ecx+0xC], eax;
+	r->entry = i;
 // LINE 1153:
 _T5c:
 }

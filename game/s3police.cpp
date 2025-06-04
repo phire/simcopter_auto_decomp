@@ -552,11 +552,9 @@ void PoliceCarClass::PoliceCarClass() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593310;
 // LINE 96:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0x11D;
+	this->flags = 0x11d;
 // LINE 97:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x31E], 0;
+	this-><PoliceCarClass+0x31e> = 0x0;
 // LINE 98:
 	__asm        jmp    near ptr 0x00536E69;
 
@@ -593,7 +591,7 @@ class PoliceCarClass* PoliceCarClass::CreateInstance(int32_t instanceID) {
 	__asm        mov    youveWonABrandNewCar, eax;
 	__asm        jmp    _T3a;
 _T33:
-	__asm        mov    youveWonABrandNewCar, 0;
+	youveWonABrandNewCar = 0x0;
 // LINE 128:
 _T3a:
 	__asm        cmp    youveWonABrandNewCar, 0;
@@ -689,11 +687,9 @@ _T13e:
 	__asm        jmp    _T1e4;
 // LINE 169:
 _T145:
-	__asm        mov    eax, youveWonABrandNewCar;
-	__asm        mov    word ptr [eax+0x134], 0;
+	*reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&youveWonABrandNewCar->dispatchIcon.loc.x) + 2) = 0x0;
 // LINE 170:
-	__asm        mov    eax, youveWonABrandNewCar;
-	__asm        mov    word ptr [eax+0x132], 0x21;
+	reinterpret_cast<uint16_t>(youveWonABrandNewCar->dispatchIcon.loc.x) = 0x21;
 // LINE 171:
 	__asm        lea    eax, oinfo.Faces;
 	__asm        push   eax;
@@ -703,9 +699,7 @@ _T145:
 	__asm        call   0x004D8859;
 	__asm        add    esp, 8;
 // LINE 172:
-	__asm        mov    eax, oinfo.Radius;
-	__asm        mov    ecx, youveWonABrandNewCar;
-	__asm        mov    [ecx+0x136], eax;
+	youveWonABrandNewCar->dispatchIcon.loc.y = oinfo.Radius;
 // LINE 173:
 	__asm        push   0;
 	__asm        mov    eax, youveWonABrandNewCar;
@@ -776,8 +770,7 @@ void PoliceCarClass::ItterateFSM() {
 	struct _GridCoordinates badGuyLoc;
 
 // LINE 248:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x31E], 0;
+	this-><PoliceCarClass+0x31e> = 0x0;
 // LINE 250:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x294];
@@ -827,11 +820,9 @@ _T4d:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+8];
 // LINE 269:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x294], 2;
+	this->currDestGoal.pRGV = 0x2;
 // LINE 270:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x11E], 3;
+	this->dispatchIcon.vnext = 0x3;
 // LINE 271:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::ItterateFSM;
@@ -839,9 +830,7 @@ _T4d:
 	__asm        jmp    _T96f;
 // LINE 276:
 _Td4:
-	__asm        mov    eax, this;
-	__asm        mov    ax, [eax+0x7C];
-	__asm        mov    reinterpret_cast<uint16_t>(badGuyLoc.x), ax;
+	reinterpret_cast<uint16_t>(badGuyLoc.x) = *reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&this->goal.edgeIndex) + 2);
 // LINE 277:
 	__asm        lea    eax, badGuyLoc.x;
 	__asm        push   eax;
@@ -863,17 +852,13 @@ _Td4:
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::TurnOnStrobe;
 // LINE 282:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x294], 6;
+	this->currDestGoal.pRGV = 0x6;
 // LINE 283:
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x292], 0;
+	*reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&this->numberOfSeats) + 2) = 0x0;
 // LINE 286:
-	__asm        mov    mp.op, 0xA;
+	mp.op = 0xa;
 // LINE 287:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10E];
-	__asm        mov    mp.id, eax;
+	mp.id = reinterpret_cast<uint32_t>(this->baseLocation.x);
 // LINE 288:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x322];
@@ -956,9 +941,7 @@ _T22b:
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::PositionIcon;
 // LINE 320:
-	__asm        mov    eax, this;
-	__asm        mov    ax, [eax+0x7C];
-	__asm        mov    reinterpret_cast<uint16_t>(badGuyLoc.x), ax;
+	reinterpret_cast<uint16_t>(badGuyLoc.x) = *reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&this->goal.edgeIndex) + 2);
 // LINE 321:
 	__asm        lea    eax, badGuyLoc.x;
 	__asm        push   eax;
@@ -1022,14 +1005,11 @@ _T2a0:
 	__asm        test   eax, eax;
 	__asm        je     _T33b;
 // LINE 338:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x294], 5;
+	this->currDestGoal.pRGV = 0x5;
 // LINE 339:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xF6], 0;
+	this->fireTime = 0x0;
 // LINE 340:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xFE], 0xF00000;
+	this->missionId = 0xf00000;
 // LINE 341:
 	__asm        jmp    _T96f;
 // LINE 343:
@@ -1061,20 +1041,15 @@ _T379:
 	__asm        jmp    _T538;
 // LINE 356:
 _T37e:
-	__asm        mov    eax, this;
-	__asm        mov    ax, [eax+0x11C];
-	__asm        mov    reinterpret_cast<uint16_t>(oldemergencyloc.x), ax;
+	reinterpret_cast<uint16_t>(oldemergencyloc.x) = this->dispatchIcon.next;
 // LINE 358:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x322], 0;
 	__asm        je     _T3bc;
 // LINE 360:
-	__asm        mov    ax, reinterpret_cast<uint16_t>(badGuyLoc.x);
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x11C], ax;
+	this->dispatchIcon.next = reinterpret_cast<uint16_t>(badGuyLoc.x);
 // LINE 361:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x31E], 1;
+	this-><PoliceCarClass+0x31e> = 0x1;
 // LINE 363:
 	__asm        jmp    _T3cd;
 // LINE 365:
@@ -1110,8 +1085,7 @@ _T3cd:
 	__asm        cmp    AutomobileClass::policeSirenDist, eax;
 	__asm        jle    _T41d;
 // LINE 374:
-	__asm        mov    eax, dist;
-	__asm        mov    AutomobileClass::policeSirenDist, eax;
+	AutomobileClass::policeSirenDist = dist;
 // LINE 376:
 _T41d:
 	__asm        mov    ecx, this;
@@ -1151,8 +1125,7 @@ _T491:
 _T496:
 	__asm        jmp    near ptr 0x0053754E;
 
-	__asm        mov    eax, [ebp-0x38];
-	__asm        mov    cptr, eax;
+	cptr = None;
 // LINE 382:
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax+2];
@@ -1272,9 +1245,7 @@ _T5cb:
 	__asm        mov    eax, this;
 	__asm        and    dword ptr [eax+8], 0xFFFFFFFB;
 // LINE 417:
-	__asm        mov    eax, this;
-	__asm        mov    ax, [eax+0x7C];
-	__asm        mov    reinterpret_cast<uint16_t>(badGuyLoc.x), ax;
+	reinterpret_cast<uint16_t>(badGuyLoc.x) = *reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&this->goal.edgeIndex) + 2);
 // LINE 418:
 	__asm        lea    eax, badGuyLoc.x;
 	__asm        push   eax;
@@ -1294,23 +1265,18 @@ _T5cb:
 	__asm        test   eax, eax;
 	__asm        je     _T66a;
 // LINE 424:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x294], 5;
+	this->currDestGoal.pRGV = 0x5;
 // LINE 425:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xF6], 0;
+	this->fireTime = 0x0;
 // LINE 426:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xFE], 0xF00000;
+	this->missionId = 0xf00000;
 // LINE 428:
 	__asm        jmp    _T684;
 // LINE 432:
 _T66a:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xFE], 0;
+	this->missionId = 0x0;
 // LINE 433:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x294], 1;
+	this->currDestGoal.pRGV = 0x1;
 // LINE 436:
 _T684:
 	__asm        jmp    _T6b8;
@@ -1319,14 +1285,11 @@ _T689:
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::TurnOffStrobe;
 // LINE 440:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x294], 1;
+	this->currDestGoal.pRGV = 0x1;
 // LINE 441:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xF6], 0;
+	this->fireTime = 0x0;
 // LINE 442:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xFE], 0x12C0000;
+	this->missionId = 0x12c0000;
 // LINE 445:
 _T6b8:
 	__asm        jmp    _T974;
@@ -1363,8 +1326,7 @@ _T6ca:
 	__asm        cmp    AutomobileClass::policeSirenDist, eax;
 	__asm        jle    _T71a;
 // LINE 458:
-	__asm        mov    eax, dist;
-	__asm        mov    AutomobileClass::policeSirenDist, eax;
+	AutomobileClass::policeSirenDist = dist;
 // LINE 460:
 _T71a:
 	__asm        mov    ecx, this;
@@ -1433,8 +1395,7 @@ _T7ac:
 	__asm        mov    ecx, gHospitals;
 	__asm        call   Station::DecrementQuantityOfVehicleDispatched;
 // LINE 491:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x294], 2;
+	this->currDestGoal.pRGV = 0x2;
 // LINE 492:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -1462,15 +1423,12 @@ _T842:
 	__asm        jmp    _T854;
 // LINE 503:
 _T847:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x294], 1;
+	this->currDestGoal.pRGV = 0x1;
 // LINE 506:
 _T854:
 	__asm        jmp    _T96f;
 // LINE 509:
-	__asm        mov    eax, this;
-	__asm        mov    ax, [eax+0x7C];
-	__asm        mov    reinterpret_cast<uint16_t>(badGuyLoc.x), ax;
+	reinterpret_cast<uint16_t>(badGuyLoc.x) = *reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&this->goal.edgeIndex) + 2);
 // LINE 510:
 	__asm        lea    eax, badGuyLoc.x;
 	__asm        push   eax;
@@ -1514,8 +1472,7 @@ _T854:
 	__asm        cmp    AutomobileClass::policeSirenDist, eax;
 	__asm        jle    _T8ee;
 // LINE 519:
-	__asm        mov    eax, dist;
-	__asm        mov    AutomobileClass::policeSirenDist, eax;
+	AutomobileClass::policeSirenDist = dist;
 // LINE 521:
 _T8ee:
 	__asm        mov    ecx, this;
@@ -1527,8 +1484,7 @@ _T8ee:
 	__asm        jmp    _T910;
 // LINE 527:
 _T903:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x294], 2;
+	this->currDestGoal.pRGV = 0x2;
 // LINE 529:
 _T910:
 	__asm        jmp    _T96f;
@@ -1577,12 +1533,9 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal *pGoal) {
 // Block start:
 	struct _RGIndex destVertex;
 	struct _RGIndex startVertex;
-	__asm        mov    eax, this;
-	__asm        mov    ax, [eax+0x7C];
-	__asm        mov    reinterpret_cast<uint16_t>(startLoc.x), ax;
+	reinterpret_cast<uint16_t>(startLoc.x) = *reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&this->goal.edgeIndex) + 2);
 // LINE 555:
-	__asm        mov    al, startLoc.x;
-	__asm        mov    startVertex.x, al;
+	startVertex.x = startLoc.x;
 // LINE 556:
 	__asm        xor    eax, eax;
 	__asm        mov    al, startLoc.y;
@@ -1816,8 +1769,7 @@ _T2ce:
 	__asm        cmp    eax, ecx;
 	__asm        jne    _T34d;
 // LINE 602:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xDE], 0;
+	this->prevDir = 0x0;
 // LINE 603:
 	__asm        mov    eax, pGoal;
 	__asm        push   eax;
@@ -1843,8 +1795,7 @@ _T34d:
 	__asm        call   EmergencyVehicleClass::BuildPath;
 // LINE 613:
 _T36f:
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x292], 0;
+	*reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&this->numberOfSeats) + 2) = 0x0;
 // LINE 615:
 // Block end:
 	__asm        jmp    _T3a6;
@@ -1971,9 +1922,7 @@ _Te4:
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        je     _T110;
 // LINE 655:
-	__asm        mov    ax, reinterpret_cast<uint16_t>(loc.x);
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x11C], ax;
+	this->dispatchIcon.next = reinterpret_cast<uint16_t>(loc.x);
 // LINE 656:
 	__asm        mov    dword ptr [ebp-0x18], 1;
 	__asm        jmp    near ptr 0x00537F37;
@@ -2077,12 +2026,9 @@ _T6f:
 _T74:
 	__asm        jmp    near ptr 0x00538052;
 
-	__asm        mov    eax, [ebp-0x28];
-	__asm        mov    cptr, eax;
+	cptr = None;
 // LINE 697:
-	__asm        mov    eax, cptr;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    dyptr, eax;
+	dyptr = cptr->dyptr;
 // LINE 701:
 _T88:
 	__asm        cmp    dyptr, 0;
@@ -2129,9 +2075,7 @@ _Tcd:
 	__asm        jmp    _T13f;
 // LINE 712:
 _T10a:
-	__asm        mov    eax, dyptr;
-	__asm        mov    eax, [eax];
-	__asm        mov    dyptr, eax;
+	dyptr = dyptr->next;
 // LINE 713:
 	__asm        jmp    _T88;
 // LINE 715:
@@ -2179,10 +2123,7 @@ void PoliceCarClass::SetSaveData(struct _AUTO_LOAD_SAVE *sd) {
 	__asm        rep movsd;
 	__asm        movsw;
 // LINE 733:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x31E];
-	__asm        mov    ecx, sd;
-	__asm        mov    [ecx+0x340], eax;
+	sd->p.foundRoad = this-><PoliceCarClass+0x31e>;
 // LINE 735:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 2;
@@ -2275,10 +2216,7 @@ _T1d:
 	__asm        rep movsd;
 	__asm        movsw;
 // LINE 776:
-	__asm        mov    eax, sd;
-	__asm        mov    eax, [eax+0x340];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x31E], eax;
+	this-><PoliceCarClass+0x31e> = sd->p.foundRoad;
 // LINE 778:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x294];
@@ -2385,9 +2323,7 @@ _Td8:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x2F4], eax;
 // LINE 805:
-	__asm        mov    eax, this;
-	__asm        mov    ax, [eax+0x7C];
-	__asm        mov    reinterpret_cast<uint16_t>(badGuyLoc.x), ax;
+	reinterpret_cast<uint16_t>(badGuyLoc.x) = *reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&this->goal.edgeIndex) + 2);
 // LINE 806:
 	__asm        lea    eax, badGuyLoc.x;
 	__asm        push   eax;

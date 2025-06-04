@@ -73,15 +73,11 @@ void ResourceRCData::ResourceRCData(int32_t nTheResource, int32_t bLoadNow) {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F648;
 // LINE 40:
-	__asm        mov    eax, _ghWindowsInstance;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x14], eax;
+	this->hInstance = _ghWindowsInstance;
 // LINE 41:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 0;
+	this->hFoundResource = 0x0;
 // LINE 42:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18], 0;
+	this->hResource = 0x0;
 // LINE 45:
 	__asm        cmp    bLoadNow, 0;
 	__asm        je     _T63;
@@ -98,22 +94,15 @@ _T63:
 // FUNCTION: COPTER_D 0x00447880
 void ResourceRCData::ResourceRCData(class ResourceRCData& resData) {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F648;
+	this-><vftable> = 0x58f648;
 // LINE 55:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 0;
+	this->hFoundResource = 0x0;
 // LINE 56:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
+	this->hInstance = 0x0;
 // LINE 57:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18], 0;
+	this->hResource = 0x0;
 // LINE 58:
-	__asm        mov    eax, resData;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->nResource = resData.nResource;
 // LINE 59:
 	__asm        mov    eax, resData;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -143,8 +132,7 @@ void ResourceRCData::ResourceRCData(class ResourceRCData& resData) {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 63:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 1;
+	this->bWeOwnTheData = 0x1;
 // LINE 65:
 // Block end:
 _T8d:
@@ -156,8 +144,7 @@ _T8d:
 // FUNCTION: COPTER_D 0x0044791c
 void ResourceRCData::~ResourceRCData() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F648;
+	this-><vftable> = 0x58f648;
 // LINE 73:
 	__asm        mov    ecx, this;
 	__asm        call   ResourceRCData::Reset;
@@ -176,19 +163,13 @@ class ResourceRCData& ResourceRCData::operator=(class ResourceRCData& resData) {
 	__asm        jmp    _Ta0;
 // LINE 85:
 _T20:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 0;
+	this->hFoundResource = 0x0;
 // LINE 86:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
+	this->hInstance = 0x0;
 // LINE 87:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18], 0;
+	this->hResource = 0x0;
 // LINE 88:
-	__asm        mov    eax, resData;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->nResource = resData.nResource;
 // LINE 89:
 	__asm        mov    eax, resData;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -218,8 +199,7 @@ _T20:
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 93:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 1;
+	this->bWeOwnTheData = 0x1;
 // LINE 96:
 // Block end:
 _T98:
@@ -242,17 +222,13 @@ void ResourceRCData::Reset() {
 	__asm        call   dword ptr ds:[0x6C3634];
 // LINE 108:
 _T26:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 0;
+	this->hFoundResource = 0x0;
 // LINE 109:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
+	this->hInstance = 0x0;
 // LINE 110:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18], 0;
+	this->hResource = 0x0;
 // LINE 112:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
+	this->nResource = 0x0;
 // LINE 113:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC], 0;
@@ -269,8 +245,7 @@ _T26:
 	__asm        add    esp, 4;
 // LINE 115:
 _T76:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->chData = 0x0;
 // LINE 116:
 	__asm        jmp    near ptr 0x00447A6F;
 }

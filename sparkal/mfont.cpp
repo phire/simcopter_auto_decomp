@@ -124,8 +124,7 @@ _Ta7:
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    _Tce;
 _Tc4:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->sName.reference = 0x0;
 _Tce:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
@@ -140,8 +139,7 @@ _Tce:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591640;
 // LINE 30:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18], 0;
+	this->hFont = 0x0;
 // LINE 32:
 	__asm        jmp    near ptr 0x0049F893;
 
@@ -175,15 +173,13 @@ void MFont::MFont(const class MFont& copyMFont) {
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    _T69;
 _T5f:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->sName.reference = 0x0;
 _T69:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        jmp    near ptr 0x0049F913;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x591640;
+	this-><vftable> = 0x591640;
 // LINE 43:
 	__asm        mov    eax, copyMFont;
 	__asm        push   eax;
@@ -222,15 +218,13 @@ void MFont::MFont(char * szFaceName, unsigned long lNewHeight, unsigned long lNe
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    _T69;
 _T5f:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->sName.reference = 0x0;
 _T69:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        jmp    near ptr 0x0049F9AF;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x591640;
+	this-><vftable> = 0x591640;
 // LINE 55:
 	__asm        jmp    near ptr 0x0049F9BD;
 
@@ -347,7 +341,7 @@ _T1c8:
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    _T1e9;
 _T1e2:
-	__asm        mov    dword ptr [ebp-4], 0;
+	None = 0x0;
 _T1e9:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
@@ -429,20 +423,13 @@ _T2bb:
 
 	__asm        jmp    near ptr 0x0049FC08;
 // LINE 56:
-	__asm        mov    eax, lNewHeight;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], eax;
+	this->lHeight = lNewHeight;
 // LINE 57:
-	__asm        mov    eax, lNewWidth;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x10], eax;
+	this->lWidth = lNewWidth;
 // LINE 58:
-	__asm        mov    eax, lNewAttributes;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x14], eax;
+	this->lAttributes = lNewAttributes;
 // LINE 60:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18], 0;
+	this->hFont = 0x0;
 // LINE 62:
 	__asm        cmp    bCreateNow, 0;
 	__asm        je     _T308;
@@ -459,8 +446,7 @@ _T308:
 // FUNCTION: COPTER_D 0x0049fc4e
 void MFont::~MFont() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x591640;
+	this-><vftable> = 0x591640;
 // LINE 73:
 	__asm        mov    ecx, this;
 	__asm        call   MFont::DestroyFont;
@@ -693,25 +679,15 @@ _T1c0:
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    _T1e7;
 _T1dd:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->sName.reference = 0x0;
 _T1e7:
 	__asm        jmp    near ptr 0x0049FF1F;
 // LINE 85:
-	__asm        mov    eax, copyMFont;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], eax;
+	this->lHeight = copyMFont.lHeight;
 // LINE 86:
-	__asm        mov    eax, copyMFont;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x10], eax;
+	this->lWidth = copyMFont.lWidth;
 // LINE 87:
-	__asm        mov    eax, copyMFont;
-	__asm        mov    eax, [eax+0x14];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x14], eax;
+	this->lAttributes = copyMFont.lAttributes;
 // LINE 91:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -772,12 +748,12 @@ _T4c:
 	__asm        test   byte ptr [eax+0x14], 1;
 	__asm        je     _T65;
 // LINE 135:
-	__asm        mov    nWeight, 0x2BC;
+	nWeight = 0x2bc;
 // LINE 136:
 	__asm        jmp    _T6c;
 // LINE 137:
 _T65:
-	__asm        mov    nWeight, 0x190;
+	nWeight = 0x190;
 // LINE 139:
 _T6c:
 	__asm        mov    eax, this;
@@ -929,36 +905,30 @@ void MFont::SetFontCharacteristics(long lNewHeight, long lNewWidth, long lNewAtt
 	int32_t bFontChanged;
 
 // LINE 164:
-	__asm        mov    bFontChanged, 0;
+	bFontChanged = 0x0;
 // LINE 166:
 	__asm        cmp    lNewHeight, 0;
 	__asm        je     _T2d;
 // LINE 167:
-	__asm        mov    eax, lNewHeight;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], eax;
+	this->lHeight = lNewHeight;
 // LINE 168:
-	__asm        mov    bFontChanged, 1;
+	bFontChanged = 0x1;
 // LINE 170:
 _T2d:
 	__asm        cmp    lNewWidth, 0;
 	__asm        je     _T47;
 // LINE 171:
-	__asm        mov    eax, lNewWidth;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x10], eax;
+	this->lWidth = lNewWidth;
 // LINE 172:
-	__asm        mov    bFontChanged, 1;
+	bFontChanged = 0x1;
 // LINE 174:
 _T47:
 	__asm        cmp    lNewAttributes, 0;
 	__asm        je     _T61;
 // LINE 175:
-	__asm        mov    eax, lNewAttributes;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x14], eax;
+	this->lAttributes = lNewAttributes;
 // LINE 176:
-	__asm        mov    bFontChanged, 1;
+	bFontChanged = 0x1;
 // LINE 178:
 _T61:
 	__asm        cmp    bFontChanged, 0;
@@ -990,8 +960,7 @@ void MFont::DestroyFont() {
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C358C];
 // LINE 194:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18], 0;
+	this->hFont = 0x0;
 // LINE 199:
 _T30:
 	__asm        jmp    near ptr 0x004A021E;
@@ -1065,7 +1034,7 @@ int32_t MFont::GetTextDimensions(char * szString, long& lWidth, long& lHeight) {
 	void * __ptr32 hFontOriginal;
 
 // LINE 265:
-	__asm        mov    nReturnValue, 1;
+	nReturnValue = 0x1;
 // LINE 268:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x18], 0;
@@ -1085,8 +1054,7 @@ _T27:
 	__asm        cmp    szString, 0;
 	__asm        jne    _T4e;
 // LINE 273:
-	__asm        mov    eax, SZ_DEFAULT_TEST_STRING;
-	__asm        mov    szString, eax;
+	szString = SZ_DEFAULT_TEST_STRING;
 // LINE 274:
 _T4e:
 	__asm        mov    eax, this;
@@ -1103,13 +1071,13 @@ _T4e:
 	__asm        add    esp, 4;
 	__asm        mov    lStringLength, eax;
 // LINE 276:
-	__asm        mov    rectText.left, 0;
+	rectText.left = 0x0;
 // LINE 277:
-	__asm        mov    rectText.top, 0;
+	rectText.top = 0x0;
 // LINE 278:
-	__asm        mov    rectText.right, 0xF4240;
+	rectText.right = 0xf4240;
 // LINE 279:
-	__asm        mov    rectText.bottom, 0xF4240;
+	rectText.bottom = 0xf4240;
 // LINE 280:
 	__asm        push   0xC10;
 	__asm        lea    eax, rectText.left;
@@ -1122,13 +1090,9 @@ _T4e:
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C389C];
 // LINE 281:
-	__asm        mov    eax, rectText.bottom;
-	__asm        mov    ecx, lHeight;
-	__asm        mov    [ecx], eax;
+	lHeight. = rectText.bottom;
 // LINE 282:
-	__asm        mov    eax, rectText.right;
-	__asm        mov    ecx, lWidth;
-	__asm        mov    [ecx], eax;
+	lWidth. = rectText.right;
 // LINE 292:
 	__asm        mov    eax, hFontOriginal;
 	__asm        push   eax;

@@ -110,14 +110,14 @@ _T2e:
 	__asm        test   eax, eax;
 	__asm        jne    _T84;
 // LINE 124:
-	__asm        mov    bOK, 0;
+	bOK = 0x0;
 // LINE 125:
 	__asm        jmp    _T175;
 // LINE 128:
 _T84:
-	__asm        mov    bOK, 1;
+	bOK = 0x1;
 // LINE 129:
-	__asm        mov    lBytesReadSoFar, 4;
+	lBytesReadSoFar = 0x4;
 // LINE 132:
 _T92:
 	__asm        mov    eax, filNum;
@@ -131,7 +131,7 @@ _T92:
 	__asm        test   eax, eax;
 	__asm        jne    _Tba;
 // LINE 133:
-	__asm        mov    bOK, 0;
+	bOK = 0x0;
 // LINE 134:
 	__asm        jmp    _T175;
 // LINE 136:
@@ -153,7 +153,7 @@ _Tba:
 	__asm        test   eax, eax;
 	__asm        jne    _Tf1;
 // LINE 139:
-	__asm        mov    bOK, 0;
+	bOK = 0x0;
 // LINE 140:
 	__asm        jmp    _T175;
 // LINE 142:
@@ -177,7 +177,7 @@ _Tf1:
 	__asm        jle    _T130;
 // LINE 144:
 _T124:
-	__asm        mov    bOK, 0;
+	bOK = 0x0;
 // LINE 145:
 	__asm        jmp    _T175;
 // LINE 147:
@@ -192,7 +192,7 @@ _T130:
 	__asm        test   eax, eax;
 	__asm        je     _T156;
 // LINE 148:
-	__asm        mov    bOK, 0;
+	bOK = 0x0;
 // LINE 149:
 	__asm        jmp    _T175;
 // LINE 152:
@@ -269,15 +269,15 @@ _T35:
 	__asm        jmp    _T1b5;
 // LINE 195:
 _T64:
-	__asm        mov    done, 0;
+	done = 0x0;
 // LINE 196:
-	__asm        mov    sofar, 4;
+	sofar = 0x4;
 // LINE 198:
 _T71:
 	__asm        test   reinterpret_cast<uint32_t>(done), 0xFFFF;
 	__asm        jne    _T171;
 // LINE 199:
-	__asm        mov    count, 4;
+	count = 0x4;
 // LINE 200:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
@@ -300,7 +300,7 @@ _Ta8:
 	__asm        add    esp, 4;
 	__asm        mov    dp, eax;
 // LINE 206:
-	__asm        mov    count, 4;
+	count = 0x4;
 // LINE 207:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
@@ -343,7 +343,7 @@ _Te1:
 	__asm        jmp    _T171;
 // LINE 215:
 _T127:
-	__asm        mov    done, 1;
+	done = 0x1;
 // LINE 217:
 	__asm        jmp    _T151;
 // LINE 218:
@@ -369,7 +369,7 @@ _T151:
 	__asm        cmp    length, eax;
 	__asm        jg     _T16c;
 // LINE 223:
-	__asm        mov    done, 1;
+	done = 0x1;
 // LINE 224:
 _T16c:
 	__asm        jmp    _T71;
@@ -477,7 +477,7 @@ long ValidateSCXSaveGameFile(char * szFilePath) {
 	__asm        call   fclose;
 	__asm        add    esp, 4;
 // LINE 279:
-	__asm        mov    buf[4], 0;
+	buf[4] = 0x0;
 // LINE 281:
 _T5c:
 	__asm        push   0x59B008;
@@ -556,13 +556,13 @@ _T6b:
 	__asm        jmp    _T8a1;
 // LINE 316:
 _T91:
-	__asm        mov    bDone, 0;
+	bDone = 0x0;
 // LINE 317:
-	__asm        mov    sofar, 4;
+	sofar = 0x4;
 // LINE 318:
-	__asm        mov    bFoundName, 0;
+	bFoundName = 0x0;
 // LINE 319:
-	__asm        mov    got_label, 0;
+	got_label = 0x0;
 // LINE 321:
 _Tb6:
 	__asm        test   reinterpret_cast<uint32_t>(bDone), 0xFFFF;
@@ -785,7 +785,7 @@ _T34b:
 	__asm        cmp    eax, dp;
 	__asm        jne    _T3a0;
 // LINE 361:
-	__asm        mov    got_label, 1;
+	got_label = 0x1;
 // LINE 363:
 	__asm        push   0x1900;
 	__asm        mov    eax, LabelArray;
@@ -1126,7 +1126,7 @@ _T756:
 	__asm        jmp    _T8a1;
 // LINE 422:
 _T799:
-	__asm        mov    bFoundName, 1;
+	bFoundName = 0x1;
 // LINE 424:
 	__asm        jmp    _T7ca;
 _T7a7:
@@ -1151,7 +1151,7 @@ _T7ca:
 	__asm        cmp    sofar, eax;
 	__asm        jl     _T7f1;
 // LINE 430:
-	__asm        mov    bDone, 1;
+	bDone = 0x1;
 // LINE 431:
 _T7f1:
 	__asm        jmp    _Tb6;
@@ -1429,7 +1429,7 @@ void S2CityMakeCityNameFromFilePath(char * filePath, char * cityName) {
 	__asm        cmp    stringLength, 0x1F;
 	__asm        jbe    _T60;
 // LINE 553:
-	__asm        mov    stringLength, 0x1F;
+	stringLength = 0x1f;
 // LINE 554:
 _T60:
 	__asm        lea    eax, szSplitPathFilename[0];
@@ -1589,7 +1589,7 @@ _T37:
 	__asm        jmp    _Tef8;
 // LINE 644:
 _T63:
-	__asm        mov    ix, 1;
+	ix = 0x1;
 // LINE 645:
 	__asm        movsx  eax, ix;
 	__asm        mov    ecx, MiscInfo;
@@ -1771,8 +1771,7 @@ _T63:
 	__asm        mov    lval, eax;
 	__asm        inc    ix;
 // LINE 679:
-	__asm        mov    eax, lval;
-	__asm        mov    ToolActive[5], eax;
+	ToolActive[5] = lval;
 // LINE 685:
 	__asm        mov    i, 0;
 	__asm        jmp    _T31a;
@@ -2366,9 +2365,9 @@ _Ta09:
 	__asm        cmp    lval, 0xFFFFFFFF;
 	__asm        jne    _Tb24;
 // LINE 790:
-	__asm        mov    newCX, 0x40;
+	newCX = 0x40;
 // LINE 791:
-	__asm        mov    newCY, 0x80;
+	newCY = 0x80;
 // LINE 793:
 	__asm        jmp    _Tb3c;
 // LINE 794:
@@ -2686,8 +2685,7 @@ static unsigned short S2CityBucketGameRead(struct _iobuf *filNum, long size) {
 	__asm        jmp    _T86;
 // LINE 890:
 _T35:
-	__asm        mov    eax, size;
-	__asm        mov    count, eax;
+	count = size;
 // LINE 891:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
@@ -2746,8 +2744,7 @@ static unsigned short S2CityGameReadCompressed(struct _iobuf *filNum, long size,
 	__asm        jmp    _T165;
 // LINE 923:
 _T35:
-	__asm        mov    eax, size;
-	__asm        mov    count, eax;
+	count = size;
 // LINE 924:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
@@ -2776,8 +2773,7 @@ _T6f:
 	__asm        mov    eax, dp;
 	__asm        mov    ix, eax;
 // LINE 932:
-	__asm        mov    eax, dataSize;
-	__asm        mov    count, eax;
+	count = dataSize;
 // LINE 933:
 _T88:
 	__asm        mov    eax, tp;
@@ -2900,7 +2896,7 @@ _T2f:
 	__asm        jmp    _T4d7;
 // LINE 987:
 _T4d:
-	__asm        mov    WriteLength, 4;
+	WriteLength = 0x4;
 // LINE 989:
 	__asm        push   0x20;
 	__asm        mov    eax, CityNameString;
@@ -3319,7 +3315,7 @@ static unsigned short S2CityWriteName(struct _iobuf *filNum, long head, char * d
 	long size;
 
 // LINE 1075:
-	__asm        mov    count, 4;
+	count = 0x4;
 // LINE 1076:
 	__asm        mov    eax, head;
 	__asm        push   eax;
@@ -3343,9 +3339,9 @@ static unsigned short S2CityWriteName(struct _iobuf *filNum, long head, char * d
 	__asm        jmp    _Td2;
 // LINE 1080:
 _T45:
-	__asm        mov    count, 4;
+	count = 0x4;
 // LINE 1081:
-	__asm        mov    size, 0x20;
+	size = 0x20;
 // LINE 1082:
 	__asm        mov    eax, size;
 	__asm        push   eax;
@@ -3407,7 +3403,7 @@ static unsigned short S2CityGameWriteUncompressed(struct _iobuf *filNum, long he
 	long size;
 
 // LINE 1114:
-	__asm        mov    count, 4;
+	count = 0x4;
 // LINE 1115:
 	__asm        mov    eax, head;
 	__asm        push   eax;
@@ -3431,10 +3427,9 @@ static unsigned short S2CityGameWriteUncompressed(struct _iobuf *filNum, long he
 	__asm        jmp    _T101;
 // LINE 1119:
 _T45:
-	__asm        mov    count, 4;
+	count = 0x4;
 // LINE 1120:
-	__asm        mov    eax, dataSize;
-	__asm        mov    size, eax;
+	size = dataSize;
 // LINE 1121:
 	__asm        mov    eax, size;
 	__asm        push   eax;
@@ -3530,7 +3525,7 @@ static unsigned short S2CityWriteHeader(struct _iobuf *filNum, long length) {
 	__asm        jmp    _T106;
 // LINE 1162:
 _T29:
-	__asm        mov    count, 4;
+	count = 0x4;
 // LINE 1163:
 	__asm        push   0x59B1A0;
 	__asm        call   stol;
@@ -3559,7 +3554,7 @@ _T29:
 	__asm        jmp    _T106;
 // LINE 1169:
 _T75:
-	__asm        mov    count, 4;
+	count = 0x4;
 // LINE 1170:
 	__asm        mov    eax, length;
 	__asm        push   eax;
@@ -3583,7 +3578,7 @@ _T75:
 	__asm        jmp    _T106;
 // LINE 1174:
 _Tb1:
-	__asm        mov    count, 4;
+	count = 0x4;
 // LINE 1175:
 	__asm        push   0x59B1A8;
 	__asm        call   stol;
@@ -3705,7 +3700,7 @@ _Tb2:
 	__asm        cmp    eax, ecx;
 	__asm        jne    _T154;
 // LINE 1221:
-	__asm        mov    ix, 2;
+	ix = 0x2;
 // LINE 1222:
 _Tea:
 	__asm        mov    eax, ix;
@@ -3749,7 +3744,7 @@ _T128:
 	__asm        jmp    _T1de;
 // LINE 1229:
 _T154:
-	__asm        mov    ix, 1;
+	ix = 0x1;
 // LINE 1230:
 	__asm        mov    al, b;
 	__asm        mov    ecx, tp;
@@ -3860,7 +3855,7 @@ _T266:
 	__asm        add    eax, 8;
 	__asm        add    WriteLength, eax;
 // LINE 1259:
-	__asm        mov    count, 4;
+	count = 0x4;
 // LINE 1260:
 	__asm        mov    eax, head;
 	__asm        push   eax;
@@ -3883,7 +3878,7 @@ _T266:
 	__asm        jmp    _T32d;
 // LINE 1266:
 _T2ab:
-	__asm        mov    count, 4;
+	count = 0x4;
 // LINE 1267:
 	__asm        mov    eax, tp;
 	__asm        push   eax;
@@ -3955,7 +3950,7 @@ static unsigned short S2CityMiscWrite(struct _iobuf *filNum) {
 	short ix;
 
 // LINE 1303:
-	__asm        mov    ix, 0;
+	ix = 0x0;
 // LINE 1304:
 	__asm        movsx  eax, ix;
 	__asm        mov    ecx, MiscInfo;
@@ -5010,8 +5005,7 @@ void swizzle_buffer(char * data, long count) {
 	__asm        sar    eax, 2;
 	__asm        mov    count, eax;
 // LINE 1502:
-	__asm        mov    eax, data;
-	__asm        mov    lptr, eax;
+	lptr = data;
 // LINE 1504:
 	__asm        mov    i, 0;
 	__asm        jmp    _T2d;
@@ -5050,8 +5044,7 @@ void swizzle_Micro(char * data, long count) {
 	__asm        shr    eax, 3;
 	__asm        mov    count, eax;
 // LINE 1530:
-	__asm        mov    eax, data;
-	__asm        mov    mptr, eax;
+	mptr = data;
 // LINE 1532:
 	__asm        mov    i, 0;
 	__asm        jmp    _T27;
@@ -5106,8 +5099,7 @@ void swizzle_shorts(char * data, long count) {
 	__asm        sar    eax, 1;
 	__asm        mov    count, eax;
 // LINE 1560:
-	__asm        mov    eax, data;
-	__asm        mov    sptr, eax;
+	sptr = data;
 // LINE 1562:
 	__asm        mov    i, 0;
 	__asm        jmp    _T2a;
@@ -5249,89 +5241,89 @@ short S2CityAlloc() {
 	long cnt;
 
 // LINE 1711:
-	__asm        mov    GraphData[0], 0;
+	GraphData[0] = 0x0;
 // LINE 1712:
-	__asm        mov    GraphMax, 0;
+	GraphMax = 0x0;
 // LINE 1713:
-	__asm        mov    AltMap[0], 0;
+	AltMap[0] = 0x0;
 // LINE 1714:
-	__asm        mov    S_ptr1, 0;
+	S_ptr1 = 0x0;
 // LINE 1715:
-	__asm        mov    S_ptr2, 0;
+	S_ptr2 = 0x0;
 // LINE 1716:
-	__asm        mov    S_ptr3, 0;
+	S_ptr3 = 0x0;
 // LINE 1717:
-	__asm        mov    S_ptr4, 0;
+	S_ptr4 = 0x0;
 // LINE 1718:
-	__asm        mov    S_ptr5, 0;
+	S_ptr5 = 0x0;
 // LINE 1719:
-	__asm        mov    LabelArray, 0;
+	LabelArray = 0x0;
 // LINE 1720:
-	__asm        mov    MicroRecord, 0;
+	MicroRecord = 0x0;
 // LINE 1721:
-	__asm        mov    ThingList, 0;
+	ThingList = 0x0;
 // LINE 1722:
-	__asm        mov    TMap[0], 0;
+	TMap[0] = 0x0;
 // LINE 1723:
-	__asm        mov    BitsMap[0], 0;
+	BitsMap[0] = 0x0;
 // LINE 1724:
-	__asm        mov    TrafficMap[0], 0;
+	TrafficMap[0] = 0x0;
 // LINE 1725:
-	__asm        mov    PolluteMap[0], 0;
+	PolluteMap[0] = 0x0;
 // LINE 1726:
-	__asm        mov    ValueMap[0], 0;
+	ValueMap[0] = 0x0;
 // LINE 1727:
-	__asm        mov    CrimeMap[0], 0;
+	CrimeMap[0] = 0x0;
 // LINE 1728:
-	__asm        mov    PoliceMap[0], 0;
+	PoliceMap[0] = 0x0;
 // LINE 1729:
-	__asm        mov    FireMap[0], 0;
+	FireMap[0] = 0x0;
 // LINE 1730:
-	__asm        mov    PopMap[0], 0;
+	PopMap[0] = 0x0;
 // LINE 1731:
-	__asm        mov    ROGMap[0], 0;
+	ROGMap[0] = 0x0;
 // LINE 1732:
-	__asm        mov    budgetList, 0;
+	budgetList = 0x0;
 // LINE 1733:
-	__asm        mov    ZonePop, 0;
+	ZonePop = 0x0;
 // LINE 1734:
-	__asm        mov    TaxPop, 0;
+	TaxPop = 0x0;
 // LINE 1735:
-	__asm        mov    NeighborName, 0;
+	NeighborName = 0x0;
 // LINE 1736:
-	__asm        mov    NeighborValue, 0;
+	NeighborValue = 0x0;
 // LINE 1737:
-	__asm        mov    NeighborPop, 0;
+	NeighborPop = 0x0;
 // LINE 1738:
-	__asm        mov    NeighborFame, 0;
+	NeighborFame = 0x0;
 // LINE 1739:
-	__asm        mov    PopRatio, 0;
+	PopRatio = 0x0;
 // LINE 1740:
-	__asm        mov    EducateRatio, 0;
+	EducateRatio = 0x0;
 // LINE 1741:
-	__asm        mov    HealthRatio, 0;
+	HealthRatio = 0x0;
 // LINE 1742:
-	__asm        mov    IndDemand, 0;
+	IndDemand = 0x0;
 // LINE 1743:
-	__asm        mov    IndRates, 0;
+	IndRates = 0x0;
 // LINE 1744:
-	__asm        mov    IndRatio, 0;
+	IndRatio = 0x0;
 // LINE 1745:
-	__asm        mov    TileCnt, 0;
+	TileCnt = 0x0;
 // LINE 1746:
-	__asm        mov    MilCnt, 0;
+	MilCnt = 0x0;
 // LINE 1747:
-	__asm        mov    StackPts, 0;
+	StackPts = 0x0;
 // LINE 1748:
-	__asm        mov    CityNameString, 0;
+	CityNameString = 0x0;
 // LINE 1749:
-	__asm        mov    MiscInfo, 0;
+	MiscInfo = 0x0;
 // LINE 1750:
-	__asm        mov    PaperList, 0;
+	PaperList = 0x0;
 // LINE 1751:
-	__asm        mov    NewsList, 0;
+	NewsList = 0x0;
 // LINE 1760:
-	__asm        mov    poolsize, 0xD00;
+	poolsize = 0xd00;
 // LINE 1761:
 	__asm        add    poolsize, 0x40;
 // LINE 1762:
@@ -5711,7 +5703,7 @@ _T66f:
 	__asm        jmp    _Tdfd;
 // LINE 1857:
 _T69e:
-	__asm        mov    z, 0;
+	z = 0x0;
 // LINE 1858:
 	__asm        mov    x, 0;
 	__asm        jmp    _T6b3;
@@ -6331,7 +6323,7 @@ void CStringToPString(char * string) {
 	__asm        cmp    sizeCString, 0xFF;
 	__asm        jle    _T2c;
 // LINE 1998:
-	__asm        mov    sizeCString, 0xFF;
+	sizeCString = 0xff;
 // LINE 2000:
 _T2c:
 	__asm        mov    eax, sizeCString;
@@ -6474,15 +6466,14 @@ _T64:
 	__asm        dec    eax;
 	__asm        mov    s, eax;
 // LINE 2082:
-	__asm        mov    count, 0;
+	count = 0x0;
 // LINE 2084:
 _T79:
 	__asm        lea    eax, pathonly[0];
 	__asm        cmp    s, eax;
 	__asm        jb     _Tf2;
 // LINE 2085:
-	__asm        mov    eax, s;
-	__asm        mov    t, eax;
+	t = s;
 // LINE 2087:
 	__asm        mov    eax, s;
 	__asm        movsx  eax, byte ptr [eax];
@@ -6644,8 +6635,7 @@ _T30:
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 2171:
-	__asm        mov    eax, res;
-	__asm        mov    s, eax;
+	s = res;
 // LINE 2173:
 	__asm        mov    i, 0;
 	__asm        jmp    _T55;
@@ -6814,7 +6804,7 @@ void check_extension(char * pathname, char * ext) {
 	char * s;
 
 // LINE 2271:
-	__asm        mov    nameonly[0], 0;
+	nameonly[0] = 0x0;
 // LINE 2272:
 	__asm        lea    eax, nameonly[0];
 	__asm        push   eax;
@@ -6995,8 +6985,7 @@ _T33:
 	__asm        lea    eax, temp[0];
 	__asm        mov    r, eax;
 // LINE 2353:
-	__asm        mov    eax, ref;
-	__asm        mov    s, eax;
+	s = ref;
 // LINE 2355:
 _T42:
 	__asm        movsx  eax, len;
@@ -7152,8 +7141,7 @@ _T33:
 	__asm        lea    eax, temp[0];
 	__asm        mov    r, eax;
 // LINE 2394:
-	__asm        mov    eax, ref;
-	__asm        mov    s, eax;
+	s = ref;
 // LINE 2396:
 _T42:
 	__asm        movsx  eax, len;

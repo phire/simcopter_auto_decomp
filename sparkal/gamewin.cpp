@@ -284,17 +284,11 @@ void GameWindow::GameWindow(unsigned long Width, unsigned long Height, unsigned 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590470;
 // LINE 40:
-	__asm        mov    eax, Width;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+8], eax;
+	this->mWidth = Width;
 // LINE 41:
-	__asm        mov    eax, Height;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->mHeight = Height;
 // LINE 42:
-	__asm        mov    eax, Style;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], eax;
+	this->mStyle = Style;
 // LINE 44:
 	__asm        cmp    Caption, 0;
 	__asm        je     _Ta7;
@@ -344,26 +338,25 @@ _Td1:
 	__asm        test   eax, eax;
 	__asm        jne    _T14c;
 // LINE 54:
-	__asm        mov    ClassInfo.hCursor, 0;
+	ClassInfo.hCursor = 0x0;
 // LINE 55:
-	__asm        mov    ClassInfo.lpszMenuName, 0x599318;
+	ClassInfo.lpszMenuName = 0x599318;
 // LINE 56:
-	__asm        mov    ClassInfo.lpszClassName, 0x599AB8;
+	ClassInfo.lpszClassName = 0x599ab8;
 // LINE 57:
 	__asm        push   4;
 	__asm        call   dword ptr ds:[0x6C3560];
 	__asm        mov    ClassInfo.hbrBackground, eax;
 // LINE 58:
-	__asm        mov    eax, _ghWindowsInstance;
-	__asm        mov    ClassInfo.hInstance, eax;
+	ClassInfo.hInstance = _ghWindowsInstance;
 // LINE 59:
-	__asm        mov    ClassInfo.style, 0x20;
+	ClassInfo.style = 0x20;
 // LINE 60:
-	__asm        mov    ClassInfo.lpfnWndProc, 0x4815DD;
+	ClassInfo.lpfnWndProc = 0x4815dd;
 // LINE 61:
-	__asm        mov    ClassInfo.cbWndExtra, 4;
+	ClassInfo.cbWndExtra = 0x4;
 // LINE 62:
-	__asm        mov    ClassInfo.cbClsExtra, 0;
+	ClassInfo.cbClsExtra = 0x0;
 // LINE 63:
 	__asm        push   0x7F00;
 	__asm        push   0;
@@ -402,19 +395,15 @@ unsigned long GameWindow::CreateSparkalWindow() {
 	__asm        jmp    _T1e7;
 // LINE 86:
 _T23:
-	__asm        mov    rectWindowForAdjust.top, 0;
+	rectWindowForAdjust.top = 0x0;
 // LINE 87:
-	__asm        mov    rectWindowForAdjust.left, 0;
+	rectWindowForAdjust.left = 0x0;
 // LINE 88:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    rectWindowForAdjust.right, eax;
+	rectWindowForAdjust.right = this->mWidth;
 // LINE 89:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    rectWindowForAdjust.bottom, eax;
+	rectWindowForAdjust.bottom = this->mHeight;
 // LINE 91:
-	__asm        mov    dwWindowStyle, 0;
+	dwWindowStyle = 0x0;
 // LINE 92:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0xC], 1;
@@ -465,21 +454,13 @@ _Tbf:
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C387C];
 // LINE 111:
-	__asm        mov    eax, rectWindowForAdjust.left;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x78], eax;
+	this->rectWindow.left = rectWindowForAdjust.left;
 // LINE 112:
-	__asm        mov    eax, rectWindowForAdjust.top;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x7C], eax;
+	this->rectWindow.top = rectWindowForAdjust.top;
 // LINE 113:
-	__asm        mov    eax, rectWindowForAdjust.right;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x80], eax;
+	this->rectWindow.right = rectWindowForAdjust.right;
 // LINE 114:
-	__asm        mov    eax, rectWindowForAdjust.bottom;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x84], eax;
+	this->rectWindow.bottom = rectWindowForAdjust.bottom;
 // LINE 115:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x78;
@@ -574,8 +555,7 @@ _T1e7:
 // FUNCTION: COPTER_D 0x004672cb
 void GameWindow::~GameWindow() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x590470;
+	this-><GameWindow+0x00> = 0x590470;
 // LINE 150:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x98];
@@ -706,9 +686,9 @@ _T26:
 	__asm        mov    ecx, 0x100;
 	__asm        rep stosd;
 // LINE 212:
-	__asm        mov    StaticCount, 0x14;
+	StaticCount = 0x14;
 // LINE 213:
-	__asm        mov    PaletteUse, 1;
+	PaletteUse = 0x1;
 // LINE 215:
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3850];
@@ -759,9 +739,9 @@ _Tb1:
 	__asm        cmp    PaletteUse, 2;
 	__asm        jne    _Te8;
 // LINE 229:
-	__asm        mov    Start, 1;
+	Start = 0x1;
 // LINE 230:
-	__asm        mov    End, 0xFF;
+	End = 0xff;
 // LINE 234:
 _Te8:
 	__asm        mov    Counter, 0;
@@ -952,21 +932,13 @@ void GameWindow::ProcessWindowMove() {
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B8];
 // LINE 306:
-	__asm        mov    eax, rectWindowTemp.left;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x78], eax;
+	this->rectWindow.left = rectWindowTemp.left;
 // LINE 307:
-	__asm        mov    eax, rectWindowTemp.top;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x7C], eax;
+	this->rectWindow.top = rectWindowTemp.top;
 // LINE 308:
-	__asm        mov    eax, rectWindowTemp.right;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x80], eax;
+	this->rectWindow.right = rectWindowTemp.right;
 // LINE 309:
-	__asm        mov    eax, rectWindowTemp.bottom;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x84], eax;
+	this->rectWindow.bottom = rectWindowTemp.bottom;
 // LINE 312:
 	__asm        lea    eax, rectWindowTemp.left;
 	__asm        push   eax;
@@ -989,21 +961,13 @@ void GameWindow::ProcessWindowMove() {
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C37E0];
 // LINE 315:
-	__asm        mov    eax, rectWindowTemp.left;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x88], eax;
+	this->rectWindowClient.left = rectWindowTemp.left;
 // LINE 316:
-	__asm        mov    eax, rectWindowTemp.top;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x8C], eax;
+	this->rectWindowClient.top = rectWindowTemp.top;
 // LINE 317:
-	__asm        mov    eax, rectWindowTemp.right;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x90], eax;
+	this->rectWindowClient.right = rectWindowTemp.right;
 // LINE 318:
-	__asm        mov    eax, rectWindowTemp.bottom;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x94], eax;
+	this->rectWindowClient.bottom = rectWindowTemp.bottom;
 // LINE 323:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
@@ -1092,21 +1056,13 @@ int32_t GameWindow::CompleteSwitchToWindowedMode() {
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C387C];
 // LINE 363:
-	__asm        mov    eax, rectWindowTempWindows.left;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x78], eax;
+	this->rectWindow.left = rectWindowTempWindows.left;
 // LINE 364:
-	__asm        mov    eax, rectWindowTempWindows.top;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x7C], eax;
+	this->rectWindow.top = rectWindowTempWindows.top;
 // LINE 365:
-	__asm        mov    eax, rectWindowTempWindows.right;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x80], eax;
+	this->rectWindow.right = rectWindowTempWindows.right;
 // LINE 366:
-	__asm        mov    eax, rectWindowTempWindows.bottom;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x84], eax;
+	this->rectWindow.bottom = rectWindowTempWindows.bottom;
 // LINE 367:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x78;
@@ -1175,10 +1131,9 @@ int32_t GameWindow::CompleteSwitchToFullScreenMode() {
 	struct tagRECT rectWindowTemp;
 
 // LINE 409:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
+	this->mStyle = 0x0;
 // LINE 410:
-	__asm        mov    dwStyle, 0x90000000;
+	dwStyle = 0x90000000;
 // LINE 411:
 	__asm        mov    eax, dwStyle;
 	__asm        push   eax;
@@ -1439,8 +1394,7 @@ _T3c:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T477;
 // LINE 508:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18], 0;
+	this->mWindow = 0x0;
 // LINE 509:
 	__asm        jmp    _T459;
 // LINE 513:
@@ -1452,8 +1406,7 @@ _T3c:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T477;
 // LINE 517:
-	__asm        mov    eax, lParam;
-	__asm        mov    lpMinMaxInfo, eax;
+	lpMinMaxInfo = lParam;
 // LINE 520:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x70];
@@ -1489,15 +1442,9 @@ _T3c:
 	__asm        mov    ecx, lpMinMaxInfo;
 	__asm        mov    [ecx+0xC], eax;
 // LINE 527:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x68];
-	__asm        mov    ecx, lpMinMaxInfo;
-	__asm        mov    [ecx+0x10], eax;
+	lpMinMaxInfo->ptMaxPosition.x = this->rectWindowDesired.left;
 // LINE 528:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x6C];
-	__asm        mov    ecx, lpMinMaxInfo;
-	__asm        mov    [ecx+0x14], eax;
+	lpMinMaxInfo->ptMaxPosition.y = this->rectWindowDesired.top;
 // LINE 529:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T477;

@@ -71,7 +71,7 @@ struct VRResource* LoadImages(char * name) {
 	__asm        cmp    file, 0xFFFFFFFF;
 	__asm        jne    _T38;
 // LINE 79:
-	__asm        mov    GlobalError, 1;
+	GlobalError = 0x1;
 // LINE 81:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T1e1;
@@ -93,7 +93,7 @@ _T38:
 	__asm        call   _close;
 	__asm        add    esp, 4;
 // LINE 89:
-	__asm        mov    GlobalError, 2;
+	GlobalError = 0x2;
 // LINE 91:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T1e1;
@@ -113,7 +113,7 @@ _T74:
 	__asm        cmp    res, 0;
 	__asm        jne    _Tad;
 // LINE 145:
-	__asm        mov    GlobalError, 4;
+	GlobalError = 0x4;
 // LINE 147:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T1e1;
@@ -135,7 +135,7 @@ _Tad:
 	__asm        cmp    group, 0;
 	__asm        jne    _Tf8;
 // LINE 177:
-	__asm        mov    GlobalError, 4;
+	GlobalError = 0x4;
 // LINE 179:
 	__asm        mov    eax, file;
 	__asm        push   eax;
@@ -146,8 +146,7 @@ _Tad:
 	__asm        jmp    _T1e1;
 // LINE 183:
 _Tf8:
-	__asm        mov    eax, group;
-	__asm        mov    byteptr, eax;
+	byteptr = group;
 // LINE 184:
 	__asm        mov    eax, bmp.BmpCount;
 	__asm        lea    eax, [eax+eax*2];
@@ -185,8 +184,7 @@ _T14d:
 	__asm        cmp    bmp.BmpCount, eax;
 	__asm        jle    _T1b4;
 // LINE 189:
-	__asm        mov    eax, byteptr;
-	__asm        mov    bhdr, eax;
+	bhdr = byteptr;
 // LINE 198:
 	__asm        mov    eax, bhdr;
 	__asm        mov    eax, [eax];
@@ -221,19 +219,13 @@ _T14d:
 	__asm        jmp    _T14a;
 // LINE 206:
 _T1b4:
-	__asm        mov    eax, group;
-	__asm        mov    ecx, res;
-	__asm        mov    [ecx], eax;
+	res->res.mem = group;
 // LINE 207:
-	__asm        mov    eax, res;
-	__asm        mov    dword ptr [eax+8], 3;
+	res->res.type = 0x3;
 // LINE 208:
-	__asm        mov    eax, res;
-	__asm        mov    dword ptr [eax+0xC], 0;
+	res->res.entry = 0x0;
 // LINE 209:
-	__asm        mov    eax, bmp.BmpCount;
-	__asm        mov    ecx, res;
-	__asm        mov    [ecx+0x10], eax;
+	res->count = bmp.BmpCount;
 // LINE 210:
 	__asm        mov    eax, res;
 	__asm        jmp    _T1e1;
@@ -248,8 +240,7 @@ struct VRBmpHdr* VRInt2BmpHdr(struct VRResource *res, int32_t i) {
 	struct VRBmpHdr *bhdr;
 
 // LINE 228:
-	__asm        mov    eax, res;
-	__asm        mov    hdr, eax;
+	hdr = res;
 // LINE 230:
 	__asm        mov    eax, i;
 	__asm        sar    eax, 0x10;
@@ -286,8 +277,7 @@ int32_t VRGetResTextureCnt(struct VRResource *res) {
 	struct TEXT_Resource *hdr;
 
 // LINE 257:
-	__asm        mov    eax, res;
-	__asm        mov    hdr, eax;
+	hdr = res;
 // LINE 258:
 	__asm        mov    eax, hdr;
 	__asm        mov    eax, [eax+0x10];
@@ -309,8 +299,7 @@ int32_t VRSetBmpToTiled(struct VRResource *res, int32_t mask, int32_t bmpid, uns
 	int32_t rowshift;
 
 // LINE 290:
-	__asm        mov    eax, res;
-	__asm        mov    hdr, eax;
+	hdr = res;
 // LINE 292:
 	__asm        mov    eax, bmpid;
 	__asm        lea    eax, [eax+eax*2];
@@ -323,7 +312,7 @@ int32_t VRSetBmpToTiled(struct VRResource *res, int32_t mask, int32_t bmpid, uns
 	__asm        jmp    _Tc3;
 // LINE 305:
 _T2a:
-	__asm        mov    notiles, 0x40;
+	notiles = 0x40;
 // LINE 306:
 	__asm        mov    eax, bhdr;
 	__asm        mov    dword ptr [eax+4], 0x20;
@@ -332,14 +321,14 @@ _T2a:
 	__asm        mov    ecx, bhdr;
 	__asm        mov    [ecx], eax;
 // LINE 307:
-	__asm        mov    colmask, 7;
+	colmask = 0x7;
 // LINE 308:
-	__asm        mov    rowshift, 3;
+	rowshift = 0x3;
 // LINE 309:
 	__asm        jmp    _Tef;
 // LINE 311:
 _T59:
-	__asm        mov    notiles, 0x10;
+	notiles = 0x10;
 // LINE 312:
 	__asm        mov    eax, bhdr;
 	__asm        mov    dword ptr [eax+4], 0x40;
@@ -348,14 +337,14 @@ _T59:
 	__asm        mov    ecx, bhdr;
 	__asm        mov    [ecx], eax;
 // LINE 313:
-	__asm        mov    colmask, 3;
+	colmask = 0x3;
 // LINE 314:
-	__asm        mov    rowshift, 2;
+	rowshift = 0x2;
 // LINE 315:
 	__asm        jmp    _Tef;
 // LINE 317:
 _T88:
-	__asm        mov    notiles, 4;
+	notiles = 0x4;
 // LINE 318:
 	__asm        mov    eax, bhdr;
 	__asm        mov    dword ptr [eax+4], 0x80;
@@ -364,9 +353,9 @@ _T88:
 	__asm        mov    ecx, bhdr;
 	__asm        mov    [ecx], eax;
 // LINE 319:
-	__asm        mov    colmask, 1;
+	colmask = 0x1;
 // LINE 320:
-	__asm        mov    rowshift, 1;
+	rowshift = 0x1;
 // LINE 321:
 	__asm        jmp    _Tef;
 // LINE 323:
@@ -397,16 +386,14 @@ _Tef:
 	__asm        cmp    basearg, 0;
 	__asm        jne    _T11c;
 // LINE 335:
-	__asm        mov    eax, bhdr;
-	__asm        mov    baseptr, eax;
+	baseptr = bhdr;
 // LINE 336:
 	__asm        add    baseptr, 0x40C;
 // LINE 338:
 	__asm        jmp    _T122;
 // LINE 340:
 _T11c:
-	__asm        mov    eax, basearg;
-	__asm        mov    baseptr, eax;
+	baseptr = basearg;
 // LINE 346:
 _T122:
 	__asm        mov    i, 0;
@@ -418,10 +405,7 @@ _T131:
 	__asm        cmp    i, eax;
 	__asm        jge    _T18d;
 // LINE 348:
-	__asm        mov    eax, mask;
-	__asm        mov    ecx, i;
-	__asm        mov    edx, bhdr;
-	__asm        mov    [edx+ecx*8+0xC], eax;
+	bhdr->info.width = mask;
 // LINE 349:
 	__asm        mov    eax, colmask;
 	__asm        and    eax, i;
@@ -443,10 +427,7 @@ _T131:
 	__asm        add    eax, baseptr;
 	__asm        mov    tptr, eax;
 // LINE 354:
-	__asm        mov    eax, tptr;
-	__asm        mov    ecx, i;
-	__asm        mov    edx, bhdr;
-	__asm        mov    [edx+ecx*8+0x10], eax;
+	bhdr->info.width = tptr;
 // LINE 355:
 	__asm        jmp    _T12e;
 // LINE 357:
@@ -485,7 +466,7 @@ _T22:
 	__asm        cmp    file, 0xFFFFFFFF;
 	__asm        jne    _T51;
 // LINE 398:
-	__asm        mov    GlobalError, 1;
+	GlobalError = 0x1;
 // LINE 399:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T1a7;
@@ -507,7 +488,7 @@ _T51:
 	__asm        call   _close;
 	__asm        add    esp, 4;
 // LINE 408:
-	__asm        mov    GlobalError, 2;
+	GlobalError = 0x2;
 // LINE 409:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T1a7;
@@ -521,7 +502,7 @@ _T8d:
 	__asm        call   _close;
 	__asm        add    esp, 4;
 // LINE 451:
-	__asm        mov    GlobalError, 2;
+	GlobalError = 0x2;
 // LINE 452:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T1a7;
@@ -546,8 +527,7 @@ _Tb4:
 	__asm        call   _read;
 	__asm        add    esp, 0xC;
 // LINE 462:
-	__asm        mov    eax, alignptr;
-	__asm        mov    bhdr, eax;
+	bhdr = alignptr;
 // LINE 471:
 	__asm        mov    eax, bhdr;
 	__asm        cmp    dword ptr [eax], 0x100;
@@ -563,7 +543,7 @@ _T105:
 	__asm        call   _close;
 	__asm        add    esp, 4;
 // LINE 474:
-	__asm        mov    GlobalError, 2;
+	GlobalError = 0x2;
 // LINE 475:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T1a7;
@@ -594,7 +574,7 @@ _T122:
 	__asm        call   _close;
 	__asm        add    esp, 4;
 // LINE 486:
-	__asm        mov    GlobalError, 2;
+	GlobalError = 0x2;
 // LINE 487:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T1a7;

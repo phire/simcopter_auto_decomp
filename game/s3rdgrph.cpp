@@ -729,9 +729,7 @@ void RoadGraph::GetNextGoal(struct Goal *pGoal) {
 	struct Road *pRoad;
 
 // LINE 199:
-	__asm        mov    eax, pGoal;
-	__asm        mov    eax, [eax];
-	__asm        mov    pRGV, eax;
+	pRGV = pGoal->pRGV;
 // LINE 200:
 	__asm        mov    eax, pGoal;
 	__asm        mov    eax, [eax+0xE];
@@ -824,8 +822,7 @@ _Tab:
 	__asm        cmp    ecx, [eax+4];
 	__asm        jle    _T118;
 // LINE 257:
-	__asm        mov    eax, pGoal;
-	__asm        mov    dword ptr [eax+8], 0;
+	pGoal->gridIndex = 0x0;
 // LINE 258:
 	__asm        mov    eax, pGoal;
 	__asm        mov    eax, [eax+4];
@@ -846,9 +843,7 @@ IntersectionKludge:
 	unsigned char x;
 	struct RGVertex *pRGV;
 _T118:
-	__asm        mov    eax, pGoal;
-	__asm        mov    eax, [eax];
-	__asm        mov    pRGV, eax;
+	pRGV = pGoal->pRGV;
 // LINE 269:
 	__asm        mov    eax, pGoal;
 	__asm        mov    eax, [eax+0xE];
@@ -942,14 +937,11 @@ _T211:
 	__asm        jmp    _T216;
 // LINE 293:
 _T216:
-	__asm        mov    eax, pGoal;
-	__asm        mov    dword ptr [eax+0xE], 0xFFFFFFFE;
+	pGoal->edgeIndex = 0xfffffffe;
 // LINE 294:
-	__asm        mov    eax, pGoal;
-	__asm        mov    dword ptr [eax+4], 0;
+	pGoal->elementIndex = 0x0;
 // LINE 299:
-	__asm        mov    eax, pGoal;
-	__asm        mov    dword ptr [eax+8], 0xFFFFFFFF;
+	pGoal->gridIndex = 0xffffffff;
 // LINE 310:
 // Block end:
 _T234:
@@ -984,7 +976,7 @@ _T234:
 	__asm        mov    slope, 2;
 	__asm        jmp    _T2a0;
 _T299:
-	__asm        mov    slope, 0;
+	slope = 0x0;
 _T2a0:
 	__asm        jmp    _T347;
 // LINE 315:
@@ -995,7 +987,7 @@ _T2a0:
 	__asm        mov    slope, 2;
 	__asm        jmp    _T2c5;
 _T2be:
-	__asm        mov    slope, 0;
+	slope = 0x0;
 _T2c5:
 	__asm        jmp    _T347;
 // LINE 316:
@@ -1006,7 +998,7 @@ _T2c5:
 	__asm        mov    slope, 2;
 	__asm        jmp    _T2ea;
 _T2e3:
-	__asm        mov    slope, 0;
+	slope = 0x0;
 _T2ea:
 	__asm        jmp    _T347;
 // LINE 317:
@@ -1017,12 +1009,12 @@ _T2ea:
 	__asm        mov    slope, 2;
 	__asm        jmp    _T30f;
 _T308:
-	__asm        mov    slope, 0;
+	slope = 0x0;
 _T30f:
 	__asm        jmp    _T347;
 // LINE 318:
 _T314:
-	__asm        mov    slope, 1;
+	slope = 0x1;
 // LINE 319:
 	__asm        jmp    _T347;
 _T320:
@@ -1038,12 +1030,10 @@ _T347:
 	__asm        jmp    _T353;
 // LINE 323:
 _T34c:
-	__asm        mov    slope, 1;
+	slope = 0x1;
 // LINE 325:
 _T353:
-	__asm        mov    eax, slope;
-	__asm        mov    ecx, pGoal;
-	__asm        mov    [ecx+0x26], eax;
+	pGoal->slope = slope;
 // LINE 327:
 	__asm        jmp    _T366;
 _T361:
@@ -1081,7 +1071,7 @@ void RoadGraph::PickPlaceOnRoad(struct Goal *pGoal, int32_t x, int32_t y) {
 	__asm        add    eax, ecx;
 	__asm        mov    pRGV, eax;
 // LINE 344:
-	__asm        mov    loopCounter, 0;
+	loopCounter = 0x0;
 // LINE 350:
 _T44:
 	__asm        call   rand;
@@ -1293,13 +1283,9 @@ _T237:
 	__asm        jmp    _T2a3;
 // LINE 401:
 _T275:
-	__asm        mov    eax, pGoal;
-	__asm        mov    eax, [eax+0xE];
-	__asm        mov    ecx, pGoal;
-	__asm        mov    [ecx+0x12], eax;
+	pGoal->direction = pGoal->edgeIndex;
 // LINE 402:
-	__asm        mov    eax, pGoal;
-	__asm        mov    dword ptr [eax+4], 0;
+	pGoal->elementIndex = 0x0;
 // LINE 403:
 	__asm        mov    eax, pRGV;
 	__asm        xor    ecx, ecx;
@@ -1307,24 +1293,16 @@ _T275:
 	__asm        mov    eax, pGoal;
 	__asm        mov    [eax+0x22], ecx;
 // LINE 404:
-	__asm        mov    eax, pGoal;
-	__asm        mov    dword ptr [eax+0x26], 1;
+	pGoal->slope = 0x1;
 // LINE 407:
 _T2a3:
-	__asm        mov    eax, pRGV;
-	__asm        mov    ecx, pGoal;
-	__asm        mov    [ecx], eax;
+	pGoal->pRGV = pRGV;
 // LINE 408:
-	__asm        mov    eax, pGoal;
-	__asm        mov    dword ptr [eax+8], 0;
+	pGoal->gridIndex = 0x0;
 // LINE 409:
-	__asm        mov    al, reinterpret_cast<uint8_t>(x);
-	__asm        mov    ecx, pGoal;
-	__asm        mov    [ecx+0xC], al;
+	pGoal->gridLoc.x = reinterpret_cast<uint8_t>(x);
 // LINE 410:
-	__asm        mov    al, reinterpret_cast<uint8_t>(y);
-	__asm        mov    ecx, pGoal;
-	__asm        mov    [ecx+0xD], al;
+	pGoal->gridLoc.y = reinterpret_cast<uint8_t>(y);
 // LINE 411:
 	__asm        mov    eax, pRGV;
 	__asm        mov    al, [eax+2];
@@ -1399,11 +1377,9 @@ _T51:
 	__asm        jmp    _T91;
 // LINE 426:
 _T91:
-	__asm        mov    eax, goal1;
-	__asm        mov    dword ptr [eax], 0;
+	goal1.pRGV = 0x0;
 // LINE 427:
-	__asm        mov    eax, goal2;
-	__asm        mov    dword ptr [eax], 0;
+	goal2.pRGV = 0x0;
 // LINE 428:
 	__asm        lea    edi, resultGoal.pRGV;
 	__asm        mov    esi, goal1;
@@ -1447,19 +1423,13 @@ _T91:
 	__asm        mov    ecx, goal1;
 	__asm        mov    [ecx], eax;
 // LINE 436:
-	__asm        mov    eax, goal1;
-	__asm        mov    dword ptr [eax+4], 0;
+	goal1.elementIndex = 0x0;
 // LINE 437:
-	__asm        mov    eax, goal1;
-	__asm        mov    dword ptr [eax+8], 0xFFFFFFFF;
+	goal1.gridIndex = 0xffffffff;
 // LINE 438:
-	__asm        mov    al, startLoc.x;
-	__asm        mov    ecx, goal1;
-	__asm        mov    [ecx+0xC], al;
+	goal1.gridLoc.x = startLoc.x;
 // LINE 439:
-	__asm        mov    al, startLoc.y;
-	__asm        mov    ecx, goal1;
-	__asm        mov    [ecx+0xD], al;
+	goal1.gridLoc.y = startLoc.y;
 // LINE 440:
 	__asm        mov    eax, pRGV;
 	__asm        mov    al, [eax+2];
@@ -1484,17 +1454,13 @@ _T91:
 	__asm        mov    eax, goal1;
 	__asm        mov    [eax+0x22], ecx;
 // LINE 443:
-	__asm        mov    eax, goal1;
-	__asm        mov    dword ptr [eax+0x26], 1;
+	goal1.slope = 0x1;
 // LINE 446:
-	__asm        mov    eax, goal1;
-	__asm        mov    dword ptr [eax+0x16], 0;
+	goal1.distance = 0x0;
 // LINE 447:
-	__asm        mov    eax, goal1;
-	__asm        mov    dword ptr [eax+0x12], 0xFFFFFFFE;
+	goal1.direction = 0xfffffffe;
 // LINE 448:
-	__asm        mov    eax, goal1;
-	__asm        mov    dword ptr [eax+0xE], 0xFFFFFFFE;
+	goal1.edgeIndex = 0xfffffffe;
 // LINE 450:
 	__asm        mov    edi, __$ReturnUdt;
 	__asm        mov    esi, goal1;
@@ -1511,16 +1477,16 @@ _T1a1:
 	__asm        cmp    eax, 0x69;
 	__asm        jne    _T1c5;
 // LINE 455:
-	__asm        mov    stepSize, 2;
+	stepSize = 0x2;
 // LINE 456:
-	__asm        mov    Offset, 1;
+	Offset = 0x1;
 // LINE 458:
 	__asm        jmp    _T1d3;
 // LINE 460:
 _T1c5:
-	__asm        mov    stepSize, 1;
+	stepSize = 0x1;
 // LINE 461:
-	__asm        mov    Offset, 0;
+	Offset = 0x0;
 // LINE 469:
 _T1d3:
 	__asm        xor    eax, eax;
@@ -1988,9 +1954,7 @@ void RoadGraph::SamePlaceOtherDirection(struct Goal *pGoal) {
 	struct _GridCoordinates here;
 
 // LINE 554:
-	__asm        mov    eax, pGoal;
-	__asm        mov    ax, [eax+0xC];
-	__asm        mov    reinterpret_cast<uint16_t>(here.x), ax;
+	reinterpret_cast<uint16_t>(here.x) = reinterpret_cast<uint16_t>(pGoal->gridLoc.x);
 // LINE 557:
 	__asm        mov    eax, pGoal;
 	__asm        xor    ecx, ecx;
@@ -2022,9 +1986,7 @@ void RoadGraph::SamePlaceOtherDirection(struct Goal *pGoal) {
 	__asm        jmp    _T134;
 // LINE 567:
 _T62:
-	__asm        mov    eax, pGoal;
-	__asm        mov    eax, [eax+0x12];
-	__asm        mov    prevDir, eax;
+	prevDir = pGoal->direction;
 // LINE 570:
 	__asm        mov    eax, pGoal;
 	__asm        mov    eax, [eax+0x12];
@@ -2073,10 +2035,7 @@ _Tce:
 	__asm        mov    ecx, pGoal;
 	__asm        mov    [ecx+0x12], eax;
 // LINE 583:
-	__asm        mov    eax, pGoal;
-	__asm        mov    eax, [eax+0x12];
-	__asm        mov    ecx, pGoal;
-	__asm        mov    [ecx+0xE], eax;
+	pGoal->edgeIndex = pGoal->direction;
 // LINE 586:
 _T105:
 	__asm        mov    eax, pGoal;
@@ -2176,13 +2135,11 @@ int32_t RoadGraph::FindIntersection(struct Goal& goal, unsigned char x, unsigned
 	__asm        mov    eax, TypeToIndex2[0][eax*4];
 	__asm        mov    currentDir, eax;
 // LINE 634:
-	__asm        mov    returnVal, 0;
+	returnVal = 0x0;
 // LINE 636:
-	__asm        mov    al, x;
-	__asm        mov    here.x, al;
+	here.x = x;
 // LINE 637:
-	__asm        mov    al, y;
-	__asm        mov    here.y, al;
+	here.y = y;
 // LINE 639:
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
@@ -2195,8 +2152,7 @@ int32_t RoadGraph::FindIntersection(struct Goal& goal, unsigned char x, unsigned
 	__asm        test   eax, eax;
 	__asm        je     _T58;
 // LINE 641:
-	__asm        mov    eax, currentDir;
-	__asm        mov    returnDir, eax;
+	returnDir = currentDir;
 // LINE 642:
 	__asm        jmp    _T1d9;
 
@@ -2217,7 +2173,7 @@ _T58:
 	__asm        cmp    eax, ecx;
 	__asm        jne    _T83;
 // LINE 649:
-	__asm        mov    returnVal, 1;
+	returnVal = 0x1;
 // LINE 655:
 _T83:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(here.y);
@@ -2272,11 +2228,10 @@ _Tf2:
 	__asm        cmp    eax, ecx;
 	__asm        jne    _T11d;
 // LINE 670:
-	__asm        mov    returnVal, 1;
+	returnVal = 0x1;
 // LINE 674:
 _T11d:
-	__asm        mov    eax, returnDir;
-	__asm        mov    currentDir, eax;
+	currentDir = returnDir;
 // LINE 677:
 	__asm        cmp    result, 0xFFFFFFFE;
 	__asm        jne    _T1ac;
@@ -2320,11 +2275,9 @@ _T12d:
 	__asm        mov    ecx, goal;
 	__asm        mov    [ecx], eax;
 // LINE 685:
-	__asm        mov    eax, goal;
-	__asm        mov    dword ptr [eax+8], 0xFFFFFFFF;
+	goal.gridIndex = 0xffffffff;
 // LINE 686:
-	__asm        mov    eax, goal;
-	__asm        mov    dword ptr [eax+4], 0;
+	goal.elementIndex = 0x0;
 // LINE 688:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(startLoc.x);
 	__asm        push   eax;
@@ -2448,16 +2401,16 @@ _Te7:
 	__asm        cmp    eax, 0x69;
 	__asm        jne    _T10b;
 // LINE 724:
-	__asm        mov    stepSize, 2;
+	stepSize = 0x2;
 // LINE 725:
-	__asm        mov    Offset, 1;
+	Offset = 0x1;
 // LINE 727:
 	__asm        jmp    _T119;
 // LINE 729:
 _T10b:
-	__asm        mov    stepSize, 1;
+	stepSize = 0x1;
 // LINE 730:
-	__asm        mov    Offset, 0;
+	Offset = 0x0;
 // LINE 734:
 _T119:
 	__asm        mov    eax, Offset;
@@ -2805,10 +2758,9 @@ int32_t RoadGraph::IsThisADeadEnd(enum DirIndex2 currentDir, unsigned char x, un
 	enum DirIndex2 startingDir;
 
 // LINE 763:
-	__asm        mov    repeatCount, 0;
+	repeatCount = 0x0;
 // LINE 766:
-	__asm        mov    eax, currentDir;
-	__asm        mov    startingDir, eax;
+	startingDir = currentDir;
 // LINE 769:
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
@@ -2860,10 +2812,9 @@ _T7c:
 	__asm        jmp    _T9d;
 // LINE 791:
 _T90:
-	__asm        mov    repeatCount, 0;
+	repeatCount = 0x0;
 // LINE 792:
-	__asm        mov    eax, returnDir;
-	__asm        mov    currentDir, eax;
+	currentDir = returnDir;
 // LINE 795:
 _T9d:
 	__asm        mov    eax, currentDir;
@@ -2987,16 +2938,16 @@ _Tff:
 	__asm        cmp    eax, 0x69;
 	__asm        jne    _T123;
 // LINE 819:
-	__asm        mov    stepSize, 2;
+	stepSize = 0x2;
 // LINE 820:
-	__asm        mov    Offset, 1;
+	Offset = 0x1;
 // LINE 822:
 	__asm        jmp    _T131;
 // LINE 824:
 _T123:
-	__asm        mov    stepSize, 1;
+	stepSize = 0x1;
 // LINE 825:
-	__asm        mov    Offset, 0;
+	Offset = 0x0;
 // LINE 833:
 _T131:
 	__asm        mov    eax, y;
@@ -3647,10 +3598,9 @@ void RoadGraph::FindNumRoadElements(struct RGVertex *pRGV, struct Edge *pEdge, e
 	enum DirIndex2 startingDir;
 
 // LINE 881:
-	__asm        mov    repeatCount, 0;
+	repeatCount = 0x0;
 // LINE 884:
-	__asm        mov    eax, currentDir;
-	__asm        mov    startingDir, eax;
+	startingDir = currentDir;
 // LINE 887:
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
@@ -3674,12 +3624,9 @@ void RoadGraph::FindNumRoadElements(struct RGVertex *pRGV, struct Edge *pEdge, e
 	__asm        mov    ecx, pEdge;
 	__asm        mov    [ecx], al;
 // LINE 890:
-	__asm        mov    al, x;
-	__asm        mov    ecx, pEdge;
-	__asm        mov    [ecx+1], al;
+	pEdge->x = x;
 // LINE 891:
-	__asm        mov    eax, pEdge;
-	__asm        mov    word ptr [eax+4], 0;
+	pEdge->numElementsToPath = 0x0;
 // LINE 892:
 	__asm        jmp    _T5a4;
 // LINE 895:
@@ -3724,10 +3671,9 @@ _Taf:
 	__asm        jmp    _Te1;
 // LINE 913:
 _Tc3:
-	__asm        mov    repeatCount, 0;
+	repeatCount = 0x0;
 // LINE 914:
-	__asm        mov    eax, returnDir;
-	__asm        mov    currentDir, eax;
+	currentDir = returnDir;
 // LINE 918:
 	__asm        cmp    fDeadEnd, 0;
 	__asm        je     _Te1;
@@ -3771,11 +3717,9 @@ _T13a:
 // Block start:
 	unsigned char tempy;
 	unsigned char tempx;
-	__asm        mov    al, x;
-	__asm        mov    tempx, al;
+	tempx = x;
 // LINE 941:
-	__asm        mov    al, y;
-	__asm        mov    tempy, al;
+	tempy = y;
 // LINE 943:
 	__asm        mov    eax, returnDir;
 	__asm        mov    [ebp-0x2C], eax;
@@ -3814,9 +3758,7 @@ _T1a4:
 	__asm        mov    ecx, pEdge;
 	__asm        mov    [ecx], al;
 // LINE 952:
-	__asm        mov    al, tempx;
-	__asm        mov    ecx, pEdge;
-	__asm        mov    [ecx+1], al;
+	pEdge->x = tempx;
 // LINE 954:
 // Block end:
 	__asm        jmp    _T1fe;
@@ -3824,10 +3766,7 @@ _T1cb:
 	__asm        cmp    returnStatus, 0xFFFFFFFF;
 	__asm        jne    _T1fe;
 // LINE 956:
-	__asm        mov    eax, pRGV;
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, pEdge;
-	__asm        mov    [ecx+1], al;
+	pEdge->x = pRGV->x;
 // LINE 957:
 	__asm        mov    eax, pRGV;
 	__asm        xor    ecx, ecx;
@@ -3851,7 +3790,7 @@ _T1fe:
 	__asm        mov    eax, pEdge;
 	__asm        inc    word ptr [eax+4];
 // LINE 965:
-	__asm        mov    repeatCount, 0;
+	repeatCount = 0x0;
 // LINE 969:
 _T218:
 	__asm        xor    eax, eax;
@@ -4071,10 +4010,9 @@ _T4f1:
 	__asm        jmp    _T519;
 // LINE 986:
 _T505:
-	__asm        mov    repeatCount, 0;
+	repeatCount = 0x0;
 // LINE 987:
-	__asm        mov    eax, returnDir;
-	__asm        mov    currentDir, eax;
+	currentDir = returnDir;
 // LINE 988:
 	__asm        mov    eax, pEdge;
 	__asm        inc    word ptr [eax+4];
@@ -4192,9 +4130,7 @@ _T91:
 	__asm        test   dl, 0x1F;
 	__asm        je     _Tc4;
 // LINE 1023:
-	__asm        mov    eax, currentDir;
-	__asm        mov    ecx, pNextDir;
-	__asm        mov    [ecx], eax;
+	pNextDir-> = currentDir;
 // LINE 1024:
 	__asm        mov    eax, currentDir;
 	__asm        jmp    _T61f;
@@ -4233,9 +4169,9 @@ _T120:
 	__asm        je     _T151;
 // LINE 1031:
 _T12a:
-	__asm        mov    stepSize, 2;
+	stepSize = 0x2;
 // LINE 1032:
-	__asm        mov    Offset, 1;
+	Offset = 0x1;
 // LINE 1033:
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
@@ -4250,9 +4186,9 @@ _T12a:
 	__asm        jmp    _T15f;
 // LINE 1038:
 _T151:
-	__asm        mov    stepSize, 1;
+	stepSize = 0x1;
 // LINE 1039:
-	__asm        mov    Offset, 0;
+	Offset = 0x0;
 // LINE 1043:
 _T15f:
 	__asm        xor    eax, eax;
@@ -4366,8 +4302,7 @@ _T283:
 	__asm        test   eax, eax;
 	__asm        je     _T2e4;
 // LINE 1050:
-	__asm        mov    eax, pNextDir;
-	__asm        mov    dword ptr [eax], 0;
+	pNextDir-> = 0x0;
 // LINE 1051:
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
@@ -4461,8 +4396,7 @@ _T392:
 	__asm        test   eax, eax;
 	__asm        je     _T3f8;
 // LINE 1060:
-	__asm        mov    eax, pNextDir;
-	__asm        mov    dword ptr [eax], 1;
+	pNextDir-> = 0x1;
 // LINE 1061:
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
@@ -4552,8 +4486,7 @@ _T495:
 	__asm        test   eax, eax;
 	__asm        je     _T4f9;
 // LINE 1070:
-	__asm        mov    eax, pNextDir;
-	__asm        mov    dword ptr [eax], 3;
+	pNextDir-> = 0x3;
 // LINE 1071:
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
@@ -4647,8 +4580,7 @@ _T5a7:
 	__asm        test   eax, eax;
 	__asm        je     _T60d;
 // LINE 1080:
-	__asm        mov    eax, pNextDir;
-	__asm        mov    dword ptr [eax], 2;
+	pNextDir-> = 0x2;
 // LINE 1081:
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
@@ -4672,9 +4604,7 @@ _T603:
 	__asm        jmp    _T61f;
 // LINE 1088:
 _T60d:
-	__asm        mov    eax, currentDir;
-	__asm        mov    ecx, pNextDir;
-	__asm        mov    [ecx], eax;
+	pNextDir-> = currentDir;
 // LINE 1089:
 	__asm        mov    eax, 0xFFFFFFFF;
 	__asm        jmp    _T61f;
@@ -6300,16 +6230,16 @@ _T7d:
 	__asm        cmp    eax, 0x69;
 	__asm        jne    _Ta1;
 // LINE 1204:
-	__asm        mov    stepSize, 2;
+	stepSize = 0x2;
 // LINE 1205:
-	__asm        mov    Offset, 1;
+	Offset = 0x1;
 // LINE 1207:
 	__asm        jmp    _Taf;
 // LINE 1209:
 _Ta1:
-	__asm        mov    stepSize, 1;
+	stepSize = 0x1;
 // LINE 1210:
-	__asm        mov    Offset, 0;
+	Offset = 0x0;
 // LINE 1213:
 _Taf:
 	__asm        mov    eax, Offset;
@@ -6428,9 +6358,9 @@ void RoadGraph::MakeRoad(struct RGVertex *pRGV, unsigned char x, unsigned char y
 	int32_t deadEnd;
 
 // LINE 1259:
-	__asm        mov    element, 0;
+	element = 0x0;
 // LINE 1260:
-	__asm        mov    repeatCount, 0;
+	repeatCount = 0x0;
 // LINE 1261:
 	__asm        mov    eax, pRGV;
 	__asm        mov    al, [eax+2];
@@ -6442,7 +6372,7 @@ void RoadGraph::MakeRoad(struct RGVertex *pRGV, unsigned char x, unsigned char y
 	__asm        and    ecx, IndexToType[0][eax*4];
 	__asm        mov    deadEnd, ecx;
 // LINE 1262:
-	__asm        mov    decrementFlag, 0;
+	decrementFlag = 0x0;
 // LINE 1266:
 	__asm        xor    eax, eax;
 	__asm        mov    al, y;
@@ -6458,11 +6388,9 @@ void RoadGraph::MakeRoad(struct RGVertex *pRGV, unsigned char x, unsigned char y
 	__asm        jmp    _Taf3;
 // LINE 1270:
 _T5e:
-	__asm        mov    al, x;
-	__asm        mov    startLoc.x, al;
+	startLoc.x = x;
 // LINE 1271:
-	__asm        mov    al, y;
-	__asm        mov    startLoc.y, al;
+	startLoc.y = y;
 // LINE 1275:
 	__asm        mov    eax, currentDir;
 	__asm        lea    eax, [eax+eax*4];
@@ -6483,9 +6411,7 @@ _T5e:
 	__asm        mov    ecx, pEdge;
 	__asm        mov    [ecx+6], eax;
 // LINE 1281:
-	__asm        mov    eax, pEdge;
-	__asm        mov    eax, [eax+6];
-	__asm        mov    pRoad, eax;
+	pRoad = pEdge->roadArray;
 // LINE 1282:
 	__asm        cmp    deadEnd, 0;
 	__asm        je     _T34d;
@@ -6637,7 +6563,7 @@ _T23e:
 	__asm        mov    dword ptr [ebp-0x34], 2;
 	__asm        jmp    _T279;
 _T272:
-	__asm        mov    dword ptr [ebp-0x34], 0;
+	None = 0x0;
 _T279:
 	__asm        jmp    _T331;
 
@@ -6649,7 +6575,7 @@ _T279:
 	__asm        mov    dword ptr [ebp-0x34], 2;
 	__asm        jmp    _T2a0;
 _T299:
-	__asm        mov    dword ptr [ebp-0x34], 0;
+	None = 0x0;
 _T2a0:
 	__asm        jmp    _T331;
 
@@ -6661,7 +6587,7 @@ _T2a0:
 	__asm        mov    dword ptr [ebp-0x34], 2;
 	__asm        jmp    _T2c7;
 _T2c0:
-	__asm        mov    dword ptr [ebp-0x34], 0;
+	None = 0x0;
 _T2c7:
 	__asm        jmp    _T331;
 
@@ -6673,7 +6599,7 @@ _T2c7:
 	__asm        mov    dword ptr [ebp-0x34], 2;
 	__asm        jmp    _T2ee;
 _T2e7:
-	__asm        mov    dword ptr [ebp-0x34], 0;
+	None = 0x0;
 _T2ee:
 	__asm        jmp    _T331;
 
@@ -6723,8 +6649,7 @@ _T381:
 	__asm        jmp    _T3ef;
 // LINE 1307:
 _T390:
-	__asm        mov    eax, returnDir;
-	__asm        mov    currentDir, eax;
+	currentDir = returnDir;
 // LINE 1308:
 	__asm        mov    eax, currentDir;
 	__asm        mov    [ebp-0x60], eax;
@@ -6914,7 +6839,7 @@ _T590:
 	__asm        mov    dword ptr [ebp-0x3C], 2;
 	__asm        jmp    _T5cb;
 _T5c4:
-	__asm        mov    dword ptr [ebp-0x3C], 0;
+	None = 0x0;
 _T5cb:
 	__asm        jmp    _T683;
 
@@ -6926,7 +6851,7 @@ _T5cb:
 	__asm        mov    dword ptr [ebp-0x3C], 2;
 	__asm        jmp    _T5f2;
 _T5eb:
-	__asm        mov    dword ptr [ebp-0x3C], 0;
+	None = 0x0;
 _T5f2:
 	__asm        jmp    _T683;
 
@@ -6938,7 +6863,7 @@ _T5f2:
 	__asm        mov    dword ptr [ebp-0x3C], 2;
 	__asm        jmp    _T619;
 _T612:
-	__asm        mov    dword ptr [ebp-0x3C], 0;
+	None = 0x0;
 _T619:
 	__asm        jmp    _T683;
 
@@ -6950,7 +6875,7 @@ _T619:
 	__asm        mov    dword ptr [ebp-0x3C], 2;
 	__asm        jmp    _T640;
 _T639:
-	__asm        mov    dword ptr [ebp-0x3C], 0;
+	None = 0x0;
 _T640:
 	__asm        jmp    _T683;
 
@@ -6969,7 +6894,7 @@ _T65b:
 	__asm        jmp    SwitchPointers5508265[0][eax*4];
 // Switch pointers
 // LINE 1333:
-	__asm        mov    fStart, 1;
+	fStart = 0x1;
 // LINE 1336:
 	__asm        xor    eax, eax;
 	__asm        mov    al, x;
@@ -7021,7 +6946,7 @@ _T71c:
 	__asm        cmp    returnStatus, 0xFFFFFFFF;
 	__asm        jne    _T78d;
 // LINE 1349:
-	__asm        mov    decrementFlag, 1;
+	decrementFlag = 0x1;
 // LINE 1351:
 	__asm        mov    eax, currentDir;
 	__asm        mov    [ebp-0x6C], eax;
@@ -7055,7 +6980,7 @@ _T781:
 	__asm        mov    returnDir, eax;
 // LINE 1362:
 _T78d:
-	__asm        mov    fStart, 0;
+	fStart = 0x0;
 // LINE 1364:
 	__asm        jmp    _T7a8;
 // LINE 1366:
@@ -7076,8 +7001,7 @@ _T7a8:
 	__asm        jmp    _Ta77;
 // LINE 1377:
 _T7bf:
-	__asm        mov    eax, returnDir;
-	__asm        mov    currentDir, eax;
+	currentDir = returnDir;
 // LINE 1378:
 	__asm        dec    element;
 // LINE 1379:
@@ -7093,7 +7017,7 @@ _T7bf:
 	__asm        mov    eax, pRoad;
 	__asm        mov    byte ptr [eax+1], 0xFF;
 // LINE 1384:
-	__asm        mov    decrementFlag, 0;
+	decrementFlag = 0x0;
 // LINE 1386:
 	__asm        jmp    _T7fb;
 // LINE 1387:
@@ -7240,7 +7164,7 @@ _T96d:
 	__asm        mov    dword ptr [ebp-0x44], 2;
 	__asm        jmp    _T9a8;
 _T9a1:
-	__asm        mov    dword ptr [ebp-0x44], 0;
+	None = 0x0;
 _T9a8:
 	__asm        jmp    _Ta60;
 
@@ -7252,7 +7176,7 @@ _T9a8:
 	__asm        mov    dword ptr [ebp-0x44], 2;
 	__asm        jmp    _T9cf;
 _T9c8:
-	__asm        mov    dword ptr [ebp-0x44], 0;
+	None = 0x0;
 _T9cf:
 	__asm        jmp    _Ta60;
 
@@ -7264,7 +7188,7 @@ _T9cf:
 	__asm        mov    dword ptr [ebp-0x44], 2;
 	__asm        jmp    _T9f6;
 _T9ef:
-	__asm        mov    dword ptr [ebp-0x44], 0;
+	None = 0x0;
 _T9f6:
 	__asm        jmp    _Ta60;
 
@@ -7276,7 +7200,7 @@ _T9f6:
 	__asm        mov    dword ptr [ebp-0x44], 2;
 	__asm        jmp    _Ta1d;
 _Ta16:
-	__asm        mov    dword ptr [ebp-0x44], 0;
+	None = 0x0;
 _Ta1d:
 	__asm        jmp    _Ta60;
 
@@ -7344,17 +7268,9 @@ void RoadGraph::FindPlaceOnRoad(struct Goal& goal, struct _GridCoordinates currL
 	struct Road *pRoad;
 
 // LINE 1414:
-	__asm        mov    eax, goal;
-	__asm        mov    eax, [eax];
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, goal;
-	__asm        mov    [ecx+0xC], al;
+	goal.gridLoc.x = goal.pRGV->x;
 // LINE 1415:
-	__asm        mov    eax, goal;
-	__asm        mov    eax, [eax];
-	__asm        mov    al, [eax+1];
-	__asm        mov    ecx, goal;
-	__asm        mov    [ecx+0xD], al;
+	goal.gridLoc.y = goal.pRGV->y;
 // LINE 1417:
 _T27:
 	__asm        mov    eax, goal;

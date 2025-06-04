@@ -1592,8 +1592,7 @@ _Te1:
 	__asm        mov    person, eax;
 	__asm        jmp    _Tfa;
 
-	__asm        mov    eax, [ebp-0x7C];
-	__asm        mov    person, eax;
+	person = None;
 // LINE 85:
 _Tfa:
 	__asm        cmp    person, 0;
@@ -1614,9 +1613,7 @@ _T11d:
 // LINE 89:
 // Block start:
 	short currxn;
-	__asm        mov    eax, person;
-	__asm        mov    ax, [eax+0x10C];
-	__asm        mov    currxn, ax;
+	currxn = reinterpret_cast<uint16_t>(person->fPointers[3]);
 // LINE 90:
 	__asm        movsx  eax, currxn;
 	__asm        test   eax, eax;
@@ -1656,13 +1653,9 @@ _T194:
 	__asm        jmp    _T2b8;
 // LINE 107:
 _T1ae:
-	__asm        mov    eax, cYObject::sSimTicks;
-	__asm        mov    ecx, person;
-	__asm        mov    [ecx+0x18], eax;
+	person->fLastInterrupt = cYObject::sSimTicks;
 // LINE 108:
-	__asm        mov    eax, dyhitter;
-	__asm        mov    ecx, person;
-	__asm        mov    [ecx+0x134], eax;
+	person->fScale = dyhitter;
 // LINE 109:
 	__asm        mov    eax, xtra_msg;
 	__asm        mov    ecx, person;
@@ -1691,9 +1684,7 @@ _T1ae:
 	__asm        add    esp, 0x14;
 // LINE 119:
 _T218:
-	__asm        mov    ax, tree;
-	__asm        mov    ecx, person;
-	__asm        mov    [ecx+0x10C], ax;
+	reinterpret_cast<uint16_t>(person->fPointers[3]) = tree;
 // LINE 120:
 	__asm        jmp    near ptr 0x005552D7;
 
@@ -1756,7 +1747,7 @@ struct _DYOBJ_INST* cYObject::GetDynObj(struct _DYOBJ_INST *donotignore, struct 
 	struct _DYOBJ_INST *dyobj;
 
 // LINE 174:
-	__asm        mov    founddyobj, 0;
+	founddyobj = 0x0;
 // LINE 181:
 	__asm        mov    eax, location.x;
 	__asm        add    eax, 0x20000000;
@@ -1776,11 +1767,9 @@ struct _DYOBJ_INST* cYObject::GetDynObj(struct _DYOBJ_INST *donotignore, struct 
 	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 189:
-	__asm        mov    eax, cptr;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    dyobj, eax;
+	dyobj = cptr->dyptr;
 // LINE 190:
-	__asm        mov    helipartcount, 0xFFFF;
+	helipartcount = 0xffff;
 // LINE 191:
 	__asm        mov    eax, radiusReduction;
 	__asm        push   eax;
@@ -1820,9 +1809,7 @@ _Ta0:
 	__asm        cmp    dyobj, eax;
 	__asm        je     _Td4;
 // LINE 200:
-	__asm        mov    eax, dyobj;
-	__asm        mov    eax, [eax];
-	__asm        mov    dyobj, eax;
+	dyobj = dyobj->next;
 // LINE 202:
 	__asm        jmp    _Ta0;
 // LINE 203:
@@ -1847,9 +1834,7 @@ _Tef:
 	__asm        test   al, 0x20;
 	__asm        je     _T117;
 // LINE 211:
-	__asm        mov    eax, dyobj;
-	__asm        mov    eax, [eax];
-	__asm        mov    dyobj, eax;
+	dyobj = dyobj->next;
 // LINE 212:
 	__asm        jmp    _T6e;
 // LINE 216:
@@ -1875,9 +1860,7 @@ _T12f:
 	__asm        add    esp, 0x10;
 // LINE 219:
 _T157:
-	__asm        mov    eax, dyobj;
-	__asm        mov    eax, [eax];
-	__asm        mov    dyobj, eax;
+	dyobj = dyobj->next;
 // LINE 220:
 	__asm        jmp    _T6e;
 // LINE 224:
@@ -1916,8 +1899,7 @@ _T164:
 	__asm        cmp    dyobj, eax;
 	__asm        jne    _T1c5;
 // LINE 227:
-	__asm        mov    eax, dyobj;
-	__asm        mov    founddyobj, eax;
+	founddyobj = dyobj;
 // LINE 228:
 	__asm        jmp    _T2e8;
 // LINE 230:
@@ -1931,9 +1913,7 @@ _T1c5:
 	__asm        je     _T2c6;
 // Block start:
 	class cYObject *obj;
-	__asm        mov    eax, dyobj;
-	__asm        mov    ax, [eax+0xE];
-	__asm        mov    [ebp-0x24], ax;
+	None = dyobj->user1;
 // LINE 232:
 	__asm        movsx  eax, word ptr [ebp-0x24];
 	__asm        cmp    eax, 0x7D00;
@@ -1974,8 +1954,7 @@ _T268:
 	__asm        mov    obj, eax;
 	__asm        jmp    _T281;
 
-	__asm        mov    eax, [ebp-0x28];
-	__asm        mov    obj, eax;
+	obj = None;
 // LINE 233:
 _T281:
 	__asm        cmp    obj, 0;
@@ -1994,16 +1973,13 @@ _T2a7:
 	__asm        test   eax, eax;
 	__asm        jne    _T2c6;
 // LINE 235:
-	__asm        mov    eax, dyobj;
-	__asm        mov    eax, [eax];
-	__asm        mov    dyobj, eax;
+	dyobj = dyobj->next;
 // LINE 236:
 	__asm        jmp    _T6e;
 // LINE 239:
 // Block end:
 _T2c6:
-	__asm        mov    eax, dyobj;
-	__asm        mov    founddyobj, eax;
+	founddyobj = dyobj;
 // LINE 240:
 	__asm        cmp    donotignore, 0;
 	__asm        jne    _T2db;
@@ -2011,9 +1987,7 @@ _T2c6:
 	__asm        jmp    _T2e8;
 // LINE 245:
 _T2db:
-	__asm        mov    eax, dyobj;
-	__asm        mov    eax, [eax];
-	__asm        mov    dyobj, eax;
+	dyobj = dyobj->next;
 // LINE 247:
 	__asm        jmp    _T6e;
 // LINE 249:
@@ -2074,15 +2048,13 @@ struct _STOBJ_INST* cYObject::GetStaticObj(struct Point3d location, int32_t radi
 	__asm        sub    eax, ecx;
 	__asm        mov    normy, eax;
 // LINE 288:
-	__asm        mov    eax, cptr;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    stobj, eax;
+	stobj = cptr->stptr;
 // LINE 289:
 _T82:
 	__asm        cmp    stobj, 0;
 	__asm        je     _Tdc;
 // LINE 292:
-	__asm        mov    flags, 0x200;
+	flags = 0x200;
 // LINE 301:
 	__asm        push   0;
 	__asm        push   0;
@@ -2110,9 +2082,7 @@ _T82:
 	__asm        jmp    _Te3;
 // LINE 310:
 _Tcf:
-	__asm        mov    eax, stobj;
-	__asm        mov    eax, [eax];
-	__asm        mov    stobj, eax;
+	stobj = stobj->next;
 // LINE 311:
 	__asm        jmp    _T82;
 // LINE 314:
@@ -2238,7 +2208,7 @@ enum cYObject::MoveErrorCode cYObject::TryTableMove(short speed, unsigned short 
 	int32_t dz;
 
 // LINE 350:
-	__asm        mov    attempts, 0;
+	attempts = 0x0;
 // LINE 354:
 _T12:
 	__asm        mov    eax, this;
@@ -2446,9 +2416,9 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 	__asm        add    newloc.y, eax;
 // LINE 406:
 _T4d:
-	__asm        mov    retcode, 0;
+	retcode = 0x0;
 // LINE 407:
-	__asm        mov    dyn, 0;
+	dyn = 0x0;
 // LINE 409:
 	__asm        test   reinterpret_cast<uint32_t>(mastermove), 0xFFFF;
 	__asm        jne    _T465;
@@ -2465,9 +2435,7 @@ _T4d:
 	struct Point3d offset;
 	int32_t groundheight;
 	struct _DYOBJ_INST *master;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x130];
-	__asm        mov    master, eax;
+	master = reinterpret_cast<uint32_t>(this->fDefinition.blue);
 // LINE 414:
 	__asm        mov    eax, newloc.x;
 	__asm        mov    ecx, master;
@@ -2561,7 +2529,7 @@ _T183:
 	__asm        cmp    ht, eax;
 	__asm        jge    _T196;
 // LINE 431:
-	__asm        mov    retcode, 1;
+	retcode = 0x1;
 // LINE 432:
 _T196:
 	__asm        mov    eax, ht;
@@ -2569,7 +2537,7 @@ _T196:
 	__asm        cmp    eax, dy;
 	__asm        jle    _T1ab;
 // LINE 433:
-	__asm        mov    retcode, 2;
+	retcode = 0x2;
 // LINE 434:
 _T1ab:
 	__asm        cmp    retcode, 0;
@@ -2594,9 +2562,7 @@ _T1ab:
 	__asm        add    esp, 0x10;
 	__asm        mov    st, eax;
 // LINE 437:
-	__asm        mov    eax, st;
-	__asm        mov    ecx, moveinfo;
-	__asm        mov    [ecx+0xC], eax;
+	moveinfo->stBlock = st;
 // LINE 439:
 // Block end:
 _T1ec:
@@ -2639,9 +2605,7 @@ _T1f4:
 	__asm        cmp    moveinfo, 0;
 	__asm        je     _T26b;
 // LINE 447:
-	__asm        mov    eax, dyn;
-	__asm        mov    ecx, moveinfo;
-	__asm        mov    [ecx+8], eax;
+	moveinfo->dyBlock = dyn;
 // LINE 449:
 _T26b:
 	__asm        cmp    dyn, 0;
@@ -2737,9 +2701,7 @@ _T311:
 // LINE 458:
 // Block start:
 	struct _DYOBJ_INST *master;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x130];
-	__asm        mov    master, eax;
+	master = reinterpret_cast<uint32_t>(this->fDefinition.blue);
 // LINE 459:
 	__asm        push   0x8C085;
 	__asm        push   0x5BC764;
@@ -2783,7 +2745,7 @@ _T3dc:
 // Block start:
 	struct _DYOBJ_INST *dontignore;
 	struct _DYOBJ_INST *myspacedyn;
-	__asm        mov    dontignore, 0;
+	dontignore = 0x0;
 // LINE 468:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x130];
@@ -2967,10 +2929,7 @@ _T5fa:
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T662;
 // LINE 532:
-	__asm        mov    eax, newloctype;
-	__asm        mov    ecx, moveinfo;
-	__asm        mov    ecx, [ecx];
-	__asm        mov    [ecx], eax;
+	moveinfo->locType-> = newloctype;
 // LINE 533:
 	__asm        cmp    newloctype, 7;
 	__asm        jne    _T662;
@@ -2992,7 +2951,7 @@ _T5fa:
 	__asm        mov    [ecx], al;
 // LINE 547:
 _T662:
-	__asm        mov    failnonneutral, 0;
+	failnonneutral = 0x0;
 // LINE 548:
 	__asm        mov    eax, newloctype;
 	__asm        push   eax;
@@ -3089,7 +3048,7 @@ _T7aa:
 	__asm        mov    word ptr [ebp-0x8C], 1;
 	__asm        jmp    _T7e0;
 _T7d7:
-	__asm        mov    word ptr [ebp-0x8C], 0;
+	None = 0x0;
 _T7e0:
 	__asm        test   dword ptr [ebp-0x90], 0xFFFF;
 	__asm        je     _T810;
@@ -3109,7 +3068,7 @@ _T81b:
 	__asm        test   reinterpret_cast<uint32_t>(newneutralandsparse), 0xFFFF;
 	__asm        jne    _T8b4;
 // LINE 554:
-	__asm        mov    failnonneutral, 1;
+	failnonneutral = 0x1;
 // LINE 555:
 	__asm        mov    word ptr [ebp-0x88], 0;
 	__asm        jmp    _T843;
@@ -3142,7 +3101,7 @@ _T8a1:
 	__asm        test   reinterpret_cast<uint32_t>(thisneutralforme), 0xFFFF;
 	__asm        jne    _T8b4;
 // LINE 557:
-	__asm        mov    failnonneutral, 0;
+	failnonneutral = 0x0;
 // LINE 563:
 _T8b4:
 	__asm        jmp    _T911;
@@ -3192,9 +3151,7 @@ _T92d:
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     _T964;
 // LINE 583:
-	__asm        mov    eax, moveinfo;
-	__asm        mov    eax, [eax];
-	__asm        mov    dword ptr [eax], 0;
+	moveinfo->locType-> = 0x0;
 // LINE 584:
 	__asm        mov    eax, moveinfo;
 	__asm        mov    eax, [eax+4];
@@ -3202,9 +3159,7 @@ _T92d:
 // LINE 587:
 // Block end:
 _T964:
-	__asm        mov    eax, newloctype;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xAC], eax;
+	this->fCurLocType = newloctype;
 // LINE 588:
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::Unlink;
@@ -3468,7 +3423,7 @@ struct Point2d cYObject::GetRiotCenter(long riotid) {
 	long overallcelly;
 
 // LINE 662:
-	__asm        mov    numcounted, 0;
+	numcounted = 0x0;
 // LINE 663:
 	__asm        mov    overallcellx, 0;
 	__asm        mov    overallcelly, 0;
@@ -3521,8 +3476,7 @@ _Tb8:
 	__asm        mov    obj, eax;
 	__asm        jmp    _Td1;
 
-	__asm        mov    eax, [ebp-0x20];
-	__asm        mov    obj, eax;
+	obj = None;
 // LINE 668:
 _Td1:
 	__asm        mov    eax, obj;
@@ -3611,9 +3565,9 @@ void cYObject::GetSurroundingRiotInfo(short todist, short * avgriotval, short * 
 	__asm        sub    ecx, eax;
 	__asm        mov    startcelly, cx;
 // LINE 687:
-	__asm        mov    riotval, 0;
+	riotval = 0x0;
 // LINE 688:
-	__asm        mov    numcounted, 0;
+	numcounted = 0x0;
 // LINE 689:
 	__asm        mov    reinterpret_cast<uint32_t>(overallxloc), 0;
 	__asm        mov    *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&overallxloc) + 4), 0;
@@ -3759,9 +3713,7 @@ _T1f4:
 	__asm        jmp    _T18d;
 // LINE 706:
 _T207:
-	__asm        mov    eax, cptr;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    dyobj, eax;
+	dyobj = cptr->dyptr;
 // LINE 707:
 _T210:
 	__asm        cmp    dyobj, 0;
@@ -3781,9 +3733,7 @@ _T210:
 	short thisriotval;
 	short zloc;
 	short xloc;
-	__asm        mov    eax, dyobj;
-	__asm        mov    ax, [eax+0xE];
-	__asm        mov    [ebp-0x4C], ax;
+	None = dyobj->user1;
 // LINE 709:
 	__asm        movsx  eax, word ptr [ebp-0x4C];
 	__asm        cmp    eax, 0x7D00;
@@ -3824,8 +3774,7 @@ _T2c2:
 	__asm        mov    obj, eax;
 	__asm        jmp    _T2db;
 
-	__asm        mov    eax, [ebp-0x50];
-	__asm        mov    obj, eax;
+	obj = None;
 // LINE 710:
 _T2db:
 	__asm        cmp    obj, 0;
@@ -3852,9 +3801,7 @@ _T301:
 	__asm        add    esp, 0x10;
 // LINE 712:
 _T32f:
-	__asm        mov    eax, obj;
-	__asm        mov    ax, [eax+0xE0];
-	__asm        mov    thisriotval, ax;
+	thisriotval = obj->fData[8];
 // LINE 713:
 	__asm        mov    eax, obj;
 	__asm        mov    eax, [eax+0x3C];
@@ -3891,9 +3838,7 @@ _T32f:
 // LINE 720:
 // Block end:
 _T396:
-	__asm        mov    eax, dyobj;
-	__asm        mov    eax, [eax];
-	__asm        mov    dyobj, eax;
+	dyobj = dyobj->next;
 // LINE 721:
 	__asm        jmp    _T210;
 // LINE 722:
@@ -4171,11 +4116,11 @@ class cYObject* cYObject::GetClosest(enum MissionSupertype missionsupertype, enu
 	short count;
 
 // LINE 775:
-	__asm        mov    closestdyn, 0;
+	closestdyn = 0x0;
 // LINE 776:
-	__asm        mov    closestobj, 0;
+	closestobj = 0x0;
 // LINE 777:
-	__asm        mov    closestdist, 0xFFFF;
+	closestdist = 0xffff;
 // LINE 778:
 	__asm        mov    count, 0;
 	__asm        jmp    _T2f;
@@ -4229,8 +4174,7 @@ _Tbb:
 	__asm        mov    obj, eax;
 	__asm        jmp    _Td4;
 
-	__asm        mov    eax, [ebp-0x20];
-	__asm        mov    obj, eax;
+	obj = None;
 // LINE 780:
 _Td4:
 	__asm        cmp    obj, 0;
@@ -4362,14 +4306,11 @@ _T20a:
 	__asm        cmp    eax, ecx;
 	__asm        jge    _T27c;
 // LINE 792:
-	__asm        mov    ax, dist;
-	__asm        mov    closestdist, ax;
+	closestdist = dist;
 // LINE 793:
-	__asm        mov    eax, dyn;
-	__asm        mov    closestdyn, eax;
+	closestdyn = dyn;
 // LINE 794:
-	__asm        mov    eax, obj;
-	__asm        mov    closestobj, eax;
+	closestobj = obj;
 // LINE 796:
 // Block end:
 _T27c:
@@ -4397,15 +4338,13 @@ void cYObject::Die() {
 	struct _MISSION_PARMS mp;
 
 // LINE 805:
-	__asm        mov    mp.op, 0x17;
+	mp.op = 0x17;
 // LINE 806:
-	__asm        mov    mp.i2num, 1;
+	mp.i2num = 0x1;
 // LINE 807:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        mov    mp.id, eax;
+	mp.id = this->fMissionID;
 // LINE 808:
-	__asm        mov    mp.flags, 0;
+	mp.flags = 0x0;
 // LINE 809:
 	__asm        lea    eax, mp.op;
 	__asm        push   eax;
@@ -4434,8 +4373,7 @@ _T55:
 	__asm        jmp    _T77;
 // LINE 816:
 _T77:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0xEE], 1;
+	this->fData[15] = 0x1;
 // LINE 817:
 	__asm        jmp    near ptr 0x005571F6;
 }
@@ -4446,7 +4384,7 @@ class cYObject* cYObject::GetFirst(short whichtype, short visible) {
 	short count;
 
 // LINE 822:
-	__asm        mov    found, 0;
+	found = 0x0;
 // LINE 823:
 	__asm        mov    count, 0;
 	__asm        jmp    _T1f;
@@ -4498,8 +4436,7 @@ _Tab:
 	__asm        mov    obj, eax;
 	__asm        jmp    _Tc4;
 
-	__asm        mov    eax, [ebp-0x10];
-	__asm        mov    obj, eax;
+	obj = None;
 // LINE 825:
 _Tc4:
 	__asm        mov    eax, obj;
@@ -4617,7 +4554,7 @@ class cYObject* cYObject::GetToted() {
 	short count;
 
 // LINE 850:
-	__asm        mov    found, 0;
+	found = 0x0;
 // LINE 851:
 	__asm        mov    count, 0;
 	__asm        jmp    _T22;
@@ -4669,8 +4606,7 @@ _Tae:
 	__asm        mov    obj, eax;
 	__asm        jmp    _Tc7;
 
-	__asm        mov    eax, [ebp-0x10];
-	__asm        mov    obj, eax;
+	obj = None;
 // LINE 853:
 _Tc7:
 	__asm        mov    eax, obj;
@@ -4700,8 +4636,7 @@ _Tde:
 	__asm        add    esp, 0x10;
 // LINE 856:
 _T11e:
-	__asm        mov    eax, obj;
-	__asm        mov    found, eax;
+	found = obj;
 // LINE 858:
 // Block end:
 _T124:
@@ -4718,18 +4653,18 @@ enum TreeSim::ReturnCode cYObject::iDoIHaveAMaster(struct TreeSim::StackElem *el
 	enum TreeSim::ReturnCode result;
 
 // LINE 876:
-	__asm        mov    result, 0xFFFFFFFF;
+	result = 0xffffffff;
 // LINE 877:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x130], 0;
 	__asm        je     _T2f;
 // LINE 878:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 879:
 	__asm        jmp    _T36;
 // LINE 880:
 _T2f:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 881:
 _T36:
 	__asm        mov    eax, result;
@@ -4742,9 +4677,9 @@ enum TreeSim::ReturnCode cYObject::iPutMyCarInStack(struct TreeSim::StackElem *e
 	enum TreeSim::ReturnCode result;
 
 // LINE 886:
-	__asm        mov    result, 0xFFFFFFFF;
+	result = 0xffffffff;
 // LINE 887:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 888:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x100];
@@ -4767,7 +4702,7 @@ enum TreeSim::ReturnCode cYObject::iPutMyCarInStack(struct TreeSim::StackElem *e
 	__asm        mov    ecx, elem;
 	__asm        mov    [ecx+4], eax;
 // LINE 892:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 895:
 // Block end:
 _T5d:
@@ -4788,9 +4723,7 @@ enum TreeSim::ReturnCode cYObject::iIdle(struct TreeSim::StackElem *elem, struct
 	__asm        mov    nparam, eax;
 	__asm        mov    result, 0xFFFFFFFF;
 // LINE 901:
-	__asm        mov    eax, nparam;
-	__asm        mov    ax, [eax];
-	__asm        mov    param.decTemp, ax;
+	param.decTemp = nparam-><YObjLang::Param+0x00:2>;
 // LINE 902:
 	__asm        movsx  eax, param.decTemp;
 	__asm        cmp    eax, 0xFFFFFFFF;
@@ -4822,7 +4755,7 @@ _T5c:
 	__asm        test   eax, eax;
 	__asm        jne    _T9a;
 
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 903:
 	__asm        jmp    _T10b;
 // LINE 904:
@@ -4859,7 +4792,7 @@ _Td0:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        dec    word ptr [eax];
 // LINE 905:
-	__asm        mov    result, 2;
+	result = 0x2;
 // LINE 907:
 _T10b:
 	__asm        mov    eax, result;
@@ -4879,9 +4812,7 @@ enum TreeSim::ReturnCode cYObject::iSetAnim(struct TreeSim::StackElem *elem, str
 	__asm        add    eax, 4;
 	__asm        mov    nparam, eax;
 // LINE 913:
-	__asm        mov    eax, nparam;
-	__asm        mov    eax, [eax];
-	__asm        mov    param.animname, eax;
+	param.animname = nparam-><YObjLang::Param+0x00:4>;
 // LINE 914:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
@@ -4924,7 +4855,7 @@ _T75:
 _Tbc:
 	__asm        jmp    near ptr 0x005577B7;
 // LINE 915:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 916:
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x005577C6;
@@ -4970,17 +4901,13 @@ enum TreeSim::ReturnCode cYObject::iWalk(struct TreeSim::StackElem *elem, struct
 	__asm        add    eax, 4;
 	__asm        mov    nparam, eax;
 // LINE 929:
-	__asm        mov    movecode, 0xFFFFFFFF;
+	movecode = 0xffffffff;
 // LINE 930:
-	__asm        mov    movespeed, 0;
+	movespeed = 0x0;
 // LINE 932:
-	__asm        mov    eax, nparam;
-	__asm        mov    ax, [eax];
-	__asm        mov    dectemp, ax;
+	dectemp = nparam-><YObjLang::Param+0x00:2>;
 // LINE 933:
-	__asm        mov    eax, this;
-	__asm        mov    ax, [eax+0xF8];
-	__asm        mov    onlyNeutral, ax;
+	onlyNeutral = this->fData[20];
 // LINE 934:
 	__asm        push   0x10;
 	__asm        push   0;
@@ -5024,9 +4951,9 @@ _T87:
 	__asm        test   eax, eax;
 	__asm        jne    _Td6;
 // LINE 938:
-	__asm        mov    movecode, 8;
+	movecode = 0x8;
 // LINE 939:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 941:
 	__asm        jmp    _T11e;
 // LINE 942:
@@ -5034,9 +4961,7 @@ _Td6:
 	__asm        mov    eax, walkloc;
 	__asm        dec    word ptr [eax];
 // LINE 944:
-	__asm        mov    eax, this;
-	__asm        mov    ax, [eax+0xF4];
-	__asm        mov    movespeed, ax;
+	movespeed = this->fData[18];
 // LINE 956:
 	__asm        lea    eax, moveinfo.locType;
 	__asm        push   eax;
@@ -5050,12 +4975,12 @@ _Td6:
 	__asm        cmp    movecode, 0;
 	__asm        jne    _T117;
 // LINE 957:
-	__asm        mov    result, 2;
+	result = 0x2;
 // LINE 958:
 	__asm        jmp    _T11e;
 // LINE 959:
 _T117:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 961:
 _T11e:
 	__asm        lea    eax, moveinfo.locType;
@@ -5084,9 +5009,7 @@ enum TreeSim::ReturnCode cYObject::iSetBody(struct TreeSim::StackElem *elem, str
 	__asm        add    eax, 4;
 	__asm        mov    nparam, eax;
 // LINE 968:
-	__asm        mov    eax, nparam;
-	__asm        mov    eax, [eax];
-	__asm        mov    param.bodyname, eax;
+	param.bodyname = nparam-><YObjLang::Param+0x00:4>;
 // LINE 969:
 	__asm        mov    eax, cCopterBody::fsList;
 	__asm        mov    [ebp-0x30], eax;
@@ -5112,7 +5035,7 @@ _T60:
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    _T7f;
 _T78:
-	__asm        mov    dword ptr [ebp-0x1C], 0;
+	None = 0x0;
 _T7f:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x18], eax;
@@ -5124,7 +5047,7 @@ _T7f:
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    _Ta3;
 _T9c:
-	__asm        mov    dword ptr [ebp-0x14], 0;
+	None = 0x0;
 _Ta3:
 	__asm        jmp    near ptr 0x005579F0;
 
@@ -5197,8 +5120,7 @@ _T162:
 	__asm        mov    dword ptr [ebp-0x2C], 0;
 	__asm        jmp    _T174;
 _T16e:
-	__asm        mov    eax, [ebp-0x28];
-	__asm        mov    [ebp-0x2C], eax;
+	None = None;
 _T174:
 	__asm        jmp    _T18a;
 _T179:
@@ -5223,7 +5145,7 @@ _T18a:
 _T1c2:
 	__asm        jmp    near ptr 0x00557B0F;
 // LINE 970:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 972:
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x00557B1E;
@@ -5309,7 +5231,7 @@ _Ta5:
 	__asm        mov    ecx, [ebp-0x18];
 	__asm        mov    [ecx], ax;
 // LINE 983:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 985:
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x00557C19;
@@ -5343,11 +5265,9 @@ enum TreeSim::ReturnCode cYObject::iWalkToAndGrabOntoStackObject(struct TreeSim:
 	__asm        add    esp, 0x10;
 // LINE 992:
 _T45:
-	__asm        mov    eax, nparam;
-	__asm        mov    eax, [eax];
-	__asm        mov    reinterpret_cast<uint32_t>(walkgrab.decTemp), eax;
+	reinterpret_cast<uint32_t>(walkgrab.decTemp) = nparam-><YObjLang::Param+0x00:4>;
 // LINE 995:
-	__asm        mov    speed, 0;
+	speed = 0x0;
 // LINE 996:
 	__asm        movsx  eax, walkgrab.decTemp;
 	__asm        cmp    eax, 0xFFFFFFFF;
@@ -5379,9 +5299,9 @@ _T89:
 	__asm        test   eax, eax;
 	__asm        jne    _Tce;
 // LINE 997:
-	__asm        mov    movecode, 8;
+	movecode = 0x8;
 // LINE 998:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1000:
 	__asm        jmp    _T2fd;
 // LINE 1001:
@@ -5453,9 +5373,7 @@ _T104:
 	__asm        call   Memory::BlockFill;
 	__asm        add    esp, 0xC;
 // LINE 1005:
-	__asm        mov    eax, this;
-	__asm        mov    ax, [eax+0xF4];
-	__asm        mov    speed, ax;
+	speed = this->fData[18];
 // LINE 1006:
 	__asm        lea    eax, moveinfo.locType;
 	__asm        push   eax;
@@ -5549,18 +5467,18 @@ _T288:
 	__asm        mov    eax, elem;
 	__asm        mov    dword ptr [eax+4], 0;
 // LINE 1014:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1016:
 	__asm        jmp    _T2cf;
 // LINE 1017:
 _T2c8:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1019:
 _T2cf:
 	__asm        jmp    _T2db;
 // LINE 1020:
 _T2d4:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1022:
 _T2db:
 	__asm        jmp    _T2fd;
@@ -5568,12 +5486,12 @@ _T2e0:
 	__asm        cmp    movecode, 0;
 	__asm        jne    _T2f6;
 // LINE 1023:
-	__asm        mov    result, 2;
+	result = 0x2;
 // LINE 1024:
 	__asm        jmp    _T2fd;
 // LINE 1025:
 _T2f6:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1027:
 // Block end:
 _T2fd:
@@ -5603,9 +5521,7 @@ enum TreeSim::ReturnCode cYObject::iUpdateMyMission(struct TreeSim::StackElem *e
 	__asm        add    eax, 4;
 	__asm        mov    nparam, eax;
 // LINE 1035:
-	__asm        mov    eax, nparam;
-	__asm        mov    ax, [eax];
-	__asm        mov    param.updateLiteral, ax;
+	param.updateLiteral = nparam-><YObjLang::Param+0x00:2>;
 // LINE 1036:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1C];
@@ -5615,7 +5531,7 @@ enum TreeSim::ReturnCode cYObject::iUpdateMyMission(struct TreeSim::StackElem *e
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::UpdateMission;
 // LINE 1037:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1039:
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x00557F89;
@@ -5634,9 +5550,7 @@ enum TreeSim::ReturnCode cYObject::iCheckForTrue(struct TreeSim::StackElem *elem
 	__asm        add    eax, 4;
 	__asm        mov    nparam, eax;
 // LINE 1045:
-	__asm        mov    eax, nparam;
-	__asm        mov    ax, [eax];
-	__asm        mov    param.whatLiteral, ax;
+	param.whatLiteral = nparam-><YObjLang::Param+0x00:2>;
 // LINE 1046:
 	__asm        movsx  eax, param.whatLiteral;
 	__asm        mov    [ebp-0x34], eax;
@@ -5646,12 +5560,12 @@ enum TreeSim::ReturnCode cYObject::iCheckForTrue(struct TreeSim::StackElem *elem
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jne    _T4d;
 // LINE 1051:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1052:
 	__asm        jmp    _T54;
 // LINE 1053:
 _T4d:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1054:
 _T54:
 	__asm        jmp    _T2d0;
@@ -5684,12 +5598,12 @@ _T54:
 	__asm        cmp    eax, 5;
 	__asm        jge    _Tb4;
 // LINE 1061:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1062:
 	__asm        jmp    _Tbb;
 // LINE 1063:
 _Tb4:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1064:
 _Tbb:
 	__asm        jmp    _T2d0;
@@ -5699,9 +5613,7 @@ _Tbb:
 	struct _DYOBJ_INST *obj;
 	int32_t y;
 	short delta_y;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x130];
-	__asm        mov    obj, eax;
+	obj = reinterpret_cast<uint32_t>(this->fDefinition.blue);
 // LINE 1068:
 	__asm        cmp    obj, 0;
 	__asm        jne    _Tf2;
@@ -5737,12 +5649,12 @@ _Tf2:
 	__asm        cmp    eax, 5;
 	__asm        jge    _T13b;
 // LINE 1072:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1073:
 	__asm        jmp    _T142;
 // LINE 1074:
 _T13b:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1075:
 _T142:
 	__asm        jmp    _T2d0;
@@ -5792,12 +5704,12 @@ _T1c7:
 	__asm        je     _T1e0;
 // LINE 1079:
 _T1d4:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1080:
 	__asm        jmp    _T1e7;
 // LINE 1081:
 _T1e0:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1082:
 _T1e7:
 	__asm        jmp    _T2d0;
@@ -5840,19 +5752,19 @@ _T215:
 	__asm        cmp    eax, 5;
 	__asm        jge    _T26f;
 // LINE 1093:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1094:
 	__asm        jmp    _T276;
 // LINE 1095:
 _T26f:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1097:
 // Block end:
 _T276:
 	__asm        jmp    _T282;
 // LINE 1098:
 _T27b:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1100:
 _T282:
 	__asm        jmp    _T2d0;
@@ -5913,7 +5825,7 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem *
 	__asm        call   dword ptr [eax+0x14];
 	__asm        mov    distance, ax;
 // LINE 1115:
-	__asm        mov    destobj, 0;
+	destobj = 0x0;
 // LINE 1116:
 	__asm        movsx  eax, param.withWhatLiteral;
 	__asm        mov    [ebp-0x3C], eax;
@@ -5956,9 +5868,7 @@ _Tb1:
 // LINE 1121:
 	__asm        jmp    _T483;
 // LINE 1123:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x140];
-	__asm        mov    destobj, eax;
+	destobj = this-><cYObject+0x140>;
 // LINE 1124:
 	__asm        cmp    destobj, 0;
 	__asm        jne    _T102;
@@ -5990,15 +5900,11 @@ _T102:
 _T136:
 	__asm        jmp    _T483;
 // LINE 1131:
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0xBC];
-	__asm        mov    destobj, eax;
+	destobj = G_uheli->dybucket;
 // LINE 1133:
 	__asm        jmp    _T483;
 // LINE 1136:
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        mov    destobj, eax;
+	destobj = G_uheli->dyheli;
 // LINE 1138:
 	__asm        jmp    _T483;
 // LINE 1141:
@@ -6031,7 +5937,7 @@ _T136:
 	__asm        jmp    _T1b4;
 // LINE 1151:
 _T1ad:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1153:
 _T1b4:
 	__asm        mov    eax, this;
@@ -6054,7 +5960,7 @@ _T1df:
 	__asm        add    eax, 0x24;
 	__asm        mov    destobj, eax;
 // LINE 1158:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1159:
 	__asm        jmp    _T483;
 // LINE 1162:
@@ -6078,7 +5984,7 @@ _T1df:
 	__asm        jmp    _T22d;
 // LINE 1166:
 _T226:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1168:
 _T22d:
 	__asm        mov    eax, this;
@@ -6117,7 +6023,7 @@ _T258:
 	__asm        jmp    _T28f;
 // LINE 1176:
 _T288:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1178:
 _T28f:
 	__asm        mov    eax, this;
@@ -6152,12 +6058,12 @@ _T2ba:
 	__asm        cmp    destobj, 0;
 	__asm        je     _T2fa;
 // LINE 1184:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1185:
 	__asm        jmp    _T301;
 // LINE 1186:
 _T2fa:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1187:
 _T301:
 	__asm        jmp    _T483;
@@ -6178,12 +6084,12 @@ _T301:
 	__asm        cmp    destobj, 0;
 	__asm        je     _T341;
 // LINE 1192:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1193:
 	__asm        jmp    _T348;
 // LINE 1194:
 _T341:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1195:
 _T348:
 	__asm        jmp    _T483;
@@ -6204,12 +6110,12 @@ _T348:
 	__asm        cmp    destobj, 0;
 	__asm        je     _T388;
 // LINE 1201:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1202:
 	__asm        jmp    _T38f;
 // LINE 1203:
 _T388:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1204:
 _T38f:
 	__asm        jmp    _T483;
@@ -6230,12 +6136,12 @@ _T38f:
 	__asm        cmp    destobj, 0;
 	__asm        je     _T3cf;
 // LINE 1209:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1210:
 	__asm        jmp    _T3d6;
 // LINE 1211:
 _T3cf:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1212:
 _T3d6:
 	__asm        jmp    _T483;
@@ -6260,7 +6166,7 @@ _T3d6:
 	__asm        jmp    _T40d;
 // LINE 1219:
 _T406:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1221:
 _T40d:
 	__asm        jmp    _T483;
@@ -6345,7 +6251,7 @@ _T508:
 	__asm        cmp    eax, ecx;
 	__asm        jl     _T530;
 // LINE 1234:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1235:
 	__asm        jmp    _T54a;
 // LINE 1236:
@@ -6358,7 +6264,7 @@ _T530:
 	__asm        mov    [ecx+4], eax;
 // LINE 1238:
 _T543:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1241:
 // Block end:
 _T54a:
@@ -6372,12 +6278,12 @@ enum TreeSim::ReturnCode cYObject::iSelfDecommission(struct TreeSim::StackElem *
 	enum TreeSim::ReturnCode result;
 
 // LINE 1246:
-	__asm        mov    result, 0xFFFFFFFF;
+	result = 0xffffffff;
 // LINE 1247:
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::ResetToAmbient;
 // LINE 1248:
-	__asm        mov    result, 3;
+	result = 0x3;
 // LINE 1250:
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x005587F2;
@@ -6389,7 +6295,7 @@ enum TreeSim::ReturnCode cYObject::iGetOffMasterObject(struct TreeSim::StackElem
 	enum TreeSim::ReturnCode result;
 
 // LINE 1255:
-	__asm        mov    result, 0xFFFFFFFF;
+	result = 0xffffffff;
 // LINE 1256:
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::CanJumpOffHere;
@@ -6450,12 +6356,12 @@ _Tcb:
 	__asm        je     _Te4;
 // LINE 1257:
 _Td8:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1258:
 	__asm        jmp    _Teb;
 // LINE 1259:
 _Te4:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1261:
 _Teb:
 	__asm        mov    eax, result;
@@ -6468,7 +6374,7 @@ enum TreeSim::ReturnCode cYObject::iTurnTowardsStackObject(struct TreeSim::Stack
 	enum TreeSim::ReturnCode result;
 
 // LINE 1266:
-	__asm        mov    result, 0xFFFFFFFF;
+	result = 0xffffffff;
 // LINE 1267:
 	__asm        mov    eax, elem;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -6507,7 +6413,7 @@ _T3c:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xD0], ax;
 // LINE 1269:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1271:
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x00558983;
@@ -6527,9 +6433,7 @@ enum TreeSim::ReturnCode cYObject::iIsThisLocType(struct TreeSim::StackElem *ele
 	__asm        add    eax, 4;
 	__asm        mov    nparam, eax;
 // LINE 1277:
-	__asm        mov    eax, nparam;
-	__asm        mov    ax, [eax];
-	__asm        mov    param.locTypeLiteral, ax;
+	param.locTypeLiteral = nparam-><YObjLang::Param+0x00:2>;
 // LINE 1278:
 	__asm        movsx  eax, param.locTypeLiteral;
 	__asm        mov    loctype, eax;
@@ -6545,12 +6449,12 @@ enum TreeSim::ReturnCode cYObject::iIsThisLocType(struct TreeSim::StackElem *ele
 	__asm        cmp    eax, loctype;
 	__asm        jne    _T62;
 // LINE 1280:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1281:
 	__asm        jmp    _T69;
 // LINE 1282:
 _T62:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1284:
 _T69:
 	__asm        mov    eax, result;
@@ -6564,7 +6468,7 @@ enum TreeSim::ReturnCode cYObject::iIsThisLocTypeNeutral(struct TreeSim::StackEl
 	enum TreeSim::ReturnCode result;
 
 // LINE 1289:
-	__asm        mov    result, 0xFFFFFFFF;
+	result = 0xffffffff;
 // LINE 1290:
 	__asm        mov    eax, this;
 	__asm        movzx  ax, byte ptr [eax+0x89];
@@ -6606,12 +6510,12 @@ _T80:
 	__asm        je     _Ta3;
 // LINE 1292:
 _T97:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1293:
 	__asm        jmp    _Taa;
 // LINE 1294:
 _Ta3:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1296:
 _Taa:
 	__asm        mov    eax, result;
@@ -6624,7 +6528,7 @@ enum TreeSim::ReturnCode cYObject::iCanJumpOffHere(struct TreeSim::StackElem *el
 	enum TreeSim::ReturnCode result;
 
 // LINE 1301:
-	__asm        mov    result, 0xFFFFFFFF;
+	result = 0xffffffff;
 // LINE 1302:
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::CanJumpOffHere;
@@ -6632,12 +6536,12 @@ enum TreeSim::ReturnCode cYObject::iCanJumpOffHere(struct TreeSim::StackElem *el
 	__asm        test   eax, eax;
 	__asm        je     _T32;
 // LINE 1303:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1304:
 	__asm        jmp    _T39;
 // LINE 1305:
 _T32:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1307:
 _T39:
 	__asm        mov    eax, result;
@@ -6658,9 +6562,7 @@ enum TreeSim::ReturnCode cYObject::iCheckForSpotlightInMyCell(struct TreeSim::St
 	__asm        add    eax, 4;
 	__asm        mov    nparam, eax;
 // LINE 1313:
-	__asm        mov    eax, nparam;
-	__asm        mov    eax, [eax];
-	__asm        mov    reinterpret_cast<uint32_t>(param.brightnessTemp), eax;
+	reinterpret_cast<uint32_t>(param.brightnessTemp) = nparam-><YObjLang::Param+0x00:4>;
 // LINE 1315:
 	__asm        lea    eax, loc.x;
 	__asm        push   eax;
@@ -6767,12 +6669,12 @@ _T103:
 	__asm        mov    ecx, [ebp-0x1C];
 	__asm        mov    [ecx], ax;
 // LINE 1319:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1321:
 	__asm        jmp    _T18a;
 // LINE 1322:
 _T183:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1324:
 _T18a:
 	__asm        mov    eax, result;
@@ -6792,9 +6694,7 @@ enum TreeSim::ReturnCode cYObject::iIncrementRiotVal(struct TreeSim::StackElem *
 	__asm        add    eax, 4;
 	__asm        mov    nparam, eax;
 // LINE 1330:
-	__asm        mov    eax, nparam;
-	__asm        mov    ax, [eax];
-	__asm        mov    param.riotValLiteral, ax;
+	param.riotValLiteral = nparam-><YObjLang::Param+0x00:2>;
 // LINE 1331:
 	__asm        mov    eax, this;
 	__asm        mov    ax, [eax+0xE0];
@@ -6820,12 +6720,11 @@ _T78:
 	__asm        test   eax, eax;
 	__asm        jge    _T96;
 
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0xE0], 0;
+	this->fData[8] = 0x0;
 _T96:
 	__asm        jmp    near ptr 0x00558D37;
 // LINE 1332:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1334:
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x00558D46;
@@ -7005,7 +6904,7 @@ _T1e1:
 	__asm        mov    ecx, [ebp-0x2C];
 	__asm        mov    [ecx], ax;
 // LINE 1348:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1350:
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x00558F75;
@@ -7025,9 +6924,7 @@ enum TreeSim::ReturnCode cYObject::iIsThisScurkID(struct TreeSim::StackElem *ele
 	__asm        add    eax, 4;
 	__asm        mov    nparam, eax;
 // LINE 1356:
-	__asm        mov    eax, nparam;
-	__asm        mov    ax, [eax];
-	__asm        mov    param.scurkIDLiteral, ax;
+	param.scurkIDLiteral = nparam-><YObjLang::Param+0x00:2>;
 // LINE 1357:
 	__asm        mov    ax, param.scurkIDLiteral;
 	__asm        mov    scurkID, ax;
@@ -7093,12 +6990,12 @@ _Tdf:
 	__asm        jne    _T110;
 // LINE 1359:
 _T104:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1360:
 	__asm        jmp    _T117;
 // LINE 1361:
 _T110:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1363:
 _T117:
 	__asm        mov    eax, result;
@@ -7112,11 +7009,9 @@ enum TreeSim::ReturnCode cYObject::iGosubToInitbhav(struct TreeSim::StackElem *e
 	enum TreeSim::ReturnCode result;
 
 // LINE 1368:
-	__asm        mov    result, 0xFFFFFFFF;
+	result = 0xffffffff;
 // LINE 1370:
-	__asm        mov    eax, this;
-	__asm        mov    ax, [eax+0x10A];
-	__asm        mov    id, ax;
+	id = *reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&this->fPointers[2]) + 2);
 // LINE 1371:
 	__asm        jmp    near ptr 0x005590C8;
 
@@ -7180,7 +7075,7 @@ _Tc6:
 	__asm        add    esp, 0x10;
 // LINE 1374:
 _Te2:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1376:
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x00559193;
@@ -7192,7 +7087,7 @@ enum TreeSim::ReturnCode cYObject::iAdjustRadiusForRiotVal(struct TreeSim::Stack
 	enum TreeSim::ReturnCode result;
 
 // LINE 1381:
-	__asm        mov    result, 0xFFFFFFFF;
+	result = 0xffffffff;
 // LINE 1382:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xE0];
@@ -7207,12 +7102,11 @@ enum TreeSim::ReturnCode cYObject::iAdjustRadiusForRiotVal(struct TreeSim::Stack
 	__asm        mov    [ecx+0x34], eax;
 	__asm        jmp    _T4d;
 _T43:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x34], 0x50000;
+	this->fDyn.radius = 0x50000;
 _T4d:
 	__asm        jmp    near ptr 0x005591EC;
 // LINE 1383:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1385:
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x005591FB;
@@ -7342,8 +7236,7 @@ _T1d5:
 	__asm        mov    word ptr [ebp-0x80], 0xFFFF;
 	__asm        jmp    _T1eb;
 _T1e0:
-	__asm        mov    ax, [ebp-0x84];
-	__asm        mov    [ebp-0x80], ax;
+	None = None;
 _T1eb:
 	__asm        jmp    near ptr 0x005593F2;
 
@@ -7416,12 +7309,12 @@ _T2d4:
 	__asm        call   S3AddLogEntry;
 	__asm        add    esp, 8;
 // LINE 1395:
-	__asm        mov    result, 3;
+	result = 0x3;
 // LINE 1397:
 	__asm        jmp    _T320;
 // LINE 1398:
 _T319:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1399:
 _T320:
 	__asm        mov    eax, this;
@@ -7600,9 +7493,7 @@ enum TreeSim::ReturnCode cYObject::iSetDirection(struct TreeSim::StackElem *elem
 	__asm        add    eax, 4;
 	__asm        mov    nparam, eax;
 // LINE 1407:
-	__asm        mov    eax, nparam;
-	__asm        mov    ax, [eax];
-	__asm        mov    param.dirTemp, ax;
+	param.dirTemp = nparam-><YObjLang::Param+0x00:2>;
 // LINE 1408:
 	__asm        movsx  eax, param.dirTemp;
 	__asm        cmp    eax, 0xFFFFFFFF;
@@ -7634,7 +7525,7 @@ _T5c:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xD0], ax;
 // LINE 1409:
-	__asm        mov    count, 0;
+	count = 0x0;
 // LINE 1410:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD0];
@@ -7673,7 +7564,7 @@ _T106:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xD0], ax;
 // LINE 1414:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1416:
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x005598B3;
@@ -7693,7 +7584,7 @@ enum TreeSim::ReturnCode cYObject::iThrowProjectile(struct TreeSim::StackElem *e
 	long scale;
 
 // LINE 1421:
-	__asm        mov    result, 0xFFFFFFFF;
+	result = 0xffffffff;
 // LINE 1422:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
@@ -7753,7 +7644,7 @@ _Tb0:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 1425:
-	__asm        mov    scale, 1;
+	scale = 0x1;
 // LINE 1427:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD0];
@@ -7803,14 +7694,14 @@ _Tb0:
 	__asm        shl    eax, 0x10;
 	__asm        mov    speed, eax;
 // LINE 1434:
-	__asm        mov    what, 0xA;
+	what = 0xa;
 // LINE 1435:
 	__asm        mov    eax, node;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        cmp    eax, 0x3C;
 	__asm        jne    _T194;
 // LINE 1436:
-	__asm        mov    what, 4;
+	what = 0x4;
 // LINE 1437:
 _T194:
 	__asm        mov    eax, this;
@@ -7873,7 +7764,7 @@ _T214:
 _T25c:
 	__asm        jmp    near ptr 0x00559B1B;
 // LINE 1439:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1441:
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x00559B2A;
@@ -7885,7 +7776,7 @@ enum TreeSim::ReturnCode cYObject::iTurnFromStackObject(struct TreeSim::StackEle
 	enum TreeSim::ReturnCode result;
 
 // LINE 1446:
-	__asm        mov    result, 0xFFFFFFFF;
+	result = 0xffffffff;
 // LINE 1447:
 	__asm        mov    eax, elem;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -7924,7 +7815,7 @@ _T3c:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xD0], ax;
 // LINE 1449:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1451:
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x00559BC1;
@@ -7936,7 +7827,7 @@ enum TreeSim::ReturnCode cYObject::iTurnFromLastHitter(struct TreeSim::StackElem
 	enum TreeSim::ReturnCode result;
 
 // LINE 1456:
-	__asm        mov    result, 0xFFFFFFFF;
+	result = 0xffffffff;
 // LINE 1457:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x140], 0;
@@ -7949,9 +7840,7 @@ enum TreeSim::ReturnCode cYObject::iTurnFromLastHitter(struct TreeSim::StackElem
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T3f:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x140];
-	__asm        mov    [ebp-8], eax;
+	None = this-><cYObject+0x140>;
 // LINE 1458:
 	__asm        jmp    near ptr 0x00559C18;
 
@@ -7975,7 +7864,7 @@ _T3f:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xD0], ax;
 // LINE 1459:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1461:
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x00559C5E;
@@ -7987,7 +7876,7 @@ enum TreeSim::ReturnCode cYObject::iTurnTowardsLastHitter(struct TreeSim::StackE
 	enum TreeSim::ReturnCode result;
 
 // LINE 1466:
-	__asm        mov    result, 0xFFFFFFFF;
+	result = 0xffffffff;
 // LINE 1467:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x140], 0;
@@ -8000,9 +7889,7 @@ enum TreeSim::ReturnCode cYObject::iTurnTowardsLastHitter(struct TreeSim::StackE
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T3f:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x140];
-	__asm        mov    [ebp-8], eax;
+	None = this-><cYObject+0x140>;
 // LINE 1468:
 	__asm        jmp    near ptr 0x00559CB5;
 
@@ -8026,7 +7913,7 @@ _T3f:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xD0], ax;
 // LINE 1469:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1471:
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x00559CFB;
@@ -8047,9 +7934,7 @@ enum TreeSim::ReturnCode cYObject::iGetOutOfRoadEtc(struct TreeSim::StackElem *e
 	__asm        add    eax, 4;
 	__asm        mov    nparam, eax;
 // LINE 1477:
-	__asm        mov    eax, nparam;
-	__asm        mov    ax, [eax];
-	__asm        mov    getoutofroad.decTemp, ax;
+	getoutofroad.decTemp = nparam-><YObjLang::Param+0x00:2>;
 // LINE 1479:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xF6];
@@ -8093,7 +7978,7 @@ _T54:
 	__asm        cmp    loctype, 1;
 	__asm        je     _Tc4;
 // LINE 1487:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1489:
 	__asm        jmp    _T20d;
 _Tc4:
@@ -8127,9 +8012,9 @@ _Tfa:
 	__asm        test   eax, eax;
 	__asm        jne    _T13f;
 // LINE 1490:
-	__asm        mov    movecode, 8;
+	movecode = 0x8;
 // LINE 1491:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1493:
 	__asm        jmp    _T20d;
 // LINE 1495:
@@ -8176,9 +8061,7 @@ _T175:
 	__asm        call   Memory::BlockFill;
 	__asm        add    esp, 0xC;
 // LINE 1500:
-	__asm        mov    eax, this;
-	__asm        mov    ax, [eax+0xF4];
-	__asm        mov    speed, ax;
+	speed = this->fData[18];
 // LINE 1501:
 	__asm        lea    eax, moveinfo.locType;
 	__asm        push   eax;
@@ -8192,12 +8075,12 @@ _T175:
 	__asm        cmp    movecode, 0;
 	__asm        jne    _T1f2;
 // LINE 1519:
-	__asm        mov    result, 2;
+	result = 0x2;
 // LINE 1520:
 	__asm        jmp    _T1f9;
 // LINE 1521:
 _T1f2:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1522:
 _T1f9:
 	__asm        lea    eax, moveinfo.locType;
@@ -8238,7 +8121,7 @@ enum TreeSim::ReturnCode cYObject::iGenerateMedevacAndSetSelfAsVictim(struct Tre
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::Die;
 // LINE 1537:
-	__asm        mov    result, 3;
+	result = 0x3;
 // LINE 1539:
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x00559F6D;
@@ -8259,9 +8142,7 @@ enum TreeSim::ReturnCode cYObject::iTurnToNearbyFire(struct TreeSim::StackElem *
 	__asm        add    eax, 4;
 	__asm        mov    nparam, eax;
 // LINE 1545:
-	__asm        mov    eax, nparam;
-	__asm        mov    eax, [eax];
-	__asm        mov    reinterpret_cast<uint32_t>(param.xdistloc), eax;
+	reinterpret_cast<uint32_t>(param.xdistloc) = nparam-><YObjLang::Param+0x00:4>;
 // LINE 1547:
 	__asm        lea    eax, firecelly;
 	__asm        push   eax;
@@ -8394,12 +8275,12 @@ _T173:
 	__asm        mov    [ecx], ax;
 	__asm        jmp    near ptr 0x0055A139;
 // LINE 1551:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1553:
 	__asm        jmp    _T1d8;
 // LINE 1554:
 _T1d1:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1556:
 _T1d8:
 	__asm        mov    eax, result;
@@ -8429,7 +8310,7 @@ enum TreeSim::ReturnCode cYObject::iDie(struct TreeSim::StackElem *elem, struct 
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::Die;
 // LINE 1565:
-	__asm        mov    result, 3;
+	result = 0x3;
 // LINE 1567:
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055A1AA;
@@ -8480,9 +8361,7 @@ enum TreeSim::ReturnCode cYObject::iPutObjIntoTreeNum(struct TreeSim::StackElem 
 	__asm        add    esp, 0x10;
 // LINE 1580:
 _T54:
-	__asm        mov    eax, nparam;
-	__asm        mov    ax, [eax];
-	__asm        mov    treenum, ax;
+	treenum = nparam-><YObjLang::Param+0x00:2>;
 // LINE 1582:
 	__asm        jmp    near ptr 0x0055A23C;
 
@@ -8531,7 +8410,7 @@ _Te6:
 	__asm        jmp    _Teb;
 // LINE 1583:
 _Teb:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1585:
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055A2D3;
@@ -8543,7 +8422,7 @@ enum TreeSim::ReturnCode cYObject::iVisitOz(struct TreeSim::StackElem *elem, str
 	enum TreeSim::ReturnCode result;
 
 // LINE 1590:
-	__asm        mov    result, 0xFFFFFFFF;
+	result = 0xffffffff;
 // LINE 1591:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD2];
@@ -8656,8 +8535,7 @@ _T198:
 	__asm        mov    word ptr [ebp-0xC], 0xFFFF;
 	__asm        jmp    _T1ab;
 _T1a3:
-	__asm        mov    ax, [ebp-0x10];
-	__asm        mov    [ebp-0xC], ax;
+	None = None;
 _T1ab:
 	__asm        jmp    near ptr 0x0055A48A;
 
@@ -8718,7 +8596,7 @@ _T282:
 	__asm        call   cYObject::Unlink;
 	__asm        jmp    near ptr 0x0055A569;
 // LINE 1592:
-	__asm        mov    result, 2;
+	result = 0x2;
 // LINE 1594:
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055A578;
@@ -8731,7 +8609,7 @@ enum TreeSim::ReturnCode cYObject::iMakeMyMedevacVictimVisible(struct TreeSim::S
 	enum TreeSim::ReturnCode result;
 
 // LINE 1599:
-	__asm        mov    result, 0xFFFFFFFF;
+	result = 0xffffffff;
 // LINE 1600:
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::GetToted;
@@ -8777,10 +8655,9 @@ _T73:
 	__asm        add    esp, 0x10;
 // LINE 1604:
 _Ta9:
-	__asm        mov    eax, obj;
-	__asm        mov    word ptr [eax+0xE2], 1;
+	obj->fData[9] = 0x1;
 // LINE 1605:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1607:
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055A643;
@@ -8792,7 +8669,7 @@ enum TreeSim::ReturnCode cYObject::iMakeMyMedevacVictimInvisible(struct TreeSim:
 	enum TreeSim::ReturnCode result;
 
 // LINE 1612:
-	__asm        mov    result, 0xFFFFFFFF;
+	result = 0xffffffff;
 // LINE 1613:
 	__asm        push   0x8C085;
 	__asm        push   0x5BD35C;
@@ -8801,7 +8678,7 @@ enum TreeSim::ReturnCode cYObject::iMakeMyMedevacVictimInvisible(struct TreeSim:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 1615:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1617:
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055A688;
@@ -8814,7 +8691,7 @@ enum TreeSim::ReturnCode cYObject::iMakeMeMasterOfStackObject(struct TreeSim::St
 	enum TreeSim::ReturnCode result;
 
 // LINE 1622:
-	__asm        mov    result, 0xFFFFFFFF;
+	result = 0xffffffff;
 // LINE 1623:
 	__asm        mov    eax, elem;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -8901,7 +8778,7 @@ _Tec:
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::SetMaster;
 // LINE 1628:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1630:
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055A7C3;
@@ -8914,7 +8791,7 @@ enum TreeSim::ReturnCode cYObject::iMakeMyStackObjectVisitOz(struct TreeSim::Sta
 	enum TreeSim::ReturnCode result;
 
 // LINE 1635:
-	__asm        mov    result, 0xFFFFFFFF;
+	result = 0xffffffff;
 // LINE 1636:
 	__asm        mov    eax, elem;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -9057,8 +8934,7 @@ _T1f9:
 	__asm        mov    word ptr [ebp-0x10], 0xFFFF;
 	__asm        jmp    _T20c;
 _T204:
-	__asm        mov    ax, [ebp-0x14];
-	__asm        mov    [ebp-0x10], ax;
+	None = None;
 _T20c:
 	__asm        jmp    near ptr 0x0055A9DB;
 
@@ -9119,7 +8995,7 @@ _T2e3:
 	__asm        call   cYObject::Unlink;
 	__asm        jmp    near ptr 0x0055AABA;
 // LINE 1640:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1642:
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055AAC9;
@@ -9269,8 +9145,7 @@ _T1df:
 	__asm        mov    obj, 0;
 	__asm        jmp    _T1f1;
 _T1eb:
-	__asm        mov    eax, [ebp-0x20];
-	__asm        mov    obj, eax;
+	obj = None;
 // LINE 1649:
 _T1f1:
 	__asm        cmp    obj, 0;
@@ -9281,12 +9156,12 @@ _T1f1:
 	__asm        mov    ecx, elem;
 	__asm        mov    [ecx+4], eax;
 // LINE 1651:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1653:
 	__asm        jmp    _T21a;
 // LINE 1654:
 _T213:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1656:
 _T21a:
 	__asm        mov    eax, result;
@@ -9300,7 +9175,7 @@ enum TreeSim::ReturnCode cYObject::iTakeAnyMedVicOffStackObject(struct TreeSim::
 	enum TreeSim::ReturnCode result;
 
 // LINE 1661:
-	__asm        mov    result, 0xFFFFFFFF;
+	result = 0xffffffff;
 // LINE 1662:
 	__asm        jmp    near ptr 0x0055AD11;
 
@@ -9362,12 +9237,12 @@ _Tc9:
 	__asm        mov    ecx, elem;
 	__asm        mov    [ecx+4], eax;
 // LINE 1669:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1671:
 	__asm        jmp    _Te8;
 // LINE 1672:
 _Te1:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1674:
 _Te8:
 	__asm        mov    eax, result;
@@ -9380,7 +9255,7 @@ enum TreeSim::ReturnCode cYObject::iGetOnStackObject(struct TreeSim::StackElem *
 	enum TreeSim::ReturnCode result;
 
 // LINE 1679:
-	__asm        mov    result, 0xFFFFFFFF;
+	result = 0xffffffff;
 // LINE 1680:
 	__asm        push   0x8C085;
 	__asm        push   0x5BD510;
@@ -9467,12 +9342,12 @@ _T10d:
 	__asm        test   eax, eax;
 	__asm        je     _T133;
 // LINE 1684:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1685:
 	__asm        jmp    _T13a;
 // LINE 1686:
 _T133:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1688:
 _T13a:
 	__asm        mov    eax, result;
@@ -9486,7 +9361,7 @@ enum TreeSim::ReturnCode cYObject::iUpdateStackVictimToted(struct TreeSim::Stack
 	enum TreeSim::ReturnCode result;
 
 // LINE 1693:
-	__asm        mov    result, 0xFFFFFFFF;
+	result = 0xffffffff;
 // LINE 1694:
 	__asm        mov    eax, elem;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -9538,7 +9413,7 @@ _Ta3:
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::UpdateMission;
 // LINE 1699:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1701:
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055AFFC;
@@ -9569,9 +9444,7 @@ enum TreeSim::ReturnCode cYObject::iGetNumSpacesOnStackObject(struct TreeSim::St
 	__asm        add    esp, 0x10;
 // LINE 1709:
 _T45:
-	__asm        mov    eax, nparam;
-	__asm        mov    ax, [eax];
-	__asm        mov    localnum, ax;
+	localnum = nparam-><YObjLang::Param+0x00:2>;
 // LINE 1710:
 	__asm        mov    eax, elem;
 	__asm        mov    ecx, G_uheli;
@@ -9667,7 +9540,7 @@ _T16c:
 	__asm        add    esp, 0x10;
 // LINE 1716:
 _T188:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1718:
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055B19A;
@@ -9680,7 +9553,7 @@ enum TreeSim::ReturnCode cYObject::iDropToted(struct TreeSim::StackElem *elem, s
 	enum TreeSim::ReturnCode result;
 
 // LINE 1723:
-	__asm        mov    result, 0xFFFFFFFF;
+	result = 0xffffffff;
 // LINE 1724:
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::DropToted;
@@ -9694,12 +9567,12 @@ enum TreeSim::ReturnCode cYObject::iDropToted(struct TreeSim::StackElem *elem, s
 	__asm        mov    ecx, elem;
 	__asm        mov    [ecx+4], eax;
 // LINE 1727:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1729:
 	__asm        jmp    _T47;
 // LINE 1730:
 _T40:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1732:
 _T47:
 	__asm        mov    eax, result;
@@ -9713,7 +9586,7 @@ enum TreeSim::ReturnCode cYObject::iUpdateStackVictimPickedUp(struct TreeSim::St
 	enum TreeSim::ReturnCode result;
 
 // LINE 1737:
-	__asm        mov    result, 0xFFFFFFFF;
+	result = 0xffffffff;
 // LINE 1738:
 	__asm        mov    eax, elem;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -9765,7 +9638,7 @@ _Ta3:
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::UpdateMission;
 // LINE 1743:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1745:
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055B2BA;
@@ -9829,7 +9702,7 @@ _T9a:
 	__asm        jne    _Tbd;
 // LINE 1752:
 _Tb1:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1753:
 	__asm        jmp    _Td5;
 // LINE 1754:
@@ -9839,7 +9712,7 @@ _Tbd:
 	__asm        mov    ecx, elem;
 	__asm        mov    [ecx+4], eax;
 // LINE 1755:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1758:
 _Td5:
 	__asm        mov    eax, result;
@@ -9859,9 +9732,7 @@ enum TreeSim::ReturnCode cYObject::iSetMyExpression(struct TreeSim::StackElem *e
 	__asm        add    eax, 4;
 	__asm        mov    nparam, eax;
 // LINE 1765:
-	__asm        mov    eax, nparam;
-	__asm        mov    ax, [eax];
-	__asm        mov    expressionnum, ax;
+	expressionnum = nparam-><YObjLang::Param+0x00:2>;
 // LINE 1767:
 	__asm        movsx  eax, expressionnum;
 	__asm        push   eax;
@@ -9880,7 +9751,7 @@ enum TreeSim::ReturnCode cYObject::iSetMyExpression(struct TreeSim::StackElem *e
 	__asm        call   HeliPassengerSetChanged;
 	__asm        add    esp, 4;
 // LINE 1769:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1771:
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055B410;
@@ -9931,7 +9802,7 @@ enum TreeSim::ReturnCode cYObject::iGetHeliSpeedPlusDamage(struct TreeSim::Stack
 	__asm        test   ah, 1;
 	__asm        je     _T7c;
 
-	__asm        mov    damage, 0x3F800000;
+	damage = 0x3f800000;
 // LINE 1782:
 _T7c:
 	__asm        fld    maxdamage;
@@ -9944,7 +9815,7 @@ _T7c:
 	__asm        test   ah, 0x41;
 	__asm        jne    _Ta0;
 // LINE 1784:
-	__asm        mov    res, 0x477FFF00;
+	res = 0x477fff00;
 // LINE 1785:
 _Ta0:
 	__asm        mov    eax, nparam;
@@ -9984,7 +9855,7 @@ _Te0:
 	__asm        mov    ecx, [ebp-0x1C];
 	__asm        mov    [ecx], ax;
 // LINE 1786:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1788:
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055B542;
@@ -9996,7 +9867,7 @@ enum TreeSim::ReturnCode cYObject::iIsThisCellSafe(struct TreeSim::StackElem *el
 	enum TreeSim::ReturnCode result;
 
 // LINE 1793:
-	__asm        mov    result, 0xFFFFFFFF;
+	result = 0xffffffff;
 // LINE 1794:
 	__asm        mov    eax, this;
 	__asm        movzx  ax, byte ptr [eax+0x89];
@@ -10019,12 +9890,12 @@ enum TreeSim::ReturnCode cYObject::iIsThisCellSafe(struct TreeSim::StackElem *el
 	__asm        test   eax, eax;
 	__asm        je     _T6b;
 // LINE 1797:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1798:
 	__asm        jmp    _T72;
 // LINE 1799:
 _T6b:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1801:
 _T72:
 	__asm        mov    eax, result;
@@ -10044,9 +9915,7 @@ enum TreeSim::ReturnCode cYObject::iPlaySound(struct TreeSim::StackElem *elem, s
 	__asm        add    eax, 4;
 	__asm        mov    nparam, eax;
 // LINE 1807:
-	__asm        mov    eax, nparam;
-	__asm        mov    ax, [eax+2];
-	__asm        mov    playforsure, ax;
+	playforsure = nparam-><YObjLang::Param+0x02:2>;
 // LINE 1808:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(playforsure);
 	__asm        push   eax;
@@ -10059,12 +9928,12 @@ enum TreeSim::ReturnCode cYObject::iPlaySound(struct TreeSim::StackElem *elem, s
 	__asm        test   eax, eax;
 	__asm        je     _T51;
 // LINE 1809:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1810:
 	__asm        jmp    _T58;
 // LINE 1811:
 _T51:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1826:
 _T58:
 	__asm        mov    eax, result;
@@ -10077,7 +9946,7 @@ enum TreeSim::ReturnCode cYObject::iGetOnHeliIfHarnessRaised(struct TreeSim::Sta
 	enum TreeSim::ReturnCode result;
 
 // LINE 1831:
-	__asm        mov    result, 0xFFFFFFFF;
+	result = 0xffffffff;
 // LINE 1832:
 	__asm        jmp    near ptr 0x0055B649;
 
@@ -10103,7 +9972,7 @@ enum TreeSim::ReturnCode cYObject::iGetOnHeliIfHarnessRaised(struct TreeSim::Sta
 	__asm        add    esp, 0x10;
 // LINE 1834:
 _T6f:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1836:
 	__asm        jmp    _Tf9;
 _T7b:
@@ -10120,12 +9989,12 @@ _T7b:
 	__asm        test   eax, eax;
 	__asm        jne    _Tb8;
 // LINE 1838:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1839:
 	__asm        jmp    _Tbf;
 // LINE 1840:
 _Tb8:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1842:
 _Tbf:
 	__asm        jmp    _Tf9;
@@ -10143,7 +10012,7 @@ _Tc4:
 	__asm        add    esp, 0x10;
 // LINE 1844:
 _Tf2:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1847:
 _Tf9:
 	__asm        mov    eax, result;
@@ -10156,7 +10025,7 @@ enum TreeSim::ReturnCode cYObject::iAmIOnHeli(struct TreeSim::StackElem *elem, s
 	enum TreeSim::ReturnCode result;
 
 // LINE 1852:
-	__asm        mov    result, 0xFFFFFFFF;
+	result = 0xffffffff;
 // LINE 1853:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, G_uheli;
@@ -10164,12 +10033,12 @@ enum TreeSim::ReturnCode cYObject::iAmIOnHeli(struct TreeSim::StackElem *elem, s
 	__asm        cmp    [eax+0x130], ecx;
 	__asm        jne    _T3a;
 // LINE 1854:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1855:
 	__asm        jmp    _T41;
 // LINE 1856:
 _T3a:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 1858:
 _T41:
 	__asm        mov    eax, result;
@@ -10202,9 +10071,7 @@ enum TreeSim::ReturnCode cYObject::iTellStartingObjectTrueOrFalse(struct TreeSim
 	__asm        add    eax, 4;
 	__asm        mov    nparam, eax;
 // LINE 1869:
-	__asm        mov    eax, nparam;
-	__asm        mov    ax, [eax];
-	__asm        mov    truefalse, ax;
+	truefalse = nparam-><YObjLang::Param+0x00:2>;
 // LINE 1870:
 	__asm        movsx  eax, truefalse;
 	__asm        test   eax, eax;
@@ -10236,7 +10103,7 @@ _T5b:
 	__asm        add    esp, 8;
 // LINE 1873:
 _T86:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 1875:
 	__asm        mov    eax, result;
 	__asm        jmp    near ptr 0x0055B846;
@@ -10339,40 +10206,39 @@ _T3a:
 	__asm        add    esp, 0x10;
 // LINE 1903:
 _T60:
-	__asm        mov    eax, missionid;
-	__asm        mov    mp.id, eax;
+	mp.id = missionid;
 // LINE 1904:
 	__asm        mov    eax, missup;
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    _T1ec;
 // LINE 1906:
-	__asm        mov    mp.op, 0x14;
+	mp.op = 0x14;
 // LINE 1907:
-	__asm        mov    mp.i2num, 1;
+	mp.i2num = 0x1;
 // LINE 1908:
 	__asm        jmp    _T228;
 // LINE 1911:
-	__asm        mov    mp.op, 0x15;
+	mp.op = 0x15;
 // LINE 1912:
-	__asm        mov    mp.i2num, 1;
+	mp.i2num = 0x1;
 // LINE 1913:
 	__asm        jmp    _T228;
 // LINE 1916:
-	__asm        mov    mp.op, 0x12;
+	mp.op = 0x12;
 // LINE 1917:
-	__asm        mov    mp.i2num, 1;
+	mp.i2num = 0x1;
 // LINE 1918:
 	__asm        jmp    _T228;
 // LINE 1920:
-	__asm        mov    mp.op, 0x13;
+	mp.op = 0x13;
 // LINE 1921:
-	__asm        mov    mp.i2num, 1;
+	mp.i2num = 0x1;
 // LINE 1922:
 	__asm        jmp    _T228;
 // LINE 1924:
-	__asm        mov    mp.op, 0x13;
+	mp.op = 0x13;
 // LINE 1925:
-	__asm        mov    mp.i2num, 1;
+	mp.i2num = 0x1;
 // LINE 1926:
 	__asm        jmp    _T228;
 // LINE 1928:
@@ -10381,21 +10247,21 @@ _T60:
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _T13c;
 // LINE 1930:
-	__asm        mov    mp.op, 0x15;
+	mp.op = 0x15;
 // LINE 1931:
-	__asm        mov    mp.i2num, 1;
+	mp.i2num = 0x1;
 // LINE 1932:
 	__asm        jmp    _T163;
 // LINE 1934:
-	__asm        mov    mp.op, 0x11;
+	mp.op = 0x11;
 // LINE 1935:
-	__asm        mov    mp.i2num, 1;
+	mp.i2num = 0x1;
 // LINE 1936:
 	__asm        jmp    _T163;
 // LINE 1939:
-	__asm        mov    mp.op, 0x10;
+	mp.op = 0x10;
 // LINE 1940:
-	__asm        mov    mp.i2num, 1;
+	mp.i2num = 0x1;
 // LINE 1941:
 	__asm        jmp    _T163;
 // LINE 1943:
@@ -10420,7 +10286,7 @@ _T13c:
 _T163:
 	__asm        jmp    _T228;
 // LINE 1947:
-	__asm        mov    mp.op, 0x1E;
+	mp.op = 0x1e;
 // LINE 1948:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -10434,7 +10300,7 @@ _T163:
 // LINE 1950:
 	__asm        jmp    _T228;
 // LINE 1952:
-	__asm        mov    mp.op, 0;
+	mp.op = 0x0;
 // LINE 1953:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -10448,9 +10314,9 @@ _T163:
 // LINE 1955:
 	__asm        jmp    _T228;
 // LINE 1957:
-	__asm        mov    mp.op, 0x25;
+	mp.op = 0x25;
 // LINE 1958:
-	__asm        mov    mp.i2num, 1;
+	mp.i2num = 0x1;
 // LINE 1959:
 	__asm        jmp    _T228;
 // LINE 1961:
@@ -10488,7 +10354,7 @@ enum TreeSim::ReturnCode cYObject::TryExpression(struct YObjLang::AttrParam *att
 	enum TreeSim::ReturnCode result;
 
 // LINE 1992:
-	__asm        mov    result, 0xFFFFFFFF;
+	result = 0xffffffff;
 // LINE 1996:
 	__asm        push   0;
 	__asm        mov    eax, attr;
@@ -10532,11 +10398,11 @@ enum TreeSim::ReturnCode cYObject::TryExpression(struct YObjLang::AttrParam *att
 	__asm        cmp    eax, ecx;
 	__asm        jle    _T94;
 
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 2002:
 	__asm        jmp    _T9b;
 _T94:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 2003:
 _T9b:
 	__asm        jmp    _T3d5;
@@ -10546,11 +10412,11 @@ _T9b:
 	__asm        cmp    eax, ecx;
 	__asm        jge    _Tbc;
 
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 2006:
 	__asm        jmp    _Tc3;
 _Tbc:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 2007:
 _Tc3:
 	__asm        jmp    _T3d5;
@@ -10560,11 +10426,11 @@ _Tc3:
 	__asm        cmp    eax, ecx;
 	__asm        jne    _Te4;
 
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 2010:
 	__asm        jmp    _Teb;
 _Te4:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 2011:
 _Teb:
 	__asm        jmp    _T3d5;
@@ -10589,7 +10455,7 @@ _T109:
 	__asm        jmp    _T449;
 // LINE 2018:
 _T120:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 2019:
 	__asm        jmp    _T3d5;
 // LINE 2021:
@@ -10616,7 +10482,7 @@ _T14d:
 	__asm        jmp    _T449;
 // LINE 2026:
 _T164:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 2027:
 	__asm        jmp    _T3d5;
 // LINE 2029:
@@ -10643,7 +10509,7 @@ _T191:
 	__asm        jmp    _T449;
 // LINE 2034:
 _T1a8:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 2035:
 	__asm        jmp    _T3d5;
 // LINE 2037:
@@ -10670,7 +10536,7 @@ _T1d6:
 	__asm        jmp    _T449;
 // LINE 2042:
 _T1ed:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 2043:
 	__asm        jmp    _T3d5;
 // LINE 2045:
@@ -10698,7 +10564,7 @@ _T21b:
 	__asm        jmp    _T449;
 // LINE 2050:
 _T232:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 2051:
 	__asm        jmp    _T3d5;
 // LINE 2053:
@@ -10742,7 +10608,7 @@ _T28b:
 	__asm        jmp    _T449;
 // LINE 2058:
 _T2a2:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 2059:
 	__asm        jmp    _T3d5;
 // LINE 2061:
@@ -10787,7 +10653,7 @@ _T2fd:
 	__asm        jmp    _T449;
 // LINE 2066:
 _T314:
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 2067:
 	__asm        jmp    _T3d5;
 // LINE 2069:
@@ -10813,11 +10679,11 @@ _T344:
 	__asm        test   ecx, eax;
 	__asm        je     _T368;
 
-	__asm        mov    result, 1;
+	result = 0x1;
 // LINE 2071:
 	__asm        jmp    _T36f;
 _T368:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 2072:
 _T36f:
 	__asm        jmp    _T3d5;
@@ -10938,10 +10804,9 @@ short cYObject::InterpValue(short ownerField, short dataField, short * *dataRef)
 	__asm        mov    ptemp, eax;
 // LINE 2117:
 _T22:
-	__asm        mov    eax, dataRef;
-	__asm        mov    dword ptr [eax], 0;
+	dataRef-> = 0x0;
 // LINE 2118:
-	__asm        mov    data, 0;
+	data = 0x0;
 // LINE 2119:
 	__asm        movsx  eax, ownerField;
 	__asm        mov    [ebp-0x14], eax;
@@ -11010,8 +10875,7 @@ _Tc4:
 // LINE 2140:
 	__asm        jmp    _T21d;
 // LINE 2142:
-	__asm        mov    ax, dataField;
-	__asm        mov    data, ax;
+	data = dataField;
 // LINE 2143:
 	__asm        jmp    _T21d;
 // LINE 2145:

@@ -2,18 +2,13 @@
 // FUNCTION: COPTER_D 0x00439bd0
 void MTimer::MTimer(enum MTimer::TimerResolution nNewTimerResolution) {
 
-	__asm        mov    eax, nNewTimerResolution;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx], eax;
+	this->nTimerResolution = nNewTimerResolution;
 // LINE 57:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
+	this->lStartTime = 0x0;
 // LINE 58:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->lTotalElapsedTime = 0x0;
 // LINE 61:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
+	this->lFrequency = 0x0;
 // LINE 62:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax], 0;
@@ -44,9 +39,7 @@ void MTimer::SetResolution(enum MTimer::TimerResolution nNewTimerResolution) {
 	__asm        cmp    [eax], ecx;
 	__asm        je     _T72;
 // LINE 89:
-	__asm        mov    eax, nNewTimerResolution;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx], eax;
+	this->nTimerResolution = nNewTimerResolution;
 // LINE 91:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax], 0;

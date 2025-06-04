@@ -573,13 +573,9 @@ enum MDate::HowToPrint MDate::SetPrintOption(enum MDate::HowToPrint h) {
 	enum MDate::HowToPrint oldoption;
 
 // LINE 137:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    oldoption, eax;
+	oldoption = this->PrintOption;
 // LINE 138:
-	__asm        mov    eax, h;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+8], eax;
+	this->PrintOption = h;
 // LINE 139:
 	__asm        mov    eax, oldoption;
 	__asm        jmp    near ptr 0x004BC5F7;
@@ -1173,8 +1169,7 @@ class MDate MDate::MaxDate(const class MDate& dt) {
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    _T2f;
 _T29:
-	__asm        mov    eax, this;
-	__asm        mov    [ebp-4], eax;
+	None = this;
 _T2f:
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-8], eax;
@@ -1208,8 +1203,7 @@ class MDate MDate::MinDate(const class MDate& dt) {
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    _T2f;
 _T29:
-	__asm        mov    eax, dt;
-	__asm        mov    [ebp-4], eax;
+	None = dt;
 _T2f:
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-8], eax;
@@ -1281,9 +1275,7 @@ class MDate MDate::Previous(uint32_t desiredDayOfWeek) {
 	__asm        dec    eax;
 	__asm        mov    thisDayOfWeek, eax;
 // LINE 453:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    j, eax;
+	j = this->Julnum;
 // LINE 458:
 	__asm        mov    eax, desiredDayOfWeek;
 	__asm        cmp    thisDayOfWeek, eax;
@@ -1417,8 +1409,7 @@ void MDate::ParseFrom(class istream& s) {
 	uint32_t d;
 
 // LINE 579:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
+	this->Julnum = 0x0;
 // LINE 581:
 	__asm        mov    eax, s;
 	__asm        mov    eax, [eax];
@@ -1648,8 +1639,7 @@ _T257:
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    _T280;
 _T276:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
+	this->Julnum = 0x0;
 // LINE 606:
 _T280:
 	__asm        mov    eax, this;
@@ -1800,7 +1790,7 @@ static char * ParseMonth(class istream& s) {
 	char * p;
 
 // LINE 549:
-	__asm        mov    p, 0x6069A8;
+	p = 0x6069a8;
 // LINE 551:
 	__asm        mov    eax, s;
 	__asm        push   eax;

@@ -268,7 +268,7 @@ _T27:
 	__asm        jmp    _Ta0;
 // LINE 38:
 _T39:
-	__asm        mov    ddCaps.dwSize, 0xAC;
+	ddCaps.dwSize = 0xac;
 // LINE 39:
 	__asm        push   0;
 	__asm        push   0x5C2798;
@@ -294,7 +294,7 @@ _T67:
 	__asm        jmp    _T67;
 // LINE 42:
 _T87:
-	__asm        mov    lpDD, 0;
+	lpDD = 0x0;
 // LINE 43:
 	__asm        mov    eax, hResult;
 	__asm        jmp    _Ta0;
@@ -326,7 +326,7 @@ _T18:
 	__asm        jmp    _T18;
 // LINE 66:
 _T38:
-	__asm        mov    lpDD, 0;
+	lpDD = 0x0;
 // LINE 70:
 	__asm        jmp    _T47;
 _T47:
@@ -341,7 +341,7 @@ unsigned long DDColorMatch(struct IDirectDrawSurface *pdds, unsigned long rgb) {
 	struct _DDSURFACEDESC ddsd;
 
 // LINE 87:
-	__asm        mov    dw, 0xFFFFFFFF;
+	dw = 0xffffffff;
 // LINE 91:
 	__asm        lea    eax, hdc;
 	__asm        push   eax;
@@ -377,7 +377,7 @@ unsigned long DDColorMatch(struct IDirectDrawSurface *pdds, unsigned long rgb) {
 	__asm        call   dword ptr [eax+0x68];
 // LINE 98:
 _T5b:
-	__asm        mov    ddsd.dwSize, 0x6C;
+	ddsd.dwSize = 0x6c;
 // LINE 99:
 	__asm        push   0;
 	__asm        push   1;
@@ -453,7 +453,7 @@ struct IDirectDrawPalette* ReadPalFile(char * fname) {
 	struct IDirectDrawPalette *ppal;
 
 // LINE 143:
-	__asm        mov    pal.dwRiff, 0;
+	pal.dwRiff = 0x0;
 // LINE 145:
 	__asm        push   0;
 	__asm        mov    eax, fname;

@@ -46,16 +46,14 @@ int32_t HeliPassengerHasChanged(struct tagHeliPassengerData *heliPassengerData) 
 // FUNCTION: COPTER_D 0x004f9bd5
 void HeliPassengerSetChanged(struct tagHeliPassengerData *heliPassengerData) {
 // LINE 38:
-	__asm        mov    eax, heliPassengerData;
-	__asm        mov    dword ptr [eax], 1;
+	heliPassengerData->lPassengerDataChanged = 0x1;
 // LINE 39:
 }
 
 // FUNCTION: COPTER_D 0x004f9be9
 void HeliPassengerClearChanged(struct tagHeliPassengerData *heliPassengerData) {
 // LINE 46:
-	__asm        mov    eax, heliPassengerData;
-	__asm        mov    dword ptr [eax], 0;
+	heliPassengerData->lPassengerDataChanged = 0x0;
 // LINE 47:
 }
 
@@ -66,17 +64,13 @@ void HeliPassengerInit(struct tagHeliPassengerData *heliPassengerData, int32_t n
 	int32_t i;
 
 // LINE 59:
-	__asm        mov    eax, heliPassengerData;
-	__asm        mov    dword ptr [eax], 0;
+	heliPassengerData->lPassengerDataChanged = 0x0;
 // LINE 60:
-	__asm        mov    eax, heliPassengerData;
-	__asm        mov    dword ptr [eax+8], 0;
+	heliPassengerData->lSeatsUsed = 0x0;
 // LINE 61:
-	__asm        mov    eax, heliPassengerData;
-	__asm        mov    dword ptr [eax+0x10], 0;
+	heliPassengerData->lDoubleSeatsUsed = 0x0;
 // LINE 62:
-	__asm        mov    eax, heliPassengerData;
-	__asm        mov    dword ptr [eax+0x18], 0;
+	heliPassengerData->lPassengerCount = 0x0;
 // LINE 63:
 	__asm        mov    eax, nHeliType;
 	__asm        mov    ecx, eax;

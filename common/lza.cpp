@@ -93,7 +93,7 @@ short LZACompress(class cGZXBitstream *inStream, class cGZXBitstream *outStream,
 	__asm        cmp    model, 0;
 	__asm        jne    _T50;
 // LINE 657:
-	__asm        mov    retVal, 3;
+	retVal = 0x3;
 // LINE 658:
 	__asm        jmp    _T253;
 
@@ -108,7 +108,7 @@ _T50:
 	__asm        cmp    forest, 0;
 	__asm        jne    _T7a;
 // LINE 662:
-	__asm        mov    retVal, 3;
+	retVal = 0x3;
 // LINE 663:
 	__asm        jmp    _T24e;
 
@@ -123,50 +123,36 @@ _T7a:
 	__asm        cmp    state, 0;
 	__asm        jne    _Ta1;
 // LINE 667:
-	__asm        mov    retVal, 3;
+	retVal = 0x3;
 // LINE 668:
 	__asm        jmp    _T249;
 
 	__asm        jmp    _T1e9;
 // LINE 671:
 _Ta1:
-	__asm        mov    eax, state;
-	__asm        mov    dword ptr [eax+0x10], 0;
+	state->textsize = 0x0;
 // LINE 672:
-	__asm        mov    eax, state;
-	__asm        mov    dword ptr [eax+0x14], 0;
+	state->codesize = 0x0;
 // LINE 673:
-	__asm        mov    eax, model;
-	__asm        mov    dword ptr [eax], 0;
+	model->low = 0x0;
 // LINE 674:
-	__asm        mov    eax, model;
-	__asm        mov    dword ptr [eax+4], 0x20000;
+	model->high = 0x20000;
 // LINE 675:
-	__asm        mov    eax, model;
-	__asm        mov    dword ptr [eax+8], 0;
+	model->value = 0x0;
 // LINE 676:
-	__asm        mov    eax, model;
-	__asm        mov    dword ptr [eax+0xC], 0;
+	model->shifts = 0x0;
 // LINE 677:
-	__asm        mov    eax, state;
-	__asm        mov    dword ptr [eax], 0;
+	state->putBuffer = 0x0;
 // LINE 678:
-	__asm        mov    eax, state;
-	__asm        mov    dword ptr [eax+4], 0x80;
+	state->putMask = 0x80;
 // LINE 679:
-	__asm        mov    eax, state;
-	__asm        mov    dword ptr [eax+8], 0;
+	state->getBuffer = 0x0;
 // LINE 680:
-	__asm        mov    eax, state;
-	__asm        mov    dword ptr [eax+0xC], 0;
+	state->getMask = 0x0;
 // LINE 682:
-	__asm        mov    eax, inStream;
-	__asm        mov    ecx, state;
-	__asm        mov    [ecx+0x18], eax;
+	state->infile = inStream;
 // LINE 683:
-	__asm        mov    eax, outStream;
-	__asm        mov    ecx, state;
-	__asm        mov    [ecx+0x1C], eax;
+	state->outfile = outStream;
 // LINE 686:
 	__asm        mov    eax, state;
 	__asm        mov    ecx, state;
@@ -190,7 +176,7 @@ _Ta1:
 	__asm        cmp    eax, 4;
 	__asm        je     _T15e;
 // LINE 689:
-	__asm        mov    retVal, 2;
+	retVal = 0x2;
 // LINE 690:
 	__asm        jmp    _T244;
 
@@ -239,7 +225,7 @@ _T18c:
 	__asm        cmp    eax, 4;
 	__asm        je     _T1d8;
 // LINE 704:
-	__asm        mov    retVal, 2;
+	retVal = 0x2;
 // LINE 705:
 	__asm        jmp    _T23a;
 
@@ -251,7 +237,7 @@ _T1d8:
 	__asm        mov    ecx, cSize;
 	__asm        mov    [ecx], eax;
 // LINE 708:
-	__asm        mov    retVal, 0;
+	retVal = 0x0;
 // LINE 715:
 CompressDone:
 _T1e9:
@@ -312,13 +298,12 @@ static short Encode(struct tACompModel *model, struct tLZSSBinaryForest *forest,
 	long r;
 
 // LINE 530:
-	__asm        mov    tempDebug, 0;
+	tempDebug = 0x0;
 // LINE 532:
 	__asm        mov    eax, state;
 	__asm        add    dword ptr [eax+0x14], 4;
 // LINE 533:
-	__asm        mov    eax, state;
-	__asm        mov    dword ptr [eax+0x10], 0;
+	state->textsize = 0x0;
 // LINE 534:
 	__asm        mov    eax, model;
 	__asm        push   eax;
@@ -382,9 +367,7 @@ _T7f:
 	__asm        jmp    _T7c;
 // LINE 542:
 _Tc3:
-	__asm        mov    eax, len;
-	__asm        mov    ecx, state;
-	__asm        mov    [ecx+0x10], eax;
+	state->textsize = len;
 // LINE 543:
 	__asm        mov    i, 1;
 	__asm        jmp    _Tdb;
@@ -417,17 +400,14 @@ _T10d:
 	__asm        cmp    [eax+0x103F], ecx;
 	__asm        jle    _T12b;
 
-	__asm        mov    eax, len;
-	__asm        mov    ecx, forest;
-	__asm        mov    [ecx+0x103F], eax;
+	forest->match_length = len;
 // LINE 547:
 _T12b:
 	__asm        mov    eax, forest;
 	__asm        cmp    dword ptr [eax+0x103F], 2;
 	__asm        jg     _T17d;
 // LINE 548:
-	__asm        mov    eax, forest;
-	__asm        mov    dword ptr [eax+0x103F], 1;
+	forest->match_length = 0x1;
 // LINE 549:
 	__asm        mov    eax, state;
 	__asm        push   eax;
@@ -487,9 +467,7 @@ _T1b0:
 	__asm        jmp    _T315;
 // LINE 560:
 _T1df:
-	__asm        mov    eax, forest;
-	__asm        mov    eax, [eax+0x103F];
-	__asm        mov    last_match_length, eax;
+	last_match_length = forest->match_length;
 // LINE 561:
 	__asm        mov    i, 0;
 	__asm        jmp    _T1fa;
@@ -661,7 +639,7 @@ static void InsertNode(long r, struct tLZSSBinaryForest *forest) {
 	long p;
 
 // LINE 221:
-	__asm        mov    cmp, 1;
+	cmp = 0x1;
 // LINE 222:
 	__asm        mov    eax, r;
 	__asm        add    eax, forest;
@@ -683,8 +661,7 @@ static void InsertNode(long r, struct tLZSSBinaryForest *forest) {
 	__asm        mov    edx, forest;
 	__asm        mov    [edx+ecx*4+0x5047], eax;
 // LINE 225:
-	__asm        mov    eax, forest;
-	__asm        mov    dword ptr [eax+0x103F], 0;
+	forest->match_length = 0x0;
 // LINE 227:
 _T61:
 	__asm        cmp    cmp, 0;
@@ -812,9 +789,7 @@ _T1b3:
 	__asm        cmp    [eax+0x103B], ecx;
 	__asm        jle    _T1f1;
 // LINE 251:
-	__asm        mov    eax, temp;
-	__asm        mov    ecx, forest;
-	__asm        mov    [ecx+0x103B], eax;
+	forest->match_position = temp;
 // LINE 254:
 _T1f1:
 	__asm        jmp    _T61;
@@ -1042,8 +1017,7 @@ static void StartModel(struct tACompModel *model) {
 	long sym;
 
 // LINE 303:
-	__asm        mov    eax, model;
-	__asm        mov    dword ptr [eax+0x13B8], 0;
+	model->sym_cum[314] = 0x0;
 // LINE 304:
 	__asm        mov    sym, 0x13A;
 	__asm        jmp    _T25;
@@ -1057,19 +1031,11 @@ _T25:
 	__asm        dec    eax;
 	__asm        mov    ch, eax;
 // LINE 306:
-	__asm        mov    eax, sym;
-	__asm        mov    ecx, ch;
-	__asm        mov    edx, model;
-	__asm        mov    [edx+ecx*4+0x10], eax;
+	model->low = sym;
 // LINE 307:
-	__asm        mov    eax, ch;
-	__asm        mov    ecx, sym;
-	__asm        mov    edx, model;
-	__asm        mov    [edx+ecx*4+0x4F8], eax;
+	model->low = ch;
 // LINE 308:
-	__asm        mov    eax, sym;
-	__asm        mov    ecx, model;
-	__asm        mov    dword ptr [ecx+eax*4+0x9E4], 1;
+	model->low = 0x1;
 // LINE 309:
 	__asm        mov    eax, sym;
 	__asm        mov    ecx, model;
@@ -1084,11 +1050,9 @@ _T25:
 	__asm        jmp    _T22;
 // LINE 311:
 _T90:
-	__asm        mov    eax, model;
-	__asm        mov    dword ptr [eax+0x9E4], 0;
+	model->sym_freq[0] = 0x0;
 // LINE 312:
-	__asm        mov    eax, model;
-	__asm        mov    dword ptr [eax+0x53BC], 0;
+	model->position_cum[4096] = 0x0;
 // LINE 313:
 	__asm        mov    i, 0x1000;
 	__asm        jmp    _Tb9;
@@ -1122,10 +1086,7 @@ static short EncodeChar(long ch, struct tACompModel *model, struct tCompressStat
 	long sym;
 
 // LINE 360:
-	__asm        mov    eax, ch;
-	__asm        mov    ecx, model;
-	__asm        mov    eax, [ecx+eax*4+0x10];
-	__asm        mov    sym, eax;
+	sym = model->low;
 // LINE 361:
 	__asm        mov    eax, model;
 	__asm        mov    eax, [eax+4];
@@ -1265,7 +1226,7 @@ static void UpdateModel(long sym, struct tACompModel *model) {
 	__asm        cmp    dword ptr [eax+0xED0], 0x7FFF;
 	__asm        jb     _T8e;
 // LINE 324:
-	__asm        mov    c, 0;
+	c = 0x0;
 // LINE 325:
 	__asm        mov    i, 0x13A;
 	__asm        jmp    _T32;
@@ -1275,10 +1236,7 @@ _T32:
 	__asm        cmp    i, 0;
 	__asm        jle    _T82;
 // LINE 326:
-	__asm        mov    eax, c;
-	__asm        mov    ecx, i;
-	__asm        mov    edx, model;
-	__asm        mov    [edx+ecx*4+0xED0], eax;
+	model->low = c;
 // LINE 327:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, model;
@@ -1297,9 +1255,7 @@ _T32:
 	__asm        jmp    _T2f;
 // LINE 329:
 _T82:
-	__asm        mov    eax, c;
-	__asm        mov    ecx, model;
-	__asm        mov    [ecx+0xED0], eax;
+	model->sym_cum[0] = c;
 // LINE 331:
 _T8e:
 	__asm        mov    eax, sym;
@@ -1323,35 +1279,17 @@ _Tc1:
 	__asm        cmp    sym, eax;
 	__asm        jle    _T127;
 // LINE 333:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, model;
-	__asm        mov    eax, [ecx+eax*4+0x4F8];
-	__asm        mov    ch_i, eax;
+	ch_i = model->low;
 // LINE 334:
-	__asm        mov    eax, sym;
-	__asm        mov    ecx, model;
-	__asm        mov    eax, [ecx+eax*4+0x4F8];
-	__asm        mov    ch_sym, eax;
+	ch_sym = model->low;
 // LINE 335:
-	__asm        mov    eax, ch_sym;
-	__asm        mov    ecx, i;
-	__asm        mov    edx, model;
-	__asm        mov    [edx+ecx*4+0x4F8], eax;
+	model->low = ch_sym;
 // LINE 336:
-	__asm        mov    eax, ch_i;
-	__asm        mov    ecx, sym;
-	__asm        mov    edx, model;
-	__asm        mov    [edx+ecx*4+0x4F8], eax;
+	model->low = ch_i;
 // LINE 337:
-	__asm        mov    eax, sym;
-	__asm        mov    ecx, ch_i;
-	__asm        mov    edx, model;
-	__asm        mov    [edx+ecx*4+0x10], eax;
+	model->low = sym;
 // LINE 338:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, ch_sym;
-	__asm        mov    edx, model;
-	__asm        mov    [edx+ecx*4+0x10], eax;
+	model->low = i;
 // LINE 340:
 _T127:
 	__asm        mov    eax, i;
@@ -1442,9 +1380,7 @@ _T1e:
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jne    _T7c;
 // LINE 129:
-	__asm        mov    eax, dest;
-	__asm        mov    al, [eax];
-	__asm        mov    tempByte, al;
+	tempByte = reinterpret_cast<uint8_t>(dest->putBuffer);
 // LINE 130:
 	__asm        push   1;
 	__asm        lea    eax, tempByte;
@@ -1462,11 +1398,9 @@ _T1e:
 	__asm        jmp    _T84;
 // LINE 136:
 _T63:
-	__asm        mov    eax, dest;
-	__asm        mov    dword ptr [eax], 0;
+	dest->putBuffer = 0x0;
 // LINE 137:
-	__asm        mov    eax, dest;
-	__asm        mov    dword ptr [eax+4], 0x80;
+	dest->putMask = 0x80;
 // LINE 138:
 	__asm        mov    eax, dest;
 	__asm        inc    dword ptr [eax+0x14];
@@ -1708,7 +1642,7 @@ short LZAExpand(class cGZXBitstream *inStream, class cGZXBitstream *outStream) {
 	__asm        cmp    model, 0;
 	__asm        jne    _T33;
 // LINE 739:
-	__asm        mov    retVal, 3;
+	retVal = 0x3;
 // LINE 740:
 	__asm        jmp    _T16b;
 
@@ -1723,7 +1657,7 @@ _T33:
 	__asm        cmp    forest, 0;
 	__asm        jne    _T5d;
 // LINE 744:
-	__asm        mov    retVal, 3;
+	retVal = 0x3;
 // LINE 745:
 	__asm        jmp    _T166;
 
@@ -1738,50 +1672,36 @@ _T5d:
 	__asm        cmp    state, 0;
 	__asm        jne    _T84;
 // LINE 749:
-	__asm        mov    retVal, 3;
+	retVal = 0x3;
 // LINE 750:
 	__asm        jmp    _T161;
 
 	__asm        jmp    _T110;
 // LINE 753:
 _T84:
-	__asm        mov    eax, inStream;
-	__asm        mov    ecx, state;
-	__asm        mov    [ecx+0x18], eax;
+	state->infile = inStream;
 // LINE 754:
-	__asm        mov    eax, outStream;
-	__asm        mov    ecx, state;
-	__asm        mov    [ecx+0x1C], eax;
+	state->outfile = outStream;
 // LINE 756:
-	__asm        mov    eax, state;
-	__asm        mov    dword ptr [eax+0x10], 0;
+	state->textsize = 0x0;
 // LINE 757:
-	__asm        mov    eax, state;
-	__asm        mov    dword ptr [eax+0x14], 0;
+	state->codesize = 0x0;
 // LINE 758:
-	__asm        mov    eax, model;
-	__asm        mov    dword ptr [eax], 0;
+	model->low = 0x0;
 // LINE 759:
-	__asm        mov    eax, model;
-	__asm        mov    dword ptr [eax+4], 0x20000;
+	model->high = 0x20000;
 // LINE 760:
-	__asm        mov    eax, model;
-	__asm        mov    dword ptr [eax+8], 0;
+	model->value = 0x0;
 // LINE 761:
-	__asm        mov    eax, model;
-	__asm        mov    dword ptr [eax+0xC], 0;
+	model->shifts = 0x0;
 // LINE 762:
-	__asm        mov    eax, state;
-	__asm        mov    dword ptr [eax], 0;
+	state->putBuffer = 0x0;
 // LINE 763:
-	__asm        mov    eax, state;
-	__asm        mov    dword ptr [eax+4], 0x80;
+	state->putMask = 0x80;
 // LINE 764:
-	__asm        mov    eax, state;
-	__asm        mov    dword ptr [eax+8], 0;
+	state->getBuffer = 0x0;
 // LINE 765:
-	__asm        mov    eax, state;
-	__asm        mov    dword ptr [eax+0xC], 0;
+	state->getMask = 0x0;
 // LINE 767:
 	__asm        mov    eax, state;
 	__asm        push   eax;
@@ -1896,9 +1816,9 @@ _T74:
 	__asm        jmp    _T71;
 // LINE 604:
 _T90:
-	__asm        mov    r, 0xFC4;
+	r = 0xfc4;
 // LINE 605:
-	__asm        mov    count, 0;
+	count = 0x0;
 _T9e:
 	__asm        mov    eax, state;
 	__asm        mov    ecx, count;
@@ -1916,8 +1836,7 @@ _T9e:
 	__asm        cmp    c, 0x100;
 	__asm        jge    _T119;
 // LINE 608:
-	__asm        mov    al, reinterpret_cast<uint8_t>(c);
-	__asm        mov    tempByte, al;
+	tempByte = reinterpret_cast<uint8_t>(c);
 // LINE 609:
 	__asm        push   1;
 	__asm        lea    eax, tempByte;
@@ -1981,8 +1900,7 @@ _T152:
 	__asm        mov    dl, [eax+ecx];
 	__asm        mov    c, edx;
 // LINE 620:
-	__asm        mov    al, reinterpret_cast<uint8_t>(c);
-	__asm        mov    tempByte, al;
+	tempByte = reinterpret_cast<uint8_t>(c);
 // LINE 621:
 	__asm        push   1;
 	__asm        lea    eax, tempByte;
@@ -2056,7 +1974,7 @@ static long GetBit(struct tCompressState *source) {
 	unsigned char kludger;
 
 // LINE 173:
-	__asm        mov    kludger, 0;
+	kludger = 0x0;
 // LINE 176:
 	__asm        mov    eax, source;
 	__asm        shr    dword ptr [eax+0xC], 1;
@@ -2076,9 +1994,9 @@ static long GetBit(struct tCompressState *source) {
 	__asm        cmp    eax, 1;
 	__asm        je     _T48;
 // LINE 178:
-	__asm        mov    tempByte, 0;
+	tempByte = 0x0;
 // LINE 179:
-	__asm        mov    kludger, 1;
+	kludger = 0x1;
 // LINE 181:
 _T48:
 	__asm        xor    eax, eax;
@@ -2093,12 +2011,10 @@ _T48:
 // LINE 182:
 	__asm        jmp    _T6f;
 _T65:
-	__asm        mov    eax, source;
-	__asm        mov    dword ptr [eax+8], 0xFFFFFFFF;
+	source->getBuffer = 0xffffffff;
 // LINE 183:
 _T6f:
-	__asm        mov    eax, source;
-	__asm        mov    dword ptr [eax+0xC], 0x80;
+	source->getMask = 0x80;
 // LINE 187:
 _T79:
 	__asm        mov    eax, source;
@@ -2234,10 +2150,7 @@ _T114:
 	__asm        jmp    _T8d;
 // LINE 488:
 _T14a:
-	__asm        mov    eax, sym;
-	__asm        mov    ecx, model;
-	__asm        mov    eax, [ecx+eax*4+0x4F8];
-	__asm        mov    ch, eax;
+	ch = model->low;
 // LINE 489:
 	__asm        mov    eax, model;
 	__asm        push   eax;
@@ -2285,8 +2198,7 @@ _T17:
 // LINE 433:
 	__asm        jmp    _T5a;
 _T54:
-	__asm        mov    eax, k;
-	__asm        mov    j, eax;
+	j = k;
 // LINE 434:
 _T5a:
 	__asm        jmp    _T17;
@@ -2453,8 +2365,7 @@ _T17:
 // LINE 449:
 	__asm        jmp    _T5a;
 _T54:
-	__asm        mov    eax, k;
-	__asm        mov    j, eax;
+	j = k;
 // LINE 450:
 _T5a:
 	__asm        jmp    _T17;

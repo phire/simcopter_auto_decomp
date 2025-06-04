@@ -32,7 +32,7 @@ unsigned short wincpuidsupport() {
 	int32_t cpuid_support;
 
 // LINE 64:
-	__asm        mov    cpuid_support, 1;
+	cpuid_support = 0x1;
 // LINE 67:
 	__asm        pushfd;
 // LINE 68:
@@ -54,7 +54,7 @@ unsigned short wincpuidsupport() {
 // LINE 77:
 	__asm        jne    _T2c;
 // LINE 79:
-	__asm        mov    cpuid_support, 0;
+	cpuid_support = 0x0;
 // LINE 83:
 support:
 _T2c:
@@ -114,7 +114,7 @@ _T6e:
 	__asm        jmp    _T93;
 // LINE 127:
 _T8d:
-	__asm        mov    cpuid, 4;
+	cpuid = 0x4;
 // LINE 133:
 end:
 _T93:
@@ -141,11 +141,11 @@ unsigned short wincpuidext() {
 	unsigned short cpu_type;
 
 // LINE 164:
-	__asm        mov    i, 0;
+	i = 0x0;
 // LINE 165:
-	__asm        mov    cpu_type, 0;
+	cpu_type = 0x0;
 // LINE 166:
-	__asm        mov    cpuidext, 0;
+	cpuidext = 0x0;
 // LINE 167:
 	__asm        mov    eax, 0x5999D0;
 	__asm        lea    ecx, vendor_id[0];
@@ -197,7 +197,7 @@ _T78:
 	__asm        cmp    ecx, edx;
 	__asm        je     _Ta6;
 // LINE 186:
-	__asm        mov    clone_flag, 1;
+	clone_flag = 0x1;
 // LINE 187:
 _Ta6:
 	__asm        jmp    _T75;
@@ -244,9 +244,9 @@ unsigned long wincpufeatures() {
 	unsigned char vendor_id[12];
 
 // LINE 255:
-	__asm        mov    i, 0;
+	i = 0x0;
 // LINE 256:
-	__asm        mov    cpuff, 0;
+	cpuff = 0x0;
 // LINE 257:
 	__asm        mov    eax, 0x5999F0;
 	__asm        lea    ecx, vendor_id[0];
@@ -298,7 +298,7 @@ _T73:
 	__asm        cmp    ecx, edx;
 	__asm        je     _Ta1;
 // LINE 276:
-	__asm        mov    clone_flag, 1;
+	clone_flag = 0x1;
 // LINE 277:
 _Ta1:
 	__asm        jmp    _T70;
@@ -335,9 +335,9 @@ struct TIME_STAMP winrdtsc() {
 	__asm        call   wincpufeatures;
 	__asm        mov    features, eax;
 // LINE 326:
-	__asm        mov    timestamp.Low, 0;
+	timestamp.Low = 0x0;
 // LINE 327:
-	__asm        mov    timestamp.High, 0;
+	timestamp.High = 0x0;
 // LINE 329:
 	__asm        test   reinterpret_cast<uint8_t>(features), 0x10;
 	__asm        je     _T31;
@@ -360,7 +360,7 @@ unsigned short getdllversion() {
 	unsigned short Version;
 
 // LINE 360:
-	__asm        mov    Version, 0x100;
+	Version = 0x100;
 // LINE 362:
 	__asm        mov    ax, Version;
 	__asm        jmp    near ptr 0x0047B945;
@@ -372,7 +372,7 @@ static unsigned short check_clone() {
 	short cpu_type;
 
 // LINE 382:
-	__asm        mov    cpu_type, 0;
+	cpu_type = 0x0;
 // LINE 386:
 	__asm        mov    ax, 0x5555;
 // LINE 387:
@@ -418,7 +418,7 @@ static unsigned short check_8086() {
 	unsigned short cpu_type;
 
 // LINE 424:
-	__asm        mov    cpu_type, 0xFFFF;
+	cpu_type = 0xffff;
 // LINE 427:
 	__asm        pushf;
 // LINE 428:
@@ -440,11 +440,11 @@ static unsigned short check_8086() {
 // LINE 436:
 	__asm        cmp    ax, 0xF000;
 // LINE 437:
-	__asm        mov    cpu_type, 0;
+	cpu_type = 0x0;
 // LINE 438:
 	__asm        je     _T3c;
 // LINE 440:
-	__asm        mov    cpu_type, 0xFFFF;
+	cpu_type = 0xffff;
 // LINE 442:
 end_8086:
 _T3c:
@@ -464,7 +464,7 @@ static unsigned short check_80286() {
 	unsigned short cpu_type;
 
 // LINE 467:
-	__asm        mov    cpu_type, 0xFFFF;
+	cpu_type = 0xffff;
 // LINE 470:
 	__asm        pushf;
 // LINE 471:
@@ -484,11 +484,11 @@ static unsigned short check_80286() {
 // LINE 478:
 	__asm        and    ax, 0xF000;
 // LINE 480:
-	__asm        mov    cpu_type, 2;
+	cpu_type = 0x2;
 // LINE 483:
 	__asm        je     _T39;
 // LINE 486:
-	__asm        mov    cpu_type, 0xFFFF;
+	cpu_type = 0xffff;
 // LINE 488:
 end_80286:
 _T39:
@@ -508,7 +508,7 @@ static unsigned short check_80386() {
 	unsigned short cpu_type;
 
 // LINE 513:
-	__asm        mov    cpu_type, 0xFFFF;
+	cpu_type = 0xffff;
 // LINE 516:
 	__asm        mov    bx, sp;
 // LINE 517:
@@ -532,11 +532,11 @@ static unsigned short check_80386() {
 // LINE 530:
 	__asm        xor    eax, ecx;
 // LINE 533:
-	__asm        mov    cpu_type, 3;
+	cpu_type = 0x3;
 // LINE 534:
 	__asm        je     _T37;
 // LINE 535:
-	__asm        mov    cpu_type, 0xFFFF;
+	cpu_type = 0xffff;
 // LINE 537:
 end_80386:
 _T37:
@@ -565,13 +565,13 @@ static unsigned short check_IDProc() {
 	unsigned char model;
 
 // LINE 563:
-	__asm        mov    i, 0;
+	i = 0x0;
 // LINE 564:
-	__asm        mov    cpu_type, 0xFFFF;
+	cpu_type = 0xffff;
 // LINE 565:
-	__asm        mov    stepping, 0;
+	stepping = 0x0;
 // LINE 566:
-	__asm        mov    model, 0;
+	model = 0x0;
 // LINE 567:
 	__asm        mov    eax, 0x599A10;
 	__asm        lea    ecx, vendor_id[0];
@@ -618,7 +618,7 @@ _T6a:
 	__asm        cmp    ecx, edx;
 	__asm        je     _T98;
 // LINE 584:
-	__asm        mov    clone_flag, 1;
+	clone_flag = 0x1;
 // LINE 585:
 _T98:
 	__asm        jmp    _T67;

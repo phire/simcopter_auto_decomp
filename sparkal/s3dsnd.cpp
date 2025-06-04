@@ -287,12 +287,9 @@ void SoundChangeNotificationSink::DoNotificationChange(long lPreferenceType, cla
 	__asm        cmp    chPrefsData, 0;
 	__asm        je     _Tc4;
 // LINE 87:
-	__asm        mov    eax, chPrefsData;
-	__asm        mov    currentSoundPreferences, eax;
+	currentSoundPreferences = chPrefsData;
 // LINE 88:
-	__asm        mov    eax, currentSoundPreferences;
-	__asm        mov    eax, [eax];
-	__asm        mov    glMasterVolume, eax;
+	glMasterVolume = currentSoundPreferences->lMasterVolume;
 // LINE 89:
 	__asm        mov    i, 0;
 	__asm        jmp    _T55;
@@ -393,7 +390,7 @@ int32_t S3LoadSounds() {
 	__asm        mov    [ebp-0x10C], eax;
 	__asm        jmp    _T68;
 _T5e:
-	__asm        mov    dword ptr [ebp-0x10C], 0;
+	None = 0x0;
 _T68:
 	__asm        mov    dword ptr [ebp-0x110], 0;
 	__asm        jmp    near ptr 0x00442079;
@@ -442,7 +439,7 @@ _Tcb:
 	__asm        mov    [ebp-0x114], eax;
 	__asm        jmp    _T12c;
 _T122:
-	__asm        mov    dword ptr [ebp-0x114], 0;
+	None = 0x0;
 _T12c:
 	__asm        mov    dword ptr [ebp-0x118], 0;
 	__asm        jmp    near ptr 0x0044213D;
@@ -491,7 +488,7 @@ _T18f:
 	__asm        mov    [ebp-0x11C], eax;
 	__asm        jmp    _T1f0;
 _T1e6:
-	__asm        mov    dword ptr [ebp-0x11C], 0;
+	None = 0x0;
 _T1f0:
 	__asm        mov    dword ptr [ebp-0x120], 0;
 	__asm        jmp    near ptr 0x00442201;
@@ -540,7 +537,7 @@ _T253:
 	__asm        mov    [ebp-0x124], eax;
 	__asm        jmp    _T2b4;
 _T2aa:
-	__asm        mov    dword ptr [ebp-0x124], 0;
+	None = 0x0;
 _T2b4:
 	__asm        mov    dword ptr [ebp-0x128], 0;
 	__asm        jmp    near ptr 0x004422C5;
@@ -589,7 +586,7 @@ _T317:
 	__asm        mov    [ebp-0x12C], eax;
 	__asm        jmp    _T378;
 _T36e:
-	__asm        mov    dword ptr [ebp-0x12C], 0;
+	None = 0x0;
 _T378:
 	__asm        mov    dword ptr [ebp-0x130], 0;
 	__asm        jmp    near ptr 0x00442389;
@@ -638,7 +635,7 @@ _T3db:
 	__asm        mov    [ebp-0x134], eax;
 	__asm        jmp    _T43c;
 _T432:
-	__asm        mov    dword ptr [ebp-0x134], 0;
+	None = 0x0;
 _T43c:
 	__asm        mov    dword ptr [ebp-0x138], 0;
 	__asm        jmp    near ptr 0x0044244D;
@@ -687,7 +684,7 @@ _T49f:
 	__asm        mov    [ebp-0x13C], eax;
 	__asm        jmp    _T500;
 _T4f6:
-	__asm        mov    dword ptr [ebp-0x13C], 0;
+	None = 0x0;
 _T500:
 	__asm        mov    dword ptr [ebp-0x140], 0;
 	__asm        jmp    near ptr 0x00442511;
@@ -736,7 +733,7 @@ _T563:
 	__asm        mov    [ebp-0x144], eax;
 	__asm        jmp    _T5c4;
 _T5ba:
-	__asm        mov    dword ptr [ebp-0x144], 0;
+	None = 0x0;
 _T5c4:
 	__asm        mov    dword ptr [ebp-0x148], 0;
 	__asm        jmp    near ptr 0x004425D5;
@@ -785,7 +782,7 @@ _T627:
 	__asm        mov    [ebp-0x14C], eax;
 	__asm        jmp    _T688;
 _T67e:
-	__asm        mov    dword ptr [ebp-0x14C], 0;
+	None = 0x0;
 _T688:
 	__asm        mov    dword ptr [ebp-0x150], 0;
 	__asm        jmp    near ptr 0x00442699;
@@ -834,7 +831,7 @@ _T6eb:
 	__asm        mov    [ebp-0x154], eax;
 	__asm        jmp    _T74c;
 _T742:
-	__asm        mov    dword ptr [ebp-0x154], 0;
+	None = 0x0;
 _T74c:
 	__asm        mov    dword ptr [ebp-0x158], 0;
 	__asm        jmp    near ptr 0x0044275D;
@@ -883,7 +880,7 @@ _T7af:
 	__asm        mov    [ebp-0x15C], eax;
 	__asm        jmp    _T810;
 _T806:
-	__asm        mov    dword ptr [ebp-0x15C], 0;
+	None = 0x0;
 _T810:
 	__asm        mov    dword ptr [ebp-0x160], 0;
 	__asm        jmp    near ptr 0x00442821;
@@ -932,7 +929,7 @@ _T873:
 	__asm        mov    [ebp-0x164], eax;
 	__asm        jmp    _T8d4;
 _T8ca:
-	__asm        mov    dword ptr [ebp-0x164], 0;
+	None = 0x0;
 _T8d4:
 	__asm        mov    dword ptr [ebp-0x168], 0;
 	__asm        jmp    near ptr 0x004428E5;
@@ -981,7 +978,7 @@ _T937:
 	__asm        mov    [ebp-0x16C], eax;
 	__asm        jmp    _T998;
 _T98e:
-	__asm        mov    dword ptr [ebp-0x16C], 0;
+	None = 0x0;
 _T998:
 	__asm        mov    dword ptr [ebp-0x170], 0;
 	__asm        jmp    near ptr 0x004429A9;
@@ -1030,7 +1027,7 @@ _T9fb:
 	__asm        mov    [ebp-0x174], eax;
 	__asm        jmp    _Ta5c;
 _Ta52:
-	__asm        mov    dword ptr [ebp-0x174], 0;
+	None = 0x0;
 _Ta5c:
 	__asm        mov    dword ptr [ebp-0x178], 0;
 	__asm        jmp    near ptr 0x00442A6D;
@@ -1079,7 +1076,7 @@ _Tabf:
 	__asm        mov    [ebp-0x17C], eax;
 	__asm        jmp    _Tb20;
 _Tb16:
-	__asm        mov    dword ptr [ebp-0x17C], 0;
+	None = 0x0;
 _Tb20:
 	__asm        mov    dword ptr [ebp-0x180], 0;
 	__asm        jmp    near ptr 0x00442B31;
@@ -1128,7 +1125,7 @@ _Tb83:
 	__asm        mov    [ebp-0x184], eax;
 	__asm        jmp    _Tbe4;
 _Tbda:
-	__asm        mov    dword ptr [ebp-0x184], 0;
+	None = 0x0;
 _Tbe4:
 	__asm        mov    dword ptr [ebp-0x188], 0;
 	__asm        jmp    near ptr 0x00442BF5;
@@ -1177,7 +1174,7 @@ _Tc47:
 	__asm        mov    [ebp-0x18C], eax;
 	__asm        jmp    _Tca8;
 _Tc9e:
-	__asm        mov    dword ptr [ebp-0x18C], 0;
+	None = 0x0;
 _Tca8:
 	__asm        mov    dword ptr [ebp-0x190], 0;
 	__asm        jmp    near ptr 0x00442CB9;
@@ -1226,7 +1223,7 @@ _Td0b:
 	__asm        mov    [ebp-0x194], eax;
 	__asm        jmp    _Td6c;
 _Td62:
-	__asm        mov    dword ptr [ebp-0x194], 0;
+	None = 0x0;
 _Td6c:
 	__asm        mov    dword ptr [ebp-0x198], 0;
 	__asm        jmp    near ptr 0x00442D7D;
@@ -1275,7 +1272,7 @@ _Tdcf:
 	__asm        mov    [ebp-0x19C], eax;
 	__asm        jmp    _Te30;
 _Te26:
-	__asm        mov    dword ptr [ebp-0x19C], 0;
+	None = 0x0;
 _Te30:
 	__asm        mov    dword ptr [ebp-0x1A0], 0;
 	__asm        jmp    near ptr 0x00442E41;
@@ -1324,7 +1321,7 @@ _Te93:
 	__asm        mov    [ebp-0x1A4], eax;
 	__asm        jmp    _Tef4;
 _Teea:
-	__asm        mov    dword ptr [ebp-0x1A4], 0;
+	None = 0x0;
 _Tef4:
 	__asm        mov    dword ptr [ebp-0x1A8], 0;
 	__asm        jmp    near ptr 0x00442F05;
@@ -1373,7 +1370,7 @@ _Tf57:
 	__asm        mov    [ebp-0x1AC], eax;
 	__asm        jmp    _Tfb8;
 _Tfae:
-	__asm        mov    dword ptr [ebp-0x1AC], 0;
+	None = 0x0;
 _Tfb8:
 	__asm        mov    dword ptr [ebp-0x1B0], 0;
 	__asm        jmp    near ptr 0x00442FC9;
@@ -1422,7 +1419,7 @@ _T101b:
 	__asm        mov    [ebp-0x1B4], eax;
 	__asm        jmp    _T107c;
 _T1072:
-	__asm        mov    dword ptr [ebp-0x1B4], 0;
+	None = 0x0;
 _T107c:
 	__asm        mov    dword ptr [ebp-0x1B8], 0;
 	__asm        jmp    near ptr 0x0044308D;
@@ -1471,7 +1468,7 @@ _T10df:
 	__asm        mov    [ebp-0x1BC], eax;
 	__asm        jmp    _T1140;
 _T1136:
-	__asm        mov    dword ptr [ebp-0x1BC], 0;
+	None = 0x0;
 _T1140:
 	__asm        mov    dword ptr [ebp-0x1C0], 0;
 	__asm        jmp    near ptr 0x00443151;
@@ -1520,7 +1517,7 @@ _T11a3:
 	__asm        mov    [ebp-0x1C4], eax;
 	__asm        jmp    _T1204;
 _T11fa:
-	__asm        mov    dword ptr [ebp-0x1C4], 0;
+	None = 0x0;
 _T1204:
 	__asm        mov    dword ptr [ebp-0x1C8], 0;
 	__asm        jmp    near ptr 0x00443215;
@@ -1569,7 +1566,7 @@ _T1267:
 	__asm        mov    [ebp-0x1CC], eax;
 	__asm        jmp    _T12c8;
 _T12be:
-	__asm        mov    dword ptr [ebp-0x1CC], 0;
+	None = 0x0;
 _T12c8:
 	__asm        mov    dword ptr [ebp-0x1D0], 0;
 	__asm        jmp    near ptr 0x004432D9;
@@ -1618,7 +1615,7 @@ _T132b:
 	__asm        mov    [ebp-0x1D4], eax;
 	__asm        jmp    _T138c;
 _T1382:
-	__asm        mov    dword ptr [ebp-0x1D4], 0;
+	None = 0x0;
 _T138c:
 	__asm        mov    dword ptr [ebp-0x1D8], 0;
 	__asm        jmp    near ptr 0x0044339D;
@@ -1667,7 +1664,7 @@ _T13ef:
 	__asm        mov    [ebp-0x1DC], eax;
 	__asm        jmp    _T1450;
 _T1446:
-	__asm        mov    dword ptr [ebp-0x1DC], 0;
+	None = 0x0;
 _T1450:
 	__asm        mov    dword ptr [ebp-0x1E0], 0;
 	__asm        jmp    near ptr 0x00443461;
@@ -1716,7 +1713,7 @@ _T14b3:
 	__asm        mov    [ebp-0x1E4], eax;
 	__asm        jmp    _T1514;
 _T150a:
-	__asm        mov    dword ptr [ebp-0x1E4], 0;
+	None = 0x0;
 _T1514:
 	__asm        mov    dword ptr [ebp-0x1E8], 0;
 	__asm        jmp    near ptr 0x00443525;
@@ -1765,7 +1762,7 @@ _T1577:
 	__asm        mov    [ebp-0x1EC], eax;
 	__asm        jmp    _T15d8;
 _T15ce:
-	__asm        mov    dword ptr [ebp-0x1EC], 0;
+	None = 0x0;
 _T15d8:
 	__asm        mov    dword ptr [ebp-0x1F0], 0;
 	__asm        jmp    near ptr 0x004435E9;
@@ -1814,7 +1811,7 @@ _T163b:
 	__asm        mov    [ebp-0x1F4], eax;
 	__asm        jmp    _T169c;
 _T1692:
-	__asm        mov    dword ptr [ebp-0x1F4], 0;
+	None = 0x0;
 _T169c:
 	__asm        mov    dword ptr [ebp-0x1F8], 0;
 	__asm        jmp    near ptr 0x004436AD;
@@ -1863,7 +1860,7 @@ _T16ff:
 	__asm        mov    [ebp-0x1FC], eax;
 	__asm        jmp    _T1760;
 _T1756:
-	__asm        mov    dword ptr [ebp-0x1FC], 0;
+	None = 0x0;
 _T1760:
 	__asm        mov    dword ptr [ebp-0x200], 0;
 	__asm        jmp    near ptr 0x00443771;
@@ -1912,7 +1909,7 @@ _T17c3:
 	__asm        mov    [ebp-0x204], eax;
 	__asm        jmp    _T1824;
 _T181a:
-	__asm        mov    dword ptr [ebp-0x204], 0;
+	None = 0x0;
 _T1824:
 	__asm        mov    dword ptr [ebp-0x208], 0;
 	__asm        jmp    near ptr 0x00443835;
@@ -1961,7 +1958,7 @@ _T1887:
 	__asm        mov    [ebp-0x20C], eax;
 	__asm        jmp    _T18e8;
 _T18de:
-	__asm        mov    dword ptr [ebp-0x20C], 0;
+	None = 0x0;
 _T18e8:
 	__asm        mov    dword ptr [ebp-0x210], 0;
 	__asm        jmp    near ptr 0x004438F9;
@@ -2010,7 +2007,7 @@ _T194b:
 	__asm        mov    [ebp-0x214], eax;
 	__asm        jmp    _T19ac;
 _T19a2:
-	__asm        mov    dword ptr [ebp-0x214], 0;
+	None = 0x0;
 _T19ac:
 	__asm        mov    dword ptr [ebp-0x218], 0;
 	__asm        jmp    near ptr 0x004439BD;
@@ -2059,7 +2056,7 @@ _T1a0f:
 	__asm        mov    [ebp-0x21C], eax;
 	__asm        jmp    _T1a70;
 _T1a66:
-	__asm        mov    dword ptr [ebp-0x21C], 0;
+	None = 0x0;
 _T1a70:
 	__asm        mov    dword ptr [ebp-0x220], 0;
 	__asm        jmp    near ptr 0x00443A81;
@@ -2108,7 +2105,7 @@ _T1ad3:
 	__asm        mov    [ebp-0x224], eax;
 	__asm        jmp    _T1b34;
 _T1b2a:
-	__asm        mov    dword ptr [ebp-0x224], 0;
+	None = 0x0;
 _T1b34:
 	__asm        mov    dword ptr [ebp-0x228], 0;
 	__asm        jmp    near ptr 0x00443B45;
@@ -2157,7 +2154,7 @@ _T1b97:
 	__asm        mov    [ebp-0x22C], eax;
 	__asm        jmp    _T1bf8;
 _T1bee:
-	__asm        mov    dword ptr [ebp-0x22C], 0;
+	None = 0x0;
 _T1bf8:
 	__asm        mov    dword ptr [ebp-0x230], 0;
 	__asm        jmp    near ptr 0x00443C09;
@@ -2206,7 +2203,7 @@ _T1c5b:
 	__asm        mov    [ebp-0x234], eax;
 	__asm        jmp    _T1cbc;
 _T1cb2:
-	__asm        mov    dword ptr [ebp-0x234], 0;
+	None = 0x0;
 _T1cbc:
 	__asm        mov    dword ptr [ebp-0x238], 0;
 	__asm        jmp    near ptr 0x00443CCD;
@@ -2255,7 +2252,7 @@ _T1d1f:
 	__asm        mov    [ebp-0x23C], eax;
 	__asm        jmp    _T1d80;
 _T1d76:
-	__asm        mov    dword ptr [ebp-0x23C], 0;
+	None = 0x0;
 _T1d80:
 	__asm        mov    dword ptr [ebp-0x240], 0;
 	__asm        jmp    near ptr 0x00443D91;
@@ -2304,7 +2301,7 @@ _T1de3:
 	__asm        mov    [ebp-0x244], eax;
 	__asm        jmp    _T1e44;
 _T1e3a:
-	__asm        mov    dword ptr [ebp-0x244], 0;
+	None = 0x0;
 _T1e44:
 	__asm        mov    dword ptr [ebp-0x248], 0;
 	__asm        jmp    near ptr 0x00443E55;
@@ -2353,7 +2350,7 @@ _T1ea7:
 	__asm        mov    [ebp-0x24C], eax;
 	__asm        jmp    _T1f08;
 _T1efe:
-	__asm        mov    dword ptr [ebp-0x24C], 0;
+	None = 0x0;
 _T1f08:
 	__asm        mov    dword ptr [ebp-0x250], 0;
 	__asm        jmp    near ptr 0x00443F19;
@@ -2402,7 +2399,7 @@ _T1f6b:
 	__asm        mov    [ebp-0x254], eax;
 	__asm        jmp    _T1fcc;
 _T1fc2:
-	__asm        mov    dword ptr [ebp-0x254], 0;
+	None = 0x0;
 _T1fcc:
 	__asm        mov    dword ptr [ebp-0x258], 0;
 	__asm        jmp    near ptr 0x00443FDD;
@@ -2451,7 +2448,7 @@ _T202f:
 	__asm        mov    [ebp-0x25C], eax;
 	__asm        jmp    _T2090;
 _T2086:
-	__asm        mov    dword ptr [ebp-0x25C], 0;
+	None = 0x0;
 _T2090:
 	__asm        mov    dword ptr [ebp-0x260], 0;
 	__asm        jmp    near ptr 0x004440A1;
@@ -2500,7 +2497,7 @@ _T20f3:
 	__asm        mov    [ebp-0x264], eax;
 	__asm        jmp    _T2154;
 _T214a:
-	__asm        mov    dword ptr [ebp-0x264], 0;
+	None = 0x0;
 _T2154:
 	__asm        mov    dword ptr [ebp-0x268], 0;
 	__asm        jmp    near ptr 0x00444165;
@@ -2549,7 +2546,7 @@ _T21b7:
 	__asm        mov    [ebp-0x26C], eax;
 	__asm        jmp    _T2218;
 _T220e:
-	__asm        mov    dword ptr [ebp-0x26C], 0;
+	None = 0x0;
 _T2218:
 	__asm        mov    dword ptr [ebp-0x270], 0;
 	__asm        jmp    near ptr 0x00444229;
@@ -2598,7 +2595,7 @@ _T227b:
 	__asm        mov    [ebp-0x274], eax;
 	__asm        jmp    _T22dc;
 _T22d2:
-	__asm        mov    dword ptr [ebp-0x274], 0;
+	None = 0x0;
 _T22dc:
 	__asm        mov    dword ptr [ebp-0x278], 0;
 	__asm        jmp    near ptr 0x004442ED;
@@ -2647,7 +2644,7 @@ _T233f:
 	__asm        mov    [ebp-0x27C], eax;
 	__asm        jmp    _T23a0;
 _T2396:
-	__asm        mov    dword ptr [ebp-0x27C], 0;
+	None = 0x0;
 _T23a0:
 	__asm        mov    dword ptr [ebp-0x280], 0;
 	__asm        jmp    near ptr 0x004443B1;
@@ -2696,7 +2693,7 @@ _T2403:
 	__asm        mov    [ebp-0x284], eax;
 	__asm        jmp    _T2464;
 _T245a:
-	__asm        mov    dword ptr [ebp-0x284], 0;
+	None = 0x0;
 _T2464:
 	__asm        mov    dword ptr [ebp-0x288], 0;
 	__asm        jmp    near ptr 0x00444475;
@@ -2745,7 +2742,7 @@ _T24c7:
 	__asm        mov    [ebp-0x28C], eax;
 	__asm        jmp    _T2528;
 _T251e:
-	__asm        mov    dword ptr [ebp-0x28C], 0;
+	None = 0x0;
 _T2528:
 	__asm        mov    dword ptr [ebp-0x290], 0;
 	__asm        jmp    near ptr 0x00444539;
@@ -2794,7 +2791,7 @@ _T258b:
 	__asm        mov    [ebp-0x294], eax;
 	__asm        jmp    _T25ec;
 _T25e2:
-	__asm        mov    dword ptr [ebp-0x294], 0;
+	None = 0x0;
 _T25ec:
 	__asm        mov    dword ptr [ebp-0x298], 0;
 	__asm        jmp    near ptr 0x004445FD;
@@ -2843,7 +2840,7 @@ _T264f:
 	__asm        mov    [ebp-0x29C], eax;
 	__asm        jmp    _T26b0;
 _T26a6:
-	__asm        mov    dword ptr [ebp-0x29C], 0;
+	None = 0x0;
 _T26b0:
 	__asm        mov    dword ptr [ebp-0x2A0], 0;
 	__asm        jmp    near ptr 0x004446C1;
@@ -2892,7 +2889,7 @@ _T2713:
 	__asm        mov    [ebp-0x2A4], eax;
 	__asm        jmp    _T2774;
 _T276a:
-	__asm        mov    dword ptr [ebp-0x2A4], 0;
+	None = 0x0;
 _T2774:
 	__asm        mov    dword ptr [ebp-0x2A8], 0;
 	__asm        jmp    near ptr 0x00444785;
@@ -2941,7 +2938,7 @@ _T27d7:
 	__asm        mov    [ebp-0x2AC], eax;
 	__asm        jmp    _T2838;
 _T282e:
-	__asm        mov    dword ptr [ebp-0x2AC], 0;
+	None = 0x0;
 _T2838:
 	__asm        mov    dword ptr [ebp-0x2B0], 0;
 	__asm        jmp    near ptr 0x00444849;
@@ -2990,7 +2987,7 @@ _T289b:
 	__asm        mov    [ebp-0x2B4], eax;
 	__asm        jmp    _T28fc;
 _T28f2:
-	__asm        mov    dword ptr [ebp-0x2B4], 0;
+	None = 0x0;
 _T28fc:
 	__asm        mov    dword ptr [ebp-0x2B8], 0;
 	__asm        jmp    near ptr 0x0044490D;
@@ -3039,7 +3036,7 @@ _T295f:
 	__asm        mov    [ebp-0x2BC], eax;
 	__asm        jmp    _T29c0;
 _T29b6:
-	__asm        mov    dword ptr [ebp-0x2BC], 0;
+	None = 0x0;
 _T29c0:
 	__asm        mov    dword ptr [ebp-0x2C0], 0;
 	__asm        jmp    near ptr 0x004449D1;
@@ -3088,7 +3085,7 @@ _T2a23:
 	__asm        mov    [ebp-0x2C4], eax;
 	__asm        jmp    _T2a84;
 _T2a7a:
-	__asm        mov    dword ptr [ebp-0x2C4], 0;
+	None = 0x0;
 _T2a84:
 	__asm        mov    dword ptr [ebp-0x2C8], 0;
 	__asm        jmp    near ptr 0x00444A95;
@@ -3137,7 +3134,7 @@ _T2ae7:
 	__asm        mov    [ebp-0x2CC], eax;
 	__asm        jmp    _T2b48;
 _T2b3e:
-	__asm        mov    dword ptr [ebp-0x2CC], 0;
+	None = 0x0;
 _T2b48:
 	__asm        mov    dword ptr [ebp-0x2D0], 0;
 	__asm        jmp    near ptr 0x00444B59;
@@ -3186,7 +3183,7 @@ _T2bab:
 	__asm        mov    [ebp-0x2D4], eax;
 	__asm        jmp    _T2c0c;
 _T2c02:
-	__asm        mov    dword ptr [ebp-0x2D4], 0;
+	None = 0x0;
 _T2c0c:
 	__asm        mov    dword ptr [ebp-0x2D8], 0;
 	__asm        jmp    near ptr 0x00444C1D;
@@ -3235,7 +3232,7 @@ _T2c6f:
 	__asm        mov    [ebp-0x2DC], eax;
 	__asm        jmp    _T2cd0;
 _T2cc6:
-	__asm        mov    dword ptr [ebp-0x2DC], 0;
+	None = 0x0;
 _T2cd0:
 	__asm        mov    dword ptr [ebp-0x2E0], 0;
 	__asm        jmp    near ptr 0x00444CE1;
@@ -3284,7 +3281,7 @@ _T2d33:
 	__asm        mov    [ebp-0x2E4], eax;
 	__asm        jmp    _T2d94;
 _T2d8a:
-	__asm        mov    dword ptr [ebp-0x2E4], 0;
+	None = 0x0;
 _T2d94:
 	__asm        mov    dword ptr [ebp-0x2E8], 0;
 	__asm        jmp    near ptr 0x00444DA5;
@@ -3333,7 +3330,7 @@ _T2df7:
 	__asm        mov    [ebp-0x2EC], eax;
 	__asm        jmp    _T2e58;
 _T2e4e:
-	__asm        mov    dword ptr [ebp-0x2EC], 0;
+	None = 0x0;
 _T2e58:
 	__asm        mov    dword ptr [ebp-0x2F0], 0;
 	__asm        jmp    near ptr 0x00444E69;
@@ -3382,7 +3379,7 @@ _T2ebb:
 	__asm        mov    [ebp-0x2F4], eax;
 	__asm        jmp    _T2f1c;
 _T2f12:
-	__asm        mov    dword ptr [ebp-0x2F4], 0;
+	None = 0x0;
 _T2f1c:
 	__asm        mov    dword ptr [ebp-0x2F8], 0;
 	__asm        jmp    near ptr 0x00444F2D;
@@ -3431,7 +3428,7 @@ _T2f7f:
 	__asm        mov    [ebp-0x2FC], eax;
 	__asm        jmp    _T2fe0;
 _T2fd6:
-	__asm        mov    dword ptr [ebp-0x2FC], 0;
+	None = 0x0;
 _T2fe0:
 	__asm        mov    dword ptr [ebp-0x300], 0;
 	__asm        jmp    near ptr 0x00444FF1;
@@ -3480,7 +3477,7 @@ _T3043:
 	__asm        mov    [ebp-0x304], eax;
 	__asm        jmp    _T30a4;
 _T309a:
-	__asm        mov    dword ptr [ebp-0x304], 0;
+	None = 0x0;
 _T30a4:
 	__asm        mov    dword ptr [ebp-0x308], 0;
 	__asm        jmp    near ptr 0x004450B5;
@@ -3529,7 +3526,7 @@ _T3107:
 	__asm        mov    [ebp-0x30C], eax;
 	__asm        jmp    _T3168;
 _T315e:
-	__asm        mov    dword ptr [ebp-0x30C], 0;
+	None = 0x0;
 _T3168:
 	__asm        mov    dword ptr [ebp-0x310], 0;
 	__asm        jmp    near ptr 0x00445179;
@@ -3578,7 +3575,7 @@ _T31cb:
 	__asm        mov    [ebp-0x314], eax;
 	__asm        jmp    _T322c;
 _T3222:
-	__asm        mov    dword ptr [ebp-0x314], 0;
+	None = 0x0;
 _T322c:
 	__asm        mov    dword ptr [ebp-0x318], 0;
 	__asm        jmp    near ptr 0x0044523D;
@@ -3627,7 +3624,7 @@ _T328f:
 	__asm        mov    [ebp-0x31C], eax;
 	__asm        jmp    _T32f0;
 _T32e6:
-	__asm        mov    dword ptr [ebp-0x31C], 0;
+	None = 0x0;
 _T32f0:
 	__asm        mov    dword ptr [ebp-0x320], 0;
 	__asm        jmp    near ptr 0x00445301;
@@ -3676,7 +3673,7 @@ _T3353:
 	__asm        mov    [ebp-0x324], eax;
 	__asm        jmp    _T33b4;
 _T33aa:
-	__asm        mov    dword ptr [ebp-0x324], 0;
+	None = 0x0;
 _T33b4:
 	__asm        mov    dword ptr [ebp-0x328], 0;
 	__asm        jmp    near ptr 0x004453C5;
@@ -3725,7 +3722,7 @@ _T3417:
 	__asm        mov    [ebp-0x32C], eax;
 	__asm        jmp    _T3478;
 _T346e:
-	__asm        mov    dword ptr [ebp-0x32C], 0;
+	None = 0x0;
 _T3478:
 	__asm        mov    dword ptr [ebp-0x330], 0;
 	__asm        jmp    near ptr 0x00445489;
@@ -3774,7 +3771,7 @@ _T34db:
 	__asm        mov    [ebp-0x334], eax;
 	__asm        jmp    _T353c;
 _T3532:
-	__asm        mov    dword ptr [ebp-0x334], 0;
+	None = 0x0;
 _T353c:
 	__asm        mov    dword ptr [ebp-0x338], 0;
 	__asm        jmp    near ptr 0x0044554D;
@@ -3823,7 +3820,7 @@ _T359f:
 	__asm        mov    [ebp-0x33C], eax;
 	__asm        jmp    _T3600;
 _T35f6:
-	__asm        mov    dword ptr [ebp-0x33C], 0;
+	None = 0x0;
 _T3600:
 	__asm        mov    dword ptr [ebp-0x340], 0;
 	__asm        jmp    near ptr 0x00445611;
@@ -3872,7 +3869,7 @@ _T3663:
 	__asm        mov    [ebp-0x344], eax;
 	__asm        jmp    _T36c4;
 _T36ba:
-	__asm        mov    dword ptr [ebp-0x344], 0;
+	None = 0x0;
 _T36c4:
 	__asm        mov    dword ptr [ebp-0x348], 0;
 	__asm        jmp    near ptr 0x004456D5;
@@ -3921,7 +3918,7 @@ _T3727:
 	__asm        mov    [ebp-0x34C], eax;
 	__asm        jmp    _T3788;
 _T377e:
-	__asm        mov    dword ptr [ebp-0x34C], 0;
+	None = 0x0;
 _T3788:
 	__asm        mov    dword ptr [ebp-0x350], 0;
 	__asm        jmp    near ptr 0x00445799;
@@ -3970,7 +3967,7 @@ _T37eb:
 	__asm        mov    [ebp-0x354], eax;
 	__asm        jmp    _T384c;
 _T3842:
-	__asm        mov    dword ptr [ebp-0x354], 0;
+	None = 0x0;
 _T384c:
 	__asm        mov    dword ptr [ebp-0x358], 0;
 	__asm        jmp    near ptr 0x0044585D;
@@ -4019,7 +4016,7 @@ _T38af:
 	__asm        mov    [ebp-0x35C], eax;
 	__asm        jmp    _T3910;
 _T3906:
-	__asm        mov    dword ptr [ebp-0x35C], 0;
+	None = 0x0;
 _T3910:
 	__asm        mov    dword ptr [ebp-0x360], 0;
 	__asm        jmp    near ptr 0x00445921;
@@ -4068,7 +4065,7 @@ _T3973:
 	__asm        mov    [ebp-0x364], eax;
 	__asm        jmp    _T39d4;
 _T39ca:
-	__asm        mov    dword ptr [ebp-0x364], 0;
+	None = 0x0;
 _T39d4:
 	__asm        mov    dword ptr [ebp-0x368], 0;
 	__asm        jmp    near ptr 0x004459E5;
@@ -4117,7 +4114,7 @@ _T3a37:
 	__asm        mov    [ebp-0x36C], eax;
 	__asm        jmp    _T3a98;
 _T3a8e:
-	__asm        mov    dword ptr [ebp-0x36C], 0;
+	None = 0x0;
 _T3a98:
 	__asm        mov    dword ptr [ebp-0x370], 0;
 	__asm        jmp    near ptr 0x00445AA9;
@@ -4166,7 +4163,7 @@ _T3afb:
 	__asm        mov    [ebp-0x374], eax;
 	__asm        jmp    _T3b5c;
 _T3b52:
-	__asm        mov    dword ptr [ebp-0x374], 0;
+	None = 0x0;
 _T3b5c:
 	__asm        mov    dword ptr [ebp-0x378], 0;
 	__asm        jmp    near ptr 0x00445B6D;
@@ -4215,7 +4212,7 @@ _T3bbf:
 	__asm        mov    [ebp-0x37C], eax;
 	__asm        jmp    _T3c20;
 _T3c16:
-	__asm        mov    dword ptr [ebp-0x37C], 0;
+	None = 0x0;
 _T3c20:
 	__asm        mov    dword ptr [ebp-0x380], 0;
 	__asm        jmp    near ptr 0x00445C31;
@@ -4264,7 +4261,7 @@ _T3c83:
 	__asm        mov    [ebp-0x384], eax;
 	__asm        jmp    _T3ce4;
 _T3cda:
-	__asm        mov    dword ptr [ebp-0x384], 0;
+	None = 0x0;
 _T3ce4:
 	__asm        mov    dword ptr [ebp-0x388], 0;
 	__asm        jmp    near ptr 0x00445CF5;
@@ -4313,7 +4310,7 @@ _T3d47:
 	__asm        mov    [ebp-0x38C], eax;
 	__asm        jmp    _T3da8;
 _T3d9e:
-	__asm        mov    dword ptr [ebp-0x38C], 0;
+	None = 0x0;
 _T3da8:
 	__asm        mov    dword ptr [ebp-0x390], 0;
 	__asm        jmp    near ptr 0x00445DB9;
@@ -4362,7 +4359,7 @@ _T3e0b:
 	__asm        mov    [ebp-0x394], eax;
 	__asm        jmp    _T3e6c;
 _T3e62:
-	__asm        mov    dword ptr [ebp-0x394], 0;
+	None = 0x0;
 _T3e6c:
 	__asm        mov    dword ptr [ebp-0x398], 0;
 	__asm        jmp    near ptr 0x00445E7D;
@@ -4411,7 +4408,7 @@ _T3ecf:
 	__asm        mov    [ebp-0x39C], eax;
 	__asm        jmp    _T3f30;
 _T3f26:
-	__asm        mov    dword ptr [ebp-0x39C], 0;
+	None = 0x0;
 _T3f30:
 	__asm        mov    dword ptr [ebp-0x3A0], 0;
 	__asm        jmp    near ptr 0x00445F41;
@@ -4460,7 +4457,7 @@ _T3f93:
 	__asm        mov    [ebp-0x3A4], eax;
 	__asm        jmp    _T3ff4;
 _T3fea:
-	__asm        mov    dword ptr [ebp-0x3A4], 0;
+	None = 0x0;
 _T3ff4:
 	__asm        mov    dword ptr [ebp-0x3A8], 0;
 	__asm        jmp    near ptr 0x00446005;
@@ -4509,7 +4506,7 @@ _T4057:
 	__asm        mov    [ebp-0x3AC], eax;
 	__asm        jmp    _T40b8;
 _T40ae:
-	__asm        mov    dword ptr [ebp-0x3AC], 0;
+	None = 0x0;
 _T40b8:
 	__asm        mov    dword ptr [ebp-0x3B0], 0;
 	__asm        jmp    near ptr 0x004460C9;
@@ -4558,7 +4555,7 @@ _T411b:
 	__asm        mov    [ebp-0x3B4], eax;
 	__asm        jmp    _T417c;
 _T4172:
-	__asm        mov    dword ptr [ebp-0x3B4], 0;
+	None = 0x0;
 _T417c:
 	__asm        mov    dword ptr [ebp-0x3B8], 0;
 	__asm        jmp    near ptr 0x0044618D;
@@ -4607,7 +4604,7 @@ _T41df:
 	__asm        mov    [ebp-0x3BC], eax;
 	__asm        jmp    _T4240;
 _T4236:
-	__asm        mov    dword ptr [ebp-0x3BC], 0;
+	None = 0x0;
 _T4240:
 	__asm        mov    dword ptr [ebp-0x3C0], 0;
 	__asm        jmp    near ptr 0x00446251;
@@ -4656,7 +4653,7 @@ _T42a3:
 	__asm        mov    [ebp-0x3C4], eax;
 	__asm        jmp    _T4304;
 _T42fa:
-	__asm        mov    dword ptr [ebp-0x3C4], 0;
+	None = 0x0;
 _T4304:
 	__asm        mov    dword ptr [ebp-0x3C8], 0;
 	__asm        jmp    near ptr 0x00446315;
@@ -4705,7 +4702,7 @@ _T4367:
 	__asm        mov    [ebp-0x3CC], eax;
 	__asm        jmp    _T43c8;
 _T43be:
-	__asm        mov    dword ptr [ebp-0x3CC], 0;
+	None = 0x0;
 _T43c8:
 	__asm        mov    dword ptr [ebp-0x3D0], 0;
 	__asm        jmp    near ptr 0x004463D9;
@@ -4754,7 +4751,7 @@ _T442b:
 	__asm        mov    [ebp-0x3D4], eax;
 	__asm        jmp    _T448c;
 _T4482:
-	__asm        mov    dword ptr [ebp-0x3D4], 0;
+	None = 0x0;
 _T448c:
 	__asm        mov    dword ptr [ebp-0x3D8], 0;
 	__asm        jmp    near ptr 0x0044649D;
@@ -4803,7 +4800,7 @@ _T44ef:
 	__asm        mov    [ebp-0x3DC], eax;
 	__asm        jmp    _T4550;
 _T4546:
-	__asm        mov    dword ptr [ebp-0x3DC], 0;
+	None = 0x0;
 _T4550:
 	__asm        mov    dword ptr [ebp-0x3E0], 0;
 	__asm        jmp    near ptr 0x00446561;
@@ -4852,7 +4849,7 @@ _T45b3:
 	__asm        mov    [ebp-0x3E4], eax;
 	__asm        jmp    _T4614;
 _T460a:
-	__asm        mov    dword ptr [ebp-0x3E4], 0;
+	None = 0x0;
 _T4614:
 	__asm        mov    dword ptr [ebp-0x3E8], 0;
 	__asm        jmp    near ptr 0x00446625;
@@ -4901,7 +4898,7 @@ _T4677:
 	__asm        mov    [ebp-0x3EC], eax;
 	__asm        jmp    _T46d8;
 _T46ce:
-	__asm        mov    dword ptr [ebp-0x3EC], 0;
+	None = 0x0;
 _T46d8:
 	__asm        mov    dword ptr [ebp-0x3F0], 0;
 	__asm        jmp    near ptr 0x004466E9;
@@ -5224,7 +5221,7 @@ _T106:
 	__asm        mov    [ebp-0x10C], eax;
 	__asm        jmp    _T133;
 _T129:
-	__asm        mov    dword ptr [ebp-0x10C], 0;
+	None = 0x0;
 _T133:
 	__asm        mov    dword ptr [ebp-0x110], 0;
 	__asm        jmp    near ptr 0x00446BAD;
@@ -5388,23 +5385,23 @@ _Te2:
 	__asm        test   reinterpret_cast<uint8_t>(nFlags), 1;
 	__asm        je     _Tf8;
 // LINE 522:
-	__asm        mov    midparam, 1;
+	midparam = 0x1;
 // LINE 523:
 	__asm        jmp    _Tff;
 // LINE 524:
 _Tf8:
-	__asm        mov    midparam, 0;
+	midparam = 0x0;
 // LINE 525:
 _Tff:
 	__asm        test   reinterpret_cast<uint8_t>(nFlags), 2;
 	__asm        je     _T115;
 // LINE 526:
-	__asm        mov    lastparam, 1;
+	lastparam = 0x1;
 // LINE 527:
 	__asm        jmp    _T11c;
 // LINE 528:
 _T115:
-	__asm        mov    lastparam, 2;
+	lastparam = 0x2;
 // LINE 530:
 _T11c:
 	__asm        mov    eax, lastparam;
@@ -5736,7 +5733,7 @@ void S3SoundAddToQueue(int32_t nQueue, int32_t nSoundIndex, int32_t nDelayBefore
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    _T93;
 _T8c:
-	__asm        mov    dword ptr [ebp-0x10], 0;
+	None = 0x0;
 _T93:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        push   eax;

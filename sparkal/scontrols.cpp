@@ -720,8 +720,7 @@ _T4c:
 // FUNCTION: COPTER_D 0x004718a8
 void SoundButtonWindow::~SoundButtonWindow() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x590870;
+	this-><SoundButtonWindow+0x00> = 0x590870;
 // LINE 56:
 	__asm        dec    SoundButtonWindow::lButtonSoundReferenceCount;
 // LINE 57:
@@ -808,8 +807,7 @@ _T50:
 // FUNCTION: COPTER_D 0x004719aa
 void SoundRadioButtonWindow::~SoundRadioButtonWindow() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x590950;
+	this-><SoundRadioButtonWindow+0x00> = 0x590950;
 // LINE 92:
 	__asm        dec    SoundRadioButtonWindow::lRadioSoundReferenceCount;
 // LINE 93:
@@ -915,8 +913,7 @@ _T4c:
 // FUNCTION: COPTER_D 0x00471aed
 void SoundCheckBoxWindow::~SoundCheckBoxWindow() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x590A38;
+	this-><SoundCheckBoxWindow+0x00> = 0x590a38;
 // LINE 136:
 	__asm        dec    SoundCheckBoxWindow::lCheckBoxSoundReferenceCount;
 // LINE 137:
@@ -1024,8 +1021,7 @@ _T50:
 // FUNCTION: COPTER_D 0x00471c31
 void SoundScrollBarWindow::~SoundScrollBarWindow() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x590B18;
+	this-><SoundScrollBarWindow+0x00> = 0x590b18;
 // LINE 180:
 	__asm        dec    SoundScrollBarWindow::lScrollBarSoundReferenceCount;
 // LINE 181:

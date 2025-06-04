@@ -106,16 +106,14 @@ class ICommander* CSparkalWindow::SetCommander(class ICommander *pCommander) {
 	class ICommander *ReturnCommander;
 
 // LINE 19:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ReturnCommander, eax;
+	ReturnCommander = this->mpCommander;
 // LINE 21:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, pCommander;
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        jne    _T30;
 // LINE 22:
-	__asm        mov    ReturnCommander, 0;
+	ReturnCommander = 0x0;
 // LINE 23:
 	__asm        jmp    _T68;
 // LINE 25:
@@ -133,9 +131,7 @@ _T30:
 	__asm        call   dword ptr [edx+0x20];
 // LINE 28:
 _T50:
-	__asm        mov    eax, pCommander;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x10], eax;
+	this->mpCommander = pCommander;
 // LINE 29:
 	__asm        mov    eax, this;
 	__asm        push   eax;
@@ -155,13 +151,9 @@ class ScreenBuffer* CSparkalWindow::SetBackBuffer(class ScreenBuffer *pBuffer) {
 	class ScreenBuffer *ReturnBuffer;
 
 // LINE 42:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        mov    ReturnBuffer, eax;
+	ReturnBuffer = this->mpBackBuffer;
 // LINE 43:
-	__asm        mov    eax, pBuffer;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x14], eax;
+	this->mpBackBuffer = pBuffer;
 // LINE 44:
 	__asm        mov    eax, ReturnBuffer;
 	__asm        jmp    near ptr 0x004322FD;
@@ -224,7 +216,7 @@ unsigned long CSparkalWindow::SwapBuffer(long Left, long Top, long Right, long B
 	unsigned long Error;
 
 // LINE 81:
-	__asm        mov    Error, 0;
+	Error = 0x0;
 // LINE 86:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
@@ -250,8 +242,7 @@ unsigned long CSparkalWindow::SwapBuffer(long Left, long Top, long Right, long B
 	__asm        idiv   ecx;
 	__asm        mov    Step, eax;
 // LINE 93:
-	__asm        mov    eax, Step;
-	__asm        mov    ChunkHeight, eax;
+	ChunkHeight = Step;
 // LINE 94:
 	__asm        mov    eax, Bottom;
 	__asm        sub    eax, ChunkHeight;

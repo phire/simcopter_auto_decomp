@@ -176,8 +176,7 @@ _T37:
 	__asm        jmp    _T173;
 // LINE 67:
 _T51:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x2C], 1;
+	this-><CGameApp+0x2c:4> = 0x1;
 // LINE 69:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::PaletteUninitialize;
@@ -208,8 +207,7 @@ _T51:
 	__asm        mov    ecx, [eax+0x34];
 	__asm        call   dword ptr [edx+0x68];
 // LINE 76:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x30], 1;
+	this-><CGameApp+0x30:4> = 0x1;
 // LINE 81:
 	__asm        jmp    near ptr 0x00432603;
 
@@ -282,8 +280,7 @@ _Tf8:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::PaletteInitialize;
 // LINE 98:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x2C], 0;
+	this-><CGameApp+0x2c:4> = 0x0;
 // LINE 99:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T173;
@@ -323,8 +320,7 @@ _T37:
 	__asm        jmp    _T173;
 // LINE 122:
 _T51:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x2C], 1;
+	this-><CGameApp+0x2c:4> = 0x1;
 // LINE 124:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::PaletteUninitialize;
@@ -355,8 +351,7 @@ _T51:
 	__asm        mov    ecx, [eax+0x34];
 	__asm        call   dword ptr [edx+0x68];
 // LINE 131:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x30], 0;
+	this-><CGameApp+0x30:4> = 0x0;
 // LINE 137:
 	__asm        jmp    near ptr 0x0043277B;
 
@@ -429,8 +424,7 @@ _Tf8:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::PaletteInitialize;
 // LINE 154:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x2C], 0;
+	this-><CGameApp+0x2c:4> = 0x0;
 // LINE 155:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T173;
@@ -558,8 +552,7 @@ int  CGameApp::CreateDisplaySurfaces() {
 	__asm        mov    [ecx+0x34], eax;
 	__asm        jmp    _T8f;
 _T85:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x34], 0;
+	this-><CGameApp+0x34:4> = 0x0;
 // LINE 222:
 _T8f:
 	__asm        mov    eax, this;
@@ -623,7 +616,7 @@ _T146:
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _T17c;
 _T175:
-	__asm        mov    dword ptr [ebp-0x24], 0;
+	None = 0x0;
 _T17c:
 	__asm        push   1;
 	__asm        mov    eax, [ebp-0x24];
@@ -640,12 +633,9 @@ _T17c:
 	__asm        mov    [ecx+0x38], eax;
 	__asm        jmp    _T1ac;
 _T1a2:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x38], 0;
+	this-><CGameApp+0x38:4> = 0x0;
 _T1ac:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x38];
-	__asm        mov    [ebp-0x28], eax;
+	None = this-><CGameApp+0x38:4>;
 // LINE 233:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    GraphicWindow::screenWindow, eax;
@@ -685,8 +675,7 @@ int  CGameApp::DestroyDisplaySurfaces() {
 	__asm        mov    ecx, [eax+0x38];
 	__asm        call   dword ptr [edx+0x6C];
 // LINE 250:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x38], 0;
+	this-><CGameApp+0x38:4> = 0x0;
 // LINE 252:
 _T3c:
 	__asm        jmp    near ptr 0x00432B2F;
@@ -736,8 +725,7 @@ _T6f:
 	__asm        jmp    _Tc5;
 // LINE 257:
 _Tc5:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x34], 0;
+	this-><CGameApp+0x34:4> = 0x0;
 // LINE 259:
 _Tcf:
 	__asm        mov    eax, 1;
@@ -807,9 +795,7 @@ _T95:
 _Ta4:
 	__asm        jmp    near ptr 0x00432C75;
 
-	__asm        mov    eax, i.node;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    nCurrentMode, eax;
+	nCurrentMode = i.node->data.nModeID;
 // LINE 293:
 	__asm        mov    eax, nCurrentMode;
 	__asm        mov    [ebp-0x2C], eax;
@@ -878,8 +864,7 @@ int  CGameApp::DestroyModeSurfaces() {
 	__asm        jmp    _T56;
 // LINE 325:
 _T56:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x42BC], 0;
+	this-><CGameApp+0x42bc:4> = 0x0;
 // LINE 327:
 _T63:
 	__asm        mov    ecx, this;
@@ -930,9 +915,7 @@ _Td4:
 _Te3:
 	__asm        jmp    near ptr 0x00432DCA;
 
-	__asm        mov    eax, i.node;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    nCurrentMode, eax;
+	nCurrentMode = i.node->data.nModeID;
 // LINE 336:
 	__asm        mov    eax, nCurrentMode;
 	__asm        mov    [ebp-0x34], eax;

@@ -163,17 +163,13 @@ void JoystickManager::JoystickManager() {
 	int32_t i;
 
 // LINE 29:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x54], 0xFFFFFF9C;
+	this->lNormalizedMinimum = 0xffffff9c;
 // LINE 30:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x58], 0x64;
+	this->lNormalizedMaximum = 0x64;
 // LINE 31:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x5C], 0;
+	this->lNormalizedCenter = 0x0;
 // LINE 32:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x60], 0;
+	this->lJoystickThreshold = 0x0;
 // LINE 33:
 	__asm        mov    i, 0;
 	__asm        jmp    _T43;
@@ -187,9 +183,7 @@ _T43:
 	__asm        mov    ecx, this;
 	__asm        mov    byte ptr [eax+ecx+4], 0;
 // LINE 35:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, this;
-	__asm        mov    dword ptr [ecx+eax*4+0x14], 0;
+	this->nJoystickCount = 0x0;
 // LINE 36:
 	__asm        jmp    _T40;
 // LINE 38:
@@ -207,11 +201,9 @@ int32_t JoystickManager::Initialize() {
 	uint32_t mmResult;
 
 // LINE 51:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0;
+	this->nJoystickCount = 0x0;
 // LINE 60:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0;
+	this->nJoystickCount = 0x0;
 // LINE 61:
 	__asm        mov    i, 0;
 	__asm        jmp    _T2d;
@@ -225,9 +217,7 @@ _T2d:
 	__asm        mov    ecx, this;
 	__asm        mov    byte ptr [eax+ecx+4], 0;
 // LINE 63:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, this;
-	__asm        mov    dword ptr [ecx+eax*4+0x14], 0;
+	this->nJoystickCount = 0x0;
 // LINE 64:
 	__asm        jmp    _T2a;
 // LINE 66:
@@ -238,7 +228,7 @@ _T55:
 	__asm        cmp    nMaxJoysticks, 0x10;
 	__asm        jle    _T6f;
 // LINE 68:
-	__asm        mov    nMaxJoysticks, 0x10;
+	nMaxJoysticks = 0x10;
 // LINE 70:
 _T6f:
 	__asm        mov    i, 0;
@@ -260,11 +250,7 @@ _T7e:
 	__asm        cmp    mmResult, 0;
 	__asm        jne    _Tee;
 // LINE 73:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx];
-	__asm        mov    edx, this;
-	__asm        mov    [edx+ecx*4+0x14], eax;
+	this->nJoystickCount = i;
 // LINE 74:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -538,7 +524,7 @@ _T4b:
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    _Te0;
 // LINE 237:
-	__asm        mov    dwFlagToUse, 1;
+	dwFlagToUse = 0x1;
 // LINE 238:
 	__asm        mov    eax, joyInfoExToUse;
 	__asm        add    eax, 8;
@@ -546,7 +532,7 @@ _T4b:
 // LINE 239:
 	__asm        jmp    _T10c;
 // LINE 241:
-	__asm        mov    dwFlagToUse, 2;
+	dwFlagToUse = 0x2;
 // LINE 242:
 	__asm        mov    eax, joyInfoExToUse;
 	__asm        add    eax, 0xC;
@@ -554,7 +540,7 @@ _T4b:
 // LINE 243:
 	__asm        jmp    _T10c;
 // LINE 245:
-	__asm        mov    dwFlagToUse, 4;
+	dwFlagToUse = 0x4;
 // LINE 246:
 	__asm        mov    eax, joyInfoExToUse;
 	__asm        add    eax, 0x10;
@@ -562,7 +548,7 @@ _T4b:
 // LINE 247:
 	__asm        jmp    _T10c;
 // LINE 249:
-	__asm        mov    dwFlagToUse, 8;
+	dwFlagToUse = 0x8;
 // LINE 250:
 	__asm        mov    eax, joyInfoExToUse;
 	__asm        add    eax, 0x14;
@@ -570,7 +556,7 @@ _T4b:
 // LINE 251:
 	__asm        jmp    _T10c;
 // LINE 253:
-	__asm        mov    dwFlagToUse, 0x10;
+	dwFlagToUse = 0x10;
 // LINE 254:
 	__asm        mov    eax, joyInfoExToUse;
 	__asm        add    eax, 0x18;
@@ -578,7 +564,7 @@ _T4b:
 // LINE 255:
 	__asm        jmp    _T10c;
 // LINE 257:
-	__asm        mov    dwFlagToUse, 0x20;
+	dwFlagToUse = 0x20;
 // LINE 258:
 	__asm        mov    eax, joyInfoExToUse;
 	__asm        add    eax, 0x1C;
@@ -603,12 +589,9 @@ _T10c:
 	__asm        cmp    bUseCache, 0;
 	__asm        jne    _T156;
 // LINE 264:
-	__asm        mov    eax, joyInfoExToUse;
-	__asm        mov    dword ptr [eax], 0x34;
+	joyInfoExToUse->dwSize = 0x34;
 // LINE 265:
-	__asm        mov    eax, dwFlagToUse;
-	__asm        mov    ecx, joyInfoExToUse;
-	__asm        mov    [ecx+4], eax;
+	joyInfoExToUse->dwFlags = dwFlagToUse;
 // LINE 266:
 	__asm        jmp    near ptr 0x0049A963;
 
@@ -699,11 +682,9 @@ _T55:
 	__asm        cmp    bUseCache, 0;
 	__asm        jne    _Ta0;
 // LINE 312:
-	__asm        mov    eax, joyInfoExToUse;
-	__asm        mov    dword ptr [eax], 0x34;
+	joyInfoExToUse->dwSize = 0x34;
 // LINE 313:
-	__asm        mov    eax, joyInfoExToUse;
-	__asm        mov    dword ptr [eax+4], 0x80;
+	joyInfoExToUse->dwFlags = 0x80;
 // LINE 314:
 	__asm        jmp    near ptr 0x0049AA54;
 
@@ -824,11 +805,9 @@ _T4b:
 	__asm        cmp    bUseCache, 0;
 	__asm        jne    _T96;
 // LINE 390:
-	__asm        mov    eax, joyInfoExToUse;
-	__asm        mov    dword ptr [eax], 0x34;
+	joyInfoExToUse->dwSize = 0x34;
 // LINE 391:
-	__asm        mov    eax, joyInfoExToUse;
-	__asm        mov    dword ptr [eax+4], 0x40;
+	joyInfoExToUse->dwFlags = 0x40;
 // LINE 392:
 	__asm        jmp    near ptr 0x0049ABA7;
 
@@ -953,13 +932,9 @@ _T55:
 // FUNCTION: COPTER_D 0x0049acd8
 void JoystickManager::SetNormalizedMinMax(long lNewMin, long lNewMax) {
 // LINE 499:
-	__asm        mov    eax, lNewMin;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x54], eax;
+	this->lNormalizedMinimum = lNewMin;
 // LINE 500:
-	__asm        mov    eax, lNewMax;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x58], eax;
+	this->lNormalizedMaximum = lNewMax;
 // LINE 501:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x58];

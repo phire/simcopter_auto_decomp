@@ -171,8 +171,7 @@ void SwizzleRect(struct Rect *rect) {
 	short * pShort;
 
 // LINE 64:
-	__asm        mov    eax, rect;
-	__asm        mov    pShort, eax;
+	pShort = rect;
 // LINE 65:
 	__asm        mov    eax, pShort;
 	__asm        mov    [ebp-8], eax;

@@ -515,8 +515,7 @@ void UserMenuWindow::UserMenuWindow() {
 	__asm        mov    [ecx+0x78], eax;
 	__asm        jmp    _T71;
 _T67:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x78], 0;
+	this->myUserMenuWindowDescription.sImageFileName.reference = 0x0;
 _T71:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x74], 0;
@@ -607,7 +606,7 @@ _T175:
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    _T196;
 _T18f:
-	__asm        mov    dword ptr [ebp-4], 0;
+	None = 0x0;
 _T196:
 	__asm        mov    dword ptr [ebp-8], 0;
 	__asm        jmp    near ptr 0x0049B122;
@@ -677,8 +676,7 @@ _T239:
 _T260:
 	__asm        jmp    near ptr 0x0049B1E5;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5912F8;
+	this-><UserMenuWindow+0x00> = 0x5912f8;
 // LINE 40:
 	__asm        jmp    near ptr 0x0049B1F3;
 
@@ -848,7 +846,7 @@ _T19f:
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    _T1d1;
 _T1ca:
-	__asm        mov    dword ptr [ebp-0x38], 0xFFFFFFFF;
+	None = 0xffffffff;
 _T1d1:
 	__asm        jmp    near ptr 0x0049B3D1;
 
@@ -947,8 +945,7 @@ _T2d2:
 	__asm        mov    [ecx+0x78], eax;
 	__asm        jmp    _T2f9;
 _T2ef:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x78], 0;
+	this->myUserMenuWindowDescription.sImageFileName.reference = 0x0;
 _T2f9:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x74], 0;
@@ -1065,8 +1062,7 @@ void UserMenuWindow::~UserMenuWindow() {
 	int32_t iEnd;
 
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5912F8;
+	this-><UserMenuWindow+0x00> = 0x5912f8;
 // LINE 68:
 	__asm        jmp    near ptr 0x0049B692;
 
@@ -1301,7 +1297,7 @@ _Tfb:
 	__asm        mov    [ebp-0x120], eax;
 	__asm        jmp    _T128;
 _T11e:
-	__asm        mov    dword ptr [ebp-0x120], 0;
+	None = 0x0;
 _T128:
 	__asm        mov    dword ptr [ebp-0x124], 0;
 	__asm        jmp    near ptr 0x0049B98F;
@@ -1387,7 +1383,7 @@ _T247:
 	__asm        cmp    dword ptr [eax+0xB8], 0;
 	__asm        je     _T2e3;
 // LINE 100:
-	__asm        mov    rectTextWindow.left, 0;
+	rectTextWindow.left = 0x0;
 // LINE 101:
 	__asm        jmp    near ptr 0x0049BAF4;
 
@@ -1397,9 +1393,7 @@ _T247:
 	__asm        sub    eax, [ecx+0x10];
 	__asm        mov    rectTextWindow.right, eax;
 // LINE 102:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC0];
-	__asm        mov    rectTextWindow.top, eax;
+	rectTextWindow.top = this->myUserMenuWindowDescription.ptTitlePosition.y;
 // LINE 103:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC4];
@@ -1409,9 +1403,7 @@ _T247:
 	__asm        jmp    _T33c;
 // LINE 106:
 _T2e3:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xBC];
-	__asm        mov    rectTextWindow.left, eax;
+	rectTextWindow.left = this->myUserMenuWindowDescription.ptTitlePosition.x;
 // LINE 107:
 	__asm        jmp    near ptr 0x0049BB52;
 
@@ -1421,9 +1413,7 @@ _T2e3:
 	__asm        sub    eax, [ecx+0x10];
 	__asm        mov    rectTextWindow.right, eax;
 // LINE 108:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC0];
-	__asm        mov    rectTextWindow.top, eax;
+	rectTextWindow.top = this->myUserMenuWindowDescription.ptTitlePosition.y;
 // LINE 109:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC4];
@@ -1454,7 +1444,7 @@ _T33c:
 	__asm        mov    tempTextWindow, eax;
 	__asm        jmp    _T3a2;
 _T398:
-	__asm        mov    tempTextWindow, 0;
+	tempTextWindow = 0x0;
 // LINE 113:
 _T3a2:
 	__asm        mov    eax, tempTextWindow;
@@ -1497,9 +1487,7 @@ _T429:
 	__asm        cmp    [eax+0x94], ecx;
 	__asm        jle    _Tb28;
 // LINE 125:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        mov    rectTextWindow.left, eax;
+	rectTextWindow.left = this->myUserMenuWindowDescription.ptPositionFirstItem.x;
 // LINE 126:
 	__asm        jmp    near ptr 0x0049BCB0;
 
@@ -1551,7 +1539,7 @@ _T429:
 	__asm        mov    tempTextWindow, eax;
 	__asm        jmp    _T52f;
 _T525:
-	__asm        mov    tempTextWindow, 0;
+	tempTextWindow = 0x0;
 // LINE 139:
 _T52f:
 	__asm        mov    eax, tempTextWindow;
@@ -1733,8 +1721,7 @@ _T7cc:
 	__asm        mov    [ebp-0x17C], eax;
 	__asm        jmp    _T82b;
 _T81f:
-	__asm        mov    eax, [ebp-0x174];
-	__asm        mov    [ebp-0x17C], eax;
+	None = None;
 _T82b:
 	__asm        jmp    near ptr 0x0049C088;
 
@@ -1868,9 +1855,7 @@ _Ta2b:
 
 	__asm        jmp    near ptr 0x0049C292;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC8];
-	__asm        mov    [ebp-0x168], eax;
+	None = this->myTextWindowPtrArray.start;
 _Ta4c:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x168];
@@ -2056,9 +2041,7 @@ _T47:
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        call   dword ptr [eax+0xD4];
 // LINE 187:
-	__asm        mov    eax, nIndex;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xD4], eax;
+	this->nCurrentSelection = nIndex;
 // LINE 188:
 	__asm        push   1;
 	__asm        push   1;
@@ -2188,9 +2171,7 @@ _Tce:
 	__asm        je     _Tef;
 // LINE 237:
 _Tdd:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, nHitIndex;
-	__asm        mov    [ecx], eax;
+	nHitIndex. = i;
 // LINE 238:
 	__asm        mov    eax, 1;
 	__asm        jmp    _Tfb;
@@ -2208,10 +2189,7 @@ _Tfb:
 // FUNCTION: COPTER_D 0x0049c6ad
 int32_t UserMenuWindow::GetPositionOfNthItem(int32_t nIndex, class MPoint& ptPosition) {
 // LINE 249:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        mov    ecx, ptPosition;
-	__asm        mov    [ecx], eax;
+	ptPosition.x = this->myUserMenuWindowDescription.ptPositionFirstItem.x;
 // LINE 251:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xB0];
@@ -2232,7 +2210,7 @@ long UserMenuWindow::DoCharacter(long lCharacter) {
 	int32_t iEnd;
 
 // LINE 264:
-	__asm        mov    i, 0;
+	i = 0x0;
 // LINE 265:
 	__asm        jmp    near ptr 0x0049C70C;
 
@@ -2378,7 +2356,7 @@ _T1a8:
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    _T1c9;
 _T1c2:
-	__asm        mov    dword ptr [ebp-0xC], 0;
+	None = 0x0;
 _T1c9:
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    eax, [eax+4];
@@ -2644,7 +2622,7 @@ long UserMenuWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nB
 	int32_t bExecute;
 
 // LINE 329:
-	__asm        mov    bExecute, 0;
+	bExecute = 0x0;
 // LINE 331:
 	__asm        mov    eax, nCursorY;
 	__asm        push   eax;
@@ -2664,7 +2642,7 @@ long UserMenuWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nB
 	__asm        cmp    [eax+0xD4], ecx;
 	__asm        jne    _T4e;
 // LINE 333:
-	__asm        mov    bExecute, 1;
+	bExecute = 0x1;
 // LINE 334:
 _T4e:
 	__asm        mov    eax, nIndex;
@@ -2781,8 +2759,7 @@ void CopterMainMenu::CopterMainMenu(struct UserMenuWindowDescription& newUserMen
 // FUNCTION: COPTER_D 0x0049cd15
 void CopterMainMenu::~CopterMainMenu() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5913E0;
+	this-><CopterMainMenu+0x00> = 0x5913e0;
 // LINE 401:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -2844,8 +2821,7 @@ int32_t CopterMainMenu::Initialize() {
 	__asm        mov    [ecx+0x152], eax;
 	__asm        jmp    _T8b;
 _T7e:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x152], 0;
+	this-><CopterMainMenu+0x152> = 0x0;
 // LINE 415:
 _T8b:
 	__asm        push   0x74;
@@ -2882,8 +2858,7 @@ _T8b:
 	__asm        mov    [ecx+0x156], eax;
 	__asm        jmp    _T10a;
 _Tfd:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x156], 0;
+	this-><CopterMainMenu+0x156> = 0x0;
 // LINE 416:
 _T10a:
 	__asm        mov    ecx, this;
@@ -2927,7 +2902,7 @@ int32_t CopterMainMenu::CreateImage(int32_t __formal) {
 	__asm        mov    sImageFile.reference, eax;
 	__asm        jmp    _T69;
 _T62:
-	__asm        mov    sImageFile.reference, 0;
+	sImageFile.reference = 0x0;
 _T69:
 	__asm        mov    sImageFile.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x0049CF10;
@@ -2955,7 +2930,7 @@ _T69:
 	__asm        mov    sImagePath.reference, eax;
 	__asm        jmp    _Tcc;
 _Tc5:
-	__asm        mov    sImagePath.reference, 0;
+	sImagePath.reference = 0x0;
 _Tcc:
 	__asm        mov    sImagePath.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x0049CF73;
@@ -2968,8 +2943,7 @@ _Tcc:
 	__asm        cmp    dword ptr [eax+0x15A], 0;
 	__asm        jne    _T267;
 
-	__asm        mov    eax, SZ_MAIN_RATCHET_IMAGE_FILE_NAME;
-	__asm        mov    [ebp-0x20], eax;
+	None = SZ_MAIN_RATCHET_IMAGE_FILE_NAME;
 // LINE 431:
 	__asm        jmp    near ptr 0x0049CFA0;
 
@@ -3090,16 +3064,14 @@ _T201:
 	__asm        mov    [ecx+0x15A], eax;
 	__asm        jmp    _T267;
 _T257:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x15A], 0;
+	this-><CopterMainMenu+0x15a> = 0x0;
 // LINE 435:
 _T267:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x15E], 0;
 	__asm        jne    _T3ee;
 
-	__asm        mov    eax, SZ_MAIN_LIGHT_IMAGE_FILE_NAME;
-	__asm        mov    [ebp-0x24], eax;
+	None = SZ_MAIN_LIGHT_IMAGE_FILE_NAME;
 // LINE 436:
 	__asm        jmp    near ptr 0x0049D122;
 
@@ -3207,8 +3179,7 @@ _T376:
 	__asm        mov    [ecx+0x15E], eax;
 	__asm        jmp    _T3ee;
 _T3de:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x15E], 0;
+	this-><CopterMainMenu+0x15e> = 0x0;
 // LINE 440:
 _T3ee:
 	__asm        mov    dword ptr [ebp-0x1C], 1;
@@ -3361,8 +3332,7 @@ void CopterMainMenu::DestroyImage() {
 	__asm        jmp    _T56;
 // LINE 449:
 _T56:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x15A], 0;
+	this-><CopterMainMenu+0x15a> = 0x0;
 // LINE 451:
 _T63:
 	__asm        mov    eax, this;
@@ -3388,8 +3358,7 @@ _T63:
 	__asm        jmp    _Tad;
 // LINE 453:
 _Tad:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x15E], 0;
+	this-><CopterMainMenu+0x15e> = 0x0;
 // LINE 455:
 _Tba:
 	__asm        mov    ecx, this;
@@ -3585,95 +3554,65 @@ _T244:
 // FUNCTION: COPTER_D 0x0049d742
 void CopterMainMenu::GetCoordinatesForLights(class MPoint *ptDestinationArray, class MRect *rectSourceArray) {
 // LINE 502:
-	__asm        mov    eax, ptDestinationArray;
-	__asm        mov    dword ptr [eax], 0x14E;
+	ptDestinationArray->x = 0x14e;
 // LINE 503:
-	__asm        mov    eax, ptDestinationArray;
-	__asm        mov    dword ptr [eax+4], 0x20;
+	ptDestinationArray->y = 0x20;
 // LINE 504:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax], 0;
+	rectSourceArray->left = 0x0;
 // LINE 505:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+8], 0x3C;
+	rectSourceArray->right = 0x3c;
 // LINE 506:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+4], 0;
+	rectSourceArray->top = 0x0;
 // LINE 507:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+0xC], 0x38;
+	rectSourceArray->bottom = 0x38;
 // LINE 509:
-	__asm        mov    eax, ptDestinationArray;
-	__asm        mov    dword ptr [eax+8], 0x14E;
+	ptDestinationArray-><MPoint+0x08> = 0x14e;
 // LINE 510:
-	__asm        mov    eax, ptDestinationArray;
-	__asm        mov    dword ptr [eax+0xC], 0x58;
+	ptDestinationArray-><MPoint+0x0c> = 0x58;
 // LINE 511:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+0x10], 0;
+	rectSourceArray-><MRect+0x10> = 0x0;
 // LINE 512:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+0x18], 0x3C;
+	rectSourceArray-><MRect+0x18> = 0x3c;
 // LINE 513:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+0x14], 0x38;
+	rectSourceArray-><MRect+0x14> = 0x38;
 // LINE 514:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+0x1C], 0x78;
+	rectSourceArray-><MRect+0x1c> = 0x78;
 // LINE 516:
-	__asm        mov    eax, ptDestinationArray;
-	__asm        mov    dword ptr [eax+0x10], 0x14E;
+	ptDestinationArray-><MPoint+0x10> = 0x14e;
 // LINE 517:
-	__asm        mov    eax, ptDestinationArray;
-	__asm        mov    dword ptr [eax+0x14], 0x98;
+	ptDestinationArray-><MPoint+0x14> = 0x98;
 // LINE 518:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+0x20], 0;
+	rectSourceArray-><MRect+0x20> = 0x0;
 // LINE 519:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+0x28], 0x3C;
+	rectSourceArray-><MRect+0x28> = 0x3c;
 // LINE 520:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+0x24], 0x78;
+	rectSourceArray-><MRect+0x24> = 0x78;
 // LINE 521:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+0x2C], 0xB8;
+	rectSourceArray-><MRect+0x2c> = 0xb8;
 // LINE 523:
-	__asm        mov    eax, ptDestinationArray;
-	__asm        mov    dword ptr [eax+0x18], 0x14E;
+	ptDestinationArray-><MPoint+0x18> = 0x14e;
 // LINE 524:
-	__asm        mov    eax, ptDestinationArray;
-	__asm        mov    dword ptr [eax+0x1C], 0xD8;
+	ptDestinationArray-><MPoint+0x1c> = 0xd8;
 // LINE 525:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+0x30], 0;
+	rectSourceArray-><MRect+0x30> = 0x0;
 // LINE 526:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+0x38], 0x3C;
+	rectSourceArray-><MRect+0x38> = 0x3c;
 // LINE 527:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+0x34], 0xB8;
+	rectSourceArray-><MRect+0x34> = 0xb8;
 // LINE 528:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+0x3C], 0xF8;
+	rectSourceArray-><MRect+0x3c> = 0xf8;
 // LINE 530:
-	__asm        mov    eax, ptDestinationArray;
-	__asm        mov    dword ptr [eax+0x20], 0x14E;
+	ptDestinationArray-><MPoint+0x20> = 0x14e;
 // LINE 531:
-	__asm        mov    eax, ptDestinationArray;
-	__asm        mov    dword ptr [eax+0x24], 0x118;
+	ptDestinationArray-><MPoint+0x24> = 0x118;
 // LINE 532:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+0x40], 0;
+	rectSourceArray-><MRect+0x40> = 0x0;
 // LINE 533:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+0x48], 0x3C;
+	rectSourceArray-><MRect+0x48> = 0x3c;
 // LINE 534:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+0x44], 0xF8;
+	rectSourceArray-><MRect+0x44> = 0xf8;
 // LINE 535:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+0x4C], 0x138;
+	rectSourceArray-><MRect+0x4c> = 0x138;
 // LINE 537:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xD4];
@@ -3693,95 +3632,65 @@ void CopterMainMenu::GetCoordinatesForLights(class MPoint *ptDestinationArray, c
 // FUNCTION: COPTER_D 0x0049d8ab
 void CopterMainMenu::GetCoordinatesForRatchets(class MPoint *ptDestinationArray, class MRect *rectSourceArray) {
 // LINE 546:
-	__asm        mov    eax, ptDestinationArray;
-	__asm        mov    dword ptr [eax], 0x21;
+	ptDestinationArray->x = 0x21;
 // LINE 547:
-	__asm        mov    eax, ptDestinationArray;
-	__asm        mov    dword ptr [eax+4], 0x23;
+	ptDestinationArray->y = 0x23;
 // LINE 548:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax], 0;
+	rectSourceArray->left = 0x0;
 // LINE 549:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+8], 0x27;
+	rectSourceArray->right = 0x27;
 // LINE 550:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+4], 0;
+	rectSourceArray->top = 0x0;
 // LINE 551:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+0xC], 0x41;
+	rectSourceArray->bottom = 0x41;
 // LINE 553:
-	__asm        mov    eax, ptDestinationArray;
-	__asm        mov    dword ptr [eax+8], 0x21;
+	ptDestinationArray-><MPoint+0x08> = 0x21;
 // LINE 554:
-	__asm        mov    eax, ptDestinationArray;
-	__asm        mov    dword ptr [eax+0xC], 0x64;
+	ptDestinationArray-><MPoint+0x0c> = 0x64;
 // LINE 555:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+0x10], 0;
+	rectSourceArray-><MRect+0x10> = 0x0;
 // LINE 556:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+0x18], 0x27;
+	rectSourceArray-><MRect+0x18> = 0x27;
 // LINE 557:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+0x14], 0x41;
+	rectSourceArray-><MRect+0x14> = 0x41;
 // LINE 558:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+0x1C], 0x81;
+	rectSourceArray-><MRect+0x1c> = 0x81;
 // LINE 560:
-	__asm        mov    eax, ptDestinationArray;
-	__asm        mov    dword ptr [eax+0x10], 0x21;
+	ptDestinationArray-><MPoint+0x10> = 0x21;
 // LINE 561:
-	__asm        mov    eax, ptDestinationArray;
-	__asm        mov    dword ptr [eax+0x14], 0xA4;
+	ptDestinationArray-><MPoint+0x14> = 0xa4;
 // LINE 562:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+0x20], 0;
+	rectSourceArray-><MRect+0x20> = 0x0;
 // LINE 563:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+0x28], 0x27;
+	rectSourceArray-><MRect+0x28> = 0x27;
 // LINE 564:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+0x24], 0x81;
+	rectSourceArray-><MRect+0x24> = 0x81;
 // LINE 565:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+0x2C], 0xC0;
+	rectSourceArray-><MRect+0x2c> = 0xc0;
 // LINE 567:
-	__asm        mov    eax, ptDestinationArray;
-	__asm        mov    dword ptr [eax+0x18], 0x21;
+	ptDestinationArray-><MPoint+0x18> = 0x21;
 // LINE 568:
-	__asm        mov    eax, ptDestinationArray;
-	__asm        mov    dword ptr [eax+0x1C], 0xE3;
+	ptDestinationArray-><MPoint+0x1c> = 0xe3;
 // LINE 569:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+0x30], 0;
+	rectSourceArray-><MRect+0x30> = 0x0;
 // LINE 570:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+0x38], 0x27;
+	rectSourceArray-><MRect+0x38> = 0x27;
 // LINE 571:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+0x34], 0xC0;
+	rectSourceArray-><MRect+0x34> = 0xc0;
 // LINE 572:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+0x3C], 0xFE;
+	rectSourceArray-><MRect+0x3c> = 0xfe;
 // LINE 574:
-	__asm        mov    eax, ptDestinationArray;
-	__asm        mov    dword ptr [eax+0x20], 0x21;
+	ptDestinationArray-><MPoint+0x20> = 0x21;
 // LINE 575:
-	__asm        mov    eax, ptDestinationArray;
-	__asm        mov    dword ptr [eax+0x24], 0x121;
+	ptDestinationArray-><MPoint+0x24> = 0x121;
 // LINE 576:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+0x40], 0;
+	rectSourceArray-><MRect+0x40> = 0x0;
 // LINE 577:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+0x48], 0x27;
+	rectSourceArray-><MRect+0x48> = 0x27;
 // LINE 578:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+0x44], 0xFE;
+	rectSourceArray-><MRect+0x44> = 0xfe;
 // LINE 579:
-	__asm        mov    eax, rectSourceArray;
-	__asm        mov    dword ptr [eax+0x4C], 0x129;
+	rectSourceArray-><MRect+0x4c> = 0x129;
 // LINE 581:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xD4];
@@ -3828,8 +3737,7 @@ void CopterPlayMenu::CopterPlayMenu(struct UserMenuWindowDescription& newUserMen
 // FUNCTION: COPTER_D 0x0049da6e
 void CopterPlayMenu::~CopterPlayMenu() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5914C8;
+	this-><CopterPlayMenu+0x00> = 0x5914c8;
 // LINE 613:
 	__asm        mov    ecx, this;
 	__asm        call   CopterPlayMenu::DestroyImage;
@@ -3884,7 +3792,7 @@ int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
 	__asm        mov    sImageFile.reference, eax;
 	__asm        jmp    _T69;
 _T62:
-	__asm        mov    sImageFile.reference, 0;
+	sImageFile.reference = 0x0;
 _T69:
 	__asm        mov    sImageFile.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x0049DB3D;
@@ -3912,7 +3820,7 @@ _T69:
 	__asm        mov    sImagePath.reference, eax;
 	__asm        jmp    _Tcc;
 _Tc5:
-	__asm        mov    sImagePath.reference, 0;
+	sImagePath.reference = 0x0;
 _Tcc:
 	__asm        mov    sImagePath.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x0049DBA0;
@@ -3925,8 +3833,7 @@ _Tcc:
 	__asm        cmp    dword ptr [eax+0x152], 0;
 	__asm        jne    _T28c;
 
-	__asm        mov    eax, SZ_PLAY_RATCHET_IMAGE_FILE_NAME;
-	__asm        mov    [ebp-0x20], eax;
+	None = SZ_PLAY_RATCHET_IMAGE_FILE_NAME;
 // LINE 636:
 	__asm        jmp    near ptr 0x0049DBCD;
 
@@ -4047,8 +3954,7 @@ _T201:
 	__asm        mov    [ecx+0x152], eax;
 	__asm        jmp    _T267;
 _T257:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x152], 0;
+	this-><CopterPlayMenu+0x152> = 0x0;
 // LINE 639:
 _T267:
 	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
@@ -4066,8 +3972,7 @@ _T28c:
 	__asm        cmp    dword ptr [eax+0x156], 0;
 	__asm        jne    _T413;
 
-	__asm        mov    eax, SZ_PLAY_BACKGROUND_IMAGE_FILE_NAME;
-	__asm        mov    [ebp-0x24], eax;
+	None = SZ_PLAY_BACKGROUND_IMAGE_FILE_NAME;
 // LINE 642:
 	__asm        jmp    near ptr 0x0049DD74;
 
@@ -4175,8 +4080,7 @@ _T39b:
 	__asm        mov    [ecx+0x156], eax;
 	__asm        jmp    _T413;
 _T403:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x156], 0;
+	this-><CopterPlayMenu+0x156> = 0x0;
 // LINE 646:
 _T413:
 	__asm        mov    dword ptr [ebp-0x1C], 1;
@@ -4329,8 +4233,7 @@ void CopterPlayMenu::DestroyImage() {
 	__asm        jmp    _T56;
 // LINE 655:
 _T56:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x152], 0;
+	this-><CopterPlayMenu+0x152> = 0x0;
 // LINE 657:
 _T63:
 	__asm        mov    eax, this;
@@ -4356,8 +4259,7 @@ _T63:
 	__asm        jmp    _Tad;
 // LINE 659:
 _Tad:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x156], 0;
+	this-><CopterPlayMenu+0x156> = 0x0;
 // LINE 661:
 _Tba:
 	__asm        mov    ecx, this;
@@ -4463,8 +4365,7 @@ void CopterPlayMenu::DrawRatchet() {
 // FUNCTION: COPTER_D 0x0049e226
 void CopterPlayMenu::GetCoordinatesForRatchet(class MPoint& ptDestination) {
 // LINE 694:
-	__asm        mov    eax, ptDestination;
-	__asm        mov    dword ptr [eax], 0x1D;
+	ptDestination.x = 0x1d;
 // LINE 695:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x98], 0;

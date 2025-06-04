@@ -30,7 +30,7 @@ void doAssert(char * fileName, const long lineNum, char * failureDescription, lo
 	__asm        call   strncpy;
 	__asm        add    esp, 0xC;
 // LINE 47:
-	__asm        mov    descBuff[175], 0;
+	descBuff[175] = 0x0;
 // LINE 50:
 	__asm        lea    eax, descBuff[0];
 	__asm        push   eax;

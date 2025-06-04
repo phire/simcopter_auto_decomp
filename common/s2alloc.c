@@ -58,8 +58,7 @@ struct alloc_handle_t* S2AllocInit(int32_t index, unsigned long poolsize) {
 	__asm        cmp    G_alloc_max, eax;
 	__asm        jae    _T4c;
 
-	__asm        mov    eax, G_alloc_curr;
-	__asm        mov    G_alloc_max, eax;
+	G_alloc_max = G_alloc_curr;
 // LINE 274:
 _T4c:
 	__asm        mov    eax, poolsize;
@@ -124,16 +123,11 @@ _T39:
 	__asm        add    esp, 4;
 // LINE 246:
 _T59:
-	__asm        mov    eax, block;
-	__asm        mov    ecx, hdr;
-	__asm        mov    [ecx+4], eax;
+	hdr->block = block;
 // LINE 247:
-	__asm        mov    eax, block;
-	__asm        mov    ecx, hdr;
-	__asm        mov    [ecx+8], eax;
+	hdr->free = block;
 // LINE 248:
-	__asm        mov    eax, hdr;
-	__asm        mov    dword ptr [eax], 0;
+	hdr->next = 0x0;
 // LINE 249:
 	__asm        mov    eax, size;
 	__asm        add    eax, block;
@@ -147,8 +141,7 @@ _T59:
 	__asm        cmp    G_alloc_max, eax;
 	__asm        jae    _Ta7;
 
-	__asm        mov    eax, G_alloc_curr;
-	__asm        mov    G_alloc_max, eax;
+	G_alloc_max = G_alloc_curr;
 // LINE 253:
 _Ta7:
 	__asm        mov    eax, hdr;
@@ -235,9 +228,7 @@ char * S2Alloc(int32_t index, int32_t size) {
 	__asm        and    eax, 0xFFFFFFFC;
 	__asm        mov    size, eax;
 // LINE 342:
-	__asm        mov    eax, hdr;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ptr, eax;
+	ptr = hdr->free;
 // LINE 343:
 	__asm        mov    eax, size;
 	__asm        mov    ecx, hdr;
@@ -253,12 +244,7 @@ char * S2Alloc(int32_t index, int32_t size) {
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T7c;
 // LINE 354:
-	__asm        mov    eax, hdr;
-	__asm        mov    eax, [eax];
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, hdr;
-	__asm        mov    ecx, [ecx];
-	__asm        mov    [ecx+8], eax;
+	hdr->next->free = hdr->next->block;
 // LINE 355:
 	__asm        mov    eax, hdr;
 	__asm        mov    eax, [eax];
@@ -398,9 +384,7 @@ _T2e:
 	__asm        neg    eax;
 	__asm        sub    G_alloc_used, eax;
 // LINE 466:
-	__asm        mov    eax, hdr;
-	__asm        mov    eax, [eax];
-	__asm        mov    hdr, eax;
+	hdr = hdr->next;
 // LINE 467:
 	__asm        jmp    _T2e;
 // LINE 469:
@@ -446,9 +430,7 @@ _T2e:
 	__asm        cmp    hdr, 0;
 	__asm        je     _T9e;
 // LINE 500:
-	__asm        mov    eax, hdr;
-	__asm        mov    eax, [eax];
-	__asm        mov    next_hdr, eax;
+	next_hdr = hdr->next;
 // LINE 501:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, hdr;
@@ -480,8 +462,7 @@ _T2e:
 	__asm        call   free;
 	__asm        add    esp, 4;
 // LINE 507:
-	__asm        mov    eax, next_hdr;
-	__asm        mov    hdr, eax;
+	hdr = next_hdr;
 // LINE 508:
 	__asm        jmp    _T2e;
 // LINE 509:
@@ -548,8 +529,7 @@ _T49:
 	__asm        cmp    G_alloc_max, eax;
 	__asm        jae    _T6e;
 
-	__asm        mov    eax, G_alloc_curr;
-	__asm        mov    G_alloc_max, eax;
+	G_alloc_max = G_alloc_curr;
 // LINE 768:
 _T6e:
 	__asm        add    G_alloc_used, 0x10000;

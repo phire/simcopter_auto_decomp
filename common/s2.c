@@ -25,14 +25,14 @@ _T1d:
 	__asm        jge    _T3d;
 // LINE 47:
 _T31:
-	__asm        mov    size, 2;
+	size = 0x2;
 // LINE 49:
 	__asm        jmp    _T61;
 _T3d:
 	__asm        cmp    tile, 0x70;
 	__asm        jge    _T53;
 // LINE 50:
-	__asm        mov    size, 1;
+	size = 0x1;
 // LINE 52:
 	__asm        jmp    _T61;
 // LINE 53:

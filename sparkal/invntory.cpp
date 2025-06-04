@@ -424,8 +424,7 @@ _T12a:
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        jmp    _T178;
 _T172:
-	__asm        mov    eax, [ebp-0x64];
-	__asm        mov    [ebp-0x6C], eax;
+	None = None;
 _T178:
 	__asm        jmp    near ptr 0x004A84DD;
 
@@ -496,8 +495,7 @@ _T1fb:
 	__asm        mov    [ebp-0x80], eax;
 	__asm        jmp    _T26b;
 _T265:
-	__asm        mov    eax, [ebp-0x78];
-	__asm        mov    [ebp-0x80], eax;
+	None = None;
 _T26b:
 	__asm        jmp    near ptr 0x004A85D0;
 
@@ -644,8 +642,7 @@ _T441:
 	__asm        mov    [ecx+0x172], eax;
 	__asm        jmp    _T474;
 _T464:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x172], 0;
+	this->sAddress1.reference = 0x0;
 _T474:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x16E], 0;
@@ -675,8 +672,7 @@ _T474:
 	__asm        mov    [ecx+0x17A], eax;
 	__asm        jmp    _T4f2;
 _T4e2:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x17A], 0;
+	this->sAddress2.reference = 0x0;
 _T4f2:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x176], 0;
@@ -706,8 +702,7 @@ _T4f2:
 	__asm        mov    [ecx+0x182], eax;
 	__asm        jmp    _T570;
 _T560:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x182], 0;
+	this->myFont.sName.c_str_ptr = 0x0;
 _T570:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x17E], 0;
@@ -737,8 +732,7 @@ _T570:
 	__asm        mov    [ecx+0x18A], eax;
 	__asm        jmp    _T5ee;
 _T5de:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18A], 0;
+	this->myFont.lHeight = 0x0;
 _T5ee:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x186], 0;
@@ -818,8 +812,7 @@ _T5ee:
 // FUNCTION: COPTER_D 0x004a8a50
 void InventoryWindow::~InventoryWindow() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x591888;
+	this-><InventoryWindow+0x00> = 0x591888;
 // LINE 67:
 	__asm        mov    ecx, this;
 	__asm        call   InventoryWindow::DestroyImage;
@@ -1286,7 +1279,7 @@ _T1c9:
 	__asm        mov    [ebp-0x1014], eax;
 	__asm        jmp    _T214;
 _T20a:
-	__asm        mov    dword ptr [ebp-0x1014], 0;
+	None = 0x0;
 _T214:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, this;
@@ -1450,7 +1443,7 @@ _T435:
 	__asm        mov    [ebp-0x202C], eax;
 	__asm        jmp    _T480;
 _T476:
-	__asm        mov    dword ptr [ebp-0x202C], 0;
+	None = 0x0;
 _T480:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x176;
@@ -1682,7 +1675,7 @@ _T794:
 	__asm        mov    [ebp-0x4048], eax;
 	__asm        jmp    _T7df;
 _T7d5:
-	__asm        mov    dword ptr [ebp-0x4048], 0;
+	None = 0x0;
 _T7df:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x186;
@@ -2059,8 +2052,7 @@ _T118:
 	__asm        mov    [ecx+0x7C], eax;
 	__asm        jmp    _T17b;
 _T171:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x7C], 0;
+	this->mySecondImage = 0x0;
 // LINE 128:
 _T17b:
 	__asm        mov    eax, this;
@@ -2187,8 +2179,7 @@ _T28c:
 	__asm        mov    [ecx+0x80], eax;
 	__asm        jmp    _T2f5;
 _T2e8:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x80], 0;
+	this->myCheckmarkImage = 0x0;
 // LINE 131:
 _T2f5:
 	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
@@ -2234,8 +2225,7 @@ void InventoryWindow::DestroyImage() {
 	__asm        jmp    _T50;
 // LINE 143:
 _T50:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x7C], 0;
+	this->mySecondImage = 0x0;
 // LINE 145:
 _T5a:
 	__asm        mov    eax, this;
@@ -2261,8 +2251,7 @@ _T5a:
 	__asm        jmp    _Ta4;
 // LINE 147:
 _Ta4:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x80], 0;
+	this->myCheckmarkImage = 0x0;
 // LINE 149:
 _Tb1:
 	__asm        jmp    near ptr 0x004A9D3B;
@@ -3126,7 +3115,7 @@ void InventoryWindow::GetEquipmentTextPosition(long lEquipmentIndex, class MPoin
 	__asm        jge    _T27;
 // LINE 364:
 _T20:
-	__asm        mov    lEquipmentIndex, 0;
+	lEquipmentIndex = 0x0;
 // LINE 365:
 _T27:
 	__asm        mov    eax, lEquipmentIndex;

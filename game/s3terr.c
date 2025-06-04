@@ -178,15 +178,15 @@ short S3TerrainInitMap() {
 	short wflags;
 
 // LINE 164:
-	__asm        mov    G_terr_minalt, 0x7530;
+	G_terr_minalt = 0x7530;
 // LINE 165:
-	__asm        mov    G_terr_maxalt, 0;
+	G_terr_maxalt = 0x0;
 // LINE 171:
-	__asm        mov    G_tdim, 0x100;
+	G_tdim = 0x100;
 // LINE 172:
-	__asm        mov    G_tmask, 0xFF;
+	G_tmask = 0xff;
 // LINE 173:
-	__asm        mov    G_tshift, 8;
+	G_tshift = 0x8;
 // LINE 176:
 	__asm        mov    eax, G_tdim;
 	__asm        imul   eax, G_tdim;
@@ -312,7 +312,7 @@ _T1a4:
 	__asm        cmp    G_terr_minalt, 0;
 	__asm        jge    _T1c9;
 
-	__asm        mov    G_terr_minalt, 0;
+	G_terr_minalt = 0x0;
 // LINE 219:
 _T1c9:
 	__asm        mov    x, 1;
@@ -955,11 +955,11 @@ _Ta28:
 	__asm        cmp    G_fract_blurr, 1;
 	__asm        jne    _Tbc2;
 // LINE 351:
-	__asm        mov    k1, 0x30A3;
+	k1 = 0x30a3;
 // LINE 352:
-	__asm        mov    k2, 0x547A;
+	k2 = 0x547a;
 // LINE 353:
-	__asm        mov    k3, 0x7AE1;
+	k3 = 0x7ae1;
 // LINE 354:
 	__asm        mov    x, 0;
 	__asm        jmp    _Ta79;
@@ -1471,7 +1471,7 @@ _T105e:
 	__asm        jmp    _T105b;
 // LINE 490:
 _T108b:
-	__asm        mov    wflags, 0;
+	wflags = 0x0;
 // LINE 493:
 	__asm        mov    eax, y;
 	__asm        dec    eax;
@@ -3153,7 +3153,7 @@ _T2617:
 	__asm        cmp    edx, 0x10;
 	__asm        jne    _T28fc;
 // LINE 818:
-	__asm        mov    texval, 0x10;
+	texval = 0x10;
 // LINE 821:
 	__asm        mov    eax, y;
 	__asm        dec    eax;
@@ -3377,7 +3377,7 @@ _T28fc:
 	__asm        cmp    edx, 0x20;
 	__asm        jne    _T2aa0;
 // LINE 836:
-	__asm        mov    texval, 0x20;
+	texval = 0x20;
 // LINE 839:
 	__asm        mov    eax, y;
 	__asm        dec    eax;
@@ -3509,7 +3509,7 @@ _T2aa0:
 	__asm        cmp    edx, 0x30;
 	__asm        jne    _T2c44;
 // LINE 854:
-	__asm        mov    texval, 0x30;
+	texval = 0x30;
 // LINE 857:
 	__asm        mov    eax, y;
 	__asm        dec    eax;
@@ -3641,7 +3641,7 @@ _T2c44:
 	__asm        cmp    edx, 0x40;
 	__asm        jne    _T2de8;
 // LINE 872:
-	__asm        mov    texval, 0x40;
+	texval = 0x40;
 // LINE 875:
 	__asm        mov    eax, y;
 	__asm        dec    eax;
@@ -3773,7 +3773,7 @@ _T2de8:
 	__asm        cmp    edx, 0x50;
 	__asm        jne    _T2f8c;
 // LINE 890:
-	__asm        mov    texval, 0x50;
+	texval = 0x50;
 // LINE 893:
 	__asm        mov    eax, y;
 	__asm        dec    eax;
@@ -3905,7 +3905,7 @@ _T2f8c:
 	__asm        cmp    edx, 0x60;
 	__asm        jne    _T312b;
 // LINE 908:
-	__asm        mov    texval, 0x60;
+	texval = 0x60;
 // LINE 911:
 	__asm        mov    eax, y;
 	__asm        dec    eax;
@@ -5135,7 +5135,7 @@ unsigned short noise(unsigned short hght, unsigned short edge_len) {
 	long new_height;
 
 // LINE 1110:
-	__asm        mov    max_noise, 0x7FF;
+	max_noise = 0x7ff;
 // LINE 1115:
 	__asm        call   rand;
 	__asm        and    eax, max_noise;
@@ -5695,33 +5695,33 @@ int32_t S3TerrMorphWater() {
 	__asm        jmp    _T1bd;
 // LINE 1444:
 _T2c:
-	__asm        mov    S_looptime, 0;
+	S_looptime = 0x0;
 // LINE 1446:
 	__asm        movsx  eax, S_cycle;
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    _Ta0;
 // LINE 1450:
-	__asm        mov    xstart, 0;
+	xstart = 0x0;
 // LINE 1451:
-	__asm        mov    ystart, 0;
+	ystart = 0x0;
 // LINE 1452:
-	__asm        mov    cycle, 0x5B5CD4;
+	cycle = 0x5b5cd4;
 // LINE 1453:
-	__asm        mov    S_checktime, 0;
+	S_checktime = 0x0;
 // LINE 1454:
-	__asm        mov    array1, 0x5B5D28;
+	array1 = 0x5b5d28;
 // LINE 1455:
 	__asm        jmp    _Tc4;
 // LINE 1458:
-	__asm        mov    xstart, 1;
+	xstart = 0x1;
 // LINE 1459:
-	__asm        mov    ystart, 1;
+	ystart = 0x1;
 // LINE 1460:
-	__asm        mov    cycle, 0x5B5CD8;
+	cycle = 0x5b5cd8;
 // LINE 1461:
-	__asm        mov    S_checktime, 0;
+	S_checktime = 0x0;
 // LINE 1462:
-	__asm        mov    array1, 0x5B5CE8;
+	array1 = 0x5b5ce8;
 // LINE 1463:
 	__asm        jmp    _Tc4;
 // LINE 1464:
@@ -5741,7 +5741,7 @@ _Tc4:
 	__asm        cmp    eax, 4;
 	__asm        jne    _Te4;
 
-	__asm        mov    S_cycle, 0;
+	S_cycle = 0x0;
 // LINE 1469:
 _Te4:
 	__asm        mov    eax, cycle;
@@ -5835,9 +5835,9 @@ void AdjustTerrainMap() {
 	__asm        sar    eax, 1;
 	__asm        mov    citysize, eax;
 // LINE 1545:
-	__asm        mov    start, 0;
+	start = 0x0;
 // LINE 1546:
-	__asm        mov    end, 0x20;
+	end = 0x20;
 // LINE 1548:
 	__asm        mov    eax, start;
 	__asm        mov    i, eax;
@@ -6326,7 +6326,7 @@ _T1c:
 	__asm        shl    edx, 0x10;
 	__asm        mov    alt2, edx;
 // LINE 1656:
-	__asm        mov    sidez, 0x400000;
+	sidez = 0x400000;
 // LINE 1657:
 	__asm        cmp    landable, 0;
 	__asm        je     _T1d2;
@@ -6394,7 +6394,7 @@ _T1d7:
 	__asm        shl    edx, 0x10;
 	__asm        mov    alt2, edx;
 // LINE 1675:
-	__asm        mov    sidez, 0;
+	sidez = 0x0;
 // LINE 1676:
 	__asm        cmp    landable, 0;
 	__asm        je     _T29c;
@@ -6589,23 +6589,19 @@ int32_t S3ObjectPrecisionAlt(int32_t cityx, int32_t cityy) {
 	__asm        sub    eax, ecx;
 	__asm        mov    normz, eax;
 // LINE 1837:
-	__asm        mov    normy, 0x220000;
+	normy = 0x220000;
 // LINE 1839:
-	__asm        mov    objy, 0;
+	objy = 0x0;
 // LINE 1840:
-	__asm        mov    maxobjy, 0;
+	maxobjy = 0x0;
 // LINE 1841:
-	__asm        mov    eax, cptr;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    stobj, eax;
+	stobj = cptr->stptr;
 // LINE 1842:
 _T79:
 	__asm        cmp    stobj, 0;
 	__asm        je     _Td5;
 // LINE 1844:
-	__asm        mov    eax, stobj;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    flags, eax;
+	flags = stobj->user1;
 // LINE 1850:
 	__asm        push   0;
 	__asm        push   0;
@@ -6630,13 +6626,10 @@ _T79:
 	__asm        cmp    maxobjy, eax;
 	__asm        jge    _Tc8;
 // LINE 1853:
-	__asm        mov    eax, objy;
-	__asm        mov    maxobjy, eax;
+	maxobjy = objy;
 // LINE 1854:
 _Tc8:
-	__asm        mov    eax, stobj;
-	__asm        mov    eax, [eax];
-	__asm        mov    stobj, eax;
+	stobj = stobj->next;
 // LINE 1855:
 	__asm        jmp    _T79;
 // LINE 1860:

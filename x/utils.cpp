@@ -73,9 +73,9 @@ unsigned short Str2Num(unsigned char * str, long * num) {
 	unsigned short neg;
 
 // LINE 62:
-	__asm        mov    neg, 0;
+	neg = 0x0;
 // LINE 65:
-	__asm        mov    count, 1;
+	count = 0x1;
 // LINE 66:
 _T13:
 	__asm        xor    eax, eax;
@@ -114,7 +114,7 @@ _T45:
 	__asm        cmp    edx, 0x2D;
 	__asm        jne    _T7d;
 // LINE 72:
-	__asm        mov    neg, 1;
+	neg = 0x1;
 // LINE 73:
 	__asm        inc    count;
 // LINE 75:
@@ -131,8 +131,7 @@ _T7d:
 	__asm        inc    count;
 // LINE 80:
 _T96:
-	__asm        mov    al, count;
-	__asm        mov    digit, al;
+	digit = count;
 // LINE 81:
 _T9c:
 	__asm        xor    eax, eax;
@@ -264,14 +263,14 @@ void Num2Str(long num, unsigned char * str) {
 	unsigned long tenPower;
 
 // LINE 100:
-	__asm        mov    power, 0;
+	power = 0x0;
 // LINE 101:
-	__asm        mov    tenPower, 1;
+	tenPower = 0x1;
 // LINE 104:
 	__asm        cmp    num, 0;
 	__asm        jge    _T34;
 // LINE 106:
-	__asm        mov    neg, 1;
+	neg = 0x1;
 // LINE 107:
 	__asm        mov    eax, num;
 	__asm        neg    eax;
@@ -280,7 +279,7 @@ void Num2Str(long num, unsigned char * str) {
 	__asm        jmp    _T3a;
 // LINE 110:
 _T34:
-	__asm        mov    neg, 0;
+	neg = 0x0;
 // LINE 112:
 _T3a:
 	__asm        cmp    num, 0;
@@ -341,7 +340,7 @@ _Ta6:
 	__asm        mov    eax, str;
 	__asm        mov    byte ptr [eax+1], 0x2D;
 // LINE 134:
-	__asm        mov    power, 2;
+	power = 0x2;
 // LINE 136:
 	__asm        jmp    _Te9;
 // LINE 138:
@@ -350,7 +349,7 @@ _Tda:
 	__asm        mov    ecx, str;
 	__asm        mov    [ecx], al;
 // LINE 139:
-	__asm        mov    power, 1;
+	power = 0x1;
 // LINE 142:
 _Te9:
 	__asm        cmp    num, 0;
@@ -398,9 +397,9 @@ unsigned short HexStr2Num(unsigned char * str, unsigned long * num) {
 	unsigned long result;
 
 // LINE 155:
-	__asm        mov    digit, 1;
+	digit = 0x1;
 // LINE 157:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 158:
 _T14:
 	__asm        mov    eax, str;
@@ -507,9 +506,9 @@ void Num2HexStr(unsigned long num, unsigned char * str) {
 	unsigned long sixteenPower;
 
 // LINE 177:
-	__asm        mov    power, 0;
+	power = 0x0;
 // LINE 178:
-	__asm        mov    sixteenPower, 1;
+	sixteenPower = 0x1;
 // LINE 180:
 	__asm        cmp    num, 0;
 	__asm        jne    _T33;
@@ -555,7 +554,7 @@ _T7f:
 	__asm        mov    ecx, str;
 	__asm        mov    [ecx], al;
 // LINE 196:
-	__asm        mov    power, 1;
+	power = 0x1;
 // LINE 197:
 _T8e:
 	__asm        cmp    num, 0;
@@ -917,7 +916,7 @@ void HexToString(unsigned long num, unsigned char * str) {
 	char letter;
 
 // LINE 500:
-	__asm        mov    position, 0x1C;
+	position = 0x1c;
 // LINE 503:
 	__asm        mov    eax, str;
 	__asm        mov    byte ptr [eax], 1;

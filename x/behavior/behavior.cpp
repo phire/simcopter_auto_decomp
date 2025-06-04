@@ -249,17 +249,11 @@ void Behavior::Behavior(class Language *lang, class NResFile *globFile, class NR
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5936D8;
 // LINE 17:
-	__asm        mov    eax, lang;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x14], eax;
+	this->fLanguage = lang;
 // LINE 18:
-	__asm        mov    eax, globFile;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->fGlobFile = globFile;
 // LINE 19:
-	__asm        mov    eax, privFile;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+8], eax;
+	this->fPrivFile = privFile;
 // LINE 20:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -296,8 +290,7 @@ void Behavior::Behavior(class Language *lang, class NResFile *globFile, class NR
 // FUNCTION: COPTER_D 0x0056032e
 void Behavior::~Behavior() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5936D8;
+	this-><vftable> = 0x5936d8;
 // LINE 34:
 	__asm        jmp    near ptr 0x00560348;
 }
@@ -409,8 +402,7 @@ _T67:
 	__asm        mov    dword ptr [ebp-8], 0;
 	__asm        jmp    _T79;
 
-	__asm        mov    eax, [ebp-0x14];
-	__asm        mov    [ebp-8], eax;
+	None = None;
 _T79:
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     _T96;
@@ -425,8 +417,7 @@ _T96:
 	__asm        mov    tree, 0;
 	__asm        jmp    _Ta8;
 _Ta2:
-	__asm        mov    eax, [ebp-0x18];
-	__asm        mov    tree, eax;
+	tree = None;
 // LINE 77:
 _Ta8:
 	__asm        jmp    _T13a;
@@ -462,8 +453,7 @@ _Tf9:
 	__asm        mov    dword ptr [ebp-0x1C], 0;
 	__asm        jmp    _T10b;
 
-	__asm        mov    eax, [ebp-0x28];
-	__asm        mov    [ebp-0x1C], eax;
+	None = None;
 _T10b:
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     _T128;
@@ -478,8 +468,7 @@ _T128:
 	__asm        mov    tree, 0;
 	__asm        jmp    _T13a;
 _T134:
-	__asm        mov    eax, [ebp-0x2C];
-	__asm        mov    tree, eax;
+	tree = None;
 // LINE 81:
 _T13a:
 	__asm        cmp    tree, 0;
@@ -594,16 +583,12 @@ _T45:
 	__asm        cmp    eax, 0xFFF;
 	__asm        jge    _T65;
 // LINE 156:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    pFile, eax;
+	pFile = this->fGlobFile;
 // LINE 158:
 	__asm        jmp    _T71;
 // LINE 160:
 _T65:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    pFile, eax;
+	pFile = this->fPrivFile;
 // LINE 163:
 _T71:
 	__asm        mov    eax, this;
@@ -684,25 +669,25 @@ short Behavior::GetBaseID(short treeclass) {
 	short baseID;
 
 // LINE 190:
-	__asm        mov    baseID, 0;
+	baseID = 0x0;
 // LINE 191:
 	__asm        movsx  eax, treeclass;
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _T4c;
 // LINE 193:
-	__asm        mov    baseID, 0;
+	baseID = 0x0;
 // LINE 194:
 	__asm        jmp    _T70;
 // LINE 196:
-	__asm        mov    baseID, 0x100;
+	baseID = 0x100;
 // LINE 197:
 	__asm        jmp    _T70;
 // LINE 199:
-	__asm        mov    baseID, 0x1000;
+	baseID = 0x1000;
 // LINE 200:
 	__asm        jmp    _T70;
 // LINE 202:
-	__asm        mov    baseID, 0x2000;
+	baseID = 0x2000;
 // LINE 203:
 	__asm        jmp    _T70;
 // LINE 204:
@@ -726,25 +711,25 @@ short Behavior::GetMaxID(short treeclass) {
 	short maxID;
 
 // LINE 209:
-	__asm        mov    maxID, 0;
+	maxID = 0x0;
 // LINE 210:
 	__asm        movsx  eax, treeclass;
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _T4c;
 // LINE 212:
-	__asm        mov    maxID, 0;
+	maxID = 0x0;
 // LINE 213:
 	__asm        jmp    _T70;
 // LINE 215:
-	__asm        mov    maxID, 0xFFF;
+	maxID = 0xfff;
 // LINE 216:
 	__asm        jmp    _T70;
 // LINE 218:
-	__asm        mov    maxID, 0x1FFF;
+	maxID = 0x1fff;
 // LINE 219:
 	__asm        jmp    _T70;
 // LINE 221:
-	__asm        mov    maxID, 0x7530;
+	maxID = 0x7530;
 // LINE 222:
 	__asm        jmp    _T70;
 // LINE 223:
@@ -829,24 +814,24 @@ void Behavior::GetClassNameA(short cl, unsigned char * name) {
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _T56;
 // LINE 243:
-	__asm        mov    str, 0x5BE5F8;
+	str = 0x5be5f8;
 // LINE 244:
 	__asm        jmp    _T7a;
 // LINE 246:
-	__asm        mov    str, 0x5BE604;
+	str = 0x5be604;
 // LINE 247:
 	__asm        jmp    _T7a;
 // LINE 249:
-	__asm        mov    str, 0x5BE60C;
+	str = 0x5be60c;
 // LINE 250:
 	__asm        jmp    _T7a;
 // LINE 252:
-	__asm        mov    str, 0x5BE614;
+	str = 0x5be614;
 // LINE 253:
 	__asm        jmp    _T7a;
 // LINE 255:
 _T45:
-	__asm        mov    str, 0x5BE620;
+	str = 0x5be620;
 // LINE 256:
 	__asm        jmp    _T7a;
 // LINE 257:

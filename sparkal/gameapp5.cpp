@@ -220,7 +220,7 @@ int  CGameApp::S3PreRender() {
 // LINE 99:
 	__asm        call   VRFrustSetNormals;
 // LINE 100:
-	__asm        mov    G_video_mode, 0x20;
+	G_video_mode = 0x20;
 // LINE 101:
 	__asm        mov    cl, reinterpret_cast<uint8_t>(G_zoom_level);
 	__asm        shl    HALF_ASPECT, cl;
@@ -251,7 +251,7 @@ _T6d:
 // LINE 109:
 	__asm        call   VRFrustSetNormals;
 // LINE 110:
-	__asm        mov    G_video_mode, 0x10;
+	G_video_mode = 0x10;
 // LINE 111:
 	__asm        mov    cl, reinterpret_cast<uint8_t>(G_zoom_level);
 	__asm        shl    HALF_ASPECT, cl;
@@ -278,7 +278,7 @@ _Tff:
 // LINE 118:
 	__asm        call   VRFrustSetNormals;
 // LINE 119:
-	__asm        mov    G_video_mode, 0x20;
+	G_video_mode = 0x20;
 // LINE 120:
 	__asm        mov    cl, reinterpret_cast<uint8_t>(G_zoom_level);
 	__asm        shl    HALF_ASPECT, cl;
@@ -296,7 +296,7 @@ _T138:
 // LINE 128:
 	__asm        call   VRFrustSetNormals;
 // LINE 129:
-	__asm        mov    G_video_mode, 0x10;
+	G_video_mode = 0x10;
 // LINE 130:
 	__asm        mov    cl, reinterpret_cast<uint8_t>(G_zoom_level);
 	__asm        shl    HALF_ASPECT, cl;
@@ -314,7 +314,7 @@ _T171:
 // LINE 136:
 	__asm        call   VRFrustSetNormals;
 // LINE 137:
-	__asm        mov    G_video_mode, 0x10;
+	G_video_mode = 0x10;
 // LINE 138:
 	__asm        mov    cl, reinterpret_cast<uint8_t>(G_zoom_level);
 	__asm        shl    HALF_ASPECT, cl;
@@ -326,11 +326,9 @@ _T1a5:
 	__asm        cmp    G_video_mode, 0x20;
 	__asm        jne    _T267;
 // LINE 144:
-	__asm        mov    eax, qwindow.WindowX;
-	__asm        mov    rectFill.left, eax;
+	rectFill.left = qwindow.WindowX;
 // LINE 145:
-	__asm        mov    eax, qwindow.WindowY;
-	__asm        mov    rectFill.top, eax;
+	rectFill.top = qwindow.WindowY;
 // LINE 146:
 	__asm        mov    eax, qwindow.WindowWide;
 	__asm        add    eax, qwindow.WindowX;
@@ -385,11 +383,9 @@ _T236:
 	__asm        jmp    _T305;
 // LINE 162:
 _T267:
-	__asm        mov    eax, swindow.WindowX;
-	__asm        mov    rectFill.left, eax;
+	rectFill.left = swindow.WindowX;
 // LINE 163:
-	__asm        mov    eax, swindow.WindowY;
-	__asm        mov    rectFill.top, eax;
+	rectFill.top = swindow.WindowY;
 // LINE 164:
 	__asm        mov    eax, swindow.WindowWide;
 	__asm        add    eax, swindow.WindowX;
@@ -543,15 +539,11 @@ void  CGameApp::DrawCrosshairs(class CBackBuffer *bufferToDrawTo) {
 // LINE 238:
 	__asm        jmp    near ptr 0x00495FF9;
 
-	__asm        mov    eax, bufferToDrawTo;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    pBufferStart, eax;
+	pBufferStart = bufferToDrawTo->mpBits;
 // LINE 239:
 	__asm        jmp    near ptr 0x00496007;
 
-	__asm        mov    eax, bufferToDrawTo;
-	__asm        mov    eax, [eax+0x14];
-	__asm        mov    nSurfaceStride, eax;
+	nSurfaceStride = bufferToDrawTo->mStride;
 // LINE 241:
 	__asm        mov    eax, swindow.WindowWide;
 	__asm        sar    eax, 1;
@@ -632,11 +624,11 @@ void  CGameApp::S3ShowInfo() {
 	long nTextLeft;
 
 // LINE 267:
-	__asm        mov    nTextLeft, 0;
+	nTextLeft = 0x0;
 // LINE 268:
-	__asm        mov    nTextTop, 0;
+	nTextTop = 0x0;
 // LINE 269:
-	__asm        mov    nTextBottom, 0xC;
+	nTextBottom = 0xc;
 // LINE 271:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x54], 0;

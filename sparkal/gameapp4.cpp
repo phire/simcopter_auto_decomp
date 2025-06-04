@@ -314,8 +314,7 @@ _T7d:
 	__asm        jmp    _Ta7;
 // LINE 64:
 _Ta7:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x50], 0;
+	this-><CGameApp+0x50:4> = 0x0;
 // LINE 66:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
@@ -327,8 +326,7 @@ _Ta7:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 67:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
+	this-><CGameApp+0x04:4> = 0x0;
 // LINE 70:
 	__asm        call   DDDisable;
 // LINE 73:
@@ -372,9 +370,9 @@ int  CGameApp::BackgroundVRAppInit() {
 	__asm        lea    ecx, tempHourglassVideoBuffer<SmackerBackBuffer+0x00>;
 	__asm        call   SmackerBackBuffer::SmackerBackBuffer;
 // LINE 102:
-	__asm        mov    lCurrentInitializationFlag, 1;
+	lCurrentInitializationFlag = 0x1;
 // LINE 103:
-	__asm        mov    lCurrentInitializationIndex, 1;
+	lCurrentInitializationIndex = 0x1;
 // LINE 105:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -399,7 +397,7 @@ int  CGameApp::BackgroundVRAppInit() {
 	__asm        mov    sCurrentInitializer.reference, eax;
 	__asm        jmp    _Td6;
 _Tcc:
-	__asm        mov    sCurrentInitializer.reference, 0;
+	sCurrentInitializer.reference = 0x0;
 _Td6:
 	__asm        mov    sCurrentInitializer.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x004BBBFC;
@@ -462,7 +460,7 @@ _Td6:
 	__asm        lea    ecx, tempHourglassVideoBuffer<SmackerBackBuffer+0x00>;
 	__asm        call   SmackerBackBuffer::SetDirectBlit;
 // LINE 112:
-	__asm        mov    tempHourglassVideoBuffer.bLoopVideo, 1;
+	tempHourglassVideoBuffer.bLoopVideo = 0x1;
 // LINE 113:
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0xFE000;
@@ -473,13 +471,11 @@ _Td6:
 // LINE 114:
 	__asm        jmp    near ptr 0x004BBCF8;
 
-	__asm        mov    eax, tempHourglassVideoBuffer.mWidth;
-	__asm        mov    nWidth, eax;
+	nWidth = tempHourglassVideoBuffer.mWidth;
 // LINE 115:
 	__asm        jmp    near ptr 0x004BBD09;
 
-	__asm        mov    eax, tempHourglassVideoBuffer.mHeight;
-	__asm        mov    nHeight, eax;
+	nHeight = tempHourglassVideoBuffer.mHeight;
 // LINE 116:
 	__asm        jmp    near ptr 0x004BBD1A;
 
@@ -513,9 +509,9 @@ _Td6:
 	__asm        sub    ecx, eax;
 	__asm        mov    nYPosition, ecx;
 // LINE 119:
-	__asm        mov    tempVRAppInitThreadStruct.nReturnValue, 0;
+	tempVRAppInitThreadStruct.nReturnValue = 0x0;
 // LINE 120:
-	__asm        mov    tempVRAppInitThreadStruct.nCurrentPercentageComplete, 0;
+	tempVRAppInitThreadStruct.nCurrentPercentageComplete = 0x0;
 // LINE 122:
 	__asm        lea    eax, tempVRAppInitThreadStruct.nReturnValue;
 	__asm        push   eax;
@@ -684,7 +680,7 @@ _T4a5:
 	__asm        mov    [ebp-0x1518], eax;
 	__asm        jmp    _T4f0;
 _T4e6:
-	__asm        mov    dword ptr [ebp-0x1518], 0;
+	None = 0x0;
 _T4f0:
 	__asm        mov    eax, sCurrentInitializer.reference;
 	__asm        dec    dword ptr [eax+0xC];
@@ -951,10 +947,9 @@ void AppInitThreadStartRoutine(void * __ptr32 pVRAppInitThreadStruct) {
 
 	__asm        mov    [ebp-0x10], esp;
 // LINE 160:
-	__asm        mov    eax, pVRAppInitThreadStruct;
-	__asm        mov    tempVRAppInitThreadStruct, eax;
+	tempVRAppInitThreadStruct = pVRAppInitThreadStruct;
 // LINE 165:
-	__asm        mov    dword ptr [ebp-4], 0;
+	None = 0x0;
 // LINE 167:
 	__asm        call   VRAppInit;
 	__asm        mov    ecx, tempVRAppInitThreadStruct;
@@ -962,8 +957,7 @@ void AppInitThreadStartRoutine(void * __ptr32 pVRAppInitThreadStruct) {
 	__asm        jmp    _T4f;
 // LINE 171:
 _L48858:
-	__asm        mov    eax, tempVRAppInitThreadStruct;
-	__asm        mov    dword ptr [eax], 0xFFFFFFFF;
+	tempVRAppInitThreadStruct->nReturnValue = 0xffffffff;
 // LINE 172:
 	__asm        mov    eax, 0x4BC42A;
 	__asm        ret;

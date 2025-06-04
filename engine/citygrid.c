@@ -61,7 +61,7 @@ short VRInitGridObj(long ViewSize) {
 	static const int32_t b_FirstTime = { /* <data@0x0059d2d8> */ };
 
 // LINE 132:
-	__asm        mov    plotter, 0;
+	plotter = 0x0;
 // LINE 134:
 	__asm        cmp    b_FirstTime, 0;
 	__asm        je     _T38;
@@ -83,13 +83,13 @@ _T40:
 	__asm        cmp    ViewSize, 0xD;
 	__asm        jge    _T51;
 // LINE 147:
-	__asm        mov    ViewSize, 0xD;
+	ViewSize = 0xd;
 // LINE 153:
 _T51:
 	__asm        cmp    ViewSize, 0x3D;
 	__asm        jle    _T6a;
 // LINE 155:
-	__asm        mov    ViewSize, 0x3D;
+	ViewSize = 0x3d;
 // LINE 156:
 	__asm        xor    ax, ax;
 	__asm        jmp    _T692;
@@ -103,10 +103,9 @@ _T6a:
 	__asm        add    eax, eax;
 	__asm        mov    G_FaceDim, eax;
 // LINE 160:
-	__asm        mov    vert_inc, 0x400000;
+	vert_inc = 0x400000;
 // LINE 166:
-	__asm        mov    eax, ViewSize;
-	__asm        mov    G_ViewSize, eax;
+	G_ViewSize = ViewSize;
 // LINE 171:
 	__asm        mov    eax, G_VertDim;
 	__asm        imul   eax, G_VertDim;
@@ -117,10 +116,9 @@ _T6a:
 	__asm        add    eax, eax;
 	__asm        mov    GridNFaces, eax;
 // LINE 177:
-	__asm        mov    GridFaceSize, 0x3C;
+	GridFaceSize = 0x3c;
 // LINE 193:
-	__asm        mov    eax, GridNFaces;
-	__asm        mov    goff, eax;
+	goff = GridNFaces;
 // LINE 194:
 	__asm        mov    eax, goff;
 	__asm        lea    eax, [eax+eax*2];
@@ -283,8 +281,7 @@ _T6a:
 	__asm        add    eax, GridCellAddrs;
 	__asm        mov    GridCellAddrsEnd, eax;
 // LINE 225:
-	__asm        mov    eax, GridFaces;
-	__asm        mov    goff, eax;
+	goff = GridFaces;
 // LINE 226:
 	__asm        mov    y, 0;
 	__asm        jmp    _T2ff;
@@ -324,14 +321,13 @@ _T358:
 	__asm        jmp    _T2fc;
 // LINE 240:
 _T35d:
-	__asm        mov    CVerts[0][0], 0;
+	CVerts[0][0] = 0x0;
 // LINE 241:
-	__asm        mov    CVerts[0][1], 1;
+	CVerts[0][1] = 0x1;
 // LINE 242:
-	__asm        mov    CVerts[0][2], 2;
+	CVerts[0][2] = 0x2;
 // LINE 243:
-	__asm        mov    eax, G_VertDim;
-	__asm        mov    CVerts[1][0], eax;
+	CVerts[1][0] = G_VertDim;
 // LINE 244:
 	__asm        mov    eax, G_VertDim;
 	__asm        inc    eax;
@@ -378,8 +374,7 @@ _T35d:
 	__asm        neg    eax;
 	__asm        mov    x_start, eax;
 // LINE 257:
-	__asm        mov    eax, GridVerts;
-	__asm        mov    v, eax;
+	v = GridVerts;
 // LINE 258:
 	__asm        mov    i, 0;
 	__asm        jmp    _T41c;
@@ -390,8 +385,7 @@ _T41c:
 	__asm        cmp    eax, G_VertDim;
 	__asm        jge    _T480;
 // LINE 260:
-	__asm        mov    eax, x_start;
-	__asm        mov    x_val, eax;
+	x_val = x_start;
 // LINE 261:
 	__asm        mov    j, 0;
 	__asm        jmp    _T441;
@@ -402,13 +396,9 @@ _T441:
 	__asm        cmp    eax, G_VertDim;
 	__asm        jge    _T471;
 // LINE 263:
-	__asm        mov    eax, x_val;
-	__asm        mov    ecx, v;
-	__asm        mov    [ecx], eax;
+	v->x = x_val;
 // LINE 264:
-	__asm        mov    eax, z_val;
-	__asm        mov    ecx, v;
-	__asm        mov    [ecx+8], eax;
+	v->z = z_val;
 // LINE 265:
 	__asm        mov    eax, vert_inc;
 	__asm        add    x_val, eax;
@@ -426,8 +416,7 @@ _T471:
 	__asm        jmp    _T418;
 // LINE 275:
 _T480:
-	__asm        mov    eax, GridFaces;
-	__asm        mov    dataptr, eax;
+	dataptr = GridFaces;
 // LINE 276:
 	__asm        mov    y, 0;
 	__asm        jmp    _T497;
@@ -461,8 +450,7 @@ _T4e2:
 	__asm        cmp    eax, 2;
 	__asm        jge    _T63a;
 // LINE 305:
-	__asm        mov    eax, dataptr;
-	__asm        mov    gf, eax;
+	gf = dataptr;
 // LINE 306:
 	__asm        mov    eax, dataptr;
 	__asm        add    eax, 0x18;
@@ -475,12 +463,9 @@ _T4e2:
 	__asm        mov    eax, GridFaceSize;
 	__asm        add    dataptr, eax;
 // LINE 311:
-	__asm        mov    eax, plotter;
-	__asm        mov    ecx, gf;
-	__asm        mov    [ecx+4], eax;
+	gf->PlotterId = plotter;
 // LINE 312:
-	__asm        mov    eax, gf;
-	__asm        mov    dword ptr [eax], 0;
+	gf->TextureId = 0x0;
 // LINE 314:
 	__asm        movsx  eax, i;
 	__asm        mov    [ebp-0x44], eax;
@@ -504,27 +489,21 @@ _T52d:
 	__asm        mov    ecx, iptr;
 	__asm        mov    [ecx], eax;
 // LINE 320:
-	__asm        mov    eax, mapv;
-	__asm        mov    dword ptr [eax], 0x8000;
+	mapv->x = 0x8000;
 // LINE 321:
-	__asm        mov    eax, mapv;
-	__asm        mov    dword ptr [eax+4], 0x8000;
+	mapv->y = 0x8000;
 // LINE 322:
 	__asm        add    mapv, 8;
 // LINE 323:
-	__asm        mov    eax, mapv;
-	__asm        mov    dword ptr [eax], 0x1F8000;
+	mapv->x = 0x1f8000;
 // LINE 324:
-	__asm        mov    eax, mapv;
-	__asm        mov    dword ptr [eax+4], 0x8000;
+	mapv->y = 0x8000;
 // LINE 325:
 	__asm        add    mapv, 8;
 // LINE 326:
-	__asm        mov    eax, mapv;
-	__asm        mov    dword ptr [eax], 0x8000;
+	mapv->x = 0x8000;
 // LINE 327:
-	__asm        mov    eax, mapv;
-	__asm        mov    dword ptr [eax+4], 0x1F8000;
+	mapv->y = 0x1f8000;
 // LINE 328:
 	__asm        jmp    _T635;
 // LINE 330:
@@ -546,27 +525,21 @@ _T5a2:
 	__asm        mov    ecx, iptr;
 	__asm        mov    [ecx], eax;
 // LINE 333:
-	__asm        mov    eax, mapv;
-	__asm        mov    dword ptr [eax], 0x1F8000;
+	mapv->x = 0x1f8000;
 // LINE 334:
-	__asm        mov    eax, mapv;
-	__asm        mov    dword ptr [eax+4], 0x8000;
+	mapv->y = 0x8000;
 // LINE 335:
 	__asm        add    mapv, 8;
 // LINE 336:
-	__asm        mov    eax, mapv;
-	__asm        mov    dword ptr [eax], 0x1F8000;
+	mapv->x = 0x1f8000;
 // LINE 337:
-	__asm        mov    eax, mapv;
-	__asm        mov    dword ptr [eax+4], 0x1F8000;
+	mapv->y = 0x1f8000;
 // LINE 338:
 	__asm        add    mapv, 8;
 // LINE 339:
-	__asm        mov    eax, mapv;
-	__asm        mov    dword ptr [eax], 0x8000;
+	mapv->x = 0x8000;
 // LINE 340:
-	__asm        mov    eax, mapv;
-	__asm        mov    dword ptr [eax+4], 0x1F8000;
+	mapv->y = 0x1f8000;
 // LINE 341:
 	__asm        jmp    _T635;
 // LINE 342:
@@ -605,7 +578,7 @@ _T644:
 	__asm        mov    eax, GridPos.loc.y;
 	__asm        mov    GridPos.loc.x, eax;
 // LINE 354:
-	__asm        mov    b_FirstTime, 0;
+	b_FirstTime = 0x0;
 // LINE 357:
 _T68a:
 	__asm        xor    ax, ax;
@@ -631,12 +604,11 @@ void InitGridPool() {
 	int32_t tempSize;
 
 // LINE 371:
-	__asm        mov    GridPoolSize, 0;
+	GridPoolSize = 0x0;
 // LINE 372:
-	__asm        mov    eax, G_ViewSize;
-	__asm        mov    tempSize, eax;
+	tempSize = G_ViewSize;
 // LINE 376:
-	__asm        mov    G_ViewSize, 0x3D;
+	G_ViewSize = 0x3d;
 // LINE 377:
 	__asm        mov    eax, G_ViewSize;
 	__asm        inc    eax;
@@ -655,10 +627,9 @@ void InitGridPool() {
 	__asm        add    eax, eax;
 	__asm        mov    GridNFaces, eax;
 // LINE 390:
-	__asm        mov    GridFaceSize, 0x3C;
+	GridFaceSize = 0x3c;
 // LINE 398:
-	__asm        mov    eax, GridNFaces;
-	__asm        mov    goff, eax;
+	goff = GridNFaces;
 // LINE 399:
 	__asm        mov    eax, goff;
 	__asm        lea    eax, [eax+eax*2];

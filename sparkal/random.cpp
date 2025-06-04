@@ -80,11 +80,9 @@ void Random::seed(unsigned long j) {
 	int32_t loop;
 
 // LINE 35:
-	__asm        mov    k, 1;
+	k = 0x1;
 // LINE 36:
-	__asm        mov    eax, j;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xD8], eax;
+	this->table[54] = j;
 // LINE 37:
 	__asm        mov    i, 0;
 	__asm        jmp    _T2e;
@@ -157,11 +155,9 @@ _Tce:
 	__asm        jmp    _T81;
 // LINE 47:
 _Td3:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xDC], 0;
+	this->index1 = 0x0;
 // LINE 48:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xE0], 0x1F;
+	this->index2 = 0x1f;
 // LINE 49:
 	__asm        jmp    near ptr 0x004910E3;
 }

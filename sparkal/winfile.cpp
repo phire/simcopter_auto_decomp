@@ -256,7 +256,7 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 	char * szString;
 
 // LINE 34:
-	__asm        mov    i, 0;
+	i = 0x0;
 // LINE 36:
 	__asm        mov    ecx, sFilter;
 	__asm        call   basic_string<char>::c_str;
@@ -344,7 +344,7 @@ _Te7:
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    _T116;
 _T10f:
-	__asm        mov    dword ptr [ebp-0x18], 0;
+	None = 0x0;
 _T116:
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
@@ -369,9 +369,7 @@ _T116:
 _T157:
 	__asm        jmp    near ptr 0x0049002C;
 
-	__asm        mov    eax, [ebp-0x18];
-	__asm        mov    ecx, sFilter;
-	__asm        mov    [ecx+4], eax;
+	sFilter.reference = None;
 _T165:
 	__asm        jmp    near ptr 0x0049003A;
 
@@ -463,7 +461,7 @@ _T245:
 	__asm        mov    [ebp-0x30], eax;
 	__asm        jmp    _T274;
 _T26d:
-	__asm        mov    dword ptr [ebp-0x30], 0;
+	None = 0x0;
 _T274:
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
@@ -488,9 +486,7 @@ _T274:
 _T2b5:
 	__asm        jmp    near ptr 0x0049018A;
 
-	__asm        mov    eax, [ebp-0x30];
-	__asm        mov    ecx, sFilter;
-	__asm        mov    [ecx+4], eax;
+	sFilter.reference = None;
 _T2c3:
 	__asm        jmp    near ptr 0x00490198;
 
@@ -579,7 +575,7 @@ _T397:
 	__asm        mov    [ebp-0x48], eax;
 	__asm        jmp    _T3c6;
 _T3bf:
-	__asm        mov    dword ptr [ebp-0x48], 0;
+	None = 0x0;
 _T3c6:
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
@@ -604,9 +600,7 @@ _T3c6:
 _T407:
 	__asm        jmp    near ptr 0x004902DC;
 
-	__asm        mov    eax, [ebp-0x48];
-	__asm        mov    ecx, sFilter;
-	__asm        mov    [ecx+4], eax;
+	sFilter.reference = None;
 _T415:
 	__asm        jmp    near ptr 0x004902EA;
 
@@ -696,7 +690,7 @@ _T4f1:
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    _T520;
 _T519:
-	__asm        mov    dword ptr [ebp-0x60], 0;
+	None = 0x0;
 _T520:
 	__asm        mov    ecx, sFilter;
 	__asm        call   basic_string<char>::delete_ref;
@@ -759,7 +753,7 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        mov    sTitle.reference, eax;
 	__asm        jmp    _T67;
 _T60:
-	__asm        mov    sTitle.reference, 0;
+	sTitle.reference = 0x0;
 _T67:
 	__asm        mov    sTitle.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x004904AC;
@@ -787,7 +781,7 @@ _T67:
 	__asm        mov    sFilter.reference, eax;
 	__asm        jmp    _Tca;
 _Tc3:
-	__asm        mov    sFilter.reference, 0;
+	sFilter.reference = 0x0;
 _Tca:
 	__asm        mov    sFilter.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x0049050F;
@@ -1132,51 +1126,46 @@ unsigned long GetLoadFilePath(char * pFilePath, char * pLoadTitle, char * pFilte
 	struct tagOFNA ofn;
 
 // LINE 86:
-	__asm        mov    ofn.lStructSize, 0x4C;
+	ofn.lStructSize = 0x4c;
 // LINE 87:
 	__asm        call   dword ptr ds:[0x6C3884];
 	__asm        mov    ofn.hwndOwner, eax;
 // LINE 88:
-	__asm        mov    eax, _ghWindowsInstance;
-	__asm        mov    ofn.hInstance, eax;
+	ofn.hInstance = _ghWindowsInstance;
 // LINE 89:
-	__asm        mov    eax, pFilter;
-	__asm        mov    ofn.lpstrFilter, eax;
+	ofn.lpstrFilter = pFilter;
 // LINE 90:
-	__asm        mov    ofn.lpstrCustomFilter, 0;
+	ofn.lpstrCustomFilter = 0x0;
 // LINE 91:
-	__asm        mov    ofn.nMaxCustFilter, 0;
+	ofn.nMaxCustFilter = 0x0;
 // LINE 92:
-	__asm        mov    ofn.nFilterIndex, 0;
+	ofn.nFilterIndex = 0x0;
 // LINE 93:
-	__asm        mov    eax, pFilePath;
-	__asm        mov    ofn.lpstrFile, eax;
+	ofn.lpstrFile = pFilePath;
 // LINE 94:
-	__asm        mov    ofn.nMaxFile, 0x104;
+	ofn.nMaxFile = 0x104;
 // LINE 95:
-	__asm        mov    ofn.lpstrFileTitle, 0;
+	ofn.lpstrFileTitle = 0x0;
 // LINE 96:
-	__asm        mov    ofn.nMaxFileTitle, 0;
+	ofn.nMaxFileTitle = 0x0;
 // LINE 97:
-	__asm        mov    eax, pInitialDirectory;
-	__asm        mov    ofn.lpstrInitialDir, eax;
+	ofn.lpstrInitialDir = pInitialDirectory;
 // LINE 98:
-	__asm        mov    eax, pLoadTitle;
-	__asm        mov    ofn.lpstrTitle, eax;
+	ofn.lpstrTitle = pLoadTitle;
 // LINE 99:
-	__asm        mov    ofn.nFileOffset, 0;
+	ofn.nFileOffset = 0x0;
 // LINE 100:
-	__asm        mov    ofn.nFileExtension, 0;
+	ofn.nFileExtension = 0x0;
 // LINE 101:
-	__asm        mov    ofn.lpstrDefExt, 0;
+	ofn.lpstrDefExt = 0x0;
 // LINE 102:
-	__asm        mov    ofn.lCustData, 0;
+	ofn.lCustData = 0x0;
 // LINE 103:
-	__asm        mov    ofn.lpfnHook, 0;
+	ofn.lpfnHook = 0x0;
 // LINE 104:
-	__asm        mov    ofn.lpTemplateName, 0;
+	ofn.lpTemplateName = 0x0;
 // LINE 105:
-	__asm        mov    ofn.Flags, 0x200000;
+	ofn.Flags = 0x200000;
 // LINE 108:
 	__asm        lea    eax, ofn.lStructSize;
 	__asm        push   eax;
@@ -1223,7 +1212,7 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 	__asm        mov    sTitle.reference, eax;
 	__asm        jmp    _T67;
 _T60:
-	__asm        mov    sTitle.reference, 0;
+	sTitle.reference = 0x0;
 _T67:
 	__asm        mov    sTitle.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x00490A56;
@@ -1251,7 +1240,7 @@ _T67:
 	__asm        mov    sFilter.reference, eax;
 	__asm        jmp    _Tca;
 _Tc3:
-	__asm        mov    sFilter.reference, 0;
+	sFilter.reference = 0x0;
 _Tca:
 	__asm        mov    sFilter.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x00490AB9;
@@ -1596,51 +1585,46 @@ unsigned long GetSaveFilePath(char * pFilePath, char * pSaveTitle, char * pFilte
 	struct tagOFNA ofn;
 
 // LINE 143:
-	__asm        mov    ofn.lStructSize, 0x4C;
+	ofn.lStructSize = 0x4c;
 // LINE 144:
 	__asm        call   dword ptr ds:[0x6C3884];
 	__asm        mov    ofn.hwndOwner, eax;
 // LINE 145:
-	__asm        mov    eax, _ghWindowsInstance;
-	__asm        mov    ofn.hInstance, eax;
+	ofn.hInstance = _ghWindowsInstance;
 // LINE 146:
-	__asm        mov    eax, pFilter;
-	__asm        mov    ofn.lpstrFilter, eax;
+	ofn.lpstrFilter = pFilter;
 // LINE 147:
-	__asm        mov    ofn.lpstrCustomFilter, 0;
+	ofn.lpstrCustomFilter = 0x0;
 // LINE 148:
-	__asm        mov    ofn.nMaxCustFilter, 0;
+	ofn.nMaxCustFilter = 0x0;
 // LINE 149:
-	__asm        mov    ofn.nFilterIndex, 0;
+	ofn.nFilterIndex = 0x0;
 // LINE 150:
-	__asm        mov    eax, pFilePath;
-	__asm        mov    ofn.lpstrFile, eax;
+	ofn.lpstrFile = pFilePath;
 // LINE 151:
-	__asm        mov    ofn.nMaxFile, 0x104;
+	ofn.nMaxFile = 0x104;
 // LINE 152:
-	__asm        mov    ofn.lpstrFileTitle, 0;
+	ofn.lpstrFileTitle = 0x0;
 // LINE 153:
-	__asm        mov    ofn.nMaxFileTitle, 0;
+	ofn.nMaxFileTitle = 0x0;
 // LINE 154:
-	__asm        mov    eax, pInitialDirectory;
-	__asm        mov    ofn.lpstrInitialDir, eax;
+	ofn.lpstrInitialDir = pInitialDirectory;
 // LINE 155:
-	__asm        mov    eax, pSaveTitle;
-	__asm        mov    ofn.lpstrTitle, eax;
+	ofn.lpstrTitle = pSaveTitle;
 // LINE 156:
-	__asm        mov    ofn.nFileOffset, 0;
+	ofn.nFileOffset = 0x0;
 // LINE 157:
-	__asm        mov    ofn.nFileExtension, 0;
+	ofn.nFileExtension = 0x0;
 // LINE 158:
-	__asm        mov    ofn.lpstrDefExt, 0;
+	ofn.lpstrDefExt = 0x0;
 // LINE 159:
-	__asm        mov    ofn.lCustData, 0;
+	ofn.lCustData = 0x0;
 // LINE 160:
-	__asm        mov    ofn.lpfnHook, 0;
+	ofn.lpfnHook = 0x0;
 // LINE 161:
-	__asm        mov    ofn.lpTemplateName, 0;
+	ofn.lpTemplateName = 0x0;
 // LINE 162:
-	__asm        mov    ofn.Flags, 0x200000;
+	ofn.Flags = 0x200000;
 // LINE 165:
 	__asm        lea    eax, ofn.lStructSize;
 	__asm        push   eax;

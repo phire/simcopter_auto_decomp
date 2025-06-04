@@ -139,7 +139,7 @@ void * __ptr32 Memory::HAlloc(long size, long state) {
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3720];
 // LINE 160:
-	__asm        mov    wstate, 2;
+	wstate = 0x2;
 // LINE 162:
 	__asm        test   reinterpret_cast<uint8_t>(state), 0x40;
 	__asm        je     _T29;
@@ -744,7 +744,7 @@ long Memory::HGetState(void * __ptr32 h) {
 	__asm        call   dword ptr ds:[0x6C3708];
 	__asm        mov    wstate, eax;
 // LINE 469:
-	__asm        mov    state, 0;
+	state = 0x0;
 // LINE 470:
 	__asm        cmp    reinterpret_cast<uint8_t>(wstate), 0;
 	__asm        je     _T36;

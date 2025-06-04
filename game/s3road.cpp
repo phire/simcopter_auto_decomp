@@ -175,11 +175,11 @@ _T149:
 	__asm        jmp    _T146;
 // LINE 85:
 _T19a:
-	__asm        mov    DiagVector[0].x, 1;
+	DiagVector[0].x = 0x1;
 // LINE 86:
-	__asm        mov    DiagVector[0].z, 0xFFFFFFFF;
+	DiagVector[0].z = 0xffffffff;
 // LINE 87:
-	__asm        mov    DiagVector[0].y, 0;
+	DiagVector[0].y = 0x0;
 // LINE 88:
 	__asm        push   0x62BB00;
 	__asm        call   MTNormalize;
@@ -190,11 +190,11 @@ _T19a:
 	__asm        call   MTCreateDOF4x4;
 	__asm        add    esp, 8;
 // LINE 91:
-	__asm        mov    DiagVector[1].x, 0xFFFFFFFF;
+	DiagVector[1].x = 0xffffffff;
 // LINE 92:
-	__asm        mov    DiagVector[1].z, 0xFFFFFFFF;
+	DiagVector[1].z = 0xffffffff;
 // LINE 93:
-	__asm        mov    DiagVector[1].y, 0;
+	DiagVector[1].y = 0x0;
 // LINE 94:
 	__asm        mov    eax, 0x62BB00;
 	__asm        add    eax, 0xC;
@@ -211,11 +211,11 @@ _T19a:
 	__asm        call   MTCreateDOF4x4;
 	__asm        add    esp, 8;
 // LINE 97:
-	__asm        mov    DiagVector[2].x, 0xFFFFFFFF;
+	DiagVector[2].x = 0xffffffff;
 // LINE 98:
-	__asm        mov    DiagVector[2].z, 1;
+	DiagVector[2].z = 0x1;
 // LINE 99:
-	__asm        mov    DiagVector[2].y, 0;
+	DiagVector[2].y = 0x0;
 // LINE 100:
 	__asm        mov    eax, 0x62BB00;
 	__asm        add    eax, 0x18;
@@ -232,11 +232,11 @@ _T19a:
 	__asm        call   MTCreateDOF4x4;
 	__asm        add    esp, 8;
 // LINE 103:
-	__asm        mov    DiagVector[3].x, 1;
+	DiagVector[3].x = 0x1;
 // LINE 104:
-	__asm        mov    DiagVector[3].z, 1;
+	DiagVector[3].z = 0x1;
 // LINE 105:
-	__asm        mov    DiagVector[3].y, 0;
+	DiagVector[3].y = 0x0;
 // LINE 106:
 	__asm        mov    eax, 0x62BB00;
 	__asm        add    eax, 0x24;
@@ -261,71 +261,71 @@ _T19a:
 	__asm        call   0x0056EC1A;
 	__asm        fst    DiagLongDist;
 // LINE 117:
-	__asm        mov    DiagOffset[0][0].x, 0xFFF80000;
+	DiagOffset[0][0].x = 0xfff80000;
 // LINE 118:
-	__asm        mov    DiagOffset[0][0].z, 0x200000;
+	DiagOffset[0][0].z = 0x200000;
 // LINE 119:
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    DiagOffset[0][0].y, eax;
 // LINE 121:
-	__asm        mov    DiagOffset[0][2].x, 0x200000;
+	DiagOffset[0][2].x = 0x200000;
 // LINE 122:
-	__asm        mov    DiagOffset[0][2].z, 0x80000;
+	DiagOffset[0][2].z = 0x80000;
 // LINE 123:
 	__asm        fld    DiagShortDist;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    DiagOffset[0][2].y, eax;
 // LINE 125:
-	__asm        mov    DiagOffset[1][1].x, 0x200000;
+	DiagOffset[1][1].x = 0x200000;
 // LINE 126:
-	__asm        mov    DiagOffset[1][1].z, 0x80000;
+	DiagOffset[1][1].z = 0x80000;
 // LINE 127:
 	__asm        fld    DiagLongDist;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    DiagOffset[1][1].y, eax;
 // LINE 129:
-	__asm        mov    DiagOffset[1][3].x, 0x80000;
+	DiagOffset[1][3].x = 0x80000;
 // LINE 130:
-	__asm        mov    DiagOffset[1][3].z, 0xFFE00000;
+	DiagOffset[1][3].z = 0xffe00000;
 // LINE 131:
 	__asm        fld    DiagShortDist;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    DiagOffset[1][3].y, eax;
 // LINE 133:
-	__asm        mov    DiagOffset[2][0].x, 0xFFE00000;
+	DiagOffset[2][0].x = 0xffe00000;
 // LINE 134:
-	__asm        mov    DiagOffset[2][0].z, 0xFFF80000;
+	DiagOffset[2][0].z = 0xfff80000;
 // LINE 135:
 	__asm        fld    DiagShortDist;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    DiagOffset[2][0].y, eax;
 // LINE 137:
-	__asm        mov    DiagOffset[2][2].x, 0x80000;
+	DiagOffset[2][2].x = 0x80000;
 // LINE 138:
-	__asm        mov    DiagOffset[2][2].z, 0xFFE00000;
+	DiagOffset[2][2].z = 0xffe00000;
 // LINE 139:
 	__asm        fld    DiagLongDist;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    DiagOffset[2][2].y, eax;
 // LINE 141:
-	__asm        mov    DiagOffset[3][1].x, 0xFFF80000;
+	DiagOffset[3][1].x = 0xfff80000;
 // LINE 142:
-	__asm        mov    DiagOffset[3][1].z, 0x200000;
+	DiagOffset[3][1].z = 0x200000;
 // LINE 143:
 	__asm        fld    DiagShortDist;
 	__asm        fmul   qword ptr ds:[0x593400];
 	__asm        call   0x0056EBE8;
 	__asm        mov    DiagOffset[3][1].y, eax;
 // LINE 145:
-	__asm        mov    DiagOffset[3][3].x, 0xFFE00000;
+	DiagOffset[3][3].x = 0xffe00000;
 // LINE 146:
-	__asm        mov    DiagOffset[3][3].z, 0xFFF80000;
+	DiagOffset[3][3].z = 0xfff80000;
 // LINE 147:
 	__asm        fld    DiagLongDist;
 	__asm        fmul   qword ptr ds:[0x593400];
@@ -677,9 +677,9 @@ _T884:
 	__asm        jmp    _T881;
 // LINE 211:
 _T8f3:
-	__asm        mov    OTT[3][0][10].x, 0xFFF80000;
+	OTT[3][0][10].x = 0xfff80000;
 // LINE 212:
-	__asm        mov    OTT[3][0][10].z, 0xFFE00000;
+	OTT[3][0][10].z = 0xffe00000;
 // LINE 214:
 	__asm        fld    OT[1].x;
 	__asm        fmul   qword ptr ds:[0x593400];
@@ -727,9 +727,9 @@ _T942:
 	__asm        jmp    _T93f;
 // LINE 221:
 _T9b3:
-	__asm        mov    OTT[3][1][10].x, 0xFFE00000;
+	OTT[3][1][10].x = 0xffe00000;
 // LINE 222:
-	__asm        mov    OTT[3][1][10].z, 0x80000;
+	OTT[3][1][10].z = 0x80000;
 // LINE 224:
 	__asm        fld    OT[2].x;
 	__asm        fmul   qword ptr ds:[0x593400];
@@ -778,9 +778,9 @@ _Ta02:
 	__asm        jmp    _T9ff;
 // LINE 231:
 _Ta75:
-	__asm        mov    OTT[3][2][10].x, 0x80000;
+	OTT[3][2][10].x = 0x80000;
 // LINE 232:
-	__asm        mov    OTT[3][2][10].z, 0x200000;
+	OTT[3][2][10].z = 0x200000;
 // LINE 234:
 	__asm        fld    OT[3].x;
 	__asm        fmul   qword ptr ds:[0x593400];
@@ -828,11 +828,11 @@ _Tac4:
 	__asm        jmp    _Tac1;
 // LINE 241:
 _Tb35:
-	__asm        mov    OTT[3][3][10].x, 0x200000;
+	OTT[3][3][10].x = 0x200000;
 // LINE 242:
-	__asm        mov    OTT[3][3][10].z, 0xFFF80000;
+	OTT[3][3][10].z = 0xfff80000;
 // LINE 245:
-	__asm        mov    incline, 0;
+	incline = 0x0;
 // LINE 249:
 	__asm        mov    incline, 0;
 	__asm        jmp    _Tb5f;
@@ -1393,8 +1393,7 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 	enum DirectionTypes toConnections;
 
 
-	__asm        mov    ax, toTile;
-	__asm        mov    [ebp-0x24], ax;
+	None = toTile;
 // LINE 498:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        and    eax, 0xFF;
@@ -1709,7 +1708,7 @@ _T43c:
 	__asm        jmp    _T5a4;
 // LINE 552:
 _T443:
-	__asm        mov    dword ptr [ebp-0x1C], 0x5B57E8;
+	None = 0x5b57e8;
 _T44a:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    ecx, reinterpret_cast<uint32_t>(fromTile);
@@ -1738,7 +1737,7 @@ _T497:
 	__asm        jmp    _T44a;
 // LINE 553:
 _T4a0:
-	__asm        mov    dword ptr [ebp-0x20], 0x5B57E8;
+	None = 0x5b57e8;
 _T4a7:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    ecx, reinterpret_cast<uint32_t>(toTile);

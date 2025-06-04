@@ -520,8 +520,7 @@ void FireEngineClass::FireEngineClass() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5932A8;
 // LINE 83:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0x11C;
+	this->flags = 0x11c;
 // LINE 84:
 	__asm        jmp    near ptr 0x0053615C;
 
@@ -558,7 +557,7 @@ class FireEngineClass* FireEngineClass::CreateInstance(int32_t instanceID) {
 	__asm        mov    youveWonABrandNewCar, eax;
 	__asm        jmp    _T3a;
 _T33:
-	__asm        mov    youveWonABrandNewCar, 0;
+	youveWonABrandNewCar = 0x0;
 // LINE 120:
 _T3a:
 	__asm        cmp    youveWonABrandNewCar, 0;
@@ -654,14 +653,11 @@ _T13e:
 	__asm        jmp    _T1f1;
 // LINE 161:
 _T145:
-	__asm        mov    eax, youveWonABrandNewCar;
-	__asm        mov    dword ptr [eax+0x2A0], 0;
+	youveWonABrandNewCar->distToFire = 0x0;
 // LINE 163:
-	__asm        mov    eax, youveWonABrandNewCar;
-	__asm        mov    word ptr [eax+0x134], 0;
+	*reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&youveWonABrandNewCar->dispatchIcon.loc.x) + 2) = 0x0;
 // LINE 164:
-	__asm        mov    eax, youveWonABrandNewCar;
-	__asm        mov    word ptr [eax+0x132], 0x21;
+	reinterpret_cast<uint16_t>(youveWonABrandNewCar->dispatchIcon.loc.x) = 0x21;
 // LINE 165:
 	__asm        lea    eax, oinfo.Faces;
 	__asm        push   eax;
@@ -671,9 +667,7 @@ _T145:
 	__asm        call   0x004D8859;
 	__asm        add    esp, 8;
 // LINE 166:
-	__asm        mov    eax, oinfo.Radius;
-	__asm        mov    ecx, youveWonABrandNewCar;
-	__asm        mov    [ecx+0x136], eax;
+	youveWonABrandNewCar->dispatchIcon.loc.y = oinfo.Radius;
 // LINE 167:
 	__asm        push   0;
 	__asm        mov    eax, youveWonABrandNewCar;
@@ -894,8 +888,7 @@ _T8d:
 	__asm        test   eax, eax;
 	__asm        je     _T149;
 // LINE 281:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x294], 5;
+	this->dousingFire = 0x5;
 // LINE 282:
 	__asm        mov    ecx, this;
 	__asm        call   FireEngineClass::PointStreamAtFire;
@@ -907,21 +900,17 @@ _T8d:
 	__asm        test   eax, eax;
 	__asm        je     _T144;
 // LINE 285:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xF6], 0;
+	this->fireTime = 0x0;
 // LINE 286:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xFE], 0x780000;
+	this->missionId = 0x780000;
 // LINE 289:
 _T144:
 	__asm        jmp    _T1a8;
 // LINE 291:
 _T149:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x122], 0;
+	this->dispatchIcon.mesh = 0x0;
 // LINE 292:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x11E], 0;
+	this->dispatchIcon.vnext = 0x0;
 // LINE 296:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::UnPlaceCar;
@@ -938,8 +927,7 @@ _T149:
 	__asm        mov    ecx, gFireStations;
 	__asm        call   Station::DecrementQuantityOfVehicleDispatched;
 // LINE 302:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x294], 2;
+	this->dousingFire = 0x2;
 // LINE 303:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -980,8 +968,7 @@ _T1b2:
 	__asm        cmp    dist, eax;
 	__asm        jge    _T209;
 // LINE 318:
-	__asm        mov    eax, dist;
-	__asm        mov    AutomobileClass::fireSirenDist, eax;
+	AutomobileClass::fireSirenDist = dist;
 // LINE 320:
 _T209:
 	__asm        mov    ecx, this;
@@ -998,11 +985,9 @@ _T21e:
 	__asm        test   eax, eax;
 	__asm        jne    _T28d;
 // LINE 328:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x122], 0;
+	this->dispatchIcon.mesh = 0x0;
 // LINE 329:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x11E], 0;
+	this->dispatchIcon.vnext = 0x0;
 // LINE 332:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::UnPlaceCar;
@@ -1019,8 +1004,7 @@ _T21e:
 	__asm        mov    ecx, gFireStations;
 	__asm        call   Station::DecrementQuantityOfVehicleDispatched;
 // LINE 339:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x294], 2;
+	this->dousingFire = 0x2;
 // LINE 340:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -1171,8 +1155,7 @@ _Tf7:
 	__asm        cmp    dist, eax;
 	__asm        jge    _T146;
 // LINE 397:
-	__asm        mov    eax, dist;
-	__asm        mov    AutomobileClass::fireHoseDist, eax;
+	AutomobileClass::fireHoseDist = dist;
 // LINE 399:
 _T146:
 	__asm        mov    eax, 1;
@@ -1195,16 +1178,13 @@ int32_t FireEngineClass::ScanForFire(struct _GridCoordinates fireloc) {
 	__asm        lea    ecx, spiral.currDist;
 	__asm        call   SpiralScan::SpiralScan;
 // LINE 425:
-	__asm        mov    fires_found, 0;
+	fires_found = 0x0;
 // LINE 426:
-	__asm        mov    ax, reinterpret_cast<uint16_t>(fireloc.x);
-	__asm        mov    reinterpret_cast<uint16_t>(dyfireloc.x), ax;
+	reinterpret_cast<uint16_t>(dyfireloc.x) = reinterpret_cast<uint16_t>(fireloc.x);
 // LINE 429:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x2A4], 0;
+	this->firevec.x = 0x0;
 // LINE 430:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x2A8], 0;
+	this->firevec.y = 0x0;
 // LINE 431:
 _T3f:
 	__asm        lea    eax, fireloc.x;
@@ -1242,19 +1222,16 @@ _Ta7:
 _Tac:
 	__asm        jmp    near ptr 0x0053697E;
 
-	__asm        mov    eax, [ebp-0x38];
-	__asm        mov    cptr, eax;
+	cptr = None;
 // LINE 435:
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        test   al, 0x20;
 	__asm        je     _T153;
 // LINE 441:
-	__asm        mov    fires_found, 0;
+	fires_found = 0x0;
 // LINE 442:
-	__asm        mov    eax, cptr;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    stobj, eax;
+	stobj = cptr->stptr;
 // LINE 443:
 _Td5:
 	__asm        cmp    stobj, 0;
@@ -1264,19 +1241,14 @@ _Td5:
 	__asm        test   byte ptr [eax+8], 1;
 	__asm        jne    _Tf9;
 // LINE 448:
-	__asm        mov    eax, stobj;
-	__asm        mov    eax, [eax];
-	__asm        mov    stobj, eax;
+	stobj = stobj->next;
 // LINE 449:
 	__asm        jmp    _Td5;
 // LINE 452:
 _Tf9:
 	__asm        inc    fires_found;
 // LINE 458:
-	__asm        mov    eax, stobj;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x2A4], eax;
+	this->firevec.x = stobj->user2;
 // LINE 461:
 	__asm        call   rand;
 	__asm        mov    ecx, this;
@@ -1297,16 +1269,12 @@ _Tf9:
 	__asm        jmp    _T20e;
 // LINE 468:
 _T146:
-	__asm        mov    eax, stobj;
-	__asm        mov    eax, [eax];
-	__asm        mov    stobj, eax;
+	stobj = stobj->next;
 // LINE 469:
 	__asm        jmp    _Td5;
 // LINE 472:
 _T153:
-	__asm        mov    eax, cptr;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    dyobj, eax;
+	dyobj = cptr->dyptr;
 // LINE 473:
 _T15c:
 	__asm        cmp    dyobj, 0;
@@ -1317,9 +1285,7 @@ _T15c:
 	__asm        test   ah, 0x10;
 	__asm        je     _T196;
 // LINE 478:
-	__asm        mov    eax, dyobj;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x2A8], eax;
+	this->firevec.y = dyobj;
 // LINE 479:
 	__asm        mov    dword ptr [ebp-0x2C], 1;
 	__asm        jmp    near ptr 0x00536A5B;
@@ -1333,25 +1299,12 @@ _T196:
 	__asm        test   al, 4;
 	__asm        je     _T1c4;
 // LINE 485:
-	__asm        mov    eax, dyobj;
-	__asm        mov    eax, [eax];
-	__asm        mov    eax, [eax];
-	__asm        mov    eax, [eax];
-	__asm        mov    eax, [eax];
-	__asm        mov    eax, [eax];
-	__asm        mov    eax, [eax];
-	__asm        mov    eax, [eax];
-	__asm        mov    eax, [eax];
-	__asm        mov    eax, [eax];
-	__asm        mov    eax, [eax];
-	__asm        mov    dyobj, eax;
+	dyobj = dyobj->next->next->next->next->next->next->next->next->next->next;
 // LINE 487:
 	__asm        jmp    _T1cc;
 // LINE 488:
 _T1c4:
-	__asm        mov    eax, dyobj;
-	__asm        mov    eax, [eax];
-	__asm        mov    dyobj, eax;
+	dyobj = dyobj->next;
 // LINE 489:
 _T1cc:
 	__asm        jmp    _T15c;
@@ -1488,15 +1441,9 @@ _Tfe:
 // FUNCTION: COPTER_D 0x00536c3d
 void FireEngineClass::SetSaveData(struct _AUTO_LOAD_SAVE *sd) {
 // LINE 554:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x2A0];
-	__asm        mov    ecx, sd;
-	__asm        mov    [ecx+0x2A4], eax;
+	sd->f.dousingFire = this->distToFire;
 // LINE 555:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x2AC];
-	__asm        mov    ecx, sd;
-	__asm        mov    [ecx+0x2A8], eax;
+	sd->f.distToFire = this->firevec.z;
 // LINE 556:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x2B0;
@@ -1509,10 +1456,7 @@ void FireEngineClass::SetSaveData(struct _AUTO_LOAD_SAVE *sd) {
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 557:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x2BC];
-	__asm        mov    ecx, sd;
-	__asm        mov    [ecx+0x2B8], eax;
+	sd->f.pathID = this-><FireEngineClass+0x2bc>;
 // LINE 560:
 	__asm        mov    eax, sd;
 	__asm        push   eax;
@@ -1564,15 +1508,9 @@ _T5c:
 	__asm        jmp    _T75;
 // LINE 596:
 _T75:
-	__asm        mov    eax, sd;
-	__asm        mov    eax, [eax+0x2A4];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x2A0], eax;
+	this->distToFire = sd->f.dousingFire;
 // LINE 597:
-	__asm        mov    eax, sd;
-	__asm        mov    eax, [eax+0x2A8];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x2AC], eax;
+	this->firevec.z = sd->f.distToFire;
 // LINE 598:
 	__asm        mov    eax, sd;
 	__asm        add    eax, 0x2AC;
@@ -1585,10 +1523,7 @@ _T75:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 599:
-	__asm        mov    eax, sd;
-	__asm        mov    eax, [eax+0x2B8];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x2BC], eax;
+	this-><FireEngineClass+0x2bc> = sd->f.pathID;
 // LINE 601:
 	__asm        mov    eax, this;
 	__asm        mov    ax, [eax+0x11C];

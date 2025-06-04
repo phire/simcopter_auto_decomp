@@ -520,8 +520,7 @@ void AmbulanceClass::AmbulanceClass() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593280;
 // LINE 84:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0x11F;
+	this->flags = 0x11f;
 // LINE 85:
 	__asm        jmp    near ptr 0x005358FC;
 
@@ -558,7 +557,7 @@ class AmbulanceClass* AmbulanceClass::CreateInstance(int32_t instanceID) {
 	__asm        mov    youveWonABrandNewCar, eax;
 	__asm        jmp    _T3a;
 _T33:
-	__asm        mov    youveWonABrandNewCar, 0;
+	youveWonABrandNewCar = 0x0;
 // LINE 116:
 _T3a:
 	__asm        cmp    youveWonABrandNewCar, 0;
@@ -654,11 +653,9 @@ _T13e:
 	__asm        jmp    _T1e4;
 // LINE 157:
 _T145:
-	__asm        mov    eax, youveWonABrandNewCar;
-	__asm        mov    word ptr [eax+0x134], 0;
+	*reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&youveWonABrandNewCar->dispatchIcon.loc.x) + 2) = 0x0;
 // LINE 158:
-	__asm        mov    eax, youveWonABrandNewCar;
-	__asm        mov    word ptr [eax+0x132], 0x21;
+	reinterpret_cast<uint16_t>(youveWonABrandNewCar->dispatchIcon.loc.x) = 0x21;
 // LINE 159:
 	__asm        lea    eax, oinfo.Faces;
 	__asm        push   eax;
@@ -668,9 +665,7 @@ _T145:
 	__asm        call   0x004D8859;
 	__asm        add    esp, 8;
 // LINE 160:
-	__asm        mov    eax, oinfo.Radius;
-	__asm        mov    ecx, youveWonABrandNewCar;
-	__asm        mov    [ecx+0x136], eax;
+	youveWonABrandNewCar->dispatchIcon.loc.y = oinfo.Radius;
 // LINE 161:
 	__asm        push   0;
 	__asm        mov    eax, youveWonABrandNewCar;
@@ -855,8 +850,7 @@ _T40:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+8];
 // LINE 312:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x294], 2;
+	this-><AmbulanceClass+0x294> = 0x2;
 // LINE 314:
 _Tad:
 	__asm        jmp    _T3af;
@@ -953,23 +947,18 @@ _T122:
 	__asm        test   eax, eax;
 	__asm        je     _T1e5;
 // LINE 341:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xF6], 0;
+	this->fireTime = 0x0;
 // LINE 342:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xFE], 0xF00000;
+	this->missionId = 0xf00000;
 // LINE 343:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x294], 5;
+	this-><AmbulanceClass+0x294> = 0x5;
 // LINE 345:
 	__asm        jmp    _T1ff;
 // LINE 348:
 _T1e5:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xFE], 0;
+	this->missionId = 0x0;
 // LINE 349:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x294], 1;
+	this-><AmbulanceClass+0x294> = 0x1;
 // LINE 352:
 _T1ff:
 	__asm        jmp    _T263;
@@ -1000,8 +989,7 @@ _T204:
 	__asm        cmp    dist, eax;
 	__asm        jge    _T253;
 // LINE 360:
-	__asm        mov    eax, dist;
-	__asm        mov    AutomobileClass::ambSirenDist, eax;
+	AutomobileClass::ambSirenDist = dist;
 // LINE 362:
 _T253:
 	__asm        mov    ecx, this;
@@ -1070,8 +1058,7 @@ _T2d5:
 	__asm        mov    ecx, gHospitals;
 	__asm        call   Station::DecrementQuantityOfVehicleDispatched;
 // LINE 391:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x294], 2;
+	this-><AmbulanceClass+0x294> = 0x2;
 // LINE 392:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -1084,8 +1071,7 @@ _T337:
 	__asm        cmp    dword ptr [eax+0xFA], 0;
 	__asm        jne    _T354;
 // LINE 396:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x294], 1;
+	this-><AmbulanceClass+0x294> = 0x1;
 // LINE 398:
 _T354:
 	__asm        jmp    _T3af;

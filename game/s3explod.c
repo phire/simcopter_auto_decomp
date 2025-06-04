@@ -117,9 +117,9 @@ void S3ExplosionReset() {
 	struct _SMOKE_DATA *sd;
 
 // LINE 59:
-	__asm        mov    S_num_expls, 0;
+	S_num_expls = 0x0;
 // LINE 60:
-	__asm        mov    S_num_smoke, 0;
+	S_num_smoke = 0x0;
 // LINE 63:
 	__asm        mov    i, 0;
 	__asm        mov    ed, 0x62A578;
@@ -131,8 +131,7 @@ _T37:
 	__asm        cmp    i, 0x14;
 	__asm        jge    _T4f;
 // LINE 66:
-	__asm        mov    eax, ed;
-	__asm        mov    dword ptr [eax], 0;
+	ed->flags = 0x0;
 // LINE 67:
 	__asm        jmp    _T30;
 // LINE 70:
@@ -147,8 +146,7 @@ _T69:
 	__asm        cmp    i, 0x64;
 	__asm        jge    _T81;
 // LINE 73:
-	__asm        mov    eax, sd;
-	__asm        mov    dword ptr [eax], 0;
+	sd->flags = 0x0;
 // LINE 75:
 	__asm        jmp    _T62;
 // LINE 77:
@@ -184,26 +182,19 @@ _T39:
 	__asm        cmp    i, 0x14;
 	__asm        jge    _T14a;
 // LINE 106:
-	__asm        mov    eax, ed;
-	__asm        mov    dword ptr [eax], 0;
+	ed->flags = 0x0;
 // LINE 107:
-	__asm        mov    eax, ed;
-	__asm        mov    dword ptr [eax+4], 0;
+	ed->width = 0x0;
 // LINE 108:
-	__asm        mov    eax, ed;
-	__asm        mov    dword ptr [eax+8], 0;
+	ed->height = 0x0;
 // LINE 109:
-	__asm        mov    eax, ed;
-	__asm        mov    dword ptr [eax+0xC], 0;
+	ed->loc.x = 0x0;
 // LINE 110:
-	__asm        mov    eax, ed;
-	__asm        mov    dword ptr [eax+0x10], 0;
+	ed->loc.y = 0x0;
 // LINE 111:
-	__asm        mov    eax, ed;
-	__asm        mov    dword ptr [eax+0x14], 0;
+	ed->loc.z = 0x0;
 // LINE 112:
-	__asm        mov    eax, ed;
-	__asm        mov    dword ptr [eax+0x18], 0;
+	ed->animseq = 0x0;
 // LINE 115:
 	__asm        push   0x7F;
 	__asm        call   0x004D8821;
@@ -221,9 +212,7 @@ _T39:
 	__asm        mov    ecx, ed;
 	__asm        mov    [ecx+0x20], eax;
 // LINE 118:
-	__asm        mov    eax, ed;
-	__asm        mov    eax, [eax+0x20];
-	__asm        mov    word ptr [eax+0xC], 0x61;
+	ed->dy2d->flags = 0x61;
 // LINE 120:
 	__asm        mov    eax, size;
 	__asm        push   eax;
@@ -271,9 +260,7 @@ _T39:
 	__asm        call   0x004D6970;
 	__asm        add    esp, 8;
 // LINE 129:
-	__asm        mov    eax, ed;
-	__asm        mov    eax, [eax+0x20];
-	__asm        mov    dword ptr [eax], 0;
+	ed->dy2d->next = 0x0;
 // LINE 130:
 	__asm        jmp    _T32;
 // LINE 133:
@@ -296,11 +283,9 @@ _T17d:
 	__asm        cmp    i, 0x64;
 	__asm        jge    _T236;
 // LINE 143:
-	__asm        mov    eax, sd;
-	__asm        mov    dword ptr [eax], 0;
+	sd->flags = 0x0;
 // LINE 144:
-	__asm        mov    eax, sd;
-	__asm        mov    dword ptr [eax+8], 0;
+	sd->timetolive = 0x0;
 // LINE 147:
 	__asm        push   0x64;
 	__asm        mov    eax, G_dyobjmempool;
@@ -310,13 +295,9 @@ _T17d:
 	__asm        mov    ecx, sd;
 	__asm        mov    [ecx+4], eax;
 // LINE 148:
-	__asm        mov    eax, sd;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    word ptr [eax+0xC], 0x61;
+	sd->dysmoke->flags = 0x61;
 // LINE 149:
-	__asm        mov    eax, sd;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    dword ptr [eax+0x10], 0x200000;
+	sd->dysmoke->radius = 0x200000;
 // LINE 152:
 	__asm        mov    eax, size;
 	__asm        push   eax;
@@ -739,8 +720,7 @@ _T61:
 	__asm        call   0x004D6905;
 	__asm        add    esp, 8;
 // LINE 265:
-	__asm        mov    eax, S_explseq[0];
-	__asm        mov    finfo.Bitmap, eax;
+	finfo.Bitmap = S_explseq[0];
 // LINE 266:
 	__asm        lea    eax, finfo.Face;
 	__asm        push   eax;
@@ -750,20 +730,13 @@ _T61:
 	__asm        call   0x004D6941;
 	__asm        add    esp, 8;
 // LINE 268:
-	__asm        mov    eax, ed;
-	__asm        mov    dword ptr [eax+0x18], 0xFFFFFFFF;
+	ed->animseq = 0xffffffff;
 // LINE 269:
-	__asm        mov    eax, cptr;
-	__asm        mov    ecx, ed;
-	__asm        mov    [ecx+0x2C], eax;
+	ed->cptr = cptr;
 // LINE 270:
-	__asm        mov    eax, mission_id;
-	__asm        mov    ecx, ed;
-	__asm        mov    [ecx+0x30], eax;
+	ed->mission_id = mission_id;
 // LINE 271:
-	__asm        mov    eax, scale;
-	__asm        mov    ecx, ed;
-	__asm        mov    [ecx+0x28], eax;
+	ed->scale = scale;
 // LINE 274:
 	__asm        mov    eax, dim;
 	__asm        push   eax;
@@ -826,16 +799,9 @@ _T61:
 	__asm        call   0x004D1FF1;
 	__asm        add    esp, 4;
 // LINE 300:
-	__asm        mov    eax, cptr;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, ed;
-	__asm        mov    ecx, [ecx+0x20];
-	__asm        mov    [ecx], eax;
+	ed->dy2d->next = cptr->dyptr;
 // LINE 301:
-	__asm        mov    eax, ed;
-	__asm        mov    eax, [eax+0x20];
-	__asm        mov    ecx, cptr;
-	__asm        mov    [ecx+0x10], eax;
+	cptr->dyptr = ed->dy2d;
 // LINE 303:
 	__asm        inc    S_num_expls;
 // LINE 304:
@@ -889,8 +855,7 @@ _T61:
 	__asm        call   0x004D6905;
 	__asm        add    esp, 8;
 // LINE 338:
-	__asm        mov    eax, smoke_size;
-	__asm        mov    finfo.Bitmap, eax;
+	finfo.Bitmap = smoke_size;
 // LINE 339:
 	__asm        lea    eax, finfo.Face;
 	__asm        push   eax;
@@ -903,12 +868,9 @@ _T61:
 	__asm        mov    eax, sd;
 	__asm        or     dword ptr [eax], 1;
 // LINE 343:
-	__asm        mov    eax, cptr;
-	__asm        mov    ecx, sd;
-	__asm        mov    [ecx+0xC], eax;
+	sd->cptr = cptr;
 // LINE 344:
-	__asm        mov    eax, sd;
-	__asm        mov    dword ptr [eax+8], 0x20000;
+	sd->timetolive = 0x20000;
 // LINE 347:
 	__asm        mov    eax, loc;
 	__asm        mov    ecx, sd;
@@ -928,59 +890,44 @@ _T61:
 	__asm        call   0x004D1FF1;
 	__asm        add    esp, 4;
 // LINE 352:
-	__asm        mov    eax, cptr;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, sd;
-	__asm        mov    ecx, [ecx+4];
-	__asm        mov    [ecx], eax;
+	sd->dysmoke->next = cptr->dyptr;
 // LINE 353:
-	__asm        mov    eax, sd;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, cptr;
-	__asm        mov    [ecx+0x10], eax;
+	cptr->dyptr = sd->dysmoke;
 // LINE 356:
 	__asm        mov    eax, smoke_size;
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        jmp    _T176;
 // LINE 359:
-	__asm        mov    eax, sd;
-	__asm        mov    dword ptr [eax+0x14], 0xD0000;
+	sd->speed = 0xd0000;
 // LINE 360:
 	__asm        jmp    _T1b6;
 // LINE 362:
-	__asm        mov    eax, sd;
-	__asm        mov    dword ptr [eax+0x14], 0xA0000;
+	sd->speed = 0xa0000;
 // LINE 363:
 	__asm        jmp    _T1b6;
 // LINE 365:
-	__asm        mov    eax, sd;
-	__asm        mov    dword ptr [eax+0x14], 0x190000;
+	sd->speed = 0x190000;
 // LINE 366:
 	__asm        jmp    _T1b6;
 // LINE 368:
-	__asm        mov    eax, sd;
-	__asm        mov    dword ptr [eax+0x14], 0x1E0000;
+	sd->speed = 0x1e0000;
 // LINE 369:
 	__asm        jmp    _T1b6;
 // LINE 371:
-	__asm        mov    eax, sd;
-	__asm        mov    dword ptr [eax+0x14], 0x110000;
+	sd->speed = 0x110000;
 // LINE 372:
 	__asm        jmp    _T1b6;
 // LINE 374:
-	__asm        mov    eax, sd;
-	__asm        mov    dword ptr [eax+0x14], 0x190000;
+	sd->speed = 0x190000;
 // LINE 375:
 	__asm        jmp    _T1b6;
 // LINE 377:
-	__asm        mov    eax, sd;
-	__asm        mov    dword ptr [eax+0x14], 0x140000;
+	sd->speed = 0x140000;
 // LINE 378:
 	__asm        jmp    _T1b6;
 // LINE 384:
 _T162:
-	__asm        mov    eax, sd;
-	__asm        mov    dword ptr [eax+0x14], 0xF0000;
+	sd->speed = 0xf0000;
 // LINE 385:
 	__asm        jmp    _T1b6;
 // LINE 386:
@@ -1104,18 +1051,12 @@ _T11e:
 	__asm        cmp    [eax+0x20], ecx;
 	__asm        jne    _T153;
 // LINE 448:
-	__asm        mov    eax, ed;
-	__asm        mov    eax, [eax+0x20];
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, dyptrptr;
-	__asm        mov    [ecx], eax;
+	dyptrptr-> = ed->dy2d->next;
 // LINE 449:
 	__asm        jmp    _T160;
 // LINE 451:
 _T153:
-	__asm        mov    eax, dyptrptr;
-	__asm        mov    eax, [eax];
-	__asm        mov    dyptrptr, eax;
+	dyptrptr = dyptrptr->;
 // LINE 452:
 	__asm        jmp    _T11e;
 // LINE 454:
@@ -1229,18 +1170,12 @@ _T283:
 	__asm        cmp    [eax+4], ecx;
 	__asm        jne    _T2b2;
 // LINE 489:
-	__asm        mov    eax, sd;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, dyptrptr;
-	__asm        mov    [ecx], eax;
+	dyptrptr-> = sd->dysmoke->next;
 // LINE 490:
 	__asm        jmp    _T2bf;
 // LINE 492:
 _T2b2:
-	__asm        mov    eax, dyptrptr;
-	__asm        mov    eax, [eax];
-	__asm        mov    dyptrptr, eax;
+	dyptrptr = dyptrptr->;
 // LINE 493:
 	__asm        jmp    _T283;
 // LINE 495:

@@ -34,8 +34,7 @@ void DialHand::DialHand() {
 	__asm        mov    dword ptr [eax+0x2C], 0;
 	__asm        jmp    near ptr 0x0044FD77;
 // LINE 342:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x30], 0x3F;
+	this->nColorDial = 0x3f;
 // LINE 343:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];

@@ -447,8 +447,7 @@ struct SparkalRect{
 // FUNCTION: COPTER_D 0x004bd670
 void CopterGameMode::CopterGameMode() {
 // LINE 51:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0;
+	this->nModeID = 0x0;
 // LINE 52:
 	__asm        jmp    near ptr 0x004BD68A;
 
@@ -458,9 +457,7 @@ void CopterGameMode::CopterGameMode() {
 // FUNCTION: COPTER_D 0x004bd692
 void CopterGameMode::CopterGameMode(int32_t nNewModeID) {
 
-	__asm        mov    eax, nNewModeID;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx], eax;
+	this->nModeID = nNewModeID;
 // LINE 57:
 	__asm        jmp    near ptr 0x004BD6AB;
 
@@ -483,10 +480,7 @@ void CopterGameMode::CopterGameMode(const class CopterGameMode& newGameMode) {
 // FUNCTION: COPTER_D 0x004bd6dc
 class CopterGameMode& CopterGameMode::operator=(const class CopterGameMode& newGameMode) {
 // LINE 65:
-	__asm        mov    eax, newGameMode;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx], eax;
+	this->nModeID = newGameMode.nModeID;
 // LINE 66:
 	__asm        mov    eax, this;
 	__asm        jmp    near ptr 0x004BD6FA;
@@ -533,8 +527,7 @@ void GameModeCoreData::GameModeCoreData() {
 // FUNCTION: COPTER_D 0x004bd777
 void GameModeCoreData::~GameModeCoreData() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5923C0;
+	this-><vftable> = 0x5923c0;
 // LINE 140:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -550,8 +543,7 @@ void GameModeCoreData::~GameModeCoreData() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 142:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->pColorTable = 0x0;
 // LINE 144:
 _T47:
 	__asm        jmp    near ptr 0x004BD7C3;
@@ -565,17 +557,13 @@ void GameModeMainMenuData::GameModeMainMenuData() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5923C4;
 // LINE 157:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->pColorTable = 0x0;
 // LINE 158:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
+	this->pGameApp = 0x0;
 // LINE 159:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 0;
+	this->pScreenWindow = 0x0;
 // LINE 160:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
+	this->myVideoBuffer = 0x0;
 // LINE 161:
 	__asm        jmp    near ptr 0x004BD812;
 
@@ -617,8 +605,7 @@ _T7b:
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    _Ta1;
 _T94:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->pColorTable = 0x0;
 // LINE 175:
 _Ta1:
 	__asm        lea    eax, szPath[0];
@@ -656,13 +643,11 @@ void GameModeMainMenuData::UsePalette() {
 	__asm        mov    ecx, [eax+0x34];
 	__asm        call   dword ptr [edx+0x74];
 // LINE 186:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    gCopterPalette.pColors, eax;
+	gCopterPalette.pColors = this->pColorTable;
 // LINE 187:
-	__asm        mov    gCopterPalette.lColors, 0x100;
+	gCopterPalette.lColors = 0x100;
 // LINE 188:
-	__asm        mov    gCopterPalette.bOwnColors, 0;
+	gCopterPalette.bOwnColors = 0x0;
 // LINE 189:
 	__asm        jmp    near ptr 0x004BD945;
 }
@@ -696,7 +681,7 @@ int32_t GameModeMainMenuData::CreateAllSurfaces() {
 	__asm        mov    tempUMWD.sImageFileName.reference, eax;
 	__asm        jmp    _T81;
 _T7a:
-	__asm        mov    tempUMWD.sImageFileName.reference, 0;
+	tempUMWD.sImageFileName.reference = 0x0;
 _T81:
 	__asm        mov    tempUMWD.sImageFileName.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x004BD9D7;
@@ -719,8 +704,7 @@ _T81:
 
 	__asm        jmp    near ptr 0x004BDA04;
 
-	__asm        mov    eax, SZ_MAIN_MENU_IMAGE_FILE_NAME;
-	__asm        mov    [ebp-0xA0], eax;
+	None = SZ_MAIN_MENU_IMAGE_FILE_NAME;
 // LINE 200:
 	__asm        jmp    near ptr 0x004BDA14;
 
@@ -735,8 +719,7 @@ _T81:
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x004BDA38;
 // LINE 201:
-	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
-	__asm        mov    tempUMWD.nTransparentIndex, eax;
+	tempUMWD.nTransparentIndex = GraphicWindow::colorConstants.nPaletteIndexTransparent;
 // LINE 202:
 	__asm        jmp    near ptr 0x004BDA45;
 
@@ -757,27 +740,25 @@ _T81:
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ecx+0xC], eax;
 // LINE 203:
-	__asm        mov    tempUMWD.lMenuStringResourceIndex, 0x37;
+	tempUMWD.lMenuStringResourceIndex = 0x37;
 // LINE 204:
-	__asm        mov    tempUMWD.lMenuStringResourceCount, 5;
+	tempUMWD.lMenuStringResourceCount = 0x5;
 // LINE 205:
-	__asm        mov    tempUMWD.lSelectionBase, 0;
+	tempUMWD.lSelectionBase = 0x0;
 // LINE 206:
 	__asm        mov    byte ptr [ebp-0x6C], 0x80;
 	__asm        mov    byte ptr [ebp-0x6B], 0x85;
 	__asm        mov    byte ptr [ebp-0x6A], 0x4A;
 	__asm        jmp    near ptr 0x004BDAA8;
 
-	__asm        mov    eax, [ebp-0x6C];
-	__asm        mov    reinterpret_cast<uint32_t>(tempUMWD.colorFont.Blue), eax;
+	reinterpret_cast<uint32_t>(tempUMWD.colorFont.Blue) = None;
 // LINE 207:
 	__asm        mov    byte ptr [ebp-0x70], 0xEA;
 	__asm        mov    byte ptr [ebp-0x6F], 0xEF;
 	__asm        mov    byte ptr [ebp-0x6E], 0x9A;
 	__asm        jmp    near ptr 0x004BDABF;
 
-	__asm        mov    eax, [ebp-0x70];
-	__asm        mov    reinterpret_cast<uint32_t>(tempUMWD.colorFontHighlighted.Blue), eax;
+	reinterpret_cast<uint32_t>(tempUMWD.colorFontHighlighted.Blue) = None;
 // LINE 210:
 	__asm        jmp    near ptr 0x004BDACA;
 
@@ -791,13 +772,13 @@ _T81:
 	__asm        mov    [edx], eax;
 	__asm        mov    [edx+4], ecx;
 // LINE 211:
-	__asm        mov    tempUMWD.nSizeItemFont, 0x1A;
+	tempUMWD.nSizeItemFont = 0x1a;
 // LINE 212:
-	__asm        mov    tempUMWD.nLineHeight, 0x40;
+	tempUMWD.nLineHeight = 0x40;
 // LINE 213:
-	__asm        mov    tempUMWD.lTitleStringResourceIndex, 0xFFFFFFFF;
+	tempUMWD.lTitleStringResourceIndex = 0xffffffff;
 // LINE 214:
-	__asm        mov    tempUMWD.bTitleCentered, 0;
+	tempUMWD.bTitleCentered = 0x0;
 // LINE 215:
 	__asm        jmp    near ptr 0x004BDB0C;
 
@@ -811,7 +792,7 @@ _T81:
 	__asm        mov    [edx], eax;
 	__asm        mov    [edx+4], ecx;
 // LINE 216:
-	__asm        mov    tempUMWD.nSizeTitleFont, 0x24;
+	tempUMWD.nSizeTitleFont = 0x24;
 // LINE 219:
 	__asm        push   0x162;
 	__asm        call   operator new;
@@ -830,7 +811,7 @@ _T81:
 	__asm        mov    [ebp-0x8C], eax;
 	__asm        jmp    _T23b;
 _T231:
-	__asm        mov    dword ptr [ebp-0x8C], 0;
+	None = 0x0;
 _T23b:
 	__asm        push   1;
 	__asm        mov    eax, [ebp-0x8C];
@@ -846,7 +827,7 @@ _T23b:
 	__asm        mov    myUserMenuWindow, eax;
 	__asm        jmp    _T271;
 _T26a:
-	__asm        mov    myUserMenuWindow, 0;
+	myUserMenuWindow = 0x0;
 // LINE 220:
 _T271:
 	__asm        mov    eax, myUserMenuWindow;
@@ -922,8 +903,7 @@ int32_t GameModeMainMenuData::DestroyAllSurfaces() {
 	__asm        jmp    _T43;
 // LINE 232:
 _T43:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
+	this->myVideoBuffer = 0x0;
 // LINE 234:
 _T4d:
 	__asm        mov    eax, 1;
@@ -940,26 +920,19 @@ void GameModePickCareerCityData::GameModePickCareerCityData() {
 
 	__asm        jmp    near ptr 0x004BDCE9;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5923C8;
+	this-><GameModePickCareerCityData+0x00> = 0x5923c8;
 // LINE 251:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->pColorTable = 0x0;
 // LINE 252:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
+	this->pGameApp = 0x0;
 // LINE 253:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 0;
+	this->pScreenWindow = 0x0;
 // LINE 254:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
+	this->myVideoBuffer = 0x0;
 // LINE 255:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18], 0;
+	this->nSubMode = 0x0;
 // LINE 256:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x2C], 1;
+	this-><GameModePickCareerCityData+0x2c> = 0x1;
 // LINE 257:
 	__asm        jmp    near ptr 0x004BDD33;
 
@@ -969,8 +942,7 @@ void GameModePickCareerCityData::GameModePickCareerCityData() {
 // FUNCTION: COPTER_D 0x004bdd3b
 void GameModePickCareerCityData::Initialize() {
 // LINE 265:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18], 0;
+	this->nSubMode = 0x0;
 // LINE 266:
 	__asm        jmp    near ptr 0x004BDD56;
 }
@@ -1010,8 +982,7 @@ _T7b:
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    _Ta1;
 _T94:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->pColorTable = 0x0;
 // LINE 279:
 _Ta1:
 	__asm        lea    eax, szPath[0];
@@ -1049,13 +1020,11 @@ void GameModePickCareerCityData::UsePalette() {
 	__asm        mov    ecx, [eax+0x34];
 	__asm        call   dword ptr [edx+0x74];
 // LINE 290:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    gCopterPalette.pColors, eax;
+	gCopterPalette.pColors = this->pColorTable;
 // LINE 291:
-	__asm        mov    gCopterPalette.lColors, 0x100;
+	gCopterPalette.lColors = 0x100;
 // LINE 292:
-	__asm        mov    gCopterPalette.bOwnColors, 0;
+	gCopterPalette.bOwnColors = 0x0;
 // LINE 293:
 	__asm        jmp    near ptr 0x004BDE86;
 }
@@ -1070,7 +1039,7 @@ int32_t GameModePickCareerCityData::CreateAllSurfaces() {
 	__asm        cmp    dword ptr [eax+0x2C], 0;
 	__asm        je     _T25;
 // LINE 304:
-	__asm        mov    lNewCitiesPointer, 0;
+	lNewCitiesPointer = 0x0;
 // LINE 305:
 	__asm        jmp    _T3b;
 // LINE 306:
@@ -1100,7 +1069,7 @@ _T3b:
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    _T7a;
 _T73:
-	__asm        mov    dword ptr [ebp-0x20], 0;
+	None = 0x0;
 _T7a:
 	__asm        jmp    near ptr 0x004BDF0A;
 
@@ -1136,7 +1105,7 @@ _T7a:
 	__asm        mov    myCareerWindow, eax;
 	__asm        jmp    _Tea;
 _Te3:
-	__asm        mov    myCareerWindow, 0;
+	myCareerWindow = 0x0;
 // LINE 313:
 _Tea:
 	__asm        mov    eax, myCareerWindow;
@@ -1183,8 +1152,7 @@ int32_t GameModePickCareerCityData::DestroyAllSurfaces() {
 	__asm        jmp    _T43;
 // LINE 327:
 _T43:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
+	this->myVideoBuffer = 0x0;
 // LINE 329:
 _T4d:
 	__asm        mov    eax, 1;
@@ -1203,86 +1171,59 @@ void GameModePlayData::GameModePlayData() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5923CC;
 // LINE 343:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
+	this->nExceptionState = 0x0;
 // LINE 344:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18], 0;
+	this->nRenderWindowWidth = 0x0;
 // LINE 345:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1C], 0;
+	this->nRenderWindowHeight = 0x0;
 // LINE 346:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x20], 0;
+	this->nShortenedRenderWindowWidth = 0x0;
 // LINE 347:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x24], 0;
+	this->nShortenedRenderWindowHeight = 0x0;
 // LINE 348:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x28], 1;
+	this->bPanelsVisibleWhenInCopter = 0x1;
 // LINE 349:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x2C], 0;
+	this->bShowingPanels = 0x0;
 // LINE 350:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x30], 1;
+	this->bShowingEquipment = 0x1;
 // LINE 351:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x34], 0;
+	this->bUserWasInHelicopterOnLastCheck = 0x0;
 // LINE 352:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
+	this->pGameApp = 0x0;
 // LINE 353:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
+	this->lPauseCount = 0x0;
 // LINE 354:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 0;
+	this->pScreenWindow = 0x0;
 // LINE 355:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x38], 0;
+	this->pStretchBuffer = 0x0;
 // LINE 356:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x3C], 0;
+	this->pSkyImage = 0x0;
 // LINE 357:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x40], 0;
+	this->pPanel0 = 0x0;
 // LINE 358:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x44], 0;
+	this->pPanel1 = 0x0;
 // LINE 359:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x48], 0;
+	this->pPanel2 = 0x0;
 // LINE 360:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x4C], 0;
+	this->pPanel3 = 0x0;
 // LINE 361:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x50], 0;
+	this->pPanel4 = 0x0;
 // LINE 362:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x54], 0;
+	this->pPanel5 = 0x0;
 // LINE 363:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x58], 0;
+	this->pPanel6 = 0x0;
 // LINE 364:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x5C], 0;
+	this->pFlap0 = 0x0;
 // LINE 365:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x60], 0;
+	this->pFlap1 = 0x0;
 // LINE 366:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x64], 0;
+	this->pFlap2 = 0x0;
 // LINE 367:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x68], 0;
+	this->pFlap3 = 0x0;
 // LINE 368:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x6C], 0;
+	this->pPassengerWindow = 0x0;
 // LINE 369:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->pColorTable = 0x0;
 // LINE 370:
 	__asm        jmp    near ptr 0x004BE140;
 
@@ -1338,8 +1279,7 @@ _T7b:
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    _Ta1;
 _T94:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->pColorTable = 0x0;
 // LINE 418:
 _Ta1:
 	__asm        cmp    S_pal, 0;
@@ -1370,8 +1310,7 @@ _Ta1:
 	__asm        mov    S_pal, eax;
 // LINE 424:
 _Tf6:
-	__asm        mov    eax, S_pal;
-	__asm        mov    pPalettePosition, eax;
+	pPalettePosition = S_pal;
 // LINE 425:
 	__asm        mov    i, 0;
 	__asm        jmp    _T116;
@@ -1426,13 +1365,11 @@ void GameModePlayData::UsePalette() {
 	__asm        mov    ecx, [eax+0x34];
 	__asm        call   dword ptr [edx+0x74];
 // LINE 440:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    gCopterPalette.pColors, eax;
+	gCopterPalette.pColors = this->pColorTable;
 // LINE 441:
-	__asm        mov    gCopterPalette.lColors, 0x100;
+	gCopterPalette.lColors = 0x100;
 // LINE 442:
-	__asm        mov    gCopterPalette.bOwnColors, 0;
+	gCopterPalette.bOwnColors = 0x0;
 // LINE 443:
 	__asm        jmp    near ptr 0x004BE353;
 }
@@ -1453,49 +1390,37 @@ void GameModePlayData::Sleep() {
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BE38A;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x44];
-	__asm        mov    [ebp-8], eax;
+	None = this->pPanel1;
 // LINE 454:
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BE3A2;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x48];
-	__asm        mov    [ebp-0xC], eax;
+	None = this->pPanel2;
 // LINE 455:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BE3BA;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x4C];
-	__asm        mov    [ebp-0x10], eax;
+	None = this->pPanel3;
 // LINE 456:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BE3D2;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x50];
-	__asm        mov    [ebp-0x14], eax;
+	None = this->pPanel4;
 // LINE 457:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BE3EA;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x54];
-	__asm        mov    [ebp-0x18], eax;
+	None = this->pPanel5;
 // LINE 458:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BE402;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x58];
-	__asm        mov    [ebp-0x1C], eax;
+	None = this->pPanel6;
 // LINE 459:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    dword ptr [eax+0x54], 0;
@@ -1797,65 +1722,49 @@ _T137:
 	__asm        cmp    dword ptr [eax+0x2C], 0;
 	__asm        je     _T2b6;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x40];
-	__asm        mov    [ebp-4], eax;
+	None = this->pPanel0;
 // LINE 515:
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax+0x54], 1;
 	__asm        jmp    near ptr 0x004BE73D;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x44];
-	__asm        mov    [ebp-8], eax;
+	None = this->pPanel1;
 // LINE 516:
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax+0x54], 1;
 	__asm        jmp    near ptr 0x004BE755;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x48];
-	__asm        mov    [ebp-0xC], eax;
+	None = this->pPanel2;
 // LINE 517:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    dword ptr [eax+0x54], 1;
 	__asm        jmp    near ptr 0x004BE76D;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x4C];
-	__asm        mov    [ebp-0x10], eax;
+	None = this->pPanel3;
 // LINE 518:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    dword ptr [eax+0x54], 1;
 	__asm        jmp    near ptr 0x004BE785;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x50];
-	__asm        mov    [ebp-0x14], eax;
+	None = this->pPanel4;
 // LINE 519:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    dword ptr [eax+0x54], 1;
 	__asm        jmp    near ptr 0x004BE79D;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x54];
-	__asm        mov    [ebp-0x18], eax;
+	None = this->pPanel5;
 // LINE 520:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    dword ptr [eax+0x54], 1;
 	__asm        jmp    near ptr 0x004BE7B5;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x58];
-	__asm        mov    [ebp-0x1C], eax;
+	None = this->pPanel6;
 // LINE 521:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    dword ptr [eax+0x54], 1;
 	__asm        jmp    near ptr 0x004BE7CD;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x6C];
-	__asm        mov    [ebp-0x20], eax;
+	None = this->pPassengerWindow;
 // LINE 522:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    dword ptr [eax+0x54], 1;
@@ -2067,8 +1976,7 @@ _T19b:
 	__asm        mov    [ecx+0x40], eax;
 	__asm        jmp    _T1fa;
 _T1ed:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x40], 0;
+	this->pPanel0 = 0x0;
 // LINE 582:
 _T1fa:
 	__asm        push   0xFE;
@@ -2103,8 +2011,7 @@ _T1fa:
 	__asm        mov    [ecx+0x44], eax;
 	__asm        jmp    _T275;
 _T268:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x44], 0;
+	this->pPanel1 = 0x0;
 // LINE 585:
 _T275:
 	__asm        push   0xFE;
@@ -2139,8 +2046,7 @@ _T275:
 	__asm        mov    [ecx+0x48], eax;
 	__asm        jmp    _T2f0;
 _T2e3:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x48], 0;
+	this->pPanel2 = 0x0;
 // LINE 588:
 _T2f0:
 	__asm        push   0xFFFFFFFF;
@@ -2175,8 +2081,7 @@ _T2f0:
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        jmp    _T368;
 _T35b:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x4C], 0;
+	this->pPanel3 = 0x0;
 // LINE 591:
 _T368:
 	__asm        push   0xFE;
@@ -2209,8 +2114,7 @@ _T368:
 	__asm        mov    [ecx+0x50], eax;
 	__asm        jmp    _T3e3;
 _T3d6:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x50], 0;
+	this->pPanel4 = 0x0;
 // LINE 594:
 _T3e3:
 	__asm        mov    eax, this;
@@ -2241,8 +2145,7 @@ _T3e3:
 	__asm        mov    [ecx+0x54], eax;
 	__asm        jmp    _T454;
 _T447:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x54], 0;
+	this->pPanel5 = 0x0;
 // LINE 597:
 _T454:
 	__asm        mov    eax, this;
@@ -2276,8 +2179,7 @@ _T454:
 	__asm        mov    [ecx+0x58], eax;
 	__asm        jmp    _T4cf;
 _T4c2:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x58], 0;
+	this->pPanel6 = 0x0;
 // LINE 600:
 _T4cf:
 	__asm        mov    eax, this;
@@ -2311,8 +2213,7 @@ _T4cf:
 	__asm        mov    [ecx+0x6C], eax;
 	__asm        jmp    _T54b;
 _T53e:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x6C], 0;
+	this->pPassengerWindow = 0x0;
 // LINE 605:
 _T54b:
 	__asm        mov    eax, this;
@@ -2326,65 +2227,49 @@ _T54b:
 	__asm        cmp    dword ptr [eax+0x2C], 0;
 	__asm        jne    _T73e;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x40];
-	__asm        mov    [ebp-0xA4], eax;
+	None = this->pPanel0;
 // LINE 610:
 	__asm        mov    eax, [ebp-0xA4];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BEE5E;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x44];
-	__asm        mov    [ebp-0xA8], eax;
+	None = this->pPanel1;
 // LINE 611:
 	__asm        mov    eax, [ebp-0xA8];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BEE7F;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x48];
-	__asm        mov    [ebp-0xAC], eax;
+	None = this->pPanel2;
 // LINE 612:
 	__asm        mov    eax, [ebp-0xAC];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BEEA0;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x4C];
-	__asm        mov    [ebp-0xB0], eax;
+	None = this->pPanel3;
 // LINE 613:
 	__asm        mov    eax, [ebp-0xB0];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BEEC1;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x50];
-	__asm        mov    [ebp-0xB4], eax;
+	None = this->pPanel4;
 // LINE 614:
 	__asm        mov    eax, [ebp-0xB4];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BEEE2;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x54];
-	__asm        mov    [ebp-0xB8], eax;
+	None = this->pPanel5;
 // LINE 615:
 	__asm        mov    eax, [ebp-0xB8];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BEF03;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x58];
-	__asm        mov    [ebp-0xBC], eax;
+	None = this->pPanel6;
 // LINE 616:
 	__asm        mov    eax, [ebp-0xBC];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BEF24;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x6C];
-	__asm        mov    [ebp-0xC0], eax;
+	None = this->pPassengerWindow;
 // LINE 617:
 	__asm        mov    eax, [ebp-0xC0];
 	__asm        mov    dword ptr [eax+0x54], 0;
@@ -2532,8 +2417,7 @@ _Tcd:
 	__asm        mov    [ecx+0x5C], eax;
 	__asm        jmp    _T13a;
 _T130:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x5C], 0;
+	this->pFlap0 = 0x0;
 // LINE 654:
 _T13a:
 	__asm        mov    eax, this;
@@ -2576,8 +2460,7 @@ _T18b:
 	__asm        mov    ecx, [eax+0x5C];
 	__asm        call   dword ptr [edx+0x6C];
 // LINE 663:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x5C], 0;
+	this->pFlap0 = 0x0;
 // LINE 666:
 _T1b3:
 	__asm        mov    eax, userPersonalInfo;
@@ -2605,7 +2488,7 @@ _T1b3:
 	__asm        mov    [ebp-0x58], eax;
 	__asm        jmp    _T20c;
 _T205:
-	__asm        mov    dword ptr [ebp-0x58], 0;
+	None = 0x0;
 _T20c:
 	__asm        mov    eax, [ebp-0x58];
 	__asm        push   eax;
@@ -2626,8 +2509,7 @@ _T20c:
 	__asm        mov    [ecx+0x60], eax;
 	__asm        jmp    _T247;
 _T23d:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x60], 0;
+	this->pFlap1 = 0x0;
 // LINE 669:
 _T247:
 	__asm        mov    eax, this;
@@ -2670,8 +2552,7 @@ _T298:
 	__asm        mov    ecx, [eax+0x60];
 	__asm        call   dword ptr [edx+0x6C];
 // LINE 678:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x60], 0;
+	this->pFlap1 = 0x0;
 // LINE 681:
 _T2c0:
 	__asm        mov    eax, userPersonalInfo;
@@ -2699,7 +2580,7 @@ _T2c0:
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        jmp    _T319;
 _T312:
-	__asm        mov    dword ptr [ebp-0x5C], 0;
+	None = 0x0;
 _T319:
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        push   eax;
@@ -2720,8 +2601,7 @@ _T319:
 	__asm        mov    [ecx+0x64], eax;
 	__asm        jmp    _T354;
 _T34a:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x64], 0;
+	this->pFlap2 = 0x0;
 // LINE 684:
 _T354:
 	__asm        mov    eax, this;
@@ -2764,8 +2644,7 @@ _T3a5:
 	__asm        mov    ecx, [eax+0x64];
 	__asm        call   dword ptr [edx+0x6C];
 // LINE 693:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x64], 0;
+	this->pFlap2 = 0x0;
 // LINE 696:
 _T3cd:
 	__asm        mov    eax, userPersonalInfo;
@@ -2793,7 +2672,7 @@ _T3cd:
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    _T426;
 _T41f:
-	__asm        mov    dword ptr [ebp-0x60], 0;
+	None = 0x0;
 _T426:
 	__asm        mov    eax, [ebp-0x60];
 	__asm        push   eax;
@@ -2814,8 +2693,7 @@ _T426:
 	__asm        mov    [ecx+0x68], eax;
 	__asm        jmp    _T461;
 _T457:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x68], 0;
+	this->pFlap3 = 0x0;
 // LINE 699:
 _T461:
 	__asm        mov    eax, this;
@@ -2858,8 +2736,7 @@ _T4b2:
 	__asm        mov    ecx, [eax+0x68];
 	__asm        call   dword ptr [edx+0x6C];
 // LINE 708:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x68], 0;
+	this->pFlap3 = 0x0;
 // LINE 712:
 _T4da:
 	__asm        jmp    near ptr 0x004BF4F7;
@@ -2885,8 +2762,7 @@ int32_t GameModePlayData::CreateIndependentSurfaces() {
 	__asm        mov    [ecx+0x3C], eax;
 	__asm        jmp    _T53;
 _T49:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x3C], 0;
+	this->pSkyImage = 0x0;
 // LINE 724:
 _T53:
 	__asm        mov    eax, this;
@@ -2925,8 +2801,7 @@ _T53:
 	__asm        mov    [ecx+0x38], eax;
 	__asm        jmp    _Tbf;
 _Tb5:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x38], 0;
+	this->pStretchBuffer = 0x0;
 // LINE 726:
 _Tbf:
 	__asm        mov    eax, 1;
@@ -2960,8 +2835,7 @@ void GameModePlayData::DestroyIndependentSurfaces() {
 	__asm        jmp    _T50;
 // LINE 738:
 _T50:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x38], 0;
+	this->pStretchBuffer = 0x0;
 // LINE 740:
 _T5a:
 	__asm        mov    eax, this;
@@ -2989,8 +2863,7 @@ _T5a:
 	__asm        jmp    _Ta3;
 // LINE 742:
 _Ta3:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x3C], 0;
+	this->pSkyImage = 0x0;
 // LINE 744:
 _Tad:
 	__asm        jmp    near ptr 0x004BF67C;
@@ -3022,8 +2895,7 @@ int32_t GameModePlayData::DestroyPanels() {
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+0x6C];
 // LINE 765:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x40], 0;
+	this->pPanel0 = 0x0;
 // LINE 767:
 _T34:
 	__asm        mov    eax, this;
@@ -3037,8 +2909,7 @@ _T34:
 	__asm        mov    ecx, [eax+0x44];
 	__asm        call   dword ptr [edx+0x6C];
 // LINE 769:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x44], 0;
+	this->pPanel1 = 0x0;
 // LINE 771:
 _T5c:
 	__asm        mov    eax, this;
@@ -3052,8 +2923,7 @@ _T5c:
 	__asm        mov    ecx, [eax+0x48];
 	__asm        call   dword ptr [edx+0x6C];
 // LINE 773:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x48], 0;
+	this->pPanel2 = 0x0;
 // LINE 775:
 _T84:
 	__asm        mov    eax, this;
@@ -3067,8 +2937,7 @@ _T84:
 	__asm        mov    ecx, [eax+0x4C];
 	__asm        call   dword ptr [edx+0x6C];
 // LINE 777:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x4C], 0;
+	this->pPanel3 = 0x0;
 // LINE 779:
 _Tac:
 	__asm        mov    eax, this;
@@ -3082,8 +2951,7 @@ _Tac:
 	__asm        mov    ecx, [eax+0x50];
 	__asm        call   dword ptr [edx+0x6C];
 // LINE 781:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x50], 0;
+	this->pPanel4 = 0x0;
 // LINE 783:
 _Td4:
 	__asm        mov    eax, this;
@@ -3097,8 +2965,7 @@ _Td4:
 	__asm        mov    ecx, [eax+0x54];
 	__asm        call   dword ptr [edx+0x6C];
 // LINE 785:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x54], 0;
+	this->pPanel5 = 0x0;
 // LINE 787:
 _Tfc:
 	__asm        mov    eax, this;
@@ -3112,8 +2979,7 @@ _Tfc:
 	__asm        mov    ecx, [eax+0x58];
 	__asm        call   dword ptr [edx+0x6C];
 // LINE 789:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x58], 0;
+	this->pPanel6 = 0x0;
 // LINE 791:
 _T124:
 	__asm        mov    eax, this;
@@ -3127,8 +2993,7 @@ _T124:
 	__asm        mov    ecx, [eax+0x5C];
 	__asm        call   dword ptr [edx+0x6C];
 // LINE 793:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x5C], 0;
+	this->pFlap0 = 0x0;
 // LINE 795:
 _T14c:
 	__asm        mov    eax, this;
@@ -3142,8 +3007,7 @@ _T14c:
 	__asm        mov    ecx, [eax+0x60];
 	__asm        call   dword ptr [edx+0x6C];
 // LINE 797:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x60], 0;
+	this->pFlap1 = 0x0;
 // LINE 799:
 _T174:
 	__asm        mov    eax, this;
@@ -3157,8 +3021,7 @@ _T174:
 	__asm        mov    ecx, [eax+0x64];
 	__asm        call   dword ptr [edx+0x6C];
 // LINE 801:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x64], 0;
+	this->pFlap2 = 0x0;
 // LINE 803:
 _T19c:
 	__asm        mov    eax, this;
@@ -3172,8 +3035,7 @@ _T19c:
 	__asm        mov    ecx, [eax+0x68];
 	__asm        call   dword ptr [edx+0x6C];
 // LINE 805:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x68], 0;
+	this->pFlap3 = 0x0;
 // LINE 807:
 _T1c4:
 	__asm        mov    eax, this;
@@ -3187,8 +3049,7 @@ _T1c4:
 	__asm        mov    ecx, [eax+0x6C];
 	__asm        call   dword ptr [edx+0x6C];
 // LINE 809:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x6C], 0;
+	this->pPassengerWindow = 0x0;
 // LINE 811:
 _T1ec:
 	__asm        mov    eax, 1;
@@ -3207,8 +3068,7 @@ void GameModePlayData::ShowPanels() {
 	__asm        cmp    dword ptr [eax+0x34], 0;
 	__asm        je     _T1ff;
 // LINE 836:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x2C], 1;
+	this->bShowingPanels = 0x1;
 // LINE 839:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x38], 0;
@@ -3230,19 +3090,12 @@ void GameModePlayData::ShowPanels() {
 // LINE 842:
 	__asm        jmp    near ptr 0x004BF906;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x38];
-	__asm        mov    eax, [eax+0x14];
-	__asm        mov    qwindow.RenderWide, eax;
+	qwindow.RenderWide = this->pStretchBuffer->mStride;
 // LINE 845:
 _T72:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x20];
-	__asm        mov    swindow.WindowWide, eax;
+	swindow.WindowWide = this->nShortenedRenderWindowWidth;
 // LINE 846:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x24];
-	__asm        mov    swindow.WindowHigh, eax;
+	swindow.WindowHigh = this->nShortenedRenderWindowHeight;
 // LINE 847:
 	__asm        jmp    near ptr 0x004BF92F;
 
@@ -3259,57 +3112,43 @@ _T72:
 	__asm        mov    dword ptr [eax+0x54], 1;
 	__asm        jmp    near ptr 0x004BF958;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x44];
-	__asm        mov    [ebp-8], eax;
+	None = this->pPanel1;
 // LINE 851:
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax+0x54], 1;
 	__asm        jmp    near ptr 0x004BF970;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x48];
-	__asm        mov    [ebp-0xC], eax;
+	None = this->pPanel2;
 // LINE 852:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    dword ptr [eax+0x54], 1;
 	__asm        jmp    near ptr 0x004BF988;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x4C];
-	__asm        mov    [ebp-0x10], eax;
+	None = this->pPanel3;
 // LINE 853:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    dword ptr [eax+0x54], 1;
 	__asm        jmp    near ptr 0x004BF9A0;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x50];
-	__asm        mov    [ebp-0x14], eax;
+	None = this->pPanel4;
 // LINE 854:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    dword ptr [eax+0x54], 1;
 	__asm        jmp    near ptr 0x004BF9B8;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x54];
-	__asm        mov    [ebp-0x18], eax;
+	None = this->pPanel5;
 // LINE 855:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    dword ptr [eax+0x54], 1;
 	__asm        jmp    near ptr 0x004BF9D0;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x58];
-	__asm        mov    [ebp-0x1C], eax;
+	None = this->pPanel6;
 // LINE 856:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    dword ptr [eax+0x54], 1;
 	__asm        jmp    near ptr 0x004BF9E8;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x6C];
-	__asm        mov    [ebp-0x20], eax;
+	None = this->pPassengerWindow;
 // LINE 857:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    dword ptr [eax+0x54], 1;
@@ -3377,8 +3216,7 @@ void GameModePlayData::HidePanels() {
 	__asm        cmp    dword ptr [eax+0x2C], 0;
 	__asm        je     _T1e5;
 // LINE 890:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x2C], 0;
+	this->bShowingPanels = 0x0;
 // LINE 892:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x38], 0;
@@ -3400,19 +3238,12 @@ void GameModePlayData::HidePanels() {
 // LINE 895:
 	__asm        jmp    near ptr 0x004BFB02;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x38];
-	__asm        mov    eax, [eax+0x14];
-	__asm        mov    qwindow.RenderWide, eax;
+	qwindow.RenderWide = this->pStretchBuffer->mStride;
 // LINE 898:
 _T65:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x18];
-	__asm        mov    swindow.WindowWide, eax;
+	swindow.WindowWide = this->nRenderWindowWidth;
 // LINE 899:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        mov    swindow.WindowHigh, eax;
+	swindow.WindowHigh = this->nRenderWindowHeight;
 // LINE 900:
 	__asm        jmp    near ptr 0x004BFB2B;
 
@@ -3429,57 +3260,43 @@ _T65:
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BFB54;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x44];
-	__asm        mov    [ebp-8], eax;
+	None = this->pPanel1;
 // LINE 905:
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BFB6C;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x48];
-	__asm        mov    [ebp-0xC], eax;
+	None = this->pPanel2;
 // LINE 906:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BFB84;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x4C];
-	__asm        mov    [ebp-0x10], eax;
+	None = this->pPanel3;
 // LINE 907:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BFB9C;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x50];
-	__asm        mov    [ebp-0x14], eax;
+	None = this->pPanel4;
 // LINE 908:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BFBB4;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x54];
-	__asm        mov    [ebp-0x18], eax;
+	None = this->pPanel5;
 // LINE 909:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BFBCC;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x58];
-	__asm        mov    [ebp-0x1C], eax;
+	None = this->pPanel6;
 // LINE 910:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BFBE4;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x6C];
-	__asm        mov    [ebp-0x20], eax;
+	None = this->pPassengerWindow;
 // LINE 911:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    dword ptr [eax+0x54], 0;
@@ -3547,8 +3364,7 @@ void GameModePlayData::ShowEquipment() {
 	__asm        cmp    dword ptr [eax+0x34], 0;
 	__asm        je     _Td1;
 // LINE 931:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x30], 1;
+	this->bShowingEquipment = 0x1;
 // LINE 932:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x2C], 0;
@@ -3612,8 +3428,7 @@ void GameModePlayData::HideEquipment() {
 	__asm        cmp    dword ptr [eax+0x30], 0;
 	__asm        je     _Tb7;
 // LINE 953:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x30], 0;
+	this->bShowingEquipment = 0x0;
 // LINE 954:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x5C], 0;
@@ -3673,8 +3488,7 @@ void GameModePlayData::TogglePanelDisplay() {
 	__asm        cmp    dword ptr [eax+0x2C], 0;
 	__asm        je     _T30;
 // LINE 974:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x28], 0;
+	this->bPanelsVisibleWhenInCopter = 0x0;
 // LINE 975:
 	__asm        mov    ecx, this;
 	__asm        call   GameModePlayData::HidePanels;
@@ -3682,8 +3496,7 @@ void GameModePlayData::TogglePanelDisplay() {
 	__asm        jmp    _T42;
 // LINE 979:
 _T30:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x28], 1;
+	this->bPanelsVisibleWhenInCopter = 0x1;
 // LINE 980:
 	__asm        mov    ecx, this;
 	__asm        call   GameModePlayData::ShowPanels;
@@ -3726,7 +3539,7 @@ long GameModePlayData::TestForUserInHelicopter() {
 	long lReturnValue;
 
 // LINE 1012:
-	__asm        mov    lReturnValue, 0;
+	lReturnValue = 0x0;
 // LINE 1014:
 	__asm        cmp    G_camera_mode, 3;
 	__asm        je     _T25;
@@ -3745,8 +3558,7 @@ _T39:
 	__asm        cmp    dword ptr [eax+0x34], 0;
 	__asm        jne    _T5d;
 // LINE 1020:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x34], 1;
+	this->bUserWasInHelicopterOnLastCheck = 0x1;
 // LINE 1021:
 	__asm        mov    ecx, this;
 	__asm        call   GameModePlayData::ProcessUserJustJumpedIntoHelicopter;
@@ -3760,8 +3572,7 @@ _T62:
 	__asm        cmp    dword ptr [eax+0x34], 0;
 	__asm        je     _T86;
 // LINE 1030:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x34], 0;
+	this->bUserWasInHelicopterOnLastCheck = 0x0;
 // LINE 1031:
 	__asm        mov    ecx, this;
 	__asm        call   GameModePlayData::ProcessUserJustJumpedOutOfHelicopter;
@@ -3825,15 +3636,9 @@ void GameModePlayData::SetUpRenderWindowSizes() {
 	__asm        mov    ecx, [eax+0xC];
 	__asm        call   CGameApp::GetFullRenderingWindowSize;
 // LINE 1085:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x18];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x20], eax;
+	this->nShortenedRenderWindowWidth = this->nRenderWindowWidth;
 // LINE 1086:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x24], eax;
+	this->nShortenedRenderWindowHeight = this->nRenderWindowHeight;
 // LINE 1088:
 	__asm        cmp    gameResolution, 0;
 	__asm        jne    _T5d;
@@ -3898,18 +3703,11 @@ _Tbe:
 // LINE 1108:
 	__asm        jmp    near ptr 0x004C00CC;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x38];
-	__asm        mov    eax, [eax+0x14];
-	__asm        mov    qwindow.RenderWide, eax;
+	qwindow.RenderWide = this->pStretchBuffer->mStride;
 // LINE 1111:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x20];
-	__asm        mov    swindow.WindowWide, eax;
+	swindow.WindowWide = this->nShortenedRenderWindowWidth;
 // LINE 1112:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x24];
-	__asm        mov    swindow.WindowHigh, eax;
+	swindow.WindowHigh = this->nShortenedRenderWindowHeight;
 // LINE 1113:
 	__asm        jmp    near ptr 0x004C00F5;
 
@@ -3938,18 +3736,11 @@ _T131:
 // LINE 1118:
 	__asm        jmp    near ptr 0x004C0132;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x38];
-	__asm        mov    eax, [eax+0x14];
-	__asm        mov    qwindow.RenderWide, eax;
+	qwindow.RenderWide = this->pStretchBuffer->mStride;
 // LINE 1121:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x18];
-	__asm        mov    swindow.WindowWide, eax;
+	swindow.WindowWide = this->nRenderWindowWidth;
 // LINE 1122:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        mov    swindow.WindowHigh, eax;
+	swindow.WindowHigh = this->nRenderWindowHeight;
 // LINE 1123:
 	__asm        jmp    near ptr 0x004C015B;
 
@@ -4036,9 +3827,7 @@ _T75:
 _T84:
 	__asm        jmp    near ptr 0x004C0241;
 
-	__asm        mov    eax, tempShortcutListIterator.node;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    lCurrentCommand, eax;
+	lCurrentCommand = tempShortcutListIterator.node->data.lCommand;
 // LINE 1149:
 	__asm        mov    eax, lCurrentCommand;
 	__asm        push   eax;
@@ -4123,17 +3912,17 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	struct Shortcut tempShortcut;
 
 // LINE 1178:
-	__asm        mov    tempShortcut.lDeviceID, 0;
+	tempShortcut.lDeviceID = 0x0;
 // LINE 1180:
-	__asm        mov    tempShortcut.lCommand, 0;
+	tempShortcut.lCommand = 0x0;
 // LINE 1181:
-	__asm        mov    tempShortcut.lKey, 0;
+	tempShortcut.lKey = 0x0;
 // LINE 1182:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 1183:
-	__asm        mov    tempShortcut.lPush, 0;
+	tempShortcut.lPush = 0x0;
 // LINE 1184:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1185:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x148];
@@ -4155,15 +3944,15 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C03A3;
 // LINE 1187:
-	__asm        mov    tempShortcut.lCommand, 0x38;
+	tempShortcut.lCommand = 0x38;
 // LINE 1188:
-	__asm        mov    tempShortcut.lKey, 0x1B;
+	tempShortcut.lKey = 0x1b;
 // LINE 1189:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 1190:
-	__asm        mov    tempShortcut.lPush, 1;
+	tempShortcut.lPush = 0x1;
 // LINE 1191:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1192:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x148];
@@ -4185,15 +3974,15 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C0407;
 // LINE 1194:
-	__asm        mov    tempShortcut.lCommand, 0x22;
+	tempShortcut.lCommand = 0x22;
 // LINE 1195:
-	__asm        mov    tempShortcut.lKey, 0x70;
+	tempShortcut.lKey = 0x70;
 // LINE 1196:
-	__asm        mov    tempShortcut.lModifiers, 2;
+	tempShortcut.lModifiers = 0x2;
 // LINE 1197:
-	__asm        mov    tempShortcut.lPush, 1;
+	tempShortcut.lPush = 0x1;
 // LINE 1198:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1199:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x148];
@@ -4215,15 +4004,15 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C046B;
 // LINE 1201:
-	__asm        mov    tempShortcut.lCommand, 0x23;
+	tempShortcut.lCommand = 0x23;
 // LINE 1202:
-	__asm        mov    tempShortcut.lKey, 0x71;
+	tempShortcut.lKey = 0x71;
 // LINE 1203:
-	__asm        mov    tempShortcut.lModifiers, 2;
+	tempShortcut.lModifiers = 0x2;
 // LINE 1204:
-	__asm        mov    tempShortcut.lPush, 1;
+	tempShortcut.lPush = 0x1;
 // LINE 1205:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1206:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x148];
@@ -4245,15 +4034,15 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C04CF;
 // LINE 1208:
-	__asm        mov    tempShortcut.lCommand, 0x24;
+	tempShortcut.lCommand = 0x24;
 // LINE 1209:
-	__asm        mov    tempShortcut.lKey, 0x72;
+	tempShortcut.lKey = 0x72;
 // LINE 1210:
-	__asm        mov    tempShortcut.lModifiers, 2;
+	tempShortcut.lModifiers = 0x2;
 // LINE 1211:
-	__asm        mov    tempShortcut.lPush, 1;
+	tempShortcut.lPush = 0x1;
 // LINE 1212:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1213:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x148];
@@ -4275,15 +4064,15 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C0533;
 // LINE 1215:
-	__asm        mov    tempShortcut.lCommand, 0x25;
+	tempShortcut.lCommand = 0x25;
 // LINE 1216:
-	__asm        mov    tempShortcut.lKey, 0x73;
+	tempShortcut.lKey = 0x73;
 // LINE 1217:
-	__asm        mov    tempShortcut.lModifiers, 2;
+	tempShortcut.lModifiers = 0x2;
 // LINE 1218:
-	__asm        mov    tempShortcut.lPush, 1;
+	tempShortcut.lPush = 0x1;
 // LINE 1219:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1220:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x148];
@@ -4305,15 +4094,15 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C0597;
 // LINE 1222:
-	__asm        mov    tempShortcut.lCommand, 0x26;
+	tempShortcut.lCommand = 0x26;
 // LINE 1223:
-	__asm        mov    tempShortcut.lKey, 0x31;
+	tempShortcut.lKey = 0x31;
 // LINE 1224:
-	__asm        mov    tempShortcut.lModifiers, 2;
+	tempShortcut.lModifiers = 0x2;
 // LINE 1225:
-	__asm        mov    tempShortcut.lPush, 0;
+	tempShortcut.lPush = 0x0;
 // LINE 1226:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1227:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x148];
@@ -4335,15 +4124,15 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C05FB;
 // LINE 1229:
-	__asm        mov    tempShortcut.lCommand, 0x27;
+	tempShortcut.lCommand = 0x27;
 // LINE 1230:
-	__asm        mov    tempShortcut.lKey, 0x32;
+	tempShortcut.lKey = 0x32;
 // LINE 1231:
-	__asm        mov    tempShortcut.lModifiers, 2;
+	tempShortcut.lModifiers = 0x2;
 // LINE 1232:
-	__asm        mov    tempShortcut.lPush, 0;
+	tempShortcut.lPush = 0x0;
 // LINE 1233:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1234:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x148];
@@ -4365,15 +4154,15 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C065F;
 // LINE 1236:
-	__asm        mov    tempShortcut.lCommand, 0x28;
+	tempShortcut.lCommand = 0x28;
 // LINE 1237:
-	__asm        mov    tempShortcut.lKey, 0x33;
+	tempShortcut.lKey = 0x33;
 // LINE 1238:
-	__asm        mov    tempShortcut.lModifiers, 2;
+	tempShortcut.lModifiers = 0x2;
 // LINE 1239:
-	__asm        mov    tempShortcut.lPush, 0;
+	tempShortcut.lPush = 0x0;
 // LINE 1240:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1241:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x148];
@@ -4395,15 +4184,15 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C06C9;
 // LINE 1243:
-	__asm        mov    tempShortcut.lCommand, 0x29;
+	tempShortcut.lCommand = 0x29;
 // LINE 1244:
-	__asm        mov    tempShortcut.lKey, 0x34;
+	tempShortcut.lKey = 0x34;
 // LINE 1245:
-	__asm        mov    tempShortcut.lModifiers, 2;
+	tempShortcut.lModifiers = 0x2;
 // LINE 1246:
-	__asm        mov    tempShortcut.lPush, 0;
+	tempShortcut.lPush = 0x0;
 // LINE 1247:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1248:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x148];
@@ -4425,15 +4214,15 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C073C;
 // LINE 1250:
-	__asm        mov    tempShortcut.lCommand, 0x2A;
+	tempShortcut.lCommand = 0x2a;
 // LINE 1251:
-	__asm        mov    tempShortcut.lKey, 0x48;
+	tempShortcut.lKey = 0x48;
 // LINE 1252:
-	__asm        mov    tempShortcut.lModifiers, 2;
+	tempShortcut.lModifiers = 0x2;
 // LINE 1253:
-	__asm        mov    tempShortcut.lPush, 1;
+	tempShortcut.lPush = 0x1;
 // LINE 1254:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1255:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x148];
@@ -4455,15 +4244,15 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C07AF;
 // LINE 1257:
-	__asm        mov    tempShortcut.lCommand, 0x2D;
+	tempShortcut.lCommand = 0x2d;
 // LINE 1258:
-	__asm        mov    tempShortcut.lKey, 0x4F;
+	tempShortcut.lKey = 0x4f;
 // LINE 1259:
-	__asm        mov    tempShortcut.lModifiers, 2;
+	tempShortcut.lModifiers = 0x2;
 // LINE 1260:
-	__asm        mov    tempShortcut.lPush, 1;
+	tempShortcut.lPush = 0x1;
 // LINE 1261:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1262:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x148];
@@ -4485,15 +4274,15 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C0822;
 // LINE 1264:
-	__asm        mov    tempShortcut.lCommand, 0x2E;
+	tempShortcut.lCommand = 0x2e;
 // LINE 1265:
-	__asm        mov    tempShortcut.lKey, 0x47;
+	tempShortcut.lKey = 0x47;
 // LINE 1266:
-	__asm        mov    tempShortcut.lModifiers, 2;
+	tempShortcut.lModifiers = 0x2;
 // LINE 1267:
-	__asm        mov    tempShortcut.lPush, 1;
+	tempShortcut.lPush = 0x1;
 // LINE 1268:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1269:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x148];
@@ -4552,15 +4341,15 @@ _T5a5:
 
 	__asm        jmp    near ptr 0x004C0938;
 // LINE 1271:
-	__asm        mov    tempShortcut.lCommand, 0x33;
+	tempShortcut.lCommand = 0x33;
 // LINE 1272:
-	__asm        mov    tempShortcut.lKey, 0x53;
+	tempShortcut.lKey = 0x53;
 // LINE 1273:
-	__asm        mov    tempShortcut.lModifiers, 2;
+	tempShortcut.lModifiers = 0x2;
 // LINE 1274:
-	__asm        mov    tempShortcut.lPush, 1;
+	tempShortcut.lPush = 0x1;
 // LINE 1275:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1276:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x148];
@@ -4582,15 +4371,15 @@ _T5a5:
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C09AB;
 // LINE 1278:
-	__asm        mov    tempShortcut.lCommand, 0x34;
+	tempShortcut.lCommand = 0x34;
 // LINE 1279:
-	__asm        mov    tempShortcut.lKey, 0x45;
+	tempShortcut.lKey = 0x45;
 // LINE 1280:
-	__asm        mov    tempShortcut.lModifiers, 2;
+	tempShortcut.lModifiers = 0x2;
 // LINE 1281:
-	__asm        mov    tempShortcut.lPush, 1;
+	tempShortcut.lPush = 0x1;
 // LINE 1282:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1283:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x148];
@@ -4649,15 +4438,15 @@ _T72e:
 
 	__asm        jmp    near ptr 0x004C0AC1;
 // LINE 1285:
-	__asm        mov    tempShortcut.lCommand, 0x2C;
+	tempShortcut.lCommand = 0x2c;
 // LINE 1286:
-	__asm        mov    tempShortcut.lKey, 0x4C;
+	tempShortcut.lKey = 0x4c;
 // LINE 1287:
-	__asm        mov    tempShortcut.lModifiers, 2;
+	tempShortcut.lModifiers = 0x2;
 // LINE 1288:
-	__asm        mov    tempShortcut.lPush, 0;
+	tempShortcut.lPush = 0x0;
 // LINE 1289:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1290:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x148];
@@ -4716,15 +4505,15 @@ _T844:
 
 	__asm        jmp    near ptr 0x004C0BD7;
 // LINE 1292:
-	__asm        mov    tempShortcut.lCommand, 0x2B;
+	tempShortcut.lCommand = 0x2b;
 // LINE 1293:
-	__asm        mov    tempShortcut.lKey, 0x4B;
+	tempShortcut.lKey = 0x4b;
 // LINE 1294:
-	__asm        mov    tempShortcut.lModifiers, 2;
+	tempShortcut.lModifiers = 0x2;
 // LINE 1295:
-	__asm        mov    tempShortcut.lPush, 0;
+	tempShortcut.lPush = 0x0;
 // LINE 1296:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1297:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x148];
@@ -4746,15 +4535,15 @@ _T844:
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C0C4A;
 // LINE 1299:
-	__asm        mov    tempShortcut.lCommand, 0x2F;
+	tempShortcut.lCommand = 0x2f;
 // LINE 1300:
-	__asm        mov    tempShortcut.lKey, 0x44;
+	tempShortcut.lKey = 0x44;
 // LINE 1301:
-	__asm        mov    tempShortcut.lModifiers, 2;
+	tempShortcut.lModifiers = 0x2;
 // LINE 1302:
-	__asm        mov    tempShortcut.lPush, 1;
+	tempShortcut.lPush = 0x1;
 // LINE 1303:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1304:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x148];
@@ -4813,15 +4602,15 @@ _T9cd:
 
 	__asm        jmp    near ptr 0x004C0D60;
 // LINE 1306:
-	__asm        mov    tempShortcut.lCommand, 0x35;
+	tempShortcut.lCommand = 0x35;
 // LINE 1307:
-	__asm        mov    tempShortcut.lKey, 0x49;
+	tempShortcut.lKey = 0x49;
 // LINE 1308:
-	__asm        mov    tempShortcut.lModifiers, 2;
+	tempShortcut.lModifiers = 0x2;
 // LINE 1309:
-	__asm        mov    tempShortcut.lPush, 1;
+	tempShortcut.lPush = 0x1;
 // LINE 1310:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1311:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x148];
@@ -4880,15 +4669,15 @@ _Tae3:
 
 	__asm        jmp    near ptr 0x004C0E76;
 // LINE 1313:
-	__asm        mov    tempShortcut.lCommand, 0x37;
+	tempShortcut.lCommand = 0x37;
 // LINE 1314:
-	__asm        mov    tempShortcut.lKey, 0xD;
+	tempShortcut.lKey = 0xd;
 // LINE 1315:
-	__asm        mov    tempShortcut.lModifiers, 4;
+	tempShortcut.lModifiers = 0x4;
 // LINE 1316:
-	__asm        mov    tempShortcut.lPush, 1;
+	tempShortcut.lPush = 0x1;
 // LINE 1317:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1318:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x148];
@@ -4910,15 +4699,15 @@ _Tae3:
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C0EE9;
 // LINE 1320:
-	__asm        mov    tempShortcut.lCommand, 0x31;
+	tempShortcut.lCommand = 0x31;
 // LINE 1321:
-	__asm        mov    tempShortcut.lKey, 0x51;
+	tempShortcut.lKey = 0x51;
 // LINE 1322:
-	__asm        mov    tempShortcut.lModifiers, 2;
+	tempShortcut.lModifiers = 0x2;
 // LINE 1323:
-	__asm        mov    tempShortcut.lPush, 1;
+	tempShortcut.lPush = 0x1;
 // LINE 1324:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1325:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x148];
@@ -4977,15 +4766,15 @@ _Tc6c:
 
 	__asm        jmp    near ptr 0x004C0FFF;
 // LINE 1327:
-	__asm        mov    tempShortcut.lCommand, 0x32;
+	tempShortcut.lCommand = 0x32;
 // LINE 1328:
-	__asm        mov    tempShortcut.lKey, 0x50;
+	tempShortcut.lKey = 0x50;
 // LINE 1329:
-	__asm        mov    tempShortcut.lModifiers, 2;
+	tempShortcut.lModifiers = 0x2;
 // LINE 1330:
-	__asm        mov    tempShortcut.lPush, 1;
+	tempShortcut.lPush = 0x1;
 // LINE 1331:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1332:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x148];
@@ -5044,15 +4833,15 @@ _Td82:
 
 	__asm        jmp    near ptr 0x004C1115;
 // LINE 1334:
-	__asm        mov    tempShortcut.lCommand, 0x36;
+	tempShortcut.lCommand = 0x36;
 // LINE 1335:
-	__asm        mov    tempShortcut.lKey, 0x52;
+	tempShortcut.lKey = 0x52;
 // LINE 1336:
-	__asm        mov    tempShortcut.lModifiers, 6;
+	tempShortcut.lModifiers = 0x6;
 // LINE 1337:
-	__asm        mov    tempShortcut.lPush, 1;
+	tempShortcut.lPush = 0x1;
 // LINE 1338:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1339:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x148];
@@ -5074,15 +4863,15 @@ _Td82:
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C1188;
 // LINE 1341:
-	__asm        mov    tempShortcut.lCommand, 0x3A;
+	tempShortcut.lCommand = 0x3a;
 // LINE 1342:
-	__asm        mov    tempShortcut.lKey, 0x58;
+	tempShortcut.lKey = 0x58;
 // LINE 1343:
-	__asm        mov    tempShortcut.lModifiers, 6;
+	tempShortcut.lModifiers = 0x6;
 // LINE 1344:
-	__asm        mov    tempShortcut.lPush, 1;
+	tempShortcut.lPush = 0x1;
 // LINE 1345:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1346:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x148];
@@ -5155,20 +4944,15 @@ void GameModeHangarData::GameModeHangarData() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5923D0;
 // LINE 1427:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
+	this->lPauseCount = 0x0;
 // LINE 1428:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
+	this->pHangarWindow = 0x0;
 // LINE 1429:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
+	this->pGameApp = 0x0;
 // LINE 1430:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 0;
+	this->pScreenWindow = 0x0;
 // LINE 1431:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->pColorTable = 0x0;
 // LINE 1432:
 	__asm        mov    ecx, this;
 	__asm        call   GameModeHangarData::SetCommandsToDefaults;
@@ -5198,7 +4982,7 @@ int32_t GameModeHangarData::CreateAllSurfaces() {
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _T4b;
 _T44:
-	__asm        mov    dword ptr [ebp-8], 0;
+	None = 0x0;
 _T4b:
 	__asm        push   1;
 	__asm        mov    eax, [ebp-8];
@@ -5213,8 +4997,7 @@ _T4b:
 	__asm        mov    [ecx+0x14], eax;
 	__asm        jmp    _T7a;
 _T70:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
+	this->pHangarWindow = 0x0;
 // LINE 1444:
 _T7a:
 	__asm        mov    eax, this;
@@ -5246,8 +5029,7 @@ void GameModeHangarData::DestroyAllSurfaces() {
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   dword ptr [edx+0x6C];
 // LINE 1455:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
+	this->pHangarWindow = 0x0;
 // LINE 1457:
 _T34:
 	__asm        jmp    near ptr 0x004C13F2;
@@ -5350,8 +5132,7 @@ _T5a:
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    _T77;
 _T6d:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->pColorTable = 0x0;
 // LINE 1491:
 _T77:
 	__asm        mov    eax, this;
@@ -5379,13 +5160,11 @@ void GameModeHangarData::UsePalette() {
 	__asm        mov    ecx, [eax+0x34];
 	__asm        call   dword ptr [edx+0x74];
 // LINE 1500:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    gCopterPalette.pColors, eax;
+	gCopterPalette.pColors = this->pColorTable;
 // LINE 1501:
-	__asm        mov    gCopterPalette.lColors, 0x100;
+	gCopterPalette.lColors = 0x100;
 // LINE 1502:
-	__asm        mov    gCopterPalette.bOwnColors, 0;
+	gCopterPalette.bOwnColors = 0x0;
 // LINE 1503:
 	__asm        jmp    near ptr 0x004C1590;
 }
@@ -5470,17 +5249,17 @@ _Tae:
 _Tfb:
 	__asm        jmp    near ptr 0x004C16B3;
 // LINE 1524:
-	__asm        mov    tempShortcut.lDeviceID, 0;
+	tempShortcut.lDeviceID = 0x0;
 // LINE 1526:
-	__asm        mov    tempShortcut.lCommand, 0;
+	tempShortcut.lCommand = 0x0;
 // LINE 1527:
-	__asm        mov    tempShortcut.lKey, 0;
+	tempShortcut.lKey = 0x0;
 // LINE 1528:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 1529:
-	__asm        mov    tempShortcut.lPush, 0;
+	tempShortcut.lPush = 0x0;
 // LINE 1530:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1531:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF0];
@@ -5539,15 +5318,15 @@ _T192:
 
 	__asm        jmp    near ptr 0x004C1794;
 // LINE 1533:
-	__asm        mov    tempShortcut.lCommand, 1;
+	tempShortcut.lCommand = 0x1;
 // LINE 1534:
-	__asm        mov    tempShortcut.lKey, 0x1B;
+	tempShortcut.lKey = 0x1b;
 // LINE 1535:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 1536:
-	__asm        mov    tempShortcut.lPush, 1;
+	tempShortcut.lPush = 0x1;
 // LINE 1537:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1538:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF0];
@@ -5569,15 +5348,15 @@ _T192:
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C17F8;
 // LINE 1540:
-	__asm        mov    tempShortcut.lCommand, 1;
+	tempShortcut.lCommand = 0x1;
 // LINE 1541:
-	__asm        mov    tempShortcut.lKey, 0x48;
+	tempShortcut.lKey = 0x48;
 // LINE 1542:
-	__asm        mov    tempShortcut.lModifiers, 2;
+	tempShortcut.lModifiers = 0x2;
 // LINE 1543:
-	__asm        mov    tempShortcut.lPush, 1;
+	tempShortcut.lPush = 0x1;
 // LINE 1544:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1545:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF0];
@@ -5636,15 +5415,15 @@ _T2d0:
 
 	__asm        jmp    near ptr 0x004C18D2;
 // LINE 1547:
-	__asm        mov    tempShortcut.lCommand, 2;
+	tempShortcut.lCommand = 0x2;
 // LINE 1548:
-	__asm        mov    tempShortcut.lKey, 0x43;
+	tempShortcut.lKey = 0x43;
 // LINE 1549:
-	__asm        mov    tempShortcut.lModifiers, 2;
+	tempShortcut.lModifiers = 0x2;
 // LINE 1550:
-	__asm        mov    tempShortcut.lPush, 1;
+	tempShortcut.lPush = 0x1;
 // LINE 1551:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1552:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF0];
@@ -5703,15 +5482,15 @@ _T3aa:
 
 	__asm        jmp    near ptr 0x004C19AC;
 // LINE 1554:
-	__asm        mov    tempShortcut.lCommand, 3;
+	tempShortcut.lCommand = 0x3;
 // LINE 1555:
-	__asm        mov    tempShortcut.lKey, 0x4D;
+	tempShortcut.lKey = 0x4d;
 // LINE 1556:
-	__asm        mov    tempShortcut.lModifiers, 2;
+	tempShortcut.lModifiers = 0x2;
 // LINE 1557:
-	__asm        mov    tempShortcut.lPush, 1;
+	tempShortcut.lPush = 0x1;
 // LINE 1558:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1559:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF0];
@@ -5733,15 +5512,15 @@ _T3aa:
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x004C1A19;
 // LINE 1561:
-	__asm        mov    tempShortcut.lCommand, 4;
+	tempShortcut.lCommand = 0x4;
 // LINE 1562:
-	__asm        mov    tempShortcut.lKey, 0x49;
+	tempShortcut.lKey = 0x49;
 // LINE 1563:
-	__asm        mov    tempShortcut.lModifiers, 2;
+	tempShortcut.lModifiers = 0x2;
 // LINE 1564:
-	__asm        mov    tempShortcut.lPush, 1;
+	tempShortcut.lPush = 0x1;
 // LINE 1565:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1566:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF0];
@@ -5818,8 +5597,7 @@ void GameModeCatalogData::GameModeCatalogData() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5923D4;
 // LINE 1586:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
+	this->pCatalogWindow = 0x0;
 // LINE 1587:
 	__asm        mov    ecx, this;
 	__asm        call   GameModeCatalogData::SetCommandsToDefaults;
@@ -5849,7 +5627,7 @@ int32_t GameModeCatalogData::CreateAllSurfaces() {
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _T4b;
 _T44:
-	__asm        mov    dword ptr [ebp-8], 0;
+	None = 0x0;
 _T4b:
 	__asm        push   1;
 	__asm        mov    eax, [ebp-8];
@@ -5864,8 +5642,7 @@ _T4b:
 	__asm        mov    [ecx+0x14], eax;
 	__asm        jmp    _T7a;
 _T70:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
+	this->pCatalogWindow = 0x0;
 // LINE 1598:
 _T7a:
 	__asm        mov    eax, this;
@@ -5897,8 +5674,7 @@ void GameModeCatalogData::DestroyAllSurfaces() {
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   dword ptr [edx+0x6C];
 // LINE 1609:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
+	this->pCatalogWindow = 0x0;
 // LINE 1611:
 _T34:
 	__asm        jmp    near ptr 0x004C1C68;
@@ -6001,8 +5777,7 @@ _T5a:
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    _T77;
 _T6d:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->pColorTable = 0x0;
 // LINE 1645:
 _T77:
 	__asm        mov    eax, this;
@@ -6030,13 +5805,11 @@ void GameModeCatalogData::UsePalette() {
 	__asm        mov    ecx, [eax+0x34];
 	__asm        call   dword ptr [edx+0x74];
 // LINE 1654:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    gCopterPalette.pColors, eax;
+	gCopterPalette.pColors = this->pColorTable;
 // LINE 1655:
-	__asm        mov    gCopterPalette.lColors, 0x100;
+	gCopterPalette.lColors = 0x100;
 // LINE 1656:
-	__asm        mov    gCopterPalette.bOwnColors, 0;
+	gCopterPalette.bOwnColors = 0x0;
 // LINE 1657:
 	__asm        jmp    near ptr 0x004C1E06;
 }
@@ -6143,17 +5916,17 @@ _Tae:
 _T14e:
 	__asm        jmp    near ptr 0x004C1F7C;
 // LINE 1678:
-	__asm        mov    tempShortcut.lDeviceID, 0;
+	tempShortcut.lDeviceID = 0x0;
 // LINE 1680:
-	__asm        mov    tempShortcut.lCommand, 0;
+	tempShortcut.lCommand = 0x0;
 // LINE 1681:
-	__asm        mov    tempShortcut.lKey, 0;
+	tempShortcut.lKey = 0x0;
 // LINE 1682:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 1683:
-	__asm        mov    tempShortcut.lPush, 0;
+	tempShortcut.lPush = 0x0;
 // LINE 1684:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1685:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF0];
@@ -6205,8 +5978,7 @@ _T1ce:
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    _T22e;
 _T228:
-	__asm        mov    eax, [ebp-0x58];
-	__asm        mov    [ebp-0x60], eax;
+	None = None;
 _T22e:
 	__asm        jmp    near ptr 0x004C205C;
 
@@ -6250,8 +6022,7 @@ _T22e:
 	__asm        mov    [ebp-0x74], eax;
 	__asm        jmp    _T2b8;
 _T2b2:
-	__asm        mov    eax, [ebp-0x6C];
-	__asm        mov    [ebp-0x74], eax;
+	None = None;
 _T2b8:
 	__asm        jmp    near ptr 0x004C20E6;
 
@@ -6325,15 +6096,15 @@ _T348:
 
 	__asm        jmp    near ptr 0x004C21C0;
 // LINE 1687:
-	__asm        mov    tempShortcut.lCommand, 1;
+	tempShortcut.lCommand = 0x1;
 // LINE 1688:
-	__asm        mov    tempShortcut.lKey, 0x1B;
+	tempShortcut.lKey = 0x1b;
 // LINE 1689:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 1690:
-	__asm        mov    tempShortcut.lPush, 1;
+	tempShortcut.lPush = 0x1;
 // LINE 1691:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1692:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF0];
@@ -6385,8 +6156,7 @@ _T423:
 	__asm        mov    [ebp-0xB8], eax;
 	__asm        jmp    _T4aa;
 _T49e:
-	__asm        mov    eax, [ebp-0xB0];
-	__asm        mov    [ebp-0xB8], eax;
+	None = None;
 _T4aa:
 	__asm        jmp    near ptr 0x004C22D8;
 
@@ -6430,8 +6200,7 @@ _T4aa:
 	__asm        mov    [ebp-0xCC], eax;
 	__asm        jmp    _T56a;
 _T55e:
-	__asm        mov    eax, [ebp-0xC4];
-	__asm        mov    [ebp-0xCC], eax;
+	None = None;
 _T56a:
 	__asm        jmp    near ptr 0x004C2398;
 
@@ -6523,8 +6292,7 @@ void GameModeMissionLogData::GameModeMissionLogData() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5923D8;
 // LINE 1711:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
+	this->pMissionLogWindow = 0x0;
 // LINE 1712:
 	__asm        mov    ecx, this;
 	__asm        call   GameModeMissionLogData::SetCommandsToDefaults;
@@ -6554,7 +6322,7 @@ int32_t GameModeMissionLogData::CreateAllSurfaces() {
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _T4b;
 _T44:
-	__asm        mov    dword ptr [ebp-8], 0;
+	None = 0x0;
 _T4b:
 	__asm        push   1;
 	__asm        mov    eax, [ebp-8];
@@ -6569,8 +6337,7 @@ _T4b:
 	__asm        mov    [ecx+0x14], eax;
 	__asm        jmp    _T7a;
 _T70:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
+	this->pMissionLogWindow = 0x0;
 // LINE 1723:
 _T7a:
 	__asm        mov    eax, this;
@@ -6602,8 +6369,7 @@ void GameModeMissionLogData::DestroyAllSurfaces() {
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   dword ptr [edx+0x6C];
 // LINE 1734:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
+	this->pMissionLogWindow = 0x0;
 // LINE 1736:
 _T34:
 	__asm        jmp    near ptr 0x004C25F0;
@@ -6706,8 +6472,7 @@ _T5a:
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    _T77;
 _T6d:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->pColorTable = 0x0;
 // LINE 1770:
 _T77:
 	__asm        mov    eax, this;
@@ -6735,13 +6500,11 @@ void GameModeMissionLogData::UsePalette() {
 	__asm        mov    ecx, [eax+0x34];
 	__asm        call   dword ptr [edx+0x74];
 // LINE 1779:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    gCopterPalette.pColors, eax;
+	gCopterPalette.pColors = this->pColorTable;
 // LINE 1780:
-	__asm        mov    gCopterPalette.lColors, 0x100;
+	gCopterPalette.lColors = 0x100;
 // LINE 1781:
-	__asm        mov    gCopterPalette.bOwnColors, 0;
+	gCopterPalette.bOwnColors = 0x0;
 // LINE 1782:
 	__asm        jmp    near ptr 0x004C278E;
 }
@@ -6848,17 +6611,17 @@ _Tae:
 _T14e:
 	__asm        jmp    near ptr 0x004C2904;
 // LINE 1803:
-	__asm        mov    tempShortcut.lDeviceID, 0;
+	tempShortcut.lDeviceID = 0x0;
 // LINE 1805:
-	__asm        mov    tempShortcut.lCommand, 0;
+	tempShortcut.lCommand = 0x0;
 // LINE 1806:
-	__asm        mov    tempShortcut.lKey, 0;
+	tempShortcut.lKey = 0x0;
 // LINE 1807:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 1808:
-	__asm        mov    tempShortcut.lPush, 0;
+	tempShortcut.lPush = 0x0;
 // LINE 1809:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1810:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF0];
@@ -6910,8 +6673,7 @@ _T1ce:
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    _T22e;
 _T228:
-	__asm        mov    eax, [ebp-0x58];
-	__asm        mov    [ebp-0x60], eax;
+	None = None;
 _T22e:
 	__asm        jmp    near ptr 0x004C29E4;
 
@@ -6955,8 +6717,7 @@ _T22e:
 	__asm        mov    [ebp-0x74], eax;
 	__asm        jmp    _T2b8;
 _T2b2:
-	__asm        mov    eax, [ebp-0x6C];
-	__asm        mov    [ebp-0x74], eax;
+	None = None;
 _T2b8:
 	__asm        jmp    near ptr 0x004C2A6E;
 
@@ -7030,15 +6791,15 @@ _T348:
 
 	__asm        jmp    near ptr 0x004C2B48;
 // LINE 1812:
-	__asm        mov    tempShortcut.lCommand, 1;
+	tempShortcut.lCommand = 0x1;
 // LINE 1813:
-	__asm        mov    tempShortcut.lKey, 0x1B;
+	tempShortcut.lKey = 0x1b;
 // LINE 1814:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 1815:
-	__asm        mov    tempShortcut.lPush, 1;
+	tempShortcut.lPush = 0x1;
 // LINE 1816:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1817:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF0];
@@ -7090,8 +6851,7 @@ _T423:
 	__asm        mov    [ebp-0xB8], eax;
 	__asm        jmp    _T4aa;
 _T49e:
-	__asm        mov    eax, [ebp-0xB0];
-	__asm        mov    [ebp-0xB8], eax;
+	None = None;
 _T4aa:
 	__asm        jmp    near ptr 0x004C2C60;
 
@@ -7135,8 +6895,7 @@ _T4aa:
 	__asm        mov    [ebp-0xCC], eax;
 	__asm        jmp    _T56a;
 _T55e:
-	__asm        mov    eax, [ebp-0xC4];
-	__asm        mov    [ebp-0xCC], eax;
+	None = None;
 _T56a:
 	__asm        jmp    near ptr 0x004C2D20;
 
@@ -7228,8 +6987,7 @@ void GameModeInventoryData::GameModeInventoryData() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5923DC;
 // LINE 1833:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
+	this->pInventoryWindow = 0x0;
 // LINE 1834:
 	__asm        mov    ecx, this;
 	__asm        call   GameModeInventoryData::SetCommandsToDefaults;
@@ -7259,7 +7017,7 @@ int32_t GameModeInventoryData::CreateAllSurfaces() {
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _T4b;
 _T44:
-	__asm        mov    dword ptr [ebp-8], 0;
+	None = 0x0;
 _T4b:
 	__asm        push   1;
 	__asm        mov    eax, [ebp-8];
@@ -7274,8 +7032,7 @@ _T4b:
 	__asm        mov    [ecx+0x14], eax;
 	__asm        jmp    _T7a;
 _T70:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
+	this->pInventoryWindow = 0x0;
 // LINE 1845:
 _T7a:
 	__asm        mov    eax, this;
@@ -7307,8 +7064,7 @@ void GameModeInventoryData::DestroyAllSurfaces() {
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   dword ptr [edx+0x6C];
 // LINE 1856:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
+	this->pInventoryWindow = 0x0;
 // LINE 1858:
 _T34:
 	__asm        jmp    near ptr 0x004C2F78;
@@ -7411,8 +7167,7 @@ _T5a:
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    _T77;
 _T6d:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->pColorTable = 0x0;
 // LINE 1892:
 _T77:
 	__asm        mov    eax, this;
@@ -7440,13 +7195,11 @@ void GameModeInventoryData::UsePalette() {
 	__asm        mov    ecx, [eax+0x34];
 	__asm        call   dword ptr [edx+0x74];
 // LINE 1901:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    gCopterPalette.pColors, eax;
+	gCopterPalette.pColors = this->pColorTable;
 // LINE 1902:
-	__asm        mov    gCopterPalette.lColors, 0x100;
+	gCopterPalette.lColors = 0x100;
 // LINE 1903:
-	__asm        mov    gCopterPalette.bOwnColors, 0;
+	gCopterPalette.bOwnColors = 0x0;
 // LINE 1904:
 	__asm        jmp    near ptr 0x004C3116;
 }
@@ -7553,17 +7306,17 @@ _Tae:
 _T14e:
 	__asm        jmp    near ptr 0x004C328C;
 // LINE 1924:
-	__asm        mov    tempShortcut.lDeviceID, 0;
+	tempShortcut.lDeviceID = 0x0;
 // LINE 1926:
-	__asm        mov    tempShortcut.lCommand, 0;
+	tempShortcut.lCommand = 0x0;
 // LINE 1927:
-	__asm        mov    tempShortcut.lKey, 0;
+	tempShortcut.lKey = 0x0;
 // LINE 1928:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 1929:
-	__asm        mov    tempShortcut.lPush, 0;
+	tempShortcut.lPush = 0x0;
 // LINE 1930:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1931:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF0];
@@ -7615,8 +7368,7 @@ _T1ce:
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    _T22e;
 _T228:
-	__asm        mov    eax, [ebp-0x58];
-	__asm        mov    [ebp-0x60], eax;
+	None = None;
 _T22e:
 	__asm        jmp    near ptr 0x004C336C;
 
@@ -7660,8 +7412,7 @@ _T22e:
 	__asm        mov    [ebp-0x74], eax;
 	__asm        jmp    _T2b8;
 _T2b2:
-	__asm        mov    eax, [ebp-0x6C];
-	__asm        mov    [ebp-0x74], eax;
+	None = None;
 _T2b8:
 	__asm        jmp    near ptr 0x004C33F6;
 
@@ -7735,15 +7486,15 @@ _T348:
 
 	__asm        jmp    near ptr 0x004C34D0;
 // LINE 1933:
-	__asm        mov    tempShortcut.lCommand, 1;
+	tempShortcut.lCommand = 0x1;
 // LINE 1934:
-	__asm        mov    tempShortcut.lKey, 0x1B;
+	tempShortcut.lKey = 0x1b;
 // LINE 1935:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 1936:
-	__asm        mov    tempShortcut.lPush, 1;
+	tempShortcut.lPush = 0x1;
 // LINE 1937:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 1938:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF0];
@@ -7795,8 +7546,7 @@ _T423:
 	__asm        mov    [ebp-0xB8], eax;
 	__asm        jmp    _T4aa;
 _T49e:
-	__asm        mov    eax, [ebp-0xB0];
-	__asm        mov    [ebp-0xB8], eax;
+	None = None;
 _T4aa:
 	__asm        jmp    near ptr 0x004C35E8;
 
@@ -7840,8 +7590,7 @@ _T4aa:
 	__asm        mov    [ebp-0xCC], eax;
 	__asm        jmp    _T56a;
 _T55e:
-	__asm        mov    eax, [ebp-0xC4];
-	__asm        mov    [ebp-0xCC], eax;
+	None = None;
 _T56a:
 	__asm        jmp    near ptr 0x004C36A8;
 

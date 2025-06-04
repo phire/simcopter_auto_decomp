@@ -478,8 +478,7 @@ void SwizzlePrivAnimPartInfo(void * __ptr32 val, long size) {
 	__asm        add    esp, 0x10;
 // LINE 112:
 _T2c:
-	__asm        mov    eax, val;
-	__asm        mov    pinfo, eax;
+	pinfo = val;
 // LINE 125:
 	__asm        jmp    near ptr 0x0055D987;
 }
@@ -605,8 +604,7 @@ void SwizzlePoint(void * __ptr32 val, long size) {
 	__asm        add    esp, 0x10;
 // LINE 168:
 _T2f:
-	__asm        mov    eax, val;
-	__asm        mov    pt, eax;
+	pt = val;
 // LINE 169:
 	__asm        mov    eax, pt;
 	__asm        add    eax, 2;
@@ -681,7 +679,7 @@ _L39430:
 _Tf0:
 	__asm        jmp    _Tff;
 _Tf5:
-	__asm        mov    dword ptr [ebp-0x21C], 0;
+	None = 0x0;
 _Tff:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x21C];
@@ -732,7 +730,7 @@ _L39421:
 _T1dc:
 	__asm        jmp    _T1eb;
 _T1e1:
-	__asm        mov    dword ptr [ebp-0x224], 0;
+	None = 0x0;
 _T1eb:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x224];
@@ -798,8 +796,7 @@ _T2b1:
 	__asm        mov    cCopterBody::fsList, eax;
 	__asm        jmp    _T310;
 
-	__asm        mov    eax, [ebp-0x234];
-	__asm        mov    cCopterBody::fsList, eax;
+	cCopterBody::fsList = None;
 _L39417:
 	__asm        mov    eax, [ebp-0x220];
 	__asm        push   eax;
@@ -813,8 +810,7 @@ _L39414:
 	__asm        add    esp, 4;
 	__asm        ret;
 _T310:
-	__asm        mov    eax, cCopterBody::fsList;
-	__asm        mov    [ebp-0x268], eax;
+	None = cCopterBody::fsList;
 // LINE 204:
 	__asm        mov    eax, [ebp-0x268];
 	__asm        cmp    dword ptr [eax+0xC], 0;
@@ -949,7 +945,7 @@ _T4ed:
 	__asm        mov    [ebp-0x240], eax;
 	__asm        jmp    _T536;
 _T52c:
-	__asm        mov    dword ptr [ebp-0x240], 0;
+	None = 0x0;
 _T536:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x240];
@@ -982,7 +978,7 @@ _L39460:
 _T5bd:
 	__asm        jmp    _T5cc;
 _T5c2:
-	__asm        mov    dword ptr [ebp-0x248], 0;
+	None = 0x0;
 _T5cc:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x248];
@@ -1048,8 +1044,7 @@ _T692:
 	__asm        mov    cCopterAnim::fsList, eax;
 	__asm        jmp    _T6f1;
 
-	__asm        mov    eax, [ebp-0x250];
-	__asm        mov    cCopterAnim::fsList, eax;
+	cCopterAnim::fsList = None;
 _L39456:
 	__asm        mov    eax, [ebp-0x244];
 	__asm        push   eax;
@@ -1067,27 +1062,27 @@ _T6f1:
 	__asm        mov    ecx, cCopterAnim::fsList;
 	__asm        call   cBList<cCopterAnim>::LoadAll;
 // LINE 209:
-	__asm        mov    PersonFaceNums[0], 4;
+	PersonFaceNums[0] = 0x4;
 // LINE 210:
-	__asm        mov    PersonFaceNums[1], 5;
+	PersonFaceNums[1] = 0x5;
 // LINE 211:
-	__asm        mov    PersonFaceNums[2], 0x2C;
+	PersonFaceNums[2] = 0x2c;
 // LINE 212:
-	__asm        mov    PersonFaceNums[3], 0x2D;
+	PersonFaceNums[3] = 0x2d;
 // LINE 213:
-	__asm        mov    PersonFaceNums[4], 0x2E;
+	PersonFaceNums[4] = 0x2e;
 // LINE 214:
-	__asm        mov    PersonFaceNums[6], 0x2F;
+	PersonFaceNums[6] = 0x2f;
 // LINE 215:
-	__asm        mov    PersonFaceNums[8], 0x30;
+	PersonFaceNums[8] = 0x30;
 // LINE 216:
-	__asm        mov    PersonFaceNums[9], 0x31;
+	PersonFaceNums[9] = 0x31;
 // LINE 217:
-	__asm        mov    PersonFaceNums[5], 0x41;
+	PersonFaceNums[5] = 0x41;
 // LINE 218:
-	__asm        mov    PersonFaceNums[7], 0x42;
+	PersonFaceNums[7] = 0x42;
 // LINE 219:
-	__asm        mov    PersonFaceNums[10], 0x43;
+	PersonFaceNums[10] = 0x43;
 // LINE 220:
 	__asm        jmp    _T780;
 
@@ -1111,8 +1106,7 @@ _T78f:
 // FUNCTION: COPTER_D 0x0055e29e
 void DeleteBodiesAndAnimations() {
 
-	__asm        mov    eax, cCopterAnim::fsList;
-	__asm        mov    [ebp-0x38], eax;
+	None = cCopterAnim::fsList;
 // LINE 233:
 _T11:
 	__asm        cmp    dword ptr [ebp-0x38], 0;
@@ -1123,7 +1117,7 @@ _T11:
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    _T30;
 _T29:
-	__asm        mov    dword ptr [ebp-0xC], 0;
+	None = 0x0;
 _T30:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-8], eax;
@@ -1268,8 +1262,7 @@ _T1d1:
 
 	__asm        jmp    near ptr 0x0055E479;
 
-	__asm        mov    eax, cCopterBody::fsList;
-	__asm        mov    [ebp-0x70], eax;
+	None = cCopterBody::fsList;
 // LINE 234:
 _T1e3:
 	__asm        cmp    dword ptr [ebp-0x70], 0;
@@ -1280,7 +1273,7 @@ _T1e3:
 	__asm        mov    [ebp-0x44], eax;
 	__asm        jmp    _T202;
 _T1fb:
-	__asm        mov    dword ptr [ebp-0x44], 0;
+	None = 0x0;
 _T202:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x40], eax;

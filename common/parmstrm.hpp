@@ -60,8 +60,7 @@ void cGZXParamBitstream<t_alloc,t_free>::cGZXParamBitstream<t_alloc,t_free>(uint
 
 	__asm        jmp    near ptr 0x004CD69A;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x592440;
+	this-><cGZXParamBitstream<t_alloc,t_free>+0x00> = 0x592440;
 // LINE 234:
 	__asm        mov    eax, pagesize;
 	__asm        mov    [ebp-4], eax;
@@ -87,11 +86,9 @@ void cGZXParamBitstream<t_alloc,t_free>::cGZXParamBitstream<t_alloc,t_free>(uint
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], ax;
 // LINE 237:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0x10], 0;
+	this->maxNode = 0x0;
 // LINE 238:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x12], 0;
+	this->maxPos = 0x0;
 // LINE 240:
 	__asm        mov    dword ptr [ebp-0xC], 0;
 	__asm        mov    dword ptr [ebp-8], 0;
@@ -239,8 +236,7 @@ _T32c:
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    _T367;
 _T361:
-	__asm        mov    eax, [ebp-0x5C];
-	__asm        mov    [ebp-0x64], eax;
+	None = None;
 _T367:
 	__asm        jmp    near ptr 0x004CD90C;
 
@@ -350,9 +346,7 @@ _T47a:
 
 	__asm        jmp    near ptr 0x004CDA6E;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x16];
-	__asm        mov    [ebp-0x50], eax;
+	None = this->nodeList.start;
 _T4da:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x50];
@@ -554,8 +548,7 @@ _T76f:
 	__asm        mov    [ebp-0xC4], eax;
 	__asm        jmp    _T7ce;
 _T7c2:
-	__asm        mov    eax, [ebp-0xBC];
-	__asm        mov    [ebp-0xC4], eax;
+	None = None;
 _T7ce:
 	__asm        jmp    near ptr 0x004CDD73;
 
@@ -637,9 +630,7 @@ _T887:
 
 	__asm        jmp    near ptr 0x004CDE7E;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x16];
-	__asm        mov    [ebp-0xB0], eax;
+	None = this->nodeList.start;
 _T8ed:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0xB0];
@@ -837,7 +828,7 @@ unsigned long cGZXParamBitstream<t_alloc,t_free>::Read(unsigned char * buffer, u
 	unsigned long i;
 
 // LINE 285:
-	__asm        mov    i, 0;
+	i = 0x0;
 // LINE 287:
 _T13:
 	__asm        mov    eax, i;
@@ -890,8 +881,7 @@ _T48:
 	__asm        jmp    _Teb;
 // LINE 292:
 _T9f:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
+	this->curPos = 0x0;
 // LINE 294:
 _Ta9:
 	__asm        jmp    near ptr 0x004CE1AE;
@@ -928,7 +918,7 @@ unsigned long cGZXParamBitstream<t_alloc,t_free>::Write(unsigned char * buffer, 
 	unsigned long i;
 
 // LINE 305:
-	__asm        mov    i, 0;
+	i = 0x0;
 // LINE 307:
 _T19:
 	__asm        mov    eax, nBytes;
@@ -946,13 +936,9 @@ _T19:
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
 	__asm        jne    _T5e6;
 // LINE 312:
-	__asm        mov    eax, this;
-	__asm        mov    ax, [eax+0xC];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x10], ax;
+	this->maxNode = this->nodeNo;
 // LINE 313:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x12], 0;
+	this->maxPos = 0x0;
 // LINE 314:
 	__asm        jmp    near ptr 0x004CE272;
 
@@ -1159,8 +1145,7 @@ _T2d7:
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        jmp    _T312;
 _T30c:
-	__asm        mov    eax, [ebp-0x54];
-	__asm        mov    [ebp-0x5C], eax;
+	None = None;
 _T312:
 	__asm        jmp    near ptr 0x004CE517;
 
@@ -1300,9 +1285,7 @@ _T4e5:
 
 	__asm        jmp    near ptr 0x004CE6F4;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x16];
-	__asm        mov    [ebp-0x48], eax;
+	None = this->nodeList.start;
 _T500:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x48];
@@ -1359,8 +1342,7 @@ _T5a5:
 	__asm        jmp    _T5aa;
 // LINE 320:
 _T5aa:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
+	this->curPos = 0x0;
 // LINE 321:
 	__asm        jmp    near ptr 0x004CE7BC;
 
@@ -1404,13 +1386,9 @@ _T5e6:
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
 	__asm        jne    _Tc8c;
 // LINE 329:
-	__asm        mov    eax, this;
-	__asm        mov    ax, [eax+0xC];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x10], ax;
+	this->maxNode = this->nodeNo;
 // LINE 330:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x12], 0;
+	this->maxPos = 0x0;
 // LINE 332:
 	__asm        jmp    near ptr 0x004CE86D;
 
@@ -1617,8 +1595,7 @@ _T90e:
 	__asm        mov    [ebp-0xD4], eax;
 	__asm        jmp    _T96d;
 _T961:
-	__asm        mov    eax, [ebp-0xCC];
-	__asm        mov    [ebp-0xD4], eax;
+	None = None;
 _T96d:
 	__asm        jmp    near ptr 0x004CEB72;
 
@@ -1758,9 +1735,7 @@ _Tb70:
 
 	__asm        jmp    near ptr 0x004CED7F;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x16];
-	__asm        mov    [ebp-0xC0], eax;
+	None = this->nodeList.start;
 _Tb8e:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0xC0];
@@ -1817,8 +1792,7 @@ _Tc4b:
 	__asm        jmp    _Tc50;
 // LINE 339:
 _Tc50:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
+	this->curPos = 0x0;
 // LINE 340:
 	__asm        jmp    near ptr 0x004CEE62;
 
@@ -1835,8 +1809,7 @@ _Tc50:
 	__asm        jmp    _Td35;
 // LINE 342:
 _Tc8c:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
+	this->curPos = 0x0;
 // LINE 344:
 _Tc99:
 	__asm        jmp    near ptr 0x004CEE9E;
@@ -1874,10 +1847,7 @@ _Tc99:
 	__asm        cmp    [eax+4], ecx;
 	__asm        jbe    _Td28;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x12], eax;
+	this->maxPos = this->curPos;
 // LINE 346:
 _Td28:
 	__asm        jmp    _T19;
@@ -1896,7 +1866,7 @@ long cGZXParamBitstream<t_alloc,t_free>::Size() {
 	int32_t loop;
 
 // LINE 355:
-	__asm        mov    retVal, 0;
+	retVal = 0x0;
 // LINE 356:
 	__asm        mov    loop, 0;
 	__asm        jmp    _T22;

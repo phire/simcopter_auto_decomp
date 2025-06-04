@@ -435,8 +435,7 @@ public:
 // FUNCTION: COPTER_D 0x0042df60
 void SoundSystem::SoundSystem() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F440;
+	this-><vftable> = 0x58f440;
 // LINE 89:
 	__asm        cmp    SoundSystem::dwMaxWaveFormatExSize, 0;
 	__asm        jne    _T30;
@@ -447,17 +446,13 @@ void SoundSystem::SoundSystem() {
 	__asm        call   0x004C4678;
 // LINE 93:
 _T30:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->primarySound = 0x0;
 // LINE 94:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
+	this->lpPrimarySound = 0x0;
 // LINE 95:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 0;
+	this->lpDirectSound = 0x0;
 // LINE 96:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
+	this->bSoundEnabled = 0x0;
 // LINE 99:
 	__asm        push   0x60;
 	__asm        push   0;
@@ -467,8 +462,7 @@ _T30:
 	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 100:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0x60;
+	this->dsCapabilities.dwSize = 0x60;
 // LINE 104:
 	__asm        jmp    near ptr 0x0042DFDA;
 
@@ -478,8 +472,7 @@ _T30:
 // FUNCTION: COPTER_D 0x0042dfe2
 void SoundSystem::~SoundSystem() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F440;
+	this-><vftable> = 0x58f440;
 // LINE 108:
 	__asm        mov    ecx, this;
 	__asm        call   SoundSystem::DeInitialize;
@@ -493,7 +486,7 @@ int32_t SoundSystem::Initialize(void * __ptr32 hWindow) {
 	int32_t bReturnValue;
 
 // LINE 122:
-	__asm        mov    bReturnValue, 1;
+	bReturnValue = 0x1;
 // LINE 126:
 	__asm        push   0x7A;
 	__asm        call   operator new;
@@ -508,37 +501,22 @@ int32_t SoundSystem::Initialize(void * __ptr32 hWindow) {
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    _T47;
 _T3d:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->primarySound = 0x0;
 // LINE 134:
 _T47:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    word ptr [eax+0x40], 1;
+	this->primarySound->lpSound[0] = 0x1;
 // LINE 135:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    word ptr [eax+0x42], 2;
+	this->primarySound->lpSound[0] = 0x2;
 // LINE 136:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    dword ptr [eax+0x44], 0x5622;
+	this->primarySound->lpSound[1] = 0x5622;
 // LINE 137:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    dword ptr [eax+0x48], 0xAC44;
+	this->primarySound->lpSound[2] = 0xac44;
 // LINE 138:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    word ptr [eax+0x4C], 2;
+	this->primarySound->lpSound[3] = 0x2;
 // LINE 139:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    word ptr [eax+0x4E], 8;
+	this->primarySound->lpSound[3] = 0x8;
 // LINE 140:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    word ptr [eax+0x50], 0;
+	this->primarySound->lpSound[4] = 0x0;
 // LINE 145:
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -559,19 +537,16 @@ _T47:
 	__asm        lea    ecx, [ebp-0x10];
 	__asm        call   DirectSoundError::DisplayError;
 // LINE 148:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 0;
+	this->lpDirectSound = 0x0;
 // LINE 149:
-	__asm        mov    bReturnValue, 0;
+	bReturnValue = 0x0;
 // LINE 150:
 	__asm        jmp    _T2b8;
 
 	__asm        jmp    _T229;
 // LINE 155:
 _Ted:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    DigitalSound::lpDirectSound, eax;
+	DigitalSound::lpDirectSound = this->lpDirectSound;
 // LINE 158:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x14;
@@ -596,7 +571,7 @@ _Ted:
 	__asm        lea    ecx, [ebp-0x14];
 	__asm        call   DirectSoundError::DisplayError;
 // LINE 161:
-	__asm        mov    bReturnValue, 0;
+	bReturnValue = 0x0;
 // LINE 162:
 	__asm        jmp    _T2b3;
 
@@ -640,18 +615,14 @@ _T18e:
 	__asm        test   eax, eax;
 	__asm        jne    _T1b8;
 // LINE 176:
-	__asm        mov    bReturnValue, 0;
+	bReturnValue = 0x0;
 // LINE 177:
 	__asm        jmp    _T2a9;
 
 	__asm        jmp    _T229;
 // LINE 179:
 _T1b8:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    eax, [eax+0x52];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], eax;
+	this->lpPrimarySound = this->primarySound->lpSound[4];
 // LINE 191:
 	__asm        push   1;
 	__asm        push   0;
@@ -676,15 +647,14 @@ _T1b8:
 	__asm        lea    ecx, [ebp-0x1C];
 	__asm        call   DirectSoundError::DisplayError;
 // LINE 194:
-	__asm        mov    bReturnValue, 0;
+	bReturnValue = 0x0;
 // LINE 195:
 	__asm        jmp    _T2a4;
 
 	__asm        jmp    _T229;
 // LINE 197:
 _T215:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 1;
+	this->bSoundEnabled = 0x1;
 // LINE 198:
 	__asm        jmp    _T29f;
 
@@ -773,12 +743,10 @@ void SoundSystem::DeInitialize() {
 	__asm        jmp    _T43;
 // LINE 234:
 _T43:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->primarySound = 0x0;
 // LINE 237:
 _T4d:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 0;
+	this->lpDirectSound = 0x0;
 // LINE 239:
 	__asm        jmp    near ptr 0x0042E329;
 }
@@ -829,8 +797,7 @@ void SoundManager::SoundManager() {
 	int32_t i;
 
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F448;
+	this-><vftable> = 0x58f448;
 // LINE 285:
 	__asm        mov    i, 0;
 	__asm        jmp    _T24;
@@ -854,8 +821,7 @@ _T44:
 // FUNCTION: COPTER_D 0x0042e3f2
 void SoundManager::~SoundManager() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F448;
+	this-><vftable> = 0x58f448;
 // LINE 291:
 	__asm        mov    ecx, this;
 	__asm        call   SoundManager::DeleteAllSounds;
@@ -950,7 +916,7 @@ void SoundManager::AddDigitalSound(long lResID, int32_t nIndex) {
 	__asm        mov    newDigitalSound, eax;
 	__asm        jmp    _T3e;
 _T37:
-	__asm        mov    newDigitalSound, 0;
+	newDigitalSound = 0x0;
 // LINE 342:
 _T3e:
 	__asm        mov    eax, nIndex;
@@ -1004,7 +970,7 @@ void SoundManager::AddDigitalSound(const class basic_string<char>& sNewSoundFile
 	__asm        mov    newDigitalSound, eax;
 	__asm        jmp    _T42;
 _T3b:
-	__asm        mov    newDigitalSound, 0;
+	newDigitalSound = 0x0;
 // LINE 349:
 _T42:
 	__asm        mov    eax, nIndex;
@@ -1148,42 +1114,31 @@ void Sound::Sound() {
 	__asm        mov    [ecx+0x18], eax;
 	__asm        jmp    _T69;
 _T5f:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18], 0;
+	this->sSoundFile.reference = 0x0;
 _T69:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x14], 0;
 	__asm        jmp    near ptr 0x0042E77E;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F458;
+	this-><vftable> = 0x58f458;
 // LINE 414:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 1;
+	this->nSoundSourceType = 0x1;
 // LINE 415:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 3;
+	this->nSoundDuplicateType = 0x3;
 // LINE 416:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
+	this->lID = 0x0;
 // LINE 417:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 0;
+	this->lResID = 0x0;
 // LINE 418:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1C], 0;
+	this->bLooping = 0x0;
 // LINE 419:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x20], 0;
+	this->bStreaming = 0x0;
 // LINE 420:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x24], 0x2710;
+	this->lVolume = 0x2710;
 // LINE 421:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x28], 0;
+	this->soundCompletionFunction = 0x0;
 // LINE 422:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x30], 0;
+	this-><Sound+0x30> = 0x0;
 // LINE 423:
 	__asm        jmp    near ptr 0x0042E7E6;
 
@@ -1193,8 +1148,7 @@ _T69:
 // FUNCTION: COPTER_D 0x0042e7ee
 void Sound::~Sound() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F458;
+	this-><vftable> = 0x58f458;
 // LINE 434:
 	__asm        jmp    near ptr 0x0042E808;
 
@@ -1266,30 +1220,15 @@ _Td3:
 // FUNCTION: COPTER_D 0x0042e8cb
 class Sound& Sound::operator=(const class Sound& newSound) {
 // LINE 444:
-	__asm        mov    eax, newSound;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->nSoundSourceType = newSound.nSoundSourceType;
 // LINE 445:
-	__asm        mov    eax, newSound;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+8], eax;
+	this->nSoundDuplicateType = newSound.nSoundDuplicateType;
 // LINE 446:
-	__asm        mov    eax, newSound;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], eax;
+	this->lID = newSound.lID;
 // LINE 447:
-	__asm        mov    eax, newSound;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x1C], eax;
+	this->bLooping = newSound.bLooping;
 // LINE 448:
-	__asm        mov    eax, newSound;
-	__asm        mov    eax, [eax+0x20];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x20], eax;
+	this->bStreaming = newSound.bStreaming;
 // LINE 449:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x14;
@@ -1441,15 +1380,11 @@ _T1e8:
 	__asm        mov    [ecx+0x18], eax;
 	__asm        jmp    _T20f;
 _T205:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18], 0;
+	this->sSoundFile.reference = 0x0;
 _T20f:
 	__asm        jmp    near ptr 0x0042EADF;
 // LINE 450:
-	__asm        mov    eax, newSound;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x10], eax;
+	this->lResID = newSound.lResID;
 // LINE 451:
 	__asm        mov    eax, this;
 	__asm        jmp    near ptr 0x0042EAF3;
@@ -1506,7 +1441,7 @@ _T22:
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    _T61;
 _T5a:
-	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
+	None = 0xffffffff;
 _T61:
 	__asm        jmp    near ptr 0x0042EB8E;
 
@@ -1587,7 +1522,7 @@ _T13d:
 
 	__asm        jmp    near ptr 0x0042EC6F;
 
-	__asm        mov    dword ptr [ebp-0x1C], 0;
+	None = 0x0;
 _T14e:
 	__asm        jmp    _T1d3;
 _T153:
@@ -1830,16 +1765,13 @@ _T1a7:
 	__asm        mov    [ecx+0x18], eax;
 	__asm        jmp    _T1ce;
 _T1c4:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18], 0;
+	this->sSoundFile.reference = 0x0;
 _T1ce:
 	__asm        jmp    near ptr 0x0042EF3A;
 // LINE 503:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1C], 0;
+	this->bLooping = 0x0;
 // LINE 504:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x30], 1;
+	this-><Sound+0x30> = 0x1;
 // LINE 505:
 	__asm        jmp    near ptr 0x0042EF53;
 }
@@ -1870,20 +1802,15 @@ void DigitalSound::DigitalSound() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F488;
 // LINE 539:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x34], 0;
+	this->nCompletionEstimationTimerSet = 0x0;
 // LINE 544:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x3C], 0;
+	this->lpWaveFormatEx = 0x0;
 // LINE 546:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x72], 0;
+	this-><DigitalSound+0x72> = 0x0;
 // LINE 547:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x76], 0xE0;
+	this-><DigitalSound+0x76> = 0xe0;
 // LINE 548:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x38], 0;
+	this->cbSize = 0x0;
 // LINE 549:
 	__asm        mov    i, 0;
 	__asm        jmp    _T5e;
@@ -1917,14 +1844,11 @@ void DigitalSound::DigitalSound(const class basic_string<char>& sNewSoundFile, i
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F488;
 // LINE 570:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x3C], 0;
+	this->lpWaveFormatEx = 0x0;
 // LINE 572:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x72], 0;
+	this-><DigitalSound+0x72> = 0x0;
 // LINE 573:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x76], 0xE0;
+	this-><DigitalSound+0x76> = 0xe0;
 // LINE 574:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x14;
@@ -2074,20 +1998,17 @@ _T1df:
 	__asm        mov    [ecx+0x18], eax;
 	__asm        jmp    _T206;
 _T1fc:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18], 0;
+	this->sSoundFile.reference = 0x0;
 _T206:
 	__asm        jmp    near ptr 0x0042F21A;
 // LINE 575:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x38], 0;
+	this->cbSize = 0x0;
 // LINE 576:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x34], 1;
 	__asm        jne    _T231;
 // LINE 577:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x20], 1;
+	this->bStreaming = 0x1;
 // LINE 578:
 	__asm        jmp    _T24c;
 _T231:
@@ -2128,18 +2049,13 @@ void DigitalSound::DigitalSound(long lNewResID) {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F488;
 // LINE 596:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x34], 0;
+	this->nCompletionEstimationTimerSet = 0x0;
 // LINE 599:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x72], 0;
+	this-><DigitalSound+0x72> = 0x0;
 // LINE 601:
-	__asm        mov    eax, lNewResID;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x10], eax;
+	this->lResID = lNewResID;
 // LINE 602:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x38], 0;
+	this->cbSize = 0x0;
 // LINE 608:
 	__asm        jmp    near ptr 0x0042F2DF;
 
@@ -2149,8 +2065,7 @@ void DigitalSound::DigitalSound(long lNewResID) {
 // FUNCTION: COPTER_D 0x0042f2e9
 void DigitalSound::~DigitalSound() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F488;
+	this-><DigitalSound+0x00> = 0x58f488;
 // LINE 616:
 	__asm        mov    ecx, this;
 	__asm        call   DigitalSound::Unload;
@@ -2312,27 +2227,21 @@ _T1a7:
 	__asm        mov    [ecx+0x18], eax;
 	__asm        jmp    _T1ce;
 _T1c4:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18], 0;
+	this->sSoundFile.reference = 0x0;
 _T1ce:
 	__asm        jmp    near ptr 0x0042F4EB;
 // LINE 640:
-	__asm        mov    eax, nNewStreamingType;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x34], eax;
+	this->nCompletionEstimationTimerSet = nNewStreamingType;
 // LINE 641:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1C], 0;
+	this->bLooping = 0x0;
 // LINE 642:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x30], 1;
+	this->nStreamingType = 0x1;
 // LINE 644:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x34], 1;
 	__asm        jne    _T207;
 // LINE 645:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x20], 1;
+	this->bStreaming = 0x1;
 // LINE 646:
 _T207:
 	__asm        mov    eax, this;
@@ -2390,8 +2299,7 @@ _T45:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 666:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x72], 0;
+	this-><DigitalSound+0x72> = 0x0;
 // LINE 670:
 _T77:
 	__asm        mov    eax, this;
@@ -2477,11 +2385,11 @@ int32_t DigitalSound::LoadFromFile() {
 	unsigned long dwBufferLength;
 
 // LINE 735:
-	__asm        mov    bReturnValue, 1;
+	bReturnValue = 0x1;
 // LINE 737:
-	__asm        mov    pbBufferData, 0;
+	pbBufferData = 0x0;
 // LINE 738:
-	__asm        mov    pbBufferData2, 0;
+	pbBufferData2 = 0x0;
 // LINE 758:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
@@ -2613,7 +2521,7 @@ _T151:
 	__asm        jmp    _T302;
 // LINE 770:
 _T180:
-	__asm        mov    ckIn.ckid, 0x61746164;
+	ckIn.ckid = 0x61746164;
 // LINE 771:
 	__asm        push   0x10;
 	__asm        lea    eax, ckInRiff.ckid;
@@ -2635,9 +2543,7 @@ _T180:
 	__asm        jmp    _T302;
 // LINE 775:
 _T1b6:
-	__asm        mov    eax, ckIn.cksize;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x3C], eax;
+	this->lpWaveFormatEx = ckIn.cksize;
 // LINE 778:
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -2647,7 +2553,7 @@ _T1b6:
 	__asm        test   eax, eax;
 	__asm        jne    _T1e5;
 // LINE 779:
-	__asm        mov    bReturnValue, 0;
+	bReturnValue = 0x0;
 // LINE 780:
 	__asm        jmp    _T2fd;
 
@@ -2789,13 +2695,13 @@ int32_t DigitalSound::CreatePrimarySoundBuffer() {
 	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 844:
-	__asm        mov    dsBufferDescription.dwSize, 0x14;
+	dsBufferDescription.dwSize = 0x14;
 // LINE 845:
-	__asm        mov    dsBufferDescription.dwBufferBytes, 0;
+	dsBufferDescription.dwBufferBytes = 0x0;
 // LINE 846:
-	__asm        mov    dsBufferDescription.lpwfxFormat, 0;
+	dsBufferDescription.lpwfxFormat = 0x0;
 // LINE 847:
-	__asm        mov    dsBufferDescription.dwFlags, 1;
+	dsBufferDescription.dwFlags = 0x1;
 // LINE 851:
 	__asm        lea    eax, dsBufferDescription.dwSize;
 	__asm        push   eax;
@@ -2859,17 +2765,13 @@ _T76:
 	__asm        jmp    _T105;
 // LINE 899:
 _T87:
-	__asm        mov    dsBufferDescription.dwSize, 0x14;
+	dsBufferDescription.dwSize = 0x14;
 // LINE 900:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x76];
-	__asm        mov    dsBufferDescription.dwFlags, eax;
+	dsBufferDescription.dwFlags = this-><DigitalSound+0x76>;
 // LINE 901:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x3C];
-	__asm        mov    dsBufferDescription.dwBufferBytes, eax;
+	dsBufferDescription.dwBufferBytes = this->lpWaveFormatEx;
 // LINE 902:
-	__asm        mov    dsBufferDescription.dwReserved, 0;
+	dsBufferDescription.dwReserved = 0x0;
 // LINE 903:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x40;
@@ -2925,8 +2827,7 @@ _T10f:
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+8];
 // LINE 921:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x52], 0;
+	this->lpSound[4] = 0x0;
 // LINE 924:
 _T138:
 	__asm        xor    eax, eax;
@@ -2944,7 +2845,7 @@ int32_t DigitalSound::ReleaseSoundBuffer() {
 	int32_t i;
 
 // LINE 939:
-	__asm        mov    i, 0;
+	i = 0x0;
 // LINE 943:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, this;
@@ -3041,13 +2942,13 @@ int32_t DigitalSound::SetPan(long lNewPan) {
 	__asm        cmp    lNewPan, 0xFFFFD8F0;
 	__asm        jge    _T2d;
 // LINE 1011:
-	__asm        mov    lNewPan, 0xFFFFD8F0;
+	lNewPan = 0xffffd8f0;
 // LINE 1012:
 _T2d:
 	__asm        cmp    lNewPan, 0x2710;
 	__asm        jle    _T41;
 // LINE 1013:
-	__asm        mov    lNewPan, 0x2710;
+	lNewPan = 0x2710;
 // LINE 1014:
 _T41:
 	__asm        mov    eax, lNewPan;
@@ -3135,13 +3036,13 @@ int32_t DigitalSound::SetFrequency(long lNewFrequency) {
 	__asm        cmp    lNewFrequency, 0x64;
 	__asm        jge    _T2a;
 // LINE 1069:
-	__asm        mov    lNewFrequency, 0x64;
+	lNewFrequency = 0x64;
 // LINE 1070:
 _T2a:
 	__asm        cmp    lNewFrequency, 0x186A0;
 	__asm        jle    _T3e;
 // LINE 1071:
-	__asm        mov    lNewFrequency, 0x186A0;
+	lNewFrequency = 0x186a0;
 // LINE 1072:
 _T3e:
 	__asm        mov    eax, lNewFrequency;
@@ -3229,9 +3130,7 @@ int32_t DigitalSound::SetVolume(long lNewVolume) {
 	long hResult;
 
 // LINE 1128:
-	__asm        mov    eax, lNewVolume;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x24], eax;
+	this->lVolume = lNewVolume;
 // LINE 1129:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x52], 0;
@@ -3443,14 +3342,13 @@ long DigitalSound::Play(long bPlayLooping, int32_t nDuplicateType) {
 	struct IDirectSoundBuffer *lpSoundBufferToPlay;
 
 // LINE 1271:
-	__asm        mov    dwLooped, 0;
+	dwLooped = 0x0;
 // LINE 1274:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x30], 0;
 	__asm        je     _T35;
 // LINE 1275:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x30], 0;
+	this->nStreamingType = 0x0;
 // LINE 1276:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -3487,23 +3385,20 @@ _T79:
 	__asm        cmp    nDuplicateType, 0;
 	__asm        jne    _T8c;
 // LINE 1291:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    nDuplicateType, eax;
+	nDuplicateType = this->nSoundDuplicateType;
 // LINE 1292:
 _T8c:
 	__asm        cmp    bPlayLooping, 0;
 	__asm        je     _Ta0;
 // LINE 1293:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1C], 1;
+	this->bLooping = 0x1;
 // LINE 1294:
 _Ta0:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1C], 0;
 	__asm        je     _Tb4;
 // LINE 1295:
-	__asm        mov    dwLooped, 1;
+	dwLooped = 0x1;
 // LINE 1298:
 _Tb4:
 	__asm        lea    eax, lpSoundBufferToPlay;
@@ -3575,9 +3470,7 @@ _T168:
 	__asm        jmp    _T176;
 // LINE 1319:
 _T16d:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x52];
-	__asm        mov    lpSoundBufferToPlay, eax;
+	lpSoundBufferToPlay = this->lpSound[4];
 // LINE 1321:
 _T176:
 	__asm        mov    eax, this;
@@ -4299,9 +4192,9 @@ _T2a6:
 	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 1551:
-	__asm        mov    dsBufferDescription.dwSize, 0x14;
+	dsBufferDescription.dwSize = 0x14;
 // LINE 1552:
-	__asm        mov    dsBufferDescription.dwFlags, 0xE0;
+	dsBufferDescription.dwFlags = 0xe0;
 // LINE 1553:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x72];
@@ -4346,9 +4239,7 @@ _T2a6:
 	__asm        jmp    _T3a3;
 // LINE 1564:
 _T384:
-	__asm        mov    eax, dsBufferDescription.dwBufferBytes;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x3C], eax;
+	this->lpWaveFormatEx = dsBufferDescription.dwBufferBytes;
 // LINE 1565:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x3C];
@@ -4372,13 +4263,13 @@ long DigitalSound::PlayStream() {
 	uint32_t nError;
 
 // LINE 1589:
-	__asm        mov    bStopIfCurrentlyPlaying, 0;
+	bStopIfCurrentlyPlaying = 0x0;
 // LINE 1593:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 1;
 	__asm        jne    _T27;
 // LINE 1594:
-	__asm        mov    bStopIfCurrentlyPlaying, 1;
+	bStopIfCurrentlyPlaying = 0x1;
 // LINE 1598:
 _T27:
 	__asm        mov    eax, bStopIfCurrentlyPlaying;
@@ -4649,8 +4540,7 @@ _T2c2:
 // LINE 1647:
 // Block start:
 	unsigned char * lpTemp;
-	__asm        mov    eax, lpWrite1;
-	__asm        mov    lpTemp, eax;
+	lpTemp = lpWrite1;
 // LINE 1655:
 _T2e1:
 	__asm        mov    eax, nActualBytesRead;
@@ -4984,8 +4874,7 @@ void StreamingBufferTimerCallback(uint32_t __formal, uint32_t __formal, unsigned
 	class DigitalSound *digitalSoundObject;
 
 // LINE 1798:
-	__asm        mov    eax, dwUser;
-	__asm        mov    digitalSoundObject, eax;
+	digitalSoundObject = dwUser;
 // LINE 1799:
 	__asm        mov    eax, digitalSoundObject;
 	__asm        mov    eax, [eax];
@@ -5388,8 +5277,7 @@ _T3cc:
 	__asm        jmp    _T443;
 // LINE 1938:
 _T3d1:
-	__asm        mov    eax, lpWrite1;
-	__asm        mov    lpTemp, eax;
+	lpTemp = lpWrite1;
 // LINE 1945:
 _T3d7:
 	__asm        mov    eax, nActualBytesRead;
@@ -5610,8 +5498,7 @@ _T5fd:
 	__asm        jmp    _T674;
 // LINE 1997:
 _T602:
-	__asm        mov    eax, lpWrite2;
-	__asm        mov    lpTemp, eax;
+	lpTemp = lpWrite2;
 // LINE 2004:
 _T608:
 	__asm        mov    eax, nActualBytesRead;
@@ -5753,13 +5640,9 @@ _T751:
 // FUNCTION: COPTER_D 0x00431821
 int32_t DigitalSound::SetCompletionNotification(void (*newSoundCompletionFunction)(long), long lNewSoundCompletionData) {
 // LINE 2044:
-	__asm        mov    eax, newSoundCompletionFunction;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x28], eax;
+	this->soundCompletionFunction = newSoundCompletionFunction;
 // LINE 2045:
-	__asm        mov    eax, lNewSoundCompletionData;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x2C], eax;
+	this->lSoundCompletionData = lNewSoundCompletionData;
 // LINE 2046:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x00431849;
@@ -5769,8 +5652,7 @@ int32_t DigitalSound::SetCompletionNotification(void (*newSoundCompletionFunctio
 // FUNCTION: COPTER_D 0x00431850
 void DigitalSound::StopCompletionNotification() {
 // LINE 2055:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x28], 0;
+	this->soundCompletionFunction = 0x0;
 // LINE 2056:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x38], 0;
@@ -5864,8 +5746,7 @@ void CompletionEstimationTimerCallback(uint32_t nTimerID, uint32_t __formal, uns
 	class DigitalSound *digitalSoundObject;
 
 // LINE 2107:
-	__asm        mov    eax, dwUser;
-	__asm        mov    digitalSoundObject, eax;
+	digitalSoundObject = dwUser;
 // LINE 2108:
 	__asm        mov    eax, digitalSoundObject;
 	__asm        mov    eax, [eax];
@@ -5885,8 +5766,7 @@ void DigitalSound::ProcessCompletionEstimationTimerCallback() {
 	__asm        test   eax, eax;
 	__asm        jne    _T4b;
 // LINE 2117:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x38], 0;
+	this->cbSize = 0x0;
 // LINE 2118:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x28], 0;
@@ -5906,8 +5786,7 @@ _T4b:
 	__asm        push   0x14;
 	__asm        call   dword ptr ds:[0x6C3914];
 // LINE 2127:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x38], 0;
+	this->cbSize = 0x0;
 // LINE 2128:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -5945,7 +5824,7 @@ _T2d:
 	__asm        cmp    lRemainingPlayTime, 0x3E8;
 	__asm        jge    _T4f;
 // LINE 2154:
-	__asm        mov    lRemainingPlayTime, 0xA;
+	lRemainingPlayTime = 0xa;
 // LINE 2158:
 _T4f:
 	__asm        push   0x14;
@@ -5993,8 +5872,7 @@ void DigitalSound::StopCompletionNotificationEstimationTimer() {
 	__asm        push   0x14;
 	__asm        call   dword ptr ds:[0x6C3914];
 // LINE 2180:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x38], 0;
+	this->cbSize = 0x0;
 // LINE 2182:
 _T38:
 	__asm        jmp    near ptr 0x00431ABA;

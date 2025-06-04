@@ -231,50 +231,35 @@ void MIFF::MIFF() {
 	__asm        mov    byte ptr [eax+4], 0;
 	__asm        jmp    near ptr 0x004AB629;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x591950;
+	this-><MIFF+0x00> = 0x591950;
 // LINE 57:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x110], 0;
+	this->lPresentRecordStart = 0x0;
 // LINE 58:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x114], 0;
+	this->lPresentRecordType = 0x0;
 // LINE 59:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x118], 0;
+	this->lPresentRecordLength = 0x0;
 // LINE 60:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x11C], 0;
+	this->lPresentRecordIndex = 0x0;
 // LINE 61:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x120], 0;
+	this->lReadWriteMode = 0x0;
 // LINE 62:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x124], 0;
+	this->bFileEndWritten = 0x0;
 // LINE 63:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x128], 0;
+	this->bFileAppearsCorrupt = 0x0;
 // LINE 64:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x12C], 0;
+	this->myMIFFHeader.lMIFFIdentifier = 0x0;
 // LINE 65:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x130], 0;
+	this->myMIFFHeader.lMIFFVersion = 0x0;
 // LINE 66:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x134], 0;
+	this->myMIFFHeader.lFileCreator = 0x0;
 // LINE 67:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x138], 0;
+	this->myMIFFHeader.lFileType = 0x0;
 // LINE 68:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x13C], 0;
+	this->myMIFFHeader.lFileVersion = 0x0;
 // LINE 69:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x140], 0;
+	this->myMIFFHeader.lFileLength = 0x0;
 // LINE 70:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x144], 0;
+	this->myMIFFHeader.lByteOrdering = 0x0;
 // LINE 71:
 	__asm        jmp    near ptr 0x004AB6ED;
 
@@ -303,34 +288,25 @@ void MIFF::MIFF(char * szFileOrPath) {
 	__asm        add    esp, 8;
 	__asm        jmp    _T62;
 _T5b:
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+4], 0;
+	this->szFilePath[0] = 0x0;
 _T62:
 	__asm        jmp    near ptr 0x004AB75C;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x591950;
+	this-><MIFF+0x00> = 0x591950;
 // LINE 84:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x110], 0;
+	this->lPresentRecordStart = 0x0;
 // LINE 85:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x118], 0;
+	this->lPresentRecordLength = 0x0;
 // LINE 86:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x114], 0;
+	this->lPresentRecordType = 0x0;
 // LINE 87:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x11C], 0;
+	this->lPresentRecordIndex = 0x0;
 // LINE 88:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x120], 0;
+	this->lReadWriteMode = 0x0;
 // LINE 89:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x128], 0;
+	this->bFileAppearsCorrupt = 0x0;
 // LINE 90:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x124], 0;
+	this->bFileEndWritten = 0x0;
 // LINE 91:
 	__asm        jmp    near ptr 0x004AB7C5;
 
@@ -340,8 +316,7 @@ _T62:
 // FUNCTION: COPTER_D 0x004ab7cf
 void MIFF::~MIFF() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x591950;
+	this-><MIFF+0x00> = 0x591950;
 // LINE 98:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
@@ -435,8 +410,7 @@ _T77:
 	__asm        je     _Tb3;
 // LINE 117:
 _T86:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x120], 1;
+	this->lReadWriteMode = 0x1;
 // LINE 118:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -467,7 +441,7 @@ long MIFF::OpenForWriting(long lFileCreator, long lFileType, long lFileVersion) 
 	__asm        test   eax, eax;
 	__asm        jne    _T46;
 // LINE 140:
-	__asm        mov    _fmode, 0x8000;
+	_fmode = 0x8000;
 // LINE 141:
 	__asm        push   0x180;
 	__asm        push   0;
@@ -516,8 +490,7 @@ _T9f:
 	__asm        je     _Te7;
 // LINE 148:
 _Tae:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x120], 2;
+	this->lReadWriteMode = 0x2;
 // LINE 149:
 	__asm        mov    eax, lFileVersion;
 	__asm        push   eax;
@@ -554,7 +527,7 @@ long MIFF::OpenForAppending() {
 	__asm        test   eax, eax;
 	__asm        jne    _T46;
 // LINE 170:
-	__asm        mov    _fmode, 0x8000;
+	_fmode = 0x8000;
 // LINE 171:
 	__asm        push   0x180;
 	__asm        push   0;
@@ -621,8 +594,7 @@ _Tae:
 	__asm        call   dword ptr [eax+0x68];
 // LINE 181:
 _Tdd:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x120], 2;
+	this->lReadWriteMode = 0x2;
 // LINE 182:
 	__asm        push   2;
 	__asm        push   0;
@@ -777,7 +749,7 @@ long MIFF::ReadFileCreator() {
 	long bWeOpenedFile;
 
 // LINE 237:
-	__asm        mov    bWeOpenedFile, 0;
+	bWeOpenedFile = 0x0;
 // LINE 240:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
@@ -804,12 +776,10 @@ _T3c:
 	__asm        jmp    _Taf;
 // LINE 243:
 _T56:
-	__asm        mov    bWeOpenedFile, 1;
+	bWeOpenedFile = 0x1;
 // LINE 245:
 _T5d:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x134];
-	__asm        mov    lResult, eax;
+	lResult = this->myMIFFHeader.lFileCreator;
 // LINE 246:
 	__asm        cmp    bWeOpenedFile, 0;
 	__asm        je     _T7e;
@@ -845,7 +815,7 @@ long MIFF::ReadFileType() {
 	long bWeOpenedFile;
 
 // LINE 259:
-	__asm        mov    bWeOpenedFile, 0;
+	bWeOpenedFile = 0x0;
 // LINE 262:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
@@ -872,12 +842,10 @@ _T3c:
 	__asm        jmp    _Taf;
 // LINE 265:
 _T56:
-	__asm        mov    bWeOpenedFile, 1;
+	bWeOpenedFile = 0x1;
 // LINE 267:
 _T5d:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x138];
-	__asm        mov    lResult, eax;
+	lResult = this->myMIFFHeader.lFileType;
 // LINE 268:
 	__asm        cmp    bWeOpenedFile, 0;
 	__asm        je     _T7e;
@@ -913,7 +881,7 @@ long MIFF::ReadFileVersion() {
 	long bWeOpenedFile;
 
 // LINE 280:
-	__asm        mov    bWeOpenedFile, 0;
+	bWeOpenedFile = 0x0;
 // LINE 283:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
@@ -940,12 +908,10 @@ _T3c:
 	__asm        jmp    _Taf;
 // LINE 286:
 _T56:
-	__asm        mov    bWeOpenedFile, 1;
+	bWeOpenedFile = 0x1;
 // LINE 288:
 _T5d:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x13C];
-	__asm        mov    lResult, eax;
+	lResult = this->myMIFFHeader.lFileVersion;
 // LINE 289:
 	__asm        cmp    bWeOpenedFile, 0;
 	__asm        je     _T7e;
@@ -1008,8 +974,7 @@ long MIFF::ReadRecordHeader() {
 	__asm        cmp    dword ptr [eax+0x118], 0;
 	__asm        jge    _T77;
 // LINE 317:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x128], 1;
+	this->bFileAppearsCorrupt = 0x1;
 // LINE 318:
 	__asm        xor    eax, eax;
 	__asm        jmp    _Tf1;
@@ -1044,8 +1009,7 @@ _Tb1:
 	__asm        cmp    eax, ecx;
 	__asm        jge    _Te7;
 // LINE 325:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x128], 1;
+	this->bFileAppearsCorrupt = 0x1;
 // LINE 326:
 	__asm        xor    eax, eax;
 	__asm        jmp    _Tf1;
@@ -1063,9 +1027,9 @@ long MIFF::CountRecords() {
 	long bWeOpenedFile;
 
 // LINE 352:
-	__asm        mov    bWeOpenedFile, 0;
+	bWeOpenedFile = 0x0;
 // LINE 353:
-	__asm        mov    lCount, 0;
+	lCount = 0x0;
 // LINE 355:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
@@ -1094,7 +1058,7 @@ _T43:
 	__asm        jmp    _Te3;
 // LINE 358:
 _T68:
-	__asm        mov    bWeOpenedFile, 1;
+	bWeOpenedFile = 0x1;
 // LINE 360:
 	__asm        jmp    _T8b;
 _T74:
@@ -1184,11 +1148,9 @@ _T4c:
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AC11B;
 // LINE 394:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x110], 0x1C;
+	this->lPresentRecordStart = 0x1c;
 // LINE 395:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x11C], 0;
+	this->lPresentRecordIndex = 0x0;
 // LINE 396:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -1207,9 +1169,7 @@ long MIFF::GoToNextRecord() {
 	long lSavedPreviousStart;
 
 // LINE 420:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x110];
-	__asm        mov    lSavedPreviousStart, eax;
+	lSavedPreviousStart = this->lPresentRecordStart;
 // LINE 422:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
@@ -1241,9 +1201,7 @@ _T58:
 	__asm        cmp    dword ptr [eax+0x118], 0;
 	__asm        jg     _Tab;
 _T7b:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x110];
-	__asm        mov    [ebp-0x10], eax;
+	None = this->lPresentRecordStart;
 // LINE 426:
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0x10];
@@ -1276,9 +1234,7 @@ _Tab:
 	__asm        cmp    lResult, 0xFFFFFFFF;
 	__asm        jne    _T111;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x110];
-	__asm        mov    [ebp-0x18], eax;
+	None = this->lPresentRecordStart;
 // LINE 436:
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0x18];
@@ -1294,9 +1250,7 @@ _Tab:
 	__asm        jmp    _T19d;
 // LINE 440:
 _T111:
-	__asm        mov    eax, lResult;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x110], eax;
+	this->lPresentRecordStart = lResult;
 // LINE 441:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, lSavedPreviousStart;
@@ -1352,9 +1306,7 @@ long MIFF::GoToPreviousRecord() {
 	long lTempPresentRecord;
 
 // LINE 473:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x11C];
-	__asm        mov    lTempPresentRecord, eax;
+	lTempPresentRecord = this->lPresentRecordIndex;
 // LINE 474:
 	__asm        cmp    lTempPresentRecord, 0;
 	__asm        je     _T25;
@@ -1522,15 +1474,9 @@ _T4c:
 _T66:
 	__asm        mov    lActualDataBytesToRead, eax;
 // LINE 569:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x114];
-	__asm        mov    ecx, miffRecordToRead;
-	__asm        mov    [ecx], eax;
+	miffRecordToRead->lRecordType = this->lPresentRecordType;
 // LINE 570:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x118];
-	__asm        mov    ecx, miffRecordToRead;
-	__asm        mov    [ecx+4], eax;
+	miffRecordToRead->lRecordLength = this->lPresentRecordLength;
 // LINE 572:
 	__asm        jmp    near ptr 0x004AC4D9;
 
@@ -1689,32 +1635,21 @@ _T45:
 	__asm        jmp    _T116;
 // LINE 648:
 _T4c:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x12C], 0x4646494D;
+	this->myMIFFHeader.lMIFFIdentifier = 0x4646494d;
 // LINE 649:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x130], 2;
+	this->myMIFFHeader.lMIFFVersion = 0x2;
 // LINE 650:
-	__asm        mov    eax, lCreatorType;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x134], eax;
+	this->myMIFFHeader.lFileCreator = lCreatorType;
 // LINE 651:
-	__asm        mov    eax, lFileType;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x138], eax;
+	this->myMIFFHeader.lFileType = lFileType;
 // LINE 652:
-	__asm        mov    eax, lFileVersion;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x13C], eax;
+	this->myMIFFHeader.lFileVersion = lFileVersion;
 // LINE 653:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x140], 0x1C;
+	this->myMIFFHeader.lFileLength = 0x1c;
 // LINE 654:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x144], 1;
+	this->myMIFFHeader.lByteOrdering = 0x1;
 // LINE 656:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x124], 0;
+	this->bFileEndWritten = 0x0;
 // LINE 657:
 	__asm        push   0;
 	__asm        push   0;
@@ -1783,16 +1718,13 @@ _T45:
 	__asm        jmp    _Tb2;
 // LINE 680:
 _T4c:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x124], 0;
+	this->bFileEndWritten = 0x0;
 // LINE 681:
 	__asm        mov    eax, lSizeOfMIFFRecordData;
 	__asm        add    eax, 8;
 	__asm        mov    lAmountOfDataToWrite, eax;
 // LINE 682:
-	__asm        mov    eax, lAmountOfDataToWrite;
-	__asm        mov    ecx, miffRecordToWrite;
-	__asm        mov    [ecx+4], eax;
+	miffRecordToWrite->lRecordLength = lAmountOfDataToWrite;
 // LINE 685:
 	__asm        jmp    near ptr 0x004AC7C8;
 
@@ -1856,8 +1788,7 @@ _T4e:
 	__asm        jmp    _Te3;
 // LINE 709:
 _T55:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x124], 0;
+	this->bFileEndWritten = 0x0;
 // LINE 711:
 	__asm        push   4;
 	__asm        lea    eax, lRecordType;
@@ -1955,8 +1886,7 @@ long MIFF::WriteEnd() {
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x004AC97F;
 // LINE 745:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x124], 1;
+	this->bFileEndWritten = 0x1;
 // LINE 746:
 	__asm        push   2;
 	__asm        push   0;

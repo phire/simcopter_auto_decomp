@@ -653,15 +653,13 @@ void DirectoryEntry::DirectoryEntry() {
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    _T69;
 _T5f:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->sName.reference = 0x0;
 _T69:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        jmp    near ptr 0x00481B98;
 // LINE 35:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0;
+	this->directoryParent = 0x0;
 // LINE 36:
 	__asm        jmp    near ptr 0x00481BA6;
 
@@ -711,7 +709,7 @@ _T5b:
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    _T8d;
 _T86:
-	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
+	None = 0xffffffff;
 _T8d:
 	__asm        jmp    near ptr 0x00481C40;
 
@@ -810,16 +808,13 @@ _T18e:
 	__asm        mov    [ecx+8], eax;
 	__asm        jmp    _T1b5;
 _T1ab:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->sName.reference = 0x0;
 _T1b5:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        jmp    near ptr 0x00481D72;
 
-	__asm        mov    eax, lNewType;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], eax;
+	this->lType = lNewType;
 // LINE 46:
 	__asm        jmp    near ptr 0x00481D80;
 
@@ -831,7 +826,7 @@ int32_t DirectoryEntry::GetEntryExtension(class basic_string<char>& sEntryExtens
 	uint32_t nPosition;
 
 
-	__asm        mov    byte ptr [ebp-0x1C], 0x2E;
+	None = 0x2e;
 // LINE 60:
 	__asm        jmp    near ptr 0x00481D9F;
 
@@ -848,7 +843,7 @@ int32_t DirectoryEntry::GetEntryExtension(class basic_string<char>& sEntryExtens
 
 	__asm        jmp    _T42;
 _T3b:
-	__asm        mov    dword ptr [ebp-8], 0;
+	None = 0x0;
 _T42:
 	__asm        jmp    near ptr 0x00481DD1;
 
@@ -1004,7 +999,7 @@ _T1ce:
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    _T20e;
 _T207:
-	__asm        mov    dword ptr [ebp-0x20], 0xFFFFFFFF;
+	None = 0xffffffff;
 _T20e:
 	__asm        jmp    near ptr 0x00481F9D;
 
@@ -1132,7 +1127,7 @@ _T357:
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    _T391;
 _T38a:
-	__asm        mov    dword ptr [ebp-0x34], 0;
+	None = 0x0;
 _T391:
 	__asm        mov    ecx, sEntryExtension;
 	__asm        call   basic_string<char>::delete_ref;
@@ -1215,7 +1210,7 @@ _T44e:
 	__asm        mov    [ebp-0x44], eax;
 	__asm        jmp    _T480;
 _T479:
-	__asm        mov    dword ptr [ebp-0x44], 0xFFFFFFFF;
+	None = 0xffffffff;
 _T480:
 	__asm        jmp    near ptr 0x0048220F;
 
@@ -1246,7 +1241,7 @@ _T480:
 	__asm        mov    [ebp-0x48], eax;
 	__asm        jmp    _T4dd;
 _T4d6:
-	__asm        mov    dword ptr [ebp-0x48], 0;
+	None = 0x0;
 _T4dd:
 	__asm        jmp    near ptr 0x0048226C;
 
@@ -1352,7 +1347,7 @@ int32_t DirectoryEntry::GetEntryMinusExtension(class basic_string<char>& sEntryM
 	uint32_t nPosition;
 
 
-	__asm        mov    byte ptr [ebp-0x40], 0x2E;
+	None = 0x2e;
 // LINE 84:
 	__asm        jmp    near ptr 0x00482391;
 
@@ -1369,7 +1364,7 @@ int32_t DirectoryEntry::GetEntryMinusExtension(class basic_string<char>& sEntryM
 
 	__asm        jmp    _T42;
 _T3b:
-	__asm        mov    dword ptr [ebp-0x2C], 0;
+	None = 0x0;
 _T42:
 	__asm        jmp    near ptr 0x004823C3;
 
@@ -1517,8 +1512,7 @@ _T1cb:
 	__asm        mov    [ebp-0x44], eax;
 	__asm        jmp    _T1fe;
 _T1f8:
-	__asm        mov    eax, nPosition;
-	__asm        mov    [ebp-0x44], eax;
+	None = nPosition;
 _T1fe:
 	__asm        jmp    near ptr 0x0048257F;
 
@@ -1743,8 +1737,7 @@ _T471:
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    _T498;
 _T48e:
-	__asm        mov    eax, sEntryMinusExtension;
-	__asm        mov    dword ptr [eax+4], 0;
+	sEntryMinusExtension.reference = 0x0;
 _T498:
 	__asm        jmp    near ptr 0x00482819;
 // LINE 92:
@@ -1859,8 +1852,7 @@ _Tf0:
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    _T139;
 _T12f:
-	__asm        mov    eax, sFullPath;
-	__asm        mov    dword ptr [eax+4], 0;
+	sFullPath.reference = 0x0;
 _T139:
 	__asm        jmp    near ptr 0x00482971;
 // LINE 103:
@@ -1904,7 +1896,7 @@ _T18a:
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    _T1bc;
 _T1b5:
-	__asm        mov    dword ptr [ebp-0x38], 0xFFFFFFFF;
+	None = 0xffffffff;
 _T1bc:
 	__asm        jmp    near ptr 0x004829F4;
 
@@ -1935,7 +1927,7 @@ _T1bc:
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    _T219;
 _T212:
-	__asm        mov    dword ptr [ebp-0x3C], 0;
+	None = 0x0;
 _T219:
 	__asm        jmp    near ptr 0x00482A51;
 
@@ -2158,7 +2150,7 @@ _T46f:
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _T4a1;
 _T49a:
-	__asm        mov    dword ptr [ebp-8], 0;
+	None = 0x0;
 _T4a1:
 	__asm        mov    ecx, sFullPath;
 	__asm        call   basic_string<char>::delete_ref;
@@ -2724,8 +2716,7 @@ _Ta7:
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    _Tf2;
 _Tec:
-	__asm        mov    eax, [ebp-0x2C];
-	__asm        mov    [ebp-0x34], eax;
+	None = None;
 _Tf2:
 	__asm        jmp    near ptr 0x0048339A;
 
@@ -2794,8 +2785,7 @@ _T15f:
 	__asm        mov    [ebp-0x48], eax;
 	__asm        jmp    _T1cc;
 _T1c6:
-	__asm        mov    eax, [ebp-0x40];
-	__asm        mov    [ebp-0x48], eax;
+	None = None;
 _T1cc:
 	__asm        jmp    near ptr 0x00483474;
 
@@ -2878,7 +2868,7 @@ _T297:
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    _T2c9;
 _T2c2:
-	__asm        mov    dword ptr [ebp-0x64], 0xFFFFFFFF;
+	None = 0xffffffff;
 _T2c9:
 	__asm        jmp    near ptr 0x00483571;
 
@@ -2977,8 +2967,7 @@ _T3ca:
 	__asm        mov    [ecx+0xC], eax;
 	__asm        jmp    _T3f1;
 _T3e7:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
+	this-><Directory+0x0c:4> = 0x0;
 _T3f1:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
@@ -3046,8 +3035,7 @@ _T49b:
 	__asm        mov    [ecx+0x14], eax;
 	__asm        jmp    _T4c2;
 _T4b8:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
+	this-><Directory+0x14:4> = 0x0;
 _T4c2:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x10], 0;
@@ -3128,9 +3116,9 @@ _T84:
 	__asm        lea    ecx, directoryEntryCurrent.directoryParent;
 	__asm        call   DirectoryEntry::DirectoryEntry;
 // LINE 227:
-	__asm        mov    bParentDirectoryEnumerated, 0;
+	bParentDirectoryEnumerated = 0x0;
 // LINE 228:
-	__asm        mov    bCurrentDirectoryEnumerated, 0;
+	bCurrentDirectoryEnumerated = 0x0;
 // LINE 231:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -3227,8 +3215,7 @@ _T205:
 	__asm        jmp    _T1181;
 // LINE 239:
 _T215:
-	__asm        mov    eax, this;
-	__asm        mov    directoryEntryCurrent.directoryParent, eax;
+	directoryEntryCurrent.directoryParent = this;
 // LINE 240:
 	__asm        jmp    near ptr 0x004839ED;
 
@@ -3246,7 +3233,7 @@ _T215:
 	__asm        test   reinterpret_cast<uint8_t>(findData.dwFileAttributes), 0x10;
 	__asm        je     _T586;
 // LINE 242:
-	__asm        mov    directoryEntryCurrent.lType, 4;
+	directoryEntryCurrent.lType = 0x4;
 // LINE 243:
 	__asm        cmp    bCurrentDirectoryEnumerated, 0;
 	__asm        jne    _T3ce;
@@ -3265,7 +3252,7 @@ _T215:
 	__asm        mov    [ebp-0x194], eax;
 	__asm        jmp    _T2b5;
 _T2ab:
-	__asm        mov    dword ptr [ebp-0x194], 0;
+	None = 0x0;
 _T2b5:
 	__asm        mov    dword ptr [ebp-0x198], 0;
 	__asm        jmp    near ptr 0x00483A8B;
@@ -3283,7 +3270,7 @@ _T2b5:
 	__asm        mov    dword ptr [ebp-0x190], 1;
 	__asm        jmp    _T304;
 _T2fa:
-	__asm        mov    dword ptr [ebp-0x190], 0;
+	None = 0x0;
 _T304:
 	__asm        jmp    near ptr 0x00483AD0;
 
@@ -3308,7 +3295,7 @@ _T348:
 	__asm        cmp    dword ptr [ebp-0x1E8], 0;
 	__asm        je     _T3ce;
 // LINE 244:
-	__asm        mov    bCurrentDirectoryEnumerated, 1;
+	bCurrentDirectoryEnumerated = 0x1;
 // LINE 245:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1C], 0;
@@ -3353,7 +3340,7 @@ _T3ce:
 	__asm        mov    [ebp-0x1A0], eax;
 	__asm        jmp    _T41f;
 _T415:
-	__asm        mov    dword ptr [ebp-0x1A0], 0;
+	None = 0x0;
 _T41f:
 	__asm        mov    dword ptr [ebp-0x1A4], 0;
 	__asm        jmp    near ptr 0x00483BF5;
@@ -3371,7 +3358,7 @@ _T41f:
 	__asm        mov    dword ptr [ebp-0x19C], 1;
 	__asm        jmp    _T46e;
 _T464:
-	__asm        mov    dword ptr [ebp-0x19C], 0;
+	None = 0x0;
 _T46e:
 	__asm        jmp    near ptr 0x00483C3A;
 
@@ -3396,7 +3383,7 @@ _T4b2:
 	__asm        cmp    dword ptr [ebp-0x1EC], 0;
 	__asm        je     _T538;
 // LINE 249:
-	__asm        mov    bParentDirectoryEnumerated, 1;
+	bParentDirectoryEnumerated = 0x1;
 // LINE 250:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x18], 0;
@@ -3448,7 +3435,7 @@ _T581:
 	__asm        jmp    _T5d9;
 // LINE 257:
 _T586:
-	__asm        mov    directoryEntryCurrent.lType, 8;
+	directoryEntryCurrent.lType = 0x8;
 // LINE 258:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -3503,7 +3490,7 @@ _T612:
 	__asm        test   reinterpret_cast<uint8_t>(findData.dwFileAttributes), 0x10;
 	__asm        je     _T977;
 // LINE 269:
-	__asm        mov    directoryEntryCurrent.lType, 4;
+	directoryEntryCurrent.lType = 0x4;
 // LINE 270:
 	__asm        cmp    bCurrentDirectoryEnumerated, 0;
 	__asm        jne    _T7bf;
@@ -3522,7 +3509,7 @@ _T612:
 	__asm        mov    [ebp-0x1AC], eax;
 	__asm        jmp    _T6a6;
 _T69c:
-	__asm        mov    dword ptr [ebp-0x1AC], 0;
+	None = 0x0;
 _T6a6:
 	__asm        mov    dword ptr [ebp-0x1B0], 0;
 	__asm        jmp    near ptr 0x00483E7C;
@@ -3540,7 +3527,7 @@ _T6a6:
 	__asm        mov    dword ptr [ebp-0x1A8], 1;
 	__asm        jmp    _T6f5;
 _T6eb:
-	__asm        mov    dword ptr [ebp-0x1A8], 0;
+	None = 0x0;
 _T6f5:
 	__asm        jmp    near ptr 0x00483EC1;
 
@@ -3565,7 +3552,7 @@ _T739:
 	__asm        cmp    dword ptr [ebp-0x1F0], 0;
 	__asm        je     _T7bf;
 // LINE 271:
-	__asm        mov    bCurrentDirectoryEnumerated, 1;
+	bCurrentDirectoryEnumerated = 0x1;
 // LINE 272:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1C], 0;
@@ -3610,7 +3597,7 @@ _T7bf:
 	__asm        mov    [ebp-0x1B8], eax;
 	__asm        jmp    _T810;
 _T806:
-	__asm        mov    dword ptr [ebp-0x1B8], 0;
+	None = 0x0;
 _T810:
 	__asm        mov    dword ptr [ebp-0x1BC], 0;
 	__asm        jmp    near ptr 0x00483FE6;
@@ -3628,7 +3615,7 @@ _T810:
 	__asm        mov    dword ptr [ebp-0x1B4], 1;
 	__asm        jmp    _T85f;
 _T855:
-	__asm        mov    dword ptr [ebp-0x1B4], 0;
+	None = 0x0;
 _T85f:
 	__asm        jmp    near ptr 0x0048402B;
 
@@ -3653,7 +3640,7 @@ _T8a3:
 	__asm        cmp    dword ptr [ebp-0x1F4], 0;
 	__asm        je     _T929;
 // LINE 276:
-	__asm        mov    bParentDirectoryEnumerated, 1;
+	bParentDirectoryEnumerated = 0x1;
 // LINE 277:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x18], 0;
@@ -3705,7 +3692,7 @@ _T972:
 	__asm        jmp    _T9ca;
 // LINE 284:
 _T977:
-	__asm        mov    directoryEntryCurrent.lType, 8;
+	directoryEntryCurrent.lType = 0x8;
 // LINE 285:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -3741,7 +3728,7 @@ _T9ca:
 	__asm        mov    [ebp-0x1C4], eax;
 	__asm        jmp    _Ta0e;
 _Ta04:
-	__asm        mov    dword ptr [ebp-0x1C4], 0;
+	None = 0x0;
 _Ta0e:
 	__asm        mov    dword ptr [ebp-0x1C8], 0;
 	__asm        jmp    near ptr 0x004841E4;
@@ -3759,7 +3746,7 @@ _Ta0e:
 	__asm        mov    dword ptr [ebp-0x1C0], 1;
 	__asm        jmp    _Ta5d;
 _Ta53:
-	__asm        mov    dword ptr [ebp-0x1C0], 0;
+	None = 0x0;
 _Ta5d:
 	__asm        jmp    near ptr 0x00484229;
 
@@ -3784,7 +3771,7 @@ _Taa1:
 	__asm        cmp    dword ptr [ebp-0x1F8], 0;
 	__asm        je     _Tb27;
 // LINE 288:
-	__asm        mov    bCurrentDirectoryEnumerated, 1;
+	bCurrentDirectoryEnumerated = 0x1;
 // LINE 289:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1C], 0;
@@ -3826,7 +3813,7 @@ _Tb27:
 	__asm        mov    [ebp-0x1D0], eax;
 	__asm        jmp    _Tb6b;
 _Tb61:
-	__asm        mov    dword ptr [ebp-0x1D0], 0;
+	None = 0x0;
 _Tb6b:
 	__asm        mov    dword ptr [ebp-0x1D4], 0;
 	__asm        jmp    near ptr 0x00484341;
@@ -3844,7 +3831,7 @@ _Tb6b:
 	__asm        mov    dword ptr [ebp-0x1CC], 1;
 	__asm        jmp    _Tbba;
 _Tbb0:
-	__asm        mov    dword ptr [ebp-0x1CC], 0;
+	None = 0x0;
 _Tbba:
 	__asm        jmp    near ptr 0x00484386;
 
@@ -3869,7 +3856,7 @@ _Tbfe:
 	__asm        cmp    dword ptr [ebp-0x1FC], 0;
 	__asm        je     _Tc84;
 // LINE 293:
-	__asm        mov    bParentDirectoryEnumerated, 1;
+	bParentDirectoryEnumerated = 0x1;
 // LINE 294:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x18], 0;
@@ -3951,8 +3938,7 @@ _Td23:
 // Block start:
 	class basic_string<char> sParentDirectory;
 _Td35:
-	__asm        mov    eax, SZ_PARENT_DIR_NAME;
-	__asm        mov    [ebp-0x358], eax;
+	None = SZ_PARENT_DIR_NAME;
 // LINE 307:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -3968,7 +3954,7 @@ _Td35:
 	__asm        mov    sParentDirectory.reference, eax;
 	__asm        jmp    _Td84;
 _Td7a:
-	__asm        mov    sParentDirectory.reference, 0;
+	sParentDirectory.reference = 0x0;
 _Td84:
 	__asm        mov    sParentDirectory.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x0048455A;
@@ -4019,11 +4005,11 @@ _Tdfb:
 	__asm        mov    directoryEntryCurrent.sName.reference, eax;
 	__asm        jmp    _Te50;
 _Te46:
-	__asm        mov    directoryEntryCurrent.sName.reference, 0;
+	directoryEntryCurrent.sName.reference = 0x0;
 _Te50:
 	__asm        jmp    near ptr 0x0048461C;
 // LINE 310:
-	__asm        mov    directoryEntryCurrent.lType, 4;
+	directoryEntryCurrent.lType = 0x4;
 // LINE 311:
 	__asm        lea    eax, directoryEntryCurrent.directoryParent;
 	__asm        push   eax;
@@ -4088,8 +4074,7 @@ _Tf27:
 // Block start:
 	class basic_string<char> sCurrentDirectory;
 _Tf39:
-	__asm        mov    eax, SZ_CURRENT_DIR_NAME;
-	__asm        mov    [ebp-0x360], eax;
+	None = SZ_CURRENT_DIR_NAME;
 // LINE 318:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -4105,13 +4090,12 @@ _Tf39:
 	__asm        mov    sCurrentDirectory.reference, eax;
 	__asm        jmp    _Tf88;
 _Tf7e:
-	__asm        mov    sCurrentDirectory.reference, 0;
+	sCurrentDirectory.reference = 0x0;
 _Tf88:
 	__asm        mov    sCurrentDirectory.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x0048475E;
 
-	__asm        mov    eax, SZ_CURRENT_DIR_NAME;
-	__asm        mov    [ebp-0x368], eax;
+	None = SZ_CURRENT_DIR_NAME;
 // LINE 319:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -4127,7 +4111,7 @@ _Tf88:
 	__asm        mov    [ebp-0x1DC], eax;
 	__asm        jmp    _Tfe6;
 _Tfdc:
-	__asm        mov    dword ptr [ebp-0x1DC], 0;
+	None = 0x0;
 _Tfe6:
 	__asm        mov    dword ptr [ebp-0x1E0], 0;
 	__asm        jmp    near ptr 0x004847BC;
@@ -4142,7 +4126,7 @@ _Tfe6:
 	__asm        mov    dword ptr [ebp-0x1D8], 1;
 	__asm        jmp    _T1028;
 _T101e:
-	__asm        mov    dword ptr [ebp-0x1D8], 0;
+	None = 0x0;
 _T1028:
 	__asm        lea    ecx, [ebp-0x1E0];
 	__asm        call   basic_string<char>::delete_ref;
@@ -4170,7 +4154,7 @@ _T1067:
 	__asm        lea    ecx, directoryEntryCurrent.sName.c_str_ptr;
 	__asm        call   basic_string<char>::operator=;
 // LINE 321:
-	__asm        mov    directoryEntryCurrent.lType, 4;
+	directoryEntryCurrent.lType = 0x4;
 // LINE 322:
 	__asm        lea    eax, directoryEntryCurrent.directoryParent;
 	__asm        push   eax;
@@ -4264,9 +4248,9 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 	__asm        lea    ecx, directoryEntryCurrent.directoryParent;
 	__asm        call   DirectoryEntry::DirectoryEntry;
 // LINE 354:
-	__asm        mov    bParentDirectoryEnumerated, 0;
+	bParentDirectoryEnumerated = 0x0;
 // LINE 355:
-	__asm        mov    bCurrentDirectoryEnumerated, 0;
+	bCurrentDirectoryEnumerated = 0x0;
 // LINE 357:
 	__asm        lea    eax, findData.dwFileAttributes;
 	__asm        push   eax;
@@ -4317,7 +4301,7 @@ _Tcb:
 	__asm        mov    dword ptr [ebp-0x178], 1;
 	__asm        jmp    _T147;
 _T13d:
-	__asm        mov    dword ptr [ebp-0x178], 0;
+	None = 0x0;
 _T147:
 	__asm        jmp    near ptr 0x00484A99;
 
@@ -4328,7 +4312,7 @@ _T147:
 	__asm        cmp    dword ptr [ebp-0x1F8], 0;
 	__asm        je     _T1ef;
 // LINE 364:
-	__asm        mov    bCurrentDirectoryEnumerated, 1;
+	bCurrentDirectoryEnumerated = 0x1;
 // LINE 365:
 	__asm        test   reinterpret_cast<uint8_t>(lFilter), 1;
 	__asm        je     _T1ea;
@@ -4384,7 +4368,7 @@ _T1ef:
 	__asm        mov    dword ptr [ebp-0x18C], 1;
 	__asm        jmp    _T254;
 _T24a:
-	__asm        mov    dword ptr [ebp-0x18C], 0;
+	None = 0x0;
 _T254:
 	__asm        jmp    near ptr 0x00484BA6;
 
@@ -4395,7 +4379,7 @@ _T254:
 	__asm        cmp    dword ptr [ebp-0x1FC], 0;
 	__asm        je     _T370;
 // LINE 369:
-	__asm        mov    bParentDirectoryEnumerated, 1;
+	bParentDirectoryEnumerated = 0x1;
 // LINE 370:
 	__asm        test   reinterpret_cast<uint8_t>(lFilter), 2;
 	__asm        je     _T36b;
@@ -4414,7 +4398,7 @@ _T254:
 	__asm        mov    [ebp-0x198], eax;
 	__asm        jmp    _T2d5;
 _T2cb:
-	__asm        mov    dword ptr [ebp-0x198], 0;
+	None = 0x0;
 _T2d5:
 	__asm        mov    dword ptr [ebp-0x19C], 0;
 	__asm        jmp    near ptr 0x00484C31;
@@ -4472,7 +4456,7 @@ _T370:
 	__asm        mov    [ebp-0x1A0], eax;
 	__asm        jmp    _T3b4;
 _T3aa:
-	__asm        mov    dword ptr [ebp-0x1A0], 0;
+	None = 0x0;
 _T3b4:
 	__asm        mov    dword ptr [ebp-0x1A4], 0;
 	__asm        jmp    near ptr 0x00484D10;
@@ -4533,7 +4517,7 @@ _T44f:
 	__asm        mov    [ebp-0x1A8], eax;
 	__asm        jmp    _T49d;
 _T493:
-	__asm        mov    dword ptr [ebp-0x1A8], 0;
+	None = 0x0;
 _T49d:
 	__asm        mov    dword ptr [ebp-0x1AC], 0;
 	__asm        jmp    near ptr 0x00484DF9;
@@ -4614,7 +4598,7 @@ _T56c:
 	__asm        mov    [ebp-0x1B4], eax;
 	__asm        jmp    _T5d4;
 _T5ca:
-	__asm        mov    dword ptr [ebp-0x1B4], 0;
+	None = 0x0;
 _T5d4:
 	__asm        mov    dword ptr [ebp-0x1B8], 0;
 	__asm        jmp    near ptr 0x00484F30;
@@ -4632,7 +4616,7 @@ _T5d4:
 	__asm        mov    dword ptr [ebp-0x1B0], 1;
 	__asm        jmp    _T623;
 _T619:
-	__asm        mov    dword ptr [ebp-0x1B0], 0;
+	None = 0x0;
 _T623:
 	__asm        jmp    near ptr 0x00484F75;
 
@@ -4657,7 +4641,7 @@ _T667:
 	__asm        cmp    dword ptr [ebp-0x200], 0;
 	__asm        je     _T778;
 // LINE 391:
-	__asm        mov    bCurrentDirectoryEnumerated, 1;
+	bCurrentDirectoryEnumerated = 0x1;
 // LINE 392:
 	__asm        test   reinterpret_cast<uint8_t>(lFilter), 1;
 	__asm        je     _T773;
@@ -4676,7 +4660,7 @@ _T667:
 	__asm        mov    [ebp-0x1BC], eax;
 	__asm        jmp    _T6dd;
 _T6d3:
-	__asm        mov    dword ptr [ebp-0x1BC], 0;
+	None = 0x0;
 _T6dd:
 	__asm        mov    dword ptr [ebp-0x1C0], 0;
 	__asm        jmp    near ptr 0x00485039;
@@ -4736,7 +4720,7 @@ _T778:
 	__asm        mov    [ebp-0x1C8], eax;
 	__asm        jmp    _T7c9;
 _T7bf:
-	__asm        mov    dword ptr [ebp-0x1C8], 0;
+	None = 0x0;
 _T7c9:
 	__asm        mov    dword ptr [ebp-0x1CC], 0;
 	__asm        jmp    near ptr 0x00485125;
@@ -4754,7 +4738,7 @@ _T7c9:
 	__asm        mov    dword ptr [ebp-0x1C4], 1;
 	__asm        jmp    _T818;
 _T80e:
-	__asm        mov    dword ptr [ebp-0x1C4], 0;
+	None = 0x0;
 _T818:
 	__asm        jmp    near ptr 0x0048516A;
 
@@ -4779,7 +4763,7 @@ _T85c:
 	__asm        cmp    dword ptr [ebp-0x204], 0;
 	__asm        je     _T96d;
 // LINE 396:
-	__asm        mov    bParentDirectoryEnumerated, 1;
+	bParentDirectoryEnumerated = 0x1;
 // LINE 397:
 	__asm        test   reinterpret_cast<uint8_t>(lFilter), 2;
 	__asm        je     _T968;
@@ -4798,7 +4782,7 @@ _T85c:
 	__asm        mov    [ebp-0x1D0], eax;
 	__asm        jmp    _T8d2;
 _T8c8:
-	__asm        mov    dword ptr [ebp-0x1D0], 0;
+	None = 0x0;
 _T8d2:
 	__asm        mov    dword ptr [ebp-0x1D4], 0;
 	__asm        jmp    near ptr 0x0048522E;
@@ -4856,7 +4840,7 @@ _T96d:
 	__asm        mov    [ebp-0x1D8], eax;
 	__asm        jmp    _T9b1;
 _T9a7:
-	__asm        mov    dword ptr [ebp-0x1D8], 0;
+	None = 0x0;
 _T9b1:
 	__asm        mov    dword ptr [ebp-0x1DC], 0;
 	__asm        jmp    near ptr 0x0048530D;
@@ -4917,7 +4901,7 @@ _Ta4c:
 	__asm        mov    [ebp-0x1E0], eax;
 	__asm        jmp    _Ta9a;
 _Ta90:
-	__asm        mov    dword ptr [ebp-0x1E0], 0;
+	None = 0x0;
 _Ta9a:
 	__asm        mov    dword ptr [ebp-0x1E4], 0;
 	__asm        jmp    near ptr 0x004853F6;
@@ -4988,8 +4972,7 @@ _Tb80:
 	__asm        je     _Tc61;
 // LINE 413:
 _Tb92:
-	__asm        mov    eax, SZ_PARENT_DIR_NAME;
-	__asm        mov    [ebp-0x23C], eax;
+	None = SZ_PARENT_DIR_NAME;
 // LINE 414:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -5005,7 +4988,7 @@ _Tb92:
 	__asm        mov    [ebp-0x1E8], eax;
 	__asm        jmp    _Tbe1;
 _Tbd7:
-	__asm        mov    dword ptr [ebp-0x1E8], 0;
+	None = 0x0;
 _Tbe1:
 	__asm        mov    dword ptr [ebp-0x1EC], 0;
 	__asm        jmp    near ptr 0x0048553D;
@@ -5068,8 +5051,7 @@ _Tcac:
 	__asm        je     _Td8d;
 // LINE 419:
 _Tcbe:
-	__asm        mov    eax, SZ_CURRENT_DIR_NAME;
-	__asm        mov    [ebp-0x21C], eax;
+	None = SZ_CURRENT_DIR_NAME;
 // LINE 420:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -5085,7 +5067,7 @@ _Tcbe:
 	__asm        mov    [ebp-0x1F0], eax;
 	__asm        jmp    _Td0d;
 _Td03:
-	__asm        mov    dword ptr [ebp-0x1F0], 0;
+	None = 0x0;
 _Td0d:
 	__asm        mov    dword ptr [ebp-0x1F4], 0;
 	__asm        jmp    near ptr 0x00485669;
@@ -5259,7 +5241,7 @@ _Tf8:
 	__asm        mov    dword ptr [ebp-0x158], 1;
 	__asm        jmp    _T187;
 _T17d:
-	__asm        mov    dword ptr [ebp-0x158], 0;
+	None = 0x0;
 _T187:
 	__asm        jmp    near ptr 0x004858C1;
 
@@ -5395,7 +5377,7 @@ _T7c:
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    _Tbc;
 _Tb5:
-	__asm        mov    dword ptr [ebp-0x10], 0xFFFFFFFF;
+	None = 0xffffffff;
 _Tbc:
 	__asm        jmp    near ptr 0x00485A83;
 
@@ -5618,8 +5600,7 @@ _T1a7:
 	__asm        mov    [ecx+0xC], eax;
 	__asm        jmp    _T1ce;
 _T1c4:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
+	this-><Directory+0x0c:4> = 0x0;
 _T1ce:
 	__asm        jmp    near ptr 0x00485D09;
 // LINE 475:
@@ -5933,8 +5914,7 @@ _T1a7:
 	__asm        mov    [ecx+0x14], eax;
 	__asm        jmp    _T1ce;
 _T1c4:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
+	this-><Directory+0x14:4> = 0x0;
 _T1ce:
 	__asm        jmp    near ptr 0x00486091;
 // LINE 513:
@@ -6062,7 +6042,7 @@ _T337:
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    _T358;
 _T351:
-	__asm        mov    dword ptr [ebp-4], 0;
+	None = 0x0;
 _T358:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
@@ -6291,7 +6271,7 @@ _T172:
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    _T193;
 _T18c:
-	__asm        mov    dword ptr [ebp-0xC], 0;
+	None = 0x0;
 _T193:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
@@ -6341,9 +6321,7 @@ _T1ff:
 _T21f:
 	__asm        jmp    near ptr 0x00486540;
 
-	__asm        mov    eax, [ebp-0xC];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], eax;
+	this-><Directory+0x0c:4> = None;
 _T22d:
 	__asm        jmp    near ptr 0x0048654E;
 
@@ -6495,7 +6473,7 @@ _T3ce:
 	__asm        mov    [ebp-0x40], eax;
 	__asm        jmp    _T3ef;
 _T3e8:
-	__asm        mov    dword ptr [ebp-0x40], 0;
+	None = 0x0;
 _T3ef:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
@@ -6527,9 +6505,7 @@ _T3ef:
 _T444:
 	__asm        jmp    near ptr 0x00486765;
 
-	__asm        mov    eax, [ebp-0x40];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], eax;
+	this-><Directory+0x0c:4> = None;
 _T452:
 	__asm        mov    dword ptr [ebp-0x3C], 0;
 	__asm        jmp    _T461;
@@ -6785,7 +6761,7 @@ _T22d:
 	__asm        mov    [ebp-0x40], eax;
 	__asm        jmp    _T26d;
 _T266:
-	__asm        mov    dword ptr [ebp-0x40], 0xFFFFFFFF;
+	None = 0xffffffff;
 _T26d:
 	__asm        jmp    near ptr 0x00486A44;
 
@@ -7097,8 +7073,7 @@ _T5a1:
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    _T5ea;
 _T5e0:
-	__asm        mov    eax, sLastPart;
-	__asm        mov    dword ptr [eax+4], 0;
+	sLastPart.reference = 0x0;
 _T5ea:
 	__asm        jmp    near ptr 0x00486DC1;
 // LINE 572:

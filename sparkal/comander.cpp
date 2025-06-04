@@ -115,11 +115,9 @@ protected:
 // FUNCTION: COPTER_D 0x0049ad30
 void ICommander::ICommander() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5912A8;
+	this-><vftable> = 0x5912a8;
 // LINE 15:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
+	this->mpWindow = 0x0;
 // LINE 16:
 	__asm        jmp    near ptr 0x0049AD54;
 
@@ -129,8 +127,7 @@ void ICommander::ICommander() {
 // FUNCTION: COPTER_D 0x0049ad5c
 void ICommander::~ICommander() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5912A8;
+	this-><vftable> = 0x5912a8;
 // LINE 25:
 	__asm        jmp    near ptr 0x0049AD76;
 }
@@ -140,23 +137,19 @@ class CSparkalWindow* ICommander::SetWindow(class CSparkalWindow *pWindow) {
 	class CSparkalWindow *ReturnWindow;
 
 // LINE 29:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ReturnWindow, eax;
+	ReturnWindow = this->mpWindow;
 // LINE 31:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, pWindow;
 	__asm        cmp    [eax+4], ecx;
 	__asm        jne    _T30;
 // LINE 32:
-	__asm        mov    ReturnWindow, 0;
+	ReturnWindow = 0x0;
 // LINE 33:
 	__asm        jmp    _T39;
 // LINE 34:
 _T30:
-	__asm        mov    eax, pWindow;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->mpWindow = pWindow;
 // LINE 36:
 _T39:
 	__asm        mov    eax, ReturnWindow;
@@ -180,8 +173,7 @@ void CDefaultCommander::CDefaultCommander() {
 // FUNCTION: COPTER_D 0x0049aded
 void CDefaultCommander::~CDefaultCommander() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5912D0;
+	this-><CDefaultCommander+0x00> = 0x5912d0;
 // LINE 49:
 	__asm        jmp    near ptr 0x0049AE07;
 

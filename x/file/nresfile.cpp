@@ -172,7 +172,7 @@ class StdResLoader* NResFile::GetLoader(unsigned long type, void (*swizzler)(voi
 	__asm        mov    i.fCur, eax;
 	__asm        jmp    _T35;
 _T2e:
-	__asm        mov    i.fCur, 0;
+	i.fCur = 0x0;
 _T35:
 	__asm        jmp    near ptr 0x00499F2A;
 
@@ -183,9 +183,7 @@ _T44:
 	__asm        cmp    i.fCur, 0;
 	__asm        je     _T57;
 
-	__asm        mov    eax, i.fCur;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    i.fCur, eax;
+	i.fCur = i.fCur->next;
 _T57:
 	__asm        jmp    _T5c;
 _T5c:
@@ -366,7 +364,7 @@ _T239:
 	__asm        mov    loader, eax;
 	__asm        jmp    _T255;
 _T24e:
-	__asm        mov    loader, 0;
+	loader = 0x0;
 // LINE 21:
 _T255:
 	__asm        cmp    loader, 0;
@@ -432,8 +430,7 @@ void NResFile::~NResFile() {
 	class PtrList<StdResLoader>::Iter i;
 
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x591218;
+	this-><NResFile+0x00> = 0x591218;
 // LINE 31:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x11A;
@@ -446,7 +443,7 @@ void NResFile::~NResFile() {
 	__asm        mov    i.fCur, eax;
 	__asm        jmp    _T3e;
 _T37:
-	__asm        mov    i.fCur, 0;
+	i.fCur = 0x0;
 _T3e:
 	__asm        jmp    near ptr 0x0049A238;
 
@@ -457,9 +454,7 @@ _T4d:
 	__asm        cmp    i.fCur, 0;
 	__asm        je     _T60;
 
-	__asm        mov    eax, i.fCur;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    i.fCur, eax;
+	i.fCur = i.fCur->next;
 _T60:
 	__asm        jmp    _T65;
 _T65:

@@ -127,9 +127,7 @@ public:
 // FUNCTION: COPTER_D 0x00565a40
 void StringSet::StringSet(class ResFile *file, short resID) {
 // LINE 13:
-	__asm        mov    eax, file;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx], eax;
+	this->fResFile = file;
 // LINE 15:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(resID);
 	__asm        push   eax;
@@ -144,9 +142,7 @@ void StringSet::StringSet(class ResFile *file, short resID) {
 // FUNCTION: COPTER_D 0x00565a6f
 void StringSet::StringSet(class ResFile *file, short resID, short numStrings) {
 // LINE 21:
-	__asm        mov    eax, file;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx], eax;
+	this->fResFile = file;
 // LINE 23:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(resID);
 	__asm        push   eax;
@@ -234,11 +230,9 @@ _Ta0:
 	__asm        jmp    _Tc8;
 // LINE 45:
 _Tb4:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
+	this->fStringPtr = 0x0;
 // LINE 46:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
+	this->fNumStrings = 0x0;
 // LINE 48:
 _Tc8:
 	__asm        jmp    near ptr 0x00565B99;

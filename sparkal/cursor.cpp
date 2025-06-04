@@ -50,26 +50,26 @@ int32_t Cursor::IsButtonDown(unsigned long nCursor, unsigned long nModifiers) {
 	int32_t nKeyState;
 
 // LINE 40:
-	__asm        mov    nAndValue, 0x80000000;
+	nAndValue = 0x80000000;
 // LINE 47:
 	__asm        cmp    nCursor, 1;
 	__asm        jne    _T26;
 // LINE 48:
-	__asm        mov    nCursor, 1;
+	nCursor = 0x1;
 // LINE 49:
 	__asm        jmp    _T4d;
 _T26:
 	__asm        cmp    nCursor, 2;
 	__asm        jne    _T3c;
 // LINE 50:
-	__asm        mov    nCursor, 2;
+	nCursor = 0x2;
 // LINE 51:
 	__asm        jmp    _T4d;
 _T3c:
 	__asm        cmp    nCursor, 4;
 	__asm        jne    _T4d;
 // LINE 52:
-	__asm        mov    nCursor, 4;
+	nCursor = 0x4;
 // LINE 54:
 _T4d:
 	__asm        mov    eax, nCursor;

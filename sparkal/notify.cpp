@@ -73,15 +73,9 @@ void NotificationItem::NotificationItem(long lNewPreferenceType, class Notificat
 // FUNCTION: COPTER_D 0x0043e1df
 class NotificationItem& NotificationItem::operator=(const class NotificationItem& P2) {
 // LINE 23:
-	__asm        mov    eax, P2;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx], eax;
+	this->lPreferenceType = P2.lPreferenceType;
 // LINE 24:
-	__asm        mov    eax, P2;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->myNotificationSink = P2.myNotificationSink;
 // LINE 25:
 	__asm        mov    eax, this;
 	__asm        jmp    near ptr 0x0043E209;

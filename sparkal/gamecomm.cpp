@@ -495,8 +495,7 @@ _Tb8:
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _T103;
 _Tfd:
-	__asm        mov    eax, [ebp-0x1C];
-	__asm        mov    [ebp-0x24], eax;
+	None = None;
 _T103:
 	__asm        jmp    near ptr 0x0048B3B8;
 
@@ -564,8 +563,7 @@ _T16d:
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    _T1da;
 _T1d4:
-	__asm        mov    eax, [ebp-0x30];
-	__asm        mov    [ebp-0x38], eax;
+	None = None;
 _T1da:
 	__asm        jmp    near ptr 0x0048B48F;
 
@@ -837,21 +835,15 @@ _T96:
 // LINE 139:
 	__asm        jmp    near ptr 0x0048B79A;
 
-	__asm        mov    eax, tempShortcutListIterator.node;
-	__asm        mov    al, [eax+0x10];
-	__asm        mov    chCurrentChar, al;
+	chCurrentChar = reinterpret_cast<uint8_t>(tempShortcutListIterator.node->data.lKey);
 // LINE 140:
 	__asm        jmp    near ptr 0x0048B7A8;
 
-	__asm        mov    eax, tempShortcutListIterator.node;
-	__asm        mov    al, [eax+0xC];
-	__asm        mov    chCurrentCommand, al;
+	chCurrentCommand = reinterpret_cast<uint8_t>(tempShortcutListIterator.node->data.lCommand);
 // LINE 141:
 	__asm        jmp    near ptr 0x0048B7B6;
 
-	__asm        mov    eax, tempShortcutListIterator.node;
-	__asm        mov    al, [eax+0x14];
-	__asm        mov    chCurrentModifiers, al;
+	chCurrentModifiers = reinterpret_cast<uint8_t>(tempShortcutListIterator.node->data.lModifiers);
 // LINE 143:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chCurrentCommand;
@@ -869,9 +861,7 @@ _T96:
 // LINE 146:
 	__asm        jmp    near ptr 0x0048B7E7;
 
-	__asm        mov    eax, tempShortcutListIterator.node;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        mov    lCurrentIgnoreModifiers, eax;
+	lCurrentIgnoreModifiers = tempShortcutListIterator.node->data.lIgnoreModifiers;
 // LINE 147:
 	__asm        cmp    lCurrentIgnoreModifiers, 0;
 	__asm        je     _T1f7;
@@ -1053,7 +1043,7 @@ void CommandSystem::PollJoysticksForCommands() {
 	__asm        cmp    iEnd, 4;
 	__asm        jle    _T2a;
 // LINE 201:
-	__asm        mov    iEnd, 4;
+	iEnd = 0x4;
 // LINE 205:
 _T2a:
 	__asm        mov    i, 0;
@@ -1215,8 +1205,7 @@ void CGameCommander::CGameCommander() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590FF8;
 // LINE 249:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->myGameApp = 0x0;
 // LINE 252:
 	__asm        jmp    near ptr 0x0048BBB4;
 
@@ -1226,8 +1215,7 @@ void CGameCommander::CGameCommander() {
 // FUNCTION: COPTER_D 0x0048bbbc
 void CGameCommander::~CGameCommander() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x590FF8;
+	this-><CGameCommander+0x00> = 0x590ff8;
 // LINE 256:
 	__asm        jmp    near ptr 0x0048BBD6;
 
@@ -1345,9 +1333,7 @@ unsigned long CGameCommander::OnMouseMove(int32_t x, int32_t y) {
 // FUNCTION: COPTER_D 0x0048bd11
 unsigned long CGameCommander::OnWindowActivate() {
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    [ebp-4], eax;
+	None = this->myGameApp;
 // LINE 323:
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax+0x42C4], 1;
@@ -1361,9 +1347,7 @@ unsigned long CGameCommander::OnWindowActivate() {
 // FUNCTION: COPTER_D 0x0048bd44
 unsigned long CGameCommander::OnWindowDeactivate() {
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    [ebp-4], eax;
+	None = this->myGameApp;
 // LINE 333:
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax+0x42C4], 0;
@@ -1460,11 +1444,9 @@ void CGameCommander::ProcessKeyDown(long lKey, struct CommandSystem& commandSyst
 	unsigned char chTempModifierState;
 
 // LINE 408:
-	__asm        mov    eax, nCommand;
-	__asm        mov    dword ptr [eax], 0;
+	nCommand. = 0x0;
 // LINE 409:
-	__asm        mov    eax, bPushCommand;
-	__asm        mov    dword ptr [eax], 0;
+	bPushCommand. = 0x0;
 // LINE 421:
 	__asm        mov    eax, lKey;
 	__asm        push   eax;
@@ -1475,9 +1457,7 @@ void CGameCommander::ProcessKeyDown(long lKey, struct CommandSystem& commandSyst
 // LINE 426:
 // Block start:
 	class CharData *currentCharData;
-	__asm        mov    eax, commandSystem;
-	__asm        mov    eax, [eax+0xCC];
-	__asm        mov    currentCharData, eax;
+	currentCharData = commandSystem.keyboardCommandList.firstCharData;
 // LINE 428:
 _T40:
 	__asm        cmp    currentCharData, 0;
@@ -1498,9 +1478,7 @@ _T40:
 	__asm        mov    [ecx+eax*2], dl;
 	__asm        jmp    near ptr 0x0048BEDF;
 // LINE 430:
-	__asm        mov    eax, currentCharData;
-	__asm        mov    eax, [eax+5];
-	__asm        mov    currentCharData, eax;
+	currentCharData = currentCharData->nextCharData;
 // LINE 431:
 	__asm        jmp    _T40;
 // LINE 432:
@@ -1509,8 +1487,7 @@ _T7e:
 	__asm        add    ecx, 0xC8;
 	__asm        call   CharList::DeleteAllItems;
 // LINE 434:
-	__asm        mov    eax, gKeyboard.myCharDownList.firstCharData;
-	__asm        mov    currentCharData, eax;
+	currentCharData = gKeyboard.myCharDownList.firstCharData;
 // LINE 435:
 _T94:
 	__asm        cmp    currentCharData, 0;
@@ -1565,9 +1542,7 @@ _T94:
 	__asm        call   CharList::AddItem;
 // LINE 444:
 _T128:
-	__asm        mov    eax, currentCharData;
-	__asm        mov    eax, [eax+5];
-	__asm        mov    currentCharData, eax;
+	currentCharData = currentCharData->nextCharData;
 // LINE 445:
 	__asm        jmp    _T94;
 // LINE 447:
@@ -1596,9 +1571,7 @@ _T13b:
 	__asm        cmp    nTempCommand, 0;
 	__asm        je     _T1e9;
 // LINE 452:
-	__asm        mov    eax, nTempCommand;
-	__asm        mov    ecx, nCommand;
-	__asm        mov    [ecx], eax;
+	nCommand. = nTempCommand;
 // LINE 453:
 	__asm        jmp    near ptr 0x0048BFF5;
 
@@ -1609,8 +1582,7 @@ _T13b:
 	__asm        test   edx, edx;
 	__asm        je     _T1a3;
 // LINE 456:
-	__asm        mov    eax, bPushCommand;
-	__asm        mov    dword ptr [eax], 1;
+	bPushCommand. = 0x1;
 // LINE 458:
 _T1a3:
 	__asm        jmp    near ptr 0x0048C017;
@@ -1658,9 +1630,7 @@ void CGameCommander::ProcessKeyUp(long lKey, struct CommandSystem& commandSystem
 // LINE 488:
 // Block start:
 	class CharData *currentCharData;
-	__asm        mov    eax, commandSystem;
-	__asm        mov    eax, [eax+0xCC];
-	__asm        mov    currentCharData, eax;
+	currentCharData = commandSystem.keyboardCommandList.firstCharData;
 // LINE 490:
 _T2e:
 	__asm        cmp    currentCharData, 0;
@@ -1681,9 +1651,7 @@ _T2e:
 	__asm        mov    [ecx+eax*2], dl;
 	__asm        jmp    near ptr 0x0048C0C2;
 // LINE 492:
-	__asm        mov    eax, currentCharData;
-	__asm        mov    eax, [eax+5];
-	__asm        mov    currentCharData, eax;
+	currentCharData = currentCharData->nextCharData;
 // LINE 493:
 	__asm        jmp    _T2e;
 // LINE 494:
@@ -1692,8 +1660,7 @@ _T6c:
 	__asm        add    ecx, 0xC8;
 	__asm        call   CharList::DeleteAllItems;
 // LINE 496:
-	__asm        mov    eax, gKeyboard.myCharDownList.firstCharData;
-	__asm        mov    currentCharData, eax;
+	currentCharData = gKeyboard.myCharDownList.firstCharData;
 // LINE 497:
 _T82:
 	__asm        cmp    currentCharData, 0;
@@ -1748,9 +1715,7 @@ _T82:
 	__asm        call   CharList::AddItem;
 // LINE 508:
 _T116:
-	__asm        mov    eax, currentCharData;
-	__asm        mov    eax, [eax+5];
-	__asm        mov    currentCharData, eax;
+	currentCharData = currentCharData->nextCharData;
 // LINE 509:
 	__asm        jmp    _T82;
 // LINE 511:
@@ -1955,8 +1920,7 @@ _T1a9:
 	__asm        mov    [ebp-0x2A4], eax;
 	__asm        jmp    _T21e;
 _T212:
-	__asm        mov    eax, [ebp-0x29C];
-	__asm        mov    [ebp-0x2A4], eax;
+	None = None;
 _T21e:
 	__asm        jmp    near ptr 0x0048C457;
 
@@ -2024,8 +1988,7 @@ _T29d:
 	__asm        mov    [ebp-0x2B8], eax;
 	__asm        jmp    _T33a;
 _T32e:
-	__asm        mov    eax, [ebp-0x2B0];
-	__asm        mov    [ebp-0x2B8], eax;
+	None = None;
 _T33a:
 	__asm        jmp    near ptr 0x0048C573;
 
@@ -2142,7 +2105,7 @@ int32_t WriteShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 	__asm        stosw;
 	__asm        stosb;
 // LINE 589:
-	__asm        mov    nReturnValue, 0;
+	nReturnValue = 0x0;
 // LINE 591:
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
@@ -2269,13 +2232,13 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 	struct Shortcut tempShortcut;
 
 // LINE 616:
-	__asm        mov    tempShortcut.lDeviceID, 0;
+	tempShortcut.lDeviceID = 0x0;
 // LINE 618:
-	__asm        mov    tempShortcut.lCommand, 2;
+	tempShortcut.lCommand = 0x2;
 // LINE 619:
-	__asm        mov    tempShortcut.lKey, 0x4D;
+	tempShortcut.lKey = 0x4d;
 // LINE 620:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 622:
 	__asm        lea    eax, tempShortcut.lIgnoreModifiers;
 	__asm        push   eax;
@@ -2305,11 +2268,11 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x0048C92A;
 // LINE 625:
-	__asm        mov    tempShortcut.lCommand, 3;
+	tempShortcut.lCommand = 0x3;
 // LINE 626:
-	__asm        mov    tempShortcut.lKey, 0x45;
+	tempShortcut.lKey = 0x45;
 // LINE 627:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 629:
 	__asm        lea    eax, tempShortcut.lIgnoreModifiers;
 	__asm        push   eax;
@@ -2339,11 +2302,11 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x0048C984;
 // LINE 632:
-	__asm        mov    tempShortcut.lCommand, 0x1B;
+	tempShortcut.lCommand = 0x1b;
 // LINE 633:
-	__asm        mov    tempShortcut.lKey, 0x49;
+	tempShortcut.lKey = 0x49;
 // LINE 634:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 636:
 	__asm        lea    eax, tempShortcut.lIgnoreModifiers;
 	__asm        push   eax;
@@ -2373,11 +2336,11 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x0048C9DE;
 // LINE 639:
-	__asm        mov    tempShortcut.lCommand, 0x1C;
+	tempShortcut.lCommand = 0x1c;
 // LINE 640:
-	__asm        mov    tempShortcut.lKey, 0x4B;
+	tempShortcut.lKey = 0x4b;
 // LINE 641:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 643:
 	__asm        lea    eax, tempShortcut.lIgnoreModifiers;
 	__asm        push   eax;
@@ -2407,11 +2370,11 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x0048CA38;
 // LINE 646:
-	__asm        mov    tempShortcut.lCommand, 0x1D;
+	tempShortcut.lCommand = 0x1d;
 // LINE 647:
-	__asm        mov    tempShortcut.lKey, 0x4A;
+	tempShortcut.lKey = 0x4a;
 // LINE 648:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 650:
 	__asm        lea    eax, tempShortcut.lIgnoreModifiers;
 	__asm        push   eax;
@@ -2441,11 +2404,11 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x0048CA92;
 // LINE 653:
-	__asm        mov    tempShortcut.lCommand, 0x1E;
+	tempShortcut.lCommand = 0x1e;
 // LINE 654:
-	__asm        mov    tempShortcut.lKey, 0x4C;
+	tempShortcut.lKey = 0x4c;
 // LINE 655:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 657:
 	__asm        lea    eax, tempShortcut.lIgnoreModifiers;
 	__asm        push   eax;
@@ -2475,11 +2438,11 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x0048CAEC;
 // LINE 660:
-	__asm        mov    tempShortcut.lCommand, 0x1F;
+	tempShortcut.lCommand = 0x1f;
 // LINE 661:
-	__asm        mov    tempShortcut.lKey, 0x4F;
+	tempShortcut.lKey = 0x4f;
 // LINE 662:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 664:
 	__asm        lea    eax, tempShortcut.lIgnoreModifiers;
 	__asm        push   eax;
@@ -2509,11 +2472,11 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x0048CB46;
 // LINE 667:
-	__asm        mov    tempShortcut.lCommand, 0x20;
+	tempShortcut.lCommand = 0x20;
 // LINE 668:
-	__asm        mov    tempShortcut.lKey, 0x50;
+	tempShortcut.lKey = 0x50;
 // LINE 669:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 671:
 	__asm        lea    eax, tempShortcut.lIgnoreModifiers;
 	__asm        push   eax;
@@ -2543,11 +2506,11 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x0048CBA0;
 // LINE 674:
-	__asm        mov    tempShortcut.lCommand, 4;
+	tempShortcut.lCommand = 0x4;
 // LINE 675:
-	__asm        mov    tempShortcut.lKey, 0x4E;
+	tempShortcut.lKey = 0x4e;
 // LINE 676:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 678:
 	__asm        lea    eax, tempShortcut.lIgnoreModifiers;
 	__asm        push   eax;
@@ -2577,11 +2540,11 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x0048CC03;
 // LINE 681:
-	__asm        mov    tempShortcut.lCommand, 5;
+	tempShortcut.lCommand = 0x5;
 // LINE 682:
-	__asm        mov    tempShortcut.lKey, 0x52;
+	tempShortcut.lKey = 0x52;
 // LINE 683:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 685:
 	__asm        lea    eax, tempShortcut.lIgnoreModifiers;
 	__asm        push   eax;
@@ -2611,11 +2574,11 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x0048CC6C;
 // LINE 688:
-	__asm        mov    tempShortcut.lCommand, 8;
+	tempShortcut.lCommand = 0x8;
 // LINE 689:
-	__asm        mov    tempShortcut.lKey, 0x26;
+	tempShortcut.lKey = 0x26;
 // LINE 690:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 692:
 	__asm        lea    eax, tempShortcut.lIgnoreModifiers;
 	__asm        push   eax;
@@ -2645,11 +2608,11 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x0048CCD5;
 // LINE 695:
-	__asm        mov    tempShortcut.lCommand, 9;
+	tempShortcut.lCommand = 0x9;
 // LINE 696:
-	__asm        mov    tempShortcut.lKey, 0x28;
+	tempShortcut.lKey = 0x28;
 // LINE 697:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 699:
 	__asm        lea    eax, tempShortcut.lIgnoreModifiers;
 	__asm        push   eax;
@@ -2679,11 +2642,11 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x0048CD3E;
 // LINE 702:
-	__asm        mov    tempShortcut.lCommand, 8;
+	tempShortcut.lCommand = 0x8;
 // LINE 703:
-	__asm        mov    tempShortcut.lKey, 0x58;
+	tempShortcut.lKey = 0x58;
 // LINE 704:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 706:
 	__asm        lea    eax, tempShortcut.lIgnoreModifiers;
 	__asm        push   eax;
@@ -2713,11 +2676,11 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x0048CDA7;
 // LINE 709:
-	__asm        mov    tempShortcut.lCommand, 9;
+	tempShortcut.lCommand = 0x9;
 // LINE 710:
-	__asm        mov    tempShortcut.lKey, 0x5A;
+	tempShortcut.lKey = 0x5a;
 // LINE 711:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 713:
 	__asm        lea    eax, tempShortcut.lIgnoreModifiers;
 	__asm        push   eax;
@@ -2747,11 +2710,11 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x0048CE10;
 // LINE 716:
-	__asm        mov    tempShortcut.lCommand, 7;
+	tempShortcut.lCommand = 0x7;
 // LINE 717:
-	__asm        mov    tempShortcut.lKey, 0x27;
+	tempShortcut.lKey = 0x27;
 // LINE 718:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 720:
 	__asm        lea    eax, tempShortcut.lIgnoreModifiers;
 	__asm        push   eax;
@@ -2781,11 +2744,11 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x0048CE79;
 // LINE 723:
-	__asm        mov    tempShortcut.lCommand, 6;
+	tempShortcut.lCommand = 0x6;
 // LINE 724:
-	__asm        mov    tempShortcut.lKey, 0x25;
+	tempShortcut.lKey = 0x25;
 // LINE 725:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 727:
 	__asm        lea    eax, tempShortcut.lIgnoreModifiers;
 	__asm        push   eax;
@@ -2815,11 +2778,11 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x0048CEE2;
 // LINE 730:
-	__asm        mov    tempShortcut.lCommand, 0xC;
+	tempShortcut.lCommand = 0xc;
 // LINE 731:
-	__asm        mov    tempShortcut.lKey, 0x6B;
+	tempShortcut.lKey = 0x6b;
 // LINE 732:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 734:
 	__asm        lea    eax, tempShortcut.lIgnoreModifiers;
 	__asm        push   eax;
@@ -2849,11 +2812,11 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x0048CF4B;
 // LINE 737:
-	__asm        mov    tempShortcut.lCommand, 0xD;
+	tempShortcut.lCommand = 0xd;
 // LINE 738:
-	__asm        mov    tempShortcut.lKey, 0x6D;
+	tempShortcut.lKey = 0x6d;
 // LINE 739:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 741:
 	__asm        lea    eax, tempShortcut.lIgnoreModifiers;
 	__asm        push   eax;
@@ -2883,11 +2846,11 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x0048CFB4;
 // LINE 744:
-	__asm        mov    tempShortcut.lCommand, 0xC;
+	tempShortcut.lCommand = 0xc;
 // LINE 745:
-	__asm        mov    tempShortcut.lKey, 0x51;
+	tempShortcut.lKey = 0x51;
 // LINE 746:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 748:
 	__asm        lea    eax, tempShortcut.lIgnoreModifiers;
 	__asm        push   eax;
@@ -2917,11 +2880,11 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x0048D01D;
 // LINE 751:
-	__asm        mov    tempShortcut.lCommand, 0xD;
+	tempShortcut.lCommand = 0xd;
 // LINE 752:
-	__asm        mov    tempShortcut.lKey, 0x57;
+	tempShortcut.lKey = 0x57;
 // LINE 753:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 755:
 	__asm        lea    eax, tempShortcut.lIgnoreModifiers;
 	__asm        push   eax;
@@ -2988,11 +2951,11 @@ _T7ff:
 
 	__asm        jmp    near ptr 0x0048D122;
 // LINE 758:
-	__asm        mov    tempShortcut.lCommand, 0xF;
+	tempShortcut.lCommand = 0xf;
 // LINE 759:
-	__asm        mov    tempShortcut.lKey, 0x43;
+	tempShortcut.lKey = 0x43;
 // LINE 760:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 762:
 	__asm        lea    eax, tempShortcut.lIgnoreModifiers;
 	__asm        push   eax;
@@ -3022,11 +2985,11 @@ _T7ff:
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x0048D18B;
 // LINE 765:
-	__asm        mov    tempShortcut.lCommand, 0xE;
+	tempShortcut.lCommand = 0xe;
 // LINE 766:
-	__asm        mov    tempShortcut.lKey, 0x56;
+	tempShortcut.lKey = 0x56;
 // LINE 767:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 769:
 	__asm        lea    eax, tempShortcut.lIgnoreModifiers;
 	__asm        push   eax;
@@ -3093,11 +3056,11 @@ _T96d:
 
 	__asm        jmp    near ptr 0x0048D290;
 // LINE 772:
-	__asm        mov    tempShortcut.lCommand, 0x10;
+	tempShortcut.lCommand = 0x10;
 // LINE 773:
-	__asm        mov    tempShortcut.lKey, 0x42;
+	tempShortcut.lKey = 0x42;
 // LINE 774:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 776:
 	__asm        lea    eax, tempShortcut.lIgnoreModifiers;
 	__asm        push   eax;
@@ -3164,11 +3127,11 @@ _Ta72:
 
 	__asm        jmp    near ptr 0x0048D395;
 // LINE 779:
-	__asm        mov    tempShortcut.lCommand, 0x11;
+	tempShortcut.lCommand = 0x11;
 // LINE 780:
-	__asm        mov    tempShortcut.lKey, 0x47;
+	tempShortcut.lKey = 0x47;
 // LINE 781:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 783:
 	__asm        lea    eax, tempShortcut.lIgnoreModifiers;
 	__asm        push   eax;
@@ -3198,11 +3161,11 @@ _Ta72:
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x0048D3FE;
 // LINE 786:
-	__asm        mov    tempShortcut.lCommand, 0x12;
+	tempShortcut.lCommand = 0x12;
 // LINE 787:
-	__asm        mov    tempShortcut.lKey, 0x46;
+	tempShortcut.lKey = 0x46;
 // LINE 788:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 790:
 	__asm        lea    eax, tempShortcut.lIgnoreModifiers;
 	__asm        push   eax;
@@ -3269,11 +3232,11 @@ _Tbe0:
 
 	__asm        jmp    near ptr 0x0048D503;
 // LINE 793:
-	__asm        mov    tempShortcut.lCommand, 0x13;
+	tempShortcut.lCommand = 0x13;
 // LINE 794:
-	__asm        mov    tempShortcut.lKey, 0x20;
+	tempShortcut.lKey = 0x20;
 // LINE 795:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 797:
 	__asm        lea    eax, tempShortcut.lIgnoreModifiers;
 	__asm        push   eax;
@@ -3340,11 +3303,11 @@ _Tce5:
 
 	__asm        jmp    near ptr 0x0048D608;
 // LINE 800:
-	__asm        mov    tempShortcut.lCommand, 0x14;
+	tempShortcut.lCommand = 0x14;
 // LINE 801:
-	__asm        mov    tempShortcut.lKey, 0x54;
+	tempShortcut.lKey = 0x54;
 // LINE 802:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 804:
 	__asm        lea    eax, tempShortcut.lIgnoreModifiers;
 	__asm        push   eax;
@@ -3374,11 +3337,11 @@ _Tce5:
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x0048D671;
 // LINE 807:
-	__asm        mov    tempShortcut.lCommand, 0x15;
+	tempShortcut.lCommand = 0x15;
 // LINE 808:
-	__asm        mov    tempShortcut.lKey, 0x70;
+	tempShortcut.lKey = 0x70;
 // LINE 809:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 811:
 	__asm        lea    eax, tempShortcut.lIgnoreModifiers;
 	__asm        push   eax;
@@ -3445,11 +3408,11 @@ _Te53:
 
 	__asm        jmp    near ptr 0x0048D776;
 // LINE 814:
-	__asm        mov    tempShortcut.lCommand, 0x16;
+	tempShortcut.lCommand = 0x16;
 // LINE 815:
-	__asm        mov    tempShortcut.lKey, 0x71;
+	tempShortcut.lKey = 0x71;
 // LINE 816:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 818:
 	__asm        lea    eax, tempShortcut.lIgnoreModifiers;
 	__asm        push   eax;
@@ -3479,11 +3442,11 @@ _Te53:
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x0048D7DF;
 // LINE 821:
-	__asm        mov    tempShortcut.lCommand, 0x17;
+	tempShortcut.lCommand = 0x17;
 // LINE 822:
-	__asm        mov    tempShortcut.lKey, 0x72;
+	tempShortcut.lKey = 0x72;
 // LINE 823:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 825:
 	__asm        lea    eax, tempShortcut.lIgnoreModifiers;
 	__asm        push   eax;
@@ -3550,11 +3513,11 @@ _Tfc1:
 
 	__asm        jmp    near ptr 0x0048D8E4;
 // LINE 828:
-	__asm        mov    tempShortcut.lCommand, 0x18;
+	tempShortcut.lCommand = 0x18;
 // LINE 829:
-	__asm        mov    tempShortcut.lKey, 0x73;
+	tempShortcut.lKey = 0x73;
 // LINE 830:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 832:
 	__asm        lea    eax, tempShortcut.lIgnoreModifiers;
 	__asm        push   eax;
@@ -3621,11 +3584,11 @@ _T10c6:
 
 	__asm        jmp    near ptr 0x0048D9E9;
 // LINE 835:
-	__asm        mov    tempShortcut.lCommand, 0x19;
+	tempShortcut.lCommand = 0x19;
 // LINE 836:
-	__asm        mov    tempShortcut.lKey, 0x74;
+	tempShortcut.lKey = 0x74;
 // LINE 837:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 839:
 	__asm        lea    eax, tempShortcut.lIgnoreModifiers;
 	__asm        push   eax;
@@ -3655,11 +3618,11 @@ _T10c6:
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x0048DA52;
 // LINE 842:
-	__asm        mov    tempShortcut.lCommand, 0xB;
+	tempShortcut.lCommand = 0xb;
 // LINE 843:
-	__asm        mov    tempShortcut.lKey, 0x41;
+	tempShortcut.lKey = 0x41;
 // LINE 844:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 846:
 	__asm        lea    eax, tempShortcut.lIgnoreModifiers;
 	__asm        push   eax;
@@ -3726,11 +3689,11 @@ _T1234:
 
 	__asm        jmp    near ptr 0x0048DB57;
 // LINE 849:
-	__asm        mov    tempShortcut.lCommand, 0xA;
+	tempShortcut.lCommand = 0xa;
 // LINE 850:
-	__asm        mov    tempShortcut.lKey, 0x53;
+	tempShortcut.lKey = 0x53;
 // LINE 851:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 853:
 	__asm        lea    eax, tempShortcut.lIgnoreModifiers;
 	__asm        push   eax;
@@ -3805,18 +3768,17 @@ _T13af:
 	__asm        cmp    i, 4;
 	__asm        jg     _T1aed;
 // LINE 859:
-	__asm        mov    eax, i;
-	__asm        mov    tempShortcut.lDeviceID, eax;
+	tempShortcut.lDeviceID = i;
 // LINE 861:
-	__asm        mov    tempShortcut.lCommand, 6;
+	tempShortcut.lCommand = 0x6;
 // LINE 862:
-	__asm        mov    tempShortcut.lKey, 0;
+	tempShortcut.lKey = 0x0;
 // LINE 863:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 864:
-	__asm        mov    tempShortcut.lPush, 0;
+	tempShortcut.lPush = 0x0;
 // LINE 865:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 866:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -3837,15 +3799,15 @@ _T13af:
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x0048DCDF;
 // LINE 867:
-	__asm        mov    tempShortcut.lCommand, 7;
+	tempShortcut.lCommand = 0x7;
 // LINE 868:
-	__asm        mov    tempShortcut.lKey, 0;
+	tempShortcut.lKey = 0x0;
 // LINE 869:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 870:
-	__asm        mov    tempShortcut.lPush, 0;
+	tempShortcut.lPush = 0x0;
 // LINE 871:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 872:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -3903,15 +3865,15 @@ _T14bb:
 
 	__asm        jmp    near ptr 0x0048DDDF;
 // LINE 874:
-	__asm        mov    tempShortcut.lCommand, 8;
+	tempShortcut.lCommand = 0x8;
 // LINE 875:
-	__asm        mov    tempShortcut.lKey, 1;
+	tempShortcut.lKey = 0x1;
 // LINE 876:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 877:
-	__asm        mov    tempShortcut.lPush, 0;
+	tempShortcut.lPush = 0x0;
 // LINE 878:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 879:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -3969,15 +3931,15 @@ _T15bb:
 
 	__asm        jmp    near ptr 0x0048DEDF;
 // LINE 880:
-	__asm        mov    tempShortcut.lCommand, 9;
+	tempShortcut.lCommand = 0x9;
 // LINE 881:
-	__asm        mov    tempShortcut.lKey, 1;
+	tempShortcut.lKey = 0x1;
 // LINE 882:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 883:
-	__asm        mov    tempShortcut.lPush, 0;
+	tempShortcut.lPush = 0x0;
 // LINE 884:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 885:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -3998,15 +3960,15 @@ _T15bb:
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x0048DF42;
 // LINE 888:
-	__asm        mov    tempShortcut.lCommand, 0x13;
+	tempShortcut.lCommand = 0x13;
 // LINE 889:
-	__asm        mov    tempShortcut.lKey, 6;
+	tempShortcut.lKey = 0x6;
 // LINE 890:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 891:
-	__asm        mov    tempShortcut.lPush, 0;
+	tempShortcut.lPush = 0x0;
 // LINE 892:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 893:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -4064,15 +4026,15 @@ _T171e:
 
 	__asm        jmp    near ptr 0x0048E042;
 // LINE 895:
-	__asm        mov    tempShortcut.lCommand, 2;
+	tempShortcut.lCommand = 0x2;
 // LINE 896:
-	__asm        mov    tempShortcut.lKey, 7;
+	tempShortcut.lKey = 0x7;
 // LINE 897:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 898:
-	__asm        mov    tempShortcut.lPush, 0;
+	tempShortcut.lPush = 0x0;
 // LINE 899:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 900:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -4130,15 +4092,15 @@ _T181e:
 
 	__asm        jmp    near ptr 0x0048E142;
 // LINE 902:
-	__asm        mov    tempShortcut.lCommand, 0xC;
+	tempShortcut.lCommand = 0xc;
 // LINE 903:
-	__asm        mov    tempShortcut.lKey, 8;
+	tempShortcut.lKey = 0x8;
 // LINE 904:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 905:
-	__asm        mov    tempShortcut.lPush, 0;
+	tempShortcut.lPush = 0x0;
 // LINE 906:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 907:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -4159,15 +4121,15 @@ _T181e:
 	__asm        call   list<Shortcut>::insert;
 	__asm        jmp    near ptr 0x0048E1A5;
 // LINE 908:
-	__asm        mov    tempShortcut.lCommand, 0xD;
+	tempShortcut.lCommand = 0xd;
 // LINE 909:
-	__asm        mov    tempShortcut.lKey, 9;
+	tempShortcut.lKey = 0x9;
 // LINE 910:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 911:
-	__asm        mov    tempShortcut.lPush, 0;
+	tempShortcut.lPush = 0x0;
 // LINE 912:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 913:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -4225,15 +4187,15 @@ _T1981:
 
 	__asm        jmp    near ptr 0x0048E2A5;
 // LINE 915:
-	__asm        mov    tempShortcut.lCommand, 0x1A;
+	tempShortcut.lCommand = 0x1a;
 // LINE 916:
-	__asm        mov    tempShortcut.lKey, 0xA;
+	tempShortcut.lKey = 0xa;
 // LINE 917:
-	__asm        mov    tempShortcut.lModifiers, 0;
+	tempShortcut.lModifiers = 0x0;
 // LINE 918:
-	__asm        mov    tempShortcut.lPush, 0;
+	tempShortcut.lPush = 0x0;
 // LINE 919:
-	__asm        mov    tempShortcut.lIgnoreModifiers, 0;
+	tempShortcut.lIgnoreModifiers = 0x0;
 // LINE 920:
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
@@ -4328,14 +4290,12 @@ int32_t GetPushAndIgnoreSettingsForCommand(long lCommand, long& lPush, long& lIg
 	__asm        jne    _T6e;
 // LINE 939:
 _T60:
-	__asm        mov    eax, lPush;
-	__asm        mov    dword ptr [eax], 1;
+	lPush. = 0x1;
 // LINE 941:
 	__asm        jmp    _T77;
 // LINE 942:
 _T6e:
-	__asm        mov    eax, lPush;
-	__asm        mov    dword ptr [eax], 0;
+	lPush. = 0x0;
 // LINE 954:
 _T77:
 	__asm        cmp    lCommand, 8;
@@ -4369,14 +4329,12 @@ _T77:
 	__asm        jne    _Te9;
 // LINE 956:
 _Tdb:
-	__asm        mov    eax, lIgnoreModifiers;
-	__asm        mov    dword ptr [eax], 1;
+	lIgnoreModifiers. = 0x1;
 // LINE 958:
 	__asm        jmp    _Tf2;
 // LINE 959:
 _Te9:
-	__asm        mov    eax, lIgnoreModifiers;
-	__asm        mov    dword ptr [eax], 0;
+	lIgnoreModifiers. = 0x0;
 // LINE 961:
 _Tf2:
 	__asm        mov    eax, 1;

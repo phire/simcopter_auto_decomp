@@ -297,12 +297,12 @@ void SetUserHasSavedCurrentCity() {
 	__asm        cmp    gCurrentCityType, 1;
 	__asm        jne    _T22;
 // LINE 187:
-	__asm        mov    gCurrentUserCityInfo.bUserHasSavedGame, 1;
+	gCurrentUserCityInfo.bUserHasSavedGame = 0x1;
 // LINE 188:
 	__asm        jmp    _T2c;
 // LINE 189:
 _T22:
-	__asm        mov    gCurrentCareerCityInfo.bUserHasSavedGame, 1;
+	gCurrentCareerCityInfo.bUserHasSavedGame = 0x1;
 // LINE 190:
 _T2c:
 	__asm        jmp    near ptr 0x0042913A;
@@ -377,55 +377,55 @@ _T74:
 // FUNCTION: COPTER_D 0x004291ee
 void InitializeAllUserInfo() {
 // LINE 231:
-	__asm        mov    gCityFilePath[0], 0;
+	gCityFilePath[0] = 0x0;
 // LINE 232:
-	__asm        mov    gGameFilePath[0], 0;
+	gGameFilePath[0] = 0x0;
 // LINE 234:
-	__asm        mov    gCurrentCareerCityInfo.lCurrentCities[0], 0;
+	gCurrentCareerCityInfo.lCurrentCities[0] = 0x0;
 // LINE 235:
-	__asm        mov    gCurrentCareerCityInfo.lCurrentCities[1], 1;
+	gCurrentCareerCityInfo.lCurrentCities[1] = 0x1;
 // LINE 236:
-	__asm        mov    gCurrentCareerCityInfo.lCurrentCities[2], 2;
+	gCurrentCareerCityInfo.lCurrentCities[2] = 0x2;
 // LINE 237:
-	__asm        mov    gCurrentCareerCityInfo.lCurrentCityIndex, 0;
+	gCurrentCareerCityInfo.lCurrentCityIndex = 0x0;
 // LINE 238:
-	__asm        mov    gCurrentCareerCityInfo.bUserHasSavedGame, 0;
+	gCurrentCareerCityInfo.bUserHasSavedGame = 0x0;
 // LINE 239:
-	__asm        mov    gCurrentCareerCityInfo.userPersonalInfo.szUserName[0], 0;
+	gCurrentCareerCityInfo.userPersonalInfo.szUserName[0] = 0x0;
 // LINE 240:
-	__asm        mov    gCurrentCareerCityInfo.userPersonalInfo.lMoney, 0;
+	gCurrentCareerCityInfo.userPersonalInfo.lMoney = 0x0;
 // LINE 241:
-	__asm        mov    gCurrentCareerCityInfo.userPersonalInfo.lHelicopters, 0;
+	gCurrentCareerCityInfo.userPersonalInfo.lHelicopters = 0x0;
 // LINE 242:
-	__asm        mov    gCurrentCareerCityInfo.userPersonalInfo.lEquipment, 0;
+	gCurrentCareerCityInfo.userPersonalInfo.lEquipment = 0x0;
 // LINE 243:
-	__asm        mov    gCurrentCareerCityInfo.userPersonalInfo.lTrophies, 0;
+	gCurrentCareerCityInfo.userPersonalInfo.lTrophies = 0x0;
 // LINE 244:
-	__asm        mov    gCurrentCareerCityInfo.userPersonalInfo.lPoints, 0;
+	gCurrentCareerCityInfo.userPersonalInfo.lPoints = 0x0;
 // LINE 245:
-	__asm        mov    gCurrentCareerCityInfo.userPersonalInfo.lTeargasCount, 0;
+	gCurrentCareerCityInfo.userPersonalInfo.lTeargasCount = 0x0;
 // LINE 247:
-	__asm        mov    gCurrentUserCityInfo.citySettings.lDifficulty, 0;
+	gCurrentUserCityInfo.citySettings.lDifficulty = 0x0;
 // LINE 248:
-	__asm        mov    gCurrentUserCityInfo.citySettings.lDaytime, 0;
+	gCurrentUserCityInfo.citySettings.lDaytime = 0x0;
 // LINE 249:
-	__asm        mov    gCurrentUserCityInfo.bUserHasSavedGame, 0;
+	gCurrentUserCityInfo.bUserHasSavedGame = 0x0;
 // LINE 250:
-	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.szUserName[0], 0;
+	gCurrentUserCityInfo.userPersonalInfo.szUserName[0] = 0x0;
 // LINE 251:
-	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.lMoney, 0;
+	gCurrentUserCityInfo.userPersonalInfo.lMoney = 0x0;
 // LINE 252:
-	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.lHelicopters, 0;
+	gCurrentUserCityInfo.userPersonalInfo.lHelicopters = 0x0;
 // LINE 253:
-	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.lEquipment, 0;
+	gCurrentUserCityInfo.userPersonalInfo.lEquipment = 0x0;
 // LINE 254:
-	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.lTrophies, 0;
+	gCurrentUserCityInfo.userPersonalInfo.lTrophies = 0x0;
 // LINE 255:
-	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.lPoints, 0;
+	gCurrentUserCityInfo.userPersonalInfo.lPoints = 0x0;
 // LINE 256:
-	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.lTeargasCount, 0;
+	gCurrentUserCityInfo.userPersonalInfo.lTeargasCount = 0x0;
 // LINE 258:
-	__asm        mov    gCurrentCityType, 0;
+	gCurrentCityType = 0x0;
 // LINE 259:
 	__asm        jmp    near ptr 0x004292E7;
 }
@@ -438,7 +438,7 @@ void CareerCityTweakInit() {
 	struct tagCareerCityInfo *currentCareerCityInfo;
 
 // LINE 268:
-	__asm        mov    nPvals, 9;
+	nPvals = 0x9;
 // LINE 273:
 	__asm        mov    i, 0;
 	__asm        jmp    _T1f;
@@ -517,7 +517,7 @@ void SetUpNewCareerCity(long lNewCareerCityIndex) {
 	__asm        jge    _T27;
 // LINE 304:
 _T20:
-	__asm        mov    lNewCareerCityIndex, 0;
+	lNewCareerCityIndex = 0x0;
 // LINE 307:
 _T27:
 	__asm        lea    eax, szFullCityFileName[0];
@@ -538,32 +538,31 @@ _T27:
 	__asm        call   GetPathForFile;
 	__asm        add    esp, 0x10;
 // LINE 310:
-	__asm        mov    gCurrentCareerCityInfo.lCurrentCities[0], 0;
+	gCurrentCareerCityInfo.lCurrentCities[0] = 0x0;
 // LINE 311:
-	__asm        mov    gCurrentCareerCityInfo.lCurrentCities[1], 1;
+	gCurrentCareerCityInfo.lCurrentCities[1] = 0x1;
 // LINE 312:
-	__asm        mov    gCurrentCareerCityInfo.lCurrentCities[2], 2;
+	gCurrentCareerCityInfo.lCurrentCities[2] = 0x2;
 // LINE 313:
-	__asm        mov    eax, lNewCareerCityIndex;
-	__asm        mov    gCurrentCareerCityInfo.lCurrentCityIndex, eax;
+	gCurrentCareerCityInfo.lCurrentCityIndex = lNewCareerCityIndex;
 // LINE 314:
-	__asm        mov    gCurrentCareerCityInfo.bUserHasSavedGame, 0;
+	gCurrentCareerCityInfo.bUserHasSavedGame = 0x0;
 // LINE 315:
-	__asm        mov    gCurrentCareerCityInfo.userPersonalInfo.szUserName[0], 0;
+	gCurrentCareerCityInfo.userPersonalInfo.szUserName[0] = 0x0;
 // LINE 316:
-	__asm        mov    gCurrentCareerCityInfo.userPersonalInfo.lMoney, 0xFA0;
+	gCurrentCareerCityInfo.userPersonalInfo.lMoney = 0xfa0;
 // LINE 317:
-	__asm        mov    gCurrentCareerCityInfo.userPersonalInfo.lHelicopters, 0x10;
+	gCurrentCareerCityInfo.userPersonalInfo.lHelicopters = 0x10;
 // LINE 318:
-	__asm        mov    gCurrentCareerCityInfo.userPersonalInfo.lEquipment, 0;
+	gCurrentCareerCityInfo.userPersonalInfo.lEquipment = 0x0;
 // LINE 319:
-	__asm        mov    gCurrentCareerCityInfo.userPersonalInfo.lTrophies, 0;
+	gCurrentCareerCityInfo.userPersonalInfo.lTrophies = 0x0;
 // LINE 320:
-	__asm        mov    gCurrentCareerCityInfo.userPersonalInfo.lPoints, 0;
+	gCurrentCareerCityInfo.userPersonalInfo.lPoints = 0x0;
 // LINE 321:
-	__asm        mov    gCurrentCareerCityInfo.userPersonalInfo.lTeargasCount, 0;
+	gCurrentCareerCityInfo.userPersonalInfo.lTeargasCount = 0x0;
 // LINE 322:
-	__asm        mov    gCurrentCityType, 2;
+	gCurrentCityType = 0x2;
 // LINE 323:
 	__asm        mov    eax, lNewCareerCityIndex;
 	__asm        shl    eax, 3;
@@ -622,13 +621,13 @@ _T1a6:
 
 	__asm        jmp    near ptr 0x00429550;
 // LINE 327:
-	__asm        mov    gCurrentCareerCityInfo.userPersonalInfo.lMoney, 0xFA0;
+	gCurrentCareerCityInfo.userPersonalInfo.lMoney = 0xfa0;
 // LINE 328:
-	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.lHelicopters, 0x10;
+	gCurrentUserCityInfo.userPersonalInfo.lHelicopters = 0x10;
 // LINE 329:
-	__asm        mov    gCurrentCareerCityInfo.userPersonalInfo.lEquipment, 0xFFFFFFFF;
+	gCurrentCareerCityInfo.userPersonalInfo.lEquipment = 0xffffffff;
 // LINE 330:
-	__asm        mov    gCurrentCareerCityInfo.userPersonalInfo.lTeargasCount, 0xA;
+	gCurrentCareerCityInfo.userPersonalInfo.lTeargasCount = 0xa;
 // LINE 332:
 	__asm        jmp    near ptr 0x0042957D;
 }
@@ -649,23 +648,23 @@ void SetUpNewUserCity(char * szUserCityPath) {
 	__asm        mov    ecx, 9;
 	__asm        rep movsd;
 // LINE 350:
-	__asm        mov    gCurrentUserCityInfo.bUserHasSavedGame, 0;
+	gCurrentUserCityInfo.bUserHasSavedGame = 0x0;
 // LINE 351:
-	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.szUserName[0], 0;
+	gCurrentUserCityInfo.userPersonalInfo.szUserName[0] = 0x0;
 // LINE 352:
-	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.lMoney, 0xFA0;
+	gCurrentUserCityInfo.userPersonalInfo.lMoney = 0xfa0;
 // LINE 353:
-	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.lHelicopters, 0x10;
+	gCurrentUserCityInfo.userPersonalInfo.lHelicopters = 0x10;
 // LINE 354:
-	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.lEquipment, 0;
+	gCurrentUserCityInfo.userPersonalInfo.lEquipment = 0x0;
 // LINE 355:
-	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.lTrophies, 0;
+	gCurrentUserCityInfo.userPersonalInfo.lTrophies = 0x0;
 // LINE 356:
-	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.lPoints, 0;
+	gCurrentUserCityInfo.userPersonalInfo.lPoints = 0x0;
 // LINE 357:
-	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.lTeargasCount, 0;
+	gCurrentUserCityInfo.userPersonalInfo.lTeargasCount = 0x0;
 // LINE 358:
-	__asm        mov    gCurrentCityType, 1;
+	gCurrentCityType = 0x1;
 // LINE 361:
 	__asm        cmp    gPreferenceManager, 0;
 	__asm        je     _Tdf;
@@ -752,13 +751,13 @@ _T19d:
 
 	__asm        jmp    near ptr 0x0042972E;
 // LINE 372:
-	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.lMoney, 0xFA0;
+	gCurrentUserCityInfo.userPersonalInfo.lMoney = 0xfa0;
 // LINE 373:
-	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.lHelicopters, 0x10;
+	gCurrentUserCityInfo.userPersonalInfo.lHelicopters = 0x10;
 // LINE 374:
-	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.lEquipment, 0xFFFFFFFF;
+	gCurrentUserCityInfo.userPersonalInfo.lEquipment = 0xffffffff;
 // LINE 375:
-	__asm        mov    gCurrentUserCityInfo.userPersonalInfo.lTeargasCount, 0xA;
+	gCurrentUserCityInfo.userPersonalInfo.lTeargasCount = 0xa;
 // LINE 377:
 	__asm        jmp    near ptr 0x0042975B;
 }
@@ -769,8 +768,7 @@ void MoveToNextCareerCity(long lNewCareerCityIndex) {
 	long lOriginalIndex;
 
 // LINE 395:
-	__asm        mov    eax, gCurrentCareerCityInfo.lCurrentCityIndex;
-	__asm        mov    lOriginalIndex, eax;
+	lOriginalIndex = gCurrentCareerCityInfo.lCurrentCityIndex;
 // LINE 398:
 	__asm        lea    eax, szFullCityFileName[0];
 	__asm        push   eax;
@@ -805,8 +803,7 @@ void MoveToNextCareerCity(long lNewCareerCityIndex) {
 	__asm        mov    eax, gAllCareerCities[0].lNextCities[2][eax+eax*8];
 	__asm        mov    gCurrentCareerCityInfo.lCurrentCities[2], eax;
 // LINE 404:
-	__asm        mov    eax, lNewCareerCityIndex;
-	__asm        mov    gCurrentCareerCityInfo.lCurrentCityIndex, eax;
+	gCurrentCareerCityInfo.lCurrentCityIndex = lNewCareerCityIndex;
 // LINE 405:
 	__asm        mov    eax, lNewCareerCityIndex;
 	__asm        shl    eax, 3;
@@ -877,613 +874,581 @@ void InitializeAllCareerCitiesInfo() {
 	int32_t i;
 
 // LINE 421:
-	__asm        mov    gAllCareerCities[0].lPrevCities[0], 0xFFFFFFFF;
+	gAllCareerCities[0].lPrevCities[0] = 0xffffffff;
 // LINE 422:
-	__asm        mov    gAllCareerCities[0].lPrevCities[1], 0xFFFFFFFF;
+	gAllCareerCities[0].lPrevCities[1] = 0xffffffff;
 // LINE 423:
-	__asm        mov    gAllCareerCities[0].lPrevCities[2], 0xFFFFFFFF;
+	gAllCareerCities[0].lPrevCities[2] = 0xffffffff;
 // LINE 424:
-	__asm        mov    gAllCareerCities[0].lNextCities[0], 3;
+	gAllCareerCities[0].lNextCities[0] = 0x3;
 // LINE 425:
-	__asm        mov    gAllCareerCities[0].lNextCities[1], 4;
+	gAllCareerCities[0].lNextCities[1] = 0x4;
 // LINE 426:
-	__asm        mov    gAllCareerCities[0].lNextCities[2], 1;
+	gAllCareerCities[0].lNextCities[2] = 0x1;
 // LINE 427:
-	__asm        mov    gAllCareerCities[0].lCityNameStringIndex, 0;
+	gAllCareerCities[0].lCityNameStringIndex = 0x0;
 // LINE 428:
-	__asm        mov    gAllCareerCities[0].lCityLevel, 0;
+	gAllCareerCities[0].lCityLevel = 0x0;
 // LINE 429:
-	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_0;
-	__asm        mov    gAllCareerCities[0].chCityFileNameBase, eax;
+	gAllCareerCities[0].chCityFileNameBase = SZ_CAREER_CITY_FILE_NAME_BASE_0;
 // LINE 431:
-	__asm        mov    gAllCareerCities[1].lPrevCities[0], 0xFFFFFFFF;
+	gAllCareerCities[1].lPrevCities[0] = 0xffffffff;
 // LINE 432:
-	__asm        mov    gAllCareerCities[1].lPrevCities[1], 0xFFFFFFFF;
+	gAllCareerCities[1].lPrevCities[1] = 0xffffffff;
 // LINE 433:
-	__asm        mov    gAllCareerCities[1].lPrevCities[2], 0xFFFFFFFF;
+	gAllCareerCities[1].lPrevCities[2] = 0xffffffff;
 // LINE 434:
-	__asm        mov    gAllCareerCities[1].lNextCities[0], 3;
+	gAllCareerCities[1].lNextCities[0] = 0x3;
 // LINE 435:
-	__asm        mov    gAllCareerCities[1].lNextCities[1], 4;
+	gAllCareerCities[1].lNextCities[1] = 0x4;
 // LINE 436:
-	__asm        mov    gAllCareerCities[1].lNextCities[2], 5;
+	gAllCareerCities[1].lNextCities[2] = 0x5;
 // LINE 437:
-	__asm        mov    gAllCareerCities[1].lCityNameStringIndex, 1;
+	gAllCareerCities[1].lCityNameStringIndex = 0x1;
 // LINE 438:
-	__asm        mov    gAllCareerCities[1].lCityLevel, 0;
+	gAllCareerCities[1].lCityLevel = 0x0;
 // LINE 439:
-	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_1;
-	__asm        mov    gAllCareerCities[1].chCityFileNameBase, eax;
+	gAllCareerCities[1].chCityFileNameBase = SZ_CAREER_CITY_FILE_NAME_BASE_1;
 // LINE 441:
-	__asm        mov    gAllCareerCities[2].lPrevCities[0], 0xFFFFFFFF;
+	gAllCareerCities[2].lPrevCities[0] = 0xffffffff;
 // LINE 442:
-	__asm        mov    gAllCareerCities[2].lPrevCities[1], 0xFFFFFFFF;
+	gAllCareerCities[2].lPrevCities[1] = 0xffffffff;
 // LINE 443:
-	__asm        mov    gAllCareerCities[2].lPrevCities[2], 0xFFFFFFFF;
+	gAllCareerCities[2].lPrevCities[2] = 0xffffffff;
 // LINE 444:
-	__asm        mov    gAllCareerCities[2].lNextCities[0], 1;
+	gAllCareerCities[2].lNextCities[0] = 0x1;
 // LINE 445:
-	__asm        mov    gAllCareerCities[2].lNextCities[1], 4;
+	gAllCareerCities[2].lNextCities[1] = 0x4;
 // LINE 446:
-	__asm        mov    gAllCareerCities[2].lNextCities[2], 5;
+	gAllCareerCities[2].lNextCities[2] = 0x5;
 // LINE 447:
-	__asm        mov    gAllCareerCities[2].lCityNameStringIndex, 2;
+	gAllCareerCities[2].lCityNameStringIndex = 0x2;
 // LINE 448:
-	__asm        mov    gAllCareerCities[2].lCityLevel, 0;
+	gAllCareerCities[2].lCityLevel = 0x0;
 // LINE 449:
-	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_2;
-	__asm        mov    gAllCareerCities[2].chCityFileNameBase, eax;
+	gAllCareerCities[2].chCityFileNameBase = SZ_CAREER_CITY_FILE_NAME_BASE_2;
 // LINE 451:
-	__asm        mov    gAllCareerCities[3].lPrevCities[0], 1;
+	gAllCareerCities[3].lPrevCities[0] = 0x1;
 // LINE 452:
-	__asm        mov    gAllCareerCities[3].lPrevCities[1], 2;
+	gAllCareerCities[3].lPrevCities[1] = 0x2;
 // LINE 453:
-	__asm        mov    gAllCareerCities[3].lPrevCities[2], 4;
+	gAllCareerCities[3].lPrevCities[2] = 0x4;
 // LINE 454:
-	__asm        mov    gAllCareerCities[3].lNextCities[0], 4;
+	gAllCareerCities[3].lNextCities[0] = 0x4;
 // LINE 455:
-	__asm        mov    gAllCareerCities[3].lNextCities[1], 6;
+	gAllCareerCities[3].lNextCities[1] = 0x6;
 // LINE 456:
-	__asm        mov    gAllCareerCities[3].lNextCities[2], 7;
+	gAllCareerCities[3].lNextCities[2] = 0x7;
 // LINE 457:
-	__asm        mov    gAllCareerCities[3].lCityNameStringIndex, 3;
+	gAllCareerCities[3].lCityNameStringIndex = 0x3;
 // LINE 458:
-	__asm        mov    gAllCareerCities[3].lCityLevel, 1;
+	gAllCareerCities[3].lCityLevel = 0x1;
 // LINE 459:
-	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_3;
-	__asm        mov    gAllCareerCities[3].chCityFileNameBase, eax;
+	gAllCareerCities[3].chCityFileNameBase = SZ_CAREER_CITY_FILE_NAME_BASE_3;
 // LINE 461:
-	__asm        mov    gAllCareerCities[4].lPrevCities[0], 1;
+	gAllCareerCities[4].lPrevCities[0] = 0x1;
 // LINE 462:
-	__asm        mov    gAllCareerCities[4].lPrevCities[1], 3;
+	gAllCareerCities[4].lPrevCities[1] = 0x3;
 // LINE 463:
-	__asm        mov    gAllCareerCities[4].lPrevCities[2], 5;
+	gAllCareerCities[4].lPrevCities[2] = 0x5;
 // LINE 464:
-	__asm        mov    gAllCareerCities[4].lNextCities[0], 6;
+	gAllCareerCities[4].lNextCities[0] = 0x6;
 // LINE 465:
-	__asm        mov    gAllCareerCities[4].lNextCities[1], 7;
+	gAllCareerCities[4].lNextCities[1] = 0x7;
 // LINE 466:
-	__asm        mov    gAllCareerCities[4].lNextCities[2], 8;
+	gAllCareerCities[4].lNextCities[2] = 0x8;
 // LINE 467:
-	__asm        mov    gAllCareerCities[4].lCityNameStringIndex, 4;
+	gAllCareerCities[4].lCityNameStringIndex = 0x4;
 // LINE 468:
-	__asm        mov    gAllCareerCities[4].lCityLevel, 1;
+	gAllCareerCities[4].lCityLevel = 0x1;
 // LINE 469:
-	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_4;
-	__asm        mov    gAllCareerCities[4].chCityFileNameBase, eax;
+	gAllCareerCities[4].chCityFileNameBase = SZ_CAREER_CITY_FILE_NAME_BASE_4;
 // LINE 471:
-	__asm        mov    gAllCareerCities[5].lPrevCities[0], 0;
+	gAllCareerCities[5].lPrevCities[0] = 0x0;
 // LINE 472:
-	__asm        mov    gAllCareerCities[5].lPrevCities[1], 1;
+	gAllCareerCities[5].lPrevCities[1] = 0x1;
 // LINE 473:
-	__asm        mov    gAllCareerCities[5].lPrevCities[2], 4;
+	gAllCareerCities[5].lPrevCities[2] = 0x4;
 // LINE 474:
-	__asm        mov    gAllCareerCities[5].lNextCities[0], 4;
+	gAllCareerCities[5].lNextCities[0] = 0x4;
 // LINE 475:
-	__asm        mov    gAllCareerCities[5].lNextCities[1], 7;
+	gAllCareerCities[5].lNextCities[1] = 0x7;
 // LINE 476:
-	__asm        mov    gAllCareerCities[5].lNextCities[2], 8;
+	gAllCareerCities[5].lNextCities[2] = 0x8;
 // LINE 477:
-	__asm        mov    gAllCareerCities[5].lCityNameStringIndex, 5;
+	gAllCareerCities[5].lCityNameStringIndex = 0x5;
 // LINE 478:
-	__asm        mov    gAllCareerCities[5].lCityLevel, 1;
+	gAllCareerCities[5].lCityLevel = 0x1;
 // LINE 479:
-	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_5;
-	__asm        mov    gAllCareerCities[5].chCityFileNameBase, eax;
+	gAllCareerCities[5].chCityFileNameBase = SZ_CAREER_CITY_FILE_NAME_BASE_5;
 // LINE 481:
-	__asm        mov    gAllCareerCities[6].lPrevCities[0], 3;
+	gAllCareerCities[6].lPrevCities[0] = 0x3;
 // LINE 482:
-	__asm        mov    gAllCareerCities[6].lPrevCities[1], 4;
+	gAllCareerCities[6].lPrevCities[1] = 0x4;
 // LINE 483:
-	__asm        mov    gAllCareerCities[6].lPrevCities[2], 7;
+	gAllCareerCities[6].lPrevCities[2] = 0x7;
 // LINE 484:
-	__asm        mov    gAllCareerCities[6].lNextCities[0], 7;
+	gAllCareerCities[6].lNextCities[0] = 0x7;
 // LINE 485:
-	__asm        mov    gAllCareerCities[6].lNextCities[1], 9;
+	gAllCareerCities[6].lNextCities[1] = 0x9;
 // LINE 486:
-	__asm        mov    gAllCareerCities[6].lNextCities[2], 0xA;
+	gAllCareerCities[6].lNextCities[2] = 0xa;
 // LINE 487:
-	__asm        mov    gAllCareerCities[6].lCityNameStringIndex, 6;
+	gAllCareerCities[6].lCityNameStringIndex = 0x6;
 // LINE 488:
-	__asm        mov    gAllCareerCities[6].lCityLevel, 2;
+	gAllCareerCities[6].lCityLevel = 0x2;
 // LINE 489:
-	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_6;
-	__asm        mov    gAllCareerCities[6].chCityFileNameBase, eax;
+	gAllCareerCities[6].chCityFileNameBase = SZ_CAREER_CITY_FILE_NAME_BASE_6;
 // LINE 491:
-	__asm        mov    gAllCareerCities[7].lPrevCities[0], 4;
+	gAllCareerCities[7].lPrevCities[0] = 0x4;
 // LINE 492:
-	__asm        mov    gAllCareerCities[7].lPrevCities[1], 6;
+	gAllCareerCities[7].lPrevCities[1] = 0x6;
 // LINE 493:
-	__asm        mov    gAllCareerCities[7].lPrevCities[2], 8;
+	gAllCareerCities[7].lPrevCities[2] = 0x8;
 // LINE 494:
-	__asm        mov    gAllCareerCities[7].lNextCities[0], 9;
+	gAllCareerCities[7].lNextCities[0] = 0x9;
 // LINE 495:
-	__asm        mov    gAllCareerCities[7].lNextCities[1], 0xA;
+	gAllCareerCities[7].lNextCities[1] = 0xa;
 // LINE 496:
-	__asm        mov    gAllCareerCities[7].lNextCities[2], 0xB;
+	gAllCareerCities[7].lNextCities[2] = 0xb;
 // LINE 497:
-	__asm        mov    gAllCareerCities[7].lCityNameStringIndex, 7;
+	gAllCareerCities[7].lCityNameStringIndex = 0x7;
 // LINE 498:
-	__asm        mov    gAllCareerCities[7].lCityLevel, 2;
+	gAllCareerCities[7].lCityLevel = 0x2;
 // LINE 499:
-	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_7;
-	__asm        mov    gAllCareerCities[7].chCityFileNameBase, eax;
+	gAllCareerCities[7].chCityFileNameBase = SZ_CAREER_CITY_FILE_NAME_BASE_7;
 // LINE 501:
-	__asm        mov    gAllCareerCities[8].lPrevCities[0], 3;
+	gAllCareerCities[8].lPrevCities[0] = 0x3;
 // LINE 502:
-	__asm        mov    gAllCareerCities[8].lPrevCities[1], 4;
+	gAllCareerCities[8].lPrevCities[1] = 0x4;
 // LINE 503:
-	__asm        mov    gAllCareerCities[8].lPrevCities[2], 7;
+	gAllCareerCities[8].lPrevCities[2] = 0x7;
 // LINE 504:
-	__asm        mov    gAllCareerCities[8].lNextCities[0], 7;
+	gAllCareerCities[8].lNextCities[0] = 0x7;
 // LINE 505:
-	__asm        mov    gAllCareerCities[8].lNextCities[1], 0xA;
+	gAllCareerCities[8].lNextCities[1] = 0xa;
 // LINE 506:
-	__asm        mov    gAllCareerCities[8].lNextCities[2], 0xB;
+	gAllCareerCities[8].lNextCities[2] = 0xb;
 // LINE 507:
-	__asm        mov    gAllCareerCities[8].lCityNameStringIndex, 8;
+	gAllCareerCities[8].lCityNameStringIndex = 0x8;
 // LINE 508:
-	__asm        mov    gAllCareerCities[8].lCityLevel, 2;
+	gAllCareerCities[8].lCityLevel = 0x2;
 // LINE 509:
-	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_8;
-	__asm        mov    gAllCareerCities[8].chCityFileNameBase, eax;
+	gAllCareerCities[8].chCityFileNameBase = SZ_CAREER_CITY_FILE_NAME_BASE_8;
 // LINE 511:
-	__asm        mov    gAllCareerCities[9].lPrevCities[0], 7;
+	gAllCareerCities[9].lPrevCities[0] = 0x7;
 // LINE 512:
-	__asm        mov    gAllCareerCities[9].lPrevCities[1], 8;
+	gAllCareerCities[9].lPrevCities[1] = 0x8;
 // LINE 513:
-	__asm        mov    gAllCareerCities[9].lPrevCities[2], 0xA;
+	gAllCareerCities[9].lPrevCities[2] = 0xa;
 // LINE 514:
-	__asm        mov    gAllCareerCities[9].lNextCities[0], 0xA;
+	gAllCareerCities[9].lNextCities[0] = 0xa;
 // LINE 515:
-	__asm        mov    gAllCareerCities[9].lNextCities[1], 0xC;
+	gAllCareerCities[9].lNextCities[1] = 0xc;
 // LINE 516:
-	__asm        mov    gAllCareerCities[9].lNextCities[2], 0xD;
+	gAllCareerCities[9].lNextCities[2] = 0xd;
 // LINE 517:
-	__asm        mov    gAllCareerCities[9].lCityNameStringIndex, 9;
+	gAllCareerCities[9].lCityNameStringIndex = 0x9;
 // LINE 518:
-	__asm        mov    gAllCareerCities[9].lCityLevel, 3;
+	gAllCareerCities[9].lCityLevel = 0x3;
 // LINE 519:
-	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_9;
-	__asm        mov    gAllCareerCities[9].chCityFileNameBase, eax;
+	gAllCareerCities[9].chCityFileNameBase = SZ_CAREER_CITY_FILE_NAME_BASE_9;
 // LINE 521:
-	__asm        mov    gAllCareerCities[10].lPrevCities[0], 9;
+	gAllCareerCities[10].lPrevCities[0] = 0x9;
 // LINE 522:
-	__asm        mov    gAllCareerCities[10].lPrevCities[1], 7;
+	gAllCareerCities[10].lPrevCities[1] = 0x7;
 // LINE 523:
-	__asm        mov    gAllCareerCities[10].lPrevCities[2], 0xB;
+	gAllCareerCities[10].lPrevCities[2] = 0xb;
 // LINE 524:
-	__asm        mov    gAllCareerCities[10].lNextCities[0], 0xC;
+	gAllCareerCities[10].lNextCities[0] = 0xc;
 // LINE 525:
-	__asm        mov    gAllCareerCities[10].lNextCities[1], 0xD;
+	gAllCareerCities[10].lNextCities[1] = 0xd;
 // LINE 526:
-	__asm        mov    gAllCareerCities[10].lNextCities[2], 0xE;
+	gAllCareerCities[10].lNextCities[2] = 0xe;
 // LINE 527:
-	__asm        mov    gAllCareerCities[10].lCityNameStringIndex, 0xA;
+	gAllCareerCities[10].lCityNameStringIndex = 0xa;
 // LINE 528:
-	__asm        mov    gAllCareerCities[10].lCityLevel, 3;
+	gAllCareerCities[10].lCityLevel = 0x3;
 // LINE 529:
-	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_10;
-	__asm        mov    gAllCareerCities[10].chCityFileNameBase, eax;
+	gAllCareerCities[10].chCityFileNameBase = SZ_CAREER_CITY_FILE_NAME_BASE_10;
 // LINE 531:
-	__asm        mov    gAllCareerCities[11].lPrevCities[0], 6;
+	gAllCareerCities[11].lPrevCities[0] = 0x6;
 // LINE 532:
-	__asm        mov    gAllCareerCities[11].lPrevCities[1], 7;
+	gAllCareerCities[11].lPrevCities[1] = 0x7;
 // LINE 533:
-	__asm        mov    gAllCareerCities[11].lPrevCities[2], 0xA;
+	gAllCareerCities[11].lPrevCities[2] = 0xa;
 // LINE 534:
-	__asm        mov    gAllCareerCities[11].lNextCities[0], 0xA;
+	gAllCareerCities[11].lNextCities[0] = 0xa;
 // LINE 535:
-	__asm        mov    gAllCareerCities[11].lNextCities[1], 0xD;
+	gAllCareerCities[11].lNextCities[1] = 0xd;
 // LINE 536:
-	__asm        mov    gAllCareerCities[11].lNextCities[2], 0xE;
+	gAllCareerCities[11].lNextCities[2] = 0xe;
 // LINE 537:
-	__asm        mov    gAllCareerCities[11].lCityNameStringIndex, 0xB;
+	gAllCareerCities[11].lCityNameStringIndex = 0xb;
 // LINE 538:
-	__asm        mov    gAllCareerCities[11].lCityLevel, 3;
+	gAllCareerCities[11].lCityLevel = 0x3;
 // LINE 539:
-	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_11;
-	__asm        mov    gAllCareerCities[11].chCityFileNameBase, eax;
+	gAllCareerCities[11].chCityFileNameBase = SZ_CAREER_CITY_FILE_NAME_BASE_11;
 // LINE 541:
-	__asm        mov    gAllCareerCities[12].lPrevCities[0], 0xA;
+	gAllCareerCities[12].lPrevCities[0] = 0xa;
 // LINE 542:
-	__asm        mov    gAllCareerCities[12].lPrevCities[1], 0xB;
+	gAllCareerCities[12].lPrevCities[1] = 0xb;
 // LINE 543:
-	__asm        mov    gAllCareerCities[12].lPrevCities[2], 0xD;
+	gAllCareerCities[12].lPrevCities[2] = 0xd;
 // LINE 544:
-	__asm        mov    gAllCareerCities[12].lNextCities[0], 0xD;
+	gAllCareerCities[12].lNextCities[0] = 0xd;
 // LINE 545:
-	__asm        mov    gAllCareerCities[12].lNextCities[1], 0xF;
+	gAllCareerCities[12].lNextCities[1] = 0xf;
 // LINE 546:
-	__asm        mov    gAllCareerCities[12].lNextCities[2], 0x10;
+	gAllCareerCities[12].lNextCities[2] = 0x10;
 // LINE 547:
-	__asm        mov    gAllCareerCities[12].lCityNameStringIndex, 0xC;
+	gAllCareerCities[12].lCityNameStringIndex = 0xc;
 // LINE 548:
-	__asm        mov    gAllCareerCities[12].lCityLevel, 4;
+	gAllCareerCities[12].lCityLevel = 0x4;
 // LINE 549:
-	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_12;
-	__asm        mov    gAllCareerCities[12].chCityFileNameBase, eax;
+	gAllCareerCities[12].chCityFileNameBase = SZ_CAREER_CITY_FILE_NAME_BASE_12;
 // LINE 551:
-	__asm        mov    gAllCareerCities[13].lPrevCities[0], 0xC;
+	gAllCareerCities[13].lPrevCities[0] = 0xc;
 // LINE 552:
-	__asm        mov    gAllCareerCities[13].lPrevCities[1], 0xA;
+	gAllCareerCities[13].lPrevCities[1] = 0xa;
 // LINE 553:
-	__asm        mov    gAllCareerCities[13].lPrevCities[2], 0xE;
+	gAllCareerCities[13].lPrevCities[2] = 0xe;
 // LINE 554:
-	__asm        mov    gAllCareerCities[13].lNextCities[0], 0xF;
+	gAllCareerCities[13].lNextCities[0] = 0xf;
 // LINE 555:
-	__asm        mov    gAllCareerCities[13].lNextCities[1], 0x10;
+	gAllCareerCities[13].lNextCities[1] = 0x10;
 // LINE 556:
-	__asm        mov    gAllCareerCities[13].lNextCities[2], 0x11;
+	gAllCareerCities[13].lNextCities[2] = 0x11;
 // LINE 557:
-	__asm        mov    gAllCareerCities[13].lCityNameStringIndex, 0xD;
+	gAllCareerCities[13].lCityNameStringIndex = 0xd;
 // LINE 558:
-	__asm        mov    gAllCareerCities[13].lCityLevel, 4;
+	gAllCareerCities[13].lCityLevel = 0x4;
 // LINE 559:
-	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_13;
-	__asm        mov    gAllCareerCities[13].chCityFileNameBase, eax;
+	gAllCareerCities[13].chCityFileNameBase = SZ_CAREER_CITY_FILE_NAME_BASE_13;
 // LINE 561:
-	__asm        mov    gAllCareerCities[14].lPrevCities[0], 9;
+	gAllCareerCities[14].lPrevCities[0] = 0x9;
 // LINE 562:
-	__asm        mov    gAllCareerCities[14].lPrevCities[1], 0xA;
+	gAllCareerCities[14].lPrevCities[1] = 0xa;
 // LINE 563:
-	__asm        mov    gAllCareerCities[14].lPrevCities[2], 0xD;
+	gAllCareerCities[14].lPrevCities[2] = 0xd;
 // LINE 564:
-	__asm        mov    gAllCareerCities[14].lNextCities[0], 0xD;
+	gAllCareerCities[14].lNextCities[0] = 0xd;
 // LINE 565:
-	__asm        mov    gAllCareerCities[14].lNextCities[1], 0x10;
+	gAllCareerCities[14].lNextCities[1] = 0x10;
 // LINE 566:
-	__asm        mov    gAllCareerCities[14].lNextCities[2], 0x11;
+	gAllCareerCities[14].lNextCities[2] = 0x11;
 // LINE 567:
-	__asm        mov    gAllCareerCities[14].lCityNameStringIndex, 0xE;
+	gAllCareerCities[14].lCityNameStringIndex = 0xe;
 // LINE 568:
-	__asm        mov    gAllCareerCities[14].lCityLevel, 4;
+	gAllCareerCities[14].lCityLevel = 0x4;
 // LINE 569:
-	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_14;
-	__asm        mov    gAllCareerCities[14].chCityFileNameBase, eax;
+	gAllCareerCities[14].chCityFileNameBase = SZ_CAREER_CITY_FILE_NAME_BASE_14;
 // LINE 571:
-	__asm        mov    gAllCareerCities[15].lPrevCities[0], 0xD;
+	gAllCareerCities[15].lPrevCities[0] = 0xd;
 // LINE 572:
-	__asm        mov    gAllCareerCities[15].lPrevCities[1], 0xE;
+	gAllCareerCities[15].lPrevCities[1] = 0xe;
 // LINE 573:
-	__asm        mov    gAllCareerCities[15].lPrevCities[2], 0x10;
+	gAllCareerCities[15].lPrevCities[2] = 0x10;
 // LINE 574:
-	__asm        mov    gAllCareerCities[15].lNextCities[0], 0x10;
+	gAllCareerCities[15].lNextCities[0] = 0x10;
 // LINE 575:
-	__asm        mov    gAllCareerCities[15].lNextCities[1], 0x12;
+	gAllCareerCities[15].lNextCities[1] = 0x12;
 // LINE 576:
-	__asm        mov    gAllCareerCities[15].lNextCities[2], 0x13;
+	gAllCareerCities[15].lNextCities[2] = 0x13;
 // LINE 577:
-	__asm        mov    gAllCareerCities[15].lCityNameStringIndex, 0xF;
+	gAllCareerCities[15].lCityNameStringIndex = 0xf;
 // LINE 578:
-	__asm        mov    gAllCareerCities[15].lCityLevel, 5;
+	gAllCareerCities[15].lCityLevel = 0x5;
 // LINE 579:
-	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_15;
-	__asm        mov    gAllCareerCities[15].chCityFileNameBase, eax;
+	gAllCareerCities[15].chCityFileNameBase = SZ_CAREER_CITY_FILE_NAME_BASE_15;
 // LINE 581:
-	__asm        mov    gAllCareerCities[16].lPrevCities[0], 0xF;
+	gAllCareerCities[16].lPrevCities[0] = 0xf;
 // LINE 582:
-	__asm        mov    gAllCareerCities[16].lPrevCities[1], 0xD;
+	gAllCareerCities[16].lPrevCities[1] = 0xd;
 // LINE 583:
-	__asm        mov    gAllCareerCities[16].lPrevCities[2], 0x11;
+	gAllCareerCities[16].lPrevCities[2] = 0x11;
 // LINE 584:
-	__asm        mov    gAllCareerCities[16].lNextCities[0], 0x12;
+	gAllCareerCities[16].lNextCities[0] = 0x12;
 // LINE 585:
-	__asm        mov    gAllCareerCities[16].lNextCities[1], 0x13;
+	gAllCareerCities[16].lNextCities[1] = 0x13;
 // LINE 586:
-	__asm        mov    gAllCareerCities[16].lNextCities[2], 0x14;
+	gAllCareerCities[16].lNextCities[2] = 0x14;
 // LINE 587:
-	__asm        mov    gAllCareerCities[16].lCityNameStringIndex, 0x10;
+	gAllCareerCities[16].lCityNameStringIndex = 0x10;
 // LINE 588:
-	__asm        mov    gAllCareerCities[16].lCityLevel, 5;
+	gAllCareerCities[16].lCityLevel = 0x5;
 // LINE 589:
-	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_16;
-	__asm        mov    gAllCareerCities[16].chCityFileNameBase, eax;
+	gAllCareerCities[16].chCityFileNameBase = SZ_CAREER_CITY_FILE_NAME_BASE_16;
 // LINE 591:
-	__asm        mov    gAllCareerCities[17].lPrevCities[0], 0xC;
+	gAllCareerCities[17].lPrevCities[0] = 0xc;
 // LINE 592:
-	__asm        mov    gAllCareerCities[17].lPrevCities[1], 0xD;
+	gAllCareerCities[17].lPrevCities[1] = 0xd;
 // LINE 593:
-	__asm        mov    gAllCareerCities[17].lPrevCities[2], 0x10;
+	gAllCareerCities[17].lPrevCities[2] = 0x10;
 // LINE 594:
-	__asm        mov    gAllCareerCities[17].lNextCities[0], 0x10;
+	gAllCareerCities[17].lNextCities[0] = 0x10;
 // LINE 595:
-	__asm        mov    gAllCareerCities[17].lNextCities[1], 0x13;
+	gAllCareerCities[17].lNextCities[1] = 0x13;
 // LINE 596:
-	__asm        mov    gAllCareerCities[17].lNextCities[2], 0x14;
+	gAllCareerCities[17].lNextCities[2] = 0x14;
 // LINE 597:
-	__asm        mov    gAllCareerCities[17].lCityNameStringIndex, 0x11;
+	gAllCareerCities[17].lCityNameStringIndex = 0x11;
 // LINE 598:
-	__asm        mov    gAllCareerCities[17].lCityLevel, 5;
+	gAllCareerCities[17].lCityLevel = 0x5;
 // LINE 599:
-	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_17;
-	__asm        mov    gAllCareerCities[17].chCityFileNameBase, eax;
+	gAllCareerCities[17].chCityFileNameBase = SZ_CAREER_CITY_FILE_NAME_BASE_17;
 // LINE 601:
-	__asm        mov    gAllCareerCities[18].lPrevCities[0], 0x10;
+	gAllCareerCities[18].lPrevCities[0] = 0x10;
 // LINE 602:
-	__asm        mov    gAllCareerCities[18].lPrevCities[1], 0x11;
+	gAllCareerCities[18].lPrevCities[1] = 0x11;
 // LINE 603:
-	__asm        mov    gAllCareerCities[18].lPrevCities[2], 0x13;
+	gAllCareerCities[18].lPrevCities[2] = 0x13;
 // LINE 604:
-	__asm        mov    gAllCareerCities[18].lNextCities[0], 0x13;
+	gAllCareerCities[18].lNextCities[0] = 0x13;
 // LINE 605:
-	__asm        mov    gAllCareerCities[18].lNextCities[1], 0x15;
+	gAllCareerCities[18].lNextCities[1] = 0x15;
 // LINE 606:
-	__asm        mov    gAllCareerCities[18].lNextCities[2], 0xFFFFFFFF;
+	gAllCareerCities[18].lNextCities[2] = 0xffffffff;
 // LINE 607:
-	__asm        mov    gAllCareerCities[18].lCityNameStringIndex, 0x12;
+	gAllCareerCities[18].lCityNameStringIndex = 0x12;
 // LINE 608:
-	__asm        mov    gAllCareerCities[18].lCityLevel, 6;
+	gAllCareerCities[18].lCityLevel = 0x6;
 // LINE 609:
-	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_18;
-	__asm        mov    gAllCareerCities[18].chCityFileNameBase, eax;
+	gAllCareerCities[18].chCityFileNameBase = SZ_CAREER_CITY_FILE_NAME_BASE_18;
 // LINE 611:
-	__asm        mov    gAllCareerCities[19].lPrevCities[0], 0x12;
+	gAllCareerCities[19].lPrevCities[0] = 0x12;
 // LINE 612:
-	__asm        mov    gAllCareerCities[19].lPrevCities[1], 0x10;
+	gAllCareerCities[19].lPrevCities[1] = 0x10;
 // LINE 613:
-	__asm        mov    gAllCareerCities[19].lPrevCities[2], 0x14;
+	gAllCareerCities[19].lPrevCities[2] = 0x14;
 // LINE 614:
-	__asm        mov    gAllCareerCities[19].lNextCities[0], 0x15;
+	gAllCareerCities[19].lNextCities[0] = 0x15;
 // LINE 615:
-	__asm        mov    gAllCareerCities[19].lNextCities[1], 0x16;
+	gAllCareerCities[19].lNextCities[1] = 0x16;
 // LINE 616:
-	__asm        mov    gAllCareerCities[19].lNextCities[2], 0xFFFFFFFF;
+	gAllCareerCities[19].lNextCities[2] = 0xffffffff;
 // LINE 617:
-	__asm        mov    gAllCareerCities[19].lCityNameStringIndex, 0x13;
+	gAllCareerCities[19].lCityNameStringIndex = 0x13;
 // LINE 618:
-	__asm        mov    gAllCareerCities[19].lCityLevel, 6;
+	gAllCareerCities[19].lCityLevel = 0x6;
 // LINE 619:
-	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_19;
-	__asm        mov    gAllCareerCities[19].chCityFileNameBase, eax;
+	gAllCareerCities[19].chCityFileNameBase = SZ_CAREER_CITY_FILE_NAME_BASE_19;
 // LINE 621:
-	__asm        mov    gAllCareerCities[20].lPrevCities[0], 0xF;
+	gAllCareerCities[20].lPrevCities[0] = 0xf;
 // LINE 622:
-	__asm        mov    gAllCareerCities[20].lPrevCities[1], 0x10;
+	gAllCareerCities[20].lPrevCities[1] = 0x10;
 // LINE 623:
-	__asm        mov    gAllCareerCities[20].lPrevCities[2], 0x13;
+	gAllCareerCities[20].lPrevCities[2] = 0x13;
 // LINE 624:
-	__asm        mov    gAllCareerCities[20].lNextCities[0], 0x13;
+	gAllCareerCities[20].lNextCities[0] = 0x13;
 // LINE 625:
-	__asm        mov    gAllCareerCities[20].lNextCities[1], 0x16;
+	gAllCareerCities[20].lNextCities[1] = 0x16;
 // LINE 626:
-	__asm        mov    gAllCareerCities[20].lNextCities[2], 0xFFFFFFFF;
+	gAllCareerCities[20].lNextCities[2] = 0xffffffff;
 // LINE 627:
-	__asm        mov    gAllCareerCities[20].lCityNameStringIndex, 0x14;
+	gAllCareerCities[20].lCityNameStringIndex = 0x14;
 // LINE 628:
-	__asm        mov    gAllCareerCities[20].lCityLevel, 6;
+	gAllCareerCities[20].lCityLevel = 0x6;
 // LINE 629:
-	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_20;
-	__asm        mov    gAllCareerCities[20].chCityFileNameBase, eax;
+	gAllCareerCities[20].chCityFileNameBase = SZ_CAREER_CITY_FILE_NAME_BASE_20;
 // LINE 631:
-	__asm        mov    gAllCareerCities[21].lPrevCities[0], 0x13;
+	gAllCareerCities[21].lPrevCities[0] = 0x13;
 // LINE 632:
-	__asm        mov    gAllCareerCities[21].lPrevCities[1], 0x14;
+	gAllCareerCities[21].lPrevCities[1] = 0x14;
 // LINE 633:
-	__asm        mov    gAllCareerCities[21].lPrevCities[2], 0x16;
+	gAllCareerCities[21].lPrevCities[2] = 0x16;
 // LINE 634:
-	__asm        mov    gAllCareerCities[21].lNextCities[0], 0x17;
+	gAllCareerCities[21].lNextCities[0] = 0x17;
 // LINE 635:
-	__asm        mov    gAllCareerCities[21].lNextCities[1], 0x18;
+	gAllCareerCities[21].lNextCities[1] = 0x18;
 // LINE 636:
-	__asm        mov    gAllCareerCities[21].lNextCities[2], 0xFFFFFFFF;
+	gAllCareerCities[21].lNextCities[2] = 0xffffffff;
 // LINE 637:
-	__asm        mov    gAllCareerCities[21].lCityNameStringIndex, 0x15;
+	gAllCareerCities[21].lCityNameStringIndex = 0x15;
 // LINE 638:
-	__asm        mov    gAllCareerCities[21].lCityLevel, 7;
+	gAllCareerCities[21].lCityLevel = 0x7;
 // LINE 639:
-	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_21;
-	__asm        mov    gAllCareerCities[21].chCityFileNameBase, eax;
+	gAllCareerCities[21].chCityFileNameBase = SZ_CAREER_CITY_FILE_NAME_BASE_21;
 // LINE 641:
-	__asm        mov    gAllCareerCities[22].lPrevCities[0], 0x12;
+	gAllCareerCities[22].lPrevCities[0] = 0x12;
 // LINE 642:
-	__asm        mov    gAllCareerCities[22].lPrevCities[1], 0x13;
+	gAllCareerCities[22].lPrevCities[1] = 0x13;
 // LINE 643:
-	__asm        mov    gAllCareerCities[22].lPrevCities[2], 0x15;
+	gAllCareerCities[22].lPrevCities[2] = 0x15;
 // LINE 644:
-	__asm        mov    gAllCareerCities[22].lNextCities[0], 0x17;
+	gAllCareerCities[22].lNextCities[0] = 0x17;
 // LINE 645:
-	__asm        mov    gAllCareerCities[22].lNextCities[1], 0x18;
+	gAllCareerCities[22].lNextCities[1] = 0x18;
 // LINE 646:
-	__asm        mov    gAllCareerCities[22].lNextCities[2], 0xFFFFFFFF;
+	gAllCareerCities[22].lNextCities[2] = 0xffffffff;
 // LINE 647:
-	__asm        mov    gAllCareerCities[22].lCityNameStringIndex, 0x16;
+	gAllCareerCities[22].lCityNameStringIndex = 0x16;
 // LINE 648:
-	__asm        mov    gAllCareerCities[22].lCityLevel, 7;
+	gAllCareerCities[22].lCityLevel = 0x7;
 // LINE 649:
-	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_22;
-	__asm        mov    gAllCareerCities[22].chCityFileNameBase, eax;
+	gAllCareerCities[22].chCityFileNameBase = SZ_CAREER_CITY_FILE_NAME_BASE_22;
 // LINE 651:
-	__asm        mov    gAllCareerCities[23].lPrevCities[0], 0x15;
+	gAllCareerCities[23].lPrevCities[0] = 0x15;
 // LINE 652:
-	__asm        mov    gAllCareerCities[23].lPrevCities[1], 0x16;
+	gAllCareerCities[23].lPrevCities[1] = 0x16;
 // LINE 653:
-	__asm        mov    gAllCareerCities[23].lPrevCities[2], 0xFFFFFFFF;
+	gAllCareerCities[23].lPrevCities[2] = 0xffffffff;
 // LINE 654:
-	__asm        mov    gAllCareerCities[23].lNextCities[0], 0x19;
+	gAllCareerCities[23].lNextCities[0] = 0x19;
 // LINE 655:
-	__asm        mov    gAllCareerCities[23].lNextCities[1], 0x1A;
+	gAllCareerCities[23].lNextCities[1] = 0x1a;
 // LINE 656:
-	__asm        mov    gAllCareerCities[23].lNextCities[2], 0xFFFFFFFF;
+	gAllCareerCities[23].lNextCities[2] = 0xffffffff;
 // LINE 657:
-	__asm        mov    gAllCareerCities[23].lCityNameStringIndex, 0x17;
+	gAllCareerCities[23].lCityNameStringIndex = 0x17;
 // LINE 658:
-	__asm        mov    gAllCareerCities[23].lCityLevel, 8;
+	gAllCareerCities[23].lCityLevel = 0x8;
 // LINE 659:
-	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_23;
-	__asm        mov    gAllCareerCities[23].chCityFileNameBase, eax;
+	gAllCareerCities[23].chCityFileNameBase = SZ_CAREER_CITY_FILE_NAME_BASE_23;
 // LINE 661:
-	__asm        mov    gAllCareerCities[24].lPrevCities[0], 0x15;
+	gAllCareerCities[24].lPrevCities[0] = 0x15;
 // LINE 662:
-	__asm        mov    gAllCareerCities[24].lPrevCities[1], 0x16;
+	gAllCareerCities[24].lPrevCities[1] = 0x16;
 // LINE 663:
-	__asm        mov    gAllCareerCities[24].lPrevCities[2], 0xFFFFFFFF;
+	gAllCareerCities[24].lPrevCities[2] = 0xffffffff;
 // LINE 664:
-	__asm        mov    gAllCareerCities[24].lNextCities[0], 0x19;
+	gAllCareerCities[24].lNextCities[0] = 0x19;
 // LINE 665:
-	__asm        mov    gAllCareerCities[24].lNextCities[1], 0x1A;
+	gAllCareerCities[24].lNextCities[1] = 0x1a;
 // LINE 666:
-	__asm        mov    gAllCareerCities[24].lNextCities[2], 0xFFFFFFFF;
+	gAllCareerCities[24].lNextCities[2] = 0xffffffff;
 // LINE 667:
-	__asm        mov    gAllCareerCities[24].lCityNameStringIndex, 0x18;
+	gAllCareerCities[24].lCityNameStringIndex = 0x18;
 // LINE 668:
-	__asm        mov    gAllCareerCities[24].lCityLevel, 8;
+	gAllCareerCities[24].lCityLevel = 0x8;
 // LINE 669:
-	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_24;
-	__asm        mov    gAllCareerCities[24].chCityFileNameBase, eax;
+	gAllCareerCities[24].chCityFileNameBase = SZ_CAREER_CITY_FILE_NAME_BASE_24;
 // LINE 671:
-	__asm        mov    gAllCareerCities[25].lPrevCities[0], 0x17;
+	gAllCareerCities[25].lPrevCities[0] = 0x17;
 // LINE 672:
-	__asm        mov    gAllCareerCities[25].lPrevCities[1], 0x18;
+	gAllCareerCities[25].lPrevCities[1] = 0x18;
 // LINE 673:
-	__asm        mov    gAllCareerCities[25].lPrevCities[2], 0xFFFFFFFF;
+	gAllCareerCities[25].lPrevCities[2] = 0xffffffff;
 // LINE 674:
-	__asm        mov    gAllCareerCities[25].lNextCities[0], 0x1B;
+	gAllCareerCities[25].lNextCities[0] = 0x1b;
 // LINE 675:
-	__asm        mov    gAllCareerCities[25].lNextCities[1], 0x1C;
+	gAllCareerCities[25].lNextCities[1] = 0x1c;
 // LINE 676:
-	__asm        mov    gAllCareerCities[25].lNextCities[2], 0xFFFFFFFF;
+	gAllCareerCities[25].lNextCities[2] = 0xffffffff;
 // LINE 677:
-	__asm        mov    gAllCareerCities[25].lCityNameStringIndex, 0x19;
+	gAllCareerCities[25].lCityNameStringIndex = 0x19;
 // LINE 678:
-	__asm        mov    gAllCareerCities[25].lCityLevel, 9;
+	gAllCareerCities[25].lCityLevel = 0x9;
 // LINE 679:
-	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_25;
-	__asm        mov    gAllCareerCities[25].chCityFileNameBase, eax;
+	gAllCareerCities[25].chCityFileNameBase = SZ_CAREER_CITY_FILE_NAME_BASE_25;
 // LINE 681:
-	__asm        mov    gAllCareerCities[26].lPrevCities[0], 0x17;
+	gAllCareerCities[26].lPrevCities[0] = 0x17;
 // LINE 682:
-	__asm        mov    gAllCareerCities[26].lPrevCities[1], 0x18;
+	gAllCareerCities[26].lPrevCities[1] = 0x18;
 // LINE 683:
-	__asm        mov    gAllCareerCities[26].lPrevCities[2], 0xFFFFFFFF;
+	gAllCareerCities[26].lPrevCities[2] = 0xffffffff;
 // LINE 684:
-	__asm        mov    gAllCareerCities[26].lNextCities[0], 0x1B;
+	gAllCareerCities[26].lNextCities[0] = 0x1b;
 // LINE 685:
-	__asm        mov    gAllCareerCities[26].lNextCities[1], 0x1C;
+	gAllCareerCities[26].lNextCities[1] = 0x1c;
 // LINE 686:
-	__asm        mov    gAllCareerCities[26].lNextCities[2], 0xFFFFFFFF;
+	gAllCareerCities[26].lNextCities[2] = 0xffffffff;
 // LINE 687:
-	__asm        mov    gAllCareerCities[26].lCityNameStringIndex, 0x1A;
+	gAllCareerCities[26].lCityNameStringIndex = 0x1a;
 // LINE 688:
-	__asm        mov    gAllCareerCities[26].lCityLevel, 9;
+	gAllCareerCities[26].lCityLevel = 0x9;
 // LINE 689:
-	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_26;
-	__asm        mov    gAllCareerCities[26].chCityFileNameBase, eax;
+	gAllCareerCities[26].chCityFileNameBase = SZ_CAREER_CITY_FILE_NAME_BASE_26;
 // LINE 691:
-	__asm        mov    gAllCareerCities[27].lPrevCities[0], 0x19;
+	gAllCareerCities[27].lPrevCities[0] = 0x19;
 // LINE 692:
-	__asm        mov    gAllCareerCities[27].lPrevCities[1], 0x1A;
+	gAllCareerCities[27].lPrevCities[1] = 0x1a;
 // LINE 693:
-	__asm        mov    gAllCareerCities[27].lPrevCities[2], 0xFFFFFFFF;
+	gAllCareerCities[27].lPrevCities[2] = 0xffffffff;
 // LINE 694:
-	__asm        mov    gAllCareerCities[27].lNextCities[0], 0x1D;
+	gAllCareerCities[27].lNextCities[0] = 0x1d;
 // LINE 695:
-	__asm        mov    gAllCareerCities[27].lNextCities[1], 0xFFFFFFFF;
+	gAllCareerCities[27].lNextCities[1] = 0xffffffff;
 // LINE 696:
-	__asm        mov    gAllCareerCities[27].lNextCities[2], 0xFFFFFFFF;
+	gAllCareerCities[27].lNextCities[2] = 0xffffffff;
 // LINE 697:
-	__asm        mov    gAllCareerCities[27].lCityNameStringIndex, 0x1B;
+	gAllCareerCities[27].lCityNameStringIndex = 0x1b;
 // LINE 698:
-	__asm        mov    gAllCareerCities[27].lCityLevel, 0xA;
+	gAllCareerCities[27].lCityLevel = 0xa;
 // LINE 699:
-	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_27;
-	__asm        mov    gAllCareerCities[27].chCityFileNameBase, eax;
+	gAllCareerCities[27].chCityFileNameBase = SZ_CAREER_CITY_FILE_NAME_BASE_27;
 // LINE 701:
-	__asm        mov    gAllCareerCities[28].lPrevCities[0], 0x19;
+	gAllCareerCities[28].lPrevCities[0] = 0x19;
 // LINE 702:
-	__asm        mov    gAllCareerCities[28].lPrevCities[1], 0x1A;
+	gAllCareerCities[28].lPrevCities[1] = 0x1a;
 // LINE 703:
-	__asm        mov    gAllCareerCities[28].lPrevCities[2], 0xFFFFFFFF;
+	gAllCareerCities[28].lPrevCities[2] = 0xffffffff;
 // LINE 704:
-	__asm        mov    gAllCareerCities[28].lNextCities[0], 0x1D;
+	gAllCareerCities[28].lNextCities[0] = 0x1d;
 // LINE 705:
-	__asm        mov    gAllCareerCities[28].lNextCities[1], 0xFFFFFFFF;
+	gAllCareerCities[28].lNextCities[1] = 0xffffffff;
 // LINE 706:
-	__asm        mov    gAllCareerCities[28].lNextCities[2], 0xFFFFFFFF;
+	gAllCareerCities[28].lNextCities[2] = 0xffffffff;
 // LINE 707:
-	__asm        mov    gAllCareerCities[28].lCityNameStringIndex, 0x1C;
+	gAllCareerCities[28].lCityNameStringIndex = 0x1c;
 // LINE 708:
-	__asm        mov    gAllCareerCities[28].lCityLevel, 0xA;
+	gAllCareerCities[28].lCityLevel = 0xa;
 // LINE 709:
-	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_28;
-	__asm        mov    gAllCareerCities[28].chCityFileNameBase, eax;
+	gAllCareerCities[28].chCityFileNameBase = SZ_CAREER_CITY_FILE_NAME_BASE_28;
 // LINE 711:
-	__asm        mov    gAllCareerCities[29].lPrevCities[0], 0x1C;
+	gAllCareerCities[29].lPrevCities[0] = 0x1c;
 // LINE 712:
-	__asm        mov    gAllCareerCities[29].lPrevCities[1], 0xFFFFFFFF;
+	gAllCareerCities[29].lPrevCities[1] = 0xffffffff;
 // LINE 713:
-	__asm        mov    gAllCareerCities[29].lPrevCities[2], 0xFFFFFFFF;
+	gAllCareerCities[29].lPrevCities[2] = 0xffffffff;
 // LINE 714:
-	__asm        mov    gAllCareerCities[29].lNextCities[0], 0x1E;
+	gAllCareerCities[29].lNextCities[0] = 0x1e;
 // LINE 715:
-	__asm        mov    gAllCareerCities[29].lNextCities[1], 0xFFFFFFFF;
+	gAllCareerCities[29].lNextCities[1] = 0xffffffff;
 // LINE 716:
-	__asm        mov    gAllCareerCities[29].lNextCities[2], 0xFFFFFFFF;
+	gAllCareerCities[29].lNextCities[2] = 0xffffffff;
 // LINE 717:
-	__asm        mov    gAllCareerCities[29].lCityNameStringIndex, 0x1D;
+	gAllCareerCities[29].lCityNameStringIndex = 0x1d;
 // LINE 718:
-	__asm        mov    gAllCareerCities[29].lCityLevel, 0x1D;
+	gAllCareerCities[29].lCityLevel = 0x1d;
 // LINE 719:
-	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_29;
-	__asm        mov    gAllCareerCities[29].chCityFileNameBase, eax;
+	gAllCareerCities[29].chCityFileNameBase = SZ_CAREER_CITY_FILE_NAME_BASE_29;
 // LINE 721:
-	__asm        mov    gAllCareerCities[30].lPrevCities[0], 0x1D;
+	gAllCareerCities[30].lPrevCities[0] = 0x1d;
 // LINE 722:
-	__asm        mov    gAllCareerCities[30].lPrevCities[1], 0xFFFFFFFF;
+	gAllCareerCities[30].lPrevCities[1] = 0xffffffff;
 // LINE 723:
-	__asm        mov    gAllCareerCities[30].lPrevCities[2], 0xFFFFFFFF;
+	gAllCareerCities[30].lPrevCities[2] = 0xffffffff;
 // LINE 724:
-	__asm        mov    gAllCareerCities[30].lNextCities[0], 0x1F;
+	gAllCareerCities[30].lNextCities[0] = 0x1f;
 // LINE 725:
-	__asm        mov    gAllCareerCities[30].lNextCities[1], 0xFFFFFFFF;
+	gAllCareerCities[30].lNextCities[1] = 0xffffffff;
 // LINE 726:
-	__asm        mov    gAllCareerCities[30].lNextCities[2], 0xFFFFFFFF;
+	gAllCareerCities[30].lNextCities[2] = 0xffffffff;
 // LINE 727:
-	__asm        mov    gAllCareerCities[30].lCityNameStringIndex, 0x1E;
+	gAllCareerCities[30].lCityNameStringIndex = 0x1e;
 // LINE 728:
-	__asm        mov    gAllCareerCities[30].lCityLevel, 0xC;
+	gAllCareerCities[30].lCityLevel = 0xc;
 // LINE 729:
-	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_30;
-	__asm        mov    gAllCareerCities[30].chCityFileNameBase, eax;
+	gAllCareerCities[30].chCityFileNameBase = SZ_CAREER_CITY_FILE_NAME_BASE_30;
 // LINE 731:
-	__asm        mov    reinterpret_cast<uint32_t>(gGameFilePath[28]), 0x1E;
+	reinterpret_cast<uint32_t>(gGameFilePath[28]) = 0x1e;
 // LINE 732:
-	__asm        mov    reinterpret_cast<uint32_t>(gGameFilePath[32]), 0xFFFFFFFF;
+	reinterpret_cast<uint32_t>(gGameFilePath[32]) = 0xffffffff;
 // LINE 733:
-	__asm        mov    reinterpret_cast<uint32_t>(gGameFilePath[36]), 0xFFFFFFFF;
+	reinterpret_cast<uint32_t>(gGameFilePath[36]) = 0xffffffff;
 // LINE 734:
-	__asm        mov    reinterpret_cast<uint32_t>(gGameFilePath[16]), 0xFFFFFFFF;
+	reinterpret_cast<uint32_t>(gGameFilePath[16]) = 0xffffffff;
 // LINE 735:
-	__asm        mov    reinterpret_cast<uint32_t>(gGameFilePath[20]), 0xFFFFFFFF;
+	reinterpret_cast<uint32_t>(gGameFilePath[20]) = 0xffffffff;
 // LINE 736:
-	__asm        mov    reinterpret_cast<uint32_t>(gGameFilePath[24]), 0xFFFFFFFF;
+	reinterpret_cast<uint32_t>(gGameFilePath[24]) = 0xffffffff;
 // LINE 737:
-	__asm        mov    reinterpret_cast<uint32_t>(gGameFilePath[40]), 0x1F;
+	reinterpret_cast<uint32_t>(gGameFilePath[40]) = 0x1f;
 // LINE 738:
-	__asm        mov    gGraduationState.nGraduationState, 0xD;
+	gGraduationState.nGraduationState = 0xd;
 // LINE 739:
-	__asm        mov    eax, SZ_CAREER_CITY_FILE_NAME_BASE_31;
-	__asm        mov    reinterpret_cast<uint32_t>(gGameFilePath[44]), eax;
+	reinterpret_cast<uint32_t>(gGameFilePath[44]) = SZ_CAREER_CITY_FILE_NAME_BASE_31;
 // LINE 744:
 	__asm        mov    i, 0;
 	__asm        jmp    _Tb58;

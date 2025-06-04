@@ -235,20 +235,11 @@ _Tdd:
 // FUNCTION: COPTER_D 0x00543183
 void CreatePlane(struct Plane *plane, struct Point3d *V, struct Point3d *p) {
 // LINE 106:
-	__asm        mov    eax, V;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, plane;
-	__asm        mov    [ecx], eax;
+	plane->A = V->x;
 // LINE 107:
-	__asm        mov    eax, V;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, plane;
-	__asm        mov    [ecx+4], eax;
+	plane->B = V->y;
 // LINE 108:
-	__asm        mov    eax, V;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, plane;
-	__asm        mov    [ecx+8], eax;
+	plane->C = V->z;
 // LINE 111:
 	__asm        mov    eax, p;
 	__asm        mov    eax, [eax+4];
@@ -615,14 +606,11 @@ void Apply_Friction(int32_t F, struct mv *p, int32_t t) {
 	__asm        jmp    _Tdb;
 // LINE 277:
 _Tbd:
-	__asm        mov    eax, p;
-	__asm        mov    dword ptr [eax+8], 0;
+	p->V.x = 0x0;
 // LINE 278:
-	__asm        mov    eax, p;
-	__asm        mov    dword ptr [eax+0xC], 0;
+	p->V.y = 0x0;
 // LINE 279:
-	__asm        mov    eax, p;
-	__asm        mov    dword ptr [eax+0x10], 0;
+	p->V.z = 0x0;
 // LINE 282:
 _Tdb:
 }

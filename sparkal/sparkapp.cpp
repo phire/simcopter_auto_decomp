@@ -242,26 +242,22 @@ protected:
 // FUNCTION: COPTER_D 0x00426fc0
 void CSparkalApp::CSparkalApp() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F428;
+	this-><vftable> = 0x58f428;
 // LINE 15:
 	__asm        mov    ecx, this;
 	__asm        call   CSparkalApp::DecideRuntimePlatform;
 // LINE 19:
 	__asm        jmp    _T31;
 // LINE 20:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 0;
+	this->mbUseDirectDraw = 0x0;
 // LINE 21:
 	__asm        jmp    _T3b;
 // LINE 22:
 _T31:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 1;
+	this->mbUseDirectDraw = 0x1;
 // LINE 26:
 _T3b:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 1;
+	this->_mFlags = 0x1;
 // LINE 34:
 	__asm        mov    word ptr [ebp-4], 0;
 	__asm        mov    eax, 0x59A9D4;
@@ -297,7 +293,7 @@ _Tac:
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        jne    _Tc9;
 
-	__asm        mov    word ptr [ebp-0xC], 0xFFFF;
+	None = 0xffff;
 _Tc9:
 	__asm        jmp    near ptr 0x0042708E;
 
@@ -310,7 +306,7 @@ _Tc9:
 	__asm        mov    CRLECompressedImage::RLEGraphicsPool, eax;
 	__asm        jmp    _Tf3;
 _Ted:
-	__asm        mov    word ptr [ebp-4], 0xFFFF;
+	None = 0xffff;
 _Tf3:
 	__asm        jmp    near ptr 0x004270B8;
 // LINE 35:
@@ -375,7 +371,7 @@ _T79:
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     _Tae;
 
-	__asm        mov    word ptr [ebp-4], 0xFFFF;
+	None = 0xffff;
 _Tae:
 	__asm        jmp    near ptr 0x00427194;
 
@@ -391,14 +387,12 @@ int32_t CSparkalApp::DecideRuntimePlatform() {
 	unsigned char WinMajor;
 
 // LINE 62:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->_mRuntimePlatform = 0x0;
 // LINE 65:
 	__asm        call   dword ptr ds:[0x6C3644];
 	__asm        mov    Version, eax;
 // LINE 66:
-	__asm        mov    al, reinterpret_cast<uint8_t>(Version);
-	__asm        mov    WinMajor, al;
+	WinMajor = reinterpret_cast<uint8_t>(Version);
 // LINE 67:
 	__asm        mov    eax, Version;
 	__asm        mov    WinMinor, ah;
@@ -416,14 +410,12 @@ int32_t CSparkalApp::DecideRuntimePlatform() {
 	__asm        test   *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&Version) + 3), 0x80;
 	__asm        je     _T60;
 // LINE 71:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 1;
+	this->_mRuntimePlatform = 0x1;
 // LINE 72:
 	__asm        jmp    _T6a;
 // LINE 73:
 _T60:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 2;
+	this->_mRuntimePlatform = 0x2;
 // LINE 75:
 _T6a:
 	__asm        jmp    _Ta4;
@@ -433,8 +425,7 @@ _T6f:
 	__asm        cmp    eax, 4;
 	__asm        jge    _T8c;
 // LINE 76:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 3;
+	this->_mRuntimePlatform = 0x3;
 // LINE 77:
 	__asm        jmp    _Ta4;
 _T8c:
@@ -443,8 +434,7 @@ _T8c:
 	__asm        cmp    eax, 4;
 	__asm        jl     _Ta4;
 // LINE 78:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 4;
+	this->_mRuntimePlatform = 0x4;
 // LINE 86:
 _Ta4:
 	__asm        mov    eax, this;
@@ -458,7 +448,7 @@ class CSparkalWindow* CSparkalApp::NewWindow(unsigned long Width, unsigned long 
 	class CSparkalWindow *Window;
 
 // LINE 97:
-	__asm        mov    Window, 0;
+	Window = 0x0;
 // LINE 101:
 	__asm        push   0x9C;
 	__asm        call   operator new;
@@ -482,7 +472,7 @@ class CSparkalWindow* CSparkalApp::NewWindow(unsigned long Width, unsigned long 
 	__asm        mov    Window, eax;
 	__asm        jmp    _T58;
 _T51:
-	__asm        mov    Window, 0;
+	Window = 0x0;
 // LINE 108:
 _T58:
 	__asm        mov    eax, Window;
@@ -495,7 +485,7 @@ class IFlatImage* CSparkalApp::NewImage(char * fileName) {
 	class IFlatImage *pBitmap;
 
 // LINE 117:
-	__asm        mov    pBitmap, 0;
+	pBitmap = 0x0;
 // LINE 120:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0;
@@ -517,11 +507,10 @@ class IFlatImage* CSparkalApp::NewImage(char * fileName) {
 	__asm        mov    pDDBitmap, eax;
 	__asm        jmp    _T55;
 _T4e:
-	__asm        mov    pDDBitmap, 0;
+	pDDBitmap = 0x0;
 // LINE 122:
 _T55:
-	__asm        mov    eax, pDDBitmap;
-	__asm        mov    pBitmap, eax;
+	pBitmap = pDDBitmap;
 // LINE 124:
 // Block end:
 	__asm        jmp    _T9b;
@@ -543,11 +532,10 @@ _T60:
 	__asm        mov    pBBitmap, eax;
 	__asm        jmp    _T95;
 _T8e:
-	__asm        mov    pBBitmap, 0;
+	pBBitmap = 0x0;
 // LINE 126:
 _T95:
-	__asm        mov    eax, pBBitmap;
-	__asm        mov    pBitmap, eax;
+	pBitmap = pBBitmap;
 // LINE 132:
 // Block end:
 _T9b:
@@ -561,7 +549,7 @@ class IFlatImage* CSparkalApp::NewImage(long width, long height, const const str
 	class IFlatImage *pBitmap;
 
 // LINE 142:
-	__asm        mov    pBitmap, 0;
+	pBitmap = 0x0;
 // LINE 145:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0;
@@ -590,7 +578,7 @@ class IFlatImage* CSparkalApp::NewImage(long width, long height, const const str
 	__asm        mov    pDDBitmap, eax;
 	__asm        jmp    _T67;
 _T60:
-	__asm        mov    pDDBitmap, 0;
+	pDDBitmap = 0x0;
 // LINE 149:
 _T67:
 	__asm        jmp    _Tac;
@@ -615,11 +603,10 @@ _T6c:
 	__asm        mov    pDDBitmap, eax;
 	__asm        jmp    _Tac;
 _Ta5:
-	__asm        mov    pDDBitmap, 0;
+	pDDBitmap = 0x0;
 // LINE 151:
 _Tac:
-	__asm        mov    eax, pDDBitmap;
-	__asm        mov    pBitmap, eax;
+	pBitmap = pDDBitmap;
 // LINE 153:
 // Block end:
 	__asm        jmp    _T149;
@@ -648,7 +635,7 @@ _Tb7:
 	__asm        mov    pBBitmap, eax;
 	__asm        jmp    _Tfe;
 _Tf7:
-	__asm        mov    pBBitmap, 0;
+	pBBitmap = 0x0;
 // LINE 157:
 _Tfe:
 	__asm        jmp    _T143;
@@ -673,11 +660,10 @@ _T103:
 	__asm        mov    pBBitmap, eax;
 	__asm        jmp    _T143;
 _T13c:
-	__asm        mov    pBBitmap, 0;
+	pBBitmap = 0x0;
 // LINE 159:
 _T143:
-	__asm        mov    eax, pBBitmap;
-	__asm        mov    pBitmap, eax;
+	pBitmap = pBBitmap;
 // LINE 165:
 // Block end:
 _T149:

@@ -177,8 +177,7 @@ void SparkalPalette::SparkalPalette() {
 // FUNCTION: COPTER_D 0x0049642f
 void SparkalPalette::~SparkalPalette() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5910F8;
+	this-><vftable> = 0x5910f8;
 // LINE 48:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC], 0;
@@ -210,7 +209,7 @@ void SparkalPalette::GetNearestIndex(struct SparkalColor& colorValue, int32_t& n
 	unsigned long lClosestDistance;
 
 // LINE 67:
-	__asm        mov    lClosestDistance, 0xFFFFFFFF;
+	lClosestDistance = 0xffffffff;
 // LINE 70:
 	__asm        mov    nCurrentBestMatch, 0;
 	__asm        mov    eax, nCurrentBestMatch;
@@ -300,19 +299,15 @@ _T28:
 	__asm        cmp    lCurrentDistance, eax;
 	__asm        jae    _T114;
 // LINE 79:
-	__asm        mov    eax, lClosestDistance;
-	__asm        mov    lCurrentDistance, eax;
+	lCurrentDistance = lClosestDistance;
 // LINE 80:
-	__asm        mov    eax, i;
-	__asm        mov    nCurrentBestMatch, eax;
+	nCurrentBestMatch = i;
 // LINE 82:
 _T114:
 	__asm        jmp    _T25;
 // LINE 83:
 _T119:
-	__asm        mov    eax, nCurrentBestMatch;
-	__asm        mov    ecx, nIndex;
-	__asm        mov    [ecx], eax;
+	nIndex. = nCurrentBestMatch;
 // LINE 84:
 	__asm        jmp    near ptr 0x004965A9;
 }
@@ -407,9 +402,9 @@ _Tcd:
 	__asm        jmp    _Tca;
 // LINE 124:
 _T137:
-	__asm        mov    nMultiplier, 0x3F;
+	nMultiplier = 0x3f;
 // LINE 125:
-	__asm        mov    nDivisor, 0x40;
+	nDivisor = 0x40;
 // LINE 126:
 	__asm        mov    i, 0;
 	__asm        jmp    _T154;
@@ -730,9 +725,9 @@ _Tcd:
 	__asm        jmp    _Tca;
 // LINE 213:
 _T137:
-	__asm        mov    nMultiplier, 0x3F;
+	nMultiplier = 0x3f;
 // LINE 214:
-	__asm        mov    nDivisor, 0x40;
+	nDivisor = 0x40;
 // LINE 215:
 	__asm        mov    i, 0;
 	__asm        jmp    _T154;
@@ -1045,9 +1040,9 @@ _Tcd:
 	__asm        jmp    _Tca;
 // LINE 302:
 _T137:
-	__asm        mov    nMultiplier, 0x3F;
+	nMultiplier = 0x3f;
 // LINE 303:
-	__asm        mov    nDivisor, 0x40;
+	nDivisor = 0x40;
 // LINE 304:
 	__asm        mov    i, 0;
 	__asm        jmp    _T154;
@@ -1358,7 +1353,7 @@ _T54:
 	__asm        cmp    lSteps, 0xC8;
 	__asm        jle    _T6d;
 // LINE 385:
-	__asm        mov    lSteps, 0xC8;
+	lSteps = 0xc8;
 // LINE 391:
 _T6d:
 	__asm        mov    eax, lSteps;
@@ -1475,9 +1470,9 @@ _T120:
 	__asm        jmp    _T11d;
 // LINE 417:
 _T1ad:
-	__asm        mov    nMultiplier, 0x3F;
+	nMultiplier = 0x3f;
 // LINE 418:
-	__asm        mov    nDivisor, 0x40;
+	nDivisor = 0x40;
 // LINE 419:
 	__asm        mov    i, 1;
 	__asm        jmp    _T1ca;

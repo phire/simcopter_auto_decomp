@@ -216,8 +216,7 @@ void FlatResFile::LoadResMap(void * __ptr32 *newMap, short * numTypes, long * da
 	long err;
 
 // LINE 101:
-	__asm        mov    eax, newMap;
-	__asm        mov    dword ptr [eax], 0;
+	newMap-> = 0x0;
 // LINE 105:
 // Block start:
 	long mapLocLess;
@@ -226,7 +225,7 @@ void FlatResFile::LoadResMap(void * __ptr32 *newMap, short * numTypes, long * da
 	unsigned char miscBytes[28];
 	long miscSize;
 	long res1Off;
-	__asm        mov    miscSize, 0x1C;
+	miscSize = 0x1c;
 // LINE 107:
 	__asm        mov    ecx, this;
 	__asm        call   FlatFile::ValidFile;
@@ -469,8 +468,7 @@ _T2af:
 	__asm        add    esp, 4;
 // LINE 143:
 // Block end:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x114], 0;
+	this->fError = 0x0;
 // LINE 144:
 	__asm        jmp    _T33a;
 // LINE 147:
@@ -486,13 +484,10 @@ _T2cf:
 	__asm        call   Memory::HFree;
 	__asm        add    esp, 4;
 // LINE 150:
-	__asm        mov    eax, newMap;
-	__asm        mov    dword ptr [eax], 0;
+	newMap-> = 0x0;
 // LINE 152:
 _T2f2:
-	__asm        mov    eax, err;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x114], eax;
+	this->fError = err;
 // LINE 153:
 	__asm        jmp    _T33a;
 _T303:
@@ -534,11 +529,9 @@ long FlatResFile::Open(char * name) {
 	__asm        cmp    dword ptr [eax+0x114], 0;
 	__asm        je     _T4a;
 // LINE 162:
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+8], 0;
+	this->fName[0] = 0x0;
 // LINE 163:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x108], 0;
+	this->fFileID = 0x0;
 // LINE 165:
 	__asm        jmp    _T5f;
 // LINE 167:
@@ -571,11 +564,9 @@ long FlatResFile::Open(unsigned char * name) {
 	__asm        cmp    dword ptr [eax+0x114], 0;
 	__asm        je     _T4a;
 // LINE 183:
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+8], 0;
+	this->fName[0] = 0x0;
 // LINE 184:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x108], 0;
+	this->fFileID = 0x0;
 // LINE 186:
 	__asm        jmp    _T5f;
 // LINE 188:
@@ -628,8 +619,7 @@ long FlatResFile::Close() {
 	__asm        call   ResMap::Release;
 // LINE 211:
 _T4b:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x110], 0;
+	this->fMap = 0x0;
 // LINE 213:
 _T58:
 	__asm        mov    eax, this;
@@ -712,8 +702,7 @@ short FlatResFile::CountTypes() {
 	__asm        mov    dword ptr [eax+0x114], 0;
 	__asm        jmp    _T3b;
 _T2e:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x114], 0xFFFFFFCF;
+	this->fError = 0xffffffcf;
 _T3b:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x114], 0;
@@ -746,8 +735,7 @@ unsigned long FlatResFile::GetIndType(short index) {
 	__asm        mov    dword ptr [eax+0x114], 0;
 	__asm        jmp    _T3b;
 _T2e:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x114], 0xFFFFFFCF;
+	this->fError = 0xffffffcf;
 _T3b:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x114], 0;
@@ -767,8 +755,7 @@ _T52:
 	__asm        cmp    type, 0;
 	__asm        jne    _T7e;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x114], 0xFFFFFF9C;
+	this->fError = 0xffffff9c;
 // LINE 317:
 _T7e:
 	__asm        mov    eax, type;
@@ -788,8 +775,7 @@ short FlatResFile::Count(unsigned long type) {
 	__asm        mov    dword ptr [eax+0x114], 0;
 	__asm        jmp    _T3b;
 _T2e:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x114], 0xFFFFFFCF;
+	this->fError = 0xffffffcf;
 _T3b:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x114], 0;
@@ -822,8 +808,7 @@ void * __ptr32 FlatResFile::GetByID(unsigned long type, short id, void (*Swizzle
 	__asm        mov    dword ptr [eax+0x114], 0;
 	__asm        jmp    _T3b;
 _T2e:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x114], 0xFFFFFFCF;
+	this->fError = 0xffffffcf;
 _T3b:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x114], 0;
@@ -919,8 +904,7 @@ void * __ptr32 FlatResFile::GetByName(unsigned long type, unsigned char * name, 
 	__asm        mov    dword ptr [eax+0x114], 0;
 	__asm        jmp    _T3b;
 _T2e:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x114], 0xFFFFFFCF;
+	this->fError = 0xffffffcf;
 _T3b:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x114], 0;
@@ -1028,8 +1012,7 @@ void * __ptr32 FlatResFile::GetByIndex(unsigned long type, short index, void (*S
 	__asm        mov    dword ptr [eax+0x114], 0;
 	__asm        jmp    _T3b;
 _T2e:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x114], 0xFFFFFFCF;
+	this->fError = 0xffffffcf;
 _T3b:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x114], 0;
@@ -1128,8 +1111,7 @@ void FlatResFile::GetName(void * __ptr32 res, unsigned char * name) {
 	__asm        mov    dword ptr [eax+0x114], 0;
 	__asm        jmp    _T41;
 _T34:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x114], 0xFFFFFFCF;
+	this->fError = 0xffffffcf;
 _T41:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x114], 0;
@@ -1181,8 +1163,7 @@ void FlatResFile::GetID(void * __ptr32 res, short * id) {
 	__asm        mov    dword ptr [eax+0x114], 0;
 	__asm        jmp    _T43;
 _T36:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x114], 0xFFFFFFCF;
+	this->fError = 0xffffffcf;
 _T43:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x114], 0;
@@ -1229,8 +1210,7 @@ unsigned long FlatResFile::GetResType(void * __ptr32 res) {
 	__asm        mov    dword ptr [eax+0x114], 0;
 	__asm        jmp    _T3b;
 _T2e:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x114], 0xFFFFFFCF;
+	this->fError = 0xffffffcf;
 _T3b:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x114], 0;
@@ -1277,8 +1257,7 @@ _Tc0:
 	__asm        cmp    returnType, 0;
 	__asm        jne    _Td7;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x114], 0xFFFFFF9D;
+	this->fError = 0xffffff9d;
 // LINE 460:
 _Td7:
 	__asm        mov    eax, returnType;
@@ -1300,8 +1279,7 @@ void FlatResFile::Release(void * __ptr32 res) {
 	__asm        mov    dword ptr [eax+0x114], 0;
 	__asm        jmp    _T3b;
 _T2e:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x114], 0xFFFFFFCF;
+	this->fError = 0xffffffcf;
 _T3b:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x114], 0;
@@ -1353,8 +1331,7 @@ void FlatResFile::Detach(void * __ptr32 res) {
 	__asm        mov    dword ptr [eax+0x114], 0;
 	__asm        jmp    _T3b;
 _T2e:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x114], 0xFFFFFFCF;
+	this->fError = 0xffffffcf;
 _T3b:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x114], 0;
@@ -1400,8 +1377,7 @@ void FlatResFile::Load(void * __ptr32 res) {
 	__asm        mov    dword ptr [eax+0x114], 0;
 	__asm        jmp    _T3b;
 _T2e:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x114], 0xFFFFFFCF;
+	this->fError = 0xffffffcf;
 _T3b:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x114], 0;
@@ -1545,35 +1521,21 @@ _Tb6:
 	unsigned char * mapStart;
 
 // LINE 672:
-	__asm        mov    eax, resMap;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+8], eax;
+	this-><ResMap+0x08:4> = resMap;
 // LINE 673:
-	__asm        mov    ax, numTypes;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+6], ax;
+	this-><ResMap+0x06:2> = numTypes;
 // LINE 674:
-	__asm        mov    ax, refNum;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], ax;
+	this-><ResMap+0x04:2> = refNum;
 // LINE 675:
-	__asm        mov    eax, dataLoc;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x18], eax;
+	this-><ResMap+0x18:4> = dataLoc;
 // LINE 676:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1C], 1;
+	this-><ResMap+0x1c:4> = 0x1;
 // LINE 677:
-	__asm        mov    eax, resMapPtr;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], eax;
+	this-><ResMap+0x0c:4> = resMapPtr;
 // LINE 688:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    mapStart, eax;
+	mapStart = this-><ResMap+0x0c:4>;
 // LINE 690:
-	__asm        mov    eax, mapStart;
-	__asm        mov    typeList, eax;
+	typeList = mapStart;
 // LINE 691:
 	__asm        mov    typeCnt, 0;
 	__asm        mov    total, 0;
@@ -1738,9 +1700,7 @@ long  ResMap::Get(class FlatResFile *fromFile) {
 	__asm        mov    srch, eax;
 	__asm        jmp    _T33;
 _T2b:
-	__asm        mov    eax, srch;
-	__asm        mov    eax, [eax];
-	__asm        mov    srch, eax;
+	srch = srch-><ResMap+0x00:4>;
 _T33:
 	__asm        cmp    srch, 0;
 	__asm        je     _T76;
@@ -1756,9 +1716,7 @@ _T33:
 	__asm        mov    eax, srch;
 	__asm        inc    dword ptr [eax+0x1C];
 // LINE 759:
-	__asm        mov    eax, srch;
-	__asm        mov    ecx, fromFile;
-	__asm        mov    [ecx+0x110], eax;
+	fromFile->fMap = srch;
 // LINE 760:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T162;
@@ -1823,22 +1781,17 @@ _Tca:
 	__asm        mov    [ebp-0x28], eax;
 	__asm        jmp    _T119;
 _T112:
-	__asm        mov    dword ptr [ebp-0x28], 0;
+	None = 0x0;
 _T119:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    srch, eax;
 // LINE 775:
-	__asm        mov    eax, srch;
-	__asm        mov    ecx, fromFile;
-	__asm        mov    [ecx+0x110], eax;
+	fromFile->fMap = srch;
 // LINE 776:
-	__asm        mov    eax, ResMap::sMaps;
-	__asm        mov    ecx, srch;
-	__asm        mov    [ecx], eax;
+	srch-><ResMap+0x00:4> = ResMap::sMaps;
 // LINE 777:
-	__asm        mov    eax, srch;
-	__asm        mov    ResMap::sMaps, eax;
+	ResMap::sMaps = srch;
 // LINE 778:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T162;
@@ -1884,9 +1837,7 @@ _T35:
 	__asm        mov    rmv, 0x5BBEDC;
 	__asm        jmp    _T5c;
 _T54:
-	__asm        mov    eax, rmv;
-	__asm        mov    eax, [eax];
-	__asm        mov    rmv, eax;
+	rmv = rmv->;
 _T5c:
 	__asm        mov    eax, rmv;
 	__asm        cmp    dword ptr [eax], 0;
@@ -1935,15 +1886,13 @@ short  ResMap::CheckForLeaks() {
 	short total;
 
 // LINE 803:
-	__asm        mov    total, 0;
+	total = 0x0;
 // LINE 804:
 	__asm        mov    eax, ResMap::sMaps;
 	__asm        mov    srch, eax;
 	__asm        jmp    _T24;
 _T1c:
-	__asm        mov    eax, srch;
-	__asm        mov    eax, [eax];
-	__asm        mov    srch, eax;
+	srch = srch-><ResMap+0x00:4>;
 _T24:
 	__asm        cmp    srch, 0;
 	__asm        je     _T37;
@@ -1965,7 +1914,7 @@ void  ResMap::LoadEntry(struct ResMap::Entry *entry, class FlatResFile *file, un
 	long size;
 
 // LINE 815:
-	__asm        mov    err, 0;
+	err = 0x0;
 // LINE 819:
 	__asm        mov    eax, entry;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -2060,7 +2009,7 @@ _T10c:
 	__asm        test   eax, eax;
 	__asm        je     _T139;
 // LINE 841:
-	__asm        mov    err, 0;
+	err = 0x0;
 // LINE 842:
 	__asm        jmp    _T2b3;
 
@@ -2098,7 +2047,7 @@ _T177:
 // Block start:
 	long newState;
 _T17c:
-	__asm        mov    newState, 0;
+	newState = 0x0;
 // LINE 856:
 	__asm        mov    eax, entry;
 	__asm        mov    eax, [eax+4];
@@ -2210,9 +2159,7 @@ _T26c:
 	__asm        add    esp, 8;
 // LINE 877:
 _T28e:
-	__asm        mov    eax, err;
-	__asm        mov    ecx, file;
-	__asm        mov    [ecx+0x114], eax;
+	file->fError = err;
 // LINE 878:
 	__asm        jmp    _T2c2;
 _T29f:
@@ -2252,7 +2199,7 @@ _T2c:
 	__asm        jmp    _T53;
 // LINE 888:
 _T33:
-	__asm        mov    type, 0;
+	type = 0x0;
 // LINE 890:
 	__asm        movsx  eax, index;
 	__asm        mov    ecx, this;
@@ -2272,13 +2219,9 @@ short  ResMap::Count(unsigned long type) {
 	short cnt;
 
 // LINE 896:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    typeList, eax;
+	typeList = this-><ResMap+0x0c:4>;
 // LINE 897:
-	__asm        mov    eax, this;
-	__asm        mov    ax, [eax+6];
-	__asm        mov    cnt, ax;
+	cnt = this-><ResMap+0x06:2>;
 // LINE 899:
 _T20:
 	__asm        movsx  eax, cnt;
@@ -2324,15 +2267,11 @@ unsigned long  ResMap::FindType(struct ResMap::Entry *entry) {
 	short numEntries;
 
 // LINE 912:
-	__asm        mov    type, 0;
+	type = 0x0;
 // LINE 914:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    typeList, eax;
+	typeList = this-><ResMap+0x0c:4>;
 // LINE 915:
-	__asm        mov    eax, this;
-	__asm        mov    ax, [eax+6];
-	__asm        mov    cnt, ax;
+	cnt = this-><ResMap+0x06:2>;
 // LINE 919:
 _T27:
 	__asm        movsx  eax, cnt;
@@ -2390,7 +2329,7 @@ struct ResMap::Entry *  ResMap::FindEntry(void * __ptr32 res) {
 	struct ResMap::Entry *last;
 
 // LINE 935:
-	__asm        mov    found, 0;
+	found = 0x0;
 // LINE 936:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x10];
@@ -2436,15 +2375,11 @@ struct ResMap::Entry *  ResMap::FindEntry(unsigned long type, short id) {
 	short cnt;
 
 // LINE 948:
-	__asm        mov    found, 0;
+	found = 0x0;
 // LINE 950:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    typeList, eax;
+	typeList = this-><ResMap+0x0c:4>;
 // LINE 951:
-	__asm        mov    eax, this;
-	__asm        mov    ax, [eax+6];
-	__asm        mov    cnt, ax;
+	cnt = this-><ResMap+0x06:2>;
 // LINE 953:
 _T27:
 	__asm        movsx  eax, cnt;
@@ -2520,15 +2455,11 @@ struct ResMap::Entry *  ResMap::FindEntry(unsigned long type, unsigned char * na
 	short cnt;
 
 // LINE 976:
-	__asm        mov    found, 0;
+	found = 0x0;
 // LINE 978:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    typeList, eax;
+	typeList = this-><ResMap+0x0c:4>;
 // LINE 979:
-	__asm        mov    eax, this;
-	__asm        mov    ax, [eax+6];
-	__asm        mov    cnt, ax;
+	cnt = this-><ResMap+0x06:2>;
 // LINE 981:
 _T27:
 	__asm        movsx  eax, cnt;
@@ -2624,15 +2555,11 @@ struct ResMap::Entry *  ResMap::FindIndEntry(unsigned long type, short index) {
 	short cnt;
 
 // LINE 1008:
-	__asm        mov    found, 0;
+	found = 0x0;
 // LINE 1010:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    typeList, eax;
+	typeList = this-><ResMap+0x0c:4>;
 // LINE 1011:
-	__asm        mov    eax, this;
-	__asm        mov    ax, [eax+6];
-	__asm        mov    cnt, ax;
+	cnt = this-><ResMap+0x06:2>;
 // LINE 1013:
 _T27:
 	__asm        movsx  eax, cnt;

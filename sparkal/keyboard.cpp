@@ -306,7 +306,7 @@ char Keyboard::GetCurrentModifierState() {
 	char chReturnValue;
 
 // LINE 125:
-	__asm        mov    chReturnValue, 0;
+	chReturnValue = 0x0;
 // LINE 128:
 	__asm        push   0x10;
 	__asm        mov    ecx, this;
@@ -461,14 +461,14 @@ _T14c:
 	__asm        jmp    _T302;
 // LINE 189:
 _T154:
-	__asm        mov    chIndex, 0xFF;
+	chIndex = 0xff;
 // LINE 190:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
 	__asm        cmp    eax, 0x60;
 	__asm        jne    _T16f;
 // LINE 191:
-	__asm        mov    chIndex, 0;
+	chIndex = 0x0;
 // LINE 192:
 	__asm        jmp    _T250;
 _T16f:
@@ -477,7 +477,7 @@ _T16f:
 	__asm        cmp    eax, 0x2D;
 	__asm        jne    _T186;
 // LINE 193:
-	__asm        mov    chIndex, 1;
+	chIndex = 0x1;
 // LINE 194:
 	__asm        jmp    _T250;
 _T186:
@@ -486,7 +486,7 @@ _T186:
 	__asm        cmp    eax, 0x3D;
 	__asm        jne    _T19d;
 // LINE 195:
-	__asm        mov    chIndex, 2;
+	chIndex = 0x2;
 // LINE 196:
 	__asm        jmp    _T250;
 _T19d:
@@ -495,7 +495,7 @@ _T19d:
 	__asm        cmp    eax, 0x5B;
 	__asm        jne    _T1b4;
 // LINE 197:
-	__asm        mov    chIndex, 3;
+	chIndex = 0x3;
 // LINE 198:
 	__asm        jmp    _T250;
 _T1b4:
@@ -504,7 +504,7 @@ _T1b4:
 	__asm        cmp    eax, 0x5D;
 	__asm        jne    _T1cb;
 // LINE 199:
-	__asm        mov    chIndex, 4;
+	chIndex = 0x4;
 // LINE 200:
 	__asm        jmp    _T250;
 _T1cb:
@@ -513,7 +513,7 @@ _T1cb:
 	__asm        cmp    eax, 0x5C;
 	__asm        jne    _T1e2;
 // LINE 201:
-	__asm        mov    chIndex, 5;
+	chIndex = 0x5;
 // LINE 202:
 	__asm        jmp    _T250;
 _T1e2:
@@ -522,7 +522,7 @@ _T1e2:
 	__asm        cmp    eax, 0x3B;
 	__asm        jne    _T1f9;
 // LINE 203:
-	__asm        mov    chIndex, 6;
+	chIndex = 0x6;
 // LINE 204:
 	__asm        jmp    _T250;
 _T1f9:
@@ -531,7 +531,7 @@ _T1f9:
 	__asm        cmp    eax, 0x27;
 	__asm        jne    _T210;
 // LINE 205:
-	__asm        mov    chIndex, 7;
+	chIndex = 0x7;
 // LINE 206:
 	__asm        jmp    _T250;
 _T210:
@@ -540,7 +540,7 @@ _T210:
 	__asm        cmp    eax, 0x2C;
 	__asm        jne    _T227;
 // LINE 207:
-	__asm        mov    chIndex, 8;
+	chIndex = 0x8;
 // LINE 208:
 	__asm        jmp    _T250;
 _T227:
@@ -549,7 +549,7 @@ _T227:
 	__asm        cmp    eax, 0x2E;
 	__asm        jne    _T23e;
 // LINE 209:
-	__asm        mov    chIndex, 9;
+	chIndex = 0x9;
 // LINE 210:
 	__asm        jmp    _T250;
 _T23e:
@@ -558,7 +558,7 @@ _T23e:
 	__asm        cmp    eax, 0x2F;
 	__asm        jne    _T250;
 // LINE 211:
-	__asm        mov    chIndex, 0xA;
+	chIndex = 0xa;
 // LINE 213:
 _T250:
 	__asm        movsx  eax, chIndex;

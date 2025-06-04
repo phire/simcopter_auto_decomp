@@ -755,12 +755,12 @@ void  CGameApp::ShowVersion() {
 	__asm        mov    sMessage.reference, eax;
 	__asm        jmp    _T8d;
 _T86:
-	__asm        mov    sMessage.reference, 0;
+	sMessage.reference = 0x0;
 _T8d:
 	__asm        mov    sMessage.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x0043E33E;
 // LINE 108:
-	__asm        mov    szVersionInformation, 0;
+	szVersionInformation = 0x0;
 // LINE 118:
 	__asm        push   0;
 	__asm        push   4;
@@ -1215,9 +1215,9 @@ _T60c:
 	__asm        call   strcat;
 	__asm        add    esp, 8;
 // LINE 149:
-	__asm        mov    lPhysicalMemory, 0;
+	lPhysicalMemory = 0x0;
 // LINE 152:
-	__asm        mov    tempMemoryStatus.dwLength, 0x20;
+	tempMemoryStatus.dwLength = 0x20;
 // LINE 153:
 	__asm        lea    eax, tempMemoryStatus.dwLength;
 	__asm        push   eax;
@@ -1513,7 +1513,7 @@ _Ta04:
 	__asm        mov    [ebp-0x290], eax;
 	__asm        jmp    _Ta48;
 _Ta3e:
-	__asm        mov    dword ptr [ebp-0x290], 0;
+	None = 0x0;
 _Ta48:
 	__asm        mov    dword ptr [ebp-0x294], 0;
 	__asm        jmp    near ptr 0x0043ECFC;
@@ -1601,38 +1601,32 @@ int  CGameApp::CreateMessageBox(long lID, class basic_string<char>& sMessage, lo
 	__asm        mov    [ebp-0x9C], eax;
 	__asm        jmp    _T3b7;
 // LINE 196:
-	__asm        mov    eax, SZ_ABOUT_BOX_IMAGE_FILE_NAME_1;
-	__asm        mov    szImageFileNameToUse, eax;
+	szImageFileNameToUse = SZ_ABOUT_BOX_IMAGE_FILE_NAME_1;
 // LINE 197:
-	__asm        mov    eax, SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_1;
-	__asm        mov    szButtonImageFileNameToUse, eax;
+	szButtonImageFileNameToUse = SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_1;
 // LINE 198:
-	__asm        mov    eax, SZ_ABOUT_BOX_ANIMATION_FILE_NAME_1;
-	__asm        mov    szAnimationFileNameToUse, eax;
+	szAnimationFileNameToUse = SZ_ABOUT_BOX_ANIMATION_FILE_NAME_1;
 // LINE 199:
 	__asm        mov    byte ptr [ebp-0x20], 0x6B;
 	__asm        mov    byte ptr [ebp-0x1F], 0x52;
 	__asm        mov    byte ptr [ebp-0x1E], 0x4D;
 	__asm        jmp    near ptr 0x0043EE4A;
 
-	__asm        mov    eax, [ebp-0x20];
-	__asm        mov    reinterpret_cast<uint32_t>(colorMessageFont.Blue), eax;
+	reinterpret_cast<uint32_t>(colorMessageFont.Blue) = None;
 // LINE 200:
 	__asm        mov    byte ptr [ebp-0x24], 0xDA;
 	__asm        mov    byte ptr [ebp-0x23], 0xDA;
 	__asm        mov    byte ptr [ebp-0x22], 0xDA;
 	__asm        jmp    near ptr 0x0043EE61;
 
-	__asm        mov    eax, [ebp-0x24];
-	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFont.Blue), eax;
+	reinterpret_cast<uint32_t>(colorButtonFont.Blue) = None;
 // LINE 201:
 	__asm        mov    byte ptr [ebp-0x28], 0xF0;
 	__asm        mov    byte ptr [ebp-0x27], 0xFA;
 	__asm        mov    byte ptr [ebp-0x26], 0xFF;
 	__asm        jmp    near ptr 0x0043EE78;
 
-	__asm        mov    eax, [ebp-0x28];
-	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue), eax;
+	reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue) = None;
 // LINE 202:
 	__asm        jmp    _T3f8;
 // LINE 204:
@@ -1647,249 +1641,207 @@ int  CGameApp::CreateMessageBox(long lID, class basic_string<char>& sMessage, lo
 	__asm        cmp    dword ptr [eax+0xF2], 0;
 	__asm        je     _T170;
 // LINE 205:
-	__asm        mov    eax, SZ_ABOUT_BOX_IMAGE_FILE_NAME_2D;
-	__asm        mov    szImageFileNameToUse, eax;
+	szImageFileNameToUse = SZ_ABOUT_BOX_IMAGE_FILE_NAME_2D;
 // LINE 206:
-	__asm        mov    eax, SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_2D;
-	__asm        mov    szButtonImageFileNameToUse, eax;
+	szButtonImageFileNameToUse = SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_2D;
 // LINE 207:
-	__asm        mov    eax, SZ_ABOUT_BOX_ANIMATION_FILE_NAME_2D;
-	__asm        mov    szAnimationFileNameToUse, eax;
+	szAnimationFileNameToUse = SZ_ABOUT_BOX_ANIMATION_FILE_NAME_2D;
 // LINE 208:
 	__asm        mov    byte ptr [ebp-0x2C], 0x18;
 	__asm        mov    byte ptr [ebp-0x2B], 0x21;
 	__asm        mov    byte ptr [ebp-0x2A], 0x39;
 	__asm        jmp    near ptr 0x0043EEDD;
 
-	__asm        mov    eax, [ebp-0x2C];
-	__asm        mov    reinterpret_cast<uint32_t>(colorMessageFont.Blue), eax;
+	reinterpret_cast<uint32_t>(colorMessageFont.Blue) = None;
 // LINE 209:
 	__asm        mov    byte ptr [ebp-0x30], 0x4A;
 	__asm        mov    byte ptr [ebp-0x2F], 0x95;
 	__asm        mov    byte ptr [ebp-0x2E], 0xC0;
 	__asm        jmp    near ptr 0x0043EEF4;
 
-	__asm        mov    eax, [ebp-0x30];
-	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFont.Blue), eax;
+	reinterpret_cast<uint32_t>(colorButtonFont.Blue) = None;
 // LINE 210:
 	__asm        mov    byte ptr [ebp-0x34], 0x70;
 	__asm        mov    byte ptr [ebp-0x33], 0xCA;
 	__asm        mov    byte ptr [ebp-0x32], 0xEA;
 	__asm        jmp    near ptr 0x0043EF0B;
 
-	__asm        mov    eax, [ebp-0x34];
-	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue), eax;
+	reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue) = None;
 // LINE 212:
 	__asm        jmp    _T1cd;
 // LINE 213:
 _T170:
-	__asm        mov    eax, SZ_ABOUT_BOX_IMAGE_FILE_NAME_2N;
-	__asm        mov    szImageFileNameToUse, eax;
+	szImageFileNameToUse = SZ_ABOUT_BOX_IMAGE_FILE_NAME_2N;
 // LINE 214:
-	__asm        mov    eax, SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_2N;
-	__asm        mov    szButtonImageFileNameToUse, eax;
+	szButtonImageFileNameToUse = SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_2N;
 // LINE 215:
-	__asm        mov    eax, SZ_ABOUT_BOX_ANIMATION_FILE_NAME_2N;
-	__asm        mov    szAnimationFileNameToUse, eax;
+	szAnimationFileNameToUse = SZ_ABOUT_BOX_ANIMATION_FILE_NAME_2N;
 // LINE 216:
 	__asm        mov    byte ptr [ebp-0x38], 0x19;
 	__asm        mov    byte ptr [ebp-0x37], 0x1F;
 	__asm        mov    byte ptr [ebp-0x36], 0x41;
 	__asm        jmp    near ptr 0x0043EF3F;
 
-	__asm        mov    eax, [ebp-0x38];
-	__asm        mov    reinterpret_cast<uint32_t>(colorMessageFont.Blue), eax;
+	reinterpret_cast<uint32_t>(colorMessageFont.Blue) = None;
 // LINE 217:
 	__asm        mov    byte ptr [ebp-0x3C], 0x30;
 	__asm        mov    byte ptr [ebp-0x3B], 0x7A;
 	__asm        mov    byte ptr [ebp-0x3A], 0xAA;
 	__asm        jmp    near ptr 0x0043EF56;
 
-	__asm        mov    eax, [ebp-0x3C];
-	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFont.Blue), eax;
+	reinterpret_cast<uint32_t>(colorButtonFont.Blue) = None;
 // LINE 218:
 	__asm        mov    byte ptr [ebp-0x40], 0x70;
 	__asm        mov    byte ptr [ebp-0x3F], 0xCA;
 	__asm        mov    byte ptr [ebp-0x3E], 0xEA;
 	__asm        jmp    near ptr 0x0043EF6D;
 
-	__asm        mov    eax, [ebp-0x40];
-	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue), eax;
+	reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue) = None;
 // LINE 220:
 _T1cd:
 	__asm        jmp    _T3f8;
 // LINE 222:
-	__asm        mov    eax, SZ_ABOUT_BOX_IMAGE_FILE_NAME_3;
-	__asm        mov    szImageFileNameToUse, eax;
+	szImageFileNameToUse = SZ_ABOUT_BOX_IMAGE_FILE_NAME_3;
 // LINE 223:
-	__asm        mov    eax, SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_3;
-	__asm        mov    szButtonImageFileNameToUse, eax;
+	szButtonImageFileNameToUse = SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_3;
 // LINE 224:
-	__asm        mov    eax, SZ_ABOUT_BOX_ANIMATION_FILE_NAME_3;
-	__asm        mov    szAnimationFileNameToUse, eax;
+	szAnimationFileNameToUse = SZ_ABOUT_BOX_ANIMATION_FILE_NAME_3;
 // LINE 225:
 	__asm        mov    byte ptr [ebp-0x44], 0x15;
 	__asm        mov    byte ptr [ebp-0x43], 0x18;
 	__asm        mov    byte ptr [ebp-0x42], 0x4A;
 	__asm        jmp    near ptr 0x0043EFA1;
 
-	__asm        mov    eax, [ebp-0x44];
-	__asm        mov    reinterpret_cast<uint32_t>(colorMessageFont.Blue), eax;
+	reinterpret_cast<uint32_t>(colorMessageFont.Blue) = None;
 // LINE 226:
 	__asm        mov    byte ptr [ebp-0x48], 0x44;
 	__asm        mov    byte ptr [ebp-0x47], 0x8A;
 	__asm        mov    byte ptr [ebp-0x46], 0xAC;
 	__asm        jmp    near ptr 0x0043EFB8;
 
-	__asm        mov    eax, [ebp-0x48];
-	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFont.Blue), eax;
+	reinterpret_cast<uint32_t>(colorButtonFont.Blue) = None;
 // LINE 227:
 	__asm        mov    byte ptr [ebp-0x4C], 0x94;
 	__asm        mov    byte ptr [ebp-0x4B], 0xD6;
 	__asm        mov    byte ptr [ebp-0x4A], 0xFF;
 	__asm        jmp    near ptr 0x0043EFCF;
 
-	__asm        mov    eax, [ebp-0x4C];
-	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue), eax;
+	reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue) = None;
 // LINE 228:
 	__asm        jmp    _T3f8;
 // LINE 230:
-	__asm        mov    eax, SZ_ABOUT_BOX_IMAGE_FILE_NAME_4;
-	__asm        mov    szImageFileNameToUse, eax;
+	szImageFileNameToUse = SZ_ABOUT_BOX_IMAGE_FILE_NAME_4;
 // LINE 231:
-	__asm        mov    eax, SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_4;
-	__asm        mov    szButtonImageFileNameToUse, eax;
+	szButtonImageFileNameToUse = SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_4;
 // LINE 232:
-	__asm        mov    eax, SZ_ABOUT_BOX_ANIMATION_FILE_NAME_4;
-	__asm        mov    szAnimationFileNameToUse, eax;
+	szAnimationFileNameToUse = SZ_ABOUT_BOX_ANIMATION_FILE_NAME_4;
 // LINE 233:
 	__asm        mov    byte ptr [ebp-0x50], 0x15;
 	__asm        mov    byte ptr [ebp-0x4F], 0x18;
 	__asm        mov    byte ptr [ebp-0x4E], 0x4A;
 	__asm        jmp    near ptr 0x0043F003;
 
-	__asm        mov    eax, [ebp-0x50];
-	__asm        mov    reinterpret_cast<uint32_t>(colorMessageFont.Blue), eax;
+	reinterpret_cast<uint32_t>(colorMessageFont.Blue) = None;
 // LINE 234:
 	__asm        mov    byte ptr [ebp-0x54], 0x40;
 	__asm        mov    byte ptr [ebp-0x53], 0x89;
 	__asm        mov    byte ptr [ebp-0x52], 0xB5;
 	__asm        jmp    near ptr 0x0043F01A;
 
-	__asm        mov    eax, [ebp-0x54];
-	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFont.Blue), eax;
+	reinterpret_cast<uint32_t>(colorButtonFont.Blue) = None;
 // LINE 235:
 	__asm        mov    byte ptr [ebp-0x58], 0x70;
 	__asm        mov    byte ptr [ebp-0x57], 0xCA;
 	__asm        mov    byte ptr [ebp-0x56], 0xEA;
 	__asm        jmp    near ptr 0x0043F031;
 
-	__asm        mov    eax, [ebp-0x58];
-	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue), eax;
+	reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue) = None;
 // LINE 236:
 	__asm        jmp    _T3f8;
 // LINE 238:
-	__asm        mov    eax, SZ_ABOUT_BOX_IMAGE_FILE_NAME_5;
-	__asm        mov    szImageFileNameToUse, eax;
+	szImageFileNameToUse = SZ_ABOUT_BOX_IMAGE_FILE_NAME_5;
 // LINE 239:
-	__asm        mov    eax, SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_5;
-	__asm        mov    szButtonImageFileNameToUse, eax;
+	szButtonImageFileNameToUse = SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_5;
 // LINE 240:
-	__asm        mov    eax, SZ_ABOUT_BOX_ANIMATION_FILE_NAME_5;
-	__asm        mov    szAnimationFileNameToUse, eax;
+	szAnimationFileNameToUse = SZ_ABOUT_BOX_ANIMATION_FILE_NAME_5;
 // LINE 241:
 	__asm        mov    byte ptr [ebp-0x5C], 0x15;
 	__asm        mov    byte ptr [ebp-0x5B], 0x18;
 	__asm        mov    byte ptr [ebp-0x5A], 0x4A;
 	__asm        jmp    near ptr 0x0043F065;
 
-	__asm        mov    eax, [ebp-0x5C];
-	__asm        mov    reinterpret_cast<uint32_t>(colorMessageFont.Blue), eax;
+	reinterpret_cast<uint32_t>(colorMessageFont.Blue) = None;
 // LINE 242:
 	__asm        mov    byte ptr [ebp-0x60], 0x40;
 	__asm        mov    byte ptr [ebp-0x5F], 0x89;
 	__asm        mov    byte ptr [ebp-0x5E], 0xB5;
 	__asm        jmp    near ptr 0x0043F07C;
 
-	__asm        mov    eax, [ebp-0x60];
-	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFont.Blue), eax;
+	reinterpret_cast<uint32_t>(colorButtonFont.Blue) = None;
 // LINE 243:
 	__asm        mov    byte ptr [ebp-0x64], 0x70;
 	__asm        mov    byte ptr [ebp-0x63], 0xCA;
 	__asm        mov    byte ptr [ebp-0x62], 0xEA;
 	__asm        jmp    near ptr 0x0043F093;
 
-	__asm        mov    eax, [ebp-0x64];
-	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue), eax;
+	reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue) = None;
 // LINE 244:
 	__asm        jmp    _T3f8;
 // LINE 246:
-	__asm        mov    eax, SZ_ABOUT_BOX_IMAGE_FILE_NAME_6;
-	__asm        mov    szImageFileNameToUse, eax;
+	szImageFileNameToUse = SZ_ABOUT_BOX_IMAGE_FILE_NAME_6;
 // LINE 247:
-	__asm        mov    eax, SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_6;
-	__asm        mov    szButtonImageFileNameToUse, eax;
+	szButtonImageFileNameToUse = SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_6;
 // LINE 248:
-	__asm        mov    eax, SZ_ABOUT_BOX_ANIMATION_FILE_NAME_6;
-	__asm        mov    szAnimationFileNameToUse, eax;
+	szAnimationFileNameToUse = SZ_ABOUT_BOX_ANIMATION_FILE_NAME_6;
 // LINE 249:
 	__asm        mov    byte ptr [ebp-0x68], 0x10;
 	__asm        mov    byte ptr [ebp-0x67], 0x15;
 	__asm        mov    byte ptr [ebp-0x66], 0x1F;
 	__asm        jmp    near ptr 0x0043F0C7;
 
-	__asm        mov    eax, [ebp-0x68];
-	__asm        mov    reinterpret_cast<uint32_t>(colorMessageFont.Blue), eax;
+	reinterpret_cast<uint32_t>(colorMessageFont.Blue) = None;
 // LINE 250:
 	__asm        mov    byte ptr [ebp-0x6C], 0xA;
 	__asm        mov    byte ptr [ebp-0x6B], 0x85;
 	__asm        mov    byte ptr [ebp-0x6A], 0xDA;
 	__asm        jmp    near ptr 0x0043F0DE;
 
-	__asm        mov    eax, [ebp-0x6C];
-	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFont.Blue), eax;
+	reinterpret_cast<uint32_t>(colorButtonFont.Blue) = None;
 // LINE 251:
 	__asm        mov    byte ptr [ebp-0x70], 0xD3;
 	__asm        mov    byte ptr [ebp-0x6F], 0xDA;
 	__asm        mov    byte ptr [ebp-0x6E], 0xFF;
 	__asm        jmp    near ptr 0x0043F0F5;
 
-	__asm        mov    eax, [ebp-0x70];
-	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue), eax;
+	reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue) = None;
 // LINE 254:
 _T355:
-	__asm        mov    eax, SZ_ABOUT_BOX_IMAGE_FILE_NAME_0;
-	__asm        mov    szImageFileNameToUse, eax;
+	szImageFileNameToUse = SZ_ABOUT_BOX_IMAGE_FILE_NAME_0;
 // LINE 255:
-	__asm        mov    eax, SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_0;
-	__asm        mov    szButtonImageFileNameToUse, eax;
+	szButtonImageFileNameToUse = SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_0;
 // LINE 256:
-	__asm        mov    eax, SZ_ABOUT_BOX_ANIMATION_FILE_NAME_0;
-	__asm        mov    szAnimationFileNameToUse, eax;
+	szAnimationFileNameToUse = SZ_ABOUT_BOX_ANIMATION_FILE_NAME_0;
 // LINE 257:
 	__asm        mov    byte ptr [ebp-0x74], 0x10;
 	__asm        mov    byte ptr [ebp-0x73], 0x15;
 	__asm        mov    byte ptr [ebp-0x72], 0x1F;
 	__asm        jmp    near ptr 0x0043F124;
 
-	__asm        mov    eax, [ebp-0x74];
-	__asm        mov    reinterpret_cast<uint32_t>(colorMessageFont.Blue), eax;
+	reinterpret_cast<uint32_t>(colorMessageFont.Blue) = None;
 // LINE 258:
 	__asm        mov    byte ptr [ebp-0x78], 0xA;
 	__asm        mov    byte ptr [ebp-0x77], 0x85;
 	__asm        mov    byte ptr [ebp-0x76], 0xDA;
 	__asm        jmp    near ptr 0x0043F13B;
 
-	__asm        mov    eax, [ebp-0x78];
-	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFont.Blue), eax;
+	reinterpret_cast<uint32_t>(colorButtonFont.Blue) = None;
 // LINE 259:
 	__asm        mov    byte ptr [ebp-0x7C], 0xD3;
 	__asm        mov    byte ptr [ebp-0x7B], 0xDA;
 	__asm        mov    byte ptr [ebp-0x7A], 0xFF;
 	__asm        jmp    near ptr 0x0043F152;
 
-	__asm        mov    eax, [ebp-0x7C];
-	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue), eax;
+	reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue) = None;
 // LINE 260:
 	__asm        jmp    _T3f8;
 _T3b7:
@@ -1917,7 +1869,7 @@ _T3f8:
 	__asm        mov    [ebp-0x8C], eax;
 	__asm        jmp    _T43d;
 _T433:
-	__asm        mov    dword ptr [ebp-0x8C], 0;
+	None = 0x0;
 _T43d:
 	__asm        jmp    near ptr 0x0043F1E8;
 
@@ -1951,7 +1903,7 @@ _T43d:
 	__asm        mov    tempMessageBoxWindow, eax;
 	__asm        jmp    _T4a6;
 _T49f:
-	__asm        mov    tempMessageBoxWindow, 0;
+	tempMessageBoxWindow = 0x0;
 // LINE 265:
 _T4a6:
 	__asm        cmp    tempMessageBoxWindow, 0;
@@ -2024,7 +1976,7 @@ int  CGameApp::CreateMessageBox(long lID, int32_t nStringID, long lType) {
 	__asm        mov    sMessage.reference, eax;
 	__asm        jmp    _T6d;
 _T66:
-	__asm        mov    sMessage.reference, 0;
+	sMessage.reference = 0x0;
 _T6d:
 	__asm        mov    sMessage.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x0043F332;
@@ -2117,7 +2069,7 @@ _T179:
 	__asm        mov    [ebp-0x1034], eax;
 	__asm        jmp    _T1c4;
 _T1ba:
-	__asm        mov    dword ptr [ebp-0x1034], 0;
+	None = 0x0;
 _T1c4:
 	__asm        lea    ecx, sMessage.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
@@ -2222,7 +2174,7 @@ _T2cf:
 	__asm        mov    [ebp-0x1048], eax;
 	__asm        jmp    _T333;
 _T329:
-	__asm        mov    dword ptr [ebp-0x1048], 0;
+	None = 0x0;
 _T333:
 	__asm        lea    ecx, sMessage.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
@@ -2316,7 +2268,7 @@ _T43c:
 	__asm        mov    [ebp-0x105C], eax;
 	__asm        jmp    _T487;
 _T47d:
-	__asm        mov    dword ptr [ebp-0x105C], 0;
+	None = 0x0;
 _T487:
 	__asm        mov    eax, sMessage.reference;
 	__asm        dec    dword ptr [eax+0xC];
@@ -2453,8 +2405,7 @@ void  CGameApp::DestroyMessageBox() {
 	__asm        cmp    dword ptr [eax+0xA4], 0;
 	__asm        jge    _T32;
 // LINE 300:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xA4], 0;
+	this-><CGameApp+0xa4:4> = 0x0;
 // LINE 301:
 _T32:
 	__asm        jmp    near ptr 0x0043F903;
@@ -2468,7 +2419,7 @@ int  CGameApp::CreateCheatCodeEntryMessageBox() {
 	struct SparkalColor colorMessageFont;
 
 
-	__asm        mov    dword ptr [ebp-0x34], 0;
+	None = 0x0;
 // LINE 308:
 	__asm        jmp    near ptr 0x0043F920;
 // LINE 309:
@@ -2481,24 +2432,21 @@ int  CGameApp::CreateCheatCodeEntryMessageBox() {
 	__asm        mov    byte ptr [ebp-0x12], 0x1F;
 	__asm        jmp    near ptr 0x0043F93B;
 
-	__asm        mov    eax, [ebp-0x14];
-	__asm        mov    reinterpret_cast<uint32_t>(colorMessageFont.Blue), eax;
+	reinterpret_cast<uint32_t>(colorMessageFont.Blue) = None;
 // LINE 314:
 	__asm        mov    byte ptr [ebp-0x18], 0xA;
 	__asm        mov    byte ptr [ebp-0x17], 0x85;
 	__asm        mov    byte ptr [ebp-0x16], 0xDA;
 	__asm        jmp    near ptr 0x0043F952;
 
-	__asm        mov    eax, [ebp-0x18];
-	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFont.Blue), eax;
+	reinterpret_cast<uint32_t>(colorButtonFont.Blue) = None;
 // LINE 315:
 	__asm        mov    byte ptr [ebp-0x1C], 0xD3;
 	__asm        mov    byte ptr [ebp-0x1B], 0xDA;
 	__asm        mov    byte ptr [ebp-0x1A], 0xFF;
 	__asm        jmp    near ptr 0x0043F969;
 
-	__asm        mov    eax, [ebp-0x1C];
-	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue), eax;
+	reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue) = None;
 // LINE 322:
 	__asm        push   0xA8;
 	__asm        call   operator new;
@@ -2515,7 +2463,7 @@ int  CGameApp::CreateCheatCodeEntryMessageBox() {
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    _Ta0;
 _T99:
-	__asm        mov    dword ptr [ebp-0x38], 0;
+	None = 0x0;
 _Ta0:
 	__asm        or     dword ptr [ebp-0x34], 1;
 	__asm        push   0x10;
@@ -2541,7 +2489,7 @@ _Ta0:
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _Tfb;
 _Tf4:
-	__asm        mov    dword ptr [ebp-0x24], 0;
+	None = 0x0;
 _Tfb:
 	__asm        mov    dword ptr [ebp-0x28], 0;
 	__asm        jmp    near ptr 0x0043FA0F;
@@ -2581,7 +2529,7 @@ _Tfb:
 	__asm        mov    tempMessageBoxWindowEdit, eax;
 	__asm        jmp    _T177;
 _T170:
-	__asm        mov    tempMessageBoxWindowEdit, 0;
+	tempMessageBoxWindowEdit = 0x0;
 _T177:
 	__asm        test   byte ptr [ebp-0x34], 1;
 	__asm        je     _T239;
@@ -2712,15 +2660,15 @@ int  CGameApp::DoCheatCode(class basic_string<char>& sCheatCodeString) {
 	uint32_t nTextPosition;
 
 
-	__asm        mov    dword ptr [ebp-0x14C], 0;
+	None = 0x0;
 // LINE 353:
-	__asm        mov    nReturnValue, 0;
+	nReturnValue = 0x0;
 // LINE 354:
-	__asm        mov    szCheatSoundFileName, 0;
+	szCheatSoundFileName = 0x0;
 // LINE 356:
-	__asm        mov    szCheatOn, 0x598830;
+	szCheatOn = 0x598830;
 // LINE 357:
-	__asm        mov    szCheatOff, 0x59883C;
+	szCheatOff = 0x59883c;
 // LINE 360:
 	__asm        jmp    near ptr 0x0043FC0A;
 
@@ -2743,23 +2691,21 @@ int  CGameApp::DoCheatCode(class basic_string<char>& sCheatCodeString) {
 	__asm        mov    G_CheatCodes[0], 1;
 	__asm        jmp    _T8e;
 _T84:
-	__asm        mov    G_CheatCodes[0], 0;
+	G_CheatCodes[0] = 0x0;
 // LINE 363:
 _T8e:
 	__asm        cmp    G_CheatCodes[0], 0;
 	__asm        je     _Ta6;
 // LINE 364:
-	__asm        mov    eax, szCheatOn;
-	__asm        mov    szCheatSoundFileName, eax;
+	szCheatSoundFileName = szCheatOn;
 // LINE 365:
 	__asm        jmp    _Tac;
 // LINE 366:
 _Ta6:
-	__asm        mov    eax, szCheatOff;
-	__asm        mov    szCheatSoundFileName, eax;
+	szCheatSoundFileName = szCheatOff;
 // LINE 367:
 _Tac:
-	__asm        mov    nReturnValue, 1;
+	nReturnValue = 0x1;
 // LINE 369:
 _Tb3:
 	__asm        jmp    near ptr 0x0043FC85;
@@ -2783,23 +2729,21 @@ _Tb3:
 	__asm        mov    G_CheatCodes[1], 1;
 	__asm        jmp    _T109;
 _Tff:
-	__asm        mov    G_CheatCodes[1], 0;
+	G_CheatCodes[1] = 0x0;
 // LINE 371:
 _T109:
 	__asm        cmp    G_CheatCodes[1], 0;
 	__asm        je     _T121;
 // LINE 372:
-	__asm        mov    eax, szCheatOn;
-	__asm        mov    szCheatSoundFileName, eax;
+	szCheatSoundFileName = szCheatOn;
 // LINE 373:
 	__asm        jmp    _T127;
 // LINE 374:
 _T121:
-	__asm        mov    eax, szCheatOff;
-	__asm        mov    szCheatSoundFileName, eax;
+	szCheatSoundFileName = szCheatOff;
 // LINE 375:
 _T127:
-	__asm        mov    nReturnValue, 1;
+	nReturnValue = 0x1;
 // LINE 377:
 _T12e:
 	__asm        jmp    near ptr 0x0043FD00;
@@ -2823,7 +2767,7 @@ _T12e:
 	__asm        mov    G_CheatCodes[2], 1;
 	__asm        jmp    _T184;
 _T17a:
-	__asm        mov    G_CheatCodes[2], 0;
+	G_CheatCodes[2] = 0x0;
 // LINE 379:
 _T184:
 	__asm        cmp    G_CheatCodes[2], 0;
@@ -2838,17 +2782,15 @@ _T184:
 	__asm        mov    ecx, G_uheli;
 	__asm        mov    [ecx+0x320], eax;
 // LINE 381:
-	__asm        mov    eax, szCheatOn;
-	__asm        mov    szCheatSoundFileName, eax;
+	szCheatSoundFileName = szCheatOn;
 // LINE 383:
 	__asm        jmp    _T1c4;
 // LINE 384:
 _T1be:
-	__asm        mov    eax, szCheatOff;
-	__asm        mov    szCheatSoundFileName, eax;
+	szCheatSoundFileName = szCheatOff;
 // LINE 385:
 _T1c4:
-	__asm        mov    nReturnValue, 1;
+	nReturnValue = 0x1;
 // LINE 387:
 _T1cb:
 	__asm        jmp    near ptr 0x0043FD9D;
@@ -2872,23 +2814,21 @@ _T1cb:
 	__asm        mov    G_CheatCodes[4], 1;
 	__asm        jmp    _T221;
 _T217:
-	__asm        mov    G_CheatCodes[4], 0;
+	G_CheatCodes[4] = 0x0;
 // LINE 389:
 _T221:
 	__asm        cmp    G_CheatCodes[4], 0;
 	__asm        je     _T239;
 // LINE 390:
-	__asm        mov    eax, szCheatOn;
-	__asm        mov    szCheatSoundFileName, eax;
+	szCheatSoundFileName = szCheatOn;
 // LINE 391:
 	__asm        jmp    _T23f;
 // LINE 392:
 _T239:
-	__asm        mov    eax, szCheatOff;
-	__asm        mov    szCheatSoundFileName, eax;
+	szCheatSoundFileName = szCheatOff;
 // LINE 393:
 _T23f:
-	__asm        mov    nReturnValue, 1;
+	nReturnValue = 0x1;
 // LINE 395:
 _T246:
 	__asm        jmp    near ptr 0x0043FE18;
@@ -2925,10 +2865,9 @@ _T246:
 	__asm        call   S3PersonUserAppear;
 	__asm        add    esp, 0x10;
 // LINE 400:
-	__asm        mov    eax, szCheatOn;
-	__asm        mov    szCheatSoundFileName, eax;
+	szCheatSoundFileName = szCheatOn;
 // LINE 401:
-	__asm        mov    nReturnValue, 1;
+	nReturnValue = 0x1;
 // LINE 404:
 // Block end:
 _T2b7:
@@ -2963,10 +2902,9 @@ _T2bc:
 	__asm        call   S3PersonUserAppear;
 	__asm        add    esp, 0x10;
 // LINE 407:
-	__asm        mov    eax, szCheatOn;
-	__asm        mov    szCheatSoundFileName, eax;
+	szCheatSoundFileName = szCheatOn;
 // LINE 408:
-	__asm        mov    nReturnValue, 1;
+	nReturnValue = 0x1;
 // LINE 411:
 _T32a:
 	__asm        jmp    _T515;
@@ -3090,10 +3028,9 @@ _T4dc:
 	__asm        call   SetUserPoints;
 	__asm        add    esp, 4;
 // LINE 414:
-	__asm        mov    eax, szCheatOn;
-	__asm        mov    szCheatSoundFileName, eax;
+	szCheatSoundFileName = szCheatOn;
 // LINE 415:
-	__asm        mov    nReturnValue, 1;
+	nReturnValue = 0x1;
 // LINE 418:
 _T515:
 	__asm        jmp    near ptr 0x004400E7;
@@ -3214,23 +3151,21 @@ _T6c2:
 	__asm        mov    G_CheatCodes[5], 1;
 	__asm        jmp    _T6fa;
 _T6f0:
-	__asm        mov    G_CheatCodes[5], 0;
+	G_CheatCodes[5] = 0x0;
 // LINE 420:
 _T6fa:
 	__asm        cmp    G_CheatCodes[5], 0;
 	__asm        je     _T712;
 // LINE 421:
-	__asm        mov    eax, szCheatOn;
-	__asm        mov    szCheatSoundFileName, eax;
+	szCheatSoundFileName = szCheatOn;
 // LINE 422:
 	__asm        jmp    _T718;
 // LINE 423:
 _T712:
-	__asm        mov    eax, szCheatOff;
-	__asm        mov    szCheatSoundFileName, eax;
+	szCheatSoundFileName = szCheatOff;
 // LINE 424:
 _T718:
-	__asm        mov    nReturnValue, 1;
+	nReturnValue = 0x1;
 // LINE 426:
 _T71f:
 	__asm        jmp    near ptr 0x004402F1;
@@ -3373,7 +3308,7 @@ _T8cc:
 	__asm        cmp    nCharsToCopy, 2;
 	__asm        jle    _T930;
 // LINE 436:
-	__asm        mov    nCharsToCopy, 2;
+	nCharsToCopy = 0x2;
 // LINE 437:
 _T930:
 	__asm        jmp    near ptr 0x00440502;
@@ -3427,11 +3362,9 @@ _T99e:
 	__asm        jg     _T9cf;
 // LINE 443:
 _T9c1:
-	__asm        mov    eax, nNewCareerLevel;
-	__asm        mov    G_CheatCodes[3], eax;
+	G_CheatCodes[3] = nNewCareerLevel;
 // LINE 444:
-	__asm        mov    eax, szCheatOn;
-	__asm        mov    szCheatSoundFileName, eax;
+	szCheatSoundFileName = szCheatOn;
 // LINE 449:
 // Block end:
 _T9cf:
@@ -3554,7 +3487,7 @@ _Tb7c:
 	int32_t nCharsToCopy;
 	const long lMaxBucks;
 	char szBucks[3];
-	__asm        mov    lMaxBucks, 0xC350;
+	lMaxBucks = 0xc350;
 // LINE 455:
 	__asm        push   0x598950;
 	__asm        call   strlen;
@@ -3575,7 +3508,7 @@ _Tb7c:
 	__asm        cmp    nCharsToCopy, 5;
 	__asm        jle    _Tbda;
 // LINE 459:
-	__asm        mov    nCharsToCopy, 5;
+	nCharsToCopy = 0x5;
 // LINE 460:
 _Tbda:
 	__asm        jmp    near ptr 0x004407AC;
@@ -3634,8 +3567,7 @@ _Tc6e:
 	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
 // LINE 468:
-	__asm        mov    eax, szCheatOn;
-	__asm        mov    szCheatSoundFileName, eax;
+	szCheatSoundFileName = szCheatOn;
 // LINE 482:
 // Block end:
 _Tc80:
@@ -3721,7 +3653,7 @@ _Td8b:
 	__asm        mov    [ebp-0x144], eax;
 	__asm        jmp    _Tdb8;
 _Tdae:
-	__asm        mov    dword ptr [ebp-0x144], 0;
+	None = 0x0;
 _Tdb8:
 	__asm        mov    dword ptr [ebp-0x148], 0;
 	__asm        jmp    near ptr 0x00440994;
@@ -3736,7 +3668,7 @@ _Tdb8:
 	__asm        mov    tempCheatCodeSound, eax;
 	__asm        jmp    _Tdfc;
 _Tdf2:
-	__asm        mov    tempCheatCodeSound, 0;
+	tempCheatCodeSound = 0x0;
 _Tdfc:
 	__asm        test   byte ptr [ebp-0x14C], 1;
 	__asm        je     _Tf06;
@@ -3931,7 +3863,7 @@ _T134:
 	__asm        mov    [ebp-0x8C], eax;
 	__asm        jmp    _T161;
 _T157:
-	__asm        mov    dword ptr [ebp-0x8C], 0;
+	None = 0x0;
 _T161:
 	__asm        mov    dword ptr [ebp-0x90], 0;
 	__asm        jmp    near ptr 0x00440CAF;
@@ -4034,8 +3966,7 @@ void  CGameApp::CreateDebugBuffer() {
 	__asm        mov    [ecx+0x54], eax;
 	__asm        jmp    _T51;
 _T47:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x54], 0;
+	this-><CGameApp+0x54:4> = 0x0;
 // LINE 528:
 _T51:
 	__asm        push   0;
@@ -4056,9 +3987,9 @@ _T51:
 	__asm        mov    ecx, [eax+0x54];
 	__asm        call   dword ptr [edx+8];
 // LINE 530:
-	__asm        mov    colorDebugText.Red, 0xFF;
+	colorDebugText.Red = 0xff;
 // LINE 531:
-	__asm        mov    colorDebugText.Green, 0;
+	colorDebugText.Green = 0x0;
 // LINE 532:
 	__asm        mov    colorDebugText.Blue, 0;
 	__asm        mov    eax, this;
@@ -4095,7 +4026,7 @@ _T51:
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    _Tee;
 _Te7:
-	__asm        mov    dword ptr [ebp-0x50], 0;
+	None = 0x0;
 _Tee:
 	__asm        mov    eax, [ebp-0x50];
 	__asm        push   eax;
@@ -4132,8 +4063,7 @@ void  CGameApp::DestroyDebugBuffer() {
 	__asm        jmp    _T50;
 // LINE 546:
 _T50:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x54], 0;
+	this-><CGameApp+0x54:4> = 0x0;
 // LINE 548:
 _T5a:
 	__asm        jmp    near ptr 0x00440F35;
@@ -4159,8 +4089,7 @@ void  CGameApp::CreatePaletteBuffer() {
 	__asm        mov    [ecx+0x42BC], eax;
 	__asm        jmp    _T59;
 _T4c:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x42BC], 0;
+	this-><CGameApp+0x42bc:4> = 0x0;
 // LINE 558:
 _T59:
 	__asm        jmp    near ptr 0x00440F98;
@@ -4181,14 +4110,12 @@ void  CGameApp::TogglePaletteBufferDisplay() {
 	__asm        call   CGameApp::CreatePaletteBuffer;
 // LINE 569:
 _T34:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x430C], 1;
+	this-><CGameApp+0x430c:4> = 0x1;
 // LINE 571:
 	__asm        jmp    _T53;
 // LINE 572:
 _T46:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x430C], 0;
+	this-><CGameApp+0x430c:4> = 0x0;
 // LINE 574:
 _T53:
 	__asm        jmp    near ptr 0x00440FF5;
@@ -4208,8 +4135,7 @@ void  CGameApp::ToggleDebugWindowDisplay() {
 	__asm        call   CDebugWindow::ShowWindow;
 // LINE 585:
 _T34:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x4310], 1;
+	this-><CGameApp+0x4310:4> = 0x1;
 // LINE 587:
 	__asm        jmp    _T6b;
 // LINE 588:
@@ -4221,8 +4147,7 @@ _T46:
 	__asm        call   CDebugWindow::HideWindow;
 // LINE 590:
 _T5e:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x4310], 0;
+	this-><CGameApp+0x4310:4> = 0x0;
 // LINE 592:
 _T6b:
 	__asm        jmp    near ptr 0x0044106A;
@@ -4257,7 +4182,7 @@ void  CGameApp::CreatePlayMenu() {
 	__asm        mov    tempUMWD.sImageFileName.reference, eax;
 	__asm        jmp    _T81;
 _T7a:
-	__asm        mov    tempUMWD.sImageFileName.reference, 0;
+	tempUMWD.sImageFileName.reference = 0x0;
 _T81:
 	__asm        mov    tempUMWD.sImageFileName.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x004410FC;
@@ -4280,8 +4205,7 @@ _T81:
 
 	__asm        jmp    near ptr 0x00441129;
 
-	__asm        mov    eax, SZ_PLAY_MENU_IMAGE_FILE_NAME;
-	__asm        mov    [ebp-0xA4], eax;
+	None = SZ_PLAY_MENU_IMAGE_FILE_NAME;
 // LINE 604:
 	__asm        jmp    near ptr 0x00441139;
 
@@ -4296,8 +4220,7 @@ _T81:
 	__asm        call   basic_string<char>::assign_str;
 	__asm        jmp    near ptr 0x0044115D;
 // LINE 605:
-	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
-	__asm        mov    tempUMWD.nTransparentIndex, eax;
+	tempUMWD.nTransparentIndex = GraphicWindow::colorConstants.nPaletteIndexTransparent;
 // LINE 606:
 	__asm        jmp    near ptr 0x0044116A;
 
@@ -4324,7 +4247,7 @@ _T81:
 	__asm        mov    tempUMWD.lMenuStringResourceIndex, 0x3C;
 	__asm        jmp    _T158;
 _T151:
-	__asm        mov    tempUMWD.lMenuStringResourceIndex, 0x3D;
+	tempUMWD.lMenuStringResourceIndex = 0x3d;
 // LINE 608:
 _T158:
 	__asm        cmp    gCurrentCityType, 1;
@@ -4333,7 +4256,7 @@ _T158:
 	__asm        mov    tempUMWD.lMenuStringResourceCount, 8;
 	__asm        jmp    _T178;
 _T171:
-	__asm        mov    tempUMWD.lMenuStringResourceCount, 7;
+	tempUMWD.lMenuStringResourceCount = 0x7;
 // LINE 609:
 _T178:
 	__asm        cmp    gCurrentCityType, 1;
@@ -4342,7 +4265,7 @@ _T178:
 	__asm        mov    tempUMWD.lSelectionBase, 0;
 	__asm        jmp    _T198;
 _T191:
-	__asm        mov    tempUMWD.lSelectionBase, 1;
+	tempUMWD.lSelectionBase = 0x1;
 // LINE 610:
 _T198:
 	__asm        mov    byte ptr [ebp-0x6C], 0x80;
@@ -4350,16 +4273,14 @@ _T198:
 	__asm        mov    byte ptr [ebp-0x6A], 0x4A;
 	__asm        jmp    near ptr 0x00441218;
 
-	__asm        mov    eax, [ebp-0x6C];
-	__asm        mov    reinterpret_cast<uint32_t>(tempUMWD.colorFont.Blue), eax;
+	reinterpret_cast<uint32_t>(tempUMWD.colorFont.Blue) = None;
 // LINE 611:
 	__asm        mov    byte ptr [ebp-0x70], 0xEA;
 	__asm        mov    byte ptr [ebp-0x6F], 0xEF;
 	__asm        mov    byte ptr [ebp-0x6E], 0x9A;
 	__asm        jmp    near ptr 0x0044122F;
 
-	__asm        mov    eax, [ebp-0x70];
-	__asm        mov    reinterpret_cast<uint32_t>(tempUMWD.colorFontHighlighted.Blue), eax;
+	reinterpret_cast<uint32_t>(tempUMWD.colorFontHighlighted.Blue) = None;
 // LINE 614:
 	__asm        cmp    gCurrentCityType, 1;
 	__asm        jne    _T1f6;
@@ -4392,13 +4313,13 @@ _T21a:
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 // LINE 615:
-	__asm        mov    tempUMWD.nSizeItemFont, 0x1A;
+	tempUMWD.nSizeItemFont = 0x1a;
 // LINE 616:
-	__asm        mov    tempUMWD.nLineHeight, 0x28;
+	tempUMWD.nLineHeight = 0x28;
 // LINE 617:
-	__asm        mov    tempUMWD.lTitleStringResourceIndex, 0xFFFFFFFF;
+	tempUMWD.lTitleStringResourceIndex = 0xffffffff;
 // LINE 618:
-	__asm        mov    tempUMWD.bTitleCentered, 1;
+	tempUMWD.bTitleCentered = 0x1;
 // LINE 619:
 	__asm        jmp    near ptr 0x004412C6;
 
@@ -4412,7 +4333,7 @@ _T21a:
 	__asm        mov    [edx], eax;
 	__asm        mov    [edx+4], ecx;
 // LINE 620:
-	__asm        mov    tempUMWD.nSizeTitleFont, 0x24;
+	tempUMWD.nSizeTitleFont = 0x24;
 // LINE 623:
 	__asm        push   0x15A;
 	__asm        call   operator new;
@@ -4429,7 +4350,7 @@ _T21a:
 	__asm        mov    [ebp-0x98], eax;
 	__asm        jmp    _T2d6;
 _T2cc:
-	__asm        mov    dword ptr [ebp-0x98], 0;
+	None = 0x0;
 _T2d6:
 	__asm        push   1;
 	__asm        mov    eax, [ebp-0x98];
@@ -4445,7 +4366,7 @@ _T2d6:
 	__asm        mov    myUserMenuWindow, eax;
 	__asm        jmp    _T30c;
 _T305:
-	__asm        mov    myUserMenuWindow, 0;
+	myUserMenuWindow = 0x0;
 // LINE 624:
 _T30c:
 	__asm        mov    eax, myUserMenuWindow;
@@ -4532,7 +4453,7 @@ _T5c:
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    _T95;
 _T8e:
-	__asm        mov    dword ptr [ebp-0x20], 0;
+	None = 0x0;
 _T95:
 	__asm        jmp    near ptr 0x0044147F;
 
@@ -4556,7 +4477,7 @@ _T95:
 	__asm        mov    myUserInputWindow, eax;
 	__asm        jmp    _Te8;
 _Te1:
-	__asm        mov    myUserInputWindow, 0;
+	myUserInputWindow = 0x0;
 // LINE 640:
 _Te8:
 	__asm        mov    eax, myUserInputWindow;
@@ -4698,7 +4619,7 @@ _T5c:
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    _T95;
 _T8e:
-	__asm        mov    dword ptr [ebp-0x20], 0;
+	None = 0x0;
 _T95:
 	__asm        jmp    near ptr 0x00441661;
 
@@ -4722,7 +4643,7 @@ _T95:
 	__asm        mov    myRenderSettingsWindow, eax;
 	__asm        jmp    _Te8;
 _Te1:
-	__asm        mov    myRenderSettingsWindow, 0;
+	myRenderSettingsWindow = 0x0;
 // LINE 676:
 _Te8:
 	__asm        mov    eax, myRenderSettingsWindow;
@@ -4828,13 +4749,9 @@ _T5c:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x432C], eax;
 // LINE 711:
-	__asm        mov    eax, bShowSkyAndClouds;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x4330], eax;
+	this-><CGameApp+0x4330:4> = bShowSkyAndClouds;
 // LINE 712:
-	__asm        mov    eax, lQuadPixelType;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x4308], eax;
+	this-><CGameApp+0x4308:4> = lQuadPixelType;
 // LINE 717:
 	__asm        mov    eax, lFogCloseness;
 	__asm        push   eax;
@@ -4903,7 +4820,7 @@ _T5c:
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    _T95;
 _T8e:
-	__asm        mov    dword ptr [ebp-0x50], 0;
+	None = 0x0;
 _T95:
 	__asm        jmp    near ptr 0x00441898;
 
@@ -4927,7 +4844,7 @@ _T95:
 	__asm        mov    mySoundSettingsWindow, eax;
 	__asm        jmp    _Te8;
 _Te1:
-	__asm        mov    mySoundSettingsWindow, 0;
+	mySoundSettingsWindow = 0x0;
 // LINE 738:
 _Te8:
 	__asm        mov    eax, mySoundSettingsWindow;
@@ -5110,7 +5027,7 @@ void  CGameApp::CreateCitySettingsWindow() {
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    _T4e;
 _T47:
-	__asm        mov    dword ptr [ebp-0x1C], 0;
+	None = 0x0;
 _T4e:
 	__asm        jmp    near ptr 0x00441ADC;
 
@@ -5134,7 +5051,7 @@ _T4e:
 	__asm        mov    myCitySettingsWindow, eax;
 	__asm        jmp    _Ta1;
 _T9a:
-	__asm        mov    myCitySettingsWindow, 0;
+	myCitySettingsWindow = 0x0;
 // LINE 811:
 _Ta1:
 	__asm        mov    eax, myCitySettingsWindow;
@@ -5213,7 +5130,7 @@ void  CGameApp::CreateControlDisplayWindow() {
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    _T4e;
 _T47:
-	__asm        mov    dword ptr [ebp-0x1C], 0;
+	None = 0x0;
 _T4e:
 	__asm        jmp    near ptr 0x00441C13;
 
@@ -5237,7 +5154,7 @@ _T4e:
 	__asm        mov    tempControlDisplayWindow, eax;
 	__asm        jmp    _Ta1;
 _T9a:
-	__asm        mov    tempControlDisplayWindow, 0;
+	tempControlDisplayWindow = 0x0;
 // LINE 841:
 _Ta1:
 	__asm        mov    eax, tempControlDisplayWindow;
@@ -5296,7 +5213,7 @@ void  CGameApp::CreateCheckupWindow() {
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    _T4e;
 _T47:
-	__asm        mov    dword ptr [ebp-0x1C], 0;
+	None = 0x0;
 _T4e:
 	__asm        jmp    near ptr 0x00441D11;
 
@@ -5320,7 +5237,7 @@ _T4e:
 	__asm        mov    tempCheckupWindow, eax;
 	__asm        jmp    _Ta1;
 _T9a:
-	__asm        mov    tempCheckupWindow, 0;
+	tempCheckupWindow = 0x0;
 // LINE 862:
 _Ta1:
 	__asm        mov    eax, tempCheckupWindow;

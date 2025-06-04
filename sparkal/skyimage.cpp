@@ -258,11 +258,9 @@ void SkyImage::SkyImage(int32_t nNewSkyType, int32_t nNewBitmapWidth, int32_t nN
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591090;
 // LINE 31:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x134], 0x280;
+	this->nBitmapWidth = 0x280;
 // LINE 32:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x138], 0xC8;
+	this->nBitmapHeight = 0xc8;
 // LINE 38:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x134];
@@ -312,9 +310,7 @@ void SkyImage::SwitchToSkyType(enum SkyImage::SkyType nNewSkyType) {
 	__asm        cmp    [eax+0x13C], ecx;
 	__asm        je     _T32;
 // LINE 61:
-	__asm        mov    eax, nNewSkyType;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x13C], eax;
+	this->nSkyType = nNewSkyType;
 // LINE 62:
 	__asm        mov    ecx, this;
 	__asm        call   SkyImage::LoadImageA;
@@ -412,8 +408,7 @@ _T8c:
 	__asm        add    esp, 8;
 	__asm        mov    bmpHeader, eax;
 // LINE 113:
-	__asm        mov    eax, bmpHeader;
-	__asm        mov    pSourceImage, eax;
+	pSourceImage = bmpHeader;
 // LINE 114:
 	__asm        mov    eax, bmpHeader;
 	__asm        mov    eax, [eax+4];
@@ -430,9 +425,7 @@ _T8c:
 // LINE 118:
 	__asm        jmp    near ptr 0x00495647;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    pDestinationImage, eax;
+	pDestinationImage = this->mpBits;
 // LINE 119:
 	__asm        mov    i, 0;
 	__asm        jmp    _Tf6;
@@ -489,8 +482,7 @@ _T173:
 	__asm        add    esp, 8;
 	__asm        mov    bmpHeader, eax;
 // LINE 137:
-	__asm        mov    eax, bmpHeader;
-	__asm        mov    pDestinationImage, eax;
+	pDestinationImage = bmpHeader;
 // LINE 138:
 	__asm        add    pDestinationImage, 0x40C;
 // LINE 141:
@@ -501,8 +493,7 @@ _T173:
 	__asm        add    esp, 8;
 	__asm        mov    bmpHeader, eax;
 // LINE 142:
-	__asm        mov    eax, bmpHeader;
-	__asm        mov    pSourceImage, eax;
+	pSourceImage = bmpHeader;
 // LINE 143:
 	__asm        add    pSourceImage, 0x40C;
 // LINE 146:
@@ -521,8 +512,7 @@ _T173:
 	__asm        add    esp, 8;
 	__asm        mov    bmpHeader, eax;
 // LINE 150:
-	__asm        mov    eax, bmpHeader;
-	__asm        mov    pDestinationImage, eax;
+	pDestinationImage = bmpHeader;
 // LINE 151:
 	__asm        add    pDestinationImage, 0x40C;
 // LINE 154:
@@ -533,8 +523,7 @@ _T173:
 	__asm        add    esp, 8;
 	__asm        mov    bmpHeader, eax;
 // LINE 155:
-	__asm        mov    eax, bmpHeader;
-	__asm        mov    pSourceImage, eax;
+	pSourceImage = bmpHeader;
 // LINE 156:
 	__asm        add    pSourceImage, 0x40C;
 // LINE 159:
@@ -553,8 +542,7 @@ _T173:
 	__asm        add    esp, 8;
 	__asm        mov    bmpHeader, eax;
 // LINE 163:
-	__asm        mov    eax, bmpHeader;
-	__asm        mov    pDestinationImage, eax;
+	pDestinationImage = bmpHeader;
 // LINE 164:
 	__asm        add    pDestinationImage, 0x40C;
 // LINE 167:
@@ -565,8 +553,7 @@ _T173:
 	__asm        add    esp, 8;
 	__asm        mov    bmpHeader, eax;
 // LINE 168:
-	__asm        mov    eax, bmpHeader;
-	__asm        mov    pSourceImage, eax;
+	pSourceImage = bmpHeader;
 // LINE 169:
 	__asm        add    pSourceImage, 0x40C;
 // LINE 172:
@@ -585,9 +572,7 @@ _T173:
 	__asm        add    esp, 8;
 	__asm        mov    bmpHeader, eax;
 // LINE 177:
-	__asm        mov    eax, bmpHeader;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    pDestinationImage, eax;
+	pDestinationImage = bmpHeader-><VRBmpHdr+0x10>;
 // LINE 180:
 	__asm        push   4;
 	__asm        mov    eax, vrResource;
@@ -596,8 +581,7 @@ _T173:
 	__asm        add    esp, 8;
 	__asm        mov    bmpHeader, eax;
 // LINE 181:
-	__asm        mov    eax, bmpHeader;
-	__asm        mov    pSourceImage, eax;
+	pSourceImage = bmpHeader;
 // LINE 182:
 	__asm        add    pSourceImage, 0x40C;
 // LINE 185:
@@ -616,8 +600,7 @@ _T173:
 	__asm        add    esp, 8;
 	__asm        mov    bmpHeader, eax;
 // LINE 189:
-	__asm        mov    eax, bmpHeader;
-	__asm        mov    pDestinationImage, eax;
+	pDestinationImage = bmpHeader;
 // LINE 190:
 	__asm        add    pDestinationImage, 0x40C;
 // LINE 193:
@@ -628,8 +611,7 @@ _T173:
 	__asm        add    esp, 8;
 	__asm        mov    bmpHeader, eax;
 // LINE 194:
-	__asm        mov    eax, bmpHeader;
-	__asm        mov    pSourceImage, eax;
+	pSourceImage = bmpHeader;
 // LINE 195:
 	__asm        add    pSourceImage, 0x40C;
 // LINE 198:
@@ -674,8 +656,7 @@ unsigned long SkyImage::Compose(class CBackBuffer *pDestImage, int32_t nDestinat
 	__asm        sub    eax, [ecx+0x144];
 	__asm        mov    altdiff, eax;
 // LINE 226:
-	__asm        mov    eax, cameraPitch;
-	__asm        mov    pitch, eax;
+	pitch = cameraPitch;
 // LINE 227:
 	__asm        cmp    pitch, 0x7080000;
 	__asm        jle    _T43;
@@ -718,7 +699,7 @@ _Ta2:
 	__asm        cmp    start_row, 0;
 	__asm        jge    _Tb3;
 // LINE 237:
-	__asm        mov    start_row, 0;
+	start_row = 0x0;
 // LINE 241:
 _Tb3:
 	__asm        mov    eax, this;
@@ -762,21 +743,16 @@ _Tf3:
 	__asm        jmp    _T135;
 // LINE 254:
 _T128:
-	__asm        mov    len2, 0;
+	len2 = 0x0;
 // LINE 255:
-	__asm        mov    eax, nDestinationWidth;
-	__asm        mov    len1, eax;
+	len1 = nDestinationWidth;
 // LINE 261:
 _T135:
-	__asm        mov    eax, start_row;
-	__asm        mov    rectSource.top, eax;
+	rectSource.top = start_row;
 // LINE 262:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x138];
-	__asm        mov    rectSource.bottom, eax;
+	rectSource.bottom = this->nBitmapHeight;
 // LINE 265:
-	__asm        mov    eax, start_col;
-	__asm        mov    rectSource.left, eax;
+	rectSource.left = start_col;
 // LINE 266:
 	__asm        mov    eax, len1;
 	__asm        add    eax, start_col;
@@ -785,9 +761,9 @@ _T135:
 	__asm        cmp    G_video_mode, 0x10;
 	__asm        jne    _T1e1;
 // LINE 270:
-	__asm        mov    rectDestination.top, 0;
+	rectDestination.top = 0x0;
 // LINE 271:
-	__asm        mov    rectDestination.left, 0;
+	rectDestination.left = 0x0;
 // LINE 272:
 	__asm        mov    eax, len1;
 	__asm        add    eax, eax;
@@ -812,10 +788,9 @@ _T135:
 	__asm        cmp    len2, 0;
 	__asm        je     _T1dc;
 // LINE 278:
-	__asm        mov    rectSource.left, 0;
+	rectSource.left = 0x0;
 // LINE 279:
-	__asm        mov    eax, len2;
-	__asm        mov    rectSource.right, eax;
+	rectSource.right = len2;
 // LINE 280:
 	__asm        mov    eax, len1;
 	__asm        add    eax, eax;
@@ -859,10 +834,9 @@ _T1e1:
 	__asm        cmp    len2, 0;
 	__asm        je     _T23a;
 // LINE 293:
-	__asm        mov    rectSource.left, 0;
+	rectSource.left = 0x0;
 // LINE 294:
-	__asm        mov    eax, len2;
-	__asm        mov    rectSource.right, eax;
+	rectSource.right = len2;
 // LINE 296:
 	__asm        mov    eax, rectSource.bottom;
 	__asm        push   eax;

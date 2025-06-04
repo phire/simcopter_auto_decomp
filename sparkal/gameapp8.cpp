@@ -308,8 +308,7 @@ unsigned long  CGameApp::GetLoadFileType(char * szFilePath, long& lFileType) {
 	__asm        test   eax, eax;
 	__asm        je     _T35;
 // LINE 64:
-	__asm        mov    eax, lFileType;
-	__asm        mov    dword ptr [eax], 1;
+	lFileType. = 0x1;
 // LINE 65:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T8c;
@@ -323,8 +322,7 @@ _T35:
 	__asm        test   eax, eax;
 	__asm        je     _T5e;
 // LINE 68:
-	__asm        mov    eax, lFileType;
-	__asm        mov    dword ptr [eax], 5;
+	lFileType. = 0x5;
 // LINE 69:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T8c;
@@ -356,8 +354,7 @@ _T8c:
 // FUNCTION: COPTER_D 0x004275e3
 unsigned long  CGameApp::SetUpLoadGame(char * szLoadGamePath, long lFileType) {
 // LINE 86:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x20], 0;
+	this-><CGameApp+0x20:4> = 0x0;
 // LINE 87:
 	__asm        cmp    lFileType, 1;
 	__asm        jne    _T56;
@@ -435,8 +432,7 @@ unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 	long lPresentRecordType;
 
 // LINE 126:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x20], 0;
+	this-><CGameApp+0x20:4> = 0x0;
 // LINE 127:
 	__asm        mov    ecx, this;
 	__asm        mov    eax, this;
@@ -542,7 +538,7 @@ _T181:
 	__asm        add    ecx, 0x4174;
 	__asm        call   dword ptr [eax+0x40];
 // LINE 149:
-	__asm        mov    bPathInfoFound, 1;
+	bPathInfoFound = 0x1;
 // LINE 151:
 	__asm        jmp    _T280;
 // LINE 152:
@@ -562,7 +558,7 @@ _T1e2:
 	__asm        add    ecx, 0x4174;
 	__asm        call   dword ptr [eax+0x40];
 // LINE 155:
-	__asm        mov    bSaveGameInfoFound, 1;
+	bSaveGameInfoFound = 0x1;
 // LINE 157:
 	__asm        jmp    _T280;
 // LINE 158:
@@ -582,7 +578,7 @@ _T235:
 	__asm        add    ecx, 0x4174;
 	__asm        call   dword ptr [eax+0x40];
 // LINE 161:
-	__asm        mov    bSaveGameInfoFound, 1;
+	bSaveGameInfoFound = 0x1;
 // LINE 163:
 _T280:
 	__asm        cmp    bPathInfoFound, 0;
@@ -674,20 +670,19 @@ _T3a7:
 	__asm        cmp    lFileType, 0x55534552;
 	__asm        jne    _T3e2;
 // LINE 182:
-	__asm        mov    gCurrentCityType, 1;
+	gCurrentCityType = 0x1;
 // LINE 183:
 	__asm        lea    esi, tempUserCityInfo.citySettings.lDifficulty;
 	__asm        mov    edi, 0x5C2A20;
 	__asm        mov    ecx, 0x20;
 	__asm        rep movsd;
 // LINE 185:
-	__asm        mov    eax, gCurrentUserCityInfo.citySettings.lDaytime;
-	__asm        mov    G_daynight, eax;
+	G_daynight = gCurrentUserCityInfo.citySettings.lDaytime;
 // LINE 187:
 	__asm        jmp    _T455;
 // LINE 188:
 _T3e2:
-	__asm        mov    gCurrentCityType, 2;
+	gCurrentCityType = 0x2;
 // LINE 189:
 	__asm        lea    esi, tempCurrentCareerCityInfo.lCurrentCities[0];
 	__asm        mov    edi, 0x5C2AA8;
@@ -712,8 +707,7 @@ _T3e2:
 	__asm        add    ecx, 0x4174;
 	__asm        call   dword ptr [eax+0x40];
 // LINE 193:
-	__asm        mov    eax, savedCitySettings.lDaytime;
-	__asm        mov    G_daynight, eax;
+	G_daynight = savedCitySettings.lDaytime;
 // LINE 196:
 _T455:
 	__asm        lea    eax, szCityPath[0];
@@ -722,7 +716,7 @@ _T455:
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 199:
-	__asm        mov    lSavedCityFileChecksum, 0;
+	lSavedCityFileChecksum = 0x0;
 // LINE 200:
 	__asm        mov    ecx, this;
 	__asm        mov    eax, this;
@@ -765,14 +759,12 @@ _T4da:
 	__asm        cmp    lSavedCityFileChecksum, eax;
 	__asm        jne    _T52d;
 // LINE 205:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x20], 1;
+	this-><CGameApp+0x20:4> = 0x1;
 // LINE 208:
 	__asm        jmp    _T555;
 // LINE 209:
 _T52d:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x20], 0;
+	this-><CGameApp+0x20:4> = 0x0;
 // LINE 210:
 	__asm        mov    ecx, this;
 	__asm        mov    eax, this;
@@ -816,14 +808,14 @@ unsigned long  CGameApp::SaveUserOrCareerGame(char * szGamePath, char * szCityPa
 	__asm        cmp    gCurrentCityType, 2;
 	__asm        jne    _T63;
 // LINE 237:
-	__asm        mov    lFileType, 0x43524552;
+	lFileType = 0x43524552;
 // LINE 238:
 	__asm        jmp    _T7a;
 _T63:
 	__asm        cmp    gCurrentCityType, 1;
 	__asm        jne    _T7a;
 // LINE 239:
-	__asm        mov    lFileType, 0x55534552;
+	lFileType = 0x55534552;
 // LINE 241:
 _T7a:
 	__asm        push   0x100;
@@ -927,8 +919,7 @@ _T1d2:
 	__asm        mov    ecx, 9;
 	__asm        rep movsd;
 // LINE 261:
-	__asm        mov    eax, G_daynight;
-	__asm        mov    tempCitySettings.lDaytime, eax;
+	tempCitySettings.lDaytime = G_daynight;
 // LINE 262:
 	__asm        push   0x24;
 	__asm        lea    eax, tempCitySettings.lDifficulty;
@@ -1101,7 +1092,7 @@ unsigned long  CGameApp::DoSaveGameAs() {
 	__asm        mov    [ebp-0x728], eax;
 	__asm        jmp    _Ta7;
 _T9d:
-	__asm        mov    dword ptr [ebp-0x728], 0;
+	None = 0x0;
 _Ta7:
 	__asm        mov    dword ptr [ebp-0x72C], 0;
 	__asm        jmp    near ptr 0x0042804E;
@@ -1326,7 +1317,7 @@ _T3b1:
 	__asm        mov    [ebp-0x73C], eax;
 	__asm        jmp    _T40b;
 _T401:
-	__asm        mov    dword ptr [ebp-0x73C], 0;
+	None = 0x0;
 _T40b:
 	__asm        mov    dword ptr [ebp-0x740], 0;
 	__asm        jmp    near ptr 0x004283B2;
@@ -1341,7 +1332,7 @@ _T40b:
 	__asm        mov    dword ptr [ebp-0x738], 1;
 	__asm        jmp    _T44a;
 _T440:
-	__asm        mov    dword ptr [ebp-0x738], 0;
+	None = 0x0;
 _T44a:
 	__asm        mov    eax, [ebp-0x73C];
 	__asm        dec    dword ptr [eax+0xC];
@@ -1441,7 +1432,7 @@ _T5b7:
 	__asm        mov    [ebp-0x76C], eax;
 	__asm        jmp    _T5e4;
 _T5da:
-	__asm        mov    dword ptr [ebp-0x76C], 0;
+	None = 0x0;
 _T5e4:
 	__asm        mov    dword ptr [ebp-0x770], 0;
 	__asm        jmp    near ptr 0x0042858B;
@@ -1462,7 +1453,7 @@ _T5e4:
 	__asm        mov    [ebp-0x764], eax;
 	__asm        jmp    _T642;
 _T638:
-	__asm        mov    dword ptr [ebp-0x764], 0;
+	None = 0x0;
 _T642:
 	__asm        mov    dword ptr [ebp-0x768], 0;
 	__asm        jmp    near ptr 0x004285E9;
@@ -1581,16 +1572,16 @@ _T80a:
 	__asm        cmp    gCurrentCityType, 2;
 	__asm        jne    _T830;
 // LINE 355:
-	__asm        mov    nFullTitleID, 0x2F;
+	nFullTitleID = 0x2f;
 // LINE 356:
-	__asm        mov    nFullFilterID, 0x2D;
+	nFullFilterID = 0x2d;
 // LINE 358:
 	__asm        jmp    _T844;
 // LINE 359:
 _T830:
-	__asm        mov    nFullTitleID, 0x2E;
+	nFullTitleID = 0x2e;
 // LINE 360:
-	__asm        mov    nFullFilterID, 0x2B;
+	nFullFilterID = 0x2b;
 // LINE 362:
 _T844:
 	__asm        push   0;

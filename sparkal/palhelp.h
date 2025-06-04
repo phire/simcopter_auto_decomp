@@ -2,12 +2,7 @@
 // FUNCTION: COPTER_D 0x00497b50
 void SparkalPalette::GetRGBValue(int32_t nIndex, struct SparkalColor& colorValue) {
 // LINE 108:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, nIndex;
-	__asm        mov    eax, [eax+ecx*4];
-	__asm        mov    ecx, colorValue;
-	__asm        mov    [ecx], eax;
+	reinterpret_cast<uint32_t>(colorValue.Blue) = *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&this->pColors->Blue) + nIndex * 4 + 0);
 // LINE 109:
 	__asm        jmp    near ptr 0x00497B72;
 }

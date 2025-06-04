@@ -76,17 +76,13 @@ public:
 // FUNCTION: COPTER_D 0x0055c270
 void FlatFile::FlatFile() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x593620;
+	this-><vftable> = 0x593620;
 // LINE 14:
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+8], 0;
+	this->fName[0] = 0x0;
 // LINE 19:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10C], 0;
+	this->fFile = 0x0;
 // LINE 21:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x108], 0;
+	this->fFileID = 0x0;
 // LINE 22:
 	__asm        mov    ecx, this;
 	__asm        call   FlatFile::Link;
@@ -99,8 +95,7 @@ void FlatFile::FlatFile() {
 // FUNCTION: COPTER_D 0x0055c2bb
 void FlatFile::~FlatFile() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x593620;
+	this-><vftable> = 0x593620;
 // LINE 30:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10C], 0;
@@ -125,9 +120,7 @@ class FlatFile* FlatFile::FindByName(unsigned char * name) {
 	__asm        mov    srch, eax;
 	__asm        jmp    _T1f;
 _T16:
-	__asm        mov    eax, srch;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    srch, eax;
+	srch = srch->fNext;
 _T1f:
 	__asm        cmp    srch, 0;
 	__asm        je     _T64;
@@ -205,7 +198,7 @@ long FlatFile::Open(unsigned char * name) {
 	__asm        jmp    _T1b8;
 // LINE 63:
 _T32:
-	__asm        mov    err, 0;
+	err = 0x0;
 // LINE 65:
 	__asm        mov    eax, name;
 	__asm        push   eax;
@@ -280,7 +273,7 @@ _Tad:
 	__asm        cmp    dword ptr [eax+0x10C], 0xFFFFFFFF;
 	__asm        jne    _T121;
 _T11a:
-	__asm        mov    err, 0xFFFFFFCE;
+	err = 0xffffffce;
 // LINE 85:
 _T121:
 	__asm        inc    FlatFile::sLastFileID;
@@ -293,25 +286,17 @@ _T121:
 	__asm        jmp    _T16c;
 // LINE 92:
 _T142:
-	__asm        mov    eax, same;
-	__asm        mov    eax, [eax+0x10C];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x10C], eax;
+	this->fFile = same->fFile;
 // LINE 94:
-	__asm        mov    eax, same;
-	__asm        mov    eax, [eax+0x108];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x108], eax;
+	this->fFileID = same->fFileID;
 // LINE 97:
 _T16c:
 	__asm        cmp    err, 0;
 	__asm        je     _T195;
 // LINE 99:
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+8], 0;
+	this->fName[0] = 0x0;
 // LINE 100:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x108], 0;
+	this->fFileID = 0x0;
 // LINE 102:
 	__asm        jmp    _T1b0;
 // LINE 104:
@@ -375,7 +360,7 @@ _T38:
 	__asm        cmp    dword ptr [eax+0x10C], 0;
 	__asm        jne    _T54;
 // LINE 132:
-	__asm        mov    err, 0xFFFFFFCF;
+	err = 0xffffffcf;
 // LINE 133:
 	__asm        jmp    _Ta0;
 _T54:
@@ -393,27 +378,25 @@ _T54:
 	__asm        test   eax, eax;
 	__asm        je     _T8d;
 
-	__asm        mov    err, 0xFFFFFFCE;
+	err = 0xffffffce;
 // LINE 136:
 	__asm        jmp    _T94;
 _T8d:
-	__asm        mov    err, 0;
+	err = 0x0;
 // LINE 138:
 _T94:
 	__asm        jmp    _Ta0;
 // LINE 139:
 _T99:
-	__asm        mov    err, 0;
+	err = 0x0;
 // LINE 142:
 _Ta0:
 	__asm        cmp    err, 0;
 	__asm        jne    _Tc4;
 // LINE 147:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10C], 0;
+	this->fFile = 0x0;
 // LINE 149:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x108], 0;
+	this->fFileID = 0x0;
 // LINE 151:
 _Tc4:
 	__asm        mov    eax, err;
@@ -590,7 +573,7 @@ long FlatFile::Read4(long * val) {
 	long size;
 
 // LINE 244:
-	__asm        mov    size, 4;
+	size = 0x4;
 // LINE 245:
 	__asm        lea    eax, size;
 	__asm        push   eax;
@@ -620,7 +603,7 @@ long FlatFile::Read2(short * val) {
 	long size;
 
 // LINE 252:
-	__asm        mov    size, 2;
+	size = 0x2;
 // LINE 253:
 	__asm        lea    eax, size;
 	__asm        push   eax;
@@ -650,7 +633,7 @@ long FlatFile::Read1(char * val) {
 	long size;
 
 // LINE 260:
-	__asm        mov    size, 1;
+	size = 0x1;
 // LINE 261:
 	__asm        lea    eax, size;
 	__asm        push   eax;
@@ -668,12 +651,9 @@ long FlatFile::Read1(char * val) {
 // FUNCTION: COPTER_D 0x0055c945
 void FlatFile::Link() {
 // LINE 266:
-	__asm        mov    eax, FlatFile::sList;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->fNext = FlatFile::sList;
 // LINE 267:
-	__asm        mov    eax, this;
-	__asm        mov    FlatFile::sList, eax;
+	FlatFile::sList = this;
 // LINE 268:
 	__asm        jmp    near ptr 0x0055C969;
 }
@@ -683,7 +663,7 @@ void FlatFile::Unlink() {
 	class FlatFile **srch;
 
 // LINE 271:
-	__asm        mov    srch, 0x5BDDD8;
+	srch = 0x5bddd8;
 // LINE 273:
 _T13:
 	__asm        mov    eax, srch;
@@ -695,11 +675,7 @@ _T13:
 	__asm        cmp    [eax], ecx;
 	__asm        jne    _T3f;
 // LINE 275:
-	__asm        mov    eax, srch;
-	__asm        mov    eax, [eax];
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, srch;
-	__asm        mov    [ecx], eax;
+	srch-> = srch->->fNext;
 // LINE 276:
 	__asm        jmp    _T70;
 // LINE 278:
@@ -728,8 +704,7 @@ unsigned short FlatFile::Exclusive() {
 	class FlatFile *srch;
 
 // LINE 285:
-	__asm        mov    eax, FlatFile::sList;
-	__asm        mov    srch, eax;
+	srch = FlatFile::sList;
 // LINE 286:
 _T14:
 	__asm        cmp    srch, 0;
@@ -751,9 +726,7 @@ _T14:
 	__asm        jmp    _T60;
 // LINE 289:
 _T49:
-	__asm        mov    eax, srch;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    srch, eax;
+	srch = srch->fNext;
 // LINE 290:
 	__asm        jmp    _T14;
 // LINE 291:
@@ -791,15 +764,13 @@ short FlatFile::CheckForLeaks() {
 	class FlatFile *list;
 
 // LINE 302:
-	__asm        mov    total, 0;
+	total = 0x0;
 // LINE 304:
 	__asm        mov    eax, FlatFile::sList;
 	__asm        mov    list, eax;
 	__asm        jmp    _T25;
 _T1c:
-	__asm        mov    eax, list;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    list, eax;
+	list = list->fNext;
 _T25:
 	__asm        cmp    list, 0;
 	__asm        je     _T38;

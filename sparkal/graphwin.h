@@ -24,9 +24,7 @@ int32_t GraphicWindowManager::DecrementBusyCount() {
 // FUNCTION: COPTER_D 0x0040d7e0
 void  GraphicWindow::SetParent(class GraphicWindow *windowNewParent) {
 // LINE 324:
-	__asm        mov    eax, windowNewParent;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x3C], eax;
+	this-><GraphicWindow+0x3c:4> = windowNewParent;
 // LINE 325:
 	__asm        jmp    near ptr 0x0040D7FA;
 }
@@ -35,9 +33,7 @@ void  GraphicWindow::SetParent(class GraphicWindow *windowNewParent) {
 // FUNCTION: COPTER_D 0x0040d810
 void  GraphicWindow::SetBorderDrawing(int32_t bNewDrawBorder) {
 // LINE 328:
-	__asm        mov    eax, bNewDrawBorder;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x6C], eax;
+	this-><GraphicWindow+0x6c:4> = bNewDrawBorder;
 // LINE 329:
 	__asm        jmp    near ptr 0x0040D82A;
 }

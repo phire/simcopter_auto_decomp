@@ -112,31 +112,25 @@ void S3BufferPrint(char * fname, char * chPalette) {
 	__asm        cmp    G_video_mode, 0x10;
 	__asm        jne    _T33;
 // LINE 76:
-	__asm        mov    eax, swindow.WindowWide;
-	__asm        mov    xdim, eax;
+	xdim = swindow.WindowWide;
 // LINE 77:
-	__asm        mov    eax, swindow.WindowHigh;
-	__asm        mov    ydim, eax;
+	ydim = swindow.WindowHigh;
 // LINE 78:
-	__asm        mov    eax, swindow.RenderWide;
-	__asm        mov    pitch, eax;
+	pitch = swindow.RenderWide;
 // LINE 80:
 	__asm        jmp    _T4b;
 // LINE 82:
 _T33:
-	__asm        mov    eax, qwindow.WindowWide;
-	__asm        mov    xdim, eax;
+	xdim = qwindow.WindowWide;
 // LINE 83:
-	__asm        mov    eax, qwindow.WindowHigh;
-	__asm        mov    ydim, eax;
+	ydim = qwindow.WindowHigh;
 // LINE 84:
-	__asm        mov    eax, qwindow.RenderWide;
-	__asm        mov    pitch, eax;
+	pitch = qwindow.RenderWide;
 // LINE 87:
 _T4b:
-	__asm        mov    pcx.manufacturer, 0xA;
+	pcx.manufacturer = 0xa;
 // LINE 88:
-	__asm        mov    pcx.encoding, 1;
+	pcx.encoding = 0x1;
 // LINE 89:
 	__asm        mov    pcx.ymin, 0;
 	__asm        mov    ax, pcx.ymin;
@@ -150,13 +144,13 @@ _T4b:
 	__asm        dec    eax;
 	__asm        mov    pcx.ymax, ax;
 // LINE 92:
-	__asm        mov    pcx.palette_type, 0;
+	pcx.palette_type = 0x0;
 // LINE 93:
-	__asm        mov    pcx.bits_per_pixel, 8;
+	pcx.bits_per_pixel = 0x8;
 // LINE 94:
-	__asm        mov    pcx.version, 5;
+	pcx.version = 0x5;
 // LINE 95:
-	__asm        mov    pcx.colour_planes, 1;
+	pcx.colour_planes = 0x1;
 // LINE 96:
 	__asm        mov    eax, xdim;
 	__asm        mov    pcx.bytes_per_line, ax;
@@ -179,8 +173,7 @@ _T4b:
 	__asm        call   fwrite;
 	__asm        add    esp, 0x10;
 // LINE 103:
-	__asm        mov    eax, buffer1;
-	__asm        mov    ptr, eax;
+	ptr = buffer1;
 // LINE 104:
 	__asm        mov    y, 0;
 	__asm        jmp    _Tf6;
@@ -282,7 +275,7 @@ int32_t S3WritePCXLine(struct _iobuf *fp, char * p, unsigned short n) {
 	__asm        mov    t, 0;
 // LINE 140:
 _T1b:
-	__asm        mov    i, 0;
+	i = 0x0;
 // LINE 141:
 _T21:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(t);

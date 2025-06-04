@@ -93,7 +93,7 @@ int32_t TWKReadFile(char * pszTWKFile, int32_t bIsOnMessageRead) {
 	char szFullPath[260];
 
 // LINE 77:
-	__asm        mov    g_nNextTWKErrorSlot, 0;
+	g_nNextTWKErrorSlot = 0x0;
 // LINE 78:
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
@@ -219,9 +219,9 @@ void TWKGameInit() {
 	__asm        call   dword ptr ds:[0x6C37E4];
 	__asm        mov    g_uTWKMessageNum, eax;
 // LINE 119:
-	__asm        mov    g_nNextTWKQueueSlot, 0;
+	g_nNextTWKQueueSlot = 0x0;
 // LINE 120:
-	__asm        mov    g_nNextTWKErrorSlot, 0;
+	g_nNextTWKErrorSlot = 0x0;
 // LINE 121:
 }
 
@@ -291,8 +291,7 @@ _T38:
 	__asm        jmp    _Tc3;
 // LINE 179:
 _Tbd:
-	__asm        mov    eax, pszTWKFile;
-	__asm        mov    pszFile, eax;
+	pszFile = pszTWKFile;
 // LINE 184:
 _Tc3:
 	__asm        mov    eax, nCt;
@@ -493,7 +492,7 @@ void TWKGetToEOLN(char * pDest, char * pSource) {
 	int32_t nCt;
 
 // LINE 362:
-	__asm        mov    nCt, 0;
+	nCt = 0x0;
 // LINE 363:
 _T10:
 	__asm        mov    eax, pSource;

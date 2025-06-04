@@ -82,7 +82,7 @@ void S3CameraMove(struct Point3d *P) {
 	int32_t mat[4][4];
 
 // LINE 101:
-	__asm        mov    Velocity, 0;
+	Velocity = 0x0;
 // LINE 124:
 	__asm        cmp    G_camera_mode, 0;
 	__asm        je     _T23d;
@@ -127,7 +127,7 @@ void S3CameraMove(struct Point3d *P) {
 	__asm        cmp    alt, 0x500000;
 	__asm        jle    _T9c;
 // LINE 138:
-	__asm        mov    alt, 0x500000;
+	alt = 0x500000;
 // LINE 140:
 _T9c:
 	__asm        push   0;
@@ -147,7 +147,7 @@ _T9c:
 	__asm        cmp    altdiff, 0;
 	__asm        jge    _Td7;
 
-	__asm        mov    altdiff, 0;
+	altdiff = 0x0;
 // LINE 144:
 _Td7:
 	__asm        mov    eax, S_altdiff;
@@ -236,15 +236,9 @@ _T172:
 	__asm        jmp    _T238;
 // LINE 169:
 _T1f2:
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        mov    eax, [eax+0x18];
-	__asm        mov    Viewer.pos.x, eax;
+	Viewer.pos.x = G_uheli->dyheli->loc.x;
 // LINE 170:
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        mov    eax, [eax+0x20];
-	__asm        mov    Viewer.pos.z, eax;
+	Viewer.pos.z = G_uheli->dyheli->loc.z;
 // LINE 172:
 	__asm        push   0;
 	__asm        mov    eax, Viewer.pos.z;
@@ -355,7 +349,7 @@ _T2d2:
 	__asm        add    eax, viewerPos.y;
 	__asm        mov    Viewer.pos.y, eax;
 // LINE 240:
-	__asm        mov    CameraVector.y, 0;
+	CameraVector.y = 0x0;
 // LINE 243:
 	__asm        lea    eax, CameraVector.x;
 	__asm        push   eax;
@@ -390,8 +384,7 @@ _T3b4:
 	__asm        and    eax, 0xFFFFFA00;
 	__asm        mov    Velocity, eax;
 // LINE 255:
-	__asm        mov    eax, Velocity;
-	__asm        mov    Viewer.p.Vmag, eax;
+	Viewer.p.Vmag = Velocity;
 // LINE 257:
 	__asm        mov    eax, Velocity;
 	__asm        push   eax;
@@ -441,7 +434,7 @@ _T3b4:
 	__asm        cmp    altdiff, 0;
 	__asm        jge    _T452;
 
-	__asm        mov    altdiff, 0;
+	altdiff = 0x0;
 // LINE 274:
 _T452:
 	__asm        mov    eax, S_altdiff;
@@ -505,11 +498,11 @@ void SetIdealCameraPos() {
 	int32_t cameraDistance;
 
 // LINE 308:
-	__asm        mov    AccelAdjust, 0;
+	AccelAdjust = 0x0;
 // LINE 309:
-	__asm        mov    temp, 0;
+	temp = 0x0;
 // LINE 311:
-	__asm        mov    InClose, 0;
+	InClose = 0x0;
 // LINE 318:
 	__asm        cmp    G_camera_mode, 3;
 	__asm        jne    _T43;
@@ -542,7 +535,7 @@ _T6c:
 	__asm        neg    eax;
 	__asm        mov    cameraDistance, eax;
 // LINE 334:
-	__asm        mov    Acceleration, 0;
+	Acceleration = 0x0;
 // LINE 336:
 	__asm        cmp    Acceleration, 0;
 	__asm        je     _Tbe;
@@ -561,14 +554,14 @@ _T6c:
 	__asm        neg    eax;
 	__asm        mov    AccelAdjust, eax;
 // LINE 342:
-	__asm        mov    InClose, 1;
+	InClose = 0x1;
 // LINE 347:
 _Tbe:
 	__asm        mov    eax, G_uheli;
 	__asm        cmp    dword ptr [eax+0x1B0], 0;
 	__asm        jne    _Td7;
 // LINE 348:
-	__asm        mov    AccelAdjust, 0;
+	AccelAdjust = 0x0;
 // LINE 350:
 _Td7:
 	__asm        xor    eax, eax;
@@ -637,7 +630,7 @@ _T19f:
 	__asm        cmp    temp, 0;
 	__asm        jge    _T1b0;
 
-	__asm        mov    temp, 0;
+	temp = 0x0;
 // LINE 373:
 _T1b0:
 	__asm        mov    eax, G_uheli;
@@ -725,15 +718,11 @@ void CalcCameraAngles(struct Point3d *Vector) {
 	int32_t LengthXZ;
 
 // LINE 434:
-	__asm        mov    eax, Vector;
-	__asm        mov    eax, [eax];
-	__asm        mov    WorkVector.x, eax;
+	WorkVector.x = Vector->x;
 // LINE 435:
-	__asm        mov    WorkVector.y, 0;
+	WorkVector.y = 0x0;
 // LINE 436:
-	__asm        mov    eax, Vector;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    WorkVector.z, eax;
+	WorkVector.z = Vector->z;
 // LINE 438:
 	__asm        lea    eax, WorkVector.x;
 	__asm        push   eax;
@@ -748,15 +737,15 @@ void CalcCameraAngles(struct Point3d *Vector) {
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jl     _T53;
 // LINE 442:
-	__asm        mov    sineYaw, 0x10000;
+	sineYaw = 0x10000;
 // LINE 443:
 	__asm        jmp    _T5a;
 // LINE 444:
 _T53:
-	__asm        mov    sineYaw, 0xFFFF0000;
+	sineYaw = 0xffff0000;
 // LINE 445:
 _T5a:
-	__asm        mov    cosineYaw, 0;
+	cosineYaw = 0x0;
 // LINE 447:
 	__asm        jmp    _T8c;
 // LINE 449:
@@ -786,9 +775,7 @@ _T8c:
 	__asm        add    esp, 8;
 	__asm        mov    cameraHeading, eax;
 // LINE 465:
-	__asm        mov    eax, Vector;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    WorkVector.y, eax;
+	WorkVector.y = Vector->y;
 // LINE 466:
 	__asm        lea    eax, WorkVector.x;
 	__asm        push   eax;
@@ -803,15 +790,15 @@ _T8c:
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        jle    _Tdb;
 // LINE 471:
-	__asm        mov    sinePitch, 0xFFFF0000;
+	sinePitch = 0xffff0000;
 // LINE 472:
 	__asm        jmp    _Te2;
 // LINE 473:
 _Tdb:
-	__asm        mov    sinePitch, 0x10000;
+	sinePitch = 0x10000;
 // LINE 474:
 _Te2:
-	__asm        mov    cosinePitch, 0;
+	cosinePitch = 0x0;
 // LINE 476:
 	__asm        jmp    _T116;
 // LINE 478:
@@ -842,9 +829,9 @@ _T116:
 	__asm        add    esp, 8;
 	__asm        mov    cameraPitch, eax;
 // LINE 485:
-	__asm        mov    cosineRoll, 0x10000;
+	cosineRoll = 0x10000;
 // LINE 486:
-	__asm        mov    sineRoll, 0;
+	sineRoll = 0x0;
 // LINE 490:
 	__asm        mov    eax, sineRoll;
 	__asm        push   eax;
@@ -897,7 +884,7 @@ _T116:
 	__asm        add    ebx, eax;
 	__asm        mov    Viewer.matrix[0][2], ebx;
 // LINE 494:
-	__asm        mov    Viewer.matrix[0][3], 0;
+	Viewer.matrix[0][3] = 0x0;
 // LINE 497:
 	__asm        mov    eax, cosineRoll;
 	__asm        push   eax;
@@ -950,7 +937,7 @@ _T116:
 	__asm        add    ebx, eax;
 	__asm        mov    Viewer.matrix[1][2], ebx;
 // LINE 501:
-	__asm        mov    Viewer.matrix[1][3], 0;
+	Viewer.matrix[1][3] = 0x0;
 // LINE 503:
 	__asm        mov    eax, cosinePitch;
 	__asm        push   eax;
@@ -972,7 +959,7 @@ _T116:
 	__asm        add    esp, 8;
 	__asm        mov    Viewer.matrix[2][2], eax;
 // LINE 506:
-	__asm        mov    Viewer.matrix[2][3], 0;
+	Viewer.matrix[2][3] = 0x0;
 // LINE 510:
 	__asm        mov    Viewer.matrix[3][2], 0;
 	__asm        mov    eax, Viewer.matrix[3][2];
@@ -980,7 +967,7 @@ _T116:
 	__asm        mov    eax, Viewer.matrix[3][1];
 	__asm        mov    Viewer.matrix[3][0], eax;
 // LINE 511:
-	__asm        mov    Viewer.matrix[3][3], 0x10000;
+	Viewer.matrix[3][3] = 0x10000;
 // LINE 515:
 	__asm        cmp    G_camera_mode, 0;
 	__asm        je     _T2d7;
@@ -1093,8 +1080,7 @@ void S3AngleRotMat(int32_t *matrix[4], int32_t Yaw, int32_t Pitch, int32_t Roll)
 	__asm        mov    eax, matrix;
 	__asm        mov    [eax+8], ebx;
 // LINE 542:
-	__asm        mov    eax, matrix;
-	__asm        mov    dword ptr [eax+0xC], 0;
+	matrix[3] = 0x0;
 // LINE 545:
 	__asm        mov    eax, cosineRoll;
 	__asm        push   eax;
@@ -1150,8 +1136,7 @@ void S3AngleRotMat(int32_t *matrix[4], int32_t Yaw, int32_t Pitch, int32_t Roll)
 	__asm        mov    eax, matrix;
 	__asm        mov    [eax+0x18], ebx;
 // LINE 549:
-	__asm        mov    eax, matrix;
-	__asm        mov    dword ptr [eax+0x1C], 0;
+	matrix[7] = 0x0;
 // LINE 551:
 	__asm        mov    eax, cosinePitch;
 	__asm        push   eax;
@@ -1176,8 +1161,7 @@ void S3AngleRotMat(int32_t *matrix[4], int32_t Yaw, int32_t Pitch, int32_t Roll)
 	__asm        mov    ecx, matrix;
 	__asm        mov    [ecx+0x28], eax;
 // LINE 554:
-	__asm        mov    eax, matrix;
-	__asm        mov    dword ptr [eax+0x2C], 0;
+	matrix[11] = 0x0;
 // LINE 558:
 	__asm        mov    eax, matrix;
 	__asm        mov    dword ptr [eax+0x38], 0;
@@ -1190,8 +1174,7 @@ void S3AngleRotMat(int32_t *matrix[4], int32_t Yaw, int32_t Pitch, int32_t Roll)
 	__asm        mov    ecx, matrix;
 	__asm        mov    [ecx+0x30], eax;
 // LINE 559:
-	__asm        mov    eax, matrix;
-	__asm        mov    dword ptr [eax+0x3C], 0x10000;
+	matrix[15] = 0x10000;
 // LINE 561:
 }
 
@@ -1243,8 +1226,7 @@ _T5c:
 	__asm        mov    alt, eax;
 	__asm        jmp    _T8b;
 _T83:
-	__asm        mov    eax, G_camera_targ2objy;
-	__asm        mov    alt, eax;
+	alt = G_camera_targ2objy;
 // LINE 640:
 _T8b:
 	__asm        mov    eax, G_uheli;
@@ -1299,7 +1281,7 @@ _T114:
 	__asm        cmp    temp, 0;
 	__asm        jge    _T139;
 
-	__asm        mov    temp, 0;
+	temp = 0x0;
 // LINE 678:
 _T139:
 	__asm        mov    eax, G_uheli;
@@ -1339,11 +1321,11 @@ void S3CameraTweakInit() {
 	int32_t * pvals[10];
 
 // LINE 726:
-	__asm        mov    pvals[0], 0x5B4DF4;
+	pvals[0] = 0x5b4df4;
 // LINE 727:
-	__asm        mov    pvals[1], 0x5B4DF0;
+	pvals[1] = 0x5b4df0;
 // LINE 728:
-	__asm        mov    pvals[2], 0x5B4DF8;
+	pvals[2] = 0x5b4df8;
 // LINE 730:
 	__asm        push   0x5B4E04;
 	__asm        push   3;
@@ -1442,7 +1424,7 @@ void S3CameraCycleChase() {
 	__asm        cmp    S_curr_chase, 3;
 	__asm        jl     _T23;
 // LINE 784:
-	__asm        mov    S_curr_chase, 0;
+	S_curr_chase = 0x0;
 // LINE 785:
 _T23:
 }
@@ -1523,21 +1505,17 @@ int32_t S3CameraGetBldAlt(struct Point3d *loc) {
 	__asm        sub    eax, ecx;
 	__asm        mov    normy, eax;
 // LINE 834:
-	__asm        mov    objy, 0;
+	objy = 0x0;
 // LINE 835:
-	__asm        mov    maxobjy, 0;
+	maxobjy = 0x0;
 // LINE 836:
-	__asm        mov    eax, cptr;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    stobj, eax;
+	stobj = cptr->stptr;
 // LINE 837:
 _T9d:
 	__asm        cmp    stobj, 0;
 	__asm        je     _Tff;
 // LINE 839:
-	__asm        mov    eax, stobj;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    flags, eax;
+	flags = stobj->user1;
 // LINE 845:
 	__asm        push   0;
 	__asm        push   0;
@@ -1562,13 +1540,10 @@ _T9d:
 	__asm        cmp    maxobjy, eax;
 	__asm        jge    _Tf2;
 // LINE 848:
-	__asm        mov    eax, objy;
-	__asm        mov    maxobjy, eax;
+	maxobjy = objy;
 // LINE 850:
 _Tf2:
-	__asm        mov    eax, stobj;
-	__asm        mov    eax, [eax];
-	__asm        mov    stobj, eax;
+	stobj = stobj->next;
 // LINE 851:
 	__asm        jmp    _T9d;
 // LINE 853:

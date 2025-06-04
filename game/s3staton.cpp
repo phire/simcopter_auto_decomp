@@ -668,7 +668,7 @@ void S3StationInit() {
 	__asm        mov    gHospitals, eax;
 	__asm        jmp    _T41;
 _T37:
-	__asm        mov    gHospitals, 0;
+	gHospitals = 0x0;
 // LINE 29:
 _T41:
 	__asm        push   0x1C;
@@ -684,7 +684,7 @@ _T41:
 	__asm        mov    gPoliceStations, eax;
 	__asm        jmp    _T79;
 _T6f:
-	__asm        mov    gPoliceStations, 0;
+	gPoliceStations = 0x0;
 // LINE 30:
 _T79:
 	__asm        push   0x1C;
@@ -700,7 +700,7 @@ _T79:
 	__asm        mov    gFireStations, eax;
 	__asm        jmp    _Tb1;
 _Ta7:
-	__asm        mov    gFireStations, 0;
+	gFireStations = 0x0;
 // LINE 31:
 _Tb1:
 	__asm        jmp    near ptr 0x00539CB6;
@@ -807,9 +807,7 @@ int32_t Station::FindNearestRoadToStation(struct _GridCoordinates& loc) {
 	__asm        and    ecx, 3;
 	__asm        mov    direction, ecx;
 // LINE 82:
-	__asm        mov    eax, loc;
-	__asm        mov    ax, [eax];
-	__asm        mov    reinterpret_cast<uint16_t>(center.x), ax;
+	reinterpret_cast<uint16_t>(center.x) = reinterpret_cast<uint16_t>(loc.x);
 // LINE 85:
 	__asm        mov    eax, loc;
 	__asm        xor    ecx, ecx;
@@ -1171,8 +1169,7 @@ void Station::SortStationsByDistanceFromDestination(struct _GridCoordinates loc)
 	int32_t i;
 
 // LINE 132:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
+	this->stationHeapSize = 0x0;
 // LINE 134:
 	__asm        mov    i, 0;
 	__asm        jmp    _T25;
@@ -1290,8 +1287,7 @@ _T12e:
 	__asm        mov    station.cost, eax;
 // LINE 162:
 _T13a:
-	__asm        mov    eax, i;
-	__asm        mov    station.stationID, eax;
+	station.stationID = i;
 // LINE 163:
 	__asm        lea    eax, station.cost;
 	__asm        push   eax;
@@ -1313,8 +1309,7 @@ void Station::SortVehiclesByDistanceFromDestination(struct _GridCoordinates dest
 	struct _VehicleHeapStruct vehicle;
 
 // LINE 178:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
+	this->vehicleHeapSize = 0x0;
 // LINE 181:
 	__asm        mov    i, 0;
 	__asm        jmp    _T25;
@@ -1428,10 +1423,7 @@ _T113:
 	__asm        mov    vehicle.cost, eax;
 // LINE 215:
 _T11f:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, vehicleList;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    vehicle.pVehicle, eax;
+	vehicle.pVehicle = vehicleList->;
 // LINE 216:
 	__asm        lea    eax, vehicle.cost;
 	__asm        push   eax;
@@ -1649,7 +1641,7 @@ void Station::StationHeapRemove(struct _StationHeapStruct *pRemovedStruct) {
 	__asm        mov    tempStruct.cost, ecx;
 	__asm        mov    tempStruct.stationID, eax;
 // LINE 284:
-	__asm        mov    parent, 1;
+	parent = 0x1;
 // LINE 287:
 _T71:
 	__asm        mov    eax, this;
@@ -1726,8 +1718,7 @@ _Te3:
 	__asm        mov    [edx], eax;
 	__asm        mov    [edx+4], ecx;
 // LINE 306:
-	__asm        mov    eax, child;
-	__asm        mov    parent, eax;
+	parent = child;
 // LINE 307:
 	__asm        jmp    _T71;
 // LINE 310:
@@ -1898,7 +1889,7 @@ void Station::VehicleHeapRemove(struct _VehicleHeapStruct *pRemovedStruct) {
 	__asm        mov    ax, [eax+8];
 	__asm        mov    [ecx+8], ax;
 // LINE 350:
-	__asm        mov    parent, 1;
+	parent = 0x1;
 // LINE 353:
 _T8e:
 	__asm        mov    eax, this;
@@ -1991,8 +1982,7 @@ _T10c:
 	__asm        mov    ax, [eax+8];
 	__asm        mov    [ecx+8], ax;
 // LINE 372:
-	__asm        mov    eax, child;
-	__asm        mov    parent, eax;
+	parent = child;
 // LINE 373:
 	__asm        jmp    _T8e;
 // LINE 376:
@@ -2048,7 +2038,7 @@ short Station::GetNearestStation(struct _GridCoordinates gc, struct _GridCoordin
 	__asm        jmp    _T67;
 // LINE 396:
 _T58:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 397:
 	__asm        xor    ax, ax;
 	__asm        jmp    _T67;
@@ -2086,7 +2076,7 @@ short Station::GetNextNearest(struct _GridCoordinates *result) {
 	__asm        jmp    _T5b;
 // LINE 414:
 _T4c:
-	__asm        mov    result, 0;
+	result = 0x0;
 // LINE 415:
 	__asm        xor    ax, ax;
 	__asm        jmp    _T5b;
@@ -2166,7 +2156,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	__asm        mov    errorMsgSoundFullPath.reference, eax;
 	__asm        jmp    _T87;
 _T7d:
-	__asm        mov    errorMsgSoundFullPath.reference, 0;
+	errorMsgSoundFullPath.reference = 0x0;
 _T87:
 	__asm        mov    errorMsgSoundFullPath.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x0053AC29;
@@ -2187,11 +2177,9 @@ _T87:
 	__asm        add    esp, 4;
 // LINE 450:
 _Tca:
-	__asm        mov    al, reinterpret_cast<uint8_t>(mapx);
-	__asm        mov    destLoc.x, al;
+	destLoc.x = reinterpret_cast<uint8_t>(mapx);
 // LINE 451:
-	__asm        mov    al, reinterpret_cast<uint8_t>(mapy);
-	__asm        mov    destLoc.y, al;
+	destLoc.y = reinterpret_cast<uint8_t>(mapy);
 // LINE 454:
 	__asm        mov    eax, vehicleListLength;
 	__asm        push   eax;
@@ -2268,7 +2256,7 @@ _T1cc:
 	__asm        mov    [ebp-0x118], eax;
 	__asm        jmp    _T1f9;
 _T1ef:
-	__asm        mov    dword ptr [ebp-0x118], 0;
+	None = 0x0;
 _T1f9:
 	__asm        mov    dword ptr [ebp-0x11C], 0;
 	__asm        jmp    near ptr 0x0053AD9B;
@@ -2455,7 +2443,7 @@ _T49f:
 	__asm        mov    [ebp-0x124], eax;
 	__asm        jmp    _T4cc;
 _T4c2:
-	__asm        mov    dword ptr [ebp-0x124], 0;
+	None = 0x0;
 _T4cc:
 	__asm        mov    dword ptr [ebp-0x128], 0;
 	__asm        jmp    near ptr 0x0053B06E;
@@ -2631,9 +2619,7 @@ _T6b3:
 	__asm        mov    ecx, 0x5C3828;
 	__asm        call   RoadGraph::FindIntersections;
 // LINE 501:
-	__asm        mov    eax, startGoal1.pRGV;
-	__asm        mov    al, [eax];
-	__asm        mov    startVertex.x, al;
+	startVertex.x = startGoal1.pRGV->x;
 // LINE 502:
 	__asm        mov    eax, startGoal1.pRGV;
 	__asm        xor    ecx, ecx;
@@ -2647,9 +2633,7 @@ _T6b3:
 	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    startVertex.yindex, al;
 // LINE 504:
-	__asm        mov    eax, destGoal1.pRGV;
-	__asm        mov    al, [eax];
-	__asm        mov    destVert.x, al;
+	destVert.x = destGoal1.pRGV->x;
 // LINE 505:
 	__asm        mov    eax, destGoal1.pRGV;
 	__asm        xor    ecx, ecx;
@@ -2674,7 +2658,7 @@ _T6b3:
 	__asm        jmp    _T7d0;
 // LINE 511:
 _T7c9:
-	__asm        mov    pathFound, 1;
+	pathFound = 0x1;
 // LINE 516:
 _T7d0:
 	__asm        cmp    pathFound, 0;
@@ -2794,9 +2778,7 @@ _T873:
 	__asm        mov    eax, [eax+ecx];
 	__asm        mov    pRGV, eax;
 // LINE 546:
-	__asm        mov    eax, pRGV;
-	__asm        mov    al, [eax];
-	__asm        mov    startVertex.x, al;
+	startVertex.x = pRGV->x;
 // LINE 547:
 	__asm        mov    eax, pRGV;
 	__asm        xor    ecx, ecx;
@@ -2810,9 +2792,7 @@ _T873:
 	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    startVertex.yindex, al;
 // LINE 549:
-	__asm        mov    eax, destGoal1.pRGV;
-	__asm        mov    al, [eax];
-	__asm        mov    destVert.x, al;
+	destVert.x = destGoal1.pRGV->x;
 // LINE 550:
 	__asm        mov    eax, destGoal1.pRGV;
 	__asm        xor    ecx, ecx;
@@ -2838,7 +2818,7 @@ _T873:
 	__asm        jmp    _T9b3;
 // LINE 556:
 _T9ac:
-	__asm        mov    pathFound, 1;
+	pathFound = 0x1;
 // LINE 561:
 _T9b3:
 	__asm        mov    eax, stationHeapStruct.stationID;
@@ -2978,7 +2958,7 @@ _Tb5a:
 	__asm        mov    [ebp-0x1E0], eax;
 	__asm        jmp    _Tb87;
 _Tb7d:
-	__asm        mov    dword ptr [ebp-0x1E0], 0;
+	None = 0x0;
 _Tb87:
 	__asm        mov    dword ptr [ebp-0x1E4], 0;
 	__asm        jmp    near ptr 0x0053B729;
@@ -3162,10 +3142,9 @@ void Station::Station(unsigned char stationScurkID) {
 	struct _GridCoordinates workingLoc;
 
 // LINE 594:
-	__asm        mov    tempBuildMap, 0x5C3AB0;
+	tempBuildMap = 0x5c3ab0;
 // LINE 596:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
+	this->quantityOfStations = 0x0;
 // LINE 599:
 	__asm        mov    y, 0;
 	__asm        jmp    _T2c;
@@ -3316,7 +3295,7 @@ _T1a8:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx], eax;
 // LINE 644:
-	__asm        mov    stationIndex, 0;
+	stationIndex = 0x0;
 // LINE 645:
 	__asm        mov    y, 0;
 	__asm        jmp    _T1de;
@@ -3400,20 +3379,13 @@ _T254:
 	__asm        mov    ecx, pStation;
 	__asm        mov    [ecx+0x59], al;
 // LINE 675:
-	__asm        mov    al, workingLoc.x;
-	__asm        mov    ecx, pStation;
-	__asm        mov    [ecx+0x5A], al;
+	pStation->nearestRoadTile.x = workingLoc.x;
 // LINE 676:
-	__asm        mov    al, workingLoc.y;
-	__asm        mov    ecx, pStation;
-	__asm        mov    [ecx+0x5B], al;
+	pStation->nearestRoadTile.y = workingLoc.y;
 // LINE 677:
-	__asm        mov    eax, pStation;
-	__asm        mov    dword ptr [eax+0x5C], 0;
+	pStation->quanVehiclesDispatched = 0x0;
 // LINE 678:
-	__asm        mov    eax, direction;
-	__asm        mov    ecx, pStation;
-	__asm        mov    [ecx+0x54], eax;
+	pStation->direction = direction;
 // LINE 680:
 // Block end:
 _T2c2:

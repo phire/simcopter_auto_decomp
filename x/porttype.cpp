@@ -230,7 +230,7 @@ void CtoPstr(char * cstr) {
 	__asm        cmp    eax, 0xFF;
 	__asm        jle    _T2e;
 
-	__asm        mov    len, 0xFF;
+	len = 0xff;
 // LINE 55:
 _T2e:
 	__asm        movsx  eax, len;
@@ -350,10 +350,9 @@ void SetPortDC(void * __ptr32 dc) {
 // LINE 104:
 	__asm        call   CleanUpPort;
 // LINE 105:
-	__asm        mov    eax, dc;
-	__asm        mov    gPort.dc, eax;
+	gPort.dc = dc;
 // LINE 106:
-	__asm        mov    gPort.window, 0;
+	gPort.window = 0x0;
 // LINE 107:
 	__asm        jmp    near ptr 0x00566CCA;
 }
@@ -382,9 +381,9 @@ _T39:
 	__asm        call   dword ptr ds:[0x6C384C];
 // LINE 90:
 _T4b:
-	__asm        mov    gPort.window, 0;
+	gPort.window = 0x0;
 // LINE 91:
-	__asm        mov    gPort.dc, 0;
+	gPort.dc = 0x0;
 // LINE 92:
 	__asm        jmp    near ptr 0x00566D33;
 }
@@ -394,8 +393,7 @@ void SetPort(void * __ptr32 newHWND) {
 // LINE 112:
 	__asm        call   CleanUpPort;
 // LINE 113:
-	__asm        mov    eax, newHWND;
-	__asm        mov    gPort.window, eax;
+	gPort.window = newHWND;
 // LINE 114:
 	__asm        mov    eax, gPort.window;
 	__asm        push   eax;
@@ -555,7 +553,7 @@ _T32:
 	__asm        movsx  eax, word ptr [eax+6];
 	__asm        mov    lRect.right, eax;
 // LINE 157:
-	__asm        mov    bk, 0;
+	bk = 0x0;
 // LINE 158:
 	__asm        mov    eax, bk;
 	__asm        push   eax;
@@ -580,21 +578,13 @@ _T32:
 // FUNCTION: COPTER_D 0x00566f42
 void SetRect(struct Rect *rect, short left, short top, short right, short bottom) {
 // LINE 165:
-	__asm        mov    ax, left;
-	__asm        mov    ecx, rect;
-	__asm        mov    [ecx+2], ax;
+	rect->left = left;
 // LINE 166:
-	__asm        mov    ax, top;
-	__asm        mov    ecx, rect;
-	__asm        mov    [ecx], ax;
+	rect->top = top;
 // LINE 167:
-	__asm        mov    ax, right;
-	__asm        mov    ecx, rect;
-	__asm        mov    [ecx+6], ax;
+	rect->right = right;
 // LINE 168:
-	__asm        mov    ax, bottom;
-	__asm        mov    ecx, rect;
-	__asm        mov    [ecx+4], ax;
+	rect->bottom = bottom;
 // LINE 169:
 	__asm        jmp    near ptr 0x00566F78;
 }
@@ -609,18 +599,12 @@ void UnionRect(struct Rect *rect1, struct Rect *rect2, struct Rect *result) {
 	__asm        cmp    eax, ecx;
 	__asm        jle    _T2b;
 // LINE 174:
-	__asm        mov    eax, rect1;
-	__asm        mov    ax, [eax];
-	__asm        mov    ecx, result;
-	__asm        mov    [ecx], ax;
+	result->top = rect1->top;
 // LINE 175:
 	__asm        jmp    _T37;
 // LINE 176:
 _T2b:
-	__asm        mov    eax, rect2;
-	__asm        mov    ax, [eax];
-	__asm        mov    ecx, result;
-	__asm        mov    [ecx], ax;
+	result->top = rect2->top;
 // LINE 178:
 _T37:
 	__asm        mov    eax, rect2;
@@ -630,18 +614,12 @@ _T37:
 	__asm        cmp    eax, ecx;
 	__asm        jle    _T60;
 // LINE 179:
-	__asm        mov    eax, rect1;
-	__asm        mov    ax, [eax+2];
-	__asm        mov    ecx, result;
-	__asm        mov    [ecx+2], ax;
+	result->left = rect1->left;
 // LINE 180:
 	__asm        jmp    _T6e;
 // LINE 181:
 _T60:
-	__asm        mov    eax, rect2;
-	__asm        mov    ax, [eax+2];
-	__asm        mov    ecx, result;
-	__asm        mov    [ecx+2], ax;
+	result->left = rect2->left;
 // LINE 183:
 _T6e:
 	__asm        mov    eax, rect2;
@@ -651,18 +629,12 @@ _T6e:
 	__asm        cmp    eax, ecx;
 	__asm        jge    _T97;
 // LINE 184:
-	__asm        mov    eax, rect1;
-	__asm        mov    ax, [eax+6];
-	__asm        mov    ecx, result;
-	__asm        mov    [ecx+6], ax;
+	result->right = rect1->right;
 // LINE 185:
 	__asm        jmp    _Ta5;
 // LINE 186:
 _T97:
-	__asm        mov    eax, rect2;
-	__asm        mov    ax, [eax+6];
-	__asm        mov    ecx, result;
-	__asm        mov    [ecx+6], ax;
+	result->right = rect2->right;
 // LINE 188:
 _Ta5:
 	__asm        mov    eax, rect2;
@@ -672,18 +644,12 @@ _Ta5:
 	__asm        cmp    eax, ecx;
 	__asm        jge    _Tce;
 // LINE 189:
-	__asm        mov    eax, rect1;
-	__asm        mov    ax, [eax+4];
-	__asm        mov    ecx, result;
-	__asm        mov    [ecx+4], ax;
+	result->bottom = rect1->bottom;
 // LINE 190:
 	__asm        jmp    _Tdc;
 // LINE 191:
 _Tce:
-	__asm        mov    eax, rect2;
-	__asm        mov    ax, [eax+4];
-	__asm        mov    ecx, result;
-	__asm        mov    [ecx+4], ax;
+	result->bottom = rect2->bottom;
 // LINE 192:
 _Tdc:
 	__asm        jmp    near ptr 0x0056705E;

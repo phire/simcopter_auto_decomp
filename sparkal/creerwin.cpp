@@ -517,40 +517,30 @@ _T9a:
 	__asm        jmp    _T1cb;
 // LINE 74:
 _T1a1:
-	__asm        mov    eax, gCurrentCareerCityInfo.lCurrentCities[0];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xA8], eax;
+	this->lCities[0] = gCurrentCareerCityInfo.lCurrentCities[0];
 // LINE 75:
-	__asm        mov    eax, gCurrentCareerCityInfo.lCurrentCities[1];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xAC], eax;
+	this->lCities[1] = gCurrentCareerCityInfo.lCurrentCities[1];
 // LINE 76:
-	__asm        mov    eax, gCurrentCareerCityInfo.lCurrentCities[2];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xB0], eax;
+	this->lCities[2] = gCurrentCareerCityInfo.lCurrentCities[2];
 // LINE 80:
 _T1cb:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xB4], 3;
+	this->nCityCount = 0x3;
 // LINE 81:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB0], 0xFFFFFFFF;
 	__asm        jne    _T1f5;
 // LINE 82:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xB4], 2;
+	this->nCityCount = 0x2;
 // LINE 83:
 _T1f5:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xAC], 0xFFFFFFFF;
 	__asm        jne    _T212;
 // LINE 84:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xB4], 1;
+	this->nCityCount = 0x1;
 // LINE 86:
 _T212:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x74], 0xFFFFFFFF;
+	this->lCurrentCitySelection = 0xffffffff;
 // LINE 87:
 	__asm        jmp    near ptr 0x0047E11F;
 
@@ -560,8 +550,7 @@ _T212:
 // FUNCTION: COPTER_D 0x0047e129
 void CareerWindow::~CareerWindow() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x590E30;
+	this-><CareerWindow+0x00> = 0x590e30;
 // LINE 94:
 	__asm        mov    ecx, this;
 	__asm        call   CareerWindow::DestroyImage;
@@ -627,7 +616,7 @@ int32_t CareerWindow::Initialize() {
 	__asm        mov    sText.reference, eax;
 	__asm        jmp    _T85;
 _T7e:
-	__asm        mov    sText.reference, 0;
+	sText.reference = 0x0;
 _T85:
 	__asm        mov    sText.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x0047E22F;
@@ -672,7 +661,7 @@ _T85:
 	__asm        mov    tempButtonWindow1, eax;
 	__asm        jmp    _T140;
 _T136:
-	__asm        mov    tempButtonWindow1, 0;
+	tempButtonWindow1 = 0x0;
 // LINE 116:
 _T140:
 	__asm        push   0;
@@ -788,7 +777,7 @@ _T291:
 	__asm        mov    [ebp-0x12B0], eax;
 	__asm        jmp    _T2dc;
 _T2d2:
-	__asm        mov    dword ptr [ebp-0x12B0], 0;
+	None = 0x0;
 _T2dc:
 	__asm        mov    eax, sText.reference;
 	__asm        dec    dword ptr [eax+0xC];
@@ -891,7 +880,7 @@ _T390:
 	__asm        mov    tempButtonWindow2, eax;
 	__asm        jmp    _T465;
 _T45b:
-	__asm        mov    tempButtonWindow2, 0;
+	tempButtonWindow2 = 0x0;
 // LINE 125:
 _T465:
 	__asm        push   0;
@@ -1007,7 +996,7 @@ _T5b6:
 	__asm        mov    [ebp-0x22D0], eax;
 	__asm        jmp    _T601;
 _T5f7:
-	__asm        mov    dword ptr [ebp-0x22D0], 0;
+	None = 0x0;
 _T601:
 	__asm        mov    eax, sText.reference;
 	__asm        dec    dword ptr [eax+0xC];
@@ -1116,7 +1105,7 @@ _T6fe:
 	__asm        mov    tempButtonWindow1, eax;
 	__asm        jmp    _T78f;
 _T785:
-	__asm        mov    tempButtonWindow1, 0;
+	tempButtonWindow1 = 0x0;
 // LINE 135:
 _T78f:
 	__asm        push   0;
@@ -1232,7 +1221,7 @@ _T8e0:
 	__asm        mov    [ebp-0x32F0], eax;
 	__asm        jmp    _T92b;
 _T921:
-	__asm        mov    dword ptr [ebp-0x32F0], 0;
+	None = 0x0;
 _T92b:
 	__asm        lea    ecx, sText.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
@@ -1408,7 +1397,7 @@ _Tb46:
 	__asm        mov    [ebp-0x4308], eax;
 	__asm        jmp    _Tb91;
 _Tb87:
-	__asm        mov    dword ptr [ebp-0x4308], 0;
+	None = 0x0;
 _Tb91:
 	__asm        lea    ecx, sText.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
@@ -1474,8 +1463,7 @@ _Tc01:
 	__asm        mov    [ecx+0x834], eax;
 	__asm        jmp    _Tc97;
 _Tc87:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x834], 0;
+	this-><CareerWindow+0x834> = 0x0;
 // LINE 149:
 _Tc97:
 	__asm        mov    eax, this;
@@ -1627,8 +1615,7 @@ _Te4d:
 	__asm        mov    [ecx+0x838], eax;
 	__asm        jmp    _Tee3;
 _Ted3:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x838], 0;
+	this-><CareerWindow+0x838> = 0x0;
 // LINE 160:
 _Tee3:
 	__asm        mov    eax, this;
@@ -1700,8 +1687,7 @@ _Tee3:
 	__asm        add    ecx, 0xBC;
 	__asm        call   dword ptr [eax+0x10];
 // LINE 171:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC4], 1;
+	this->mySmackerBackBuffers[0].bBlankAtEndOfVideo = 0x1;
 // LINE 174:
 	__asm        lea    eax, szFullCityVideoFileName[0];
 	__asm        push   eax;
@@ -1733,8 +1719,7 @@ _Tee3:
 	__asm        add    ecx, 0x338;
 	__asm        call   dword ptr [eax+0x10];
 // LINE 178:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x340], 1;
+	this->mySmackerBackBuffers[1].nBlankColorIndex = 0x1;
 // LINE 181:
 	__asm        lea    eax, szFullCityVideoFileName[0];
 	__asm        push   eax;
@@ -1766,8 +1751,7 @@ _Tee3:
 	__asm        add    ecx, 0x5B4;
 	__asm        call   dword ptr [eax+0x10];
 // LINE 185:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x5BC], 1;
+	reinterpret_cast<uint32_t>(this->mySmackerBackBuffers[2].colorWindowFill.Blue) = 0x1;
 // LINE 187:
 	__asm        push   1;
 	__asm        mov    eax, this;
@@ -1867,7 +1851,7 @@ int32_t CareerWindow::CreateImage(int32_t __formal) {
 	__asm        mov    sImageFile.reference, eax;
 	__asm        jmp    _T63;
 _T5c:
-	__asm        mov    sImageFile.reference, 0;
+	sImageFile.reference = 0x0;
 _T63:
 	__asm        mov    sImageFile.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x0047F400;
@@ -1895,7 +1879,7 @@ _T63:
 	__asm        mov    sImagePath.reference, eax;
 	__asm        jmp    _Tc6;
 _Tbf:
-	__asm        mov    sImagePath.reference, 0;
+	sImagePath.reference = 0x0;
 _Tc6:
 	__asm        mov    sImagePath.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x0047F463;
@@ -1908,8 +1892,7 @@ _Tc6:
 	__asm        cmp    dword ptr [eax+0x83C], 0;
 	__asm        jne    _T255;
 
-	__asm        mov    eax, SZ_CAREER_WINDOW_SELECTION_FILE_NAME;
-	__asm        mov    [ebp-0x1C], eax;
+	None = SZ_CAREER_WINDOW_SELECTION_FILE_NAME;
 // LINE 207:
 	__asm        jmp    near ptr 0x0047F48A;
 
@@ -2030,8 +2013,7 @@ _T1f5:
 	__asm        mov    [ecx+0x83C], eax;
 	__asm        jmp    _T255;
 _T248:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x83C], 0;
+	this-><CareerWindow+0x83c> = 0x0;
 // LINE 211:
 _T255:
 	__asm        mov    dword ptr [ebp-0x18], 1;
@@ -2184,8 +2166,7 @@ void CareerWindow::DestroyImage() {
 	__asm        jmp    _T56;
 // LINE 222:
 _T56:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x83C], 0;
+	this-><CareerWindow+0x83c> = 0x0;
 // LINE 224:
 _T63:
 	__asm        mov    ecx, this;
@@ -2734,9 +2715,7 @@ _T2f:
 	__asm        cmp    [eax+0x74], ecx;
 	__asm        je     _T126;
 // LINE 363:
-	__asm        mov    eax, lNewCitySelection;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x74], eax;
+	this->lCurrentCitySelection = lNewCitySelection;
 // LINE 364:
 	__asm        jmp    near ptr 0x0047FE3E;
 
@@ -2923,8 +2902,7 @@ _T4f:
 _T72:
 	__asm        jmp    near ptr 0x004800A9;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x590EF4;
+	this-><vftable> = 0x590ef4;
 // LINE 402:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;

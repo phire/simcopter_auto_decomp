@@ -293,56 +293,44 @@ void ScreenBuffer::ScreenBuffer() {
 	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        jmp    near ptr 0x0049E469;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5915B0;
+	this-><ScreenBuffer+0x00> = 0x5915b0;
 // LINE 25:
 	__asm        jmp    near ptr 0x0049E477;
 // LINE 26:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x134], 0;
+	this->pWindow = 0x0;
 // LINE 27:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0x280;
+	this->mWidth = 0x280;
 // LINE 28:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0x1E0;
+	this->mHeight = 0x1e0;
 // LINE 29:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0x14C], 2;
+	this->nBackBuffers = 0x2;
 // LINE 30:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14E], 0;
+	this->nCurrentModeType = 0x0;
 // LINE 31:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x152], 0;
+	this->bUsingFlipping = 0x0;
 // LINE 33:
-	__asm        mov    rectWindowTemp.left, 0;
+	rectWindowTemp.left = 0x0;
 // LINE 34:
-	__asm        mov    rectWindowTemp.top, 0;
+	rectWindowTemp.top = 0x0;
 // LINE 35:
-	__asm        mov    rectWindowTemp.right, 0;
+	rectWindowTemp.right = 0x0;
 // LINE 36:
-	__asm        mov    rectWindowTemp.bottom, 0;
+	rectWindowTemp.bottom = 0x0;
 // LINE 41:
 	__asm        lea    eax, rectWindowTemp.left;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   ScreenBuffer::SetWindowRect;
 // LINE 44:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x156], 0;
+	this->lpClipper = 0x0;
 // LINE 45:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x15A], 0;
+	this->rectDirectDrawBackBuffer.left = 0x0;
 // LINE 46:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x15E], 0;
+	this->rectDirectDrawBackBuffer.top = 0x0;
 // LINE 47:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x162], 0;
+	this->rectDirectDrawBackBuffer.right = 0x0;
 // LINE 48:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x166], 0;
+	this->rectDirectDrawBackBuffer.bottom = 0x0;
 // LINE 51:
 	__asm        jmp    near ptr 0x0049E52C;
 
@@ -358,60 +346,43 @@ void ScreenBuffer::ScreenBuffer(class CSparkalWindow *pNewWindow, long nNewWidth
 	__asm        call   CBackBuffer::CBackBuffer;
 	__asm        jmp    near ptr 0x0049E54D;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5915B0;
+	this-><ScreenBuffer+0x00> = 0x5915b0;
 // LINE 63:
 	__asm        jmp    near ptr 0x0049E55B;
 // LINE 65:
-	__asm        mov    eax, pNewWindow;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x134], eax;
+	this->pWindow = pNewWindow;
 // LINE 66:
-	__asm        mov    eax, nNewWidth;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+8], eax;
+	this->mWidth = nNewWidth;
 // LINE 67:
-	__asm        mov    eax, nNewHeight;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], eax;
+	this->mHeight = nNewHeight;
 // LINE 68:
 	__asm        mov    eax, nNewBackBuffers;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x14C], ax;
 // LINE 69:
-	__asm        mov    eax, nNewCurrentModeType;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x14E], eax;
+	this->nCurrentModeType = nNewCurrentModeType;
 // LINE 70:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x156], 0;
+	this->lpClipper = 0x0;
 // LINE 71:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x2C], 1;
+	this->bSurfacePrimary = 0x1;
 // LINE 72:
-	__asm        mov    rectWindowTemp.left, 0;
+	rectWindowTemp.left = 0x0;
 // LINE 73:
-	__asm        mov    rectWindowTemp.top, 0;
+	rectWindowTemp.top = 0x0;
 // LINE 74:
-	__asm        mov    eax, nNewWidth;
-	__asm        mov    rectWindowTemp.right, eax;
+	rectWindowTemp.right = nNewWidth;
 // LINE 75:
-	__asm        mov    eax, nNewHeight;
-	__asm        mov    rectWindowTemp.bottom, eax;
+	rectWindowTemp.bottom = nNewHeight;
 // LINE 76:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x138], 1;
+	this->bOK = 0x1;
 // LINE 77:
-	__asm        mov    eax, bNewUsingFlipping;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x152], eax;
+	this->bUsingFlipping = bNewUsingFlipping;
 // LINE 83:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14E], 1;
 	__asm        jne    _Tc5;
 // LINE 84:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x152], 0;
+	this->bUsingFlipping = 0x0;
 // LINE 89:
 _Tc5:
 	__asm        lea    eax, rectWindowTemp.left;
@@ -419,22 +390,15 @@ _Tc5:
 	__asm        mov    ecx, this;
 	__asm        call   ScreenBuffer::SetWindowRect;
 // LINE 92:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x156], 0;
+	this->lpClipper = 0x0;
 // LINE 93:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x15A], 0;
+	this->rectDirectDrawBackBuffer.left = 0x0;
 // LINE 94:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x15E], 0;
+	this->rectDirectDrawBackBuffer.top = 0x0;
 // LINE 95:
-	__asm        mov    eax, nNewWidth;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x162], eax;
+	this->rectDirectDrawBackBuffer.right = nNewWidth;
 // LINE 96:
-	__asm        mov    eax, nNewHeight;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x166], eax;
+	this->rectDirectDrawBackBuffer.bottom = nNewHeight;
 // LINE 100:
 	__asm        mov    ecx, this;
 	__asm        call   ScreenBuffer::CreateSurfaces;
@@ -452,8 +416,7 @@ _Tc5:
 // FUNCTION: COPTER_D 0x0049e667
 void ScreenBuffer::~ScreenBuffer() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5915B0;
+	this-><ScreenBuffer+0x00> = 0x5915b0;
 // LINE 112:
 	__asm        mov    ecx, this;
 	__asm        call   ScreenBuffer::DeleteSurfaces;
@@ -472,11 +435,9 @@ int32_t ScreenBuffer::CreateSurfaces() {
 	long hResult;
 
 // LINE 131:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x4C], 0;
+	this->mpFrontSurface = 0x0;
 // LINE 132:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x50], 0;
+	this->mpBackSurface = 0x0;
 // LINE 133:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14E], 0;
@@ -496,14 +457,11 @@ int32_t ScreenBuffer::CreateSurfaces() {
 	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 137:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x58], 0x6C;
+	this->mDDdesc.dwSize = 0x6c;
 // LINE 138:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x5C], 0x20;
+	this->mDDdesc.dwFlags = 0x20;
 // LINE 141:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC0], 0x218;
+	this->mDDdesc.ddsCaps.dwCaps = 0x218;
 // LINE 142:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x14C];
@@ -527,8 +485,7 @@ int32_t ScreenBuffer::CreateSurfaces() {
 	__asm        cmp    hResult, 0;
 	__asm        je     _Tdd;
 // LINE 146:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x138], 0;
+	this->bOK = 0x0;
 // LINE 147:
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0xC], eax;
@@ -550,7 +507,7 @@ _Tdd:
 	__asm        imul   eax, [ecx+0xC];
 	__asm        add    IFlatImage::lTotalMemoryUsage, eax;
 // LINE 159:
-	__asm        mov    ddsBackBufferCaps.dwCaps, 4;
+	ddsBackBufferCaps.dwCaps = 0x4;
 // LINE 160:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x50;
@@ -593,14 +550,11 @@ _T150:
 	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 170:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x58], 0x6C;
+	this->mDDdesc.dwSize = 0x6c;
 // LINE 171:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x5C], 0;
+	this->mDDdesc.dwFlags = 0x0;
 // LINE 172:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC0], 0x200;
+	this->mDDdesc.ddsCaps.dwCaps = 0x200;
 // LINE 173:
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -619,11 +573,9 @@ _T150:
 	__asm        cmp    hResult, 0;
 	__asm        je     _T1e7;
 // LINE 175:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x138], 0;
+	this->bOK = 0x0;
 // LINE 176:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x4C], 0;
+	this->mpFrontSurface = 0x0;
 // LINE 177:
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x14], eax;
@@ -645,24 +597,15 @@ _T1e7:
 	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 183:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x58], 0x6C;
+	this->mDDdesc.dwSize = 0x6c;
 // LINE 184:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x5C], 6;
+	this->mDDdesc.dwFlags = 0x6;
 // LINE 185:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC0], 0x840;
+	this->mDDdesc.ddsCaps.dwCaps = 0x840;
 // LINE 186:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x64], eax;
+	this->mDDdesc.dwWidth = this->mWidth;
 // LINE 187:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x60], eax;
+	this->mDDdesc.dwHeight = this->mHeight;
 // LINE 188:
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -681,11 +624,9 @@ _T1e7:
 	__asm        cmp    hResult, 0;
 	__asm        je     _T2b2;
 // LINE 190:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x138], 0;
+	this->bOK = 0x0;
 // LINE 191:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x50], 0;
+	this->mpBackSurface = 0x0;
 // LINE 192:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4C];
@@ -695,8 +636,7 @@ _T1e7:
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+8];
 // LINE 193:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x4C], 0;
+	this->mpFrontSurface = 0x0;
 // LINE 194:
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x18], eax;
@@ -746,8 +686,7 @@ _T317:
 	__asm        cmp    hResult, 0;
 	__asm        je     _T34d;
 // LINE 215:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x138], 0;
+	this->bOK = 0x0;
 // LINE 216:
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x1C], eax;
@@ -827,15 +766,13 @@ int32_t ScreenBuffer::DeleteSurfaces() {
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+8];
 // LINE 242:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x4C], 0;
+	this->mpFrontSurface = 0x0;
 // LINE 243:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x152], 0;
 	__asm        je     _T4f;
 // LINE 244:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x50], 0;
+	this->mpBackSurface = 0x0;
 // LINE 248:
 _T4f:
 	__asm        xor    eax, eax;
@@ -860,8 +797,7 @@ _T68:
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+8];
 // LINE 259:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x50], 0;
+	this->mpBackSurface = 0x0;
 // LINE 263:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, this;
@@ -885,8 +821,7 @@ _Taa:
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+8];
 // LINE 269:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x156], 0;
+	this->lpClipper = 0x0;
 // LINE 272:
 _Tdf:
 	__asm        mov    eax, 1;
@@ -942,10 +877,9 @@ int32_t ScreenBuffer::ClearSurfaces(int32_t nClearPaletteIndex) {
 	__asm        jmp    _T2b6;
 // LINE 294:
 _T8a:
-	__asm        mov    ddbltfx.dwSize, 0x64;
+	ddbltfx.dwSize = 0x64;
 // LINE 295:
-	__asm        mov    eax, nClearPaletteIndex;
-	__asm        mov    ddbltfx.dwFillColor, eax;
+	ddbltfx.dwFillColor = nClearPaletteIndex;
 // LINE 300:
 _T97:
 	__asm        lea    eax, ddbltfx.dwSize;
@@ -978,10 +912,9 @@ _Tcd:
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x2C];
 // LINE 302:
-	__asm        mov    ddbltfx.dwSize, 0x64;
+	ddbltfx.dwSize = 0x64;
 // LINE 303:
-	__asm        mov    eax, nClearPaletteIndex;
-	__asm        mov    ddbltfx.dwFillColor, eax;
+	ddbltfx.dwFillColor = nClearPaletteIndex;
 // LINE 308:
 _Tf0:
 	__asm        lea    eax, ddbltfx.dwSize;
@@ -1075,10 +1008,9 @@ _T186:
 	__asm        jmp    _T2b6;
 // LINE 327:
 _T1e1:
-	__asm        mov    ddbltfx.dwSize, 0x64;
+	ddbltfx.dwSize = 0x64;
 // LINE 328:
-	__asm        mov    eax, nClearPaletteIndex;
-	__asm        mov    ddbltfx.dwFillColor, eax;
+	ddbltfx.dwFillColor = nClearPaletteIndex;
 // LINE 333:
 _T1ee:
 	__asm        lea    eax, ddbltfx.dwSize;
@@ -1555,7 +1487,7 @@ _T16e:
 	__asm        cmp    lpPalette, 0;
 	__asm        je     _T1cc;
 // LINE 565:
-	__asm        mov    dword ptr [ebp-4], 0;
+	None = 0x0;
 // LINE 566:
 	__asm        mov    eax, lpPalette;
 	__asm        push   eax;
@@ -1583,8 +1515,7 @@ _T1bb:
 	__asm        mov    lpPalette, 0;
 // LINE 573:
 _T1cc:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x54], 0;
+	this->mpPalette = 0x0;
 // LINE 577:
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -1603,11 +1534,9 @@ _T1cc:
 	__asm        cmp    hResult, 0;
 	__asm        jne    _T2a5;
 // LINE 579:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x54];
-	__asm        mov    lpPalette, eax;
+	lpPalette = this->mpPalette;
 // LINE 580:
-	__asm        mov    dword ptr [ebp-4], 2;
+	None = 0x2;
 // LINE 581:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -1653,8 +1582,7 @@ _T2a0:
 	__asm        jmp    _T2d0;
 // LINE 597:
 _T2a5:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x54], 0;
+	this->mpPalette = 0x0;
 // LINE 598:
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x428], eax;
@@ -1712,10 +1640,9 @@ void ScreenBuffer::FreePalette() {
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+8];
 // LINE 622:
-	__asm        mov    lpPalette, 0;
+	lpPalette = 0x0;
 // LINE 623:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x54], 0;
+	this->mpPalette = 0x0;
 // LINE 626:
 _T3d:
 	__asm        jmp    near ptr 0x0049F46D;
@@ -1727,41 +1654,29 @@ unsigned long ScreenBuffer::FillRect(long nPaletteIndex, struct SparkalRect *rec
 	struct tagRECT rectFillTemp;
 
 // LINE 654:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x58], 0x6C;
+	this->mDDdesc.dwSize = 0x6c;
 // LINE 655:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC4], 0x64;
+	this->mDDBltFx.dwSize = 0x64;
 // LINE 656:
-	__asm        mov    eax, nPaletteIndex;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x114], eax;
+	this->mDDBltFx.dwFillColor = nPaletteIndex;
 // LINE 658:
 	__asm        cmp    rectFill, 0;
 	__asm        je     _T61;
 // LINE 659:
-	__asm        mov    eax, rectFill;
-	__asm        mov    eax, [eax];
-	__asm        mov    rectFillTemp.left, eax;
+	rectFillTemp.left = rectFill->left;
 // LINE 660:
-	__asm        mov    eax, rectFill;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    rectFillTemp.top, eax;
+	rectFillTemp.top = rectFill->top;
 // LINE 661:
-	__asm        mov    eax, rectFill;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    rectFillTemp.right, eax;
+	rectFillTemp.right = rectFill->right;
 // LINE 662:
-	__asm        mov    eax, rectFill;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    rectFillTemp.bottom, eax;
+	rectFillTemp.bottom = rectFill->bottom;
 // LINE 664:
 	__asm        jmp    _T8d;
 // LINE 665:
 _T61:
-	__asm        mov    rectFillTemp.left, 0;
+	rectFillTemp.left = 0x0;
 // LINE 666:
-	__asm        mov    rectFillTemp.top, 0;
+	rectFillTemp.top = 0x0;
 // LINE 667:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x24];
@@ -1939,25 +1854,13 @@ void ScreenBuffer::SetWindowRect(struct SparkalRect *rectWindow) {
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ecx+0xC], eax;
 // LINE 727:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x13C];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x1C], eax;
+	this->rectDirectDrawBuffer.left = this->rectBuffer.left;
 // LINE 728:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x140];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x20], eax;
+	this->rectDirectDrawBuffer.top = this->rectBuffer.top;
 // LINE 729:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x144];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x24], eax;
+	this->rectDirectDrawBuffer.right = this->rectBuffer.right;
 // LINE 730:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x148];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x28], eax;
+	this->rectDirectDrawBuffer.bottom = this->rectBuffer.bottom;
 // LINE 732:
 	__asm        jmp    near ptr 0x0049F6FF;
 }

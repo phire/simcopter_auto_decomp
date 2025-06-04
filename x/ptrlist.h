@@ -5,8 +5,7 @@ void PtrList<cBBase>::Remove(class cBBase *data) {
 	struct PtrList<cBBase>::PtrNode *del;
 
 // LINE 43:
-	__asm        mov    eax, this;
-	__asm        mov    srch, eax;
+	srch = this;
 // LINE 44:
 _T12:
 	__asm        mov    eax, srch;
@@ -19,15 +18,9 @@ _T12:
 	__asm        cmp    [eax], ecx;
 	__asm        jne    _T8f;
 // LINE 46:
-	__asm        mov    eax, srch;
-	__asm        mov    eax, [eax];
-	__asm        mov    del, eax;
+	del = srch->;
 // LINE 47:
-	__asm        mov    eax, srch;
-	__asm        mov    eax, [eax];
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, srch;
-	__asm        mov    [ecx], eax;
+	srch-> = srch->->next;
 // LINE 48:
 	__asm        mov    eax, del;
 	__asm        mov    [ebp-0xC], eax;
@@ -84,8 +77,7 @@ void PtrList<cCopterAnim>::Iter::Reset() {
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    _T34;
 _T2a:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
+	this->fCur = 0x0;
 _T34:
 	__asm        jmp    near ptr 0x0055E829;
 }
@@ -247,8 +239,7 @@ void PtrList<cCopterBody>::Iter::Reset() {
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    _T34;
 _T2a:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
+	this->fCur = 0x0;
 _T34:
 	__asm        jmp    near ptr 0x0055FDC9;
 }

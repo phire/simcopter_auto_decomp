@@ -1183,14 +1183,9 @@ _T55:
 // FUNCTION: COPTER_D 0x004acbea
 void BoxWindow::SetColors(struct SparkalColor& colorNewOutline, int32_t nNewPaletteIndexFill) {
 // LINE 64:
-	__asm        mov    eax, colorNewOutline;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x7C], eax;
+	reinterpret_cast<uint32_t>(this->colorOutline.Blue) = reinterpret_cast<uint32_t>(colorNewOutline.Blue);
 // LINE 65:
-	__asm        mov    eax, nNewPaletteIndexFill;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x80], eax;
+	this->nPaletteIndexFill = nNewPaletteIndexFill;
 // LINE 66:
 	__asm        jmp    near ptr 0x004ACC12;
 }
@@ -1198,13 +1193,9 @@ void BoxWindow::SetColors(struct SparkalColor& colorNewOutline, int32_t nNewPale
 // FUNCTION: COPTER_D 0x004acc19
 void BoxWindow::SetOutlineAndFillDrawing(int32_t bNewDrawOutline, int32_t bNewDrawFill) {
 // LINE 73:
-	__asm        mov    eax, bNewDrawOutline;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x74], eax;
+	this->bDrawOutline = bNewDrawOutline;
 // LINE 74:
-	__asm        mov    eax, bNewDrawFill;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x78], eax;
+	this->bDrawFill = bNewDrawFill;
 // LINE 75:
 	__asm        jmp    near ptr 0x004ACC3C;
 }
@@ -1222,8 +1213,7 @@ void TextWindow::TextWindow() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591A90;
 // LINE 96:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x74], 0;
+	this->bDrawOpaqueBackground = 0x0;
 // LINE 99:
 	__asm        mov    al, reinterpret_cast<uint8_t>(GraphicWindow::colorConstants.nPaletteIndexBlack);
 	__asm        mov    ecx, this;
@@ -1237,15 +1227,11 @@ void TextWindow::TextWindow() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x7A], al;
 // LINE 100:
-	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexWhite;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x7C], eax;
+	this->nBackgroundPaletteIndex = GraphicWindow::colorConstants.nPaletteIndexWhite;
 // LINE 101:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x80], 0;
+	this->nWindowTitleTextID = 0x0;
 // LINE 102:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xA0], 0;
+	this->nTextDrawStyle = 0x0;
 // LINE 103:
 	__asm        mov    ecx, this;
 	__asm        mov    eax, this;
@@ -1284,8 +1270,7 @@ void TextWindow::TextWindow(class MRect& rectNewWindow, int32_t nNewID, int32_t 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591A90;
 // LINE 114:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x74], 0;
+	this->bDrawOpaqueBackground = 0x0;
 // LINE 117:
 	__asm        mov    eax, this;
 	__asm        mov    byte ptr [eax+0x78], 0;
@@ -1298,12 +1283,9 @@ void TextWindow::TextWindow(class MRect& rectNewWindow, int32_t nNewID, int32_t 
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x7A], al;
 // LINE 118:
-	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexWhite;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x7C], eax;
+	this->nBackgroundPaletteIndex = GraphicWindow::colorConstants.nPaletteIndexWhite;
 // LINE 119:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xA0], 0;
+	this->nTextDrawStyle = 0x0;
 // LINE 120:
 	__asm        mov    ecx, this;
 	__asm        mov    eax, this;
@@ -1342,8 +1324,7 @@ void TextWindow::TextWindow(class MRect& rectNewWindow, int32_t nNewID, const cl
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591A90;
 // LINE 132:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x74], 0;
+	this->bDrawOpaqueBackground = 0x0;
 // LINE 135:
 	__asm        mov    eax, this;
 	__asm        mov    byte ptr [eax+0x78], 0;
@@ -1356,15 +1337,11 @@ void TextWindow::TextWindow(class MRect& rectNewWindow, int32_t nNewID, const cl
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x7A], al;
 // LINE 136:
-	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexWhite;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x7C], eax;
+	this->nBackgroundPaletteIndex = GraphicWindow::colorConstants.nPaletteIndexWhite;
 // LINE 137:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x80], 0;
+	this->nWindowTitleTextID = 0x0;
 // LINE 138:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xA0], 0;
+	this->nTextDrawStyle = 0x0;
 // LINE 139:
 	__asm        mov    eax, this;
 	__asm        add    eax, 8;
@@ -1514,8 +1491,7 @@ _T22d:
 	__asm        mov    [ecx+0xC], eax;
 	__asm        jmp    _T254;
 _T24a:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
+	this-><TextWindow+0x0c> = 0x0;
 _T254:
 	__asm        jmp    near ptr 0x004ACFFB;
 // LINE 140:
@@ -1626,7 +1602,7 @@ _T12b:
 	__asm        mov    [ebp-0x100C], eax;
 	__asm        jmp    _T176;
 _T16c:
-	__asm        mov    dword ptr [ebp-0x100C], 0;
+	None = 0x0;
 _T176:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
@@ -1778,7 +1754,7 @@ _T36a:
 	__asm        mov    [ebp-0x1028], eax;
 	__asm        jmp    _T3b1;
 _T3a7:
-	__asm        mov    dword ptr [ebp-0x1028], 0;
+	None = 0x0;
 _T3b1:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
@@ -1803,9 +1779,7 @@ _T3b1:
 _T40a:
 	__asm        jmp    near ptr 0x004AD42D;
 
-	__asm        mov    eax, [ebp-0x1028];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], eax;
+	this-><TextWindow+0x0c> = None;
 _T41e:
 	__asm        cmp    dword ptr [ebp-0x1044], 0;
 	__asm        je     _T472;
@@ -1955,7 +1929,7 @@ _T631:
 	__asm        mov    [ebp-0x1048], eax;
 	__asm        jmp    _T65e;
 _T654:
-	__asm        mov    dword ptr [ebp-0x1048], 0;
+	None = 0x0;
 _T65e:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
@@ -2028,9 +2002,7 @@ _T74d:
 // FUNCTION: COPTER_D 0x004ad775
 void TextWindow::SetWindowTitle(int32_t nNewWindowTitleTextID) {
 // LINE 160:
-	__asm        mov    eax, nNewWindowTitleTextID;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x80], eax;
+	this->nWindowTitleTextID = nNewWindowTitleTextID;
 // LINE 161:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -2198,8 +2170,7 @@ _T1a7:
 	__asm        mov    [ecx+0xC], eax;
 	__asm        jmp    _T1ce;
 _T1c4:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
+	this-><TextWindow+0x0c> = 0x0;
 _T1ce:
 	__asm        jmp    near ptr 0x004AD989;
 // LINE 170:
@@ -2396,9 +2367,7 @@ _T156:
 // FUNCTION: COPTER_D 0x004adb83
 void TextWindow::SetBackgroundDrawing(int32_t bNewDrawOpaqueBackground) {
 // LINE 199:
-	__asm        mov    eax, bNewDrawOpaqueBackground;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x74], eax;
+	this->bDrawOpaqueBackground = bNewDrawOpaqueBackground;
 // LINE 200:
 	__asm        jmp    near ptr 0x004ADB9D;
 }
@@ -2429,9 +2398,7 @@ void TextWindow::SetFontCharacteristics(long lNewHeight, long lNewWidth, long lN
 // FUNCTION: COPTER_D 0x004adbe5
 void TextWindow::SetTextDrawStyle(unsigned long nNewTextDrawStyle) {
 // LINE 216:
-	__asm        mov    eax, nNewTextDrawStyle;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xA0], eax;
+	this->nTextDrawStyle = nNewTextDrawStyle;
 // LINE 217:
 	__asm        push   1;
 	__asm        push   1;
@@ -2572,10 +2539,7 @@ _T14d:
 // FUNCTION: COPTER_D 0x004add6f
 void TextWindow::SetTextColor(const struct SparkalColor& colorNewFont) {
 // LINE 237:
-	__asm        mov    eax, colorNewFont;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x78], eax;
+	reinterpret_cast<uint32_t>(this->colorFont.Blue) = reinterpret_cast<uint32_t>(colorNewFont.Blue);
 // LINE 238:
 	__asm        push   1;
 	__asm        push   1;
@@ -2596,11 +2560,11 @@ int32_t TextWindow::ResizeWindowForExactLineHeights() {
 	long lFixedHeight;
 
 // LINE 252:
-	__asm        mov    lVisibleLines, 0;
+	lVisibleLines = 0x0;
 // LINE 253:
-	__asm        mov    lLineHeight, 1;
+	lLineHeight = 0x1;
 // LINE 254:
-	__asm        mov    lTextWidth, 1;
+	lTextWidth = 0x1;
 // LINE 256:
 	__asm        lea    eax, lLineHeight;
 	__asm        push   eax;
@@ -2754,7 +2718,7 @@ _T140:
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    _T176;
 _T16f:
-	__asm        mov    dword ptr [ebp-4], 0;
+	None = 0x0;
 _T176:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
@@ -2863,8 +2827,7 @@ void ButtonWindow::ButtonWindow(class MRect& rectNewWindow, int32_t nNewID, clas
 	__asm        mov    byte ptr [eax+0x92], 0;
 	__asm        jmp    near ptr 0x004AE11A;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x591B78;
+	this-><ButtonWindow+0x00> = 0x591b78;
 // LINE 307:
 	__asm        cmp    szImageFileName, 0;
 	__asm        je     _T1f3;
@@ -2928,7 +2891,7 @@ _T156:
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    _T18c;
 _T185:
-	__asm        mov    dword ptr [ebp-4], 0;
+	None = 0x0;
 _T18c:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x5C;
@@ -3029,7 +2992,7 @@ _T281:
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    _T2b7;
 _T2b0:
-	__asm        mov    dword ptr [ebp-0x18], 0;
+	None = 0x0;
 _T2b7:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x5C;
@@ -3075,9 +3038,7 @@ _T319:
 // FUNCTION: COPTER_D 0x004ae385
 int32_t ButtonWindow::Initialize() {
 // LINE 319:
-	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x58], eax;
+	this-><ButtonWindow+0x58> = GraphicWindow::colorConstants.nPaletteIndexTransparent;
 // LINE 320:
 	__asm        push   1;
 	__asm        mov    eax, this;
@@ -3094,19 +3055,13 @@ void ButtonWindow::SetTextColor(const struct SparkalColor *colorNewFont, const s
 	__asm        cmp    colorNewFont, 0;
 	__asm        je     _T24;
 // LINE 330:
-	__asm        mov    eax, colorNewFont;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x8C], eax;
+	reinterpret_cast<uint32_t>(this->colorFont.Blue) = reinterpret_cast<uint32_t>(colorNewFont->Blue);
 // LINE 331:
 _T24:
 	__asm        cmp    colorNewFontHighlighted, 0;
 	__asm        je     _T3c;
 // LINE 332:
-	__asm        mov    eax, colorNewFontHighlighted;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x90], eax;
+	reinterpret_cast<uint32_t>(this->colorFontHighlighted.Blue) = reinterpret_cast<uint32_t>(colorNewFontHighlighted->Blue);
 // LINE 333:
 _T3c:
 	__asm        jmp    near ptr 0x004AE3F4;
@@ -3213,15 +3168,14 @@ int32_t ButtonWindow::CreateImage(int32_t __formal) {
 	__asm        mov    fontText, eax;
 	__asm        jmp    _T121;
 _T11a:
-	__asm        mov    fontText, 0;
+	fontText = 0x0;
 // LINE 367:
 _T121:
-	__asm        mov    rectCurrent.top, 5;
+	rectCurrent.top = 0x5;
 // LINE 368:
-	__asm        mov    eax, nWindowHeight;
-	__asm        mov    rectCurrent.bottom, eax;
+	rectCurrent.bottom = nWindowHeight;
 // LINE 369:
-	__asm        mov    rectCurrent.left, 0;
+	rectCurrent.left = 0x0;
 // LINE 370:
 	__asm        mov    eax, nWindowWidth;
 	__asm        mov    rectCurrent.right, eax;
@@ -3348,8 +3302,7 @@ _T252:
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+0x4C];
 // LINE 379:
-	__asm        mov    eax, nWindowWidth;
-	__asm        mov    rectCurrent.left, eax;
+	rectCurrent.left = nWindowWidth;
 // LINE 380:
 	__asm        mov    eax, rectCurrent.left;
 	__asm        add    eax, nWindowWidth;
@@ -3645,9 +3598,7 @@ void ButtonWindow::SetState(int32_t nNewButtonState) {
 	__asm        cmp    [eax+0x74], ecx;
 	__asm        je     _T33;
 // LINE 410:
-	__asm        mov    eax, nNewButtonState;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x74], eax;
+	this->nButtonState = nNewButtonState;
 // LINE 411:
 	__asm        push   1;
 	__asm        push   1;
@@ -3663,8 +3614,7 @@ _T33:
 // FUNCTION: COPTER_D 0x004aeb0d
 void ButtonWindow::Enable() {
 // LINE 420:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x78], 1;
+	this->bEnabled = 0x1;
 // LINE 421:
 	__asm        push   1;
 	__asm        push   1;
@@ -3679,8 +3629,7 @@ void ButtonWindow::Enable() {
 // FUNCTION: COPTER_D 0x004aeb3c
 void ButtonWindow::Disable() {
 // LINE 428:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x78], 0;
+	this->bEnabled = 0x0;
 // LINE 429:
 	__asm        push   1;
 	__asm        push   1;
@@ -3742,7 +3691,7 @@ _T3f:
 	__asm        jmp    _T88;
 // LINE 452:
 _T81:
-	__asm        mov    nStartXPosition, 0;
+	nStartXPosition = 0x0;
 // LINE 456:
 _T88:
 	__asm        jmp    near ptr 0x004AEBF8;
@@ -4083,7 +4032,7 @@ _T16c:
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    _T18d;
 _T186:
-	__asm        mov    dword ptr [ebp-4], 0;
+	None = 0x0;
 _T18d:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
@@ -4308,7 +4257,7 @@ _T186:
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    _T1a7;
 _T1a0:
-	__asm        mov    dword ptr [ebp-4], 0;
+	None = 0x0;
 _T1a7:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
@@ -4510,7 +4459,7 @@ _T3e3:
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    _T404;
 _T3fd:
-	__asm        mov    dword ptr [ebp-0x34], 0;
+	None = 0x0;
 _T404:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
@@ -4711,17 +4660,14 @@ void CheckBoxWindow::SetState(int32_t nNewButtonState) {
 	__asm        jmp    _T9b;
 // LINE 604:
 _T21:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x88], 1;
+	this->bBusySettingState = 0x1;
 // LINE 606:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nNewButtonState;
 	__asm        cmp    [eax+0x74], ecx;
 	__asm        je     _T89;
 // LINE 607:
-	__asm        mov    eax, nNewButtonState;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x74], eax;
+	this->nButtonState = nNewButtonState;
 // LINE 608:
 	__asm        push   1;
 	__asm        push   1;
@@ -4751,8 +4697,7 @@ _T21:
 	__asm        call   dword ptr [edx];
 // LINE 612:
 _T89:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x88], 0;
+	this->bBusySettingState = 0x0;
 // LINE 613:
 	__asm        jmp    _T9b;
 _T9b:
@@ -4955,7 +4900,7 @@ _T192:
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    _T1b3;
 _T1ac:
-	__asm        mov    dword ptr [ebp-4], 0;
+	None = 0x0;
 _T1b3:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
@@ -5157,7 +5102,7 @@ _T3ef:
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    _T410;
 _T409:
-	__asm        mov    dword ptr [ebp-0x34], 0;
+	None = 0x0;
 _T410:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
@@ -5248,8 +5193,7 @@ _T4f8:
 // FUNCTION: COPTER_D 0x004afcfe
 void RadioButtonWindow::~RadioButtonWindow() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x591D38;
+	this-><RadioButtonWindow+0x00> = 0x591d38;
 // LINE 703:
 	__asm        jmp    near ptr 0x004AFD18;
 
@@ -5385,9 +5329,7 @@ int32_t RadioButtonWindow::GetImageCount() {
 // FUNCTION: COPTER_D 0x004afe6f
 void RadioButtonWindow::AddToGroup(class ButtonGroup *myNewRadioButtonGroup) {
 // LINE 760:
-	__asm        mov    eax, myNewRadioButtonGroup;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x94], eax;
+	this->myRadioButtonGroup = myNewRadioButtonGroup;
 // LINE 761:
 	__asm        mov    eax, this;
 	__asm        push   eax;
@@ -5430,17 +5372,14 @@ void RadioButtonWindow::SetState(int32_t nNewButtonState) {
 	__asm        jmp    _Tea;
 // LINE 784:
 _T21:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x88], 1;
+	this->bBusySettingState = 0x1;
 // LINE 786:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nNewButtonState;
 	__asm        cmp    [eax+0x74], ecx;
 	__asm        je     _Td8;
 // LINE 787:
-	__asm        mov    eax, nNewButtonState;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x74], eax;
+	this->nButtonState = nNewButtonState;
 // LINE 788:
 	__asm        push   1;
 	__asm        push   1;
@@ -5496,8 +5435,7 @@ _Ta4:
 	__asm        call   dword ptr [edx];
 // LINE 796:
 _Td8:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x88], 0;
+	this->bBusySettingState = 0x0;
 // LINE 797:
 	__asm        jmp    _Tea;
 _Tea:
@@ -5630,8 +5568,7 @@ _Taf:
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _Tfa;
 _Tf4:
-	__asm        mov    eax, [ebp-0x1C];
-	__asm        mov    [ebp-0x24], eax;
+	None = None;
 _Tfa:
 	__asm        jmp    near ptr 0x004B0182;
 
@@ -5700,8 +5637,7 @@ _T167:
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    _T1d4;
 _T1ce:
-	__asm        mov    eax, [ebp-0x30];
-	__asm        mov    [ebp-0x38], eax;
+	None = None;
 _T1d4:
 	__asm        jmp    near ptr 0x004B025C;
 
@@ -5847,8 +5783,7 @@ _Te9:
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    _T134;
 _T12e:
-	__asm        mov    eax, [ebp-0x2C];
-	__asm        mov    [ebp-0x34], eax;
+	None = None;
 _T134:
 	__asm        jmp    near ptr 0x004B0446;
 
@@ -5917,8 +5852,7 @@ _T1a1:
 	__asm        mov    [ebp-0x48], eax;
 	__asm        jmp    _T20e;
 _T208:
-	__asm        mov    eax, [ebp-0x40];
-	__asm        mov    [ebp-0x48], eax;
+	None = None;
 _T20e:
 	__asm        jmp    near ptr 0x004B0520;
 
@@ -6063,8 +5997,7 @@ _Tca:
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    _T115;
 _T10f:
-	__asm        mov    eax, [ebp-0x30];
-	__asm        mov    [ebp-0x38], eax;
+	None = None;
 _T115:
 	__asm        jmp    near ptr 0x004B06FC;
 
@@ -6133,8 +6066,7 @@ _T182:
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        jmp    _T1ef;
 _T1e9:
-	__asm        mov    eax, [ebp-0x44];
-	__asm        mov    [ebp-0x4C], eax;
+	None = None;
 _T1ef:
 	__asm        jmp    near ptr 0x004B07D6;
 
@@ -6234,8 +6166,7 @@ void  ButtonGroup::RemoveButton(class RadioButtonWindow *buttonToRemove) {
 	__asm        jmp    _T132;
 // LINE 897:
 _T39:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x7C], 1;
+	this-><ButtonGroup+0x7c:4> = 0x1;
 // LINE 899:
 _T43:
 	__asm        mov    eax, this;
@@ -6277,8 +6208,7 @@ _T9a:
 	__asm        cmp    [eax+8], ecx;
 	__asm        jne    _T100;
 
-	__asm        mov    eax, iterator.node;
-	__asm        mov    [ebp-0x24], eax;
+	None = iterator.node;
 // LINE 901:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax];
@@ -6322,8 +6252,7 @@ _T100:
 	__asm        jmp    _T43;
 // LINE 906:
 _T123:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x7C], 0;
+	this-><ButtonGroup+0x7c:4> = 0x0;
 // LINE 907:
 	__asm        jmp    _T132;
 _T132:
@@ -6351,8 +6280,7 @@ void  ButtonGroup::SetSelection(class RadioButtonWindow *buttonToSelect) {
 	__asm        jmp    _T167;
 // LINE 924:
 _T3c:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x80], 1;
+	this-><ButtonGroup+0x80:4> = 0x1;
 // LINE 926:
 _T49:
 	__asm        mov    eax, this;
@@ -6458,8 +6386,7 @@ _T124:
 	__asm        call   dword ptr [edx];
 // LINE 936:
 _T155:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x80], 0;
+	this-><ButtonGroup+0x80:4> = 0x0;
 // LINE 937:
 	__asm        jmp    _T167;
 _T167:
@@ -6487,8 +6414,7 @@ void  ButtonGroup::SetSelection(long lIDOfButtonToSelect) {
 	__asm        jmp    _T172;
 // LINE 954:
 _T3c:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x80], 1;
+	this-><ButtonGroup+0x80:4> = 0x1;
 // LINE 956:
 _T49:
 	__asm        mov    eax, this;
@@ -6598,8 +6524,7 @@ _T127:
 	__asm        call   dword ptr [edx];
 // LINE 967:
 _T160:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x80], 0;
+	this-><ButtonGroup+0x80:4> = 0x0;
 // LINE 968:
 	__asm        jmp    _T172;
 _T172:
@@ -6621,7 +6546,7 @@ void  ButtonGroup::SetSelectionIndex(int32_t nIndexOfButtonToSelect) {
 
 	__asm        jmp    near ptr 0x004B0CFB;
 // LINE 982:
-	__asm        mov    i, 0;
+	i = 0x0;
 // LINE 984:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x80], 0;
@@ -6630,8 +6555,7 @@ void  ButtonGroup::SetSelectionIndex(int32_t nIndexOfButtonToSelect) {
 	__asm        jmp    _T172;
 // LINE 986:
 _T43:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x80], 1;
+	this-><ButtonGroup+0x80:4> = 0x1;
 // LINE 988:
 _T50:
 	__asm        mov    eax, this;
@@ -6739,8 +6663,7 @@ _T127:
 	__asm        call   dword ptr [edx];
 // LINE 1000:
 _T160:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x80], 0;
+	this-><ButtonGroup+0x80:4> = 0x0;
 // LINE 1001:
 	__asm        jmp    _T172;
 _T172:
@@ -6810,10 +6733,7 @@ _T7e:
 // LINE 1016:
 	__asm        jmp    near ptr 0x004B0EFB;
 
-	__asm        mov    eax, iterator.node;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, radioButtonWindow;
-	__asm        mov    [ecx], eax;
+	radioButtonWindow. = iterator.node->data;
 // LINE 1017:
 	__asm        mov    eax, 1;
 	__asm        jmp    _Ted;
@@ -6877,7 +6797,7 @@ int  ButtonGroup::GetSelectionIndex() {
 
 	__asm        jmp    near ptr 0x004B0FA0;
 // LINE 1051:
-	__asm        mov    i, 0;
+	i = 0x0;
 // LINE 1053:
 _T2e:
 	__asm        mov    eax, this;
@@ -7082,8 +7002,7 @@ void SliderWindow::SliderWindow() {
 	__asm        mov    [ecx+0xAC], eax;
 	__asm        jmp    _Ted;
 _Te0:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xAC], 0;
+	this->sBackgroundFile.reference = 0x0;
 _Ted:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xA8], 0;
@@ -7162,8 +7081,7 @@ void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum
 	__asm        mov    [ecx+0xAC], eax;
 	__asm        jmp    _Tff;
 _Tf2:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xAC], 0;
+	this->sBackgroundFile.reference = 0x0;
 _Tff:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xA8], 0;
@@ -7259,7 +7177,7 @@ _T1f7:
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    _T22d;
 _T226:
-	__asm        mov    dword ptr [ebp-4], 0;
+	None = 0x0;
 _T22d:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x5C;
@@ -7360,7 +7278,7 @@ _T322:
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    _T358;
 _T351:
-	__asm        mov    dword ptr [ebp-0x1C], 0;
+	None = 0x0;
 _T358:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x5C;
@@ -7460,7 +7378,7 @@ _T450:
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    _T486;
 _T47f:
-	__asm        mov    dword ptr [ebp-0x34], 0;
+	None = 0x0;
 _T486:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xA8;
@@ -7565,7 +7483,7 @@ _T59a:
 	__asm        mov    [ebp-0x48], eax;
 	__asm        jmp    _T5d0;
 _T5c9:
-	__asm        mov    dword ptr [ebp-0x48], 0;
+	None = 0x0;
 _T5d0:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xA8;
@@ -7666,7 +7584,7 @@ _T6d7:
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    _T70d;
 _T706:
-	__asm        mov    dword ptr [ebp-0x60], 0;
+	None = 0x0;
 _T70d:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xA8;
@@ -7712,8 +7630,7 @@ _T77b:
 // FUNCTION: COPTER_D 0x004b19e0
 void SliderWindow::~SliderWindow() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x591EE8;
+	this-><SliderWindow+0x00> = 0x591ee8;
 // LINE 1159:
 	__asm        mov    ecx, this;
 	__asm        call   SliderWindow::DestroyImage;
@@ -7796,9 +7713,7 @@ int32_t SliderWindow::Initialize() {
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::Initialize;
 // LINE 1170:
-	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x58], eax;
+	this-><SliderWindow+0x58> = GraphicWindow::colorConstants.nPaletteIndexTransparent;
 // LINE 1171:
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -7868,7 +7783,7 @@ int32_t SliderWindow::CreateImage(int32_t __formal) {
 	__asm        mov    sBackgroundPath.reference, eax;
 	__asm        jmp    _T63;
 _T5c:
-	__asm        mov    sBackgroundPath.reference, 0;
+	sBackgroundPath.reference = 0x0;
 _T63:
 	__asm        mov    sBackgroundPath.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x004B1BD4;
@@ -8012,8 +7927,7 @@ _T1ae:
 	__asm        mov    [ecx+0xA4], eax;
 	__asm        jmp    _T20e;
 _T201:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xA4], 0;
+	this->myBackgroundImage = 0x0;
 // LINE 1195:
 _T20e:
 	__asm        mov    eax, this;
@@ -8127,8 +8041,7 @@ void SliderWindow::DestroyImage() {
 	__asm        jmp    _T5e;
 // LINE 1211:
 _T5e:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xA4], 0;
+	this->myBackgroundImage = 0x0;
 // LINE 1213:
 _T6b:
 	__asm        jmp    near ptr 0x004B1ED4;
@@ -8602,17 +8515,14 @@ int32_t SliderWindow::ConvertCursorPositionToValue(long& lNewValue, long nCursor
 	__asm        cmp    dword ptr [eax+0x74], 0;
 	__asm        jne    _Ta6;
 // LINE 1355:
-	__asm        mov    eax, nCursorX;
-	__asm        mov    lPosition, eax;
+	lPosition = nCursorX;
 // LINE 1356:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, lPosition;
 	__asm        cmp    [eax+0x90], ecx;
 	__asm        jle    _T61;
 // LINE 1357:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x90];
-	__asm        mov    lPosition, eax;
+	lPosition = this->lThumbLimitIndentation;
 // LINE 1358:
 _T61:
 	__asm        jmp    near ptr 0x004B23C7;
@@ -8640,17 +8550,14 @@ _Ta1:
 	__asm        jmp    _T10a;
 // LINE 1362:
 _Ta6:
-	__asm        mov    eax, nCursorY;
-	__asm        mov    lPosition, eax;
+	lPosition = nCursorY;
 // LINE 1363:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, lPosition;
 	__asm        cmp    [eax+0x90], ecx;
 	__asm        jle    _Tca;
 // LINE 1364:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x90];
-	__asm        mov    lPosition, eax;
+	lPosition = this->lThumbLimitIndentation;
 // LINE 1365:
 _Tca:
 	__asm        jmp    near ptr 0x004B2430;
@@ -8701,10 +8608,7 @@ void SliderWindow::CalculateAllMetrics() {
 	__asm        cmp    dword ptr [eax+0x74], 0;
 	__asm        jne    _T63;
 // LINE 1383:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x90];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x84], eax;
+	this->lMinimumThumbPosition = this->lThumbLimitIndentation;
 // LINE 1384:
 	__asm        jmp    near ptr 0x004B24D0;
 
@@ -8741,10 +8645,7 @@ _T63:
 	__asm        mov    eax, this;
 	__asm        mov    [eax+0x84], ebx;
 // LINE 1389:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x90];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x8C], eax;
+	this->lMaximumThumbPosition = this->lThumbLimitIndentation;
 // LINE 1391:
 _Ta8:
 	__asm        mov    eax, this;
@@ -8770,10 +8671,7 @@ void SliderWindow::CalculateThumbPosition() {
 	__asm        cmp    lValueScale, 0;
 	__asm        jne    _T3c;
 // LINE 1408:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x84];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x88], eax;
+	this->lCurrentThumbPosition = this->lMinimumThumbPosition;
 // LINE 1410:
 	__asm        jmp    _T83;
 // LINE 1411:
@@ -8804,10 +8702,7 @@ _T83:
 	__asm        cmp    dword ptr [eax+0x74], 0;
 	__asm        jne    _T123;
 // LINE 1420:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x88];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x94], eax;
+	this->rectThumbImage.left = this->lCurrentThumbPosition;
 // LINE 1421:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -8884,10 +8779,7 @@ _T123:
 	__asm        mov    eax, this;
 	__asm        mov    [eax+0x9C], ecx;
 // LINE 1428:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x88];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x98], eax;
+	this->rectThumbImage.top = this->lCurrentThumbPosition;
 // LINE 1429:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -8922,16 +8814,14 @@ void SliderWindow::SetValue(long lNewSliderValue) {
 	__asm        jmp    _Tf3;
 // LINE 1450:
 _T21:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xB0], 1;
+	this->bBusySettingValue = 0x1;
 // LINE 1452:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, lNewSliderValue;
 	__asm        cmp    [eax+0x80], ecx;
 	__asm        jne    _T52;
 // LINE 1453:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xB0], 0;
+	this->bBusySettingValue = 0x0;
 // LINE 1454:
 	__asm        jmp    _Tf3;
 // LINE 1456:
@@ -8941,9 +8831,7 @@ _T52:
 	__asm        cmp    [eax+0x7C], ecx;
 	__asm        jge    _T6a;
 // LINE 1457:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x7C];
-	__asm        mov    lNewSliderValue, eax;
+	lNewSliderValue = this->lSliderMaximumValue;
 // LINE 1458:
 _T6a:
 	__asm        mov    eax, this;
@@ -8951,14 +8839,10 @@ _T6a:
 	__asm        cmp    [eax+0x78], ecx;
 	__asm        jle    _T82;
 // LINE 1459:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x78];
-	__asm        mov    lNewSliderValue, eax;
+	lNewSliderValue = this->lSliderMinimumValue;
 // LINE 1460:
 _T82:
-	__asm        mov    eax, lNewSliderValue;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x80], eax;
+	this->lSliderCurrentValue = lNewSliderValue;
 // LINE 1462:
 	__asm        push   1;
 	__asm        push   1;
@@ -8993,8 +8877,7 @@ _T82:
 	__asm        call   dword ptr [edx];
 // LINE 1466:
 _Te1:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xB0], 0;
+	this->bBusySettingValue = 0x0;
 // LINE 1467:
 	__asm        jmp    _Tf3;
 _Tf3:
@@ -9003,9 +8886,7 @@ _Tf3:
 // FUNCTION: COPTER_D 0x004b2834
 void SliderWindow::SetMinimumValue(long lNewSliderMinimumValue) {
 // LINE 1473:
-	__asm        mov    eax, lNewSliderMinimumValue;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x78], eax;
+	this->lSliderMinimumValue = lNewSliderMinimumValue;
 // LINE 1474:
 	__asm        push   1;
 	__asm        push   1;
@@ -9025,9 +8906,7 @@ void SliderWindow::SetMinimumValue(long lNewSliderMinimumValue) {
 // FUNCTION: COPTER_D 0x004b2872
 void SliderWindow::SetMaximumValue(long lNewSliderMaximumValue) {
 // LINE 1482:
-	__asm        mov    eax, lNewSliderMaximumValue;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x7C], eax;
+	this->lSliderMaximumValue = lNewSliderMaximumValue;
 // LINE 1483:
 	__asm        push   1;
 	__asm        push   1;
@@ -9230,7 +9109,7 @@ _T20a:
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    _T22b;
 _T224:
-	__asm        mov    dword ptr [ebp-4], 0;
+	None = 0x0;
 _T22b:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
@@ -9312,8 +9191,7 @@ _T2fd:
 
 	__asm        jmp    near ptr 0x004B2C0B;
 // LINE 1549:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x90], 0;
+	this->lThumbLimitIndentation = 0x0;
 // LINE 1550:
 	__asm        jmp    near ptr 0x004B2C1D;
 
@@ -9381,8 +9259,7 @@ _T99:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xB4], eax;
 // LINE 1567:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x90], 0;
+	this->lThumbLimitIndentation = 0x0;
 // LINE 1569:
 	__asm        cmp    szImageFileName, 0;
 	__asm        je     _T264;
@@ -9446,7 +9323,7 @@ _T178:
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    _T1ae;
 _T1a7:
-	__asm        mov    dword ptr [ebp-4], 0;
+	None = 0x0;
 _T1ae:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
@@ -9574,7 +9451,7 @@ _T2f2:
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    _T328;
 _T321:
-	__asm        mov    dword ptr [ebp-0x20], 0;
+	None = 0x0;
 _T328:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
@@ -9652,9 +9529,7 @@ int32_t ScrollBarWindow::Initialize() {
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::Initialize;
 // LINE 1585:
-	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x58], eax;
+	this-><ScrollBarWindow+0x58> = GraphicWindow::colorConstants.nPaletteIndexTransparent;
 // LINE 1586:
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -9748,16 +9623,16 @@ _T3f:
 	__asm        cmp    dword ptr [eax+0x74], 0;
 	__asm        jne    _T6e;
 // LINE 1620:
-	__asm        mov    nLineUpImageIndexToUse, 0;
+	nLineUpImageIndexToUse = 0x0;
 // LINE 1621:
-	__asm        mov    nLineDownImageIndexToUse, 4;
+	nLineDownImageIndexToUse = 0x4;
 // LINE 1623:
 	__asm        jmp    _T7c;
 // LINE 1624:
 _T6e:
-	__asm        mov    nLineUpImageIndexToUse, 6;
+	nLineUpImageIndexToUse = 0x6;
 // LINE 1625:
-	__asm        mov    nLineDownImageIndexToUse, 0xA;
+	nLineDownImageIndexToUse = 0xa;
 // LINE 1629:
 _T7c:
 	__asm        mov    eax, GraphicWindow::windowCursorCapture;
@@ -10224,8 +10099,7 @@ long ScrollBarWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long n
 	__asm        test   eax, eax;
 	__asm        je     _T262;
 // LINE 1720:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xD0], 1;
+	this->bCursorIsOnInitialHitTestResult = 0x1;
 // LINE 1721:
 	__asm        mov    eax, this;
 	__asm        push   eax;
@@ -10511,8 +10385,7 @@ _T76:
 	__asm        test   eax, eax;
 	__asm        jne    _Taa;
 // LINE 1786:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xD0], 0;
+	this->bCursorIsOnInitialHitTestResult = 0x0;
 // LINE 1787:
 	__asm        jmp    _Tdb;
 // LINE 1788:
@@ -10526,8 +10399,7 @@ _Taa:
 	__asm        mov    dword ptr [eax+0xD0], 1;
 	__asm        jmp    _Tdb;
 _Tce:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xD0], 0;
+	this->bCursorIsOnInitialHitTestResult = 0x0;
 // LINE 1791:
 _Tdb:
 	__asm        mov    eax, 1;
@@ -10566,9 +10438,7 @@ void ScrollBarWindow::MoveLinePrevious() {
 	__asm        cmp    [eax+0x78], ecx;
 	__asm        jle    _T60;
 // LINE 1807:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x78];
-	__asm        mov    lNewValue, eax;
+	lNewValue = this->lSliderMinimumValue;
 // LINE 1808:
 _T60:
 	__asm        mov    eax, lNewValue;
@@ -10612,9 +10482,7 @@ void ScrollBarWindow::MoveLineNext() {
 	__asm        cmp    [eax+0x7C], ecx;
 	__asm        jge    _T62;
 // LINE 1825:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x7C];
-	__asm        mov    lNewValue, eax;
+	lNewValue = this->lSliderMaximumValue;
 // LINE 1826:
 _T62:
 	__asm        mov    eax, lNewValue;
@@ -10657,9 +10525,7 @@ void ScrollBarWindow::MovePagePrevious() {
 	__asm        cmp    [eax+0x78], ecx;
 	__asm        jle    _T60;
 // LINE 1842:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x78];
-	__asm        mov    lNewValue, eax;
+	lNewValue = this->lSliderMinimumValue;
 // LINE 1843:
 _T60:
 	__asm        mov    eax, lNewValue;
@@ -10703,9 +10569,7 @@ void ScrollBarWindow::MovePageNext() {
 	__asm        cmp    [eax+0x7C], ecx;
 	__asm        jge    _T62;
 // LINE 1859:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x7C];
-	__asm        mov    lNewValue, eax;
+	lNewValue = this->lSliderMaximumValue;
 // LINE 1860:
 _T62:
 	__asm        mov    eax, lNewValue;
@@ -10743,25 +10607,18 @@ _T25:
 	__asm        jmp    _T55;
 // LINE 1879:
 _T49:
-	__asm        mov    eax, lNewLineCount;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xB4], eax;
+	this->lLineCount = lNewLineCount;
 // LINE 1880:
 _T55:
 	__asm        cmp    lNewPageCount, 0;
 	__asm        jne    _T76;
 // LINE 1881:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xB4];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xB8], eax;
+	this->lPageCount = this->lLineCount;
 // LINE 1882:
 	__asm        jmp    _T82;
 // LINE 1883:
 _T76:
-	__asm        mov    eax, lNewPageCount;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xB8], eax;
+	this->lPageCount = lNewPageCount;
 // LINE 1884:
 _T82:
 	__asm        mov    eax, this;
@@ -10926,8 +10783,7 @@ int32_t ScrollBarWindow::DoCursorPositionHitTest(enum ScrollBarWindow::ScrollHit
 	__asm        test   eax, eax;
 	__asm        jne    _T3a;
 // LINE 1969:
-	__asm        mov    eax, nNewScrollHitTestResult;
-	__asm        mov    dword ptr [eax], 0;
+	nNewScrollHitTestResult. = 0x0;
 // LINE 1970:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T1b4;
@@ -10947,8 +10803,7 @@ _T3a:
 	__asm        cmp    nPrevNextButtonWidth, eax;
 	__asm        jle    _T72;
 // LINE 1976:
-	__asm        mov    eax, nNewScrollHitTestResult;
-	__asm        mov    dword ptr [eax], 1;
+	nNewScrollHitTestResult. = 0x1;
 // LINE 1977:
 	__asm        jmp    _Tf6;
 _T72:
@@ -10957,8 +10812,7 @@ _T72:
 	__asm        cmp    [eax+0x88], ecx;
 	__asm        jle    _T92;
 // LINE 1978:
-	__asm        mov    eax, nNewScrollHitTestResult;
-	__asm        mov    dword ptr [eax], 3;
+	nNewScrollHitTestResult. = 0x3;
 // LINE 1979:
 	__asm        jmp    _Tf6;
 _T92:
@@ -10972,8 +10826,7 @@ _T92:
 	__asm        cmp    ecx, nCursorX;
 	__asm        jle    _Tc2;
 // LINE 1980:
-	__asm        mov    eax, nNewScrollHitTestResult;
-	__asm        mov    dword ptr [eax], 5;
+	nNewScrollHitTestResult. = 0x5;
 // LINE 1981:
 	__asm        jmp    _Tf6;
 _Tc2:
@@ -10987,14 +10840,12 @@ _Tc2:
 	__asm        cmp    eax, nCursorX;
 	__asm        jle    _Ted;
 // LINE 1982:
-	__asm        mov    eax, nNewScrollHitTestResult;
-	__asm        mov    dword ptr [eax], 4;
+	nNewScrollHitTestResult. = 0x4;
 // LINE 1983:
 	__asm        jmp    _Tf6;
 // LINE 1984:
 _Ted:
-	__asm        mov    eax, nNewScrollHitTestResult;
-	__asm        mov    dword ptr [eax], 2;
+	nNewScrollHitTestResult. = 0x2;
 // LINE 1986:
 _Tf6:
 	__asm        jmp    _T1aa;
@@ -11010,8 +10861,7 @@ _Tfb:
 	__asm        cmp    nPrevNextButtonHeight, eax;
 	__asm        jle    _T126;
 // LINE 1989:
-	__asm        mov    eax, nNewScrollHitTestResult;
-	__asm        mov    dword ptr [eax], 1;
+	nNewScrollHitTestResult. = 0x1;
 // LINE 1990:
 	__asm        jmp    _T1aa;
 _T126:
@@ -11020,8 +10870,7 @@ _T126:
 	__asm        cmp    [eax+0x88], ecx;
 	__asm        jle    _T146;
 // LINE 1991:
-	__asm        mov    eax, nNewScrollHitTestResult;
-	__asm        mov    dword ptr [eax], 3;
+	nNewScrollHitTestResult. = 0x3;
 // LINE 1992:
 	__asm        jmp    _T1aa;
 _T146:
@@ -11035,8 +10884,7 @@ _T146:
 	__asm        cmp    ecx, nCursorY;
 	__asm        jle    _T176;
 // LINE 1993:
-	__asm        mov    eax, nNewScrollHitTestResult;
-	__asm        mov    dword ptr [eax], 5;
+	nNewScrollHitTestResult. = 0x5;
 // LINE 1994:
 	__asm        jmp    _T1aa;
 _T176:
@@ -11050,14 +10898,12 @@ _T176:
 	__asm        cmp    eax, nCursorY;
 	__asm        jle    _T1a1;
 // LINE 1995:
-	__asm        mov    eax, nNewScrollHitTestResult;
-	__asm        mov    dword ptr [eax], 4;
+	nNewScrollHitTestResult. = 0x4;
 // LINE 1996:
 	__asm        jmp    _T1aa;
 // LINE 1997:
 _T1a1:
-	__asm        mov    eax, nNewScrollHitTestResult;
-	__asm        mov    dword ptr [eax], 2;
+	nNewScrollHitTestResult. = 0x2;
 // LINE 1999:
 _T1aa:
 	__asm        mov    eax, 1;
@@ -11258,8 +11104,7 @@ _Taf:
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _Tfa;
 _Tf4:
-	__asm        mov    eax, [ebp-0x1C];
-	__asm        mov    [ebp-0x24], eax;
+	None = None;
 _Tfa:
 	__asm        jmp    near ptr 0x004B41E2;
 
@@ -11327,8 +11172,7 @@ _T164:
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    _T1d1;
 _T1cb:
-	__asm        mov    eax, [ebp-0x30];
-	__asm        mov    [ebp-0x38], eax;
+	None = None;
 _T1d1:
 	__asm        jmp    near ptr 0x004B42B9;
 
@@ -11405,40 +11249,27 @@ _T227:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x82], al;
 // LINE 2083:
-	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexWhite;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x84], eax;
+	this->nBackgroundIndex = GraphicWindow::colorConstants.nPaletteIndexWhite;
 // LINE 2084:
-	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexBlack;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x88], eax;
+	this->nBackgroundIndexHighlighted = GraphicWindow::colorConstants.nPaletteIndexBlack;
 // LINE 2085:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xA8], 0;
+	this->nTextDrawStyle = 0x0;
 // LINE 2086:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xAC], 0xFFFFFFFF;
+	this->lCurrentSelection = 0xffffffff;
 // LINE 2087:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xB0], 0;
+	this->lVisibleLines = 0x0;
 // LINE 2088:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xB4], 0;
+	this->lFirstVisibleLine = 0x0;
 // LINE 2089:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xB8], 0xA;
+	this->lLineHeight = 0xa;
 // LINE 2090:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xBC], 0;
+	this->bAlwaysSort = 0x0;
 // LINE 2091:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC0], 0;
+	this->myVerticalScrollBarWindow = 0x0;
 // LINE 2092:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC4], 0;
+	this->myHorizontalScrollBarWindow = 0x0;
 // LINE 2093:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC8], 0;
+	this->bBusySettingSelection = 0x0;
 // LINE 2094:
 	__asm        mov    ecx, this;
 	__asm        mov    eax, this;
@@ -11534,8 +11365,7 @@ _Tc3:
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _T10e;
 _T108:
-	__asm        mov    eax, [ebp-0x1C];
-	__asm        mov    [ebp-0x24], eax;
+	None = None;
 _T10e:
 	__asm        jmp    near ptr 0x004B4575;
 
@@ -11603,8 +11433,7 @@ _T178:
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    _T1e5;
 _T1df:
-	__asm        mov    eax, [ebp-0x30];
-	__asm        mov    [ebp-0x38], eax;
+	None = None;
 _T1e5:
 	__asm        jmp    near ptr 0x004B464C;
 
@@ -11681,40 +11510,27 @@ _T23b:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x82], al;
 // LINE 2112:
-	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexWhite;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x84], eax;
+	this->nBackgroundIndex = GraphicWindow::colorConstants.nPaletteIndexWhite;
 // LINE 2113:
-	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexBlack;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x88], eax;
+	this->nBackgroundIndexHighlighted = GraphicWindow::colorConstants.nPaletteIndexBlack;
 // LINE 2114:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xA8], 0;
+	this->nTextDrawStyle = 0x0;
 // LINE 2115:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xAC], 0xFFFFFFFF;
+	this->lCurrentSelection = 0xffffffff;
 // LINE 2116:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xB0], 0;
+	this->lVisibleLines = 0x0;
 // LINE 2117:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xB4], 0;
+	this->lFirstVisibleLine = 0x0;
 // LINE 2118:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xB8], 0xA;
+	this->lLineHeight = 0xa;
 // LINE 2119:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xBC], 0;
+	this->bAlwaysSort = 0x0;
 // LINE 2120:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC0], 0;
+	this->myVerticalScrollBarWindow = 0x0;
 // LINE 2121:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC4], 0;
+	this->myHorizontalScrollBarWindow = 0x0;
 // LINE 2122:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC8], 0;
+	this->bBusySettingSelection = 0x0;
 // LINE 2123:
 	__asm        mov    ecx, this;
 	__asm        mov    eax, this;
@@ -11788,9 +11604,7 @@ void ListBoxWindow::CalculateAllMetrics() {
 	__asm        cmp    nReturnValue, 0;
 	__asm        je     _T61;
 // LINE 2163:
-	__asm        mov    eax, lHeight;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xB8], eax;
+	this->lLineHeight = lHeight;
 // LINE 2164:
 	__asm        jmp    near ptr 0x004B48A9;
 
@@ -11874,9 +11688,7 @@ int32_t ListBoxWindow::ResizeWindowForExactLineHeights() {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x38];
 // LINE 2198:
-	__asm        mov    eax, lNewVisibleLines;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xB0], eax;
+	this->lVisibleLines = lNewVisibleLines;
 // LINE 2200:
 _T69:
 	__asm        push   1;
@@ -11902,20 +11714,16 @@ void ListBoxWindow::SetBackgroundDrawing(int32_t bNewBackgroundDrawing) {
 	__asm        cmp    bNewBackgroundDrawing, 0;
 	__asm        je     _T35;
 // LINE 2212:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x84], 0xFF;
+	this->nBackgroundIndex = 0xff;
 // LINE 2213:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x88], 0;
+	this->nBackgroundIndexHighlighted = 0x0;
 // LINE 2215:
 	__asm        jmp    _T4f;
 // LINE 2216:
 _T35:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x84], 0xFFFFFFFE;
+	this->nBackgroundIndex = 0xfffffffe;
 // LINE 2217:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x88], 0xFFFFFFFE;
+	this->nBackgroundIndexHighlighted = 0xfffffffe;
 // LINE 2219:
 _T4f:
 	__asm        jmp    near ptr 0x004B4A0A;
@@ -11927,17 +11735,13 @@ void ListBoxWindow::SetBackgroundPaletteIndex(int32_t nNewBackgroundIndex, int32
 	__asm        cmp    nNewBackgroundIndex, 0xFFFFFFFF;
 	__asm        je     _T22;
 // LINE 2229:
-	__asm        mov    eax, nNewBackgroundIndex;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x84], eax;
+	this->nBackgroundIndex = nNewBackgroundIndex;
 // LINE 2230:
 _T22:
 	__asm        cmp    nNewBackgroundIndexHighlighted, 0xFFFFFFFF;
 	__asm        je     _T38;
 // LINE 2231:
-	__asm        mov    eax, nNewBackgroundIndexHighlighted;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x88], eax;
+	this->nBackgroundIndexHighlighted = nNewBackgroundIndexHighlighted;
 // LINE 2232:
 _T38:
 	__asm        jmp    near ptr 0x004B4A4E;
@@ -11949,19 +11753,13 @@ void ListBoxWindow::SetTextColor(const struct SparkalColor *colorNewFont, const 
 	__asm        cmp    colorNewFont, 0;
 	__asm        je     _T21;
 // LINE 2243:
-	__asm        mov    eax, colorNewFont;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x7C], eax;
+	reinterpret_cast<uint32_t>(this->colorFont.Blue) = reinterpret_cast<uint32_t>(colorNewFont->Blue);
 // LINE 2244:
 _T21:
 	__asm        cmp    colorNewFontHighlighted, 0;
 	__asm        je     _T39;
 // LINE 2245:
-	__asm        mov    eax, colorNewFontHighlighted;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x80], eax;
+	reinterpret_cast<uint32_t>(this->colorFontHighlighted.Blue) = reinterpret_cast<uint32_t>(colorNewFontHighlighted->Blue);
 // LINE 2246:
 _T39:
 	__asm        jmp    near ptr 0x004B4A93;
@@ -12041,13 +11839,9 @@ _T9c:
 	__asm        sub    eax, [ecx+0xB4];
 	__asm        mov    lRelativeCurrentSelection, eax;
 // LINE 2272:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x20];
-	__asm        mov    rectHighlighted.left, eax;
+	rectHighlighted.left = this-><ListBoxWindow+0x20>;
 // LINE 2273:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x28];
-	__asm        mov    rectHighlighted.right, eax;
+	rectHighlighted.right = this-><ListBoxWindow+0x28>;
 // LINE 2274:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xB8];
@@ -12066,9 +11860,7 @@ _T9c:
 	__asm        cmp    [eax+0x2C], ecx;
 	__asm        jge    _T157;
 // LINE 2277:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        mov    rectHighlighted.bottom, eax;
+	rectHighlighted.bottom = this-><ListBoxWindow+0x2c>;
 // LINE 2278:
 _T157:
 	__asm        mov    eax, this;
@@ -12106,7 +11898,7 @@ _T192:
 	__asm        mov    [ecx+0x38], eax;
 	__asm        jmp    near ptr 0x004B4C67;
 // LINE 2289:
-	__asm        mov    i, 0;
+	i = 0x0;
 // LINE 2290:
 _T1d4:
 	__asm        mov    eax, this;
@@ -12162,7 +11954,7 @@ _T243:
 	__asm        jmp    _T1d4;
 // LINE 2296:
 _T269:
-	__asm        mov    j, 0;
+	j = 0x0;
 // LINE 23:
 	__asm        jmp    _T278;
 // LINE 2296:
@@ -12227,9 +12019,7 @@ _T2d2:
 	__asm        cmp    [eax+0x2C], ecx;
 	__asm        jge    _T348;
 // LINE 2301:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        mov    rectCurrentText.bottom, eax;
+	rectCurrentText.bottom = this-><ListBoxWindow+0x2c>;
 // LINE 2302:
 _T348:
 	__asm        mov    eax, this;
@@ -12391,9 +12181,7 @@ _T524:
 	__asm        cmp    [eax+0x2C], ecx;
 	__asm        jge    _T570;
 // LINE 2312:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        mov    rectCurrentText.bottom, eax;
+	rectCurrentText.bottom = this-><ListBoxWindow+0x2c>;
 // LINE 2315:
 _T570:
 	__asm        jmp    near ptr 0x004B500F;
@@ -12850,15 +12638,14 @@ int32_t ListBoxWindow::InsertString(class basic_string<char>& sToAdd, long lInde
 	__asm        cmp    lIndex, 0xFFFFFFFF;
 	__asm        jne    _T32;
 // LINE 2401:
-	__asm        mov    eax, lOriginalLineCount;
-	__asm        mov    lIndex, eax;
+	lIndex = lOriginalLineCount;
 // LINE 2402:
 	__asm        jmp    _T43;
 _T32:
 	__asm        cmp    lIndex, 0;
 	__asm        jge    _T43;
 // LINE 2403:
-	__asm        mov    lIndex, 0;
+	lIndex = 0x0;
 // LINE 2405:
 _T43:
 	__asm        mov    eax, sToAdd;
@@ -12873,7 +12660,7 @@ _T43:
 	__asm        cmp    lOriginalLineCount, 0;
 	__asm        jne    _T81;
 // LINE 2409:
-	__asm        mov    lNewSelection, 0;
+	lNewSelection = 0x0;
 // LINE 2410:
 	__asm        mov    eax, lNewSelection;
 	__asm        push   eax;
@@ -12948,7 +12735,7 @@ int32_t ListBoxWindow::InsertString(long lResourceIndex, long lInsertPosition) {
 	__asm        mov    sNew.reference, eax;
 	__asm        jmp    _T6d;
 _T66:
-	__asm        mov    sNew.reference, 0;
+	sNew.reference = 0x0;
 _T6d:
 	__asm        mov    sNew.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x004B5667;
@@ -13041,7 +12828,7 @@ _T179:
 	__asm        mov    [ebp-0x1034], eax;
 	__asm        jmp    _T1c4;
 _T1ba:
-	__asm        mov    dword ptr [ebp-0x1034], 0;
+	None = 0x0;
 _T1c4:
 	__asm        lea    ecx, sNew.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
@@ -13146,7 +12933,7 @@ _T2cf:
 	__asm        mov    [ebp-0x1048], eax;
 	__asm        jmp    _T333;
 _T329:
-	__asm        mov    dword ptr [ebp-0x1048], 0;
+	None = 0x0;
 _T333:
 	__asm        lea    ecx, sNew.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
@@ -13240,7 +13027,7 @@ _T43c:
 	__asm        mov    [ebp-0x105C], eax;
 	__asm        jmp    _T487;
 _T47d:
-	__asm        mov    dword ptr [ebp-0x105C], 0;
+	None = 0x0;
 _T487:
 	__asm        mov    eax, sNew.reference;
 	__asm        dec    dword ptr [eax+0xC];
@@ -13383,8 +13170,7 @@ int32_t ListBoxWindow::ModifyString(long lIndex, class basic_string<char>& sNew)
 	__asm        test   eax, eax;
 	__asm        je     _T20d;
 
-	__asm        mov    eax, sAddress;
-	__asm        mov    [ebp-0x2C], eax;
+	None = sAddress;
 // LINE 2449:
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        cmp    sNew, eax;
@@ -13564,9 +13350,7 @@ int32_t ListBoxWindow::GetStringAddressFromIndex(long lIndex, class basic_string
 // LINE 2466:
 	__asm        jmp    near ptr 0x004B5E32;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x78];
-	__asm        mov    lStringCount, eax;
+	lStringCount = this->myStringList.length;
 // LINE 2468:
 	__asm        mov    eax, lStringCount;
 	__asm        dec    eax;
@@ -13647,8 +13431,7 @@ int32_t ListBoxWindow::GetStringFromIndex(long lIndex, class basic_string<char>&
 	__asm        test   eax, eax;
 	__asm        je     _T1f4;
 
-	__asm        mov    eax, sAddress;
-	__asm        mov    [ebp-0x2C], eax;
+	None = sAddress;
 // LINE 2499:
 	__asm        mov    eax, sFound;
 	__asm        cmp    [ebp-0x2C], eax;
@@ -13797,8 +13580,7 @@ _T1c8:
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    _T1ef;
 _T1e5:
-	__asm        mov    eax, sFound;
-	__asm        mov    dword ptr [eax+4], 0;
+	sFound.reference = 0x0;
 _T1ef:
 	__asm        jmp    _T1f4;
 // LINE 2501:
@@ -13814,7 +13596,7 @@ int32_t ListBoxWindow::GetIndexFromString(long& lIndex, class basic_string<char>
 	class list<basic_string<char>>::iterator tempStringListIterator;
 
 // LINE 2511:
-	__asm        mov    i, 0;
+	i = 0x0;
 // LINE 2512:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
@@ -13879,7 +13661,7 @@ _T85:
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    _Tc5;
 _Tbe:
-	__asm        mov    dword ptr [ebp-0x14], 0xFFFFFFFF;
+	None = 0xffffffff;
 _Tc5:
 	__asm        jmp    near ptr 0x004B61A8;
 
@@ -13927,9 +13709,7 @@ _T133:
 	__asm        je     _T154;
 // LINE 2516:
 _T142:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, lIndex;
-	__asm        mov    [ecx], eax;
+	lIndex. = i;
 // LINE 2517:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T181;
@@ -14094,7 +13874,7 @@ _T13a:
 	long i;
 	class list<basic_string<char>>::iterator tempStringListIterator;
 _T171:
-	__asm        mov    i, 0;
+	i = 0x0;
 // LINE 2551:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
@@ -14143,8 +13923,7 @@ _T1ea:
 	__asm        cmp    lIndex, eax;
 	__asm        jne    _T2e8;
 
-	__asm        mov    eax, tempStringListIterator.node;
-	__asm        mov    [ebp-0x54], eax;
+	None = tempStringListIterator.node;
 // LINE 2555:
 	__asm        mov    eax, [ebp-0x54];
 	__asm        mov    eax, [eax];
@@ -14403,7 +14182,7 @@ _T166:
 	long i;
 	class list<basic_string<char>>::iterator tempStringListIterator;
 _T1b7:
-	__asm        mov    i, 0;
+	i = 0x0;
 // LINE 2594:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
@@ -14452,8 +14231,7 @@ _T236:
 	__asm        cmp    lIndex, eax;
 	__asm        jne    _T4f3;
 
-	__asm        mov    eax, tempStringListIterator.node;
-	__asm        mov    [ebp-0xB0], eax;
+	None = tempStringListIterator.node;
 // LINE 2598:
 	__asm        mov    eax, list<basic_string<char>>::free_list;
 	__asm        mov    [ebp-0x68], eax;
@@ -14494,8 +14272,7 @@ _T27a:
 	__asm        mov    [ebp-0x88], eax;
 	__asm        jmp    _T2e9;
 _T2e0:
-	__asm        mov    eax, [ebp-0x80];
-	__asm        mov    [ebp-0x88], eax;
+	None = None;
 _T2e9:
 	__asm        jmp    near ptr 0x004B6873;
 
@@ -14563,8 +14340,7 @@ _T368:
 	__asm        mov    [ebp-0x9C], eax;
 	__asm        jmp    _T3fc;
 _T3f0:
-	__asm        mov    eax, [ebp-0x94];
-	__asm        mov    [ebp-0x9C], eax;
+	None = None;
 _T3fc:
 	__asm        jmp    near ptr 0x004B6986;
 
@@ -14797,8 +14573,7 @@ int32_t ListBoxWindow::SetSelection(long lIndex) {
 	__asm        jmp    _T136;
 // LINE 2684:
 _T23:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC8], 1;
+	this->bBusySettingSelection = 0x1;
 // LINE 2686:
 	__asm        cmp    lIndex, 0xFFFFFFFF;
 	__asm        je     _T6f;
@@ -14814,8 +14589,7 @@ _T23:
 	__asm        jg     _T6f;
 // LINE 2687:
 _T5b:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC8], 0;
+	this->bBusySettingSelection = 0x0;
 // LINE 2688:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T136;
@@ -14826,16 +14600,13 @@ _T6f:
 	__asm        cmp    [eax+0xAC], ecx;
 	__asm        jne    _T98;
 // LINE 2691:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC8], 0;
+	this->bBusySettingSelection = 0x0;
 // LINE 2692:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T136;
 // LINE 2695:
 _T98:
-	__asm        mov    eax, lIndex;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xAC], eax;
+	this->lCurrentSelection = lIndex;
 // LINE 2696:
 	__asm        cmp    lIndex, 0;
 	__asm        jl     _Tda;
@@ -14885,8 +14656,7 @@ _Tda:
 	__asm        call   dword ptr [edx];
 // LINE 2705:
 _T11f:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC8], 0;
+	this->bBusySettingSelection = 0x0;
 // LINE 2706:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T136;
@@ -14990,16 +14760,13 @@ void ListBoxWindow::SetIndexOfTopLine(long lIndex) {
 	__asm        jmp    _Tea;
 // LINE 2754:
 _T23:
-	__asm        mov    eax, lIndex;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xB4], eax;
+	this->lFirstVisibleLine = lIndex;
 // LINE 2755:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB4], 0;
 	__asm        jge    _T4c;
 // LINE 2756:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xB4], 0;
+	this->lFirstVisibleLine = 0x0;
 // LINE 2757:
 _T4c:
 	__asm        mov    eax, this;
@@ -15214,9 +14981,7 @@ int32_t ListBoxWindow::ScrollPageUp() {
 	long lCurrentLineCount;
 
 // LINE 2862:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xB4];
-	__asm        mov    lNewFirstVisibleLine, eax;
+	lNewFirstVisibleLine = this->lFirstVisibleLine;
 // LINE 2863:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -15237,7 +15002,7 @@ int32_t ListBoxWindow::ScrollPageUp() {
 // LINE 2866:
 	__asm        jns    _T53;
 // LINE 2867:
-	__asm        mov    lNewFirstVisibleLine, 0;
+	lNewFirstVisibleLine = 0x0;
 // LINE 2868:
 _T53:
 	__asm        mov    eax, lNewFirstVisibleLine;
@@ -15259,9 +15024,7 @@ int32_t ListBoxWindow::ScrollPageDown() {
 	long lCurrentLineCount;
 
 // LINE 2882:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xB4];
-	__asm        mov    lNewFirstVisibleLine, eax;
+	lNewFirstVisibleLine = this->lFirstVisibleLine;
 // LINE 2883:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -15316,7 +15079,7 @@ int32_t ListBoxWindow::ScrollToFirstLetter(char chValue) {
 	class list<basic_string<char>>::iterator tempStringListIterator;
 
 // LINE 2902:
-	__asm        mov    i, 0;
+	i = 0x0;
 // LINE 2903:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
@@ -15505,8 +15268,7 @@ void ListBoxWindow::SetShouldSort() {
 	__asm        cmp    dword ptr [eax+0xBC], 0;
 	__asm        jne    _T37;
 // LINE 2924:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xBC], 1;
+	this->bAlwaysSort = 0x1;
 // LINE 2925:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -15546,7 +15308,7 @@ void ListBoxWindow::Sort() {
 	__asm        mov    sSaved.reference, eax;
 	__asm        jmp    _T69;
 _T62:
-	__asm        mov    sSaved.reference, 0;
+	sSaved.reference = 0x0;
 _T69:
 	__asm        mov    sSaved.c_str_ptr, 0;
 	__asm        jmp    near ptr 0x004B749F;
@@ -15601,7 +15363,7 @@ _T10b:
 _T12e:
 	__asm        jmp    near ptr 0x004B755D;
 
-	__asm        mov    dword ptr [ebp-0x2C], 0;
+	None = 0x0;
 _T13a:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x78], 0;
@@ -15884,7 +15646,7 @@ int32_t ListBoxWindow::AddScrollBar(int32_t bVertical, int32_t __formal, char * 
 
 	__asm        jmp    near ptr 0x004B795A;
 // LINE 2980:
-	__asm        mov    rectScrollBar.top, 0;
+	rectScrollBar.top = 0x0;
 // LINE 2981:
 	__asm        jmp    near ptr 0x004B7966;
 
@@ -15930,8 +15692,7 @@ int32_t ListBoxWindow::AddScrollBar(int32_t bVertical, int32_t __formal, char * 
 	__asm        mov    [ecx+0xC0], eax;
 	__asm        jmp    _Tc0;
 _Tb3:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC0], 0;
+	this->myVerticalScrollBarWindow = 0x0;
 // LINE 2987:
 _Tc0:
 	__asm        mov    eax, this;
@@ -15972,8 +15733,7 @@ void ListBoxWindow::RemoveScrollBar(int32_t bVertical, int32_t bHorizontal) {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x5C];
 // LINE 3002:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC0], 0;
+	this->myVerticalScrollBarWindow = 0x0;
 // LINE 3004:
 _T38:
 	__asm        cmp    bHorizontal, 0;
@@ -15987,8 +15747,7 @@ _T38:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x5C];
 // LINE 3006:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC4], 0;
+	this->myHorizontalScrollBarWindow = 0x0;
 // LINE 3008:
 _T64:
 	__asm        jmp    near ptr 0x004B7A92;
@@ -16014,7 +15773,7 @@ void ListBoxWindow::SetScrollBarValue() {
 	__asm        cmp    lLinesNotVisible, 0;
 	__asm        jge    _T47;
 // LINE 3019:
-	__asm        mov    lLinesNotVisible, 0;
+	lLinesNotVisible = 0x0;
 // LINE 3020:
 _T47:
 	__asm        push   0;
@@ -16094,7 +15853,7 @@ void ListBoxWindow::SetScrollBarSizes() {
 	__asm        mov    nScrollBarYPosition, 1;
 	__asm        jmp    _T6f;
 _T68:
-	__asm        mov    nScrollBarYPosition, 0;
+	nScrollBarYPosition = 0x0;
 // LINE 3038:
 _T6f:
 	__asm        mov    eax, nScrollBarYPosition;
@@ -16467,7 +16226,7 @@ void PopupMenuWindow::ResizeWindowToFitMenuItems() {
 	class MRect rectNewWindow;
 
 // LINE 3174:
-	__asm        mov    lCurrentLongestLineWidth, 1;
+	lCurrentLongestLineWidth = 0x1;
 // LINE 3177:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
@@ -16651,8 +16410,7 @@ _T19d:
 	__asm        cmp    lCurrentLineWidth, eax;
 	__asm        jle    _T209;
 // LINE 3183:
-	__asm        mov    eax, lCurrentLineWidth;
-	__asm        mov    lCurrentLongestLineWidth, eax;
+	lCurrentLongestLineWidth = lCurrentLineWidth;
 // LINE 3184:
 _T209:
 	__asm        mov    eax, tempStringListIterator.node;

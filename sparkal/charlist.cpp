@@ -44,8 +44,7 @@ protected:
 // FUNCTION: COPTER_D 0x0043d3f0
 void CharData::CharData() {
 // LINE 10:
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax], 0;
+	this->chValue = 0x0;
 // LINE 11:
 	__asm        jmp    near ptr 0x0043D407;
 
@@ -55,9 +54,7 @@ void CharData::CharData() {
 // FUNCTION: COPTER_D 0x0043d40f
 void CharData::CharData(unsigned char chNewValue) {
 // LINE 15:
-	__asm        mov    al, chNewValue;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx], al;
+	this->chValue = chNewValue;
 // LINE 16:
 	__asm        jmp    near ptr 0x0043D428;
 
@@ -67,8 +64,7 @@ void CharData::CharData(unsigned char chNewValue) {
 // FUNCTION: COPTER_D 0x0043d432
 void CharList::CharList() {
 // LINE 25:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0;
+	this->nCharDataCount = 0x0;
 // LINE 28:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xC], 0;
@@ -95,25 +91,17 @@ void CharList::~CharList() {
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T6b;
 // LINE 36:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], eax;
+	this->presentCharData = this->firstCharData;
 // LINE 38:
 	__asm        jmp    _T32;
 _T29:
-	__asm        mov    eax, nextCharData;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], eax;
+	this->presentCharData = nextCharData;
 _T32:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        je     _T6b;
 // LINE 40:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    eax, [eax+5];
-	__asm        mov    nextCharData, eax;
+	nextCharData = this->presentCharData->nextCharData;
 // LINE 41:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
@@ -150,7 +138,7 @@ void CharList::AddItem(unsigned char chNewValue) {
 	__asm        mov    tempCharData, eax;
 	__asm        jmp    _T3e;
 _T37:
-	__asm        mov    tempCharData, 0;
+	tempCharData = 0x0;
 // LINE 53:
 _T3e:
 	__asm        mov    eax, tempCharData;
@@ -171,43 +159,26 @@ void CharList::AddItem(class CharData *charDataToAdd) {
 	__asm        cmp    dword ptr [eax], 1;
 	__asm        jne    _T51;
 // LINE 62:
-	__asm        mov    eax, charDataToAdd;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->firstCharData = charDataToAdd;
 // LINE 63:
-	__asm        mov    eax, charDataToAdd;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+8], eax;
+	this->lastCharData = charDataToAdd;
 // LINE 64:
-	__asm        mov    eax, charDataToAdd;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], eax;
+	this->presentCharData = charDataToAdd;
 // LINE 65:
-	__asm        mov    eax, charDataToAdd;
-	__asm        mov    dword ptr [eax+5], 0;
+	charDataToAdd->nextCharData = 0x0;
 // LINE 66:
-	__asm        mov    eax, charDataToAdd;
-	__asm        mov    dword ptr [eax+1], 0;
+	charDataToAdd->previousCharData = 0x0;
 // LINE 68:
 	__asm        jmp    _T7c;
 // LINE 69:
 _T51:
-	__asm        mov    eax, charDataToAdd;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+8];
-	__asm        mov    [ecx+5], eax;
+	this->lastCharData->nextCharData = charDataToAdd;
 // LINE 70:
-	__asm        mov    eax, charDataToAdd;
-	__asm        mov    dword ptr [eax+5], 0;
+	charDataToAdd->nextCharData = 0x0;
 // LINE 71:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, charDataToAdd;
-	__asm        mov    [ecx+1], eax;
+	charDataToAdd->previousCharData = this->lastCharData;
 // LINE 72:
-	__asm        mov    eax, charDataToAdd;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+8], eax;
+	this->lastCharData = charDataToAdd;
 // LINE 74:
 _T7c:
 	__asm        jmp    near ptr 0x0043D5C2;
@@ -234,38 +205,24 @@ _T33:
 	__asm        cmp    dword ptr [eax+1], 0;
 	__asm        je     _T54;
 // LINE 85:
-	__asm        mov    eax, charDataToDelete;
-	__asm        mov    eax, [eax+5];
-	__asm        mov    ecx, charDataToDelete;
-	__asm        mov    ecx, [ecx+1];
-	__asm        mov    [ecx+5], eax;
+	charDataToDelete->previousCharData->nextCharData = charDataToDelete->nextCharData;
 // LINE 86:
 	__asm        jmp    _T60;
 // LINE 87:
 _T54:
-	__asm        mov    eax, charDataToDelete;
-	__asm        mov    eax, [eax+5];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->firstCharData = charDataToDelete->nextCharData;
 // LINE 88:
 _T60:
 	__asm        mov    eax, charDataToDelete;
 	__asm        cmp    dword ptr [eax+5], 0;
 	__asm        je     _T81;
 // LINE 90:
-	__asm        mov    eax, charDataToDelete;
-	__asm        mov    eax, [eax+1];
-	__asm        mov    ecx, charDataToDelete;
-	__asm        mov    ecx, [ecx+5];
-	__asm        mov    [ecx+1], eax;
+	charDataToDelete->nextCharData->previousCharData = charDataToDelete->previousCharData;
 // LINE 91:
 	__asm        jmp    _T8d;
 // LINE 92:
 _T81:
-	__asm        mov    eax, charDataToDelete;
-	__asm        mov    eax, [eax+1];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+8], eax;
+	this->lastCharData = charDataToDelete->previousCharData;
 // LINE 94:
 _T8d:
 	__asm        mov    eax, this;
@@ -341,9 +298,7 @@ void CharList::DeleteAllItems() {
 	int32_t iEnd;
 
 // LINE 121:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax];
-	__asm        mov    iEnd, eax;
+	iEnd = this->nCharDataCount;
 // LINE 123:
 	__asm        mov    i, 0;
 	__asm        jmp    _T23;
@@ -400,10 +355,7 @@ _T45:
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        je     _T6f;
 // LINE 141:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    eax, [eax+5];
-	__asm        mov    nextCharData, eax;
+	nextCharData = this->presentCharData->nextCharData;
 // LINE 142:
 	__asm        jmp    _T39;
 // LINE 144:
@@ -420,25 +372,17 @@ class CharData* CharList::FindCharDataByValue(unsigned char chValue) {
 	class CharData *nextCharData;
 
 // LINE 152:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], eax;
+	this->presentCharData = this->firstCharData;
 // LINE 154:
 	__asm        jmp    _T26;
 _T1d:
-	__asm        mov    eax, nextCharData;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], eax;
+	this->presentCharData = nextCharData;
 _T26:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        je     _T66;
 // LINE 156:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    eax, [eax+5];
-	__asm        mov    nextCharData, eax;
+	nextCharData = this->presentCharData->nextCharData;
 // LINE 157:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];

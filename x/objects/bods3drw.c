@@ -213,7 +213,7 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 	int32_t endX;
 
 // LINE 189:
-	__asm        mov    shftCt, 0;
+	shftCt = 0x0;
 // LINE 191:
 	__asm        cmp    diameter, 0;
 	__asm        jne    _T1f;
@@ -230,7 +230,7 @@ _T2e:
 	__asm        cmp    diameter, 3;
 	__asm        jge    _T3f;
 // LINE 199:
-	__asm        mov    shadeFlag, 0;
+	shadeFlag = 0x0;
 // LINE 201:
 _T3f:
 	__asm        cmp    shadeFlag, 2;
@@ -246,7 +246,7 @@ _T3f:
 	__asm        cmp    eax, 1;
 	__asm        jge    _T7c;
 // LINE 202:
-	__asm        mov    shadeFlag, 1;
+	shadeFlag = 0x1;
 // LINE 204:
 _T7c:
 	__asm        mov    eax, diameter;
@@ -537,10 +537,10 @@ _T480:
 	__asm        jmp    _T4ba;
 // LINE 261:
 _T4b0:
-	__asm        mov    ditherLimit, 2;
+	ditherLimit = 0x2;
 // LINE 263:
 _T4ba:
-	__asm        mov    i, 0;
+	i = 0x0;
 _T4c4:
 	__asm        mov    eax, diameter;
 	__asm        cmp    i, eax;
@@ -778,7 +778,7 @@ void DrawFaceTwo(struct Point3d centerPt, long vertRad, float psi, double scaleF
 	long yScanLine;
 
 // LINE 416:
-	__asm        mov    bhdr, 0;
+	bhdr = 0x0;
 // LINE 422:
 	__asm        cmp    vertRad, 0;
 	__asm        jne    _T1f;
@@ -817,8 +817,7 @@ _T48:
 	__asm        add    esp, 0x10;
 // LINE 434:
 _T84:
-	__asm        mov    eax, bhdr;
-	__asm        mov    pixPtr, eax;
+	pixPtr = bhdr;
 // LINE 435:
 	__asm        mov    eax, bhdr;
 	__asm        mov    eax, [eax+4];
@@ -835,7 +834,7 @@ _T84:
 	__asm        call   FindFaceQuadrant2;
 	__asm        add    esp, 0xC;
 // LINE 444:
-	__asm        mov    faceCenter.y, 0xC;
+	faceCenter.y = 0xc;
 // LINE 447:
 	__asm        mov    eax, vertRad;
 	__asm        imul   eax, vertRad;
@@ -847,7 +846,7 @@ _T84:
 	__asm        fmul   G_figureHeadShapeRatio;
 	__asm        fstp   aSquared;
 // LINE 450:
-	__asm        mov    pixLine.width, 0x34;
+	pixLine.width = 0x34;
 // LINE 451:
 	__asm        fld    qword ptr ds:[0x5939B0];
 	__asm        fdiv   scaleFactor;
@@ -1092,8 +1091,7 @@ _Ta5:
 	__asm        add    eax, [ecx+0x10];
 	__asm        mov    ptr, eax;
 // LINE 553:
-	__asm        mov    eax, startX;
-	__asm        mov    begin, eax;
+	begin = startX;
 // LINE 555:
 	__asm        mov    eax, loBitmapLimit;
 	__asm        neg    eax;
@@ -1123,15 +1121,11 @@ _Ta5:
 	__asm        call   DrawHorzLinePat;
 	__asm        add    esp, 0x1C;
 // LINE 558:
-	__asm        mov    eax, pixLine;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ptr, eax;
+	ptr = pixLine->ptr;
 // LINE 559:
-	__asm        mov    eax, end;
-	__asm        mov    begin, eax;
+	begin = end;
 // LINE 560:
-	__asm        mov    eax, endX;
-	__asm        mov    end, eax;
+	end = endX;
 // LINE 561:
 	__asm        mov    eax, pixLine;
 	__asm        mov    ecx, [eax+0xC];
@@ -1159,8 +1153,7 @@ _T14b:
 	__asm        add    eax, [ecx+0x10];
 	__asm        mov    ptr, eax;
 // LINE 566:
-	__asm        mov    eax, startX;
-	__asm        mov    begin, eax;
+	begin = startX;
 // LINE 567:
 	__asm        mov    eax, pixLine;
 	__asm        mov    eax, [eax];
@@ -1191,15 +1184,11 @@ _T14b:
 	__asm        call   DrawHorzLinePat;
 	__asm        add    esp, 0x1C;
 // LINE 570:
-	__asm        mov    eax, pixLine;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ptr, eax;
+	ptr = pixLine->ptr;
 // LINE 571:
-	__asm        mov    eax, end;
-	__asm        mov    begin, eax;
+	begin = end;
 // LINE 572:
-	__asm        mov    eax, endX;
-	__asm        mov    end, eax;
+	end = endX;
 // LINE 573:
 	__asm        mov    eax, pixLine;
 	__asm        mov    ecx, [eax+0xC];
@@ -1399,7 +1388,7 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 	char col[26];
 
 // LINE 648:
-	__asm        mov    error, 0;
+	error = 0x0;
 // LINE 656:
 	__asm        mov    eax, *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&G_figureShadeSpread) + 4);
 	__asm        mov    *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&colorLimit) + 4), eax;
@@ -1421,7 +1410,7 @@ _T41:
 	__asm        cmp    taper, 0;
 	__asm        jne    _T52;
 // LINE 667:
-	__asm        mov    taper, 1;
+	taper = 0x1;
 // LINE 669:
 _T52:
 	__asm        mov    eax, taper;
@@ -1539,12 +1528,12 @@ _T16b:
 	__asm        cmp    dx, 0;
 	__asm        jl     _T193;
 // LINE 700:
-	__asm        mov    xInc, 1;
+	xInc = 0x1;
 // LINE 701:
 	__asm        jmp    _T1a2;
 // LINE 703:
 _T193:
-	__asm        mov    xInc, 0xFFFFFFFF;
+	xInc = 0xffffffff;
 // LINE 704:
 	__asm        mov    eax, dx;
 	__asm        neg    eax;
@@ -1554,8 +1543,7 @@ _T1a2:
 	__asm        cmp    dy, 0;
 	__asm        jl     _T1b9;
 // LINE 708:
-	__asm        mov    eax, Pbufwidth;
-	__asm        mov    yInc, eax;
+	yInc = Pbufwidth;
 // LINE 709:
 	__asm        jmp    _T1cb;
 // LINE 711:
@@ -1607,8 +1595,7 @@ _T224:
 	__asm        cmp    i, eax;
 	__asm        jge    _T2d3;
 // LINE 727:
-	__asm        mov    eax, writeBuffer;
-	__asm        mov    writeBufferTmp, eax;
+	writeBufferTmp = writeBuffer;
 // LINE 731:
 	__asm        mov    eax, i;
 	__asm        cdq;
@@ -1710,7 +1697,7 @@ _T318:
 	__asm        cmp    segLen, 0;
 	__asm        jne    _T329;
 // LINE 762:
-	__asm        mov    segLen, 1;
+	segLen = 0x1;
 // LINE 764:
 _T329:
 	__asm        mov    i, 0;
@@ -1722,8 +1709,7 @@ _T338:
 	__asm        cmp    i, eax;
 	__asm        jge    _T493;
 // LINE 766:
-	__asm        mov    eax, writeBuffer;
-	__asm        mov    writeBufferTmp, eax;
+	writeBufferTmp = writeBuffer;
 // LINE 775:
 	__asm        mov    eax, i;
 	__asm        cdq;
@@ -1741,8 +1727,7 @@ _T338:
 	__asm        mov    eax, startWidth;
 	__asm        add    writeBufferTmp, eax;
 // LINE 780:
-	__asm        mov    eax, startWidth;
-	__asm        mov    cInc, eax;
+	cInc = startWidth;
 // LINE 786:
 	__asm        mov    eax, tapWidth;
 	__asm        and    eax, 3;
@@ -1881,7 +1866,7 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 	char col[26];
 
 // LINE 833:
-	__asm        mov    error, 0;
+	error = 0x0;
 // LINE 836:
 	__asm        mov    eax, *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&G_figureShadeSpread) + 4);
 	__asm        mov    *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&colorLimit) + 4), eax;
@@ -2008,12 +1993,12 @@ _T142:
 	__asm        cmp    dx, 0;
 	__asm        jl     _T16a;
 // LINE 876:
-	__asm        mov    xInc, 1;
+	xInc = 0x1;
 // LINE 877:
 	__asm        jmp    _T179;
 // LINE 879:
 _T16a:
-	__asm        mov    xInc, 0xFFFFFFFF;
+	xInc = 0xffffffff;
 // LINE 880:
 	__asm        mov    eax, dx;
 	__asm        neg    eax;
@@ -2023,8 +2008,7 @@ _T179:
 	__asm        cmp    dy, 0;
 	__asm        jl     _T190;
 // LINE 884:
-	__asm        mov    eax, Pbufwidth;
-	__asm        mov    yInc, eax;
+	yInc = Pbufwidth;
 // LINE 885:
 	__asm        jmp    _T1a2;
 // LINE 887:
@@ -2062,8 +2046,7 @@ _T1de:
 	__asm        cmp    i, eax;
 	__asm        jge    _T26e;
 // LINE 898:
-	__asm        mov    eax, writeBuffer;
-	__asm        mov    writeBufferTmp, eax;
+	writeBufferTmp = writeBuffer;
 // LINE 900:
 	__asm        mov    j, 0;
 	__asm        jmp    _T1ff;
@@ -2143,10 +2126,9 @@ _T2a5:
 	__asm        cmp    i, eax;
 	__asm        jge    _T417;
 // LINE 922:
-	__asm        mov    eax, writeBuffer;
-	__asm        mov    writeBufferTmp, eax;
+	writeBufferTmp = writeBuffer;
 // LINE 923:
-	__asm        mov    cInc, 0;
+	cInc = 0x0;
 // LINE 929:
 	__asm        mov    eax, width;
 	__asm        and    eax, 3;

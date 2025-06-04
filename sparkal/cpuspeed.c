@@ -67,23 +67,23 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 	__asm        call   wincpufeatures;
 	__asm        mov    features, eax;
 // LINE 108:
-	__asm        mov    freq, 0;
+	freq = 0x0;
 // LINE 109:
-	__asm        mov    freq2, 0;
+	freq2 = 0x0;
 // LINE 110:
-	__asm        mov    freq3, 0;
+	freq3 = 0x0;
 // LINE 115:
-	__asm        mov    manual, 0;
+	manual = 0x0;
 // LINE 119:
-	__asm        mov    tries, 0;
+	tries = 0x0;
 // LINE 130:
-	__asm        mov    cpu_speed.in_cycles, 0;
+	cpu_speed.in_cycles = 0x0;
 // LINE 131:
-	__asm        mov    cpu_speed.ex_ticks, 0;
+	cpu_speed.ex_ticks = 0x0;
 // LINE 132:
-	__asm        mov    cpu_speed.raw_freq, 0;
+	cpu_speed.raw_freq = 0x0;
 // LINE 133:
-	__asm        mov    cpu_speed.norm_freq, 0;
+	cpu_speed.norm_freq = 0x0;
 // LINE 135:
 	__asm        test   *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&processor) + 1), 0x80;
 	__asm        je     _T87;
@@ -129,7 +129,7 @@ _Tb4:
 	__asm        shl    eax, 5;
 	__asm        mov    cycles, eax;
 // LINE 144:
-	__asm        mov    manual, 1;
+	manual = 0x1;
 // LINE 153:
 	__asm        jmp    _T10d;
 // LINE 154:
@@ -177,21 +177,17 @@ _T143:
 _T157:
 	__asm        inc    tries;
 // LINE 186:
-	__asm        mov    eax, freq2;
-	__asm        mov    freq3, eax;
+	freq3 = freq2;
 // LINE 187:
-	__asm        mov    eax, freq;
-	__asm        mov    freq2, eax;
+	freq2 = freq;
 // LINE 190:
 	__asm        lea    eax, t0<_LARGE_INTEGER+0x00:None>;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C365C];
 // LINE 194:
-	__asm        mov    eax, t0<_LARGE_INTEGER+0x00:4>;
-	__asm        mov    t1<_LARGE_INTEGER+0x00:4>, eax;
+	t1<_LARGE_INTEGER+0x00:4> = t0<_LARGE_INTEGER+0x00:4>;
 // LINE 195:
-	__asm        mov    eax, t0<_LARGE_INTEGER+0x04:4>;
-	__asm        mov    t1<_LARGE_INTEGER+0x04:4>, eax;
+	t1<_LARGE_INTEGER+0x04:4> = t0<_LARGE_INTEGER+0x04:4>;
 // LINE 197:
 _T17c:
 	__asm        mov    eax, t1<_LARGE_INTEGER+0x00:4>;
@@ -210,11 +206,9 @@ _T19a:
 // LINE 212:
 	__asm        mov    stamp0, eax;
 // LINE 215:
-	__asm        mov    eax, t1<_LARGE_INTEGER+0x00:4>;
-	__asm        mov    t0<_LARGE_INTEGER+0x00:4>, eax;
+	t0<_LARGE_INTEGER+0x00:4> = t1<_LARGE_INTEGER+0x00:4>;
 // LINE 216:
-	__asm        mov    eax, t1<_LARGE_INTEGER+0x04:4>;
-	__asm        mov    t0<_LARGE_INTEGER+0x04:4>, eax;
+	t0<_LARGE_INTEGER+0x04:4> = t1<_LARGE_INTEGER+0x04:4>;
 // LINE 218:
 _T1ab:
 	__asm        mov    eax, t1<_LARGE_INTEGER+0x00:4>;
@@ -360,9 +354,9 @@ _T2fb:
 	unsigned long lowest;
 	int32_t i;
 	unsigned long current;
-	__asm        mov    current, 0;
+	current = 0x0;
 // LINE 313:
-	__asm        mov    lowest, 0xFFFFFFFF;
+	lowest = 0xffffffff;
 // LINE 325:
 	__asm        mov    i, 0;
 	__asm        jmp    _T329;
@@ -400,15 +394,13 @@ _T346:
 	__asm        cmp    lowest, eax;
 	__asm        jbe    _T376;
 // LINE 358:
-	__asm        mov    eax, current;
-	__asm        mov    lowest, eax;
+	lowest = current;
 // LINE 359:
 _T376:
 	__asm        jmp    _T326;
 // LINE 363:
 _T37b:
-	__asm        mov    eax, lowest;
-	__asm        mov    ticks, eax;
+	ticks = lowest;
 // LINE 374:
 	__asm        mov    eax, ticks;
 	__asm        mov    ecx, eax;
@@ -461,21 +453,18 @@ _T3ef:
 	__asm        jmp    _T409;
 // LINE 396:
 _T3f4:
-	__asm        mov    cycles, 0;
+	cycles = 0x0;
 // LINE 397:
-	__asm        mov    ticks, 0;
+	ticks = 0x0;
 // LINE 398:
-	__asm        mov    freq, 0;
+	freq = 0x0;
 // LINE 402:
 _T409:
-	__asm        mov    eax, cycles;
-	__asm        mov    cpu_speed.in_cycles, eax;
+	cpu_speed.in_cycles = cycles;
 // LINE 403:
-	__asm        mov    eax, ticks;
-	__asm        mov    cpu_speed.ex_ticks, eax;
+	cpu_speed.ex_ticks = ticks;
 // LINE 404:
-	__asm        mov    eax, freq;
-	__asm        mov    cpu_speed.raw_freq, eax;
+	cpu_speed.raw_freq = freq;
 // LINE 405:
 	__asm        mov    eax, freq;
 	__asm        push   eax;
@@ -552,7 +541,7 @@ static unsigned long NormFreq(unsigned short processor, unsigned long freq) {
 	__asm        mov    iPentiumProSpeeds[8], 0x12C;
 	__asm        mov    iPentiumProSpeeds[9], 0;
 // LINE 438:
-	__asm        mov    ptr, 0;
+	ptr = 0x0;
 // LINE 440:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(processor);
 	__asm        and    eax, 0xFFFF;

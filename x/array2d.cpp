@@ -388,9 +388,7 @@ void _cArray::FromDiskCreate(void * __ptr32 hArray, class ResFile *pFile, long e
 	unsigned char tmpname[256];
 
 // LINE 30:
-	__asm        mov    eax, pFile;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x24], eax;
+	this->fFile = pFile;
 // LINE 31:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x24];
@@ -399,9 +397,7 @@ void _cArray::FromDiskCreate(void * __ptr32 hArray, class ResFile *pFile, long e
 	__asm        add    esp, 4;
 	__asm        mov    fileOpened, ax;
 // LINE 33:
-	__asm        mov    eax, hArray;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+8], eax;
+	this->fDataHandle = hArray;
 // LINE 34:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
@@ -467,7 +463,7 @@ _T107:
 	__asm        cmp    eax, 0xF;
 	__asm        jle    _T11f;
 // LINE 58:
-	__asm        mov    tmpname[0], 0xF;
+	tmpname[0] = 0xf;
 // LINE 61:
 _T11f:
 	__asm        push   0x10;
@@ -498,9 +494,7 @@ _T11f:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], eax;
 // LINE 68:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    header, eax;
+	header = this->fDataPtr;
 // LINE 70:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
@@ -632,11 +626,7 @@ _T30a:
 	__asm        add    esp, 0x10;
 // LINE 97:
 _T353:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, xcount;
-	__asm        mov    eax, [eax+ecx*4];
-	__asm        mov    data, eax;
+	data = this->fData->;
 // LINE 98:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
@@ -678,17 +668,11 @@ _T20:
 	__asm        add    esp, 0x10;
 // LINE 127:
 _T39:
-	__asm        mov    eax, pFile;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x24], eax;
+	this->fFile = pFile;
 // LINE 128:
-	__asm        mov    eax, rType;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x28], eax;
+	this->fType = rType;
 // LINE 129:
-	__asm        mov    eax, entrySize;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x18], eax;
+	this->fEntrySize = entrySize;
 // LINE 132:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x10], 0xFFFFFFFF;
@@ -723,15 +707,12 @@ _T39:
 	__asm        jmp    _Tbc;
 // LINE 143:
 _Tab:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x4C], 0;
+	this->fTinyName = 0x0;
 // LINE 144:
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x3C], 0;
+	this->fName[0] = 0x0;
 // LINE 147:
 _Tbc:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0x20], 0xFFFF;
+	this->fResID = 0xffff;
 // LINE 151:
 	__asm        mov    eax, ySize;
 	__asm        push   eax;
@@ -750,8 +731,7 @@ _Tbc:
 // FUNCTION: COPTER_D 0x005679eb
 void _cArray::~_cArray() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x593738;
+	this-><vftable> = 0x593738;
 // LINE 160:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -776,7 +756,7 @@ _T40:
 // Block start:
 	long cnt;
 	unsigned short bFound;
-	__asm        mov    bFound, 0;
+	bFound = 0x0;
 // LINE 172:
 	__asm        mov    cnt, 0;
 	__asm        jmp    _T62;
@@ -829,11 +809,9 @@ _Tb4:
 	__asm        add    esp, 0x10;
 // LINE 179:
 _T10b:
-	__asm        mov    eax, cnt;
-	__asm        mov    ecx, _cArray::sArrayTable;
-	__asm        mov    dword ptr [ecx+eax*4], 0;
+	_cArray::sArrayTable-> = 0x0;
 // LINE 182:
-	__asm        mov    bFound, 1;
+	bFound = 0x1;
 // LINE 187:
 _T121:
 	__asm        jmp    _T5f;
@@ -875,9 +853,7 @@ _T60:
 	__asm        cmp    count, 0x400;
 	__asm        jge    _T82;
 // LINE 199:
-	__asm        mov    eax, count;
-	__asm        mov    ecx, _cArray::sArrayTable;
-	__asm        mov    dword ptr [ecx+eax*4], 0;
+	_cArray::sArrayTable-> = 0x0;
 // LINE 200:
 	__asm        jmp    _T5d;
 // LINE 202:
@@ -935,7 +911,7 @@ void _cArray::CheckIntoTable() {
 _T42:
 	__asm        call   _cArray::MakeTable;
 // LINE 254:
-	__asm        mov    foundcount, 0xFFFFFFFF;
+	foundcount = 0xffffffff;
 // LINE 255:
 	__asm        mov    count, 0;
 	__asm        jmp    _T5d;
@@ -974,8 +950,7 @@ _Tb4:
 	__asm        cmp    dword ptr [ecx+eax*4], 0;
 	__asm        jne    _Td7;
 // LINE 258:
-	__asm        mov    eax, count;
-	__asm        mov    foundcount, eax;
+	foundcount = count;
 // LINE 259:
 _Td7:
 	__asm        jmp    _T5a;
@@ -992,10 +967,7 @@ _Tdc:
 	__asm        add    esp, 0x10;
 // LINE 262:
 _T102:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, foundcount;
-	__asm        mov    edx, _cArray::sArrayTable;
-	__asm        mov    [edx+ecx*4], eax;
+	_cArray::sArrayTable-> = this;
 // LINE 264:
 // Block end:
 _T111:
@@ -1077,9 +1049,7 @@ _Tb2:
 	__asm        add    esp, 0x10;
 // LINE 312:
 _Te8:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    header, eax;
+	header = this->fDataPtr;
 // LINE 313:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
@@ -1141,9 +1111,7 @@ _T26:
 	__asm        jmp    _T174;
 // LINE 334:
 _T2b:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    begin, eax;
+	begin = this->fDataPtr;
 // LINE 335:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
@@ -1223,8 +1191,7 @@ _T118:
 	__asm        cmp    numBytes, eax;
 	__asm        jle    _T16f;
 // LINE 346:
-	__asm        mov    eax, fillPtr;
-	__asm        mov    writeplace, eax;
+	writeplace = fillPtr;
 // LINE 347:
 	__asm        mov    eax, begin;
 	__asm        cmp    writeplace, eax;
@@ -1264,13 +1231,9 @@ short _cArray::InsertRow(short afterwhich) {
 	long oldysize;
 
 // LINE 360:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        mov    oldxsize, eax;
+	oldxsize = this->fxSize;
 // LINE 361:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    oldysize, eax;
+	oldysize = this->fySize;
 // LINE 363:
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -1388,13 +1351,9 @@ short _cArray::InsertColumn(short afterwhich) {
 	long oldysize;
 
 // LINE 388:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        mov    oldxsize, eax;
+	oldxsize = this->fxSize;
 // LINE 389:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    oldysize, eax;
+	oldysize = this->fySize;
 // LINE 391:
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -1532,13 +1491,9 @@ short _cArray::DeleteRow(short which) {
 	long oldysize;
 
 // LINE 413:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        mov    oldxsize, eax;
+	oldxsize = this->fxSize;
 // LINE 414:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    oldysize, eax;
+	oldysize = this->fySize;
 // LINE 415:
 	__asm        cmp    oldxsize, 0;
 	__asm        jg     _T44;
@@ -1683,13 +1638,9 @@ short _cArray::DeleteColumn(short which) {
 	long oldysize;
 
 // LINE 436:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    oldysize, eax;
+	oldysize = this->fySize;
 // LINE 437:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        mov    oldxsize, eax;
+	oldxsize = this->fxSize;
 // LINE 438:
 	__asm        cmp    oldysize, 0;
 	__asm        jg     _T44;
@@ -1942,7 +1893,7 @@ _T4d:
 	__asm        call   _cArray::BeginCreate;
 	__asm        jmp    near ptr 0x0056871B;
 
-	__asm        mov    dword ptr [ebp-4], 0;
+	None = 0x0;
 // LINE 469:
 	__asm        lea    eax, temp<vftable>;
 	__asm        push   eax;
@@ -2643,7 +2594,7 @@ class _cArray* _cArray::GetArrayByType(unsigned long rType, short which) {
 // LINE 630:
 	__asm        call   _cArray::MakeTable;
 // LINE 631:
-	__asm        mov    found, 0;
+	found = 0x0;
 // LINE 633:
 	__asm        mov    count, 0;
 	__asm        jmp    _T23;
@@ -2695,7 +2646,7 @@ short _cArray::GetNumArraysByType(unsigned long rType) {
 // LINE 647:
 	__asm        call   _cArray::MakeTable;
 // LINE 648:
-	__asm        mov    numByType, 0;
+	numByType = 0x0;
 // LINE 649:
 	__asm        mov    cnt, 0;
 	__asm        jmp    _T23;
@@ -2739,7 +2690,7 @@ short _cArray::GetArrayIndexInType(class _cArray *findarr) {
 // LINE 659:
 	__asm        call   _cArray::MakeTable;
 // LINE 660:
-	__asm        mov    found, 0;
+	found = 0x0;
 // LINE 662:
 	__asm        mov    count, 0;
 	__asm        jmp    _T23;
@@ -2888,12 +2839,9 @@ _T119:
 	__asm        add    esp, 4;
 	__asm        mov    dataPtr, eax;
 // LINE 728:
-	__asm        mov    eax, dataPtr;
-	__asm        mov    header, eax;
+	header = dataPtr;
 // LINE 729:
-	__asm        mov    eax, header;
-	__asm        mov    ax, [eax];
-	__asm        mov    diskEntrySize, ax;
+	diskEntrySize = header->entrySize;
 // LINE 730:
 	__asm        lea    eax, diskEntrySize;
 	__asm        push   eax;
@@ -2945,7 +2893,7 @@ _T170:
 	__asm        mov    [ebp-0x40], eax;
 	__asm        jmp    _T1d8;
 _T1d1:
-	__asm        mov    dword ptr [ebp-0x40], 0;
+	None = 0x0;
 _T1d8:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x40];
@@ -3014,7 +2962,7 @@ short _cArray::GetLoadedIndex(class ResFile *pFile, unsigned long rType) {
 	struct _cArray::FileAndType ft;
 
 // LINE 779:
-	__asm        mov    foundcount, 0xFFFF;
+	foundcount = 0xffff;
 // LINE 780:
 	__asm        mov    eax, pFile;
 	__asm        mov    ft.file, eax;
@@ -3058,8 +3006,7 @@ _T2a:
 	__asm        add    esp, 0x10;
 // LINE 787:
 _T9c:
-	__asm        mov    ax, cnt;
-	__asm        mov    foundcount, ax;
+	foundcount = cnt;
 // LINE 792:
 _Ta4:
 	__asm        jmp    _T26;

@@ -142,35 +142,25 @@ void CSparkalWindow::CSparkalWindow() {
 	int32_t i;
 
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x590EF8;
+	this-><vftable> = 0x590ef8;
 // LINE 55:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 0;
+	this->mpCommander = 0x0;
 // LINE 56:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
+	this->mpBackBuffer = 0x0;
 // LINE 57:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18], 0;
+	this->mWindow = 0x0;
 // LINE 58:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->mWidth = 0x0;
 // LINE 59:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
+	this->mHeight = 0x0;
 // LINE 60:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
+	this->mStyle = 0x0;
 // LINE 61:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1C], 0;
+	this->mPalette = 0x0;
 // LINE 62:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x20], 0;
+	this->mhCurrentCursor = 0x0;
 // LINE 63:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x24], 0;
+	this->mhCustomCursor = 0x0;
 // LINE 65:
 	__asm        mov    i, 0;
 	__asm        jmp    _T7e;
@@ -203,38 +193,25 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 	unsigned long ScreenHeight;
 
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x590EF8;
+	this-><vftable> = 0x590ef8;
 // LINE 80:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 0;
+	this->mpCommander = 0x0;
 // LINE 81:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
+	this->mpBackBuffer = 0x0;
 // LINE 82:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18], 0;
+	this->mWindow = 0x0;
 // LINE 83:
-	__asm        mov    eax, Width;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+8], eax;
+	this->mWidth = Width;
 // LINE 84:
-	__asm        mov    eax, Height;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->mHeight = Height;
 // LINE 85:
-	__asm        mov    eax, Style;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], eax;
+	this->mStyle = Style;
 // LINE 86:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1C], 0;
+	this->mPalette = 0x0;
 // LINE 87:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x20], 0;
+	this->mhCurrentCursor = 0x0;
 // LINE 88:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x24], 0;
+	this->mhCustomCursor = 0x0;
 // LINE 90:
 	__asm        mov    i, 0;
 	__asm        jmp    _T9f;
@@ -259,26 +236,25 @@ _Tbf:
 	__asm        test   eax, eax;
 	__asm        jne    _T13a;
 // LINE 95:
-	__asm        mov    ClassInfo.hCursor, 0;
+	ClassInfo.hCursor = 0x0;
 // LINE 96:
-	__asm        mov    ClassInfo.lpszMenuName, 0x599AC0;
+	ClassInfo.lpszMenuName = 0x599ac0;
 // LINE 97:
-	__asm        mov    ClassInfo.lpszClassName, 0x599AB8;
+	ClassInfo.lpszClassName = 0x599ab8;
 // LINE 98:
 	__asm        push   4;
 	__asm        call   dword ptr ds:[0x6C3560];
 	__asm        mov    ClassInfo.hbrBackground, eax;
 // LINE 99:
-	__asm        mov    eax, _ghWindowsInstance;
-	__asm        mov    ClassInfo.hInstance, eax;
+	ClassInfo.hInstance = _ghWindowsInstance;
 // LINE 100:
-	__asm        mov    ClassInfo.style, 0x23;
+	ClassInfo.style = 0x23;
 // LINE 101:
-	__asm        mov    ClassInfo.lpfnWndProc, 0x4815DD;
+	ClassInfo.lpfnWndProc = 0x4815dd;
 // LINE 102:
-	__asm        mov    ClassInfo.cbWndExtra, 4;
+	ClassInfo.cbWndExtra = 0x4;
 // LINE 103:
-	__asm        mov    ClassInfo.cbClsExtra, 0;
+	ClassInfo.cbClsExtra = 0x0;
 // LINE 104:
 	__asm        push   0x7F00;
 	__asm        push   0;
@@ -290,7 +266,7 @@ _Tbf:
 	__asm        call   dword ptr ds:[0x6C3814];
 // LINE 109:
 _T13a:
-	__asm        mov    dwWindowsStyle, 0;
+	dwWindowsStyle = 0x0;
 // LINE 110:
 	__asm        test   reinterpret_cast<uint8_t>(Style), 1;
 	__asm        je     _T157;
@@ -355,8 +331,7 @@ _T1a7:
 	__asm        cmp    Width, 0;
 	__asm        jne    _T206;
 // LINE 132:
-	__asm        mov    eax, ScreenWidth;
-	__asm        mov    Width, eax;
+	Width = ScreenWidth;
 // LINE 133:
 	__asm        jmp    _T20f;
 // LINE 134:
@@ -369,8 +344,7 @@ _T20f:
 	__asm        cmp    Height, 0;
 	__asm        jne    _T224;
 // LINE 136:
-	__asm        mov    eax, ScreenHeight;
-	__asm        mov    Height, eax;
+	Height = ScreenHeight;
 // LINE 137:
 	__asm        jmp    _T22d;
 // LINE 138:
@@ -384,16 +358,14 @@ _T22d:
 	__asm        cmp    ScreenWidth, eax;
 	__asm        jae    _T23f;
 // LINE 142:
-	__asm        mov    eax, ScreenWidth;
-	__asm        mov    Width, eax;
+	Width = ScreenWidth;
 // LINE 143:
 _T23f:
 	__asm        mov    eax, Height;
 	__asm        cmp    ScreenHeight, eax;
 	__asm        jae    _T251;
 // LINE 144:
-	__asm        mov    eax, ScreenHeight;
-	__asm        mov    Height, eax;
+	Height = ScreenHeight;
 // LINE 147:
 _T251:
 	__asm        mov    eax, ScreenWidth;
@@ -469,9 +441,9 @@ _T251:
 	__asm        mov    ecx, 0x100;
 	__asm        rep stosd;
 // LINE 169:
-	__asm        mov    StaticCount, 0x14;
+	StaticCount = 0x14;
 // LINE 170:
-	__asm        mov    PaletteUse, 1;
+	PaletteUse = 0x1;
 // LINE 172:
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3850];
@@ -522,9 +494,9 @@ _T373:
 	__asm        cmp    PaletteUse, 2;
 	__asm        jne    _T3aa;
 // LINE 185:
-	__asm        mov    Start, 1;
+	Start = 0x1;
 // LINE 186:
-	__asm        mov    End, 0xFF;
+	End = 0xff;
 // LINE 192:
 _T3aa:
 	__asm        mov    Counter, 0;
@@ -714,16 +686,13 @@ void CSparkalWindow::~CSparkalWindow() {
 	int32_t i;
 
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x590EF8;
+	this-><vftable> = 0x590ef8;
 // LINE 251:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x18], 0;
 	__asm        je     _T4b;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x18];
-	__asm        mov    [ebp-8], eax;
+	None = this->mWindow;
 // LINE 254:
 	__asm        push   0;
 	__asm        push   0;
@@ -805,7 +774,7 @@ _T3c:
 	__asm        jmp    _T41;
 // LINE 279:
 _T41:
-	__asm        mov    Error, 0;
+	Error = 0x0;
 // LINE 281:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x18], 0;
@@ -841,7 +810,7 @@ _T81:
 	__asm        mov    ecx, pWidth;
 	__asm        mov    [ecx], eax;
 // LINE 289:
-	__asm        mov    Error, 0x80000000;
+	Error = 0x80000000;
 // LINE 292:
 _T9b:
 	__asm        mov    eax, Error;
@@ -855,7 +824,7 @@ unsigned long CSparkalWindow::SetCursor(unsigned long CursorID) {
 	unsigned long ReturnCode;
 
 // LINE 309:
-	__asm        mov    ReturnCode, 0;
+	ReturnCode = 0x0;
 // LINE 312:
 	__asm        cmp    CursorID, 0;
 	__asm        je     _T67;
@@ -881,9 +850,7 @@ unsigned long CSparkalWindow::SetCursor(unsigned long CursorID) {
 	__asm        call   dword ptr ds:[0x6C358C];
 // LINE 316:
 _T59:
-	__asm        mov    eax, hNewCursor;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x24], eax;
+	this->mhCustomCursor = hNewCursor;
 // LINE 318:
 	__asm        jmp    _T77;
 // LINE 319:
@@ -894,9 +861,7 @@ _T67:
 	__asm        mov    hNewCursor, eax;
 // LINE 321:
 _T77:
-	__asm        mov    eax, hNewCursor;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x20], eax;
+	this->mhCurrentCursor = hNewCursor;
 // LINE 323:
 	__asm        cmp    hNewCursor, 0;
 	__asm        je     _Ta8;
@@ -907,13 +872,13 @@ _T77:
 	__asm        test   eax, eax;
 	__asm        jne    _Ta3;
 // LINE 325:
-	__asm        mov    ReturnCode, 0x80000000;
+	ReturnCode = 0x80000000;
 // LINE 327:
 _Ta3:
 	__asm        jmp    _Taf;
 // LINE 328:
 _Ta8:
-	__asm        mov    ReturnCode, 0x80000007;
+	ReturnCode = 0x80000007;
 // LINE 329:
 _Taf:
 	__asm        mov    eax, ReturnCode;
@@ -926,7 +891,7 @@ unsigned long CSparkalWindow::SetCursorFromIndex(int32_t nIndex) {
 	unsigned long ReturnCode;
 
 // LINE 338:
-	__asm        mov    ReturnCode, 0;
+	ReturnCode = 0x0;
 // LINE 340:
 	__asm        mov    eax, nIndex;
 	__asm        mov    ecx, this;
@@ -941,7 +906,7 @@ unsigned long CSparkalWindow::SetCursorFromIndex(int32_t nIndex) {
 	__asm        test   eax, eax;
 	__asm        jne    _T3f;
 // LINE 342:
-	__asm        mov    ReturnCode, 0x80000007;
+	ReturnCode = 0x80000007;
 // LINE 344:
 _T3f:
 	__asm        mov    eax, ReturnCode;
@@ -1088,7 +1053,7 @@ _T10f:
 	__asm        add    eax, 4;
 	__asm        mov    TextRect.right, eax;
 // LINE 415:
-	__asm        mov    TextRect.left, 0;
+	TextRect.left = 0x0;
 // LINE 417:
 _T129:
 	__asm        cmp    TextRect.top, 0;
@@ -1098,7 +1063,7 @@ _T129:
 	__asm        add    eax, 4;
 	__asm        mov    TextRect.bottom, eax;
 // LINE 420:
-	__asm        mov    TextRect.top, 0;
+	TextRect.top = 0x0;
 // LINE 422:
 _T143:
 	__asm        mov    eax, ClientHeight;
@@ -1316,7 +1281,7 @@ int32_t CheckIdentityPalette(void * __ptr32 hdc, void * __ptr32 hPalette, struct
 	unsigned char Bits[256];
 
 // LINE 506:
-	__asm        mov    IsID, 0;
+	IsID = 0x0;
 // LINE 512:
 	__asm        mov    eax, hdc;
 	__asm        push   eax;
@@ -1355,27 +1320,27 @@ int32_t CheckIdentityPalette(void * __ptr32 hdc, void * __ptr32 hPalette, struct
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3570];
 // LINE 525:
-	__asm        mov    Info.Header.biSize, 0x28;
+	Info.Header.biSize = 0x28;
 // LINE 526:
-	__asm        mov    Info.Header.biWidth, 0x100;
+	Info.Header.biWidth = 0x100;
 // LINE 527:
-	__asm        mov    Info.Header.biHeight, 1;
+	Info.Header.biHeight = 0x1;
 // LINE 528:
-	__asm        mov    Info.Header.biPlanes, 1;
+	Info.Header.biPlanes = 0x1;
 // LINE 529:
-	__asm        mov    Info.Header.biBitCount, 8;
+	Info.Header.biBitCount = 0x8;
 // LINE 530:
-	__asm        mov    Info.Header.biCompression, 0;
+	Info.Header.biCompression = 0x0;
 // LINE 531:
-	__asm        mov    Info.Header.biSizeImage, 0;
+	Info.Header.biSizeImage = 0x0;
 // LINE 532:
-	__asm        mov    Info.Header.biXPelsPerMeter, 0;
+	Info.Header.biXPelsPerMeter = 0x0;
 // LINE 533:
-	__asm        mov    Info.Header.biYPelsPerMeter, 0;
+	Info.Header.biYPelsPerMeter = 0x0;
 // LINE 534:
-	__asm        mov    Info.Header.biClrUsed, 0;
+	Info.Header.biClrUsed = 0x0;
 // LINE 535:
-	__asm        mov    Info.Header.biClrImportant, 0;
+	Info.Header.biClrImportant = 0x0;
 // LINE 537:
 	__asm        mov    i, 0;
 	__asm        jmp    _T105;
@@ -1445,7 +1410,7 @@ _T1b2:
 	__asm        cmp    nReturnValue, 0xFFFFFFFF;
 	__asm        je     _T274;
 // LINE 553:
-	__asm        mov    IsID, 1;
+	IsID = 0x1;
 // LINE 554:
 	__asm        lea    eax, Bits[0];
 	__asm        push   eax;
@@ -1468,7 +1433,7 @@ _T235:
 	__asm        cmp    ecx, i;
 	__asm        je     _T26f;
 // LINE 557:
-	__asm        mov    IsID, 0;
+	IsID = 0x0;
 // LINE 558:
 	__asm        jmp    _T274;
 // LINE 560:
@@ -1680,8 +1645,7 @@ _T12f:
 	__asm        and    dword ptr [eax+0xC], 0xFFFFFFFE;
 	__asm        jmp    near ptr 0x0048178A;
 // LINE 643:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18], 0;
+	this->mWindow = 0x0;
 // LINE 644:
 	__asm        jmp    _T468;
 // LINE 649:

@@ -168,7 +168,7 @@ void S3FireReset() {
 	struct _FIRE_DATA *fd;
 
 // LINE 105:
-	__asm        mov    S_fire_count, 0;
+	S_fire_count = 0x0;
 // LINE 111:
 	__asm        mov    i, 0;
 	__asm        mov    fd, 0x6666F0;
@@ -180,8 +180,7 @@ _T30:
 	__asm        cmp    i, 0x8C;
 	__asm        jge    _T4b;
 // LINE 114:
-	__asm        mov    eax, fd;
-	__asm        mov    dword ptr [eax], 0;
+	fd->flags = 0x0;
 // LINE 115:
 	__asm        jmp    _T26;
 // LINE 119:
@@ -250,26 +249,19 @@ _T72:
 	__asm        cmp    i, 0x8C;
 	__asm        jge    _T16a;
 // LINE 157:
-	__asm        mov    eax, fd;
-	__asm        mov    dword ptr [eax], 0;
+	fd->flags = 0x0;
 // LINE 158:
-	__asm        mov    eax, fd;
-	__asm        mov    dword ptr [eax+4], 0;
+	fd->timetolive = 0x0;
 // LINE 159:
-	__asm        mov    eax, fd;
-	__asm        mov    dword ptr [eax+8], 0;
+	fd->douse_points = 0x0;
 // LINE 160:
-	__asm        mov    eax, fd;
-	__asm        mov    dword ptr [eax+0x10], 0;
+	fd->loc.x = 0x0;
 // LINE 161:
-	__asm        mov    eax, fd;
-	__asm        mov    dword ptr [eax+0x14], 0;
+	fd->loc.y = 0x0;
 // LINE 162:
-	__asm        mov    eax, fd;
-	__asm        mov    dword ptr [eax+0x18], 0;
+	fd->loc.z = 0x0;
 // LINE 163:
-	__asm        mov    eax, fd;
-	__asm        mov    dword ptr [eax+0x1C], 0;
+	fd->elevation = 0x0;
 // LINE 165:
 	__asm        push   0x10;
 	__asm        mov    eax, G_dyobjmempool;
@@ -279,14 +271,9 @@ _T72:
 	__asm        mov    ecx, fd;
 	__asm        mov    [ecx+0x20], eax;
 // LINE 166:
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x20];
-	__asm        mov    dword ptr [eax+8], 1;
+	fd->stptr->user1 = 0x1;
 // LINE 167:
-	__asm        mov    eax, fd;
-	__asm        mov    ecx, fd;
-	__asm        mov    ecx, [ecx+0x20];
-	__asm        mov    [ecx+0xC], eax;
+	fd->stptr->user2 = fd;
 // LINE 169:
 	__asm        mov    eax, size;
 	__asm        push   eax;
@@ -317,18 +304,11 @@ _T72:
 	__asm        call   0x004D84DB;
 	__asm        add    esp, 8;
 // LINE 174:
-	__asm        mov    eax, fd;
-	__asm        mov    dword ptr [eax+0x34], 0x100000;
+	fd->dyfire.radius = 0x100000;
 // LINE 175:
-	__asm        mov    eax, height;
-	__asm        mov    ecx, fd;
-	__asm        mov    [ecx+0x38], eax;
+	fd->dyfire.height = height;
 // LINE 176:
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x20];
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, fd;
-	__asm        mov    [ecx+0x2C], eax;
+	fd->dyfire.mesh = fd->stptr->mesh;
 // LINE 177:
 	__asm        jmp    _T68;
 // LINE 181:
@@ -406,31 +386,22 @@ _T5d:
 	__asm        jmp    _T2b1;
 // LINE 228:
 _T8f:
-	__asm        mov    eax, cellx;
-	__asm        mov    ecx, fd;
-	__asm        mov    [ecx+0x8C], eax;
+	fd->celloc.x = cellx;
 // LINE 229:
-	__asm        mov    eax, celly;
-	__asm        mov    ecx, fd;
-	__asm        mov    [ecx+0x90], eax;
+	fd->celloc.y = celly;
 // LINE 231:
-	__asm        mov    eax, mission_id;
-	__asm        mov    ecx, fd;
-	__asm        mov    [ecx+0x9C], eax;
+	fd->mission_id = mission_id;
 // LINE 234:
 	__asm        mov    eax, side_flag;
 	__asm        or     eax, 1;
 	__asm        mov    ecx, fd;
 	__asm        mov    [ecx], eax;
 // LINE 238:
-	__asm        mov    maxradius, 0;
+	maxradius = 0x0;
 // LINE 239:
-	__asm        mov    eax, cptr;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    stobj, eax;
+	stobj = cptr->stptr;
 // LINE 240:
-	__asm        mov    eax, fd;
-	__asm        mov    dword ptr [eax+0x94], 0;
+	fd->building = 0x0;
 // LINE 241:
 _Tdb:
 	__asm        cmp    stobj, 0;
@@ -448,13 +419,9 @@ _Tdb:
 	__asm        test   byte ptr [eax+8], 4;
 	__asm        je     _T11f;
 // LINE 246:
-	__asm        mov    eax, stobj;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, fd;
-	__asm        mov    [ecx+0x94], eax;
+	fd->building = stobj->mesh;
 // LINE 247:
-	__asm        mov    eax, oinfo.Radius;
-	__asm        mov    maxradius, eax;
+	maxradius = oinfo.Radius;
 // LINE 248:
 	__asm        jmp    _T13e;
 // LINE 250:
@@ -463,13 +430,10 @@ _T11f:
 	__asm        cmp    oinfo.Radius, eax;
 	__asm        jle    _T131;
 
-	__asm        mov    eax, oinfo.Radius;
-	__asm        mov    maxradius, eax;
+	maxradius = oinfo.Radius;
 // LINE 251:
 _T131:
-	__asm        mov    eax, stobj;
-	__asm        mov    eax, [eax];
-	__asm        mov    stobj, eax;
+	stobj = stobj->next;
 // LINE 252:
 	__asm        jmp    _Tdb;
 // LINE 254:
@@ -490,8 +454,7 @@ _T13e:
 	__asm        jmp    _T170;
 // LINE 257:
 _T166:
-	__asm        mov    eax, fd;
-	__asm        mov    dword ptr [eax+0xC], 0x200000;
+	fd->hdelta = 0x200000;
 // LINE 259:
 _T170:
 	__asm        mov    eax, cptr;
@@ -515,9 +478,7 @@ _T170:
 	__asm        mov    ecx, fd;
 	__asm        mov    [ecx+4], eax;
 // LINE 262:
-	__asm        mov    eax, cfd;
-	__asm        mov    ecx, fd;
-	__asm        mov    [ecx+0x98], eax;
+	fd->cfd = cfd;
 // LINE 263:
 	__asm        mov    eax, cfd;
 	__asm        inc    dword ptr [eax+4];
@@ -541,17 +502,11 @@ _T170:
 	__asm        call   VR3dObjLocate;
 	__asm        add    esp, 0x10;
 // LINE 272:
-	__asm        mov    eax, x;
-	__asm        mov    ecx, fd;
-	__asm        mov    [ecx+0x10], eax;
+	fd->loc.x = x;
 // LINE 273:
-	__asm        mov    eax, y;
-	__asm        mov    ecx, fd;
-	__asm        mov    [ecx+0x14], eax;
+	fd->loc.y = y;
 // LINE 274:
-	__asm        mov    eax, z;
-	__asm        mov    ecx, fd;
-	__asm        mov    [ecx+0x18], eax;
+	fd->loc.z = z;
 // LINE 277:
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax+2];
@@ -574,29 +529,19 @@ _T170:
 	__asm        mov    ecx, fd;
 	__asm        mov    [ecx+0x44], eax;
 // LINE 282:
-	__asm        mov    eax, fd;
-	__asm        mov    dword ptr [eax+0x88], 0x8000;
+	fd->dycheck_timer = 0x8000;
 // LINE 285:
-	__asm        mov    eax, cptr;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    ecx, fd;
-	__asm        mov    ecx, [ecx+0x20];
-	__asm        mov    [ecx], eax;
+	fd->stptr->next = cptr->stptr;
 // LINE 286:
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x20];
-	__asm        mov    ecx, cptr;
-	__asm        mov    [ecx+0xC], eax;
+	cptr->stptr = fd->stptr;
 // LINE 288:
-	__asm        mov    mp.op, 1;
+	mp.op = 0x1;
 // LINE 289:
-	__asm        mov    eax, mission_id;
-	__asm        mov    mp.id, eax;
+	mp.id = mission_id;
 // LINE 290:
-	__asm        mov    mp.i2num, 1;
+	mp.i2num = 0x1;
 // LINE 291:
-	__asm        mov    eax, flags;
-	__asm        mov    mp.flags, eax;
+	mp.flags = flags;
 // LINE 292:
 	__asm        lea    eax, mp.op;
 	__asm        push   eax;
@@ -635,7 +580,7 @@ void S3FireDriver() {
 	long mindist;
 
 // LINE 322:
-	__asm        mov    fireloopsound, 0;
+	fireloopsound = 0x0;
 // LINE 325:
 	__asm        push   0xD;
 	__asm        call   S3SoundIsPlaying;
@@ -656,7 +601,7 @@ _T3e:
 	__asm        jmp    _T5da;
 // LINE 338:
 _T43:
-	__asm        mov    mindist, 0x7D00;
+	mindist = 0x7d00;
 // LINE 341:
 	__asm        mov    i, 0;
 	__asm        mov    fd, 0x6666F0;
@@ -727,8 +672,7 @@ _T85:
 	__asm        cmp    mindist, eax;
 	__asm        jle    _T13c;
 // LINE 364:
-	__asm        mov    eax, dist;
-	__asm        mov    mindist, eax;
+	mindist = dist;
 // LINE 365:
 	__asm        lea    eax, floc.x;
 	__asm        lea    ecx, minloc.x;
@@ -758,8 +702,7 @@ _T13c:
 	__asm        cmp    dword ptr [eax+0x94], 0;
 	__asm        jne    _T185;
 // LINE 380:
-	__asm        mov    eax, fd;
-	__asm        mov    dword ptr [eax+0x1C], 0;
+	fd->elevation = 0x0;
 // LINE 381:
 	__asm        jmp    _T5d;
 // LINE 385:
@@ -795,8 +738,7 @@ _T185:
 	__asm        add    esp, 0x14;
 	__asm        mov    newcoord, eax;
 // LINE 398:
-	__asm        mov    eax, newcoord;
-	__asm        mov    loc.z, eax;
+	loc.z = newcoord;
 // LINE 400:
 	__asm        jmp    _T28e;
 _T1e2:
@@ -817,8 +759,7 @@ _T1e2:
 	__asm        add    esp, 0x14;
 	__asm        mov    newcoord, eax;
 // LINE 408:
-	__asm        mov    eax, newcoord;
-	__asm        mov    loc.z, eax;
+	loc.z = newcoord;
 // LINE 410:
 	__asm        jmp    _T28e;
 _T21d:
@@ -839,8 +780,7 @@ _T21d:
 	__asm        add    esp, 0x14;
 	__asm        mov    newcoord, eax;
 // LINE 418:
-	__asm        mov    eax, newcoord;
-	__asm        mov    loc.x, eax;
+	loc.x = newcoord;
 // LINE 420:
 	__asm        jmp    _T28e;
 _T258:
@@ -861,15 +801,13 @@ _T258:
 	__asm        add    esp, 0x14;
 	__asm        mov    newcoord, eax;
 // LINE 428:
-	__asm        mov    eax, newcoord;
-	__asm        mov    loc.x, eax;
+	loc.x = newcoord;
 // LINE 431:
 _T28e:
 	__asm        cmp    newcoord, 0;
 	__asm        jne    _T2a7;
 // LINE 433:
-	__asm        mov    eax, fd;
-	__asm        mov    dword ptr [eax+0x1C], 0;
+	fd->elevation = 0x0;
 // LINE 434:
 	__asm        jmp    _T5d;
 // LINE 437:
@@ -964,18 +902,12 @@ _T383:
 	__asm        cmp    [eax+0x20], ecx;
 	__asm        jne    _T3b2;
 // LINE 460:
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x20];
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, stptrptr;
-	__asm        mov    [ecx], eax;
+	stptrptr-> = fd->stptr->next;
 // LINE 461:
 	__asm        jmp    _T3bf;
 // LINE 463:
 _T3b2:
-	__asm        mov    eax, stptrptr;
-	__asm        mov    eax, [eax];
-	__asm        mov    stptrptr, eax;
+	stptrptr = stptrptr->;
 // LINE 464:
 	__asm        jmp    _T383;
 // LINE 466:
@@ -992,15 +924,13 @@ _T3bf:
 // LINE 470:
 	__asm        dec    S_fire_count;
 // LINE 472:
-	__asm        mov    mp.op, 3;
+	mp.op = 0x3;
 // LINE 473:
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x9C];
-	__asm        mov    mp.id, eax;
+	mp.id = fd->mission_id;
 // LINE 474:
-	__asm        mov    mp.i2num, 1;
+	mp.i2num = 0x1;
 // LINE 475:
-	__asm        mov    mp.flags, 0;
+	mp.flags = 0x0;
 // LINE 476:
 	__asm        lea    eax, mp.op;
 	__asm        push   eax;
@@ -1018,15 +948,13 @@ _T3bf:
 	__asm        mov    ecx, cptr;
 	__asm        mov    [ecx], ax;
 // LINE 485:
-	__asm        mov    mp.op, 4;
+	mp.op = 0x4;
 // LINE 486:
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x9C];
-	__asm        mov    mp.id, eax;
+	mp.id = fd->mission_id;
 // LINE 487:
-	__asm        mov    mp.i2num, 1;
+	mp.i2num = 0x1;
 // LINE 488:
-	__asm        mov    mp.flags, 0;
+	mp.flags = 0x0;
 // LINE 489:
 	__asm        lea    eax, mp.op;
 	__asm        push   eax;
@@ -1068,11 +996,9 @@ _T3bf:
 	__asm        jmp    _T4fc;
 // LINE 502:
 _T4c8:
-	__asm        mov    mp.op, 0;
+	mp.op = 0x0;
 // LINE 503:
-	__asm        mov    eax, nfd;
-	__asm        mov    eax, [eax+0x9C];
-	__asm        mov    mp.id, eax;
+	mp.id = nfd->mission_id;
 // LINE 504:
 	__asm        mov    eax, nfd;
 	__asm        add    eax, 0x8C;
@@ -1114,7 +1040,7 @@ _T50d:
 	__asm        cmp    eax, S_spread_time;
 	__asm        jge    _T580;
 // LINE 523:
-	__asm        mov    S_spread_time, 0;
+	S_spread_time = 0x0;
 // LINE 524:
 	__asm        call   rand;
 	__asm        mov    ecx, S_ftwk_spread_probability;
@@ -1260,9 +1186,7 @@ _Te3:
 	__asm        call   S3FireGetCellData;
 	__asm        mov    cfd, eax;
 // LINE 606:
-	__asm        mov    eax, cptr;
-	__asm        mov    ecx, cfd;
-	__asm        mov    [ecx], eax;
+	cfd->cptr = cptr;
 // LINE 607:
 	__asm        push   0;
 	__asm        mov    eax, fd;
@@ -1366,9 +1290,7 @@ _T30:
 	__asm        sub    eax, ecx;
 	__asm        mov    loc.z, eax;
 // LINE 664:
-	__asm        mov    eax, cptr;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    stobj, eax;
+	stobj = cptr->stptr;
 // LINE 665:
 _T77:
 	__asm        cmp    stobj, 0;
@@ -1381,9 +1303,7 @@ _T77:
 	__asm        jmp    _T339;
 // LINE 671:
 _T93:
-	__asm        mov    eax, stobj;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    fd, eax;
+	fd = stobj->user2;
 // LINE 675:
 	__asm        mov    eax, fd;
 	__asm        add    dword ptr [eax+4], 0x30000;
@@ -1498,18 +1418,12 @@ _T1b6:
 	__asm        cmp    [eax+0x20], ecx;
 	__asm        jne    _T1e5;
 // LINE 720:
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x20];
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, stptrptr;
-	__asm        mov    [ecx], eax;
+	stptrptr-> = fd->stptr->next;
 // LINE 721:
 	__asm        jmp    _T1f2;
 // LINE 723:
 _T1e5:
-	__asm        mov    eax, stptrptr;
-	__asm        mov    eax, [eax];
-	__asm        mov    stptrptr, eax;
+	stptrptr = stptrptr->;
 // LINE 724:
 	__asm        jmp    _T1b6;
 // LINE 726:
@@ -1524,15 +1438,13 @@ _T1f2:
 	__asm        mov    eax, [eax+0x98];
 	__asm        dec    dword ptr [eax+4];
 // LINE 731:
-	__asm        mov    mp.op, 2;
+	mp.op = 0x2;
 // LINE 732:
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x9C];
-	__asm        mov    mp.id, eax;
+	mp.id = fd->mission_id;
 // LINE 733:
-	__asm        mov    mp.i2num, 1;
+	mp.i2num = 0x1;
 // LINE 734:
-	__asm        mov    mp.flags, 0;
+	mp.flags = 0x0;
 // LINE 735:
 	__asm        lea    eax, mp.op;
 	__asm        push   eax;
@@ -1550,15 +1462,13 @@ _T1f2:
 	__asm        mov    ecx, cptr;
 	__asm        mov    [ecx], ax;
 // LINE 744:
-	__asm        mov    mp.op, 6;
+	mp.op = 0x6;
 // LINE 745:
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x9C];
-	__asm        mov    mp.id, eax;
+	mp.id = fd->mission_id;
 // LINE 746:
-	__asm        mov    mp.i2num, 1;
+	mp.i2num = 0x1;
 // LINE 747:
-	__asm        mov    mp.flags, 0;
+	mp.flags = 0x0;
 // LINE 748:
 	__asm        lea    eax, mp.op;
 	__asm        push   eax;
@@ -1600,11 +1510,9 @@ _T1f2:
 	__asm        jmp    _T329;
 // LINE 760:
 _T2f5:
-	__asm        mov    mp.op, 0;
+	mp.op = 0x0;
 // LINE 761:
-	__asm        mov    eax, nfd;
-	__asm        mov    eax, [eax+0x9C];
-	__asm        mov    mp.id, eax;
+	mp.id = nfd->mission_id;
 // LINE 762:
 	__asm        mov    eax, nfd;
 	__asm        add    eax, 0x8C;
@@ -1629,9 +1537,7 @@ _T334:
 // LINE 777:
 next_obj:
 _T339:
-	__asm        mov    eax, stobj;
-	__asm        mov    eax, [eax];
-	__asm        mov    stobj, eax;
+	stobj = stobj->next;
 // LINE 778:
 	__asm        jmp    _T77;
 // LINE 786:
@@ -1639,9 +1545,7 @@ check_dyobjs:
 _T346:
 	__asm        jmp    _T3f3;
 // LINE 788:
-	__asm        mov    eax, cptr;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    dyobj, eax;
+	dyobj = cptr->dyptr;
 // LINE 789:
 _T354:
 	__asm        cmp    dyobj, 0;
@@ -1696,9 +1600,7 @@ _T3e1:
 	__asm        jmp    _T3f3;
 // LINE 817:
 _T3e6:
-	__asm        mov    eax, dyobj;
-	__asm        mov    eax, [eax];
-	__asm        mov    dyobj, eax;
+	dyobj = dyobj->next;
 // LINE 818:
 	__asm        jmp    _T354;
 // LINE 820:
@@ -1712,7 +1614,7 @@ int32_t S3FireStartCell(struct _CELL_FIRE_DATA *cfd, long cellx, long celly, lon
 	struct _LZ_INFO *lz;
 
 // LINE 833:
-	__asm        mov    retval, 0;
+	retval = 0x0;
 // LINE 837:
 	__asm        mov    eax, cfd;
 	__asm        mov    eax, [eax];
@@ -2738,15 +2640,13 @@ _Ta07:
 	__asm        jmp    _Taff;
 // LINE 899:
 _Ta18:
-	__asm        mov    mp.op, 5;
+	mp.op = 0x5;
 // LINE 900:
-	__asm        mov    eax, mission_id;
-	__asm        mov    mp.id, eax;
+	mp.id = mission_id;
 // LINE 901:
-	__asm        mov    mp.i2num, 1;
+	mp.i2num = 0x1;
 // LINE 902:
-	__asm        mov    eax, flags;
-	__asm        mov    mp.flags, eax;
+	mp.flags = flags;
 // LINE 903:
 	__asm        lea    eax, mp.op;
 	__asm        push   eax;
@@ -2756,10 +2656,9 @@ _Ta18:
 	__asm        test   reinterpret_cast<uint8_t>(flags), 1;
 	__asm        je     _Taac;
 // LINE 909:
-	__asm        mov    mp.op, 0x23;
+	mp.op = 0x23;
 // LINE 910:
-	__asm        mov    eax, mission_id;
-	__asm        mov    mp.id, eax;
+	mp.id = mission_id;
 // LINE 911:
 	__asm        mov    eax, cfd;
 	__asm        mov    eax, [eax];
@@ -2767,18 +2666,16 @@ _Ta18:
 	__asm        imul   eax, S_money_mission_fire;
 	__asm        mov    mp.i2num, eax;
 // LINE 912:
-	__asm        mov    eax, flags;
-	__asm        mov    mp.flags, eax;
+	mp.flags = flags;
 // LINE 913:
 	__asm        lea    eax, mp.op;
 	__asm        push   eax;
 	__asm        call   S3MissionUpdate;
 	__asm        add    esp, 4;
 // LINE 915:
-	__asm        mov    mp.op, 0x22;
+	mp.op = 0x22;
 // LINE 916:
-	__asm        mov    eax, mission_id;
-	__asm        mov    mp.id, eax;
+	mp.id = mission_id;
 // LINE 917:
 	__asm        mov    eax, cfd;
 	__asm        mov    eax, [eax];
@@ -2786,8 +2683,7 @@ _Ta18:
 	__asm        imul   eax, S_pts_mission_fire;
 	__asm        mov    mp.i2num, eax;
 // LINE 918:
-	__asm        mov    eax, flags;
-	__asm        mov    mp.flags, eax;
+	mp.flags = flags;
 // LINE 919:
 	__asm        lea    eax, mp.op;
 	__asm        push   eax;
@@ -2889,9 +2785,7 @@ _T1e:
 	__asm        sub    eax, ecx;
 	__asm        mov    radius, eax;
 // LINE 980:
-	__asm        mov    eax, cptr;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    stobj, eax;
+	stobj = cptr->stptr;
 // LINE 981:
 _T3b:
 	__asm        cmp    stobj, 0;
@@ -2904,9 +2798,7 @@ _T3b:
 	__asm        jmp    _Te7;
 // LINE 987:
 _T57:
-	__asm        mov    eax, stobj;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    fd, eax;
+	fd = stobj->user2;
 // LINE 992:
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x10];
@@ -2952,7 +2844,7 @@ _Tb7:
 	__asm        cmp    height, 0;
 	__asm        jne    _Tdf;
 
-	__asm        mov    height, 1;
+	height = 0x1;
 // LINE 1004:
 _Tdf:
 	__asm        mov    eax, height;
@@ -2960,9 +2852,7 @@ _Tdf:
 // LINE 1008:
 next_obj:
 _Te7:
-	__asm        mov    eax, stobj;
-	__asm        mov    eax, [eax];
-	__asm        mov    stobj, eax;
+	stobj = stobj->next;
 // LINE 1009:
 	__asm        jmp    _T3b;
 // LINE 1012:
@@ -3042,22 +2932,21 @@ _T61:
 	__asm        cmp    S_yval, 0x40000;
 	__asm        jle    _Tce;
 // LINE 1068:
-	__asm        mov    S_yval, 0x40000;
+	S_yval = 0x40000;
 // LINE 1069:
-	__asm        mov    S_yvaldelta, 0xFFFFE667;
+	S_yvaldelta = 0xffffe667;
 // LINE 1071:
 	__asm        jmp    _Tef;
 _Tce:
 	__asm        cmp    S_yval, 0;
 	__asm        jge    _Tef;
 // LINE 1073:
-	__asm        mov    S_yval, 0;
+	S_yval = 0x0;
 // LINE 1074:
-	__asm        mov    S_yvaldelta, 0x1999;
+	S_yvaldelta = 0x1999;
 // LINE 1076:
 _Tef:
-	__asm        mov    eax, S_yval;
-	__asm        mov    vec.y, eax;
+	vec.y = S_yval;
 // LINE 1077:
 	__asm        lea    eax, vec.x;
 	__asm        push   eax;
@@ -3172,22 +3061,21 @@ _T65:
 	__asm        cmp    S_yval, 0x40000;
 	__asm        jle    _Td2;
 // LINE 1134:
-	__asm        mov    S_yval, 0x40000;
+	S_yval = 0x40000;
 // LINE 1135:
-	__asm        mov    S_yvaldelta, 0xFFFFE667;
+	S_yvaldelta = 0xffffe667;
 // LINE 1137:
 	__asm        jmp    _Tf3;
 _Td2:
 	__asm        cmp    S_yval, 0;
 	__asm        jge    _Tf3;
 // LINE 1139:
-	__asm        mov    S_yval, 0;
+	S_yval = 0x0;
 // LINE 1140:
-	__asm        mov    S_yvaldelta, 0x1999;
+	S_yvaldelta = 0x1999;
 // LINE 1142:
 _Tf3:
-	__asm        mov    eax, S_yval;
-	__asm        mov    vec.y, eax;
+	vec.y = S_yval;
 // LINE 1143:
 	__asm        lea    eax, vec.x;
 	__asm        push   eax;
@@ -3237,17 +3125,17 @@ void S3FireTweakInit() {
 	int32_t * pvals[10];
 
 // LINE 1178:
-	__asm        mov    pvals[0], 0x5B7388;
+	pvals[0] = 0x5b7388;
 // LINE 1179:
-	__asm        mov    pvals[1], 0x5B738C;
+	pvals[1] = 0x5b738c;
 // LINE 1180:
-	__asm        mov    pvals[2], 0x5B7390;
+	pvals[2] = 0x5b7390;
 // LINE 1181:
-	__asm        mov    pvals[3], 0x5B7394;
+	pvals[3] = 0x5b7394;
 // LINE 1182:
-	__asm        mov    pvals[4], 0x5B7398;
+	pvals[4] = 0x5b7398;
 // LINE 1183:
-	__asm        mov    pvals[5], 0x5B739C;
+	pvals[5] = 0x5b739c;
 // LINE 1185:
 	__asm        push   0x5B73DC;
 	__asm        push   6;
@@ -3376,13 +3264,9 @@ void S3FireDestroyCell(struct _FIRE_DATA *fd) {
 	__asm        cmp    eax, 1;
 	__asm        jle    _T18b;
 // LINE 1253:
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x8C];
-	__asm        mov    x, eax;
+	x = fd->celloc.x;
 // LINE 1254:
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x90];
-	__asm        mov    y, eax;
+	y = fd->celloc.y;
 // LINE 1255:
 _T9a:
 	__asm        dec    x;
@@ -3489,11 +3373,7 @@ _T1c5:
 	__asm        cmp    eax, 0xC;
 	__asm        jg     _T246;
 // LINE 1277:
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x98];
-	__asm        mov    eax, [eax];
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    stobj, eax;
+	stobj = fd->cfd->cptr->stptr;
 // LINE 1278:
 _T1f0:
 	__asm        cmp    stobj, 0;
@@ -3510,9 +3390,7 @@ _T1f0:
 	__asm        mov    [ecx+4], eax;
 // LINE 1285:
 _T21a:
-	__asm        mov    eax, stobj;
-	__asm        mov    eax, [eax];
-	__asm        mov    stobj, eax;
+	stobj = stobj->next;
 // LINE 1286:
 	__asm        jmp    _T1f0;
 // LINE 1288:
@@ -3537,11 +3415,7 @@ _T246:
 	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 1301:
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x98];
-	__asm        mov    eax, [eax];
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    stobj, eax;
+	stobj = fd->cfd->cptr->stptr;
 // LINE 1302:
 _T267:
 	__asm        cmp    stobj, 0;
@@ -3564,11 +3438,9 @@ _T267:
 	__asm        mov    ecx, stobj;
 	__asm        mov    [ecx+4], eax;
 // LINE 1310:
-	__asm        mov    eax, stobj;
-	__asm        mov    dword ptr [eax+8], 0x400;
+	stobj->user1 = 0x400;
 // LINE 1311:
-	__asm        mov    eax, stobj;
-	__asm        mov    dword ptr [eax], 0;
+	stobj->next = 0x0;
 // LINE 1312:
 	__asm        jmp    _T379;
 // LINE 1314:
@@ -3578,11 +3450,9 @@ _T267:
 	__asm        mov    ecx, stobj;
 	__asm        mov    [ecx+4], eax;
 // LINE 1315:
-	__asm        mov    eax, stobj;
-	__asm        mov    dword ptr [eax+8], 0x400;
+	stobj->user1 = 0x400;
 // LINE 1316:
-	__asm        mov    eax, stobj;
-	__asm        mov    dword ptr [eax], 0;
+	stobj->next = 0x0;
 // LINE 1317:
 	__asm        jmp    _T379;
 // LINE 1319:
@@ -3592,11 +3462,9 @@ _T267:
 	__asm        mov    ecx, stobj;
 	__asm        mov    [ecx+4], eax;
 // LINE 1320:
-	__asm        mov    eax, stobj;
-	__asm        mov    dword ptr [eax+8], 0x400;
+	stobj->user1 = 0x400;
 // LINE 1321:
-	__asm        mov    eax, stobj;
-	__asm        mov    dword ptr [eax], 0;
+	stobj->next = 0x0;
 // LINE 1322:
 	__asm        jmp    _T379;
 // LINE 1324:
@@ -3606,16 +3474,14 @@ _T267:
 	__asm        mov    ecx, stobj;
 	__asm        mov    [ecx+4], eax;
 // LINE 1325:
-	__asm        mov    eax, stobj;
-	__asm        mov    dword ptr [eax+8], 0x400;
+	stobj->user1 = 0x400;
 // LINE 1326:
-	__asm        mov    eax, stobj;
-	__asm        mov    dword ptr [eax], 0;
+	stobj->next = 0x0;
 // LINE 1327:
 	__asm        jmp    _T379;
 // LINE 1329:
 _T341:
-	__asm        mov    stobj, 0;
+	stobj = 0x0;
 // LINE 1330:
 	__asm        jmp    _T379;
 // LINE 1331:
@@ -3633,9 +3499,7 @@ _T379:
 	__asm        jmp    _T38b;
 // LINE 1336:
 _T37e:
-	__asm        mov    eax, stobj;
-	__asm        mov    eax, [eax];
-	__asm        mov    stobj, eax;
+	stobj = stobj->next;
 // LINE 1337:
 	__asm        jmp    _T267;
 // LINE 1340:
@@ -3646,11 +3510,7 @@ _T38b:
 	__asm        call   S3FireDyObjCollisionCheck;
 	__asm        add    esp, 8;
 // LINE 1342:
-	__asm        mov    eax, stobj;
-	__asm        mov    ecx, fd;
-	__asm        mov    ecx, [ecx+0x98];
-	__asm        mov    ecx, [ecx];
-	__asm        mov    [ecx+0xC], eax;
+	fd->cfd->cptr->stptr = stobj;
 // LINE 1344:
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x98];
@@ -3807,21 +3667,17 @@ long S3FireAddToNearest(struct _CELL_INFO *fcptr, struct Point2d *loc) {
 	int32_t xdir;
 
 // LINE 1397:
-	__asm        mov    spiral_dist, 5;
+	spiral_dist = 0x5;
 // LINE 1400:
-	__asm        mov    curr_dist, 0;
+	curr_dist = 0x0;
 // LINE 1401:
-	__asm        mov    curr_dir, 0xFFFFFFFF;
+	curr_dir = 0xffffffff;
 // LINE 1404:
-	__asm        mov    stop_now, 0;
+	stop_now = 0x0;
 // LINE 1410:
-	__asm        mov    eax, loc;
-	__asm        mov    eax, [eax];
-	__asm        mov    x, eax;
+	x = loc->x;
 // LINE 1411:
-	__asm        mov    eax, loc;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    y, eax;
+	y = loc->y;
 // LINE 1418:
 _T36:
 	__asm        inc    curr_dir;
@@ -3830,33 +3686,33 @@ _T36:
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    _Ta2;
 // LINE 1423:
-	__asm        mov    curr_dir, 0;
+	curr_dir = 0x0;
 // LINE 1424:
 	__asm        inc    curr_dist;
 // LINE 1425:
-	__asm        mov    xdir, 0;
+	xdir = 0x0;
 // LINE 1426:
-	__asm        mov    ydir, 0xFFFFFFFF;
+	ydir = 0xffffffff;
 // LINE 1427:
 	__asm        jmp    _Tca;
 // LINE 1429:
-	__asm        mov    xdir, 1;
+	xdir = 0x1;
 // LINE 1430:
-	__asm        mov    ydir, 0;
+	ydir = 0x0;
 // LINE 1431:
 	__asm        jmp    _Tca;
 // LINE 1433:
 	__asm        inc    curr_dist;
 // LINE 1434:
-	__asm        mov    xdir, 0;
+	xdir = 0x0;
 // LINE 1435:
-	__asm        mov    ydir, 1;
+	ydir = 0x1;
 // LINE 1436:
 	__asm        jmp    _Tca;
 // LINE 1438:
-	__asm        mov    xdir, 0xFFFFFFFF;
+	xdir = 0xffffffff;
 // LINE 1439:
-	__asm        mov    ydir, 0;
+	ydir = 0x0;
 // LINE 1440:
 	__asm        jmp    _Tca;
 // LINE 1441:
@@ -3876,7 +3732,7 @@ _Tca:
 // LINE 1447:
 	__asm        dec    curr_dist;
 // LINE 1448:
-	__asm        mov    stop_now, 1;
+	stop_now = 0x1;
 // LINE 1452:
 _Te0:
 	__asm        mov    i, 0;
@@ -3927,9 +3783,7 @@ _T151:
 // LINE 1474:
 FoundFire:
 _T15b:
-	__asm        mov    eax, cptr;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    stobj, eax;
+	stobj = cptr->stptr;
 // LINE 1475:
 _T164:
 	__asm        cmp    stobj, 0;
@@ -3939,18 +3793,14 @@ _T164:
 	__asm        test   byte ptr [eax+8], 1;
 	__asm        je     _T1cc;
 // LINE 1480:
-	__asm        mov    eax, stobj;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    fd, eax;
+	fd = stobj->user2;
 // LINE 1481:
 	__asm        call   S3FireGetCellData;
 	__asm        mov    cfd, eax;
 	__asm        cmp    cfd, 0;
 	__asm        je     _T1be;
 // LINE 1483:
-	__asm        mov    eax, fcptr;
-	__asm        mov    ecx, cfd;
-	__asm        mov    [ecx], eax;
+	cfd->cptr = fcptr;
 // LINE 1484:
 	__asm        push   0;
 	__asm        mov    eax, fd;
@@ -3971,9 +3821,7 @@ _T1be:
 	__asm        jmp    _T1e3;
 // LINE 1490:
 _T1cc:
-	__asm        mov    eax, stobj;
-	__asm        mov    eax, [eax];
-	__asm        mov    stobj, eax;
+	stobj = stobj->next;
 // LINE 1491:
 	__asm        jmp    _T164;
 // LINE 1493:
@@ -3991,7 +3839,7 @@ void S3FireDyObjCollisionCheck(struct _FIRE_DATA *fd, long hit_type) {
 	int32_t ret_code;
 
 // LINE 1506:
-	__asm        mov    ret_code, 0;
+	ret_code = 0x0;
 // LINE 1510:
 	__asm        cmp    hit_type, 6;
 	__asm        jne    _T42;
@@ -4009,14 +3857,9 @@ void S3FireDyObjCollisionCheck(struct _FIRE_DATA *fd, long hit_type) {
 	__asm        jmp    _T232;
 // LINE 1517:
 _T42:
-	__asm        mov    eax, fd;
-	__asm        mov    dword ptr [eax+0x88], 0x8000;
+	fd->dycheck_timer = 0x8000;
 // LINE 1521:
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x98];
-	__asm        mov    eax, [eax];
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    dyobj, eax;
+	dyobj = fd->cfd->cptr->dyptr;
 // LINE 1522:
 _T60:
 	__asm        cmp    dyobj, 0;
@@ -4168,25 +4011,12 @@ _T1f2:
 	__asm        test   al, 4;
 	__asm        je     _T220;
 // LINE 1592:
-	__asm        mov    eax, dyobj;
-	__asm        mov    eax, [eax];
-	__asm        mov    eax, [eax];
-	__asm        mov    eax, [eax];
-	__asm        mov    eax, [eax];
-	__asm        mov    eax, [eax];
-	__asm        mov    eax, [eax];
-	__asm        mov    eax, [eax];
-	__asm        mov    eax, [eax];
-	__asm        mov    eax, [eax];
-	__asm        mov    eax, [eax];
-	__asm        mov    dyobj, eax;
+	dyobj = dyobj->next->next->next->next->next->next->next->next->next->next;
 // LINE 1594:
 	__asm        jmp    _T228;
 // LINE 1595:
 _T220:
-	__asm        mov    eax, dyobj;
-	__asm        mov    eax, [eax];
-	__asm        mov    dyobj, eax;
+	dyobj = dyobj->next;
 // LINE 1596:
 _T228:
 	__asm        jmp    _T60;
@@ -4235,25 +4065,15 @@ _T48:
 	__asm        add    eax, 0x6666F0;
 	__asm        mov    fd, eax;
 // LINE 1636:
-	__asm        mov    eax, lsfire.flags;
-	__asm        mov    ecx, fd;
-	__asm        mov    [ecx], eax;
+	fd->flags = lsfire.flags;
 // LINE 1637:
-	__asm        mov    eax, lsfire.timetolive;
-	__asm        mov    ecx, fd;
-	__asm        mov    [ecx+4], eax;
+	fd->timetolive = lsfire.timetolive;
 // LINE 1638:
-	__asm        mov    eax, lsfire.douse_points;
-	__asm        mov    ecx, fd;
-	__asm        mov    [ecx+8], eax;
+	fd->douse_points = lsfire.douse_points;
 // LINE 1639:
-	__asm        mov    eax, lsfire.hdelta;
-	__asm        mov    ecx, fd;
-	__asm        mov    [ecx+0xC], eax;
+	fd->hdelta = lsfire.hdelta;
 // LINE 1640:
-	__asm        mov    eax, lsfire.elevation;
-	__asm        mov    ecx, fd;
-	__asm        mov    [ecx+0x1C], eax;
+	fd->elevation = lsfire.elevation;
 // LINE 1641:
 	__asm        mov    eax, 0x62B550;
 	__asm        add    eax, 0x3C;
@@ -4266,21 +4086,13 @@ _T48:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 1642:
-	__asm        mov    eax, lsfire.dycheck_timer;
-	__asm        mov    ecx, fd;
-	__asm        mov    [ecx+0x88], eax;
+	fd->dycheck_timer = lsfire.dycheck_timer;
 // LINE 1643:
-	__asm        mov    eax, lsfire.building;
-	__asm        mov    ecx, fd;
-	__asm        mov    [ecx+0x94], eax;
+	fd->building = lsfire.building;
 // LINE 1644:
-	__asm        mov    eax, lsfire.cfd;
-	__asm        mov    ecx, fd;
-	__asm        mov    [ecx+0x98], eax;
+	fd->cfd = lsfire.cfd;
 // LINE 1645:
-	__asm        mov    eax, lsfire.mission_id;
-	__asm        mov    ecx, fd;
-	__asm        mov    [ecx+0x9C], eax;
+	fd->mission_id = lsfire.mission_id;
 // LINE 1646:
 	__asm        mov    eax, 0x62B550;
 	__asm        add    eax, 0x8C;
@@ -4366,7 +4178,7 @@ _T1e3:
 	__asm        jmp    _T18a;
 // LINE 1685:
 _T1e8:
-	__asm        mov    S_fire_count, 0;
+	S_fire_count = 0x0;
 // LINE 1686:
 	__asm        mov    i, 0;
 	__asm        mov    fd, 0x6666F0;
@@ -4486,20 +4298,9 @@ _T22d:
 	__asm        mov    ecx, fd;
 	__asm        mov    [ecx+0x44], eax;
 // LINE 1717:
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x98];
-	__asm        mov    eax, [eax];
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    ecx, fd;
-	__asm        mov    ecx, [ecx+0x20];
-	__asm        mov    [ecx], eax;
+	fd->stptr->next = fd->cfd->cptr->stptr;
 // LINE 1718:
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x20];
-	__asm        mov    ecx, fd;
-	__asm        mov    ecx, [ecx+0x98];
-	__asm        mov    ecx, [ecx];
-	__asm        mov    [ecx+0xC], eax;
+	fd->cfd->cptr->stptr = fd->stptr;
 // LINE 1720:
 	__asm        jmp    _T205;
 // LINE 1722:

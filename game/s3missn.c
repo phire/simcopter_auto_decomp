@@ -148,7 +148,7 @@ void S3MissionReset() {
 	long i;
 
 // LINE 138:
-	__asm        mov    S_log.szLogString, 0x6BF060;
+	S_log.szLogString = 0x6bf060;
 // LINE 141:
 	__asm        mov    i, 0;
 	__asm        jmp    _T22;
@@ -168,35 +168,35 @@ _T22:
 	__asm        jmp    _T1f;
 // LINE 146:
 _T4a:
-	__asm        mov    S_mstatics.num_active_missions, 0;
+	S_mstatics.num_active_missions = 0x0;
 // LINE 147:
-	__asm        mov    S_mstatics.num_delayed_missions, 0;
+	S_mstatics.num_delayed_missions = 0x0;
 // LINE 148:
-	__asm        mov    S_mstatics.curr_mission, 0;
+	S_mstatics.curr_mission = 0x0;
 // LINE 149:
-	__asm        mov    S_mstatics.fire_ctr, 1;
+	S_mstatics.fire_ctr = 0x1;
 // LINE 150:
-	__asm        mov    S_mstatics.speeder_ctr, 1;
+	S_mstatics.speeder_ctr = 0x1;
 // LINE 151:
-	__asm        mov    S_mstatics.train_ctr, 1;
+	S_mstatics.train_ctr = 0x1;
 // LINE 152:
-	__asm        mov    S_mstatics.plane_ctr, 1;
+	S_mstatics.plane_ctr = 0x1;
 // LINE 153:
-	__asm        mov    S_mstatics.traffic_ctr, 1;
+	S_mstatics.traffic_ctr = 0x1;
 // LINE 154:
-	__asm        mov    S_mstatics.medevac_ctr, 1;
+	S_mstatics.medevac_ctr = 0x1;
 // LINE 155:
-	__asm        mov    S_mstatics.rescue_ctr, 1;
+	S_mstatics.rescue_ctr = 0x1;
 // LINE 156:
-	__asm        mov    S_mstatics.riot_ctr, 1;
+	S_mstatics.riot_ctr = 0x1;
 // LINE 157:
-	__asm        mov    S_mstatics.transport_ctr, 1;
+	S_mstatics.transport_ctr = 0x1;
 // LINE 158:
-	__asm        mov    S_mstatics.crime_ctr, 1;
+	S_mstatics.crime_ctr = 0x1;
 // LINE 159:
-	__asm        mov    S_mstatics.key_ctr, 0;
+	S_mstatics.key_ctr = 0x0;
 // LINE 160:
-	__asm        mov    S_mission_timer, 0xB40000;
+	S_mission_timer = 0xb40000;
 // LINE 162:
 }
 
@@ -239,26 +239,19 @@ void ConvertCitySettingsToSteppedPercentages(struct tagCitySettings *citySetting
 	__asm        test   ah, 1;
 	__asm        je     _Tb7;
 // LINE 196:
-	__asm        mov    eax, citySettingsOut;
-	__asm        mov    dword ptr [eax+4], 0;
+	citySettingsOut->lMissionFrequencyFire = 0x0;
 // LINE 197:
-	__asm        mov    eax, citySettingsOut;
-	__asm        mov    dword ptr [eax+8], 0;
+	citySettingsOut->lMissionFrequencyCrime = 0x0;
 // LINE 198:
-	__asm        mov    eax, citySettingsOut;
-	__asm        mov    dword ptr [eax+0xC], 0;
+	citySettingsOut->lMissionFrequencyRescue = 0x0;
 // LINE 199:
-	__asm        mov    eax, citySettingsOut;
-	__asm        mov    dword ptr [eax+0x10], 0;
+	citySettingsOut->lMissionFrequencyRiot = 0x0;
 // LINE 200:
-	__asm        mov    eax, citySettingsOut;
-	__asm        mov    dword ptr [eax+0x14], 0;
+	citySettingsOut->lMissionFrequencyTraffic = 0x0;
 // LINE 201:
-	__asm        mov    eax, citySettingsOut;
-	__asm        mov    dword ptr [eax+0x18], 0;
+	citySettingsOut->lMissionFrequencyMedEvac = 0x0;
 // LINE 202:
-	__asm        mov    eax, citySettingsOut;
-	__asm        mov    dword ptr [eax+0x1C], 0;
+	citySettingsOut->lMissionFrequencyTransport = 0x0;
 // LINE 203:
 	__asm        jmp    _T1c1;
 // LINE 205:
@@ -836,44 +829,43 @@ _Td1:
 	__asm        cmp    S_mstatics.curr_mission, 0;
 	__asm        jne    _Te6;
 // LINE 481:
-	__asm        mov    eax, md;
-	__asm        mov    S_mstatics.curr_mission, eax;
+	S_mstatics.curr_mission = md;
 // LINE 486:
 _Te6:
-	__asm        mov    fires_done, 1;
+	fires_done = 0x1;
 // LINE 487:
-	__asm        mov    debris_done, 1;
+	debris_done = 0x1;
 // LINE 488:
-	__asm        mov    personriot_done, 1;
+	personriot_done = 0x1;
 // LINE 489:
-	__asm        mov    personmed_done, 1;
+	personmed_done = 0x1;
 // LINE 490:
-	__asm        mov    persontrans_done, 1;
+	persontrans_done = 0x1;
 // LINE 491:
-	__asm        mov    personresc_done, 1;
+	personresc_done = 0x1;
 // LINE 492:
-	__asm        mov    personfire_done, 1;
+	personfire_done = 0x1;
 // LINE 493:
-	__asm        mov    vehiclefire_done, 1;
+	vehiclefire_done = 0x1;
 // LINE 494:
-	__asm        mov    vehiclejam_done, 1;
+	vehiclejam_done = 0x1;
 // LINE 495:
-	__asm        mov    criminal_done, 1;
+	criminal_done = 0x1;
 // LINE 496:
-	__asm        mov    speeder_done, 1;
+	speeder_done = 0x1;
 // LINE 498:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x52], 5;
 	__asm        je     _T147;
 // LINE 500:
-	__asm        mov    criminal_done, 0;
+	criminal_done = 0x0;
 // LINE 503:
 _T147:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x50], 2;
 	__asm        je     _T15b;
 // LINE 505:
-	__asm        mov    speeder_done, 0;
+	speeder_done = 0x0;
 // LINE 508:
 _T15b:
 	__asm        mov    eax, md;
@@ -890,7 +882,7 @@ _T15b:
 	__asm        cmp    eax, [ecx+0x70];
 	__asm        jge    _T18d;
 // LINE 512:
-	__asm        mov    debris_done, 0;
+	debris_done = 0x0;
 // LINE 515:
 _T18d:
 	__asm        mov    eax, md;
@@ -905,7 +897,7 @@ _T18d:
 	__asm        cmp    eax, [ecx+0x58];
 	__asm        jge    _T1b9;
 // LINE 518:
-	__asm        mov    fires_done, 0;
+	fires_done = 0x0;
 // LINE 521:
 _T1b9:
 	__asm        mov    eax, md;
@@ -918,11 +910,9 @@ _T1b9:
 	__asm        cmp    [eax+0xA4], ecx;
 	__asm        jne    _T1f2;
 // LINE 524:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x38], 0xFFFFFFFF;
+	md->pickuploc.x = 0xffffffff;
 // LINE 525:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x3C], 0xFFFFFFFF;
+	md->pickuploc.y = 0xffffffff;
 // LINE 529:
 _T1f2:
 	__asm        mov    eax, md;
@@ -938,7 +928,7 @@ _T1f2:
 	__asm        je     _T229;
 // LINE 532:
 _T222:
-	__asm        mov    personmed_done, 0;
+	personmed_done = 0x0;
 // LINE 535:
 _T229:
 	__asm        mov    eax, md;
@@ -951,11 +941,9 @@ _T229:
 	__asm        cmp    [eax+0x8C], ecx;
 	__asm        jne    _T262;
 // LINE 538:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x38], 0xFFFFFFFF;
+	md->pickuploc.x = 0xffffffff;
 // LINE 539:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x3C], 0xFFFFFFFF;
+	md->pickuploc.y = 0xffffffff;
 // LINE 545:
 _T262:
 	__asm        mov    eax, md;
@@ -975,7 +963,7 @@ _T262:
 	__asm        je     _T2ab;
 // LINE 546:
 _T2a4:
-	__asm        mov    personresc_done, 0;
+	personresc_done = 0x0;
 // LINE 549:
 _T2ab:
 	__asm        mov    eax, md;
@@ -990,7 +978,7 @@ _T2ab:
 	__asm        cmp    eax, [ecx+0x94];
 	__asm        jge    _T2e0;
 // LINE 555:
-	__asm        mov    criminal_done, 0;
+	criminal_done = 0x0;
 // LINE 558:
 _T2e0:
 	__asm        mov    eax, md;
@@ -1005,7 +993,7 @@ _T2e0:
 	__asm        cmp    eax, [ecx+0x94];
 	__asm        jge    _T315;
 // LINE 564:
-	__asm        mov    criminal_done, 0;
+	criminal_done = 0x0;
 // LINE 567:
 _T315:
 	__asm        mov    eax, md;
@@ -1020,7 +1008,7 @@ _T315:
 	__asm        cmp    eax, [ecx+0x94];
 	__asm        jge    _T34a;
 // LINE 573:
-	__asm        mov    criminal_done, 0;
+	criminal_done = 0x0;
 // LINE 576:
 _T34a:
 	__asm        mov    eax, md;
@@ -1035,7 +1023,7 @@ _T34a:
 	__asm        cmp    eax, [ecx+0x94];
 	__asm        jge    _T37f;
 // LINE 582:
-	__asm        mov    criminal_done, 0;
+	criminal_done = 0x0;
 // LINE 585:
 _T37f:
 	__asm        mov    eax, md;
@@ -1048,11 +1036,9 @@ _T37f:
 	__asm        cmp    [eax+0xA4], ecx;
 	__asm        jne    _T3b8;
 // LINE 588:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x38], 0xFFFFFFFF;
+	md->pickuploc.x = 0xffffffff;
 // LINE 589:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x3C], 0xFFFFFFFF;
+	md->pickuploc.y = 0xffffffff;
 // LINE 593:
 _T3b8:
 	__asm        mov    eax, md;
@@ -1068,7 +1054,7 @@ _T3b8:
 	__asm        je     _T3ef;
 // LINE 594:
 _T3e8:
-	__asm        mov    persontrans_done, 0;
+	persontrans_done = 0x0;
 // LINE 597:
 _T3ef:
 	__asm        mov    eax, md;
@@ -1083,13 +1069,13 @@ _T3ef:
 	__asm        cmp    eax, [ecx+0x80];
 	__asm        jge    _T424;
 // LINE 602:
-	__asm        mov    personriot_done, 0;
+	personriot_done = 0x0;
 // LINE 604:
 _T424:
 	__asm        cmp    S_riotcheckctr, 0xC;
 	__asm        jle    _T45c;
 // LINE 605:
-	__asm        mov    S_riotcheckctr, 0;
+	S_riotcheckctr = 0x0;
 // LINE 606:
 	__asm        cmp    personriot_done, 0;
 	__asm        jne    _T45c;
@@ -1119,7 +1105,7 @@ _T462:
 	__asm        cmp    eax, [ecx+0xC0];
 	__asm        jge    _T497;
 // LINE 616:
-	__asm        mov    vehiclefire_done, 0;
+	vehiclefire_done = 0x0;
 // LINE 619:
 _T497:
 	__asm        mov    eax, md;
@@ -1134,7 +1120,7 @@ _T497:
 	__asm        cmp    eax, [ecx+0xC4];
 	__asm        jge    _T4cc;
 // LINE 623:
-	__asm        mov    vehiclejam_done, 0;
+	vehiclejam_done = 0x0;
 // LINE 636:
 _T4cc:
 	__asm        cmp    fires_done, 1;
@@ -1191,7 +1177,7 @@ long S3MissionStart(long x, long y, long type) {
 	struct _CELL_FIRE_DATA *cfd;
 
 // LINE 659:
-	__asm        mov    startthismission, 0;
+	startthismission = 0x0;
 // LINE 663:
 	__asm        mov    i, 0;
 	__asm        jmp    _T1f;
@@ -1236,38 +1222,25 @@ _T7e:
 	__asm        mov    ecx, 0x35;
 	__asm        rep stosd;
 // LINE 677:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x4C], 1;
+	md->flags = 0x1;
 // LINE 678:
-	__asm        mov    eax, x;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x28], eax;
+	md->maploc.x = x;
 // LINE 679:
-	__asm        mov    eax, y;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x2C], eax;
+	md->maploc.y = y;
 // LINE 680:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x30], 0xFFFFFFFF;
+	md->destmaploc.x = 0xffffffff;
 // LINE 681:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x34], 0xFFFFFFFF;
+	md->destmaploc.y = 0xffffffff;
 // LINE 682:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x38], 0xFFFFFFFF;
+	md->pickuploc.x = 0xffffffff;
 // LINE 683:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x3C], 0xFFFFFFFF;
+	md->pickuploc.y = 0xffffffff;
 // LINE 684:
-	__asm        mov    eax, type;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x50], eax;
+	md->type = type;
 // LINE 685:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x54], 0;
+	md->state = 0x0;
 // LINE 686:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x40], 0;
+	md->timer = 0x0;
 // LINE 687:
 	__asm        mov    eax, S_mstatics.key_ctr;
 	__asm        mov    ecx, md;
@@ -1299,9 +1272,9 @@ _T107:
 	__asm        jmp    _Tf04;
 // LINE 695:
 _T13c:
-	__asm        mov    numtostart, 0x14;
+	numtostart = 0x14;
 // LINE 696:
-	__asm        mov    numstarted, 0;
+	numstarted = 0x0;
 // LINE 697:
 	__asm        mov    count, 0;
 	__asm        jmp    _T159;
@@ -1428,15 +1401,11 @@ _T214:
 // LINE 739:
 // Block end:
 _T2a3:
-	__asm        mov    startthismission, 0;
+	startthismission = 0x0;
 // LINE 740:
-	__asm        mov    eax, x;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x28], eax;
+	md->maploc.x = x;
 // LINE 741:
-	__asm        mov    eax, y;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x2C], eax;
+	md->maploc.y = y;
 // LINE 745:
 	__asm        mov    eax, md;
 	__asm        mov    dword ptr [eax+0x34], 0xFFFFFFFF;
@@ -1492,7 +1461,7 @@ _T30f:
 	__asm        mov    eax, md;
 	__asm        inc    dword ptr [eax+0x8C];
 // LINE 757:
-	__asm        mov    startthismission, 1;
+	startthismission = 0x1;
 // LINE 759:
 _T35c:
 	__asm        jmp    _T30c;
@@ -1665,19 +1634,13 @@ _T50b:
 	__asm        jmp    _Tf04;
 // LINE 813:
 _T537:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x38], 0xFFFFFFFF;
+	md->pickuploc.x = 0xffffffff;
 // LINE 814:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x3C], 0xFFFFFFFF;
+	md->pickuploc.y = 0xffffffff;
 // LINE 816:
-	__asm        mov    eax, x;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x28], eax;
+	md->maploc.x = x;
 // LINE 817:
-	__asm        mov    eax, y;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x2C], eax;
+	md->maploc.y = y;
 // LINE 819:
 	__asm        cmp    S_mstatics.curr_mission, 0;
 	__asm        je     _T589;
@@ -1721,8 +1684,7 @@ _T589:
 	__asm        jmp    _Tf04;
 // LINE 840:
 _T5d9:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x84], 1;
+	md->mdata.total_person_medevac = 0x1;
 // LINE 843:
 	__asm        mov    eax, S_mstatics.medevac_ctr;
 	__asm        push   eax;
@@ -1751,15 +1713,11 @@ _T5d9:
 	__asm        jmp    _Te60;
 // LINE 853:
 _T62d:
-	__asm        mov    startthismission, 0;
+	startthismission = 0x0;
 // LINE 855:
-	__asm        mov    eax, x;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x38], eax;
+	md->pickuploc.x = x;
 // LINE 856:
-	__asm        mov    eax, y;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x3C], eax;
+	md->pickuploc.y = y;
 // LINE 858:
 	__asm        call   rand;
 	__asm        mov    ecx, 3;
@@ -1800,7 +1758,7 @@ _T66b:
 	__asm        mov    eax, md;
 	__asm        inc    dword ptr [eax+0x88];
 // LINE 868:
-	__asm        mov    startthismission, 1;
+	startthismission = 0x1;
 // LINE 870:
 _T6b8:
 	__asm        jmp    _T668;
@@ -1971,8 +1929,7 @@ _T830:
 	__asm        jmp    _Tf04;
 // LINE 913:
 _T894:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x54], 2;
+	md->state = 0x2;
 // LINE 914:
 	__asm        jmp    _Te60;
 // LINE 916:
@@ -2010,8 +1967,7 @@ _T8a3:
 	__asm        jmp    _Tf04;
 // LINE 923:
 _T907:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x54], 2;
+	md->state = 0x2;
 // LINE 924:
 	__asm        jmp    _Te60;
 // LINE 926:
@@ -2052,8 +2008,7 @@ _T916:
 	__asm        jmp    _Tf04;
 // LINE 930:
 _T97e:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x94], 1;
+	md->mdata.person_rescued = 0x1;
 // LINE 931:
 	__asm        mov    eax, type;
 	__asm        push   eax;
@@ -2069,25 +2024,17 @@ _T97e:
 	__asm        jmp    _Te60;
 // LINE 935:
 _T9aa:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x38], 0xFFFFFFFF;
+	md->pickuploc.x = 0xffffffff;
 // LINE 936:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x3C], 0xFFFFFFFF;
+	md->pickuploc.y = 0xffffffff;
 // LINE 937:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x30], 0xFFFFFFFF;
+	md->destmaploc.x = 0xffffffff;
 // LINE 938:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x34], 0xFFFFFFFF;
+	md->destmaploc.y = 0xffffffff;
 // LINE 940:
-	__asm        mov    eax, x;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x28], eax;
+	md->maploc.x = x;
 // LINE 941:
-	__asm        mov    eax, y;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x2C], eax;
+	md->maploc.y = y;
 // LINE 948:
 	__asm        push   0;
 	__asm        push   0;
@@ -2118,8 +2065,7 @@ _T9aa:
 	__asm        jmp    _Tf04;
 // LINE 952:
 _Ta34:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x94], 1;
+	md->mdata.person_rescued = 0x1;
 // LINE 953:
 	__asm        mov    eax, S_mstatics.crime_ctr;
 	__asm        push   eax;
@@ -2148,25 +2094,17 @@ _Ta34:
 	__asm        jmp    _Te60;
 // LINE 961:
 _Ta88:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x38], 0xFFFFFFFF;
+	md->pickuploc.x = 0xffffffff;
 // LINE 962:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x3C], 0xFFFFFFFF;
+	md->pickuploc.y = 0xffffffff;
 // LINE 963:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x30], 0xFFFFFFFF;
+	md->destmaploc.x = 0xffffffff;
 // LINE 964:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x34], 0xFFFFFFFF;
+	md->destmaploc.y = 0xffffffff;
 // LINE 966:
-	__asm        mov    eax, x;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x28], eax;
+	md->maploc.x = x;
 // LINE 967:
-	__asm        mov    eax, y;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x2C], eax;
+	md->maploc.y = y;
 // LINE 974:
 	__asm        push   0;
 	__asm        push   0;
@@ -2197,8 +2135,7 @@ _Ta88:
 	__asm        jmp    _Tf04;
 // LINE 978:
 _Tb12:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x94], 1;
+	md->mdata.person_rescued = 0x1;
 // LINE 979:
 	__asm        mov    eax, S_mstatics.crime_ctr;
 	__asm        push   eax;
@@ -2227,25 +2164,17 @@ _Tb12:
 	__asm        jmp    _Te60;
 // LINE 987:
 _Tb66:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x38], 0xFFFFFFFF;
+	md->pickuploc.x = 0xffffffff;
 // LINE 988:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x3C], 0xFFFFFFFF;
+	md->pickuploc.y = 0xffffffff;
 // LINE 989:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x30], 0xFFFFFFFF;
+	md->destmaploc.x = 0xffffffff;
 // LINE 990:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x34], 0xFFFFFFFF;
+	md->destmaploc.y = 0xffffffff;
 // LINE 992:
-	__asm        mov    eax, x;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x28], eax;
+	md->maploc.x = x;
 // LINE 993:
-	__asm        mov    eax, y;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x2C], eax;
+	md->maploc.y = y;
 // LINE 1000:
 	__asm        push   0;
 	__asm        push   0;
@@ -2276,8 +2205,7 @@ _Tb66:
 	__asm        jmp    _Tf04;
 // LINE 1004:
 _Tbf0:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x94], 1;
+	md->mdata.person_rescued = 0x1;
 // LINE 1005:
 	__asm        mov    eax, S_mstatics.crime_ctr;
 	__asm        push   eax;
@@ -2387,8 +2315,7 @@ _Td02:
 	__asm        mov    [ecx+0x20], eax;
 	__asm        inc    S_mstatics.traffic_ctr;
 // LINE 1032:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x54], 2;
+	md->state = 0x2;
 // LINE 1036:
 	__asm        jmp    _Te60;
 // LINE 1038:
@@ -2497,9 +2424,7 @@ _Te60:
 	__asm        call   sprintf;
 	__asm        add    esp, 0x10;
 // LINE 1047:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x24];
-	__asm        mov    S_log.nMissionID, eax;
+	S_log.nMissionID = md->key;
 // LINE 1048:
 	__asm        push   1;
 	__asm        push   0x5B4EB8;
@@ -2513,8 +2438,7 @@ _Te60:
 	__asm        cmp    dword ptr [eax+0x54], 2;
 	__asm        je     _Ted1;
 // LINE 1051:
-	__asm        mov    eax, md;
-	__asm        mov    S_mstatics.curr_mission, eax;
+	S_mstatics.curr_mission = md;
 // LINE 1053:
 _Ted1:
 	__asm        mov    eax, md;
@@ -2529,8 +2453,7 @@ _Tee9:
 	__asm        inc    S_mstatics.num_active_missions;
 // LINE 1058:
 _Teef:
-	__asm        mov    eax, S_mission_interval;
-	__asm        mov    S_mission_timer, eax;
+	S_mission_timer = S_mission_interval;
 // LINE 1060:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x24];
@@ -3033,8 +2956,7 @@ _T1fa:
 	__asm        cmp    dword ptr [eax+0xC4], 2;
 	__asm        jle    _T35d;
 // LINE 1347:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x54], 0;
+	md->state = 0x0;
 // LINE 1349:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x50];
@@ -3113,10 +3035,7 @@ _T3f6:
 	__asm        inc    S_mstatics.num_active_missions;
 // LINE 1380:
 _T402:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x54], eax;
+	md->state = mp->i2num;
 // LINE 1381:
 	__asm        jmp    _T4c9;
 // LINE 1385:
@@ -3166,7 +3085,7 @@ void S3MissionEnd(long mission_id) {
 	__asm        cmp    S_mstatics.curr_mission, eax;
 	__asm        jne    _Tbe;
 // LINE 1412:
-	__asm        mov    S_mstatics.curr_mission, 0;
+	S_mstatics.curr_mission = 0x0;
 // LINE 1413:
 	__asm        mov    i, 0;
 	__asm        jmp    _T6d;
@@ -3193,8 +3112,7 @@ _T6d:
 	__asm        cmp    dword ptr [eax+0x54], 2;
 	__asm        je     _Tb9;
 // LINE 1418:
-	__asm        mov    eax, md;
-	__asm        mov    S_mstatics.curr_mission, eax;
+	S_mstatics.curr_mission = md;
 // LINE 1419:
 	__asm        jmp    _Tbe;
 // LINE 1421:
@@ -3780,7 +3698,7 @@ void S3MissionSetCurrNext() {
 	long i;
 
 // LINE 1601:
-	__asm        mov    md, 0;
+	md = 0x0;
 // LINE 1603:
 	__asm        cmp    S_mstatics.curr_mission, 0;
 	__asm        jne    _T22;
@@ -3821,8 +3739,7 @@ _T45:
 	__asm        cmp    dword ptr [eax+0x54], 2;
 	__asm        je     _T91;
 // LINE 1611:
-	__asm        mov    eax, md;
-	__asm        mov    S_mstatics.curr_mission, eax;
+	S_mstatics.curr_mission = md;
 // LINE 1612:
 	__asm        jmp    _T10c;
 // LINE 1614:
@@ -3862,8 +3779,7 @@ _Ta5:
 	__asm        cmp    dword ptr [eax+0x54], 2;
 	__asm        je     _T107;
 // LINE 1621:
-	__asm        mov    eax, md;
-	__asm        mov    S_mstatics.curr_mission, eax;
+	S_mstatics.curr_mission = md;
 // LINE 1622:
 	__asm        jmp    _T10c;
 // LINE 1624:
@@ -3879,7 +3795,7 @@ void S3MissionSetCurrPrev() {
 	long i;
 
 // LINE 1636:
-	__asm        mov    md, 0;
+	md = 0x0;
 // LINE 1638:
 	__asm        cmp    S_mstatics.curr_mission, 0;
 	__asm        jne    _T22;
@@ -3920,8 +3836,7 @@ _T45:
 	__asm        cmp    dword ptr [eax+0x54], 2;
 	__asm        je     _T91;
 // LINE 1646:
-	__asm        mov    eax, md;
-	__asm        mov    S_mstatics.curr_mission, eax;
+	S_mstatics.curr_mission = md;
 // LINE 1647:
 	__asm        jmp    _T10c;
 // LINE 1649:
@@ -3961,8 +3876,7 @@ _Ta5:
 	__asm        cmp    dword ptr [eax+0x54], 2;
 	__asm        je     _T107;
 // LINE 1656:
-	__asm        mov    eax, md;
-	__asm        mov    S_mstatics.curr_mission, eax;
+	S_mstatics.curr_mission = md;
 // LINE 1657:
 	__asm        jmp    _T10c;
 // LINE 1659:
@@ -4164,9 +4078,7 @@ _Taa:
 	__asm        dec    S_mstatics.num_active_missions;
 // LINE 1870:
 _Tb0:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x24];
-	__asm        mov    S_log.nMissionID, eax;
+	S_log.nMissionID = md->key;
 // LINE 1873:
 	__asm        mov    eax, md;
 	__asm        push   eax;
@@ -4233,36 +4145,25 @@ _T77:
 	__asm        mov    ecx, 0x35;
 	__asm        rep stosd;
 // LINE 1912:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x4C], 1;
+	md->flags = 0x1;
 // LINE 1913:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x28], 0xFFFFFFFF;
+	md->maploc.x = 0xffffffff;
 // LINE 1914:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x2C], 0xFFFFFFFF;
+	md->maploc.y = 0xffffffff;
 // LINE 1915:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x30], 0xFFFFFFFF;
+	md->destmaploc.x = 0xffffffff;
 // LINE 1916:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x34], 0xFFFFFFFF;
+	md->destmaploc.y = 0xffffffff;
 // LINE 1917:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x38], 0xFFFFFFFF;
+	md->pickuploc.x = 0xffffffff;
 // LINE 1918:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x3C], 0xFFFFFFFF;
+	md->pickuploc.y = 0xffffffff;
 // LINE 1919:
-	__asm        mov    eax, type;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x50], eax;
+	md->type = type;
 // LINE 1920:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x54], 0;
+	md->state = 0x0;
 // LINE 1921:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x40], 0;
+	md->timer = 0x0;
 // LINE 1922:
 	__asm        mov    eax, S_mstatics.key_ctr;
 	__asm        mov    ecx, md;
@@ -4402,8 +4303,7 @@ _T26a:
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 1958:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x54], 2;
+	md->state = 0x2;
 // LINE 1959:
 	__asm        mov    eax, S_mstatics.traffic_ctr;
 	__asm        mov    ecx, md;
@@ -4481,8 +4381,7 @@ _T36d:
 	__asm        cmp    dword ptr [eax+0x54], 2;
 	__asm        je     _T38f;
 // LINE 1967:
-	__asm        mov    eax, md;
-	__asm        mov    S_mstatics.curr_mission, eax;
+	S_mstatics.curr_mission = md;
 // LINE 1969:
 _T38f:
 	__asm        mov    eax, md;
@@ -4497,8 +4396,7 @@ _T3a7:
 	__asm        inc    S_mstatics.num_active_missions;
 // LINE 1974:
 _T3ad:
-	__asm        mov    eax, S_mission_interval;
-	__asm        mov    S_mission_timer, eax;
+	S_mission_timer = S_mission_interval;
 // LINE 1980:
 	__asm        mov    eax, 0x5B5074;
 	__asm        mov    ecx, 0x5B507C;
@@ -4519,9 +4417,7 @@ _T3ad:
 	__asm        call   sprintf;
 	__asm        add    esp, 0x10;
 // LINE 1981:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x24];
-	__asm        mov    S_log.nMissionID, eax;
+	S_log.nMissionID = md->key;
 // LINE 1982:
 	__asm        push   1;
 	__asm        push   0x5B4EB8;
@@ -4545,15 +4441,15 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS *mp, long * mission_id) {
 	char * reason;
 
 // LINE 2014:
-	__asm        mov    mname, 0x5B5098;
+	mname = 0x5b5098;
 // LINE 2015:
-	__asm        mov    reason, 0x5B50A4;
+	reason = 0x5b50a4;
 // LINE 2016:
-	__asm        mov    money, 0;
+	money = 0x0;
 // LINE 2017:
-	__asm        mov    points, 0;
+	points = 0x0;
 // LINE 2018:
-	__asm        mov    key, 0xFFFFFFFF;
+	key = 0xffffffff;
 // LINE 2020:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+4];
@@ -4591,12 +4487,9 @@ _T52:
 	__asm        jmp    _T66a;
 // LINE 2035:
 _T8d:
-	__asm        mov    eax, md;
-	__asm        mov    mname, eax;
+	mname = md;
 // LINE 2036:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x24];
-	__asm        mov    key, eax;
+	key = md->key;
 // LINE 2042:
 _T9c:
 	__asm        mov    eax, mp;
@@ -4618,7 +4511,7 @@ _T9c:
 	__asm        call   ChangeUserPoints;
 	__asm        add    esp, 4;
 // LINE 2047:
-	__asm        mov    reason, 0x5B50A8;
+	reason = 0x5b50a8;
 // LINE 2048:
 	__asm        jmp    _T5f2;
 // LINE 2050:
@@ -4634,7 +4527,7 @@ _T9c:
 	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
 // LINE 2052:
-	__asm        mov    reason, 0x5B50B4;
+	reason = 0x5b50b4;
 // LINE 2054:
 	__asm        push   0;
 	__asm        mov    eax, 0x6C1210;
@@ -4662,7 +4555,7 @@ _T9c:
 	__asm        call   ChangeUserPoints;
 	__asm        add    esp, 4;
 // LINE 2062:
-	__asm        mov    reason, 0x5B50C0;
+	reason = 0x5b50c0;
 // LINE 2063:
 	__asm        jmp    _T5f2;
 // LINE 2065:
@@ -4680,7 +4573,7 @@ _T9c:
 	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
 // LINE 2069:
-	__asm        mov    reason, 0x5B50D4;
+	reason = 0x5b50d4;
 // LINE 2071:
 	__asm        push   0;
 	__asm        mov    eax, 0x6C1210;
@@ -4706,7 +4599,7 @@ _T9c:
 	__asm        call   ChangeUserPoints;
 	__asm        add    esp, 4;
 // LINE 2077:
-	__asm        mov    reason, 0x5B50E4;
+	reason = 0x5b50e4;
 // LINE 2078:
 	__asm        jmp    _T5f2;
 // LINE 2080:
@@ -4722,7 +4615,7 @@ _T9c:
 	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
 // LINE 2082:
-	__asm        mov    reason, 0x5B50F4;
+	reason = 0x5b50f4;
 // LINE 2084:
 	__asm        push   0;
 	__asm        mov    eax, 0x6C1210;
@@ -4758,7 +4651,7 @@ _T9c:
 	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
 // LINE 2102:
-	__asm        mov    reason, 0x5B5104;
+	reason = 0x5b5104;
 // LINE 2104:
 	__asm        push   0;
 	__asm        mov    eax, 0x6C1210;
@@ -4782,7 +4675,7 @@ _T9c:
 	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
 // LINE 2110:
-	__asm        mov    reason, 0x5B5114;
+	reason = 0x5b5114;
 // LINE 2112:
 	__asm        push   0;
 	__asm        mov    eax, 0x6C1210;
@@ -4806,7 +4699,7 @@ _T9c:
 	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
 // LINE 2118:
-	__asm        mov    reason, 0x5B5128;
+	reason = 0x5b5128;
 // LINE 2120:
 	__asm        push   0;
 	__asm        mov    eax, 0x6C1210;
@@ -4830,7 +4723,7 @@ _T9c:
 	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
 // LINE 2126:
-	__asm        mov    reason, 0x5B5138;
+	reason = 0x5b5138;
 // LINE 2128:
 	__asm        push   0;
 	__asm        mov    eax, 0x6C1210;
@@ -4866,7 +4759,7 @@ _T9c:
 	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
 // LINE 2146:
-	__asm        mov    reason, 0x5B5148;
+	reason = 0x5b5148;
 // LINE 2148:
 	__asm        push   0;
 	__asm        mov    eax, 0x6C1210;
@@ -4890,7 +4783,7 @@ _T9c:
 	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
 // LINE 2154:
-	__asm        mov    reason, 0x5B5154;
+	reason = 0x5b5154;
 // LINE 2156:
 	__asm        push   0;
 	__asm        mov    eax, 0x6C1210;
@@ -4916,7 +4809,7 @@ _T9c:
 	__asm        call   ChangeUserPoints;
 	__asm        add    esp, 4;
 // LINE 2162:
-	__asm        mov    reason, 0x5B5160;
+	reason = 0x5b5160;
 // LINE 2163:
 	__asm        jmp    _T5f2;
 // LINE 2165:
@@ -4944,7 +4837,7 @@ _T9c:
 	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
 // LINE 2169:
-	__asm        mov    reason, 0x5B516C;
+	reason = 0x5b516c;
 // LINE 2171:
 	__asm        push   0;
 	__asm        mov    eax, 0x6C1210;
@@ -4980,7 +4873,7 @@ _T9c:
 	__asm        call   ChangeUserMoney;
 	__asm        add    esp, 4;
 // LINE 2179:
-	__asm        mov    reason, 0x5B517C;
+	reason = 0x5b517c;
 // LINE 2181:
 	__asm        push   0;
 	__asm        mov    eax, 0x6C1210;
@@ -5013,8 +4906,7 @@ _T53f:
 // Switch pointers
 // LINE 2191:
 _T5f2:
-	__asm        mov    eax, key;
-	__asm        mov    S_log.nMissionID, eax;
+	S_log.nMissionID = key;
 // LINE 2194:
 	__asm        cmp    money, 0;
 	__asm        je     _T632;
@@ -5067,9 +4959,9 @@ void S3MissionScoreEnd(struct MISSION_DATA *md) {
 	long total_pts;
 
 // LINE 2226:
-	__asm        mov    total_pts, 0;
+	total_pts = 0x0;
 // LINE 2227:
-	__asm        mov    total_money, 0;
+	total_money = 0x0;
 // LINE 2234:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x50], 8;
@@ -5443,12 +5335,10 @@ _T466:
 	__asm        cmp    total_money, 0;
 	__asm        jge    _T477;
 
-	__asm        mov    total_money, 0;
+	total_money = 0x0;
 // LINE 2389:
 _T477:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x24];
-	__asm        mov    S_log.nMissionID, eax;
+	S_log.nMissionID = md->key;
 // LINE 2394:
 	__asm        mov    eax, total_money;
 	__asm        push   eax;
@@ -5588,7 +5478,7 @@ int32_t S3MissionMIFFLoad(void * __ptr32 miffReader) {
 	__asm        jmp    _Tad;
 // LINE 2500:
 _T39:
-	__asm        mov    S_mstatics.curr_mission, 0;
+	S_mstatics.curr_mission = 0x0;
 // LINE 2501:
 	__asm        mov    i, 0;
 	__asm        jmp    _T52;
@@ -5615,8 +5505,7 @@ _T52:
 	__asm        cmp    dword ptr [eax+0x54], 2;
 	__asm        je     _T9e;
 // LINE 2506:
-	__asm        mov    eax, md;
-	__asm        mov    S_mstatics.curr_mission, eax;
+	S_mstatics.curr_mission = md;
 // LINE 2507:
 	__asm        jmp    _Ta3;
 // LINE 2510:
@@ -5665,9 +5554,9 @@ void S3MissionDispatch(long x, long y, long type) {
 	long sid1;
 
 // LINE 2555:
-	__asm        mov    sid1, 0xFFFFFFFF;
+	sid1 = 0xffffffff;
 // LINE 2556:
-	__asm        mov    sid3, 0xFFFFFFFF;
+	sid3 = 0xffffffff;
 // LINE 2557:
 	__asm        mov    eax, y;
 	__asm        push   eax;
@@ -5704,14 +5593,14 @@ _T35:
 	__asm        jmp    _T7a5;
 // LINE 2567:
 _T6e:
-	__asm        mov    sid1, 0x43;
+	sid1 = 0x43;
 // LINE 2568:
-	__asm        mov    sid3, 0x56;
+	sid3 = 0x56;
 // LINE 2569:
 	__asm        jmp    _T7a5;
 // LINE 2571:
 _T81:
-	__asm        mov    sid1, 0x44;
+	sid1 = 0x44;
 // LINE 2572:
 	__asm        call   rand;
 	__asm        mov    ecx, 5;
@@ -5733,12 +5622,12 @@ _Ta0:
 	__asm        jmp    _Tf5;
 // LINE 2578:
 _Tbf:
-	__asm        mov    sid3, 0x5C;
+	sid3 = 0x5c;
 // LINE 2579:
 	__asm        jmp    _Tf5;
 // LINE 2581:
 _Tcb:
-	__asm        mov    sid3, 0x57;
+	sid3 = 0x57;
 // LINE 2582:
 	__asm        jmp    _Tf5;
 // LINE 2583:
@@ -5756,7 +5645,7 @@ _Tf5:
 	__asm        jmp    _T7a5;
 // LINE 2586:
 _Tfa:
-	__asm        mov    sid1, 0x43;
+	sid1 = 0x43;
 // LINE 2587:
 	__asm        call   rand;
 	__asm        mov    ecx, 5;
@@ -5778,12 +5667,12 @@ _T119:
 	__asm        jmp    _T16e;
 // LINE 2593:
 _T138:
-	__asm        mov    sid3, 0x5C;
+	sid3 = 0x5c;
 // LINE 2594:
 	__asm        jmp    _T16e;
 // LINE 2596:
 _T144:
-	__asm        mov    sid3, 0x57;
+	sid3 = 0x57;
 // LINE 2597:
 	__asm        jmp    _T16e;
 // LINE 2598:
@@ -5801,7 +5690,7 @@ _T16e:
 	__asm        jmp    _T7a5;
 // LINE 2606:
 _T173:
-	__asm        mov    sid1, 0x33;
+	sid1 = 0x33;
 // LINE 2607:
 	__asm        call   rand;
 	__asm        mov    ecx, 5;
@@ -5823,12 +5712,12 @@ _T192:
 	__asm        jmp    _T1e7;
 // LINE 2613:
 _T1b1:
-	__asm        mov    sid3, 0x5C;
+	sid3 = 0x5c;
 // LINE 2614:
 	__asm        jmp    _T1e7;
 // LINE 2616:
 _T1bd:
-	__asm        mov    sid3, 0x5A;
+	sid3 = 0x5a;
 // LINE 2617:
 	__asm        jmp    _T1e7;
 // LINE 2618:
@@ -5846,7 +5735,7 @@ _T1e7:
 	__asm        jmp    _T7a5;
 // LINE 2621:
 _T1ec:
-	__asm        mov    sid1, 0x3F;
+	sid1 = 0x3f;
 // LINE 2622:
 	__asm        call   rand;
 	__asm        mov    ecx, 5;
@@ -5868,17 +5757,17 @@ _T20b:
 	__asm        jmp    _T276;
 // LINE 2628:
 _T22a:
-	__asm        mov    sid3, 0x5F;
+	sid3 = 0x5f;
 // LINE 2629:
 	__asm        jmp    _T276;
 // LINE 2631:
 _T236:
-	__asm        mov    sid3, 0x61;
+	sid3 = 0x61;
 // LINE 2632:
 	__asm        jmp    _T276;
 // LINE 2634:
 _T242:
-	__asm        mov    sid3, 0x5E;
+	sid3 = 0x5e;
 // LINE 2635:
 	__asm        jmp    _T276;
 // LINE 2636:
@@ -5899,7 +5788,7 @@ _T276:
 	__asm        jmp    _T7a5;
 // LINE 2639:
 _T27b:
-	__asm        mov    sid1, 0x38;
+	sid1 = 0x38;
 // LINE 2640:
 	__asm        call   rand;
 	__asm        mov    ecx, 5;
@@ -5928,7 +5817,7 @@ _T2c3:
 	__asm        jmp    _T7a5;
 // LINE 2648:
 _T2c8:
-	__asm        mov    sid1, 0x33;
+	sid1 = 0x33;
 // LINE 2649:
 	__asm        call   rand;
 	__asm        mov    ecx, 5;
@@ -5950,12 +5839,12 @@ _T2e7:
 	__asm        jmp    _T33c;
 // LINE 2655:
 _T306:
-	__asm        mov    sid3, 0x61;
+	sid3 = 0x61;
 // LINE 2656:
 	__asm        jmp    _T33c;
 // LINE 2658:
 _T312:
-	__asm        mov    sid3, 0x5A;
+	sid3 = 0x5a;
 // LINE 2659:
 	__asm        jmp    _T33c;
 // LINE 2660:
@@ -5973,7 +5862,7 @@ _T33c:
 	__asm        jmp    _T7a5;
 // LINE 2663:
 _T341:
-	__asm        mov    sid1, 0x39;
+	sid1 = 0x39;
 // LINE 2664:
 	__asm        call   rand;
 	__asm        mov    ecx, 5;
@@ -5995,12 +5884,12 @@ _T360:
 	__asm        jmp    _T3b5;
 // LINE 2670:
 _T37f:
-	__asm        mov    sid3, 0x5B;
+	sid3 = 0x5b;
 // LINE 2671:
 	__asm        jmp    _T3b5;
 // LINE 2673:
 _T38b:
-	__asm        mov    sid3, 0x53;
+	sid3 = 0x53;
 // LINE 2674:
 	__asm        jmp    _T3b5;
 // LINE 2675:
@@ -6018,7 +5907,7 @@ _T3b5:
 	__asm        jmp    _T7a5;
 // LINE 2678:
 _T3ba:
-	__asm        mov    sid1, 0x3B;
+	sid1 = 0x3b;
 // LINE 2679:
 	__asm        call   rand;
 	__asm        mov    ecx, 5;
@@ -6040,17 +5929,17 @@ _T3d9:
 	__asm        jmp    _T444;
 // LINE 2685:
 _T3f8:
-	__asm        mov    sid3, 0x5A;
+	sid3 = 0x5a;
 // LINE 2686:
 	__asm        jmp    _T444;
 // LINE 2688:
 _T404:
-	__asm        mov    sid3, 0x52;
+	sid3 = 0x52;
 // LINE 2689:
 	__asm        jmp    _T444;
 // LINE 2691:
 _T410:
-	__asm        mov    sid3, 0x55;
+	sid3 = 0x55;
 // LINE 2692:
 	__asm        jmp    _T444;
 // LINE 2693:
@@ -6071,7 +5960,7 @@ _T444:
 	__asm        jmp    _T7a5;
 // LINE 2696:
 _T449:
-	__asm        mov    sid1, 0x3C;
+	sid1 = 0x3c;
 // LINE 2697:
 	__asm        call   rand;
 	__asm        mov    ecx, 5;
@@ -6093,17 +5982,17 @@ _T468:
 	__asm        jmp    _T4d3;
 // LINE 2703:
 _T487:
-	__asm        mov    sid3, 0x5B;
+	sid3 = 0x5b;
 // LINE 2704:
 	__asm        jmp    _T4d3;
 // LINE 2706:
 _T493:
-	__asm        mov    sid3, 0x5D;
+	sid3 = 0x5d;
 // LINE 2707:
 	__asm        jmp    _T4d3;
 // LINE 2709:
 _T49f:
-	__asm        mov    sid3, 0x52;
+	sid3 = 0x52;
 // LINE 2710:
 	__asm        jmp    _T4d3;
 // LINE 2711:
@@ -6124,7 +6013,7 @@ _T4d3:
 	__asm        jmp    _T7a5;
 // LINE 2714:
 _T4d8:
-	__asm        mov    sid1, 0x39;
+	sid1 = 0x39;
 // LINE 2715:
 	__asm        call   rand;
 	__asm        mov    ecx, 5;
@@ -6146,17 +6035,17 @@ _T4f7:
 	__asm        jmp    _T562;
 // LINE 2721:
 _T516:
-	__asm        mov    sid3, 0x5B;
+	sid3 = 0x5b;
 // LINE 2722:
 	__asm        jmp    _T562;
 // LINE 2724:
 _T522:
-	__asm        mov    sid3, 0x5D;
+	sid3 = 0x5d;
 // LINE 2725:
 	__asm        jmp    _T562;
 // LINE 2727:
 _T52e:
-	__asm        mov    sid3, 0x52;
+	sid3 = 0x52;
 // LINE 2728:
 	__asm        jmp    _T562;
 // LINE 2729:
@@ -6177,7 +6066,7 @@ _T562:
 	__asm        jmp    _T7a5;
 // LINE 2732:
 _T567:
-	__asm        mov    sid1, 0x36;
+	sid1 = 0x36;
 // LINE 2733:
 	__asm        call   rand;
 	__asm        mov    ecx, 5;
@@ -6199,17 +6088,17 @@ _T586:
 	__asm        jmp    _T5f1;
 // LINE 2739:
 _T5a5:
-	__asm        mov    sid3, 0x5E;
+	sid3 = 0x5e;
 // LINE 2740:
 	__asm        jmp    _T5f1;
 // LINE 2742:
 _T5b1:
-	__asm        mov    sid3, 0x61;
+	sid3 = 0x61;
 // LINE 2743:
 	__asm        jmp    _T5f1;
 // LINE 2745:
 _T5bd:
-	__asm        mov    sid3, 0x5A;
+	sid3 = 0x5a;
 // LINE 2746:
 	__asm        jmp    _T5f1;
 // LINE 2747:
@@ -6230,7 +6119,7 @@ _T5f1:
 	__asm        jmp    _T7a5;
 // LINE 2750:
 _T5f6:
-	__asm        mov    sid1, 0x40;
+	sid1 = 0x40;
 // LINE 2751:
 	__asm        call   rand;
 	__asm        mov    ecx, 5;
@@ -6252,7 +6141,7 @@ _T615:
 	__asm        jmp    _T654;
 // LINE 2757:
 _T634:
-	__asm        mov    sid3, 0x5B;
+	sid3 = 0x5b;
 // LINE 2758:
 	__asm        jmp    _T654;
 // LINE 2759:

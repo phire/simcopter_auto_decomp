@@ -484,8 +484,7 @@ void YObjLang::YObjLang(unsigned char * fileName) {
 	__asm        mov    dword ptr [eax], 0x593700;
 	__asm        jmp    near ptr 0x005609EA;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5936E8;
+	this-><YObjLang+0x00> = 0x5936e8;
 // LINE 48:
 	__asm        jmp    near ptr 0x005609F8;
 
@@ -510,8 +509,7 @@ _T15:
 // Block start:
 	struct YObjLang::AttrParam *par;
 _T26:
-	__asm        mov    eax, param;
-	__asm        mov    par, eax;
+	par = param;
 // LINE 60:
 	__asm        mov    eax, par;
 	__asm        push   eax;
@@ -575,8 +573,7 @@ void YObjLang::SwizzleTree(void * __ptr32 treevoid, long size) {
 	struct Behavior::Tree *tree;
 
 // LINE 76:
-	__asm        mov    eax, treevoid;
-	__asm        mov    tree, eax;
+	tree = treevoid;
 // LINE 77:
 	__asm        push   0x560A02;
 	__asm        mov    eax, size;
@@ -596,8 +593,7 @@ void YObjLang::YObjLang(class YObjLang& otherLanguage) {
 	__asm        mov    dword ptr [eax], 0x593700;
 	__asm        jmp    near ptr 0x00560B06;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5936E8;
+	this-><YObjLang+0x00> = 0x5936e8;
 // LINE 88:
 	__asm        jmp    near ptr 0x00560B14;
 
@@ -607,8 +603,7 @@ void YObjLang::YObjLang(class YObjLang& otherLanguage) {
 // FUNCTION: COPTER_D 0x00560b1e
 void YObjLang::~YObjLang() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5936E8;
+	this-><YObjLang+0x00> = 0x5936e8;
 // LINE 95:
 	__asm        jmp    near ptr 0x00560B38;
 }

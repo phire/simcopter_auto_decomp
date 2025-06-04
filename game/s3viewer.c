@@ -47,9 +47,9 @@ void S3ViewerInit() {
 	__asm        mov    dword ptr [eax+0xC], 0;
 	__asm        mov    dword ptr [eax+0x10], 0;
 // LINE 120:
-	__asm        mov    Viewer.p.M, 0x10000;
+	Viewer.p.M = 0x10000;
 // LINE 121:
-	__asm        mov    Viewer.r.M, 0x10000;
+	Viewer.r.M = 0x10000;
 // LINE 122:
 	__asm        mov    eax, 0x6C12A0;
 	__asm        add    eax, 0x38;
@@ -57,13 +57,13 @@ void S3ViewerInit() {
 	__asm        call   0x004D1FF1;
 	__asm        add    esp, 4;
 // LINE 123:
-	__asm        mov    Viewer.mode, 1;
+	Viewer.mode = 0x1;
 // LINE 126:
 	__asm        mov    ViewState.init_vect.y, 0;
 	__asm        mov    eax, ViewState.init_vect.y;
 	__asm        mov    ViewState.init_vect.x, eax;
 // LINE 127:
-	__asm        mov    ViewState.init_vect.z, 0x10000;
+	ViewState.init_vect.z = 0x10000;
 // LINE 128:
 	__asm        mov    eax, 0x6C12A0;
 	__asm        add    eax, 0x78;
@@ -112,11 +112,11 @@ void S3ViewerInit() {
 	__asm        call   0x004D2094;
 	__asm        add    esp, 0xC;
 // LINE 140:
-	__asm        mov    ViewState.heading, 0;
+	ViewState.heading = 0x0;
 // LINE 141:
-	__asm        mov    ViewState.roll, 0;
+	ViewState.roll = 0x0;
 // LINE 142:
-	__asm        mov    ViewState.pitch, 0;
+	ViewState.pitch = 0x0;
 // LINE 143:
 	__asm        mov    eax, 0x6C1210;
 	__asm        add    eax, 0x20;
@@ -178,13 +178,12 @@ void S3ViewerControl() {
 	__asm        cmp    LoopTime, 0x200;
 	__asm        jge    _T25;
 // LINE 178:
-	__asm        mov    timerDelay, 0x200;
+	timerDelay = 0x200;
 // LINE 179:
 	__asm        jmp    _T2d;
 // LINE 180:
 _T25:
-	__asm        mov    eax, LoopTime;
-	__asm        mov    timerDelay, eax;
+	timerDelay = LoopTime;
 // LINE 183:
 _T2d:
 	__asm        mov    roty, 0;
@@ -200,7 +199,7 @@ _T2d:
 	__asm        cmp    G_camera_mode, 3;
 	__asm        je     _T65;
 // LINE 187:
-	__asm        mov    rotx, 0x280000;
+	rotx = 0x280000;
 // LINE 188:
 	__asm        jmp    _Te7;
 _T65:
@@ -213,7 +212,7 @@ _T65:
 	__asm        cmp    G_camera_mode, 3;
 	__asm        je     _T90;
 // LINE 189:
-	__asm        mov    rotx, 0xFFD80000;
+	rotx = 0xffd80000;
 // LINE 190:
 	__asm        jmp    _Te7;
 // LINE 191:
@@ -231,19 +230,19 @@ _T90:
 	__asm        mov    lJoystickValue, 1;
 	__asm        jmp    _Tc4;
 _Tbd:
-	__asm        mov    lJoystickValue, 0;
+	lJoystickValue = 0x0;
 _Tc4:
 	__asm        cmp    lJoystickValue, 0;
 	__asm        je     _Te7;
 // LINE 193:
 	__asm        jle    _Te0;
 // LINE 194:
-	__asm        mov    rotx, 0x280000;
+	rotx = 0x280000;
 // LINE 195:
 	__asm        jmp    _Te7;
 // LINE 196:
 _Te0:
-	__asm        mov    rotx, 0xFFD80000;
+	rotx = 0xffd80000;
 // LINE 199:
 _Te7:
 	__asm        push   0x28;
@@ -255,7 +254,7 @@ _Te7:
 	__asm        cmp    G_camera_mode, 3;
 	__asm        je     _T112;
 // LINE 200:
-	__asm        mov    roty, 0x280000;
+	roty = 0x280000;
 // LINE 201:
 	__asm        jmp    _T194;
 _T112:
@@ -268,7 +267,7 @@ _T112:
 	__asm        cmp    G_camera_mode, 3;
 	__asm        je     _T13d;
 // LINE 202:
-	__asm        mov    roty, 0xFFD80000;
+	roty = 0xffd80000;
 // LINE 203:
 	__asm        jmp    _T194;
 // LINE 204:
@@ -286,19 +285,19 @@ _T13d:
 	__asm        mov    lJoystickValue, 1;
 	__asm        jmp    _T171;
 _T16a:
-	__asm        mov    lJoystickValue, 0;
+	lJoystickValue = 0x0;
 _T171:
 	__asm        cmp    lJoystickValue, 0;
 	__asm        je     _T194;
 // LINE 206:
 	__asm        jle    _T18d;
 // LINE 207:
-	__asm        mov    roty, 0x280000;
+	roty = 0x280000;
 // LINE 208:
 	__asm        jmp    _T194;
 // LINE 209:
 _T18d:
-	__asm        mov    roty, 0xFFD80000;
+	roty = 0xffd80000;
 // LINE 212:
 _T194:
 	__asm        cmp    rotx, 0;
@@ -397,7 +396,7 @@ _T1b8:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 246:
-	__asm        mov    ViewState.view_vect.y, 0;
+	ViewState.view_vect.y = 0x0;
 // LINE 247:
 	__asm        mov    eax, 0x6C1210;
 	__asm        add    eax, 0x14;
@@ -477,8 +476,7 @@ _T1b8:
 	__asm        test   eax, eax;
 	__asm        je     _T3f4;
 // LINE 268:
-	__asm        mov    eax, G_ViewSize;
-	__asm        mov    viewSize, eax;
+	viewSize = G_ViewSize;
 // LINE 269:
 	__asm        mov    eax, viewSize;
 	__asm        add    eax, 2;
@@ -514,8 +512,7 @@ _T3f4:
 	__asm        test   eax, eax;
 	__asm        je     _T45a;
 // LINE 278:
-	__asm        mov    eax, G_ViewSize;
-	__asm        mov    viewSize, eax;
+	viewSize = G_ViewSize;
 // LINE 279:
 	__asm        mov    eax, viewSize;
 	__asm        sub    eax, 2;
@@ -555,8 +552,7 @@ _T45a:
 // LINE 287:
 	__asm        jle    _T4cd;
 // LINE 288:
-	__asm        mov    eax, G_ViewSize;
-	__asm        mov    viewSize, eax;
+	viewSize = G_ViewSize;
 // LINE 289:
 	__asm        mov    eax, viewSize;
 	__asm        add    eax, 2;
@@ -587,8 +583,7 @@ _T4c8:
 	__asm        jmp    _T51c;
 // LINE 298:
 _T4cd:
-	__asm        mov    eax, G_ViewSize;
-	__asm        mov    viewSize, eax;
+	viewSize = G_ViewSize;
 // LINE 299:
 	__asm        mov    eax, viewSize;
 	__asm        sub    eax, 2;
@@ -624,19 +619,18 @@ void S3SetBackPlaneBasedOnValue(long lValue) {
 	long nConvertedValue;
 
 // LINE 323:
-	__asm        mov    eax, G_ViewSize;
-	__asm        mov    nOriginalViewSize, eax;
+	nOriginalViewSize = G_ViewSize;
 // LINE 325:
 	__asm        cmp    lValue, 0;
 	__asm        jge    _T22;
 // LINE 326:
-	__asm        mov    lValue, 0;
+	lValue = 0x0;
 // LINE 327:
 _T22:
 	__asm        cmp    lValue, 0x64;
 	__asm        jle    _T33;
 // LINE 328:
-	__asm        mov    lValue, 0x64;
+	lValue = 0x64;
 // LINE 329:
 _T33:
 	__asm        mov    eax, lValue;
@@ -694,7 +688,7 @@ long ConvertGUIBackPlaneValueToRender(long lValue) {
 	long lHalfOfGOBJRange;
 
 // LINE 361:
-	__asm        mov    lHalfOfGOBJRange, 0x18;
+	lHalfOfGOBJRange = 0x18;
 // LINE 364:
 	__asm        mov    eax, lHalfOfGOBJRange;
 	__asm        imul   eax, lValue;
@@ -720,7 +714,7 @@ long ConvertRenderBackPlaneValueToGUI(long lValue) {
 	long lHalfOfGOBJRange;
 
 // LINE 380:
-	__asm        mov    lHalfOfGOBJRange, 0x18;
+	lHalfOfGOBJRange = 0x18;
 // LINE 382:
 	__asm        sub    lValue, 0xD;
 // LINE 383:
@@ -870,7 +864,7 @@ _Taf:
 	__asm        cmp    G_camera_mode, 2;
 	__asm        jne    _Te2;
 // LINE 465:
-	__asm        mov    G_camera_mode, 0;
+	G_camera_mode = 0x0;
 // LINE 466:
 	__asm        jmp    _T16d;
 _Te2:
@@ -897,7 +891,7 @@ _Te2:
 	__asm        add    esp, 8;
 // LINE 471:
 _T12e:
-	__asm        mov    G_camera_mode, 1;
+	G_camera_mode = 0x1;
 // LINE 473:
 	__asm        jmp    _T16d;
 _T13d:
@@ -912,7 +906,7 @@ _T13d:
 	__asm        call   0x004D6970;
 	__asm        add    esp, 8;
 // LINE 476:
-	__asm        mov    G_camera_mode, 2;
+	G_camera_mode = 0x2;
 // LINE 481:
 _T16d:
 }
@@ -920,8 +914,7 @@ _T16d:
 // FUNCTION: COPTER_D 0x004ef14b
 void S3SetDayNight(int32_t nDayOrNight) {
 // LINE 489:
-	__asm        mov    eax, nDayOrNight;
-	__asm        mov    G_daynight, eax;
+	G_daynight = nDayOrNight;
 // LINE 490:
 	__asm        cmp    G_VRAppInitCalled, 0;
 	__asm        je     _T65;

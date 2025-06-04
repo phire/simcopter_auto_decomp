@@ -33,10 +33,9 @@ int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * Comman
 	union _LARGE_INTEGER TimerFrequency;
 
 // LINE 33:
-	__asm        mov    eax, hInstance;
-	__asm        mov    _ghWindowsInstance, eax;
+	_ghWindowsInstance = hInstance;
 // LINE 40:
-	__asm        mov    gszCommandLine[0], 0;
+	gszCommandLine[0] = 0x0;
 // LINE 41:
 	__asm        push   0x80;
 	__asm        mov    eax, CommandLine;
@@ -74,7 +73,7 @@ int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * Comman
 	__asm        mov    _gSparkalApp, eax;
 	__asm        jmp    _T9a;
 _T90:
-	__asm        mov    _gSparkalApp, 0;
+	_gSparkalApp = 0x0;
 // LINE 50:
 _T9a:
 	__asm        cmp    _gSparkalApp, 0;
@@ -170,8 +169,7 @@ _T17a:
 	__asm        cmp    Message.message, 0x12;
 	__asm        jne    _T1bc;
 
-	__asm        mov    eax, _gSparkalApp;
-	__asm        mov    [ebp-0x48], eax;
+	None = _gSparkalApp;
 // LINE 73:
 	__asm        mov    eax, [ebp-0x48];
 	__asm        and    dword ptr [eax+0xC], 0xFFFFFFFE;

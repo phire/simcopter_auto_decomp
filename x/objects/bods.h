@@ -37,7 +37,7 @@ _L45526:
 _T86:
 	__asm        jmp    _T92;
 _T8b:
-	__asm        mov    dword ptr [ebp-0x18], 0;
+	None = 0x0;
 _T92:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x18];
@@ -151,7 +151,7 @@ _T19c:
 	__asm        cmp    eax, 0x10;
 	__asm        jbe    _T1ff;
 
-	__asm        mov    byte ptr [ebp-0x11C], 0x10;
+	None = 0x10;
 _T1ff:
 	__asm        push   0x10;
 	__asm        mov    eax, thing;

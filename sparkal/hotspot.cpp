@@ -348,15 +348,9 @@ void HotSpot::HotSpot(const class HotSpot& newHotSpot) {
 	__asm        mov    dword ptr [eax+0x10], 0;
 	__asm        jmp    near ptr 0x004B90BE;
 // LINE 35:
-	__asm        mov    eax, newHotSpot;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx], eax;
+	this->lID = newHotSpot.lID;
 // LINE 36:
-	__asm        mov    eax, newHotSpot;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->lType = newHotSpot.lType;
 // LINE 37:
 	__asm        mov    eax, this;
 	__asm        add    eax, 8;
@@ -390,9 +384,7 @@ _T5e:
 	__asm        cmp    eax, ecx;
 	__asm        jbe    _T1a8;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    [ebp-0x10], eax;
+	None = this->pointArray.start;
 _Ta6:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x10];
@@ -890,8 +882,7 @@ _T23b:
 	__asm        mov    [ebp-0x40], eax;
 	__asm        jmp    _T276;
 _T270:
-	__asm        mov    eax, [ebp-0x38];
-	__asm        mov    [ebp-0x40], eax;
+	None = None;
 _T276:
 	__asm        jmp    near ptr 0x004B9705;
 
@@ -1031,9 +1022,7 @@ _T40d:
 
 	__asm        jmp    near ptr 0x004B98A6;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    [ebp-0x2C], eax;
+	None = this->pointArray.start;
 _T428:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x2C];
@@ -1111,19 +1100,11 @@ void HotSpot::HotSpot(struct HotSpotResourceRecord *hotSpotResourceRecord) {
 	__asm        mov    dword ptr [eax+0x10], 0;
 	__asm        jmp    near ptr 0x004B99B1;
 // LINE 66:
-	__asm        mov    eax, hotSpotResourceRecord;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx], eax;
+	this->lID = hotSpotResourceRecord->lID;
 // LINE 67:
-	__asm        mov    eax, hotSpotResourceRecord;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->lType = hotSpotResourceRecord->lType;
 // LINE 68:
-	__asm        mov    eax, hotSpotResourceRecord;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    lCount, eax;
+	lCount = hotSpotResourceRecord->lCount;
 // LINE 70:
 	__asm        mov    i, 0;
 	__asm        jmp    _T73;
@@ -1293,8 +1274,7 @@ _T24b:
 	__asm        mov    [ebp-0x44], eax;
 	__asm        jmp    _T286;
 _T280:
-	__asm        mov    eax, [ebp-0x3C];
-	__asm        mov    [ebp-0x44], eax;
+	None = None;
 _T286:
 	__asm        jmp    near ptr 0x004B9BFE;
 
@@ -1434,9 +1414,7 @@ _T426:
 
 	__asm        jmp    near ptr 0x004B9DA8;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    [ebp-0x30], eax;
+	None = this->pointArray.start;
 _T441:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x30];
@@ -1673,8 +1651,7 @@ _T219:
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        jmp    _T254;
 _T24e:
-	__asm        mov    eax, [ebp-0x44];
-	__asm        mov    [ebp-0x4C], eax;
+	None = None;
 _T254:
 	__asm        jmp    near ptr 0x004BA0CE;
 
@@ -1814,9 +1791,7 @@ _T403:
 
 	__asm        jmp    near ptr 0x004BA287;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    [ebp-0x38], eax;
+	None = this->pointArray.start;
 _T41e:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x38];
@@ -2029,8 +2004,7 @@ _T6c8:
 	__asm        mov    [ebp-0xC4], eax;
 	__asm        jmp    _T727;
 _T71b:
-	__asm        mov    eax, [ebp-0xBC];
-	__asm        mov    [ebp-0xC4], eax;
+	None = None;
 _T727:
 	__asm        jmp    near ptr 0x004BA5A1;
 
@@ -2112,9 +2086,7 @@ _T7e0:
 
 	__asm        jmp    near ptr 0x004BA6AC;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    [ebp-0xB0], eax;
+	None = this->pointArray.start;
 _T846:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0xB0];
@@ -2186,15 +2158,9 @@ class HotSpot& HotSpot::operator=(const class HotSpot& newHotSpot) {
 	__asm        jmp    _T3e5;
 // LINE 105:
 _T20:
-	__asm        mov    eax, newHotSpot;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx], eax;
+	this->lID = newHotSpot.lID;
 // LINE 106:
-	__asm        mov    eax, newHotSpot;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->lType = newHotSpot.lType;
 // LINE 107:
 	__asm        mov    eax, this;
 	__asm        add    eax, 8;
@@ -2228,9 +2194,7 @@ _T4f:
 	__asm        cmp    eax, ecx;
 	__asm        jae    _T199;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    [ebp-0x10], eax;
+	None = this->pointArray.start;
 _T97:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x10];
@@ -3039,7 +3003,7 @@ _Tdc:
 	__asm        mov    c, 1;
 	__asm        jmp    _T194;
 _T18d:
-	__asm        mov    c, 0;
+	c = 0x0;
 // LINE 193:
 _T194:
 	__asm        jmp    _T47;
@@ -3069,41 +3033,25 @@ void HotSpot::GetBoundingRect(class MRect& rectBounds) {
 
 	__asm        jmp    near ptr 0x004BB0F5;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, rectBounds;
-	__asm        mov    [ecx], eax;
+	rectBounds.left = this->pointArray.start->x;
 // LINE 213:
 	__asm        jmp    near ptr 0x004BB107;
 
 	__asm        jmp    near ptr 0x004BB10C;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, rectBounds;
-	__asm        mov    [ecx+4], eax;
+	rectBounds.top = this->pointArray.start->y;
 // LINE 214:
 	__asm        jmp    near ptr 0x004BB120;
 
 	__asm        jmp    near ptr 0x004BB125;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, rectBounds;
-	__asm        mov    [ecx+8], eax;
+	rectBounds.right = this->pointArray.start-><MPoint+0x08>;
 // LINE 215:
 	__asm        jmp    near ptr 0x004BB139;
 
 	__asm        jmp    near ptr 0x004BB13E;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    ecx, rectBounds;
-	__asm        mov    [ecx+0xC], eax;
+	rectBounds.bottom = this->pointArray.start-><MPoint+0x0c>;
 // LINE 216:
 	__asm        jmp    _T3c2;
 // LINE 219:
@@ -3312,11 +3260,7 @@ _T26e:
 
 	__asm        jmp    near ptr 0x004BB375;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, i;
-	__asm        mov    eax, [eax+ecx*8];
-	__asm        mov    nMinX, eax;
+	nMinX = this->pointArray.start->x;
 // LINE 245:
 _T2b2:
 	__asm        jmp    near ptr 0x004BB389;
@@ -3334,11 +3278,7 @@ _T2b2:
 
 	__asm        jmp    near ptr 0x004BB3AD;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, i;
-	__asm        mov    eax, [eax+ecx*8];
-	__asm        mov    nMaxX, eax;
+	nMaxX = this->pointArray.start->x;
 // LINE 248:
 _T2ea:
 	__asm        jmp    near ptr 0x004BB3C1;
@@ -3356,11 +3296,7 @@ _T2ea:
 
 	__asm        jmp    near ptr 0x004BB3E6;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, i;
-	__asm        mov    eax, [eax+ecx*8+4];
-	__asm        mov    nMinY, eax;
+	nMinY = this->pointArray.start->x;
 // LINE 250:
 _T324:
 	__asm        jmp    near ptr 0x004BB3FB;
@@ -3378,31 +3314,19 @@ _T324:
 
 	__asm        jmp    near ptr 0x004BB420;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, i;
-	__asm        mov    eax, [eax+ecx*8+4];
-	__asm        mov    nMaxY, eax;
+	nMaxY = this->pointArray.start->x;
 // LINE 252:
 _T35e:
 	__asm        jmp    _T26b;
 // LINE 253:
 _T363:
-	__asm        mov    eax, nMinX;
-	__asm        mov    ecx, rectBounds;
-	__asm        mov    [ecx], eax;
+	rectBounds.left = nMinX;
 // LINE 254:
-	__asm        mov    eax, nMinY;
-	__asm        mov    ecx, rectBounds;
-	__asm        mov    [ecx+4], eax;
+	rectBounds.top = nMinY;
 // LINE 255:
-	__asm        mov    eax, nMaxX;
-	__asm        mov    ecx, rectBounds;
-	__asm        mov    [ecx+8], eax;
+	rectBounds.right = nMaxX;
 // LINE 256:
-	__asm        mov    eax, nMaxY;
-	__asm        mov    ecx, rectBounds;
-	__asm        mov    [ecx+0xC], eax;
+	rectBounds.bottom = nMaxY;
 // LINE 257:
 	__asm        jmp    _T3c2;
 // LINE 261:
@@ -3484,11 +3408,9 @@ _T75:
 	__asm        jmp    _T4a7;
 // LINE 286:
 _T9b:
-	__asm        mov    eax, fileImage;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    nHotspotRecordCount, eax;
+	nHotspotRecordCount = fileImage->lRecordCount;
 // LINE 287:
-	__asm        mov    nCurrentRecordStart, 0x10;
+	nCurrentRecordStart = 0x10;
 // LINE 288:
 	__asm        mov    i, 0;
 	__asm        jmp    _Tba;
@@ -3581,8 +3503,7 @@ _T19c:
 	__asm        mov    [ebp-0x98], eax;
 	__asm        jmp    _T211;
 _T205:
-	__asm        mov    eax, [ebp-0x90];
-	__asm        mov    [ebp-0x98], eax;
+	None = None;
 _T211:
 	__asm        jmp    near ptr 0x004BB6B1;
 
@@ -3653,8 +3574,7 @@ _T297:
 	__asm        mov    [ebp-0xAC], eax;
 	__asm        jmp    _T334;
 _T328:
-	__asm        mov    eax, [ebp-0xA4];
-	__asm        mov    [ebp-0xAC], eax;
+	None = None;
 _T334:
 	__asm        jmp    near ptr 0x004BB7D4;
 
@@ -3733,8 +3653,7 @@ _T3d9:
 
 	__asm        jmp    near ptr 0x004BB8CE;
 
-	__asm        mov    eax, [ebp-0x4C];
-	__asm        mov    [ebp-0x60], eax;
+	None = None;
 _T439:
 	__asm        mov    eax, [ebp-0x60];
 	__asm        cmp    [ebp-0x48], eax;

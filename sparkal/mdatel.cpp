@@ -535,21 +535,15 @@ char * MTimeLocalized::PrintStringLocalized(char * szTime, int32_t nLanguageToUs
 	class ostrstream strtemp;
 
 // LINE 28:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    nTempOriginalLanguage, eax;
+	nTempOriginalLanguage = this->nLanguage;
 // LINE 29:
 	__asm        cmp    nLanguageToUse, 0;
 	__asm        jne    _T28;
 // LINE 30:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    nLanguageToUse, eax;
+	nLanguageToUse = this->nLanguage;
 // LINE 31:
 _T28:
-	__asm        mov    eax, nLanguageToUse;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], eax;
+	this->nLanguage = nLanguageToUse;
 // LINE 33:
 	__asm        push   1;
 	__asm        push   2;
@@ -572,9 +566,7 @@ _T28:
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x0041FB37;
 // LINE 36:
-	__asm        mov    eax, nTempOriginalLanguage;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], eax;
+	this->nLanguage = nTempOriginalLanguage;
 // LINE 37:
 	__asm        mov    eax, szTime;
 	__asm        mov    [ebp-0x60], eax;
@@ -628,9 +620,7 @@ class ostream& operator<<(class ostream& s, const class MTimeLocalized& t) {
 	__asm        call   MTime::Minute;
 	__asm        mov    mm, eax;
 // LINE 54:
-	__asm        mov    eax, t;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    nLanguageToUse, eax;
+	nLanguageToUse = t.nLanguage;
 // LINE 56:
 	__asm        push   1;
 	__asm        push   2;
@@ -652,7 +642,7 @@ class ostream& operator<<(class ostream& s, const class MTimeLocalized& t) {
 	__asm        mov    [ebp-0x11C], eax;
 	__asm        jmp    _Tb8;
 _Tae:
-	__asm        mov    dword ptr [ebp-0x11C], 0;
+	None = 0x0;
 _Tb8:
 	__asm        push   0x5972A0;
 	__asm        mov    eax, [ebp-0x11C];
@@ -677,8 +667,7 @@ _T100:
 	__asm        cmp    nLanguageToUse, 0;
 	__asm        jne    _T118;
 // LINE 62:
-	__asm        mov    eax, gDefaultLanguage;
-	__asm        mov    nLanguageToUse, eax;
+	nLanguageToUse = gDefaultLanguage;
 // LINE 64:
 _T118:
 	__asm        cmp    nLanguageToUse, 1;
@@ -692,8 +681,7 @@ _T118:
 	__asm        mov    [ebp-0x120], eax;
 	__asm        jmp    _T152;
 _T146:
-	__asm        mov    eax, hh;
-	__asm        mov    [ebp-0x120], eax;
+	None = hh;
 _T152:
 	__asm        mov    eax, 0x5972A8;
 	__asm        mov    ecx, 0x5972A4;
@@ -928,16 +916,13 @@ char * MDateLocalized::NameOfDayLocalized(char * szDayName, int32_t nLanguageToU
 	__asm        cmp    nLanguageToUse, 0;
 	__asm        jne    _T1f;
 // LINE 172:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    nLanguageToUse, eax;
+	nLanguageToUse = this->nLanguage;
 // LINE 173:
 _T1f:
 	__asm        cmp    nLanguageToUse, 0;
 	__asm        jne    _T31;
 // LINE 174:
-	__asm        mov    eax, gDefaultLanguage;
-	__asm        mov    nLanguageToUse, eax;
+	nLanguageToUse = gDefaultLanguage;
 // LINE 176:
 _T31:
 	__asm        mov    eax, nLanguageToUse;
@@ -959,16 +944,13 @@ char * MDateLocalized::NameOfMonthLocalized(char * szMonthName, int32_t nLanguag
 	__asm        cmp    nLanguageToUse, 0;
 	__asm        jne    _T1f;
 // LINE 185:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    nLanguageToUse, eax;
+	nLanguageToUse = this->nLanguage;
 // LINE 186:
 _T1f:
 	__asm        cmp    nLanguageToUse, 0;
 	__asm        jne    _T31;
 // LINE 187:
-	__asm        mov    eax, gDefaultLanguage;
-	__asm        mov    nLanguageToUse, eax;
+	nLanguageToUse = gDefaultLanguage;
 // LINE 189:
 _T31:
 	__asm        mov    eax, nLanguageToUse;
@@ -990,28 +972,21 @@ char * MDateLocalized::PrintStringLocalized(char * szDate, int32_t nLanguageToUs
 	class ostrstream strtemp;
 
 // LINE 200:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    nTempOriginalLanguage, eax;
+	nTempOriginalLanguage = this->nLanguage;
 // LINE 201:
 	__asm        cmp    nLanguageToUse, 0;
 	__asm        jne    _T28;
 // LINE 202:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    nLanguageToUse, eax;
+	nLanguageToUse = this->nLanguage;
 // LINE 203:
 _T28:
 	__asm        cmp    nLanguageToUse, 0;
 	__asm        jne    _T3a;
 // LINE 204:
-	__asm        mov    eax, gDefaultLanguage;
-	__asm        mov    nLanguageToUse, eax;
+	nLanguageToUse = gDefaultLanguage;
 // LINE 205:
 _T3a:
-	__asm        mov    eax, nLanguageToUse;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], eax;
+	this->nLanguage = nLanguageToUse;
 // LINE 207:
 	__asm        push   1;
 	__asm        push   2;
@@ -1034,9 +1009,7 @@ _T3a:
 	__asm        add    esp, 4;
 	__asm        jmp    near ptr 0x00420119;
 // LINE 210:
-	__asm        mov    eax, nTempOriginalLanguage;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], eax;
+	this->nLanguage = nTempOriginalLanguage;
 // LINE 211:
 	__asm        mov    eax, szDate;
 	__asm        mov    [ebp-0x60], eax;
@@ -1059,16 +1032,13 @@ class MDate MDateLocalized::PreviousLocalized(char * dayName, int32_t nLanguageT
 	__asm        cmp    nLanguageToUse, 0;
 	__asm        jne    _T1f;
 // LINE 223:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    nLanguageToUse, eax;
+	nLanguageToUse = this->nLanguage;
 // LINE 224:
 _T1f:
 	__asm        cmp    nLanguageToUse, 0;
 	__asm        jne    _T31;
 // LINE 225:
-	__asm        mov    eax, gDefaultLanguage;
-	__asm        mov    nLanguageToUse, eax;
+	nLanguageToUse = gDefaultLanguage;
 // LINE 227:
 _T31:
 	__asm        mov    eax, nLanguageToUse;
@@ -1303,15 +1273,12 @@ class ostream& operator<<(class ostream& s, const class MDateLocalized& d) {
 	char buf[80];
 
 // LINE 327:
-	__asm        mov    eax, d;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    nLanguageToUse, eax;
+	nLanguageToUse = d.nLanguage;
 // LINE 329:
 	__asm        cmp    nLanguageToUse, 0;
 	__asm        jne    _T24;
 // LINE 330:
-	__asm        mov    eax, gDefaultLanguage;
-	__asm        mov    nLanguageToUse, eax;
+	nLanguageToUse = gDefaultLanguage;
 // LINE 332:
 _T24:
 	__asm        mov    eax, nLanguageToUse;

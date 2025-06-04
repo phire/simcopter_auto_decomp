@@ -4,7 +4,7 @@ void cBBase::SwizzleBBaseHeader(void * __ptr32 val, long size) {
 	short size1;
 
 // LINE 227:
-	__asm        mov    size1, 0x40;
+	size1 = 0x40;
 // LINE 228:
 	__asm        movsx  eax, size1;
 	__asm        cmp    eax, size;
@@ -79,8 +79,7 @@ void cBBase::InstallArrayPointers(unsigned short fromdisk) {
 // FUNCTION: COPTER_D 0x0055f2c0
 void cBBase::~cBBase() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x593688;
+	this-><vftable> = 0x593688;
 // LINE 44:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -273,8 +272,7 @@ _T1c4:
 // FUNCTION: COPTER_D 0x0055f4e0
 void cBBase::Dirty() {
 // LINE 76:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0x22], 1;
+	this->fDataChanged = 0x1;
 // LINE 77:
 	__asm        jmp    near ptr 0x0055F4FA;
 }

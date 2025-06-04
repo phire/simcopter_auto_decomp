@@ -50,9 +50,9 @@ void VRFrustSetNormals() {
 	__asm        add    esp, 8;
 	__asm        mov    vect.x, eax;
 // LINE 82:
-	__asm        mov    vect.y, 0;
+	vect.y = 0x0;
 // LINE 83:
-	__asm        mov    vect.z, 0x10000;
+	vect.z = 0x10000;
 // LINE 86:
 	__asm        lea    eax, vect.x;
 	__asm        push   eax;
@@ -63,10 +63,9 @@ void VRFrustSetNormals() {
 	__asm        neg    eax;
 	__asm        mov    VRFrusRiteNorm.x, eax;
 // LINE 90:
-	__asm        mov    eax, vect.x;
-	__asm        mov    VRFrusRiteNorm.z, eax;
+	VRFrusRiteNorm.z = vect.x;
 // LINE 91:
-	__asm        mov    VRFrusRiteNorm.y, 0;
+	VRFrusRiteNorm.y = 0x0;
 // LINE 94:
 	__asm        mov    eax, 0x6663D0;
 	__asm        mov    ecx, 0x6663C0;
@@ -90,9 +89,9 @@ void VRFrustSetNormals() {
 	__asm        add    esp, 8;
 	__asm        mov    vect.y, eax;
 // LINE 100:
-	__asm        mov    vect.x, 0;
+	vect.x = 0x0;
 // LINE 101:
-	__asm        mov    vect.z, 0x10000;
+	vect.z = 0x10000;
 // LINE 104:
 	__asm        lea    eax, vect.x;
 	__asm        push   eax;
@@ -103,10 +102,9 @@ void VRFrustSetNormals() {
 	__asm        neg    eax;
 	__asm        mov    VRFrusTopNorm.y, eax;
 // LINE 108:
-	__asm        mov    eax, vect.y;
-	__asm        mov    VRFrusTopNorm.z, eax;
+	VRFrusTopNorm.z = vect.y;
 // LINE 109:
-	__asm        mov    VRFrusTopNorm.x, 0;
+	VRFrusTopNorm.x = 0x0;
 // LINE 112:
 	__asm        mov    eax, 0x6663B0;
 	__asm        mov    ecx, 0x6663E0;

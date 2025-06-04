@@ -98,8 +98,7 @@ void S3ObjInit() {
 	__asm        add    esp, 8;
 	__asm        mov    bhdr, eax;
 // LINE 391:
-	__asm        mov    eax, bhdr;
-	__asm        mov    G_blueshad, eax;
+	G_blueshad = bhdr;
 // LINE 392:
 	__asm        mov    eax, bhdr;
 	__asm        mov    eax, [eax+4];
@@ -114,8 +113,7 @@ void S3ObjInit() {
 	__asm        add    esp, 8;
 	__asm        mov    bhdr, eax;
 // LINE 395:
-	__asm        mov    eax, bhdr;
-	__asm        mov    G_fireshad, eax;
+	G_fireshad = bhdr;
 // LINE 396:
 	__asm        mov    eax, bhdr;
 	__asm        mov    eax, [eax+4];
@@ -130,8 +128,7 @@ void S3ObjInit() {
 	__asm        add    esp, 8;
 	__asm        mov    bhdr, eax;
 // LINE 399:
-	__asm        mov    eax, bhdr;
-	__asm        mov    G_smokshad, eax;
+	G_smokshad = bhdr;
 // LINE 400:
 	__asm        mov    eax, bhdr;
 	__asm        mov    eax, [eax+4];
@@ -146,8 +143,7 @@ void S3ObjInit() {
 	__asm        add    esp, 8;
 	__asm        mov    bhdr, eax;
 // LINE 403:
-	__asm        mov    eax, bhdr;
-	__asm        mov    G_lightshad, eax;
+	G_lightshad = bhdr;
 // LINE 404:
 	__asm        mov    eax, bhdr;
 	__asm        mov    eax, [eax+4];
@@ -162,8 +158,7 @@ void S3ObjInit() {
 	__asm        add    esp, 8;
 	__asm        mov    bhdr, eax;
 // LINE 407:
-	__asm        mov    eax, bhdr;
-	__asm        mov    G_darkshad, eax;
+	G_darkshad = bhdr;
 // LINE 408:
 	__asm        mov    eax, bhdr;
 	__asm        mov    eax, [eax+4];
@@ -301,7 +296,7 @@ _T345:
 	__asm        cmp    finfo.Plotter, 0;
 	__asm        jne    _T372;
 // LINE 540:
-	__asm        mov    finfo.Plotter, 0xD;
+	finfo.Plotter = 0xd;
 // LINE 543:
 _T372:
 	__asm        mov    eax, i;
@@ -322,9 +317,9 @@ _T398:
 // LINE 656:
 	__asm        jmp    _T5a5;
 // LINE 659:
-	__asm        mov    finfo.Bitmap, 0xF;
+	finfo.Bitmap = 0xf;
 // LINE 660:
-	__asm        mov    finfo.Plotter, 0x18;
+	finfo.Plotter = 0x18;
 // LINE 661:
 	__asm        jmp    _T5a5;
 // LINE 663:
@@ -861,11 +856,11 @@ void S3DrawBlinkingLight(struct VRBlit *blit) {
 	char * ptr;
 
 // LINE 853:
-	__asm        mov    bufwidth, 0x140;
+	bufwidth = 0x140;
 // LINE 854:
-	__asm        mov    winwidth, 0x13F;
+	winwidth = 0x13f;
 // LINE 855:
-	__asm        mov    winheight, 0xC7;
+	winheight = 0xc7;
 // LINE 860:
 	__asm        mov    eax, G_framectr;
 	__asm        and    eax, 7;
@@ -939,8 +934,7 @@ _Teb:
 	__asm        cmp    G_video_mode, 0x10;
 	__asm        jne    _T117;
 // LINE 896:
-	__asm        mov    eax, swindow.RenderWide;
-	__asm        mov    bufwidth, eax;
+	bufwidth = swindow.RenderWide;
 // LINE 897:
 	__asm        mov    eax, swindow.WindowWide;
 	__asm        dec    eax;
@@ -953,8 +947,7 @@ _Teb:
 	__asm        jmp    _T131;
 // LINE 903:
 _T117:
-	__asm        mov    eax, qwindow.RenderWide;
-	__asm        mov    bufwidth, eax;
+	bufwidth = qwindow.RenderWide;
 // LINE 904:
 	__asm        mov    eax, qwindow.WindowWide;
 	__asm        dec    eax;
@@ -1067,17 +1060,16 @@ void S3DrawWaterPoint(struct VRBlit *blit) {
 	int32_t scale;
 
 // LINE 955:
-	__asm        mov    bufwidth, 0x140;
+	bufwidth = 0x140;
 // LINE 956:
-	__asm        mov    winwidth, 0x13F;
+	winwidth = 0x13f;
 // LINE 957:
-	__asm        mov    winheight, 0xC7;
+	winheight = 0xc7;
 // LINE 977:
 	__asm        cmp    G_video_mode, 0x10;
 	__asm        jne    _T4a;
 // LINE 979:
-	__asm        mov    eax, swindow.RenderWide;
-	__asm        mov    bufwidth, eax;
+	bufwidth = swindow.RenderWide;
 // LINE 980:
 	__asm        mov    eax, swindow.WindowWide;
 	__asm        dec    eax;
@@ -1090,8 +1082,7 @@ void S3DrawWaterPoint(struct VRBlit *blit) {
 	__asm        jmp    _T64;
 // LINE 986:
 _T4a:
-	__asm        mov    eax, qwindow.RenderWide;
-	__asm        mov    bufwidth, eax;
+	bufwidth = qwindow.RenderWide;
 // LINE 987:
 	__asm        mov    eax, qwindow.WindowWide;
 	__asm        dec    eax;
@@ -1114,12 +1105,11 @@ _T64:
 	__asm        sar    eax, 0xC;
 	__asm        mov    y, eax;
 // LINE 1001:
-	__asm        mov    eax, G_blueshad;
-	__asm        mov    table, eax;
+	table = G_blueshad;
 // LINE 1002:
-	__asm        mov    tablerows, 7;
+	tablerows = 0x7;
 // LINE 1003:
-	__asm        mov    S_hires_color, 0x5B5E98;
+	S_hires_color = 0x5b5e98;
 // LINE 1005:
 	__asm        mov    eax, 0x5900000;
 	__asm        mov    ecx, blit;
@@ -1323,7 +1313,7 @@ _T29c:
 	__asm        cmp    num3, 0x1E;
 	__asm        jle    _T2bf;
 
-	__asm        mov    num3, 0x1E;
+	num3 = 0x1e;
 // LINE 1185:
 _T2bf:
 	__asm        cmp    G_video_mode, 0x10;
@@ -1356,15 +1346,15 @@ _T2ff:
 	__asm        cmp    G_daynight, 0;
 	__asm        jne    _T328;
 // LINE 1199:
-	__asm        mov    S_hires_color, 0x5B5E88;
+	S_hires_color = 0x5b5e88;
 // LINE 1200:
 	__asm        jmp    _T332;
 // LINE 1201:
 _T328:
-	__asm        mov    S_hires_color, 0x5B5E90;
+	S_hires_color = 0x5b5e90;
 // LINE 1202:
 _T332:
-	__asm        mov    tablerows, 7;
+	tablerows = 0x7;
 // LINE 1204:
 	__asm        jmp    _T3f8;
 _T33e:
@@ -1381,9 +1371,9 @@ _T358:
 	__asm        add    eax, 0x400;
 	__asm        mov    table, eax;
 // LINE 1208:
-	__asm        mov    S_hires_color, 0x5B5E90;
+	S_hires_color = 0x5b5e90;
 // LINE 1209:
-	__asm        mov    tablerows, 7;
+	tablerows = 0x7;
 // LINE 1211:
 	__asm        jmp    _T3f8;
 _T37b:
@@ -1400,9 +1390,9 @@ _T395:
 	__asm        add    eax, 0x400;
 	__asm        mov    table, eax;
 // LINE 1215:
-	__asm        mov    S_hires_color, 0x5B5E88;
+	S_hires_color = 0x5b5e88;
 // LINE 1216:
-	__asm        mov    tablerows, 7;
+	tablerows = 0x7;
 // LINE 1218:
 	__asm        jmp    _T3f8;
 // LINE 1219:
@@ -1420,12 +1410,11 @@ _T3b8:
 	__asm        jne    _T3f8;
 // LINE 1221:
 _T3df:
-	__asm        mov    eax, G_fireshad;
-	__asm        mov    table, eax;
+	table = G_fireshad;
 // LINE 1222:
-	__asm        mov    S_hires_color, 0x5B5E80;
+	S_hires_color = 0x5b5e80;
 // LINE 1223:
-	__asm        mov    tablerows, 7;
+	tablerows = 0x7;
 // LINE 1226:
 _T3f8:
 	__asm        call   rand;
@@ -8272,7 +8261,7 @@ _Tbc:
 	__asm        test   al, 0x80;
 	__asm        je     _Td7;
 // LINE 3727:
-	__asm        mov    hittee_type, 0xA;
+	hittee_type = 0xa;
 // LINE 3728:
 	__asm        jmp    _T14a;
 _Td7:
@@ -8303,7 +8292,7 @@ _T10d:
 	__asm        test   ah, 2;
 	__asm        je     _T129;
 // LINE 3734:
-	__asm        mov    hittee_type, 8;
+	hittee_type = 0x8;
 // LINE 3735:
 	__asm        jmp    _T14a;
 _T129:
@@ -8312,7 +8301,7 @@ _T129:
 	__asm        test   ah, 4;
 	__asm        je     _T145;
 // LINE 3736:
-	__asm        mov    hittee_type, 0;
+	hittee_type = 0x0;
 // LINE 3737:
 	__asm        jmp    _T14a;
 // LINE 3738:

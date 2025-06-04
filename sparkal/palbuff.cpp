@@ -232,8 +232,7 @@ _T6a:
 	__asm        mov    [ecx+0x134], eax;
 	__asm        jmp    _T8d;
 _T80:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x134], 0;
+	this->paletteColors = 0x0;
 // LINE 38:
 _T8d:
 	__asm        mov    ecx, this;
@@ -264,7 +263,7 @@ _T8d:
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        jmp    _Tdf;
 _Td8:
-	__asm        mov    dword ptr [ebp-0x4C], 0;
+	None = 0x0;
 _Tdf:
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        push   eax;
@@ -318,8 +317,7 @@ _T6a:
 	__asm        mov    [ecx+0x134], eax;
 	__asm        jmp    _T8d;
 _T80:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x134], 0;
+	this->paletteColors = 0x0;
 // LINE 56:
 _T8d:
 	__asm        mov    eax, this;
@@ -357,7 +355,7 @@ _Ta9:
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        jmp    _Tf3;
 _Tec:
-	__asm        mov    dword ptr [ebp-0x4C], 0;
+	None = 0x0;
 _Tf3:
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        push   eax;
@@ -375,8 +373,7 @@ _Tf3:
 // FUNCTION: COPTER_D 0x00447456
 void PaletteBuffer::~PaletteBuffer() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F5E0;
+	this-><PaletteBuffer+0x00> = 0x58f5e0;
 // LINE 70:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x134], 0;
@@ -412,13 +409,7 @@ _T1b:
 	__asm        cmp    i, 0x100;
 	__asm        jge    _T45;
 // LINE 82:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, pColors;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x134];
-	__asm        mov    edx, i;
-	__asm        mov    [ecx+edx*4], eax;
+	*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&this->paletteColors->Blue) + i * 4 + 0) = *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&pColors->Blue) + i * 4 + 0);
 // LINE 83:
 	__asm        jmp    _T18;
 // LINE 84:
@@ -467,29 +458,11 @@ _T5c:
 	__asm        cmp    i, 0x100;
 	__asm        jge    _Tba;
 // LINE 105:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, paletteEntries;
-	__asm        mov    al, [ecx+eax*4];
-	__asm        mov    ecx, i;
-	__asm        mov    edx, this;
-	__asm        mov    edx, [edx+0x134];
-	__asm        mov    [edx+ecx*4+2], al;
+	this->paletteColors->Blue = paletteEntries->peRed;
 // LINE 106:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, paletteEntries;
-	__asm        mov    al, [ecx+eax*4+1];
-	__asm        mov    ecx, i;
-	__asm        mov    edx, this;
-	__asm        mov    edx, [edx+0x134];
-	__asm        mov    [edx+ecx*4+1], al;
+	this->paletteColors->Blue = paletteEntries->peRed;
 // LINE 107:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, paletteEntries;
-	__asm        mov    al, [ecx+eax*4+2];
-	__asm        mov    ecx, i;
-	__asm        mov    edx, this;
-	__asm        mov    edx, [edx+0x134];
-	__asm        mov    [edx+ecx*4], al;
+	this->paletteColors->Blue = paletteEntries->peRed;
 // LINE 108:
 	__asm        jmp    _T59;
 // LINE 109:
@@ -518,17 +491,13 @@ void PaletteBuffer::DrawPalette() {
 // LINE 127:
 	__asm        jmp    near ptr 0x004475F9;
 // LINE 131:
-	__asm        mov    rectFill.left, 0;
+	rectFill.left = 0x0;
 // LINE 132:
-	__asm        mov    rectFill.top, 0;
+	rectFill.top = 0x0;
 // LINE 133:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    rectFill.right, eax;
+	rectFill.right = this->mWidth;
 // LINE 134:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    rectFill.bottom, eax;
+	rectFill.bottom = this->mHeight;
 // LINE 135:
 	__asm        lea    eax, rectFill.left;
 	__asm        push   eax;

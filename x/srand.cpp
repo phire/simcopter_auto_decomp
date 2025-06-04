@@ -48,16 +48,13 @@ unsigned short RRand(unsigned short lim) {
 	unsigned long myRandom0;
 
 // LINE 59:
-	__asm        mov    myRandom0, 0x41C64E6D;
+	myRandom0 = 0x41c64e6d;
 // LINE 60:
-	__asm        mov    eax, rrandSeed<__unnamed+0x00:4>;
-	__asm        mov    myRandom1, eax;
+	myRandom1 = rrandSeed<__unnamed+0x00:4>;
 // LINE 61:
-	__asm        mov    eax, myRandom0;
-	__asm        mov    myRandom2, eax;
+	myRandom2 = myRandom0;
 // LINE 62:
-	__asm        mov    eax, myRandom1;
-	__asm        mov    myRandom3, eax;
+	myRandom3 = myRandom1;
 // LINE 66:
 	__asm        mov    eax, myRandom2;
 	__asm        and    eax, 0xFFFF;
@@ -79,11 +76,9 @@ unsigned short RRand(unsigned short lim) {
 	__asm        imul   eax, ecx;
 	__asm        mov    myRandom2, eax;
 // LINE 70:
-	__asm        mov    eax, myRandom0;
-	__asm        mov    myRandom4, eax;
+	myRandom4 = myRandom0;
 // LINE 71:
-	__asm        mov    eax, myRandom1;
-	__asm        mov    myRandom5, eax;
+	myRandom5 = myRandom1;
 // LINE 73:
 	__asm        mov    eax, myRandom5;
 	__asm        and    eax, 0xFFFF;
@@ -140,10 +135,9 @@ unsigned short RRand(unsigned short lim) {
 // LINE 87:
 	__asm        add    myRandom0, 0x3039;
 // LINE 89:
-	__asm        mov    eax, myRandom0;
-	__asm        mov    rrandSeed<__unnamed+0x00:4>, eax;
+	rrandSeed<__unnamed+0x00:4> = myRandom0;
 // LINE 91:
-	__asm        mov    myRandom0, 0;
+	myRandom0 = 0x0;
 // LINE 92:
 	__asm        mov    eax, rrandSeed<__unnamed+0x00:4>;
 	__asm        shr    eax, 0x10;
@@ -389,8 +383,7 @@ short SGSRand(unsigned short limit) {
 	__asm        cmp    eax, ecx;
 	__asm        jge    _T41;
 // LINE 168:
-	__asm        mov    ax, z;
-	__asm        mov    x, ax;
+	x = z;
 // LINE 169:
 _T41:
 	__asm        call   SRand2;

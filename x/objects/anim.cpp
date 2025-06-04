@@ -151,11 +151,11 @@ _T6d:
 	__asm        mov    dword ptr [ebp-0x30], 1;
 	__asm        jmp    _Te3;
 _Tdc:
-	__asm        mov    dword ptr [ebp-0x30], 0;
+	None = 0x0;
 _Te3:
 	__asm        jmp    _Tef;
 _Te8:
-	__asm        mov    dword ptr [ebp-0x30], 1;
+	None = 0x1;
 _Tef:
 	__asm        cmp    dword ptr [ebp-0x30], 0;
 	__asm        jne    _T115;
@@ -263,7 +263,7 @@ _L31083:
 _T253:
 	__asm        jmp    _T25f;
 _T258:
-	__asm        mov    dword ptr [ebp-0x28], 0;
+	None = 0x0;
 _T25f:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x28];
@@ -284,9 +284,7 @@ _T292:
 	__asm        mov    [ecx+0x28], eax;
 	__asm        jmp    _T2b6;
 
-	__asm        mov    eax, [ebp-0x58];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x28], eax;
+	this->fPrivPartInfo = None;
 _L31071:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        push   eax;

@@ -176,7 +176,7 @@ int32_t PFile::Open(char * name, unsigned short access, unsigned short __formal,
 	const uint32_t shareFlags;
 
 // LINE 37:
-	__asm        mov    shareFlags, 0xF0;
+	shareFlags = 0xf0;
 // LINE 39:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
@@ -325,8 +325,7 @@ _T35:
 	__asm        test   eax, eax;
 	__asm        jne    _T66;
 // LINE 78:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x108], 0xFFFFFFFF;
+	this->Handle = 0xffffffff;
 // LINE 79:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T6d;
@@ -492,8 +491,7 @@ long PFile::FileExists(char * name) {
 	__asm        cmp    name, 0;
 	__asm        je     _T2a;
 // LINE 143:
-	__asm        mov    eax, name;
-	__asm        mov    szFilePathToUse, eax;
+	szFilePathToUse = name;
 // LINE 144:
 	__asm        jmp    _T39;
 // LINE 145:
@@ -569,9 +567,9 @@ unsigned long PFile::Checksum(char * name) {
 	long lUsedBlockSize;
 
 // LINE 174:
-	__asm        mov    lCurrentValue, 0;
+	lCurrentValue = 0x0;
 // LINE 180:
-	__asm        mov    lBlockSize, 0x7D00;
+	lBlockSize = 0x7d00;
 // LINE 182:
 	__asm        mov    tempPFile.Handle, 0xFFFFFFFF;
 	__asm        mov    tempPFile.ShouldClose, 1;
@@ -588,7 +586,7 @@ unsigned long PFile::Checksum(char * name) {
 	__asm        add    esp, 8;
 	__asm        jmp    _T65;
 _T5e:
-	__asm        mov    tempPFile.szFilePath[0], 0;
+	tempPFile.szFilePath[0] = 0x0;
 _T65:
 	__asm        jmp    near ptr 0x004A0823;
 // LINE 183:
@@ -613,9 +611,9 @@ _T65:
 	__asm        cmp    chBuffer, 0;
 	__asm        je     _T17b;
 // LINE 189:
-	__asm        mov    lCurrentValue, 0;
+	lCurrentValue = 0x0;
 // LINE 191:
-	__asm        mov    lCurrentBlockStartPosition, 0;
+	lCurrentBlockStartPosition = 0x0;
 // LINE 193:
 	__asm        jmp    _Tca;
 _Tc3:
@@ -625,7 +623,7 @@ _Tca:
 	__asm        cmp    lCurrentBlockStartPosition, eax;
 	__asm        jge    _T152;
 // LINE 195:
-	__asm        mov    lUsedBlockSize, 0x7D00;
+	lUsedBlockSize = 0x7d00;
 // LINE 196:
 	__asm        mov    eax, lCurrentBlockStartPosition;
 	__asm        add    eax, 0x7D00;

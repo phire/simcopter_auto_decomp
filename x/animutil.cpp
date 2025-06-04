@@ -827,7 +827,7 @@ _T6b:
 	__asm        add    esp, 0x10;
 // LINE 195:
 _T9b:
-	__asm        mov    res, 0;
+	res = 0x0;
 // LINE 197:
 	__asm        jmp    _T104;
 _Ta7:
@@ -838,7 +838,7 @@ _Ta7:
 	__asm        test   ah, 0x41;
 	__asm        jne    _Tca;
 // LINE 198:
-	__asm        mov    res, 0;
+	res = 0x0;
 // LINE 199:
 	__asm        jmp    _T104;
 _Tca:
@@ -849,7 +849,7 @@ _Tca:
 	__asm        test   ah, 1;
 	__asm        je     _Ted;
 // LINE 200:
-	__asm        mov    res, 0x40490FDB;
+	res = 0x40490fdb;
 // LINE 201:
 	__asm        jmp    _T104;
 // LINE 202:
@@ -1035,9 +1035,7 @@ _Tb9:
 	__asm        add    esp, 0x18;
 // LINE 247:
 _Td9:
-	__asm        mov    eax, ctr;
-	__asm        mov    eax, [eax];
-	__asm        mov    reinterpret_cast<uint32_t>(centerPt.v), eax;
+	reinterpret_cast<uint32_t>(centerPt.v) = reinterpret_cast<uint32_t>(ctr->v);
 // LINE 248:
 	__asm        movsx  ebx, centerPt.h;
 	__asm        fld    xdist;
@@ -1303,8 +1301,7 @@ void GetChildIncrement(struct Polar *passedInc, struct Polar *parentPolar, struc
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 // LINE 510:
-	__asm        mov    eax, passedInc;
-	__asm        mov    amountToInc, eax;
+	amountToInc = passedInc;
 // LINE 511:
 	__asm        cmp    parentPolar, 0;
 	__asm        je     _Tb9;
@@ -1420,15 +1417,13 @@ _Tb9:
 	__asm        call   IncrementPhiPsi;
 	__asm        add    esp, 0xC;
 // LINE 544:
-	__asm        mov    eax, partPol.psi;
-	__asm        mov    angleToPhiMovement, eax;
+	angleToPhiMovement = partPol.psi;
 // LINE 545:
 	__asm        fld    angleToPhiMovement;
 	__asm        fsub   dword ptr ds:[0x593790];
 	__asm        fstp   angleToPsiMovement;
 // LINE 548:
-	__asm        mov    eax, partPol.phi;
-	__asm        mov    alpha, eax;
+	alpha = partPol.phi;
 // LINE 550:
 	__asm        fld    angleToPhiMovement;
 	__asm        sub    esp, 8;
@@ -1472,7 +1467,7 @@ _Tb9:
 	__asm        jmp    _T203;
 // LINE 556:
 _T1df:
-	__asm        mov    phiComp, 0;
+	phiComp = 0x0;
 // LINE 557:
 	__asm        mov    eax, partPolar;
 	__asm        fld    dword ptr [eax];
@@ -1482,7 +1477,7 @@ _T1df:
 	__asm        add    esp, 8;
 	__asm        fstp   psiComp;
 // LINE 558:
-	__asm        mov    tauComp, 0;
+	tauComp = 0x0;
 // LINE 564:
 _T203:
 	__asm        fld    tauComp;
@@ -1666,9 +1661,7 @@ _Tec:
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 // LINE 595:
-	__asm        mov    eax, parentPolar;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    psiToZero, eax;
+	psiToZero = parentPolar->psi;
 // LINE 596:
 	__asm        fld    tmpPolar.psi;
 	__asm        fsub   psiToZero;
@@ -1742,13 +1735,9 @@ _Tec:
 	__asm        fadd   psiToZero;
 	__asm        fstp   resPolar.psi;
 // LINE 613:
-	__asm        mov    eax, partPolar;
-	__asm        mov    ecx, resPolar.phi;
-	__asm        mov    [eax], ecx;
+	partPolar->phi = resPolar.phi;
 // LINE 614:
-	__asm        mov    eax, partPolar;
-	__asm        mov    ecx, resPolar.psi;
-	__asm        mov    [eax+4], ecx;
+	partPolar->psi = resPolar.psi;
 // LINE 616:
 // Block end:
 _T1b1:
@@ -2113,14 +2102,11 @@ void Polar2Cartesian(float radius, float phi, float psi, float * x, float * z, f
 	float debugpsi;
 
 // LINE 686:
-	__asm        mov    eax, phi;
-	__asm        mov    debugphi, eax;
+	debugphi = phi;
 // LINE 687:
-	__asm        mov    eax, psi;
-	__asm        mov    debugpsi, eax;
+	debugpsi = psi;
 // LINE 688:
-	__asm        mov    eax, radius;
-	__asm        mov    debugrad, eax;
+	debugrad = radius;
 // LINE 689:
 	__asm        fld    debugrad;
 	__asm        fadd   debugpsi;
@@ -2409,8 +2395,7 @@ void Cartesian2Polar(struct DXZY dxzy, struct Polar *polar, float * radius) {
 	__asm        call   Cartesian2Polar;
 	__asm        add    esp, 0x18;
 // LINE 765:
-	__asm        mov    eax, polar;
-	__asm        mov    dword ptr [eax+8], 0;
+	polar->tau = 0x0;
 // LINE 766:
 	__asm        jmp    near ptr 0x00563D2E;
 }
@@ -2427,8 +2412,7 @@ void IncrementTorque(float dinc, struct Polar *parentPolar, struct Polar *childP
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 // LINE 942:
-	__asm        mov    eax, parPolar.phi;
-	__asm        mov    parPhiToZero, eax;
+	parPhiToZero = parPolar.phi;
 // LINE 943:
 	__asm        mov    inc.trq, 0;
 	__asm        mov    ax, inc.trq;
@@ -2461,8 +2445,7 @@ void IncrementTorque(float dinc, struct Polar *parentPolar, struct Polar *childP
 	__asm        mov    eax, childPolar;
 	__asm        fstp   dword ptr [eax+4];
 // LINE 948:
-	__asm        mov    eax, parPhiToZero;
-	__asm        mov    inc.phi, eax;
+	inc.phi = parPhiToZero;
 // LINE 950:
 	__asm        mov    eax, childPolar;
 	__asm        push   eax;

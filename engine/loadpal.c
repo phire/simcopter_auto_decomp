@@ -36,7 +36,7 @@ struct VRResource* LoadPalette() {
 	__asm        cmp    res, 0;
 	__asm        jne    _T3a;
 // LINE 58:
-	__asm        mov    GlobalError, 4;
+	GlobalError = 0x4;
 // LINE 59:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T82;
@@ -55,14 +55,11 @@ _T3a:
 	__asm        jmp    _T82;
 // LINE 94:
 _T5d:
-	__asm        mov    eax, res;
-	__asm        mov    dword ptr [eax], 0;
+	res->res.mem = 0x0;
 // LINE 95:
-	__asm        mov    eax, res;
-	__asm        mov    dword ptr [eax+8], 4;
+	res->res.type = 0x4;
 // LINE 96:
-	__asm        mov    eax, res;
-	__asm        mov    dword ptr [eax+0xC], 0;
+	res->res.entry = 0x0;
 // LINE 97:
 	__asm        mov    eax, res;
 	__asm        jmp    _T82;
@@ -75,8 +72,7 @@ char * VRGetPalFromResource(struct VRResource *res) {
 	struct CMAP_Resource *cmp;
 
 // LINE 113:
-	__asm        mov    eax, res;
-	__asm        mov    cmp, eax;
+	cmp = res;
 // LINE 114:
 	__asm        mov    eax, cmp;
 	__asm        add    eax, 0x10;

@@ -597,8 +597,7 @@ static void $E13() {
 // FUNCTION: COPTER_D 0x0043c73f
 void MDate::MDate(const class MTime& t) {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F3E8;
+	this-><vftable> = 0x58f3e8;
 // LINE 56:
 	__asm        mov    eax, t;
 	__asm        cmp    dword ptr [eax], 0;
@@ -623,8 +622,7 @@ _T3a:
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    _T65;
 _T5b:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
+	this->Julnum = 0x0;
 // LINE 57:
 _T65:
 	__asm        jmp    near ptr 0x0043C7A9;
@@ -898,8 +896,7 @@ class MTime  MTime::EndDST(uint32_t year) {
 	long ltime;
 
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
+	this-><MTime+0x04:4> = 0x0;
 // LINE 165:
 	__asm        lea    eax, ltime;
 	__asm        push   eax;
@@ -952,8 +949,7 @@ class MTime  MTime::EndDST(uint32_t year) {
 // FUNCTION: COPTER_D 0x0043cb02
  MTime::MTime(uint32_t h, uint32_t m, uint32_t s) {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
+	this-><MTime+0x04:4> = 0x0;
 // LINE 191:
 	__asm        mov    eax, s;
 	__asm        push   eax;
@@ -978,8 +974,7 @@ class MTime  MTime::EndDST(uint32_t year) {
 // FUNCTION: COPTER_D 0x0043cb4b
  MTime::MTime(const class MDate& date, uint32_t h, uint32_t m, uint32_t s) {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
+	this-><MTime+0x04:4> = 0x0;
 // LINE 213:
 	__asm        mov    eax, date;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -1057,15 +1052,13 @@ _Td1:
 	__asm        test   eax, eax;
 	__asm        je     _Tf3;
 // LINE 228:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0;
+	this-><MTime+0x00:4> = 0x0;
 // LINE 231:
 _Tf3:
 	__asm        jmp    _T101;
 // LINE 232:
 _Tf8:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0;
+	this-><MTime+0x00:4> = 0x0;
 // LINE 233:
 _T101:
 	__asm        jmp    near ptr 0x0043CC51;
@@ -1078,13 +1071,9 @@ int  MTime::SetShouldPrinMDate(int32_t bNewPrinMDate) {
 	int32_t bPreviousPrinMDate;
 
 // LINE 242:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    bPreviousPrinMDate, eax;
+	bPreviousPrinMDate = this-><MTime+0x04:4>;
 // LINE 243:
-	__asm        mov    eax, bNewPrinMDate;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this-><MTime+0x04:4> = bNewPrinMDate;
 // LINE 244:
 	__asm        mov    eax, bPreviousPrinMDate;
 	__asm        jmp    near ptr 0x0043CC81;
@@ -1475,8 +1464,7 @@ _T59:
 	__asm        mov    [ebp-0xE0], eax;
 	__asm        jmp    _T94;
 _T88:
-	__asm        mov    eax, hh;
-	__asm        mov    [ebp-0xE0], eax;
+	None = hh;
 _T94:
 	__asm        mov    eax, [ebp-0xE0];
 	__asm        push   eax;

@@ -95,7 +95,7 @@ int32_t VRAppInit() {
 	char szFilePath[260];
 
 // LINE 175:
-	__asm        mov    G_InitializationProgress, 1;
+	G_InitializationProgress = 0x1;
 // LINE 179:
 	__asm        call   S3HeliTweakInit;
 // LINE 180:
@@ -125,7 +125,7 @@ int32_t VRAppInit() {
 	__asm        call   0x004D7300;
 // LINE 195:
 _T64:
-	__asm        mov    i, 0x3A3A3A3A;
+	i = 0x3a3a3a3a;
 // LINE 196:
 	__asm        mov    eax, i;
 	__asm        push   eax;
@@ -140,7 +140,7 @@ _T64:
 	__asm        call   0x004D6A69;
 	__asm        add    esp, 4;
 // LINE 244:
-	__asm        mov    G_video_mode, 0x10;
+	G_video_mode = 0x10;
 // LINE 247:
 	__asm        push   0x10000;
 	__asm        call   0x004D6610;
@@ -340,8 +340,7 @@ _T2db:
 	__asm        cmp    memxf, eax;
 	__asm        jge    _T33b;
 
-	__asm        mov    eax, maxval;
-	__asm        mov    memxf, eax;
+	memxf = maxval;
 // LINE 345:
 _T33b:
 	__asm        mov    eax, obj;
@@ -354,8 +353,7 @@ _T33b:
 	__asm        cmp    mem2d, eax;
 	__asm        jge    _T36e;
 
-	__asm        mov    eax, maxval;
-	__asm        mov    mem2d, eax;
+	mem2d = maxval;
 // LINE 347:
 _T36e:
 	__asm        jmp    _T2d5;
@@ -394,8 +392,7 @@ _T39c:
 	__asm        cmp    memxf, eax;
 	__asm        jge    _T3fc;
 
-	__asm        mov    eax, maxval;
-	__asm        mov    memxf, eax;
+	memxf = maxval;
 // LINE 355:
 _T3fc:
 	__asm        mov    eax, obj;
@@ -408,8 +405,7 @@ _T3fc:
 	__asm        cmp    mem2d, eax;
 	__asm        jge    _T42f;
 
-	__asm        mov    eax, maxval;
-	__asm        mov    mem2d, eax;
+	mem2d = maxval;
 // LINE 357:
 _T42f:
 	__asm        jmp    _T396;
@@ -448,8 +444,7 @@ _T45d:
 	__asm        cmp    memxf, eax;
 	__asm        jge    _T4bd;
 
-	__asm        mov    eax, maxval;
-	__asm        mov    memxf, eax;
+	memxf = maxval;
 // LINE 366:
 _T4bd:
 	__asm        mov    eax, obj;
@@ -462,8 +457,7 @@ _T4bd:
 	__asm        cmp    mem2d, eax;
 	__asm        jge    _T4f0;
 
-	__asm        mov    eax, maxval;
-	__asm        mov    mem2d, eax;
+	mem2d = maxval;
 // LINE 368:
 _T4f0:
 	__asm        jmp    _T457;
@@ -565,23 +559,23 @@ _T531:
 // LINE 416:
 	__asm        or     G_InitializationProgress, 0x80;
 // LINE 417:
-	__asm        mov    G_helidata[3].type, 3;
+	G_helidata[3].type = 0x3;
 // LINE 418:
-	__asm        mov    G_helidata[1].type, 1;
+	G_helidata[1].type = 0x1;
 // LINE 419:
-	__asm        mov    G_helidata[2].type, 2;
+	G_helidata[2].type = 0x2;
 // LINE 420:
-	__asm        mov    G_helidata[5].type, 5;
+	G_helidata[5].type = 0x5;
 // LINE 421:
-	__asm        mov    G_helidata[0].type, 0;
+	G_helidata[0].type = 0x0;
 // LINE 422:
-	__asm        mov    G_helidata[4].type, 4;
+	G_helidata[4].type = 0x4;
 // LINE 423:
-	__asm        mov    G_helidata[6].type, 6;
+	G_helidata[6].type = 0x6;
 // LINE 424:
-	__asm        mov    G_helidata[7].type, 7;
+	G_helidata[7].type = 0x7;
 // LINE 425:
-	__asm        mov    G_helidata[8].type, 8;
+	G_helidata[8].type = 0x8;
 // LINE 426:
 	__asm        push   0x6BF1D0;
 	__asm        call   S3HeliInitInstance;
@@ -820,7 +814,7 @@ _T944:
 // LINE 521:
 	__asm        call   S3PersonInit;
 // LINE 527:
-	__asm        mov    G_VRAppInitCalled, 1;
+	G_VRAppInitCalled = 0x1;
 // LINE 529:
 	__asm        push   0;
 	__asm        call   VRAppCityInit;
@@ -839,12 +833,12 @@ int32_t VRAppCityInit(int32_t reload) {
 	__asm        cmp    reload, 1;
 	__asm        jne    _T1d;
 // LINE 554:
-	__asm        mov    G_InitializationProgress, 0;
+	G_InitializationProgress = 0x0;
 // LINE 555:
 _T1d:
 	__asm        or     G_InitializationProgress, 0x1000;
 // LINE 558:
-	__asm        mov    G_camera_mode, 3;
+	G_camera_mode = 0x3;
 // LINE 562:
 	__asm        cmp    reload, 1;
 	__asm        jne    _T7b;
@@ -904,14 +898,14 @@ _Tba:
 _Tc4:
 	__asm        call   S3ObjSetFlatShading;
 // LINE 609:
-	__asm        mov    G_uheli, 0x6BF1D0;
+	G_uheli = 0x6bf1d0;
 // LINE 613:
-	__asm        mov    G_testheli, 0;
+	G_testheli = 0x0;
 // LINE 618:
 	__asm        cmp    G_testmode, 1;
 	__asm        jne    _T12b;
 // LINE 620:
-	__asm        mov    G_camera_mode, 0;
+	G_camera_mode = 0x0;
 // LINE 622:
 	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xA4];
@@ -945,8 +939,7 @@ _T12b:
 	__asm        cmp    G_camera_mode, 3;
 	__asm        jne    _T194;
 // LINE 635:
-	__asm        mov    eax, G_uheli;
-	__asm        mov    dword ptr [eax+8], 0;
+	G_uheli->flags = 0x0;
 // LINE 638:
 	__asm        push   0x140000;
 	__asm        push   0x140000;
@@ -960,8 +953,7 @@ _T12b:
 	__asm        jmp    _T1a0;
 // LINE 643:
 _T194:
-	__asm        mov    eax, G_uheli;
-	__asm        mov    dword ptr [eax+8], 1;
+	G_uheli->flags = 0x1;
 // LINE 647:
 _T1a0:
 	__asm        call   GetCurrentUserPersonalInfo;

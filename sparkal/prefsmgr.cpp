@@ -344,14 +344,11 @@ struct bidirectional_iterator<PreferenceItem,int>{
 // FUNCTION: COPTER_D 0x0047bb70
 void PreferenceItem::PreferenceItem() {
 // LINE 18:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0;
+	this->lPreferenceType = 0x0;
 // LINE 19:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
+	this->lPreferenceDataLength = 0x0;
 // LINE 20:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->chPreferenceData = 0x0;
 // LINE 21:
 	__asm        jmp    near ptr 0x0047BB9E;
 
@@ -361,15 +358,9 @@ void PreferenceItem::PreferenceItem() {
 // FUNCTION: COPTER_D 0x0047bba6
 void PreferenceItem::PreferenceItem(const class PreferenceItem& P1) {
 // LINE 32:
-	__asm        mov    eax, P1;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx], eax;
+	this->lPreferenceType = P1.lPreferenceType;
 // LINE 33:
-	__asm        mov    eax, P1;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->lPreferenceDataLength = P1.lPreferenceDataLength;
 // LINE 35:
 	__asm        mov    eax, P1;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -410,8 +401,7 @@ _T66:
 	__asm        jmp    _T92;
 // LINE 44:
 _T88:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->chPreferenceData = 0x0;
 // LINE 45:
 _T92:
 	__asm        jmp    near ptr 0x0047BC3D;
@@ -443,15 +433,9 @@ _T34:
 // FUNCTION: COPTER_D 0x0047bc85
 class PreferenceItem& PreferenceItem::operator=(const class PreferenceItem& P2) {
 // LINE 65:
-	__asm        mov    eax, P2;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx], eax;
+	this->lPreferenceType = P2.lPreferenceType;
 // LINE 66:
-	__asm        mov    eax, P2;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->lPreferenceDataLength = P2.lPreferenceDataLength;
 // LINE 67:
 	__asm        mov    eax, P2;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -492,8 +476,7 @@ _T66:
 	__asm        jmp    _T92;
 // LINE 76:
 _T88:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
+	this->chPreferenceData = 0x0;
 // LINE 77:
 _T92:
 	__asm        mov    eax, this;
@@ -569,18 +552,12 @@ class PreferenceItem* PreferenceItem::DuplicatePointer() {
 	__asm        mov    prefItemReturn, eax;
 	__asm        jmp    _T3a;
 _T33:
-	__asm        mov    prefItemReturn, 0;
+	prefItemReturn = 0x0;
 // LINE 133:
 _T3a:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, prefItemReturn;
-	__asm        mov    [ecx], eax;
+	prefItemReturn->lPreferenceType = this->lPreferenceType;
 // LINE 134:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, prefItemReturn;
-	__asm        mov    [ecx+4], eax;
+	prefItemReturn->lPreferenceDataLength = this->lPreferenceDataLength;
 // LINE 135:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -631,14 +608,13 @@ _Ta1:
 	__asm        jmp    _Td5;
 // LINE 143:
 _Td5:
-	__asm        mov    prefItemReturn, 0;
+	prefItemReturn = 0x0;
 // LINE 146:
 _Tdc:
 	__asm        jmp    _Teb;
 // LINE 147:
 _Te1:
-	__asm        mov    eax, prefItemReturn;
-	__asm        mov    dword ptr [eax+8], 0;
+	prefItemReturn->chPreferenceData = 0x0;
 // LINE 148:
 _Teb:
 	__asm        mov    eax, prefItemReturn;
@@ -714,8 +690,7 @@ _Ta7:
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _Tf2;
 _Tec:
-	__asm        mov    eax, [ebp-0x1C];
-	__asm        mov    [ebp-0x24], eax;
+	None = None;
 _Tf2:
 	__asm        jmp    near ptr 0x0047BF99;
 
@@ -784,8 +759,7 @@ _T15f:
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    _T1cc;
 _T1c6:
-	__asm        mov    eax, [ebp-0x30];
-	__asm        mov    [ebp-0x38], eax;
+	None = None;
 _T1cc:
 	__asm        jmp    near ptr 0x0047C073;
 
@@ -831,30 +805,19 @@ _T225:
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x0047C0F7;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x590DB0;
+	this-><vftable> = 0x590db0;
 // LINE 166:
-	__asm        mov    eax, bSaveTheFileAtAllChanges;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->bSaveFileAtAllChanges = bSaveTheFileAtAllChanges;
 // LINE 167:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x20], 0;
+	this->bPrefsDirty = 0x0;
 // LINE 168:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x24], 0;
+	this->bPrefsLocked = 0x0;
 // LINE 169:
-	__asm        mov    eax, lTheFileCreator;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x14], eax;
+	this->lFileCreator = lTheFileCreator;
 // LINE 170:
-	__asm        mov    eax, lTheFileType;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x18], eax;
+	this->lFileType = lTheFileType;
 // LINE 171:
-	__asm        mov    eax, lTheFileVersion;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x1C], eax;
+	this->lFileVersion = lTheFileVersion;
 // LINE 172:
 	__asm        jmp    near ptr 0x0047C13D;
 
@@ -879,8 +842,7 @@ int32_t PreferenceManager::IPreferenceManager(char * szFilePath) {
 	__asm        mov    [ecx+0x10], eax;
 	__asm        jmp    _T47;
 _T3d:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 0;
+	this->miffPrefsFile = 0x0;
 // LINE 180:
 _T47:
 	__asm        mov    eax, this;
@@ -905,8 +867,7 @@ _T70:
 // FUNCTION: COPTER_D 0x0047c1be
 void PreferenceManager::~PreferenceManager() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x590DB0;
+	this-><vftable> = 0x590db0;
 // LINE 192:
 	__asm        mov    ecx, this;
 	__asm        call   PreferenceManager::SaveAllPrefs;
@@ -1102,8 +1063,7 @@ void PreferenceManager::EnumeratePrefs() {
 
 	__asm        jmp    near ptr 0x0047C40E;
 
-	__asm        mov    eax, [ebp-0xC];
-	__asm        mov    i.node, eax;
+	i.node = None;
 // LINE 23:
 	__asm        jmp    _T55;
 // LINE 207:
@@ -1240,8 +1200,7 @@ _T49:
 
 	__asm        jmp    near ptr 0x0047C56F;
 
-	__asm        mov    eax, [ebp-0x34];
-	__asm        mov    i.node, eax;
+	i.node = None;
 // LINE 23:
 	__asm        jmp    _Teb;
 // LINE 241:
@@ -1334,8 +1293,7 @@ _T1a3:
 	__asm        jmp    _T1be;
 // LINE 251:
 _T1aa:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x20], 0;
+	this->bPrefsDirty = 0x0;
 // LINE 252:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T1be;
@@ -1452,8 +1410,7 @@ _T104:
 	__asm        call   dword ptr [edx+0x14];
 	__asm        mov    tempPrefItem.lPreferenceType, eax;
 // LINE 294:
-	__asm        mov    eax, lRecordDataSize;
-	__asm        mov    tempPrefItem.lPreferenceDataLength, eax;
+	tempPrefItem.lPreferenceDataLength = lRecordDataSize;
 // LINE 295:
 	__asm        mov    eax, lRecordDataSize;
 	__asm        push   eax;
@@ -1488,7 +1445,7 @@ _T104:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 299:
-	__asm        mov    tempPrefItem.chPreferenceData, 0;
+	tempPrefItem.chPreferenceData = 0x0;
 // LINE 300:
 	__asm        jmp    _Tcb;
 // LINE 301:
@@ -1500,8 +1457,7 @@ _T18d:
 	__asm        mov    ecx, [eax+0x10];
 	__asm        call   dword ptr [edx+0x10];
 // LINE 302:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x20], 0;
+	this->bPrefsDirty = 0x0;
 // LINE 303:
 	__asm        mov    dword ptr [ebp-0x2C], 1;
 	__asm        lea    ecx, tempPrefItem.lPreferenceType;
@@ -1616,8 +1572,7 @@ _Ted:
 _T11e:
 	__asm        jmp    near ptr 0x0047C957;
 // LINE 314:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x20], 1;
+	this->bPrefsDirty = 0x1;
 // LINE 315:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0047C96B;
@@ -1641,8 +1596,7 @@ long PreferenceManager::RemovePref(long lPrefType) {
 
 	__asm        jmp    near ptr 0x0047C99C;
 
-	__asm        mov    eax, [ebp-8];
-	__asm        mov    i.node, eax;
+	i.node = None;
 // LINE 23:
 	__asm        jmp    _T55;
 // LINE 329:
@@ -1697,8 +1651,7 @@ _Tac:
 	__asm        cmp    [eax+8], ecx;
 	__asm        jne    _T15d;
 
-	__asm        mov    eax, i.node;
-	__asm        mov    [ebp-0x28], eax;
+	None = i.node;
 // LINE 331:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    eax, [eax];
@@ -1738,8 +1691,7 @@ _T105:
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        jmp    near ptr 0x0047CAA1;
 // LINE 332:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x20], 1;
+	this->bPrefsDirty = 0x1;
 // LINE 333:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -1781,8 +1733,7 @@ class PreferenceItem* PreferenceManager::GetPrefPointer(long lPrefType) {
 
 	__asm        jmp    near ptr 0x0047CB0C;
 
-	__asm        mov    eax, [ebp-8];
-	__asm        mov    i.node, eax;
+	i.node = None;
 // LINE 23:
 	__asm        jmp    _T55;
 // LINE 357:
@@ -2005,16 +1956,12 @@ long PreferenceManager::SetPref(long lPrefType, char * chPref, long lSizeofPref)
 	__asm        mov    prefItemToSet, eax;
 	__asm        jmp    _T45;
 _T3e:
-	__asm        mov    prefItemToSet, 0;
+	prefItemToSet = 0x0;
 // LINE 475:
 _T45:
-	__asm        mov    eax, lPrefType;
-	__asm        mov    ecx, prefItemToSet;
-	__asm        mov    [ecx], eax;
+	prefItemToSet->lPreferenceType = lPrefType;
 // LINE 476:
-	__asm        mov    eax, lSizeofPref;
-	__asm        mov    ecx, prefItemToSet;
-	__asm        mov    [ecx+4], eax;
+	prefItemToSet->lPreferenceDataLength = lSizeofPref;
 // LINE 477:
 	__asm        mov    eax, lSizeofPref;
 	__asm        push   eax;
@@ -2173,8 +2120,7 @@ _T1a5:
 	__asm        jmp    _T221;
 // LINE 494:
 _T221:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x20], 1;
+	this->bPrefsDirty = 0x1;
 // LINE 495:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -2281,8 +2227,7 @@ _Tc7:
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    _T112;
 _T10c:
-	__asm        mov    eax, [ebp-0x30];
-	__asm        mov    [ebp-0x38], eax;
+	None = None;
 _T112:
 	__asm        jmp    near ptr 0x0047D06E;
 
@@ -2351,8 +2296,7 @@ _T17f:
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        jmp    _T1ec;
 _T1e6:
-	__asm        mov    eax, [ebp-0x44];
-	__asm        mov    [ebp-0x4C], eax;
+	None = None;
 _T1ec:
 	__asm        jmp    near ptr 0x0047D148;
 
@@ -2427,8 +2371,7 @@ _T27e:
 
 	__asm        jmp    near ptr 0x0047D21D;
 // LINE 514:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x20], 1;
+	this->bPrefsDirty = 0x1;
 // LINE 515:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -2523,8 +2466,7 @@ _Tbf:
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _T10a;
 _T104:
-	__asm        mov    eax, [ebp-0x1C];
-	__asm        mov    [ebp-0x24], eax;
+	None = None;
 _T10a:
 	__asm        jmp    near ptr 0x0047D35F;
 
@@ -2592,8 +2534,7 @@ _T174:
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    _T1e1;
 _T1db:
-	__asm        mov    eax, [ebp-0x30];
-	__asm        mov    [ebp-0x38], eax;
+	None = None;
 _T1e1:
 	__asm        jmp    near ptr 0x0047D436;
 
@@ -2638,8 +2579,7 @@ _T237:
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x0047D4B7;
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x590DE8;
+	this-><NotificationPreferenceManager+0x00> = 0x590de8;
 // LINE 535:
 	__asm        jmp    near ptr 0x0047D4C5;
 
@@ -2744,8 +2684,7 @@ _Tb6:
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    _T101;
 _Tfb:
-	__asm        mov    eax, [ebp-0x30];
-	__asm        mov    [ebp-0x38], eax;
+	None = None;
 _T101:
 	__asm        jmp    near ptr 0x0047D60C;
 
@@ -2813,8 +2752,7 @@ _T16b:
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        jmp    _T1d8;
 _T1d2:
-	__asm        mov    eax, [ebp-0x44];
-	__asm        mov    [ebp-0x4C], eax;
+	None = None;
 _T1d8:
 	__asm        jmp    near ptr 0x0047D6E3;
 
@@ -2901,7 +2839,7 @@ int32_t NotificationPreferenceManager::RemoveNotification(class NotificationSink
 // LINE 571:
 	__asm        jmp    near ptr 0x0047D7D8;
 // LINE 572:
-	__asm        mov    nFound, 0;
+	nFound = 0x0;
 // LINE 574:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x28];
@@ -2913,8 +2851,7 @@ int32_t NotificationPreferenceManager::RemoveNotification(class NotificationSink
 
 	__asm        jmp    near ptr 0x0047D7FA;
 
-	__asm        mov    eax, [ebp-0xC];
-	__asm        mov    iterator.node, eax;
+	iterator.node = None;
 // LINE 575:
 _T39:
 	__asm        mov    eax, this;

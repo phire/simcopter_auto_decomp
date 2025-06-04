@@ -2931,7 +2931,7 @@ void RemoveAvatarFromBuilding() {
 	__asm        cmp    gIDOfBuildingAvatarIsIn, 0xFFFFFFFF;
 	__asm        je     _T1d;
 // LINE 135:
-	__asm        mov    gIDOfBuildingAvatarIsIn, 0xFFFFFFFF;
+	gIDOfBuildingAvatarIsIn = 0xffffffff;
 // LINE 140:
 _T1d:
 	__asm        jmp    near ptr 0x00544284;
@@ -3138,7 +3138,7 @@ _T1e3:
 	__asm        mov    gXTimer.lStartTime, 0;
 	__asm        jmp    near ptr 0x0054453B;
 // LINE 160:
-	__asm        mov    cYObject::sDebugNumBeamed, 0;
+	cYObject::sDebugNumBeamed = 0x0;
 // LINE 162:
 _T205:
 	__asm        jmp    near ptr 0x00544549;
@@ -3199,8 +3199,7 @@ _T88:
 	__asm        mov    obj, eax;
 	__asm        jmp    _Ta1;
 
-	__asm        mov    eax, [ebp-8];
-	__asm        mov    obj, eax;
+	obj = None;
 // LINE 173:
 _Ta1:
 	__asm        cmp    obj, 0;
@@ -3322,7 +3321,7 @@ _T15:
 	__asm        cmp    eax, 4;
 	__asm        jle    _T35;
 
-	__asm        mov    gPersonBeamingSlicesSlice, 0;
+	gPersonBeamingSlicesSlice = 0x0;
 // LINE 194:
 _T35:
 	__asm        movsx  eax, gPersonBeamingSlicesSlice;
@@ -3332,52 +3331,52 @@ _T35:
 	__asm        cmp    velocity, 0x12C0000;
 	__asm        jle    _T68;
 // LINE 196:
-	__asm        mov    gPersonBeamingSlices, 6;
+	gPersonBeamingSlices = 0x6;
 // LINE 197:
-	__asm        mov    gPersonBeamingForwardWeight, 8;
+	gPersonBeamingForwardWeight = 0x8;
 // LINE 199:
 	__asm        jmp    _T10a;
 _T68:
 	__asm        cmp    velocity, 0x960000;
 	__asm        jle    _T8c;
 // LINE 200:
-	__asm        mov    gPersonBeamingSlices, 4;
+	gPersonBeamingSlices = 0x4;
 // LINE 201:
-	__asm        mov    gPersonBeamingForwardWeight, 6;
+	gPersonBeamingForwardWeight = 0x6;
 // LINE 203:
 	__asm        jmp    _T10a;
 _T8c:
 	__asm        cmp    velocity, 0x640000;
 	__asm        jle    _Tb0;
 // LINE 204:
-	__asm        mov    gPersonBeamingSlices, 2;
+	gPersonBeamingSlices = 0x2;
 // LINE 205:
-	__asm        mov    gPersonBeamingForwardWeight, 5;
+	gPersonBeamingForwardWeight = 0x5;
 // LINE 207:
 	__asm        jmp    _T10a;
 _Tb0:
 	__asm        cmp    velocity, 0x410000;
 	__asm        jle    _Td4;
 // LINE 208:
-	__asm        mov    gPersonBeamingSlices, 1;
+	gPersonBeamingSlices = 0x1;
 // LINE 209:
-	__asm        mov    gPersonBeamingForwardWeight, 4;
+	gPersonBeamingForwardWeight = 0x4;
 // LINE 211:
 	__asm        jmp    _T10a;
 _Td4:
 	__asm        cmp    velocity, 0x1E0000;
 	__asm        jle    _Tf8;
 // LINE 212:
-	__asm        mov    gPersonBeamingSlices, 0;
+	gPersonBeamingSlices = 0x0;
 // LINE 213:
-	__asm        mov    gPersonBeamingForwardWeight, 4;
+	gPersonBeamingForwardWeight = 0x4;
 // LINE 215:
 	__asm        jmp    _T10a;
 // LINE 216:
 _Tf8:
-	__asm        mov    gPersonBeamingSlices, 0;
+	gPersonBeamingSlices = 0x0;
 // LINE 217:
-	__asm        mov    gPersonBeamingForwardWeight, 4;
+	gPersonBeamingForwardWeight = 0x4;
 // LINE 220:
 _T10a:
 	__asm        jmp    _T10f;
@@ -3391,7 +3390,7 @@ class cYObject* cYObject::GetObjectA(struct _DYOBJ_INST *dyn) {
 	class cYObject *foundobj;
 
 // LINE 225:
-	__asm        mov    foundobj, 0;
+	foundobj = 0x0;
 // LINE 226:
 	__asm        mov    count, 0;
 	__asm        jmp    _T1f;
@@ -3441,8 +3440,7 @@ _Tab:
 	__asm        mov    obj, eax;
 	__asm        jmp    _Tc4;
 
-	__asm        mov    eax, [ebp-0x10];
-	__asm        mov    obj, eax;
+	obj = None;
 // LINE 228:
 _Tc4:
 	__asm        cmp    obj, 0;
@@ -3464,8 +3462,7 @@ _Tea:
 	__asm        cmp    eax, dyn;
 	__asm        jne    _T104;
 // LINE 231:
-	__asm        mov    eax, obj;
-	__asm        mov    foundobj, eax;
+	foundobj = obj;
 // LINE 232:
 	__asm        jmp    _T109;
 // LINE 234:
@@ -3481,8 +3478,7 @@ _T109:
 	__asm        cmp    eax, dyn;
 	__asm        jne    _T12c;
 // LINE 237:
-	__asm        mov    eax, gAvatar;
-	__asm        mov    foundobj, eax;
+	foundobj = gAvatar;
 // LINE 239:
 _T12c:
 	__asm        cmp    foundobj, 0;
@@ -3553,9 +3549,7 @@ _T207:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T223:
-	__asm        mov    eax, dyn;
-	__asm        mov    ax, [eax+0xE];
-	__asm        mov    [ebp-0x1C], ax;
+	None = dyn->user1;
 // LINE 244:
 	__asm        movsx  eax, word ptr [ebp-0x1C];
 	__asm        cmp    eax, 0x7D00;
@@ -3644,8 +3638,7 @@ _T82:
 	__asm        mov    dyobj, 0;
 	__asm        jmp    _T94;
 
-	__asm        mov    eax, [ebp-0x14];
-	__asm        mov    dyobj, eax;
+	dyobj = None;
 // LINE 254:
 _T94:
 	__asm        mov    eax, dyobj;
@@ -3665,7 +3658,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST *master, struct 
 	short smallradius;
 
 // LINE 260:
-	__asm        mov    maxcount, 2;
+	maxcount = 0x2;
 // LINE 261:
 	__asm        mov    eax, master;
 	__asm        movsx  eax, word ptr [eax+0xC];
@@ -4132,7 +4125,7 @@ _T5b:
 	__asm        add    esp, 0x10;
 // LINE 323:
 _Tad:
-	__asm        mov    ret, 0;
+	ret = 0x0;
 // LINE 324:
 	__asm        push   0x20000;
 	__asm        mov    eax, this;
@@ -4423,7 +4416,7 @@ _T43f:
 	__asm        jmp    _Te6;
 // LINE 342:
 _T444:
-	__asm        mov    ret, 1;
+	ret = 0x1;
 // LINE 343:
 	__asm        jmp    _T454;
 // LINE 344:
@@ -4636,7 +4629,7 @@ _T6d7:
 	__asm        jmp    _T464;
 // LINE 356:
 _T6dc:
-	__asm        mov    ret, 1;
+	ret = 0x1;
 // LINE 357:
 	__asm        jmp    _T6ec;
 // LINE 358:
@@ -4821,7 +4814,7 @@ _T8f6:
 	__asm        jmp    _T6fc;
 // LINE 370:
 _T914:
-	__asm        mov    ret, 1;
+	ret = 0x1;
 // LINE 371:
 	__asm        jmp    _T924;
 // LINE 372:
@@ -5106,7 +5099,7 @@ void S3PersonInit() {
 	double x;
 
 // LINE 406:
-	__asm        mov    success, 0;
+	success = 0x0;
 // LINE 409:
 	__asm        mov    i, 0;
 	__asm        jmp    _T1f;
@@ -5231,8 +5224,7 @@ _Ta4:
 	__asm        mov    obj, eax;
 	__asm        jmp    _Tbd;
 
-	__asm        mov    eax, [ebp-0xC];
-	__asm        mov    obj, eax;
+	obj = None;
 // LINE 448:
 _Tbd:
 	__asm        cmp    obj, 0;
@@ -5289,8 +5281,7 @@ void S3PersonUserStart(int32_t x, int32_t y, int32_t dx, int32_t dz) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T54:
-	__asm        mov    eax, gAvatar;
-	__asm        mov    [ebp-0x64], eax;
+	None = gAvatar;
 // LINE 458:
 	__asm        mov    eax, [ebp-0x64];
 	__asm        movsx  eax, word ptr [eax+0xD2];
@@ -5450,8 +5441,7 @@ _T235:
 
 	__asm        jmp    near ptr 0x0054614D;
 // LINE 459:
-	__asm        mov    eax, gAvatar;
-	__asm        mov    word ptr [eax+0xE2], 0;
+	gAvatar->fData[9] = 0x0;
 // LINE 460:
 	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xA4];
@@ -5582,8 +5572,7 @@ _T138:
 	__asm        add    esp, 0xC;
 	__asm        jmp    near ptr 0x005462FC;
 // LINE 476:
-	__asm        mov    eax, gAvatar;
-	__asm        mov    word ptr [eax+0xE2], 1;
+	gAvatar->fData[9] = 0x1;
 // LINE 478:
 	__asm        cmp    facingvector, 0;
 	__asm        je     _T1c6;
@@ -5866,8 +5855,7 @@ _Tba:
 	__asm        mov    obj, eax;
 	__asm        jmp    _Td3;
 
-	__asm        mov    eax, [ebp-0xC];
-	__asm        mov    obj, eax;
+	obj = None;
 // LINE 538:
 _Td3:
 	__asm        cmp    obj, 0;
@@ -5915,9 +5903,9 @@ void cAvatar::GetControlInput() {
 	int32_t rotateMult;
 
 // LINE 555:
-	__asm        mov    fwdrate, 0x140000;
+	fwdrate = 0x140000;
 // LINE 556:
-	__asm        mov    fwdmult, 0xA0000;
+	fwdmult = 0xa0000;
 // LINE 559:
 	__asm        cmp    G_CheatCodes[0], 0;
 	__asm        je     _T108;
@@ -5960,8 +5948,7 @@ _Ta3:
 	__asm        mov    word ptr [ebp-0x1C], 0xFFFF;
 	__asm        jmp    _Tb6;
 _Tae:
-	__asm        mov    ax, [ebp-0x20];
-	__asm        mov    [ebp-0x1C], ax;
+	None = None;
 _Tb6:
 	__asm        jmp    near ptr 0x00546780;
 
@@ -6025,8 +6012,7 @@ _T172:
 	__asm        mov    word ptr [ebp-0x24], 0xFFFF;
 	__asm        jmp    _T185;
 _T17d:
-	__asm        mov    ax, [ebp-0x28];
-	__asm        mov    [ebp-0x24], ax;
+	None = None;
 _T185:
 	__asm        jmp    near ptr 0x0054684F;
 
@@ -6038,9 +6024,9 @@ _T197:
 	__asm        jmp    _T19c;
 // LINE 575:
 _T19c:
-	__asm        mov    rotateRate, 0x640000;
+	rotateRate = 0x640000;
 // LINE 576:
-	__asm        mov    rotateMult, 0x320000;
+	rotateMult = 0x320000;
 // LINE 580:
 	__asm        push   8;
 	__asm        call   IsEventSet;
@@ -6137,9 +6123,7 @@ _T2aa:
 	__asm        cmp    [eax+0x174], ecx;
 	__asm        jle    _T2c8;
 // LINE 597:
-	__asm        mov    eax, fwdrate;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x174], eax;
+	this-><cAvatar+0x174> = fwdrate;
 // LINE 598:
 _T2c8:
 	__asm        mov    eax, this;
@@ -6232,9 +6216,7 @@ _T3bf:
 	__asm        cmp    [eax+0x178], ecx;
 	__asm        jle    _T3dd;
 // LINE 616:
-	__asm        mov    eax, rotateRate;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x178], eax;
+	this-><cAvatar+0x178> = rotateRate;
 // LINE 617:
 _T3dd:
 	__asm        mov    eax, this;
@@ -6325,9 +6307,7 @@ struct _HELI_DATA* S3PersonGetLandedHeli(struct Point3d *loc) {
 	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 659:
-	__asm        mov    eax, cptr;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    dyobj, eax;
+	dyobj = cptr->dyptr;
 // LINE 660:
 _T51:
 	__asm        cmp    dyobj, 0;
@@ -6341,9 +6321,7 @@ _T51:
 	__asm        jmp    _T7c;
 // LINE 666:
 _T6f:
-	__asm        mov    eax, dyobj;
-	__asm        mov    eax, [eax];
-	__asm        mov    dyobj, eax;
+	dyobj = dyobj->next;
 // LINE 667:
 	__asm        jmp    _T51;
 // LINE 669:
@@ -6515,8 +6493,7 @@ _T13d:
 	__asm        mov    obj, eax;
 	__asm        jmp    _T156;
 
-	__asm        mov    eax, [ebp-0x14];
-	__asm        mov    obj, eax;
+	obj = None;
 // LINE 699:
 _T156:
 	__asm        mov    eax, obj;
@@ -6704,9 +6681,7 @@ _T90:
 	__asm        add    esp, 0x10;
 // LINE 722:
 _Tac:
-	__asm        mov    ax, scurkID;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xFC], ax;
+	this->fData[22] = scurkID;
 // LINE 724:
 	__asm        mov    ax, treeID;
 	__asm        mov    ecx, this;
@@ -7035,8 +7010,7 @@ _T237:
 	__asm        mov    obj, eax;
 	__asm        jmp    _T250;
 
-	__asm        mov    eax, [ebp-0x48];
-	__asm        mov    obj, eax;
+	obj = None;
 // LINE 770:
 _T250:
 	__asm        cmp    obj, 0;
@@ -7050,9 +7024,7 @@ _T250:
 	__asm        add    esp, 0x10;
 // LINE 771:
 _T276:
-	__asm        mov    ax, id;
-	__asm        mov    ecx, obj;
-	__asm        mov    [ecx+0xFC], ax;
+	obj->fData[22] = id;
 // LINE 774:
 	__asm        jmp    _T289;
 _T289:
@@ -7294,9 +7266,7 @@ _T23a:
 	__asm        test   eax, eax;
 	__asm        je     _T29a;
 
-	__asm        mov    ax, fieldershift;
-	__asm        mov    ecx, newperson;
-	__asm        mov    [ecx+0xF0], ax;
+	newperson->fData[16] = fieldershift;
 // LINE 823:
 _T29a:
 	__asm        call   cYObject::GetSleepingPerson;
@@ -7321,9 +7291,7 @@ _T29a:
 	__asm        test   eax, eax;
 	__asm        je     _T2ec;
 
-	__asm        mov    ax, fieldershift;
-	__asm        mov    ecx, newperson;
-	__asm        mov    [ecx+0xF0], ax;
+	newperson->fData[16] = fieldershift;
 // LINE 824:
 _T2ec:
 	__asm        call   cYObject::GetSleepingPerson;
@@ -7348,9 +7316,7 @@ _T2ec:
 	__asm        test   eax, eax;
 	__asm        je     _T33e;
 
-	__asm        mov    ax, fieldershift;
-	__asm        mov    ecx, newperson;
-	__asm        mov    [ecx+0xF0], ax;
+	newperson->fData[16] = fieldershift;
 // LINE 825:
 _T33e:
 	__asm        call   cYObject::GetSleepingPerson;
@@ -7375,9 +7341,7 @@ _T33e:
 	__asm        test   eax, eax;
 	__asm        je     _T390;
 
-	__asm        mov    ax, fieldershift;
-	__asm        mov    ecx, newperson;
-	__asm        mov    [ecx+0xF0], ax;
+	newperson->fData[16] = fieldershift;
 // LINE 826:
 _T390:
 	__asm        call   cYObject::GetSleepingPerson;
@@ -7402,9 +7366,7 @@ _T390:
 	__asm        test   eax, eax;
 	__asm        je     _T3e2;
 
-	__asm        mov    ax, fieldershift;
-	__asm        mov    ecx, newperson;
-	__asm        mov    [ecx+0xF0], ax;
+	newperson->fData[16] = fieldershift;
 // LINE 827:
 _T3e2:
 	__asm        call   cYObject::GetSleepingPerson;
@@ -7429,9 +7391,7 @@ _T3e2:
 	__asm        test   eax, eax;
 	__asm        je     _T434;
 
-	__asm        mov    ax, fieldershift;
-	__asm        mov    ecx, newperson;
-	__asm        mov    [ecx+0xF0], ax;
+	newperson->fData[16] = fieldershift;
 // LINE 828:
 _T434:
 	__asm        call   cYObject::GetSleepingPerson;
@@ -7456,9 +7416,7 @@ _T434:
 	__asm        test   eax, eax;
 	__asm        je     _T486;
 
-	__asm        mov    ax, fieldershift;
-	__asm        mov    ecx, newperson;
-	__asm        mov    [ecx+0xF0], ax;
+	newperson->fData[16] = fieldershift;
 // LINE 829:
 _T486:
 	__asm        jmp    _T4ed;
@@ -7520,11 +7478,9 @@ _T24:
 	__asm        jmp    _T186;
 // LINE 847:
 _T71:
-	__asm        mov    ax, cellx;
-	__asm        mov    sAvLastCellX, ax;
+	sAvLastCellX = cellx;
 // LINE 848:
-	__asm        mov    ax, celly;
-	__asm        mov    sAvLastCellY, ax;
+	sAvLastCellY = celly;
 // LINE 853:
 	__asm        movsx  eax, cellx;
 	__asm        movsx  ecx, cYObject::sScurkRectRad;
@@ -7546,11 +7502,9 @@ _T71:
 	__asm        add    eax, ecx;
 	__asm        mov    r.bottom, ax;
 // LINE 857:
-	__asm        mov    ax, r.left;
-	__asm        mov    cellx, ax;
+	cellx = r.left;
 // LINE 858:
-	__asm        mov    ax, r.top;
-	__asm        mov    celly, ax;
+	celly = r.top;
 // LINE 859:
 	__asm        movsx  eax, cYObject::sScurkRectRad;
 	__asm        add    eax, eax;
@@ -7622,7 +7576,7 @@ void cYObject::BeamRemainingAmbients() {
 	short numtries;
 
 // LINE 872:
-	__asm        mov    numtries, 0;
+	numtries = 0x0;
 // LINE 873:
 _T0f:
 	__asm        movsx  eax, cYObject::sAmbientTopOff;
@@ -7640,8 +7594,7 @@ _T0f:
 // Block start:
 	short id;
 	short lastnumawake;
-	__asm        mov    ax, cYObject::sNumAmbientAwake;
-	__asm        mov    lastnumawake, ax;
+	lastnumawake = cYObject::sNumAmbientAwake;
 // LINE 875:
 	__asm        push   0;
 	__asm        push   0;
@@ -7787,7 +7740,7 @@ class cYObject* cYObject::GetSleepingPerson() {
 	class cYObject *test;
 
 // LINE 899:
-	__asm        mov    sleeper, 0;
+	sleeper = 0x0;
 // LINE 900:
 	__asm        mov    count, 0;
 	__asm        jmp    _T1f;
@@ -7837,8 +7790,7 @@ _Tab:
 	__asm        mov    test, eax;
 	__asm        jmp    _Tc4;
 
-	__asm        mov    eax, [ebp-0x10];
-	__asm        mov    test, eax;
+	test = None;
 // LINE 902:
 _Tc4:
 	__asm        cmp    test, 0;
@@ -7857,8 +7809,7 @@ _Tea:
 	__asm        test   eax, eax;
 	__asm        jne    _T107;
 // LINE 904:
-	__asm        mov    eax, test;
-	__asm        mov    sleeper, eax;
+	sleeper = test;
 // LINE 905:
 	__asm        jmp    _T10c;
 // LINE 907:
@@ -8008,8 +7959,7 @@ _Td8:
 	__asm        mov    personobj, eax;
 	__asm        jmp    _Tf1;
 
-	__asm        mov    eax, [ebp-0x1C];
-	__asm        mov    personobj, eax;
+	personobj = None;
 // LINE 955:
 _Tf1:
 	__asm        cmp    personobj, 0;
@@ -8080,37 +8030,37 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 // Block start:
 	short n;
 	short count;
-	__asm        mov    cYObject::sUnitVectorTable[0].x, 0;
+	cYObject::sUnitVectorTable[0].x = 0x0;
 // LINE 968:
-	__asm        mov    cYObject::sUnitVectorTable[0].z, 0xFFFF0000;
+	cYObject::sUnitVectorTable[0].z = 0xffff0000;
 // LINE 970:
-	__asm        mov    cYObject::sUnitVectorTable[1].x, 0xB504;
+	cYObject::sUnitVectorTable[1].x = 0xb504;
 // LINE 971:
-	__asm        mov    cYObject::sUnitVectorTable[1].z, 0xFFFF4AFC;
+	cYObject::sUnitVectorTable[1].z = 0xffff4afc;
 // LINE 973:
-	__asm        mov    cYObject::sUnitVectorTable[2].x, 0x10000;
+	cYObject::sUnitVectorTable[2].x = 0x10000;
 // LINE 974:
-	__asm        mov    cYObject::sUnitVectorTable[2].z, 0;
+	cYObject::sUnitVectorTable[2].z = 0x0;
 // LINE 976:
-	__asm        mov    cYObject::sUnitVectorTable[3].x, 0xB504;
+	cYObject::sUnitVectorTable[3].x = 0xb504;
 // LINE 977:
-	__asm        mov    cYObject::sUnitVectorTable[3].z, 0xB504;
+	cYObject::sUnitVectorTable[3].z = 0xb504;
 // LINE 979:
-	__asm        mov    cYObject::sUnitVectorTable[4].x, 0;
+	cYObject::sUnitVectorTable[4].x = 0x0;
 // LINE 980:
-	__asm        mov    cYObject::sUnitVectorTable[4].z, 0x10000;
+	cYObject::sUnitVectorTable[4].z = 0x10000;
 // LINE 982:
-	__asm        mov    cYObject::sUnitVectorTable[5].x, 0xFFFF4AFC;
+	cYObject::sUnitVectorTable[5].x = 0xffff4afc;
 // LINE 983:
-	__asm        mov    cYObject::sUnitVectorTable[5].z, 0xB504;
+	cYObject::sUnitVectorTable[5].z = 0xb504;
 // LINE 985:
-	__asm        mov    cYObject::sUnitVectorTable[6].x, 0xFFFF0000;
+	cYObject::sUnitVectorTable[6].x = 0xffff0000;
 // LINE 986:
-	__asm        mov    cYObject::sUnitVectorTable[6].z, 0;
+	cYObject::sUnitVectorTable[6].z = 0x0;
 // LINE 988:
-	__asm        mov    cYObject::sUnitVectorTable[7].x, 0xFFFF4AFC;
+	cYObject::sUnitVectorTable[7].x = 0xffff4afc;
 // LINE 989:
-	__asm        mov    cYObject::sUnitVectorTable[7].z, 0xFFFF4AFC;
+	cYObject::sUnitVectorTable[7].z = 0xffff4afc;
 // LINE 992:
 	__asm        mov    count, 0;
 	__asm        jmp    _Tdd;
@@ -8172,7 +8122,7 @@ _T110:
 	__asm        jmp    _T10c;
 // LINE 1003:
 _T1a0:
-	__asm        mov    cYObject::sStackSize[0], 0xA;
+	cYObject::sStackSize[0] = 0xa;
 // LINE 1005:
 	__asm        mov    count, 0;
 	__asm        jmp    _T1b8;
@@ -9208,7 +9158,7 @@ _T1051:
 	__asm        jmp    _T104d;
 // LINE 1194:
 _T1072:
-	__asm        mov    cYObject::sInited, 1;
+	cYObject::sInited = 0x1;
 // LINE 1197:
 	__asm        cmp    globalBehaviorFileName, 0;
 	__asm        jne    _T10a1;
@@ -9265,7 +9215,7 @@ _T1102:
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    _T1139;
 _T1132:
-	__asm        mov    dword ptr [ebp-0x1C], 0;
+	None = 0x0;
 _T1139:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x1C];
@@ -9288,7 +9238,7 @@ _T1139:
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _T118d;
 _T1186:
-	__asm        mov    dword ptr [ebp-0x24], 0;
+	None = 0x0;
 _T118d:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x24];
@@ -9317,7 +9267,7 @@ _T11cc:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T11ed:
-	__asm        mov    cYObject::PrimProcs[0], 0x552370;
+	cYObject::PrimProcs[0] = 0x552370;
 // LINE 1211:
 	__asm        jmp    _T1218;
 
@@ -9328,7 +9278,7 @@ _T11ed:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T1218:
-	__asm        mov    cYObject::PrimProcs[1], 0x552390;
+	cYObject::PrimProcs[1] = 0x552390;
 // LINE 1212:
 	__asm        jmp    _T1243;
 
@@ -9339,7 +9289,7 @@ _T1218:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T1243:
-	__asm        mov    cYObject::PrimProcs[2], 0x5523B0;
+	cYObject::PrimProcs[2] = 0x5523b0;
 // LINE 1214:
 	__asm        jmp    _T126e;
 
@@ -9350,7 +9300,7 @@ _T1243:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T126e:
-	__asm        mov    cYObject::PrimProcs[4], 0x5523D0;
+	cYObject::PrimProcs[4] = 0x5523d0;
 // LINE 1215:
 	__asm        jmp    _T1299;
 
@@ -9361,7 +9311,7 @@ _T126e:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T1299:
-	__asm        mov    cYObject::PrimProcs[6], 0x5523F0;
+	cYObject::PrimProcs[6] = 0x5523f0;
 // LINE 1216:
 	__asm        jmp    _T12c4;
 
@@ -9372,7 +9322,7 @@ _T1299:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T12c4:
-	__asm        mov    cYObject::PrimProcs[7], 0x552410;
+	cYObject::PrimProcs[7] = 0x552410;
 // LINE 1221:
 	__asm        jmp    _T12ef;
 
@@ -9383,7 +9333,7 @@ _T12c4:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T12ef:
-	__asm        mov    cYObject::PrimProcs[12], 0x552430;
+	cYObject::PrimProcs[12] = 0x552430;
 // LINE 1222:
 	__asm        jmp    _T131a;
 
@@ -9394,7 +9344,7 @@ _T12ef:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T131a:
-	__asm        mov    cYObject::PrimProcs[13], 0x552450;
+	cYObject::PrimProcs[13] = 0x552450;
 // LINE 1223:
 	__asm        jmp    _T1345;
 
@@ -9405,7 +9355,7 @@ _T131a:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T1345:
-	__asm        mov    cYObject::PrimProcs[14], 0x552470;
+	cYObject::PrimProcs[14] = 0x552470;
 // LINE 1224:
 	__asm        jmp    _T1370;
 
@@ -9416,7 +9366,7 @@ _T1345:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T1370:
-	__asm        mov    cYObject::PrimProcs[15], 0x552490;
+	cYObject::PrimProcs[15] = 0x552490;
 // LINE 1225:
 	__asm        jmp    _T139b;
 
@@ -9427,7 +9377,7 @@ _T1370:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T139b:
-	__asm        mov    cYObject::PrimProcs[16], 0x5524B0;
+	cYObject::PrimProcs[16] = 0x5524b0;
 // LINE 1226:
 	__asm        jmp    _T13c6;
 
@@ -9438,7 +9388,7 @@ _T139b:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T13c6:
-	__asm        mov    cYObject::PrimProcs[17], 0x5524D0;
+	cYObject::PrimProcs[17] = 0x5524d0;
 // LINE 1227:
 	__asm        jmp    _T13f1;
 
@@ -9449,7 +9399,7 @@ _T13c6:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T13f1:
-	__asm        mov    cYObject::PrimProcs[18], 0x5524F0;
+	cYObject::PrimProcs[18] = 0x5524f0;
 // LINE 1228:
 	__asm        jmp    _T141c;
 
@@ -9460,7 +9410,7 @@ _T13f1:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T141c:
-	__asm        mov    cYObject::PrimProcs[19], 0x552510;
+	cYObject::PrimProcs[19] = 0x552510;
 // LINE 1229:
 	__asm        jmp    _T1447;
 
@@ -9471,7 +9421,7 @@ _T141c:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T1447:
-	__asm        mov    cYObject::PrimProcs[20], 0x552530;
+	cYObject::PrimProcs[20] = 0x552530;
 // LINE 1230:
 	__asm        jmp    _T1472;
 
@@ -9482,7 +9432,7 @@ _T1447:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T1472:
-	__asm        mov    cYObject::PrimProcs[21], 0x552550;
+	cYObject::PrimProcs[21] = 0x552550;
 // LINE 1231:
 	__asm        jmp    _T149d;
 
@@ -9493,7 +9443,7 @@ _T1472:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T149d:
-	__asm        mov    cYObject::PrimProcs[22], 0x552570;
+	cYObject::PrimProcs[22] = 0x552570;
 // LINE 1232:
 	__asm        jmp    _T14c8;
 
@@ -9504,7 +9454,7 @@ _T149d:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T14c8:
-	__asm        mov    cYObject::PrimProcs[23], 0x552590;
+	cYObject::PrimProcs[23] = 0x552590;
 // LINE 1233:
 	__asm        jmp    _T14f3;
 
@@ -9515,7 +9465,7 @@ _T14c8:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T14f3:
-	__asm        mov    cYObject::PrimProcs[24], 0x5525B0;
+	cYObject::PrimProcs[24] = 0x5525b0;
 // LINE 1234:
 	__asm        jmp    _T151e;
 
@@ -9526,7 +9476,7 @@ _T14f3:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T151e:
-	__asm        mov    cYObject::PrimProcs[25], 0x5525D0;
+	cYObject::PrimProcs[25] = 0x5525d0;
 // LINE 1235:
 	__asm        jmp    _T1549;
 
@@ -9537,7 +9487,7 @@ _T151e:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T1549:
-	__asm        mov    cYObject::PrimProcs[26], 0x5525F0;
+	cYObject::PrimProcs[26] = 0x5525f0;
 // LINE 1236:
 	__asm        jmp    _T1574;
 
@@ -9548,7 +9498,7 @@ _T1549:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T1574:
-	__asm        mov    cYObject::PrimProcs[27], 0x552610;
+	cYObject::PrimProcs[27] = 0x552610;
 // LINE 1237:
 	__asm        jmp    _T159f;
 
@@ -9559,7 +9509,7 @@ _T1574:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T159f:
-	__asm        mov    cYObject::PrimProcs[28], 0x552630;
+	cYObject::PrimProcs[28] = 0x552630;
 // LINE 1238:
 	__asm        jmp    _T15ca;
 
@@ -9570,7 +9520,7 @@ _T159f:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T15ca:
-	__asm        mov    cYObject::PrimProcs[29], 0x552650;
+	cYObject::PrimProcs[29] = 0x552650;
 // LINE 1239:
 	__asm        jmp    _T15f5;
 
@@ -9581,7 +9531,7 @@ _T15ca:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T15f5:
-	__asm        mov    cYObject::PrimProcs[30], 0x552670;
+	cYObject::PrimProcs[30] = 0x552670;
 // LINE 1240:
 	__asm        jmp    _T1620;
 
@@ -9592,7 +9542,7 @@ _T15f5:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T1620:
-	__asm        mov    cYObject::PrimProcs[31], 0x552690;
+	cYObject::PrimProcs[31] = 0x552690;
 // LINE 1241:
 	__asm        jmp    _T164b;
 
@@ -9603,7 +9553,7 @@ _T1620:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T164b:
-	__asm        mov    cYObject::PrimProcs[32], 0x5526B0;
+	cYObject::PrimProcs[32] = 0x5526b0;
 // LINE 1242:
 	__asm        jmp    _T1676;
 
@@ -9614,7 +9564,7 @@ _T164b:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T1676:
-	__asm        mov    cYObject::PrimProcs[33], 0x5526D0;
+	cYObject::PrimProcs[33] = 0x5526d0;
 // LINE 1243:
 	__asm        jmp    _T16a1;
 
@@ -9625,7 +9575,7 @@ _T1676:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T16a1:
-	__asm        mov    cYObject::PrimProcs[34], 0x5526F0;
+	cYObject::PrimProcs[34] = 0x5526f0;
 // LINE 1244:
 	__asm        jmp    _T16cc;
 
@@ -9636,7 +9586,7 @@ _T16a1:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T16cc:
-	__asm        mov    cYObject::PrimProcs[35], 0x552710;
+	cYObject::PrimProcs[35] = 0x552710;
 // LINE 1245:
 	__asm        jmp    _T16f7;
 
@@ -9647,7 +9597,7 @@ _T16cc:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T16f7:
-	__asm        mov    cYObject::PrimProcs[36], 0x552730;
+	cYObject::PrimProcs[36] = 0x552730;
 // LINE 1246:
 	__asm        jmp    _T1722;
 
@@ -9658,7 +9608,7 @@ _T16f7:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T1722:
-	__asm        mov    cYObject::PrimProcs[37], 0x552750;
+	cYObject::PrimProcs[37] = 0x552750;
 // LINE 1247:
 	__asm        jmp    _T174d;
 
@@ -9669,7 +9619,7 @@ _T1722:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T174d:
-	__asm        mov    cYObject::PrimProcs[38], 0x552770;
+	cYObject::PrimProcs[38] = 0x552770;
 // LINE 1248:
 	__asm        jmp    _T1778;
 
@@ -9680,7 +9630,7 @@ _T174d:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T1778:
-	__asm        mov    cYObject::PrimProcs[39], 0x552790;
+	cYObject::PrimProcs[39] = 0x552790;
 // LINE 1249:
 	__asm        jmp    _T17a3;
 
@@ -9691,7 +9641,7 @@ _T1778:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T17a3:
-	__asm        mov    cYObject::PrimProcs[40], 0x5527B0;
+	cYObject::PrimProcs[40] = 0x5527b0;
 // LINE 1251:
 	__asm        jmp    _T17ce;
 
@@ -9702,7 +9652,7 @@ _T17a3:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T17ce:
-	__asm        mov    cYObject::PrimProcs[42], 0x5527D0;
+	cYObject::PrimProcs[42] = 0x5527d0;
 // LINE 1252:
 	__asm        jmp    _T17f9;
 
@@ -9713,7 +9663,7 @@ _T17ce:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T17f9:
-	__asm        mov    cYObject::PrimProcs[43], 0x5527F0;
+	cYObject::PrimProcs[43] = 0x5527f0;
 // LINE 1253:
 	__asm        jmp    _T1824;
 
@@ -9724,7 +9674,7 @@ _T17f9:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T1824:
-	__asm        mov    cYObject::PrimProcs[44], 0x552810;
+	cYObject::PrimProcs[44] = 0x552810;
 // LINE 1254:
 	__asm        jmp    _T184f;
 
@@ -9735,7 +9685,7 @@ _T1824:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T184f:
-	__asm        mov    cYObject::PrimProcs[45], 0x552830;
+	cYObject::PrimProcs[45] = 0x552830;
 // LINE 1255:
 	__asm        jmp    _T187a;
 
@@ -9746,7 +9696,7 @@ _T184f:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T187a:
-	__asm        mov    cYObject::PrimProcs[46], 0x552850;
+	cYObject::PrimProcs[46] = 0x552850;
 // LINE 1256:
 	__asm        jmp    _T18a5;
 
@@ -9757,7 +9707,7 @@ _T187a:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T18a5:
-	__asm        mov    cYObject::PrimProcs[47], 0x552870;
+	cYObject::PrimProcs[47] = 0x552870;
 // LINE 1257:
 	__asm        jmp    _T18d0;
 
@@ -9768,7 +9718,7 @@ _T18a5:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T18d0:
-	__asm        mov    cYObject::PrimProcs[48], 0x552890;
+	cYObject::PrimProcs[48] = 0x552890;
 // LINE 1258:
 	__asm        jmp    _T18fb;
 
@@ -9779,7 +9729,7 @@ _T18d0:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T18fb:
-	__asm        mov    cYObject::PrimProcs[49], 0x5528B0;
+	cYObject::PrimProcs[49] = 0x5528b0;
 // LINE 1259:
 	__asm        jmp    _T1926;
 
@@ -9790,7 +9740,7 @@ _T18fb:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T1926:
-	__asm        mov    cYObject::PrimProcs[50], 0x5528D0;
+	cYObject::PrimProcs[50] = 0x5528d0;
 // LINE 1260:
 	__asm        jmp    _T1951;
 
@@ -9801,7 +9751,7 @@ _T1926:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T1951:
-	__asm        mov    cYObject::PrimProcs[51], 0x5528F0;
+	cYObject::PrimProcs[51] = 0x5528f0;
 // LINE 1261:
 	__asm        jmp    _T197c;
 
@@ -9812,7 +9762,7 @@ _T1951:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T197c:
-	__asm        mov    cYObject::PrimProcs[52], 0x552910;
+	cYObject::PrimProcs[52] = 0x552910;
 // LINE 1262:
 	__asm        jmp    _T19a7;
 
@@ -9823,7 +9773,7 @@ _T197c:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T19a7:
-	__asm        mov    cYObject::PrimProcs[53], 0x552930;
+	cYObject::PrimProcs[53] = 0x552930;
 // LINE 1263:
 	__asm        jmp    _T19d2;
 
@@ -9834,7 +9784,7 @@ _T19a7:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T19d2:
-	__asm        mov    cYObject::PrimProcs[54], 0x552950;
+	cYObject::PrimProcs[54] = 0x552950;
 // LINE 1264:
 	__asm        jmp    _T19fd;
 
@@ -9845,7 +9795,7 @@ _T19d2:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T19fd:
-	__asm        mov    cYObject::PrimProcs[55], 0x552970;
+	cYObject::PrimProcs[55] = 0x552970;
 // LINE 1265:
 	__asm        jmp    _T1a28;
 
@@ -9856,7 +9806,7 @@ _T19fd:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T1a28:
-	__asm        mov    cYObject::PrimProcs[56], 0x552990;
+	cYObject::PrimProcs[56] = 0x552990;
 // LINE 1266:
 	__asm        jmp    _T1a53;
 
@@ -9867,7 +9817,7 @@ _T1a28:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T1a53:
-	__asm        mov    cYObject::PrimProcs[57], 0x5529B0;
+	cYObject::PrimProcs[57] = 0x5529b0;
 // LINE 1267:
 	__asm        jmp    _T1a7e;
 
@@ -9878,7 +9828,7 @@ _T1a53:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T1a7e:
-	__asm        mov    cYObject::PrimProcs[58], 0x5529D0;
+	cYObject::PrimProcs[58] = 0x5529d0;
 // LINE 1268:
 	__asm        jmp    _T1aa9;
 
@@ -9889,7 +9839,7 @@ _T1a7e:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T1aa9:
-	__asm        mov    cYObject::PrimProcs[59], 0x5529F0;
+	cYObject::PrimProcs[59] = 0x5529f0;
 // LINE 1269:
 	__asm        jmp    _T1ad4;
 
@@ -9900,7 +9850,7 @@ _T1aa9:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T1ad4:
-	__asm        mov    cYObject::PrimProcs[60], 0x552A10;
+	cYObject::PrimProcs[60] = 0x552a10;
 // LINE 1270:
 	__asm        jmp    _T1aff;
 
@@ -9911,7 +9861,7 @@ _T1ad4:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T1aff:
-	__asm        mov    cYObject::PrimProcs[61], 0x552A30;
+	cYObject::PrimProcs[61] = 0x552a30;
 // LINE 1271:
 	__asm        jmp    _T1b2a;
 
@@ -9922,7 +9872,7 @@ _T1aff:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T1b2a:
-	__asm        mov    cYObject::PrimProcs[62], 0x552A50;
+	cYObject::PrimProcs[62] = 0x552a50;
 // LINE 1272:
 	__asm        jmp    _T1b55;
 
@@ -9933,7 +9883,7 @@ _T1b2a:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T1b55:
-	__asm        mov    cYObject::PrimProcs[63], 0x552A70;
+	cYObject::PrimProcs[63] = 0x552a70;
 // LINE 1275:
 // Block end:
 _T1b5f:
@@ -9975,15 +9925,15 @@ unsigned short cYObject::BeamIntoCameraRange() {
 	int32_t xdir;
 
 // LINE 1283:
-	__asm        mov    curr_dist, 0;
+	curr_dist = 0x0;
 // LINE 1284:
-	__asm        mov    curr_dir, 0xFFFFFFFF;
+	curr_dir = 0xffffffff;
 // LINE 1286:
-	__asm        mov    stop_now, 0;
+	stop_now = 0x0;
 // LINE 1287:
-	__asm        mov    spiral_dist, 7;
+	spiral_dist = 0x7;
 // LINE 1288:
-	__asm        mov    foundcell, 0;
+	foundcell = 0x0;
 // LINE 1291:
 	__asm        mov    eax, 0x6C1210;
 	__asm        add    eax, 0x14;
@@ -10004,15 +9954,13 @@ unsigned short cYObject::BeamIntoCameraRange() {
 	__asm        jmp    _T133;
 // LINE 1299:
 _T62:
-	__asm        mov    eax, vec.z;
-	__asm        mov    vec.y, eax;
+	vec.y = vec.z;
 // LINE 1300:
 	__asm        mov    eax, vec.x;
 	__asm        neg    eax;
 	__asm        mov    vec.z, eax;
 // LINE 1301:
-	__asm        mov    eax, vec.y;
-	__asm        mov    vec.x, eax;
+	vec.x = vec.y;
 // LINE 1303:
 	__asm        mov    eax, G_ViewSize;
 	__asm        sar    eax, 1;
@@ -10032,11 +9980,9 @@ _T9c:
 	__asm        neg    eax;
 	__asm        mov    vec.y, eax;
 // LINE 1309:
-	__asm        mov    eax, vec.x;
-	__asm        mov    vec.z, eax;
+	vec.z = vec.x;
 // LINE 1310:
-	__asm        mov    eax, vec.y;
-	__asm        mov    vec.x, eax;
+	vec.x = vec.y;
 // LINE 1312:
 	__asm        mov    eax, G_ViewSize;
 	__asm        sar    eax, 1;
@@ -10125,33 +10071,33 @@ _T187:
 	__asm        mov    [ebp-0x48], eax;
 	__asm        jmp    _T1f3;
 // LINE 1347:
-	__asm        mov    curr_dir, 0;
+	curr_dir = 0x0;
 // LINE 1348:
 	__asm        inc    curr_dist;
 // LINE 1349:
-	__asm        mov    xdir, 0;
+	xdir = 0x0;
 // LINE 1350:
-	__asm        mov    ydir, 0xFFFFFFFF;
+	ydir = 0xffffffff;
 // LINE 1351:
 	__asm        jmp    _T21b;
 // LINE 1353:
-	__asm        mov    xdir, 1;
+	xdir = 0x1;
 // LINE 1354:
-	__asm        mov    ydir, 0;
+	ydir = 0x0;
 // LINE 1355:
 	__asm        jmp    _T21b;
 // LINE 1357:
 	__asm        inc    curr_dist;
 // LINE 1358:
-	__asm        mov    xdir, 0;
+	xdir = 0x0;
 // LINE 1359:
-	__asm        mov    ydir, 1;
+	ydir = 0x1;
 // LINE 1360:
 	__asm        jmp    _T21b;
 // LINE 1362:
-	__asm        mov    xdir, 0xFFFFFFFF;
+	xdir = 0xffffffff;
 // LINE 1363:
-	__asm        mov    ydir, 0;
+	ydir = 0x0;
 // LINE 1364:
 	__asm        jmp    _T21b;
 // LINE 1365:
@@ -10171,7 +10117,7 @@ _T21b:
 // LINE 1371:
 	__asm        dec    curr_dist;
 // LINE 1372:
-	__asm        mov    stop_now, 1;
+	stop_now = 0x1;
 // LINE 1376:
 _T230:
 	__asm        mov    i, 0;
@@ -10216,7 +10162,7 @@ _T23f:
 	__asm        cmp    eax, 0xC;
 	__asm        jle    _T2af;
 // LINE 1393:
-	__asm        mov    cYObject::sBeamed, 0xC;
+	cYObject::sBeamed = 0xc;
 // LINE 1394:
 _T2af:
 	__asm        mov    ax, 1;
@@ -10243,7 +10189,7 @@ _T2c9:
 	__asm        test   eax, eax;
 	__asm        jge    _T2f9;
 // LINE 1404:
-	__asm        mov    cYObject::sBeamed, 0;
+	cYObject::sBeamed = 0x0;
 // LINE 1405:
 _T2f9:
 	__asm        xor    ax, ax;
@@ -10424,8 +10370,7 @@ _T17a:
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    _T1cf;
 _T1c9:
-	__asm        mov    eax, [ebp-0x34];
-	__asm        mov    [ebp-0x3C], eax;
+	None = None;
 _T1cf:
 	__asm        jmp    near ptr 0x0054A0D8;
 
@@ -10453,7 +10398,7 @@ _T1cf:
 	__asm        sub    eax, ViewState.world_pos.x;
 	__asm        mov    ztoview, eax;
 // LINE 1445:
-	__asm        mov    behindView, 0;
+	behindView = 0x0;
 // LINE 1447:
 	__asm        cmp    xtoview, 0;
 	__asm        jge    _T231;
@@ -10480,7 +10425,7 @@ _T259:
 	__asm        jge    _T273;
 // LINE 1448:
 _T26d:
-	__asm        mov    behindView, 1;
+	behindView = 0x1;
 // LINE 1449:
 _T273:
 	__asm        test   reinterpret_cast<uint32_t>(behindView), 0xFFFF;
@@ -10523,7 +10468,7 @@ short StartPerson(enum PersonType persontype, enum MissionType mission, short ce
 	class cYObject *newperson;
 
 // LINE 1466:
-	__asm        mov    ret, 0xFFFF;
+	ret = 0xffff;
 // LINE 1467:
 	__asm        call   cYObject::GetSleepingPerson;
 	__asm        mov    newperson, eax;
@@ -10551,9 +10496,7 @@ short StartPerson(enum PersonType persontype, enum MissionType mission, short ce
 	__asm        test   eax, eax;
 	__asm        je     _T5e;
 // LINE 1471:
-	__asm        mov    eax, newperson;
-	__asm        mov    ax, [eax+0xBC];
-	__asm        mov    ret, ax;
+	ret = newperson->fID;
 // LINE 1472:
 _T5e:
 	__asm        mov    ax, ret;
@@ -10616,8 +10559,7 @@ _Ta4:
 	__asm        mov    obj, eax;
 	__asm        jmp    _Tbd;
 
-	__asm        mov    eax, [ebp-0xC];
-	__asm        mov    obj, eax;
+	obj = None;
 // LINE 1479:
 _Tbd:
 	__asm        cmp    obj, 0;
@@ -10658,14 +10600,13 @@ void KillMissionPeople(long missionid) {
 	short count;
 
 // LINE 1493:
-	__asm        mov    eax, missionid;
-	__asm        mov    mp.id, eax;
+	mp.id = missionid;
 // LINE 1494:
-	__asm        mov    mp.flags, 0;
+	mp.flags = 0x0;
 // LINE 1495:
-	__asm        mov    mp.i2num, 1;
+	mp.i2num = 0x1;
 // LINE 1496:
-	__asm        mov    mp.op, 0x17;
+	mp.op = 0x17;
 // LINE 1499:
 	__asm        mov    count, 0;
 	__asm        jmp    _T33;
@@ -10717,8 +10658,7 @@ _Tbf:
 	__asm        mov    obj, eax;
 	__asm        jmp    _Td8;
 
-	__asm        mov    eax, [ebp-0x28];
-	__asm        mov    obj, eax;
+	obj = None;
 // LINE 1501:
 _Td8:
 	__asm        cmp    obj, 0;
@@ -10744,7 +10684,7 @@ _Tfe:
 // LINE 1503:
 // Block start:
 	unsigned short die;
-	__asm        mov    die, 0;
+	die = 0x0;
 // LINE 1504:
 	__asm        mov    eax, obj;
 	__asm        movsx  eax, word ptr [eax+0xD8];
@@ -10778,7 +10718,7 @@ _T158:
 	__asm        cmp    [eax+0x130], ecx;
 	__asm        je     _T1a4;
 // LINE 1516:
-	__asm        mov    die, 1;
+	die = 0x1;
 // LINE 1517:
 _T1a4:
 	__asm        jmp    _T1e3;
@@ -10893,12 +10833,12 @@ unsigned short cYObject::IsSuitableForMission(enum MissionType mission, short ce
 	unsigned short ret;
 
 // LINE 1541:
-	__asm        mov    ret, 0;
+	ret = 0x0;
 // LINE 1542:
 	__asm        cmp    mission, 0;
 	__asm        jne    _T24;
 
-	__asm        mov    ret, 1;
+	ret = 0x1;
 // LINE 1543:
 	__asm        jmp    _T157;
 // LINE 1544:
@@ -10969,7 +10909,7 @@ _Tbd:
 	__asm        je     _Tfb;
 // LINE 1548:
 _Tf0:
-	__asm        mov    ret, 0;
+	ret = 0x0;
 // LINE 1549:
 	__asm        jmp    _T157;
 // LINE 1550:
@@ -11002,7 +10942,7 @@ _T11d:
 	__asm        cmp    cYObject::sNeutralMissionLocs[0][0][ecx+eax*4], edx;
 	__asm        jne    _T152;
 // LINE 1553:
-	__asm        mov    ret, 1;
+	ret = 0x1;
 // LINE 1554:
 	__asm        jmp    _T157;
 // LINE 1556:
@@ -11071,7 +11011,7 @@ _T83:
 	__asm        add    esp, 0x10;
 // LINE 1576:
 _Tb8:
-	__asm        mov    ret, 0xFFFF;
+	ret = 0xffff;
 // LINE 1577:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x90], 0;
@@ -11129,8 +11069,7 @@ _T1ac:
 	__asm        jmp    _T1b1;
 // LINE 1580:
 _T1b1:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0x9C], 0xFFFF;
+	this->fFace = 0xffff;
 // LINE 1581:
 	__asm        mov    eax, mission;
 	__asm        mov    [ebp-0xEC], eax;
@@ -11155,10 +11094,9 @@ _T1e2:
 	__asm        add    esp, 0x10;
 // LINE 1585:
 _T1fe:
-	__asm        mov    foundplace, 0;
+	foundplace = 0x0;
 // LINE 1586:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0xE0], 7;
+	this->fData[8] = 0x7;
 // LINE 1587:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xE0];
@@ -11173,8 +11111,7 @@ _T1fe:
 	__asm        mov    [ecx+0x34], eax;
 	__asm        jmp    _T256;
 _T249:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x34], 0x50000;
+	this->fDyn.radius = 0x50000;
 _T256:
 	__asm        jmp    near ptr 0x0054AA00;
 // LINE 1588:
@@ -11229,7 +11166,7 @@ _T26a:
 	__asm        test   eax, eax;
 	__asm        je     _T2fb;
 // LINE 1592:
-	__asm        mov    foundplace, 1;
+	foundplace = 0x1;
 // LINE 1593:
 	__asm        jmp    _T300;
 // LINE 1595:
@@ -11286,13 +11223,13 @@ _T36b:
 	__asm        add    esp, 0x10;
 // LINE 1602:
 _T393:
-	__asm        mov    ret, 1;
+	ret = 0x1;
 // LINE 1604:
 // Block end:
 	__asm        jmp    _T3a4;
 // LINE 1605:
 _T39e:
-	__asm        mov    ret, 0;
+	ret = 0x0;
 // LINE 1606:
 _T3a4:
 	__asm        jmp    _Td96;
@@ -11358,7 +11295,7 @@ _T42b:
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::SetCellAndLoc;
 // LINE 1615:
-	__asm        mov    ret, 1;
+	ret = 0x1;
 // LINE 1617:
 	__asm        jmp    _T50b;
 // LINE 1622:
@@ -11396,12 +11333,12 @@ _T4e4:
 	__asm        test   eax, eax;
 	__asm        je     _T505;
 // LINE 1623:
-	__asm        mov    ret, 1;
+	ret = 0x1;
 // LINE 1624:
 	__asm        jmp    _T50b;
 // LINE 1625:
 _T505:
-	__asm        mov    ret, 0;
+	ret = 0x0;
 // LINE 1628:
 _T50b:
 	__asm        cmp    missionid, 0xFFFFFFFF;
@@ -11428,7 +11365,7 @@ _T531:
 	__asm        add    esp, 0x10;
 // LINE 1634:
 _T55c:
-	__asm        mov    ret, 0;
+	ret = 0x0;
 // LINE 1635:
 	__asm        push   0;
 	__asm        push   0;
@@ -11494,7 +11431,7 @@ _T5e9:
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::SetPersonData;
 // LINE 1640:
-	__asm        mov    ret, 1;
+	ret = 0x1;
 // LINE 1642:
 _T629:
 	__asm        jmp    _Td96;
@@ -11517,7 +11454,7 @@ _T642:
 	__asm        add    esp, 0x10;
 // LINE 1648:
 _T65e:
-	__asm        mov    ret, 0;
+	ret = 0x0;
 // LINE 1649:
 	__asm        mov    count, 0;
 	__asm        jmp    _T673;
@@ -11575,11 +11512,11 @@ _T673:
 	struct _MISSION_PARMS mp;
 	short destcellx;
 	short destcelly;
-	__asm        mov    destcellx, 0xFFFF;
+	destcellx = 0xffff;
 // LINE 1657:
-	__asm        mov    destcelly, 0xFFFF;
+	destcelly = 0xffff;
 // LINE 1658:
-	__asm        mov    founddest, 0;
+	founddest = 0x0;
 // LINE 1659:
 	__asm        cmp    mission, 4;
 	__asm        jne    _T821;
@@ -11655,7 +11592,7 @@ _T749:
 	__asm        test   eax, eax;
 	__asm        je     _T7d7;
 // LINE 1666:
-	__asm        mov    founddest, 1;
+	founddest = 0x1;
 // LINE 1667:
 	__asm        jmp    _T81c;
 // LINE 1669:
@@ -11698,7 +11635,7 @@ _T81c:
 	__asm        jmp    _T827;
 // LINE 1694:
 _T821:
-	__asm        mov    founddest, 1;
+	founddest = 0x1;
 // LINE 1697:
 _T827:
 	__asm        test   reinterpret_cast<uint32_t>(founddest), 0xFFFF;
@@ -11727,18 +11664,17 @@ _T839:
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::SetPersonData;
 // LINE 1704:
-	__asm        mov    eax, missionid;
-	__asm        mov    mp.id, eax;
+	mp.id = missionid;
 // LINE 1705:
 	__asm        cmp    mission, 4;
 	__asm        jne    _T887;
 // LINE 1706:
-	__asm        mov    mp.op, 0x1E;
+	mp.op = 0x1e;
 // LINE 1707:
 	__asm        jmp    _T88e;
 // LINE 1708:
 _T887:
-	__asm        mov    mp.op, 0;
+	mp.op = 0x0;
 // LINE 1709:
 _T88e:
 	__asm        mov    eax, this;
@@ -11759,10 +11695,9 @@ _T88e:
 	__asm        cmp    mission, 4;
 	__asm        jne    _T8ed;
 // LINE 1716:
-	__asm        mov    eax, missionid;
-	__asm        mov    mp.id, eax;
+	mp.id = missionid;
 // LINE 1717:
-	__asm        mov    mp.op, 0;
+	mp.op = 0x0;
 // LINE 1718:
 	__asm        movsx  eax, destcellx;
 	__asm        mov    mp.maploc.x, eax;
@@ -11776,7 +11711,7 @@ _T88e:
 	__asm        add    esp, 4;
 // LINE 1724:
 _T8ed:
-	__asm        mov    ret, 1;
+	ret = 0x1;
 // LINE 1725:
 	__asm        jmp    _T925;
 // LINE 1727:
@@ -11811,7 +11746,7 @@ _T925:
 // Block start:
 	int32_t offsetz;
 	int32_t offsetx;
-	__asm        mov    ret, 0;
+	ret = 0x0;
 // LINE 1738:
 	__asm        movsx  eax, cellx;
 	__asm        and    eax, 0xFF;
@@ -11891,7 +11826,7 @@ _T9c0:
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::SetPersonData;
 // LINE 1745:
-	__asm        mov    ret, 1;
+	ret = 0x1;
 // LINE 1747:
 _Ta36:
 	__asm        jmp    _Td96;
@@ -11901,7 +11836,7 @@ _Ta36:
 	int32_t mycelly;
 	int32_t mycellx;
 	struct Point3d pos;
-	__asm        mov    ret, 0;
+	ret = 0x0;
 // LINE 1751:
 	__asm        cmp    loc, 0;
 	__asm        jne    _Ta55;
@@ -12016,7 +11951,7 @@ _Tb97:
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::SetPersonData;
 // LINE 1764:
-	__asm        mov    ret, 1;
+	ret = 0x1;
 // LINE 1767:
 // Block end:
 _Tbb4:
@@ -12024,7 +11959,7 @@ _Tbb4:
 // LINE 1771:
 // Block end:
 _Tbb9:
-	__asm        mov    ret, 0;
+	ret = 0x0;
 // LINE 1772:
 	__asm        cmp    loc, 0;
 	__asm        je     _Tc95;
@@ -12093,7 +12028,7 @@ _Tc50:
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::SetPersonData;
 // LINE 1778:
-	__asm        mov    ret, 1;
+	ret = 0x1;
 // LINE 1781:
 _Tc90:
 	__asm        jmp    _Td56;
@@ -12161,7 +12096,7 @@ _Td1e:
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::SetPersonData;
 // LINE 1787:
-	__asm        mov    ret, 1;
+	ret = 0x1;
 // LINE 1790:
 // Block end:
 _Td56:
@@ -12524,19 +12459,18 @@ _T3a:
 // Block start:
 	unsigned short conked;
 	struct _MISSION_PARMS mp;
-	__asm        mov    eax, riotMissionID;
-	__asm        mov    mp.id, eax;
+	mp.id = riotMissionID;
 // LINE 1824:
-	__asm        mov    mp.op, 0xB;
+	mp.op = 0xb;
 // LINE 1825:
-	__asm        mov    mp.i2num, 1;
+	mp.i2num = 0x1;
 // LINE 1826:
 	__asm        lea    eax, mp.op;
 	__asm        push   eax;
 	__asm        call   S3MissionUpdate;
 	__asm        add    esp, 4;
 // LINE 1827:
-	__asm        mov    conked, 0;
+	conked = 0x0;
 // LINE 1828:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD2];
@@ -12679,7 +12613,7 @@ void cYObject::PhaseAndBeamSoundChannels() {
 	short count;
 
 // LINE 1842:
-	__asm        mov    count, 0;
+	count = 0x0;
 // LINE 1843:
 _T0f:
 	__asm        movsx  eax, count;
@@ -12728,8 +12662,7 @@ _Ta7:
 	__asm        mov    obj, eax;
 	__asm        jmp    _Tc0;
 
-	__asm        mov    eax, [ebp-0x34];
-	__asm        mov    obj, eax;
+	obj = None;
 // LINE 1845:
 _Tc0:
 	__asm        mov    eax, obj;
@@ -12811,8 +12744,7 @@ _T1ba:
 	__asm        mov    word ptr [ebp-0x2C], 0xFFFF;
 	__asm        jmp    _T1cd;
 _T1c5:
-	__asm        mov    ax, [ebp-0x30];
-	__asm        mov    [ebp-0x2C], ax;
+	None = None;
 _T1cd:
 	__asm        jmp    near ptr 0x0054BE0E;
 
@@ -12850,8 +12782,7 @@ _T23c:
 	__asm        mov    word ptr [ebp-0x20], 0xFFFF;
 	__asm        jmp    _T24f;
 _T247:
-	__asm        mov    ax, [ebp-0x1C];
-	__asm        mov    [ebp-0x20], ax;
+	None = None;
 _T24f:
 	__asm        jmp    near ptr 0x0054BE90;
 
@@ -12914,10 +12845,9 @@ short cYObject::DistributeSoundChannels(short rad, short firstsoundchannel) {
 	short count;
 
 // LINE 1865:
-	__asm        mov    ax, firstsoundchannel;
-	__asm        mov    soundchannel, ax;
+	soundchannel = firstsoundchannel;
 // LINE 1866:
-	__asm        mov    count, 0;
+	count = 0x0;
 // LINE 1869:
 _T17:
 	__asm        movsx  eax, soundchannel;
@@ -12970,8 +12900,7 @@ _Tbc:
 	__asm        mov    obj, eax;
 	__asm        jmp    _Td5;
 
-	__asm        mov    eax, [ebp-0x20];
-	__asm        mov    obj, eax;
+	obj = None;
 // LINE 1871:
 _Td5:
 	__asm        mov    eax, obj;
@@ -13120,9 +13049,7 @@ _Tce:
 	__asm        movsx  eax, soundchannel;
 	__asm        mov    cYObject::sSoundChannels[eax*2], 1;
 // LINE 1893:
-	__asm        mov    ax, soundchannel;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x102], ax;
+	*reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&this->fPointers[0]) + 2) = soundchannel;
 // LINE 1894:
 	__asm        jmp    near ptr 0x0054C1D6;
 }
@@ -13185,8 +13112,7 @@ _Ta4:
 	__asm        mov    actualchannel, 0xFFFF;
 	__asm        jmp    _Tb7;
 _Taf:
-	__asm        mov    ax, [ebp-0x24];
-	__asm        mov    actualchannel, ax;
+	actualchannel = None;
 _Tb7:
 	__asm        jmp    near ptr 0x0054C299;
 // LINE 1907:
@@ -13288,8 +13214,7 @@ _T1f2:
 	__asm        mov    actualSoundChannel, 0xFFFF;
 	__asm        jmp    _T205;
 _T1fd:
-	__asm        mov    ax, [ebp-0x28];
-	__asm        mov    actualSoundChannel, ax;
+	actualSoundChannel = None;
 _T205:
 	__asm        jmp    near ptr 0x0054C3E7;
 // LINE 1923:
@@ -13298,11 +13223,9 @@ _T205:
 	__asm        call   S3DSStopPlay;
 	__asm        add    esp, 4;
 // LINE 1924:
-	__asm        mov    loop, 0;
+	loop = 0x0;
 // LINE 1925:
-	__asm        mov    eax, this;
-	__asm        mov    ax, [eax+0x108];
-	__asm        mov    freqadj, ax;
+	freqadj = reinterpret_cast<uint16_t>(this->fPointers[2]);
 // LINE 1926:
 	__asm        mov    eax, soundnum;
 	__asm        mov    [ebp-0x34], eax;
@@ -13313,71 +13236,71 @@ _T205:
 // LINE 1935:
 	__asm        jmp    _T42e;
 // LINE 1937:
-	__asm        mov    soundfile, 0x5BAF6C;
+	soundfile = 0x5baf6c;
 // LINE 1938:
 	__asm        jmp    _T42e;
 // LINE 1940:
-	__asm        mov    soundfile, 0x5BAF78;
+	soundfile = 0x5baf78;
 // LINE 1941:
 	__asm        jmp    _T42e;
 // LINE 1943:
-	__asm        mov    soundfile, 0x5BAF84;
+	soundfile = 0x5baf84;
 // LINE 1944:
 	__asm        jmp    _T42e;
 // LINE 1946:
-	__asm        mov    soundfile, 0x5BAF90;
+	soundfile = 0x5baf90;
 // LINE 1947:
 	__asm        jmp    _T42e;
 // LINE 1949:
-	__asm        mov    soundfile, 0x5BAF9C;
+	soundfile = 0x5baf9c;
 // LINE 1950:
 	__asm        jmp    _T42e;
 // LINE 1952:
-	__asm        mov    soundfile, 0x5BAFA8;
+	soundfile = 0x5bafa8;
 // LINE 1953:
 	__asm        jmp    _T42e;
 // LINE 1955:
-	__asm        mov    soundfile, 0x5BAFB4;
+	soundfile = 0x5bafb4;
 // LINE 1956:
 	__asm        jmp    _T42e;
 // LINE 1958:
-	__asm        mov    soundfile, 0x5BAFC4;
+	soundfile = 0x5bafc4;
 // LINE 1959:
 	__asm        jmp    _T42e;
 // LINE 1961:
-	__asm        mov    soundfile, 0x5BAFD0;
+	soundfile = 0x5bafd0;
 // LINE 1962:
 	__asm        jmp    _T42e;
 // LINE 1964:
-	__asm        mov    soundfile, 0x5BAFDC;
+	soundfile = 0x5bafdc;
 // LINE 1965:
 	__asm        jmp    _T42e;
 // LINE 1967:
-	__asm        mov    soundfile, 0x5BAFE8;
+	soundfile = 0x5bafe8;
 // LINE 1968:
 	__asm        jmp    _T42e;
 // LINE 1970:
-	__asm        mov    soundfile, 0x5BAFF8;
+	soundfile = 0x5baff8;
 // LINE 1971:
 	__asm        jmp    _T42e;
 // LINE 1973:
-	__asm        mov    soundfile, 0x5BB008;
+	soundfile = 0x5bb008;
 // LINE 1974:
 	__asm        jmp    _T42e;
 // LINE 1976:
-	__asm        mov    soundfile, 0x5BB014;
+	soundfile = 0x5bb014;
 // LINE 1977:
 	__asm        jmp    _T42e;
 // LINE 1979:
-	__asm        mov    soundfile, 0x5BB020;
+	soundfile = 0x5bb020;
 // LINE 1980:
 	__asm        jmp    _T42e;
 // LINE 1982:
-	__asm        mov    soundfile, 0x5BB02C;
+	soundfile = 0x5bb02c;
 // LINE 1983:
 	__asm        jmp    _T42e;
 // LINE 1985:
-	__asm        mov    soundfile, 0x5BB03C;
+	soundfile = 0x5bb03c;
 // LINE 1986:
 	__asm        jmp    _T42e;
 // LINE 1988:
@@ -13386,16 +13309,16 @@ _T205:
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    _T346;
 // LINE 1992:
-	__asm        mov    soundfile, 0x5BB04C;
+	soundfile = 0x5bb04c;
 // LINE 1993:
 	__asm        jmp    _T37d;
 // LINE 1998:
-	__asm        mov    soundfile, 0x5BB05C;
+	soundfile = 0x5bb05c;
 // LINE 1999:
 	__asm        jmp    _T37d;
 // LINE 2001:
 _T33a:
-	__asm        mov    soundfile, 0x5BB06C;
+	soundfile = 0x5bb06c;
 // LINE 2002:
 	__asm        jmp    _T37d;
 _T346:
@@ -13410,7 +13333,7 @@ _T346:
 // Switch table
 // LINE 2003:
 _T37d:
-	__asm        mov    loop, 1;
+	loop = 0x1;
 // LINE 2004:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xF4];
@@ -13441,7 +13364,7 @@ _T3c7:
 // Switch pointers
 // LINE 2009:
 _T42e:
-	__asm        mov    flags, 2;
+	flags = 0x2;
 // LINE 2010:
 	__asm        test   reinterpret_cast<uint32_t>(loop), 0xFFFF;
 	__asm        je     _T446;
@@ -13489,22 +13412,21 @@ void cYObject::SimulateAll() {
 	__asm        mov    eax, LoopTime;
 	__asm        add    gCumTime, eax;
 // LINE 2086:
-	__asm        mov    eax, LoopTime;
-	__asm        mov    debuglooptime, eax;
+	debuglooptime = LoopTime;
 // LINE 2087:
-	__asm        mov    simulate, 0;
+	simulate = 0x0;
 // LINE 2088:
 	__asm        mov    eax, gNextTime;
 	__asm        cmp    gCumTime, eax;
 	__asm        jle    _T56;
 // LINE 2089:
-	__asm        mov    simulate, 1;
+	simulate = 0x1;
 // LINE 2090:
 	__asm        inc    cYObject::sSimTicks;
 // LINE 2091:
-	__asm        mov    gNextTime, 0x147A;
+	gNextTime = 0x147a;
 // LINE 2092:
-	__asm        mov    gCumTime, 0;
+	gCumTime = 0x0;
 // LINE 2096:
 _T56:
 	__asm        call   cYObject::StartScurkPeopleNearAvatar;
@@ -13564,8 +13486,7 @@ _T103:
 	__asm        mov    obj, eax;
 	__asm        jmp    _T11f;
 
-	__asm        mov    eax, [ebp-0xCC];
-	__asm        mov    obj, eax;
+	obj = None;
 // LINE 2101:
 _T11f:
 	__asm        mov    eax, obj;
@@ -13631,7 +13552,7 @@ _T1b5:
 	__asm        cmp    eax, gPersonBeamSlice;
 	__asm        jge    _T1d8;
 
-	__asm        mov    gPersonBeamSlice, 0;
+	gPersonBeamSlice = 0x0;
 // LINE 2107:
 _T1d8:
 	__asm        inc    gPersonSoundBeamSlice;
@@ -13639,7 +13560,7 @@ _T1d8:
 	__asm        cmp    eax, 2;
 	__asm        jle    _T1f8;
 
-	__asm        mov    gPersonSoundBeamSlice, 0;
+	gPersonSoundBeamSlice = 0x0;
 // LINE 2108:
 _T1f8:
 	__asm        mov    count, 0;
@@ -13692,8 +13613,7 @@ _T293:
 	__asm        mov    obj, eax;
 	__asm        jmp    _T2af;
 
-	__asm        mov    eax, [ebp-0xD0];
-	__asm        mov    obj, eax;
+	obj = None;
 // LINE 2110:
 _T2af:
 	__asm        mov    eax, obj;
@@ -13826,8 +13746,7 @@ _T47e:
 	__asm        mov    word ptr [ebp-0xD8], 0xFFFF;
 	__asm        jmp    _T49a;
 _T48c:
-	__asm        mov    ax, [ebp-0xDC];
-	__asm        mov    [ebp-0xD8], ax;
+	None = None;
 _T49a:
 	__asm        jmp    near ptr 0x0054CB10;
 
@@ -13967,9 +13886,9 @@ unsigned short cYObject::AddToHeli() {
 	__asm        movsx  eax, word ptr [eax+0x9C];
 	__asm        mov    tempPassengerInfo.lPassengerFace, eax;
 // LINE 2145:
-	__asm        mov    tempPassengerInfo.lPassengerExpression, 1;
+	tempPassengerInfo.lPassengerExpression = 0x1;
 // LINE 2146:
-	__asm        mov    tempPassengerInfo.lPassengerHealth, 0x200;
+	tempPassengerInfo.lPassengerHealth = 0x200;
 // LINE 2147:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xBC];
@@ -13997,8 +13916,7 @@ _T5b:
 	__asm        call   HeliPassengerAdd;
 	__asm        add    esp, 8;
 // LINE 2152:
-	__asm        mov    ecx, this;
-	__asm        mov    word ptr [ecx+0xE2], 0;
+	this->fData[9] = 0x0;
 // LINE 2153:
 	__asm        mov    ax, 1;
 	__asm        jmp    _T87;
@@ -14032,8 +13950,7 @@ void cYObject::RemoveFromHeli() {
 	__asm        add    esp, 0x10;
 // LINE 2161:
 _T53:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0xE2], 1;
+	this->fData[9] = 0x1;
 // LINE 2162:
 	__asm        jmp    near ptr 0x0054CDAD;
 }
@@ -14093,8 +14010,7 @@ _Ta7:
 	__asm        mov    obj, eax;
 	__asm        jmp    _Tc0;
 
-	__asm        mov    eax, [ebp-0xC];
-	__asm        mov    obj, eax;
+	obj = None;
 // LINE 2168:
 _Tc0:
 	__asm        cmp    obj, 0;
@@ -14210,7 +14126,7 @@ _Td1:
 	__asm        call   cYObject::RemoveFromHeli;
 // LINE 2188:
 _T113:
-	__asm        mov    success, 1;
+	success = 0x1;
 // LINE 2189:
 	__asm        cmp    obj, 0;
 	__asm        je     _T1c7;
@@ -14231,7 +14147,7 @@ _T113:
 	__asm        test   eax, eax;
 	__asm        jne    _T165;
 // LINE 2193:
-	__asm        mov    success, 0;
+	success = 0x0;
 // LINE 2196:
 _T165:
 	__asm        jmp    _T1c7;
@@ -14250,7 +14166,7 @@ _T16a:
 	__asm        je     _T1ad;
 // LINE 2200:
 _T1a2:
-	__asm        mov    success, 0;
+	success = 0x0;
 // LINE 2202:
 	__asm        jmp    _T1c7;
 _T1ad:
@@ -14261,15 +14177,13 @@ _T1ad:
 	__asm        test   eax, eax;
 	__asm        je     _T1c7;
 // LINE 2203:
-	__asm        mov    success, 0;
+	success = 0x0;
 // LINE 2206:
 _T1c7:
 	__asm        test   reinterpret_cast<uint32_t>(success), 0xFFFF;
 	__asm        je     _T209;
 // LINE 2207:
-	__asm        mov    eax, obj;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x130], eax;
+	reinterpret_cast<uint32_t>(this->fDefinition.blue) = obj;
 // LINE 2209:
 	__asm        cmp    obj, 0;
 	__asm        je     _T209;
@@ -14823,7 +14737,7 @@ _T112:
 	__asm        mov    word ptr [ebp-0x60], 1;
 	__asm        jmp    _T13f;
 _T139:
-	__asm        mov    word ptr [ebp-0x60], 0;
+	None = 0x0;
 _T13f:
 	__asm        test   dword ptr [ebp-0x64], 0xFFFF;
 	__asm        je     _T168;
@@ -15224,8 +15138,7 @@ _T19a:
 	__asm        cmp    eax, ecx;
 	__asm        jg     _T1d7;
 
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0xDC], 0;
+	this->fData[6] = 0x0;
 _T1d7:
 	__asm        jmp    near ptr 0x0054DCCF;
 
@@ -15241,7 +15154,7 @@ enum cYObject::MoveErrorCode cAvatar::AvatarMove(struct cYObject::MoveInfo *move
 	enum cYObject::MoveErrorCode movecode;
 
 // LINE 2290:
-	__asm        mov    yaw, 0;
+	yaw = 0x0;
 // LINE 2291:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x178], 0;
@@ -15250,7 +15163,7 @@ enum cYObject::MoveErrorCode cAvatar::AvatarMove(struct cYObject::MoveInfo *move
 	__asm        mov    ecx, this;
 	__asm        call   cAvatar::RotateMatrixAndYawForEngine;
 // LINE 2293:
-	__asm        mov    yaw, 1;
+	yaw = 0x1;
 // LINE 2295:
 _T30:
 	__asm        cmp    moveinfo, 0;
@@ -15373,9 +15286,7 @@ void cAvatar::Simulate() {
 _T47:
 	__asm        jmp    near ptr 0x0054DE64;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x130];
-	__asm        mov    dy, eax;
+	dy = reinterpret_cast<uint32_t>(this->fDefinition.blue);
 // LINE 2312:
 	__asm        cmp    dy, 0;
 	__asm        je     _T76;
@@ -15501,7 +15412,7 @@ _T1d3:
 	__asm        cmp    eax, 0xA;
 	__asm        jle    _T23d;
 // LINE 2322:
-	__asm        mov    sCheckTotedCount, 0;
+	sCheckTotedCount = 0x0;
 // LINE 2323:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xF2];
@@ -15517,8 +15428,7 @@ _T1d3:
 	__asm        cmp    person, 0;
 	__asm        jne    _T23d;
 // LINE 2326:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0xF2], 1;
+	this->fData[17] = 0x1;
 // LINE 2330:
 // Block end:
 _T23d:
@@ -15534,8 +15444,7 @@ _T23d:
 // LINE 2333:
 // Block start:
 	class cYObject *person;
-	__asm        mov    eax, hd;
-	__asm        mov    G_uheli, eax;
+	G_uheli = hd;
 // LINE 2334:
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::GetToted;
@@ -15586,8 +15495,7 @@ _T2e7:
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::UpdateMission;
 // LINE 2345:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0xF2], 1;
+	this->fData[17] = 0x1;
 // LINE 2348:
 // Block end:
 	__asm        jmp    _T41a;
@@ -15635,8 +15543,7 @@ _T393:
 	__asm        mov    word ptr [ebp-0x38], 0xFFFF;
 	__asm        jmp    _T3a6;
 _T39e:
-	__asm        mov    ax, [ebp-0x3C];
-	__asm        mov    [ebp-0x38], ax;
+	None = None;
 _T3a6:
 	__asm        jmp    near ptr 0x0054E1C3;
 
@@ -15662,13 +15569,11 @@ _T3c2:
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::SetMaster;
 // LINE 2352:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0xE2], 0;
+	this->fData[9] = 0x0;
 // LINE 2356:
-	__asm        mov    eax, hd;
-	__asm        mov    dword ptr [eax+8], 1;
+	hd->flags = 0x1;
 // LINE 2357:
-	__asm        mov    G_camera_mode, 0;
+	G_camera_mode = 0x0;
 // LINE 2358:
 	__asm        mov    eax, G_uheli;
 	__asm        push   eax;
@@ -15852,8 +15757,7 @@ _T611:
 _T659:
 	__asm        jmp    near ptr 0x0054E476;
 // LINE 2370:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0xF2], 0;
+	this->fData[17] = 0x0;
 // LINE 2379:
 // Block end:
 _T66a:
@@ -15878,7 +15782,7 @@ _T69b:
 	__asm        mov    word ptr [ebp-0x40], 4;
 	__asm        jmp    _T6c6;
 _T6c0:
-	__asm        mov    word ptr [ebp-0x40], 8;
+	None = 0x8;
 _T6c6:
 	__asm        lea    eax, moveinfo.locType;
 	__asm        push   eax;
@@ -15915,8 +15819,7 @@ _T710:
 	__asm        cmp    eax, ecx;
 	__asm        jg     _T74d;
 
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0xDC], 0;
+	this->fData[6] = 0x0;
 _T74d:
 	__asm        jmp    near ptr 0x0054E56A;
 
@@ -16587,9 +16490,7 @@ _T9b8:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T9d4:
-	__asm        mov    eax, moveinfo;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    [ebp-4], eax;
+	None = moveinfo->dyBlock;
 // LINE 2439:
 	__asm        jmp    near ptr 0x0054EF5B;
 
@@ -17698,11 +17599,9 @@ void cYObject::SetMissionType(enum MissionType type) {
 	__asm        add    esp, 0x10;
 // LINE 2572:
 _T3a:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0xE2], 1;
+	this->fData[9] = 0x1;
 // LINE 2573:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0xDA], 0xFFFE;
+	this->fData[5] = 0xfffe;
 // LINE 2574:
 	__asm        mov    eax, type;
 	__asm        mov    ecx, this;
@@ -17713,20 +17612,17 @@ _T3a:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x10A], ax;
 // LINE 2577:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0xFC], 0xFFFF;
+	this->fData[22] = 0xffff;
 // LINE 2579:
 	__asm        mov    eax, type;
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _Tb2;
 // LINE 2585:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0xDA], 0;
+	this->fData[5] = 0x0;
 // LINE 2586:
 	__asm        jmp    _Ted;
 // LINE 2589:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0xDA], 1;
+	this->fData[5] = 0x1;
 // LINE 2590:
 	__asm        jmp    _Ted;
 // LINE 2594:
@@ -17747,29 +17643,22 @@ _Ted:
 	__asm        cmp    type, 0;
 	__asm        jne    _T136;
 // LINE 2597:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1C], 0xFFFFFFFF;
+	this->fMissionID = 0xffffffff;
 // LINE 2598:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0xEC], 0;
+	this->fData[14] = 0x0;
 // LINE 2599:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0xF6], 0;
+	this->fData[19] = 0x0;
 // LINE 2600:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0xF8], 1;
+	this->fData[20] = 0x1;
 // LINE 2601:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0xFA], 0;
+	this->fData[21] = 0x0;
 // LINE 2603:
 	__asm        jmp    _T14e;
 // LINE 2604:
 _T136:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0xF8], 0;
+	this->fData[20] = 0x0;
 // LINE 2605:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0xFA], 1;
+	this->fData[21] = 0x1;
 // LINE 2607:
 _T14e:
 	__asm        cmp    type, 6;
@@ -17792,7 +17681,7 @@ void cYObject::SetPersonType(enum PersonType type) {
 	short faceindex;
 
 // LINE 2616:
-	__asm        mov    count, 0;
+	count = 0x0;
 // LINE 2617:
 	__asm        cmp    type, 0xFFFFFFFF;
 	__asm        jne    _T9b;
@@ -17852,9 +17741,9 @@ _T9b:
 	__asm        mov    [ebp-0x44], eax;
 	__asm        jmp    _T309;
 // LINE 2630:
-	__asm        mov    bodyname, 0x426C6F6E;
+	bodyname = 0x426c6f6e;
 // LINE 2631:
-	__asm        mov    faceindex, 7;
+	faceindex = 0x7;
 // LINE 2632:
 	__asm        movsx  eax, frequnit;
 	__asm        lea    eax, [eax+eax*4];
@@ -17862,9 +17751,9 @@ _T9b:
 // LINE 2633:
 	__asm        jmp    _T365;
 // LINE 2635:
-	__asm        mov    bodyname, 0x32626C6F;
+	bodyname = 0x32626c6f;
 // LINE 2636:
-	__asm        mov    faceindex, 5;
+	faceindex = 0x5;
 // LINE 2637:
 	__asm        movsx  eax, frequnit;
 	__asm        lea    eax, [eax+eax*4];
@@ -17873,9 +17762,9 @@ _T9b:
 // LINE 2638:
 	__asm        jmp    _T365;
 // LINE 2640:
-	__asm        mov    bodyname, 0x576F6D61;
+	bodyname = 0x576f6d61;
 // LINE 2641:
-	__asm        mov    faceindex, 5;
+	faceindex = 0x5;
 // LINE 2642:
 	__asm        movsx  eax, frequnit;
 	__asm        shl    eax, 2;
@@ -17883,9 +17772,9 @@ _T9b:
 // LINE 2643:
 	__asm        jmp    _T365;
 // LINE 2645:
-	__asm        mov    bodyname, 0x32776F6D;
+	bodyname = 0x32776f6d;
 // LINE 2646:
-	__asm        mov    faceindex, 7;
+	faceindex = 0x7;
 // LINE 2647:
 	__asm        movsx  eax, frequnit;
 	__asm        shl    eax, 2;
@@ -17893,9 +17782,9 @@ _T9b:
 // LINE 2648:
 	__asm        jmp    _T365;
 // LINE 2650:
-	__asm        mov    bodyname, 0x4368696C;
+	bodyname = 0x4368696c;
 // LINE 2651:
-	__asm        mov    faceindex, 4;
+	faceindex = 0x4;
 // LINE 2652:
 	__asm        movsx  eax, frequnit;
 	__asm        mov    ecx, eax;
@@ -17905,17 +17794,17 @@ _T9b:
 // LINE 2653:
 	__asm        jmp    _T365;
 // LINE 2655:
-	__asm        mov    bodyname, 0x356D616E;
+	bodyname = 0x356d616e;
 // LINE 2656:
-	__asm        mov    faceindex, 8;
+	faceindex = 0x8;
 // LINE 2657:
-	__asm        mov    freqadj, 0;
+	freqadj = 0x0;
 // LINE 2658:
 	__asm        jmp    _T365;
 // LINE 2660:
-	__asm        mov    bodyname, 0x6661746D;
+	bodyname = 0x6661746d;
 // LINE 2661:
-	__asm        mov    faceindex, 6;
+	faceindex = 0x6;
 // LINE 2662:
 	__asm        movsx  eax, frequnit;
 	__asm        mov    ecx, eax;
@@ -17926,9 +17815,9 @@ _T9b:
 // LINE 2663:
 	__asm        jmp    _T365;
 // LINE 2665:
-	__asm        mov    bodyname, 0x424C5545;
+	bodyname = 0x424c5545;
 // LINE 2666:
-	__asm        mov    faceindex, 6;
+	faceindex = 0x6;
 // LINE 2667:
 	__asm        movsx  eax, frequnit;
 	__asm        add    eax, eax;
@@ -17937,9 +17826,9 @@ _T9b:
 // LINE 2668:
 	__asm        jmp    _T365;
 // LINE 2670:
-	__asm        mov    bodyname, 0x53554954;
+	bodyname = 0x53554954;
 // LINE 2671:
-	__asm        mov    faceindex, 9;
+	faceindex = 0x9;
 // LINE 2672:
 	__asm        movsx  eax, frequnit;
 	__asm        lea    eax, [eax+eax*2];
@@ -17948,9 +17837,9 @@ _T9b:
 // LINE 2673:
 	__asm        jmp    _T365;
 // LINE 2675:
-	__asm        mov    bodyname, 0x53484144;
+	bodyname = 0x53484144;
 // LINE 2676:
-	__asm        mov    faceindex, 6;
+	faceindex = 0x6;
 // LINE 2677:
 	__asm        movsx  eax, frequnit;
 	__asm        lea    eax, [eax+eax*2];
@@ -17958,9 +17847,9 @@ _T9b:
 // LINE 2678:
 	__asm        jmp    _T365;
 // LINE 2680:
-	__asm        mov    bodyname, 0x352E356D;
+	bodyname = 0x352e356d;
 // LINE 2681:
-	__asm        mov    faceindex, 4;
+	faceindex = 0x4;
 // LINE 2682:
 	__asm        movsx  eax, frequnit;
 	__asm        mov    ecx, eax;
@@ -17971,9 +17860,9 @@ _T9b:
 // LINE 2683:
 	__asm        jmp    _T365;
 // LINE 2685:
-	__asm        mov    bodyname, 0x32444F47;
+	bodyname = 0x32444f47;
 // LINE 2686:
-	__asm        mov    faceindex, 6;
+	faceindex = 0x6;
 // LINE 2687:
 	__asm        movsx  eax, frequnit;
 	__asm        lea    eax, [eax+eax*8];
@@ -17981,9 +17870,9 @@ _T9b:
 // LINE 2688:
 	__asm        jmp    _T365;
 // LINE 2690:
-	__asm        mov    bodyname, 0x42616467;
+	bodyname = 0x42616467;
 // LINE 2691:
-	__asm        mov    faceindex, 4;
+	faceindex = 0x4;
 // LINE 2692:
 	__asm        movsx  eax, frequnit;
 	__asm        lea    eax, [eax+eax*8];
@@ -17992,9 +17881,9 @@ _T9b:
 // LINE 2693:
 	__asm        jmp    _T365;
 // LINE 2695:
-	__asm        mov    bodyname, 0x4B6F7070;
+	bodyname = 0x4b6f7070;
 // LINE 2696:
-	__asm        mov    faceindex, 1;
+	faceindex = 0x1;
 // LINE 2697:
 	__asm        movsx  eax, frequnit;
 	__asm        lea    eax, [eax+eax*2];
@@ -18003,9 +17892,9 @@ _T9b:
 // LINE 2698:
 	__asm        jmp    _T365;
 // LINE 2700:
-	__asm        mov    bodyname, 0x46697265;
+	bodyname = 0x46697265;
 // LINE 2701:
-	__asm        mov    faceindex, 2;
+	faceindex = 0x2;
 // LINE 2702:
 	__asm        movsx  eax, frequnit;
 	__asm        lea    eax, [eax+eax*2];
@@ -18014,9 +17903,9 @@ _T9b:
 // LINE 2703:
 	__asm        jmp    _T365;
 // LINE 2705:
-	__asm        mov    bodyname, 0x4D656469;
+	bodyname = 0x4d656469;
 // LINE 2706:
-	__asm        mov    faceindex, 3;
+	faceindex = 0x3;
 // LINE 2707:
 	__asm        movsx  eax, frequnit;
 	__asm        lea    eax, [eax+eax*2];
@@ -18025,9 +17914,9 @@ _T9b:
 // LINE 2708:
 	__asm        jmp    _T365;
 // LINE 2710:
-	__asm        mov    bodyname, 0x4E657373;
+	bodyname = 0x4e657373;
 // LINE 2711:
-	__asm        mov    faceindex, 4;
+	faceindex = 0x4;
 // LINE 2712:
 	__asm        movsx  eax, frequnit;
 	__asm        lea    eax, [eax+eax*4];
@@ -18037,9 +17926,9 @@ _T9b:
 // LINE 2713:
 	__asm        jmp    _T365;
 // LINE 2715:
-	__asm        mov    bodyname, 0x436F7777;
+	bodyname = 0x436f7777;
 // LINE 2716:
-	__asm        mov    faceindex, 4;
+	faceindex = 0x4;
 // LINE 2717:
 	__asm        movsx  eax, frequnit;
 	__asm        lea    eax, [eax+eax*4];
@@ -18067,9 +17956,7 @@ _T309:
 // Switch pointers
 // LINE 2725:
 _T365:
-	__asm        mov    ax, freqadj;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x108], ax;
+	reinterpret_cast<uint16_t>(this->fPointers[2]) = freqadj;
 // LINE 2726:
 	__asm        mov    eax, cCopterBody::fsList;
 	__asm        mov    [ebp-0x3C], eax;
@@ -18095,7 +17982,7 @@ _T3af:
 	__asm        mov    [ebp-0x28], eax;
 	__asm        jmp    _T3ce;
 _T3c7:
-	__asm        mov    dword ptr [ebp-0x28], 0;
+	None = 0x0;
 _T3ce:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x24], eax;
@@ -18107,7 +17994,7 @@ _T3ce:
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    _T3f2;
 _T3eb:
-	__asm        mov    dword ptr [ebp-0x20], 0;
+	None = 0x0;
 _T3f2:
 	__asm        jmp    near ptr 0x005503AE;
 
@@ -18180,8 +18067,7 @@ _T4b1:
 	__asm        mov    dword ptr [ebp-0x38], 0;
 	__asm        jmp    _T4c3;
 _T4bd:
-	__asm        mov    eax, [ebp-0x34];
-	__asm        mov    [ebp-0x38], eax;
+	None = None;
 _T4c3:
 	__asm        jmp    _T4d9;
 _T4c8:
@@ -18290,7 +18176,7 @@ _T28:
 _T77:
 	__asm        jmp    _T24;
 _T7c:
-	__asm        mov    cYObject::sInited, 0;
+	cYObject::sInited = 0x0;
 // LINE 2767:
 	__asm        mov    ecx, 0x636BB8;
 	__asm        call   FlatFile::ValidFile;
@@ -18436,18 +18322,14 @@ _T103:
 	__asm        mov    eax, G_omap[0][0][ecx+edx*4];
 	__asm        mov    ncptr, eax;
 // LINE 2787:
-	__asm        mov    eax, ncptr;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x24], eax;
+	this->fDyn.next = ncptr->dyptr;
 // LINE 2788:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x24;
 	__asm        mov    ecx, ncptr;
 	__asm        mov    [ecx+0x10], eax;
 // LINE 2790:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0x20], 1;
+	this->fbLinked = 0x1;
 // LINE 2791:
 	__asm        jmp    near ptr 0x005507E7;
 }
@@ -18499,23 +18381,17 @@ _T6a:
 	__asm        cmp    eax, [ecx];
 	__asm        jne    _T97;
 // LINE 2805:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x24];
-	__asm        mov    ecx, dyptrptr;
-	__asm        mov    [ecx], eax;
+	dyptrptr-> = this->fDyn.next;
 // LINE 2806:
 	__asm        jmp    _Ta4;
 // LINE 2808:
 _T97:
-	__asm        mov    eax, dyptrptr;
-	__asm        mov    eax, [eax];
-	__asm        mov    dyptrptr, eax;
+	dyptrptr = dyptrptr->;
 // LINE 2809:
 	__asm        jmp    _T6a;
 // LINE 2812:
 _Ta4:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0x20], 0;
+	this->fbLinked = 0x0;
 // LINE 2813:
 	__asm        jmp    near ptr 0x0055089E;
 }
@@ -18583,7 +18459,7 @@ _L56436:
 _Td6:
 	__asm        jmp    _Te2;
 _Tdb:
-	__asm        mov    dword ptr [ebp-0x24], 0;
+	None = 0x0;
 _Te2:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x24];
@@ -18688,7 +18564,7 @@ _T8c:
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    _Tf7;
 _Tf0:
-	__asm        mov    dword ptr [ebp-0x1C], 0;
+	None = 0x0;
 _Tf7:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x1C];
@@ -18808,14 +18684,11 @@ _T47:
 	__asm        add    esp, 8;
 // LINE 2862:
 _Tc8:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0x30], 8;
+	this->fDyn.flags = 0x8;
 // LINE 2863:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x34], 0x50000;
+	this->fDyn.radius = 0x50000;
 // LINE 2864:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x38], 6;
+	this->fDyn.height = 0x6;
 // LINE 2866:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x48;
@@ -18870,8 +18743,7 @@ _T88:
 	__asm        mov    obj, eax;
 	__asm        jmp    _Ta1;
 
-	__asm        mov    eax, [ebp-0x10];
-	__asm        mov    obj, eax;
+	obj = None;
 // LINE 2874:
 _Ta1:
 	__asm        cmp    obj, 0;
@@ -18944,9 +18816,7 @@ void cYObject::cYObject(short type, class Behavior *pBehavior, struct Point3d lo
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x14], 0x5935C8;
 // LINE 2886:
-	__asm        mov    ax, type;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x15A], ax;
+	this-><cYObject+0x15a> = type;
 // LINE 2888:
 	__asm        lea    eax, loc.x;
 	__asm        mov    ecx, this;
@@ -18958,8 +18828,7 @@ void cYObject::cYObject(short type, class Behavior *pBehavior, struct Point3d lo
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 2891:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x130], 0;
+	reinterpret_cast<uint32_t>(this->fDefinition.blue) = 0x0;
 // LINE 2893:
 	__asm        mov    cnt, 0;
 	__asm        jmp    _Tbe;
@@ -18976,8 +18845,7 @@ _Tbe:
 	__asm        jmp    _Tba;
 // LINE 2895:
 _Te1:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0x102], 0xFFFF;
+	*reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&this->fPointers[0]) + 2) = 0xffff;
 // LINE 2896:
 	__asm        mov    cnt, 0;
 	__asm        jmp    _Tfc;
@@ -18994,19 +18862,13 @@ _Tfc:
 	__asm        jmp    _Tf8;
 // LINE 2899:
 _T120:
-	__asm        mov    eax, pBehavior;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xB4], eax;
+	this->fBehavior = pBehavior;
 // LINE 2900:
-	__asm        mov    eax, cYObject::sList;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xB8], eax;
+	this->fNext = cYObject::sList;
 // LINE 2901:
-	__asm        mov    eax, this;
-	__asm        mov    cYObject::sList, eax;
+	cYObject::sList = this;
 // LINE 2905:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0x20], 0;
+	this->fbLinked = 0x0;
 // LINE 2907:
 	__asm        mov    ax, id;
 	__asm        mov    ecx, this;
@@ -19061,23 +18923,17 @@ void cAvatar::Reset() {
 	__asm        mov    word ptr [eax+0x9C], 0;
 	__asm        jmp    near ptr 0x00550F47;
 // LINE 2922:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x168], 0;
+	this-><cAvatar+0x168> = 0x0;
 // LINE 2923:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x16C], 0;
+	this-><cAvatar+0x16c> = 0x0;
 // LINE 2924:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x170], 0x10000;
+	this-><cAvatar+0x170> = 0x10000;
 // LINE 2925:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x174], 0;
+	this-><cAvatar+0x174> = 0x0;
 // LINE 2926:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x178], 0;
+	this-><cAvatar+0x178> = 0x0;
 // LINE 2927:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x17C], 0;
+	this-><cAvatar+0x17c> = 0x0;
 // LINE 2928:
 	__asm        jmp    near ptr 0x00550F9A;
 }
@@ -19085,38 +18941,27 @@ void cAvatar::Reset() {
 // FUNCTION: COPTER_D 0x00550f9f
 void cYObject::Reset() {
 // LINE 2932:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x98], 0;
+	this->fAnim = 0x0;
 // LINE 2933:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x90], 0;
+	this->fBody = 0x0;
 // LINE 2934:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x164], 0x3F800000;
+	this-><cYObject+0x164> = 0x3f800000;
 // LINE 2935:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0x9C], 0xFFFF;
+	this->fFace = 0xffff;
 // LINE 2937:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18], 0xFFFFFF9C;
+	this->fLastInterrupt = 0xffffff9c;
 // LINE 2939:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0xF2], 1;
+	this->fData[17] = 0x1;
 // LINE 2940:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0x106], 1;
+	*reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&this->fPointers[1]) + 2) = 0x1;
 // LINE 2941:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0xF4], 0;
+	this->fData[18] = 0x0;
 // LINE 2942:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0x102], 0xFFFF;
+	*reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&this->fPointers[0]) + 2) = 0xffff;
 // LINE 2943:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0xF0], 0xFFFF;
+	this->fData[16] = 0xffff;
 // LINE 2945:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0xD4], 6;
+	this->fData[2] = 0x6;
 // LINE 2946:
 	__asm        push   8;
 	__asm        call   SRand;
@@ -19244,8 +19089,7 @@ _T246:
 	__asm        mov    word ptr [ebp-8], 0xFFFF;
 	__asm        jmp    _T259;
 _T251:
-	__asm        mov    ax, [ebp-0xC];
-	__asm        mov    [ebp-8], ax;
+	None = None;
 _T259:
 	__asm        jmp    near ptr 0x005511FD;
 
@@ -19307,16 +19151,11 @@ _T330:
 	__asm        jmp    _T33d;
 // LINE 2952:
 _T33d:
-	__asm        mov    eax, this;
-	__asm        mov    ax, [eax+0xBC];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xDE], ax;
+	this->fData[7] = this->fID;
 // LINE 2953:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0xDC], 0;
+	this->fData[6] = 0x0;
 // LINE 2954:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0xE0], 0;
+	this->fData[8] = 0x0;
 // LINE 2956:
 	__asm        push   0;
 	__asm        mov    ecx, this;
@@ -19348,8 +19187,7 @@ _T33d:
 _T3d1:
 	__asm        jmp    near ptr 0x00551375;
 // LINE 2958:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0x22], 0;
+	this->fInited = 0x0;
 // LINE 2960:
 	__asm        jmp    near ptr 0x00551383;
 }
@@ -19397,7 +19235,7 @@ _T5d:
 	__asm        mov    highres, 1;
 	__asm        jmp    _T7b;
 _T75:
-	__asm        mov    highres, 0;
+	highres = 0x0;
 // LINE 2978:
 _T7b:
 	__asm        mov    eax, this;
@@ -19483,8 +19321,7 @@ _T13a:
 	__asm        fadd   psiOff;
 	__asm        fstp   psiOff;
 // LINE 3004:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0xE6], 0xFFFF;
+	this->fData[11] = 0xffff;
 // LINE 3006:
 	__asm        mov    eax, gFarLimit;
 	__asm        mov    [ebp-0x98], eax;
@@ -19518,8 +19355,7 @@ _T228:
 	__asm        cmp    screenPt.z, eax;
 	__asm        jle    _T24a;
 // LINE 3014:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0xE6], 4;
+	this->fData[11] = 0x4;
 // LINE 3015:
 	__asm        jmp    _T293;
 _T24a:
@@ -19527,8 +19363,7 @@ _T24a:
 	__asm        cmp    screenPt.z, eax;
 	__asm        jle    _T26c;
 // LINE 3016:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0xE6], 2;
+	this->fData[11] = 0x2;
 // LINE 3017:
 	__asm        jmp    _T293;
 _T26c:
@@ -19536,8 +19371,7 @@ _T26c:
 	__asm        cmp    screenPt.z, eax;
 	__asm        jle    _T28e;
 // LINE 3018:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0xE6], 1;
+	this->fData[11] = 0x1;
 // LINE 3019:
 	__asm        jmp    _T293;
 // LINE 3020:
@@ -19620,11 +19454,9 @@ _T30f:
 	__asm        mov    ecx, [eax+0x90];
 	__asm        call   cCopterBody::Draw;
 // LINE 3033:
-	__asm        mov    eax, screenPt.x;
-	__asm        mov    bdi.screenx, eax;
+	bdi.screenx = screenPt.x;
 // LINE 3034:
-	__asm        mov    eax, screenPt.y;
-	__asm        mov    bdi.screeny, eax;
+	bdi.screeny = screenPt.y;
 // LINE 3035:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xBC];
@@ -19744,7 +19576,7 @@ _T2d:
 // LINE 3057:
 // Block end:
 _T80:
-	__asm        mov    gBodyDebugInfoIndex, 0;
+	gBodyDebugInfoIndex = 0x0;
 // LINE 3058:
 	__asm        jmp    near ptr 0x005518A8;
 }
@@ -19763,7 +19595,7 @@ void cYObject::~cYObject() {
 	__asm        mov    dword ptr [ebp-4], 0;
 	__asm        mov    byte ptr [ebp-4], 1;
 // LINE 3063:
-	__asm        mov    found, 0;
+	found = 0x0;
 // LINE 3064:
 	__asm        mov    srch, 0x5B8684;
 	__asm        jmp    _T5e;
@@ -19782,13 +19614,9 @@ _T5e:
 	__asm        cmp    [eax], ecx;
 	__asm        jne    _T93;
 // LINE 3067:
-	__asm        mov    eax, srch;
-	__asm        mov    eax, [eax];
-	__asm        mov    eax, [eax+0xB8];
-	__asm        mov    ecx, srch;
-	__asm        mov    [ecx], eax;
+	srch-> = srch->->fNext;
 // LINE 3068:
-	__asm        mov    found, 1;
+	found = 0x1;
 // LINE 3069:
 	__asm        jmp    _T98;
 // LINE 3072:
@@ -19822,7 +19650,7 @@ _L56643:
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    _Tff;
 _Tf8:
-	__asm        mov    dword ptr [ebp-0x18], 0;
+	None = 0x0;
 _Tff:
 	__asm        mov    ecx, [ebp-0x18];
 	__asm        call   YObjLang::~YObjLang;
@@ -19844,19 +19672,19 @@ void S3PersonTweakInit() {
 	int32_t * pvals[10];
 
 // LINE 3083:
-	__asm        mov    pvals[0], 0x5B8678;
+	pvals[0] = 0x5b8678;
 // LINE 3084:
-	__asm        mov    pvals[1], 0x5B867C;
+	pvals[1] = 0x5b867c;
 // LINE 3085:
-	__asm        mov    pvals[2], 0x5B8650;
+	pvals[2] = 0x5b8650;
 // LINE 3086:
-	__asm        mov    pvals[3], 0x5B8654;
+	pvals[3] = 0x5b8654;
 // LINE 3087:
-	__asm        mov    pvals[4], 0x5B8658;
+	pvals[4] = 0x5b8658;
 // LINE 3088:
-	__asm        mov    pvals[5], 0x5B865C;
+	pvals[5] = 0x5b865c;
 // LINE 3089:
-	__asm        mov    pvals[6], 0x5B86A4;
+	pvals[6] = 0x5b86a4;
 // LINE 3091:
 	__asm        push   0x5BB968;
 	__asm        push   7;
@@ -19957,8 +19785,7 @@ int32_t S3PUtilsGetDir(int32_t orgx, int32_t orgy, int32_t destx, int32_t desty)
 // LINE 3123:
 	__asm        jmp    _T38;
 _T32:
-	__asm        mov    eax, deltax;
-	__asm        mov    absx, eax;
+	absx = deltax;
 // LINE 3124:
 _T38:
 	__asm        cmp    deltay, 0;
@@ -19970,8 +19797,7 @@ _T38:
 // LINE 3125:
 	__asm        jmp    _T55;
 _T4f:
-	__asm        mov    eax, deltay;
-	__asm        mov    absy, eax;
+	absy = deltay;
 // LINE 3127:
 _T55:
 	__asm        mov    eax, absx;
@@ -19982,11 +19808,11 @@ _T55:
 	__asm        cmp    deltax, 0;
 	__asm        jle    _T79;
 
-	__asm        mov    dir, 2;
+	dir = 0x2;
 // LINE 3130:
 	__asm        jmp    _T7f;
 _T79:
-	__asm        mov    dir, 6;
+	dir = 0x6;
 // LINE 3132:
 _T7f:
 	__asm        jmp    _Tf8;
@@ -19999,11 +19825,11 @@ _T84:
 	__asm        cmp    deltay, 0;
 	__asm        jle    _Ta8;
 
-	__asm        mov    dir, 4;
+	dir = 0x4;
 // LINE 3135:
 	__asm        jmp    _Tae;
 _Ta8:
-	__asm        mov    dir, 0;
+	dir = 0x0;
 // LINE 3138:
 _Tae:
 	__asm        jmp    _Tf8;
@@ -20014,11 +19840,11 @@ _Tb3:
 	__asm        cmp    deltay, 0;
 	__asm        jge    _Td2;
 
-	__asm        mov    dir, 1;
+	dir = 0x1;
 // LINE 3141:
 	__asm        jmp    _Td8;
 _Td2:
-	__asm        mov    dir, 3;
+	dir = 0x3;
 // LINE 3143:
 _Td8:
 	__asm        jmp    _Tf8;
@@ -20027,11 +19853,11 @@ _Tdd:
 	__asm        cmp    deltay, 0;
 	__asm        jge    _Tf2;
 
-	__asm        mov    dir, 7;
+	dir = 0x7;
 // LINE 3146:
 	__asm        jmp    _Tf8;
 _Tf2:
-	__asm        mov    dir, 5;
+	dir = 0x5;
 // LINE 3148:
 _Tf8:
 	__asm        movsx  eax, dir;
@@ -20098,19 +19924,17 @@ _T59:
 	__asm        sub    eax, ecx;
 	__asm        mov    normy, eax;
 // LINE 3167:
-	__asm        mov    eax, cptr;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    stobj, eax;
+	stobj = cptr->stptr;
 // LINE 3168:
-	__asm        mov    objy, 0;
+	objy = 0x0;
 // LINE 3169:
-	__asm        mov    maxobjy, 0;
+	maxobjy = 0x0;
 // LINE 3170:
 _Ta6:
 	__asm        cmp    stobj, 0;
 	__asm        je     _Tfe;
 // LINE 3172:
-	__asm        mov    color, 0x200;
+	color = 0x200;
 // LINE 3173:
 	__asm        push   0;
 	__asm        push   0;
@@ -20134,13 +19958,10 @@ _Ta6:
 	__asm        cmp    maxobjy, eax;
 	__asm        jge    _Tf1;
 // LINE 3175:
-	__asm        mov    eax, objy;
-	__asm        mov    maxobjy, eax;
+	maxobjy = objy;
 // LINE 3176:
 _Tf1:
-	__asm        mov    eax, stobj;
-	__asm        mov    eax, [eax];
-	__asm        mov    stobj, eax;
+	stobj = stobj->next;
 // LINE 3177:
 	__asm        jmp    _Ta6;
 // LINE 3182:
@@ -20179,8 +20000,7 @@ void FrameInit() {
 	__asm        cmp    G_video_mode, 0x10;
 	__asm        jne    _T38;
 // LINE 3207:
-	__asm        mov    eax, swindow.RenderWide;
-	__asm        mov    Pbufwidth, eax;
+	Pbufwidth = swindow.RenderWide;
 // LINE 3208:
 	__asm        mov    eax, swindow.WindowWide;
 	__asm        dec    eax;
@@ -20193,8 +20013,7 @@ void FrameInit() {
 	__asm        jmp    _T58;
 // LINE 3213:
 _T38:
-	__asm        mov    eax, qwindow.RenderWide;
-	__asm        mov    Pbufwidth, eax;
+	Pbufwidth = qwindow.RenderWide;
 // LINE 3214:
 	__asm        mov    eax, qwindow.WindowWide;
 	__asm        dec    eax;
