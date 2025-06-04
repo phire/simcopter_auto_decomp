@@ -18,13 +18,13 @@
 
 // Type: int32_t *;
 
-// Type: struct Point2d;
+// Type: /*packed*/ struct Point2d;
 struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
 	int32_t x;
 	int32_t y;
 };
 
-// Type: struct Point3d (forward reference);
+// Type: /*packed*/ struct Point3d (forward reference);
 struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 	int32_t x;
 	int32_t y;
@@ -33,7 +33,7 @@ struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 
 // Type: short *;
 
-// Type: struct _CELL_INFO (forward reference);
+// Type: /*packed*/ struct _CELL_INFO (forward reference);
 struct _CELL_INFO{ // packed(0x18 bytes) TI: 0x1b03
 	short flags;
 	short x;
@@ -41,14 +41,14 @@ struct _CELL_INFO{ // packed(0x18 bytes) TI: 0x1b03
 	short z;
 	short size;
 	short ctr;
-	struct _STOBJ_INST *stptr;
-	struct _DYOBJ_INST *dyptr;
-	struct _DYOBJ_INST *vwptr;
+	/*packed*/ struct _STOBJ_INST *stptr;
+	/*packed*/ struct _DYOBJ_INST *dyptr;
+	/*packed*/ struct _DYOBJ_INST *vwptr;
 };
 
-// Type: struct _STOBJ_INST (forward reference);
+// Type: /*packed*/ struct _STOBJ_INST (forward reference);
 struct _STOBJ_INST{ // packed(0x10 bytes) TI: 0x193f
-	struct _STOBJ_INST *next;
+	/*packed*/ struct _STOBJ_INST *next;
 	void * __ptr32 mesh;
 	long user1;
 	long user2;
@@ -5187,7 +5187,7 @@ void S3TerrSetGridObj() {
 	long y;
 	long x;
 	int32_t * yptr;
-	struct Point2d ulp;
+	/*packed*/ struct Point2d ulp;
 
 // LINE 1144:
 	__asm        mov    eax, G_grid_ulc.x;
@@ -5279,9 +5279,9 @@ _T10e:
 
 // FUNCTION: COPTER_D 0x00517f70
 void S3TerrainMorph() {
-	struct Point2d mcell;
-	struct Point3d *v;
-	struct Point2d ulp;
+	/*packed*/ struct Point2d mcell;
+	/*packed*/ struct Point3d *v;
+	/*packed*/ struct Point2d ulp;
 
 // LINE 1199:
 	__asm        cmp    G_morphno, 0xA;
@@ -6190,7 +6190,7 @@ _T42c:
 
 // FUNCTION: COPTER_D 0x00518a8c
 int32_t S3TerrPrecisionAlt(int32_t worldx, int32_t worldz, int32_t * landable) {
-	struct Point2d cell;
+	/*packed*/ struct Point2d cell;
 	int32_t hypz;
 	int32_t ratio;
 	int32_t zdist;
@@ -6553,10 +6553,10 @@ unsigned char S3TerrGetShadeIndex(long x, long y) {
 int32_t S3ObjectPrecisionAlt(int32_t cityx, int32_t cityy) {
 	int32_t normy;
 	int32_t normx;
-	struct _CELL_INFO *cptr;
+	/*packed*/ struct _CELL_INFO *cptr;
 	int32_t alt;
 	int32_t objy;
-	struct _STOBJ_INST *stobj;
+	/*packed*/ struct _STOBJ_INST *stobj;
 	int32_t maxobjy;
 	int32_t normz;
 	int32_t flags;
@@ -6749,19 +6749,19 @@ unsigned short * G_tmap; // Contrib missing
 int32_t G_terr_minalt; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0066eaf8
-struct Point2d G_morphcell; // Contrib missing
+/*packed*/ struct Point2d G_morphcell; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0067ed28
-struct Point2d G_grid_ulc; // Contrib missing
+/*packed*/ struct Point2d G_grid_ulc; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0067ed28
-struct Point2d G_grid_ulc; // Contrib missing
+/*packed*/ struct Point2d G_grid_ulc; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0067eb10
 unsigned short * G_tmap; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0066eaf8
-struct Point2d G_morphcell; // Contrib missing
+/*packed*/ struct Point2d G_morphcell; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0067eb20
 long G_terr2bmp[128]; // Contrib missing

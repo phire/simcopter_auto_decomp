@@ -4,7 +4,7 @@
 
 // Type: long;
 
-// Type: class cYObject (forward reference);
+// Type: /*unpacked*/ class cYObject (forward reference);
 // VTABLE: COPTER_D 0x005935e0
 class cYObject : public TreeSim, public YObjLang
 { // not packed(0x168 bytes) TI: 0x48a0
@@ -51,10 +51,10 @@ class cYObject : public TreeSim, public YObjLang
 	};
 public:
 	static short sStackSize[1];
-	void SetToLoc(struct _DYOBJ_INST*);
+	void SetToLoc(/*unpacked*/ struct _DYOBJ_INST*);
 	unsigned short Gosub(short);
 	short GetTree();
-	void ReceiveHit(long, struct _DYOBJ_INST*, struct _DYOBJ_INST*, long, long);
+	void ReceiveHit(long, /*unpacked*/ struct _DYOBJ_INST*, /*unpacked*/ struct _DYOBJ_INST*, long, long);
 	void Die();
 	enum MissionUpdates {
 		kPickedUp = 0,
@@ -101,13 +101,13 @@ public:
 	// calltype: NearC
 	static void BeamRemainingAmbients();
 	// calltype: NearC
-	static void StartForScurkID(enum PersonType, enum MissionType, short, short, short, struct _DYOBJ_INST*, int32_t, int32_t);
+	static void StartForScurkID(enum PersonType, enum MissionType, short, short, short, /*unpacked*/ struct _DYOBJ_INST*, int32_t, int32_t);
 	// calltype: NearC
-	static void StartForScurkID(enum PersonType, enum MissionType, short, short, short, struct _DYOBJ_INST*);
+	static void StartForScurkID(enum PersonType, enum MissionType, short, short, short, /*unpacked*/ struct _DYOBJ_INST*);
 	unsigned short GetNearbyFire(short, short *, short *);
-	unsigned short StartMission(enum PersonType, enum MissionType, short, short, long, struct _DYOBJ_INST*, struct Point3d*);
-	unsigned short StartScurkAmbientMission(short, short, enum PersonType, short, short, struct _DYOBJ_INST*, int32_t, int32_t);
-	unsigned short StartScurkAmbientMission(short, short, enum PersonType, short, short, struct _DYOBJ_INST*, struct Point3d*);
+	unsigned short StartMission(enum PersonType, enum MissionType, short, short, long, /*unpacked*/ struct _DYOBJ_INST*, /*unpacked*/ struct Point3d*);
+	unsigned short StartScurkAmbientMission(short, short, enum PersonType, short, short, /*unpacked*/ struct _DYOBJ_INST*, int32_t, int32_t);
+	unsigned short StartScurkAmbientMission(short, short, enum PersonType, short, short, /*unpacked*/ struct _DYOBJ_INST*, /*unpacked*/ struct Point3d*);
 	void ResetToAmbient();
 	long JoinRiot();
 	// calltype: NearC
@@ -152,13 +152,13 @@ public:
 		short maxNormalLoiterers;
 	};
 public:
-	static struct cYObject::LocationInfo sLocInfo[14];
-	struct _DYOBJ_INST* SearchForDynObj(short, short, struct _DYOBJ_INST*);
-	short GetDirectionTo(struct _DYOBJ_INST*);
+	static /*unpacked*/ struct cYObject::LocationInfo sLocInfo[14];
+	/*unpacked*/ struct _DYOBJ_INST* SearchForDynObj(short, short, /*unpacked*/ struct _DYOBJ_INST*);
+	short GetDirectionTo(/*unpacked*/ struct _DYOBJ_INST*);
 	short GetDirectionTo(short, short);
-	unsigned short SearchForPersonSpot(struct _CELL_INFO*, struct Point3d*, enum cYObject::SearchType);
-	unsigned short SearchForPersonSpot(struct _CELL_INFO*, int32_t *, int32_t *, enum cYObject::SearchType);
-	unsigned short SearchForPersonSpot(struct _DYOBJ_INST*, struct Point3d*);
+	unsigned short SearchForPersonSpot(/*unpacked*/ struct _CELL_INFO*, /*unpacked*/ struct Point3d*, enum cYObject::SearchType);
+	unsigned short SearchForPersonSpot(/*unpacked*/ struct _CELL_INFO*, int32_t *, int32_t *, enum cYObject::SearchType);
+	unsigned short SearchForPersonSpot(/*unpacked*/ struct _DYOBJ_INST*, /*unpacked*/ struct Point3d*);
 	static short sBeamed;
 	static short sDebugNumBeamed;
 	// calltype: NearC
@@ -169,12 +169,12 @@ public:
 	static unsigned short IsSuitableForMission(enum MissionType, short, short);
 	// calltype: NearC
 	static unsigned short IsNeutralForPerson(enum PersonType, enum cYObject::LocationType);
-	unsigned short IsNeutralAndSparse(struct _CELL_INFO*, enum cYObject::LocationType);
+	unsigned short IsNeutralAndSparse(/*unpacked*/ struct _CELL_INFO*, enum cYObject::LocationType);
 	// calltype: NearC
-	static struct Point3d GetPos(unsigned char, unsigned char, int32_t, int32_t);
+	static /*unpacked*/ struct Point3d GetPos(unsigned char, unsigned char, int32_t, int32_t);
 	// calltype: NearC
-	static struct Point3d GetPos(struct _CELL_INFO*, int32_t, int32_t);
-	unsigned short AdjoinsRoad(struct Point3d);
+	static /*unpacked*/ struct Point3d GetPos(/*unpacked*/ struct _CELL_INFO*, int32_t, int32_t);
+	unsigned short AdjoinsRoad(/*unpacked*/ struct Point3d);
 	unsigned short RoadTile(int32_t, int32_t);
 	unsigned short GetNeutralLoc(int32_t *, int32_t *, int32_t *, int32_t *);
 	void UpdateMission(enum cYObject::MissionUpdates, long);
@@ -183,56 +183,56 @@ public:
 	struct cYObject::MoveInfo{ // not packed(0x10 bytes) TI: 0x3748
 		enum cYObject::LocationType *locType;
 		char * roadDir;
-		struct _DYOBJ_INST *dyBlock;
-		struct _STOBJ_INST *stBlock;
+		/*unpacked*/ struct _DYOBJ_INST *dyBlock;
+		/*unpacked*/ struct _STOBJ_INST *stBlock;
 	};
 	struct cYObject::_ControlInput{ // not packed(0x18 bytes) TI: 0x3745
-		struct Point3d vector;
+		/*unpacked*/ struct Point3d vector;
 		int32_t fwdSpeed;
 		int32_t rotateRate;
 		int32_t yaw;
 	};
 	struct cYObject::_ControlInput{ // not packed(0x18 bytes) TI: 0x3745
-		struct Point3d vector;
+		/*unpacked*/ struct Point3d vector;
 		int32_t fwdSpeed;
 		int32_t rotateRate;
 		int32_t yaw;
 	};
 private:
 	static unsigned short sInited;
-	static class cYObject *sObjects[100];
+	static /*unpacked*/ class cYObject *sObjects[100];
 	static enum cYObject::LocationType sNeutralPersonLocs[18][10];
 	static enum cYObject::LocationType sNeutralMissionLocs[14][10];
-	static class cYObject *sList;
-	static class NResFile sFile;
-	static class ResFile sErrorFile;
+	static /*unpacked*/ class cYObject *sList;
+	static /*unpacked*/ class NResFile sFile;
+	static /*unpacked*/ class ResFile sErrorFile;
 public:
-	static class YObjLang *sLanguage;
-	static class Behavior *sBehavior;
-	static struct Point3d sMoveTable[8];
-	static struct Point3d sUnitVectorTable[8];
+	static /*unpacked*/ class YObjLang *sLanguage;
+	static /*unpacked*/ class Behavior *sBehavior;
+	static /*unpacked*/ struct Point3d sMoveTable[8];
+	static /*unpacked*/ struct Point3d sUnitVectorTable[8];
 	// calltype: NearC
 	static void InitObjects(char *);
 	// calltype: NearC
 	static void DestroyObjects();
 	// calltype: NearC
-	static short MakeNewObject(short, struct Point3d, class Behavior*);
+	static short MakeNewObject(short, /*unpacked*/ struct Point3d, /*unpacked*/ class Behavior*);
 	// calltype: NearC
 	static void KillObject(short);
 	// calltype: NearC
 	static void MakePlebes();
 	void InitForEngine(short);
 	void TellLocToEngine();
-	class cYObject* GetClosest(enum MissionSupertype, enum MissionType, unsigned short, short *);
+	/*unpacked*/ class cYObject* GetClosest(enum MissionSupertype, enum MissionType, unsigned short, short *);
 	// calltype: NearC
-	static class cYObject* GetObjectA(short);
+	static /*unpacked*/ class cYObject* GetObjectA(short);
 	// calltype: NearC
-	static class cYObject* GetObjectA(struct _DYOBJ_INST*);
-	class cYObject* GetPersonWithMaster(struct _DYOBJ_INST*);
+	static /*unpacked*/ class cYObject* GetObjectA(/*unpacked*/ struct _DYOBJ_INST*);
+	/*unpacked*/ class cYObject* GetPersonWithMaster(/*unpacked*/ struct _DYOBJ_INST*);
 	// calltype: NearC
-	static class cYObject* GetSleepingPerson();
+	static /*unpacked*/ class cYObject* GetSleepingPerson();
 	// calltype: NearC
-	static void DrawOnePerson(struct VRBlit*);
+	static void DrawOnePerson(/*unpacked*/ struct VRBlit*);
 	void SetCell(unsigned char, unsigned char);
 	void UnsetCell(unsigned char, unsigned char);
 	void Link();
@@ -260,26 +260,26 @@ public:
 	static short sAmbientTopOff;
 	static short sAmbientAbsoluteMax;
 	static short sScurkRectRad;
-	struct _DYOBJ_INST fDyn;
+	/*unpacked*/ struct _DYOBJ_INST fDyn;
 	unsigned char fCellX;
 	unsigned char fCellY;
 	unsigned long fBodyName;
-	class cCopterBody *fBody;
+	/*unpacked*/ class cCopterBody *fBody;
 	unsigned long fAnimName;
-	class cCopterAnim *fAnim;
+	/*unpacked*/ class cCopterAnim *fAnim;
 	short fFace;
 	void SetFace(short);
-	struct Point3d fLastMasterLoc;
-	unsigned short SetMaster(struct _DYOBJ_INST*);
-	struct _DYOBJ_INST* GetMaster();
+	/*unpacked*/ struct Point3d fLastMasterLoc;
+	unsigned short SetMaster(/*unpacked*/ struct _DYOBJ_INST*);
+	/*unpacked*/ struct _DYOBJ_INST* GetMaster();
 	void FollowMaster();
 	enum cYObject::LocationType fCurLocType;
 	// calltype: NearC
 	static unsigned short GetOutOfHeli(long);
 	// calltype: NearC
-	static struct Point2d GetRiotCenter(short, short);
+	static /*unpacked*/ struct Point2d GetRiotCenter(short, short);
 	// calltype: NearC
-	static struct Point2d GetRiotCenter(long);
+	static /*unpacked*/ struct Point2d GetRiotCenter(long);
 	void SimAnim();
 	void Simulate();
 	// calltype: NearC
@@ -291,11 +291,11 @@ public:
 	void IncAndCheckAnimFrame();
 	void CheckAnimFrame();
 	// calltype: NearC
-	static class cYObject* GetOnePersonForScurkID(short, short);
+	static /*unpacked*/ class cYObject* GetOnePersonForScurkID(short, short);
 	// calltype: NearC
-	static struct _DYOBJ_INST* GetFirstDynObj(struct _CELL_INFO*, long);
+	static /*unpacked*/ struct _DYOBJ_INST* GetFirstDynObj(/*unpacked*/ struct _CELL_INFO*, long);
 	// calltype: NearC
-	static short CountDynObjs(struct _CELL_INFO*, long);
+	static short CountDynObjs(/*unpacked*/ struct _CELL_INFO*, long);
 	void SetMissionType(enum MissionType);
 	void SetMissionID(long);
 	void SetPersonType(enum PersonType);
@@ -306,8 +306,8 @@ public:
 	unsigned long GetAnim();
 	void SetAnim(unsigned long);
 	unsigned short fSimulate;
-	class Behavior *fBehavior;
-	class cYObject *fNext;
+	/*unpacked*/ class Behavior *fBehavior;
+	/*unpacked*/ class cYObject *fNext;
 	short fID;
 	short _pad;
 	short fTemp[8];
@@ -316,7 +316,7 @@ public:
 	short fIterations;
 	short _pad2;
 	short fDirInc;
-	struct cYObject::ObjDefHeader fDefinition;
+	/*unpacked*/ struct cYObject::ObjDefHeader fDefinition;
 	enum /* __unnamed */ {
 		kMasterObject = 0,
 		kLastHitterObject = 1,
@@ -355,14 +355,14 @@ public:
 		kLastRxnTree = 30,
 	};
 protected:
-	virtual enum TreeSim::ReturnCode TryElement(struct TreeSim::StackElem*, struct Behavior::Node*) /* override */;
+	virtual enum TreeSim::ReturnCode TryElement(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*) /* override */;
 	virtual void HandleOverflow(); // vtable+0x10
 	virtual short InterpValue(short, short, short **); // vtable+0x14
-	enum TreeSim::ReturnCode TryExpression(struct YObjLang::AttrParam*);
+	enum TreeSim::ReturnCode TryExpression(/*unpacked*/ struct YObjLang::AttrParam*);
 public:
-	enum cYObject::MoveErrorCode TryVectorMove(struct Point3d, int32_t, struct cYObject::MoveInfo*);
-	enum cYObject::MoveErrorCode TryTableMove(short, unsigned short, struct cYObject::MoveInfo*);
-	enum cYObject::MoveErrorCode TryMove(unsigned short, struct cYObject::MoveInfo*, int32_t, int32_t, int32_t, unsigned short);
+	enum cYObject::MoveErrorCode TryVectorMove(/*unpacked*/ struct Point3d, int32_t, /*unpacked*/ struct cYObject::MoveInfo*);
+	enum cYObject::MoveErrorCode TryTableMove(short, unsigned short, /*unpacked*/ struct cYObject::MoveInfo*);
+	enum cYObject::MoveErrorCode TryMove(unsigned short, /*unpacked*/ struct cYObject::MoveInfo*, int32_t, int32_t, int32_t, unsigned short);
 	enum cYObject::LocationType GetLocType();
 	// calltype: NearC
 	static enum cYObject::LocationType GetLocType(short, short);
@@ -371,7 +371,7 @@ public:
 	unsigned short IsWalkable(short, short, enum cYObject::LocationType);
 	unsigned short CanJumpOffHere();
 	// calltype: NearC
-	static char GetRoadDir(struct Point3d);
+	static char GetRoadDir(/*unpacked*/ struct Point3d);
 	enum SoundNum {
 		kSNone = -1,
 		kSAssertion = 1,
@@ -413,35 +413,35 @@ public:
 	static short GetActualSoundChannel(short);
 	void SetSoundChannel(short);
 	// calltype: NearC
-	static short GetSRadius(struct _DYOBJ_INST*);
+	static short GetSRadius(/*unpacked*/ struct _DYOBJ_INST*);
 	// calltype: NearC
-	static int32_t GetRadius(struct _DYOBJ_INST*);
+	static int32_t GetRadius(/*unpacked*/ struct _DYOBJ_INST*);
 	// calltype: NearC
-	static struct _DYOBJ_INST* GetDynObj(struct _DYOBJ_INST*, struct Point3d, int32_t, struct _DYOBJ_INST*, struct _DYOBJ_INST*);
+	static /*unpacked*/ struct _DYOBJ_INST* GetDynObj(/*unpacked*/ struct _DYOBJ_INST*, /*unpacked*/ struct Point3d, int32_t, /*unpacked*/ struct _DYOBJ_INST*, /*unpacked*/ struct _DYOBJ_INST*);
 	// calltype: NearC
-	static struct _STOBJ_INST* GetStaticObj(struct Point3d, int32_t);
+	static /*unpacked*/ struct _STOBJ_INST* GetStaticObj(/*unpacked*/ struct Point3d, int32_t);
 	// calltype: NearC
-	static unsigned short InBoundingRect(struct Point3d, int32_t, struct Point3d, int32_t);
+	static unsigned short InBoundingRect(/*unpacked*/ struct Point3d, int32_t, /*unpacked*/ struct Point3d, int32_t);
 	unsigned short MasterSlowerThan(short);
 	short GetHeightOverGround();
-	unsigned short GetFakeDistTo(struct _DYOBJ_INST*);
-	unsigned short CloseTo(struct _DYOBJ_INST*);
+	unsigned short GetFakeDistTo(/*unpacked*/ struct _DYOBJ_INST*);
+	unsigned short CloseTo(/*unpacked*/ struct _DYOBJ_INST*);
 	// calltype: NearC
-	static class cYObject* GetFirst();
+	static /*unpacked*/ class cYObject* GetFirst();
 	// calltype: NearC
-	static class cYObject* GetFirst(short, short);
+	static /*unpacked*/ class cYObject* GetFirst(short, short);
 	// calltype: NearC
-	static class cYObject* GetFirstInvisible(short);
-	class cYObject* PutTotedMedVicOnHeli();
-	class cYObject* PutTotedMedVicOn(struct _DYOBJ_INST*);
-	unsigned short SetStartingObject(struct _DYOBJ_INST*);
-	class cYObject* DropToted();
-	class cYObject* GetToted();
+	static /*unpacked*/ class cYObject* GetFirstInvisible(short);
+	/*unpacked*/ class cYObject* PutTotedMedVicOnHeli();
+	/*unpacked*/ class cYObject* PutTotedMedVicOn(/*unpacked*/ struct _DYOBJ_INST*);
+	unsigned short SetStartingObject(/*unpacked*/ struct _DYOBJ_INST*);
+	/*unpacked*/ class cYObject* DropToted();
+	/*unpacked*/ class cYObject* GetToted();
 	unsigned short GetOffMasterObject();
 	// calltype: NearC
-	static unsigned short IsHigherThan(struct Point3d, short);
+	static unsigned short IsHigherThan(/*unpacked*/ struct Point3d, short);
 	// calltype: NearC
-	static unsigned short IsFlattenedTerrain(struct _CELL_INFO*);
+	static unsigned short IsFlattenedTerrain(/*unpacked*/ struct _CELL_INFO*);
 	// calltype: NearC
 	static void RandomEdgeOffset(short, int32_t *, int32_t *);
 	// calltype: NearC
@@ -450,210 +450,210 @@ public:
 	virtual void ~cYObject() /* override */;
 protected:
 	virtual void Error(short) /* override */;
-	void cYObject(short, class Behavior*, struct Point3d, short);
+	void cYObject(short, /*unpacked*/ class Behavior*, /*unpacked*/ struct Point3d, short);
 public:
-	struct cYObject::ObjDefHeader* GetDef();
+	/*unpacked*/ struct cYObject::ObjDefHeader* GetDef();
 	void GetTypeName(char *);
 	// calltype: NearC
-	static class ResFile* GetGlobalFile();
+	static /*unpacked*/ class ResFile* GetGlobalFile();
 	// calltype: NearC
-	static class YObjLang* GetLanguage();
+	static /*unpacked*/ class YObjLang* GetLanguage();
 	// calltype: NearC
-	static class ResFile* GetErrorFile();
+	static /*unpacked*/ class ResFile* GetErrorFile();
 	short GetID();
-	struct Point3d GetLocation();
-	class Behavior* GetBehavior();
-	void Draw(struct VRBlit*);
+	/*unpacked*/ struct Point3d GetLocation();
+	/*unpacked*/ class Behavior* GetBehavior();
+	void Draw(/*unpacked*/ struct VRBlit*);
 	float fScale;
 	void DefaultDrawStr(short, short, unsigned char, unsigned char *, int32_t);
-	void SetCellAndLoc(struct Point3d, unsigned char, unsigned char);
+	void SetCellAndLoc(/*unpacked*/ struct Point3d, unsigned char, unsigned char);
 	void SetCellAndLoc(unsigned char, unsigned char, int32_t, int32_t);
 	void Start(int32_t, int32_t, int32_t, int32_t);
 	unsigned short BeamIntoCameraRange();
 	unsigned short OutOfCameraRange();
-	unsigned short CanPlace(struct Point3d);
+	unsigned short CanPlace(/*unpacked*/ struct Point3d);
 	void AdjustRadiusForRiotVal();
 	unsigned short HasRiotValChanged();
 	void IncrementRiotVal(short);
 	void GetSurroundingRiotInfo(short, short *, short *, short *);
 	void Turn(short);
-	class cYObject* GetNext();
-	void DynEffects(short, enum cYObject::MoveErrorCode, struct cYObject::MoveInfo*);
-	void DynEffectsFixed(int32_t, enum cYObject::MoveErrorCode, struct cYObject::MoveInfo*);
-	using PrimProc = enum TreeSim::ReturnCode (*)(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
+	/*unpacked*/ class cYObject* GetNext();
+	void DynEffects(short, enum cYObject::MoveErrorCode, /*unpacked*/ struct cYObject::MoveInfo*);
+	void DynEffectsFixed(int32_t, enum cYObject::MoveErrorCode, /*unpacked*/ struct cYObject::MoveInfo*);
+	using PrimProc = enum TreeSim::ReturnCode (*)(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 public:
-	static enum TreeSim::ReturnCode (*PrimProcs[64])(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode (*PrimProcs[64])(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sIdle(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iIdle(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sIdle(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iIdle(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sSetAnim(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iSetAnim(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sSetAnim(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iSetAnim(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sAttr(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iAttr(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sAttr(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iAttr(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sWalk(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iWalk(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sWalk(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iWalk(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sSetBody(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iSetBody(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sSetBody(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iSetBody(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sRandom(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iRandom(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sRandom(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iRandom(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sWalkToAndGrabOntoStackObject(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iWalkToAndGrabOntoStackObject(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sWalkToAndGrabOntoStackObject(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iWalkToAndGrabOntoStackObject(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sUpdateMyMission(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iUpdateMyMission(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sUpdateMyMission(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iUpdateMyMission(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sCheckForTrue(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iCheckForTrue(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sCheckForTrue(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iCheckForTrue(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sCompareMyLocWith(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iCompareMyLocWith(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sCompareMyLocWith(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iCompareMyLocWith(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sSelfDecommission(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iSelfDecommission(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sSelfDecommission(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iSelfDecommission(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sGetOffMasterObject(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iGetOffMasterObject(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sGetOffMasterObject(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iGetOffMasterObject(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sTurnTowardsStackObject(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iTurnTowardsStackObject(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sTurnTowardsStackObject(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iTurnTowardsStackObject(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sIsThisLocType(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iIsThisLocType(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sIsThisLocType(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iIsThisLocType(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sIsThisLocTypeNeutral(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iIsThisLocTypeNeutral(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sIsThisLocTypeNeutral(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iIsThisLocTypeNeutral(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sCanJumpOffHere(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iCanJumpOffHere(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sCanJumpOffHere(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iCanJumpOffHere(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sCheckForSpotlightInMyCell(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iCheckForSpotlightInMyCell(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sCheckForSpotlightInMyCell(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iCheckForSpotlightInMyCell(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sIncrementRiotVal(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iIncrementRiotVal(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sIncrementRiotVal(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iIncrementRiotVal(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sGetSurroundingRiotVal(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iGetSurroundingRiotVal(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sGetSurroundingRiotVal(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iGetSurroundingRiotVal(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sIsThisScurkID(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iIsThisScurkID(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sIsThisScurkID(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iIsThisScurkID(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sGosubToInitbhav(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iGosubToInitbhav(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sGosubToInitbhav(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iGosubToInitbhav(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sAdjustRadiusForRiotVal(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iAdjustRadiusForRiotVal(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sAdjustRadiusForRiotVal(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iAdjustRadiusForRiotVal(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sJoinRiot(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iJoinRiot(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sJoinRiot(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iJoinRiot(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sSetDirection(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iSetDirection(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sSetDirection(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iSetDirection(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sThrowProjectile(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iThrowProjectile(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sThrowProjectile(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iThrowProjectile(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sTurnFromStackObject(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iTurnFromStackObject(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sTurnFromStackObject(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iTurnFromStackObject(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sTurnFromLastHitter(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iTurnFromLastHitter(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sTurnFromLastHitter(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iTurnFromLastHitter(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sTurnTowardsLastHitter(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iTurnTowardsLastHitter(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sTurnTowardsLastHitter(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iTurnTowardsLastHitter(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sGetOutOfRoadEtc(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iGetOutOfRoadEtc(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sGetOutOfRoadEtc(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iGetOutOfRoadEtc(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sGenerateMedevacAndSetSelfAsVictim(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iGenerateMedevacAndSetSelfAsVictim(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sGenerateMedevacAndSetSelfAsVictim(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iGenerateMedevacAndSetSelfAsVictim(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sTurnToNearbyFire(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iTurnToNearbyFire(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sTurnToNearbyFire(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iTurnToNearbyFire(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sDie(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iDie(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sDie(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iDie(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sWalkToStackObject(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iWalkToStackObject(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sWalkToStackObject(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iWalkToStackObject(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sPutObjIntoTreeNum(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iPutObjIntoTreeNum(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sPutObjIntoTreeNum(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iPutObjIntoTreeNum(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sVisitOz(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iVisitOz(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sVisitOz(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iVisitOz(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sMakeMyMedevacVictimVisible(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iMakeMyMedevacVictimVisible(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sMakeMyMedevacVictimVisible(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iMakeMyMedevacVictimVisible(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sMakeMyMedevacVictimInvisible(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iMakeMyMedevacVictimInvisible(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sMakeMyMedevacVictimInvisible(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iMakeMyMedevacVictimInvisible(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sMakeMeMasterOfStackObject(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iMakeMeMasterOfStackObject(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sMakeMeMasterOfStackObject(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iMakeMeMasterOfStackObject(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sMakeMyStackObjectVisitOz(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iMakeMyStackObjectVisitOz(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sMakeMyStackObjectVisitOz(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iMakeMyStackObjectVisitOz(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sPutTotedMedVicOnStackObject(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iPutTotedMedVicOnStackObject(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sPutTotedMedVicOnStackObject(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iPutTotedMedVicOnStackObject(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sTakeAnyMedVicOffStackObject(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iTakeAnyMedVicOffStackObject(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sTakeAnyMedVicOffStackObject(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iTakeAnyMedVicOffStackObject(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sGetOnStackObject(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iGetOnStackObject(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sGetOnStackObject(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iGetOnStackObject(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sUpdateStackVictimToted(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iUpdateStackVictimToted(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sUpdateStackVictimToted(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iUpdateStackVictimToted(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sGetNumSpacesOnStackObject(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iGetNumSpacesOnStackObject(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sGetNumSpacesOnStackObject(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iGetNumSpacesOnStackObject(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sDropToted(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iDropToted(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sDropToted(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iDropToted(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sUpdateStackVictimPickedUp(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iUpdateStackVictimPickedUp(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sUpdateStackVictimPickedUp(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iUpdateStackVictimPickedUp(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sCloseToHeli(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iCloseToHeli(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sCloseToHeli(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iCloseToHeli(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sSetMyExpression(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iSetMyExpression(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sSetMyExpression(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iSetMyExpression(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sGetHeliSpeedPlusDamage(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iGetHeliSpeedPlusDamage(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sGetHeliSpeedPlusDamage(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iGetHeliSpeedPlusDamage(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sIsThisCellSafe(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iIsThisCellSafe(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sIsThisCellSafe(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iIsThisCellSafe(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sPlaySound(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iPlaySound(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sPlaySound(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iPlaySound(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sGetOnHeliIfHarnessRaised(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iGetOnHeliIfHarnessRaised(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sGetOnHeliIfHarnessRaised(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iGetOnHeliIfHarnessRaised(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sAmIOnHeli(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iAmIOnHeli(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sAmIOnHeli(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iAmIOnHeli(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sThrowFieryProjectile(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iThrowFieryProjectile(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sThrowFieryProjectile(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iThrowFieryProjectile(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sTellStartingObjectTrueOrFalse(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iTellStartingObjectTrueOrFalse(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sTellStartingObjectTrueOrFalse(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iTellStartingObjectTrueOrFalse(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sPutMyCarInStack(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iPutMyCarInStack(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sPutMyCarInStack(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iPutMyCarInStack(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sDoIHaveAMaster(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iDoIHaveAMaster(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sDoIHaveAMaster(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iDoIHaveAMaster(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 };
 
 // Type: enum cYObject::LocationType;
@@ -676,7 +676,7 @@ enum LocationType {
 	kNumLocTypes = 14,
 };
 
-// Type: struct Point3d (forward reference);
+// Type: /*unpacked*/ struct Point3d (forward reference);
 struct Point3d{ // not packed(0xc bytes) TI: 0x348f
 	int32_t x;
 	int32_t y;
@@ -685,32 +685,32 @@ struct Point3d{ // not packed(0xc bytes) TI: 0x348f
 
 // Type: short;
 
-// Type: class cAvatar (forward reference);
+// Type: /*unpacked*/ class cAvatar (forward reference);
 // VTABLE: COPTER_D 0x005935a8
 class cAvatar : public cYObject
 { // not packed(0x180 bytes) TI: 0x4825
 public:
-	void cAvatar(struct Point3d);
+	void cAvatar(/*unpacked*/ struct Point3d);
 	// calltype: NearC
-	static class cAvatar* MakeAvatar();
-	struct cYObject::_ControlInput fUserControl;
+	static /*unpacked*/ class cAvatar* MakeAvatar();
+	/*unpacked*/ struct cYObject::_ControlInput fUserControl;
 	void RotateMatrixAndYawForEngine();
 	void GetControlInput();
 	void Start(int32_t, int32_t, int32_t, int32_t);
 	void Simulate();
-	enum cYObject::MoveErrorCode AvatarMove(struct cYObject::MoveInfo*);
+	enum cYObject::MoveErrorCode AvatarMove(/*unpacked*/ struct cYObject::MoveInfo*);
 	virtual void Reset() /* override */;
 	void ResetView();
 	short GetScurkID();
 };
 
-// Type: struct cYObject::LocationInfo (forward reference);
+// Type: /*unpacked*/ struct cYObject::LocationInfo (forward reference);
 struct cYObject::LocationInfo{ // not packed(0x8 bytes) TI: 0x425a
 	enum cYObject::SearchType searchType;
 	short maxNormalLoiterers;
 };
 
-// Type: struct BodyDebugInfo (forward reference);
+// Type: /*unpacked*/ struct BodyDebugInfo (forward reference);
 struct BodyDebugInfo{ // not packed(0x1c bytes) TI: 0x3e09
 	long screenx;
 	long screeny;
@@ -719,39 +719,39 @@ struct BodyDebugInfo{ // not packed(0x1c bytes) TI: 0x3e09
 
 // Type: unsigned short;
 
-// Type: class NResFile;
+// Type: /*unpacked*/ class NResFile;
 // VTABLE: COPTER_D 0x00591218
 class NResFile : public ResFile
 { // not packed(0x124 bytes) TI: 0x3621
 private:
-	class PtrList<StdResLoader> fLoaders;
+	/*unpacked*/ class PtrList<StdResLoader> fLoaders;
 public:
 	virtual void ~NResFile() /* override */;
-	class StdResLoader* GetLoader(unsigned long, void (*)(void * __ptr32, long));
-	void ReleaseLoader(class StdResLoader*);
+	/*unpacked*/ class StdResLoader* GetLoader(unsigned long, void (*)(void * __ptr32, long));
+	void ReleaseLoader(/*unpacked*/ class StdResLoader*);
 };
 
-// Type: class ResFile;
+// Type: /*unpacked*/ class ResFile;
 // VTABLE: COPTER_D 0x00593518
 class ResFile : public FlatResFile
 { // not packed(0x11c bytes) TI: 0x3334
 public:
-	long OpenFromOtherFile(class ResFile*);
+	long OpenFromOtherFile(/*unpacked*/ class ResFile*);
 };
 
-// Type: class YObjLang (forward reference);
+// Type: /*unpacked*/ class YObjLang (forward reference);
 // VTABLE: COPTER_D 0x005936e8
 class YObjLang : public Language
 { // not packed(0x4 bytes) TI: 0x484d
 public:
-	void YObjLang(class YObjLang&);
+	void YObjLang(/*unpacked*/ class YObjLang&);
 	void YObjLang(unsigned char *);
 	void ~YObjLang();
-	virtual void GetNodeText(class Behavior*, struct Behavior::Node*, unsigned char *) /* override */;
+	virtual void GetNodeText(/*unpacked*/ class Behavior*, /*unpacked*/ struct Behavior::Node*, unsigned char *) /* override */;
 	virtual void GetPrimName(short, unsigned char *) /* override */;
-	virtual unsigned short IsSingleExit(struct Behavior::Node*) /* override */;
+	virtual unsigned short IsSingleExit(/*unpacked*/ struct Behavior::Node*) /* override */;
 	// calltype: NearC
-	static void SwizzleTreeParam(short, struct Behavior::NodeParameter*);
+	static void SwizzleTreeParam(short, /*unpacked*/ struct Behavior::NodeParameter*);
 	// calltype: NearC
 	static void SwizzleTree(void * __ptr32, long);
 	virtual void (*)(void * __ptr32, long) GetSwizzler() /* override */;
@@ -984,7 +984,7 @@ public:
 		short m4;
 	};
 	// TODO: Unknown nested type: <class 'tpi.LfUnion'>
-	// union YObjLang::Param Param
+	// /*unpacked*/ union YObjLang::Param Param
 	enum TreeNum {
 		kNoTree = -1,
 		kSpotlightTree = 900,
@@ -1055,15 +1055,15 @@ public:
 	};
 };
 
-// Type: class Behavior (forward reference);
+// Type: /*unpacked*/ class Behavior (forward reference);
 // VTABLE: COPTER_D 0x005936d8
 class Behavior{ // not packed(0x1c bytes) TI: 0x35de
 protected:
-	class NResFile *fGlobFile;
-	class NResFile *fPrivFile;
-	class StdResLoader *fGlobalTrees;
-	class StdResLoader *fPrivateTrees;
-	class Language *fLanguage;
+	/*unpacked*/ class NResFile *fGlobFile;
+	/*unpacked*/ class NResFile *fPrivFile;
+	/*unpacked*/ class StdResLoader *fGlobalTrees;
+	/*unpacked*/ class StdResLoader *fPrivateTrees;
+	/*unpacked*/ class Language *fLanguage;
 	void (*fSwizzler)(void * __ptr32, long);
 	enum /* __unnamed */ {
 		kPrimitiveBase = 0,
@@ -1093,7 +1093,7 @@ protected:
 		short primCode;
 		char trueTrans;
 		char falseTrans;
-		struct Behavior::NodeParameter param;
+		/*unpacked*/ struct Behavior::NodeParameter param;
 	};
 	enum /* __unnamed */ {
 		kUndefined = -3,
@@ -1102,21 +1102,21 @@ protected:
 	};
 	struct Behavior::Tree{ // not packed(0xe bytes) TI: 0x35e1
 		short numNodes;
-		struct Behavior::Node nodes[1];
+		/*unpacked*/ struct Behavior::Node nodes[1];
 	};
 public:
-	void Behavior(class Language*, class NResFile*, class NResFile*);
+	void Behavior(/*unpacked*/ class Language*, /*unpacked*/ class NResFile*, /*unpacked*/ class NResFile*);
 	void ~Behavior();
-	void GetNode(short, short, struct Behavior::Node*);
-	virtual const struct Behavior::Node* GetNodeRef(short, short); // vtable+0x0
+	void GetNode(short, short, /*unpacked*/ struct Behavior::Node*);
+	virtual const /*unpacked*/ struct Behavior::Node* GetNodeRef(short, short); // vtable+0x0
 	virtual void GetNodeText(short, short, unsigned char *); // vtable+0x4
-	void GetNodeText(struct Behavior::Node*, unsigned char *);
+	void GetNodeText(/*unpacked*/ struct Behavior::Node*, unsigned char *);
 	virtual void GetTreeName(short, unsigned char *); // vtable+0x8
 	short CountPrimitives();
-	class Language* GetLanguage();
-	class ResFile* GetPrivFile();
-	class ResFile* GetGlobFile();
-	virtual class ResFile* GetResFile(short); // vtable+0xc
+	/*unpacked*/ class Language* GetLanguage();
+	/*unpacked*/ class ResFile* GetPrivFile();
+	/*unpacked*/ class ResFile* GetGlobFile();
+	virtual /*unpacked*/ class ResFile* GetResFile(short); // vtable+0xc
 	// calltype: NearC
 	static short GetBaseID(short);
 	// calltype: NearC
@@ -1125,21 +1125,21 @@ public:
 	static short GetTreeClass(short);
 	// calltype: NearC
 	static void GetClassNameA(short, unsigned char *);
-	using ParamSwizzleProc = void (*)(short, struct Behavior::NodeParameter*);
+	using ParamSwizzleProc = void (*)(short, /*unpacked*/ struct Behavior::NodeParameter*);
 public:
 	// calltype: NearC
-	static void StdTreeSwizzle(struct Behavior::Tree*, long, void (*)(short, struct Behavior::NodeParameter*));
+	static void StdTreeSwizzle(/*unpacked*/ struct Behavior::Tree*, long, void (*)(short, /*unpacked*/ struct Behavior::NodeParameter*));
 	// calltype: NearC
-	static unsigned short IsDefaultParam(struct Behavior::NodeParameter*);
+	static unsigned short IsDefaultParam(/*unpacked*/ struct Behavior::NodeParameter*);
 	// calltype: NearC
-	static void SetDefaultParam(struct Behavior::NodeParameter*);
+	static void SetDefaultParam(/*unpacked*/ struct Behavior::NodeParameter*);
 };
 
 // Type: int32_t;
 
 // Type: void ();
 
-// Type: class MTimer;
+// Type: /*unpacked*/ class MTimer;
 class MTimer{ // not packed(0x10 bytes) TI: 0x3bee
 	enum TimerResolution {
 		nTimerResolutionMicroseconds = 0,
@@ -1170,27 +1170,27 @@ protected:
 
 // Type: int32_t *;
 
-// Type: struct _DYOBJ_INST (forward reference);
+// Type: /*unpacked*/ struct _DYOBJ_INST (forward reference);
 struct _DYOBJ_INST{ // not packed(0x64 bytes) TI: 0x3681
-	struct _DYOBJ_INST *next;
-	struct _DYOBJ_INST *vnext;
+	/*unpacked*/ struct _DYOBJ_INST *next;
+	/*unpacked*/ struct _DYOBJ_INST *vnext;
 	void * __ptr32 mesh;
 	short flags;
 	short user1;
 	long radius;
 	long height;
-	struct Point3d loc;
+	/*unpacked*/ struct Point3d loc;
 	int32_t matrix[4][4];
 };
 
-// Type: struct Point3d;
+// Type: /*unpacked*/ struct Point3d;
 struct Point3d{ // not packed(0xc bytes) TI: 0x348f
 	int32_t x;
 	int32_t y;
 	int32_t z;
 };
 
-// Type: struct _CELL_INFO (forward reference);
+// Type: /*unpacked*/ struct _CELL_INFO (forward reference);
 struct _CELL_INFO{ // not packed(0x18 bytes) TI: 0x3671
 	short flags;
 	short x;
@@ -1198,9 +1198,9 @@ struct _CELL_INFO{ // not packed(0x18 bytes) TI: 0x3671
 	short z;
 	short size;
 	short ctr;
-	struct _STOBJ_INST *stptr;
-	struct _DYOBJ_INST *dyptr;
-	struct _DYOBJ_INST *vwptr;
+	/*unpacked*/ struct _STOBJ_INST *stptr;
+	/*unpacked*/ struct _DYOBJ_INST *dyptr;
+	/*unpacked*/ struct _DYOBJ_INST *vwptr;
 };
 
 // Type: enum cYObject::SearchType;
@@ -1215,12 +1215,12 @@ enum SearchType {
 
 // Type: double;
 
-// Type: struct cYObject::MoveInfo;
+// Type: /*unpacked*/ struct cYObject::MoveInfo;
 struct cYObject::MoveInfo{ // not packed(0x10 bytes) TI: 0x3748
 	enum cYObject::LocationType *locType;
 	char * roadDir;
-	struct _DYOBJ_INST *dyBlock;
-	struct _STOBJ_INST *stBlock;
+	/*unpacked*/ struct _DYOBJ_INST *dyBlock;
+	/*unpacked*/ struct _STOBJ_INST *stBlock;
 };
 
 // Type: enum MissionSupertype;
@@ -1233,41 +1233,41 @@ enum MissionSupertype {
 
 // Type: unsigned char;
 
-// Type: struct VRBlit (forward reference);
+// Type: /*unpacked*/ struct VRBlit (forward reference);
 struct VRBlit{ // not packed(0x10 bytes) TI: 0x3643
 	int32_t nverts;
-	struct Proj2d *verts;
+	/*unpacked*/ struct Proj2d *verts;
 	int32_t notused;
 	int32_t user1;
 };
 
-// Type: struct _HELI_DATA (forward reference);
+// Type: /*unpacked*/ struct _HELI_DATA (forward reference);
 struct _HELI_DATA{ // not packed(0x32c bytes) TI: 0x390f
 	int32_t type;
 	int32_t state;
 	int32_t flags;
 	int32_t altdelta;
-	struct Point2d lastpos;
-	struct Point2d currpos;
+	/*unpacked*/ struct Point2d lastpos;
+	/*unpacked*/ struct Point2d currpos;
 	int32_t rotor_mat[4][4];
 	int32_t rotortl_mat[4][4];
-	struct _DYOBJ_INST *dycannon;
-	struct _DYOBJ_INST *dyheli;
-	struct _DYOBJ_INST *dyshadow;
-	struct _DYOBJ_INST *dyrotor;
-	struct _DYOBJ_INST *dyrotortl;
-	struct _DYOBJ_INST *dyrotshadow;
-	struct _DYOBJ_INST *dyrope;
-	struct _DYOBJ_INST *dybucket;
-	struct _DYOBJ_INST *dyspot;
-	struct _DYOBJ_INST *dybracket;
+	/*unpacked*/ struct _DYOBJ_INST *dycannon;
+	/*unpacked*/ struct _DYOBJ_INST *dyheli;
+	/*unpacked*/ struct _DYOBJ_INST *dyshadow;
+	/*unpacked*/ struct _DYOBJ_INST *dyrotor;
+	/*unpacked*/ struct _DYOBJ_INST *dyrotortl;
+	/*unpacked*/ struct _DYOBJ_INST *dyrotshadow;
+	/*unpacked*/ struct _DYOBJ_INST *dyrope;
+	/*unpacked*/ struct _DYOBJ_INST *dybucket;
+	/*unpacked*/ struct _DYOBJ_INST *dyspot;
+	/*unpacked*/ struct _DYOBJ_INST *dybracket;
 	void * __ptr32 bucketmesh;
 	void * __ptr32 harnessmesh;
 	int32_t damage;
 	int32_t smokeseq;
-	struct mv heli_p;
-	struct mv heli_r;
-	struct Point3d vector;
+	/*unpacked*/ struct mv heli_p;
+	/*unpacked*/ struct mv heli_r;
+	/*unpacked*/ struct Point3d vector;
 	int32_t yaw;
 	int32_t collide_delay;
 	int32_t roll;
@@ -1287,15 +1287,15 @@ struct _HELI_DATA{ // not packed(0x32c bytes) TI: 0x390f
 	int32_t fireprojectile;
 	int32_t terralt;
 	int32_t buildalt;
-	struct Point3d collisvec;
+	/*unpacked*/ struct Point3d collisvec;
 	int32_t shad_color;
-	struct _MISSILE_DATA *crash_traj;
+	/*unpacked*/ struct _MISSILE_DATA *crash_traj;
 	int32_t crash_timer;
 	long crash_seq;
 	int32_t over_water;
-	struct _ROPE_DATA rinfo;
-	struct _WATER_DATA winfo;
-	struct tagHeliPassengerData passengerData;
+	/*unpacked*/ struct _ROPE_DATA rinfo;
+	/*unpacked*/ struct _WATER_DATA winfo;
+	/*unpacked*/ struct tagHeliPassengerData passengerData;
 	int32_t fuel;
 	int32_t flight_time;
 	int32_t pct_load;
@@ -1345,7 +1345,7 @@ enum MissionType {
 	kNumMissionTypes = 14,
 };
 
-// Type: struct _LZ_INFO (forward reference);
+// Type: /*unpacked*/ struct _LZ_INFO (forward reference);
 struct _LZ_INFO{ // not packed(0x14 bytes) TI: 0x3e5a
 	int32_t flags;
 	int32_t ulx;
@@ -1354,7 +1354,7 @@ struct _LZ_INFO{ // not packed(0x14 bytes) TI: 0x3e5a
 	int32_t dimz;
 };
 
-// Type: struct Rect;
+// Type: /*unpacked*/ struct Rect;
 struct Rect{ // not packed(0x8 bytes) TI: 0x3463
 	short top;
 	short left;
@@ -1362,7 +1362,7 @@ struct Rect{ // not packed(0x8 bytes) TI: 0x3463
 	short right;
 };
 
-// Type: struct _SYSTEMTIME;
+// Type: /*unpacked*/ struct _SYSTEMTIME;
 struct _SYSTEMTIME{ // not packed(0x10 bytes) TI: 0x3e00
 	unsigned short wYear;
 	unsigned short wMonth;
@@ -1376,11 +1376,11 @@ struct _SYSTEMTIME{ // not packed(0x10 bytes) TI: 0x3e00
 
 // Type: char *;
 
-// Type: struct _MISSION_PARMS;
+// Type: /*unpacked*/ struct _MISSION_PARMS;
 struct _MISSION_PARMS{ // not packed(0x18 bytes) TI: 0x38f9
 	long op;
 	long id;
-	struct Point2d maploc;
+	/*unpacked*/ struct Point2d maploc;
 	long i2num;
 	long flags;
 };
@@ -1408,26 +1408,26 @@ enum SoundNum {
 	kSSayYrKindaHot = 18,
 };
 
-// Type: class DigitalSound (forward reference);
+// Type: /*unpacked*/ class DigitalSound (forward reference);
 // VTABLE: COPTER_D 0x0058f488
 class DigitalSound : public Sound
 { // not packed(0x7c bytes) TI: 0x475b
 protected:
 	int32_t nStreamingType;
 	int32_t nCompletionEstimationTimerSet;
-	static struct IDirectSound *lpDirectSound;
+	static /*unpacked*/ struct IDirectSound *lpDirectSound;
 	uint32_t cbSize;
-	struct tWAVEFORMATEX waveFormatEx;
-	struct IDirectSoundBuffer *lpSound[8];
-	struct _STREAMBUFINFO *lpStreamBufferInfo;
+	/*unpacked*/ struct tWAVEFORMATEX waveFormatEx;
+	/*unpacked*/ struct IDirectSoundBuffer *lpSound[8];
+	/*unpacked*/ struct _STREAMBUFINFO *lpStreamBufferInfo;
 	unsigned long dwDesiredBufferDescFlags;
 public:
 	void DigitalSound(long);
-	void DigitalSound(const class basic_string<char>&, int32_t);
+	void DigitalSound(const /*unpacked*/ class basic_string<char>&, int32_t);
 	void DigitalSound();
 	virtual void ~DigitalSound() /* override */;
-	class DigitalSound& operator=(class DigitalSound&);
-	virtual void SetSoundFile(const class basic_string<char>&, int32_t); // vtable+0x2c
+	/*unpacked*/ class DigitalSound& operator=(/*unpacked*/ class DigitalSound&);
+	virtual void SetSoundFile(const /*unpacked*/ class basic_string<char>&, int32_t); // vtable+0x2c
 	virtual int32_t Load(); // vtable+0x30
 	virtual int32_t LoadFromResource(); // vtable+0x34
 	virtual int32_t LoadFromFile(); // vtable+0x38
@@ -1438,7 +1438,7 @@ public:
 	virtual long PlayStream(); // vtable+0x44
 	virtual long StopStream(); // vtable+0x48
 protected:
-	virtual long IsPlaying(struct IDirectSoundBuffer**); // vtable+0x4c
+	virtual long IsPlaying(/*unpacked*/ struct IDirectSoundBuffer**); // vtable+0x4c
 public:
 	virtual long IsPlaying() /* override */;
 	virtual int32_t GetVolume(long *) /* override */;
@@ -1454,8 +1454,8 @@ public:
 	virtual void StopCompletionNotification() /* override */;
 	virtual long EstimateRemainingPlayTime() /* override */;
 protected:
-	virtual int32_t GetSoundAliasToPlay(struct IDirectSoundBuffer**); // vtable+0x68
-	virtual int32_t CreateSoundBuffer(struct _DSBUFFERDESC*); // vtable+0x6c
+	virtual int32_t GetSoundAliasToPlay(/*unpacked*/ struct IDirectSoundBuffer**); // vtable+0x68
+	virtual int32_t CreateSoundBuffer(/*unpacked*/ struct _DSBUFFERDESC*); // vtable+0x6c
 	virtual int32_t CreatePrimarySoundBuffer(); // vtable+0x70
 	virtual int32_t ReleaseSoundBuffer(); // vtable+0x74
 	virtual long InitializeStreamBuffer(long); // vtable+0x78
@@ -1465,7 +1465,7 @@ protected:
 	virtual int32_t StartCompletionNotificationEstimationTimer(); // vtable+0x88
 };
 
-// Type: struct tagPassengerInfo;
+// Type: /*unpacked*/ struct tagPassengerInfo;
 struct tagPassengerInfo{ // not packed(0x14 bytes) TI: 0x3a4a
 	long lPassengerFace;
 	long lPassengerExpression;
@@ -1474,12 +1474,12 @@ struct tagPassengerInfo{ // not packed(0x14 bytes) TI: 0x3a4a
 	long lPassengerSeatUsed;
 };
 
-// Type: struct cYObject::MoveInfo (forward reference);
+// Type: /*unpacked*/ struct cYObject::MoveInfo (forward reference);
 struct cYObject::MoveInfo{ // not packed(0x10 bytes) TI: 0x3748
 	enum cYObject::LocationType *locType;
 	char * roadDir;
-	struct _DYOBJ_INST *dyBlock;
-	struct _STOBJ_INST *stBlock;
+	/*unpacked*/ struct _DYOBJ_INST *dyBlock;
+	/*unpacked*/ struct _STOBJ_INST *stBlock;
 };
 
 // Type: enum cYObject::MoveErrorCode;
@@ -1500,7 +1500,7 @@ enum MoveErrorCode {
 	kMoveFailOutOfRoad = 12,
 };
 
-// Type: struct Point3D;
+// Type: /*unpacked*/ struct Point3D;
 struct Point3D{ // not packed(0x18 bytes) TI: 0x349b
 	double x;
 	double y;
@@ -1509,33 +1509,33 @@ struct Point3D{ // not packed(0x18 bytes) TI: 0x349b
 
 // Type: unsigned long;
 
-// Type: struct VRFaceInfo;
+// Type: /*unpacked*/ struct VRFaceInfo;
 struct VRFaceInfo{ // not packed(0x20 bytes) TI: 0x3e07
 	int32_t Face;
 	int32_t Verts;
 	int32_t Attribute;
 	int32_t Plotter;
-	struct VRBmpHdr *Bitmap;
+	/*unpacked*/ struct VRBmpHdr *Bitmap;
 	int32_t * VertList;
-	struct MapVert *MapVList;
-	struct MapVert *BarryPtr;
+	/*unpacked*/ struct MapVert *MapVList;
+	/*unpacked*/ struct MapVert *BarryPtr;
 };
 
 // Type: float;
 
-// Type: struct BodyDebugInfo;
+// Type: /*unpacked*/ struct BodyDebugInfo;
 struct BodyDebugInfo{ // not packed(0x1c bytes) TI: 0x3e09
 	long screenx;
 	long screeny;
 	char text[20];
 };
 
-// Type: class CBackBuffer (forward reference);
+// Type: /*unpacked*/ class CBackBuffer (forward reference);
 // VTABLE: COPTER_D 0x00590808
 class CBackBuffer : public IBackBuffer
 { // not packed(0x3c bytes) TI: 0x3e77
 public:
-	void CBackBuffer(long, long, const struct SparkalColor*);
+	void CBackBuffer(long, long, const /*unpacked*/ struct SparkalColor*);
 	void CBackBuffer(char *);
 	void CBackBuffer();
 	virtual void InitializeMemberVariables(); // vtable+0x28
@@ -1544,66 +1544,66 @@ public:
 	virtual unsigned long Lock() /* override */;
 	virtual unsigned long Unlock() /* override */;
 	// calltype: NearC
-	static int32_t GetPaletteFromImage(char *, struct SparkalColor*);
-	virtual unsigned long Swap(class CSparkalWindow*, long, long) /* override */;
-	virtual unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long) /* override */;
-	virtual unsigned long StretchRect(class CSparkalWindow*, long, long, long, long, long, long, long, long) /* override */;
-	virtual unsigned long Compose(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&); // vtable+0x2c
-	virtual unsigned long Compose(class IFlatImage*, long, long, long, long, long, long) /* override */;
-	virtual unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long) /* override */;
-	virtual unsigned long StretchCompose(class IFlatImage*, const struct SparkalRect&, const struct SparkalRect&); // vtable+0x30
-	virtual unsigned long Duplicate(class CBackBuffer*, int32_t); // vtable+0x34
-	virtual unsigned long ComposeNoClip(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&); // vtable+0x38
-	virtual unsigned long ComposeNoClip(class IFlatImage*, long, long, long, long, long, long); // vtable+0x3c
-	void UpdatePalette(long, long, const struct SparkalColor*);
+	static int32_t GetPaletteFromImage(char *, /*unpacked*/ struct SparkalColor*);
+	virtual unsigned long Swap(/*unpacked*/ class CSparkalWindow*, long, long) /* override */;
+	virtual unsigned long SwapRect(/*unpacked*/ class CSparkalWindow*, long, long, long, long, long, long) /* override */;
+	virtual unsigned long StretchRect(/*unpacked*/ class CSparkalWindow*, long, long, long, long, long, long, long, long) /* override */;
+	virtual unsigned long Compose(/*unpacked*/ class IFlatImage*, const /*unpacked*/ struct SparkalPoint&, const /*unpacked*/ struct SparkalRect&); // vtable+0x2c
+	virtual unsigned long Compose(/*unpacked*/ class IFlatImage*, long, long, long, long, long, long) /* override */;
+	virtual unsigned long StretchCompose(/*unpacked*/ class IFlatImage*, long, long, long, long, long, long, long, long) /* override */;
+	virtual unsigned long StretchCompose(/*unpacked*/ class IFlatImage*, const /*unpacked*/ struct SparkalRect&, const /*unpacked*/ struct SparkalRect&); // vtable+0x30
+	virtual unsigned long Duplicate(/*unpacked*/ class CBackBuffer*, int32_t); // vtable+0x34
+	virtual unsigned long ComposeNoClip(/*unpacked*/ class IFlatImage*, const /*unpacked*/ struct SparkalPoint&, const /*unpacked*/ struct SparkalRect&); // vtable+0x38
+	virtual unsigned long ComposeNoClip(/*unpacked*/ class IFlatImage*, long, long, long, long, long, long); // vtable+0x3c
+	void UpdatePalette(long, long, const /*unpacked*/ struct SparkalColor*);
 	virtual void SetTransparentColor(int32_t, long) /* override */;
 	unsigned long GetTransparentColor(long&);
-	unsigned long SetFont(class MFont*);
-	void SetFontColor(struct SparkalColor&);
+	unsigned long SetFont(/*unpacked*/ class MFont*);
+	void SetFontColor(/*unpacked*/ struct SparkalColor&);
 	void SetFontIndex(int32_t);
-	void SetColor(struct SparkalColor&);
+	void SetColor(/*unpacked*/ struct SparkalColor&);
 	void SetColorIndex(int32_t);
 	virtual unsigned long DrawLine(long, long, long, long, long); // vtable+0x40
-	virtual unsigned long FillRect(long, const struct SparkalRect*); // vtable+0x44
-	virtual unsigned long DrawBufferText(char *, long, unsigned long, const class MRect&, class MFont*); // vtable+0x48
-	virtual unsigned long DrawBufferText(char *, unsigned long, long *, long *, long *, long *, class MFont*); // vtable+0x4c
+	virtual unsigned long FillRect(long, const /*unpacked*/ struct SparkalRect*); // vtable+0x44
+	virtual unsigned long DrawBufferText(char *, long, unsigned long, const /*unpacked*/ class MRect&, /*unpacked*/ class MFont*); // vtable+0x48
+	virtual unsigned long DrawBufferText(char *, unsigned long, long *, long *, long *, long *, /*unpacked*/ class MFont*); // vtable+0x4c
 	virtual unsigned long DrawLineUnclipped(long, long, long, long, long); // vtable+0x50
 	virtual unsigned long DrawLineClipped(long, long, long, long, long); // vtable+0x54
-	virtual unsigned long DrawRectangleOutline(const struct SparkalRect&, long); // vtable+0x58
-	virtual unsigned long DrawRectangleOutlineUnclipped(const struct SparkalRect&, long); // vtable+0x5c
+	virtual unsigned long DrawRectangleOutline(const /*unpacked*/ struct SparkalRect&, long); // vtable+0x58
+	virtual unsigned long DrawRectangleOutlineUnclipped(const /*unpacked*/ struct SparkalRect&, long); // vtable+0x5c
 	char * szFilePath;
 protected:
 	int32_t bSurfacePrimary;
 	int32_t bSurfaceTransparent;
-	class MFont *mFont;
-	struct SparkalColor colorFontCurrent;
-	struct SparkalColor colorCurrent;
+	/*unpacked*/ class MFont *mFont;
+	/*unpacked*/ struct SparkalColor colorFontCurrent;
+	/*unpacked*/ struct SparkalColor colorCurrent;
 	int32_t nColorIndexFontCurrent;
 	int32_t nColorIndexCurrent;
 	int32_t nColorIndexTransparent;
 };
 
-// Type: struct _STOBJ_INST (forward reference);
+// Type: /*unpacked*/ struct _STOBJ_INST (forward reference);
 struct _STOBJ_INST{ // not packed(0x10 bytes) TI: 0x365f
-	struct _STOBJ_INST *next;
+	/*unpacked*/ struct _STOBJ_INST *next;
 	void * __ptr32 mesh;
 	long user1;
 	long user2;
 };
 
-// Type: class FlatResFile (forward reference);
+// Type: /*unpacked*/ class FlatResFile (forward reference);
 // VTABLE: COPTER_D 0x00593508
 class FlatResFile : public FlatFile
 { // not packed(0x11c bytes) TI: 0x330e
 protected:
-	class ResMap *fMap;
+	/*unpacked*/ class ResMap *fMap;
 	long fError;
 	short _alignPad;
 public:
 	void FlatResFile();
 	virtual void ~FlatResFile() /* override */;
 	void LoadResMap(void * __ptr32*, short *, long *);
-	unsigned short FileEquals(class FlatResFile*);
+	unsigned short FileEquals(/*unpacked*/ class FlatResFile*);
 	virtual long Open(unsigned char *) /* override */;
 	virtual long Open(char *) /* override */;
 	long OpenFromName();
@@ -1634,51 +1634,51 @@ public:
 
 // Type: uint32_t;
 
-// Type: class PtrList<StdResLoader> (forward reference);
+// Type: /*unpacked*/ class PtrList<StdResLoader> (forward reference);
 class PtrList<StdResLoader>{ // not packed(0x8 bytes) TI: 0x3651
 	class PtrList<StdResLoader>::Iter{ // not packed(0x8 bytes) TI: 0x365b
 	private:
-		class PtrList<StdResLoader> *fObject;
-		struct PtrList<StdResLoader>::PtrNode *fCur;
+		/*unpacked*/ class PtrList<StdResLoader> *fObject;
+		/*unpacked*/ struct PtrList<StdResLoader>::PtrNode *fCur;
 	public:
-		void Iter(class PtrList<StdResLoader>*);
-		class StdResLoader* Current();
+		void Iter(/*unpacked*/ class PtrList<StdResLoader>*);
+		/*unpacked*/ class StdResLoader* Current();
 		void Next();
 		void Reset();
-		class StdResLoader* First();
+		/*unpacked*/ class StdResLoader* First();
 	};
 	struct PtrList<StdResLoader>::PtrNode{ // not packed(0x8 bytes) TI: 0x3653
-		class StdResLoader *data;
-		struct PtrList<StdResLoader>::PtrNode *next;
+		/*unpacked*/ class StdResLoader *data;
+		/*unpacked*/ struct PtrList<StdResLoader>::PtrNode *next;
 	};
 private:
-	struct PtrList<StdResLoader>::PtrNode *fFirst;
+	/*unpacked*/ struct PtrList<StdResLoader>::PtrNode *fFirst;
 	short fCount;
 public:
 	void PtrList<StdResLoader>();
 	void ~PtrList<StdResLoader>();
-	unsigned short Contains(class StdResLoader*);
+	unsigned short Contains(/*unpacked*/ class StdResLoader*);
 	void RemoveAll();
-	void Remove(class StdResLoader*);
+	void Remove(/*unpacked*/ class StdResLoader*);
 	long Count();
-	void Add(class StdResLoader*);
-	class StdResLoader* GetByIndex(long);
-	class StdResLoader* GetByOrder(long);
+	void Add(/*unpacked*/ class StdResLoader*);
+	/*unpacked*/ class StdResLoader* GetByIndex(long);
+	/*unpacked*/ class StdResLoader* GetByOrder(long);
 };
 
-// Type: class ResFile (forward reference);
+// Type: /*unpacked*/ class ResFile (forward reference);
 // VTABLE: COPTER_D 0x00593518
 class ResFile : public FlatResFile
 { // not packed(0x11c bytes) TI: 0x3334
 public:
-	long OpenFromOtherFile(class ResFile*);
+	long OpenFromOtherFile(/*unpacked*/ class ResFile*);
 };
 
 // Type: void (void * __ptr32, long);
 
-// Type: class vector<char> (forward reference);
+// Type: /*unpacked*/ class vector<char> (forward reference);
 class vector<char>{ // not packed(0xc bytes) TI: 0x38ac
-	using vector_allocator = class allocator<char>;
+	using vector_allocator = /*unpacked*/ class allocator<char>;
 	using value_type = char;
 	using pointer = char *;
 	using iterator = char *;
@@ -1687,10 +1687,10 @@ class vector<char>{ // not packed(0xc bytes) TI: 0x38ac
 	using const_reference = const char&;
 	using size_type = uint32_t;
 	using difference_type = int32_t;
-	using const_reverse_iterator = class reverse_iterator<char const *,char,char const &,int>;
-	using reverse_iterator = class reverse_iterator<char *,char,char &,int>;
+	using const_reverse_iterator = /*unpacked*/ class reverse_iterator<char const *,char,char const &,int>;
+	using reverse_iterator = /*unpacked*/ class reverse_iterator<char *,char,char &,int>;
 protected:
-	static class allocator<char> static_allocator;
+	static /*unpacked*/ class allocator<char> static_allocator;
 	char * start;
 	char * finish;
 	char * end_of_storage;
@@ -1700,10 +1700,10 @@ public:
 	char * begin();
 	char * end();
 	char * end();
-	class reverse_iterator<char const *,char,char const &,int> rbegin();
-	class reverse_iterator<char *,char,char &,int> rbegin();
-	class reverse_iterator<char const *,char,char const &,int> rend();
-	class reverse_iterator<char *,char,char &,int> rend();
+	/*unpacked*/ class reverse_iterator<char const *,char,char const &,int> rbegin();
+	/*unpacked*/ class reverse_iterator<char *,char,char &,int> rbegin();
+	/*unpacked*/ class reverse_iterator<char const *,char,char const &,int> rend();
+	/*unpacked*/ class reverse_iterator<char *,char,char &,int> rend();
 	uint32_t size();
 	uint32_t max_size();
 	uint32_t capacity();
@@ -1711,18 +1711,18 @@ public:
 	const char& operator[](uint32_t);
 	char& operator[](uint32_t);
 	void vector<char>(char *, char *);
-	void vector<char>(const class vector<char>&);
+	void vector<char>(const /*unpacked*/ class vector<char>&);
 	void vector<char>(uint32_t, const char&);
 	void vector<char>();
 	void ~vector<char>();
-	class vector<char>& operator=(const class vector<char>&);
+	/*unpacked*/ class vector<char>& operator=(const /*unpacked*/ class vector<char>&);
 	void reserve(uint32_t);
 	const char& front();
 	char& front();
 	const char& back();
 	char& back();
 	void push_back(const char&);
-	void swap(class vector<char>&);
+	void swap(/*unpacked*/ class vector<char>&);
 	void insert(char *, uint32_t, const char&);
 	void insert(char *, char *, char *);
 	char * insert(char *, const char&);
@@ -1731,7 +1731,7 @@ public:
 	void erase(char *);
 };
 
-// Type: struct TreeSim::StackElem (forward reference);
+// Type: /*unpacked*/ struct TreeSim::StackElem (forward reference);
 struct TreeSim::StackElem{ // not packed(0x14 bytes) TI: 0x3614
 	short treeID;
 	short nodeNum;
@@ -1739,17 +1739,17 @@ struct TreeSim::StackElem{ // not packed(0x14 bytes) TI: 0x3614
 	short _pad;
 	unsigned char * objectPtr;
 	short locals[4];
-	class Behavior *pBehavior;
+	/*unpacked*/ class Behavior *pBehavior;
 	void GetTreeName(unsigned char *);
 };
 
-// Type: struct Behavior::Node (forward reference);
+// Type: /*unpacked*/ struct Behavior::Node (forward reference);
 struct Behavior::Node{ // not packed(0xc bytes) TI: 0x35e3
 	short treeID;
 	short primCode;
 	char trueTrans;
 	char falseTrans;
-	struct Behavior::NodeParameter param;
+	/*unpacked*/ struct Behavior::NodeParameter param;
 };
 
 // Type: enum TreeSim::ReturnCode;
@@ -1761,7 +1761,7 @@ enum ReturnCode {
 	kStackLoaded = 3,
 };
 
-// Type: class TreeSim;
+// Type: /*unpacked*/ class TreeSim;
 // VTABLE: COPTER_D 0x00593630
 class TreeSim{ // not packed(0x14 bytes) TI: 0x3610
 	enum /* __unnamed */ {
@@ -1775,11 +1775,11 @@ class TreeSim{ // not packed(0x14 bytes) TI: 0x3610
 		short _pad;
 		unsigned char * objectPtr;
 		short locals[4];
-		class Behavior *pBehavior;
+		/*unpacked*/ class Behavior *pBehavior;
 		void GetTreeName(unsigned char *);
 	};
 private:
-	struct TreeSim::StackElem *fStack;
+	/*unpacked*/ struct TreeSim::StackElem *fStack;
 	short fStackSize;
 	short fMaxStackSize;
 	short fIterations;
@@ -1801,37 +1801,37 @@ private:
 		kStackErrorMax = 1004,
 	};
 protected:
-	virtual enum TreeSim::ReturnCode TryElement(struct TreeSim::StackElem*, struct Behavior::Node*); // vtable+0x0
+	virtual enum TreeSim::ReturnCode TryElement(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*); // vtable+0x0
 	virtual void Error(short); // vtable+0x4
 	void GetCurrentNode(short *, short *);
-	void Reset(class Behavior*, short);
+	void Reset(/*unpacked*/ class Behavior*, short);
 	char NodeComplete(unsigned short);
-	unsigned short Gosub(class Behavior*, short *, short);
+	unsigned short Gosub(/*unpacked*/ class Behavior*, short *, short);
 public:
 	void TreeSim(short, short *);
-	void TreeSim(short, short, class Behavior*, short *);
+	void TreeSim(short, short, /*unpacked*/ class Behavior*, short *);
 	virtual void ~TreeSim(); // vtable+0x8
 	virtual unsigned short Simulate(long, unsigned short); // vtable+0xc
-	struct TreeSim::StackElem* GetHighLevelAction();
-	struct TreeSim::StackElem* GetCurElem();
-	struct TreeSim::StackElem* GetNthElem(short);
+	/*unpacked*/ struct TreeSim::StackElem* GetHighLevelAction();
+	/*unpacked*/ struct TreeSim::StackElem* GetCurElem();
+	/*unpacked*/ struct TreeSim::StackElem* GetNthElem(short);
 	short GetStackSize();
 	short GetMaxStackSize();
 };
 
-// Type: class YObjLang;
+// Type: /*unpacked*/ class YObjLang;
 // VTABLE: COPTER_D 0x005936e8
 class YObjLang : public Language
 { // not packed(0x4 bytes) TI: 0x484d
 public:
-	void YObjLang(class YObjLang&);
+	void YObjLang(/*unpacked*/ class YObjLang&);
 	void YObjLang(unsigned char *);
 	void ~YObjLang();
-	virtual void GetNodeText(class Behavior*, struct Behavior::Node*, unsigned char *) /* override */;
+	virtual void GetNodeText(/*unpacked*/ class Behavior*, /*unpacked*/ struct Behavior::Node*, unsigned char *) /* override */;
 	virtual void GetPrimName(short, unsigned char *) /* override */;
-	virtual unsigned short IsSingleExit(struct Behavior::Node*) /* override */;
+	virtual unsigned short IsSingleExit(/*unpacked*/ struct Behavior::Node*) /* override */;
 	// calltype: NearC
-	static void SwizzleTreeParam(short, struct Behavior::NodeParameter*);
+	static void SwizzleTreeParam(short, /*unpacked*/ struct Behavior::NodeParameter*);
 	// calltype: NearC
 	static void SwizzleTree(void * __ptr32, long);
 	virtual void (*)(void * __ptr32, long) GetSwizzler() /* override */;
@@ -2064,7 +2064,7 @@ public:
 		short m4;
 	};
 	// TODO: Unknown nested type: <class 'tpi.LfUnion'>
-	// union YObjLang::Param Param
+	// /*unpacked*/ union YObjLang::Param Param
 	enum TreeNum {
 		kNoTree = -1,
 		kSpotlightTree = 900,
@@ -2135,22 +2135,22 @@ public:
 	};
 };
 
-// Type: class Language (forward reference);
+// Type: /*unpacked*/ class Language (forward reference);
 // Language Class implementation not found
 
-// Type: class FlatResFile;
+// Type: /*unpacked*/ class FlatResFile;
 // VTABLE: COPTER_D 0x00593508
 class FlatResFile : public FlatFile
 { // not packed(0x11c bytes) TI: 0x330e
 protected:
-	class ResMap *fMap;
+	/*unpacked*/ class ResMap *fMap;
 	long fError;
 	short _alignPad;
 public:
 	void FlatResFile();
 	virtual void ~FlatResFile() /* override */;
 	void LoadResMap(void * __ptr32*, short *, long *);
-	unsigned short FileEquals(class FlatResFile*);
+	unsigned short FileEquals(/*unpacked*/ class FlatResFile*);
 	virtual long Open(unsigned char *) /* override */;
 	virtual long Open(char *) /* override */;
 	long OpenFromName();
@@ -2179,7 +2179,7 @@ public:
 	static short CheckForLeaks();
 };
 
-// Type: class cYObject;
+// Type: /*unpacked*/ class cYObject;
 // VTABLE: COPTER_D 0x005935e0
 class cYObject : public TreeSim, public YObjLang
 { // not packed(0x168 bytes) TI: 0x48a0
@@ -2226,10 +2226,10 @@ class cYObject : public TreeSim, public YObjLang
 	};
 public:
 	static short sStackSize[1];
-	void SetToLoc(struct _DYOBJ_INST*);
+	void SetToLoc(/*unpacked*/ struct _DYOBJ_INST*);
 	unsigned short Gosub(short);
 	short GetTree();
-	void ReceiveHit(long, struct _DYOBJ_INST*, struct _DYOBJ_INST*, long, long);
+	void ReceiveHit(long, /*unpacked*/ struct _DYOBJ_INST*, /*unpacked*/ struct _DYOBJ_INST*, long, long);
 	void Die();
 	enum MissionUpdates {
 		kPickedUp = 0,
@@ -2276,13 +2276,13 @@ public:
 	// calltype: NearC
 	static void BeamRemainingAmbients();
 	// calltype: NearC
-	static void StartForScurkID(enum PersonType, enum MissionType, short, short, short, struct _DYOBJ_INST*, int32_t, int32_t);
+	static void StartForScurkID(enum PersonType, enum MissionType, short, short, short, /*unpacked*/ struct _DYOBJ_INST*, int32_t, int32_t);
 	// calltype: NearC
-	static void StartForScurkID(enum PersonType, enum MissionType, short, short, short, struct _DYOBJ_INST*);
+	static void StartForScurkID(enum PersonType, enum MissionType, short, short, short, /*unpacked*/ struct _DYOBJ_INST*);
 	unsigned short GetNearbyFire(short, short *, short *);
-	unsigned short StartMission(enum PersonType, enum MissionType, short, short, long, struct _DYOBJ_INST*, struct Point3d*);
-	unsigned short StartScurkAmbientMission(short, short, enum PersonType, short, short, struct _DYOBJ_INST*, int32_t, int32_t);
-	unsigned short StartScurkAmbientMission(short, short, enum PersonType, short, short, struct _DYOBJ_INST*, struct Point3d*);
+	unsigned short StartMission(enum PersonType, enum MissionType, short, short, long, /*unpacked*/ struct _DYOBJ_INST*, /*unpacked*/ struct Point3d*);
+	unsigned short StartScurkAmbientMission(short, short, enum PersonType, short, short, /*unpacked*/ struct _DYOBJ_INST*, int32_t, int32_t);
+	unsigned short StartScurkAmbientMission(short, short, enum PersonType, short, short, /*unpacked*/ struct _DYOBJ_INST*, /*unpacked*/ struct Point3d*);
 	void ResetToAmbient();
 	long JoinRiot();
 	// calltype: NearC
@@ -2327,13 +2327,13 @@ public:
 		short maxNormalLoiterers;
 	};
 public:
-	static struct cYObject::LocationInfo sLocInfo[14];
-	struct _DYOBJ_INST* SearchForDynObj(short, short, struct _DYOBJ_INST*);
-	short GetDirectionTo(struct _DYOBJ_INST*);
+	static /*unpacked*/ struct cYObject::LocationInfo sLocInfo[14];
+	/*unpacked*/ struct _DYOBJ_INST* SearchForDynObj(short, short, /*unpacked*/ struct _DYOBJ_INST*);
+	short GetDirectionTo(/*unpacked*/ struct _DYOBJ_INST*);
 	short GetDirectionTo(short, short);
-	unsigned short SearchForPersonSpot(struct _CELL_INFO*, struct Point3d*, enum cYObject::SearchType);
-	unsigned short SearchForPersonSpot(struct _CELL_INFO*, int32_t *, int32_t *, enum cYObject::SearchType);
-	unsigned short SearchForPersonSpot(struct _DYOBJ_INST*, struct Point3d*);
+	unsigned short SearchForPersonSpot(/*unpacked*/ struct _CELL_INFO*, /*unpacked*/ struct Point3d*, enum cYObject::SearchType);
+	unsigned short SearchForPersonSpot(/*unpacked*/ struct _CELL_INFO*, int32_t *, int32_t *, enum cYObject::SearchType);
+	unsigned short SearchForPersonSpot(/*unpacked*/ struct _DYOBJ_INST*, /*unpacked*/ struct Point3d*);
 	static short sBeamed;
 	static short sDebugNumBeamed;
 	// calltype: NearC
@@ -2344,12 +2344,12 @@ public:
 	static unsigned short IsSuitableForMission(enum MissionType, short, short);
 	// calltype: NearC
 	static unsigned short IsNeutralForPerson(enum PersonType, enum cYObject::LocationType);
-	unsigned short IsNeutralAndSparse(struct _CELL_INFO*, enum cYObject::LocationType);
+	unsigned short IsNeutralAndSparse(/*unpacked*/ struct _CELL_INFO*, enum cYObject::LocationType);
 	// calltype: NearC
-	static struct Point3d GetPos(unsigned char, unsigned char, int32_t, int32_t);
+	static /*unpacked*/ struct Point3d GetPos(unsigned char, unsigned char, int32_t, int32_t);
 	// calltype: NearC
-	static struct Point3d GetPos(struct _CELL_INFO*, int32_t, int32_t);
-	unsigned short AdjoinsRoad(struct Point3d);
+	static /*unpacked*/ struct Point3d GetPos(/*unpacked*/ struct _CELL_INFO*, int32_t, int32_t);
+	unsigned short AdjoinsRoad(/*unpacked*/ struct Point3d);
 	unsigned short RoadTile(int32_t, int32_t);
 	unsigned short GetNeutralLoc(int32_t *, int32_t *, int32_t *, int32_t *);
 	void UpdateMission(enum cYObject::MissionUpdates, long);
@@ -2358,56 +2358,56 @@ public:
 	struct cYObject::MoveInfo{ // not packed(0x10 bytes) TI: 0x3748
 		enum cYObject::LocationType *locType;
 		char * roadDir;
-		struct _DYOBJ_INST *dyBlock;
-		struct _STOBJ_INST *stBlock;
+		/*unpacked*/ struct _DYOBJ_INST *dyBlock;
+		/*unpacked*/ struct _STOBJ_INST *stBlock;
 	};
 	struct cYObject::_ControlInput{ // not packed(0x18 bytes) TI: 0x3745
-		struct Point3d vector;
+		/*unpacked*/ struct Point3d vector;
 		int32_t fwdSpeed;
 		int32_t rotateRate;
 		int32_t yaw;
 	};
 	struct cYObject::_ControlInput{ // not packed(0x18 bytes) TI: 0x3745
-		struct Point3d vector;
+		/*unpacked*/ struct Point3d vector;
 		int32_t fwdSpeed;
 		int32_t rotateRate;
 		int32_t yaw;
 	};
 private:
 	static unsigned short sInited;
-	static class cYObject *sObjects[100];
+	static /*unpacked*/ class cYObject *sObjects[100];
 	static enum cYObject::LocationType sNeutralPersonLocs[18][10];
 	static enum cYObject::LocationType sNeutralMissionLocs[14][10];
-	static class cYObject *sList;
-	static class NResFile sFile;
-	static class ResFile sErrorFile;
+	static /*unpacked*/ class cYObject *sList;
+	static /*unpacked*/ class NResFile sFile;
+	static /*unpacked*/ class ResFile sErrorFile;
 public:
-	static class YObjLang *sLanguage;
-	static class Behavior *sBehavior;
-	static struct Point3d sMoveTable[8];
-	static struct Point3d sUnitVectorTable[8];
+	static /*unpacked*/ class YObjLang *sLanguage;
+	static /*unpacked*/ class Behavior *sBehavior;
+	static /*unpacked*/ struct Point3d sMoveTable[8];
+	static /*unpacked*/ struct Point3d sUnitVectorTable[8];
 	// calltype: NearC
 	static void InitObjects(char *);
 	// calltype: NearC
 	static void DestroyObjects();
 	// calltype: NearC
-	static short MakeNewObject(short, struct Point3d, class Behavior*);
+	static short MakeNewObject(short, /*unpacked*/ struct Point3d, /*unpacked*/ class Behavior*);
 	// calltype: NearC
 	static void KillObject(short);
 	// calltype: NearC
 	static void MakePlebes();
 	void InitForEngine(short);
 	void TellLocToEngine();
-	class cYObject* GetClosest(enum MissionSupertype, enum MissionType, unsigned short, short *);
+	/*unpacked*/ class cYObject* GetClosest(enum MissionSupertype, enum MissionType, unsigned short, short *);
 	// calltype: NearC
-	static class cYObject* GetObjectA(short);
+	static /*unpacked*/ class cYObject* GetObjectA(short);
 	// calltype: NearC
-	static class cYObject* GetObjectA(struct _DYOBJ_INST*);
-	class cYObject* GetPersonWithMaster(struct _DYOBJ_INST*);
+	static /*unpacked*/ class cYObject* GetObjectA(/*unpacked*/ struct _DYOBJ_INST*);
+	/*unpacked*/ class cYObject* GetPersonWithMaster(/*unpacked*/ struct _DYOBJ_INST*);
 	// calltype: NearC
-	static class cYObject* GetSleepingPerson();
+	static /*unpacked*/ class cYObject* GetSleepingPerson();
 	// calltype: NearC
-	static void DrawOnePerson(struct VRBlit*);
+	static void DrawOnePerson(/*unpacked*/ struct VRBlit*);
 	void SetCell(unsigned char, unsigned char);
 	void UnsetCell(unsigned char, unsigned char);
 	void Link();
@@ -2435,26 +2435,26 @@ public:
 	static short sAmbientTopOff;
 	static short sAmbientAbsoluteMax;
 	static short sScurkRectRad;
-	struct _DYOBJ_INST fDyn;
+	/*unpacked*/ struct _DYOBJ_INST fDyn;
 	unsigned char fCellX;
 	unsigned char fCellY;
 	unsigned long fBodyName;
-	class cCopterBody *fBody;
+	/*unpacked*/ class cCopterBody *fBody;
 	unsigned long fAnimName;
-	class cCopterAnim *fAnim;
+	/*unpacked*/ class cCopterAnim *fAnim;
 	short fFace;
 	void SetFace(short);
-	struct Point3d fLastMasterLoc;
-	unsigned short SetMaster(struct _DYOBJ_INST*);
-	struct _DYOBJ_INST* GetMaster();
+	/*unpacked*/ struct Point3d fLastMasterLoc;
+	unsigned short SetMaster(/*unpacked*/ struct _DYOBJ_INST*);
+	/*unpacked*/ struct _DYOBJ_INST* GetMaster();
 	void FollowMaster();
 	enum cYObject::LocationType fCurLocType;
 	// calltype: NearC
 	static unsigned short GetOutOfHeli(long);
 	// calltype: NearC
-	static struct Point2d GetRiotCenter(short, short);
+	static /*unpacked*/ struct Point2d GetRiotCenter(short, short);
 	// calltype: NearC
-	static struct Point2d GetRiotCenter(long);
+	static /*unpacked*/ struct Point2d GetRiotCenter(long);
 	void SimAnim();
 	void Simulate();
 	// calltype: NearC
@@ -2466,11 +2466,11 @@ public:
 	void IncAndCheckAnimFrame();
 	void CheckAnimFrame();
 	// calltype: NearC
-	static class cYObject* GetOnePersonForScurkID(short, short);
+	static /*unpacked*/ class cYObject* GetOnePersonForScurkID(short, short);
 	// calltype: NearC
-	static struct _DYOBJ_INST* GetFirstDynObj(struct _CELL_INFO*, long);
+	static /*unpacked*/ struct _DYOBJ_INST* GetFirstDynObj(/*unpacked*/ struct _CELL_INFO*, long);
 	// calltype: NearC
-	static short CountDynObjs(struct _CELL_INFO*, long);
+	static short CountDynObjs(/*unpacked*/ struct _CELL_INFO*, long);
 	void SetMissionType(enum MissionType);
 	void SetMissionID(long);
 	void SetPersonType(enum PersonType);
@@ -2481,8 +2481,8 @@ public:
 	unsigned long GetAnim();
 	void SetAnim(unsigned long);
 	unsigned short fSimulate;
-	class Behavior *fBehavior;
-	class cYObject *fNext;
+	/*unpacked*/ class Behavior *fBehavior;
+	/*unpacked*/ class cYObject *fNext;
 	short fID;
 	short _pad;
 	short fTemp[8];
@@ -2491,7 +2491,7 @@ public:
 	short fIterations;
 	short _pad2;
 	short fDirInc;
-	struct cYObject::ObjDefHeader fDefinition;
+	/*unpacked*/ struct cYObject::ObjDefHeader fDefinition;
 	enum /* __unnamed */ {
 		kMasterObject = 0,
 		kLastHitterObject = 1,
@@ -2530,14 +2530,14 @@ public:
 		kLastRxnTree = 30,
 	};
 protected:
-	virtual enum TreeSim::ReturnCode TryElement(struct TreeSim::StackElem*, struct Behavior::Node*) /* override */;
+	virtual enum TreeSim::ReturnCode TryElement(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*) /* override */;
 	virtual void HandleOverflow(); // vtable+0x10
 	virtual short InterpValue(short, short, short **); // vtable+0x14
-	enum TreeSim::ReturnCode TryExpression(struct YObjLang::AttrParam*);
+	enum TreeSim::ReturnCode TryExpression(/*unpacked*/ struct YObjLang::AttrParam*);
 public:
-	enum cYObject::MoveErrorCode TryVectorMove(struct Point3d, int32_t, struct cYObject::MoveInfo*);
-	enum cYObject::MoveErrorCode TryTableMove(short, unsigned short, struct cYObject::MoveInfo*);
-	enum cYObject::MoveErrorCode TryMove(unsigned short, struct cYObject::MoveInfo*, int32_t, int32_t, int32_t, unsigned short);
+	enum cYObject::MoveErrorCode TryVectorMove(/*unpacked*/ struct Point3d, int32_t, /*unpacked*/ struct cYObject::MoveInfo*);
+	enum cYObject::MoveErrorCode TryTableMove(short, unsigned short, /*unpacked*/ struct cYObject::MoveInfo*);
+	enum cYObject::MoveErrorCode TryMove(unsigned short, /*unpacked*/ struct cYObject::MoveInfo*, int32_t, int32_t, int32_t, unsigned short);
 	enum cYObject::LocationType GetLocType();
 	// calltype: NearC
 	static enum cYObject::LocationType GetLocType(short, short);
@@ -2546,7 +2546,7 @@ public:
 	unsigned short IsWalkable(short, short, enum cYObject::LocationType);
 	unsigned short CanJumpOffHere();
 	// calltype: NearC
-	static char GetRoadDir(struct Point3d);
+	static char GetRoadDir(/*unpacked*/ struct Point3d);
 	enum SoundNum {
 		kSNone = -1,
 		kSAssertion = 1,
@@ -2588,35 +2588,35 @@ public:
 	static short GetActualSoundChannel(short);
 	void SetSoundChannel(short);
 	// calltype: NearC
-	static short GetSRadius(struct _DYOBJ_INST*);
+	static short GetSRadius(/*unpacked*/ struct _DYOBJ_INST*);
 	// calltype: NearC
-	static int32_t GetRadius(struct _DYOBJ_INST*);
+	static int32_t GetRadius(/*unpacked*/ struct _DYOBJ_INST*);
 	// calltype: NearC
-	static struct _DYOBJ_INST* GetDynObj(struct _DYOBJ_INST*, struct Point3d, int32_t, struct _DYOBJ_INST*, struct _DYOBJ_INST*);
+	static /*unpacked*/ struct _DYOBJ_INST* GetDynObj(/*unpacked*/ struct _DYOBJ_INST*, /*unpacked*/ struct Point3d, int32_t, /*unpacked*/ struct _DYOBJ_INST*, /*unpacked*/ struct _DYOBJ_INST*);
 	// calltype: NearC
-	static struct _STOBJ_INST* GetStaticObj(struct Point3d, int32_t);
+	static /*unpacked*/ struct _STOBJ_INST* GetStaticObj(/*unpacked*/ struct Point3d, int32_t);
 	// calltype: NearC
-	static unsigned short InBoundingRect(struct Point3d, int32_t, struct Point3d, int32_t);
+	static unsigned short InBoundingRect(/*unpacked*/ struct Point3d, int32_t, /*unpacked*/ struct Point3d, int32_t);
 	unsigned short MasterSlowerThan(short);
 	short GetHeightOverGround();
-	unsigned short GetFakeDistTo(struct _DYOBJ_INST*);
-	unsigned short CloseTo(struct _DYOBJ_INST*);
+	unsigned short GetFakeDistTo(/*unpacked*/ struct _DYOBJ_INST*);
+	unsigned short CloseTo(/*unpacked*/ struct _DYOBJ_INST*);
 	// calltype: NearC
-	static class cYObject* GetFirst();
+	static /*unpacked*/ class cYObject* GetFirst();
 	// calltype: NearC
-	static class cYObject* GetFirst(short, short);
+	static /*unpacked*/ class cYObject* GetFirst(short, short);
 	// calltype: NearC
-	static class cYObject* GetFirstInvisible(short);
-	class cYObject* PutTotedMedVicOnHeli();
-	class cYObject* PutTotedMedVicOn(struct _DYOBJ_INST*);
-	unsigned short SetStartingObject(struct _DYOBJ_INST*);
-	class cYObject* DropToted();
-	class cYObject* GetToted();
+	static /*unpacked*/ class cYObject* GetFirstInvisible(short);
+	/*unpacked*/ class cYObject* PutTotedMedVicOnHeli();
+	/*unpacked*/ class cYObject* PutTotedMedVicOn(/*unpacked*/ struct _DYOBJ_INST*);
+	unsigned short SetStartingObject(/*unpacked*/ struct _DYOBJ_INST*);
+	/*unpacked*/ class cYObject* DropToted();
+	/*unpacked*/ class cYObject* GetToted();
 	unsigned short GetOffMasterObject();
 	// calltype: NearC
-	static unsigned short IsHigherThan(struct Point3d, short);
+	static unsigned short IsHigherThan(/*unpacked*/ struct Point3d, short);
 	// calltype: NearC
-	static unsigned short IsFlattenedTerrain(struct _CELL_INFO*);
+	static unsigned short IsFlattenedTerrain(/*unpacked*/ struct _CELL_INFO*);
 	// calltype: NearC
 	static void RandomEdgeOffset(short, int32_t *, int32_t *);
 	// calltype: NearC
@@ -2625,213 +2625,213 @@ public:
 	virtual void ~cYObject() /* override */;
 protected:
 	virtual void Error(short) /* override */;
-	void cYObject(short, class Behavior*, struct Point3d, short);
+	void cYObject(short, /*unpacked*/ class Behavior*, /*unpacked*/ struct Point3d, short);
 public:
-	struct cYObject::ObjDefHeader* GetDef();
+	/*unpacked*/ struct cYObject::ObjDefHeader* GetDef();
 	void GetTypeName(char *);
 	// calltype: NearC
-	static class ResFile* GetGlobalFile();
+	static /*unpacked*/ class ResFile* GetGlobalFile();
 	// calltype: NearC
-	static class YObjLang* GetLanguage();
+	static /*unpacked*/ class YObjLang* GetLanguage();
 	// calltype: NearC
-	static class ResFile* GetErrorFile();
+	static /*unpacked*/ class ResFile* GetErrorFile();
 	short GetID();
-	struct Point3d GetLocation();
-	class Behavior* GetBehavior();
-	void Draw(struct VRBlit*);
+	/*unpacked*/ struct Point3d GetLocation();
+	/*unpacked*/ class Behavior* GetBehavior();
+	void Draw(/*unpacked*/ struct VRBlit*);
 	float fScale;
 	void DefaultDrawStr(short, short, unsigned char, unsigned char *, int32_t);
-	void SetCellAndLoc(struct Point3d, unsigned char, unsigned char);
+	void SetCellAndLoc(/*unpacked*/ struct Point3d, unsigned char, unsigned char);
 	void SetCellAndLoc(unsigned char, unsigned char, int32_t, int32_t);
 	void Start(int32_t, int32_t, int32_t, int32_t);
 	unsigned short BeamIntoCameraRange();
 	unsigned short OutOfCameraRange();
-	unsigned short CanPlace(struct Point3d);
+	unsigned short CanPlace(/*unpacked*/ struct Point3d);
 	void AdjustRadiusForRiotVal();
 	unsigned short HasRiotValChanged();
 	void IncrementRiotVal(short);
 	void GetSurroundingRiotInfo(short, short *, short *, short *);
 	void Turn(short);
-	class cYObject* GetNext();
-	void DynEffects(short, enum cYObject::MoveErrorCode, struct cYObject::MoveInfo*);
-	void DynEffectsFixed(int32_t, enum cYObject::MoveErrorCode, struct cYObject::MoveInfo*);
-	using PrimProc = enum TreeSim::ReturnCode (*)(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
+	/*unpacked*/ class cYObject* GetNext();
+	void DynEffects(short, enum cYObject::MoveErrorCode, /*unpacked*/ struct cYObject::MoveInfo*);
+	void DynEffectsFixed(int32_t, enum cYObject::MoveErrorCode, /*unpacked*/ struct cYObject::MoveInfo*);
+	using PrimProc = enum TreeSim::ReturnCode (*)(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 public:
-	static enum TreeSim::ReturnCode (*PrimProcs[64])(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode (*PrimProcs[64])(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sIdle(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iIdle(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sIdle(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iIdle(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sSetAnim(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iSetAnim(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sSetAnim(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iSetAnim(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sAttr(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iAttr(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sAttr(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iAttr(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sWalk(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iWalk(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sWalk(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iWalk(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sSetBody(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iSetBody(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sSetBody(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iSetBody(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sRandom(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iRandom(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sRandom(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iRandom(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sWalkToAndGrabOntoStackObject(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iWalkToAndGrabOntoStackObject(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sWalkToAndGrabOntoStackObject(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iWalkToAndGrabOntoStackObject(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sUpdateMyMission(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iUpdateMyMission(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sUpdateMyMission(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iUpdateMyMission(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sCheckForTrue(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iCheckForTrue(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sCheckForTrue(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iCheckForTrue(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sCompareMyLocWith(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iCompareMyLocWith(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sCompareMyLocWith(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iCompareMyLocWith(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sSelfDecommission(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iSelfDecommission(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sSelfDecommission(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iSelfDecommission(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sGetOffMasterObject(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iGetOffMasterObject(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sGetOffMasterObject(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iGetOffMasterObject(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sTurnTowardsStackObject(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iTurnTowardsStackObject(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sTurnTowardsStackObject(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iTurnTowardsStackObject(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sIsThisLocType(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iIsThisLocType(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sIsThisLocType(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iIsThisLocType(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sIsThisLocTypeNeutral(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iIsThisLocTypeNeutral(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sIsThisLocTypeNeutral(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iIsThisLocTypeNeutral(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sCanJumpOffHere(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iCanJumpOffHere(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sCanJumpOffHere(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iCanJumpOffHere(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sCheckForSpotlightInMyCell(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iCheckForSpotlightInMyCell(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sCheckForSpotlightInMyCell(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iCheckForSpotlightInMyCell(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sIncrementRiotVal(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iIncrementRiotVal(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sIncrementRiotVal(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iIncrementRiotVal(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sGetSurroundingRiotVal(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iGetSurroundingRiotVal(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sGetSurroundingRiotVal(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iGetSurroundingRiotVal(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sIsThisScurkID(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iIsThisScurkID(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sIsThisScurkID(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iIsThisScurkID(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sGosubToInitbhav(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iGosubToInitbhav(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sGosubToInitbhav(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iGosubToInitbhav(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sAdjustRadiusForRiotVal(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iAdjustRadiusForRiotVal(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sAdjustRadiusForRiotVal(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iAdjustRadiusForRiotVal(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sJoinRiot(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iJoinRiot(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sJoinRiot(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iJoinRiot(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sSetDirection(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iSetDirection(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sSetDirection(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iSetDirection(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sThrowProjectile(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iThrowProjectile(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sThrowProjectile(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iThrowProjectile(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sTurnFromStackObject(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iTurnFromStackObject(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sTurnFromStackObject(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iTurnFromStackObject(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sTurnFromLastHitter(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iTurnFromLastHitter(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sTurnFromLastHitter(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iTurnFromLastHitter(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sTurnTowardsLastHitter(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iTurnTowardsLastHitter(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sTurnTowardsLastHitter(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iTurnTowardsLastHitter(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sGetOutOfRoadEtc(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iGetOutOfRoadEtc(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sGetOutOfRoadEtc(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iGetOutOfRoadEtc(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sGenerateMedevacAndSetSelfAsVictim(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iGenerateMedevacAndSetSelfAsVictim(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sGenerateMedevacAndSetSelfAsVictim(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iGenerateMedevacAndSetSelfAsVictim(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sTurnToNearbyFire(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iTurnToNearbyFire(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sTurnToNearbyFire(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iTurnToNearbyFire(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sDie(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iDie(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sDie(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iDie(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sWalkToStackObject(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iWalkToStackObject(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sWalkToStackObject(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iWalkToStackObject(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sPutObjIntoTreeNum(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iPutObjIntoTreeNum(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sPutObjIntoTreeNum(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iPutObjIntoTreeNum(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sVisitOz(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iVisitOz(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sVisitOz(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iVisitOz(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sMakeMyMedevacVictimVisible(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iMakeMyMedevacVictimVisible(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sMakeMyMedevacVictimVisible(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iMakeMyMedevacVictimVisible(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sMakeMyMedevacVictimInvisible(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iMakeMyMedevacVictimInvisible(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sMakeMyMedevacVictimInvisible(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iMakeMyMedevacVictimInvisible(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sMakeMeMasterOfStackObject(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iMakeMeMasterOfStackObject(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sMakeMeMasterOfStackObject(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iMakeMeMasterOfStackObject(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sMakeMyStackObjectVisitOz(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iMakeMyStackObjectVisitOz(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sMakeMyStackObjectVisitOz(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iMakeMyStackObjectVisitOz(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sPutTotedMedVicOnStackObject(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iPutTotedMedVicOnStackObject(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sPutTotedMedVicOnStackObject(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iPutTotedMedVicOnStackObject(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sTakeAnyMedVicOffStackObject(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iTakeAnyMedVicOffStackObject(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sTakeAnyMedVicOffStackObject(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iTakeAnyMedVicOffStackObject(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sGetOnStackObject(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iGetOnStackObject(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sGetOnStackObject(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iGetOnStackObject(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sUpdateStackVictimToted(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iUpdateStackVictimToted(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sUpdateStackVictimToted(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iUpdateStackVictimToted(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sGetNumSpacesOnStackObject(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iGetNumSpacesOnStackObject(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sGetNumSpacesOnStackObject(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iGetNumSpacesOnStackObject(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sDropToted(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iDropToted(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sDropToted(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iDropToted(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sUpdateStackVictimPickedUp(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iUpdateStackVictimPickedUp(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sUpdateStackVictimPickedUp(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iUpdateStackVictimPickedUp(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sCloseToHeli(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iCloseToHeli(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sCloseToHeli(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iCloseToHeli(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sSetMyExpression(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iSetMyExpression(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sSetMyExpression(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iSetMyExpression(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sGetHeliSpeedPlusDamage(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iGetHeliSpeedPlusDamage(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sGetHeliSpeedPlusDamage(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iGetHeliSpeedPlusDamage(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sIsThisCellSafe(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iIsThisCellSafe(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sIsThisCellSafe(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iIsThisCellSafe(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sPlaySound(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iPlaySound(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sPlaySound(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iPlaySound(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sGetOnHeliIfHarnessRaised(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iGetOnHeliIfHarnessRaised(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sGetOnHeliIfHarnessRaised(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iGetOnHeliIfHarnessRaised(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sAmIOnHeli(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iAmIOnHeli(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sAmIOnHeli(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iAmIOnHeli(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sThrowFieryProjectile(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iThrowFieryProjectile(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sThrowFieryProjectile(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iThrowFieryProjectile(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sTellStartingObjectTrueOrFalse(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iTellStartingObjectTrueOrFalse(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sTellStartingObjectTrueOrFalse(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iTellStartingObjectTrueOrFalse(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sPutMyCarInStack(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iPutMyCarInStack(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sPutMyCarInStack(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iPutMyCarInStack(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	// calltype: NearC
-	static enum TreeSim::ReturnCode sDoIHaveAMaster(class cYObject*, struct TreeSim::StackElem*, struct Behavior::Node*);
-	enum TreeSim::ReturnCode iDoIHaveAMaster(struct TreeSim::StackElem*, struct Behavior::Node*);
+	static enum TreeSim::ReturnCode sDoIHaveAMaster(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
+	enum TreeSim::ReturnCode iDoIHaveAMaster(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 };
 
-// Type: class Sound;
+// Type: /*unpacked*/ class Sound;
 // VTABLE: COPTER_D 0x0058f458
 class Sound{ // not packed(0x34 bytes) TI: 0x4733
 	enum SoundSourceType {
@@ -2850,7 +2850,7 @@ public:
 	enum Sound::SoundDuplicateType nSoundDuplicateType;
 	long lID;
 	long lResID;
-	class basic_string<char> sSoundFile;
+	/*unpacked*/ class basic_string<char> sSoundFile;
 	long bLooping;
 	long bStreaming;
 	long lVolume;
@@ -2859,8 +2859,8 @@ public:
 	int32_t bUnloadBeforeNextPlay;
 	void Sound();
 	virtual void ~Sound(); // vtable+0x0
-	class Sound& operator=(const class Sound&);
-	virtual void SetSoundFile(const class basic_string<char>&); // vtable+0x4
+	/*unpacked*/ class Sound& operator=(const /*unpacked*/ class Sound&);
+	virtual void SetSoundFile(const /*unpacked*/ class basic_string<char>&); // vtable+0x4
 	virtual long Play(long, int32_t); // vtable+0x8
 	virtual long Stop(); // vtable+0xc
 	virtual long IsPlaying(); // vtable+0x10
@@ -2875,30 +2875,30 @@ public:
 	static unsigned long lTotalMemoryUsage;
 };
 
-// Type: class IBackBuffer;
+// Type: /*unpacked*/ class IBackBuffer;
 // VTABLE: COPTER_D 0x005907e0
 class IBackBuffer : public IFlatImage
 { // not packed(0x18 bytes) TI: 0x3e3c
 public:
-	virtual unsigned long Swap(class CSparkalWindow*, long, long); // vtable+0x1c
-	virtual unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long); // vtable+0x20
-	virtual unsigned long StretchRect(class CSparkalWindow*, long, long, long, long, long, long, long, long); // vtable+0x24
+	virtual unsigned long Swap(/*unpacked*/ class CSparkalWindow*, long, long); // vtable+0x1c
+	virtual unsigned long SwapRect(/*unpacked*/ class CSparkalWindow*, long, long, long, long, long, long); // vtable+0x20
+	virtual unsigned long StretchRect(/*unpacked*/ class CSparkalWindow*, long, long, long, long, long, long, long, long); // vtable+0x24
 };
 
-// Type: class FlatFile;
+// Type: /*unpacked*/ class FlatFile;
 // VTABLE: COPTER_D 0x00593620
 class FlatFile{ // not packed(0x110 bytes) TI: 0x32f4
 	enum /* __unnamed */ {
 		kMaxNameLen = 255,
 	};
 protected:
-	class FlatFile *fNext;
+	/*unpacked*/ class FlatFile *fNext;
 	unsigned char fName[256];
 	long fFileID;
-	struct _iobuf *fFile;
+	/*unpacked*/ struct _iobuf *fFile;
 	long UniqueID();
 private:
-	static class FlatFile *sList;
+	static /*unpacked*/ class FlatFile *sList;
 	static long sLastFileID;
 	void Link();
 	void Unlink();
@@ -2907,12 +2907,12 @@ public:
 	void FlatFile();
 	virtual void ~FlatFile(); // vtable+0x0
 	// calltype: NearC
-	static class FlatFile* FindByName(unsigned char *);
-	unsigned short SameFile(class FlatFile*);
+	static /*unpacked*/ class FlatFile* FindByName(unsigned char *);
+	unsigned short SameFile(/*unpacked*/ class FlatFile*);
 	virtual long Open(unsigned char *); // vtable+0x4
 	virtual long Open(char *); // vtable+0x8
 	virtual long Close(); // vtable+0xc
-	void OpenFromOtherFile(class FlatFile*);
+	void OpenFromOtherFile(/*unpacked*/ class FlatFile*);
 	long GetFileName(unsigned char *);
 	unsigned short ValidFile();
 	long ReadBlock(void * __ptr32, long *);
@@ -2924,10 +2924,10 @@ public:
 	// calltype: NearC
 	static short CheckForLeaks();
 	long GetFileID();
-	struct _iobuf* GetFile();
+	/*unpacked*/ struct _iobuf* GetFile();
 };
 
-// Type: class IFlatImage;
+// Type: /*unpacked*/ class IFlatImage;
 // VTABLE: COPTER_D 0x00591050
 class IFlatImage{ // not packed(0x18 bytes) TI: 0x3e30
 public:
@@ -2940,11 +2940,11 @@ public:
 	long GetWidth();
 	void * __ptr32 GetBitsPointer();
 	long GetStride();
-	virtual unsigned long Compose(class IFlatImage*, long, long, long, long, long, long); // vtable+0xc
-	unsigned long Compose(class IFlatImage*, long, long);
-	virtual unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long); // vtable+0x10
-	virtual unsigned long StretchCompose(class IFlatImage*, struct SparkalRect, struct SparkalRect); // vtable+0x14
-	virtual unsigned long FillRect(long, struct SparkalRect*); // vtable+0x18
+	virtual unsigned long Compose(/*unpacked*/ class IFlatImage*, long, long, long, long, long, long); // vtable+0xc
+	unsigned long Compose(/*unpacked*/ class IFlatImage*, long, long);
+	virtual unsigned long StretchCompose(/*unpacked*/ class IFlatImage*, long, long, long, long, long, long, long, long); // vtable+0x10
+	virtual unsigned long StretchCompose(/*unpacked*/ class IFlatImage*, /*unpacked*/ struct SparkalRect, /*unpacked*/ struct SparkalRect); // vtable+0x14
+	virtual unsigned long FillRect(long, /*unpacked*/ struct SparkalRect*); // vtable+0x18
 	void DrawPixel(unsigned char, long, long);
 	unsigned char GetPixel(long, long);
 	static unsigned long lTotalMemoryUsage;
@@ -3386,7 +3386,7 @@ unsigned short GetOutOfHeli(long personID) {
 
 // FUNCTION: COPTER_D 0x0054456a
 unsigned short cYObject::GetOutOfHeli(long personID) {
-	class cYObject *obj;
+	/*unpacked*/ class cYObject *obj;
 
 // LINE 172:
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(personID);
@@ -3613,10 +3613,10 @@ _T10f:
 }
 
 // FUNCTION: COPTER_D 0x00544874
-class cYObject* cYObject::GetObjectA(struct _DYOBJ_INST *dyn) {
-	class cYObject *obj;
+/*unpacked*/ class cYObject* cYObject::GetObjectA(/*unpacked*/ struct _DYOBJ_INST *dyn) {
+	/*unpacked*/ class cYObject *obj;
 	short count;
-	class cYObject *foundobj;
+	/*unpacked*/ class cYObject *foundobj;
 
 // LINE 225:
 	foundobj = 0x0;
@@ -3824,10 +3824,10 @@ _T2bd:
 }
 
 // FUNCTION: COPTER_D 0x00544b3b
-struct _DYOBJ_INST* cYObject::SearchForDynObj(short objtypeflag, short numcellstospiral, struct _DYOBJ_INST *onlyonmaster) {
+/*unpacked*/ struct _DYOBJ_INST* cYObject::SearchForDynObj(short objtypeflag, short numcellstospiral, /*unpacked*/ struct _DYOBJ_INST *onlyonmaster) {
 	short celly;
 	short cellx;
-	struct _DYOBJ_INST *dyobj;
+	/*unpacked*/ struct _DYOBJ_INST *dyobj;
 
 // LINE 249:
 	__asm        mov    eax, this;
@@ -3876,13 +3876,13 @@ _T94:
 }
 
 // FUNCTION: COPTER_D 0x00544bde
-unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST *master, struct Point3d *loc) {
+unsigned short cYObject::SearchForPersonSpot(/*unpacked*/ struct _DYOBJ_INST *master, /*unpacked*/ struct Point3d *loc) {
 	short radius;
 	short maxcount;
 	int32_t offsetz;
 	int32_t offsetx;
 	short fullradius;
-	struct Point3d newloc;
+	/*unpacked*/ struct Point3d newloc;
 	short count;
 	short smallradius;
 
@@ -3934,11 +3934,11 @@ _T7e:
 // LINE 266:
 // Block start:
 	int32_t masterrad;
-	struct Point3d offset;
+	/*unpacked*/ struct Point3d offset;
 	int32_t myrad;
 	int32_t groundheight;
 	int32_t objheight;
-	struct Point3d masterloc;
+	/*unpacked*/ struct Point3d masterloc;
 	__asm        movsx  eax, count;
 	__asm        movsx  ecx, smallradius;
 	__asm        imul   eax, ecx;
@@ -4221,7 +4221,7 @@ _T393:
 }
 
 // FUNCTION: COPTER_D 0x00544f78
-unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO *cptr, struct Point3d *loc, enum cYObject::SearchType searchType) {
+unsigned short cYObject::SearchForPersonSpot(/*unpacked*/ struct _CELL_INFO *cptr, /*unpacked*/ struct Point3d *loc, enum cYObject::SearchType searchType) {
 	int32_t offsetz;
 	int32_t offsetx;
 
@@ -4300,8 +4300,8 @@ _Tca:
 }
 
 // FUNCTION: COPTER_D 0x00545049
-unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO *cptr, int32_t * offsetx, int32_t * offsetz, enum cYObject::SearchType searchType) {
-	struct Point3d pos;
+unsigned short cYObject::SearchForPersonSpot(/*unpacked*/ struct _CELL_INFO *cptr, int32_t * offsetx, int32_t * offsetz, enum cYObject::SearchType searchType) {
+	/*unpacked*/ struct Point3d pos;
 	short halfwidth;
 	unsigned short ret;
 	int32_t twiceradius;
@@ -5075,7 +5075,7 @@ _T974:
 	__asm        je     _Tc6a;
 // LINE 380:
 // Block start:
-	struct Point3d pos;
+	/*unpacked*/ struct Point3d pos;
 	short centerscurk;
 	enum cYObject::LocationType cellcenterloctype;
 	enum cYObject::LocationType celloffsetloctype;
@@ -5413,7 +5413,7 @@ _T18:
 	__asm        jge    _Tf3;
 // LINE 447:
 // Block start:
-	class cYObject *obj;
+	/*unpacked*/ class cYObject *obj;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    _T41;
@@ -5682,7 +5682,7 @@ _T235:
 }
 
 // FUNCTION: COPTER_D 0x0054617c
-void S3PersonUserAppearNew(struct Point3d *loc, struct Point3d *facingvector) {
+void S3PersonUserAppearNew(/*unpacked*/ struct Point3d *loc, /*unpacked*/ struct Point3d *facingvector) {
 // LINE 465:
 	__asm        push   0;
 	__asm        mov    ecx, gAvatar;
@@ -5807,7 +5807,7 @@ _T138:
 	__asm        je     _T1c6;
 // LINE 479:
 // Block start:
-	struct cYObject::MoveInfo moveinfo;
+	/*unpacked*/ struct cYObject::MoveInfo moveinfo;
 	__asm        mov    eax, facingvector;
 	__asm        mov    ecx, gAvatar;
 	__asm        add    ecx, 0x168;
@@ -5830,7 +5830,7 @@ _T1c6:
 
 // FUNCTION: COPTER_D 0x0054634c
 void S3PersonUserAppear(int32_t x, int32_t y, int32_t dx, int32_t dz) {
-	struct Point3d loc;
+	/*unpacked*/ struct Point3d loc;
 
 // LINE 491:
 	__asm        xor    eax, eax;
@@ -5910,9 +5910,9 @@ void S3PersonUserAppear(int32_t x, int32_t y, int32_t dx, int32_t dz) {
 }
 
 // FUNCTION: COPTER_D 0x0054642e
-int32_t IsThisABadGuy(struct _DYOBJ_INST *guy) {
+int32_t IsThisABadGuy(/*unpacked*/ struct _DYOBJ_INST *guy) {
 	enum MissionSupertype mt;
-	class cYObject *obj;
+	/*unpacked*/ class cYObject *obj;
 
 // LINE 497:
 	__asm        mov    eax, guy;
@@ -5981,7 +5981,7 @@ _T2f:
 }
 
 // FUNCTION: COPTER_D 0x00546500
-struct _DYOBJ_INST* GetAvatarDYOBJ() {
+/*unpacked*/ struct _DYOBJ_INST* GetAvatarDYOBJ() {
 // LINE 519:
 	__asm        cmp    gAvatar, 0;
 	__asm        jne    _T2f;
@@ -6001,7 +6001,7 @@ _T2f:
 }
 
 // FUNCTION: COPTER_D 0x00546541
-struct Point3d* GetAvatarVector() {
+/*unpacked*/ struct Point3d* GetAvatarVector() {
 // LINE 525:
 	__asm        cmp    gAvatar, 0;
 	__asm        jne    _T2f;
@@ -6021,7 +6021,7 @@ _T2f:
 }
 
 // FUNCTION: COPTER_D 0x00546584
-void S3DrawPerson(struct VRBlit *blit) {
+void S3DrawPerson(/*unpacked*/ struct VRBlit *blit) {
 	short id;
 
 // LINE 531:
@@ -6043,7 +6043,7 @@ void S3DrawPerson(struct VRBlit *blit) {
 	__asm        jmp    _T137;
 // LINE 537:
 // Block start:
-	class cYObject *obj;
+	/*unpacked*/ class cYObject *obj;
 _T3b:
 	__asm        movsx  eax, id;
 	__asm        cmp    eax, 0x7D00;
@@ -6508,12 +6508,12 @@ _T7e:
 }
 
 // FUNCTION: COPTER_D 0x00546b56
-struct _HELI_DATA* S3PersonGetLandedHeli(struct Point3d *loc) {
-	struct _CELL_INFO *cptr;
-	struct _HELI_DATA *hd;
+/*unpacked*/ struct _HELI_DATA* S3PersonGetLandedHeli(/*unpacked*/ struct Point3d *loc) {
+	/*unpacked*/ struct _CELL_INFO *cptr;
+	/*unpacked*/ struct _HELI_DATA *hd;
 	long y;
 	long x;
-	struct _DYOBJ_INST *dyobj;
+	/*unpacked*/ struct _DYOBJ_INST *dyobj;
 
 // LINE 654:
 	__asm        mov    eax, loc;
@@ -6623,7 +6623,7 @@ _T12a:
 }
 
 // FUNCTION: COPTER_D 0x00546c85
-class cYObject* cYObject::GetOnePersonForScurkID(short cellx, short celly) {
+/*unpacked*/ class cYObject* cYObject::GetOnePersonForScurkID(short cellx, short celly) {
 	short scurkID;
 	short count;
 
@@ -6682,7 +6682,7 @@ _Tb1:
 	__asm        jge    _T1df;
 // LINE 698:
 // Block start:
-	class cYObject *obj;
+	/*unpacked*/ class cYObject *obj;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    _Tda;
@@ -6781,8 +6781,8 @@ _T1e6:
 }
 
 // FUNCTION: COPTER_D 0x00546e70
-unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, enum PersonType persontype, short cellx, short celly, struct _DYOBJ_INST *onTopOf, int32_t offsetx, int32_t offsetz) {
-	struct Point3d loc;
+unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, enum PersonType persontype, short cellx, short celly, /*unpacked*/ struct _DYOBJ_INST *onTopOf, int32_t offsetx, int32_t offsetz) {
+	/*unpacked*/ struct Point3d loc;
 
 
 	__asm        movsx  eax, celly;
@@ -6856,7 +6856,7 @@ unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, e
 }
 
 // FUNCTION: COPTER_D 0x00546f45
-unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, enum PersonType persontype, short cellx, short celly, struct _DYOBJ_INST *onTopOf, struct Point3d *loc) {
+unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, enum PersonType persontype, short cellx, short celly, /*unpacked*/ struct _DYOBJ_INST *onTopOf, /*unpacked*/ struct Point3d *loc) {
 	unsigned short ret;
 
 // LINE 719:
@@ -6933,8 +6933,8 @@ _Tac:
 }
 
 // FUNCTION: COPTER_D 0x00547044
-void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType missiontype, short cellx, short celly, short missionid, struct _DYOBJ_INST *onTopOf) {
-	struct _LZ_INFO *li;
+void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType missiontype, short cellx, short celly, short missionid, /*unpacked*/ struct _DYOBJ_INST *onTopOf) {
+	/*unpacked*/ struct _LZ_INFO *li;
 	short id;
 	int32_t offsetz;
 	int32_t offsetx;
@@ -7057,10 +7057,10 @@ _Tfe:
 }
 
 // FUNCTION: COPTER_D 0x005471b2
-void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType missiontype, short cellx, short celly, short missionid, struct _DYOBJ_INST *onTopOf, int32_t offsetx, int32_t offsetz) {
+void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType missiontype, short cellx, short celly, short missionid, /*unpacked*/ struct _DYOBJ_INST *onTopOf, int32_t offsetx, int32_t offsetz) {
 	short id;
-	class cYObject *obj;
-	struct Point3d loc;
+	/*unpacked*/ class cYObject *obj;
+	/*unpacked*/ struct Point3d loc;
 	short ret;
 
 // LINE 748:
@@ -7313,7 +7313,7 @@ _Ta2:
 	__asm        jmp    _T490;
 // LINE 784:
 // Block start:
-	class cYObject *medic;
+	/*unpacked*/ class cYObject *medic;
 	short dist;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(celly);
 	__asm        push   eax;
@@ -7425,7 +7425,7 @@ _T1c0:
 // LINE 808:
 // Block start:
 	short fieldershift;
-	class cYObject *newperson;
+	/*unpacked*/ class cYObject *newperson;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(celly);
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(cellx);
@@ -7674,7 +7674,7 @@ void cYObject::StartScurkPeopleNearAvatar() {
 	short celly;
 	short cellx;
 	short count;
-	struct Rect r;
+	/*unpacked*/ struct Rect r;
 
 // LINE 839:
 	__asm        movsx  eax, cYObject::sAmbientAbsoluteMax;
@@ -7962,10 +7962,10 @@ _T53:
 }
 
 // FUNCTION: COPTER_D 0x00547cc8
-class cYObject* cYObject::GetSleepingPerson() {
-	class cYObject *sleeper;
+/*unpacked*/ class cYObject* cYObject::GetSleepingPerson() {
+	/*unpacked*/ class cYObject *sleeper;
 	short count;
-	class cYObject *test;
+	/*unpacked*/ class cYObject *test;
 
 // LINE 899:
 	sleeper = 0x0;
@@ -8052,7 +8052,7 @@ _T10c:
 
 // FUNCTION: COPTER_D 0x00547de1
 void MakeAllPeople() {
-	struct _SYSTEMTIME st;
+	/*unpacked*/ struct _SYSTEMTIME st;
 	char peoplepath[260];
 
 // LINE 915:
@@ -8117,7 +8117,7 @@ _T33:
 void cYObject::MakePlebes() {
 	int32_t newnum;
 	int32_t pindex;
-	struct Point3d p;
+	/*unpacked*/ struct Point3d p;
 
 // LINE 947:
 	__asm        mov    p.x, 0;
@@ -8133,7 +8133,7 @@ _T2d:
 	__asm        jge    _T1a2;
 // LINE 952:
 // Block start:
-	class cYObject *personobj;
+	/*unpacked*/ class cYObject *personobj;
 	__asm        mov    eax, cYObject::sBehavior;
 	__asm        push   eax;
 	__asm        mov    eax, p.z;
@@ -10146,7 +10146,7 @@ unsigned short cYObject::BeamIntoCameraRange() {
 	int32_t y;
 	int32_t x;
 	int32_t offsetx;
-	struct Point3d vec;
+	/*unpacked*/ struct Point3d vec;
 	int32_t spiral_dist;
 	int32_t curr_dist;
 	int32_t ydir;
@@ -10509,7 +10509,7 @@ _Tc9:
 	short deltaX;
 	int32_t xtoview;
 	long debug1;
-	struct Point3d viewvec;
+	/*unpacked*/ struct Point3d viewvec;
 	int32_t ztoview;
 	unsigned short behindView;
 	long debug2;
@@ -10691,9 +10691,9 @@ _T2ca:
 }
 
 // FUNCTION: COPTER_D 0x0054a1d3
-short StartPerson(enum PersonType persontype, enum MissionType mission, short cellx, short celly, long missionid, struct _DYOBJ_INST *onTopOf, struct Point3d *loc) {
+short StartPerson(enum PersonType persontype, enum MissionType mission, short cellx, short celly, long missionid, /*unpacked*/ struct _DYOBJ_INST *onTopOf, /*unpacked*/ struct Point3d *loc) {
 	short ret;
-	class cYObject *newperson;
+	/*unpacked*/ class cYObject *newperson;
 
 // LINE 1466:
 	ret = 0xffff;
@@ -10747,7 +10747,7 @@ _T18:
 	__asm        jge    _T111;
 // LINE 1478:
 // Block start:
-	class cYObject *obj;
+	/*unpacked*/ class cYObject *obj;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    _T41;
@@ -10824,7 +10824,7 @@ _T111:
 
 // FUNCTION: COPTER_D 0x0054a35a
 void KillMissionPeople(long missionid) {
-	struct _MISSION_PARMS mp;
+	/*unpacked*/ struct _MISSION_PARMS mp;
 	short count;
 
 // LINE 1493:
@@ -10846,7 +10846,7 @@ _T33:
 	__asm        jge    _T240;
 // LINE 1500:
 // Block start:
-	class cYObject *obj;
+	/*unpacked*/ class cYObject *obj;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    _T5c;
@@ -11122,7 +11122,7 @@ _Tbd:
 	__asm        je     _T157;
 // LINE 1546:
 // Block start:
-	struct _LZ_INFO *li;
+	/*unpacked*/ struct _LZ_INFO *li;
 	__asm        movsx  eax, scurkID;
 	__asm        push   eax;
 	__asm        call   S3ObjGetLandingZone;
@@ -11187,7 +11187,7 @@ _T157:
 }
 
 // FUNCTION: COPTER_D 0x0054a7a5
-unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionType mission, short cellx, short celly, long missionid, struct _DYOBJ_INST *onTopOf, struct Point3d *loc) {
+unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionType mission, short cellx, short celly, long missionid, /*unpacked*/ struct _DYOBJ_INST *onTopOf, /*unpacked*/ struct Point3d *loc) {
 	short ret;
 
 // LINE 1571:
@@ -11737,7 +11737,7 @@ _T673:
 // LINE 1656:
 // Block start:
 	unsigned short founddest;
-	struct _MISSION_PARMS mp;
+	/*unpacked*/ struct _MISSION_PARMS mp;
 	short destcellx;
 	short destcelly;
 	destcellx = 0xffff;
@@ -12063,7 +12063,7 @@ _Ta36:
 // Block start:
 	int32_t mycelly;
 	int32_t mycellx;
-	struct Point3d pos;
+	/*unpacked*/ struct Point3d pos;
 	ret = 0x0;
 // LINE 1751:
 	__asm        cmp    loc, 0;
@@ -12686,7 +12686,7 @@ _T3a:
 // LINE 1823:
 // Block start:
 	unsigned short conked;
-	struct _MISSION_PARMS mp;
+	/*unpacked*/ struct _MISSION_PARMS mp;
 	mp.id = riotMissionID;
 // LINE 1824:
 	mp.op = 0xb;
@@ -12836,7 +12836,7 @@ _T249:
 
 // FUNCTION: COPTER_D 0x0054bc3c
 void cYObject::PhaseAndBeamSoundChannels() {
-	class cYObject *obj;
+	/*unpacked*/ class cYObject *obj;
 	short nextsoundchannel;
 	short count;
 
@@ -13068,7 +13068,7 @@ _T2ba:
 
 // FUNCTION: COPTER_D 0x0054bf20
 short cYObject::DistributeSoundChannels(short rad, short firstsoundchannel) {
-	class cYObject *obj;
+	/*unpacked*/ class cYObject *obj;
 	short soundchannel;
 	short count;
 
@@ -13322,7 +13322,7 @@ _T3d:
 // LINE 1905:
 // Block start:
 	short actualchannel;
-	class DigitalSound *theSound;
+	/*unpacked*/ class DigitalSound *theSound;
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        cmp    eax, 0xFFFFFFFF;
@@ -13673,7 +13673,7 @@ _T77:
 	__asm        jge    _T1b0;
 // LINE 2100:
 // Block start:
-	class cYObject *obj;
+	/*unpacked*/ class cYObject *obj;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    _Ta0;
@@ -13800,7 +13800,7 @@ _T207:
 	__asm        jge    _T61c;
 // LINE 2109:
 // Block start:
-	class cYObject *obj;
+	/*unpacked*/ class cYObject *obj;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    _T230;
@@ -14106,7 +14106,7 @@ _T642:
 
 // FUNCTION: COPTER_D 0x0054ccbd
 unsigned short cYObject::AddToHeli() {
-	struct tagPassengerInfo tempPassengerInfo;
+	/*unpacked*/ struct tagPassengerInfo tempPassengerInfo;
 
 // LINE 2143:
 	__asm        mov    eax, this;
@@ -14183,7 +14183,7 @@ _T53:
 }
 
 // FUNCTION: COPTER_D 0x0054cdb2
-class cYObject* cYObject::GetPersonWithMaster(struct _DYOBJ_INST *dyobj) {
+/*unpacked*/ class cYObject* cYObject::GetPersonWithMaster(/*unpacked*/ struct _DYOBJ_INST *dyobj) {
 	short count;
 
 // LINE 2166:
@@ -14197,7 +14197,7 @@ _T1b:
 	__asm        jge    _T10a;
 // LINE 2167:
 // Block start:
-	class cYObject *obj;
+	/*unpacked*/ class cYObject *obj;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    _T44;
@@ -14273,7 +14273,7 @@ _T111:
 }
 
 // FUNCTION: COPTER_D 0x0054ceca
-unsigned short cYObject::SetMaster(struct _DYOBJ_INST *obj) {
+unsigned short cYObject::SetMaster(/*unpacked*/ struct _DYOBJ_INST *obj) {
 	unsigned short success;
 
 // LINE 2177:
@@ -14433,7 +14433,7 @@ _T209:
 }
 
 // FUNCTION: COPTER_D 0x0054d0e3
-unsigned short cYObject::AdjoinsRoad(struct Point3d pos) {
+unsigned short cYObject::AdjoinsRoad(/*unpacked*/ struct Point3d pos) {
 	int32_t celly;
 	int32_t cellx;
 
@@ -14859,8 +14859,8 @@ _T578:
 
 // FUNCTION: COPTER_D 0x0054d662
 unsigned short cYObject::GetNeutralLoc(int32_t * cellx, int32_t * celly, int32_t * offsetx, int32_t * offsetz) {
-	struct _CELL_INFO *newcptr;
-	struct _CELL_INFO *cptr;
+	/*unpacked*/ struct _CELL_INFO *newcptr;
+	/*unpacked*/ struct _CELL_INFO *cptr;
 	short cy;
 	int32_t z;
 	short cx;
@@ -15011,7 +15011,7 @@ _T1b7:
 	__asm        cmp    cYObject::sLocInfo[0].searchType[eax*8], 0;
 	__asm        jne    _T27b;
 // Block start:
-	struct Point3d pos;
+	/*unpacked*/ struct Point3d pos;
 	__asm        mov    eax, offsetz;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x58], eax;
@@ -15376,7 +15376,7 @@ _T1e1:
 }
 
 // FUNCTION: COPTER_D 0x0054dcde
-enum cYObject::MoveErrorCode cAvatar::AvatarMove(struct cYObject::MoveInfo *moveinfo) {
+enum cYObject::MoveErrorCode cAvatar::AvatarMove(/*unpacked*/ struct cYObject::MoveInfo *moveinfo) {
 	unsigned short yaw;
 	enum cYObject::MoveErrorCode movecode;
 
@@ -15488,8 +15488,8 @@ _T12b:
 
 // FUNCTION: COPTER_D 0x0054de18
 void cAvatar::Simulate() {
-	struct _HELI_DATA *hd;
-	struct cYObject::MoveInfo moveinfo;
+	/*unpacked*/ struct _HELI_DATA *hd;
+	/*unpacked*/ struct cYObject::MoveInfo moveinfo;
 	enum cYObject::MoveErrorCode movecode;
 
 // LINE 2309:
@@ -15499,7 +15499,7 @@ void cAvatar::Simulate() {
 	__asm        jne    _T1aa;
 // LINE 2310:
 // Block start:
-	struct _DYOBJ_INST *dy;
+	/*unpacked*/ struct _DYOBJ_INST *dy;
 	__asm        cmp    G_camera_mode, 3;
 	__asm        jne    _T47;
 
@@ -15647,7 +15647,7 @@ _T1d3:
 	__asm        jne    _T23d;
 // LINE 2324:
 // Block start:
-	class cYObject *person;
+	/*unpacked*/ class cYObject *person;
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::GetToted;
 	__asm        mov    person, eax;
@@ -15670,7 +15670,7 @@ _T23d:
 	__asm        je     _T41f;
 // LINE 2333:
 // Block start:
-	class cYObject *person;
+	/*unpacked*/ class cYObject *person;
 	G_uheli = hd;
 // LINE 2334:
 	__asm        mov    ecx, this;
@@ -15681,7 +15681,7 @@ _T23d:
 	__asm        je     _T309;
 // LINE 2338:
 // Block start:
-	class cYObject *obj;
+	/*unpacked*/ class cYObject *obj;
 	__asm        mov    eax, person;
 	__asm        movsx  eax, word ptr [eax+0xD8];
 	__asm        cmp    eax, 6;
@@ -15817,7 +15817,7 @@ _T41f:
 	__asm        jne    _T66a;
 // LINE 2363:
 // Block start:
-	class cYObject *person;
+	/*unpacked*/ class cYObject *person;
 	__asm        mov    eax, moveinfo.dyBlock;
 	__asm        push   eax;
 	__asm        call   cYObject::GetObjectA;
@@ -16058,7 +16058,7 @@ _T75c:
 }
 
 // FUNCTION: COPTER_D 0x0054e579
-void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, struct cYObject::MoveInfo *moveinfo) {
+void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, /*unpacked*/ struct cYObject::MoveInfo *moveinfo) {
 // LINE 2406:
 	__asm        mov    eax, movecode;
 	__asm        mov    [ebp-0xC], eax;
@@ -17527,7 +17527,7 @@ _T1569:
 // FUNCTION: COPTER_D 0x0054faee
 void cAvatar::ResetView() {
 	unsigned char figDir;
-	struct Point3D view;
+	/*unpacked*/ struct Point3D view;
 	int32_t yRot;
 
 // LINE 2506:
@@ -17626,7 +17626,7 @@ _T131:
 }
 
 // FUNCTION: COPTER_D 0x0054fc2e
-void cYObject::SetCellAndLoc(struct Point3d loc, unsigned char x, unsigned char y) {
+void cYObject::SetCellAndLoc(/*unpacked*/ struct Point3d loc, unsigned char x, unsigned char y) {
 	short loccellx;
 	short loccelly;
 
@@ -17722,7 +17722,7 @@ _Tf6:
 
 // FUNCTION: COPTER_D 0x0054fd4d
 void cYObject::SetCellAndLoc(unsigned char x, unsigned char y, int32_t dx, int32_t dz) {
-	struct Point3d loc;
+	/*unpacked*/ struct Point3d loc;
 
 // LINE 2561:
 	__asm        xor    eax, eax;
@@ -18461,7 +18461,7 @@ _T12a:
 
 // FUNCTION: COPTER_D 0x0055069b
 void cYObject::Link() {
-	struct _CELL_INFO *ncptr;
+	/*unpacked*/ struct _CELL_INFO *ncptr;
 
 // LINE 2780:
 	__asm        jmp    near ptr 0x005506AC;
@@ -18561,8 +18561,8 @@ _T103:
 
 // FUNCTION: COPTER_D 0x005507ec
 void cYObject::Unlink() {
-	struct _DYOBJ_INST **dyptrptr;
-	struct _CELL_INFO *cptr;
+	/*unpacked*/ struct _DYOBJ_INST **dyptrptr;
+	/*unpacked*/ struct _CELL_INFO *cptr;
 
 // LINE 2798:
 	__asm        jmp    near ptr 0x005507FD;
@@ -18622,9 +18622,9 @@ _Ta4:
 }
 
 // FUNCTION: COPTER_D 0x005508a3
-class cAvatar* cAvatar::MakeAvatar() {
-	class cAvatar *avatar;
-	struct Point3d p;
+/*unpacked*/ class cAvatar* cAvatar::MakeAvatar() {
+	/*unpacked*/ class cAvatar *avatar;
+	/*unpacked*/ struct Point3d p;
 
 	// Function registers exception cleanup function at 0x005509b2
 // LINE 2818:
@@ -18713,7 +18713,7 @@ _T119:
 }
 
 // FUNCTION: COPTER_D 0x005509cb
-short cYObject::MakeNewObject(short type, struct Point3d loc, class Behavior *behavior) {
+short cYObject::MakeNewObject(short type, /*unpacked*/ struct Point3d loc, /*unpacked*/ class Behavior *behavior) {
 	short id;
 
 	// Function registers exception cleanup function at 0x00550b17
@@ -18759,7 +18759,7 @@ _T8c:
 	__asm        je     _T11a;
 // LINE 2834:
 // Block start:
-	class cYObject **newObj;
+	/*unpacked*/ class cYObject **newObj;
 	__asm        movsx  eax, id;
 	__asm        lea    eax, cYObject::sObjects[0][eax*4];
 	__asm        mov    newObj, eax;
@@ -18834,7 +18834,7 @@ _T156:
 
 // FUNCTION: COPTER_D 0x00550b30
 void cYObject::InitForEngine(short id) {
-	struct VRFaceInfo finfo;
+	/*unpacked*/ struct VRFaceInfo finfo;
 	int32_t face;
 
 // LINE 2845:
@@ -18926,7 +18926,7 @@ _Tc8:
 
 // FUNCTION: COPTER_D 0x00550c30
 void cYObject::KillObject(short id) {
-	class cYObject *obj;
+	/*unpacked*/ class cYObject *obj;
 
 // LINE 2873:
 	__asm        movsx  eax, id;
@@ -19012,7 +19012,7 @@ _T118:
 }
 
 // FUNCTION: COPTER_D 0x00550d4d
-void cYObject::cYObject(short type, class Behavior *pBehavior, struct Point3d loc, short id) {
+void cYObject::cYObject(short type, /*unpacked*/ class Behavior *pBehavior, /*unpacked*/ struct Point3d loc, short id) {
 	short cnt;
 
 	// Function registers exception cleanup function at 0x00550efd
@@ -19418,10 +19418,10 @@ _T3d1:
 }
 
 // FUNCTION: COPTER_D 0x00551388
-void cYObject::Draw(struct VRBlit *blit) {
+void cYObject::Draw(/*unpacked*/ struct VRBlit *blit) {
 	double nearvar;
 	double camPhi;
-	struct Point3d screenPt;
+	/*unpacked*/ struct Point3d screenPt;
 	char text[20];
 	double midvar;
 	float psiOff;
@@ -19430,7 +19430,7 @@ void cYObject::Draw(struct VRBlit *blit) {
 	float phiOff;
 	double farlimvar;
 	unsigned short highres;
-	struct BodyDebugInfo bdi;
+	/*unpacked*/ struct BodyDebugInfo bdi;
 
 // LINE 2968:
 	__asm        mov    eax, this;
@@ -19750,7 +19750,7 @@ _T48b:
 }
 
 // FUNCTION: COPTER_D 0x0055181a
-void BodyDrawDebugInfo(class CBackBuffer *buf) {
+void BodyDrawDebugInfo(/*unpacked*/ class CBackBuffer *buf) {
 // LINE 3051:
 	__asm        push   0x91;
 	__asm        call   Keyboard::IsToggleKeySet;
@@ -19771,7 +19771,7 @@ _T2d:
 	__asm        jge    _T80;
 // LINE 3053:
 // Block start:
-	struct BodyDebugInfo bdi;
+	/*unpacked*/ struct BodyDebugInfo bdi;
 	__asm        movsx  eax, count;
 	__asm        mov    ecx, eax;
 	__asm        shl    eax, 3;
@@ -19809,7 +19809,7 @@ _T80:
 // FUNCTION: COPTER_D 0x005518ad
 void cYObject::~cYObject() {
 	unsigned short found;
-	class cYObject **srch;
+	/*unpacked*/ class cYObject **srch;
 
 	// Function registers exception cleanup function at 0x005519be
 
@@ -20094,10 +20094,10 @@ _Tf8:
 int32_t S3PUtilsGetAlt(int32_t x, int32_t y, int32_t z) {
 	int32_t normy;
 	int32_t normx;
-	struct _CELL_INFO *cptr;
+	/*unpacked*/ struct _CELL_INFO *cptr;
 	int32_t alt;
 	int32_t objy;
-	struct _STOBJ_INST *stobj;
+	/*unpacked*/ struct _STOBJ_INST *stobj;
 	int32_t color;
 	int32_t maxobjy;
 	int32_t normz;
@@ -20637,10 +20637,10 @@ short cYObject::sAmbientTopOff = 200;
 short cYObject::sAmbientAbsoluteMax = 400;
 
 // GLOBAL: COPTER_D 0x005b8680
-class cAvatar *gAvatar = { 0 /* todo */ };
+/*unpacked*/ class cAvatar *gAvatar = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b8684
-class cYObject *cYObject::sList = { 0 /* todo */ };
+/*unpacked*/ class cYObject *cYObject::sList = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b8688
 short cYObject::sBeamed = 12;
@@ -20830,13 +20830,13 @@ static short sCheckTotedCount = 0;
 
 // Contribution: 3:0009e250-000a05a4 Module: 200, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00635250
-class YObjLang *cYObject::sLanguage;
+/*unpacked*/ class YObjLang *cYObject::sLanguage;
 
 // GLOBAL: COPTER_D 0x00635258
-class MTimer gXTimer;
+/*unpacked*/ class MTimer gXTimer;
 
 // GLOBAL: COPTER_D 0x00635268
-struct cYObject::LocationInfo cYObject::sLocInfo[14];
+/*unpacked*/ struct cYObject::LocationInfo cYObject::sLocInfo[14];
 
 // GLOBAL: COPTER_D 0x006352d8
 short cYObject::sHitRxnTree[20];
@@ -20845,16 +20845,16 @@ short cYObject::sHitRxnTree[20];
 enum cYObject::LocationType cYObject::sNeutralMissionLocs[14][10];
 
 // GLOBAL: COPTER_D 0x00635530
-struct Point3d cYObject::sMoveTable[8];
+/*unpacked*/ struct Point3d cYObject::sMoveTable[8];
 
 // GLOBAL: COPTER_D 0x00635590
-class ResFile cYObject::sErrorFile;
+/*unpacked*/ class ResFile cYObject::sErrorFile;
 
 // GLOBAL: COPTER_D 0x006356b0
 short cYObject::sSoundChannels[15];
 
 // GLOBAL: COPTER_D 0x006356d0
-struct BodyDebugInfo gBodyDebugInfo[100];
+/*unpacked*/ struct BodyDebugInfo gBodyDebugInfo[100];
 
 // GLOBAL: COPTER_D 0x006361c0
 short cYObject::sStackSize[1];
@@ -20863,7 +20863,7 @@ short cYObject::sStackSize[1];
 long g_sqrtTable[625];
 
 // GLOBAL: COPTER_D 0x00636b8c
-class Behavior *cYObject::sBehavior;
+/*unpacked*/ class Behavior *cYObject::sBehavior;
 
 // GLOBAL: COPTER_D 0x00636b90
 int32_t LastCameraY;
@@ -20875,13 +20875,13 @@ int32_t LastCameraX;
 short cYObject::sInitBhav[14];
 
 // GLOBAL: COPTER_D 0x00636bb8
-class NResFile cYObject::sFile;
+/*unpacked*/ class NResFile cYObject::sFile;
 
 // GLOBAL: COPTER_D 0x00636ce0
-struct Point3d cYObject::sUnitVectorTable[8];
+/*unpacked*/ struct Point3d cYObject::sUnitVectorTable[8];
 
 // GLOBAL: COPTER_D 0x00636d40
-class cYObject *cYObject::sObjects[100];
+/*unpacked*/ class cYObject *cYObject::sObjects[100];
 
 // GLOBAL: COPTER_D 0x00636ed0
 enum cYObject::LocationType cYObject::sLocType[256];
@@ -20898,11 +20898,11 @@ enum cYObject::LocationType cYObject::sNeutralPersonLocs[18][10];
 // Unknown globals:
 // The PDB was slightly corrupted and we aren't sure which file these globals belong to.
 // GLOBAL: COPTER_D 0x006bf188
-struct Point2d CameraCell; // Contrib missing
+/*packed*/ struct Point2d CameraCell; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006c12a0
-struct ViewerInfo Viewer; // Contrib missing
+/*packed*/ struct ViewerInfo Viewer; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006c1210
-struct _VIEW_STATE ViewState; // Contrib missing
+/*packed*/ struct _VIEW_STATE ViewState; // Contrib missing
 

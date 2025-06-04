@@ -8,12 +8,12 @@
 
 // Type: void;
 
-// Type: class CGameApp (forward reference);
+// Type: /*unpacked*/ class CGameApp (forward reference);
 // CGameApp Class implementation not found
 
 // Type: char;
 
-// Type: class Version;
+// Type: /*packed*/ class Version;
 // VTABLE: COPTER_D 0x0058f5b8
 class Version{ // packed(0xc bytes) TI: 0x241c
 public:
@@ -41,7 +41,7 @@ protected:
 
 // Type: int32_t;
 
-// Type: struct _MEMORYSTATUS;
+// Type: /*packed*/ struct _MEMORYSTATUS;
 struct _MEMORYSTATUS{ // packed(0x20 bytes) TI: 0x241e
 	unsigned long dwLength;
 	unsigned long dwMemoryLoad;
@@ -53,13 +53,13 @@ struct _MEMORYSTATUS{ // packed(0x20 bytes) TI: 0x241e
 	unsigned long dwAvailVirtual;
 };
 
-// Type: class basic_string<char>;
+// Type: /*packed*/ class basic_string<char>;
 class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
-	using reference_class = class basic_string_ref<char>;
-	using reference_pointer = class basic_string_ref<char>*;
+	using reference_class = /*unpacked*/ class basic_string_ref<char>;
+	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char> *reference;
+	/*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -77,44 +77,44 @@ private:
 	uint32_t find_first_not_of_str(char *, uint32_t, uint32_t);
 	uint32_t find_last_not_of_str(char *, uint32_t, uint32_t);
 public:
-	void basic_string<char>(const class vector<char>&);
+	void basic_string<char>(const /*packed*/ class vector<char>&);
 	void basic_string<char>(char, uint32_t);
 	void basic_string<char>(char *);
 	void basic_string<char>(char *, uint32_t);
-	void basic_string<char>(const class basic_string<char>&, uint32_t, uint32_t);
+	void basic_string<char>(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 	void basic_string<char>(uint32_t, enum capacity);
 	void basic_string<char>();
 protected:
 	void basic_string<char>(char *, uint32_t, uint32_t);
 	void delete_ref();
 	using char_type = char;
-	using baggage_type = struct string_char_baggage<char>;
+	using baggage_type = /*packed*/ struct string_char_baggage<char>;
 public:
 	void ~basic_string<char>();
-	class basic_string<char>& operator=(char);
-	class basic_string<char>& operator=(char *);
-	class basic_string<char>& operator=(const class basic_string<char>&);
-	class basic_string<char>& operator+=(char);
-	class basic_string<char>& operator+=(char *);
-	class basic_string<char>& operator+=(const class basic_string<char>&);
-	class vector<char> operator class vector<char>();
-	class basic_string<char>& append(char, uint32_t);
-	class basic_string<char>& append(char *);
-	class basic_string<char>& append(char *, uint32_t);
-	class basic_string<char>& append(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& assign(char, uint32_t);
-	class basic_string<char>& assign(char *);
-	class basic_string<char>& assign(char *, uint32_t);
-	class basic_string<char>& assign(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& insert(uint32_t, char, uint32_t);
-	class basic_string<char>& insert(uint32_t, char *);
-	class basic_string<char>& insert(uint32_t, char *, uint32_t);
-	class basic_string<char>& insert(uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& remove(uint32_t, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, char, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, char *);
-	class basic_string<char>& replace(uint32_t, uint32_t, char *, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& operator=(char);
+	/*packed*/ class basic_string<char>& operator=(char *);
+	/*packed*/ class basic_string<char>& operator=(const /*packed*/ class basic_string<char>&);
+	/*packed*/ class basic_string<char>& operator+=(char);
+	/*packed*/ class basic_string<char>& operator+=(char *);
+	/*packed*/ class basic_string<char>& operator+=(const /*packed*/ class basic_string<char>&);
+	/*packed*/ class vector<char> operator class vector<char>();
+	/*packed*/ class basic_string<char>& append(char, uint32_t);
+	/*packed*/ class basic_string<char>& append(char *);
+	/*packed*/ class basic_string<char>& append(char *, uint32_t);
+	/*packed*/ class basic_string<char>& append(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& assign(char, uint32_t);
+	/*packed*/ class basic_string<char>& assign(char *);
+	/*packed*/ class basic_string<char>& assign(char *, uint32_t);
+	/*packed*/ class basic_string<char>& assign(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char *);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char *, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& remove(uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char *);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char *, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 	char get_at(uint32_t);
 	void put_at(uint32_t, char);
 	char& operator[](uint32_t);
@@ -130,41 +130,41 @@ public:
 	uint32_t find(char, uint32_t);
 	uint32_t find(char *, uint32_t);
 	uint32_t find(char *, uint32_t, uint32_t);
-	uint32_t find(const class basic_string<char>&, uint32_t);
+	uint32_t find(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t rfind(char, uint32_t);
 	uint32_t rfind(char *, uint32_t);
 	uint32_t rfind(char *, uint32_t, uint32_t);
-	uint32_t rfind(const class basic_string<char>&, uint32_t);
+	uint32_t rfind(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_first_of(char, uint32_t);
 	uint32_t find_first_of(char *, uint32_t);
 	uint32_t find_first_of(char *, uint32_t, uint32_t);
-	uint32_t find_first_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_last_of(char, uint32_t);
 	uint32_t find_last_of(char *, uint32_t);
 	uint32_t find_last_of(char *, uint32_t, uint32_t);
-	uint32_t find_last_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_last_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_first_not_of(char, uint32_t);
 	uint32_t find_first_not_of(char *, uint32_t);
 	uint32_t find_first_not_of(char *, uint32_t, uint32_t);
-	uint32_t find_first_not_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_not_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_last_not_of(char, uint32_t);
 	uint32_t find_last_not_of(char *, uint32_t);
 	uint32_t find_last_not_of(char *, uint32_t, uint32_t);
-	uint32_t find_last_not_of(const class basic_string<char>&, uint32_t);
-	class basic_string<char> substr(uint32_t, uint32_t);
+	uint32_t find_last_not_of(const /*packed*/ class basic_string<char>&, uint32_t);
+	/*packed*/ class basic_string<char> substr(uint32_t, uint32_t);
 	int32_t compare(char, uint32_t, uint32_t);
 	int32_t compare(char *, uint32_t);
 	int32_t compare(char *, uint32_t, uint32_t);
-	int32_t compare(const class basic_string<char>&, uint32_t, uint32_t);
+	int32_t compare(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 };
 
-// Type: class basic_string<char> (forward reference);
+// Type: /*packed*/ class basic_string<char> (forward reference);
 class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
-	using reference_class = class basic_string_ref<char>;
-	using reference_pointer = class basic_string_ref<char>*;
+	using reference_class = /*unpacked*/ class basic_string_ref<char>;
+	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char> *reference;
+	/*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -182,44 +182,44 @@ private:
 	uint32_t find_first_not_of_str(char *, uint32_t, uint32_t);
 	uint32_t find_last_not_of_str(char *, uint32_t, uint32_t);
 public:
-	void basic_string<char>(const class vector<char>&);
+	void basic_string<char>(const /*packed*/ class vector<char>&);
 	void basic_string<char>(char, uint32_t);
 	void basic_string<char>(char *);
 	void basic_string<char>(char *, uint32_t);
-	void basic_string<char>(const class basic_string<char>&, uint32_t, uint32_t);
+	void basic_string<char>(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 	void basic_string<char>(uint32_t, enum capacity);
 	void basic_string<char>();
 protected:
 	void basic_string<char>(char *, uint32_t, uint32_t);
 	void delete_ref();
 	using char_type = char;
-	using baggage_type = struct string_char_baggage<char>;
+	using baggage_type = /*packed*/ struct string_char_baggage<char>;
 public:
 	void ~basic_string<char>();
-	class basic_string<char>& operator=(char);
-	class basic_string<char>& operator=(char *);
-	class basic_string<char>& operator=(const class basic_string<char>&);
-	class basic_string<char>& operator+=(char);
-	class basic_string<char>& operator+=(char *);
-	class basic_string<char>& operator+=(const class basic_string<char>&);
-	class vector<char> operator class vector<char>();
-	class basic_string<char>& append(char, uint32_t);
-	class basic_string<char>& append(char *);
-	class basic_string<char>& append(char *, uint32_t);
-	class basic_string<char>& append(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& assign(char, uint32_t);
-	class basic_string<char>& assign(char *);
-	class basic_string<char>& assign(char *, uint32_t);
-	class basic_string<char>& assign(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& insert(uint32_t, char, uint32_t);
-	class basic_string<char>& insert(uint32_t, char *);
-	class basic_string<char>& insert(uint32_t, char *, uint32_t);
-	class basic_string<char>& insert(uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& remove(uint32_t, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, char, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, char *);
-	class basic_string<char>& replace(uint32_t, uint32_t, char *, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& operator=(char);
+	/*packed*/ class basic_string<char>& operator=(char *);
+	/*packed*/ class basic_string<char>& operator=(const /*packed*/ class basic_string<char>&);
+	/*packed*/ class basic_string<char>& operator+=(char);
+	/*packed*/ class basic_string<char>& operator+=(char *);
+	/*packed*/ class basic_string<char>& operator+=(const /*packed*/ class basic_string<char>&);
+	/*packed*/ class vector<char> operator class vector<char>();
+	/*packed*/ class basic_string<char>& append(char, uint32_t);
+	/*packed*/ class basic_string<char>& append(char *);
+	/*packed*/ class basic_string<char>& append(char *, uint32_t);
+	/*packed*/ class basic_string<char>& append(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& assign(char, uint32_t);
+	/*packed*/ class basic_string<char>& assign(char *);
+	/*packed*/ class basic_string<char>& assign(char *, uint32_t);
+	/*packed*/ class basic_string<char>& assign(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char *);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char *, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& remove(uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char *);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char *, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 	char get_at(uint32_t);
 	void put_at(uint32_t, char);
 	char& operator[](uint32_t);
@@ -235,35 +235,35 @@ public:
 	uint32_t find(char, uint32_t);
 	uint32_t find(char *, uint32_t);
 	uint32_t find(char *, uint32_t, uint32_t);
-	uint32_t find(const class basic_string<char>&, uint32_t);
+	uint32_t find(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t rfind(char, uint32_t);
 	uint32_t rfind(char *, uint32_t);
 	uint32_t rfind(char *, uint32_t, uint32_t);
-	uint32_t rfind(const class basic_string<char>&, uint32_t);
+	uint32_t rfind(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_first_of(char, uint32_t);
 	uint32_t find_first_of(char *, uint32_t);
 	uint32_t find_first_of(char *, uint32_t, uint32_t);
-	uint32_t find_first_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_last_of(char, uint32_t);
 	uint32_t find_last_of(char *, uint32_t);
 	uint32_t find_last_of(char *, uint32_t, uint32_t);
-	uint32_t find_last_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_last_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_first_not_of(char, uint32_t);
 	uint32_t find_first_not_of(char *, uint32_t);
 	uint32_t find_first_not_of(char *, uint32_t, uint32_t);
-	uint32_t find_first_not_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_not_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_last_not_of(char, uint32_t);
 	uint32_t find_last_not_of(char *, uint32_t);
 	uint32_t find_last_not_of(char *, uint32_t, uint32_t);
-	uint32_t find_last_not_of(const class basic_string<char>&, uint32_t);
-	class basic_string<char> substr(uint32_t, uint32_t);
+	uint32_t find_last_not_of(const /*packed*/ class basic_string<char>&, uint32_t);
+	/*packed*/ class basic_string<char> substr(uint32_t, uint32_t);
 	int32_t compare(char, uint32_t, uint32_t);
 	int32_t compare(char *, uint32_t);
 	int32_t compare(char *, uint32_t, uint32_t);
-	int32_t compare(const class basic_string<char>&, uint32_t, uint32_t);
+	int32_t compare(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 };
 
-// Type: struct SparkalColor;
+// Type: /*packed*/ struct SparkalColor;
 struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 	unsigned char Blue;
 	unsigned char Green;
@@ -273,74 +273,74 @@ struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 	void SparkalColor();
 };
 
-// Type: class MessageBoxWindow (forward reference);
+// Type: /*packed*/ class MessageBoxWindow (forward reference);
 // VTABLE: COPTER_D 0x0058fa80
 class MessageBoxWindow : public GraphicWindow
 { // packed(0xa4 bytes) TI: 0x2a45
 public:
-	void MessageBoxWindow(class MPoint&, unsigned long, class basic_string<char>&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *);
-	void MessageBoxWindow(class MPoint&, unsigned long, unsigned long, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *);
+	void MessageBoxWindow(/*packed*/ class MPoint&, unsigned long, /*packed*/ class basic_string<char>&, int32_t, /*unpacked*/ class GraphicWindow*, /*packed*/ class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *);
+	void MessageBoxWindow(/*packed*/ class MPoint&, unsigned long, unsigned long, int32_t, /*unpacked*/ class GraphicWindow*, /*packed*/ class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *);
 	virtual int32_t Initialize() /* override */;
 	virtual long DoKeyDown(long, char) /* override */;
-	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32) /* override */;
-	virtual void SetTextColor(const struct SparkalColor&); // vtable+0xc4
-	virtual void SetButtonTextColor(const struct SparkalColor*, const struct SparkalColor*); // vtable+0xc8
+	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32) /* override */;
+	virtual void SetTextColor(const /*packed*/ struct SparkalColor&); // vtable+0xc4
+	virtual void SetButtonTextColor(const /*packed*/ struct SparkalColor*, const /*packed*/ struct SparkalColor*); // vtable+0xc8
 protected:
 	virtual int32_t ConvertTypeToStringID(long); // vtable+0xcc
 	virtual void DrawTextOntoBox(); // vtable+0xd0
 	long lMessageID;
-	class basic_string<char> sMessage;
-	class basic_string<char> sButtonImageFileName;
-	class basic_string<char> sAnimationImageFileName;
+	/*packed*/ class basic_string<char> sMessage;
+	/*packed*/ class basic_string<char> sButtonImageFileName;
+	/*packed*/ class basic_string<char> sAnimationImageFileName;
 	long lType;
 	int32_t bSelfDeleting;
-	struct SparkalColor colorFont;
-	struct SparkalColor colorButtonFont;
-	struct SparkalColor colorButtonFontHighlighted;
+	/*packed*/ struct SparkalColor colorFont;
+	/*packed*/ struct SparkalColor colorButtonFont;
+	/*packed*/ struct SparkalColor colorButtonFontHighlighted;
 };
 
-// Type: class MessageBoxWindowEdit (forward reference);
+// Type: /*packed*/ class MessageBoxWindowEdit (forward reference);
 // VTABLE: COPTER_D 0x005901f8
 class MessageBoxWindowEdit : public MessageBoxWindow
 { // packed(0xa8 bytes) TI: 0x442a
 public:
-	void MessageBoxWindowEdit(class MPoint&, unsigned long, class basic_string<char>&, const class basic_string<char>&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *, char *);
-	void MessageBoxWindowEdit(class MPoint&, unsigned long, unsigned long, const class basic_string<char>&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *, char *);
+	void MessageBoxWindowEdit(/*packed*/ class MPoint&, unsigned long, /*packed*/ class basic_string<char>&, const /*packed*/ class basic_string<char>&, int32_t, /*unpacked*/ class GraphicWindow*, /*packed*/ class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *, char *);
+	void MessageBoxWindowEdit(/*packed*/ class MPoint&, unsigned long, unsigned long, const /*packed*/ class basic_string<char>&, int32_t, /*unpacked*/ class GraphicWindow*, /*packed*/ class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *, char *);
 	virtual int32_t Initialize() /* override */;
 	virtual void GetEditText(char *, unsigned long); // vtable+0xd4
-	virtual void GetEditText(class basic_string<char>&); // vtable+0xd8
+	virtual void GetEditText(/*packed*/ class basic_string<char>&); // vtable+0xd8
 protected:
-	class BoneheadTextEditWindow *myTextEditWindow;
+	/*packed*/ class BoneheadTextEditWindow *myTextEditWindow;
 };
 
 // Type: uint32_t;
 
-// Type: struct Point2d (forward reference);
+// Type: /*packed*/ struct Point2d (forward reference);
 struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
 	int32_t x;
 	int32_t y;
 };
 
-// Type: class DigitalSound (forward reference);
+// Type: /*packed*/ class DigitalSound (forward reference);
 // VTABLE: COPTER_D 0x0058f488
 class DigitalSound : public Sound
 { // packed(0x7a bytes) TI: 0x45d4
 protected:
 	int32_t nStreamingType;
 	int32_t nCompletionEstimationTimerSet;
-	static struct IDirectSound *lpDirectSound;
+	static /*packed*/ struct IDirectSound *lpDirectSound;
 	uint32_t cbSize;
-	struct tWAVEFORMATEX waveFormatEx;
-	struct IDirectSoundBuffer *lpSound[8];
-	struct _STREAMBUFINFO *lpStreamBufferInfo;
+	/*packed*/ struct tWAVEFORMATEX waveFormatEx;
+	/*packed*/ struct IDirectSoundBuffer *lpSound[8];
+	/*packed*/ struct _STREAMBUFINFO *lpStreamBufferInfo;
 	unsigned long dwDesiredBufferDescFlags;
 public:
 	void DigitalSound(long);
-	void DigitalSound(const class basic_string<char>&, int32_t);
+	void DigitalSound(const /*packed*/ class basic_string<char>&, int32_t);
 	void DigitalSound();
 	virtual void ~DigitalSound() /* override */;
-	class DigitalSound& operator=(class DigitalSound&);
-	virtual void SetSoundFile(const class basic_string<char>&, int32_t); // vtable+0x2c
+	/*packed*/ class DigitalSound& operator=(/*packed*/ class DigitalSound&);
+	virtual void SetSoundFile(const /*packed*/ class basic_string<char>&, int32_t); // vtable+0x2c
 	virtual int32_t Load(); // vtable+0x30
 	virtual int32_t LoadFromResource(); // vtable+0x34
 	virtual int32_t LoadFromFile(); // vtable+0x38
@@ -351,7 +351,7 @@ public:
 	virtual long PlayStream(); // vtable+0x44
 	virtual long StopStream(); // vtable+0x48
 protected:
-	virtual long IsPlaying(struct IDirectSoundBuffer**); // vtable+0x4c
+	virtual long IsPlaying(/*packed*/ struct IDirectSoundBuffer**); // vtable+0x4c
 public:
 	virtual long IsPlaying() /* override */;
 	virtual int32_t GetVolume(long *) /* override */;
@@ -367,8 +367,8 @@ public:
 	virtual void StopCompletionNotification() /* override */;
 	virtual long EstimateRemainingPlayTime() /* override */;
 protected:
-	virtual int32_t GetSoundAliasToPlay(struct IDirectSoundBuffer**); // vtable+0x68
-	virtual int32_t CreateSoundBuffer(struct _DSBUFFERDESC*); // vtable+0x6c
+	virtual int32_t GetSoundAliasToPlay(/*packed*/ struct IDirectSoundBuffer**); // vtable+0x68
+	virtual int32_t CreateSoundBuffer(/*packed*/ struct _DSBUFFERDESC*); // vtable+0x6c
 	virtual int32_t CreatePrimarySoundBuffer(); // vtable+0x70
 	virtual int32_t ReleaseSoundBuffer(); // vtable+0x74
 	virtual long InitializeStreamBuffer(long); // vtable+0x78
@@ -378,31 +378,31 @@ protected:
 	virtual int32_t StartCompletionNotificationEstimationTimer(); // vtable+0x88
 };
 
-// Type: struct UserMenuWindowDescription;
+// Type: /*packed*/ struct UserMenuWindowDescription;
 struct UserMenuWindowDescription{ // packed(0x54 bytes) TI: 0x101b
-	class basic_string<char> sImageFileName;
+	/*packed*/ class basic_string<char> sImageFileName;
 	int32_t nTransparentIndex;
-	class MRect rectPosition;
+	/*packed*/ class MRect rectPosition;
 	long lMenuStringResourceIndex;
 	long lMenuStringResourceCount;
 	long lSelectionBase;
-	struct SparkalColor colorFont;
-	struct SparkalColor colorFontHighlighted;
-	class MPoint ptPositionFirstItem;
+	/*packed*/ struct SparkalColor colorFont;
+	/*packed*/ struct SparkalColor colorFontHighlighted;
+	/*packed*/ class MPoint ptPositionFirstItem;
 	int32_t nSizeItemFont;
 	int32_t nLineHeight;
 	long lTitleStringResourceIndex;
 	int32_t bTitleCentered;
-	class MPoint ptTitlePosition;
+	/*packed*/ class MPoint ptTitlePosition;
 	int32_t nSizeTitleFont;
 };
 
-// Type: class UserMenuWindow (forward reference);
+// Type: /*packed*/ class UserMenuWindow (forward reference);
 // VTABLE: COPTER_D 0x005912f8
 class UserMenuWindow : public GraphicWindow
 { // packed(0x152 bytes) TI: 0x45d0
 public:
-	void UserMenuWindow(struct UserMenuWindowDescription&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
+	void UserMenuWindow(/*packed*/ struct UserMenuWindowDescription&, int32_t, /*unpacked*/ class GraphicWindow*, /*packed*/ class GraphicWindowOwner*, int32_t);
 	void UserMenuWindow();
 	virtual void ~UserMenuWindow() /* override */;
 	virtual int32_t Initialize() /* override */;
@@ -420,14 +420,14 @@ public:
 protected:
 	virtual void DrawSelectionIndicators(); // vtable+0xdc
 	virtual int32_t DoCursorHitTest(int32_t&, long, long); // vtable+0xe0
-	virtual int32_t GetPositionOfNthItem(int32_t, class MPoint&); // vtable+0xe4
-	struct UserMenuWindowDescription myUserMenuWindowDescription;
-	class vector<TextWindow *> myTextWindowPtrArray;
+	virtual int32_t GetPositionOfNthItem(int32_t, /*packed*/ class MPoint&); // vtable+0xe4
+	/*packed*/ struct UserMenuWindowDescription myUserMenuWindowDescription;
+	/*packed*/ class vector<TextWindow *> myTextWindowPtrArray;
 	int32_t nCurrentSelection;
-	class DigitalSound soundSelectionChange;
+	/*packed*/ class DigitalSound soundSelectionChange;
 };
 
-// Type: class UserInputWindow (forward reference);
+// Type: /*packed*/ class UserInputWindow (forward reference);
 // VTABLE: COPTER_D 0x0058f228
 class UserInputWindow : public GraphicWindow
 { // packed(0xb0 bytes) TI: 0x28a7
@@ -438,13 +438,13 @@ class UserInputWindow : public GraphicWindow
 		nKeyUsageTypeOtherCommand = 3,
 	};
 public:
-	void UserInputWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
+	void UserInputWindow(/*packed*/ class MRect&, int32_t, /*unpacked*/ class GraphicWindow*, /*packed*/ class GraphicWindowOwner*, int32_t);
 	virtual int32_t Initialize() /* override */;
-	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32) /* override */;
+	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32) /* override */;
 	virtual long DoKeyDown(long, char) /* override */;
 	virtual void SetupAllInputDevices(); // vtable+0xc4
 	virtual void SetupAllCommands(); // vtable+0xc8
-	virtual void ReadShortcuts(class list<Shortcut>&); // vtable+0xcc
+	virtual void ReadShortcuts(/*packed*/ class list<Shortcut>&); // vtable+0xcc
 	virtual void WriteShortcutsToPreferenceFile(); // vtable+0xd0
 	int32_t HaveCommandsChanged();
 	long GetCurrentDevice();
@@ -462,25 +462,25 @@ protected:
 	void AddJoystickTwinCommand(long, long, long);
 	void RemoveJoystickTwinCommand(long, long, long);
 	int32_t DoesTwinCommandExistForShortcut(long, long, long);
-	class JoystickWindow *myJoystickWindow;
-	class KeyboardWindow *myKeyboardWindow;
-	class ListBoxWindow *myInputDeviceListBoxWindow;
-	class ListBoxWindow *myCommandListBoxWindow;
-	class TextWindow *myStatusTextWindow;
-	class list<StringIDAssociation> myInputDeviceStringIDAssociationList;
-	class list<StringIDAssociation> myCommandStringIDAssociationList;
-	class list<Shortcut> myShortcutListNonConfigurable;
-	class list<Shortcut> myShortcutListConfigurable;
+	/*packed*/ class JoystickWindow *myJoystickWindow;
+	/*packed*/ class KeyboardWindow *myKeyboardWindow;
+	/*packed*/ class ListBoxWindow *myInputDeviceListBoxWindow;
+	/*packed*/ class ListBoxWindow *myCommandListBoxWindow;
+	/*packed*/ class TextWindow *myStatusTextWindow;
+	/*packed*/ class list<StringIDAssociation> myInputDeviceStringIDAssociationList;
+	/*packed*/ class list<StringIDAssociation> myCommandStringIDAssociationList;
+	/*packed*/ class list<Shortcut> myShortcutListNonConfigurable;
+	/*packed*/ class list<Shortcut> myShortcutListConfigurable;
 	int32_t bCommandsHaveChanged;
 	int32_t bInitializing;
 };
 
-// Type: class RenderSettingsWindow (forward reference);
+// Type: /*packed*/ class RenderSettingsWindow (forward reference);
 // VTABLE: COPTER_D 0x0058fc20
 class RenderSettingsWindow : public GraphicWindow
 { // packed(0xb8 bytes) TI: 0x2add
 public:
-	void RenderSettingsWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
+	void RenderSettingsWindow(/*packed*/ class MRect&, int32_t, /*unpacked*/ class GraphicWindow*, /*packed*/ class GraphicWindowOwner*, int32_t);
 	virtual void ~RenderSettingsWindow() /* override */;
 	virtual int32_t Initialize() /* override */;
 	virtual int32_t CreateImage(int32_t) /* override */;
@@ -488,7 +488,7 @@ public:
 	virtual int32_t DrawSelf() /* override */;
 	int32_t SetCurrentSettings(long, long, long, long, long);
 	void GetCurrentSettings(long&, long&, long&, long&, long&);
-	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32) /* override */;
+	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32) /* override */;
 	virtual long DoKeyDown(long, char) /* override */;
 	long bShowBuildingTextures;
 	long bShowGroundTextures;
@@ -498,44 +498,44 @@ public:
 protected:
 	void SetControlsBasedOnCurrentSettings();
 	void DrawPreviewBasedOnCurrentSettings();
-	void GetPreviewFileNames(class basic_string<char>&, class basic_string<char>&, class basic_string<char>&);
-	class CheckBoxWindow *myBuildingTexturesCheckBoxWindow;
-	class CheckBoxWindow *myObjectTexturesCheckBoxWindow;
-	class CheckBoxWindow *mySkyDisplayCheckBoxWindow;
-	class ButtonGroup *myDisplayResolutionButtonGroup;
-	class SliderWindow *myFogSliderWindow;
-	class CBackBuffer *mySkyImage;
-	class CBackBuffer *myBuildingImage;
-	class MTimer mySkyTimer;
+	void GetPreviewFileNames(/*packed*/ class basic_string<char>&, /*packed*/ class basic_string<char>&, /*packed*/ class basic_string<char>&);
+	/*packed*/ class CheckBoxWindow *myBuildingTexturesCheckBoxWindow;
+	/*packed*/ class CheckBoxWindow *myObjectTexturesCheckBoxWindow;
+	/*packed*/ class CheckBoxWindow *mySkyDisplayCheckBoxWindow;
+	/*unpacked*/ class ButtonGroup *myDisplayResolutionButtonGroup;
+	/*packed*/ class SliderWindow *myFogSliderWindow;
+	/*packed*/ class CBackBuffer *mySkyImage;
+	/*packed*/ class CBackBuffer *myBuildingImage;
+	/*packed*/ class MTimer mySkyTimer;
 	long lSkyImagePanX;
 };
 
-// Type: class SoundSettingsWindow (forward reference);
+// Type: /*packed*/ class SoundSettingsWindow (forward reference);
 // VTABLE: COPTER_D 0x0058fce8
 class SoundSettingsWindow : public GraphicWindow
 { // packed(0x88 bytes) TI: 0x2a87
 public:
-	void SoundSettingsWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
+	void SoundSettingsWindow(/*packed*/ class MRect&, int32_t, /*unpacked*/ class GraphicWindow*, /*packed*/ class GraphicWindowOwner*, int32_t);
 	virtual int32_t Initialize() /* override */;
-	int32_t SetCurrentVolumeSettings(struct SoundPreferences&);
-	int32_t SetCurrentRadioSettings(struct RadioPreferences&, long);
-	void GetCurrentVolumeSettings(struct SoundPreferences&);
-	void GetCurrentRadioSettings(struct RadioPreferences&);
-	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32) /* override */;
+	int32_t SetCurrentVolumeSettings(/*unpacked*/ struct SoundPreferences&);
+	int32_t SetCurrentRadioSettings(/*packed*/ struct RadioPreferences&, long);
+	void GetCurrentVolumeSettings(/*unpacked*/ struct SoundPreferences&);
+	void GetCurrentRadioSettings(/*packed*/ struct RadioPreferences&);
+	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32) /* override */;
 	virtual long DoKeyDown(long, char) /* override */;
 	// calltype: NearC
 	static long ConvertSoundValueToSliderValue(long);
 	// calltype: NearC
 	static long ConvertSliderValueToSoundValue(long);
 protected:
-	class SliderWindow *myMasterVolumeSliderWindow;
-	class SliderWindow *myRadioStationSliderWindow;
-	class SliderWindow *myRadioVolumeSliderWindow;
-	class CheckBoxWindow *myDJCheckBoxWindow;
-	class CheckBoxWindow *myCommercialCheckBoxWindow;
+	/*packed*/ class SliderWindow *myMasterVolumeSliderWindow;
+	/*packed*/ class SliderWindow *myRadioStationSliderWindow;
+	/*packed*/ class SliderWindow *myRadioVolumeSliderWindow;
+	/*packed*/ class CheckBoxWindow *myDJCheckBoxWindow;
+	/*packed*/ class CheckBoxWindow *myCommercialCheckBoxWindow;
 };
 
-// Type: struct RadioPreferences;
+// Type: /*packed*/ struct RadioPreferences;
 struct RadioPreferences{ // packed(0x1c bytes) TI: 0x2a39
 	long lVolume;
 	int32_t bPreferToBeOn;
@@ -546,7 +546,7 @@ struct RadioPreferences{ // packed(0x1c bytes) TI: 0x2a39
 	int32_t bOptionPlayEnglishIfDefaultLanguageNotFound;
 };
 
-// Type: struct SoundPreferences;
+// Type: /*packed*/ struct SoundPreferences;
 struct SoundPreferences{ // packed(0x10 bytes) TI: 0x2845
 	long lMasterVolume;
 	long lDispatchVolume;
@@ -554,48 +554,48 @@ struct SoundPreferences{ // packed(0x10 bytes) TI: 0x2845
 	long lVehicleVolume;
 };
 
-// Type: class CitySettingsWindow (forward reference);
+// Type: /*packed*/ class CitySettingsWindow (forward reference);
 // VTABLE: COPTER_D 0x0058fdd0
 class CitySettingsWindow : public GraphicWindow
 { // packed(0x94 bytes) TI: 0x2a34
 public:
-	void CitySettingsWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
+	void CitySettingsWindow(/*packed*/ class MRect&, int32_t, /*unpacked*/ class GraphicWindow*, /*packed*/ class GraphicWindowOwner*, int32_t);
 	virtual int32_t Initialize() /* override */;
-	void SetCurrentCitySettings(struct tagCitySettings*);
-	void GetCurrentCitySettings(struct tagCitySettings*);
-	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32) /* override */;
+	void SetCurrentCitySettings(/*packed*/ struct tagCitySettings*);
+	void GetCurrentCitySettings(/*packed*/ struct tagCitySettings*);
+	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32) /* override */;
 	virtual long DoKeyDown(long, char) /* override */;
 protected:
-	class SliderWindow *mySliderWindows[8];
+	/*packed*/ class SliderWindow *mySliderWindows[8];
 };
 
-// Type: class ControlDisplayWindow (forward reference);
+// Type: /*packed*/ class ControlDisplayWindow (forward reference);
 // VTABLE: COPTER_D 0x0058f300
 class ControlDisplayWindow : public GraphicWindow
 { // packed(0x80 bytes) TI: 0x2adb
 public:
-	void ControlDisplayWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
+	void ControlDisplayWindow(/*packed*/ class MRect&, int32_t, /*unpacked*/ class GraphicWindow*, /*packed*/ class GraphicWindowOwner*, int32_t);
 	virtual int32_t Initialize() /* override */;
-	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32) /* override */;
-	virtual void ReadShortcuts(class list<Shortcut>*); // vtable+0xc4
+	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32) /* override */;
+	virtual void ReadShortcuts(/*packed*/ class list<Shortcut>*); // vtable+0xc4
 protected:
-	void GetCommandString(class basic_string<char>&, long);
-	void AppendKeysString(class basic_string<char>&, long, long, int32_t);
+	void GetCommandString(/*packed*/ class basic_string<char>&, long);
+	void AppendKeysString(/*packed*/ class basic_string<char>&, long, long, int32_t);
 	int32_t bInitializing;
-	class ListBoxWindow *myCommandListBoxWindow;
-	class ListBoxWindow *myKeysListBoxWindow;
+	/*packed*/ class ListBoxWindow *myCommandListBoxWindow;
+	/*packed*/ class ListBoxWindow *myKeysListBoxWindow;
 };
 
-// Type: class CheckupWindow (forward reference);
+// Type: /*packed*/ class CheckupWindow (forward reference);
 // VTABLE: COPTER_D 0x005903a0
 class CheckupWindow : public GraphicWindow
 { // packed(0x94 bytes) TI: 0x486b
 public:
-	void CheckupWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
+	void CheckupWindow(/*packed*/ class MRect&, int32_t, /*unpacked*/ class GraphicWindow*, /*packed*/ class GraphicWindowOwner*, int32_t);
 	virtual int32_t Initialize() /* override */;
 	void SetCurrentSettings(long *);
 	void GetCurrentSettings(long *);
-	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32) /* override */;
+	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32) /* override */;
 	virtual long DoKeyDown(long, char) /* override */;
 	void SetTextControlsBasedOnCurrentSliderValues();
 	void SetAllControlValuesToDefaults();
@@ -603,14 +603,14 @@ public:
 	static int32_t ShouldWeDisplayCheckupWindow();
 	int32_t CanUserAffordCurrentSliderValues();
 protected:
-	class SliderWindow *mySliderWindows[3];
-	class TextWindow *myTextWindows[5];
+	/*packed*/ class SliderWindow *mySliderWindows[3];
+	/*packed*/ class TextWindow *myTextWindows[5];
 };
 
-// Type: class GraphicWindow (forward reference);
+// Type: /*unpacked*/ class GraphicWindow (forward reference);
 // GraphicWindow Class implementation not found
 
-// Type: class Sound;
+// Type: /*packed*/ class Sound;
 // VTABLE: COPTER_D 0x0058f458
 class Sound{ // packed(0x34 bytes) TI: 0x4335
 	enum SoundSourceType {
@@ -629,7 +629,7 @@ public:
 	enum Sound::SoundDuplicateType nSoundDuplicateType;
 	long lID;
 	long lResID;
-	class basic_string<char> sSoundFile;
+	/*packed*/ class basic_string<char> sSoundFile;
 	long bLooping;
 	long bStreaming;
 	long lVolume;
@@ -638,8 +638,8 @@ public:
 	int32_t bUnloadBeforeNextPlay;
 	void Sound();
 	virtual void ~Sound(); // vtable+0x0
-	class Sound& operator=(const class Sound&);
-	virtual void SetSoundFile(const class basic_string<char>&); // vtable+0x4
+	/*packed*/ class Sound& operator=(const /*packed*/ class Sound&);
+	virtual void SetSoundFile(const /*packed*/ class basic_string<char>&); // vtable+0x4
 	virtual long Play(long, int32_t); // vtable+0x8
 	virtual long Stop(); // vtable+0xc
 	virtual long IsPlaying(); // vtable+0x10
@@ -654,30 +654,30 @@ public:
 	static unsigned long lTotalMemoryUsage;
 };
 
-// Type: class MessageBoxWindow;
+// Type: /*packed*/ class MessageBoxWindow;
 // VTABLE: COPTER_D 0x0058fa80
 class MessageBoxWindow : public GraphicWindow
 { // packed(0xa4 bytes) TI: 0x2a45
 public:
-	void MessageBoxWindow(class MPoint&, unsigned long, class basic_string<char>&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *);
-	void MessageBoxWindow(class MPoint&, unsigned long, unsigned long, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *);
+	void MessageBoxWindow(/*packed*/ class MPoint&, unsigned long, /*packed*/ class basic_string<char>&, int32_t, /*unpacked*/ class GraphicWindow*, /*packed*/ class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *);
+	void MessageBoxWindow(/*packed*/ class MPoint&, unsigned long, unsigned long, int32_t, /*unpacked*/ class GraphicWindow*, /*packed*/ class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *);
 	virtual int32_t Initialize() /* override */;
 	virtual long DoKeyDown(long, char) /* override */;
-	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32) /* override */;
-	virtual void SetTextColor(const struct SparkalColor&); // vtable+0xc4
-	virtual void SetButtonTextColor(const struct SparkalColor*, const struct SparkalColor*); // vtable+0xc8
+	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32) /* override */;
+	virtual void SetTextColor(const /*packed*/ struct SparkalColor&); // vtable+0xc4
+	virtual void SetButtonTextColor(const /*packed*/ struct SparkalColor*, const /*packed*/ struct SparkalColor*); // vtable+0xc8
 protected:
 	virtual int32_t ConvertTypeToStringID(long); // vtable+0xcc
 	virtual void DrawTextOntoBox(); // vtable+0xd0
 	long lMessageID;
-	class basic_string<char> sMessage;
-	class basic_string<char> sButtonImageFileName;
-	class basic_string<char> sAnimationImageFileName;
+	/*packed*/ class basic_string<char> sMessage;
+	/*packed*/ class basic_string<char> sButtonImageFileName;
+	/*packed*/ class basic_string<char> sAnimationImageFileName;
 	long lType;
 	int32_t bSelfDeleting;
-	struct SparkalColor colorFont;
-	struct SparkalColor colorButtonFont;
-	struct SparkalColor colorButtonFontHighlighted;
+	/*packed*/ struct SparkalColor colorFont;
+	/*packed*/ struct SparkalColor colorButtonFont;
+	/*packed*/ struct SparkalColor colorButtonFontHighlighted;
 };
 
 
@@ -723,11 +723,11 @@ void  CGameApp::ShowVersion() {
 	char * szVersionInformation;
 	char szUnformattedVersionInformation[64];
 	char szFormattedVersionInformation[512];
-	class Version tempVersion;
+	/*packed*/ class Version tempVersion;
 	long lSystemType;
 	int32_t nFullStringID;
-	struct _MEMORYSTATUS tempMemoryStatus;
-	class basic_string<char> sMessage;
+	/*packed*/ struct _MEMORYSTATUS tempMemoryStatus;
+	/*packed*/ class basic_string<char> sMessage;
 
 // LINE 106:
 	__asm        lea    ecx, tempVersion<vftable>;
@@ -1563,14 +1563,14 @@ _Taea:
 }
 
 // FUNCTION: COPTER_D 0x0043eda6
-int  CGameApp::CreateMessageBox(long lID, class basic_string<char>& sMessage, long lType) {
+int  CGameApp::CreateMessageBox(long lID, /*packed*/ class basic_string<char>& sMessage, long lType) {
 	char * szImageFileNameToUse;
-	struct SparkalColor colorButtonFont;
+	/*packed*/ struct SparkalColor colorButtonFont;
 	char * szButtonImageFileNameToUse;
-	struct SparkalColor colorButtonFontHighlighted;
+	/*packed*/ struct SparkalColor colorButtonFontHighlighted;
 	char * szAnimationFileNameToUse;
-	struct SparkalColor colorMessageFont;
-	class MessageBoxWindow *tempMessageBoxWindow;
+	/*packed*/ struct SparkalColor colorMessageFont;
+	/*packed*/ class MessageBoxWindow *tempMessageBoxWindow;
 
 // LINE 190:
 	__asm        jmp    near ptr 0x0043EDBD;
@@ -1951,7 +1951,7 @@ _T504:
 // FUNCTION: COPTER_D 0x0043f2b9
 int  CGameApp::CreateMessageBox(long lID, int32_t nStringID, long lType) {
 	int32_t nFullStringID;
-	class basic_string<char> sMessage;
+	/*packed*/ class basic_string<char> sMessage;
 
 // LINE 282:
 	__asm        push   0x10;
@@ -2414,10 +2414,10 @@ _T32:
 
 // FUNCTION: COPTER_D 0x0043f908
 int  CGameApp::CreateCheatCodeEntryMessageBox() {
-	struct SparkalColor colorButtonFont;
-	class MessageBoxWindowEdit *tempMessageBoxWindowEdit;
-	struct SparkalColor colorButtonFontHighlighted;
-	struct SparkalColor colorMessageFont;
+	/*packed*/ struct SparkalColor colorButtonFont;
+	/*packed*/ class MessageBoxWindowEdit *tempMessageBoxWindowEdit;
+	/*packed*/ struct SparkalColor colorButtonFontHighlighted;
+	/*packed*/ struct SparkalColor colorMessageFont;
 
 
 	None = 0x0;
@@ -2653,7 +2653,7 @@ void  CGameApp::DestroyCheatCodeEntryMessageBox() {
 }
 
 // FUNCTION: COPTER_D 0x0043fbcd
-int  CGameApp::DoCheatCode(class basic_string<char>& sCheatCodeString) {
+int  CGameApp::DoCheatCode(/*packed*/ class basic_string<char>& sCheatCodeString) {
 	int32_t nReturnValue;
 	char * szCheatOn;
 	char * szCheatSoundFileName;
@@ -2851,7 +2851,7 @@ _T246:
 	__asm        jne    _T2b7;
 // LINE 398:
 // Block start:
-	struct Point2d *position2d;
+	/*packed*/ struct Point2d *position2d;
 	__asm        call   S3HeliGetFreePad;
 	__asm        mov    position2d, eax;
 // LINE 399:
@@ -3576,7 +3576,7 @@ _Tc80:
 	__asm        je     _Tf4f;
 // LINE 484:
 // Block start:
-	class DigitalSound *tempCheatCodeSound;
+	/*packed*/ class DigitalSound *tempCheatCodeSound;
 	char szFullPath[260];
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
@@ -3945,7 +3945,7 @@ _T28b:
 
 // FUNCTION: COPTER_D 0x00440dcf
 void  CGameApp::CreateDebugBuffer() {
-	struct SparkalColor colorDebugText;
+	/*packed*/ struct SparkalColor colorDebugText;
 	char szTypeFaceName[64];
 
 // LINE 525:
@@ -4156,8 +4156,8 @@ _T6b:
 
 // FUNCTION: COPTER_D 0x0044106f
 void  CGameApp::CreatePlayMenu() {
-	struct UserMenuWindowDescription tempUMWD;
-	class UserMenuWindow *myUserMenuWindow;
+	/*packed*/ struct UserMenuWindowDescription tempUMWD;
+	/*packed*/ class UserMenuWindow *myUserMenuWindow;
 
 // LINE 602:
 	__asm        push   0x10;
@@ -4406,7 +4406,7 @@ _T367:
 
 // FUNCTION: COPTER_D 0x004413e5
 void  CGameApp::CreateUserInputWindow() {
-	class UserInputWindow *myUserInputWindow;
+	/*packed*/ class UserInputWindow *myUserInputWindow;
 	int32_t nCurrentGameMode;
 
 // LINE 634:
@@ -4506,7 +4506,7 @@ _Te8:
 }
 
 // FUNCTION: COPTER_D 0x0044150b
-void  CGameApp::DestroyUserInputWindow(class UserInputWindow *windowToDestroy, int32_t bUseData) {
+void  CGameApp::DestroyUserInputWindow(/*packed*/ class UserInputWindow *windowToDestroy, int32_t bUseData) {
 	int32_t nCurrentGameMode;
 
 // LINE 650:
@@ -4572,7 +4572,7 @@ _Ta5:
 
 // FUNCTION: COPTER_D 0x004415c7
 void  CGameApp::CreateRenderSettingsWindow() {
-	class RenderSettingsWindow *myRenderSettingsWindow;
+	/*packed*/ class RenderSettingsWindow *myRenderSettingsWindow;
 	int32_t nCurrentGameMode;
 
 // LINE 670:
@@ -4684,7 +4684,7 @@ _Te8:
 }
 
 // FUNCTION: COPTER_D 0x00441715
-void  CGameApp::DestroyRenderSettingsWindow(class RenderSettingsWindow *windowToDestroy, int32_t bUseData) {
+void  CGameApp::DestroyRenderSettingsWindow(/*packed*/ class RenderSettingsWindow *windowToDestroy, int32_t bUseData) {
 	long lQuadPixelType;
 	int32_t nCurrentGameMode;
 	long bShowGroundTextures;
@@ -4770,11 +4770,11 @@ _Td2:
 
 // FUNCTION: COPTER_D 0x004417fe
 void  CGameApp::CreateSoundSettingsWindow() {
-	class SoundSettingsWindow *mySoundSettingsWindow;
-	struct RadioPreferences tempRadioPreferences;
+	/*packed*/ class SoundSettingsWindow *mySoundSettingsWindow;
+	/*packed*/ struct RadioPreferences tempRadioPreferences;
 	int32_t nCurrentGameMode;
 	char * chPrefData;
-	struct SoundPreferences tempSoundPreferences;
+	/*packed*/ struct SoundPreferences tempSoundPreferences;
 
 // LINE 732:
 	__asm        mov    eax, this;
@@ -4924,10 +4924,10 @@ _T17f:
 }
 
 // FUNCTION: COPTER_D 0x004419b8
-void  CGameApp::DestroySoundSettingsWindow(class SoundSettingsWindow *windowToDestroy, int32_t bUseData) {
-	struct RadioPreferences tempRadioPreferences;
+void  CGameApp::DestroySoundSettingsWindow(/*packed*/ class SoundSettingsWindow *windowToDestroy, int32_t bUseData) {
+	/*packed*/ struct RadioPreferences tempRadioPreferences;
 	int32_t nCurrentGameMode;
-	struct SoundPreferences tempSoundPreferences;
+	/*packed*/ struct SoundPreferences tempSoundPreferences;
 
 // LINE 770:
 	__asm        mov    eax, this;
@@ -5007,7 +5007,7 @@ _Tba:
 
 // FUNCTION: COPTER_D 0x00441a89
 void  CGameApp::CreateCitySettingsWindow() {
-	class CitySettingsWindow *myCitySettingsWindow;
+	/*packed*/ class CitySettingsWindow *myCitySettingsWindow;
 
 // LINE 808:
 	__asm        mov    eax, this;
@@ -5077,7 +5077,7 @@ _Ta1:
 }
 
 // FUNCTION: COPTER_D 0x00441b5f
-void  CGameApp::DestroyCitySettingsWindow(class CitySettingsWindow *windowToDestroy, int32_t bUseData) {
+void  CGameApp::DestroyCitySettingsWindow(/*packed*/ class CitySettingsWindow *windowToDestroy, int32_t bUseData) {
 // LINE 825:
 	__asm        mov    eax, this;
 	__asm        dec    dword ptr [eax+0xA4];
@@ -5110,7 +5110,7 @@ _T4a:
 
 // FUNCTION: COPTER_D 0x00441bc0
 void  CGameApp::CreateControlDisplayWindow() {
-	class ControlDisplayWindow *tempControlDisplayWindow;
+	/*packed*/ class ControlDisplayWindow *tempControlDisplayWindow;
 
 // LINE 838:
 	__asm        mov    eax, this;
@@ -5193,7 +5193,7 @@ void  CGameApp::DestroyControlDisplayWindow() {
 
 // FUNCTION: COPTER_D 0x00441cbe
 void  CGameApp::CreateCheckupWindow() {
-	class CheckupWindow *tempCheckupWindow;
+	/*packed*/ class CheckupWindow *tempCheckupWindow;
 
 // LINE 859:
 	__asm        mov    eax, this;
@@ -5258,7 +5258,7 @@ _Ta1:
 }
 
 // FUNCTION: COPTER_D 0x00441d86
-void  CGameApp::DestroyCheckupWindow(class CheckupWindow *windowToDestroy, int32_t bUseData) {
+void  CGameApp::DestroyCheckupWindow(/*packed*/ class CheckupWindow *windowToDestroy, int32_t bUseData) {
 	long lSettings[3];
 
 // LINE 873:

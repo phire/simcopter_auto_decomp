@@ -6,7 +6,7 @@
 
 // Type: int32_t;
 
-// Type: struct BMPFileHdr;
+// Type: /*packed*/ struct BMPFileHdr;
 struct BMPFileHdr{ // packed(0x10 bytes) TI: 0x2edb
 	int32_t MaxBmpFileSize;
 	int32_t MinBmpFileSize;
@@ -14,15 +14,15 @@ struct BMPFileHdr{ // packed(0x10 bytes) TI: 0x2edb
 	int32_t StaticCount;
 };
 
-// Type: struct TEXT_Resource (forward reference);
+// Type: /*packed*/ struct TEXT_Resource (forward reference);
 struct TEXT_Resource{ // packed(0x18 bytes) TI: 0x2ec2
-	struct VRResource res;
+	/*packed*/ struct VRResource res;
 	int32_t count;
 	uint32_t * bmpcolors;
-	struct VRBITMAP bmp[0];
+	/*packed*/ struct VRBITMAP bmp[0];
 };
 
-// Type: struct VRBmpInfo (forward reference);
+// Type: /*packed*/ struct VRBmpInfo (forward reference);
 struct VRBmpInfo{ // packed(0xc bytes) TI: 0x230e
 	int32_t width;
 	int32_t height;
@@ -30,7 +30,7 @@ struct VRBmpInfo{ // packed(0xc bytes) TI: 0x230e
 	short scale;
 };
 
-// Type: struct VRResource (forward reference);
+// Type: /*packed*/ struct VRResource (forward reference);
 struct VRResource{ // packed(0x10 bytes) TI: 0x18ae
 	char * mem;
 	int32_t mempoolid;
@@ -38,9 +38,9 @@ struct VRResource{ // packed(0x10 bytes) TI: 0x18ae
 	int32_t entry;
 };
 
-// Type: struct VRBmpHdr (forward reference);
+// Type: /*packed*/ struct VRBmpHdr (forward reference);
 struct VRBmpHdr{ // packed(0x10 bytes) TI: 0x2312
-	struct VRBmpInfo info;
+	/*packed*/ struct VRBmpInfo info;
 	int32_t ScanOffset[1];
 };
 
@@ -50,15 +50,15 @@ struct VRBmpHdr{ // packed(0x10 bytes) TI: 0x2312
 
 // Contribution: 1:000d5060-000d560b Module: 145, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004d6060
-struct VRResource* LoadImages(char * name) {
+/*packed*/ struct VRResource* LoadImages(char * name) {
 	int32_t file;
-	struct BMPFileHdr bmp;
+	/*packed*/ struct BMPFileHdr bmp;
 	int32_t i;
-	struct TEXT_Resource *res;
+	/*packed*/ struct TEXT_Resource *res;
 	char * byteptr;
 	char * group;
 	int32_t s;
-	struct VRBmpInfo *bhdr;
+	/*packed*/ struct VRBmpInfo *bhdr;
 	int32_t r;
 
 // LINE 77:
@@ -234,10 +234,10 @@ _T1e1:
 }
 
 // FUNCTION: COPTER_D 0x004d6246
-struct VRBmpHdr* VRInt2BmpHdr(struct VRResource *res, int32_t i) {
-	struct TEXT_Resource *hdr;
+/*packed*/ struct VRBmpHdr* VRInt2BmpHdr(/*packed*/ struct VRResource *res, int32_t i) {
+	/*packed*/ struct TEXT_Resource *hdr;
 	int32_t j;
-	struct VRBmpHdr *bhdr;
+	/*packed*/ struct VRBmpHdr *bhdr;
 
 // LINE 228:
 	hdr = res;
@@ -273,8 +273,8 @@ _T5a:
 }
 
 // FUNCTION: COPTER_D 0x004d62a5
-int32_t VRGetResTextureCnt(struct VRResource *res) {
-	struct TEXT_Resource *hdr;
+int32_t VRGetResTextureCnt(/*packed*/ struct VRResource *res) {
+	/*packed*/ struct TEXT_Resource *hdr;
 
 // LINE 257:
 	hdr = res;
@@ -286,13 +286,13 @@ int32_t VRGetResTextureCnt(struct VRResource *res) {
 }
 
 // FUNCTION: COPTER_D 0x004d62c4
-int32_t VRSetBmpToTiled(struct VRResource *res, int32_t mask, int32_t bmpid, unsigned char * basearg) {
+int32_t VRSetBmpToTiled(/*packed*/ struct VRResource *res, int32_t mask, int32_t bmpid, unsigned char * basearg) {
 	unsigned char * baseptr;
 	unsigned char * tptr;
-	struct TEXT_Resource *hdr;
+	/*packed*/ struct TEXT_Resource *hdr;
 	int32_t i;
 	int32_t colmask;
-	struct VRBmpHdr *bhdr;
+	/*packed*/ struct VRBmpHdr *bhdr;
 	int32_t notiles;
 	int32_t row;
 	int32_t col;
@@ -439,11 +439,11 @@ _T197:
 }
 
 // FUNCTION: COPTER_D 0x004d6460
-int32_t VRLoadAlignedBmp(char * name, struct VRResource *res, int32_t mask, int32_t bmpid) {
+int32_t VRLoadAlignedBmp(char * name, /*packed*/ struct VRResource *res, int32_t mask, int32_t bmpid) {
 	int32_t file;
-	struct BMPFileHdr bmp;
+	/*packed*/ struct BMPFileHdr bmp;
 	unsigned char * alignptr;
-	struct VRBmpInfo *bhdr;
+	/*packed*/ struct VRBmpInfo *bhdr;
 	int32_t r;
 
 // LINE 391:

@@ -42,7 +42,7 @@ unsigned long cBBase::GetBodyType() {
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f220
-class cBList<cBBase>* cBBase::GetList() {
+/*unpacked*/ class cBList<cBBase>* cBBase::GetList() {
 
 	__asm        push   0x8C085;
 	__asm        push   0x5BE358;

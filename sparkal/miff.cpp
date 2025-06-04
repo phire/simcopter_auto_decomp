@@ -10,7 +10,7 @@
 
 // Type: int32_t;
 
-// Type: class MIFF (forward reference);
+// Type: /*packed*/ class MIFF (forward reference);
 // VTABLE: COPTER_D 0x00591950
 class MIFF : public PFile
 { // packed(0x148 bytes) TI: 0x428e
@@ -32,7 +32,7 @@ public:
 	virtual long ReadFileCreator(); // vtable+0x30
 	virtual long ReadFileType(); // vtable+0x34
 	virtual long ReadFileVersion(); // vtable+0x38
-	virtual long ReadPresentRecord(struct MIFFRecord*, long); // vtable+0x3c
+	virtual long ReadPresentRecord(/*packed*/ struct MIFFRecord*, long); // vtable+0x3c
 	virtual long ReadPresentRecordData(char *, long); // vtable+0x40
 	virtual long GoToFirstRecord(); // vtable+0x44
 	virtual long GoToNextRecord(); // vtable+0x48
@@ -41,7 +41,7 @@ public:
 	virtual long GoToNextRecordOfGivenType(long); // vtable+0x54
 	virtual long GoToNthRecord(long); // vtable+0x58
 	virtual long CountRecords(); // vtable+0x5c
-	virtual long WriteMIFFRecord(struct MIFFRecord*, long); // vtable+0x60
+	virtual long WriteMIFFRecord(/*packed*/ struct MIFFRecord*, long); // vtable+0x60
 	virtual long WriteDataRecord(long, char *, long); // vtable+0x64
 	virtual long WriteFileHeader(long, long, long); // vtable+0x68
 	virtual long WriteEnd(); // vtable+0x6c
@@ -52,12 +52,12 @@ public:
 	long lReadWriteMode;
 	long bFileEndWritten;
 	long bFileAppearsCorrupt;
-	struct MIFFHeader myMIFFHeader;
+	/*packed*/ struct MIFFHeader myMIFFHeader;
 };
 
 // Type: void;
 
-// Type: struct MIFFRecord (forward reference);
+// Type: /*packed*/ struct MIFFRecord (forward reference);
 struct MIFFRecord{ // packed(0xc bytes) TI: 0x148f
 	long lRecordType;
 	long lRecordLength;
@@ -66,7 +66,7 @@ struct MIFFRecord{ // packed(0xc bytes) TI: 0x148f
 
 // Type: uint32_t;
 
-// Type: class PFile;
+// Type: /*packed*/ class PFile;
 // VTABLE: COPTER_D 0x00590468
 class PFile{ // packed(0x110 bytes) TI: 0x453c
 	enum /* __unnamed */ {
@@ -104,7 +104,7 @@ class PFile{ // packed(0x110 bytes) TI: 0x453c
 	};
 public:
 	void PFile(char *);
-	void PFile(const class PFile&);
+	void PFile(const /*packed*/ class PFile&);
 	void PFile(int32_t);
 	void PFile();
 	virtual void ~PFile(); // vtable+0x0
@@ -1437,7 +1437,7 @@ _T42:
 }
 
 // FUNCTION: COPTER_D 0x004ac44e
-long MIFF::ReadPresentRecord(struct MIFFRecord *miffRecordToRead, long lMaxBytesToRead) {
+long MIFF::ReadPresentRecord(/*packed*/ struct MIFFRecord *miffRecordToRead, long lMaxBytesToRead) {
 	long lReturnValue;
 	long lActualDataBytesToRead;
 
@@ -1693,7 +1693,7 @@ _T116:
 }
 
 // FUNCTION: COPTER_D 0x004ac758
-long MIFF::WriteMIFFRecord(struct MIFFRecord *miffRecordToWrite, long lSizeOfMIFFRecordData) {
+long MIFF::WriteMIFFRecord(/*packed*/ struct MIFFRecord *miffRecordToWrite, long lSizeOfMIFFRecordData) {
 	long lReturnValue;
 	long lAmountOfDataToWrite;
 

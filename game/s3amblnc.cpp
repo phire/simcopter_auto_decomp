@@ -4,29 +4,29 @@
 
 // Type: int32_t;
 
-// Type: class AmbulanceClass (forward reference);
+// Type: /*packed*/ class AmbulanceClass (forward reference);
 // VTABLE: COPTER_D 0x00593280
 class AmbulanceClass : public EmergencyVehicleClass
 { // packed(0x2a0 bytes) TI: 0x47e2
 public:
-	void AmbulanceClass(const class AmbulanceClass&);
+	void AmbulanceClass(const /*packed*/ class AmbulanceClass&);
 	void AmbulanceClass();
 	virtual void ~AmbulanceClass() /* override */;
 	// calltype: NearC
-	static class AmbulanceClass* CreateInstance(int32_t);
+	static /*packed*/ class AmbulanceClass* CreateInstance(int32_t);
 	// calltype: NearC
-	static void DestroyInstance(class AmbulanceClass*);
+	static void DestroyInstance(/*packed*/ class AmbulanceClass*);
 	// calltype: NearC
 	static unsigned char Dispatch(enum EmergencyType, enum EmergencyLevel, long, long);
 	// calltype: NearC
 	static int32_t IsThisAHospital(long, long);
 	// calltype: NearC
 	static int32_t IsThisAHospital(unsigned short);
-	class AmbulanceClass operator=(const class AmbulanceClass&);
+	/*packed*/ class AmbulanceClass operator=(const /*packed*/ class AmbulanceClass&);
 protected:
 	virtual void ItterateFSM() /* override */;
-	virtual void SetSaveData(struct _AUTO_LOAD_SAVE*) /* override */;
-	virtual void LoadSaveData(struct _AUTO_LOAD_SAVE*) /* override */;
+	virtual void SetSaveData(/*packed*/ struct _AUTO_LOAD_SAVE*) /* override */;
+	virtual void LoadSaveData(/*packed*/ struct _AUTO_LOAD_SAVE*) /* override */;
 private:
 	int32_t AtScene();
 };
@@ -35,16 +35,16 @@ private:
 
 // Type: char *;
 
-// Type: struct VRObjInfo;
+// Type: /*packed*/ struct VRObjInfo;
 struct VRObjInfo{ // packed(0x24 bytes) TI: 0x2ea8
 	int32_t Faces;
 	int32_t Verts;
 	int32_t Attribute;
 	int32_t Radius;
-	struct Point3d *ObjCenter;
-	struct Point3d *VertsPtr;
-	struct Xform3d *VertsXfm;
-	struct Point3d *OrgVerts;
+	/*packed*/ struct Point3d *ObjCenter;
+	/*packed*/ struct Point3d *VertsPtr;
+	/*packed*/ struct Xform3d *VertsXfm;
+	/*packed*/ struct Point3d *OrgVerts;
 	int32_t *Matrix[4][4];
 };
 
@@ -74,22 +74,22 @@ enum EmergencyLevel {
 
 // Type: unsigned short;
 
-// Type: struct Point3d;
+// Type: /*packed*/ struct Point3d;
 struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 	int32_t x;
 	int32_t y;
 	int32_t z;
 };
 
-// Type: struct _AUTO_LOAD_SAVE (forward reference);
+// Type: /*packed*/ struct _AUTO_LOAD_SAVE (forward reference);
 struct _AUTO_LOAD_SAVE{ // packed(0x344 bytes) TI: 0x42d7
 	int32_t flags;
-	struct _DYOBJ_INST autoDynomitor;
-	struct Goal goal;
-	struct _GridCoordinates goalpRGVFixup;
+	/*packed*/ struct _DYOBJ_INST autoDynomitor;
+	/*packed*/ struct Goal goal;
+	/*packed*/ struct _GridCoordinates goalpRGVFixup;
 	int32_t DeltaFromCenter;
 	int32_t stalledTimer;
-	struct Point3d directionVector;
+	/*packed*/ struct Point3d directionVector;
 	int32_t remainingTime;
 	int32_t desiredSpeed;
 	int32_t desiredHiwaySpeed;
@@ -98,18 +98,18 @@ struct _AUTO_LOAD_SAVE{ // packed(0x344 bytes) TI: 0x42d7
 	int32_t m_cellBaseY;
 	int32_t timePulledOver;
 	enum DirectionTypes hiwaydir;
-	struct _GridCoordinates currentLocation;
-	struct _GridCoordinates nextLocation;
-	struct _GridCoordinates northCell;
-	struct _GridCoordinates southCell;
-	struct _GridCoordinates eastCell;
-	struct _GridCoordinates westCell;
+	/*packed*/ struct _GridCoordinates currentLocation;
+	/*packed*/ struct _GridCoordinates nextLocation;
+	/*packed*/ struct _GridCoordinates northCell;
+	/*packed*/ struct _GridCoordinates southCell;
+	/*packed*/ struct _GridCoordinates eastCell;
+	/*packed*/ struct _GridCoordinates westCell;
 	int32_t speed;
 	long prevDir;
 	long turnIndex;
 	int32_t currDist;
 	int32_t legOfTurn;
-	struct Point3d *pDirVector;
+	/*packed*/ struct Point3d *pDirVector;
 	int32_t personDone;
 	int32_t personState;
 	int32_t personTimer;
@@ -117,7 +117,7 @@ struct _AUTO_LOAD_SAVE{ // packed(0x344 bytes) TI: 0x42d7
 	int32_t fireTime;
 	long fireSeq;
 	long missionId;
-	struct _GridCoordinates cptrfixup;
+	/*packed*/ struct _GridCoordinates cptrfixup;
 	int32_t spotlightHitCounter;
 	struct _AUTO_LOAD_SAVE::_CRIMINAL{ // packed(0x10 bytes) TI: 0x42df
 		long missionState;
@@ -126,13 +126,13 @@ struct _AUTO_LOAD_SAVE{ // packed(0x344 bytes) TI: 0x42d7
 		int32_t timeToBeOnTheRun;
 	};
 public:
-	struct _AUTO_LOAD_SAVE::_CRIMINAL c;
+	/*packed*/ struct _AUTO_LOAD_SAVE::_CRIMINAL c;
 	struct _AUTO_LOAD_SAVE::_EMERGENCY{ // packed(0x186 bytes) TI: 0x42dd
-		struct _GridCoordinates baseLocation;
-		struct _GridCoordinates emergencyLocation;
+		/*packed*/ struct _GridCoordinates baseLocation;
+		/*packed*/ struct _GridCoordinates emergencyLocation;
 		long emergencyType;
 		long timeOfArrival;
-		struct _DYOBJ_INST dispatchIcon;
+		/*packed*/ struct _DYOBJ_INST dispatchIcon;
 		int32_t timeToEmergency;
 		long targetfixup;
 		unsigned char dispatchPath[256];
@@ -143,29 +143,29 @@ public:
 		int32_t numberOfSeats;
 	};
 public:
-	struct _AUTO_LOAD_SAVE::_EMERGENCY e;
+	/*packed*/ struct _AUTO_LOAD_SAVE::_EMERGENCY e;
 	struct _AUTO_LOAD_SAVE::_FIRE{ // packed(0x18 bytes) TI: 0x42db
 		int32_t dousingFire;
 		int32_t distToFire;
-		struct Point3d firevec;
+		/*packed*/ struct Point3d firevec;
 		int32_t pathID;
 	};
 public:
-	struct _AUTO_LOAD_SAVE::_FIRE f;
+	/*packed*/ struct _AUTO_LOAD_SAVE::_FIRE f;
 	struct _AUTO_LOAD_SAVE::_POLICE{ // packed(0x88 bytes) TI: 0x42d9
-		struct Goal currDestGoal;
-		struct _GridCoordinates currpRGVFixup;
-		struct Goal destGoal1;
-		struct _GridCoordinates dest1pRGVFixup;
-		struct Goal destGoal2;
-		struct _GridCoordinates dest2pRGVFixup;
+		/*packed*/ struct Goal currDestGoal;
+		/*packed*/ struct _GridCoordinates currpRGVFixup;
+		/*packed*/ struct Goal destGoal1;
+		/*packed*/ struct _GridCoordinates dest1pRGVFixup;
+		/*packed*/ struct Goal destGoal2;
+		/*packed*/ struct _GridCoordinates dest2pRGVFixup;
 		int32_t foundRoad;
 	};
 public:
-	struct _AUTO_LOAD_SAVE::_POLICE p;
+	/*packed*/ struct _AUTO_LOAD_SAVE::_POLICE p;
 };
 
-// Type: class EmergencyVehicleClass (forward reference);
+// Type: /*packed*/ class EmergencyVehicleClass (forward reference);
 // VTABLE: COPTER_D 0x005934c0
 class EmergencyVehicleClass : public AutomobileClass
 { // packed(0x2a0 bytes) TI: 0x47d8
@@ -175,13 +175,13 @@ class EmergencyVehicleClass : public AutomobileClass
 		AMBULANCE_CAPACITY = 2,
 	};
 protected:
-	struct _GridCoordinates baseLocation;
-	struct _GridCoordinates emergencyLocation;
+	/*packed*/ struct _GridCoordinates baseLocation;
+	/*packed*/ struct _GridCoordinates emergencyLocation;
 	enum EmergencyType emergencyType;
 	long timeOfArrival;
-	struct _DYOBJ_INST dispatchIcon;
+	/*packed*/ struct _DYOBJ_INST dispatchIcon;
 	int32_t timeToEmergency;
-	class AutomobileClass *dispatchTarget;
+	/*packed*/ class AutomobileClass *dispatchTarget;
 	unsigned char dispatchPath[256];
 	unsigned char dispatchPathIndex;
 	unsigned char dispatchPathLength;
@@ -189,44 +189,44 @@ protected:
 	int32_t stationID;
 	int32_t numberOfSeats;
 public:
-	void EmergencyVehicleClass(const class EmergencyVehicleClass&);
+	void EmergencyVehicleClass(const /*packed*/ class EmergencyVehicleClass&);
 	void EmergencyVehicleClass();
 	virtual void ~EmergencyVehicleClass() /* override */;
 	enum EmergencyLevel GetEmergencyState();
-	void InitializePlacedVehicleForDispatch(struct Goal, struct Goal, struct Goal, struct Goal, struct _GridCoordinates, struct Goal, enum EmergencyType, enum EmergencyLevel);
-	void InitializeStationVehicleForDispatch(int32_t, struct Goal, struct Goal, struct _GridCoordinates, struct Goal, struct Goal, struct _GridCoordinates, int32_t, struct Goal, enum EmergencyType, enum EmergencyLevel);
+	void InitializePlacedVehicleForDispatch(/*packed*/ struct Goal, /*packed*/ struct Goal, /*packed*/ struct Goal, /*packed*/ struct Goal, /*packed*/ struct _GridCoordinates, /*packed*/ struct Goal, enum EmergencyType, enum EmergencyLevel);
+	void InitializeStationVehicleForDispatch(int32_t, /*packed*/ struct Goal, /*packed*/ struct Goal, /*packed*/ struct _GridCoordinates, /*packed*/ struct Goal, /*packed*/ struct Goal, /*packed*/ struct _GridCoordinates, int32_t, /*packed*/ struct Goal, enum EmergencyType, enum EmergencyLevel);
 	// calltype: NearC
-	static int32_t AreThereMoreSeats(struct _DYOBJ_INST*);
+	static int32_t AreThereMoreSeats(/*packed*/ struct _DYOBJ_INST*);
 	// calltype: NearC
-	static void FillSeat(struct _DYOBJ_INST*);
+	static void FillSeat(/*packed*/ struct _DYOBJ_INST*);
 	// calltype: NearC
 	static int32_t S3UpdateCar(int32_t, int32_t);
 	// calltype: NearC
-	static struct _DYOBJ_INST* S3GetCar(int32_t);
+	static /*packed*/ struct _DYOBJ_INST* S3GetCar(int32_t);
 	void CancelEmergencyDispatch();
 protected:
 	virtual void Reset(); // vtable+0x24
 	virtual void AdjustSpeed() /* override */;
-	virtual enum TurnIndex PickTurnDir(struct Goal*) /* override */;
-	virtual void SetSaveData(struct _AUTO_LOAD_SAVE*) /* override */;
-	virtual void LoadSaveData(struct _AUTO_LOAD_SAVE*) /* override */;
+	virtual enum TurnIndex PickTurnDir(/*packed*/ struct Goal*) /* override */;
+	virtual void SetSaveData(/*packed*/ struct _AUTO_LOAD_SAVE*) /* override */;
+	virtual void LoadSaveData(/*packed*/ struct _AUTO_LOAD_SAVE*) /* override */;
 	void ArriveOnScene();
-	void UnLinkIconFromCell(const struct _GridCoordinates);
-	void LinkIconToCell(const struct _GridCoordinates);
+	void UnLinkIconFromCell(const /*packed*/ struct _GridCoordinates);
+	void LinkIconToCell(const /*packed*/ struct _GridCoordinates);
 	void PositionIcon();
 	void GoBackToStation();
-	void BuildPath(struct _RGIndex, struct _RGIndex);
+	void BuildPath(/*packed*/ struct _RGIndex, /*packed*/ struct _RGIndex);
 	void TurnOnStrobe();
 	void TurnOffStrobe();
 	int32_t UpdateCar(int32_t);
 	virtual void BeamToWithinCameraRange() /* override */;
 public:
-	class EmergencyVehicleClass operator=(const class EmergencyVehicleClass&);
+	/*packed*/ class EmergencyVehicleClass operator=(const /*packed*/ class EmergencyVehicleClass&);
 };
 
 // Type: uint32_t;
 
-// Type: class AutomobileClass;
+// Type: /*packed*/ class AutomobileClass;
 // VTABLE: COPTER_D 0x00592d98
 class AutomobileClass{ // packed(0x11a bytes) TI: 0x4880
 	enum CarType {
@@ -332,13 +332,13 @@ public:
 public:
 	long carModel;
 	int32_t flags;
-	struct _DYOBJ_INST autoDynomitor;
-	struct Goal goal;
+	/*packed*/ struct _DYOBJ_INST autoDynomitor;
+	/*packed*/ struct Goal goal;
 private:
-	static struct Point2d lastScannedLocation;
+	static /*packed*/ struct Point2d lastScannedLocation;
 	int32_t DeltaFromCenter;
 	int32_t stalledTimer;
-	struct Point3d directionVector;
+	/*packed*/ struct Point3d directionVector;
 	int32_t remainingTime;
 	int32_t desiredSpeed;
 	int32_t desiredHiwaySpeed;
@@ -348,19 +348,19 @@ private:
 	int32_t timePulledOver;
 	int32_t hornSoundId;
 	enum DirectionTypes hiwaydir;
-	struct _GridCoordinates currentLocation;
-	struct _GridCoordinates nextLocation;
-	struct _GridCoordinates northCell;
-	struct _GridCoordinates southCell;
-	struct _GridCoordinates eastCell;
-	struct _GridCoordinates westCell;
+	/*packed*/ struct _GridCoordinates currentLocation;
+	/*packed*/ struct _GridCoordinates nextLocation;
+	/*packed*/ struct _GridCoordinates northCell;
+	/*packed*/ struct _GridCoordinates southCell;
+	/*packed*/ struct _GridCoordinates eastCell;
+	/*packed*/ struct _GridCoordinates westCell;
 protected:
 	int32_t speed;
 	enum DirIndex2 prevDir;
 	enum TurnIndex turnIndex;
 	int32_t currDist;
 	int32_t legOfTurn;
-	struct Point3d *pDirVector;
+	/*packed*/ struct Point3d *pDirVector;
 	int32_t personDone;
 	int32_t personState;
 	int32_t personTimer;
@@ -368,28 +368,28 @@ protected:
 	int32_t fireTime;
 	long fireSeq;
 	long missionId;
-	struct _CELL_INFO *cptr;
+	/*packed*/ struct _CELL_INFO *cptr;
 	int32_t spotlightHitCounter;
 	int32_t IsCarPersistant();
 	int32_t CanCarBeamToHiwayTile(unsigned short);
 public:
-	void AutomobileClass(const class AutomobileClass&);
+	void AutomobileClass(const /*packed*/ class AutomobileClass&);
 	void AutomobileClass();
 	virtual void ~AutomobileClass(); // vtable+0x0
 	// calltype: NearC
-	static class AutomobileClass* CreateInstance(int32_t);
+	static /*packed*/ class AutomobileClass* CreateInstance(int32_t);
 	// calltype: NearC
-	static class AutomobileClass* GetAutoPointer(long);
+	static /*packed*/ class AutomobileClass* GetAutoPointer(long);
 	// calltype: NearC
-	static void DestroyInstance(class AutomobileClass*);
+	static void DestroyInstance(/*packed*/ class AutomobileClass*);
 	// calltype: NearC
 	static void ItterateAll();
 	// calltype: NearC
 	static void ResetAll();
 	// calltype: NearC
-	static int32_t MissionStartFire(long, struct Point2d*);
+	static int32_t MissionStartFire(long, /*packed*/ struct Point2d*);
 	// calltype: NearC
-	static int32_t MissionStartJam(long, struct Point2d*);
+	static int32_t MissionStartJam(long, /*packed*/ struct Point2d*);
 	// calltype: NearC
 	static void MissionCancel(long);
 	// calltype: NearC
@@ -400,10 +400,10 @@ public:
 	static int32_t MIFFLoad(void * __ptr32);
 	// calltype: NearC
 	static int32_t MIFFSave(void * __ptr32);
-	void HitDispatch(long, struct _DYOBJ_INST*, long, long);
+	void HitDispatch(long, /*packed*/ struct _DYOBJ_INST*, long, long);
 	int32_t AmIABadGuy();
 	int32_t Initialize(int32_t);
-	void WaterDouse(struct _DYOBJ_INST*);
+	void WaterDouse(/*packed*/ struct _DYOBJ_INST*);
 	void IveBeenMegaphoned(long);
 	void StartFire(long);
 	void StartJam(long);
@@ -414,32 +414,32 @@ public:
 	void DoAUTurn();
 	long GetCarModel();
 	// calltype: NearC
-	static struct _DYOBJ_INST* GetClosestCar(int32_t, int32_t, int32_t);
+	static /*packed*/ struct _DYOBJ_INST* GetClosestCar(int32_t, int32_t, int32_t);
 protected:
 	void Itterate();
 	virtual void AdjustSpeed(); // vtable+0x8
 	void Reset();
-	virtual enum TurnIndex PickTurnDir(struct Goal*); // vtable+0xc
+	virtual enum TurnIndex PickTurnDir(/*packed*/ struct Goal*); // vtable+0xc
 	void UnPlaceCar();
 	void PullOverCiviliansInWay();
 	virtual void ItterateFSM(); // vtable+0x10
 	int32_t InitializeInstance(int32_t);
-	void LinkToCell(const struct _GridCoordinates&);
-	int32_t AreCarsHeadOn(struct Point3d*);
-	enum AutomobileClass::StoppedReasons CollisionCheck(int32_t, struct _DYOBJ_INST**);
+	void LinkToCell(const /*packed*/ struct _GridCoordinates&);
+	int32_t AreCarsHeadOn(/*packed*/ struct Point3d*);
+	enum AutomobileClass::StoppedReasons CollisionCheck(int32_t, /*packed*/ struct _DYOBJ_INST**);
 	int32_t IsCarOutOfCameraRange();
 	void TurnOffHeadlight();
 	void TurnOnHeadlight();
 	int32_t AutoMessage(short);
 	int32_t PlacePerson(int32_t, int32_t);
-	virtual void SetSaveData(struct _AUTO_LOAD_SAVE*); // vtable+0x14
-	virtual void LoadSaveData(struct _AUTO_LOAD_SAVE*); // vtable+0x18
+	virtual void SetSaveData(/*packed*/ struct _AUTO_LOAD_SAVE*); // vtable+0x14
+	virtual void LoadSaveData(/*packed*/ struct _AUTO_LOAD_SAVE*); // vtable+0x18
 	void HonkHorn();
 	void SetHiwayDirection(unsigned short);
 	int32_t DoHiwayTilesConnect(unsigned short, unsigned short, enum DirectionTypes);
 	void AdjustCurrentHiwayPosition();
 	void AdjustNextHiwayPosition();
-	enum AutomobileClass::IntersectionTypes PickHiwayDir(struct _GridCoordinates&);
+	enum AutomobileClass::IntersectionTypes PickHiwayDir(/*packed*/ struct _GridCoordinates&);
 	void MakeAHiwayTurn(enum AutomobileClass::IntersectionTypes);
 	void GoStraight();
 	void TurnLeft();
@@ -447,23 +447,23 @@ protected:
 	void MoveForwardOnHiway();
 	void DoDiagonalRoadFixup();
 	virtual void BeamToWithinCameraRange(); // vtable+0x1c
-	virtual int32_t BeamToLocation(const struct _GridCoordinates&); // vtable+0x20
+	virtual int32_t BeamToLocation(const /*packed*/ struct _GridCoordinates&); // vtable+0x20
 	void MoveAuto(int32_t);
 	void ChangeAutoColor();
 private:
-	void UnlinkFromCell(const struct _GridCoordinates&);
+	void UnlinkFromCell(const /*packed*/ struct _GridCoordinates&);
 	void TransitionBetweenGoals();
 	void RunFireState();
 	void RunJamState();
-	void IveBeenSpotlighted(struct _DYOBJ_INST*);
+	void IveBeenSpotlighted(/*packed*/ struct _DYOBJ_INST*);
 	int32_t IsThisAnEmergencyVehicle();
 	void DoPullOverStuff(int32_t);
 	int32_t CanIDoAUTurn();
 public:
-	class AutomobileClass operator=(const class AutomobileClass&);
+	/*packed*/ class AutomobileClass operator=(const /*packed*/ class AutomobileClass&);
 };
 
-// Type: class EmergencyVehicleClass;
+// Type: /*packed*/ class EmergencyVehicleClass;
 // VTABLE: COPTER_D 0x005934c0
 class EmergencyVehicleClass : public AutomobileClass
 { // packed(0x2a0 bytes) TI: 0x47d8
@@ -473,13 +473,13 @@ class EmergencyVehicleClass : public AutomobileClass
 		AMBULANCE_CAPACITY = 2,
 	};
 protected:
-	struct _GridCoordinates baseLocation;
-	struct _GridCoordinates emergencyLocation;
+	/*packed*/ struct _GridCoordinates baseLocation;
+	/*packed*/ struct _GridCoordinates emergencyLocation;
 	enum EmergencyType emergencyType;
 	long timeOfArrival;
-	struct _DYOBJ_INST dispatchIcon;
+	/*packed*/ struct _DYOBJ_INST dispatchIcon;
 	int32_t timeToEmergency;
-	class AutomobileClass *dispatchTarget;
+	/*packed*/ class AutomobileClass *dispatchTarget;
 	unsigned char dispatchPath[256];
 	unsigned char dispatchPathIndex;
 	unsigned char dispatchPathLength;
@@ -487,39 +487,39 @@ protected:
 	int32_t stationID;
 	int32_t numberOfSeats;
 public:
-	void EmergencyVehicleClass(const class EmergencyVehicleClass&);
+	void EmergencyVehicleClass(const /*packed*/ class EmergencyVehicleClass&);
 	void EmergencyVehicleClass();
 	virtual void ~EmergencyVehicleClass() /* override */;
 	enum EmergencyLevel GetEmergencyState();
-	void InitializePlacedVehicleForDispatch(struct Goal, struct Goal, struct Goal, struct Goal, struct _GridCoordinates, struct Goal, enum EmergencyType, enum EmergencyLevel);
-	void InitializeStationVehicleForDispatch(int32_t, struct Goal, struct Goal, struct _GridCoordinates, struct Goal, struct Goal, struct _GridCoordinates, int32_t, struct Goal, enum EmergencyType, enum EmergencyLevel);
+	void InitializePlacedVehicleForDispatch(/*packed*/ struct Goal, /*packed*/ struct Goal, /*packed*/ struct Goal, /*packed*/ struct Goal, /*packed*/ struct _GridCoordinates, /*packed*/ struct Goal, enum EmergencyType, enum EmergencyLevel);
+	void InitializeStationVehicleForDispatch(int32_t, /*packed*/ struct Goal, /*packed*/ struct Goal, /*packed*/ struct _GridCoordinates, /*packed*/ struct Goal, /*packed*/ struct Goal, /*packed*/ struct _GridCoordinates, int32_t, /*packed*/ struct Goal, enum EmergencyType, enum EmergencyLevel);
 	// calltype: NearC
-	static int32_t AreThereMoreSeats(struct _DYOBJ_INST*);
+	static int32_t AreThereMoreSeats(/*packed*/ struct _DYOBJ_INST*);
 	// calltype: NearC
-	static void FillSeat(struct _DYOBJ_INST*);
+	static void FillSeat(/*packed*/ struct _DYOBJ_INST*);
 	// calltype: NearC
 	static int32_t S3UpdateCar(int32_t, int32_t);
 	// calltype: NearC
-	static struct _DYOBJ_INST* S3GetCar(int32_t);
+	static /*packed*/ struct _DYOBJ_INST* S3GetCar(int32_t);
 	void CancelEmergencyDispatch();
 protected:
 	virtual void Reset(); // vtable+0x24
 	virtual void AdjustSpeed() /* override */;
-	virtual enum TurnIndex PickTurnDir(struct Goal*) /* override */;
-	virtual void SetSaveData(struct _AUTO_LOAD_SAVE*) /* override */;
-	virtual void LoadSaveData(struct _AUTO_LOAD_SAVE*) /* override */;
+	virtual enum TurnIndex PickTurnDir(/*packed*/ struct Goal*) /* override */;
+	virtual void SetSaveData(/*packed*/ struct _AUTO_LOAD_SAVE*) /* override */;
+	virtual void LoadSaveData(/*packed*/ struct _AUTO_LOAD_SAVE*) /* override */;
 	void ArriveOnScene();
-	void UnLinkIconFromCell(const struct _GridCoordinates);
-	void LinkIconToCell(const struct _GridCoordinates);
+	void UnLinkIconFromCell(const /*packed*/ struct _GridCoordinates);
+	void LinkIconToCell(const /*packed*/ struct _GridCoordinates);
 	void PositionIcon();
 	void GoBackToStation();
-	void BuildPath(struct _RGIndex, struct _RGIndex);
+	void BuildPath(/*packed*/ struct _RGIndex, /*packed*/ struct _RGIndex);
 	void TurnOnStrobe();
 	void TurnOffStrobe();
 	int32_t UpdateCar(int32_t);
 	virtual void BeamToWithinCameraRange() /* override */;
 public:
-	class EmergencyVehicleClass operator=(const class EmergencyVehicleClass&);
+	/*packed*/ class EmergencyVehicleClass operator=(const /*packed*/ class EmergencyVehicleClass&);
 };
 
 
@@ -571,9 +571,9 @@ void AmbulanceClass::~AmbulanceClass() {
 }
 
 // FUNCTION: COPTER_D 0x0053592b
-class AmbulanceClass* AmbulanceClass::CreateInstance(int32_t instanceID) {
+/*packed*/ class AmbulanceClass* AmbulanceClass::CreateInstance(int32_t instanceID) {
 	int32_t object;
-	class AmbulanceClass *youveWonABrandNewCar;
+	/*packed*/ class AmbulanceClass *youveWonABrandNewCar;
 	char * objectMemory;
 
 // LINE 113:
@@ -603,7 +603,7 @@ _T3a:
 	__asm        je     _T1b6;
 // LINE 123:
 // Block start:
-	struct VRObjInfo oinfo;
+	/*packed*/ struct VRObjInfo oinfo;
 	__asm        push   0x121;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -830,7 +830,7 @@ _Ta2:
 
 // FUNCTION: COPTER_D 0x00535c21
 void AmbulanceClass::ItterateFSM() {
-	struct Point3d vec;
+	/*packed*/ struct Point3d vec;
 	int32_t dist;
 
 // LINE 292:
@@ -1146,7 +1146,7 @@ int32_t AmbulanceClass::AtScene() {
 }
 
 // FUNCTION: COPTER_D 0x00535ff9
-void AmbulanceClass::SetSaveData(struct _AUTO_LOAD_SAVE *sd) {
+void AmbulanceClass::SetSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) {
 // LINE 424:
 	__asm        mov    eax, sd;
 	__asm        push   eax;
@@ -1157,7 +1157,7 @@ void AmbulanceClass::SetSaveData(struct _AUTO_LOAD_SAVE *sd) {
 }
 
 // FUNCTION: COPTER_D 0x0053601d
-void AmbulanceClass::LoadSaveData(struct _AUTO_LOAD_SAVE *sd) {
+void AmbulanceClass::LoadSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) {
 // LINE 439:
 	__asm        mov    eax, sd;
 	__asm        test   byte ptr [eax], 2;
@@ -1237,5 +1237,5 @@ int32_t curAmbulances = 0;
 
 // Contribution: 3:000949b8-000949cb Module: 160, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x0062b9b8
-class AmbulanceClass *ambulances[5];
+/*packed*/ class AmbulanceClass *ambulances[5];
 

@@ -4,7 +4,7 @@
 
 // Type: int32_t;
 
-// Type: struct tagMode (forward reference);
+// Type: /*packed*/ struct tagMode (forward reference);
 struct tagMode{ // packed(0xc bytes) TI: 0x2407
 	long lWidth;
 	long lHeight;
@@ -17,7 +17,7 @@ struct tagMode{ // packed(0xc bytes) TI: 0x2407
 
 // Type: void;
 
-// Type: struct _DDSURFACEDESC (forward reference);
+// Type: /*packed*/ struct _DDSURFACEDESC (forward reference);
 struct _DDSURFACEDESC{ // packed(0x6c bytes) TI: 0x1737
 	unsigned long dwSize;
 	unsigned long dwFlags;
@@ -29,12 +29,12 @@ struct _DDSURFACEDESC{ // packed(0x6c bytes) TI: 0x1737
 	unsigned long dwAlphaBitDepth;
 	unsigned long dwReserved;
 	void * __ptr32 lpSurface;
-	struct _DDCOLORKEY ddckCKDestOverlay;
-	struct _DDCOLORKEY ddckCKDestBlt;
-	struct _DDCOLORKEY ddckCKSrcOverlay;
-	struct _DDCOLORKEY ddckCKSrcBlt;
-	struct _DDPIXELFORMAT ddpfPixelFormat;
-	struct _DDSCAPS ddsCaps;
+	/*packed*/ struct _DDCOLORKEY ddckCKDestOverlay;
+	/*packed*/ struct _DDCOLORKEY ddckCKDestBlt;
+	/*packed*/ struct _DDCOLORKEY ddckCKSrcOverlay;
+	/*packed*/ struct _DDCOLORKEY ddckCKSrcBlt;
+	/*packed*/ struct _DDPIXELFORMAT ddpfPixelFormat;
+	/*packed*/ struct _DDSCAPS ddsCaps;
 };
 
 
@@ -104,7 +104,7 @@ _T7f:
 }
 
 // FUNCTION: COPTER_D 0x0048b1c4
-void GetCurrentScreenMode(struct tagMode *modeCurrent, int32_t __formal) {
+void GetCurrentScreenMode(/*packed*/ struct tagMode *modeCurrent, int32_t __formal) {
 	void * __ptr32 hdcScreen;
 	int32_t nPlanes;
 	int32_t nBitsPerPixel;
@@ -150,7 +150,7 @@ void GetCurrentScreenMode(struct tagMode *modeCurrent, int32_t __formal) {
 }
 
 // FUNCTION: COPTER_D 0x0048b234
-long EnumDisplayModesCallback(struct _DDSURFACEDESC *pddsd, void * __ptr32 Context) {
+long EnumDisplayModesCallback(/*packed*/ struct _DDSURFACEDESC *pddsd, void * __ptr32 Context) {
 // LINE 104:
 	__asm        cmp    gNumModes, 0x40;
 	__asm        jl     _T1a;
@@ -195,5 +195,5 @@ int32_t gNumModes = 0;
 
 // Contribution: 3:0006d818-0006db17 Module: 27, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00604818
-struct tagMode gModeList[64];
+/*packed*/ struct tagMode gModeList[64];
 

@@ -4,7 +4,7 @@
 
 // Type: int32_t;
 
-// Type: class LanguageManager (forward reference);
+// Type: /*packed*/ class LanguageManager (forward reference);
 class LanguageManager{ // packed(0x1 bytes) TI: 0x2157
 public:
 	// calltype: NearC
@@ -30,13 +30,13 @@ public:
 	// calltype: NearC
 	static int32_t DoesLanguageUseLatinCharacters(int32_t);
 	// calltype: NearC
-	static int32_t GetLanguageDirectoryName(class basic_string<char>&, int32_t);
+	static int32_t GetLanguageDirectoryName(/*packed*/ class basic_string<char>&, int32_t);
 	// calltype: NearC
-	static int32_t GetLanguageEnglishName(class basic_string<char>&, int32_t);
+	static int32_t GetLanguageEnglishName(/*packed*/ class basic_string<char>&, int32_t);
 	// calltype: NearC
-	static int32_t GetLanguageLocalName(class basic_string<char>&, int32_t);
+	static int32_t GetLanguageLocalName(/*packed*/ class basic_string<char>&, int32_t);
 	// calltype: NearC
-	static int32_t GetLanguageRuntimeLibraryName(class basic_string<char>&, int32_t);
+	static int32_t GetLanguageRuntimeLibraryName(/*packed*/ class basic_string<char>&, int32_t);
 	// calltype: NearC
 	static int32_t GetLanguageRoadDrivingSide(int32_t);
 	// calltype: NearC
@@ -51,13 +51,13 @@ public:
 	static int32_t IsTypefaceLoaded(char *);
 };
 
-// Type: class basic_string<char>;
+// Type: /*packed*/ class basic_string<char>;
 class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
-	using reference_class = class basic_string_ref<char>;
-	using reference_pointer = class basic_string_ref<char>*;
+	using reference_class = /*unpacked*/ class basic_string_ref<char>;
+	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char> *reference;
+	/*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -75,44 +75,44 @@ private:
 	uint32_t find_first_not_of_str(char *, uint32_t, uint32_t);
 	uint32_t find_last_not_of_str(char *, uint32_t, uint32_t);
 public:
-	void basic_string<char>(const class vector<char>&);
+	void basic_string<char>(const /*packed*/ class vector<char>&);
 	void basic_string<char>(char, uint32_t);
 	void basic_string<char>(char *);
 	void basic_string<char>(char *, uint32_t);
-	void basic_string<char>(const class basic_string<char>&, uint32_t, uint32_t);
+	void basic_string<char>(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 	void basic_string<char>(uint32_t, enum capacity);
 	void basic_string<char>();
 protected:
 	void basic_string<char>(char *, uint32_t, uint32_t);
 	void delete_ref();
 	using char_type = char;
-	using baggage_type = struct string_char_baggage<char>;
+	using baggage_type = /*packed*/ struct string_char_baggage<char>;
 public:
 	void ~basic_string<char>();
-	class basic_string<char>& operator=(char);
-	class basic_string<char>& operator=(char *);
-	class basic_string<char>& operator=(const class basic_string<char>&);
-	class basic_string<char>& operator+=(char);
-	class basic_string<char>& operator+=(char *);
-	class basic_string<char>& operator+=(const class basic_string<char>&);
-	class vector<char> operator class vector<char>();
-	class basic_string<char>& append(char, uint32_t);
-	class basic_string<char>& append(char *);
-	class basic_string<char>& append(char *, uint32_t);
-	class basic_string<char>& append(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& assign(char, uint32_t);
-	class basic_string<char>& assign(char *);
-	class basic_string<char>& assign(char *, uint32_t);
-	class basic_string<char>& assign(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& insert(uint32_t, char, uint32_t);
-	class basic_string<char>& insert(uint32_t, char *);
-	class basic_string<char>& insert(uint32_t, char *, uint32_t);
-	class basic_string<char>& insert(uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& remove(uint32_t, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, char, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, char *);
-	class basic_string<char>& replace(uint32_t, uint32_t, char *, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& operator=(char);
+	/*packed*/ class basic_string<char>& operator=(char *);
+	/*packed*/ class basic_string<char>& operator=(const /*packed*/ class basic_string<char>&);
+	/*packed*/ class basic_string<char>& operator+=(char);
+	/*packed*/ class basic_string<char>& operator+=(char *);
+	/*packed*/ class basic_string<char>& operator+=(const /*packed*/ class basic_string<char>&);
+	/*packed*/ class vector<char> operator class vector<char>();
+	/*packed*/ class basic_string<char>& append(char, uint32_t);
+	/*packed*/ class basic_string<char>& append(char *);
+	/*packed*/ class basic_string<char>& append(char *, uint32_t);
+	/*packed*/ class basic_string<char>& append(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& assign(char, uint32_t);
+	/*packed*/ class basic_string<char>& assign(char *);
+	/*packed*/ class basic_string<char>& assign(char *, uint32_t);
+	/*packed*/ class basic_string<char>& assign(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char *);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char *, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& remove(uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char *);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char *, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 	char get_at(uint32_t);
 	void put_at(uint32_t, char);
 	char& operator[](uint32_t);
@@ -128,45 +128,45 @@ public:
 	uint32_t find(char, uint32_t);
 	uint32_t find(char *, uint32_t);
 	uint32_t find(char *, uint32_t, uint32_t);
-	uint32_t find(const class basic_string<char>&, uint32_t);
+	uint32_t find(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t rfind(char, uint32_t);
 	uint32_t rfind(char *, uint32_t);
 	uint32_t rfind(char *, uint32_t, uint32_t);
-	uint32_t rfind(const class basic_string<char>&, uint32_t);
+	uint32_t rfind(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_first_of(char, uint32_t);
 	uint32_t find_first_of(char *, uint32_t);
 	uint32_t find_first_of(char *, uint32_t, uint32_t);
-	uint32_t find_first_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_last_of(char, uint32_t);
 	uint32_t find_last_of(char *, uint32_t);
 	uint32_t find_last_of(char *, uint32_t, uint32_t);
-	uint32_t find_last_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_last_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_first_not_of(char, uint32_t);
 	uint32_t find_first_not_of(char *, uint32_t);
 	uint32_t find_first_not_of(char *, uint32_t, uint32_t);
-	uint32_t find_first_not_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_not_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_last_not_of(char, uint32_t);
 	uint32_t find_last_not_of(char *, uint32_t);
 	uint32_t find_last_not_of(char *, uint32_t, uint32_t);
-	uint32_t find_last_not_of(const class basic_string<char>&, uint32_t);
-	class basic_string<char> substr(uint32_t, uint32_t);
+	uint32_t find_last_not_of(const /*packed*/ class basic_string<char>&, uint32_t);
+	/*packed*/ class basic_string<char> substr(uint32_t, uint32_t);
 	int32_t compare(char, uint32_t, uint32_t);
 	int32_t compare(char *, uint32_t);
 	int32_t compare(char *, uint32_t, uint32_t);
-	int32_t compare(const class basic_string<char>&, uint32_t, uint32_t);
+	int32_t compare(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 };
 
 // Type: char *;
 
 // Type: int32_t *;
 
-// Type: class basic_string<char> (forward reference);
+// Type: /*packed*/ class basic_string<char> (forward reference);
 class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
-	using reference_class = class basic_string_ref<char>;
-	using reference_pointer = class basic_string_ref<char>*;
+	using reference_class = /*unpacked*/ class basic_string_ref<char>;
+	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char> *reference;
+	/*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -184,44 +184,44 @@ private:
 	uint32_t find_first_not_of_str(char *, uint32_t, uint32_t);
 	uint32_t find_last_not_of_str(char *, uint32_t, uint32_t);
 public:
-	void basic_string<char>(const class vector<char>&);
+	void basic_string<char>(const /*packed*/ class vector<char>&);
 	void basic_string<char>(char, uint32_t);
 	void basic_string<char>(char *);
 	void basic_string<char>(char *, uint32_t);
-	void basic_string<char>(const class basic_string<char>&, uint32_t, uint32_t);
+	void basic_string<char>(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 	void basic_string<char>(uint32_t, enum capacity);
 	void basic_string<char>();
 protected:
 	void basic_string<char>(char *, uint32_t, uint32_t);
 	void delete_ref();
 	using char_type = char;
-	using baggage_type = struct string_char_baggage<char>;
+	using baggage_type = /*packed*/ struct string_char_baggage<char>;
 public:
 	void ~basic_string<char>();
-	class basic_string<char>& operator=(char);
-	class basic_string<char>& operator=(char *);
-	class basic_string<char>& operator=(const class basic_string<char>&);
-	class basic_string<char>& operator+=(char);
-	class basic_string<char>& operator+=(char *);
-	class basic_string<char>& operator+=(const class basic_string<char>&);
-	class vector<char> operator class vector<char>();
-	class basic_string<char>& append(char, uint32_t);
-	class basic_string<char>& append(char *);
-	class basic_string<char>& append(char *, uint32_t);
-	class basic_string<char>& append(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& assign(char, uint32_t);
-	class basic_string<char>& assign(char *);
-	class basic_string<char>& assign(char *, uint32_t);
-	class basic_string<char>& assign(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& insert(uint32_t, char, uint32_t);
-	class basic_string<char>& insert(uint32_t, char *);
-	class basic_string<char>& insert(uint32_t, char *, uint32_t);
-	class basic_string<char>& insert(uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& remove(uint32_t, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, char, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, char *);
-	class basic_string<char>& replace(uint32_t, uint32_t, char *, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& operator=(char);
+	/*packed*/ class basic_string<char>& operator=(char *);
+	/*packed*/ class basic_string<char>& operator=(const /*packed*/ class basic_string<char>&);
+	/*packed*/ class basic_string<char>& operator+=(char);
+	/*packed*/ class basic_string<char>& operator+=(char *);
+	/*packed*/ class basic_string<char>& operator+=(const /*packed*/ class basic_string<char>&);
+	/*packed*/ class vector<char> operator class vector<char>();
+	/*packed*/ class basic_string<char>& append(char, uint32_t);
+	/*packed*/ class basic_string<char>& append(char *);
+	/*packed*/ class basic_string<char>& append(char *, uint32_t);
+	/*packed*/ class basic_string<char>& append(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& assign(char, uint32_t);
+	/*packed*/ class basic_string<char>& assign(char *);
+	/*packed*/ class basic_string<char>& assign(char *, uint32_t);
+	/*packed*/ class basic_string<char>& assign(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char *);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char *, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& remove(uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char *);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char *, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 	char get_at(uint32_t);
 	void put_at(uint32_t, char);
 	char& operator[](uint32_t);
@@ -237,37 +237,37 @@ public:
 	uint32_t find(char, uint32_t);
 	uint32_t find(char *, uint32_t);
 	uint32_t find(char *, uint32_t, uint32_t);
-	uint32_t find(const class basic_string<char>&, uint32_t);
+	uint32_t find(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t rfind(char, uint32_t);
 	uint32_t rfind(char *, uint32_t);
 	uint32_t rfind(char *, uint32_t, uint32_t);
-	uint32_t rfind(const class basic_string<char>&, uint32_t);
+	uint32_t rfind(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_first_of(char, uint32_t);
 	uint32_t find_first_of(char *, uint32_t);
 	uint32_t find_first_of(char *, uint32_t, uint32_t);
-	uint32_t find_first_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_last_of(char, uint32_t);
 	uint32_t find_last_of(char *, uint32_t);
 	uint32_t find_last_of(char *, uint32_t, uint32_t);
-	uint32_t find_last_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_last_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_first_not_of(char, uint32_t);
 	uint32_t find_first_not_of(char *, uint32_t);
 	uint32_t find_first_not_of(char *, uint32_t, uint32_t);
-	uint32_t find_first_not_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_not_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_last_not_of(char, uint32_t);
 	uint32_t find_last_not_of(char *, uint32_t);
 	uint32_t find_last_not_of(char *, uint32_t, uint32_t);
-	uint32_t find_last_not_of(const class basic_string<char>&, uint32_t);
-	class basic_string<char> substr(uint32_t, uint32_t);
+	uint32_t find_last_not_of(const /*packed*/ class basic_string<char>&, uint32_t);
+	/*packed*/ class basic_string<char> substr(uint32_t, uint32_t);
 	int32_t compare(char, uint32_t, uint32_t);
 	int32_t compare(char *, uint32_t);
 	int32_t compare(char *, uint32_t, uint32_t);
-	int32_t compare(const class basic_string<char>&, uint32_t, uint32_t);
+	int32_t compare(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 };
 
 // Type: char;
 
-// Type: struct TypefaceTestStruct;
+// Type: /*packed*/ struct TypefaceTestStruct;
 struct TypefaceTestStruct{ // packed(0x8 bytes) TI: 0x2b62
 	char * szLanguageTypefaceName;
 	long bExists;
@@ -279,14 +279,14 @@ struct TypefaceTestStruct{ // packed(0x8 bytes) TI: 0x2b62
 
 // Type: unsigned long;
 
-// Type: struct tagENUMLOGFONTA (forward reference);
+// Type: /*packed*/ struct tagENUMLOGFONTA (forward reference);
 struct tagENUMLOGFONTA{ // packed(0x9c bytes) TI: 0x2b71
-	struct tagLOGFONTA elfLogFont;
+	/*packed*/ struct tagLOGFONTA elfLogFont;
 	unsigned char elfFullName[64];
 	unsigned char elfStyle[32];
 };
 
-// Type: struct tagNEWTEXTMETRICA (forward reference);
+// Type: /*packed*/ struct tagNEWTEXTMETRICA (forward reference);
 struct tagNEWTEXTMETRICA{ // packed(0x48 bytes) TI: 0x2b73
 	long tmHeight;
 	long tmAscent;
@@ -316,7 +316,7 @@ struct tagNEWTEXTMETRICA{ // packed(0x48 bytes) TI: 0x2b73
 
 // Type: long;
 
-// Type: struct TypefaceTestStruct (forward reference);
+// Type: /*packed*/ struct TypefaceTestStruct (forward reference);
 struct TypefaceTestStruct{ // packed(0x8 bytes) TI: 0x2b62
 	char * szLanguageTypefaceName;
 	long bExists;
@@ -348,7 +348,7 @@ int32_t LanguageManager::Uninitialize() {
 
 // FUNCTION: COPTER_D 0x0042a528
 int32_t LanguageManager::SetDefaultLanguage(int32_t nLanguage) {
-	class basic_string<char> sLocale;
+	/*packed*/ class basic_string<char> sLocale;
 
 // LINE 65:
 	__asm        push   0x10;
@@ -699,7 +699,7 @@ _T3ff:
 // FUNCTION: COPTER_D 0x0042a92c
 int32_t LanguageManager::ConvertIDToName(int32_t nLanguage, char * szLanguageName) {
 	int32_t nStringFound;
-	class basic_string<char> stringLanguage;
+	/*packed*/ class basic_string<char> stringLanguage;
 
 // LINE 96:
 	__asm        push   0x10;
@@ -1054,10 +1054,10 @@ _T464:
 
 // FUNCTION: COPTER_D 0x0042ad95
 int32_t LanguageManager::ConvertNameToID(char * szLanguageName, int32_t * nLanguage) {
-	class basic_string<char> stringLanguageCompare;
+	/*packed*/ class basic_string<char> stringLanguageCompare;
 	int32_t nStringFound;
 	int32_t i;
-	class basic_string<char> stringLanguageName;
+	/*packed*/ class basic_string<char> stringLanguageName;
 
 // LINE 129:
 	__asm        push   0x10;
@@ -1419,7 +1419,7 @@ _T4b:
 // FUNCTION: COPTER_D 0x0042b1af
 int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo) {
 	int32_t nFullStringID;
-	class basic_string<char> sMessage;
+	/*packed*/ class basic_string<char> sMessage;
 
 // LINE 178:
 	__asm        push   0x10;
@@ -2081,7 +2081,7 @@ _T102:
 }
 
 // FUNCTION: COPTER_D 0x0042ba26
-int32_t LanguageManager::GetLanguageDirectoryName(class basic_string<char>& sLanguage, int32_t nLanguage) {
+int32_t LanguageManager::GetLanguageDirectoryName(/*packed*/ class basic_string<char>& sLanguage, int32_t nLanguage) {
 // LINE 314:
 	__asm        mov    eax, nLanguage;
 	__asm        push   eax;
@@ -2094,7 +2094,7 @@ int32_t LanguageManager::GetLanguageDirectoryName(class basic_string<char>& sLan
 }
 
 // FUNCTION: COPTER_D 0x0042ba46
-int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLanguage, int32_t nLanguage) {
+int32_t LanguageManager::GetLanguageEnglishName(/*packed*/ class basic_string<char>& sLanguage, int32_t nLanguage) {
 	int32_t nFullStringID;
 
 // LINE 328:
@@ -2609,7 +2609,7 @@ _T693:
 }
 
 // FUNCTION: COPTER_D 0x0042c0de
-int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguage, int32_t nLanguage) {
+int32_t LanguageManager::GetLanguageLocalName(/*packed*/ class basic_string<char>& sLanguage, int32_t nLanguage) {
 	int32_t nFullStringID;
 
 // LINE 350:
@@ -3124,7 +3124,7 @@ _T693:
 }
 
 // FUNCTION: COPTER_D 0x0042c776
-int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>& sLanguage, int32_t nLanguage) {
+int32_t LanguageManager::GetLanguageRuntimeLibraryName(/*packed*/ class basic_string<char>& sLanguage, int32_t nLanguage) {
 	int32_t nFullStringID;
 
 // LINE 372:
@@ -3844,7 +3844,7 @@ _T90:
 
 // FUNCTION: COPTER_D 0x0042d023
 int32_t LanguageManager::IsTypefaceLoaded(char * szFaceName) {
-	struct TypefaceTestStruct tempTypefaceTestStruct;
+	/*packed*/ struct TypefaceTestStruct tempTypefaceTestStruct;
 	void * __ptr32 hdcScreen;
 
 // LINE 527:
@@ -4086,8 +4086,8 @@ _T3d:
 }
 
 // FUNCTION: COPTER_D 0x0042d3c9
-int32_t EnumFontFamilyProcecure(struct tagENUMLOGFONTA *lpelf, struct tagNEWTEXTMETRICA *lpntm, int32_t FontType, long lParam) {
-	struct TypefaceTestStruct *tempTypefaceTestStruct;
+int32_t EnumFontFamilyProcecure(/*packed*/ struct tagENUMLOGFONTA *lpelf, /*packed*/ struct tagNEWTEXTMETRICA *lpntm, int32_t FontType, long lParam) {
+	/*packed*/ struct TypefaceTestStruct *tempTypefaceTestStruct;
 	char * szEnumeratedFaceName;
 
 // LINE 627:

@@ -8,7 +8,7 @@
 
 // Type: char *;
 
-// Type: class MDate (forward reference);
+// Type: /*packed*/ class MDate (forward reference);
 // VTABLE: COPTER_D 0x0058f3e8
 class MDate{ // packed(0xc bytes) TI: 0x284c
 	enum HowToPrint {
@@ -21,15 +21,15 @@ class MDate{ // packed(0xc bytes) TI: 0x284c
 protected:
 	void MDate(unsigned long);
 public:
-	void MDate(const class MTime&);
-	void MDate(class istream&);
+	void MDate(const /*unpacked*/ class MTime&);
+	void MDate(/*unpacked*/ class istream&);
 	void MDate(uint32_t, uint32_t, uint32_t);
 	void MDate(uint32_t, char *, uint32_t);
 	void MDate(uint32_t, uint32_t);
 	void MDate();
 	virtual char * PrintString(char *); // vtable+0x0
-	int32_t Between(const class MDate&, const class MDate&);
-	int32_t CompareTo(const class MDate&);
+	int32_t Between(const /*packed*/ class MDate&, const /*packed*/ class MDate&);
+	int32_t CompareTo(const /*packed*/ class MDate&);
 	uint32_t Day();
 	uint32_t DayOfMonth();
 	uint32_t FirstDayOfMonth(uint32_t);
@@ -37,24 +37,24 @@ public:
 	uint32_t Hash();
 	int32_t IsValid();
 	int32_t Leap();
-	class MDate MaxDate(const class MDate&);
-	class MDate MinDate(const class MDate&);
+	/*packed*/ class MDate MaxDate(const /*packed*/ class MDate&);
+	/*packed*/ class MDate MinDate(const /*packed*/ class MDate&);
 	uint32_t Month();
 	char * NameOfDay();
 	char * NameOfMonth();
-	class MDate Previous(uint32_t);
-	virtual class MDate Previous(char *); // vtable+0x4
+	/*packed*/ class MDate Previous(uint32_t);
+	virtual /*packed*/ class MDate Previous(char *); // vtable+0x4
 	uint32_t WeekDay();
 	uint32_t Year();
 	uint32_t YearLastTwoDigits();
 	enum MDate::HowToPrint SetPrintOption(enum MDate::HowToPrint);
-	int32_t operator<(const class MDate&);
-	int32_t operator<=(const class MDate&);
-	int32_t operator>(const class MDate&);
-	int32_t operator>=(const class MDate&);
-	int32_t operator==(const class MDate&);
-	int32_t operator!=(const class MDate&);
-	unsigned long operator-(const class MDate&);
+	int32_t operator<(const /*packed*/ class MDate&);
+	int32_t operator<=(const /*packed*/ class MDate&);
+	int32_t operator>(const /*packed*/ class MDate&);
+	int32_t operator>=(const /*packed*/ class MDate&);
+	int32_t operator==(const /*packed*/ class MDate&);
+	int32_t operator!=(const /*packed*/ class MDate&);
+	unsigned long operator-(const /*packed*/ class MDate&);
 	void operator++();
 	void operator--();
 	void operator+=(int32_t);
@@ -80,13 +80,13 @@ protected:
 	static int32_t AssertWeekDayNumber(uint32_t);
 	// calltype: NearC
 	static int32_t AssertIndexOfMonth(uint32_t);
-	void ParseFrom(class istream&);
+	void ParseFrom(/*unpacked*/ class istream&);
 	void Mdy(uint32_t&, uint32_t&, uint32_t&);
 	unsigned long Julnum;
 	enum MDate::HowToPrint PrintOption;
 };
 
-// Type: struct tm (forward reference);
+// Type: /*packed*/ struct tm (forward reference);
 struct tm{ // packed(0x24 bytes) TI: 0x2033
 	int32_t tm_sec;
 	int32_t tm_min;
@@ -116,7 +116,7 @@ enum HowToPrint {
 
 // Type: unsigned long;
 
-// Type: class ostrstream;
+// Type: /*unpacked*/ class ostrstream;
 // VTABLE: COPTER_D 0x00593b34
 class ostrstream : public ostream, public virtual <indirect> ios
 { // not packed(0x58 bytes) TI: 0x1fc2
@@ -126,19 +126,19 @@ public:
 	void ostrstream();
 	virtual void ~ostrstream() /* override */;
 	int32_t pcount();
-	class strstreambuf* rdbuf();
+	/*unpacked*/ class strstreambuf* rdbuf();
 	char * str();
 };
 
-// Type: class istream (forward reference);
+// Type: /*unpacked*/ class istream (forward reference);
 // istream Class implementation not found
 
 // Type: char;
 
-// Type: class ostream (forward reference);
+// Type: /*unpacked*/ class ostream (forward reference);
 // ostream Class implementation not found
 
-// Type: class ios;
+// Type: /*unpacked*/ class ios;
 // VTABLE: COPTER_D 0x00593ad4
 class ios{ // not packed(0x50 bytes) TI: 0x4126
 	enum io_state {
@@ -183,9 +183,9 @@ public:
 	static const long basefield;
 	static const long adjustfield;
 	static const long floatfield;
-	void ios(const class ios&);
+	void ios(const /*unpacked*/ class ios&);
 	void ios();
-	void ios(class streambuf*);
+	void ios(/*unpacked*/ class streambuf*);
 	virtual void ~ios(); // vtable+0x0
 	long flags(long);
 	long flags();
@@ -194,8 +194,8 @@ public:
 	long unsetf(long);
 	int32_t width(int32_t);
 	int32_t width();
-	class ostream* tie();
-	class ostream* tie(class ostream*);
+	/*unpacked*/ class ostream* tie();
+	/*unpacked*/ class ostream* tie(/*unpacked*/ class ostream*);
 	char fill(char);
 	char fill();
 	int32_t precision();
@@ -208,7 +208,7 @@ public:
 	int32_t eof();
 	int32_t fail();
 	int32_t bad();
-	class streambuf* rdbuf();
+	/*unpacked*/ class streambuf* rdbuf();
 	long& iword(int32_t);
 	void * __ptr32& pword(int32_t);
 	// calltype: NearC
@@ -230,21 +230,21 @@ public:
 	// calltype: NearC
 	void unlockbuf();
 protected:
-	class ios& operator=(const class ios&);
-	void init(class streambuf*);
+	/*unpacked*/ class ios& operator=(const /*unpacked*/ class ios&);
+	void init(/*unpacked*/ class streambuf*);
 	enum /* __unnamed */ {
 		skipping = 0,
 		tied = 1,
 	};
 protected:
-	class streambuf *bp;
+	/*unpacked*/ class streambuf *bp;
 	int32_t state;
 	int32_t ispecial;
 	int32_t ospecial;
 	int32_t isfx_special;
 	int32_t osfx_special;
 	int32_t x_delbuf;
-	class ostream *x_tie;
+	/*unpacked*/ class ostream *x_tie;
 	long x_flags;
 	int32_t x_precision;
 	char x_fill;
@@ -254,7 +254,7 @@ protected:
 	static void lockc();
 	// calltype: NearC
 	static void unlockc();
-	struct _CRT_CRITICAL_SECTION* lockptr();
+	/*unpacked*/ struct _CRT_CRITICAL_SECTION* lockptr();
 public:
 	void delbuf(int32_t);
 	int32_t delbuf();
@@ -264,9 +264,9 @@ private:
 	static int32_t sunk_with_stdio;
 	static long x_statebuf[8];
 	static int32_t fLockcInit;
-	static struct _CRT_CRITICAL_SECTION x_lockc;
+	static /*unpacked*/ struct _CRT_CRITICAL_SECTION x_lockc;
 	int32_t LockFlg;
-	struct _CRT_CRITICAL_SECTION x_lock;
+	/*unpacked*/ struct _CRT_CRITICAL_SECTION x_lock;
 };
 
 
@@ -274,7 +274,7 @@ private:
 // Contribution: 1:000bb460-000bc660 Module: 2, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004bc460
 void MDate::MDate() {
-	struct tm *now;
+	/*packed*/ struct tm *now;
 	long clk;
 
 
@@ -740,7 +740,7 @@ _T47:
 }
 
 // FUNCTION: COPTER_D 0x004bc93e
-int32_t MDate::CompareTo(const class MDate& d) {
+int32_t MDate::CompareTo(const /*packed*/ class MDate& d) {
 // LINE 293:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, d;
@@ -992,7 +992,7 @@ _T121:
 }
 
 // FUNCTION: COPTER_D 0x004bcbcd
-class MDate MDate::MaxDate(const class MDate& dt) {
+/*packed*/ class MDate MDate::MaxDate(const /*packed*/ class MDate& dt) {
 // LINE 397:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, dt;
@@ -1026,7 +1026,7 @@ _T2f:
 }
 
 // FUNCTION: COPTER_D 0x004bcc37
-class MDate MDate::MinDate(const class MDate& dt) {
+/*packed*/ class MDate MDate::MinDate(const /*packed*/ class MDate& dt) {
 // LINE 407:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, dt;
@@ -1081,7 +1081,7 @@ uint32_t MDate::Month() {
 }
 
 // FUNCTION: COPTER_D 0x004bccce
-class MDate MDate::Previous(char * dayName) {
+/*packed*/ class MDate MDate::Previous(char * dayName) {
 // LINE 436:
 	__asm        mov    eax, dayName;
 	__asm        push   eax;
@@ -1098,7 +1098,7 @@ class MDate MDate::Previous(char * dayName) {
 }
 
 // FUNCTION: COPTER_D 0x004bcd02
-class MDate MDate::Previous(uint32_t desiredDayOfWeek) {
+/*packed*/ class MDate MDate::Previous(uint32_t desiredDayOfWeek) {
 	unsigned long j;
 	uint32_t thisDayOfWeek;
 
@@ -1200,7 +1200,7 @@ uint32_t MDate::YearLastTwoDigits() {
 
 // FUNCTION: COPTER_D 0x004bce07
 char * MDate::PrintString(char * szDate) {
-	class ostrstream strtemp;
+	/*unpacked*/ class ostrstream strtemp;
 
 // LINE 511:
 	__asm        push   1;
@@ -1238,7 +1238,7 @@ char * MDate::PrintString(char * szDate) {
 }
 
 // FUNCTION: COPTER_D 0x004bce73
-void MDate::ParseFrom(class istream& s) {
+void MDate::ParseFrom(/*unpacked*/ class istream& s) {
 	uint32_t m;
 	uint32_t y;
 	uint32_t d;
@@ -1524,7 +1524,7 @@ _T2fb:
 }
 
 // FUNCTION: COPTER_D 0x004bd175
-static void SkipDelim(class istream& strm) {
+static void SkipDelim(/*unpacked*/ class istream& strm) {
 	char c;
 
 // LINE 527:
@@ -1619,7 +1619,7 @@ _T102:
 }
 
 // FUNCTION: COPTER_D 0x004bd27c
-static char * ParseMonth(class istream& s) {
+static char * ParseMonth(/*unpacked*/ class istream& s) {
 	char c;
 	static char month[12];
 	char * p;
@@ -1725,8 +1725,8 @@ _T109:
 }
 
 // FUNCTION: COPTER_D 0x004bd39a
-class ostream& operator<<(class ostream& s, const class MDate& d) {
-	class ostrstream out;
+/*unpacked*/ class ostream& operator<<(/*unpacked*/ class ostream& s, const /*packed*/ class MDate& d) {
+	/*unpacked*/ class ostrstream out;
 	char buf[80];
 
 // LINE 623:

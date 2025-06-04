@@ -4,12 +4,12 @@
 
 // Type: char *;
 
-// Type: class InventoryWindow (forward reference);
+// Type: /*packed*/ class InventoryWindow (forward reference);
 // VTABLE: COPTER_D 0x00591888
 class InventoryWindow : public GraphicWindow
 { // packed(0x1e2 bytes) TI: 0x45e7
 public:
-	void InventoryWindow(int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
+	void InventoryWindow(int32_t, /*unpacked*/ class GraphicWindow*, /*packed*/ class GraphicWindowOwner*, int32_t);
 	virtual void ~InventoryWindow() /* override */;
 	virtual int32_t Initialize() /* override */;
 	virtual int32_t ComposeSelf() /* override */;
@@ -19,46 +19,46 @@ public:
 	virtual long DoCursorMove(long, long) /* override */;
 	virtual int32_t CreateImage(int32_t) /* override */;
 	virtual void DestroyImage() /* override */;
-	int32_t ReadPalette(struct SparkalColor*);
+	int32_t ReadPalette(/*packed*/ struct SparkalColor*);
 	void DrawTitleText();
 	void DrawInventory();
 protected:
-	int32_t GetRectFromID(long, class MRect&);
+	int32_t GetRectFromID(long, /*packed*/ class MRect&);
 	void LoadHotSpots();
 	long GetColumnStartPixel(long);
 	long GetRowStartPixel(long);
-	void GetEquipmentTextPosition(long, class MPoint&);
-	void GetTitleAndAddressRects(class MRect&, class MRect&, class MRect&);
-	class list<HotSpot> myHotSpots;
-	class CBackBuffer *mySecondImage;
-	class CBackBuffer *myCheckmarkImage;
-	class DigitalSound mySound;
-	class basic_string<char> sHelicopterNames[9];
-	class basic_string<char> sEquipmentNames[5];
-	class basic_string<char> sCheckmarkFileName;
-	class basic_string<char> sTitle;
-	class basic_string<char> sAddress1;
-	class basic_string<char> sAddress2;
-	class MFont myFont;
-	class MFont myTitleFont;
-	class MFont myAddressFont;
+	void GetEquipmentTextPosition(long, /*packed*/ class MPoint&);
+	void GetTitleAndAddressRects(/*packed*/ class MRect&, /*packed*/ class MRect&, /*packed*/ class MRect&);
+	/*packed*/ class list<HotSpot> myHotSpots;
+	/*unpacked*/ class CBackBuffer *mySecondImage;
+	/*unpacked*/ class CBackBuffer *myCheckmarkImage;
+	/*packed*/ class DigitalSound mySound;
+	/*packed*/ class basic_string<char> sHelicopterNames[9];
+	/*packed*/ class basic_string<char> sEquipmentNames[5];
+	/*packed*/ class basic_string<char> sCheckmarkFileName;
+	/*packed*/ class basic_string<char> sTitle;
+	/*packed*/ class basic_string<char> sAddress1;
+	/*packed*/ class basic_string<char> sAddress2;
+	/*packed*/ class MFont myFont;
+	/*packed*/ class MFont myTitleFont;
+	/*packed*/ class MFont myAddressFont;
 };
 
 // Type: int32_t;
 
-// Type: class GraphicWindow (forward reference);
+// Type: /*unpacked*/ class GraphicWindow (forward reference);
 // GraphicWindow Class implementation not found
 
-// Type: class GraphicWindowOwner (forward reference);
+// Type: /*packed*/ class GraphicWindowOwner (forward reference);
 // VTABLE: COPTER_D 0x00590f2c
 class GraphicWindowOwner{ // packed(0x4 bytes) TI: 0x1647
 public:
-	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
+	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
 };
 
 // Type: void;
 
-// Type: struct SparkalColor (forward reference);
+// Type: /*packed*/ struct SparkalColor (forward reference);
 struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 	unsigned char Blue;
 	unsigned char Green;
@@ -68,104 +68,104 @@ struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 	void SparkalColor();
 };
 
-// Type: class MRect (forward reference);
+// Type: /*packed*/ class MRect (forward reference);
 class MRect : public SparkalRect
 { // packed(0x10 bytes) TI: 0x1067
 public:
-	void MRect(struct SparkalPoint, struct SparkalPoint);
-	void MRect(struct SparkalPoint, struct SparkalSize);
-	void MRect(struct SparkalRect*);
-	void MRect(class MRect*);
-	void MRect(const struct SparkalRect&);
+	void MRect(/*packed*/ struct SparkalPoint, /*packed*/ struct SparkalPoint);
+	void MRect(/*packed*/ struct SparkalPoint, /*packed*/ struct SparkalSize);
+	void MRect(/*packed*/ struct SparkalRect*);
+	void MRect(/*packed*/ class MRect*);
+	void MRect(const /*packed*/ struct SparkalRect&);
 	void MRect(long, long, long, long);
 	void MRect();
 	long Width();
 	long Height();
-	class MSize Size();
-	const class MPoint& TopLeft();
-	class MPoint& TopLeft();
-	const class MPoint& BottomRight();
-	class MPoint& BottomRight();
-	class MPoint CenterPoint();
-	struct SparkalRect* operator struct SparkalRect *();
-	class MRect* operator class MRect *();
+	/*packed*/ class MSize Size();
+	const /*packed*/ class MPoint& TopLeft();
+	/*packed*/ class MPoint& TopLeft();
+	const /*packed*/ class MPoint& BottomRight();
+	/*packed*/ class MPoint& BottomRight();
+	/*packed*/ class MPoint CenterPoint();
+	/*packed*/ struct SparkalRect* operator struct SparkalRect *();
+	/*packed*/ class MRect* operator class MRect *();
 	int32_t IsRectEmpty();
 	int32_t IsRectNull();
-	int32_t PtInRect(struct SparkalPoint);
+	int32_t PtInRect(/*packed*/ struct SparkalPoint);
 	int32_t PtInRect(long, long);
-	int32_t DoesRectOverlap(struct SparkalRect*);
-	void SetRect(struct SparkalPoint, struct SparkalPoint);
+	int32_t DoesRectOverlap(/*packed*/ struct SparkalRect*);
+	void SetRect(/*packed*/ struct SparkalPoint, /*packed*/ struct SparkalPoint);
 	void SetRect(long, long, long, long);
 	void SetRectEmpty();
-	void CopyRect(class MRect*);
-	int32_t EqualRect(class MRect*);
+	void CopyRect(/*packed*/ class MRect*);
+	int32_t EqualRect(/*packed*/ class MRect*);
 	void InflateRect(long, long, long, long);
-	void InflateRect(class MRect*);
-	void InflateRect(struct SparkalSize);
+	void InflateRect(/*packed*/ class MRect*);
+	void InflateRect(/*packed*/ struct SparkalSize);
 	void InflateRect(long, long);
 	void DeflateRect(long, long, long, long);
-	void DeflateRect(class MRect*);
-	void DeflateRect(struct SparkalSize);
+	void DeflateRect(/*packed*/ class MRect*);
+	void DeflateRect(/*packed*/ struct SparkalSize);
 	void DeflateRect(long, long);
-	void MoveRect(struct SparkalPoint);
+	void MoveRect(/*packed*/ struct SparkalPoint);
 	void MoveRect(long, long);
-	void OffsetRect(struct SparkalPoint);
-	void OffsetRect(struct SparkalSize);
+	void OffsetRect(/*packed*/ struct SparkalPoint);
+	void OffsetRect(/*packed*/ struct SparkalSize);
 	void OffsetRect(long, long);
 	void NormalizeRect();
-	int32_t IntersectRect(class MRect*, class MRect*);
-	int32_t UnionRect(class MRect*, class MRect*);
-	int32_t SubtractRect(class MRect*, class MRect*);
-	int32_t operator==(const struct SparkalRect&);
-	int32_t operator!=(const struct SparkalRect&);
-	void operator+=(class MRect*);
-	void operator+=(struct SparkalSize);
-	void operator+=(struct SparkalPoint);
-	void operator-=(class MRect*);
-	void operator-=(struct SparkalSize);
-	void operator-=(struct SparkalPoint);
-	void operator&=(const struct SparkalRect&);
-	void operator|=(const struct SparkalRect&);
-	class MRect operator+(struct SparkalSize);
-	class MRect operator+(class MRect*);
-	class MRect operator+(struct SparkalPoint);
-	class MRect operator-(class MRect*);
-	class MRect operator-(struct SparkalSize);
-	class MRect operator-(struct SparkalPoint);
-	class MRect operator&(const struct SparkalRect&);
-	class MRect operator|(const struct SparkalRect&);
+	int32_t IntersectRect(/*packed*/ class MRect*, /*packed*/ class MRect*);
+	int32_t UnionRect(/*packed*/ class MRect*, /*packed*/ class MRect*);
+	int32_t SubtractRect(/*packed*/ class MRect*, /*packed*/ class MRect*);
+	int32_t operator==(const /*packed*/ struct SparkalRect&);
+	int32_t operator!=(const /*packed*/ struct SparkalRect&);
+	void operator+=(/*packed*/ class MRect*);
+	void operator+=(/*packed*/ struct SparkalSize);
+	void operator+=(/*packed*/ struct SparkalPoint);
+	void operator-=(/*packed*/ class MRect*);
+	void operator-=(/*packed*/ struct SparkalSize);
+	void operator-=(/*packed*/ struct SparkalPoint);
+	void operator&=(const /*packed*/ struct SparkalRect&);
+	void operator|=(const /*packed*/ struct SparkalRect&);
+	/*packed*/ class MRect operator+(/*packed*/ struct SparkalSize);
+	/*packed*/ class MRect operator+(/*packed*/ class MRect*);
+	/*packed*/ class MRect operator+(/*packed*/ struct SparkalPoint);
+	/*packed*/ class MRect operator-(/*packed*/ class MRect*);
+	/*packed*/ class MRect operator-(/*packed*/ struct SparkalSize);
+	/*packed*/ class MRect operator-(/*packed*/ struct SparkalPoint);
+	/*packed*/ class MRect operator&(const /*packed*/ struct SparkalRect&);
+	/*packed*/ class MRect operator|(const /*packed*/ struct SparkalRect&);
 };
 
-// Type: class MPoint;
+// Type: /*packed*/ class MPoint;
 class MPoint : public SparkalPoint
 { // packed(0x8 bytes) TI: 0x159a
 public:
 	void MPoint(unsigned long);
-	void MPoint(struct SparkalSize);
-	void MPoint(struct SparkalPoint);
+	void MPoint(/*packed*/ struct SparkalSize);
+	void MPoint(/*packed*/ struct SparkalPoint);
 	void MPoint(long, long);
 	void MPoint();
-	void Offset(struct SparkalSize);
-	void Offset(struct SparkalPoint);
+	void Offset(/*packed*/ struct SparkalSize);
+	void Offset(/*packed*/ struct SparkalPoint);
 	void Offset(long, long);
-	int32_t operator==(struct SparkalPoint);
-	int32_t operator!=(struct SparkalPoint);
-	void operator+=(struct SparkalPoint);
-	void operator+=(struct SparkalSize);
-	void operator-=(struct SparkalPoint);
-	void operator-=(struct SparkalSize);
-	class MRect operator+(const struct SparkalRect*);
-	class MPoint operator+(struct SparkalPoint);
-	class MPoint operator+(struct SparkalSize);
-	class MRect operator-(const struct SparkalRect*);
-	class MSize operator-(struct SparkalPoint);
-	class MPoint operator-();
-	class MPoint operator-(struct SparkalSize);
+	int32_t operator==(/*packed*/ struct SparkalPoint);
+	int32_t operator!=(/*packed*/ struct SparkalPoint);
+	void operator+=(/*packed*/ struct SparkalPoint);
+	void operator+=(/*packed*/ struct SparkalSize);
+	void operator-=(/*packed*/ struct SparkalPoint);
+	void operator-=(/*packed*/ struct SparkalSize);
+	/*packed*/ class MRect operator+(const /*packed*/ struct SparkalRect*);
+	/*packed*/ class MPoint operator+(/*packed*/ struct SparkalPoint);
+	/*packed*/ class MPoint operator+(/*packed*/ struct SparkalSize);
+	/*packed*/ class MRect operator-(const /*packed*/ struct SparkalRect*);
+	/*packed*/ class MSize operator-(/*packed*/ struct SparkalPoint);
+	/*packed*/ class MPoint operator-();
+	/*packed*/ class MPoint operator-(/*packed*/ struct SparkalSize);
 };
 
 // Type: long;
 
-// Type: struct tagUserPersonalInfo (forward reference);
+// Type: /*packed*/ struct tagUserPersonalInfo (forward reference);
 struct tagUserPersonalInfo{ // packed(0x58 bytes) TI: 0x1a2a
 	char szUserName[64];
 	long lMoney;
@@ -176,130 +176,130 @@ struct tagUserPersonalInfo{ // packed(0x58 bytes) TI: 0x1a2a
 	long lTeargasCount;
 };
 
-// Type: class MRect;
+// Type: /*packed*/ class MRect;
 class MRect : public SparkalRect
 { // packed(0x10 bytes) TI: 0x1067
 public:
-	void MRect(struct SparkalPoint, struct SparkalPoint);
-	void MRect(struct SparkalPoint, struct SparkalSize);
-	void MRect(struct SparkalRect*);
-	void MRect(class MRect*);
-	void MRect(const struct SparkalRect&);
+	void MRect(/*packed*/ struct SparkalPoint, /*packed*/ struct SparkalPoint);
+	void MRect(/*packed*/ struct SparkalPoint, /*packed*/ struct SparkalSize);
+	void MRect(/*packed*/ struct SparkalRect*);
+	void MRect(/*packed*/ class MRect*);
+	void MRect(const /*packed*/ struct SparkalRect&);
 	void MRect(long, long, long, long);
 	void MRect();
 	long Width();
 	long Height();
-	class MSize Size();
-	const class MPoint& TopLeft();
-	class MPoint& TopLeft();
-	const class MPoint& BottomRight();
-	class MPoint& BottomRight();
-	class MPoint CenterPoint();
-	struct SparkalRect* operator struct SparkalRect *();
-	class MRect* operator class MRect *();
+	/*packed*/ class MSize Size();
+	const /*packed*/ class MPoint& TopLeft();
+	/*packed*/ class MPoint& TopLeft();
+	const /*packed*/ class MPoint& BottomRight();
+	/*packed*/ class MPoint& BottomRight();
+	/*packed*/ class MPoint CenterPoint();
+	/*packed*/ struct SparkalRect* operator struct SparkalRect *();
+	/*packed*/ class MRect* operator class MRect *();
 	int32_t IsRectEmpty();
 	int32_t IsRectNull();
-	int32_t PtInRect(struct SparkalPoint);
+	int32_t PtInRect(/*packed*/ struct SparkalPoint);
 	int32_t PtInRect(long, long);
-	int32_t DoesRectOverlap(struct SparkalRect*);
-	void SetRect(struct SparkalPoint, struct SparkalPoint);
+	int32_t DoesRectOverlap(/*packed*/ struct SparkalRect*);
+	void SetRect(/*packed*/ struct SparkalPoint, /*packed*/ struct SparkalPoint);
 	void SetRect(long, long, long, long);
 	void SetRectEmpty();
-	void CopyRect(class MRect*);
-	int32_t EqualRect(class MRect*);
+	void CopyRect(/*packed*/ class MRect*);
+	int32_t EqualRect(/*packed*/ class MRect*);
 	void InflateRect(long, long, long, long);
-	void InflateRect(class MRect*);
-	void InflateRect(struct SparkalSize);
+	void InflateRect(/*packed*/ class MRect*);
+	void InflateRect(/*packed*/ struct SparkalSize);
 	void InflateRect(long, long);
 	void DeflateRect(long, long, long, long);
-	void DeflateRect(class MRect*);
-	void DeflateRect(struct SparkalSize);
+	void DeflateRect(/*packed*/ class MRect*);
+	void DeflateRect(/*packed*/ struct SparkalSize);
 	void DeflateRect(long, long);
-	void MoveRect(struct SparkalPoint);
+	void MoveRect(/*packed*/ struct SparkalPoint);
 	void MoveRect(long, long);
-	void OffsetRect(struct SparkalPoint);
-	void OffsetRect(struct SparkalSize);
+	void OffsetRect(/*packed*/ struct SparkalPoint);
+	void OffsetRect(/*packed*/ struct SparkalSize);
 	void OffsetRect(long, long);
 	void NormalizeRect();
-	int32_t IntersectRect(class MRect*, class MRect*);
-	int32_t UnionRect(class MRect*, class MRect*);
-	int32_t SubtractRect(class MRect*, class MRect*);
-	int32_t operator==(const struct SparkalRect&);
-	int32_t operator!=(const struct SparkalRect&);
-	void operator+=(class MRect*);
-	void operator+=(struct SparkalSize);
-	void operator+=(struct SparkalPoint);
-	void operator-=(class MRect*);
-	void operator-=(struct SparkalSize);
-	void operator-=(struct SparkalPoint);
-	void operator&=(const struct SparkalRect&);
-	void operator|=(const struct SparkalRect&);
-	class MRect operator+(struct SparkalSize);
-	class MRect operator+(class MRect*);
-	class MRect operator+(struct SparkalPoint);
-	class MRect operator-(class MRect*);
-	class MRect operator-(struct SparkalSize);
-	class MRect operator-(struct SparkalPoint);
-	class MRect operator&(const struct SparkalRect&);
-	class MRect operator|(const struct SparkalRect&);
+	int32_t IntersectRect(/*packed*/ class MRect*, /*packed*/ class MRect*);
+	int32_t UnionRect(/*packed*/ class MRect*, /*packed*/ class MRect*);
+	int32_t SubtractRect(/*packed*/ class MRect*, /*packed*/ class MRect*);
+	int32_t operator==(const /*packed*/ struct SparkalRect&);
+	int32_t operator!=(const /*packed*/ struct SparkalRect&);
+	void operator+=(/*packed*/ class MRect*);
+	void operator+=(/*packed*/ struct SparkalSize);
+	void operator+=(/*packed*/ struct SparkalPoint);
+	void operator-=(/*packed*/ class MRect*);
+	void operator-=(/*packed*/ struct SparkalSize);
+	void operator-=(/*packed*/ struct SparkalPoint);
+	void operator&=(const /*packed*/ struct SparkalRect&);
+	void operator|=(const /*packed*/ struct SparkalRect&);
+	/*packed*/ class MRect operator+(/*packed*/ struct SparkalSize);
+	/*packed*/ class MRect operator+(/*packed*/ class MRect*);
+	/*packed*/ class MRect operator+(/*packed*/ struct SparkalPoint);
+	/*packed*/ class MRect operator-(/*packed*/ class MRect*);
+	/*packed*/ class MRect operator-(/*packed*/ struct SparkalSize);
+	/*packed*/ class MRect operator-(/*packed*/ struct SparkalPoint);
+	/*packed*/ class MRect operator&(const /*packed*/ struct SparkalRect&);
+	/*packed*/ class MRect operator|(const /*packed*/ struct SparkalRect&);
 };
 
 // Type: char;
 
 // Type: unsigned long;
 
-// Type: class list<HotSpot>::iterator;
+// Type: /*packed*/ class list<HotSpot>::iterator;
 class list<HotSpot>::iterator : public bidirectional_iterator<HotSpot,int>
 { // packed(0x4 bytes) TI: 0x1240
 protected:
-	struct list<HotSpot>::list_node *node;
+	/*packed*/ struct list<HotSpot>::list_node *node;
 public:
 	void iterator();
 protected:
-	void iterator(struct list<HotSpot>::list_node*);
+	void iterator(/*packed*/ struct list<HotSpot>::list_node*);
 public:
-	int32_t operator==(const class list<HotSpot>::iterator&);
-	class HotSpot& operator*();
-	class list<HotSpot>::iterator operator++(int32_t);
-	class list<HotSpot>::iterator& operator++();
-	class list<HotSpot>::iterator operator--(int32_t);
-	class list<HotSpot>::iterator& operator--();
+	int32_t operator==(const /*packed*/ class list<HotSpot>::iterator&);
+	/*packed*/ class HotSpot& operator*();
+	/*packed*/ class list<HotSpot>::iterator operator++(int32_t);
+	/*packed*/ class list<HotSpot>::iterator& operator++();
+	/*packed*/ class list<HotSpot>::iterator operator--(int32_t);
+	/*packed*/ class list<HotSpot>::iterator& operator--();
 };
 
-// Type: class MPoint (forward reference);
+// Type: /*packed*/ class MPoint (forward reference);
 class MPoint : public SparkalPoint
 { // packed(0x8 bytes) TI: 0x159a
 public:
 	void MPoint(unsigned long);
-	void MPoint(struct SparkalSize);
-	void MPoint(struct SparkalPoint);
+	void MPoint(/*packed*/ struct SparkalSize);
+	void MPoint(/*packed*/ struct SparkalPoint);
 	void MPoint(long, long);
 	void MPoint();
-	void Offset(struct SparkalSize);
-	void Offset(struct SparkalPoint);
+	void Offset(/*packed*/ struct SparkalSize);
+	void Offset(/*packed*/ struct SparkalPoint);
 	void Offset(long, long);
-	int32_t operator==(struct SparkalPoint);
-	int32_t operator!=(struct SparkalPoint);
-	void operator+=(struct SparkalPoint);
-	void operator+=(struct SparkalSize);
-	void operator-=(struct SparkalPoint);
-	void operator-=(struct SparkalSize);
-	class MRect operator+(const struct SparkalRect*);
-	class MPoint operator+(struct SparkalPoint);
-	class MPoint operator+(struct SparkalSize);
-	class MRect operator-(const struct SparkalRect*);
-	class MSize operator-(struct SparkalPoint);
-	class MPoint operator-();
-	class MPoint operator-(struct SparkalSize);
+	int32_t operator==(/*packed*/ struct SparkalPoint);
+	int32_t operator!=(/*packed*/ struct SparkalPoint);
+	void operator+=(/*packed*/ struct SparkalPoint);
+	void operator+=(/*packed*/ struct SparkalSize);
+	void operator-=(/*packed*/ struct SparkalPoint);
+	void operator-=(/*packed*/ struct SparkalSize);
+	/*packed*/ class MRect operator+(const /*packed*/ struct SparkalRect*);
+	/*packed*/ class MPoint operator+(/*packed*/ struct SparkalPoint);
+	/*packed*/ class MPoint operator+(/*packed*/ struct SparkalSize);
+	/*packed*/ class MRect operator-(const /*packed*/ struct SparkalRect*);
+	/*packed*/ class MSize operator-(/*packed*/ struct SparkalPoint);
+	/*packed*/ class MPoint operator-();
+	/*packed*/ class MPoint operator-(/*packed*/ struct SparkalSize);
 };
 
 // Type: uint32_t;
 
-// Type: struct bidirectional_iterator<HotSpot,int>;
+// Type: /*packed*/ struct bidirectional_iterator<HotSpot,int>;
 struct bidirectional_iterator<HotSpot,int>{ // packed(0x1 bytes) TI: 0x1f71
 };
 
-// Type: struct SparkalRect;
+// Type: /*packed*/ struct SparkalRect;
 struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	long left;
 	long top;
@@ -309,7 +309,7 @@ struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	void SparkalRect();
 };
 
-// Type: struct SparkalPoint;
+// Type: /*packed*/ struct SparkalPoint;
 struct SparkalPoint{ // packed(0x8 bytes) TI: 0x1a54
 	long x;
 	long y;
@@ -321,7 +321,7 @@ struct SparkalPoint{ // packed(0x8 bytes) TI: 0x1a54
 
 // Contribution: 1:000a7360-000a97bd Module: 8, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004a8360
-void InventoryWindow::InventoryWindow(int32_t nNewID, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
+void InventoryWindow::InventoryWindow(int32_t nNewID, /*unpacked*/ class GraphicWindow *windowNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
 	__asm        jmp    near ptr 0x004A8377;
 
@@ -1812,7 +1812,7 @@ _T9a9:
 }
 
 // FUNCTION: COPTER_D 0x004a981d
-int32_t InventoryWindow::ReadPalette(struct SparkalColor *pColorTable) {
+int32_t InventoryWindow::ReadPalette(/*packed*/ struct SparkalColor *pColorTable) {
 // LINE 113:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x64], 0;
@@ -2334,9 +2334,9 @@ _Tc3:
 
 // FUNCTION: COPTER_D 0x004a9e08
 void InventoryWindow::DrawTitleText() {
-	class MRect rectText[3];
+	/*packed*/ class MRect rectText[3];
 	int32_t i;
-	class MPoint ptText;
+	/*packed*/ class MPoint ptText;
 
 
 	__asm        mov    dword ptr [ebp-0x60], 3;
@@ -2632,8 +2632,8 @@ void InventoryWindow::DrawInventory() {
 	long lCurrentHeliType;
 	const long lCheckmarkWidth;
 	const long lCheckmarkHeight;
-	struct tagUserPersonalInfo *currentUserPersonalInfo;
-	class MRect rectDestination;
+	/*packed*/ struct tagUserPersonalInfo *currentUserPersonalInfo;
+	/*packed*/ class MRect rectDestination;
 	long lCurrentRow;
 
 // LINE 208:
@@ -2964,8 +2964,8 @@ long InventoryWindow::DoCursorMove(long nCursorX, long nCursorY) {
 }
 
 // FUNCTION: COPTER_D 0x004aa55f
-int32_t InventoryWindow::GetRectFromID(long lID, class MRect& rectHotSpot) {
-	class list<HotSpot>::iterator i;
+int32_t InventoryWindow::GetRectFromID(long lID, /*packed*/ class MRect& rectHotSpot) {
+	/*packed*/ class list<HotSpot>::iterator i;
 
 // LINE 303:
 	__asm        mov    eax, this;
@@ -3103,7 +3103,7 @@ _T36:
 }
 
 // FUNCTION: COPTER_D 0x004aa6d0
-void InventoryWindow::GetEquipmentTextPosition(long lEquipmentIndex, class MPoint& ptEquipment) {
+void InventoryWindow::GetEquipmentTextPosition(long lEquipmentIndex, /*packed*/ class MPoint& ptEquipment) {
 	static const long lXPositions[5] = {333, 357, 382, 407, 409};
 	static const long lYPositions[5] = {166, 181, 196, 210, 225};
 
@@ -3132,7 +3132,7 @@ _T27:
 }
 
 // FUNCTION: COPTER_D 0x004aa722
-void InventoryWindow::GetTitleAndAddressRects(class MRect& rectTitle, class MRect& rectAddress1, class MRect& rectAddress2) {
+void InventoryWindow::GetTitleAndAddressRects(/*packed*/ class MRect& rectTitle, /*packed*/ class MRect& rectAddress1, /*packed*/ class MRect& rectAddress2) {
 // LINE 378:
 	__asm        mov    eax, rectTitle;
 	__asm        mov    dword ptr [eax], 0xE8;

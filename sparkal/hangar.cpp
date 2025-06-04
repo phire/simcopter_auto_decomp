@@ -4,12 +4,12 @@
 
 // Type: char *;
 
-// Type: class HangarWindow (forward reference);
+// Type: /*packed*/ class HangarWindow (forward reference);
 // VTABLE: COPTER_D 0x00590c20
 class HangarWindow : public GraphicWindow
 { // packed(0x12e bytes) TI: 0x45ef
 public:
-	void HangarWindow(int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
+	void HangarWindow(int32_t, /*unpacked*/ class GraphicWindow*, /*packed*/ class GraphicWindowOwner*, int32_t);
 	virtual void ~HangarWindow() /* override */;
 	virtual int32_t Initialize() /* override */;
 	virtual int32_t ComposeSelf() /* override */;
@@ -17,58 +17,58 @@ public:
 	virtual long DoCursorDown(long, long, unsigned long) /* override */;
 	virtual long DoCursorUp(long, long, unsigned long) /* override */;
 	virtual long DoCursorMove(long, long) /* override */;
-	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32) /* override */;
+	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32) /* override */;
 	virtual int32_t CreateImage(int32_t) /* override */;
 	virtual void DestroyImage() /* override */;
-	int32_t ReadPalette(struct SparkalColor*);
+	int32_t ReadPalette(/*packed*/ struct SparkalColor*);
 	void ScrollHangarView(long);
 	int32_t IsDaytime();
 	int32_t IsNighttime();
 protected:
 	virtual void GetImagePath() /* override */;
 	void LoadHotSpots();
-	void ConvertWindowToHangar(class MRect&);
-	void ConvertWindowToHangar(class MPoint&);
-	void ConvertHangarToWindow(class MRect&);
-	void ConvertHangarToWindow(class MPoint&);
-	int32_t IsHangarRectVisibleInWindow(class MRect&);
-	void ClipRectToWindow(class MRect&);
+	void ConvertWindowToHangar(/*packed*/ class MRect&);
+	void ConvertWindowToHangar(/*packed*/ class MPoint&);
+	void ConvertHangarToWindow(/*packed*/ class MRect&);
+	void ConvertHangarToWindow(/*packed*/ class MPoint&);
+	int32_t IsHangarRectVisibleInWindow(/*packed*/ class MRect&);
+	void ClipRectToWindow(/*packed*/ class MRect&);
 	long GetHangarVisiblePosition();
 	void ResetPopupTimer();
 	int32_t HasPopupTimerExpired();
-	void DisplayHelp(int32_t, class MPoint&);
+	void DisplayHelp(int32_t, /*packed*/ class MPoint&);
 	void HideHelp();
-	int32_t GetSoundFileNameFromHelpID(long, class basic_string<char>&);
-	int32_t GetHotspotFromPosition(long&, class MPoint&);
-	class TextWindow *myTextHelpWindow;
-	class DigitalSound myHelpSound;
+	int32_t GetSoundFileNameFromHelpID(long, /*packed*/ class basic_string<char>&);
+	int32_t GetHotspotFromPosition(long&, /*packed*/ class MPoint&);
+	/*unpacked*/ class TextWindow *myTextHelpWindow;
+	/*packed*/ class DigitalSound myHelpSound;
 	int32_t bDaytime;
 	int32_t bUsingGraphicHelp;
 	int32_t bUsingAudioHelp;
 	int32_t bTestedHotspotsAlready;
 	int32_t nScrollingHangar;
-	class MTimer myTimer;
-	class list<HotSpot> myHotSpots;
-	class CBackBuffer *mySecondImage;
-	class MPoint ptSavedCursorPosition;
+	/*packed*/ class MTimer myTimer;
+	/*packed*/ class list<HotSpot> myHotSpots;
+	/*unpacked*/ class CBackBuffer *mySecondImage;
+	/*packed*/ class MPoint ptSavedCursorPosition;
 	long lWindowPositionInHangar;
 };
 
 // Type: int32_t;
 
-// Type: class GraphicWindow (forward reference);
+// Type: /*unpacked*/ class GraphicWindow (forward reference);
 // GraphicWindow Class implementation not found
 
-// Type: class GraphicWindowOwner (forward reference);
+// Type: /*packed*/ class GraphicWindowOwner (forward reference);
 // VTABLE: COPTER_D 0x00590f2c
 class GraphicWindowOwner{ // packed(0x4 bytes) TI: 0x1647
 public:
-	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
+	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
 };
 
 // Type: void;
 
-// Type: class ButtonWindow (forward reference);
+// Type: /*packed*/ class ButtonWindow (forward reference);
 // VTABLE: COPTER_D 0x00591b78
 class ButtonWindow : public GraphicWindow
 { // packed(0x94 bytes) TI: 0x1a48
@@ -78,7 +78,7 @@ class ButtonWindow : public GraphicWindow
 		nButtonStateOn = 2,
 	};
 public:
-	void ButtonWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
+	void ButtonWindow(/*packed*/ class MRect&, int32_t, /*unpacked*/ class GraphicWindow*, char *, /*packed*/ class GraphicWindowOwner*, int32_t);
 	void ButtonWindow();
 	virtual int32_t Initialize() /* override */;
 	virtual int32_t GetImageCount(); // vtable+0xc4
@@ -91,25 +91,25 @@ public:
 	virtual long DoCursorDown(long, long, unsigned long) /* override */;
 	virtual long DoCursorUp(long, long, unsigned long) /* override */;
 	virtual long DoCursorMove(long, long) /* override */;
-	virtual void SetTextColor(const struct SparkalColor*, const struct SparkalColor*); // vtable+0xd8
+	virtual void SetTextColor(const /*packed*/ struct SparkalColor*, const /*packed*/ struct SparkalColor*); // vtable+0xd8
 	virtual int32_t CanWeRespondToMessage() /* override */;
 protected:
 	int32_t nButtonState;
 	int32_t bEnabled;
 	int32_t nButtonTextHeight;
-	class MSize sizeTextOffset;
+	/*packed*/ class MSize sizeTextOffset;
 	int32_t bBusySettingState;
-	struct SparkalColor colorFont;
-	struct SparkalColor colorFontHighlighted;
+	/*packed*/ struct SparkalColor colorFont;
+	/*packed*/ struct SparkalColor colorFontHighlighted;
 };
 
-// Type: class basic_string<char>;
+// Type: /*packed*/ class basic_string<char>;
 class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
-	using reference_class = class basic_string_ref<char>;
-	using reference_pointer = class basic_string_ref<char>*;
+	using reference_class = /*unpacked*/ class basic_string_ref<char>;
+	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char> *reference;
+	/*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -127,44 +127,44 @@ private:
 	uint32_t find_first_not_of_str(char *, uint32_t, uint32_t);
 	uint32_t find_last_not_of_str(char *, uint32_t, uint32_t);
 public:
-	void basic_string<char>(const class vector<char>&);
+	void basic_string<char>(const /*packed*/ class vector<char>&);
 	void basic_string<char>(char, uint32_t);
 	void basic_string<char>(char *);
 	void basic_string<char>(char *, uint32_t);
-	void basic_string<char>(const class basic_string<char>&, uint32_t, uint32_t);
+	void basic_string<char>(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 	void basic_string<char>(uint32_t, enum capacity);
 	void basic_string<char>();
 protected:
 	void basic_string<char>(char *, uint32_t, uint32_t);
 	void delete_ref();
 	using char_type = char;
-	using baggage_type = struct string_char_baggage<char>;
+	using baggage_type = /*packed*/ struct string_char_baggage<char>;
 public:
 	void ~basic_string<char>();
-	class basic_string<char>& operator=(char);
-	class basic_string<char>& operator=(char *);
-	class basic_string<char>& operator=(const class basic_string<char>&);
-	class basic_string<char>& operator+=(char);
-	class basic_string<char>& operator+=(char *);
-	class basic_string<char>& operator+=(const class basic_string<char>&);
-	class vector<char> operator class vector<char>();
-	class basic_string<char>& append(char, uint32_t);
-	class basic_string<char>& append(char *);
-	class basic_string<char>& append(char *, uint32_t);
-	class basic_string<char>& append(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& assign(char, uint32_t);
-	class basic_string<char>& assign(char *);
-	class basic_string<char>& assign(char *, uint32_t);
-	class basic_string<char>& assign(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& insert(uint32_t, char, uint32_t);
-	class basic_string<char>& insert(uint32_t, char *);
-	class basic_string<char>& insert(uint32_t, char *, uint32_t);
-	class basic_string<char>& insert(uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& remove(uint32_t, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, char, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, char *);
-	class basic_string<char>& replace(uint32_t, uint32_t, char *, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& operator=(char);
+	/*packed*/ class basic_string<char>& operator=(char *);
+	/*packed*/ class basic_string<char>& operator=(const /*packed*/ class basic_string<char>&);
+	/*packed*/ class basic_string<char>& operator+=(char);
+	/*packed*/ class basic_string<char>& operator+=(char *);
+	/*packed*/ class basic_string<char>& operator+=(const /*packed*/ class basic_string<char>&);
+	/*packed*/ class vector<char> operator class vector<char>();
+	/*packed*/ class basic_string<char>& append(char, uint32_t);
+	/*packed*/ class basic_string<char>& append(char *);
+	/*packed*/ class basic_string<char>& append(char *, uint32_t);
+	/*packed*/ class basic_string<char>& append(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& assign(char, uint32_t);
+	/*packed*/ class basic_string<char>& assign(char *);
+	/*packed*/ class basic_string<char>& assign(char *, uint32_t);
+	/*packed*/ class basic_string<char>& assign(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char *);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char *, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& remove(uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char *);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char *, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 	char get_at(uint32_t);
 	void put_at(uint32_t, char);
 	char& operator[](uint32_t);
@@ -180,35 +180,35 @@ public:
 	uint32_t find(char, uint32_t);
 	uint32_t find(char *, uint32_t);
 	uint32_t find(char *, uint32_t, uint32_t);
-	uint32_t find(const class basic_string<char>&, uint32_t);
+	uint32_t find(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t rfind(char, uint32_t);
 	uint32_t rfind(char *, uint32_t);
 	uint32_t rfind(char *, uint32_t, uint32_t);
-	uint32_t rfind(const class basic_string<char>&, uint32_t);
+	uint32_t rfind(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_first_of(char, uint32_t);
 	uint32_t find_first_of(char *, uint32_t);
 	uint32_t find_first_of(char *, uint32_t, uint32_t);
-	uint32_t find_first_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_last_of(char, uint32_t);
 	uint32_t find_last_of(char *, uint32_t);
 	uint32_t find_last_of(char *, uint32_t, uint32_t);
-	uint32_t find_last_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_last_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_first_not_of(char, uint32_t);
 	uint32_t find_first_not_of(char *, uint32_t);
 	uint32_t find_first_not_of(char *, uint32_t, uint32_t);
-	uint32_t find_first_not_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_not_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_last_not_of(char, uint32_t);
 	uint32_t find_last_not_of(char *, uint32_t);
 	uint32_t find_last_not_of(char *, uint32_t, uint32_t);
-	uint32_t find_last_not_of(const class basic_string<char>&, uint32_t);
-	class basic_string<char> substr(uint32_t, uint32_t);
+	uint32_t find_last_not_of(const /*packed*/ class basic_string<char>&, uint32_t);
+	/*packed*/ class basic_string<char> substr(uint32_t, uint32_t);
 	int32_t compare(char, uint32_t, uint32_t);
 	int32_t compare(char *, uint32_t);
 	int32_t compare(char *, uint32_t, uint32_t);
-	int32_t compare(const class basic_string<char>&, uint32_t, uint32_t);
+	int32_t compare(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 };
 
-// Type: struct SparkalColor (forward reference);
+// Type: /*packed*/ struct SparkalColor (forward reference);
 struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 	unsigned char Blue;
 	unsigned char Green;
@@ -226,194 +226,194 @@ struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 
 // Type: unsigned long;
 
-// Type: class MPoint (forward reference);
+// Type: /*packed*/ class MPoint (forward reference);
 class MPoint : public SparkalPoint
 { // packed(0x8 bytes) TI: 0x159a
 public:
 	void MPoint(unsigned long);
-	void MPoint(struct SparkalSize);
-	void MPoint(struct SparkalPoint);
+	void MPoint(/*packed*/ struct SparkalSize);
+	void MPoint(/*packed*/ struct SparkalPoint);
 	void MPoint(long, long);
 	void MPoint();
-	void Offset(struct SparkalSize);
-	void Offset(struct SparkalPoint);
+	void Offset(/*packed*/ struct SparkalSize);
+	void Offset(/*packed*/ struct SparkalPoint);
 	void Offset(long, long);
-	int32_t operator==(struct SparkalPoint);
-	int32_t operator!=(struct SparkalPoint);
-	void operator+=(struct SparkalPoint);
-	void operator+=(struct SparkalSize);
-	void operator-=(struct SparkalPoint);
-	void operator-=(struct SparkalSize);
-	class MRect operator+(const struct SparkalRect*);
-	class MPoint operator+(struct SparkalPoint);
-	class MPoint operator+(struct SparkalSize);
-	class MRect operator-(const struct SparkalRect*);
-	class MSize operator-(struct SparkalPoint);
-	class MPoint operator-();
-	class MPoint operator-(struct SparkalSize);
+	int32_t operator==(/*packed*/ struct SparkalPoint);
+	int32_t operator!=(/*packed*/ struct SparkalPoint);
+	void operator+=(/*packed*/ struct SparkalPoint);
+	void operator+=(/*packed*/ struct SparkalSize);
+	void operator-=(/*packed*/ struct SparkalPoint);
+	void operator-=(/*packed*/ struct SparkalSize);
+	/*packed*/ class MRect operator+(const /*packed*/ struct SparkalRect*);
+	/*packed*/ class MPoint operator+(/*packed*/ struct SparkalPoint);
+	/*packed*/ class MPoint operator+(/*packed*/ struct SparkalSize);
+	/*packed*/ class MRect operator-(const /*packed*/ struct SparkalRect*);
+	/*packed*/ class MSize operator-(/*packed*/ struct SparkalPoint);
+	/*packed*/ class MPoint operator-();
+	/*packed*/ class MPoint operator-(/*packed*/ struct SparkalSize);
 };
 
-// Type: class list<HotSpot>::iterator;
+// Type: /*packed*/ class list<HotSpot>::iterator;
 class list<HotSpot>::iterator : public bidirectional_iterator<HotSpot,int>
 { // packed(0x4 bytes) TI: 0x1240
 protected:
-	struct list<HotSpot>::list_node *node;
+	/*packed*/ struct list<HotSpot>::list_node *node;
 public:
 	void iterator();
 protected:
-	void iterator(struct list<HotSpot>::list_node*);
+	void iterator(/*packed*/ struct list<HotSpot>::list_node*);
 public:
-	int32_t operator==(const class list<HotSpot>::iterator&);
-	class HotSpot& operator*();
-	class list<HotSpot>::iterator operator++(int32_t);
-	class list<HotSpot>::iterator& operator++();
-	class list<HotSpot>::iterator operator--(int32_t);
-	class list<HotSpot>::iterator& operator--();
+	int32_t operator==(const /*packed*/ class list<HotSpot>::iterator&);
+	/*packed*/ class HotSpot& operator*();
+	/*packed*/ class list<HotSpot>::iterator operator++(int32_t);
+	/*packed*/ class list<HotSpot>::iterator& operator++();
+	/*packed*/ class list<HotSpot>::iterator operator--(int32_t);
+	/*packed*/ class list<HotSpot>::iterator& operator--();
 };
 
-// Type: class MRect (forward reference);
+// Type: /*packed*/ class MRect (forward reference);
 class MRect : public SparkalRect
 { // packed(0x10 bytes) TI: 0x1067
 public:
-	void MRect(struct SparkalPoint, struct SparkalPoint);
-	void MRect(struct SparkalPoint, struct SparkalSize);
-	void MRect(struct SparkalRect*);
-	void MRect(class MRect*);
-	void MRect(const struct SparkalRect&);
+	void MRect(/*packed*/ struct SparkalPoint, /*packed*/ struct SparkalPoint);
+	void MRect(/*packed*/ struct SparkalPoint, /*packed*/ struct SparkalSize);
+	void MRect(/*packed*/ struct SparkalRect*);
+	void MRect(/*packed*/ class MRect*);
+	void MRect(const /*packed*/ struct SparkalRect&);
 	void MRect(long, long, long, long);
 	void MRect();
 	long Width();
 	long Height();
-	class MSize Size();
-	const class MPoint& TopLeft();
-	class MPoint& TopLeft();
-	const class MPoint& BottomRight();
-	class MPoint& BottomRight();
-	class MPoint CenterPoint();
-	struct SparkalRect* operator struct SparkalRect *();
-	class MRect* operator class MRect *();
+	/*packed*/ class MSize Size();
+	const /*packed*/ class MPoint& TopLeft();
+	/*packed*/ class MPoint& TopLeft();
+	const /*packed*/ class MPoint& BottomRight();
+	/*packed*/ class MPoint& BottomRight();
+	/*packed*/ class MPoint CenterPoint();
+	/*packed*/ struct SparkalRect* operator struct SparkalRect *();
+	/*packed*/ class MRect* operator class MRect *();
 	int32_t IsRectEmpty();
 	int32_t IsRectNull();
-	int32_t PtInRect(struct SparkalPoint);
+	int32_t PtInRect(/*packed*/ struct SparkalPoint);
 	int32_t PtInRect(long, long);
-	int32_t DoesRectOverlap(struct SparkalRect*);
-	void SetRect(struct SparkalPoint, struct SparkalPoint);
+	int32_t DoesRectOverlap(/*packed*/ struct SparkalRect*);
+	void SetRect(/*packed*/ struct SparkalPoint, /*packed*/ struct SparkalPoint);
 	void SetRect(long, long, long, long);
 	void SetRectEmpty();
-	void CopyRect(class MRect*);
-	int32_t EqualRect(class MRect*);
+	void CopyRect(/*packed*/ class MRect*);
+	int32_t EqualRect(/*packed*/ class MRect*);
 	void InflateRect(long, long, long, long);
-	void InflateRect(class MRect*);
-	void InflateRect(struct SparkalSize);
+	void InflateRect(/*packed*/ class MRect*);
+	void InflateRect(/*packed*/ struct SparkalSize);
 	void InflateRect(long, long);
 	void DeflateRect(long, long, long, long);
-	void DeflateRect(class MRect*);
-	void DeflateRect(struct SparkalSize);
+	void DeflateRect(/*packed*/ class MRect*);
+	void DeflateRect(/*packed*/ struct SparkalSize);
 	void DeflateRect(long, long);
-	void MoveRect(struct SparkalPoint);
+	void MoveRect(/*packed*/ struct SparkalPoint);
 	void MoveRect(long, long);
-	void OffsetRect(struct SparkalPoint);
-	void OffsetRect(struct SparkalSize);
+	void OffsetRect(/*packed*/ struct SparkalPoint);
+	void OffsetRect(/*packed*/ struct SparkalSize);
 	void OffsetRect(long, long);
 	void NormalizeRect();
-	int32_t IntersectRect(class MRect*, class MRect*);
-	int32_t UnionRect(class MRect*, class MRect*);
-	int32_t SubtractRect(class MRect*, class MRect*);
-	int32_t operator==(const struct SparkalRect&);
-	int32_t operator!=(const struct SparkalRect&);
-	void operator+=(class MRect*);
-	void operator+=(struct SparkalSize);
-	void operator+=(struct SparkalPoint);
-	void operator-=(class MRect*);
-	void operator-=(struct SparkalSize);
-	void operator-=(struct SparkalPoint);
-	void operator&=(const struct SparkalRect&);
-	void operator|=(const struct SparkalRect&);
-	class MRect operator+(struct SparkalSize);
-	class MRect operator+(class MRect*);
-	class MRect operator+(struct SparkalPoint);
-	class MRect operator-(class MRect*);
-	class MRect operator-(struct SparkalSize);
-	class MRect operator-(struct SparkalPoint);
-	class MRect operator&(const struct SparkalRect&);
-	class MRect operator|(const struct SparkalRect&);
+	int32_t IntersectRect(/*packed*/ class MRect*, /*packed*/ class MRect*);
+	int32_t UnionRect(/*packed*/ class MRect*, /*packed*/ class MRect*);
+	int32_t SubtractRect(/*packed*/ class MRect*, /*packed*/ class MRect*);
+	int32_t operator==(const /*packed*/ struct SparkalRect&);
+	int32_t operator!=(const /*packed*/ struct SparkalRect&);
+	void operator+=(/*packed*/ class MRect*);
+	void operator+=(/*packed*/ struct SparkalSize);
+	void operator+=(/*packed*/ struct SparkalPoint);
+	void operator-=(/*packed*/ class MRect*);
+	void operator-=(/*packed*/ struct SparkalSize);
+	void operator-=(/*packed*/ struct SparkalPoint);
+	void operator&=(const /*packed*/ struct SparkalRect&);
+	void operator|=(const /*packed*/ struct SparkalRect&);
+	/*packed*/ class MRect operator+(/*packed*/ struct SparkalSize);
+	/*packed*/ class MRect operator+(/*packed*/ class MRect*);
+	/*packed*/ class MRect operator+(/*packed*/ struct SparkalPoint);
+	/*packed*/ class MRect operator-(/*packed*/ class MRect*);
+	/*packed*/ class MRect operator-(/*packed*/ struct SparkalSize);
+	/*packed*/ class MRect operator-(/*packed*/ struct SparkalPoint);
+	/*packed*/ class MRect operator&(const /*packed*/ struct SparkalRect&);
+	/*packed*/ class MRect operator|(const /*packed*/ struct SparkalRect&);
 };
 
-// Type: class MRect;
+// Type: /*packed*/ class MRect;
 class MRect : public SparkalRect
 { // packed(0x10 bytes) TI: 0x1067
 public:
-	void MRect(struct SparkalPoint, struct SparkalPoint);
-	void MRect(struct SparkalPoint, struct SparkalSize);
-	void MRect(struct SparkalRect*);
-	void MRect(class MRect*);
-	void MRect(const struct SparkalRect&);
+	void MRect(/*packed*/ struct SparkalPoint, /*packed*/ struct SparkalPoint);
+	void MRect(/*packed*/ struct SparkalPoint, /*packed*/ struct SparkalSize);
+	void MRect(/*packed*/ struct SparkalRect*);
+	void MRect(/*packed*/ class MRect*);
+	void MRect(const /*packed*/ struct SparkalRect&);
 	void MRect(long, long, long, long);
 	void MRect();
 	long Width();
 	long Height();
-	class MSize Size();
-	const class MPoint& TopLeft();
-	class MPoint& TopLeft();
-	const class MPoint& BottomRight();
-	class MPoint& BottomRight();
-	class MPoint CenterPoint();
-	struct SparkalRect* operator struct SparkalRect *();
-	class MRect* operator class MRect *();
+	/*packed*/ class MSize Size();
+	const /*packed*/ class MPoint& TopLeft();
+	/*packed*/ class MPoint& TopLeft();
+	const /*packed*/ class MPoint& BottomRight();
+	/*packed*/ class MPoint& BottomRight();
+	/*packed*/ class MPoint CenterPoint();
+	/*packed*/ struct SparkalRect* operator struct SparkalRect *();
+	/*packed*/ class MRect* operator class MRect *();
 	int32_t IsRectEmpty();
 	int32_t IsRectNull();
-	int32_t PtInRect(struct SparkalPoint);
+	int32_t PtInRect(/*packed*/ struct SparkalPoint);
 	int32_t PtInRect(long, long);
-	int32_t DoesRectOverlap(struct SparkalRect*);
-	void SetRect(struct SparkalPoint, struct SparkalPoint);
+	int32_t DoesRectOverlap(/*packed*/ struct SparkalRect*);
+	void SetRect(/*packed*/ struct SparkalPoint, /*packed*/ struct SparkalPoint);
 	void SetRect(long, long, long, long);
 	void SetRectEmpty();
-	void CopyRect(class MRect*);
-	int32_t EqualRect(class MRect*);
+	void CopyRect(/*packed*/ class MRect*);
+	int32_t EqualRect(/*packed*/ class MRect*);
 	void InflateRect(long, long, long, long);
-	void InflateRect(class MRect*);
-	void InflateRect(struct SparkalSize);
+	void InflateRect(/*packed*/ class MRect*);
+	void InflateRect(/*packed*/ struct SparkalSize);
 	void InflateRect(long, long);
 	void DeflateRect(long, long, long, long);
-	void DeflateRect(class MRect*);
-	void DeflateRect(struct SparkalSize);
+	void DeflateRect(/*packed*/ class MRect*);
+	void DeflateRect(/*packed*/ struct SparkalSize);
 	void DeflateRect(long, long);
-	void MoveRect(struct SparkalPoint);
+	void MoveRect(/*packed*/ struct SparkalPoint);
 	void MoveRect(long, long);
-	void OffsetRect(struct SparkalPoint);
-	void OffsetRect(struct SparkalSize);
+	void OffsetRect(/*packed*/ struct SparkalPoint);
+	void OffsetRect(/*packed*/ struct SparkalSize);
 	void OffsetRect(long, long);
 	void NormalizeRect();
-	int32_t IntersectRect(class MRect*, class MRect*);
-	int32_t UnionRect(class MRect*, class MRect*);
-	int32_t SubtractRect(class MRect*, class MRect*);
-	int32_t operator==(const struct SparkalRect&);
-	int32_t operator!=(const struct SparkalRect&);
-	void operator+=(class MRect*);
-	void operator+=(struct SparkalSize);
-	void operator+=(struct SparkalPoint);
-	void operator-=(class MRect*);
-	void operator-=(struct SparkalSize);
-	void operator-=(struct SparkalPoint);
-	void operator&=(const struct SparkalRect&);
-	void operator|=(const struct SparkalRect&);
-	class MRect operator+(struct SparkalSize);
-	class MRect operator+(class MRect*);
-	class MRect operator+(struct SparkalPoint);
-	class MRect operator-(class MRect*);
-	class MRect operator-(struct SparkalSize);
-	class MRect operator-(struct SparkalPoint);
-	class MRect operator&(const struct SparkalRect&);
-	class MRect operator|(const struct SparkalRect&);
+	int32_t IntersectRect(/*packed*/ class MRect*, /*packed*/ class MRect*);
+	int32_t UnionRect(/*packed*/ class MRect*, /*packed*/ class MRect*);
+	int32_t SubtractRect(/*packed*/ class MRect*, /*packed*/ class MRect*);
+	int32_t operator==(const /*packed*/ struct SparkalRect&);
+	int32_t operator!=(const /*packed*/ struct SparkalRect&);
+	void operator+=(/*packed*/ class MRect*);
+	void operator+=(/*packed*/ struct SparkalSize);
+	void operator+=(/*packed*/ struct SparkalPoint);
+	void operator-=(/*packed*/ class MRect*);
+	void operator-=(/*packed*/ struct SparkalSize);
+	void operator-=(/*packed*/ struct SparkalPoint);
+	void operator&=(const /*packed*/ struct SparkalRect&);
+	void operator|=(const /*packed*/ struct SparkalRect&);
+	/*packed*/ class MRect operator+(/*packed*/ struct SparkalSize);
+	/*packed*/ class MRect operator+(/*packed*/ class MRect*);
+	/*packed*/ class MRect operator+(/*packed*/ struct SparkalPoint);
+	/*packed*/ class MRect operator-(/*packed*/ class MRect*);
+	/*packed*/ class MRect operator-(/*packed*/ struct SparkalSize);
+	/*packed*/ class MRect operator-(/*packed*/ struct SparkalPoint);
+	/*packed*/ class MRect operator&(const /*packed*/ struct SparkalRect&);
+	/*packed*/ class MRect operator|(const /*packed*/ struct SparkalRect&);
 };
 
-// Type: class basic_string<char> (forward reference);
+// Type: /*packed*/ class basic_string<char> (forward reference);
 class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
-	using reference_class = class basic_string_ref<char>;
-	using reference_pointer = class basic_string_ref<char>*;
+	using reference_class = /*unpacked*/ class basic_string_ref<char>;
+	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char> *reference;
+	/*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -431,44 +431,44 @@ private:
 	uint32_t find_first_not_of_str(char *, uint32_t, uint32_t);
 	uint32_t find_last_not_of_str(char *, uint32_t, uint32_t);
 public:
-	void basic_string<char>(const class vector<char>&);
+	void basic_string<char>(const /*packed*/ class vector<char>&);
 	void basic_string<char>(char, uint32_t);
 	void basic_string<char>(char *);
 	void basic_string<char>(char *, uint32_t);
-	void basic_string<char>(const class basic_string<char>&, uint32_t, uint32_t);
+	void basic_string<char>(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 	void basic_string<char>(uint32_t, enum capacity);
 	void basic_string<char>();
 protected:
 	void basic_string<char>(char *, uint32_t, uint32_t);
 	void delete_ref();
 	using char_type = char;
-	using baggage_type = struct string_char_baggage<char>;
+	using baggage_type = /*packed*/ struct string_char_baggage<char>;
 public:
 	void ~basic_string<char>();
-	class basic_string<char>& operator=(char);
-	class basic_string<char>& operator=(char *);
-	class basic_string<char>& operator=(const class basic_string<char>&);
-	class basic_string<char>& operator+=(char);
-	class basic_string<char>& operator+=(char *);
-	class basic_string<char>& operator+=(const class basic_string<char>&);
-	class vector<char> operator class vector<char>();
-	class basic_string<char>& append(char, uint32_t);
-	class basic_string<char>& append(char *);
-	class basic_string<char>& append(char *, uint32_t);
-	class basic_string<char>& append(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& assign(char, uint32_t);
-	class basic_string<char>& assign(char *);
-	class basic_string<char>& assign(char *, uint32_t);
-	class basic_string<char>& assign(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& insert(uint32_t, char, uint32_t);
-	class basic_string<char>& insert(uint32_t, char *);
-	class basic_string<char>& insert(uint32_t, char *, uint32_t);
-	class basic_string<char>& insert(uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& remove(uint32_t, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, char, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, char *);
-	class basic_string<char>& replace(uint32_t, uint32_t, char *, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& operator=(char);
+	/*packed*/ class basic_string<char>& operator=(char *);
+	/*packed*/ class basic_string<char>& operator=(const /*packed*/ class basic_string<char>&);
+	/*packed*/ class basic_string<char>& operator+=(char);
+	/*packed*/ class basic_string<char>& operator+=(char *);
+	/*packed*/ class basic_string<char>& operator+=(const /*packed*/ class basic_string<char>&);
+	/*packed*/ class vector<char> operator class vector<char>();
+	/*packed*/ class basic_string<char>& append(char, uint32_t);
+	/*packed*/ class basic_string<char>& append(char *);
+	/*packed*/ class basic_string<char>& append(char *, uint32_t);
+	/*packed*/ class basic_string<char>& append(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& assign(char, uint32_t);
+	/*packed*/ class basic_string<char>& assign(char *);
+	/*packed*/ class basic_string<char>& assign(char *, uint32_t);
+	/*packed*/ class basic_string<char>& assign(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char *);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char *, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& remove(uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char *);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char *, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 	char get_at(uint32_t);
 	void put_at(uint32_t, char);
 	char& operator[](uint32_t);
@@ -484,37 +484,37 @@ public:
 	uint32_t find(char, uint32_t);
 	uint32_t find(char *, uint32_t);
 	uint32_t find(char *, uint32_t, uint32_t);
-	uint32_t find(const class basic_string<char>&, uint32_t);
+	uint32_t find(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t rfind(char, uint32_t);
 	uint32_t rfind(char *, uint32_t);
 	uint32_t rfind(char *, uint32_t, uint32_t);
-	uint32_t rfind(const class basic_string<char>&, uint32_t);
+	uint32_t rfind(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_first_of(char, uint32_t);
 	uint32_t find_first_of(char *, uint32_t);
 	uint32_t find_first_of(char *, uint32_t, uint32_t);
-	uint32_t find_first_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_last_of(char, uint32_t);
 	uint32_t find_last_of(char *, uint32_t);
 	uint32_t find_last_of(char *, uint32_t, uint32_t);
-	uint32_t find_last_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_last_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_first_not_of(char, uint32_t);
 	uint32_t find_first_not_of(char *, uint32_t);
 	uint32_t find_first_not_of(char *, uint32_t, uint32_t);
-	uint32_t find_first_not_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_not_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_last_not_of(char, uint32_t);
 	uint32_t find_last_not_of(char *, uint32_t);
 	uint32_t find_last_not_of(char *, uint32_t, uint32_t);
-	uint32_t find_last_not_of(const class basic_string<char>&, uint32_t);
-	class basic_string<char> substr(uint32_t, uint32_t);
+	uint32_t find_last_not_of(const /*packed*/ class basic_string<char>&, uint32_t);
+	/*packed*/ class basic_string<char> substr(uint32_t, uint32_t);
 	int32_t compare(char, uint32_t, uint32_t);
 	int32_t compare(char *, uint32_t);
 	int32_t compare(char *, uint32_t, uint32_t);
-	int32_t compare(const class basic_string<char>&, uint32_t, uint32_t);
+	int32_t compare(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 };
 
 // Type: uint32_t;
 
-// Type: struct SparkalRect;
+// Type: /*packed*/ struct SparkalRect;
 struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	long left;
 	long top;
@@ -524,7 +524,7 @@ struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	void SparkalRect();
 };
 
-// Type: struct SparkalPoint;
+// Type: /*packed*/ struct SparkalPoint;
 struct SparkalPoint{ // packed(0x8 bytes) TI: 0x1a54
 	long x;
 	long y;
@@ -532,7 +532,7 @@ struct SparkalPoint{ // packed(0x8 bytes) TI: 0x1a54
 	void SparkalPoint();
 };
 
-// Type: struct bidirectional_iterator<HotSpot,int>;
+// Type: /*packed*/ struct bidirectional_iterator<HotSpot,int>;
 struct bidirectional_iterator<HotSpot,int>{ // packed(0x1 bytes) TI: 0x1f71
 };
 
@@ -540,7 +540,7 @@ struct bidirectional_iterator<HotSpot,int>{ // packed(0x1 bytes) TI: 0x1f71
 
 // Contribution: 1:00070f70-00073776 Module: 36, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00471f70
-void HangarWindow::HangarWindow(int32_t nNewID, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
+void HangarWindow::HangarWindow(int32_t nNewID, /*unpacked*/ class GraphicWindow *windowNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
 	__asm        jmp    near ptr 0x00471F81;
 
@@ -1047,9 +1047,9 @@ _T240:
 
 // FUNCTION: COPTER_D 0x00472611
 int32_t HangarWindow::Initialize() {
-	class ButtonWindow *tempButtonWindow;
+	/*packed*/ class ButtonWindow *tempButtonWindow;
 	char * szButtonFileName;
-	class basic_string<char> sText;
+	/*packed*/ class basic_string<char> sText;
 	int32_t nFullStringID;
 
 // LINE 76:
@@ -1751,7 +1751,7 @@ _T93e:
 }
 
 // FUNCTION: COPTER_D 0x00472f61
-int32_t HangarWindow::ReadPalette(struct SparkalColor *pColorTable) {
+int32_t HangarWindow::ReadPalette(/*packed*/ struct SparkalColor *pColorTable) {
 // LINE 122:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x64], 0;
@@ -2224,7 +2224,7 @@ _T252:
 }
 
 // FUNCTION: COPTER_D 0x004734ed
-int32_t HangarWindow::DoMessage(class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
+int32_t HangarWindow::DoMessage(/*unpacked*/ class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 	long lOwnerMessage;
 
 // LINE 186:
@@ -2775,8 +2775,8 @@ _T30b:
 }
 
 // FUNCTION: COPTER_D 0x00473b5c
-int32_t HangarWindow::GetHotspotFromPosition(long& lHelpID, class MPoint& ptPosition) {
-	class list<HotSpot>::iterator iterator;
+int32_t HangarWindow::GetHotspotFromPosition(long& lHelpID, /*packed*/ class MPoint& ptPosition) {
+	/*packed*/ class list<HotSpot>::iterator iterator;
 	int32_t i;
 
 // LINE 293:
@@ -2986,9 +2986,9 @@ _T15c:
 }
 
 // FUNCTION: COPTER_D 0x00473de1
-int32_t HangarWindow::IsHangarRectVisibleInWindow(class MRect& rectHangar) {
-	class MRect rectCompare;
-	class MRect rectWindowLocal;
+int32_t HangarWindow::IsHangarRectVisibleInWindow(/*packed*/ class MRect& rectHangar) {
+	/*packed*/ class MRect rectCompare;
+	/*packed*/ class MRect rectWindowLocal;
 
 // LINE 367:
 	__asm        mov    eax, rectHangar;
@@ -3072,7 +3072,7 @@ _Td8:
 }
 
 // FUNCTION: COPTER_D 0x00473ec5
-void HangarWindow::ClipRectToWindow(class MRect& rectToClip) {
+void HangarWindow::ClipRectToWindow(/*packed*/ class MRect& rectToClip) {
 // LINE 384:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, rectToClip;
@@ -3117,9 +3117,9 @@ _T82:
 }
 
 // FUNCTION: COPTER_D 0x00473f53
-void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
-	class MRect rectTempChildWindow;
-	class basic_string<char> sHelp;
+void HangarWindow::DisplayHelp(int32_t nHelp, /*packed*/ class MPoint& ptHelp) {
+	/*packed*/ class MRect rectTempChildWindow;
+	/*packed*/ class basic_string<char> sHelp;
 	int32_t nFullStringID;
 
 // LINE 440:
@@ -3640,7 +3640,7 @@ void HangarWindow::HideHelp() {
 }
 
 // FUNCTION: COPTER_D 0x004745a5
-int32_t HangarWindow::GetSoundFileNameFromHelpID(long __formal, class basic_string<char>& sSoundFileName) {
+int32_t HangarWindow::GetSoundFileNameFromHelpID(long __formal, /*packed*/ class basic_string<char>& sSoundFileName) {
 // LINE 496:
 	__asm        push   0x10;
 	__asm        call   operator new;

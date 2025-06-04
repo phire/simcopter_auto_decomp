@@ -8,9 +8,9 @@
 
 // Type: int32_t;
 
-// Type: union _LARGE_INTEGER;
+// Type: /*packed*/ union _LARGE_INTEGER;
 
-// Type: struct FREQ_INFO;
+// Type: /*packed*/ struct FREQ_INFO;
 struct FREQ_INFO{ // packed(0x10 bytes) TI: 0x2a8f
 	unsigned long in_cycles;
 	unsigned long ex_ticks;
@@ -20,7 +20,7 @@ struct FREQ_INFO{ // packed(0x10 bytes) TI: 0x2a8f
 
 // Type: unsigned short;
 
-// Type: struct FREQ_INFO (forward reference);
+// Type: /*packed*/ struct FREQ_INFO (forward reference);
 struct FREQ_INFO{ // packed(0x10 bytes) TI: 0x2a8f
 	unsigned long in_cycles;
 	unsigned long ex_ticks;
@@ -42,17 +42,17 @@ int32_t DllMain(void * __ptr32 hDLL, unsigned long dwReason, void * __ptr32 lpRe
 }
 
 // FUNCTION: COPTER_D 0x00447b77
-struct FREQ_INFO cpuspeed(int32_t clocks) {
+/*packed*/ struct FREQ_INFO cpuspeed(int32_t clocks) {
 	int32_t tries;
 	unsigned long cycles;
-	union _LARGE_INTEGER t1;
+	/*packed*/ union _LARGE_INTEGER t1;
 	unsigned long freq3;
-	union _LARGE_INTEGER t0;
+	/*packed*/ union _LARGE_INTEGER t0;
 	unsigned long freq2;
 	unsigned long total;
-	union _LARGE_INTEGER count_freq;
+	/*packed*/ union _LARGE_INTEGER count_freq;
 	unsigned long freq;
-	struct FREQ_INFO cpu_speed;
+	/*packed*/ struct FREQ_INFO cpu_speed;
 	unsigned short processor;
 	unsigned long features;
 	unsigned long stamp0;

@@ -4,19 +4,19 @@
 
 // Type: int32_t;
 
-// Type: struct _dPoint2d (forward reference);
+// Type: /*packed*/ struct _dPoint2d (forward reference);
 struct _dPoint2d{ // packed(0x10 bytes) TI: 0x2766
 	double x;
 	double z;
 };
 
-// Type: struct _fPoint2d (forward reference);
+// Type: /*packed*/ struct _fPoint2d (forward reference);
 struct _fPoint2d{ // packed(0x8 bytes) TI: 0x3008
 	int32_t x;
 	int32_t z;
 };
 
-// Type: struct Point3d (forward reference);
+// Type: /*packed*/ struct Point3d (forward reference);
 struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 	int32_t x;
 	int32_t y;
@@ -1827,13 +1827,13 @@ _T5a4:
 
 // Contribution: 2:00004338-0000442f Module: 157, 8 byte alignment, initialized_data, read, 
 // GLOBAL: COPTER_D 0x00593338
-static const struct _dPoint2d OT[4] = { 0 /* todo */ };
+static const /*packed*/ struct _dPoint2d OT[4] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00593378
-static const struct _dPoint2d RRT[4] = { 0 /* todo */ };
+static const /*packed*/ struct _dPoint2d RRT[4] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005933b8
-static const struct _dPoint2d LRT[4] = { 0 /* todo */ };
+static const /*packed*/ struct _dPoint2d LRT[4] = { 0 /* todo */ };
 
 
 
@@ -1845,20 +1845,20 @@ static const struct _dPoint2d LRT[4] = { 0 /* todo */ };
 int32_t DiagMatrix[4][4][4];
 
 // GLOBAL: COPTER_D 0x0062bb00
-struct Point3d DiagVector[4];
+/*packed*/ struct Point3d DiagVector[4];
 
 // GLOBAL: COPTER_D 0x0062bb30
 int32_t DTT[4][10][3];
 
 // GLOBAL: COPTER_D 0x0062bd10
-struct Point3d DVT[4][4][10][3];
+/*packed*/ struct Point3d DVT[4][4][10][3];
 
 // GLOBAL: COPTER_D 0x0062d390
-struct _fPoint2d OTT[4][4][11];
+/*packed*/ struct _fPoint2d OTT[4][4][11];
 
 // GLOBAL: COPTER_D 0x0062d910
 int32_t RMT[4][4][10][3][4][4];
 
 // GLOBAL: COPTER_D 0x00635110
-struct Point3d DiagOffset[4][4];
+/*packed*/ struct Point3d DiagOffset[4][4];
 

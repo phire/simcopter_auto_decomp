@@ -4,7 +4,7 @@
 
 // Type: unsigned short *;
 
-// Type: class CRLECompressedImage (forward reference);
+// Type: /*packed*/ class CRLECompressedImage (forward reference);
 class CRLECompressedImage{ // packed(0xc bytes) TI: 0x2b8a
 public:
 	static unsigned short * RLEGraphicsPool;
@@ -12,18 +12,18 @@ public:
 	static void * __ptr32 operator new(uint32_t);
 	// calltype: NearC
 	static void operator delete(void * __ptr32);
-	void CRLECompressedImage(const class CFlatImage*, long, long, long, long, int32_t);
+	void CRLECompressedImage(const /*packed*/ class CFlatImage*, long, long, long, long, int32_t);
 	void CRLECompressedImage(long);
 	void ~CRLECompressedImage();
 	unsigned long Lock();
 	unsigned long Unlock();
 	long GetHeight();
 	long GetWidth();
-	unsigned long Compose(class IFlatImage*, long, long, long, long, long, long);
-	unsigned long Compose(class IFlatImage*, long, long);
+	unsigned long Compose(/*unpacked*/ class IFlatImage*, long, long, long, long, long, long);
+	unsigned long Compose(/*unpacked*/ class IFlatImage*, long, long);
 protected:
 	void * __ptr32 mhRLEImage;
-	struct RLEHeader *mpLockedImage;
+	/*packed*/ struct RLEHeader *mpLockedImage;
 	unsigned long mLockCount;
 };
 
@@ -31,7 +31,7 @@ protected:
 
 // Type: int32_t;
 
-// Type: class ifstream;
+// Type: /*unpacked*/ class ifstream;
 // VTABLE: COPTER_D 0x00593e2c
 class ifstream : public virtual ios, public istream, public virtual <indirect> ios
 { // not packed(0x5c bytes) TI: 0x2177
@@ -41,8 +41,8 @@ public:
 	void ifstream(char *, int32_t, int32_t);
 	void ifstream();
 	virtual void ~ifstream() /* override */;
-	class streambuf* setbuf(char *, int32_t);
-	class filebuf* rdbuf();
+	/*unpacked*/ class streambuf* setbuf(char *, int32_t);
+	/*unpacked*/ class filebuf* rdbuf();
 	void attach(int32_t);
 	int32_t fd();
 	int32_t is_open();
@@ -53,7 +53,7 @@ public:
 
 // Type: char;
 
-// Type: class ostrstream;
+// Type: /*unpacked*/ class ostrstream;
 // VTABLE: COPTER_D 0x00593b34
 class ostrstream : public ostream, public virtual <indirect> ios
 { // not packed(0x58 bytes) TI: 0x217a
@@ -63,13 +63,13 @@ public:
 	void ostrstream();
 	virtual void ~ostrstream() /* override */;
 	int32_t pcount();
-	class strstreambuf* rdbuf();
+	/*unpacked*/ class strstreambuf* rdbuf();
 	char * str();
 };
 
 // Type: unsigned long;
 
-// Type: struct RLEHeader (forward reference);
+// Type: /*packed*/ struct RLEHeader (forward reference);
 struct RLEHeader{ // packed(0x8 bytes) TI: 0x218b
 	short Width;
 	short Height;
@@ -79,12 +79,12 @@ struct RLEHeader{ // packed(0x8 bytes) TI: 0x218b
 
 // Type: void;
 
-// Type: class CFlatImage (forward reference);
+// Type: /*packed*/ class CFlatImage (forward reference);
 // VTABLE: COPTER_D 0x00591070
 class CFlatImage : public IFlatImage
 { // packed(0x1c bytes) TI: 0x20e3
 public:
-	void CFlatImage(class IFlatImage*, long, long, long, long);
+	void CFlatImage(/*unpacked*/ class IFlatImage*, long, long, long, long);
 	void CFlatImage(long, long, unsigned char);
 	void CFlatImage();
 	virtual void ~CFlatImage(); // vtable+0x1c
@@ -94,7 +94,7 @@ protected:
 	void * __ptr32 mBitsHandle;
 };
 
-// Type: class IFlatImage (forward reference);
+// Type: /*packed*/ class IFlatImage (forward reference);
 // VTABLE: COPTER_D 0x00591050
 class IFlatImage{ // packed(0x18 bytes) TI: 0x13a1
 public:
@@ -107,11 +107,11 @@ public:
 	long GetWidth();
 	void * __ptr32 GetBitsPointer();
 	long GetStride();
-	virtual unsigned long Compose(class IFlatImage*, long, long, long, long, long, long); // vtable+0xc
-	unsigned long Compose(class IFlatImage*, long, long);
-	virtual unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long); // vtable+0x10
-	virtual unsigned long StretchCompose(class IFlatImage*, struct SparkalRect, struct SparkalRect); // vtable+0x14
-	virtual unsigned long FillRect(long, struct SparkalRect*); // vtable+0x18
+	virtual unsigned long Compose(/*packed*/ class IFlatImage*, long, long, long, long, long, long); // vtable+0xc
+	unsigned long Compose(/*packed*/ class IFlatImage*, long, long);
+	virtual unsigned long StretchCompose(/*packed*/ class IFlatImage*, long, long, long, long, long, long, long, long); // vtable+0x10
+	virtual unsigned long StretchCompose(/*packed*/ class IFlatImage*, /*packed*/ struct SparkalRect, /*packed*/ struct SparkalRect); // vtable+0x14
+	virtual unsigned long FillRect(long, /*packed*/ struct SparkalRect*); // vtable+0x18
 	void DrawPixel(unsigned char, long, long);
 	unsigned char GetPixel(long, long);
 	static unsigned long lTotalMemoryUsage;
@@ -130,70 +130,70 @@ protected:
 
 // Type: unsigned char;
 
-// Type: class IFlatImage (forward reference);
+// Type: /*unpacked*/ class IFlatImage (forward reference);
 // IFlatImage Class implementation not found
 
-// Type: class ios (forward reference);
+// Type: /*unpacked*/ class ios (forward reference);
 // ios Class implementation not found
 
-// Type: class istream;
+// Type: /*unpacked*/ class istream;
 // VTABLE: COPTER_D 0x00593ea4
 class istream : public virtual ios
 { // not packed(0x5c bytes) TI: 0x4177
 public:
 	int32_t *ios[0];
-	void istream(class ios&);
-	void istream(const class istream&);
+	void istream(/*unpacked*/ class ios&);
+	void istream(const /*unpacked*/ class istream&);
 	void istream();
-	void istream(class streambuf*);
+	void istream(/*unpacked*/ class streambuf*);
 	virtual void ~istream() /* override */;
 	int32_t ipfx(int32_t);
 	void isfx();
-	class istream& operator>>(class streambuf*);
-	class istream& operator>>(double&);
-	class istream& operator>>(double&);
-	class istream& operator>>(float&);
-	class istream& operator>>(unsigned long&);
-	class istream& operator>>(long&);
-	class istream& operator>>(uint32_t&);
-	class istream& operator>>(int32_t&);
-	class istream& operator>>(unsigned short&);
-	class istream& operator>>(short&);
-	class istream& operator>>(char&);
-	class istream& operator>>(unsigned char&);
-	class istream& operator>>(char&);
-	class istream& operator>>(char *);
-	class istream& operator>>(unsigned char *);
-	class istream& operator>>(char *);
-	class istream& operator>>(class ios& (*)(class ios&));
-	class istream& operator>>(class istream& (*)(class istream&));
-	class istream& get(char *, int32_t, int32_t);
-	class istream& get(class streambuf&, char);
-	class istream& get(char&);
-	class istream& get(unsigned char&);
-	class istream& get(char&);
-	class istream& get(char *, int32_t, char);
-	class istream& get(unsigned char *, int32_t, char);
-	class istream& get(char *, int32_t, char);
+	/*unpacked*/ class istream& operator>>(/*unpacked*/ class streambuf*);
+	/*unpacked*/ class istream& operator>>(double&);
+	/*unpacked*/ class istream& operator>>(double&);
+	/*unpacked*/ class istream& operator>>(float&);
+	/*unpacked*/ class istream& operator>>(unsigned long&);
+	/*unpacked*/ class istream& operator>>(long&);
+	/*unpacked*/ class istream& operator>>(uint32_t&);
+	/*unpacked*/ class istream& operator>>(int32_t&);
+	/*unpacked*/ class istream& operator>>(unsigned short&);
+	/*unpacked*/ class istream& operator>>(short&);
+	/*unpacked*/ class istream& operator>>(char&);
+	/*unpacked*/ class istream& operator>>(unsigned char&);
+	/*unpacked*/ class istream& operator>>(char&);
+	/*unpacked*/ class istream& operator>>(char *);
+	/*unpacked*/ class istream& operator>>(unsigned char *);
+	/*unpacked*/ class istream& operator>>(char *);
+	/*unpacked*/ class istream& operator>>(/*unpacked*/ class ios& (*)(/*unpacked*/ class ios&));
+	/*unpacked*/ class istream& operator>>(/*unpacked*/ class istream& (*)(/*unpacked*/ class istream&));
+	/*unpacked*/ class istream& get(char *, int32_t, int32_t);
+	/*unpacked*/ class istream& get(/*unpacked*/ class streambuf&, char);
+	/*unpacked*/ class istream& get(char&);
+	/*unpacked*/ class istream& get(unsigned char&);
+	/*unpacked*/ class istream& get(char&);
+	/*unpacked*/ class istream& get(char *, int32_t, char);
+	/*unpacked*/ class istream& get(unsigned char *, int32_t, char);
+	/*unpacked*/ class istream& get(char *, int32_t, char);
 	int32_t get();
-	class istream& getline(char *, int32_t, char);
-	class istream& getline(unsigned char *, int32_t, char);
-	class istream& getline(char *, int32_t, char);
-	class istream& ignore(int32_t, int32_t);
-	class istream& read(char *, int32_t);
-	class istream& read(unsigned char *, int32_t);
-	class istream& read(char *, int32_t);
+	/*unpacked*/ class istream& getline(char *, int32_t, char);
+	/*unpacked*/ class istream& getline(unsigned char *, int32_t, char);
+	/*unpacked*/ class istream& getline(char *, int32_t, char);
+	/*unpacked*/ class istream& ignore(int32_t, int32_t);
+	/*unpacked*/ class istream& read(char *, int32_t);
+	/*unpacked*/ class istream& read(unsigned char *, int32_t);
+	/*unpacked*/ class istream& read(char *, int32_t);
 	int32_t gcount();
 	int32_t peek();
-	class istream& putback(char);
+	/*unpacked*/ class istream& putback(char);
 	int32_t sync();
-	class istream& seekg(long, enum ios::seek_dir);
-	class istream& seekg(long);
+	/*unpacked*/ class istream& seekg(long, enum ios::seek_dir);
+	/*unpacked*/ class istream& seekg(long);
 	long tellg();
 	void eatwhite();
 protected:
-	class istream& operator=(const class istream&);
-	class istream& operator=(class streambuf*);
+	/*unpacked*/ class istream& operator=(const /*unpacked*/ class istream&);
+	/*unpacked*/ class istream& operator=(/*unpacked*/ class streambuf*);
 	int32_t do_ipfx(int32_t);
 private:
 	int32_t getint(char *);
@@ -202,7 +202,7 @@ private:
 	int32_t x_gcount;
 };
 
-// Type: class ios;
+// Type: /*unpacked*/ class ios;
 // VTABLE: COPTER_D 0x00593ad4
 class ios{ // not packed(0x50 bytes) TI: 0x4126
 	enum io_state {
@@ -247,9 +247,9 @@ public:
 	static const long basefield;
 	static const long adjustfield;
 	static const long floatfield;
-	void ios(const class ios&);
+	void ios(const /*unpacked*/ class ios&);
 	void ios();
-	void ios(class streambuf*);
+	void ios(/*unpacked*/ class streambuf*);
 	virtual void ~ios(); // vtable+0x0
 	long flags(long);
 	long flags();
@@ -258,8 +258,8 @@ public:
 	long unsetf(long);
 	int32_t width(int32_t);
 	int32_t width();
-	class ostream* tie();
-	class ostream* tie(class ostream*);
+	/*unpacked*/ class ostream* tie();
+	/*unpacked*/ class ostream* tie(/*unpacked*/ class ostream*);
 	char fill(char);
 	char fill();
 	int32_t precision();
@@ -272,7 +272,7 @@ public:
 	int32_t eof();
 	int32_t fail();
 	int32_t bad();
-	class streambuf* rdbuf();
+	/*unpacked*/ class streambuf* rdbuf();
 	long& iword(int32_t);
 	void * __ptr32& pword(int32_t);
 	// calltype: NearC
@@ -294,21 +294,21 @@ public:
 	// calltype: NearC
 	void unlockbuf();
 protected:
-	class ios& operator=(const class ios&);
-	void init(class streambuf*);
+	/*unpacked*/ class ios& operator=(const /*unpacked*/ class ios&);
+	void init(/*unpacked*/ class streambuf*);
 	enum /* __unnamed */ {
 		skipping = 0,
 		tied = 1,
 	};
 protected:
-	class streambuf *bp;
+	/*unpacked*/ class streambuf *bp;
 	int32_t state;
 	int32_t ispecial;
 	int32_t ospecial;
 	int32_t isfx_special;
 	int32_t osfx_special;
 	int32_t x_delbuf;
-	class ostream *x_tie;
+	/*unpacked*/ class ostream *x_tie;
 	long x_flags;
 	int32_t x_precision;
 	char x_fill;
@@ -318,7 +318,7 @@ protected:
 	static void lockc();
 	// calltype: NearC
 	static void unlockc();
-	struct _CRT_CRITICAL_SECTION* lockptr();
+	/*unpacked*/ struct _CRT_CRITICAL_SECTION* lockptr();
 public:
 	void delbuf(int32_t);
 	int32_t delbuf();
@@ -328,12 +328,12 @@ private:
 	static int32_t sunk_with_stdio;
 	static long x_statebuf[8];
 	static int32_t fLockcInit;
-	static struct _CRT_CRITICAL_SECTION x_lockc;
+	static /*unpacked*/ struct _CRT_CRITICAL_SECTION x_lockc;
 	int32_t LockFlg;
-	struct _CRT_CRITICAL_SECTION x_lock;
+	/*unpacked*/ struct _CRT_CRITICAL_SECTION x_lock;
 };
 
-// Type: class ostream (forward reference);
+// Type: /*unpacked*/ class ostream (forward reference);
 // ostream Class implementation not found
 
 
@@ -342,9 +342,9 @@ private:
 // FUNCTION: COPTER_D 0x004aa800
 void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 	int32_t InputMode;
-	class ifstream InputFile;
+	/*unpacked*/ class ifstream InputFile;
 	char FileName[13];
-	class ostrstream NameOut;
+	/*unpacked*/ class ostrstream NameOut;
 
 
 	__asm        mov    eax, this;
@@ -497,7 +497,7 @@ _T21e:
 	__asm        je     _T375;
 // LINE 79:
 // Block start:
-	struct RLEHeader *pCompressedImage;
+	/*packed*/ struct RLEHeader *pCompressedImage;
 	__asm        mov    pCompressedImage, 0;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -602,7 +602,7 @@ _T375:
 }
 
 // FUNCTION: COPTER_D 0x004aabb7
-void CRLECompressedImage::CRLECompressedImage(const class CFlatImage *pImage, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom, int32_t TransparentIndex) {
+void CRLECompressedImage::CRLECompressedImage(const /*packed*/ class CFlatImage *pImage, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom, int32_t TransparentIndex) {
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0;
@@ -791,7 +791,7 @@ _Tb8:
 }
 
 // FUNCTION: COPTER_D 0x004aae02
-unsigned long CRLECompressedImage::Compose(class IFlatImage *pDest, long DestLeft, long DestTop, long ClipLeft, long ClipTop, long ClipRight, long ClipBottom) {
+unsigned long CRLECompressedImage::Compose(/*packed*/ class IFlatImage *pDest, long DestLeft, long DestTop, long ClipLeft, long ClipTop, long ClipRight, long ClipBottom) {
 // LINE 157:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -1031,7 +1031,7 @@ _T253:
 }
 
 // FUNCTION: COPTER_D 0x004ab063
-static void ConvertCompressedByteOrdering(struct RLEHeader *pCompressedImage) {
+static void ConvertCompressedByteOrdering(/*packed*/ struct RLEHeader *pCompressedImage) {
 // LINE 312:
 	__asm        jmp    near ptr 0x004AB06E;
 }

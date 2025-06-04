@@ -4,33 +4,33 @@
 
 // Type: char *;
 
-// Type: class CopterGameMode (forward reference);
+// Type: /*packed*/ class CopterGameMode (forward reference);
 class CopterGameMode{ // packed(0x4 bytes) TI: 0x170f
 public:
 	int32_t nModeID;
-	void CopterGameMode(const class CopterGameMode&);
+	void CopterGameMode(const /*packed*/ class CopterGameMode&);
 	void CopterGameMode(int32_t);
 	void CopterGameMode();
-	class CopterGameMode& operator=(const class CopterGameMode&);
+	/*packed*/ class CopterGameMode& operator=(const /*packed*/ class CopterGameMode&);
 };
 
 // Type: void;
 
 // Type: int32_t;
 
-// Type: class GameModeCoreData (forward reference);
+// Type: /*packed*/ class GameModeCoreData (forward reference);
 // VTABLE: COPTER_D 0x005923c0
 class GameModeCoreData{ // packed(0x14 bytes) TI: 0x1853
 public:
 	void GameModeCoreData();
 	virtual void ~GameModeCoreData(); // vtable+0x0
 	long lPauseCount;
-	struct SparkalColor *pColorTable;
-	class CGameApp *pGameApp;
-	class ScreenWindow *pScreenWindow;
+	/*packed*/ struct SparkalColor *pColorTable;
+	/*unpacked*/ class CGameApp *pGameApp;
+	/*packed*/ class ScreenWindow *pScreenWindow;
 };
 
-// Type: class GameModeMainMenuData (forward reference);
+// Type: /*packed*/ class GameModeMainMenuData (forward reference);
 // VTABLE: COPTER_D 0x005923c4
 class GameModeMainMenuData : public GameModeCoreData
 { // packed(0x18 bytes) TI: 0x41e1
@@ -41,36 +41,36 @@ public:
 	int32_t CreateAllSurfaces();
 	int32_t DestroyAllSurfaces();
 	void Shutdown();
-	class SmackerBackBuffer *myVideoBuffer;
+	/*unpacked*/ class SmackerBackBuffer *myVideoBuffer;
 };
 
 // Type: char;
 
-// Type: struct UserMenuWindowDescription;
+// Type: /*packed*/ struct UserMenuWindowDescription;
 struct UserMenuWindowDescription{ // packed(0x54 bytes) TI: 0x101b
-	class basic_string<char> sImageFileName;
+	/*packed*/ class basic_string<char> sImageFileName;
 	int32_t nTransparentIndex;
-	class MRect rectPosition;
+	/*packed*/ class MRect rectPosition;
 	long lMenuStringResourceIndex;
 	long lMenuStringResourceCount;
 	long lSelectionBase;
-	struct SparkalColor colorFont;
-	struct SparkalColor colorFontHighlighted;
-	class MPoint ptPositionFirstItem;
+	/*packed*/ struct SparkalColor colorFont;
+	/*packed*/ struct SparkalColor colorFontHighlighted;
+	/*packed*/ class MPoint ptPositionFirstItem;
 	int32_t nSizeItemFont;
 	int32_t nLineHeight;
 	long lTitleStringResourceIndex;
 	int32_t bTitleCentered;
-	class MPoint ptTitlePosition;
+	/*packed*/ class MPoint ptTitlePosition;
 	int32_t nSizeTitleFont;
 };
 
-// Type: class UserMenuWindow (forward reference);
+// Type: /*packed*/ class UserMenuWindow (forward reference);
 // VTABLE: COPTER_D 0x005912f8
 class UserMenuWindow : public GraphicWindow
 { // packed(0x152 bytes) TI: 0x45d0
 public:
-	void UserMenuWindow(struct UserMenuWindowDescription&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
+	void UserMenuWindow(/*packed*/ struct UserMenuWindowDescription&, int32_t, /*unpacked*/ class GraphicWindow*, /*packed*/ class GraphicWindowOwner*, int32_t);
 	void UserMenuWindow();
 	virtual void ~UserMenuWindow() /* override */;
 	virtual int32_t Initialize() /* override */;
@@ -88,14 +88,14 @@ public:
 protected:
 	virtual void DrawSelectionIndicators(); // vtable+0xdc
 	virtual int32_t DoCursorHitTest(int32_t&, long, long); // vtable+0xe0
-	virtual int32_t GetPositionOfNthItem(int32_t, class MPoint&); // vtable+0xe4
-	struct UserMenuWindowDescription myUserMenuWindowDescription;
-	class vector<TextWindow *> myTextWindowPtrArray;
+	virtual int32_t GetPositionOfNthItem(int32_t, /*packed*/ class MPoint&); // vtable+0xe4
+	/*packed*/ struct UserMenuWindowDescription myUserMenuWindowDescription;
+	/*packed*/ class vector<TextWindow *> myTextWindowPtrArray;
 	int32_t nCurrentSelection;
-	class DigitalSound soundSelectionChange;
+	/*packed*/ class DigitalSound soundSelectionChange;
 };
 
-// Type: class GameModePickCareerCityData (forward reference);
+// Type: /*packed*/ class GameModePickCareerCityData (forward reference);
 // VTABLE: COPTER_D 0x005923c8
 class GameModePickCareerCityData : public GameModeCoreData
 { // packed(0x30 bytes) TI: 0x45d6
@@ -111,24 +111,24 @@ public:
 	int32_t CreateAllSurfaces();
 	int32_t DestroyAllSurfaces();
 	void Shutdown();
-	class SmackerBackBuffer *myVideoBuffer;
+	/*unpacked*/ class SmackerBackBuffer *myVideoBuffer;
 	int32_t nSubMode;
-	class MRect rectVideo;
+	/*packed*/ class MRect rectVideo;
 	int32_t bFirstCareerCityData;
 };
 
-// Type: class CareerWindow (forward reference);
+// Type: /*packed*/ class CareerWindow (forward reference);
 // VTABLE: COPTER_D 0x00590ef4
 class CareerWindow : public GraphicWindow
 { // packed(0x840 bytes) TI: 0x47a5
 public:
-	void CareerWindow(class MRect&, int32_t, void * __ptr32, long *, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t);
+	void CareerWindow(/*packed*/ class MRect&, int32_t, void * __ptr32, long *, /*unpacked*/ class GraphicWindow*, /*packed*/ class GraphicWindowOwner*, int32_t, int32_t);
 	virtual void ~CareerWindow() /* override */;
 	virtual int32_t Initialize() /* override */;
 	virtual int32_t DrawSelf() /* override */;
 	virtual int32_t CreateImage(int32_t) /* override */;
 	virtual void DestroyImage() /* override */;
-	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32) /* override */;
+	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32) /* override */;
 	virtual long DoKeyDown(long, char) /* override */;
 	virtual long DoCursorDown(long, long, unsigned long) /* override */;
 	virtual long DoCursorMove(long, long) /* override */;
@@ -138,31 +138,31 @@ public:
 	public:
 		void CitySelectionFrame(int32_t, int32_t, int32_t);
 		virtual void ~CitySelectionFrame(); // vtable+0x0
-		void FillDestinationPoints(class MPoint*);
-		void FillSourceRects(class MRect*);
+		void FillDestinationPoints(/*packed*/ class MPoint*);
+		void FillSourceRects(/*packed*/ class MRect*);
 		int32_t bLeft;
 		int32_t bTop;
 		int32_t bSelected;
-		class MRect rectFrame[4];
+		/*packed*/ class MRect rectFrame[4];
 	};
 protected:
 	void DrawCitySelection();
-	void GetCoordinatesForCitySelections(class MPoint[4]*, class MRect[4]*);
+	void GetCoordinatesForCitySelections(/*packed*/ class MPoint[4]*, /*packed*/ class MRect[4]*);
 	long lCurrentCitySelection;
-	class MRect rectCities[3];
+	/*packed*/ class MRect rectCities[3];
 	long lCities[3];
 	int32_t nCityCount;
 	int32_t bAllowCancel;
-	class SmackerBackBuffer mySmackerBackBuffers[3];
+	/*packed*/ class SmackerBackBuffer mySmackerBackBuffers[3];
 	void * __ptr32 myPlatformWindow;
-	class TextWindow *cityNameTextWindow;
-	class TextWindow *cityLevelTextWindow;
-	class CBackBuffer *mySelectionImage;
+	/*unpacked*/ class TextWindow *cityNameTextWindow;
+	/*unpacked*/ class TextWindow *cityLevelTextWindow;
+	/*unpacked*/ class CBackBuffer *mySelectionImage;
 };
 
 // Type: long *;
 
-// Type: class GameModePlayData (forward reference);
+// Type: /*packed*/ class GameModePlayData (forward reference);
 // VTABLE: COPTER_D 0x005923cc
 class GameModePlayData : public GameModeCoreData
 { // packed(0xb18 bytes) TI: 0x47a7
@@ -212,92 +212,92 @@ public:
 	int32_t bShowingPanels;
 	int32_t bShowingEquipment;
 	int32_t bUserWasInHelicopterOnLastCheck;
-	class CBackBuffer *pStretchBuffer;
-	class SkyImage *pSkyImage;
-	class GraphicWindow *pPanel0;
-	class GraphicWindow *pPanel1;
-	class GraphicWindow *pPanel2;
-	class GraphicWindow *pPanel3;
-	class RadioCompassWindow *pPanel4;
-	class MapWindow *pPanel5;
-	class DialWindow *pPanel6;
-	class GraphicWindow *pFlap0;
-	class GraphicWindow *pFlap1;
-	class GraphicWindow *pFlap2;
-	class GraphicWindow *pFlap3;
-	class PassengerWindow *pPassengerWindow;
-	struct CommandSystem commandSystem;
+	/*unpacked*/ class CBackBuffer *pStretchBuffer;
+	/*unpacked*/ class SkyImage *pSkyImage;
+	/*unpacked*/ class GraphicWindow *pPanel0;
+	/*unpacked*/ class GraphicWindow *pPanel1;
+	/*unpacked*/ class GraphicWindow *pPanel2;
+	/*unpacked*/ class GraphicWindow *pPanel3;
+	/*packed*/ class RadioCompassWindow *pPanel4;
+	/*packed*/ class MapWindow *pPanel5;
+	/*packed*/ class DialWindow *pPanel6;
+	/*unpacked*/ class GraphicWindow *pFlap0;
+	/*unpacked*/ class GraphicWindow *pFlap1;
+	/*unpacked*/ class GraphicWindow *pFlap2;
+	/*unpacked*/ class GraphicWindow *pFlap3;
+	/*packed*/ class PassengerWindow *pPassengerWindow;
+	/*packed*/ struct CommandSystem commandSystem;
 };
 
-// Type: class MRect;
+// Type: /*packed*/ class MRect;
 class MRect : public SparkalRect
 { // packed(0x10 bytes) TI: 0x1067
 public:
-	void MRect(struct SparkalPoint, struct SparkalPoint);
-	void MRect(struct SparkalPoint, struct SparkalSize);
-	void MRect(struct SparkalRect*);
-	void MRect(class MRect*);
-	void MRect(const struct SparkalRect&);
+	void MRect(/*packed*/ struct SparkalPoint, /*packed*/ struct SparkalPoint);
+	void MRect(/*packed*/ struct SparkalPoint, /*packed*/ struct SparkalSize);
+	void MRect(/*packed*/ struct SparkalRect*);
+	void MRect(/*packed*/ class MRect*);
+	void MRect(const /*packed*/ struct SparkalRect&);
 	void MRect(long, long, long, long);
 	void MRect();
 	long Width();
 	long Height();
-	class MSize Size();
-	const class MPoint& TopLeft();
-	class MPoint& TopLeft();
-	const class MPoint& BottomRight();
-	class MPoint& BottomRight();
-	class MPoint CenterPoint();
-	struct SparkalRect* operator struct SparkalRect *();
-	class MRect* operator class MRect *();
+	/*packed*/ class MSize Size();
+	const /*packed*/ class MPoint& TopLeft();
+	/*packed*/ class MPoint& TopLeft();
+	const /*packed*/ class MPoint& BottomRight();
+	/*packed*/ class MPoint& BottomRight();
+	/*packed*/ class MPoint CenterPoint();
+	/*packed*/ struct SparkalRect* operator struct SparkalRect *();
+	/*packed*/ class MRect* operator class MRect *();
 	int32_t IsRectEmpty();
 	int32_t IsRectNull();
-	int32_t PtInRect(struct SparkalPoint);
+	int32_t PtInRect(/*packed*/ struct SparkalPoint);
 	int32_t PtInRect(long, long);
-	int32_t DoesRectOverlap(struct SparkalRect*);
-	void SetRect(struct SparkalPoint, struct SparkalPoint);
+	int32_t DoesRectOverlap(/*packed*/ struct SparkalRect*);
+	void SetRect(/*packed*/ struct SparkalPoint, /*packed*/ struct SparkalPoint);
 	void SetRect(long, long, long, long);
 	void SetRectEmpty();
-	void CopyRect(class MRect*);
-	int32_t EqualRect(class MRect*);
+	void CopyRect(/*packed*/ class MRect*);
+	int32_t EqualRect(/*packed*/ class MRect*);
 	void InflateRect(long, long, long, long);
-	void InflateRect(class MRect*);
-	void InflateRect(struct SparkalSize);
+	void InflateRect(/*packed*/ class MRect*);
+	void InflateRect(/*packed*/ struct SparkalSize);
 	void InflateRect(long, long);
 	void DeflateRect(long, long, long, long);
-	void DeflateRect(class MRect*);
-	void DeflateRect(struct SparkalSize);
+	void DeflateRect(/*packed*/ class MRect*);
+	void DeflateRect(/*packed*/ struct SparkalSize);
 	void DeflateRect(long, long);
-	void MoveRect(struct SparkalPoint);
+	void MoveRect(/*packed*/ struct SparkalPoint);
 	void MoveRect(long, long);
-	void OffsetRect(struct SparkalPoint);
-	void OffsetRect(struct SparkalSize);
+	void OffsetRect(/*packed*/ struct SparkalPoint);
+	void OffsetRect(/*packed*/ struct SparkalSize);
 	void OffsetRect(long, long);
 	void NormalizeRect();
-	int32_t IntersectRect(class MRect*, class MRect*);
-	int32_t UnionRect(class MRect*, class MRect*);
-	int32_t SubtractRect(class MRect*, class MRect*);
-	int32_t operator==(const struct SparkalRect&);
-	int32_t operator!=(const struct SparkalRect&);
-	void operator+=(class MRect*);
-	void operator+=(struct SparkalSize);
-	void operator+=(struct SparkalPoint);
-	void operator-=(class MRect*);
-	void operator-=(struct SparkalSize);
-	void operator-=(struct SparkalPoint);
-	void operator&=(const struct SparkalRect&);
-	void operator|=(const struct SparkalRect&);
-	class MRect operator+(struct SparkalSize);
-	class MRect operator+(class MRect*);
-	class MRect operator+(struct SparkalPoint);
-	class MRect operator-(class MRect*);
-	class MRect operator-(struct SparkalSize);
-	class MRect operator-(struct SparkalPoint);
-	class MRect operator&(const struct SparkalRect&);
-	class MRect operator|(const struct SparkalRect&);
+	int32_t IntersectRect(/*packed*/ class MRect*, /*packed*/ class MRect*);
+	int32_t UnionRect(/*packed*/ class MRect*, /*packed*/ class MRect*);
+	int32_t SubtractRect(/*packed*/ class MRect*, /*packed*/ class MRect*);
+	int32_t operator==(const /*packed*/ struct SparkalRect&);
+	int32_t operator!=(const /*packed*/ struct SparkalRect&);
+	void operator+=(/*packed*/ class MRect*);
+	void operator+=(/*packed*/ struct SparkalSize);
+	void operator+=(/*packed*/ struct SparkalPoint);
+	void operator-=(/*packed*/ class MRect*);
+	void operator-=(/*packed*/ struct SparkalSize);
+	void operator-=(/*packed*/ struct SparkalPoint);
+	void operator&=(const /*packed*/ struct SparkalRect&);
+	void operator|=(const /*packed*/ struct SparkalRect&);
+	/*packed*/ class MRect operator+(/*packed*/ struct SparkalSize);
+	/*packed*/ class MRect operator+(/*packed*/ class MRect*);
+	/*packed*/ class MRect operator+(/*packed*/ struct SparkalPoint);
+	/*packed*/ class MRect operator-(/*packed*/ class MRect*);
+	/*packed*/ class MRect operator-(/*packed*/ struct SparkalSize);
+	/*packed*/ class MRect operator-(/*packed*/ struct SparkalPoint);
+	/*packed*/ class MRect operator&(const /*packed*/ struct SparkalRect&);
+	/*packed*/ class MRect operator|(const /*packed*/ struct SparkalRect&);
 };
 
-// Type: struct tagUserPersonalInfo (forward reference);
+// Type: /*packed*/ struct tagUserPersonalInfo (forward reference);
 struct tagUserPersonalInfo{ // packed(0x58 bytes) TI: 0x1a2a
 	char szUserName[64];
 	long lMoney;
@@ -310,25 +310,25 @@ struct tagUserPersonalInfo{ // packed(0x58 bytes) TI: 0x1a2a
 
 // Type: long;
 
-// Type: class list<Shortcut>::iterator;
+// Type: /*packed*/ class list<Shortcut>::iterator;
 class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
 { // packed(0x4 bytes) TI: 0x1081
 protected:
-	struct list<Shortcut>::list_node *node;
+	/*packed*/ struct list<Shortcut>::list_node *node;
 public:
 	void iterator();
 protected:
-	void iterator(struct list<Shortcut>::list_node*);
+	void iterator(/*packed*/ struct list<Shortcut>::list_node*);
 public:
-	int32_t operator==(const class list<Shortcut>::iterator&);
-	struct Shortcut& operator*();
-	class list<Shortcut>::iterator operator++(int32_t);
-	class list<Shortcut>::iterator& operator++();
-	class list<Shortcut>::iterator operator--(int32_t);
-	class list<Shortcut>::iterator& operator--();
+	int32_t operator==(const /*packed*/ class list<Shortcut>::iterator&);
+	/*packed*/ struct Shortcut& operator*();
+	/*packed*/ class list<Shortcut>::iterator operator++(int32_t);
+	/*packed*/ class list<Shortcut>::iterator& operator++();
+	/*packed*/ class list<Shortcut>::iterator operator--(int32_t);
+	/*packed*/ class list<Shortcut>::iterator& operator--();
 };
 
-// Type: struct Shortcut;
+// Type: /*packed*/ struct Shortcut;
 struct Shortcut{ // packed(0x18 bytes) TI: 0x1083
 	long lDeviceID;
 	long lCommand;
@@ -338,7 +338,7 @@ struct Shortcut{ // packed(0x18 bytes) TI: 0x1083
 	long lIgnoreModifiers;
 };
 
-// Type: class GameModeHangarData (forward reference);
+// Type: /*packed*/ class GameModeHangarData (forward reference);
 // VTABLE: COPTER_D 0x005923d0
 class GameModeHangarData : public GameModeCoreData
 { // packed(0xac0 bytes) TI: 0x2b10
@@ -352,11 +352,11 @@ public:
 	void Awake();
 	void CreatePalette();
 	void UsePalette();
-	class HangarWindow *pHangarWindow;
-	struct CommandSystem commandSystem;
+	/*unpacked*/ class HangarWindow *pHangarWindow;
+	/*packed*/ struct CommandSystem commandSystem;
 };
 
-// Type: class GameModeCatalogData (forward reference);
+// Type: /*packed*/ class GameModeCatalogData (forward reference);
 // VTABLE: COPTER_D 0x005923d4
 class GameModeCatalogData : public GameModeCoreData
 { // packed(0xac0 bytes) TI: 0x2b12
@@ -370,11 +370,11 @@ public:
 	void Awake();
 	void CreatePalette();
 	void UsePalette();
-	class CatalogWindow *pCatalogWindow;
-	struct CommandSystem commandSystem;
+	/*unpacked*/ class CatalogWindow *pCatalogWindow;
+	/*packed*/ struct CommandSystem commandSystem;
 };
 
-// Type: class GameModeMissionLogData (forward reference);
+// Type: /*packed*/ class GameModeMissionLogData (forward reference);
 // VTABLE: COPTER_D 0x005923d8
 class GameModeMissionLogData : public GameModeCoreData
 { // packed(0xac0 bytes) TI: 0x2b0e
@@ -388,11 +388,11 @@ public:
 	void Awake();
 	void CreatePalette();
 	void UsePalette();
-	class MissionLogWindow *pMissionLogWindow;
-	struct CommandSystem commandSystem;
+	/*unpacked*/ class MissionLogWindow *pMissionLogWindow;
+	/*packed*/ struct CommandSystem commandSystem;
 };
 
-// Type: class GameModeInventoryData (forward reference);
+// Type: /*packed*/ class GameModeInventoryData (forward reference);
 // VTABLE: COPTER_D 0x005923dc
 class GameModeInventoryData : public GameModeCoreData
 { // packed(0xac0 bytes) TI: 0x28d1
@@ -406,32 +406,32 @@ public:
 	void Awake();
 	void CreatePalette();
 	void UsePalette();
-	class InventoryWindow *pInventoryWindow;
-	struct CommandSystem commandSystem;
+	/*unpacked*/ class InventoryWindow *pInventoryWindow;
+	/*packed*/ struct CommandSystem commandSystem;
 };
 
 // Type: uint32_t;
 
-// Type: struct bidirectional_iterator<Shortcut,int>;
+// Type: /*packed*/ struct bidirectional_iterator<Shortcut,int>;
 struct bidirectional_iterator<Shortcut,int>{ // packed(0x1 bytes) TI: 0x1ee7
 };
 
-// Type: class GameModeCoreData;
+// Type: /*packed*/ class GameModeCoreData;
 // VTABLE: COPTER_D 0x005923c0
 class GameModeCoreData{ // packed(0x14 bytes) TI: 0x1853
 public:
 	void GameModeCoreData();
 	virtual void ~GameModeCoreData(); // vtable+0x0
 	long lPauseCount;
-	struct SparkalColor *pColorTable;
-	class CGameApp *pGameApp;
-	class ScreenWindow *pScreenWindow;
+	/*packed*/ struct SparkalColor *pColorTable;
+	/*unpacked*/ class CGameApp *pGameApp;
+	/*packed*/ class ScreenWindow *pScreenWindow;
 };
 
-// Type: class GraphicWindow (forward reference);
+// Type: /*unpacked*/ class GraphicWindow (forward reference);
 // GraphicWindow Class implementation not found
 
-// Type: struct SparkalRect;
+// Type: /*packed*/ struct SparkalRect;
 struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	long left;
 	long top;
@@ -465,7 +465,7 @@ void CopterGameMode::CopterGameMode(int32_t nNewModeID) {
 }
 
 // FUNCTION: COPTER_D 0x004bd6b5
-void CopterGameMode::CopterGameMode(const class CopterGameMode& newGameMode) {
+void CopterGameMode::CopterGameMode(const /*packed*/ class CopterGameMode& newGameMode) {
 // LINE 61:
 	__asm        mov    eax, newGameMode;
 	__asm        push   eax;
@@ -478,7 +478,7 @@ void CopterGameMode::CopterGameMode(const class CopterGameMode& newGameMode) {
 }
 
 // FUNCTION: COPTER_D 0x004bd6dc
-class CopterGameMode& CopterGameMode::operator=(const class CopterGameMode& newGameMode) {
+/*packed*/ class CopterGameMode& CopterGameMode::operator=(const /*packed*/ class CopterGameMode& newGameMode) {
 // LINE 65:
 	this->nModeID = newGameMode.nModeID;
 // LINE 66:
@@ -488,7 +488,7 @@ class CopterGameMode& CopterGameMode::operator=(const class CopterGameMode& newG
 }
 
 // FUNCTION: COPTER_D 0x004bd701
-int32_t operator==(const class CopterGameMode& gameMode1, const class CopterGameMode& gameMode2) {
+int32_t operator==(const /*packed*/ class CopterGameMode& gameMode1, const /*packed*/ class CopterGameMode& gameMode2) {
 // LINE 70:
 	__asm        mov    eax, gameMode1;
 	__asm        mov    ecx, gameMode2;
@@ -654,8 +654,8 @@ void GameModeMainMenuData::UsePalette() {
 
 // FUNCTION: COPTER_D 0x004bd94a
 int32_t GameModeMainMenuData::CreateAllSurfaces() {
-	struct UserMenuWindowDescription tempUMWD;
-	class UserMenuWindow *myUserMenuWindow;
+	/*packed*/ struct UserMenuWindowDescription tempUMWD;
+	/*packed*/ class UserMenuWindow *myUserMenuWindow;
 
 // LINE 198:
 	__asm        push   0x10;
@@ -1031,7 +1031,7 @@ void GameModePickCareerCityData::UsePalette() {
 
 // FUNCTION: COPTER_D 0x004bde8b
 int32_t GameModePickCareerCityData::CreateAllSurfaces() {
-	class CareerWindow *myCareerWindow;
+	/*packed*/ class CareerWindow *myCareerWindow;
 	long * lNewCitiesPointer;
 
 // LINE 303:
@@ -1848,14 +1848,14 @@ int32_t GameModePlayData::CreateAllSurfaces() {
 
 // FUNCTION: COPTER_D 0x004be8cb
 int32_t GameModePlayData::CreatePanels() {
-	class MRect rectPanel3;
-	class MRect rectPanel4;
-	class MRect rectPanel5;
-	class MRect rectPassengerWindow;
-	class MRect rectPanel6;
-	class MRect rectPanel0;
-	class MRect rectPanel1;
-	class MRect rectPanel2;
+	/*packed*/ class MRect rectPanel3;
+	/*packed*/ class MRect rectPanel4;
+	/*packed*/ class MRect rectPanel5;
+	/*packed*/ class MRect rectPassengerWindow;
+	/*packed*/ class MRect rectPanel6;
+	/*packed*/ class MRect rectPanel0;
+	/*packed*/ class MRect rectPanel1;
+	/*packed*/ class MRect rectPanel2;
 
 // LINE 556:
 	__asm        jmp    near ptr 0x004BE8E2;
@@ -2330,11 +2330,11 @@ _T73e:
 
 // FUNCTION: COPTER_D 0x004bf018
 void GameModePlayData::MakeSureHeliHasProperFlaps() {
-	class MRect rectFlap0;
-	class MRect rectFlap2;
-	struct tagUserPersonalInfo *userPersonalInfo;
-	class MRect rectFlap1;
-	class MRect rectFlap3;
+	/*packed*/ class MRect rectFlap0;
+	/*packed*/ class MRect rectFlap2;
+	/*packed*/ struct tagUserPersonalInfo *userPersonalInfo;
+	/*packed*/ class MRect rectFlap1;
+	/*packed*/ class MRect rectFlap3;
 
 // LINE 638:
 	__asm        jmp    near ptr 0x004BF029;
@@ -3779,7 +3779,7 @@ _T2d:
 // FUNCTION: COPTER_D 0x004c01b8
 void GameModePlayData::RemoveUserConfigurableCommands() {
 	long lCurrentCommand;
-	class list<Shortcut>::iterator tempShortcutListIterator;
+	/*packed*/ class list<Shortcut>::iterator tempShortcutListIterator;
 
 // LINE 1144:
 	__asm        mov    eax, this;
@@ -3909,7 +3909,7 @@ void GameModePlayData::SetUserConfigurableCommandsToDefaults() {
 
 // FUNCTION: COPTER_D 0x004c0326
 void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
-	struct Shortcut tempShortcut;
+	/*packed*/ struct Shortcut tempShortcut;
 
 // LINE 1178:
 	tempShortcut.lDeviceID = 0x0;
@@ -5180,7 +5180,7 @@ void GameModeHangarData::Shutdown() {
 
 // FUNCTION: COPTER_D 0x004c15b3
 void GameModeHangarData::SetCommandsToDefaults() {
-	struct Shortcut tempShortcut;
+	/*packed*/ struct Shortcut tempShortcut;
 
 // LINE 1522:
 	__asm        mov    eax, this;
@@ -5825,7 +5825,7 @@ void GameModeCatalogData::Shutdown() {
 
 // FUNCTION: COPTER_D 0x004c1e29
 void GameModeCatalogData::SetCommandsToDefaults() {
-	struct Shortcut tempShortcut;
+	/*packed*/ struct Shortcut tempShortcut;
 
 // LINE 1676:
 	__asm        mov    eax, this;
@@ -6520,7 +6520,7 @@ void GameModeMissionLogData::Shutdown() {
 
 // FUNCTION: COPTER_D 0x004c27b1
 void GameModeMissionLogData::SetCommandsToDefaults() {
-	struct Shortcut tempShortcut;
+	/*packed*/ struct Shortcut tempShortcut;
 
 // LINE 1801:
 	__asm        mov    eax, this;
@@ -7215,7 +7215,7 @@ void GameModeInventoryData::Shutdown() {
 
 // FUNCTION: COPTER_D 0x004c3139
 void GameModeInventoryData::SetCommandsToDefaults() {
-	struct Shortcut tempShortcut;
+	/*packed*/ struct Shortcut tempShortcut;
 
 // LINE 1922:
 	__asm        mov    eax, this;

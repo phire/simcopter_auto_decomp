@@ -4,21 +4,21 @@
 
 // Type: char;
 
-// Type: class CSparkalWindow (forward reference);
+// Type: /*packed*/ class CSparkalWindow (forward reference);
 // VTABLE: COPTER_D 0x00590ef8
 class CSparkalWindow{ // packed(0x68 bytes) TI: 0x20d9
 public:
-	void CSparkalWindow(unsigned long, unsigned long, unsigned long, const struct SparkalColor*, char *);
+	void CSparkalWindow(unsigned long, unsigned long, unsigned long, const /*packed*/ struct SparkalColor*, char *);
 	void CSparkalWindow();
 	virtual void ~CSparkalWindow(); // vtable+0x0
 	void * __ptr32 GetPlatformData();
 	long GetWidth();
 	long GetHeight();
 	virtual unsigned long GetClientSize(long *, long *); // vtable+0x4
-	class ScreenBuffer* GetBackBuffer();
-	class ScreenBuffer* SetBackBuffer(class ScreenBuffer*);
-	class ICommander* GetCommander();
-	class ICommander* SetCommander(class ICommander*);
+	/*unpacked*/ class ScreenBuffer* GetBackBuffer();
+	/*unpacked*/ class ScreenBuffer* SetBackBuffer(/*unpacked*/ class ScreenBuffer*);
+	/*unpacked*/ class ICommander* GetCommander();
+	/*unpacked*/ class ICommander* SetCommander(/*unpacked*/ class ICommander*);
 	virtual unsigned long Draw(); // vtable+0x8
 	virtual unsigned long SetCursor(unsigned long); // vtable+0xc
 	virtual unsigned long SetCursorFromIndex(int32_t); // vtable+0x10
@@ -31,13 +31,13 @@ public:
 	unsigned long RectSlideUp(long, long, long, long);
 	virtual unsigned long SwapBuffer(long, long, long, long); // vtable+0x24
 	virtual unsigned long SwapBuffer(); // vtable+0x28
-	virtual void UpdatePalette(long, long, struct SparkalColor*); // vtable+0x2c
+	virtual void UpdatePalette(long, long, /*packed*/ struct SparkalColor*); // vtable+0x2c
 protected:
 	long mHeight;
 	long mWidth;
 	unsigned long mStyle;
-	class ICommander *mpCommander;
-	class ScreenBuffer *mpBackBuffer;
+	/*unpacked*/ class ICommander *mpCommander;
+	/*unpacked*/ class ScreenBuffer *mpBackBuffer;
 	void * __ptr32 mWindow;
 	// calltype: NearStd
 	virtual long MySparkalWindowProc(void * __ptr32, uint32_t, uint32_t, long); // vtable+0x30
@@ -53,7 +53,7 @@ protected:
 
 // Type: unsigned long;
 
-// Type: struct SparkalColor (forward reference);
+// Type: /*packed*/ struct SparkalColor (forward reference);
 struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 	unsigned char Blue;
 	unsigned char Green;
@@ -65,7 +65,7 @@ struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 
 // Type: char *;
 
-// Type: struct tagRECT;
+// Type: /*packed*/ struct tagRECT;
 struct tagRECT{ // packed(0x10 bytes) TI: 0x13c4
 	long left;
 	long top;
@@ -73,7 +73,7 @@ struct tagRECT{ // packed(0x10 bytes) TI: 0x13c4
 	long bottom;
 };
 
-// Type: struct tagWNDCLASSA;
+// Type: /*packed*/ struct tagWNDCLASSA;
 struct tagWNDCLASSA{ // packed(0x28 bytes) TI: 0x26d3
 	uint32_t style;
 	long (*lpfnWndProc)(void * __ptr32, uint32_t, uint32_t, long);
@@ -87,11 +87,11 @@ struct tagWNDCLASSA{ // packed(0x28 bytes) TI: 0x26d3
 	char * lpszClassName;
 };
 
-// Type: struct CSparkalWindow::__ctor::__unnamed;
+// Type: /*packed*/ struct CSparkalWindow::__ctor::__unnamed;
 struct CSparkalWindow::__ctor::__unnamed{ // packed(0x404 bytes) TI: 0x26d4
 	unsigned short Version;
 	unsigned short NumberOfEntries;
-	struct tagPALETTEENTRY aEntries[256];
+	/*packed*/ struct tagPALETTEENTRY aEntries[256];
 };
 
 // Type: void * __ptr32;
@@ -102,13 +102,13 @@ struct CSparkalWindow::__ctor::__unnamed{ // packed(0x404 bytes) TI: 0x26d4
 
 // Type: long;
 
-// Type: struct tagSIZE;
+// Type: /*packed*/ struct tagSIZE;
 struct tagSIZE{ // packed(0x8 bytes) TI: 0x21e7
 	long cx;
 	long cy;
 };
 
-// Type: struct tagPALETTEENTRY (forward reference);
+// Type: /*packed*/ struct tagPALETTEENTRY (forward reference);
 struct tagPALETTEENTRY{ // packed(0x4 bytes) TI: 0x1be6
 	unsigned char peRed;
 	unsigned char peGreen;
@@ -118,17 +118,17 @@ struct tagPALETTEENTRY{ // packed(0x4 bytes) TI: 0x1be6
 
 // Type: unsigned char;
 
-// Type: struct CheckIdentityPalette::__unnamed;
+// Type: /*packed*/ struct CheckIdentityPalette::__unnamed;
 struct CheckIdentityPalette::__unnamed{ // packed(0x428 bytes) TI: 0x26d9
-	struct tagBITMAPINFOHEADER Header;
-	struct tagRGBQUAD Colors[256];
+	/*packed*/ struct tagBITMAPINFOHEADER Header;
+	/*packed*/ struct tagRGBQUAD Colors[256];
 };
 
-// Type: struct tagPAINTSTRUCT;
+// Type: /*packed*/ struct tagPAINTSTRUCT;
 struct tagPAINTSTRUCT{ // packed(0x40 bytes) TI: 0x124b
 	void * __ptr32 hdc;
 	int32_t fErase;
-	struct tagRECT rcPaint;
+	/*packed*/ struct tagRECT rcPaint;
 	int32_t fRestore;
 	int32_t fIncUpdate;
 	unsigned char rgbReserved[32];
@@ -182,14 +182,14 @@ _T9b:
 }
 
 // FUNCTION: COPTER_D 0x00480738
-void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, unsigned long Style, const struct SparkalColor *pColors, char * Caption) {
+void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, unsigned long Style, const /*packed*/ struct SparkalColor *pColors, char * Caption) {
 	int32_t Left;
 	int32_t Top;
-	struct tagRECT WindowRect;
+	/*packed*/ struct tagRECT WindowRect;
 	int32_t i;
 	unsigned long ScreenWidth;
 	unsigned long dwWindowsStyle;
-	struct tagWNDCLASSA ClassInfo;
+	/*packed*/ struct tagWNDCLASSA ClassInfo;
 	unsigned long ScreenHeight;
 
 
@@ -410,7 +410,7 @@ _T251:
 	__asm        je     _T5b7;
 // LINE 156:
 // Block start:
-	struct CSparkalWindow::__ctor::__unnamed LogPalette;
+	/*packed*/ struct CSparkalWindow::__ctor::__unnamed LogPalette;
 	void * __ptr32 hdc;
 	int32_t StaticCount;
 	uint32_t PaletteUse;
@@ -781,7 +781,7 @@ _T41:
 	__asm        je     _T81;
 // LINE 283:
 // Block start:
-	struct tagRECT r;
+	/*packed*/ struct tagRECT r;
 	__asm        lea    eax, r.left;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -934,8 +934,8 @@ unsigned long CSparkalWindow::DrawBufferText(const const char *pText, unsigned l
 	long ClientHeight;
 	uint32_t Length;
 	long ClientWidth;
-	struct tagSIZE TextSize;
-	struct tagRECT TextRect;
+	/*packed*/ struct tagSIZE TextSize;
+	/*packed*/ struct tagRECT TextRect;
 
 // LINE 373:
 	__asm        mov    eax, this;
@@ -1213,9 +1213,9 @@ _T9c:
 }
 
 // FUNCTION: COPTER_D 0x00481265
-void CSparkalWindow::UpdatePalette(long start, long count, struct SparkalColor *pColor) {
+void CSparkalWindow::UpdatePalette(long start, long count, /*packed*/ struct SparkalColor *pColor) {
 	int32_t i;
-	struct tagPALETTEENTRY palColors[256];
+	/*packed*/ struct tagPALETTEENTRY palColors[256];
 
 // LINE 486:
 	__asm        mov    eax, this;
@@ -1273,7 +1273,7 @@ _Tba:
 }
 
 // FUNCTION: COPTER_D 0x0048132b
-int32_t CheckIdentityPalette(void * __ptr32 hdc, void * __ptr32 hPalette, struct tagPALETTEENTRY *pColors) {
+int32_t CheckIdentityPalette(void * __ptr32 hdc, void * __ptr32 hPalette, /*packed*/ struct tagPALETTEENTRY *pColors) {
 	int32_t nReturnValue;
 	int32_t i;
 	int32_t IsID;
@@ -1304,7 +1304,7 @@ int32_t CheckIdentityPalette(void * __ptr32 hdc, void * __ptr32 hPalette, struct
 	__asm        je     _T295;
 // LINE 516:
 // Block start:
-	struct CheckIdentityPalette::__unnamed Info;
+	/*packed*/ struct CheckIdentityPalette::__unnamed Info;
 	void * __ptr32 Mono;
 	__asm        mov    eax, MemBitmap;
 	__asm        push   eax;
@@ -1466,7 +1466,7 @@ _T2a2:
 
 // FUNCTION: COPTER_D 0x004815dd
 long SparkalWindowProc(void * __ptr32 Window, uint32_t Message, uint32_t wParam, long lParam) {
-	class CSparkalWindow *pWindow;
+	/*packed*/ class CSparkalWindow *pWindow;
 
 // LINE 585:
 	__asm        jmp    near ptr 0x004815EB;
@@ -1519,7 +1519,7 @@ long CSparkalWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message
 // LINE 608:
 // Block start:
 	void * __ptr32 hdc;
-	struct tagPAINTSTRUCT Paint;
+	/*packed*/ struct tagPAINTSTRUCT Paint;
 	__asm        mov    eax, Window;
 	__asm        cmp    wParam, eax;
 	__asm        jne    _T25;

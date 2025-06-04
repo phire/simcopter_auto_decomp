@@ -1,6 +1,6 @@
 // Function in module: Extrawin.obj
 // FUNCTION: COPTER_D 0x00460de0
-void MessageBoxWindowEdit::GetEditText(class basic_string<char>& sText) {
+void MessageBoxWindowEdit::GetEditText(/*packed*/ class basic_string<char>& sText) {
 
 	__asm        mov    eax, sText;
 	__asm        push   eax;

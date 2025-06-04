@@ -4,7 +4,7 @@
 
 // Type: int32_t;
 
-// Type: struct _dPoint2d (forward reference);
+// Type: /*packed*/ struct _dPoint2d (forward reference);
 struct _dPoint2d{ // packed(0x10 bytes) TI: 0x2766
 	double x;
 	double z;
@@ -12,7 +12,7 @@ struct _dPoint2d{ // packed(0x10 bytes) TI: 0x2766
 
 // Type: short;
 
-// Type: struct PCXHEAD;
+// Type: /*packed*/ struct PCXHEAD;
 struct PCXHEAD{ // packed(0x80 bytes) TI: 0x2757
 	char manufacturer;
 	char version;
@@ -34,7 +34,7 @@ struct PCXHEAD{ // packed(0x80 bytes) TI: 0x2757
 
 // Type: unsigned char;
 
-// Type: struct tagPALETTEENTRY (forward reference);
+// Type: /*packed*/ struct tagPALETTEENTRY (forward reference);
 struct tagPALETTEENTRY{ // packed(0x4 bytes) TI: 0x1be6
 	unsigned char peRed;
 	unsigned char peGreen;
@@ -50,7 +50,7 @@ struct tagPALETTEENTRY{ // packed(0x4 bytes) TI: 0x1be6
 
 // Type: void;
 
-// Type: struct _iobuf (forward reference);
+// Type: /*packed*/ struct _iobuf (forward reference);
 struct _iobuf{ // packed(0x20 bytes) TI: 0x2278
 	char * _ptr;
 	int32_t _cnt;
@@ -101,7 +101,7 @@ void S3PrintScreen() {
 
 // FUNCTION: COPTER_D 0x0046b8db
 void S3BufferPrint(char * fname, char * chPalette) {
-	struct _iobuf *hFileOut;
+	/*packed*/ struct _iobuf *hFileOut;
 	int32_t ydim;
 	int32_t pitch;
 	int32_t xdim;
@@ -264,7 +264,7 @@ _T1e3:
 }
 
 // FUNCTION: COPTER_D 0x0046bac3
-int32_t S3WritePCXLine(struct _iobuf *fp, char * p, unsigned short n) {
+int32_t S3WritePCXLine(/*packed*/ struct _iobuf *fp, char * p, unsigned short n) {
 	unsigned short j;
 	unsigned short i;
 	unsigned short t;
@@ -441,13 +441,13 @@ static const int32_t TypeToIndex2[16] = {-1, 0, 1, -1, 2, -1, -1, -1, 3, -1, -1,
 static const int32_t TILUT[4][4] = {{0, 1, 3, 2}, {2, 0, 1, 3}, {3, 2, 0, 1}, {1, 3, 2, 0}};
 
 // GLOBAL: COPTER_D 0x00590648
-static const struct _dPoint2d OT[4] = { 0 /* todo */ };
+static const /*packed*/ struct _dPoint2d OT[4] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00590688
-static const struct _dPoint2d RRT[4] = { 0 /* todo */ };
+static const /*packed*/ struct _dPoint2d RRT[4] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005906c8
-static const struct _dPoint2d LRT[4] = { 0 /* todo */ };
+static const /*packed*/ struct _dPoint2d LRT[4] = { 0 /* todo */ };
 
 
 
@@ -465,8 +465,8 @@ static unsigned char wpal[768];
 static void * __ptr32 hdc;
 
 // GLOBAL: COPTER_D 0x00603dc8
-static struct PCXHEAD pcx;
+static /*packed*/ struct PCXHEAD pcx;
 
 // GLOBAL: COPTER_D 0x00603e48
-static struct tagPALETTEENTRY ppe[256];
+static /*packed*/ struct tagPALETTEENTRY ppe[256];
 

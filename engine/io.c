@@ -27,16 +27,16 @@ char * ObjSortData; // Contrib missing
 void (*VRPostRender)(void * __ptr32); // Contrib missing
 
 // GLOBAL: COPTER_D 0x00647210
-struct SortFace NoSortArray[2000]; // Contrib missing
+/*packed*/ struct SortFace NoSortArray[2000]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006627a0
-union KeyUnion VRKeyBoard; // Contrib missing
+/*packed*/ union KeyUnion VRKeyBoard; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00654ce0
-struct SortFace SortArray[2000]; // Contrib missing
+/*packed*/ struct SortFace SortArray[2000]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00647210
-struct SortFace NoSortArray[2000]; // Contrib missing
+/*packed*/ struct SortFace NoSortArray[2000]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00647204
 int32_t SortCount; // Contrib missing

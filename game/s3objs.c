@@ -6,7 +6,7 @@
 
 // Type: char;
 
-// Type: struct _LZ_INFO (forward reference);
+// Type: /*packed*/ struct _LZ_INFO (forward reference);
 struct _LZ_INFO{ // packed(0x14 bytes) TI: 0x3152
 	int32_t flags;
 	int32_t ulx;
@@ -19,57 +19,57 @@ struct _LZ_INFO{ // packed(0x14 bytes) TI: 0x3152
 
 // Type: long;
 
-// Type: struct VRFaceInfo;
+// Type: /*packed*/ struct VRFaceInfo;
 struct VRFaceInfo{ // packed(0x20 bytes) TI: 0x30c0
 	int32_t Face;
 	int32_t Verts;
 	int32_t Attribute;
 	int32_t Plotter;
-	struct VRBmpHdr *Bitmap;
+	/*packed*/ struct VRBmpHdr *Bitmap;
 	int32_t * VertList;
-	struct MapVert *MapVList;
-	struct MapVert *BarryPtr;
+	/*packed*/ struct MapVert *MapVList;
+	/*packed*/ struct MapVert *BarryPtr;
 };
 
-// Type: struct VRBmpHdr (forward reference);
+// Type: /*packed*/ struct VRBmpHdr (forward reference);
 struct VRBmpHdr{ // packed(0x10 bytes) TI: 0x2312
-	struct VRBmpInfo info;
+	/*packed*/ struct VRBmpInfo info;
 	int32_t ScanOffset[1];
 };
 
-// Type: struct VRObjInfo;
+// Type: /*packed*/ struct VRObjInfo;
 struct VRObjInfo{ // packed(0x24 bytes) TI: 0x2ea8
 	int32_t Faces;
 	int32_t Verts;
 	int32_t Attribute;
 	int32_t Radius;
-	struct Point3d *ObjCenter;
-	struct Point3d *VertsPtr;
-	struct Xform3d *VertsXfm;
-	struct Point3d *OrgVerts;
+	/*packed*/ struct Point3d *ObjCenter;
+	/*packed*/ struct Point3d *VertsPtr;
+	/*packed*/ struct Xform3d *VertsXfm;
+	/*packed*/ struct Point3d *OrgVerts;
 	int32_t *Matrix[4][4];
 };
 
 // Type: void;
 
-// Type: struct VRBlit (forward reference);
+// Type: /*packed*/ struct VRBlit (forward reference);
 struct VRBlit{ // packed(0x10 bytes) TI: 0x3182
 	int32_t nverts;
-	struct Proj2d *verts;
+	/*packed*/ struct Proj2d *verts;
 	int32_t notused;
 	int32_t user1;
 };
 
-// Type: struct _DYOBJ_INST (forward reference);
+// Type: /*packed*/ struct _DYOBJ_INST (forward reference);
 struct _DYOBJ_INST{ // packed(0x64 bytes) TI: 0x1deb
-	struct _DYOBJ_INST *next;
-	struct _DYOBJ_INST *vnext;
+	/*packed*/ struct _DYOBJ_INST *next;
+	/*packed*/ struct _DYOBJ_INST *vnext;
 	void * __ptr32 mesh;
 	short flags;
 	short user1;
 	long radius;
 	long height;
-	struct Point3d loc;
+	/*packed*/ struct Point3d loc;
 	int32_t matrix[4][4];
 };
 
@@ -82,11 +82,11 @@ void S3ObjInit() {
 	int32_t obj;
 	long j;
 	long i;
-	struct VRFaceInfo finfo;
+	/*packed*/ struct VRFaceInfo finfo;
 	long objcount;
 	int32_t face;
-	struct VRBmpHdr *bhdr;
-	struct VRObjInfo oinfo;
+	/*packed*/ struct VRBmpHdr *bhdr;
+	/*packed*/ struct VRObjInfo oinfo;
 
 // LINE 390:
 	__asm        push   0x33;
@@ -844,7 +844,7 @@ void S3ObjLinkLowRes() {
 }
 
 // FUNCTION: COPTER_D 0x00519aa4
-void S3DrawBlinkingLight(struct VRBlit *blit) {
+void S3DrawBlinkingLight(/*packed*/ struct VRBlit *blit) {
 	long winheight;
 	int32_t ctr;
 	int32_t y;
@@ -1033,7 +1033,7 @@ _T1dd:
 }
 
 // FUNCTION: COPTER_D 0x00519c86
-void S3DrawWaterPoint(struct VRBlit *blit) {
+void S3DrawWaterPoint(/*packed*/ struct VRBlit *blit) {
 	long winheight;
 	long num;
 	int32_t z;
@@ -8138,7 +8138,7 @@ _T3dd0:
 }
 
 // FUNCTION: COPTER_D 0x0051da5b
-struct _LZ_INFO* S3ObjGetLandingZone(long tile) {
+/*packed*/ struct _LZ_INFO* S3ObjGetLandingZone(long tile) {
 // LINE 3685:
 	__asm        cmp    tile, 0;
 	__asm        jl     _T1d;
@@ -8160,7 +8160,7 @@ _T36:
 }
 
 // FUNCTION: COPTER_D 0x0051da96
-void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST *dyhitter, struct _DYOBJ_INST *dyhittee, long mission_id, long xtra_msg) {
+void S3ObjHitDispatch(long hitter_type, /*packed*/ struct _DYOBJ_INST *dyhitter, /*packed*/ struct _DYOBJ_INST *dyhittee, long mission_id, long xtra_msg) {
 	long hittee_type;
 
 // LINE 3707:
@@ -9181,7 +9181,7 @@ static char S_hires_smoke_night[8] = {49, 49, 48, 49, 51, 49, 50, 49};
 static char S_hires_water[8] = {-108, -88, -106, -86, -102, -84, -110, -85};
 
 // GLOBAL: COPTER_D 0x005b5ea0
-static struct _LZ_INFO S_objlzinfo[256] = { 0 /* todo */ };
+static /*packed*/ struct _LZ_INFO S_objlzinfo[256] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b72a0
 static long S_color_no = 0;

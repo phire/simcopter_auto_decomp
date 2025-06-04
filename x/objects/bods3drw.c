@@ -8,7 +8,7 @@
 
 // Type: int32_t;
 
-// Type: struct _dPoint2d (forward reference);
+// Type: /*unpacked*/ struct _dPoint2d (forward reference);
 struct _dPoint2d{ // not packed(0x10 bytes) TI: 0x34b4
 	double x;
 	double z;
@@ -22,7 +22,7 @@ struct _dPoint2d{ // not packed(0x10 bytes) TI: 0x34b4
 
 // Type: void;
 
-// Type: struct Point3d;
+// Type: /*unpacked*/ struct Point3d;
 struct Point3d{ // not packed(0xc bytes) TI: 0x348f
 	int32_t x;
 	int32_t y;
@@ -31,7 +31,7 @@ struct Point3d{ // not packed(0xc bytes) TI: 0x348f
 
 // Type: float;
 
-// Type: struct BmpLineInfo;
+// Type: /*unpacked*/ struct BmpLineInfo;
 struct BmpLineInfo{ // not packed(0x18 bytes) TI: 0x3495
 	long width;
 	long index;
@@ -41,20 +41,20 @@ struct BmpLineInfo{ // not packed(0x18 bytes) TI: 0x3495
 
 // Type: unsigned char *;
 
-// Type: struct VRBmpHdr (forward reference);
+// Type: /*unpacked*/ struct VRBmpHdr (forward reference);
 struct VRBmpHdr{ // not packed(0x10 bytes) TI: 0x34b9
-	struct VRBmpInfo info;
+	/*unpacked*/ struct VRBmpInfo info;
 	int32_t ScanOffset[1];
 };
 
-// Type: struct Point3D;
+// Type: /*unpacked*/ struct Point3D;
 struct Point3D{ // not packed(0x18 bytes) TI: 0x349b
 	double x;
 	double y;
 	double z;
 };
 
-// Type: struct BmpLineInfo (forward reference);
+// Type: /*unpacked*/ struct BmpLineInfo (forward reference);
 struct BmpLineInfo{ // not packed(0x18 bytes) TI: 0x3495
 	long width;
 	long index;
@@ -62,7 +62,7 @@ struct BmpLineInfo{ // not packed(0x18 bytes) TI: 0x3495
 	unsigned char * ptr;
 };
 
-// Type: struct Point3d (forward reference);
+// Type: /*unpacked*/ struct Point3d (forward reference);
 struct Point3d{ // not packed(0xc bytes) TI: 0x348f
 	int32_t x;
 	int32_t y;
@@ -196,7 +196,7 @@ _T117:
 }
 
 // FUNCTION: COPTER_D 0x00563fd1
-void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int32_t shadeFlag) {
+void DrawSphere(/*unpacked*/ struct Point3d centerPt, long diameter, unsigned char color, int32_t shadeFlag) {
 	int32_t lineY;
 	int32_t xOffset;
 	int32_t startX;
@@ -762,19 +762,19 @@ _T79a:
 }
 
 // FUNCTION: COPTER_D 0x00564770
-void DrawFaceTwo(struct Point3d centerPt, long vertRad, float psi, double scaleFactor, short facenum) {
+void DrawFaceTwo(/*unpacked*/ struct Point3d centerPt, long vertRad, float psi, double scaleFactor, short facenum) {
 	long yLine;
 	double yStride;
 	long startX;
-	struct BmpLineInfo pixLine;
+	/*unpacked*/ struct BmpLineInfo pixLine;
 	long i;
-	struct Point3d offset;
+	/*unpacked*/ struct Point3d offset;
 	unsigned char * pixPtr;
 	double bSquared;
-	struct VRBmpHdr *bhdr;
+	/*unpacked*/ struct VRBmpHdr *bhdr;
 	long endX;
 	double aSquared;
-	struct Point3d faceCenter;
+	/*unpacked*/ struct Point3d faceCenter;
 	long yScanLine;
 
 // LINE 416:
@@ -1002,7 +1002,7 @@ _T24c:
 }
 
 // FUNCTION: COPTER_D 0x005649c1
-long ComputeViewToFigureOffset(struct Point3D view, int32_t index) {
+long ComputeViewToFigureOffset(/*unpacked*/ struct Point3D view, int32_t index) {
 // LINE 516:
 	__asm        xor    eax, eax;
 	__asm        jmp    near ptr 0x005649CE;
@@ -1010,9 +1010,9 @@ long ComputeViewToFigureOffset(struct Point3D view, int32_t index) {
 }
 
 // FUNCTION: COPTER_D 0x005649d3
-void DrawLineOnFace(long startX, long endX, long yLine, struct Point3d offset, struct Point3d faceCenter, struct BmpLineInfo *pixLine) {
+void DrawLineOnFace(long startX, long endX, long yLine, /*unpacked*/ struct Point3d offset, /*unpacked*/ struct Point3d faceCenter, /*unpacked*/ struct BmpLineInfo *pixLine) {
 	long loBitmapLimit;
-	struct Point3d scaledOffset;
+	/*unpacked*/ struct Point3d scaledOffset;
 	long begin;
 	long hiBitmapLimit;
 	long end;
@@ -1211,7 +1211,7 @@ _T1e0:
 }
 
 // FUNCTION: COPTER_D 0x00564bb8
-void FindFaceQuadrant(struct VRBmpHdr *bhdr, long dir, struct Point3D viewPos, struct Point3d *faceCenter) {
+void FindFaceQuadrant(/*unpacked*/ struct VRBmpHdr *bhdr, long dir, /*unpacked*/ struct Point3D viewPos, /*unpacked*/ struct Point3d *faceCenter) {
 	double widthOverTwo;
 
 // LINE 586:
@@ -1245,7 +1245,7 @@ _T2f:
 }
 
 // FUNCTION: COPTER_D 0x00564c10
-void FindFaceQuadrant2(struct VRBmpHdr *bhdr, float psi, struct Point3d *faceCenter) {
+void FindFaceQuadrant2(/*unpacked*/ struct VRBmpHdr *bhdr, float psi, /*unpacked*/ struct Point3d *faceCenter) {
 	double widthOverTwo;
 	double mydir;
 
@@ -1365,7 +1365,7 @@ _T173:
 }
 
 // FUNCTION: COPTER_D 0x00564d8d
-void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, unsigned char color, long width) {
+void DrawTaperedLine(/*unpacked*/ struct Point3d startPt, /*unpacked*/ struct Point3d endPt, long taper, unsigned char color, long width) {
 	long dy;
 	long dx;
 	long startWidth;
@@ -1847,7 +1847,7 @@ _T493:
 }
 
 // FUNCTION: COPTER_D 0x00565225
-void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color, long width) {
+void DrawLine(/*unpacked*/ struct Point3d startPt, /*unpacked*/ struct Point3d endPt, unsigned char color, long width) {
 	long dy;
 	long dx;
 	long error;
@@ -2667,13 +2667,13 @@ static const int32_t TypeToIndex2[16] = {-1, 0, 1, -1, 2, -1, -1, -1, 3, -1, -1,
 static const int32_t TILUT[4][4] = {{0, 1, 3, 2}, {2, 0, 1, 3}, {3, 2, 0, 1}, {1, 3, 2, 0}};
 
 // GLOBAL: COPTER_D 0x005938f0
-static const struct _dPoint2d OT[4] = { 0 /* todo */ };
+static const /*unpacked*/ struct _dPoint2d OT[4] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00593930
-static const struct _dPoint2d RRT[4] = { 0 /* todo */ };
+static const /*unpacked*/ struct _dPoint2d RRT[4] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00593970
-static const struct _dPoint2d LRT[4] = { 0 /* todo */ };
+static const /*unpacked*/ struct _dPoint2d LRT[4] = { 0 /* todo */ };
 
 
 

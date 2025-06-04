@@ -4,7 +4,7 @@
 
 // Type: int32_t;
 
-// Type: struct Point3d;
+// Type: /*packed*/ struct Point3d;
 struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 	int32_t x;
 	int32_t y;
@@ -22,7 +22,7 @@ void VRFrustSetNormals() {
 	int32_t shigh;
 	int32_t disty;
 	int32_t distx;
-	struct Point3d vect;
+	/*packed*/ struct Point3d vect;
 
 // LINE 74:
 	__asm        mov    eax, HALF_WIDTH;

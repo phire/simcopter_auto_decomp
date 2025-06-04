@@ -4,21 +4,21 @@
 
 // Type: unsigned long;
 
-// Type: struct IDirectSound (forward reference);
+// Type: /*packed*/ struct IDirectSound (forward reference);
 struct IDirectSound : public IUnknown
 { // packed(0x4 bytes) TI: 0x192f
 	// calltype: NearStd
-	virtual long QueryInterface(const struct _GUID&, void * __ptr32*) /* override */;
+	virtual long QueryInterface(const /*unpacked*/ struct _GUID&, void * __ptr32*) /* override */;
 	// calltype: NearStd
 	virtual unsigned long AddRef() /* override */;
 	// calltype: NearStd
 	virtual unsigned long Release() /* override */;
 	// calltype: NearStd
-	virtual long CreateSoundBuffer(struct _DSBUFFERDESC*, struct IDirectSoundBuffer**, struct IUnknown*); // vtable+0xc
+	virtual long CreateSoundBuffer(/*packed*/ struct _DSBUFFERDESC*, /*packed*/ struct IDirectSoundBuffer**, /*packed*/ struct IUnknown*); // vtable+0xc
 	// calltype: NearStd
-	virtual long GetCaps(struct _DSCAPS*); // vtable+0x10
+	virtual long GetCaps(/*packed*/ struct _DSCAPS*); // vtable+0x10
 	// calltype: NearStd
-	virtual long DuplicateSoundBuffer(struct IDirectSoundBuffer*, struct IDirectSoundBuffer**); // vtable+0x14
+	virtual long DuplicateSoundBuffer(/*packed*/ struct IDirectSoundBuffer*, /*packed*/ struct IDirectSoundBuffer**); // vtable+0x14
 	// calltype: NearStd
 	virtual long SetCooperativeLevel(void * __ptr32, unsigned long); // vtable+0x18
 	// calltype: NearStd
@@ -28,10 +28,10 @@ struct IDirectSound : public IUnknown
 	// calltype: NearStd
 	virtual long SetSpeakerConfig(unsigned long); // vtable+0x24
 	// calltype: NearStd
-	virtual long Initialize(struct _GUID*); // vtable+0x28
+	virtual long Initialize(/*unpacked*/ struct _GUID*); // vtable+0x28
 };
 
-// Type: class SoundSystem (forward reference);
+// Type: /*packed*/ class SoundSystem (forward reference);
 // VTABLE: COPTER_D 0x0058f440
 class SoundSystem{ // packed(0x74 bytes) TI: 0x1a78
 public:
@@ -47,10 +47,10 @@ public:
 	long bSoundEnabled;
 	static unsigned long dwMaxWaveFormatExSize;
 protected:
-	class DigitalSound *primarySound;
-	struct IDirectSoundBuffer *lpPrimarySound;
-	struct IDirectSound *lpDirectSound;
-	struct _DSCAPS dsCapabilities;
+	/*packed*/ class DigitalSound *primarySound;
+	/*packed*/ struct IDirectSoundBuffer *lpPrimarySound;
+	/*packed*/ struct IDirectSound *lpDirectSound;
+	/*packed*/ struct _DSCAPS dsCapabilities;
 };
 
 // Type: void;
@@ -63,24 +63,24 @@ protected:
 
 // Type: long *;
 
-// Type: class SoundManager (forward reference);
+// Type: /*packed*/ class SoundManager (forward reference);
 // VTABLE: COPTER_D 0x0058f448
 class SoundManager{ // packed(0x204 bytes) TI: 0x1997
 public:
-	class Sound *sound[128];
-	void AddSound(class Sound*, int32_t);
-	void AddDigitalSound(const class basic_string<char>&, int32_t, int32_t);
+	/*packed*/ class Sound *sound[128];
+	void AddSound(/*packed*/ class Sound*, int32_t);
+	void AddDigitalSound(const /*packed*/ class basic_string<char>&, int32_t, int32_t);
 	void AddDigitalSound(long, int32_t);
 	virtual long PlaySoundA(int32_t, long, int32_t); // vtable+0x0
 	virtual void StopSound(int32_t); // vtable+0x4
 	virtual void StopAllSounds(); // vtable+0x8
-	class Sound* GetSound(int32_t);
+	/*packed*/ class Sound* GetSound(int32_t);
 	void SoundManager();
 	void ~SoundManager();
 	virtual void DeleteAllSounds(); // vtable+0xc
 };
 
-// Type: class Sound (forward reference);
+// Type: /*packed*/ class Sound (forward reference);
 // VTABLE: COPTER_D 0x0058f458
 class Sound{ // packed(0x34 bytes) TI: 0x4335
 	enum SoundSourceType {
@@ -99,7 +99,7 @@ public:
 	enum Sound::SoundDuplicateType nSoundDuplicateType;
 	long lID;
 	long lResID;
-	class basic_string<char> sSoundFile;
+	/*packed*/ class basic_string<char> sSoundFile;
 	long bLooping;
 	long bStreaming;
 	long lVolume;
@@ -108,8 +108,8 @@ public:
 	int32_t bUnloadBeforeNextPlay;
 	void Sound();
 	virtual void ~Sound(); // vtable+0x0
-	class Sound& operator=(const class Sound&);
-	virtual void SetSoundFile(const class basic_string<char>&); // vtable+0x4
+	/*packed*/ class Sound& operator=(const /*packed*/ class Sound&);
+	virtual void SetSoundFile(const /*packed*/ class basic_string<char>&); // vtable+0x4
 	virtual long Play(long, int32_t); // vtable+0x8
 	virtual long Stop(); // vtable+0xc
 	virtual long IsPlaying(); // vtable+0x10
@@ -124,26 +124,26 @@ public:
 	static unsigned long lTotalMemoryUsage;
 };
 
-// Type: class DigitalSound (forward reference);
+// Type: /*packed*/ class DigitalSound (forward reference);
 // VTABLE: COPTER_D 0x0058f488
 class DigitalSound : public Sound
 { // packed(0x7a bytes) TI: 0x45d4
 protected:
 	int32_t nStreamingType;
 	int32_t nCompletionEstimationTimerSet;
-	static struct IDirectSound *lpDirectSound;
+	static /*packed*/ struct IDirectSound *lpDirectSound;
 	uint32_t cbSize;
-	struct tWAVEFORMATEX waveFormatEx;
-	struct IDirectSoundBuffer *lpSound[8];
-	struct _STREAMBUFINFO *lpStreamBufferInfo;
+	/*packed*/ struct tWAVEFORMATEX waveFormatEx;
+	/*packed*/ struct IDirectSoundBuffer *lpSound[8];
+	/*packed*/ struct _STREAMBUFINFO *lpStreamBufferInfo;
 	unsigned long dwDesiredBufferDescFlags;
 public:
 	void DigitalSound(long);
-	void DigitalSound(const class basic_string<char>&, int32_t);
+	void DigitalSound(const /*packed*/ class basic_string<char>&, int32_t);
 	void DigitalSound();
 	virtual void ~DigitalSound() /* override */;
-	class DigitalSound& operator=(class DigitalSound&);
-	virtual void SetSoundFile(const class basic_string<char>&, int32_t); // vtable+0x2c
+	/*packed*/ class DigitalSound& operator=(/*packed*/ class DigitalSound&);
+	virtual void SetSoundFile(const /*packed*/ class basic_string<char>&, int32_t); // vtable+0x2c
 	virtual int32_t Load(); // vtable+0x30
 	virtual int32_t LoadFromResource(); // vtable+0x34
 	virtual int32_t LoadFromFile(); // vtable+0x38
@@ -154,7 +154,7 @@ public:
 	virtual long PlayStream(); // vtable+0x44
 	virtual long StopStream(); // vtable+0x48
 protected:
-	virtual long IsPlaying(struct IDirectSoundBuffer**); // vtable+0x4c
+	virtual long IsPlaying(/*packed*/ struct IDirectSoundBuffer**); // vtable+0x4c
 public:
 	virtual long IsPlaying() /* override */;
 	virtual int32_t GetVolume(long *) /* override */;
@@ -170,8 +170,8 @@ public:
 	virtual void StopCompletionNotification() /* override */;
 	virtual long EstimateRemainingPlayTime() /* override */;
 protected:
-	virtual int32_t GetSoundAliasToPlay(struct IDirectSoundBuffer**); // vtable+0x68
-	virtual int32_t CreateSoundBuffer(struct _DSBUFFERDESC*); // vtable+0x6c
+	virtual int32_t GetSoundAliasToPlay(/*packed*/ struct IDirectSoundBuffer**); // vtable+0x68
+	virtual int32_t CreateSoundBuffer(/*packed*/ struct _DSBUFFERDESC*); // vtable+0x6c
 	virtual int32_t CreatePrimarySoundBuffer(); // vtable+0x70
 	virtual int32_t ReleaseSoundBuffer(); // vtable+0x74
 	virtual long InitializeStreamBuffer(long); // vtable+0x78
@@ -181,13 +181,13 @@ protected:
 	virtual int32_t StartCompletionNotificationEstimationTimer(); // vtable+0x88
 };
 
-// Type: class basic_string<char> (forward reference);
+// Type: /*packed*/ class basic_string<char> (forward reference);
 class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
-	using reference_class = class basic_string_ref<char>;
-	using reference_pointer = class basic_string_ref<char>*;
+	using reference_class = /*unpacked*/ class basic_string_ref<char>;
+	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char> *reference;
+	/*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -205,44 +205,44 @@ private:
 	uint32_t find_first_not_of_str(char *, uint32_t, uint32_t);
 	uint32_t find_last_not_of_str(char *, uint32_t, uint32_t);
 public:
-	void basic_string<char>(const class vector<char>&);
+	void basic_string<char>(const /*packed*/ class vector<char>&);
 	void basic_string<char>(char, uint32_t);
 	void basic_string<char>(char *);
 	void basic_string<char>(char *, uint32_t);
-	void basic_string<char>(const class basic_string<char>&, uint32_t, uint32_t);
+	void basic_string<char>(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 	void basic_string<char>(uint32_t, enum capacity);
 	void basic_string<char>();
 protected:
 	void basic_string<char>(char *, uint32_t, uint32_t);
 	void delete_ref();
 	using char_type = char;
-	using baggage_type = struct string_char_baggage<char>;
+	using baggage_type = /*packed*/ struct string_char_baggage<char>;
 public:
 	void ~basic_string<char>();
-	class basic_string<char>& operator=(char);
-	class basic_string<char>& operator=(char *);
-	class basic_string<char>& operator=(const class basic_string<char>&);
-	class basic_string<char>& operator+=(char);
-	class basic_string<char>& operator+=(char *);
-	class basic_string<char>& operator+=(const class basic_string<char>&);
-	class vector<char> operator class vector<char>();
-	class basic_string<char>& append(char, uint32_t);
-	class basic_string<char>& append(char *);
-	class basic_string<char>& append(char *, uint32_t);
-	class basic_string<char>& append(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& assign(char, uint32_t);
-	class basic_string<char>& assign(char *);
-	class basic_string<char>& assign(char *, uint32_t);
-	class basic_string<char>& assign(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& insert(uint32_t, char, uint32_t);
-	class basic_string<char>& insert(uint32_t, char *);
-	class basic_string<char>& insert(uint32_t, char *, uint32_t);
-	class basic_string<char>& insert(uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& remove(uint32_t, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, char, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, char *);
-	class basic_string<char>& replace(uint32_t, uint32_t, char *, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& operator=(char);
+	/*packed*/ class basic_string<char>& operator=(char *);
+	/*packed*/ class basic_string<char>& operator=(const /*packed*/ class basic_string<char>&);
+	/*packed*/ class basic_string<char>& operator+=(char);
+	/*packed*/ class basic_string<char>& operator+=(char *);
+	/*packed*/ class basic_string<char>& operator+=(const /*packed*/ class basic_string<char>&);
+	/*packed*/ class vector<char> operator class vector<char>();
+	/*packed*/ class basic_string<char>& append(char, uint32_t);
+	/*packed*/ class basic_string<char>& append(char *);
+	/*packed*/ class basic_string<char>& append(char *, uint32_t);
+	/*packed*/ class basic_string<char>& append(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& assign(char, uint32_t);
+	/*packed*/ class basic_string<char>& assign(char *);
+	/*packed*/ class basic_string<char>& assign(char *, uint32_t);
+	/*packed*/ class basic_string<char>& assign(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char *);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char *, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& remove(uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char *);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char *, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 	char get_at(uint32_t);
 	void put_at(uint32_t, char);
 	char& operator[](uint32_t);
@@ -258,39 +258,39 @@ public:
 	uint32_t find(char, uint32_t);
 	uint32_t find(char *, uint32_t);
 	uint32_t find(char *, uint32_t, uint32_t);
-	uint32_t find(const class basic_string<char>&, uint32_t);
+	uint32_t find(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t rfind(char, uint32_t);
 	uint32_t rfind(char *, uint32_t);
 	uint32_t rfind(char *, uint32_t, uint32_t);
-	uint32_t rfind(const class basic_string<char>&, uint32_t);
+	uint32_t rfind(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_first_of(char, uint32_t);
 	uint32_t find_first_of(char *, uint32_t);
 	uint32_t find_first_of(char *, uint32_t, uint32_t);
-	uint32_t find_first_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_last_of(char, uint32_t);
 	uint32_t find_last_of(char *, uint32_t);
 	uint32_t find_last_of(char *, uint32_t, uint32_t);
-	uint32_t find_last_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_last_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_first_not_of(char, uint32_t);
 	uint32_t find_first_not_of(char *, uint32_t);
 	uint32_t find_first_not_of(char *, uint32_t, uint32_t);
-	uint32_t find_first_not_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_not_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_last_not_of(char, uint32_t);
 	uint32_t find_last_not_of(char *, uint32_t);
 	uint32_t find_last_not_of(char *, uint32_t, uint32_t);
-	uint32_t find_last_not_of(const class basic_string<char>&, uint32_t);
-	class basic_string<char> substr(uint32_t, uint32_t);
+	uint32_t find_last_not_of(const /*packed*/ class basic_string<char>&, uint32_t);
+	/*packed*/ class basic_string<char> substr(uint32_t, uint32_t);
 	int32_t compare(char, uint32_t, uint32_t);
 	int32_t compare(char *, uint32_t);
 	int32_t compare(char *, uint32_t, uint32_t);
-	int32_t compare(const class basic_string<char>&, uint32_t, uint32_t);
+	int32_t compare(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 };
 
 // Type: uint32_t;
 
 // Type: unsigned char *;
 
-// Type: struct _MMCKINFO;
+// Type: /*packed*/ struct _MMCKINFO;
 struct _MMCKINFO{ // packed(0x14 bytes) TI: 0x1da7
 	unsigned long ckid;
 	unsigned long cksize;
@@ -299,39 +299,39 @@ struct _MMCKINFO{ // packed(0x14 bytes) TI: 0x1da7
 	unsigned long dwFlags;
 };
 
-// Type: struct _DSBUFFERDESC;
+// Type: /*packed*/ struct _DSBUFFERDESC;
 struct _DSBUFFERDESC{ // packed(0x14 bytes) TI: 0x1315
 	unsigned long dwSize;
 	unsigned long dwFlags;
 	unsigned long dwBufferBytes;
 	unsigned long dwReserved;
-	struct tWAVEFORMATEX *lpwfxFormat;
+	/*packed*/ struct tWAVEFORMATEX *lpwfxFormat;
 };
 
-// Type: struct _DSBUFFERDESC (forward reference);
+// Type: /*packed*/ struct _DSBUFFERDESC (forward reference);
 struct _DSBUFFERDESC{ // packed(0x14 bytes) TI: 0x1315
 	unsigned long dwSize;
 	unsigned long dwFlags;
 	unsigned long dwBufferBytes;
 	unsigned long dwReserved;
-	struct tWAVEFORMATEX *lpwfxFormat;
+	/*packed*/ struct tWAVEFORMATEX *lpwfxFormat;
 };
 
-// Type: struct IDirectSoundBuffer (forward reference);
+// Type: /*packed*/ struct IDirectSoundBuffer (forward reference);
 struct IDirectSoundBuffer : public IUnknown
 { // packed(0x4 bytes) TI: 0x1bbe
 	// calltype: NearStd
-	virtual long QueryInterface(const struct _GUID&, void * __ptr32*) /* override */;
+	virtual long QueryInterface(const /*unpacked*/ struct _GUID&, void * __ptr32*) /* override */;
 	// calltype: NearStd
 	virtual unsigned long AddRef() /* override */;
 	// calltype: NearStd
 	virtual unsigned long Release() /* override */;
 	// calltype: NearStd
-	virtual long GetCaps(struct _DSBCAPS*); // vtable+0xc
+	virtual long GetCaps(/*packed*/ struct _DSBCAPS*); // vtable+0xc
 	// calltype: NearStd
 	virtual long GetCurrentPosition(unsigned long *, unsigned long *); // vtable+0x10
 	// calltype: NearStd
-	virtual long GetFormat(struct tWAVEFORMATEX*, unsigned long, unsigned long *); // vtable+0x14
+	virtual long GetFormat(/*packed*/ struct tWAVEFORMATEX*, unsigned long, unsigned long *); // vtable+0x14
 	// calltype: NearStd
 	virtual long GetVolume(long *); // vtable+0x18
 	// calltype: NearStd
@@ -341,7 +341,7 @@ struct IDirectSoundBuffer : public IUnknown
 	// calltype: NearStd
 	virtual long GetStatus(unsigned long *); // vtable+0x24
 	// calltype: NearStd
-	virtual long Initialize(struct IDirectSound*, struct _DSBUFFERDESC*); // vtable+0x28
+	virtual long Initialize(/*packed*/ struct IDirectSound*, /*packed*/ struct _DSBUFFERDESC*); // vtable+0x28
 	// calltype: NearStd
 	virtual long Lock(unsigned long, unsigned long, void * __ptr32, unsigned long *, void * __ptr32, unsigned long *, unsigned long); // vtable+0x2c
 	// calltype: NearStd
@@ -349,7 +349,7 @@ struct IDirectSoundBuffer : public IUnknown
 	// calltype: NearStd
 	virtual long SetCurrentPosition(unsigned long); // vtable+0x34
 	// calltype: NearStd
-	virtual long SetFormat(struct tWAVEFORMATEX*); // vtable+0x38
+	virtual long SetFormat(/*packed*/ struct tWAVEFORMATEX*); // vtable+0x38
 	// calltype: NearStd
 	virtual long SetVolume(long); // vtable+0x3c
 	// calltype: NearStd
@@ -364,7 +364,7 @@ struct IDirectSoundBuffer : public IUnknown
 	virtual long Restore(); // vtable+0x50
 };
 
-// Type: struct _OFSTRUCT;
+// Type: /*packed*/ struct _OFSTRUCT;
 struct _OFSTRUCT{ // packed(0x88 bytes) TI: 0x21e5
 	unsigned char cBytes;
 	unsigned char fFixedDisk;
@@ -376,12 +376,12 @@ struct _OFSTRUCT{ // packed(0x88 bytes) TI: 0x21e5
 
 // Type: void (long);
 
-// Type: struct IUnknown;
+// Type: /*packed*/ struct IUnknown;
 struct IUnknown{ // packed(0x4 bytes) TI: 0x27c0
-	struct IUnknownVtbl *lpVtbl;
+	/*packed*/ struct IUnknownVtbl *lpVtbl;
 };
 
-// Type: class Sound;
+// Type: /*packed*/ class Sound;
 // VTABLE: COPTER_D 0x0058f458
 class Sound{ // packed(0x34 bytes) TI: 0x4335
 	enum SoundSourceType {
@@ -400,7 +400,7 @@ public:
 	enum Sound::SoundDuplicateType nSoundDuplicateType;
 	long lID;
 	long lResID;
-	class basic_string<char> sSoundFile;
+	/*packed*/ class basic_string<char> sSoundFile;
 	long bLooping;
 	long bStreaming;
 	long lVolume;
@@ -409,8 +409,8 @@ public:
 	int32_t bUnloadBeforeNextPlay;
 	void Sound();
 	virtual void ~Sound(); // vtable+0x0
-	class Sound& operator=(const class Sound&);
-	virtual void SetSoundFile(const class basic_string<char>&); // vtable+0x4
+	/*packed*/ class Sound& operator=(const /*packed*/ class Sound&);
+	virtual void SetSoundFile(const /*packed*/ class basic_string<char>&); // vtable+0x4
 	virtual long Play(long, int32_t); // vtable+0x8
 	virtual long Stop(); // vtable+0xc
 	virtual long IsPlaying(); // vtable+0x10
@@ -861,7 +861,7 @@ _T5b:
 }
 
 // FUNCTION: COPTER_D 0x0042e47e
-void SoundManager::AddSound(class Sound *soundToAdd, int32_t nIndex) {
+void SoundManager::AddSound(/*packed*/ class Sound *soundToAdd, int32_t nIndex) {
 // LINE 316:
 	__asm        mov    eax, nIndex;
 	__asm        mov    ecx, this;
@@ -895,7 +895,7 @@ _T4b:
 
 // FUNCTION: COPTER_D 0x0042e4e2
 void SoundManager::AddDigitalSound(long lResID, int32_t nIndex) {
-	class DigitalSound *newDigitalSound;
+	/*packed*/ class DigitalSound *newDigitalSound;
 
 // LINE 341:
 	__asm        push   0x7A;
@@ -946,8 +946,8 @@ _T7d:
 }
 
 // FUNCTION: COPTER_D 0x0042e578
-void SoundManager::AddDigitalSound(const class basic_string<char>& sNewSoundFile, int32_t nIndex, int32_t nStreamingType) {
-	class DigitalSound *newDigitalSound;
+void SoundManager::AddDigitalSound(const /*packed*/ class basic_string<char>& sNewSoundFile, int32_t nIndex, int32_t nStreamingType) {
+	/*packed*/ class DigitalSound *newDigitalSound;
 
 // LINE 348:
 	__asm        push   0x7A;
@@ -1214,7 +1214,7 @@ _Td3:
 }
 
 // FUNCTION: COPTER_D 0x0042e8cb
-class Sound& Sound::operator=(const class Sound& newSound) {
+/*packed*/ class Sound& Sound::operator=(const /*packed*/ class Sound& newSound) {
 // LINE 444:
 	this->nSoundSourceType = newSound.nSoundSourceType;
 // LINE 445:
@@ -1388,7 +1388,7 @@ _T20f:
 }
 
 // FUNCTION: COPTER_D 0x0042eafa
-int32_t operator<(const class Sound& compareSound1, const class Sound& compareSound2) {
+int32_t operator<(const /*packed*/ class Sound& compareSound1, const /*packed*/ class Sound& compareSound2) {
 // LINE 468:
 	__asm        mov    eax, compareSound2;
 	__asm        mov    ecx, compareSound1;
@@ -1406,7 +1406,7 @@ _T24:
 }
 
 // FUNCTION: COPTER_D 0x0042eb28
-int32_t operator==(const class Sound& compareSound1, const class Sound& compareSound2) {
+int32_t operator==(const /*packed*/ class Sound& compareSound1, const /*packed*/ class Sound& compareSound2) {
 // LINE 485:
 	__asm        mov    eax, compareSound1;
 	__asm        mov    ecx, compareSound2;
@@ -1611,7 +1611,7 @@ _T23a:
 }
 
 // FUNCTION: COPTER_D 0x0042ed67
-void Sound::SetSoundFile(const class basic_string<char>& sNewSoundFile) {
+void Sound::SetSoundFile(const /*packed*/ class basic_string<char>& sNewSoundFile) {
 // LINE 502:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x14;
@@ -1828,7 +1828,7 @@ _T7b:
 }
 
 // FUNCTION: COPTER_D 0x0042f00f
-void DigitalSound::DigitalSound(const class basic_string<char>& sNewSoundFile, int32_t nNewStreamingType) {
+void DigitalSound::DigitalSound(const /*packed*/ class basic_string<char>& sNewSoundFile, int32_t nNewStreamingType) {
 	int32_t i;
 
 
@@ -2073,7 +2073,7 @@ void DigitalSound::~DigitalSound() {
 }
 
 // FUNCTION: COPTER_D 0x0042f318
-void DigitalSound::SetSoundFile(const class basic_string<char>& sNewSoundFile, int32_t nNewStreamingType) {
+void DigitalSound::SetSoundFile(const /*packed*/ class basic_string<char>& sNewSoundFile, int32_t nNewStreamingType) {
 // LINE 639:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x14;
@@ -2307,7 +2307,7 @@ _T77:
 }
 
 // FUNCTION: COPTER_D 0x0042f5d5
-class DigitalSound& DigitalSound::operator=(class DigitalSound& newSound) {
+/*packed*/ class DigitalSound& DigitalSound::operator=(/*packed*/ class DigitalSound& newSound) {
 // LINE 683:
 	__asm        mov    eax, newSound;
 	__asm        push   eax;
@@ -2376,8 +2376,8 @@ int32_t DigitalSound::LoadFromFile() {
 	unsigned char * pbBufferData2;
 	int32_t bReturnValue;
 	void * __ptr32 hmmioIn;
-	struct _MMCKINFO ckInRiff;
-	struct _MMCKINFO ckIn;
+	/*packed*/ struct _MMCKINFO ckInRiff;
+	/*packed*/ struct _MMCKINFO ckIn;
 	unsigned long dwBufferLength;
 
 // LINE 735:
@@ -2681,7 +2681,7 @@ _T302:
 
 // FUNCTION: COPTER_D 0x0042f989
 int32_t DigitalSound::CreatePrimarySoundBuffer() {
-	struct _DSBUFFERDESC dsBufferDescription;
+	/*packed*/ struct _DSBUFFERDESC dsBufferDescription;
 
 // LINE 843:
 	__asm        push   0x14;
@@ -2710,9 +2710,9 @@ int32_t DigitalSound::CreatePrimarySoundBuffer() {
 }
 
 // FUNCTION: COPTER_D 0x0042f9da
-int32_t DigitalSound::CreateSoundBuffer(struct _DSBUFFERDESC *dsNewBufferDescription) {
+int32_t DigitalSound::CreateSoundBuffer(/*packed*/ struct _DSBUFFERDESC *dsNewBufferDescription) {
 	long hResult;
-	struct _DSBUFFERDESC dsBufferDescription;
+	/*packed*/ struct _DSBUFFERDESC dsBufferDescription;
 
 // LINE 881:
 	__asm        cmp    DigitalSound::lpDirectSound, 0;
@@ -3252,7 +3252,7 @@ long DigitalSound::IsPlaying() {
 }
 
 // FUNCTION: COPTER_D 0x0042ff90
-long DigitalSound::IsPlaying(struct IDirectSoundBuffer **lplpSoundPlaying) {
+long DigitalSound::IsPlaying(/*packed*/ struct IDirectSoundBuffer **lplpSoundPlaying) {
 	long hResult;
 	int32_t i;
 	unsigned long dwStatus;
@@ -3335,7 +3335,7 @@ _Tc3:
 long DigitalSound::Play(long bPlayLooping, int32_t nDuplicateType) {
 	long hResult;
 	unsigned long dwLooped;
-	struct IDirectSoundBuffer *lpSoundBufferToPlay;
+	/*packed*/ struct IDirectSoundBuffer *lpSoundBufferToPlay;
 
 // LINE 1271:
 	dwLooped = 0x0;
@@ -3578,7 +3578,7 @@ _T298:
 }
 
 // FUNCTION: COPTER_D 0x004302f9
-int32_t DigitalSound::GetSoundAliasToPlay(struct IDirectSoundBuffer **lplpSoundBufferToPlay) {
+int32_t DigitalSound::GetSoundAliasToPlay(/*packed*/ struct IDirectSoundBuffer **lplpSoundBufferToPlay) {
 	long hResult;
 	int32_t i;
 	unsigned long dwStatus;
@@ -3769,7 +3769,7 @@ _Tcc:
 // FUNCTION: COPTER_D 0x004304ec
 long DigitalSound::ShouldWeStream() {
 	int32_t hFile;
-	struct _OFSTRUCT ofStruct;
+	/*packed*/ struct _OFSTRUCT ofStruct;
 	unsigned long dwFileSize;
 
 // LINE 1452:
@@ -3907,7 +3907,7 @@ _T1d9:
 // FUNCTION: COPTER_D 0x004306ca
 long DigitalSound::InitializeStreamBuffer(long bStopIfCurrentlyPlaying) {
 	long hResult;
-	struct _DSBUFFERDESC dsBufferDescription;
+	/*packed*/ struct _DSBUFFERDESC dsBufferDescription;
 
 // LINE 1491:
 	__asm        mov    eax, this;
@@ -4820,7 +4820,7 @@ _Tea:
 
 // FUNCTION: COPTER_D 0x004310a5
 void StreamingBufferTimerCallback(uint32_t __formal, uint32_t __formal, unsigned long dwUser, unsigned long __formal, unsigned long __formal) {
-	class DigitalSound *digitalSoundObject;
+	/*packed*/ class DigitalSound *digitalSoundObject;
 
 // LINE 1798:
 	digitalSoundObject = dwUser;
@@ -5675,7 +5675,7 @@ _Tb7:
 
 // FUNCTION: COPTER_D 0x00431947
 void CompletionEstimationTimerCallback(uint32_t nTimerID, uint32_t __formal, unsigned long dwUser, unsigned long __formal, unsigned long __formal) {
-	class DigitalSound *digitalSoundObject;
+	/*packed*/ class DigitalSound *digitalSoundObject;
 
 // LINE 2107:
 	digitalSoundObject = dwUser;
@@ -5911,5 +5911,5 @@ unsigned long SoundSystem::dwMaxWaveFormatExSize = 0;
 unsigned long Sound::lTotalMemoryUsage = 0;
 
 // GLOBAL: COPTER_D 0x00597e60
-struct IDirectSound *DigitalSound::lpDirectSound = { 0 /* todo */ };
+/*packed*/ struct IDirectSound *DigitalSound::lpDirectSound = { 0 /* todo */ };
 

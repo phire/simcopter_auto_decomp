@@ -10,13 +10,13 @@
 
 // Type: unsigned long;
 
-// Type: struct TIME_STAMP;
+// Type: /*packed*/ struct TIME_STAMP;
 struct TIME_STAMP{ // packed(0x8 bytes) TI: 0x26fa
 	unsigned long High;
 	unsigned long Low;
 };
 
-// Type: struct TIME_STAMP (forward reference);
+// Type: /*packed*/ struct TIME_STAMP (forward reference);
 struct TIME_STAMP{ // packed(0x8 bytes) TI: 0x26fa
 	unsigned long High;
 	unsigned long Low;
@@ -327,8 +327,8 @@ _Tba:
 }
 
 // FUNCTION: COPTER_D 0x0047b8ec
-struct TIME_STAMP winrdtsc() {
-	struct TIME_STAMP timestamp;
+/*packed*/ struct TIME_STAMP winrdtsc() {
+	/*packed*/ struct TIME_STAMP timestamp;
 	unsigned long features;
 
 // LINE 324:

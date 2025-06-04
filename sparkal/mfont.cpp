@@ -4,19 +4,19 @@
 
 // Type: char *;
 
-// Type: class MFont (forward reference);
+// Type: /*packed*/ class MFont (forward reference);
 // VTABLE: COPTER_D 0x00591640
 class MFont{ // packed(0x1c bytes) TI: 0x1a6c
 public:
-	class basic_string<char> sName;
+	/*packed*/ class basic_string<char> sName;
 	unsigned long lHeight;
 	unsigned long lWidth;
 	unsigned long lAttributes;
 	void MFont(char *, unsigned long, unsigned long, unsigned long, int32_t);
-	void MFont(const class MFont&);
+	void MFont(const /*packed*/ class MFont&);
 	void MFont();
 	void ~MFont();
-	class MFont& operator=(const class MFont&);
+	/*packed*/ class MFont& operator=(const /*packed*/ class MFont&);
 	// calltype: NearC
 	static int32_t IsFontAvailable(char *, unsigned long, unsigned long, unsigned long);
 	// calltype: NearC
@@ -40,13 +40,13 @@ protected:
 
 // Type: long;
 
-// Type: struct tagSIZE;
+// Type: /*packed*/ struct tagSIZE;
 struct tagSIZE{ // packed(0x8 bytes) TI: 0x21e7
 	long cx;
 	long cy;
 };
 
-// Type: struct tagRECT;
+// Type: /*packed*/ struct tagRECT;
 struct tagRECT{ // packed(0x10 bytes) TI: 0x13c4
 	long left;
 	long top;
@@ -147,7 +147,7 @@ _Tce:
 }
 
 // FUNCTION: COPTER_D 0x0049f89b
-void MFont::MFont(const class MFont& copyMFont) {
+void MFont::MFont(const /*packed*/ class MFont& copyMFont) {
 
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -519,7 +519,7 @@ _Tdb:
 }
 
 // FUNCTION: COPTER_D 0x0049fd33
-class MFont& MFont::operator=(const class MFont& copyMFont) {
+/*packed*/ class MFont& MFont::operator=(const /*packed*/ class MFont& copyMFont) {
 // LINE 82:
 	__asm        mov    eax, copyMFont;
 	__asm        cmp    this, eax;
@@ -1026,8 +1026,8 @@ _T31:
 
 // FUNCTION: COPTER_D 0x004a02b1
 int32_t MFont::GetTextDimensions(char * szString, long& lWidth, long& lHeight) {
-	struct tagSIZE sizeText;
-	struct tagRECT rectText;
+	/*packed*/ struct tagSIZE sizeText;
+	/*packed*/ struct tagRECT rectText;
 	void * __ptr32 hdcScreen;
 	long lStringLength;
 	int32_t nReturnValue;

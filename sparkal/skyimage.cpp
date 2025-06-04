@@ -4,7 +4,7 @@
 
 // Type: char *;
 
-// Type: class SkyImage (forward reference);
+// Type: /*packed*/ class SkyImage (forward reference);
 // VTABLE: COPTER_D 0x00591090
 class SkyImage : public CBackBuffer
 { // packed(0x150 bytes) TI: 0x17e3
@@ -18,7 +18,7 @@ public:
 	void SwitchToSkyType(enum SkyImage::SkyType);
 	void SwitchToProperSkyType();
 	void ToggleSkyType();
-	virtual unsigned long Compose(class CBackBuffer*, int32_t); // vtable+0x64
+	virtual unsigned long Compose(/*packed*/ class CBackBuffer*, int32_t); // vtable+0x64
 	int32_t nBitmapWidth;
 	int32_t nBitmapHeight;
 	int32_t nSkyType;
@@ -39,7 +39,7 @@ enum SkyType {
 	nSkyTypeNight = 1,
 };
 
-// Type: struct VRResource (forward reference);
+// Type: /*packed*/ struct VRResource (forward reference);
 struct VRResource{ // packed(0x10 bytes) TI: 0x18ae
 	char * mem;
 	int32_t mempoolid;
@@ -49,18 +49,18 @@ struct VRResource{ // packed(0x10 bytes) TI: 0x18ae
 
 // Type: char;
 
-// Type: struct VRBmpHdr (forward reference);
+// Type: /*packed*/ struct VRBmpHdr (forward reference);
 struct VRBmpHdr{ // packed(0x10 bytes) TI: 0x2312
-	struct VRBmpInfo info;
+	/*packed*/ struct VRBmpInfo info;
 	int32_t ScanOffset[1];
 };
 
-// Type: class CBackBuffer (forward reference);
+// Type: /*packed*/ class CBackBuffer (forward reference);
 // VTABLE: COPTER_D 0x00590808
 class CBackBuffer : public IBackBuffer
 { // packed(0x134 bytes) TI: 0x2843
 public:
-	void CBackBuffer(long, long, const struct SparkalColor*);
+	void CBackBuffer(long, long, const /*packed*/ struct SparkalColor*);
 	void CBackBuffer(char *);
 	void CBackBuffer();
 	virtual void InitializeMemberVariables(); // vtable+0x28
@@ -69,60 +69,60 @@ public:
 	virtual unsigned long Lock() /* override */;
 	virtual unsigned long Unlock() /* override */;
 	// calltype: NearC
-	static int32_t GetPaletteFromImage(char *, struct SparkalColor*);
-	virtual unsigned long Swap(class CSparkalWindow*, long, long) /* override */;
-	virtual unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long) /* override */;
-	virtual unsigned long StretchRect(class CSparkalWindow*, long, long, long, long, long, long, long, long) /* override */;
-	virtual unsigned long Compose(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&); // vtable+0x2c
-	virtual unsigned long Compose(class IFlatImage*, long, long, long, long, long, long) /* override */;
-	virtual unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long) /* override */;
-	virtual unsigned long StretchCompose(class IFlatImage*, const struct SparkalRect&, const struct SparkalRect&); // vtable+0x30
-	virtual unsigned long Duplicate(class CBackBuffer*, int32_t); // vtable+0x34
-	virtual unsigned long ComposeNoClip(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&); // vtable+0x38
-	virtual unsigned long ComposeNoClip(class IFlatImage*, long, long, long, long, long, long); // vtable+0x3c
-	void UpdatePalette(long, long, const struct SparkalColor*);
+	static int32_t GetPaletteFromImage(char *, /*packed*/ struct SparkalColor*);
+	virtual unsigned long Swap(/*packed*/ class CSparkalWindow*, long, long) /* override */;
+	virtual unsigned long SwapRect(/*packed*/ class CSparkalWindow*, long, long, long, long, long, long) /* override */;
+	virtual unsigned long StretchRect(/*packed*/ class CSparkalWindow*, long, long, long, long, long, long, long, long) /* override */;
+	virtual unsigned long Compose(/*packed*/ class IFlatImage*, const /*packed*/ struct SparkalPoint&, const /*packed*/ struct SparkalRect&); // vtable+0x2c
+	virtual unsigned long Compose(/*packed*/ class IFlatImage*, long, long, long, long, long, long) /* override */;
+	virtual unsigned long StretchCompose(/*packed*/ class IFlatImage*, long, long, long, long, long, long, long, long) /* override */;
+	virtual unsigned long StretchCompose(/*packed*/ class IFlatImage*, const /*packed*/ struct SparkalRect&, const /*packed*/ struct SparkalRect&); // vtable+0x30
+	virtual unsigned long Duplicate(/*packed*/ class CBackBuffer*, int32_t); // vtable+0x34
+	virtual unsigned long ComposeNoClip(/*packed*/ class IFlatImage*, const /*packed*/ struct SparkalPoint&, const /*packed*/ struct SparkalRect&); // vtable+0x38
+	virtual unsigned long ComposeNoClip(/*packed*/ class IFlatImage*, long, long, long, long, long, long); // vtable+0x3c
+	void UpdatePalette(long, long, const /*packed*/ struct SparkalColor*);
 	virtual void SetTransparentColor(int32_t, long) /* override */;
 	unsigned long GetTransparentColor(long&);
-	unsigned long SetFont(class MFont*);
-	void SetFontColor(struct SparkalColor&);
+	unsigned long SetFont(/*packed*/ class MFont*);
+	void SetFontColor(/*packed*/ struct SparkalColor&);
 	void SetFontIndex(int32_t);
-	void SetColor(struct SparkalColor&);
+	void SetColor(/*packed*/ struct SparkalColor&);
 	void SetColorIndex(int32_t);
 	virtual unsigned long DrawLine(long, long, long, long, long); // vtable+0x40
-	virtual unsigned long FillRect(long, const struct SparkalRect*); // vtable+0x44
-	virtual unsigned long DrawBufferText(char *, long, unsigned long, const class MRect&, class MFont*); // vtable+0x48
-	virtual unsigned long DrawBufferText(char *, unsigned long, long *, long *, long *, long *, class MFont*); // vtable+0x4c
+	virtual unsigned long FillRect(long, const /*packed*/ struct SparkalRect*); // vtable+0x44
+	virtual unsigned long DrawBufferText(char *, long, unsigned long, const /*packed*/ class MRect&, /*packed*/ class MFont*); // vtable+0x48
+	virtual unsigned long DrawBufferText(char *, unsigned long, long *, long *, long *, long *, /*packed*/ class MFont*); // vtable+0x4c
 	virtual unsigned long DrawLineUnclipped(long, long, long, long, long); // vtable+0x50
 	virtual unsigned long DrawLineClipped(long, long, long, long, long); // vtable+0x54
-	virtual unsigned long DrawRectangleOutline(const struct SparkalRect&, long); // vtable+0x58
-	virtual unsigned long DrawRectangleOutlineUnclipped(const struct SparkalRect&, long); // vtable+0x5c
+	virtual unsigned long DrawRectangleOutline(const /*packed*/ struct SparkalRect&, long); // vtable+0x58
+	virtual unsigned long DrawRectangleOutlineUnclipped(const /*packed*/ struct SparkalRect&, long); // vtable+0x5c
 	long IsLost();
 	long Restore();
 	char * szFilePath;
-	struct tagRECT rectDirectDrawBuffer;
+	/*packed*/ struct tagRECT rectDirectDrawBuffer;
 protected:
 	int32_t bSurfacePrimary;
 	int32_t bSurfaceTransparent;
-	class MFont *mFont;
-	struct SparkalColor colorFontCurrent;
-	struct SparkalColor colorCurrent;
+	/*packed*/ class MFont *mFont;
+	/*packed*/ struct SparkalColor colorFontCurrent;
+	/*packed*/ struct SparkalColor colorCurrent;
 	int32_t nColorIndexFontCurrent;
 	int32_t nColorIndexCurrent;
 	int32_t nColorIndexTransparent;
-	struct IDirectDrawSurface *mpFrontSurface;
-	struct IDirectDrawSurface *mpBackSurface;
-	struct IDirectDrawPalette *mpPalette;
-	struct _DDSURFACEDESC mDDdesc;
-	struct _DDBLTFX mDDBltFx;
+	/*packed*/ struct IDirectDrawSurface *mpFrontSurface;
+	/*packed*/ struct IDirectDrawSurface *mpBackSurface;
+	/*packed*/ struct IDirectDrawPalette *mpPalette;
+	/*packed*/ struct _DDSURFACEDESC mDDdesc;
+	/*packed*/ struct _DDBLTFX mDDBltFx;
 	void * __ptr32 hPen;
 	int32_t nPenThickness;
-	struct SparkalColor colorPenCurrent;
-	virtual struct IDirectDrawSurface* GetDDSurface(); // vtable+0x60
+	/*packed*/ struct SparkalColor colorPenCurrent;
+	virtual /*packed*/ struct IDirectDrawSurface* GetDDSurface(); // vtable+0x60
 };
 
 // Type: long;
 
-// Type: struct SparkalRect;
+// Type: /*packed*/ struct SparkalRect;
 struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	long left;
 	long top;
@@ -134,22 +134,22 @@ struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 
 // Type: unsigned long;
 
-// Type: class IBackBuffer;
+// Type: /*packed*/ class IBackBuffer;
 // VTABLE: COPTER_D 0x005907e0
 class IBackBuffer : public IFlatImage
 { // packed(0x18 bytes) TI: 0x283f
 public:
-	virtual unsigned long Swap(class CSparkalWindow*, long, long); // vtable+0x1c
-	virtual unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long); // vtable+0x20
-	virtual unsigned long StretchRect(class CSparkalWindow*, long, long, long, long, long, long, long, long); // vtable+0x24
+	virtual unsigned long Swap(/*packed*/ class CSparkalWindow*, long, long); // vtable+0x1c
+	virtual unsigned long SwapRect(/*packed*/ class CSparkalWindow*, long, long, long, long, long, long); // vtable+0x20
+	virtual unsigned long StretchRect(/*packed*/ class CSparkalWindow*, long, long, long, long, long, long, long, long); // vtable+0x24
 };
 
-// Type: class CBackBuffer;
+// Type: /*packed*/ class CBackBuffer;
 // VTABLE: COPTER_D 0x00590808
 class CBackBuffer : public IBackBuffer
 { // packed(0x134 bytes) TI: 0x2843
 public:
-	void CBackBuffer(long, long, const struct SparkalColor*);
+	void CBackBuffer(long, long, const /*packed*/ struct SparkalColor*);
 	void CBackBuffer(char *);
 	void CBackBuffer();
 	virtual void InitializeMemberVariables(); // vtable+0x28
@@ -158,58 +158,58 @@ public:
 	virtual unsigned long Lock() /* override */;
 	virtual unsigned long Unlock() /* override */;
 	// calltype: NearC
-	static int32_t GetPaletteFromImage(char *, struct SparkalColor*);
-	virtual unsigned long Swap(class CSparkalWindow*, long, long) /* override */;
-	virtual unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long) /* override */;
-	virtual unsigned long StretchRect(class CSparkalWindow*, long, long, long, long, long, long, long, long) /* override */;
-	virtual unsigned long Compose(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&); // vtable+0x2c
-	virtual unsigned long Compose(class IFlatImage*, long, long, long, long, long, long) /* override */;
-	virtual unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long) /* override */;
-	virtual unsigned long StretchCompose(class IFlatImage*, const struct SparkalRect&, const struct SparkalRect&); // vtable+0x30
-	virtual unsigned long Duplicate(class CBackBuffer*, int32_t); // vtable+0x34
-	virtual unsigned long ComposeNoClip(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&); // vtable+0x38
-	virtual unsigned long ComposeNoClip(class IFlatImage*, long, long, long, long, long, long); // vtable+0x3c
-	void UpdatePalette(long, long, const struct SparkalColor*);
+	static int32_t GetPaletteFromImage(char *, /*packed*/ struct SparkalColor*);
+	virtual unsigned long Swap(/*packed*/ class CSparkalWindow*, long, long) /* override */;
+	virtual unsigned long SwapRect(/*packed*/ class CSparkalWindow*, long, long, long, long, long, long) /* override */;
+	virtual unsigned long StretchRect(/*packed*/ class CSparkalWindow*, long, long, long, long, long, long, long, long) /* override */;
+	virtual unsigned long Compose(/*packed*/ class IFlatImage*, const /*packed*/ struct SparkalPoint&, const /*packed*/ struct SparkalRect&); // vtable+0x2c
+	virtual unsigned long Compose(/*packed*/ class IFlatImage*, long, long, long, long, long, long) /* override */;
+	virtual unsigned long StretchCompose(/*packed*/ class IFlatImage*, long, long, long, long, long, long, long, long) /* override */;
+	virtual unsigned long StretchCompose(/*packed*/ class IFlatImage*, const /*packed*/ struct SparkalRect&, const /*packed*/ struct SparkalRect&); // vtable+0x30
+	virtual unsigned long Duplicate(/*packed*/ class CBackBuffer*, int32_t); // vtable+0x34
+	virtual unsigned long ComposeNoClip(/*packed*/ class IFlatImage*, const /*packed*/ struct SparkalPoint&, const /*packed*/ struct SparkalRect&); // vtable+0x38
+	virtual unsigned long ComposeNoClip(/*packed*/ class IFlatImage*, long, long, long, long, long, long); // vtable+0x3c
+	void UpdatePalette(long, long, const /*packed*/ struct SparkalColor*);
 	virtual void SetTransparentColor(int32_t, long) /* override */;
 	unsigned long GetTransparentColor(long&);
-	unsigned long SetFont(class MFont*);
-	void SetFontColor(struct SparkalColor&);
+	unsigned long SetFont(/*packed*/ class MFont*);
+	void SetFontColor(/*packed*/ struct SparkalColor&);
 	void SetFontIndex(int32_t);
-	void SetColor(struct SparkalColor&);
+	void SetColor(/*packed*/ struct SparkalColor&);
 	void SetColorIndex(int32_t);
 	virtual unsigned long DrawLine(long, long, long, long, long); // vtable+0x40
-	virtual unsigned long FillRect(long, const struct SparkalRect*); // vtable+0x44
-	virtual unsigned long DrawBufferText(char *, long, unsigned long, const class MRect&, class MFont*); // vtable+0x48
-	virtual unsigned long DrawBufferText(char *, unsigned long, long *, long *, long *, long *, class MFont*); // vtable+0x4c
+	virtual unsigned long FillRect(long, const /*packed*/ struct SparkalRect*); // vtable+0x44
+	virtual unsigned long DrawBufferText(char *, long, unsigned long, const /*packed*/ class MRect&, /*packed*/ class MFont*); // vtable+0x48
+	virtual unsigned long DrawBufferText(char *, unsigned long, long *, long *, long *, long *, /*packed*/ class MFont*); // vtable+0x4c
 	virtual unsigned long DrawLineUnclipped(long, long, long, long, long); // vtable+0x50
 	virtual unsigned long DrawLineClipped(long, long, long, long, long); // vtable+0x54
-	virtual unsigned long DrawRectangleOutline(const struct SparkalRect&, long); // vtable+0x58
-	virtual unsigned long DrawRectangleOutlineUnclipped(const struct SparkalRect&, long); // vtable+0x5c
+	virtual unsigned long DrawRectangleOutline(const /*packed*/ struct SparkalRect&, long); // vtable+0x58
+	virtual unsigned long DrawRectangleOutlineUnclipped(const /*packed*/ struct SparkalRect&, long); // vtable+0x5c
 	long IsLost();
 	long Restore();
 	char * szFilePath;
-	struct tagRECT rectDirectDrawBuffer;
+	/*packed*/ struct tagRECT rectDirectDrawBuffer;
 protected:
 	int32_t bSurfacePrimary;
 	int32_t bSurfaceTransparent;
-	class MFont *mFont;
-	struct SparkalColor colorFontCurrent;
-	struct SparkalColor colorCurrent;
+	/*packed*/ class MFont *mFont;
+	/*packed*/ struct SparkalColor colorFontCurrent;
+	/*packed*/ struct SparkalColor colorCurrent;
 	int32_t nColorIndexFontCurrent;
 	int32_t nColorIndexCurrent;
 	int32_t nColorIndexTransparent;
-	struct IDirectDrawSurface *mpFrontSurface;
-	struct IDirectDrawSurface *mpBackSurface;
-	struct IDirectDrawPalette *mpPalette;
-	struct _DDSURFACEDESC mDDdesc;
-	struct _DDBLTFX mDDBltFx;
+	/*packed*/ struct IDirectDrawSurface *mpFrontSurface;
+	/*packed*/ struct IDirectDrawSurface *mpBackSurface;
+	/*packed*/ struct IDirectDrawPalette *mpPalette;
+	/*packed*/ struct _DDSURFACEDESC mDDdesc;
+	/*packed*/ struct _DDBLTFX mDDBltFx;
 	void * __ptr32 hPen;
 	int32_t nPenThickness;
-	struct SparkalColor colorPenCurrent;
-	virtual struct IDirectDrawSurface* GetDDSurface(); // vtable+0x60
+	/*packed*/ struct SparkalColor colorPenCurrent;
+	virtual /*packed*/ struct IDirectDrawSurface* GetDDSurface(); // vtable+0x60
 };
 
-// Type: class IFlatImage;
+// Type: /*packed*/ class IFlatImage;
 // VTABLE: COPTER_D 0x00591050
 class IFlatImage{ // packed(0x18 bytes) TI: 0x13a1
 public:
@@ -222,11 +222,11 @@ public:
 	long GetWidth();
 	void * __ptr32 GetBitsPointer();
 	long GetStride();
-	virtual unsigned long Compose(class IFlatImage*, long, long, long, long, long, long); // vtable+0xc
-	unsigned long Compose(class IFlatImage*, long, long);
-	virtual unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long); // vtable+0x10
-	virtual unsigned long StretchCompose(class IFlatImage*, struct SparkalRect, struct SparkalRect); // vtable+0x14
-	virtual unsigned long FillRect(long, struct SparkalRect*); // vtable+0x18
+	virtual unsigned long Compose(/*packed*/ class IFlatImage*, long, long, long, long, long, long); // vtable+0xc
+	unsigned long Compose(/*packed*/ class IFlatImage*, long, long);
+	virtual unsigned long StretchCompose(/*packed*/ class IFlatImage*, long, long, long, long, long, long, long, long); // vtable+0x10
+	virtual unsigned long StretchCompose(/*packed*/ class IFlatImage*, /*packed*/ struct SparkalRect, /*packed*/ struct SparkalRect); // vtable+0x14
+	virtual unsigned long FillRect(long, /*packed*/ struct SparkalRect*); // vtable+0x18
 	void DrawPixel(unsigned char, long, long);
 	unsigned char GetPixel(long, long);
 	static unsigned long lTotalMemoryUsage;
@@ -353,11 +353,11 @@ _T5f:
 // FUNCTION: COPTER_D 0x00495575
 int32_t SkyImage::LoadImageA() {
 	char * pDestinationImage;
-	struct VRResource *vrResource;
+	/*packed*/ struct VRResource *vrResource;
 	int32_t i;
 	char szFullSkyImagePath[260];
 	char * pSourceImage;
-	struct VRBmpHdr *bmpHeader;
+	/*packed*/ struct VRBmpHdr *bmpHeader;
 
 // LINE 102:
 	__asm        mov    eax, this;
@@ -636,14 +636,14 @@ _T36d:
 }
 
 // FUNCTION: COPTER_D 0x004958e7
-unsigned long SkyImage::Compose(class CBackBuffer *pDestImage, int32_t nDestinationWidth) {
+unsigned long SkyImage::Compose(/*packed*/ class CBackBuffer *pDestImage, int32_t nDestinationWidth) {
 	long len2;
 	int32_t pitch;
 	long start_col;
 	long len1;
-	struct SparkalRect rectDestination;
+	/*packed*/ struct SparkalRect rectDestination;
 	int32_t altdiff;
-	struct SparkalRect rectSource;
+	/*packed*/ struct SparkalRect rectSource;
 	long start_row;
 
 // LINE 218:

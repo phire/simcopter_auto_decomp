@@ -8,15 +8,15 @@
 
 // Type: long;
 
-// Type: struct PrivAnimPartInfo (forward reference);
+// Type: /*unpacked*/ struct PrivAnimPartInfo (forward reference);
 struct PrivAnimPartInfo{ // not packed(0x8 bytes) TI: 0x3425
-	struct TinyXZY start;
-	struct TinyXZY end;
+	/*unpacked*/ struct TinyXZY start;
+	/*unpacked*/ struct TinyXZY end;
 };
 
 // Type: void;
 
-// Type: struct DXZY;
+// Type: /*unpacked*/ struct DXZY;
 struct DXZY{ // not packed(0x10 bytes) TI: 0x3420
 	float x;
 	float z;
@@ -24,7 +24,7 @@ struct DXZY{ // not packed(0x10 bytes) TI: 0x3420
 	float info;
 };
 
-// Type: struct TinyXZY;
+// Type: /*unpacked*/ struct TinyXZY;
 struct TinyXZY{ // not packed(0x4 bytes) TI: 0x3422
 	char x;
 	char y;
@@ -32,7 +32,7 @@ struct TinyXZY{ // not packed(0x4 bytes) TI: 0x3422
 	char info;
 };
 
-// Type: struct TinyXZY (forward reference);
+// Type: /*unpacked*/ struct TinyXZY (forward reference);
 struct TinyXZY{ // not packed(0x4 bytes) TI: 0x3422
 	char x;
 	char y;
@@ -40,7 +40,7 @@ struct TinyXZY{ // not packed(0x4 bytes) TI: 0x3422
 	char info;
 };
 
-// Type: struct DXZY (forward reference);
+// Type: /*unpacked*/ struct DXZY (forward reference);
 struct DXZY{ // not packed(0x10 bytes) TI: 0x3420
 	float x;
 	float z;
@@ -52,7 +52,7 @@ struct DXZY{ // not packed(0x10 bytes) TI: 0x3420
 
 // Type: float;
 
-// Type: struct Point (forward reference);
+// Type: /*unpacked*/ struct Point (forward reference);
 struct Point{ // not packed(0x4 bytes) TI: 0x341c
 	short v;
 	short h;
@@ -62,19 +62,19 @@ struct Point{ // not packed(0x4 bytes) TI: 0x341c
 
 // Type: unsigned char;
 
-// Type: class FlatResFile (forward reference);
+// Type: /*unpacked*/ class FlatResFile (forward reference);
 // VTABLE: COPTER_D 0x00593508
 class FlatResFile : public FlatFile
 { // not packed(0x11c bytes) TI: 0x330e
 protected:
-	class ResMap *fMap;
+	/*unpacked*/ class ResMap *fMap;
 	long fError;
 	short _alignPad;
 public:
 	void FlatResFile();
 	virtual void ~FlatResFile() /* override */;
 	void LoadResMap(void * __ptr32*, short *, long *);
-	unsigned short FileEquals(class FlatResFile*);
+	unsigned short FileEquals(/*unpacked*/ class FlatResFile*);
 	virtual long Open(unsigned char *) /* override */;
 	virtual long Open(char *) /* override */;
 	long OpenFromName();
@@ -103,20 +103,20 @@ public:
 	static short CheckForLeaks();
 };
 
-// Type: class cBBase (forward reference);
+// Type: /*unpacked*/ class cBBase (forward reference);
 // VTABLE: COPTER_D 0x00593688
 class cBBase{ // not packed(0x28 bytes) TI: 0x339c
 public:
 	virtual unsigned long GetBodyType(); // vtable+0x0
 	unsigned long GetName();
 	unsigned long GetResType();
-	virtual class cBList<cBBase>* GetList(); // vtable+0x4
+	virtual /*unpacked*/ class cBList<cBBase>* GetList(); // vtable+0x4
 	unsigned long operator unsigned long();
 	virtual unsigned short CanDestroy(); // vtable+0x8
 	// calltype: NearC
-	static class cBBase* MakeNew(void * __ptr32);
+	static /*unpacked*/ class cBBase* MakeNew(void * __ptr32);
 	// calltype: NearC
-	static void LoadAllRelatedArrays(class ResFile*);
+	static void LoadAllRelatedArrays(/*unpacked*/ class ResFile*);
 	virtual void InstallArrayPointers(unsigned short); // vtable+0xc
 	void FinishMake(unsigned short);
 	void Delete();
@@ -140,98 +140,98 @@ public:
 		long _win8pad[15];
 	};
 public:
-	struct cBBase::BBaseHeader *fHeader;
+	/*unpacked*/ struct cBBase::BBaseHeader *fHeader;
 	// calltype: NearC
 	static void SwizzleBBaseHeader(void * __ptr32, long);
 };
 
-// Type: class PtrList<cBBase> (forward reference);
+// Type: /*unpacked*/ class PtrList<cBBase> (forward reference);
 class PtrList<cBBase>{ // not packed(0x8 bytes) TI: 0x33ac
 	class PtrList<cBBase>::Iter{ // not packed(0x8 bytes) TI: 0x33b6
 	private:
-		class PtrList<cBBase> *fObject;
-		struct PtrList<cBBase>::PtrNode *fCur;
+		/*unpacked*/ class PtrList<cBBase> *fObject;
+		/*unpacked*/ struct PtrList<cBBase>::PtrNode *fCur;
 	public:
-		void Iter(class PtrList<cBBase>*);
-		class cBBase* Current();
+		void Iter(/*unpacked*/ class PtrList<cBBase>*);
+		/*unpacked*/ class cBBase* Current();
 		void Next();
 		void Reset();
-		class cBBase* First();
+		/*unpacked*/ class cBBase* First();
 	};
 	struct PtrList<cBBase>::PtrNode{ // not packed(0x8 bytes) TI: 0x33ae
-		class cBBase *data;
-		struct PtrList<cBBase>::PtrNode *next;
+		/*unpacked*/ class cBBase *data;
+		/*unpacked*/ struct PtrList<cBBase>::PtrNode *next;
 	};
 private:
-	struct PtrList<cBBase>::PtrNode *fFirst;
+	/*unpacked*/ struct PtrList<cBBase>::PtrNode *fFirst;
 	short fCount;
 public:
 	void PtrList<cBBase>();
 	void ~PtrList<cBBase>();
-	unsigned short Contains(class cBBase*);
+	unsigned short Contains(/*unpacked*/ class cBBase*);
 	void RemoveAll();
-	void Remove(class cBBase*);
+	void Remove(/*unpacked*/ class cBBase*);
 	long Count();
-	void Add(class cBBase*);
-	class cBBase* GetByIndex(long);
-	class cBBase* GetByOrder(long);
+	void Add(/*unpacked*/ class cBBase*);
+	/*unpacked*/ class cBBase* GetByIndex(long);
+	/*unpacked*/ class cBBase* GetByOrder(long);
 };
 
-// Type: struct PtrList<cBBase>::PtrNode (forward reference);
+// Type: /*unpacked*/ struct PtrList<cBBase>::PtrNode (forward reference);
 struct PtrList<cBBase>::PtrNode{ // not packed(0x8 bytes) TI: 0x33ae
-	class cBBase *data;
-	struct PtrList<cBBase>::PtrNode *next;
+	/*unpacked*/ class cBBase *data;
+	/*unpacked*/ struct PtrList<cBBase>::PtrNode *next;
 };
 
-// Type: class PtrList<cCopterAnim>::Iter (forward reference);
+// Type: /*unpacked*/ class PtrList<cCopterAnim>::Iter (forward reference);
 class PtrList<cCopterAnim>::Iter{ // not packed(0x8 bytes) TI: 0x341b
 private:
-	class PtrList<cCopterAnim> *fObject;
-	struct PtrList<cCopterAnim>::PtrNode *fCur;
+	/*unpacked*/ class PtrList<cCopterAnim> *fObject;
+	/*unpacked*/ struct PtrList<cCopterAnim>::PtrNode *fCur;
 public:
-	void Iter(class PtrList<cCopterAnim>*);
-	class cCopterAnim* Current();
+	void Iter(/*unpacked*/ class PtrList<cCopterAnim>*);
+	/*unpacked*/ class cCopterAnim* Current();
 	void Next();
 	void Reset();
-	class cCopterAnim* First();
+	/*unpacked*/ class cCopterAnim* First();
 };
 
-// Type: class cBList<cCopterAnim> (forward reference);
+// Type: /*unpacked*/ class cBList<cCopterAnim> (forward reference);
 // cBList<cCopterAnim> Class implementation not found
 
-// Type: class PtrList<cCopterAnim> (forward reference);
+// Type: /*unpacked*/ class PtrList<cCopterAnim> (forward reference);
 class PtrList<cCopterAnim>{ // not packed(0x8 bytes) TI: 0x3411
 	class PtrList<cCopterAnim>::Iter{ // not packed(0x8 bytes) TI: 0x341b
 	private:
-		class PtrList<cCopterAnim> *fObject;
-		struct PtrList<cCopterAnim>::PtrNode *fCur;
+		/*unpacked*/ class PtrList<cCopterAnim> *fObject;
+		/*unpacked*/ struct PtrList<cCopterAnim>::PtrNode *fCur;
 	public:
-		void Iter(class PtrList<cCopterAnim>*);
-		class cCopterAnim* Current();
+		void Iter(/*unpacked*/ class PtrList<cCopterAnim>*);
+		/*unpacked*/ class cCopterAnim* Current();
 		void Next();
 		void Reset();
-		class cCopterAnim* First();
+		/*unpacked*/ class cCopterAnim* First();
 	};
 	struct PtrList<cCopterAnim>::PtrNode{ // not packed(0x8 bytes) TI: 0x3413
-		class cCopterAnim *data;
-		struct PtrList<cCopterAnim>::PtrNode *next;
+		/*unpacked*/ class cCopterAnim *data;
+		/*unpacked*/ struct PtrList<cCopterAnim>::PtrNode *next;
 	};
 private:
-	struct PtrList<cCopterAnim>::PtrNode *fFirst;
+	/*unpacked*/ struct PtrList<cCopterAnim>::PtrNode *fFirst;
 	short fCount;
 public:
 	void PtrList<cCopterAnim>();
 	void ~PtrList<cCopterAnim>();
-	unsigned short Contains(class cCopterAnim*);
+	unsigned short Contains(/*unpacked*/ class cCopterAnim*);
 	void RemoveAll();
-	void Remove(class cCopterAnim*);
+	void Remove(/*unpacked*/ class cCopterAnim*);
 	long Count();
-	void Add(class cCopterAnim*);
-	class cCopterAnim* GetByIndex(long);
-	class cCopterAnim* GetByOrder(long);
+	void Add(/*unpacked*/ class cCopterAnim*);
+	/*unpacked*/ class cCopterAnim* GetByIndex(long);
+	/*unpacked*/ class cCopterAnim* GetByOrder(long);
 };
 
-// Type: class cCopterAnim (forward reference);
+// Type: /*unpacked*/ class cCopterAnim (forward reference);
 // VTABLE: COPTER_D 0x00593658
 class cCopterAnim : public cBBase
 { // not packed(0x2c bytes) TI: 0x3404
@@ -243,19 +243,19 @@ public:
 	virtual unsigned short IsDirty() /* override */;
 	virtual unsigned long GetBodyType() /* override */;
 	virtual void InstallArrayPointers(unsigned short) /* override */;
-	static class cBList<cCopterAnim> *fsList;
-	virtual class cBList<cBBase>* GetList() /* override */;
-	virtual struct PrivAnimPartInfo* GetPartInfo(short, short); // vtable+0x24
-	virtual struct PrivAnimPartInfo* GetPartInfoBasePtr(short); // vtable+0x28
-	class cArray<PrivAnimPartInfo> *fPrivPartInfo;
+	static /*unpacked*/ class cBList<cCopterAnim> *fsList;
+	virtual /*unpacked*/ class cBList<cBBase>* GetList() /* override */;
+	virtual /*unpacked*/ struct PrivAnimPartInfo* GetPartInfo(short, short); // vtable+0x24
+	virtual /*unpacked*/ struct PrivAnimPartInfo* GetPartInfoBasePtr(short); // vtable+0x28
+	/*unpacked*/ class cArray<PrivAnimPartInfo> *fPrivPartInfo;
 	short GetNumParts();
 	short GetNumFrames();
 	// calltype: NearC
-	static class cBBase* MakeNew(void * __ptr32);
+	static /*unpacked*/ class cBBase* MakeNew(void * __ptr32);
 	// calltype: NearC
-	static class cCopterAnim* MakeNew(unsigned long, class cCopterBody*);
+	static /*unpacked*/ class cCopterAnim* MakeNew(unsigned long, /*unpacked*/ class cCopterBody*);
 	// calltype: NearC
-	static void LoadAllRelatedArrays(class ResFile*);
+	static void LoadAllRelatedArrays(/*unpacked*/ class ResFile*);
 	// calltype: NearC
 	static void DestroyAll();
 };
@@ -264,99 +264,99 @@ public:
 
 // Type: unsigned long;
 
-// Type: class cBList<cBBase> (forward reference);
+// Type: /*unpacked*/ class cBList<cBBase> (forward reference);
 // cBList<cBBase> Class implementation not found
 
 // Type: uint32_t;
 
-// Type: class cCopterBody (forward reference);
+// Type: /*unpacked*/ class cCopterBody (forward reference);
 // cCopterBody Class implementation not found
 
-// Type: class PtrList<cCopterBody> (forward reference);
+// Type: /*unpacked*/ class PtrList<cCopterBody> (forward reference);
 class PtrList<cCopterBody>{ // not packed(0x8 bytes) TI: 0x3432
 	class PtrList<cCopterBody>::Iter{ // not packed(0x8 bytes) TI: 0x343c
 	private:
-		class PtrList<cCopterBody> *fObject;
-		struct PtrList<cCopterBody>::PtrNode *fCur;
+		/*unpacked*/ class PtrList<cCopterBody> *fObject;
+		/*unpacked*/ struct PtrList<cCopterBody>::PtrNode *fCur;
 	public:
-		void Iter(class PtrList<cCopterBody>*);
-		class cCopterBody* Current();
+		void Iter(/*unpacked*/ class PtrList<cCopterBody>*);
+		/*unpacked*/ class cCopterBody* Current();
 		void Next();
 		void Reset();
-		class cCopterBody* First();
+		/*unpacked*/ class cCopterBody* First();
 	};
 	struct PtrList<cCopterBody>::PtrNode{ // not packed(0x8 bytes) TI: 0x3434
-		class cCopterBody *data;
-		struct PtrList<cCopterBody>::PtrNode *next;
+		/*unpacked*/ class cCopterBody *data;
+		/*unpacked*/ struct PtrList<cCopterBody>::PtrNode *next;
 	};
 private:
-	struct PtrList<cCopterBody>::PtrNode *fFirst;
+	/*unpacked*/ struct PtrList<cCopterBody>::PtrNode *fFirst;
 	short fCount;
 public:
 	void PtrList<cCopterBody>();
 	void ~PtrList<cCopterBody>();
-	unsigned short Contains(class cCopterBody*);
+	unsigned short Contains(/*unpacked*/ class cCopterBody*);
 	void RemoveAll();
-	void Remove(class cCopterBody*);
+	void Remove(/*unpacked*/ class cCopterBody*);
 	long Count();
-	void Add(class cCopterBody*);
-	class cCopterBody* GetByIndex(long);
-	class cCopterBody* GetByOrder(long);
+	void Add(/*unpacked*/ class cCopterBody*);
+	/*unpacked*/ class cCopterBody* GetByIndex(long);
+	/*unpacked*/ class cCopterBody* GetByOrder(long);
 };
 
-// Type: class PtrList<cCopterBody>::Iter (forward reference);
+// Type: /*unpacked*/ class PtrList<cCopterBody>::Iter (forward reference);
 class PtrList<cCopterBody>::Iter{ // not packed(0x8 bytes) TI: 0x343c
 private:
-	class PtrList<cCopterBody> *fObject;
-	struct PtrList<cCopterBody>::PtrNode *fCur;
+	/*unpacked*/ class PtrList<cCopterBody> *fObject;
+	/*unpacked*/ struct PtrList<cCopterBody>::PtrNode *fCur;
 public:
-	void Iter(class PtrList<cCopterBody>*);
-	class cCopterBody* Current();
+	void Iter(/*unpacked*/ class PtrList<cCopterBody>*);
+	/*unpacked*/ class cCopterBody* Current();
 	void Next();
 	void Reset();
-	class cCopterBody* First();
+	/*unpacked*/ class cCopterBody* First();
 };
 
-// Type: class cBList<cCopterBody> (forward reference);
+// Type: /*unpacked*/ class cBList<cCopterBody> (forward reference);
 class cBList<cCopterBody> : public PtrList<cCopterBody>
 { // not packed(0x14 bytes) TI: 0x33ed
 public:
 	long GetIndex(unsigned long);
-	long GetIndex(class cCopterBody*);
+	long GetIndex(/*unpacked*/ class cCopterBody*);
 	void cBList<cCopterBody>();
 	void ~cBList<cCopterBody>();
 	void Delete();
 	void DeletePointers();
 	void DeletePointersAndSelf();
 	long CountByBodyType(unsigned long);
-	class cCopterBody* GetByBodyType(unsigned long, long);
-	long GetIndexInBodyType(class cCopterBody*);
-	class cCopterBody* GetByName(unsigned long, long);
-	virtual void Add(class cCopterBody*); // vtable+0x0
+	/*unpacked*/ class cCopterBody* GetByBodyType(unsigned long, long);
+	long GetIndexInBodyType(/*unpacked*/ class cCopterBody*);
+	/*unpacked*/ class cCopterBody* GetByName(unsigned long, long);
+	virtual void Add(/*unpacked*/ class cCopterBody*); // vtable+0x0
 	void WriteToDisk();
 	void WriteToDiskIfDirty();
-	class ResFile *fFile;
+	/*unpacked*/ class ResFile *fFile;
 	unsigned long fType;
 	void CompactFile();
 	// calltype: NearC
-	static class cBList<cCopterBody>* MakeNew(unsigned char *, unsigned long);
+	static /*unpacked*/ class cBList<cCopterBody>* MakeNew(unsigned char *, unsigned long);
 	void LoadAll();
 };
 
-// Type: class cBBase;
+// Type: /*unpacked*/ class cBBase;
 // VTABLE: COPTER_D 0x00593688
 class cBBase{ // not packed(0x28 bytes) TI: 0x339c
 public:
 	virtual unsigned long GetBodyType(); // vtable+0x0
 	unsigned long GetName();
 	unsigned long GetResType();
-	virtual class cBList<cBBase>* GetList(); // vtable+0x4
+	virtual /*unpacked*/ class cBList<cBBase>* GetList(); // vtable+0x4
 	unsigned long operator unsigned long();
 	virtual unsigned short CanDestroy(); // vtable+0x8
 	// calltype: NearC
-	static class cBBase* MakeNew(void * __ptr32);
+	static /*unpacked*/ class cBBase* MakeNew(void * __ptr32);
 	// calltype: NearC
-	static void LoadAllRelatedArrays(class ResFile*);
+	static void LoadAllRelatedArrays(/*unpacked*/ class ResFile*);
 	virtual void InstallArrayPointers(unsigned short); // vtable+0xc
 	void FinishMake(unsigned short);
 	void Delete();
@@ -380,57 +380,57 @@ public:
 		long _win8pad[15];
 	};
 public:
-	struct cBBase::BBaseHeader *fHeader;
+	/*unpacked*/ struct cBBase::BBaseHeader *fHeader;
 	// calltype: NearC
 	static void SwizzleBBaseHeader(void * __ptr32, long);
 };
 
-// Type: class PtrList<cCopterBody>;
+// Type: /*unpacked*/ class PtrList<cCopterBody>;
 class PtrList<cCopterBody>{ // not packed(0x8 bytes) TI: 0x3432
 	class PtrList<cCopterBody>::Iter{ // not packed(0x8 bytes) TI: 0x343c
 	private:
-		class PtrList<cCopterBody> *fObject;
-		struct PtrList<cCopterBody>::PtrNode *fCur;
+		/*unpacked*/ class PtrList<cCopterBody> *fObject;
+		/*unpacked*/ struct PtrList<cCopterBody>::PtrNode *fCur;
 	public:
-		void Iter(class PtrList<cCopterBody>*);
-		class cCopterBody* Current();
+		void Iter(/*unpacked*/ class PtrList<cCopterBody>*);
+		/*unpacked*/ class cCopterBody* Current();
 		void Next();
 		void Reset();
-		class cCopterBody* First();
+		/*unpacked*/ class cCopterBody* First();
 	};
 	struct PtrList<cCopterBody>::PtrNode{ // not packed(0x8 bytes) TI: 0x3434
-		class cCopterBody *data;
-		struct PtrList<cCopterBody>::PtrNode *next;
+		/*unpacked*/ class cCopterBody *data;
+		/*unpacked*/ struct PtrList<cCopterBody>::PtrNode *next;
 	};
 private:
-	struct PtrList<cCopterBody>::PtrNode *fFirst;
+	/*unpacked*/ struct PtrList<cCopterBody>::PtrNode *fFirst;
 	short fCount;
 public:
 	void PtrList<cCopterBody>();
 	void ~PtrList<cCopterBody>();
-	unsigned short Contains(class cCopterBody*);
+	unsigned short Contains(/*unpacked*/ class cCopterBody*);
 	void RemoveAll();
-	void Remove(class cCopterBody*);
+	void Remove(/*unpacked*/ class cCopterBody*);
 	long Count();
-	void Add(class cCopterBody*);
-	class cCopterBody* GetByIndex(long);
-	class cCopterBody* GetByOrder(long);
+	void Add(/*unpacked*/ class cCopterBody*);
+	/*unpacked*/ class cCopterBody* GetByIndex(long);
+	/*unpacked*/ class cCopterBody* GetByOrder(long);
 };
 
-// Type: class FlatFile;
+// Type: /*unpacked*/ class FlatFile;
 // VTABLE: COPTER_D 0x00593620
 class FlatFile{ // not packed(0x110 bytes) TI: 0x32f4
 	enum /* __unnamed */ {
 		kMaxNameLen = 255,
 	};
 protected:
-	class FlatFile *fNext;
+	/*unpacked*/ class FlatFile *fNext;
 	unsigned char fName[256];
 	long fFileID;
-	struct _iobuf *fFile;
+	/*unpacked*/ struct _iobuf *fFile;
 	long UniqueID();
 private:
-	static class FlatFile *sList;
+	static /*unpacked*/ class FlatFile *sList;
 	static long sLastFileID;
 	void Link();
 	void Unlink();
@@ -439,12 +439,12 @@ public:
 	void FlatFile();
 	virtual void ~FlatFile(); // vtable+0x0
 	// calltype: NearC
-	static class FlatFile* FindByName(unsigned char *);
-	unsigned short SameFile(class FlatFile*);
+	static /*unpacked*/ class FlatFile* FindByName(unsigned char *);
+	unsigned short SameFile(/*unpacked*/ class FlatFile*);
 	virtual long Open(unsigned char *); // vtable+0x4
 	virtual long Open(char *); // vtable+0x8
 	virtual long Close(); // vtable+0xc
-	void OpenFromOtherFile(class FlatFile*);
+	void OpenFromOtherFile(/*unpacked*/ class FlatFile*);
 	long GetFileName(unsigned char *);
 	unsigned short ValidFile();
 	long ReadBlock(void * __ptr32, long *);
@@ -456,7 +456,7 @@ public:
 	// calltype: NearC
 	static short CheckForLeaks();
 	long GetFileID();
-	struct _iobuf* GetFile();
+	/*unpacked*/ struct _iobuf* GetFile();
 };
 
 
@@ -464,7 +464,7 @@ public:
 // Contribution: 1:0015c950-0015d654 Module: 192, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0055d950
 void SwizzlePrivAnimPartInfo(void * __ptr32 val, long size) {
-	struct PrivAnimPartInfo *pinfo;
+	/*unpacked*/ struct PrivAnimPartInfo *pinfo;
 
 // LINE 111:
 	__asm        cmp    size, 8;
@@ -484,8 +484,8 @@ _T2c:
 }
 
 // FUNCTION: COPTER_D 0x0055d98c
-struct TinyXZY DXZY_2_TinyXZY(struct DXZY dxzy) {
-	struct TinyXZY txzy;
+/*unpacked*/ struct TinyXZY DXZY_2_TinyXZY(/*unpacked*/ struct DXZY dxzy) {
+	/*unpacked*/ struct TinyXZY txzy;
 
 // LINE 130:
 	__asm        mov    eax, dxzy.x;
@@ -512,8 +512,8 @@ struct TinyXZY DXZY_2_TinyXZY(struct DXZY dxzy) {
 }
 
 // FUNCTION: COPTER_D 0x0055d9cf
-struct DXZY TinyXZY_2_DXZY(struct TinyXZY txzy) {
-	struct DXZY dxzy;
+/*unpacked*/ struct DXZY TinyXZY_2_DXZY(/*unpacked*/ struct TinyXZY txzy) {
+	/*unpacked*/ struct DXZY dxzy;
 
 // LINE 139:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(txzy.x);
@@ -590,7 +590,7 @@ _T4a:
 
 // FUNCTION: COPTER_D 0x0055daa7
 void SwizzlePoint(void * __ptr32 val, long size) {
-	struct Point *pt;
+	/*unpacked*/ struct Point *pt;
 
 // LINE 167:
 	__asm        cmp    size, 4;

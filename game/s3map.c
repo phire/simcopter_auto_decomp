@@ -4,19 +4,19 @@
 
 // Type: int32_t;
 
-// Type: struct Point2d;
+// Type: /*packed*/ struct Point2d;
 struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
 	int32_t x;
 	int32_t y;
 };
 
-// Type: struct _dPoint2d (forward reference);
+// Type: /*packed*/ struct _dPoint2d (forward reference);
 struct _dPoint2d{ // packed(0x10 bytes) TI: 0x2766
 	double x;
 	double z;
 };
 
-// Type: struct VRwindowType;
+// Type: /*packed*/ struct VRwindowType;
 struct VRwindowType{ // packed(0x1c bytes) TI: 0x10a5
 	int32_t WindowX;
 	int32_t WindowY;
@@ -33,9 +33,9 @@ struct VRwindowType{ // packed(0x1c bytes) TI: 0x10a5
 
 // Type: char;
 
-// Type: struct VRBmpHdr (forward reference);
+// Type: /*packed*/ struct VRBmpHdr (forward reference);
 struct VRBmpHdr{ // packed(0x10 bytes) TI: 0x2312
-	struct VRBmpInfo info;
+	/*packed*/ struct VRBmpInfo info;
 	int32_t ScanOffset[1];
 };
 
@@ -43,7 +43,7 @@ struct VRBmpHdr{ // packed(0x10 bytes) TI: 0x2312
 
 // Type: unsigned short;
 
-// Type: struct _CELL_INFO (forward reference);
+// Type: /*packed*/ struct _CELL_INFO (forward reference);
 struct _CELL_INFO{ // packed(0x18 bytes) TI: 0x1b03
 	short flags;
 	short x;
@@ -51,12 +51,12 @@ struct _CELL_INFO{ // packed(0x18 bytes) TI: 0x1b03
 	short z;
 	short size;
 	short ctr;
-	struct _STOBJ_INST *stptr;
-	struct _DYOBJ_INST *dyptr;
-	struct _DYOBJ_INST *vwptr;
+	/*packed*/ struct _STOBJ_INST *stptr;
+	/*packed*/ struct _DYOBJ_INST *dyptr;
+	/*packed*/ struct _DYOBJ_INST *vwptr;
 };
 
-// Type: struct Point2d (forward reference);
+// Type: /*packed*/ struct Point2d (forward reference);
 struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
 	int32_t x;
 	int32_t y;
@@ -64,38 +64,38 @@ struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
 
 // Type: long *;
 
-// Type: struct _MAP_CARINFO (forward reference);
+// Type: /*packed*/ struct _MAP_CARINFO (forward reference);
 struct _MAP_CARINFO{ // packed(0x28 bytes) TI: 0x31c6
 	long flags;
 	long car_id;
 	long car_type;
 	long mission_id;
-	struct _GridCoordinates *currpos;
-	struct _GridCoordinates *disppos;
+	/*packed*/ struct _GridCoordinates *currpos;
+	/*packed*/ struct _GridCoordinates *disppos;
 	long top;
 	long bottom;
 	long left;
 	long right;
 };
 
-// Type: struct MISSION_DATA (forward reference);
+// Type: /*packed*/ struct MISSION_DATA (forward reference);
 struct MISSION_DATA{ // packed(0xd4 bytes) TI: 0x31c4
 	char mtext[32];
 	long type_ctr;
 	long key;
-	struct Point2d maploc;
-	struct Point2d destmaploc;
-	struct Point2d pickuploc;
+	/*packed*/ struct Point2d maploc;
+	/*packed*/ struct Point2d destmaploc;
+	/*packed*/ struct Point2d pickuploc;
 	int32_t timer;
 	long money_bonus;
 	long points_bonus;
 	long flags;
 	long type;
 	long state;
-	struct __unnamed mdata;
+	/*packed*/ struct __unnamed mdata;
 };
 
-// Type: struct _GridCoordinates (forward reference);
+// Type: /*packed*/ struct _GridCoordinates (forward reference);
 struct _GridCoordinates{ // packed(0x2 bytes) TI: 0x143c
 	unsigned char x;
 	unsigned char y;
@@ -107,7 +107,7 @@ struct _GridCoordinates{ // packed(0x2 bytes) TI: 0x143c
 // FUNCTION: COPTER_D 0x004fe790
 void S3MapInit() {
 	long i;
-	struct VRBmpHdr *bhdr;
+	/*packed*/ struct VRBmpHdr *bhdr;
 	char * ptr;
 
 // LINE 192:
@@ -309,7 +309,7 @@ void S3MapRender(long posx, long posy) {
 	long county;
 	char * lineptr;
 	unsigned short alt;
-	struct _CELL_INFO *cptr;
+	/*packed*/ struct _CELL_INFO *cptr;
 	char texid;
 	long y;
 	long x;
@@ -2479,7 +2479,7 @@ _T17b3:
 
 // FUNCTION: COPTER_D 0x005001cb
 void S3MapDrawPosLines(long posx, long posy) {
-	struct Point2d *maploc;
+	/*packed*/ struct Point2d *maploc;
 	long desticon;
 	long y;
 	long i;
@@ -3200,7 +3200,7 @@ _T3a:
 
 // FUNCTION: COPTER_D 0x005008ea
 int32_t S3MapCursorDown(long posx, long posy) {
-	struct _MAP_CARINFO *ci;
+	/*packed*/ struct _MAP_CARINFO *ci;
 	long i;
 	long car_id;
 
@@ -3650,10 +3650,10 @@ _T279:
 
 // FUNCTION: COPTER_D 0x00500de3
 void S3MapDrawMissionIcons(long posx, long posy) {
-	struct MISSION_DATA *md;
+	/*packed*/ struct MISSION_DATA *md;
 	long desticon;
 	long i;
-	struct MISSION_DATA *currmd;
+	/*packed*/ struct MISSION_DATA *currmd;
 	long pickicon;
 
 // LINE 1508:
@@ -3780,8 +3780,8 @@ _T14c:
 }
 
 // FUNCTION: COPTER_D 0x00500f34
-void S3MapAddCarInfo(long car_id, long car_type, long mission_id, struct _GridCoordinates *currpos, struct _GridCoordinates *disppos) {
-	struct _MAP_CARINFO *ci;
+void S3MapAddCarInfo(long car_id, long car_type, long mission_id, /*packed*/ struct _GridCoordinates *currpos, /*packed*/ struct _GridCoordinates *disppos) {
+	/*packed*/ struct _MAP_CARINFO *ci;
 	long i;
 
 // LINE 1567:
@@ -3865,7 +3865,7 @@ _T50:
 void S3MapDrawCarIcons() {
 	long dy;
 	long dx;
-	struct _MAP_CARINFO *ci;
+	/*packed*/ struct _MAP_CARINFO *ci;
 	long i;
 	long color;
 
@@ -4333,8 +4333,8 @@ _T1cc:
 
 // FUNCTION: COPTER_D 0x005014c6
 void S3MapGetDxDy(long x1, long y1, long x2, long y2, long * dx, long * dy) {
-	struct Point2d from;
-	struct Point2d to;
+	/*packed*/ struct Point2d from;
+	/*packed*/ struct Point2d to;
 	long dist2;
 	long dist1;
 
@@ -4455,13 +4455,13 @@ static const int32_t TypeToIndex2[16] = {-1, 0, 1, -1, 2, -1, -1, -1, 3, -1, -1,
 static const int32_t TILUT[4][4] = {{0, 1, 3, 2}, {2, 0, 1, 3}, {3, 2, 0, 1}, {1, 3, 2, 0}};
 
 // GLOBAL: COPTER_D 0x00592c00
-static const struct _dPoint2d OT[4] = { 0 /* todo */ };
+static const /*packed*/ struct _dPoint2d OT[4] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00592c40
-static const struct _dPoint2d RRT[4] = { 0 /* todo */ };
+static const /*packed*/ struct _dPoint2d RRT[4] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00592c80
-static const struct _dPoint2d LRT[4] = { 0 /* todo */ };
+static const /*packed*/ struct _dPoint2d LRT[4] = { 0 /* todo */ };
 
 
 
@@ -4470,22 +4470,22 @@ static const struct _dPoint2d LRT[4] = { 0 /* todo */ };
 int32_t G_mapmode = 1;
 
 // GLOBAL: COPTER_D 0x005b5208
-struct VRwindowType mwindow = { 0 /* todo */ };
+/*packed*/ struct VRwindowType mwindow = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5228
-struct VRwindowType save_window = { 0 /* todo */ };
+/*packed*/ struct VRwindowType save_window = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5248
-struct Point2d S_mapmin = { 0 /* todo */ };
+/*packed*/ struct Point2d S_mapmin = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5250
-struct Point2d S_mapmax = { 0 /* todo */ };
+/*packed*/ struct Point2d S_mapmax = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5258
-struct Point2d S_bordermin = { 0 /* todo */ };
+/*packed*/ struct Point2d S_bordermin = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5260
-struct Point2d S_bordermax = { 0 /* todo */ };
+/*packed*/ struct Point2d S_bordermax = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b5268
 static long S_borderdimx = 0;
@@ -4539,13 +4539,13 @@ static char * S_icons[8];
 static long S_icon_dim;
 
 // GLOBAL: COPTER_D 0x00608bf8
-static struct Point2d S_lrc;
+static /*packed*/ struct Point2d S_lrc;
 
 // GLOBAL: COPTER_D 0x00608c00
 static long S_dicon_pitch;
 
 // GLOBAL: COPTER_D 0x00608c08
-static struct Point2d S_ulc;
+static /*packed*/ struct Point2d S_ulc;
 
 // GLOBAL: COPTER_D 0x00608c10
 static long S_icon_pitch;
@@ -4560,7 +4560,7 @@ static char * S_dicons[3];
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3auto.cpp
 // GLOBAL: COPTER_D 0x0067ed30
-struct _CELL_INFO *G_omap[256][256]; // Contrib missing
+/*packed*/ struct _CELL_INFO *G_omap[256][256]; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3viewer.c
@@ -4568,5 +4568,5 @@ struct _CELL_INFO *G_omap[256][256]; // Contrib missing
 int32_t ViewYRot[4][4]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006bed40
-struct _MAP_CARINFO S_carinfo[20]; // Contrib missing
+/*packed*/ struct _MAP_CARINFO S_carinfo[20]; // Contrib missing
 

@@ -4,7 +4,7 @@
 
 // Type: void * __ptr32;
 
-// Type: class Memory (forward reference);
+// Type: /*unpacked*/ class Memory (forward reference);
 class Memory{ // not packed(0x1 bytes) TI: 0x334e
 	using MemPool = long;
 	using HState = long;
@@ -72,7 +72,7 @@ public:
 	// calltype: NearC
 	static void PoolFree(long *);
 	// calltype: NearC
-	static void HLeaks(struct AllocRecord*);
+	static void HLeaks(/*unpacked*/ struct AllocRecord*);
 	// calltype: NearC
 	static void * __ptr32 AdoptPlatformHandle(void * __ptr32);
 	// calltype: NearC

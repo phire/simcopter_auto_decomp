@@ -34,7 +34,7 @@
 
 // Type: void * __ptr32;
 
-// Type: struct Rect (forward reference);
+// Type: /*unpacked*/ struct Rect (forward reference);
 struct Rect{ // not packed(0x8 bytes) TI: 0x3463
 	short top;
 	short left;
@@ -42,13 +42,13 @@ struct Rect{ // not packed(0x8 bytes) TI: 0x3463
 	short right;
 };
 
-// Type: struct Point;
+// Type: /*unpacked*/ struct Point;
 struct Point{ // not packed(0x4 bytes) TI: 0x341c
 	short v;
 	short h;
 };
 
-// Type: struct Point (forward reference);
+// Type: /*unpacked*/ struct Point (forward reference);
 struct Point{ // not packed(0x4 bytes) TI: 0x341c
 	short v;
 	short h;
@@ -1205,7 +1205,7 @@ _T3e:
 }
 
 // FUNCTION: COPTER_D 0x0056677d
-void MyTextBox(char * cString, long strLen, struct Rect *rect, short justType) {
+void MyTextBox(char * cString, long strLen, /*unpacked*/ struct Rect *rect, short justType) {
 // LINE 1076:
 	__asm        movsx  eax, justType;
 	__asm        cmp    eax, 1;
@@ -1254,8 +1254,8 @@ _T54:
 }
 
 // FUNCTION: COPTER_D 0x005667fe
-struct Point center(struct Rect *pRect) {
-	struct Point tmp;
+/*unpacked*/ struct Point center(/*unpacked*/ struct Rect *pRect) {
+	/*unpacked*/ struct Point tmp;
 
 // LINE 1255:
 	__asm        mov    eax, pRect;

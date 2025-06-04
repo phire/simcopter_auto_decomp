@@ -12,7 +12,7 @@
 
 // Type: unsigned long;
 
-// Type: struct _rect (forward reference);
+// Type: /*packed*/ struct _rect (forward reference);
 struct _rect{ // packed(0x8 bytes) TI: 0x2e1b
 	short Xmin;
 	short Xmax;
@@ -20,7 +20,7 @@ struct _rect{ // packed(0x8 bytes) TI: 0x2e1b
 	short Ymax;
 };
 
-// Type: struct S2Rect (forward reference);
+// Type: /*packed*/ struct S2Rect (forward reference);
 struct S2Rect{ // packed(0x8 bytes) TI: 0x2e21
 	short top;
 	short left;
@@ -152,28 +152,28 @@ short CompFaceTab[4] = {128, 16, 32, 64};
 short FaceTab[4][4] = {{16, 32, 64, 128}, {32, 64, 128, 16}, {64, 128, 16, 32}, {128, 16, 32, 64}};
 
 // GLOBAL: COPTER_D 0x0059bc70
-struct _rect toolRect[35] = { 0 /* todo */ };
+/*packed*/ struct _rect toolRect[35] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bd88
-struct _rect emerRect[11] = { 0 /* todo */ };
+/*packed*/ struct _rect emerRect[11] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bde0
-struct _rect terRect[23] = { 0 /* todo */ };
+/*packed*/ struct _rect terRect[23] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059be98
-struct _rect mapRect[10] = { 0 /* todo */ };
+/*packed*/ struct _rect mapRect[10] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bee8
-struct _rect bigRect[10] = { 0 /* todo */ };
+/*packed*/ struct _rect bigRect[10] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bf38
-struct S2Rect graphRect[19] = { 0 /* todo */ };
+/*packed*/ struct S2Rect graphRect[19] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bfd0
-struct S2Rect popRect[3] = { 0 /* todo */ };
+/*packed*/ struct S2Rect popRect[3] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059bfe8
-struct S2Rect indRect[3] = { 0 /* todo */ };
+/*packed*/ struct S2Rect indRect[3] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x0059c000
 short EditData = 0;
@@ -310,7 +310,7 @@ unsigned char wind; // Contrib missing
 unsigned char humid; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a744
-struct Micro *MicroRecord; // Contrib missing
+/*packed*/ struct Micro *MicroRecord; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639834
 unsigned char *LabelArray[25]; // Contrib missing
@@ -442,7 +442,7 @@ char * CityNameString; // Contrib missing
 
 // WARNING: this global might actually belong to: C:\Copter\source\common\S2lodsav.c
 // GLOBAL: COPTER_D 0x00639830
-struct budgetStats *budgetList; // Contrib missing
+/*packed*/ struct budgetStats *budgetList; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a570
 char * CityNameString; // Contrib missing
@@ -659,12 +659,12 @@ unsigned char *LabelArray[25]; // Contrib missing
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x0063a744
-struct Micro *MicroRecord; // Contrib missing
+/*packed*/ struct Micro *MicroRecord; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
 // GLOBAL: COPTER_D 0x00639830
-struct budgetStats *budgetList; // Contrib missing
+/*packed*/ struct budgetStats *budgetList; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
@@ -740,7 +740,7 @@ unsigned long * ZonePop; // Contrib missing
 unsigned long WorkerHealth; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a25c
-struct News *NewsList; // Contrib missing
+/*packed*/ struct News *NewsList; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a258
 short GlobalHills; // Contrib missing
@@ -809,16 +809,16 @@ unsigned long TrafficCount; // Contrib missing
 unsigned long CityValue; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639720
-struct Things *ThingList; // Contrib missing
+/*packed*/ struct Things *ThingList; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063971c
 short TeamsActive; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639718
-struct S2Point *StackPts; // Contrib missing
+/*packed*/ struct S2Point *StackPts; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639714
-struct Paper *PaperList; // Contrib missing
+/*packed*/ struct Paper *PaperList; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639310
 short * TMap[128]; // Contrib missing
@@ -842,7 +842,7 @@ unsigned long * TaxPop; // Contrib missing
 long * MiscInfo; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639200
-struct scenario ScenarioData; // Contrib missing
+/*packed*/ struct scenario ScenarioData; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006391fa
 short GameLevel; // Contrib missing
@@ -851,7 +851,7 @@ short GameLevel; // Contrib missing
 unsigned short GoDisaster; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006391f4
-struct S2Point DisasterLoc; // Contrib missing
+/*packed*/ struct S2Point DisasterLoc; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639848
 short SaveSpeed; // Contrib missing
@@ -860,10 +860,10 @@ short SaveSpeed; // Contrib missing
 short GameLevel; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006391f4
-struct S2Point DisasterLoc; // Contrib missing
+/*packed*/ struct S2Point DisasterLoc; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639718
-struct S2Point *StackPts; // Contrib missing
+/*packed*/ struct S2Point *StackPts; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639a82
 short FTop; // Contrib missing
@@ -935,10 +935,10 @@ unsigned long * ZonePop; // Contrib missing
 unsigned long * TaxPop; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a25c
-struct News *NewsList; // Contrib missing
+/*packed*/ struct News *NewsList; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639714
-struct Paper *PaperList; // Contrib missing
+/*packed*/ struct Paper *PaperList; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639a58
 short * IndRates; // Contrib missing
@@ -953,10 +953,10 @@ short toolNum[18]; // Contrib missing
 short mapNum[9]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639720
-struct Things *ThingList; // Contrib missing
+/*packed*/ struct Things *ThingList; // Contrib missing
 
 // GLOBAL: COPTER_D 0x00639200
-struct scenario ScenarioData; // Contrib missing
+/*packed*/ struct scenario ScenarioData; // Contrib missing
 
 // GLOBAL: COPTER_D 0x0063a5a8
 unsigned short Scenario; // Contrib missing

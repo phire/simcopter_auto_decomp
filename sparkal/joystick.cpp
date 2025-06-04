@@ -4,7 +4,7 @@
 
 // Type: unsigned long;
 
-// Type: class JoystickManager;
+// Type: /*packed*/ class JoystickManager;
 class JoystickManager{ // packed(0x1ce4 bytes) TI: 0x2218
 public:
 	void JoystickManager();
@@ -37,15 +37,15 @@ protected:
 	long lNormalizedMaximum;
 	long lNormalizedCenter;
 	long lJoystickThreshold;
-	struct tagJOYCAPSA joystickCaps[16];
-	struct joyinfoex_tag joystickInfoCache[16];
+	/*packed*/ struct tagJOYCAPSA joystickCaps[16];
+	/*packed*/ struct joyinfoex_tag joystickInfoCache[16];
 };
 
 // Type: void ();
 
 // Type: void;
 
-// Type: class JoystickManager (forward reference);
+// Type: /*packed*/ class JoystickManager (forward reference);
 class JoystickManager{ // packed(0x1ce4 bytes) TI: 0x2218
 public:
 	void JoystickManager();
@@ -78,13 +78,13 @@ protected:
 	long lNormalizedMaximum;
 	long lNormalizedCenter;
 	long lJoystickThreshold;
-	struct tagJOYCAPSA joystickCaps[16];
-	struct joyinfoex_tag joystickInfoCache[16];
+	/*packed*/ struct tagJOYCAPSA joystickCaps[16];
+	/*packed*/ struct joyinfoex_tag joystickInfoCache[16];
 };
 
 // Type: int32_t;
 
-// Type: struct joyinfo_tag;
+// Type: /*packed*/ struct joyinfo_tag;
 struct joyinfo_tag{ // packed(0x10 bytes) TI: 0x21fd
 	uint32_t wXpos;
 	uint32_t wYpos;
@@ -98,7 +98,7 @@ struct joyinfo_tag{ // packed(0x10 bytes) TI: 0x21fd
 
 // Type: int32_t *;
 
-// Type: struct joyinfoex_tag;
+// Type: /*packed*/ struct joyinfoex_tag;
 struct joyinfoex_tag{ // packed(0x34 bytes) TI: 0x2204
 	unsigned long dwSize;
 	unsigned long dwFlags;
@@ -115,7 +115,7 @@ struct joyinfoex_tag{ // packed(0x34 bytes) TI: 0x2204
 	unsigned long dwReserved2;
 };
 
-// Type: struct joyinfoex_tag (forward reference);
+// Type: /*packed*/ struct joyinfoex_tag (forward reference);
 struct joyinfoex_tag{ // packed(0x34 bytes) TI: 0x2204
 	unsigned long dwSize;
 	unsigned long dwFlags;
@@ -196,7 +196,7 @@ _T6b:
 // FUNCTION: COPTER_D 0x0049a527
 int32_t JoystickManager::Initialize() {
 	int32_t nMaxJoysticks;
-	struct joyinfo_tag joyInfo;
+	/*packed*/ struct joyinfo_tag joyInfo;
 	int32_t i;
 	uint32_t mmResult;
 
@@ -487,9 +487,9 @@ _T74:
 // FUNCTION: COPTER_D 0x0049a836
 int32_t JoystickManager::GetPositionQuantitative(int32_t nJoystick, int32_t nAxis, int32_t bUseCache) {
 	int32_t nReturnValue;
-	struct joyinfoex_tag joyInfoEx;
+	/*packed*/ struct joyinfoex_tag joyInfoEx;
 	unsigned long dwFlagToUse;
-	struct joyinfoex_tag *joyInfoExToUse;
+	/*packed*/ struct joyinfoex_tag *joyInfoExToUse;
 	uint32_t mmResult;
 	unsigned long * dwResultToUse;
 
@@ -644,8 +644,8 @@ _T1a0:
 
 // FUNCTION: COPTER_D 0x0049a9dd
 int32_t JoystickManager::GetButtonState(int32_t nJoystick, int32_t nButton, int32_t bUseCache) {
-	struct joyinfoex_tag joyInfoEx;
-	struct joyinfoex_tag *joyInfoExToUse;
+	/*packed*/ struct joyinfoex_tag joyInfoEx;
+	/*packed*/ struct joyinfoex_tag *joyInfoExToUse;
 	uint32_t mmResult;
 
 // LINE 304:
@@ -771,8 +771,8 @@ _T9a:
 
 // FUNCTION: COPTER_D 0x0049ab3a
 int32_t JoystickManager::GetPointOfView(int32_t nJoystick, int32_t bUseCache) {
-	struct joyinfoex_tag joyInfoEx;
-	struct joyinfoex_tag *joyInfoExToUse;
+	/*packed*/ struct joyinfoex_tag joyInfoEx;
+	/*packed*/ struct joyinfoex_tag *joyInfoExToUse;
 	uint32_t mmResult;
 
 // LINE 382:
@@ -971,5 +971,5 @@ static void (*$S3)() = { 0 /* todo */ };
 
 // Contribution: 3:0006dc78-0006f95b Module: 15, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00604c78
-class JoystickManager gJoystickManager;
+/*packed*/ class JoystickManager gJoystickManager;
 

@@ -4,7 +4,7 @@
 
 // Type: char *;
 
-// Type: class MissionLogWindow (forward reference);
+// Type: /*packed*/ class MissionLogWindow (forward reference);
 // VTABLE: COPTER_D 0x00590708
 class MissionLogWindow : public GraphicWindow
 { // packed(0x80 bytes) TI: 0x2748
@@ -13,38 +13,38 @@ class MissionLogWindow : public GraphicWindow
 		nSortByType = 1,
 	};
 public:
-	void MissionLogWindow(int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
+	void MissionLogWindow(int32_t, /*unpacked*/ class GraphicWindow*, /*packed*/ class GraphicWindowOwner*, int32_t);
 	virtual void ~MissionLogWindow() /* override */;
 	virtual int32_t Initialize() /* override */;
 	virtual int32_t ComposeSelf() /* override */;
 	virtual int32_t CreateImage(int32_t) /* override */;
 	virtual void DestroyImage() /* override */;
-	int32_t ReadPalette(struct SparkalColor*);
-	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32) /* override */;
+	int32_t ReadPalette(/*packed*/ struct SparkalColor*);
+	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32) /* override */;
 protected:
 	void SortByTimeDate();
 	void SortByType();
 	void DrawBackground();
-	class ListBoxWindow *myListBoxWindow;
-	class CBackBuffer *myBackgroundBuffer;
+	/*packed*/ class ListBoxWindow *myListBoxWindow;
+	/*unpacked*/ class CBackBuffer *myBackgroundBuffer;
 	enum MissionLogWindow::MissionLogWindowSortType nCurrentSort;
 };
 
 // Type: int32_t;
 
-// Type: class GraphicWindow (forward reference);
+// Type: /*unpacked*/ class GraphicWindow (forward reference);
 // GraphicWindow Class implementation not found
 
-// Type: class GraphicWindowOwner (forward reference);
+// Type: /*packed*/ class GraphicWindowOwner (forward reference);
 // VTABLE: COPTER_D 0x00590f2c
 class GraphicWindowOwner{ // packed(0x4 bytes) TI: 0x1647
 public:
-	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
+	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
 };
 
 // Type: void;
 
-// Type: class ButtonWindow (forward reference);
+// Type: /*packed*/ class ButtonWindow (forward reference);
 // VTABLE: COPTER_D 0x00591b78
 class ButtonWindow : public GraphicWindow
 { // packed(0x94 bytes) TI: 0x1a48
@@ -54,7 +54,7 @@ class ButtonWindow : public GraphicWindow
 		nButtonStateOn = 2,
 	};
 public:
-	void ButtonWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
+	void ButtonWindow(/*packed*/ class MRect&, int32_t, /*unpacked*/ class GraphicWindow*, char *, /*packed*/ class GraphicWindowOwner*, int32_t);
 	void ButtonWindow();
 	virtual int32_t Initialize() /* override */;
 	virtual int32_t GetImageCount(); // vtable+0xc4
@@ -67,25 +67,25 @@ public:
 	virtual long DoCursorDown(long, long, unsigned long) /* override */;
 	virtual long DoCursorUp(long, long, unsigned long) /* override */;
 	virtual long DoCursorMove(long, long) /* override */;
-	virtual void SetTextColor(const struct SparkalColor*, const struct SparkalColor*); // vtable+0xd8
+	virtual void SetTextColor(const /*packed*/ struct SparkalColor*, const /*packed*/ struct SparkalColor*); // vtable+0xd8
 	virtual int32_t CanWeRespondToMessage() /* override */;
 protected:
 	int32_t nButtonState;
 	int32_t bEnabled;
 	int32_t nButtonTextHeight;
-	class MSize sizeTextOffset;
+	/*packed*/ class MSize sizeTextOffset;
 	int32_t bBusySettingState;
-	struct SparkalColor colorFont;
-	struct SparkalColor colorFontHighlighted;
+	/*packed*/ struct SparkalColor colorFont;
+	/*packed*/ struct SparkalColor colorFontHighlighted;
 };
 
-// Type: class basic_string<char>;
+// Type: /*packed*/ class basic_string<char>;
 class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
-	using reference_class = class basic_string_ref<char>;
-	using reference_pointer = class basic_string_ref<char>*;
+	using reference_class = /*unpacked*/ class basic_string_ref<char>;
+	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char> *reference;
+	/*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -103,44 +103,44 @@ private:
 	uint32_t find_first_not_of_str(char *, uint32_t, uint32_t);
 	uint32_t find_last_not_of_str(char *, uint32_t, uint32_t);
 public:
-	void basic_string<char>(const class vector<char>&);
+	void basic_string<char>(const /*packed*/ class vector<char>&);
 	void basic_string<char>(char, uint32_t);
 	void basic_string<char>(char *);
 	void basic_string<char>(char *, uint32_t);
-	void basic_string<char>(const class basic_string<char>&, uint32_t, uint32_t);
+	void basic_string<char>(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 	void basic_string<char>(uint32_t, enum capacity);
 	void basic_string<char>();
 protected:
 	void basic_string<char>(char *, uint32_t, uint32_t);
 	void delete_ref();
 	using char_type = char;
-	using baggage_type = struct string_char_baggage<char>;
+	using baggage_type = /*packed*/ struct string_char_baggage<char>;
 public:
 	void ~basic_string<char>();
-	class basic_string<char>& operator=(char);
-	class basic_string<char>& operator=(char *);
-	class basic_string<char>& operator=(const class basic_string<char>&);
-	class basic_string<char>& operator+=(char);
-	class basic_string<char>& operator+=(char *);
-	class basic_string<char>& operator+=(const class basic_string<char>&);
-	class vector<char> operator class vector<char>();
-	class basic_string<char>& append(char, uint32_t);
-	class basic_string<char>& append(char *);
-	class basic_string<char>& append(char *, uint32_t);
-	class basic_string<char>& append(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& assign(char, uint32_t);
-	class basic_string<char>& assign(char *);
-	class basic_string<char>& assign(char *, uint32_t);
-	class basic_string<char>& assign(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& insert(uint32_t, char, uint32_t);
-	class basic_string<char>& insert(uint32_t, char *);
-	class basic_string<char>& insert(uint32_t, char *, uint32_t);
-	class basic_string<char>& insert(uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& remove(uint32_t, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, char, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, char *);
-	class basic_string<char>& replace(uint32_t, uint32_t, char *, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& operator=(char);
+	/*packed*/ class basic_string<char>& operator=(char *);
+	/*packed*/ class basic_string<char>& operator=(const /*packed*/ class basic_string<char>&);
+	/*packed*/ class basic_string<char>& operator+=(char);
+	/*packed*/ class basic_string<char>& operator+=(char *);
+	/*packed*/ class basic_string<char>& operator+=(const /*packed*/ class basic_string<char>&);
+	/*packed*/ class vector<char> operator class vector<char>();
+	/*packed*/ class basic_string<char>& append(char, uint32_t);
+	/*packed*/ class basic_string<char>& append(char *);
+	/*packed*/ class basic_string<char>& append(char *, uint32_t);
+	/*packed*/ class basic_string<char>& append(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& assign(char, uint32_t);
+	/*packed*/ class basic_string<char>& assign(char *);
+	/*packed*/ class basic_string<char>& assign(char *, uint32_t);
+	/*packed*/ class basic_string<char>& assign(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char *);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char *, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& remove(uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char *);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char *, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 	char get_at(uint32_t);
 	void put_at(uint32_t, char);
 	char& operator[](uint32_t);
@@ -156,35 +156,35 @@ public:
 	uint32_t find(char, uint32_t);
 	uint32_t find(char *, uint32_t);
 	uint32_t find(char *, uint32_t, uint32_t);
-	uint32_t find(const class basic_string<char>&, uint32_t);
+	uint32_t find(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t rfind(char, uint32_t);
 	uint32_t rfind(char *, uint32_t);
 	uint32_t rfind(char *, uint32_t, uint32_t);
-	uint32_t rfind(const class basic_string<char>&, uint32_t);
+	uint32_t rfind(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_first_of(char, uint32_t);
 	uint32_t find_first_of(char *, uint32_t);
 	uint32_t find_first_of(char *, uint32_t, uint32_t);
-	uint32_t find_first_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_last_of(char, uint32_t);
 	uint32_t find_last_of(char *, uint32_t);
 	uint32_t find_last_of(char *, uint32_t, uint32_t);
-	uint32_t find_last_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_last_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_first_not_of(char, uint32_t);
 	uint32_t find_first_not_of(char *, uint32_t);
 	uint32_t find_first_not_of(char *, uint32_t, uint32_t);
-	uint32_t find_first_not_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_not_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_last_not_of(char, uint32_t);
 	uint32_t find_last_not_of(char *, uint32_t);
 	uint32_t find_last_not_of(char *, uint32_t, uint32_t);
-	uint32_t find_last_not_of(const class basic_string<char>&, uint32_t);
-	class basic_string<char> substr(uint32_t, uint32_t);
+	uint32_t find_last_not_of(const /*packed*/ class basic_string<char>&, uint32_t);
+	/*packed*/ class basic_string<char> substr(uint32_t, uint32_t);
 	int32_t compare(char, uint32_t, uint32_t);
 	int32_t compare(char *, uint32_t);
 	int32_t compare(char *, uint32_t, uint32_t);
-	int32_t compare(const class basic_string<char>&, uint32_t, uint32_t);
+	int32_t compare(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 };
 
-// Type: struct SparkalColor;
+// Type: /*packed*/ struct SparkalColor;
 struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 	unsigned char Blue;
 	unsigned char Green;
@@ -194,7 +194,7 @@ struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 	void SparkalColor();
 };
 
-// Type: struct SparkalColor (forward reference);
+// Type: /*packed*/ struct SparkalColor (forward reference);
 struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 	unsigned char Blue;
 	unsigned char Green;
@@ -210,129 +210,129 @@ struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 
 // Type: void * __ptr32;
 
-// Type: class list<tagLogBase *>::iterator;
+// Type: /*packed*/ class list<tagLogBase *>::iterator;
 class list<tagLogBase *>::iterator : public bidirectional_iterator<tagLogBase *,int>
 { // packed(0x4 bytes) TI: 0x16d0
 protected:
-	struct list<tagLogBase *>::list_node *node;
+	/*packed*/ struct list<tagLogBase *>::list_node *node;
 public:
 	void iterator();
 protected:
-	void iterator(struct list<tagLogBase *>::list_node*);
+	void iterator(/*packed*/ struct list<tagLogBase *>::list_node*);
 public:
-	int32_t operator==(const class list<tagLogBase *>::iterator&);
-	struct tagLogBase*& operator*();
-	class list<tagLogBase *>::iterator operator++(int32_t);
-	class list<tagLogBase *>::iterator& operator++();
-	class list<tagLogBase *>::iterator operator--(int32_t);
-	class list<tagLogBase *>::iterator& operator--();
+	int32_t operator==(const /*packed*/ class list<tagLogBase *>::iterator&);
+	/*packed*/ struct tagLogBase*& operator*();
+	/*packed*/ class list<tagLogBase *>::iterator operator++(int32_t);
+	/*packed*/ class list<tagLogBase *>::iterator& operator++();
+	/*packed*/ class list<tagLogBase *>::iterator operator--(int32_t);
+	/*packed*/ class list<tagLogBase *>::iterator& operator--();
 };
 
 // Type: unsigned long;
 
-// Type: class MessageDisplayManager (forward reference);
+// Type: /*packed*/ class MessageDisplayManager (forward reference);
 // VTABLE: COPTER_D 0x005907d0
 class MessageDisplayManager{ // packed(0x54 bytes) TI: 0x2746
 public:
 	void MessageDisplayManager();
 	void ~MessageDisplayManager();
 	virtual int32_t Initialize(); // vtable+0x0
-	virtual void DisplayCurrentMessages(class CBackBuffer*); // vtable+0x4
-	virtual void AddNewMessage(class basic_string<char>&); // vtable+0x8
+	virtual void DisplayCurrentMessages(/*unpacked*/ class CBackBuffer*); // vtable+0x4
+	virtual void AddNewMessage(/*packed*/ class basic_string<char>&); // vtable+0x8
 	virtual void AddNewMessage(char *); // vtable+0xc
-	class MPoint ptFirstMessage;
+	/*packed*/ class MPoint ptFirstMessage;
 	long lMaximumMessageCount;
 protected:
-	class basic_string<char> *sMessages;
-	class MTimer timerMessageDisplay;
-	class MFont fontMessages;
+	/*packed*/ class basic_string<char> *sMessages;
+	/*packed*/ class MTimer timerMessageDisplay;
+	/*packed*/ class MFont fontMessages;
 	long lVerticalSpaceBetweenMessages;
 	unsigned long lDisplayTime;
 	long lCurrentDisplayedMessageCount;
 	int32_t bDisplayMessages;
-	struct SparkalColor colorMessage;
+	/*packed*/ struct SparkalColor colorMessage;
 };
 
 // Type: uint32_t;
 
-// Type: class CBackBuffer (forward reference);
+// Type: /*unpacked*/ class CBackBuffer (forward reference);
 // CBackBuffer Class implementation not found
 
-// Type: class MRect;
+// Type: /*packed*/ class MRect;
 class MRect : public SparkalRect
 { // packed(0x10 bytes) TI: 0x1067
 public:
-	void MRect(struct SparkalPoint, struct SparkalPoint);
-	void MRect(struct SparkalPoint, struct SparkalSize);
-	void MRect(struct SparkalRect*);
-	void MRect(class MRect*);
-	void MRect(const struct SparkalRect&);
+	void MRect(/*packed*/ struct SparkalPoint, /*packed*/ struct SparkalPoint);
+	void MRect(/*packed*/ struct SparkalPoint, /*packed*/ struct SparkalSize);
+	void MRect(/*packed*/ struct SparkalRect*);
+	void MRect(/*packed*/ class MRect*);
+	void MRect(const /*packed*/ struct SparkalRect&);
 	void MRect(long, long, long, long);
 	void MRect();
 	long Width();
 	long Height();
-	class MSize Size();
-	const class MPoint& TopLeft();
-	class MPoint& TopLeft();
-	const class MPoint& BottomRight();
-	class MPoint& BottomRight();
-	class MPoint CenterPoint();
-	struct SparkalRect* operator struct SparkalRect *();
-	class MRect* operator class MRect *();
+	/*packed*/ class MSize Size();
+	const /*packed*/ class MPoint& TopLeft();
+	/*packed*/ class MPoint& TopLeft();
+	const /*packed*/ class MPoint& BottomRight();
+	/*packed*/ class MPoint& BottomRight();
+	/*packed*/ class MPoint CenterPoint();
+	/*packed*/ struct SparkalRect* operator struct SparkalRect *();
+	/*packed*/ class MRect* operator class MRect *();
 	int32_t IsRectEmpty();
 	int32_t IsRectNull();
-	int32_t PtInRect(struct SparkalPoint);
+	int32_t PtInRect(/*packed*/ struct SparkalPoint);
 	int32_t PtInRect(long, long);
-	int32_t DoesRectOverlap(struct SparkalRect*);
-	void SetRect(struct SparkalPoint, struct SparkalPoint);
+	int32_t DoesRectOverlap(/*packed*/ struct SparkalRect*);
+	void SetRect(/*packed*/ struct SparkalPoint, /*packed*/ struct SparkalPoint);
 	void SetRect(long, long, long, long);
 	void SetRectEmpty();
-	void CopyRect(class MRect*);
-	int32_t EqualRect(class MRect*);
+	void CopyRect(/*packed*/ class MRect*);
+	int32_t EqualRect(/*packed*/ class MRect*);
 	void InflateRect(long, long, long, long);
-	void InflateRect(class MRect*);
-	void InflateRect(struct SparkalSize);
+	void InflateRect(/*packed*/ class MRect*);
+	void InflateRect(/*packed*/ struct SparkalSize);
 	void InflateRect(long, long);
 	void DeflateRect(long, long, long, long);
-	void DeflateRect(class MRect*);
-	void DeflateRect(struct SparkalSize);
+	void DeflateRect(/*packed*/ class MRect*);
+	void DeflateRect(/*packed*/ struct SparkalSize);
 	void DeflateRect(long, long);
-	void MoveRect(struct SparkalPoint);
+	void MoveRect(/*packed*/ struct SparkalPoint);
 	void MoveRect(long, long);
-	void OffsetRect(struct SparkalPoint);
-	void OffsetRect(struct SparkalSize);
+	void OffsetRect(/*packed*/ struct SparkalPoint);
+	void OffsetRect(/*packed*/ struct SparkalSize);
 	void OffsetRect(long, long);
 	void NormalizeRect();
-	int32_t IntersectRect(class MRect*, class MRect*);
-	int32_t UnionRect(class MRect*, class MRect*);
-	int32_t SubtractRect(class MRect*, class MRect*);
-	int32_t operator==(const struct SparkalRect&);
-	int32_t operator!=(const struct SparkalRect&);
-	void operator+=(class MRect*);
-	void operator+=(struct SparkalSize);
-	void operator+=(struct SparkalPoint);
-	void operator-=(class MRect*);
-	void operator-=(struct SparkalSize);
-	void operator-=(struct SparkalPoint);
-	void operator&=(const struct SparkalRect&);
-	void operator|=(const struct SparkalRect&);
-	class MRect operator+(struct SparkalSize);
-	class MRect operator+(class MRect*);
-	class MRect operator+(struct SparkalPoint);
-	class MRect operator-(class MRect*);
-	class MRect operator-(struct SparkalSize);
-	class MRect operator-(struct SparkalPoint);
-	class MRect operator&(const struct SparkalRect&);
-	class MRect operator|(const struct SparkalRect&);
+	int32_t IntersectRect(/*packed*/ class MRect*, /*packed*/ class MRect*);
+	int32_t UnionRect(/*packed*/ class MRect*, /*packed*/ class MRect*);
+	int32_t SubtractRect(/*packed*/ class MRect*, /*packed*/ class MRect*);
+	int32_t operator==(const /*packed*/ struct SparkalRect&);
+	int32_t operator!=(const /*packed*/ struct SparkalRect&);
+	void operator+=(/*packed*/ class MRect*);
+	void operator+=(/*packed*/ struct SparkalSize);
+	void operator+=(/*packed*/ struct SparkalPoint);
+	void operator-=(/*packed*/ class MRect*);
+	void operator-=(/*packed*/ struct SparkalSize);
+	void operator-=(/*packed*/ struct SparkalPoint);
+	void operator&=(const /*packed*/ struct SparkalRect&);
+	void operator|=(const /*packed*/ struct SparkalRect&);
+	/*packed*/ class MRect operator+(/*packed*/ struct SparkalSize);
+	/*packed*/ class MRect operator+(/*packed*/ class MRect*);
+	/*packed*/ class MRect operator+(/*packed*/ struct SparkalPoint);
+	/*packed*/ class MRect operator-(/*packed*/ class MRect*);
+	/*packed*/ class MRect operator-(/*packed*/ struct SparkalSize);
+	/*packed*/ class MRect operator-(/*packed*/ struct SparkalPoint);
+	/*packed*/ class MRect operator&(const /*packed*/ struct SparkalRect&);
+	/*packed*/ class MRect operator|(const /*packed*/ struct SparkalRect&);
 };
 
-// Type: class basic_string<char> (forward reference);
+// Type: /*packed*/ class basic_string<char> (forward reference);
 class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
-	using reference_class = class basic_string_ref<char>;
-	using reference_pointer = class basic_string_ref<char>*;
+	using reference_class = /*unpacked*/ class basic_string_ref<char>;
+	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char> *reference;
+	/*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -350,44 +350,44 @@ private:
 	uint32_t find_first_not_of_str(char *, uint32_t, uint32_t);
 	uint32_t find_last_not_of_str(char *, uint32_t, uint32_t);
 public:
-	void basic_string<char>(const class vector<char>&);
+	void basic_string<char>(const /*packed*/ class vector<char>&);
 	void basic_string<char>(char, uint32_t);
 	void basic_string<char>(char *);
 	void basic_string<char>(char *, uint32_t);
-	void basic_string<char>(const class basic_string<char>&, uint32_t, uint32_t);
+	void basic_string<char>(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 	void basic_string<char>(uint32_t, enum capacity);
 	void basic_string<char>();
 protected:
 	void basic_string<char>(char *, uint32_t, uint32_t);
 	void delete_ref();
 	using char_type = char;
-	using baggage_type = struct string_char_baggage<char>;
+	using baggage_type = /*packed*/ struct string_char_baggage<char>;
 public:
 	void ~basic_string<char>();
-	class basic_string<char>& operator=(char);
-	class basic_string<char>& operator=(char *);
-	class basic_string<char>& operator=(const class basic_string<char>&);
-	class basic_string<char>& operator+=(char);
-	class basic_string<char>& operator+=(char *);
-	class basic_string<char>& operator+=(const class basic_string<char>&);
-	class vector<char> operator class vector<char>();
-	class basic_string<char>& append(char, uint32_t);
-	class basic_string<char>& append(char *);
-	class basic_string<char>& append(char *, uint32_t);
-	class basic_string<char>& append(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& assign(char, uint32_t);
-	class basic_string<char>& assign(char *);
-	class basic_string<char>& assign(char *, uint32_t);
-	class basic_string<char>& assign(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& insert(uint32_t, char, uint32_t);
-	class basic_string<char>& insert(uint32_t, char *);
-	class basic_string<char>& insert(uint32_t, char *, uint32_t);
-	class basic_string<char>& insert(uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& remove(uint32_t, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, char, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, char *);
-	class basic_string<char>& replace(uint32_t, uint32_t, char *, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& operator=(char);
+	/*packed*/ class basic_string<char>& operator=(char *);
+	/*packed*/ class basic_string<char>& operator=(const /*packed*/ class basic_string<char>&);
+	/*packed*/ class basic_string<char>& operator+=(char);
+	/*packed*/ class basic_string<char>& operator+=(char *);
+	/*packed*/ class basic_string<char>& operator+=(const /*packed*/ class basic_string<char>&);
+	/*packed*/ class vector<char> operator class vector<char>();
+	/*packed*/ class basic_string<char>& append(char, uint32_t);
+	/*packed*/ class basic_string<char>& append(char *);
+	/*packed*/ class basic_string<char>& append(char *, uint32_t);
+	/*packed*/ class basic_string<char>& append(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& assign(char, uint32_t);
+	/*packed*/ class basic_string<char>& assign(char *);
+	/*packed*/ class basic_string<char>& assign(char *, uint32_t);
+	/*packed*/ class basic_string<char>& assign(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char *);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char *, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& remove(uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char *);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char *, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 	char get_at(uint32_t);
 	void put_at(uint32_t, char);
 	char& operator[](uint32_t);
@@ -403,39 +403,39 @@ public:
 	uint32_t find(char, uint32_t);
 	uint32_t find(char *, uint32_t);
 	uint32_t find(char *, uint32_t, uint32_t);
-	uint32_t find(const class basic_string<char>&, uint32_t);
+	uint32_t find(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t rfind(char, uint32_t);
 	uint32_t rfind(char *, uint32_t);
 	uint32_t rfind(char *, uint32_t, uint32_t);
-	uint32_t rfind(const class basic_string<char>&, uint32_t);
+	uint32_t rfind(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_first_of(char, uint32_t);
 	uint32_t find_first_of(char *, uint32_t);
 	uint32_t find_first_of(char *, uint32_t, uint32_t);
-	uint32_t find_first_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_last_of(char, uint32_t);
 	uint32_t find_last_of(char *, uint32_t);
 	uint32_t find_last_of(char *, uint32_t, uint32_t);
-	uint32_t find_last_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_last_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_first_not_of(char, uint32_t);
 	uint32_t find_first_not_of(char *, uint32_t);
 	uint32_t find_first_not_of(char *, uint32_t, uint32_t);
-	uint32_t find_first_not_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_not_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_last_not_of(char, uint32_t);
 	uint32_t find_last_not_of(char *, uint32_t);
 	uint32_t find_last_not_of(char *, uint32_t, uint32_t);
-	uint32_t find_last_not_of(const class basic_string<char>&, uint32_t);
-	class basic_string<char> substr(uint32_t, uint32_t);
+	uint32_t find_last_not_of(const /*packed*/ class basic_string<char>&, uint32_t);
+	/*packed*/ class basic_string<char> substr(uint32_t, uint32_t);
 	int32_t compare(char, uint32_t, uint32_t);
 	int32_t compare(char *, uint32_t);
 	int32_t compare(char *, uint32_t, uint32_t);
-	int32_t compare(const class basic_string<char>&, uint32_t, uint32_t);
+	int32_t compare(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 };
 
-// Type: struct bidirectional_iterator<tagLogBase *,int>;
+// Type: /*packed*/ struct bidirectional_iterator<tagLogBase *,int>;
 struct bidirectional_iterator<tagLogBase *,int>{ // packed(0x1 bytes) TI: 0x126f
 };
 
-// Type: struct SparkalRect;
+// Type: /*packed*/ struct SparkalRect;
 struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	long left;
 	long top;
@@ -449,7 +449,7 @@ struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 
 // Contribution: 1:0006aca0-0006d4f0 Module: 40, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0046bca0
-void MissionLogWindow::MissionLogWindow(int32_t nNewID, class GraphicWindow *windowNewParent, class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
+void MissionLogWindow::MissionLogWindow(int32_t nNewID, /*unpacked*/ class GraphicWindow *windowNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
 	__asm        jmp    near ptr 0x0046BCB1;
 
@@ -723,10 +723,10 @@ void MissionLogWindow::~MissionLogWindow() {
 
 // FUNCTION: COPTER_D 0x0046bfe3
 int32_t MissionLogWindow::Initialize() {
-	class ButtonWindow *tempButtonWindow;
-	class basic_string<char> sText;
+	/*packed*/ class ButtonWindow *tempButtonWindow;
+	/*packed*/ class basic_string<char> sText;
 	int32_t nFullStringID;
-	struct SparkalColor tempSparkalColor;
+	/*packed*/ struct SparkalColor tempSparkalColor;
 
 // LINE 68:
 	__asm        push   0x10;
@@ -1418,7 +1418,7 @@ _T915:
 }
 
 // FUNCTION: COPTER_D 0x0046c90a
-int32_t MissionLogWindow::ReadPalette(struct SparkalColor *pColorTable) {
+int32_t MissionLogWindow::ReadPalette(/*packed*/ struct SparkalColor *pColorTable) {
 // LINE 119:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x64], 0;
@@ -1744,7 +1744,7 @@ _T67:
 }
 
 // FUNCTION: COPTER_D 0x0046ccb5
-int32_t MissionLogWindow::DoMessage(class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
+int32_t MissionLogWindow::DoMessage(/*unpacked*/ class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 	long lMyMessage;
 
 // LINE 206:
@@ -1800,8 +1800,8 @@ _T7f:
 
 // FUNCTION: COPTER_D 0x0046cd45
 void MissionLogWindow::SortByTimeDate() {
-	class list<tagLogBase *>::iterator iterator;
-	class basic_string<char> sCurrentText;
+	/*packed*/ class list<tagLogBase *>::iterator iterator;
+	/*packed*/ class basic_string<char> sCurrentText;
 
 // LINE 225:
 	__asm        jmp    near ptr 0x0046CD56;
@@ -1995,8 +1995,8 @@ _T223:
 // FUNCTION: COPTER_D 0x0046cf77
 void MissionLogWindow::SortByType() {
 	unsigned long nCurrentMissionID;
-	class list<tagLogBase *>::iterator iterator;
-	class basic_string<char> sCurrentText;
+	/*packed*/ class list<tagLogBase *>::iterator iterator;
+	/*packed*/ class basic_string<char> sCurrentText;
 
 // LINE 245:
 	__asm        jmp    near ptr 0x0046CF8E;
@@ -2710,9 +2710,9 @@ _T1d7:
 }
 
 // FUNCTION: COPTER_D 0x0046d802
-void MessageDisplayManager::DisplayCurrentMessages(class CBackBuffer *bufferDestination) {
+void MessageDisplayManager::DisplayCurrentMessages(/*unpacked*/ class CBackBuffer *bufferDestination) {
 	int32_t i;
-	class MRect rectCurrentMessage;
+	/*packed*/ class MRect rectCurrentMessage;
 
 // LINE 324:
 	__asm        jmp    near ptr 0x0046D813;
@@ -3686,7 +3686,7 @@ _T6f6:
 }
 
 // FUNCTION: COPTER_D 0x0046e3ca
-void MessageDisplayManager::AddNewMessage(class basic_string<char>& sNewMessage) {
+void MessageDisplayManager::AddNewMessage(/*packed*/ class basic_string<char>& sNewMessage) {
 // LINE 383:
 	__asm        mov    eax, sNewMessage;
 	__asm        cmp    dword ptr [eax], 0;

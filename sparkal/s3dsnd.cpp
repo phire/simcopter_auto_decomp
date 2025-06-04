@@ -4,48 +4,48 @@
 
 // Type: long;
 
-// Type: class SoundChangeNotificationSink;
+// Type: /*packed*/ class SoundChangeNotificationSink;
 // VTABLE: COPTER_D 0x0058f5c0
 class SoundChangeNotificationSink : public NotificationSink
 { // packed(0x4 bytes) TI: 0x2432
 public:
 	virtual int32_t Initialize(); // vtable+0x4
-	virtual void DoNotificationChange(long, class PreferenceManager*) /* override */;
+	virtual void DoNotificationChange(long, /*packed*/ class PreferenceManager*) /* override */;
 };
 
 // Type: void ();
 
-// Type: class SoundChangeNotificationSink;
+// Type: /*packed*/ class SoundChangeNotificationSink;
 // VTABLE: COPTER_D 0x0058f5c0
 class SoundChangeNotificationSink : public NotificationSink
 { // packed(0x4 bytes) TI: 0x2ac5
 public:
 	virtual int32_t Initialize(); // vtable+0x4
-	virtual void DoNotificationChange(long, class PreferenceManager*) /* override */;
+	virtual void DoNotificationChange(long, /*packed*/ class PreferenceManager*) /* override */;
 	void SoundChangeNotificationSink(); // synthetic
 };
 
 // Type: void;
 
-// Type: class SoundChangeNotificationSink (forward reference);
+// Type: /*packed*/ class SoundChangeNotificationSink (forward reference);
 // VTABLE: COPTER_D 0x0058f5c0
 class SoundChangeNotificationSink : public NotificationSink
 { // packed(0x4 bytes) TI: 0x2ac5
 public:
 	virtual int32_t Initialize(); // vtable+0x4
-	virtual void DoNotificationChange(long, class PreferenceManager*) /* override */;
+	virtual void DoNotificationChange(long, /*packed*/ class PreferenceManager*) /* override */;
 	void SoundChangeNotificationSink(); // synthetic
 };
 
 // Type: int32_t;
 
-// Type: class PreferenceManager (forward reference);
+// Type: /*packed*/ class PreferenceManager (forward reference);
 // VTABLE: COPTER_D 0x00590db0
 class PreferenceManager{ // packed(0x28 bytes) TI: 0x26c8
 protected:
 	int32_t bSaveFileAtAllChanges;
-	class list<PreferenceItem> myPreferences;
-	class MIFF *miffPrefsFile;
+	/*packed*/ class list<PreferenceItem> myPreferences;
+	/*packed*/ class MIFF *miffPrefsFile;
 	long lFileCreator;
 	long lFileType;
 	long lFileVersion;
@@ -59,19 +59,19 @@ public:
 	virtual long LoadAllPrefs(); // vtable+0x8
 	virtual long ClearPrefsMemory(); // vtable+0xc
 	virtual void EnumeratePrefs(); // vtable+0x10
-	virtual class PreferenceItem* GetPrefPointer(long); // vtable+0x14
-	virtual class PreferenceItem* GetPrefCopy(long); // vtable+0x18
+	virtual /*packed*/ class PreferenceItem* GetPrefPointer(long); // vtable+0x14
+	virtual /*packed*/ class PreferenceItem* GetPrefCopy(long); // vtable+0x18
 	virtual char * GetPrefDataPointer(long); // vtable+0x1c
 	virtual char * GetPrefDataCopy(long); // vtable+0x20
 	virtual long GetPrefDataLength(long); // vtable+0x24
-	virtual long SetPref(class PreferenceItem*); // vtable+0x28
+	virtual long SetPref(/*packed*/ class PreferenceItem*); // vtable+0x28
 	virtual long SetPref(long, char *, long); // vtable+0x2c
 	virtual long RemovePref(long); // vtable+0x30
 };
 
 // Type: char *;
 
-// Type: struct SoundPreferences (forward reference);
+// Type: /*packed*/ struct SoundPreferences (forward reference);
 struct SoundPreferences{ // packed(0x10 bytes) TI: 0x2845
 	long lMasterVolume;
 	long lDispatchVolume;
@@ -83,26 +83,26 @@ struct SoundPreferences{ // packed(0x10 bytes) TI: 0x2845
 
 // Type: char;
 
-// Type: class DigitalSound (forward reference);
+// Type: /*packed*/ class DigitalSound (forward reference);
 // VTABLE: COPTER_D 0x0058f488
 class DigitalSound : public Sound
 { // packed(0x7a bytes) TI: 0x45d4
 protected:
 	int32_t nStreamingType;
 	int32_t nCompletionEstimationTimerSet;
-	static struct IDirectSound *lpDirectSound;
+	static /*packed*/ struct IDirectSound *lpDirectSound;
 	uint32_t cbSize;
-	struct tWAVEFORMATEX waveFormatEx;
-	struct IDirectSoundBuffer *lpSound[8];
-	struct _STREAMBUFINFO *lpStreamBufferInfo;
+	/*packed*/ struct tWAVEFORMATEX waveFormatEx;
+	/*packed*/ struct IDirectSoundBuffer *lpSound[8];
+	/*packed*/ struct _STREAMBUFINFO *lpStreamBufferInfo;
 	unsigned long dwDesiredBufferDescFlags;
 public:
 	void DigitalSound(long);
-	void DigitalSound(const class basic_string<char>&, int32_t);
+	void DigitalSound(const /*packed*/ class basic_string<char>&, int32_t);
 	void DigitalSound();
 	virtual void ~DigitalSound() /* override */;
-	class DigitalSound& operator=(class DigitalSound&);
-	virtual void SetSoundFile(const class basic_string<char>&, int32_t); // vtable+0x2c
+	/*packed*/ class DigitalSound& operator=(/*packed*/ class DigitalSound&);
+	virtual void SetSoundFile(const /*packed*/ class basic_string<char>&, int32_t); // vtable+0x2c
 	virtual int32_t Load(); // vtable+0x30
 	virtual int32_t LoadFromResource(); // vtable+0x34
 	virtual int32_t LoadFromFile(); // vtable+0x38
@@ -113,7 +113,7 @@ public:
 	virtual long PlayStream(); // vtable+0x44
 	virtual long StopStream(); // vtable+0x48
 protected:
-	virtual long IsPlaying(struct IDirectSoundBuffer**); // vtable+0x4c
+	virtual long IsPlaying(/*packed*/ struct IDirectSoundBuffer**); // vtable+0x4c
 public:
 	virtual long IsPlaying() /* override */;
 	virtual int32_t GetVolume(long *) /* override */;
@@ -129,8 +129,8 @@ public:
 	virtual void StopCompletionNotification() /* override */;
 	virtual long EstimateRemainingPlayTime() /* override */;
 protected:
-	virtual int32_t GetSoundAliasToPlay(struct IDirectSoundBuffer**); // vtable+0x68
-	virtual int32_t CreateSoundBuffer(struct _DSBUFFERDESC*); // vtable+0x6c
+	virtual int32_t GetSoundAliasToPlay(/*packed*/ struct IDirectSoundBuffer**); // vtable+0x68
+	virtual int32_t CreateSoundBuffer(/*packed*/ struct _DSBUFFERDESC*); // vtable+0x6c
 	virtual int32_t CreatePrimarySoundBuffer(); // vtable+0x70
 	virtual int32_t ReleaseSoundBuffer(); // vtable+0x74
 	virtual long InitializeStreamBuffer(long); // vtable+0x78
@@ -140,28 +140,28 @@ protected:
 	virtual int32_t StartCompletionNotificationEstimationTimer(); // vtable+0x88
 };
 
-// Type: struct Point3d (forward reference);
+// Type: /*packed*/ struct Point3d (forward reference);
 struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 	int32_t x;
 	int32_t y;
 	int32_t z;
 };
 
-// Type: struct Point3d;
+// Type: /*packed*/ struct Point3d;
 struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 	int32_t x;
 	int32_t y;
 	int32_t z;
 };
 
-// Type: class NotificationSink;
+// Type: /*packed*/ class NotificationSink;
 // VTABLE: COPTER_D 0x0058f5c8
 class NotificationSink{ // packed(0x4 bytes) TI: 0x2ae9
 public:
-	virtual void DoNotificationChange(long, class PreferenceManager*); // vtable+0x0
+	virtual void DoNotificationChange(long, /*unpacked*/ class PreferenceManager*); // vtable+0x0
 };
 
-// Type: class Sound;
+// Type: /*packed*/ class Sound;
 // VTABLE: COPTER_D 0x0058f458
 class Sound{ // packed(0x34 bytes) TI: 0x4335
 	enum SoundSourceType {
@@ -180,7 +180,7 @@ public:
 	enum Sound::SoundDuplicateType nSoundDuplicateType;
 	long lID;
 	long lResID;
-	class basic_string<char> sSoundFile;
+	/*packed*/ class basic_string<char> sSoundFile;
 	long bLooping;
 	long bStreaming;
 	long lVolume;
@@ -189,8 +189,8 @@ public:
 	int32_t bUnloadBeforeNextPlay;
 	void Sound();
 	virtual void ~Sound(); // vtable+0x0
-	class Sound& operator=(const class Sound&);
-	virtual void SetSoundFile(const class basic_string<char>&); // vtable+0x4
+	/*packed*/ class Sound& operator=(const /*packed*/ class Sound&);
+	virtual void SetSoundFile(const /*packed*/ class basic_string<char>&); // vtable+0x4
 	virtual long Play(long, int32_t); // vtable+0x8
 	virtual long Stop(); // vtable+0xc
 	virtual long IsPlaying(); // vtable+0x10
@@ -268,10 +268,10 @@ _T3e:
 }
 
 // FUNCTION: COPTER_D 0x00441ee5
-void SoundChangeNotificationSink::DoNotificationChange(long lPreferenceType, class PreferenceManager *thePreferenceManager) {
+void SoundChangeNotificationSink::DoNotificationChange(long lPreferenceType, /*packed*/ class PreferenceManager *thePreferenceManager) {
 	long lNewVolume;
 	char * chPrefsData;
-	struct SoundPreferences *currentSoundPreferences;
+	/*packed*/ struct SoundPreferences *currentSoundPreferences;
 	int32_t i;
 
 // LINE 84:
@@ -5143,7 +5143,7 @@ _T4a5a:
 
 // FUNCTION: COPTER_D 0x00446a6b
 void S3DSSetFile(int32_t nSoundIndex, char * szSoundFile) {
-	class DigitalSound *theSound;
+	/*packed*/ class DigitalSound *theSound;
 	char szFullSoundPath[260];
 
 // LINE 472:
@@ -5298,14 +5298,14 @@ _T24d:
 }
 
 // FUNCTION: COPTER_D 0x00446cc2
-int32_t S3DSPlay(int32_t nSoundIndex, struct Point3d *loc, int32_t nFlags) {
+int32_t S3DSPlay(int32_t nSoundIndex, /*packed*/ struct Point3d *loc, int32_t nFlags) {
 	long lNewVolume;
 	long midparam;
 	int32_t nReturnValue;
-	struct Point3d viewvect;
+	/*packed*/ struct Point3d viewvect;
 	int32_t fpDistance;
 	int32_t lastparam;
-	class DigitalSound *theSound;
+	/*packed*/ class DigitalSound *theSound;
 
 // LINE 500:
 	__asm        mov    eax, nSoundIndex;
@@ -5443,7 +5443,7 @@ void S3DSStopAllSounds() {
 
 // FUNCTION: COPTER_D 0x00446e3c
 void S3SoundAdjFreq(int32_t nSoundIndex, long lFrequencyAdjustment) {
-	class DigitalSound *theSound;
+	/*packed*/ class DigitalSound *theSound;
 
 // LINE 589:
 	__asm        mov    eax, nSoundIndex;
@@ -5532,13 +5532,13 @@ _T3c:
 }
 
 // FUNCTION: COPTER_D 0x00446f43
-void S3SoundSetPosition(int32_t nSoundIndex, struct Point3d *loc) {
+void S3SoundSetPosition(int32_t nSoundIndex, /*packed*/ struct Point3d *loc) {
 	long lVolume;
 	long lPan;
-	struct Point3d positionRelative;
+	/*packed*/ struct Point3d positionRelative;
 	int32_t fpDistance;
-	class DigitalSound *theSound;
-	struct Point3d positionTemp;
+	/*packed*/ class DigitalSound *theSound;
+	/*packed*/ struct Point3d positionTemp;
 
 // LINE 680:
 	__asm        mov    eax, nSoundIndex;
@@ -5687,7 +5687,7 @@ _T1b2:
 // FUNCTION: COPTER_D 0x004470fa
 void S3SoundAddToQueue(int32_t nQueue, int32_t nSoundIndex, int32_t nDelayBeforePlay) {
 	long lNewVolume;
-	class DigitalSound *theSound;
+	/*packed*/ class DigitalSound *theSound;
 
 // LINE 737:
 	__asm        mov    eax, nSoundIndex;
@@ -5784,7 +5784,7 @@ static void (*$S59)() = { 0 /* todo */ };
 static long lOriginalSoundVolumes[113];
 
 // GLOBAL: COPTER_D 0x005c37ec
-class SoundChangeNotificationSink gSoundChangeNotificationSink;
+/*packed*/ class SoundChangeNotificationSink gSoundChangeNotificationSink;
 
 // GLOBAL: COPTER_D 0x005c37f0
 long glMasterVolume;
@@ -5796,10 +5796,10 @@ long glMasterVolume;
 
 // WARNING: this global might actually belong to: rotate.asm
 // GLOBAL: COPTER_D 0x006c12a0
-struct ViewerInfo Viewer; // Contrib missing
+/*packed*/ struct ViewerInfo Viewer; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\sparkal\Gameapp7.cpp
 // GLOBAL: COPTER_D 0x006c12a0
-struct ViewerInfo Viewer; // Contrib missing
+/*packed*/ struct ViewerInfo Viewer; // Contrib missing
 

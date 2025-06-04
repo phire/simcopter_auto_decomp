@@ -4,7 +4,7 @@
 
 // Type: long;
 
-// Type: struct VRwindowType;
+// Type: /*packed*/ struct VRwindowType;
 struct VRwindowType{ // packed(0x1c bytes) TI: 0x10a5
 	int32_t WindowX;
 	int32_t WindowY;
@@ -30,88 +30,88 @@ enum tagResolution {
 
 // Type: void * __ptr32;
 
-// Type: class RoadGraph;
+// Type: /*packed*/ class RoadGraph;
 class RoadGraph{ // packed(0x280 bytes) TI: 0x485e
 public:
-	struct RGVertex *RGArray[128];
+	/*packed*/ struct RGVertex *RGArray[128];
 	unsigned char RGLength[128];
 	void RoadGraph();
 	void Init();
 	void ~RoadGraph();
 	void Destroy();
-	int32_t GetRoadLength(const struct Goal*);
-	void GetNextGoal(struct Goal*);
-	void PickPlaceOnRoad(struct Goal*, int32_t, int32_t);
-	struct Goal FindIntersections(struct _GridCoordinates, struct _GridCoordinates, struct Goal&, struct Goal&);
+	int32_t GetRoadLength(const /*packed*/ struct Goal*);
+	void GetNextGoal(/*packed*/ struct Goal*);
+	void PickPlaceOnRoad(/*packed*/ struct Goal*, int32_t, int32_t);
+	/*packed*/ struct Goal FindIntersections(/*packed*/ struct _GridCoordinates, /*packed*/ struct _GridCoordinates, /*packed*/ struct Goal&, /*packed*/ struct Goal&);
 	unsigned char FindYIndexToVertex(int32_t, int32_t);
 	void DumpBuildMap();
-	void FindPlaceOnRoad(struct Goal&, struct _GridCoordinates);
-	void SamePlaceOtherDirection(struct Goal*);
+	void FindPlaceOnRoad(/*packed*/ struct Goal&, /*packed*/ struct _GridCoordinates);
+	void SamePlaceOtherDirection(/*packed*/ struct Goal*);
 private:
-	void FindEdges(int32_t, int32_t, struct RGVertex*);
-	void FindNumRoadElements(struct RGVertex*, struct Edge*, enum DirIndex2, unsigned char, unsigned char, int32_t);
-	void FindRoads(int32_t, int32_t, struct RGVertex*);
-	void MakeRoad(struct RGVertex*, unsigned char, unsigned char, enum DirIndex2);
+	void FindEdges(int32_t, int32_t, /*packed*/ struct RGVertex*);
+	void FindNumRoadElements(/*packed*/ struct RGVertex*, /*packed*/ struct Edge*, enum DirIndex2, unsigned char, unsigned char, int32_t);
+	void FindRoads(int32_t, int32_t, /*packed*/ struct RGVertex*);
+	void MakeRoad(/*packed*/ struct RGVertex*, unsigned char, unsigned char, enum DirIndex2);
 	void FindDeadEnds();
 	int32_t IsThisADeadEnd(enum DirIndex2, unsigned char, unsigned char);
 	enum DirIndex2 WhatDirAmIConnectedTo(enum DirIndex2, enum DirIndex2*, unsigned char, unsigned char);
-	int32_t FindIntersection(struct Goal&, unsigned char, unsigned char, struct _GridCoordinates, struct _GridCoordinates, enum DirectionTypes);
+	int32_t FindIntersection(/*packed*/ struct Goal&, unsigned char, unsigned char, /*packed*/ struct _GridCoordinates, /*packed*/ struct _GridCoordinates, enum DirectionTypes);
 	void ConnectHiwayRamp(int32_t, int32_t, unsigned short);
 	int32_t SetElevation(unsigned short);
 };
 
 // Type: char;
 
-// Type: class Station (forward reference);
+// Type: /*unpacked*/ class Station (forward reference);
 // Station Class implementation not found
 
-// Type: class ShortestPath;
+// Type: /*packed*/ class ShortestPath;
 class ShortestPath{ // packed(0x8 bytes) TI: 0x2aae
 private:
-	struct _FringeHeapNode *heap;
+	/*packed*/ struct _FringeHeapNode *heap;
 	long heapSize;
 public:
 	void Init();
-	int32_t BreadthFirstSearch(struct _RGIndex, struct _RGIndex);
-	int32_t DepthFirstSearch(struct _RGIndex, struct _RGIndex);
+	int32_t BreadthFirstSearch(/*packed*/ struct _RGIndex, /*packed*/ struct _RGIndex);
+	int32_t DepthFirstSearch(/*packed*/ struct _RGIndex, /*packed*/ struct _RGIndex);
 private:
-	void PriorityHeapInsert(const struct _FringeHeapNode*);
-	void PriorityHeapRemove(struct _FringeHeapNode*);
-	int32_t FindDistanceFromDestination(struct _GridCoordinates, struct _GridCoordinates);
+	void PriorityHeapInsert(const /*packed*/ struct _FringeHeapNode*);
+	void PriorityHeapRemove(/*packed*/ struct _FringeHeapNode*);
+	int32_t FindDistanceFromDestination(/*packed*/ struct _GridCoordinates, /*packed*/ struct _GridCoordinates);
 };
 
 // Type: void ();
 
-// Type: class Station (forward reference);
+// Type: /*packed*/ class Station (forward reference);
 class Station{ // packed(0x1c bytes) TI: 0x47e8
 public:
 	void Station(unsigned char);
 	void ~Station();
-	int32_t DispatchNearestAvailableVehicle(long, long, enum EmergencyType, enum EmergencyLevel, class EmergencyVehicleClass**, int32_t);
-	short GetNearestStation(struct _GridCoordinates, struct _GridCoordinates*);
-	short GetNextNearest(struct _GridCoordinates*);
+	int32_t DispatchNearestAvailableVehicle(long, long, enum EmergencyType, enum EmergencyLevel, /*packed*/ class EmergencyVehicleClass**, int32_t);
+	short GetNearestStation(/*packed*/ struct _GridCoordinates, /*packed*/ struct _GridCoordinates*);
+	short GetNextNearest(/*packed*/ struct _GridCoordinates*);
 	void DecrementQuantityOfVehicleDispatched(int32_t);
 private:
-	struct _StructStation *stationList;
+	/*packed*/ struct _StructStation *stationList;
 	int32_t quantityOfStations;
-	struct _StationHeapStruct *stationHeap;
+	/*packed*/ struct _StationHeapStruct *stationHeap;
 	int32_t stationHeapSize;
-	struct _VehicleHeapStruct *vehicleHeap;
+	/*packed*/ struct _VehicleHeapStruct *vehicleHeap;
 	int32_t vehicleHeapSize;
 	int32_t maxVehicles;
-	int32_t FindNearestRoadToStation(struct _GridCoordinates&);
-	int32_t FindNearestRoadToEmergency(struct _GridCoordinates&);
-	int32_t FindNearestStation(struct _GridCoordinates);
-	class EmergencyVehicleClass* FindAvailableVehicle(enum EmergencyLevel, class EmergencyVehicleClass**, int32_t);
-	void SortStationsByDistanceFromDestination(struct _GridCoordinates);
-	void SortVehiclesByDistanceFromDestination(struct _GridCoordinates, class EmergencyVehicleClass**, int32_t);
-	void StationHeapInsert(const struct _StationHeapStruct*);
-	void StationHeapRemove(struct _StationHeapStruct*);
-	void VehicleHeapInsert(const struct _VehicleHeapStruct*);
-	void VehicleHeapRemove(struct _VehicleHeapStruct*);
+	int32_t FindNearestRoadToStation(/*packed*/ struct _GridCoordinates&);
+	int32_t FindNearestRoadToEmergency(/*packed*/ struct _GridCoordinates&);
+	int32_t FindNearestStation(/*packed*/ struct _GridCoordinates);
+	/*packed*/ class EmergencyVehicleClass* FindAvailableVehicle(enum EmergencyLevel, /*packed*/ class EmergencyVehicleClass**, int32_t);
+	void SortStationsByDistanceFromDestination(/*packed*/ struct _GridCoordinates);
+	void SortVehiclesByDistanceFromDestination(/*packed*/ struct _GridCoordinates, /*packed*/ class EmergencyVehicleClass**, int32_t);
+	void StationHeapInsert(const /*packed*/ struct _StationHeapStruct*);
+	void StationHeapRemove(/*packed*/ struct _StationHeapStruct*);
+	void VehicleHeapInsert(const /*packed*/ struct _VehicleHeapStruct*);
+	void VehicleHeapRemove(/*packed*/ struct _VehicleHeapStruct*);
 };
 
-// Type: struct VRwindowType;
+// Type: /*unpacked*/ struct VRwindowType;
 struct VRwindowType{ // not packed(0x1c bytes) TI: 0x3e0f
 	int32_t WindowX;
 	int32_t WindowY;
@@ -204,7 +204,7 @@ int32_t Stretch2Fit = 0;
 int32_t G_water_anim = 1;
 
 // GLOBAL: COPTER_D 0x00598e60
-struct VRwindowType VRCurrentWindow = { 0 /* todo */ };
+/*packed*/ struct VRwindowType VRCurrentWindow = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598e7c
 int32_t G_run_old = 0;
@@ -258,10 +258,10 @@ long gIDOfBuildingAvatarIsIn = -1;
 long G_video_mode = 16;
 
 // GLOBAL: COPTER_D 0x00598ec0
-struct VRwindowType qwindow = { 0 /* todo */ };
+/*packed*/ struct VRwindowType qwindow = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598ee0
-struct VRwindowType swindow = { 0 /* todo */ };
+/*packed*/ struct VRwindowType swindow = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00598efc
 char * S_pal = { 0 /* todo */ };
@@ -285,22 +285,22 @@ int32_t bFullScreen = 1;
 
 // Contribution: 3:0002c7f8-0006caaf Module: 51, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x005c37f8
-class ShortestPath gShortestPath;
+/*packed*/ class ShortestPath gShortestPath;
 
 // GLOBAL: COPTER_D 0x005c3800
-class Station *gPoliceStations;
+/*unpacked*/ class Station *gPoliceStations;
 
 // GLOBAL: COPTER_D 0x005c3808
 long G_CheatCodes[6];
 
 // GLOBAL: COPTER_D 0x005c3820
-class Station *gHospitals;
+/*unpacked*/ class Station *gHospitals;
 
 // GLOBAL: COPTER_D 0x005c3828
-class RoadGraph gRoadGraph;
+/*packed*/ class RoadGraph gRoadGraph;
 
 // GLOBAL: COPTER_D 0x005c3aa8
-class Station *gFireStations;
+/*unpacked*/ class Station *gFireStations;
 
 // GLOBAL: COPTER_D 0x005c3ab0
 char gScratchBuffer[262144];

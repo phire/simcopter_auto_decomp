@@ -12,7 +12,7 @@
 
 // Type: short;
 
-// Type: struct Rect (forward reference);
+// Type: /*unpacked*/ struct Rect (forward reference);
 struct Rect{ // not packed(0x8 bytes) TI: 0x3463
 	short top;
 	short left;
@@ -167,7 +167,7 @@ void Swizzle2(void * __ptr32 val) {
 }
 
 // FUNCTION: COPTER_D 0x00566990
-void SwizzleRect(struct Rect *rect) {
+void SwizzleRect(/*unpacked*/ struct Rect *rect) {
 	short * pShort;
 
 // LINE 64:

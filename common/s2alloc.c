@@ -4,10 +4,10 @@
 
 // Type: uint32_t;
 
-// Type: struct alloc_root_s (forward reference);
+// Type: /*packed*/ struct alloc_root_s (forward reference);
 struct alloc_root_s{ // packed(0x8 bytes) TI: 0x2e36
-	struct alloc_hdr_s *first;
-	struct alloc_hdr_s *current;
+	/*packed*/ struct alloc_hdr_s *first;
+	/*packed*/ struct alloc_hdr_s *current;
 };
 
 // Type: int32_t;
@@ -16,16 +16,16 @@ struct alloc_root_s{ // packed(0x8 bytes) TI: 0x2e36
 
 // Type: unsigned long;
 
-// Type: struct alloc_handle_t (forward reference);
+// Type: /*packed*/ struct alloc_handle_t (forward reference);
 struct alloc_handle_t{ // packed(0x4 bytes) TI: 0x2e3a
 	int32_t dummy;
 };
 
 // Type: char *;
 
-// Type: struct alloc_hdr_s (forward reference);
+// Type: /*packed*/ struct alloc_hdr_s (forward reference);
 struct alloc_hdr_s{ // packed(0x10 bytes) TI: 0x2e38
-	struct alloc_hdr_s *next;
+	/*packed*/ struct alloc_hdr_s *next;
 	char * block;
 	char * free;
 	char * end;
@@ -39,8 +39,8 @@ struct alloc_hdr_s{ // packed(0x10 bytes) TI: 0x2e38
 
 // Contribution: 1:000ca2b0-000ca878 Module: 91, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004cb2b0
-struct alloc_handle_t* S2AllocInit(int32_t index, unsigned long poolsize) {
-	struct alloc_handle_t *old;
+/*packed*/ struct alloc_handle_t* S2AllocInit(int32_t index, unsigned long poolsize) {
+	/*packed*/ struct alloc_handle_t *old;
 
 // LINE 268:
 	__asm        mov    eax, index;
@@ -88,9 +88,9 @@ _T90:
 }
 
 // FUNCTION: COPTER_D 0x004cb34d
-static struct alloc_hdr_s* S2AllocHdr(unsigned long size) {
+static /*packed*/ struct alloc_hdr_s* S2AllocHdr(unsigned long size) {
 	char * block;
-	struct alloc_hdr_s *hdr;
+	/*packed*/ struct alloc_hdr_s *hdr;
 
 // LINE 238:
 	__asm        mov    eax, size;
@@ -152,7 +152,7 @@ _Ta7:
 // FUNCTION: COPTER_D 0x004cb401
 int32_t S2AllocPool(unsigned long poolsize) {
 	int32_t index;
-	struct alloc_handle_t *lastPool;
+	/*packed*/ struct alloc_handle_t *lastPool;
 
 // LINE 295:
 	__asm        cmp    poolCount, 0x20;
@@ -214,7 +214,7 @@ _Ta6:
 
 // FUNCTION: COPTER_D 0x004cb4ac
 char * S2Alloc(int32_t index, int32_t size) {
-	struct alloc_hdr_s *hdr;
+	/*packed*/ struct alloc_hdr_s *hdr;
 	char * ptr;
 
 // LINE 331:
@@ -337,8 +337,8 @@ char * S2AllocMem(int32_t index, char * name, int32_t size) {
 }
 
 // FUNCTION: COPTER_D 0x004cb5f8
-struct alloc_handle_t* S2AllocSetPool(int32_t index, struct alloc_handle_t *newPtr) {
-	struct alloc_handle_t *old;
+/*packed*/ struct alloc_handle_t* S2AllocSetPool(int32_t index, /*packed*/ struct alloc_handle_t *newPtr) {
+	/*packed*/ struct alloc_handle_t *old;
 
 // LINE 438:
 	__asm        mov    eax, index;
@@ -356,7 +356,7 @@ struct alloc_handle_t* S2AllocSetPool(int32_t index, struct alloc_handle_t *newP
 
 // FUNCTION: COPTER_D 0x004cb628
 void S2AllocReset(int32_t index) {
-	struct alloc_hdr_s *hdr;
+	/*packed*/ struct alloc_hdr_s *hdr;
 
 // LINE 459:
 	__asm        mov    eax, index;
@@ -410,8 +410,8 @@ _T96:
 
 // FUNCTION: COPTER_D 0x004cb6c3
 void S2AllocFreePool(int32_t index) {
-	struct alloc_hdr_s *hdr;
-	struct alloc_hdr_s *next_hdr;
+	/*packed*/ struct alloc_hdr_s *hdr;
+	/*packed*/ struct alloc_hdr_s *next_hdr;
 
 // LINE 493:
 	__asm        mov    eax, index;
@@ -582,5 +582,5 @@ static void * __ptr32 S_alignmem = { 0 /* todo */ };
 
 // Contribution: 3:0006f9d8-0006fa57 Module: 91, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x006069d8
-static struct alloc_root_s *root[32];
+static /*packed*/ struct alloc_root_s *root[32];
 

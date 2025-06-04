@@ -6,26 +6,26 @@
 
 // Type: int32_t;
 
-// Type: struct _dPoint2d (forward reference);
+// Type: /*packed*/ struct _dPoint2d (forward reference);
 struct _dPoint2d{ // packed(0x10 bytes) TI: 0x2766
 	double x;
 	double z;
 };
 
-// Type: struct Point2d (forward reference);
+// Type: /*packed*/ struct Point2d (forward reference);
 struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
 	int32_t x;
 	int32_t y;
 };
 
-// Type: struct Point3d;
+// Type: /*packed*/ struct Point3d;
 struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 	int32_t x;
 	int32_t y;
 	int32_t z;
 };
 
-// Type: struct Point2d;
+// Type: /*packed*/ struct Point2d;
 struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
 	int32_t x;
 	int32_t y;
@@ -33,16 +33,16 @@ struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
 
 // Type: short;
 
-// Type: struct VRview;
+// Type: /*packed*/ struct VRview;
 struct VRview{ // packed(0x58 bytes) TI: 0x2ecc
-	struct Point3d loc;
-	struct Point3d scale;
+	/*packed*/ struct Point3d loc;
+	/*packed*/ struct Point3d scale;
 	int32_t matrix[4][4];
 };
 
 // Type: long *;
 
-// Type: struct _CELL_INFO (forward reference);
+// Type: /*packed*/ struct _CELL_INFO (forward reference);
 struct _CELL_INFO{ // packed(0x18 bytes) TI: 0x1b03
 	short flags;
 	short x;
@@ -50,12 +50,12 @@ struct _CELL_INFO{ // packed(0x18 bytes) TI: 0x1b03
 	short z;
 	short size;
 	short ctr;
-	struct _STOBJ_INST *stptr;
-	struct _DYOBJ_INST *dyptr;
-	struct _DYOBJ_INST *vwptr;
+	/*packed*/ struct _STOBJ_INST *stptr;
+	/*packed*/ struct _DYOBJ_INST *dyptr;
+	/*packed*/ struct _DYOBJ_INST *vwptr;
 };
 
-// Type: struct tagLogCityEnterExit;
+// Type: /*packed*/ struct tagLogCityEnterExit;
 struct tagLogCityEnterExit{ // packed(0x30 bytes) TI: 0x3191
 	unsigned long nType;
 	unsigned long nTime;
@@ -68,21 +68,21 @@ struct tagLogCityEnterExit{ // packed(0x30 bytes) TI: 0x3191
 
 // Type: void;
 
-// Type: struct VRBmpHdr (forward reference);
+// Type: /*packed*/ struct VRBmpHdr (forward reference);
 struct VRBmpHdr{ // packed(0x10 bytes) TI: 0x2312
-	struct VRBmpInfo info;
+	/*packed*/ struct VRBmpInfo info;
 	int32_t ScanOffset[1];
 };
 
-// Type: struct _STOBJ_INST (forward reference);
+// Type: /*packed*/ struct _STOBJ_INST (forward reference);
 struct _STOBJ_INST{ // packed(0x10 bytes) TI: 0x193f
-	struct _STOBJ_INST *next;
+	/*packed*/ struct _STOBJ_INST *next;
 	void * __ptr32 mesh;
 	long user1;
 	long user2;
 };
 
-// Type: struct Point3d (forward reference);
+// Type: /*packed*/ struct Point3d (forward reference);
 struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 	int32_t x;
 	int32_t y;
@@ -93,16 +93,16 @@ struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 
 // Type: unsigned short;
 
-// Type: struct _DYOBJ_INST (forward reference);
+// Type: /*packed*/ struct _DYOBJ_INST (forward reference);
 struct _DYOBJ_INST{ // packed(0x64 bytes) TI: 0x1deb
-	struct _DYOBJ_INST *next;
-	struct _DYOBJ_INST *vnext;
+	/*packed*/ struct _DYOBJ_INST *next;
+	/*packed*/ struct _DYOBJ_INST *vnext;
 	void * __ptr32 mesh;
 	short flags;
 	short user1;
 	long radius;
 	long height;
-	struct Point3d loc;
+	/*packed*/ struct Point3d loc;
 	int32_t matrix[4][4];
 };
 
@@ -111,7 +111,7 @@ struct _DYOBJ_INST{ // packed(0x64 bytes) TI: 0x1deb
 // Contribution: 1:00109000-00112d42 Module: 170, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0050a000
 short S3CityInit() {
-	struct tagLogCityEnterExit tempLogCityEnterExit;
+	/*packed*/ struct tagLogCityEnterExit tempLogCityEnterExit;
 	int32_t i;
 	char szFilePath[260];
 
@@ -400,7 +400,7 @@ _T401:
 
 // FUNCTION: COPTER_D 0x0050a406
 void S3CityDeInit() {
-	struct tagLogCityEnterExit tempLogCityEnterExit;
+	/*packed*/ struct tagLogCityEnterExit tempLogCityEnterExit;
 
 // LINE 338:
 	tempLogCityEnterExit.nType = 0x2;
@@ -444,7 +444,7 @@ _T6d:
 void VRSetBackPlane(int32_t farZ) {
 	int32_t fogpct;
 	long i;
-	struct VRBmpHdr *bhdr;
+	/*packed*/ struct VRBmpHdr *bhdr;
 
 // LINE 369:
 	__asm        push   1;
@@ -563,9 +563,9 @@ _T162:
 // FUNCTION: COPTER_D 0x0050a5df
 short S3CityInitOmap() {
 	long tile;
-	struct _STOBJ_INST *sptr;
+	/*packed*/ struct _STOBJ_INST *sptr;
 	int32_t obj;
-	struct _CELL_INFO *cptr;
+	/*packed*/ struct _CELL_INFO *cptr;
 	short alt;
 	long k;
 	long j;
@@ -7212,7 +7212,7 @@ _T72b:
 }
 
 // FUNCTION: COPTER_D 0x0050f67e
-void S3CityGetCells(struct Point3d *vec, struct Point2d *cell_array, struct Point2d **cell_last, struct Point3d *spos, struct Point2d *startcell) {
+void S3CityGetCells(/*packed*/ struct Point3d *vec, /*packed*/ struct Point2d *cell_array, /*packed*/ struct Point2d **cell_last, /*packed*/ struct Point3d *spos, /*packed*/ struct Point2d *startcell) {
 	int32_t x_delta;
 	int32_t x_bound;
 	int32_t x_end;
@@ -7224,7 +7224,7 @@ void S3CityGetCells(struct Point3d *vec, struct Point2d *cell_array, struct Poin
 	int32_t ystepi;
 	long x_coord;
 	int32_t y_delta;
-	struct Point2d *curr_cell;
+	/*packed*/ struct Point2d *curr_cell;
 	int32_t y_bound;
 	int32_t y_end;
 	int32_t yi;
@@ -7896,17 +7896,17 @@ _T7af:
 
 // FUNCTION: COPTER_D 0x0050fe32
 void city_fovscan_horizedge() {
-	struct Point2d *fovcell;
-	struct Point2d *lend;
+	/*packed*/ struct Point2d *fovcell;
+	/*packed*/ struct Point2d *lend;
 	long y_dir;
-	struct Point2d *lcell;
-	struct Point2d *rend;
+	/*packed*/ struct Point2d *lcell;
+	/*packed*/ struct Point2d *rend;
 	long x_last;
-	struct _CELL_INFO *cptr;
+	/*packed*/ struct _CELL_INFO *cptr;
 	long y_pos;
 	long y;
 	long x;
-	struct Point2d *rcell;
+	/*packed*/ struct Point2d *rcell;
 	long y_start;
 	long x_pos;
 
@@ -8328,19 +8328,19 @@ _T492:
 
 // FUNCTION: COPTER_D 0x005102d4
 void city_fovscan_vertedge() {
-	struct Point2d *fovcell;
-	struct Point2d *bcell;
-	struct Point2d *bend;
+	/*packed*/ struct Point2d *fovcell;
+	/*packed*/ struct Point2d *bcell;
+	/*packed*/ struct Point2d *bend;
 	long x_start;
-	struct _CELL_INFO *cptr;
+	/*packed*/ struct _CELL_INFO *cptr;
 	long y_pos;
 	long y;
 	long y_last;
 	long x;
 	long x_dir;
-	struct Point2d *tcell;
+	/*packed*/ struct Point2d *tcell;
 	long x_pos;
-	struct Point2d *tend;
+	/*packed*/ struct Point2d *tend;
 
 // LINE 3369:
 	__asm        mov    eax, 0x20000000;
@@ -8759,9 +8759,9 @@ _T492:
 }
 
 // FUNCTION: COPTER_D 0x00510776
-void city_subscan_horiz(long cellpos, long x_dir, long y_dir, struct Point2d *edge, struct Point2d *endedge, struct Point2d **curr_fovcell) {
-	struct Point2d *fovcell;
-	struct _CELL_INFO *cptr;
+void city_subscan_horiz(long cellpos, long x_dir, long y_dir, /*packed*/ struct Point2d *edge, /*packed*/ struct Point2d *endedge, /*packed*/ struct Point2d **curr_fovcell) {
+	/*packed*/ struct Point2d *fovcell;
+	/*packed*/ struct _CELL_INFO *cptr;
 	long y;
 	long x;
 
@@ -9166,9 +9166,9 @@ _T470:
 }
 
 // FUNCTION: COPTER_D 0x00510beb
-void city_subscan_vert(long cellpos, long x_dir, long y_dir, struct Point2d *edge, struct Point2d *endedge, struct Point2d **curr_fovcell) {
-	struct Point2d *fovcell;
-	struct _CELL_INFO *cptr;
+void city_subscan_vert(long cellpos, long x_dir, long y_dir, /*packed*/ struct Point2d *edge, /*packed*/ struct Point2d *endedge, /*packed*/ struct Point2d **curr_fovcell) {
+	/*packed*/ struct Point2d *fovcell;
+	/*packed*/ struct _CELL_INFO *cptr;
 	long y;
 	long x;
 
@@ -9562,14 +9562,14 @@ _T44e:
 // FUNCTION: COPTER_D 0x0051103e
 void S3CityDrawGrid() {
 	long gy;
-	struct _CELL_INFO **cptrptr;
+	/*packed*/ struct _CELL_INFO **cptrptr;
 	long deltac;
 	long gx;
 	long texid;
 	short xdiff;
-	struct Point2d *cellptr;
+	/*packed*/ struct Point2d *cellptr;
 	short dist;
-	struct _CELL_INFO ***caddr;
+	/*packed*/ struct _CELL_INFO ***caddr;
 	long * sface;
 	long coffset;
 	short ydiff;
@@ -9960,26 +9960,26 @@ _T439:
 }
 
 // FUNCTION: COPTER_D 0x0051147c
-void S3CityDyObjFixup(struct _CELL_INFO **endcptrptr, struct _CELL_INFO ***endcaddr) {
-	struct _CELL_INFO **cptrptr1;
-	struct VRview pos;
+void S3CityDyObjFixup(/*packed*/ struct _CELL_INFO **endcptrptr, /*packed*/ struct _CELL_INFO ***endcaddr) {
+	/*packed*/ struct _CELL_INFO **cptrptr1;
+	/*packed*/ struct VRview pos;
 	long i;
 	long y;
-	struct _CELL_INFO **cptrptr2;
+	/*packed*/ struct _CELL_INFO **cptrptr2;
 	long x;
 	int32_t rad;
-	struct _CELL_INFO ***caddr2;
-	struct _CELL_INFO *cptr4;
-	struct _CELL_INFO **cadd4;
-	struct _CELL_INFO *cptr3;
-	struct _CELL_INFO **cadd3;
-	struct _CELL_INFO *cptr2;
-	struct _CELL_INFO **cadd2;
-	struct _CELL_INFO *cptr1;
-	struct _CELL_INFO **cadd1;
-	struct _DYOBJ_INST *dyobj;
-	struct _DYOBJ_INST *tmpdyobj;
-	struct _CELL_INFO ***caddr1;
+	/*packed*/ struct _CELL_INFO ***caddr2;
+	/*packed*/ struct _CELL_INFO *cptr4;
+	/*packed*/ struct _CELL_INFO **cadd4;
+	/*packed*/ struct _CELL_INFO *cptr3;
+	/*packed*/ struct _CELL_INFO **cadd3;
+	/*packed*/ struct _CELL_INFO *cptr2;
+	/*packed*/ struct _CELL_INFO **cadd2;
+	/*packed*/ struct _CELL_INFO *cptr1;
+	/*packed*/ struct _CELL_INFO **cadd1;
+	/*packed*/ struct _DYOBJ_INST *dyobj;
+	/*packed*/ struct _DYOBJ_INST *tmpdyobj;
+	/*packed*/ struct _CELL_INFO ***caddr1;
 
 // LINE 3970:
 	__asm        mov    i, 0;
@@ -11116,9 +11116,9 @@ _Tcdd:
 }
 
 // FUNCTION: COPTER_D 0x0051215e
-int32_t S3CityCellInFront(struct _CELL_INFO ***caddr2, struct _CELL_INFO ***caddr1, struct _CELL_INFO **caddrtest, struct _CELL_INFO **cptrreplace) {
+int32_t S3CityCellInFront(/*packed*/ struct _CELL_INFO ***caddr2, /*packed*/ struct _CELL_INFO ***caddr1, /*packed*/ struct _CELL_INFO **caddrtest, /*packed*/ struct _CELL_INFO **cptrreplace) {
 	long i;
-	struct _CELL_INFO ***caddr;
+	/*packed*/ struct _CELL_INFO ***caddr;
 
 // LINE 4318:
 	caddr = caddr2;
@@ -11410,7 +11410,7 @@ _T2db:
 
 // FUNCTION: COPTER_D 0x005124fe
 void S3CitySpiralScan(long x, long y, long spiral_dist) {
-	struct Point2d *fovcell;
+	/*packed*/ struct Point2d *fovcell;
 	int32_t stop_now;
 	long curr_dir;
 	long i;
@@ -11547,14 +11547,14 @@ _T16d:
 }
 
 // FUNCTION: COPTER_D 0x00512670
-int32_t S3CityCellViewReject(struct _CELL_INFO *cptr) {
-	struct Point3d pos;
-	struct Point3d vpos;
+int32_t S3CityCellViewReject(/*packed*/ struct _CELL_INFO *cptr) {
+	/*packed*/ struct Point3d pos;
+	/*packed*/ struct Point3d vpos;
 	int32_t dotp;
 	int32_t oradius;
 	int32_t farz;
 	long sradius;
-	struct _DYOBJ_INST *dyobj;
+	/*packed*/ struct _DYOBJ_INST *dyobj;
 	int32_t maxobjy;
 	int32_t wradius;
 
@@ -12229,8 +12229,8 @@ _T20a:
 // FUNCTION: COPTER_D 0x00512e3a
 void S3CityCreateHeliBase(long x, long y) {
 	long px;
-	struct _STOBJ_INST *sptr;
-	struct _CELL_INFO *cptr;
+	/*packed*/ struct _STOBJ_INST *sptr;
+	/*packed*/ struct _CELL_INFO *cptr;
 	short alt;
 	short i;
 	int32_t incity;
@@ -13404,13 +13404,13 @@ static const int32_t TypeToIndex2[16] = {-1, 0, 1, -1, 2, -1, -1, -1, 3, -1, -1,
 static const int32_t TILUT[4][4] = {{0, 1, 3, 2}, {2, 0, 1, 3}, {3, 2, 0, 1}, {1, 3, 2, 0}};
 
 // GLOBAL: COPTER_D 0x00592f10
-static const struct _dPoint2d OT[4] = { 0 /* todo */ };
+static const /*packed*/ struct _dPoint2d OT[4] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00592f50
-static const struct _dPoint2d RRT[4] = { 0 /* todo */ };
+static const /*packed*/ struct _dPoint2d RRT[4] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00592f90
-static const struct _dPoint2d LRT[4] = { 0 /* todo */ };
+static const /*packed*/ struct _dPoint2d LRT[4] = { 0 /* todo */ };
 
 
 
@@ -13449,34 +13449,34 @@ static long S_water_timer = 0;
 
 // Contribution: 3:00072098-000934ff Module: 170, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00609098
-static struct Point3d S_local_lstart;
+static /*packed*/ struct Point3d S_local_lstart;
 
 // GLOBAL: COPTER_D 0x006090a4
 static int32_t S_used_spiralscan;
 
 // GLOBAL: COPTER_D 0x006090a8
-static struct VRview S_terr_pos;
+static /*packed*/ struct VRview S_terr_pos;
 
 // GLOBAL: COPTER_D 0x00609100
 static long * S_facesort;
 
 // GLOBAL: COPTER_D 0x00609104
-static struct Point2d *S_rlast;
+static /*packed*/ struct Point2d *S_rlast;
 
 // GLOBAL: COPTER_D 0x00609108
-static struct Point2d S_lcells[256];
+static /*packed*/ struct Point2d S_lcells[256];
 
 // GLOBAL: COPTER_D 0x00609908
 static long S_XposZneg[4];
 
 // GLOBAL: COPTER_D 0x00609918
-static struct _CELL_INFO S_tmp_cells[30];
+static /*packed*/ struct _CELL_INFO S_tmp_cells[30];
 
 // GLOBAL: COPTER_D 0x00609be8
-static struct Point2d *S_fovlast;
+static /*packed*/ struct Point2d *S_fovlast;
 
 // GLOBAL: COPTER_D 0x00609bf0
-static struct Point3d S_world_lstart;
+static /*packed*/ struct Point3d S_world_lstart;
 
 // GLOBAL: COPTER_D 0x00609c00
 static int32_t S_rrotmat[4][4];
@@ -13485,10 +13485,10 @@ static int32_t S_rrotmat[4][4];
 static long S_XposZpos[4];
 
 // GLOBAL: COPTER_D 0x00609c50
-static struct Point2d S_fov_cells[16384];
+static /*packed*/ struct Point2d S_fov_cells[16384];
 
 // GLOBAL: COPTER_D 0x00629c50
-static struct Point2d S_rcells[256];
+static /*packed*/ struct Point2d S_rcells[256];
 
 // GLOBAL: COPTER_D 0x0062a450
 static long S_tmpcell_ctr;
@@ -13497,19 +13497,19 @@ static long S_tmpcell_ctr;
 static int32_t S_lrotmat[4][4];
 
 // GLOBAL: COPTER_D 0x0062a498
-static struct Point2d S_pos;
+static /*packed*/ struct Point2d S_pos;
 
 // GLOBAL: COPTER_D 0x0062a4a0
-static struct Point2d *S_llast;
+static /*packed*/ struct Point2d *S_llast;
 
 // GLOBAL: COPTER_D 0x0062a4a8
-static struct Point3d S_local_rstart;
+static /*packed*/ struct Point3d S_local_rstart;
 
 // GLOBAL: COPTER_D 0x0062a4b8
 static long S_XnegZneg[4];
 
 // GLOBAL: COPTER_D 0x0062a4c8
-static struct Point3d S_world_rstart;
+static /*packed*/ struct Point3d S_world_rstart;
 
 // GLOBAL: COPTER_D 0x0062a4d4
 static short S_lowres_dist;
@@ -13518,10 +13518,10 @@ static short S_lowres_dist;
 static long S_XnegZpos[4];
 
 // GLOBAL: COPTER_D 0x0062a4e8
-static struct Point3d S_world_eye;
+static /*packed*/ struct Point3d S_world_eye;
 
 // GLOBAL: COPTER_D 0x0062a4f8
-static struct Point2d S_last_pos;
+static /*packed*/ struct Point2d S_last_pos;
 
 
 
@@ -13553,10 +13553,10 @@ long G_odpolys; // Contrib missing
 long G_ViewSize; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006bed30
-struct Point2d S_curr_pos; // Contrib missing
+/*packed*/ struct Point2d S_curr_pos; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006c1190
-struct _HELIBASE_DATA G_helibase; // Contrib missing
+/*packed*/ struct _HELIBASE_DATA G_helibase; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006c1370
 int32_t ViewRot[4][4]; // Contrib missing
@@ -13574,7 +13574,7 @@ int32_t ViewYRot[4][4]; // Contrib missing
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3auto.cpp
 // GLOBAL: COPTER_D 0x006bed30
-struct Point2d S_curr_pos; // Contrib missing
+/*packed*/ struct Point2d S_curr_pos; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006bed38
 char * G_smokey; // Contrib missing

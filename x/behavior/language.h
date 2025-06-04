@@ -1,6 +1,6 @@
 // Function in module: Ylingo.obj
 // FUNCTION: COPTER_D 0x00560bb0
-unsigned short  Language::IsSingleExit(struct Behavior::Node *node) {
+unsigned short  Language::IsSingleExit(/*unpacked*/ struct Behavior::Node *node) {
 
 	__asm        xor    ax, ax;
 	__asm        jmp    near ptr 0x00560BC4;

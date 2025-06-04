@@ -6,42 +6,42 @@
 
 // Type: void;
 
-// Type: class Station (forward reference);
+// Type: /*packed*/ class Station (forward reference);
 class Station{ // packed(0x1c bytes) TI: 0x47e8
 public:
 	void Station(unsigned char);
 	void ~Station();
-	int32_t DispatchNearestAvailableVehicle(long, long, enum EmergencyType, enum EmergencyLevel, class EmergencyVehicleClass**, int32_t);
-	short GetNearestStation(struct _GridCoordinates, struct _GridCoordinates*);
-	short GetNextNearest(struct _GridCoordinates*);
+	int32_t DispatchNearestAvailableVehicle(long, long, enum EmergencyType, enum EmergencyLevel, /*packed*/ class EmergencyVehicleClass**, int32_t);
+	short GetNearestStation(/*packed*/ struct _GridCoordinates, /*packed*/ struct _GridCoordinates*);
+	short GetNextNearest(/*packed*/ struct _GridCoordinates*);
 	void DecrementQuantityOfVehicleDispatched(int32_t);
 private:
-	struct _StructStation *stationList;
+	/*packed*/ struct _StructStation *stationList;
 	int32_t quantityOfStations;
-	struct _StationHeapStruct *stationHeap;
+	/*packed*/ struct _StationHeapStruct *stationHeap;
 	int32_t stationHeapSize;
-	struct _VehicleHeapStruct *vehicleHeap;
+	/*packed*/ struct _VehicleHeapStruct *vehicleHeap;
 	int32_t vehicleHeapSize;
 	int32_t maxVehicles;
-	int32_t FindNearestRoadToStation(struct _GridCoordinates&);
-	int32_t FindNearestRoadToEmergency(struct _GridCoordinates&);
-	int32_t FindNearestStation(struct _GridCoordinates);
-	class EmergencyVehicleClass* FindAvailableVehicle(enum EmergencyLevel, class EmergencyVehicleClass**, int32_t);
-	void SortStationsByDistanceFromDestination(struct _GridCoordinates);
-	void SortVehiclesByDistanceFromDestination(struct _GridCoordinates, class EmergencyVehicleClass**, int32_t);
-	void StationHeapInsert(const struct _StationHeapStruct*);
-	void StationHeapRemove(struct _StationHeapStruct*);
-	void VehicleHeapInsert(const struct _VehicleHeapStruct*);
-	void VehicleHeapRemove(struct _VehicleHeapStruct*);
+	int32_t FindNearestRoadToStation(/*packed*/ struct _GridCoordinates&);
+	int32_t FindNearestRoadToEmergency(/*packed*/ struct _GridCoordinates&);
+	int32_t FindNearestStation(/*packed*/ struct _GridCoordinates);
+	/*packed*/ class EmergencyVehicleClass* FindAvailableVehicle(enum EmergencyLevel, /*packed*/ class EmergencyVehicleClass**, int32_t);
+	void SortStationsByDistanceFromDestination(/*packed*/ struct _GridCoordinates);
+	void SortVehiclesByDistanceFromDestination(/*packed*/ struct _GridCoordinates, /*packed*/ class EmergencyVehicleClass**, int32_t);
+	void StationHeapInsert(const /*packed*/ struct _StationHeapStruct*);
+	void StationHeapRemove(/*packed*/ struct _StationHeapStruct*);
+	void VehicleHeapInsert(const /*packed*/ struct _VehicleHeapStruct*);
+	void VehicleHeapRemove(/*packed*/ struct _VehicleHeapStruct*);
 };
 
-// Type: struct _GridCoordinates;
+// Type: /*packed*/ struct _GridCoordinates;
 struct _GridCoordinates{ // packed(0x2 bytes) TI: 0x143c
 	unsigned char x;
 	unsigned char y;
 };
 
-// Type: struct _GridCoordinates (forward reference);
+// Type: /*packed*/ struct _GridCoordinates (forward reference);
 struct _GridCoordinates{ // packed(0x2 bytes) TI: 0x143c
 	unsigned char x;
 	unsigned char y;
@@ -51,13 +51,13 @@ struct _GridCoordinates{ // packed(0x2 bytes) TI: 0x143c
 
 // Type: int32_t;
 
-// Type: class SpiralScan;
+// Type: /*packed*/ class SpiralScan;
 class SpiralScan{ // packed(0x10 bytes) TI: 0x2fb5
 public:
 	void SpiralScan(int32_t);
 	void ~SpiralScan();
-	int32_t Next(struct _GridCoordinates&);
-	int32_t InCityGridLimits(struct _GridCoordinates);
+	int32_t Next(/*packed*/ struct _GridCoordinates&);
+	int32_t InCityGridLimits(/*packed*/ struct _GridCoordinates);
 private:
 	int32_t currDist;
 	int32_t currDir;
@@ -65,13 +65,13 @@ private:
 	int32_t maxDia;
 };
 
-// Type: struct _StationHeapStruct;
+// Type: /*packed*/ struct _StationHeapStruct;
 struct _StationHeapStruct{ // packed(0x8 bytes) TI: 0x2fc4
 	long cost;
 	int32_t stationID;
 };
 
-// Type: class EmergencyVehicleClass (forward reference);
+// Type: /*packed*/ class EmergencyVehicleClass (forward reference);
 // VTABLE: COPTER_D 0x005934c0
 class EmergencyVehicleClass : public AutomobileClass
 { // packed(0x2a0 bytes) TI: 0x47d8
@@ -81,13 +81,13 @@ class EmergencyVehicleClass : public AutomobileClass
 		AMBULANCE_CAPACITY = 2,
 	};
 protected:
-	struct _GridCoordinates baseLocation;
-	struct _GridCoordinates emergencyLocation;
+	/*packed*/ struct _GridCoordinates baseLocation;
+	/*packed*/ struct _GridCoordinates emergencyLocation;
 	enum EmergencyType emergencyType;
 	long timeOfArrival;
-	struct _DYOBJ_INST dispatchIcon;
+	/*packed*/ struct _DYOBJ_INST dispatchIcon;
 	int32_t timeToEmergency;
-	class AutomobileClass *dispatchTarget;
+	/*packed*/ class AutomobileClass *dispatchTarget;
 	unsigned char dispatchPath[256];
 	unsigned char dispatchPathIndex;
 	unsigned char dispatchPathLength;
@@ -95,49 +95,49 @@ protected:
 	int32_t stationID;
 	int32_t numberOfSeats;
 public:
-	void EmergencyVehicleClass(const class EmergencyVehicleClass&);
+	void EmergencyVehicleClass(const /*packed*/ class EmergencyVehicleClass&);
 	void EmergencyVehicleClass();
 	virtual void ~EmergencyVehicleClass() /* override */;
 	enum EmergencyLevel GetEmergencyState();
-	void InitializePlacedVehicleForDispatch(struct Goal, struct Goal, struct Goal, struct Goal, struct _GridCoordinates, struct Goal, enum EmergencyType, enum EmergencyLevel);
-	void InitializeStationVehicleForDispatch(int32_t, struct Goal, struct Goal, struct _GridCoordinates, struct Goal, struct Goal, struct _GridCoordinates, int32_t, struct Goal, enum EmergencyType, enum EmergencyLevel);
+	void InitializePlacedVehicleForDispatch(/*packed*/ struct Goal, /*packed*/ struct Goal, /*packed*/ struct Goal, /*packed*/ struct Goal, /*packed*/ struct _GridCoordinates, /*packed*/ struct Goal, enum EmergencyType, enum EmergencyLevel);
+	void InitializeStationVehicleForDispatch(int32_t, /*packed*/ struct Goal, /*packed*/ struct Goal, /*packed*/ struct _GridCoordinates, /*packed*/ struct Goal, /*packed*/ struct Goal, /*packed*/ struct _GridCoordinates, int32_t, /*packed*/ struct Goal, enum EmergencyType, enum EmergencyLevel);
 	// calltype: NearC
-	static int32_t AreThereMoreSeats(struct _DYOBJ_INST*);
+	static int32_t AreThereMoreSeats(/*packed*/ struct _DYOBJ_INST*);
 	// calltype: NearC
-	static void FillSeat(struct _DYOBJ_INST*);
+	static void FillSeat(/*packed*/ struct _DYOBJ_INST*);
 	// calltype: NearC
 	static int32_t S3UpdateCar(int32_t, int32_t);
 	// calltype: NearC
-	static struct _DYOBJ_INST* S3GetCar(int32_t);
+	static /*packed*/ struct _DYOBJ_INST* S3GetCar(int32_t);
 	void CancelEmergencyDispatch();
 protected:
 	virtual void Reset(); // vtable+0x24
 	virtual void AdjustSpeed() /* override */;
-	virtual enum TurnIndex PickTurnDir(struct Goal*) /* override */;
-	virtual void SetSaveData(struct _AUTO_LOAD_SAVE*) /* override */;
-	virtual void LoadSaveData(struct _AUTO_LOAD_SAVE*) /* override */;
+	virtual enum TurnIndex PickTurnDir(/*packed*/ struct Goal*) /* override */;
+	virtual void SetSaveData(/*packed*/ struct _AUTO_LOAD_SAVE*) /* override */;
+	virtual void LoadSaveData(/*packed*/ struct _AUTO_LOAD_SAVE*) /* override */;
 	void ArriveOnScene();
-	void UnLinkIconFromCell(const struct _GridCoordinates);
-	void LinkIconToCell(const struct _GridCoordinates);
+	void UnLinkIconFromCell(const /*packed*/ struct _GridCoordinates);
+	void LinkIconToCell(const /*packed*/ struct _GridCoordinates);
 	void PositionIcon();
 	void GoBackToStation();
-	void BuildPath(struct _RGIndex, struct _RGIndex);
+	void BuildPath(/*packed*/ struct _RGIndex, /*packed*/ struct _RGIndex);
 	void TurnOnStrobe();
 	void TurnOffStrobe();
 	int32_t UpdateCar(int32_t);
 	virtual void BeamToWithinCameraRange() /* override */;
 public:
-	class EmergencyVehicleClass operator=(const class EmergencyVehicleClass&);
+	/*packed*/ class EmergencyVehicleClass operator=(const /*packed*/ class EmergencyVehicleClass&);
 };
 
-// Type: struct _VehicleHeapStruct;
+// Type: /*packed*/ struct _VehicleHeapStruct;
 struct _VehicleHeapStruct{ // packed(0xa bytes) TI: 0x2fca
 	long cost;
-	class EmergencyVehicleClass *pVehicle;
-	struct _GridCoordinates loc;
+	/*packed*/ class EmergencyVehicleClass *pVehicle;
+	/*packed*/ struct _GridCoordinates loc;
 };
 
-// Type: struct Point3d;
+// Type: /*packed*/ struct Point3d;
 struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 	int32_t x;
 	int32_t y;
@@ -155,17 +155,17 @@ enum EmergencyLevel {
 	ES_COP_CHASE = 6,
 };
 
-// Type: struct _StationHeapStruct (forward reference);
+// Type: /*packed*/ struct _StationHeapStruct (forward reference);
 struct _StationHeapStruct{ // packed(0x8 bytes) TI: 0x2fc4
 	long cost;
 	int32_t stationID;
 };
 
-// Type: struct _VehicleHeapStruct (forward reference);
+// Type: /*packed*/ struct _VehicleHeapStruct (forward reference);
 struct _VehicleHeapStruct{ // packed(0xa bytes) TI: 0x2fca
 	long cost;
-	class EmergencyVehicleClass *pVehicle;
-	struct _GridCoordinates loc;
+	/*packed*/ class EmergencyVehicleClass *pVehicle;
+	/*packed*/ struct _GridCoordinates loc;
 };
 
 // Type: long;
@@ -179,12 +179,12 @@ enum EmergencyType {
 	POLICE_ON_PATROL = 4,
 };
 
-// Type: struct Goal;
+// Type: /*packed*/ struct Goal;
 struct Goal{ // packed(0x2a bytes) TI: 0x12ce
-	struct RGVertex *pRGV;
+	/*packed*/ struct RGVertex *pRGV;
 	int32_t elementIndex;
 	int32_t gridIndex;
-	struct _GridCoordinates gridLoc;
+	/*packed*/ struct _GridCoordinates gridLoc;
 	enum DirIndex2 edgeIndex;
 	enum DirIndex2 direction;
 	int32_t distance;
@@ -194,19 +194,19 @@ struct Goal{ // packed(0x2a bytes) TI: 0x12ce
 	enum SlopeIndex slope;
 };
 
-// Type: struct _RGIndex;
+// Type: /*packed*/ struct _RGIndex;
 struct _RGIndex{ // packed(0x2 bytes) TI: 0x2ab2
 	unsigned char x;
 	unsigned char yindex;
 };
 
-// Type: class basic_string<char>;
+// Type: /*packed*/ class basic_string<char>;
 class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
-	using reference_class = class basic_string_ref<char>;
-	using reference_pointer = class basic_string_ref<char>*;
+	using reference_class = /*unpacked*/ class basic_string_ref<char>;
+	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char> *reference;
+	/*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -224,44 +224,44 @@ private:
 	uint32_t find_first_not_of_str(char *, uint32_t, uint32_t);
 	uint32_t find_last_not_of_str(char *, uint32_t, uint32_t);
 public:
-	void basic_string<char>(const class vector<char>&);
+	void basic_string<char>(const /*packed*/ class vector<char>&);
 	void basic_string<char>(char, uint32_t);
 	void basic_string<char>(char *);
 	void basic_string<char>(char *, uint32_t);
-	void basic_string<char>(const class basic_string<char>&, uint32_t, uint32_t);
+	void basic_string<char>(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 	void basic_string<char>(uint32_t, enum capacity);
 	void basic_string<char>();
 protected:
 	void basic_string<char>(char *, uint32_t, uint32_t);
 	void delete_ref();
 	using char_type = char;
-	using baggage_type = struct string_char_baggage<char>;
+	using baggage_type = /*packed*/ struct string_char_baggage<char>;
 public:
 	void ~basic_string<char>();
-	class basic_string<char>& operator=(char);
-	class basic_string<char>& operator=(char *);
-	class basic_string<char>& operator=(const class basic_string<char>&);
-	class basic_string<char>& operator+=(char);
-	class basic_string<char>& operator+=(char *);
-	class basic_string<char>& operator+=(const class basic_string<char>&);
-	class vector<char> operator class vector<char>();
-	class basic_string<char>& append(char, uint32_t);
-	class basic_string<char>& append(char *);
-	class basic_string<char>& append(char *, uint32_t);
-	class basic_string<char>& append(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& assign(char, uint32_t);
-	class basic_string<char>& assign(char *);
-	class basic_string<char>& assign(char *, uint32_t);
-	class basic_string<char>& assign(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& insert(uint32_t, char, uint32_t);
-	class basic_string<char>& insert(uint32_t, char *);
-	class basic_string<char>& insert(uint32_t, char *, uint32_t);
-	class basic_string<char>& insert(uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& remove(uint32_t, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, char, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, char *);
-	class basic_string<char>& replace(uint32_t, uint32_t, char *, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& operator=(char);
+	/*packed*/ class basic_string<char>& operator=(char *);
+	/*packed*/ class basic_string<char>& operator=(const /*packed*/ class basic_string<char>&);
+	/*packed*/ class basic_string<char>& operator+=(char);
+	/*packed*/ class basic_string<char>& operator+=(char *);
+	/*packed*/ class basic_string<char>& operator+=(const /*packed*/ class basic_string<char>&);
+	/*packed*/ class vector<char> operator class vector<char>();
+	/*packed*/ class basic_string<char>& append(char, uint32_t);
+	/*packed*/ class basic_string<char>& append(char *);
+	/*packed*/ class basic_string<char>& append(char *, uint32_t);
+	/*packed*/ class basic_string<char>& append(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& assign(char, uint32_t);
+	/*packed*/ class basic_string<char>& assign(char *);
+	/*packed*/ class basic_string<char>& assign(char *, uint32_t);
+	/*packed*/ class basic_string<char>& assign(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char *);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char *, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& remove(uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char *);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char *, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 	char get_at(uint32_t);
 	void put_at(uint32_t, char);
 	char& operator[](uint32_t);
@@ -277,54 +277,54 @@ public:
 	uint32_t find(char, uint32_t);
 	uint32_t find(char *, uint32_t);
 	uint32_t find(char *, uint32_t, uint32_t);
-	uint32_t find(const class basic_string<char>&, uint32_t);
+	uint32_t find(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t rfind(char, uint32_t);
 	uint32_t rfind(char *, uint32_t);
 	uint32_t rfind(char *, uint32_t, uint32_t);
-	uint32_t rfind(const class basic_string<char>&, uint32_t);
+	uint32_t rfind(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_first_of(char, uint32_t);
 	uint32_t find_first_of(char *, uint32_t);
 	uint32_t find_first_of(char *, uint32_t, uint32_t);
-	uint32_t find_first_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_last_of(char, uint32_t);
 	uint32_t find_last_of(char *, uint32_t);
 	uint32_t find_last_of(char *, uint32_t, uint32_t);
-	uint32_t find_last_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_last_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_first_not_of(char, uint32_t);
 	uint32_t find_first_not_of(char *, uint32_t);
 	uint32_t find_first_not_of(char *, uint32_t, uint32_t);
-	uint32_t find_first_not_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_not_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_last_not_of(char, uint32_t);
 	uint32_t find_last_not_of(char *, uint32_t);
 	uint32_t find_last_not_of(char *, uint32_t, uint32_t);
-	uint32_t find_last_not_of(const class basic_string<char>&, uint32_t);
-	class basic_string<char> substr(uint32_t, uint32_t);
+	uint32_t find_last_not_of(const /*packed*/ class basic_string<char>&, uint32_t);
+	/*packed*/ class basic_string<char> substr(uint32_t, uint32_t);
 	int32_t compare(char, uint32_t, uint32_t);
 	int32_t compare(char *, uint32_t);
 	int32_t compare(char *, uint32_t, uint32_t);
-	int32_t compare(const class basic_string<char>&, uint32_t, uint32_t);
+	int32_t compare(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 };
 
-// Type: class DigitalSound;
+// Type: /*packed*/ class DigitalSound;
 // VTABLE: COPTER_D 0x0058f488
 class DigitalSound : public Sound
 { // packed(0x7a bytes) TI: 0x45d4
 protected:
 	int32_t nStreamingType;
 	int32_t nCompletionEstimationTimerSet;
-	static struct IDirectSound *lpDirectSound;
+	static /*packed*/ struct IDirectSound *lpDirectSound;
 	uint32_t cbSize;
-	struct tWAVEFORMATEX waveFormatEx;
-	struct IDirectSoundBuffer *lpSound[8];
-	struct _STREAMBUFINFO *lpStreamBufferInfo;
+	/*packed*/ struct tWAVEFORMATEX waveFormatEx;
+	/*packed*/ struct IDirectSoundBuffer *lpSound[8];
+	/*packed*/ struct _STREAMBUFINFO *lpStreamBufferInfo;
 	unsigned long dwDesiredBufferDescFlags;
 public:
 	void DigitalSound(long);
-	void DigitalSound(const class basic_string<char>&, int32_t);
+	void DigitalSound(const /*packed*/ class basic_string<char>&, int32_t);
 	void DigitalSound();
 	virtual void ~DigitalSound() /* override */;
-	class DigitalSound& operator=(class DigitalSound&);
-	virtual void SetSoundFile(const class basic_string<char>&, int32_t); // vtable+0x2c
+	/*packed*/ class DigitalSound& operator=(/*packed*/ class DigitalSound&);
+	virtual void SetSoundFile(const /*packed*/ class basic_string<char>&, int32_t); // vtable+0x2c
 	virtual int32_t Load(); // vtable+0x30
 	virtual int32_t LoadFromResource(); // vtable+0x34
 	virtual int32_t LoadFromFile(); // vtable+0x38
@@ -335,7 +335,7 @@ public:
 	virtual long PlayStream(); // vtable+0x44
 	virtual long StopStream(); // vtable+0x48
 protected:
-	virtual long IsPlaying(struct IDirectSoundBuffer**); // vtable+0x4c
+	virtual long IsPlaying(/*packed*/ struct IDirectSoundBuffer**); // vtable+0x4c
 public:
 	virtual long IsPlaying() /* override */;
 	virtual int32_t GetVolume(long *) /* override */;
@@ -351,8 +351,8 @@ public:
 	virtual void StopCompletionNotification() /* override */;
 	virtual long EstimateRemainingPlayTime() /* override */;
 protected:
-	virtual int32_t GetSoundAliasToPlay(struct IDirectSoundBuffer**); // vtable+0x68
-	virtual int32_t CreateSoundBuffer(struct _DSBUFFERDESC*); // vtable+0x6c
+	virtual int32_t GetSoundAliasToPlay(/*packed*/ struct IDirectSoundBuffer**); // vtable+0x68
+	virtual int32_t CreateSoundBuffer(/*packed*/ struct _DSBUFFERDESC*); // vtable+0x6c
 	virtual int32_t CreatePrimarySoundBuffer(); // vtable+0x70
 	virtual int32_t ReleaseSoundBuffer(); // vtable+0x74
 	virtual long InitializeStreamBuffer(long); // vtable+0x78
@@ -362,17 +362,17 @@ protected:
 	virtual int32_t StartCompletionNotificationEstimationTimer(); // vtable+0x88
 };
 
-// Type: struct _StructStation (forward reference);
+// Type: /*packed*/ struct _StructStation (forward reference);
 struct _StructStation{ // packed(0x60 bytes) TI: 0x2feb
-	struct Goal goal1;
-	struct Goal goal2;
+	/*packed*/ struct Goal goal1;
+	/*packed*/ struct Goal goal2;
 	int32_t direction;
-	struct _GridCoordinates location;
-	struct _GridCoordinates nearestRoadTile;
+	/*packed*/ struct _GridCoordinates location;
+	/*packed*/ struct _GridCoordinates nearestRoadTile;
 	int32_t quanVehiclesDispatched;
 };
 
-// Type: struct RGVertex (forward reference);
+// Type: /*packed*/ struct RGVertex (forward reference);
 struct RGVertex{ // packed(0x33 bytes) TI: 0x1776
 	unsigned char x;
 	unsigned char y;
@@ -389,7 +389,7 @@ struct RGVertex{ // packed(0x33 bytes) TI: 0x1776
 	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
 	 deadEndFlags;
 	unsigned char fElevated;
-	struct Edge edge[4];
+	/*packed*/ struct Edge edge[4];
 	unsigned char yindexPrev;
 	unsigned char xPrev;
 	unsigned char edgeIndexPrev;
@@ -398,7 +398,7 @@ struct RGVertex{ // packed(0x33 bytes) TI: 0x1776
 
 // Type: unsigned char *;
 
-// Type: class AutomobileClass;
+// Type: /*packed*/ class AutomobileClass;
 // VTABLE: COPTER_D 0x00592d98
 class AutomobileClass{ // packed(0x11a bytes) TI: 0x4880
 	enum CarType {
@@ -504,13 +504,13 @@ public:
 public:
 	long carModel;
 	int32_t flags;
-	struct _DYOBJ_INST autoDynomitor;
-	struct Goal goal;
+	/*packed*/ struct _DYOBJ_INST autoDynomitor;
+	/*packed*/ struct Goal goal;
 private:
-	static struct Point2d lastScannedLocation;
+	static /*packed*/ struct Point2d lastScannedLocation;
 	int32_t DeltaFromCenter;
 	int32_t stalledTimer;
-	struct Point3d directionVector;
+	/*packed*/ struct Point3d directionVector;
 	int32_t remainingTime;
 	int32_t desiredSpeed;
 	int32_t desiredHiwaySpeed;
@@ -520,19 +520,19 @@ private:
 	int32_t timePulledOver;
 	int32_t hornSoundId;
 	enum DirectionTypes hiwaydir;
-	struct _GridCoordinates currentLocation;
-	struct _GridCoordinates nextLocation;
-	struct _GridCoordinates northCell;
-	struct _GridCoordinates southCell;
-	struct _GridCoordinates eastCell;
-	struct _GridCoordinates westCell;
+	/*packed*/ struct _GridCoordinates currentLocation;
+	/*packed*/ struct _GridCoordinates nextLocation;
+	/*packed*/ struct _GridCoordinates northCell;
+	/*packed*/ struct _GridCoordinates southCell;
+	/*packed*/ struct _GridCoordinates eastCell;
+	/*packed*/ struct _GridCoordinates westCell;
 protected:
 	int32_t speed;
 	enum DirIndex2 prevDir;
 	enum TurnIndex turnIndex;
 	int32_t currDist;
 	int32_t legOfTurn;
-	struct Point3d *pDirVector;
+	/*packed*/ struct Point3d *pDirVector;
 	int32_t personDone;
 	int32_t personState;
 	int32_t personTimer;
@@ -540,28 +540,28 @@ protected:
 	int32_t fireTime;
 	long fireSeq;
 	long missionId;
-	struct _CELL_INFO *cptr;
+	/*packed*/ struct _CELL_INFO *cptr;
 	int32_t spotlightHitCounter;
 	int32_t IsCarPersistant();
 	int32_t CanCarBeamToHiwayTile(unsigned short);
 public:
-	void AutomobileClass(const class AutomobileClass&);
+	void AutomobileClass(const /*packed*/ class AutomobileClass&);
 	void AutomobileClass();
 	virtual void ~AutomobileClass(); // vtable+0x0
 	// calltype: NearC
-	static class AutomobileClass* CreateInstance(int32_t);
+	static /*packed*/ class AutomobileClass* CreateInstance(int32_t);
 	// calltype: NearC
-	static class AutomobileClass* GetAutoPointer(long);
+	static /*packed*/ class AutomobileClass* GetAutoPointer(long);
 	// calltype: NearC
-	static void DestroyInstance(class AutomobileClass*);
+	static void DestroyInstance(/*packed*/ class AutomobileClass*);
 	// calltype: NearC
 	static void ItterateAll();
 	// calltype: NearC
 	static void ResetAll();
 	// calltype: NearC
-	static int32_t MissionStartFire(long, struct Point2d*);
+	static int32_t MissionStartFire(long, /*packed*/ struct Point2d*);
 	// calltype: NearC
-	static int32_t MissionStartJam(long, struct Point2d*);
+	static int32_t MissionStartJam(long, /*packed*/ struct Point2d*);
 	// calltype: NearC
 	static void MissionCancel(long);
 	// calltype: NearC
@@ -572,10 +572,10 @@ public:
 	static int32_t MIFFLoad(void * __ptr32);
 	// calltype: NearC
 	static int32_t MIFFSave(void * __ptr32);
-	void HitDispatch(long, struct _DYOBJ_INST*, long, long);
+	void HitDispatch(long, /*packed*/ struct _DYOBJ_INST*, long, long);
 	int32_t AmIABadGuy();
 	int32_t Initialize(int32_t);
-	void WaterDouse(struct _DYOBJ_INST*);
+	void WaterDouse(/*packed*/ struct _DYOBJ_INST*);
 	void IveBeenMegaphoned(long);
 	void StartFire(long);
 	void StartJam(long);
@@ -586,32 +586,32 @@ public:
 	void DoAUTurn();
 	long GetCarModel();
 	// calltype: NearC
-	static struct _DYOBJ_INST* GetClosestCar(int32_t, int32_t, int32_t);
+	static /*packed*/ struct _DYOBJ_INST* GetClosestCar(int32_t, int32_t, int32_t);
 protected:
 	void Itterate();
 	virtual void AdjustSpeed(); // vtable+0x8
 	void Reset();
-	virtual enum TurnIndex PickTurnDir(struct Goal*); // vtable+0xc
+	virtual enum TurnIndex PickTurnDir(/*packed*/ struct Goal*); // vtable+0xc
 	void UnPlaceCar();
 	void PullOverCiviliansInWay();
 	virtual void ItterateFSM(); // vtable+0x10
 	int32_t InitializeInstance(int32_t);
-	void LinkToCell(const struct _GridCoordinates&);
-	int32_t AreCarsHeadOn(struct Point3d*);
-	enum AutomobileClass::StoppedReasons CollisionCheck(int32_t, struct _DYOBJ_INST**);
+	void LinkToCell(const /*packed*/ struct _GridCoordinates&);
+	int32_t AreCarsHeadOn(/*packed*/ struct Point3d*);
+	enum AutomobileClass::StoppedReasons CollisionCheck(int32_t, /*packed*/ struct _DYOBJ_INST**);
 	int32_t IsCarOutOfCameraRange();
 	void TurnOffHeadlight();
 	void TurnOnHeadlight();
 	int32_t AutoMessage(short);
 	int32_t PlacePerson(int32_t, int32_t);
-	virtual void SetSaveData(struct _AUTO_LOAD_SAVE*); // vtable+0x14
-	virtual void LoadSaveData(struct _AUTO_LOAD_SAVE*); // vtable+0x18
+	virtual void SetSaveData(/*packed*/ struct _AUTO_LOAD_SAVE*); // vtable+0x14
+	virtual void LoadSaveData(/*packed*/ struct _AUTO_LOAD_SAVE*); // vtable+0x18
 	void HonkHorn();
 	void SetHiwayDirection(unsigned short);
 	int32_t DoHiwayTilesConnect(unsigned short, unsigned short, enum DirectionTypes);
 	void AdjustCurrentHiwayPosition();
 	void AdjustNextHiwayPosition();
-	enum AutomobileClass::IntersectionTypes PickHiwayDir(struct _GridCoordinates&);
+	enum AutomobileClass::IntersectionTypes PickHiwayDir(/*packed*/ struct _GridCoordinates&);
 	void MakeAHiwayTurn(enum AutomobileClass::IntersectionTypes);
 	void GoStraight();
 	void TurnLeft();
@@ -619,23 +619,23 @@ protected:
 	void MoveForwardOnHiway();
 	void DoDiagonalRoadFixup();
 	virtual void BeamToWithinCameraRange(); // vtable+0x1c
-	virtual int32_t BeamToLocation(const struct _GridCoordinates&); // vtable+0x20
+	virtual int32_t BeamToLocation(const /*packed*/ struct _GridCoordinates&); // vtable+0x20
 	void MoveAuto(int32_t);
 	void ChangeAutoColor();
 private:
-	void UnlinkFromCell(const struct _GridCoordinates&);
+	void UnlinkFromCell(const /*packed*/ struct _GridCoordinates&);
 	void TransitionBetweenGoals();
 	void RunFireState();
 	void RunJamState();
-	void IveBeenSpotlighted(struct _DYOBJ_INST*);
+	void IveBeenSpotlighted(/*packed*/ struct _DYOBJ_INST*);
 	int32_t IsThisAnEmergencyVehicle();
 	void DoPullOverStuff(int32_t);
 	int32_t CanIDoAUTurn();
 public:
-	class AutomobileClass operator=(const class AutomobileClass&);
+	/*packed*/ class AutomobileClass operator=(const /*packed*/ class AutomobileClass&);
 };
 
-// Type: class Sound;
+// Type: /*packed*/ class Sound;
 // VTABLE: COPTER_D 0x0058f458
 class Sound{ // packed(0x34 bytes) TI: 0x4335
 	enum SoundSourceType {
@@ -654,7 +654,7 @@ public:
 	enum Sound::SoundDuplicateType nSoundDuplicateType;
 	long lID;
 	long lResID;
-	class basic_string<char> sSoundFile;
+	/*packed*/ class basic_string<char> sSoundFile;
 	long bLooping;
 	long bStreaming;
 	long lVolume;
@@ -663,8 +663,8 @@ public:
 	int32_t bUnloadBeforeNextPlay;
 	void Sound();
 	virtual void ~Sound(); // vtable+0x0
-	class Sound& operator=(const class Sound&);
-	virtual void SetSoundFile(const class basic_string<char>&); // vtable+0x4
+	/*packed*/ class Sound& operator=(const /*packed*/ class Sound&);
+	virtual void SetSoundFile(const /*packed*/ class basic_string<char>&); // vtable+0x4
 	virtual long Play(long, int32_t); // vtable+0x8
 	virtual long Stop(); // vtable+0xc
 	virtual long IsPlaying(); // vtable+0x10
@@ -797,7 +797,7 @@ _Ta2:
 }
 
 // FUNCTION: COPTER_D 0x00539d67
-short S3GetNearestStation(class Station *station, struct _GridCoordinates gc, struct _GridCoordinates *result) {
+short S3GetNearestStation(/*packed*/ class Station *station, /*packed*/ struct _GridCoordinates gc, /*packed*/ struct _GridCoordinates *result) {
 // LINE 49:
 	__asm        mov    eax, result;
 	__asm        push   eax;
@@ -810,7 +810,7 @@ short S3GetNearestStation(class Station *station, struct _GridCoordinates gc, st
 }
 
 // FUNCTION: COPTER_D 0x00539d87
-short S3GetNextNearest(class Station *station, struct _GridCoordinates *result) {
+short S3GetNextNearest(/*packed*/ class Station *station, /*packed*/ struct _GridCoordinates *result) {
 // LINE 57:
 	__asm        mov    eax, result;
 	__asm        push   eax;
@@ -821,9 +821,9 @@ short S3GetNextNearest(class Station *station, struct _GridCoordinates *result) 
 }
 
 // FUNCTION: COPTER_D 0x00539da3
-int32_t Station::FindNearestRoadToStation(struct _GridCoordinates& loc) {
+int32_t Station::FindNearestRoadToStation(/*packed*/ struct _GridCoordinates& loc) {
 	int32_t i;
-	struct _GridCoordinates center;
+	/*packed*/ struct _GridCoordinates center;
 	int32_t direction;
 
 // LINE 80:
@@ -1036,8 +1036,8 @@ _T274:
 }
 
 // FUNCTION: COPTER_D 0x0053a01e
-int32_t Station::FindNearestRoadToEmergency(struct _GridCoordinates& loc) {
-	class SpiralScan spiral;
+int32_t Station::FindNearestRoadToEmergency(/*packed*/ struct _GridCoordinates& loc) {
+	/*packed*/ class SpiralScan spiral;
 
 // LINE 110:
 	__asm        push   0x80;
@@ -1192,8 +1192,8 @@ _T1d6:
 }
 
 // FUNCTION: COPTER_D 0x0053a1fb
-void Station::SortStationsByDistanceFromDestination(struct _GridCoordinates loc) {
-	struct _StationHeapStruct station;
+void Station::SortStationsByDistanceFromDestination(/*packed*/ struct _GridCoordinates loc) {
+	/*packed*/ struct _StationHeapStruct station;
 	int32_t deltay;
 	int32_t deltax;
 	int32_t i;
@@ -1332,11 +1332,11 @@ _T151:
 }
 
 // FUNCTION: COPTER_D 0x0053a358
-void Station::SortVehiclesByDistanceFromDestination(struct _GridCoordinates destLoc, class EmergencyVehicleClass **vehicleList, int32_t vehicleListLength) {
+void Station::SortVehiclesByDistanceFromDestination(/*packed*/ struct _GridCoordinates destLoc, /*packed*/ class EmergencyVehicleClass **vehicleList, int32_t vehicleListLength) {
 	int32_t deltay;
 	int32_t deltax;
 	int32_t i;
-	struct _VehicleHeapStruct vehicle;
+	/*packed*/ struct _VehicleHeapStruct vehicle;
 
 // LINE 178:
 	this->vehicleHeapSize = 0x0;
@@ -1351,7 +1351,7 @@ _T25:
 	__asm        jge    _T13c;
 // LINE 184:
 // Block start:
-	struct Point3d DyObjLoc;
+	/*packed*/ struct Point3d DyObjLoc;
 	__asm        jmp    near ptr 0x0053A38E;
 
 	__asm        mov    eax, i;
@@ -1468,7 +1468,7 @@ _T13c:
 }
 
 // FUNCTION: COPTER_D 0x0053a4a0
-class EmergencyVehicleClass* Station::FindAvailableVehicle(enum EmergencyLevel responseLevel, class EmergencyVehicleClass **vehicleList, int32_t vehicleListLength) {
+/*packed*/ class EmergencyVehicleClass* Station::FindAvailableVehicle(enum EmergencyLevel responseLevel, /*packed*/ class EmergencyVehicleClass **vehicleList, int32_t vehicleListLength) {
 	int32_t code;
 	int32_t i;
 
@@ -1543,9 +1543,9 @@ _Tbf:
 }
 
 // FUNCTION: COPTER_D 0x0053a566
-void Station::StationHeapInsert(const struct _StationHeapStruct *pInsertStruct) {
+void Station::StationHeapInsert(const /*packed*/ struct _StationHeapStruct *pInsertStruct) {
 	int32_t index;
-	struct _StationHeapStruct tempStruct;
+	/*packed*/ struct _StationHeapStruct tempStruct;
 
 // LINE 252:
 	__asm        mov    eax, this;
@@ -1628,11 +1628,11 @@ _Tc5:
 }
 
 // FUNCTION: COPTER_D 0x0053a637
-void Station::StationHeapRemove(struct _StationHeapStruct *pRemovedStruct) {
+void Station::StationHeapRemove(/*packed*/ struct _StationHeapStruct *pRemovedStruct) {
 	int32_t index;
 	int32_t child;
 	int32_t parent;
-	struct _StationHeapStruct tempStruct;
+	/*packed*/ struct _StationHeapStruct tempStruct;
 
 // LINE 278:
 	__asm        mov    eax, this;
@@ -1766,9 +1766,9 @@ _T13e:
 }
 
 // FUNCTION: COPTER_D 0x0053a798
-void Station::VehicleHeapInsert(const struct _VehicleHeapStruct *pInsertStruct) {
+void Station::VehicleHeapInsert(const /*packed*/ struct _VehicleHeapStruct *pInsertStruct) {
 	int32_t index;
-	struct _VehicleHeapStruct tempStruct;
+	/*packed*/ struct _VehicleHeapStruct tempStruct;
 
 // LINE 318:
 	__asm        mov    eax, this;
@@ -1868,11 +1868,11 @@ _Tfc:
 }
 
 // FUNCTION: COPTER_D 0x0053a8a0
-void Station::VehicleHeapRemove(struct _VehicleHeapStruct *pRemovedStruct) {
+void Station::VehicleHeapRemove(/*packed*/ struct _VehicleHeapStruct *pRemovedStruct) {
 	int32_t index;
 	int32_t child;
 	int32_t parent;
-	struct _VehicleHeapStruct tempStruct;
+	/*packed*/ struct _VehicleHeapStruct tempStruct;
 
 // LINE 344:
 	__asm        mov    eax, this;
@@ -2034,7 +2034,7 @@ _T18f:
 }
 
 // FUNCTION: COPTER_D 0x0053aa5f
-short Station::GetNearestStation(struct _GridCoordinates gc, struct _GridCoordinates *result) {
+short Station::GetNearestStation(/*packed*/ struct _GridCoordinates gc, /*packed*/ struct _GridCoordinates *result) {
 // LINE 385:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(gc.x);
 	__asm        push   eax;
@@ -2046,7 +2046,7 @@ short Station::GetNearestStation(struct _GridCoordinates gc, struct _GridCoordin
 	__asm        je     _T58;
 // LINE 390:
 // Block start:
-	struct _StationHeapStruct removedStruct;
+	/*packed*/ struct _StationHeapStruct removedStruct;
 	__asm        lea    eax, removedStruct.cost;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
@@ -2077,14 +2077,14 @@ _T67:
 }
 
 // FUNCTION: COPTER_D 0x0053aacd
-short Station::GetNextNearest(struct _GridCoordinates *result) {
+short Station::GetNextNearest(/*packed*/ struct _GridCoordinates *result) {
 // LINE 404:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        je     _T4c;
 // LINE 408:
 // Block start:
-	struct _StationHeapStruct removedStruct;
+	/*packed*/ struct _StationHeapStruct removedStruct;
 	__asm        lea    eax, removedStruct.cost;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
@@ -2146,21 +2146,21 @@ _T46:
 }
 
 // FUNCTION: COPTER_D 0x0053ab93
-int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum EmergencyType responseType, enum EmergencyLevel responseLevel, class EmergencyVehicleClass **vehicleList, int32_t vehicleListLength) {
-	struct Goal startGoal1;
-	struct Goal startGoal2;
-	struct _RGIndex destVert;
-	struct _VehicleHeapStruct vehicleHeapStruct;
-	struct _GridCoordinates destLoc;
-	class basic_string<char> errorMsgSoundFullPath;
-	struct Goal destGoal1;
+int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum EmergencyType responseType, enum EmergencyLevel responseLevel, /*packed*/ class EmergencyVehicleClass **vehicleList, int32_t vehicleListLength) {
+	/*packed*/ struct Goal startGoal1;
+	/*packed*/ struct Goal startGoal2;
+	/*packed*/ struct _RGIndex destVert;
+	/*packed*/ struct _VehicleHeapStruct vehicleHeapStruct;
+	/*packed*/ struct _GridCoordinates destLoc;
+	/*packed*/ class basic_string<char> errorMsgSoundFullPath;
+	/*packed*/ struct Goal destGoal1;
 	int32_t pathFound;
-	struct Goal destGoal2;
-	class EmergencyVehicleClass *availableVehicle;
-	static class DigitalSound errorMsgSound;
-	struct _StationHeapStruct stationHeapStruct;
-	struct Goal result;
-	struct _RGIndex startVertex;
+	/*packed*/ struct Goal destGoal2;
+	/*packed*/ class EmergencyVehicleClass *availableVehicle;
+	static /*packed*/ class DigitalSound errorMsgSound;
+	/*packed*/ struct _StationHeapStruct stationHeapStruct;
+	/*packed*/ struct Goal result;
+	/*packed*/ struct _RGIndex startVertex;
 
 // LINE 433:
 	__asm        push   0x10;
@@ -2753,7 +2753,7 @@ _T873:
 	__asm        je     _Ta84;
 // LINE 532:
 // Block start:
-	struct _StructStation *sS;
+	/*packed*/ struct _StructStation *sS;
 	__asm        lea    eax, stationHeapStruct.cost;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
@@ -2786,7 +2786,7 @@ _T873:
 	__asm        jne    _T9ac;
 // LINE 541:
 // Block start:
-	struct RGVertex *pRGV;
+	/*packed*/ struct RGVertex *pRGV;
 	__asm        lea    eax, destGoal2.pRGV;
 	__asm        push   eax;
 	__asm        lea    eax, destGoal1.pRGV;
@@ -3169,7 +3169,7 @@ void Station::Station(unsigned char stationScurkID) {
 	int32_t y;
 	int32_t x;
 	unsigned char * tempBuildMap;
-	struct _GridCoordinates workingLoc;
+	/*packed*/ struct _GridCoordinates workingLoc;
 
 // LINE 594:
 	tempBuildMap = 0x5c3ab0;
@@ -3355,7 +3355,7 @@ _T1fa:
 	__asm        jne    _T2c2;
 // LINE 654:
 // Block start:
-	struct _StructStation *pStation;
+	/*packed*/ struct _StructStation *pStation;
 	int32_t direction;
 	__asm        mov    eax, x;
 	__asm        inc    eax;

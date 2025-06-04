@@ -4,7 +4,7 @@
 
 // Type: long;
 
-// Type: struct Point3d;
+// Type: /*packed*/ struct Point3d;
 struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 	int32_t x;
 	int32_t y;
@@ -20,7 +20,7 @@ struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 // Contribution: 1:000ed720-000ee1b4 Module: 177, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004ee720
 void S3ViewerInit() {
-	struct Point3d IdealCameraLoc;
+	/*packed*/ struct Point3d IdealCameraLoc;
 	int32_t rotmat[4][4];
 
 // LINE 109:
@@ -168,10 +168,10 @@ void S3ViewerInit() {
 void S3ViewerControl() {
 	int32_t timerDelay;
 	int32_t roty;
-	struct Point3d IdealCameraPos;
+	/*packed*/ struct Point3d IdealCameraPos;
 	int32_t rotx;
 	long lJoystickValue;
-	struct Point3d vec;
+	/*packed*/ struct Point3d vec;
 	long viewSize;
 
 // LINE 177:
@@ -760,7 +760,7 @@ int32_t S3ViewerPosDelta() {
 // FUNCTION: COPTER_D 0x004eef7f
 void S3ViewerSetView() {
 	int32_t matrix[4][4];
-	struct Point3d p;
+	/*packed*/ struct Point3d p;
 
 // LINE 427:
 	__asm        mov    eax, Viewer.pos.x;
@@ -991,10 +991,10 @@ static int32_t S_rotdelta;
 static int32_t S_posdelta;
 
 // GLOBAL: COPTER_D 0x00606e90
-static struct Point3d S_last_viewvect;
+static /*packed*/ struct Point3d S_last_viewvect;
 
 // GLOBAL: COPTER_D 0x00606ea0
-static struct Point3d S_last_viewpos;
+static /*packed*/ struct Point3d S_last_viewpos;
 
 
 

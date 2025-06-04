@@ -22,7 +22,7 @@ int32_t GraphicWindowManager::DecrementBusyCount() {
 
 // Function in module: Inputwin.obj
 // FUNCTION: COPTER_D 0x0040d7e0
-void  GraphicWindow::SetParent(class GraphicWindow *windowNewParent) {
+void  GraphicWindow::SetParent(/*unpacked*/ class GraphicWindow *windowNewParent) {
 // LINE 324:
 	this-><GraphicWindow+0x3c:4> = windowNewParent;
 // LINE 325:
@@ -40,7 +40,7 @@ void  GraphicWindow::SetBorderDrawing(int32_t bNewDrawBorder) {
 
 // Function in module: Inputwin.obj
 // FUNCTION: COPTER_D 0x0040d840
-void  GraphicWindow::SetWindowPosition(class MPoint& ptNewPosition) {
+void  GraphicWindow::SetWindowPosition(/*packed*/ class MPoint& ptNewPosition) {
 
 	__asm        mov    eax, ptNewPosition;
 	__asm        mov    ecx, [eax];

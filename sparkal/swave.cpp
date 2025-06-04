@@ -6,7 +6,7 @@
 
 // Type: void * __ptr32;
 
-// Type: struct tWAVEFORMATEX (forward reference);
+// Type: /*packed*/ struct tWAVEFORMATEX (forward reference);
 struct tWAVEFORMATEX{ // packed(0x12 bytes) TI: 0x17d1
 	unsigned short wFormatTag;
 	unsigned short nChannels;
@@ -17,7 +17,7 @@ struct tWAVEFORMATEX{ // packed(0x12 bytes) TI: 0x17d1
 	unsigned short cbSize;
 };
 
-// Type: struct _MMCKINFO (forward reference);
+// Type: /*packed*/ struct _MMCKINFO (forward reference);
 struct _MMCKINFO{ // packed(0x14 bytes) TI: 0x1da7
 	unsigned long ckid;
 	unsigned long cksize;
@@ -28,13 +28,13 @@ struct _MMCKINFO{ // packed(0x14 bytes) TI: 0x1da7
 
 // Type: unsigned short;
 
-// Type: struct pcmwaveformat_tag;
+// Type: /*packed*/ struct pcmwaveformat_tag;
 struct pcmwaveformat_tag{ // packed(0x10 bytes) TI: 0x23e0
-	struct waveformat_tag wf;
+	/*packed*/ struct waveformat_tag wf;
 	unsigned short wBitsPerSample;
 };
 
-// Type: struct _MMCKINFO;
+// Type: /*packed*/ struct _MMCKINFO;
 struct _MMCKINFO{ // packed(0x14 bytes) TI: 0x1da7
 	unsigned long ckid;
 	unsigned long cksize;
@@ -51,7 +51,7 @@ struct _MMCKINFO{ // packed(0x14 bytes) TI: 0x1da7
 
 // Type: uint32_t *;
 
-// Type: struct _MMIOINFO;
+// Type: /*packed*/ struct _MMIOINFO;
 struct _MMIOINFO{ // packed(0x48 bytes) TI: 0x23e7
 	unsigned long dwFlags;
 	unsigned long fccIOProc;
@@ -75,11 +75,11 @@ struct _MMIOINFO{ // packed(0x48 bytes) TI: 0x23e7
 
 // Contribution: 1:0008dbb0-0008e11e Module: 25, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0048ebb0
-int32_t WaveOpenFile(char * pszFileName, void * __ptr32 *phmmioIn, struct tWAVEFORMATEX *pwfxInfo, struct _MMCKINFO *pckInRIFF) {
+int32_t WaveOpenFile(char * pszFileName, void * __ptr32 *phmmioIn, /*packed*/ struct tWAVEFORMATEX *pwfxInfo, /*packed*/ struct _MMCKINFO *pckInRIFF) {
 	unsigned short cbExtraAlloc;
-	struct pcmwaveformat_tag pcmWaveFormat;
+	/*packed*/ struct pcmwaveformat_tag pcmWaveFormat;
 	void * __ptr32 hmmioIn;
-	struct _MMCKINFO ckIn;
+	/*packed*/ struct _MMCKINFO ckIn;
 	int32_t nError;
 
 // LINE 49:
@@ -276,7 +276,7 @@ _T204:
 }
 
 // FUNCTION: COPTER_D 0x0048edb9
-int32_t WaveStartDataRead(void * __ptr32 *phmmioIn, struct _MMCKINFO *pckIn, struct _MMCKINFO *pckInRIFF) {
+int32_t WaveStartDataRead(void * __ptr32 *phmmioIn, /*packed*/ struct _MMCKINFO *pckIn, /*packed*/ struct _MMCKINFO *pckInRIFF) {
 	int32_t nError;
 
 // LINE 160:
@@ -322,8 +322,8 @@ _T67:
 }
 
 // FUNCTION: COPTER_D 0x0048ee25
-int32_t WaveReadFile(void * __ptr32 hmmioIn, uint32_t cbRead, unsigned char * pbDest, struct _MMCKINFO *pckIn, uint32_t * cbActualRead) {
-	struct _MMIOINFO mmioinfoIn;
+int32_t WaveReadFile(void * __ptr32 hmmioIn, uint32_t cbRead, unsigned char * pbDest, /*packed*/ struct _MMCKINFO *pckIn, uint32_t * cbActualRead) {
+	/*packed*/ struct _MMIOINFO mmioinfoIn;
 	uint32_t cT;
 	int32_t nError;
 	unsigned char * tempBYTEPointerToFoolCrappyMicrosoftCompiler;
@@ -481,11 +481,11 @@ _T29:
 }
 
 // FUNCTION: COPTER_D 0x0048efa4
-int32_t WaveLoadFile(char * pszFileName, uint32_t * cbSize, struct tWAVEFORMATEX *pwfxInfo, unsigned char * *ppbData) {
+int32_t WaveLoadFile(char * pszFileName, uint32_t * cbSize, /*packed*/ struct tWAVEFORMATEX *pwfxInfo, unsigned char * *ppbData) {
 	uint32_t cbActualRead;
 	void * __ptr32 hmmioIn;
-	struct _MMCKINFO ckInRiff;
-	struct _MMCKINFO ckIn;
+	/*packed*/ struct _MMCKINFO ckInRiff;
+	/*packed*/ struct _MMCKINFO ckIn;
 	int32_t nError;
 
 // LINE 285:

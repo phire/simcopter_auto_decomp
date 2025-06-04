@@ -4,10 +4,10 @@
 
 // Type: char *;
 
-// Type: class DirectoryEntry (forward reference);
+// Type: /*packed*/ class DirectoryEntry (forward reference);
 class DirectoryEntry{ // packed(0x10 bytes) TI: 0x239f
 public:
-	void DirectoryEntry(class Directory*, class basic_string<char>&, long);
+	void DirectoryEntry(/*unpacked*/ class Directory*, /*packed*/ class basic_string<char>&, long);
 	void DirectoryEntry();
 	char * operator char *();
 	int32_t IsMediaRemovable();
@@ -15,27 +15,27 @@ public:
 	int32_t GetCreationDate();
 	int32_t GetlastModificationDate();
 	int32_t GetSerialNumber();
-	void GetFullPath(class basic_string<char>&);
+	void GetFullPath(/*packed*/ class basic_string<char>&);
 	int32_t CreatePhysicalEntry();
-	int32_t GetEntryExtension(class basic_string<char>&);
-	int32_t GetEntryMinusExtension(class basic_string<char>&);
-	class Directory *directoryParent;
-	class basic_string<char> sName;
+	int32_t GetEntryExtension(/*packed*/ class basic_string<char>&);
+	int32_t GetEntryMinusExtension(/*packed*/ class basic_string<char>&);
+	/*unpacked*/ class Directory *directoryParent;
+	/*packed*/ class basic_string<char> sName;
 	long lType;
 };
 
 // Type: void;
 
-// Type: class Directory (forward reference);
+// Type: /*unpacked*/ class Directory (forward reference);
 // Directory Class implementation not found
 
-// Type: class basic_string<char> (forward reference);
+// Type: /*packed*/ class basic_string<char> (forward reference);
 class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
-	using reference_class = class basic_string_ref<char>;
-	using reference_pointer = class basic_string_ref<char>*;
+	using reference_class = /*unpacked*/ class basic_string_ref<char>;
+	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char> *reference;
+	/*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -53,44 +53,44 @@ private:
 	uint32_t find_first_not_of_str(char *, uint32_t, uint32_t);
 	uint32_t find_last_not_of_str(char *, uint32_t, uint32_t);
 public:
-	void basic_string<char>(const class vector<char>&);
+	void basic_string<char>(const /*packed*/ class vector<char>&);
 	void basic_string<char>(char, uint32_t);
 	void basic_string<char>(char *);
 	void basic_string<char>(char *, uint32_t);
-	void basic_string<char>(const class basic_string<char>&, uint32_t, uint32_t);
+	void basic_string<char>(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 	void basic_string<char>(uint32_t, enum capacity);
 	void basic_string<char>();
 protected:
 	void basic_string<char>(char *, uint32_t, uint32_t);
 	void delete_ref();
 	using char_type = char;
-	using baggage_type = struct string_char_baggage<char>;
+	using baggage_type = /*packed*/ struct string_char_baggage<char>;
 public:
 	void ~basic_string<char>();
-	class basic_string<char>& operator=(char);
-	class basic_string<char>& operator=(char *);
-	class basic_string<char>& operator=(const class basic_string<char>&);
-	class basic_string<char>& operator+=(char);
-	class basic_string<char>& operator+=(char *);
-	class basic_string<char>& operator+=(const class basic_string<char>&);
-	class vector<char> operator class vector<char>();
-	class basic_string<char>& append(char, uint32_t);
-	class basic_string<char>& append(char *);
-	class basic_string<char>& append(char *, uint32_t);
-	class basic_string<char>& append(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& assign(char, uint32_t);
-	class basic_string<char>& assign(char *);
-	class basic_string<char>& assign(char *, uint32_t);
-	class basic_string<char>& assign(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& insert(uint32_t, char, uint32_t);
-	class basic_string<char>& insert(uint32_t, char *);
-	class basic_string<char>& insert(uint32_t, char *, uint32_t);
-	class basic_string<char>& insert(uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& remove(uint32_t, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, char, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, char *);
-	class basic_string<char>& replace(uint32_t, uint32_t, char *, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& operator=(char);
+	/*packed*/ class basic_string<char>& operator=(char *);
+	/*packed*/ class basic_string<char>& operator=(const /*packed*/ class basic_string<char>&);
+	/*packed*/ class basic_string<char>& operator+=(char);
+	/*packed*/ class basic_string<char>& operator+=(char *);
+	/*packed*/ class basic_string<char>& operator+=(const /*packed*/ class basic_string<char>&);
+	/*packed*/ class vector<char> operator class vector<char>();
+	/*packed*/ class basic_string<char>& append(char, uint32_t);
+	/*packed*/ class basic_string<char>& append(char *);
+	/*packed*/ class basic_string<char>& append(char *, uint32_t);
+	/*packed*/ class basic_string<char>& append(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& assign(char, uint32_t);
+	/*packed*/ class basic_string<char>& assign(char *);
+	/*packed*/ class basic_string<char>& assign(char *, uint32_t);
+	/*packed*/ class basic_string<char>& assign(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char *);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char *, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& remove(uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char *);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char *, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 	char get_at(uint32_t);
 	void put_at(uint32_t, char);
 	char& operator[](uint32_t);
@@ -106,32 +106,32 @@ public:
 	uint32_t find(char, uint32_t);
 	uint32_t find(char *, uint32_t);
 	uint32_t find(char *, uint32_t, uint32_t);
-	uint32_t find(const class basic_string<char>&, uint32_t);
+	uint32_t find(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t rfind(char, uint32_t);
 	uint32_t rfind(char *, uint32_t);
 	uint32_t rfind(char *, uint32_t, uint32_t);
-	uint32_t rfind(const class basic_string<char>&, uint32_t);
+	uint32_t rfind(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_first_of(char, uint32_t);
 	uint32_t find_first_of(char *, uint32_t);
 	uint32_t find_first_of(char *, uint32_t, uint32_t);
-	uint32_t find_first_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_last_of(char, uint32_t);
 	uint32_t find_last_of(char *, uint32_t);
 	uint32_t find_last_of(char *, uint32_t, uint32_t);
-	uint32_t find_last_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_last_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_first_not_of(char, uint32_t);
 	uint32_t find_first_not_of(char *, uint32_t);
 	uint32_t find_first_not_of(char *, uint32_t, uint32_t);
-	uint32_t find_first_not_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_not_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_last_not_of(char, uint32_t);
 	uint32_t find_last_not_of(char *, uint32_t);
 	uint32_t find_last_not_of(char *, uint32_t, uint32_t);
-	uint32_t find_last_not_of(const class basic_string<char>&, uint32_t);
-	class basic_string<char> substr(uint32_t, uint32_t);
+	uint32_t find_last_not_of(const /*packed*/ class basic_string<char>&, uint32_t);
+	/*packed*/ class basic_string<char> substr(uint32_t, uint32_t);
 	int32_t compare(char, uint32_t, uint32_t);
 	int32_t compare(char *, uint32_t);
 	int32_t compare(char *, uint32_t, uint32_t);
-	int32_t compare(const class basic_string<char>&, uint32_t, uint32_t);
+	int32_t compare(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 };
 
 // Type: long;
@@ -144,13 +144,13 @@ public:
 
 // Type: void * __ptr32;
 
-// Type: class basic_string<char>;
+// Type: /*packed*/ class basic_string<char>;
 class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
-	using reference_class = class basic_string_ref<char>;
-	using reference_pointer = class basic_string_ref<char>*;
+	using reference_class = /*unpacked*/ class basic_string_ref<char>;
+	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
 	char * c_str_ptr;
-	class basic_string_ref<char> *reference;
+	/*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -168,44 +168,44 @@ private:
 	uint32_t find_first_not_of_str(char *, uint32_t, uint32_t);
 	uint32_t find_last_not_of_str(char *, uint32_t, uint32_t);
 public:
-	void basic_string<char>(const class vector<char>&);
+	void basic_string<char>(const /*packed*/ class vector<char>&);
 	void basic_string<char>(char, uint32_t);
 	void basic_string<char>(char *);
 	void basic_string<char>(char *, uint32_t);
-	void basic_string<char>(const class basic_string<char>&, uint32_t, uint32_t);
+	void basic_string<char>(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 	void basic_string<char>(uint32_t, enum capacity);
 	void basic_string<char>();
 protected:
 	void basic_string<char>(char *, uint32_t, uint32_t);
 	void delete_ref();
 	using char_type = char;
-	using baggage_type = struct string_char_baggage<char>;
+	using baggage_type = /*packed*/ struct string_char_baggage<char>;
 public:
 	void ~basic_string<char>();
-	class basic_string<char>& operator=(char);
-	class basic_string<char>& operator=(char *);
-	class basic_string<char>& operator=(const class basic_string<char>&);
-	class basic_string<char>& operator+=(char);
-	class basic_string<char>& operator+=(char *);
-	class basic_string<char>& operator+=(const class basic_string<char>&);
-	class vector<char> operator class vector<char>();
-	class basic_string<char>& append(char, uint32_t);
-	class basic_string<char>& append(char *);
-	class basic_string<char>& append(char *, uint32_t);
-	class basic_string<char>& append(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& assign(char, uint32_t);
-	class basic_string<char>& assign(char *);
-	class basic_string<char>& assign(char *, uint32_t);
-	class basic_string<char>& assign(const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& insert(uint32_t, char, uint32_t);
-	class basic_string<char>& insert(uint32_t, char *);
-	class basic_string<char>& insert(uint32_t, char *, uint32_t);
-	class basic_string<char>& insert(uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
-	class basic_string<char>& remove(uint32_t, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, char, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, char *);
-	class basic_string<char>& replace(uint32_t, uint32_t, char *, uint32_t);
-	class basic_string<char>& replace(uint32_t, uint32_t, const class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& operator=(char);
+	/*packed*/ class basic_string<char>& operator=(char *);
+	/*packed*/ class basic_string<char>& operator=(const /*packed*/ class basic_string<char>&);
+	/*packed*/ class basic_string<char>& operator+=(char);
+	/*packed*/ class basic_string<char>& operator+=(char *);
+	/*packed*/ class basic_string<char>& operator+=(const /*packed*/ class basic_string<char>&);
+	/*packed*/ class vector<char> operator class vector<char>();
+	/*packed*/ class basic_string<char>& append(char, uint32_t);
+	/*packed*/ class basic_string<char>& append(char *);
+	/*packed*/ class basic_string<char>& append(char *, uint32_t);
+	/*packed*/ class basic_string<char>& append(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& assign(char, uint32_t);
+	/*packed*/ class basic_string<char>& assign(char *);
+	/*packed*/ class basic_string<char>& assign(char *, uint32_t);
+	/*packed*/ class basic_string<char>& assign(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char *);
+	/*packed*/ class basic_string<char>& insert(uint32_t, char *, uint32_t);
+	/*packed*/ class basic_string<char>& insert(uint32_t, const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& remove(uint32_t, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char *);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, char *, uint32_t);
+	/*packed*/ class basic_string<char>& replace(uint32_t, uint32_t, const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 	char get_at(uint32_t);
 	void put_at(uint32_t, char);
 	char& operator[](uint32_t);
@@ -221,38 +221,38 @@ public:
 	uint32_t find(char, uint32_t);
 	uint32_t find(char *, uint32_t);
 	uint32_t find(char *, uint32_t, uint32_t);
-	uint32_t find(const class basic_string<char>&, uint32_t);
+	uint32_t find(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t rfind(char, uint32_t);
 	uint32_t rfind(char *, uint32_t);
 	uint32_t rfind(char *, uint32_t, uint32_t);
-	uint32_t rfind(const class basic_string<char>&, uint32_t);
+	uint32_t rfind(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_first_of(char, uint32_t);
 	uint32_t find_first_of(char *, uint32_t);
 	uint32_t find_first_of(char *, uint32_t, uint32_t);
-	uint32_t find_first_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_last_of(char, uint32_t);
 	uint32_t find_last_of(char *, uint32_t);
 	uint32_t find_last_of(char *, uint32_t, uint32_t);
-	uint32_t find_last_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_last_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_first_not_of(char, uint32_t);
 	uint32_t find_first_not_of(char *, uint32_t);
 	uint32_t find_first_not_of(char *, uint32_t, uint32_t);
-	uint32_t find_first_not_of(const class basic_string<char>&, uint32_t);
+	uint32_t find_first_not_of(const /*packed*/ class basic_string<char>&, uint32_t);
 	uint32_t find_last_not_of(char, uint32_t);
 	uint32_t find_last_not_of(char *, uint32_t);
 	uint32_t find_last_not_of(char *, uint32_t, uint32_t);
-	uint32_t find_last_not_of(const class basic_string<char>&, uint32_t);
-	class basic_string<char> substr(uint32_t, uint32_t);
+	uint32_t find_last_not_of(const /*packed*/ class basic_string<char>&, uint32_t);
+	/*packed*/ class basic_string<char> substr(uint32_t, uint32_t);
 	int32_t compare(char, uint32_t, uint32_t);
 	int32_t compare(char *, uint32_t);
 	int32_t compare(char *, uint32_t, uint32_t);
-	int32_t compare(const class basic_string<char>&, uint32_t, uint32_t);
+	int32_t compare(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
 };
 
-// Type: class DirectoryEntry;
+// Type: /*packed*/ class DirectoryEntry;
 class DirectoryEntry{ // packed(0x10 bytes) TI: 0x239f
 public:
-	void DirectoryEntry(class Directory*, class basic_string<char>&, long);
+	void DirectoryEntry(/*unpacked*/ class Directory*, /*packed*/ class basic_string<char>&, long);
 	void DirectoryEntry();
 	char * operator char *();
 	int32_t IsMediaRemovable();
@@ -260,21 +260,21 @@ public:
 	int32_t GetCreationDate();
 	int32_t GetlastModificationDate();
 	int32_t GetSerialNumber();
-	void GetFullPath(class basic_string<char>&);
+	void GetFullPath(/*packed*/ class basic_string<char>&);
 	int32_t CreatePhysicalEntry();
-	int32_t GetEntryExtension(class basic_string<char>&);
-	int32_t GetEntryMinusExtension(class basic_string<char>&);
-	class Directory *directoryParent;
-	class basic_string<char> sName;
+	int32_t GetEntryExtension(/*packed*/ class basic_string<char>&);
+	int32_t GetEntryMinusExtension(/*packed*/ class basic_string<char>&);
+	/*unpacked*/ class Directory *directoryParent;
+	/*packed*/ class basic_string<char> sName;
 	long lType;
 };
 
-// Type: struct _WIN32_FIND_DATAA;
+// Type: /*packed*/ struct _WIN32_FIND_DATAA;
 struct _WIN32_FIND_DATAA{ // packed(0x13e bytes) TI: 0x26cd
 	unsigned long dwFileAttributes;
-	struct _FILETIME ftCreationTime;
-	struct _FILETIME ftLastAccessTime;
-	struct _FILETIME ftLastWriteTime;
+	/*packed*/ struct _FILETIME ftCreationTime;
+	/*packed*/ struct _FILETIME ftLastAccessTime;
+	/*packed*/ struct _FILETIME ftLastWriteTime;
 	unsigned long nFileSizeHigh;
 	unsigned long nFileSizeLow;
 	unsigned long dwReserved0;
@@ -283,343 +283,343 @@ struct _WIN32_FIND_DATAA{ // packed(0x13e bytes) TI: 0x26cd
 	char cAlternateFileName[14];
 };
 
-// Type: class list<basic_string<char>> (forward reference);
+// Type: /*packed*/ class list<basic_string<char>> (forward reference);
 class list<basic_string<char>>{ // packed(0x8 bytes) TI: 0x1cb1
 	using void_pointer = void * __ptr32;
 	struct list<basic_string<char>>::list_node{ // packed(0x10 bytes) TI: 0x1cd7
 		void * __ptr32 next;
 		void * __ptr32 prev;
-		class basic_string<char> data;
+		/*packed*/ class basic_string<char> data;
 	};
 protected:
-	static class allocator<list<basic_string<char>>::list_node> list_node_allocator;
-	static class allocator<basic_string<char>> value_allocator;
-	using value_type = class basic_string<char>;
-	using value_allocator_type = class allocator<basic_string<char>>;
-	using pointer = class basic_string<char>*;
-	using reference = class basic_string<char>&;
-	using const_reference = const class basic_string<char>&;
-	using list_node_allocator_type = class allocator<list<basic_string<char>>::list_node>;
-	using link_type = struct list<basic_string<char>>::list_node*;
+	static /*packed*/ class allocator<list<basic_string<char>>::list_node> list_node_allocator;
+	static /*packed*/ class allocator<basic_string<char>> value_allocator;
+	using value_type = /*packed*/ class basic_string<char>;
+	using value_allocator_type = /*packed*/ class allocator<basic_string<char>>;
+	using pointer = /*packed*/ class basic_string<char>*;
+	using reference = /*packed*/ class basic_string<char>&;
+	using const_reference = const /*packed*/ class basic_string<char>&;
+	using list_node_allocator_type = /*packed*/ class allocator<list<basic_string<char>>::list_node>;
+	using link_type = /*packed*/ struct list<basic_string<char>>::list_node*;
 	using size_type = uint32_t;
 	using difference_type = int32_t;
 protected:
 	uint32_t buffer_size();
 	struct list<basic_string<char>>::list_node_buffer{ // packed(0x8 bytes) TI: 0x1cd5
 		void * __ptr32 next_buffer;
-		struct list<basic_string<char>>::list_node *buffer;
+		/*packed*/ struct list<basic_string<char>>::list_node *buffer;
 	};
-	using buffer_allocator_type = class allocator<list<basic_string<char>>::list_node_buffer>;
-	using buffer_pointer = struct list<basic_string<char>>::list_node_buffer*;
+	using buffer_allocator_type = /*packed*/ class allocator<list<basic_string<char>>::list_node_buffer>;
+	using buffer_pointer = /*packed*/ struct list<basic_string<char>>::list_node_buffer*;
 protected:
-	static class allocator<list<basic_string<char>>::list_node_buffer> buffer_allocator;
-	static struct list<basic_string<char>>::list_node_buffer *buffer_list;
-	static struct list<basic_string<char>>::list_node *free_list;
-	static struct list<basic_string<char>>::list_node *next_avail;
-	static struct list<basic_string<char>>::list_node *last;
+	static /*packed*/ class allocator<list<basic_string<char>>::list_node_buffer> buffer_allocator;
+	static /*packed*/ struct list<basic_string<char>>::list_node_buffer *buffer_list;
+	static /*packed*/ struct list<basic_string<char>>::list_node *free_list;
+	static /*packed*/ struct list<basic_string<char>>::list_node *next_avail;
+	static /*packed*/ struct list<basic_string<char>>::list_node *last;
 	void add_new_buffer();
 	static uint32_t number_of_lists;
 	void deallocate_buffers();
-	struct list<basic_string<char>>::list_node* get_node();
-	void put_node(struct list<basic_string<char>>::list_node*);
-	struct list<basic_string<char>>::list_node *node;
+	/*packed*/ struct list<basic_string<char>>::list_node* get_node();
+	void put_node(/*packed*/ struct list<basic_string<char>>::list_node*);
+	/*packed*/ struct list<basic_string<char>>::list_node *node;
 	uint32_t length;
 	class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_string<char>,int>
 	{ // packed(0x4 bytes) TI: 0x1cd3
 	protected:
-		struct list<basic_string<char>>::list_node *node;
+		/*packed*/ struct list<basic_string<char>>::list_node *node;
 	public:
 		void iterator();
 	protected:
-		void iterator(struct list<basic_string<char>>::list_node*);
+		void iterator(/*packed*/ struct list<basic_string<char>>::list_node*);
 	public:
-		int32_t operator==(const class list<basic_string<char>>::iterator&);
-		class basic_string<char>& operator*();
-		class list<basic_string<char>>::iterator operator++(int32_t);
-		class list<basic_string<char>>::iterator& operator++();
-		class list<basic_string<char>>::iterator operator--(int32_t);
-		class list<basic_string<char>>::iterator& operator--();
+		int32_t operator==(const /*packed*/ class list<basic_string<char>>::iterator&);
+		/*packed*/ class basic_string<char>& operator*();
+		/*packed*/ class list<basic_string<char>>::iterator operator++(int32_t);
+		/*packed*/ class list<basic_string<char>>::iterator& operator++();
+		/*packed*/ class list<basic_string<char>>::iterator operator--(int32_t);
+		/*packed*/ class list<basic_string<char>>::iterator& operator--();
 	};
 	class list<basic_string<char>>::const_iterator : public bidirectional_iterator<basic_string<char>,int>
 	{ // packed(0x4 bytes) TI: 0x1cc6
 	protected:
-		struct list<basic_string<char>>::list_node *node;
+		/*packed*/ struct list<basic_string<char>>::list_node *node;
 	public:
-		void const_iterator(const class list<basic_string<char>>::iterator&);
+		void const_iterator(const /*packed*/ class list<basic_string<char>>::iterator&);
 		void const_iterator();
 	protected:
-		void const_iterator(struct list<basic_string<char>>::list_node*);
+		void const_iterator(/*packed*/ struct list<basic_string<char>>::list_node*);
 	public:
-		int32_t operator==(const class list<basic_string<char>>::const_iterator&);
-		const class basic_string<char>& operator*();
-		class list<basic_string<char>>::const_iterator operator++(int32_t);
-		class list<basic_string<char>>::const_iterator& operator++();
-		class list<basic_string<char>>::const_iterator operator--(int32_t);
-		class list<basic_string<char>>::const_iterator& operator--();
+		int32_t operator==(const /*packed*/ class list<basic_string<char>>::const_iterator&);
+		const /*packed*/ class basic_string<char>& operator*();
+		/*packed*/ class list<basic_string<char>>::const_iterator operator++(int32_t);
+		/*packed*/ class list<basic_string<char>>::const_iterator& operator++();
+		/*packed*/ class list<basic_string<char>>::const_iterator operator--(int32_t);
+		/*packed*/ class list<basic_string<char>>::const_iterator& operator--();
 	};
-	using const_reverse_iterator = class reverse_bidirectional_iterator<list<basic_string<char>>::const_iterator,basic_string<char>,basic_string<char> const &,int>;
-	using reverse_iterator = class reverse_bidirectional_iterator<list<basic_string<char>>::iterator,basic_string<char>,basic_string<char> &,int>;
+	using const_reverse_iterator = /*unpacked*/ class reverse_bidirectional_iterator<list<basic_string<char>>::const_iterator,basic_string<char>,basic_string<char> const &,int>;
+	using reverse_iterator = /*unpacked*/ class reverse_bidirectional_iterator<list<basic_string<char>>::iterator,basic_string<char>,basic_string<char> &,int>;
 public:
-	void list<basic_string<char>>(const class list<basic_string<char>>&);
-	void list<basic_string<char>>(const class basic_string<char>*, const class basic_string<char>*);
-	void list<basic_string<char>>(uint32_t, const class basic_string<char>&);
+	void list<basic_string<char>>(const /*packed*/ class list<basic_string<char>>&);
+	void list<basic_string<char>>(const /*packed*/ class basic_string<char>*, const /*packed*/ class basic_string<char>*);
+	void list<basic_string<char>>(uint32_t, const /*packed*/ class basic_string<char>&);
 	void list<basic_string<char>>();
-	class list<basic_string<char>>::const_iterator begin();
-	class list<basic_string<char>>::iterator begin();
-	class list<basic_string<char>>::const_iterator end();
-	class list<basic_string<char>>::iterator end();
-	class reverse_bidirectional_iterator<list<basic_string<char>>::const_iterator,basic_string<char>,basic_string<char> const &,int> rbegin();
-	class reverse_bidirectional_iterator<list<basic_string<char>>::iterator,basic_string<char>,basic_string<char> &,int> rbegin();
-	class reverse_bidirectional_iterator<list<basic_string<char>>::const_iterator,basic_string<char>,basic_string<char> const &,int> rend();
-	class reverse_bidirectional_iterator<list<basic_string<char>>::iterator,basic_string<char>,basic_string<char> &,int> rend();
+	/*packed*/ class list<basic_string<char>>::const_iterator begin();
+	/*packed*/ class list<basic_string<char>>::iterator begin();
+	/*packed*/ class list<basic_string<char>>::const_iterator end();
+	/*packed*/ class list<basic_string<char>>::iterator end();
+	/*unpacked*/ class reverse_bidirectional_iterator<list<basic_string<char>>::const_iterator,basic_string<char>,basic_string<char> const &,int> rbegin();
+	/*unpacked*/ class reverse_bidirectional_iterator<list<basic_string<char>>::iterator,basic_string<char>,basic_string<char> &,int> rbegin();
+	/*unpacked*/ class reverse_bidirectional_iterator<list<basic_string<char>>::const_iterator,basic_string<char>,basic_string<char> const &,int> rend();
+	/*unpacked*/ class reverse_bidirectional_iterator<list<basic_string<char>>::iterator,basic_string<char>,basic_string<char> &,int> rend();
 	int32_t empty();
 	uint32_t size();
 	uint32_t max_size();
-	const class basic_string<char>& front();
-	class basic_string<char>& front();
-	const class basic_string<char>& back();
-	class basic_string<char>& back();
-	void swap(class list<basic_string<char>>&);
-	void insert(class list<basic_string<char>>::iterator, uint32_t, const class basic_string<char>&);
-	void insert(class list<basic_string<char>>::iterator, class list<basic_string<char>>::const_iterator, class list<basic_string<char>>::const_iterator);
-	void insert(class list<basic_string<char>>::iterator, const class basic_string<char>*, const class basic_string<char>*);
-	class list<basic_string<char>>::iterator insert(class list<basic_string<char>>::iterator, const class basic_string<char>&);
-	void push_front(const class basic_string<char>&);
-	void push_back(const class basic_string<char>&);
-	void erase(class list<basic_string<char>>::iterator, class list<basic_string<char>>::iterator);
-	void erase(class list<basic_string<char>>::iterator);
+	const /*packed*/ class basic_string<char>& front();
+	/*packed*/ class basic_string<char>& front();
+	const /*packed*/ class basic_string<char>& back();
+	/*packed*/ class basic_string<char>& back();
+	void swap(/*packed*/ class list<basic_string<char>>&);
+	void insert(/*packed*/ class list<basic_string<char>>::iterator, uint32_t, const /*packed*/ class basic_string<char>&);
+	void insert(/*packed*/ class list<basic_string<char>>::iterator, /*packed*/ class list<basic_string<char>>::const_iterator, /*packed*/ class list<basic_string<char>>::const_iterator);
+	void insert(/*packed*/ class list<basic_string<char>>::iterator, const /*packed*/ class basic_string<char>*, const /*packed*/ class basic_string<char>*);
+	/*packed*/ class list<basic_string<char>>::iterator insert(/*packed*/ class list<basic_string<char>>::iterator, const /*packed*/ class basic_string<char>&);
+	void push_front(const /*packed*/ class basic_string<char>&);
+	void push_back(const /*packed*/ class basic_string<char>&);
+	void erase(/*packed*/ class list<basic_string<char>>::iterator, /*packed*/ class list<basic_string<char>>::iterator);
+	void erase(/*packed*/ class list<basic_string<char>>::iterator);
 	void pop_front();
 	void pop_back();
 	void ~list<basic_string<char>>();
-	class list<basic_string<char>>& operator=(const class list<basic_string<char>>&);
+	/*packed*/ class list<basic_string<char>>& operator=(const /*packed*/ class list<basic_string<char>>&);
 protected:
-	void transfer(class list<basic_string<char>>::iterator, class list<basic_string<char>>::iterator, class list<basic_string<char>>::iterator);
+	void transfer(/*packed*/ class list<basic_string<char>>::iterator, /*packed*/ class list<basic_string<char>>::iterator, /*packed*/ class list<basic_string<char>>::iterator);
 public:
-	void splice(class list<basic_string<char>>::iterator, class list<basic_string<char>>&, class list<basic_string<char>>::iterator, class list<basic_string<char>>::iterator);
-	void splice(class list<basic_string<char>>::iterator, class list<basic_string<char>>&, class list<basic_string<char>>::iterator);
-	void splice(class list<basic_string<char>>::iterator, class list<basic_string<char>>&);
-	void remove(const class basic_string<char>&);
+	void splice(/*packed*/ class list<basic_string<char>>::iterator, /*packed*/ class list<basic_string<char>>&, /*packed*/ class list<basic_string<char>>::iterator, /*packed*/ class list<basic_string<char>>::iterator);
+	void splice(/*packed*/ class list<basic_string<char>>::iterator, /*packed*/ class list<basic_string<char>>&, /*packed*/ class list<basic_string<char>>::iterator);
+	void splice(/*packed*/ class list<basic_string<char>>::iterator, /*packed*/ class list<basic_string<char>>&);
+	void remove(const /*packed*/ class basic_string<char>&);
 	void unique();
-	void merge(class list<basic_string<char>>&);
+	void merge(/*packed*/ class list<basic_string<char>>&);
 	void reverse();
 	void sort();
 };
 
-// Type: class list<DirectoryEntry>::iterator;
+// Type: /*packed*/ class list<DirectoryEntry>::iterator;
 class list<DirectoryEntry>::iterator : public bidirectional_iterator<DirectoryEntry,int>
 { // packed(0x4 bytes) TI: 0x238e
 protected:
-	struct list<DirectoryEntry>::list_node *node;
+	/*packed*/ struct list<DirectoryEntry>::list_node *node;
 public:
 	void iterator();
 protected:
-	void iterator(struct list<DirectoryEntry>::list_node*);
+	void iterator(/*packed*/ struct list<DirectoryEntry>::list_node*);
 public:
-	int32_t operator==(const class list<DirectoryEntry>::iterator&);
-	class DirectoryEntry& operator*();
-	class list<DirectoryEntry>::iterator operator++(int32_t);
-	class list<DirectoryEntry>::iterator& operator++();
-	class list<DirectoryEntry>::iterator operator--(int32_t);
-	class list<DirectoryEntry>::iterator& operator--();
+	int32_t operator==(const /*packed*/ class list<DirectoryEntry>::iterator&);
+	/*packed*/ class DirectoryEntry& operator*();
+	/*packed*/ class list<DirectoryEntry>::iterator operator++(int32_t);
+	/*packed*/ class list<DirectoryEntry>::iterator& operator++();
+	/*packed*/ class list<DirectoryEntry>::iterator operator--(int32_t);
+	/*packed*/ class list<DirectoryEntry>::iterator& operator--();
 };
 
 // Type: char;
 
-// Type: class list<DirectoryEntry>::iterator (forward reference);
+// Type: /*packed*/ class list<DirectoryEntry>::iterator (forward reference);
 class list<DirectoryEntry>::iterator : public bidirectional_iterator<DirectoryEntry,int>
 { // packed(0x4 bytes) TI: 0x238e
 protected:
-	struct list<DirectoryEntry>::list_node *node;
+	/*packed*/ struct list<DirectoryEntry>::list_node *node;
 public:
 	void iterator();
 protected:
-	void iterator(struct list<DirectoryEntry>::list_node*);
+	void iterator(/*packed*/ struct list<DirectoryEntry>::list_node*);
 public:
-	int32_t operator==(const class list<DirectoryEntry>::iterator&);
-	class DirectoryEntry& operator*();
-	class list<DirectoryEntry>::iterator operator++(int32_t);
-	class list<DirectoryEntry>::iterator& operator++();
-	class list<DirectoryEntry>::iterator operator--(int32_t);
-	class list<DirectoryEntry>::iterator& operator--();
+	int32_t operator==(const /*packed*/ class list<DirectoryEntry>::iterator&);
+	/*packed*/ class DirectoryEntry& operator*();
+	/*packed*/ class list<DirectoryEntry>::iterator operator++(int32_t);
+	/*packed*/ class list<DirectoryEntry>::iterator& operator++();
+	/*packed*/ class list<DirectoryEntry>::iterator operator--(int32_t);
+	/*packed*/ class list<DirectoryEntry>::iterator& operator--();
 };
 
-// Type: class list<DirectoryEntry> (forward reference);
+// Type: /*packed*/ class list<DirectoryEntry> (forward reference);
 class list<DirectoryEntry>{ // packed(0x8 bytes) TI: 0x236c
 	using void_pointer = void * __ptr32;
 	struct list<DirectoryEntry>::list_node{ // packed(0x18 bytes) TI: 0x2392
 		void * __ptr32 next;
 		void * __ptr32 prev;
-		class DirectoryEntry data;
+		/*packed*/ class DirectoryEntry data;
 	};
 protected:
-	static class allocator<list<DirectoryEntry>::list_node> list_node_allocator;
-	static class allocator<DirectoryEntry> value_allocator;
-	using value_type = class DirectoryEntry;
-	using value_allocator_type = class allocator<DirectoryEntry>;
-	using pointer = class DirectoryEntry*;
-	using reference = class DirectoryEntry&;
-	using const_reference = const class DirectoryEntry&;
-	using list_node_allocator_type = class allocator<list<DirectoryEntry>::list_node>;
-	using link_type = struct list<DirectoryEntry>::list_node*;
+	static /*packed*/ class allocator<list<DirectoryEntry>::list_node> list_node_allocator;
+	static /*packed*/ class allocator<DirectoryEntry> value_allocator;
+	using value_type = /*packed*/ class DirectoryEntry;
+	using value_allocator_type = /*packed*/ class allocator<DirectoryEntry>;
+	using pointer = /*packed*/ class DirectoryEntry*;
+	using reference = /*packed*/ class DirectoryEntry&;
+	using const_reference = const /*packed*/ class DirectoryEntry&;
+	using list_node_allocator_type = /*packed*/ class allocator<list<DirectoryEntry>::list_node>;
+	using link_type = /*packed*/ struct list<DirectoryEntry>::list_node*;
 	using size_type = uint32_t;
 	using difference_type = int32_t;
 protected:
 	uint32_t buffer_size();
 	struct list<DirectoryEntry>::list_node_buffer{ // packed(0x8 bytes) TI: 0x2390
 		void * __ptr32 next_buffer;
-		struct list<DirectoryEntry>::list_node *buffer;
+		/*packed*/ struct list<DirectoryEntry>::list_node *buffer;
 	};
-	using buffer_allocator_type = class allocator<list<DirectoryEntry>::list_node_buffer>;
-	using buffer_pointer = struct list<DirectoryEntry>::list_node_buffer*;
+	using buffer_allocator_type = /*packed*/ class allocator<list<DirectoryEntry>::list_node_buffer>;
+	using buffer_pointer = /*packed*/ struct list<DirectoryEntry>::list_node_buffer*;
 protected:
-	static class allocator<list<DirectoryEntry>::list_node_buffer> buffer_allocator;
-	static struct list<DirectoryEntry>::list_node_buffer *buffer_list;
-	static struct list<DirectoryEntry>::list_node *free_list;
-	static struct list<DirectoryEntry>::list_node *next_avail;
-	static struct list<DirectoryEntry>::list_node *last;
+	static /*packed*/ class allocator<list<DirectoryEntry>::list_node_buffer> buffer_allocator;
+	static /*packed*/ struct list<DirectoryEntry>::list_node_buffer *buffer_list;
+	static /*packed*/ struct list<DirectoryEntry>::list_node *free_list;
+	static /*packed*/ struct list<DirectoryEntry>::list_node *next_avail;
+	static /*packed*/ struct list<DirectoryEntry>::list_node *last;
 	void add_new_buffer();
 	static uint32_t number_of_lists;
 	void deallocate_buffers();
-	struct list<DirectoryEntry>::list_node* get_node();
-	void put_node(struct list<DirectoryEntry>::list_node*);
-	struct list<DirectoryEntry>::list_node *node;
+	/*packed*/ struct list<DirectoryEntry>::list_node* get_node();
+	void put_node(/*packed*/ struct list<DirectoryEntry>::list_node*);
+	/*packed*/ struct list<DirectoryEntry>::list_node *node;
 	uint32_t length;
 	class list<DirectoryEntry>::iterator : public bidirectional_iterator<DirectoryEntry,int>
 	{ // packed(0x4 bytes) TI: 0x238e
 	protected:
-		struct list<DirectoryEntry>::list_node *node;
+		/*packed*/ struct list<DirectoryEntry>::list_node *node;
 	public:
 		void iterator();
 	protected:
-		void iterator(struct list<DirectoryEntry>::list_node*);
+		void iterator(/*packed*/ struct list<DirectoryEntry>::list_node*);
 	public:
-		int32_t operator==(const class list<DirectoryEntry>::iterator&);
-		class DirectoryEntry& operator*();
-		class list<DirectoryEntry>::iterator operator++(int32_t);
-		class list<DirectoryEntry>::iterator& operator++();
-		class list<DirectoryEntry>::iterator operator--(int32_t);
-		class list<DirectoryEntry>::iterator& operator--();
+		int32_t operator==(const /*packed*/ class list<DirectoryEntry>::iterator&);
+		/*packed*/ class DirectoryEntry& operator*();
+		/*packed*/ class list<DirectoryEntry>::iterator operator++(int32_t);
+		/*packed*/ class list<DirectoryEntry>::iterator& operator++();
+		/*packed*/ class list<DirectoryEntry>::iterator operator--(int32_t);
+		/*packed*/ class list<DirectoryEntry>::iterator& operator--();
 	};
 	class list<DirectoryEntry>::const_iterator : public bidirectional_iterator<DirectoryEntry,int>
 	{ // packed(0x4 bytes) TI: 0x2381
 	protected:
-		struct list<DirectoryEntry>::list_node *node;
+		/*packed*/ struct list<DirectoryEntry>::list_node *node;
 	public:
-		void const_iterator(const class list<DirectoryEntry>::iterator&);
+		void const_iterator(const /*packed*/ class list<DirectoryEntry>::iterator&);
 		void const_iterator();
 	protected:
-		void const_iterator(struct list<DirectoryEntry>::list_node*);
+		void const_iterator(/*packed*/ struct list<DirectoryEntry>::list_node*);
 	public:
-		int32_t operator==(const class list<DirectoryEntry>::const_iterator&);
-		const class DirectoryEntry& operator*();
-		class list<DirectoryEntry>::const_iterator operator++(int32_t);
-		class list<DirectoryEntry>::const_iterator& operator++();
-		class list<DirectoryEntry>::const_iterator operator--(int32_t);
-		class list<DirectoryEntry>::const_iterator& operator--();
+		int32_t operator==(const /*packed*/ class list<DirectoryEntry>::const_iterator&);
+		const /*packed*/ class DirectoryEntry& operator*();
+		/*packed*/ class list<DirectoryEntry>::const_iterator operator++(int32_t);
+		/*packed*/ class list<DirectoryEntry>::const_iterator& operator++();
+		/*packed*/ class list<DirectoryEntry>::const_iterator operator--(int32_t);
+		/*packed*/ class list<DirectoryEntry>::const_iterator& operator--();
 	};
-	using const_reverse_iterator = class reverse_bidirectional_iterator<list<DirectoryEntry>::const_iterator,DirectoryEntry,DirectoryEntry const &,int>;
-	using reverse_iterator = class reverse_bidirectional_iterator<list<DirectoryEntry>::iterator,DirectoryEntry,DirectoryEntry &,int>;
+	using const_reverse_iterator = /*unpacked*/ class reverse_bidirectional_iterator<list<DirectoryEntry>::const_iterator,DirectoryEntry,DirectoryEntry const &,int>;
+	using reverse_iterator = /*unpacked*/ class reverse_bidirectional_iterator<list<DirectoryEntry>::iterator,DirectoryEntry,DirectoryEntry &,int>;
 public:
-	void list<DirectoryEntry>(const class list<DirectoryEntry>&);
-	void list<DirectoryEntry>(const class DirectoryEntry*, const class DirectoryEntry*);
-	void list<DirectoryEntry>(uint32_t, const class DirectoryEntry&);
+	void list<DirectoryEntry>(const /*packed*/ class list<DirectoryEntry>&);
+	void list<DirectoryEntry>(const /*packed*/ class DirectoryEntry*, const /*packed*/ class DirectoryEntry*);
+	void list<DirectoryEntry>(uint32_t, const /*packed*/ class DirectoryEntry&);
 	void list<DirectoryEntry>();
-	class list<DirectoryEntry>::const_iterator begin();
-	class list<DirectoryEntry>::iterator begin();
-	class list<DirectoryEntry>::const_iterator end();
-	class list<DirectoryEntry>::iterator end();
-	class reverse_bidirectional_iterator<list<DirectoryEntry>::const_iterator,DirectoryEntry,DirectoryEntry const &,int> rbegin();
-	class reverse_bidirectional_iterator<list<DirectoryEntry>::iterator,DirectoryEntry,DirectoryEntry &,int> rbegin();
-	class reverse_bidirectional_iterator<list<DirectoryEntry>::const_iterator,DirectoryEntry,DirectoryEntry const &,int> rend();
-	class reverse_bidirectional_iterator<list<DirectoryEntry>::iterator,DirectoryEntry,DirectoryEntry &,int> rend();
+	/*packed*/ class list<DirectoryEntry>::const_iterator begin();
+	/*packed*/ class list<DirectoryEntry>::iterator begin();
+	/*packed*/ class list<DirectoryEntry>::const_iterator end();
+	/*packed*/ class list<DirectoryEntry>::iterator end();
+	/*unpacked*/ class reverse_bidirectional_iterator<list<DirectoryEntry>::const_iterator,DirectoryEntry,DirectoryEntry const &,int> rbegin();
+	/*unpacked*/ class reverse_bidirectional_iterator<list<DirectoryEntry>::iterator,DirectoryEntry,DirectoryEntry &,int> rbegin();
+	/*unpacked*/ class reverse_bidirectional_iterator<list<DirectoryEntry>::const_iterator,DirectoryEntry,DirectoryEntry const &,int> rend();
+	/*unpacked*/ class reverse_bidirectional_iterator<list<DirectoryEntry>::iterator,DirectoryEntry,DirectoryEntry &,int> rend();
 	int32_t empty();
 	uint32_t size();
 	uint32_t max_size();
-	const class DirectoryEntry& front();
-	class DirectoryEntry& front();
-	const class DirectoryEntry& back();
-	class DirectoryEntry& back();
-	void swap(class list<DirectoryEntry>&);
-	void insert(class list<DirectoryEntry>::iterator, uint32_t, const class DirectoryEntry&);
-	void insert(class list<DirectoryEntry>::iterator, class list<DirectoryEntry>::const_iterator, class list<DirectoryEntry>::const_iterator);
-	void insert(class list<DirectoryEntry>::iterator, const class DirectoryEntry*, const class DirectoryEntry*);
-	class list<DirectoryEntry>::iterator insert(class list<DirectoryEntry>::iterator, const class DirectoryEntry&);
-	void push_front(const class DirectoryEntry&);
-	void push_back(const class DirectoryEntry&);
-	void erase(class list<DirectoryEntry>::iterator, class list<DirectoryEntry>::iterator);
-	void erase(class list<DirectoryEntry>::iterator);
+	const /*packed*/ class DirectoryEntry& front();
+	/*packed*/ class DirectoryEntry& front();
+	const /*packed*/ class DirectoryEntry& back();
+	/*packed*/ class DirectoryEntry& back();
+	void swap(/*packed*/ class list<DirectoryEntry>&);
+	void insert(/*packed*/ class list<DirectoryEntry>::iterator, uint32_t, const /*packed*/ class DirectoryEntry&);
+	void insert(/*packed*/ class list<DirectoryEntry>::iterator, /*packed*/ class list<DirectoryEntry>::const_iterator, /*packed*/ class list<DirectoryEntry>::const_iterator);
+	void insert(/*packed*/ class list<DirectoryEntry>::iterator, const /*packed*/ class DirectoryEntry*, const /*packed*/ class DirectoryEntry*);
+	/*packed*/ class list<DirectoryEntry>::iterator insert(/*packed*/ class list<DirectoryEntry>::iterator, const /*packed*/ class DirectoryEntry&);
+	void push_front(const /*packed*/ class DirectoryEntry&);
+	void push_back(const /*packed*/ class DirectoryEntry&);
+	void erase(/*packed*/ class list<DirectoryEntry>::iterator, /*packed*/ class list<DirectoryEntry>::iterator);
+	void erase(/*packed*/ class list<DirectoryEntry>::iterator);
 	void pop_front();
 	void pop_back();
 	void ~list<DirectoryEntry>();
-	class list<DirectoryEntry>& operator=(const class list<DirectoryEntry>&);
+	/*packed*/ class list<DirectoryEntry>& operator=(const /*packed*/ class list<DirectoryEntry>&);
 protected:
-	void transfer(class list<DirectoryEntry>::iterator, class list<DirectoryEntry>::iterator, class list<DirectoryEntry>::iterator);
+	void transfer(/*packed*/ class list<DirectoryEntry>::iterator, /*packed*/ class list<DirectoryEntry>::iterator, /*packed*/ class list<DirectoryEntry>::iterator);
 public:
-	void splice(class list<DirectoryEntry>::iterator, class list<DirectoryEntry>&, class list<DirectoryEntry>::iterator, class list<DirectoryEntry>::iterator);
-	void splice(class list<DirectoryEntry>::iterator, class list<DirectoryEntry>&, class list<DirectoryEntry>::iterator);
-	void splice(class list<DirectoryEntry>::iterator, class list<DirectoryEntry>&);
-	void remove(const class DirectoryEntry&);
+	void splice(/*packed*/ class list<DirectoryEntry>::iterator, /*packed*/ class list<DirectoryEntry>&, /*packed*/ class list<DirectoryEntry>::iterator, /*packed*/ class list<DirectoryEntry>::iterator);
+	void splice(/*packed*/ class list<DirectoryEntry>::iterator, /*packed*/ class list<DirectoryEntry>&, /*packed*/ class list<DirectoryEntry>::iterator);
+	void splice(/*packed*/ class list<DirectoryEntry>::iterator, /*packed*/ class list<DirectoryEntry>&);
+	void remove(const /*packed*/ class DirectoryEntry&);
 	void unique();
-	void merge(class list<DirectoryEntry>&);
+	void merge(/*packed*/ class list<DirectoryEntry>&);
 	void reverse();
 	void sort();
 };
 
-// Type: struct list<DirectoryEntry>::list_node (forward reference);
+// Type: /*packed*/ struct list<DirectoryEntry>::list_node (forward reference);
 struct list<DirectoryEntry>::list_node{ // packed(0x18 bytes) TI: 0x2392
 	void * __ptr32 next;
 	void * __ptr32 prev;
-	class DirectoryEntry data;
+	/*packed*/ class DirectoryEntry data;
 };
 
-// Type: class list<basic_string<char>>::iterator;
+// Type: /*packed*/ class list<basic_string<char>>::iterator;
 class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_string<char>,int>
 { // packed(0x4 bytes) TI: 0x1cd3
 protected:
-	struct list<basic_string<char>>::list_node *node;
+	/*packed*/ struct list<basic_string<char>>::list_node *node;
 public:
 	void iterator();
 protected:
-	void iterator(struct list<basic_string<char>>::list_node*);
+	void iterator(/*packed*/ struct list<basic_string<char>>::list_node*);
 public:
-	int32_t operator==(const class list<basic_string<char>>::iterator&);
-	class basic_string<char>& operator*();
-	class list<basic_string<char>>::iterator operator++(int32_t);
-	class list<basic_string<char>>::iterator& operator++();
-	class list<basic_string<char>>::iterator operator--(int32_t);
-	class list<basic_string<char>>::iterator& operator--();
+	int32_t operator==(const /*packed*/ class list<basic_string<char>>::iterator&);
+	/*packed*/ class basic_string<char>& operator*();
+	/*packed*/ class list<basic_string<char>>::iterator operator++(int32_t);
+	/*packed*/ class list<basic_string<char>>::iterator& operator++();
+	/*packed*/ class list<basic_string<char>>::iterator operator--(int32_t);
+	/*packed*/ class list<basic_string<char>>::iterator& operator--();
 };
 
-// Type: struct list<basic_string<char>>::list_node (forward reference);
+// Type: /*packed*/ struct list<basic_string<char>>::list_node (forward reference);
 struct list<basic_string<char>>::list_node{ // packed(0x10 bytes) TI: 0x1cd7
 	void * __ptr32 next;
 	void * __ptr32 prev;
-	class basic_string<char> data;
+	/*packed*/ class basic_string<char> data;
 };
 
-// Type: class list<basic_string<char>>::iterator (forward reference);
+// Type: /*packed*/ class list<basic_string<char>>::iterator (forward reference);
 class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_string<char>,int>
 { // packed(0x4 bytes) TI: 0x1cd3
 protected:
-	struct list<basic_string<char>>::list_node *node;
+	/*packed*/ struct list<basic_string<char>>::list_node *node;
 public:
 	void iterator();
 protected:
-	void iterator(struct list<basic_string<char>>::list_node*);
+	void iterator(/*packed*/ struct list<basic_string<char>>::list_node*);
 public:
-	int32_t operator==(const class list<basic_string<char>>::iterator&);
-	class basic_string<char>& operator*();
-	class list<basic_string<char>>::iterator operator++(int32_t);
-	class list<basic_string<char>>::iterator& operator++();
-	class list<basic_string<char>>::iterator operator--(int32_t);
-	class list<basic_string<char>>::iterator& operator--();
+	int32_t operator==(const /*packed*/ class list<basic_string<char>>::iterator&);
+	/*packed*/ class basic_string<char>& operator*();
+	/*packed*/ class list<basic_string<char>>::iterator operator++(int32_t);
+	/*packed*/ class list<basic_string<char>>::iterator& operator++();
+	/*packed*/ class list<basic_string<char>>::iterator operator--(int32_t);
+	/*packed*/ class list<basic_string<char>>::iterator& operator--();
 };
 
-// Type: struct bidirectional_iterator<DirectoryEntry,int>;
+// Type: /*packed*/ struct bidirectional_iterator<DirectoryEntry,int>;
 struct bidirectional_iterator<DirectoryEntry,int>{ // packed(0x1 bytes) TI: 0x2325
 };
 
-// Type: struct bidirectional_iterator<basic_string<char>,int>;
+// Type: /*packed*/ struct bidirectional_iterator<basic_string<char>,int>;
 struct bidirectional_iterator<basic_string<char>,int>{ // packed(0x1 bytes) TI: 0x1847
 };
 
@@ -667,7 +667,7 @@ _T69:
 }
 
 // FUNCTION: COPTER_D 0x00481bae
-void DirectoryEntry::DirectoryEntry(class Directory *directoryNewParent, class basic_string<char>& sNewName, long lNewType) {
+void DirectoryEntry::DirectoryEntry(/*unpacked*/ class Directory *directoryNewParent, /*packed*/ class basic_string<char>& sNewName, long lNewType) {
 
 	__asm        mov    eax, directoryNewParent;
 	__asm        mov    ecx, this;
@@ -822,7 +822,7 @@ _T1b5:
 }
 
 // FUNCTION: COPTER_D 0x00481d8a
-int32_t DirectoryEntry::GetEntryExtension(class basic_string<char>& sEntryExtension) {
+int32_t DirectoryEntry::GetEntryExtension(/*packed*/ class basic_string<char>& sEntryExtension) {
 	uint32_t nPosition;
 
 
@@ -1343,7 +1343,7 @@ _T5eb:
 }
 
 // FUNCTION: COPTER_D 0x0048237c
-int32_t DirectoryEntry::GetEntryMinusExtension(class basic_string<char>& sEntryMinusExtension) {
+int32_t DirectoryEntry::GetEntryMinusExtension(/*packed*/ class basic_string<char>& sEntryMinusExtension) {
 	uint32_t nPosition;
 
 
@@ -1752,7 +1752,7 @@ _T4b0:
 }
 
 // FUNCTION: COPTER_D 0x00482833
-void DirectoryEntry::GetFullPath(class basic_string<char>& sFullPath) {
+void DirectoryEntry::GetFullPath(/*packed*/ class basic_string<char>& sFullPath) {
 // LINE 101:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax], 0;
@@ -2649,7 +2649,7 @@ _T4de:
 }
 
 // FUNCTION: COPTER_D 0x004832a3
- Directory::Directory(class basic_string<char>& sNewDirectoryPath, int32_t bReadNow, int32_t bNewAllowParentDirectoryAsEntry, int32_t bNewAllowCurrentDirectoryAsEntry) {
+ Directory::Directory(/*packed*/ class basic_string<char>& sNewDirectoryPath, int32_t bReadNow, int32_t bNewAllowParentDirectoryAsEntry, int32_t bNewAllowCurrentDirectoryAsEntry) {
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
@@ -3074,12 +3074,12 @@ int  Directory::IsDirectoryRoot() {
 // FUNCTION: COPTER_D 0x004837c7
 int  Directory::ReadDirectoryEntries() {
 	int32_t bNextFileFound;
-	class basic_string<char> sPathWithFilter;
+	/*packed*/ class basic_string<char> sPathWithFilter;
 	int32_t bParentDirectoryEnumerated;
 	int32_t bCurrentDirectoryEnumerated;
 	void * __ptr32 hFind;
-	class DirectoryEntry directoryEntryCurrent;
-	struct _WIN32_FIND_DATAA findData;
+	/*packed*/ class DirectoryEntry directoryEntryCurrent;
+	/*packed*/ struct _WIN32_FIND_DATAA findData;
 
 // LINE 222:
 	__asm        push   0xFFFFFFFF;
@@ -3936,7 +3936,7 @@ _Td23:
 	__asm        je     _Ted6;
 // LINE 306:
 // Block start:
-	class basic_string<char> sParentDirectory;
+	/*packed*/ class basic_string<char> sParentDirectory;
 _Td35:
 	None = SZ_PARENT_DIR_NAME;
 // LINE 307:
@@ -4072,7 +4072,7 @@ _Tf27:
 	__asm        je     _T1118;
 // LINE 317:
 // Block start:
-	class basic_string<char> sCurrentDirectory;
+	/*packed*/ class basic_string<char> sCurrentDirectory;
 _Tf39:
 	None = SZ_CURRENT_DIR_NAME;
 // LINE 318:
@@ -4217,14 +4217,14 @@ _T1181:
 }
 
 // FUNCTION: COPTER_D 0x0048494d
-int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_string<char>>& sDirectoryEntries, long lFilter) {
+int  Directory::ReadDirectorySpecificEntriesIntoStringList(/*packed*/ class list<basic_string<char>>& sDirectoryEntries, long lFilter) {
 	int32_t bNextFileFound;
-	class basic_string<char> sPathWithFilter;
+	/*packed*/ class basic_string<char> sPathWithFilter;
 	int32_t bParentDirectoryEnumerated;
 	int32_t bCurrentDirectoryEnumerated;
 	void * __ptr32 hFind;
-	class DirectoryEntry directoryEntryCurrent;
-	struct _WIN32_FIND_DATAA findData;
+	/*packed*/ class DirectoryEntry directoryEntryCurrent;
+	/*packed*/ struct _WIN32_FIND_DATAA findData;
 
 // LINE 349:
 	__asm        push   0xFFFFFFFF;
@@ -5126,10 +5126,10 @@ _Tde1:
 }
 
 // FUNCTION: COPTER_D 0x00485735
-int  Directory::DoesAnyEntryExistThatMatchesPattern(const class basic_string<char>& sPathPattern) {
+int  Directory::DoesAnyEntryExistThatMatchesPattern(const /*packed*/ class basic_string<char>& sPathPattern) {
 	void * __ptr32 hFind;
-	class DirectoryEntry directoryEntryCurrent;
-	struct _WIN32_FIND_DATAA findData;
+	/*packed*/ class DirectoryEntry directoryEntryCurrent;
+	/*packed*/ struct _WIN32_FIND_DATAA findData;
 
 // LINE 435:
 	__asm        lea    ecx, directoryEntryCurrent.directoryParent;
@@ -5310,8 +5310,8 @@ _T278:
 }
 
 // FUNCTION: COPTER_D 0x004859c2
-int  Directory::DoesDirectoryListContainEntry(const class basic_string<char>& sEntry) {
-	class list<DirectoryEntry>::iterator tempDirectoryEntryListIterator;
+int  Directory::DoesDirectoryListContainEntry(const /*packed*/ class basic_string<char>& sEntry) {
+	/*packed*/ class list<DirectoryEntry>::iterator tempDirectoryEntryListIterator;
 
 // LINE 448:
 	__asm        mov    eax, this;
@@ -5450,7 +5450,7 @@ _T16d:
 }
 
 // FUNCTION: COPTER_D 0x00485b36
-int  Directory::ChangeDirectory(class basic_string<char>& sNewDirectory, int32_t bReadNow) {
+int  Directory::ChangeDirectory(/*packed*/ class basic_string<char>& sNewDirectory, int32_t bReadNow) {
 // LINE 474:
 	__asm        mov    eax, this;
 	__asm        add    eax, 8;
@@ -5620,8 +5620,8 @@ _T1ed:
 }
 
 // FUNCTION: COPTER_D 0x00485d34
-int  Directory::CreateNewEntry(class basic_string<char>& sName, long lType) {
-	class DirectoryEntry tempDirectoryEntry;
+int  Directory::CreateNewEntry(/*packed*/ class basic_string<char>& sName, long lType) {
+	/*packed*/ class DirectoryEntry tempDirectoryEntry;
 
 // LINE 487:
 	__asm        mov    eax, lType;
@@ -5704,7 +5704,7 @@ _Tda:
 
 // FUNCTION: COPTER_D 0x00485e22
 class DirectoryEntry *  Directory::GetNthEntry(int32_t nIndex) {
-	class list<DirectoryEntry>::iterator iterator;
+	/*packed*/ class list<DirectoryEntry>::iterator iterator;
 	int32_t i;
 	int32_t iEnd;
 
@@ -5764,7 +5764,7 @@ _T95:
 }
 
 // FUNCTION: COPTER_D 0x00485ebe
-void  Directory::SetNewDirectoryEntryFilter(class basic_string<char>& sNewDirectoryEntryFilter, int32_t bRereadEntries) {
+void  Directory::SetNewDirectoryEntryFilter(/*packed*/ class basic_string<char>& sNewDirectoryEntryFilter, int32_t bRereadEntries) {
 // LINE 512:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x10;
@@ -6545,7 +6545,7 @@ _T4b1:
 }
 
 // FUNCTION: COPTER_D 0x004867d2
-void  Directory::SplitDirectoryPath(const class basic_string<char>& sPath, class basic_string<char>& sFirstPart, class basic_string<char>& sLastPart) {
+void  Directory::SplitDirectoryPath(const /*packed*/ class basic_string<char>& sPath, /*packed*/ class basic_string<char>& sFirstPart, /*packed*/ class basic_string<char>& sLastPart) {
 	uint32_t nDirectoryPathLength;
 	uint32_t nPosition;
 

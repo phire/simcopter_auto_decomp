@@ -12,25 +12,25 @@
 
 // Type: int32_t;
 
-// Type: struct tagMSG;
+// Type: /*packed*/ struct tagMSG;
 struct tagMSG{ // packed(0x1c bytes) TI: 0x2bd6
 	void * __ptr32 hwnd;
 	uint32_t message;
 	uint32_t wParam;
 	long lParam;
 	unsigned long time;
-	struct tagPOINT pt;
+	/*packed*/ struct tagPOINT pt;
 };
 
-// Type: union _LARGE_INTEGER;
+// Type: /*packed*/ union _LARGE_INTEGER;
 
 
 
 // Contribution: 1:0001e870-0001eac1 Module: 73, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0041f870
 int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * CommandLine, int32_t __formal) {
-	struct tagMSG Message;
-	union _LARGE_INTEGER TimerFrequency;
+	/*packed*/ struct tagMSG Message;
+	/*packed*/ union _LARGE_INTEGER TimerFrequency;
 
 // LINE 33:
 	_ghWindowsInstance = hInstance;

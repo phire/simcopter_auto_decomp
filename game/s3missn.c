@@ -6,13 +6,13 @@
 
 // Type: int32_t;
 
-// Type: struct _dPoint2d (forward reference);
+// Type: /*packed*/ struct _dPoint2d (forward reference);
 struct _dPoint2d{ // packed(0x10 bytes) TI: 0x2766
 	double x;
 	double z;
 };
 
-// Type: struct _MISSION_STATICS;
+// Type: /*packed*/ struct _MISSION_STATICS;
 struct _MISSION_STATICS{ // packed(0x1910 bytes) TI: 0x31da
 	long crime_ctr;
 	long fire_ctr;
@@ -27,11 +27,11 @@ struct _MISSION_STATICS{ // packed(0x1910 bytes) TI: 0x31da
 	long num_active_missions;
 	long num_delayed_missions;
 	long key_ctr;
-	struct MISSION_DATA *curr_mission;
-	struct MISSION_DATA missions[30];
+	/*packed*/ struct MISSION_DATA *curr_mission;
+	/*packed*/ struct MISSION_DATA missions[30];
 };
 
-// Type: struct tagLogString;
+// Type: /*packed*/ struct tagLogString;
 struct tagLogString{ // packed(0x14 bytes) TI: 0x31dc
 	unsigned long nType;
 	unsigned long nTime;
@@ -42,7 +42,7 @@ struct tagLogString{ // packed(0x14 bytes) TI: 0x31dc
 
 // Type: void;
 
-// Type: struct tagCitySettings (forward reference);
+// Type: /*packed*/ struct tagCitySettings (forward reference);
 struct tagCitySettings{ // packed(0x24 bytes) TI: 0x26eb
 	long lDifficulty;
 	long lMissionFrequencyFire;
@@ -57,7 +57,7 @@ struct tagCitySettings{ // packed(0x24 bytes) TI: 0x26eb
 
 // Type: float;
 
-// Type: struct tagCitySettings;
+// Type: /*packed*/ struct tagCitySettings;
 struct tagCitySettings{ // packed(0x24 bytes) TI: 0x26eb
 	long lDifficulty;
 	long lMissionFrequencyFire;
@@ -70,58 +70,58 @@ struct tagCitySettings{ // packed(0x24 bytes) TI: 0x26eb
 	long lDaytime;
 };
 
-// Type: struct MISSION_DATA (forward reference);
+// Type: /*packed*/ struct MISSION_DATA (forward reference);
 struct MISSION_DATA{ // packed(0xd4 bytes) TI: 0x31c4
 	char mtext[32];
 	long type_ctr;
 	long key;
-	struct Point2d maploc;
-	struct Point2d destmaploc;
-	struct Point2d pickuploc;
+	/*packed*/ struct Point2d maploc;
+	/*packed*/ struct Point2d destmaploc;
+	/*packed*/ struct Point2d pickuploc;
 	int32_t timer;
 	long money_bonus;
 	long points_bonus;
 	long flags;
 	long type;
 	long state;
-	struct __unnamed mdata;
+	/*packed*/ struct __unnamed mdata;
 };
 
-// Type: struct _CELL_FIRE_DATA (forward reference);
+// Type: /*packed*/ struct _CELL_FIRE_DATA (forward reference);
 struct _CELL_FIRE_DATA{ // packed(0x8 bytes) TI: 0x303d
-	struct _CELL_INFO *cptr;
+	/*packed*/ struct _CELL_INFO *cptr;
 	long fire_count;
 };
 
-// Type: struct _DYOBJ_INST (forward reference);
+// Type: /*packed*/ struct _DYOBJ_INST (forward reference);
 struct _DYOBJ_INST{ // packed(0x64 bytes) TI: 0x1deb
-	struct _DYOBJ_INST *next;
-	struct _DYOBJ_INST *vnext;
+	/*packed*/ struct _DYOBJ_INST *next;
+	/*packed*/ struct _DYOBJ_INST *vnext;
 	void * __ptr32 mesh;
 	short flags;
 	short user1;
 	long radius;
 	long height;
-	struct Point3d loc;
+	/*packed*/ struct Point3d loc;
 	int32_t matrix[4][4];
 };
 
-// Type: struct Point2d (forward reference);
+// Type: /*packed*/ struct Point2d (forward reference);
 struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
 	int32_t x;
 	int32_t y;
 };
 
-// Type: struct _MISSION_PARMS (forward reference);
+// Type: /*packed*/ struct _MISSION_PARMS (forward reference);
 struct _MISSION_PARMS{ // packed(0x18 bytes) TI: 0x307d
 	long op;
 	long id;
-	struct Point2d maploc;
+	/*packed*/ struct Point2d maploc;
 	long i2num;
 	long flags;
 };
 
-// Type: struct _CELL_INFO (forward reference);
+// Type: /*packed*/ struct _CELL_INFO (forward reference);
 struct _CELL_INFO{ // packed(0x18 bytes) TI: 0x1b03
 	short flags;
 	short x;
@@ -129,9 +129,9 @@ struct _CELL_INFO{ // packed(0x18 bytes) TI: 0x1b03
 	short z;
 	short size;
 	short ctr;
-	struct _STOBJ_INST *stptr;
-	struct _DYOBJ_INST *dyptr;
-	struct _DYOBJ_INST *vwptr;
+	/*packed*/ struct _STOBJ_INST *stptr;
+	/*packed*/ struct _DYOBJ_INST *dyptr;
+	/*packed*/ struct _DYOBJ_INST *vwptr;
 };
 
 // Type: char *;
@@ -201,7 +201,7 @@ _T4a:
 }
 
 // FUNCTION: COPTER_D 0x004fa175
-void ConvertCitySettingsToSteppedPercentages(struct tagCitySettings *citySettingsIn, struct tagCitySettings *citySettingsOut) {
+void ConvertCitySettingsToSteppedPercentages(/*packed*/ struct tagCitySettings *citySettingsIn, /*packed*/ struct tagCitySettings *citySettingsOut) {
 	float fSumOfAllValues;
 	float fMultiplier;
 
@@ -362,8 +362,8 @@ _T1c1:
 // FUNCTION: COPTER_D 0x004fa33b
 void S3MissionGenerator() {
 	long pct;
-	struct tagCitySettings *currentCitySettings;
-	struct tagCitySettings currentCitySettingPercentages;
+	/*packed*/ struct tagCitySettings *currentCitySettings;
+	/*packed*/ struct tagCitySettings currentCitySettingPercentages;
 	long adjustor;
 
 // LINE 243:
@@ -739,7 +739,7 @@ _T3dd:
 // FUNCTION: COPTER_D 0x004fa71d
 void S3MissionDriver() {
 	int32_t personriot_done;
-	struct MISSION_DATA *md;
+	/*packed*/ struct MISSION_DATA *md;
 	int32_t persontrans_done;
 	int32_t personfire_done;
 	int32_t speeder_done;
@@ -1169,12 +1169,12 @@ _T54b:
 
 // FUNCTION: COPTER_D 0x004fac6d
 long S3MissionStart(long x, long y, long type) {
-	struct MISSION_DATA *md;
+	/*packed*/ struct MISSION_DATA *md;
 	int32_t numtostart;
 	int32_t startthismission;
 	long i;
 	int32_t count;
-	struct _CELL_FIRE_DATA *cfd;
+	/*packed*/ struct _CELL_FIRE_DATA *cfd;
 
 // LINE 659:
 	startthismission = 0x0;
@@ -1510,7 +1510,7 @@ _T3d1:
 	__asm        jmp    _Te60;
 // LINE 779:
 // Block start:
-	struct _DYOBJ_INST *boat;
+	/*packed*/ struct _DYOBJ_INST *boat;
 _T3d6:
 	__asm        push   0x12C0000;
 	__asm        mov    eax, md;
@@ -2463,8 +2463,8 @@ _Tf04:
 }
 
 // FUNCTION: COPTER_D 0x004fbb76
-struct Point2d* S3MissionGetMapLoc(long key) {
-	struct MISSION_DATA *md;
+/*packed*/ struct Point2d* S3MissionGetMapLoc(long key) {
+	/*packed*/ struct MISSION_DATA *md;
 	long mission_id;
 
 // LINE 1075:
@@ -2498,8 +2498,8 @@ _T4f:
 }
 
 // FUNCTION: COPTER_D 0x004fbbca
-struct Point2d* S3MissionGetDestMapLoc(long key) {
-	struct MISSION_DATA *md;
+/*packed*/ struct Point2d* S3MissionGetDestMapLoc(long key) {
+	/*packed*/ struct MISSION_DATA *md;
 	long mission_id;
 
 // LINE 1102:
@@ -2541,8 +2541,8 @@ _T63:
 }
 
 // FUNCTION: COPTER_D 0x004fbc32
-struct Point2d* S3MissionGetPickupLoc(long key) {
-	struct MISSION_DATA *md;
+/*packed*/ struct Point2d* S3MissionGetPickupLoc(long key) {
+	/*packed*/ struct MISSION_DATA *md;
 	long mission_id;
 
 // LINE 1133:
@@ -2584,7 +2584,7 @@ _T63:
 }
 
 // FUNCTION: COPTER_D 0x004fbc9a
-struct Point2d* S3MissionGetCurrMapLoc() {
+/*packed*/ struct Point2d* S3MissionGetCurrMapLoc() {
 // LINE 1162:
 	__asm        cmp    S_mstatics.curr_mission, 0;
 	__asm        jne    _T1a;
@@ -2601,7 +2601,7 @@ _T27:
 }
 
 // FUNCTION: COPTER_D 0x004fbcc6
-struct Point2d* S3MissionGetCurrDestMapLoc() {
+/*packed*/ struct Point2d* S3MissionGetCurrDestMapLoc() {
 // LINE 1179:
 	__asm        cmp    S_mstatics.curr_mission, 0;
 	__asm        jne    _T1a;
@@ -2626,7 +2626,7 @@ _T3d:
 }
 
 // FUNCTION: COPTER_D 0x004fbd08
-struct Point2d* S3MissionGetCurrPickupLoc() {
+/*packed*/ struct Point2d* S3MissionGetCurrPickupLoc() {
 // LINE 1199:
 	__asm        cmp    S_mstatics.curr_mission, 0;
 	__asm        jne    _T1a;
@@ -2651,8 +2651,8 @@ _T3d:
 }
 
 // FUNCTION: COPTER_D 0x004fbd4a
-void S3MissionUpdate(struct _MISSION_PARMS *mp) {
-	struct MISSION_DATA *md;
+void S3MissionUpdate(/*packed*/ struct _MISSION_PARMS *mp) {
+	/*packed*/ struct MISSION_DATA *md;
 	long mission_id;
 
 // LINE 1220:
@@ -3055,7 +3055,7 @@ _T4c9:
 
 // FUNCTION: COPTER_D 0x004fc218
 void S3MissionEnd(long mission_id) {
-	struct MISSION_DATA *md;
+	/*packed*/ struct MISSION_DATA *md;
 	long i;
 
 // LINE 1400:
@@ -3123,7 +3123,7 @@ _Tbe:
 }
 
 // FUNCTION: COPTER_D 0x004fc2db
-struct MISSION_DATA* S3MissionGetByID(long key) {
+/*packed*/ struct MISSION_DATA* S3MissionGetByID(long key) {
 	long mission_id;
 
 // LINE 1436:
@@ -3197,7 +3197,7 @@ _T75:
 }
 
 // FUNCTION: COPTER_D 0x004fc39d
-struct MISSION_DATA* S3MissionGetCurr() {
+/*packed*/ struct MISSION_DATA* S3MissionGetCurr() {
 // LINE 1468:
 	__asm        mov    eax, S_mstatics.curr_mission;
 	__asm        jmp    near ptr 0x004FC3AD;
@@ -3207,7 +3207,7 @@ struct MISSION_DATA* S3MissionGetCurr() {
 // FUNCTION: COPTER_D 0x004fc3b2
 void S3MissionGenerate(long type) {
 	long tile;
-	struct _CELL_INFO *cptr;
+	/*packed*/ struct _CELL_INFO *cptr;
 	long y;
 	long i;
 	long x;
@@ -3694,7 +3694,7 @@ _T4e4:
 
 // FUNCTION: COPTER_D 0x004fc89b
 void S3MissionSetCurrNext() {
-	struct MISSION_DATA *md;
+	/*packed*/ struct MISSION_DATA *md;
 	long i;
 
 // LINE 1601:
@@ -3791,7 +3791,7 @@ _T10c:
 
 // FUNCTION: COPTER_D 0x004fc9ac
 void S3MissionSetCurrPrev() {
-	struct MISSION_DATA *md;
+	/*packed*/ struct MISSION_DATA *md;
 	long i;
 
 // LINE 1636:
@@ -3888,7 +3888,7 @@ _T10c:
 
 // FUNCTION: COPTER_D 0x004fcabd
 int32_t S3MissionIsType(long key, long mission_type) {
-	struct MISSION_DATA *md;
+	/*packed*/ struct MISSION_DATA *md;
 	long mission_id;
 
 // LINE 1674:
@@ -3938,7 +3938,7 @@ _T78:
 }
 
 // FUNCTION: COPTER_D 0x004fcb3a
-void S3MissionDebugString(struct MISSION_DATA *md, char * p) {
+void S3MissionDebugString(/*packed*/ struct MISSION_DATA *md, char * p) {
 // LINE 1803:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x4C], 1;
@@ -4010,7 +4010,7 @@ _Tab:
 
 // FUNCTION: COPTER_D 0x004fcbea
 void S3MissionCancel(long mission_id) {
-	struct MISSION_DATA *md;
+	/*packed*/ struct MISSION_DATA *md;
 
 // LINE 1844:
 	__asm        mov    eax, mission_id;
@@ -4098,7 +4098,7 @@ _Te1:
 
 // FUNCTION: COPTER_D 0x004fccd0
 long S3MissionStartDirect(long type) {
-	struct MISSION_DATA *md;
+	/*packed*/ struct MISSION_DATA *md;
 	long i;
 
 // LINE 1898:
@@ -4432,8 +4432,8 @@ _T411:
 }
 
 // FUNCTION: COPTER_D 0x004fd0e6
-void S3MissionScoreUpdate(struct _MISSION_PARMS *mp, long * mission_id) {
-	struct MISSION_DATA *md;
+void S3MissionScoreUpdate(/*packed*/ struct _MISSION_PARMS *mp, long * mission_id) {
+	/*packed*/ struct MISSION_DATA *md;
 	int32_t points;
 	char * mname;
 	int32_t key;
@@ -4953,7 +4953,7 @@ _T66a:
 }
 
 // FUNCTION: COPTER_D 0x004fd755
-void S3MissionScoreEnd(struct MISSION_DATA *md) {
+void S3MissionScoreEnd(/*packed*/ struct MISSION_DATA *md) {
 	long total_money;
 	int32_t timetmp;
 	long total_pts;
@@ -5376,7 +5376,7 @@ void S3MissionTweakInit() {
 
 // FUNCTION: COPTER_D 0x004fdc2d
 long S3MissionGetIDByKey(long key) {
-	struct MISSION_DATA *md;
+	/*packed*/ struct MISSION_DATA *md;
 	long i;
 
 // LINE 2440:
@@ -5430,7 +5430,7 @@ _T89:
 }
 
 // FUNCTION: COPTER_D 0x004fdcbb
-struct MISSION_DATA* S3MissionGetDataByIndex(long index) {
+/*packed*/ struct MISSION_DATA* S3MissionGetDataByIndex(long index) {
 // LINE 2468:
 	__asm        cmp    index, 0;
 	__asm        jl     _T1a;
@@ -5456,7 +5456,7 @@ _T3b:
 
 // FUNCTION: COPTER_D 0x004fdcfb
 int32_t S3MissionMIFFLoad(void * __ptr32 miffReader) {
-	struct MISSION_DATA *md;
+	/*packed*/ struct MISSION_DATA *md;
 	long i;
 	long ret;
 
@@ -6438,13 +6438,13 @@ static const int32_t TypeToIndex2[16] = {-1, 0, 1, -1, 2, -1, -1, -1, 3, -1, -1,
 static const int32_t TILUT[4][4] = {{0, 1, 3, 2}, {2, 0, 1, 3}, {3, 2, 0, 1}, {1, 3, 2, 0}};
 
 // GLOBAL: COPTER_D 0x005929e8
-static const struct _dPoint2d OT[4] = { 0 /* todo */ };
+static const /*packed*/ struct _dPoint2d OT[4] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00592a28
-static const struct _dPoint2d RRT[4] = { 0 /* todo */ };
+static const /*packed*/ struct _dPoint2d RRT[4] = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x00592a68
-static const struct _dPoint2d LRT[4] = { 0 /* todo */ };
+static const /*packed*/ struct _dPoint2d LRT[4] = { 0 /* todo */ };
 
 
 
@@ -6570,7 +6570,7 @@ long S_money_mission_ufo = 1500;
 long S_pts_mission_ufo = 900;
 
 // GLOBAL: COPTER_D 0x005b4eb8
-struct tagLogString S_log = { 0 /* todo */ };
+/*packed*/ struct tagLogString S_log = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4ecc
 long S_pts_flame = 20;
@@ -6621,7 +6621,7 @@ long S_msg_general[6] = {78, 80, 81, 84, 88, 96};
 
 // Contribution: 3:000702b8-00071bc7 Module: 173, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x006072b8
-static struct _MISSION_STATICS S_mstatics;
+static /*packed*/ struct _MISSION_STATICS S_mstatics;
 
 
 
@@ -6630,17 +6630,17 @@ static struct _MISSION_STATICS S_mstatics;
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3explod.c
 // GLOBAL: COPTER_D 0x0066be70
-struct VRBmpHdr *G_fireseq[6]; // Contrib missing
+/*packed*/ struct VRBmpHdr *G_fireseq[6]; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3explod.c
 // GLOBAL: COPTER_D 0x006666d0
-struct VRBmpHdr *G_smokeseq[7]; // Contrib missing
+/*packed*/ struct VRBmpHdr *G_smokeseq[7]; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3map.c
 // GLOBAL: COPTER_D 0x006bed40
-struct _MAP_CARINFO S_carinfo[20]; // Contrib missing
+/*packed*/ struct _MAP_CARINFO S_carinfo[20]; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006bf060
 char logmsg[256]; // Contrib missing

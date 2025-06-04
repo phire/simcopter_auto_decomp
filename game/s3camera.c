@@ -4,7 +4,7 @@
 
 // Type: long;
 
-// Type: struct Point3d;
+// Type: /*packed*/ struct Point3d;
 struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 	int32_t x;
 	int32_t y;
@@ -15,23 +15,23 @@ struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 
 // Type: int32_t;
 
-// Type: struct Point3d (forward reference);
+// Type: /*packed*/ struct Point3d (forward reference);
 struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 	int32_t x;
 	int32_t y;
 	int32_t z;
 };
 
-// Type: struct _DYOBJ_INST (forward reference);
+// Type: /*packed*/ struct _DYOBJ_INST (forward reference);
 struct _DYOBJ_INST{ // packed(0x64 bytes) TI: 0x1deb
-	struct _DYOBJ_INST *next;
-	struct _DYOBJ_INST *vnext;
+	/*packed*/ struct _DYOBJ_INST *next;
+	/*packed*/ struct _DYOBJ_INST *vnext;
 	void * __ptr32 mesh;
 	short flags;
 	short user1;
 	long radius;
 	long height;
-	struct Point3d loc;
+	/*packed*/ struct Point3d loc;
 	int32_t matrix[4][4];
 };
 
@@ -39,14 +39,14 @@ struct _DYOBJ_INST{ // packed(0x64 bytes) TI: 0x1deb
 
 // Type: int32_t *;
 
-// Type: struct _CHASE_INFO (forward reference);
+// Type: /*packed*/ struct _CHASE_INFO (forward reference);
 struct _CHASE_INFO{ // packed(0xc bytes) TI: 0x31b0
 	int32_t dist;
 	int32_t height;
 	int32_t focus;
 };
 
-// Type: struct _CELL_INFO (forward reference);
+// Type: /*packed*/ struct _CELL_INFO (forward reference);
 struct _CELL_INFO{ // packed(0x18 bytes) TI: 0x1b03
 	short flags;
 	short x;
@@ -54,14 +54,14 @@ struct _CELL_INFO{ // packed(0x18 bytes) TI: 0x1b03
 	short z;
 	short size;
 	short ctr;
-	struct _STOBJ_INST *stptr;
-	struct _DYOBJ_INST *dyptr;
-	struct _DYOBJ_INST *vwptr;
+	/*packed*/ struct _STOBJ_INST *stptr;
+	/*packed*/ struct _DYOBJ_INST *dyptr;
+	/*packed*/ struct _DYOBJ_INST *vwptr;
 };
 
-// Type: struct _STOBJ_INST (forward reference);
+// Type: /*packed*/ struct _STOBJ_INST (forward reference);
 struct _STOBJ_INST{ // packed(0x10 bytes) TI: 0x193f
-	struct _STOBJ_INST *next;
+	/*packed*/ struct _STOBJ_INST *next;
 	void * __ptr32 mesh;
 	long user1;
 	long user2;
@@ -71,14 +71,14 @@ struct _STOBJ_INST{ // packed(0x10 bytes) TI: 0x193f
 
 // Contribution: 1:000f7af0-000f8bb0 Module: 175, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004f8af0
-void S3CameraMove(struct Point3d *P) {
-	struct Point3d CameraDelta;
-	struct _DYOBJ_INST *u_dyobj;
+void S3CameraMove(/*packed*/ struct Point3d *P) {
+	/*packed*/ struct Point3d CameraDelta;
+	/*packed*/ struct _DYOBJ_INST *u_dyobj;
 	int32_t alt;
 	int32_t altdiff;
 	int32_t Velocity;
-	struct Point3d CameraVector;
-	struct Point3d viewerPos;
+	/*packed*/ struct Point3d CameraVector;
+	/*packed*/ struct Point3d viewerPos;
 	int32_t mat[4][4];
 
 // LINE 101:
@@ -452,7 +452,7 @@ _T474:
 }
 
 // FUNCTION: COPTER_D 0x004f8f69
-void NormalizeGridPoint(struct Point3d *P) {
+void NormalizeGridPoint(/*packed*/ struct Point3d *P) {
 // LINE 284:
 	__asm        mov    eax, P;
 	__asm        cmp    dword ptr [eax], 0xD0000000;
@@ -692,7 +692,7 @@ _T259:
 }
 
 // FUNCTION: COPTER_D 0x004f9240
-void GetIdealCameraPos(struct Point3d *P) {
+void GetIdealCameraPos(/*packed*/ struct Point3d *P) {
 // LINE 404:
 	__asm        mov    eax, 0x6BF1A0;
 	__asm        mov    ecx, P;
@@ -706,14 +706,14 @@ void GetIdealCameraPos(struct Point3d *P) {
 }
 
 // FUNCTION: COPTER_D 0x004f9263
-void CalcCameraAngles(struct Point3d *Vector) {
+void CalcCameraAngles(/*packed*/ struct Point3d *Vector) {
 	int32_t sinePitch;
 	int32_t cosinePitch;
 	int32_t sineYaw;
 	int32_t sineRoll;
 	int32_t cosineRoll;
 	int32_t LengthXYZ;
-	struct Point3d WorkVector;
+	/*packed*/ struct Point3d WorkVector;
 	int32_t cosineYaw;
 	int32_t LengthXZ;
 
@@ -1182,14 +1182,14 @@ void S3AngleRotMat(int32_t *matrix[4], int32_t Yaw, int32_t Pitch, int32_t Roll)
 void S3CameraRotate() {
 	int32_t alt;
 	int32_t temp;
-	struct Point3d cameraDelta;
+	/*packed*/ struct Point3d cameraDelta;
 
 // LINE 606:
 	__asm        cmp    G_camera_mode, 3;
 	__asm        jne    _T5c;
 // LINE 608:
 // Block start:
-	struct _DYOBJ_INST *dyobj;
+	/*packed*/ struct _DYOBJ_INST *dyobj;
 	__asm        call   GetAvatarDYOBJ;
 	__asm        mov    dyobj, eax;
 // LINE 613:
@@ -1430,7 +1430,7 @@ _T23:
 }
 
 // FUNCTION: COPTER_D 0x004f9a76
-struct _CHASE_INFO* S3CameraGetChaseInfo() {
+/*packed*/ struct _CHASE_INFO* S3CameraGetChaseInfo() {
 // LINE 795:
 	__asm        mov    eax, 0x6BF160;
 	__asm        jmp    near ptr 0x004F9A86;
@@ -1438,7 +1438,7 @@ struct _CHASE_INFO* S3CameraGetChaseInfo() {
 }
 
 // FUNCTION: COPTER_D 0x004f9a8b
-void S3CameraSetChaseInfo(struct _CHASE_INFO *cinfo) {
+void S3CameraSetChaseInfo(/*packed*/ struct _CHASE_INFO *cinfo) {
 // LINE 806:
 	__asm        mov    edi, 0x6BF160;
 	__asm        mov    esi, cinfo;
@@ -1448,14 +1448,14 @@ void S3CameraSetChaseInfo(struct _CHASE_INFO *cinfo) {
 }
 
 // FUNCTION: COPTER_D 0x004f9aa5
-int32_t S3CameraGetBldAlt(struct Point3d *loc) {
+int32_t S3CameraGetBldAlt(/*packed*/ struct Point3d *loc) {
 	int32_t normy;
 	int32_t normx;
-	struct _CELL_INFO *cptr;
+	/*packed*/ struct _CELL_INFO *cptr;
 	int32_t objy;
 	int32_t y;
 	int32_t x;
-	struct _STOBJ_INST *stobj;
+	/*packed*/ struct _STOBJ_INST *stobj;
 	int32_t maxobjy;
 	int32_t normz;
 	int32_t flags;
@@ -1560,13 +1560,13 @@ _Tff:
 long G_camera_mode = 3;
 
 // GLOBAL: COPTER_D 0x005b4dc0
-struct Point3d S_camera_targpos2 = { 0 /* todo */ };
+/*packed*/ struct Point3d S_camera_targpos2 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4dd0
-struct Point3d S_camera_targpos1 = { 0 /* todo */ };
+/*packed*/ struct Point3d S_camera_targpos1 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4de0
-struct Point3d S_camera_targpos3 = { 0 /* todo */ };
+/*packed*/ struct Point3d S_camera_targpos3 = { 0 /* todo */ };
 
 // GLOBAL: COPTER_D 0x005b4dec
 unsigned short InClose = 0;
@@ -1591,7 +1591,7 @@ int32_t S_altdiff = 0;
 // Unknown globals:
 // The PDB was slightly corrupted and we aren't sure which file these globals belong to.
 // GLOBAL: COPTER_D 0x006bf1a0
-struct Point3d CameraIdeal; // Contrib missing
+/*packed*/ struct Point3d CameraIdeal; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006bf194
 int32_t G_camera_targ2objy; // Contrib missing
@@ -1600,7 +1600,7 @@ int32_t G_camera_targ2objy; // Contrib missing
 int32_t G_camera_targ2firey; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006bf160
-struct _CHASE_INFO S_chase[3]; // Contrib missing
+/*packed*/ struct _CHASE_INFO S_chase[3]; // Contrib missing
 
 
 // WARNING: this global might actually belong to: C:\Copter\source\game\S3heli.c
@@ -1613,8 +1613,8 @@ int32_t G_camera_targ2objy; // Contrib missing
 int32_t G_camera_targ2firey; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006bf1a0
-struct Point3d CameraIdeal; // Contrib missing
+/*packed*/ struct Point3d CameraIdeal; // Contrib missing
 
 // GLOBAL: COPTER_D 0x006bf160
-struct _CHASE_INFO S_chase[3]; // Contrib missing
+/*packed*/ struct _CHASE_INFO S_chase[3]; // Contrib missing
 

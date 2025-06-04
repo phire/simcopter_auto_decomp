@@ -4,7 +4,7 @@
 
 // Type: unsigned long;
 
-// Type: class IFlatImage (forward reference);
+// Type: /*packed*/ class IFlatImage (forward reference);
 // VTABLE: COPTER_D 0x00591050
 class IFlatImage{ // packed(0x18 bytes) TI: 0x13a1
 public:
@@ -17,11 +17,11 @@ public:
 	long GetWidth();
 	void * __ptr32 GetBitsPointer();
 	long GetStride();
-	virtual unsigned long Compose(class IFlatImage*, long, long, long, long, long, long); // vtable+0xc
-	unsigned long Compose(class IFlatImage*, long, long);
-	virtual unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long); // vtable+0x10
-	virtual unsigned long StretchCompose(class IFlatImage*, struct SparkalRect, struct SparkalRect); // vtable+0x14
-	virtual unsigned long FillRect(long, struct SparkalRect*); // vtable+0x18
+	virtual unsigned long Compose(/*packed*/ class IFlatImage*, long, long, long, long, long, long); // vtable+0xc
+	unsigned long Compose(/*packed*/ class IFlatImage*, long, long);
+	virtual unsigned long StretchCompose(/*packed*/ class IFlatImage*, long, long, long, long, long, long, long, long); // vtable+0x10
+	virtual unsigned long StretchCompose(/*packed*/ class IFlatImage*, /*packed*/ struct SparkalRect, /*packed*/ struct SparkalRect); // vtable+0x14
+	virtual unsigned long FillRect(long, /*packed*/ struct SparkalRect*); // vtable+0x18
 	void DrawPixel(unsigned char, long, long);
 	unsigned char GetPixel(long, long);
 	static unsigned long lTotalMemoryUsage;
@@ -40,7 +40,7 @@ protected:
 
 // Type: unsigned char *;
 
-// Type: struct SparkalRect;
+// Type: /*packed*/ struct SparkalRect;
 struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	long left;
 	long top;
@@ -50,7 +50,7 @@ struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	void SparkalRect();
 };
 
-// Type: struct SparkalRect (forward reference);
+// Type: /*packed*/ struct SparkalRect (forward reference);
 struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	long left;
 	long top;
@@ -62,12 +62,12 @@ struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 
 // Type: int32_t;
 
-// Type: class CFlatImage (forward reference);
+// Type: /*packed*/ class CFlatImage (forward reference);
 // VTABLE: COPTER_D 0x00591070
 class CFlatImage : public IFlatImage
 { // packed(0x1c bytes) TI: 0x20e3
 public:
-	void CFlatImage(class IFlatImage*, long, long, long, long);
+	void CFlatImage(/*unpacked*/ class IFlatImage*, long, long, long, long);
 	void CFlatImage(long, long, unsigned char);
 	void CFlatImage();
 	virtual void ~CFlatImage(); // vtable+0x1c
@@ -81,7 +81,7 @@ protected:
 
 // Type: uint32_t;
 
-// Type: class IFlatImage (forward reference);
+// Type: /*unpacked*/ class IFlatImage (forward reference);
 // IFlatImage Class implementation not found
 
 
@@ -109,7 +109,7 @@ void IFlatImage::IFlatImage() {
 }
 
 // FUNCTION: COPTER_D 0x0048f174
-unsigned long IFlatImage::StretchCompose(class IFlatImage *pDest, long SourceLeft, long SourceTop, long SourceWidth, long SourceHeight, long DestLeft, long DestTop, long DestWidth, long DestHeight) {
+unsigned long IFlatImage::StretchCompose(/*packed*/ class IFlatImage *pDest, long SourceLeft, long SourceTop, long SourceWidth, long SourceHeight, long DestLeft, long DestTop, long DestWidth, long DestHeight) {
 	long YError;
 	long DestStride;
 	unsigned char * pDestBits;
@@ -296,7 +296,7 @@ _T195:
 }
 
 // FUNCTION: COPTER_D 0x0048f32e
-unsigned long IFlatImage::StretchCompose(class IFlatImage *pDestImage, struct SparkalRect destRect, struct SparkalRect srcRect) {
+unsigned long IFlatImage::StretchCompose(/*packed*/ class IFlatImage *pDestImage, /*packed*/ struct SparkalRect destRect, /*packed*/ struct SparkalRect srcRect) {
 	long SrcWidth;
 	long SrcHeight;
 	long DestHeight;
@@ -358,7 +358,7 @@ unsigned long IFlatImage::StretchCompose(class IFlatImage *pDestImage, struct Sp
 }
 
 // FUNCTION: COPTER_D 0x0048f3b1
-unsigned long IFlatImage::Compose(class IFlatImage *pDest, long DestLeft, long DestTop, long ClipLeft, long ClipTop, long ClipRight, long ClipBottom) {
+unsigned long IFlatImage::Compose(/*packed*/ class IFlatImage *pDest, long DestLeft, long DestTop, long ClipLeft, long ClipTop, long ClipRight, long ClipBottom) {
 	unsigned char * pSource;
 	long DestStride;
 	unsigned char * pDestBits;
@@ -531,7 +531,7 @@ _T195:
 }
 
 // FUNCTION: COPTER_D 0x0048f56b
-unsigned long IFlatImage::FillRect(long nPaletteIndex, struct SparkalRect *rectFill) {
+unsigned long IFlatImage::FillRect(long nPaletteIndex, /*packed*/ struct SparkalRect *rectFill) {
 	int32_t Left;
 	int32_t Top;
 	int32_t Right;
@@ -790,7 +790,7 @@ _T1c0:
 }
 
 // FUNCTION: COPTER_D 0x0048f86d
-void CFlatImage::CFlatImage(class IFlatImage *pImage, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
+void CFlatImage::CFlatImage(/*packed*/ class IFlatImage *pImage, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
 
 	__asm        mov    ecx, this;
 	__asm        call   IFlatImage::IFlatImage;

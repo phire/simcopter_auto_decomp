@@ -58,7 +58,7 @@ unsigned long cCopterAnim::GetBodyType() {
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f6a0
-class cBList<cBBase>* cCopterAnim::GetList() {
+/*unpacked*/ class cBList<cBBase>* cCopterAnim::GetList() {
 
 	__asm        mov    eax, cCopterAnim::fsList;
 	__asm        jmp    near ptr 0x0055F6B6;
@@ -66,7 +66,7 @@ class cBList<cBBase>* cCopterAnim::GetList() {
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f6c0
-struct PrivAnimPartInfo* cCopterAnim::GetPartInfo(short framenum, short partnum) {
+/*unpacked*/ struct PrivAnimPartInfo* cCopterAnim::GetPartInfo(short framenum, short partnum) {
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x28];
@@ -123,7 +123,7 @@ _T9a:
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f780
-struct PrivAnimPartInfo* cCopterAnim::GetPartInfoBasePtr(short framenum) {
+/*unpacked*/ struct PrivAnimPartInfo* cCopterAnim::GetPartInfoBasePtr(short framenum) {
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x28];
