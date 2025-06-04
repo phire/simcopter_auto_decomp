@@ -7,26 +7,26 @@
 // Type: int32_t;
 
 // Type: struct _dPoint2d (forward reference);
-struct _dPoint2d{
+struct _dPoint2d{ // packed(0x10 bytes) TI: 0x2766
 	double x;
 	double z;
 };
 
 // Type: struct Point2d (forward reference);
-struct Point2d{
+struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
 	int32_t x;
 	int32_t y;
 };
 
 // Type: struct Point3d;
-struct Point3d{
+struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 	int32_t x;
 	int32_t y;
 	int32_t z;
 };
 
 // Type: struct Point2d;
-struct Point2d{
+struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
 	int32_t x;
 	int32_t y;
 };
@@ -34,7 +34,7 @@ struct Point2d{
 // Type: short;
 
 // Type: struct VRview;
-struct VRview{
+struct VRview{ // packed(0x58 bytes) TI: 0x2ecc
 	struct Point3d loc;
 	struct Point3d scale;
 	int32_t matrix[4][4];
@@ -43,7 +43,7 @@ struct VRview{
 // Type: long *;
 
 // Type: struct _CELL_INFO (forward reference);
-struct _CELL_INFO{
+struct _CELL_INFO{ // packed(0x18 bytes) TI: 0x1b03
 	short flags;
 	short x;
 	short y;
@@ -56,7 +56,7 @@ struct _CELL_INFO{
 };
 
 // Type: struct tagLogCityEnterExit;
-struct tagLogCityEnterExit{
+struct tagLogCityEnterExit{ // packed(0x30 bytes) TI: 0x3191
 	unsigned long nType;
 	unsigned long nTime;
 	unsigned long nMissionID;
@@ -69,13 +69,13 @@ struct tagLogCityEnterExit{
 // Type: void;
 
 // Type: struct VRBmpHdr (forward reference);
-struct VRBmpHdr{
+struct VRBmpHdr{ // packed(0x10 bytes) TI: 0x2312
 	struct VRBmpInfo info;
 	int32_t ScanOffset[1];
 };
 
 // Type: struct _STOBJ_INST (forward reference);
-struct _STOBJ_INST{
+struct _STOBJ_INST{ // packed(0x10 bytes) TI: 0x193f
 	struct _STOBJ_INST *next;
 	void * __ptr32 mesh;
 	long user1;
@@ -83,7 +83,7 @@ struct _STOBJ_INST{
 };
 
 // Type: struct Point3d (forward reference);
-struct Point3d{
+struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 	int32_t x;
 	int32_t y;
 	int32_t z;
@@ -94,7 +94,7 @@ struct Point3d{
 // Type: unsigned short;
 
 // Type: struct _DYOBJ_INST (forward reference);
-struct _DYOBJ_INST{
+struct _DYOBJ_INST{ // packed(0x64 bytes) TI: 0x1deb
 	struct _DYOBJ_INST *next;
 	struct _DYOBJ_INST *vnext;
 	void * __ptr32 mesh;

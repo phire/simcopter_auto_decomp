@@ -7,7 +7,7 @@
 // Type: void;
 
 // Type: class Station (forward reference);
-class Station{
+class Station{ // packed(0x1c bytes) TI: 0x47e8
 public:
 	void Station(unsigned char);
 	void ~Station();
@@ -36,13 +36,13 @@ private:
 };
 
 // Type: struct _GridCoordinates;
-struct _GridCoordinates{
+struct _GridCoordinates{ // packed(0x2 bytes) TI: 0x143c
 	unsigned char x;
 	unsigned char y;
 };
 
 // Type: struct _GridCoordinates (forward reference);
-struct _GridCoordinates{
+struct _GridCoordinates{ // packed(0x2 bytes) TI: 0x143c
 	unsigned char x;
 	unsigned char y;
 };
@@ -52,7 +52,7 @@ struct _GridCoordinates{
 // Type: int32_t;
 
 // Type: class SpiralScan;
-class SpiralScan{
+class SpiralScan{ // packed(0x10 bytes) TI: 0x2fb5
 public:
 	void SpiralScan(int32_t);
 	void ~SpiralScan();
@@ -66,7 +66,7 @@ private:
 };
 
 // Type: struct _StationHeapStruct;
-struct _StationHeapStruct{
+struct _StationHeapStruct{ // packed(0x8 bytes) TI: 0x2fc4
 	long cost;
 	int32_t stationID;
 };
@@ -74,7 +74,7 @@ struct _StationHeapStruct{
 // Type: class EmergencyVehicleClass (forward reference);
 // VTABLE: COPTER_D 0x005934c0
 class EmergencyVehicleClass : public AutomobileClass
-{
+{ // packed(0x2a0 bytes) TI: 0x47d8
 	enum /* __unnamed */ {
 		MAXIMUM_DISTANCE_FROM_BASE = 7,
 		MAXIMUM_TIME_TO_EMERGENCY = 3932160,
@@ -131,14 +131,14 @@ public:
 };
 
 // Type: struct _VehicleHeapStruct;
-struct _VehicleHeapStruct{
+struct _VehicleHeapStruct{ // packed(0xa bytes) TI: 0x2fca
 	long cost;
 	class EmergencyVehicleClass *pVehicle;
 	struct _GridCoordinates loc;
 };
 
 // Type: struct Point3d;
-struct Point3d{
+struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 	int32_t x;
 	int32_t y;
 	int32_t z;
@@ -156,13 +156,13 @@ enum EmergencyLevel {
 };
 
 // Type: struct _StationHeapStruct (forward reference);
-struct _StationHeapStruct{
+struct _StationHeapStruct{ // packed(0x8 bytes) TI: 0x2fc4
 	long cost;
 	int32_t stationID;
 };
 
 // Type: struct _VehicleHeapStruct (forward reference);
-struct _VehicleHeapStruct{
+struct _VehicleHeapStruct{ // packed(0xa bytes) TI: 0x2fca
 	long cost;
 	class EmergencyVehicleClass *pVehicle;
 	struct _GridCoordinates loc;
@@ -180,7 +180,7 @@ enum EmergencyType {
 };
 
 // Type: struct Goal;
-struct Goal{
+struct Goal{ // packed(0x2a bytes) TI: 0x12ce
 	struct RGVertex *pRGV;
 	int32_t elementIndex;
 	int32_t gridIndex;
@@ -195,13 +195,13 @@ struct Goal{
 };
 
 // Type: struct _RGIndex;
-struct _RGIndex{
+struct _RGIndex{ // packed(0x2 bytes) TI: 0x2ab2
 	unsigned char x;
 	unsigned char yindex;
 };
 
 // Type: class basic_string<char>;
-class basic_string<char>{
+class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = class basic_string_ref<char>;
 	using reference_pointer = class basic_string_ref<char>*;
 private:
@@ -308,7 +308,7 @@ public:
 // Type: class DigitalSound;
 // VTABLE: COPTER_D 0x0058f488
 class DigitalSound : public Sound
-{
+{ // packed(0x7a bytes) TI: 0x45d4
 protected:
 	int32_t nStreamingType;
 	int32_t nCompletionEstimationTimerSet;
@@ -363,7 +363,7 @@ protected:
 };
 
 // Type: struct _StructStation (forward reference);
-struct _StructStation{
+struct _StructStation{ // packed(0x60 bytes) TI: 0x2feb
 	struct Goal goal1;
 	struct Goal goal2;
 	int32_t direction;
@@ -373,7 +373,7 @@ struct _StructStation{
 };
 
 // Type: struct RGVertex (forward reference);
-struct RGVertex{
+struct RGVertex{ // packed(0x33 bytes) TI: 0x1776
 	unsigned char x;
 	unsigned char y;
 	LfBitfield @ 0x11f58:
@@ -400,7 +400,7 @@ struct RGVertex{
 
 // Type: class AutomobileClass;
 // VTABLE: COPTER_D 0x00592d98
-class AutomobileClass{
+class AutomobileClass{ // packed(0x10e bytes) TI: 0x2fac
 	enum /* __unnamed */ {
 		CAR_TYPES = 7,
 		PERCENTAGE_OF_AUTO1 = 10,
@@ -606,7 +606,7 @@ public:
 
 // Type: class Sound;
 // VTABLE: COPTER_D 0x0058f458
-class Sound{
+class Sound{ // packed(0x30 bytes) TI: 0x1578
 	enum SoundSourceType {
 		nSoundSourceTypeResource = 0,
 		nSoundSourceTypeFile = 1,

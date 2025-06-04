@@ -4,7 +4,7 @@
 
 // Type: class CSparkalApp (forward reference);
 // VTABLE: COPTER_D 0x0058f428
-class CSparkalApp{
+class CSparkalApp{ // packed(0x14 bytes) TI: 0x23fb
 public:
 	void CSparkalApp();
 	virtual void ~CSparkalApp(); // vtable+0x0
@@ -43,7 +43,7 @@ protected:
 // Type: int32_t;
 
 // Type: struct SparkalColor (forward reference);
-struct SparkalColor{
+struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 	unsigned char Blue;
 	unsigned char Green;
 	unsigned char Red;
@@ -56,7 +56,7 @@ struct SparkalColor{
 
 // Type: class CSparkalWindow (forward reference);
 // VTABLE: COPTER_D 0x00590ef8
-class CSparkalWindow{
+class CSparkalWindow{ // packed(0x68 bytes) TI: 0x20d9
 public:
 	void CSparkalWindow(unsigned long, unsigned long, unsigned long, const struct SparkalColor*, char *);
 	void CSparkalWindow();
@@ -99,7 +99,7 @@ protected:
 
 // Type: class IFlatImage (forward reference);
 // VTABLE: COPTER_D 0x00591050
-class IFlatImage{
+class IFlatImage{ // packed(0x18 bytes) TI: 0x13a1
 public:
 	void IFlatImage();
 	virtual unsigned long Lock(); // vtable+0x0
@@ -130,7 +130,7 @@ protected:
 // Type: class CBackBuffer (forward reference);
 // VTABLE: COPTER_D 0x00590808
 class CBackBuffer : public IBackBuffer
-{
+{ // packed(0x134 bytes) TI: 0x2843
 public:
 	void CBackBuffer(long, long, const struct SparkalColor*);
 	void CBackBuffer(char *);
@@ -199,7 +199,7 @@ protected:
 // Type: class IBackBuffer;
 // VTABLE: COPTER_D 0x005907e0
 class IBackBuffer : public IFlatImage
-{
+{ // packed(0x18 bytes) TI: 0x1544
 public:
 	virtual unsigned long Swap(class CSparkalWindow*, long, long); // vtable+0x1c
 	virtual unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long); // vtable+0x20
@@ -208,7 +208,7 @@ public:
 
 // Type: class IFlatImage;
 // VTABLE: COPTER_D 0x00591050
-class IFlatImage{
+class IFlatImage{ // packed(0x18 bytes) TI: 0x13a1
 public:
 	void IFlatImage();
 	virtual unsigned long Lock(); // vtable+0x0

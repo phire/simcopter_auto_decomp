@@ -5,13 +5,13 @@
 // Type: char *;
 
 // Type: struct list<RadioButtonWindow *>::list_node_buffer (forward reference);
-struct list<RadioButtonWindow *>::list_node_buffer{
+struct list<RadioButtonWindow *>::list_node_buffer{ // packed(0x8 bytes) TI: 0x1634
 	void * __ptr32 next_buffer;
 	struct list<RadioButtonWindow *>::list_node *buffer;
 };
 
 // Type: struct list<RadioButtonWindow *>::list_node (forward reference);
-struct list<RadioButtonWindow *>::list_node{
+struct list<RadioButtonWindow *>::list_node{ // packed(0xc bytes) TI: 0x1636
 	void * __ptr32 next;
 	void * __ptr32 prev;
 	class RadioButtonWindow *data;
@@ -22,7 +22,7 @@ struct list<RadioButtonWindow *>::list_node{
 // Type: class BoxWindow (forward reference);
 // VTABLE: COPTER_D 0x005919c0
 class BoxWindow : public GraphicWindow
-{
+{ // packed(0x84 bytes) TI: 0x215a
 public:
 	void BoxWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	void BoxWindow();
@@ -40,7 +40,7 @@ protected:
 
 // Type: class MRect (forward reference);
 class MRect : public SparkalRect
-{
+{ // packed(0x10 bytes) TI: 0x1067
 public:
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
@@ -113,13 +113,13 @@ public:
 
 // Type: class GraphicWindowOwner (forward reference);
 // VTABLE: COPTER_D 0x00590f2c
-class GraphicWindowOwner{
+class GraphicWindowOwner{ // packed(0x4 bytes) TI: 0x1647
 public:
 	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
 };
 
 // Type: struct SparkalColor (forward reference);
-struct SparkalColor{
+struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 	unsigned char Blue;
 	unsigned char Green;
 	unsigned char Red;
@@ -131,7 +131,7 @@ struct SparkalColor{
 // Type: class TextWindow (forward reference);
 // VTABLE: COPTER_D 0x00591a90
 class TextWindow : public GraphicWindow
-{
+{ // packed(0xa4 bytes) TI: 0x4411
 public:
 	void TextWindow(class MRect&, int32_t, const class basic_string<char>&, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	void TextWindow(class MRect&, int32_t, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
@@ -156,7 +156,7 @@ protected:
 };
 
 // Type: class basic_string<char> (forward reference);
-class basic_string<char>{
+class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = class basic_string_ref<char>;
 	using reference_pointer = class basic_string_ref<char>*;
 private:
@@ -262,7 +262,7 @@ public:
 
 // Type: class MRect;
 class MRect : public SparkalRect
-{
+{ // packed(0x10 bytes) TI: 0x1067
 public:
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
@@ -335,7 +335,7 @@ public:
 // Type: class ButtonWindow (forward reference);
 // VTABLE: COPTER_D 0x00591b78
 class ButtonWindow : public GraphicWindow
-{
+{ // packed(0x94 bytes) TI: 0x1a48
 	enum ButtonState {
 		nButtonStateDisabled = 0,
 		nButtonStateOff = 1,
@@ -369,7 +369,7 @@ protected:
 
 // Type: class MFont (forward reference);
 // VTABLE: COPTER_D 0x00591640
-class MFont{
+class MFont{ // packed(0x1c bytes) TI: 0x1a6c
 public:
 	class basic_string<char> sName;
 	unsigned long lHeight;
@@ -400,7 +400,7 @@ protected:
 // Type: class CheckBoxWindow (forward reference);
 // VTABLE: COPTER_D 0x00591c58
 class CheckBoxWindow : public ButtonWindow
-{
+{ // packed(0x94 bytes) TI: 0x213e
 public:
 	void CheckBoxWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
 	void CheckBoxWindow();
@@ -415,7 +415,7 @@ public:
 // Type: class RadioButtonWindow (forward reference);
 // VTABLE: COPTER_D 0x00591d38
 class RadioButtonWindow : public ButtonWindow
-{
+{ // packed(0x98 bytes) TI: 0x1554
 public:
 	void RadioButtonWindow(class ButtonGroup*, class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
 	void RadioButtonWindow();
@@ -438,7 +438,7 @@ protected:
 
 // Type: class list<RadioButtonWindow *>::iterator;
 class list<RadioButtonWindow *>::iterator : public bidirectional_iterator<RadioButtonWindow *,int>
-{
+{ // packed(0x4 bytes) TI: 0x1632
 protected:
 	struct list<RadioButtonWindow *>::list_node *node;
 public:
@@ -457,7 +457,7 @@ public:
 // Type: class SliderWindow (forward reference);
 // VTABLE: COPTER_D 0x00591ee8
 class SliderWindow : public GraphicWindow
-{
+{ // packed(0xb4 bytes) TI: 0x2142
 	enum SliderWindowDirection {
 		nSliderWindowDirectionHorizontal = 0,
 		nSliderWindowDirectionVertical = 1,
@@ -507,7 +507,7 @@ enum SliderWindowDirection {
 };
 
 // Type: class basic_string<char>;
-class basic_string<char>{
+class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = class basic_string_ref<char>;
 	using reference_pointer = class basic_string_ref<char>*;
 private:
@@ -614,7 +614,7 @@ public:
 // Type: class ScrollBarWindow (forward reference);
 // VTABLE: COPTER_D 0x00591fc0
 class ScrollBarWindow : public SliderWindow
-{
+{ // packed(0xd4 bytes) TI: 0x1813
 	enum ScrollHitTestResult {
 		nScrollHitTestResultNone = 0,
 		nScrollHitTestResultLinePrevious = 1,
@@ -667,7 +667,7 @@ enum ScrollHitTestResult {
 // Type: class ListBoxWindow (forward reference);
 // VTABLE: COPTER_D 0x005920c8
 class ListBoxWindow : public GraphicWindow
-{
+{ // packed(0xcc bytes) TI: 0x17a0
 public:
 	void ListBoxWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	void ListBoxWindow();
@@ -736,7 +736,7 @@ protected:
 
 // Type: class list<basic_string<char>>::iterator;
 class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_string<char>,int>
-{
+{ // packed(0x4 bytes) TI: 0x1cd3
 protected:
 	struct list<basic_string<char>>::list_node *node;
 public:
@@ -755,7 +755,7 @@ public:
 // Type: class PopupMenuWindow (forward reference);
 // VTABLE: COPTER_D 0x00592220
 class PopupMenuWindow : public ListBoxWindow
-{
+{ // packed(0xcc bytes) TI: 0x215d
 public:
 	void PopupMenuWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	virtual int32_t Initialize() /* override */;
@@ -770,9 +770,9 @@ protected:
 };
 
 // Type: class list<basic_string<char>> (forward reference);
-class list<basic_string<char>>{
+class list<basic_string<char>>{ // packed(0x8 bytes) TI: 0x1cb1
 	using void_pointer = void * __ptr32;
-	struct list<basic_string<char>>::list_node{
+	struct list<basic_string<char>>::list_node{ // packed(0x10 bytes) TI: 0x1cd7
 		void * __ptr32 next;
 		void * __ptr32 prev;
 		class basic_string<char> data;
@@ -791,7 +791,7 @@ protected:
 	using difference_type = int32_t;
 protected:
 	uint32_t buffer_size();
-	struct list<basic_string<char>>::list_node_buffer{
+	struct list<basic_string<char>>::list_node_buffer{ // packed(0x8 bytes) TI: 0x1cd5
 		void * __ptr32 next_buffer;
 		struct list<basic_string<char>>::list_node *buffer;
 	};
@@ -811,7 +811,7 @@ protected:
 	struct list<basic_string<char>>::list_node *node;
 	uint32_t length;
 	class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_string<char>,int>
-	{
+	{ // packed(0x4 bytes) TI: 0x1cd3
 	protected:
 		struct list<basic_string<char>>::list_node *node;
 	public:
@@ -827,7 +827,7 @@ protected:
 		class list<basic_string<char>>::iterator& operator--();
 	};
 	class list<basic_string<char>>::const_iterator : public bidirectional_iterator<basic_string<char>,int>
-	{
+	{ // packed(0x4 bytes) TI: 0x1cc6
 	protected:
 		struct list<basic_string<char>>::list_node *node;
 	public:
@@ -892,13 +892,13 @@ public:
 };
 
 // Type: struct list<basic_string<char>>::list_node_buffer (forward reference);
-struct list<basic_string<char>>::list_node_buffer{
+struct list<basic_string<char>>::list_node_buffer{ // packed(0x8 bytes) TI: 0x1cd5
 	void * __ptr32 next_buffer;
 	struct list<basic_string<char>>::list_node *buffer;
 };
 
 // Type: struct SparkalRect;
-struct SparkalRect{
+struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	long left;
 	long top;
 	long right;
@@ -910,7 +910,7 @@ struct SparkalRect{
 // Type: class SliderWindow;
 // VTABLE: COPTER_D 0x00591ee8
 class SliderWindow : public GraphicWindow
-{
+{ // packed(0xb4 bytes) TI: 0x13bc
 	enum SliderWindowDirection {
 		nSliderWindowDirectionHorizontal = 0,
 		nSliderWindowDirectionVertical = 1,
@@ -956,7 +956,7 @@ public:
 // Type: class ButtonWindow;
 // VTABLE: COPTER_D 0x00591b78
 class ButtonWindow : public GraphicWindow
-{
+{ // packed(0x94 bytes) TI: 0x1a48
 	enum ButtonState {
 		nButtonStateDisabled = 0,
 		nButtonStateOff = 1,
@@ -989,13 +989,13 @@ protected:
 };
 
 // Type: struct bidirectional_iterator<RadioButtonWindow *,int>;
-struct bidirectional_iterator<RadioButtonWindow *,int>{
+struct bidirectional_iterator<RadioButtonWindow *,int>{ // packed(0x1 bytes) TI: 0x1dfd
 };
 
 // Type: class ListBoxWindow;
 // VTABLE: COPTER_D 0x005920c8
 class ListBoxWindow : public GraphicWindow
-{
+{ // packed(0xcc bytes) TI: 0x17a0
 public:
 	void ListBoxWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	void ListBoxWindow();
@@ -1061,7 +1061,7 @@ protected:
 };
 
 // Type: struct bidirectional_iterator<basic_string<char>,int>;
-struct bidirectional_iterator<basic_string<char>,int>{
+struct bidirectional_iterator<basic_string<char>,int>{ // packed(0x1 bytes) TI: 0x1847
 };
 
 

@@ -8,7 +8,7 @@
 // Type: int32_t *;
 
 // Type: struct SparkalRect;
-struct SparkalRect{
+struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	long left;
 	long top;
 	long right;
@@ -20,7 +20,7 @@ struct SparkalRect{
 // Type: class CBackBuffer (forward reference);
 // VTABLE: COPTER_D 0x00590808
 class CBackBuffer : public IBackBuffer
-{
+{ // packed(0x134 bytes) TI: 0x2843
 public:
 	void CBackBuffer(long, long, const struct SparkalColor*);
 	void CBackBuffer(char *);
@@ -91,7 +91,7 @@ protected:
 // Type: char;
 
 // Type: struct MISSION_DATA (forward reference);
-struct MISSION_DATA{
+struct MISSION_DATA{ // packed(0xcc bytes) TI: 0x231b
 	char mtext[32];
 	long type_ctr;
 	long key;
@@ -110,7 +110,7 @@ struct MISSION_DATA{
 // Type: class IBackBuffer;
 // VTABLE: COPTER_D 0x005907e0
 class IBackBuffer : public IFlatImage
-{
+{ // packed(0x18 bytes) TI: 0x1544
 public:
 	virtual unsigned long Swap(class CSparkalWindow*, long, long); // vtable+0x1c
 	virtual unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long); // vtable+0x20
@@ -119,7 +119,7 @@ public:
 
 // Type: class IFlatImage;
 // VTABLE: COPTER_D 0x00591050
-class IFlatImage{
+class IFlatImage{ // packed(0x18 bytes) TI: 0x13a1
 public:
 	void IFlatImage();
 	virtual unsigned long Lock(); // vtable+0x0

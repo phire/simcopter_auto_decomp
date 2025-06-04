@@ -7,7 +7,7 @@
 // Type: class CatalogWindow (forward reference);
 // VTABLE: COPTER_D 0x00590ce8
 class CatalogWindow : public GraphicWindow
-{
+{ // packed(0x2b6 bytes) TI: 0x487c
 public:
 	void CatalogWindow(int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	virtual void ~CatalogWindow() /* override */;
@@ -86,13 +86,13 @@ protected:
 
 // Type: class GraphicWindowOwner (forward reference);
 // VTABLE: COPTER_D 0x00590f2c
-class GraphicWindowOwner{
+class GraphicWindowOwner{ // packed(0x4 bytes) TI: 0x1647
 public:
 	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
 };
 
 // Type: class Random;
-class Random{
+class Random{ // packed(0xe4 bytes) TI: 0x20ab
 public:
 	void Random(unsigned long);
 	unsigned long operator()(unsigned long);
@@ -106,7 +106,7 @@ protected:
 // Type: void;
 
 // Type: class basic_string<char>;
-class basic_string<char>{
+class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = class basic_string_ref<char>;
 	using reference_pointer = class basic_string_ref<char>*;
 private:
@@ -213,7 +213,7 @@ public:
 // Type: long;
 
 // Type: struct tagUserPersonalInfo (forward reference);
-struct tagUserPersonalInfo{
+struct tagUserPersonalInfo{ // packed(0x58 bytes) TI: 0x1a2a
 	char szUserName[64];
 	long lMoney;
 	long lHelicopters;
@@ -225,7 +225,7 @@ struct tagUserPersonalInfo{
 
 // Type: class MRect (forward reference);
 class MRect : public SparkalRect
-{
+{ // packed(0x10 bytes) TI: 0x1067
 public:
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
@@ -293,7 +293,7 @@ public:
 
 // Type: class MRect;
 class MRect : public SparkalRect
-{
+{ // packed(0x10 bytes) TI: 0x1067
 public:
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
@@ -360,7 +360,7 @@ public:
 };
 
 // Type: class basic_string<char> (forward reference);
-class basic_string<char>{
+class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = class basic_string_ref<char>;
 	using reference_pointer = class basic_string_ref<char>*;
 private:
@@ -469,7 +469,7 @@ public:
 // Type: class CBackBuffer (forward reference);
 // VTABLE: COPTER_D 0x00590808
 class CBackBuffer : public IBackBuffer
-{
+{ // packed(0x134 bytes) TI: 0x18f5
 public:
 	void CBackBuffer(long, long, const struct SparkalColor*);
 	void CBackBuffer(char *);
@@ -534,7 +534,7 @@ protected:
 // Type: unsigned long;
 
 // Type: struct SparkalColor (forward reference);
-struct SparkalColor{
+struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 	unsigned char Blue;
 	unsigned char Green;
 	unsigned char Red;
@@ -547,7 +547,7 @@ struct SparkalColor{
 
 // Type: class MPoint (forward reference);
 class MPoint : public SparkalPoint
-{
+{ // packed(0x8 bytes) TI: 0x159a
 public:
 	void MPoint(unsigned long);
 	void MPoint(struct SparkalSize);
@@ -575,7 +575,7 @@ public:
 // Type: uint32_t;
 
 // Type: struct SparkalRect;
-struct SparkalRect{
+struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	long left;
 	long top;
 	long right;
@@ -585,7 +585,7 @@ struct SparkalRect{
 };
 
 // Type: struct SparkalPoint;
-struct SparkalPoint{
+struct SparkalPoint{ // packed(0x8 bytes) TI: 0x1a54
 	long x;
 	long y;
 	void SparkalPoint(long, long);

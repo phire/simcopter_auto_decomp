@@ -13,7 +13,7 @@
 // Type: int32_t;
 
 // Type: struct _iobuf (forward reference);
-struct _iobuf{
+struct _iobuf{ // packed(0x20 bytes) TI: 0x2278
 	char * _ptr;
 	int32_t _cnt;
 	char * _base;
@@ -37,7 +37,7 @@ struct _iobuf{
 // Type: unsigned char;
 
 // Type: struct Micro (forward reference);
-struct Micro{
+struct Micro{ // packed(0x8 bytes) TI: 0x2d4d
 	unsigned char type;
 	unsigned char stat0;
 	unsigned short stat1;

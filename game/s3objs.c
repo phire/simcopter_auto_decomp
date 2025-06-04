@@ -7,7 +7,7 @@
 // Type: char;
 
 // Type: struct _LZ_INFO (forward reference);
-struct _LZ_INFO{
+struct _LZ_INFO{ // packed(0x14 bytes) TI: 0x3152
 	int32_t flags;
 	int32_t ulx;
 	int32_t ulz;
@@ -20,7 +20,7 @@ struct _LZ_INFO{
 // Type: long;
 
 // Type: struct VRFaceInfo;
-struct VRFaceInfo{
+struct VRFaceInfo{ // packed(0x20 bytes) TI: 0x30c0
 	int32_t Face;
 	int32_t Verts;
 	int32_t Attribute;
@@ -32,13 +32,13 @@ struct VRFaceInfo{
 };
 
 // Type: struct VRBmpHdr (forward reference);
-struct VRBmpHdr{
+struct VRBmpHdr{ // packed(0x10 bytes) TI: 0x2312
 	struct VRBmpInfo info;
 	int32_t ScanOffset[1];
 };
 
 // Type: struct VRObjInfo;
-struct VRObjInfo{
+struct VRObjInfo{ // packed(0x24 bytes) TI: 0x2ea8
 	int32_t Faces;
 	int32_t Verts;
 	int32_t Attribute;
@@ -53,7 +53,7 @@ struct VRObjInfo{
 // Type: void;
 
 // Type: struct VRBlit (forward reference);
-struct VRBlit{
+struct VRBlit{ // packed(0x10 bytes) TI: 0x3182
 	int32_t nverts;
 	struct Proj2d *verts;
 	int32_t notused;
@@ -61,7 +61,7 @@ struct VRBlit{
 };
 
 // Type: struct _DYOBJ_INST (forward reference);
-struct _DYOBJ_INST{
+struct _DYOBJ_INST{ // packed(0x64 bytes) TI: 0x1deb
 	struct _DYOBJ_INST *next;
 	struct _DYOBJ_INST *vnext;
 	void * __ptr32 mesh;

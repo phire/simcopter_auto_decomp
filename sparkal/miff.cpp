@@ -13,7 +13,7 @@
 // Type: class MIFF (forward reference);
 // VTABLE: COPTER_D 0x00591950
 class MIFF : public PFile
-{
+{ // packed(0x148 bytes) TI: 0x428e
 public:
 	void MIFF(char *);
 	void MIFF();
@@ -58,7 +58,7 @@ public:
 // Type: void;
 
 // Type: struct MIFFRecord (forward reference);
-struct MIFFRecord{
+struct MIFFRecord{ // packed(0xc bytes) TI: 0x148f
 	long lRecordType;
 	long lRecordLength;
 	char chRecordData[4];
@@ -68,7 +68,7 @@ struct MIFFRecord{
 
 // Type: class PFile;
 // VTABLE: COPTER_D 0x00590468
-class PFile{
+class PFile{ // packed(0x110 bytes) TI: 0x1de4
 	enum /* __unnamed */ {
 		FileNull = -1,
 	};

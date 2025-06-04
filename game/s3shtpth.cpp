@@ -21,7 +21,7 @@ enum DirectionTypes {
 };
 
 // Type: class ShortestPath (forward reference);
-class ShortestPath{
+class ShortestPath{ // packed(0x8 bytes) TI: 0x2aae
 private:
 	struct _FringeHeapNode *heap;
 	long heapSize;
@@ -36,7 +36,7 @@ private:
 };
 
 // Type: struct _GridCoordinates;
-struct _GridCoordinates{
+struct _GridCoordinates{ // packed(0x2 bytes) TI: 0x143c
 	unsigned char x;
 	unsigned char y;
 };
@@ -44,13 +44,13 @@ struct _GridCoordinates{
 // Type: int32_t;
 
 // Type: struct _RGIndex;
-struct _RGIndex{
+struct _RGIndex{ // packed(0x2 bytes) TI: 0x2ab2
 	unsigned char x;
 	unsigned char yindex;
 };
 
 // Type: struct _FringeHeapNode;
-struct _FringeHeapNode{
+struct _FringeHeapNode{ // packed(0x9 bytes) TI: 0x2ab0
 	unsigned char xCurr;
 	unsigned char yindexCurr;
 	unsigned char edgeIndexPrev;
@@ -60,7 +60,7 @@ struct _FringeHeapNode{
 };
 
 // Type: struct RGVertex (forward reference);
-struct RGVertex{
+struct RGVertex{ // packed(0x33 bytes) TI: 0x1776
 	unsigned char x;
 	unsigned char y;
 	LfBitfield @ 0x11f58:
@@ -84,7 +84,7 @@ struct RGVertex{
 };
 
 // Type: struct Edge (forward reference);
-struct Edge{
+struct Edge{ // packed(0xa bytes) TI: 0x176b
 	unsigned char yindex;
 	unsigned char x;
 	unsigned short Time;
@@ -93,7 +93,7 @@ struct Edge{
 };
 
 // Type: struct _FringeHeapNode (forward reference);
-struct _FringeHeapNode{
+struct _FringeHeapNode{ // packed(0x9 bytes) TI: 0x2ab0
 	unsigned char xCurr;
 	unsigned char yindexCurr;
 	unsigned char edgeIndexPrev;

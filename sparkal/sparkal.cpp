@@ -4,7 +4,7 @@
 
 // Type: class CSparkalApp (forward reference);
 // VTABLE: COPTER_D 0x0058f428
-class CSparkalApp{
+class CSparkalApp{ // packed(0x14 bytes) TI: 0x23fb
 public:
 	void CSparkalApp();
 	virtual void ~CSparkalApp(); // vtable+0x0
@@ -36,7 +36,7 @@ protected:
 
 // Type: class CSparkalApp (forward reference);
 // VTABLE: COPTER_D 0x0058f428
-class CSparkalApp{
+class CSparkalApp{ // packed(0x14 bytes) TI: 0x1265
 public:
 	void CSparkalApp();
 	virtual void ~CSparkalApp(); // vtable+0x0
@@ -75,7 +75,7 @@ protected:
 // Type: unsigned long;
 
 // Type: class MTimer;
-class MTimer{
+class MTimer{ // packed(0x10 bytes) TI: 0x1968
 	enum TimerResolution {
 		nTimerResolutionMicroseconds = 0,
 		nTimerResolutionMilliseconds = 1,

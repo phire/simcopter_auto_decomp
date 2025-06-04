@@ -13,7 +13,7 @@
 // Type: short;
 
 // Type: struct Rect (forward reference);
-struct Rect{
+struct Rect{ // not packed(0x8 bytes) TI: 0x3463
 	short top;
 	short left;
 	short bottom;

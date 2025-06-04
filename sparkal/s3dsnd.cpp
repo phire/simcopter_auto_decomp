@@ -7,7 +7,7 @@
 // Type: class SoundChangeNotificationSink;
 // VTABLE: COPTER_D 0x0058f5c0
 class SoundChangeNotificationSink : public NotificationSink
-{
+{ // packed(0x4 bytes) TI: 0x2432
 public:
 	virtual int32_t Initialize(); // vtable+0x4
 	virtual void DoNotificationChange(long, class PreferenceManager*) /* override */;
@@ -18,7 +18,7 @@ public:
 // Type: class SoundChangeNotificationSink;
 // VTABLE: COPTER_D 0x0058f5c0
 class SoundChangeNotificationSink : public NotificationSink
-{
+{ // packed(0x4 bytes) TI: 0x2ac5
 public:
 	virtual int32_t Initialize(); // vtable+0x4
 	virtual void DoNotificationChange(long, class PreferenceManager*) /* override */;
@@ -30,7 +30,7 @@ public:
 // Type: class SoundChangeNotificationSink (forward reference);
 // VTABLE: COPTER_D 0x0058f5c0
 class SoundChangeNotificationSink : public NotificationSink
-{
+{ // packed(0x4 bytes) TI: 0x2ac5
 public:
 	virtual int32_t Initialize(); // vtable+0x4
 	virtual void DoNotificationChange(long, class PreferenceManager*) /* override */;
@@ -41,7 +41,7 @@ public:
 
 // Type: class PreferenceManager (forward reference);
 // VTABLE: COPTER_D 0x00590db0
-class PreferenceManager{
+class PreferenceManager{ // packed(0x28 bytes) TI: 0x26c8
 protected:
 	int32_t bSaveFileAtAllChanges;
 	class list<PreferenceItem> myPreferences;
@@ -72,7 +72,7 @@ public:
 // Type: char *;
 
 // Type: struct SoundPreferences (forward reference);
-struct SoundPreferences{
+struct SoundPreferences{ // packed(0x10 bytes) TI: 0x2845
 	long lMasterVolume;
 	long lDispatchVolume;
 	long lSoundEffectsVolume;
@@ -86,7 +86,7 @@ struct SoundPreferences{
 // Type: class DigitalSound (forward reference);
 // VTABLE: COPTER_D 0x0058f488
 class DigitalSound : public Sound
-{
+{ // packed(0x7a bytes) TI: 0x45d4
 protected:
 	int32_t nStreamingType;
 	int32_t nCompletionEstimationTimerSet;
@@ -141,14 +141,14 @@ protected:
 };
 
 // Type: struct Point3d (forward reference);
-struct Point3d{
+struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 	int32_t x;
 	int32_t y;
 	int32_t z;
 };
 
 // Type: struct Point3d;
-struct Point3d{
+struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 	int32_t x;
 	int32_t y;
 	int32_t z;
@@ -156,14 +156,14 @@ struct Point3d{
 
 // Type: class NotificationSink;
 // VTABLE: COPTER_D 0x0058f5c8
-class NotificationSink{
+class NotificationSink{ // packed(0x4 bytes) TI: 0x2464
 public:
 	virtual void DoNotificationChange(long, class PreferenceManager*); // vtable+0x0
 };
 
 // Type: class Sound;
 // VTABLE: COPTER_D 0x0058f458
-class Sound{
+class Sound{ // packed(0x30 bytes) TI: 0x1578
 	enum SoundSourceType {
 		nSoundSourceTypeResource = 0,
 		nSoundSourceTypeFile = 1,

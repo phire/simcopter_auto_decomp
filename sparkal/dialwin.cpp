@@ -7,7 +7,7 @@
 // Type: class RadioCompassWindow (forward reference);
 // VTABLE: COPTER_D 0x0058f650
 class RadioCompassWindow : public GraphicWindow
-{
+{ // packed(0xb4 bytes) TI: 0x2a7c
 public:
 	void RadioCompassWindow(class MRect&, long, class GraphicWindow*, class Radio*, class GraphicWindowOwner*, int32_t);
 	virtual void ~RadioCompassWindow() /* override */;
@@ -35,7 +35,7 @@ protected:
 
 // Type: class MRect (forward reference);
 class MRect : public SparkalRect
-{
+{ // packed(0x10 bytes) TI: 0x1067
 public:
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
@@ -111,7 +111,7 @@ public:
 
 // Type: class GraphicWindowOwner (forward reference);
 // VTABLE: COPTER_D 0x00590f2c
-class GraphicWindowOwner{
+class GraphicWindowOwner{ // packed(0x4 bytes) TI: 0x1647
 public:
 	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
 };
@@ -121,7 +121,7 @@ public:
 // Type: void;
 
 // Type: class basic_string<char>;
-class basic_string<char>{
+class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = class basic_string_ref<char>;
 	using reference_pointer = class basic_string_ref<char>*;
 private:
@@ -230,7 +230,7 @@ public:
 // Type: class DialWindow (forward reference);
 // VTABLE: COPTER_D 0x0058f738
 class DialWindow : public GraphicWindow
-{
+{ // packed(0x1e8 bytes) TI: 0x4212
 public:
 	void DialWindow(class MRect&, long, struct CommandSystem*, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	virtual void ~DialWindow() /* override */;
@@ -274,7 +274,7 @@ protected:
 };
 
 // Type: struct CommandSystem (forward reference);
-struct CommandSystem{
+struct CommandSystem{ // packed(0xaa8 bytes) TI: 0x12e4
 	struct Command keyboardCommands[100];
 	class CharList keyboardCommandList;
 	class list<Shortcut> commandShortcuts;
@@ -302,7 +302,7 @@ struct CommandSystem{
 
 // Type: class MPoint;
 class MPoint : public SparkalPoint
-{
+{ // packed(0x8 bytes) TI: 0x159a
 public:
 	void MPoint(unsigned long);
 	void MPoint(struct SparkalSize);
@@ -330,7 +330,7 @@ public:
 // Type: class PassengerWindow (forward reference);
 // VTABLE: COPTER_D 0x0058f800
 class PassengerWindow : public GraphicWindow
-{
+{ // packed(0xac bytes) TI: 0x2a76
 	enum Position {
 		nPositionUp = 0,
 		nPositionDown = 1,
@@ -371,7 +371,7 @@ protected:
 };
 
 // Type: struct tagHeliPassengerData (forward reference);
-struct tagHeliPassengerData{
+struct tagHeliPassengerData{ // packed(0x15c bytes) TI: 0x2a7a
 	long lPassengerDataChanged;
 	long lSeatsTotal;
 	long lSeatsUsed;
@@ -384,7 +384,7 @@ struct tagHeliPassengerData{
 
 // Type: class MRect;
 class MRect : public SparkalRect
-{
+{ // packed(0x10 bytes) TI: 0x1067
 public:
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
@@ -453,7 +453,7 @@ public:
 // Type: class MapWindow (forward reference);
 // VTABLE: COPTER_D 0x0058f8d8
 class MapWindow : public GraphicWindow
-{
+{ // packed(0x118 bytes) TI: 0x4206
 public:
 	void MapWindow(class MRect&, long, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	virtual void ~MapWindow() /* override */;
@@ -480,7 +480,7 @@ public:
 };
 
 // Type: struct MISSION_DATA (forward reference);
-struct MISSION_DATA{
+struct MISSION_DATA{ // packed(0xcc bytes) TI: 0x231b
 	char mtext[32];
 	long type_ctr;
 	long key;
@@ -500,7 +500,7 @@ struct MISSION_DATA{
 
 // Type: class MPoint (forward reference);
 class MPoint : public SparkalPoint
-{
+{ // packed(0x8 bytes) TI: 0x159a
 public:
 	void MPoint(unsigned long);
 	void MPoint(struct SparkalSize);
@@ -528,7 +528,7 @@ public:
 // Type: class PopupMenuWindow (forward reference);
 // VTABLE: COPTER_D 0x00592220
 class PopupMenuWindow : public ListBoxWindow
-{
+{ // packed(0xcc bytes) TI: 0x215d
 public:
 	void PopupMenuWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	virtual int32_t Initialize() /* override */;
@@ -545,7 +545,7 @@ protected:
 // Type: class EquipmentPanelWindow (forward reference);
 // VTABLE: COPTER_D 0x0058f9b0
 class EquipmentPanelWindow : public GraphicWindow
-{
+{ // packed(0xcc bytes) TI: 0x2a7e
 public:
 	void EquipmentPanelWindow(char *, class MRect&, long, struct CommandSystem*, class GraphicWindow*, class GraphicWindowOwner*);
 	virtual void ~EquipmentPanelWindow() /* override */;
@@ -577,7 +577,7 @@ protected:
 // Type: uint32_t;
 
 // Type: class DialHand (forward reference);
-class DialHand{
+class DialHand{ // packed(0x34 bytes) TI: 0x2733
 	enum DialDirection {
 		nDialDirectionClockwise = -1,
 		nDialDirectionCounterClockwise = 1,
@@ -613,7 +613,7 @@ public:
 };
 
 // Type: struct SparkalRect;
-struct SparkalRect{
+struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	long left;
 	long top;
 	long right;
@@ -623,7 +623,7 @@ struct SparkalRect{
 };
 
 // Type: struct SparkalPoint;
-struct SparkalPoint{
+struct SparkalPoint{ // packed(0x8 bytes) TI: 0x1a54
 	long x;
 	long y;
 	void SparkalPoint(long, long);
@@ -633,7 +633,7 @@ struct SparkalPoint{
 // Type: class ListBoxWindow;
 // VTABLE: COPTER_D 0x005920c8
 class ListBoxWindow : public GraphicWindow
-{
+{ // packed(0xcc bytes) TI: 0x17a0
 public:
 	void ListBoxWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	void ListBoxWindow();

@@ -5,7 +5,7 @@
 // Type: long;
 
 // Type: struct Point3d;
-struct Point3d{
+struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 	int32_t x;
 	int32_t y;
 	int32_t z;

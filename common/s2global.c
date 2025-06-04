@@ -13,7 +13,7 @@
 // Type: unsigned long;
 
 // Type: struct _rect (forward reference);
-struct _rect{
+struct _rect{ // packed(0x8 bytes) TI: 0x2e1b
 	short Xmin;
 	short Xmax;
 	short Ymin;
@@ -21,7 +21,7 @@ struct _rect{
 };
 
 // Type: struct S2Rect (forward reference);
-struct S2Rect{
+struct S2Rect{ // packed(0x8 bytes) TI: 0x2e21
 	short top;
 	short left;
 	short bottom;

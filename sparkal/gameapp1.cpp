@@ -8,7 +8,7 @@
 // Type: class CopterSparkalPalette;
 // VTABLE: COPTER_D 0x00591118
 class CopterSparkalPalette : public SparkalPalette
-{
+{ // packed(0x10 bytes) TI: 0x47bb
 public:
 	void CopterSparkalPalette(struct SparkalColor*, int32_t);
 	void CopterSparkalPalette();
@@ -24,7 +24,7 @@ public:
 // Type: class CGameCommander (forward reference);
 // VTABLE: COPTER_D 0x00590ff8
 class CGameCommander : public CDefaultCommander
-{
+{ // packed(0xc bytes) TI: 0x1d27
 public:
 	void CGameCommander();
 	virtual void ~CGameCommander() /* override */;
@@ -50,7 +50,7 @@ public:
 // Type: class NotificationPreferenceManager (forward reference);
 // VTABLE: COPTER_D 0x00590de8
 class NotificationPreferenceManager : public PreferenceManager
-{
+{ // packed(0x30 bytes) TI: 0x2539
 public:
 	class list<NotificationItem> myNotifications;
 	void NotificationPreferenceManager(long, long, long, int32_t);
@@ -65,7 +65,7 @@ public:
 // Type: class CopterSparkalPalette;
 // VTABLE: COPTER_D 0x00591118
 class CopterSparkalPalette : public SparkalPalette
-{
+{ // packed(0x10 bytes) TI: 0x47ce
 public:
 	void CopterSparkalPalette(struct SparkalColor*, int32_t);
 	void CopterSparkalPalette();
@@ -78,7 +78,7 @@ public:
 
 // Type: class SoundSystem;
 // VTABLE: COPTER_D 0x0058f440
-class SoundSystem{
+class SoundSystem{ // packed(0x74 bytes) TI: 0x1a78
 public:
 	void SoundSystem();
 	void ~SoundSystem();
@@ -100,7 +100,7 @@ protected:
 
 // Type: class SoundManager;
 // VTABLE: COPTER_D 0x0058f448
-class SoundManager{
+class SoundManager{ // packed(0x204 bytes) TI: 0x1997
 public:
 	class Sound *sound[128];
 	void AddSound(class Sound*, int32_t);
@@ -117,7 +117,7 @@ public:
 
 // Type: class SoundQueue (forward reference);
 // VTABLE: COPTER_D 0x0058f3f0
-class SoundQueue{
+class SoundQueue{ // packed(0x18 bytes) TI: 0x24ef
 public:
 	void SoundQueue();
 	void ~SoundQueue();
@@ -151,7 +151,7 @@ protected:
 
 // Type: class MessageDisplayManager;
 // VTABLE: COPTER_D 0x005907d0
-class MessageDisplayManager{
+class MessageDisplayManager{ // packed(0x54 bytes) TI: 0x10c3
 public:
 	void MessageDisplayManager();
 	void ~MessageDisplayManager();
@@ -176,7 +176,7 @@ protected:
 
 // Type: class SoundManager;
 // VTABLE: COPTER_D 0x0058f448
-class SoundManager{
+class SoundManager{ // not packed(0x204 bytes) TI: 0x4673
 public:
 	class Sound *sound[128];
 	void AddSound(class Sound*, int32_t);
@@ -194,7 +194,7 @@ public:
 // Type: void;
 
 // Type: struct GamePreferences (forward reference);
-struct GamePreferences{
+struct GamePreferences{ // packed(0x20 bytes) TI: 0x2652
 	long lQuadPixelType;
 	long bShowingPalette;
 	long bShowingDebugWindow;
@@ -207,7 +207,7 @@ struct GamePreferences{
 };
 
 // Type: struct RenderPreferences (forward reference);
-struct RenderPreferences{
+struct RenderPreferences{ // packed(0x10 bytes) TI: 0x24b3
 	long bShowObjectTexture;
 	long bShowGroundTexture;
 	long bShowSky;
@@ -218,7 +218,7 @@ struct RenderPreferences{
 // Type: long;
 
 // Type: class basic_string<char>;
-class basic_string<char>{
+class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = class basic_string_ref<char>;
 	using reference_pointer = class basic_string_ref<char>*;
 private:
@@ -329,7 +329,7 @@ public:
 // Type: unsigned long;
 
 // Type: struct SparkalColor (forward reference);
-struct SparkalColor{
+struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 	unsigned char Blue;
 	unsigned char Green;
 	unsigned char Red;
@@ -342,7 +342,7 @@ struct SparkalColor{
 
 // Type: class Version;
 // VTABLE: COPTER_D 0x0058f5b8
-class Version{
+class Version{ // packed(0xc bytes) TI: 0x241c
 public:
 	void Version();
 	virtual void ~Version(); // vtable+0x0
@@ -367,7 +367,7 @@ protected:
 };
 
 // Type: struct _MEMORYSTATUS;
-struct _MEMORYSTATUS{
+struct _MEMORYSTATUS{ // packed(0x20 bytes) TI: 0x241e
 	unsigned long dwLength;
 	unsigned long dwMemoryLoad;
 	unsigned long dwTotalPhys;
@@ -381,7 +381,7 @@ struct _MEMORYSTATUS{
 // Type: void * __ptr32;
 
 // Type: struct Shortcut;
-struct Shortcut{
+struct Shortcut{ // packed(0x18 bytes) TI: 0x1083
 	long lDeviceID;
 	long lCommand;
 	long lKey;
@@ -391,9 +391,9 @@ struct Shortcut{
 };
 
 // Type: class list<Shortcut> (forward reference);
-class list<Shortcut>{
+class list<Shortcut>{ // packed(0x8 bytes) TI: 0x1b79
 	using void_pointer = void * __ptr32;
-	struct list<Shortcut>::list_node{
+	struct list<Shortcut>::list_node{ // packed(0x20 bytes) TI: 0x1b8e
 		void * __ptr32 next;
 		void * __ptr32 prev;
 		struct Shortcut data;
@@ -412,7 +412,7 @@ protected:
 	using difference_type = int32_t;
 protected:
 	uint32_t buffer_size();
-	struct list<Shortcut>::list_node_buffer{
+	struct list<Shortcut>::list_node_buffer{ // packed(0x8 bytes) TI: 0x1b8c
 		void * __ptr32 next_buffer;
 		struct list<Shortcut>::list_node *buffer;
 	};
@@ -432,7 +432,7 @@ protected:
 	struct list<Shortcut>::list_node *node;
 	uint32_t length;
 	class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
-	{
+	{ // packed(0x4 bytes) TI: 0x1081
 	protected:
 		struct list<Shortcut>::list_node *node;
 	public:
@@ -448,7 +448,7 @@ protected:
 		class list<Shortcut>::iterator& operator--();
 	};
 	class list<Shortcut>::const_iterator : public bidirectional_iterator<Shortcut,int>
-	{
+	{ // packed(0x4 bytes) TI: 0x1b8a
 	protected:
 		struct list<Shortcut>::list_node *node;
 	public:
@@ -514,7 +514,7 @@ public:
 
 // Type: class list<Shortcut>::iterator (forward reference);
 class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
-{
+{ // packed(0x4 bytes) TI: 0x1081
 protected:
 	struct list<Shortcut>::list_node *node;
 public:
@@ -531,7 +531,7 @@ public:
 };
 
 // Type: struct list<Shortcut>::list_node (forward reference);
-struct list<Shortcut>::list_node{
+struct list<Shortcut>::list_node{ // packed(0x20 bytes) TI: 0x1b8e
 	void * __ptr32 next;
 	void * __ptr32 prev;
 	struct Shortcut data;
@@ -539,7 +539,7 @@ struct list<Shortcut>::list_node{
 
 // Type: class list<Shortcut>::iterator;
 class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
-{
+{ // packed(0x4 bytes) TI: 0x1081
 protected:
 	struct list<Shortcut>::list_node *node;
 public:
@@ -556,9 +556,9 @@ public:
 };
 
 // Type: class list<CopterGameMode> (forward reference);
-class list<CopterGameMode>{
+class list<CopterGameMode>{ // packed(0x8 bytes) TI: 0x19f6
 	using void_pointer = void * __ptr32;
-	struct list<CopterGameMode>::list_node{
+	struct list<CopterGameMode>::list_node{ // packed(0xc bytes) TI: 0x1a1c
 		void * __ptr32 next;
 		void * __ptr32 prev;
 		class CopterGameMode data;
@@ -577,7 +577,7 @@ protected:
 	using difference_type = int32_t;
 protected:
 	uint32_t buffer_size();
-	struct list<CopterGameMode>::list_node_buffer{
+	struct list<CopterGameMode>::list_node_buffer{ // packed(0x8 bytes) TI: 0x1a1a
 		void * __ptr32 next_buffer;
 		struct list<CopterGameMode>::list_node *buffer;
 	};
@@ -597,7 +597,7 @@ protected:
 	struct list<CopterGameMode>::list_node *node;
 	uint32_t length;
 	class list<CopterGameMode>::iterator : public bidirectional_iterator<CopterGameMode,int>
-	{
+	{ // packed(0x4 bytes) TI: 0x1a18
 	protected:
 		struct list<CopterGameMode>::list_node *node;
 	public:
@@ -613,7 +613,7 @@ protected:
 		class list<CopterGameMode>::iterator& operator--();
 	};
 	class list<CopterGameMode>::const_iterator : public bidirectional_iterator<CopterGameMode,int>
-	{
+	{ // packed(0x4 bytes) TI: 0x1a0b
 	protected:
 		struct list<CopterGameMode>::list_node *node;
 	public:
@@ -678,14 +678,14 @@ public:
 };
 
 // Type: struct list<CopterGameMode>::list_node_buffer (forward reference);
-struct list<CopterGameMode>::list_node_buffer{
+struct list<CopterGameMode>::list_node_buffer{ // packed(0x8 bytes) TI: 0x1a1a
 	void * __ptr32 next_buffer;
 	struct list<CopterGameMode>::list_node *buffer;
 };
 
 // Type: class list<CopterGameMode>::iterator;
 class list<CopterGameMode>::iterator : public bidirectional_iterator<CopterGameMode,int>
-{
+{ // packed(0x4 bytes) TI: 0x1a18
 protected:
 	struct list<CopterGameMode>::list_node *node;
 public:
@@ -702,13 +702,13 @@ public:
 };
 
 // Type: struct bidirectional_iterator<Shortcut,int>;
-struct bidirectional_iterator<Shortcut,int>{
+struct bidirectional_iterator<Shortcut,int>{ // packed(0x1 bytes) TI: 0x1ee7
 };
 
 // Type: class CDefaultCommander;
 // VTABLE: COPTER_D 0x005912d0
 class CDefaultCommander : public ICommander
-{
+{ // packed(0x8 bytes) TI: 0x17ff
 public:
 	void CDefaultCommander();
 	virtual void ~CDefaultCommander() /* override */;
@@ -722,12 +722,12 @@ public:
 };
 
 // Type: struct bidirectional_iterator<CopterGameMode,int>;
-struct bidirectional_iterator<CopterGameMode,int>{
+struct bidirectional_iterator<CopterGameMode,int>{ // packed(0x1 bytes) TI: 0x184c
 };
 
 // Type: class PreferenceManager;
 // VTABLE: COPTER_D 0x00590db0
-class PreferenceManager{
+class PreferenceManager{ // packed(0x28 bytes) TI: 0x26c8
 protected:
 	int32_t bSaveFileAtAllChanges;
 	class list<PreferenceItem> myPreferences;
@@ -757,7 +757,7 @@ public:
 
 // Type: class SparkalPalette;
 // VTABLE: COPTER_D 0x005910f8
-class SparkalPalette{
+class SparkalPalette{ // packed(0x10 bytes) TI: 0x1f91
 public:
 	struct SparkalColor *pColors;
 	long lColors;
@@ -775,7 +775,7 @@ public:
 
 // Type: class ICommander;
 // VTABLE: COPTER_D 0x005912a8
-class ICommander{
+class ICommander{ // packed(0x8 bytes) TI: 0x17ab
 public:
 	void ICommander();
 	virtual void ~ICommander(); // vtable+0x0

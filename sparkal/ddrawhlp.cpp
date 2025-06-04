@@ -4,7 +4,7 @@
 
 // Type: struct IDirectDraw (forward reference);
 struct IDirectDraw : public IUnknown
-{
+{ // packed(0x4 bytes) TI: 0x1f44
 	// calltype: NearStd
 	virtual long QueryInterface(const struct _GUID&, void * __ptr32*) /* override */;
 	// calltype: NearStd
@@ -55,7 +55,7 @@ struct IDirectDraw : public IUnknown
 
 // Type: struct IDirectDrawPalette (forward reference);
 struct IDirectDrawPalette : public IUnknown
-{
+{ // packed(0x4 bytes) TI: 0x1e81
 	// calltype: NearStd
 	virtual long QueryInterface(const struct _GUID&, void * __ptr32*) /* override */;
 	// calltype: NearStd
@@ -73,7 +73,7 @@ struct IDirectDrawPalette : public IUnknown
 };
 
 // Type: struct _DDCAPS;
-struct _DDCAPS{
+struct _DDCAPS{ // packed(0xac bytes) TI: 0x1a7b
 	unsigned long dwSize;
 	unsigned long dwCaps;
 	unsigned long dwCaps2;
@@ -118,7 +118,7 @@ struct _DDCAPS{
 
 // Type: struct IDirectDrawSurface (forward reference);
 struct IDirectDrawSurface : public IUnknown
-{
+{ // packed(0x4 bytes) TI: 0x1da5
 	// calltype: NearStd
 	virtual long QueryInterface(const struct _GUID&, void * __ptr32*) /* override */;
 	// calltype: NearStd
@@ -198,7 +198,7 @@ struct IDirectDrawSurface : public IUnknown
 // Type: void * __ptr32;
 
 // Type: struct _DDSURFACEDESC;
-struct _DDSURFACEDESC{
+struct _DDSURFACEDESC{ // packed(0x6c bytes) TI: 0x1737
 	unsigned long dwSize;
 	unsigned long dwFlags;
 	unsigned long dwHeight;
@@ -220,7 +220,7 @@ struct _DDSURFACEDESC{
 // Type: char *;
 
 // Type: struct ReadPalFile::__unnamed;
-struct ReadPalFile::__unnamed{
+struct ReadPalFile::__unnamed{ // packed(0x418 bytes) TI: 0x2bdc
 	unsigned long dwRiff;
 	unsigned long dwFileSize;
 	unsigned long dwPal;
@@ -234,7 +234,7 @@ struct ReadPalFile::__unnamed{
 // Type: int32_t;
 
 // Type: struct IUnknown;
-struct IUnknown{
+struct IUnknown{ // packed(0x4 bytes) TI: 0x196f
 	// calltype: NearStd
 	virtual long QueryInterface(const struct _GUID&, void * __ptr32*); // vtable+0x0
 	// calltype: NearStd

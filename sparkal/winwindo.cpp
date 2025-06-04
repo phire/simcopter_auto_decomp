@@ -6,7 +6,7 @@
 
 // Type: class CSparkalWindow (forward reference);
 // VTABLE: COPTER_D 0x00590ef8
-class CSparkalWindow{
+class CSparkalWindow{ // packed(0x68 bytes) TI: 0x20d9
 public:
 	void CSparkalWindow(unsigned long, unsigned long, unsigned long, const struct SparkalColor*, char *);
 	void CSparkalWindow();
@@ -54,7 +54,7 @@ protected:
 // Type: unsigned long;
 
 // Type: struct SparkalColor (forward reference);
-struct SparkalColor{
+struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 	unsigned char Blue;
 	unsigned char Green;
 	unsigned char Red;
@@ -66,7 +66,7 @@ struct SparkalColor{
 // Type: char *;
 
 // Type: struct tagRECT;
-struct tagRECT{
+struct tagRECT{ // packed(0x10 bytes) TI: 0x13c4
 	long left;
 	long top;
 	long right;
@@ -74,7 +74,7 @@ struct tagRECT{
 };
 
 // Type: struct tagWNDCLASSA;
-struct tagWNDCLASSA{
+struct tagWNDCLASSA{ // packed(0x28 bytes) TI: 0x26d3
 	uint32_t style;
 	long (*lpfnWndProc)(void * __ptr32, uint32_t, uint32_t, long);
 	int32_t cbClsExtra;
@@ -88,7 +88,7 @@ struct tagWNDCLASSA{
 };
 
 // Type: struct CSparkalWindow::__ctor::__unnamed;
-struct CSparkalWindow::__ctor::__unnamed{
+struct CSparkalWindow::__ctor::__unnamed{ // packed(0x404 bytes) TI: 0x26d4
 	unsigned short Version;
 	unsigned short NumberOfEntries;
 	struct tagPALETTEENTRY aEntries[256];
@@ -103,13 +103,13 @@ struct CSparkalWindow::__ctor::__unnamed{
 // Type: long;
 
 // Type: struct tagSIZE;
-struct tagSIZE{
+struct tagSIZE{ // packed(0x8 bytes) TI: 0x21e7
 	long cx;
 	long cy;
 };
 
 // Type: struct tagPALETTEENTRY (forward reference);
-struct tagPALETTEENTRY{
+struct tagPALETTEENTRY{ // packed(0x4 bytes) TI: 0x1be6
 	unsigned char peRed;
 	unsigned char peGreen;
 	unsigned char peBlue;
@@ -119,13 +119,13 @@ struct tagPALETTEENTRY{
 // Type: unsigned char;
 
 // Type: struct CheckIdentityPalette::__unnamed;
-struct CheckIdentityPalette::__unnamed{
+struct CheckIdentityPalette::__unnamed{ // packed(0x428 bytes) TI: 0x26d9
 	struct tagBITMAPINFOHEADER Header;
 	struct tagRGBQUAD Colors[256];
 };
 
 // Type: struct tagPAINTSTRUCT;
-struct tagPAINTSTRUCT{
+struct tagPAINTSTRUCT{ // packed(0x40 bytes) TI: 0x124b
 	void * __ptr32 hdc;
 	int32_t fErase;
 	struct tagRECT rcPaint;

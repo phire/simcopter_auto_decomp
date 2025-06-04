@@ -4,7 +4,7 @@
 
 // Type: class SparkalPalette (forward reference);
 // VTABLE: COPTER_D 0x005910f8
-class SparkalPalette{
+class SparkalPalette{ // packed(0x10 bytes) TI: 0x47c7
 public:
 	struct SparkalColor *pColors;
 	long lColors;
@@ -26,7 +26,7 @@ public:
 };
 
 // Type: struct SparkalColor (forward reference);
-struct SparkalColor{
+struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 	unsigned char Blue;
 	unsigned char Green;
 	unsigned char Red;
@@ -44,7 +44,7 @@ struct SparkalColor{
 // Type: long;
 
 // Type: class MTimer;
-class MTimer{
+class MTimer{ // packed(0x10 bytes) TI: 0x1968
 	enum TimerResolution {
 		nTimerResolutionMicroseconds = 0,
 		nTimerResolutionMilliseconds = 1,
@@ -71,7 +71,7 @@ protected:
 };
 
 // Type: struct tagPALETTEENTRY (forward reference);
-struct tagPALETTEENTRY{
+struct tagPALETTEENTRY{ // packed(0x4 bytes) TI: 0x1be6
 	unsigned char peRed;
 	unsigned char peGreen;
 	unsigned char peBlue;
@@ -79,7 +79,7 @@ struct tagPALETTEENTRY{
 };
 
 // Type: struct SparkalColor;
-struct SparkalColor{
+struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 	unsigned char Blue;
 	unsigned char Green;
 	unsigned char Red;
@@ -89,14 +89,14 @@ struct SparkalColor{
 };
 
 // Type: struct SparkalPalette::FadeToPalette::TempPalette (forward reference);
-struct SparkalPalette::FadeToPalette::TempPalette{
+struct SparkalPalette::FadeToPalette::TempPalette{ // packed(0x400 bytes) TI: 0x47cb
 	struct tagPALETTEENTRY palEntries[256];
 };
 
 // Type: class CopterSparkalPalette (forward reference);
 // VTABLE: COPTER_D 0x00591118
 class CopterSparkalPalette : public SparkalPalette
-{
+{ // packed(0x10 bytes) TI: 0x47ce
 public:
 	void CopterSparkalPalette(struct SparkalColor*, int32_t);
 	void CopterSparkalPalette();
@@ -108,7 +108,7 @@ public:
 // Type: void * __ptr32;
 
 // Type: struct ClearWindowsSystemPalette::__unnamed;
-struct ClearWindowsSystemPalette::__unnamed{
+struct ClearWindowsSystemPalette::__unnamed{ // packed(0x404 bytes) TI: 0x2314
 	unsigned short Version;
 	unsigned short NumberOfEntries;
 	struct tagPALETTEENTRY aEntries[256];
@@ -118,7 +118,7 @@ struct ClearWindowsSystemPalette::__unnamed{
 
 // Type: class SparkalPalette;
 // VTABLE: COPTER_D 0x005910f8
-class SparkalPalette{
+class SparkalPalette{ // packed(0x10 bytes) TI: 0x1f91
 public:
 	struct SparkalColor *pColors;
 	long lColors;

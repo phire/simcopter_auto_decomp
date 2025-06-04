@@ -4,7 +4,7 @@
 
 // Type: class FlatFile (forward reference);
 // VTABLE: COPTER_D 0x00593620
-class FlatFile{
+class FlatFile{ // not packed(0x110 bytes) TI: 0x32f4
 	enum /* __unnamed */ {
 		kMaxNameLen = 255,
 	};

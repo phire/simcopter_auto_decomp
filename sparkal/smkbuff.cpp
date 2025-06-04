@@ -4,7 +4,7 @@
 
 // Type: class SmackerBuffer (forward reference);
 // VTABLE: COPTER_D 0x00591138
-class SmackerBuffer{
+class SmackerBuffer{ // packed(0x140 bytes) TI: 0x20de
 public:
 	void SmackerBuffer(char *, int32_t, int32_t);
 	void SmackerBuffer();
@@ -55,7 +55,7 @@ protected:
 // Type: void * __ptr32;
 
 // Type: struct SparkalRect;
-struct SparkalRect{
+struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	long left;
 	long top;
 	long right;
@@ -65,7 +65,7 @@ struct SparkalRect{
 };
 
 // Type: struct tagRECT;
-struct tagRECT{
+struct tagRECT{ // packed(0x10 bytes) TI: 0x13c4
 	long left;
 	long top;
 	long right;
@@ -74,7 +74,7 @@ struct tagRECT{
 
 // Type: class CSparkalWindow (forward reference);
 // VTABLE: COPTER_D 0x00590ef8
-class CSparkalWindow{
+class CSparkalWindow{ // packed(0x68 bytes) TI: 0x20d9
 public:
 	void CSparkalWindow(unsigned long, unsigned long, unsigned long, const struct SparkalColor*, char *);
 	void CSparkalWindow();
@@ -116,7 +116,7 @@ protected:
 };
 
 // Type: struct SparkalRect (forward reference);
-struct SparkalRect{
+struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	long left;
 	long top;
 	long right;
@@ -128,7 +128,7 @@ struct SparkalRect{
 // Type: class VRBmpSmackerBuffer (forward reference);
 // VTABLE: COPTER_D 0x00591158
 class VRBmpSmackerBuffer : public SmackerBuffer
-{
+{ // packed(0x164 bytes) TI: 0x230c
 public:
 	char * szVRBmpName;
 	int32_t nVRBmpFlags;
@@ -153,7 +153,7 @@ public:
 };
 
 // Type: struct VRBmpHdr (forward reference);
-struct VRBmpHdr{
+struct VRBmpHdr{ // packed(0x10 bytes) TI: 0x2312
 	struct VRBmpInfo info;
 	int32_t ScanOffset[1];
 };
@@ -161,7 +161,7 @@ struct VRBmpHdr{
 // Type: class SmackerBackBuffer (forward reference);
 // VTABLE: COPTER_D 0x005911f0
 class SmackerBackBuffer : public SmackerBuffer, public CBackBuffer
-{
+{ // packed(0x27c bytes) TI: 0x41fc
 public:
 	int32_t bUseSmackBuf;
 	void SmackerBackBuffer(char *, int32_t, int32_t, int32_t, int32_t, int32_t);
@@ -184,7 +184,7 @@ protected:
 
 // Type: class IFlatImage (forward reference);
 // VTABLE: COPTER_D 0x00591050
-class IFlatImage{
+class IFlatImage{ // packed(0x18 bytes) TI: 0x13a1
 public:
 	void IFlatImage();
 	virtual unsigned long Lock(); // vtable+0x0
@@ -216,7 +216,7 @@ protected:
 
 // Type: class SmackerBuffer;
 // VTABLE: COPTER_D 0x00591138
-class SmackerBuffer{
+class SmackerBuffer{ // packed(0x140 bytes) TI: 0x1311
 public:
 	void SmackerBuffer(char *, int32_t, int32_t);
 	void SmackerBuffer();
@@ -259,7 +259,7 @@ protected:
 // Type: class CBackBuffer;
 // VTABLE: COPTER_D 0x00590808
 class CBackBuffer : public IBackBuffer
-{
+{ // packed(0x134 bytes) TI: 0x18f5
 public:
 	void CBackBuffer(long, long, const struct SparkalColor*);
 	void CBackBuffer(char *);
@@ -324,7 +324,7 @@ protected:
 // Type: class IBackBuffer;
 // VTABLE: COPTER_D 0x005907e0
 class IBackBuffer : public IFlatImage
-{
+{ // packed(0x18 bytes) TI: 0x1544
 public:
 	virtual unsigned long Swap(class CSparkalWindow*, long, long); // vtable+0x1c
 	virtual unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long); // vtable+0x20
@@ -333,7 +333,7 @@ public:
 
 // Type: class IFlatImage;
 // VTABLE: COPTER_D 0x00591050
-class IFlatImage{
+class IFlatImage{ // packed(0x18 bytes) TI: 0x13a1
 public:
 	void IFlatImage();
 	virtual unsigned long Lock(); // vtable+0x0

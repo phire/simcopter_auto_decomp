@@ -7,7 +7,7 @@
 // Type: class cLZAPFileBitStream (forward reference);
 // VTABLE: COPTER_D 0x00592418
 class cLZAPFileBitStream : public cGZXBitstream
-{
+{ // packed(0xc bytes) TI: 0x2d27
 public:
 	void cLZAPFileBitStream();
 	void ~cLZAPFileBitStream();
@@ -37,7 +37,7 @@ private:
 
 // Type: class cGZXBitstream (forward reference);
 // VTABLE: COPTER_D 0x005923f8
-class cGZXBitstream{
+class cGZXBitstream{ // packed(0x4 bytes) TI: 0x2d06
 public:
 	virtual unsigned long Read(unsigned char *, unsigned long); // vtable+0x0
 	virtual unsigned long Write(unsigned char *, unsigned long); // vtable+0x4
@@ -49,7 +49,7 @@ public:
 };
 
 // Type: struct SCXNeighborData (forward reference);
-struct SCXNeighborData{
+struct SCXNeighborData{ // packed(0x2e bytes) TI: 0x2d72
 	char name[32];
 	short nameIndex;
 	unsigned long val;
@@ -60,7 +60,7 @@ struct SCXNeighborData{
 // Type: class cLZAPFileBitStream;
 // VTABLE: COPTER_D 0x00592418
 class cLZAPFileBitStream : public cGZXBitstream
-{
+{ // packed(0xc bytes) TI: 0x2d27
 public:
 	void cLZAPFileBitStream();
 	void ~cLZAPFileBitStream();
@@ -79,7 +79,7 @@ private:
 };
 
 // Type: struct ReadSCXFile::__unnamed;
-struct ReadSCXFile::__unnamed{
+struct ReadSCXFile::__unnamed{ // packed(0x9 bytes) TI: 0x2d29
 	unsigned char type;
 	unsigned char owner;
 	unsigned char stat0;
@@ -90,7 +90,7 @@ struct ReadSCXFile::__unnamed{
 
 // Type: class cGZXParamBitstream<t_alloc,t_free>;
 class cGZXParamBitstream<t_alloc,t_free> : public cGZXBitstream
-{
+{ // packed(0x3c bytes) TI: 0x2d3d
 protected:
 	unsigned long curPos;
 	unsigned long markPos;
@@ -103,7 +103,7 @@ protected:
 	class vector<tGZXBitstreamNode> nodeList;
 	struct t_alloc m_rawAllocate;
 	struct t_free m_rawFree;
-	class cGZXParamBitstream<t_alloc,t_free>::stream_iterator{
+	class cGZXParamBitstream<t_alloc,t_free>::stream_iterator{ // packed(0xa bytes) TI: 0x2d64
 	public:
 		void stream_iterator(class cGZXParamBitstream<t_alloc,t_free>::stream_iterator&);
 		void stream_iterator(class cGZXParamBitstream<t_alloc,t_free>*, short, unsigned long);
@@ -118,7 +118,7 @@ protected:
 		class CPropertyType<unsigned long> m_pos;
 		class CPropertyType<short> m_node;
 	};
-	class cGZXParamBitstream<t_alloc,t_free>::stream_iterator{
+	class cGZXParamBitstream<t_alloc,t_free>::stream_iterator{ // packed(0xa bytes) TI: 0x2d64
 	public:
 		void stream_iterator(class cGZXParamBitstream<t_alloc,t_free>::stream_iterator&);
 		void stream_iterator(class cGZXParamBitstream<t_alloc,t_free>*, short, unsigned long);
@@ -152,7 +152,7 @@ public:
 };
 
 // Type: struct tSCXSaveFileHdr;
-struct tSCXSaveFileHdr{
+struct tSCXSaveFileHdr{ // packed(0x2c bytes) TI: 0x2d3f
 	char type[4];
 	char product[32];
 	long version;
@@ -160,7 +160,7 @@ struct tSCXSaveFileHdr{
 };
 
 // Type: class vector<tGZXBitstreamNode> (forward reference);
-class vector<tGZXBitstreamNode>{
+class vector<tGZXBitstreamNode>{ // packed(0xc bytes) TI: 0x2da6
 	using vector_allocator = class allocator<tGZXBitstreamNode>;
 	using value_type = struct tGZXBitstreamNode;
 	using pointer = struct tGZXBitstreamNode*;
@@ -216,7 +216,7 @@ public:
 
 // Type: class cGZXParamBitstream<t_alloc,t_free> (forward reference);
 class cGZXParamBitstream<t_alloc,t_free> : public cGZXBitstream
-{
+{ // packed(0x3c bytes) TI: 0x2d3d
 protected:
 	unsigned long curPos;
 	unsigned long markPos;
@@ -229,7 +229,7 @@ protected:
 	class vector<tGZXBitstreamNode> nodeList;
 	struct t_alloc m_rawAllocate;
 	struct t_free m_rawFree;
-	class cGZXParamBitstream<t_alloc,t_free>::stream_iterator{
+	class cGZXParamBitstream<t_alloc,t_free>::stream_iterator{ // packed(0xa bytes) TI: 0x2d64
 	public:
 		void stream_iterator(class cGZXParamBitstream<t_alloc,t_free>::stream_iterator&);
 		void stream_iterator(class cGZXParamBitstream<t_alloc,t_free>*, short, unsigned long);
@@ -244,7 +244,7 @@ protected:
 		class CPropertyType<unsigned long> m_pos;
 		class CPropertyType<short> m_node;
 	};
-	class cGZXParamBitstream<t_alloc,t_free>::stream_iterator{
+	class cGZXParamBitstream<t_alloc,t_free>::stream_iterator{ // packed(0xa bytes) TI: 0x2d64
 	public:
 		void stream_iterator(class cGZXParamBitstream<t_alloc,t_free>::stream_iterator&);
 		void stream_iterator(class cGZXParamBitstream<t_alloc,t_free>*, short, unsigned long);
@@ -280,7 +280,7 @@ public:
 // Type: uint32_t;
 
 // Type: struct tGZXBitstreamNode (forward reference);
-struct tGZXBitstreamNode{
+struct tGZXBitstreamNode{ // packed(0x8 bytes) TI: 0x2d18
 	unsigned char * data;
 	unsigned long size;
 	void tGZXBitstreamNode(unsigned char *, unsigned long);
@@ -288,7 +288,7 @@ struct tGZXBitstreamNode{
 
 // Type: class cGZXBitstream;
 // VTABLE: COPTER_D 0x005923f8
-class cGZXBitstream{
+class cGZXBitstream{ // packed(0x4 bytes) TI: 0x2d06
 public:
 	virtual unsigned long Read(unsigned char *, unsigned long); // vtable+0x0
 	virtual unsigned long Write(unsigned char *, unsigned long); // vtable+0x4

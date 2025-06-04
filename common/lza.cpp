@@ -4,7 +4,7 @@
 
 // Type: class cGZXBitstream (forward reference);
 // VTABLE: COPTER_D 0x005923f8
-class cGZXBitstream{
+class cGZXBitstream{ // packed(0x4 bytes) TI: 0x2d06
 public:
 	virtual unsigned long Read(unsigned char *, unsigned long); // vtable+0x0
 	virtual unsigned long Write(unsigned char *, unsigned long); // vtable+0x4
@@ -18,7 +18,7 @@ public:
 // Type: unsigned long *;
 
 // Type: struct tLZSSBinaryForest (forward reference);
-struct tLZSSBinaryForest{
+struct tLZSSBinaryForest{ // packed(0xd44f bytes) TI: 0x2d0d
 	unsigned char text_buf[4155];
 	long match_position;
 	long match_length;
@@ -30,7 +30,7 @@ struct tLZSSBinaryForest{
 // Type: short;
 
 // Type: struct tCompressState (forward reference);
-struct tCompressState{
+struct tCompressState{ // packed(0x20 bytes) TI: 0x2d08
 	unsigned long putBuffer;
 	unsigned long putMask;
 	unsigned long getBuffer;
@@ -44,7 +44,7 @@ struct tCompressState{
 // Type: unsigned char;
 
 // Type: struct tACompModel (forward reference);
-struct tACompModel{
+struct tACompModel{ // packed(0x53c0 bytes) TI: 0x2d13
 	unsigned long low;
 	unsigned long high;
 	unsigned long value;

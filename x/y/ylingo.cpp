@@ -5,7 +5,7 @@
 // Type: class YObjLang (forward reference);
 // VTABLE: COPTER_D 0x005936e8
 class YObjLang : public Language
-{
+{ // not packed(0x4 bytes) TI: 0x484d
 public:
 	void YObjLang(class YObjLang&);
 	void YObjLang(unsigned char *);
@@ -103,71 +103,71 @@ public:
 		kTreeTableValue = 12,
 		kNumOwners = 13,
 	};
-	struct YObjLang::OwnerDataParam{
+	struct YObjLang::OwnerDataParam{ // not packed(0x8 bytes) TI: 0x3593
 		short owner1;
 		short data1;
 		short owner2;
 		short data2;
 	};
-	struct YObjLang::TurnToFireParam{
+	struct YObjLang::TurnToFireParam{ // not packed(0x4 bytes) TI: 0x3591
 		short xdistloc;
 		short ydistloc;
 	};
-	struct YObjLang::GetOutOfRoadParam{
+	struct YObjLang::GetOutOfRoadParam{ // not packed(0x2 bytes) TI: 0x358f
 		short decTemp;
 	};
-	struct YObjLang::SetDirectionParam{
+	struct YObjLang::SetDirectionParam{ // not packed(0x2 bytes) TI: 0x358e
 		short dirTemp;
 	};
-	struct YObjLang::CheckForSpotParam{
+	struct YObjLang::CheckForSpotParam{ // not packed(0x4 bytes) TI: 0x358c
 		short brightnessTemp;
 		short dirToHeliTemp;
 	};
-	struct YObjLang::GetSurroundingRiotValParam{
+	struct YObjLang::GetSurroundingRiotValParam{ // not packed(0x8 bytes) TI: 0x358a
 		short distTemp;
 		short dirToConcTemp;
 		short riotValTemp;
 		short numPeopleCountedTemp;
 	};
-	struct YObjLang::IncrementRiotValParam{
+	struct YObjLang::IncrementRiotValParam{ // not packed(0x2 bytes) TI: 0x3588
 		short riotValLiteral;
 	};
-	struct YObjLang::IsThisScurkIDParam{
+	struct YObjLang::IsThisScurkIDParam{ // not packed(0x2 bytes) TI: 0x3586
 		short scurkIDLiteral;
 	};
-	struct YObjLang::IsThisLocTypeParam{
+	struct YObjLang::IsThisLocTypeParam{ // not packed(0x2 bytes) TI: 0x3584
 		short locTypeLiteral;
 	};
-	struct YObjLang::UpdateMyMissionParam{
+	struct YObjLang::UpdateMyMissionParam{ // not packed(0x2 bytes) TI: 0x3582
 		short updateLiteral;
 	};
-	struct YObjLang::CheckForTrueParam{
+	struct YObjLang::CheckForTrueParam{ // not packed(0x2 bytes) TI: 0x3580
 		short whatLiteral;
 	};
-	struct YObjLang::CompareMyLocWithParam{
+	struct YObjLang::CompareMyLocWithParam{ // not packed(0x6 bytes) TI: 0x357e
 		short withWhatLiteral;
 		short distData;
 		short distOwner;
 	};
-	struct YObjLang::WalkAndGrabParam{
+	struct YObjLang::WalkAndGrabParam{ // not packed(0x4 bytes) TI: 0x357c
 		short decTemp;
 		short dynAnimBoolean;
 	};
-	struct YObjLang::SearchForDynParam{
+	struct YObjLang::SearchForDynParam{ // not packed(0x6 bytes) TI: 0x357a
 		short searchdynobjtypetemp;
 		short onlyonmasterboolean;
 		short numcellstospiral;
 	};
-	struct YObjLang::IdleParam{
+	struct YObjLang::IdleParam{ // not packed(0x2 bytes) TI: 0x3578
 		short decTemp;
 	};
-	struct YObjLang::SetAnimParam{
+	struct YObjLang::SetAnimParam{ // not packed(0x4 bytes) TI: 0x3576
 		unsigned long animname;
 	};
-	struct YObjLang::SetBodyParam{
+	struct YObjLang::SetBodyParam{ // not packed(0x4 bytes) TI: 0x3574
 		unsigned long bodyname;
 	};
-	struct YObjLang::WalkRunParam{
+	struct YObjLang::WalkRunParam{ // not packed(0x7 bytes) TI: 0x3572
 		char decTemp;
 		char onlyNeutralBoolean;
 		char moveFailTemp;
@@ -176,29 +176,29 @@ public:
 		char dynAnimBoolean;
 		char speedTemp;
 	};
-	struct YObjLang::RandomParam{
+	struct YObjLang::RandomParam{ // not packed(0x6 bytes) TI: 0x3570
 		short destTemp;
 		short rangeData;
 		short rangeOwner;
 	};
-	struct YObjLang::RoadDirParam{
+	struct YObjLang::RoadDirParam{ // not packed(0x6 bytes) TI: 0x356e
 		short dirTemp;
 		short distAheadData;
 		short distAheadOwner;
 	};
-	struct YObjLang::DirDistFirstParam{
+	struct YObjLang::DirDistFirstParam{ // not packed(0x8 bytes) TI: 0x356c
 		short dirToTemp;
 		short distToTemp;
 		short whatData;
 		short whatOwner;
 	};
-	struct YObjLang::DirDistPersonParam{
+	struct YObjLang::DirDistPersonParam{ // not packed(0x8 bytes) TI: 0x356a
 		short dirToTemp;
 		short distToTemp;
 		short whoData;
 		short whoOwner;
 	};
-	struct YObjLang::AttrParam{
+	struct YObjLang::AttrParam{ // not packed(0x8 bytes) TI: 0x3568
 		short lhsData;
 		short rhsData;
 		LfBitfield @ 0x5d5b4:
@@ -240,7 +240,7 @@ public:
 		kClearFlag = 10,
 		kNumOps = 11,
 	};
-	struct YObjLang::MiscParam{
+	struct YObjLang::MiscParam{ // not packed(0x8 bytes) TI: 0x3564
 		short m1;
 		short m2;
 		short m3;
@@ -325,7 +325,7 @@ public:
 // Type: short;
 
 // Type: struct Behavior::NodeParameter (forward reference);
-struct Behavior::NodeParameter{
+struct Behavior::NodeParameter{ // not packed(0x8 bytes) TI: 0x35e5
 	short p1;
 	short p2;
 	short p3;
@@ -333,7 +333,7 @@ struct Behavior::NodeParameter{
 };
 
 // Type: struct YObjLang::AttrParam (forward reference);
-struct YObjLang::AttrParam{
+struct YObjLang::AttrParam{ // not packed(0x8 bytes) TI: 0x3568
 	short lhsData;
 	short rhsData;
 	LfBitfield @ 0x5d5b4:
@@ -367,13 +367,13 @@ struct YObjLang::AttrParam{
 // Type: long;
 
 // Type: struct Behavior::Tree (forward reference);
-struct Behavior::Tree{
+struct Behavior::Tree{ // not packed(0xe bytes) TI: 0x35e1
 	short numNodes;
 	struct Behavior::Node nodes[1];
 };
 
 // Type: struct Behavior::Node (forward reference);
-struct Behavior::Node{
+struct Behavior::Node{ // not packed(0xc bytes) TI: 0x35e3
 	short treeID;
 	short primCode;
 	char trueTrans;
@@ -385,7 +385,7 @@ struct Behavior::Node{
 
 // Type: class Behavior (forward reference);
 // VTABLE: COPTER_D 0x005936d8
-class Behavior{
+class Behavior{ // not packed(0x1c bytes) TI: 0x35de
 protected:
 	class NResFile *fGlobFile;
 	class NResFile *fPrivFile;
@@ -410,13 +410,13 @@ protected:
 		kSemiGlobalTrees = 3,
 		kMaxTreeClass = 3,
 	};
-	struct Behavior::NodeParameter{
+	struct Behavior::NodeParameter{ // not packed(0x8 bytes) TI: 0x35e5
 		short p1;
 		short p2;
 		short p3;
 		short p4;
 	};
-	struct Behavior::Node{
+	struct Behavior::Node{ // not packed(0xc bytes) TI: 0x35e3
 		short treeID;
 		short primCode;
 		char trueTrans;
@@ -428,7 +428,7 @@ protected:
 		kPopOutTrue = -2,
 		kPopOutFalse = -1,
 	};
-	struct Behavior::Tree{
+	struct Behavior::Tree{ // not packed(0xe bytes) TI: 0x35e1
 		short numNodes;
 		struct Behavior::Node nodes[1];
 	};

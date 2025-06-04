@@ -4,7 +4,7 @@
 
 // Type: class PFile (forward reference);
 // VTABLE: COPTER_D 0x00590468
-class PFile{
+class PFile{ // packed(0x110 bytes) TI: 0x453c
 	enum /* __unnamed */ {
 		FileNull = -1,
 	};
@@ -83,7 +83,7 @@ private:
 // Type: long;
 
 // Type: struct _OFSTRUCT;
-struct _OFSTRUCT{
+struct _OFSTRUCT{ // packed(0x88 bytes) TI: 0x21e5
 	unsigned char cBytes;
 	unsigned char fFixedDisk;
 	unsigned short nErrCode;
@@ -96,7 +96,7 @@ struct _OFSTRUCT{
 
 // Type: class PFile;
 // VTABLE: COPTER_D 0x00590468
-class PFile{
+class PFile{ // packed(0x110 bytes) TI: 0x453c
 	enum /* __unnamed */ {
 		FileNull = -1,
 	};

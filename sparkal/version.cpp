@@ -4,7 +4,7 @@
 
 // Type: class Version (forward reference);
 // VTABLE: COPTER_D 0x0058f5b8
-class Version{
+class Version{ // packed(0xc bytes) TI: 0x241c
 public:
 	void Version();
 	virtual void ~Version(); // vtable+0x0
@@ -43,7 +43,7 @@ protected:
 // Type: int32_t;
 
 // Type: struct tagVS_FIXEDFILEINFO (forward reference);
-struct tagVS_FIXEDFILEINFO{
+struct tagVS_FIXEDFILEINFO{ // packed(0x34 bytes) TI: 0x2aed
 	unsigned long dwSignature;
 	unsigned long dwStrucVersion;
 	unsigned long dwFileVersionMS;
@@ -62,7 +62,7 @@ struct tagVS_FIXEDFILEINFO{
 // Type: long;
 
 // Type: struct FREQ_INFO;
-struct FREQ_INFO{
+struct FREQ_INFO{ // packed(0x10 bytes) TI: 0x2a8f
 	unsigned long in_cycles;
 	unsigned long ex_ticks;
 	unsigned long raw_freq;

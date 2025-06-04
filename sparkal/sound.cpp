@@ -6,7 +6,7 @@
 
 // Type: struct IDirectSound (forward reference);
 struct IDirectSound : public IUnknown
-{
+{ // packed(0x4 bytes) TI: 0x192f
 	// calltype: NearStd
 	virtual long QueryInterface(const struct _GUID&, void * __ptr32*) /* override */;
 	// calltype: NearStd
@@ -33,7 +33,7 @@ struct IDirectSound : public IUnknown
 
 // Type: class SoundSystem (forward reference);
 // VTABLE: COPTER_D 0x0058f440
-class SoundSystem{
+class SoundSystem{ // packed(0x74 bytes) TI: 0x1a78
 public:
 	void SoundSystem();
 	void ~SoundSystem();
@@ -65,7 +65,7 @@ protected:
 
 // Type: class SoundManager (forward reference);
 // VTABLE: COPTER_D 0x0058f448
-class SoundManager{
+class SoundManager{ // packed(0x204 bytes) TI: 0x1997
 public:
 	class Sound *sound[128];
 	void AddSound(class Sound*, int32_t);
@@ -82,7 +82,7 @@ public:
 
 // Type: class Sound (forward reference);
 // VTABLE: COPTER_D 0x0058f458
-class Sound{
+class Sound{ // packed(0x34 bytes) TI: 0x4335
 	enum SoundSourceType {
 		nSoundSourceTypeResource = 0,
 		nSoundSourceTypeFile = 1,
@@ -127,7 +127,7 @@ public:
 // Type: class DigitalSound (forward reference);
 // VTABLE: COPTER_D 0x0058f488
 class DigitalSound : public Sound
-{
+{ // packed(0x7a bytes) TI: 0x45d4
 protected:
 	int32_t nStreamingType;
 	int32_t nCompletionEstimationTimerSet;
@@ -182,7 +182,7 @@ protected:
 };
 
 // Type: class basic_string<char> (forward reference);
-class basic_string<char>{
+class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = class basic_string_ref<char>;
 	using reference_pointer = class basic_string_ref<char>*;
 private:
@@ -291,7 +291,7 @@ public:
 // Type: unsigned char *;
 
 // Type: struct _MMCKINFO;
-struct _MMCKINFO{
+struct _MMCKINFO{ // packed(0x14 bytes) TI: 0x1da7
 	unsigned long ckid;
 	unsigned long cksize;
 	unsigned long fccType;
@@ -300,7 +300,7 @@ struct _MMCKINFO{
 };
 
 // Type: struct _DSBUFFERDESC;
-struct _DSBUFFERDESC{
+struct _DSBUFFERDESC{ // packed(0x14 bytes) TI: 0x1315
 	unsigned long dwSize;
 	unsigned long dwFlags;
 	unsigned long dwBufferBytes;
@@ -309,7 +309,7 @@ struct _DSBUFFERDESC{
 };
 
 // Type: struct _DSBUFFERDESC (forward reference);
-struct _DSBUFFERDESC{
+struct _DSBUFFERDESC{ // packed(0x14 bytes) TI: 0x1315
 	unsigned long dwSize;
 	unsigned long dwFlags;
 	unsigned long dwBufferBytes;
@@ -319,7 +319,7 @@ struct _DSBUFFERDESC{
 
 // Type: struct IDirectSoundBuffer (forward reference);
 struct IDirectSoundBuffer : public IUnknown
-{
+{ // packed(0x4 bytes) TI: 0x1bbe
 	// calltype: NearStd
 	virtual long QueryInterface(const struct _GUID&, void * __ptr32*) /* override */;
 	// calltype: NearStd
@@ -365,7 +365,7 @@ struct IDirectSoundBuffer : public IUnknown
 };
 
 // Type: struct _OFSTRUCT;
-struct _OFSTRUCT{
+struct _OFSTRUCT{ // packed(0x88 bytes) TI: 0x21e5
 	unsigned char cBytes;
 	unsigned char fFixedDisk;
 	unsigned short nErrCode;
@@ -377,7 +377,7 @@ struct _OFSTRUCT{
 // Type: void (long);
 
 // Type: struct IUnknown;
-struct IUnknown{
+struct IUnknown{ // packed(0x4 bytes) TI: 0x196f
 	// calltype: NearStd
 	virtual long QueryInterface(const struct _GUID&, void * __ptr32*); // vtable+0x0
 	// calltype: NearStd
@@ -388,7 +388,7 @@ struct IUnknown{
 
 // Type: class Sound;
 // VTABLE: COPTER_D 0x0058f458
-class Sound{
+class Sound{ // packed(0x30 bytes) TI: 0x1578
 	enum SoundSourceType {
 		nSoundSourceTypeResource = 0,
 		nSoundSourceTypeFile = 1,

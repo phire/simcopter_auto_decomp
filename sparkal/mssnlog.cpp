@@ -7,7 +7,7 @@
 // Type: class MissionLogWindow (forward reference);
 // VTABLE: COPTER_D 0x00590708
 class MissionLogWindow : public GraphicWindow
-{
+{ // packed(0x80 bytes) TI: 0x2748
 	enum MissionLogWindowSortType {
 		nSortByTimeDate = 0,
 		nSortByType = 1,
@@ -37,7 +37,7 @@ protected:
 
 // Type: class GraphicWindowOwner (forward reference);
 // VTABLE: COPTER_D 0x00590f2c
-class GraphicWindowOwner{
+class GraphicWindowOwner{ // packed(0x4 bytes) TI: 0x1647
 public:
 	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
 };
@@ -47,7 +47,7 @@ public:
 // Type: class ButtonWindow (forward reference);
 // VTABLE: COPTER_D 0x00591b78
 class ButtonWindow : public GraphicWindow
-{
+{ // packed(0x94 bytes) TI: 0x1a48
 	enum ButtonState {
 		nButtonStateDisabled = 0,
 		nButtonStateOff = 1,
@@ -80,7 +80,7 @@ protected:
 };
 
 // Type: class basic_string<char>;
-class basic_string<char>{
+class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = class basic_string_ref<char>;
 	using reference_pointer = class basic_string_ref<char>*;
 private:
@@ -185,7 +185,7 @@ public:
 };
 
 // Type: struct SparkalColor;
-struct SparkalColor{
+struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 	unsigned char Blue;
 	unsigned char Green;
 	unsigned char Red;
@@ -195,7 +195,7 @@ struct SparkalColor{
 };
 
 // Type: struct SparkalColor (forward reference);
-struct SparkalColor{
+struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 	unsigned char Blue;
 	unsigned char Green;
 	unsigned char Red;
@@ -212,7 +212,7 @@ struct SparkalColor{
 
 // Type: class list<tagLogBase *>::iterator;
 class list<tagLogBase *>::iterator : public bidirectional_iterator<tagLogBase *,int>
-{
+{ // packed(0x4 bytes) TI: 0x16d0
 protected:
 	struct list<tagLogBase *>::list_node *node;
 public:
@@ -232,7 +232,7 @@ public:
 
 // Type: class MessageDisplayManager (forward reference);
 // VTABLE: COPTER_D 0x005907d0
-class MessageDisplayManager{
+class MessageDisplayManager{ // packed(0x54 bytes) TI: 0x2746
 public:
 	void MessageDisplayManager();
 	void ~MessageDisplayManager();
@@ -258,7 +258,7 @@ protected:
 // Type: class CBackBuffer (forward reference);
 // VTABLE: COPTER_D 0x00590808
 class CBackBuffer : public IBackBuffer
-{
+{ // packed(0x134 bytes) TI: 0x18f5
 public:
 	void CBackBuffer(long, long, const struct SparkalColor*);
 	void CBackBuffer(char *);
@@ -322,7 +322,7 @@ protected:
 
 // Type: class MRect;
 class MRect : public SparkalRect
-{
+{ // packed(0x10 bytes) TI: 0x1067
 public:
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
@@ -389,7 +389,7 @@ public:
 };
 
 // Type: class basic_string<char> (forward reference);
-class basic_string<char>{
+class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = class basic_string_ref<char>;
 	using reference_pointer = class basic_string_ref<char>*;
 private:
@@ -494,11 +494,11 @@ public:
 };
 
 // Type: struct bidirectional_iterator<tagLogBase *,int>;
-struct bidirectional_iterator<tagLogBase *,int>{
+struct bidirectional_iterator<tagLogBase *,int>{ // packed(0x1 bytes) TI: 0x126f
 };
 
 // Type: struct SparkalRect;
-struct SparkalRect{
+struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	long left;
 	long top;
 	long right;

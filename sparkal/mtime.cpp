@@ -6,7 +6,7 @@
 
 // Type: class MDate;
 // VTABLE: COPTER_D 0x0058f3e8
-class MDate{
+class MDate{ // packed(0xc bytes) TI: 0x1fed
 	enum HowToPrint {
 		Normal = 0,
 		Terse = 1,
@@ -86,7 +86,7 @@ protected:
 
 // Type: class MDate (forward reference);
 // VTABLE: COPTER_D 0x0058f3e8
-class MDate{
+class MDate{ // packed(0xc bytes) TI: 0x284c
 	enum HowToPrint {
 		Normal = 0,
 		Terse = 1,
@@ -168,7 +168,7 @@ protected:
 // Type: uint32_t;
 
 // Type: struct tm (forward reference);
-struct tm{
+struct tm{ // packed(0x24 bytes) TI: 0x2033
 	int32_t tm_sec;
 	int32_t tm_min;
 	int32_t tm_hour;
@@ -191,7 +191,7 @@ struct tm{
 // Type: class ostrstream;
 // VTABLE: COPTER_D 0x00593b34
 class ostrstream : public virtual ios, public ostream, public virtual <indirect> ios
-{
+{ // not packed(0x58 bytes) TI: 0x1fc2
 public:
 	void ostrstream(char *, int32_t, int32_t);
 	void ostrstream();
@@ -204,7 +204,7 @@ public:
 // Type: class ostream (forward reference);
 // VTABLE: COPTER_D 0x00593a44
 class ostream : public virtual ios
-{
+{ // not packed(0x58 bytes) TI: 0x414e
 public:
 	int32_t *ios[0];
 	void ostream(class ios&);
@@ -257,7 +257,7 @@ private:
 
 // Type: class ios (forward reference);
 // VTABLE: COPTER_D 0x00593ad4
-class ios{
+class ios{ // not packed(0x50 bytes) TI: 0x1c18
 	enum io_state {
 		goodbit = 0,
 		eofbit = 1,
@@ -390,7 +390,7 @@ private:
 
 // Type: class ios;
 // VTABLE: COPTER_D 0x00593ad4
-class ios{
+class ios{ // not packed(0x50 bytes) TI: 0x1c18
 	enum io_state {
 		goodbit = 0,
 		eofbit = 1,
@@ -524,7 +524,7 @@ private:
 // Type: class ostream;
 // VTABLE: COPTER_D 0x00593a44
 class ostream : public virtual ios
-{
+{ // not packed(0x58 bytes) TI: 0x414e
 public:
 	int32_t *ios[0];
 	void ostream(class ios&);

@@ -9,7 +9,7 @@
 
 // Type: class MRect;
 class MRect : public SparkalRect
-{
+{ // packed(0x10 bytes) TI: 0x1067
 public:
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
@@ -79,7 +79,7 @@ public:
 
 // Type: class list<CopterGameMode>::iterator;
 class list<CopterGameMode>::iterator : public bidirectional_iterator<CopterGameMode,int>
-{
+{ // packed(0x4 bytes) TI: 0x1a18
 protected:
 	struct list<CopterGameMode>::list_node *node;
 public:
@@ -96,7 +96,7 @@ public:
 };
 
 // Type: struct SparkalRect;
-struct SparkalRect{
+struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	long left;
 	long top;
 	long right;
@@ -106,7 +106,7 @@ struct SparkalRect{
 };
 
 // Type: struct bidirectional_iterator<CopterGameMode,int>;
-struct bidirectional_iterator<CopterGameMode,int>{
+struct bidirectional_iterator<CopterGameMode,int>{ // packed(0x1 bytes) TI: 0x184c
 };
 
 

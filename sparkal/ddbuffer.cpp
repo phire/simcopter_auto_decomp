@@ -5,7 +5,7 @@
 // Type: class CBackBuffer (forward reference);
 // VTABLE: COPTER_D 0x00590808
 class CBackBuffer : public IBackBuffer
-{
+{ // packed(0x134 bytes) TI: 0x2843
 public:
 	void CBackBuffer(long, long, const struct SparkalColor*);
 	void CBackBuffer(char *);
@@ -74,7 +74,7 @@ protected:
 // Type: int32_t;
 
 // Type: struct tagBITMAPINFOHEADER;
-struct tagBITMAPINFOHEADER{
+struct tagBITMAPINFOHEADER{ // packed(0x28 bytes) TI: 0x26dd
 	unsigned long biSize;
 	long biWidth;
 	long biHeight;
@@ -91,7 +91,7 @@ struct tagBITMAPINFOHEADER{
 // Type: long;
 
 // Type: struct tagBITMAPFILEHEADER;
-struct tagBITMAPFILEHEADER{
+struct tagBITMAPFILEHEADER{ // packed(0xe bytes) TI: 0x2742
 	unsigned short bfType;
 	unsigned long bfSize;
 	unsigned short bfReserved1;
@@ -101,7 +101,7 @@ struct tagBITMAPFILEHEADER{
 
 // Type: class PFile (forward reference);
 // VTABLE: COPTER_D 0x00590468
-class PFile{
+class PFile{ // packed(0x110 bytes) TI: 0x453c
 	enum /* __unnamed */ {
 		FileNull = -1,
 	};
@@ -170,7 +170,7 @@ private:
 };
 
 // Type: struct SparkalColor (forward reference);
-struct SparkalColor{
+struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 	unsigned char Blue;
 	unsigned char Green;
 	unsigned char Red;
@@ -180,7 +180,7 @@ struct SparkalColor{
 };
 
 // Type: struct tagRGBQUAD (forward reference);
-struct tagRGBQUAD{
+struct tagRGBQUAD{ // packed(0x4 bytes) TI: 0x1ba1
 	unsigned char rgbBlue;
 	unsigned char rgbGreen;
 	unsigned char rgbRed;
@@ -195,7 +195,7 @@ struct tagRGBQUAD{
 
 // Type: class MFont (forward reference);
 // VTABLE: COPTER_D 0x00591640
-class MFont{
+class MFont{ // packed(0x1c bytes) TI: 0x1a6c
 public:
 	class basic_string<char> sName;
 	unsigned long lHeight;
@@ -222,7 +222,7 @@ protected:
 };
 
 // Type: struct tagRECT;
-struct tagRECT{
+struct tagRECT{ // packed(0x10 bytes) TI: 0x13c4
 	long left;
 	long top;
 	long right;
@@ -231,7 +231,7 @@ struct tagRECT{
 
 // Type: struct IDirectDrawSurface (forward reference);
 struct IDirectDrawSurface : public IUnknown
-{
+{ // packed(0x4 bytes) TI: 0x1da5
 	// calltype: NearStd
 	virtual long QueryInterface(const struct _GUID&, void * __ptr32*) /* override */;
 	// calltype: NearStd
@@ -312,7 +312,7 @@ struct IDirectDrawSurface : public IUnknown
 
 // Type: class MRect (forward reference);
 class MRect : public SparkalRect
-{
+{ // packed(0x10 bytes) TI: 0x1067
 public:
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
@@ -379,14 +379,14 @@ public:
 };
 
 // Type: struct tagPOINT;
-struct tagPOINT{
+struct tagPOINT{ // packed(0x8 bytes) TI: 0x1131
 	long x;
 	long y;
 };
 
 // Type: class CSparkalWindow (forward reference);
 // VTABLE: COPTER_D 0x00590ef8
-class CSparkalWindow{
+class CSparkalWindow{ // packed(0x68 bytes) TI: 0x20d9
 public:
 	void CSparkalWindow(unsigned long, unsigned long, unsigned long, const struct SparkalColor*, char *);
 	void CSparkalWindow();
@@ -428,7 +428,7 @@ protected:
 };
 
 // Type: struct _DDBLTFX;
-struct _DDBLTFX{
+struct _DDBLTFX{ // packed(0x64 bytes) TI: 0x12e7
 	unsigned long dwSize;
 	unsigned long dwDDFX;
 	unsigned long dwROP;
@@ -461,7 +461,7 @@ struct _DDBLTFX{
 
 // Type: class IFlatImage (forward reference);
 // VTABLE: COPTER_D 0x00591050
-class IFlatImage{
+class IFlatImage{ // packed(0x18 bytes) TI: 0x13a1
 public:
 	void IFlatImage();
 	virtual unsigned long Lock(); // vtable+0x0
@@ -491,7 +491,7 @@ protected:
 
 // Type: class MRect;
 class MRect : public SparkalRect
-{
+{ // packed(0x10 bytes) TI: 0x1067
 public:
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
@@ -558,7 +558,7 @@ public:
 };
 
 // Type: struct SparkalPoint (forward reference);
-struct SparkalPoint{
+struct SparkalPoint{ // packed(0x8 bytes) TI: 0x1a54
 	long x;
 	long y;
 	void SparkalPoint(long, long);
@@ -566,7 +566,7 @@ struct SparkalPoint{
 };
 
 // Type: struct SparkalRect (forward reference);
-struct SparkalRect{
+struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	long left;
 	long top;
 	long right;
@@ -576,7 +576,7 @@ struct SparkalRect{
 };
 
 // Type: struct SparkalRect;
-struct SparkalRect{
+struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	long left;
 	long top;
 	long right;
@@ -586,13 +586,13 @@ struct SparkalRect{
 };
 
 // Type: struct _DDCOLORKEY;
-struct _DDCOLORKEY{
+struct _DDCOLORKEY{ // packed(0x8 bytes) TI: 0x1871
 	unsigned long dwColorSpaceLowValue;
 	unsigned long dwColorSpaceHighValue;
 };
 
 // Type: struct tagPALETTEENTRY (forward reference);
-struct tagPALETTEENTRY{
+struct tagPALETTEENTRY{ // packed(0x4 bytes) TI: 0x1be6
 	unsigned char peRed;
 	unsigned char peGreen;
 	unsigned char peBlue;
@@ -600,7 +600,7 @@ struct tagPALETTEENTRY{
 };
 
 // Type: struct tagRECT (forward reference);
-struct tagRECT{
+struct tagRECT{ // packed(0x10 bytes) TI: 0x13c4
 	long left;
 	long top;
 	long right;
@@ -610,7 +610,7 @@ struct tagRECT{
 // Type: class IBackBuffer (forward reference);
 // VTABLE: COPTER_D 0x005907e0
 class IBackBuffer : public IFlatImage
-{
+{ // packed(0x18 bytes) TI: 0x283f
 public:
 	virtual unsigned long Swap(class CSparkalWindow*, long, long); // vtable+0x1c
 	virtual unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long); // vtable+0x20
@@ -618,7 +618,7 @@ public:
 };
 
 // Type: struct IUnknown;
-struct IUnknown{
+struct IUnknown{ // packed(0x4 bytes) TI: 0x196f
 	// calltype: NearStd
 	virtual long QueryInterface(const struct _GUID&, void * __ptr32*); // vtable+0x0
 	// calltype: NearStd
@@ -630,7 +630,7 @@ struct IUnknown{
 // Type: class IBackBuffer;
 // VTABLE: COPTER_D 0x005907e0
 class IBackBuffer : public IFlatImage
-{
+{ // packed(0x18 bytes) TI: 0x1544
 public:
 	virtual unsigned long Swap(class CSparkalWindow*, long, long); // vtable+0x1c
 	virtual unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long); // vtable+0x20
@@ -639,7 +639,7 @@ public:
 
 // Type: class IFlatImage;
 // VTABLE: COPTER_D 0x00591050
-class IFlatImage{
+class IFlatImage{ // packed(0x18 bytes) TI: 0x13a1
 public:
 	void IFlatImage();
 	virtual unsigned long Lock(); // vtable+0x0

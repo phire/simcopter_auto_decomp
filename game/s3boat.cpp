@@ -4,7 +4,7 @@
 
 // Type: class BoatClass (forward reference);
 // VTABLE: COPTER_D 0x00593200
-class BoatClass{
+class BoatClass{ // packed(0xe3 bytes) TI: 0x42b3
 	enum /* __unnamed */ {
 		BOAT_TYPES = 1,
 		PERCENTAGE_OF_BOAT1 = 100,
@@ -182,14 +182,14 @@ public:
 // Type: void ();
 
 // Type: struct Point2d;
-struct Point2d{
+struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
 	int32_t x;
 	int32_t y;
 };
 
 // Type: class BoatClass;
 // VTABLE: COPTER_D 0x00593200
-class BoatClass{
+class BoatClass{ // packed(0xe3 bytes) TI: 0x42b3
 	enum /* __unnamed */ {
 		BOAT_TYPES = 1,
 		PERCENTAGE_OF_BOAT1 = 100,
@@ -371,14 +371,14 @@ public:
 // Type: int32_t;
 
 // Type: struct VRview;
-struct VRview{
+struct VRview{ // packed(0x58 bytes) TI: 0x2ecc
 	struct Point3d loc;
 	struct Point3d scale;
 	int32_t matrix[4][4];
 };
 
 // Type: struct _CELL_INFO (forward reference);
-struct _CELL_INFO{
+struct _CELL_INFO{ // packed(0x18 bytes) TI: 0x1b03
 	short flags;
 	short x;
 	short y;
@@ -391,7 +391,7 @@ struct _CELL_INFO{
 };
 
 // Type: struct Point3d;
-struct Point3d{
+struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 	int32_t x;
 	int32_t y;
 	int32_t z;
@@ -408,13 +408,13 @@ enum StoppedReasons {
 };
 
 // Type: struct Point2d (forward reference);
-struct Point2d{
+struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
 	int32_t x;
 	int32_t y;
 };
 
 // Type: struct Point3d (forward reference);
-struct Point3d{
+struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 	int32_t x;
 	int32_t y;
 	int32_t z;
@@ -423,7 +423,7 @@ struct Point3d{
 // Type: unsigned short;
 
 // Type: struct _DYOBJ_INST (forward reference);
-struct _DYOBJ_INST{
+struct _DYOBJ_INST{ // packed(0x64 bytes) TI: 0x1deb
 	struct _DYOBJ_INST *next;
 	struct _DYOBJ_INST *vnext;
 	void * __ptr32 mesh;
@@ -465,7 +465,7 @@ enum IntersectionTypes {
 };
 
 // Type: struct VRObjInfo;
-struct VRObjInfo{
+struct VRObjInfo{ // packed(0x24 bytes) TI: 0x2ea8
 	int32_t Faces;
 	int32_t Verts;
 	int32_t Attribute;
@@ -480,7 +480,7 @@ struct VRObjInfo{
 // Type: char *;
 
 // Type: struct _MISSION_PARMS;
-struct _MISSION_PARMS{
+struct _MISSION_PARMS{ // packed(0x18 bytes) TI: 0x307d
 	long op;
 	long id;
 	struct Point2d maploc;

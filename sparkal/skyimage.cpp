@@ -7,7 +7,7 @@
 // Type: class SkyImage (forward reference);
 // VTABLE: COPTER_D 0x00591090
 class SkyImage : public CBackBuffer
-{
+{ // packed(0x150 bytes) TI: 0x17e3
 	enum SkyType {
 		nSkyTypeDay = 0,
 		nSkyTypeNight = 1,
@@ -40,7 +40,7 @@ enum SkyType {
 };
 
 // Type: struct VRResource (forward reference);
-struct VRResource{
+struct VRResource{ // packed(0x10 bytes) TI: 0x18ae
 	char * mem;
 	int32_t mempoolid;
 	int32_t type;
@@ -50,7 +50,7 @@ struct VRResource{
 // Type: char;
 
 // Type: struct VRBmpHdr (forward reference);
-struct VRBmpHdr{
+struct VRBmpHdr{ // packed(0x10 bytes) TI: 0x2312
 	struct VRBmpInfo info;
 	int32_t ScanOffset[1];
 };
@@ -58,7 +58,7 @@ struct VRBmpHdr{
 // Type: class CBackBuffer (forward reference);
 // VTABLE: COPTER_D 0x00590808
 class CBackBuffer : public IBackBuffer
-{
+{ // packed(0x134 bytes) TI: 0x2843
 public:
 	void CBackBuffer(long, long, const struct SparkalColor*);
 	void CBackBuffer(char *);
@@ -123,7 +123,7 @@ protected:
 // Type: long;
 
 // Type: struct SparkalRect;
-struct SparkalRect{
+struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	long left;
 	long top;
 	long right;
@@ -137,7 +137,7 @@ struct SparkalRect{
 // Type: class IBackBuffer;
 // VTABLE: COPTER_D 0x005907e0
 class IBackBuffer : public IFlatImage
-{
+{ // packed(0x18 bytes) TI: 0x1544
 public:
 	virtual unsigned long Swap(class CSparkalWindow*, long, long); // vtable+0x1c
 	virtual unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long); // vtable+0x20
@@ -147,7 +147,7 @@ public:
 // Type: class CBackBuffer;
 // VTABLE: COPTER_D 0x00590808
 class CBackBuffer : public IBackBuffer
-{
+{ // packed(0x134 bytes) TI: 0x18f5
 public:
 	void CBackBuffer(long, long, const struct SparkalColor*);
 	void CBackBuffer(char *);
@@ -211,7 +211,7 @@ protected:
 
 // Type: class IFlatImage;
 // VTABLE: COPTER_D 0x00591050
-class IFlatImage{
+class IFlatImage{ // packed(0x18 bytes) TI: 0x13a1
 public:
 	void IFlatImage();
 	virtual unsigned long Lock(); // vtable+0x0

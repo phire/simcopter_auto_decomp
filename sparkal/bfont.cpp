@@ -4,7 +4,7 @@
 
 // Type: class BitmappedFont (forward reference);
 // VTABLE: COPTER_D 0x005904d0
-class BitmappedFont{
+class BitmappedFont{ // packed(0x54 bytes) TI: 0x2730
 	enum PitchType {
 		pitchTypeFixed = 0,
 		pitchTypeVariable = 1,
@@ -64,7 +64,7 @@ public:
 // Type: void;
 
 // Type: class basic_string<char> (forward reference);
-class basic_string<char>{
+class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = class basic_string_ref<char>;
 	using reference_pointer = class basic_string_ref<char>*;
 private:
@@ -176,7 +176,7 @@ public:
 
 // Type: class MRect;
 class MRect : public SparkalRect
-{
+{ // packed(0x10 bytes) TI: 0x1067
 public:
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
@@ -251,7 +251,7 @@ public:
 // Type: class CBackBuffer (forward reference);
 // VTABLE: COPTER_D 0x00590808
 class CBackBuffer : public IBackBuffer
-{
+{ // packed(0x134 bytes) TI: 0x2843
 public:
 	void CBackBuffer(long, long, const struct SparkalColor*);
 	void CBackBuffer(char *);
@@ -315,7 +315,7 @@ protected:
 
 // Type: class MRect (forward reference);
 class MRect : public SparkalRect
-{
+{ // packed(0x10 bytes) TI: 0x1067
 public:
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
@@ -384,7 +384,7 @@ public:
 // Type: long *;
 
 // Type: class vector<MRect> (forward reference);
-class vector<MRect>{
+class vector<MRect>{ // packed(0xc bytes) TI: 0x15c8
 	using vector_allocator = class allocator<MRect>;
 	using value_type = class MRect;
 	using pointer = class MRect*;
@@ -441,7 +441,7 @@ public:
 // Type: uint32_t;
 
 // Type: class vector<unsigned char> (forward reference);
-class vector<unsigned char>{
+class vector<unsigned char>{ // packed(0xc bytes) TI: 0x1e75
 	using vector_allocator = class allocator<unsigned char>;
 	using value_type = unsigned char;
 	using pointer = unsigned char *;
@@ -498,7 +498,7 @@ public:
 // Type: unsigned char *;
 
 // Type: struct SparkalRect;
-struct SparkalRect{
+struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	long left;
 	long top;
 	long right;
@@ -510,7 +510,7 @@ struct SparkalRect{
 // Type: class IBackBuffer;
 // VTABLE: COPTER_D 0x005907e0
 class IBackBuffer : public IFlatImage
-{
+{ // packed(0x18 bytes) TI: 0x1544
 public:
 	virtual unsigned long Swap(class CSparkalWindow*, long, long); // vtable+0x1c
 	virtual unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long); // vtable+0x20
@@ -519,7 +519,7 @@ public:
 
 // Type: class IFlatImage;
 // VTABLE: COPTER_D 0x00591050
-class IFlatImage{
+class IFlatImage{ // packed(0x18 bytes) TI: 0x13a1
 public:
 	void IFlatImage();
 	virtual unsigned long Lock(); // vtable+0x0

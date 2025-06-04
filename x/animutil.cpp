@@ -5,7 +5,7 @@
 // Type: float;
 
 // Type: struct DXZY;
-struct DXZY{
+struct DXZY{ // not packed(0x10 bytes) TI: 0x3420
 	float x;
 	float z;
 	float y;
@@ -13,7 +13,7 @@ struct DXZY{
 };
 
 // Type: struct DXZY (forward reference);
-struct DXZY{
+struct DXZY{ // not packed(0x10 bytes) TI: 0x3420
 	float x;
 	float z;
 	float y;
@@ -27,7 +27,7 @@ struct DXZY{
 // Type: unsigned short;
 
 // Type: struct XZY (forward reference);
-struct XZY{
+struct XZY{ // not packed(0x8 bytes) TI: 0x3508
 	short x;
 	short z;
 	short y;
@@ -39,7 +39,7 @@ struct XZY{
 // Type: short *;
 
 // Type: struct Polar (forward reference);
-struct Polar{
+struct Polar{ // not packed(0x18 bytes) TI: 0x34dc
 	float phi;
 	float psi;
 	float tau;
@@ -51,7 +51,7 @@ struct Polar{
 };
 
 // Type: struct Polar;
-struct Polar{
+struct Polar{ // not packed(0x18 bytes) TI: 0x34dc
 	float phi;
 	float psi;
 	float tau;
@@ -65,7 +65,7 @@ struct Polar{
 // Type: double;
 
 // Type: struct Rect (forward reference);
-struct Rect{
+struct Rect{ // not packed(0x8 bytes) TI: 0x3463
 	short top;
 	short left;
 	short bottom;
@@ -73,19 +73,19 @@ struct Rect{
 };
 
 // Type: struct Point (forward reference);
-struct Point{
+struct Point{ // not packed(0x4 bytes) TI: 0x341c
 	short v;
 	short h;
 };
 
 // Type: struct Point;
-struct Point{
+struct Point{ // not packed(0x4 bytes) TI: 0x341c
 	short v;
 	short h;
 };
 
 // Type: struct Rect;
-struct Rect{
+struct Rect{ // not packed(0x8 bytes) TI: 0x3463
 	short top;
 	short left;
 	short bottom;

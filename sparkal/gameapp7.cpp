@@ -15,7 +15,7 @@
 
 // Type: class Version;
 // VTABLE: COPTER_D 0x0058f5b8
-class Version{
+class Version{ // packed(0xc bytes) TI: 0x241c
 public:
 	void Version();
 	virtual void ~Version(); // vtable+0x0
@@ -42,7 +42,7 @@ protected:
 // Type: int32_t;
 
 // Type: struct _MEMORYSTATUS;
-struct _MEMORYSTATUS{
+struct _MEMORYSTATUS{ // packed(0x20 bytes) TI: 0x241e
 	unsigned long dwLength;
 	unsigned long dwMemoryLoad;
 	unsigned long dwTotalPhys;
@@ -54,7 +54,7 @@ struct _MEMORYSTATUS{
 };
 
 // Type: class basic_string<char>;
-class basic_string<char>{
+class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = class basic_string_ref<char>;
 	using reference_pointer = class basic_string_ref<char>*;
 private:
@@ -159,7 +159,7 @@ public:
 };
 
 // Type: class basic_string<char> (forward reference);
-class basic_string<char>{
+class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = class basic_string_ref<char>;
 	using reference_pointer = class basic_string_ref<char>*;
 private:
@@ -264,7 +264,7 @@ public:
 };
 
 // Type: struct SparkalColor;
-struct SparkalColor{
+struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 	unsigned char Blue;
 	unsigned char Green;
 	unsigned char Red;
@@ -276,7 +276,7 @@ struct SparkalColor{
 // Type: class MessageBoxWindow (forward reference);
 // VTABLE: COPTER_D 0x0058fa80
 class MessageBoxWindow : public GraphicWindow
-{
+{ // packed(0xa4 bytes) TI: 0x2a45
 public:
 	void MessageBoxWindow(class MPoint&, unsigned long, class basic_string<char>&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *);
 	void MessageBoxWindow(class MPoint&, unsigned long, unsigned long, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *);
@@ -302,7 +302,7 @@ protected:
 // Type: class MessageBoxWindowEdit (forward reference);
 // VTABLE: COPTER_D 0x005901f8
 class MessageBoxWindowEdit : public MessageBoxWindow
-{
+{ // packed(0xa8 bytes) TI: 0x442a
 public:
 	void MessageBoxWindowEdit(class MPoint&, unsigned long, class basic_string<char>&, const class basic_string<char>&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *, char *);
 	void MessageBoxWindowEdit(class MPoint&, unsigned long, unsigned long, const class basic_string<char>&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *, char *);
@@ -316,7 +316,7 @@ protected:
 // Type: uint32_t;
 
 // Type: struct Point2d (forward reference);
-struct Point2d{
+struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
 	int32_t x;
 	int32_t y;
 };
@@ -324,7 +324,7 @@ struct Point2d{
 // Type: class DigitalSound (forward reference);
 // VTABLE: COPTER_D 0x0058f488
 class DigitalSound : public Sound
-{
+{ // packed(0x7a bytes) TI: 0x45d4
 protected:
 	int32_t nStreamingType;
 	int32_t nCompletionEstimationTimerSet;
@@ -379,7 +379,7 @@ protected:
 };
 
 // Type: struct UserMenuWindowDescription;
-struct UserMenuWindowDescription{
+struct UserMenuWindowDescription{ // packed(0x54 bytes) TI: 0x101b
 	class basic_string<char> sImageFileName;
 	int32_t nTransparentIndex;
 	class MRect rectPosition;
@@ -400,7 +400,7 @@ struct UserMenuWindowDescription{
 // Type: class UserMenuWindow (forward reference);
 // VTABLE: COPTER_D 0x005912f8
 class UserMenuWindow : public GraphicWindow
-{
+{ // packed(0x152 bytes) TI: 0x45d0
 public:
 	void UserMenuWindow(struct UserMenuWindowDescription&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	void UserMenuWindow();
@@ -430,7 +430,7 @@ protected:
 // Type: class UserInputWindow (forward reference);
 // VTABLE: COPTER_D 0x0058f228
 class UserInputWindow : public GraphicWindow
-{
+{ // packed(0xb0 bytes) TI: 0x28a7
 	enum KeyUsageType {
 		nKeyUsageTypeFree = 0,
 		nKeyUsageTypeReserved = 1,
@@ -478,7 +478,7 @@ protected:
 // Type: class RenderSettingsWindow (forward reference);
 // VTABLE: COPTER_D 0x0058fc20
 class RenderSettingsWindow : public GraphicWindow
-{
+{ // packed(0xb8 bytes) TI: 0x2add
 public:
 	void RenderSettingsWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	virtual void ~RenderSettingsWindow() /* override */;
@@ -513,7 +513,7 @@ protected:
 // Type: class SoundSettingsWindow (forward reference);
 // VTABLE: COPTER_D 0x0058fce8
 class SoundSettingsWindow : public GraphicWindow
-{
+{ // packed(0x88 bytes) TI: 0x2a87
 public:
 	void SoundSettingsWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	virtual int32_t Initialize() /* override */;
@@ -536,7 +536,7 @@ protected:
 };
 
 // Type: struct RadioPreferences;
-struct RadioPreferences{
+struct RadioPreferences{ // packed(0x1c bytes) TI: 0x2a39
 	long lVolume;
 	int32_t bPreferToBeOn;
 	long lCurrentStation;
@@ -547,7 +547,7 @@ struct RadioPreferences{
 };
 
 // Type: struct SoundPreferences;
-struct SoundPreferences{
+struct SoundPreferences{ // packed(0x10 bytes) TI: 0x2845
 	long lMasterVolume;
 	long lDispatchVolume;
 	long lSoundEffectsVolume;
@@ -557,7 +557,7 @@ struct SoundPreferences{
 // Type: class CitySettingsWindow (forward reference);
 // VTABLE: COPTER_D 0x0058fdd0
 class CitySettingsWindow : public GraphicWindow
-{
+{ // packed(0x94 bytes) TI: 0x2a34
 public:
 	void CitySettingsWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	virtual int32_t Initialize() /* override */;
@@ -572,7 +572,7 @@ protected:
 // Type: class ControlDisplayWindow (forward reference);
 // VTABLE: COPTER_D 0x0058f300
 class ControlDisplayWindow : public GraphicWindow
-{
+{ // packed(0x80 bytes) TI: 0x2adb
 public:
 	void ControlDisplayWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	virtual int32_t Initialize() /* override */;
@@ -589,7 +589,7 @@ protected:
 // Type: class CheckupWindow (forward reference);
 // VTABLE: COPTER_D 0x005903a0
 class CheckupWindow : public GraphicWindow
-{
+{ // packed(0x94 bytes) TI: 0x486b
 public:
 	void CheckupWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	virtual int32_t Initialize() /* override */;
@@ -612,7 +612,7 @@ protected:
 
 // Type: class Sound;
 // VTABLE: COPTER_D 0x0058f458
-class Sound{
+class Sound{ // packed(0x30 bytes) TI: 0x1578
 	enum SoundSourceType {
 		nSoundSourceTypeResource = 0,
 		nSoundSourceTypeFile = 1,
@@ -656,7 +656,7 @@ public:
 // Type: class MessageBoxWindow;
 // VTABLE: COPTER_D 0x0058fa80
 class MessageBoxWindow : public GraphicWindow
-{
+{ // packed(0xa4 bytes) TI: 0x2a45
 public:
 	void MessageBoxWindow(class MPoint&, unsigned long, class basic_string<char>&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *);
 	void MessageBoxWindow(class MPoint&, unsigned long, unsigned long, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *);

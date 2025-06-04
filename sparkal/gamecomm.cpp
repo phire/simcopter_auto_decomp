@@ -5,7 +5,7 @@
 // Type: char *;
 
 // Type: struct CommandSystem (forward reference);
-struct CommandSystem{
+struct CommandSystem{ // packed(0xaa8 bytes) TI: 0x12e4
 	struct Command keyboardCommands[100];
 	class CharList keyboardCommandList;
 	class list<Shortcut> commandShortcuts;
@@ -39,7 +39,7 @@ struct CommandSystem{
 
 // Type: class list<Shortcut>::iterator;
 class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
-{
+{ // packed(0x4 bytes) TI: 0x1081
 protected:
 	struct list<Shortcut>::list_node *node;
 public:
@@ -58,7 +58,7 @@ public:
 // Type: class CGameCommander (forward reference);
 // VTABLE: COPTER_D 0x00590ff8
 class CGameCommander : public CDefaultCommander
-{
+{ // packed(0xc bytes) TI: 0x1d27
 public:
 	void CGameCommander();
 	virtual void ~CGameCommander() /* override */;
@@ -84,7 +84,7 @@ public:
 // Type: unsigned long;
 
 // Type: class CharData (forward reference);
-class CharData{
+class CharData{ // packed(0x9 bytes) TI: 0x4578
 public:
 	unsigned char chValue;
 	class CharData *previousCharData;
@@ -94,9 +94,9 @@ public:
 };
 
 // Type: class list<Shortcut> (forward reference);
-class list<Shortcut>{
+class list<Shortcut>{ // packed(0x8 bytes) TI: 0x1b79
 	using void_pointer = void * __ptr32;
-	struct list<Shortcut>::list_node{
+	struct list<Shortcut>::list_node{ // packed(0x20 bytes) TI: 0x1b8e
 		void * __ptr32 next;
 		void * __ptr32 prev;
 		struct Shortcut data;
@@ -115,7 +115,7 @@ protected:
 	using difference_type = int32_t;
 protected:
 	uint32_t buffer_size();
-	struct list<Shortcut>::list_node_buffer{
+	struct list<Shortcut>::list_node_buffer{ // packed(0x8 bytes) TI: 0x1b8c
 		void * __ptr32 next_buffer;
 		struct list<Shortcut>::list_node *buffer;
 	};
@@ -135,7 +135,7 @@ protected:
 	struct list<Shortcut>::list_node *node;
 	uint32_t length;
 	class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
-	{
+	{ // packed(0x4 bytes) TI: 0x1081
 	protected:
 		struct list<Shortcut>::list_node *node;
 	public:
@@ -151,7 +151,7 @@ protected:
 		class list<Shortcut>::iterator& operator--();
 	};
 	class list<Shortcut>::const_iterator : public bidirectional_iterator<Shortcut,int>
-	{
+	{ // packed(0x4 bytes) TI: 0x1b8a
 	protected:
 		struct list<Shortcut>::list_node *node;
 	public:
@@ -218,7 +218,7 @@ public:
 // Type: class MIFF;
 // VTABLE: COPTER_D 0x00591950
 class MIFF : public PFile
-{
+{ // packed(0x148 bytes) TI: 0x428e
 public:
 	void MIFF(char *);
 	void MIFF();
@@ -261,7 +261,7 @@ public:
 };
 
 // Type: struct Shortcut;
-struct Shortcut{
+struct Shortcut{ // packed(0x18 bytes) TI: 0x1083
 	long lDeviceID;
 	long lCommand;
 	long lKey;
@@ -273,7 +273,7 @@ struct Shortcut{
 // Type: char;
 
 // Type: struct Shortcut (forward reference);
-struct Shortcut{
+struct Shortcut{ // packed(0x18 bytes) TI: 0x1083
 	long lDeviceID;
 	long lCommand;
 	long lKey;
@@ -290,7 +290,7 @@ struct Shortcut{
 // Type: uint32_t;
 
 // Type: struct list<Shortcut>::list_node (forward reference);
-struct list<Shortcut>::list_node{
+struct list<Shortcut>::list_node{ // packed(0x20 bytes) TI: 0x1b8e
 	void * __ptr32 next;
 	void * __ptr32 prev;
 	struct Shortcut data;
@@ -298,7 +298,7 @@ struct list<Shortcut>::list_node{
 
 // Type: class list<Shortcut>::iterator (forward reference);
 class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
-{
+{ // packed(0x4 bytes) TI: 0x1081
 protected:
 	struct list<Shortcut>::list_node *node;
 public:
@@ -315,12 +315,12 @@ public:
 };
 
 // Type: struct bidirectional_iterator<Shortcut,int>;
-struct bidirectional_iterator<Shortcut,int>{
+struct bidirectional_iterator<Shortcut,int>{ // packed(0x1 bytes) TI: 0x1ee7
 };
 
 // Type: class PFile;
 // VTABLE: COPTER_D 0x00590468
-class PFile{
+class PFile{ // packed(0x110 bytes) TI: 0x1de4
 	enum /* __unnamed */ {
 		FileNull = -1,
 	};
@@ -389,7 +389,7 @@ private:
 // Type: class CDefaultCommander;
 // VTABLE: COPTER_D 0x005912d0
 class CDefaultCommander : public ICommander
-{
+{ // packed(0x8 bytes) TI: 0x17ff
 public:
 	void CDefaultCommander();
 	virtual void ~CDefaultCommander() /* override */;
@@ -404,7 +404,7 @@ public:
 
 // Type: class ICommander;
 // VTABLE: COPTER_D 0x005912a8
-class ICommander{
+class ICommander{ // packed(0x8 bytes) TI: 0x17ab
 public:
 	void ICommander();
 	virtual void ~ICommander(); // vtable+0x0

@@ -11,7 +11,7 @@
 // Type: union _LARGE_INTEGER;
 
 // Type: struct FREQ_INFO;
-struct FREQ_INFO{
+struct FREQ_INFO{ // packed(0x10 bytes) TI: 0x2a8f
 	unsigned long in_cycles;
 	unsigned long ex_ticks;
 	unsigned long raw_freq;
@@ -21,7 +21,7 @@ struct FREQ_INFO{
 // Type: unsigned short;
 
 // Type: struct FREQ_INFO (forward reference);
-struct FREQ_INFO{
+struct FREQ_INFO{ // packed(0x10 bytes) TI: 0x2a8f
 	unsigned long in_cycles;
 	unsigned long ex_ticks;
 	unsigned long raw_freq;

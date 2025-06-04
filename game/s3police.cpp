@@ -15,7 +15,7 @@ enum TurnIndex {
 // Type: class PoliceCarClass (forward reference);
 // VTABLE: COPTER_D 0x00593310
 class PoliceCarClass : public EmergencyVehicleClass
-{
+{ // packed(0x326 bytes) TI: 0x480d
 private:
 	struct Goal currDestGoal;
 	struct Goal destGoal1;
@@ -47,7 +47,7 @@ private:
 // Type: char *;
 
 // Type: struct VRObjInfo;
-struct VRObjInfo{
+struct VRObjInfo{ // packed(0x24 bytes) TI: 0x2ea8
 	int32_t Faces;
 	int32_t Verts;
 	int32_t Attribute;
@@ -84,13 +84,13 @@ enum EmergencyLevel {
 // Type: unsigned char;
 
 // Type: struct _GridCoordinates;
-struct _GridCoordinates{
+struct _GridCoordinates{ // packed(0x2 bytes) TI: 0x143c
 	unsigned char x;
 	unsigned char y;
 };
 
 // Type: struct _CELL_INFO (forward reference);
-struct _CELL_INFO{
+struct _CELL_INFO{ // packed(0x18 bytes) TI: 0x1b03
 	short flags;
 	short x;
 	short y;
@@ -103,7 +103,7 @@ struct _CELL_INFO{
 };
 
 // Type: struct _MISSION_PARMS;
-struct _MISSION_PARMS{
+struct _MISSION_PARMS{ // packed(0x18 bytes) TI: 0x307d
 	long op;
 	long id;
 	struct Point2d maploc;
@@ -112,14 +112,14 @@ struct _MISSION_PARMS{
 };
 
 // Type: struct Point3d;
-struct Point3d{
+struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 	int32_t x;
 	int32_t y;
 	int32_t z;
 };
 
 // Type: struct Goal (forward reference);
-struct Goal{
+struct Goal{ // packed(0x2a bytes) TI: 0x12ce
 	struct RGVertex *pRGV;
 	int32_t elementIndex;
 	int32_t gridIndex;
@@ -134,13 +134,13 @@ struct Goal{
 };
 
 // Type: struct _RGIndex;
-struct _RGIndex{
+struct _RGIndex{ // packed(0x2 bytes) TI: 0x2ab2
 	unsigned char x;
 	unsigned char yindex;
 };
 
 // Type: class SpiralScan;
-class SpiralScan{
+class SpiralScan{ // packed(0x10 bytes) TI: 0x2fb5
 public:
 	void SpiralScan(int32_t);
 	void ~SpiralScan();
@@ -154,13 +154,13 @@ private:
 };
 
 // Type: struct _GridCoordinates (forward reference);
-struct _GridCoordinates{
+struct _GridCoordinates{ // packed(0x2 bytes) TI: 0x143c
 	unsigned char x;
 	unsigned char y;
 };
 
 // Type: struct _DYOBJ_INST (forward reference);
-struct _DYOBJ_INST{
+struct _DYOBJ_INST{ // packed(0x64 bytes) TI: 0x1deb
 	struct _DYOBJ_INST *next;
 	struct _DYOBJ_INST *vnext;
 	void * __ptr32 mesh;
@@ -173,7 +173,7 @@ struct _DYOBJ_INST{
 };
 
 // Type: struct _AUTO_LOAD_SAVE (forward reference);
-struct _AUTO_LOAD_SAVE{
+struct _AUTO_LOAD_SAVE{ // packed(0x344 bytes) TI: 0x42d7
 	int32_t flags;
 	struct _DYOBJ_INST autoDynomitor;
 	struct Goal goal;
@@ -210,7 +210,7 @@ struct _AUTO_LOAD_SAVE{
 	long missionId;
 	struct _GridCoordinates cptrfixup;
 	int32_t spotlightHitCounter;
-	struct _AUTO_LOAD_SAVE::_CRIMINAL{
+	struct _AUTO_LOAD_SAVE::_CRIMINAL{ // packed(0x10 bytes) TI: 0x42df
 		long missionState;
 		long criminalType;
 		int32_t timeToLeaveCar;
@@ -218,7 +218,7 @@ struct _AUTO_LOAD_SAVE{
 	};
 public:
 	struct _AUTO_LOAD_SAVE::_CRIMINAL c;
-	struct _AUTO_LOAD_SAVE::_EMERGENCY{
+	struct _AUTO_LOAD_SAVE::_EMERGENCY{ // packed(0x186 bytes) TI: 0x42dd
 		struct _GridCoordinates baseLocation;
 		struct _GridCoordinates emergencyLocation;
 		long emergencyType;
@@ -235,7 +235,7 @@ public:
 	};
 public:
 	struct _AUTO_LOAD_SAVE::_EMERGENCY e;
-	struct _AUTO_LOAD_SAVE::_FIRE{
+	struct _AUTO_LOAD_SAVE::_FIRE{ // packed(0x18 bytes) TI: 0x42db
 		int32_t dousingFire;
 		int32_t distToFire;
 		struct Point3d firevec;
@@ -243,7 +243,7 @@ public:
 	};
 public:
 	struct _AUTO_LOAD_SAVE::_FIRE f;
-	struct _AUTO_LOAD_SAVE::_POLICE{
+	struct _AUTO_LOAD_SAVE::_POLICE{ // packed(0x88 bytes) TI: 0x42d9
 		struct Goal currDestGoal;
 		struct _GridCoordinates currpRGVFixup;
 		struct Goal destGoal1;
@@ -261,7 +261,7 @@ public:
 // Type: class EmergencyVehicleClass;
 // VTABLE: COPTER_D 0x005934c0
 class EmergencyVehicleClass : public AutomobileClass
-{
+{ // packed(0x294 bytes) TI: 0x2f5b
 	enum /* __unnamed */ {
 		MAXIMUM_DISTANCE_FROM_BASE = 7,
 		MAXIMUM_TIME_TO_EMERGENCY = 3932160,
@@ -318,7 +318,7 @@ public:
 
 // Type: class AutomobileClass;
 // VTABLE: COPTER_D 0x00592d98
-class AutomobileClass{
+class AutomobileClass{ // packed(0x10e bytes) TI: 0x2fac
 	enum /* __unnamed */ {
 		CAR_TYPES = 7,
 		PERCENTAGE_OF_AUTO1 = 10,

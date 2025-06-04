@@ -7,13 +7,13 @@
 // Type: int32_t;
 
 // Type: struct _dPoint2d (forward reference);
-struct _dPoint2d{
+struct _dPoint2d{ // packed(0x10 bytes) TI: 0x2766
 	double x;
 	double z;
 };
 
 // Type: struct _MISSION_STATICS;
-struct _MISSION_STATICS{
+struct _MISSION_STATICS{ // packed(0x1910 bytes) TI: 0x31da
 	long crime_ctr;
 	long fire_ctr;
 	long medevac_ctr;
@@ -32,7 +32,7 @@ struct _MISSION_STATICS{
 };
 
 // Type: struct tagLogString;
-struct tagLogString{
+struct tagLogString{ // packed(0x14 bytes) TI: 0x31dc
 	unsigned long nType;
 	unsigned long nTime;
 	unsigned long nMissionID;
@@ -43,7 +43,7 @@ struct tagLogString{
 // Type: void;
 
 // Type: struct tagCitySettings (forward reference);
-struct tagCitySettings{
+struct tagCitySettings{ // packed(0x24 bytes) TI: 0x26eb
 	long lDifficulty;
 	long lMissionFrequencyFire;
 	long lMissionFrequencyCrime;
@@ -58,7 +58,7 @@ struct tagCitySettings{
 // Type: float;
 
 // Type: struct tagCitySettings;
-struct tagCitySettings{
+struct tagCitySettings{ // packed(0x24 bytes) TI: 0x26eb
 	long lDifficulty;
 	long lMissionFrequencyFire;
 	long lMissionFrequencyCrime;
@@ -71,7 +71,7 @@ struct tagCitySettings{
 };
 
 // Type: struct MISSION_DATA (forward reference);
-struct MISSION_DATA{
+struct MISSION_DATA{ // packed(0xcc bytes) TI: 0x231b
 	char mtext[32];
 	long type_ctr;
 	long key;
@@ -88,13 +88,13 @@ struct MISSION_DATA{
 };
 
 // Type: struct _CELL_FIRE_DATA (forward reference);
-struct _CELL_FIRE_DATA{
+struct _CELL_FIRE_DATA{ // packed(0x8 bytes) TI: 0x303d
 	struct _CELL_INFO *cptr;
 	long fire_count;
 };
 
 // Type: struct _DYOBJ_INST (forward reference);
-struct _DYOBJ_INST{
+struct _DYOBJ_INST{ // packed(0x64 bytes) TI: 0x1deb
 	struct _DYOBJ_INST *next;
 	struct _DYOBJ_INST *vnext;
 	void * __ptr32 mesh;
@@ -107,13 +107,13 @@ struct _DYOBJ_INST{
 };
 
 // Type: struct Point2d (forward reference);
-struct Point2d{
+struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
 	int32_t x;
 	int32_t y;
 };
 
 // Type: struct _MISSION_PARMS (forward reference);
-struct _MISSION_PARMS{
+struct _MISSION_PARMS{ // packed(0x18 bytes) TI: 0x307d
 	long op;
 	long id;
 	struct Point2d maploc;
@@ -122,7 +122,7 @@ struct _MISSION_PARMS{
 };
 
 // Type: struct _CELL_INFO (forward reference);
-struct _CELL_INFO{
+struct _CELL_INFO{ // packed(0x18 bytes) TI: 0x1b03
 	short flags;
 	short x;
 	short y;

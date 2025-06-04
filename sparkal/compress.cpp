@@ -5,7 +5,7 @@
 // Type: unsigned short *;
 
 // Type: class CRLECompressedImage (forward reference);
-class CRLECompressedImage{
+class CRLECompressedImage{ // packed(0xc bytes) TI: 0x2b8a
 public:
 	static unsigned short * RLEGraphicsPool;
 	// calltype: NearC
@@ -34,7 +34,7 @@ protected:
 // Type: class ifstream;
 // VTABLE: COPTER_D 0x00593e2c
 class ifstream : public virtual ios, public istream, public virtual <indirect> ios
-{
+{ // not packed(0x5c bytes) TI: 0x2177
 public:
 	void ifstream(int32_t, char *, int32_t);
 	void ifstream(int32_t);
@@ -56,7 +56,7 @@ public:
 // Type: class ostrstream;
 // VTABLE: COPTER_D 0x00593b34
 class ostrstream : public virtual ios, public ostream, public virtual <indirect> ios
-{
+{ // not packed(0x58 bytes) TI: 0x217a
 public:
 	void ostrstream(char *, int32_t, int32_t);
 	void ostrstream();
@@ -69,7 +69,7 @@ public:
 // Type: unsigned long;
 
 // Type: struct RLEHeader (forward reference);
-struct RLEHeader{
+struct RLEHeader{ // packed(0x8 bytes) TI: 0x218b
 	short Width;
 	short Height;
 	short XOffset;
@@ -81,7 +81,7 @@ struct RLEHeader{
 // Type: class CFlatImage (forward reference);
 // VTABLE: COPTER_D 0x00591070
 class CFlatImage : public IFlatImage
-{
+{ // packed(0x1c bytes) TI: 0x20e3
 public:
 	void CFlatImage(class IFlatImage*, long, long, long, long);
 	void CFlatImage(long, long, unsigned char);
@@ -95,7 +95,7 @@ protected:
 
 // Type: class IFlatImage (forward reference);
 // VTABLE: COPTER_D 0x00591050
-class IFlatImage{
+class IFlatImage{ // packed(0x18 bytes) TI: 0x13a1
 public:
 	void IFlatImage();
 	virtual unsigned long Lock(); // vtable+0x0
@@ -131,7 +131,7 @@ protected:
 
 // Type: class IFlatImage;
 // VTABLE: COPTER_D 0x00591050
-class IFlatImage{
+class IFlatImage{ // packed(0x18 bytes) TI: 0x13a1
 public:
 	void IFlatImage();
 	virtual unsigned long Lock(); // vtable+0x0
@@ -161,7 +161,7 @@ protected:
 
 // Type: class ios;
 // VTABLE: COPTER_D 0x00593ad4
-class ios{
+class ios{ // not packed(0x50 bytes) TI: 0x1c18
 	enum io_state {
 		goodbit = 0,
 		eofbit = 1,
@@ -295,7 +295,7 @@ private:
 // Type: class istream;
 // VTABLE: COPTER_D 0x00593ea4
 class istream : public virtual ios
-{
+{ // not packed(0x5c bytes) TI: 0x14f1
 public:
 	int32_t *ios[0];
 private:
@@ -366,7 +366,7 @@ private:
 // Type: class ostream;
 // VTABLE: COPTER_D 0x00593a44
 class ostream : public virtual ios
-{
+{ // not packed(0x58 bytes) TI: 0x414e
 public:
 	int32_t *ios[0];
 	void ostream(class ios&);

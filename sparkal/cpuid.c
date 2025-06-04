@@ -11,13 +11,13 @@
 // Type: unsigned long;
 
 // Type: struct TIME_STAMP;
-struct TIME_STAMP{
+struct TIME_STAMP{ // packed(0x8 bytes) TI: 0x26fa
 	unsigned long High;
 	unsigned long Low;
 };
 
 // Type: struct TIME_STAMP (forward reference);
-struct TIME_STAMP{
+struct TIME_STAMP{ // packed(0x8 bytes) TI: 0x26fa
 	unsigned long High;
 	unsigned long Low;
 };

@@ -33,7 +33,7 @@ enum DirIndex2 {
 // Type: void;
 
 // Type: class RoadGraph (forward reference);
-class RoadGraph{
+class RoadGraph{ // packed(0x280 bytes) TI: 0x485e
 public:
 	struct RGVertex *RGArray[128];
 	unsigned char RGLength[128];
@@ -67,7 +67,7 @@ private:
 // Type: int32_t;
 
 // Type: struct RGVertex (forward reference);
-struct RGVertex{
+struct RGVertex{ // packed(0x33 bytes) TI: 0x1776
 	unsigned char x;
 	unsigned char y;
 	LfBitfield @ 0x11f58:
@@ -91,7 +91,7 @@ struct RGVertex{
 };
 
 // Type: struct Goal (forward reference);
-struct Goal{
+struct Goal{ // packed(0x2a bytes) TI: 0x12ce
 	struct RGVertex *pRGV;
 	int32_t elementIndex;
 	int32_t gridIndex;
@@ -106,7 +106,7 @@ struct Goal{
 };
 
 // Type: struct Edge (forward reference);
-struct Edge{
+struct Edge{ // packed(0xa bytes) TI: 0x176b
 	unsigned char yindex;
 	unsigned char x;
 	unsigned short Time;
@@ -122,7 +122,7 @@ enum SlopeIndex {
 };
 
 // Type: struct Road (forward reference);
-struct Road{
+struct Road{ // packed(0x2 bytes) TI: 0x1752
 	LfBitfield @ 0x11b34:
 	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x2
 	[90m   LB.[95mTI[m = 0x174e
@@ -145,7 +145,7 @@ struct Road{
 };
 
 // Type: struct _GridCoordinates;
-struct _GridCoordinates{
+struct _GridCoordinates{ // packed(0x2 bytes) TI: 0x143c
 	unsigned char x;
 	unsigned char y;
 };
@@ -153,7 +153,7 @@ struct _GridCoordinates{
 // Type: unsigned short;
 
 // Type: struct Goal;
-struct Goal{
+struct Goal{ // packed(0x2a bytes) TI: 0x12ce
 	struct RGVertex *pRGV;
 	int32_t elementIndex;
 	int32_t gridIndex;

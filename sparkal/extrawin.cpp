@@ -5,7 +5,7 @@
 // Type: char *;
 
 // Type: struct SparkalColor;
-struct SparkalColor{
+struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 	unsigned char Blue;
 	unsigned char Green;
 	unsigned char Red;
@@ -21,7 +21,7 @@ struct SparkalColor{
 // Type: class MessageBoxWindow (forward reference);
 // VTABLE: COPTER_D 0x0058fa80
 class MessageBoxWindow : public GraphicWindow
-{
+{ // packed(0xa4 bytes) TI: 0x2a45
 public:
 	void MessageBoxWindow(class MPoint&, unsigned long, class basic_string<char>&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *);
 	void MessageBoxWindow(class MPoint&, unsigned long, unsigned long, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *);
@@ -46,7 +46,7 @@ protected:
 
 // Type: class MPoint (forward reference);
 class MPoint : public SparkalPoint
-{
+{ // packed(0x8 bytes) TI: 0x159a
 public:
 	void MPoint(unsigned long);
 	void MPoint(struct SparkalSize);
@@ -80,13 +80,13 @@ public:
 
 // Type: class GraphicWindowOwner (forward reference);
 // VTABLE: COPTER_D 0x00590f2c
-class GraphicWindowOwner{
+class GraphicWindowOwner{ // packed(0x4 bytes) TI: 0x1647
 public:
 	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
 };
 
 // Type: class basic_string<char> (forward reference);
-class basic_string<char>{
+class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = class basic_string_ref<char>;
 	using reference_pointer = class basic_string_ref<char>*;
 private:
@@ -193,7 +193,7 @@ public:
 // Type: class ButtonWindow (forward reference);
 // VTABLE: COPTER_D 0x00591b78
 class ButtonWindow : public GraphicWindow
-{
+{ // packed(0x94 bytes) TI: 0x1a48
 	enum ButtonState {
 		nButtonStateDisabled = 0,
 		nButtonStateOff = 1,
@@ -227,7 +227,7 @@ protected:
 
 // Type: class MRect (forward reference);
 class MRect : public SparkalRect
-{
+{ // packed(0x10 bytes) TI: 0x1067
 public:
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
@@ -294,7 +294,7 @@ public:
 };
 
 // Type: class basic_string<char>;
-class basic_string<char>{
+class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = class basic_string_ref<char>;
 	using reference_pointer = class basic_string_ref<char>*;
 private:
@@ -401,7 +401,7 @@ public:
 // Type: class AnimationWindow (forward reference);
 // VTABLE: COPTER_D 0x0058fb58
 class AnimationWindow : public GraphicWindow
-{
+{ // packed(0xa4 bytes) TI: 0x41ff
 	enum AnimationLoopType {
 		nAnimationLoopTypeOnce = 0,
 		nAnimationLoopTypeCircular = 1,
@@ -452,7 +452,7 @@ protected:
 
 // Type: class MRect;
 class MRect : public SparkalRect
-{
+{ // packed(0x10 bytes) TI: 0x1067
 public:
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
@@ -520,7 +520,7 @@ public:
 
 // Type: class MFont (forward reference);
 // VTABLE: COPTER_D 0x00591640
-class MFont{
+class MFont{ // packed(0x1c bytes) TI: 0x1a6c
 public:
 	class basic_string<char> sName;
 	unsigned long lHeight;
@@ -547,7 +547,7 @@ protected:
 };
 
 // Type: struct SparkalColor (forward reference);
-struct SparkalColor{
+struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 	unsigned char Blue;
 	unsigned char Green;
 	unsigned char Red;
@@ -566,7 +566,7 @@ enum AnimationLoopType {
 // Type: class RenderSettingsWindow (forward reference);
 // VTABLE: COPTER_D 0x0058fc20
 class RenderSettingsWindow : public GraphicWindow
-{
+{ // packed(0xb8 bytes) TI: 0x2add
 public:
 	void RenderSettingsWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	virtual void ~RenderSettingsWindow() /* override */;
@@ -601,7 +601,7 @@ protected:
 // Type: class TextWindow (forward reference);
 // VTABLE: COPTER_D 0x00591a90
 class TextWindow : public GraphicWindow
-{
+{ // packed(0xa4 bytes) TI: 0x4411
 public:
 	void TextWindow(class MRect&, int32_t, const class basic_string<char>&, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	void TextWindow(class MRect&, int32_t, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
@@ -628,7 +628,7 @@ protected:
 // Type: class RadioButtonWindow (forward reference);
 // VTABLE: COPTER_D 0x00591d38
 class RadioButtonWindow : public ButtonWindow
-{
+{ // packed(0x98 bytes) TI: 0x1554
 public:
 	void RadioButtonWindow(class ButtonGroup*, class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
 	void RadioButtonWindow();
@@ -649,7 +649,7 @@ protected:
 // Type: class CBackBuffer (forward reference);
 // VTABLE: COPTER_D 0x00590808
 class CBackBuffer : public IBackBuffer
-{
+{ // packed(0x134 bytes) TI: 0x18f5
 public:
 	void CBackBuffer(long, long, const struct SparkalColor*);
 	void CBackBuffer(char *);
@@ -714,7 +714,7 @@ protected:
 // Type: class SoundSettingsWindow (forward reference);
 // VTABLE: COPTER_D 0x0058fce8
 class SoundSettingsWindow : public GraphicWindow
-{
+{ // packed(0x88 bytes) TI: 0x2a87
 public:
 	void SoundSettingsWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	virtual int32_t Initialize() /* override */;
@@ -737,7 +737,7 @@ protected:
 };
 
 // Type: struct SoundPreferences (forward reference);
-struct SoundPreferences{
+struct SoundPreferences{ // packed(0x10 bytes) TI: 0x2845
 	long lMasterVolume;
 	long lDispatchVolume;
 	long lSoundEffectsVolume;
@@ -745,7 +745,7 @@ struct SoundPreferences{
 };
 
 // Type: struct RadioPreferences (forward reference);
-struct RadioPreferences{
+struct RadioPreferences{ // packed(0x1c bytes) TI: 0x2a39
 	long lVolume;
 	int32_t bPreferToBeOn;
 	long lCurrentStation;
@@ -758,7 +758,7 @@ struct RadioPreferences{
 // Type: class CitySettingsWindow (forward reference);
 // VTABLE: COPTER_D 0x0058fdd0
 class CitySettingsWindow : public GraphicWindow
-{
+{ // packed(0x94 bytes) TI: 0x2a34
 public:
 	void CitySettingsWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	virtual int32_t Initialize() /* override */;
@@ -771,7 +771,7 @@ protected:
 };
 
 // Type: struct tagCitySettings (forward reference);
-struct tagCitySettings{
+struct tagCitySettings{ // packed(0x24 bytes) TI: 0x26eb
 	long lDifficulty;
 	long lMissionFrequencyFire;
 	long lMissionFrequencyCrime;
@@ -786,7 +786,7 @@ struct tagCitySettings{
 // Type: class PopupMenuExtra (forward reference);
 // VTABLE: COPTER_D 0x0058fe98
 class PopupMenuExtra : public PopupMenuWindow
-{
+{ // packed(0xd8 bytes) TI: 0x2a3c
 public:
 	void PopupMenuExtra(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *);
 	virtual void ~PopupMenuExtra() /* override */;
@@ -803,7 +803,7 @@ protected:
 
 // Type: class list<basic_string<char>>::iterator;
 class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_string<char>,int>
-{
+{ // packed(0x4 bytes) TI: 0x1cd3
 protected:
 	struct list<basic_string<char>>::list_node *node;
 public:
@@ -821,7 +821,7 @@ public:
 
 // Type: class MPoint;
 class MPoint : public SparkalPoint
-{
+{ // packed(0x8 bytes) TI: 0x159a
 public:
 	void MPoint(unsigned long);
 	void MPoint(struct SparkalSize);
@@ -849,7 +849,7 @@ public:
 // Type: class TooltipWindow (forward reference);
 // VTABLE: COPTER_D 0x0058fff8
 class TooltipWindow : public TextWindow
-{
+{ // packed(0xb0 bytes) TI: 0x4449
 public:
 	void TooltipWindow(class MRect&, int32_t, class basic_string<char>&, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *);
 	void TooltipWindow(class MRect&, int32_t, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *);
@@ -870,7 +870,7 @@ protected:
 // Type: class BoneheadTextEditWindow (forward reference);
 // VTABLE: COPTER_D 0x005900f0
 class BoneheadTextEditWindow : public TextWindow
-{
+{ // packed(0xc4 bytes) TI: 0x444b
 public:
 	void BoneheadTextEditWindow(class MRect&, int32_t, const class basic_string<char>&, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *);
 	void BoneheadTextEditWindow(class MRect&, int32_t, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *);
@@ -903,7 +903,7 @@ protected:
 // Type: class MessageBoxWindowEdit (forward reference);
 // VTABLE: COPTER_D 0x005901f8
 class MessageBoxWindowEdit : public MessageBoxWindow
-{
+{ // packed(0xa8 bytes) TI: 0x442a
 public:
 	void MessageBoxWindowEdit(class MPoint&, unsigned long, class basic_string<char>&, const class basic_string<char>&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *, char *);
 	void MessageBoxWindowEdit(class MPoint&, unsigned long, unsigned long, const class basic_string<char>&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *, char *);
@@ -917,7 +917,7 @@ protected:
 // Type: class ScrollingCreditWindow (forward reference);
 // VTABLE: COPTER_D 0x005902d8
 class ScrollingCreditWindow : public GraphicWindow
-{
+{ // packed(0xcc bytes) TI: 0x4445
 public:
 	void ScrollingCreditWindow(int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	virtual void ~ScrollingCreditWindow() /* override */;
@@ -943,7 +943,7 @@ protected:
 // Type: class CheckupWindow (forward reference);
 // VTABLE: COPTER_D 0x005903a0
 class CheckupWindow : public GraphicWindow
-{
+{ // packed(0x94 bytes) TI: 0x486b
 public:
 	void CheckupWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	virtual int32_t Initialize() /* override */;
@@ -966,7 +966,7 @@ protected:
 // Type: uint32_t;
 
 // Type: struct SparkalRect;
-struct SparkalRect{
+struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	long left;
 	long top;
 	long right;
@@ -976,7 +976,7 @@ struct SparkalRect{
 };
 
 // Type: struct SparkalPoint;
-struct SparkalPoint{
+struct SparkalPoint{ // packed(0x8 bytes) TI: 0x1a54
 	long x;
 	long y;
 	void SparkalPoint(long, long);
@@ -986,7 +986,7 @@ struct SparkalPoint{
 // Type: class MessageBoxWindow;
 // VTABLE: COPTER_D 0x0058fa80
 class MessageBoxWindow : public GraphicWindow
-{
+{ // packed(0xa4 bytes) TI: 0x2a45
 public:
 	void MessageBoxWindow(class MPoint&, unsigned long, class basic_string<char>&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *);
 	void MessageBoxWindow(class MPoint&, unsigned long, unsigned long, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *);
@@ -1012,7 +1012,7 @@ protected:
 // Type: class PopupMenuWindow;
 // VTABLE: COPTER_D 0x00592220
 class PopupMenuWindow : public ListBoxWindow
-{
+{ // packed(0xcc bytes) TI: 0x215d
 public:
 	void PopupMenuWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	virtual int32_t Initialize() /* override */;
@@ -1029,7 +1029,7 @@ protected:
 // Type: class TextWindow;
 // VTABLE: COPTER_D 0x00591a90
 class TextWindow : public GraphicWindow
-{
+{ // packed(0xa4 bytes) TI: 0x1dfc
 public:
 	void TextWindow(class MRect&, int32_t, class basic_string<char>&, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	void TextWindow(class MRect&, int32_t, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
@@ -1056,7 +1056,7 @@ protected:
 // Type: class ButtonWindow;
 // VTABLE: COPTER_D 0x00591b78
 class ButtonWindow : public GraphicWindow
-{
+{ // packed(0x94 bytes) TI: 0x1a48
 	enum ButtonState {
 		nButtonStateDisabled = 0,
 		nButtonStateOff = 1,
@@ -1089,13 +1089,13 @@ protected:
 };
 
 // Type: struct bidirectional_iterator<basic_string<char>,int>;
-struct bidirectional_iterator<basic_string<char>,int>{
+struct bidirectional_iterator<basic_string<char>,int>{ // packed(0x1 bytes) TI: 0x1847
 };
 
 // Type: class ListBoxWindow;
 // VTABLE: COPTER_D 0x005920c8
 class ListBoxWindow : public GraphicWindow
-{
+{ // packed(0xcc bytes) TI: 0x17a0
 public:
 	void ListBoxWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	void ListBoxWindow();

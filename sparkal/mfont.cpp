@@ -6,7 +6,7 @@
 
 // Type: class MFont (forward reference);
 // VTABLE: COPTER_D 0x00591640
-class MFont{
+class MFont{ // packed(0x1c bytes) TI: 0x1a6c
 public:
 	class basic_string<char> sName;
 	unsigned long lHeight;
@@ -41,13 +41,13 @@ protected:
 // Type: long;
 
 // Type: struct tagSIZE;
-struct tagSIZE{
+struct tagSIZE{ // packed(0x8 bytes) TI: 0x21e7
 	long cx;
 	long cy;
 };
 
 // Type: struct tagRECT;
-struct tagRECT{
+struct tagRECT{ // packed(0x10 bytes) TI: 0x13c4
 	long left;
 	long top;
 	long right;

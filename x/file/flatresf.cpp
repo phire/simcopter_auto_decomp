@@ -8,7 +8,7 @@
 // Type: class FlatResFile (forward reference);
 // VTABLE: COPTER_D 0x00593508
 class FlatResFile : public FlatFile
-{
+{ // not packed(0x11c bytes) TI: 0x330e
 protected:
 	class ResMap *fMap;
 	long fError;
@@ -65,7 +65,7 @@ public:
 // Type: class ResFile (forward reference);
 // VTABLE: COPTER_D 0x00593518
 class ResFile : public FlatResFile
-{
+{ // not packed(0x11c bytes) TI: 0x3334
 public:
 	long OpenFromOtherFile(class ResFile*);
 };
@@ -77,7 +77,7 @@ public:
 // Type: void (void * __ptr32, long);
 
 // Type: struct ResMap::Entry (forward reference);
-struct ResMap::Entry{
+struct ResMap::Entry{ // not packed(0xc bytes) TI: 0x3dee
 	short id;
 	short nameOffset;
 	LfBitfield @ 0x7104c:
@@ -96,7 +96,7 @@ struct ResMap::Entry{
 };
 
 // Type: class StringSet;
-class StringSet{
+class StringSet{ // not packed(0x10 bytes) TI: 0x3487
 private:
 	class ResFile *fResFile;
 	long fNumStrings;
@@ -114,7 +114,7 @@ public:
 };
 
 // Type: struct ResMap::TypeHead (forward reference);
-struct ResMap::TypeHead{
+struct ResMap::TypeHead{ // not packed(0x8 bytes) TI: 0x3df0
 	unsigned long type;
 	short resCnt;
 	short listOff;
@@ -125,7 +125,7 @@ struct ResMap::TypeHead{
 // Type: class FlatResFile;
 // VTABLE: COPTER_D 0x00593508
 class FlatResFile : public FlatFile
-{
+{ // packed(0x11a bytes) TI: 0x22bb
 protected:
 	class ResMap *fMap;
 	long fError;
@@ -165,7 +165,7 @@ public:
 
 // Type: class FlatFile;
 // VTABLE: COPTER_D 0x00593620
-class FlatFile{
+class FlatFile{ // packed(0x110 bytes) TI: 0x229b
 	enum /* __unnamed */ {
 		kMaxNameLen = 255,
 	};

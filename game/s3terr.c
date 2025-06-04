@@ -19,13 +19,13 @@
 // Type: int32_t *;
 
 // Type: struct Point2d;
-struct Point2d{
+struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
 	int32_t x;
 	int32_t y;
 };
 
 // Type: struct Point3d (forward reference);
-struct Point3d{
+struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 	int32_t x;
 	int32_t y;
 	int32_t z;
@@ -34,7 +34,7 @@ struct Point3d{
 // Type: short *;
 
 // Type: struct _CELL_INFO (forward reference);
-struct _CELL_INFO{
+struct _CELL_INFO{ // packed(0x18 bytes) TI: 0x1b03
 	short flags;
 	short x;
 	short y;
@@ -47,7 +47,7 @@ struct _CELL_INFO{
 };
 
 // Type: struct _STOBJ_INST (forward reference);
-struct _STOBJ_INST{
+struct _STOBJ_INST{ // packed(0x10 bytes) TI: 0x193f
 	struct _STOBJ_INST *next;
 	void * __ptr32 mesh;
 	long user1;

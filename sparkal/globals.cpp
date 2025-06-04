@@ -5,7 +5,7 @@
 // Type: long;
 
 // Type: struct VRwindowType;
-struct VRwindowType{
+struct VRwindowType{ // packed(0x1c bytes) TI: 0x10a5
 	int32_t WindowX;
 	int32_t WindowY;
 	int32_t WindowWide;
@@ -31,7 +31,7 @@ enum tagResolution {
 // Type: void * __ptr32;
 
 // Type: class RoadGraph;
-class RoadGraph{
+class RoadGraph{ // packed(0x280 bytes) TI: 0x485e
 public:
 	struct RGVertex *RGArray[128];
 	unsigned char RGLength[128];
@@ -63,7 +63,7 @@ private:
 // Type: char;
 
 // Type: class Station (forward reference);
-class Station{
+class Station{ // packed(0x1c bytes) TI: 0x2fef
 public:
 	void Station(unsigned char);
 	void ~Station();
@@ -92,7 +92,7 @@ private:
 };
 
 // Type: class ShortestPath;
-class ShortestPath{
+class ShortestPath{ // packed(0x8 bytes) TI: 0x2aae
 private:
 	struct _FringeHeapNode *heap;
 	long heapSize;
@@ -109,7 +109,7 @@ private:
 // Type: void ();
 
 // Type: class Station (forward reference);
-class Station{
+class Station{ // packed(0x1c bytes) TI: 0x47e8
 public:
 	void Station(unsigned char);
 	void ~Station();
@@ -138,7 +138,7 @@ private:
 };
 
 // Type: struct VRwindowType;
-struct VRwindowType{
+struct VRwindowType{ // not packed(0x1c bytes) TI: 0x3e0f
 	int32_t WindowX;
 	int32_t WindowY;
 	int32_t WindowWide;

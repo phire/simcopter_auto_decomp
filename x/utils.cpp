@@ -35,7 +35,7 @@
 // Type: void * __ptr32;
 
 // Type: struct Rect (forward reference);
-struct Rect{
+struct Rect{ // not packed(0x8 bytes) TI: 0x3463
 	short top;
 	short left;
 	short bottom;
@@ -43,13 +43,13 @@ struct Rect{
 };
 
 // Type: struct Point;
-struct Point{
+struct Point{ // not packed(0x4 bytes) TI: 0x341c
 	short v;
 	short h;
 };
 
 // Type: struct Point (forward reference);
-struct Point{
+struct Point{ // not packed(0x4 bytes) TI: 0x341c
 	short v;
 	short h;
 };

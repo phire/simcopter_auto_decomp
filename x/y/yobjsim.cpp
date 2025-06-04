@@ -7,7 +7,7 @@
 // Type: int32_t;
 
 // Type: struct Point3d;
-struct Point3d{
+struct Point3d{ // not packed(0xc bytes) TI: 0x348f
 	int32_t x;
 	int32_t y;
 	int32_t z;
@@ -18,14 +18,14 @@ struct Point3d{
 // Type: class cYObject (forward reference);
 // VTABLE: COPTER_D 0x005935e0
 class cYObject : public TreeSim, public YObjLang
-{
+{ // not packed(0x168 bytes) TI: 0x48a0
 	using DataType = short;
 	enum /* __unnamed */ {
 		kNumData = 48,
 		kNumTemp = 8,
 		kNumPointers = 4,
 	};
-	struct cYObject::ObjDefHeader{
+	struct cYObject::ObjDefHeader{ // not packed(0x1c bytes) TI: 0x374c
 		long version;
 		short stackSize;
 		short baseGraphic;
@@ -158,7 +158,7 @@ public:
 		kSearchRoof = 2,
 		kSearchAnywhereAtAll = 3,
 	};
-	struct cYObject::LocationInfo{
+	struct cYObject::LocationInfo{ // not packed(0x8 bytes) TI: 0x374a
 		enum cYObject::SearchType searchType;
 		short maxNormalLoiterers;
 	};
@@ -191,19 +191,19 @@ public:
 	void UpdateMission(enum cYObject::MissionUpdates, long);
 	void ResetTree();
 	void ResetTree(short);
-	struct cYObject::MoveInfo{
+	struct cYObject::MoveInfo{ // not packed(0x10 bytes) TI: 0x3748
 		enum cYObject::LocationType *locType;
 		char * roadDir;
 		struct _DYOBJ_INST *dyBlock;
 		struct _STOBJ_INST *stBlock;
 	};
-	struct cYObject::_ControlInput{
+	struct cYObject::_ControlInput{ // not packed(0x18 bytes) TI: 0x3745
 		struct Point3d vector;
 		int32_t fwdSpeed;
 		int32_t rotateRate;
 		int32_t yaw;
 	};
-	struct cYObject::_ControlInput{
+	struct cYObject::_ControlInput{ // not packed(0x18 bytes) TI: 0x3745
 		struct Point3d vector;
 		int32_t fwdSpeed;
 		int32_t rotateRate;
@@ -670,7 +670,7 @@ public:
 // Type: long;
 
 // Type: struct _DYOBJ_INST (forward reference);
-struct _DYOBJ_INST{
+struct _DYOBJ_INST{ // packed(0x64 bytes) TI: 0x1deb
 	struct _DYOBJ_INST *next;
 	struct _DYOBJ_INST *vnext;
 	void * __ptr32 mesh;
@@ -691,7 +691,7 @@ struct _DYOBJ_INST{
 // Type: void;
 
 // Type: struct _CELL_INFO (forward reference);
-struct _CELL_INFO{
+struct _CELL_INFO{ // packed(0x18 bytes) TI: 0x1b03
 	short flags;
 	short x;
 	short y;
@@ -704,13 +704,13 @@ struct _CELL_INFO{
 };
 
 // Type: struct Point2d;
-struct Point2d{
+struct Point2d{ // not packed(0x8 bytes) TI: 0x363e
 	int32_t x;
 	int32_t y;
 };
 
 // Type: struct _STOBJ_INST (forward reference);
-struct _STOBJ_INST{
+struct _STOBJ_INST{ // packed(0x10 bytes) TI: 0x193f
 	struct _STOBJ_INST *next;
 	void * __ptr32 mesh;
 	long user1;
@@ -740,7 +740,7 @@ enum LocationType {
 // Type: char;
 
 // Type: struct cYObject::MoveInfo (forward reference);
-struct cYObject::MoveInfo{
+struct cYObject::MoveInfo{ // not packed(0x10 bytes) TI: 0x3748
 	enum cYObject::LocationType *locType;
 	char * roadDir;
 	struct _DYOBJ_INST *dyBlock;
@@ -768,7 +768,7 @@ enum MoveErrorCode {
 // Type: unsigned char;
 
 // Type: struct TreeSim::StackElem (forward reference);
-struct TreeSim::StackElem{
+struct TreeSim::StackElem{ // not packed(0x14 bytes) TI: 0x3614
 	short treeID;
 	short nodeNum;
 	short objectID;
@@ -780,7 +780,7 @@ struct TreeSim::StackElem{
 };
 
 // Type: struct Point2d (forward reference);
-struct Point2d{
+struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
 	int32_t x;
 	int32_t y;
 };
@@ -818,7 +818,7 @@ enum MissionType {
 };
 
 // Type: struct _MISSION_PARMS;
-struct _MISSION_PARMS{
+struct _MISSION_PARMS{ // not packed(0x18 bytes) TI: 0x38f9
 	long op;
 	long id;
 	struct Point2d maploc;
@@ -827,7 +827,7 @@ struct _MISSION_PARMS{
 };
 
 // Type: struct Behavior::Node (forward reference);
-struct Behavior::Node{
+struct Behavior::Node{ // not packed(0xc bytes) TI: 0x35e3
 	short treeID;
 	short primCode;
 	char trueTrans;
@@ -845,19 +845,19 @@ enum ReturnCode {
 };
 
 // Type: struct YObjLang::IdleParam;
-struct YObjLang::IdleParam{
+struct YObjLang::IdleParam{ // not packed(0x2 bytes) TI: 0x3578
 	short decTemp;
 };
 
 // Type: union YObjLang::Param (forward reference);
 
 // Type: struct YObjLang::SetAnimParam;
-struct YObjLang::SetAnimParam{
+struct YObjLang::SetAnimParam{ // not packed(0x4 bytes) TI: 0x3576
 	unsigned long animname;
 };
 
 // Type: struct cYObject::MoveInfo;
-struct cYObject::MoveInfo{
+struct cYObject::MoveInfo{ // not packed(0x10 bytes) TI: 0x3748
 	enum cYObject::LocationType *locType;
 	char * roadDir;
 	struct _DYOBJ_INST *dyBlock;
@@ -865,35 +865,35 @@ struct cYObject::MoveInfo{
 };
 
 // Type: struct YObjLang::SetBodyParam;
-struct YObjLang::SetBodyParam{
+struct YObjLang::SetBodyParam{ // not packed(0x4 bytes) TI: 0x3574
 	unsigned long bodyname;
 };
 
 // Type: struct YObjLang::RandomParam;
-struct YObjLang::RandomParam{
+struct YObjLang::RandomParam{ // not packed(0x6 bytes) TI: 0x3570
 	short destTemp;
 	short rangeData;
 	short rangeOwner;
 };
 
 // Type: struct YObjLang::WalkAndGrabParam;
-struct YObjLang::WalkAndGrabParam{
+struct YObjLang::WalkAndGrabParam{ // not packed(0x4 bytes) TI: 0x357c
 	short decTemp;
 	short dynAnimBoolean;
 };
 
 // Type: struct YObjLang::UpdateMyMissionParam;
-struct YObjLang::UpdateMyMissionParam{
+struct YObjLang::UpdateMyMissionParam{ // not packed(0x2 bytes) TI: 0x3582
 	short updateLiteral;
 };
 
 // Type: struct YObjLang::CheckForTrueParam;
-struct YObjLang::CheckForTrueParam{
+struct YObjLang::CheckForTrueParam{ // not packed(0x2 bytes) TI: 0x3580
 	short whatLiteral;
 };
 
 // Type: struct _HELI_DATA (forward reference);
-struct _HELI_DATA{
+struct _HELI_DATA{ // packed(0x32c bytes) TI: 0x2a68
 	int32_t type;
 	int32_t state;
 	int32_t flags;
@@ -953,30 +953,30 @@ struct _HELI_DATA{
 };
 
 // Type: struct YObjLang::CompareMyLocWithParam;
-struct YObjLang::CompareMyLocWithParam{
+struct YObjLang::CompareMyLocWithParam{ // not packed(0x6 bytes) TI: 0x357e
 	short withWhatLiteral;
 	short distData;
 	short distOwner;
 };
 
 // Type: struct YObjLang::IsThisLocTypeParam;
-struct YObjLang::IsThisLocTypeParam{
+struct YObjLang::IsThisLocTypeParam{ // not packed(0x2 bytes) TI: 0x3584
 	short locTypeLiteral;
 };
 
 // Type: struct YObjLang::CheckForSpotParam;
-struct YObjLang::CheckForSpotParam{
+struct YObjLang::CheckForSpotParam{ // not packed(0x4 bytes) TI: 0x358c
 	short brightnessTemp;
 	short dirToHeliTemp;
 };
 
 // Type: struct YObjLang::IncrementRiotValParam;
-struct YObjLang::IncrementRiotValParam{
+struct YObjLang::IncrementRiotValParam{ // not packed(0x2 bytes) TI: 0x3588
 	short riotValLiteral;
 };
 
 // Type: struct YObjLang::GetSurroundingRiotValParam;
-struct YObjLang::GetSurroundingRiotValParam{
+struct YObjLang::GetSurroundingRiotValParam{ // not packed(0x8 bytes) TI: 0x358a
 	short distTemp;
 	short dirToConcTemp;
 	short riotValTemp;
@@ -984,12 +984,12 @@ struct YObjLang::GetSurroundingRiotValParam{
 };
 
 // Type: struct YObjLang::IsThisScurkIDParam;
-struct YObjLang::IsThisScurkIDParam{
+struct YObjLang::IsThisScurkIDParam{ // not packed(0x2 bytes) TI: 0x3586
 	short scurkIDLiteral;
 };
 
 // Type: struct tagLogString;
-struct tagLogString{
+struct tagLogString{ // not packed(0x14 bytes) TI: 0x38f4
 	unsigned long nType;
 	unsigned long nTime;
 	unsigned long nMissionID;
@@ -998,17 +998,17 @@ struct tagLogString{
 };
 
 // Type: struct YObjLang::SetDirectionParam;
-struct YObjLang::SetDirectionParam{
+struct YObjLang::SetDirectionParam{ // not packed(0x2 bytes) TI: 0x358e
 	short dirTemp;
 };
 
 // Type: struct YObjLang::GetOutOfRoadParam;
-struct YObjLang::GetOutOfRoadParam{
+struct YObjLang::GetOutOfRoadParam{ // not packed(0x2 bytes) TI: 0x358f
 	short decTemp;
 };
 
 // Type: struct YObjLang::TurnToFireParam;
-struct YObjLang::TurnToFireParam{
+struct YObjLang::TurnToFireParam{ // not packed(0x4 bytes) TI: 0x3591
 	short xdistloc;
 	short ydistloc;
 };
@@ -1028,7 +1028,7 @@ enum MissionUpdates {
 };
 
 // Type: struct YObjLang::AttrParam (forward reference);
-struct YObjLang::AttrParam{
+struct YObjLang::AttrParam{ // not packed(0x8 bytes) TI: 0x3568
 	short lhsData;
 	short rhsData;
 	LfBitfield @ 0x5d5b4:
@@ -1059,12 +1059,12 @@ struct YObjLang::AttrParam{
 
 // Type: class TreeSim;
 // VTABLE: COPTER_D 0x00593630
-class TreeSim{
+class TreeSim{ // not packed(0x14 bytes) TI: 0x3610
 	enum /* __unnamed */ {
 		kNumLocals = 4,
 		kMaxIterations = 128,
 	};
-	struct TreeSim::StackElem{
+	struct TreeSim::StackElem{ // not packed(0x14 bytes) TI: 0x3614
 		short treeID;
 		short nodeNum;
 		short objectID;
@@ -1118,7 +1118,7 @@ public:
 // Type: class YObjLang;
 // VTABLE: COPTER_D 0x005936e8
 class YObjLang : public Language
-{
+{ // not packed(0x4 bytes) TI: 0x3560
 public:
 	void YObjLang(class YObjLang&);
 	void YObjLang(unsigned char *);
@@ -1213,71 +1213,71 @@ public:
 		kTreeTableValue = 12,
 		kNumOwners = 13,
 	};
-	struct YObjLang::OwnerDataParam{
+	struct YObjLang::OwnerDataParam{ // not packed(0x8 bytes) TI: 0x3593
 		short owner1;
 		short data1;
 		short owner2;
 		short data2;
 	};
-	struct YObjLang::TurnToFireParam{
+	struct YObjLang::TurnToFireParam{ // not packed(0x4 bytes) TI: 0x3591
 		short xdistloc;
 		short ydistloc;
 	};
-	struct YObjLang::GetOutOfRoadParam{
+	struct YObjLang::GetOutOfRoadParam{ // not packed(0x2 bytes) TI: 0x358f
 		short decTemp;
 	};
-	struct YObjLang::SetDirectionParam{
+	struct YObjLang::SetDirectionParam{ // not packed(0x2 bytes) TI: 0x358e
 		short dirTemp;
 	};
-	struct YObjLang::CheckForSpotParam{
+	struct YObjLang::CheckForSpotParam{ // not packed(0x4 bytes) TI: 0x358c
 		short brightnessTemp;
 		short dirToHeliTemp;
 	};
-	struct YObjLang::GetSurroundingRiotValParam{
+	struct YObjLang::GetSurroundingRiotValParam{ // not packed(0x8 bytes) TI: 0x358a
 		short distTemp;
 		short dirToConcTemp;
 		short riotValTemp;
 		short numPeopleCountedTemp;
 	};
-	struct YObjLang::IncrementRiotValParam{
+	struct YObjLang::IncrementRiotValParam{ // not packed(0x2 bytes) TI: 0x3588
 		short riotValLiteral;
 	};
-	struct YObjLang::IsThisScurkIDParam{
+	struct YObjLang::IsThisScurkIDParam{ // not packed(0x2 bytes) TI: 0x3586
 		short scurkIDLiteral;
 	};
-	struct YObjLang::IsThisLocTypeParam{
+	struct YObjLang::IsThisLocTypeParam{ // not packed(0x2 bytes) TI: 0x3584
 		short locTypeLiteral;
 	};
-	struct YObjLang::UpdateMyMissionParam{
+	struct YObjLang::UpdateMyMissionParam{ // not packed(0x2 bytes) TI: 0x3582
 		short updateLiteral;
 	};
-	struct YObjLang::CheckForTrueParam{
+	struct YObjLang::CheckForTrueParam{ // not packed(0x2 bytes) TI: 0x3580
 		short whatLiteral;
 	};
-	struct YObjLang::CompareMyLocWithParam{
+	struct YObjLang::CompareMyLocWithParam{ // not packed(0x6 bytes) TI: 0x357e
 		short withWhatLiteral;
 		short distData;
 		short distOwner;
 	};
-	struct YObjLang::WalkAndGrabParam{
+	struct YObjLang::WalkAndGrabParam{ // not packed(0x4 bytes) TI: 0x357c
 		short decTemp;
 		short dynAnimBoolean;
 	};
-	struct YObjLang::SearchForDynParam{
+	struct YObjLang::SearchForDynParam{ // not packed(0x6 bytes) TI: 0x357a
 		short searchdynobjtypetemp;
 		short onlyonmasterboolean;
 		short numcellstospiral;
 	};
-	struct YObjLang::IdleParam{
+	struct YObjLang::IdleParam{ // not packed(0x2 bytes) TI: 0x3578
 		short decTemp;
 	};
-	struct YObjLang::SetAnimParam{
+	struct YObjLang::SetAnimParam{ // not packed(0x4 bytes) TI: 0x3576
 		unsigned long animname;
 	};
-	struct YObjLang::SetBodyParam{
+	struct YObjLang::SetBodyParam{ // not packed(0x4 bytes) TI: 0x3574
 		unsigned long bodyname;
 	};
-	struct YObjLang::WalkRunParam{
+	struct YObjLang::WalkRunParam{ // not packed(0x7 bytes) TI: 0x3572
 		char decTemp;
 		char onlyNeutralBoolean;
 		char moveFailTemp;
@@ -1286,29 +1286,29 @@ public:
 		char dynAnimBoolean;
 		char speedTemp;
 	};
-	struct YObjLang::RandomParam{
+	struct YObjLang::RandomParam{ // not packed(0x6 bytes) TI: 0x3570
 		short destTemp;
 		short rangeData;
 		short rangeOwner;
 	};
-	struct YObjLang::RoadDirParam{
+	struct YObjLang::RoadDirParam{ // not packed(0x6 bytes) TI: 0x356e
 		short dirTemp;
 		short distAheadData;
 		short distAheadOwner;
 	};
-	struct YObjLang::DirDistFirstParam{
+	struct YObjLang::DirDistFirstParam{ // not packed(0x8 bytes) TI: 0x356c
 		short dirToTemp;
 		short distToTemp;
 		short whatData;
 		short whatOwner;
 	};
-	struct YObjLang::DirDistPersonParam{
+	struct YObjLang::DirDistPersonParam{ // not packed(0x8 bytes) TI: 0x356a
 		short dirToTemp;
 		short distToTemp;
 		short whoData;
 		short whoOwner;
 	};
-	struct YObjLang::AttrParam{
+	struct YObjLang::AttrParam{ // not packed(0x8 bytes) TI: 0x3568
 		short lhsData;
 		short rhsData;
 		LfBitfield @ 0x5d5b4:
@@ -1350,7 +1350,7 @@ public:
 		kClearFlag = 10,
 		kNumOps = 11,
 	};
-	struct YObjLang::MiscParam{
+	struct YObjLang::MiscParam{ // not packed(0x8 bytes) TI: 0x3564
 		short m1;
 		short m2;
 		short m3;

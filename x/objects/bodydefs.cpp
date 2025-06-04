@@ -9,7 +9,7 @@
 // Type: long;
 
 // Type: struct PrivAnimPartInfo (forward reference);
-struct PrivAnimPartInfo{
+struct PrivAnimPartInfo{ // not packed(0x8 bytes) TI: 0x3425
 	struct TinyXZY start;
 	struct TinyXZY end;
 };
@@ -17,7 +17,7 @@ struct PrivAnimPartInfo{
 // Type: void;
 
 // Type: struct DXZY;
-struct DXZY{
+struct DXZY{ // not packed(0x10 bytes) TI: 0x3420
 	float x;
 	float z;
 	float y;
@@ -25,7 +25,7 @@ struct DXZY{
 };
 
 // Type: struct TinyXZY;
-struct TinyXZY{
+struct TinyXZY{ // not packed(0x4 bytes) TI: 0x3422
 	char x;
 	char y;
 	char z;
@@ -33,7 +33,7 @@ struct TinyXZY{
 };
 
 // Type: struct TinyXZY (forward reference);
-struct TinyXZY{
+struct TinyXZY{ // not packed(0x4 bytes) TI: 0x3422
 	char x;
 	char y;
 	char z;
@@ -41,7 +41,7 @@ struct TinyXZY{
 };
 
 // Type: struct DXZY (forward reference);
-struct DXZY{
+struct DXZY{ // not packed(0x10 bytes) TI: 0x3420
 	float x;
 	float z;
 	float y;
@@ -53,7 +53,7 @@ struct DXZY{
 // Type: float;
 
 // Type: struct Point (forward reference);
-struct Point{
+struct Point{ // not packed(0x4 bytes) TI: 0x341c
 	short v;
 	short h;
 };
@@ -65,7 +65,7 @@ struct Point{
 // Type: class FlatResFile (forward reference);
 // VTABLE: COPTER_D 0x00593508
 class FlatResFile : public FlatFile
-{
+{ // not packed(0x11c bytes) TI: 0x330e
 protected:
 	class ResMap *fMap;
 	long fError;
@@ -105,7 +105,7 @@ public:
 
 // Type: class cBBase (forward reference);
 // VTABLE: COPTER_D 0x00593688
-class cBBase{
+class cBBase{ // not packed(0x28 bytes) TI: 0x339c
 public:
 	virtual unsigned long GetBodyType(); // vtable+0x0
 	unsigned long GetName();
@@ -135,7 +135,7 @@ public:
 	unsigned long fTinyName;
 	short fResID;
 	unsigned short fDataChanged;
-	struct cBBase::BBaseHeader{
+	struct cBBase::BBaseHeader{ // not packed(0x40 bytes) TI: 0x339f
 		unsigned long bodyType;
 		long _win8pad[15];
 	};
@@ -146,8 +146,8 @@ public:
 };
 
 // Type: class PtrList<cBBase> (forward reference);
-class PtrList<cBBase>{
-	class PtrList<cBBase>::Iter{
+class PtrList<cBBase>{ // not packed(0x8 bytes) TI: 0x33ac
+	class PtrList<cBBase>::Iter{ // not packed(0x8 bytes) TI: 0x33b6
 	private:
 		class PtrList<cBBase> *fObject;
 		struct PtrList<cBBase>::PtrNode *fCur;
@@ -158,7 +158,7 @@ class PtrList<cBBase>{
 		void Reset();
 		class cBBase* First();
 	};
-	struct PtrList<cBBase>::PtrNode{
+	struct PtrList<cBBase>::PtrNode{ // not packed(0x8 bytes) TI: 0x33ae
 		class cBBase *data;
 		struct PtrList<cBBase>::PtrNode *next;
 	};
@@ -178,13 +178,13 @@ public:
 };
 
 // Type: struct PtrList<cBBase>::PtrNode (forward reference);
-struct PtrList<cBBase>::PtrNode{
+struct PtrList<cBBase>::PtrNode{ // not packed(0x8 bytes) TI: 0x33ae
 	class cBBase *data;
 	struct PtrList<cBBase>::PtrNode *next;
 };
 
 // Type: class PtrList<cCopterAnim>::Iter (forward reference);
-class PtrList<cCopterAnim>::Iter{
+class PtrList<cCopterAnim>::Iter{ // not packed(0x8 bytes) TI: 0x341b
 private:
 	class PtrList<cCopterAnim> *fObject;
 	struct PtrList<cCopterAnim>::PtrNode *fCur;
@@ -200,8 +200,8 @@ public:
 // cBList<cCopterAnim> Class implementation not found
 
 // Type: class PtrList<cCopterAnim> (forward reference);
-class PtrList<cCopterAnim>{
-	class PtrList<cCopterAnim>::Iter{
+class PtrList<cCopterAnim>{ // not packed(0x8 bytes) TI: 0x3411
+	class PtrList<cCopterAnim>::Iter{ // not packed(0x8 bytes) TI: 0x341b
 	private:
 		class PtrList<cCopterAnim> *fObject;
 		struct PtrList<cCopterAnim>::PtrNode *fCur;
@@ -212,7 +212,7 @@ class PtrList<cCopterAnim>{
 		void Reset();
 		class cCopterAnim* First();
 	};
-	struct PtrList<cCopterAnim>::PtrNode{
+	struct PtrList<cCopterAnim>::PtrNode{ // not packed(0x8 bytes) TI: 0x3413
 		class cCopterAnim *data;
 		struct PtrList<cCopterAnim>::PtrNode *next;
 	};
@@ -234,7 +234,7 @@ public:
 // Type: class cCopterAnim (forward reference);
 // VTABLE: COPTER_D 0x00593658
 class cCopterAnim : public cBBase
-{
+{ // not packed(0x2c bytes) TI: 0x3404
 public:
 	void cCopterAnim();
 	virtual void ~cCopterAnim() /* override */;
@@ -273,8 +273,8 @@ public:
 // cCopterBody Class implementation not found
 
 // Type: class PtrList<cCopterBody> (forward reference);
-class PtrList<cCopterBody>{
-	class PtrList<cCopterBody>::Iter{
+class PtrList<cCopterBody>{ // not packed(0x8 bytes) TI: 0x3432
+	class PtrList<cCopterBody>::Iter{ // not packed(0x8 bytes) TI: 0x343c
 	private:
 		class PtrList<cCopterBody> *fObject;
 		struct PtrList<cCopterBody>::PtrNode *fCur;
@@ -285,7 +285,7 @@ class PtrList<cCopterBody>{
 		void Reset();
 		class cCopterBody* First();
 	};
-	struct PtrList<cCopterBody>::PtrNode{
+	struct PtrList<cCopterBody>::PtrNode{ // not packed(0x8 bytes) TI: 0x3434
 		class cCopterBody *data;
 		struct PtrList<cCopterBody>::PtrNode *next;
 	};
@@ -305,7 +305,7 @@ public:
 };
 
 // Type: class PtrList<cCopterBody>::Iter (forward reference);
-class PtrList<cCopterBody>::Iter{
+class PtrList<cCopterBody>::Iter{ // not packed(0x8 bytes) TI: 0x343c
 private:
 	class PtrList<cCopterBody> *fObject;
 	struct PtrList<cCopterBody>::PtrNode *fCur;
@@ -319,7 +319,7 @@ public:
 
 // Type: class cBList<cCopterBody> (forward reference);
 class cBList<cCopterBody> : public PtrList<cCopterBody>
-{
+{ // not packed(0x14 bytes) TI: 0x33ed
 public:
 	long GetIndex(unsigned long);
 	long GetIndex(class cCopterBody*);
@@ -345,7 +345,7 @@ public:
 
 // Type: class cBBase;
 // VTABLE: COPTER_D 0x00593688
-class cBBase{
+class cBBase{ // not packed(0x28 bytes) TI: 0x339c
 public:
 	virtual unsigned long GetBodyType(); // vtable+0x0
 	unsigned long GetName();
@@ -375,7 +375,7 @@ public:
 	unsigned long fTinyName;
 	short fResID;
 	unsigned short fDataChanged;
-	struct cBBase::BBaseHeader{
+	struct cBBase::BBaseHeader{ // not packed(0x40 bytes) TI: 0x339f
 		unsigned long bodyType;
 		long _win8pad[15];
 	};
@@ -386,8 +386,8 @@ public:
 };
 
 // Type: class PtrList<cCopterBody>;
-class PtrList<cCopterBody>{
-	class PtrList<cCopterBody>::Iter{
+class PtrList<cCopterBody>{ // not packed(0x8 bytes) TI: 0x3432
+	class PtrList<cCopterBody>::Iter{ // not packed(0x8 bytes) TI: 0x343c
 	private:
 		class PtrList<cCopterBody> *fObject;
 		struct PtrList<cCopterBody>::PtrNode *fCur;
@@ -398,7 +398,7 @@ class PtrList<cCopterBody>{
 		void Reset();
 		class cCopterBody* First();
 	};
-	struct PtrList<cCopterBody>::PtrNode{
+	struct PtrList<cCopterBody>::PtrNode{ // not packed(0x8 bytes) TI: 0x3434
 		class cCopterBody *data;
 		struct PtrList<cCopterBody>::PtrNode *next;
 	};
@@ -419,7 +419,7 @@ public:
 
 // Type: class FlatFile;
 // VTABLE: COPTER_D 0x00593620
-class FlatFile{
+class FlatFile{ // packed(0x110 bytes) TI: 0x229b
 	enum /* __unnamed */ {
 		kMaxNameLen = 255,
 	};

@@ -5,7 +5,7 @@
 // Type: int32_t;
 
 // Type: class LanguageManager (forward reference);
-class LanguageManager{
+class LanguageManager{ // packed(0x1 bytes) TI: 0x2157
 public:
 	// calltype: NearC
 	static int32_t Initialize();
@@ -52,7 +52,7 @@ public:
 };
 
 // Type: class basic_string<char>;
-class basic_string<char>{
+class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = class basic_string_ref<char>;
 	using reference_pointer = class basic_string_ref<char>*;
 private:
@@ -161,7 +161,7 @@ public:
 // Type: int32_t *;
 
 // Type: class basic_string<char> (forward reference);
-class basic_string<char>{
+class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = class basic_string_ref<char>;
 	using reference_pointer = class basic_string_ref<char>*;
 private:
@@ -268,7 +268,7 @@ public:
 // Type: char;
 
 // Type: struct TypefaceTestStruct;
-struct TypefaceTestStruct{
+struct TypefaceTestStruct{ // packed(0x8 bytes) TI: 0x2b62
 	char * szLanguageTypefaceName;
 	long bExists;
 };
@@ -280,14 +280,14 @@ struct TypefaceTestStruct{
 // Type: unsigned long;
 
 // Type: struct tagENUMLOGFONTA (forward reference);
-struct tagENUMLOGFONTA{
+struct tagENUMLOGFONTA{ // packed(0x9c bytes) TI: 0x2b71
 	struct tagLOGFONTA elfLogFont;
 	unsigned char elfFullName[64];
 	unsigned char elfStyle[32];
 };
 
 // Type: struct tagNEWTEXTMETRICA (forward reference);
-struct tagNEWTEXTMETRICA{
+struct tagNEWTEXTMETRICA{ // packed(0x48 bytes) TI: 0x2b73
 	long tmHeight;
 	long tmAscent;
 	long tmDescent;
@@ -317,7 +317,7 @@ struct tagNEWTEXTMETRICA{
 // Type: long;
 
 // Type: struct TypefaceTestStruct (forward reference);
-struct TypefaceTestStruct{
+struct TypefaceTestStruct{ // packed(0x8 bytes) TI: 0x2b62
 	char * szLanguageTypefaceName;
 	long bExists;
 };

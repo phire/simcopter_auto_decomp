@@ -5,7 +5,7 @@
 // Type: class GameWindow (forward reference);
 // VTABLE: COPTER_D 0x00590470
 class GameWindow : public CSparkalWindow
-{
+{ // packed(0x9c bytes) TI: 0x2460
 public:
 	void GameWindow(unsigned long, unsigned long, unsigned long, const struct SparkalColor*, char *);
 	virtual void ~GameWindow() /* override */;
@@ -34,7 +34,7 @@ protected:
 // Type: unsigned long;
 
 // Type: struct SparkalColor (forward reference);
-struct SparkalColor{
+struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 	unsigned char Blue;
 	unsigned char Green;
 	unsigned char Red;
@@ -46,7 +46,7 @@ struct SparkalColor{
 // Type: char *;
 
 // Type: struct tagWNDCLASSA;
-struct tagWNDCLASSA{
+struct tagWNDCLASSA{ // packed(0x28 bytes) TI: 0x26d3
 	uint32_t style;
 	long (*lpfnWndProc)(void * __ptr32, uint32_t, uint32_t, long);
 	int32_t cbClsExtra;
@@ -62,7 +62,7 @@ struct tagWNDCLASSA{
 // Type: void;
 
 // Type: struct tagRECT;
-struct tagRECT{
+struct tagRECT{ // packed(0x10 bytes) TI: 0x13c4
 	long left;
 	long top;
 	long right;
@@ -72,7 +72,7 @@ struct tagRECT{
 // Type: int32_t;
 
 // Type: struct GameWindow::MakePalette::__unnamed;
-struct GameWindow::MakePalette::__unnamed{
+struct GameWindow::MakePalette::__unnamed{ // packed(0x404 bytes) TI: 0x283b
 	unsigned short Version;
 	unsigned short NumberOfEntries;
 	struct tagPALETTEENTRY aEntries[256];
@@ -86,7 +86,7 @@ struct GameWindow::MakePalette::__unnamed{
 
 // Type: class MRect (forward reference);
 class MRect : public SparkalRect
-{
+{ // packed(0x10 bytes) TI: 0x1067
 public:
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
@@ -153,7 +153,7 @@ public:
 };
 
 // Type: struct tagMINMAXINFO (forward reference);
-struct tagMINMAXINFO{
+struct tagMINMAXINFO{ // packed(0x28 bytes) TI: 0x2841
 	struct tagPOINT ptReserved;
 	struct tagPOINT ptMaxSize;
 	struct tagPOINT ptMaxPosition;
@@ -163,7 +163,7 @@ struct tagMINMAXINFO{
 
 // Type: class CSparkalWindow (forward reference);
 // VTABLE: COPTER_D 0x00590ef8
-class CSparkalWindow{
+class CSparkalWindow{ // packed(0x68 bytes) TI: 0x20d9
 public:
 	void CSparkalWindow(unsigned long, unsigned long, unsigned long, const struct SparkalColor*, char *);
 	void CSparkalWindow();
@@ -206,7 +206,7 @@ protected:
 
 // Type: class CSparkalWindow;
 // VTABLE: COPTER_D 0x00590ef8
-class CSparkalWindow{
+class CSparkalWindow{ // packed(0x68 bytes) TI: 0x20d9
 public:
 	void CSparkalWindow(unsigned long, unsigned long, unsigned long, const struct SparkalColor*, char *);
 	void CSparkalWindow();
@@ -248,7 +248,7 @@ protected:
 };
 
 // Type: struct SparkalRect;
-struct SparkalRect{
+struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	long left;
 	long top;
 	long right;

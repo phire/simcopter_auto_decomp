@@ -5,19 +5,19 @@
 // Type: int32_t;
 
 // Type: struct _dPoint2d (forward reference);
-struct _dPoint2d{
+struct _dPoint2d{ // packed(0x10 bytes) TI: 0x2766
 	double x;
 	double z;
 };
 
 // Type: struct _fPoint2d (forward reference);
-struct _fPoint2d{
+struct _fPoint2d{ // packed(0x8 bytes) TI: 0x3008
 	int32_t x;
 	int32_t z;
 };
 
 // Type: struct Point3d (forward reference);
-struct Point3d{
+struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 	int32_t x;
 	int32_t y;
 	int32_t z;

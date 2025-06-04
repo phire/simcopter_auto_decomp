@@ -4,12 +4,12 @@
 
 // Type: class TreeSim (forward reference);
 // VTABLE: COPTER_D 0x00593630
-class TreeSim{
+class TreeSim{ // not packed(0x14 bytes) TI: 0x3610
 	enum /* __unnamed */ {
 		kNumLocals = 4,
 		kMaxIterations = 128,
 	};
-	struct TreeSim::StackElem{
+	struct TreeSim::StackElem{ // not packed(0x14 bytes) TI: 0x3614
 		short treeID;
 		short nodeNum;
 		short objectID;
@@ -64,7 +64,7 @@ public:
 
 // Type: class Behavior (forward reference);
 // VTABLE: COPTER_D 0x005936d8
-class Behavior{
+class Behavior{ // not packed(0x1c bytes) TI: 0x35de
 protected:
 	class NResFile *fGlobFile;
 	class NResFile *fPrivFile;
@@ -89,13 +89,13 @@ protected:
 		kSemiGlobalTrees = 3,
 		kMaxTreeClass = 3,
 	};
-	struct Behavior::NodeParameter{
+	struct Behavior::NodeParameter{ // not packed(0x8 bytes) TI: 0x35e5
 		short p1;
 		short p2;
 		short p3;
 		short p4;
 	};
-	struct Behavior::Node{
+	struct Behavior::Node{ // not packed(0xc bytes) TI: 0x35e3
 		short treeID;
 		short primCode;
 		char trueTrans;
@@ -107,7 +107,7 @@ protected:
 		kPopOutTrue = -2,
 		kPopOutFalse = -1,
 	};
-	struct Behavior::Tree{
+	struct Behavior::Tree{ // not packed(0xe bytes) TI: 0x35e1
 		short numNodes;
 		struct Behavior::Node nodes[1];
 	};
@@ -147,7 +147,7 @@ public:
 // Type: void;
 
 // Type: struct TreeSim::StackElem (forward reference);
-struct TreeSim::StackElem{
+struct TreeSim::StackElem{ // not packed(0x14 bytes) TI: 0x3614
 	short treeID;
 	short nodeNum;
 	short objectID;
@@ -163,7 +163,7 @@ struct TreeSim::StackElem{
 // Type: long;
 
 // Type: struct Behavior::Node (forward reference);
-struct Behavior::Node{
+struct Behavior::Node{ // not packed(0xc bytes) TI: 0x35e3
 	short treeID;
 	short primCode;
 	char trueTrans;
@@ -184,7 +184,7 @@ enum ReturnCode {
 
 // Type: class ExtSim (forward reference);
 class ExtSim : public TreeSim
-{
+{ // not packed(0x18 bytes) TI: 0x35f6
 private:
 	class TreeSim *fExt;
 public:
@@ -198,12 +198,12 @@ public:
 
 // Type: class TreeSim;
 // VTABLE: COPTER_D 0x00593630
-class TreeSim{
+class TreeSim{ // not packed(0x14 bytes) TI: 0x3610
 	enum /* __unnamed */ {
 		kNumLocals = 4,
 		kMaxIterations = 128,
 	};
-	struct TreeSim::StackElem{
+	struct TreeSim::StackElem{ // not packed(0x14 bytes) TI: 0x3614
 		short treeID;
 		short nodeNum;
 		short objectID;

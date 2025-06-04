@@ -5,7 +5,7 @@
 // Type: class DigitalSound;
 // VTABLE: COPTER_D 0x0058f488
 class DigitalSound : public Sound
-{
+{ // packed(0x7a bytes) TI: 0x45d4
 protected:
 	int32_t nStreamingType;
 	int32_t nCompletionEstimationTimerSet;
@@ -68,7 +68,7 @@ protected:
 // Type: class SoundButtonWindow (forward reference);
 // VTABLE: COPTER_D 0x00590870
 class SoundButtonWindow : public ButtonWindow
-{
+{ // packed(0x94 bytes) TI: 0x457a
 public:
 	void SoundButtonWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
 	void SoundButtonWindow();
@@ -83,7 +83,7 @@ protected:
 
 // Type: class MRect (forward reference);
 class MRect : public SparkalRect
-{
+{ // packed(0x10 bytes) TI: 0x1067
 public:
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
@@ -158,7 +158,7 @@ public:
 
 // Type: class GraphicWindowOwner (forward reference);
 // VTABLE: COPTER_D 0x00590f2c
-class GraphicWindowOwner{
+class GraphicWindowOwner{ // packed(0x4 bytes) TI: 0x1647
 public:
 	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
 };
@@ -166,7 +166,7 @@ public:
 // Type: class SoundRadioButtonWindow (forward reference);
 // VTABLE: COPTER_D 0x00590950
 class SoundRadioButtonWindow : public RadioButtonWindow
-{
+{ // packed(0x98 bytes) TI: 0x4582
 public:
 	void SoundRadioButtonWindow(class ButtonGroup*, class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
 	virtual void ~SoundRadioButtonWindow() /* override */;
@@ -184,7 +184,7 @@ protected:
 // Type: class SoundCheckBoxWindow (forward reference);
 // VTABLE: COPTER_D 0x00590a38
 class SoundCheckBoxWindow : public CheckBoxWindow
-{
+{ // packed(0x94 bytes) TI: 0x45e5
 public:
 	void SoundCheckBoxWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
 	void SoundCheckBoxWindow();
@@ -200,7 +200,7 @@ protected:
 // Type: class SoundScrollBarWindow (forward reference);
 // VTABLE: COPTER_D 0x00590b18
 class SoundScrollBarWindow : public ScrollBarWindow
-{
+{ // packed(0xd4 bytes) TI: 0x45e2
 public:
 	void SoundScrollBarWindow(class MRect&, int32_t, enum SliderWindow::SliderWindowDirection, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *);
 	void SoundScrollBarWindow();
@@ -223,7 +223,7 @@ enum SliderWindowDirection {
 // Type: class ButtonWindow (forward reference);
 // VTABLE: COPTER_D 0x00591b78
 class ButtonWindow : public GraphicWindow
-{
+{ // packed(0x94 bytes) TI: 0x1a48
 	enum ButtonState {
 		nButtonStateDisabled = 0,
 		nButtonStateOff = 1,
@@ -260,7 +260,7 @@ protected:
 // Type: class ButtonWindow;
 // VTABLE: COPTER_D 0x00591b78
 class ButtonWindow : public GraphicWindow
-{
+{ // packed(0x94 bytes) TI: 0x1a48
 	enum ButtonState {
 		nButtonStateDisabled = 0,
 		nButtonStateOff = 1,
@@ -294,7 +294,7 @@ protected:
 
 // Type: class Sound;
 // VTABLE: COPTER_D 0x0058f458
-class Sound{
+class Sound{ // packed(0x30 bytes) TI: 0x1578
 	enum SoundSourceType {
 		nSoundSourceTypeResource = 0,
 		nSoundSourceTypeFile = 1,
@@ -338,7 +338,7 @@ public:
 // Type: class ScrollBarWindow;
 // VTABLE: COPTER_D 0x00591fc0
 class ScrollBarWindow : public SliderWindow
-{
+{ // packed(0xd4 bytes) TI: 0x1813
 	enum ScrollHitTestResult {
 		nScrollHitTestResultNone = 0,
 		nScrollHitTestResultLinePrevious = 1,
@@ -379,7 +379,7 @@ protected:
 };
 
 // Type: struct SparkalRect;
-struct SparkalRect{
+struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	long left;
 	long top;
 	long right;
@@ -391,7 +391,7 @@ struct SparkalRect{
 // Type: class CheckBoxWindow;
 // VTABLE: COPTER_D 0x00591c58
 class CheckBoxWindow : public ButtonWindow
-{
+{ // packed(0x94 bytes) TI: 0x213e
 public:
 	void CheckBoxWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
 	void CheckBoxWindow();
@@ -406,7 +406,7 @@ public:
 // Type: class RadioButtonWindow;
 // VTABLE: COPTER_D 0x00591d38
 class RadioButtonWindow : public ButtonWindow
-{
+{ // packed(0x98 bytes) TI: 0x1554
 public:
 	void RadioButtonWindow(class ButtonGroup*, class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t);
 	void RadioButtonWindow();
@@ -427,7 +427,7 @@ protected:
 // Type: class SliderWindow;
 // VTABLE: COPTER_D 0x00591ee8
 class SliderWindow : public GraphicWindow
-{
+{ // packed(0xb4 bytes) TI: 0x13bc
 	enum SliderWindowDirection {
 		nSliderWindowDirectionHorizontal = 0,
 		nSliderWindowDirectionVertical = 1,

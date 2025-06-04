@@ -5,7 +5,7 @@
 // Type: char *;
 
 // Type: class CopterGameMode (forward reference);
-class CopterGameMode{
+class CopterGameMode{ // packed(0x4 bytes) TI: 0x170f
 public:
 	int32_t nModeID;
 	void CopterGameMode(const class CopterGameMode&);
@@ -20,7 +20,7 @@ public:
 
 // Type: class GameModeCoreData (forward reference);
 // VTABLE: COPTER_D 0x005923c0
-class GameModeCoreData{
+class GameModeCoreData{ // packed(0x14 bytes) TI: 0x1853
 public:
 	void GameModeCoreData();
 	virtual void ~GameModeCoreData(); // vtable+0x0
@@ -33,7 +33,7 @@ public:
 // Type: class GameModeMainMenuData (forward reference);
 // VTABLE: COPTER_D 0x005923c4
 class GameModeMainMenuData : public GameModeCoreData
-{
+{ // packed(0x18 bytes) TI: 0x41e1
 public:
 	void GameModeMainMenuData();
 	void CreatePalette();
@@ -47,7 +47,7 @@ public:
 // Type: char;
 
 // Type: struct UserMenuWindowDescription;
-struct UserMenuWindowDescription{
+struct UserMenuWindowDescription{ // packed(0x54 bytes) TI: 0x101b
 	class basic_string<char> sImageFileName;
 	int32_t nTransparentIndex;
 	class MRect rectPosition;
@@ -68,7 +68,7 @@ struct UserMenuWindowDescription{
 // Type: class UserMenuWindow (forward reference);
 // VTABLE: COPTER_D 0x005912f8
 class UserMenuWindow : public GraphicWindow
-{
+{ // packed(0x152 bytes) TI: 0x45d0
 public:
 	void UserMenuWindow(struct UserMenuWindowDescription&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	void UserMenuWindow();
@@ -98,7 +98,7 @@ protected:
 // Type: class GameModePickCareerCityData (forward reference);
 // VTABLE: COPTER_D 0x005923c8
 class GameModePickCareerCityData : public GameModeCoreData
-{
+{ // packed(0x30 bytes) TI: 0x45d6
 	enum PickCareerCitySubMode {
 		nPickCareerCitySubModeSelect = 0,
 		nPickCareerCitySubModeVideo = 1,
@@ -120,7 +120,7 @@ public:
 // Type: class CareerWindow (forward reference);
 // VTABLE: COPTER_D 0x00590ef4
 class CareerWindow : public GraphicWindow
-{
+{ // packed(0x840 bytes) TI: 0x47a5
 public:
 	void CareerWindow(class MRect&, int32_t, void * __ptr32, long *, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t);
 	virtual void ~CareerWindow() /* override */;
@@ -134,7 +134,7 @@ public:
 	virtual long DoCursorMove(long, long) /* override */;
 	long SetCurrentCitySelection(long);
 	long GetCurrentCitySelection();
-	class CareerWindow::CitySelectionFrame{
+	class CareerWindow::CitySelectionFrame{ // packed(0x50 bytes) TI: 0x12ad
 	public:
 		void CitySelectionFrame(int32_t, int32_t, int32_t);
 		virtual void ~CitySelectionFrame(); // vtable+0x0
@@ -165,7 +165,7 @@ protected:
 // Type: class GameModePlayData (forward reference);
 // VTABLE: COPTER_D 0x005923cc
 class GameModePlayData : public GameModeCoreData
-{
+{ // packed(0xb18 bytes) TI: 0x47a7
 	enum ExceptionState {
 		nExceptionStateNone = 0,
 		nExceptionStateVRAppInit = 1,
@@ -231,7 +231,7 @@ public:
 
 // Type: class MRect;
 class MRect : public SparkalRect
-{
+{ // packed(0x10 bytes) TI: 0x1067
 public:
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
@@ -298,7 +298,7 @@ public:
 };
 
 // Type: struct tagUserPersonalInfo (forward reference);
-struct tagUserPersonalInfo{
+struct tagUserPersonalInfo{ // packed(0x58 bytes) TI: 0x1a2a
 	char szUserName[64];
 	long lMoney;
 	long lHelicopters;
@@ -312,7 +312,7 @@ struct tagUserPersonalInfo{
 
 // Type: class list<Shortcut>::iterator;
 class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
-{
+{ // packed(0x4 bytes) TI: 0x1081
 protected:
 	struct list<Shortcut>::list_node *node;
 public:
@@ -329,7 +329,7 @@ public:
 };
 
 // Type: struct Shortcut;
-struct Shortcut{
+struct Shortcut{ // packed(0x18 bytes) TI: 0x1083
 	long lDeviceID;
 	long lCommand;
 	long lKey;
@@ -341,7 +341,7 @@ struct Shortcut{
 // Type: class GameModeHangarData (forward reference);
 // VTABLE: COPTER_D 0x005923d0
 class GameModeHangarData : public GameModeCoreData
-{
+{ // packed(0xac0 bytes) TI: 0x2b10
 public:
 	void GameModeHangarData();
 	int32_t CreateAllSurfaces();
@@ -359,7 +359,7 @@ public:
 // Type: class GameModeCatalogData (forward reference);
 // VTABLE: COPTER_D 0x005923d4
 class GameModeCatalogData : public GameModeCoreData
-{
+{ // packed(0xac0 bytes) TI: 0x2b12
 public:
 	void GameModeCatalogData();
 	void SetCommandsToDefaults();
@@ -377,7 +377,7 @@ public:
 // Type: class GameModeMissionLogData (forward reference);
 // VTABLE: COPTER_D 0x005923d8
 class GameModeMissionLogData : public GameModeCoreData
-{
+{ // packed(0xac0 bytes) TI: 0x2b0e
 public:
 	void GameModeMissionLogData();
 	void SetCommandsToDefaults();
@@ -395,7 +395,7 @@ public:
 // Type: class GameModeInventoryData (forward reference);
 // VTABLE: COPTER_D 0x005923dc
 class GameModeInventoryData : public GameModeCoreData
-{
+{ // packed(0xac0 bytes) TI: 0x28d1
 public:
 	void GameModeInventoryData();
 	void SetCommandsToDefaults();
@@ -413,12 +413,12 @@ public:
 // Type: uint32_t;
 
 // Type: struct bidirectional_iterator<Shortcut,int>;
-struct bidirectional_iterator<Shortcut,int>{
+struct bidirectional_iterator<Shortcut,int>{ // packed(0x1 bytes) TI: 0x1ee7
 };
 
 // Type: class GameModeCoreData;
 // VTABLE: COPTER_D 0x005923c0
-class GameModeCoreData{
+class GameModeCoreData{ // packed(0x14 bytes) TI: 0x1853
 public:
 	void GameModeCoreData();
 	virtual void ~GameModeCoreData(); // vtable+0x0
@@ -432,7 +432,7 @@ public:
 // GraphicWindow Class implementation not found
 
 // Type: struct SparkalRect;
-struct SparkalRect{
+struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	long left;
 	long top;
 	long right;

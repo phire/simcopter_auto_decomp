@@ -6,7 +6,7 @@
 
 // Type: class _cArray (forward reference);
 // VTABLE: COPTER_D 0x00593738
-class _cArray{
+class _cArray{ // not packed(0x50 bytes) TI: 0x3254
 	using ArrayName = unsigned char[16];
 	using TinyName = unsigned long;
 	using FileNameStr = unsigned char[16];
@@ -17,11 +17,11 @@ class _cArray{
 		kFileNameLength = 15,
 		kArrayNameLength = 15,
 	};
-	struct _cArray::FileAndType{
+	struct _cArray::FileAndType{ // not packed(0x8 bytes) TI: 0x3256
 		class ResFile *file;
 		unsigned long type;
 	};
-	struct _cArray::Header{
+	struct _cArray::Header{ // not packed(0x8 bytes) TI: 0x32ad
 		short entrySize;
 		short xSize;
 		short ySize;
@@ -105,7 +105,7 @@ public:
 };
 
 // Type: struct _cArray::FileAndType (forward reference);
-struct _cArray::FileAndType{
+struct _cArray::FileAndType{ // not packed(0x8 bytes) TI: 0x3256
 	class ResFile *file;
 	unsigned long type;
 };
@@ -113,7 +113,7 @@ struct _cArray::FileAndType{
 // Type: class ResFile (forward reference);
 // VTABLE: COPTER_D 0x00593518
 class ResFile : public FlatResFile
-{
+{ // not packed(0x11c bytes) TI: 0x3334
 public:
 	long OpenFromOtherFile(class ResFile*);
 };
@@ -127,7 +127,7 @@ public:
 // Type: char *;
 
 // Type: struct _cArray::Header (forward reference);
-struct _cArray::Header{
+struct _cArray::Header{ // not packed(0x8 bytes) TI: 0x32ad
 	short entrySize;
 	short xSize;
 	short ySize;
@@ -148,7 +148,7 @@ struct _cArray::Header{
 
 // Type: class _cArray;
 // VTABLE: COPTER_D 0x00593738
-class _cArray{
+class _cArray{ // not packed(0x50 bytes) TI: 0x3254
 	using ArrayName = unsigned char[16];
 	using TinyName = unsigned long;
 	using FileNameStr = unsigned char[16];
@@ -159,11 +159,11 @@ class _cArray{
 		kFileNameLength = 15,
 		kArrayNameLength = 15,
 	};
-	struct _cArray::FileAndType{
+	struct _cArray::FileAndType{ // not packed(0x8 bytes) TI: 0x3256
 		class ResFile *file;
 		unsigned long type;
 	};
-	struct _cArray::Header{
+	struct _cArray::Header{ // not packed(0x8 bytes) TI: 0x32ad
 		short entrySize;
 		short xSize;
 		short ySize;
@@ -247,7 +247,7 @@ public:
 };
 
 // Type: struct _cArray::FileAndType;
-struct _cArray::FileAndType{
+struct _cArray::FileAndType{ // not packed(0x8 bytes) TI: 0x3256
 	class ResFile *file;
 	unsigned long type;
 };
@@ -255,7 +255,7 @@ struct _cArray::FileAndType{
 // Type: class FlatResFile;
 // VTABLE: COPTER_D 0x00593508
 class FlatResFile : public FlatFile
-{
+{ // packed(0x11a bytes) TI: 0x22bb
 protected:
 	class ResMap *fMap;
 	long fError;
@@ -295,7 +295,7 @@ public:
 
 // Type: class FlatFile;
 // VTABLE: COPTER_D 0x00593620
-class FlatFile{
+class FlatFile{ // packed(0x110 bytes) TI: 0x229b
 	enum /* __unnamed */ {
 		kMaxNameLen = 255,
 	};

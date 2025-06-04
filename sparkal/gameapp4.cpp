@@ -11,7 +11,7 @@
 
 // Type: class MRect;
 class MRect : public SparkalRect
-{
+{ // packed(0x10 bytes) TI: 0x1067
 public:
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
@@ -80,13 +80,13 @@ public:
 // Type: char;
 
 // Type: struct VRAppInitThreadStruct;
-struct VRAppInitThreadStruct{
+struct VRAppInitThreadStruct{ // packed(0x8 bytes) TI: 0x20a4
 	long nReturnValue;
 	long nCurrentPercentageComplete;
 };
 
 // Type: class Random;
-class Random{
+class Random{ // packed(0xe4 bytes) TI: 0x20ab
 public:
 	void Random(unsigned long);
 	unsigned long operator()(unsigned long);
@@ -104,7 +104,7 @@ protected:
 // Type: void * __ptr32;
 
 // Type: class basic_string<char>;
-class basic_string<char>{
+class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = class basic_string_ref<char>;
 	using reference_pointer = class basic_string_ref<char>*;
 private:
@@ -211,7 +211,7 @@ public:
 // Type: class SmackerBackBuffer (forward reference);
 // VTABLE: COPTER_D 0x005911f0
 class SmackerBackBuffer : public SmackerBuffer, public CBackBuffer
-{
+{ // packed(0x278 bytes) TI: 0x18c1
 public:
 	int32_t bUseSmackBuf;
 	void SmackerBackBuffer(char *, int32_t, int32_t, int32_t, int32_t, int32_t);
@@ -229,7 +229,7 @@ protected:
 };
 
 // Type: struct VRAppInitThreadStruct (forward reference);
-struct VRAppInitThreadStruct{
+struct VRAppInitThreadStruct{ // packed(0x8 bytes) TI: 0x20a4
 	long nReturnValue;
 	long nCurrentPercentageComplete;
 };
@@ -237,7 +237,7 @@ struct VRAppInitThreadStruct{
 // Type: void;
 
 // Type: struct SparkalRect;
-struct SparkalRect{
+struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	long left;
 	long top;
 	long right;

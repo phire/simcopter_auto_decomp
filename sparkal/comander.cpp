@@ -4,7 +4,7 @@
 
 // Type: class ICommander (forward reference);
 // VTABLE: COPTER_D 0x005912a8
-class ICommander{
+class ICommander{ // packed(0x8 bytes) TI: 0x17ab
 public:
 	void ICommander();
 	virtual void ~ICommander(); // vtable+0x0
@@ -25,7 +25,7 @@ protected:
 
 // Type: class CSparkalWindow (forward reference);
 // VTABLE: COPTER_D 0x00590ef8
-class CSparkalWindow{
+class CSparkalWindow{ // packed(0x68 bytes) TI: 0x20d9
 public:
 	void CSparkalWindow(unsigned long, unsigned long, unsigned long, const struct SparkalColor*, char *);
 	void CSparkalWindow();
@@ -69,7 +69,7 @@ protected:
 // Type: class CDefaultCommander (forward reference);
 // VTABLE: COPTER_D 0x005912d0
 class CDefaultCommander : public ICommander
-{
+{ // packed(0x8 bytes) TI: 0x20ed
 public:
 	void CDefaultCommander();
 	virtual void ~CDefaultCommander() /* override */;
@@ -92,7 +92,7 @@ public:
 
 // Type: class ICommander;
 // VTABLE: COPTER_D 0x005912a8
-class ICommander{
+class ICommander{ // packed(0x8 bytes) TI: 0x17ab
 public:
 	void ICommander();
 	virtual void ~ICommander(); // vtable+0x0

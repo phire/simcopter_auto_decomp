@@ -4,7 +4,7 @@
 
 // Type: class CSparkalWindow (forward reference);
 // VTABLE: COPTER_D 0x00590ef8
-class CSparkalWindow{
+class CSparkalWindow{ // packed(0x68 bytes) TI: 0x20d9
 public:
 	void CSparkalWindow(unsigned long, unsigned long, unsigned long, const struct SparkalColor*, char *);
 	void CSparkalWindow();
@@ -47,7 +47,7 @@ protected:
 
 // Type: class ICommander (forward reference);
 // VTABLE: COPTER_D 0x005912a8
-class ICommander{
+class ICommander{ // packed(0x8 bytes) TI: 0x17ab
 public:
 	void ICommander();
 	virtual void ~ICommander(); // vtable+0x0
@@ -67,7 +67,7 @@ protected:
 // Type: class ScreenBuffer (forward reference);
 // VTABLE: COPTER_D 0x005915b0
 class ScreenBuffer : public CBackBuffer
-{
+{ // packed(0x16a bytes) TI: 0x1919
 public:
 	class CSparkalWindow *pWindow;
 	long bOK;

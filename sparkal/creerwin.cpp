@@ -5,7 +5,7 @@
 // Type: char *;
 
 // Type: struct SparkalColor;
-struct SparkalColor{
+struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 	unsigned char Blue;
 	unsigned char Green;
 	unsigned char Red;
@@ -21,7 +21,7 @@ struct SparkalColor{
 // Type: class CareerWindow (forward reference);
 // VTABLE: COPTER_D 0x00590ef4
 class CareerWindow : public GraphicWindow
-{
+{ // packed(0x840 bytes) TI: 0x47a5
 public:
 	void CareerWindow(class MRect&, int32_t, void * __ptr32, long *, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t);
 	virtual void ~CareerWindow() /* override */;
@@ -35,7 +35,7 @@ public:
 	virtual long DoCursorMove(long, long) /* override */;
 	long SetCurrentCitySelection(long);
 	long GetCurrentCitySelection();
-	class CareerWindow::CitySelectionFrame{
+	class CareerWindow::CitySelectionFrame{ // packed(0x50 bytes) TI: 0x12ad
 	public:
 		void CitySelectionFrame(int32_t, int32_t, int32_t);
 		virtual void ~CitySelectionFrame(); // vtable+0x0
@@ -63,7 +63,7 @@ protected:
 
 // Type: class MRect (forward reference);
 class MRect : public SparkalRect
-{
+{ // packed(0x10 bytes) TI: 0x1067
 public:
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
@@ -140,7 +140,7 @@ public:
 
 // Type: class GraphicWindowOwner (forward reference);
 // VTABLE: COPTER_D 0x00590f2c
-class GraphicWindowOwner{
+class GraphicWindowOwner{ // packed(0x4 bytes) TI: 0x1647
 public:
 	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
 };
@@ -150,7 +150,7 @@ public:
 // Type: long;
 
 // Type: class basic_string<char>;
-class basic_string<char>{
+class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = class basic_string_ref<char>;
 	using reference_pointer = class basic_string_ref<char>*;
 private:
@@ -257,7 +257,7 @@ public:
 // Type: class ButtonWindow (forward reference);
 // VTABLE: COPTER_D 0x00591b78
 class ButtonWindow : public GraphicWindow
-{
+{ // packed(0x94 bytes) TI: 0x1a48
 	enum ButtonState {
 		nButtonStateDisabled = 0,
 		nButtonStateOff = 1,
@@ -293,7 +293,7 @@ protected:
 
 // Type: class MPoint (forward reference);
 class MPoint : public SparkalPoint
-{
+{ // packed(0x8 bytes) TI: 0x159a
 public:
 	void MPoint(unsigned long);
 	void MPoint(struct SparkalSize);
@@ -319,7 +319,7 @@ public:
 };
 
 // Type: class CareerWindow::CitySelectionFrame;
-class CareerWindow::CitySelectionFrame{
+class CareerWindow::CitySelectionFrame{ // packed(0x50 bytes) TI: 0x12ad
 public:
 	void CitySelectionFrame(int32_t, int32_t, int32_t);
 	virtual void ~CitySelectionFrame(); // vtable+0x0
@@ -332,7 +332,7 @@ public:
 };
 
 // Type: class CareerWindow::CitySelectionFrame (forward reference);
-class CareerWindow::CitySelectionFrame{
+class CareerWindow::CitySelectionFrame{ // packed(0x50 bytes) TI: 0x12ad
 public:
 	void CitySelectionFrame(int32_t, int32_t, int32_t);
 	virtual void ~CitySelectionFrame(); // vtable+0x0
@@ -347,7 +347,7 @@ public:
 // Type: uint32_t;
 
 // Type: struct SparkalRect;
-struct SparkalRect{
+struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	long left;
 	long top;
 	long right;
@@ -357,7 +357,7 @@ struct SparkalRect{
 };
 
 // Type: struct SparkalPoint;
-struct SparkalPoint{
+struct SparkalPoint{ // packed(0x8 bytes) TI: 0x1a54
 	long x;
 	long y;
 	void SparkalPoint(long, long);

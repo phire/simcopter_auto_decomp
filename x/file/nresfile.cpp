@@ -5,7 +5,7 @@
 // Type: class NResFile (forward reference);
 // VTABLE: COPTER_D 0x00591218
 class NResFile : public ResFile
-{
+{ // packed(0x120 bytes) TI: 0x2276
 private:
 	class PtrList<StdResLoader> fLoaders;
 public:
@@ -20,13 +20,13 @@ public:
 
 // Type: class StdResLoader (forward reference);
 class StdResLoader : public ResLoader<unsigned char,StdResInfo>
-{
+{ // packed(0x10 bytes) TI: 0x227f
 public:
 	void StdResLoader(class ResFile*, unsigned long, void (*)(void * __ptr32, long));
 };
 
 // Type: class PtrList<StdResLoader>::Iter;
-class PtrList<StdResLoader>::Iter{
+class PtrList<StdResLoader>::Iter{ // packed(0x8 bytes) TI: 0x2231
 private:
 	class PtrList<StdResLoader> *fObject;
 	struct PtrList<StdResLoader>::PtrNode *fCur;
@@ -43,7 +43,7 @@ public:
 // Type: uint32_t;
 
 // Type: class ResLoader<unsigned char,StdResInfo>;
-class ResLoader<unsigned char,StdResInfo>{
+class ResLoader<unsigned char,StdResInfo>{ // packed(0x10 bytes) TI: 0x22cf
 private:
 	long fCount;
 	struct StdResInfo *fResInfo;
@@ -63,7 +63,7 @@ public:
 // Type: class ResFile;
 // VTABLE: COPTER_D 0x00593518
 class ResFile : public FlatResFile
-{
+{ // packed(0x11a bytes) TI: 0x22d4
 public:
 	long OpenFromOtherFile(class ResFile*);
 };
@@ -71,7 +71,7 @@ public:
 // Type: class FlatResFile;
 // VTABLE: COPTER_D 0x00593508
 class FlatResFile : public FlatFile
-{
+{ // packed(0x11a bytes) TI: 0x22bb
 protected:
 	class ResMap *fMap;
 	long fError;
@@ -111,7 +111,7 @@ public:
 
 // Type: class FlatFile;
 // VTABLE: COPTER_D 0x00593620
-class FlatFile{
+class FlatFile{ // packed(0x110 bytes) TI: 0x229b
 	enum /* __unnamed */ {
 		kMaxNameLen = 255,
 	};

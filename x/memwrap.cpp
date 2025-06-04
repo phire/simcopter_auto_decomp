@@ -5,7 +5,7 @@
 // Type: void * __ptr32;
 
 // Type: class Memory (forward reference);
-class Memory{
+class Memory{ // not packed(0x1 bytes) TI: 0x334e
 	using MemPool = long;
 	using HState = long;
 	enum /* __unnamed */ {

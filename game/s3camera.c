@@ -5,7 +5,7 @@
 // Type: long;
 
 // Type: struct Point3d;
-struct Point3d{
+struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 	int32_t x;
 	int32_t y;
 	int32_t z;
@@ -16,14 +16,14 @@ struct Point3d{
 // Type: int32_t;
 
 // Type: struct Point3d (forward reference);
-struct Point3d{
+struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 	int32_t x;
 	int32_t y;
 	int32_t z;
 };
 
 // Type: struct _DYOBJ_INST (forward reference);
-struct _DYOBJ_INST{
+struct _DYOBJ_INST{ // packed(0x64 bytes) TI: 0x1deb
 	struct _DYOBJ_INST *next;
 	struct _DYOBJ_INST *vnext;
 	void * __ptr32 mesh;
@@ -40,14 +40,14 @@ struct _DYOBJ_INST{
 // Type: int32_t *;
 
 // Type: struct _CHASE_INFO (forward reference);
-struct _CHASE_INFO{
+struct _CHASE_INFO{ // packed(0xc bytes) TI: 0x31b0
 	int32_t dist;
 	int32_t height;
 	int32_t focus;
 };
 
 // Type: struct _CELL_INFO (forward reference);
-struct _CELL_INFO{
+struct _CELL_INFO{ // packed(0x18 bytes) TI: 0x1b03
 	short flags;
 	short x;
 	short y;
@@ -60,7 +60,7 @@ struct _CELL_INFO{
 };
 
 // Type: struct _STOBJ_INST (forward reference);
-struct _STOBJ_INST{
+struct _STOBJ_INST{ // packed(0x10 bytes) TI: 0x193f
 	struct _STOBJ_INST *next;
 	void * __ptr32 mesh;
 	long user1;

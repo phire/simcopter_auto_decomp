@@ -8,7 +8,7 @@
 // Type: class cCopterAnim (forward reference);
 // VTABLE: COPTER_D 0x00593658
 class cCopterAnim : public cBBase
-{
+{ // not packed(0x2c bytes) TI: 0x3404
 public:
 	void cCopterAnim();
 	virtual void ~cCopterAnim() /* override */;
@@ -42,7 +42,7 @@ public:
 
 // Type: class cBBase;
 // VTABLE: COPTER_D 0x00593688
-class cBBase{
+class cBBase{ // not packed(0x28 bytes) TI: 0x339c
 public:
 	virtual unsigned long GetBodyType(); // vtable+0x0
 	unsigned long GetName();
@@ -72,7 +72,7 @@ public:
 	unsigned long fTinyName;
 	short fResID;
 	unsigned short fDataChanged;
-	struct cBBase::BBaseHeader{
+	struct cBBase::BBaseHeader{ // not packed(0x40 bytes) TI: 0x339f
 		unsigned long bodyType;
 		long _win8pad[15];
 	};

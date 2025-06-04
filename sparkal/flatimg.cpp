@@ -6,7 +6,7 @@
 
 // Type: class IFlatImage (forward reference);
 // VTABLE: COPTER_D 0x00591050
-class IFlatImage{
+class IFlatImage{ // packed(0x18 bytes) TI: 0x13a1
 public:
 	void IFlatImage();
 	virtual unsigned long Lock(); // vtable+0x0
@@ -41,7 +41,7 @@ protected:
 // Type: unsigned char *;
 
 // Type: struct SparkalRect;
-struct SparkalRect{
+struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	long left;
 	long top;
 	long right;
@@ -51,7 +51,7 @@ struct SparkalRect{
 };
 
 // Type: struct SparkalRect (forward reference);
-struct SparkalRect{
+struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	long left;
 	long top;
 	long right;
@@ -65,7 +65,7 @@ struct SparkalRect{
 // Type: class CFlatImage (forward reference);
 // VTABLE: COPTER_D 0x00591070
 class CFlatImage : public IFlatImage
-{
+{ // packed(0x1c bytes) TI: 0x20e3
 public:
 	void CFlatImage(class IFlatImage*, long, long, long, long);
 	void CFlatImage(long, long, unsigned char);
@@ -83,7 +83,7 @@ protected:
 
 // Type: class IFlatImage;
 // VTABLE: COPTER_D 0x00591050
-class IFlatImage{
+class IFlatImage{ // packed(0x18 bytes) TI: 0x13a1
 public:
 	void IFlatImage();
 	virtual unsigned long Lock(); // vtable+0x0

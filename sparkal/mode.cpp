@@ -5,7 +5,7 @@
 // Type: int32_t;
 
 // Type: struct tagMode (forward reference);
-struct tagMode{
+struct tagMode{ // packed(0xc bytes) TI: 0x2407
 	long lWidth;
 	long lHeight;
 	long lBPP;
@@ -18,7 +18,7 @@ struct tagMode{
 // Type: void;
 
 // Type: struct _DDSURFACEDESC (forward reference);
-struct _DDSURFACEDESC{
+struct _DDSURFACEDESC{ // packed(0x6c bytes) TI: 0x1737
 	unsigned long dwSize;
 	unsigned long dwFlags;
 	unsigned long dwHeight;

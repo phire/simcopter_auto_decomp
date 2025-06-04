@@ -4,7 +4,7 @@
 
 // Type: class Behavior (forward reference);
 // VTABLE: COPTER_D 0x005936d8
-class Behavior{
+class Behavior{ // not packed(0x1c bytes) TI: 0x35de
 protected:
 	class NResFile *fGlobFile;
 	class NResFile *fPrivFile;
@@ -29,13 +29,13 @@ protected:
 		kSemiGlobalTrees = 3,
 		kMaxTreeClass = 3,
 	};
-	struct Behavior::NodeParameter{
+	struct Behavior::NodeParameter{ // not packed(0x8 bytes) TI: 0x35e5
 		short p1;
 		short p2;
 		short p3;
 		short p4;
 	};
-	struct Behavior::Node{
+	struct Behavior::Node{ // not packed(0xc bytes) TI: 0x35e3
 		short treeID;
 		short primCode;
 		char trueTrans;
@@ -47,7 +47,7 @@ protected:
 		kPopOutTrue = -2,
 		kPopOutFalse = -1,
 	};
-	struct Behavior::Tree{
+	struct Behavior::Tree{ // not packed(0xe bytes) TI: 0x35e1
 		short numNodes;
 		struct Behavior::Node nodes[1];
 	};
@@ -88,7 +88,7 @@ public:
 // Type: class NResFile (forward reference);
 // VTABLE: COPTER_D 0x00591218
 class NResFile : public ResFile
-{
+{ // not packed(0x124 bytes) TI: 0x3621
 private:
 	class PtrList<StdResLoader> fLoaders;
 public:
@@ -102,13 +102,13 @@ public:
 // Type: class ResFile (forward reference);
 // VTABLE: COPTER_D 0x00593518
 class ResFile : public FlatResFile
-{
+{ // not packed(0x11c bytes) TI: 0x3334
 public:
 	long OpenFromOtherFile(class ResFile*);
 };
 
 // Type: struct Behavior::Tree (forward reference);
-struct Behavior::Tree{
+struct Behavior::Tree{ // not packed(0xe bytes) TI: 0x35e1
 	short numNodes;
 	struct Behavior::Node nodes[1];
 };
@@ -120,7 +120,7 @@ struct Behavior::Tree{
 // Type: short;
 
 // Type: struct Behavior::Node (forward reference);
-struct Behavior::Node{
+struct Behavior::Node{ // not packed(0xc bytes) TI: 0x35e3
 	short treeID;
 	short primCode;
 	char trueTrans;
@@ -131,7 +131,7 @@ struct Behavior::Node{
 // Type: unsigned char *;
 
 // Type: struct Behavior::Node;
-struct Behavior::Node{
+struct Behavior::Node{ // not packed(0xc bytes) TI: 0x35e3
 	short treeID;
 	short primCode;
 	char trueTrans;
@@ -148,7 +148,7 @@ struct Behavior::Node{
 // Type: class FlatResFile;
 // VTABLE: COPTER_D 0x00593508
 class FlatResFile : public FlatFile
-{
+{ // packed(0x11a bytes) TI: 0x22bb
 protected:
 	class ResMap *fMap;
 	long fError;
@@ -189,14 +189,14 @@ public:
 // Type: class ResFile;
 // VTABLE: COPTER_D 0x00593518
 class ResFile : public FlatResFile
-{
+{ // packed(0x11a bytes) TI: 0x22d4
 public:
 	long OpenFromOtherFile(class ResFile*);
 };
 
 // Type: class FlatFile;
 // VTABLE: COPTER_D 0x00593620
-class FlatFile{
+class FlatFile{ // packed(0x110 bytes) TI: 0x229b
 	enum /* __unnamed */ {
 		kMaxNameLen = 255,
 	};

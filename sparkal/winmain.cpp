@@ -13,7 +13,7 @@
 // Type: int32_t;
 
 // Type: struct tagMSG;
-struct tagMSG{
+struct tagMSG{ // packed(0x1c bytes) TI: 0x2bd6
 	void * __ptr32 hwnd;
 	uint32_t message;
 	uint32_t wParam;

@@ -5,7 +5,7 @@
 // Type: int32_t;
 
 // Type: struct _dPoint2d (forward reference);
-struct _dPoint2d{
+struct _dPoint2d{ // packed(0x10 bytes) TI: 0x2766
 	double x;
 	double z;
 };
@@ -13,7 +13,7 @@ struct _dPoint2d{
 // Type: short;
 
 // Type: struct PCXHEAD;
-struct PCXHEAD{
+struct PCXHEAD{ // packed(0x80 bytes) TI: 0x2757
 	char manufacturer;
 	char version;
 	char encoding;
@@ -35,7 +35,7 @@ struct PCXHEAD{
 // Type: unsigned char;
 
 // Type: struct tagPALETTEENTRY (forward reference);
-struct tagPALETTEENTRY{
+struct tagPALETTEENTRY{ // packed(0x4 bytes) TI: 0x1be6
 	unsigned char peRed;
 	unsigned char peGreen;
 	unsigned char peBlue;
@@ -51,7 +51,7 @@ struct tagPALETTEENTRY{
 // Type: void;
 
 // Type: struct _iobuf (forward reference);
-struct _iobuf{
+struct _iobuf{ // packed(0x20 bytes) TI: 0x2278
 	char * _ptr;
 	int32_t _cnt;
 	char * _base;

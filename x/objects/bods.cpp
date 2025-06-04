@@ -5,7 +5,7 @@
 // Type: short;
 
 // Type: struct Rect;
-struct Rect{
+struct Rect{ // not packed(0x8 bytes) TI: 0x3463
 	short top;
 	short left;
 	short bottom;
@@ -13,7 +13,7 @@ struct Rect{
 };
 
 // Type: struct TransformedInfo (forward reference);
-struct TransformedInfo{
+struct TransformedInfo{ // not packed(0x14 bytes) TI: 0x3750
 	struct Point startPoint;
 	struct Point endPoint;
 	short startDepth;
@@ -24,7 +24,7 @@ struct TransformedInfo{
 };
 
 // Type: struct cCopterBody::Part (forward reference);
-struct cCopterBody::Part{
+struct cCopterBody::Part{ // not packed(0x28 bytes) TI: 0x33f0
 	char drawProc;
 	char calcID;
 	char framePartID;
@@ -47,7 +47,7 @@ struct cCopterBody::Part{
 
 // Type: class cBList<cCopterBody> (forward reference);
 class cBList<cCopterBody> : public PtrList<cCopterBody>
-{
+{ // not packed(0x14 bytes) TI: 0x33ed
 public:
 	long GetIndex(unsigned long);
 	long GetIndex(class cCopterBody*);
@@ -77,7 +77,7 @@ public:
 // Type: unsigned long;
 
 // Type: struct AnimLookup (forward reference);
-struct AnimLookup{
+struct AnimLookup{ // not packed(0x8 bytes) TI: 0x3427
 	unsigned long animName;
 	unsigned long privAnimName;
 };
@@ -85,7 +85,7 @@ struct AnimLookup{
 // Type: class cCopterAnim (forward reference);
 // VTABLE: COPTER_D 0x00593658
 class cCopterAnim : public cBBase
-{
+{ // not packed(0x2c bytes) TI: 0x3404
 public:
 	void cCopterAnim();
 	virtual void ~cCopterAnim() /* override */;
@@ -118,7 +118,7 @@ public:
 // Type: float;
 
 // Type: struct TransformedInfo;
-struct TransformedInfo{
+struct TransformedInfo{ // not packed(0x14 bytes) TI: 0x3750
 	struct Point startPoint;
 	struct Point endPoint;
 	short startDepth;
@@ -129,13 +129,13 @@ struct TransformedInfo{
 };
 
 // Type: struct Point;
-struct Point{
+struct Point{ // not packed(0x4 bytes) TI: 0x341c
 	short v;
 	short h;
 };
 
 // Type: struct Point3d;
-struct Point3d{
+struct Point3d{ // not packed(0xc bytes) TI: 0x348f
 	int32_t x;
 	int32_t y;
 	int32_t z;
@@ -149,7 +149,7 @@ enum SPHERE_SHADE_FLAG {
 };
 
 // Type: struct PrivAnimPartInfo (forward reference);
-struct PrivAnimPartInfo{
+struct PrivAnimPartInfo{ // not packed(0x8 bytes) TI: 0x3425
 	struct TinyXZY start;
 	struct TinyXZY end;
 };
@@ -159,7 +159,7 @@ struct PrivAnimPartInfo{
 // Type: long;
 
 // Type: struct DXZY;
-struct DXZY{
+struct DXZY{ // not packed(0x10 bytes) TI: 0x3420
 	float x;
 	float z;
 	float y;
@@ -174,7 +174,7 @@ struct DXZY{
 
 // Type: class cBBase;
 // VTABLE: COPTER_D 0x00593688
-class cBBase{
+class cBBase{ // not packed(0x28 bytes) TI: 0x339c
 public:
 	virtual unsigned long GetBodyType(); // vtable+0x0
 	unsigned long GetName();
@@ -204,7 +204,7 @@ public:
 	unsigned long fTinyName;
 	short fResID;
 	unsigned short fDataChanged;
-	struct cBBase::BBaseHeader{
+	struct cBBase::BBaseHeader{ // not packed(0x40 bytes) TI: 0x339f
 		unsigned long bodyType;
 		long _win8pad[15];
 	};
@@ -215,8 +215,8 @@ public:
 };
 
 // Type: class PtrList<cCopterBody>;
-class PtrList<cCopterBody>{
-	class PtrList<cCopterBody>::Iter{
+class PtrList<cCopterBody>{ // not packed(0x8 bytes) TI: 0x3432
+	class PtrList<cCopterBody>::Iter{ // not packed(0x8 bytes) TI: 0x343c
 	private:
 		class PtrList<cCopterBody> *fObject;
 		struct PtrList<cCopterBody>::PtrNode *fCur;
@@ -227,7 +227,7 @@ class PtrList<cCopterBody>{
 		void Reset();
 		class cCopterBody* First();
 	};
-	struct PtrList<cCopterBody>::PtrNode{
+	struct PtrList<cCopterBody>::PtrNode{ // not packed(0x8 bytes) TI: 0x3434
 		class cCopterBody *data;
 		struct PtrList<cCopterBody>::PtrNode *next;
 	};

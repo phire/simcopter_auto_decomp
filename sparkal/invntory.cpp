@@ -7,7 +7,7 @@
 // Type: class InventoryWindow (forward reference);
 // VTABLE: COPTER_D 0x00591888
 class InventoryWindow : public GraphicWindow
-{
+{ // packed(0x1e2 bytes) TI: 0x45e7
 public:
 	void InventoryWindow(int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	virtual void ~InventoryWindow() /* override */;
@@ -51,7 +51,7 @@ protected:
 
 // Type: class GraphicWindowOwner (forward reference);
 // VTABLE: COPTER_D 0x00590f2c
-class GraphicWindowOwner{
+class GraphicWindowOwner{ // packed(0x4 bytes) TI: 0x1647
 public:
 	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
 };
@@ -59,7 +59,7 @@ public:
 // Type: void;
 
 // Type: struct SparkalColor (forward reference);
-struct SparkalColor{
+struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 	unsigned char Blue;
 	unsigned char Green;
 	unsigned char Red;
@@ -70,7 +70,7 @@ struct SparkalColor{
 
 // Type: class MRect (forward reference);
 class MRect : public SparkalRect
-{
+{ // packed(0x10 bytes) TI: 0x1067
 public:
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
@@ -138,7 +138,7 @@ public:
 
 // Type: class MPoint;
 class MPoint : public SparkalPoint
-{
+{ // packed(0x8 bytes) TI: 0x159a
 public:
 	void MPoint(unsigned long);
 	void MPoint(struct SparkalSize);
@@ -166,7 +166,7 @@ public:
 // Type: long;
 
 // Type: struct tagUserPersonalInfo (forward reference);
-struct tagUserPersonalInfo{
+struct tagUserPersonalInfo{ // packed(0x58 bytes) TI: 0x1a2a
 	char szUserName[64];
 	long lMoney;
 	long lHelicopters;
@@ -178,7 +178,7 @@ struct tagUserPersonalInfo{
 
 // Type: class MRect;
 class MRect : public SparkalRect
-{
+{ // packed(0x10 bytes) TI: 0x1067
 public:
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
@@ -250,7 +250,7 @@ public:
 
 // Type: class list<HotSpot>::iterator;
 class list<HotSpot>::iterator : public bidirectional_iterator<HotSpot,int>
-{
+{ // packed(0x4 bytes) TI: 0x1240
 protected:
 	struct list<HotSpot>::list_node *node;
 public:
@@ -268,7 +268,7 @@ public:
 
 // Type: class MPoint (forward reference);
 class MPoint : public SparkalPoint
-{
+{ // packed(0x8 bytes) TI: 0x159a
 public:
 	void MPoint(unsigned long);
 	void MPoint(struct SparkalSize);
@@ -296,11 +296,11 @@ public:
 // Type: uint32_t;
 
 // Type: struct bidirectional_iterator<HotSpot,int>;
-struct bidirectional_iterator<HotSpot,int>{
+struct bidirectional_iterator<HotSpot,int>{ // packed(0x1 bytes) TI: 0x1f71
 };
 
 // Type: struct SparkalRect;
-struct SparkalRect{
+struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	long left;
 	long top;
 	long right;
@@ -310,7 +310,7 @@ struct SparkalRect{
 };
 
 // Type: struct SparkalPoint;
-struct SparkalPoint{
+struct SparkalPoint{ // packed(0x8 bytes) TI: 0x1a54
 	long x;
 	long y;
 	void SparkalPoint(long, long);

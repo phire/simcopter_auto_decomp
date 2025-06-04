@@ -4,7 +4,7 @@
 
 // Type: class ResourceRCData (forward reference);
 // VTABLE: COPTER_D 0x0058f648
-class ResourceRCData{
+class ResourceRCData{ // packed(0x1c bytes) TI: 0x2113
 public:
 	void ResourceRCData(class ResourceRCData&);
 	void ResourceRCData(int32_t, int32_t);

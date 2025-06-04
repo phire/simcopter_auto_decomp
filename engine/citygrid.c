@@ -11,13 +11,13 @@
 // Type: short;
 
 // Type: struct MapVert (forward reference);
-struct MapVert{
+struct MapVert{ // packed(0x8 bytes) TI: 0x2e89
 	int32_t x;
 	int32_t y;
 };
 
 // Type: struct GridFaceHdrType (forward reference);
-struct GridFaceHdrType{
+struct GridFaceHdrType{ // packed(0x18 bytes) TI: 0x2ed8
 	long TextureId;
 	long PlotterId;
 	long Pcount;
@@ -27,7 +27,7 @@ struct GridFaceHdrType{
 };
 
 // Type: struct Point3d (forward reference);
-struct Point3d{
+struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 	int32_t x;
 	int32_t y;
 	int32_t z;

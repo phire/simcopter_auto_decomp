@@ -7,7 +7,7 @@
 // Type: class HangarWindow (forward reference);
 // VTABLE: COPTER_D 0x00590c20
 class HangarWindow : public GraphicWindow
-{
+{ // packed(0x12e bytes) TI: 0x45ef
 public:
 	void HangarWindow(int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	virtual void ~HangarWindow() /* override */;
@@ -61,7 +61,7 @@ protected:
 
 // Type: class GraphicWindowOwner (forward reference);
 // VTABLE: COPTER_D 0x00590f2c
-class GraphicWindowOwner{
+class GraphicWindowOwner{ // packed(0x4 bytes) TI: 0x1647
 public:
 	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
 };
@@ -71,7 +71,7 @@ public:
 // Type: class ButtonWindow (forward reference);
 // VTABLE: COPTER_D 0x00591b78
 class ButtonWindow : public GraphicWindow
-{
+{ // packed(0x94 bytes) TI: 0x1a48
 	enum ButtonState {
 		nButtonStateDisabled = 0,
 		nButtonStateOff = 1,
@@ -104,7 +104,7 @@ protected:
 };
 
 // Type: class basic_string<char>;
-class basic_string<char>{
+class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = class basic_string_ref<char>;
 	using reference_pointer = class basic_string_ref<char>*;
 private:
@@ -209,7 +209,7 @@ public:
 };
 
 // Type: struct SparkalColor (forward reference);
-struct SparkalColor{
+struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 	unsigned char Blue;
 	unsigned char Green;
 	unsigned char Red;
@@ -228,7 +228,7 @@ struct SparkalColor{
 
 // Type: class MPoint (forward reference);
 class MPoint : public SparkalPoint
-{
+{ // packed(0x8 bytes) TI: 0x159a
 public:
 	void MPoint(unsigned long);
 	void MPoint(struct SparkalSize);
@@ -255,7 +255,7 @@ public:
 
 // Type: class list<HotSpot>::iterator;
 class list<HotSpot>::iterator : public bidirectional_iterator<HotSpot,int>
-{
+{ // packed(0x4 bytes) TI: 0x1240
 protected:
 	struct list<HotSpot>::list_node *node;
 public:
@@ -273,7 +273,7 @@ public:
 
 // Type: class MRect (forward reference);
 class MRect : public SparkalRect
-{
+{ // packed(0x10 bytes) TI: 0x1067
 public:
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
@@ -341,7 +341,7 @@ public:
 
 // Type: class MRect;
 class MRect : public SparkalRect
-{
+{ // packed(0x10 bytes) TI: 0x1067
 public:
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
@@ -408,7 +408,7 @@ public:
 };
 
 // Type: class basic_string<char> (forward reference);
-class basic_string<char>{
+class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = class basic_string_ref<char>;
 	using reference_pointer = class basic_string_ref<char>*;
 private:
@@ -515,7 +515,7 @@ public:
 // Type: uint32_t;
 
 // Type: struct SparkalRect;
-struct SparkalRect{
+struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	long left;
 	long top;
 	long right;
@@ -525,7 +525,7 @@ struct SparkalRect{
 };
 
 // Type: struct SparkalPoint;
-struct SparkalPoint{
+struct SparkalPoint{ // packed(0x8 bytes) TI: 0x1a54
 	long x;
 	long y;
 	void SparkalPoint(long, long);
@@ -533,7 +533,7 @@ struct SparkalPoint{
 };
 
 // Type: struct bidirectional_iterator<HotSpot,int>;
-struct bidirectional_iterator<HotSpot,int>{
+struct bidirectional_iterator<HotSpot,int>{ // packed(0x1 bytes) TI: 0x1f71
 };
 
 

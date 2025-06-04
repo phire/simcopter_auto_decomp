@@ -5,7 +5,7 @@
 // Type: unsigned long;
 
 // Type: class JoystickManager;
-class JoystickManager{
+class JoystickManager{ // packed(0x1ce4 bytes) TI: 0x2218
 public:
 	void JoystickManager();
 	int32_t Initialize();
@@ -46,7 +46,7 @@ protected:
 // Type: void;
 
 // Type: class JoystickManager (forward reference);
-class JoystickManager{
+class JoystickManager{ // packed(0x1ce4 bytes) TI: 0x2218
 public:
 	void JoystickManager();
 	int32_t Initialize();
@@ -85,7 +85,7 @@ protected:
 // Type: int32_t;
 
 // Type: struct joyinfo_tag;
-struct joyinfo_tag{
+struct joyinfo_tag{ // packed(0x10 bytes) TI: 0x21fd
 	uint32_t wXpos;
 	uint32_t wYpos;
 	uint32_t wZpos;
@@ -99,7 +99,7 @@ struct joyinfo_tag{
 // Type: int32_t *;
 
 // Type: struct joyinfoex_tag;
-struct joyinfoex_tag{
+struct joyinfoex_tag{ // packed(0x34 bytes) TI: 0x2204
 	unsigned long dwSize;
 	unsigned long dwFlags;
 	unsigned long dwXpos;
@@ -116,7 +116,7 @@ struct joyinfoex_tag{
 };
 
 // Type: struct joyinfoex_tag (forward reference);
-struct joyinfoex_tag{
+struct joyinfoex_tag{ // packed(0x34 bytes) TI: 0x2204
 	unsigned long dwSize;
 	unsigned long dwFlags;
 	unsigned long dwXpos;

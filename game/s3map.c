@@ -5,19 +5,19 @@
 // Type: int32_t;
 
 // Type: struct Point2d;
-struct Point2d{
+struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
 	int32_t x;
 	int32_t y;
 };
 
 // Type: struct _dPoint2d (forward reference);
-struct _dPoint2d{
+struct _dPoint2d{ // packed(0x10 bytes) TI: 0x2766
 	double x;
 	double z;
 };
 
 // Type: struct VRwindowType;
-struct VRwindowType{
+struct VRwindowType{ // packed(0x1c bytes) TI: 0x10a5
 	int32_t WindowX;
 	int32_t WindowY;
 	int32_t WindowWide;
@@ -34,7 +34,7 @@ struct VRwindowType{
 // Type: char;
 
 // Type: struct VRBmpHdr (forward reference);
-struct VRBmpHdr{
+struct VRBmpHdr{ // packed(0x10 bytes) TI: 0x2312
 	struct VRBmpInfo info;
 	int32_t ScanOffset[1];
 };
@@ -44,7 +44,7 @@ struct VRBmpHdr{
 // Type: unsigned short;
 
 // Type: struct _CELL_INFO (forward reference);
-struct _CELL_INFO{
+struct _CELL_INFO{ // packed(0x18 bytes) TI: 0x1b03
 	short flags;
 	short x;
 	short y;
@@ -57,7 +57,7 @@ struct _CELL_INFO{
 };
 
 // Type: struct Point2d (forward reference);
-struct Point2d{
+struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
 	int32_t x;
 	int32_t y;
 };
@@ -65,7 +65,7 @@ struct Point2d{
 // Type: long *;
 
 // Type: struct _MAP_CARINFO (forward reference);
-struct _MAP_CARINFO{
+struct _MAP_CARINFO{ // packed(0x28 bytes) TI: 0x31c6
 	long flags;
 	long car_id;
 	long car_type;
@@ -79,7 +79,7 @@ struct _MAP_CARINFO{
 };
 
 // Type: struct MISSION_DATA (forward reference);
-struct MISSION_DATA{
+struct MISSION_DATA{ // packed(0xcc bytes) TI: 0x231b
 	char mtext[32];
 	long type_ctr;
 	long key;
@@ -96,7 +96,7 @@ struct MISSION_DATA{
 };
 
 // Type: struct _GridCoordinates (forward reference);
-struct _GridCoordinates{
+struct _GridCoordinates{ // packed(0x2 bytes) TI: 0x143c
 	unsigned char x;
 	unsigned char y;
 };

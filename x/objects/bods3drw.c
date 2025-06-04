@@ -9,7 +9,7 @@
 // Type: int32_t;
 
 // Type: struct _dPoint2d (forward reference);
-struct _dPoint2d{
+struct _dPoint2d{ // packed(0x10 bytes) TI: 0x2766
 	double x;
 	double z;
 };
@@ -23,7 +23,7 @@ struct _dPoint2d{
 // Type: void;
 
 // Type: struct Point3d;
-struct Point3d{
+struct Point3d{ // not packed(0xc bytes) TI: 0x348f
 	int32_t x;
 	int32_t y;
 	int32_t z;
@@ -32,7 +32,7 @@ struct Point3d{
 // Type: float;
 
 // Type: struct BmpLineInfo;
-struct BmpLineInfo{
+struct BmpLineInfo{ // not packed(0x18 bytes) TI: 0x3495
 	long width;
 	long index;
 	double xStride;
@@ -42,20 +42,20 @@ struct BmpLineInfo{
 // Type: unsigned char *;
 
 // Type: struct VRBmpHdr (forward reference);
-struct VRBmpHdr{
+struct VRBmpHdr{ // packed(0x10 bytes) TI: 0x2312
 	struct VRBmpInfo info;
 	int32_t ScanOffset[1];
 };
 
 // Type: struct Point3D;
-struct Point3D{
+struct Point3D{ // not packed(0x18 bytes) TI: 0x349b
 	double x;
 	double y;
 	double z;
 };
 
 // Type: struct BmpLineInfo (forward reference);
-struct BmpLineInfo{
+struct BmpLineInfo{ // not packed(0x18 bytes) TI: 0x3495
 	long width;
 	long index;
 	double xStride;
@@ -63,7 +63,7 @@ struct BmpLineInfo{
 };
 
 // Type: struct Point3d (forward reference);
-struct Point3d{
+struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 	int32_t x;
 	int32_t y;
 	int32_t z;

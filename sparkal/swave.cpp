@@ -7,7 +7,7 @@
 // Type: void * __ptr32;
 
 // Type: struct tWAVEFORMATEX (forward reference);
-struct tWAVEFORMATEX{
+struct tWAVEFORMATEX{ // packed(0x12 bytes) TI: 0x17d1
 	unsigned short wFormatTag;
 	unsigned short nChannels;
 	unsigned long nSamplesPerSec;
@@ -18,7 +18,7 @@ struct tWAVEFORMATEX{
 };
 
 // Type: struct _MMCKINFO (forward reference);
-struct _MMCKINFO{
+struct _MMCKINFO{ // packed(0x14 bytes) TI: 0x1da7
 	unsigned long ckid;
 	unsigned long cksize;
 	unsigned long fccType;
@@ -29,13 +29,13 @@ struct _MMCKINFO{
 // Type: unsigned short;
 
 // Type: struct pcmwaveformat_tag;
-struct pcmwaveformat_tag{
+struct pcmwaveformat_tag{ // packed(0x10 bytes) TI: 0x23e0
 	struct waveformat_tag wf;
 	unsigned short wBitsPerSample;
 };
 
 // Type: struct _MMCKINFO;
-struct _MMCKINFO{
+struct _MMCKINFO{ // packed(0x14 bytes) TI: 0x1da7
 	unsigned long ckid;
 	unsigned long cksize;
 	unsigned long fccType;
@@ -52,7 +52,7 @@ struct _MMCKINFO{
 // Type: uint32_t *;
 
 // Type: struct _MMIOINFO;
-struct _MMIOINFO{
+struct _MMIOINFO{ // packed(0x48 bytes) TI: 0x23e7
 	unsigned long dwFlags;
 	unsigned long fccIOProc;
 	long (*pIOProc)(char *, uint32_t, long, long);

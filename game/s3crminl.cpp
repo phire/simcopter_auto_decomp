@@ -5,7 +5,7 @@
 // Type: class CriminalEvaderCarClass (forward reference);
 // VTABLE: COPTER_D 0x00593258
 class CriminalEvaderCarClass : public AutomobileClass
-{
+{ // packed(0x12a bytes) TI: 0x4598
 public:
 	static class CriminalEvaderCarClass *criminalCars[0];
 	enum MissionState {
@@ -65,7 +65,7 @@ private:
 // Type: void;
 
 // Type: struct _MISSION_PARMS;
-struct _MISSION_PARMS{
+struct _MISSION_PARMS{ // packed(0x18 bytes) TI: 0x307d
 	long op;
 	long id;
 	struct Point2d maploc;
@@ -74,20 +74,20 @@ struct _MISSION_PARMS{
 };
 
 // Type: struct _GridCoordinates;
-struct _GridCoordinates{
+struct _GridCoordinates{ // packed(0x2 bytes) TI: 0x143c
 	unsigned char x;
 	unsigned char y;
 };
 
 // Type: struct Point3d;
-struct Point3d{
+struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 	int32_t x;
 	int32_t y;
 	int32_t z;
 };
 
 // Type: class SpiralScan;
-class SpiralScan{
+class SpiralScan{ // packed(0x10 bytes) TI: 0x2fb5
 public:
 	void SpiralScan(int32_t);
 	void ~SpiralScan();
@@ -103,7 +103,7 @@ private:
 // Type: unsigned short;
 
 // Type: struct _AUTO_LOAD_SAVE (forward reference);
-struct _AUTO_LOAD_SAVE{
+struct _AUTO_LOAD_SAVE{ // packed(0x344 bytes) TI: 0x42d7
 	int32_t flags;
 	struct _DYOBJ_INST autoDynomitor;
 	struct Goal goal;
@@ -140,7 +140,7 @@ struct _AUTO_LOAD_SAVE{
 	long missionId;
 	struct _GridCoordinates cptrfixup;
 	int32_t spotlightHitCounter;
-	struct _AUTO_LOAD_SAVE::_CRIMINAL{
+	struct _AUTO_LOAD_SAVE::_CRIMINAL{ // packed(0x10 bytes) TI: 0x42df
 		long missionState;
 		long criminalType;
 		int32_t timeToLeaveCar;
@@ -148,7 +148,7 @@ struct _AUTO_LOAD_SAVE{
 	};
 public:
 	struct _AUTO_LOAD_SAVE::_CRIMINAL c;
-	struct _AUTO_LOAD_SAVE::_EMERGENCY{
+	struct _AUTO_LOAD_SAVE::_EMERGENCY{ // packed(0x186 bytes) TI: 0x42dd
 		struct _GridCoordinates baseLocation;
 		struct _GridCoordinates emergencyLocation;
 		long emergencyType;
@@ -165,7 +165,7 @@ public:
 	};
 public:
 	struct _AUTO_LOAD_SAVE::_EMERGENCY e;
-	struct _AUTO_LOAD_SAVE::_FIRE{
+	struct _AUTO_LOAD_SAVE::_FIRE{ // packed(0x18 bytes) TI: 0x42db
 		int32_t dousingFire;
 		int32_t distToFire;
 		struct Point3d firevec;
@@ -173,7 +173,7 @@ public:
 	};
 public:
 	struct _AUTO_LOAD_SAVE::_FIRE f;
-	struct _AUTO_LOAD_SAVE::_POLICE{
+	struct _AUTO_LOAD_SAVE::_POLICE{ // packed(0x88 bytes) TI: 0x42d9
 		struct Goal currDestGoal;
 		struct _GridCoordinates currpRGVFixup;
 		struct Goal destGoal1;
@@ -190,7 +190,7 @@ public:
 
 // Type: class AutomobileClass;
 // VTABLE: COPTER_D 0x00592d98
-class AutomobileClass{
+class AutomobileClass{ // packed(0x10e bytes) TI: 0x2fac
 	enum /* __unnamed */ {
 		CAR_TYPES = 7,
 		PERCENTAGE_OF_AUTO1 = 10,

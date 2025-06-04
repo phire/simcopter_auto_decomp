@@ -7,7 +7,7 @@
 // Type: class UserMenuWindow (forward reference);
 // VTABLE: COPTER_D 0x005912f8
 class UserMenuWindow : public GraphicWindow
-{
+{ // packed(0x152 bytes) TI: 0x45d0
 public:
 	void UserMenuWindow(struct UserMenuWindowDescription&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	void UserMenuWindow();
@@ -37,7 +37,7 @@ protected:
 // Type: void;
 
 // Type: struct UserMenuWindowDescription (forward reference);
-struct UserMenuWindowDescription{
+struct UserMenuWindowDescription{ // packed(0x54 bytes) TI: 0x101b
 	class basic_string<char> sImageFileName;
 	int32_t nTransparentIndex;
 	class MRect rectPosition;
@@ -62,14 +62,14 @@ struct UserMenuWindowDescription{
 
 // Type: class GraphicWindowOwner (forward reference);
 // VTABLE: COPTER_D 0x00590f2c
-class GraphicWindowOwner{
+class GraphicWindowOwner{ // packed(0x4 bytes) TI: 0x1647
 public:
 	virtual int32_t DoMessage(class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
 };
 
 // Type: class MRect;
 class MRect : public SparkalRect
-{
+{ // packed(0x10 bytes) TI: 0x1067
 public:
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
@@ -138,7 +138,7 @@ public:
 // Type: class TextWindow (forward reference);
 // VTABLE: COPTER_D 0x00591a90
 class TextWindow : public GraphicWindow
-{
+{ // packed(0xa4 bytes) TI: 0x4411
 public:
 	void TextWindow(class MRect&, int32_t, const class basic_string<char>&, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	void TextWindow(class MRect&, int32_t, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
@@ -168,7 +168,7 @@ protected:
 
 // Type: class MPoint (forward reference);
 class MPoint : public SparkalPoint
-{
+{ // packed(0x8 bytes) TI: 0x159a
 public:
 	void MPoint(unsigned long);
 	void MPoint(struct SparkalSize);
@@ -198,7 +198,7 @@ public:
 // Type: class CopterMainMenu (forward reference);
 // VTABLE: COPTER_D 0x005913e0
 class CopterMainMenu : public UserMenuWindow
-{
+{ // packed(0x162 bytes) TI: 0x45eb
 public:
 	void CopterMainMenu(struct UserMenuWindowDescription&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	virtual void ~CopterMainMenu() /* override */;
@@ -216,7 +216,7 @@ protected:
 };
 
 // Type: class basic_string<char>;
-class basic_string<char>{
+class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = class basic_string_ref<char>;
 	using reference_pointer = class basic_string_ref<char>*;
 private:
@@ -322,7 +322,7 @@ public:
 
 // Type: class MRect (forward reference);
 class MRect : public SparkalRect
-{
+{ // packed(0x10 bytes) TI: 0x1067
 public:
 	void MRect(struct SparkalPoint, struct SparkalPoint);
 	void MRect(struct SparkalPoint, struct SparkalSize);
@@ -391,7 +391,7 @@ public:
 // Type: class CopterPlayMenu (forward reference);
 // VTABLE: COPTER_D 0x005914c8
 class CopterPlayMenu : public UserMenuWindow
-{
+{ // packed(0x15a bytes) TI: 0x45f3
 public:
 	void CopterPlayMenu(struct UserMenuWindowDescription&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	virtual void ~CopterPlayMenu() /* override */;
@@ -408,7 +408,7 @@ protected:
 
 // Type: class MPoint;
 class MPoint : public SparkalPoint
-{
+{ // packed(0x8 bytes) TI: 0x159a
 public:
 	void MPoint(unsigned long);
 	void MPoint(struct SparkalSize);
@@ -438,7 +438,7 @@ public:
 // Type: class UserMenuWindow;
 // VTABLE: COPTER_D 0x005912f8
 class UserMenuWindow : public GraphicWindow
-{
+{ // packed(0x140 bytes) TI: 0x1524
 public:
 	void UserMenuWindow(struct UserMenuWindowDescription&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	void UserMenuWindow();
@@ -466,7 +466,7 @@ protected:
 };
 
 // Type: struct SparkalRect;
-struct SparkalRect{
+struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	long left;
 	long top;
 	long right;
@@ -476,7 +476,7 @@ struct SparkalRect{
 };
 
 // Type: struct SparkalPoint;
-struct SparkalPoint{
+struct SparkalPoint{ // packed(0x8 bytes) TI: 0x1a54
 	long x;
 	long y;
 	void SparkalPoint(long, long);

@@ -7,7 +7,7 @@
 // Type: void;
 
 // Type: struct VRResource (forward reference);
-struct VRResource{
+struct VRResource{ // packed(0x10 bytes) TI: 0x18ae
 	char * mem;
 	int32_t mempoolid;
 	int32_t type;
@@ -15,7 +15,7 @@ struct VRResource{
 };
 
 // Type: struct GEOM_Resource (forward reference);
-struct GEOM_Resource{
+struct GEOM_Resource{ // packed(0x18 bytes) TI: 0x2f05
 	struct VRResource res;
 	int32_t count;
 	int32_t barrymempool;
@@ -27,7 +27,7 @@ struct GEOM_Resource{
 // Type: void * __ptr32;
 
 // Type: struct Chunk;
-struct Chunk{
+struct Chunk{ // packed(0x8 bytes) TI: 0x2ee9
 	int32_t Id;
 	int32_t Size;
 };
