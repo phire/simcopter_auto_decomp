@@ -294,7 +294,7 @@ protected:
 
 // Type: class Sound;
 // VTABLE: COPTER_D 0x0058f458
-class Sound{ // packed(0x30 bytes) TI: 0x1578
+class Sound{ // packed(0x34 bytes) TI: 0x4335
 	enum SoundSourceType {
 		nSoundSourceTypeResource = 0,
 		nSoundSourceTypeFile = 1,
@@ -317,6 +317,7 @@ public:
 	long lVolume;
 	void (*soundCompletionFunction)(long);
 	long lSoundCompletionData;
+	int32_t bUnloadBeforeNextPlay;
 	void Sound();
 	virtual void ~Sound(); // vtable+0x0
 	class Sound& operator=(const class Sound&);
@@ -427,7 +428,7 @@ protected:
 // Type: class SliderWindow;
 // VTABLE: COPTER_D 0x00591ee8
 class SliderWindow : public GraphicWindow
-{ // packed(0xb4 bytes) TI: 0x13bc
+{ // packed(0xb4 bytes) TI: 0x2142
 	enum SliderWindowDirection {
 		nSliderWindowDirectionHorizontal = 0,
 		nSliderWindowDirectionVertical = 1,

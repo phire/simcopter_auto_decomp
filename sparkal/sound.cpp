@@ -377,18 +377,13 @@ struct _OFSTRUCT{ // packed(0x88 bytes) TI: 0x21e5
 // Type: void (long);
 
 // Type: struct IUnknown;
-struct IUnknown{ // packed(0x4 bytes) TI: 0x196f
-	// calltype: NearStd
-	virtual long QueryInterface(const struct _GUID&, void * __ptr32*); // vtable+0x0
-	// calltype: NearStd
-	virtual unsigned long AddRef(); // vtable+0x4
-	// calltype: NearStd
-	virtual unsigned long Release(); // vtable+0x8
+struct IUnknown{ // packed(0x4 bytes) TI: 0x27c0
+	struct IUnknownVtbl *lpVtbl;
 };
 
 // Type: class Sound;
 // VTABLE: COPTER_D 0x0058f458
-class Sound{ // packed(0x30 bytes) TI: 0x1578
+class Sound{ // packed(0x34 bytes) TI: 0x4335
 	enum SoundSourceType {
 		nSoundSourceTypeResource = 0,
 		nSoundSourceTypeFile = 1,
@@ -411,6 +406,7 @@ public:
 	long lVolume;
 	void (*soundCompletionFunction)(long);
 	long lSoundCompletionData;
+	int32_t bUnloadBeforeNextPlay;
 	void Sound();
 	virtual void ~Sound(); // vtable+0x0
 	class Sound& operator=(const class Sound&);
@@ -504,19 +500,19 @@ _T3d:
 	this->primarySound = 0x0;
 // LINE 134:
 _T47:
-	this->primarySound->lpSound[0] = 0x1;
+	this->primarySound->waveFormatEx.wFormatTag = 0x1;
 // LINE 135:
-	this->primarySound->lpSound[0] = 0x2;
+	this->primarySound->waveFormatEx.nChannels = 0x2;
 // LINE 136:
-	this->primarySound->lpSound[1] = 0x5622;
+	this->primarySound->waveFormatEx.nSamplesPerSec = 0x5622;
 // LINE 137:
-	this->primarySound->lpSound[2] = 0xac44;
+	this->primarySound->waveFormatEx.nAvgBytesPerSec = 0xac44;
 // LINE 138:
-	this->primarySound->lpSound[3] = 0x2;
+	this->primarySound->waveFormatEx.nBlockAlign = 0x2;
 // LINE 139:
-	this->primarySound->lpSound[3] = 0x8;
+	this->primarySound->waveFormatEx.wBitsPerSample = 0x8;
 // LINE 140:
-	this->primarySound->lpSound[4] = 0x0;
+	this->primarySound->waveFormatEx.cbSize = 0x0;
 // LINE 145:
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -622,7 +618,7 @@ _T18e:
 	__asm        jmp    _T229;
 // LINE 179:
 _T1b8:
-	this->lpPrimarySound = this->primarySound->lpSound[4];
+	this->lpPrimarySound = this->primarySound->lpSound[0];
 // LINE 191:
 	__asm        push   1;
 	__asm        push   0;
@@ -1138,7 +1134,7 @@ _T69:
 // LINE 421:
 	this->soundCompletionFunction = 0x0;
 // LINE 422:
-	this-><Sound+0x30> = 0x0;
+	this->bUnloadBeforeNextPlay = 0x0;
 // LINE 423:
 	__asm        jmp    near ptr 0x0042E7E6;
 
@@ -1771,7 +1767,7 @@ _T1ce:
 // LINE 503:
 	this->bLooping = 0x0;
 // LINE 504:
-	this-><Sound+0x30> = 0x1;
+	this->bUnloadBeforeNextPlay = 0x1;
 // LINE 505:
 	__asm        jmp    near ptr 0x0042EF53;
 }
@@ -1802,15 +1798,15 @@ void DigitalSound::DigitalSound() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F488;
 // LINE 539:
-	this->nCompletionEstimationTimerSet = 0x0;
+	this->nStreamingType = 0x0;
 // LINE 544:
-	this->lpWaveFormatEx = 0x0;
-// LINE 546:
-	this-><DigitalSound+0x72> = 0x0;
-// LINE 547:
-	this-><DigitalSound+0x76> = 0xe0;
-// LINE 548:
 	this->cbSize = 0x0;
+// LINE 546:
+	this->lpStreamBufferInfo = 0x0;
+// LINE 547:
+	this->dwDesiredBufferDescFlags = 0xe0;
+// LINE 548:
+	this->nCompletionEstimationTimerSet = 0x0;
 // LINE 549:
 	__asm        mov    i, 0;
 	__asm        jmp    _T5e;
@@ -1844,11 +1840,11 @@ void DigitalSound::DigitalSound(const class basic_string<char>& sNewSoundFile, i
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F488;
 // LINE 570:
-	this->lpWaveFormatEx = 0x0;
+	this->cbSize = 0x0;
 // LINE 572:
-	this-><DigitalSound+0x72> = 0x0;
+	this->lpStreamBufferInfo = 0x0;
 // LINE 573:
-	this-><DigitalSound+0x76> = 0xe0;
+	this->dwDesiredBufferDescFlags = 0xe0;
 // LINE 574:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x14;
@@ -2002,7 +1998,7 @@ _T1fc:
 _T206:
 	__asm        jmp    near ptr 0x0042F21A;
 // LINE 575:
-	this->cbSize = 0x0;
+	this->nCompletionEstimationTimerSet = 0x0;
 // LINE 576:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x34], 1;
@@ -2049,13 +2045,13 @@ void DigitalSound::DigitalSound(long lNewResID) {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F488;
 // LINE 596:
-	this->nCompletionEstimationTimerSet = 0x0;
+	this->nStreamingType = 0x0;
 // LINE 599:
-	this-><DigitalSound+0x72> = 0x0;
+	this->lpStreamBufferInfo = 0x0;
 // LINE 601:
 	this->lResID = lNewResID;
 // LINE 602:
-	this->cbSize = 0x0;
+	this->nCompletionEstimationTimerSet = 0x0;
 // LINE 608:
 	__asm        jmp    near ptr 0x0042F2DF;
 
@@ -2231,11 +2227,11 @@ _T1c4:
 _T1ce:
 	__asm        jmp    near ptr 0x0042F4EB;
 // LINE 640:
-	this->nCompletionEstimationTimerSet = nNewStreamingType;
+	this->nStreamingType = nNewStreamingType;
 // LINE 641:
 	this->bLooping = 0x0;
 // LINE 642:
-	this->nStreamingType = 0x1;
+	this->bUnloadBeforeNextPlay = 0x1;
 // LINE 644:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x34], 1;
@@ -2299,7 +2295,7 @@ _T45:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 666:
-	this-><DigitalSound+0x72> = 0x0;
+	this->lpStreamBufferInfo = 0x0;
 // LINE 670:
 _T77:
 	__asm        mov    eax, this;
@@ -2543,7 +2539,7 @@ _T180:
 	__asm        jmp    _T302;
 // LINE 775:
 _T1b6:
-	this->lpWaveFormatEx = ckIn.cksize;
+	this->cbSize = ckIn.cksize;
 // LINE 778:
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -2767,9 +2763,9 @@ _T76:
 _T87:
 	dsBufferDescription.dwSize = 0x14;
 // LINE 900:
-	dsBufferDescription.dwFlags = this-><DigitalSound+0x76>;
+	dsBufferDescription.dwFlags = this->dwDesiredBufferDescFlags;
 // LINE 901:
-	dsBufferDescription.dwBufferBytes = this->lpWaveFormatEx;
+	dsBufferDescription.dwBufferBytes = this->cbSize;
 // LINE 902:
 	dsBufferDescription.dwReserved = 0x0;
 // LINE 903:
@@ -2827,7 +2823,7 @@ _T10f:
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+8];
 // LINE 921:
-	this->lpSound[4] = 0x0;
+	this->lpSound[0] = 0x0;
 // LINE 924:
 _T138:
 	__asm        xor    eax, eax;
@@ -3348,7 +3344,7 @@ long DigitalSound::Play(long bPlayLooping, int32_t nDuplicateType) {
 	__asm        cmp    dword ptr [eax+0x30], 0;
 	__asm        je     _T35;
 // LINE 1275:
-	this->nStreamingType = 0x0;
+	this->bUnloadBeforeNextPlay = 0x0;
 // LINE 1276:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -3470,7 +3466,7 @@ _T168:
 	__asm        jmp    _T176;
 // LINE 1319:
 _T16d:
-	lpSoundBufferToPlay = this->lpSound[4];
+	lpSoundBufferToPlay = this->lpSound[0];
 // LINE 1321:
 _T176:
 	__asm        mov    eax, this;
@@ -3962,57 +3958,31 @@ _T71:
 	__asm        jmp    _T3a3;
 // LINE 1512:
 _T85:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    dword ptr [eax], 0;
+	this->lpStreamBufferInfo->hmmio = 0x0;
 // LINE 1513:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    dword ptr [eax+0x2C], 0;
+	this->lpStreamBufferInfo->dwBufferSize = 0x0;
 // LINE 1514:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    dword ptr [eax+0x30], 0;
+	this->lpStreamBufferInfo->dwBufferSegSize = 0x0;
 // LINE 1515:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    dword ptr [eax+0x34], 0;
+	this->lpStreamBufferInfo->dwNextWriteOffset = 0x0;
 // LINE 1516:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    dword ptr [eax+0x38], 0;
+	this->lpStreamBufferInfo->dwPlayLast = 0x0;
 // LINE 1517:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    dword ptr [eax+0x3C], 0;
+	this->lpStreamBufferInfo->dwProgress = 0x0;
 // LINE 1518:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    dword ptr [eax+0x40], 1;
+	this->lpStreamBufferInfo->bDonePlaying = 0x1;
 // LINE 1519:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    dword ptr [eax+0x44], 0;
+	this->lpStreamBufferInfo->bFoundEnd = 0x0;
 // LINE 1520:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    dword ptr [eax+0x48], 0;
+	this->lpStreamBufferInfo->nRemainingSegments = 0x0;
 // LINE 1521:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    dword ptr [eax+0x4C], 0;
+	this->lpStreamBufferInfo->uTimerID = 0x0;
 // LINE 1522:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    dword ptr [eax+0x58], 0;
+	this->lpStreamBufferInfo->bInTimerCallback = 0x0;
 // LINE 1523:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    dword ptr [eax+0x54], 0;
+	this->lpStreamBufferInfo->bStreamPlaying = 0x0;
 // LINE 1524:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    dword ptr [eax+0x50], 0;
+	this->lpStreamBufferInfo->bTimerInstalled = 0x0;
 // LINE 1528:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
@@ -4196,10 +4166,7 @@ _T2a6:
 // LINE 1552:
 	dsBufferDescription.dwFlags = 0xe0;
 // LINE 1553:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    eax, [eax+0x2C];
-	__asm        mov    dsBufferDescription.dwBufferBytes, eax;
+	dsBufferDescription.dwBufferBytes = this->lpStreamBufferInfo->dwBufferSize;
 // LINE 1556:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x40;
@@ -4239,7 +4206,7 @@ _T2a6:
 	__asm        jmp    _T3a3;
 // LINE 1564:
 _T384:
-	this->lpWaveFormatEx = dsBufferDescription.dwBufferBytes;
+	this->cbSize = dsBufferDescription.dwBufferBytes;
 // LINE 1565:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x3C];
@@ -4429,13 +4396,9 @@ _T183:
 	__asm        jmp    _T53d;
 // LINE 1621:
 _T1c9:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    dword ptr [eax+0x44], 0;
+	this->lpStreamBufferInfo->bFoundEnd = 0x0;
 // LINE 1622:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    dword ptr [eax+0x48], 0;
+	this->lpStreamBufferInfo->nRemainingSegments = 0x0;
 // LINE 1627:
 	__asm        push   0;
 	__asm        lea    eax, dwLength2;
@@ -4590,9 +4553,7 @@ _T2e1:
 	__asm        jmp    _T39d;
 // LINE 1667:
 _T34c:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    dword ptr [eax+0x44], 1;
+	this->lpStreamBufferInfo->bFoundEnd = 0x1;
 // LINE 1669:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x72];
@@ -4666,13 +4627,9 @@ _T3e0:
 	__asm        mov    ecx, [ecx+0x72];
 	__asm        mov    [ecx+0x34], eax;
 // LINE 1686:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    dword ptr [eax+0x40], 0;
+	this->lpStreamBufferInfo->bDonePlaying = 0x0;
 // LINE 1690:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    dword ptr [eax+0x54], 1;
+	this->lpStreamBufferInfo->bStreamPlaying = 0x1;
 // LINE 1693:
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -4772,9 +4729,7 @@ _T4f8:
 	__asm        cmp    dword ptr [eax+0x4C], 0;
 	__asm        je     _T533;
 // LINE 1722:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    dword ptr [eax+0x50], 1;
+	this->lpStreamBufferInfo->bTimerInstalled = 0x1;
 // LINE 1728:
 _T533:
 	__asm        mov    eax, 1;
@@ -4805,9 +4760,7 @@ _T23:
 	__asm        cmp    dword ptr [eax+0x50], 0;
 	__asm        je     _T95;
 // LINE 1755:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    dword ptr [eax+0x50], 0;
+	this->lpStreamBufferInfo->bTimerInstalled = 0x0;
 // LINE 1757:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x72];
@@ -4834,18 +4787,14 @@ _T75:
 	__asm        call   dword ptr ds:[0x6C378C];
 // LINE 1770:
 _T95:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    dword ptr [eax+0x40], 1;
+	this->lpStreamBufferInfo->bDonePlaying = 0x1;
 // LINE 1772:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x72];
 	__asm        cmp    dword ptr [eax+0x54], 0;
 	__asm        je     _Td1;
 // LINE 1773:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    dword ptr [eax+0x54], 0;
+	this->lpStreamBufferInfo->bStreamPlaying = 0x0;
 // LINE 1774:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x52];
@@ -4905,9 +4854,7 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 	__asm        jmp    _T751;
 // LINE 1815:
 _T21:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    dword ptr [eax+0x58], 1;
+	this->lpStreamBufferInfo->bInTimerCallback = 0x1;
 // LINE 1818:
 	__asm        lea    eax, dwWrite;
 	__asm        push   eax;
@@ -4956,9 +4903,7 @@ _T7f:
 	__asm        cmp    dword ptr [eax+0x40], 0;
 	__asm        jne    _Tc7;
 // LINE 1832:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    dword ptr [eax+0x40], 1;
+	this->lpStreamBufferInfo->bDonePlaying = 0x1;
 // LINE 1833:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -5000,10 +4945,7 @@ _T106:
 	__asm        add    [ecx+0x3C], eax;
 // LINE 1849:
 _T11b:
-	__asm        mov    eax, dwPlay;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x72];
-	__asm        mov    [ecx+0x38], eax;
+	this->lpStreamBufferInfo->dwPlayLast = dwPlay;
 // LINE 1854:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x72];
@@ -5194,9 +5136,7 @@ _T287:
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x4C];
 // LINE 1912:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    dword ptr [eax+0x40], 1;
+	this->lpStreamBufferInfo->bDonePlaying = 0x1;
 // LINE 1913:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -5216,9 +5156,7 @@ _T319:
 	__asm        cmp    dword ptr [eax+0x1C], 0;
 	__asm        jne    _T3d1;
 // LINE 1919:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    dword ptr [eax+0x44], 1;
+	this->lpStreamBufferInfo->bFoundEnd = 0x1;
 // LINE 1924:
 	__asm        mov    eax, dwLength1;
 	__asm        sub    eax, nActualBytesRead;
@@ -5397,9 +5335,7 @@ _T489:
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x4C];
 // LINE 1971:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    dword ptr [eax+0x40], 1;
+	this->lpStreamBufferInfo->bDonePlaying = 0x1;
 // LINE 1972:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -5454,9 +5390,7 @@ _T566:
 	__asm        add    esp, 0xC;
 // LINE 1985:
 _T590:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    dword ptr [eax+0x44], 1;
+	this->lpStreamBufferInfo->bFoundEnd = 0x1;
 // LINE 1986:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x72];
@@ -5615,9 +5549,7 @@ _T6ba:
 // LINE 2030:
 END_OF_FUNCTION:
 _T71c:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    dword ptr [eax+0x58], 0;
+	this->lpStreamBufferInfo->bInTimerCallback = 0x0;
 // LINE 2032:
 	__asm        jmp    _T751;
 _T72e:
@@ -5766,7 +5698,7 @@ void DigitalSound::ProcessCompletionEstimationTimerCallback() {
 	__asm        test   eax, eax;
 	__asm        jne    _T4b;
 // LINE 2117:
-	this->cbSize = 0x0;
+	this->nCompletionEstimationTimerSet = 0x0;
 // LINE 2118:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x28], 0;
@@ -5786,7 +5718,7 @@ _T4b:
 	__asm        push   0x14;
 	__asm        call   dword ptr ds:[0x6C3914];
 // LINE 2127:
-	this->cbSize = 0x0;
+	this->nCompletionEstimationTimerSet = 0x0;
 // LINE 2128:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -5872,7 +5804,7 @@ void DigitalSound::StopCompletionNotificationEstimationTimer() {
 	__asm        push   0x14;
 	__asm        call   dword ptr ds:[0x6C3914];
 // LINE 2180:
-	this->cbSize = 0x0;
+	this->nCompletionEstimationTimerSet = 0x0;
 // LINE 2182:
 _T38:
 	__asm        jmp    near ptr 0x00431ABA;

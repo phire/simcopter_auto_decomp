@@ -45,47 +45,7 @@ struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 // Type: void;
 
 // Type: class CSparkalWindow (forward reference);
-// VTABLE: COPTER_D 0x00590ef8
-class CSparkalWindow{ // packed(0x68 bytes) TI: 0x20d9
-public:
-	void CSparkalWindow(unsigned long, unsigned long, unsigned long, const struct SparkalColor*, char *);
-	void CSparkalWindow();
-	virtual void ~CSparkalWindow(); // vtable+0x0
-	void * __ptr32 GetPlatformData();
-	long GetWidth();
-	long GetHeight();
-	virtual unsigned long GetClientSize(long *, long *); // vtable+0x4
-	class ScreenBuffer* GetBackBuffer();
-	class ScreenBuffer* SetBackBuffer(class ScreenBuffer*);
-	class ICommander* GetCommander();
-	class ICommander* SetCommander(class ICommander*);
-	virtual unsigned long Draw(); // vtable+0x8
-	virtual unsigned long SetCursor(unsigned long); // vtable+0xc
-	virtual unsigned long SetCursorFromIndex(int32_t); // vtable+0x10
-	virtual unsigned long LoadGameCursors(); // vtable+0x14
-	virtual void FreeGameCursors(); // vtable+0x18
-	unsigned long DrawBufferText(const const char*, unsigned long, long, long, long *, long *, long *, long *);
-	virtual unsigned long Sleep(); // vtable+0x1c
-	virtual unsigned long WakeUp(); // vtable+0x20
-	unsigned long ScreenScroll(long, long, long, long, long, long);
-	unsigned long RectSlideUp(long, long, long, long);
-	virtual unsigned long SwapBuffer(long, long, long, long); // vtable+0x24
-	virtual unsigned long SwapBuffer(); // vtable+0x28
-	virtual void UpdatePalette(long, long, struct SparkalColor*); // vtable+0x2c
-protected:
-	long mHeight;
-	long mWidth;
-	unsigned long mStyle;
-	class ICommander *mpCommander;
-	class ScreenBuffer *mpBackBuffer;
-	void * __ptr32 mWindow;
-	// calltype: NearStd
-	virtual long MySparkalWindowProc(void * __ptr32, uint32_t, uint32_t, long); // vtable+0x30
-	void * __ptr32 mPalette;
-	void * __ptr32 mhCurrentCursor;
-	void * __ptr32 mhCustomCursor;
-	void * __ptr32 mCursors[16];
-};
+// CSparkalWindow Class implementation not found
 
 // Type: long;
 
@@ -176,110 +136,8 @@ struct tagRECT{ // packed(0x10 bytes) TI: 0x13c4
 
 // Type: uint32_t;
 
-// Type: class CBackBuffer;
-// VTABLE: COPTER_D 0x00590808
-class CBackBuffer : public IBackBuffer
-{ // packed(0x134 bytes) TI: 0x18f5
-public:
-	void CBackBuffer(long, long, const struct SparkalColor*);
-	void CBackBuffer(char *);
-	void CBackBuffer();
-	virtual void InitializeMemberVariables(); // vtable+0x28
-	void ~CBackBuffer();
-	unsigned long Load();
-	virtual unsigned long Lock() /* override */;
-	virtual unsigned long Unlock() /* override */;
-	// calltype: NearC
-	static int32_t GetPaletteFromImage(char *, struct SparkalColor*);
-	virtual unsigned long Swap(class CSparkalWindow*, long, long) /* override */;
-	virtual unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long) /* override */;
-	virtual unsigned long StretchRect(class CSparkalWindow*, long, long, long, long, long, long, long, long) /* override */;
-	virtual unsigned long Compose(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&); // vtable+0x2c
-	virtual unsigned long Compose(class IFlatImage*, long, long, long, long, long, long) /* override */;
-	virtual unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long) /* override */;
-	virtual unsigned long StretchCompose(class IFlatImage*, const struct SparkalRect&, const struct SparkalRect&); // vtable+0x30
-	virtual unsigned long Duplicate(class CBackBuffer*, int32_t); // vtable+0x34
-	virtual unsigned long ComposeNoClip(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&); // vtable+0x38
-	virtual unsigned long ComposeNoClip(class IFlatImage*, long, long, long, long, long, long); // vtable+0x3c
-	void UpdatePalette(long, long, const struct SparkalColor*);
-	virtual void SetTransparentColor(int32_t, long) /* override */;
-	unsigned long GetTransparentColor(long&);
-	unsigned long SetFont(class MFont*);
-	void SetFontColor(struct SparkalColor&);
-	void SetFontIndex(int32_t);
-	void SetColor(struct SparkalColor&);
-	void SetColorIndex(int32_t);
-	virtual unsigned long DrawLine(long, long, long, long, long); // vtable+0x40
-	virtual unsigned long FillRect(long, const struct SparkalRect*); // vtable+0x44
-	virtual unsigned long DrawBufferText(char *, long, unsigned long, const class MRect&, class MFont*); // vtable+0x48
-	virtual unsigned long DrawBufferText(char *, unsigned long, long *, long *, long *, long *, class MFont*); // vtable+0x4c
-	virtual unsigned long DrawLineUnclipped(long, long, long, long, long); // vtable+0x50
-	virtual unsigned long DrawLineClipped(long, long, long, long, long); // vtable+0x54
-	virtual unsigned long DrawRectangleOutline(const struct SparkalRect&, long); // vtable+0x58
-	virtual unsigned long DrawRectangleOutlineUnclipped(const struct SparkalRect&, long); // vtable+0x5c
-	long IsLost();
-	long Restore();
-	char * szFilePath;
-	struct tagRECT rectDirectDrawBuffer;
-protected:
-	int32_t bSurfacePrimary;
-	int32_t bSurfaceTransparent;
-	class MFont *mFont;
-	struct SparkalColor colorFontCurrent;
-	struct SparkalColor colorCurrent;
-	int32_t nColorIndexFontCurrent;
-	int32_t nColorIndexCurrent;
-	int32_t nColorIndexTransparent;
-	struct IDirectDrawSurface *mpFrontSurface;
-	struct IDirectDrawSurface *mpBackSurface;
-	struct IDirectDrawPalette *mpPalette;
-	struct _DDSURFACEDESC mDDdesc;
-	struct _DDBLTFX mDDBltFx;
-	void * __ptr32 hPen;
-	int32_t nPenThickness;
-	struct SparkalColor colorPenCurrent;
-	virtual struct IDirectDrawSurface* GetDDSurface(); // vtable+0x60
-};
-
-// Type: class IBackBuffer;
-// VTABLE: COPTER_D 0x005907e0
-class IBackBuffer : public IFlatImage
-{ // packed(0x18 bytes) TI: 0x1544
-public:
-	virtual unsigned long Swap(class CSparkalWindow*, long, long); // vtable+0x1c
-	virtual unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long); // vtable+0x20
-	virtual unsigned long StretchRect(class CSparkalWindow*, long, long, long, long, long, long, long, long); // vtable+0x24
-};
-
-// Type: class IFlatImage;
-// VTABLE: COPTER_D 0x00591050
-class IFlatImage{ // packed(0x18 bytes) TI: 0x13a1
-public:
-	void IFlatImage();
-	virtual unsigned long Lock(); // vtable+0x0
-	virtual unsigned long Unlock(); // vtable+0x4
-	unsigned long GetLockCount();
-	virtual void SetTransparentColor(int32_t, long); // vtable+0x8
-	long GetHeight();
-	long GetWidth();
-	void * __ptr32 GetBitsPointer();
-	long GetStride();
-	virtual unsigned long Compose(class IFlatImage*, long, long, long, long, long, long); // vtable+0xc
-	unsigned long Compose(class IFlatImage*, long, long);
-	virtual unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long); // vtable+0x10
-	virtual unsigned long StretchCompose(class IFlatImage*, struct SparkalRect, struct SparkalRect); // vtable+0x14
-	virtual unsigned long FillRect(long, struct SparkalRect*); // vtable+0x18
-	void DrawPixel(unsigned char, long, long);
-	unsigned char GetPixel(long, long);
-	static unsigned long lTotalMemoryUsage;
-	static unsigned long lTotalLockCount;
-protected:
-	unsigned long mLockCount;
-	long mWidth;
-	long mHeight;
-	void * __ptr32 mpBits;
-	long mStride;
-};
+// Type: class CBackBuffer (forward reference);
+// CBackBuffer Class implementation not found
 
 
 
@@ -299,9 +157,9 @@ void ScreenBuffer::ScreenBuffer() {
 // LINE 26:
 	this->pWindow = 0x0;
 // LINE 27:
-	this->mWidth = 0x280;
+	this-><ScreenBuffer+0x08> = 0x280;
 // LINE 28:
-	this->mHeight = 0x1e0;
+	this-><ScreenBuffer+0x0c> = 0x1e0;
 // LINE 29:
 	this->nBackBuffers = 0x2;
 // LINE 30:
@@ -352,9 +210,9 @@ void ScreenBuffer::ScreenBuffer(class CSparkalWindow *pNewWindow, long nNewWidth
 // LINE 65:
 	this->pWindow = pNewWindow;
 // LINE 66:
-	this->mWidth = nNewWidth;
+	this-><ScreenBuffer+0x08> = nNewWidth;
 // LINE 67:
-	this->mHeight = nNewHeight;
+	this-><ScreenBuffer+0x0c> = nNewHeight;
 // LINE 68:
 	__asm        mov    eax, nNewBackBuffers;
 	__asm        mov    ecx, this;
@@ -364,7 +222,7 @@ void ScreenBuffer::ScreenBuffer(class CSparkalWindow *pNewWindow, long nNewWidth
 // LINE 70:
 	this->lpClipper = 0x0;
 // LINE 71:
-	this->bSurfacePrimary = 0x1;
+	this-><ScreenBuffer+0x2c> = 0x1;
 // LINE 72:
 	rectWindowTemp.left = 0x0;
 // LINE 73:
@@ -435,9 +293,9 @@ int32_t ScreenBuffer::CreateSurfaces() {
 	long hResult;
 
 // LINE 131:
-	this->mpFrontSurface = 0x0;
+	this-><ScreenBuffer+0x4c> = 0x0;
 // LINE 132:
-	this->mpBackSurface = 0x0;
+	this-><ScreenBuffer+0x50> = 0x0;
 // LINE 133:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14E], 0;
@@ -457,11 +315,11 @@ int32_t ScreenBuffer::CreateSurfaces() {
 	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 137:
-	this->mDDdesc.dwSize = 0x6c;
+	this-><ScreenBuffer+0x58> = 0x6c;
 // LINE 138:
-	this->mDDdesc.dwFlags = 0x20;
+	this-><ScreenBuffer+0x5c> = 0x20;
 // LINE 141:
-	this->mDDdesc.ddsCaps.dwCaps = 0x218;
+	this-><ScreenBuffer+0xc0> = 0x218;
 // LINE 142:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x14C];
@@ -550,11 +408,11 @@ _T150:
 	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 170:
-	this->mDDdesc.dwSize = 0x6c;
+	this-><ScreenBuffer+0x58> = 0x6c;
 // LINE 171:
-	this->mDDdesc.dwFlags = 0x0;
+	this-><ScreenBuffer+0x5c> = 0x0;
 // LINE 172:
-	this->mDDdesc.ddsCaps.dwCaps = 0x200;
+	this-><ScreenBuffer+0xc0> = 0x200;
 // LINE 173:
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -575,7 +433,7 @@ _T150:
 // LINE 175:
 	this->bOK = 0x0;
 // LINE 176:
-	this->mpFrontSurface = 0x0;
+	this-><ScreenBuffer+0x4c> = 0x0;
 // LINE 177:
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x14], eax;
@@ -597,15 +455,15 @@ _T1e7:
 	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 183:
-	this->mDDdesc.dwSize = 0x6c;
+	this-><ScreenBuffer+0x58> = 0x6c;
 // LINE 184:
-	this->mDDdesc.dwFlags = 0x6;
+	this-><ScreenBuffer+0x5c> = 0x6;
 // LINE 185:
-	this->mDDdesc.ddsCaps.dwCaps = 0x840;
+	this-><ScreenBuffer+0xc0> = 0x840;
 // LINE 186:
-	this->mDDdesc.dwWidth = this->mWidth;
+	this-><ScreenBuffer+0x64> = this-><ScreenBuffer+0x08>;
 // LINE 187:
-	this->mDDdesc.dwHeight = this->mHeight;
+	this-><ScreenBuffer+0x60> = this-><ScreenBuffer+0x0c>;
 // LINE 188:
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -626,7 +484,7 @@ _T1e7:
 // LINE 190:
 	this->bOK = 0x0;
 // LINE 191:
-	this->mpBackSurface = 0x0;
+	this-><ScreenBuffer+0x50> = 0x0;
 // LINE 192:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4C];
@@ -636,7 +494,7 @@ _T1e7:
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+8];
 // LINE 193:
-	this->mpFrontSurface = 0x0;
+	this-><ScreenBuffer+0x4c> = 0x0;
 // LINE 194:
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x18], eax;
@@ -766,13 +624,13 @@ int32_t ScreenBuffer::DeleteSurfaces() {
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+8];
 // LINE 242:
-	this->mpFrontSurface = 0x0;
+	this-><ScreenBuffer+0x4c> = 0x0;
 // LINE 243:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x152], 0;
 	__asm        je     _T4f;
 // LINE 244:
-	this->mpBackSurface = 0x0;
+	this-><ScreenBuffer+0x50> = 0x0;
 // LINE 248:
 _T4f:
 	__asm        xor    eax, eax;
@@ -797,7 +655,7 @@ _T68:
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+8];
 // LINE 259:
-	this->mpBackSurface = 0x0;
+	this-><ScreenBuffer+0x50> = 0x0;
 // LINE 263:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, this;
@@ -1515,7 +1373,7 @@ _T1bb:
 	__asm        mov    lpPalette, 0;
 // LINE 573:
 _T1cc:
-	this->mpPalette = 0x0;
+	this-><ScreenBuffer+0x54> = 0x0;
 // LINE 577:
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -1534,7 +1392,7 @@ _T1cc:
 	__asm        cmp    hResult, 0;
 	__asm        jne    _T2a5;
 // LINE 579:
-	lpPalette = this->mpPalette;
+	lpPalette = this-><ScreenBuffer+0x54>;
 // LINE 580:
 	None = 0x2;
 // LINE 581:
@@ -1582,7 +1440,7 @@ _T2a0:
 	__asm        jmp    _T2d0;
 // LINE 597:
 _T2a5:
-	this->mpPalette = 0x0;
+	this-><ScreenBuffer+0x54> = 0x0;
 // LINE 598:
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-0x428], eax;
@@ -1642,7 +1500,7 @@ void ScreenBuffer::FreePalette() {
 // LINE 622:
 	lpPalette = 0x0;
 // LINE 623:
-	this->mpPalette = 0x0;
+	this-><ScreenBuffer+0x54> = 0x0;
 // LINE 626:
 _T3d:
 	__asm        jmp    near ptr 0x0049F46D;
@@ -1654,11 +1512,11 @@ unsigned long ScreenBuffer::FillRect(long nPaletteIndex, struct SparkalRect *rec
 	struct tagRECT rectFillTemp;
 
 // LINE 654:
-	this->mDDdesc.dwSize = 0x6c;
+	this-><ScreenBuffer+0x58> = 0x6c;
 // LINE 655:
-	this->mDDBltFx.dwSize = 0x64;
+	this-><ScreenBuffer+0xc4> = 0x64;
 // LINE 656:
-	this->mDDBltFx.dwFillColor = nPaletteIndex;
+	this-><ScreenBuffer+0x114> = nPaletteIndex;
 // LINE 658:
 	__asm        cmp    rectFill, 0;
 	__asm        je     _T61;
@@ -1854,13 +1712,13 @@ void ScreenBuffer::SetWindowRect(struct SparkalRect *rectWindow) {
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ecx+0xC], eax;
 // LINE 727:
-	this->rectDirectDrawBuffer.left = this->rectBuffer.left;
+	this-><ScreenBuffer+0x1c> = this->rectBuffer.left;
 // LINE 728:
-	this->rectDirectDrawBuffer.top = this->rectBuffer.top;
+	this-><ScreenBuffer+0x20> = this->rectBuffer.top;
 // LINE 729:
-	this->rectDirectDrawBuffer.right = this->rectBuffer.right;
+	this-><ScreenBuffer+0x24> = this->rectBuffer.right;
 // LINE 730:
-	this->rectDirectDrawBuffer.bottom = this->rectBuffer.bottom;
+	this-><ScreenBuffer+0x28> = this->rectBuffer.bottom;
 // LINE 732:
 	__asm        jmp    near ptr 0x0049F6FF;
 }

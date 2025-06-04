@@ -158,7 +158,7 @@ public:
 		kSearchRoof = 2,
 		kSearchAnywhereAtAll = 3,
 	};
-	struct cYObject::LocationInfo{ // not packed(0x8 bytes) TI: 0x374a
+	struct cYObject::LocationInfo{ // not packed(0x8 bytes) TI: 0x425a
 		enum cYObject::SearchType searchType;
 		short maxNormalLoiterers;
 	};
@@ -670,7 +670,7 @@ public:
 // Type: long;
 
 // Type: struct _DYOBJ_INST (forward reference);
-struct _DYOBJ_INST{ // packed(0x64 bytes) TI: 0x1deb
+struct _DYOBJ_INST{ // not packed(0x64 bytes) TI: 0x3681
 	struct _DYOBJ_INST *next;
 	struct _DYOBJ_INST *vnext;
 	void * __ptr32 mesh;
@@ -691,7 +691,7 @@ struct _DYOBJ_INST{ // packed(0x64 bytes) TI: 0x1deb
 // Type: void;
 
 // Type: struct _CELL_INFO (forward reference);
-struct _CELL_INFO{ // packed(0x18 bytes) TI: 0x1b03
+struct _CELL_INFO{ // not packed(0x18 bytes) TI: 0x3671
 	short flags;
 	short x;
 	short y;
@@ -710,7 +710,7 @@ struct Point2d{ // not packed(0x8 bytes) TI: 0x363e
 };
 
 // Type: struct _STOBJ_INST (forward reference);
-struct _STOBJ_INST{ // packed(0x10 bytes) TI: 0x193f
+struct _STOBJ_INST{ // not packed(0x10 bytes) TI: 0x365f
 	struct _STOBJ_INST *next;
 	void * __ptr32 mesh;
 	long user1;
@@ -780,7 +780,7 @@ struct TreeSim::StackElem{ // not packed(0x14 bytes) TI: 0x3614
 };
 
 // Type: struct Point2d (forward reference);
-struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
+struct Point2d{ // not packed(0x8 bytes) TI: 0x363e
 	int32_t x;
 	int32_t y;
 };
@@ -893,7 +893,7 @@ struct YObjLang::CheckForTrueParam{ // not packed(0x2 bytes) TI: 0x3580
 };
 
 // Type: struct _HELI_DATA (forward reference);
-struct _HELI_DATA{ // packed(0x32c bytes) TI: 0x2a68
+struct _HELI_DATA{ // not packed(0x32c bytes) TI: 0x390f
 	int32_t type;
 	int32_t state;
 	int32_t flags;
@@ -1118,7 +1118,7 @@ public:
 // Type: class YObjLang;
 // VTABLE: COPTER_D 0x005936e8
 class YObjLang : public Language
-{ // not packed(0x4 bytes) TI: 0x3560
+{ // not packed(0x4 bytes) TI: 0x484d
 public:
 	void YObjLang(class YObjLang&);
 	void YObjLang(unsigned char *);
@@ -1135,15 +1135,15 @@ public:
 		kIdle = 0,
 		kSetAnim = 1,
 		kAttr = 2,
-		kWhatsAhead = 3,
+		_kWhatsAhead = 3,
 		kWalk = 4,
 		_kRunPad = 5,
 		kSetBody = 6,
 		kRandom = 7,
-		kGetDirDistToFirst = 8,
-		kGetDirDistToPerson = 9,
-		kRoadDir = 10,
-		kSearchForDyn = 11,
+		_kGetDirDistToFirst = 8,
+		_kGetDirDistToPerson = 9,
+		_kRoadDir = 10,
+		_kSearchForDyn = 11,
 		kWalkToAndGrabOntoStackObject = 12,
 		kUpdateMyMission = 13,
 		kCheckForTrue = 14,
@@ -1173,16 +1173,16 @@ public:
 		kWalkToStackObject = 38,
 		kPutObjIntoTreeNum = 39,
 		kVisitOz = 40,
-		kNotUsed = 41,
+		_kNotUsed = 41,
 		kMakeMyMedevacVictimVisible = 42,
 		kMakeMyMedevacVictimInvisible = 43,
 		kMakeMeMasterOfStackObject = 44,
 		kMakeMyStackObjectVisitOz = 45,
-		kPutTotedMedVicOnMotherShip = 46,
-		kTakeAnyMedVicOffMotherShip = 47,
+		kPutTotedMedVicOnStackObject = 46,
+		kTakeAnyMedVicOffStackObject = 47,
 		kGetOnStackObject = 48,
 		kUpdateStackVictimToted = 49,
-		kGetNumSpacesOnMotherShip = 50,
+		kGetNumSpacesOnStackObject = 50,
 		kDropToted = 51,
 		kUpdateStackVictimPickedUp = 52,
 		kCloseToHeli = 53,
@@ -1191,9 +1191,12 @@ public:
 		kIsThisCellSafe = 56,
 		kPlaySound = 57,
 		kGetOnHeliIfHarnessRaised = 58,
-		kAmIOnMotherShip = 59,
+		kAmIOnHeli = 59,
 		kThrowFieryProjectile = 60,
-		kNumPrimitives = 61,
+		kTellStartingObjectTrueOrFalse = 61,
+		kPutMyCarInStack = 62,
+		kDoIHaveAMaster = 63,
+		kNumPrimitives = 64,
 	};
 public:
 	virtual short CountPrimitives() /* override */;
@@ -1605,7 +1608,7 @@ _T11d:
 // LINE 89:
 // Block start:
 	short currxn;
-	currxn = reinterpret_cast<uint16_t>(person->fPointers[3]);
+	currxn = person->fData[30];
 // LINE 90:
 	__asm        movsx  eax, currxn;
 	__asm        test   eax, eax;
@@ -1647,7 +1650,7 @@ _T194:
 _T1ae:
 	person->fLastInterrupt = cYObject::sSimTicks;
 // LINE 108:
-	person->fScale = dyhitter;
+	person->fPointers[1] = dyhitter;
 // LINE 109:
 	__asm        mov    eax, xtra_msg;
 	__asm        mov    ecx, person;
@@ -1676,7 +1679,7 @@ _T1ae:
 	__asm        add    esp, 0x14;
 // LINE 119:
 _T218:
-	reinterpret_cast<uint16_t>(person->fPointers[3]) = tree;
+	person->fData[30] = tree;
 // LINE 120:
 	__asm        jmp    near ptr 0x005552D7;
 
@@ -2427,7 +2430,7 @@ _T4d:
 	struct Point3d offset;
 	int32_t groundheight;
 	struct _DYOBJ_INST *master;
-	master = reinterpret_cast<uint32_t>(this->fDefinition.blue);
+	master = this->fPointers[0];
 // LINE 414:
 	__asm        mov    eax, newloc.x;
 	__asm        mov    ecx, master;
@@ -2693,7 +2696,7 @@ _T311:
 // LINE 458:
 // Block start:
 	struct _DYOBJ_INST *master;
-	master = reinterpret_cast<uint32_t>(this->fDefinition.blue);
+	master = this->fPointers[0];
 // LINE 459:
 	__asm        push   0x8C085;
 	__asm        push   0x5BC764;
@@ -5605,7 +5608,7 @@ _Tbb:
 	struct _DYOBJ_INST *obj;
 	int32_t y;
 	short delta_y;
-	obj = reinterpret_cast<uint32_t>(this->fDefinition.blue);
+	obj = this->fPointers[0];
 // LINE 1068:
 	__asm        cmp    obj, 0;
 	__asm        jne    _Tf2;
@@ -5860,7 +5863,7 @@ _Tb1:
 // LINE 1121:
 	__asm        jmp    _T483;
 // LINE 1123:
-	destobj = this-><cYObject+0x140>;
+	destobj = reinterpret_cast<uint32_t>(this->fIterations);
 // LINE 1124:
 	__asm        cmp    destobj, 0;
 	__asm        jne    _T102;
@@ -7003,7 +7006,7 @@ enum TreeSim::ReturnCode cYObject::iGosubToInitbhav(struct TreeSim::StackElem *e
 // LINE 1368:
 	result = 0xffffffff;
 // LINE 1370:
-	id = *reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&this->fPointers[2]) + 2);
+	id = this->fData[29];
 // LINE 1371:
 	__asm        jmp    near ptr 0x005590C8;
 
@@ -7832,7 +7835,7 @@ enum TreeSim::ReturnCode cYObject::iTurnFromLastHitter(struct TreeSim::StackElem
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T3f:
-	None = this-><cYObject+0x140>;
+	None = reinterpret_cast<uint32_t>(this->fIterations);
 // LINE 1458:
 	__asm        jmp    near ptr 0x00559C18;
 
@@ -7881,7 +7884,7 @@ enum TreeSim::ReturnCode cYObject::iTurnTowardsLastHitter(struct TreeSim::StackE
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T3f:
-	None = this-><cYObject+0x140>;
+	None = reinterpret_cast<uint32_t>(this->fIterations);
 // LINE 1468:
 	__asm        jmp    near ptr 0x00559CB5;
 

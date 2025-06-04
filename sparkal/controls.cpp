@@ -910,7 +910,7 @@ struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 // Type: class SliderWindow;
 // VTABLE: COPTER_D 0x00591ee8
 class SliderWindow : public GraphicWindow
-{ // packed(0xb4 bytes) TI: 0x13bc
+{ // packed(0xb4 bytes) TI: 0x2142
 	enum SliderWindowDirection {
 		nSliderWindowDirectionHorizontal = 0,
 		nSliderWindowDirectionVertical = 1,

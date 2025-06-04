@@ -118,7 +118,7 @@ struct ClearWindowsSystemPalette::__unnamed{ // packed(0x404 bytes) TI: 0x2314
 
 // Type: class SparkalPalette;
 // VTABLE: COPTER_D 0x005910f8
-class SparkalPalette{ // packed(0x10 bytes) TI: 0x1f91
+class SparkalPalette{ // packed(0x10 bytes) TI: 0x47c7
 public:
 	struct SparkalColor *pColors;
 	long lColors;
@@ -126,17 +126,22 @@ public:
 	void SparkalPalette(struct SparkalColor*, int32_t, unsigned long);
 	void SparkalPalette();
 	virtual void ~SparkalPalette(); // vtable+0x0
-	void GetRGBValue(int32_t, struct SparkalColor&);
-	void GetNearestIndex(struct SparkalColor&, int32_t&);
-	void FadeToWhite(long);
-	void FadeToBlack(long);
+	virtual void GetRGBValue(int32_t, struct SparkalColor&); // vtable+0x4
+	virtual void GetNearestIndex(struct SparkalColor&, int32_t&); // vtable+0x8
+	virtual void FadeToWhite(long); // vtable+0xc
+	virtual void FadeToBlack(long); // vtable+0x10
+	virtual void FadeToPalette(struct SparkalColor, long, long); // vtable+0x14
+	// calltype: NearC
+	static void FadeToPalette(struct SparkalColor, struct SparkalColor*, long, long);
 	void FadeToRGB(struct SparkalColor&, long);
-	void ImplementNewPalette(struct SparkalColor*);
+	// calltype: NearC
+	static void SetSystemPaletteEntriesToRGB(struct SparkalColor&);
+	virtual void ImplementNewPalette(struct SparkalColor*); // vtable+0x18
 };
 
 
 
-// Contribution: 1:000953b0-00096b4b Module: 18, 16 byte alignment, code, execute, read, 
+// Contribution: 1:000953b0-00096b4b Module: 18, 16 byte alignment, code, execute, read,
 // FUNCTION: COPTER_D 0x004963b0
 void SparkalPalette::SparkalPalette(struct SparkalColor *pNewColors, int32_t bNewOwnColors, unsigned long lNewColors) {
 
@@ -2037,22 +2042,22 @@ _T110:
 
 
 
-// Contribution: 1:00096b50-00096b78 Module: 18, 16 byte alignment, code, (comdat), execute, read, 
+// Contribution: 1:00096b50-00096b78 Module: 18, 16 byte alignment, code, (comdat), execute, read,
 
 
-// Contribution: 1:00096b80-00096bb8 Module: 18, 16 byte alignment, code, (comdat), execute, read, 
+// Contribution: 1:00096b80-00096bb8 Module: 18, 16 byte alignment, code, (comdat), execute, read,
 // FUNCTION: COPTER_D 0x00497b80
 // SparkalPalette::`scalar deleting destructor'
 
 
 
-// Contribution: 1:00096bc0-00096bfd Module: 18, 16 byte alignment, code, (comdat), execute, read, 
+// Contribution: 1:00096bc0-00096bfd Module: 18, 16 byte alignment, code, (comdat), execute, read,
 // FUNCTION: COPTER_D 0x00497bc0
 // CopterSparkalPalette::`scalar deleting destructor'
 
 
 
-// Contribution: 2:000020f8-00002113 Module: 18, 8 byte alignment, initialized_data, (comdat), read, 
+// Contribution: 2:000020f8-00002113 Module: 18, 8 byte alignment, initialized_data, (comdat), read,
 // vftable for SparkalPalette @ 0x005910f8
 //   00: SparkalPalette::`scalar deleting destructor' @ 0x00497b80
 //   01: SparkalPalette::GetRGBValue @ 0x00497b50
@@ -2065,7 +2070,7 @@ _T110:
 
 
 
-// Contribution: 2:00002118-00002133 Module: 18, 8 byte alignment, initialized_data, (comdat), read, 
+// Contribution: 2:00002118-00002133 Module: 18, 8 byte alignment, initialized_data, (comdat), read,
 // vftable for CopterSparkalPalette @ 0x00591118
 //   00: CopterSparkalPalette::`scalar deleting destructor' @ 0x00497bc0
 //   01: SparkalPalette::GetRGBValue @ 0x00497b50
@@ -2078,4 +2083,4 @@ _T110:
 
 
 
-// Contribution: 3:000031c8-00003207 Module: 18, 4 byte alignment, initialized_data, read, write, 
+// Contribution: 3:000031c8-00003207 Module: 18, 4 byte alignment, initialized_data, read, write,

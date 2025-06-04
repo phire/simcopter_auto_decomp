@@ -490,7 +490,7 @@ _T24:
 	__asm        jmp    _T21;
 // LINE 182:
 _T3e:
-	reinterpret_cast<uint32_t>(this->dyObj.flags) = 0x0;
+	this->dyObj.mesh = 0x0;
 // LINE 183:
 	this->beamTimer = 0x0;
 // LINE 184:
@@ -509,14 +509,14 @@ _T3e:
 	__asm        cmp    PlaneClass::sPlaneModelSet, 0;
 	__asm        jne    _Tb0;
 // LINE 198:
-	this->dyObj.next = 0x12e;
+	this->planeModel = 0x12e;
 // LINE 199:
 	PlaneClass::sPlaneModelSet = 0x1;
 // LINE 201:
 	__asm        jmp    _Tba;
 // LINE 203:
 _Tb0:
-	this->dyObj.next = 0x17c;
+	this->planeModel = 0x17c;
 // LINE 205:
 _Tba:
 	__asm        jmp    near ptr 0x0052B20C;
@@ -943,7 +943,7 @@ void PlaneClass::Reset() {
 // LINE 701:
 	this->currentCell.y = 0xffffffff;
 // LINE 702:
-	this->planeModel = 0x0;
+	this->missileHits = 0x0;
 // LINE 704:
 	__asm        jmp    near ptr 0x0052B6CB;
 }
@@ -2799,7 +2799,7 @@ _Ta3:
 	__asm        cmp    eax, [ecx];
 	__asm        jne    _Td0;
 // LINE 1846:
-	dyptrptr-> = this->dyObj.vnext;
+	dyptrptr-> = this->dyObj.next;
 // LINE 1848:
 	__asm        jmp    _T10f;
 // LINE 1851:
@@ -2874,7 +2874,7 @@ _T93:
 	__asm        jmp    _T98;
 // LINE 1882:
 _T98:
-	this->dyObj.vnext = cellPointer->dyptr;
+	this->dyObj.next = cellPointer->dyptr;
 // LINE 1883:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x58;
@@ -3562,7 +3562,7 @@ _T359:
 	__asm        jne    _T377;
 // LINE 2210:
 _T36d:
-	this->planeModel = 0x0;
+	this->missileHits = 0x0;
 // LINE 2213:
 _T377:
 	__asm        jmp    _T381;
@@ -3601,7 +3601,7 @@ int32_t PlaneClass::InitializeInstance(long mapx, long mapy, int32_t instanceID)
 	struct VRObjInfo objectInfo;
 
 // LINE 2272:
-	reinterpret_cast<uint32_t>(this->dyObj.flags) = 0x0;
+	this->dyObj.mesh = 0x0;
 // LINE 2294:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x54];
@@ -3627,13 +3627,13 @@ _T53:
 	__asm        jmp    _T1bb;
 // LINE 2305:
 _T5a:
-	reinterpret_cast<uint32_t>(this->dyObj.flags) = object;
+	this->dyObj.mesh = object;
 // LINE 2363:
 	__asm        mov    eax, instanceID;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x66], ax;
 // LINE 2364:
-	reinterpret_cast<uint16_t>(this->dyObj.radius) = 0x101;
+	this->dyObj.flags = 0x101;
 // LINE 2365:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x7C;
@@ -3648,7 +3648,7 @@ _T5a:
 	__asm        call   0x004D8859;
 	__asm        add    esp, 8;
 // LINE 2368:
-	this->dyObj.height = objectInfo.Radius;
+	this->dyObj.radius = objectInfo.Radius;
 // LINE 2389:
 	this->beamTimer = 0x3c0000;
 // LINE 2390:
@@ -3664,7 +3664,7 @@ _T5a:
 // LINE 2395:
 	this->shieldCtr = 0x1;
 // LINE 2396:
-	this->planeModel = 0x0;
+	this->missileHits = 0x0;
 // LINE 2397:
 	this->smokeTime = 0xb40000;
 // LINE 2401:
@@ -4266,7 +4266,7 @@ _T47:
 // LINE 2825:
 	p->shieldCtr = PlaneClass::lsPlane.shieldCtr;
 // LINE 2826:
-	p->planeModel = PlaneClass::lsPlane.missileHits;
+	p->missileHits = PlaneClass::lsPlane.missileHits;
 // LINE 2827:
 	__asm        mov    eax, 0x62B6E8;
 	__asm        add    eax, 0x70;

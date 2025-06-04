@@ -256,69 +256,7 @@ protected:
 // Type: uint32_t;
 
 // Type: class CBackBuffer (forward reference);
-// VTABLE: COPTER_D 0x00590808
-class CBackBuffer : public IBackBuffer
-{ // packed(0x134 bytes) TI: 0x18f5
-public:
-	void CBackBuffer(long, long, const struct SparkalColor*);
-	void CBackBuffer(char *);
-	void CBackBuffer();
-	virtual void InitializeMemberVariables(); // vtable+0x28
-	void ~CBackBuffer();
-	unsigned long Load();
-	virtual unsigned long Lock() /* override */;
-	virtual unsigned long Unlock() /* override */;
-	// calltype: NearC
-	static int32_t GetPaletteFromImage(char *, struct SparkalColor*);
-	virtual unsigned long Swap(class CSparkalWindow*, long, long) /* override */;
-	virtual unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long) /* override */;
-	virtual unsigned long StretchRect(class CSparkalWindow*, long, long, long, long, long, long, long, long) /* override */;
-	virtual unsigned long Compose(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&); // vtable+0x2c
-	virtual unsigned long Compose(class IFlatImage*, long, long, long, long, long, long) /* override */;
-	virtual unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long) /* override */;
-	virtual unsigned long StretchCompose(class IFlatImage*, const struct SparkalRect&, const struct SparkalRect&); // vtable+0x30
-	virtual unsigned long Duplicate(class CBackBuffer*, int32_t); // vtable+0x34
-	virtual unsigned long ComposeNoClip(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&); // vtable+0x38
-	virtual unsigned long ComposeNoClip(class IFlatImage*, long, long, long, long, long, long); // vtable+0x3c
-	void UpdatePalette(long, long, const struct SparkalColor*);
-	virtual void SetTransparentColor(int32_t, long) /* override */;
-	unsigned long GetTransparentColor(long&);
-	unsigned long SetFont(class MFont*);
-	void SetFontColor(struct SparkalColor&);
-	void SetFontIndex(int32_t);
-	void SetColor(struct SparkalColor&);
-	void SetColorIndex(int32_t);
-	virtual unsigned long DrawLine(long, long, long, long, long); // vtable+0x40
-	virtual unsigned long FillRect(long, const struct SparkalRect*); // vtable+0x44
-	virtual unsigned long DrawBufferText(char *, long, unsigned long, const class MRect&, class MFont*); // vtable+0x48
-	virtual unsigned long DrawBufferText(char *, unsigned long, long *, long *, long *, long *, class MFont*); // vtable+0x4c
-	virtual unsigned long DrawLineUnclipped(long, long, long, long, long); // vtable+0x50
-	virtual unsigned long DrawLineClipped(long, long, long, long, long); // vtable+0x54
-	virtual unsigned long DrawRectangleOutline(const struct SparkalRect&, long); // vtable+0x58
-	virtual unsigned long DrawRectangleOutlineUnclipped(const struct SparkalRect&, long); // vtable+0x5c
-	long IsLost();
-	long Restore();
-	char * szFilePath;
-	struct tagRECT rectDirectDrawBuffer;
-protected:
-	int32_t bSurfacePrimary;
-	int32_t bSurfaceTransparent;
-	class MFont *mFont;
-	struct SparkalColor colorFontCurrent;
-	struct SparkalColor colorCurrent;
-	int32_t nColorIndexFontCurrent;
-	int32_t nColorIndexCurrent;
-	int32_t nColorIndexTransparent;
-	struct IDirectDrawSurface *mpFrontSurface;
-	struct IDirectDrawSurface *mpBackSurface;
-	struct IDirectDrawPalette *mpPalette;
-	struct _DDSURFACEDESC mDDdesc;
-	struct _DDBLTFX mDDBltFx;
-	void * __ptr32 hPen;
-	int32_t nPenThickness;
-	struct SparkalColor colorPenCurrent;
-	virtual struct IDirectDrawSurface* GetDDSurface(); // vtable+0x60
-};
+// CBackBuffer Class implementation not found
 
 // Type: class MRect;
 class MRect : public SparkalRect

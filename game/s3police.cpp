@@ -261,17 +261,12 @@ public:
 // Type: class EmergencyVehicleClass;
 // VTABLE: COPTER_D 0x005934c0
 class EmergencyVehicleClass : public AutomobileClass
-{ // packed(0x294 bytes) TI: 0x2f5b
+{ // packed(0x2a0 bytes) TI: 0x47d8
 	enum /* __unnamed */ {
 		MAXIMUM_DISTANCE_FROM_BASE = 7,
 		MAXIMUM_TIME_TO_EMERGENCY = 3932160,
 		AMBULANCE_CAPACITY = 2,
 	};
-public:
-	static int32_t fireSirenDist;
-	static int32_t policeSirenDist;
-	static int32_t ambSirenDist;
-	static int32_t fireHoseDist;
 protected:
 	struct _GridCoordinates baseLocation;
 	struct _GridCoordinates emergencyLocation;
@@ -291,18 +286,23 @@ public:
 	void EmergencyVehicleClass();
 	virtual void ~EmergencyVehicleClass() /* override */;
 	enum EmergencyLevel GetEmergencyState();
-	void InitializePlacedVehicleForDispatch(struct Goal, struct Goal, struct Goal, struct Goal, struct _GridCoordinates, struct Goal, enum EmergencyType);
-	void InitializeStationVehicleForDispatch(int32_t, struct Goal, struct Goal, struct _GridCoordinates, struct Goal, struct Goal, struct _GridCoordinates, int32_t, struct Goal, enum EmergencyType);
+	void InitializePlacedVehicleForDispatch(struct Goal, struct Goal, struct Goal, struct Goal, struct _GridCoordinates, struct Goal, enum EmergencyType, enum EmergencyLevel);
+	void InitializeStationVehicleForDispatch(int32_t, struct Goal, struct Goal, struct _GridCoordinates, struct Goal, struct Goal, struct _GridCoordinates, int32_t, struct Goal, enum EmergencyType, enum EmergencyLevel);
 	// calltype: NearC
 	static int32_t AreThereMoreSeats(struct _DYOBJ_INST*);
 	// calltype: NearC
 	static void FillSeat(struct _DYOBJ_INST*);
 	// calltype: NearC
-	static void FinishedCarMission(struct _DYOBJ_INST*, int32_t);
+	static int32_t S3UpdateCar(int32_t, int32_t);
+	// calltype: NearC
+	static struct _DYOBJ_INST* S3GetCar(int32_t);
+	void CancelEmergencyDispatch();
 protected:
-	virtual void Reset(); // vtable+0x18
+	virtual void Reset(); // vtable+0x24
 	virtual void AdjustSpeed() /* override */;
 	virtual enum TurnIndex PickTurnDir(struct Goal*) /* override */;
+	virtual void SetSaveData(struct _AUTO_LOAD_SAVE*) /* override */;
+	virtual void LoadSaveData(struct _AUTO_LOAD_SAVE*) /* override */;
 	void ArriveOnScene();
 	void UnLinkIconFromCell(const struct _GridCoordinates);
 	void LinkIconToCell(const struct _GridCoordinates);
@@ -311,6 +311,7 @@ protected:
 	void BuildPath(struct _RGIndex, struct _RGIndex);
 	void TurnOnStrobe();
 	void TurnOffStrobe();
+	int32_t UpdateCar(int32_t);
 	virtual void BeamToWithinCameraRange() /* override */;
 public:
 	class EmergencyVehicleClass operator=(const class EmergencyVehicleClass&);
@@ -318,7 +319,17 @@ public:
 
 // Type: class AutomobileClass;
 // VTABLE: COPTER_D 0x00592d98
-class AutomobileClass{ // packed(0x10e bytes) TI: 0x2fac
+class AutomobileClass{ // packed(0x11a bytes) TI: 0x4880
+	enum CarType {
+		kCarAmbulance = 0,
+		kCarCop = 1,
+		kCarFiretruck = 2,
+		kCarCriminal = 3,
+	};
+	enum AutoMessageID {
+		AM_NO_MESSAGE = 0,
+		AM_CANCEL_AUTO_MISSION = 1,
+	};
 	enum /* __unnamed */ {
 		CAR_TYPES = 7,
 		PERCENTAGE_OF_AUTO1 = 10,
@@ -374,13 +385,11 @@ class AutomobileClass{ // packed(0x10e bytes) TI: 0x2fac
 		HW_EDGEOFF_LANE2 = 131072,
 		HW_HEIGHT = 2031616,
 	};
-	enum PersonState {
-		PS_IN_VEHICLE = 0,
-		PS_OUT_OF_VEHICLE = 1,
-		PS_BACK_IN_VEHICLE = 2,
-		PS_GOT_AWAY = 3,
-		PS_MISSION_OVER = 4,
-	};
+public:
+	static int32_t fireSirenDist;
+	static int32_t policeSirenDist;
+	static int32_t ambSirenDist;
+	static int32_t fireHoseDist;
 	enum /* __unnamed */ {
 		CAR_RADIUS = 327680,
 		COLLISION_SPACE = 655360,
@@ -397,20 +406,22 @@ class AutomobileClass{ // packed(0x10e bytes) TI: 0x2fac
 	enum Flags {
 		AUTO_INITIALIZED = 1,
 		AUTO_PLACED = 2,
-		AUTO_TURNING = 4,
-		AUTO_MAKING_UTURN = 8,
-		AUTO_PULL_OVER = 16,
-		AUTO_PULLING_OVER = 32,
-		AUTO_PULLED_OVER = 64,
-		AUTO_AT_DEAD_END = 128,
-		AUTO_IN_INTERSECTION = 256,
-		AUTO_ON_FIRE = 512,
-		AUTO_JAMMED = 1024,
-		AUTO_PULLING_OUT = 2048,
-		AUTO_RIGHT_OF_WAY = 4096,
-		AUTO_ON_HIWAY = 8192,
+		AUTO_NEEDS_TO_PULL_OVER = 4,
+		AUTO_PULL_OVER = 8,
+		AUTO_PULLING_OVER = 16,
+		AUTO_PULLED_OVER = 32,
+		AUTO_PULLING_OUT = 64,
+		AUTO_IN_INTERSECTION = 128,
+		AUTO_ON_FIRE = 256,
+		AUTO_JAMMED = 512,
+		AUTO_RIGHT_OF_WAY = 1024,
+		AUTO_ON_HIWAY = 2048,
+		AUTO_SPEEDER = 4096,
+		AUTO_SPEEDER_DONE = 8192,
+		AUTO_UTURN = 16384,
 	};
 public:
+	long carModel;
 	int32_t flags;
 	struct _DYOBJ_INST autoDynomitor;
 	struct Goal goal;
@@ -426,6 +437,7 @@ private:
 	int32_t beamTimer;
 	int32_t m_cellBaseY;
 	int32_t timePulledOver;
+	int32_t hornSoundId;
 	enum DirectionTypes hiwaydir;
 	struct _GridCoordinates currentLocation;
 	struct _GridCoordinates nextLocation;
@@ -434,19 +446,20 @@ private:
 	struct _GridCoordinates eastCell;
 	struct _GridCoordinates westCell;
 protected:
-	long carModel;
 	int32_t speed;
 	enum DirIndex2 prevDir;
 	enum TurnIndex turnIndex;
 	int32_t currDist;
 	int32_t legOfTurn;
 	struct Point3d *pDirVector;
+	int32_t personDone;
+	int32_t personState;
+	int32_t personTimer;
 	int32_t timeToLive;
 	int32_t fireTime;
 	long fireSeq;
 	long missionId;
 	struct _CELL_INFO *cptr;
-	enum AutomobileClass::PersonState personState;
 	int32_t spotlightHitCounter;
 	int32_t IsCarPersistant();
 	int32_t CanCarBeamToHiwayTile(unsigned short);
@@ -472,6 +485,12 @@ public:
 	static void MissionCancel(long);
 	// calltype: NearC
 	static void SetAllHeadlights(int32_t);
+	// calltype: NearC
+	static int32_t S3AutoMessage(short, short);
+	// calltype: NearC
+	static int32_t MIFFLoad(void * __ptr32);
+	// calltype: NearC
+	static int32_t MIFFSave(void * __ptr32);
 	void HitDispatch(long, struct _DYOBJ_INST*, long, long);
 	int32_t AmIABadGuy();
 	int32_t Initialize(int32_t);
@@ -479,17 +498,22 @@ public:
 	void IveBeenMegaphoned(long);
 	void StartFire(long);
 	void StartJam(long);
-	void PullOver();
+	virtual void PullOver(short); // vtable+0x4
 	void PullOut();
 	int32_t CanIPullOut();
+	int32_t CanIPullOver();
+	void DoAUTurn();
+	long GetCarModel();
+	// calltype: NearC
+	static struct _DYOBJ_INST* GetClosestCar(int32_t, int32_t, int32_t);
 protected:
 	void Itterate();
-	virtual void AdjustSpeed(); // vtable+0x4
+	virtual void AdjustSpeed(); // vtable+0x8
 	void Reset();
-	virtual enum TurnIndex PickTurnDir(struct Goal*); // vtable+0x8
+	virtual enum TurnIndex PickTurnDir(struct Goal*); // vtable+0xc
 	void UnPlaceCar();
 	void PullOverCiviliansInWay();
-	virtual void ItterateFSM(); // vtable+0xc
+	virtual void ItterateFSM(); // vtable+0x10
 	int32_t InitializeInstance(int32_t);
 	void LinkToCell(const struct _GridCoordinates&);
 	int32_t AreCarsHeadOn(struct Point3d*);
@@ -497,6 +521,11 @@ protected:
 	int32_t IsCarOutOfCameraRange();
 	void TurnOffHeadlight();
 	void TurnOnHeadlight();
+	int32_t AutoMessage(short);
+	int32_t PlacePerson(int32_t, int32_t);
+	virtual void SetSaveData(struct _AUTO_LOAD_SAVE*); // vtable+0x14
+	virtual void LoadSaveData(struct _AUTO_LOAD_SAVE*); // vtable+0x18
+	void HonkHorn();
 	void SetHiwayDirection(unsigned short);
 	int32_t DoHiwayTilesConnect(unsigned short, unsigned short, enum DirectionTypes);
 	void AdjustCurrentHiwayPosition();
@@ -508,9 +537,10 @@ protected:
 	void TurnRight();
 	void MoveForwardOnHiway();
 	void DoDiagonalRoadFixup();
-	virtual void BeamToWithinCameraRange(); // vtable+0x10
-	virtual int32_t BeamToLocation(const struct _GridCoordinates&); // vtable+0x14
+	virtual void BeamToWithinCameraRange(); // vtable+0x1c
+	virtual int32_t BeamToLocation(const struct _GridCoordinates&); // vtable+0x20
 	void MoveAuto(int32_t);
+	void ChangeAutoColor();
 private:
 	void UnlinkFromCell(const struct _GridCoordinates&);
 	void TransitionBetweenGoals();
@@ -518,6 +548,8 @@ private:
 	void RunJamState();
 	void IveBeenSpotlighted(struct _DYOBJ_INST*);
 	int32_t IsThisAnEmergencyVehicle();
+	void DoPullOverStuff(int32_t);
+	int32_t CanIDoAUTurn();
 public:
 	class AutomobileClass operator=(const class AutomobileClass&);
 };
@@ -552,9 +584,9 @@ void PoliceCarClass::PoliceCarClass() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593310;
 // LINE 96:
-	this->flags = 0x11d;
+	this->carModel = 0x11d;
 // LINE 97:
-	this-><PoliceCarClass+0x31e> = 0x0;
+	this->foundRoad = 0x0;
 // LINE 98:
 	__asm        jmp    near ptr 0x00536E69;
 
@@ -687,9 +719,9 @@ _T13e:
 	__asm        jmp    _T1e4;
 // LINE 169:
 _T145:
-	*reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&youveWonABrandNewCar->dispatchIcon.loc.x) + 2) = 0x0;
+	youveWonABrandNewCar->dispatchIcon.user1 = 0x0;
 // LINE 170:
-	reinterpret_cast<uint16_t>(youveWonABrandNewCar->dispatchIcon.loc.x) = 0x21;
+	youveWonABrandNewCar->dispatchIcon.flags = 0x21;
 // LINE 171:
 	__asm        lea    eax, oinfo.Faces;
 	__asm        push   eax;
@@ -699,7 +731,7 @@ _T145:
 	__asm        call   0x004D8859;
 	__asm        add    esp, 8;
 // LINE 172:
-	youveWonABrandNewCar->dispatchIcon.loc.y = oinfo.Radius;
+	youveWonABrandNewCar->dispatchIcon.radius = oinfo.Radius;
 // LINE 173:
 	__asm        push   0;
 	__asm        mov    eax, youveWonABrandNewCar;
@@ -770,7 +802,7 @@ void PoliceCarClass::ItterateFSM() {
 	struct _GridCoordinates badGuyLoc;
 
 // LINE 248:
-	this-><PoliceCarClass+0x31e> = 0x0;
+	this->foundRoad = 0x0;
 // LINE 250:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x294];
@@ -820,9 +852,9 @@ _T4d:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+8];
 // LINE 269:
-	this->currDestGoal.pRGV = 0x2;
+	this->emergencyState = 0x2;
 // LINE 270:
-	this->dispatchIcon.vnext = 0x3;
+	this->emergencyType = 0x3;
 // LINE 271:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::ItterateFSM;
@@ -830,7 +862,7 @@ _T4d:
 	__asm        jmp    _T96f;
 // LINE 276:
 _Td4:
-	reinterpret_cast<uint16_t>(badGuyLoc.x) = *reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&this->goal.edgeIndex) + 2);
+	reinterpret_cast<uint16_t>(badGuyLoc.x) = reinterpret_cast<uint16_t>(this->goal.gridLoc.x);
 // LINE 277:
 	__asm        lea    eax, badGuyLoc.x;
 	__asm        push   eax;
@@ -852,13 +884,13 @@ _Td4:
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::TurnOnStrobe;
 // LINE 282:
-	this->currDestGoal.pRGV = 0x6;
+	this->emergencyState = 0x6;
 // LINE 283:
-	*reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&this->numberOfSeats) + 2) = 0x0;
+	this->dispatchPathIndex = 0x0;
 // LINE 286:
 	mp.op = 0xa;
 // LINE 287:
-	mp.id = reinterpret_cast<uint32_t>(this->baseLocation.x);
+	mp.id = this->missionId;
 // LINE 288:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x322];
@@ -941,7 +973,7 @@ _T22b:
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::PositionIcon;
 // LINE 320:
-	reinterpret_cast<uint16_t>(badGuyLoc.x) = *reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&this->goal.edgeIndex) + 2);
+	reinterpret_cast<uint16_t>(badGuyLoc.x) = reinterpret_cast<uint16_t>(this->goal.gridLoc.x);
 // LINE 321:
 	__asm        lea    eax, badGuyLoc.x;
 	__asm        push   eax;
@@ -1005,11 +1037,11 @@ _T2a0:
 	__asm        test   eax, eax;
 	__asm        je     _T33b;
 // LINE 338:
-	this->currDestGoal.pRGV = 0x5;
+	this->emergencyState = 0x5;
 // LINE 339:
-	this->fireTime = 0x0;
+	this->personDone = 0x0;
 // LINE 340:
-	this->missionId = 0xf00000;
+	this->personTimer = 0xf00000;
 // LINE 341:
 	__asm        jmp    _T96f;
 // LINE 343:
@@ -1041,15 +1073,15 @@ _T379:
 	__asm        jmp    _T538;
 // LINE 356:
 _T37e:
-	reinterpret_cast<uint16_t>(oldemergencyloc.x) = this->dispatchIcon.next;
+	reinterpret_cast<uint16_t>(oldemergencyloc.x) = reinterpret_cast<uint16_t>(this->emergencyLocation.x);
 // LINE 358:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x322], 0;
 	__asm        je     _T3bc;
 // LINE 360:
-	this->dispatchIcon.next = reinterpret_cast<uint16_t>(badGuyLoc.x);
+	reinterpret_cast<uint16_t>(this->emergencyLocation.x) = reinterpret_cast<uint16_t>(badGuyLoc.x);
 // LINE 361:
-	this-><PoliceCarClass+0x31e> = 0x1;
+	this->foundRoad = 0x1;
 // LINE 363:
 	__asm        jmp    _T3cd;
 // LINE 365:
@@ -1245,7 +1277,7 @@ _T5cb:
 	__asm        mov    eax, this;
 	__asm        and    dword ptr [eax+8], 0xFFFFFFFB;
 // LINE 417:
-	reinterpret_cast<uint16_t>(badGuyLoc.x) = *reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&this->goal.edgeIndex) + 2);
+	reinterpret_cast<uint16_t>(badGuyLoc.x) = reinterpret_cast<uint16_t>(this->goal.gridLoc.x);
 // LINE 418:
 	__asm        lea    eax, badGuyLoc.x;
 	__asm        push   eax;
@@ -1265,18 +1297,18 @@ _T5cb:
 	__asm        test   eax, eax;
 	__asm        je     _T66a;
 // LINE 424:
-	this->currDestGoal.pRGV = 0x5;
+	this->emergencyState = 0x5;
 // LINE 425:
-	this->fireTime = 0x0;
+	this->personDone = 0x0;
 // LINE 426:
-	this->missionId = 0xf00000;
+	this->personTimer = 0xf00000;
 // LINE 428:
 	__asm        jmp    _T684;
 // LINE 432:
 _T66a:
-	this->missionId = 0x0;
+	this->personTimer = 0x0;
 // LINE 433:
-	this->currDestGoal.pRGV = 0x1;
+	this->emergencyState = 0x1;
 // LINE 436:
 _T684:
 	__asm        jmp    _T6b8;
@@ -1285,11 +1317,11 @@ _T689:
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::TurnOffStrobe;
 // LINE 440:
-	this->currDestGoal.pRGV = 0x1;
+	this->emergencyState = 0x1;
 // LINE 441:
-	this->fireTime = 0x0;
+	this->personDone = 0x0;
 // LINE 442:
-	this->missionId = 0x12c0000;
+	this->personTimer = 0x12c0000;
 // LINE 445:
 _T6b8:
 	__asm        jmp    _T974;
@@ -1395,7 +1427,7 @@ _T7ac:
 	__asm        mov    ecx, gHospitals;
 	__asm        call   Station::DecrementQuantityOfVehicleDispatched;
 // LINE 491:
-	this->currDestGoal.pRGV = 0x2;
+	this->emergencyState = 0x2;
 // LINE 492:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -1423,12 +1455,12 @@ _T842:
 	__asm        jmp    _T854;
 // LINE 503:
 _T847:
-	this->currDestGoal.pRGV = 0x1;
+	this->emergencyState = 0x1;
 // LINE 506:
 _T854:
 	__asm        jmp    _T96f;
 // LINE 509:
-	reinterpret_cast<uint16_t>(badGuyLoc.x) = *reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&this->goal.edgeIndex) + 2);
+	reinterpret_cast<uint16_t>(badGuyLoc.x) = reinterpret_cast<uint16_t>(this->goal.gridLoc.x);
 // LINE 510:
 	__asm        lea    eax, badGuyLoc.x;
 	__asm        push   eax;
@@ -1484,7 +1516,7 @@ _T8ee:
 	__asm        jmp    _T910;
 // LINE 527:
 _T903:
-	this->currDestGoal.pRGV = 0x2;
+	this->emergencyState = 0x2;
 // LINE 529:
 _T910:
 	__asm        jmp    _T96f;
@@ -1533,7 +1565,7 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal *pGoal) {
 // Block start:
 	struct _RGIndex destVertex;
 	struct _RGIndex startVertex;
-	reinterpret_cast<uint16_t>(startLoc.x) = *reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&this->goal.edgeIndex) + 2);
+	reinterpret_cast<uint16_t>(startLoc.x) = reinterpret_cast<uint16_t>(this->goal.gridLoc.x);
 // LINE 555:
 	startVertex.x = startLoc.x;
 // LINE 556:
@@ -1736,10 +1768,7 @@ _T28d:
 	__asm        jmp    _T2ce;
 // LINE 595:
 _T2ce:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x2A0];
-	__asm        mov    al, [eax];
-	__asm        mov    destVertex.x, al;
+	destVertex.x = this->currDestGoal.pRGV->x;
 // LINE 596:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x2A0];
@@ -1769,7 +1798,7 @@ _T2ce:
 	__asm        cmp    eax, ecx;
 	__asm        jne    _T34d;
 // LINE 602:
-	this->prevDir = 0x0;
+	this->speed = 0x0;
 // LINE 603:
 	__asm        mov    eax, pGoal;
 	__asm        push   eax;
@@ -1795,7 +1824,7 @@ _T34d:
 	__asm        call   EmergencyVehicleClass::BuildPath;
 // LINE 613:
 _T36f:
-	*reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&this->numberOfSeats) + 2) = 0x0;
+	this->dispatchPathIndex = 0x0;
 // LINE 615:
 // Block end:
 	__asm        jmp    _T3a6;
@@ -1922,7 +1951,7 @@ _Te4:
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        je     _T110;
 // LINE 655:
-	this->dispatchIcon.next = reinterpret_cast<uint16_t>(loc.x);
+	reinterpret_cast<uint16_t>(this->emergencyLocation.x) = reinterpret_cast<uint16_t>(loc.x);
 // LINE 656:
 	__asm        mov    dword ptr [ebp-0x18], 1;
 	__asm        jmp    near ptr 0x00537F37;
@@ -2123,47 +2152,23 @@ void PoliceCarClass::SetSaveData(struct _AUTO_LOAD_SAVE *sd) {
 	__asm        rep movsd;
 	__asm        movsw;
 // LINE 733:
-	sd->p.foundRoad = this-><PoliceCarClass+0x31e>;
+	sd->p.foundRoad = this->foundRoad;
 // LINE 735:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 2;
 	__asm        je     _Tf7;
 // LINE 739:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x2A0];
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, sd;
-	__asm        mov    [ecx+0x2E6], al;
+	sd->p.currpRGVFixup.x = this->currDestGoal.pRGV->x;
 // LINE 740:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x2A0];
-	__asm        mov    al, [eax+1];
-	__asm        mov    ecx, sd;
-	__asm        mov    [ecx+0x2E7], al;
+	sd->p.currpRGVFixup.y = this->currDestGoal.pRGV->y;
 // LINE 741:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x2CA];
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, sd;
-	__asm        mov    [ecx+0x312], al;
+	sd->p.dest1pRGVFixup.x = this->destGoal1.pRGV->x;
 // LINE 742:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x2CA];
-	__asm        mov    al, [eax+1];
-	__asm        mov    ecx, sd;
-	__asm        mov    [ecx+0x313], al;
+	sd->p.dest1pRGVFixup.y = this->destGoal1.pRGV->y;
 // LINE 743:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x2F4];
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, sd;
-	__asm        mov    [ecx+0x33E], al;
+	sd->p.dest2pRGVFixup.x = this->destGoal2.pRGV->x;
 // LINE 744:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x2F4];
-	__asm        mov    al, [eax+1];
-	__asm        mov    ecx, sd;
-	__asm        mov    [ecx+0x33F], al;
+	sd->p.dest2pRGVFixup.y = this->destGoal2.pRGV->y;
 // LINE 748:
 _Tf7:
 	__asm        mov    eax, sd;
@@ -2216,7 +2221,7 @@ _T1d:
 	__asm        rep movsd;
 	__asm        movsw;
 // LINE 776:
-	this-><PoliceCarClass+0x31e> = sd->p.foundRoad;
+	this->foundRoad = sd->p.foundRoad;
 // LINE 778:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x294];
@@ -2323,7 +2328,7 @@ _Td8:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x2F4], eax;
 // LINE 805:
-	reinterpret_cast<uint16_t>(badGuyLoc.x) = *reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&this->goal.edgeIndex) + 2);
+	reinterpret_cast<uint16_t>(badGuyLoc.x) = reinterpret_cast<uint16_t>(this->goal.gridLoc.x);
 // LINE 806:
 	__asm        lea    eax, badGuyLoc.x;
 	__asm        push   eax;

@@ -932,7 +932,7 @@ void GameModePickCareerCityData::GameModePickCareerCityData() {
 // LINE 255:
 	this->nSubMode = 0x0;
 // LINE 256:
-	this-><GameModePickCareerCityData+0x2c> = 0x1;
+	this->bFirstCareerCityData = 0x1;
 // LINE 257:
 	__asm        jmp    near ptr 0x004BDD33;
 
@@ -3090,7 +3090,7 @@ void GameModePlayData::ShowPanels() {
 // LINE 842:
 	__asm        jmp    near ptr 0x004BF906;
 
-	qwindow.RenderWide = this->pStretchBuffer->mStride;
+	qwindow.RenderWide = this->pStretchBuffer-><CBackBuffer+0x14:4>;
 // LINE 845:
 _T72:
 	swindow.WindowWide = this->nShortenedRenderWindowWidth;
@@ -3238,7 +3238,7 @@ void GameModePlayData::HidePanels() {
 // LINE 895:
 	__asm        jmp    near ptr 0x004BFB02;
 
-	qwindow.RenderWide = this->pStretchBuffer->mStride;
+	qwindow.RenderWide = this->pStretchBuffer-><CBackBuffer+0x14:4>;
 // LINE 898:
 _T65:
 	swindow.WindowWide = this->nRenderWindowWidth;
@@ -3703,7 +3703,7 @@ _Tbe:
 // LINE 1108:
 	__asm        jmp    near ptr 0x004C00CC;
 
-	qwindow.RenderWide = this->pStretchBuffer->mStride;
+	qwindow.RenderWide = this->pStretchBuffer-><CBackBuffer+0x14:4>;
 // LINE 1111:
 	swindow.WindowWide = this->nShortenedRenderWindowWidth;
 // LINE 1112:
@@ -3736,7 +3736,7 @@ _T131:
 // LINE 1118:
 	__asm        jmp    near ptr 0x004C0132;
 
-	qwindow.RenderWide = this->pStretchBuffer->mStride;
+	qwindow.RenderWide = this->pStretchBuffer-><CBackBuffer+0x14:4>;
 // LINE 1121:
 	swindow.WindowWide = this->nRenderWindowWidth;
 // LINE 1122:

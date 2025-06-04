@@ -148,7 +148,7 @@ struct Behavior::Node{ // not packed(0xc bytes) TI: 0x35e3
 // Type: class FlatResFile;
 // VTABLE: COPTER_D 0x00593508
 class FlatResFile : public FlatFile
-{ // packed(0x11a bytes) TI: 0x22bb
+{ // not packed(0x11c bytes) TI: 0x330e
 protected:
 	class ResMap *fMap;
 	long fError;
@@ -186,17 +186,9 @@ public:
 	static short CheckForLeaks();
 };
 
-// Type: class ResFile;
-// VTABLE: COPTER_D 0x00593518
-class ResFile : public FlatResFile
-{ // packed(0x11a bytes) TI: 0x22d4
-public:
-	long OpenFromOtherFile(class ResFile*);
-};
-
 // Type: class FlatFile;
 // VTABLE: COPTER_D 0x00593620
-class FlatFile{ // packed(0x110 bytes) TI: 0x229b
+class FlatFile{ // not packed(0x110 bytes) TI: 0x32f4
 	enum /* __unnamed */ {
 		kMaxNameLen = 255,
 	};
@@ -234,6 +226,14 @@ public:
 	static short CheckForLeaks();
 	long GetFileID();
 	struct _iobuf* GetFile();
+};
+
+// Type: class ResFile;
+// VTABLE: COPTER_D 0x00593518
+class ResFile : public FlatResFile
+{ // not packed(0x11c bytes) TI: 0x3334
+public:
+	long OpenFromOtherFile(class ResFile*);
 };
 
 

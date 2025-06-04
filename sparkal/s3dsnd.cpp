@@ -156,14 +156,14 @@ struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 
 // Type: class NotificationSink;
 // VTABLE: COPTER_D 0x0058f5c8
-class NotificationSink{ // packed(0x4 bytes) TI: 0x2464
+class NotificationSink{ // packed(0x4 bytes) TI: 0x2ae9
 public:
 	virtual void DoNotificationChange(long, class PreferenceManager*); // vtable+0x0
 };
 
 // Type: class Sound;
 // VTABLE: COPTER_D 0x0058f458
-class Sound{ // packed(0x30 bytes) TI: 0x1578
+class Sound{ // packed(0x34 bytes) TI: 0x4335
 	enum SoundSourceType {
 		nSoundSourceTypeResource = 0,
 		nSoundSourceTypeFile = 1,
@@ -186,6 +186,7 @@ public:
 	long lVolume;
 	void (*soundCompletionFunction)(long);
 	long lSoundCompletionData;
+	int32_t bUnloadBeforeNextPlay;
 	void Sound();
 	virtual void ~Sound(); // vtable+0x0
 	class Sound& operator=(const class Sound&);

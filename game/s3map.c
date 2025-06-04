@@ -79,7 +79,7 @@ struct _MAP_CARINFO{ // packed(0x28 bytes) TI: 0x31c6
 };
 
 // Type: struct MISSION_DATA (forward reference);
-struct MISSION_DATA{ // packed(0xcc bytes) TI: 0x231b
+struct MISSION_DATA{ // packed(0xd4 bytes) TI: 0x31c4
 	char mtext[32];
 	long type_ctr;
 	long key;
@@ -92,7 +92,7 @@ struct MISSION_DATA{ // packed(0xcc bytes) TI: 0x231b
 	long flags;
 	long type;
 	long state;
-	struct MISSION_DATA::__unnamed mdata;
+	struct __unnamed mdata;
 };
 
 // Type: struct _GridCoordinates (forward reference);

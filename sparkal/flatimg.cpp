@@ -81,35 +81,8 @@ protected:
 
 // Type: uint32_t;
 
-// Type: class IFlatImage;
-// VTABLE: COPTER_D 0x00591050
-class IFlatImage{ // packed(0x18 bytes) TI: 0x13a1
-public:
-	void IFlatImage();
-	virtual unsigned long Lock(); // vtable+0x0
-	virtual unsigned long Unlock(); // vtable+0x4
-	unsigned long GetLockCount();
-	virtual void SetTransparentColor(int32_t, long); // vtable+0x8
-	long GetHeight();
-	long GetWidth();
-	void * __ptr32 GetBitsPointer();
-	long GetStride();
-	virtual unsigned long Compose(class IFlatImage*, long, long, long, long, long, long); // vtable+0xc
-	unsigned long Compose(class IFlatImage*, long, long);
-	virtual unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long); // vtable+0x10
-	virtual unsigned long StretchCompose(class IFlatImage*, struct SparkalRect, struct SparkalRect); // vtable+0x14
-	virtual unsigned long FillRect(long, struct SparkalRect*); // vtable+0x18
-	void DrawPixel(unsigned char, long, long);
-	unsigned char GetPixel(long, long);
-	static unsigned long lTotalMemoryUsage;
-	static unsigned long lTotalLockCount;
-protected:
-	unsigned long mLockCount;
-	long mWidth;
-	long mHeight;
-	void * __ptr32 mpBits;
-	long mStride;
-};
+// Type: class IFlatImage (forward reference);
+// IFlatImage Class implementation not found
 
 
 
@@ -684,11 +657,11 @@ void CFlatImage::CFlatImage(long Width, long Height, unsigned char InitialColor)
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591070;
 // LINE 254:
-	this->mWidth = Width;
+	this-><CFlatImage+0x08> = Width;
 // LINE 255:
-	this->mHeight = Height;
+	this-><CFlatImage+0x0c> = Height;
 // LINE 256:
-	this->mpBits = 0x0;
+	this-><CFlatImage+0x10> = 0x0;
 // LINE 259:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
@@ -808,7 +781,7 @@ _T1a7:
 	__asm        call   dword ptr ds:[0x6C3654];
 	__asm        jmp    near ptr 0x0048F854;
 // LINE 268:
-	this->mpBits = 0x0;
+	this-><CFlatImage+0x10> = 0x0;
 // LINE 271:
 _T1c0:
 	__asm        jmp    near ptr 0x0048F863;
@@ -1000,7 +973,7 @@ _T229:
 	unsigned char * pBits;
 	__asm        jmp    near ptr 0x0048FAAD;
 
-	pBits = this->mpBits;
+	pBits = this-><CFlatImage+0x10>;
 // LINE 297:
 	__asm        jmp    near ptr 0x0048FABB;
 
@@ -1022,7 +995,7 @@ _T229:
 // LINE 303:
 // Block start:
 	int32_t Count;
-	Count = this->mHeight;
+	Count = this-><CFlatImage+0x0c>;
 // LINE 304:
 _T28c:
 	__asm        mov    eax, Count;
@@ -1114,9 +1087,9 @@ _T370:
 	__asm        mov    [ecx+8], eax;
 // LINE 328:
 _T393:
-	this->mpBits = 0x0;
+	this-><CFlatImage+0x10> = 0x0;
 // LINE 329:
-	this->mStride = 0x0;
+	this-><CFlatImage+0x14> = 0x0;
 // LINE 330:
 	__asm        jmp    near ptr 0x0048FC19;
 
@@ -1278,7 +1251,7 @@ _T68:
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jne    _Teb;
 // LINE 374:
-	this->mStride = 0x0;
+	this-><CFlatImage+0x14> = 0x0;
 // LINE 375:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x10], 0;

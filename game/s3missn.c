@@ -28,7 +28,7 @@ struct _MISSION_STATICS{ // packed(0x1910 bytes) TI: 0x31da
 	long num_delayed_missions;
 	long key_ctr;
 	struct MISSION_DATA *curr_mission;
-	struct MISSION_DATA missions[31];
+	struct MISSION_DATA missions[30];
 };
 
 // Type: struct tagLogString;
@@ -71,7 +71,7 @@ struct tagCitySettings{ // packed(0x24 bytes) TI: 0x26eb
 };
 
 // Type: struct MISSION_DATA (forward reference);
-struct MISSION_DATA{ // packed(0xcc bytes) TI: 0x231b
+struct MISSION_DATA{ // packed(0xd4 bytes) TI: 0x31c4
 	char mtext[32];
 	long type_ctr;
 	long key;
@@ -84,7 +84,7 @@ struct MISSION_DATA{ // packed(0xcc bytes) TI: 0x231b
 	long flags;
 	long type;
 	long state;
-	struct MISSION_DATA::__unnamed mdata;
+	struct __unnamed mdata;
 };
 
 // Type: struct _CELL_FIRE_DATA (forward reference);
@@ -2008,7 +2008,7 @@ _T916:
 	__asm        jmp    _Tf04;
 // LINE 930:
 _T97e:
-	md->mdata.person_rescued = 0x1;
+	md->mdata.total_person_crime = 0x1;
 // LINE 931:
 	__asm        mov    eax, type;
 	__asm        push   eax;
@@ -2065,7 +2065,7 @@ _T9aa:
 	__asm        jmp    _Tf04;
 // LINE 952:
 _Ta34:
-	md->mdata.person_rescued = 0x1;
+	md->mdata.total_person_crime = 0x1;
 // LINE 953:
 	__asm        mov    eax, S_mstatics.crime_ctr;
 	__asm        push   eax;
@@ -2135,7 +2135,7 @@ _Ta88:
 	__asm        jmp    _Tf04;
 // LINE 978:
 _Tb12:
-	md->mdata.person_rescued = 0x1;
+	md->mdata.total_person_crime = 0x1;
 // LINE 979:
 	__asm        mov    eax, S_mstatics.crime_ctr;
 	__asm        push   eax;
@@ -2205,7 +2205,7 @@ _Tb66:
 	__asm        jmp    _Tf04;
 // LINE 1004:
 _Tbf0:
-	md->mdata.person_rescued = 0x1;
+	md->mdata.total_person_crime = 0x1;
 // LINE 1005:
 	__asm        mov    eax, S_mstatics.crime_ctr;
 	__asm        push   eax;

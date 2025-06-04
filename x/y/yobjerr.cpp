@@ -145,7 +145,7 @@ public:
 		kSearchRoof = 2,
 		kSearchAnywhereAtAll = 3,
 	};
-	struct cYObject::LocationInfo{ // not packed(0x8 bytes) TI: 0x374a
+	struct cYObject::LocationInfo{ // not packed(0x8 bytes) TI: 0x425a
 		enum cYObject::SearchType searchType;
 		short maxNormalLoiterers;
 	};
@@ -719,7 +719,7 @@ public:
 // Type: class YObjLang;
 // VTABLE: COPTER_D 0x005936e8
 class YObjLang : public Language
-{ // not packed(0x4 bytes) TI: 0x3560
+{ // not packed(0x4 bytes) TI: 0x484d
 public:
 	void YObjLang(class YObjLang&);
 	void YObjLang(unsigned char *);
@@ -736,15 +736,15 @@ public:
 		kIdle = 0,
 		kSetAnim = 1,
 		kAttr = 2,
-		kWhatsAhead = 3,
+		_kWhatsAhead = 3,
 		kWalk = 4,
 		_kRunPad = 5,
 		kSetBody = 6,
 		kRandom = 7,
-		kGetDirDistToFirst = 8,
-		kGetDirDistToPerson = 9,
-		kRoadDir = 10,
-		kSearchForDyn = 11,
+		_kGetDirDistToFirst = 8,
+		_kGetDirDistToPerson = 9,
+		_kRoadDir = 10,
+		_kSearchForDyn = 11,
 		kWalkToAndGrabOntoStackObject = 12,
 		kUpdateMyMission = 13,
 		kCheckForTrue = 14,
@@ -774,16 +774,16 @@ public:
 		kWalkToStackObject = 38,
 		kPutObjIntoTreeNum = 39,
 		kVisitOz = 40,
-		kNotUsed = 41,
+		_kNotUsed = 41,
 		kMakeMyMedevacVictimVisible = 42,
 		kMakeMyMedevacVictimInvisible = 43,
 		kMakeMeMasterOfStackObject = 44,
 		kMakeMyStackObjectVisitOz = 45,
-		kPutTotedMedVicOnMotherShip = 46,
-		kTakeAnyMedVicOffMotherShip = 47,
+		kPutTotedMedVicOnStackObject = 46,
+		kTakeAnyMedVicOffStackObject = 47,
 		kGetOnStackObject = 48,
 		kUpdateStackVictimToted = 49,
-		kGetNumSpacesOnMotherShip = 50,
+		kGetNumSpacesOnStackObject = 50,
 		kDropToted = 51,
 		kUpdateStackVictimPickedUp = 52,
 		kCloseToHeli = 53,
@@ -792,9 +792,12 @@ public:
 		kIsThisCellSafe = 56,
 		kPlaySound = 57,
 		kGetOnHeliIfHarnessRaised = 58,
-		kAmIOnMotherShip = 59,
+		kAmIOnHeli = 59,
 		kThrowFieryProjectile = 60,
-		kNumPrimitives = 61,
+		kTellStartingObjectTrueOrFalse = 61,
+		kPutMyCarInStack = 62,
+		kDoIHaveAMaster = 63,
+		kNumPrimitives = 64,
 	};
 public:
 	virtual short CountPrimitives() /* override */;

@@ -438,7 +438,7 @@ public:
 // Type: class UserMenuWindow;
 // VTABLE: COPTER_D 0x005912f8
 class UserMenuWindow : public GraphicWindow
-{ // packed(0x140 bytes) TI: 0x1524
+{ // packed(0x152 bytes) TI: 0x45d0
 public:
 	void UserMenuWindow(struct UserMenuWindowDescription&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	void UserMenuWindow();
@@ -2821,7 +2821,7 @@ int32_t CopterMainMenu::Initialize() {
 	__asm        mov    [ecx+0x152], eax;
 	__asm        jmp    _T8b;
 _T7e:
-	this-><CopterMainMenu+0x152> = 0x0;
+	this->mySiblingWindows[0] = 0x0;
 // LINE 415:
 _T8b:
 	__asm        push   0x74;
@@ -2858,7 +2858,7 @@ _T8b:
 	__asm        mov    [ecx+0x156], eax;
 	__asm        jmp    _T10a;
 _Tfd:
-	this-><CopterMainMenu+0x156> = 0x0;
+	this->mySiblingWindows[1] = 0x0;
 // LINE 416:
 _T10a:
 	__asm        mov    ecx, this;
@@ -3064,7 +3064,7 @@ _T201:
 	__asm        mov    [ecx+0x15A], eax;
 	__asm        jmp    _T267;
 _T257:
-	this-><CopterMainMenu+0x15a> = 0x0;
+	this->myRatchetImage = 0x0;
 // LINE 435:
 _T267:
 	__asm        mov    eax, this;
@@ -3179,7 +3179,7 @@ _T376:
 	__asm        mov    [ecx+0x15E], eax;
 	__asm        jmp    _T3ee;
 _T3de:
-	this-><CopterMainMenu+0x15e> = 0x0;
+	this->myLightImage = 0x0;
 // LINE 440:
 _T3ee:
 	__asm        mov    dword ptr [ebp-0x1C], 1;
@@ -3332,7 +3332,7 @@ void CopterMainMenu::DestroyImage() {
 	__asm        jmp    _T56;
 // LINE 449:
 _T56:
-	this-><CopterMainMenu+0x15a> = 0x0;
+	this->myRatchetImage = 0x0;
 // LINE 451:
 _T63:
 	__asm        mov    eax, this;
@@ -3358,7 +3358,7 @@ _T63:
 	__asm        jmp    _Tad;
 // LINE 453:
 _Tad:
-	this-><CopterMainMenu+0x15e> = 0x0;
+	this->myLightImage = 0x0;
 // LINE 455:
 _Tba:
 	__asm        mov    ecx, this;
@@ -3954,7 +3954,7 @@ _T201:
 	__asm        mov    [ecx+0x152], eax;
 	__asm        jmp    _T267;
 _T257:
-	this-><CopterPlayMenu+0x152> = 0x0;
+	this->myRatchetImage = 0x0;
 // LINE 639:
 _T267:
 	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
@@ -4080,7 +4080,7 @@ _T39b:
 	__asm        mov    [ecx+0x156], eax;
 	__asm        jmp    _T413;
 _T403:
-	this-><CopterPlayMenu+0x156> = 0x0;
+	this->myBackgroundImage = 0x0;
 // LINE 646:
 _T413:
 	__asm        mov    dword ptr [ebp-0x1C], 1;
@@ -4233,7 +4233,7 @@ void CopterPlayMenu::DestroyImage() {
 	__asm        jmp    _T56;
 // LINE 655:
 _T56:
-	this-><CopterPlayMenu+0x152> = 0x0;
+	this->myRatchetImage = 0x0;
 // LINE 657:
 _T63:
 	__asm        mov    eax, this;
@@ -4259,7 +4259,7 @@ _T63:
 	__asm        jmp    _Tad;
 // LINE 659:
 _Tad:
-	this-><CopterPlayMenu+0x156> = 0x0;
+	this->myBackgroundImage = 0x0;
 // LINE 661:
 _Tba:
 	__asm        mov    ecx, this;

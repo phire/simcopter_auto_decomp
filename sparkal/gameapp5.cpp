@@ -91,7 +91,7 @@ protected:
 // Type: char;
 
 // Type: struct MISSION_DATA (forward reference);
-struct MISSION_DATA{ // packed(0xcc bytes) TI: 0x231b
+struct MISSION_DATA{ // packed(0xd4 bytes) TI: 0x31c4
 	char mtext[32];
 	long type_ctr;
 	long key;
@@ -104,13 +104,13 @@ struct MISSION_DATA{ // packed(0xcc bytes) TI: 0x231b
 	long flags;
 	long type;
 	long state;
-	struct MISSION_DATA::__unnamed mdata;
+	struct __unnamed mdata;
 };
 
 // Type: class IBackBuffer;
 // VTABLE: COPTER_D 0x005907e0
 class IBackBuffer : public IFlatImage
-{ // packed(0x18 bytes) TI: 0x1544
+{ // packed(0x18 bytes) TI: 0x283f
 public:
 	virtual unsigned long Swap(class CSparkalWindow*, long, long); // vtable+0x1c
 	virtual unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long); // vtable+0x20

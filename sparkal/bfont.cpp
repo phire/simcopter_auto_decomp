@@ -510,7 +510,7 @@ struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 // Type: class IBackBuffer;
 // VTABLE: COPTER_D 0x005907e0
 class IBackBuffer : public IFlatImage
-{ // packed(0x18 bytes) TI: 0x1544
+{ // packed(0x18 bytes) TI: 0x283f
 public:
 	virtual unsigned long Swap(class CSparkalWindow*, long, long); // vtable+0x1c
 	virtual unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long); // vtable+0x20

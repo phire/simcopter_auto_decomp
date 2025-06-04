@@ -63,7 +63,7 @@ struct _HELI_DATA{ // packed(0x32c bytes) TI: 0x2a68
 };
 
 // Type: struct _HELI_TYPE_DATA (forward reference);
-struct _HELI_TYPE_DATA{ // packed(0x50 bytes) TI: 0x2a5c
+struct _HELI_TYPE_DATA{ // packed(0x58 bytes) TI: 0x486e
 	int32_t num_initialized;
 	int32_t max_seats;
 	int32_t max_load;
@@ -82,6 +82,8 @@ struct _HELI_TYPE_DATA{ // packed(0x50 bytes) TI: 0x2a5c
 	int32_t fuel_rate;
 	int32_t cost;
 	int32_t max_damage;
+	int32_t repair_rate;
+	int32_t fuel_purchase_rate;
 };
 
 // Type: long;
@@ -170,7 +172,7 @@ struct VRBmpHdr{ // packed(0x10 bytes) TI: 0x2312
 };
 
 // Type: struct _HELI_DATA (forward reference);
-struct _HELI_DATA{ // packed(0x32c bytes) TI: 0x2a68
+struct _HELI_DATA{ // not packed(0x32c bytes) TI: 0x390f
 	int32_t type;
 	int32_t state;
 	int32_t flags;

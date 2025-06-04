@@ -480,7 +480,7 @@ public:
 };
 
 // Type: struct MISSION_DATA (forward reference);
-struct MISSION_DATA{ // packed(0xcc bytes) TI: 0x231b
+struct MISSION_DATA{ // packed(0xd4 bytes) TI: 0x31c4
 	char mtext[32];
 	long type_ctr;
 	long key;
@@ -493,7 +493,7 @@ struct MISSION_DATA{ // packed(0xcc bytes) TI: 0x231b
 	long flags;
 	long type;
 	long state;
-	struct MISSION_DATA::__unnamed mdata;
+	struct __unnamed mdata;
 };
 
 // Type: void * __ptr32;
@@ -2060,7 +2060,7 @@ _T1d9:
 	__asm        cmp    [eax+0xA8], ecx;
 	__asm        jle    _T25c;
 
-	this->dials[0].nDialDirection = this->dials[0].lStartAngle;
+	this->dials[0].lCurrentValue = this->dials[0].lMaxValue;
 _T25c:
 	__asm        jmp    near ptr 0x00449338;
 // LINE 370:
@@ -2196,7 +2196,7 @@ _T25c:
 	__asm        cmp    [eax+0xDC], ecx;
 	__asm        jle    _T48a;
 
-	this->dials[1].nDialDirection = this->dials[1].lStartAngle;
+	this->dials[1].lCurrentValue = this->dials[1].lMaxValue;
 _T48a:
 	__asm        jmp    near ptr 0x00449566;
 // LINE 380:
@@ -2332,7 +2332,7 @@ _T48a:
 	__asm        cmp    [eax+0x110], ecx;
 	__asm        jle    _T6b8;
 
-	this->dials[2].nDialDirection = this->dials[2].lStartAngle;
+	this->dials[2].lCurrentValue = this->dials[2].lMaxValue;
 _T6b8:
 	__asm        jmp    near ptr 0x00449794;
 // LINE 390:
@@ -2527,21 +2527,21 @@ int32_t DialWindow::Initialize() {
 // FUNCTION: COPTER_D 0x00449aae
 void DialWindow::InitializeCachedSettings() {
 // LINE 431:
-	this->lCurrentFuelPercentage = 0xfffffc18;
+	this->nCurrentDamage = 0xfffffc18;
 // LINE 432:
-	this->lCurrentFuelLight = 0xfffffc18;
+	this->lCurrentFuelPercentage = 0xfffffc18;
 // LINE 433:
-	this->dials[0].bHasChangedSinceLastDraw = 0xfffffc18;
+	this->lCurrentFuelLight = 0xfffffc18;
 // LINE 434:
-	this->lCurrentPoints = 0xfffffc18;
+	this->lCurrentMoney = 0xfffffc18;
 // LINE 435:
-	this->bCurrentPointsOverLimit = 0xfffffc18;
+	this->lCurrentPoints = 0xfffffc18;
 // LINE 436:
-	this->ptLastSpotlightPosition.x = 0x0;
+	this->bCurrentPointsOverLimit = 0x0;
 // LINE 437:
-	this->ptLastSpotlightPosition.y = 0xfffffc18;
+	this->ptLastSpotlightPosition.x = 0xfffffc18;
 // LINE 438:
-	this->rectSpotlightControl.left = 0xfffffc18;
+	this->ptLastSpotlightPosition.y = 0xfffffc18;
 // LINE 439:
 	__asm        jmp    near ptr 0x00449B27;
 
@@ -2557,7 +2557,7 @@ void DialWindow::InitializeCachedSettings() {
 	__asm        cmp    [eax+0xB0], ecx;
 	__asm        jge    _Tb6;
 
-	None = this->dials[0].lStartAngle;
+	None = this->dials[0].lMaxValue;
 _Tb6:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-4];
@@ -2585,7 +2585,7 @@ _Tf0:
 	__asm        cmp    [eax+0xB0], ecx;
 	__asm        jge    _T11a;
 
-	None = this->dials[0].lStartAngle;
+	None = this->dials[0].lMaxValue;
 _T11a:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-8];
@@ -2616,7 +2616,7 @@ _T14f:
 	__asm        cmp    [eax+0xE4], ecx;
 	__asm        jge    _T191;
 
-	None = this->dials[1].lStartAngle;
+	None = this->dials[1].lMaxValue;
 _T191:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0xC];
@@ -2644,7 +2644,7 @@ _T1cb:
 	__asm        cmp    [eax+0xE4], ecx;
 	__asm        jge    _T1f5;
 
-	None = this->dials[1].lStartAngle;
+	None = this->dials[1].lMaxValue;
 _T1f5:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x10];
@@ -2675,7 +2675,7 @@ _T22a:
 	__asm        cmp    [eax+0x118], ecx;
 	__asm        jge    _T26c;
 
-	None = this->dials[2].lStartAngle;
+	None = this->dials[2].lMaxValue;
 _T26c:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x14];
@@ -2703,7 +2703,7 @@ _T2a6:
 	__asm        cmp    [eax+0x118], ecx;
 	__asm        jge    _T2d0;
 
-	None = this->dials[2].lStartAngle;
+	None = this->dials[2].lMaxValue;
 _T2d0:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x18];
@@ -2720,7 +2720,7 @@ _T300:
 	__asm        jmp    _T305;
 // LINE 453:
 _T305:
-	this-><DialWindow+0x1e4> = 0xffffffff;
+	this->lSpotlightControlCurrent = 0xffffffff;
 // LINE 454:
 	__asm        jmp    near ptr 0x00449DC5;
 }
@@ -2754,7 +2754,7 @@ void DialWindow::DestroyImage() {
 	__asm        jmp    _T58;
 // LINE 467:
 _T58:
-	this->myDamageImage = 0x0;
+	this->mySecondImage = 0x0;
 // LINE 469:
 _T62:
 	__asm        mov    eax, this;
@@ -2780,7 +2780,7 @@ _T62:
 	__asm        jmp    _Tac;
 // LINE 471:
 _Tac:
-	this->myFuelLightImage = 0x0;
+	this->myDamageImage = 0x0;
 // LINE 473:
 _Tb9:
 	__asm        mov    eax, this;
@@ -2806,7 +2806,7 @@ _Tb9:
 	__asm        jmp    _T103;
 // LINE 475:
 _T103:
-	this->myPointsLightImage = 0x0;
+	this->myFuelLightImage = 0x0;
 // LINE 477:
 _T110:
 	__asm        mov    eax, this;
@@ -2832,7 +2832,7 @@ _T110:
 	__asm        jmp    _T154;
 // LINE 479:
 _T154:
-	this->mySecondImage = 0x0;
+	this->myMoneyGuageFont = 0x0;
 // LINE 481:
 _T15e:
 	__asm        mov    eax, this;
@@ -2858,7 +2858,7 @@ _T15e:
 	__asm        jmp    _T1a8;
 // LINE 483:
 _T1a8:
-	this->myAltitudeHundredsImage = 0x0;
+	this->myPointsLightImage = 0x0;
 // LINE 485:
 _T1b5:
 	__asm        mov    eax, this;
@@ -2884,7 +2884,7 @@ _T1b5:
 	__asm        jmp    _T1ff;
 // LINE 487:
 _T1ff:
-	this->mySpotlightBootImage = 0x0;
+	this->myAltitudeHundredsImage = 0x0;
 // LINE 489:
 _T20c:
 	__asm        mov    eax, this;
@@ -2910,7 +2910,7 @@ _T20c:
 	__asm        jmp    _T256;
 // LINE 491:
 _T256:
-	this->mySpotlightBootBackImage = 0x0;
+	this->mySpotlightBootImage = 0x0;
 // LINE 493:
 _T263:
 	__asm        mov    eax, this;
@@ -2936,7 +2936,7 @@ _T263:
 	__asm        jmp    _T2ad;
 // LINE 495:
 _T2ad:
-	this->nCurrentDamage = 0x0;
+	this->mySpotlightBootBackImage = 0x0;
 // LINE 497:
 _T2ba:
 	__asm        mov    eax, this;
@@ -2971,7 +2971,7 @@ _T303:
 	__asm        mov    ecx, this;
 	__asm        call   DialWindow::TurnOffSpotlightCommand;
 // LINE 501:
-	this-><DialWindow+0x1e4> = 0xffffffff;
+	this->lSpotlightControlCurrent = 0xffffffff;
 // LINE 503:
 _T322:
 	__asm        jmp    near ptr 0x0044A0F1;
@@ -3163,7 +3163,7 @@ int32_t DialWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        mov    [ecx+0x7C], eax;
 	__asm        jmp    _T9d;
 _T90:
-	this->myDamageImage = 0x0;
+	this->mySecondImage = 0x0;
 // LINE 552:
 _T9d:
 	__asm        mov    eax, this;
@@ -3210,7 +3210,7 @@ _Td0:
 	__asm        mov    [ecx+0x80], eax;
 	__asm        jmp    _T14f;
 _T13f:
-	this->myFuelLightImage = 0x0;
+	this->myDamageImage = 0x0;
 // LINE 560:
 _T14f:
 	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
@@ -3252,7 +3252,7 @@ _T174:
 	__asm        mov    [ecx+0x84], eax;
 	__asm        jmp    _T1f3;
 _T1e3:
-	this->myPointsLightImage = 0x0;
+	this->myFuelLightImage = 0x0;
 // LINE 566:
 _T1f3:
 	__asm        mov    eax, this;
@@ -3283,7 +3283,7 @@ _T1f3:
 	__asm        mov    [ecx+0x88], eax;
 	__asm        jmp    _T272;
 _T262:
-	this->myAltitudeHundredsImage = 0x0;
+	this->myPointsLightImage = 0x0;
 // LINE 570:
 _T272:
 	__asm        mov    eax, this;
@@ -3315,7 +3315,7 @@ _T272:
 	__asm        mov    [ecx+0x78], eax;
 	__asm        jmp    _T2e7;
 _T2da:
-	this->mySecondImage = 0x0;
+	this->myMoneyGuageFont = 0x0;
 // LINE 573:
 _T2e7:
 	__asm        mov    eax, this;
@@ -3354,7 +3354,7 @@ _T2fd:
 	__asm        mov    [ecx+0x8C], eax;
 	__asm        jmp    _T37c;
 _T36c:
-	this->mySpotlightBootImage = 0x0;
+	this->myAltitudeHundredsImage = 0x0;
 // LINE 579:
 _T37c:
 	__asm        mov    eax, this;
@@ -3385,7 +3385,7 @@ _T37c:
 	__asm        mov    [ecx+0x90], eax;
 	__asm        jmp    _T3fb;
 _T3eb:
-	this->mySpotlightBootBackImage = 0x0;
+	this->mySpotlightBootImage = 0x0;
 // LINE 582:
 _T3fb:
 	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
@@ -3427,7 +3427,7 @@ _T420:
 	__asm        mov    [ecx+0x94], eax;
 	__asm        jmp    _T49f;
 _T48f:
-	this->nCurrentDamage = 0x0;
+	this->mySpotlightBootBackImage = 0x0;
 // LINE 588:
 _T49f:
 	__asm        mov    eax, this;
@@ -3650,7 +3650,7 @@ _T45:
 	__asm        mov    ecx, this;
 	__asm        call   DialWindow::TurnOffSpotlightCommand;
 // LINE 662:
-	this-><DialWindow+0x1e4> = 0xffffffff;
+	this->lSpotlightControlCurrent = 0xffffffff;
 // LINE 664:
 _T74:
 	__asm        mov    eax, 1;
@@ -3742,7 +3742,7 @@ _Tc9:
 	__asm        mov    ecx, this;
 	__asm        call   DialWindow::TurnOnSpotlightCommand;
 // LINE 686:
-	this-><DialWindow+0x1e4> = lNewSpotlightCommand;
+	this->lSpotlightControlCurrent = lNewSpotlightCommand;
 // LINE 689:
 _T10f:
 	__asm        mov    eax, 1;
@@ -3808,7 +3808,7 @@ _T8f:
 	__asm        cmp    dword ptr [eax+0xA4], 0;
 	__asm        je     _T3d5;
 _Tc7:
-	None = this->myDamageImage;
+	None = this->mySecondImage;
 // LINE 716:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xA8];
@@ -3983,7 +3983,7 @@ _T3d5:
 	__asm        cmp    dword ptr [eax+0xD8], 0;
 	__asm        je     _T729;
 _T3fd:
-	None = this->myDamageImage;
+	None = this->mySecondImage;
 // LINE 720:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xDC];
@@ -4158,7 +4158,7 @@ _T729:
 	__asm        cmp    dword ptr [eax+0x10C], 0;
 	__asm        je     _Ta7d;
 _T751:
-	None = this->myDamageImage;
+	None = this->mySecondImage;
 // LINE 724:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x110];
@@ -4378,9 +4378,9 @@ _Tb04:
 	__asm        je     _Tcb3;
 // LINE 736:
 _Tb44:
-	this->rectSpotlightControl.left = G_SpotLiteXRotation;
+	this->ptLastSpotlightPosition.y = G_SpotLiteXRotation;
 // LINE 737:
-	this->ptLastSpotlightPosition.y = G_SpotLiteYRotation;
+	this->ptLastSpotlightPosition.x = G_SpotLiteYRotation;
 // LINE 742:
 	__asm        mov    eax, G_SpotLiteYRotation;
 	__asm        lea    eax, [eax+eax*4];
@@ -4521,9 +4521,9 @@ _Tced:
 	__asm        cmp    dword ptr [eax+0x184], 0x3E8;
 	__asm        jle    _Td49;
 // LINE 762:
-	this->bCurrentPointsOverLimit = 0x3e8;
+	this->lCurrentPoints = 0x3e8;
 // LINE 763:
-	this->ptLastSpotlightPosition.x = 0x1;
+	this->bCurrentPointsOverLimit = 0x1;
 // LINE 765:
 _Td49:
 	__asm        mov    eax, this;
@@ -4728,7 +4728,7 @@ void DialWindow::SetNewDialPositions() {
 	__asm        cmp    [eax+0xB0], ecx;
 	__asm        jge    _T8a;
 
-	None = this->dials[0].lStartAngle;
+	None = this->dials[0].lMaxValue;
 _T8a:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x10];
@@ -4808,7 +4808,7 @@ _T161:
 	__asm        jge    _T1d7;
 // LINE 827:
 _T183:
-	this->dials[0].bHasChangedSinceLastDraw = lNewFuelLight;
+	this->lCurrentFuelLight = lNewFuelLight;
 // LINE 828:
 	__asm        mov    eax, lNewFuelLight;
 	__asm        mov    [ebp-0xC], eax;
@@ -4858,7 +4858,7 @@ _T1d7:
 	__asm        cmp    [eax+0xE4], ecx;
 	__asm        jge    _T22a;
 
-	None = this->dials[1].lStartAngle;
+	None = this->dials[1].lMaxValue;
 _T22a:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x18];
@@ -4950,7 +4950,7 @@ _T30f:
 	__asm        cmp    [eax+0x118], ecx;
 	__asm        jge    _T347;
 
-	None = this->dials[2].lStartAngle;
+	None = this->dials[2].lMaxValue;
 _T347:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x20];
@@ -6923,7 +6923,7 @@ void MapWindow::InitializeCachedSettings() {
 // LINE 1348:
 	this->bOtherMissionFilter = 0x0;
 // LINE 1349:
-	this->fontText<vftable> = 0xffffffff;
+	this->lCurrentMissionID = 0xffffffff;
 // LINE 1350:
 	__asm        jmp    near ptr 0x0044D5E4;
 }
@@ -7177,7 +7177,7 @@ _Tb0:
 	__asm        call   dword ptr [edx+0x48];
 // LINE 1426:
 _T11e:
-	this->fontText<vftable> = lNewMissionID;
+	this->lCurrentMissionID = lNewMissionID;
 // LINE 1431:
 _T12a:
 	__asm        jmp    near ptr 0x0044D8FA;

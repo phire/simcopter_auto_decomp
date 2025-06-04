@@ -230,80 +230,8 @@ struct tagRECT{ // packed(0x10 bytes) TI: 0x13c4
 };
 
 // Type: struct IDirectDrawSurface (forward reference);
-struct IDirectDrawSurface : public IUnknown
-{ // packed(0x4 bytes) TI: 0x1da5
-	// calltype: NearStd
-	virtual long QueryInterface(const struct _GUID&, void * __ptr32*) /* override */;
-	// calltype: NearStd
-	virtual unsigned long AddRef() /* override */;
-	// calltype: NearStd
-	virtual unsigned long Release() /* override */;
-	// calltype: NearStd
-	virtual long AddAttachedSurface(struct IDirectDrawSurface*); // vtable+0xc
-	// calltype: NearStd
-	virtual long AddOverlayDirtyRect(struct tagRECT*); // vtable+0x10
-	// calltype: NearStd
-	virtual long Blt(struct tagRECT*, struct IDirectDrawSurface*, struct tagRECT*, unsigned long, struct _DDBLTFX*); // vtable+0x14
-	// calltype: NearStd
-	virtual long BltBatch(struct _DDBLTBATCH*, unsigned long, unsigned long); // vtable+0x18
-	// calltype: NearStd
-	virtual long BltFast(unsigned long, unsigned long, struct IDirectDrawSurface*, struct tagRECT*, unsigned long); // vtable+0x1c
-	// calltype: NearStd
-	virtual long DeleteAttachedSurface(unsigned long, struct IDirectDrawSurface*); // vtable+0x20
-	// calltype: NearStd
-	virtual long EnumAttachedSurfaces(void * __ptr32, long (*)(struct IDirectDrawSurface*, struct _DDSURFACEDESC*, void * __ptr32)); // vtable+0x24
-	// calltype: NearStd
-	virtual long EnumOverlayZOrders(unsigned long, void * __ptr32, long (*)(struct IDirectDrawSurface*, struct _DDSURFACEDESC*, void * __ptr32)); // vtable+0x28
-	// calltype: NearStd
-	virtual long Flip(struct IDirectDrawSurface*, unsigned long); // vtable+0x2c
-	// calltype: NearStd
-	virtual long GetAttachedSurface(struct _DDSCAPS*, struct IDirectDrawSurface**); // vtable+0x30
-	// calltype: NearStd
-	virtual long GetBltStatus(unsigned long); // vtable+0x34
-	// calltype: NearStd
-	virtual long GetCaps(struct _DDSCAPS*); // vtable+0x38
-	// calltype: NearStd
-	virtual long GetClipper(struct IDirectDrawClipper**); // vtable+0x3c
-	// calltype: NearStd
-	virtual long GetColorKey(unsigned long, struct _DDCOLORKEY*); // vtable+0x40
-	// calltype: NearStd
-	virtual long GetDC(void * __ptr32*); // vtable+0x44
-	// calltype: NearStd
-	virtual long GetFlipStatus(unsigned long); // vtable+0x48
-	// calltype: NearStd
-	virtual long GetOverlayPosition(long *, long *); // vtable+0x4c
-	// calltype: NearStd
-	virtual long GetPalette(struct IDirectDrawPalette**); // vtable+0x50
-	// calltype: NearStd
-	virtual long GetPixelFormat(struct _DDPIXELFORMAT*); // vtable+0x54
-	// calltype: NearStd
-	virtual long GetSurfaceDesc(struct _DDSURFACEDESC*); // vtable+0x58
-	// calltype: NearStd
-	virtual long Initialize(struct IDirectDraw*, struct _DDSURFACEDESC*); // vtable+0x5c
-	// calltype: NearStd
-	virtual long IsLost(); // vtable+0x60
-	// calltype: NearStd
-	virtual long Lock(struct tagRECT*, struct _DDSURFACEDESC*, unsigned long, void * __ptr32); // vtable+0x64
-	// calltype: NearStd
-	virtual long ReleaseDC(void * __ptr32); // vtable+0x68
-	// calltype: NearStd
-	virtual long Restore(); // vtable+0x6c
-	// calltype: NearStd
-	virtual long SetClipper(struct IDirectDrawClipper*); // vtable+0x70
-	// calltype: NearStd
-	virtual long SetColorKey(unsigned long, struct _DDCOLORKEY*); // vtable+0x74
-	// calltype: NearStd
-	virtual long SetOverlayPosition(long, long); // vtable+0x78
-	// calltype: NearStd
-	virtual long SetPalette(struct IDirectDrawPalette*); // vtable+0x7c
-	// calltype: NearStd
-	virtual long Unlock(void * __ptr32); // vtable+0x80
-	// calltype: NearStd
-	virtual long UpdateOverlay(struct tagRECT*, struct IDirectDrawSurface*, struct tagRECT*, unsigned long, struct _DDOVERLAYFX*); // vtable+0x84
-	// calltype: NearStd
-	virtual long UpdateOverlayDisplay(unsigned long); // vtable+0x88
-	// calltype: NearStd
-	virtual long UpdateOverlayZOrder(unsigned long, struct IDirectDrawSurface*); // vtable+0x8c
+struct IDirectDrawSurface{ // packed(0x4 bytes) TI: 0x2764
+	struct IDirectDrawSurfaceVtbl *lpVtbl;
 };
 
 // Type: void * __ptr32;
@@ -385,47 +313,7 @@ struct tagPOINT{ // packed(0x8 bytes) TI: 0x1131
 };
 
 // Type: class CSparkalWindow (forward reference);
-// VTABLE: COPTER_D 0x00590ef8
-class CSparkalWindow{ // packed(0x68 bytes) TI: 0x20d9
-public:
-	void CSparkalWindow(unsigned long, unsigned long, unsigned long, const struct SparkalColor*, char *);
-	void CSparkalWindow();
-	virtual void ~CSparkalWindow(); // vtable+0x0
-	void * __ptr32 GetPlatformData();
-	long GetWidth();
-	long GetHeight();
-	virtual unsigned long GetClientSize(long *, long *); // vtable+0x4
-	class ScreenBuffer* GetBackBuffer();
-	class ScreenBuffer* SetBackBuffer(class ScreenBuffer*);
-	class ICommander* GetCommander();
-	class ICommander* SetCommander(class ICommander*);
-	virtual unsigned long Draw(); // vtable+0x8
-	virtual unsigned long SetCursor(unsigned long); // vtable+0xc
-	virtual unsigned long SetCursorFromIndex(int32_t); // vtable+0x10
-	virtual unsigned long LoadGameCursors(); // vtable+0x14
-	virtual void FreeGameCursors(); // vtable+0x18
-	unsigned long DrawBufferText(const const char*, unsigned long, long, long, long *, long *, long *, long *);
-	virtual unsigned long Sleep(); // vtable+0x1c
-	virtual unsigned long WakeUp(); // vtable+0x20
-	unsigned long ScreenScroll(long, long, long, long, long, long);
-	unsigned long RectSlideUp(long, long, long, long);
-	virtual unsigned long SwapBuffer(long, long, long, long); // vtable+0x24
-	virtual unsigned long SwapBuffer(); // vtable+0x28
-	virtual void UpdatePalette(long, long, struct SparkalColor*); // vtable+0x2c
-protected:
-	long mHeight;
-	long mWidth;
-	unsigned long mStyle;
-	class ICommander *mpCommander;
-	class ScreenBuffer *mpBackBuffer;
-	void * __ptr32 mWindow;
-	// calltype: NearStd
-	virtual long MySparkalWindowProc(void * __ptr32, uint32_t, uint32_t, long); // vtable+0x30
-	void * __ptr32 mPalette;
-	void * __ptr32 mhCurrentCursor;
-	void * __ptr32 mhCustomCursor;
-	void * __ptr32 mCursors[16];
-};
+// CSparkalWindow Class implementation not found
 
 // Type: struct _DDBLTFX;
 struct _DDBLTFX{ // packed(0x64 bytes) TI: 0x12e7
@@ -617,20 +505,10 @@ public:
 	virtual unsigned long StretchRect(class CSparkalWindow*, long, long, long, long, long, long, long, long); // vtable+0x24
 };
 
-// Type: struct IUnknown;
-struct IUnknown{ // packed(0x4 bytes) TI: 0x196f
-	// calltype: NearStd
-	virtual long QueryInterface(const struct _GUID&, void * __ptr32*); // vtable+0x0
-	// calltype: NearStd
-	virtual unsigned long AddRef(); // vtable+0x4
-	// calltype: NearStd
-	virtual unsigned long Release(); // vtable+0x8
-};
-
 // Type: class IBackBuffer;
 // VTABLE: COPTER_D 0x005907e0
 class IBackBuffer : public IFlatImage
-{ // packed(0x18 bytes) TI: 0x1544
+{ // packed(0x18 bytes) TI: 0x283f
 public:
 	virtual unsigned long Swap(class CSparkalWindow*, long, long); // vtable+0x1c
 	virtual unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long); // vtable+0x20

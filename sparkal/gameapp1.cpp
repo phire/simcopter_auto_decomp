@@ -708,7 +708,7 @@ struct bidirectional_iterator<Shortcut,int>{ // packed(0x1 bytes) TI: 0x1ee7
 // Type: class CDefaultCommander;
 // VTABLE: COPTER_D 0x005912d0
 class CDefaultCommander : public ICommander
-{ // packed(0x8 bytes) TI: 0x17ff
+{ // packed(0x8 bytes) TI: 0x20ed
 public:
 	void CDefaultCommander();
 	virtual void ~CDefaultCommander() /* override */;
@@ -757,7 +757,7 @@ public:
 
 // Type: class SparkalPalette;
 // VTABLE: COPTER_D 0x005910f8
-class SparkalPalette{ // packed(0x10 bytes) TI: 0x1f91
+class SparkalPalette{ // packed(0x10 bytes) TI: 0x47c7
 public:
 	struct SparkalColor *pColors;
 	long lColors;
@@ -765,32 +765,21 @@ public:
 	void SparkalPalette(struct SparkalColor*, int32_t, unsigned long);
 	void SparkalPalette();
 	virtual void ~SparkalPalette(); // vtable+0x0
-	void GetRGBValue(int32_t, struct SparkalColor&);
-	void GetNearestIndex(struct SparkalColor&, int32_t&);
-	void FadeToWhite(long);
-	void FadeToBlack(long);
+	virtual void GetRGBValue(int32_t, struct SparkalColor&); // vtable+0x4
+	virtual void GetNearestIndex(struct SparkalColor&, int32_t&); // vtable+0x8
+	virtual void FadeToWhite(long); // vtable+0xc
+	virtual void FadeToBlack(long); // vtable+0x10
+	virtual void FadeToPalette(struct SparkalColor, long, long); // vtable+0x14
+	// calltype: NearC
+	static void FadeToPalette(struct SparkalColor, struct SparkalColor*, long, long);
 	void FadeToRGB(struct SparkalColor&, long);
-	void ImplementNewPalette(struct SparkalColor*);
+	// calltype: NearC
+	static void SetSystemPaletteEntriesToRGB(struct SparkalColor&);
+	virtual void ImplementNewPalette(struct SparkalColor*); // vtable+0x18
 };
 
-// Type: class ICommander;
-// VTABLE: COPTER_D 0x005912a8
-class ICommander{ // packed(0x8 bytes) TI: 0x17ab
-public:
-	void ICommander();
-	virtual void ~ICommander(); // vtable+0x0
-	virtual unsigned long Idle(); // vtable+0x4
-	virtual unsigned long OnCharacter(char, int32_t); // vtable+0x8
-	virtual unsigned long OnMouseDown(int32_t, int32_t); // vtable+0xc
-	virtual unsigned long OnMouseUp(int32_t, int32_t); // vtable+0x10
-	virtual unsigned long OnMouseMove(int32_t, int32_t); // vtable+0x14
-	virtual unsigned long OnWindowActivate(); // vtable+0x18
-	virtual unsigned long OnWindowDeactivate(); // vtable+0x1c
-	virtual class CSparkalWindow* SetWindow(class CSparkalWindow*); // vtable+0x20
-	class CSparkalWindow* GetWindow();
-protected:
-	class CSparkalWindow *mpWindow;
-};
+// Type: class ICommander (forward reference);
+// ICommander Class implementation not found
 
 
 

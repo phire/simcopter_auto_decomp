@@ -63,7 +63,7 @@ struct GrafPtr{ // not packed(0x8 bytes) TI: 0x344e
 };
 
 // Type: struct tagRECT (forward reference);
-struct tagRECT{ // packed(0x10 bytes) TI: 0x13c4
+struct tagRECT{ // not packed(0x10 bytes) TI: 0x3449
 	long left;
 	long top;
 	long right;

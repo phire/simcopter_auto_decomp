@@ -255,7 +255,7 @@ struct _cArray::FileAndType{ // not packed(0x8 bytes) TI: 0x3256
 // Type: class FlatResFile;
 // VTABLE: COPTER_D 0x00593508
 class FlatResFile : public FlatFile
-{ // packed(0x11a bytes) TI: 0x22bb
+{ // not packed(0x11c bytes) TI: 0x330e
 protected:
 	class ResMap *fMap;
 	long fError;
@@ -295,7 +295,7 @@ public:
 
 // Type: class FlatFile;
 // VTABLE: COPTER_D 0x00593620
-class FlatFile{ // packed(0x110 bytes) TI: 0x229b
+class FlatFile{ // not packed(0x110 bytes) TI: 0x32f4
 	enum /* __unnamed */ {
 		kMaxNameLen = 255,
 	};

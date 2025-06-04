@@ -190,9 +190,10 @@ struct tm{ // packed(0x24 bytes) TI: 0x2033
 
 // Type: class ostrstream;
 // VTABLE: COPTER_D 0x00593b34
-class ostrstream : public virtual ios, public ostream, public virtual <indirect> ios
+class ostrstream : public ostream, public virtual <indirect> ios
 { // not packed(0x58 bytes) TI: 0x1fc2
 public:
+	<NoType> ios;
 	void ostrstream(char *, int32_t, int32_t);
 	void ostrstream();
 	virtual void ~ostrstream() /* override */;
@@ -202,62 +203,13 @@ public:
 };
 
 // Type: class ostream (forward reference);
-// VTABLE: COPTER_D 0x00593a44
-class ostream : public virtual ios
-{ // not packed(0x58 bytes) TI: 0x414e
-public:
-	int32_t *ios[0];
-	void ostream(class ios&);
-	void ostream(const class ostream&);
-	void ostream();
-	void ostream(class streambuf*);
-	virtual void ~ostream() /* override */;
-	class ostream& flush();
-	int32_t opfx();
-	void osfx();
-	class ostream& operator<<(class streambuf*);
-	class ostream& operator<<(void * __ptr32);
-	class ostream& operator<<(double);
-	class ostream& operator<<(double);
-	class ostream& operator<<(float);
-	class ostream& operator<<(unsigned long);
-	class ostream& operator<<(long);
-	class ostream& operator<<(uint32_t);
-	class ostream& operator<<(int32_t);
-	class ostream& operator<<(unsigned short);
-	class ostream& operator<<(short);
-	class ostream& operator<<(char);
-	class ostream& operator<<(unsigned char);
-	class ostream& operator<<(char);
-	class ostream& operator<<(char *);
-	class ostream& operator<<(unsigned char *);
-	class ostream& operator<<(char *);
-	class ostream& operator<<(class ios& (*)(class ios&));
-	class ostream& operator<<(class ostream& (*)(class ostream&));
-	class ostream& put(char);
-	class ostream& put(unsigned char);
-	class ostream& put(char);
-	class ostream& write(char *, int32_t);
-	class ostream& write(unsigned char *, int32_t);
-	class ostream& write(char *, int32_t);
-	class ostream& seekp(long, enum ios::seek_dir);
-	class ostream& seekp(long);
-	long tellp();
-protected:
-	class ostream& operator=(const class ostream&);
-	class ostream& operator=(class streambuf*);
-	int32_t do_opfx(int32_t);
-	void do_osfx();
-private:
-	class ostream& writepad(char *, char *);
-	int32_t x_floatused;
-};
+// ostream Class implementation not found
 
 // Type: char;
 
 // Type: class ios (forward reference);
 // VTABLE: COPTER_D 0x00593ad4
-class ios{ // not packed(0x50 bytes) TI: 0x1c18
+class ios{ // not packed(0x50 bytes) TI: 0x4126
 	enum io_state {
 		goodbit = 0,
 		eofbit = 1,
@@ -300,10 +252,8 @@ public:
 	static const long basefield;
 	static const long adjustfield;
 	static const long floatfield;
-protected:
 	void ios(const class ios&);
 	void ios();
-public:
 	void ios(class streambuf*);
 	virtual void ~ios(); // vtable+0x0
 	long flags(long);
@@ -390,7 +340,7 @@ private:
 
 // Type: class ios;
 // VTABLE: COPTER_D 0x00593ad4
-class ios{ // not packed(0x50 bytes) TI: 0x1c18
+class ios{ // not packed(0x50 bytes) TI: 0x4126
 	enum io_state {
 		goodbit = 0,
 		eofbit = 1,
@@ -433,10 +383,8 @@ public:
 	static const long basefield;
 	static const long adjustfield;
 	static const long floatfield;
-protected:
 	void ios(const class ios&);
 	void ios();
-public:
 	void ios(class streambuf*);
 	virtual void ~ios(); // vtable+0x0
 	long flags(long);
@@ -519,58 +467,6 @@ private:
 	static struct _CRT_CRITICAL_SECTION x_lockc;
 	int32_t LockFlg;
 	struct _CRT_CRITICAL_SECTION x_lock;
-};
-
-// Type: class ostream;
-// VTABLE: COPTER_D 0x00593a44
-class ostream : public virtual ios
-{ // not packed(0x58 bytes) TI: 0x414e
-public:
-	int32_t *ios[0];
-	void ostream(class ios&);
-	void ostream(const class ostream&);
-	void ostream();
-	void ostream(class streambuf*);
-	virtual void ~ostream() /* override */;
-	class ostream& flush();
-	int32_t opfx();
-	void osfx();
-	class ostream& operator<<(class streambuf*);
-	class ostream& operator<<(void * __ptr32);
-	class ostream& operator<<(double);
-	class ostream& operator<<(double);
-	class ostream& operator<<(float);
-	class ostream& operator<<(unsigned long);
-	class ostream& operator<<(long);
-	class ostream& operator<<(uint32_t);
-	class ostream& operator<<(int32_t);
-	class ostream& operator<<(unsigned short);
-	class ostream& operator<<(short);
-	class ostream& operator<<(char);
-	class ostream& operator<<(unsigned char);
-	class ostream& operator<<(char);
-	class ostream& operator<<(char *);
-	class ostream& operator<<(unsigned char *);
-	class ostream& operator<<(char *);
-	class ostream& operator<<(class ios& (*)(class ios&));
-	class ostream& operator<<(class ostream& (*)(class ostream&));
-	class ostream& put(char);
-	class ostream& put(unsigned char);
-	class ostream& put(char);
-	class ostream& write(char *, int32_t);
-	class ostream& write(unsigned char *, int32_t);
-	class ostream& write(char *, int32_t);
-	class ostream& seekp(long, enum ios::seek_dir);
-	class ostream& seekp(long);
-	long tellp();
-protected:
-	class ostream& operator=(const class ostream&);
-	class ostream& operator=(class streambuf*);
-	int32_t do_opfx(int32_t);
-	void do_osfx();
-private:
-	class ostream& writepad(char *, char *);
-	int32_t x_floatused;
 };
 
 

@@ -318,7 +318,17 @@ public:
 
 // Type: class AutomobileClass;
 // VTABLE: COPTER_D 0x00592d98
-class AutomobileClass{ // packed(0x10e bytes) TI: 0x2fac
+class AutomobileClass{ // packed(0x11a bytes) TI: 0x4880
+	enum CarType {
+		kCarAmbulance = 0,
+		kCarCop = 1,
+		kCarFiretruck = 2,
+		kCarCriminal = 3,
+	};
+	enum AutoMessageID {
+		AM_NO_MESSAGE = 0,
+		AM_CANCEL_AUTO_MISSION = 1,
+	};
 	enum /* __unnamed */ {
 		CAR_TYPES = 7,
 		PERCENTAGE_OF_AUTO1 = 10,
@@ -374,13 +384,11 @@ class AutomobileClass{ // packed(0x10e bytes) TI: 0x2fac
 		HW_EDGEOFF_LANE2 = 131072,
 		HW_HEIGHT = 2031616,
 	};
-	enum PersonState {
-		PS_IN_VEHICLE = 0,
-		PS_OUT_OF_VEHICLE = 1,
-		PS_BACK_IN_VEHICLE = 2,
-		PS_GOT_AWAY = 3,
-		PS_MISSION_OVER = 4,
-	};
+public:
+	static int32_t fireSirenDist;
+	static int32_t policeSirenDist;
+	static int32_t ambSirenDist;
+	static int32_t fireHoseDist;
 	enum /* __unnamed */ {
 		CAR_RADIUS = 327680,
 		COLLISION_SPACE = 655360,
@@ -397,20 +405,22 @@ class AutomobileClass{ // packed(0x10e bytes) TI: 0x2fac
 	enum Flags {
 		AUTO_INITIALIZED = 1,
 		AUTO_PLACED = 2,
-		AUTO_TURNING = 4,
-		AUTO_MAKING_UTURN = 8,
-		AUTO_PULL_OVER = 16,
-		AUTO_PULLING_OVER = 32,
-		AUTO_PULLED_OVER = 64,
-		AUTO_AT_DEAD_END = 128,
-		AUTO_IN_INTERSECTION = 256,
-		AUTO_ON_FIRE = 512,
-		AUTO_JAMMED = 1024,
-		AUTO_PULLING_OUT = 2048,
-		AUTO_RIGHT_OF_WAY = 4096,
-		AUTO_ON_HIWAY = 8192,
+		AUTO_NEEDS_TO_PULL_OVER = 4,
+		AUTO_PULL_OVER = 8,
+		AUTO_PULLING_OVER = 16,
+		AUTO_PULLED_OVER = 32,
+		AUTO_PULLING_OUT = 64,
+		AUTO_IN_INTERSECTION = 128,
+		AUTO_ON_FIRE = 256,
+		AUTO_JAMMED = 512,
+		AUTO_RIGHT_OF_WAY = 1024,
+		AUTO_ON_HIWAY = 2048,
+		AUTO_SPEEDER = 4096,
+		AUTO_SPEEDER_DONE = 8192,
+		AUTO_UTURN = 16384,
 	};
 public:
+	long carModel;
 	int32_t flags;
 	struct _DYOBJ_INST autoDynomitor;
 	struct Goal goal;
@@ -426,6 +436,7 @@ private:
 	int32_t beamTimer;
 	int32_t m_cellBaseY;
 	int32_t timePulledOver;
+	int32_t hornSoundId;
 	enum DirectionTypes hiwaydir;
 	struct _GridCoordinates currentLocation;
 	struct _GridCoordinates nextLocation;
@@ -434,19 +445,20 @@ private:
 	struct _GridCoordinates eastCell;
 	struct _GridCoordinates westCell;
 protected:
-	long carModel;
 	int32_t speed;
 	enum DirIndex2 prevDir;
 	enum TurnIndex turnIndex;
 	int32_t currDist;
 	int32_t legOfTurn;
 	struct Point3d *pDirVector;
+	int32_t personDone;
+	int32_t personState;
+	int32_t personTimer;
 	int32_t timeToLive;
 	int32_t fireTime;
 	long fireSeq;
 	long missionId;
 	struct _CELL_INFO *cptr;
-	enum AutomobileClass::PersonState personState;
 	int32_t spotlightHitCounter;
 	int32_t IsCarPersistant();
 	int32_t CanCarBeamToHiwayTile(unsigned short);
@@ -472,6 +484,12 @@ public:
 	static void MissionCancel(long);
 	// calltype: NearC
 	static void SetAllHeadlights(int32_t);
+	// calltype: NearC
+	static int32_t S3AutoMessage(short, short);
+	// calltype: NearC
+	static int32_t MIFFLoad(void * __ptr32);
+	// calltype: NearC
+	static int32_t MIFFSave(void * __ptr32);
 	void HitDispatch(long, struct _DYOBJ_INST*, long, long);
 	int32_t AmIABadGuy();
 	int32_t Initialize(int32_t);
@@ -479,17 +497,22 @@ public:
 	void IveBeenMegaphoned(long);
 	void StartFire(long);
 	void StartJam(long);
-	void PullOver();
+	virtual void PullOver(short); // vtable+0x4
 	void PullOut();
 	int32_t CanIPullOut();
+	int32_t CanIPullOver();
+	void DoAUTurn();
+	long GetCarModel();
+	// calltype: NearC
+	static struct _DYOBJ_INST* GetClosestCar(int32_t, int32_t, int32_t);
 protected:
 	void Itterate();
-	virtual void AdjustSpeed(); // vtable+0x4
+	virtual void AdjustSpeed(); // vtable+0x8
 	void Reset();
-	virtual enum TurnIndex PickTurnDir(struct Goal*); // vtable+0x8
+	virtual enum TurnIndex PickTurnDir(struct Goal*); // vtable+0xc
 	void UnPlaceCar();
 	void PullOverCiviliansInWay();
-	virtual void ItterateFSM(); // vtable+0xc
+	virtual void ItterateFSM(); // vtable+0x10
 	int32_t InitializeInstance(int32_t);
 	void LinkToCell(const struct _GridCoordinates&);
 	int32_t AreCarsHeadOn(struct Point3d*);
@@ -497,6 +520,11 @@ protected:
 	int32_t IsCarOutOfCameraRange();
 	void TurnOffHeadlight();
 	void TurnOnHeadlight();
+	int32_t AutoMessage(short);
+	int32_t PlacePerson(int32_t, int32_t);
+	virtual void SetSaveData(struct _AUTO_LOAD_SAVE*); // vtable+0x14
+	virtual void LoadSaveData(struct _AUTO_LOAD_SAVE*); // vtable+0x18
+	void HonkHorn();
 	void SetHiwayDirection(unsigned short);
 	int32_t DoHiwayTilesConnect(unsigned short, unsigned short, enum DirectionTypes);
 	void AdjustCurrentHiwayPosition();
@@ -508,9 +536,10 @@ protected:
 	void TurnRight();
 	void MoveForwardOnHiway();
 	void DoDiagonalRoadFixup();
-	virtual void BeamToWithinCameraRange(); // vtable+0x10
-	virtual int32_t BeamToLocation(const struct _GridCoordinates&); // vtable+0x14
+	virtual void BeamToWithinCameraRange(); // vtable+0x1c
+	virtual int32_t BeamToLocation(const struct _GridCoordinates&); // vtable+0x20
 	void MoveAuto(int32_t);
+	void ChangeAutoColor();
 private:
 	void UnlinkFromCell(const struct _GridCoordinates&);
 	void TransitionBetweenGoals();
@@ -518,6 +547,8 @@ private:
 	void RunJamState();
 	void IveBeenSpotlighted(struct _DYOBJ_INST*);
 	int32_t IsThisAnEmergencyVehicle();
+	void DoPullOverStuff(int32_t);
+	int32_t CanIDoAUTurn();
 public:
 	class AutomobileClass operator=(const class AutomobileClass&);
 };
@@ -544,9 +575,9 @@ int32_t EmergencyVehicleClass::UpdateCar(int32_t status) {
 	__asm        test   byte ptr [eax+8], 2;
 	__asm        je     _T3c;
 // LINE 79:
-	this->fireTime = 0x1;
+	this->personDone = 0x1;
 // LINE 80:
-	this->fireSeq = status;
+	this->personState = status;
 // LINE 81:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T43;
@@ -592,9 +623,9 @@ void EmergencyVehicleClass::EmergencyVehicleClass() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5934C0;
 // LINE 103:
-	this->dispatchIcon.next = 0x0;
+	this->emergencyLocation.x = 0x0;
 // LINE 104:
-	this->dispatchIcon.next = 0x0;
+	this->emergencyLocation.y = 0x0;
 // LINE 105:
 	__asm        jmp    near ptr 0x00541632;
 
@@ -621,10 +652,10 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 	__asm        cmp    responceType, 0xFFFFFFFF;
 	__asm        je     _T28;
 // LINE 262:
-	this->dispatchIcon.vnext = responceType;
+	this->emergencyType = responceType;
 // LINE 264:
 _T28:
-	this-><EmergencyVehicleClass+0x294> = eState;
+	this->emergencyState = eState;
 // LINE 266:
 	__asm        cmp    result.pRGV, 0;
 	__asm        jne    _T20e;
@@ -707,7 +738,7 @@ _T28:
 	__asm        cmp    ecx, eax;
 	__asm        jne    _T129;
 // LINE 288:
-	*reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&this->numberOfSeats) + 2) = 0x1;
+	this->dispatchPathIndex = 0x1;
 // LINE 289:
 	__asm        lea    esi, startGoal1.pRGV;
 	__asm        mov    edi, this;
@@ -719,7 +750,7 @@ _T28:
 	__asm        jmp    _T145;
 // LINE 293:
 _T129:
-	*reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&this->numberOfSeats) + 2) = 0x0;
+	this->dispatchPathIndex = 0x0;
 // LINE 294:
 	__asm        lea    esi, startGoal2.pRGV;
 	__asm        mov    edi, this;
@@ -733,7 +764,7 @@ _T145:
 	__asm        jmp    _T166;
 // LINE 299:
 _T14a:
-	*reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&this->numberOfSeats) + 2) = 0x1;
+	this->dispatchPathIndex = 0x1;
 // LINE 300:
 	__asm        lea    esi, startGoal1.pRGV;
 	__asm        mov    edi, this;
@@ -860,11 +891,11 @@ _T28f:
 	__asm        jmp    _T2b0;
 // LINE 343:
 _T2b0:
-	this->dispatchIcon.next = reinterpret_cast<uint16_t>(destLoc.x);
+	reinterpret_cast<uint16_t>(this->emergencyLocation.x) = reinterpret_cast<uint16_t>(destLoc.x);
 // LINE 345:
-	this->legOfTurn = 0x0;
+	this->currDist = 0x0;
 // LINE 346:
-	this->pDirVector = 0x0;
+	this->legOfTurn = 0x0;
 // LINE 347:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x82];
@@ -896,7 +927,7 @@ _T2b0:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::MoveAuto;
 // LINE 351:
-	*reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&this->numberOfSeats) + 2) = 0x0;
+	this->dispatchPathIndex = 0x0;
 // LINE 352:
 	__asm        jmp    near ptr 0x005419B3;
 }
@@ -908,15 +939,15 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 	int32_t car_type;
 
 // LINE 365:
-	this-><EmergencyVehicleClass+0x298> = sID;
+	this->stationID = sID;
 // LINE 368:
 	__asm        cmp    responceType, 0xFFFFFFFF;
 	__asm        je     _T34;
 // LINE 369:
-	this->dispatchIcon.vnext = responceType;
+	this->emergencyType = responceType;
 // LINE 371:
 _T34:
-	this-><EmergencyVehicleClass+0x294> = eState;
+	this->emergencyState = eState;
 // LINE 374:
 	__asm        cmp    result.pRGV, 0;
 	__asm        jne    _Ta8;
@@ -955,9 +986,9 @@ _T34:
 	__asm        call   EmergencyVehicleClass::BuildPath;
 // LINE 388:
 _Ta8:
-	this->dispatchIcon.next = reinterpret_cast<uint16_t>(destLoc.x);
+	reinterpret_cast<uint16_t>(this->emergencyLocation.x) = reinterpret_cast<uint16_t>(destLoc.x);
 // LINE 389:
-	this->dispatchIcon.next = reinterpret_cast<uint16_t>(stationLoc.x);
+	reinterpret_cast<uint16_t>(this->baseLocation.x) = reinterpret_cast<uint16_t>(stationLoc.x);
 // LINE 393:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 2;
@@ -1064,7 +1095,7 @@ _T179:
 	__asm        cmp    ecx, eax;
 	__asm        jne    _T21a;
 // LINE 412:
-	*reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&this->numberOfSeats) + 2) = 0x1;
+	this->dispatchPathIndex = 0x1;
 // LINE 413:
 	__asm        lea    esi, stationGoal1.pRGV;
 	__asm        mov    edi, this;
@@ -1076,7 +1107,7 @@ _T179:
 	__asm        jmp    _T236;
 // LINE 417:
 _T21a:
-	*reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&this->numberOfSeats) + 2) = 0x0;
+	this->dispatchPathIndex = 0x0;
 // LINE 418:
 	__asm        lea    esi, stationGoal2.pRGV;
 	__asm        mov    edi, this;
@@ -1090,7 +1121,7 @@ _T236:
 	__asm        jmp    _T257;
 // LINE 423:
 _T23b:
-	*reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&this->numberOfSeats) + 2) = 0x1;
+	this->dispatchPathIndex = 0x1;
 // LINE 424:
 	__asm        lea    esi, stationGoal1.pRGV;
 	__asm        mov    edi, this;
@@ -1241,16 +1272,16 @@ _T3c2:
 	__asm        jmp    _T3e3;
 // LINE 475:
 _T3e3:
-	this->turnIndex = startDir;
+	this->prevDir = startDir;
 // LINE 477:
 	__asm        lea    eax, stationLoc.x;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::LinkToCell;
 // LINE 478:
-	this->legOfTurn = 0x0;
+	this->currDist = 0x0;
 // LINE 479:
-	this->pDirVector = 0x0;
+	this->legOfTurn = 0x0;
 // LINE 480:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x82];
@@ -1282,7 +1313,7 @@ _T3e3:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::MoveAuto;
 // LINE 484:
-	*reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&this->numberOfSeats) + 2) = 0x0;
+	this->dispatchPathIndex = 0x0;
 // LINE 489:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
@@ -1374,7 +1405,7 @@ _T594:
 _T599:
 	__asm        jmp    near ptr 0x00541F58;
 
-	this->emergencyType = None;
+	this->cptr = None;
 // LINE 510:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x112];
@@ -1563,7 +1594,7 @@ _T138:
 // FUNCTION: COPTER_D 0x005421bc
 void EmergencyVehicleClass::CancelEmergencyDispatch() {
 // LINE 561:
-	this-><EmergencyVehicleClass+0x294> = 0x2;
+	this->emergencyState = 0x2;
 // LINE 562:
 	__asm        jmp    near ptr 0x005421DA;
 }
@@ -1626,7 +1657,7 @@ void EmergencyVehicleClass::AdjustSpeed() {
 // LINE 636:
 	__asm        jmp    _Tb6;
 // LINE 638:
-	this->prevDir = 0x0;
+	this->speed = 0x0;
 // LINE 639:
 	__asm        jmp    _Tb6;
 // LINE 640:
@@ -1753,7 +1784,7 @@ void EmergencyVehicleClass::ArriveOnScene() {
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::UnLinkIconFromCell;
 // LINE 923:
-	this->dispatchIcon.vnext = 0x0;
+	this->emergencyType = 0x0;
 // LINE 924:
 	__asm        jmp    near ptr 0x0054245C;
 }
@@ -1819,7 +1850,7 @@ _T97:
 	__asm        cmp    eax, [ecx];
 	__asm        jne    _Tc9;
 // LINE 958:
-	dyptrptr-> = reinterpret_cast<uint32_t>(this->dispatchIcon.flags);
+	dyptrptr-> = this->dispatchIcon.next;
 // LINE 959:
 	__asm        jmp    _T108;
 // LINE 961:
@@ -1892,7 +1923,7 @@ _T84:
 	__asm        cmp    cellPointer, 0;
 	__asm        je     _Tb0;
 // LINE 991:
-	reinterpret_cast<uint32_t>(this->dispatchIcon.flags) = cellPointer->dyptr;
+	this->dispatchIcon.next = cellPointer->dyptr;
 // LINE 992:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x126;
@@ -1912,21 +1943,21 @@ _Tba:
 // FUNCTION: COPTER_D 0x00542631
 void EmergencyVehicleClass::Reset() {
 // LINE 1317:
-	this->dispatchIcon.next = 0xff;
+	this->baseLocation.x = 0xff;
 // LINE 1318:
-	this->dispatchIcon.next = 0xff;
+	this->baseLocation.y = 0xff;
 // LINE 1319:
-	this->dispatchIcon.next = 0xff;
+	this->emergencyLocation.x = 0xff;
 // LINE 1320:
-	this->dispatchIcon.next = 0xff;
+	this->emergencyLocation.y = 0xff;
 // LINE 1321:
-	this->dispatchIcon.vnext = 0x0;
+	this->emergencyType = 0x0;
 // LINE 1322:
-	this-><EmergencyVehicleClass+0x294> = 0x1;
+	this->emergencyState = 0x1;
 // LINE 1323:
-	this->dispatchIcon.mesh = 0x0;
+	this->timeOfArrival = 0x0;
 // LINE 1324:
-	reinterpret_cast<uint32_t>(this->dispatchPath[4]) = 0x0;
+	this->timeToEmergency = 0x0;
 // LINE 1327:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::Reset;
@@ -2062,7 +2093,7 @@ void EmergencyVehicleClass::BuildPath(struct _RGIndex startVertex, struct _RGInd
 	struct RGVertex *pRGV;
 
 // LINE 1409:
-	*reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&this->numberOfSeats) + 3) = 0x1;
+	this->dispatchPathLength = 0x1;
 // LINE 1411:
 	reinterpret_cast<uint16_t>(index.x) = reinterpret_cast<uint16_t>(destVertex.x);
 // LINE 1412:
@@ -2299,13 +2330,13 @@ _T95:
 // FUNCTION: COPTER_D 0x00542a75
 void EmergencyVehicleClass::SetSaveData(struct _AUTO_LOAD_SAVE *sd) {
 // LINE 1508:
-	reinterpret_cast<uint16_t>(sd->e.baseLocation.x) = this->dispatchIcon.next;
+	reinterpret_cast<uint16_t>(sd->e.baseLocation.x) = reinterpret_cast<uint16_t>(this->baseLocation.x);
 // LINE 1509:
-	reinterpret_cast<uint16_t>(sd->e.emergencyLocation.x) = this->dispatchIcon.next;
+	reinterpret_cast<uint16_t>(sd->e.emergencyLocation.x) = reinterpret_cast<uint16_t>(this->emergencyLocation.x);
 // LINE 1510:
-	sd->e.emergencyType = this->dispatchIcon.vnext;
+	sd->e.emergencyType = this->emergencyType;
 // LINE 1511:
-	sd->e.timeOfArrival = this->dispatchIcon.mesh;
+	sd->e.timeOfArrival = this->timeOfArrival;
 // LINE 1512:
 	__asm        mov    esi, this;
 	__asm        mov    edi, sd;
@@ -2314,7 +2345,7 @@ void EmergencyVehicleClass::SetSaveData(struct _AUTO_LOAD_SAVE *sd) {
 	__asm        mov    ecx, 0x19;
 	__asm        rep movsd;
 // LINE 1513:
-	sd->e.timeToEmergency = reinterpret_cast<uint32_t>(this->dispatchPath[4]);
+	sd->e.timeToEmergency = this->timeToEmergency;
 // LINE 1514:
 	__asm        mov    esi, this;
 	__asm        mov    edi, sd;
@@ -2323,15 +2354,15 @@ void EmergencyVehicleClass::SetSaveData(struct _AUTO_LOAD_SAVE *sd) {
 	__asm        mov    ecx, 0x40;
 	__asm        rep movsd;
 // LINE 1515:
-	sd->e.dispatchPathIndex = *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&this->numberOfSeats) + 2);
+	sd->e.dispatchPathIndex = this->dispatchPathIndex;
 // LINE 1516:
-	sd->e.dispatchPathLength = *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&this->numberOfSeats) + 3);
+	sd->e.dispatchPathLength = this->dispatchPathLength;
 // LINE 1517:
-	sd->e.emergencyState = this-><EmergencyVehicleClass+0x294>;
+	sd->e.emergencyState = this->emergencyState;
 // LINE 1518:
-	sd->e.stationID = this-><EmergencyVehicleClass+0x298>;
+	sd->e.stationID = this->stationID;
 // LINE 1519:
-	sd->e.numberOfSeats = this-><EmergencyVehicleClass+0x29c>;
+	sd->e.numberOfSeats = this->numberOfSeats;
 // LINE 1520:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 2;
@@ -2362,15 +2393,15 @@ _T1d:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::LoadSaveData;
 // LINE 1556:
-	this->dispatchIcon.next = reinterpret_cast<uint16_t>(sd->e.baseLocation.x);
+	reinterpret_cast<uint16_t>(this->baseLocation.x) = reinterpret_cast<uint16_t>(sd->e.baseLocation.x);
 // LINE 1557:
-	this->dispatchIcon.next = reinterpret_cast<uint16_t>(sd->e.emergencyLocation.x);
+	reinterpret_cast<uint16_t>(this->emergencyLocation.x) = reinterpret_cast<uint16_t>(sd->e.emergencyLocation.x);
 // LINE 1558:
-	this->dispatchIcon.vnext = sd->e.emergencyType;
+	this->emergencyType = sd->e.emergencyType;
 // LINE 1559:
-	this->dispatchIcon.mesh = sd->e.timeOfArrival;
+	this->timeOfArrival = sd->e.timeOfArrival;
 // LINE 1560:
-	reinterpret_cast<uint32_t>(this->dispatchPath[4]) = sd->e.timeToEmergency;
+	this->timeToEmergency = sd->e.timeToEmergency;
 // LINE 1561:
 	__asm        mov    esi, sd;
 	__asm        mov    edi, this;
@@ -2379,15 +2410,15 @@ _T1d:
 	__asm        mov    ecx, 0x40;
 	__asm        rep movsd;
 // LINE 1562:
-	*reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&this->numberOfSeats) + 2) = sd->e.dispatchPathIndex;
+	this->dispatchPathIndex = sd->e.dispatchPathIndex;
 // LINE 1563:
-	*reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&this->numberOfSeats) + 3) = sd->e.dispatchPathLength;
+	this->dispatchPathLength = sd->e.dispatchPathLength;
 // LINE 1564:
-	this-><EmergencyVehicleClass+0x294> = sd->e.emergencyState;
+	this->emergencyState = sd->e.emergencyState;
 // LINE 1565:
-	this-><EmergencyVehicleClass+0x298> = sd->e.stationID;
+	this->stationID = sd->e.stationID;
 // LINE 1566:
-	this-><EmergencyVehicleClass+0x29c> = sd->e.numberOfSeats;
+	this->numberOfSeats = sd->e.numberOfSeats;
 // LINE 1568:
 	__asm        mov    eax, sd;
 	__asm        add    eax, 0x142;

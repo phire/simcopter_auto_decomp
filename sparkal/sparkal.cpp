@@ -35,36 +35,7 @@ protected:
 };
 
 // Type: class CSparkalApp (forward reference);
-// VTABLE: COPTER_D 0x0058f428
-class CSparkalApp{ // packed(0x14 bytes) TI: 0x1265
-public:
-	void CSparkalApp();
-	virtual void ~CSparkalApp(); // vtable+0x0
-	virtual class CSparkalWindow* NewWindow(unsigned long, unsigned long, unsigned long, const struct SparkalColor*, char *); // vtable+0x4
-	class IFlatImage* NewImage(long, long, const const struct SparkalColor*);
-	class IFlatImage* NewImage(char *);
-	virtual unsigned long PrepareGame(); // vtable+0x8
-	virtual unsigned long TickGame(); // vtable+0xc
-	virtual unsigned long FinishGame(); // vtable+0x10
-	unsigned long TestFlag(unsigned long);
-	unsigned long SetFlag(unsigned long);
-	unsigned long ResetFlag(unsigned long);
-	int32_t GetRuntimePlatform();
-	int32_t DecideRuntimePlatform();
-	enum PlatfromType {
-		Unknown = 0,
-		Win32s = 1,
-		WinNT31 = 2,
-		WinNT35 = 3,
-		Win95 = 4,
-		MacSystem7 = 5,
-	};
-protected:
-	struct SparkalColor *mpColorTable;
-	int32_t _mRuntimePlatform;
-	unsigned long _mFlags;
-	int32_t mbUseDirectDraw;
-};
+// CSparkalApp Class implementation not found
 
 // Type: float;
 

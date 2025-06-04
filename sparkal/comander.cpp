@@ -24,47 +24,7 @@ protected:
 // Type: void;
 
 // Type: class CSparkalWindow (forward reference);
-// VTABLE: COPTER_D 0x00590ef8
-class CSparkalWindow{ // packed(0x68 bytes) TI: 0x20d9
-public:
-	void CSparkalWindow(unsigned long, unsigned long, unsigned long, const struct SparkalColor*, char *);
-	void CSparkalWindow();
-	virtual void ~CSparkalWindow(); // vtable+0x0
-	void * __ptr32 GetPlatformData();
-	long GetWidth();
-	long GetHeight();
-	virtual unsigned long GetClientSize(long *, long *); // vtable+0x4
-	class ScreenBuffer* GetBackBuffer();
-	class ScreenBuffer* SetBackBuffer(class ScreenBuffer*);
-	class ICommander* GetCommander();
-	class ICommander* SetCommander(class ICommander*);
-	virtual unsigned long Draw(); // vtable+0x8
-	virtual unsigned long SetCursor(unsigned long); // vtable+0xc
-	virtual unsigned long SetCursorFromIndex(int32_t); // vtable+0x10
-	virtual unsigned long LoadGameCursors(); // vtable+0x14
-	virtual void FreeGameCursors(); // vtable+0x18
-	unsigned long DrawBufferText(const const char*, unsigned long, long, long, long *, long *, long *, long *);
-	virtual unsigned long Sleep(); // vtable+0x1c
-	virtual unsigned long WakeUp(); // vtable+0x20
-	unsigned long ScreenScroll(long, long, long, long, long, long);
-	unsigned long RectSlideUp(long, long, long, long);
-	virtual unsigned long SwapBuffer(long, long, long, long); // vtable+0x24
-	virtual unsigned long SwapBuffer(); // vtable+0x28
-	virtual void UpdatePalette(long, long, struct SparkalColor*); // vtable+0x2c
-protected:
-	long mHeight;
-	long mWidth;
-	unsigned long mStyle;
-	class ICommander *mpCommander;
-	class ScreenBuffer *mpBackBuffer;
-	void * __ptr32 mWindow;
-	// calltype: NearStd
-	virtual long MySparkalWindowProc(void * __ptr32, uint32_t, uint32_t, long); // vtable+0x30
-	void * __ptr32 mPalette;
-	void * __ptr32 mhCurrentCursor;
-	void * __ptr32 mhCustomCursor;
-	void * __ptr32 mCursors[16];
-};
+// CSparkalWindow Class implementation not found
 
 // Type: class CDefaultCommander (forward reference);
 // VTABLE: COPTER_D 0x005912d0
@@ -90,24 +50,8 @@ public:
 
 // Type: uint32_t;
 
-// Type: class ICommander;
-// VTABLE: COPTER_D 0x005912a8
-class ICommander{ // packed(0x8 bytes) TI: 0x17ab
-public:
-	void ICommander();
-	virtual void ~ICommander(); // vtable+0x0
-	virtual unsigned long Idle(); // vtable+0x4
-	virtual unsigned long OnCharacter(char, int32_t); // vtable+0x8
-	virtual unsigned long OnMouseDown(int32_t, int32_t); // vtable+0xc
-	virtual unsigned long OnMouseUp(int32_t, int32_t); // vtable+0x10
-	virtual unsigned long OnMouseMove(int32_t, int32_t); // vtable+0x14
-	virtual unsigned long OnWindowActivate(); // vtable+0x18
-	virtual unsigned long OnWindowDeactivate(); // vtable+0x1c
-	virtual class CSparkalWindow* SetWindow(class CSparkalWindow*); // vtable+0x20
-	class CSparkalWindow* GetWindow();
-protected:
-	class CSparkalWindow *mpWindow;
-};
+// Type: class ICommander (forward reference);
+// ICommander Class implementation not found
 
 
 

@@ -35,7 +35,7 @@ struct _dPoint2d{ // packed(0x10 bytes) TI: 0x2766
 };
 
 // Type: struct VRResource (forward reference);
-struct VRResource{ // packed(0x10 bytes) TI: 0x18ae
+struct VRResource{ // not packed(0x10 bytes) TI: 0x34b5
 	char * mem;
 	int32_t mempoolid;
 	int32_t type;
@@ -43,7 +43,7 @@ struct VRResource{ // packed(0x10 bytes) TI: 0x18ae
 };
 
 // Type: struct VRMemPool (forward reference);
-struct VRMemPool{ // packed(0x20 bytes) TI: 0x2453
+struct VRMemPool{ // not packed(0x20 bytes) TI: 0x3e14
 	int32_t ObjCount;
 	int32_t entry;
 	char * Reset_Xf;

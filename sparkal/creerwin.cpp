@@ -1463,7 +1463,7 @@ _Tc01:
 	__asm        mov    [ecx+0x834], eax;
 	__asm        jmp    _Tc97;
 _Tc87:
-	this-><CareerWindow+0x834> = 0x0;
+	this->cityNameTextWindow = 0x0;
 // LINE 149:
 _Tc97:
 	__asm        mov    eax, this;
@@ -1615,7 +1615,7 @@ _Te4d:
 	__asm        mov    [ecx+0x838], eax;
 	__asm        jmp    _Tee3;
 _Ted3:
-	this-><CareerWindow+0x838> = 0x0;
+	this->cityLevelTextWindow = 0x0;
 // LINE 160:
 _Tee3:
 	__asm        mov    eax, this;
@@ -1687,7 +1687,7 @@ _Tee3:
 	__asm        add    ecx, 0xBC;
 	__asm        call   dword ptr [eax+0x10];
 // LINE 171:
-	this->mySmackerBackBuffers[0].bBlankAtEndOfVideo = 0x1;
+	this->mySmackerBackBuffers[0].bLoopVideo = 0x1;
 // LINE 174:
 	__asm        lea    eax, szFullCityVideoFileName[0];
 	__asm        push   eax;
@@ -1719,7 +1719,7 @@ _Tee3:
 	__asm        add    ecx, 0x338;
 	__asm        call   dword ptr [eax+0x10];
 // LINE 178:
-	this->mySmackerBackBuffers[1].bBlankAtEndOfVideo = 0x1;
+	this->mySmackerBackBuffers[1].bLoopVideo = 0x1;
 // LINE 181:
 	__asm        lea    eax, szFullCityVideoFileName[0];
 	__asm        push   eax;
@@ -1751,7 +1751,7 @@ _Tee3:
 	__asm        add    ecx, 0x5B4;
 	__asm        call   dword ptr [eax+0x10];
 // LINE 185:
-	this->mySmackerBackBuffers[2].bBlankAtEndOfVideo = 0x1;
+	this->mySmackerBackBuffers[2].bLoopVideo = 0x1;
 // LINE 187:
 	__asm        push   1;
 	__asm        mov    eax, this;
@@ -2013,7 +2013,7 @@ _T1f5:
 	__asm        mov    [ecx+0x83C], eax;
 	__asm        jmp    _T255;
 _T248:
-	this-><CareerWindow+0x83c> = 0x0;
+	this->mySelectionImage = 0x0;
 // LINE 211:
 _T255:
 	__asm        mov    dword ptr [ebp-0x18], 1;
@@ -2166,7 +2166,7 @@ void CareerWindow::DestroyImage() {
 	__asm        jmp    _T56;
 // LINE 222:
 _T56:
-	this-><CareerWindow+0x83c> = 0x0;
+	this->mySelectionImage = 0x0;
 // LINE 224:
 _T63:
 	__asm        mov    ecx, this;

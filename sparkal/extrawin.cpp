@@ -647,69 +647,7 @@ protected:
 };
 
 // Type: class CBackBuffer (forward reference);
-// VTABLE: COPTER_D 0x00590808
-class CBackBuffer : public IBackBuffer
-{ // packed(0x134 bytes) TI: 0x18f5
-public:
-	void CBackBuffer(long, long, const struct SparkalColor*);
-	void CBackBuffer(char *);
-	void CBackBuffer();
-	virtual void InitializeMemberVariables(); // vtable+0x28
-	void ~CBackBuffer();
-	unsigned long Load();
-	virtual unsigned long Lock() /* override */;
-	virtual unsigned long Unlock() /* override */;
-	// calltype: NearC
-	static int32_t GetPaletteFromImage(char *, struct SparkalColor*);
-	virtual unsigned long Swap(class CSparkalWindow*, long, long) /* override */;
-	virtual unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long) /* override */;
-	virtual unsigned long StretchRect(class CSparkalWindow*, long, long, long, long, long, long, long, long) /* override */;
-	virtual unsigned long Compose(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&); // vtable+0x2c
-	virtual unsigned long Compose(class IFlatImage*, long, long, long, long, long, long) /* override */;
-	virtual unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long) /* override */;
-	virtual unsigned long StretchCompose(class IFlatImage*, const struct SparkalRect&, const struct SparkalRect&); // vtable+0x30
-	virtual unsigned long Duplicate(class CBackBuffer*, int32_t); // vtable+0x34
-	virtual unsigned long ComposeNoClip(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&); // vtable+0x38
-	virtual unsigned long ComposeNoClip(class IFlatImage*, long, long, long, long, long, long); // vtable+0x3c
-	void UpdatePalette(long, long, const struct SparkalColor*);
-	virtual void SetTransparentColor(int32_t, long) /* override */;
-	unsigned long GetTransparentColor(long&);
-	unsigned long SetFont(class MFont*);
-	void SetFontColor(struct SparkalColor&);
-	void SetFontIndex(int32_t);
-	void SetColor(struct SparkalColor&);
-	void SetColorIndex(int32_t);
-	virtual unsigned long DrawLine(long, long, long, long, long); // vtable+0x40
-	virtual unsigned long FillRect(long, const struct SparkalRect*); // vtable+0x44
-	virtual unsigned long DrawBufferText(char *, long, unsigned long, const class MRect&, class MFont*); // vtable+0x48
-	virtual unsigned long DrawBufferText(char *, unsigned long, long *, long *, long *, long *, class MFont*); // vtable+0x4c
-	virtual unsigned long DrawLineUnclipped(long, long, long, long, long); // vtable+0x50
-	virtual unsigned long DrawLineClipped(long, long, long, long, long); // vtable+0x54
-	virtual unsigned long DrawRectangleOutline(const struct SparkalRect&, long); // vtable+0x58
-	virtual unsigned long DrawRectangleOutlineUnclipped(const struct SparkalRect&, long); // vtable+0x5c
-	long IsLost();
-	long Restore();
-	char * szFilePath;
-	struct tagRECT rectDirectDrawBuffer;
-protected:
-	int32_t bSurfacePrimary;
-	int32_t bSurfaceTransparent;
-	class MFont *mFont;
-	struct SparkalColor colorFontCurrent;
-	struct SparkalColor colorCurrent;
-	int32_t nColorIndexFontCurrent;
-	int32_t nColorIndexCurrent;
-	int32_t nColorIndexTransparent;
-	struct IDirectDrawSurface *mpFrontSurface;
-	struct IDirectDrawSurface *mpBackSurface;
-	struct IDirectDrawPalette *mpPalette;
-	struct _DDSURFACEDESC mDDdesc;
-	struct _DDBLTFX mDDBltFx;
-	void * __ptr32 hPen;
-	int32_t nPenThickness;
-	struct SparkalColor colorPenCurrent;
-	virtual struct IDirectDrawSurface* GetDDSurface(); // vtable+0x60
-};
+// CBackBuffer Class implementation not found
 
 // Type: class SoundSettingsWindow (forward reference);
 // VTABLE: COPTER_D 0x0058fce8
@@ -1029,21 +967,21 @@ protected:
 // Type: class TextWindow;
 // VTABLE: COPTER_D 0x00591a90
 class TextWindow : public GraphicWindow
-{ // packed(0xa4 bytes) TI: 0x1dfc
+{ // packed(0xa4 bytes) TI: 0x4411
 public:
-	void TextWindow(class MRect&, int32_t, class basic_string<char>&, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
+	void TextWindow(class MRect&, int32_t, const class basic_string<char>&, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	void TextWindow(class MRect&, int32_t, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t);
 	void TextWindow();
 	virtual int32_t DrawSelf() /* override */;
-	virtual void SetWindowTitle(class basic_string<char>&) /* override */;
-	virtual void SetWindowTitle(int32_t); // vtable+0xc4
-	virtual void SetFontCharacteristics(long, long, long); // vtable+0xc8
-	virtual void SetTextDrawStyle(unsigned long); // vtable+0xcc
-	virtual void SetTextColor(const struct SparkalColor&); // vtable+0xd0
-	virtual void SetBackgroundDrawing(int32_t); // vtable+0xd4
-	virtual void LoadStrings(); // vtable+0xd8
-	virtual void FitWindowToText(); // vtable+0xdc
-	virtual int32_t ResizeWindowForExactLineHeights(); // vtable+0xe0
+	virtual void SetWindowTitle(const class basic_string<char>&); // vtable+0xc4
+	virtual void SetWindowTitle(int32_t); // vtable+0xc8
+	virtual void SetFontCharacteristics(long, long, long); // vtable+0xcc
+	virtual void SetTextDrawStyle(unsigned long); // vtable+0xd0
+	virtual void SetTextColor(const struct SparkalColor&); // vtable+0xd4
+	virtual void SetBackgroundDrawing(int32_t); // vtable+0xd8
+	virtual void LoadStrings(); // vtable+0xdc
+	virtual void FitWindowToText(); // vtable+0xe0
+	virtual int32_t ResizeWindowForExactLineHeights(); // vtable+0xe4
 protected:
 	int32_t bDrawOpaqueBackground;
 	struct SparkalColor colorFont;
@@ -6767,7 +6705,7 @@ _T652:
 	__asm        lea    ecx, sGroundPreviewFilePath.c_str_ptr;
 	__asm        call   basic_string<char>::c_str;
 	__asm        push   eax;
-	__asm        lea    ecx, tempGroundImage<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempGroundImage<CBackBuffer+0x00:None>;
 	__asm        call   CBackBuffer::CBackBuffer;
 // LINE 842:
 	__asm        push   0x42;
@@ -6795,9 +6733,9 @@ _T652:
 
 	__asm        jmp    near ptr 0x00454EB3;
 
-	__asm        mov    eax, tempGroundImage.mHeight;
+	__asm        mov    eax, [ebp-0x140];
 	__asm        push   eax;
-	__asm        mov    eax, tempGroundImage.mWidth;
+	__asm        mov    eax, [ebp-0x144];
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   0;
@@ -6806,7 +6744,7 @@ _T652:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        push   eax;
-	__asm        lea    ecx, tempGroundImage<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempGroundImage<CBackBuffer+0x00:None>;
 	__asm        call   CBackBuffer::Compose;
 // LINE 846:
 	__asm        jmp    near ptr 0x00454EE6;
@@ -6835,7 +6773,7 @@ _T652:
 	__asm        mov    ecx, [eax+0xA0];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 847:
-	__asm        lea    ecx, tempGroundImage<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempGroundImage<CBackBuffer+0x00:None>;
 	__asm        call   CBackBuffer::~CBackBuffer;
 	__asm        lea    ecx, sBuildingPreviewFilePath.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;

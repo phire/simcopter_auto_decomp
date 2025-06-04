@@ -823,7 +823,7 @@ _T358:
 	__asm        mov    dword ptr [eax+0xF2], 1;
 	__asm        jmp    _T40a;
 _T3fd:
-	this->nScrollingHangar = 0x0;
+	this->bDaytime = 0x0;
 // LINE 55:
 _T40a:
 	__asm        mov    ecx, this;
@@ -1163,7 +1163,7 @@ _T144:
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004727C5;
 // LINE 86:
-	this-><HangarWindow+0x12a> = 0x152;
+	this->lWindowPositionInHangar = 0x152;
 // LINE 88:
 	__asm        push   0x94;
 	__asm        call   operator new;
@@ -1984,7 +1984,7 @@ _T108:
 	__asm        mov    [ecx+0x11E], eax;
 	__asm        jmp    _T171;
 _T164:
-	this-><HangarWindow+0x11e> = 0x0;
+	this->mySecondImage = 0x0;
 // LINE 137:
 _T171:
 	__asm        mov    eax, this;
@@ -2019,7 +2019,7 @@ void HangarWindow::DestroyImage() {
 	__asm        jmp    _T56;
 // LINE 146:
 _T56:
-	this-><HangarWindow+0x11e> = 0x0;
+	this->mySecondImage = 0x0;
 // LINE 148:
 _T63:
 	__asm        jmp    near ptr 0x00473291;
@@ -2161,7 +2161,7 @@ _T167:
 	__asm        call   HangarWindow::DisplayHelp;
 // LINE 164:
 _T1a9:
-	this->myTimer.lTotalElapsedTime = 0x1;
+	this->bTestedHotspotsAlready = 0x1;
 // LINE 167:
 _T1b6:
 	__asm        jmp    near ptr 0x00473451;
@@ -2409,7 +2409,7 @@ long HangarWindow::DoCursorMove(long nCursorX, long nCursorY) {
 	__asm        cmp    nCursorX, 8;
 	__asm        jge    _T28;
 // LINE 263:
-	this->myTimer.lFrequency = 0xffffffe8;
+	this->nScrollingHangar = 0xffffffe8;
 // LINE 264:
 	__asm        jmp    _T64;
 _T28:
@@ -2423,12 +2423,12 @@ _T28:
 	__asm        cmp    eax, nCursorX;
 	__asm        jge    _T57;
 // LINE 265:
-	this->myTimer.lFrequency = 0x18;
+	this->nScrollingHangar = 0x18;
 // LINE 266:
 	__asm        jmp    _T64;
 // LINE 267:
 _T57:
-	this->myTimer.lFrequency = 0x0;
+	this->nScrollingHangar = 0x0;
 // LINE 268:
 _T64:
 	__asm        mov    eax, this;
@@ -2489,9 +2489,9 @@ _T12b:
 	__asm        mov    ecx, this;
 	__asm        call   HangarWindow::HideHelp;
 // LINE 270:
-	this-><HangarWindow+0x122> = nCursorX;
+	this->ptSavedCursorPosition.x = nCursorX;
 // LINE 271:
-	this-><HangarWindow+0x126> = nCursorY;
+	this->ptSavedCursorPosition.y = nCursorY;
 // LINE 272:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x0047381F;
@@ -2901,7 +2901,7 @@ void HangarWindow::ScrollHangarView(long lDistance) {
 	__asm        cmp    dword ptr [eax+0x12A], 0;
 	__asm        jge    _T62;
 // LINE 319:
-	this-><HangarWindow+0x12a> = 0x0;
+	this->lWindowPositionInHangar = 0x0;
 // LINE 320:
 	__asm        jmp    _T86;
 _T62:

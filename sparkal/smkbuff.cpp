@@ -73,47 +73,7 @@ struct tagRECT{ // packed(0x10 bytes) TI: 0x13c4
 };
 
 // Type: class CSparkalWindow (forward reference);
-// VTABLE: COPTER_D 0x00590ef8
-class CSparkalWindow{ // packed(0x68 bytes) TI: 0x20d9
-public:
-	void CSparkalWindow(unsigned long, unsigned long, unsigned long, const struct SparkalColor*, char *);
-	void CSparkalWindow();
-	virtual void ~CSparkalWindow(); // vtable+0x0
-	void * __ptr32 GetPlatformData();
-	long GetWidth();
-	long GetHeight();
-	virtual unsigned long GetClientSize(long *, long *); // vtable+0x4
-	class ScreenBuffer* GetBackBuffer();
-	class ScreenBuffer* SetBackBuffer(class ScreenBuffer*);
-	class ICommander* GetCommander();
-	class ICommander* SetCommander(class ICommander*);
-	virtual unsigned long Draw(); // vtable+0x8
-	virtual unsigned long SetCursor(unsigned long); // vtable+0xc
-	virtual unsigned long SetCursorFromIndex(int32_t); // vtable+0x10
-	virtual unsigned long LoadGameCursors(); // vtable+0x14
-	virtual void FreeGameCursors(); // vtable+0x18
-	unsigned long DrawBufferText(const const char*, unsigned long, long, long, long *, long *, long *, long *);
-	virtual unsigned long Sleep(); // vtable+0x1c
-	virtual unsigned long WakeUp(); // vtable+0x20
-	unsigned long ScreenScroll(long, long, long, long, long, long);
-	unsigned long RectSlideUp(long, long, long, long);
-	virtual unsigned long SwapBuffer(long, long, long, long); // vtable+0x24
-	virtual unsigned long SwapBuffer(); // vtable+0x28
-	virtual void UpdatePalette(long, long, struct SparkalColor*); // vtable+0x2c
-protected:
-	long mHeight;
-	long mWidth;
-	unsigned long mStyle;
-	class ICommander *mpCommander;
-	class ScreenBuffer *mpBackBuffer;
-	void * __ptr32 mWindow;
-	// calltype: NearStd
-	virtual long MySparkalWindowProc(void * __ptr32, uint32_t, uint32_t, long); // vtable+0x30
-	void * __ptr32 mPalette;
-	void * __ptr32 mhCurrentCursor;
-	void * __ptr32 mhCustomCursor;
-	void * __ptr32 mCursors[16];
-};
+// CSparkalWindow Class implementation not found
 
 // Type: struct SparkalRect (forward reference);
 struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
@@ -216,7 +176,7 @@ protected:
 
 // Type: class SmackerBuffer;
 // VTABLE: COPTER_D 0x00591138
-class SmackerBuffer{ // packed(0x140 bytes) TI: 0x1311
+class SmackerBuffer{ // packed(0x140 bytes) TI: 0x20de
 public:
 	void SmackerBuffer(char *, int32_t, int32_t);
 	void SmackerBuffer();
@@ -256,110 +216,8 @@ protected:
 	char szSmackFilePath[260];
 };
 
-// Type: class CBackBuffer;
-// VTABLE: COPTER_D 0x00590808
-class CBackBuffer : public IBackBuffer
-{ // packed(0x134 bytes) TI: 0x18f5
-public:
-	void CBackBuffer(long, long, const struct SparkalColor*);
-	void CBackBuffer(char *);
-	void CBackBuffer();
-	virtual void InitializeMemberVariables(); // vtable+0x28
-	void ~CBackBuffer();
-	unsigned long Load();
-	virtual unsigned long Lock() /* override */;
-	virtual unsigned long Unlock() /* override */;
-	// calltype: NearC
-	static int32_t GetPaletteFromImage(char *, struct SparkalColor*);
-	virtual unsigned long Swap(class CSparkalWindow*, long, long) /* override */;
-	virtual unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long) /* override */;
-	virtual unsigned long StretchRect(class CSparkalWindow*, long, long, long, long, long, long, long, long) /* override */;
-	virtual unsigned long Compose(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&); // vtable+0x2c
-	virtual unsigned long Compose(class IFlatImage*, long, long, long, long, long, long) /* override */;
-	virtual unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long) /* override */;
-	virtual unsigned long StretchCompose(class IFlatImage*, const struct SparkalRect&, const struct SparkalRect&); // vtable+0x30
-	virtual unsigned long Duplicate(class CBackBuffer*, int32_t); // vtable+0x34
-	virtual unsigned long ComposeNoClip(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&); // vtable+0x38
-	virtual unsigned long ComposeNoClip(class IFlatImage*, long, long, long, long, long, long); // vtable+0x3c
-	void UpdatePalette(long, long, const struct SparkalColor*);
-	virtual void SetTransparentColor(int32_t, long) /* override */;
-	unsigned long GetTransparentColor(long&);
-	unsigned long SetFont(class MFont*);
-	void SetFontColor(struct SparkalColor&);
-	void SetFontIndex(int32_t);
-	void SetColor(struct SparkalColor&);
-	void SetColorIndex(int32_t);
-	virtual unsigned long DrawLine(long, long, long, long, long); // vtable+0x40
-	virtual unsigned long FillRect(long, const struct SparkalRect*); // vtable+0x44
-	virtual unsigned long DrawBufferText(char *, long, unsigned long, const class MRect&, class MFont*); // vtable+0x48
-	virtual unsigned long DrawBufferText(char *, unsigned long, long *, long *, long *, long *, class MFont*); // vtable+0x4c
-	virtual unsigned long DrawLineUnclipped(long, long, long, long, long); // vtable+0x50
-	virtual unsigned long DrawLineClipped(long, long, long, long, long); // vtable+0x54
-	virtual unsigned long DrawRectangleOutline(const struct SparkalRect&, long); // vtable+0x58
-	virtual unsigned long DrawRectangleOutlineUnclipped(const struct SparkalRect&, long); // vtable+0x5c
-	long IsLost();
-	long Restore();
-	char * szFilePath;
-	struct tagRECT rectDirectDrawBuffer;
-protected:
-	int32_t bSurfacePrimary;
-	int32_t bSurfaceTransparent;
-	class MFont *mFont;
-	struct SparkalColor colorFontCurrent;
-	struct SparkalColor colorCurrent;
-	int32_t nColorIndexFontCurrent;
-	int32_t nColorIndexCurrent;
-	int32_t nColorIndexTransparent;
-	struct IDirectDrawSurface *mpFrontSurface;
-	struct IDirectDrawSurface *mpBackSurface;
-	struct IDirectDrawPalette *mpPalette;
-	struct _DDSURFACEDESC mDDdesc;
-	struct _DDBLTFX mDDBltFx;
-	void * __ptr32 hPen;
-	int32_t nPenThickness;
-	struct SparkalColor colorPenCurrent;
-	virtual struct IDirectDrawSurface* GetDDSurface(); // vtable+0x60
-};
-
-// Type: class IBackBuffer;
-// VTABLE: COPTER_D 0x005907e0
-class IBackBuffer : public IFlatImage
-{ // packed(0x18 bytes) TI: 0x1544
-public:
-	virtual unsigned long Swap(class CSparkalWindow*, long, long); // vtable+0x1c
-	virtual unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long); // vtable+0x20
-	virtual unsigned long StretchRect(class CSparkalWindow*, long, long, long, long, long, long, long, long); // vtable+0x24
-};
-
-// Type: class IFlatImage;
-// VTABLE: COPTER_D 0x00591050
-class IFlatImage{ // packed(0x18 bytes) TI: 0x13a1
-public:
-	void IFlatImage();
-	virtual unsigned long Lock(); // vtable+0x0
-	virtual unsigned long Unlock(); // vtable+0x4
-	unsigned long GetLockCount();
-	virtual void SetTransparentColor(int32_t, long); // vtable+0x8
-	long GetHeight();
-	long GetWidth();
-	void * __ptr32 GetBitsPointer();
-	long GetStride();
-	virtual unsigned long Compose(class IFlatImage*, long, long, long, long, long, long); // vtable+0xc
-	unsigned long Compose(class IFlatImage*, long, long);
-	virtual unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long); // vtable+0x10
-	virtual unsigned long StretchCompose(class IFlatImage*, struct SparkalRect, struct SparkalRect); // vtable+0x14
-	virtual unsigned long FillRect(long, struct SparkalRect*); // vtable+0x18
-	void DrawPixel(unsigned char, long, long);
-	unsigned char GetPixel(long, long);
-	static unsigned long lTotalMemoryUsage;
-	static unsigned long lTotalLockCount;
-protected:
-	unsigned long mLockCount;
-	long mWidth;
-	long mHeight;
-	void * __ptr32 mpBits;
-	long mStride;
-};
+// Type: class CBackBuffer (forward reference);
+// CBackBuffer Class implementation not found
 
 
 
@@ -1970,11 +1828,11 @@ void SmackerBackBuffer::SmackerBackBuffer() {
 // LINE 806:
 	this->bUseSmackBuf = 0x0;
 // LINE 807:
-	this->mWidth = 0x0;
+	this-><SmackerBackBuffer+0x148> = 0x0;
 // LINE 808:
-	this->mHeight = 0x0;
+	this-><SmackerBackBuffer+0x14c> = 0x0;
 // LINE 809:
-	this-><SmackerBackBuffer+0x278> = 0x0;
+	this->bDirectBlit = 0x0;
 // LINE 810:
 	__asm        jmp    near ptr 0x00498F59;
 
@@ -2002,11 +1860,11 @@ void SmackerBackBuffer::SmackerBackBuffer(char * szNewFilePath, int32_t bNewUseS
 // LINE 820:
 	this->bUseSmackBuf = bNewUseSmackBuf;
 // LINE 821:
-	this->mWidth = nNewWidth;
+	this-><SmackerBackBuffer+0x148> = nNewWidth;
 // LINE 822:
-	this->mHeight = nNewHeight;
+	this-><SmackerBackBuffer+0x14c> = nNewHeight;
 // LINE 823:
-	this-><SmackerBackBuffer+0x278> = 0x0;
+	this->bDirectBlit = 0x0;
 // LINE 824:
 	__asm        jmp    near ptr 0x00498FDB;
 
@@ -2028,9 +1886,9 @@ void SmackerBackBuffer::~SmackerBackBuffer() {
 	__asm        cmp    dword ptr [eax+0x278], 0;
 	__asm        je     _T54;
 // LINE 837:
-	this->mpFrontSurface = 0x0;
+	this-><SmackerBackBuffer+0x18c> = 0x0;
 // LINE 838:
-	this->mpBackSurface = 0x0;
+	this-><SmackerBackBuffer+0x190> = 0x0;
 // LINE 841:
 _T54:
 	__asm        jmp    near ptr 0x0049903E;
@@ -2054,7 +1912,7 @@ _T7a:
 // FUNCTION: COPTER_D 0x00499074
 void SmackerBackBuffer::SetDirectBlit() {
 // LINE 849:
-	this-><SmackerBackBuffer+0x278> = 0x1;
+	this->bDirectBlit = 0x1;
 // LINE 850:
 	__asm        jmp    near ptr 0x00499092;
 }
@@ -2101,9 +1959,9 @@ _T2e:
 _T35:
 	this->bUseSmackBuf = bNewUseSmackBuf;
 // LINE 890:
-	this->mWidth = nNewWidth;
+	this-><SmackerBackBuffer+0x148> = nNewWidth;
 // LINE 891:
-	this->mHeight = nNewHeight;
+	this-><SmackerBackBuffer+0x14c> = nNewHeight;
 // LINE 892:
 	this->nDestWidth = nNewDestinationWidth;
 // LINE 893:
@@ -2147,9 +2005,9 @@ _T29:
 	__asm        jmp    _Tba;
 // LINE 908:
 _T5a:
-	this->mWidth = this->smk->Width;
+	this-><SmackerBackBuffer+0x148> = this->smk->Width;
 // LINE 909:
-	this->mHeight = this->smk->Height;
+	this-><SmackerBackBuffer+0x14c> = this->smk->Height;
 // LINE 912:
 	__asm        push   0x493E0;
 	__asm        call   0x004C462A;
@@ -2203,25 +2061,25 @@ _T40:
 	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 957:
-	this->mDDdesc.dwSize = 0x6c;
+	this-><SmackerBackBuffer+0x198> = 0x6c;
 // LINE 958:
-	this->mDDdesc.dwFlags = 0x6;
+	this-><SmackerBackBuffer+0x19c> = 0x6;
 // LINE 959:
-	this->mDDdesc.ddsCaps.dwCaps = 0x840;
+	this-><SmackerBackBuffer+0x200> = 0x840;
 // LINE 960:
-	this->mDDdesc.dwBackBufferCount = 0x0;
+	this-><SmackerBackBuffer+0x1ac> = 0x0;
 // LINE 961:
-	this->mDDdesc.dwWidth = this->mWidth;
+	this-><SmackerBackBuffer+0x1a4> = this-><SmackerBackBuffer+0x148>;
 // LINE 962:
-	this->mDDdesc.dwHeight = this->mHeight;
+	this-><SmackerBackBuffer+0x1a0> = this-><SmackerBackBuffer+0x14c>;
 // LINE 963:
-	this->rectDirectDrawBuffer.left = 0x0;
+	this-><SmackerBackBuffer+0x15c> = 0x0;
 // LINE 964:
-	this->rectDirectDrawBuffer.top = 0x0;
+	this-><SmackerBackBuffer+0x160> = 0x0;
 // LINE 965:
-	this->rectDirectDrawBuffer.right = this->mWidth;
+	this-><SmackerBackBuffer+0x164> = this-><SmackerBackBuffer+0x148>;
 // LINE 966:
-	this->rectDirectDrawBuffer.bottom = this->mHeight;
+	this-><SmackerBackBuffer+0x168> = this-><SmackerBackBuffer+0x14c>;
 // LINE 968:
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -3041,13 +2899,13 @@ _T1e:
 	__asm        cmp    SrcRight, 0;
 	__asm        jne    _T82;
 // LINE 1244:
-	SrcRight = this->mWidth;
+	SrcRight = this-><SmackerBackBuffer+0x148>;
 // LINE 1245:
 _T82:
 	__asm        cmp    SrcBottom, 0;
 	__asm        jne    _T98;
 // LINE 1246:
-	SrcBottom = this->mHeight;
+	SrcBottom = this-><SmackerBackBuffer+0x14c>;
 // LINE 1248:
 _T98:
 	__asm        mov    eax, this;

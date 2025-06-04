@@ -209,24 +209,7 @@ public:
 };
 
 // Type: class SmackerBackBuffer (forward reference);
-// VTABLE: COPTER_D 0x005911f0
-class SmackerBackBuffer : public SmackerBuffer, public CBackBuffer
-{ // packed(0x278 bytes) TI: 0x18c1
-public:
-	int32_t bUseSmackBuf;
-	void SmackerBackBuffer(char *, int32_t, int32_t, int32_t, int32_t, int32_t);
-	void SmackerBackBuffer();
-	virtual void ~SmackerBackBuffer() /* override */;
-	virtual int32_t Initialize() /* override */;
-	virtual void SetBackBufferData(char *, int32_t, int32_t, int32_t, int32_t, int32_t); // vtable+0x20
-	virtual int32_t Open(char *, unsigned long, unsigned long) /* override */;
-	virtual int32_t CreateSurface() /* override */;
-	virtual unsigned long Compose(class IFlatImage*, long, long, long, long, long, long) /* override */;
-	virtual unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long) /* override */;
-protected:
-	void BltParts(class IFlatImage*, long, long, long, long, long, long);
-	void BltAll(class IFlatImage*, long, long, long, long, long, long);
-};
+// SmackerBackBuffer Class implementation not found
 
 // Type: struct VRAppInitThreadStruct (forward reference);
 struct VRAppInitThreadStruct{ // packed(0x8 bytes) TI: 0x20a4
@@ -367,7 +350,7 @@ int  CGameApp::BackgroundVRAppInit() {
 
 	__asm        jmp    near ptr 0x004BBB59;
 // LINE 99:
-	__asm        lea    ecx, tempHourglassVideoBuffer<SmackerBackBuffer+0x00>;
+	__asm        lea    ecx, tempHourglassVideoBuffer<SmackerBackBuffer+0x00:None>;
 	__asm        call   SmackerBackBuffer::SmackerBackBuffer;
 // LINE 102:
 	lCurrentInitializationFlag = 0x1;
@@ -457,25 +440,25 @@ _Td6:
 	__asm        mov    ecx, 0x604C00;
 	__asm        call   FileServices::GetPathForFile;
 // LINE 111:
-	__asm        lea    ecx, tempHourglassVideoBuffer<SmackerBackBuffer+0x00>;
+	__asm        lea    ecx, tempHourglassVideoBuffer<SmackerBackBuffer+0x00:None>;
 	__asm        call   SmackerBackBuffer::SetDirectBlit;
 // LINE 112:
-	tempHourglassVideoBuffer.bLoopVideo = 0x1;
+	None = 0x1;
 // LINE 113:
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0xFE000;
 	__asm        lea    eax, szVideoPath[0];
 	__asm        push   eax;
-	__asm        lea    ecx, tempHourglassVideoBuffer<SmackerBackBuffer+0x00>;
+	__asm        lea    ecx, tempHourglassVideoBuffer<SmackerBackBuffer+0x00:None>;
 	__asm        call   SmackerBackBuffer::Open;
 // LINE 114:
 	__asm        jmp    near ptr 0x004BBCF8;
 
-	nWidth = tempHourglassVideoBuffer.mWidth;
+	nWidth = None;
 // LINE 115:
 	__asm        jmp    near ptr 0x004BBD09;
 
-	nHeight = tempHourglassVideoBuffer.mHeight;
+	nHeight = None;
 // LINE 116:
 	__asm        jmp    near ptr 0x004BBD1A;
 
@@ -551,7 +534,7 @@ _T2c5:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x34];
 	__asm        push   eax;
-	__asm        lea    ecx, tempHourglassVideoBuffer<SmackerBackBuffer+0x140>;
+	__asm        lea    ecx, [ebp-0x13C];
 	__asm        call   SmackerBackBuffer::Compose;
 // LINE 130:
 	__asm        mov    eax, G_InitializationProgress;
@@ -799,7 +782,7 @@ _T661:
 	__asm        jmp    _T2c5;
 // LINE 142:
 _T685:
-	__asm        lea    ecx, tempHourglassVideoBuffer<SmackerBackBuffer+0x00>;
+	__asm        lea    ecx, tempHourglassVideoBuffer<SmackerBackBuffer+0x00:None>;
 	__asm        call   SmackerBuffer::Close;
 // LINE 144:
 	__asm        cmp    tempVRAppInitThreadStruct.nReturnValue, 0;
@@ -865,7 +848,7 @@ _T75a:
 _T793:
 	__asm        jmp    near ptr 0x004BC2AF;
 
-	__asm        lea    ecx, tempHourglassVideoBuffer<SmackerBackBuffer+0x00>;
+	__asm        lea    ecx, tempHourglassVideoBuffer<SmackerBackBuffer+0x00:None>;
 	__asm        call   SmackerBackBuffer::~SmackerBackBuffer;
 	__asm        mov    eax, [ebp-0x4BC];
 	__asm        jmp    _T8bf;
@@ -931,7 +914,7 @@ _T86b:
 _T8a4:
 	__asm        jmp    near ptr 0x004BC3C0;
 
-	__asm        lea    ecx, tempHourglassVideoBuffer<SmackerBackBuffer+0x00>;
+	__asm        lea    ecx, tempHourglassVideoBuffer<SmackerBackBuffer+0x00:None>;
 	__asm        call   SmackerBackBuffer::~SmackerBackBuffer;
 	__asm        mov    eax, [ebp-0x4C0];
 	__asm        jmp    _T8bf;

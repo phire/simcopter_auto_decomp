@@ -190,7 +190,17 @@ public:
 
 // Type: class AutomobileClass;
 // VTABLE: COPTER_D 0x00592d98
-class AutomobileClass{ // packed(0x10e bytes) TI: 0x2fac
+class AutomobileClass{ // packed(0x11a bytes) TI: 0x4880
+	enum CarType {
+		kCarAmbulance = 0,
+		kCarCop = 1,
+		kCarFiretruck = 2,
+		kCarCriminal = 3,
+	};
+	enum AutoMessageID {
+		AM_NO_MESSAGE = 0,
+		AM_CANCEL_AUTO_MISSION = 1,
+	};
 	enum /* __unnamed */ {
 		CAR_TYPES = 7,
 		PERCENTAGE_OF_AUTO1 = 10,
@@ -246,13 +256,11 @@ class AutomobileClass{ // packed(0x10e bytes) TI: 0x2fac
 		HW_EDGEOFF_LANE2 = 131072,
 		HW_HEIGHT = 2031616,
 	};
-	enum PersonState {
-		PS_IN_VEHICLE = 0,
-		PS_OUT_OF_VEHICLE = 1,
-		PS_BACK_IN_VEHICLE = 2,
-		PS_GOT_AWAY = 3,
-		PS_MISSION_OVER = 4,
-	};
+public:
+	static int32_t fireSirenDist;
+	static int32_t policeSirenDist;
+	static int32_t ambSirenDist;
+	static int32_t fireHoseDist;
 	enum /* __unnamed */ {
 		CAR_RADIUS = 327680,
 		COLLISION_SPACE = 655360,
@@ -269,20 +277,22 @@ class AutomobileClass{ // packed(0x10e bytes) TI: 0x2fac
 	enum Flags {
 		AUTO_INITIALIZED = 1,
 		AUTO_PLACED = 2,
-		AUTO_TURNING = 4,
-		AUTO_MAKING_UTURN = 8,
-		AUTO_PULL_OVER = 16,
-		AUTO_PULLING_OVER = 32,
-		AUTO_PULLED_OVER = 64,
-		AUTO_AT_DEAD_END = 128,
-		AUTO_IN_INTERSECTION = 256,
-		AUTO_ON_FIRE = 512,
-		AUTO_JAMMED = 1024,
-		AUTO_PULLING_OUT = 2048,
-		AUTO_RIGHT_OF_WAY = 4096,
-		AUTO_ON_HIWAY = 8192,
+		AUTO_NEEDS_TO_PULL_OVER = 4,
+		AUTO_PULL_OVER = 8,
+		AUTO_PULLING_OVER = 16,
+		AUTO_PULLED_OVER = 32,
+		AUTO_PULLING_OUT = 64,
+		AUTO_IN_INTERSECTION = 128,
+		AUTO_ON_FIRE = 256,
+		AUTO_JAMMED = 512,
+		AUTO_RIGHT_OF_WAY = 1024,
+		AUTO_ON_HIWAY = 2048,
+		AUTO_SPEEDER = 4096,
+		AUTO_SPEEDER_DONE = 8192,
+		AUTO_UTURN = 16384,
 	};
 public:
+	long carModel;
 	int32_t flags;
 	struct _DYOBJ_INST autoDynomitor;
 	struct Goal goal;
@@ -298,6 +308,7 @@ private:
 	int32_t beamTimer;
 	int32_t m_cellBaseY;
 	int32_t timePulledOver;
+	int32_t hornSoundId;
 	enum DirectionTypes hiwaydir;
 	struct _GridCoordinates currentLocation;
 	struct _GridCoordinates nextLocation;
@@ -306,19 +317,20 @@ private:
 	struct _GridCoordinates eastCell;
 	struct _GridCoordinates westCell;
 protected:
-	long carModel;
 	int32_t speed;
 	enum DirIndex2 prevDir;
 	enum TurnIndex turnIndex;
 	int32_t currDist;
 	int32_t legOfTurn;
 	struct Point3d *pDirVector;
+	int32_t personDone;
+	int32_t personState;
+	int32_t personTimer;
 	int32_t timeToLive;
 	int32_t fireTime;
 	long fireSeq;
 	long missionId;
 	struct _CELL_INFO *cptr;
-	enum AutomobileClass::PersonState personState;
 	int32_t spotlightHitCounter;
 	int32_t IsCarPersistant();
 	int32_t CanCarBeamToHiwayTile(unsigned short);
@@ -344,6 +356,12 @@ public:
 	static void MissionCancel(long);
 	// calltype: NearC
 	static void SetAllHeadlights(int32_t);
+	// calltype: NearC
+	static int32_t S3AutoMessage(short, short);
+	// calltype: NearC
+	static int32_t MIFFLoad(void * __ptr32);
+	// calltype: NearC
+	static int32_t MIFFSave(void * __ptr32);
 	void HitDispatch(long, struct _DYOBJ_INST*, long, long);
 	int32_t AmIABadGuy();
 	int32_t Initialize(int32_t);
@@ -351,17 +369,22 @@ public:
 	void IveBeenMegaphoned(long);
 	void StartFire(long);
 	void StartJam(long);
-	void PullOver();
+	virtual void PullOver(short); // vtable+0x4
 	void PullOut();
 	int32_t CanIPullOut();
+	int32_t CanIPullOver();
+	void DoAUTurn();
+	long GetCarModel();
+	// calltype: NearC
+	static struct _DYOBJ_INST* GetClosestCar(int32_t, int32_t, int32_t);
 protected:
 	void Itterate();
-	virtual void AdjustSpeed(); // vtable+0x4
+	virtual void AdjustSpeed(); // vtable+0x8
 	void Reset();
-	virtual enum TurnIndex PickTurnDir(struct Goal*); // vtable+0x8
+	virtual enum TurnIndex PickTurnDir(struct Goal*); // vtable+0xc
 	void UnPlaceCar();
 	void PullOverCiviliansInWay();
-	virtual void ItterateFSM(); // vtable+0xc
+	virtual void ItterateFSM(); // vtable+0x10
 	int32_t InitializeInstance(int32_t);
 	void LinkToCell(const struct _GridCoordinates&);
 	int32_t AreCarsHeadOn(struct Point3d*);
@@ -369,6 +392,11 @@ protected:
 	int32_t IsCarOutOfCameraRange();
 	void TurnOffHeadlight();
 	void TurnOnHeadlight();
+	int32_t AutoMessage(short);
+	int32_t PlacePerson(int32_t, int32_t);
+	virtual void SetSaveData(struct _AUTO_LOAD_SAVE*); // vtable+0x14
+	virtual void LoadSaveData(struct _AUTO_LOAD_SAVE*); // vtable+0x18
+	void HonkHorn();
 	void SetHiwayDirection(unsigned short);
 	int32_t DoHiwayTilesConnect(unsigned short, unsigned short, enum DirectionTypes);
 	void AdjustCurrentHiwayPosition();
@@ -380,9 +408,10 @@ protected:
 	void TurnRight();
 	void MoveForwardOnHiway();
 	void DoDiagonalRoadFixup();
-	virtual void BeamToWithinCameraRange(); // vtable+0x10
-	virtual int32_t BeamToLocation(const struct _GridCoordinates&); // vtable+0x14
+	virtual void BeamToWithinCameraRange(); // vtable+0x1c
+	virtual int32_t BeamToLocation(const struct _GridCoordinates&); // vtable+0x20
 	void MoveAuto(int32_t);
+	void ChangeAutoColor();
 private:
 	void UnlinkFromCell(const struct _GridCoordinates&);
 	void TransitionBetweenGoals();
@@ -390,6 +419,8 @@ private:
 	void RunJamState();
 	void IveBeenSpotlighted(struct _DYOBJ_INST*);
 	int32_t IsThisAnEmergencyVehicle();
+	void DoPullOverStuff(int32_t);
+	int32_t CanIDoAUTurn();
 public:
 	class AutomobileClass operator=(const class AutomobileClass&);
 };
@@ -441,7 +472,7 @@ void CriminalEvaderCarClass::CriminalEvaderCarClass() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593258;
 // LINE 98:
-	this->flags = 0x11e;
+	this->carModel = 0x11e;
 // LINE 99:
 	__asm        jmp    near ptr 0x00534A44;
 
@@ -635,7 +666,7 @@ void CriminalEvaderCarClass::ItterateFSM() {
 	__asm        cmp    dword ptr [eax+0x116], 0;
 	__asm        je     _T141;
 // LINE 216:
-	this->timeToLeaveCar = 0x2;
+	this->missionState = 0x2;
 // LINE 218:
 	__asm        push   0x30;
 	__asm        call   S3SoundIsPlaying;
@@ -709,7 +740,7 @@ _T10e:
 _T113:
 	__asm        jmp    near ptr 0x00534D5D;
 
-	reinterpret_cast<uint32_t>(this->missionID) = None;
+	this->cptr = None;
 // LINE 228:
 	__asm        push   6;
 	__asm        lea    eax, loc.x;
@@ -729,7 +760,7 @@ _T141:
 	__asm        cmp    dword ptr [eax+0x122], 0;
 	__asm        jge    _T182;
 // LINE 235:
-	this->timeToLeaveCar = 0x1;
+	this->missionState = 0x1;
 // LINE 236:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
@@ -762,7 +793,7 @@ _T195:
 	__asm        cmp    dword ptr [eax+0x116], 0;
 	__asm        je     _T1cc;
 // LINE 251:
-	this->timeToLeaveCar = 0x2;
+	this->missionState = 0x2;
 // LINE 253:
 	__asm        jmp    _T2a5;
 _T1cc:
@@ -799,11 +830,11 @@ _T20b:
 	__asm        test   eax, eax;
 	__asm        je     _T258;
 // LINE 261:
-	this->timeToLeaveCar = 0x3;
+	this->missionState = 0x3;
 // LINE 262:
-	this->fireTime = 0x0;
+	this->personDone = 0x0;
 // LINE 263:
-	this->missionId = 0x780000;
+	this->personTimer = 0x780000;
 // LINE 265:
 	__asm        jmp    _T2a0;
 // LINE 269:
@@ -824,9 +855,9 @@ _T279:
 // LINE 271:
 	mp.i2num = 0x8;
 // LINE 272:
-	mp.id = this->missionState;
+	mp.id = this->missionId;
 // LINE 274:
-	this->timeToLeaveCar = 0x4;
+	this->missionState = 0x4;
 // LINE 277:
 // Block end:
 _T2a0:
@@ -861,9 +892,9 @@ _T2e5:
 // LINE 296:
 	mp.i2num = 0x8;
 // LINE 297:
-	mp.id = this->missionState;
+	mp.id = this->missionId;
 // LINE 299:
-	this->timeToLeaveCar = 0x4;
+	this->missionState = 0x4;
 // LINE 300:
 	__asm        jmp    _T4e4;
 // LINE 304:
@@ -885,7 +916,7 @@ _T346:
 	__asm        test   byte ptr [eax+8], 0x60;
 	__asm        jne    _T360;
 // LINE 313:
-	this->timeToLeaveCar = 0x0;
+	this->missionState = 0x0;
 // LINE 316:
 _T360:
 	__asm        mov    ecx, this;
@@ -915,11 +946,11 @@ _T368:
 	__asm        test   eax, eax;
 	__asm        je     _T3da;
 // LINE 330:
-	this->timeToLeaveCar = 0x3;
+	this->missionState = 0x3;
 // LINE 331:
-	this->fireTime = 0x0;
+	this->personDone = 0x0;
 // LINE 332:
-	this->missionId = 0x780000;
+	this->personTimer = 0x780000;
 // LINE 334:
 	__asm        jmp    _T422;
 // LINE 338:
@@ -940,9 +971,9 @@ _T3fb:
 // LINE 340:
 	mp.i2num = 0x8;
 // LINE 341:
-	mp.id = this->missionState;
+	mp.id = this->missionId;
 // LINE 343:
-	this->timeToLeaveCar = 0x4;
+	this->missionState = 0x4;
 // LINE 346:
 // Block end:
 _T422:
@@ -953,7 +984,7 @@ _T427:
 	__asm        cmp    dword ptr [eax+0x116], 0;
 	__asm        je     _T44a;
 // LINE 352:
-	this-><CriminalEvaderCarClass+0x126> = CriminalEvaderCarClass::constantTimeToBeOnTheRun;
+	this->timeToBeOnTheRun = CriminalEvaderCarClass::constantTimeToBeOnTheRun;
 // LINE 354:
 	__asm        jmp    _T48d;
 _T44a:
@@ -961,9 +992,9 @@ _T44a:
 	__asm        cmp    dword ptr [eax+0x126], 0;
 	__asm        jge    _T47a;
 // LINE 356:
-	this-><CriminalEvaderCarClass+0x126> = CriminalEvaderCarClass::constantTimeToBeOnTheRun;
+	this->timeToBeOnTheRun = CriminalEvaderCarClass::constantTimeToBeOnTheRun;
 // LINE 357:
-	this->timeToLeaveCar = 0x0;
+	this->missionState = 0x0;
 // LINE 359:
 	__asm        jmp    _T48d;
 // LINE 360:
@@ -1080,7 +1111,7 @@ int32_t CriminalEvaderCarClass::NearToBuilding() {
 	__asm        lea    ecx, scan.currDist;
 	__asm        call   SpiralScan::SpiralScan;
 // LINE 443:
-	reinterpret_cast<uint16_t>(scanLoc.x) = *reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&this->goal.edgeIndex) + 2);
+	reinterpret_cast<uint16_t>(scanLoc.x) = reinterpret_cast<uint16_t>(this->goal.gridLoc.x);
 // LINE 447:
 // Block start:
 	unsigned short tt;
@@ -1277,7 +1308,7 @@ void CriminalEvaderCarClass::ShowWhereWeAre() {
 // LINE 649:
 	mp.op = 0xa;
 // LINE 650:
-	mp.id = this->missionState;
+	mp.id = this->missionId;
 // LINE 654:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -1300,13 +1331,13 @@ void CriminalEvaderCarClass::ShowWhereWeAre() {
 // FUNCTION: COPTER_D 0x00535754
 void CriminalEvaderCarClass::SetSaveData(struct _AUTO_LOAD_SAVE *sd) {
 // LINE 669:
-	sd->c.missionState = this->timeToLeaveCar;
+	sd->c.missionState = this->missionState;
 // LINE 670:
-	sd->c.criminalType = this->timeToBeOnTheRun;
+	sd->c.criminalType = this->criminalType;
 // LINE 671:
-	sd->c.timeToLeaveCar = this-><CriminalEvaderCarClass+0x122>;
+	sd->c.timeToLeaveCar = this->timeToLeaveCar;
 // LINE 672:
-	sd->c.timeToBeOnTheRun = this-><CriminalEvaderCarClass+0x126>;
+	sd->c.timeToBeOnTheRun = this->timeToBeOnTheRun;
 // LINE 675:
 	__asm        mov    eax, sd;
 	__asm        push   eax;
@@ -1331,13 +1362,13 @@ _T1d:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::LoadSaveData;
 // LINE 698:
-	this->timeToLeaveCar = sd->c.missionState;
+	this->missionState = sd->c.missionState;
 // LINE 699:
-	this->timeToBeOnTheRun = sd->c.criminalType;
+	this->criminalType = sd->c.criminalType;
 // LINE 700:
-	this-><CriminalEvaderCarClass+0x122> = sd->c.timeToLeaveCar;
+	this->timeToLeaveCar = sd->c.timeToLeaveCar;
 // LINE 701:
-	this-><CriminalEvaderCarClass+0x126> = sd->c.timeToBeOnTheRun;
+	this->timeToBeOnTheRun = sd->c.timeToBeOnTheRun;
 // LINE 702:
 	__asm        jmp    _T76;
 _T76:

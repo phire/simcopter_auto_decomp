@@ -762,69 +762,7 @@ public:
 };
 
 // Type: class CBackBuffer (forward reference);
-// VTABLE: COPTER_D 0x00590808
-class CBackBuffer : public IBackBuffer
-{ // packed(0x134 bytes) TI: 0x18f5
-public:
-	void CBackBuffer(long, long, const struct SparkalColor*);
-	void CBackBuffer(char *);
-	void CBackBuffer();
-	virtual void InitializeMemberVariables(); // vtable+0x28
-	void ~CBackBuffer();
-	unsigned long Load();
-	virtual unsigned long Lock() /* override */;
-	virtual unsigned long Unlock() /* override */;
-	// calltype: NearC
-	static int32_t GetPaletteFromImage(char *, struct SparkalColor*);
-	virtual unsigned long Swap(class CSparkalWindow*, long, long) /* override */;
-	virtual unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long) /* override */;
-	virtual unsigned long StretchRect(class CSparkalWindow*, long, long, long, long, long, long, long, long) /* override */;
-	virtual unsigned long Compose(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&); // vtable+0x2c
-	virtual unsigned long Compose(class IFlatImage*, long, long, long, long, long, long) /* override */;
-	virtual unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long) /* override */;
-	virtual unsigned long StretchCompose(class IFlatImage*, const struct SparkalRect&, const struct SparkalRect&); // vtable+0x30
-	virtual unsigned long Duplicate(class CBackBuffer*, int32_t); // vtable+0x34
-	virtual unsigned long ComposeNoClip(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&); // vtable+0x38
-	virtual unsigned long ComposeNoClip(class IFlatImage*, long, long, long, long, long, long); // vtable+0x3c
-	void UpdatePalette(long, long, const struct SparkalColor*);
-	virtual void SetTransparentColor(int32_t, long) /* override */;
-	unsigned long GetTransparentColor(long&);
-	unsigned long SetFont(class MFont*);
-	void SetFontColor(struct SparkalColor&);
-	void SetFontIndex(int32_t);
-	void SetColor(struct SparkalColor&);
-	void SetColorIndex(int32_t);
-	virtual unsigned long DrawLine(long, long, long, long, long); // vtable+0x40
-	virtual unsigned long FillRect(long, const struct SparkalRect*); // vtable+0x44
-	virtual unsigned long DrawBufferText(char *, long, unsigned long, const class MRect&, class MFont*); // vtable+0x48
-	virtual unsigned long DrawBufferText(char *, unsigned long, long *, long *, long *, long *, class MFont*); // vtable+0x4c
-	virtual unsigned long DrawLineUnclipped(long, long, long, long, long); // vtable+0x50
-	virtual unsigned long DrawLineClipped(long, long, long, long, long); // vtable+0x54
-	virtual unsigned long DrawRectangleOutline(const struct SparkalRect&, long); // vtable+0x58
-	virtual unsigned long DrawRectangleOutlineUnclipped(const struct SparkalRect&, long); // vtable+0x5c
-	long IsLost();
-	long Restore();
-	char * szFilePath;
-	struct tagRECT rectDirectDrawBuffer;
-protected:
-	int32_t bSurfacePrimary;
-	int32_t bSurfaceTransparent;
-	class MFont *mFont;
-	struct SparkalColor colorFontCurrent;
-	struct SparkalColor colorCurrent;
-	int32_t nColorIndexFontCurrent;
-	int32_t nColorIndexCurrent;
-	int32_t nColorIndexTransparent;
-	struct IDirectDrawSurface *mpFrontSurface;
-	struct IDirectDrawSurface *mpBackSurface;
-	struct IDirectDrawPalette *mpPalette;
-	struct _DDSURFACEDESC mDDdesc;
-	struct _DDBLTFX mDDBltFx;
-	void * __ptr32 hPen;
-	int32_t nPenThickness;
-	struct SparkalColor colorPenCurrent;
-	virtual struct IDirectDrawSurface* GetDDSurface(); // vtable+0x60
-};
+// CBackBuffer Class implementation not found
 
 // Type: class list<Shortcut> (forward reference);
 class list<Shortcut>{ // packed(0x8 bytes) TI: 0x1b79
@@ -1110,56 +1048,7 @@ public:
 };
 
 // Type: class ostream (forward reference);
-// VTABLE: COPTER_D 0x00593a44
-class ostream : public virtual ios
-{ // not packed(0x58 bytes) TI: 0x414e
-public:
-	int32_t *ios[0];
-	void ostream(class ios&);
-	void ostream(const class ostream&);
-	void ostream();
-	void ostream(class streambuf*);
-	virtual void ~ostream() /* override */;
-	class ostream& flush();
-	int32_t opfx();
-	void osfx();
-	class ostream& operator<<(class streambuf*);
-	class ostream& operator<<(void * __ptr32);
-	class ostream& operator<<(double);
-	class ostream& operator<<(double);
-	class ostream& operator<<(float);
-	class ostream& operator<<(unsigned long);
-	class ostream& operator<<(long);
-	class ostream& operator<<(uint32_t);
-	class ostream& operator<<(int32_t);
-	class ostream& operator<<(unsigned short);
-	class ostream& operator<<(short);
-	class ostream& operator<<(char);
-	class ostream& operator<<(unsigned char);
-	class ostream& operator<<(char);
-	class ostream& operator<<(char *);
-	class ostream& operator<<(unsigned char *);
-	class ostream& operator<<(char *);
-	class ostream& operator<<(class ios& (*)(class ios&));
-	class ostream& operator<<(class ostream& (*)(class ostream&));
-	class ostream& put(char);
-	class ostream& put(unsigned char);
-	class ostream& put(char);
-	class ostream& write(char *, int32_t);
-	class ostream& write(unsigned char *, int32_t);
-	class ostream& write(char *, int32_t);
-	class ostream& seekp(long, enum ios::seek_dir);
-	class ostream& seekp(long);
-	long tellp();
-protected:
-	class ostream& operator=(const class ostream&);
-	class ostream& operator=(class streambuf*);
-	int32_t do_opfx(int32_t);
-	void do_osfx();
-private:
-	class ostream& writepad(char *, char *);
-	int32_t x_floatused;
-};
+// ostream Class implementation not found
 
 // Type: void (void * __ptr32);
 
@@ -1877,139 +1766,6 @@ struct bidirectional_iterator<HotSpot,int>{ // packed(0x1 bytes) TI: 0x1f71
 
 // Type: struct bidirectional_iterator<StringIDAssociation,int>;
 struct bidirectional_iterator<StringIDAssociation,int>{ // packed(0x1 bytes) TI: 0x2878
-};
-
-// Type: class ios;
-// VTABLE: COPTER_D 0x00593ad4
-class ios{ // not packed(0x50 bytes) TI: 0x1c18
-	enum io_state {
-		goodbit = 0,
-		eofbit = 1,
-		failbit = 2,
-		badbit = 4,
-	};
-	enum open_mode {
-		in = 1,
-		out = 2,
-		ate = 4,
-		app = 8,
-		trunc = 16,
-		nocreate = 32,
-		noreplace = 64,
-		binary = 128,
-	};
-	enum seek_dir {
-		beg = 0,
-		cur = 1,
-		end = 2,
-	};
-	enum /* __unnamed */ {
-		skipws = 1,
-		left = 2,
-		right = 4,
-		internal = 8,
-		dec = 16,
-		oct = 32,
-		hex = 64,
-		showbase = 128,
-		showpoint = 256,
-		uppercase = 512,
-		showpos = 1024,
-		scientific = 2048,
-		fixed = 4096,
-		unitbuf = 8192,
-		stdio = 16384,
-	};
-public:
-	static const long basefield;
-	static const long adjustfield;
-	static const long floatfield;
-protected:
-	void ios(const class ios&);
-	void ios();
-public:
-	void ios(class streambuf*);
-	virtual void ~ios(); // vtable+0x0
-	long flags(long);
-	long flags();
-	long setf(long);
-	long setf(long, long);
-	long unsetf(long);
-	int32_t width(int32_t);
-	int32_t width();
-	class ostream* tie();
-	class ostream* tie(class ostream*);
-	char fill(char);
-	char fill();
-	int32_t precision();
-	int32_t precision(int32_t);
-	int32_t rdstate();
-	void clear(int32_t);
-	void * __ptr32 operator void *();
-	int32_t operator!();
-	int32_t good();
-	int32_t eof();
-	int32_t fail();
-	int32_t bad();
-	class streambuf* rdbuf();
-	long& iword(int32_t);
-	void * __ptr32& pword(int32_t);
-	// calltype: NearC
-	static long bitalloc();
-	// calltype: NearC
-	static int32_t xalloc();
-	// calltype: NearC
-	static void sync_with_stdio();
-	// calltype: NearC
-	void setlock();
-	// calltype: NearC
-	void clrlock();
-	// calltype: NearC
-	void lock();
-	// calltype: NearC
-	void unlock();
-	// calltype: NearC
-	void lockbuf();
-	// calltype: NearC
-	void unlockbuf();
-protected:
-	class ios& operator=(const class ios&);
-	void init(class streambuf*);
-	enum /* __unnamed */ {
-		skipping = 0,
-		tied = 1,
-	};
-protected:
-	class streambuf *bp;
-	int32_t state;
-	int32_t ispecial;
-	int32_t ospecial;
-	int32_t isfx_special;
-	int32_t osfx_special;
-	int32_t x_delbuf;
-	class ostream *x_tie;
-	long x_flags;
-	int32_t x_precision;
-	char x_fill;
-	int32_t x_width;
-	static void (*stdioflush)();
-	// calltype: NearC
-	static void lockc();
-	// calltype: NearC
-	static void unlockc();
-	struct _CRT_CRITICAL_SECTION* lockptr();
-public:
-	void delbuf(int32_t);
-	int32_t delbuf();
-private:
-	static long x_maxbit;
-	static int32_t x_curindex;
-	static int32_t sunk_with_stdio;
-	static long x_statebuf[8];
-	static int32_t fLockcInit;
-	static struct _CRT_CRITICAL_SECTION x_lockc;
-	int32_t LockFlg;
-	struct _CRT_CRITICAL_SECTION x_lock;
 };
 
 // Type: struct bidirectional_iterator<KeyColors,int>;
@@ -13065,16 +12821,16 @@ void UserInputWindow::ClearDeviceArea() {
 // LINE 1722:
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
-	__asm        lea    ecx, tempImage<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempImage<CBackBuffer+0x00:None>;
 	__asm        call   CBackBuffer::CBackBuffer;
 // LINE 1724:
 	__asm        jmp    near ptr 0x0040A4B9;
 
 	__asm        jmp    near ptr 0x0040A4BE;
 
-	__asm        mov    eax, tempImage.mHeight;
+	__asm        mov    eax, [ebp-0x22C];
 	__asm        push   eax;
-	__asm        mov    eax, tempImage.mWidth;
+	__asm        mov    eax, [ebp-0x230];
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   0;
@@ -13085,10 +12841,10 @@ void UserInputWindow::ClearDeviceArea() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        push   eax;
-	__asm        lea    ecx, tempImage<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempImage<CBackBuffer+0x00:None>;
 	__asm        call   CBackBuffer::Compose;
 // LINE 1725:
-	__asm        lea    ecx, tempImage<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempImage<CBackBuffer+0x00:None>;
 	__asm        call   CBackBuffer::~CBackBuffer;
 	__asm        jmp    near ptr 0x0040A503;
 }

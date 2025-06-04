@@ -46,53 +46,10 @@ protected:
 };
 
 // Type: class ICommander (forward reference);
-// VTABLE: COPTER_D 0x005912a8
-class ICommander{ // packed(0x8 bytes) TI: 0x17ab
-public:
-	void ICommander();
-	virtual void ~ICommander(); // vtable+0x0
-	virtual unsigned long Idle(); // vtable+0x4
-	virtual unsigned long OnCharacter(char, int32_t); // vtable+0x8
-	virtual unsigned long OnMouseDown(int32_t, int32_t); // vtable+0xc
-	virtual unsigned long OnMouseUp(int32_t, int32_t); // vtable+0x10
-	virtual unsigned long OnMouseMove(int32_t, int32_t); // vtable+0x14
-	virtual unsigned long OnWindowActivate(); // vtable+0x18
-	virtual unsigned long OnWindowDeactivate(); // vtable+0x1c
-	virtual class CSparkalWindow* SetWindow(class CSparkalWindow*); // vtable+0x20
-	class CSparkalWindow* GetWindow();
-protected:
-	class CSparkalWindow *mpWindow;
-};
+// ICommander Class implementation not found
 
 // Type: class ScreenBuffer (forward reference);
-// VTABLE: COPTER_D 0x005915b0
-class ScreenBuffer : public CBackBuffer
-{ // packed(0x16a bytes) TI: 0x1919
-public:
-	class CSparkalWindow *pWindow;
-	long bOK;
-	void ScreenBuffer(class CSparkalWindow*, long, long, struct SparkalColor*, int32_t, enum tagModeType, int32_t);
-	void ScreenBuffer();
-	virtual void ~ScreenBuffer(); // vtable+0x64
-	virtual unsigned long Swap(class CSparkalWindow*, long, long) /* override */;
-	virtual int32_t DeleteSurfaces(); // vtable+0x68
-	virtual int32_t CreateSurfaces(); // vtable+0x6c
-	virtual int32_t ClearSurfaces(int32_t); // vtable+0x70
-	virtual int32_t UsePalette(struct SparkalColor*); // vtable+0x74
-	virtual void FreePalette(); // vtable+0x78
-	virtual void SetPalette(); // vtable+0x7c
-	virtual unsigned long FillRect(long, struct SparkalRect*) /* override */;
-	virtual void SetWindowRect(struct SparkalRect*); // vtable+0x80
-	virtual void SetNewModeType(enum tagModeType); // vtable+0x84
-	virtual void WaitTillReadyToFlip(); // vtable+0x88
-protected:
-	struct SparkalRect rectBuffer;
-	short nBackBuffers;
-	enum tagModeType nCurrentModeType;
-	int32_t bUsingFlipping;
-	struct IDirectDrawClipper *lpClipper;
-	struct tagRECT rectDirectDrawBackBuffer;
-};
+// ScreenBuffer Class implementation not found
 
 // Type: unsigned long;
 

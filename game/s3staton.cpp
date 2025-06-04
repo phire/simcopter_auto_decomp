@@ -400,7 +400,17 @@ struct RGVertex{ // packed(0x33 bytes) TI: 0x1776
 
 // Type: class AutomobileClass;
 // VTABLE: COPTER_D 0x00592d98
-class AutomobileClass{ // packed(0x10e bytes) TI: 0x2fac
+class AutomobileClass{ // packed(0x11a bytes) TI: 0x4880
+	enum CarType {
+		kCarAmbulance = 0,
+		kCarCop = 1,
+		kCarFiretruck = 2,
+		kCarCriminal = 3,
+	};
+	enum AutoMessageID {
+		AM_NO_MESSAGE = 0,
+		AM_CANCEL_AUTO_MISSION = 1,
+	};
 	enum /* __unnamed */ {
 		CAR_TYPES = 7,
 		PERCENTAGE_OF_AUTO1 = 10,
@@ -456,13 +466,11 @@ class AutomobileClass{ // packed(0x10e bytes) TI: 0x2fac
 		HW_EDGEOFF_LANE2 = 131072,
 		HW_HEIGHT = 2031616,
 	};
-	enum PersonState {
-		PS_IN_VEHICLE = 0,
-		PS_OUT_OF_VEHICLE = 1,
-		PS_BACK_IN_VEHICLE = 2,
-		PS_GOT_AWAY = 3,
-		PS_MISSION_OVER = 4,
-	};
+public:
+	static int32_t fireSirenDist;
+	static int32_t policeSirenDist;
+	static int32_t ambSirenDist;
+	static int32_t fireHoseDist;
 	enum /* __unnamed */ {
 		CAR_RADIUS = 327680,
 		COLLISION_SPACE = 655360,
@@ -479,20 +487,22 @@ class AutomobileClass{ // packed(0x10e bytes) TI: 0x2fac
 	enum Flags {
 		AUTO_INITIALIZED = 1,
 		AUTO_PLACED = 2,
-		AUTO_TURNING = 4,
-		AUTO_MAKING_UTURN = 8,
-		AUTO_PULL_OVER = 16,
-		AUTO_PULLING_OVER = 32,
-		AUTO_PULLED_OVER = 64,
-		AUTO_AT_DEAD_END = 128,
-		AUTO_IN_INTERSECTION = 256,
-		AUTO_ON_FIRE = 512,
-		AUTO_JAMMED = 1024,
-		AUTO_PULLING_OUT = 2048,
-		AUTO_RIGHT_OF_WAY = 4096,
-		AUTO_ON_HIWAY = 8192,
+		AUTO_NEEDS_TO_PULL_OVER = 4,
+		AUTO_PULL_OVER = 8,
+		AUTO_PULLING_OVER = 16,
+		AUTO_PULLED_OVER = 32,
+		AUTO_PULLING_OUT = 64,
+		AUTO_IN_INTERSECTION = 128,
+		AUTO_ON_FIRE = 256,
+		AUTO_JAMMED = 512,
+		AUTO_RIGHT_OF_WAY = 1024,
+		AUTO_ON_HIWAY = 2048,
+		AUTO_SPEEDER = 4096,
+		AUTO_SPEEDER_DONE = 8192,
+		AUTO_UTURN = 16384,
 	};
 public:
+	long carModel;
 	int32_t flags;
 	struct _DYOBJ_INST autoDynomitor;
 	struct Goal goal;
@@ -508,6 +518,7 @@ private:
 	int32_t beamTimer;
 	int32_t m_cellBaseY;
 	int32_t timePulledOver;
+	int32_t hornSoundId;
 	enum DirectionTypes hiwaydir;
 	struct _GridCoordinates currentLocation;
 	struct _GridCoordinates nextLocation;
@@ -516,19 +527,20 @@ private:
 	struct _GridCoordinates eastCell;
 	struct _GridCoordinates westCell;
 protected:
-	long carModel;
 	int32_t speed;
 	enum DirIndex2 prevDir;
 	enum TurnIndex turnIndex;
 	int32_t currDist;
 	int32_t legOfTurn;
 	struct Point3d *pDirVector;
+	int32_t personDone;
+	int32_t personState;
+	int32_t personTimer;
 	int32_t timeToLive;
 	int32_t fireTime;
 	long fireSeq;
 	long missionId;
 	struct _CELL_INFO *cptr;
-	enum AutomobileClass::PersonState personState;
 	int32_t spotlightHitCounter;
 	int32_t IsCarPersistant();
 	int32_t CanCarBeamToHiwayTile(unsigned short);
@@ -554,6 +566,12 @@ public:
 	static void MissionCancel(long);
 	// calltype: NearC
 	static void SetAllHeadlights(int32_t);
+	// calltype: NearC
+	static int32_t S3AutoMessage(short, short);
+	// calltype: NearC
+	static int32_t MIFFLoad(void * __ptr32);
+	// calltype: NearC
+	static int32_t MIFFSave(void * __ptr32);
 	void HitDispatch(long, struct _DYOBJ_INST*, long, long);
 	int32_t AmIABadGuy();
 	int32_t Initialize(int32_t);
@@ -561,17 +579,22 @@ public:
 	void IveBeenMegaphoned(long);
 	void StartFire(long);
 	void StartJam(long);
-	void PullOver();
+	virtual void PullOver(short); // vtable+0x4
 	void PullOut();
 	int32_t CanIPullOut();
+	int32_t CanIPullOver();
+	void DoAUTurn();
+	long GetCarModel();
+	// calltype: NearC
+	static struct _DYOBJ_INST* GetClosestCar(int32_t, int32_t, int32_t);
 protected:
 	void Itterate();
-	virtual void AdjustSpeed(); // vtable+0x4
+	virtual void AdjustSpeed(); // vtable+0x8
 	void Reset();
-	virtual enum TurnIndex PickTurnDir(struct Goal*); // vtable+0x8
+	virtual enum TurnIndex PickTurnDir(struct Goal*); // vtable+0xc
 	void UnPlaceCar();
 	void PullOverCiviliansInWay();
-	virtual void ItterateFSM(); // vtable+0xc
+	virtual void ItterateFSM(); // vtable+0x10
 	int32_t InitializeInstance(int32_t);
 	void LinkToCell(const struct _GridCoordinates&);
 	int32_t AreCarsHeadOn(struct Point3d*);
@@ -579,6 +602,11 @@ protected:
 	int32_t IsCarOutOfCameraRange();
 	void TurnOffHeadlight();
 	void TurnOnHeadlight();
+	int32_t AutoMessage(short);
+	int32_t PlacePerson(int32_t, int32_t);
+	virtual void SetSaveData(struct _AUTO_LOAD_SAVE*); // vtable+0x14
+	virtual void LoadSaveData(struct _AUTO_LOAD_SAVE*); // vtable+0x18
+	void HonkHorn();
 	void SetHiwayDirection(unsigned short);
 	int32_t DoHiwayTilesConnect(unsigned short, unsigned short, enum DirectionTypes);
 	void AdjustCurrentHiwayPosition();
@@ -590,9 +618,10 @@ protected:
 	void TurnRight();
 	void MoveForwardOnHiway();
 	void DoDiagonalRoadFixup();
-	virtual void BeamToWithinCameraRange(); // vtable+0x10
-	virtual int32_t BeamToLocation(const struct _GridCoordinates&); // vtable+0x14
+	virtual void BeamToWithinCameraRange(); // vtable+0x1c
+	virtual int32_t BeamToLocation(const struct _GridCoordinates&); // vtable+0x20
 	void MoveAuto(int32_t);
+	void ChangeAutoColor();
 private:
 	void UnlinkFromCell(const struct _GridCoordinates&);
 	void TransitionBetweenGoals();
@@ -600,13 +629,15 @@ private:
 	void RunJamState();
 	void IveBeenSpotlighted(struct _DYOBJ_INST*);
 	int32_t IsThisAnEmergencyVehicle();
+	void DoPullOverStuff(int32_t);
+	int32_t CanIDoAUTurn();
 public:
 	class AutomobileClass operator=(const class AutomobileClass&);
 };
 
 // Type: class Sound;
 // VTABLE: COPTER_D 0x0058f458
-class Sound{ // packed(0x30 bytes) TI: 0x1578
+class Sound{ // packed(0x34 bytes) TI: 0x4335
 	enum SoundSourceType {
 		nSoundSourceTypeResource = 0,
 		nSoundSourceTypeFile = 1,
@@ -629,6 +660,7 @@ public:
 	long lVolume;
 	void (*soundCompletionFunction)(long);
 	long lSoundCompletionData;
+	int32_t bUnloadBeforeNextPlay;
 	void Sound();
 	virtual void ~Sound(); // vtable+0x0
 	class Sound& operator=(const class Sound&);

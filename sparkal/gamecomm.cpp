@@ -320,7 +320,7 @@ struct bidirectional_iterator<Shortcut,int>{ // packed(0x1 bytes) TI: 0x1ee7
 
 // Type: class PFile;
 // VTABLE: COPTER_D 0x00590468
-class PFile{ // packed(0x110 bytes) TI: 0x1de4
+class PFile{ // packed(0x110 bytes) TI: 0x453c
 	enum /* __unnamed */ {
 		FileNull = -1,
 	};
@@ -377,6 +377,8 @@ public:
 	static void Remove(char *);
 	// calltype: NearC
 	static void Rename(char *, char *);
+	// calltype: NearC
+	static unsigned long Checksum(char *);
 	long SetPath(char *);
 	long FileCreate(char *, int32_t);
 	long FileExists(char *);
@@ -389,7 +391,7 @@ private:
 // Type: class CDefaultCommander;
 // VTABLE: COPTER_D 0x005912d0
 class CDefaultCommander : public ICommander
-{ // packed(0x8 bytes) TI: 0x17ff
+{ // packed(0x8 bytes) TI: 0x20ed
 public:
 	void CDefaultCommander();
 	virtual void ~CDefaultCommander() /* override */;
@@ -402,24 +404,8 @@ public:
 	virtual unsigned long OnWindowDeactivate() /* override */;
 };
 
-// Type: class ICommander;
-// VTABLE: COPTER_D 0x005912a8
-class ICommander{ // packed(0x8 bytes) TI: 0x17ab
-public:
-	void ICommander();
-	virtual void ~ICommander(); // vtable+0x0
-	virtual unsigned long Idle(); // vtable+0x4
-	virtual unsigned long OnCharacter(char, int32_t); // vtable+0x8
-	virtual unsigned long OnMouseDown(int32_t, int32_t); // vtable+0xc
-	virtual unsigned long OnMouseUp(int32_t, int32_t); // vtable+0x10
-	virtual unsigned long OnMouseMove(int32_t, int32_t); // vtable+0x14
-	virtual unsigned long OnWindowActivate(); // vtable+0x18
-	virtual unsigned long OnWindowDeactivate(); // vtable+0x1c
-	virtual class CSparkalWindow* SetWindow(class CSparkalWindow*); // vtable+0x20
-	class CSparkalWindow* GetWindow();
-protected:
-	class CSparkalWindow *mpWindow;
-};
+// Type: class ICommander (forward reference);
+// ICommander Class implementation not found
 
 
 

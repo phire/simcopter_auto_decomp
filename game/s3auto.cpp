@@ -240,8 +240,8 @@ public:
 };
 
 // Type: struct CONNECTION_INFO_TYPE (forward reference);
-struct CONNECTION_INFO_TYPE{ // packed(0x8 bytes) TI: 0x18b4
-	enum RoadTypes tile;
+struct CONNECTION_INFO_TYPE{ // packed(0x8 bytes) TI: 0x30c5
+	enum RailTypes tile;
 	enum DirectionTypes connections;
 };
 
@@ -413,7 +413,7 @@ struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 };
 
 // Type: struct MISSION_DATA (forward reference);
-struct MISSION_DATA{ // packed(0xcc bytes) TI: 0x231b
+struct MISSION_DATA{ // packed(0xd4 bytes) TI: 0x31c4
 	char mtext[32];
 	long type_ctr;
 	long key;
@@ -426,7 +426,7 @@ struct MISSION_DATA{ // packed(0xcc bytes) TI: 0x231b
 	long flags;
 	long type;
 	long state;
-	struct MISSION_DATA::__unnamed mdata;
+	struct __unnamed mdata;
 };
 
 // Type: struct _MISSION_PARMS;
@@ -1186,13 +1186,13 @@ void AutomobileClass::AutomobileClass() {
 
 	this-><vftable> = 0x592d98;
 // LINE 327:
-	this->directionVector.x = 0x0;
-// LINE 328:
-	this->m_cellBaseY = 0x1e0000;
-// LINE 329:
 	this->stalledTimer = 0x0;
+// LINE 328:
+	this->beamTimer = 0x1e0000;
+// LINE 329:
+	this->DeltaFromCenter = 0x0;
 // LINE 330:
-	this-><AutomobileClass+0x116> = 0x0;
+	this->spotlightHitCounter = 0x0;
 // LINE 333:
 	__asm        call   rand;
 	__asm        mov    ecx, 3;
@@ -1203,17 +1203,17 @@ void AutomobileClass::AutomobileClass() {
 	__asm        jmp    _T9c;
 // LINE 336:
 _T61:
-	reinterpret_cast<uint32_t>(this->currentLocation.x) = 0x2d;
+	this->hornSoundId = 0x2d;
 // LINE 337:
 	__asm        jmp    _Tbf;
 // LINE 339:
 _T73:
-	reinterpret_cast<uint32_t>(this->currentLocation.x) = 0x2e;
+	this->hornSoundId = 0x2e;
 // LINE 340:
 	__asm        jmp    _Tbf;
 // LINE 342:
 _T85:
-	reinterpret_cast<uint32_t>(this->currentLocation.x) = 0x2f;
+	this->hornSoundId = 0x2f;
 // LINE 343:
 	__asm        jmp    _Tbf;
 // LINE 344:
@@ -1241,7 +1241,7 @@ _Tbf:
 	__asm        cmp    odds, 0xA;
 	__asm        jge    _Teb;
 // LINE 353:
-	this->flags = 0x7a;
+	this->carModel = 0x7a;
 // LINE 361:
 	__asm        jmp    _T189;
 // LINE 363:
@@ -1249,7 +1249,7 @@ _Teb:
 	__asm        cmp    odds, 0x32;
 	__asm        jge    _T104;
 // LINE 365:
-	this->flags = 0x7d;
+	this->carModel = 0x7d;
 // LINE 367:
 	__asm        jmp    _T189;
 // LINE 370:
@@ -1257,7 +1257,7 @@ _T104:
 	__asm        cmp    odds, 0x3C;
 	__asm        jge    _T11d;
 // LINE 372:
-	this->flags = 0x7e;
+	this->carModel = 0x7e;
 // LINE 374:
 	__asm        jmp    _T189;
 // LINE 378:
@@ -1265,7 +1265,7 @@ _T11d:
 	__asm        cmp    odds, 0x46;
 	__asm        jge    _T136;
 // LINE 380:
-	this->flags = 0x12a;
+	this->carModel = 0x12a;
 // LINE 382:
 	__asm        jmp    _T189;
 // LINE 387:
@@ -1273,14 +1273,14 @@ _T136:
 	__asm        cmp    odds, 0x5A;
 	__asm        jge    _T14f;
 // LINE 389:
-	this->flags = 0x12b;
+	this->carModel = 0x12b;
 // LINE 391:
 	__asm        jmp    _T189;
 _T14f:
 	__asm        cmp    odds, 0x6E;
 	__asm        jge    _T168;
 // LINE 393:
-	this->flags = 0x12c;
+	this->carModel = 0x12c;
 // LINE 395:
 	__asm        jmp    _T189;
 // LINE 397:
@@ -2340,7 +2340,7 @@ _T68b:
 _T690:
 	__asm        jmp    near ptr 0x00502945;
 
-	this-><AutomobileClass+0x112> = None;
+	this->cptr = None;
 // LINE 960:
 	__asm        push   6;
 	__asm        lea    eax, loc.x;
@@ -2361,7 +2361,7 @@ _T6b9:
 	__asm        call   AutomobileClass::PullOverCiviliansInWay;
 // LINE 968:
 _T6ce:
-	this->directionVector.x = 0x0;
+	this->stalledTimer = 0x0;
 // LINE 971:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+9], 8;
@@ -2386,7 +2386,7 @@ _T6ce:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::LinkToCell;
 // LINE 981:
-	reinterpret_cast<uint16_t>(this->eastCell.x) = reinterpret_cast<uint16_t>(this->westCell.x);
+	reinterpret_cast<uint16_t>(this->currentLocation.x) = reinterpret_cast<uint16_t>(this->nextLocation.x);
 // LINE 983:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0xD2;
@@ -2425,7 +2425,7 @@ _T776:
 	__asm        sub    eax, [ecx+0x86];
 	__asm        add    itterationDist, eax;
 // LINE 1012:
-	this->legOfTurn = 0x0;
+	this->currDist = 0x0;
 // LINE 1014:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::TransitionBetweenGoals;
@@ -2496,7 +2496,7 @@ _T66:
 	__asm        cmp    eax, [ecx];
 	__asm        jne    _T93;
 // LINE 1067:
-	dyptrptr-> = this->autoDynomitor.vnext;
+	dyptrptr-> = this->autoDynomitor.next;
 // LINE 1068:
 	__asm        jmp    _Td2;
 // LINE 1070:
@@ -2559,7 +2559,7 @@ _T53:
 // Block start:
 	int32_t z;
 	int32_t x;
-	this->autoDynomitor.vnext = pCell->dyptr;
+	this->autoDynomitor.next = pCell->dyptr;
 // LINE 1092:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0xC;
@@ -2840,7 +2840,7 @@ void AutomobileClass::BeamToWithinCameraRange() {
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 1211:
-	this->m_cellBaseY = 0x0;
+	this->beamTimer = 0x0;
 // LINE 1214:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
@@ -2990,7 +2990,7 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 // LINE 1284:
 	reinterpret_cast<uint16_t>(scanLoc.x) = reinterpret_cast<uint16_t>(cell.x);
 // LINE 1285:
-	reinterpret_cast<uint16_t>(prevGridLoc.x) = *reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&this->goal.edgeIndex) + 2);
+	reinterpret_cast<uint16_t>(prevGridLoc.x) = reinterpret_cast<uint16_t>(this->goal.gridLoc.x);
 // LINE 1289:
 	__asm        push   9;
 	__asm        lea    ecx, scan.currDist;
@@ -3147,7 +3147,7 @@ _T238:
 _T23d:
 	__asm        jmp    near ptr 0x005032EC;
 
-	this-><AutomobileClass+0x112> = None;
+	this->cptr = None;
 // LINE 1310:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x112];
@@ -3368,7 +3368,7 @@ _T537:
 	__asm        jmp    _T53c;
 // LINE 1484:
 _T53c:
-	this->autoDynomitor.next = 0x3;
+	this->flags = 0x3;
 // LINE 1487:
 	__asm        cmp    hiway, 0;
 	__asm        je     _T6f9;
@@ -3376,13 +3376,13 @@ _T53c:
 	__asm        mov    eax, this;
 	__asm        or     dword ptr [eax+8], 0x802;
 // LINE 1493:
-	this->directionVector.x = 0x0;
+	this->stalledTimer = 0x0;
 // LINE 1494:
-	reinterpret_cast<uint32_t>(this->northCell.x) = 0x0;
+	this->hiwaydir = 0x0;
 // LINE 1496:
-	this->eastCell.x = scanLoc.x;
+	this->currentLocation.x = scanLoc.x;
 // LINE 1497:
-	this->eastCell.y = scanLoc.y;
+	this->currentLocation.y = scanLoc.y;
 // LINE 1501:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0xD2;
@@ -3699,9 +3699,9 @@ _T99e:
 	__asm        jmp    _Tdbd;
 // LINE 1567:
 _T9c5:
-	this->turnIndex = dirIndex;
+	this->prevDir = dirIndex;
 // LINE 1570:
-	this->pDirVector = 0x0;
+	this->legOfTurn = 0x0;
 // LINE 1572:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x7E], 0xFFFFFFFE;
@@ -3773,7 +3773,7 @@ _Ta9a:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xE6], eax;
 // LINE 1584:
-	this->DeltaFromCenter = 0x1;
+	this->goal.slope = 0x1;
 // LINE 1585:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xEE];
@@ -3903,7 +3903,7 @@ _Tcd2:
 _Tcd7:
 	__asm        jmp    near ptr 0x00503D86;
 
-	this-><AutomobileClass+0x112> = None;
+	this->cptr = None;
 // LINE 1618:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x112];
@@ -3938,11 +3938,11 @@ _Td28:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+8];
 // LINE 1640:
-	this->legOfTurn = 0x0;
+	this->currDist = 0x0;
 // LINE 1641:
-	this->directionVector.x = 0x0;
+	this->stalledTimer = 0x0;
 // LINE 1642:
-	this->m_cellBaseY = this->beamTimer;
+	this->beamTimer = this->beamDelay;
 // LINE 1644:
 	__asm        mov    dword ptr [ebp-0xC8], 1;
 	__asm        jmp    near ptr 0x00503E57;
@@ -4026,7 +4026,7 @@ _T1e:
 // LINE 1701:
 	mp.op = 0x1a;
 // LINE 1702:
-	mp.id = this-><AutomobileClass+0x10e>;
+	mp.id = this->missionId;
 // LINE 1703:
 	mp.i2num = 0x1;
 // LINE 1704:
@@ -4046,11 +4046,11 @@ _T82:
 	__asm        mov    eax, this;
 	__asm        and    dword ptr [eax+8], 0xFFFFFDFF;
 // LINE 1710:
-	this->directionVector.x = 0x0;
+	this->stalledTimer = 0x0;
 // LINE 1713:
 	mp.op = 0x1b;
 // LINE 1714:
-	mp.id = this-><AutomobileClass+0x10e>;
+	mp.id = this->missionId;
 // LINE 1715:
 	mp.i2num = 0x1;
 // LINE 1716:
@@ -4114,11 +4114,11 @@ _T67:
 	__asm        mov    eax, this;
 	__asm        and    dword ptr [eax+8], 0xFFFFFDFF;
 // LINE 1749:
-	this->directionVector.x = 0x0;
+	this->stalledTimer = 0x0;
 // LINE 1752:
 	mp.op = 0x1b;
 // LINE 1753:
-	mp.id = this-><AutomobileClass+0x10e>;
+	mp.id = this->missionId;
 // LINE 1754:
 	mp.i2num = 0x1;
 // LINE 1755:
@@ -4154,7 +4154,7 @@ void AutomobileClass::AdjustSpeed() {
 	__asm        mov    [ecx+0xDE], eax;
 	__asm        jmp    _T45;
 _T33:
-	this->prevDir = this->desiredHiwaySpeed;
+	this->speed = this->desiredSpeed;
 // LINE 1775:
 _T45:
 	__asm        mov    eax, this;
@@ -4180,7 +4180,7 @@ void AutomobileClass::Reset() {
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::UnPlaceCar;
 // LINE 1792:
-	this->autoDynomitor.next = 0x1;
+	this->flags = 0x1;
 // LINE 1794:
 	__asm        jmp    near ptr 0x00504139;
 }
@@ -4218,7 +4218,7 @@ void AutomobileClass::PullOverCiviliansInWay() {
 	__asm        lea    ecx, spiral.currDist;
 	__asm        call   SpiralScan::SpiralScan;
 // LINE 1810:
-	reinterpret_cast<uint16_t>(scanLoc.x) = *reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&this->goal.edgeIndex) + 2);
+	reinterpret_cast<uint16_t>(scanLoc.x) = reinterpret_cast<uint16_t>(this->goal.gridLoc.x);
 // LINE 1815:
 _T21:
 	__asm        xor    eax, eax;
@@ -4360,7 +4360,7 @@ int32_t AutomobileClass::InitializeInstance(int32_t instanceID) {
 	struct VRObjInfo objectInfo;
 
 // LINE 1878:
-	reinterpret_cast<uint32_t>(this->autoDynomitor.flags) = 0x0;
+	this->autoDynomitor.mesh = 0x0;
 // LINE 1881:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
@@ -4385,7 +4385,7 @@ _T53:
 	__asm        cmp    instanceID, 0;
 	__asm        jne    _T6b;
 // LINE 1890:
-	reinterpret_cast<uint32_t>(this->autoDynomitor.flags) = object;
+	this->autoDynomitor.mesh = object;
 // LINE 1899:
 	__asm        jmp    _T10d;
 // LINE 1904:
@@ -4453,7 +4453,7 @@ _T10d:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x1A], ax;
 // LINE 1917:
-	reinterpret_cast<uint16_t>(this->autoDynomitor.radius) = 0x11;
+	this->autoDynomitor.flags = 0x11;
 // LINE 1919:
 	__asm        lea    eax, objectInfo.Faces;
 	__asm        push   eax;
@@ -4462,7 +4462,7 @@ _T10d:
 	__asm        call   0x004D8859;
 	__asm        add    esp, 8;
 // LINE 1921:
-	this->autoDynomitor.height = objectInfo.Radius;
+	this->autoDynomitor.radius = objectInfo.Radius;
 // LINE 1922:
 	__asm        mov    eax, object;
 	__asm        push   eax;
@@ -4471,7 +4471,7 @@ _T10d:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x20], eax;
 // LINE 1925:
-	this->autoDynomitor.next = 0x0;
+	this->flags = 0x0;
 // LINE 1926:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
@@ -4505,7 +4505,7 @@ _T10d:
 	__asm        jmp    _T1d9;
 // LINE 1937:
 _T1ad:
-	this->beamTimer = 0x1e0000;
+	this->beamDelay = 0x1e0000;
 // LINE 1938:
 	__asm        jmp    _T1f8;
 // LINE 1940:
@@ -4513,7 +4513,7 @@ _T1bf:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::ChangeAutoColor;
 // LINE 1941:
-	this->beamTimer = 0xa0000;
+	this->beamDelay = 0xa0000;
 // LINE 1942:
 	__asm        jmp    _T1f8;
 _T1d9:
@@ -4887,12 +4887,12 @@ _T7c:
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     _T98;
 // LINE 2154:
-	this->hiwaydir = 0x7d000000;
+	this->timePulledOver = 0x7d000000;
 // LINE 2155:
 	__asm        jmp    _Ta5;
 // LINE 2156:
 _T98:
-	this->hiwaydir = 0x40000;
+	this->timePulledOver = 0x40000;
 // LINE 2158:
 _Ta5:
 	__asm        mov    eax, this;
@@ -4905,7 +4905,7 @@ _Ta5:
 	__asm        mov    eax, this;
 	__asm        and    dword ptr [eax+8], 0xFFFFFF9F;
 // LINE 2162:
-	this->stalledTimer = 0x0;
+	this->DeltaFromCenter = 0x0;
 // LINE 2165:
 _Tcd:
 	__asm        mov    eax, this;
@@ -4927,9 +4927,9 @@ _Tcd:
 	__asm        test   eax, eax;
 	__asm        je     _T125;
 // LINE 2169:
-	this->fireTime = 0x0;
+	this->personDone = 0x0;
 // LINE 2170:
-	this->missionId = 0x780000;
+	this->personTimer = 0x780000;
 // LINE 2173:
 _T125:
 	__asm        jmp    near ptr 0x005049F7;
@@ -5035,7 +5035,7 @@ void AutomobileClass::PullOut() {
 	__asm        mov    eax, this;
 	__asm        and    dword ptr [eax+8], 0xFFFFFFDF;
 // LINE 2213:
-	this->stalledTimer = 0xd0000;
+	this->DeltaFromCenter = 0xd0000;
 // LINE 2215:
 _T34:
 	__asm        jmp    near ptr 0x00504B43;
@@ -5232,9 +5232,9 @@ _T238:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::LinkToCell;
 // LINE 2268:
-	this->pDirVector = 0xa;
+	this->legOfTurn = 0xa;
 // LINE 2272:
-	this->turnIndex = this->goal.distance;
+	this->prevDir = this->goal.direction;
 // LINE 2275:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x70;
@@ -5269,7 +5269,7 @@ _T238:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x82], eax;
 // LINE 2287:
-	this->pDirVector = 0x0;
+	this->legOfTurn = 0x0;
 // LINE 2288:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xE6];
@@ -5292,14 +5292,14 @@ _T310:
 	__asm        cmp    [eax+0x82], ecx;
 	__asm        jne    _T347;
 // LINE 2296:
-	this->currDist = 0x0;
+	this->turnIndex = 0x0;
 // LINE 2302:
-	this->goal.turnFlags = 0x400000;
+	this->goal.distance = 0x400000;
 // LINE 2304:
 	__asm        jmp    _T3b3;
 // LINE 2312:
 _T347:
-	this->pDirVector = 0x0;
+	this->legOfTurn = 0x0;
 // LINE 2313:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x82];
@@ -5411,7 +5411,7 @@ _T4ac:
 _T4b1:
 	__asm        jmp    near ptr 0x00504FFE;
 
-	this-><AutomobileClass+0x112> = None;
+	this->cptr = None;
 // LINE 2332:
 	__asm        push   6;
 	__asm        lea    eax, loc.x;
@@ -5619,7 +5619,7 @@ _T6b:
 
 	pCell = None;
 // LINE 2432:
-	this->autoDynomitor.loc.z = this->timePulledOver;
+	this->autoDynomitor.loc.y = this->m_cellBaseY;
 // LINE 2433:
 	__asm        mov    eax, pCell;
 	__asm        movsx  eax, word ptr [eax+2];
@@ -5983,7 +5983,7 @@ _T31:
 	__asm        cmp    dword ptr [eax+0xE6], 2;
 	__asm        jne    _T53;
 // LINE 2524:
-	this->currDist = 0x1;
+	this->turnIndex = 0x1;
 // LINE 2526:
 	__asm        jmp    _T70;
 _T53:
@@ -5991,7 +5991,7 @@ _T53:
 	__asm        cmp    dword ptr [eax+0xE6], 1;
 	__asm        jne    _T70;
 // LINE 2528:
-	this->currDist = 0x2;
+	this->turnIndex = 0x2;
 // LINE 2531:
 _T70:
 	__asm        mov    eax, 0xA;
@@ -6012,7 +6012,7 @@ _T88:
 	__asm        cmp    dword ptr [eax+0xEE], 0xA;
 	__asm        jne    _Tbb;
 // LINE 2540:
-	this->goal.turnFlags = 0x400000;
+	this->goal.distance = 0x400000;
 // LINE 2541:
 	__asm        jmp    _Tf5;
 // LINE 2542:
@@ -6078,10 +6078,7 @@ void AutomobileClass::DoPullOverStuff(int32_t dist) {
 	__asm        add    esp, 8;
 	__asm        mov    pulloverVector.z, eax;
 // LINE 2566:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xF2];
-	__asm        mov    eax, [eax+8];
-	__asm        mov    pulloverVector.x, eax;
+	pulloverVector.x = this->pDirVector->z;
 // LINE 2567:
 	__asm        lea    eax, pulloverVector.x;
 	__asm        push   eax;
@@ -6106,9 +6103,9 @@ void AutomobileClass::DoPullOverStuff(int32_t dist) {
 	__asm        mov    eax, this;
 	__asm        or     dword ptr [eax+8], 0x20;
 // LINE 2576:
-	this->stalledTimer = 0xd0000;
+	this->DeltaFromCenter = 0xd0000;
 // LINE 2577:
-	this->hiwaydir = 0x40000;
+	this->timePulledOver = 0x40000;
 // LINE 2580:
 _Tbb:
 	__asm        jmp    _T101;
@@ -6130,7 +6127,7 @@ _Tc0:
 	__asm        mov    eax, this;
 	__asm        and    dword ptr [eax+8], 0xFFFFFF8F;
 // LINE 2586:
-	this->stalledTimer = 0x0;
+	this->DeltaFromCenter = 0x0;
 // LINE 2589:
 _T101:
 	__asm        mov    eax, this;
@@ -7425,13 +7422,13 @@ _T4c:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x18], ax;
 // LINE 3212:
-	this->cptr = 0x780000;
+	this->timeToLive = 0x780000;
 // LINE 3213:
-	this->spotlightHitCounter = 0x0;
+	this->fireSeq = 0x0;
 // LINE 3214:
-	this->personState = 0x0;
+	this->fireTime = 0x0;
 // LINE 3215:
-	this-><AutomobileClass+0x10e> = mission_id;
+	this->missionId = mission_id;
 // LINE 3218:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x24];
@@ -7460,7 +7457,7 @@ _T4c:
 // LINE 3225:
 	mp.op = 0x18;
 // LINE 3226:
-	mp.id = this-><AutomobileClass+0x10e>;
+	mp.id = this->missionId;
 // LINE 3227:
 	mp.i2num = 0x1;
 // LINE 3228:
@@ -7508,13 +7505,13 @@ _T4c:
 	__asm        mov    eax, this;
 	__asm        or     dword ptr [eax+8], 0x200;
 // LINE 3260:
-	this->cptr = 0x780000;
+	this->timeToLive = 0x780000;
 // LINE 3261:
-	this->spotlightHitCounter = 0x0;
+	this->fireSeq = 0x0;
 // LINE 3262:
-	this->personState = 0x0;
+	this->fireTime = 0x0;
 // LINE 3263:
-	this-><AutomobileClass+0x10e> = mission_id;
+	this->missionId = mission_id;
 // LINE 3266:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x24];
@@ -7543,7 +7540,7 @@ _T4c:
 // LINE 3273:
 	mp.op = 0x19;
 // LINE 3274:
-	mp.id = this-><AutomobileClass+0x10e>;
+	mp.id = this->missionId;
 // LINE 3275:
 	mp.i2num = 0x1;
 // LINE 3276:
@@ -7583,7 +7580,7 @@ void AutomobileClass::RunFireState() {
 	__asm        cmp    dword ptr [eax+0x106], 0;
 	__asm        jg     _T71;
 // LINE 3304:
-	this->personState = 0x3333;
+	this->fireTime = 0x3333;
 // LINE 3305:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x10A;
@@ -7720,7 +7717,7 @@ _T71:
 // LINE 3341:
 	mp.op = 0x1c;
 // LINE 3342:
-	mp.id = this-><AutomobileClass+0x10e>;
+	mp.id = this->missionId;
 // LINE 3343:
 	mp.i2num = 0x1;
 // LINE 3344:
@@ -7744,7 +7741,7 @@ _T203:
 // LINE 3356:
 	mp.op = 0x0;
 // LINE 3357:
-	mp.id = this-><AutomobileClass+0x10e>;
+	mp.id = this->missionId;
 // LINE 3358:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x24];
@@ -7792,7 +7789,7 @@ void AutomobileClass::RunJamState() {
 // LINE 3391:
 	mp.op = 0x0;
 // LINE 3392:
-	mp.id = this-><AutomobileClass+0x10e>;
+	mp.id = this->missionId;
 // LINE 3393:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x24];
@@ -7889,7 +7886,7 @@ _T18:
 	__asm        mov    eax, targcar;
 	__asm        and    dword ptr [eax+8], 0xFFFFFDFF;
 // LINE 3478:
-	targcar-><AutomobileClass+0x10e> = 0xffffffff;
+	targcar->missionId = 0xffffffff;
 // LINE 3481:
 _T72:
 	__asm        jmp    _T15;
@@ -8137,9 +8134,9 @@ void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
 // LINE 3624:
 	i = 0x0;
 // LINE 3626:
-	reinterpret_cast<uint16_t>(this->westCell.x) = reinterpret_cast<uint16_t>(this->eastCell.x);
+	reinterpret_cast<uint16_t>(this->nextLocation.x) = reinterpret_cast<uint16_t>(this->currentLocation.x);
 // LINE 3627:
-	reinterpret_cast<uint32_t>(this->northCell.x) = 0x0;
+	this->hiwaydir = 0x0;
 // LINE 3631:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -9222,7 +9219,7 @@ _T44c:
 	__asm        add    nextFineLocation.z, 0xD0000;
 // LINE 3909:
 _T45a:
-	reinterpret_cast<uint32_t>(this->northCell.x) = 0x8;
+	this->hiwaydir = 0x8;
 // LINE 3912:
 	__asm        jmp    _T6a3;
 _T46c:
@@ -9286,7 +9283,7 @@ _T509:
 	__asm        sub    nextFineLocation.z, 0xD0000;
 // LINE 3925:
 _T517:
-	reinterpret_cast<uint32_t>(this->northCell.x) = 0x2;
+	this->hiwaydir = 0x2;
 // LINE 3927:
 	__asm        jmp    _T6a3;
 _T529:
@@ -9350,7 +9347,7 @@ _T5c6:
 	__asm        sub    nextFineLocation.x, 0xD0000;
 // LINE 3939:
 _T5d4:
-	reinterpret_cast<uint32_t>(this->northCell.x) = 0x4;
+	this->hiwaydir = 0x4;
 // LINE 3941:
 	__asm        jmp    _T6a3;
 _T5e6:
@@ -9414,7 +9411,7 @@ _T683:
 	__asm        add    nextFineLocation.x, 0xD0000;
 // LINE 3954:
 _T691:
-	reinterpret_cast<uint32_t>(this->northCell.x) = 0x1;
+	this->hiwaydir = 0x1;
 // LINE 3956:
 	__asm        jmp    _T6a3;
 // LINE 3963:
@@ -9566,7 +9563,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 	unsigned short northTile;
 
 // LINE 4045:
-	reinterpret_cast<uint8_t>(this->carModel) = point.x;
+	this->northCell.x = point.x;
 // LINE 4046:
 	__asm        mov    eax, point;
 	__asm        xor    ecx, ecx;
@@ -9575,7 +9572,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 	__asm        mov    eax, this;
 	__asm        mov    [eax+0xD7], cl;
 // LINE 4047:
-	*reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&this->carModel) + 2) = point.x;
+	this->southCell.x = point.x;
 // LINE 4048:
 	__asm        mov    eax, point;
 	__asm        xor    ecx, ecx;
@@ -9591,7 +9588,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 	__asm        mov    eax, this;
 	__asm        mov    [eax+0xDA], cl;
 // LINE 4050:
-	*reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&this->speed) + 1) = point.y;
+	this->eastCell.y = point.y;
 // LINE 4051:
 	__asm        mov    eax, point;
 	__asm        xor    ecx, ecx;
@@ -9600,7 +9597,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 	__asm        mov    eax, this;
 	__asm        mov    [eax+0xDC], cl;
 // LINE 4052:
-	*reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&this->speed) + 3) = point.y;
+	this->westCell.y = point.y;
 // LINE 4055:
 	__asm        mov    eax, point;
 	__asm        xor    ecx, ecx;
@@ -10514,7 +10511,7 @@ void AutomobileClass::GoStraight() {
 	__asm        test   byte ptr [eax+0xCE], 1;
 	__asm        je     _T35;
 // LINE 4350:
-	reinterpret_cast<uint16_t>(this->westCell.x) = reinterpret_cast<uint16_t>(this->carModel);
+	reinterpret_cast<uint16_t>(this->nextLocation.x) = reinterpret_cast<uint16_t>(this->northCell.x);
 // LINE 4352:
 	__asm        jmp    _Td1;
 _T35:
@@ -10522,7 +10519,7 @@ _T35:
 	__asm        test   byte ptr [eax+0xCE], 4;
 	__asm        je     _T5e;
 // LINE 4355:
-	reinterpret_cast<uint16_t>(this->westCell.x) = *reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&this->carModel) + 2);
+	reinterpret_cast<uint16_t>(this->nextLocation.x) = reinterpret_cast<uint16_t>(this->southCell.x);
 // LINE 4357:
 	__asm        jmp    _Td1;
 _T5e:
@@ -10530,7 +10527,7 @@ _T5e:
 	__asm        test   byte ptr [eax+0xCE], 2;
 	__asm        je     _T87;
 // LINE 4360:
-	reinterpret_cast<uint16_t>(this->westCell.x) = reinterpret_cast<uint16_t>(this->speed);
+	reinterpret_cast<uint16_t>(this->nextLocation.x) = reinterpret_cast<uint16_t>(this->eastCell.x);
 // LINE 4362:
 	__asm        jmp    _Td1;
 _T87:
@@ -10538,7 +10535,7 @@ _T87:
 	__asm        test   byte ptr [eax+0xCE], 8;
 	__asm        je     _Tb0;
 // LINE 4365:
-	reinterpret_cast<uint16_t>(this->westCell.x) = *reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&this->speed) + 2);
+	reinterpret_cast<uint16_t>(this->nextLocation.x) = reinterpret_cast<uint16_t>(this->westCell.x);
 // LINE 4367:
 	__asm        jmp    _Td1;
 // LINE 4369:
@@ -10563,7 +10560,7 @@ void AutomobileClass::TurnLeft() {
 	__asm        test   byte ptr [eax+0xCE], 1;
 	__asm        je     _T35;
 // LINE 4396:
-	reinterpret_cast<uint16_t>(this->westCell.x) = *reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&this->speed) + 2);
+	reinterpret_cast<uint16_t>(this->nextLocation.x) = reinterpret_cast<uint16_t>(this->westCell.x);
 // LINE 4398:
 	__asm        jmp    _Td1;
 _T35:
@@ -10571,7 +10568,7 @@ _T35:
 	__asm        test   byte ptr [eax+0xCE], 4;
 	__asm        je     _T5e;
 // LINE 4401:
-	reinterpret_cast<uint16_t>(this->westCell.x) = reinterpret_cast<uint16_t>(this->speed);
+	reinterpret_cast<uint16_t>(this->nextLocation.x) = reinterpret_cast<uint16_t>(this->eastCell.x);
 // LINE 4403:
 	__asm        jmp    _Td1;
 _T5e:
@@ -10579,7 +10576,7 @@ _T5e:
 	__asm        test   byte ptr [eax+0xCE], 2;
 	__asm        je     _T87;
 // LINE 4406:
-	reinterpret_cast<uint16_t>(this->westCell.x) = reinterpret_cast<uint16_t>(this->carModel);
+	reinterpret_cast<uint16_t>(this->nextLocation.x) = reinterpret_cast<uint16_t>(this->northCell.x);
 // LINE 4408:
 	__asm        jmp    _Td1;
 _T87:
@@ -10587,7 +10584,7 @@ _T87:
 	__asm        test   byte ptr [eax+0xCE], 8;
 	__asm        je     _Tb0;
 // LINE 4411:
-	reinterpret_cast<uint16_t>(this->westCell.x) = *reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&this->carModel) + 2);
+	reinterpret_cast<uint16_t>(this->nextLocation.x) = reinterpret_cast<uint16_t>(this->southCell.x);
 // LINE 4413:
 	__asm        jmp    _Td1;
 // LINE 4415:
@@ -10612,7 +10609,7 @@ void AutomobileClass::TurnRight() {
 	__asm        test   byte ptr [eax+0xCE], 1;
 	__asm        je     _T35;
 // LINE 4443:
-	reinterpret_cast<uint16_t>(this->westCell.x) = reinterpret_cast<uint16_t>(this->speed);
+	reinterpret_cast<uint16_t>(this->nextLocation.x) = reinterpret_cast<uint16_t>(this->eastCell.x);
 // LINE 4446:
 	__asm        jmp    _Td1;
 _T35:
@@ -10620,7 +10617,7 @@ _T35:
 	__asm        test   byte ptr [eax+0xCE], 4;
 	__asm        je     _T5e;
 // LINE 4449:
-	reinterpret_cast<uint16_t>(this->westCell.x) = *reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&this->speed) + 2);
+	reinterpret_cast<uint16_t>(this->nextLocation.x) = reinterpret_cast<uint16_t>(this->westCell.x);
 // LINE 4452:
 	__asm        jmp    _Td1;
 _T5e:
@@ -10628,7 +10625,7 @@ _T5e:
 	__asm        test   byte ptr [eax+0xCE], 2;
 	__asm        je     _T87;
 // LINE 4455:
-	reinterpret_cast<uint16_t>(this->westCell.x) = *reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&this->carModel) + 2);
+	reinterpret_cast<uint16_t>(this->nextLocation.x) = reinterpret_cast<uint16_t>(this->southCell.x);
 // LINE 4458:
 	__asm        jmp    _Td1;
 _T87:
@@ -10636,7 +10633,7 @@ _T87:
 	__asm        test   byte ptr [eax+0xCE], 8;
 	__asm        je     _Tb0;
 // LINE 4461:
-	reinterpret_cast<uint16_t>(this->westCell.x) = reinterpret_cast<uint16_t>(this->carModel);
+	reinterpret_cast<uint16_t>(this->nextLocation.x) = reinterpret_cast<uint16_t>(this->northCell.x);
 // LINE 4464:
 	__asm        jmp    _Td1;
 // LINE 4466:
@@ -10673,7 +10670,7 @@ void AutomobileClass::MoveForwardOnHiway() {
 	__asm        cmp    [eax+0xEA], ecx;
 	__asm        jge    _T45;
 // LINE 4493:
-	distance = this->legOfTurn;
+	distance = this->currDist;
 // LINE 4494:
 _T45:
 	__asm        xor    eax, eax;
@@ -10853,7 +10850,7 @@ _T7e:
 // FUNCTION: COPTER_D 0x0050917e
 void AutomobileClass::SetSaveData(struct _AUTO_LOAD_SAVE *sd) {
 // LINE 4605:
-	sd->flags = this->autoDynomitor.next;
+	sd->flags = this->flags;
 // LINE 4606:
 	__asm        mov    esi, this;
 	__asm        mov    edi, sd;
@@ -10870,9 +10867,9 @@ void AutomobileClass::SetSaveData(struct _AUTO_LOAD_SAVE *sd) {
 	__asm        rep movsd;
 	__asm        movsw;
 // LINE 4608:
-	sd->DeltaFromCenter = this->stalledTimer;
+	sd->DeltaFromCenter = this->DeltaFromCenter;
 // LINE 4609:
-	sd->stalledTimer = this->directionVector.x;
+	sd->stalledTimer = this->stalledTimer;
 // LINE 4610:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0xA2;
@@ -10885,75 +10882,67 @@ void AutomobileClass::SetSaveData(struct _AUTO_LOAD_SAVE *sd) {
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 4611:
-	sd->remainingTime = this->desiredSpeed;
+	sd->remainingTime = this->remainingTime;
 // LINE 4612:
-	sd->desiredSpeed = this->desiredHiwaySpeed;
+	sd->desiredSpeed = this->desiredSpeed;
 // LINE 4613:
-	sd->desiredHiwaySpeed = this->beamDelay;
+	sd->desiredHiwaySpeed = this->desiredHiwaySpeed;
 // LINE 4614:
-	sd->beamDelay = this->beamTimer;
+	sd->beamDelay = this->beamDelay;
 // LINE 4615:
-	sd->beamTimer = this->m_cellBaseY;
+	sd->beamTimer = this->beamTimer;
 // LINE 4616:
-	sd->m_cellBaseY = this->timePulledOver;
+	sd->m_cellBaseY = this->m_cellBaseY;
 // LINE 4617:
-	sd->timePulledOver = this->hiwaydir;
+	sd->timePulledOver = this->timePulledOver;
 // LINE 4618:
-	sd->hiwaydir = reinterpret_cast<uint32_t>(this->northCell.x);
+	sd->hiwaydir = this->hiwaydir;
 // LINE 4619:
-	reinterpret_cast<uint16_t>(sd->currentLocation.x) = reinterpret_cast<uint16_t>(this->eastCell.x);
+	reinterpret_cast<uint16_t>(sd->currentLocation.x) = reinterpret_cast<uint16_t>(this->currentLocation.x);
 // LINE 4620:
-	reinterpret_cast<uint16_t>(sd->nextLocation.x) = reinterpret_cast<uint16_t>(this->westCell.x);
+	reinterpret_cast<uint16_t>(sd->nextLocation.x) = reinterpret_cast<uint16_t>(this->nextLocation.x);
 // LINE 4621:
-	reinterpret_cast<uint16_t>(sd->northCell.x) = reinterpret_cast<uint16_t>(this->carModel);
+	reinterpret_cast<uint16_t>(sd->northCell.x) = reinterpret_cast<uint16_t>(this->northCell.x);
 // LINE 4622:
-	reinterpret_cast<uint16_t>(sd->eastCell.x) = reinterpret_cast<uint16_t>(this->speed);
+	reinterpret_cast<uint16_t>(sd->eastCell.x) = reinterpret_cast<uint16_t>(this->eastCell.x);
 // LINE 4623:
-	reinterpret_cast<uint16_t>(sd->westCell.x) = *reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&this->speed) + 2);
+	reinterpret_cast<uint16_t>(sd->westCell.x) = reinterpret_cast<uint16_t>(this->westCell.x);
 // LINE 4624:
-	reinterpret_cast<uint16_t>(sd->southCell.x) = *reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&this->carModel) + 2);
+	reinterpret_cast<uint16_t>(sd->southCell.x) = reinterpret_cast<uint16_t>(this->southCell.x);
 // LINE 4625:
-	sd->speed = this->prevDir;
+	sd->speed = this->speed;
 // LINE 4626:
-	sd->prevDir = this->turnIndex;
+	sd->prevDir = this->prevDir;
 // LINE 4627:
-	sd->turnIndex = this->currDist;
+	sd->turnIndex = this->turnIndex;
 // LINE 4628:
-	sd->currDist = this->legOfTurn;
+	sd->currDist = this->currDist;
 // LINE 4629:
-	sd->legOfTurn = this->pDirVector;
+	sd->legOfTurn = this->legOfTurn;
 // LINE 4630:
-	sd->personDone = this->fireTime;
+	sd->personDone = this->personDone;
 // LINE 4631:
-	sd->personState = this->fireSeq;
+	sd->personState = this->personState;
 // LINE 4632:
-	sd->personTimer = this->missionId;
+	sd->personTimer = this->personTimer;
 // LINE 4633:
-	sd->timeToLive = this->cptr;
+	sd->timeToLive = this->timeToLive;
 // LINE 4634:
-	sd->fireTime = this->personState;
+	sd->fireTime = this->fireTime;
 // LINE 4635:
-	sd->fireSeq = this->spotlightHitCounter;
+	sd->fireSeq = this->fireSeq;
 // LINE 4636:
-	sd->missionId = this-><AutomobileClass+0x10e>;
+	sd->missionId = this->missionId;
 // LINE 4637:
-	sd->spotlightHitCounter = this-><AutomobileClass+0x116>;
+	sd->spotlightHitCounter = this->spotlightHitCounter;
 // LINE 4639:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 2;
 	__asm        je     _T2ff;
 // LINE 4641:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x70];
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, sd;
-	__asm        mov    [ecx+0x92], al;
+	sd->goalpRGVFixup.x = this->goal.pRGV->x;
 // LINE 4642:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x70];
-	__asm        mov    al, [eax+1];
-	__asm        mov    ecx, sd;
-	__asm        mov    [ecx+0x93], al;
+	sd->goalpRGVFixup.y = this->goal.pRGV->y;
 // LINE 4643:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF2];
@@ -10970,12 +10959,12 @@ void AutomobileClass::SetSaveData(struct _AUTO_LOAD_SAVE *sd) {
 	__asm        test   byte ptr [eax+9], 8;
 	__asm        je     _T2ee;
 // LINE 4648:
-	reinterpret_cast<uint16_t>(sd->cptrfixup.x) = reinterpret_cast<uint16_t>(this->eastCell.x);
+	reinterpret_cast<uint16_t>(sd->cptrfixup.x) = reinterpret_cast<uint16_t>(this->currentLocation.x);
 // LINE 4650:
 	__asm        jmp    _T2ff;
 // LINE 4652:
 _T2ee:
-	reinterpret_cast<uint16_t>(sd->cptrfixup.x) = *reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&this->goal.edgeIndex) + 2);
+	reinterpret_cast<uint16_t>(sd->cptrfixup.x) = reinterpret_cast<uint16_t>(this->goal.gridLoc.x);
 // LINE 4655:
 _T2ff:
 	__asm        jmp    near ptr 0x00509482;
@@ -10993,7 +10982,7 @@ void AutomobileClass::LoadSaveData(struct _AUTO_LOAD_SAVE *sd) {
 	__asm        jmp    _T420;
 // LINE 4675:
 _T1d:
-	this->autoDynomitor.next = sd->flags;
+	this->flags = sd->flags;
 // LINE 4676:
 	__asm        mov    esi, sd;
 	__asm        mov    edi, this;
@@ -11003,9 +10992,9 @@ _T1d:
 	__asm        rep movsd;
 	__asm        movsw;
 // LINE 4677:
-	this->stalledTimer = sd->DeltaFromCenter;
+	this->DeltaFromCenter = sd->DeltaFromCenter;
 // LINE 4678:
-	this->directionVector.x = sd->stalledTimer;
+	this->stalledTimer = sd->stalledTimer;
 // LINE 4679:
 	__asm        mov    eax, sd;
 	__asm        add    eax, 0x9C;
@@ -11018,59 +11007,59 @@ _T1d:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 4680:
-	this->desiredSpeed = sd->remainingTime;
+	this->remainingTime = sd->remainingTime;
 // LINE 4681:
-	this->desiredHiwaySpeed = sd->desiredSpeed;
+	this->desiredSpeed = sd->desiredSpeed;
 // LINE 4682:
-	this->beamDelay = sd->desiredHiwaySpeed;
+	this->desiredHiwaySpeed = sd->desiredHiwaySpeed;
 // LINE 4683:
-	this->beamTimer = sd->beamDelay;
+	this->beamDelay = sd->beamDelay;
 // LINE 4684:
-	this->m_cellBaseY = sd->beamTimer;
+	this->beamTimer = sd->beamTimer;
 // LINE 4685:
-	this->timePulledOver = sd->m_cellBaseY;
+	this->m_cellBaseY = sd->m_cellBaseY;
 // LINE 4686:
-	this->hiwaydir = sd->timePulledOver;
+	this->timePulledOver = sd->timePulledOver;
 // LINE 4687:
-	reinterpret_cast<uint32_t>(this->northCell.x) = sd->hiwaydir;
+	this->hiwaydir = sd->hiwaydir;
 // LINE 4688:
-	reinterpret_cast<uint16_t>(this->eastCell.x) = reinterpret_cast<uint16_t>(sd->currentLocation.x);
+	reinterpret_cast<uint16_t>(this->currentLocation.x) = reinterpret_cast<uint16_t>(sd->currentLocation.x);
 // LINE 4689:
-	reinterpret_cast<uint16_t>(this->westCell.x) = reinterpret_cast<uint16_t>(sd->nextLocation.x);
+	reinterpret_cast<uint16_t>(this->nextLocation.x) = reinterpret_cast<uint16_t>(sd->nextLocation.x);
 // LINE 4690:
-	reinterpret_cast<uint16_t>(this->carModel) = reinterpret_cast<uint16_t>(sd->northCell.x);
+	reinterpret_cast<uint16_t>(this->northCell.x) = reinterpret_cast<uint16_t>(sd->northCell.x);
 // LINE 4691:
-	reinterpret_cast<uint16_t>(this->speed) = reinterpret_cast<uint16_t>(sd->eastCell.x);
+	reinterpret_cast<uint16_t>(this->eastCell.x) = reinterpret_cast<uint16_t>(sd->eastCell.x);
 // LINE 4692:
-	*reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&this->speed) + 2) = reinterpret_cast<uint16_t>(sd->westCell.x);
+	reinterpret_cast<uint16_t>(this->westCell.x) = reinterpret_cast<uint16_t>(sd->westCell.x);
 // LINE 4693:
-	*reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&this->carModel) + 2) = reinterpret_cast<uint16_t>(sd->southCell.x);
+	reinterpret_cast<uint16_t>(this->southCell.x) = reinterpret_cast<uint16_t>(sd->southCell.x);
 // LINE 4694:
-	this->prevDir = sd->speed;
+	this->speed = sd->speed;
 // LINE 4695:
-	this->turnIndex = sd->prevDir;
+	this->prevDir = sd->prevDir;
 // LINE 4696:
-	this->currDist = sd->turnIndex;
+	this->turnIndex = sd->turnIndex;
 // LINE 4697:
-	this->legOfTurn = sd->currDist;
+	this->currDist = sd->currDist;
 // LINE 4698:
-	this->pDirVector = sd->legOfTurn;
+	this->legOfTurn = sd->legOfTurn;
 // LINE 4699:
-	this->fireTime = sd->personDone;
+	this->personDone = sd->personDone;
 // LINE 4700:
-	this->fireSeq = sd->personState;
+	this->personState = sd->personState;
 // LINE 4701:
-	this->missionId = sd->personTimer;
+	this->personTimer = sd->personTimer;
 // LINE 4702:
-	this->cptr = sd->timeToLive;
+	this->timeToLive = sd->timeToLive;
 // LINE 4703:
-	this->personState = sd->fireTime;
+	this->fireTime = sd->fireTime;
 // LINE 4704:
-	this->spotlightHitCounter = sd->fireSeq;
+	this->fireSeq = sd->fireSeq;
 // LINE 4705:
-	this-><AutomobileClass+0x10e> = sd->missionId;
+	this->missionId = sd->missionId;
 // LINE 4706:
-	this-><AutomobileClass+0x116> = sd->spotlightHitCounter;
+	this->spotlightHitCounter = sd->spotlightHitCounter;
 // LINE 4708:
 	__asm        mov    eax, sd;
 	__asm        add    eax, 0x1C;
@@ -11155,7 +11144,7 @@ _T370:
 _T375:
 	__asm        jmp    near ptr 0x00509803;
 
-	this-><AutomobileClass+0x112> = None;
+	this->cptr = None;
 // LINE 4720:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0xD2;
@@ -11196,7 +11185,7 @@ _T3f6:
 _T3fb:
 	__asm        jmp    near ptr 0x00509889;
 
-	this-><AutomobileClass+0x112> = None;
+	this->cptr = None;
 // LINE 4725:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x7C;

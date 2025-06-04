@@ -467,69 +467,7 @@ public:
 // Type: char;
 
 // Type: class CBackBuffer (forward reference);
-// VTABLE: COPTER_D 0x00590808
-class CBackBuffer : public IBackBuffer
-{ // packed(0x134 bytes) TI: 0x18f5
-public:
-	void CBackBuffer(long, long, const struct SparkalColor*);
-	void CBackBuffer(char *);
-	void CBackBuffer();
-	virtual void InitializeMemberVariables(); // vtable+0x28
-	void ~CBackBuffer();
-	unsigned long Load();
-	virtual unsigned long Lock() /* override */;
-	virtual unsigned long Unlock() /* override */;
-	// calltype: NearC
-	static int32_t GetPaletteFromImage(char *, struct SparkalColor*);
-	virtual unsigned long Swap(class CSparkalWindow*, long, long) /* override */;
-	virtual unsigned long SwapRect(class CSparkalWindow*, long, long, long, long, long, long) /* override */;
-	virtual unsigned long StretchRect(class CSparkalWindow*, long, long, long, long, long, long, long, long) /* override */;
-	virtual unsigned long Compose(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&); // vtable+0x2c
-	virtual unsigned long Compose(class IFlatImage*, long, long, long, long, long, long) /* override */;
-	virtual unsigned long StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long) /* override */;
-	virtual unsigned long StretchCompose(class IFlatImage*, const struct SparkalRect&, const struct SparkalRect&); // vtable+0x30
-	virtual unsigned long Duplicate(class CBackBuffer*, int32_t); // vtable+0x34
-	virtual unsigned long ComposeNoClip(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&); // vtable+0x38
-	virtual unsigned long ComposeNoClip(class IFlatImage*, long, long, long, long, long, long); // vtable+0x3c
-	void UpdatePalette(long, long, const struct SparkalColor*);
-	virtual void SetTransparentColor(int32_t, long) /* override */;
-	unsigned long GetTransparentColor(long&);
-	unsigned long SetFont(class MFont*);
-	void SetFontColor(struct SparkalColor&);
-	void SetFontIndex(int32_t);
-	void SetColor(struct SparkalColor&);
-	void SetColorIndex(int32_t);
-	virtual unsigned long DrawLine(long, long, long, long, long); // vtable+0x40
-	virtual unsigned long FillRect(long, const struct SparkalRect*); // vtable+0x44
-	virtual unsigned long DrawBufferText(char *, long, unsigned long, const class MRect&, class MFont*); // vtable+0x48
-	virtual unsigned long DrawBufferText(char *, unsigned long, long *, long *, long *, long *, class MFont*); // vtable+0x4c
-	virtual unsigned long DrawLineUnclipped(long, long, long, long, long); // vtable+0x50
-	virtual unsigned long DrawLineClipped(long, long, long, long, long); // vtable+0x54
-	virtual unsigned long DrawRectangleOutline(const struct SparkalRect&, long); // vtable+0x58
-	virtual unsigned long DrawRectangleOutlineUnclipped(const struct SparkalRect&, long); // vtable+0x5c
-	long IsLost();
-	long Restore();
-	char * szFilePath;
-	struct tagRECT rectDirectDrawBuffer;
-protected:
-	int32_t bSurfacePrimary;
-	int32_t bSurfaceTransparent;
-	class MFont *mFont;
-	struct SparkalColor colorFontCurrent;
-	struct SparkalColor colorCurrent;
-	int32_t nColorIndexFontCurrent;
-	int32_t nColorIndexCurrent;
-	int32_t nColorIndexTransparent;
-	struct IDirectDrawSurface *mpFrontSurface;
-	struct IDirectDrawSurface *mpBackSurface;
-	struct IDirectDrawPalette *mpPalette;
-	struct _DDSURFACEDESC mDDdesc;
-	struct _DDBLTFX mDDBltFx;
-	void * __ptr32 hPen;
-	int32_t nPenThickness;
-	struct SparkalColor colorPenCurrent;
-	virtual struct IDirectDrawSurface* GetDDSurface(); // vtable+0x60
-};
+// CBackBuffer Class implementation not found
 
 // Type: unsigned long;
 
@@ -709,7 +647,7 @@ _T188:
 	__asm        mov    [ecx+0x15A], eax;
 	__asm        jmp    _T20c;
 _T1fc:
-	this->rectHistoryText.bottom = 0x0;
+	this->sCurrentFunds.reference = 0x0;
 _T20c:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x156], 0;
@@ -729,7 +667,7 @@ _T20c:
 	__asm        mov    [ecx+0x162], eax;
 	__asm        jmp    _T26f;
 _T25f:
-	this->rectSpecialtiesText.top = 0x0;
+	this->sItemCost.reference = 0x0;
 _T26f:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x15E], 0;
@@ -874,7 +812,7 @@ _T26f:
 	__asm        mov    [ecx+0x222], eax;
 	__asm        jmp    _T5ae;
 _T59e:
-	this->sHelicopterItemCostTitle.c_str_ptr = 0x0;
+	this->sHelicopterHistoryTitle.reference = 0x0;
 _T5ae:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x21E], 0;
@@ -904,7 +842,7 @@ _T5ae:
 	__asm        mov    [ecx+0x22A], eax;
 	__asm        jmp    _T644;
 _T634:
-	this->rectEquipmentCurrentFundsTitle.left = 0x0;
+	this->sHelicopterHistory.reference = 0x0;
 _T644:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x226], 0;
@@ -934,7 +872,7 @@ _T644:
 	__asm        mov    [ecx+0x232], eax;
 	__asm        jmp    _T6da;
 _T6ca:
-	this->rectEquipmentCurrentFundsTitle.right = 0x0;
+	this->sHelicopterSpecialtiesTitle.reference = 0x0;
 _T6da:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x22E], 0;
@@ -964,7 +902,7 @@ _T6da:
 	__asm        mov    [ecx+0x23A], eax;
 	__asm        jmp    _T770;
 _T760:
-	this->rectEquipmentItemCostTitle.left = 0x0;
+	this->sHelicopterSpecialties.reference = 0x0;
 _T770:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x236], 0;
@@ -994,7 +932,7 @@ _T770:
 	__asm        mov    [ecx+0x242], eax;
 	__asm        jmp    _T806;
 _T7f6:
-	this->rectEquipmentItemCostTitle.right = 0x0;
+	this->sHelicopterDescriptionTitle.reference = 0x0;
 _T806:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x23E], 0;
@@ -1024,7 +962,7 @@ _T806:
 	__asm        mov    [ecx+0x24A], eax;
 	__asm        jmp    _T89c;
 _T88c:
-	this->sEquipmentTab.c_str_ptr = 0x0;
+	this->sHelicopterDescription.reference = 0x0;
 _T89c:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x246], 0;
@@ -1054,7 +992,7 @@ _T89c:
 	__asm        mov    [ecx+0x252], eax;
 	__asm        jmp    _T932;
 _T922:
-	this->sEquipmentDescriptionTitle.c_str_ptr = 0x0;
+	this->sHelicopterCurrentFundsTitle.reference = 0x0;
 _T932:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x24E], 0;
@@ -1084,7 +1022,7 @@ _T932:
 	__asm        mov    [ecx+0x25A], eax;
 	__asm        jmp    _T9c8;
 _T9b8:
-	this->sEquipmentCurrentFundsTitle.c_str_ptr = 0x0;
+	this->sHelicopterItemCostTitle.reference = 0x0;
 _T9c8:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x256], 0;
@@ -1122,7 +1060,7 @@ _T9c8:
 	__asm        mov    [ecx+0x282], eax;
 	__asm        jmp    _Ta72;
 _Ta62:
-	this-><CatalogWindow+0x282> = 0x0;
+	this->sEquipmentTab.reference = 0x0;
 _Ta72:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x27E], 0;
@@ -1152,7 +1090,7 @@ _Ta72:
 	__asm        mov    [ecx+0x28A], eax;
 	__asm        jmp    _Tb08;
 _Taf8:
-	this-><CatalogWindow+0x28a> = 0x0;
+	this->sEquipmentDescriptionTitle.reference = 0x0;
 _Tb08:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x286], 0;
@@ -1182,7 +1120,7 @@ _Tb08:
 	__asm        mov    [ecx+0x292], eax;
 	__asm        jmp    _Tb9e;
 _Tb8e:
-	this-><CatalogWindow+0x292> = 0x0;
+	this->sEquipmentCurrentFundsTitle.reference = 0x0;
 _Tb9e:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x28E], 0;
@@ -1212,7 +1150,7 @@ _Tb9e:
 	__asm        mov    [ecx+0x29A], eax;
 	__asm        jmp    _Tc34;
 _Tc24:
-	this-><CatalogWindow+0x29a> = 0x0;
+	this->sEquipmentItemCostTitle.reference = 0x0;
 _Tc34:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x296], 0;
@@ -1242,7 +1180,7 @@ _Tc34:
 	__asm        mov    [ecx+0x2A2], eax;
 	__asm        jmp    _Tcca;
 _Tcba:
-	this-><CatalogWindow+0x2a2> = 0x0;
+	this->sEquipmentTitle.reference = 0x0;
 _Tcca:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x29E], 0;
@@ -1272,7 +1210,7 @@ _Tcca:
 	__asm        mov    [ecx+0x2AA], eax;
 	__asm        jmp    _Td60;
 _Td50:
-	this-><CatalogWindow+0x2aa> = 0x0;
+	this->sEquipmentAddress1.reference = 0x0;
 _Td60:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x2A6], 0;
@@ -1302,7 +1240,7 @@ _Td60:
 	__asm        mov    [ecx+0x2B2], eax;
 	__asm        jmp    _Tdf6;
 _Tde6:
-	this-><CatalogWindow+0x2b2> = 0x0;
+	this->sEquipmentAddress2.reference = 0x0;
 _Tdf6:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x2AE], 0;
@@ -2329,7 +2267,7 @@ _T6d:
 	__asm        mov    [ecx+0x1C2], eax;
 	__asm        jmp    _T109;
 _Tf9:
-	this->rectHelicopterDescriptionTitle.right = 0x0;
+	this->buttonWindowBuy = 0x0;
 // LINE 140:
 _T109:
 	__asm        push   0;
@@ -2451,7 +2389,7 @@ _T1f6:
 	__asm        mov    [ecx+0x1C6], eax;
 	__asm        jmp    _T2b9;
 _T2a9:
-	this->rectHelicopterDescriptionTitle.bottom = 0x0;
+	this->buttonWindowSell = 0x0;
 // LINE 147:
 _T2b9:
 	__asm        push   0;
@@ -2650,7 +2588,7 @@ _T4c8:
 	__asm        mov    [ecx+0x1CA], eax;
 	__asm        jmp    _T58b;
 _T57b:
-	this->rectHelicopterCurrentFundsTitle.left = 0x0;
+	this->buttonWindowDone = 0x0;
 // LINE 154:
 _T58b:
 	__asm        push   0;
@@ -3155,7 +3093,7 @@ _T59d:
 	this-><CatalogWindow+0x40> = 0x0;
 // LINE 190:
 _T5aa:
-	this->rectHistoryText.left = lNewTab;
+	this->lCurrentTab = lNewTab;
 // LINE 191:
 	__asm        lea    eax, sTempTabFileName.c_str_ptr;
 	__asm        push   eax;
@@ -3267,7 +3205,7 @@ _T6f9:
 
 	__asm        mov    eax, sTempMainGraphicFilePath.c_str_ptr;
 	__asm        push   eax;
-	__asm        lea    ecx, tempHelicopterBuffer<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempHelicopterBuffer<CBackBuffer+0x00:None>;
 	__asm        call   CBackBuffer::CBackBuffer;
 // LINE 196:
 	__asm        cmp    sTempTabFilePath.c_str_ptr, 0;
@@ -3353,16 +3291,16 @@ _T841:
 
 	__asm        mov    eax, sTempTabFilePath.c_str_ptr;
 	__asm        push   eax;
-	__asm        lea    ecx, tempTabBuffer<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempTabBuffer<CBackBuffer+0x00:None>;
 	__asm        call   CBackBuffer::CBackBuffer;
 // LINE 199:
 	__asm        jmp    near ptr 0x0047750D;
 
 	__asm        jmp    near ptr 0x00477512;
 
-	__asm        mov    eax, tempHelicopterBuffer.mHeight;
+	__asm        mov    eax, [ebp-0x464];
 	__asm        push   eax;
-	__asm        mov    eax, tempHelicopterBuffer.mWidth;
+	__asm        mov    eax, [ebp-0x468];
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   0;
@@ -3375,16 +3313,16 @@ _T841:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        push   eax;
-	__asm        lea    ecx, tempHelicopterBuffer<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempHelicopterBuffer<CBackBuffer+0x00:None>;
 	__asm        call   CBackBuffer::Compose;
 // LINE 202:
 	__asm        jmp    near ptr 0x00477558;
 
 	__asm        jmp    near ptr 0x0047755D;
 
-	__asm        mov    eax, tempTabBuffer.mHeight;
+	__asm        mov    eax, [ebp-0x330];
 	__asm        push   eax;
-	__asm        mov    eax, tempTabBuffer.mWidth;
+	__asm        mov    eax, [ebp-0x334];
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   0;
@@ -3397,7 +3335,7 @@ _T841:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        push   eax;
-	__asm        lea    ecx, tempTabBuffer<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempTabBuffer<CBackBuffer+0x00:None>;
 	__asm        call   CBackBuffer::Compose;
 // LINE 205:
 	__asm        push   0;
@@ -4519,9 +4457,9 @@ _T1920:
 	__asm        call   CatalogWindow::SetButtonStates;
 // LINE 268:
 _T1a28:
-	__asm        lea    ecx, tempTabBuffer<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempTabBuffer<CBackBuffer+0x00:None>;
 	__asm        call   CBackBuffer::~CBackBuffer;
-	__asm        lea    ecx, tempHelicopterBuffer<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempHelicopterBuffer<CBackBuffer+0x00:None>;
 	__asm        call   CBackBuffer::~CBackBuffer;
 // LINE 269:
 // Block end:
@@ -4692,7 +4630,7 @@ _T1c9a:
 	this-><CatalogWindow+0x40> = 0x0;
 // LINE 277:
 _T1ca7:
-	this->rectHistoryText.left = lNewTab;
+	this->lCurrentTab = lNewTab;
 // LINE 278:
 	__asm        lea    eax, sTempTabFileName.c_str_ptr;
 	__asm        push   eax;
@@ -4807,16 +4745,16 @@ _T1df3:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x64];
 	__asm        push   eax;
-	__asm        lea    ecx, tempTabBuffer<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempTabBuffer<CBackBuffer+0x00:None>;
 	__asm        call   CBackBuffer::CBackBuffer;
 // LINE 283:
 	__asm        jmp    near ptr 0x00478AC8;
 
 	__asm        jmp    near ptr 0x00478ACD;
 
-	__asm        mov    eax, tempTabBuffer.mHeight;
+	__asm        mov    eax, [ebp-0x598];
 	__asm        push   eax;
-	__asm        mov    eax, tempTabBuffer.mWidth;
+	__asm        mov    eax, [ebp-0x59C];
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   0;
@@ -4829,7 +4767,7 @@ _T1df3:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        push   eax;
-	__asm        lea    ecx, tempTabBuffer<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempTabBuffer<CBackBuffer+0x00:None>;
 	__asm        call   CBackBuffer::Compose;
 // LINE 285:
 	__asm        mov    rectEquipmentDescriptionTitles[0].left, 0xA2;
@@ -5574,7 +5512,7 @@ _T2a0b:
 	__asm        call   CatalogWindow::SetButtonStates;
 // LINE 362:
 _T2b13:
-	__asm        lea    ecx, tempTabBuffer<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempTabBuffer<CBackBuffer+0x00:None>;
 	__asm        call   CBackBuffer::~CBackBuffer;
 // LINE 365:
 // Block end:
@@ -5600,13 +5538,13 @@ _T2b1e:
 // LINE 367:
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
-	__asm        lea    ecx, tempStainImage<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempStainImage<CBackBuffer+0x00:None>;
 	__asm        call   CBackBuffer::CBackBuffer;
 // LINE 368:
 	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
 	__asm        push   1;
-	__asm        lea    ecx, tempStainImage<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempStainImage<CBackBuffer+0x00:None>;
 	__asm        call   CBackBuffer::SetTransparentColor;
 // LINE 369:
 	__asm        mov    i, 0;
@@ -5628,9 +5566,9 @@ _T2b91:
 
 	__asm        jmp    near ptr 0x00479831;
 
-	__asm        mov    eax, tempStainImage.mHeight;
+	__asm        mov    eax, [ebp-0x6CC];
 	__asm        push   eax;
-	__asm        mov    eax, tempStainImage.mWidth;
+	__asm        mov    eax, [ebp-0x6D0];
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   0;
@@ -5645,14 +5583,14 @@ _T2b91:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        push   eax;
-	__asm        lea    ecx, tempStainImage<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempStainImage<CBackBuffer+0x00:None>;
 	__asm        call   CBackBuffer::Compose;
 // LINE 374:
 _T2c1c:
 	__asm        jmp    _T2b8b;
 // LINE 375:
 _T2c21:
-	__asm        lea    ecx, tempStainImage<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempStainImage<CBackBuffer+0x00:None>;
 	__asm        call   CBackBuffer::~CBackBuffer;
 // LINE 376:
 // Block end:
@@ -5678,13 +5616,13 @@ _T2c2c:
 // LINE 378:
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
-	__asm        lea    ecx, tempPaperClipImage<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempPaperClipImage<CBackBuffer+0x00:None>;
 	__asm        call   CBackBuffer::CBackBuffer;
 // LINE 379:
 	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexTransparent;
 	__asm        push   eax;
 	__asm        push   1;
-	__asm        lea    ecx, tempPaperClipImage<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempPaperClipImage<CBackBuffer+0x00:None>;
 	__asm        call   CBackBuffer::SetTransparentColor;
 // LINE 380:
 	__asm        mov    i, 0;
@@ -5706,9 +5644,9 @@ _T2c9f:
 
 	__asm        jmp    near ptr 0x0047993F;
 
-	__asm        mov    eax, tempPaperClipImage.mHeight;
+	__asm        mov    eax, [ebp-0x800];
 	__asm        push   eax;
-	__asm        mov    eax, tempPaperClipImage.mWidth;
+	__asm        mov    eax, [ebp-0x804];
 	__asm        push   eax;
 	__asm        push   0;
 	__asm        push   0;
@@ -5723,14 +5661,14 @@ _T2c9f:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        push   eax;
-	__asm        lea    ecx, tempPaperClipImage<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempPaperClipImage<CBackBuffer+0x00:None>;
 	__asm        call   CBackBuffer::Compose;
 // LINE 385:
 _T2d2a:
 	__asm        jmp    _T2c99;
 // LINE 386:
 _T2d2f:
-	__asm        lea    ecx, tempPaperClipImage<CBackBuffer+0x00>;
+	__asm        lea    ecx, tempPaperClipImage<CBackBuffer+0x00:None>;
 	__asm        call   CBackBuffer::~CBackBuffer;
 // LINE 387:
 // Block end:
@@ -6211,7 +6149,7 @@ void CatalogWindow::SetNewEquipmentSelection(long lNewEquipmentSelection) {
 	__asm        cmp    [eax+0x152], ecx;
 	__asm        je     _T263;
 // LINE 447:
-	this->rectHistoryText.top = lNewEquipmentSelection;
+	this->lCurrentEquipmentSelection = lNewEquipmentSelection;
 // LINE 448:
 	__asm        mov    ebx, 1;
 	__asm        mov    eax, this;

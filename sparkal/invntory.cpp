@@ -642,7 +642,7 @@ _T441:
 	__asm        mov    [ecx+0x172], eax;
 	__asm        jmp    _T474;
 _T464:
-	this->sAddress1.reference = 0x0;
+	this->sCheckmarkFileName.reference = 0x0;
 _T474:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x16E], 0;
@@ -672,7 +672,7 @@ _T474:
 	__asm        mov    [ecx+0x17A], eax;
 	__asm        jmp    _T4f2;
 _T4e2:
-	this->sAddress2.reference = 0x0;
+	this->sTitle.reference = 0x0;
 _T4f2:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x176], 0;
@@ -702,7 +702,7 @@ _T4f2:
 	__asm        mov    [ecx+0x182], eax;
 	__asm        jmp    _T570;
 _T560:
-	this->myFont.sName.c_str_ptr = 0x0;
+	this->sAddress1.reference = 0x0;
 _T570:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x17E], 0;
@@ -732,7 +732,7 @@ _T570:
 	__asm        mov    [ecx+0x18A], eax;
 	__asm        jmp    _T5ee;
 _T5de:
-	this->myFont.lHeight = 0x0;
+	this->sAddress2.reference = 0x0;
 _T5ee:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x186], 0;

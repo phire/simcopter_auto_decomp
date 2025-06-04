@@ -68,7 +68,7 @@ struct MIFFRecord{ // packed(0xc bytes) TI: 0x148f
 
 // Type: class PFile;
 // VTABLE: COPTER_D 0x00590468
-class PFile{ // packed(0x110 bytes) TI: 0x1de4
+class PFile{ // packed(0x110 bytes) TI: 0x453c
 	enum /* __unnamed */ {
 		FileNull = -1,
 	};
@@ -125,6 +125,8 @@ public:
 	static void Remove(char *);
 	// calltype: NearC
 	static void Rename(char *, char *);
+	// calltype: NearC
+	static unsigned long Checksum(char *);
 	long SetPath(char *);
 	long FileCreate(char *, int32_t);
 	long FileExists(char *);
