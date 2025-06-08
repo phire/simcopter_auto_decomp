@@ -251,9 +251,9 @@ struct tagOFNA{ // packed(0x4c bytes) TI: 0x23d8
 // Contribution: 1:0008eed0-0008ff8c Module: 23, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0048fed0
 void FixResourceFilterString(/*packed*/ class basic_string<char>& sFilter, char chReplacementToken) {
-	char chCurrentValue;
-	int32_t i;
-	char * szString;
+	/*bp-0x4*/   char * szString;
+	/*bp-0x8*/   int32_t i;
+	/*bp-0xc*/   char chCurrentValue;
 
 // LINE 34:
 	i = 0x0;
@@ -726,8 +726,8 @@ _T564:
 
 // FUNCTION: COPTER_D 0x00490439
 unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int32_t nFileFilterStringID, char * pInitialDirectory) {
-	/*packed*/ class basic_string<char> sFilter;
-	/*packed*/ class basic_string<char> sTitle;
+	/*bp-0x8*/   /*packed*/ class basic_string<char> sTitle; // 0x8 bytes
+	/*bp-0x10*/  /*packed*/ class basic_string<char> sFilter; // 0x8 bytes
 
 // LINE 63:
 	__asm        push   0x10;
@@ -1123,7 +1123,7 @@ _T4ec:
 
 // FUNCTION: COPTER_D 0x0049092a
 unsigned long GetLoadFilePath(char * pFilePath, char * pLoadTitle, char * pFilter, char * pInitialDirectory) {
-	/*packed*/ struct tagOFNA ofn;
+	/*bp-0x4c*/  /*packed*/ struct tagOFNA ofn; // 0x4c bytes
 
 // LINE 86:
 	ofn.lStructSize = 0x4c;
@@ -1185,8 +1185,8 @@ _Tb4:
 
 // FUNCTION: COPTER_D 0x004909e3
 unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int32_t nFileFilterStringID, char * pInitialDirectory) {
-	/*packed*/ class basic_string<char> sFilter;
-	/*packed*/ class basic_string<char> sTitle;
+	/*bp-0x8*/   /*packed*/ class basic_string<char> sTitle; // 0x8 bytes
+	/*bp-0x10*/  /*packed*/ class basic_string<char> sFilter; // 0x8 bytes
 
 // LINE 121:
 	__asm        push   0x10;
@@ -1582,7 +1582,7 @@ _T4ec:
 
 // FUNCTION: COPTER_D 0x00490ed4
 unsigned long GetSaveFilePath(char * pFilePath, char * pSaveTitle, char * pFilter, char * pInitialDirectory) {
-	/*packed*/ struct tagOFNA ofn;
+	/*bp-0x4c*/  /*packed*/ struct tagOFNA ofn; // 0x4c bytes
 
 // LINE 143:
 	ofn.lStructSize = 0x4c;

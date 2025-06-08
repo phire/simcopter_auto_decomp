@@ -275,8 +275,8 @@ _T39:
 
 // FUNCTION: COPTER_D 0x00565bff
 unsigned char * StringSet::GetString(short which) {
-	short cnt;
-	unsigned char * str;
+	/*bp-0x4*/   unsigned char * str;
+	/*bp-0x8*/   short cnt;
 
 // LINE 66:
 	__asm        mov    eax, this;

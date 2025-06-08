@@ -110,15 +110,15 @@ void IFlatImage::IFlatImage() {
 
 // FUNCTION: COPTER_D 0x0048f174
 unsigned long IFlatImage::StretchCompose(/*packed*/ class IFlatImage *pDest, long SourceLeft, long SourceTop, long SourceWidth, long SourceHeight, long DestLeft, long DestTop, long DestWidth, long DestHeight) {
-	long YError;
-	long DestStride;
-	unsigned char * pDestBits;
-	unsigned char * pSourceLeft;
-	unsigned char * pSourceBits;
-	long YCount;
-	unsigned long ReturnCode;
-	unsigned char * pDestLeft;
-	long SourceStride;
+	/*bp-0x4*/   long SourceStride;
+	/*bp-0x8*/   unsigned char * pDestLeft;
+	/*bp-0xc*/   unsigned long ReturnCode;
+	/*bp-0x10*/  long YCount;
+	/*bp-0x14*/  unsigned char * pSourceBits;
+	/*bp-0x18*/  unsigned char * pSourceLeft;
+	/*bp-0x1c*/  unsigned char * pDestBits;
+	/*bp-0x20*/  long DestStride;
+	/*bp-0x24*/  long YError;
 
 // LINE 39:
 	__asm        cmp    pDest, 0;
@@ -216,8 +216,8 @@ _T10a:
 	__asm        jge    _T195;
 // LINE 66:
 // Block start:
-	long XError;
-	long XCount;
+	/*bp-0x28*/  long XCount;
+	/*bp-0x2c*/  long XError;
 	pSourceBits = pSourceLeft;
 // LINE 67:
 	pDestBits = pDestLeft;
@@ -297,14 +297,14 @@ _T195:
 
 // FUNCTION: COPTER_D 0x0048f32e
 unsigned long IFlatImage::StretchCompose(/*packed*/ class IFlatImage *pDestImage, /*packed*/ struct SparkalRect destRect, /*packed*/ struct SparkalRect srcRect) {
-	long SrcWidth;
-	long SrcHeight;
-	long DestHeight;
-	long SrcTop;
-	long DestLeft;
-	long DestTop;
-	long DestWidth;
-	long SrcLeft;
+	/*bp-0x4*/   long SrcLeft;
+	/*bp-0x8*/   long DestWidth;
+	/*bp-0xc*/   long DestTop;
+	/*bp-0x10*/  long DestLeft;
+	/*bp-0x14*/  long SrcTop;
+	/*bp-0x18*/  long DestHeight;
+	/*bp-0x1c*/  long SrcHeight;
+	/*bp-0x20*/  long SrcWidth;
 
 // LINE 114:
 	SrcLeft = srcRect.left;
@@ -359,12 +359,12 @@ unsigned long IFlatImage::StretchCompose(/*packed*/ class IFlatImage *pDestImage
 
 // FUNCTION: COPTER_D 0x0048f3b1
 unsigned long IFlatImage::Compose(/*packed*/ class IFlatImage *pDest, long DestLeft, long DestTop, long ClipLeft, long ClipTop, long ClipRight, long ClipBottom) {
-	unsigned char * pSource;
-	long DestStride;
-	unsigned char * pDestBits;
-	long Width;
-	long Height;
-	unsigned long Error;
+	/*bp-0x4*/   unsigned long Error;
+	/*bp-0x8*/   long Height;
+	/*bp-0xc*/   long Width;
+	/*bp-0x10*/  unsigned char * pDestBits;
+	/*bp-0x14*/  long DestStride;
+	/*bp-0x18*/  unsigned char * pSource;
 
 // LINE 134:
 	__asm        cmp    pDest, 0;
@@ -532,13 +532,13 @@ _T195:
 
 // FUNCTION: COPTER_D 0x0048f56b
 unsigned long IFlatImage::FillRect(long nPaletteIndex, /*packed*/ struct SparkalRect *rectFill) {
-	int32_t Left;
-	int32_t Top;
-	int32_t Right;
-	long Width;
-	long Height;
-	unsigned char * pBits;
-	int32_t Bottom;
+	/*bp-0x4*/   int32_t Bottom;
+	/*bp-0x8*/   unsigned char * pBits;
+	/*bp-0xc*/   long Height;
+	/*bp-0x10*/  long Width;
+	/*bp-0x14*/  int32_t Right;
+	/*bp-0x18*/  int32_t Top;
+	/*bp-0x1c*/  int32_t Left;
 
 // LINE 206:
 	__asm        cmp    rectFill, 0;
@@ -968,9 +968,9 @@ _T229:
 	__asm        je     _T31d;
 // LINE 296:
 // Block start:
-	unsigned char * pSource;
-	long SrcStride;
-	unsigned char * pBits;
+	/*bp-0x4*/   unsigned char * pBits;
+	/*bp-0x8*/   long SrcStride;
+	/*bp-0xc*/   unsigned char * pSource;
 	__asm        jmp    near ptr 0x0048FAAD;
 
 	pBits = this-><CFlatImage+0x10>;
@@ -994,7 +994,7 @@ _T229:
 	__asm        je     _T2cf;
 // LINE 303:
 // Block start:
-	int32_t Count;
+	/*bp-0x10*/  int32_t Count;
 	Count = this-><CFlatImage+0x0c>;
 // LINE 304:
 _T28c:

@@ -606,9 +606,9 @@ void PoliceCarClass::~PoliceCarClass() {
 
 // FUNCTION: COPTER_D 0x00536e98
 /*packed*/ class PoliceCarClass* PoliceCarClass::CreateInstance(int32_t instanceID) {
-	int32_t object;
-	/*packed*/ class PoliceCarClass *youveWonABrandNewCar;
-	char * objectMemory;
+	/*bp-0x4*/   char * objectMemory;
+	/*bp-0x8*/   /*packed*/ class PoliceCarClass *youveWonABrandNewCar;
+	/*bp-0xc*/   int32_t object;
 
 // LINE 125:
 	__asm        push   0x326;
@@ -637,7 +637,7 @@ _T3a:
 	__asm        je     _T1b6;
 // LINE 135:
 // Block start:
-	/*packed*/ struct VRObjInfo oinfo;
+	/*bp-0x30*/  /*packed*/ struct VRObjInfo oinfo; // 0x24 bytes
 	__asm        push   0x122;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -794,12 +794,12 @@ unsigned char PoliceCarClass::Dispatch(enum EmergencyType responseType, enum Eme
 
 // FUNCTION: COPTER_D 0x005370b3
 void PoliceCarClass::ItterateFSM() {
-	/*packed*/ struct _GridCoordinates oldemergencyloc;
-	/*packed*/ struct _CELL_INFO *cptr;
-	/*packed*/ struct _MISSION_PARMS mp;
-	/*packed*/ struct Point3d vec;
-	int32_t dist;
-	/*packed*/ struct _GridCoordinates badGuyLoc;
+	/*bp-0x4*/   /*packed*/ struct _GridCoordinates badGuyLoc;
+	/*bp-0x8*/   int32_t dist;
+	/*bp-0x14*/  /*packed*/ struct Point3d vec; // 0xc bytes
+	/*bp-0x2c*/  /*packed*/ struct _MISSION_PARMS mp; // 0x18 bytes
+	/*bp-0x30*/  /*packed*/ struct _CELL_INFO *cptr;
+	/*bp-0x34*/  /*packed*/ struct _GridCoordinates oldemergencyloc;
 
 // LINE 248:
 	this->foundRoad = 0x0;
@@ -1551,7 +1551,7 @@ _T974:
 
 // FUNCTION: COPTER_D 0x00537a2c
 enum TurnIndex PoliceCarClass::PickTurnDir(/*packed*/ struct Goal *pGoal) {
-	/*packed*/ struct _GridCoordinates startLoc;
+	/*bp-0x4*/   /*packed*/ struct _GridCoordinates startLoc;
 
 // LINE 545:
 	__asm        mov    eax, this;
@@ -1563,8 +1563,8 @@ enum TurnIndex PoliceCarClass::PickTurnDir(/*packed*/ struct Goal *pGoal) {
 	__asm        je     _T37e;
 // LINE 552:
 // Block start:
-	/*packed*/ struct _RGIndex destVertex;
-	/*packed*/ struct _RGIndex startVertex;
+	/*bp-0x8*/   /*packed*/ struct _RGIndex startVertex;
+	/*bp-0xc*/   /*packed*/ struct _RGIndex destVertex;
 	reinterpret_cast<uint16_t>(startLoc.x) = reinterpret_cast<uint16_t>(this->goal.gridLoc.x);
 // LINE 555:
 	startVertex.x = startLoc.x;
@@ -1877,8 +1877,8 @@ _T3fc:
 
 // FUNCTION: COPTER_D 0x00537e2f
 int32_t PoliceCarClass::ChangeEmergencyLocationToSpotlightLocation() {
-	/*packed*/ struct _GridCoordinates loc;
-	/*packed*/ class SpiralScan scan;
+	/*bp-0x10*/  /*packed*/ class SpiralScan scan; // 0x10 bytes
+	/*bp-0x14*/  /*packed*/ struct _GridCoordinates loc;
 
 // LINE 643:
 	__asm        push   4;
@@ -2015,9 +2015,9 @@ _T61:
 
 // FUNCTION: COPTER_D 0x00537fd9
 /*packed*/ struct _DYOBJ_INST* PoliceCarClass::ScanForBadGuys(/*packed*/ struct _GridCoordinates& scanLoc) {
-	/*packed*/ struct _CELL_INFO *cptr;
-	/*packed*/ struct _DYOBJ_INST *dyptr;
-	/*packed*/ class SpiralScan spiral;
+	/*bp-0x10*/  /*packed*/ class SpiralScan spiral; // 0x10 bytes
+	/*bp-0x14*/  /*packed*/ struct _DYOBJ_INST *dyptr;
+	/*bp-0x18*/  /*packed*/ struct _CELL_INFO *cptr;
 
 // LINE 690:
 	__asm        push   3;
@@ -2181,8 +2181,8 @@ _Tf7:
 
 // FUNCTION: COPTER_D 0x0053822e
 void PoliceCarClass::LoadSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) {
-	unsigned char yindex;
-	/*packed*/ struct _GridCoordinates badGuyLoc;
+	/*bp-0x4*/   /*packed*/ struct _GridCoordinates badGuyLoc;
+	/*bp-0x8*/   unsigned char yindex;
 
 // LINE 764:
 	__asm        mov    eax, sd;

@@ -3386,7 +3386,7 @@ unsigned short GetOutOfHeli(long personID) {
 
 // FUNCTION: COPTER_D 0x0054456a
 unsigned short cYObject::GetOutOfHeli(long personID) {
-	/*unpacked*/ class cYObject *obj;
+	/*bp-0x4*/   /*unpacked*/ class cYObject *obj;
 
 // LINE 172:
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(personID);
@@ -3614,9 +3614,9 @@ _T10f:
 
 // FUNCTION: COPTER_D 0x00544874
 /*unpacked*/ class cYObject* cYObject::GetObjectA(/*unpacked*/ struct _DYOBJ_INST *dyn) {
-	/*unpacked*/ class cYObject *obj;
-	short count;
-	/*unpacked*/ class cYObject *foundobj;
+	/*bp-0x4*/   /*unpacked*/ class cYObject *foundobj;
+	/*bp-0x8*/   short count;
+	/*bp-0xc*/   /*unpacked*/ class cYObject *obj;
 
 // LINE 225:
 	foundobj = 0x0;
@@ -3825,9 +3825,9 @@ _T2bd:
 
 // FUNCTION: COPTER_D 0x00544b3b
 /*unpacked*/ struct _DYOBJ_INST* cYObject::SearchForDynObj(short objtypeflag, short numcellstospiral, /*unpacked*/ struct _DYOBJ_INST *onlyonmaster) {
-	short celly;
-	short cellx;
-	/*unpacked*/ struct _DYOBJ_INST *dyobj;
+	/*bp-0x4*/   /*unpacked*/ struct _DYOBJ_INST *dyobj;
+	/*bp-0x8*/   short cellx;
+	/*bp-0xc*/   short celly;
 
 // LINE 249:
 	__asm        mov    eax, this;
@@ -3877,14 +3877,14 @@ _T94:
 
 // FUNCTION: COPTER_D 0x00544bde
 unsigned short cYObject::SearchForPersonSpot(/*unpacked*/ struct _DYOBJ_INST *master, /*unpacked*/ struct Point3d *loc) {
-	short radius;
-	short maxcount;
-	int32_t offsetz;
-	int32_t offsetx;
-	short fullradius;
-	/*unpacked*/ struct Point3d newloc;
-	short count;
-	short smallradius;
+	/*bp-0x4*/   short smallradius;
+	/*bp-0x8*/   short count;
+	/*bp-0x14*/  /*unpacked*/ struct Point3d newloc; // 0xc bytes
+	/*bp-0x18*/  short fullradius;
+	/*bp-0x1c*/  int32_t offsetx;
+	/*bp-0x20*/  int32_t offsetz;
+	/*bp-0x24*/  short maxcount;
+	/*bp-0x28*/  short radius;
 
 // LINE 260:
 	maxcount = 0x2;
@@ -3933,12 +3933,12 @@ _T7e:
 	__asm        jge    _T38b;
 // LINE 266:
 // Block start:
-	int32_t masterrad;
-	/*unpacked*/ struct Point3d offset;
-	int32_t myrad;
-	int32_t groundheight;
-	int32_t objheight;
-	/*unpacked*/ struct Point3d masterloc;
+	/*bp-0x34*/  /*unpacked*/ struct Point3d masterloc; // 0xc bytes
+	/*bp-0x38*/  int32_t objheight;
+	/*bp-0x3c*/  int32_t groundheight;
+	/*bp-0x40*/  int32_t myrad;
+	/*bp-0x4c*/  /*unpacked*/ struct Point3d offset; // 0xc bytes
+	/*bp-0x50*/  int32_t masterrad;
 	__asm        movsx  eax, count;
 	__asm        movsx  ecx, smallradius;
 	__asm        imul   eax, ecx;
@@ -4222,8 +4222,8 @@ _T393:
 
 // FUNCTION: COPTER_D 0x00544f78
 unsigned short cYObject::SearchForPersonSpot(/*unpacked*/ struct _CELL_INFO *cptr, /*unpacked*/ struct Point3d *loc, enum cYObject::SearchType searchType) {
-	int32_t offsetz;
-	int32_t offsetx;
+	/*bp-0x4*/   int32_t offsetx;
+	/*bp-0x8*/   int32_t offsetz;
 
 // LINE 305:
 	__asm        mov    eax, searchType;
@@ -4301,10 +4301,10 @@ _Tca:
 
 // FUNCTION: COPTER_D 0x00545049
 unsigned short cYObject::SearchForPersonSpot(/*unpacked*/ struct _CELL_INFO *cptr, int32_t * offsetx, int32_t * offsetz, enum cYObject::SearchType searchType) {
-	/*unpacked*/ struct Point3d pos;
-	short halfwidth;
-	unsigned short ret;
-	int32_t twiceradius;
+	/*bp-0x4*/   int32_t twiceradius;
+	/*bp-0x8*/   unsigned short ret;
+	/*bp-0xc*/   short halfwidth;
+	/*bp-0x18*/  /*unpacked*/ struct Point3d pos; // 0xc bytes
 
 // LINE 319:
 	__asm        mov    eax, cptr;
@@ -4369,7 +4369,7 @@ _Tad:
 	__asm        jmp    _T94a;
 // LINE 328:
 // Block start:
-	short count;
+	/*bp-0x1c*/  short count;
 	__asm        mov    count, 0;
 	__asm        jmp    _Tea;
 _Te6:
@@ -4656,7 +4656,7 @@ _T454:
 // LINE 348:
 // Block end:
 // Block start:
-	short count;
+	/*bp-0x20*/  short count;
 	__asm        mov    count, 0;
 	__asm        jmp    _T468;
 _T464:
@@ -4869,7 +4869,7 @@ _T6ec:
 // LINE 362:
 // Block end:
 // Block start:
-	short count;
+	/*bp-0x24*/  short count;
 	__asm        mov    count, 0;
 	__asm        jmp    _T700;
 _T6fc:
@@ -5075,15 +5075,15 @@ _T974:
 	__asm        je     _Tc6a;
 // LINE 380:
 // Block start:
-	/*unpacked*/ struct Point3d pos;
-	short centerscurk;
-	enum cYObject::LocationType cellcenterloctype;
-	enum cYObject::LocationType celloffsetloctype;
-	int32_t centcellx;
-	int32_t offcelly;
-	int32_t offcellx;
-	int32_t centcelly;
-	short offscurk;
+	/*bp-0x28*/  short offscurk;
+	/*bp-0x2c*/  int32_t centcelly;
+	/*bp-0x30*/  int32_t offcellx;
+	/*bp-0x34*/  int32_t offcelly;
+	/*bp-0x38*/  int32_t centcellx;
+	/*bp-0x3c*/  enum cYObject::LocationType celloffsetloctype;
+	/*bp-0x40*/  enum cYObject::LocationType cellcenterloctype;
+	/*bp-0x44*/  short centerscurk;
+	/*bp-0x50*/  /*unpacked*/ struct Point3d pos; // 0xc bytes
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax+2];
 	__asm        shl    eax, 0x10;
@@ -5251,7 +5251,7 @@ _Tbc0:
 	__asm        je     _Tc1c;
 // LINE 391:
 // Block start:
-	char str[80];
+	/*bp-0xa0*/  char str[80]; // 0x50 bytes
 	__asm        mov    eax, offcelly;
 	__asm        push   eax;
 	__asm        mov    eax, offcellx;
@@ -5322,10 +5322,10 @@ void duh(double __formal) {
 
 // FUNCTION: COPTER_D 0x00545cd3
 void S3PersonInit() {
-	int32_t success;
-	long i;
-	double y;
-	double x;
+	/*bp-0x8*/   double x; // 0x8 bytes
+	/*bp-0x10*/  double y; // 0x8 bytes
+	/*bp-0x14*/  long i;
+	/*bp-0x18*/  int32_t success;
 
 // LINE 406:
 	success = 0x0;
@@ -5400,7 +5400,7 @@ void S3PersonUserNextFrame() {
 
 // FUNCTION: COPTER_D 0x00545dbe
 void S3PersonReset() {
-	short count;
+	/*bp-0x4*/   short count;
 
 // LINE 446:
 	__asm        mov    count, 0;
@@ -5413,7 +5413,7 @@ _T18:
 	__asm        jge    _Tf3;
 // LINE 447:
 // Block start:
-	/*unpacked*/ class cYObject *obj;
+	/*bp-0x8*/   /*unpacked*/ class cYObject *obj;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    _T41;
@@ -5807,7 +5807,7 @@ _T138:
 	__asm        je     _T1c6;
 // LINE 479:
 // Block start:
-	/*unpacked*/ struct cYObject::MoveInfo moveinfo;
+	/*bp-0x10*/  /*unpacked*/ struct cYObject::MoveInfo moveinfo; // 0x10 bytes
 	__asm        mov    eax, facingvector;
 	__asm        mov    ecx, gAvatar;
 	__asm        add    ecx, 0x168;
@@ -5830,7 +5830,7 @@ _T1c6:
 
 // FUNCTION: COPTER_D 0x0054634c
 void S3PersonUserAppear(int32_t x, int32_t y, int32_t dx, int32_t dz) {
-	/*unpacked*/ struct Point3d loc;
+	/*bp-0xc*/   /*unpacked*/ struct Point3d loc; // 0xc bytes
 
 // LINE 491:
 	__asm        xor    eax, eax;
@@ -5911,8 +5911,8 @@ void S3PersonUserAppear(int32_t x, int32_t y, int32_t dx, int32_t dz) {
 
 // FUNCTION: COPTER_D 0x0054642e
 int32_t IsThisABadGuy(/*unpacked*/ struct _DYOBJ_INST *guy) {
-	enum MissionSupertype mt;
-	/*unpacked*/ class cYObject *obj;
+	/*bp-0x4*/   /*unpacked*/ class cYObject *obj;
+	/*bp-0x8*/   enum MissionSupertype mt;
 
 // LINE 497:
 	__asm        mov    eax, guy;
@@ -6022,7 +6022,7 @@ _T2f:
 
 // FUNCTION: COPTER_D 0x00546584
 void S3DrawPerson(/*unpacked*/ struct VRBlit *blit) {
-	short id;
+	/*bp-0x4*/   short id;
 
 // LINE 531:
 	__asm        call   FrameInit;
@@ -6043,7 +6043,7 @@ void S3DrawPerson(/*unpacked*/ struct VRBlit *blit) {
 	__asm        jmp    _T137;
 // LINE 537:
 // Block start:
-	/*unpacked*/ class cYObject *obj;
+	/*bp-0x8*/   /*unpacked*/ class cYObject *obj;
 _T3b:
 	__asm        movsx  eax, id;
 	__asm        cmp    eax, 0x7D00;
@@ -6124,12 +6124,12 @@ _T137:
 
 // FUNCTION: COPTER_D 0x005466c5
 void cAvatar::GetControlInput() {
-	int32_t fwdmult;
-	long joystickValue;
-	int32_t rotateRate;
-	int32_t tempfix;
-	int32_t fwdrate;
-	int32_t rotateMult;
+	/*bp-0x4*/   int32_t rotateMult;
+	/*bp-0x8*/   int32_t fwdrate;
+	/*bp-0xc*/   int32_t tempfix;
+	/*bp-0x10*/  int32_t rotateRate;
+	/*bp-0x14*/  long joystickValue;
+	/*bp-0x18*/  int32_t fwdmult;
 
 // LINE 555:
 	fwdrate = 0x140000;
@@ -6509,11 +6509,11 @@ _T7e:
 
 // FUNCTION: COPTER_D 0x00546b56
 /*unpacked*/ struct _HELI_DATA* S3PersonGetLandedHeli(/*unpacked*/ struct Point3d *loc) {
-	/*unpacked*/ struct _CELL_INFO *cptr;
-	/*unpacked*/ struct _HELI_DATA *hd;
-	long y;
-	long x;
-	/*unpacked*/ struct _DYOBJ_INST *dyobj;
+	/*bp-0x4*/   /*unpacked*/ struct _DYOBJ_INST *dyobj;
+	/*bp-0x8*/   long x;
+	/*bp-0xc*/   long y;
+	/*bp-0x10*/  /*unpacked*/ struct _HELI_DATA *hd;
+	/*bp-0x14*/  /*unpacked*/ struct _CELL_INFO *cptr;
 
 // LINE 654:
 	__asm        mov    eax, loc;
@@ -6624,8 +6624,8 @@ _T12a:
 
 // FUNCTION: COPTER_D 0x00546c85
 /*unpacked*/ class cYObject* cYObject::GetOnePersonForScurkID(short cellx, short celly) {
-	short scurkID;
-	short count;
+	/*bp-0x4*/   short count;
+	/*bp-0x8*/   short scurkID;
 
 // LINE 696:
 	__asm        movsx  eax, cellx;
@@ -6682,7 +6682,7 @@ _Tb1:
 	__asm        jge    _T1df;
 // LINE 698:
 // Block start:
-	/*unpacked*/ class cYObject *obj;
+	/*bp-0xc*/   /*unpacked*/ class cYObject *obj;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    _Tda;
@@ -6782,7 +6782,7 @@ _T1e6:
 
 // FUNCTION: COPTER_D 0x00546e70
 unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, enum PersonType persontype, short cellx, short celly, /*unpacked*/ struct _DYOBJ_INST *onTopOf, int32_t offsetx, int32_t offsetz) {
-	/*unpacked*/ struct Point3d loc;
+	/*bp-0xc*/   /*unpacked*/ struct Point3d loc; // 0xc bytes
 
 
 	__asm        movsx  eax, celly;
@@ -6857,7 +6857,7 @@ unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, e
 
 // FUNCTION: COPTER_D 0x00546f45
 unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, enum PersonType persontype, short cellx, short celly, /*unpacked*/ struct _DYOBJ_INST *onTopOf, /*unpacked*/ struct Point3d *loc) {
-	unsigned short ret;
+	/*bp-0x4*/   unsigned short ret;
 
 // LINE 719:
 	__asm        mov    eax, loc;
@@ -6934,10 +6934,10 @@ _Tac:
 
 // FUNCTION: COPTER_D 0x00547044
 void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType missiontype, short cellx, short celly, short missionid, /*unpacked*/ struct _DYOBJ_INST *onTopOf) {
-	/*unpacked*/ struct _LZ_INFO *li;
-	short id;
-	int32_t offsetz;
-	int32_t offsetx;
+	/*bp-0x4*/   int32_t offsetx;
+	/*bp-0x8*/   int32_t offsetz;
+	/*bp-0xc*/   short id;
+	/*bp-0x10*/  /*unpacked*/ struct _LZ_INFO *li;
 
 // LINE 732:
 	__asm        cmp    onTopOf, 0;
@@ -7058,10 +7058,10 @@ _Tfe:
 
 // FUNCTION: COPTER_D 0x005471b2
 void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType missiontype, short cellx, short celly, short missionid, /*unpacked*/ struct _DYOBJ_INST *onTopOf, int32_t offsetx, int32_t offsetz) {
-	short id;
-	/*unpacked*/ class cYObject *obj;
-	/*unpacked*/ struct Point3d loc;
-	short ret;
+	/*bp-0x4*/   short ret;
+	/*bp-0x10*/  /*unpacked*/ struct Point3d loc; // 0xc bytes
+	/*bp-0x14*/  /*unpacked*/ class cYObject *obj;
+	/*bp-0x18*/  short id;
 
 // LINE 748:
 	__asm        cmp    onTopOf, 0;
@@ -7261,7 +7261,7 @@ _T289:
 
 // FUNCTION: COPTER_D 0x00547440
 void cYObject::StartScurkPeople(short cellx, short celly) {
-	short scurkID;
+	/*bp-0x4*/   short scurkID;
 
 // LINE 780:
 	__asm        movsx  eax, cellx;
@@ -7313,8 +7313,8 @@ _Ta2:
 	__asm        jmp    _T490;
 // LINE 784:
 // Block start:
-	/*unpacked*/ class cYObject *medic;
-	short dist;
+	/*bp-0x8*/   short dist;
+	/*bp-0xc*/   /*unpacked*/ class cYObject *medic;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(celly);
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(cellx);
@@ -7424,8 +7424,8 @@ _T1c0:
 	__asm        jmp    _T4ed;
 // LINE 808:
 // Block start:
-	short fieldershift;
-	/*unpacked*/ class cYObject *newperson;
+	/*bp-0x10*/  /*unpacked*/ class cYObject *newperson;
+	/*bp-0x14*/  short fieldershift;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(celly);
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(cellx);
@@ -7670,11 +7670,11 @@ _T4f2:
 
 // FUNCTION: COPTER_D 0x00547937
 void cYObject::StartScurkPeopleNearAvatar() {
-	short rectdiam;
-	short celly;
-	short cellx;
-	short count;
-	/*unpacked*/ struct Rect r;
+	/*bp-0x8*/   /*unpacked*/ struct Rect r; // 0x8 bytes
+	/*bp-0xc*/   short count;
+	/*bp-0x10*/  short cellx;
+	/*bp-0x14*/  short celly;
+	/*bp-0x18*/  short rectdiam;
 
 // LINE 839:
 	__asm        movsx  eax, cYObject::sAmbientAbsoluteMax;
@@ -7801,7 +7801,7 @@ _T186:
 
 // FUNCTION: COPTER_D 0x00547ac2
 void cYObject::BeamRemainingAmbients() {
-	short numtries;
+	/*bp-0x4*/   short numtries;
 
 // LINE 872:
 	numtries = 0x0;
@@ -7820,8 +7820,8 @@ _T0f:
 	__asm        jge    _T19f;
 // LINE 874:
 // Block start:
-	short id;
-	short lastnumawake;
+	/*bp-0x8*/   short lastnumawake;
+	/*bp-0xc*/   short id;
 	lastnumawake = cYObject::sNumAmbientAwake;
 // LINE 875:
 	__asm        push   0;
@@ -7963,9 +7963,9 @@ _T53:
 
 // FUNCTION: COPTER_D 0x00547cc8
 /*unpacked*/ class cYObject* cYObject::GetSleepingPerson() {
-	/*unpacked*/ class cYObject *sleeper;
-	short count;
-	/*unpacked*/ class cYObject *test;
+	/*bp-0x4*/   /*unpacked*/ class cYObject *test;
+	/*bp-0x8*/   short count;
+	/*bp-0xc*/   /*unpacked*/ class cYObject *sleeper;
 
 // LINE 899:
 	sleeper = 0x0;
@@ -8052,8 +8052,8 @@ _T10c:
 
 // FUNCTION: COPTER_D 0x00547de1
 void MakeAllPeople() {
-	/*unpacked*/ struct _SYSTEMTIME st;
-	char peoplepath[260];
+	/*bp-0x104*/ char peoplepath[260]; // 0x104 bytes
+	/*bp-0x114*/ /*unpacked*/ struct _SYSTEMTIME st; // 0x10 bytes
 
 // LINE 915:
 	__asm        lea    eax, st.wYear;
@@ -8115,9 +8115,9 @@ _T33:
 
 // FUNCTION: COPTER_D 0x00547e9b
 void cYObject::MakePlebes() {
-	int32_t newnum;
-	int32_t pindex;
-	/*unpacked*/ struct Point3d p;
+	/*bp-0xc*/   /*unpacked*/ struct Point3d p; // 0xc bytes
+	/*bp-0x10*/  int32_t pindex;
+	/*bp-0x14*/  int32_t newnum;
 
 // LINE 947:
 	__asm        mov    p.x, 0;
@@ -8133,7 +8133,7 @@ _T2d:
 	__asm        jge    _T1a2;
 // LINE 952:
 // Block start:
-	/*unpacked*/ class cYObject *personobj;
+	/*bp-0x18*/  /*unpacked*/ class cYObject *personobj;
 	__asm        mov    eax, cYObject::sBehavior;
 	__asm        push   eax;
 	__asm        mov    eax, p.z;
@@ -8256,8 +8256,8 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        jne    _T1b5f;
 // LINE 967:
 // Block start:
-	short n;
-	short count;
+	/*bp-0x10*/  short count;
+	/*bp-0x14*/  short n;
 	cYObject::sUnitVectorTable[0].x = 0x0;
 // LINE 968:
 	cYObject::sUnitVectorTable[0].z = 0xffff0000;
@@ -10138,19 +10138,19 @@ _T1b88:
 
 // FUNCTION: COPTER_D 0x00549bdd
 unsigned short cYObject::BeamIntoCameraRange() {
-	unsigned short foundcell;
-	unsigned short stop_now;
-	int32_t offsetz;
-	int32_t curr_dir;
-	int32_t i;
-	int32_t y;
-	int32_t x;
-	int32_t offsetx;
-	/*unpacked*/ struct Point3d vec;
-	int32_t spiral_dist;
-	int32_t curr_dist;
-	int32_t ydir;
-	int32_t xdir;
+	/*bp-0x4*/   int32_t xdir;
+	/*bp-0x8*/   int32_t ydir;
+	/*bp-0xc*/   int32_t curr_dist;
+	/*bp-0x10*/  int32_t spiral_dist;
+	/*bp-0x1c*/  /*unpacked*/ struct Point3d vec; // 0xc bytes
+	/*bp-0x20*/  int32_t offsetx;
+	/*bp-0x24*/  int32_t x;
+	/*bp-0x28*/  int32_t y;
+	/*bp-0x2c*/  int32_t i;
+	/*bp-0x30*/  int32_t curr_dir;
+	/*bp-0x34*/  int32_t offsetz;
+	/*bp-0x38*/  unsigned short stop_now;
+	/*bp-0x3c*/  unsigned short foundcell;
 
 // LINE 1283:
 	curr_dist = 0x0;
@@ -10505,14 +10505,14 @@ _Tc9:
 	__asm        jmp    _T2ca;
 // LINE 1426:
 // Block start:
-	short deltaY;
-	short deltaX;
-	int32_t xtoview;
-	long debug1;
-	/*unpacked*/ struct Point3d viewvec;
-	int32_t ztoview;
-	unsigned short behindView;
-	long debug2;
+	/*bp-0x4*/   long debug2;
+	/*bp-0x8*/   unsigned short behindView;
+	/*bp-0xc*/   int32_t ztoview;
+	/*bp-0x18*/  /*unpacked*/ struct Point3d viewvec; // 0xc bytes
+	/*bp-0x1c*/  long debug1;
+	/*bp-0x20*/  int32_t xtoview;
+	/*bp-0x24*/  short deltaX;
+	/*bp-0x28*/  short deltaY;
 _Tce:
 	__asm        mov    eax, CameraCell.x;
 	__asm        mov    ecx, this;
@@ -10692,8 +10692,8 @@ _T2ca:
 
 // FUNCTION: COPTER_D 0x0054a1d3
 short StartPerson(enum PersonType persontype, enum MissionType mission, short cellx, short celly, long missionid, /*unpacked*/ struct _DYOBJ_INST *onTopOf, /*unpacked*/ struct Point3d *loc) {
-	short ret;
-	/*unpacked*/ class cYObject *newperson;
+	/*bp-0x4*/   /*unpacked*/ class cYObject *newperson;
+	/*bp-0x8*/   short ret;
 
 // LINE 1466:
 	ret = 0xffff;
@@ -10734,7 +10734,7 @@ _T5e:
 
 // FUNCTION: COPTER_D 0x0054a23f
 void LiberateMissionPeople(long missionid) {
-	short count;
+	/*bp-0x4*/   short count;
 
 // LINE 1477:
 	__asm        mov    count, 0;
@@ -10747,7 +10747,7 @@ _T18:
 	__asm        jge    _T111;
 // LINE 1478:
 // Block start:
-	/*unpacked*/ class cYObject *obj;
+	/*bp-0x8*/   /*unpacked*/ class cYObject *obj;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    _T41;
@@ -10824,8 +10824,8 @@ _T111:
 
 // FUNCTION: COPTER_D 0x0054a35a
 void KillMissionPeople(long missionid) {
-	/*unpacked*/ struct _MISSION_PARMS mp;
-	short count;
+	/*bp-0x4*/   short count;
+	/*bp-0x1c*/  /*unpacked*/ struct _MISSION_PARMS mp; // 0x18 bytes
 
 // LINE 1493:
 	mp.id = missionid;
@@ -10846,7 +10846,7 @@ _T33:
 	__asm        jge    _T240;
 // LINE 1500:
 // Block start:
-	/*unpacked*/ class cYObject *obj;
+	/*bp-0x20*/  /*unpacked*/ class cYObject *obj;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    _T5c;
@@ -10911,7 +10911,7 @@ _Tfe:
 	__asm        jne    _T23b;
 // LINE 1503:
 // Block start:
-	unsigned short die;
+	/*bp-0x24*/  unsigned short die;
 	die = 0x0;
 // LINE 1504:
 	__asm        mov    eax, obj;
@@ -11058,7 +11058,7 @@ _T7f:
 
 // FUNCTION: COPTER_D 0x0054a640
 unsigned short cYObject::IsSuitableForMission(enum MissionType mission, short cellx, short celly) {
-	unsigned short ret;
+	/*bp-0x4*/   unsigned short ret;
 
 // LINE 1541:
 	ret = 0x0;
@@ -11071,7 +11071,7 @@ unsigned short cYObject::IsSuitableForMission(enum MissionType mission, short ce
 	__asm        jmp    _T157;
 // LINE 1544:
 // Block start:
-	short scurkID;
+	/*bp-0x8*/   short scurkID;
 _T24:
 	__asm        movsx  eax, cellx;
 	__asm        cmp    eax, 0x7F;
@@ -11122,7 +11122,7 @@ _Tbd:
 	__asm        je     _T157;
 // LINE 1546:
 // Block start:
-	/*unpacked*/ struct _LZ_INFO *li;
+	/*bp-0xc*/   /*unpacked*/ struct _LZ_INFO *li;
 	__asm        movsx  eax, scurkID;
 	__asm        push   eax;
 	__asm        call   S3ObjGetLandingZone;
@@ -11142,8 +11142,8 @@ _Tf0:
 	__asm        jmp    _T157;
 // LINE 1550:
 // Block start:
-	short count;
-	enum cYObject::LocationType loctype;
+	/*bp-0x10*/  enum cYObject::LocationType loctype;
+	/*bp-0x14*/  short count;
 _Tfb:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(celly);
 	__asm        push   eax;
@@ -11188,7 +11188,7 @@ _T157:
 
 // FUNCTION: COPTER_D 0x0054a7a5
 unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionType mission, short cellx, short celly, long missionid, /*unpacked*/ struct _DYOBJ_INST *onTopOf, /*unpacked*/ struct Point3d *loc) {
-	short ret;
+	/*bp-0x4*/   short ret;
 
 // LINE 1571:
 	__asm        cmp    mission, 0;
@@ -11304,10 +11304,10 @@ _T1b1:
 	__asm        jmp    _Td60;
 // LINE 1583:
 // Block start:
-	int32_t offsetz;
-	int32_t offsetx;
-	unsigned short foundplace;
-	short count;
+	/*bp-0x8*/   short count;
+	/*bp-0xc*/   unsigned short foundplace;
+	/*bp-0x10*/  int32_t offsetx;
+	/*bp-0x14*/  int32_t offsetz;
 	__asm        cmp    loc, 0;
 	__asm        jne    _T1e2;
 
@@ -11353,7 +11353,7 @@ _T26a:
 	__asm        jge    _T300;
 // LINE 1589:
 // Block start:
-	enum cYObject::LocationType loctype;
+	/*bp-0x18*/  enum cYObject::LocationType loctype;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(celly);
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(cellx);
@@ -11407,7 +11407,7 @@ _T300:
 	__asm        je     _T39e;
 // LINE 1597:
 // Block start:
-	long testID;
+	/*bp-0x1c*/  long testID;
 	__asm        mov    eax, offsetz;
 	__asm        push   eax;
 	__asm        mov    eax, offsetx;
@@ -11665,9 +11665,9 @@ _T629:
 	__asm        jmp    _Td96;
 // LINE 1646:
 // Block start:
-	int32_t offsetz;
-	int32_t offsetx;
-	short count;
+	/*bp-0x20*/  short count;
+	/*bp-0x24*/  int32_t offsetx;
+	/*bp-0x28*/  int32_t offsetz;
 	__asm        cmp    loc, 0;
 	__asm        jne    _T642;
 
@@ -11694,7 +11694,7 @@ _T673:
 	__asm        jge    _T925;
 // LINE 1650:
 // Block start:
-	enum cYObject::LocationType loctype;
+	/*bp-0x2c*/  enum cYObject::LocationType loctype;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(celly);
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(cellx);
@@ -11736,10 +11736,10 @@ _T673:
 	__asm        je     _T8fd;
 // LINE 1656:
 // Block start:
-	unsigned short founddest;
-	/*unpacked*/ struct _MISSION_PARMS mp;
-	short destcellx;
-	short destcelly;
+	/*bp-0x30*/  short destcelly;
+	/*bp-0x34*/  short destcellx;
+	/*bp-0x4c*/  /*unpacked*/ struct _MISSION_PARMS mp; // 0x18 bytes
+	/*bp-0x50*/  unsigned short founddest;
 	destcellx = 0xffff;
 // LINE 1657:
 	destcelly = 0xffff;
@@ -11750,7 +11750,7 @@ _T673:
 	__asm        jne    _T821;
 // LINE 1660:
 // Block start:
-	short cnt;
+	/*bp-0x54*/  short cnt;
 	__asm        mov    eax, missionid;
 	__asm        push   eax;
 	__asm        call   S3MissionGetMapLoc;
@@ -11775,7 +11775,7 @@ _T749:
 	__asm        jge    _T81c;
 // LINE 1663:
 // Block start:
-	enum cYObject::LocationType loctype2;
+	/*bp-0x58*/  enum cYObject::LocationType loctype2;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(destcelly);
 	__asm        push   eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(destcellx);
@@ -11972,8 +11972,8 @@ _T925:
 // LINE 1737:
 // Block end:
 // Block start:
-	int32_t offsetz;
-	int32_t offsetx;
+	/*bp-0x5c*/  int32_t offsetx;
+	/*bp-0x60*/  int32_t offsetz;
 	ret = 0x0;
 // LINE 1738:
 	__asm        movsx  eax, cellx;
@@ -12061,9 +12061,9 @@ _Ta36:
 // LINE 1750:
 // Block end:
 // Block start:
-	int32_t mycelly;
-	int32_t mycellx;
-	/*unpacked*/ struct Point3d pos;
+	/*bp-0x6c*/  /*unpacked*/ struct Point3d pos; // 0xc bytes
+	/*bp-0x70*/  int32_t mycellx;
+	/*bp-0x74*/  int32_t mycelly;
 	ret = 0x0;
 // LINE 1751:
 	__asm        cmp    loc, 0;
@@ -12119,7 +12119,7 @@ _Tac9:
 	__asm        je     _Tbb4;
 // LINE 1759:
 // Block start:
-	unsigned short setmaster;
+	/*bp-0x78*/  unsigned short setmaster;
 	__asm        jmp    near ptr 0x0054B291;
 
 	__asm        mov    eax, this;
@@ -12262,8 +12262,8 @@ _Tc90:
 	__asm        jmp    _Td56;
 // LINE 1783:
 // Block start:
-	int32_t offsetz;
-	int32_t offsetx;
+	/*bp-0x7c*/  int32_t offsetx;
+	/*bp-0x80*/  int32_t offsetz;
 _Tc95:
 	__asm        push   1;
 	__asm        lea    eax, offsetz;
@@ -12659,7 +12659,7 @@ _T190:
 
 // FUNCTION: COPTER_D 0x0054b9e6
 long cYObject::JoinRiot() {
-	long riotMissionID;
+	/*bp-0x4*/   long riotMissionID;
 
 // LINE 1816:
 	__asm        mov    eax, this;
@@ -12685,8 +12685,8 @@ _T3a:
 	__asm        je     _T249;
 // LINE 1823:
 // Block start:
-	unsigned short conked;
-	/*unpacked*/ struct _MISSION_PARMS mp;
+	/*bp-0x1c*/  /*unpacked*/ struct _MISSION_PARMS mp; // 0x18 bytes
+	/*bp-0x20*/  unsigned short conked;
 	mp.id = riotMissionID;
 // LINE 1824:
 	mp.op = 0xb;
@@ -12836,9 +12836,9 @@ _T249:
 
 // FUNCTION: COPTER_D 0x0054bc3c
 void cYObject::PhaseAndBeamSoundChannels() {
-	/*unpacked*/ class cYObject *obj;
-	short nextsoundchannel;
-	short count;
+	/*bp-0x4*/   short count;
+	/*bp-0x8*/   short nextsoundchannel;
+	/*bp-0xc*/   /*unpacked*/ class cYObject *obj;
 
 // LINE 1842:
 	count = 0x0;
@@ -12899,8 +12899,8 @@ _Tc0:
 	__asm        je     _T268;
 // LINE 1846:
 // Block start:
-	short xdiff;
-	short ydiff;
+	/*bp-0x10*/  short ydiff;
+	/*bp-0x14*/  short xdiff;
 	__asm        mov    eax, obj;
 	__asm        movsx  eax, word ptr [eax+0xD2];
 	__asm        test   eax, eax;
@@ -13068,9 +13068,9 @@ _T2ba:
 
 // FUNCTION: COPTER_D 0x0054bf20
 short cYObject::DistributeSoundChannels(short rad, short firstsoundchannel) {
-	/*unpacked*/ class cYObject *obj;
-	short soundchannel;
-	short count;
+	/*bp-0x4*/   short count;
+	/*bp-0x8*/   short soundchannel;
+	/*bp-0xc*/   /*unpacked*/ class cYObject *obj;
 
 // LINE 1865:
 	soundchannel = firstsoundchannel;
@@ -13145,8 +13145,8 @@ _Tec:
 	__asm        jne    _T1b4;
 // LINE 1874:
 // Block start:
-	short xdiff;
-	short ydiff;
+	/*bp-0x10*/  short ydiff;
+	/*bp-0x14*/  short xdiff;
 	__asm        mov    eax, CameraCell.x;
 	__asm        mov    ecx, obj;
 	__asm        xor    edx, edx;
@@ -13284,12 +13284,12 @@ _Tce:
 
 // FUNCTION: COPTER_D 0x0054c1dd
 unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned short playforsure) {
-	int32_t success;
-	short actualSoundChannel;
-	char * soundfile;
-	unsigned short loop;
-	short freqadj;
-	int32_t flags;
+	/*bp-0x4*/   int32_t flags;
+	/*bp-0x8*/   short freqadj;
+	/*bp-0xc*/   unsigned short loop;
+	/*bp-0x10*/  char * soundfile;
+	/*bp-0x14*/  short actualSoundChannel;
+	/*bp-0x18*/  int32_t success;
 
 // LINE 1899:
 	__asm        cmp    G_camera_mode, 3;
@@ -13321,8 +13321,8 @@ _T3d:
 	__asm        je     _T129;
 // LINE 1905:
 // Block start:
-	short actualchannel;
-	/*unpacked*/ class DigitalSound *theSound;
+	/*bp-0x1c*/  /*unpacked*/ class DigitalSound *theSound;
+	/*bp-0x20*/  short actualchannel;
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        cmp    eax, 0xFFFFFFFF;
@@ -13632,8 +13632,8 @@ _T48d:
 
 // FUNCTION: COPTER_D 0x0054c671
 void cYObject::SimulateAll() {
-	long debuglooptime;
-	unsigned short simulate;
+	/*bp-0x4*/   unsigned short simulate;
+	/*bp-0x8*/   long debuglooptime;
 
 // LINE 2085:
 	__asm        mov    eax, LoopTime;
@@ -13662,7 +13662,7 @@ _T56:
 	__asm        jne    _T1b5;
 // LINE 2099:
 // Block start:
-	short count;
+	/*bp-0xc*/   short count;
 	__asm        mov    count, 0;
 	__asm        jmp    _T77;
 _T73:
@@ -13673,7 +13673,7 @@ _T77:
 	__asm        jge    _T1b0;
 // LINE 2100:
 // Block start:
-	/*unpacked*/ class cYObject *obj;
+	/*bp-0x10*/  /*unpacked*/ class cYObject *obj;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    _Ta0;
@@ -13772,7 +13772,7 @@ _T1b0:
 	__asm        jmp    _T642;
 // LINE 2106:
 // Block start:
-	short count;
+	/*bp-0x14*/  short count;
 _T1b5:
 	__asm        inc    gPersonBeamSlice;
 	__asm        movsx  eax, gPersonBeamingSlices;
@@ -13800,7 +13800,7 @@ _T207:
 	__asm        jge    _T61c;
 // LINE 2109:
 // Block start:
-	/*unpacked*/ class cYObject *obj;
+	/*bp-0x18*/  /*unpacked*/ class cYObject *obj;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    _T230;
@@ -14106,7 +14106,7 @@ _T642:
 
 // FUNCTION: COPTER_D 0x0054ccbd
 unsigned short cYObject::AddToHeli() {
-	/*unpacked*/ struct tagPassengerInfo tempPassengerInfo;
+	/*bp-0x14*/  /*unpacked*/ struct tagPassengerInfo tempPassengerInfo; // 0x14 bytes
 
 // LINE 2143:
 	__asm        mov    eax, this;
@@ -14153,7 +14153,7 @@ _T87:
 
 // FUNCTION: COPTER_D 0x0054cd49
 void cYObject::RemoveFromHeli() {
-	int32_t yes;
+	/*bp-0x4*/   int32_t yes;
 
 // LINE 2159:
 	__asm        mov    eax, this;
@@ -14184,7 +14184,7 @@ _T53:
 
 // FUNCTION: COPTER_D 0x0054cdb2
 /*unpacked*/ class cYObject* cYObject::GetPersonWithMaster(/*unpacked*/ struct _DYOBJ_INST *dyobj) {
-	short count;
+	/*bp-0x4*/   short count;
 
 // LINE 2166:
 	__asm        mov    count, 0;
@@ -14197,7 +14197,7 @@ _T1b:
 	__asm        jge    _T10a;
 // LINE 2167:
 // Block start:
-	/*unpacked*/ class cYObject *obj;
+	/*bp-0x8*/   /*unpacked*/ class cYObject *obj;
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    _T44;
@@ -14274,7 +14274,7 @@ _T111:
 
 // FUNCTION: COPTER_D 0x0054ceca
 unsigned short cYObject::SetMaster(/*unpacked*/ struct _DYOBJ_INST *obj) {
-	unsigned short success;
+	/*bp-0x4*/   unsigned short success;
 
 // LINE 2177:
 	__asm        mov    eax, this;
@@ -14434,8 +14434,8 @@ _T209:
 
 // FUNCTION: COPTER_D 0x0054d0e3
 unsigned short cYObject::AdjoinsRoad(/*unpacked*/ struct Point3d pos) {
-	int32_t celly;
-	int32_t cellx;
+	/*bp-0x4*/   int32_t cellx;
+	/*bp-0x8*/   int32_t celly;
 
 // LINE 2222:
 	__asm        mov    eax, pos.x;
@@ -14859,15 +14859,15 @@ _T578:
 
 // FUNCTION: COPTER_D 0x0054d662
 unsigned short cYObject::GetNeutralLoc(int32_t * cellx, int32_t * celly, int32_t * offsetx, int32_t * offsetz) {
-	/*unpacked*/ struct _CELL_INFO *newcptr;
-	/*unpacked*/ struct _CELL_INFO *cptr;
-	short cy;
-	int32_t z;
-	short cx;
-	short scurkID1;
-	int32_t x;
-	short scurkID2;
-	enum cYObject::LocationType loctype;
+	/*bp-0x4*/   enum cYObject::LocationType loctype;
+	/*bp-0x8*/   short scurkID2;
+	/*bp-0xc*/   int32_t x;
+	/*bp-0x10*/  short scurkID1;
+	/*bp-0x14*/  short cx;
+	/*bp-0x18*/  int32_t z;
+	/*bp-0x1c*/  short cy;
+	/*bp-0x20*/  /*unpacked*/ struct _CELL_INFO *cptr;
+	/*bp-0x24*/  /*unpacked*/ struct _CELL_INFO *newcptr;
 
 // LINE 2243:
 	__asm        mov    eax, celly;
@@ -15011,7 +15011,7 @@ _T1b7:
 	__asm        cmp    cYObject::sLocInfo[0].searchType[eax*8], 0;
 	__asm        jne    _T27b;
 // Block start:
-	/*unpacked*/ struct Point3d pos;
+	/*bp-0x30*/  /*unpacked*/ struct Point3d pos; // 0xc bytes
 	__asm        mov    eax, offsetz;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x58], eax;
@@ -15377,8 +15377,8 @@ _T1e1:
 
 // FUNCTION: COPTER_D 0x0054dcde
 enum cYObject::MoveErrorCode cAvatar::AvatarMove(/*unpacked*/ struct cYObject::MoveInfo *moveinfo) {
-	unsigned short yaw;
-	enum cYObject::MoveErrorCode movecode;
+	/*bp-0x4*/   enum cYObject::MoveErrorCode movecode;
+	/*bp-0x8*/   unsigned short yaw;
 
 // LINE 2290:
 	yaw = 0x0;
@@ -15488,9 +15488,9 @@ _T12b:
 
 // FUNCTION: COPTER_D 0x0054de18
 void cAvatar::Simulate() {
-	/*unpacked*/ struct _HELI_DATA *hd;
-	/*unpacked*/ struct cYObject::MoveInfo moveinfo;
-	enum cYObject::MoveErrorCode movecode;
+	/*bp-0x4*/   enum cYObject::MoveErrorCode movecode;
+	/*bp-0x14*/  /*unpacked*/ struct cYObject::MoveInfo moveinfo; // 0x10 bytes
+	/*bp-0x18*/  /*unpacked*/ struct _HELI_DATA *hd;
 
 // LINE 2309:
 	__asm        mov    eax, this;
@@ -15499,7 +15499,7 @@ void cAvatar::Simulate() {
 	__asm        jne    _T1aa;
 // LINE 2310:
 // Block start:
-	/*unpacked*/ struct _DYOBJ_INST *dy;
+	/*bp-0x1c*/  /*unpacked*/ struct _DYOBJ_INST *dy;
 	__asm        cmp    G_camera_mode, 3;
 	__asm        jne    _T47;
 
@@ -15647,7 +15647,7 @@ _T1d3:
 	__asm        jne    _T23d;
 // LINE 2324:
 // Block start:
-	/*unpacked*/ class cYObject *person;
+	/*bp-0x20*/  /*unpacked*/ class cYObject *person;
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::GetToted;
 	__asm        mov    person, eax;
@@ -15670,7 +15670,7 @@ _T23d:
 	__asm        je     _T41f;
 // LINE 2333:
 // Block start:
-	/*unpacked*/ class cYObject *person;
+	/*bp-0x24*/  /*unpacked*/ class cYObject *person;
 	G_uheli = hd;
 // LINE 2334:
 	__asm        mov    ecx, this;
@@ -15681,7 +15681,7 @@ _T23d:
 	__asm        je     _T309;
 // LINE 2338:
 // Block start:
-	/*unpacked*/ class cYObject *obj;
+	/*bp-0x28*/  /*unpacked*/ class cYObject *obj;
 	__asm        mov    eax, person;
 	__asm        movsx  eax, word ptr [eax+0xD8];
 	__asm        cmp    eax, 6;
@@ -15817,7 +15817,7 @@ _T41f:
 	__asm        jne    _T66a;
 // LINE 2363:
 // Block start:
-	/*unpacked*/ class cYObject *person;
+	/*bp-0x2c*/  /*unpacked*/ class cYObject *person;
 	__asm        mov    eax, moveinfo.dyBlock;
 	__asm        push   eax;
 	__asm        call   cYObject::GetObjectA;
@@ -17526,9 +17526,9 @@ _T1569:
 
 // FUNCTION: COPTER_D 0x0054faee
 void cAvatar::ResetView() {
-	unsigned char figDir;
-	/*unpacked*/ struct Point3D view;
-	int32_t yRot;
+	/*bp-0x4*/   int32_t yRot;
+	/*bp-0x1c*/  /*unpacked*/ struct Point3D view; // 0x18 bytes
+	/*bp-0x20*/  unsigned char figDir;
 
 // LINE 2506:
 	__asm        call   S3ViewerControl;
@@ -17627,8 +17627,8 @@ _T131:
 
 // FUNCTION: COPTER_D 0x0054fc2e
 void cYObject::SetCellAndLoc(/*unpacked*/ struct Point3d loc, unsigned char x, unsigned char y) {
-	short loccellx;
-	short loccelly;
+	/*bp-0x4*/   short loccelly;
+	/*bp-0x8*/   short loccellx;
 
 // LINE 2537:
 	__asm        mov    eax, loc.x;
@@ -17722,7 +17722,7 @@ _Tf6:
 
 // FUNCTION: COPTER_D 0x0054fd4d
 void cYObject::SetCellAndLoc(unsigned char x, unsigned char y, int32_t dx, int32_t dz) {
-	/*unpacked*/ struct Point3d loc;
+	/*bp-0xc*/   /*unpacked*/ struct Point3d loc; // 0xc bytes
 
 // LINE 2561:
 	__asm        xor    eax, eax;
@@ -17899,11 +17899,11 @@ _T169:
 
 // FUNCTION: COPTER_D 0x0054ffb7
 void cYObject::SetPersonType(enum PersonType type) {
-	short count;
-	short freqadj;
-	short frequnit;
-	unsigned long bodyname;
-	short faceindex;
+	/*bp-0x4*/   short faceindex;
+	/*bp-0x8*/   unsigned long bodyname;
+	/*bp-0xc*/   short frequnit;
+	/*bp-0x10*/  short freqadj;
+	/*bp-0x14*/  short count;
 
 // LINE 2616:
 	count = 0x0;
@@ -18369,7 +18369,7 @@ void cYObject::DestroyObjects() {
 	__asm        je     _T12a;
 // LINE 2763:
 // Block start:
-	short cnt;
+	/*bp-0x4*/   short cnt;
 	__asm        mov    cnt, 0;
 	__asm        jmp    _T28;
 _T24:
@@ -18461,7 +18461,7 @@ _T12a:
 
 // FUNCTION: COPTER_D 0x0055069b
 void cYObject::Link() {
-	/*unpacked*/ struct _CELL_INFO *ncptr;
+	/*bp-0x4*/   /*unpacked*/ struct _CELL_INFO *ncptr;
 
 // LINE 2780:
 	__asm        jmp    near ptr 0x005506AC;
@@ -18561,8 +18561,8 @@ _T103:
 
 // FUNCTION: COPTER_D 0x005507ec
 void cYObject::Unlink() {
-	/*unpacked*/ struct _DYOBJ_INST **dyptrptr;
-	/*unpacked*/ struct _CELL_INFO *cptr;
+	/*bp-0x4*/   /*unpacked*/ struct _CELL_INFO *cptr;
+	/*bp-0x8*/   /*unpacked*/ struct _DYOBJ_INST **dyptrptr;
 
 // LINE 2798:
 	__asm        jmp    near ptr 0x005507FD;
@@ -18623,8 +18623,8 @@ _Ta4:
 
 // FUNCTION: COPTER_D 0x005508a3
 /*unpacked*/ class cAvatar* cAvatar::MakeAvatar() {
-	/*unpacked*/ class cAvatar *avatar;
-	/*unpacked*/ struct Point3d p;
+	/*bp-0x18*/  /*unpacked*/ struct Point3d p; // 0xc bytes
+	/*bp-0x1c*/  /*unpacked*/ class cAvatar *avatar;
 
 	// Function registers exception cleanup function at 0x005509b2
 // LINE 2818:
@@ -18714,7 +18714,7 @@ _T119:
 
 // FUNCTION: COPTER_D 0x005509cb
 short cYObject::MakeNewObject(short type, /*unpacked*/ struct Point3d loc, /*unpacked*/ class Behavior *behavior) {
-	short id;
+	/*bp-0x10*/  short id;
 
 	// Function registers exception cleanup function at 0x00550b17
 // LINE 2826:
@@ -18759,7 +18759,7 @@ _T8c:
 	__asm        je     _T11a;
 // LINE 2834:
 // Block start:
-	/*unpacked*/ class cYObject **newObj;
+	/*bp-0x14*/  /*unpacked*/ class cYObject **newObj;
 	__asm        movsx  eax, id;
 	__asm        lea    eax, cYObject::sObjects[0][eax*4];
 	__asm        mov    newObj, eax;
@@ -18834,8 +18834,8 @@ _T156:
 
 // FUNCTION: COPTER_D 0x00550b30
 void cYObject::InitForEngine(short id) {
-	/*unpacked*/ struct VRFaceInfo finfo;
-	int32_t face;
+	/*bp-0x4*/   int32_t face;
+	/*bp-0x24*/  /*unpacked*/ struct VRFaceInfo finfo; // 0x20 bytes
 
 // LINE 2845:
 	__asm        push   0x16;
@@ -18926,7 +18926,7 @@ _Tc8:
 
 // FUNCTION: COPTER_D 0x00550c30
 void cYObject::KillObject(short id) {
-	/*unpacked*/ class cYObject *obj;
+	/*bp-0x4*/   /*unpacked*/ class cYObject *obj;
 
 // LINE 2873:
 	__asm        movsx  eax, id;
@@ -19013,7 +19013,7 @@ _T118:
 
 // FUNCTION: COPTER_D 0x00550d4d
 void cYObject::cYObject(short type, /*unpacked*/ class Behavior *pBehavior, /*unpacked*/ struct Point3d loc, short id) {
-	short cnt;
+	/*bp-0x10*/  short cnt;
 
 	// Function registers exception cleanup function at 0x00550efd
 
@@ -19419,18 +19419,18 @@ _T3d1:
 
 // FUNCTION: COPTER_D 0x00551388
 void cYObject::Draw(/*unpacked*/ struct VRBlit *blit) {
-	double nearvar;
-	double camPhi;
-	/*unpacked*/ struct Point3d screenPt;
-	char text[20];
-	double midvar;
-	float psiOff;
-	double camPsi;
-	double farvar;
-	float phiOff;
-	double farlimvar;
-	unsigned short highres;
-	/*unpacked*/ struct BodyDebugInfo bdi;
+	/*bp-0x1c*/  /*unpacked*/ struct BodyDebugInfo bdi; // 0x1c bytes
+	/*bp-0x20*/  unsigned short highres;
+	/*bp-0x28*/  double farlimvar; // 0x8 bytes
+	/*bp-0x2c*/  float phiOff;
+	/*bp-0x34*/  double farvar; // 0x8 bytes
+	/*bp-0x3c*/  double camPsi; // 0x8 bytes
+	/*bp-0x40*/  float psiOff;
+	/*bp-0x48*/  double midvar; // 0x8 bytes
+	/*bp-0x5c*/  char text[20]; // 0x14 bytes
+	/*bp-0x68*/  /*unpacked*/ struct Point3d screenPt; // 0xc bytes
+	/*bp-0x70*/  double camPhi; // 0x8 bytes
+	/*bp-0x78*/  double nearvar; // 0x8 bytes
 
 // LINE 2968:
 	__asm        mov    eax, this;
@@ -19759,7 +19759,7 @@ void BodyDrawDebugInfo(/*unpacked*/ class CBackBuffer *buf) {
 	__asm        je     _T80;
 // LINE 3052:
 // Block start:
-	short count;
+	/*bp-0x4*/   short count;
 	__asm        mov    count, 0;
 	__asm        jmp    _T2d;
 _T29:
@@ -19771,7 +19771,7 @@ _T2d:
 	__asm        jge    _T80;
 // LINE 3053:
 // Block start:
-	/*unpacked*/ struct BodyDebugInfo bdi;
+	/*bp-0x20*/  /*unpacked*/ struct BodyDebugInfo bdi; // 0x1c bytes
 	__asm        movsx  eax, count;
 	__asm        mov    ecx, eax;
 	__asm        shl    eax, 3;
@@ -19808,8 +19808,8 @@ _T80:
 
 // FUNCTION: COPTER_D 0x005518ad
 void cYObject::~cYObject() {
-	unsigned short found;
-	/*unpacked*/ class cYObject **srch;
+	/*bp-0x10*/  /*unpacked*/ class cYObject **srch;
+	/*bp-0x14*/  unsigned short found;
 
 	// Function registers exception cleanup function at 0x005519be
 
@@ -19894,7 +19894,7 @@ _T11b:
 
 // FUNCTION: COPTER_D 0x005519d6
 void S3PersonTweakInit() {
-	int32_t * pvals[10];
+	/*bp-0x28*/  int32_t * pvals[10]; // 0x28 bytes
 
 // LINE 3083:
 	pvals[0] = 0x5b8678;
@@ -19929,7 +19929,7 @@ void UpdateFigureVals() {
 
 // FUNCTION: COPTER_D 0x00551a3d
 void cAvatar::RotateMatrixAndYawForEngine() {
-	int32_t matrix[4][4];
+	/*bp-0x40*/  int32_t matrix[4][4]; // 0x40 bytes
 
 // LINE 3102:
 	__asm        push   0xF0000;
@@ -19986,11 +19986,11 @@ _T7d:
 
 // FUNCTION: COPTER_D 0x00551af1
 int32_t S3PUtilsGetDir(int32_t orgx, int32_t orgy, int32_t destx, int32_t desty) {
-	int32_t deltay;
-	short dir;
-	int32_t deltax;
-	int32_t absy;
-	int32_t absx;
+	/*bp-0x4*/   int32_t absx;
+	/*bp-0x8*/   int32_t absy;
+	/*bp-0xc*/   int32_t deltax;
+	/*bp-0x10*/  short dir;
+	/*bp-0x14*/  int32_t deltay;
 
 // LINE 3119:
 	__asm        mov    eax, destx;
@@ -20092,15 +20092,15 @@ _Tf8:
 
 // FUNCTION: COPTER_D 0x00551bf7
 int32_t S3PUtilsGetAlt(int32_t x, int32_t y, int32_t z) {
-	int32_t normy;
-	int32_t normx;
-	/*unpacked*/ struct _CELL_INFO *cptr;
-	int32_t alt;
-	int32_t objy;
-	/*unpacked*/ struct _STOBJ_INST *stobj;
-	int32_t color;
-	int32_t maxobjy;
-	int32_t normz;
+	/*bp-0x4*/   int32_t normz;
+	/*bp-0x8*/   int32_t maxobjy;
+	/*bp-0xc*/   int32_t color;
+	/*bp-0x10*/  /*unpacked*/ struct _STOBJ_INST *stobj;
+	/*bp-0x14*/  int32_t objy;
+	/*bp-0x18*/  int32_t alt;
+	/*bp-0x1c*/  /*unpacked*/ struct _CELL_INFO *cptr;
+	/*bp-0x20*/  int32_t normx;
+	/*bp-0x24*/  int32_t normy;
 
 // LINE 3159:
 	__asm        mov    eax, 0x20000000;

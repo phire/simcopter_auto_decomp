@@ -76,11 +76,11 @@ struct _MMIOINFO{ // packed(0x48 bytes) TI: 0x23e7
 // Contribution: 1:0008dbb0-0008e11e Module: 25, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0048ebb0
 int32_t WaveOpenFile(char * pszFileName, void * __ptr32 *phmmioIn, /*packed*/ struct tWAVEFORMATEX *pwfxInfo, /*packed*/ struct _MMCKINFO *pckInRIFF) {
-	unsigned short cbExtraAlloc;
-	/*packed*/ struct pcmwaveformat_tag pcmWaveFormat;
-	void * __ptr32 hmmioIn;
-	/*packed*/ struct _MMCKINFO ckIn;
-	int32_t nError;
+	/*bp-0x4*/   int32_t nError;
+	/*bp-0x18*/  /*packed*/ struct _MMCKINFO ckIn; // 0x14 bytes
+	/*bp-0x1c*/  void * __ptr32 hmmioIn;
+	/*bp-0x2c*/  /*packed*/ struct pcmwaveformat_tag pcmWaveFormat; // 0x10 bytes
+	/*bp-0x30*/  unsigned short cbExtraAlloc;
 
 // LINE 49:
 	hmmioIn = 0x0;
@@ -277,7 +277,7 @@ _T204:
 
 // FUNCTION: COPTER_D 0x0048edb9
 int32_t WaveStartDataRead(void * __ptr32 *phmmioIn, /*packed*/ struct _MMCKINFO *pckIn, /*packed*/ struct _MMCKINFO *pckInRIFF) {
-	int32_t nError;
+	/*bp-0x4*/   int32_t nError;
 
 // LINE 160:
 	__asm        push   0;
@@ -323,10 +323,10 @@ _T67:
 
 // FUNCTION: COPTER_D 0x0048ee25
 int32_t WaveReadFile(void * __ptr32 hmmioIn, uint32_t cbRead, unsigned char * pbDest, /*packed*/ struct _MMCKINFO *pckIn, uint32_t * cbActualRead) {
-	/*packed*/ struct _MMIOINFO mmioinfoIn;
-	uint32_t cT;
-	int32_t nError;
-	unsigned char * tempBYTEPointerToFoolCrappyMicrosoftCompiler;
+	/*bp-0x4*/   unsigned char * tempBYTEPointerToFoolCrappyMicrosoftCompiler;
+	/*bp-0x8*/   int32_t nError;
+	/*bp-0xc*/   uint32_t cT;
+	/*bp-0x54*/  /*packed*/ struct _MMIOINFO mmioinfoIn; // 0x48 bytes
 
 // LINE 197:
 	__asm        push   0;
@@ -482,11 +482,11 @@ _T29:
 
 // FUNCTION: COPTER_D 0x0048efa4
 int32_t WaveLoadFile(char * pszFileName, uint32_t * cbSize, /*packed*/ struct tWAVEFORMATEX *pwfxInfo, unsigned char * *ppbData) {
-	uint32_t cbActualRead;
-	void * __ptr32 hmmioIn;
-	/*packed*/ struct _MMCKINFO ckInRiff;
-	/*packed*/ struct _MMCKINFO ckIn;
-	int32_t nError;
+	/*bp-0x4*/   int32_t nError;
+	/*bp-0x18*/  /*packed*/ struct _MMCKINFO ckIn; // 0x14 bytes
+	/*bp-0x2c*/  /*packed*/ struct _MMCKINFO ckInRiff; // 0x14 bytes
+	/*bp-0x30*/  void * __ptr32 hmmioIn;
+	/*bp-0x34*/  uint32_t cbActualRead;
 
 // LINE 285:
 	ppbData-> = 0x0;

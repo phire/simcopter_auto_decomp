@@ -31,7 +31,7 @@ public:
 // Contribution: 1:0002c420-0002cf5b Module: 65, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0042d420
 void DirectDrawError::DisplayError(char * szErrorDescription) {
-	char szFullErrorDescription[256];
+	/*bp-0x100*/ char szFullErrorDescription[256]; // 0x100 bytes
 
 // LINE 13:
 	__asm        mov    eax, szErrorDescription;
@@ -764,7 +764,7 @@ _T7f5:
 
 // FUNCTION: COPTER_D 0x0042dc69
 void DirectSoundError::DisplayError(char * szErrorDescription) {
-	char szFullErrorDescription[256];
+	/*bp-0x100*/ char szFullErrorDescription[256]; // 0x100 bytes
 
 // LINE 193:
 	__asm        mov    eax, szErrorDescription;

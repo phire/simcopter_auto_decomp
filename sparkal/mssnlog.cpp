@@ -723,10 +723,10 @@ void MissionLogWindow::~MissionLogWindow() {
 
 // FUNCTION: COPTER_D 0x0046bfe3
 int32_t MissionLogWindow::Initialize() {
-	/*packed*/ class ButtonWindow *tempButtonWindow;
-	/*packed*/ class basic_string<char> sText;
-	int32_t nFullStringID;
-	/*packed*/ struct SparkalColor tempSparkalColor;
+	/*bp-0x4*/   /*packed*/ struct SparkalColor tempSparkalColor;
+	/*bp-0x8*/   int32_t nFullStringID;
+	/*bp-0x10*/  /*packed*/ class basic_string<char> sText; // 0x8 bytes
+	/*bp-0x14*/  /*packed*/ class ButtonWindow *tempButtonWindow;
 
 // LINE 68:
 	__asm        push   0x10;
@@ -1533,7 +1533,7 @@ _T136:
 
 // FUNCTION: COPTER_D 0x0046ca4c
 int32_t MissionLogWindow::CreateImage(int32_t __formal) {
-	char szBackgroundBufferPath[260];
+	/*bp-0x104*/ char szBackgroundBufferPath[260]; // 0x104 bytes
 
 // LINE 129:
 	__asm        push   0;
@@ -1702,9 +1702,9 @@ _Tdd:
 
 // FUNCTION: COPTER_D 0x0046cc44
 void MissionLogWindow::DrawBackground() {
-	long y;
-	int32_t i;
-	long x;
+	/*bp-0x4*/   long x;
+	/*bp-0x8*/   int32_t i;
+	/*bp-0xc*/   long y;
 
 // LINE 192:
 	__asm        mov    i, 0;
@@ -1745,7 +1745,7 @@ _T67:
 
 // FUNCTION: COPTER_D 0x0046ccb5
 int32_t MissionLogWindow::DoMessage(/*unpacked*/ class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
-	long lMyMessage;
+	/*bp-0x4*/   long lMyMessage;
 
 // LINE 206:
 	__asm        cmp    lWindowID, 1;
@@ -1800,8 +1800,8 @@ _T7f:
 
 // FUNCTION: COPTER_D 0x0046cd45
 void MissionLogWindow::SortByTimeDate() {
-	/*packed*/ class list<tagLogBase *>::iterator iterator;
-	/*packed*/ class basic_string<char> sCurrentText;
+	/*bp-0x8*/   /*packed*/ class basic_string<char> sCurrentText; // 0x8 bytes
+	/*bp-0xc*/   /*packed*/ class list<tagLogBase *>::iterator iterator;
 
 // LINE 225:
 	__asm        jmp    near ptr 0x0046CD56;
@@ -1994,9 +1994,9 @@ _T223:
 
 // FUNCTION: COPTER_D 0x0046cf77
 void MissionLogWindow::SortByType() {
-	unsigned long nCurrentMissionID;
-	/*packed*/ class list<tagLogBase *>::iterator iterator;
-	/*packed*/ class basic_string<char> sCurrentText;
+	/*bp-0x8*/   /*packed*/ class basic_string<char> sCurrentText; // 0x8 bytes
+	/*bp-0xc*/   /*packed*/ class list<tagLogBase *>::iterator iterator;
+	/*bp-0x10*/  unsigned long nCurrentMissionID;
 
 // LINE 245:
 	__asm        jmp    near ptr 0x0046CF8E;
@@ -2546,7 +2546,7 @@ int32_t MessageDisplayManager::Initialize() {
 	__asm        jle    _T1d7;
 // LINE 311:
 // Block start:
-	uint32_t $S71;
+	/*bp-0x4*/   uint32_t $S71;
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0;
 	__asm        je     _T15c;
@@ -2711,8 +2711,8 @@ _T1d7:
 
 // FUNCTION: COPTER_D 0x0046d802
 void MessageDisplayManager::DisplayCurrentMessages(/*unpacked*/ class CBackBuffer *bufferDestination) {
-	int32_t i;
-	/*packed*/ class MRect rectCurrentMessage;
+	/*bp-0x10*/  /*packed*/ class MRect rectCurrentMessage; // 0x10 bytes
+	/*bp-0x14*/  int32_t i;
 
 // LINE 324:
 	__asm        jmp    near ptr 0x0046D813;
@@ -3130,7 +3130,7 @@ _T4c4:
 
 // FUNCTION: COPTER_D 0x0046dccd
 void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 // LINE 359:
 	__asm        mov    eax, this;

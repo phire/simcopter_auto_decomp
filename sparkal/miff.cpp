@@ -747,8 +747,8 @@ _T83:
 
 // FUNCTION: COPTER_D 0x004abcba
 long MIFF::ReadFileCreator() {
-	long lResult;
-	long bWeOpenedFile;
+	/*bp-0x4*/   long bWeOpenedFile;
+	/*bp-0x8*/   long lResult;
 
 // LINE 237:
 	bWeOpenedFile = 0x0;
@@ -813,8 +813,8 @@ _Taf:
 
 // FUNCTION: COPTER_D 0x004abd6e
 long MIFF::ReadFileType() {
-	long lResult;
-	long bWeOpenedFile;
+	/*bp-0x4*/   long bWeOpenedFile;
+	/*bp-0x8*/   long lResult;
 
 // LINE 259:
 	bWeOpenedFile = 0x0;
@@ -879,8 +879,8 @@ _Taf:
 
 // FUNCTION: COPTER_D 0x004abe22
 long MIFF::ReadFileVersion() {
-	long lResult;
-	long bWeOpenedFile;
+	/*bp-0x4*/   long bWeOpenedFile;
+	/*bp-0x8*/   long lResult;
 
 // LINE 280:
 	bWeOpenedFile = 0x0;
@@ -945,7 +945,7 @@ _Taf:
 
 // FUNCTION: COPTER_D 0x004abed6
 long MIFF::ReadRecordHeader() {
-	long lBytesRead;
+	/*bp-0x4*/   long lBytesRead;
 
 // LINE 314:
 	__asm        push   4;
@@ -1025,8 +1025,8 @@ _Tf1:
 
 // FUNCTION: COPTER_D 0x004abfcc
 long MIFF::CountRecords() {
-	long lCount;
-	long bWeOpenedFile;
+	/*bp-0x4*/   long bWeOpenedFile;
+	/*bp-0x8*/   long lCount;
 
 // LINE 352:
 	bWeOpenedFile = 0x0;
@@ -1167,8 +1167,8 @@ _T96:
 
 // FUNCTION: COPTER_D 0x004ac14f
 long MIFF::GoToNextRecord() {
-	long lResult;
-	long lSavedPreviousStart;
+	/*bp-0x4*/   long lSavedPreviousStart;
+	/*bp-0x8*/   long lResult;
 
 // LINE 420:
 	lSavedPreviousStart = this->lPresentRecordStart;
@@ -1305,7 +1305,7 @@ _T19d:
 
 // FUNCTION: COPTER_D 0x004ac2f1
 long MIFF::GoToPreviousRecord() {
-	long lTempPresentRecord;
+	/*bp-0x4*/   long lTempPresentRecord;
 
 // LINE 473:
 	lTempPresentRecord = this->lPresentRecordIndex;
@@ -1407,7 +1407,7 @@ _T49:
 
 // FUNCTION: COPTER_D 0x004ac3fb
 long MIFF::GoToNthRecord(long lRecordToGoTo) {
-	long lTempPresentRecord;
+	/*bp-0x4*/   long lTempPresentRecord;
 
 // LINE 540:
 	__asm        mov    eax, this;
@@ -1438,8 +1438,8 @@ _T42:
 
 // FUNCTION: COPTER_D 0x004ac44e
 long MIFF::ReadPresentRecord(/*packed*/ struct MIFFRecord *miffRecordToRead, long lMaxBytesToRead) {
-	long lReturnValue;
-	long lActualDataBytesToRead;
+	/*bp-0x4*/   long lActualDataBytesToRead;
+	/*bp-0x8*/   long lReturnValue;
 
 // LINE 563:
 	__asm        mov    eax, this;
@@ -1522,8 +1522,8 @@ _Tef:
 
 // FUNCTION: COPTER_D 0x004ac544
 long MIFF::ReadPresentRecordData(char * chBuffer, long lMaxBytesToRead) {
-	long lReturnValue;
-	long lActualBytesToRead;
+	/*bp-0x4*/   long lActualBytesToRead;
+	/*bp-0x8*/   long lReturnValue;
 
 // LINE 601:
 	__asm        mov    eax, this;
@@ -1612,7 +1612,7 @@ _Tf0:
 
 // FUNCTION: COPTER_D 0x004ac63b
 long MIFF::WriteFileHeader(long lCreatorType, long lFileType, long lFileVersion) {
-	long lReturnValue;
+	/*bp-0x4*/   long lReturnValue;
 
 // LINE 645:
 	__asm        mov    eax, this;
@@ -1694,8 +1694,8 @@ _T116:
 
 // FUNCTION: COPTER_D 0x004ac758
 long MIFF::WriteMIFFRecord(/*packed*/ struct MIFFRecord *miffRecordToWrite, long lSizeOfMIFFRecordData) {
-	long lReturnValue;
-	long lAmountOfDataToWrite;
+	/*bp-0x4*/   long lAmountOfDataToWrite;
+	/*bp-0x8*/   long lReturnValue;
 
 // LINE 678:
 	__asm        mov    eax, this;
@@ -1760,8 +1760,8 @@ _Tb2:
 
 // FUNCTION: COPTER_D 0x004ac811
 long MIFF::WriteDataRecord(long lRecordType, char * ptrData, long lDataLength) {
-	long lReturnValue;
-	long lRecordLength;
+	/*bp-0x4*/   long lRecordLength;
+	/*bp-0x8*/   long lReturnValue;
 
 // LINE 704:
 	__asm        mov    eax, lDataLength;
@@ -1844,8 +1844,8 @@ _Te3:
 
 // FUNCTION: COPTER_D 0x004ac8fb
 long MIFF::WriteEnd() {
-	long lPresentPosition;
-	long lFileLength;
+	/*bp-0x4*/   long lFileLength;
+	/*bp-0x8*/   long lPresentPosition;
 
 // LINE 739:
 	__asm        mov    eax, this;

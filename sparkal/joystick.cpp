@@ -160,7 +160,7 @@ static void $E1() {
 
 // FUNCTION: COPTER_D 0x0049a4af
 void JoystickManager::JoystickManager() {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 // LINE 29:
 	this->lNormalizedMinimum = 0xffffff9c;
@@ -195,10 +195,10 @@ _T6b:
 
 // FUNCTION: COPTER_D 0x0049a527
 int32_t JoystickManager::Initialize() {
-	int32_t nMaxJoysticks;
-	/*packed*/ struct joyinfo_tag joyInfo;
-	int32_t i;
-	uint32_t mmResult;
+	/*bp-0x4*/   uint32_t mmResult;
+	/*bp-0x8*/   int32_t i;
+	/*bp-0x18*/  /*packed*/ struct joyinfo_tag joyInfo; // 0x10 bytes
+	/*bp-0x1c*/  int32_t nMaxJoysticks;
 
 // LINE 51:
 	this->nJoystickCount = 0x0;
@@ -287,7 +287,7 @@ _Tf3:
 
 // FUNCTION: COPTER_D 0x0049a629
 int32_t JoystickManager::IsJoystickPresent(char * szJoystickName) {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 // LINE 93:
 	__asm        mov    i, 0;
@@ -369,7 +369,7 @@ _T64:
 
 // FUNCTION: COPTER_D 0x0049a701
 int32_t JoystickManager::GetJoystickIndex(char * szJoystickName, int32_t * nJoystick) {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 // LINE 127:
 	__asm        mov    i, 0;
@@ -437,8 +437,8 @@ int32_t JoystickManager::Normalize(int32_t nPosition) {
 
 // FUNCTION: COPTER_D 0x0049a7bb
 int32_t JoystickManager::GetPositionQualitative(int32_t nJoystick, int32_t nAxis, int32_t bUseCache) {
-	int32_t nOneQuarterOfTheRange;
-	int32_t nValue;
+	/*bp-0x4*/   int32_t nValue;
+	/*bp-0x8*/   int32_t nOneQuarterOfTheRange;
 
 // LINE 191:
 	__asm        mov    eax, bUseCache;
@@ -486,12 +486,12 @@ _T74:
 
 // FUNCTION: COPTER_D 0x0049a836
 int32_t JoystickManager::GetPositionQuantitative(int32_t nJoystick, int32_t nAxis, int32_t bUseCache) {
-	int32_t nReturnValue;
-	/*packed*/ struct joyinfoex_tag joyInfoEx;
-	unsigned long dwFlagToUse;
-	/*packed*/ struct joyinfoex_tag *joyInfoExToUse;
-	uint32_t mmResult;
-	unsigned long * dwResultToUse;
+	/*bp-0x4*/   unsigned long * dwResultToUse;
+	/*bp-0x8*/   uint32_t mmResult;
+	/*bp-0xc*/   /*packed*/ struct joyinfoex_tag *joyInfoExToUse;
+	/*bp-0x10*/  unsigned long dwFlagToUse;
+	/*bp-0x44*/  /*packed*/ struct joyinfoex_tag joyInfoEx; // 0x34 bytes
+	/*bp-0x48*/  int32_t nReturnValue;
 
 // LINE 227:
 	__asm        cmp    nJoystick, 0x10;
@@ -644,9 +644,9 @@ _T1a0:
 
 // FUNCTION: COPTER_D 0x0049a9dd
 int32_t JoystickManager::GetButtonState(int32_t nJoystick, int32_t nButton, int32_t bUseCache) {
-	/*packed*/ struct joyinfoex_tag joyInfoEx;
-	/*packed*/ struct joyinfoex_tag *joyInfoExToUse;
-	uint32_t mmResult;
+	/*bp-0x4*/   uint32_t mmResult;
+	/*bp-0x8*/   /*packed*/ struct joyinfoex_tag *joyInfoExToUse;
+	/*bp-0x3c*/  /*packed*/ struct joyinfoex_tag joyInfoEx; // 0x34 bytes
 
 // LINE 304:
 	__asm        cmp    nJoystick, 0x10;
@@ -715,7 +715,7 @@ _Tb5:
 
 // FUNCTION: COPTER_D 0x0049aa99
 int32_t JoystickManager::GetCompleteState(int32_t nJoystick) {
-	uint32_t mmResult;
+	/*bp-0x4*/   uint32_t mmResult;
 
 // LINE 341:
 	__asm        cmp    nJoystick, 0x10;
@@ -771,9 +771,9 @@ _T9a:
 
 // FUNCTION: COPTER_D 0x0049ab3a
 int32_t JoystickManager::GetPointOfView(int32_t nJoystick, int32_t bUseCache) {
-	/*packed*/ struct joyinfoex_tag joyInfoEx;
-	/*packed*/ struct joyinfoex_tag *joyInfoExToUse;
-	uint32_t mmResult;
+	/*bp-0x4*/   uint32_t mmResult;
+	/*bp-0x8*/   /*packed*/ struct joyinfoex_tag *joyInfoExToUse;
+	/*bp-0x3c*/  /*packed*/ struct joyinfoex_tag joyInfoEx; // 0x34 bytes
 
 // LINE 382:
 	__asm        cmp    nJoystick, 0x10;
@@ -836,7 +836,7 @@ _Ta1:
 
 // FUNCTION: COPTER_D 0x0049abe2
 int32_t JoystickManager::Calibrate(int32_t nJoystick) {
-	uint32_t nReturnValue;
+	/*bp-0x4*/   uint32_t nReturnValue;
 
 // LINE 419:
 	__asm        push   1;
@@ -859,7 +859,7 @@ _T37:
 
 // FUNCTION: COPTER_D 0x0049ac20
 int32_t JoystickManager::GetWindowsThreshold(int32_t nJoystick, long * lThreshold) {
-	uint32_t mmResult;
+	/*bp-0x4*/   uint32_t mmResult;
 
 // LINE 453:
 	__asm        cmp    nJoystick, 0x10;
@@ -895,7 +895,7 @@ _T55:
 
 // FUNCTION: COPTER_D 0x0049ac7c
 int32_t JoystickManager::SetWindowsThreshold(int32_t nJoystick, long lThreshold) {
-	uint32_t mmResult;
+	/*bp-0x4*/   uint32_t mmResult;
 
 // LINE 477:
 	__asm        cmp    nJoystick, 0x10;

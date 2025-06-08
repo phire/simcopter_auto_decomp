@@ -315,7 +315,7 @@ void Behavior::~Behavior() {
 
 // FUNCTION: COPTER_D 0x00560385
 void Behavior::StdTreeSwizzle(/*unpacked*/ struct Behavior::Tree *tree, long size, void (*paramswizzler)(short, /*unpacked*/ struct Behavior::NodeParameter*)) {
-	short count;
+	/*bp-0x4*/   short count;
 
 // LINE 49:
 	__asm        mov    eax, tree;
@@ -365,7 +365,7 @@ _T7b:
 
 // FUNCTION: COPTER_D 0x0056040a
 const /*unpacked*/ struct Behavior::Node* Behavior::GetNodeRef(short treeID, short nodeNum) {
-	/*unpacked*/ struct Behavior::Tree *tree;
+	/*bp-0x4*/   /*unpacked*/ struct Behavior::Tree *tree;
 
 // LINE 74:
 	__asm        movsx  eax, treeID;
@@ -512,7 +512,7 @@ void Behavior::GetNodeText(/*unpacked*/ struct Behavior::Node *node, unsigned ch
 
 // FUNCTION: COPTER_D 0x005605c4
 void Behavior::GetNodeText(short treeID, short nodeNum, unsigned char * TheStr) {
-	/*unpacked*/ struct Behavior::Node node;
+	/*bp-0xc*/   /*unpacked*/ struct Behavior::Node node; // 0xc bytes
 
 // LINE 134:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(nodeNum);
@@ -557,8 +557,8 @@ short Behavior::CountPrimitives() {
 
 // FUNCTION: COPTER_D 0x0056063d
 void Behavior::GetTreeName(short treeID, unsigned char * name) {
-	/*unpacked*/ class ResFile *pFile;
-	void * __ptr32 tree;
+	/*bp-0x4*/   void * __ptr32 tree;
+	/*bp-0x8*/   /*unpacked*/ class ResFile *pFile;
 
 // LINE 149:
 	__asm        movsx  eax, treeID;
@@ -612,7 +612,7 @@ _T71:
 	__asm        add    esp, 0x10;
 // LINE 168:
 // Block start:
-	unsigned char resName[256];
+	/*bp-0x108*/ unsigned char resName[256]; // 0x100 bytes
 _Tb5:
 	__asm        lea    eax, resName[0];
 	__asm        push   eax;
@@ -666,7 +666,7 @@ _T47:
 
 // FUNCTION: COPTER_D 0x0056077d
 short Behavior::GetBaseID(short treeclass) {
-	short baseID;
+	/*bp-0x4*/   short baseID;
 
 // LINE 190:
 	baseID = 0x0;
@@ -708,7 +708,7 @@ _T70:
 
 // FUNCTION: COPTER_D 0x005607fb
 short Behavior::GetMaxID(short treeclass) {
-	short maxID;
+	/*bp-0x4*/   short maxID;
 
 // LINE 209:
 	maxID = 0x0;
@@ -807,7 +807,7 @@ _Ta6:
 
 // FUNCTION: COPTER_D 0x00560924
 void Behavior::GetClassNameA(short cl, unsigned char * name) {
-	char * str;
+	/*bp-0x4*/   char * str;
 
 // LINE 241:
 	__asm        movsx  eax, cl;

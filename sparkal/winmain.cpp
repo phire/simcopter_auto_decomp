@@ -29,8 +29,8 @@ struct tagMSG{ // packed(0x1c bytes) TI: 0x2bd6
 // Contribution: 1:0001e870-0001eac1 Module: 73, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0041f870
 int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * CommandLine, int32_t __formal) {
-	/*packed*/ struct tagMSG Message;
-	/*packed*/ union _LARGE_INTEGER TimerFrequency;
+	/*bp-0x8*/   /*packed*/ union _LARGE_INTEGER TimerFrequency; // 0x8 bytes
+	/*bp-0x24*/  /*packed*/ struct tagMSG Message; // 0x1c bytes
 
 // LINE 33:
 	_ghWindowsInstance = hInstance;

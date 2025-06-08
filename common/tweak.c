@@ -17,7 +17,7 @@
 // Contribution: 1:000c8ad0-000c90b4 Module: 93, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004c9ad0
 int32_t TWKEnQueue(int32_t * *pValues, int32_t nNumValues, char * pszSection) {
-	int32_t nCt;
+	/*bp-0x4*/   int32_t nCt;
 
 // LINE 43:
 	__asm        cmp    g_nNextTWKQueueSlot, 0xC8;
@@ -87,10 +87,10 @@ _Tc6:
 
 // FUNCTION: COPTER_D 0x004c9b9b
 int32_t TWKReadFile(char * pszTWKFile, int32_t bIsOnMessageRead) {
-	char szSection[50];
-	int32_t nCt;
-	char szTemp[300];
-	char szFullPath[260];
+	/*bp-0x104*/ char szFullPath[260]; // 0x104 bytes
+	/*bp-0x230*/ char szTemp[300]; // 0x12c bytes
+	/*bp-0x234*/ int32_t nCt;
+	/*bp-0x268*/ char szSection[50]; // 0x32 bytes
 
 // LINE 77:
 	g_nNextTWKErrorSlot = 0x0;
@@ -232,11 +232,11 @@ void TWKUpdate() {
 
 // FUNCTION: COPTER_D 0x004c9d68
 void TWKReadAllFiles(char * pszTWKFile) {
-	char * pszSection;
-	int32_t nCt;
-	char szTemp[300];
-	char szFullPath[260];
-	char * pszFile;
+	/*bp-0x4*/   char * pszFile;
+	/*bp-0x108*/ char szFullPath[260]; // 0x104 bytes
+	/*bp-0x234*/ char szTemp[300]; // 0x12c bytes
+	/*bp-0x238*/ int32_t nCt;
+	/*bp-0x23c*/ char * pszSection;
 
 // LINE 170:
 	__asm        lea    eax, szFullPath[0];
@@ -310,12 +310,12 @@ _Te2:
 
 // FUNCTION: COPTER_D 0x004c9e4f
 void TWKReadSection(char * pszFile, char * pszSection, int32_t nTweakQueueSlotIdx) {
-	char szKey[50];
-	char szDataType[20];
-	int32_t nNumCtrl;
-	int32_t nCt2;
-	char szFullPath[260];
-	char szValue[15];
+	/*bp-0x10*/  char szValue[15]; // 0xf bytes
+	/*bp-0x114*/ char szFullPath[260]; // 0x104 bytes
+	/*bp-0x118*/ int32_t nCt2;
+	/*bp-0x11c*/ int32_t nNumCtrl;
+	/*bp-0x130*/ char szDataType[20]; // 0x14 bytes
+	/*bp-0x164*/ char szKey[50]; // 0x32 bytes
 
 // LINE 211:
 	__asm        push   0x59B484;
@@ -489,7 +489,7 @@ int32_t TWKDOSRead(char * pszTWKFile) {
 
 // FUNCTION: COPTER_D 0x004ca06e
 void TWKGetToEOLN(char * pDest, char * pSource) {
-	int32_t nCt;
+	/*bp-0x4*/   int32_t nCt;
 
 // LINE 362:
 	nCt = 0x0;

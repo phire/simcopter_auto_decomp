@@ -292,21 +292,6 @@ protected:
 	/*packed*/ struct SparkalColor colorFontHighlighted;
 };
 
-// Type: /*packed*/ class CheckBoxWindow;
-// VTABLE: COPTER_D 0x00591c58
-class CheckBoxWindow : public ButtonWindow
-{ // packed(0x94 bytes) TI: 0x213e
-public:
-	void CheckBoxWindow(/*packed*/ class MRect&, int32_t, /*unpacked*/ class GraphicWindow*, char *, /*packed*/ class GraphicWindowOwner*, int32_t);
-	void CheckBoxWindow();
-	virtual int32_t ComposeSelf() /* override */;
-	virtual int32_t GetImageCount() /* override */;
-	virtual void SetState(int32_t) /* override */;
-	virtual long DoCursorDown(long, long, unsigned long) /* override */;
-	virtual long DoCursorUp(long, long, unsigned long) /* override */;
-	virtual long DoCursorMove(long, long) /* override */;
-};
-
 // Type: /*packed*/ class Sound;
 // VTABLE: COPTER_D 0x0058f458
 class Sound{ // packed(0x34 bytes) TI: 0x4335
@@ -359,6 +344,21 @@ struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	long bottom;
 	void SparkalRect(long, long, long, long);
 	void SparkalRect();
+};
+
+// Type: /*packed*/ class CheckBoxWindow;
+// VTABLE: COPTER_D 0x00591c58
+class CheckBoxWindow : public ButtonWindow
+{ // packed(0x94 bytes) TI: 0x213e
+public:
+	void CheckBoxWindow(/*packed*/ class MRect&, int32_t, /*unpacked*/ class GraphicWindow*, char *, /*packed*/ class GraphicWindowOwner*, int32_t);
+	void CheckBoxWindow();
+	virtual int32_t ComposeSelf() /* override */;
+	virtual int32_t GetImageCount() /* override */;
+	virtual void SetState(int32_t) /* override */;
+	virtual long DoCursorDown(long, long, unsigned long) /* override */;
+	virtual long DoCursorUp(long, long, unsigned long) /* override */;
+	virtual long DoCursorMove(long, long) /* override */;
 };
 
 // Type: /*packed*/ class ScrollBarWindow;

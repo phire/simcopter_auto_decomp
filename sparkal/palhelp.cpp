@@ -208,10 +208,10 @@ _T4a:
 
 // FUNCTION: COPTER_D 0x00496483
 void SparkalPalette::GetNearestIndex(/*packed*/ struct SparkalColor& colorValue, int32_t& nIndex) {
-	int32_t nCurrentBestMatch;
-	int32_t i;
-	unsigned long lCurrentDistance;
-	unsigned long lClosestDistance;
+	/*bp-0x4*/   unsigned long lClosestDistance;
+	/*bp-0x8*/   unsigned long lCurrentDistance;
+	/*bp-0xc*/   int32_t i;
+	/*bp-0x10*/  int32_t nCurrentBestMatch;
 
 // LINE 67:
 	lClosestDistance = 0xffffffff;
@@ -319,14 +319,14 @@ _T119:
 
 // FUNCTION: COPTER_D 0x004965b0
 void SparkalPalette::FadeToWhite(long lFadeTime) {
-	const unsigned long lDelayTime;
-	/*packed*/ class MTimer timerFade;
-	/*packed*/ struct tagPALETTEENTRY palEntries[256];
-	int32_t j;
-	int32_t i;
-	int32_t nOriginalPriority;
-	int32_t nMultiplier;
-	int32_t nDivisor;
+	/*bp-0x4*/   int32_t nDivisor;
+	/*bp-0x8*/   int32_t nMultiplier;
+	/*bp-0xc*/   int32_t nOriginalPriority;
+	/*bp-0x10*/  int32_t i;
+	/*bp-0x14*/  int32_t j;
+	/*bp-0x414*/ /*packed*/ struct tagPALETTEENTRY palEntries[256]; // 0x400 bytes
+	/*bp-0x424*/ /*packed*/ class MTimer timerFade; // 0x10 bytes
+	/*bp-0x428*/ const unsigned long lDelayTime;
 
 // LINE 95:
 	__asm        mov    eax, lFadeTime;
@@ -642,14 +642,14 @@ _T45d:
 
 // FUNCTION: COPTER_D 0x00496a14
 void SparkalPalette::FadeToBlack(long lFadeTime) {
-	const unsigned long lDelayTime;
-	/*packed*/ class MTimer timerFade;
-	/*packed*/ struct tagPALETTEENTRY palEntries[256];
-	int32_t j;
-	int32_t i;
-	int32_t nOriginalPriority;
-	int32_t nMultiplier;
-	int32_t nDivisor;
+	/*bp-0x4*/   int32_t nDivisor;
+	/*bp-0x8*/   int32_t nMultiplier;
+	/*bp-0xc*/   int32_t nOriginalPriority;
+	/*bp-0x10*/  int32_t i;
+	/*bp-0x14*/  int32_t j;
+	/*bp-0x414*/ /*packed*/ struct tagPALETTEENTRY palEntries[256]; // 0x400 bytes
+	/*bp-0x424*/ /*packed*/ class MTimer timerFade; // 0x10 bytes
+	/*bp-0x428*/ const unsigned long lDelayTime;
 
 // LINE 182:
 	__asm        mov    eax, lFadeTime;
@@ -956,15 +956,15 @@ _T439:
 
 // FUNCTION: COPTER_D 0x00496e54
 void SparkalPalette::FadeToRGB(/*packed*/ struct SparkalColor& colorToFadeTo, long lFadeTime) {
-	const unsigned long lDelayTime;
-	/*packed*/ class MTimer timerFade;
-	/*packed*/ struct tagPALETTEENTRY palEntries[256];
-	int32_t nDifference;
-	int32_t j;
-	int32_t i;
-	int32_t nOriginalPriority;
-	int32_t nMultiplier;
-	int32_t nDivisor;
+	/*bp-0x4*/   int32_t nDivisor;
+	/*bp-0x8*/   int32_t nMultiplier;
+	/*bp-0xc*/   int32_t nOriginalPriority;
+	/*bp-0x10*/  int32_t i;
+	/*bp-0x14*/  int32_t j;
+	/*bp-0x18*/  int32_t nDifference;
+	/*bp-0x418*/ /*packed*/ struct tagPALETTEENTRY palEntries[256]; // 0x400 bytes
+	/*bp-0x428*/ /*packed*/ class MTimer timerFade; // 0x10 bytes
+	/*bp-0x42c*/ const unsigned long lDelayTime;
 
 // LINE 272:
 	__asm        mov    eax, lFadeTime;
@@ -1319,17 +1319,17 @@ void SparkalPalette::FadeToPalette(/*packed*/ struct SparkalColor colorStart, lo
 
 // FUNCTION: COPTER_D 0x0049731a
 void SparkalPalette::FadeToPalette(/*packed*/ struct SparkalColor colorStart, /*packed*/ struct SparkalColor *paletteDestination, long lFadeTime, long lSteps) {
-	const unsigned long lDelayTime;
-	/*packed*/ class MTimer timerFade;
-	int32_t nDifference;
-	/*packed*/ struct SparkalPalette::FadeToPalette::TempPalette *paletteArray;
-	int32_t j;
-	int32_t i;
+	/*bp-0x4*/   int32_t nDivisor;
+	/*bp-0x8*/   int32_t nMultiplier;
+	/*bp-0xc*/   int32_t nOriginalPriority;
+	/*bp-0x10*/  const int32_t nLastStepIndex;
 	typedef /*packed*/ struct SparkalPalette::FadeToPalette::TempPalette SparkalPalette::FadeToPalette::TempPalette;
-	const int32_t nLastStepIndex;
-	int32_t nOriginalPriority;
-	int32_t nMultiplier;
-	int32_t nDivisor;
+	/*bp-0x14*/  int32_t i;
+	/*bp-0x18*/  int32_t j;
+	/*bp-0x1c*/  /*packed*/ struct SparkalPalette::FadeToPalette::TempPalette *paletteArray;
+	/*bp-0x20*/  int32_t nDifference;
+	/*bp-0x30*/  /*packed*/ class MTimer timerFade; // 0x10 bytes
+	/*bp-0x34*/  const unsigned long lDelayTime;
 
 // LINE 379:
 	__asm        mov    eax, lFadeTime;
@@ -1798,8 +1798,8 @@ _T525:
 
 // FUNCTION: COPTER_D 0x00497844
 void SparkalPalette::SetSystemPaletteEntriesToRGB(/*packed*/ struct SparkalColor& colorToSet) {
-	/*packed*/ struct tagPALETTEENTRY palEntries[256];
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
+	/*bp-0x404*/ /*packed*/ struct tagPALETTEENTRY palEntries[256]; // 0x400 bytes
 
 // LINE 467:
 	__asm        mov    i, 0xA;
@@ -1855,9 +1855,9 @@ _T67:
 
 // FUNCTION: COPTER_D 0x004978e9
 void SparkalPalette::ImplementNewPalette(/*packed*/ struct SparkalColor *pNewColors) {
-	long hResult;
-	/*packed*/ struct tagPALETTEENTRY palEntries[256];
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
+	/*bp-0x404*/ /*packed*/ struct tagPALETTEENTRY palEntries[256]; // 0x400 bytes
+	/*bp-0x408*/ long hResult;
 
 // LINE 503:
 	__asm        mov    i, 0xA;
@@ -1955,11 +1955,11 @@ void CopterSparkalPalette::CopterSparkalPalette(/*packed*/ struct SparkalColor *
 
 // FUNCTION: COPTER_D 0x00497a32
 void ClearWindowsSystemPalette() {
-	void * __ptr32 ScreenDC;
-	void * __ptr32 OldPalette;
-	void * __ptr32 BlackPalette;
-	/*packed*/ struct ClearWindowsSystemPalette::__unnamed Palette;
-	int32_t Counter;
+	/*bp-0x4*/   int32_t Counter;
+	/*bp-0x408*/ /*packed*/ struct ClearWindowsSystemPalette::__unnamed Palette; // 0x404 bytes
+	/*bp-0x40c*/ void * __ptr32 BlackPalette;
+	/*bp-0x410*/ void * __ptr32 OldPalette;
+	/*bp-0x414*/ void * __ptr32 ScreenDC;
 
 // LINE 570:
 	__asm        mov    Palette.Version, 0x300;

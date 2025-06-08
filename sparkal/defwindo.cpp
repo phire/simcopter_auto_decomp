@@ -60,7 +60,7 @@ protected:
 // Contribution: 1:00031260-000314d4 Module: 61, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00432260
 /*unpacked*/ class ICommander* CSparkalWindow::SetCommander(/*unpacked*/ class ICommander *pCommander) {
-	/*unpacked*/ class ICommander *ReturnCommander;
+	/*bp-0x4*/   /*unpacked*/ class ICommander *ReturnCommander;
 
 // LINE 19:
 	ReturnCommander = this->mpCommander;
@@ -105,7 +105,7 @@ _T68:
 
 // FUNCTION: COPTER_D 0x004322d7
 /*unpacked*/ class ScreenBuffer* CSparkalWindow::SetBackBuffer(/*unpacked*/ class ScreenBuffer *pBuffer) {
-	/*unpacked*/ class ScreenBuffer *ReturnBuffer;
+	/*bp-0x4*/   /*unpacked*/ class ScreenBuffer *ReturnBuffer;
 
 // LINE 42:
 	ReturnBuffer = this->mpBackBuffer;
@@ -170,7 +170,7 @@ _T5b:
 
 // FUNCTION: COPTER_D 0x0043238c
 unsigned long CSparkalWindow::SwapBuffer(long Left, long Top, long Right, long Bottom) {
-	unsigned long Error;
+	/*bp-0x4*/   unsigned long Error;
 
 // LINE 81:
 	Error = 0x0;
@@ -189,9 +189,9 @@ unsigned long CSparkalWindow::SwapBuffer(long Left, long Top, long Right, long B
 	__asm        je     _T13a;
 // LINE 92:
 // Block start:
-	long Step;
-	long ChunkHeight;
-	long DestTop;
+	/*bp-0x8*/   long DestTop;
+	/*bp-0xc*/   long ChunkHeight;
+	/*bp-0x10*/  long Step;
 	__asm        mov    eax, Bottom;
 	__asm        sub    eax, Top;
 	__asm        mov    ecx, 0xA;

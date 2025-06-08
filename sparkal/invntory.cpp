@@ -1139,9 +1139,9 @@ _T405:
 
 // FUNCTION: COPTER_D 0x004a8e67
 int32_t InventoryWindow::Initialize() {
-	int32_t nReturnValue;
-	int32_t i;
-	int32_t nFullStringID;
+	/*bp-0x4*/   int32_t nFullStringID;
+	/*bp-0x8*/   int32_t i;
+	/*bp-0xc*/   int32_t nReturnValue;
 
 // LINE 81:
 	__asm        mov    ecx, this;
@@ -2334,9 +2334,9 @@ _Tc3:
 
 // FUNCTION: COPTER_D 0x004a9e08
 void InventoryWindow::DrawTitleText() {
-	/*packed*/ class MRect rectText[3];
-	int32_t i;
-	/*packed*/ class MPoint ptText;
+	/*bp-0x8*/   /*packed*/ class MPoint ptText; // 0x8 bytes
+	/*bp-0xc*/   int32_t i;
+	/*bp-0x3c*/  /*packed*/ class MRect rectText[3]; // 0x30 bytes
 
 
 	__asm        mov    dword ptr [ebp-0x60], 3;
@@ -2629,12 +2629,12 @@ _T3bf:
 
 // FUNCTION: COPTER_D 0x004aa1d1
 void InventoryWindow::DrawInventory() {
-	long lCurrentHeliType;
-	const long lCheckmarkWidth;
-	const long lCheckmarkHeight;
-	/*packed*/ struct tagUserPersonalInfo *currentUserPersonalInfo;
-	/*packed*/ class MRect rectDestination;
-	long lCurrentRow;
+	/*bp-0x4*/   long lCurrentRow;
+	/*bp-0x14*/  /*packed*/ class MRect rectDestination; // 0x10 bytes
+	/*bp-0x18*/  /*packed*/ struct tagUserPersonalInfo *currentUserPersonalInfo;
+	/*bp-0x1c*/  const long lCheckmarkHeight;
+	/*bp-0x20*/  const long lCheckmarkWidth;
+	/*bp-0x24*/  long lCurrentHeliType;
 
 // LINE 208:
 	__asm        mov    eax, this;
@@ -2965,7 +2965,7 @@ long InventoryWindow::DoCursorMove(long nCursorX, long nCursorY) {
 
 // FUNCTION: COPTER_D 0x004aa55f
 int32_t InventoryWindow::GetRectFromID(long lID, /*packed*/ class MRect& rectHotSpot) {
-	/*packed*/ class list<HotSpot>::iterator i;
+	/*bp-0x4*/   /*packed*/ class list<HotSpot>::iterator i;
 
 // LINE 303:
 	__asm        mov    eax, this;
@@ -3058,7 +3058,7 @@ void InventoryWindow::LoadHotSpots() {
 
 // FUNCTION: COPTER_D 0x004aa656
 long InventoryWindow::GetColumnStartPixel(long lColumn) {
-	static const long lColumnStart[6] = {171, 297, 322, 348, 376, 404};
+// StaticLocal: 0x00591810	static const long lColumnStart[6] = {171, 297, 322, 348, 376, 404};
 
 // LINE 334:
 	__asm        cmp    lColumn, 6;
@@ -3081,7 +3081,7 @@ _T36:
 
 // FUNCTION: COPTER_D 0x004aa693
 long InventoryWindow::GetRowStartPixel(long lRow) {
-	static const long lRowStart[11] = {240, 258, 276, 294, 313, 332, 351, 369, 388, 407, 426};
+// StaticLocal: 0x00591828	static const long lRowStart[11] = {240, 258, 276, 294, 313, 332, 351, 369, 388, 407, 426};
 
 // LINE 348:
 	__asm        cmp    lRow, 0xB;
@@ -3104,8 +3104,8 @@ _T36:
 
 // FUNCTION: COPTER_D 0x004aa6d0
 void InventoryWindow::GetEquipmentTextPosition(long lEquipmentIndex, /*packed*/ class MPoint& ptEquipment) {
-	static const long lXPositions[5] = {333, 357, 382, 407, 409};
-	static const long lYPositions[5] = {166, 181, 196, 210, 225};
+// StaticLocal: 0x00591870	static const long lYPositions[5] = {166, 181, 196, 210, 225};
+// StaticLocal: 0x00591858	static const long lXPositions[5] = {333, 357, 382, 407, 409};
 
 // LINE 363:
 	__asm        cmp    lEquipmentIndex, 5;

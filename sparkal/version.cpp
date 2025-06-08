@@ -74,11 +74,11 @@ struct FREQ_INFO{ // packed(0x10 bytes) TI: 0x2a8f
 // Contribution: 1:0003cae0-0003d110 Module: 55, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0043dae0
 void Version::Version() {
-	unsigned long dwVersionInfoHandle;
-	void * __ptr32 hModule;
-	unsigned long dwVersionInfoSize;
-	uint32_t nValueSize;
-	char szFileName[260];
+	/*bp-0x104*/ char szFileName[260]; // 0x104 bytes
+	/*bp-0x108*/ uint32_t nValueSize;
+	/*bp-0x10c*/ unsigned long dwVersionInfoSize;
+	/*bp-0x110*/ void * __ptr32 hModule;
+	/*bp-0x114*/ unsigned long dwVersionInfoHandle;
 
 
 	this-><vftable> = 0x58f5b8;
@@ -182,9 +182,9 @@ _T3d:
 
 // FUNCTION: COPTER_D 0x0043dc57
 int32_t Version::GetApplicationName(char *& szName) {
-	char subBlockName[255];
-	int32_t nReturnValue;
-	uint32_t vSize;
+	/*bp-0x4*/   uint32_t vSize;
+	/*bp-0x8*/   int32_t nReturnValue;
+	/*bp-0x108*/ char subBlockName[255]; // 0xff bytes
 
 // LINE 80:
 	__asm        mov    eax, this;
@@ -232,9 +232,9 @@ _T8b:
 
 // FUNCTION: COPTER_D 0x0043dce9
 int32_t Version::GetApplicationVersion(char *& szVersion) {
-	char subBlockName[255];
-	int32_t nReturnValue;
-	uint32_t vSize;
+	/*bp-0x4*/   uint32_t vSize;
+	/*bp-0x8*/   int32_t nReturnValue;
+	/*bp-0x108*/ char subBlockName[255]; // 0xff bytes
 
 // LINE 115:
 	__asm        mov    eax, this;
@@ -282,9 +282,9 @@ _T8b:
 
 // FUNCTION: COPTER_D 0x0043dd7b
 int32_t Version::GetApplicationCopyright(char *& szCopyright) {
-	char subBlockName[255];
-	int32_t nReturnValue;
-	uint32_t vSize;
+	/*bp-0x4*/   uint32_t vSize;
+	/*bp-0x8*/   int32_t nReturnValue;
+	/*bp-0x108*/ char subBlockName[255]; // 0xff bytes
 
 // LINE 139:
 	__asm        mov    eax, this;
@@ -332,9 +332,9 @@ _T8b:
 
 // FUNCTION: COPTER_D 0x0043de0d
 int32_t Version::GetApplicationDebugVersion(char *& szVersion) {
-	char subBlockName[255];
-	int32_t nReturnValue;
-	uint32_t vSize;
+	/*bp-0x4*/   uint32_t vSize;
+	/*bp-0x8*/   int32_t nReturnValue;
+	/*bp-0x108*/ char subBlockName[255]; // 0xff bytes
 
 // LINE 162:
 	__asm        mov    eax, this;
@@ -382,9 +382,9 @@ _T8b:
 
 // FUNCTION: COPTER_D 0x0043de9f
 long Version::GetApplicationVersion(int32_t nVersionComponent) {
-	int32_t nReturnValue;
-	/*packed*/ struct tagVS_FIXEDFILEINFO *vsFixedFileInfo;
-	uint32_t vSize;
+	/*bp-0x4*/   uint32_t vSize;
+	/*bp-0x8*/   /*packed*/ struct tagVS_FIXEDFILEINFO *vsFixedFileInfo;
+	/*bp-0xc*/   int32_t nReturnValue;
 
 // LINE 193:
 	__asm        mov    eax, this;
@@ -466,7 +466,7 @@ _Tdd:
 
 // FUNCTION: COPTER_D 0x0043df83
 int32_t Version::GetSystemVersion(char * szSystemVersion) {
-	unsigned long dwVersion;
+	/*bp-0x4*/   unsigned long dwVersion;
 
 // LINE 232:
 	__asm        call   dword ptr ds:[0x6C3644];
@@ -510,8 +510,8 @@ _T60:
 
 // FUNCTION: COPTER_D 0x0043dff2
 int32_t Version::GetSystemType() {
-	int32_t nSystemType;
-	unsigned long dwVersion;
+	/*bp-0x4*/   unsigned long dwVersion;
+	/*bp-0x8*/   int32_t nSystemType;
 
 // LINE 268:
 	nSystemType = 0x0;
@@ -537,7 +537,7 @@ _T39:
 
 // FUNCTION: COPTER_D 0x0043e038
 long Version::GetSystemVersion(int32_t nVersionComponent) {
-	unsigned long dwVersion;
+	/*bp-0x4*/   unsigned long dwVersion;
 
 // LINE 307:
 	__asm        call   dword ptr ds:[0x6C3644];
@@ -568,7 +568,7 @@ _T49:
 
 // FUNCTION: COPTER_D 0x0043e086
 long Version::GetCPUVersion() {
-	long lReturnValue;
+	/*bp-0x4*/   long lReturnValue;
 
 // LINE 339:
 	__asm        call   wincpuid;
@@ -588,7 +588,7 @@ _T25:
 
 // FUNCTION: COPTER_D 0x0043e0b8
 long Version::GetCPUSpeed() {
-	/*packed*/ struct FREQ_INFO tempFREQ_INFO;
+	/*bp-0x10*/  /*packed*/ struct FREQ_INFO tempFREQ_INFO; // 0x10 bytes
 
 // LINE 360:
 	__asm        push   0;

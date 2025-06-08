@@ -262,7 +262,7 @@ struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 // Contribution: 1:00065f70-00067019 Module: 43, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00466f70
 void GameWindow::GameWindow(unsigned long Width, unsigned long Height, unsigned long Style, const /*packed*/ struct SparkalColor *pColors, char * Caption) {
-	/*packed*/ struct tagWNDCLASSA ClassInfo;
+	/*bp-0x28*/  /*packed*/ struct tagWNDCLASSA ClassInfo; // 0x28 bytes
 
 
 	__asm        mov    ecx, this;
@@ -383,8 +383,8 @@ _T14c:
 
 // FUNCTION: COPTER_D 0x004670df
 unsigned long GameWindow::CreateSparkalWindow() {
-	unsigned long dwWindowStyle;
-	/*packed*/ struct tagRECT rectWindowForAdjust;
+	/*bp-0x10*/  /*packed*/ struct tagRECT rectWindowForAdjust; // 0x10 bytes
+	/*bp-0x14*/  unsigned long dwWindowStyle;
 
 // LINE 83:
 	__asm        mov    eax, this;
@@ -660,13 +660,13 @@ _T4e:
 
 // FUNCTION: COPTER_D 0x004673ea
 unsigned long GameWindow::MakePalette(const /*packed*/ struct SparkalColor *pColors) {
-	/*packed*/ struct GameWindow::MakePalette::__unnamed LogPalette;
-	void * __ptr32 hdc;
-	int32_t StaticCount;
-	uint32_t PaletteUse;
-	int32_t End;
-	int32_t Start;
-	int32_t Counter;
+	/*bp-0x4*/   int32_t Counter;
+	/*bp-0x8*/   int32_t Start;
+	/*bp-0xc*/   int32_t End;
+	/*bp-0x10*/  uint32_t PaletteUse;
+	/*bp-0x14*/  int32_t StaticCount;
+	/*bp-0x18*/  void * __ptr32 hdc;
+	/*bp-0x41c*/ /*packed*/ struct GameWindow::MakePalette::__unnamed LogPalette; // 0x404 bytes
 
 // LINE 199:
 	__asm        cmp    pColors, 0;
@@ -922,7 +922,7 @@ void GameWindow::UpdatePalette(long start, long count, /*packed*/ struct Sparkal
 
 // FUNCTION: COPTER_D 0x004676d0
 void GameWindow::ProcessWindowMove() {
-	/*packed*/ struct tagRECT rectWindowTemp;
+	/*bp-0x10*/  /*packed*/ struct tagRECT rectWindowTemp; // 0x10 bytes
 
 // LINE 305:
 	__asm        lea    eax, rectWindowTemp.left;
@@ -997,8 +997,8 @@ int32_t GameWindow::PrepareForSwitchToWindowedMode() {
 
 // FUNCTION: COPTER_D 0x004677c9
 int32_t GameWindow::CompleteSwitchToWindowedMode() {
-	/*packed*/ struct tagRECT rectWindowTempWindows;
-	unsigned long dwStyle;
+	/*bp-0x4*/   unsigned long dwStyle;
+	/*bp-0x14*/  /*packed*/ struct tagRECT rectWindowTempWindows; // 0x10 bytes
 
 // LINE 353:
 	__asm        push   0xFFFFFFF0;
@@ -1127,8 +1127,8 @@ int32_t GameWindow::PrepareForSwitchToFullScreenMode() {
 
 // FUNCTION: COPTER_D 0x00467933
 int32_t GameWindow::CompleteSwitchToFullScreenMode() {
-	unsigned long dwStyle;
-	/*packed*/ struct tagRECT rectWindowTemp;
+	/*bp-0x10*/  /*packed*/ struct tagRECT rectWindowTemp; // 0x10 bytes
+	/*bp-0x14*/  unsigned long dwStyle;
 
 // LINE 409:
 	this->mStyle = 0x0;
@@ -1228,10 +1228,10 @@ int32_t GameWindow::CompleteSwitchToFullScreenMode() {
 
 // FUNCTION: COPTER_D 0x00467a48
 void GameWindow::CenterWindow() {
-	unsigned long nWindowWidth;
-	unsigned long nScreenWidth;
-	unsigned long nWindowHeight;
-	unsigned long nScreenHeight;
+	/*bp-0x4*/   unsigned long nScreenHeight;
+	/*bp-0x8*/   unsigned long nWindowHeight;
+	/*bp-0xc*/   unsigned long nScreenWidth;
+	/*bp-0x10*/  unsigned long nWindowWidth;
 
 // LINE 443:
 	__asm        push   0;
@@ -1297,10 +1297,10 @@ void GameWindow::CenterWindow() {
 
 // FUNCTION: COPTER_D 0x00467af9
 void GameWindow::PlaceWindowRect(/*packed*/ class MRect *rectWindowToPlace) {
-	unsigned long nWindowWidth;
-	unsigned long nScreenWidth;
-	unsigned long nWindowHeight;
-	unsigned long nScreenHeight;
+	/*bp-0x4*/   unsigned long nScreenHeight;
+	/*bp-0x8*/   unsigned long nWindowHeight;
+	/*bp-0xc*/   unsigned long nScreenWidth;
+	/*bp-0x10*/  unsigned long nWindowWidth;
 
 // LINE 471:
 	__asm        push   0;
@@ -1362,7 +1362,7 @@ void GameWindow::PlaceWindowRect(/*packed*/ class MRect *rectWindowToPlace) {
 
 // FUNCTION: COPTER_D 0x00467b9c
 long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, uint32_t wParam, long lParam) {
-	/*packed*/ struct tagMINMAXINFO *lpMinMaxInfo;
+	/*bp-0x4*/   /*packed*/ struct tagMINMAXINFO *lpMinMaxInfo;
 
 // LINE 496:
 	__asm        mov    eax, Message;

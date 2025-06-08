@@ -1058,8 +1058,8 @@ _T2f9:
 
 // FUNCTION: COPTER_D 0x0049b678
 void UserMenuWindow::~UserMenuWindow() {
-	int32_t i;
-	int32_t iEnd;
+	/*bp-0x4*/   int32_t iEnd;
+	/*bp-0x8*/   int32_t i;
 
 
 	this-><UserMenuWindow+0x00> = 0x5912f8;
@@ -1219,10 +1219,10 @@ _T1ce:
 
 // FUNCTION: COPTER_D 0x0049b858
 int32_t UserMenuWindow::Initialize() {
-	/*packed*/ class MRect rectTextWindow;
-	/*packed*/ class TextWindow *tempTextWindow;
-	int32_t i;
-	char szFullSoundPath[260];
+	/*bp-0x104*/ char szFullSoundPath[260]; // 0x104 bytes
+	/*bp-0x108*/ int32_t i;
+	/*bp-0x10c*/ /*packed*/ class TextWindow *tempTextWindow;
+	/*bp-0x11c*/ /*packed*/ class MRect rectTextWindow; // 0x10 bytes
 
 // LINE 89:
 	__asm        jmp    near ptr 0x0049B86F;
@@ -1929,8 +1929,8 @@ _Tb28:
 
 // FUNCTION: COPTER_D 0x0049c3ad
 int32_t UserMenuWindow::DrawSelf() {
-	int32_t i;
-	int32_t iEnd;
+	/*bp-0x4*/   int32_t iEnd;
+	/*bp-0x8*/   int32_t i;
 
 // LINE 160:
 	__asm        jmp    near ptr 0x0049C3BE;
@@ -2099,8 +2099,8 @@ void UserMenuWindow::DrawSelectionIndicators() {
 
 // FUNCTION: COPTER_D 0x0049c5ab
 int32_t UserMenuWindow::DoCursorHitTest(int32_t& nHitIndex, long nCursorX, long nCursorY) {
-	int32_t i;
-	int32_t iEnd;
+	/*bp-0x4*/   int32_t iEnd;
+	/*bp-0x8*/   int32_t i;
 
 // LINE 235:
 	__asm        mov    i, 0;
@@ -2206,8 +2206,8 @@ int32_t UserMenuWindow::GetPositionOfNthItem(int32_t nIndex, /*packed*/ class MP
 
 // FUNCTION: COPTER_D 0x0049c6f4
 long UserMenuWindow::DoCharacter(long lCharacter) {
-	int32_t i;
-	int32_t iEnd;
+	/*bp-0x4*/   int32_t iEnd;
+	/*bp-0x8*/   int32_t i;
 
 // LINE 264:
 	i = 0x0;
@@ -2583,7 +2583,7 @@ _T18b:
 	__asm        jne    _T1d8;
 // LINE 309:
 // Block start:
-	long lValue;
+	/*bp-0x4*/   long lValue;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x98];
 	__asm        mov    ecx, this;
@@ -2618,8 +2618,8 @@ _T1df:
 
 // FUNCTION: COPTER_D 0x0049cb8d
 long UserMenuWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
-	int32_t nIndex;
-	int32_t bExecute;
+	/*bp-0x4*/   int32_t bExecute;
+	/*bp-0x8*/   int32_t nIndex;
 
 // LINE 329:
 	bExecute = 0x0;
@@ -2670,7 +2670,7 @@ _T7c:
 
 // FUNCTION: COPTER_D 0x0049cc1a
 long UserMenuWindow::DoCursorMove(long nCursorX, long nCursorY) {
-	int32_t nIndex;
+	/*bp-0x4*/   int32_t nIndex;
 
 // LINE 349:
 	__asm        mov    eax, nCursorY;
@@ -2701,7 +2701,7 @@ _T40:
 
 // FUNCTION: COPTER_D 0x0049cc6b
 int32_t UserMenuWindow::ExecuteSelection(int32_t nIndex) {
-	long lValue;
+	/*bp-0x4*/   long lValue;
 
 // LINE 360:
 	__asm        mov    eax, this;
@@ -2875,8 +2875,8 @@ _T10a:
 
 // FUNCTION: COPTER_D 0x0049ce9b
 int32_t CopterMainMenu::CreateImage(int32_t __formal) {
-	/*packed*/ class basic_string<char> sImagePath;
-	/*packed*/ class basic_string<char> sImageFile;
+	/*bp-0x8*/   /*packed*/ class basic_string<char> sImageFile; // 0x8 bytes
+	/*bp-0x10*/  /*packed*/ class basic_string<char> sImagePath; // 0x8 bytes
 
 // LINE 426:
 	__asm        push   0x10;
@@ -3383,11 +3383,11 @@ int32_t CopterMainMenu::DrawSelf() {
 
 // FUNCTION: COPTER_D 0x0049d4f4
 void CopterMainMenu::DrawRatchetAndLights() {
-	/*packed*/ class MPoint ptLightsDestination[5];
-	/*packed*/ class MRect rectLightsSource[5];
-	int32_t i;
-	/*packed*/ class MRect rectRatchetsSource[5];
-	/*packed*/ class MPoint ptRatchetsDestination[5];
+	/*bp-0x28*/  /*packed*/ class MPoint ptRatchetsDestination[5]; // 0x28 bytes
+	/*bp-0x78*/  /*packed*/ class MRect rectRatchetsSource[5]; // 0x50 bytes
+	/*bp-0x7c*/  int32_t i;
+	/*bp-0xcc*/  /*packed*/ class MRect rectLightsSource[5]; // 0x50 bytes
+	/*bp-0xf4*/  /*packed*/ class MPoint ptLightsDestination[5]; // 0x28 bytes
 
 
 	__asm        mov    dword ptr [ebp-0xF8], 5;
@@ -3765,8 +3765,8 @@ int32_t CopterPlayMenu::Initialize() {
 
 // FUNCTION: COPTER_D 0x0049dac8
 int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
-	/*packed*/ class basic_string<char> sImagePath;
-	/*packed*/ class basic_string<char> sImageFile;
+	/*bp-0x8*/   /*packed*/ class basic_string<char> sImageFile; // 0x8 bytes
+	/*bp-0x10*/  /*packed*/ class basic_string<char> sImagePath; // 0x8 bytes
 
 // LINE 631:
 	__asm        push   0x10;
@@ -4284,8 +4284,8 @@ int32_t CopterPlayMenu::DrawSelf() {
 
 // FUNCTION: COPTER_D 0x0049e146
 void CopterPlayMenu::DrawRatchet() {
-	/*packed*/ class MPoint ptDestinationRatchet;
-	/*packed*/ class MPoint ptDestinationBackground;
+	/*bp-0x8*/   /*packed*/ class MPoint ptDestinationBackground; // 0x8 bytes
+	/*bp-0x10*/  /*packed*/ class MPoint ptDestinationRatchet; // 0x8 bytes
 
 // LINE 678:
 	__asm        jmp    near ptr 0x0049E157;

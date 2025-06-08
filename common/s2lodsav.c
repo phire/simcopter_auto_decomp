@@ -58,13 +58,13 @@ struct Micro{ // packed(0x8 bytes) TI: 0x2d4d
 // Contribution: 1:000c3690-000c8acf Module: 94, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004c4690
 int32_t S2CityValidate(char * filepath) {
-	long lBytesReadSoFar;
-	int32_t bOK;
-	long lCityDataChunkLength;
-	long lFileLength;
-	/*packed*/ struct _iobuf *filNum;
-	long lChunkDataSize;
-	long lChunkType;
+	/*bp-0x4*/   long lChunkType;
+	/*bp-0x8*/   long lChunkDataSize;
+	/*bp-0xc*/   /*packed*/ struct _iobuf *filNum;
+	/*bp-0x10*/  long lFileLength;
+	/*bp-0x14*/  long lCityDataChunkLength;
+	/*bp-0x18*/  int32_t bOK;
+	/*bp-0x1c*/  long lBytesReadSoFar;
 
 // LINE 115:
 	__asm        push   0x59AFF0;
@@ -225,13 +225,13 @@ _T189:
 
 // FUNCTION: COPTER_D 0x004c481e
 short S2CityGetCityNameFromFile(char * filePath, char * cityName) {
-	long sofar;
-	/*packed*/ struct _iobuf *filNum;
-	unsigned short done;
-	long length;
-	long dp;
-	long count;
-	long size;
+	/*bp-0x4*/   long size;
+	/*bp-0x8*/   long count;
+	/*bp-0xc*/   long dp;
+	/*bp-0x10*/  long length;
+	/*bp-0x14*/  unsigned short done;
+	/*bp-0x18*/  /*packed*/ struct _iobuf *filNum;
+	/*bp-0x1c*/  long sofar;
 
 // LINE 185:
 	__asm        mov    eax, cityName;
@@ -406,8 +406,8 @@ _T1b5:
 
 // FUNCTION: COPTER_D 0x004c49d8
 static long stol(char * tag) {
-	long buildval;
-	char * s;
+	/*bp-0x4*/   char * s;
+	/*bp-0x8*/   long buildval;
 
 // LINE 249:
 	__asm        lea    eax, buildval;
@@ -443,8 +443,8 @@ static long stol(char * tag) {
 
 // FUNCTION: COPTER_D 0x004c4a2b
 long ValidateSCXSaveGameFile(char * szFilePath) {
-	/*packed*/ struct _iobuf *fp;
-	char buf[5];
+	/*bp-0x8*/   char buf[5]; // 0x5 bytes
+	/*bp-0xc*/   /*packed*/ struct _iobuf *fp;
 
 // LINE 273:
 	__asm        push   0x59B000;
@@ -500,15 +500,15 @@ _T86:
 
 // FUNCTION: COPTER_D 0x004c4ab6
 short S2CityLoad(char * filePath) {
-	long sofar;
-	short got_label;
-	/*packed*/ struct _iobuf *filNum;
-	unsigned short bFoundName;
-	long length;
-	long dp;
-	unsigned short bDone;
-	char tempCityName[256];
-	long size;
+	/*bp-0x4*/   long size;
+	/*bp-0x104*/ char tempCityName[256]; // 0x100 bytes
+	/*bp-0x108*/ unsigned short bDone;
+	/*bp-0x10c*/ long dp;
+	/*bp-0x110*/ long length;
+	/*bp-0x114*/ unsigned short bFoundName;
+	/*bp-0x118*/ /*packed*/ struct _iobuf *filNum;
+	/*bp-0x11c*/ short got_label;
+	/*bp-0x120*/ long sofar;
 
 // LINE 305:
 	__asm        mov    eax, filePath;
@@ -1235,8 +1235,8 @@ _T8b8:
 
 // FUNCTION: COPTER_D 0x004c5373
 static void label_kludge() {
-	short len;
-	short i;
+	/*bp-0x4*/   short i;
+	/*bp-0x8*/   short len;
 
 // LINE 476:
 	__asm        mov    i, 0;
@@ -1288,8 +1288,8 @@ _T9a:
 
 // FUNCTION: COPTER_D 0x004c5412
 void clear_label() {
-	short j;
-	short i;
+	/*bp-0x4*/   short i;
+	/*bp-0x8*/   short j;
 
 // LINE 499:
 	__asm        mov    i, 0;
@@ -1327,8 +1327,8 @@ _T67:
 
 // FUNCTION: COPTER_D 0x004c547e
 void graph_kludge() {
-	short j;
-	short i;
+	/*bp-0x4*/   short i;
+	/*bp-0x8*/   short j;
 
 // LINE 519:
 	__asm        mov    i, 0;
@@ -1400,11 +1400,11 @@ _Tdc:
 
 // FUNCTION: COPTER_D 0x004c555f
 void S2CityMakeCityNameFromFilePath(char * filePath, char * cityName) {
-	char szSplitPathFilename[256];
-	uint32_t stringLength;
-	char szSplitPathDirectory[256];
-	char szSplitPathDrive[3];
-	char szSplitPathExtension[256];
+	/*bp-0x100*/ char szSplitPathExtension[256]; // 0x100 bytes
+	/*bp-0x104*/ char szSplitPathDrive[3];
+	/*bp-0x204*/ char szSplitPathDirectory[256]; // 0x100 bytes
+	/*bp-0x208*/ uint32_t stringLength;
+	/*bp-0x308*/ char szSplitPathFilename[256]; // 0x100 bytes
 
 // LINE 549:
 	__asm        lea    eax, szSplitPathExtension[0];
@@ -1455,7 +1455,7 @@ void S2CityMakeFileNameFromCityName(char * cityName, char * fileName) {
 
 // FUNCTION: COPTER_D 0x004c55f2
 static unsigned short S2CityReadHeader(/*packed*/ struct _iobuf *filNum, long * length) {
-	long data;
+	/*bp-0x4*/   long data;
 
 // LINE 591:
 	__asm        mov    eax, filNum;
@@ -1551,10 +1551,10 @@ _Teb:
 
 // FUNCTION: COPTER_D 0x004c56e2
 static unsigned short S2CityMiscRead(/*packed*/ struct _iobuf *filNum, long size) {
-	long lval;
-	short j;
-	short i;
-	short ix;
+	/*bp-0x4*/   short ix;
+	/*bp-0x8*/   short i;
+	/*bp-0xc*/   short j;
+	/*bp-0x10*/  long lval;
 
 // LINE 633:
 	__asm        push   0x12C0;
@@ -2666,8 +2666,8 @@ _T35:
 
 // FUNCTION: COPTER_D 0x004c6619
 static unsigned short S2CityBucketGameRead(/*packed*/ struct _iobuf *filNum, long size) {
-	char * temp;
-	long count;
+	/*bp-0x4*/   long count;
+	/*bp-0x8*/   char * temp;
 
 // LINE 887:
 	__asm        mov    eax, size;
@@ -2721,12 +2721,12 @@ _T86:
 
 // FUNCTION: COPTER_D 0x004c66a4
 static unsigned short S2CityGameReadCompressed(/*packed*/ struct _iobuf *filNum, long size, char * data, long dataSize) {
-	char * temp;
-	long tp;
-	long dp;
-	long count;
-	long ix;
-	char b;
+	/*bp-0x4*/   char b;
+	/*bp-0x8*/   long ix;
+	/*bp-0xc*/   long count;
+	/*bp-0x10*/  long dp;
+	/*bp-0x14*/  long tp;
+	/*bp-0x18*/  char * temp;
 
 // LINE 920:
 	__asm        mov    eax, size;
@@ -2867,8 +2867,8 @@ _T165:
 
 // FUNCTION: COPTER_D 0x004c680e
 short S2CitySave(char * filePath) {
-	char tempCityNameString[33];
-	/*packed*/ struct _iobuf *filNum;
+	/*bp-0x4*/   /*packed*/ struct _iobuf *filNum;
+	/*bp-0x28*/  char tempCityNameString[33]; // 0x21 bytes
 
 // LINE 980:
 	__asm        push   0x59B0FC;
@@ -3311,8 +3311,8 @@ _T4eb:
 
 // FUNCTION: COPTER_D 0x004c6cfe
 static unsigned short S2CityWriteName(/*packed*/ struct _iobuf *filNum, long head, char * data) {
-	long count;
-	long size;
+	/*bp-0x4*/   long size;
+	/*bp-0x8*/   long count;
 
 // LINE 1075:
 	count = 0x4;
@@ -3399,8 +3399,8 @@ _Td2:
 
 // FUNCTION: COPTER_D 0x004c6dd5
 static unsigned short S2CityGameWriteUncompressed(/*packed*/ struct _iobuf *filNum, long head, char * data, long dataSize) {
-	long count;
-	long size;
+	/*bp-0x4*/   long size;
+	/*bp-0x8*/   long count;
 
 // LINE 1114:
 	count = 0x4;
@@ -3508,8 +3508,8 @@ _T101:
 
 // FUNCTION: COPTER_D 0x004c6edb
 static unsigned short S2CityWriteHeader(/*packed*/ struct _iobuf *filNum, long length) {
-	long count;
-	long data;
+	/*bp-0x4*/   long data;
+	/*bp-0x8*/   long count;
 
 // LINE 1159:
 	__asm        push   0;
@@ -3615,11 +3615,11 @@ _T106:
 
 // FUNCTION: COPTER_D 0x004c6fe6
 static unsigned short S2CityGameWriteCompressed(/*packed*/ struct _iobuf *filNum, long head, char * data, long count) {
-	char * temp;
-	long tp;
-	long dp;
-	long ix;
-	unsigned char b;
+	/*bp-0x4*/   unsigned char b;
+	/*bp-0x8*/   long ix;
+	/*bp-0xc*/   long dp;
+	/*bp-0x10*/  long tp;
+	/*bp-0x14*/  char * temp;
 
 // LINE 1202:
 	__asm        mov    eax, count;
@@ -3945,9 +3945,9 @@ _T343:
 
 // FUNCTION: COPTER_D 0x004c732e
 static unsigned short S2CityMiscWrite(/*packed*/ struct _iobuf *filNum) {
-	short j;
-	short i;
-	short ix;
+	/*bp-0x4*/   short ix;
+	/*bp-0x8*/   short i;
+	/*bp-0xc*/   short j;
 
 // LINE 1303:
 	ix = 0x0;
@@ -4993,9 +4993,9 @@ _Te6c:
 
 // FUNCTION: COPTER_D 0x004c81c9
 void swizzle_buffer(char * data, long count) {
-	long * lptr;
-	long lval;
-	long i;
+	/*bp-0x4*/   long i;
+	/*bp-0x8*/   long lval;
+	/*bp-0xc*/   long * lptr;
 
 // LINE 1501:
 	__asm        mov    eax, count;
@@ -5036,8 +5036,8 @@ _T5f:
 
 // FUNCTION: COPTER_D 0x004c822d
 void swizzle_Micro(char * data, long count) {
-	/*packed*/ struct Micro *mptr;
-	long i;
+	/*bp-0x4*/   long i;
+	/*bp-0x8*/   /*packed*/ struct Micro *mptr;
 
 // LINE 1529:
 	__asm        mov    eax, count;
@@ -5088,9 +5088,9 @@ _T81:
 
 // FUNCTION: COPTER_D 0x004c82b3
 void swizzle_shorts(char * data, long count) {
-	short * sptr;
-	short sval;
-	long i;
+	/*bp-0x4*/   long i;
+	/*bp-0x8*/   short sval;
+	/*bp-0xc*/   short * sptr;
 
 // LINE 1559:
 	__asm        mov    eax, count;
@@ -5130,8 +5130,8 @@ _T5f:
 
 // FUNCTION: COPTER_D 0x004c8317
 short swizzle_short(short svalue) {
-	unsigned char cval;
-	unsigned char * byteptr;
+	/*bp-0x4*/   unsigned char * byteptr;
+	/*bp-0x8*/   unsigned char cval;
 
 // LINE 1585:
 	__asm        lea    eax, svalue;
@@ -5157,8 +5157,8 @@ short swizzle_short(short svalue) {
 
 // FUNCTION: COPTER_D 0x004c8350
 long swap_long(long lvalue) {
-	unsigned short sval;
-	unsigned short * shortptr;
+	/*bp-0x4*/   unsigned short * shortptr;
+	/*bp-0x8*/   unsigned short sval;
 
 // LINE 1610:
 	__asm        lea    eax, lvalue;
@@ -5184,8 +5184,8 @@ long swap_long(long lvalue) {
 
 // FUNCTION: COPTER_D 0x004c838e
 long swizzle_long(long lvalue) {
-	unsigned char cval;
-	unsigned char * byteptr;
+	/*bp-0x4*/   unsigned char * byteptr;
+	/*bp-0x8*/   unsigned char cval;
 
 // LINE 1636:
 	__asm        lea    eax, lvalue;
@@ -5232,13 +5232,13 @@ void GetStringResource(unsigned char * theString, short resourceID, short index)
 
 // FUNCTION: COPTER_D 0x004c83f5
 short S2CityAlloc() {
-	long j;
-	short z;
-	long i;
-	short y;
-	short x;
-	unsigned long poolsize;
-	long cnt;
+	/*bp-0x4*/   long cnt;
+	/*bp-0x8*/   unsigned long poolsize;
+	/*bp-0xc*/   short x;
+	/*bp-0x10*/  short y;
+	/*bp-0x14*/  long i;
+	/*bp-0x18*/  short z;
+	/*bp-0x1c*/  long j;
 
 // LINE 1711:
 	GraphData[0] = 0x0;
@@ -6276,8 +6276,8 @@ void S2CityFree() {
 
 // FUNCTION: COPTER_D 0x004c9227
 void PStringToCString(char * string) {
-	int32_t i;
-	char sizePString;
+	/*bp-0x4*/   char sizePString;
+	/*bp-0x8*/   int32_t i;
 
 // LINE 1980:
 	__asm        mov    eax, string;
@@ -6310,8 +6310,8 @@ _T45:
 
 // FUNCTION: COPTER_D 0x004c927b
 void CStringToPString(char * string) {
-	int32_t i;
-	int32_t sizeCString;
+	/*bp-0x4*/   int32_t sizeCString;
+	/*bp-0x8*/   int32_t i;
 
 // LINE 1994:
 	__asm        mov    eax, string;
@@ -6353,8 +6353,8 @@ _T5d:
 
 // FUNCTION: COPTER_D 0x004c92e5
 void CopyPString(char * stringDestination, char * stringSource) {
-	int32_t i;
-	int32_t iEnd;
+	/*bp-0x4*/   int32_t iEnd;
+	/*bp-0x8*/   int32_t i;
 
 // LINE 2013:
 	__asm        mov    eax, stringSource;
@@ -6389,8 +6389,8 @@ _T4f:
 
 // FUNCTION: COPTER_D 0x004c9339
 void check_backslash_terminate(char * path) {
-	short len;
-	char * s;
+	/*bp-0x4*/   char * s;
+	/*bp-0x8*/   short len;
 
 // LINE 2043:
 	__asm        mov    eax, path;
@@ -6422,11 +6422,11 @@ _T43:
 
 // FUNCTION: COPTER_D 0x004c9381
 short check_root(char * pathname) {
-	char pathonly[260];
-	short len;
-	short count;
-	char * t;
-	char * s;
+	/*bp-0x4*/   char * s;
+	/*bp-0x8*/   char * t;
+	/*bp-0xc*/   short count;
+	/*bp-0x10*/  short len;
+	/*bp-0x114*/ char pathonly[260]; // 0x104 bytes
 
 // LINE 2071:
 	__asm        mov    eax, pathname;
@@ -6529,9 +6529,9 @@ _T10f:
 
 // FUNCTION: COPTER_D 0x004c9495
 void get_path_at_start(char * ref, char * ret) {
-	short len;
-	short off;
-	char * s;
+	/*bp-0x4*/   char * s;
+	/*bp-0x8*/   short off;
+	/*bp-0xc*/   short len;
 
 // LINE 2125:
 	__asm        mov    eax, ret;
@@ -6608,9 +6608,9 @@ _Tab:
 
 // FUNCTION: COPTER_D 0x004c9545
 void do_uppercase(char * ref, char * res) {
-	short len;
-	short i;
-	char * s;
+	/*bp-0x4*/   char * s;
+	/*bp-0x8*/   short i;
+	/*bp-0xc*/   short len;
 
 // LINE 2165:
 	__asm        mov    eax, res;
@@ -6673,8 +6673,8 @@ _T99:
 
 // FUNCTION: COPTER_D 0x004c95e3
 void get_name_at_end(char * ref, char * ret) {
-	short len;
-	char * s;
+	/*bp-0x4*/   char * s;
+	/*bp-0x8*/   short len;
 
 // LINE 2197:
 	__asm        mov    eax, ret;
@@ -6752,8 +6752,8 @@ _Tac:
 
 // FUNCTION: COPTER_D 0x004c9694
 void strip_extension(char * ref) {
-	short len;
-	char * s;
+	/*bp-0x4*/   char * s;
+	/*bp-0x8*/   short len;
 
 // LINE 2237:
 	__asm        mov    eax, ref;
@@ -6799,9 +6799,9 @@ _T63:
 
 // FUNCTION: COPTER_D 0x004c96fc
 void check_extension(char * pathname, char * ext) {
-	short len;
-	char nameonly[64];
-	char * s;
+	/*bp-0x4*/   char * s;
+	/*bp-0x44*/  char nameonly[64]; // 0x40 bytes
+	/*bp-0x48*/  short len;
 
 // LINE 2271:
 	nameonly[0] = 0x0;
@@ -6934,7 +6934,7 @@ _T134:
 
 // FUNCTION: COPTER_D 0x004c9835
 short check_file_exist(char * filename) {
-	/*packed*/ struct _iobuf *fileNum;
+	/*bp-0x4*/   /*packed*/ struct _iobuf *fileNum;
 
 // LINE 2321:
 	__asm        push   0x59B3A4;
@@ -6964,10 +6964,10 @@ _T44:
 
 // FUNCTION: COPTER_D 0x004c987e
 void remove_illegals(char * ref) {
-	short len;
-	char temp[260];
-	char * s;
-	char * r;
+	/*bp-0x4*/   char * r;
+	/*bp-0x8*/   char * s;
+	/*bp-0x10c*/ char temp[260]; // 0x104 bytes
+	/*bp-0x110*/ short len;
 
 // LINE 2349:
 	__asm        mov    eax, ref;
@@ -7120,10 +7120,10 @@ _T1ab:
 
 // FUNCTION: COPTER_D 0x004c9a2e
 void compress_spaces(char * ref) {
-	short len;
-	char temp[260];
-	char * s;
-	char * r;
+	/*bp-0x4*/   char * r;
+	/*bp-0x8*/   char * s;
+	/*bp-0x10c*/ char temp[260]; // 0x104 bytes
+	/*bp-0x110*/ short len;
 
 // LINE 2390:
 	__asm        mov    eax, ref;

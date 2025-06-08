@@ -1,8 +1,8 @@
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055e740
 void PtrList<cBBase>::Remove(/*unpacked*/ class cBBase *data) {
-	/*unpacked*/ struct PtrList<cBBase>::PtrNode **srch;
-	/*unpacked*/ struct PtrList<cBBase>::PtrNode *del;
+	/*bp-0x4*/   /*unpacked*/ struct PtrList<cBBase>::PtrNode *del;
+	/*bp-0x8*/   /*unpacked*/ struct PtrList<cBBase>::PtrNode **srch;
 
 // LINE 43:
 	srch = this;

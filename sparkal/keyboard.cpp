@@ -165,7 +165,7 @@ int32_t Keyboard::IsKeyDown(unsigned char chKey) {
 
 // FUNCTION: COPTER_D 0x00431d32
 int32_t Keyboard::IsKeyDown(unsigned char chKey, unsigned char chModifiers) {
-	char chCurrentModifiers;
+	/*bp-0x4*/   char chCurrentModifiers;
 
 // LINE 52:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(chKey);
@@ -249,7 +249,7 @@ _T3a:
 
 // SYNTHETIC: COPTER_D 0x00431e19
 void Keyboard::ClearSettings() {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 // LINE 98:
 	__asm        mov    i, 0;
@@ -303,7 +303,7 @@ _T47:
 
 // FUNCTION: COPTER_D 0x00431eb1
 char Keyboard::GetCurrentModifierState() {
-	char chReturnValue;
+	/*bp-0x4*/   char chReturnValue;
 
 // LINE 125:
 	chReturnValue = 0x0;
@@ -348,9 +348,9 @@ _T61:
 
 // FUNCTION: COPTER_D 0x00431f1f
 char Keyboard::ConvertKeyToCharacter(unsigned char chKey, unsigned char chModifiers) {
-	static char chExtraArray[11] = {126, 95, 43, 123, 125, 124, 58, 34, 60, 62, 63};
-	char chIndex;
-	static char chNumberArray[10] = {41, 33, 64, 35, 36, 37, 94, 38, 42, 40};
+// StaticLocal: 0x00598350	static char chNumberArray[10] = {41, 33, 64, 35, 36, 37, 94, 38, 42, 40};
+	/*bp-0x4*/   char chIndex;
+// StaticLocal: 0x00598360	static char chExtraArray[11] = {126, 95, 43, 123, 125, 124, 58, 34, 60, 62, 63};
 
 // LINE 171:
 	__asm        xor    eax, eax;

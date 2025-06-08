@@ -1900,12 +1900,12 @@ _T1c0:
 
 // FUNCTION: COPTER_D 0x004887b7
 unsigned long  CGameApp::PrepareGame() {
-	long hResult;
-	/*packed*/ class basic_string<char> sErrorText;
-	/*packed*/ class basic_string<char> sErrorTitle;
-	char szButtonWindowSoundFilePath[260];
-	int32_t nFullStringID;
-	/*packed*/ class basic_string<char> sApplicationTitle;
+	/*bp-0x8*/   /*packed*/ class basic_string<char> sApplicationTitle; // 0x8 bytes
+	/*bp-0xc*/   int32_t nFullStringID;
+	/*bp-0x110*/ char szButtonWindowSoundFilePath[260]; // 0x104 bytes
+	/*bp-0x118*/ /*packed*/ class basic_string<char> sErrorTitle; // 0x8 bytes
+	/*bp-0x120*/ /*packed*/ class basic_string<char> sErrorText; // 0x8 bytes
+	/*bp-0x124*/ long hResult;
 
 // LINE 260:
 	__asm        push   0x10;
@@ -2980,7 +2980,7 @@ _T49:
 
 // FUNCTION: COPTER_D 0x00489726
 unsigned long  CGameApp::Initialize() {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 // LINE 389:
 	G_mapmode = 0x0;
@@ -3043,7 +3043,7 @@ _Tc2:
 	__asm        jne    _T120;
 // LINE 411:
 // Block start:
-	char szCommandValue[128];
+	/*bp-0x84*/  char szCommandValue[128]; // 0x80 bytes
 	__asm        lea    eax, szCommandValue[0];
 	__asm        push   eax;
 	__asm        push   0x78;
@@ -3325,9 +3325,9 @@ _T518:
 
 // FUNCTION: COPTER_D 0x00489c43
 void  CGameApp::ParseCommandLine() {
-	long lValue;
-	int32_t nLanguage;
-	char szCommandValue[128];
+	/*bp-0x80*/  char szCommandValue[128]; // 0x80 bytes
+	/*bp-0x84*/  int32_t nLanguage;
+	/*bp-0x88*/  long lValue;
 
 // LINE 511:
 	__asm        push   0;
@@ -3543,12 +3543,12 @@ _T2f0:
 
 // FUNCTION: COPTER_D 0x00489f3d
 int  CGameApp::IsSwitchPresent(char chSwitchToCheck, char * szResult) {
-	char chUpperToCheck;
-	short k;
-	int32_t bInQuotation;
-	short j;
-	short i;
-	char chLowerToCheck;
+	/*bp-0x4*/   char chLowerToCheck;
+	/*bp-0x8*/   short i;
+	/*bp-0xc*/   short j;
+	/*bp-0x10*/  int32_t bInQuotation;
+	/*bp-0x14*/  short k;
+	/*bp-0x18*/  char chUpperToCheck;
 
 // LINE 596:
 	bInQuotation = 0x0;
@@ -3737,11 +3737,11 @@ int  CGameApp::SetCurrentLanguageUse(int32_t nLanguageID) {
 
 // FUNCTION: COPTER_D 0x0048a186
 void  CGameApp::DisplayDebugSystemInformation() {
-	char * szVersionInformation;
-	char szUnformattedVersionInformation[32];
-	char szFormattedVersionInformation[256];
-	/*packed*/ class Version tempVersion;
-	/*packed*/ struct _MEMORYSTATUS tempMemoryStatus;
+	/*bp-0x20*/  /*packed*/ struct _MEMORYSTATUS tempMemoryStatus; // 0x20 bytes
+	/*bp-0x2c*/  /*packed*/ class Version tempVersion; // 0xc bytes
+	/*bp-0x12c*/ char szFormattedVersionInformation[256]; // 0x100 bytes
+	/*bp-0x14c*/ char szUnformattedVersionInformation[32]; // 0x20 bytes
+	/*bp-0x150*/ char * szVersionInformation;
 
 // LINE 662:
 	__asm        lea    ecx, tempVersion<vftable>;
@@ -3895,8 +3895,8 @@ _T11e:
 
 // FUNCTION: COPTER_D 0x0048a370
 void  CGameApp::SetSystemPriorityLevel(long lLevel) {
-	int32_t bReturnValue;
-	void * __ptr32 hThread;
+	/*bp-0x4*/   void * __ptr32 hThread;
+	/*bp-0x8*/   int32_t bReturnValue;
 
 // LINE 728:
 	__asm        cmp    lLevel, 0;
@@ -3940,7 +3940,7 @@ _T6d:
 
 // FUNCTION: COPTER_D 0x0048a409
 void  CGameApp::InitializeCommandSystem() {
-	/*packed*/ struct Shortcut tempShortcut;
+	/*bp-0x18*/  /*packed*/ struct Shortcut tempShortcut; // 0x18 bytes
 
 // LINE 751:
 	__asm        mov    eax, this;
@@ -4339,13 +4339,13 @@ void  CGameApp::InitializeJoysticks() {
 
 // FUNCTION: COPTER_D 0x0048a980
 int  CGameApp::HaveAnyJoysticksChangedSinceLastPlay() {
-	long lJoystickCountAtCurrentPlay;
-	char chCurrentJoystickName[64];
-	int32_t i;
-	long lJoystickCountAtLastPlay;
-	int32_t iEnd;
-	char * chLastJoystickName;
-	char * chPrefData;
+	/*bp-0x4*/   char * chPrefData;
+	/*bp-0x8*/   char * chLastJoystickName;
+	/*bp-0xc*/   int32_t iEnd;
+	/*bp-0x10*/  long lJoystickCountAtLastPlay;
+	/*bp-0x14*/  int32_t i;
+	/*bp-0x54*/  char chCurrentJoystickName[64]; // 0x40 bytes
+	/*bp-0x58*/  long lJoystickCountAtCurrentPlay;
 
 // LINE 817:
 	__asm        jmp    near ptr 0x0048A991;

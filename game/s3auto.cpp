@@ -673,8 +673,8 @@ public:
 // Contribution: 1:001005e0-00108fb1 Module: 171, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x005015e0
 int32_t S3StartSpeederMission() {
-	int32_t i;
-	/*packed*/ class AutomobileClass *pCar;
+	/*bp-0x4*/   /*packed*/ class AutomobileClass *pCar;
+	/*bp-0x8*/   int32_t i;
 
 // LINE 74:
 	__asm        mov    i, 1;
@@ -749,8 +749,8 @@ _Te4:
 
 // FUNCTION: COPTER_D 0x005016c9
 int32_t Distance(/*packed*/ struct _GridCoordinates loc1, /*packed*/ struct _GridCoordinates loc2) {
-	int32_t deltay;
-	int32_t deltax;
+	/*bp-0x4*/   int32_t deltax;
+	/*bp-0x8*/   int32_t deltay;
 
 // LINE 109:
 	__asm        xor    eax, eax;
@@ -825,12 +825,12 @@ _Ta0:
 
 // FUNCTION: COPTER_D 0x0050176e
 /*packed*/ struct _DYOBJ_INST* AutomobileClass::GetClosestCar(int32_t cartype, int32_t cellx, int32_t celly) {
-	/*packed*/ struct _GridCoordinates there;
-	int32_t minDist;
-	int32_t i;
-	/*packed*/ struct _GridCoordinates here;
-	int32_t dist;
-	int32_t carID;
+	/*bp-0x4*/   int32_t carID;
+	/*bp-0x8*/   int32_t dist;
+	/*bp-0xc*/   /*packed*/ struct _GridCoordinates here;
+	/*bp-0x10*/  int32_t i;
+	/*bp-0x14*/  int32_t minDist;
+	/*bp-0x18*/  /*packed*/ struct _GridCoordinates there;
 
 // LINE 142:
 	minDist = 0x7d00;
@@ -1181,7 +1181,7 @@ _T26:
 
 // FUNCTION: COPTER_D 0x00501b6c
 void AutomobileClass::AutomobileClass() {
-	long odds;
+	/*bp-0x4*/   long odds;
 
 
 	this-><vftable> = 0x592d98;
@@ -1363,7 +1363,7 @@ _T5b:
 
 // FUNCTION: COPTER_D 0x00501db8
 /*packed*/ class AutomobileClass* AutomobileClass::CreateInstance(int32_t instanceID) {
-	/*packed*/ class AutomobileClass *youveWonABrandNewCar;
+	/*bp-0x4*/   /*packed*/ class AutomobileClass *youveWonABrandNewCar;
 
 // LINE 480:
 	__asm        push   0x11A;
@@ -1430,7 +1430,7 @@ _Tb4:
 
 // FUNCTION: COPTER_D 0x00501e71
 void AutomobileClass::ResetAll() {
-	int32_t currentCarIndex;
+	/*bp-0x4*/   int32_t currentCarIndex;
 
 // LINE 543:
 	__asm        mov    currentCarIndex, 0;
@@ -1453,7 +1453,7 @@ _T36:
 
 // FUNCTION: COPTER_D 0x00501eb1
 void AutomobileClass::ItterateAll() {
-	int32_t currentCarIndex;
+	/*bp-0x4*/   int32_t currentCarIndex;
 
 // LINE 574:
 	__asm        mov    currentCarIndex, 0;
@@ -1500,7 +1500,7 @@ _T3a:
 	__asm        je     _T25e;
 // LINE 617:
 // Block start:
-	/*packed*/ struct VRview position;
+	/*bp-0x58*/  /*packed*/ struct VRview position; // 0x58 bytes
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+9], 0x13;
 	__asm        je     _T6e;
@@ -1688,13 +1688,13 @@ _T286:
 
 // FUNCTION: COPTER_D 0x0050217c
 int32_t AutomobileClass::PlacePerson(int32_t personType, int32_t personAction) {
-	int32_t maxRadius;
-	int32_t radius;
-	int32_t rsin;
-	/*packed*/ struct Point3d personLoc;
-	int32_t angle;
-	/*packed*/ struct Point3d vehicleLoc;
-	int32_t rcos;
+	/*bp-0x4*/   int32_t rcos;
+	/*bp-0x10*/  /*packed*/ struct Point3d vehicleLoc; // 0xc bytes
+	/*bp-0x14*/  int32_t angle;
+	/*bp-0x20*/  /*packed*/ struct Point3d personLoc; // 0xc bytes
+	/*bp-0x24*/  int32_t rsin;
+	/*bp-0x28*/  int32_t radius;
+	/*bp-0x2c*/  int32_t maxRadius;
 
 // LINE 749:
 	__asm        mov    eax, this;
@@ -1811,10 +1811,10 @@ _T12d:
 
 // FUNCTION: COPTER_D 0x005022b0
 void AutomobileClass::ItterateFSM() {
-	/*packed*/ struct MISSION_DATA *md;
-	int32_t itterationDist;
-	/*packed*/ struct _DYOBJ_INST *dyblock;
-	/*packed*/ class AutomobileClass *carblock;
+	/*bp-0x4*/   /*packed*/ class AutomobileClass *carblock;
+	/*bp-0x8*/   /*packed*/ struct _DYOBJ_INST *dyblock;
+	/*bp-0xc*/   int32_t itterationDist;
+	/*bp-0x10*/  /*packed*/ struct MISSION_DATA *md;
 
 // LINE 796:
 	__asm        mov    eax, this;
@@ -1853,7 +1853,7 @@ _T4a:
 	__asm        je     _Tae;
 // LINE 813:
 // Block start:
-	/*packed*/ struct _MISSION_PARMS mp;
+	/*bp-0x28*/  /*packed*/ struct _MISSION_PARMS mp; // 0x18 bytes
 	mp.id = 0xffffffff;
 // LINE 814:
 	mp.i2num = 0x1;
@@ -2275,7 +2275,7 @@ _T59f:
 	__asm        jne    _T6b9;
 // LINE 955:
 // Block start:
-	/*packed*/ struct Point3d loc;
+	/*bp-0x34*/  /*packed*/ struct Point3d loc; // 0xc bytes
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x24];
 	__asm        mov    ecx, this;
@@ -2450,7 +2450,7 @@ _T7e6:
 
 // FUNCTION: COPTER_D 0x00502a9b
 void AutomobileClass::UnlinkFromCell(const /*packed*/ struct _GridCoordinates& point) {
-	/*packed*/ struct _CELL_INFO *pCell;
+	/*bp-0x4*/   /*packed*/ struct _CELL_INFO *pCell;
 
 // LINE 1054:
 	__asm        mov    eax, point;
@@ -2480,7 +2480,7 @@ _T53:
 	__asm        je     _Tcd;
 // LINE 1059:
 // Block start:
-	/*packed*/ struct _DYOBJ_INST **dyptrptr;
+	/*bp-0x8*/   /*packed*/ struct _DYOBJ_INST **dyptrptr;
 	__asm        mov    eax, pCell;
 	__asm        add    eax, 0x10;
 	__asm        mov    dyptrptr, eax;
@@ -2527,7 +2527,7 @@ _Td2:
 
 // FUNCTION: COPTER_D 0x00502b74
 void AutomobileClass::LinkToCell(const /*packed*/ struct _GridCoordinates& point) {
-	/*packed*/ struct _CELL_INFO *pCell;
+	/*bp-0x4*/   /*packed*/ struct _CELL_INFO *pCell;
 
 // LINE 1086:
 	__asm        mov    eax, point;
@@ -2557,8 +2557,8 @@ _T53:
 	__asm        je     _T112;
 // LINE 1091:
 // Block start:
-	int32_t z;
-	int32_t x;
+	/*bp-0x8*/   int32_t x;
+	/*bp-0xc*/   int32_t z;
 	this->autoDynomitor.next = pCell->dyptr;
 // LINE 1092:
 	__asm        mov    eax, this;
@@ -2619,9 +2619,9 @@ _T112:
 
 // FUNCTION: COPTER_D 0x00502c92
 enum TurnIndex AutomobileClass::PickTurnDir(/*packed*/ struct Goal *pGoal) {
-	int32_t possibleTurnDir;
-	int32_t rightleftorstraight;
-	enum TurnIndex turn;
+	/*bp-0x4*/   enum TurnIndex turn;
+	/*bp-0x8*/   int32_t rightleftorstraight;
+	/*bp-0xc*/   int32_t possibleTurnDir;
 
 // LINE 1152:
 	__asm        mov    eax, pGoal;
@@ -2826,8 +2826,8 @@ _T270:
 
 // FUNCTION: COPTER_D 0x00502f11
 void AutomobileClass::BeamToWithinCameraRange() {
-	/*packed*/ struct Point3d vec;
-	/*packed*/ struct _GridCoordinates beamCell;
+	/*bp-0x4*/   /*packed*/ struct _GridCoordinates beamCell;
+	/*bp-0x10*/  /*packed*/ struct Point3d vec; // 0xc bytes
 
 // LINE 1209:
 	__asm        mov    eax, 0x6C1210;
@@ -2978,14 +2978,14 @@ _T150:
 
 // FUNCTION: COPTER_D 0x005030aa
 int32_t AutomobileClass::BeamToLocation(const /*packed*/ struct _GridCoordinates& cell) {
-	unsigned short tile;
-	int32_t foundcell;
-	/*packed*/ struct _GridCoordinates prevGridLoc;
-	/*packed*/ struct _GridCoordinates scanLoc;
-	int32_t hiway;
-	/*packed*/ struct Goal goal2;
-	/*packed*/ class SpiralScan scan;
-	/*packed*/ struct Goal goal1;
+	/*bp-0x2c*/  /*packed*/ struct Goal goal1; // 0x2a bytes
+	/*bp-0x3c*/  /*packed*/ class SpiralScan scan; // 0x10 bytes
+	/*bp-0x68*/  /*packed*/ struct Goal goal2; // 0x2a bytes
+	/*bp-0x6c*/  int32_t hiway;
+	/*bp-0x70*/  /*packed*/ struct _GridCoordinates scanLoc;
+	/*bp-0x74*/  /*packed*/ struct _GridCoordinates prevGridLoc;
+	/*bp-0x78*/  int32_t foundcell;
+	/*bp-0x7c*/  unsigned short tile;
 
 // LINE 1284:
 	reinterpret_cast<uint16_t>(scanLoc.x) = reinterpret_cast<uint16_t>(cell.x);
@@ -3472,9 +3472,9 @@ _T68a:
 	__asm        jmp    _Tdb8;
 // LINE 1515:
 // Block start:
-	int32_t i;
-	int32_t dirIndex;
-	/*packed*/ struct _GridCoordinates nextLoc;
+	/*bp-0x80*/  /*packed*/ struct _GridCoordinates nextLoc;
+	/*bp-0x84*/  int32_t dirIndex;
+	/*bp-0x88*/  int32_t i;
 _T6f9:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -3998,7 +3998,7 @@ _T66:
 
 // FUNCTION: COPTER_D 0x00503ede
 void AutomobileClass::WaterDouse(/*packed*/ struct _DYOBJ_INST *dyhittee) {
-	/*packed*/ struct _MISSION_PARMS mp;
+	/*bp-0x18*/  /*packed*/ struct _MISSION_PARMS mp; // 0x18 bytes
 
 // LINE 1690:
 	__asm        mov    eax, this;
@@ -4076,7 +4076,7 @@ _Teb:
 
 // FUNCTION: COPTER_D 0x00503fd0
 void AutomobileClass::IveBeenMegaphoned(long msg_id) {
-	/*packed*/ struct _MISSION_PARMS mp;
+	/*bp-0x18*/  /*packed*/ struct _MISSION_PARMS mp; // 0x18 bytes
 
 // LINE 1735:
 	__asm        mov    eax, this;
@@ -4209,9 +4209,9 @@ _T3a:
 
 // FUNCTION: COPTER_D 0x0050417d
 void AutomobileClass::PullOverCiviliansInWay() {
-	/*packed*/ struct _GridCoordinates scanLoc;
-	/*packed*/ class SpiralScan spiral;
-	/*packed*/ struct _DYOBJ_INST *currentObject;
+	/*bp-0x4*/   /*packed*/ struct _DYOBJ_INST *currentObject;
+	/*bp-0x14*/  /*packed*/ class SpiralScan spiral; // 0x10 bytes
+	/*bp-0x18*/  /*packed*/ struct _GridCoordinates scanLoc;
 
 // LINE 1808:
 	__asm        push   1;
@@ -4258,7 +4258,7 @@ _T88:
 	__asm        je     _T197;
 // LINE 1822:
 // Block start:
-	/*packed*/ class AutomobileClass *pCar;
+	/*bp-0x1c*/  /*packed*/ class AutomobileClass *pCar;
 	__asm        mov    eax, this;
 	__asm        add    eax, 0xC;
 	__asm        cmp    eax, currentObject;
@@ -4356,8 +4356,8 @@ _T197:
 
 // FUNCTION: COPTER_D 0x00504337
 int32_t AutomobileClass::InitializeInstance(int32_t instanceID) {
-	int32_t object;
-	/*packed*/ struct VRObjInfo objectInfo;
+	/*bp-0x24*/  /*packed*/ struct VRObjInfo objectInfo; // 0x24 bytes
+	/*bp-0x28*/  int32_t object;
 
 // LINE 1878:
 	this->autoDynomitor.mesh = 0x0;
@@ -4390,7 +4390,7 @@ _T53:
 	__asm        jmp    _T10d;
 // LINE 1904:
 // Block start:
-	char * objectMemory;
+	/*bp-0x2c*/  char * objectMemory;
 _T6b:
 	__asm        mov    eax, object;
 	__asm        push   eax;
@@ -4575,10 +4575,10 @@ void ResetAllAutomobiles() {
 
 // FUNCTION: COPTER_D 0x005045b6
 int32_t AutomobileClass::CanIPullOver() {
-	/*packed*/ struct Point3d nextpoint;
-	unsigned char y;
-	unsigned char x;
-	/*packed*/ struct _DYOBJ_INST *currentObject;
+	/*bp-0x4*/   /*packed*/ struct _DYOBJ_INST *currentObject;
+	/*bp-0x8*/   unsigned char x;
+	/*bp-0xc*/   unsigned char y;
+	/*bp-0x18*/  /*packed*/ struct Point3d nextpoint; // 0xc bytes
 
 // LINE 2099:
 	__asm        mov    eax, this;
@@ -4824,7 +4824,7 @@ _T2c7:
 	__asm        je     _T2fb;
 // LINE 2135:
 // Block start:
-	/*packed*/ class AutomobileClass *car;
+	/*bp-0x1c*/  /*packed*/ class AutomobileClass *car;
 	__asm        mov    eax, currentObject;
 	__asm        movsx  eax, word ptr [eax+0xE];
 	__asm        mov    eax, cars[0][eax*4];
@@ -4937,7 +4937,7 @@ _T125:
 
 // FUNCTION: COPTER_D 0x005049fe
 int32_t AutomobileClass::CanIPullOut() {
-	/*packed*/ struct _DYOBJ_INST *currentObject;
+	/*bp-0x4*/   /*packed*/ struct _DYOBJ_INST *currentObject;
 
 
 	__asm        mov    eax, this;
@@ -5136,7 +5136,7 @@ _Tfd:
 	__asm        jne    _T238;
 // LINE 2252:
 // Block start:
-	unsigned short tile;
+	/*bp-0x4*/   unsigned short tile;
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x7C];
@@ -5346,7 +5346,7 @@ _T3e0:
 	__asm        jne    _T4da;
 // LINE 2327:
 // Block start:
-	/*packed*/ struct Point3d loc;
+	/*bp-0x10*/  /*packed*/ struct Point3d loc; // 0xc bytes
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x24];
 	__asm        mov    ecx, this;
@@ -5438,8 +5438,8 @@ _T4f2:
 
 // FUNCTION: COPTER_D 0x0050503f
 void AutomobileClass::DoDiagonalRoadFixup() {
-	int32_t roadTile;
-	int32_t diagRoad;
+	/*bp-0x4*/   int32_t diagRoad;
+	/*bp-0x8*/   int32_t roadTile;
 
 // LINE 2362:
 	__asm        mov    eax, this;
@@ -5579,12 +5579,12 @@ _T1eb:
 
 // FUNCTION: COPTER_D 0x00505234
 void AutomobileClass::MoveAuto(int32_t dist) {
-	int32_t xOffset;
-	/*packed*/ struct _CELL_INFO *pCell;
-	int32_t roadTile;
-	int32_t *pRotMatrix[4][4];
-	int32_t zOffset;
-	int32_t diagRoad;
+	/*bp-0x4*/   int32_t diagRoad;
+	/*bp-0x8*/   int32_t zOffset;
+	/*bp-0xc*/   int32_t *pRotMatrix[4][4];
+	/*bp-0x10*/  int32_t roadTile;
+	/*bp-0x14*/  /*packed*/ struct _CELL_INFO *pCell;
+	/*bp-0x18*/  int32_t xOffset;
 
 
 	__asm        mov    eax, this;
@@ -6054,8 +6054,8 @@ int32_t AutomobileClass::CanIDoAUTurn() {
 
 // FUNCTION: COPTER_D 0x0050583b
 void AutomobileClass::DoPullOverStuff(int32_t dist) {
-	/*packed*/ struct Point3d pulloverVector;
-	int32_t PulloverStepSize;
+	/*bp-0x4*/   int32_t PulloverStepSize;
+	/*bp-0x10*/  /*packed*/ struct Point3d pulloverVector; // 0xc bytes
 
 // LINE 2562:
 	__asm        push   0x8000;
@@ -6161,16 +6161,16 @@ _T101:
 
 // FUNCTION: COPTER_D 0x0050598c
 enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dist, /*packed*/ struct _DYOBJ_INST **dyblock) {
-	/*packed*/ struct Point3d collisionPoint;
-	int32_t combinedradius;
-	/*packed*/ struct _GridCoordinates nextLocation;
-	int32_t xdiff;
-	int32_t zdiff;
-	/*packed*/ struct _CELL_INFO *currentCell;
-	/*packed*/ struct _DYOBJ_INST *currentObject;
-	/*packed*/ class AutomobileClass *carblock;
-	/*packed*/ struct _GridCoordinates currentLocation;
-	int32_t ydiff;
+	/*bp-0x4*/   int32_t ydiff;
+	/*bp-0x8*/   /*packed*/ struct _GridCoordinates currentLocation;
+	/*bp-0xc*/   /*packed*/ class AutomobileClass *carblock;
+	/*bp-0x10*/  /*packed*/ struct _DYOBJ_INST *currentObject;
+	/*bp-0x14*/  /*packed*/ struct _CELL_INFO *currentCell;
+	/*bp-0x18*/  int32_t zdiff;
+	/*bp-0x1c*/  int32_t xdiff;
+	/*bp-0x20*/  /*packed*/ struct _GridCoordinates nextLocation;
+	/*bp-0x24*/  int32_t combinedradius;
+	/*bp-0x30*/  /*packed*/ struct Point3d collisionPoint; // 0xc bytes
 
 // LINE 2625:
 	__asm        mov    eax, this;
@@ -6414,8 +6414,8 @@ _T2a0:
 	__asm        je     _T52c;
 // LINE 2680:
 // Block start:
-	/*packed*/ struct _CELL_INFO *cptr;
-	/*packed*/ struct _DYOBJ_INST *currentObject;
+	/*bp-0x34*/  /*packed*/ struct _DYOBJ_INST *currentObject;
+	/*bp-0x38*/  /*packed*/ struct _CELL_INFO *cptr;
 _T2d1:
 	__asm        xor    eax, eax;
 	__asm        mov    al, nextLocation.x;
@@ -6962,7 +6962,7 @@ _T914:
 
 // FUNCTION: COPTER_D 0x005062a7
 int32_t AutomobileClass::AreCarsHeadOn(/*packed*/ struct Point3d *dirvect) {
-	int32_t dotp;
+	/*bp-0x4*/   int32_t dotp;
 
 // LINE 2952:
 	__asm        mov    eax, dirvect;
@@ -7012,9 +7012,9 @@ _T85:
 
 // FUNCTION: COPTER_D 0x00506333
 int32_t AutomobileClass::IsCarOutOfCameraRange() {
-	int32_t xdiff;
-	int32_t dist;
-	int32_t ydiff;
+	/*bp-0x4*/   int32_t ydiff;
+	/*bp-0x8*/   int32_t dist;
+	/*bp-0xc*/   int32_t xdiff;
 
 // LINE 2985:
 	__asm        mov    eax, this;
@@ -7245,8 +7245,8 @@ int32_t AutoMissionStartJam(long mission_id, /*packed*/ struct Point2d *celloc) 
 
 // FUNCTION: COPTER_D 0x005065bf
 int32_t AutomobileClass::MissionStartFire(long mission_id, /*packed*/ struct Point2d *celloc) {
-	/*packed*/ class AutomobileClass *targcar;
-	int32_t currentCarIndex;
+	/*bp-0x4*/   int32_t currentCarIndex;
+	/*bp-0x8*/   /*packed*/ class AutomobileClass *targcar;
 
 // LINE 3128:
 	__asm        mov    currentCarIndex, 0;
@@ -7309,8 +7309,8 @@ _Ta1:
 
 // FUNCTION: COPTER_D 0x00506665
 int32_t AutomobileClass::MissionStartJam(long mission_id, /*packed*/ struct Point2d *celloc) {
-	/*packed*/ class AutomobileClass *targcar;
-	int32_t currentCarIndex;
+	/*bp-0x4*/   int32_t currentCarIndex;
+	/*bp-0x8*/   /*packed*/ class AutomobileClass *targcar;
 
 // LINE 3161:
 	__asm        mov    currentCarIndex, 0;
@@ -7373,8 +7373,8 @@ _Ta1:
 
 // FUNCTION: COPTER_D 0x0050670b
 void AutomobileClass::StartFire(long mission_id) {
-	/*packed*/ struct _MISSION_PARMS mp;
-	/*packed*/ struct Point2d celloc;
+	/*bp-0x8*/   /*packed*/ struct Point2d celloc; // 0x8 bytes
+	/*bp-0x20*/  /*packed*/ struct _MISSION_PARMS mp; // 0x18 bytes
 
 // LINE 3195:
 	__asm        mov    eax, this;
@@ -7475,8 +7475,8 @@ _T147:
 
 // FUNCTION: COPTER_D 0x00506859
 void AutomobileClass::StartJam(long mission_id) {
-	/*packed*/ struct _MISSION_PARMS mp;
-	/*packed*/ struct Point2d celloc;
+	/*bp-0x8*/   /*packed*/ struct Point2d celloc; // 0x8 bytes
+	/*bp-0x20*/  /*packed*/ struct _MISSION_PARMS mp; // 0x18 bytes
 
 // LINE 3249:
 	__asm        mov    eax, this;
@@ -7558,10 +7558,10 @@ _T111:
 
 // FUNCTION: COPTER_D 0x00506971
 void AutomobileClass::RunFireState() {
-	/*packed*/ struct Point2d currpos;
-	/*packed*/ struct _MISSION_PARMS mp;
-	/*packed*/ struct Point3d vec;
-	int32_t mat[4][4];
+	/*bp-0x40*/  int32_t mat[4][4]; // 0x40 bytes
+	/*bp-0x4c*/  /*packed*/ struct Point3d vec; // 0xc bytes
+	/*bp-0x64*/  /*packed*/ struct _MISSION_PARMS mp; // 0x18 bytes
+	/*bp-0x6c*/  /*packed*/ struct Point2d currpos; // 0x8 bytes
 
 // LINE 3298:
 	__asm        xor    eax, eax;
@@ -7767,7 +7767,7 @@ _T259:
 
 // FUNCTION: COPTER_D 0x00506bcf
 void AutomobileClass::RunJamState() {
-	/*packed*/ struct _MISSION_PARMS mp;
+	/*bp-0x18*/  /*packed*/ struct _MISSION_PARMS mp; // 0x18 bytes
 
 // LINE 3375:
 	__asm        mov    ecx, this;
@@ -7825,7 +7825,7 @@ void AutoMissionCancel(long mission_id) {
 
 // FUNCTION: COPTER_D 0x00506c7d
 void AutomobileClass::IveBeenSpotlighted(/*packed*/ struct _DYOBJ_INST *dyhitter) {
-	/*packed*/ struct Point3d spotLoc;
+	/*bp-0xc*/   /*packed*/ struct Point3d spotLoc; // 0xc bytes
 
 // LINE 3433:
 	__asm        mov    eax, this;
@@ -7854,8 +7854,8 @@ _T49:
 
 // FUNCTION: COPTER_D 0x00506ccd
 void AutomobileClass::MissionCancel(long mission_id) {
-	/*packed*/ class AutomobileClass *targcar;
-	int32_t currentCarIndex;
+	/*bp-0x4*/   int32_t currentCarIndex;
+	/*bp-0x8*/   /*packed*/ class AutomobileClass *targcar;
 
 // LINE 3464:
 	__asm        mov    currentCarIndex, 0;
@@ -7908,8 +7908,8 @@ void AutoSetAllHeadlights(int32_t lights_on) {
 
 // FUNCTION: COPTER_D 0x00506d6a
 void AutomobileClass::SetAllHeadlights(int32_t lights_on) {
-	/*packed*/ class AutomobileClass *targcar;
-	int32_t currentCarIndex;
+	/*bp-0x4*/   int32_t currentCarIndex;
+	/*bp-0x8*/   /*packed*/ class AutomobileClass *targcar;
 
 // LINE 3511:
 	__asm        mov    currentCarIndex, 0;
@@ -7949,10 +7949,10 @@ _T60:
 
 // FUNCTION: COPTER_D 0x00506dd4
 void AutomobileClass::TurnOnHeadlight() {
-	/*packed*/ struct VRFaceInfo finfo;
-	int32_t count;
-	int32_t face;
-	/*packed*/ struct VRObjInfo oinfo;
+	/*bp-0x24*/  /*packed*/ struct VRObjInfo oinfo; // 0x24 bytes
+	/*bp-0x28*/  int32_t face;
+	/*bp-0x2c*/  int32_t count;
+	/*bp-0x4c*/  /*packed*/ struct VRFaceInfo finfo; // 0x20 bytes
 
 // LINE 3544:
 	__asm        lea    eax, oinfo.Faces;
@@ -8013,10 +8013,10 @@ _T91:
 
 // FUNCTION: COPTER_D 0x00506e6f
 void AutomobileClass::TurnOffHeadlight() {
-	/*packed*/ struct VRFaceInfo finfo;
-	int32_t count;
-	int32_t face;
-	/*packed*/ struct VRObjInfo oinfo;
+	/*bp-0x24*/  /*packed*/ struct VRObjInfo oinfo; // 0x24 bytes
+	/*bp-0x28*/  int32_t face;
+	/*bp-0x2c*/  int32_t count;
+	/*bp-0x4c*/  /*packed*/ struct VRFaceInfo finfo; // 0x20 bytes
 
 // LINE 3567:
 	__asm        lea    eax, oinfo.Faces;
@@ -8111,9 +8111,9 @@ _T5c:
 
 // FUNCTION: COPTER_D 0x00506f6f
 void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
-	unsigned short tile;
-	enum DirectionTypes validdirs[8];
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
+	/*bp-0x24*/  enum DirectionTypes validdirs[8]; // 0x20 bytes
+	/*bp-0x28*/  unsigned short tile;
 
 // LINE 3616:
 	validdirs[0] = 0x0;
@@ -8631,8 +8631,8 @@ _T188:
 	__asm        je     _T2ec;
 // LINE 3757:
 // Block start:
-	enum DirectionTypes fromConnections;
-	enum DirectionTypes toConnections;
+	/*bp-0x4*/   enum DirectionTypes toConnections;
+	/*bp-0x8*/   enum DirectionTypes fromConnections;
 _T192:
 	None = 0x5b57e8;
 _T199:
@@ -8753,7 +8753,7 @@ _T2f3:
 
 // FUNCTION: COPTER_D 0x00507782
 void AutomobileClass::AdjustCurrentHiwayPosition() {
-	/*packed*/ struct _CELL_INFO *cellPointer;
+	/*bp-0x4*/   /*packed*/ struct _CELL_INFO *cellPointer;
 
 
 	__asm        mov    eax, this;
@@ -8874,13 +8874,13 @@ _T176:
 
 // FUNCTION: COPTER_D 0x0050790c
 void AutomobileClass::AdjustNextHiwayPosition() {
-	/*packed*/ struct _CELL_INFO *cellPointer;
-	unsigned short tile;
-	unsigned short ntile;
-	/*packed*/ struct Point3d nextFineLocation;
-	int32_t xdiff;
-	int32_t ydiff;
-	enum DirectionTypes connectionType;
+	/*bp-0x4*/   enum DirectionTypes connectionType;
+	/*bp-0x8*/   int32_t ydiff;
+	/*bp-0xc*/   int32_t xdiff;
+	/*bp-0x18*/  /*packed*/ struct Point3d nextFineLocation; // 0xc bytes
+	/*bp-0x1c*/  unsigned short ntile;
+	/*bp-0x20*/  unsigned short tile;
+	/*bp-0x24*/  /*packed*/ struct _CELL_INFO *cellPointer;
 
 
 	__asm        mov    eax, this;
@@ -9555,12 +9555,12 @@ _T7fb:
 
 // FUNCTION: COPTER_D 0x00508180
 enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(/*packed*/ struct _GridCoordinates& point) {
-	unsigned short southTile;
-	unsigned short westTile;
-	unsigned short currentTile;
-	unsigned short eastTile;
-	long intersection;
-	unsigned short northTile;
+	/*bp-0x4*/   unsigned short northTile;
+	/*bp-0x8*/   long intersection;
+	/*bp-0xc*/   unsigned short eastTile;
+	/*bp-0x10*/  unsigned short currentTile;
+	/*bp-0x14*/  unsigned short westTile;
+	/*bp-0x18*/  unsigned short southTile;
 
 // LINE 4045:
 	this->northCell.x = point.x;
@@ -10653,7 +10653,7 @@ _Td1:
 
 // FUNCTION: COPTER_D 0x00508f54
 void AutomobileClass::MoveForwardOnHiway() {
-	int32_t distance;
+	/*bp-0x4*/   int32_t distance;
 
 // LINE 4490:
 	__asm        mov    eax, LoopTime;
@@ -10736,8 +10736,8 @@ int32_t S3AutoMIFFSave(void * __ptr32 miffWriter) {
 
 // FUNCTION: COPTER_D 0x0050903f
 int32_t AutomobileClass::MIFFLoad(void * __ptr32 miffReader) {
-	int32_t i;
-	int32_t ret;
+	/*bp-0x4*/   int32_t ret;
+	/*bp-0x8*/   int32_t i;
 
 // LINE 4549:
 	__asm        push   0x344;
@@ -10802,8 +10802,8 @@ _Tb7:
 
 // FUNCTION: COPTER_D 0x005090fb
 int32_t AutomobileClass::MIFFSave(void * __ptr32 miffWriter) {
-	int32_t i;
-	int32_t ret;
+	/*bp-0x4*/   int32_t ret;
+	/*bp-0x8*/   int32_t i;
 
 // LINE 4580:
 	__asm        mov    i, 0;
@@ -10972,7 +10972,7 @@ _T2ff:
 
 // FUNCTION: COPTER_D 0x00509489
 void AutomobileClass::LoadSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) {
-	unsigned char yindex;
+	/*bp-0x4*/   unsigned char yindex;
 
 // LINE 4670:
 	__asm        mov    eax, sd;
@@ -11273,9 +11273,9 @@ void S3AutoSoundDistReset() {
 
 // FUNCTION: COPTER_D 0x00509983
 void S3AutoSoundDriver() {
-	int32_t vol_adj;
-	/*packed*/ struct Point3d loc;
-	int32_t dist;
+	/*bp-0x4*/   int32_t dist;
+	/*bp-0x10*/  /*packed*/ struct Point3d loc; // 0xc bytes
+	/*bp-0x14*/  int32_t vol_adj;
 
 // LINE 4794:
 	dist = AutomobileClass::fireSirenDist;
@@ -11603,14 +11603,14 @@ _T36a:
 
 // FUNCTION: COPTER_D 0x00509cf7
 void AutomobileClass::ChangeAutoColor() {
-	int32_t base;
-	int32_t index;
-	/*packed*/ struct VRFaceInfo finfo;
-	int32_t count;
-	int32_t color;
-	int32_t face;
-	int32_t newbase;
-	/*packed*/ struct VRObjInfo oinfo;
+	/*bp-0x24*/  /*packed*/ struct VRObjInfo oinfo; // 0x24 bytes
+	/*bp-0x28*/  int32_t newbase;
+	/*bp-0x2c*/  int32_t face;
+	/*bp-0x30*/  int32_t color;
+	/*bp-0x34*/  int32_t count;
+	/*bp-0x54*/  /*packed*/ struct VRFaceInfo finfo; // 0x20 bytes
+	/*bp-0x58*/  int32_t index;
+	/*bp-0x5c*/  int32_t base;
 
 // LINE 4935:
 	__asm        call   rand;

@@ -274,8 +274,8 @@ private:
 // Contribution: 1:000bb460-000bc660 Module: 2, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004bc460
 void MDate::MDate() {
-	/*packed*/ struct tm *now;
-	long clk;
+	/*bp-0x4*/   long clk;
+	/*bp-0x8*/   /*packed*/ struct tm *now;
 
 
 	__asm        mov    eax, this;
@@ -405,7 +405,7 @@ void MDate::MDate(uint32_t day, uint32_t month, uint32_t year) {
 
 // FUNCTION: COPTER_D 0x004bc5d1
 enum MDate::HowToPrint MDate::SetPrintOption(enum MDate::HowToPrint h) {
-	enum MDate::HowToPrint oldoption;
+	/*bp-0x4*/   enum MDate::HowToPrint oldoption;
 
 // LINE 137:
 	oldoption = this->PrintOption;
@@ -461,7 +461,7 @@ uint32_t MDate::DayOfWeek(char * nameOfDay) {
 
 // FUNCTION: COPTER_D 0x004bc673
 static int32_t FindMatch(char * str, char * *candidates, int32_t icand) {
-	uint32_t len;
+	/*bp-0x4*/   uint32_t len;
 
 // LINE 56:
 	__asm        mov    eax, str;
@@ -503,7 +503,7 @@ _T57:
 
 // FUNCTION: COPTER_D 0x004bc6d7
 int32_t MDate::DayWithinMonth(uint32_t month, uint32_t day, uint32_t year) {
-	uint32_t d;
+	/*bp-0x4*/   uint32_t d;
 
 // LINE 182:
 	__asm        cmp    day, 0;
@@ -596,8 +596,8 @@ uint32_t MDate::IndexOfMonth(char * nameOfMonth) {
 
 // FUNCTION: COPTER_D 0x004bc7c6
 unsigned long MDate::Jday(uint32_t m, uint32_t d, uint32_t y) {
-	unsigned long ya;
-	unsigned long c;
+	/*bp-0x4*/   unsigned long c;
+	/*bp-0x8*/   unsigned long ya;
 
 // LINE 235:
 	__asm        cmp    y, 0x63;
@@ -792,9 +792,9 @@ uint32_t MDate::Day() {
 
 // FUNCTION: COPTER_D 0x004bc9d0
 uint32_t MDate::DayOfMonth() {
-	uint32_t m;
-	uint32_t y;
-	uint32_t d;
+	/*bp-0x4*/   uint32_t d;
+	/*bp-0x8*/   uint32_t y;
+	/*bp-0xc*/   uint32_t m;
 
 // LINE 322:
 	__asm        lea    eax, y;
@@ -813,7 +813,7 @@ uint32_t MDate::DayOfMonth() {
 
 // FUNCTION: COPTER_D 0x004bc9fd
 uint32_t MDate::FirstDayOfMonth(uint32_t month) {
-	uint32_t firstDay;
+	/*bp-0x4*/   uint32_t firstDay;
 
 // LINE 337:
 	__asm        cmp    month, 1;
@@ -873,8 +873,8 @@ uint32_t MDate::Hash() {
 
 // FUNCTION: COPTER_D 0x004bcaa0
 void MDate::Mdy(uint32_t& m, uint32_t& D, uint32_t& y) {
-	unsigned long j;
-	unsigned long d;
+	/*bp-0x4*/   unsigned long d;
+	/*bp-0x8*/   unsigned long j;
 
 // LINE 370:
 	__asm        mov    eax, this;
@@ -1061,9 +1061,9 @@ _T2f:
 
 // FUNCTION: COPTER_D 0x004bcca1
 uint32_t MDate::Month() {
-	uint32_t m;
-	uint32_t y;
-	uint32_t d;
+	/*bp-0x4*/   uint32_t d;
+	/*bp-0x8*/   uint32_t y;
+	/*bp-0xc*/   uint32_t m;
 
 // LINE 421:
 	__asm        lea    eax, y;
@@ -1099,8 +1099,8 @@ uint32_t MDate::Month() {
 
 // FUNCTION: COPTER_D 0x004bcd02
 /*packed*/ class MDate MDate::Previous(uint32_t desiredDayOfWeek) {
-	unsigned long j;
-	uint32_t thisDayOfWeek;
+	/*bp-0x4*/   uint32_t thisDayOfWeek;
+	/*bp-0x8*/   unsigned long j;
 
 // LINE 451:
 	__asm        dec    desiredDayOfWeek;
@@ -1166,9 +1166,9 @@ uint32_t MDate::WeekDay() {
 
 // FUNCTION: COPTER_D 0x004bcdb1
 uint32_t MDate::Year() {
-	uint32_t m;
-	uint32_t y;
-	uint32_t d;
+	/*bp-0x4*/   uint32_t d;
+	/*bp-0x8*/   uint32_t y;
+	/*bp-0xc*/   uint32_t m;
 
 // LINE 486:
 	__asm        lea    eax, y;
@@ -1200,7 +1200,7 @@ uint32_t MDate::YearLastTwoDigits() {
 
 // FUNCTION: COPTER_D 0x004bce07
 char * MDate::PrintString(char * szDate) {
-	/*unpacked*/ class ostrstream strtemp;
+	/*bp-0x58*/  /*unpacked*/ class ostrstream strtemp; // 0x58 bytes
 
 // LINE 511:
 	__asm        push   1;
@@ -1239,9 +1239,9 @@ char * MDate::PrintString(char * szDate) {
 
 // FUNCTION: COPTER_D 0x004bce73
 void MDate::ParseFrom(/*unpacked*/ class istream& s) {
-	uint32_t m;
-	uint32_t y;
-	uint32_t d;
+	/*bp-0x4*/   uint32_t d;
+	/*bp-0x8*/   uint32_t y;
+	/*bp-0xc*/   uint32_t m;
 
 // LINE 579:
 	this->Julnum = 0x0;
@@ -1525,7 +1525,7 @@ _T2fb:
 
 // FUNCTION: COPTER_D 0x004bd175
 static void SkipDelim(/*unpacked*/ class istream& strm) {
-	char c;
+	/*bp-0x4*/   char c;
 
 // LINE 527:
 	__asm        mov    eax, strm;
@@ -1620,9 +1620,9 @@ _T102:
 
 // FUNCTION: COPTER_D 0x004bd27c
 static char * ParseMonth(/*unpacked*/ class istream& s) {
-	char c;
-	static char month[12];
-	char * p;
+	/*bp-0x4*/   char * p;
+// StaticLocal: 0x006069a8	static char month[12];
+	/*bp-0x8*/   char c;
 
 // LINE 549:
 	p = 0x6069a8;
@@ -1726,8 +1726,8 @@ _T109:
 
 // FUNCTION: COPTER_D 0x004bd39a
 /*unpacked*/ class ostream& operator<<(/*unpacked*/ class ostream& s, const /*packed*/ class MDate& d) {
-	/*unpacked*/ class ostrstream out;
-	char buf[80];
+	/*bp-0x50*/  char buf[80]; // 0x50 bytes
+	/*bp-0xa8*/  /*unpacked*/ class ostrstream out; // 0x58 bytes
 
 // LINE 623:
 	__asm        push   1;

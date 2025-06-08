@@ -145,7 +145,7 @@ struct _CELL_INFO{ // packed(0x18 bytes) TI: 0x1b03
 // Contribution: 1:000f9090-000fd784 Module: 173, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004fa090
 void S3MissionReset() {
-	long i;
+	/*bp-0x4*/   long i;
 
 // LINE 138:
 	S_log.szLogString = 0x6bf060;
@@ -202,8 +202,8 @@ _T4a:
 
 // FUNCTION: COPTER_D 0x004fa175
 void ConvertCitySettingsToSteppedPercentages(/*packed*/ struct tagCitySettings *citySettingsIn, /*packed*/ struct tagCitySettings *citySettingsOut) {
-	float fSumOfAllValues;
-	float fMultiplier;
+	/*bp-0x4*/   float fMultiplier;
+	/*bp-0x8*/   float fSumOfAllValues;
 
 // LINE 182:
 	__asm        mov    eax, citySettingsIn;
@@ -361,10 +361,10 @@ _T1c1:
 
 // FUNCTION: COPTER_D 0x004fa33b
 void S3MissionGenerator() {
-	long pct;
-	/*packed*/ struct tagCitySettings *currentCitySettings;
-	/*packed*/ struct tagCitySettings currentCitySettingPercentages;
-	long adjustor;
+	/*bp-0x4*/   long adjustor;
+	/*bp-0x28*/  /*packed*/ struct tagCitySettings currentCitySettingPercentages; // 0x24 bytes
+	/*bp-0x2c*/  /*packed*/ struct tagCitySettings *currentCitySettings;
+	/*bp-0x30*/  long pct;
 
 // LINE 243:
 	__asm        call   GetCurrentCitySettings;
@@ -738,19 +738,19 @@ _T3dd:
 
 // FUNCTION: COPTER_D 0x004fa71d
 void S3MissionDriver() {
-	int32_t personriot_done;
-	/*packed*/ struct MISSION_DATA *md;
-	int32_t persontrans_done;
-	int32_t personfire_done;
-	int32_t speeder_done;
-	int32_t debris_done;
-	int32_t criminal_done;
-	long i;
-	int32_t personmed_done;
-	int32_t fires_done;
-	int32_t vehiclefire_done;
-	int32_t personresc_done;
-	int32_t vehiclejam_done;
+	/*bp-0x4*/   int32_t vehiclejam_done;
+	/*bp-0x8*/   int32_t personresc_done;
+	/*bp-0xc*/   int32_t vehiclefire_done;
+	/*bp-0x10*/  int32_t fires_done;
+	/*bp-0x14*/  int32_t personmed_done;
+	/*bp-0x18*/  long i;
+	/*bp-0x1c*/  int32_t criminal_done;
+	/*bp-0x20*/  int32_t debris_done;
+	/*bp-0x24*/  int32_t speeder_done;
+	/*bp-0x28*/  int32_t personfire_done;
+	/*bp-0x2c*/  int32_t persontrans_done;
+	/*bp-0x30*/  /*packed*/ struct MISSION_DATA *md;
+	/*bp-0x34*/  int32_t personriot_done;
 
 // LINE 437:
 	__asm        mov    i, 0;
@@ -1169,12 +1169,12 @@ _T54b:
 
 // FUNCTION: COPTER_D 0x004fac6d
 long S3MissionStart(long x, long y, long type) {
-	/*packed*/ struct MISSION_DATA *md;
-	int32_t numtostart;
-	int32_t startthismission;
-	long i;
-	int32_t count;
-	/*packed*/ struct _CELL_FIRE_DATA *cfd;
+	/*bp-0x4*/   /*packed*/ struct _CELL_FIRE_DATA *cfd;
+	/*bp-0x8*/   int32_t count;
+	/*bp-0xc*/   long i;
+	/*bp-0x10*/  int32_t startthismission;
+	/*bp-0x14*/  int32_t numtostart;
+	/*bp-0x18*/  /*packed*/ struct MISSION_DATA *md;
 
 // LINE 659:
 	startthismission = 0x0;
@@ -1252,9 +1252,9 @@ _T7e:
 	__asm        jmp    _Td62;
 // LINE 693:
 // Block start:
-	int32_t numtostart;
-	int32_t count;
-	int32_t numstarted;
+	/*bp-0x1c*/  int32_t numstarted;
+	/*bp-0x20*/  int32_t count;
+	/*bp-0x24*/  int32_t numtostart;
 _T107:
 	__asm        push   0x1000;
 	__asm        call   S3MissionGetByType;
@@ -1510,7 +1510,7 @@ _T3d1:
 	__asm        jmp    _Te60;
 // LINE 779:
 // Block start:
-	/*packed*/ struct _DYOBJ_INST *boat;
+	/*bp-0x28*/  /*packed*/ struct _DYOBJ_INST *boat;
 _T3d6:
 	__asm        push   0x12C0000;
 	__asm        mov    eax, md;
@@ -2464,8 +2464,8 @@ _Tf04:
 
 // FUNCTION: COPTER_D 0x004fbb76
 /*packed*/ struct Point2d* S3MissionGetMapLoc(long key) {
-	/*packed*/ struct MISSION_DATA *md;
-	long mission_id;
+	/*bp-0x4*/   long mission_id;
+	/*bp-0x8*/   /*packed*/ struct MISSION_DATA *md;
 
 // LINE 1075:
 	__asm        mov    eax, key;
@@ -2499,8 +2499,8 @@ _T4f:
 
 // FUNCTION: COPTER_D 0x004fbbca
 /*packed*/ struct Point2d* S3MissionGetDestMapLoc(long key) {
-	/*packed*/ struct MISSION_DATA *md;
-	long mission_id;
+	/*bp-0x4*/   long mission_id;
+	/*bp-0x8*/   /*packed*/ struct MISSION_DATA *md;
 
 // LINE 1102:
 	__asm        mov    eax, key;
@@ -2542,8 +2542,8 @@ _T63:
 
 // FUNCTION: COPTER_D 0x004fbc32
 /*packed*/ struct Point2d* S3MissionGetPickupLoc(long key) {
-	/*packed*/ struct MISSION_DATA *md;
-	long mission_id;
+	/*bp-0x4*/   long mission_id;
+	/*bp-0x8*/   /*packed*/ struct MISSION_DATA *md;
 
 // LINE 1133:
 	__asm        mov    eax, key;
@@ -2652,8 +2652,8 @@ _T3d:
 
 // FUNCTION: COPTER_D 0x004fbd4a
 void S3MissionUpdate(/*packed*/ struct _MISSION_PARMS *mp) {
-	/*packed*/ struct MISSION_DATA *md;
-	long mission_id;
+	/*bp-0x4*/   long mission_id;
+	/*bp-0x8*/   /*packed*/ struct MISSION_DATA *md;
 
 // LINE 1220:
 	__asm        lea    eax, mission_id;
@@ -3055,8 +3055,8 @@ _T4c9:
 
 // FUNCTION: COPTER_D 0x004fc218
 void S3MissionEnd(long mission_id) {
-	/*packed*/ struct MISSION_DATA *md;
-	long i;
+	/*bp-0x4*/   long i;
+	/*bp-0x8*/   /*packed*/ struct MISSION_DATA *md;
 
 // LINE 1400:
 	__asm        mov    eax, mission_id;
@@ -3124,7 +3124,7 @@ _Tbe:
 
 // FUNCTION: COPTER_D 0x004fc2db
 /*packed*/ struct MISSION_DATA* S3MissionGetByID(long key) {
-	long mission_id;
+	/*bp-0x4*/   long mission_id;
 
 // LINE 1436:
 	__asm        mov    eax, key;
@@ -3153,7 +3153,7 @@ _T43:
 
 // FUNCTION: COPTER_D 0x004fc323
 long S3MissionGetByType(long mission_type) {
-	long count;
+	/*bp-0x4*/   long count;
 
 // LINE 1448:
 	__asm        mov    count, 0;
@@ -3206,11 +3206,11 @@ _T75:
 
 // FUNCTION: COPTER_D 0x004fc3b2
 void S3MissionGenerate(long type) {
-	long tile;
-	/*packed*/ struct _CELL_INFO *cptr;
-	long y;
-	long i;
-	long x;
+	/*bp-0x4*/   long x;
+	/*bp-0x8*/   long i;
+	/*bp-0xc*/   long y;
+	/*bp-0x10*/  /*packed*/ struct _CELL_INFO *cptr;
+	/*bp-0x14*/  long tile;
 
 // LINE 1484:
 	__asm        mov    eax, type;
@@ -3694,8 +3694,8 @@ _T4e4:
 
 // FUNCTION: COPTER_D 0x004fc89b
 void S3MissionSetCurrNext() {
-	/*packed*/ struct MISSION_DATA *md;
-	long i;
+	/*bp-0x4*/   long i;
+	/*bp-0x8*/   /*packed*/ struct MISSION_DATA *md;
 
 // LINE 1601:
 	md = 0x0;
@@ -3791,8 +3791,8 @@ _T10c:
 
 // FUNCTION: COPTER_D 0x004fc9ac
 void S3MissionSetCurrPrev() {
-	/*packed*/ struct MISSION_DATA *md;
-	long i;
+	/*bp-0x4*/   long i;
+	/*bp-0x8*/   /*packed*/ struct MISSION_DATA *md;
 
 // LINE 1636:
 	md = 0x0;
@@ -3888,8 +3888,8 @@ _T10c:
 
 // FUNCTION: COPTER_D 0x004fcabd
 int32_t S3MissionIsType(long key, long mission_type) {
-	/*packed*/ struct MISSION_DATA *md;
-	long mission_id;
+	/*bp-0x4*/   long mission_id;
+	/*bp-0x8*/   /*packed*/ struct MISSION_DATA *md;
 
 // LINE 1674:
 	__asm        mov    eax, key;
@@ -4010,7 +4010,7 @@ _Tab:
 
 // FUNCTION: COPTER_D 0x004fcbea
 void S3MissionCancel(long mission_id) {
-	/*packed*/ struct MISSION_DATA *md;
+	/*bp-0x4*/   /*packed*/ struct MISSION_DATA *md;
 
 // LINE 1844:
 	__asm        mov    eax, mission_id;
@@ -4098,8 +4098,8 @@ _Te1:
 
 // FUNCTION: COPTER_D 0x004fccd0
 long S3MissionStartDirect(long type) {
-	/*packed*/ struct MISSION_DATA *md;
-	long i;
+	/*bp-0x4*/   long i;
+	/*bp-0x8*/   /*packed*/ struct MISSION_DATA *md;
 
 // LINE 1898:
 	__asm        mov    i, 0;
@@ -4433,12 +4433,12 @@ _T411:
 
 // FUNCTION: COPTER_D 0x004fd0e6
 void S3MissionScoreUpdate(/*packed*/ struct _MISSION_PARMS *mp, long * mission_id) {
-	/*packed*/ struct MISSION_DATA *md;
-	int32_t points;
-	char * mname;
-	int32_t key;
-	int32_t money;
-	char * reason;
+	/*bp-0x4*/   char * reason;
+	/*bp-0x8*/   int32_t money;
+	/*bp-0xc*/   int32_t key;
+	/*bp-0x10*/  char * mname;
+	/*bp-0x14*/  int32_t points;
+	/*bp-0x18*/  /*packed*/ struct MISSION_DATA *md;
 
 // LINE 2014:
 	mname = 0x5b5098;
@@ -4954,9 +4954,9 @@ _T66a:
 
 // FUNCTION: COPTER_D 0x004fd755
 void S3MissionScoreEnd(/*packed*/ struct MISSION_DATA *md) {
-	long total_money;
-	int32_t timetmp;
-	long total_pts;
+	/*bp-0x4*/   long total_pts;
+	/*bp-0x8*/   int32_t timetmp;
+	/*bp-0xc*/   long total_money;
 
 // LINE 2226:
 	total_pts = 0x0;
@@ -5376,8 +5376,8 @@ void S3MissionTweakInit() {
 
 // FUNCTION: COPTER_D 0x004fdc2d
 long S3MissionGetIDByKey(long key) {
-	/*packed*/ struct MISSION_DATA *md;
-	long i;
+	/*bp-0x4*/   long i;
+	/*bp-0x8*/   /*packed*/ struct MISSION_DATA *md;
 
 // LINE 2440:
 	__asm        cmp    key, 0xFFFFFFFF;
@@ -5456,9 +5456,9 @@ _T3b:
 
 // FUNCTION: COPTER_D 0x004fdcfb
 int32_t S3MissionMIFFLoad(void * __ptr32 miffReader) {
-	/*packed*/ struct MISSION_DATA *md;
-	long i;
-	long ret;
+	/*bp-0x4*/   long ret;
+	/*bp-0x8*/   long i;
+	/*bp-0xc*/   /*packed*/ struct MISSION_DATA *md;
 
 // LINE 2494:
 	__asm        push   0x1910;
@@ -5521,7 +5521,7 @@ _Tad:
 
 // FUNCTION: COPTER_D 0x004fddad
 int32_t S3MissionMIFFSave(void * __ptr32 miffWriter) {
-	long ret;
+	/*bp-0x4*/   long ret;
 
 // LINE 2523:
 	__asm        push   0x1910;
@@ -5549,9 +5549,9 @@ _T43:
 
 // FUNCTION: COPTER_D 0x004fddf5
 void S3MissionDispatch(long x, long y, long type) {
-	long sid3;
-	long sid2;
-	long sid1;
+	/*bp-0x4*/   long sid1;
+	/*bp-0x8*/   long sid2;
+	/*bp-0xc*/   long sid3;
 
 // LINE 2555:
 	sid1 = 0xffffffff;

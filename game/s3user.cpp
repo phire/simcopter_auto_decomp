@@ -257,7 +257,7 @@ _T31:
 
 // FUNCTION: COPTER_D 0x004290ab
 void SetCurrentCitySettings(/*packed*/ struct tagCitySettings *newCitySettings) {
-	/*packed*/ struct tagCitySettings *tempCitySettings;
+	/*bp-0x4*/   /*packed*/ struct tagCitySettings *tempCitySettings;
 
 // LINE 157:
 	__asm        call   GetCurrentCitySettings;
@@ -432,10 +432,10 @@ void InitializeAllUserInfo() {
 
 // FUNCTION: COPTER_D 0x004292ec
 void CareerCityTweakInit() {
-	const int32_t nPvals;
-	int32_t * pvals[9];
-	int32_t i;
-	/*packed*/ struct tagCareerCityInfo *currentCareerCityInfo;
+	/*bp-0x4*/   /*packed*/ struct tagCareerCityInfo *currentCareerCityInfo;
+	/*bp-0x8*/   int32_t i;
+	/*bp-0x2c*/  int32_t * pvals[9]; // 0x24 bytes
+	/*bp-0x30*/  const int32_t nPvals;
 
 // LINE 268:
 	nPvals = 0x9;
@@ -507,7 +507,7 @@ _Ta5:
 
 // FUNCTION: COPTER_D 0x0042939b
 void SetUpNewCareerCity(long lNewCareerCityIndex) {
-	char szFullCityFileName[256];
+	/*bp-0x100*/ char szFullCityFileName[256]; // 0x100 bytes
 
 // LINE 303:
 	__asm        cmp    lNewCareerCityIndex, 0x1F;
@@ -634,7 +634,7 @@ _T1a6:
 
 // FUNCTION: COPTER_D 0x00429582
 void SetUpNewUserCity(char * szUserCityPath) {
-	char * chPrefData;
+	/*bp-0x4*/   char * chPrefData;
 
 // LINE 348:
 	__asm        mov    eax, szUserCityPath;
@@ -764,8 +764,8 @@ _T19d:
 
 // FUNCTION: COPTER_D 0x00429760
 void MoveToNextCareerCity(long lNewCareerCityIndex) {
-	char szFullCityFileName[256];
-	long lOriginalIndex;
+	/*bp-0x4*/   long lOriginalIndex;
+	/*bp-0x104*/ char szFullCityFileName[256]; // 0x100 bytes
 
 // LINE 395:
 	lOriginalIndex = gCurrentCareerCityInfo.lCurrentCityIndex;
@@ -871,7 +871,7 @@ _T154:
 
 // FUNCTION: COPTER_D 0x004298d7
 void InitializeAllCareerCitiesInfo() {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 // LINE 421:
 	gAllCareerCities[0].lPrevCities[0] = 0xffffffff;

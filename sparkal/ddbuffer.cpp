@@ -575,11 +575,11 @@ void CBackBuffer::CBackBuffer() {
 
 // FUNCTION: COPTER_D 0x0046e6df
 void CBackBuffer::CBackBuffer(char * imageFileName) {
-	int32_t nFileNameLength;
-	/*packed*/ struct tagBITMAPINFOHEADER biHeader;
-	long ddrval;
-	/*packed*/ struct tagBITMAPFILEHEADER bfHeader;
-	/*packed*/ class PFile *fileImage;
+	/*bp-0x4*/   /*packed*/ class PFile *fileImage;
+	/*bp-0x14*/  /*packed*/ struct tagBITMAPFILEHEADER bfHeader; // 0xe bytes
+	/*bp-0x18*/  long ddrval;
+	/*bp-0x40*/  /*packed*/ struct tagBITMAPINFOHEADER biHeader; // 0x28 bytes
+	/*bp-0x44*/  int32_t nFileNameLength;
 
 
 	__asm        mov    ecx, this;
@@ -837,7 +837,7 @@ _T31d:
 
 // FUNCTION: COPTER_D 0x0046ea06
 void CBackBuffer::CBackBuffer(long Width, long Height, const /*packed*/ struct SparkalColor *__formal) {
-	long ddrval;
+	/*bp-0x4*/   long ddrval;
 
 
 	__asm        mov    ecx, this;
@@ -1131,15 +1131,15 @@ _T146:
 
 // FUNCTION: COPTER_D 0x0046edca
 unsigned long CBackBuffer::Load() {
-	/*packed*/ struct tagBITMAPINFOHEADER biHeader;
-	/*packed*/ struct tagRGBQUAD biColors[256];
-	int32_t i;
-	unsigned char * biData;
-	/*packed*/ struct tagBITMAPFILEHEADER bfHeader;
-	int32_t nPosition;
-	/*packed*/ class PFile *fileImage;
-	int32_t nFileLength;
-	int32_t nBytesRead;
+	/*bp-0x4*/   int32_t nBytesRead;
+	/*bp-0x8*/   int32_t nFileLength;
+	/*bp-0xc*/   /*packed*/ class PFile *fileImage;
+	/*bp-0x10*/  int32_t nPosition;
+	/*bp-0x20*/  /*packed*/ struct tagBITMAPFILEHEADER bfHeader; // 0xe bytes
+	/*bp-0x24*/  unsigned char * biData;
+	/*bp-0x28*/  int32_t i;
+	/*bp-0x428*/ /*packed*/ struct tagRGBQUAD biColors[256]; // 0x400 bytes
+	/*bp-0x450*/ /*packed*/ struct tagBITMAPINFOHEADER biHeader; // 0x28 bytes
 
 // LINE 316:
 	__asm        push   0x110;
@@ -1436,12 +1436,12 @@ _T3ee:
 
 // FUNCTION: COPTER_D 0x0046f1bd
 unsigned long CBackBuffer::DrawBufferText(char * pText, unsigned long Style, long * pRectLeft, long * pRectTop, long * pRectRight, long * pRectBottom, /*packed*/ class MFont *mfontToUse) {
-	/*packed*/ struct tagRECT rectText;
-	/*packed*/ struct IDirectDrawSurface *pOurSurface;
-	void * __ptr32 hdcSurface;
-	long ddrval;
-	uint32_t nFormat;
-	void * __ptr32 hFontOriginal;
+	/*bp-0x4*/   void * __ptr32 hFontOriginal;
+	/*bp-0x8*/   uint32_t nFormat;
+	/*bp-0xc*/   long ddrval;
+	/*bp-0x10*/  void * __ptr32 hdcSurface;
+	/*bp-0x14*/  /*packed*/ struct IDirectDrawSurface *pOurSurface;
+	/*bp-0x24*/  /*packed*/ struct tagRECT rectText; // 0x10 bytes
 
 // LINE 389:
 	__asm        mov    eax, this;
@@ -1680,11 +1680,11 @@ _T23f:
 
 // FUNCTION: COPTER_D 0x0046f403
 unsigned long CBackBuffer::DrawBufferText(char * pText, long nTextLength, unsigned long Style, const /*packed*/ class MRect& rectText, /*packed*/ class MFont *mfontToUse) {
-	/*packed*/ struct IDirectDrawSurface *pOurSurface;
-	void * __ptr32 hdcSurface;
-	long ddrval;
-	uint32_t nFormat;
-	void * __ptr32 hFontOriginal;
+	/*bp-0x4*/   void * __ptr32 hFontOriginal;
+	/*bp-0x8*/   uint32_t nFormat;
+	/*bp-0xc*/   long ddrval;
+	/*bp-0x10*/  void * __ptr32 hdcSurface;
+	/*bp-0x14*/  /*packed*/ struct IDirectDrawSurface *pOurSurface;
 
 // LINE 468:
 	__asm        mov    eax, this;
@@ -1866,12 +1866,12 @@ _T1bc:
 
 // FUNCTION: COPTER_D 0x0046f5c6
 unsigned long CBackBuffer::DrawLine(long nStartX, long nStartY, long nEndX, long nEndY, long nThickness) {
-	void * __ptr32 hPenOld;
-	/*packed*/ struct IDirectDrawSurface *pOurSurface;
-	void * __ptr32 hdcSurface;
-	long ddrval;
-	/*packed*/ struct tagPOINT ptPositionOld;
-	unsigned long crPen;
+	/*bp-0x4*/   unsigned long crPen;
+	/*bp-0xc*/   /*packed*/ struct tagPOINT ptPositionOld; // 0x8 bytes
+	/*bp-0x10*/  long ddrval;
+	/*bp-0x14*/  void * __ptr32 hdcSurface;
+	/*bp-0x18*/  /*packed*/ struct IDirectDrawSurface *pOurSurface;
+	/*bp-0x1c*/  void * __ptr32 hPenOld;
 
 // LINE 546:
 	__asm        mov    eax, this;
@@ -2050,7 +2050,7 @@ _T1ee:
 
 // FUNCTION: COPTER_D 0x0046f7bb
 unsigned long CBackBuffer::Swap(/*unpacked*/ class CSparkalWindow *pDest, long DestLeft, long DestTop) {
-	long ddrval;
+	/*bp-0x4*/   long ddrval;
 
 // LINE 602:
 	__asm        mov    eax, this;
@@ -2092,11 +2092,11 @@ _T66:
 
 // FUNCTION: COPTER_D 0x0046f828
 unsigned long CBackBuffer::SwapRect(/*unpacked*/ class CSparkalWindow *pDest, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom, long DestLeft, long DestTop) {
-	/*packed*/ struct IDirectDrawSurface *pOurSurface;
-	/*packed*/ struct IDirectDrawSurface *pDestSurface;
-	/*packed*/ struct tagRECT destRect;
-	/*packed*/ struct _DDBLTFX ddbltfx;
-	/*packed*/ struct tagRECT srcRect;
+	/*bp-0x10*/  /*packed*/ struct tagRECT srcRect; // 0x10 bytes
+	/*bp-0x74*/  /*packed*/ struct _DDBLTFX ddbltfx; // 0x64 bytes
+	/*bp-0x84*/  /*packed*/ struct tagRECT destRect; // 0x10 bytes
+	/*bp-0x88*/  /*packed*/ struct IDirectDrawSurface *pDestSurface;
+	/*bp-0x8c*/  /*packed*/ struct IDirectDrawSurface *pOurSurface;
 
 // LINE 634:
 	__asm        mov    eax, this;
@@ -2186,14 +2186,14 @@ _T119:
 
 // FUNCTION: COPTER_D 0x0046f948
 unsigned long CBackBuffer::Compose(/*packed*/ class IFlatImage *pDestImage, long DestLeft, long DestTop, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
-	/*packed*/ struct IDirectDrawSurface *pOurSurface;
-	long ddrval;
-	int32_t nOverhangDistance;
-	/*packed*/ struct IDirectDrawSurface *pDestSurface;
-	unsigned long ddBltFlags;
-	/*packed*/ struct tagRECT destRect;
-	/*packed*/ struct _DDBLTFX ddbltfx;
-	/*packed*/ struct tagRECT srcRect;
+	/*bp-0x10*/  /*packed*/ struct tagRECT srcRect; // 0x10 bytes
+	/*bp-0x74*/  /*packed*/ struct _DDBLTFX ddbltfx; // 0x64 bytes
+	/*bp-0x84*/  /*packed*/ struct tagRECT destRect; // 0x10 bytes
+	/*bp-0x88*/  unsigned long ddBltFlags;
+	/*bp-0x8c*/  /*packed*/ struct IDirectDrawSurface *pDestSurface;
+	/*bp-0x90*/  int32_t nOverhangDistance;
+	/*bp-0x94*/  long ddrval;
+	/*bp-0x98*/  /*packed*/ struct IDirectDrawSurface *pOurSurface;
 
 // LINE 682:
 	__asm        jmp    near ptr 0x0046F95F;
@@ -2393,13 +2393,13 @@ _T262:
 
 // FUNCTION: COPTER_D 0x0046fbb1
 unsigned long CBackBuffer::ComposeNoClip(/*packed*/ class IFlatImage *pDestImage, long DestLeft, long DestTop, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
-	/*packed*/ struct IDirectDrawSurface *pOurSurface;
-	long ddrval;
-	/*packed*/ struct IDirectDrawSurface *pDestSurface;
-	unsigned long ddBltFlags;
-	/*packed*/ class MRect destRect;
-	/*packed*/ struct _DDBLTFX ddbltfx;
-	/*packed*/ class MRect sourceRect;
+	/*bp-0x10*/  /*packed*/ class MRect sourceRect; // 0x10 bytes
+	/*bp-0x74*/  /*packed*/ struct _DDBLTFX ddbltfx; // 0x64 bytes
+	/*bp-0x84*/  /*packed*/ class MRect destRect; // 0x10 bytes
+	/*bp-0x88*/  unsigned long ddBltFlags;
+	/*bp-0x8c*/  /*packed*/ struct IDirectDrawSurface *pDestSurface;
+	/*bp-0x90*/  long ddrval;
+	/*bp-0x94*/  /*packed*/ struct IDirectDrawSurface *pOurSurface;
 
 // LINE 802:
 	__asm        jmp    near ptr 0x0046FBC8;
@@ -2553,10 +2553,10 @@ unsigned long CBackBuffer::Compose(/*packed*/ class IFlatImage *pDestImage, cons
 
 // FUNCTION: COPTER_D 0x0046fd82
 unsigned long CBackBuffer::StretchCompose(/*packed*/ class IFlatImage *pDestImage, const /*packed*/ struct SparkalRect& destRect, const /*packed*/ struct SparkalRect& srcRect) {
-	/*packed*/ struct IDirectDrawSurface *pOurSurface;
-	/*packed*/ struct IDirectDrawSurface *pDestSurface;
-	unsigned long ddBltFlags;
-	/*packed*/ struct _DDBLTFX ddbltfx;
+	/*bp-0x64*/  /*packed*/ struct _DDBLTFX ddbltfx; // 0x64 bytes
+	/*bp-0x68*/  unsigned long ddBltFlags;
+	/*bp-0x6c*/  /*packed*/ struct IDirectDrawSurface *pDestSurface;
+	/*bp-0x70*/  /*packed*/ struct IDirectDrawSurface *pOurSurface;
 
 // LINE 872:
 	__asm        mov    eax, this;
@@ -2613,8 +2613,8 @@ _T8a:
 
 // FUNCTION: COPTER_D 0x0046fe13
 unsigned long CBackBuffer::StretchCompose(/*packed*/ class IFlatImage *pDestImage, long DestLeft, long DestTop, long DestRight, long DestBottom, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
-	/*packed*/ struct SparkalRect destRect;
-	/*packed*/ struct SparkalRect srcRect;
+	/*bp-0x10*/  /*packed*/ struct SparkalRect srcRect; // 0x10 bytes
+	/*bp-0x20*/  /*packed*/ struct SparkalRect destRect; // 0x10 bytes
 
 // LINE 904:
 	__asm        jmp    near ptr 0x0046FE24;
@@ -2653,13 +2653,13 @@ unsigned long CBackBuffer::StretchCompose(/*packed*/ class IFlatImage *pDestImag
 
 // FUNCTION: COPTER_D 0x0046fe7c
 unsigned long CBackBuffer::Duplicate(/*packed*/ class CBackBuffer *pDestImage, int32_t bAllowTransparent) {
-	/*packed*/ struct IDirectDrawSurface *pOurSurface;
-	long ddrval;
-	/*packed*/ struct IDirectDrawSurface *pDestSurface;
-	unsigned long ddBltFlags;
-	/*packed*/ struct tagRECT destRect;
-	/*packed*/ struct _DDBLTFX ddbltfx;
-	/*packed*/ struct tagRECT srcRect;
+	/*bp-0x10*/  /*packed*/ struct tagRECT srcRect; // 0x10 bytes
+	/*bp-0x74*/  /*packed*/ struct _DDBLTFX ddbltfx; // 0x64 bytes
+	/*bp-0x84*/  /*packed*/ struct tagRECT destRect; // 0x10 bytes
+	/*bp-0x88*/  unsigned long ddBltFlags;
+	/*bp-0x8c*/  /*packed*/ struct IDirectDrawSurface *pDestSurface;
+	/*bp-0x90*/  long ddrval;
+	/*bp-0x94*/  /*packed*/ struct IDirectDrawSurface *pOurSurface;
 
 // LINE 939:
 	__asm        mov    eax, this;
@@ -2764,8 +2764,8 @@ unsigned long CBackBuffer::StretchRect(/*unpacked*/ class CSparkalWindow *pDest,
 
 // FUNCTION: COPTER_D 0x0046ffe6
 void CBackBuffer::SetTransparentColor(int32_t bEnable, long nPaletteIndex) {
-	/*packed*/ struct IDirectDrawSurface *pOurSurface;
-	/*packed*/ struct _DDCOLORKEY DDColorKey;
+	/*bp-0x8*/   /*packed*/ struct _DDCOLORKEY DDColorKey; // 0x8 bytes
+	/*bp-0xc*/   /*packed*/ struct IDirectDrawSurface *pOurSurface;
 
 // LINE 992:
 	__asm        cmp    bEnable, 0;
@@ -2816,8 +2816,8 @@ _T82:
 
 // FUNCTION: COPTER_D 0x0047006f
 unsigned long CBackBuffer::Lock() {
-	/*packed*/ struct IDirectDrawSurface *pOurSurface;
-	long ddrval;
+	/*bp-0x4*/   long ddrval;
+	/*bp-0x8*/   /*packed*/ struct IDirectDrawSurface *pOurSurface;
 
 // LINE 1036:
 	__asm        mov    eax, this;
@@ -2898,8 +2898,8 @@ _Td5:
 
 // FUNCTION: COPTER_D 0x00470149
 unsigned long CBackBuffer::Unlock() {
-	/*packed*/ struct IDirectDrawSurface *pOurSurface;
-	long ddrval;
+	/*bp-0x4*/   long ddrval;
+	/*bp-0x8*/   /*packed*/ struct IDirectDrawSurface *pOurSurface;
 
 // LINE 1089:
 	__asm        mov    eax, this;
@@ -2983,8 +2983,8 @@ _Td3:
 
 // FUNCTION: COPTER_D 0x00470221
 void CBackBuffer::UpdatePalette(long start, long count, const /*packed*/ struct SparkalColor *pColor) {
-	int32_t i;
-	/*packed*/ struct tagPALETTEENTRY palColors[256];
+	/*bp-0x400*/ /*packed*/ struct tagPALETTEENTRY palColors[256]; // 0x400 bytes
+	/*bp-0x404*/ int32_t i;
 
 // LINE 1132:
 	__asm        mov    eax, this;
@@ -3047,10 +3047,10 @@ _Tc4:
 
 // FUNCTION: COPTER_D 0x004702f1
 unsigned long CBackBuffer::FillRect(long nPaletteIndex, const /*packed*/ struct SparkalRect *rectFill) {
-	/*packed*/ struct IDirectDrawSurface *pOurSurface;
-	/*packed*/ struct tagRECT rectFillTemp;
-	long ddrval;
-	/*packed*/ struct tagRECT *rectToUse;
+	/*bp-0x4*/   /*packed*/ struct tagRECT *rectToUse;
+	/*bp-0x8*/   long ddrval;
+	/*bp-0x18*/  /*packed*/ struct tagRECT rectFillTemp; // 0x10 bytes
+	/*bp-0x1c*/  /*packed*/ struct IDirectDrawSurface *pOurSurface;
 
 // LINE 1176:
 	__asm        mov    eax, this;
@@ -3213,9 +3213,9 @@ _T2f:
 
 // FUNCTION: COPTER_D 0x004704db
 int32_t CBackBuffer::GetPaletteFromImage(char * imageFileName, /*packed*/ struct SparkalColor *pColors) {
-	/*packed*/ struct tagBITMAPINFOHEADER biHeader;
-	/*packed*/ struct tagBITMAPFILEHEADER bfHeader;
-	/*packed*/ class PFile *fileImage;
+	/*bp-0x4*/   /*packed*/ class PFile *fileImage;
+	/*bp-0x14*/  /*packed*/ struct tagBITMAPFILEHEADER bfHeader; // 0xe bytes
+	/*bp-0x3c*/  /*packed*/ struct tagBITMAPINFOHEADER biHeader; // 0x28 bytes
 
 // LINE 1263:
 	__asm        push   0x110;
@@ -3561,13 +3561,13 @@ unsigned long CBackBuffer::DrawRectangleOutlineUnclipped(const /*packed*/ struct
 
 // FUNCTION: COPTER_D 0x00470864
 unsigned long CBackBuffer::DrawLineUnclipped(long nStartX, long nStartY, long nEndX, long nEndY, long nThickness) {
-	int32_t bufferWidth;
-	int32_t j;
-	int32_t i;
-	int32_t temp;
-	int32_t length;
-	int32_t bufferHeight;
-	char * address;
+	/*bp-0x4*/   char * address;
+	/*bp-0x8*/   int32_t bufferHeight;
+	/*bp-0xc*/   int32_t length;
+	/*bp-0x10*/  int32_t temp;
+	/*bp-0x14*/  int32_t i;
+	/*bp-0x18*/  int32_t j;
+	/*bp-0x1c*/  int32_t bufferWidth;
 
 // LINE 1456:
 	__asm        mov    eax, this;
@@ -3696,18 +3696,18 @@ _T141:
 	__asm        jmp    _T3a5;
 // LINE 1508:
 // Block start:
-	int32_t dinc2;
-	int32_t yinc2;
-	int32_t dinc1;
-	int32_t yinc1;
-	int32_t deltay;
-	int32_t deltax;
-	int32_t numpixels;
-	int32_t y;
-	int32_t x;
-	int32_t xinc2;
-	int32_t xinc1;
-	int32_t d;
+	/*bp-0x20*/  int32_t d;
+	/*bp-0x24*/  int32_t xinc1;
+	/*bp-0x28*/  int32_t xinc2;
+	/*bp-0x2c*/  int32_t x;
+	/*bp-0x30*/  int32_t y;
+	/*bp-0x34*/  int32_t numpixels;
+	/*bp-0x38*/  int32_t deltax;
+	/*bp-0x3c*/  int32_t deltay;
+	/*bp-0x40*/  int32_t yinc1;
+	/*bp-0x44*/  int32_t dinc1;
+	/*bp-0x48*/  int32_t yinc2;
+	/*bp-0x4c*/  int32_t dinc2;
 _T146:
 	__asm        mov    eax, nEndX;
 	__asm        sub    eax, nStartX;
@@ -3978,13 +3978,13 @@ _T3a5:
 
 // FUNCTION: COPTER_D 0x00470c22
 unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEndX, long nEndY, long nThickness) {
-	int32_t bufferWidth;
-	int32_t j;
-	int32_t i;
-	int32_t temp;
-	int32_t length;
-	int32_t bufferHeight;
-	char * address;
+	/*bp-0x4*/   char * address;
+	/*bp-0x8*/   int32_t bufferHeight;
+	/*bp-0xc*/   int32_t length;
+	/*bp-0x10*/  int32_t temp;
+	/*bp-0x14*/  int32_t i;
+	/*bp-0x18*/  int32_t j;
+	/*bp-0x1c*/  int32_t bufferWidth;
 
 // LINE 1626:
 	__asm        mov    eax, this;
@@ -4354,18 +4354,18 @@ _T4ac:
 	__asm        jmp    _T921;
 // LINE 1681:
 // Block start:
-	int32_t dinc2;
-	int32_t yinc2;
-	int32_t dinc1;
-	int32_t yinc1;
-	int32_t deltay;
-	int32_t deltax;
-	int32_t numpixels;
-	int32_t y;
-	int32_t x;
-	int32_t xinc2;
-	int32_t xinc1;
-	int32_t d;
+	/*bp-0x20*/  int32_t d;
+	/*bp-0x24*/  int32_t xinc1;
+	/*bp-0x28*/  int32_t xinc2;
+	/*bp-0x2c*/  int32_t x;
+	/*bp-0x30*/  int32_t y;
+	/*bp-0x34*/  int32_t numpixels;
+	/*bp-0x38*/  int32_t deltax;
+	/*bp-0x3c*/  int32_t deltay;
+	/*bp-0x40*/  int32_t yinc1;
+	/*bp-0x44*/  int32_t dinc1;
+	/*bp-0x48*/  int32_t yinc2;
+	/*bp-0x4c*/  int32_t dinc2;
 _T4b1:
 	__asm        mov    eax, nEndX;
 	__asm        sub    eax, nStartX;
@@ -4522,10 +4522,10 @@ _T628:
 	__asm        jmp    _T921;
 // LINE 1761:
 // Block start:
-	int32_t minSafeY;
-	int32_t maxSafeX;
-	int32_t maxSafeY;
-	int32_t minSafeX;
+	/*bp-0x50*/  int32_t minSafeX;
+	/*bp-0x54*/  int32_t maxSafeY;
+	/*bp-0x58*/  int32_t maxSafeX;
+	/*bp-0x5c*/  int32_t minSafeY;
 _T62d:
 	__asm        mov    eax, nThickness;
 	__asm        dec    eax;
@@ -4661,7 +4661,7 @@ _T770:
 	__asm        je     _T921;
 // LINE 1807:
 // Block start:
-	char * bufferEnd;
+	/*bp-0x60*/  char * bufferEnd;
 	__asm        cmp    xinc2, 0xFFFFFFFF;
 	__asm        jne    _T7b5;
 // LINE 1809:
@@ -4727,7 +4727,7 @@ _T800:
 	__asm        jae    _T8b6;
 // LINE 1825:
 // Block start:
-	int32_t nPixels;
+	/*bp-0x64*/  int32_t nPixels;
 	__asm        cmp    xinc2, 0xFFFFFFFF;
 	__asm        jne    _T879;
 // LINE 1827:

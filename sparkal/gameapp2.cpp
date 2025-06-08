@@ -511,7 +511,7 @@ _T35:
 
 // FUNCTION: COPTER_D 0x004611bf
 int32_t IsActualTimeDaytime() {
-	/*unpacked*/ class MTime tempTime;
+	/*bp-0x8*/   /*unpacked*/ class MTime tempTime;
 
 // LINE 99:
 	__asm        lea    ecx, tempTime<MTime+0x00:None>;
@@ -540,8 +540,8 @@ _T44:
 
 // FUNCTION: COPTER_D 0x00461208
 void  CGameApp::GetPreferences() {
-	char * chPrefData;
-	char szPath[260];
+	/*bp-0x104*/ char szPath[260]; // 0x104 bytes
+	/*bp-0x108*/ char * chPrefData;
 
 // LINE 115:
 	__asm        push   0x30;
@@ -665,8 +665,8 @@ _T1b9:
 
 // FUNCTION: COPTER_D 0x004613cb
 void  CGameApp::GetSoundPreferences() {
-	char * chPrefData;
-	/*packed*/ struct SoundPreferences tempSoundPreferences;
+	/*bp-0x10*/  /*packed*/ struct SoundPreferences tempSoundPreferences; // 0x10 bytes
+	/*bp-0x14*/  char * chPrefData;
 
 // LINE 147:
 	__asm        push   0x4FFFFFF;
@@ -759,9 +759,9 @@ _T3e:
 
 // FUNCTION: COPTER_D 0x004614de
 void  CGameApp::SavePreferences() {
-	long lCurrentJoystickCount;
-	int32_t i;
-	char szJoystickName[64];
+	/*bp-0x40*/  char szJoystickName[64]; // 0x40 bytes
+	/*bp-0x44*/  int32_t i;
+	/*bp-0x48*/  long lCurrentJoystickCount;
 
 // LINE 188:
 	__asm        jmp    near ptr 0x004614EF;
@@ -871,8 +871,8 @@ _T141:
 
 // FUNCTION: COPTER_D 0x00461629
 unsigned long  CGameApp::TickGame() {
-	static long lFramesSinceLastSecond = 0;
-	long lElapsedMilliSeconds;
+	/*bp-0x4*/   long lElapsedMilliSeconds;
+// StaticLocal: 0x00599294	static long lFramesSinceLastSecond = 0;
 
 // LINE 222:
 	__asm        inc    lFramesSinceLastSecond;
@@ -1066,7 +1066,7 @@ _T26e:
 
 // FUNCTION: COPTER_D 0x004618a3
 void  CGameApp::ComposeFrame() {
-	int32_t nCurrentMode;
+	/*bp-0x14*/  int32_t nCurrentMode;
 
 	// Function registers exception cleanup function at 0x00461ea1
 
@@ -1100,7 +1100,7 @@ void  CGameApp::ComposeFrame() {
 	__asm        jmp    _T536;
 // LINE 277:
 // Block start:
-	char szPath[260];
+	/*bp-0x118*/ char szPath[260]; // 0x104 bytes
 	__asm        lea    eax, szPath[0];
 	__asm        push   eax;
 	__asm        mov    eax, SZ_SMACKER_INTRO_FILE_NAME;
@@ -1478,10 +1478,10 @@ _T608:
 
 // FUNCTION: COPTER_D 0x00461eb9
 void  CGameApp::ComposePlayFrame() {
-	static long lThisLoopTickCount = 0;
-	long lBuildingID;
-	static long lLastLoopTickCount = 0;
-	static long lFrameCount = 17;
+// StaticLocal: 0x005992a0	static long lFrameCount = 17;
+// StaticLocal: 0x00599298	static long lLastLoopTickCount = 0;
+	/*bp-0x4*/   long lBuildingID;
+// StaticLocal: 0x0059929c	static long lThisLoopTickCount = 0;
 
 // LINE 406:
 	__asm        inc    lFrameCount;
@@ -1805,7 +1805,7 @@ _T44b:
 	__asm        jmp    _T542;
 // LINE 445:
 // Block start:
-	long lEventValue;
+	/*bp-0x8*/   long lEventValue;
 _T450:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xA0;
@@ -1964,7 +1964,7 @@ _T620:
 
 // FUNCTION: COPTER_D 0x004624de
 void  CGameApp::DoRecurringTasks(long lMilliSecondsSinceLastCall) {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 // LINE 487:
 	__asm        cmp    lMilliSecondsSinceLastCall, 0x2EE;
@@ -2497,8 +2497,8 @@ _T733:
 	__asm        jne    _Ta7c;
 // LINE 549:
 // Block start:
-	static int32_t bDoneJoystickChangeCheckAlready = 0;
-	int32_t bCheckForCommandLineCheatCodes;
+	/*bp-0x4*/   int32_t bCheckForCommandLineCheatCodes;
+// StaticLocal: 0x005992a4	static int32_t bDoneJoystickChangeCheckAlready = 0;
 	bCheckForCommandLineCheatCodes = 0x0;
 // LINE 551:
 	this-><CGameApp+0x28:4> = 0x0;
@@ -3573,8 +3573,8 @@ _T5ea:
 
 // FUNCTION: COPTER_D 0x00463bf9
 void  CGameApp::DestroyAllModes() {
-	int32_t nCurrentMode;
-	/*packed*/ class list<CopterGameMode>::iterator i;
+	/*bp-0x4*/   /*packed*/ class list<CopterGameMode>::iterator i;
+	/*bp-0x8*/   int32_t nCurrentMode;
 
 // LINE 753:
 	__asm        mov    eax, this;
@@ -4281,8 +4281,8 @@ _T67b:
 
 // FUNCTION: COPTER_D 0x0046444d
 void  CGameApp::DoKeyDown(long lKey, char chModifiers) {
-	int32_t bPushCommand;
-	int32_t nCommand;
+	/*bp-0x4*/   int32_t nCommand;
+	/*bp-0x8*/   int32_t bPushCommand;
 
 // LINE 970:
 	__asm        lea    eax, bPushCommand;
@@ -5132,7 +5132,7 @@ _T94:
 
 // FUNCTION: COPTER_D 0x00464db3
 int  CGameApp::CheckForWarpToCareerLevel() {
-	int32_t nNewLevel;
+	/*bp-0x4*/   int32_t nNewLevel;
 
 // LINE 1147:
 	__asm        cmp    G_CheatCodes[3], 0;
@@ -5372,10 +5372,10 @@ _T5e:
 
 // FUNCTION: COPTER_D 0x00465081
 void  CGameApp::NotifyUserOfGraduation() {
-	/*packed*/ class DigitalSound *tempNotificationSound;
-	char szString[128];
-	char szFullPath[260];
-	int32_t nFullStringID;
+	/*bp-0x4*/   int32_t nFullStringID;
+	/*bp-0x108*/ char szFullPath[260]; // 0x104 bytes
+	/*bp-0x188*/ char szString[128]; // 0x80 bytes
+	/*bp-0x18c*/ /*packed*/ class DigitalSound *tempNotificationSound;
 
 
 	None = 0x0;
@@ -5656,8 +5656,8 @@ _T3d0:
 
 // FUNCTION: COPTER_D 0x004654a4
 int  CGameApp::DoMessage(/*unpacked*/ class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
-	unsigned long nResult;
-	int32_t nCurrentGameMode;
+	/*bp-0x4*/   int32_t nCurrentGameMode;
+	/*bp-0x8*/   unsigned long nResult;
 
 // LINE 1242:
 	__asm        mov    eax, this;
@@ -5748,7 +5748,7 @@ _Teb:
 	__asm        jne    _T24b;
 // LINE 1261:
 // Block start:
-	/*packed*/ class basic_string<char> sCheatCodeString;
+	/*bp-0x10*/  /*packed*/ class basic_string<char> sCheatCodeString; // 0x8 bytes
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
@@ -5931,7 +5931,7 @@ _T303:
 	__asm        jne    _T3dd;
 // LINE 1282:
 // Block start:
-	long lCurrentCitySelection;
+	/*bp-0x14*/  long lCurrentCitySelection;
 _T32a:
 	__asm        mov    eax, gwSource;
 	__asm        mov    eax, [eax+0x74];
@@ -6553,13 +6553,13 @@ _Ta30:
 
 // FUNCTION: COPTER_D 0x00465edb
 int  CGameApp::DoMainMenuMessage(/*unpacked*/ class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
-	char szSplitPathFilename[256];
-	char szSplitPathDirectory[256];
-	int32_t nCurrentGameMode;
-	char * chPrefData;
-	char szSplitPathFullDirectory[256];
-	char szSplitPathDrive[3];
-	char szSplitPathExtension[256];
+	/*bp-0x100*/ char szSplitPathExtension[256]; // 0x100 bytes
+	/*bp-0x104*/ char szSplitPathDrive[3];
+	/*bp-0x204*/ char szSplitPathFullDirectory[256]; // 0x100 bytes
+	/*bp-0x208*/ char * chPrefData;
+	/*bp-0x20c*/ int32_t nCurrentGameMode;
+	/*bp-0x30c*/ char szSplitPathDirectory[256]; // 0x100 bytes
+	/*bp-0x40c*/ char szSplitPathFilename[256]; // 0x100 bytes
 
 // LINE 1469:
 	__asm        mov    eax, this;
@@ -6588,7 +6588,7 @@ int  CGameApp::DoMainMenuMessage(/*unpacked*/ class GraphicWindow *gwSource, lon
 	__asm        jne    _Te2;
 // LINE 1475:
 // Block start:
-	char szFilePath[260];
+	/*bp-0x510*/ char szFilePath[260]; // 0x104 bytes
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
 	__asm        push   0x5992F0;
@@ -6632,7 +6632,7 @@ _Te2:
 	__asm        jne    _T40e;
 // LINE 1486:
 // Block start:
-	long lResult;
+	/*bp-0x514*/ long lResult;
 	__asm        mov    eax, pMessageData;
 	__asm        mov    eax, [eax];
 	__asm        mov    lResult, eax;
@@ -6672,11 +6672,11 @@ _T14d:
 	__asm        jne    _T3bc;
 // LINE 1504:
 // Block start:
-	unsigned long nResult;
-	int32_t nFullFilterID;
-	long lFileType;
-	int32_t nFullTitleID;
-	char szFileLoadPath[260];
+	/*bp-0x618*/ char szFileLoadPath[260]; // 0x104 bytes
+	/*bp-0x61c*/ int32_t nFullTitleID;
+	/*bp-0x620*/ long lFileType;
+	/*bp-0x624*/ int32_t nFullFilterID;
+	/*bp-0x628*/ unsigned long nResult;
 _T174:
 	__asm        mov    al, ds:[0x599300];
 	__asm        mov    szFileLoadPath[0], al;
@@ -6889,8 +6889,8 @@ _T418:
 
 // FUNCTION: COPTER_D 0x004662fa
 int  CGameApp::DoPlayMenuMessage(/*unpacked*/ class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
-	unsigned long nResult;
-	int32_t nCurrentGameMode;
+	/*bp-0x4*/   int32_t nCurrentGameMode;
+	/*bp-0x8*/   unsigned long nResult;
 
 // LINE 1574:
 	__asm        mov    eax, this;
@@ -6935,7 +6935,7 @@ _T79:
 	__asm        jne    _T2a5;
 // LINE 1585:
 // Block start:
-	long lResult;
+	/*bp-0xc*/   long lResult;
 	__asm        mov    eax, pMessageData;
 	__asm        mov    eax, [eax];
 	__asm        mov    lResult, eax;
@@ -7134,9 +7134,9 @@ _T2ac:
 
 // FUNCTION: COPTER_D 0x004665ad
 int  CGameApp::StartVideoForCitySelection(long lCurrentCitySelection) {
-	char szFullCityVideoFileName[256];
-	char szFullCityVideoFilePath[260];
-	float fScaleFactor;
+	/*bp-0x4*/   float fScaleFactor;
+	/*bp-0x108*/ char szFullCityVideoFilePath[260]; // 0x104 bytes
+	/*bp-0x208*/ char szFullCityVideoFileName[256]; // 0x100 bytes
 
 // LINE 1663:
 	__asm        push   0;
@@ -7329,7 +7329,7 @@ _T2f9:
 
 // FUNCTION: COPTER_D 0x004668ad
 void  CGameApp::ComposeCareerCityVideoFrame() {
-	unsigned long nErrorCode;
+	/*bp-0x4*/   unsigned long nErrorCode;
 
 // LINE 1703:
 	__asm        jmp    near ptr 0x004668BE;
@@ -7391,7 +7391,7 @@ _Tb1:
 
 // FUNCTION: COPTER_D 0x00466968
 int  CGameApp::StartVideoForMainMenu() {
-	char szMainMenuVideoPath[260];
+	/*bp-0x104*/ char szMainMenuVideoPath[260]; // 0x104 bytes
 
 // LINE 1717:
 	__asm        lea    eax, szMainMenuVideoPath[0];
@@ -7543,7 +7543,7 @@ _T58:
 
 // FUNCTION: COPTER_D 0x00466b94
 void  CGameApp::ComposeMainMenuVideoFrame() {
-	unsigned long nErrorCode;
+	/*bp-0x4*/   unsigned long nErrorCode;
 
 // LINE 1752:
 	__asm        mov    eax, this;

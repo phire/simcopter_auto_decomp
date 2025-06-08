@@ -248,7 +248,7 @@ unsigned long  CGameApp::FinishGame() {
 	__asm        jne    _T7d;
 // LINE 54:
 // Block start:
-	long hResult;
+	/*bp-0x4*/   long hResult;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
@@ -320,21 +320,21 @@ _Ta7:
 
 // FUNCTION: COPTER_D 0x004bbb17
 int  CGameApp::BackgroundVRAppInit() {
-	/*packed*/ class MRect rectText;
-	char szVideoPath[260];
-	/*packed*/ struct VRAppInitThreadStruct tempVRAppInitThreadStruct;
-	/*packed*/ class Random tempRandom;
-	int32_t nXPosition;
-	int32_t nHeight;
-	unsigned long lCurrentInitializationFlag;
-	unsigned long lCurrentInitializationIndex;
-	void * __ptr32 hAppInitThread;
-	/*packed*/ class MRect rectLine;
-	int32_t nWidth;
-	int32_t nYPosition;
-	/*packed*/ class basic_string<char> sCurrentInitializer;
-	unsigned long lFullStringIndex;
-	/*unpacked*/ class SmackerBackBuffer tempHourglassVideoBuffer;
+	/*bp-0x27c*/ /*unpacked*/ class SmackerBackBuffer tempHourglassVideoBuffer;
+	/*bp-0x280*/ unsigned long lFullStringIndex;
+	/*bp-0x288*/ /*packed*/ class basic_string<char> sCurrentInitializer; // 0x8 bytes
+	/*bp-0x28c*/ int32_t nYPosition;
+	/*bp-0x290*/ int32_t nWidth;
+	/*bp-0x2a0*/ /*packed*/ class MRect rectLine; // 0x10 bytes
+	/*bp-0x2a4*/ void * __ptr32 hAppInitThread;
+	/*bp-0x2a8*/ unsigned long lCurrentInitializationIndex;
+	/*bp-0x2ac*/ unsigned long lCurrentInitializationFlag;
+	/*bp-0x2b0*/ int32_t nHeight;
+	/*bp-0x2b4*/ int32_t nXPosition;
+	/*bp-0x398*/ /*packed*/ class Random tempRandom; // 0xe4 bytes
+	/*bp-0x3a0*/ /*packed*/ struct VRAppInitThreadStruct tempVRAppInitThreadStruct; // 0x8 bytes
+	/*bp-0x4a4*/ char szVideoPath[260]; // 0x104 bytes
+	/*bp-0x4b4*/ /*packed*/ class MRect rectText; // 0x10 bytes
 
 
 	__asm        call   clock;
@@ -924,7 +924,7 @@ _T8bf:
 
 // FUNCTION: COPTER_D 0x004bc3db
 void AppInitThreadStartRoutine(void * __ptr32 pVRAppInitThreadStruct) {
-	/*packed*/ struct VRAppInitThreadStruct *tempVRAppInitThreadStruct;
+	/*bp-0x14*/  /*packed*/ struct VRAppInitThreadStruct *tempVRAppInitThreadStruct;
 
 	// Function registers exception cleanup function at 0x004bc440
 

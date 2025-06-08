@@ -1246,12 +1246,12 @@ void BitmappedFont::DeInitialize() {
 
 // FUNCTION: COPTER_D 0x004689b8
 int32_t BitmappedFont::LoadFontInfo() {
-	/*packed*/ class MRect rectTemp;
-	char chRectangleBuffer[4096];
-	int32_t i;
-	int32_t iEnd;
-	char * chCurrentRectangle;
-	char szBitmapFile[256];
+	/*bp-0x100*/ char szBitmapFile[256]; // 0x100 bytes
+	/*bp-0x104*/ char * chCurrentRectangle;
+	/*bp-0x108*/ int32_t iEnd;
+	/*bp-0x10c*/ int32_t i;
+	/*bp-0x110c*/ char chRectangleBuffer[4096]; // 0x1000 bytes
+	/*bp-0x111c*/ /*packed*/ class MRect rectTemp; // 0x10 bytes
 
 // LINE 86:
 	__asm        jmp    near ptr 0x004689D3;
@@ -2037,14 +2037,14 @@ _Tb45:
 
 // FUNCTION: COPTER_D 0x00469532
 void BitmappedFont::CalculateCharacterRects() {
-	unsigned char nTransparentIndex;
-	int32_t yEnd;
-	int32_t i;
-	int32_t y;
-	int32_t iEnd;
-	int32_t x;
-	int32_t xEnd;
-	/*packed*/ class MRect rectCurrent;
+	/*bp-0x10*/  /*packed*/ class MRect rectCurrent; // 0x10 bytes
+	/*bp-0x14*/  int32_t xEnd;
+	/*bp-0x18*/  int32_t x;
+	/*bp-0x1c*/  int32_t iEnd;
+	/*bp-0x20*/  int32_t y;
+	/*bp-0x24*/  int32_t i;
+	/*bp-0x28*/  int32_t yEnd;
+	/*bp-0x2c*/  unsigned char nTransparentIndex;
 
 // LINE 142:
 	__asm        jmp    near ptr 0x00469549;
@@ -2679,8 +2679,8 @@ _T7ea:
 
 // FUNCTION: COPTER_D 0x00469d3d
 int32_t BitmappedFont::CreateImage() {
-	char szBitmapFilePath[260];
-	unsigned char chTransparentIndex;
+	/*bp-0x4*/   unsigned char chTransparentIndex;
+	/*bp-0x108*/ char szBitmapFilePath[260]; // 0x104 bytes
 
 // LINE 194:
 	__asm        mov    eax, this;
@@ -2974,8 +2974,8 @@ _T5a:
 
 // FUNCTION: COPTER_D 0x0046a159
 long BitmappedFont::GetStringWidth(char * chText, const unsigned long nStringLength) {
-	char * chEnd;
-	long lWidth;
+	/*bp-0x4*/   long lWidth;
+	/*bp-0x8*/   char * chEnd;
 
 // LINE 229:
 	lWidth = 0x0;
@@ -3053,8 +3053,8 @@ _Tbd:
 
 // FUNCTION: COPTER_D 0x0046a225
 long BitmappedFont::GetStringVisibleWidth(char * chText, const unsigned long nStringLength, unsigned long& nVisibleStringLength) {
-	char * chTextEnd;
-	long lWidth;
+	/*bp-0x4*/   long lWidth;
+	/*bp-0x8*/   char * chTextEnd;
 
 // LINE 252:
 	__asm        mov    eax, nStringLength;
@@ -3189,9 +3189,9 @@ _T150:
 
 // FUNCTION: COPTER_D 0x0046a37c
 long BitmappedFont::CalculateNumberOfLines(char * chText, const unsigned long nStringLength, const unsigned long nWidth) {
-	long lLineCount;
-	char * chTextEnd;
-	long lCurrentLineStringLength;
+	/*bp-0x4*/   long lCurrentLineStringLength;
+	/*bp-0x8*/   char * chTextEnd;
+	/*bp-0xc*/   long lLineCount;
 
 // LINE 280:
 	__asm        mov    eax, nStringLength;
@@ -3228,8 +3228,8 @@ _T49:
 
 // FUNCTION: COPTER_D 0x0046a3d4
 long BitmappedFont::CalculateWidthOfLines(char * chText, const unsigned long nStringLength, const unsigned long nHeight) {
-	unsigned long nCurrentWidth;
-	const long lLines;
+	/*bp-0x4*/   const long lLines;
+	/*bp-0x8*/   unsigned long nCurrentWidth;
 
 // LINE 308:
 	__asm        jmp    near ptr 0x0046A3E5;
@@ -3274,10 +3274,10 @@ _T70:
 
 // FUNCTION: COPTER_D 0x0046a44b
 long BitmappedFont::CalculateCharsToFitInWidth(char * chText, const unsigned long nWidth) {
-	unsigned long nPotentialCurrentWidth;
-	char * chTextCurrent;
-	unsigned long nPotentialCurrentChars;
-	unsigned long nCurrentChars;
+	/*bp-0x4*/   unsigned long nCurrentChars;
+	/*bp-0x8*/   unsigned long nPotentialCurrentChars;
+	/*bp-0xc*/   char * chTextCurrent;
+	/*bp-0x10*/  unsigned long nPotentialCurrentWidth;
 
 // LINE 335:
 	nPotentialCurrentWidth = 0x0;
@@ -3438,7 +3438,7 @@ _T191:
 
 // FUNCTION: COPTER_D 0x0046a5e3
 void BitmappedFont::DrawTextLine(/*packed*/ class CBackBuffer *destination, long x, long y, char * chText, const unsigned long nStringLength) {
-	char * chEnd;
+	/*bp-0x4*/   char * chEnd;
 
 // LINE 393:
 	__asm        mov    eax, nStringLength;
@@ -3626,7 +3626,7 @@ _T1ed:
 
 // FUNCTION: COPTER_D 0x0046a7dc
 void BitmappedFont::DrawTextLineNoClip(/*packed*/ class CBackBuffer *destination, long x, long y, char * chText, const unsigned long nStringLength) {
-	char * chEnd;
+	/*bp-0x4*/   char * chEnd;
 
 // LINE 410:
 	__asm        mov    eax, nStringLength;
@@ -3814,12 +3814,12 @@ _T1ed:
 
 // FUNCTION: COPTER_D 0x0046a9d5
 void BitmappedFont::DrawTextPara(/*packed*/ class CBackBuffer *destination, /*packed*/ class MRect& rectPara, char * chText, const unsigned long nStringLength) {
-	const long lRectWidth;
-	long lCurrentXPosition;
-	const long lRectHeight;
-	long lCurrentYPosition;
-	long lCharacterHeight;
-	long lCurrentLineStringLength;
+	/*bp-0x4*/   long lCurrentLineStringLength;
+	/*bp-0x8*/   long lCharacterHeight;
+	/*bp-0xc*/   long lCurrentYPosition;
+	/*bp-0x10*/  const long lRectHeight;
+	/*bp-0x14*/  long lCurrentXPosition;
+	/*bp-0x18*/  const long lRectWidth;
 
 // LINE 429:
 	lCurrentXPosition = rectPara.left;
@@ -3885,12 +3885,12 @@ _T9e:
 
 // FUNCTION: COPTER_D 0x0046aa7f
 void BitmappedFont::DrawTextParaNoClip(/*packed*/ class CBackBuffer *destination, /*packed*/ class MRect& rectPara, char * chText, const unsigned long nStringLength) {
-	const long lRectWidth;
-	long lCurrentXPosition;
-	const long lRectHeight;
-	long lCurrentYPosition;
-	long lCharacterHeight;
-	long lCurrentLineStringLength;
+	/*bp-0x4*/   long lCurrentLineStringLength;
+	/*bp-0x8*/   long lCharacterHeight;
+	/*bp-0xc*/   long lCurrentYPosition;
+	/*bp-0x10*/  const long lRectHeight;
+	/*bp-0x14*/  long lCurrentXPosition;
+	/*bp-0x18*/  const long lRectWidth;
 
 // LINE 455:
 	lCurrentXPosition = rectPara.left;
@@ -3956,8 +3956,8 @@ _T9e:
 
 // FUNCTION: COPTER_D 0x0046ab29
 void BitmappedFont::DrawTextLineFormat(/*packed*/ class CBackBuffer *destination, /*packed*/ class MRect& rectLine, char * chText, const unsigned long nStringLength, const unsigned long nFormat) {
-	unsigned long nVisibleStringWidth;
-	unsigned long nVisibleStringLength;
+	/*bp-0x4*/   unsigned long nVisibleStringLength;
+	/*bp-0x8*/   unsigned long nVisibleStringWidth;
 
 // LINE 486:
 	__asm        test   reinterpret_cast<uint8_t>(nFormat), 1;
@@ -4076,8 +4076,8 @@ _T111:
 
 // FUNCTION: COPTER_D 0x0046ac46
 void BitmappedFont::DrawTextLineFormatNoClip(/*packed*/ class CBackBuffer *destination, /*packed*/ class MRect& rectLine, char * chText, const unsigned long nStringLength, const unsigned long nFormat) {
-	unsigned long nVisibleStringWidth;
-	unsigned long nVisibleStringLength;
+	/*bp-0x4*/   unsigned long nVisibleStringLength;
+	/*bp-0x8*/   unsigned long nVisibleStringWidth;
 
 // LINE 523:
 	__asm        test   reinterpret_cast<uint8_t>(nFormat), 1;
@@ -4196,12 +4196,12 @@ _T111:
 
 // FUNCTION: COPTER_D 0x0046ad63
 void BitmappedFont::DrawTextParaFormat(/*packed*/ class CBackBuffer *destination, /*packed*/ class MRect& rectPara, char * chText, const unsigned long nStringLength, const unsigned long nFormat) {
-	const long lRectWidth;
-	long lCurrentXPosition;
-	const long lRectHeight;
-	long lCurrentYPosition;
-	long lCharacterHeight;
-	long lCurrentLineStringLength;
+	/*bp-0x4*/   long lCurrentLineStringLength;
+	/*bp-0x8*/   long lCharacterHeight;
+	/*bp-0xc*/   long lCurrentYPosition;
+	/*bp-0x10*/  const long lRectHeight;
+	/*bp-0x14*/  long lCurrentXPosition;
+	/*bp-0x18*/  const long lRectWidth;
 
 // LINE 557:
 	lCurrentXPosition = rectPara.left;
@@ -4286,12 +4286,12 @@ _Td4:
 
 // FUNCTION: COPTER_D 0x0046ae43
 void BitmappedFont::DrawTextParaFormatNoClip(/*packed*/ class CBackBuffer *destination, /*packed*/ class MRect& rectPara, char * chText, const unsigned long nStringLength, const unsigned long nFormat) {
-	const long lRectWidth;
-	long lCurrentXPosition;
-	const long lRectHeight;
-	long lCurrentYPosition;
-	long lCharacterHeight;
-	long lCurrentLineStringLength;
+	/*bp-0x4*/   long lCurrentLineStringLength;
+	/*bp-0x8*/   long lCharacterHeight;
+	/*bp-0xc*/   long lCurrentYPosition;
+	/*bp-0x10*/  const long lRectHeight;
+	/*bp-0x14*/  long lCurrentXPosition;
+	/*bp-0x18*/  const long lRectWidth;
 
 // LINE 586:
 	lCurrentXPosition = rectPara.left;
@@ -4475,10 +4475,10 @@ int32_t BitmappedFont::GetIniFileString(char * chHeader, char * chSection, char 
 
 // FUNCTION: COPTER_D 0x0046b049
 int32_t BitmappedFont::GetPathForBitmapFile(char * chFontInfoPath, char * chBitmapFile, char * chBitmapPath) {
-	char szFileExtension[256];
-	char szDrive[3];
-	char szDirectory[256];
-	char szFileName[256];
+	/*bp-0x100*/ char szFileName[256]; // 0x100 bytes
+	/*bp-0x200*/ char szDirectory[256]; // 0x100 bytes
+	/*bp-0x204*/ char szDrive[3];
+	/*bp-0x304*/ char szFileExtension[256]; // 0x100 bytes
 
 // LINE 684:
 	__asm        lea    eax, szFileExtension[0];

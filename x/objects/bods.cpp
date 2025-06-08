@@ -251,7 +251,7 @@ public:
 // Contribution: 1:0015fbf0-001614f4 Module: 189, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00560bf0
 class cCopterAnim *  cCopterBody::GetPrivateAnim(unsigned long animName) {
-	short count;
+	/*bp-0x4*/   short count;
 
 // LINE 1943:
 	__asm        mov    count, 0;
@@ -265,7 +265,7 @@ _T1b:
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        jle    _T27a;
 // Block start:
-	/*unpacked*/ struct AnimLookup *al;
+	/*bp-0x8*/   /*unpacked*/ struct AnimLookup *al;
 	None = this-><cCopterBody+0x2c:4>;
 // LINE 1944:
 	__asm        mov    eax, [ebp-0x10];
@@ -316,7 +316,7 @@ _Tad:
 	__asm        cmp    [eax], ecx;
 	__asm        jne    _T275;
 // Block start:
-	/*unpacked*/ class cCopterAnim *privanim;
+	/*bp-0xc*/   /*unpacked*/ class cCopterAnim *privanim;
 	__asm        mov    eax, al;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x34], eax;
@@ -469,7 +469,7 @@ _T281:
 
 // FUNCTION: COPTER_D 0x00560e78
 void  cCopterBody::ActivateAllPartPointers(unsigned short activated) {
-	short count;
+	/*bp-0x4*/   short count;
 
 // LINE 2062:
 	__asm        cmp    this, 0;
@@ -494,7 +494,7 @@ _T41:
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        jle    _T181;
 // Block start:
-	/*unpacked*/ struct cCopterBody::Part *part;
+	/*bp-0x8*/   /*unpacked*/ struct cCopterBody::Part *part;
 	None = this-><cCopterBody+0x28:4>;
 // LINE 2064:
 	__asm        mov    eax, [ebp-0xC];
@@ -734,8 +734,8 @@ _T17e:
 
 // FUNCTION: COPTER_D 0x00561190
 struct cCopterBody::Part *  cCopterBody::GetPartByName(unsigned long partname) {
-	/*unpacked*/ struct cCopterBody::Part *part;
-	short count;
+	/*bp-0x4*/   short count;
+	/*bp-0x8*/   /*unpacked*/ struct cCopterBody::Part *part;
 
 // LINE 2093:
 	__asm        mov    count, 0;
@@ -815,12 +815,12 @@ _Tea:
 
 // FUNCTION: COPTER_D 0x00561281
 void  cCopterBody::DrawSwitch(float phiOff, float psiOff, /*unpacked*/ struct cCopterBody::Part *part, short screenx, short screeny, float scale, short colorIndexShift) {
-	/*unpacked*/ struct TransformedInfo transinfo;
-	/*unpacked*/ struct Point cpt;
-	/*unpacked*/ struct Point ept;
-	/*unpacked*/ struct Point3d ePt;
-	short color;
-	/*unpacked*/ struct Point3d sPt;
+	/*bp-0xc*/   /*unpacked*/ struct Point3d sPt; // 0xc bytes
+	/*bp-0x10*/  short color;
+	/*bp-0x1c*/  /*unpacked*/ struct Point3d ePt; // 0xc bytes
+	/*bp-0x20*/  /*unpacked*/ struct Point ept;
+	/*bp-0x24*/  /*unpacked*/ struct Point cpt;
+	/*bp-0x38*/  /*unpacked*/ struct TransformedInfo transinfo; // 0x14 bytes
 
 // LINE 2103:
 	__asm        cmp    part, 0;
@@ -968,7 +968,7 @@ _T16f:
 	__asm        jmp    _T384;
 // LINE 2137:
 // Block start:
-	float drawwidth;
+	/*bp-0x3c*/  float drawwidth;
 	__asm        mov    eax, part;
 	__asm        fld    dword ptr [eax+0x20];
 	__asm        fmul   scale;
@@ -1014,7 +1014,7 @@ _T16f:
 	__asm        jmp    _T384;
 // LINE 2149:
 // Block start:
-	enum SPHERE_SHADE_FLAG flag;
+	/*bp-0x40*/  enum SPHERE_SHADE_FLAG flag;
 	__asm        mov    eax, part;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        mov    [ebp-0x50], eax;
@@ -1069,7 +1069,7 @@ _T278:
 // LINE 2162:
 // Block end:
 // Block start:
-	float smallPsi;
+	/*bp-0x44*/  float smallPsi;
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x30];
 	__asm        cmp    eax, 0xFFFFFFFF;
@@ -1142,16 +1142,16 @@ _T384:
 
 // FUNCTION: COPTER_D 0x00561611
 void  cCopterBody::Draw(float xOff, float yOff, /*unpacked*/ class cCopterAnim *privanim, short framenum, short screenx, short screeny, float scale, short nearMedFar, short colorIndexShift) {
-	float cosY;
-	float cosX;
-	/*unpacked*/ struct PrivAnimPartInfo *privpartinfos;
-	int32_t drawordercount;
-	/*unpacked*/ struct cCopterBody::Part *part;
-	long numParts;
-	short orderID;
-	short count;
-	float sinY;
-	float sinX;
+	/*bp-0x4*/   float sinX;
+	/*bp-0x8*/   float sinY;
+	/*bp-0xc*/   short count;
+	/*bp-0x10*/  short orderID;
+	/*bp-0x14*/  long numParts;
+	/*bp-0x18*/  /*unpacked*/ struct cCopterBody::Part *part;
+	/*bp-0x1c*/  int32_t drawordercount;
+	/*bp-0x20*/  /*unpacked*/ struct PrivAnimPartInfo *privpartinfos;
+	/*bp-0x24*/  float cosX;
+	/*bp-0x28*/  float cosY;
 
 // LINE 2181:
 	__asm        jmp    near ptr 0x00561628;
@@ -1251,7 +1251,7 @@ _T126:
 	__asm        cmp    eax, numParts;
 	__asm        jge    _T4a6;
 // Block start:
-	short drawProc;
+	/*bp-0x2c*/  short drawProc;
 	None = this-><cCopterBody+0x28:4>;
 // LINE 2215:
 	__asm        mov    eax, [ebp-0xA0];
@@ -1313,11 +1313,11 @@ _T1c4:
 	__asm        je     _T4a1;
 // LINE 2218:
 // Block start:
-	/*unpacked*/ struct TransformedInfo *transinfo;
-	/*unpacked*/ struct DXZY start;
-	/*unpacked*/ struct DXZY end;
-	/*unpacked*/ struct PrivAnimPartInfo *partinfo;
-	unsigned short parentendtransformed;
+	/*bp-0x30*/  unsigned short parentendtransformed;
+	/*bp-0x34*/  /*unpacked*/ struct PrivAnimPartInfo *partinfo;
+	/*bp-0x44*/  /*unpacked*/ struct DXZY end; // 0x10 bytes
+	/*bp-0x54*/  /*unpacked*/ struct DXZY start; // 0x10 bytes
+	/*bp-0x58*/  /*unpacked*/ struct TransformedInfo *transinfo;
 	__asm        cmp    part, 0;
 	__asm        je     _T224;
 
@@ -1407,7 +1407,7 @@ _T240:
 	__asm        je     _T35b;
 // LINE 2227:
 // Block start:
-	/*unpacked*/ struct TransformedInfo *parenttransinfo;
+	/*bp-0x5c*/  /*unpacked*/ struct TransformedInfo *parenttransinfo;
 	__asm        mov    eax, part;
 	__asm        mov    eax, [eax+0xC];
 	__asm        movsx  eax, byte ptr [eax+2];
@@ -1622,8 +1622,8 @@ _T55c:
 
 // FUNCTION: COPTER_D 0x00561b74
 void  cCopterBody::InstallArrayPointers(unsigned short expectondisk) {
-	short numRealAnims;
-	unsigned char tmp[16];
+	/*bp-0x1c*/  unsigned char tmp[16]; // 0x10 bytes
+	/*bp-0x20*/  short numRealAnims;
 
 	// Function registers exception cleanup function at 0x00562095
 // LINE 2286:
@@ -2004,8 +2004,8 @@ _T52b:
 
 // FUNCTION: COPTER_D 0x005620af
 void  cCopterBody::DestroyAll() {
-	void * __ptr32 h;
-	short count;
+	/*bp-0x4*/   short count;
+	/*bp-0x8*/   void * __ptr32 h;
 
 
 	__asm        mov    eax, cCopterBody::fsList;
@@ -2296,8 +2296,8 @@ _T39:
 
 // FUNCTION: COPTER_D 0x0056240b
 void SwizzleCopterBodyPart(void * __ptr32 val, long size) {
-	/*unpacked*/ struct cCopterBody::Part *part;
-	short debugbodypartsize;
+	/*bp-0x4*/   short debugbodypartsize;
+	/*bp-0x8*/   /*unpacked*/ struct cCopterBody::Part *part;
 
 // LINE 2334:
 	debugbodypartsize = 0x28;
@@ -2350,7 +2350,7 @@ _T35:
 
 // FUNCTION: COPTER_D 0x0056249b
 void SwizzleAnimLookup(void * __ptr32 val, long size) {
-	/*unpacked*/ struct AnimLookup *al;
+	/*bp-0x4*/   /*unpacked*/ struct AnimLookup *al;
 
 // LINE 2348:
 	__asm        cmp    size, 8;

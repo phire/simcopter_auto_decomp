@@ -113,7 +113,7 @@ _T2d:
 
 // FUNCTION: COPTER_D 0x0055c2fa
 /*unpacked*/ class FlatFile* FlatFile::FindByName(unsigned char * name) {
-	/*unpacked*/ class FlatFile *srch;
+	/*bp-0x4*/   /*unpacked*/ class FlatFile *srch;
 
 // LINE 44:
 	__asm        mov    eax, FlatFile::sList;
@@ -156,7 +156,7 @@ _T6b:
 
 // FUNCTION: COPTER_D 0x0055c36a
 long FlatFile::Open(char * name) {
-	unsigned char pstrbuff[256];
+	/*bp-0x100*/ unsigned char pstrbuff[256]; // 0x100 bytes
 
 // LINE 54:
 	__asm        push   0x100;
@@ -184,8 +184,8 @@ long FlatFile::Open(char * name) {
 
 // FUNCTION: COPTER_D 0x0055c3c7
 long FlatFile::Open(unsigned char * name) {
-	/*unpacked*/ class FlatFile *same;
-	long err;
+	/*bp-0x4*/   long err;
+	/*bp-0x8*/   /*unpacked*/ class FlatFile *same;
 
 // LINE 61:
 	__asm        mov    ecx, this;
@@ -210,8 +210,8 @@ _T32:
 	__asm        jne    _T142;
 // LINE 73:
 // Block start:
-	char cstrbuff[256];
-	long test;
+	/*bp-0xc*/   long test;
+	/*bp-0x10c*/ char cstrbuff[256]; // 0x100 bytes
 	__asm        mov    test, 1;
 	__asm        jmp    _T61;
 _T5e:
@@ -319,7 +319,7 @@ _T1b8:
 
 // FUNCTION: COPTER_D 0x0055c586
 void FlatFile::OpenFromOtherFile(/*unpacked*/ class FlatFile *other) {
-	unsigned char otherName[256];
+	/*bp-0x100*/ unsigned char otherName[256]; // 0x100 bytes
 
 // LINE 112:
 	__asm        lea    eax, otherName[0];
@@ -339,7 +339,7 @@ void FlatFile::OpenFromOtherFile(/*unpacked*/ class FlatFile *other) {
 
 // FUNCTION: COPTER_D 0x0055c5cb
 long FlatFile::Close() {
-	long err;
+	/*bp-0x4*/   long err;
 
 // LINE 118:
 	__asm        mov    ecx, this;
@@ -406,7 +406,7 @@ _Tc4:
 
 // FUNCTION: COPTER_D 0x0055c69c
 long FlatFile::ReadBlock(void * __ptr32 buffer, long * blockSize) {
-	long actualSize;
+	/*bp-0x4*/   long actualSize;
 
 // LINE 159:
 	__asm        mov    ecx, this;
@@ -569,8 +569,8 @@ _T5f:
 
 // FUNCTION: COPTER_D 0x0055c87a
 long FlatFile::Read4(long * val) {
-	long err;
-	long size;
+	/*bp-0x4*/   long size;
+	/*bp-0x8*/   long err;
 
 // LINE 244:
 	size = 0x4;
@@ -599,8 +599,8 @@ _T3c:
 
 // FUNCTION: COPTER_D 0x0055c8c5
 long FlatFile::Read2(short * val) {
-	long err;
-	long size;
+	/*bp-0x4*/   long size;
+	/*bp-0x8*/   long err;
 
 // LINE 252:
 	size = 0x2;
@@ -629,8 +629,8 @@ _T3c:
 
 // FUNCTION: COPTER_D 0x0055c910
 long FlatFile::Read1(char * val) {
-	long err;
-	long size;
+	/*bp-0x4*/   long size;
+	/*bp-0x8*/   long err;
 
 // LINE 260:
 	size = 0x1;
@@ -660,7 +660,7 @@ void FlatFile::Link() {
 
 // FUNCTION: COPTER_D 0x0055c96e
 void FlatFile::Unlink() {
-	/*unpacked*/ class FlatFile **srch;
+	/*bp-0x4*/   /*unpacked*/ class FlatFile **srch;
 
 // LINE 271:
 	srch = 0x5bddd8;
@@ -701,7 +701,7 @@ _T70:
 
 // FUNCTION: COPTER_D 0x0055c9e3
 unsigned short FlatFile::Exclusive() {
-	/*unpacked*/ class FlatFile *srch;
+	/*bp-0x4*/   /*unpacked*/ class FlatFile *srch;
 
 // LINE 285:
 	srch = FlatFile::sList;
@@ -760,8 +760,8 @@ long FlatFile::GetFileName(unsigned char * name) {
 
 // FUNCTION: COPTER_D 0x0055ca7f
 short FlatFile::CheckForLeaks() {
-	short total;
-	/*unpacked*/ class FlatFile *list;
+	/*bp-0x4*/   /*unpacked*/ class FlatFile *list;
+	/*bp-0x8*/   short total;
 
 // LINE 302:
 	total = 0x0;

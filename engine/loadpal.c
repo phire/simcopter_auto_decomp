@@ -23,7 +23,7 @@ struct VRResource{ // packed(0x10 bytes) TI: 0x18ae
 // Contribution: 1:000d10d0-000d1175 Module: 148, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004d20d0
 /*packed*/ struct VRResource* LoadPalette() {
-	/*packed*/ struct CMAP_Resource *res;
+	/*bp-0x4*/   /*packed*/ struct CMAP_Resource *res;
 
 // LINE 56:
 	__asm        push   0x310;
@@ -69,7 +69,7 @@ _T82:
 
 // FUNCTION: COPTER_D 0x004d2157
 char * VRGetPalFromResource(/*packed*/ struct VRResource *res) {
-	/*packed*/ struct CMAP_Resource *cmp;
+	/*bp-0x4*/   /*packed*/ struct CMAP_Resource *cmp;
 
 // LINE 113:
 	cmp = res;

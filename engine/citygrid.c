@@ -42,23 +42,23 @@ struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 // Contribution: 1:000d5b40-000d62f3 Module: 141, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004d6b40
 short VRInitGridObj(long ViewSize) {
-	char * dataptr;
-	long goff;
-	int32_t x_start;
-	short j;
-	short i;
-	int32_t vert_inc;
-	long y;
-	/*packed*/ struct MapVert *mapv;
-	int32_t x_val;
-	int32_t z_val;
-	long x;
-	/*packed*/ struct GridFaceHdrType *gf;
-	long ul;
-	/*packed*/ struct Point3d *v;
-	long * iptr;
-	long plotter;
-	static int32_t b_FirstTime = 1;
+// StaticLocal: 0x0059d2d8	static int32_t b_FirstTime = 1;
+	/*bp-0x4*/   long plotter;
+	/*bp-0x8*/   long * iptr;
+	/*bp-0xc*/   /*packed*/ struct Point3d *v;
+	/*bp-0x10*/  long ul;
+	/*bp-0x14*/  /*packed*/ struct GridFaceHdrType *gf;
+	/*bp-0x18*/  long x;
+	/*bp-0x1c*/  int32_t z_val;
+	/*bp-0x20*/  int32_t x_val;
+	/*bp-0x24*/  /*packed*/ struct MapVert *mapv;
+	/*bp-0x28*/  long y;
+	/*bp-0x2c*/  int32_t vert_inc;
+	/*bp-0x30*/  short i;
+	/*bp-0x34*/  short j;
+	/*bp-0x38*/  int32_t x_start;
+	/*bp-0x3c*/  long goff;
+	/*bp-0x40*/  char * dataptr;
 
 // LINE 132:
 	plotter = 0x0;
@@ -599,9 +599,9 @@ void VRFreeGridObj() {
 
 // FUNCTION: COPTER_D 0x004d71f0
 void InitGridPool() {
-	long goff;
-	long GridPoolSize;
-	int32_t tempSize;
+	/*bp-0x4*/   int32_t tempSize;
+	/*bp-0x8*/   long GridPoolSize;
+	/*bp-0xc*/   long goff;
 
 // LINE 371:
 	GridPoolSize = 0x0;

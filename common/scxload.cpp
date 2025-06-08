@@ -717,9 +717,9 @@ void SCXReadPlayer(/*packed*/ class cGZXBitstream *AStream, unsigned char * data
 
 // FUNCTION: COPTER_D 0x004cbd38
 void SCXReadNeighbors(/*packed*/ class cGZXBitstream *AStream, unsigned char * data) {
-	long num;
-	long loop;
-	/*packed*/ struct SCXNeighborData *pData;
+	/*bp-0x4*/   /*packed*/ struct SCXNeighborData *pData;
+	/*bp-0x8*/   long loop;
+	/*bp-0xc*/   long num;
 
 // LINE 225:
 	pData = data;
@@ -963,7 +963,7 @@ _T286:
 
 // FUNCTION: COPTER_D 0x004cbfc8
 void SCXReadContracts(/*packed*/ class cGZXBitstream *AStream, unsigned char * data) {
-	long num;
+	/*bp-0x4*/   long num;
 
 // LINE 282:
 	__asm        push   4;
@@ -990,15 +990,15 @@ void SCXReadContracts(/*packed*/ class cGZXBitstream *AStream, unsigned char * d
 
 // FUNCTION: COPTER_D 0x004cc003
 int32_t ReadSCXFile(char * filePath) {
-	long scxInd[11];
-	long scxTileCount[256];
-	/*packed*/ class cLZAPFileBitStream fileStream;
-	/*packed*/ struct ReadSCXFile::__unnamed SCXMicroRecord;
-	long tempLong;
-	long longBonds[50];
-	long loop;
-	/*packed*/ class cGZXParamBitstream<t_alloc,t_free> memstrm;
-	/*packed*/ struct tSCXSaveFileHdr header;
+	/*bp-0x2c*/  /*packed*/ struct tSCXSaveFileHdr header; // 0x2c bytes
+	/*bp-0x68*/  /*packed*/ class cGZXParamBitstream<t_alloc,t_free> memstrm; // 0x3c bytes
+	/*bp-0x6c*/  long loop;
+	/*bp-0x134*/ long longBonds[50]; // 0xc8 bytes
+	/*bp-0x138*/ long tempLong;
+	/*bp-0x144*/ /*packed*/ struct ReadSCXFile::__unnamed SCXMicroRecord; // 0x9 bytes
+	/*bp-0x150*/ /*packed*/ class cLZAPFileBitStream fileStream; // 0xc bytes
+	/*bp-0x550*/ long scxTileCount[256]; // 0x400 bytes
+	/*bp-0x57c*/ long scxInd[11]; // 0x2c bytes
 
 // LINE 296:
 	__asm        call   S2CityFree;

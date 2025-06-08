@@ -146,7 +146,7 @@ int  CGameApp::CanWeSwitchToFullScreenMode() {
 
 // FUNCTION: COPTER_D 0x00432553
 int  CGameApp::SwitchToWindowedMode() {
-	long hResult;
+	/*bp-0x4*/   long hResult;
 
 // LINE 58:
 	__asm        mov    eax, this;
@@ -290,7 +290,7 @@ _T173:
 
 // FUNCTION: COPTER_D 0x004326cb
 int  CGameApp::SwitchToFullScreenMode() {
-	long hResult;
+	/*bp-0x4*/   long hResult;
 
 // LINE 113:
 	__asm        mov    eax, this;
@@ -434,7 +434,7 @@ _T173:
 
 // FUNCTION: COPTER_D 0x00432843
 int  CGameApp::ConvertMonitorToWindowedMode() {
-	long hResult;
+	/*bp-0x4*/   long hResult;
 
 // LINE 168:
 	__asm        mov    eax, lpDD;
@@ -451,7 +451,7 @@ int  CGameApp::ConvertMonitorToWindowedMode() {
 
 // FUNCTION: COPTER_D 0x00432871
 int  CGameApp::ConvertMonitorToFullScreenMode() {
-	long hResult;
+	/*bp-0x4*/   long hResult;
 
 // LINE 185:
 	__asm        mov    eax, this;
@@ -502,9 +502,9 @@ _T3e:
 
 // FUNCTION: COPTER_D 0x00432900
 int  CGameApp::CreateDisplaySurfaces() {
-	/*packed*/ class MRect rectScreenWindow;
-	long nWindowWidth;
-	long nWindowHeight;
+	/*bp-0x4*/   long nWindowHeight;
+	/*bp-0x8*/   long nWindowWidth;
+	/*bp-0x18*/  /*packed*/ class MRect rectScreenWindow; // 0x10 bytes
 
 // LINE 212:
 	__asm        jmp    near ptr 0x00432911;
@@ -735,8 +735,8 @@ _Tcf:
 
 // FUNCTION: COPTER_D 0x00432bcc
 int  CGameApp::CreateModeSurfaces() {
-	int32_t nCurrentMode;
-	/*packed*/ class list<CopterGameMode>::iterator i;
+	/*bp-0x4*/   /*packed*/ class list<CopterGameMode>::iterator i;
+	/*bp-0x8*/   int32_t nCurrentMode;
 
 // LINE 282:
 	__asm        mov    eax, this;
@@ -837,8 +837,8 @@ _T107:
 
 // FUNCTION: COPTER_D 0x00432ce2
 int  CGameApp::DestroyModeSurfaces() {
-	int32_t nCurrentMode;
-	/*packed*/ class list<CopterGameMode>::iterator i;
+	/*bp-0x4*/   /*packed*/ class list<CopterGameMode>::iterator i;
+	/*bp-0x8*/   int32_t nCurrentMode;
 
 // LINE 323:
 	__asm        mov    eax, this;

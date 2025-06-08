@@ -40,7 +40,7 @@ struct alloc_hdr_s{ // packed(0x10 bytes) TI: 0x2e38
 // Contribution: 1:000ca2b0-000ca878 Module: 91, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004cb2b0
 /*packed*/ struct alloc_handle_t* S2AllocInit(int32_t index, unsigned long poolsize) {
-	/*packed*/ struct alloc_handle_t *old;
+	/*bp-0x4*/   /*packed*/ struct alloc_handle_t *old;
 
 // LINE 268:
 	__asm        mov    eax, index;
@@ -89,8 +89,8 @@ _T90:
 
 // FUNCTION: COPTER_D 0x004cb34d
 static /*packed*/ struct alloc_hdr_s* S2AllocHdr(unsigned long size) {
-	char * block;
-	/*packed*/ struct alloc_hdr_s *hdr;
+	/*bp-0x4*/   /*packed*/ struct alloc_hdr_s *hdr;
+	/*bp-0x8*/   char * block;
 
 // LINE 238:
 	__asm        mov    eax, size;
@@ -151,8 +151,8 @@ _Ta7:
 
 // FUNCTION: COPTER_D 0x004cb401
 int32_t S2AllocPool(unsigned long poolsize) {
-	int32_t index;
-	/*packed*/ struct alloc_handle_t *lastPool;
+	/*bp-0x4*/   /*packed*/ struct alloc_handle_t *lastPool;
+	/*bp-0x8*/   int32_t index;
 
 // LINE 295:
 	__asm        cmp    poolCount, 0x20;
@@ -214,8 +214,8 @@ _Ta6:
 
 // FUNCTION: COPTER_D 0x004cb4ac
 char * S2Alloc(int32_t index, int32_t size) {
-	/*packed*/ struct alloc_hdr_s *hdr;
-	char * ptr;
+	/*bp-0x4*/   char * ptr;
+	/*bp-0x8*/   /*packed*/ struct alloc_hdr_s *hdr;
 
 // LINE 331:
 	__asm        mov    eax, index;
@@ -320,7 +320,7 @@ char * S2AllocMem1(int32_t index, char * name, int32_t size, unsigned short prot
 
 // FUNCTION: COPTER_D 0x004cb5cf
 char * S2AllocMem(int32_t index, char * name, int32_t size) {
-	char * ptr;
+	/*bp-0x4*/   char * ptr;
 
 // LINE 416:
 	__asm        mov    eax, size;
@@ -338,7 +338,7 @@ char * S2AllocMem(int32_t index, char * name, int32_t size) {
 
 // FUNCTION: COPTER_D 0x004cb5f8
 /*packed*/ struct alloc_handle_t* S2AllocSetPool(int32_t index, /*packed*/ struct alloc_handle_t *newPtr) {
-	/*packed*/ struct alloc_handle_t *old;
+	/*bp-0x4*/   /*packed*/ struct alloc_handle_t *old;
 
 // LINE 438:
 	__asm        mov    eax, index;
@@ -356,7 +356,7 @@ char * S2AllocMem(int32_t index, char * name, int32_t size) {
 
 // FUNCTION: COPTER_D 0x004cb628
 void S2AllocReset(int32_t index) {
-	/*packed*/ struct alloc_hdr_s *hdr;
+	/*bp-0x4*/   /*packed*/ struct alloc_hdr_s *hdr;
 
 // LINE 459:
 	__asm        mov    eax, index;
@@ -410,8 +410,8 @@ _T96:
 
 // FUNCTION: COPTER_D 0x004cb6c3
 void S2AllocFreePool(int32_t index) {
-	/*packed*/ struct alloc_hdr_s *hdr;
-	/*packed*/ struct alloc_hdr_s *next_hdr;
+	/*bp-0x4*/   /*packed*/ struct alloc_hdr_s *next_hdr;
+	/*bp-0x8*/   /*packed*/ struct alloc_hdr_s *hdr;
 
 // LINE 493:
 	__asm        mov    eax, index;
@@ -499,7 +499,7 @@ void * __ptr32 S2AllocAligned() {
 
 // FUNCTION: COPTER_D 0x004cb7ba
 void * __ptr32 DOSAllocAlignedHack() {
-	void * __ptr32 retaddr;
+	/*bp-0x4*/   void * __ptr32 retaddr;
 
 // LINE 753:
 	__asm        push   0x20000;

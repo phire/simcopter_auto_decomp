@@ -50,9 +50,9 @@ struct mv{ // packed(0x14 bytes) TI: 0x2a5e
 // Contribution: 1:00141f80-00142684 Module: 152, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00542f80
 int32_t Magnitude(/*packed*/ struct Point3d *V) {
-	double k;
-	double j;
-	double i;
+	/*bp-0x8*/   double i; // 0x8 bytes
+	/*bp-0x10*/  double j; // 0x8 bytes
+	/*bp-0x18*/  double k; // 0x8 bytes
 
 // LINE 33:
 	__asm        mov    eax, V;
@@ -92,9 +92,9 @@ int32_t Magnitude(/*packed*/ struct Point3d *V) {
 
 // FUNCTION: COPTER_D 0x00542ff4
 int32_t Distance(/*packed*/ struct Point3d *p1, /*packed*/ struct Point3d *p2) {
-	double k;
-	double j;
-	double i;
+	/*bp-0x8*/   double i; // 0x8 bytes
+	/*bp-0x10*/  double j; // 0x8 bytes
+	/*bp-0x18*/  double k; // 0x8 bytes
 
 // LINE 54:
 	__asm        mov    eax, p2;
@@ -147,10 +147,10 @@ int32_t Distance(/*packed*/ struct Point3d *p1, /*packed*/ struct Point3d *p2) {
 
 // FUNCTION: COPTER_D 0x0054308e
 int32_t Normalize(/*packed*/ struct Point3d *V) {
-	double k;
-	double j;
-	double i;
-	double r;
+	/*bp-0x8*/   double r; // 0x8 bytes
+	/*bp-0x10*/  double i; // 0x8 bytes
+	/*bp-0x18*/  double j; // 0x8 bytes
+	/*bp-0x20*/  double k; // 0x8 bytes
 
 // LINE 74:
 	__asm        mov    eax, V;
@@ -276,9 +276,9 @@ void CreatePlane(/*packed*/ struct Plane *plane, /*packed*/ struct Point3d *V, /
 
 // FUNCTION: COPTER_D 0x005431fe
 int32_t SideOfPlane(/*packed*/ struct Point3d *V, /*packed*/ struct Point3d *p, /*packed*/ struct Point3d *q) {
-	/*packed*/ struct Plane plane;
-	/*packed*/ struct Point3d d;
-	int32_t s;
+	/*bp-0x4*/   int32_t s;
+	/*bp-0x10*/  /*packed*/ struct Point3d d; // 0xc bytes
+	/*bp-0x20*/  /*packed*/ struct Plane plane; // 0x10 bytes
 
 // LINE 134:
 	__asm        mov    eax, p;
@@ -339,7 +339,7 @@ int32_t SideOfPlane(/*packed*/ struct Point3d *V, /*packed*/ struct Point3d *p, 
 
 // FUNCTION: COPTER_D 0x00543292
 void CreateVelocity(/*packed*/ struct Point3d *p1, /*packed*/ struct Point3d *p2, /*packed*/ struct Point3d *V, int32_t t) {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 // LINE 163:
 	__asm        mov    eax, p2;
@@ -402,7 +402,7 @@ int32_t SameSigns(int32_t s1, int32_t s2) {
 
 // FUNCTION: COPTER_D 0x00543328
 int32_t VectorBounds(/*packed*/ struct Point3d *V, int32_t m) {
-	int32_t r;
+	/*bp-0x4*/   int32_t r;
 
 // LINE 205:
 	__asm        mov    eax, V;
@@ -464,7 +464,7 @@ _T91:
 
 // FUNCTION: COPTER_D 0x005433be
 void Apply_Force(/*packed*/ struct Point3d *F, /*packed*/ struct mv *p, int32_t t) {
-	/*packed*/ struct Point3d A;
+	/*bp-0xc*/   /*packed*/ struct Point3d A; // 0xc bytes
 
 // LINE 234:
 	__asm        mov    eax, p;
@@ -528,10 +528,10 @@ void Apply_Force(/*packed*/ struct Point3d *F, /*packed*/ struct mv *p, int32_t 
 
 // FUNCTION: COPTER_D 0x00543455
 void Apply_Friction(int32_t F, /*packed*/ struct mv *p, int32_t t) {
-	int32_t j;
-	int32_t v;
-	int32_t f;
-	int32_t a;
+	/*bp-0x4*/   int32_t a;
+	/*bp-0x8*/   int32_t f;
+	/*bp-0xc*/   int32_t v;
+	/*bp-0x10*/  int32_t j;
 
 // LINE 265:
 	__asm        mov    eax, p;
@@ -617,8 +617,8 @@ _Tdb:
 
 // FUNCTION: COPTER_D 0x00543535
 int32_t Apply_Force1D(int32_t F, int32_t M, int32_t V, int32_t t, int32_t Vmax) {
-	int32_t nv;
-	int32_t A;
+	/*bp-0x4*/   int32_t A;
+	/*bp-0x8*/   int32_t nv;
 
 // LINE 306:
 	__asm        mov    eax, M;
@@ -665,10 +665,10 @@ _T62:
 
 // FUNCTION: COPTER_D 0x005435a4
 int32_t Apply_Friction1D(int32_t F, int32_t M, int32_t V, int32_t t) {
-	int32_t absV;
-	int32_t j;
-	int32_t vf;
-	int32_t A;
+	/*bp-0x4*/   int32_t A;
+	/*bp-0x8*/   int32_t vf;
+	/*bp-0xc*/   int32_t j;
+	/*bp-0x10*/  int32_t absV;
 
 // LINE 336:
 	__asm        cmp    V, 0;

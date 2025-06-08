@@ -572,7 +572,7 @@ void GameModeMainMenuData::GameModeMainMenuData() {
 
 // FUNCTION: COPTER_D 0x004bd81a
 void GameModeMainMenuData::CreatePalette() {
-	char szPath[260];
+	/*bp-0x104*/ char szPath[260]; // 0x104 bytes
 
 // LINE 172:
 	__asm        mov    eax, this;
@@ -654,8 +654,8 @@ void GameModeMainMenuData::UsePalette() {
 
 // FUNCTION: COPTER_D 0x004bd94a
 int32_t GameModeMainMenuData::CreateAllSurfaces() {
-	/*packed*/ struct UserMenuWindowDescription tempUMWD;
-	/*packed*/ class UserMenuWindow *myUserMenuWindow;
+	/*bp-0x4*/   /*packed*/ class UserMenuWindow *myUserMenuWindow;
+	/*bp-0x58*/  /*packed*/ struct UserMenuWindowDescription tempUMWD; // 0x54 bytes
 
 // LINE 198:
 	__asm        push   0x10;
@@ -949,7 +949,7 @@ void GameModePickCareerCityData::Initialize() {
 
 // FUNCTION: COPTER_D 0x004bdd5b
 void GameModePickCareerCityData::CreatePalette() {
-	char szPath[260];
+	/*bp-0x104*/ char szPath[260]; // 0x104 bytes
 
 // LINE 276:
 	__asm        mov    eax, this;
@@ -1031,8 +1031,8 @@ void GameModePickCareerCityData::UsePalette() {
 
 // FUNCTION: COPTER_D 0x004bde8b
 int32_t GameModePickCareerCityData::CreateAllSurfaces() {
-	/*packed*/ class CareerWindow *myCareerWindow;
-	long * lNewCitiesPointer;
+	/*bp-0x4*/   long * lNewCitiesPointer;
+	/*bp-0x8*/   /*packed*/ class CareerWindow *myCareerWindow;
 
 // LINE 303:
 	__asm        mov    eax, this;
@@ -1244,9 +1244,9 @@ void GameModePlayData::Initialize() {
 
 // FUNCTION: COPTER_D 0x004be16e
 void GameModePlayData::CreatePalette() {
-	int32_t i;
-	char * pPalettePosition;
-	char szPath[260];
+	/*bp-0x104*/ char szPath[260]; // 0x104 bytes
+	/*bp-0x108*/ char * pPalettePosition;
+	/*bp-0x10c*/ int32_t i;
 
 // LINE 411:
 	__asm        mov    eax, this;
@@ -1848,14 +1848,14 @@ int32_t GameModePlayData::CreateAllSurfaces() {
 
 // FUNCTION: COPTER_D 0x004be8cb
 int32_t GameModePlayData::CreatePanels() {
-	/*packed*/ class MRect rectPanel3;
-	/*packed*/ class MRect rectPanel4;
-	/*packed*/ class MRect rectPanel5;
-	/*packed*/ class MRect rectPassengerWindow;
-	/*packed*/ class MRect rectPanel6;
-	/*packed*/ class MRect rectPanel0;
-	/*packed*/ class MRect rectPanel1;
-	/*packed*/ class MRect rectPanel2;
+	/*bp-0x10*/  /*packed*/ class MRect rectPanel2; // 0x10 bytes
+	/*bp-0x20*/  /*packed*/ class MRect rectPanel1; // 0x10 bytes
+	/*bp-0x30*/  /*packed*/ class MRect rectPanel0; // 0x10 bytes
+	/*bp-0x40*/  /*packed*/ class MRect rectPanel6; // 0x10 bytes
+	/*bp-0x50*/  /*packed*/ class MRect rectPassengerWindow; // 0x10 bytes
+	/*bp-0x60*/  /*packed*/ class MRect rectPanel5; // 0x10 bytes
+	/*bp-0x70*/  /*packed*/ class MRect rectPanel4; // 0x10 bytes
+	/*bp-0x80*/  /*packed*/ class MRect rectPanel3; // 0x10 bytes
 
 // LINE 556:
 	__asm        jmp    near ptr 0x004BE8E2;
@@ -2330,11 +2330,11 @@ _T73e:
 
 // FUNCTION: COPTER_D 0x004bf018
 void GameModePlayData::MakeSureHeliHasProperFlaps() {
-	/*packed*/ class MRect rectFlap0;
-	/*packed*/ class MRect rectFlap2;
-	/*packed*/ struct tagUserPersonalInfo *userPersonalInfo;
-	/*packed*/ class MRect rectFlap1;
-	/*packed*/ class MRect rectFlap3;
+	/*bp-0x10*/  /*packed*/ class MRect rectFlap3; // 0x10 bytes
+	/*bp-0x20*/  /*packed*/ class MRect rectFlap1; // 0x10 bytes
+	/*bp-0x24*/  /*packed*/ struct tagUserPersonalInfo *userPersonalInfo;
+	/*bp-0x34*/  /*packed*/ class MRect rectFlap2; // 0x10 bytes
+	/*bp-0x44*/  /*packed*/ class MRect rectFlap0; // 0x10 bytes
 
 // LINE 638:
 	__asm        jmp    near ptr 0x004BF029;
@@ -3536,7 +3536,7 @@ void GameModePlayData::Shutdown() {
 
 // FUNCTION: COPTER_D 0x004bfed8
 long GameModePlayData::TestForUserInHelicopter() {
-	long lReturnValue;
+	/*bp-0x4*/   long lReturnValue;
 
 // LINE 1012:
 	lReturnValue = 0x0;
@@ -3778,8 +3778,8 @@ _T2d:
 
 // FUNCTION: COPTER_D 0x004c01b8
 void GameModePlayData::RemoveUserConfigurableCommands() {
-	long lCurrentCommand;
-	/*packed*/ class list<Shortcut>::iterator tempShortcutListIterator;
+	/*bp-0x4*/   /*packed*/ class list<Shortcut>::iterator tempShortcutListIterator;
+	/*bp-0x8*/   long lCurrentCommand;
 
 // LINE 1144:
 	__asm        mov    eax, this;
@@ -3909,7 +3909,7 @@ void GameModePlayData::SetUserConfigurableCommandsToDefaults() {
 
 // FUNCTION: COPTER_D 0x004c0326
 void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
-	/*packed*/ struct Shortcut tempShortcut;
+	/*bp-0x18*/  /*packed*/ struct Shortcut tempShortcut; // 0x18 bytes
 
 // LINE 1178:
 	tempShortcut.lDeviceID = 0x0;
@@ -5180,7 +5180,7 @@ void GameModeHangarData::Shutdown() {
 
 // FUNCTION: COPTER_D 0x004c15b3
 void GameModeHangarData::SetCommandsToDefaults() {
-	/*packed*/ struct Shortcut tempShortcut;
+	/*bp-0x18*/  /*packed*/ struct Shortcut tempShortcut; // 0x18 bytes
 
 // LINE 1522:
 	__asm        mov    eax, this;
@@ -5825,7 +5825,7 @@ void GameModeCatalogData::Shutdown() {
 
 // FUNCTION: COPTER_D 0x004c1e29
 void GameModeCatalogData::SetCommandsToDefaults() {
-	/*packed*/ struct Shortcut tempShortcut;
+	/*bp-0x18*/  /*packed*/ struct Shortcut tempShortcut; // 0x18 bytes
 
 // LINE 1676:
 	__asm        mov    eax, this;
@@ -6520,7 +6520,7 @@ void GameModeMissionLogData::Shutdown() {
 
 // FUNCTION: COPTER_D 0x004c27b1
 void GameModeMissionLogData::SetCommandsToDefaults() {
-	/*packed*/ struct Shortcut tempShortcut;
+	/*bp-0x18*/  /*packed*/ struct Shortcut tempShortcut; // 0x18 bytes
 
 // LINE 1801:
 	__asm        mov    eax, this;
@@ -7215,7 +7215,7 @@ void GameModeInventoryData::Shutdown() {
 
 // FUNCTION: COPTER_D 0x004c3139
 void GameModeInventoryData::SetCommandsToDefaults() {
-	/*packed*/ struct Shortcut tempShortcut;
+	/*bp-0x18*/  /*packed*/ struct Shortcut tempShortcut; // 0x18 bytes
 
 // LINE 1922:
 	__asm        mov    eax, this;

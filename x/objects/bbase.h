@@ -1,7 +1,7 @@
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055e6f0
 void cBBase::SwizzleBBaseHeader(void * __ptr32 val, long size) {
-	short size1;
+	/*bp-0x4*/   short size1;
 
 // LINE 227:
 	size1 = 0x40;
@@ -122,8 +122,8 @@ _T27:
 	__asm        je     _Te9;
 // LINE 60:
 // Block start:
-	unsigned short fileOpened;
-	void * __ptr32 h;
+	/*bp-0x4*/   void * __ptr32 h;
+	/*bp-0x8*/   unsigned short fileOpened;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;

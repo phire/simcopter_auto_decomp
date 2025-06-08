@@ -72,14 +72,14 @@ struct _STOBJ_INST{ // packed(0x10 bytes) TI: 0x193f
 // Contribution: 1:000f7af0-000f8bb0 Module: 175, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004f8af0
 void S3CameraMove(/*packed*/ struct Point3d *P) {
-	/*packed*/ struct Point3d CameraDelta;
-	/*packed*/ struct _DYOBJ_INST *u_dyobj;
-	int32_t alt;
-	int32_t altdiff;
-	int32_t Velocity;
-	/*packed*/ struct Point3d CameraVector;
-	/*packed*/ struct Point3d viewerPos;
-	int32_t mat[4][4];
+	/*bp-0x40*/  int32_t mat[4][4]; // 0x40 bytes
+	/*bp-0x4c*/  /*packed*/ struct Point3d viewerPos; // 0xc bytes
+	/*bp-0x58*/  /*packed*/ struct Point3d CameraVector; // 0xc bytes
+	/*bp-0x5c*/  int32_t Velocity;
+	/*bp-0x60*/  int32_t altdiff;
+	/*bp-0x64*/  int32_t alt;
+	/*bp-0x68*/  /*packed*/ struct _DYOBJ_INST *u_dyobj;
+	/*bp-0x74*/  /*packed*/ struct Point3d CameraDelta; // 0xc bytes
 
 // LINE 101:
 	Velocity = 0x0;
@@ -492,10 +492,10 @@ _T74:
 
 // FUNCTION: COPTER_D 0x004f8fe2
 void SetIdealCameraPos() {
-	int32_t AccelAdjust;
-	long temp;
-	int32_t Acceleration;
-	int32_t cameraDistance;
+	/*bp-0x4*/   int32_t cameraDistance;
+	/*bp-0x8*/   int32_t Acceleration;
+	/*bp-0xc*/   long temp;
+	/*bp-0x10*/  int32_t AccelAdjust;
 
 // LINE 308:
 	AccelAdjust = 0x0;
@@ -707,15 +707,15 @@ void GetIdealCameraPos(/*packed*/ struct Point3d *P) {
 
 // FUNCTION: COPTER_D 0x004f9263
 void CalcCameraAngles(/*packed*/ struct Point3d *Vector) {
-	int32_t sinePitch;
-	int32_t cosinePitch;
-	int32_t sineYaw;
-	int32_t sineRoll;
-	int32_t cosineRoll;
-	int32_t LengthXYZ;
-	/*packed*/ struct Point3d WorkVector;
-	int32_t cosineYaw;
-	int32_t LengthXZ;
+	/*bp-0x4*/   int32_t LengthXZ;
+	/*bp-0x8*/   int32_t cosineYaw;
+	/*bp-0x14*/  /*packed*/ struct Point3d WorkVector; // 0xc bytes
+	/*bp-0x18*/  int32_t LengthXYZ;
+	/*bp-0x1c*/  int32_t cosineRoll;
+	/*bp-0x20*/  int32_t sineRoll;
+	/*bp-0x24*/  int32_t sineYaw;
+	/*bp-0x28*/  int32_t cosinePitch;
+	/*bp-0x2c*/  int32_t sinePitch;
 
 // LINE 434:
 	WorkVector.x = Vector->x;
@@ -991,12 +991,12 @@ _T2f7:
 
 // FUNCTION: COPTER_D 0x004f955f
 void S3AngleRotMat(int32_t *matrix[4], int32_t Yaw, int32_t Pitch, int32_t Roll) {
-	int32_t sinePitch;
-	int32_t cosinePitch;
-	int32_t sineYaw;
-	int32_t sineRoll;
-	int32_t cosineRoll;
-	int32_t cosineYaw;
+	/*bp-0x4*/   int32_t cosineYaw;
+	/*bp-0x8*/   int32_t cosineRoll;
+	/*bp-0xc*/   int32_t sineRoll;
+	/*bp-0x10*/  int32_t sineYaw;
+	/*bp-0x14*/  int32_t cosinePitch;
+	/*bp-0x18*/  int32_t sinePitch;
 
 // LINE 533:
 	__asm        lea    eax, cosineYaw;
@@ -1180,16 +1180,16 @@ void S3AngleRotMat(int32_t *matrix[4], int32_t Yaw, int32_t Pitch, int32_t Roll)
 
 // FUNCTION: COPTER_D 0x004f9735
 void S3CameraRotate() {
-	int32_t alt;
-	int32_t temp;
-	/*packed*/ struct Point3d cameraDelta;
+	/*bp-0xc*/   /*packed*/ struct Point3d cameraDelta; // 0xc bytes
+	/*bp-0x10*/  int32_t temp;
+	/*bp-0x14*/  int32_t alt;
 
 // LINE 606:
 	__asm        cmp    G_camera_mode, 3;
 	__asm        jne    _T5c;
 // LINE 608:
 // Block start:
-	/*packed*/ struct _DYOBJ_INST *dyobj;
+	/*bp-0x18*/  /*packed*/ struct _DYOBJ_INST *dyobj;
 	__asm        call   GetAvatarDYOBJ;
 	__asm        mov    dyobj, eax;
 // LINE 613:
@@ -1318,7 +1318,7 @@ _T1a2:
 
 // FUNCTION: COPTER_D 0x004f98dc
 void S3CameraTweakInit() {
-	int32_t * pvals[10];
+	/*bp-0x28*/  int32_t * pvals[10]; // 0x28 bytes
 
 // LINE 726:
 	pvals[0] = 0x5b4df4;
@@ -1449,16 +1449,16 @@ void S3CameraSetChaseInfo(/*packed*/ struct _CHASE_INFO *cinfo) {
 
 // FUNCTION: COPTER_D 0x004f9aa5
 int32_t S3CameraGetBldAlt(/*packed*/ struct Point3d *loc) {
-	int32_t normy;
-	int32_t normx;
-	/*packed*/ struct _CELL_INFO *cptr;
-	int32_t objy;
-	int32_t y;
-	int32_t x;
-	/*packed*/ struct _STOBJ_INST *stobj;
-	int32_t maxobjy;
-	int32_t normz;
-	int32_t flags;
+	/*bp-0x4*/   int32_t flags;
+	/*bp-0x8*/   int32_t normz;
+	/*bp-0xc*/   int32_t maxobjy;
+	/*bp-0x10*/  /*packed*/ struct _STOBJ_INST *stobj;
+	/*bp-0x14*/  int32_t x;
+	/*bp-0x18*/  int32_t y;
+	/*bp-0x1c*/  int32_t objy;
+	/*bp-0x20*/  /*packed*/ struct _CELL_INFO *cptr;
+	/*bp-0x24*/  int32_t normx;
+	/*bp-0x28*/  int32_t normy;
 
 // LINE 825:
 	__asm        mov    eax, loc;

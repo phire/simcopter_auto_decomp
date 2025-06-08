@@ -342,16 +342,16 @@ struct tagUserPersonalInfo{ // packed(0x58 bytes) TI: 0x1a2a
 // Contribution: 1:000ee1c0-000f7aeb Module: 176, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004ef1c0
 void S3HeliInitInstance(/*packed*/ struct _HELI_DATA *hd) {
-	int32_t shadobj;
-	/*packed*/ struct _HELI_TYPE_DATA *htd;
-	int32_t heliobj;
-	int32_t obj;
-	char * mem;
-	int32_t rotshadobj;
-	long hdindex;
-	int32_t rotobj;
-	long size;
-	/*packed*/ struct VRObjInfo oinfo;
+	/*bp-0x24*/  /*packed*/ struct VRObjInfo oinfo; // 0x24 bytes
+	/*bp-0x28*/  long size;
+	/*bp-0x2c*/  int32_t rotobj;
+	/*bp-0x30*/  long hdindex;
+	/*bp-0x34*/  int32_t rotshadobj;
+	/*bp-0x38*/  char * mem;
+	/*bp-0x3c*/  int32_t obj;
+	/*bp-0x40*/  int32_t heliobj;
+	/*bp-0x44*/  /*packed*/ struct _HELI_TYPE_DATA *htd;
+	/*bp-0x48*/  int32_t shadobj;
 
 // LINE 490:
 	__asm        mov    eax, hd;
@@ -1442,10 +1442,10 @@ _Tcb1:
 
 // FUNCTION: COPTER_D 0x004effa0
 void S3HeliGenInit(/*packed*/ struct _HELI_DATA *hd, long mapx, long mapy) {
-	/*packed*/ struct _HELI_TYPE_DATA *htd;
-	/*packed*/ struct _CELL_INFO *cptr;
-	int32_t alt;
-	long heliidx;
+	/*bp-0x4*/   long heliidx;
+	/*bp-0x8*/   int32_t alt;
+	/*bp-0xc*/   /*packed*/ struct _CELL_INFO *cptr;
+	/*bp-0x10*/  /*packed*/ struct _HELI_TYPE_DATA *htd;
 
 // LINE 829:
 	__asm        mov    eax, hd;
@@ -1953,20 +1953,20 @@ _T815:
 
 // FUNCTION: COPTER_D 0x004f07ba
 void S3HeliNextFrame(/*packed*/ struct _HELI_DATA *hd) {
-	int32_t normy;
-	/*packed*/ struct VRview pos;
-	int32_t normx;
-	/*packed*/ struct _HELI_TYPE_DATA *htd;
-	int32_t maxload;
-	/*packed*/ struct _CELL_INFO *cptr;
-	/*packed*/ struct _CELL_INFO *lcptr;
-	int32_t matrix[4][4];
-	int32_t alt;
-	int32_t currload;
-	/*packed*/ struct Point3d vec;
-	int32_t tmpmatrix[4][4];
-	int32_t normz;
-	/*packed*/ struct Point2d *freepad;
+	/*bp-0x4*/   /*packed*/ struct Point2d *freepad;
+	/*bp-0x8*/   int32_t normz;
+	/*bp-0x48*/  int32_t tmpmatrix[4][4]; // 0x40 bytes
+	/*bp-0x54*/  /*packed*/ struct Point3d vec; // 0xc bytes
+	/*bp-0x58*/  int32_t currload;
+	/*bp-0x5c*/  int32_t alt;
+	/*bp-0x9c*/  int32_t matrix[4][4]; // 0x40 bytes
+	/*bp-0xa0*/  /*packed*/ struct _CELL_INFO *lcptr;
+	/*bp-0xa4*/  /*packed*/ struct _CELL_INFO *cptr;
+	/*bp-0xa8*/  int32_t maxload;
+	/*bp-0xac*/  /*packed*/ struct _HELI_TYPE_DATA *htd;
+	/*bp-0xb0*/  int32_t normx;
+	/*bp-0x108*/ /*packed*/ struct VRview pos; // 0x58 bytes
+	/*bp-0x10c*/ int32_t normy;
 
 // LINE 1011:
 	__asm        mov    eax, hd;
@@ -3122,8 +3122,8 @@ _Te52:
 	__asm        je     _Tfae;
 // LINE 1386:
 // Block start:
-	/*packed*/ struct Point3d loc;
-	int32_t speed;
+	/*bp-0x110*/ int32_t speed;
+	/*bp-0x11c*/ /*packed*/ struct Point3d loc; // 0xc bytes
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x14C], 1;
 	__asm        jne    _Te8d;
@@ -3224,13 +3224,13 @@ _Tfae:
 
 // FUNCTION: COPTER_D 0x004f176d
 int32_t S3HeliCollideTest(/*packed*/ struct _HELI_DATA *hd, long no_frames) {
-	int32_t alt;
-	int32_t fwd_speed;
-	/*packed*/ struct Point3d loc;
-	int32_t movez;
-	int32_t movex;
-	/*packed*/ struct Point3d V;
-	/*packed*/ struct Point3d saveloc;
+	/*bp-0xc*/   /*packed*/ struct Point3d saveloc; // 0xc bytes
+	/*bp-0x18*/  /*packed*/ struct Point3d V; // 0xc bytes
+	/*bp-0x1c*/  int32_t movex;
+	/*bp-0x20*/  int32_t movez;
+	/*bp-0x2c*/  /*packed*/ struct Point3d loc; // 0xc bytes
+	/*bp-0x30*/  int32_t fwd_speed;
+	/*bp-0x34*/  int32_t alt;
 
 // LINE 1446:
 	fwd_speed = hd->fwd_speed;
@@ -3473,14 +3473,14 @@ _T2ae:
 
 // FUNCTION: COPTER_D 0x004f1a20
 int32_t S3HeliHeadToLocXZ(/*packed*/ struct _HELI_DATA *hd, /*packed*/ struct Point3d *loc) {
-	/*packed*/ struct Point3d newvect;
-	int32_t alt;
-	int32_t curryaw;
-	/*packed*/ struct Point3d tmpvect;
-	int32_t deltayaw;
-	int32_t deflectangle;
-	int32_t dist;
-	int32_t newyaw;
+	/*bp-0x4*/   int32_t newyaw;
+	/*bp-0x8*/   int32_t dist;
+	/*bp-0xc*/   int32_t deflectangle;
+	/*bp-0x10*/  int32_t deltayaw;
+	/*bp-0x1c*/  /*packed*/ struct Point3d tmpvect; // 0xc bytes
+	/*bp-0x20*/  int32_t curryaw;
+	/*bp-0x24*/  int32_t alt;
+	/*bp-0x30*/  /*packed*/ struct Point3d newvect; // 0xc bytes
 
 // LINE 1516:
 	dist = 0x0;
@@ -3683,7 +3683,7 @@ _T25e:
 
 // FUNCTION: COPTER_D 0x004f1c83
 void S3HeliSetShadow(/*packed*/ struct _HELI_DATA *hd, int32_t maxobjy, int32_t alt, int32_t color) {
-	/*packed*/ struct VRview pos;
+	/*bp-0x58*/  /*packed*/ struct VRview pos; // 0x58 bytes
 
 // LINE 1621:
 	__asm        cmp    G_daynight, 1;
@@ -3858,15 +3858,15 @@ _T202:
 
 // FUNCTION: COPTER_D 0x004f1e8a
 int32_t S3HeliControlInputs(/*packed*/ struct _HELI_DATA *hd) {
-	/*packed*/ struct _HELI_TYPE_DATA *htd;
-	int32_t yawrate;
-	int32_t pitchrate;
-	long lJoystickLeftRightValue;
-	int32_t bSlideEventIsSet;
-	long lJoystickUpDownValue;
-	long lJoystickMiscValue1;
-	int32_t sliderate;
-	int32_t tempfix;
+	/*bp-0x4*/   int32_t tempfix;
+	/*bp-0x8*/   int32_t sliderate;
+	/*bp-0xc*/   long lJoystickMiscValue1;
+	/*bp-0x10*/  long lJoystickUpDownValue;
+	/*bp-0x14*/  int32_t bSlideEventIsSet;
+	/*bp-0x18*/  long lJoystickLeftRightValue;
+	/*bp-0x1c*/  int32_t pitchrate;
+	/*bp-0x20*/  int32_t yawrate;
+	/*bp-0x24*/  /*packed*/ struct _HELI_TYPE_DATA *htd;
 
 // LINE 1689:
 	__asm        mov    eax, hd;
@@ -4722,11 +4722,11 @@ _Ta87:
 
 // FUNCTION: COPTER_D 0x004f2916
 void S3HeliYawPitchRollSlide(/*packed*/ struct _HELI_DATA *hd) {
-	int32_t max_pitch;
-	int32_t tempfix2;
-	/*packed*/ struct _HELI_TYPE_DATA *htd;
-	int32_t matrix[4][4];
-	int32_t tempfix;
+	/*bp-0x4*/   int32_t tempfix;
+	/*bp-0x44*/  int32_t matrix[4][4]; // 0x40 bytes
+	/*bp-0x48*/  /*packed*/ struct _HELI_TYPE_DATA *htd;
+	/*bp-0x4c*/  int32_t tempfix2;
+	/*bp-0x50*/  int32_t max_pitch;
 
 // LINE 1932:
 	__asm        mov    eax, hd;
@@ -5195,8 +5195,8 @@ _T5ae:
 
 // FUNCTION: COPTER_D 0x004f2ec9
 void S3HeliMoveXZ(/*packed*/ struct _HELI_DATA *hd) {
-	int32_t velocity;
-	int32_t origFwdSpeed;
+	/*bp-0x4*/   int32_t origFwdSpeed;
+	/*bp-0x8*/   int32_t velocity;
 
 // LINE 2090:
 	origFwdSpeed = hd->fwd_speed;
@@ -5524,9 +5524,9 @@ _T430:
 
 // FUNCTION: COPTER_D 0x004f32fe
 void S3HeliMoveY(/*packed*/ struct _HELI_DATA *hd) {
-	/*packed*/ struct _HELI_TYPE_DATA *htd;
-	long texid;
-	int32_t yrate;
+	/*bp-0x4*/   int32_t yrate;
+	/*bp-0x8*/   long texid;
+	/*bp-0xc*/   /*packed*/ struct _HELI_TYPE_DATA *htd;
 
 // LINE 2182:
 	__asm        mov    eax, hd;
@@ -6190,15 +6190,15 @@ _T87f:
 
 // FUNCTION: COPTER_D 0x004f3b82
 void S3HeliMainRotor(/*packed*/ struct _HELI_DATA *hd) {
-	/*packed*/ struct VRview pos;
-	int32_t tempfix2;
-	int32_t tmpmat[4][4];
-	/*packed*/ struct _HELI_TYPE_DATA *htd;
-	/*packed*/ struct VRFaceInfo finfo;
-	int32_t count;
-	int32_t face;
-	/*packed*/ struct VRObjInfo oinfo;
-	int32_t tempfix;
+	/*bp-0x4*/   int32_t tempfix;
+	/*bp-0x28*/  /*packed*/ struct VRObjInfo oinfo; // 0x24 bytes
+	/*bp-0x2c*/  int32_t face;
+	/*bp-0x30*/  int32_t count;
+	/*bp-0x50*/  /*packed*/ struct VRFaceInfo finfo; // 0x20 bytes
+	/*bp-0x54*/  /*packed*/ struct _HELI_TYPE_DATA *htd;
+	/*bp-0x94*/  int32_t tmpmat[4][4]; // 0x40 bytes
+	/*bp-0x98*/  int32_t tempfix2;
+	/*bp-0xf0*/  /*packed*/ struct VRview pos; // 0x58 bytes
 
 // LINE 2406:
 	__asm        mov    eax, hd;
@@ -6662,13 +6662,13 @@ _T540:
 
 // FUNCTION: COPTER_D 0x004f40c7
 void S3HeliRopeAndBucket(/*packed*/ struct _HELI_DATA *hd, /*packed*/ struct _CELL_INFO *cptr) {
-	/*packed*/ struct VRview pos;
-	int32_t galt;
-	/*packed*/ struct _HELI_TYPE_DATA *htd;
-	char texid;
-	/*packed*/ struct Point3d loc;
-	int32_t y;
-	int32_t x;
+	/*bp-0x4*/   int32_t x;
+	/*bp-0x8*/   int32_t y;
+	/*bp-0x14*/  /*packed*/ struct Point3d loc; // 0xc bytes
+	/*bp-0x18*/  char texid;
+	/*bp-0x1c*/  /*packed*/ struct _HELI_TYPE_DATA *htd;
+	/*bp-0x20*/  int32_t galt;
+	/*bp-0x78*/  /*packed*/ struct VRview pos; // 0x58 bytes
 
 // LINE 2542:
 	__asm        mov    eax, hd;
@@ -7189,10 +7189,10 @@ _T69a:
 
 // FUNCTION: COPTER_D 0x004f4766
 void S3HeliDropWater(/*packed*/ struct _HELI_DATA *hd, int32_t alt, /*packed*/ struct _CELL_INFO *cptr) {
-	int32_t dx;
-	/*packed*/ struct Point3d loc;
-	/*packed*/ struct Point3d vec;
-	int32_t dz;
+	/*bp-0x4*/   int32_t dz;
+	/*bp-0x10*/  /*packed*/ struct Point3d vec; // 0xc bytes
+	/*bp-0x1c*/  /*packed*/ struct Point3d loc; // 0xc bytes
+	/*bp-0x20*/  int32_t dx;
 
 // LINE 2706:
 	__asm        mov    eax, hd;
@@ -7332,12 +7332,12 @@ _T181:
 
 // FUNCTION: COPTER_D 0x004f48ec
 void S3HeliSimDust(/*packed*/ struct _HELI_DATA *hd, int32_t alt) {
-	int32_t num;
-	/*packed*/ struct _CELL_INFO *cptr;
-	/*packed*/ struct Point3d loc;
-	/*packed*/ struct Point3d vec;
-	/*packed*/ struct Point3d dvec;
-	int32_t mat[4][4];
+	/*bp-0x40*/  int32_t mat[4][4]; // 0x40 bytes
+	/*bp-0x4c*/  /*packed*/ struct Point3d dvec; // 0xc bytes
+	/*bp-0x58*/  /*packed*/ struct Point3d vec; // 0xc bytes
+	/*bp-0x64*/  /*packed*/ struct Point3d loc; // 0xc bytes
+	/*bp-0x68*/  /*packed*/ struct _CELL_INFO *cptr;
+	/*bp-0x6c*/  int32_t num;
 
 // LINE 2760:
 	__asm        mov    eax, hd;
@@ -7513,8 +7513,8 @@ _T66:
 
 // FUNCTION: COPTER_D 0x004f4ad4
 void NormalizeXZVector(/*packed*/ struct Point3d *vector) {
-	int32_t length;
-	int32_t angle;
+	/*bp-0x4*/   int32_t angle;
+	/*bp-0x8*/   int32_t length;
 
 // LINE 2838:
 	vector->y = 0x0;
@@ -7637,32 +7637,32 @@ _T128:
 
 // FUNCTION: COPTER_D 0x004f4c0e
 void S3HeliRopeNextFrame(/*packed*/ struct _HELI_DATA *hd, int32_t gralt, /*packed*/ struct _CELL_INFO *cptr) {
-	int32_t normy;
-	int32_t normx;
-	int32_t distz;
-	/*packed*/ struct _HELI_TYPE_DATA *htd;
-	int32_t distx;
-	int32_t alt;
-	/*packed*/ struct Point3d oloc;
-	int32_t absvectorx;
-	int32_t objy;
-	int32_t absvectorz;
-	int32_t absdz;
-	/*packed*/ struct Point3d *pvert;
-	/*packed*/ struct Point3d vec;
-	int32_t absdx;
-	/*packed*/ struct Point3d *vert;
-	/*packed*/ struct _STOBJ_INST *stobj;
-	int32_t absvectorxz;
-	int32_t c;
-	int32_t vectorx;
-	/*packed*/ struct _DYOBJ_INST *dyobj;
-	int32_t maxobjy;
-	int32_t ropeload;
-	int32_t vectorz;
-	int32_t normz;
-	int32_t flags;
-	/*packed*/ struct Point3d ploc;
+	/*bp-0xc*/   /*packed*/ struct Point3d ploc; // 0xc bytes
+	/*bp-0x10*/  int32_t flags;
+	/*bp-0x14*/  int32_t normz;
+	/*bp-0x18*/  int32_t vectorz;
+	/*bp-0x1c*/  int32_t ropeload;
+	/*bp-0x20*/  int32_t maxobjy;
+	/*bp-0x24*/  /*packed*/ struct _DYOBJ_INST *dyobj;
+	/*bp-0x28*/  int32_t vectorx;
+	/*bp-0x2c*/  int32_t c;
+	/*bp-0x30*/  int32_t absvectorxz;
+	/*bp-0x34*/  /*packed*/ struct _STOBJ_INST *stobj;
+	/*bp-0x38*/  /*packed*/ struct Point3d *vert;
+	/*bp-0x3c*/  int32_t absdx;
+	/*bp-0x48*/  /*packed*/ struct Point3d vec; // 0xc bytes
+	/*bp-0x4c*/  /*packed*/ struct Point3d *pvert;
+	/*bp-0x50*/  int32_t absdz;
+	/*bp-0x54*/  int32_t absvectorz;
+	/*bp-0x58*/  int32_t objy;
+	/*bp-0x5c*/  int32_t absvectorx;
+	/*bp-0x68*/  /*packed*/ struct Point3d oloc; // 0xc bytes
+	/*bp-0x6c*/  int32_t alt;
+	/*bp-0x70*/  int32_t distx;
+	/*bp-0x74*/  /*packed*/ struct _HELI_TYPE_DATA *htd;
+	/*bp-0x78*/  int32_t distz;
+	/*bp-0x7c*/  int32_t normx;
+	/*bp-0x80*/  int32_t normy;
 
 // LINE 2906:
 	ropeload = 0x8;
@@ -8154,7 +8154,7 @@ void S3DrawWater(/*packed*/ struct VRBlit *blit) {
 
 // FUNCTION: COPTER_D 0x004f5139
 int32_t GetCopterTerAlt(/*packed*/ struct _HELI_DATA *hd) {
-	int32_t alt;
+	/*bp-0x4*/   int32_t alt;
 
 // LINE 3327:
 	__asm        mov    eax, hd;
@@ -8179,17 +8179,17 @@ int32_t GetCopterTerAlt(/*packed*/ struct _HELI_DATA *hd) {
 
 // FUNCTION: COPTER_D 0x004f517d
 int32_t GetCopterBldAlt(/*packed*/ struct _HELI_DATA *hd) {
-	int32_t normy;
-	int32_t normx;
-	/*packed*/ struct _CELL_INFO *cptr;
-	int32_t alt;
-	int32_t objy;
-	/*packed*/ struct Point3d vec;
-	/*packed*/ struct _STOBJ_INST *stobj;
-	int32_t maxobjy;
-	int32_t landable;
-	int32_t normz;
-	int32_t flags;
+	/*bp-0x4*/   int32_t flags;
+	/*bp-0x8*/   int32_t normz;
+	/*bp-0xc*/   int32_t landable;
+	/*bp-0x10*/  int32_t maxobjy;
+	/*bp-0x14*/  /*packed*/ struct _STOBJ_INST *stobj;
+	/*bp-0x20*/  /*packed*/ struct Point3d vec; // 0xc bytes
+	/*bp-0x24*/  int32_t objy;
+	/*bp-0x28*/  int32_t alt;
+	/*bp-0x2c*/  /*packed*/ struct _CELL_INFO *cptr;
+	/*bp-0x30*/  int32_t normx;
+	/*bp-0x34*/  int32_t normy;
 
 // LINE 3345:
 	__asm        mov    eax, hd;
@@ -8329,10 +8329,10 @@ _T18c:
 
 // FUNCTION: COPTER_D 0x004f5316
 void S3HeliTestCopter(/*packed*/ struct _HELI_DATA *hd) {
-	int32_t randx;
-	long y;
-	long x;
-	int32_t randz;
+	/*bp-0x4*/   int32_t randz;
+	/*bp-0x8*/   long x;
+	/*bp-0xc*/   long y;
+	/*bp-0x10*/  int32_t randx;
 
 // LINE 3403:
 	__asm        cmp    hd, 0;
@@ -8695,7 +8695,7 @@ _T142:
 
 // FUNCTION: COPTER_D 0x004f5800
 int32_t S3HeliTakeOff(/*packed*/ struct _HELI_DATA *hd) {
-	int32_t alt;
+	/*bp-0x4*/   int32_t alt;
 
 // LINE 3602:
 	hd->slide = 0x0;
@@ -8746,17 +8746,17 @@ void S3HeliHeadsUp() {
 
 // FUNCTION: COPTER_D 0x004f58a3
 int32_t S3HeliGetDeflection(/*packed*/ struct _HELI_DATA *hd, /*packed*/ struct Point3d *vector, int32_t * dist, int32_t * alt) {
-	int32_t deltax;
-	/*packed*/ struct _CELL_INFO *cptr;
-	/*packed*/ struct _CELL_INFO *lcptr;
-	long y;
-	long i;
-	int32_t fz;
-	long x;
-	int32_t maxradius;
-	int32_t fx;
-	int32_t deflectangle;
-	int32_t deltaz;
+	/*bp-0x4*/   int32_t deltaz;
+	/*bp-0x8*/   int32_t deflectangle;
+	/*bp-0xc*/   int32_t fx;
+	/*bp-0x10*/  int32_t maxradius;
+	/*bp-0x14*/  long x;
+	/*bp-0x18*/  int32_t fz;
+	/*bp-0x1c*/  long i;
+	/*bp-0x20*/  long y;
+	/*bp-0x24*/  /*packed*/ struct _CELL_INFO *lcptr;
+	/*bp-0x28*/  /*packed*/ struct _CELL_INFO *cptr;
+	/*bp-0x2c*/  int32_t deltax;
 
 // LINE 3667:
 	__asm        mov    eax, vector;
@@ -8891,9 +8891,9 @@ _T164:
 
 // FUNCTION: COPTER_D 0x004f5a0c
 int32_t S3HeliHighestBuildAlt(/*packed*/ struct _CELL_INFO *cptr) {
-	int32_t maxradius;
-	/*packed*/ struct _STOBJ_INST *stobj;
-	/*packed*/ struct VRObjInfo oinfo;
+	/*bp-0x24*/  /*packed*/ struct VRObjInfo oinfo; // 0x24 bytes
+	/*bp-0x28*/  /*packed*/ struct _STOBJ_INST *stobj;
+	/*bp-0x2c*/  int32_t maxradius;
 
 // LINE 3733:
 	stobj = cptr->stptr;
@@ -8943,7 +8943,7 @@ void S3HeliSwitchType(/*packed*/ struct _HELI_DATA *hd) {
 
 // FUNCTION: COPTER_D 0x004f5a90
 /*packed*/ struct _HELI_DATA* S3HeliGetDataByDyObj(/*packed*/ struct _DYOBJ_INST *dyheli) {
-	long heliidx;
+	/*bp-0x4*/   long heliidx;
 
 // LINE 3775:
 	__asm        mov    heliidx, 0;
@@ -8980,7 +8980,7 @@ _T67:
 
 // FUNCTION: COPTER_D 0x004f5afc
 void S3HeliNextFrameDriver() {
-	long heliidx;
+	/*bp-0x4*/   long heliidx;
 
 // LINE 3800:
 	__asm        mov    heliidx, 0;
@@ -9019,13 +9019,13 @@ _T64:
 
 // FUNCTION: COPTER_D 0x004f5b6a
 void S3HeliSoundDriver() {
-	int32_t closest;
-	int32_t vol_adj;
-	/*packed*/ struct Point3d viewvect;
-	/*packed*/ struct _HELI_DATA *hd;
-	int32_t dist;
-	long heliidx;
-	/*packed*/ struct _HELI_DATA *closehd;
+	/*bp-0x4*/   /*packed*/ struct _HELI_DATA *closehd;
+	/*bp-0x8*/   long heliidx;
+	/*bp-0xc*/   int32_t dist;
+	/*bp-0x10*/  /*packed*/ struct _HELI_DATA *hd;
+	/*bp-0x1c*/  /*packed*/ struct Point3d viewvect; // 0xc bytes
+	/*bp-0x20*/  int32_t vol_adj;
+	/*bp-0x24*/  int32_t closest;
 
 // LINE 3841:
 	__asm        mov    eax, S_sound_frames;
@@ -9288,17 +9288,17 @@ _T2f8:
 
 // FUNCTION: COPTER_D 0x004f5e67
 void S3HeliSetSpotlite(/*packed*/ struct _HELI_DATA *hd, int32_t maxobjy, int32_t alt, int32_t color) {
-	/*packed*/ struct VRview pos;
-	/*packed*/ struct _CELL_INFO *cptr;
-	/*packed*/ struct _CELL_INFO *ncptr;
-	/*packed*/ struct Point3d loc;
-	long i;
-	long spotlevel;
-	int32_t dist;
-	/*packed*/ struct Point3d vstep;
-	int32_t totdist;
-	/*packed*/ struct Point3d svec;
-	int32_t scale;
+	/*bp-0x4*/   int32_t scale;
+	/*bp-0x10*/  /*packed*/ struct Point3d svec; // 0xc bytes
+	/*bp-0x14*/  int32_t totdist;
+	/*bp-0x20*/  /*packed*/ struct Point3d vstep; // 0xc bytes
+	/*bp-0x24*/  int32_t dist;
+	/*bp-0x28*/  long spotlevel;
+	/*bp-0x2c*/  long i;
+	/*bp-0x38*/  /*packed*/ struct Point3d loc; // 0xc bytes
+	/*bp-0x3c*/  /*packed*/ struct _CELL_INFO *ncptr;
+	/*bp-0x40*/  /*packed*/ struct _CELL_INFO *cptr;
+	/*bp-0x98*/  /*packed*/ struct VRview pos; // 0x58 bytes
 
 // LINE 3979:
 	__asm        mov    eax, hd;
@@ -9505,9 +9505,9 @@ _T254:
 	__asm        je     _T31d;
 // LINE 4071:
 // Block start:
-	/*packed*/ struct VRFaceInfo finfo;
-	int32_t face;
-	/*packed*/ struct VRObjInfo oinfo;
+	/*bp-0xbc*/  /*packed*/ struct VRObjInfo oinfo; // 0x24 bytes
+	/*bp-0xc0*/  int32_t face;
+	/*bp-0xe0*/  /*packed*/ struct VRFaceInfo finfo; // 0x20 bytes
 	__asm        lea    eax, oinfo.Faces;
 	__asm        push   eax;
 	__asm        mov    eax, hd;
@@ -9706,12 +9706,12 @@ void S3HeliGetSpotLoc(/*packed*/ struct Point2d *loc) {
 
 // FUNCTION: COPTER_D 0x004f6341
 int32_t S3HeliSpotDistance(/*packed*/ struct Point3d *spotloc, /*packed*/ struct Point3d *spotvec, int32_t dist, /*packed*/ struct _CELL_INFO *cptr) {
-	int32_t newdist;
-	/*packed*/ struct Point3d oloc;
-	/*packed*/ struct Point3d center;
-	/*packed*/ struct _STOBJ_INST *stobj;
-	/*packed*/ struct Point3d cloc;
-	/*packed*/ struct VRObjInfo oinfo;
+	/*bp-0x24*/  /*packed*/ struct VRObjInfo oinfo; // 0x24 bytes
+	/*bp-0x30*/  /*packed*/ struct Point3d cloc; // 0xc bytes
+	/*bp-0x34*/  /*packed*/ struct _STOBJ_INST *stobj;
+	/*bp-0x40*/  /*packed*/ struct Point3d center; // 0xc bytes
+	/*bp-0x4c*/  /*packed*/ struct Point3d oloc; // 0xc bytes
+	/*bp-0x50*/  int32_t newdist;
 
 // LINE 4152:
 	__asm        mov    eax, cptr;
@@ -9902,16 +9902,16 @@ _T8a:
 
 // FUNCTION: COPTER_D 0x004f6555
 void S3HeliTurbulence(/*packed*/ struct _HELI_DATA *hd) {
-	int32_t tfactor;
-	int32_t ffactor;
-	int32_t pitch;
-	/*packed*/ struct _HELI_TYPE_DATA *htd;
-	int32_t firealt;
-	int32_t yaw;
-	/*packed*/ struct _CELL_INFO *cptr;
-	int32_t i;
-	/*packed*/ struct Point3d loc;
-	int32_t slide;
+	/*bp-0x4*/   int32_t slide;
+	/*bp-0x10*/  /*packed*/ struct Point3d loc; // 0xc bytes
+	/*bp-0x14*/  int32_t i;
+	/*bp-0x18*/  /*packed*/ struct _CELL_INFO *cptr;
+	/*bp-0x1c*/  int32_t yaw;
+	/*bp-0x20*/  int32_t firealt;
+	/*bp-0x24*/  /*packed*/ struct _HELI_TYPE_DATA *htd;
+	/*bp-0x28*/  int32_t pitch;
+	/*bp-0x2c*/  int32_t ffactor;
+	/*bp-0x30*/  int32_t tfactor;
 
 // LINE 4292:
 	__asm        mov    eax, hd;
@@ -10236,13 +10236,13 @@ _T388:
 
 // FUNCTION: COPTER_D 0x004f6912
 void S3HeliSmokeTrail(/*packed*/ struct _HELI_DATA *hd) {
-	/*packed*/ struct _HELI_TYPE_DATA *htd;
-	/*packed*/ struct _CELL_INFO *cptr;
-	/*packed*/ struct Point3d loc;
-	/*packed*/ struct Point3d vec;
-	int32_t mat[4][4];
-	int32_t speed;
-	long scale;
+	/*bp-0x4*/   long scale;
+	/*bp-0x8*/   int32_t speed;
+	/*bp-0x48*/  int32_t mat[4][4]; // 0x40 bytes
+	/*bp-0x54*/  /*packed*/ struct Point3d vec; // 0xc bytes
+	/*bp-0x60*/  /*packed*/ struct Point3d loc; // 0xc bytes
+	/*bp-0x64*/  /*packed*/ struct _CELL_INFO *cptr;
+	/*bp-0x68*/  /*packed*/ struct _HELI_TYPE_DATA *htd;
 
 // LINE 4417:
 	__asm        mov    eax, hd;
@@ -10639,8 +10639,8 @@ void S3HeliReset() {
 
 // FUNCTION: COPTER_D 0x004f6d87
 void S3HeliTweakInit() {
-	int32_t * pvals[14];
-	/*packed*/ struct _HELI_TYPE_DATA *htd;
+	/*bp-0x4*/   /*packed*/ struct _HELI_TYPE_DATA *htd;
+	/*bp-0x3c*/  int32_t * pvals[14]; // 0x38 bytes
 
 // LINE 4560:
 	htd = 0x5b4978;
@@ -11299,7 +11299,7 @@ void S3HeliTweakInit() {
 
 // FUNCTION: COPTER_D 0x004f73bd
 int32_t S3HeliGetRepairRate(/*packed*/ struct _HELI_DATA *hd) {
-	/*packed*/ struct _HELI_TYPE_DATA *htd;
+	/*bp-0x4*/   /*packed*/ struct _HELI_TYPE_DATA *htd;
 
 // LINE 4763:
 	__asm        mov    eax, hd;
@@ -11318,7 +11318,7 @@ int32_t S3HeliGetRepairRate(/*packed*/ struct _HELI_DATA *hd) {
 
 // FUNCTION: COPTER_D 0x004f73ed
 int32_t S3HeliGetFuelRate(/*packed*/ struct _HELI_DATA *hd) {
-	/*packed*/ struct _HELI_TYPE_DATA *htd;
+	/*bp-0x4*/   /*packed*/ struct _HELI_TYPE_DATA *htd;
 
 // LINE 4771:
 	__asm        mov    eax, hd;
@@ -11337,9 +11337,9 @@ int32_t S3HeliGetFuelRate(/*packed*/ struct _HELI_DATA *hd) {
 
 // FUNCTION: COPTER_D 0x004f741d
 long S3GetFullRepairCost(/*packed*/ struct _HELI_DATA *hd) {
-	int32_t max_damage;
-	int32_t current_damage;
-	int32_t repair_rate;
+	/*bp-0x4*/   int32_t repair_rate;
+	/*bp-0x8*/   int32_t current_damage;
+	/*bp-0xc*/   int32_t max_damage;
 
 // LINE 4784:
 	__asm        mov    eax, hd;
@@ -11371,9 +11371,9 @@ long S3GetFullRepairCost(/*packed*/ struct _HELI_DATA *hd) {
 
 // FUNCTION: COPTER_D 0x004f7473
 void S3HeliPurchaseRepairs(/*packed*/ struct _HELI_DATA *hd, long lPurchaseBucks) {
-	int32_t max_damage;
-	int32_t current_damage;
-	int32_t repair_rate;
+	/*bp-0x4*/   int32_t repair_rate;
+	/*bp-0x8*/   int32_t current_damage;
+	/*bp-0xc*/   int32_t max_damage;
 
 // LINE 4804:
 	__asm        mov    eax, hd;
@@ -11414,9 +11414,9 @@ _T73:
 
 // FUNCTION: COPTER_D 0x004f74eb
 long S3GetFullRefuelCost(/*packed*/ struct _HELI_DATA *hd) {
-	int32_t max_fuel;
-	int32_t current_fuel;
-	int32_t fuel_purchase_rate;
+	/*bp-0x4*/   int32_t fuel_purchase_rate;
+	/*bp-0x8*/   int32_t current_fuel;
+	/*bp-0xc*/   int32_t max_fuel;
 
 // LINE 4824:
 	__asm        mov    eax, hd;
@@ -11447,9 +11447,9 @@ long S3GetFullRefuelCost(/*packed*/ struct _HELI_DATA *hd) {
 
 // FUNCTION: COPTER_D 0x004f753e
 void S3HeliPurchaseFuel(/*packed*/ struct _HELI_DATA *hd, long lPurchaseBucks) {
-	int32_t max_fuel;
-	int32_t current_fuel;
-	int32_t fuel_purchase_rate;
+	/*bp-0x4*/   int32_t fuel_purchase_rate;
+	/*bp-0x8*/   int32_t current_fuel;
+	/*bp-0xc*/   int32_t max_fuel;
 
 // LINE 4843:
 	__asm        mov    eax, hd;
@@ -11490,7 +11490,7 @@ _T72:
 
 // FUNCTION: COPTER_D 0x004f75b5
 int32_t S3HeliGetMaximumDamage(/*packed*/ struct _HELI_DATA *hd) {
-	/*packed*/ struct _HELI_TYPE_DATA *htd;
+	/*bp-0x4*/   /*packed*/ struct _HELI_TYPE_DATA *htd;
 
 // LINE 4858:
 	__asm        mov    eax, hd;
@@ -11518,7 +11518,7 @@ int32_t S3HeliGetCurrentDamage(/*packed*/ struct _HELI_DATA *hd) {
 
 // FUNCTION: COPTER_D 0x004f75fe
 int32_t S3HeliGetMaximumFuel(/*packed*/ struct _HELI_DATA *hd) {
-	/*packed*/ struct _HELI_TYPE_DATA *htd;
+	/*bp-0x4*/   /*packed*/ struct _HELI_TYPE_DATA *htd;
 
 // LINE 4875:
 	__asm        mov    eax, hd;
@@ -11689,7 +11689,7 @@ _T1e8:
 
 // FUNCTION: COPTER_D 0x004f781b
 void S3PlayMegaphoneMessage(int32_t nMessageType) {
-	char szSoundFiles[4][12];
+	/*bp-0x30*/  char szSoundFiles[4][12]; // 0x30 bytes
 
 // LINE 4937:
 	__asm        mov    eax, 0x5B4D5C;
@@ -11764,14 +11764,14 @@ void S3PlayMegaphoneMessage(int32_t nMessageType) {
 
 // FUNCTION: COPTER_D 0x004f78fa
 int32_t S3HeliCrashed(/*packed*/ struct _HELI_DATA *hd) {
-	/*packed*/ struct _CELL_INFO *cptr;
-	/*packed*/ struct tagUserPersonalInfo *up;
-	/*packed*/ struct Point3d loc;
-	int32_t i;
-	/*packed*/ struct Point3d vec;
-	int32_t mat[4][4];
-	int32_t speed;
-	/*packed*/ struct Point2d *freepad;
+	/*bp-0x4*/   /*packed*/ struct Point2d *freepad;
+	/*bp-0x8*/   int32_t speed;
+	/*bp-0x48*/  int32_t mat[4][4]; // 0x40 bytes
+	/*bp-0x54*/  /*packed*/ struct Point3d vec; // 0xc bytes
+	/*bp-0x58*/  int32_t i;
+	/*bp-0x64*/  /*packed*/ struct Point3d loc; // 0xc bytes
+	/*bp-0x68*/  /*packed*/ struct tagUserPersonalInfo *up;
+	/*bp-0x6c*/  /*packed*/ struct _CELL_INFO *cptr;
 
 // LINE 4967:
 	__asm        mov    eax, hd;
@@ -12204,10 +12204,10 @@ _T4e7:
 
 // FUNCTION: COPTER_D 0x004f7de6
 int32_t S3HeliDyObjCollisionCheck(/*packed*/ struct _HELI_DATA *hd) {
-	/*packed*/ struct _CELL_INFO *cptr;
-	/*packed*/ struct Point3d loc;
-	/*packed*/ struct _DYOBJ_INST *dyobj;
-	int32_t ret_code;
+	/*bp-0x4*/   int32_t ret_code;
+	/*bp-0x8*/   /*packed*/ struct _DYOBJ_INST *dyobj;
+	/*bp-0x14*/  /*packed*/ struct Point3d loc; // 0xc bytes
+	/*bp-0x18*/  /*packed*/ struct _CELL_INFO *cptr;
 
 // LINE 5131:
 	ret_code = 0x0;
@@ -12346,17 +12346,17 @@ _T18a:
 
 // FUNCTION: COPTER_D 0x004f7f7d
 void S3HeliHitSpiral(long hit_type, /*packed*/ struct Point2d *cell, /*packed*/ struct _DYOBJ_INST *dyhitter, long mission_id, long xtra_msg) {
-	int32_t stop_now;
-	/*packed*/ struct _CELL_INFO *cptr;
-	long curr_dir;
-	long i;
-	long y;
-	long x;
-	long spiral_dist;
-	long curr_dist;
-	/*packed*/ struct _DYOBJ_INST *dyobj;
-	long ydir;
-	long xdir;
+	/*bp-0x4*/   long xdir;
+	/*bp-0x8*/   long ydir;
+	/*bp-0xc*/   /*packed*/ struct _DYOBJ_INST *dyobj;
+	/*bp-0x10*/  long curr_dist;
+	/*bp-0x14*/  long spiral_dist;
+	/*bp-0x18*/  long x;
+	/*bp-0x1c*/  long y;
+	/*bp-0x20*/  long i;
+	/*bp-0x24*/  long curr_dir;
+	/*bp-0x28*/  /*packed*/ struct _CELL_INFO *cptr;
+	/*bp-0x2c*/  int32_t stop_now;
 
 // LINE 5214:
 	curr_dist = 0x0;
@@ -12561,10 +12561,10 @@ _T239:
 
 // FUNCTION: COPTER_D 0x004f81bb
 /*packed*/ struct Point2d* S3HeliGetFreePad() {
-	/*packed*/ struct Point2d *noheliloc;
-	/*packed*/ struct _CELL_INFO *cptr;
-	/*packed*/ struct Point2d *pad;
-	/*packed*/ struct _DYOBJ_INST *dyobj;
+	/*bp-0x4*/   /*packed*/ struct _DYOBJ_INST *dyobj;
+	/*bp-0x8*/   /*packed*/ struct Point2d *pad;
+	/*bp-0xc*/   /*packed*/ struct _CELL_INFO *cptr;
+	/*bp-0x10*/  /*packed*/ struct Point2d *noheliloc;
 
 // LINE 5355:
 	noheliloc = 0x0;
@@ -12632,7 +12632,7 @@ _Tb0:
 
 // FUNCTION: COPTER_D 0x004f8270
 /*packed*/ struct _HELI_DATA* S3HeliGetDataForType(long lHeliType) {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 // LINE 5405:
 	__asm        mov    i, 0;
@@ -12674,7 +12674,7 @@ _T6a:
 
 // FUNCTION: COPTER_D 0x004f82df
 long S3HeliGetNewValue(long lHeliType) {
-	/*packed*/ struct _HELI_TYPE_DATA *htd;
+	/*bp-0x4*/   /*packed*/ struct _HELI_TYPE_DATA *htd;
 
 // LINE 5420:
 	__asm        mov    eax, lHeliType;
@@ -12700,9 +12700,9 @@ _T3a:
 
 // FUNCTION: COPTER_D 0x004f831e
 long S3HeliGetCurrentValue(long lHeliType) {
-	/*packed*/ struct _HELI_TYPE_DATA *htd;
-	/*packed*/ struct _HELI_DATA *hd;
-	int32_t newval;
+	/*bp-0x4*/   int32_t newval;
+	/*bp-0x8*/   /*packed*/ struct _HELI_DATA *hd;
+	/*bp-0xc*/   /*packed*/ struct _HELI_TYPE_DATA *htd;
 
 // LINE 5439:
 	__asm        mov    eax, lHeliType;
@@ -12757,8 +12757,8 @@ _T85:
 
 // FUNCTION: COPTER_D 0x004f83a8
 long S3HeliGetEquipmentNewValue(long lEquipmentType) {
-	long lTeargasCanisterCount;
-	long lValues[5];
+	/*bp-0x14*/  long lValues[5]; // 0x14 bytes
+	/*bp-0x18*/  long lTeargasCanisterCount;
 
 // LINE 5468:
 	lValues[0] = 0x7d0;
@@ -12842,9 +12842,9 @@ long S3HeliGetEquipmentCurrentValue(long lEquipmentType) {
 
 // FUNCTION: COPTER_D 0x004f8492
 void S3HeliMakeHelicopter(long lHeliType) {
-	/*packed*/ struct tagUserPersonalInfo *up;
-	/*packed*/ struct _HELI_DATA *hd;
-	/*packed*/ struct Point2d *freepad;
+	/*bp-0x4*/   /*packed*/ struct Point2d *freepad;
+	/*bp-0x8*/   /*packed*/ struct _HELI_DATA *hd;
+	/*bp-0xc*/   /*packed*/ struct tagUserPersonalInfo *up;
 
 // LINE 5529:
 	__asm        mov    eax, lHeliType;
@@ -12905,10 +12905,10 @@ _T93:
 
 // FUNCTION: COPTER_D 0x004f852a
 void S3HeliRemoveHelicopter(long lHeliType) {
-	/*packed*/ struct _CELL_INFO *cptr;
-	/*packed*/ struct tagUserPersonalInfo *up;
-	/*packed*/ struct _HELI_DATA *hd;
-	long i;
+	/*bp-0x4*/   long i;
+	/*bp-0x8*/   /*packed*/ struct _HELI_DATA *hd;
+	/*bp-0xc*/   /*packed*/ struct tagUserPersonalInfo *up;
+	/*bp-0x10*/  /*packed*/ struct _CELL_INFO *cptr;
 
 // LINE 5557:
 	__asm        mov    eax, lHeliType;
@@ -12976,7 +12976,7 @@ _Tb9:
 
 // FUNCTION: COPTER_D 0x004f85e8
 void S3HeliUnlink(/*packed*/ struct _HELI_DATA *hd, /*packed*/ struct _CELL_INFO *cptr) {
-	/*packed*/ struct _DYOBJ_INST **dyptrptr;
+	/*bp-0x4*/   /*packed*/ struct _DYOBJ_INST **dyptrptr;
 
 // LINE 5594:
 	__asm        mov    eax, cptr;
@@ -13008,7 +13008,7 @@ _T66:
 
 // FUNCTION: COPTER_D 0x004f8653
 void S3HeliHitDispatch(long hitter_type, /*packed*/ struct _DYOBJ_INST *dyhitter, /*packed*/ struct _DYOBJ_INST *dyhittee, long mission_id, long xtra_msg) {
-	/*packed*/ struct _HELI_DATA *hd;
+	/*bp-0x4*/   /*packed*/ struct _HELI_DATA *hd;
 
 // LINE 5617:
 	__asm        mov    eax, dyhittee;
@@ -13157,9 +13157,9 @@ _T1ef:
 
 // FUNCTION: COPTER_D 0x004f8847
 int32_t S3HeliMIFFLoad(void * __ptr32 miffReader) {
-	/*packed*/ struct _HELI_DATA *hd;
-	long i;
-	long ret;
+	/*bp-0x4*/   long ret;
+	/*bp-0x8*/   long i;
+	/*bp-0xc*/   /*packed*/ struct _HELI_DATA *hd;
 
 // LINE 5702:
 	__asm        push   0x32C;
@@ -13241,8 +13241,8 @@ _T103:
 
 // FUNCTION: COPTER_D 0x004f894f
 int32_t S3HeliMIFFSave(void * __ptr32 miffWriter) {
-	long i;
-	long ret;
+	/*bp-0x4*/   long ret;
+	/*bp-0x8*/   long i;
 
 // LINE 5737:
 	__asm        mov    i, 0;
@@ -13288,13 +13288,13 @@ _T74:
 
 // FUNCTION: COPTER_D 0x004f89c8
 void S3HeliUserExit() {
-	int32_t maxRadius;
-	int32_t radius;
-	int32_t rsin;
-	/*packed*/ struct Point3d personLoc;
-	int32_t angle;
-	/*packed*/ struct Point3d vehicleLoc;
-	int32_t rcos;
+	/*bp-0x4*/   int32_t rcos;
+	/*bp-0x10*/  /*packed*/ struct Point3d vehicleLoc; // 0xc bytes
+	/*bp-0x14*/  int32_t angle;
+	/*bp-0x20*/  /*packed*/ struct Point3d personLoc; // 0xc bytes
+	/*bp-0x24*/  int32_t rsin;
+	/*bp-0x28*/  int32_t radius;
+	/*bp-0x2c*/  int32_t maxRadius;
 
 // LINE 5761:
 	__asm        mov    eax, G_uheli;

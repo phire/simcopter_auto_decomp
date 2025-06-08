@@ -355,9 +355,9 @@ _Tae:
 
 // FUNCTION: COPTER_D 0x004271a3
 int32_t CSparkalApp::DecideRuntimePlatform() {
-	unsigned char WinMinor;
-	unsigned long Version;
-	unsigned char WinMajor;
+	/*bp-0x4*/   unsigned char WinMajor;
+	/*bp-0x8*/   unsigned long Version;
+	/*bp-0xc*/   unsigned char WinMinor;
 
 // LINE 62:
 	this->_mRuntimePlatform = 0x0;
@@ -418,7 +418,7 @@ _Ta4:
 
 // FUNCTION: COPTER_D 0x00427257
 /*packed*/ class CSparkalWindow* CSparkalApp::NewWindow(unsigned long Width, unsigned long Height, unsigned long Style, const /*packed*/ struct SparkalColor *pColors, char * Caption) {
-	/*packed*/ class CSparkalWindow *Window;
+	/*bp-0x4*/   /*packed*/ class CSparkalWindow *Window;
 
 // LINE 97:
 	Window = 0x0;
@@ -455,7 +455,7 @@ _T58:
 
 // FUNCTION: COPTER_D 0x004272be
 /*unpacked*/ class IFlatImage* CSparkalApp::NewImage(char * fileName) {
-	/*unpacked*/ class IFlatImage *pBitmap;
+	/*bp-0x4*/   /*unpacked*/ class IFlatImage *pBitmap;
 
 // LINE 117:
 	pBitmap = 0x0;
@@ -465,7 +465,7 @@ _T58:
 	__asm        je     _T60;
 // LINE 121:
 // Block start:
-	/*packed*/ class CBackBuffer *pDDBitmap;
+	/*bp-0x8*/   /*packed*/ class CBackBuffer *pDDBitmap;
 	__asm        push   0x134;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
@@ -489,7 +489,7 @@ _T55:
 	__asm        jmp    _T9b;
 // LINE 125:
 // Block start:
-	/*packed*/ class CBackBuffer *pBBitmap;
+	/*bp-0xc*/   /*packed*/ class CBackBuffer *pBBitmap;
 _T60:
 	__asm        push   0x134;
 	__asm        call   operator new;
@@ -519,7 +519,7 @@ _T9b:
 
 // FUNCTION: COPTER_D 0x00427368
 /*unpacked*/ class IFlatImage* CSparkalApp::NewImage(long width, long height, const const /*packed*/ struct SparkalColor *pColors) {
-	/*unpacked*/ class IFlatImage *pBitmap;
+	/*bp-0x4*/   /*unpacked*/ class IFlatImage *pBitmap;
 
 // LINE 142:
 	pBitmap = 0x0;
@@ -529,7 +529,7 @@ _T9b:
 	__asm        je     _Tb7;
 // LINE 147:
 // Block start:
-	/*packed*/ class CBackBuffer *pDDBitmap;
+	/*bp-0x8*/   /*packed*/ class CBackBuffer *pDDBitmap;
 	__asm        cmp    pColors, 0;
 	__asm        je     _T6c;
 // LINE 148:
@@ -585,7 +585,7 @@ _Tac:
 	__asm        jmp    _T149;
 // LINE 155:
 // Block start:
-	/*packed*/ class CBackBuffer *pBBitmap;
+	/*bp-0xc*/   /*packed*/ class CBackBuffer *pBBitmap;
 _Tb7:
 	__asm        cmp    pColors, 0;
 	__asm        je     _T103;

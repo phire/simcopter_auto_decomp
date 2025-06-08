@@ -29,7 +29,7 @@ struct TIME_STAMP{ // packed(0x8 bytes) TI: 0x26fa
 // Contribution: 1:0007a640-0007ab67 Module: 33, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0047b640
 unsigned short wincpuidsupport() {
-	int32_t cpuid_support;
+	/*bp-0x4*/   int32_t cpuid_support;
 
 // LINE 64:
 	cpuid_support = 0x1;
@@ -65,7 +65,7 @@ _T2c:
 
 // FUNCTION: COPTER_D 0x0047b67a
 unsigned short wincpuid() {
-	unsigned short cpuid;
+	/*bp-0x4*/   unsigned short cpuid;
 
 // LINE 110:
 	__asm        call   wincpuidsupport;
@@ -134,11 +134,11 @@ _Tb1:
 
 // FUNCTION: COPTER_D 0x0047b739
 unsigned short wincpuidext() {
-	unsigned char intel_id[12];
-	int32_t i;
-	unsigned short cpuidext;
-	unsigned char vendor_id[12];
-	unsigned short cpu_type;
+	/*bp-0x4*/   unsigned short cpu_type;
+	/*bp-0x10*/  unsigned char vendor_id[12]; // 0xc bytes
+	/*bp-0x14*/  unsigned short cpuidext;
+	/*bp-0x18*/  int32_t i;
+	/*bp-0x24*/  unsigned char intel_id[12]; // 0xc bytes
 
 // LINE 164:
 	i = 0x0;
@@ -238,10 +238,10 @@ _Tde:
 
 // FUNCTION: COPTER_D 0x0047b825
 unsigned long wincpufeatures() {
-	unsigned char intel_id[12];
-	int32_t i;
-	unsigned long cpuff;
-	unsigned char vendor_id[12];
+	/*bp-0xc*/   unsigned char vendor_id[12]; // 0xc bytes
+	/*bp-0x10*/  unsigned long cpuff;
+	/*bp-0x14*/  int32_t i;
+	/*bp-0x20*/  unsigned char intel_id[12]; // 0xc bytes
 
 // LINE 255:
 	i = 0x0;
@@ -328,8 +328,8 @@ _Tba:
 
 // FUNCTION: COPTER_D 0x0047b8ec
 /*packed*/ struct TIME_STAMP winrdtsc() {
-	/*packed*/ struct TIME_STAMP timestamp;
-	unsigned long features;
+	/*bp-0x4*/   unsigned long features;
+	/*bp-0xc*/   /*packed*/ struct TIME_STAMP timestamp; // 0x8 bytes
 
 // LINE 324:
 	__asm        call   wincpufeatures;
@@ -357,7 +357,7 @@ _T31:
 
 // FUNCTION: COPTER_D 0x0047b92d
 unsigned short getdllversion() {
-	unsigned short Version;
+	/*bp-0x4*/   unsigned short Version;
 
 // LINE 360:
 	Version = 0x100;
@@ -369,7 +369,7 @@ unsigned short getdllversion() {
 
 // FUNCTION: COPTER_D 0x0047b94a
 static unsigned short check_clone() {
-	short cpu_type;
+	/*bp-0x4*/   short cpu_type;
 
 // LINE 382:
 	cpu_type = 0x0;
@@ -415,7 +415,7 @@ _T2a:
 
 // FUNCTION: COPTER_D 0x0047b999
 static unsigned short check_8086() {
-	unsigned short cpu_type;
+	/*bp-0x4*/   unsigned short cpu_type;
 
 // LINE 424:
 	cpu_type = 0xffff;
@@ -461,7 +461,7 @@ _T3c:
 
 // FUNCTION: COPTER_D 0x0047b9eb
 static unsigned short check_80286() {
-	unsigned short cpu_type;
+	/*bp-0x4*/   unsigned short cpu_type;
 
 // LINE 467:
 	cpu_type = 0xffff;
@@ -505,7 +505,7 @@ _T39:
 
 // FUNCTION: COPTER_D 0x0047ba3a
 static unsigned short check_80386() {
-	unsigned short cpu_type;
+	/*bp-0x4*/   unsigned short cpu_type;
 
 // LINE 513:
 	cpu_type = 0xffff;
@@ -557,12 +557,12 @@ _T37:
 
 // FUNCTION: COPTER_D 0x0047ba8d
 static unsigned short check_IDProc() {
-	unsigned char intel_id[12];
-	unsigned char stepping;
-	int32_t i;
-	unsigned char vendor_id[12];
-	unsigned short cpu_type;
-	unsigned char model;
+	/*bp-0x4*/   unsigned char model;
+	/*bp-0x8*/   unsigned short cpu_type;
+	/*bp-0x14*/  unsigned char vendor_id[12]; // 0xc bytes
+	/*bp-0x18*/  int32_t i;
+	/*bp-0x1c*/  unsigned char stepping;
+	/*bp-0x28*/  unsigned char intel_id[12]; // 0xc bytes
 
 // LINE 563:
 	i = 0x0;

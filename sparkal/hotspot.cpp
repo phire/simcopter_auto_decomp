@@ -697,7 +697,7 @@ _T3ec:
 
 // FUNCTION: COPTER_D 0x004b948a
 void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long *lCoordinates[2]) {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 
 	__asm        mov    eax, lNewID;
@@ -1088,8 +1088,8 @@ _T4d7:
 
 // FUNCTION: COPTER_D 0x004b9973
 void HotSpot::HotSpot(/*packed*/ struct HotSpotResourceRecord *hotSpotResourceRecord) {
-	int32_t i;
-	long lCount;
+	/*bp-0x4*/   long lCount;
+	/*bp-0x8*/   int32_t i;
 
 
 	__asm        mov    eax, this;
@@ -2746,8 +2746,8 @@ _Tec:
 
 // FUNCTION: COPTER_D 0x004badf8
 int32_t HotSpot::PointInCircle(long lXPosition, long lYPosition) {
-	int32_t nDistanceToPosition;
-	int32_t nRadiusOfCircle;
+	/*bp-0x4*/   int32_t nRadiusOfCircle;
+	/*bp-0x8*/   int32_t nDistanceToPosition;
 
 // LINE 160:
 	__asm        jmp    near ptr 0x004BAE09;
@@ -2863,10 +2863,10 @@ _T126:
 
 // FUNCTION: COPTER_D 0x004baf2a
 int32_t HotSpot::PointInPolygon(long lXPosition, long lYPosition) {
-	int32_t j;
-	int32_t i;
-	int32_t nVertices;
-	int32_t c;
+	/*bp-0x4*/   int32_t c;
+	/*bp-0x8*/   int32_t nVertices;
+	/*bp-0xc*/   int32_t i;
+	/*bp-0x10*/  int32_t j;
 
 // LINE 184:
 	__asm        jmp    near ptr 0x004BAF3B;
@@ -3016,13 +3016,13 @@ _T199:
 
 // FUNCTION: COPTER_D 0x004bb0d2
 void HotSpot::GetBoundingRect(/*packed*/ class MRect& rectBounds) {
-	int32_t nMaxY;
-	int32_t nMaxX;
-	int32_t nMinY;
-	int32_t i;
-	int32_t nMinX;
-	int32_t nRadiusOfCircle;
-	int32_t nPointCount;
+	/*bp-0x4*/   int32_t nPointCount;
+	/*bp-0x8*/   int32_t nRadiusOfCircle;
+	/*bp-0xc*/   int32_t nMinX;
+	/*bp-0x10*/  int32_t i;
+	/*bp-0x14*/  int32_t nMinY;
+	/*bp-0x18*/  int32_t nMaxX;
+	/*bp-0x1c*/  int32_t nMaxY;
 
 // LINE 211:
 	__asm        mov    eax, this;
@@ -3353,13 +3353,13 @@ _T3c2:
 
 // FUNCTION: COPTER_D 0x004bb49b
 int32_t LoadListFromResource(/*packed*/ class list<HotSpot>& hotSpotList, int32_t nResourceID) {
-	int32_t i;
-	int32_t nHotspotRecordCount;
-	char * chFileImage;
-	/*packed*/ struct HotSpotResourceRecord *currentHotspotRecord;
-	int32_t nCurrentRecordStart;
-	/*packed*/ struct HotSpotResourceFileHeader *fileImage;
-	/*packed*/ class ResourceRCData resourceHangarHotspots;
+	/*bp-0x1c*/  /*packed*/ class ResourceRCData resourceHangarHotspots; // 0x1c bytes
+	/*bp-0x20*/  /*packed*/ struct HotSpotResourceFileHeader *fileImage;
+	/*bp-0x24*/  int32_t nCurrentRecordStart;
+	/*bp-0x28*/  /*packed*/ struct HotSpotResourceRecord *currentHotspotRecord;
+	/*bp-0x2c*/  char * chFileImage;
+	/*bp-0x30*/  int32_t nHotspotRecordCount;
+	/*bp-0x34*/  int32_t i;
 
 // LINE 270:
 	__asm        push   1;

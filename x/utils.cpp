@@ -68,9 +68,9 @@ void EmptyPStr(unsigned char * str) {
 
 // FUNCTION: COPTER_D 0x00565cb6
 unsigned short Str2Num(unsigned char * str, long * num) {
-	unsigned char digit;
-	unsigned char count;
-	unsigned short neg;
+	/*bp-0x4*/   unsigned short neg;
+	/*bp-0x8*/   unsigned char count;
+	/*bp-0xc*/   unsigned char digit;
 
 // LINE 62:
 	neg = 0x0;
@@ -258,9 +258,9 @@ _T1c5:
 
 // FUNCTION: COPTER_D 0x00565e80
 void Num2Str(long num, unsigned char * str) {
-	int32_t power;
-	unsigned short neg;
-	unsigned long tenPower;
+	/*bp-0x4*/   unsigned long tenPower;
+	/*bp-0x8*/   unsigned short neg;
+	/*bp-0xc*/   int32_t power;
 
 // LINE 100:
 	power = 0x0;
@@ -356,7 +356,7 @@ _Te9:
 	__asm        je     _T133;
 // LINE 144:
 // Block start:
-	long digit;
+	/*bp-0x10*/  long digit;
 	__asm        mov    ecx, 0xA;
 	__asm        mov    eax, tenPower;
 	__asm        sub    edx, edx;
@@ -392,9 +392,9 @@ _T138:
 
 // FUNCTION: COPTER_D 0x00565fbd
 unsigned short HexStr2Num(unsigned char * str, unsigned long * num) {
-	unsigned char digit;
-	unsigned char digitval;
-	unsigned long result;
+	/*bp-0x4*/   unsigned long result;
+	/*bp-0x8*/   unsigned char digitval;
+	/*bp-0xc*/   unsigned char digit;
 
 // LINE 155:
 	digit = 0x1;
@@ -502,8 +502,8 @@ _Tfc:
 
 // FUNCTION: COPTER_D 0x005660be
 void Num2HexStr(unsigned long num, unsigned char * str) {
-	int32_t power;
-	unsigned long sixteenPower;
+	/*bp-0x4*/   unsigned long sixteenPower;
+	/*bp-0x8*/   int32_t power;
 
 // LINE 177:
 	power = 0x0;
@@ -561,7 +561,7 @@ _T8e:
 	__asm        je     _Tec;
 // LINE 199:
 // Block start:
-	long digit;
+	/*bp-0xc*/   long digit;
 	__asm        mov    eax, num;
 	__asm        sub    edx, edx;
 	__asm        div    sixteenPower;
@@ -647,7 +647,7 @@ unsigned long PStr2Long(unsigned char * name) {
 	__asm        jmp    _T6d;
 // LINE 227:
 // Block start:
-	unsigned long name4;
+	/*bp-0x4*/   unsigned long name4;
 _T24:
 	__asm        mov    eax, name;
 	__asm        xor    ecx, ecx;
@@ -681,7 +681,7 @@ _T6d:
 
 // FUNCTION: COPTER_D 0x00566266
 void CToPString(char * cstr, unsigned char * pstr) {
-	int32_t count;
+	/*bp-0x4*/   int32_t count;
 
 // LINE 260:
 	__asm        mov    eax, cstr;
@@ -716,9 +716,9 @@ _T51:
 
 // FUNCTION: COPTER_D 0x005662c1
 short Round(float val) {
-	double frac;
-	short intval;
-	double dint;
+	/*bp-0x8*/   double dint; // 0x8 bytes
+	/*bp-0xc*/   short intval;
+	/*bp-0x14*/  double frac; // 0x8 bytes
 
 // LINE 270:
 	__asm        lea    eax, dint;
@@ -799,7 +799,7 @@ _T54:
 
 // FUNCTION: COPTER_D 0x0056639c
 void ConcatPStr(unsigned char * str1, unsigned char * str2, short destSize) {
-	unsigned short copyBytes;
+	/*bp-0x4*/   unsigned short copyBytes;
 
 // LINE 445:
 	__asm        mov    eax, str2;
@@ -858,7 +858,7 @@ _T47:
 
 // FUNCTION: COPTER_D 0x00566425
 void ConcatCPStr(char * src, unsigned char * dest, short destSize) {
-	unsigned char buff[256];
+	/*bp-0x100*/ unsigned char buff[256]; // 0x100 bytes
 
 // LINE 456:
 	__asm        push   0x100;
@@ -888,7 +888,7 @@ void ConcatCPStr(char * src, unsigned char * dest, short destSize) {
 
 // FUNCTION: COPTER_D 0x00566479
 void ConcatNum(long number, unsigned char * str, short destSize) {
-	unsigned char numStr[256];
+	/*bp-0x100*/ unsigned char numStr[256]; // 0x100 bytes
 
 // LINE 467:
 	__asm        lea    eax, numStr[0];
@@ -912,8 +912,8 @@ void ConcatNum(long number, unsigned char * str, short destSize) {
 
 // FUNCTION: COPTER_D 0x005664b9
 void HexToString(unsigned long num, unsigned char * str) {
-	short position;
-	char letter;
+	/*bp-0x4*/   char letter;
+	/*bp-0x8*/   short position;
 
 // LINE 500:
 	position = 0x1c;
@@ -1016,12 +1016,12 @@ _Tf9:
 
 // FUNCTION: COPTER_D 0x005665b7
 int32_t PStrCompare(void * __ptr32 voidFirst, void * __ptr32 voidSecond) {
-	unsigned char char2;
-	unsigned char char1;
-	short numChars;
-	unsigned char * second;
-	short count;
-	unsigned char * first;
+	/*bp-0x4*/   unsigned char * first;
+	/*bp-0x8*/   short count;
+	/*bp-0xc*/   unsigned char * second;
+	/*bp-0x10*/  short numChars;
+	/*bp-0x14*/  unsigned char char1;
+	/*bp-0x18*/  unsigned char char2;
 
 // LINE 907:
 	__asm        mov    eax, voidFirst;
@@ -1156,7 +1156,7 @@ _T149:
 
 // FUNCTION: COPTER_D 0x00566705
 void ExtractFileName(unsigned char * path, unsigned char * name) {
-	short place;
+	/*bp-0x4*/   short place;
 
 // LINE 929:
 	__asm        mov    eax, path;
@@ -1255,7 +1255,7 @@ _T54:
 
 // FUNCTION: COPTER_D 0x005667fe
 /*unpacked*/ struct Point center(/*unpacked*/ struct Rect *pRect) {
-	/*unpacked*/ struct Point tmp;
+	/*bp-0x4*/   /*unpacked*/ struct Point tmp;
 
 // LINE 1255:
 	__asm        mov    eax, pRect;

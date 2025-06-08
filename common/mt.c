@@ -63,9 +63,9 @@ struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
 // Contribution: 1:000c90c0-000ca2a6 Module: 92, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004ca0c0
 int32_t MTMagnitude(/*packed*/ struct Point3d *V) {
-	double k;
-	double j;
-	double i;
+	/*bp-0x8*/   double i; // 0x8 bytes
+	/*bp-0x10*/  double j; // 0x8 bytes
+	/*bp-0x18*/  double k; // 0x8 bytes
 
 // LINE 43:
 	__asm        mov    eax, V;
@@ -109,9 +109,9 @@ int32_t MTMagnitude(/*packed*/ struct Point3d *V) {
 
 // FUNCTION: COPTER_D 0x004ca140
 int32_t MTDistance(/*packed*/ struct Point3d *p1, /*packed*/ struct Point3d *p2) {
-	double k;
-	double j;
-	double i;
+	/*bp-0x8*/   double i; // 0x8 bytes
+	/*bp-0x10*/  double j; // 0x8 bytes
+	/*bp-0x18*/  double k; // 0x8 bytes
 
 // LINE 65:
 	__asm        mov    eax, p2;
@@ -167,10 +167,10 @@ int32_t MTDistance(/*packed*/ struct Point3d *p1, /*packed*/ struct Point3d *p2)
 
 // FUNCTION: COPTER_D 0x004ca1e3
 int32_t MTNormalize(/*packed*/ struct Point3d *V) {
-	double k;
-	double j;
-	double i;
-	double r;
+	/*bp-0x8*/   double r; // 0x8 bytes
+	/*bp-0x10*/  double i; // 0x8 bytes
+	/*bp-0x18*/  double j; // 0x8 bytes
+	/*bp-0x20*/  double k; // 0x8 bytes
 
 // LINE 86:
 	__asm        mov    eax, V;
@@ -299,9 +299,9 @@ void MTCreatePlane(/*packed*/ struct Plane *plane, /*packed*/ struct Point3d *V,
 
 // FUNCTION: COPTER_D 0x004ca35c
 int32_t MTSideOfPlane(/*packed*/ struct Point3d *V, /*packed*/ struct Point3d *p, /*packed*/ struct Point3d *q) {
-	/*packed*/ struct Plane plane;
-	/*packed*/ struct Point3d d;
-	int32_t s;
+	/*bp-0x4*/   int32_t s;
+	/*bp-0x10*/  /*packed*/ struct Point3d d; // 0xc bytes
+	/*bp-0x20*/  /*packed*/ struct Plane plane; // 0x10 bytes
 
 // LINE 148:
 	__asm        mov    eax, p;
@@ -362,7 +362,7 @@ int32_t MTSideOfPlane(/*packed*/ struct Point3d *V, /*packed*/ struct Point3d *p
 
 // FUNCTION: COPTER_D 0x004ca3f0
 void MTCreateVelocity(/*packed*/ struct Point3d *p1, /*packed*/ struct Point3d *p2, /*packed*/ struct Point3d *V, int32_t t) {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 // LINE 178:
 	__asm        mov    eax, p2;
@@ -425,7 +425,7 @@ int32_t MTSameSigns(int32_t s1, int32_t s2) {
 
 // FUNCTION: COPTER_D 0x004ca486
 int32_t MTVectorBounds(/*packed*/ struct Point3d *V, int32_t m) {
-	int32_t r;
+	/*bp-0x4*/   int32_t r;
 
 // LINE 222:
 	__asm        mov    eax, V;
@@ -487,7 +487,7 @@ _T91:
 
 // FUNCTION: COPTER_D 0x004ca51c
 void MTApply_Force(/*packed*/ struct Point3d *F, /*packed*/ struct mv *p, int32_t t) {
-	/*packed*/ struct Point3d A;
+	/*bp-0xc*/   /*packed*/ struct Point3d A; // 0xc bytes
 
 // LINE 252:
 	__asm        mov    eax, p;
@@ -551,10 +551,10 @@ void MTApply_Force(/*packed*/ struct Point3d *F, /*packed*/ struct mv *p, int32_
 
 // FUNCTION: COPTER_D 0x004ca5b3
 void MTApply_Friction(int32_t F, /*packed*/ struct mv *p, int32_t t) {
-	int32_t j;
-	int32_t v;
-	int32_t f;
-	int32_t a;
+	/*bp-0x4*/   int32_t a;
+	/*bp-0x8*/   int32_t f;
+	/*bp-0xc*/   int32_t v;
+	/*bp-0x10*/  int32_t j;
 
 // LINE 284:
 	__asm        mov    eax, p;
@@ -649,8 +649,8 @@ _Tf6:
 
 // FUNCTION: COPTER_D 0x004ca6ae
 int32_t MTApply_Force1D(int32_t F, int32_t M, int32_t V, int32_t t, int32_t Vmax) {
-	int32_t nv;
-	int32_t A;
+	/*bp-0x4*/   int32_t A;
+	/*bp-0x8*/   int32_t nv;
 
 // LINE 330:
 	__asm        mov    eax, M;
@@ -697,10 +697,10 @@ _T66:
 
 // FUNCTION: COPTER_D 0x004ca721
 int32_t MTApply_Friction1D(int32_t F, int32_t M, int32_t V, int32_t t) {
-	int32_t absV;
-	int32_t j;
-	int32_t vf;
-	int32_t A;
+	/*bp-0x4*/   int32_t A;
+	/*bp-0x8*/   int32_t vf;
+	/*bp-0xc*/   int32_t j;
+	/*bp-0x10*/  int32_t absV;
 
 // LINE 361:
 	__asm        cmp    V, 0x64;
@@ -792,18 +792,18 @@ _T52:
 
 // FUNCTION: COPTER_D 0x004ca810
 void MTArbRotMat(int32_t *mat[4], int32_t Angle, /*packed*/ struct Point3d *V) {
-	int32_t VzzCos;
-	int32_t VxzCos;
-	int32_t VxyCos;
-	int32_t OneMinCos;
-	int32_t Cos;
-	int32_t VxxCos;
-	int32_t VyzCos;
-	int32_t VzSin;
-	int32_t VyyCos;
-	int32_t VySin;
-	int32_t Sin;
-	int32_t VxSin;
+	/*bp-0x4*/   int32_t VxSin;
+	/*bp-0x8*/   int32_t Sin;
+	/*bp-0xc*/   int32_t VySin;
+	/*bp-0x10*/  int32_t VyyCos;
+	/*bp-0x14*/  int32_t VzSin;
+	/*bp-0x18*/  int32_t VyzCos;
+	/*bp-0x1c*/  int32_t VxxCos;
+	/*bp-0x20*/  int32_t Cos;
+	/*bp-0x24*/  int32_t OneMinCos;
+	/*bp-0x28*/  int32_t VxyCos;
+	/*bp-0x2c*/  int32_t VxzCos;
+	/*bp-0x30*/  int32_t VzzCos;
 
 // LINE 408:
 	__asm        lea    eax, Cos;
@@ -1010,7 +1010,7 @@ void MTArbRotMat(int32_t *mat[4], int32_t Angle, /*packed*/ struct Point3d *V) {
 
 // FUNCTION: COPTER_D 0x004caa19
 void MTmat_row_normal(int32_t *mat[4]) {
-	int32_t factor;
+	/*bp-0x4*/   int32_t factor;
 
 // LINE 471:
 	__asm        mov    eax, mat;
@@ -1221,7 +1221,7 @@ void MTmat_row_normal(int32_t *mat[4]) {
 
 // FUNCTION: COPTER_D 0x004cac36
 void MTmat_col_normal(int32_t *mat[4]) {
-	int32_t factor;
+	/*bp-0x4*/   int32_t factor;
 
 // LINE 510:
 	__asm        mov    eax, mat;
@@ -1500,8 +1500,8 @@ void MTXProduct(/*packed*/ struct Point3d *v1, /*packed*/ struct Point3d *v2, /*
 
 // FUNCTION: COPTER_D 0x004caefb
 void MTCreateDOF4x4(int32_t *mat[4], /*packed*/ struct Point3d *dv) {
-	/*packed*/ struct Point3d xv;
-	/*packed*/ struct Point3d yv;
+	/*bp-0xc*/   /*packed*/ struct Point3d yv; // 0xc bytes
+	/*bp-0x18*/  /*packed*/ struct Point3d xv; // 0xc bytes
 
 // LINE 579:
 	xv.x = dv->z;
@@ -1579,8 +1579,8 @@ void MTCreateDOF4x4(int32_t *mat[4], /*packed*/ struct Point3d *dv) {
 
 // FUNCTION: COPTER_D 0x004caff7
 void MTCreateDOF4x4Y(int32_t *mat[4], /*packed*/ struct Point3d *dv) {
-	/*packed*/ struct Point3d xv;
-	/*packed*/ struct Point3d zv;
+	/*bp-0xc*/   /*packed*/ struct Point3d zv; // 0xc bytes
+	/*bp-0x18*/  /*packed*/ struct Point3d xv; // 0xc bytes
 
 // LINE 639:
 	xv.x = dv->y;
@@ -1781,9 +1781,9 @@ void MTCreateReflection4x4(int32_t *mat[4], /*packed*/ struct Point3d *norm) {
 
 // FUNCTION: COPTER_D 0x004cb23c
 int32_t MTCheapDist2D(/*packed*/ struct Point2d *p1, /*packed*/ struct Point2d *p2) {
-	int32_t xdiff;
-	int32_t dist;
-	int32_t ydiff;
+	/*bp-0x4*/   int32_t ydiff;
+	/*bp-0x8*/   int32_t dist;
+	/*bp-0xc*/   int32_t xdiff;
 
 // LINE 721:
 	__asm        mov    eax, p1;

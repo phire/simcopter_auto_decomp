@@ -78,7 +78,7 @@ void ICommander::~ICommander() {
 
 // FUNCTION: COPTER_D 0x0049ad7b
 /*unpacked*/ class CSparkalWindow* ICommander::SetWindow(/*unpacked*/ class CSparkalWindow *pWindow) {
-	/*unpacked*/ class CSparkalWindow *ReturnWindow;
+	/*bp-0x4*/   /*unpacked*/ class CSparkalWindow *ReturnWindow;
 
 // LINE 29:
 	ReturnWindow = this->mpWindow;

@@ -144,7 +144,7 @@ struct tagRECT{ // packed(0x10 bytes) TI: 0x13c4
 // Contribution: 1:0009d450-0009e705 Module: 12, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0049e450
 void ScreenBuffer::ScreenBuffer() {
-	/*packed*/ struct SparkalRect rectWindowTemp;
+	/*bp-0x10*/  /*packed*/ struct SparkalRect rectWindowTemp; // 0x10 bytes
 
 
 	__asm        mov    ecx, this;
@@ -197,7 +197,7 @@ void ScreenBuffer::ScreenBuffer() {
 
 // FUNCTION: COPTER_D 0x0049e534
 void ScreenBuffer::ScreenBuffer(/*unpacked*/ class CSparkalWindow *pNewWindow, long nNewWidth, long nNewHeight, /*packed*/ struct SparkalColor *pColors, int32_t nNewBackBuffers, enum tagModeType nNewCurrentModeType, int32_t bNewUsingFlipping) {
-	/*packed*/ struct SparkalRect rectWindowTemp;
+	/*bp-0x10*/  /*packed*/ struct SparkalRect rectWindowTemp; // 0x10 bytes
 
 
 	__asm        mov    ecx, this;
@@ -290,7 +290,7 @@ void ScreenBuffer::~ScreenBuffer() {
 
 // FUNCTION: COPTER_D 0x0049e69e
 int32_t ScreenBuffer::CreateSurfaces() {
-	long hResult;
+	/*bp-0x4*/   long hResult;
 
 // LINE 131:
 	this-><ScreenBuffer+0x4c> = 0x0;
@@ -306,7 +306,7 @@ int32_t ScreenBuffer::CreateSurfaces() {
 	__asm        je     _T150;
 // LINE 136:
 // Block start:
-	/*packed*/ struct _DDSCAPS ddsBackBufferCaps;
+	/*bp-0x8*/   /*packed*/ struct _DDSCAPS ddsBackBufferCaps;
 	__asm        push   0x6C;
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -689,8 +689,8 @@ _Tdf:
 
 // FUNCTION: COPTER_D 0x0049eb58
 int32_t ScreenBuffer::ClearSurfaces(int32_t nClearPaletteIndex) {
-	long hResult;
-	/*packed*/ struct _DDBLTFX ddbltfx;
+	/*bp-0x64*/  /*packed*/ struct _DDBLTFX ddbltfx; // 0x64 bytes
+	/*bp-0x68*/  long hResult;
 
 // LINE 286:
 	__asm        mov    eax, this;
@@ -949,7 +949,7 @@ _T2b6:
 
 // FUNCTION: COPTER_D 0x0049ee15
 unsigned long ScreenBuffer::Swap(/*unpacked*/ class CSparkalWindow *__formal, long __formal, long __formal) {
-	long hResult;
+	/*bp-0x4*/   long hResult;
 
 // LINE 365:
 	__asm        mov    eax, this;
@@ -1132,8 +1132,8 @@ _T1e3:
 
 // FUNCTION: COPTER_D 0x0049efff
 void ScreenBuffer::WaitTillReadyToFlip() {
-	long hResult;
-	int32_t bIsInVerticalBlank;
+	/*bp-0x4*/   int32_t bIsInVerticalBlank;
+	/*bp-0x8*/   long hResult;
 
 // LINE 426:
 _T0c:
@@ -1158,7 +1158,7 @@ _T37:
 
 // FUNCTION: COPTER_D 0x0049f040
 void ScreenBuffer::SetPalette() {
-	long hResult;
+	/*bp-0x4*/   long hResult;
 
 // LINE 442:
 	__asm        mov    eax, this;
@@ -1228,7 +1228,7 @@ _Tb5:
 
 // FUNCTION: COPTER_D 0x0049f0fa
 int32_t ScreenBuffer::UsePalette(/*packed*/ struct SparkalColor *pColors) {
-	long hResult;
+	/*bp-0x14*/  long hResult;
 
 	// Function registers exception cleanup function at 0x0049f410
 
@@ -1239,14 +1239,14 @@ int32_t ScreenBuffer::UsePalette(/*packed*/ struct SparkalColor *pColors) {
 	__asm        je     _T2d5;
 // LINE 538:
 // Block start:
-	/*packed*/ struct tagPALETTEENTRY palEntries[256];
-	int32_t i;
+	/*bp-0x18*/  int32_t i;
+	/*bp-0x418*/ /*packed*/ struct tagPALETTEENTRY palEntries[256]; // 0x400 bytes
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14E], 0;
 	__asm        jne    _T94;
 // LINE 539:
 // Block start:
-	void * __ptr32 hdc;
+	/*bp-0x41c*/ void * __ptr32 hdc;
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3850];
 	__asm        mov    hdc, eax;
@@ -1508,8 +1508,8 @@ _T3d:
 
 // FUNCTION: COPTER_D 0x0049f472
 unsigned long ScreenBuffer::FillRect(long nPaletteIndex, /*packed*/ struct SparkalRect *rectFill) {
-	long hResult;
-	/*packed*/ struct tagRECT rectFillTemp;
+	/*bp-0x10*/  /*packed*/ struct tagRECT rectFillTemp; // 0x10 bytes
+	/*bp-0x14*/  long hResult;
 
 // LINE 654:
 	this-><ScreenBuffer+0x58> = 0x6c;

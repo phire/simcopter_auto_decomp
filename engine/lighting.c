@@ -109,13 +109,13 @@ struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 // Contribution: 1:000d7cc0-000d89a4 Module: 132, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004d8cc0
 int32_t VRCreateTexColors(/*packed*/ struct VRResource *res, int32_t create_new) {
-	unsigned char * tptr;
-	int32_t maxcolor;
-	/*packed*/ struct TEXT_Resource *hdr;
-	int32_t j;
-	int32_t i;
-	int32_t maxval;
-	/*packed*/ struct VRBmpHdr *bhdr;
+	/*bp-0x4*/   /*packed*/ struct VRBmpHdr *bhdr;
+	/*bp-0x8*/   int32_t maxval;
+	/*bp-0xc*/   int32_t i;
+	/*bp-0x10*/  int32_t j;
+	/*bp-0x14*/  /*packed*/ struct TEXT_Resource *hdr;
+	/*bp-0x18*/  int32_t maxcolor;
+	/*bp-0x1c*/  unsigned char * tptr;
 
 // LINE 122:
 	hdr = res;
@@ -266,15 +266,15 @@ _T193:
 
 // FUNCTION: COPTER_D 0x004d8e58
 int32_t CreateTiledTexColors(uint32_t * tabentry, /*packed*/ struct VRBmpHdr *bhdr, /*packed*/ struct VRResource *res, int32_t create_new) {
-	unsigned char * tptr;
-	unsigned char * ltptr;
-	int32_t maxcolor;
-	int32_t k;
-	int32_t j;
-	int32_t i;
-	uint32_t * bmpcolors;
-	int32_t maxval;
-	int32_t notiles;
+	/*bp-0x4*/   int32_t notiles;
+	/*bp-0x8*/   int32_t maxval;
+	/*bp-0xc*/   uint32_t * bmpcolors;
+	/*bp-0x10*/  int32_t i;
+	/*bp-0x14*/  int32_t j;
+	/*bp-0x18*/  int32_t k;
+	/*bp-0x1c*/  int32_t maxcolor;
+	/*bp-0x20*/  unsigned char * ltptr;
+	/*bp-0x24*/  unsigned char * tptr;
 
 // LINE 201:
 	__asm        mov    ecx, bhdr;
@@ -420,10 +420,10 @@ _T17a:
 
 // FUNCTION: COPTER_D 0x004d8fd7
 void VRFaceSetTexColor(int32_t face) {
-	int32_t hiword;
-	int32_t * tilebmpcolors;
-	/*packed*/ struct _FaceHdr *fh;
-	int32_t loword;
+	/*bp-0x4*/   int32_t loword;
+	/*bp-0x8*/   /*packed*/ struct _FaceHdr *fh;
+	/*bp-0xc*/   int32_t * tilebmpcolors;
+	/*bp-0x10*/  int32_t hiword;
 
 // LINE 272:
 	fh = face;
@@ -495,10 +495,10 @@ _Tb7:
 
 // FUNCTION: COPTER_D 0x004d9093
 int32_t VRGetTexColor(int32_t bitmap) {
-	int32_t hiword;
-	int32_t * tilebmpcolors;
-	int32_t color;
-	int32_t loword;
+	/*bp-0x4*/   int32_t loword;
+	/*bp-0x8*/   int32_t color;
+	/*bp-0xc*/   int32_t * tilebmpcolors;
+	/*bp-0x10*/  int32_t hiword;
 
 // LINE 322:
 	__asm        mov    eax, bitmap;
@@ -540,7 +540,7 @@ _T5a:
 
 // FUNCTION: COPTER_D 0x004d90fa
 /*packed*/ struct COLOR_SHADE* VRGetColorShade(int32_t color) {
-	/*packed*/ struct COLOR_SHADE *cptr;
+	/*bp-0x4*/   /*packed*/ struct COLOR_SHADE *cptr;
 
 // LINE 348:
 	cptr = 0x5adc10;
@@ -594,15 +594,15 @@ void VRSetIntensities(int32_t ambient, int32_t var1, int32_t var2, int32_t var3)
 
 // FUNCTION: COPTER_D 0x004d918b
 void VRObjSetShading(int32_t obj) {
-	/*packed*/ struct COLOR_SHADE *cptr;
-	int32_t intensity;
-	int32_t i;
-	/*packed*/ struct _FaceHdr *fh;
-	int32_t color;
-	int32_t face;
-	/*packed*/ struct VRObjInfo oinfo;
-	int32_t diffuse;
-	int32_t level;
+	/*bp-0x4*/   int32_t level;
+	/*bp-0x8*/   int32_t diffuse;
+	/*bp-0x2c*/  /*packed*/ struct VRObjInfo oinfo; // 0x24 bytes
+	/*bp-0x30*/  int32_t face;
+	/*bp-0x34*/  int32_t color;
+	/*bp-0x38*/  /*packed*/ struct _FaceHdr *fh;
+	/*bp-0x3c*/  int32_t i;
+	/*bp-0x40*/  int32_t intensity;
+	/*bp-0x44*/  /*packed*/ struct COLOR_SHADE *cptr;
 
 // LINE 399:
 	__asm        lea    eax, oinfo.Faces;
@@ -820,15 +820,15 @@ _T246:
 
 // FUNCTION: COPTER_D 0x004d93d6
 void VRDyObjSetShading(int32_t obj, int32_t *tmat[4][4]) {
-	/*packed*/ struct Point3d rotlitevect;
-	/*packed*/ struct COLOR_SHADE *cptr;
-	/*packed*/ struct ObjectHdr *oh;
-	int32_t intensity;
-	int32_t i;
-	/*packed*/ struct _FaceHdr *fh;
-	int32_t color;
-	int32_t diffuse;
-	int32_t level;
+	/*bp-0x4*/   int32_t level;
+	/*bp-0x8*/   int32_t diffuse;
+	/*bp-0xc*/   int32_t color;
+	/*bp-0x10*/  /*packed*/ struct _FaceHdr *fh;
+	/*bp-0x14*/  int32_t i;
+	/*bp-0x18*/  int32_t intensity;
+	/*bp-0x1c*/  /*packed*/ struct ObjectHdr *oh;
+	/*bp-0x20*/  /*packed*/ struct COLOR_SHADE *cptr;
+	/*bp-0x2c*/  /*packed*/ struct Point3d rotlitevect; // 0xc bytes
 
 // LINE 481:
 	oh = obj;
@@ -993,11 +993,11 @@ _T1b1:
 
 // FUNCTION: COPTER_D 0x004d958c
 void VRTexTileSqFace(int32_t face, /*packed*/ struct VRResource *res, int32_t tf) {
-	int32_t i;
-	int32_t minv;
-	/*packed*/ struct _FaceHdr *fh;
-	int32_t stvert;
-	int32_t minu;
+	/*bp-0x4*/   int32_t minu;
+	/*bp-0x8*/   int32_t stvert;
+	/*bp-0xc*/   /*packed*/ struct _FaceHdr *fh;
+	/*bp-0x10*/  int32_t minv;
+	/*bp-0x14*/  int32_t i;
 
 // LINE 563:
 	fh = face;
@@ -1131,17 +1131,17 @@ _T181:
 
 // FUNCTION: COPTER_D 0x004d9712
 void VRObjSetGouraudShade(/*packed*/ struct ObjectHdr *oh, /*packed*/ struct Point3d *vnorms) {
-	/*packed*/ struct Point3d *vn;
-	/*packed*/ struct COLOR_SHADE *cptr;
-	int32_t j;
-	int32_t intensity;
-	int32_t i;
-	int32_t * faceverts;
-	/*packed*/ struct _FaceHdr *fh;
-	int32_t color;
-	int32_t diffuse;
-	int32_t level;
-	int32_t vertidx;
+	/*bp-0x4*/   int32_t vertidx;
+	/*bp-0x8*/   int32_t level;
+	/*bp-0xc*/   int32_t diffuse;
+	/*bp-0x10*/  int32_t color;
+	/*bp-0x14*/  /*packed*/ struct _FaceHdr *fh;
+	/*bp-0x18*/  int32_t * faceverts;
+	/*bp-0x1c*/  int32_t i;
+	/*bp-0x20*/  int32_t intensity;
+	/*bp-0x24*/  int32_t j;
+	/*bp-0x28*/  /*packed*/ struct COLOR_SHADE *cptr;
+	/*bp-0x2c*/  /*packed*/ struct Point3d *vn;
 
 // LINE 621:
 	fh = oh->FacePtr;
@@ -1332,10 +1332,10 @@ _T1f0:
 
 // FUNCTION: COPTER_D 0x004d9907
 void VRObjSetTranslucent(int32_t obj, /*packed*/ struct VRResource *res, int32_t bitmap) {
-	/*packed*/ struct ObjectHdr *oh;
-	int32_t i;
-	/*packed*/ struct _FaceHdr *fh;
-	/*packed*/ struct VRBmpHdr *bhdr;
+	/*bp-0x4*/   /*packed*/ struct VRBmpHdr *bhdr;
+	/*bp-0x8*/   /*packed*/ struct _FaceHdr *fh;
+	/*bp-0xc*/   int32_t i;
+	/*bp-0x10*/  /*packed*/ struct ObjectHdr *oh;
 
 // LINE 699:
 	oh = obj;
@@ -1375,7 +1375,7 @@ _T73:
 
 // FUNCTION: COPTER_D 0x004d997f
 void VRFaceSetColor(int32_t face, int32_t color) {
-	/*packed*/ struct _FaceHdr *fh;
+	/*bp-0x4*/   /*packed*/ struct _FaceHdr *fh;
 
 // LINE 728:
 	fh = face;

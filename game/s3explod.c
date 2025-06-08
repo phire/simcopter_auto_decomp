@@ -112,9 +112,9 @@ struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
 // Contribution: 1:00122910-001235ed Module: 166, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00523910
 void S3ExplosionReset() {
-	/*packed*/ struct _EXPLODE_DATA *ed;
-	long i;
-	/*packed*/ struct _SMOKE_DATA *sd;
+	/*bp-0x4*/   /*packed*/ struct _SMOKE_DATA *sd;
+	/*bp-0x8*/   long i;
+	/*bp-0xc*/   /*packed*/ struct _EXPLODE_DATA *ed;
 
 // LINE 59:
 	S_num_expls = 0x0;
@@ -155,13 +155,13 @@ _T81:
 
 // FUNCTION: COPTER_D 0x00523996
 void S3ExplosionInit() {
-	/*packed*/ struct _EXPLODE_DATA *ed;
-	char * mem;
-	long i;
-	/*packed*/ struct _SMOKE_DATA *sd;
-	/*packed*/ struct Point3d vec;
-	long size;
-	int32_t mat[4][4];
+	/*bp-0x40*/  int32_t mat[4][4]; // 0x40 bytes
+	/*bp-0x44*/  long size;
+	/*bp-0x50*/  /*packed*/ struct Point3d vec; // 0xc bytes
+	/*bp-0x54*/  /*packed*/ struct _SMOKE_DATA *sd;
+	/*bp-0x58*/  long i;
+	/*bp-0x5c*/  char * mem;
+	/*bp-0x60*/  /*packed*/ struct _EXPLODE_DATA *ed;
 
 // LINE 96:
 	__asm        push   0x7F;
@@ -666,10 +666,10 @@ _T236:
 
 // FUNCTION: COPTER_D 0x00523f50
 void S3ExplosionStart(/*packed*/ struct _CELL_INFO *cptr, int32_t x, int32_t y, int32_t z, long scale, long mission_id) {
-	/*packed*/ struct _EXPLODE_DATA *ed;
-	long i;
-	/*packed*/ struct VRFaceInfo finfo;
-	long dim;
+	/*bp-0x4*/   long dim;
+	/*bp-0x24*/  /*packed*/ struct VRFaceInfo finfo; // 0x20 bytes
+	/*bp-0x28*/  long i;
+	/*bp-0x2c*/  /*packed*/ struct _EXPLODE_DATA *ed;
 
 // LINE 240:
 	__asm        mov    i, 0;
@@ -810,9 +810,9 @@ _T187:
 
 // FUNCTION: COPTER_D 0x005240dc
 void S3ExplosionSmokeStart(/*packed*/ struct _CELL_INFO *cptr, /*packed*/ struct Point3d *loc, long smoke_size) {
-	long i;
-	/*packed*/ struct VRFaceInfo finfo;
-	/*packed*/ struct _SMOKE_DATA *sd;
+	/*bp-0x4*/   /*packed*/ struct _SMOKE_DATA *sd;
+	/*bp-0x24*/  /*packed*/ struct VRFaceInfo finfo; // 0x20 bytes
+	/*bp-0x28*/  long i;
 
 // LINE 319:
 	__asm        mov    i, 0;
@@ -948,14 +948,14 @@ _T1bc:
 
 // FUNCTION: COPTER_D 0x0052429d
 void S3ExplosionDriver() {
-	/*packed*/ struct _EXPLODE_DATA *ed;
-	/*packed*/ struct VRview pos;
-	/*packed*/ struct _DYOBJ_INST **dyptrptr;
-	long j;
-	long i;
-	/*packed*/ struct Point2d celloc;
-	/*packed*/ struct VRFaceInfo finfo;
-	/*packed*/ struct _SMOKE_DATA *sd;
+	/*bp-0x4*/   /*packed*/ struct _SMOKE_DATA *sd;
+	/*bp-0x24*/  /*packed*/ struct VRFaceInfo finfo; // 0x20 bytes
+	/*bp-0x2c*/  /*packed*/ struct Point2d celloc; // 0x8 bytes
+	/*bp-0x30*/  long i;
+	/*bp-0x34*/  long j;
+	/*bp-0x38*/  /*packed*/ struct _DYOBJ_INST **dyptrptr;
+	/*bp-0x90*/  /*packed*/ struct VRview pos; // 0x58 bytes
+	/*bp-0x94*/  /*packed*/ struct _EXPLODE_DATA *ed;
 
 // LINE 410:
 	__asm        mov    i, 0;

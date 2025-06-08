@@ -59,9 +59,9 @@ void HeliPassengerClearChanged(/*packed*/ struct tagHeliPassengerData *heliPasse
 
 // FUNCTION: COPTER_D 0x004f9bfd
 void HeliPassengerInit(/*packed*/ struct tagHeliPassengerData *heliPassengerData, int32_t nHeliType) {
-	long lSeatsTotal;
-	long lRowWidth;
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
+	/*bp-0x8*/   long lRowWidth;
+	/*bp-0xc*/   long lSeatsTotal;
 
 // LINE 59:
 	heliPassengerData->lPassengerDataChanged = 0x0;
@@ -157,7 +157,7 @@ int32_t HeliPassengerCanAdd(/*packed*/ struct tagHeliPassengerData *heliPassenge
 
 // FUNCTION: COPTER_D 0x004f9d16
 int32_t HeliPassengerAdd(/*packed*/ struct tagHeliPassengerData *heliPassengerData, /*packed*/ struct tagPassengerInfo *passenger) {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 // LINE 111:
 	__asm        mov    eax, passenger;
@@ -251,7 +251,7 @@ _Te9:
 
 // FUNCTION: COPTER_D 0x004f9e04
 int32_t HeliPassengerGetIndexInHeli(/*packed*/ struct tagHeliPassengerData *heliPassengerData, long id) {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 // LINE 147:
 	__asm        mov    i, 0;
@@ -285,7 +285,7 @@ _T52:
 
 // FUNCTION: COPTER_D 0x004f9e5b
 int32_t HeliPassengerSetExpression(/*packed*/ struct tagHeliPassengerData *heliPassengerData, long id, int32_t expression) {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 // LINE 160:
 	__asm        mov    eax, id;
@@ -318,7 +318,7 @@ _T4a:
 
 // FUNCTION: COPTER_D 0x004f9eaa
 int32_t HeliPassengerRemove(/*packed*/ struct tagHeliPassengerData *heliPassengerData, long id) {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 // LINE 174:
 	__asm        mov    eax, id;
@@ -401,9 +401,9 @@ long HeliPassengerCountFreeSeats(/*packed*/ struct tagHeliPassengerData *heliPas
 
 // FUNCTION: COPTER_D 0x004f9f8a
 void HeliPassengerFitToSeats(/*packed*/ struct tagHeliPassengerData *heliPassengerData) {
-	int32_t i;
-	int32_t nSeat;
-	int32_t bSeats[16];
+	/*bp-0x40*/  int32_t bSeats[16]; // 0x40 bytes
+	/*bp-0x44*/  int32_t nSeat;
+	/*bp-0x48*/  int32_t i;
 
 // LINE 220:
 	__asm        mov    i, 0;
@@ -465,7 +465,7 @@ _Ta4:
 
 // FUNCTION: COPTER_D 0x004fa033
 int32_t FindFreeSeatForPassenger(int32_t nPassengerSeatUsage, int32_t nSeatsTotal, int32_t nRowWidth, int32_t * bSeats) {
-	int32_t j;
+	/*bp-0x4*/   int32_t j;
 
 // LINE 245:
 	__asm        mov    j, 0;

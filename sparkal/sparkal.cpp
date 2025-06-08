@@ -79,8 +79,8 @@ protected:
 // Contribution: 1:0003c850-0003cad2 Module: 56, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0043d850
 float GetMillisecondTime() {
-	float Time;
-	/*packed*/ union _LARGE_INTEGER Counter;
+	/*bp-0x8*/   /*packed*/ union _LARGE_INTEGER Counter; // 0x8 bytes
+	/*bp-0xc*/   float Time;
 
 // LINE 34:
 	__asm        lea    eax, Counter<_LARGE_INTEGER+0x00:None>;
@@ -159,7 +159,7 @@ long ConvertRange(long lPositionSource, long lMinSource, long lMaxSource, long l
 
 // FUNCTION: COPTER_D 0x0043d91f
 void SparkalDelay(unsigned long lMilliseconds) {
-	/*packed*/ class MTimer tempTimer;
+	/*bp-0x10*/  /*packed*/ class MTimer tempTimer; // 0x10 bytes
 
 // LINE 102:
 	__asm        mov    tempTimer.nTimerResolution, 1;

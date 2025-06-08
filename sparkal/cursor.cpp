@@ -46,8 +46,8 @@ void Cursor::~Cursor() {
 
 // FUNCTION: COPTER_D 0x0047481f
 int32_t Cursor::IsButtonDown(unsigned long nCursor, unsigned long nModifiers) {
-	const int32_t nAndValue;
-	int32_t nKeyState;
+	/*bp-0x4*/   int32_t nKeyState;
+	/*bp-0x8*/   const int32_t nAndValue;
 
 // LINE 40:
 	nAndValue = 0x80000000;
@@ -137,8 +137,8 @@ _Tfd:
 
 // FUNCTION: COPTER_D 0x00474921
 int32_t Cursor::WhereIsCursor(unsigned long * nXPosition, unsigned long * nYPosition) {
-	/*packed*/ struct tagPOINT ptCursor;
-	int32_t nReturnValue;
+	/*bp-0x4*/   int32_t nReturnValue;
+	/*bp-0xc*/   /*packed*/ struct tagPOINT ptCursor; // 0x8 bytes
 
 // LINE 95:
 	__asm        lea    eax, ptCursor.x;

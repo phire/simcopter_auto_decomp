@@ -43,22 +43,22 @@ int32_t DllMain(void * __ptr32 hDLL, unsigned long dwReason, void * __ptr32 lpRe
 
 // FUNCTION: COPTER_D 0x00447b77
 /*packed*/ struct FREQ_INFO cpuspeed(int32_t clocks) {
-	int32_t tries;
-	unsigned long cycles;
-	/*packed*/ union _LARGE_INTEGER t1;
-	unsigned long freq3;
-	/*packed*/ union _LARGE_INTEGER t0;
-	unsigned long freq2;
-	unsigned long total;
-	/*packed*/ union _LARGE_INTEGER count_freq;
-	unsigned long freq;
-	/*packed*/ struct FREQ_INFO cpu_speed;
-	unsigned short processor;
-	unsigned long features;
-	unsigned long stamp0;
-	int32_t manual;
-	unsigned long ticks;
-	unsigned long stamp1;
+	/*bp-0x4*/   unsigned long stamp1;
+	/*bp-0x8*/   unsigned long ticks;
+	/*bp-0xc*/   int32_t manual;
+	/*bp-0x10*/  unsigned long stamp0;
+	/*bp-0x14*/  unsigned long features;
+	/*bp-0x18*/  unsigned short processor;
+	/*bp-0x28*/  /*packed*/ struct FREQ_INFO cpu_speed; // 0x10 bytes
+	/*bp-0x2c*/  unsigned long freq;
+	/*bp-0x34*/  /*packed*/ union _LARGE_INTEGER count_freq; // 0x8 bytes
+	/*bp-0x38*/  unsigned long total;
+	/*bp-0x3c*/  unsigned long freq2;
+	/*bp-0x44*/  /*packed*/ union _LARGE_INTEGER t0; // 0x8 bytes
+	/*bp-0x48*/  unsigned long freq3;
+	/*bp-0x50*/  /*packed*/ union _LARGE_INTEGER t1; // 0x8 bytes
+	/*bp-0x54*/  unsigned long cycles;
+	/*bp-0x58*/  int32_t tries;
 
 // LINE 96:
 	__asm        call   wincpuid;
@@ -351,9 +351,9 @@ _T2fb:
 	__asm        jl     _T3f4;
 // LINE 309:
 // Block start:
-	unsigned long lowest;
-	int32_t i;
-	unsigned long current;
+	/*bp-0x5c*/  unsigned long current;
+	/*bp-0x60*/  int32_t i;
+	/*bp-0x64*/  unsigned long lowest;
 	current = 0x0;
 // LINE 313:
 	lowest = 0xffffffff;
@@ -492,12 +492,12 @@ _T452:
 
 // FUNCTION: COPTER_D 0x00447fce
 static unsigned long NormFreq(unsigned short processor, unsigned long freq) {
-	unsigned short iPentiumSpeeds[12];
-	unsigned short * speeds;
-	unsigned short i486Speeds[7];
-	unsigned short i386Speeds[6];
-	unsigned short iPentiumProSpeeds[10];
-	int32_t ptr;
+	/*bp-0x4*/   int32_t ptr;
+	/*bp-0x18*/  unsigned short iPentiumProSpeeds[10]; // 0x14 bytes
+	/*bp-0x24*/  unsigned short i386Speeds[6]; // 0xc bytes
+	/*bp-0x34*/  unsigned short i486Speeds[7]; // 0xe bytes
+	/*bp-0x38*/  unsigned short * speeds;
+	/*bp-0x50*/  unsigned short iPentiumSpeeds[12]; // 0x18 bytes
 
 // LINE 431:
 	__asm        mov    i386Speeds[0], 0x10;

@@ -499,7 +499,7 @@ _T15:
 	__asm        jmp    _Tb2;
 // LINE 59:
 // Block start:
-	/*unpacked*/ struct YObjLang::AttrParam *par;
+	/*bp-0x4*/   /*unpacked*/ struct YObjLang::AttrParam *par;
 _T26:
 	par = param;
 // LINE 60:
@@ -562,7 +562,7 @@ _Tb2:
 
 // FUNCTION: COPTER_D 0x00560abe
 void YObjLang::SwizzleTree(void * __ptr32 treevoid, long size) {
-	/*unpacked*/ struct Behavior::Tree *tree;
+	/*bp-0x4*/   /*unpacked*/ struct Behavior::Tree *tree;
 
 // LINE 76:
 	tree = treevoid;

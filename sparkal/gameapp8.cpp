@@ -417,21 +417,21 @@ _Ta7:
 
 // FUNCTION: COPTER_D 0x00427691
 unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
-	char szCityFile[260];
-	/*packed*/ struct tagUserCityInfo tempUserCityInfo;
-	unsigned long lActualCityFileChecksum;
-	char szCityPath[260];
-	int32_t bPathInfoFound;
-	char szSplitPathFilename[256];
-	/*packed*/ struct tagCitySettings savedCitySettings;
-	char szSplitPathDirectory[256];
-	int32_t bSaveGameInfoFound;
-	/*packed*/ struct tagCurrentCareerCityInfo tempCurrentCareerCityInfo;
-	unsigned long lSavedCityFileChecksum;
-	long lFileType;
-	char szSplitPathDrive[3];
-	char szSplitPathExtension[256];
-	long lPresentRecordType;
+	/*bp-0x4*/   long lPresentRecordType;
+	/*bp-0x104*/ char szSplitPathExtension[256]; // 0x100 bytes
+	/*bp-0x108*/ char szSplitPathDrive[3];
+	/*bp-0x10c*/ long lFileType;
+	/*bp-0x110*/ unsigned long lSavedCityFileChecksum;
+	/*bp-0x17c*/ /*packed*/ struct tagCurrentCareerCityInfo tempCurrentCareerCityInfo; // 0x6c bytes
+	/*bp-0x180*/ int32_t bSaveGameInfoFound;
+	/*bp-0x280*/ char szSplitPathDirectory[256]; // 0x100 bytes
+	/*bp-0x2a4*/ /*packed*/ struct tagCitySettings savedCitySettings; // 0x24 bytes
+	/*bp-0x3a4*/ char szSplitPathFilename[256]; // 0x100 bytes
+	/*bp-0x3a8*/ int32_t bPathInfoFound;
+	/*bp-0x4ac*/ char szCityPath[260]; // 0x104 bytes
+	/*bp-0x4b0*/ unsigned long lActualCityFileChecksum;
+	/*bp-0x530*/ /*packed*/ struct tagUserCityInfo tempUserCityInfo; // 0x80 bytes
+	/*bp-0x634*/ char szCityFile[260]; // 0x104 bytes
 
 // LINE 126:
 	this-><CGameApp+0x20:4> = 0x0;
@@ -783,14 +783,14 @@ _T55c:
 
 // FUNCTION: COPTER_D 0x00427bf4
 unsigned long  CGameApp::SaveUserOrCareerGame(char * szGamePath, char * szCityPath) {
-	unsigned long lActualCityFileChecksum;
-	char szCityFile[256];
-	char szSplitPathFilename[256];
-	/*packed*/ struct tagCitySettings tempCitySettings;
-	char szSplitPathDirectory[256];
-	long lFileType;
-	char szSplitPathDrive[3];
-	char szSplitPathExtension[256];
+	/*bp-0x100*/ char szSplitPathExtension[256]; // 0x100 bytes
+	/*bp-0x104*/ char szSplitPathDrive[3];
+	/*bp-0x108*/ long lFileType;
+	/*bp-0x208*/ char szSplitPathDirectory[256]; // 0x100 bytes
+	/*bp-0x22c*/ /*packed*/ struct tagCitySettings tempCitySettings; // 0x24 bytes
+	/*bp-0x32c*/ char szSplitPathFilename[256]; // 0x100 bytes
+	/*bp-0x42c*/ char szCityFile[256]; // 0x100 bytes
+	/*bp-0x430*/ unsigned long lActualCityFileChecksum;
 
 // LINE 232:
 	__asm        mov    ecx, this;
@@ -1043,19 +1043,19 @@ _T39d:
 
 // FUNCTION: COPTER_D 0x00427f98
 unsigned long  CGameApp::DoSaveGameAs() {
-	unsigned long nResult;
-	int32_t nFullFilterID;
-	char szSplitPathFilename[256];
-	char szGameFileSavePath[260];
-	char szCityFileSavePath[260];
-	char szSplitPathDirectory[256];
-	char szNewDirectory[256];
-	char * chPrefData;
-	char szSplitPathFullDirectory[256];
-	int32_t nFullTitleID;
-	char szSplitPathDrive[3];
-	int32_t nFullStringID;
-	char szSplitPathExtension[256];
+	/*bp-0x100*/ char szSplitPathExtension[256]; // 0x100 bytes
+	/*bp-0x104*/ int32_t nFullStringID;
+	/*bp-0x108*/ char szSplitPathDrive[3];
+	/*bp-0x10c*/ int32_t nFullTitleID;
+	/*bp-0x20c*/ char szSplitPathFullDirectory[256]; // 0x100 bytes
+	/*bp-0x210*/ char * chPrefData;
+	/*bp-0x310*/ char szNewDirectory[256]; // 0x100 bytes
+	/*bp-0x410*/ char szSplitPathDirectory[256]; // 0x100 bytes
+	/*bp-0x514*/ char szCityFileSavePath[260]; // 0x104 bytes
+	/*bp-0x618*/ char szGameFileSavePath[260]; // 0x104 bytes
+	/*bp-0x718*/ char szSplitPathFilename[256]; // 0x100 bytes
+	/*bp-0x71c*/ int32_t nFullFilterID;
+	/*bp-0x720*/ unsigned long nResult;
 
 // LINE 326:
 	__asm        lea    eax, szSplitPathExtension[0];
@@ -1797,8 +1797,8 @@ _Tad7:
 
 // FUNCTION: COPTER_D 0x00428a74
 long  CGameApp::ValidateCopterSaveGameFile(char * szGamePath) {
-	/*packed*/ class MIFF myMIFF;
-	long lFileType;
+	/*bp-0x4*/   long lFileType;
+	/*bp-0x14c*/ /*packed*/ class MIFF myMIFF; // 0x148 bytes
 
 // LINE 422:
 	__asm        mov    eax, szGamePath;

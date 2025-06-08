@@ -106,9 +106,9 @@ struct _GridCoordinates{ // packed(0x2 bytes) TI: 0x143c
 // Contribution: 1:000fd790-001005d5 Module: 172, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004fe790
 void S3MapInit() {
-	long i;
-	/*packed*/ struct VRBmpHdr *bhdr;
-	char * ptr;
+	/*bp-0x4*/   char * ptr;
+	/*bp-0x8*/   /*packed*/ struct VRBmpHdr *bhdr;
+	/*bp-0xc*/   long i;
 
 // LINE 192:
 	S_mapmin.x = 0x40;
@@ -304,16 +304,16 @@ void S3MapDestroy() {
 
 // FUNCTION: COPTER_D 0x004fea13
 void S3MapRender(long posx, long posy) {
-	long countx;
-	long tile;
-	long county;
-	char * lineptr;
-	unsigned short alt;
-	/*packed*/ struct _CELL_INFO *cptr;
-	char texid;
-	long y;
-	long x;
-	char * ptr;
+	/*bp-0x4*/   char * ptr;
+	/*bp-0x8*/   long x;
+	/*bp-0xc*/   long y;
+	/*bp-0x10*/  char texid;
+	/*bp-0x14*/  /*packed*/ struct _CELL_INFO *cptr;
+	/*bp-0x18*/  unsigned short alt;
+	/*bp-0x1c*/  char * lineptr;
+	/*bp-0x20*/  long county;
+	/*bp-0x24*/  long tile;
+	/*bp-0x28*/  long countx;
 
 // LINE 298:
 	ptr = S_mapbuf;
@@ -2479,18 +2479,18 @@ _T17b3:
 
 // FUNCTION: COPTER_D 0x005001cb
 void S3MapDrawPosLines(long posx, long posy) {
-	/*packed*/ struct Point2d *maploc;
-	long desticon;
-	long y;
-	long i;
-	long x;
-	int32_t dfy;
-	int32_t fy;
-	int32_t dfx;
-	int32_t fx;
-	int32_t dist;
-	long pickicon;
-	char * ptr;
+	/*bp-0x4*/   char * ptr;
+	/*bp-0x8*/   long pickicon;
+	/*bp-0xc*/   int32_t dist;
+	/*bp-0x10*/  int32_t fx;
+	/*bp-0x14*/  int32_t dfx;
+	/*bp-0x18*/  int32_t fy;
+	/*bp-0x1c*/  int32_t dfy;
+	/*bp-0x20*/  long x;
+	/*bp-0x24*/  long i;
+	/*bp-0x28*/  long y;
+	/*bp-0x2c*/  long desticon;
+	/*bp-0x30*/  /*packed*/ struct Point2d *maploc;
 
 // LINE 967:
 	ptr = S_mapbuf;
@@ -2802,14 +2802,14 @@ _T2ff:
 
 // FUNCTION: COPTER_D 0x005004cf
 void S3MapDrawLine(int32_t dx, int32_t dy, char col, long icon_id) {
-	int32_t error;
-	int32_t Yinc;
-	int32_t index;
-	int32_t Xinc;
-	int32_t Yunit;
-	int32_t ypos;
-	int32_t xpos;
-	char * writeBuffer;
+	/*bp-0x4*/   char * writeBuffer;
+	/*bp-0x8*/   int32_t xpos;
+	/*bp-0xc*/   int32_t ypos;
+	/*bp-0x10*/  int32_t Yunit;
+	/*bp-0x14*/  int32_t Xinc;
+	/*bp-0x18*/  int32_t index;
+	/*bp-0x1c*/  int32_t Yinc;
+	/*bp-0x20*/  int32_t error;
 
 // LINE 1076:
 	error = 0x0;
@@ -3007,11 +3007,11 @@ _T1d1:
 
 // FUNCTION: COPTER_D 0x005006b9
 void S3MapBlit(char * destbuf, long destpitch) {
-	long * mptr;
-	char * cptr;
-	long y;
-	long x;
-	long * ptr;
+	/*bp-0x4*/   long * ptr;
+	/*bp-0x8*/   long x;
+	/*bp-0xc*/   long y;
+	/*bp-0x10*/  char * cptr;
+	/*bp-0x14*/  long * mptr;
 
 // LINE 1163:
 	cptr = destbuf;
@@ -3064,11 +3064,11 @@ _T8f:
 
 // FUNCTION: COPTER_D 0x0050074d
 void S3MapBlitPosition(char * destbuf, long destpitch, long xDestination, long yDestination) {
-	long * mptr;
-	char * cptr;
-	long y;
-	long x;
-	long * ptr;
+	/*bp-0x4*/   long * ptr;
+	/*bp-0x8*/   long x;
+	/*bp-0xc*/   long y;
+	/*bp-0x10*/  char * cptr;
+	/*bp-0x14*/  long * mptr;
 
 // LINE 1191:
 	cptr = destbuf;
@@ -3200,9 +3200,9 @@ _T3a:
 
 // FUNCTION: COPTER_D 0x005008ea
 int32_t S3MapCursorDown(long posx, long posy) {
-	/*packed*/ struct _MAP_CARINFO *ci;
-	long i;
-	long car_id;
+	/*bp-0x4*/   long car_id;
+	/*bp-0x8*/   long i;
+	/*bp-0xc*/   /*packed*/ struct _MAP_CARINFO *ci;
 
 // LINE 1286:
 	car_id = 0xffffffff;
@@ -3314,10 +3314,10 @@ void S3MapCommandOtherMissionVehicleFilter(int32_t onOrOff) {
 
 // FUNCTION: COPTER_D 0x00500a12
 void S3MapBlitIcon(long icon_id, long x, long y) {
-	char * bufptr;
-	long mapy;
-	long mapx;
-	char * iptr;
+	/*bp-0x4*/   char * iptr;
+	/*bp-0x8*/   long mapx;
+	/*bp-0xc*/   long mapy;
+	/*bp-0x10*/  char * bufptr;
 
 // LINE 1389:
 	__asm        cmp    icon_id, 0xFFFFFFFF;
@@ -3650,11 +3650,11 @@ _T279:
 
 // FUNCTION: COPTER_D 0x00500de3
 void S3MapDrawMissionIcons(long posx, long posy) {
-	/*packed*/ struct MISSION_DATA *md;
-	long desticon;
-	long i;
-	/*packed*/ struct MISSION_DATA *currmd;
-	long pickicon;
+	/*bp-0x4*/   long pickicon;
+	/*bp-0x8*/   /*packed*/ struct MISSION_DATA *currmd;
+	/*bp-0xc*/   long i;
+	/*bp-0x10*/  long desticon;
+	/*bp-0x14*/  /*packed*/ struct MISSION_DATA *md;
 
 // LINE 1508:
 	__asm        call   S3MissionGetCurr;
@@ -3781,8 +3781,8 @@ _T14c:
 
 // FUNCTION: COPTER_D 0x00500f34
 void S3MapAddCarInfo(long car_id, long car_type, long mission_id, /*packed*/ struct _GridCoordinates *currpos, /*packed*/ struct _GridCoordinates *disppos) {
-	/*packed*/ struct _MAP_CARINFO *ci;
-	long i;
+	/*bp-0x4*/   long i;
+	/*bp-0x8*/   /*packed*/ struct _MAP_CARINFO *ci;
 
 // LINE 1567:
 	__asm        mov    i, 0;
@@ -3832,7 +3832,7 @@ _T8a:
 
 // FUNCTION: COPTER_D 0x00500fc3
 void S3MapRemoveCarInfo(long car_id) {
-	long i;
+	/*bp-0x4*/   long i;
 
 // LINE 1601:
 	__asm        mov    i, 0;
@@ -3863,11 +3863,11 @@ _T50:
 
 // FUNCTION: COPTER_D 0x00501018
 void S3MapDrawCarIcons() {
-	long dy;
-	long dx;
-	/*packed*/ struct _MAP_CARINFO *ci;
-	long i;
-	long color;
+	/*bp-0x4*/   long color;
+	/*bp-0x8*/   long i;
+	/*bp-0xc*/   /*packed*/ struct _MAP_CARINFO *ci;
+	/*bp-0x10*/  long dx;
+	/*bp-0x14*/  long dy;
 
 // LINE 1631:
 	__asm        mov    i, 0;
@@ -4061,10 +4061,10 @@ _T203:
 
 // FUNCTION: COPTER_D 0x00501220
 void S3MapBlitDIcon(long icon_id, long x, long y) {
-	char * bufptr;
-	long mapy;
-	long mapx;
-	char * iptr;
+	/*bp-0x4*/   char * iptr;
+	/*bp-0x8*/   long mapx;
+	/*bp-0xc*/   long mapy;
+	/*bp-0x10*/  char * bufptr;
 
 // LINE 1701:
 	__asm        cmp    icon_id, 0xFFFFFFFF;
@@ -4143,12 +4143,12 @@ _Td0:
 
 // FUNCTION: COPTER_D 0x005012f5
 void S3MapDrawDispatchLine(int32_t xpos, int32_t ypos, int32_t dx, int32_t dy, char col) {
-	int32_t error;
-	int32_t Yinc;
-	int32_t index;
-	int32_t Xinc;
-	int32_t Yunit;
-	char * writeBuffer;
+	/*bp-0x4*/   char * writeBuffer;
+	/*bp-0x8*/   int32_t Yunit;
+	/*bp-0xc*/   int32_t Xinc;
+	/*bp-0x10*/  int32_t index;
+	/*bp-0x14*/  int32_t Yinc;
+	/*bp-0x18*/  int32_t error;
 
 // LINE 1746:
 	error = 0x0;
@@ -4333,10 +4333,10 @@ _T1cc:
 
 // FUNCTION: COPTER_D 0x005014c6
 void S3MapGetDxDy(long x1, long y1, long x2, long y2, long * dx, long * dy) {
-	/*packed*/ struct Point2d from;
-	/*packed*/ struct Point2d to;
-	long dist2;
-	long dist1;
+	/*bp-0x4*/   long dist1;
+	/*bp-0x8*/   long dist2;
+	/*bp-0x10*/  /*packed*/ struct Point2d to; // 0x8 bytes
+	/*bp-0x18*/  /*packed*/ struct Point2d from; // 0x8 bytes
 
 // LINE 1832:
 	__asm        cmp    x1, 0x80;

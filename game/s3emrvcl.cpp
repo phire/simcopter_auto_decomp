@@ -645,8 +645,8 @@ void EmergencyVehicleClass::~EmergencyVehicleClass() {
 
 // FUNCTION: COPTER_D 0x00541661
 void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(/*packed*/ struct Goal startGoal1, /*packed*/ struct Goal startGoal2, /*packed*/ struct Goal destGoal1, /*packed*/ struct Goal destGoal2, /*packed*/ struct _GridCoordinates destLoc, /*packed*/ struct Goal result, enum EmergencyType responceType, enum EmergencyLevel eState) {
-	/*packed*/ struct _RGIndex destIndex;
-	/*packed*/ struct _RGIndex startIndex;
+	/*bp-0x4*/   /*packed*/ struct _RGIndex startIndex;
+	/*bp-0x8*/   /*packed*/ struct _RGIndex destIndex;
 
 // LINE 261:
 	__asm        cmp    responceType, 0xFFFFFFFF;
@@ -661,7 +661,7 @@ _T28:
 	__asm        jne    _T20e;
 // LINE 271:
 // Block start:
-	/*packed*/ struct Edge *pEdge;
+	/*bp-0xc*/   /*packed*/ struct Edge *pEdge;
 	startIndex.x = startGoal1.pRGV->x;
 // LINE 272:
 	__asm        mov    eax, startGoal1.pRGV;
@@ -708,7 +708,7 @@ _T28:
 	__asm        je     _T14a;
 // LINE 285:
 // Block start:
-	unsigned char yindex;
+	/*bp-0x10*/  unsigned char yindex;
 	__asm        mov    eax, startGoal2.pRGV;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+1];
@@ -778,7 +778,7 @@ _T166:
 	__asm        je     _T1f1;
 // LINE 307:
 // Block start:
-	int32_t yindex;
+	/*bp-0x14*/  int32_t yindex;
 	__asm        mov    eax, destGoal2.pRGV;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+1];
@@ -934,9 +934,9 @@ _T2b0:
 
 // FUNCTION: COPTER_D 0x005419ba
 void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, /*packed*/ struct Goal stationGoal1, /*packed*/ struct Goal stationGoal2, /*packed*/ struct _GridCoordinates stationLoc, /*packed*/ struct Goal destGoal1, /*packed*/ struct Goal destGoal2, /*packed*/ struct _GridCoordinates destLoc, int32_t startDir, /*packed*/ struct Goal result, enum EmergencyType responceType, enum EmergencyLevel eState) {
-	/*packed*/ struct _RGIndex destIndex;
-	/*packed*/ struct _RGIndex stationIndex;
-	int32_t car_type;
+	/*bp-0x4*/   int32_t car_type;
+	/*bp-0x8*/   /*packed*/ struct _RGIndex stationIndex;
+	/*bp-0xc*/   /*packed*/ struct _RGIndex destIndex;
 
 // LINE 365:
 	this->stationID = sID;
@@ -1051,7 +1051,7 @@ _T179:
 	__asm        jne    _T2ff;
 // LINE 406:
 // Block start:
-	/*packed*/ struct Edge *pEdge;
+	/*bp-0x10*/  /*packed*/ struct Edge *pEdge;
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x192];
@@ -1065,7 +1065,7 @@ _T179:
 	__asm        je     _T23b;
 // LINE 409:
 // Block start:
-	unsigned char yindex;
+	/*bp-0x14*/  unsigned char yindex;
 	__asm        mov    eax, stationGoal2.pRGV;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+1];
@@ -1135,7 +1135,7 @@ _T257:
 	__asm        je     _T2e2;
 // LINE 431:
 // Block start:
-	int32_t yindex;
+	/*bp-0x18*/  int32_t yindex;
 	__asm        mov    eax, destGoal2.pRGV;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+1];
@@ -1451,14 +1451,14 @@ _T599:
 
 // FUNCTION: COPTER_D 0x00541ff4
 void EmergencyVehicleClass::GoBackToStation() {
-	/*packed*/ struct Goal startGoal1;
-	/*packed*/ struct Goal startGoal2;
-	/*packed*/ struct Goal destGoal1;
-	int32_t pathFound;
-	/*packed*/ struct Goal destGoal2;
-	/*packed*/ struct _RGIndex destVertex;
-	/*packed*/ struct _RGIndex startVertex;
-	/*packed*/ struct Goal result;
+	/*bp-0x2c*/  /*packed*/ struct Goal result; // 0x2a bytes
+	/*bp-0x30*/  /*packed*/ struct _RGIndex startVertex;
+	/*bp-0x34*/  /*packed*/ struct _RGIndex destVertex;
+	/*bp-0x60*/  /*packed*/ struct Goal destGoal2; // 0x2a bytes
+	/*bp-0x64*/  int32_t pathFound;
+	/*bp-0x90*/  /*packed*/ struct Goal destGoal1; // 0x2a bytes
+	/*bp-0xbc*/  /*packed*/ struct Goal startGoal2; // 0x2a bytes
+	/*bp-0xe8*/  /*packed*/ struct Goal startGoal1; // 0x2a bytes
 
 // LINE 535:
 	__asm        lea    eax, startGoal2.pRGV;
@@ -1677,7 +1677,7 @@ _Tb6:
 
 // FUNCTION: COPTER_D 0x005422ee
 void EmergencyVehicleClass::PositionIcon() {
-	/*packed*/ struct VRview pos;
+	/*bp-0x58*/  /*packed*/ struct VRview pos; // 0x58 bytes
 
 // LINE 666:
 	__asm        mov    eax, this;
@@ -1791,7 +1791,7 @@ void EmergencyVehicleClass::ArriveOnScene() {
 
 // FUNCTION: COPTER_D 0x00542461
 void EmergencyVehicleClass::UnLinkIconFromCell(/*packed*/ struct _GridCoordinates point) {
-	/*packed*/ struct _CELL_INFO *cellPointer;
+	/*bp-0x4*/   /*packed*/ struct _CELL_INFO *cellPointer;
 
 // LINE 945:
 	__asm        xor    eax, eax;
@@ -1834,7 +1834,7 @@ _T84:
 	__asm        je     _T103;
 // LINE 950:
 // Block start:
-	/*packed*/ struct _DYOBJ_INST **dyptrptr;
+	/*bp-0x8*/   /*packed*/ struct _DYOBJ_INST **dyptrptr;
 	__asm        mov    eax, cellPointer;
 	__asm        add    eax, 0x10;
 	__asm        mov    dyptrptr, eax;
@@ -1881,7 +1881,7 @@ _T108:
 
 // FUNCTION: COPTER_D 0x00542570
 void EmergencyVehicleClass::LinkIconToCell(/*packed*/ struct _GridCoordinates point) {
-	/*packed*/ struct _CELL_INFO *cellPointer;
+	/*bp-0x4*/   /*packed*/ struct _CELL_INFO *cellPointer;
 
 // LINE 986:
 	__asm        xor    eax, eax;
@@ -1967,8 +1967,8 @@ void EmergencyVehicleClass::Reset() {
 
 // FUNCTION: COPTER_D 0x005426ab
 void DispatchEmergencyVehicle(int32_t responseType, int32_t responseLevel, long mapx, long mapy) {
-	enum EmergencyLevel emergencyLevel;
-	enum EmergencyType emergencyType;
+	/*bp-0x4*/   enum EmergencyType emergencyType;
+	/*bp-0x8*/   enum EmergencyLevel emergencyLevel;
 
 // LINE 1353:
 	__asm        cmp    mapx, 0x80;
@@ -2088,9 +2088,9 @@ _T145:
 
 // FUNCTION: COPTER_D 0x005427f5
 void EmergencyVehicleClass::BuildPath(/*packed*/ struct _RGIndex startVertex, /*packed*/ struct _RGIndex destVertex) {
-	/*packed*/ struct _RGIndex index;
-	int32_t i;
-	/*packed*/ struct RGVertex *pRGV;
+	/*bp-0x4*/   /*packed*/ struct RGVertex *pRGV;
+	/*bp-0x8*/   int32_t i;
+	/*bp-0xc*/   /*packed*/ struct _RGIndex index;
 
 // LINE 1409:
 	this->dispatchPathLength = 0x1;
@@ -2199,10 +2199,10 @@ _T13a:
 
 // FUNCTION: COPTER_D 0x0054293b
 void EmergencyVehicleClass::TurnOnStrobe() {
-	/*packed*/ struct VRFaceInfo finfo;
-	int32_t count;
-	int32_t face;
-	/*packed*/ struct VRObjInfo oinfo;
+	/*bp-0x24*/  /*packed*/ struct VRObjInfo oinfo; // 0x24 bytes
+	/*bp-0x28*/  int32_t face;
+	/*bp-0x2c*/  int32_t count;
+	/*bp-0x4c*/  /*packed*/ struct VRFaceInfo finfo; // 0x20 bytes
 
 // LINE 1461:
 	__asm        lea    eax, oinfo.Faces;
@@ -2263,10 +2263,10 @@ _T91:
 
 // FUNCTION: COPTER_D 0x005429d6
 void EmergencyVehicleClass::TurnOffStrobe() {
-	/*packed*/ struct VRFaceInfo finfo;
-	int32_t count;
-	int32_t face;
-	/*packed*/ struct VRObjInfo oinfo;
+	/*bp-0x24*/  /*packed*/ struct VRObjInfo oinfo; // 0x24 bytes
+	/*bp-0x28*/  int32_t face;
+	/*bp-0x2c*/  int32_t count;
+	/*bp-0x4c*/  /*packed*/ struct VRFaceInfo finfo; // 0x20 bytes
 
 // LINE 1484:
 	__asm        lea    eax, oinfo.Faces;
@@ -2378,7 +2378,7 @@ void EmergencyVehicleClass::SetSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) {
 
 // FUNCTION: COPTER_D 0x00542b90
 void EmergencyVehicleClass::LoadSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) {
-	int32_t car_type;
+	/*bp-0x4*/   int32_t car_type;
 
 // LINE 1548:
 	__asm        mov    eax, sd;

@@ -99,7 +99,7 @@ _Ta4:
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552190
 /*unpacked*/ class cYObject* cYObject::PutTotedMedVicOn(/*unpacked*/ struct _DYOBJ_INST *thing) {
-	/*unpacked*/ class cYObject *obj;
+	/*bp-0x4*/   /*unpacked*/ class cYObject *obj;
 
 // LINE 1023:
 	__asm        cmp    thing, 0;
@@ -121,7 +121,7 @@ _T32:
 	__asm        je     _T1cc;
 // LINE 1026:
 // Block start:
-	unsigned short yes;
+	/*bp-0x8*/   unsigned short yes;
 	__asm        mov    eax, obj;
 	__asm        movsx  eax, word ptr [eax+0xD8];
 	__asm        cmp    eax, 6;

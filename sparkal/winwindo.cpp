@@ -139,7 +139,7 @@ struct tagPAINTSTRUCT{ // packed(0x40 bytes) TI: 0x124b
 // Contribution: 1:0007f690-00080ad0 Module: 30, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00480690
 void CSparkalWindow::CSparkalWindow() {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 
 	this-><vftable> = 0x590ef8;
@@ -183,14 +183,14 @@ _T9b:
 
 // FUNCTION: COPTER_D 0x00480738
 void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, unsigned long Style, const /*packed*/ struct SparkalColor *pColors, char * Caption) {
-	int32_t Left;
-	int32_t Top;
-	/*packed*/ struct tagRECT WindowRect;
-	int32_t i;
-	unsigned long ScreenWidth;
-	unsigned long dwWindowsStyle;
-	/*packed*/ struct tagWNDCLASSA ClassInfo;
-	unsigned long ScreenHeight;
+	/*bp-0x4*/   unsigned long ScreenHeight;
+	/*bp-0x2c*/  /*packed*/ struct tagWNDCLASSA ClassInfo; // 0x28 bytes
+	/*bp-0x30*/  unsigned long dwWindowsStyle;
+	/*bp-0x34*/  unsigned long ScreenWidth;
+	/*bp-0x38*/  int32_t i;
+	/*bp-0x48*/  /*packed*/ struct tagRECT WindowRect; // 0x10 bytes
+	/*bp-0x4c*/  int32_t Top;
+	/*bp-0x50*/  int32_t Left;
 
 
 	this-><vftable> = 0x590ef8;
@@ -410,13 +410,13 @@ _T251:
 	__asm        je     _T5b7;
 // LINE 156:
 // Block start:
-	/*packed*/ struct CSparkalWindow::__ctor::__unnamed LogPalette;
-	void * __ptr32 hdc;
-	int32_t StaticCount;
-	uint32_t PaletteUse;
-	int32_t End;
-	int32_t Start;
-	int32_t Counter;
+	/*bp-0x54*/  int32_t Counter;
+	/*bp-0x58*/  int32_t Start;
+	/*bp-0x5c*/  int32_t End;
+	/*bp-0x60*/  uint32_t PaletteUse;
+	/*bp-0x64*/  int32_t StaticCount;
+	/*bp-0x68*/  void * __ptr32 hdc;
+	/*bp-0x46c*/ /*packed*/ struct CSparkalWindow::__ctor::__unnamed LogPalette; // 0x404 bytes
 	__asm        lea    eax, WindowRect.left;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -683,7 +683,7 @@ _T5b7:
 
 // FUNCTION: COPTER_D 0x00480d01
 void CSparkalWindow::~CSparkalWindow() {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 
 	this-><vftable> = 0x590ef8;
@@ -755,7 +755,7 @@ _Tbf:
 
 // FUNCTION: COPTER_D 0x00480dca
 unsigned long CSparkalWindow::GetClientSize(long * pWidth, long * pHeight) {
-	unsigned long Error;
+	/*bp-0x4*/   unsigned long Error;
 
 // LINE 277:
 	__asm        cmp    pWidth, 0;
@@ -781,7 +781,7 @@ _T41:
 	__asm        je     _T81;
 // LINE 283:
 // Block start:
-	/*packed*/ struct tagRECT r;
+	/*bp-0x14*/  /*packed*/ struct tagRECT r; // 0x10 bytes
 	__asm        lea    eax, r.left;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -820,8 +820,8 @@ _T9b:
 
 // FUNCTION: COPTER_D 0x00480e74
 unsigned long CSparkalWindow::SetCursor(unsigned long CursorID) {
-	void * __ptr32 hNewCursor;
-	unsigned long ReturnCode;
+	/*bp-0x4*/   unsigned long ReturnCode;
+	/*bp-0x8*/   void * __ptr32 hNewCursor;
 
 // LINE 309:
 	ReturnCode = 0x0;
@@ -888,7 +888,7 @@ _Taf:
 
 // FUNCTION: COPTER_D 0x00480f32
 unsigned long CSparkalWindow::SetCursorFromIndex(int32_t nIndex) {
-	unsigned long ReturnCode;
+	/*bp-0x4*/   unsigned long ReturnCode;
 
 // LINE 338:
 	ReturnCode = 0x0;
@@ -930,12 +930,12 @@ void CSparkalWindow::FreeGameCursors() {
 
 // FUNCTION: COPTER_D 0x00480fb1
 unsigned long CSparkalWindow::DrawBufferText(const const char *pText, unsigned long Style, long Left, long Top, long * pRectLeft, long * pRectTop, long * pRectRight, long * pRectBottom) {
-	void * __ptr32 DeviceContext;
-	long ClientHeight;
-	uint32_t Length;
-	long ClientWidth;
-	/*packed*/ struct tagSIZE TextSize;
-	/*packed*/ struct tagRECT TextRect;
+	/*bp-0x10*/  /*packed*/ struct tagRECT TextRect; // 0x10 bytes
+	/*bp-0x18*/  /*packed*/ struct tagSIZE TextSize; // 0x8 bytes
+	/*bp-0x1c*/  long ClientWidth;
+	/*bp-0x20*/  uint32_t Length;
+	/*bp-0x24*/  long ClientHeight;
+	/*bp-0x28*/  void * __ptr32 DeviceContext;
 
 // LINE 373:
 	__asm        mov    eax, this;
@@ -1150,7 +1150,7 @@ _T1fc:
 
 // FUNCTION: COPTER_D 0x004811bb
 unsigned long CSparkalWindow::ScreenScroll(long Left, long Top, long Right, long Bottom, long ScrollRightAmount, long ScrollDownAmount) {
-	void * __ptr32 hdc;
+	/*bp-0x4*/   void * __ptr32 hdc;
 
 // LINE 463:
 	__asm        mov    eax, this;
@@ -1214,8 +1214,8 @@ _T9c:
 
 // FUNCTION: COPTER_D 0x00481265
 void CSparkalWindow::UpdatePalette(long start, long count, /*packed*/ struct SparkalColor *pColor) {
-	int32_t i;
-	/*packed*/ struct tagPALETTEENTRY palColors[256];
+	/*bp-0x400*/ /*packed*/ struct tagPALETTEENTRY palColors[256]; // 0x400 bytes
+	/*bp-0x404*/ int32_t i;
 
 // LINE 486:
 	__asm        mov    eax, this;
@@ -1274,11 +1274,11 @@ _Tba:
 
 // FUNCTION: COPTER_D 0x0048132b
 int32_t CheckIdentityPalette(void * __ptr32 hdc, void * __ptr32 hPalette, /*packed*/ struct tagPALETTEENTRY *pColors) {
-	int32_t nReturnValue;
-	int32_t i;
-	int32_t IsID;
-	void * __ptr32 MemDC;
-	unsigned char Bits[256];
+	/*bp-0x100*/ unsigned char Bits[256]; // 0x100 bytes
+	/*bp-0x104*/ void * __ptr32 MemDC;
+	/*bp-0x108*/ int32_t IsID;
+	/*bp-0x10c*/ int32_t i;
+	/*bp-0x110*/ int32_t nReturnValue;
 
 // LINE 506:
 	IsID = 0x0;
@@ -1292,7 +1292,7 @@ int32_t CheckIdentityPalette(void * __ptr32 hdc, void * __ptr32 hPalette, /*pack
 	__asm        je     _T2a2;
 // LINE 514:
 // Block start:
-	void * __ptr32 MemBitmap;
+	/*bp-0x114*/ void * __ptr32 MemBitmap;
 	__asm        push   1;
 	__asm        push   0x100;
 	__asm        mov    eax, hdc;
@@ -1304,8 +1304,8 @@ int32_t CheckIdentityPalette(void * __ptr32 hdc, void * __ptr32 hPalette, /*pack
 	__asm        je     _T295;
 // LINE 516:
 // Block start:
-	/*packed*/ struct CheckIdentityPalette::__unnamed Info;
-	void * __ptr32 Mono;
+	/*bp-0x118*/ void * __ptr32 Mono;
+	/*bp-0x540*/ /*packed*/ struct CheckIdentityPalette::__unnamed Info; // 0x428 bytes
 	__asm        mov    eax, MemBitmap;
 	__asm        push   eax;
 	__asm        mov    eax, MemDC;
@@ -1466,7 +1466,7 @@ _T2a2:
 
 // FUNCTION: COPTER_D 0x004815dd
 long SparkalWindowProc(void * __ptr32 Window, uint32_t Message, uint32_t wParam, long lParam) {
-	/*packed*/ class CSparkalWindow *pWindow;
+	/*bp-0x4*/   /*packed*/ class CSparkalWindow *pWindow;
 
 // LINE 585:
 	__asm        jmp    near ptr 0x004815EB;
@@ -1518,8 +1518,8 @@ long CSparkalWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message
 	__asm        jmp    _T3a7;
 // LINE 608:
 // Block start:
-	void * __ptr32 hdc;
-	/*packed*/ struct tagPAINTSTRUCT Paint;
+	/*bp-0x40*/  /*packed*/ struct tagPAINTSTRUCT Paint; // 0x40 bytes
+	/*bp-0x44*/  void * __ptr32 hdc;
 	__asm        mov    eax, Window;
 	__asm        cmp    wParam, eax;
 	__asm        jne    _T25;
@@ -1532,8 +1532,8 @@ _T25:
 	__asm        je     _T8d;
 // LINE 614:
 // Block start:
-	int32_t bRedraw;
-	void * __ptr32 hdc;
+	/*bp-0x48*/  void * __ptr32 hdc;
+	/*bp-0x4c*/  int32_t bRedraw;
 	__asm        mov    eax, Window;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3850];
@@ -1604,7 +1604,7 @@ _Td3:
 	__asm        je     _T125;
 // LINE 632:
 // Block start:
-	void * __ptr32 hdc;
+	/*bp-0x50*/  void * __ptr32 hdc;
 	__asm        mov    eax, Window;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3850];

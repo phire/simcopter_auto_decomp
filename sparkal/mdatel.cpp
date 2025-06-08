@@ -366,8 +366,8 @@ protected:
 // Contribution: 1:0001ead0-0001f5cb Module: 72, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0041fad0
 char * MTimeLocalized::PrintStringLocalized(char * szTime, int32_t nLanguageToUse) {
-	int32_t nTempOriginalLanguage;
-	/*unpacked*/ class ostrstream strtemp;
+	/*bp-0x58*/  /*unpacked*/ class ostrstream strtemp; // 0x58 bytes
+	/*bp-0x5c*/  int32_t nTempOriginalLanguage;
 
 // LINE 28:
 	nTempOriginalLanguage = this->nLanguage;
@@ -418,12 +418,12 @@ _T28:
 
 // FUNCTION: COPTER_D 0x0041fb6a
 /*unpacked*/ class ostream& operator<<(/*unpacked*/ class ostream& s, const /*packed*/ class MTimeLocalized& t) {
-	uint32_t hh;
-	uint32_t mm;
-	int32_t nLanguageToUse;
-	/*unpacked*/ class ostrstream out;
-	char buf[80];
-	char buf1[80];
+	/*bp-0x50*/  char buf1[80]; // 0x50 bytes
+	/*bp-0xa0*/  char buf[80]; // 0x50 bytes
+	/*bp-0xf8*/  /*unpacked*/ class ostrstream out; // 0x58 bytes
+	/*bp-0xfc*/  int32_t nLanguageToUse;
+	/*bp-0x100*/ uint32_t mm;
+	/*bp-0x104*/ uint32_t hh;
 
 // LINE 50:
 	__asm        mov    al, ds:[0x597298];
@@ -802,8 +802,8 @@ _T31:
 
 // FUNCTION: COPTER_D 0x004200a0
 char * MDateLocalized::PrintStringLocalized(char * szDate, int32_t nLanguageToUse) {
-	int32_t nTempOriginalLanguage;
-	/*unpacked*/ class ostrstream strtemp;
+	/*bp-0x58*/  /*unpacked*/ class ostrstream strtemp; // 0x58 bytes
+	/*bp-0x5c*/  int32_t nTempOriginalLanguage;
 
 // LINE 200:
 	nTempOriginalLanguage = this->nLanguage;
@@ -860,7 +860,7 @@ _T3a:
 
 // FUNCTION: COPTER_D 0x0042014c
 /*packed*/ class MDate MDateLocalized::PreviousLocalized(char * dayName, int32_t nLanguageToUse) {
-	uint32_t day;
+	/*bp-0x4*/   uint32_t day;
 
 // LINE 222:
 	__asm        cmp    nLanguageToUse, 0;
@@ -906,8 +906,8 @@ _T76:
 
 // FUNCTION: COPTER_D 0x004201c9
 uint32_t MDateLocalized::DayOfWeekLocalized(char * dayName, int32_t nLanguageToUse) {
-	char szCurrentDay[4096];
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
+	/*bp-0x1004*/ char szCurrentDay[4096]; // 0x1000 bytes
 
 // LINE 246:
 	__asm        mov    i, 1;
@@ -949,8 +949,8 @@ _T69:
 
 // FUNCTION: COPTER_D 0x00420237
 uint32_t MDateLocalized::IndexOfMonthLocalized(char * monthName, int32_t nLanguageToUse) {
-	char szCurrentMonth[4096];
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
+	/*bp-0x1004*/ char szCurrentMonth[4096]; // 0x1000 bytes
 
 // LINE 267:
 	__asm        mov    i, 1;
@@ -992,7 +992,7 @@ _T69:
 
 // FUNCTION: COPTER_D 0x004202a5
 char * MDateLocalized::DayNameLocalized(uint32_t weekDayNumber, char * szDayName, int32_t nLanguageToUse) {
-	int32_t nFullStringID;
+	/*bp-0x4*/   int32_t nFullStringID;
 
 // LINE 288:
 	__asm        dec    weekDayNumber;
@@ -1047,7 +1047,7 @@ _T8a:
 
 // FUNCTION: COPTER_D 0x0042033c
 char * MDateLocalized::MonthNameLocalized(uint32_t monthNumber, char * szMonthName, int32_t nLanguageToUse) {
-	int32_t nFullStringID;
+	/*bp-0x4*/   int32_t nFullStringID;
 
 // LINE 308:
 	__asm        dec    monthNumber;
@@ -1102,8 +1102,8 @@ _T8a:
 
 // FUNCTION: COPTER_D 0x004203d3
 /*unpacked*/ class ostream& operator<<(/*unpacked*/ class ostream& s, const /*packed*/ class MDateLocalized& d) {
-	int32_t nLanguageToUse;
-	char buf[80];
+	/*bp-0x50*/  char buf[80]; // 0x50 bytes
+	/*bp-0x54*/  int32_t nLanguageToUse;
 
 // LINE 327:
 	nLanguageToUse = d.nLanguage;

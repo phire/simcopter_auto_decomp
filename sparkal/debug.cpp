@@ -708,9 +708,9 @@ struct debug_command{ // packed(0x14 bytes) TI: 0x43fc
 // Contribution: 1:00021280-000246c8 Module: 70, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00422280
 void CDebugWindow::HandleDebugCommand(char * data) {
-	/*packed*/ struct debug_command **it;
-	/*packed*/ class vector<basic_string<char>> commands;
-	int32_t num;
+	/*bp-0x4*/   int32_t num;
+	/*bp-0x10*/  /*packed*/ class vector<basic_string<char>> commands; // 0xc bytes
+	/*bp-0x14*/  /*packed*/ struct debug_command **it;
 
 // LINE 26:
 	__asm        mov    commands.start, 0;
@@ -1242,7 +1242,7 @@ _T63c:
 
 // FUNCTION: COPTER_D 0x004228ee
 void CDebugWindow::CDebugWindow() {
-	static /*packed*/ struct class_debugger<CDebugWindow,CDebugWindowhelp_text> help_command;
+// StaticLocal: 0x005c2900	static /*packed*/ struct class_debugger<CDebugWindow,CDebugWindowhelp_text> help_command;
 
 
 	__asm        mov    eax, this;
@@ -1972,9 +1972,9 @@ int32_t CDebugWindow::Create(char * windowName) {
 	__asm        jne    _T173;
 // LINE 79:
 // Block start:
-	int32_t Width;
-	int32_t Height;
-	int32_t xPos;
+	/*bp-0x4*/   int32_t xPos;
+	/*bp-0x8*/   int32_t Height;
+	/*bp-0xc*/   int32_t Width;
 	CDebugWindow::m_class.style = 0x20;
 // LINE 80:
 	CDebugWindow::m_class.lpfnWndProc = 0x4249ef;
@@ -2120,8 +2120,8 @@ void CDebugWindow::HideWindow() {
 
 // FUNCTION: COPTER_D 0x004233b1
 int32_t CDebugWindow::Save(char * filePath) {
-	/*packed*/ struct _iobuf *file;
-	/*packed*/ class deque<basic_string<char>>::iterator it;
+	/*bp-0x10*/  /*packed*/ class deque<basic_string<char>>::iterator it; // 0x10 bytes
+	/*bp-0x14*/  /*packed*/ struct _iobuf *file;
 
 // LINE 153:
 	__asm        push   0x5973E8;
@@ -2411,8 +2411,8 @@ _T30e:
 
 // FUNCTION: COPTER_D 0x004236c6
 void CDebugWindow::OnSize(unsigned long sizeType, unsigned short width, unsigned short height) {
-	/*packed*/ struct tagRECT winRect;
-	/*packed*/ struct tagRECT editRect;
+	/*bp-0x10*/  /*packed*/ struct tagRECT editRect; // 0x10 bytes
+	/*bp-0x20*/  /*packed*/ struct tagRECT winRect; // 0x10 bytes
 
 // LINE 180:
 	__asm        lea    eax, winRect.left;
@@ -2458,13 +2458,13 @@ void CDebugWindow::OnSize(unsigned long sizeType, unsigned short width, unsigned
 
 // FUNCTION: COPTER_D 0x00423739
 void CDebugWindow::OnPaint() {
-	/*packed*/ class deque<basic_string<char>>::iterator it;
-	int32_t index;
-	/*packed*/ struct tagPAINTSTRUCT ps;
-	void * __ptr32 hDC;
-	/*packed*/ struct tagTEXTMETRICA tm;
-	char * str;
-	int32_t scrollStart;
+	/*bp-0x4*/   int32_t scrollStart;
+	/*bp-0x8*/   char * str;
+	/*bp-0x40*/  /*packed*/ struct tagTEXTMETRICA tm; // 0x35 bytes
+	/*bp-0x44*/  void * __ptr32 hDC;
+	/*bp-0x84*/  /*packed*/ struct tagPAINTSTRUCT ps; // 0x40 bytes
+	/*bp-0x88*/  int32_t index;
+	/*bp-0x98*/  /*packed*/ class deque<basic_string<char>>::iterator it; // 0x10 bytes
 
 // LINE 194:
 	__asm        lea    eax, ps.hdc;
@@ -2782,9 +2782,9 @@ _T44b:
 
 // FUNCTION: COPTER_D 0x00423ba5
 void CDebugWindow::OnScroll(int32_t scrollCode, int32_t pos) {
-	int32_t minPos;
-	int32_t maxPos;
-	int32_t curPos;
+	/*bp-0x4*/   int32_t curPos;
+	/*bp-0x8*/   int32_t maxPos;
+	/*bp-0xc*/   int32_t minPos;
 
 // LINE 222:
 	__asm        push   1;
@@ -2870,7 +2870,7 @@ _Tc6:
 
 // FUNCTION: COPTER_D 0x00423c9d
 void CDebugWindow::OutputString(char * buf) {
-	/*packed*/ class basic_string<char> str;
+	/*bp-0x8*/   /*packed*/ class basic_string<char> str; // 0x8 bytes
 
 // LINE 250:
 	__asm        push   0x10;
@@ -3291,16 +3291,16 @@ _T551:
 
 // FUNCTION: COPTER_D 0x004241ff
 void CDebugWindow::RecalcScrollRange() {
-	int32_t pane_lines;
-	void * __ptr32 hDC;
-	/*packed*/ struct tagRECT winRect;
-	int32_t range;
-	/*packed*/ struct tagTEXTMETRICA tm;
-	/*packed*/ struct tagRECT editRect;
-	int32_t pane_height;
-	int32_t minPos;
-	int32_t maxPos;
-	int32_t curPos;
+	/*bp-0x4*/   int32_t curPos;
+	/*bp-0x8*/   int32_t maxPos;
+	/*bp-0xc*/   int32_t minPos;
+	/*bp-0x10*/  int32_t pane_height;
+	/*bp-0x20*/  /*packed*/ struct tagRECT editRect; // 0x10 bytes
+	/*bp-0x58*/  /*packed*/ struct tagTEXTMETRICA tm; // 0x35 bytes
+	/*bp-0x5c*/  int32_t range;
+	/*bp-0x6c*/  /*packed*/ struct tagRECT winRect; // 0x10 bytes
+	/*bp-0x70*/  void * __ptr32 hDC;
+	/*bp-0x74*/  int32_t pane_lines;
 
 // LINE 262:
 	__asm        mov    eax, this;
@@ -3411,9 +3411,9 @@ _Tf3:
 
 // FUNCTION: COPTER_D 0x0042430d
 void CDebugWindow::OnEditChange() {
-	long len;
-	long count;
-	char buf[256];
+	/*bp-0x100*/ char buf[256]; // 0x100 bytes
+	/*bp-0x104*/ long count;
+	/*bp-0x108*/ long len;
 
 // LINE 297:
 	buf[0] = 0xff;
@@ -3450,11 +3450,11 @@ void CDebugWindow::OnEditChange() {
 	__asm        jle    _T5bd;
 // LINE 308:
 // Block start:
-	/*packed*/ struct debug_command **it;
-	/*packed*/ class vector<basic_string<char>> command_vector;
-	int32_t num;
-	char comBuf[256];
-	/*packed*/ class basic_string<char> str;
+	/*bp-0x110*/ /*packed*/ class basic_string<char> str; // 0x8 bytes
+	/*bp-0x210*/ char comBuf[256]; // 0x100 bytes
+	/*bp-0x214*/ int32_t num;
+	/*bp-0x220*/ /*packed*/ class vector<basic_string<char>> command_vector; // 0xc bytes
+	/*bp-0x224*/ /*packed*/ struct debug_command **it;
 	__asm        lea    eax, buf[0];
 	__asm        push   eax;
 	__asm        push   0x5973F0;
@@ -3919,7 +3919,7 @@ _T114:
 
 // FUNCTION: COPTER_D 0x004249ef
 long CDebugWindow::WindowProcedure(void * __ptr32 hWindow, uint32_t Message, uint32_t WParam, long LParam) {
-	/*packed*/ class CDebugWindow *debugWin;
+	/*bp-0x4*/   /*packed*/ class CDebugWindow *debugWin;
 
 // LINE 363:
 	__asm        push   0xFFFFFFEB;
@@ -4019,8 +4019,8 @@ _T56:
 
 // FUNCTION: COPTER_D 0x00424b14
 void DebugOutput(char * text, ...) {
-	char * Marker;
-	char buf[256];
+	/*bp-0x100*/ char buf[256]; // 0x100 bytes
+	/*bp-0x104*/ char * Marker;
 
 // LINE 404:
 	__asm        lea    eax, [ebp+0xC];
@@ -4487,10 +4487,10 @@ _T22:
 
 // FUNCTION: COPTER_D 0x00425041
 int32_t ParseCommandLine(/*packed*/ class basic_string<char> str, /*packed*/ class vector<basic_string<char>>& commands) {
-	/*packed*/ class basic_string<char> parseStr;
-	int32_t pos;
-	int32_t index;
-	/*packed*/ class basic_string<char> subString;
+	/*bp-0x8*/   /*packed*/ class basic_string<char> subString; // 0x8 bytes
+	/*bp-0xc*/   int32_t index;
+	/*bp-0x10*/  int32_t pos;
+	/*bp-0x18*/  /*packed*/ class basic_string<char> parseStr; // 0x8 bytes
 
 // LINE 432:
 	__asm        jmp    near ptr 0x00425052;

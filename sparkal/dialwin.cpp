@@ -1010,7 +1010,7 @@ _T6b:
 
 // FUNCTION: COPTER_D 0x00448682
 int32_t RadioCompassWindow::CreateImage(int32_t bResizeWindowToFitImage) {
-	/*packed*/ class basic_string<char> sCompassPath;
+	/*bp-0x8*/   /*packed*/ class basic_string<char> sCompassPath; // 0x8 bytes
 
 // LINE 141:
 	__asm        push   0x10;
@@ -1234,7 +1234,7 @@ _T292:
 
 // FUNCTION: COPTER_D 0x00448928
 int32_t RadioCompassWindow::ComposeSelf() {
-	int32_t nCurrentCompassPosition;
+	/*bp-0x4*/   int32_t nCurrentCompassPosition;
 
 // LINE 169:
 	__asm        mov    eax, this;
@@ -1338,8 +1338,8 @@ _T118:
 
 // FUNCTION: COPTER_D 0x00448a45
 long RadioCompassWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
-	int32_t nNewRadioStationIndex;
-	long lNewRadioStationVolume;
+	/*bp-0x4*/   long lNewRadioStationVolume;
+	/*bp-0x8*/   int32_t nNewRadioStationIndex;
 
 // LINE 205:
 	__asm        jmp    near ptr 0x00448A56;
@@ -1559,8 +1559,8 @@ _T261:
 
 // FUNCTION: COPTER_D 0x00448cb7
 void RadioCompassWindow::SetNewRadioStation(int32_t nNewRadioStationIndex) {
-	int32_t nRadioStationCount;
-	int32_t nStationXPosition;
+	/*bp-0x4*/   int32_t nStationXPosition;
+	/*bp-0x8*/   int32_t nRadioStationCount;
 
 // LINE 242:
 	__asm        mov    eax, this;
@@ -1736,7 +1736,7 @@ _T1e0:
 
 // FUNCTION: COPTER_D 0x00448eac
 void RadioCompassWindow::SetNewRadioStationVolume(long lNewRadioStationVolume) {
-	int32_t nVolumeYPosition;
+	/*bp-0x4*/   int32_t nVolumeYPosition;
 
 // LINE 286:
 	__asm        mov    eax, lNewRadioStationVolume;
@@ -1880,8 +1880,8 @@ _T1a2:
 
 // FUNCTION: COPTER_D 0x00449066
 void RadioCompassWindow::CheckForRadioChange() {
-	int32_t nNewRadioStationIndex;
-	long lNewRadioStationVolume;
+	/*bp-0x4*/   long lNewRadioStationVolume;
+	/*bp-0x8*/   int32_t nNewRadioStationIndex;
 
 // LINE 314:
 	__asm        mov    eax, this;
@@ -3125,7 +3125,7 @@ _Td7:
 
 // FUNCTION: COPTER_D 0x0044a2bc
 int32_t DialWindow::CreateImage(int32_t bResizeWindowToFitImage) {
-	char szFullPath[260];
+	/*bp-0x104*/ char szFullPath[260]; // 0x104 bytes
 
 // LINE 546:
 	__asm        mov    eax, bResizeWindowToFitImage;
@@ -3443,10 +3443,10 @@ _T49f:
 
 // FUNCTION: COPTER_D 0x0044a784
 void DialWindow::DrawCurrentDamage() {
-	int32_t nSourceImageX;
-	int32_t i;
-	static int32_t nDamageArray[6][2] = {{14, 8}, {13, 7}, {12, 6}, {11, 5}, {10, 4}, {9, 3}};
-	int32_t nDamageInRangeOf0to15;
+	/*bp-0x4*/   int32_t nDamageInRangeOf0to15;
+// StaticLocal: 0x00598f80	static int32_t nDamageArray[6][2] = {{14, 8}, {13, 7}, {12, 6}, {11, 5}, {10, 4}, {9, 3}};
+	/*bp-0x8*/   int32_t i;
+	/*bp-0xc*/   int32_t nSourceImageX;
 
 // LINE 618:
 	__asm        mov    eax, this;
@@ -3526,7 +3526,7 @@ _Td5:
 
 // FUNCTION: COPTER_D 0x0044a863
 long DialWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 // LINE 640:
 	__asm        mov    eax, this;
@@ -3660,8 +3660,8 @@ _T74:
 
 // FUNCTION: COPTER_D 0x0044a9ff
 long DialWindow::DoCursorMove(long nCursorX, long nCursorY) {
-	int32_t i;
-	long lNewSpotlightCommand;
+	/*bp-0x4*/   long lNewSpotlightCommand;
+	/*bp-0x8*/   int32_t i;
 
 // LINE 676:
 	__asm        mov    eax, this;
@@ -3752,11 +3752,11 @@ _T10f:
 
 // FUNCTION: COPTER_D 0x0044ab1f
 int32_t DialWindow::ComposeSelf() {
-	/*packed*/ class MPoint ptSpotLightPositionLocalCoordinates;
-	long lStringLength;
-	static long lFrameCounter = 12;
-	/*packed*/ class MPoint ptSpotLightBackPositionCoordinates;
-	char szMoneyString[16];
+	/*bp-0x10*/  char szMoneyString[16]; // 0x10 bytes
+	/*bp-0x18*/  /*packed*/ class MPoint ptSpotLightBackPositionCoordinates; // 0x8 bytes
+// StaticLocal: 0x00598fb0	static long lFrameCounter = 12;
+	/*bp-0x1c*/  long lStringLength;
+	/*bp-0x24*/  /*packed*/ class MPoint ptSpotLightPositionLocalCoordinates; // 0x8 bytes
 
 // LINE 700:
 	__asm        jmp    near ptr 0x0044AB36;
@@ -4502,11 +4502,11 @@ _Tcb3:
 	__asm        jne    _Te55;
 // LINE 757:
 // Block start:
-	const int32_t iGuageEnd;
-	int32_t nXPosition;
-	int32_t i;
-	const int32_t nYPosition;
-	int32_t iLitEnd;
+	/*bp-0x28*/  int32_t iLitEnd;
+	/*bp-0x2c*/  const int32_t nYPosition;
+	/*bp-0x30*/  int32_t i;
+	/*bp-0x34*/  int32_t nXPosition;
+	/*bp-0x38*/  const int32_t iGuageEnd;
 _Tced:
 	nXPosition = 0x14;
 // LINE 758:
@@ -4690,9 +4690,9 @@ _T71:
 
 // FUNCTION: COPTER_D 0x0044ba5b
 void DialWindow::SetNewDialPositions() {
-	long lNewFuelLight;
-	static long lFrameCounter = 7;
-	long lNewAltitude;
+	/*bp-0x4*/   long lNewAltitude;
+// StaticLocal: 0x00598fb4	static long lFrameCounter = 7;
+	/*bp-0x8*/   long lNewFuelLight;
 
 // LINE 816:
 	__asm        mov    eax, lFrameCounter;
@@ -5256,7 +5256,7 @@ _T2c:
 
 // FUNCTION: COPTER_D 0x0044c194
 int32_t PassengerWindow::CreateImage(int32_t bResizeWindowToFitImage) {
-	/*packed*/ class basic_string<char> sPassengerPath;
+	/*bp-0x8*/   /*packed*/ class basic_string<char> sPassengerPath; // 0x8 bytes
 
 // LINE 951:
 	__asm        push   0x10;
@@ -5603,7 +5603,7 @@ _T3d:
 	__asm        je     _T222;
 // LINE 1002:
 // Block start:
-	unsigned long lTimeElapsed;
+	/*bp-0x4*/   unsigned long lTimeElapsed;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x88];
 	__asm        mov    [ebp-0x48], eax;
@@ -5781,10 +5781,10 @@ _T222:
 	__asm        je     _T40f;
 // LINE 1034:
 // Block start:
-	/*packed*/ struct tagHeliPassengerData *tempHeliPassengerData;
-	/*packed*/ class MRect rectSource;
-	/*packed*/ class MPoint ptGraphicIconPosition;
-	long lPassengerIndex;
+	/*bp-0x8*/   long lPassengerIndex;
+	/*bp-0x10*/  /*packed*/ class MPoint ptGraphicIconPosition; // 0x8 bytes
+	/*bp-0x20*/  /*packed*/ class MRect rectSource; // 0x10 bytes
+	/*bp-0x24*/  /*packed*/ struct tagHeliPassengerData *tempHeliPassengerData;
 	__asm        jmp    near ptr 0x0044C7C8;
 
 	__asm        jmp    near ptr 0x0044C7CD;
@@ -5933,12 +5933,12 @@ _T419:
 
 // FUNCTION: COPTER_D 0x0044c967
 void PassengerWindow::DrawPassengers() {
-	/*packed*/ class MRect rectDestination;
-	int32_t i;
-	/*packed*/ struct tagHeliPassengerData *tempHeliPassengerData;
-	int32_t nCurrentSeat;
-	/*packed*/ class MRect rectSource;
-	int32_t bSeats[16];
+	/*bp-0x40*/  int32_t bSeats[16]; // 0x40 bytes
+	/*bp-0x50*/  /*packed*/ class MRect rectSource; // 0x10 bytes
+	/*bp-0x54*/  int32_t nCurrentSeat;
+	/*bp-0x58*/  /*packed*/ struct tagHeliPassengerData *tempHeliPassengerData;
+	/*bp-0x5c*/  int32_t i;
+	/*bp-0x6c*/  /*packed*/ class MRect rectDestination; // 0x10 bytes
 
 // LINE 1064:
 	__asm        mov    eax, G_uheli;
@@ -6424,9 +6424,9 @@ _T3a:
 
 // FUNCTION: COPTER_D 0x0044cf07
 long PassengerWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
-	long lPassengerID;
-	/*packed*/ class MRect rectButtonPositionUp;
-	/*packed*/ class MRect rectButtonPositionDown;
+	/*bp-0x10*/  /*packed*/ class MRect rectButtonPositionDown; // 0x10 bytes
+	/*bp-0x20*/  /*packed*/ class MRect rectButtonPositionUp; // 0x10 bytes
+	/*bp-0x24*/  long lPassengerID;
 
 // LINE 1193:
 	__asm        jmp    near ptr 0x0044CF18;
@@ -6631,10 +6631,10 @@ long PassengerWindow::DoCursorMove(long nCursorX, long nCursorY) {
 
 // FUNCTION: COPTER_D 0x0044d19b
 int32_t PassengerWindow::DoesPositionHitPassenger(long nCursorX, long nCursorY, long& lPassengerID) {
-	int32_t i;
-	int32_t nCurrentSeat;
-	/*packed*/ struct tagHeliPassengerData *tempHeliPassengerData;
-	/*packed*/ class MRect rectCurrent;
+	/*bp-0x10*/  /*packed*/ class MRect rectCurrent; // 0x10 bytes
+	/*bp-0x14*/  /*packed*/ struct tagHeliPassengerData *tempHeliPassengerData;
+	/*bp-0x18*/  int32_t nCurrentSeat;
+	/*bp-0x1c*/  int32_t i;
 
 // LINE 1251:
 	__asm        jmp    near ptr 0x0044D1AC;
@@ -6930,7 +6930,7 @@ void MapWindow::InitializeCachedSettings() {
 
 // FUNCTION: COPTER_D 0x0044d5e9
 int32_t MapWindow::CreateImage(int32_t bResizeWindowToFitImage) {
-	char szFullPath[260];
+	/*bp-0x104*/ char szFullPath[260]; // 0x104 bytes
 
 // LINE 1362:
 	__asm        mov    eax, bResizeWindowToFitImage;
@@ -7070,9 +7070,9 @@ _Ta8:
 
 // FUNCTION: COPTER_D 0x0044d7cb
 int32_t MapWindow::ComposeSelf() {
-	/*packed*/ struct MISSION_DATA *md;
-	static int32_t lFrameCounter = 3;
-	long lNewMissionID;
+	/*bp-0x4*/   long lNewMissionID;
+// StaticLocal: 0x00598fc8	static int32_t lFrameCounter = 3;
+	/*bp-0x8*/   /*packed*/ struct MISSION_DATA *md;
 
 // LINE 1405:
 	__asm        mov    eax, this;
@@ -7218,8 +7218,8 @@ _T17c:
 
 // FUNCTION: COPTER_D 0x0044d94c
 void MapWindow::DrawButton(int32_t nButton, int32_t nState) {
-	/*packed*/ class MPoint ptDestination;
-	/*packed*/ class MRect rectSource;
+	/*bp-0x10*/  /*packed*/ class MRect rectSource; // 0x10 bytes
+	/*bp-0x18*/  /*packed*/ class MPoint ptDestination; // 0x8 bytes
 
 // LINE 1441:
 	__asm        jmp    near ptr 0x0044D95D;
@@ -7409,7 +7409,7 @@ _T2af:
 
 // FUNCTION: COPTER_D 0x0044dc27
 long MapWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long __formal) {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 // LINE 1490:
 	__asm        mov    eax, nCursorX;
@@ -7864,7 +7864,7 @@ _T287:
 
 // FUNCTION: COPTER_D 0x0044e1b7
 int32_t MapWindow::DoMessage(/*unpacked*/ class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
-	long lMessageData;
+	/*bp-0x4*/   long lMessageData;
 
 // LINE 1560:
 	__asm        cmp    lWindowID, 1;
@@ -7895,8 +7895,8 @@ _T49:
 
 // FUNCTION: COPTER_D 0x0044e211
 void MapWindow::CreateAutoMessageSelectionPopupWindow(int32_t nAutoID, int32_t nType, /*packed*/ class MPoint& ptPosition) {
-	int32_t StringID;
-	/*packed*/ class PopupMenuWindow *tempPopupMenuWindow;
+	/*bp-0x4*/   /*packed*/ class PopupMenuWindow *tempPopupMenuWindow;
+	/*bp-0x8*/   int32_t StringID;
 
 // LINE 1575:
 	__asm        mov    eax, ptPosition;
@@ -8001,7 +8001,7 @@ _Tb0:
 
 // FUNCTION: COPTER_D 0x0044e32d
 int32_t MapWindow::GetStringIDForVehicleName(int32_t nAutoID) {
-	long lCarModel;
+	/*bp-0x4*/   long lCarModel;
 
 // LINE 1595:
 	__asm        cmp    nAutoID, 0x46;
@@ -8284,7 +8284,7 @@ void EquipmentPanelWindow::InitializeCachedSettings() {
 
 // FUNCTION: COPTER_D 0x0044e77b
 int32_t EquipmentPanelWindow::CreateImage(int32_t bResizeWindowToFitImage) {
-	char szPath[260];
+	/*bp-0x104*/ char szPath[260]; // 0x104 bytes
 
 // LINE 1720:
 	__asm        mov    eax, this;
@@ -8521,7 +8521,7 @@ _T3b:
 
 // FUNCTION: COPTER_D 0x0044eaa7
 int32_t EquipmentPanelWindow::DoesWindowNeedUpdating() {
-	static long lFrameCounter = 37;
+// StaticLocal: 0x00598fdc	static long lFrameCounter = 37;
 
 // LINE 1780:
 	__asm        test   reinterpret_cast<uint8_t>(lFrameCounter), 4;
@@ -8585,8 +8585,8 @@ _Tbe:
 
 // FUNCTION: COPTER_D 0x0044eb6a
 void EquipmentPanelWindow::DrawButton(int32_t nButton, int32_t nState) {
-	/*packed*/ class MPoint ptDestination;
-	/*packed*/ class MRect rectSource;
+	/*bp-0x10*/  /*packed*/ class MRect rectSource; // 0x10 bytes
+	/*bp-0x18*/  /*packed*/ class MPoint ptDestination; // 0x8 bytes
 
 // LINE 1797:
 	__asm        jmp    near ptr 0x0044EB7B;
@@ -8830,11 +8830,11 @@ _T36b:
 
 // FUNCTION: COPTER_D 0x0044ef07
 void EquipmentPanelWindow::DrawBucketWaterGuage() {
-	const int32_t iGuageEnd;
-	int32_t nXPosition;
-	int32_t i;
-	const int32_t nYPosition;
-	int32_t iLitEnd;
+	/*bp-0x4*/   int32_t iLitEnd;
+	/*bp-0x8*/   const int32_t nYPosition;
+	/*bp-0xc*/   int32_t i;
+	/*bp-0x10*/  int32_t nXPosition;
+	/*bp-0x14*/  const int32_t iGuageEnd;
 
 // LINE 1869:
 	nXPosition = 0x10;
@@ -8943,11 +8943,11 @@ _T12f:
 
 // FUNCTION: COPTER_D 0x0044f040
 void EquipmentPanelWindow::DrawTeargasUsage() {
-	/*packed*/ class MPoint ptDestination;
-	/*packed*/ class MRect rectSourceDisabled;
-	int32_t i;
-	/*packed*/ class MRect rectSourceEnabled;
-	long lTeargasUsed;
+	/*bp-0x4*/   long lTeargasUsed;
+	/*bp-0x14*/  /*packed*/ class MRect rectSourceEnabled; // 0x10 bytes
+	/*bp-0x18*/  int32_t i;
+	/*bp-0x28*/  /*packed*/ class MRect rectSourceDisabled; // 0x10 bytes
+	/*bp-0x30*/  /*packed*/ class MPoint ptDestination; // 0x8 bytes
 
 // LINE 1894:
 	__asm        jmp    near ptr 0x0044F051;
@@ -9833,10 +9833,10 @@ _T1a7:
 
 // FUNCTION: COPTER_D 0x0044fb06
 void EquipmentPanelWindow::CreateMegaphoneSelectionPopupWindow() {
-	long nMenuYPosition;
-	int32_t i;
-	long nMenuXPosition;
-	/*packed*/ class PopupMenuWindow *tempPopupMenuWindow;
+	/*bp-0x4*/   /*packed*/ class PopupMenuWindow *tempPopupMenuWindow;
+	/*bp-0x8*/   long nMenuXPosition;
+	/*bp-0xc*/   int32_t i;
+	/*bp-0x10*/  long nMenuYPosition;
 
 // LINE 2063:
 	nMenuXPosition = this->rectControls[0].left;

@@ -86,7 +86,7 @@ int32_t Check_Pointer(char * ptr, short numchars, char * text) {
 
 // FUNCTION: COPTER_D 0x00563eb5
 void MyPixel(int32_t x, int32_t y, unsigned char color) {
-	char * ptr;
+	/*bp-0x4*/   char * ptr;
 
 // LINE 148:
 	__asm        cmp    x, 0;
@@ -197,20 +197,20 @@ _T117:
 
 // FUNCTION: COPTER_D 0x00563fd1
 void DrawSphere(/*unpacked*/ struct Point3d centerPt, long diameter, unsigned char color, int32_t shadeFlag) {
-	int32_t lineY;
-	int32_t xOffset;
-	int32_t startX;
-	unsigned char shade[51];
-	long radius;
-	long ditherLimit;
-	long j;
-	long i;
-	int32_t radiusSquared;
-	unsigned char hiColor;
-	double bandSize;
-	unsigned char pat[3][51];
-	unsigned char shftCt;
-	int32_t endX;
+	/*bp-0x4*/   int32_t endX;
+	/*bp-0x8*/   unsigned char shftCt;
+	/*bp-0xa4*/  unsigned char pat[3][51]; // 0x99 bytes
+	/*bp-0xac*/  double bandSize; // 0x8 bytes
+	/*bp-0xb0*/  unsigned char hiColor;
+	/*bp-0xb4*/  int32_t radiusSquared;
+	/*bp-0xb8*/  long i;
+	/*bp-0xbc*/  long j;
+	/*bp-0xc0*/  long ditherLimit;
+	/*bp-0xc4*/  long radius;
+	/*bp-0xf8*/  unsigned char shade[51]; // 0x33 bytes
+	/*bp-0xfc*/  int32_t startX;
+	/*bp-0x100*/ int32_t xOffset;
+	/*bp-0x104*/ int32_t lineY;
 
 // LINE 189:
 	shftCt = 0x0;
@@ -763,19 +763,19 @@ _T79a:
 
 // FUNCTION: COPTER_D 0x00564770
 void DrawFaceTwo(/*unpacked*/ struct Point3d centerPt, long vertRad, float psi, double scaleFactor, short facenum) {
-	long yLine;
-	double yStride;
-	long startX;
-	/*unpacked*/ struct BmpLineInfo pixLine;
-	long i;
-	/*unpacked*/ struct Point3d offset;
-	unsigned char * pixPtr;
-	double bSquared;
-	/*unpacked*/ struct VRBmpHdr *bhdr;
-	long endX;
-	double aSquared;
-	/*unpacked*/ struct Point3d faceCenter;
-	long yScanLine;
+	/*bp-0x4*/   long yScanLine;
+	/*bp-0x10*/  /*unpacked*/ struct Point3d faceCenter; // 0xc bytes
+	/*bp-0x18*/  double aSquared; // 0x8 bytes
+	/*bp-0x1c*/  long endX;
+	/*bp-0x20*/  /*unpacked*/ struct VRBmpHdr *bhdr;
+	/*bp-0x28*/  double bSquared; // 0x8 bytes
+	/*bp-0x2c*/  unsigned char * pixPtr;
+	/*bp-0x38*/  /*unpacked*/ struct Point3d offset; // 0xc bytes
+	/*bp-0x3c*/  long i;
+	/*bp-0x54*/  /*unpacked*/ struct BmpLineInfo pixLine; // 0x18 bytes
+	/*bp-0x58*/  long startX;
+	/*bp-0x60*/  double yStride; // 0x8 bytes
+	/*bp-0x64*/  long yLine;
 
 // LINE 416:
 	bhdr = 0x0;
@@ -1011,12 +1011,12 @@ long ComputeViewToFigureOffset(/*unpacked*/ struct Point3D view, int32_t index) 
 
 // FUNCTION: COPTER_D 0x005649d3
 void DrawLineOnFace(long startX, long endX, long yLine, /*unpacked*/ struct Point3d offset, /*unpacked*/ struct Point3d faceCenter, /*unpacked*/ struct BmpLineInfo *pixLine) {
-	long loBitmapLimit;
-	/*unpacked*/ struct Point3d scaledOffset;
-	long begin;
-	long hiBitmapLimit;
-	long end;
-	unsigned char * ptr;
+	/*bp-0x4*/   unsigned char * ptr;
+	/*bp-0x8*/   long end;
+	/*bp-0xc*/   long hiBitmapLimit;
+	/*bp-0x10*/  long begin;
+	/*bp-0x1c*/  /*unpacked*/ struct Point3d scaledOffset; // 0xc bytes
+	/*bp-0x20*/  long loBitmapLimit;
 
 // LINE 536:
 	__asm        mov    eax, offset.x;
@@ -1212,7 +1212,7 @@ _T1e0:
 
 // FUNCTION: COPTER_D 0x00564bb8
 void FindFaceQuadrant(/*unpacked*/ struct VRBmpHdr *bhdr, long dir, /*unpacked*/ struct Point3D viewPos, /*unpacked*/ struct Point3d *faceCenter) {
-	double widthOverTwo;
+	/*bp-0x8*/   double widthOverTwo; // 0x8 bytes
 
 // LINE 586:
 	__asm        mov    eax, bhdr;
@@ -1246,8 +1246,8 @@ _T2f:
 
 // FUNCTION: COPTER_D 0x00564c10
 void FindFaceQuadrant2(/*unpacked*/ struct VRBmpHdr *bhdr, float psi, /*unpacked*/ struct Point3d *faceCenter) {
-	double widthOverTwo;
-	double mydir;
+	/*bp-0x8*/   double mydir; // 0x8 bytes
+	/*bp-0x10*/  double widthOverTwo; // 0x8 bytes
 
 // LINE 604:
 	__asm        mov    eax, bhdr;
@@ -1366,26 +1366,26 @@ _T173:
 
 // FUNCTION: COPTER_D 0x00564d8d
 void DrawTaperedLine(/*unpacked*/ struct Point3d startPt, /*unpacked*/ struct Point3d endPt, long taper, unsigned char color, long width) {
-	long dy;
-	long dx;
-	long startWidth;
-	long error;
-	long cInc;
-	double step;
-	long yInc;
-	long tapWidth;
-	long xInc;
-	long j;
-	long longColor;
-	long i;
-	long oneByteWrites;
-	long fourByteWrites;
-	long segLen;
-	char * writeBufferTmp;
-	double colorLimit;
-	char * writeBuffer;
-	long endWidth;
-	char col[26];
+	/*bp-0x1c*/  char col[26]; // 0x1a bytes
+	/*bp-0x20*/  long endWidth;
+	/*bp-0x24*/  char * writeBuffer;
+	/*bp-0x2c*/  double colorLimit; // 0x8 bytes
+	/*bp-0x30*/  char * writeBufferTmp;
+	/*bp-0x34*/  long segLen;
+	/*bp-0x38*/  long fourByteWrites;
+	/*bp-0x3c*/  long oneByteWrites;
+	/*bp-0x40*/  long i;
+	/*bp-0x44*/  long longColor;
+	/*bp-0x48*/  long j;
+	/*bp-0x4c*/  long xInc;
+	/*bp-0x50*/  long tapWidth;
+	/*bp-0x54*/  long yInc;
+	/*bp-0x5c*/  double step; // 0x8 bytes
+	/*bp-0x60*/  long cInc;
+	/*bp-0x64*/  long error;
+	/*bp-0x68*/  long startWidth;
+	/*bp-0x6c*/  long dx;
+	/*bp-0x70*/  long dy;
 
 // LINE 648:
 	error = 0x0;
@@ -1848,22 +1848,22 @@ _T493:
 
 // FUNCTION: COPTER_D 0x00565225
 void DrawLine(/*unpacked*/ struct Point3d startPt, /*unpacked*/ struct Point3d endPt, unsigned char color, long width) {
-	long dy;
-	long dx;
-	long error;
-	double step;
-	long cInc;
-	long yInc;
-	long xInc;
-	long j;
-	long longColor;
-	long i;
-	long oneByteWrites;
-	long fourByteWrites;
-	char * writeBufferTmp;
-	double colorLimit;
-	char * writeBuffer;
-	char col[26];
+	/*bp-0x1c*/  char col[26]; // 0x1a bytes
+	/*bp-0x20*/  char * writeBuffer;
+	/*bp-0x28*/  double colorLimit; // 0x8 bytes
+	/*bp-0x2c*/  char * writeBufferTmp;
+	/*bp-0x30*/  long fourByteWrites;
+	/*bp-0x34*/  long oneByteWrites;
+	/*bp-0x38*/  long i;
+	/*bp-0x3c*/  long longColor;
+	/*bp-0x40*/  long j;
+	/*bp-0x44*/  long xInc;
+	/*bp-0x48*/  long yInc;
+	/*bp-0x4c*/  long cInc;
+	/*bp-0x54*/  double step; // 0x8 bytes
+	/*bp-0x58*/  long error;
+	/*bp-0x5c*/  long dx;
+	/*bp-0x60*/  long dy;
 
 // LINE 833:
 	error = 0x0;
@@ -2263,16 +2263,16 @@ _T417:
 
 // FUNCTION: COPTER_D 0x00565641
 void DrawHorzLinePat(long startX, long endX, long yPos, unsigned char * pixPtr, unsigned char colorShift, double xStride) {
-	double stride1;
-	long dx;
-	double stride3;
-	double stride2;
-	long longColor;
-	long oneByteWrites;
-	double curPatOffset;
-	long fourByteWrites;
-	double stride4;
-	unsigned char * writeBuffer;
+	/*bp-0x4*/   unsigned char * writeBuffer;
+	/*bp-0xc*/   double stride4; // 0x8 bytes
+	/*bp-0x10*/  long fourByteWrites;
+	/*bp-0x18*/  double curPatOffset; // 0x8 bytes
+	/*bp-0x1c*/  long oneByteWrites;
+	/*bp-0x20*/  long longColor;
+	/*bp-0x28*/  double stride2; // 0x8 bytes
+	/*bp-0x30*/  double stride3; // 0x8 bytes
+	/*bp-0x34*/  long dx;
+	/*bp-0x3c*/  double stride1; // 0x8 bytes
 
 // LINE 989:
 	__asm        mov    reinterpret_cast<uint32_t>(curPatOffset), 0;
@@ -2490,11 +2490,11 @@ _T252:
 
 // FUNCTION: COPTER_D 0x00565898
 void DrawHorzLine(long startX, long endX, long yPos, unsigned char color) {
-	long dx;
-	long oneByteWrites;
-	long fourByteWrites;
-	unsigned long fourByteColor;
-	char * writeBuffer;
+	/*bp-0x4*/   char * writeBuffer;
+	/*bp-0x8*/   unsigned long fourByteColor;
+	/*bp-0xc*/   long fourByteWrites;
+	/*bp-0x10*/  long oneByteWrites;
+	/*bp-0x14*/  long dx;
 
 // LINE 1075:
 	__asm        cmp    startX, 0;

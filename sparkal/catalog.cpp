@@ -535,9 +535,9 @@ struct SparkalPoint{ // packed(0x8 bytes) TI: 0x1a54
 // Contribution: 1:00073960-0007a5d0 Module: 34, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00474960
 void CatalogWindow::CatalogWindow(int32_t nNewID, /*unpacked*/ class GraphicWindow *windowNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
-	/*packed*/ class Random tempRandom;
-	int32_t i;
-	int32_t nFullStringID;
+	/*bp-0x4*/   int32_t nFullStringID;
+	/*bp-0x8*/   int32_t i;
+	/*bp-0xec*/  /*packed*/ class Random tempRandom; // 0xe4 bytes
 
 
 	__asm        jmp    near ptr 0x0047497B;
@@ -2201,8 +2201,8 @@ _T5a4:
 
 // FUNCTION: COPTER_D 0x00476517
 int32_t CatalogWindow::Initialize() {
-	/*packed*/ class basic_string<char> sText;
-	int32_t nFullStringID;
+	/*bp-0x4*/   int32_t nFullStringID;
+	/*bp-0xc*/   /*packed*/ class basic_string<char> sText; // 0x8 bytes
 
 // LINE 134:
 	__asm        push   0x10;
@@ -2731,18 +2731,18 @@ _T73b:
 
 // FUNCTION: COPTER_D 0x00476c64
 void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
-	/*packed*/ class basic_string<char> sTempMainGraphicFilePath;
-	/*packed*/ struct tagUserPersonalInfo *currentUserPersonalInfo;
-	/*packed*/ class basic_string<char> sTempMainGraphicFileName;
-	int32_t i;
-	/*packed*/ class MRect rectEquipmentDescriptions[5];
-	/*packed*/ class MRect rectFundsText;
-	/*packed*/ class basic_string<char> sTempTabFilePath;
-	/*packed*/ class basic_string<char> sTempTabFileName;
-	int32_t nFullStringID;
-	/*packed*/ class basic_string<char> sEquipmentDescriptions[5];
-	/*packed*/ class MRect rectEquipmentDescriptionTitles[5];
-	char szFilePath[260];
+	/*bp-0x104*/ char szFilePath[260]; // 0x104 bytes
+	/*bp-0x154*/ /*packed*/ class MRect rectEquipmentDescriptionTitles[5]; // 0x50 bytes
+	/*bp-0x17c*/ /*packed*/ class basic_string<char> sEquipmentDescriptions[5]; // 0x28 bytes
+	/*bp-0x180*/ int32_t nFullStringID;
+	/*bp-0x188*/ /*packed*/ class basic_string<char> sTempTabFileName; // 0x8 bytes
+	/*bp-0x190*/ /*packed*/ class basic_string<char> sTempTabFilePath; // 0x8 bytes
+	/*bp-0x1a0*/ /*packed*/ class MRect rectFundsText; // 0x10 bytes
+	/*bp-0x1f0*/ /*packed*/ class MRect rectEquipmentDescriptions[5]; // 0x50 bytes
+	/*bp-0x1f4*/ int32_t i;
+	/*bp-0x1fc*/ /*packed*/ class basic_string<char> sTempMainGraphicFileName; // 0x8 bytes
+	/*bp-0x200*/ /*packed*/ struct tagUserPersonalInfo *currentUserPersonalInfo;
+	/*bp-0x208*/ /*packed*/ class basic_string<char> sTempMainGraphicFilePath; // 0x8 bytes
 
 // LINE 168:
 	__asm        push   0x10;
@@ -2929,8 +2929,8 @@ _T2db:
 	__asm        jg     _T1a43;
 // LINE 184:
 // Block start:
-	/*unpacked*/ class CBackBuffer tempHelicopterBuffer;
-	/*unpacked*/ class CBackBuffer tempTabBuffer;
+	/*bp-0x33c*/ /*unpacked*/ class CBackBuffer tempTabBuffer;
+	/*bp-0x470*/ /*unpacked*/ class CBackBuffer tempHelicopterBuffer;
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x40], 0;
 	__asm        je     _T3a2;
@@ -4466,7 +4466,7 @@ _T1a28:
 	__asm        jmp    _T2b1e;
 // LINE 271:
 // Block start:
-	/*unpacked*/ class CBackBuffer tempTabBuffer;
+	/*bp-0x5a4*/ /*unpacked*/ class CBackBuffer tempTabBuffer;
 _T1a43:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x40], 0;
@@ -5526,7 +5526,7 @@ _T2b1e:
 	__asm        je     _T2c2c;
 // LINE 366:
 // Block start:
-	/*unpacked*/ class CBackBuffer tempStainImage;
+	/*bp-0x6d8*/ /*unpacked*/ class CBackBuffer tempStainImage;
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
 	__asm        mov    eax, SZ_STAIN_IMAGE_FILE_NAME;
@@ -5604,7 +5604,7 @@ _T2c2c:
 	__asm        je     _T2d3a;
 // LINE 377:
 // Block start:
-	/*unpacked*/ class CBackBuffer tempPaperClipImage;
+	/*bp-0x80c*/ /*unpacked*/ class CBackBuffer tempPaperClipImage;
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
 	__asm        mov    eax, SZ_CATALOG_WINDOW_PAPER_CLIP_IMAGEFILE_NAME;
@@ -5931,11 +5931,11 @@ _T3146:
 
 // FUNCTION: COPTER_D 0x00479dbb
 void CatalogWindow::DrawCurrentEquipmentSelection() {
-	/*packed*/ class MRect rectOutline;
-	static int32_t nColorDirection = 1;
-	const int32_t nColorArraySize;
-	static int32_t nColorArrayCurrentIndex = 0;
-	unsigned long lIndexArray[6];
+	/*bp-0x18*/  unsigned long lIndexArray[6]; // 0x18 bytes
+// StaticLocal: 0x00599834	static int32_t nColorArrayCurrentIndex = 0;
+	/*bp-0x1c*/  const int32_t nColorArraySize;
+// StaticLocal: 0x00599838	static int32_t nColorDirection = 1;
+	/*bp-0x2c*/  /*packed*/ class MRect rectOutline; // 0x10 bytes
 
 // LINE 397:
 	__asm        jmp    near ptr 0x00479DD2;
@@ -6133,8 +6133,8 @@ _T26b:
 
 // FUNCTION: COPTER_D 0x0047a09f
 void CatalogWindow::SetNewEquipmentSelection(long lNewEquipmentSelection) {
-	/*packed*/ struct tagUserPersonalInfo *currentUserPersonalInfo;
-	/*packed*/ class MRect rectFill;
+	/*bp-0x10*/  /*packed*/ class MRect rectFill; // 0x10 bytes
+	/*bp-0x14*/  /*packed*/ struct tagUserPersonalInfo *currentUserPersonalInfo;
 
 // LINE 443:
 	__asm        call   GetCurrentUserPersonalInfo;
@@ -6343,7 +6343,7 @@ _T263:
 
 // FUNCTION: COPTER_D 0x0047a30e
 int32_t CatalogWindow::DoesTabHaveAnyStains(long lTab) {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 // LINE 477:
 	__asm        mov    i, 0;
@@ -6375,7 +6375,7 @@ _T51:
 
 // FUNCTION: COPTER_D 0x0047a366
 int32_t CatalogWindow::DoesTabHaveAnyPaperClips(long lTab) {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 // LINE 491:
 	__asm        mov    i, 0;
@@ -6407,8 +6407,8 @@ _T51:
 
 // FUNCTION: COPTER_D 0x0047a3be
 void CatalogWindow::GetCurrentGraphicsFileNames(/*packed*/ class basic_string<char>& sMainGraphicFileName, /*packed*/ class basic_string<char>& sTabFileName) {
-	char * szTabFileNames[9];
-	char * szHelicopterFileNames[9];
+	/*bp-0x24*/  char * szHelicopterFileNames[9]; // 0x24 bytes
+	/*bp-0x48*/  char * szTabFileNames[9]; // 0x24 bytes
 
 // LINE 506:
 	__asm        mov    szHelicopterFileNames[0], 0x5998CC;
@@ -7005,8 +7005,8 @@ _T2c:
 
 // FUNCTION: COPTER_D 0x0047ab89
 int32_t CatalogWindow::DoesCursorHitEquipmentSelection(long lXPosition, long lYPosition, long& lEquipment) {
-	int32_t i;
-	const /*packed*/ class MRect rectEquipment[5];
+	/*bp-0x50*/  const /*packed*/ class MRect rectEquipment[5]; // 0x50 bytes
+	/*bp-0x54*/  int32_t i;
 
 // LINE 560:
 	__asm        jmp    near ptr 0x0047AB9A;
@@ -7207,8 +7207,8 @@ _T2f:
 
 // FUNCTION: COPTER_D 0x0047ae0e
 long CatalogWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
-	long lEquipment;
-	long lTab;
+	/*bp-0x4*/   long lTab;
+	/*bp-0x8*/   long lEquipment;
 
 // LINE 619:
 	__asm        lea    eax, lTab;
@@ -7280,7 +7280,7 @@ long CatalogWindow::DoCursorMove(long nCursorX, long nCursorY) {
 
 // FUNCTION: COPTER_D 0x0047aed6
 void CatalogWindow::SetButtonStates() {
-	const /*packed*/ struct tagUserPersonalInfo *currentUserPersonalInfo;
+	/*bp-0x4*/   const /*packed*/ struct tagUserPersonalInfo *currentUserPersonalInfo;
 
 // LINE 655:
 	__asm        call   GetCurrentUserPersonalInfo;
@@ -7437,7 +7437,7 @@ _T1f8:
 
 // FUNCTION: COPTER_D 0x0047b0d8
 int32_t CatalogWindow::DoMessage(/*unpacked*/ class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
-	long lMyMessage[2];
+	/*bp-0x8*/   long lMyMessage[2]; // 0x8 bytes
 
 // LINE 704:
 	__asm        cmp    lWindowID, 1;
@@ -7571,7 +7571,7 @@ _T154:
 
 // FUNCTION: COPTER_D 0x0047b233
 long CatalogWindow::GetHelicopterFromTab(long lTab) {
-	const long lHelicopterTabs[8];
+	/*bp-0x20*/  const long lHelicopterTabs[8]; // 0x20 bytes
 
 // LINE 736:
 	__asm        mov    lHelicopterTabs[0], 3;
@@ -7592,7 +7592,7 @@ long CatalogWindow::GetHelicopterFromTab(long lTab) {
 
 // FUNCTION: COPTER_D 0x0047b28a
 long CatalogWindow::GetEquipmentFromSelectionIndex(long lSelectionIndex) {
-	const long lEquipmentChoices[5];
+	/*bp-0x14*/  const long lEquipmentChoices[5]; // 0x14 bytes
 
 // LINE 747:
 	__asm        mov    lEquipmentChoices[0], 0;
@@ -7610,8 +7610,8 @@ long CatalogWindow::GetEquipmentFromSelectionIndex(long lSelectionIndex) {
 
 // FUNCTION: COPTER_D 0x0047b2cc
 int32_t CatalogWindow::CanUserBuy() {
-	long lCurrentValue;
-	long lCurrentFunds;
+	/*bp-0x4*/   long lCurrentFunds;
+	/*bp-0x8*/   long lCurrentValue;
 
 // LINE 766:
 	__asm        call   GetUserMoney;
@@ -7660,7 +7660,7 @@ _T7d:
 
 // FUNCTION: COPTER_D 0x0047b353
 int32_t CatalogWindow::CanUserSell() {
-	const /*packed*/ struct tagUserPersonalInfo *currentUserPersonalInfo;
+	/*bp-0x4*/   const /*packed*/ struct tagUserPersonalInfo *currentUserPersonalInfo;
 
 // LINE 784:
 	__asm        call   GetCurrentUserPersonalInfo;
@@ -7704,11 +7704,11 @@ _T79:
 
 // FUNCTION: COPTER_D 0x0047b3d1
 int32_t CatalogWindow::DoCatalogWindowBuy() {
-	/*packed*/ struct tagUserPersonalInfo *currentUserPersonalInfo;
-	long lCurrentValue;
-	long lCurrentHelicopter;
-	long lCurrentFunds;
-	long lFixedCurrentEquipmentSelection;
+	/*bp-0x4*/   long lFixedCurrentEquipmentSelection;
+	/*bp-0x8*/   long lCurrentFunds;
+	/*bp-0xc*/   long lCurrentHelicopter;
+	/*bp-0x10*/  long lCurrentValue;
+	/*bp-0x14*/  /*packed*/ struct tagUserPersonalInfo *currentUserPersonalInfo;
 
 // LINE 804:
 	__asm        call   GetCurrentUserPersonalInfo;
@@ -7803,11 +7803,11 @@ _Tfa:
 
 // FUNCTION: COPTER_D 0x0047b4d0
 int32_t CatalogWindow::DoCatalogWindowSell() {
-	/*packed*/ struct tagUserPersonalInfo *currentUserPersonalInfo;
-	long lCurrentValue;
-	long lCurrentHelicopter;
-	long lCurrentFunds;
-	long lFixedCurrentEquipmentSelection;
+	/*bp-0x4*/   long lFixedCurrentEquipmentSelection;
+	/*bp-0x8*/   long lCurrentFunds;
+	/*bp-0xc*/   long lCurrentHelicopter;
+	/*bp-0x10*/  long lCurrentValue;
+	/*bp-0x14*/  /*packed*/ struct tagUserPersonalInfo *currentUserPersonalInfo;
 
 // LINE 836:
 	__asm        call   GetCurrentUserPersonalInfo;

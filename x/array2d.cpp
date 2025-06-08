@@ -382,10 +382,10 @@ _T6d:
 
 // FUNCTION: COPTER_D 0x00567552
 void _cArray::FromDiskCreate(void * __ptr32 hArray, /*unpacked*/ class ResFile *pFile, long entrySize, void (*Swizzler)(void * __ptr32, long)) {
-	unsigned short fileOpened;
-	char * data;
-	/*unpacked*/ struct _cArray::Header *header;
-	unsigned char tmpname[256];
+	/*bp-0x100*/ unsigned char tmpname[256]; // 0x100 bytes
+	/*bp-0x104*/ /*unpacked*/ struct _cArray::Header *header;
+	/*bp-0x108*/ char * data;
+	/*bp-0x10c*/ unsigned short fileOpened;
 
 // LINE 30:
 	this->fFile = pFile;
@@ -589,8 +589,8 @@ _T2b6:
 	__asm        je     _T3a2;
 // LINE 94:
 // Block start:
-	long xcount;
-	long ycount;
+	/*bp-0x110*/ long ycount;
+	/*bp-0x114*/ long xcount;
 	__asm        mov    xcount, 0;
 	__asm        jmp    _T2e0;
 _T2da:
@@ -754,8 +754,8 @@ _T40:
 	__asm        je     _T126;
 // LINE 169:
 // Block start:
-	long cnt;
-	unsigned short bFound;
+	/*bp-0x4*/   unsigned short bFound;
+	/*bp-0x8*/   long cnt;
 	bFound = 0x0;
 // LINE 172:
 	__asm        mov    cnt, 0;
@@ -828,7 +828,7 @@ void _cArray::MakeTable() {
 	__asm        jne    _T82;
 // LINE 196:
 // Block start:
-	long count;
+	/*bp-0x4*/   long count;
 	__asm        push   0x1000;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
@@ -895,8 +895,8 @@ void _cArray::CheckIntoTable() {
 	__asm        je     _T111;
 // LINE 250:
 // Block start:
-	long foundcount;
-	long count;
+	/*bp-0x4*/   long count;
+	/*bp-0x8*/   long foundcount;
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x4C], 0;
 	__asm        jne    _T42;
@@ -976,8 +976,8 @@ _T111:
 
 // FUNCTION: COPTER_D 0x00567d12
 void _cArray::FillHeader() {
-	unsigned long debugsize;
-	/*unpacked*/ struct _cArray::Header *header;
+	/*bp-0x4*/   /*unpacked*/ struct _cArray::Header *header;
+	/*bp-0x8*/   unsigned long debugsize;
 
 // LINE 305:
 	__asm        mov    eax, this;
@@ -1090,13 +1090,13 @@ void _cArray::SetSizeAndHeaders(long newxSize, long newySize) {
 
 // FUNCTION: COPTER_D 0x00567e6b
 void _cArray::ClearBytes(char zeropad) {
-	unsigned char * writeplace;
-	unsigned long debugsize;
-	unsigned char * begin;
-	long numBytes;
-	unsigned char * end;
-	long cnt;
-	char * fillPtr;
+	/*bp-0x4*/   char * fillPtr;
+	/*bp-0x8*/   long cnt;
+	/*bp-0xc*/   unsigned char * end;
+	/*bp-0x10*/  long numBytes;
+	/*bp-0x14*/  unsigned char * begin;
+	/*bp-0x18*/  unsigned long debugsize;
+	/*bp-0x1c*/  unsigned char * writeplace;
 
 // LINE 327:
 	__asm        mov    eax, this;
@@ -1226,9 +1226,9 @@ _T174:
 
 // FUNCTION: COPTER_D 0x00567fe6
 short _cArray::InsertRow(short afterwhich) {
-	short beforewhich;
-	long oldxsize;
-	long oldysize;
+	/*bp-0x4*/   long oldysize;
+	/*bp-0x8*/   long oldxsize;
+	/*bp-0xc*/   short beforewhich;
 
 // LINE 360:
 	oldxsize = this->fxSize;
@@ -1279,9 +1279,9 @@ _T72:
 	__asm        je     _T132;
 // LINE 371:
 // Block start:
-	unsigned char * movefrom;
-	unsigned char * moveto;
-	short count;
+	/*bp-0x10*/  short count;
+	/*bp-0x14*/  unsigned char * moveto;
+	/*bp-0x18*/  unsigned char * movefrom;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
 	__asm        dec    eax;
@@ -1346,9 +1346,9 @@ _T132:
 
 // FUNCTION: COPTER_D 0x00568128
 short _cArray::InsertColumn(short afterwhich) {
-	short beforewhich;
-	long oldxsize;
-	long oldysize;
+	/*bp-0x4*/   long oldysize;
+	/*bp-0x8*/   long oldxsize;
+	/*bp-0xc*/   short beforewhich;
 
 // LINE 388:
 	oldxsize = this->fxSize;
@@ -1395,9 +1395,9 @@ _T72:
 	__asm        jle    _T15c;
 // LINE 397:
 // Block start:
-	unsigned char * movefrom;
-	unsigned char * moveto;
-	short xcount;
+	/*bp-0x10*/  short xcount;
+	/*bp-0x14*/  unsigned char * moveto;
+	/*bp-0x18*/  unsigned char * movefrom;
 	__asm        mov    xcount, 0;
 	__asm        jmp    _T9a;
 _T96:
@@ -1409,7 +1409,7 @@ _T9a:
 	__asm        jle    _T15c;
 // LINE 398:
 // Block start:
-	short ycount;
+	/*bp-0x1c*/  short ycount;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x10];
 	__asm        dec    eax;
@@ -1485,10 +1485,10 @@ _T15c:
 
 // FUNCTION: COPTER_D 0x00568294
 short _cArray::DeleteRow(short which) {
-	unsigned char * movefrom;
-	unsigned char * moveto;
-	long oldxsize;
-	long oldysize;
+	/*bp-0x4*/   long oldysize;
+	/*bp-0x8*/   long oldxsize;
+	/*bp-0xc*/   unsigned char * moveto;
+	/*bp-0x10*/  unsigned char * movefrom;
 
 // LINE 413:
 	oldxsize = this->fxSize;
@@ -1528,7 +1528,7 @@ _T7c:
 	__asm        je     _Tfb;
 // LINE 419:
 // Block start:
-	short count;
+	/*bp-0x14*/  short count;
 	__asm        mov    ax, which;
 	__asm        mov    count, ax;
 	__asm        jmp    _T9a;
@@ -1631,11 +1631,11 @@ _T192:
 
 // FUNCTION: COPTER_D 0x00568439
 short _cArray::DeleteColumn(short which) {
-	unsigned char * thisone;
-	long oldxsize;
-	short xcount;
-	unsigned char * nextone;
-	long oldysize;
+	/*bp-0x4*/   long oldysize;
+	/*bp-0x8*/   unsigned char * nextone;
+	/*bp-0xc*/   short xcount;
+	/*bp-0x10*/  long oldxsize;
+	/*bp-0x14*/  unsigned char * thisone;
 
 // LINE 436:
 	oldysize = this->fySize;
@@ -1681,7 +1681,7 @@ _T8b:
 	__asm        jle    _T1cc;
 // LINE 442:
 // Block start:
-	short ycount;
+	/*bp-0x18*/  short ycount;
 	__asm        mov    ax, which;
 	__asm        mov    ycount, ax;
 	__asm        jmp    _Tac;
@@ -1746,8 +1746,8 @@ _T12e:
 	__asm        jle    _T1c7;
 // LINE 451:
 // Block start:
-	unsigned char * lastPart;
-	unsigned char * nextToLast;
+	/*bp-0x1c*/  unsigned char * nextToLast;
+	/*bp-0x20*/  unsigned char * lastPart;
 	__asm        jmp    near ptr 0x0056857F;
 
 	__asm        mov    eax, this;
@@ -1857,11 +1857,11 @@ _T263:
 
 // FUNCTION: COPTER_D 0x005686af
 unsigned short _cArray::Resize(long newxSize, long newySize, char zeropad) {
-	unsigned char * src;
-	long ycnt;
-	/*unpacked*/ class _cArray temp;
-	long xcnt;
-	unsigned char * dest;
+	/*bp-0x10*/  unsigned char * dest;
+	/*bp-0x14*/  long xcnt;
+	/*bp-0x64*/  /*unpacked*/ class _cArray temp; // 0x50 bytes
+	/*bp-0x68*/  long ycnt;
+	/*bp-0x6c*/  unsigned char * src;
 
 	// Function registers exception cleanup function at 0x0056885e
 
@@ -2134,7 +2134,7 @@ _T14c:
 
 // FUNCTION: COPTER_D 0x005689cc
 void _cArray::SetXPointers() {
-	short count;
+	/*bp-0x4*/   short count;
 
 // LINE 517:
 	__asm        mov    eax, this;
@@ -2206,7 +2206,7 @@ void _cArray::CopyFrom(unsigned char * fromName) {
 
 // FUNCTION: COPTER_D 0x00568a95
 void _cArray::CopyFrom(unsigned long oldname) {
-	/*unpacked*/ class _cArray *src;
+	/*bp-0x4*/   /*unpacked*/ class _cArray *src;
 
 // LINE 543:
 	__asm        push   0xFFFFFFFF;
@@ -2226,7 +2226,7 @@ void _cArray::CopyFrom(unsigned long oldname) {
 
 // FUNCTION: COPTER_D 0x00568aca
 void _cArray::CopyFrom(/*unpacked*/ class _cArray *src) {
-	long howmuch;
+	/*bp-0x4*/   long howmuch;
 
 // LINE 549:
 	__asm        cmp    src, 0;
@@ -2318,7 +2318,7 @@ _T112:
 
 // FUNCTION: COPTER_D 0x00568be8
 void _cArray::CopyTo(/*unpacked*/ class _cArray *dest) {
-	long howmuch;
+	/*bp-0x4*/   long howmuch;
 
 // LINE 569:
 	__asm        cmp    dest, 0;
@@ -2410,7 +2410,7 @@ _T112:
 
 // FUNCTION: COPTER_D 0x00568d06
 void _cArray::CopyTo(unsigned long oldname) {
-	/*unpacked*/ class _cArray *dest;
+	/*bp-0x4*/   /*unpacked*/ class _cArray *dest;
 
 // LINE 581:
 	__asm        push   0xFFFFFFFF;
@@ -2468,7 +2468,7 @@ unsigned long _cArray::GetName() {
 
 // FUNCTION: COPTER_D 0x00568db1
 /*unpacked*/ class _cArray* _cArray::GetArray(unsigned long tinyname, short numChars) {
-	short cnt;
+	/*bp-0x4*/   short cnt;
 
 // LINE 612:
 	__asm        call   _cArray::MakeTable;
@@ -2534,7 +2534,7 @@ _Tc4:
 	__asm        je     _T163;
 // LINE 619:
 // Block start:
-	short shiftnum;
+	/*bp-0x8*/   short shiftnum;
 	__asm        mov    eax, 4;
 	__asm        movsx  ecx, numChars;
 	__asm        sub    eax, ecx;
@@ -2587,9 +2587,9 @@ _T16f:
 
 // FUNCTION: COPTER_D 0x00568f25
 /*unpacked*/ class _cArray* _cArray::GetArrayByType(unsigned long rType, short which) {
-	short found;
-	short count;
-	/*unpacked*/ class _cArray *arr;
+	/*bp-0x4*/   /*unpacked*/ class _cArray *arr;
+	/*bp-0x8*/   short count;
+	/*bp-0xc*/   short found;
 
 // LINE 630:
 	__asm        call   _cArray::MakeTable;
@@ -2640,8 +2640,8 @@ _T7e:
 
 // FUNCTION: COPTER_D 0x00568fa8
 short _cArray::GetNumArraysByType(unsigned long rType) {
-	short cnt;
-	short numByType;
+	/*bp-0x4*/   short numByType;
+	/*bp-0x8*/   short cnt;
 
 // LINE 647:
 	__asm        call   _cArray::MakeTable;
@@ -2658,7 +2658,7 @@ _T23:
 	__asm        jge    _T5a;
 // LINE 650:
 // Block start:
-	/*unpacked*/ class _cArray *tmp;
+	/*bp-0xc*/   /*unpacked*/ class _cArray *tmp;
 	__asm        movsx  eax, cnt;
 	__asm        mov    ecx, _cArray::sArrayTable;
 	__asm        mov    eax, [ecx+eax*4];
@@ -2683,9 +2683,9 @@ _T5a:
 
 // FUNCTION: COPTER_D 0x00569010
 short _cArray::GetArrayIndexInType(/*unpacked*/ class _cArray *findarr) {
-	short found;
-	short count;
-	/*unpacked*/ class _cArray *arr;
+	/*bp-0x4*/   /*unpacked*/ class _cArray *arr;
+	/*bp-0x8*/   short count;
+	/*bp-0xc*/   short found;
 
 // LINE 659:
 	__asm        call   _cArray::MakeTable;
@@ -2736,13 +2736,13 @@ _T80:
 
 // FUNCTION: COPTER_D 0x00569095
 void _cArray::LoadAllArrays(/*unpacked*/ class ResFile *pFile, unsigned long rType, short entrySize, void (*Swizzler)(void * __ptr32, long)) {
-	short numArrays;
-	short diskEntrySize;
-	short foundcount;
-	unsigned short fileOpened;
-	short count;
-	/*unpacked*/ struct _cArray::FileAndType ft;
-	/*unpacked*/ struct _cArray::Header *header;
+	/*bp-0x10*/  /*unpacked*/ struct _cArray::Header *header;
+	/*bp-0x18*/  /*unpacked*/ struct _cArray::FileAndType ft; // 0x8 bytes
+	/*bp-0x1c*/  short count;
+	/*bp-0x20*/  unsigned short fileOpened;
+	/*bp-0x24*/  short foundcount;
+	/*bp-0x28*/  short diskEntrySize;
+	/*bp-0x2c*/  short numArrays;
 
 	// Function registers exception cleanup function at 0x00569305
 // LINE 706:
@@ -2810,9 +2810,9 @@ _Tce:
 	__asm        jl     _T246;
 // LINE 724:
 // Block start:
-	unsigned char * dataPtr;
-	void * __ptr32 hArray;
-	/*unpacked*/ class _cArray *tmp;
+	/*bp-0x30*/  /*unpacked*/ class _cArray *tmp;
+	/*bp-0x34*/  void * __ptr32 hArray;
+	/*bp-0x38*/  unsigned char * dataPtr;
 	__asm        push   0;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(count);
 	__asm        push   eax;
@@ -2957,9 +2957,9 @@ _T27a:
 
 // FUNCTION: COPTER_D 0x0056931d
 short _cArray::GetLoadedIndex(/*unpacked*/ class ResFile *pFile, unsigned long rType) {
-	short foundcount;
-	short cnt;
-	/*unpacked*/ struct _cArray::FileAndType ft;
+	/*bp-0x8*/   /*unpacked*/ struct _cArray::FileAndType ft; // 0x8 bytes
+	/*bp-0xc*/   short cnt;
+	/*bp-0x10*/  short foundcount;
 
 // LINE 779:
 	foundcount = 0xffff;

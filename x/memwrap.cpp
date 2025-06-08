@@ -132,8 +132,8 @@ void * __ptr32 Memory::AdoptPlatformHandle(void * __ptr32 mem) {
 
 // FUNCTION: COPTER_D 0x00554759
 void * __ptr32 Memory::HAlloc(long size, long state) {
-	void * __ptr32 mem;
-	unsigned long wstate;
+	/*bp-0x4*/   unsigned long wstate;
+	/*bp-0x8*/   void * __ptr32 mem;
 
 // LINE 151:
 	__asm        push   0;
@@ -181,7 +181,7 @@ _T80:
 	__asm        je     _Te2;
 // LINE 172:
 // Block start:
-	unsigned char * p;
+	/*bp-0xc*/   unsigned char * p;
 	__asm        mov    eax, mem;
 	__asm        push   eax;
 	__asm        call   Memory::HLock;
@@ -239,7 +239,7 @@ void Memory::HUnpurge(void * __ptr32 purged, long oldSize) {
 
 // FUNCTION: COPTER_D 0x00554870
 unsigned char * Memory::PAlloc(long * pool, long size) {
-	void * __ptr32 mem;
+	/*bp-0x4*/   void * __ptr32 mem;
 
 // LINE 203:
 	__asm        push   0;
@@ -269,7 +269,7 @@ _T46:
 
 // FUNCTION: COPTER_D 0x005548c3
 void Memory::HFree(void * __ptr32 mem) {
-	unsigned char * p;
+	/*bp-0x4*/   unsigned char * p;
 
 // LINE 220:
 	__asm        push   0;
@@ -368,8 +368,8 @@ _T60:
 
 // FUNCTION: COPTER_D 0x005549e0
 unsigned char * Memory::HLock(void * __ptr32 mem) {
-	short err;
-	unsigned char * p;
+	/*bp-0x4*/   unsigned char * p;
+	/*bp-0x8*/   short err;
 
 // LINE 266:
 	__asm        push   0;
@@ -403,7 +403,7 @@ _T50:
 
 // FUNCTION: COPTER_D 0x00554a3d
 void Memory::HUnlock(void * __ptr32 mem) {
-	short err;
+	/*bp-0x4*/   short err;
 
 // LINE 296:
 	__asm        push   0;
@@ -468,7 +468,7 @@ void Memory::HNoPurge(void * __ptr32 h) {
 
 // FUNCTION: COPTER_D 0x00554b04
 unsigned char * Memory::Stash(void * __ptr32 h) {
-	unsigned long flags;
+	/*bp-0x4*/   unsigned long flags;
 
 // LINE 351:
 	__asm        push   0;
@@ -562,7 +562,7 @@ _T2f:
 
 // FUNCTION: COPTER_D 0x00554c10
 void Memory::BlockFill(void * __ptr32 mem, unsigned char byteVal, unsigned long size) {
-	short err;
+	/*bp-0x4*/   short err;
 
 // LINE 393:
 	__asm        push   0;
@@ -649,7 +649,7 @@ void Memory::PoolFree(long * pool) {
 
 // FUNCTION: COPTER_D 0x00554d05
 unsigned long Memory::HGetSize(void * __ptr32 mem) {
-	unsigned long size;
+	/*bp-0x4*/   unsigned long size;
 
 // LINE 424:
 	__asm        push   0;
@@ -679,7 +679,7 @@ _T48:
 
 // FUNCTION: COPTER_D 0x00554d5a
 unsigned long Memory::PGetSize(unsigned char * mem) {
-	unsigned long size;
+	/*bp-0x4*/   unsigned long size;
 
 // LINE 439:
 	__asm        push   0;
@@ -709,7 +709,7 @@ _T48:
 
 // FUNCTION: COPTER_D 0x00554daf
 unsigned short Memory::HIsLocked(void * __ptr32 h) {
-	long state;
+	/*bp-0x4*/   long state;
 
 // LINE 455:
 	__asm        mov    eax, h;
@@ -732,8 +732,8 @@ _T2e:
 
 // FUNCTION: COPTER_D 0x00554de7
 long Memory::HGetState(void * __ptr32 h) {
-	long state;
-	unsigned long wstate;
+	/*bp-0x4*/   unsigned long wstate;
+	/*bp-0x8*/   long state;
 
 // LINE 463:
 	__asm        push   0;
@@ -799,7 +799,7 @@ _T2d:
 
 // FUNCTION: COPTER_D 0x00554e99
 long Memory::HSetSize(void * __ptr32 mem, unsigned long newSize) {
-	long err;
+	/*bp-0x4*/   long err;
 
 // LINE 495:
 	__asm        push   0;
@@ -839,7 +839,7 @@ _T44:
 
 // FUNCTION: COPTER_D 0x00554f06
 long Memory::Error() {
-	long err;
+	/*bp-0x4*/   long err;
 
 // LINE 541:
 	__asm        call   dword ptr ds:[0x6C3718];

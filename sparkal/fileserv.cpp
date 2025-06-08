@@ -952,11 +952,11 @@ int32_t GetPathForFile(int32_t nType, int32_t nLanguage, char * szFile, char * s
 
 // FUNCTION: COPTER_D 0x00491755
 int32_t FileServices::Initialize() {
-	int32_t nMessageBoxReturnValue;
-	/*packed*/ class basic_string<char> sErrorText;
-	/*packed*/ class basic_string<char> sErrorTitle;
-	int32_t bRemotePathFound;
-	int32_t nFullStringID;
+	/*bp-0x4*/   int32_t nFullStringID;
+	/*bp-0x8*/   int32_t bRemotePathFound;
+	/*bp-0x10*/  /*packed*/ class basic_string<char> sErrorTitle; // 0x8 bytes
+	/*bp-0x18*/  /*packed*/ class basic_string<char> sErrorText; // 0x8 bytes
+	/*bp-0x1c*/  int32_t nMessageBoxReturnValue;
 
 // LINE 42:
 	__asm        push   0x10;
@@ -1407,12 +1407,12 @@ _T5c2:
 
 // FUNCTION: COPTER_D 0x00491d1c
 int32_t FileServices::FindRemotePath() {
-	long lDriveStringLength;
-	uint32_t uiDriveType;
-	char * szDriveStrings;
-	int32_t nReturnValue;
-	int32_t i;
-	int32_t iEnd;
+	/*bp-0x4*/   int32_t iEnd;
+	/*bp-0x8*/   int32_t i;
+	/*bp-0xc*/   int32_t nReturnValue;
+	/*bp-0x10*/  char * szDriveStrings;
+	/*bp-0x14*/  uint32_t uiDriveType;
+	/*bp-0x18*/  long lDriveStringLength;
 
 // LINE 91:
 	szDriveStrings = 0x0;
@@ -1957,8 +1957,8 @@ _T696:
 
 // FUNCTION: COPTER_D 0x004923c6
 int32_t FileServices::ValidateRemotePath() {
-	/*packed*/ class PFile tempPFile;
-	/*packed*/ class basic_string<char> sTempValidationFilePath;
+	/*bp-0x8*/   /*packed*/ class basic_string<char> sTempValidationFilePath; // 0x8 bytes
+	/*bp-0x118*/ /*packed*/ class PFile tempPFile; // 0x110 bytes
 
 // LINE 139:
 	__asm        jmp    near ptr 0x004923DD;
@@ -2372,11 +2372,11 @@ _T5cf:
 
 // FUNCTION: COPTER_D 0x0049299a
 void FileServices::RefreshLocalPathCache(/*packed*/ class basic_string<char>& sDirectoryBase) {
-	/*unpacked*/ class Directory tempDirectory;
-	/*packed*/ class list<basic_string<char>> tempStringListDirectories;
-	/*packed*/ class basic_string<char> sTempDirectory;
-	/*packed*/ class list<basic_string<char>>::iterator tempStringListIterator;
-	/*packed*/ class list<basic_string<char>> tempStringListFiles;
+	/*bp-0x8*/   /*packed*/ class list<basic_string<char>> tempStringListFiles; // 0x8 bytes
+	/*bp-0xc*/   /*packed*/ class list<basic_string<char>>::iterator tempStringListIterator;
+	/*bp-0x14*/  /*packed*/ class basic_string<char> sTempDirectory; // 0x8 bytes
+	/*bp-0x1c*/  /*packed*/ class list<basic_string<char>> tempStringListDirectories; // 0x8 bytes
+	/*bp-0x3c*/  /*unpacked*/ class Directory tempDirectory;
 
 // LINE 165:
 	__asm        push   0;
@@ -2745,7 +2745,7 @@ int32_t FileServices::CopyFileFromRemoteToLocal(char * szPartialPath) {
 
 // FUNCTION: COPTER_D 0x00492e50
 int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * szFile, char * szPath) {
-	long lTotalStringLength;
+	/*bp-0x4*/   long lTotalStringLength;
 
 // LINE 218:
 	__asm        cmp    nLanguage, 0;
@@ -4693,7 +4693,7 @@ _T193e:
 	__asm        jne    _T1ff8;
 // LINE 360:
 // Block start:
-	/*packed*/ class basic_string<char> sTemp;
+	/*bp-0xc*/   /*packed*/ class basic_string<char> sTemp; // 0x8 bytes
 	__asm        jmp    near ptr 0x0049479D;
 
 	__asm        mov    eax, this;
@@ -5283,9 +5283,9 @@ _T212b:
 
 // FUNCTION: COPTER_D 0x00494f82
 int32_t FileServices::GetPathForFileString(int32_t nType, int32_t nLanguage, /*packed*/ class basic_string<char>& sFile, /*packed*/ class basic_string<char>& sPath) {
-	char * szFile;
-	int32_t nReturnValue;
-	char szPath[260];
+	/*bp-0x104*/ char szPath[260]; // 0x104 bytes
+	/*bp-0x108*/ int32_t nReturnValue;
+	/*bp-0x10c*/ char * szFile;
 
 // LINE 396:
 	__asm        mov    eax, sFile;

@@ -18,11 +18,11 @@ struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 // Contribution: 1:000d56c0-000d57db Module: 143, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004d66c0
 void VRFrustSetNormals() {
-	int32_t swide;
-	int32_t shigh;
-	int32_t disty;
-	int32_t distx;
-	/*packed*/ struct Point3d vect;
+	/*bp-0xc*/   /*packed*/ struct Point3d vect; // 0xc bytes
+	/*bp-0x10*/  int32_t distx;
+	/*bp-0x14*/  int32_t disty;
+	/*bp-0x18*/  int32_t shigh;
+	/*bp-0x1c*/  int32_t swide;
 
 // LINE 74:
 	__asm        mov    eax, HALF_WIDTH;

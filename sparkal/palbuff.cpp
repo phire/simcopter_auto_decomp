@@ -195,7 +195,7 @@ protected:
 // Contribution: 1:00046240-00046788 Module: 50, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00447240
 void PaletteBuffer::PaletteBuffer() {
-	char szTypeFaceName[64];
+	/*bp-0x40*/  char szTypeFaceName[64]; // 0x40 bytes
 
 
 	__asm        push   0;
@@ -280,7 +280,7 @@ _Tdf:
 
 // FUNCTION: COPTER_D 0x00447340
 void PaletteBuffer::PaletteBuffer(/*packed*/ struct SparkalColor *newSparkalColors) {
-	char szTypeFaceName[64];
+	/*bp-0x40*/  char szTypeFaceName[64]; // 0x40 bytes
 
 
 	__asm        push   0;
@@ -398,7 +398,7 @@ _T43:
 
 // FUNCTION: COPTER_D 0x004474ab
 int32_t PaletteBuffer::SetPalette(const /*packed*/ struct SparkalColor *pColors) {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 // LINE 81:
 	__asm        mov    i, 0;
@@ -421,9 +421,9 @@ _T45:
 
 // FUNCTION: COPTER_D 0x00447501
 int32_t PaletteBuffer::SetPalette() {
-	long hResult;
-	int32_t i;
-	/*packed*/ struct tagPALETTEENTRY *paletteEntries;
+	/*bp-0x4*/   /*packed*/ struct tagPALETTEENTRY *paletteEntries;
+	/*bp-0x8*/   int32_t i;
+	/*bp-0xc*/   long hResult;
 
 // LINE 100:
 	__asm        push   0x400;
@@ -484,9 +484,9 @@ _Tdc:
 
 // FUNCTION: COPTER_D 0x004475e2
 void PaletteBuffer::DrawPalette() {
-	char szDescriptionString[256];
-	int32_t i;
-	/*packed*/ struct SparkalRect rectFill;
+	/*bp-0x10*/  /*packed*/ struct SparkalRect rectFill; // 0x10 bytes
+	/*bp-0x14*/  int32_t i;
+	/*bp-0x114*/ char szDescriptionString[256]; // 0x100 bytes
 
 // LINE 127:
 	__asm        jmp    near ptr 0x004475F9;

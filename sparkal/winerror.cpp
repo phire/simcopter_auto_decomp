@@ -33,8 +33,8 @@ _T34:
 	__asm        je     _T106;
 // LINE 27:
 // Block start:
-	char ErrorTitle[255];
-	char ErrorText[255];
+	/*bp-0x100*/ char ErrorText[255]; // 0xff bytes
+	/*bp-0x200*/ char ErrorTitle[255]; // 0xff bytes
 	__asm        and    Error, 0x7FFFFFFF;
 // LINE 32:
 	__asm        push   0xFF;

@@ -78,15 +78,15 @@ struct _DYOBJ_INST{ // packed(0x64 bytes) TI: 0x1deb
 // Contribution: 1:00117f90-0011d769 Module: 168, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00518f90
 void S3ObjInit() {
-	char msg[80];
-	int32_t obj;
-	long j;
-	long i;
-	/*packed*/ struct VRFaceInfo finfo;
-	long objcount;
-	int32_t face;
-	/*packed*/ struct VRBmpHdr *bhdr;
-	/*packed*/ struct VRObjInfo oinfo;
+	/*bp-0x24*/  /*packed*/ struct VRObjInfo oinfo; // 0x24 bytes
+	/*bp-0x28*/  /*packed*/ struct VRBmpHdr *bhdr;
+	/*bp-0x2c*/  int32_t face;
+	/*bp-0x30*/  long objcount;
+	/*bp-0x50*/  /*packed*/ struct VRFaceInfo finfo; // 0x20 bytes
+	/*bp-0x54*/  long i;
+	/*bp-0x58*/  long j;
+	/*bp-0x5c*/  int32_t obj;
+	/*bp-0xac*/  char msg[80]; // 0x50 bytes
 
 // LINE 390:
 	__asm        push   0x33;
@@ -845,13 +845,13 @@ void S3ObjLinkLowRes() {
 
 // FUNCTION: COPTER_D 0x00519aa4
 void S3DrawBlinkingLight(/*packed*/ struct VRBlit *blit) {
-	long winheight;
-	int32_t ctr;
-	int32_t y;
-	int32_t x;
-	long bufwidth;
-	long winwidth;
-	char * ptr;
+	/*bp-0x4*/   char * ptr;
+	/*bp-0x8*/   long winwidth;
+	/*bp-0xc*/   long bufwidth;
+	/*bp-0x10*/  int32_t x;
+	/*bp-0x14*/  int32_t y;
+	/*bp-0x18*/  int32_t ctr;
+	/*bp-0x1c*/  long winheight;
 
 // LINE 853:
 	bufwidth = 0x140;
@@ -1034,28 +1034,28 @@ _T1dd:
 
 // FUNCTION: COPTER_D 0x00519c86
 void S3DrawWaterPoint(/*packed*/ struct VRBlit *blit) {
-	long winheight;
-	long num;
-	int32_t z;
-	char * tablerow;
-	int32_t tablerows;
-	long i;
-	int32_t y;
-	long num3;
-	int32_t x;
-	int32_t dim;
-	long num2;
-	int32_t minval;
-	int32_t maxval;
-	char * table;
-	long ploty;
-	char color;
-	long bufwidth;
-	long winwidth;
-	int32_t numvals;
-	long plotx;
-	char * ptr;
-	int32_t scale;
+	/*bp-0x4*/   int32_t scale;
+	/*bp-0x8*/   char * ptr;
+	/*bp-0xc*/   long plotx;
+	/*bp-0x10*/  int32_t numvals;
+	/*bp-0x14*/  long winwidth;
+	/*bp-0x18*/  long bufwidth;
+	/*bp-0x1c*/  char color;
+	/*bp-0x20*/  long ploty;
+	/*bp-0x24*/  char * table;
+	/*bp-0x28*/  int32_t maxval;
+	/*bp-0x2c*/  int32_t minval;
+	/*bp-0x30*/  long num2;
+	/*bp-0x34*/  int32_t dim;
+	/*bp-0x38*/  int32_t x;
+	/*bp-0x3c*/  long num3;
+	/*bp-0x40*/  int32_t y;
+	/*bp-0x44*/  long i;
+	/*bp-0x48*/  int32_t tablerows;
+	/*bp-0x4c*/  char * tablerow;
+	/*bp-0x50*/  int32_t z;
+	/*bp-0x54*/  long num;
+	/*bp-0x58*/  long winheight;
 
 // LINE 955:
 	bufwidth = 0x140;
@@ -8161,7 +8161,7 @@ _T36:
 
 // FUNCTION: COPTER_D 0x0051da96
 void S3ObjHitDispatch(long hitter_type, /*packed*/ struct _DYOBJ_INST *dyhitter, /*packed*/ struct _DYOBJ_INST *dyhittee, long mission_id, long xtra_msg) {
-	long hittee_type;
+	/*bp-0x4*/   long hittee_type;
 
 // LINE 3707:
 	__asm        mov    eax, dyhittee;
@@ -9090,9 +9090,9 @@ _Tbff:
 
 // FUNCTION: COPTER_D 0x0051e69a
 void S3ObjSetFlatShading() {
-	int32_t obj;
-	long i;
-	long objcount;
+	/*bp-0x4*/   long objcount;
+	/*bp-0x8*/   long i;
+	/*bp-0xc*/   int32_t obj;
 
 // LINE 4150:
 	__asm        cmp    G_daynight, 0;

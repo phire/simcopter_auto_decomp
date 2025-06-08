@@ -717,17 +717,17 @@ void SoundCompletionUnloadFunction(long lSoundPointer) {
 
 // FUNCTION: COPTER_D 0x0043e2a5
 void  CGameApp::ShowVersion() {
-	long lCPUVersion;
-	long lPhysicalMemory;
-	long lCPUSpeed;
-	char * szVersionInformation;
-	char szUnformattedVersionInformation[64];
-	char szFormattedVersionInformation[512];
-	/*packed*/ class Version tempVersion;
-	long lSystemType;
-	int32_t nFullStringID;
-	/*packed*/ struct _MEMORYSTATUS tempMemoryStatus;
-	/*packed*/ class basic_string<char> sMessage;
+	/*bp-0x8*/   /*packed*/ class basic_string<char> sMessage; // 0x8 bytes
+	/*bp-0x28*/  /*packed*/ struct _MEMORYSTATUS tempMemoryStatus; // 0x20 bytes
+	/*bp-0x2c*/  int32_t nFullStringID;
+	/*bp-0x30*/  long lSystemType;
+	/*bp-0x3c*/  /*packed*/ class Version tempVersion; // 0xc bytes
+	/*bp-0x23c*/ char szFormattedVersionInformation[512]; // 0x200 bytes
+	/*bp-0x27c*/ char szUnformattedVersionInformation[64]; // 0x40 bytes
+	/*bp-0x280*/ char * szVersionInformation;
+	/*bp-0x284*/ long lCPUSpeed;
+	/*bp-0x288*/ long lPhysicalMemory;
+	/*bp-0x28c*/ long lCPUVersion;
 
 // LINE 106:
 	__asm        lea    ecx, tempVersion<vftable>;
@@ -1564,13 +1564,13 @@ _Taea:
 
 // FUNCTION: COPTER_D 0x0043eda6
 int  CGameApp::CreateMessageBox(long lID, /*packed*/ class basic_string<char>& sMessage, long lType) {
-	char * szImageFileNameToUse;
-	/*packed*/ struct SparkalColor colorButtonFont;
-	char * szButtonImageFileNameToUse;
-	/*packed*/ struct SparkalColor colorButtonFontHighlighted;
-	char * szAnimationFileNameToUse;
-	/*packed*/ struct SparkalColor colorMessageFont;
-	/*packed*/ class MessageBoxWindow *tempMessageBoxWindow;
+	/*bp-0x4*/   /*packed*/ class MessageBoxWindow *tempMessageBoxWindow;
+	/*bp-0x8*/   /*packed*/ struct SparkalColor colorMessageFont;
+	/*bp-0xc*/   char * szAnimationFileNameToUse;
+	/*bp-0x10*/  /*packed*/ struct SparkalColor colorButtonFontHighlighted;
+	/*bp-0x14*/  char * szButtonImageFileNameToUse;
+	/*bp-0x18*/  /*packed*/ struct SparkalColor colorButtonFont;
+	/*bp-0x1c*/  char * szImageFileNameToUse;
 
 // LINE 190:
 	__asm        jmp    near ptr 0x0043EDBD;
@@ -1950,8 +1950,8 @@ _T504:
 
 // FUNCTION: COPTER_D 0x0043f2b9
 int  CGameApp::CreateMessageBox(long lID, int32_t nStringID, long lType) {
-	int32_t nFullStringID;
-	/*packed*/ class basic_string<char> sMessage;
+	/*bp-0x8*/   /*packed*/ class basic_string<char> sMessage; // 0x8 bytes
+	/*bp-0xc*/   int32_t nFullStringID;
 
 // LINE 282:
 	__asm        push   0x10;
@@ -2414,10 +2414,10 @@ _T32:
 
 // FUNCTION: COPTER_D 0x0043f908
 int  CGameApp::CreateCheatCodeEntryMessageBox() {
-	/*packed*/ struct SparkalColor colorButtonFont;
-	/*packed*/ class MessageBoxWindowEdit *tempMessageBoxWindowEdit;
-	/*packed*/ struct SparkalColor colorButtonFontHighlighted;
-	/*packed*/ struct SparkalColor colorMessageFont;
+	/*bp-0x4*/   /*packed*/ struct SparkalColor colorMessageFont;
+	/*bp-0x8*/   /*packed*/ struct SparkalColor colorButtonFontHighlighted;
+	/*bp-0xc*/   /*packed*/ class MessageBoxWindowEdit *tempMessageBoxWindowEdit;
+	/*bp-0x10*/  /*packed*/ struct SparkalColor colorButtonFont;
 
 
 	None = 0x0;
@@ -2654,11 +2654,11 @@ void  CGameApp::DestroyCheatCodeEntryMessageBox() {
 
 // FUNCTION: COPTER_D 0x0043fbcd
 int  CGameApp::DoCheatCode(/*packed*/ class basic_string<char>& sCheatCodeString) {
-	int32_t nReturnValue;
-	char * szCheatOn;
-	char * szCheatSoundFileName;
-	char * szCheatOff;
-	uint32_t nTextPosition;
+	/*bp-0x4*/   uint32_t nTextPosition;
+	/*bp-0x8*/   char * szCheatOff;
+	/*bp-0xc*/   char * szCheatSoundFileName;
+	/*bp-0x10*/  char * szCheatOn;
+	/*bp-0x14*/  int32_t nReturnValue;
 
 
 	None = 0x0;
@@ -2851,7 +2851,7 @@ _T246:
 	__asm        jne    _T2b7;
 // LINE 398:
 // Block start:
-	/*packed*/ struct Point2d *position2d;
+	/*bp-0x18*/  /*packed*/ struct Point2d *position2d;
 	__asm        call   S3HeliGetFreePad;
 	__asm        mov    position2d, eax;
 // LINE 399:
@@ -3284,9 +3284,9 @@ _T8cc:
 	__asm        je     _T9cf;
 // LINE 431:
 // Block start:
-	char szCareerLevel[3];
-	int32_t nCharsToCopy;
-	int32_t nNewCareerLevel;
+	/*bp-0x1c*/  int32_t nNewCareerLevel;
+	/*bp-0x20*/  int32_t nCharsToCopy;
+	/*bp-0x24*/  char szCareerLevel[3];
 	__asm        cmp    gCurrentCityType, 2;
 	__asm        jne    _T9cf;
 // LINE 432:
@@ -3484,10 +3484,10 @@ _Tb7c:
 	__asm        je     _Tc80;
 // LINE 453:
 // Block start:
-	int32_t nNewBucks;
-	int32_t nCharsToCopy;
-	const long lMaxBucks;
-	char szBucks[3];
+	/*bp-0x28*/  char szBucks[3];
+	/*bp-0x2c*/  const long lMaxBucks;
+	/*bp-0x30*/  int32_t nCharsToCopy;
+	/*bp-0x34*/  int32_t nNewBucks;
 	lMaxBucks = 0xc350;
 // LINE 455:
 	__asm        push   0x598950;
@@ -3576,8 +3576,8 @@ _Tc80:
 	__asm        je     _Tf4f;
 // LINE 484:
 // Block start:
-	/*packed*/ class DigitalSound *tempCheatCodeSound;
-	char szFullPath[260];
+	/*bp-0x138*/ char szFullPath[260]; // 0x104 bytes
+	/*bp-0x13c*/ /*packed*/ class DigitalSound *tempCheatCodeSound;
 	__asm        lea    eax, szFullPath[0];
 	__asm        push   eax;
 	__asm        mov    eax, szCheatSoundFileName;
@@ -3773,8 +3773,8 @@ _Tf4f:
 
 // FUNCTION: COPTER_D 0x00440b3f
 int  CGameApp::CheckCommandLineForCheatCodes() {
-	int32_t i;
-	char szCommandValue[128];
+	/*bp-0x80*/  char szCommandValue[128]; // 0x80 bytes
+	/*bp-0x84*/  int32_t i;
 
 // LINE 508:
 	__asm        lea    eax, szCommandValue[0];
@@ -3945,8 +3945,8 @@ _T28b:
 
 // FUNCTION: COPTER_D 0x00440dcf
 void  CGameApp::CreateDebugBuffer() {
-	/*packed*/ struct SparkalColor colorDebugText;
-	char szTypeFaceName[64];
+	/*bp-0x40*/  char szTypeFaceName[64]; // 0x40 bytes
+	/*bp-0x44*/  /*packed*/ struct SparkalColor colorDebugText;
 
 // LINE 525:
 	__asm        jmp    near ptr 0x00440DE0;
@@ -4156,8 +4156,8 @@ _T6b:
 
 // FUNCTION: COPTER_D 0x0044106f
 void  CGameApp::CreatePlayMenu() {
-	/*packed*/ struct UserMenuWindowDescription tempUMWD;
-	/*packed*/ class UserMenuWindow *myUserMenuWindow;
+	/*bp-0x4*/   /*packed*/ class UserMenuWindow *myUserMenuWindow;
+	/*bp-0x58*/  /*packed*/ struct UserMenuWindowDescription tempUMWD; // 0x54 bytes
 
 // LINE 602:
 	__asm        push   0x10;
@@ -4406,8 +4406,8 @@ _T367:
 
 // FUNCTION: COPTER_D 0x004413e5
 void  CGameApp::CreateUserInputWindow() {
-	/*packed*/ class UserInputWindow *myUserInputWindow;
-	int32_t nCurrentGameMode;
+	/*bp-0x4*/   int32_t nCurrentGameMode;
+	/*bp-0x8*/   /*packed*/ class UserInputWindow *myUserInputWindow;
 
 // LINE 634:
 	__asm        mov    eax, this;
@@ -4507,7 +4507,7 @@ _Te8:
 
 // FUNCTION: COPTER_D 0x0044150b
 void  CGameApp::DestroyUserInputWindow(/*packed*/ class UserInputWindow *windowToDestroy, int32_t bUseData) {
-	int32_t nCurrentGameMode;
+	/*bp-0x4*/   int32_t nCurrentGameMode;
 
 // LINE 650:
 	__asm        mov    eax, this;
@@ -4572,8 +4572,8 @@ _Ta5:
 
 // FUNCTION: COPTER_D 0x004415c7
 void  CGameApp::CreateRenderSettingsWindow() {
-	/*packed*/ class RenderSettingsWindow *myRenderSettingsWindow;
-	int32_t nCurrentGameMode;
+	/*bp-0x4*/   int32_t nCurrentGameMode;
+	/*bp-0x8*/   /*packed*/ class RenderSettingsWindow *myRenderSettingsWindow;
 
 // LINE 670:
 	__asm        mov    eax, this;
@@ -4685,12 +4685,12 @@ _Te8:
 
 // FUNCTION: COPTER_D 0x00441715
 void  CGameApp::DestroyRenderSettingsWindow(/*packed*/ class RenderSettingsWindow *windowToDestroy, int32_t bUseData) {
-	long lQuadPixelType;
-	int32_t nCurrentGameMode;
-	long bShowGroundTextures;
-	long bShowSkyAndClouds;
-	long bShowBuildingTextures;
-	long lFogCloseness;
+	/*bp-0x4*/   long lFogCloseness;
+	/*bp-0x8*/   long bShowBuildingTextures;
+	/*bp-0xc*/   long bShowSkyAndClouds;
+	/*bp-0x10*/  long bShowGroundTextures;
+	/*bp-0x14*/  int32_t nCurrentGameMode;
+	/*bp-0x18*/  long lQuadPixelType;
 
 // LINE 691:
 	__asm        mov    eax, this;
@@ -4770,11 +4770,11 @@ _Td2:
 
 // FUNCTION: COPTER_D 0x004417fe
 void  CGameApp::CreateSoundSettingsWindow() {
-	/*packed*/ class SoundSettingsWindow *mySoundSettingsWindow;
-	/*packed*/ struct RadioPreferences tempRadioPreferences;
-	int32_t nCurrentGameMode;
-	char * chPrefData;
-	/*packed*/ struct SoundPreferences tempSoundPreferences;
+	/*bp-0x10*/  /*packed*/ struct SoundPreferences tempSoundPreferences; // 0x10 bytes
+	/*bp-0x14*/  char * chPrefData;
+	/*bp-0x18*/  int32_t nCurrentGameMode;
+	/*bp-0x34*/  /*packed*/ struct RadioPreferences tempRadioPreferences; // 0x1c bytes
+	/*bp-0x38*/  /*packed*/ class SoundSettingsWindow *mySoundSettingsWindow;
 
 // LINE 732:
 	__asm        mov    eax, this;
@@ -4925,9 +4925,9 @@ _T17f:
 
 // FUNCTION: COPTER_D 0x004419b8
 void  CGameApp::DestroySoundSettingsWindow(/*packed*/ class SoundSettingsWindow *windowToDestroy, int32_t bUseData) {
-	/*packed*/ struct RadioPreferences tempRadioPreferences;
-	int32_t nCurrentGameMode;
-	/*packed*/ struct SoundPreferences tempSoundPreferences;
+	/*bp-0x10*/  /*packed*/ struct SoundPreferences tempSoundPreferences; // 0x10 bytes
+	/*bp-0x14*/  int32_t nCurrentGameMode;
+	/*bp-0x30*/  /*packed*/ struct RadioPreferences tempRadioPreferences; // 0x1c bytes
 
 // LINE 770:
 	__asm        mov    eax, this;
@@ -5007,7 +5007,7 @@ _Tba:
 
 // FUNCTION: COPTER_D 0x00441a89
 void  CGameApp::CreateCitySettingsWindow() {
-	/*packed*/ class CitySettingsWindow *myCitySettingsWindow;
+	/*bp-0x4*/   /*packed*/ class CitySettingsWindow *myCitySettingsWindow;
 
 // LINE 808:
 	__asm        mov    eax, this;
@@ -5110,7 +5110,7 @@ _T4a:
 
 // FUNCTION: COPTER_D 0x00441bc0
 void  CGameApp::CreateControlDisplayWindow() {
-	/*packed*/ class ControlDisplayWindow *tempControlDisplayWindow;
+	/*bp-0x4*/   /*packed*/ class ControlDisplayWindow *tempControlDisplayWindow;
 
 // LINE 838:
 	__asm        mov    eax, this;
@@ -5193,7 +5193,7 @@ void  CGameApp::DestroyControlDisplayWindow() {
 
 // FUNCTION: COPTER_D 0x00441cbe
 void  CGameApp::CreateCheckupWindow() {
-	/*packed*/ class CheckupWindow *tempCheckupWindow;
+	/*bp-0x4*/   /*packed*/ class CheckupWindow *tempCheckupWindow;
 
 // LINE 859:
 	__asm        mov    eax, this;
@@ -5259,7 +5259,7 @@ _Ta1:
 
 // FUNCTION: COPTER_D 0x00441d86
 void  CGameApp::DestroyCheckupWindow(/*packed*/ class CheckupWindow *windowToDestroy, int32_t bUseData) {
-	long lSettings[3];
+	/*bp-0xc*/   long lSettings[3]; // 0xc bytes
 
 // LINE 873:
 	__asm        mov    eax, this;

@@ -57,7 +57,7 @@ void InitResource() {
 
 // FUNCTION: COPTER_D 0x004d530f
 void VRResFreeBarrys(/*packed*/ struct VRResource *res) {
-	/*packed*/ struct GEOM_Resource *geo;
+	/*bp-0x4*/   /*packed*/ struct GEOM_Resource *geo;
 
 // LINE 113:
 	geo = res;
@@ -87,8 +87,8 @@ _T42:
 
 // FUNCTION: COPTER_D 0x004d5356
 /*packed*/ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 misc) {
-	int32_t i;
-	/*packed*/ struct VRResource *res;
+	/*bp-0x4*/   /*packed*/ struct VRResource *res;
+	/*bp-0x8*/   int32_t i;
 
 // LINE 142:
 	__asm        mov    eax, Flags;
@@ -511,7 +511,7 @@ _T4ca:
 
 // FUNCTION: COPTER_D 0x004d5825
 int32_t VRUnLoadAllResources() {
-	/*packed*/ struct VRResource *res;
+	/*bp-0x4*/   /*packed*/ struct VRResource *res;
 
 // LINE 278:
 _T09:
@@ -542,7 +542,7 @@ _T48:
 
 // FUNCTION: COPTER_D 0x004d5872
 int32_t VRUnLoadResource(/*packed*/ struct VRResource *res) {
-	/*packed*/ struct GEOM_Resource *geo;
+	/*bp-0x4*/   /*packed*/ struct GEOM_Resource *geo;
 
 // LINE 305:
 	__asm        mov    eax, res;
@@ -615,8 +615,8 @@ _Taf:
 
 // FUNCTION: COPTER_D 0x004d5926
 int32_t GetDir_GEOM(char * name) {
-	/*packed*/ struct Chunk chunk;
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
+	/*bp-0xc*/   /*packed*/ struct Chunk chunk; // 0x8 bytes
 
 // LINE 364:
 	__asm        mov    eax, name;
@@ -829,8 +829,8 @@ _T284:
 
 // FUNCTION: COPTER_D 0x004d5baf
 int32_t GetDir_CMAP(char * name) {
-	/*packed*/ struct Chunk chunk;
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
+	/*bp-0xc*/   /*packed*/ struct Chunk chunk; // 0x8 bytes
 
 // LINE 640:
 	__asm        mov    eax, name;
@@ -970,7 +970,7 @@ _T194:
 
 // FUNCTION: COPTER_D 0x004d5d48
 int32_t GetResourceDir(char * name) {
-	/*packed*/ struct Chunk chunk;
+	/*bp-0x8*/   /*packed*/ struct Chunk chunk; // 0x8 bytes
 
 // LINE 758:
 	__asm        mov    eax, name;
@@ -1208,8 +1208,8 @@ _T4f:
 
 // FUNCTION: COPTER_D 0x004d5ffd
 void UnRegisterResource(/*packed*/ struct VRResource *res) {
-	int32_t i;
-	/*packed*/ struct VRResource *r;
+	/*bp-0x4*/   /*packed*/ struct VRResource *r;
+	/*bp-0x8*/   int32_t i;
 
 // LINE 1146:
 	i = res->entry;

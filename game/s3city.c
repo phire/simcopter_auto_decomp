@@ -111,9 +111,9 @@ struct _DYOBJ_INST{ // packed(0x64 bytes) TI: 0x1deb
 // Contribution: 1:00109000-00112d42 Module: 170, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0050a000
 short S3CityInit() {
-	/*packed*/ struct tagLogCityEnterExit tempLogCityEnterExit;
-	int32_t i;
-	char szFilePath[260];
+	/*bp-0x104*/ char szFilePath[260]; // 0x104 bytes
+	/*bp-0x108*/ int32_t i;
+	/*bp-0x138*/ /*packed*/ struct tagLogCityEnterExit tempLogCityEnterExit; // 0x30 bytes
 
 // LINE 211:
 	__asm        cmp    S_S2CityAlloc_Count, 0;
@@ -400,7 +400,7 @@ _T401:
 
 // FUNCTION: COPTER_D 0x0050a406
 void S3CityDeInit() {
-	/*packed*/ struct tagLogCityEnterExit tempLogCityEnterExit;
+	/*bp-0x30*/  /*packed*/ struct tagLogCityEnterExit tempLogCityEnterExit; // 0x30 bytes
 
 // LINE 338:
 	tempLogCityEnterExit.nType = 0x2;
@@ -442,9 +442,9 @@ _T6d:
 
 // FUNCTION: COPTER_D 0x0050a478
 void VRSetBackPlane(int32_t farZ) {
-	int32_t fogpct;
-	long i;
-	/*packed*/ struct VRBmpHdr *bhdr;
+	/*bp-0x4*/   /*packed*/ struct VRBmpHdr *bhdr;
+	/*bp-0x8*/   long i;
+	/*bp-0xc*/   int32_t fogpct;
 
 // LINE 369:
 	__asm        push   1;
@@ -562,22 +562,22 @@ _T162:
 
 // FUNCTION: COPTER_D 0x0050a5df
 short S3CityInitOmap() {
-	long tile;
-	/*packed*/ struct _STOBJ_INST *sptr;
-	int32_t obj;
-	/*packed*/ struct _CELL_INFO *cptr;
-	short alt;
-	long k;
-	long j;
-	long y;
-	short i;
-	long x;
-	long obj2user;
-	long objcount;
-	int32_t obj2;
-	short size;
-	short flags;
-	long obj1user;
+	/*bp-0x4*/   long obj1user;
+	/*bp-0x8*/   short flags;
+	/*bp-0xc*/   short size;
+	/*bp-0x10*/  int32_t obj2;
+	/*bp-0x14*/  long objcount;
+	/*bp-0x18*/  long obj2user;
+	/*bp-0x1c*/  long x;
+	/*bp-0x20*/  short i;
+	/*bp-0x24*/  long y;
+	/*bp-0x28*/  long j;
+	/*bp-0x2c*/  long k;
+	/*bp-0x30*/  short alt;
+	/*bp-0x34*/  /*packed*/ struct _CELL_INFO *cptr;
+	/*bp-0x38*/  int32_t obj;
+	/*bp-0x3c*/  /*packed*/ struct _STOBJ_INST *sptr;
+	/*bp-0x40*/  long tile;
 
 // LINE 462:
 	__asm        mov    edi, 0x67ED30;
@@ -6614,11 +6614,11 @@ _T4962:
 
 // FUNCTION: COPTER_D 0x0050ef4e
 void S3CityGrid() {
-	int32_t view_changed;
-	short y_pos;
-	long spiral_dist;
-	short x_pos;
-	int32_t tmpfix;
+	/*bp-0x4*/   int32_t tmpfix;
+	/*bp-0x8*/   short x_pos;
+	/*bp-0xc*/   long spiral_dist;
+	/*bp-0x10*/  short y_pos;
+	/*bp-0x14*/  int32_t view_changed;
 
 // LINE 2447:
 	view_changed = 0x1;
@@ -7213,29 +7213,29 @@ _T72b:
 
 // FUNCTION: COPTER_D 0x0050f67e
 void S3CityGetCells(/*packed*/ struct Point3d *vec, /*packed*/ struct Point2d *cell_array, /*packed*/ struct Point2d **cell_last, /*packed*/ struct Point3d *spos, /*packed*/ struct Point2d *startcell) {
-	int32_t x_delta;
-	int32_t x_bound;
-	int32_t x_end;
-	double xdist;
-	int32_t y_pos;
-	long y_coord;
-	int32_t slope;
-	int32_t xstepi;
-	int32_t ystepi;
-	long x_coord;
-	int32_t y_delta;
-	/*packed*/ struct Point2d *curr_cell;
-	int32_t y_bound;
-	int32_t y_end;
-	int32_t yi;
-	unsigned short get_x_next;
-	double ydist;
-	int32_t islope;
-	int32_t x_pos;
-	long y_cell_adj;
-	long x_cell_adj;
-	unsigned short get_y_next;
-	int32_t xi;
+	/*bp-0x4*/   int32_t xi;
+	/*bp-0x8*/   unsigned short get_y_next;
+	/*bp-0xc*/   long x_cell_adj;
+	/*bp-0x10*/  long y_cell_adj;
+	/*bp-0x14*/  int32_t x_pos;
+	/*bp-0x18*/  int32_t islope;
+	/*bp-0x20*/  double ydist; // 0x8 bytes
+	/*bp-0x24*/  unsigned short get_x_next;
+	/*bp-0x28*/  int32_t yi;
+	/*bp-0x2c*/  int32_t y_end;
+	/*bp-0x30*/  int32_t y_bound;
+	/*bp-0x34*/  /*packed*/ struct Point2d *curr_cell;
+	/*bp-0x38*/  int32_t y_delta;
+	/*bp-0x3c*/  long x_coord;
+	/*bp-0x40*/  int32_t ystepi;
+	/*bp-0x44*/  int32_t xstepi;
+	/*bp-0x48*/  int32_t slope;
+	/*bp-0x4c*/  long y_coord;
+	/*bp-0x50*/  int32_t y_pos;
+	/*bp-0x58*/  double xdist; // 0x8 bytes
+	/*bp-0x5c*/  int32_t x_end;
+	/*bp-0x60*/  int32_t x_bound;
+	/*bp-0x64*/  int32_t x_delta;
 
 // LINE 2937:
 	y_pos = spos->z;
@@ -7896,19 +7896,19 @@ _T7af:
 
 // FUNCTION: COPTER_D 0x0050fe32
 void city_fovscan_horizedge() {
-	/*packed*/ struct Point2d *fovcell;
-	/*packed*/ struct Point2d *lend;
-	long y_dir;
-	/*packed*/ struct Point2d *lcell;
-	/*packed*/ struct Point2d *rend;
-	long x_last;
-	/*packed*/ struct _CELL_INFO *cptr;
-	long y_pos;
-	long y;
-	long x;
-	/*packed*/ struct Point2d *rcell;
-	long y_start;
-	long x_pos;
+	/*bp-0x4*/   long x_pos;
+	/*bp-0x8*/   long y_start;
+	/*bp-0xc*/   /*packed*/ struct Point2d *rcell;
+	/*bp-0x10*/  long x;
+	/*bp-0x14*/  long y;
+	/*bp-0x18*/  long y_pos;
+	/*bp-0x1c*/  /*packed*/ struct _CELL_INFO *cptr;
+	/*bp-0x20*/  long x_last;
+	/*bp-0x24*/  /*packed*/ struct Point2d *rend;
+	/*bp-0x28*/  /*packed*/ struct Point2d *lcell;
+	/*bp-0x2c*/  long y_dir;
+	/*bp-0x30*/  /*packed*/ struct Point2d *lend;
+	/*bp-0x34*/  /*packed*/ struct Point2d *fovcell;
 
 // LINE 3219:
 	__asm        mov    eax, ViewState.world_pos.x;
@@ -8328,19 +8328,19 @@ _T492:
 
 // FUNCTION: COPTER_D 0x005102d4
 void city_fovscan_vertedge() {
-	/*packed*/ struct Point2d *fovcell;
-	/*packed*/ struct Point2d *bcell;
-	/*packed*/ struct Point2d *bend;
-	long x_start;
-	/*packed*/ struct _CELL_INFO *cptr;
-	long y_pos;
-	long y;
-	long y_last;
-	long x;
-	long x_dir;
-	/*packed*/ struct Point2d *tcell;
-	long x_pos;
-	/*packed*/ struct Point2d *tend;
+	/*bp-0x4*/   /*packed*/ struct Point2d *tend;
+	/*bp-0x8*/   long x_pos;
+	/*bp-0xc*/   /*packed*/ struct Point2d *tcell;
+	/*bp-0x10*/  long x_dir;
+	/*bp-0x14*/  long x;
+	/*bp-0x18*/  long y_last;
+	/*bp-0x1c*/  long y;
+	/*bp-0x20*/  long y_pos;
+	/*bp-0x24*/  /*packed*/ struct _CELL_INFO *cptr;
+	/*bp-0x28*/  long x_start;
+	/*bp-0x2c*/  /*packed*/ struct Point2d *bend;
+	/*bp-0x30*/  /*packed*/ struct Point2d *bcell;
+	/*bp-0x34*/  /*packed*/ struct Point2d *fovcell;
 
 // LINE 3369:
 	__asm        mov    eax, 0x20000000;
@@ -8760,10 +8760,10 @@ _T492:
 
 // FUNCTION: COPTER_D 0x00510776
 void city_subscan_horiz(long cellpos, long x_dir, long y_dir, /*packed*/ struct Point2d *edge, /*packed*/ struct Point2d *endedge, /*packed*/ struct Point2d **curr_fovcell) {
-	/*packed*/ struct Point2d *fovcell;
-	/*packed*/ struct _CELL_INFO *cptr;
-	long y;
-	long x;
+	/*bp-0x4*/   long x;
+	/*bp-0x8*/   long y;
+	/*bp-0xc*/   /*packed*/ struct _CELL_INFO *cptr;
+	/*bp-0x10*/  /*packed*/ struct Point2d *fovcell;
 
 // LINE 3523:
 	fovcell = curr_fovcell->;
@@ -9167,10 +9167,10 @@ _T470:
 
 // FUNCTION: COPTER_D 0x00510beb
 void city_subscan_vert(long cellpos, long x_dir, long y_dir, /*packed*/ struct Point2d *edge, /*packed*/ struct Point2d *endedge, /*packed*/ struct Point2d **curr_fovcell) {
-	/*packed*/ struct Point2d *fovcell;
-	/*packed*/ struct _CELL_INFO *cptr;
-	long y;
-	long x;
+	/*bp-0x4*/   long x;
+	/*bp-0x8*/   long y;
+	/*bp-0xc*/   /*packed*/ struct _CELL_INFO *cptr;
+	/*bp-0x10*/  /*packed*/ struct Point2d *fovcell;
 
 // LINE 3640:
 	fovcell = curr_fovcell->;
@@ -9561,18 +9561,18 @@ _T44e:
 
 // FUNCTION: COPTER_D 0x0051103e
 void S3CityDrawGrid() {
-	long gy;
-	/*packed*/ struct _CELL_INFO **cptrptr;
-	long deltac;
-	long gx;
-	long texid;
-	short xdiff;
-	/*packed*/ struct Point2d *cellptr;
-	short dist;
-	/*packed*/ struct _CELL_INFO ***caddr;
-	long * sface;
-	long coffset;
-	short ydiff;
+	/*bp-0x4*/   short ydiff;
+	/*bp-0x8*/   long coffset;
+	/*bp-0xc*/   long * sface;
+	/*bp-0x10*/  /*packed*/ struct _CELL_INFO ***caddr;
+	/*bp-0x14*/  short dist;
+	/*bp-0x18*/  /*packed*/ struct Point2d *cellptr;
+	/*bp-0x1c*/  short xdiff;
+	/*bp-0x20*/  long texid;
+	/*bp-0x24*/  long gx;
+	/*bp-0x28*/  long deltac;
+	/*bp-0x2c*/  /*packed*/ struct _CELL_INFO **cptrptr;
+	/*bp-0x30*/  long gy;
 
 // LINE 3767:
 	cptrptr = GridSortCells;
@@ -9961,25 +9961,25 @@ _T439:
 
 // FUNCTION: COPTER_D 0x0051147c
 void S3CityDyObjFixup(/*packed*/ struct _CELL_INFO **endcptrptr, /*packed*/ struct _CELL_INFO ***endcaddr) {
-	/*packed*/ struct _CELL_INFO **cptrptr1;
-	/*packed*/ struct VRview pos;
-	long i;
-	long y;
-	/*packed*/ struct _CELL_INFO **cptrptr2;
-	long x;
-	int32_t rad;
-	/*packed*/ struct _CELL_INFO ***caddr2;
-	/*packed*/ struct _CELL_INFO *cptr4;
-	/*packed*/ struct _CELL_INFO **cadd4;
-	/*packed*/ struct _CELL_INFO *cptr3;
-	/*packed*/ struct _CELL_INFO **cadd3;
-	/*packed*/ struct _CELL_INFO *cptr2;
-	/*packed*/ struct _CELL_INFO **cadd2;
-	/*packed*/ struct _CELL_INFO *cptr1;
-	/*packed*/ struct _CELL_INFO **cadd1;
-	/*packed*/ struct _DYOBJ_INST *dyobj;
-	/*packed*/ struct _DYOBJ_INST *tmpdyobj;
-	/*packed*/ struct _CELL_INFO ***caddr1;
+	/*bp-0x4*/   /*packed*/ struct _CELL_INFO ***caddr1;
+	/*bp-0x8*/   /*packed*/ struct _DYOBJ_INST *tmpdyobj;
+	/*bp-0xc*/   /*packed*/ struct _DYOBJ_INST *dyobj;
+	/*bp-0x10*/  /*packed*/ struct _CELL_INFO **cadd1;
+	/*bp-0x14*/  /*packed*/ struct _CELL_INFO *cptr1;
+	/*bp-0x18*/  /*packed*/ struct _CELL_INFO **cadd2;
+	/*bp-0x1c*/  /*packed*/ struct _CELL_INFO *cptr2;
+	/*bp-0x20*/  /*packed*/ struct _CELL_INFO **cadd3;
+	/*bp-0x24*/  /*packed*/ struct _CELL_INFO *cptr3;
+	/*bp-0x28*/  /*packed*/ struct _CELL_INFO **cadd4;
+	/*bp-0x2c*/  /*packed*/ struct _CELL_INFO *cptr4;
+	/*bp-0x30*/  /*packed*/ struct _CELL_INFO ***caddr2;
+	/*bp-0x34*/  int32_t rad;
+	/*bp-0x38*/  long x;
+	/*bp-0x3c*/  /*packed*/ struct _CELL_INFO **cptrptr2;
+	/*bp-0x40*/  long y;
+	/*bp-0x44*/  long i;
+	/*bp-0x9c*/  /*packed*/ struct VRview pos; // 0x58 bytes
+	/*bp-0xa0*/  /*packed*/ struct _CELL_INFO **cptrptr1;
 
 // LINE 3970:
 	__asm        mov    i, 0;
@@ -11117,8 +11117,8 @@ _Tcdd:
 
 // FUNCTION: COPTER_D 0x0051215e
 int32_t S3CityCellInFront(/*packed*/ struct _CELL_INFO ***caddr2, /*packed*/ struct _CELL_INFO ***caddr1, /*packed*/ struct _CELL_INFO **caddrtest, /*packed*/ struct _CELL_INFO **cptrreplace) {
-	long i;
-	/*packed*/ struct _CELL_INFO ***caddr;
+	/*bp-0x4*/   /*packed*/ struct _CELL_INFO ***caddr;
+	/*bp-0x8*/   long i;
 
 // LINE 4318:
 	caddr = caddr2;
@@ -11182,10 +11182,10 @@ _Tbb:
 
 // FUNCTION: COPTER_D 0x0051221e
 void S3CityCheckGridPos() {
-	long altdiff;
-	long xdiff;
-	long gsize;
-	long ydiff;
+	/*bp-0x4*/   long ydiff;
+	/*bp-0x8*/   long gsize;
+	/*bp-0xc*/   long xdiff;
+	/*bp-0x10*/  long altdiff;
 
 // LINE 4360:
 	__asm        mov    eax, ViewState.world_pos.x;
@@ -11410,13 +11410,13 @@ _T2db:
 
 // FUNCTION: COPTER_D 0x005124fe
 void S3CitySpiralScan(long x, long y, long spiral_dist) {
-	/*packed*/ struct Point2d *fovcell;
-	int32_t stop_now;
-	long curr_dir;
-	long i;
-	long curr_dist;
-	long ydir;
-	long xdir;
+	/*bp-0x4*/   long xdir;
+	/*bp-0x8*/   long ydir;
+	/*bp-0xc*/   long curr_dist;
+	/*bp-0x10*/  long i;
+	/*bp-0x14*/  long curr_dir;
+	/*bp-0x18*/  int32_t stop_now;
+	/*bp-0x1c*/  /*packed*/ struct Point2d *fovcell;
 
 // LINE 4456:
 	curr_dist = 0x0;
@@ -11548,15 +11548,15 @@ _T16d:
 
 // FUNCTION: COPTER_D 0x00512670
 int32_t S3CityCellViewReject(/*packed*/ struct _CELL_INFO *cptr) {
-	/*packed*/ struct Point3d pos;
-	/*packed*/ struct Point3d vpos;
-	int32_t dotp;
-	int32_t oradius;
-	int32_t farz;
-	long sradius;
-	/*packed*/ struct _DYOBJ_INST *dyobj;
-	int32_t maxobjy;
-	int32_t wradius;
+	/*bp-0x4*/   int32_t wradius;
+	/*bp-0x8*/   int32_t maxobjy;
+	/*bp-0xc*/   /*packed*/ struct _DYOBJ_INST *dyobj;
+	/*bp-0x10*/  long sradius;
+	/*bp-0x14*/  int32_t farz;
+	/*bp-0x18*/  int32_t oradius;
+	/*bp-0x1c*/  int32_t dotp;
+	/*bp-0x28*/  /*packed*/ struct Point3d vpos; // 0xc bytes
+	/*bp-0x34*/  /*packed*/ struct Point3d pos; // 0xc bytes
 
 // LINE 4745:
 	__asm        mov    eax, cptr;
@@ -11829,10 +11829,10 @@ _T2ec:
 
 // FUNCTION: COPTER_D 0x00512961
 void S3CityDrawOverHeadGrid() {
-	long y;
-	long x;
-	int32_t mat2[4][4];
-	int32_t mat1[4][4];
+	/*bp-0x40*/  int32_t mat1[4][4]; // 0x40 bytes
+	/*bp-0x80*/  int32_t mat2[4][4]; // 0x40 bytes
+	/*bp-0x84*/  long x;
+	/*bp-0x88*/  long y;
 
 // LINE 4892:
 	S_inmapmode = 0x1;
@@ -11908,10 +11908,10 @@ void S3CityDrawOverHeadGrid() {
 
 // FUNCTION: COPTER_D 0x00512a46
 short S3CityLowestTerrAlt(long startx, long starty, long size) {
-	unsigned short alt;
-	long y;
-	long x;
-	unsigned short minalt;
+	/*bp-0x4*/   unsigned short minalt;
+	/*bp-0x8*/   long x;
+	/*bp-0xc*/   long y;
+	/*bp-0x10*/  unsigned short alt;
 
 // LINE 4944:
 	minalt = 0xffff;
@@ -12064,7 +12064,7 @@ _T131:
 
 // FUNCTION: COPTER_D 0x00512c2b
 int32_t S3CityGetBase(long x, long y, long size) {
-	long zone;
+	/*bp-0x4*/   long zone;
 
 // LINE 4987:
 	__asm        cmp    x, 0;
@@ -12228,13 +12228,13 @@ _T20a:
 
 // FUNCTION: COPTER_D 0x00512e3a
 void S3CityCreateHeliBase(long x, long y) {
-	long px;
-	/*packed*/ struct _STOBJ_INST *sptr;
-	/*packed*/ struct _CELL_INFO *cptr;
-	short alt;
-	short i;
-	int32_t incity;
-	long py;
+	/*bp-0x4*/   long py;
+	/*bp-0x8*/   int32_t incity;
+	/*bp-0xc*/   short i;
+	/*bp-0x10*/  short alt;
+	/*bp-0x14*/  /*packed*/ struct _CELL_INFO *cptr;
+	/*bp-0x18*/  /*packed*/ struct _STOBJ_INST *sptr;
+	/*bp-0x1c*/  long px;
 
 // LINE 5057:
 	incity = 0x0;

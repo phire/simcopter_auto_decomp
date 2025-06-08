@@ -85,7 +85,7 @@ struct Point{ // not packed(0x4 bytes) TI: 0x341c
 // Contribution: 1:00165a10-001661fc Module: 182, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00566a10
 void GlobalToLocal(/*unpacked*/ struct Point *pt) {
-	/*unpacked*/ struct tagPOINT wpt;
+	/*bp-0x8*/   /*unpacked*/ struct tagPOINT wpt; // 0x8 bytes
 
 // LINE 10:
 	__asm        mov    eax, pt;
@@ -115,7 +115,7 @@ void GlobalToLocal(/*unpacked*/ struct Point *pt) {
 
 // FUNCTION: COPTER_D 0x00566a59
 void LocalToGlobal(/*unpacked*/ struct Point *pt) {
-	/*unpacked*/ struct tagPOINT wpt;
+	/*bp-0x8*/   /*unpacked*/ struct tagPOINT wpt; // 0x8 bytes
 
 // LINE 19:
 	__asm        mov    eax, pt;
@@ -159,7 +159,7 @@ long TickCount() {
 
 // FUNCTION: COPTER_D 0x00566aca
 short StringWidth(unsigned char * str) {
-	/*unpacked*/ struct tagSIZE textSize;
+	/*bp-0x8*/   /*unpacked*/ struct tagSIZE textSize; // 0x8 bytes
 
 // LINE 37:
 	__asm        lea    eax, textSize.cx;
@@ -191,7 +191,7 @@ _T44:
 
 // FUNCTION: COPTER_D 0x00566b13
 void PtoCstr(unsigned char * pstr) {
-	short len;
+	/*bp-0x4*/   short len;
 
 // LINE 45:
 	__asm        mov    eax, pstr;
@@ -217,7 +217,7 @@ void PtoCstr(unsigned char * pstr) {
 
 // FUNCTION: COPTER_D 0x00566b52
 void CtoPstr(char * cstr) {
-	short len;
+	/*bp-0x4*/   short len;
 
 // LINE 53:
 	__asm        mov    eax, cstr;
@@ -286,10 +286,10 @@ void OffsetRect(/*unpacked*/ struct Rect *rect, short hoff, short voff) {
 
 // FUNCTION: COPTER_D 0x00566c06
 unsigned short SectRect(/*unpacked*/ struct Rect *rect1, /*unpacked*/ struct Rect *rect2, /*unpacked*/ struct Rect *result) {
-	/*unpacked*/ struct tagRECT lrect2;
-	/*unpacked*/ struct tagRECT lresult;
-	/*unpacked*/ struct tagRECT lrect1;
-	unsigned short sect;
+	/*bp-0x4*/   unsigned short sect;
+	/*bp-0x14*/  /*unpacked*/ struct tagRECT lrect1; // 0x10 bytes
+	/*bp-0x24*/  /*unpacked*/ struct tagRECT lresult; // 0x10 bytes
+	/*bp-0x34*/  /*unpacked*/ struct tagRECT lrect2; // 0x10 bytes
 
 // LINE 76:
 	__asm        mov    eax, rect1;
@@ -442,9 +442,9 @@ void GetPort(/*unpacked*/ struct GrafPtr *pPort) {
 
 // FUNCTION: COPTER_D 0x00566dca
 void EraseRect(/*unpacked*/ struct tagRECT *rect) {
-	unsigned long bk;
-	void * __ptr32 tempBrush;
-	/*unpacked*/ struct tagRECT lRect;
+	/*bp-0x10*/  /*unpacked*/ struct tagRECT lRect; // 0x10 bytes
+	/*bp-0x14*/  void * __ptr32 tempBrush;
+	/*bp-0x18*/  unsigned long bk;
 
 // LINE 136:
 	__asm        cmp    gPort.dc, 0;
@@ -498,7 +498,7 @@ _T32:
 
 // FUNCTION: COPTER_D 0x00566e67
 void EraseRect(/*unpacked*/ struct Rect *r) {
-	/*unpacked*/ struct tagRECT lRect;
+	/*bp-0x10*/  /*unpacked*/ struct tagRECT lRect; // 0x10 bytes
 
 // LINE 148:
 	__asm        mov    eax, r;
@@ -524,9 +524,9 @@ void EraseRect(/*unpacked*/ struct Rect *r) {
 
 // FUNCTION: COPTER_D 0x00566ead
 void FrameRect(/*unpacked*/ struct Rect *rect) {
-	unsigned long bk;
-	void * __ptr32 tempBrush;
-	/*unpacked*/ struct tagRECT lRect;
+	/*bp-0x10*/  /*unpacked*/ struct tagRECT lRect; // 0x10 bytes
+	/*bp-0x14*/  void * __ptr32 tempBrush;
+	/*bp-0x18*/  unsigned long bk;
 
 // LINE 154:
 	__asm        cmp    gPort.dc, 0;

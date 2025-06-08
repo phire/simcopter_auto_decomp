@@ -822,9 +822,9 @@ short S3GetNextNearest(/*packed*/ class Station *station, /*packed*/ struct _Gri
 
 // FUNCTION: COPTER_D 0x00539da3
 int32_t Station::FindNearestRoadToStation(/*packed*/ struct _GridCoordinates& loc) {
-	int32_t i;
-	/*packed*/ struct _GridCoordinates center;
-	int32_t direction;
+	/*bp-0x4*/   int32_t direction;
+	/*bp-0x8*/   /*packed*/ struct _GridCoordinates center;
+	/*bp-0xc*/   int32_t i;
 
 // LINE 80:
 	__asm        mov    eax, loc;
@@ -1037,7 +1037,7 @@ _T274:
 
 // FUNCTION: COPTER_D 0x0053a01e
 int32_t Station::FindNearestRoadToEmergency(/*packed*/ struct _GridCoordinates& loc) {
-	/*packed*/ class SpiralScan spiral;
+	/*bp-0x10*/  /*packed*/ class SpiralScan spiral; // 0x10 bytes
 
 // LINE 110:
 	__asm        push   0x80;
@@ -1193,10 +1193,10 @@ _T1d6:
 
 // FUNCTION: COPTER_D 0x0053a1fb
 void Station::SortStationsByDistanceFromDestination(/*packed*/ struct _GridCoordinates loc) {
-	/*packed*/ struct _StationHeapStruct station;
-	int32_t deltay;
-	int32_t deltax;
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
+	/*bp-0x8*/   int32_t deltax;
+	/*bp-0xc*/   int32_t deltay;
+	/*bp-0x14*/  /*packed*/ struct _StationHeapStruct station; // 0x8 bytes
 
 // LINE 132:
 	this->stationHeapSize = 0x0;
@@ -1333,10 +1333,10 @@ _T151:
 
 // FUNCTION: COPTER_D 0x0053a358
 void Station::SortVehiclesByDistanceFromDestination(/*packed*/ struct _GridCoordinates destLoc, /*packed*/ class EmergencyVehicleClass **vehicleList, int32_t vehicleListLength) {
-	int32_t deltay;
-	int32_t deltax;
-	int32_t i;
-	/*packed*/ struct _VehicleHeapStruct vehicle;
+	/*bp-0xc*/   /*packed*/ struct _VehicleHeapStruct vehicle; // 0xa bytes
+	/*bp-0x10*/  int32_t i;
+	/*bp-0x14*/  int32_t deltax;
+	/*bp-0x18*/  int32_t deltay;
 
 // LINE 178:
 	this->vehicleHeapSize = 0x0;
@@ -1351,7 +1351,7 @@ _T25:
 	__asm        jge    _T13c;
 // LINE 184:
 // Block start:
-	/*packed*/ struct Point3d DyObjLoc;
+	/*bp-0x24*/  /*packed*/ struct Point3d DyObjLoc; // 0xc bytes
 	__asm        jmp    near ptr 0x0053A38E;
 
 	__asm        mov    eax, i;
@@ -1469,8 +1469,8 @@ _T13c:
 
 // FUNCTION: COPTER_D 0x0053a4a0
 /*packed*/ class EmergencyVehicleClass* Station::FindAvailableVehicle(enum EmergencyLevel responseLevel, /*packed*/ class EmergencyVehicleClass **vehicleList, int32_t vehicleListLength) {
-	int32_t code;
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
+	/*bp-0x8*/   int32_t code;
 
 // LINE 227:
 	__asm        mov    i, 0;
@@ -1544,8 +1544,8 @@ _Tbf:
 
 // FUNCTION: COPTER_D 0x0053a566
 void Station::StationHeapInsert(const /*packed*/ struct _StationHeapStruct *pInsertStruct) {
-	int32_t index;
-	/*packed*/ struct _StationHeapStruct tempStruct;
+	/*bp-0x8*/   /*packed*/ struct _StationHeapStruct tempStruct; // 0x8 bytes
+	/*bp-0xc*/   int32_t index;
 
 // LINE 252:
 	__asm        mov    eax, this;
@@ -1629,10 +1629,10 @@ _Tc5:
 
 // FUNCTION: COPTER_D 0x0053a637
 void Station::StationHeapRemove(/*packed*/ struct _StationHeapStruct *pRemovedStruct) {
-	int32_t index;
-	int32_t child;
-	int32_t parent;
-	/*packed*/ struct _StationHeapStruct tempStruct;
+	/*bp-0x8*/   /*packed*/ struct _StationHeapStruct tempStruct; // 0x8 bytes
+	/*bp-0xc*/   int32_t parent;
+	/*bp-0x10*/  int32_t child;
+	/*bp-0x14*/  int32_t index;
 
 // LINE 278:
 	__asm        mov    eax, this;
@@ -1767,8 +1767,8 @@ _T13e:
 
 // FUNCTION: COPTER_D 0x0053a798
 void Station::VehicleHeapInsert(const /*packed*/ struct _VehicleHeapStruct *pInsertStruct) {
-	int32_t index;
-	/*packed*/ struct _VehicleHeapStruct tempStruct;
+	/*bp-0xc*/   /*packed*/ struct _VehicleHeapStruct tempStruct; // 0xa bytes
+	/*bp-0x10*/  int32_t index;
 
 // LINE 318:
 	__asm        mov    eax, this;
@@ -1869,10 +1869,10 @@ _Tfc:
 
 // FUNCTION: COPTER_D 0x0053a8a0
 void Station::VehicleHeapRemove(/*packed*/ struct _VehicleHeapStruct *pRemovedStruct) {
-	int32_t index;
-	int32_t child;
-	int32_t parent;
-	/*packed*/ struct _VehicleHeapStruct tempStruct;
+	/*bp-0xc*/   /*packed*/ struct _VehicleHeapStruct tempStruct; // 0xa bytes
+	/*bp-0x10*/  int32_t parent;
+	/*bp-0x14*/  int32_t child;
+	/*bp-0x18*/  int32_t index;
 
 // LINE 344:
 	__asm        mov    eax, this;
@@ -2046,7 +2046,7 @@ short Station::GetNearestStation(/*packed*/ struct _GridCoordinates gc, /*packed
 	__asm        je     _T58;
 // LINE 390:
 // Block start:
-	/*packed*/ struct _StationHeapStruct removedStruct;
+	/*bp-0x8*/   /*packed*/ struct _StationHeapStruct removedStruct; // 0x8 bytes
 	__asm        lea    eax, removedStruct.cost;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
@@ -2084,7 +2084,7 @@ short Station::GetNextNearest(/*packed*/ struct _GridCoordinates *result) {
 	__asm        je     _T4c;
 // LINE 408:
 // Block start:
-	/*packed*/ struct _StationHeapStruct removedStruct;
+	/*bp-0x8*/   /*packed*/ struct _StationHeapStruct removedStruct; // 0x8 bytes
 	__asm        lea    eax, removedStruct.cost;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
@@ -2147,20 +2147,20 @@ _T46:
 
 // FUNCTION: COPTER_D 0x0053ab93
 int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum EmergencyType responseType, enum EmergencyLevel responseLevel, /*packed*/ class EmergencyVehicleClass **vehicleList, int32_t vehicleListLength) {
-	/*packed*/ struct Goal startGoal1;
-	/*packed*/ struct Goal startGoal2;
-	/*packed*/ struct _RGIndex destVert;
-	/*packed*/ struct _VehicleHeapStruct vehicleHeapStruct;
-	/*packed*/ struct _GridCoordinates destLoc;
-	/*packed*/ class basic_string<char> errorMsgSoundFullPath;
-	/*packed*/ struct Goal destGoal1;
-	int32_t pathFound;
-	/*packed*/ struct Goal destGoal2;
-	/*packed*/ class EmergencyVehicleClass *availableVehicle;
-	static /*packed*/ class DigitalSound errorMsgSound;
-	/*packed*/ struct _StationHeapStruct stationHeapStruct;
-	/*packed*/ struct Goal result;
-	/*packed*/ struct _RGIndex startVertex;
+	/*bp-0x4*/   /*packed*/ struct _RGIndex startVertex;
+	/*bp-0x30*/  /*packed*/ struct Goal result; // 0x2a bytes
+	/*bp-0x38*/  /*packed*/ struct _StationHeapStruct stationHeapStruct; // 0x8 bytes
+// StaticLocal: 0x006351d0	static /*packed*/ class DigitalSound errorMsgSound;
+	/*bp-0x3c*/  /*packed*/ class EmergencyVehicleClass *availableVehicle;
+	/*bp-0x68*/  /*packed*/ struct Goal destGoal2; // 0x2a bytes
+	/*bp-0x6c*/  int32_t pathFound;
+	/*bp-0x98*/  /*packed*/ struct Goal destGoal1; // 0x2a bytes
+	/*bp-0xa0*/  /*packed*/ class basic_string<char> errorMsgSoundFullPath; // 0x8 bytes
+	/*bp-0xa4*/  /*packed*/ struct _GridCoordinates destLoc;
+	/*bp-0xb0*/  /*packed*/ struct _VehicleHeapStruct vehicleHeapStruct; // 0xa bytes
+	/*bp-0xb4*/  /*packed*/ struct _RGIndex destVert;
+	/*bp-0xe0*/  /*packed*/ struct Goal startGoal2; // 0x2a bytes
+	/*bp-0x10c*/ /*packed*/ struct Goal startGoal1; // 0x2a bytes
 
 // LINE 433:
 	__asm        push   0x10;
@@ -2753,7 +2753,7 @@ _T873:
 	__asm        je     _Ta84;
 // LINE 532:
 // Block start:
-	/*packed*/ struct _StructStation *sS;
+	/*bp-0x110*/ /*packed*/ struct _StructStation *sS;
 	__asm        lea    eax, stationHeapStruct.cost;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
@@ -2786,7 +2786,7 @@ _T873:
 	__asm        jne    _T9ac;
 // LINE 541:
 // Block start:
-	/*packed*/ struct RGVertex *pRGV;
+	/*bp-0x114*/ /*packed*/ struct RGVertex *pRGV;
 	__asm        lea    eax, destGoal2.pRGV;
 	__asm        push   eax;
 	__asm        lea    eax, destGoal1.pRGV;
@@ -3165,11 +3165,11 @@ static void $E36() {
 
 // FUNCTION: COPTER_D 0x0053b9b5
 void Station::Station(unsigned char stationScurkID) {
-	int32_t stationIndex;
-	int32_t y;
-	int32_t x;
-	unsigned char * tempBuildMap;
-	/*packed*/ struct _GridCoordinates workingLoc;
+	/*bp-0x4*/   /*packed*/ struct _GridCoordinates workingLoc;
+	/*bp-0x8*/   unsigned char * tempBuildMap;
+	/*bp-0xc*/   int32_t x;
+	/*bp-0x10*/  int32_t y;
+	/*bp-0x14*/  int32_t stationIndex;
 
 // LINE 594:
 	tempBuildMap = 0x5c3ab0;
@@ -3236,7 +3236,7 @@ _Ta9:
 	__asm        jne    _T19e;
 // LINE 618:
 // Block start:
-	int32_t result;
+	/*bp-0x18*/  int32_t result;
 	__asm        mov    eax, y;
 	__asm        shl    eax, 7;
 	__asm        add    eax, x;
@@ -3355,8 +3355,8 @@ _T1fa:
 	__asm        jne    _T2c2;
 // LINE 654:
 // Block start:
-	/*packed*/ struct _StructStation *pStation;
-	int32_t direction;
+	/*bp-0x1c*/  int32_t direction;
+	/*bp-0x20*/  /*packed*/ struct _StructStation *pStation;
 	__asm        mov    eax, x;
 	__asm        inc    eax;
 	__asm        mov    workingLoc.x, al;

@@ -604,8 +604,8 @@ _T230:
 
 // FUNCTION: COPTER_D 0x0048b534
 void CommandSystem::Initialize() {
-	int32_t j;
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
+	/*bp-0x8*/   int32_t j;
 
 // LINE 46:
 	__asm        mov    i, 0;
@@ -690,7 +690,7 @@ _Tf3:
 
 // FUNCTION: COPTER_D 0x0048b631
 void CommandSystem::ClearAllCommands() {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 // LINE 74:
 	__asm        mov    i, 0;
@@ -718,7 +718,7 @@ _T39:
 
 // FUNCTION: COPTER_D 0x0048b682
 void CommandSystem::ClearAllCommandsDevice(long lDevice) {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 // LINE 89:
 	__asm        mov    i, 0;
@@ -755,12 +755,12 @@ _T51:
 
 // FUNCTION: COPTER_D 0x0048b6ed
 void CommandSystem::SetUpCommandArraysFromShortcuts() {
-	unsigned char chCurrentCommand;
-	unsigned char chCurrentModifiers;
-	int32_t nTempIndex;
-	/*packed*/ class list<Shortcut>::iterator tempShortcutListIterator;
-	unsigned char chCurrentChar;
-	long lCurrentIgnoreModifiers;
+	/*bp-0x4*/   long lCurrentIgnoreModifiers;
+	/*bp-0x8*/   unsigned char chCurrentChar;
+	/*bp-0xc*/   /*packed*/ class list<Shortcut>::iterator tempShortcutListIterator;
+	/*bp-0x10*/  int32_t nTempIndex;
+	/*bp-0x14*/  unsigned char chCurrentModifiers;
+	/*bp-0x18*/  unsigned char chCurrentCommand;
 
 // LINE 130:
 	__asm        mov    eax, this;
@@ -1015,11 +1015,11 @@ _T2b2:
 
 // FUNCTION: COPTER_D 0x0048b9a9
 void CommandSystem::PollJoysticksForCommands() {
-	long lValue;
-	int32_t j;
-	int32_t i;
-	int32_t iEnd;
-	int32_t nCommand;
+	/*bp-0x4*/   int32_t nCommand;
+	/*bp-0x8*/   int32_t iEnd;
+	/*bp-0xc*/   int32_t i;
+	/*bp-0x10*/  int32_t j;
+	/*bp-0x14*/  long lValue;
 
 // LINE 199:
 	__asm        mov    eax, gJoystickManager.nJoystickCount;
@@ -1425,9 +1425,9 @@ void CGameCommander::ProcessKeyUp(long lKey) {
 
 // FUNCTION: COPTER_D 0x0048be6f
 void CGameCommander::ProcessKeyDown(long lKey, /*packed*/ struct CommandSystem& commandSystem, int32_t& nCommand, int32_t& bPushCommand) {
-	int32_t nTempCommand;
-	int32_t nTempIndex;
-	unsigned char chTempModifierState;
+	/*bp-0x4*/   unsigned char chTempModifierState;
+	/*bp-0x8*/   int32_t nTempIndex;
+	/*bp-0xc*/   int32_t nTempCommand;
 
 // LINE 408:
 	nCommand. = 0x0;
@@ -1442,7 +1442,7 @@ void CGameCommander::ProcessKeyDown(long lKey, /*packed*/ struct CommandSystem& 
 	__asm        je     _T13b;
 // LINE 426:
 // Block start:
-	/*packed*/ class CharData *currentCharData;
+	/*bp-0x10*/  /*packed*/ class CharData *currentCharData;
 	currentCharData = commandSystem.keyboardCommandList.firstCharData;
 // LINE 428:
 _T40:
@@ -1602,9 +1602,9 @@ _T1e9:
 
 // FUNCTION: COPTER_D 0x0048c064
 void CGameCommander::ProcessKeyUp(long lKey, /*packed*/ struct CommandSystem& commandSystem) {
-	int32_t nTempCommand;
-	int32_t nTempIndex;
-	unsigned char chTempModifierState;
+	/*bp-0x4*/   unsigned char chTempModifierState;
+	/*bp-0x8*/   int32_t nTempIndex;
+	/*bp-0xc*/   int32_t nTempCommand;
 
 // LINE 483:
 	__asm        mov    eax, lKey;
@@ -1615,7 +1615,7 @@ void CGameCommander::ProcessKeyUp(long lKey, /*packed*/ struct CommandSystem& co
 	__asm        je     _T129;
 // LINE 488:
 // Block start:
-	/*packed*/ class CharData *currentCharData;
+	/*bp-0x10*/  /*packed*/ class CharData *currentCharData;
 	currentCharData = commandSystem.keyboardCommandList.firstCharData;
 // LINE 490:
 _T2e:
@@ -1768,9 +1768,9 @@ void CGameCommander::ProcessSystemCloseRequest() {
 
 // FUNCTION: COPTER_D 0x0048c234
 int32_t ReadShortcutPrefsFile(/*packed*/ class list<Shortcut>& shortcutList) {
-	/*packed*/ class MIFF myMIFF;
-	/*packed*/ struct Shortcut tempShortcut;
-	char szFilePath[260];
+	/*bp-0x104*/ char szFilePath[260]; // 0x104 bytes
+	/*bp-0x11c*/ /*packed*/ struct Shortcut tempShortcut; // 0x18 bytes
+	/*bp-0x264*/ /*packed*/ class MIFF myMIFF; // 0x148 bytes
 
 // LINE 553:
 	__asm        mov    al, ds:[0x599D94];
@@ -2076,10 +2076,10 @@ _T4b8:
 
 // FUNCTION: COPTER_D 0x0048c6f1
 int32_t WriteShortcutPrefsFile(/*packed*/ class list<Shortcut>& shortcutList) {
-	int32_t nReturnValue;
-	/*packed*/ class MIFF myMIFF;
-	/*packed*/ struct Shortcut tempShortcut;
-	char szFilePath[260];
+	/*bp-0x104*/ char szFilePath[260]; // 0x104 bytes
+	/*bp-0x11c*/ /*packed*/ struct Shortcut tempShortcut; // 0x18 bytes
+	/*bp-0x264*/ /*packed*/ class MIFF myMIFF; // 0x148 bytes
+	/*bp-0x268*/ int32_t nReturnValue;
 
 // LINE 587:
 	__asm        mov    al, ds:[0x599D98];
@@ -2116,7 +2116,7 @@ int32_t WriteShortcutPrefsFile(/*packed*/ class list<Shortcut>& shortcutList) {
 	__asm        je     _T1a7;
 // LINE 594:
 // Block start:
-	/*packed*/ class list<Shortcut>::iterator tempShortcutListIterator;
+	/*bp-0x26c*/ /*packed*/ class list<Shortcut>::iterator tempShortcutListIterator;
 	__asm        mov    eax, shortcutList;
 	__asm        mov    eax, [eax];
 	__asm        mov    eax, [eax];
@@ -2214,8 +2214,8 @@ _T1c7:
 
 // FUNCTION: COPTER_D 0x0048c8bd
 void MakeDefaultConfigurableShortcuts(/*packed*/ class list<Shortcut>& shortcutList) {
-	int32_t i;
-	/*packed*/ struct Shortcut tempShortcut;
+	/*bp-0x18*/  /*packed*/ struct Shortcut tempShortcut; // 0x18 bytes
+	/*bp-0x1c*/  int32_t i;
 
 // LINE 616:
 	tempShortcut.lDeviceID = 0x0;
@@ -4330,7 +4330,7 @@ _Tf2:
 
 // FUNCTION: COPTER_D 0x0048e4b5
 void DeleteShortcutPrefsFile() {
-	char szFilePath[260];
+	/*bp-0x104*/ char szFilePath[260]; // 0x104 bytes
 
 // LINE 969:
 	__asm        mov    al, ds:[0x599D9C];

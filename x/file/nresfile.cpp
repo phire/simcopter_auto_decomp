@@ -156,11 +156,11 @@ public:
 // Contribution: 1:00098ef0-0009943b Module: 16, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00499ef0
 /*packed*/ class StdResLoader* NResFile::GetLoader(unsigned long type, void (*swizzler)(void * __ptr32, long)) {
-	/*packed*/ class StdResLoader *loader;
+	/*bp-0x4*/   /*packed*/ class StdResLoader *loader;
 
 // LINE 13:
 // Block start:
-	/*packed*/ class PtrList<StdResLoader>::Iter i;
+	/*bp-0xc*/   /*packed*/ class PtrList<StdResLoader>::Iter i; // 0x8 bytes
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x11A;
 	__asm        mov    i.fObject, eax;
@@ -427,7 +427,7 @@ _T2fe:
 
 // FUNCTION: COPTER_D 0x0049a1f5
 void NResFile::~NResFile() {
-	/*packed*/ class PtrList<StdResLoader>::Iter i;
+	/*bp-0x8*/   /*packed*/ class PtrList<StdResLoader>::Iter i; // 0x8 bytes
 
 
 	this-><NResFile+0x00> = 0x591218;

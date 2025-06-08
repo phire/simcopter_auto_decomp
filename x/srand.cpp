@@ -40,12 +40,12 @@ void SetSRandSeed(unsigned long theSeed) {
 
 // FUNCTION: COPTER_D 0x0055d545
 unsigned short RRand(unsigned short lim) {
-	unsigned long myRandom4;
-	unsigned long myRandom3;
-	unsigned long myRandom2;
-	unsigned long myRandom1;
-	unsigned long myRandom5;
-	unsigned long myRandom0;
+	/*bp-0x4*/   unsigned long myRandom0;
+	/*bp-0x8*/   unsigned long myRandom5;
+	/*bp-0xc*/   unsigned long myRandom1;
+	/*bp-0x10*/  unsigned long myRandom2;
+	/*bp-0x14*/  unsigned long myRandom3;
+	/*bp-0x18*/  unsigned long myRandom4;
 
 // LINE 59:
 	myRandom0 = 0x41c64e6d;
@@ -158,7 +158,7 @@ unsigned short RRand(unsigned short lim) {
 
 // FUNCTION: COPTER_D 0x0055d6a3
 unsigned short GetNextRandomNumber() {
-	unsigned short temp;
+	/*bp-0x4*/   unsigned short temp;
 
 // LINE 107:
 	__asm        mov    eax, srandSeed;
@@ -199,7 +199,7 @@ _T66:
 
 // FUNCTION: COPTER_D 0x0055d717
 unsigned short SRand(unsigned short lim) {
-	unsigned short next;
+	/*bp-0x4*/   unsigned short next;
 
 
 	__asm        call   GetNextRandomNumber;
@@ -288,8 +288,8 @@ unsigned short SRand256() {
 
 // FUNCTION: COPTER_D 0x0055d824
 unsigned short SGIRand(unsigned short limit) {
-	unsigned short z;
-	unsigned short x;
+	/*bp-0x4*/   unsigned short x;
+	/*bp-0x8*/   unsigned short z;
 
 // LINE 135:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(limit);
@@ -325,8 +325,8 @@ _T59:
 
 // FUNCTION: COPTER_D 0x0055d882
 unsigned short SGRand(unsigned short limit) {
-	unsigned short z;
-	unsigned short x;
+	/*bp-0x4*/   unsigned short x;
+	/*bp-0x8*/   unsigned short z;
 
 // LINE 150:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(limit);
@@ -362,8 +362,8 @@ _T59:
 
 // FUNCTION: COPTER_D 0x0055d8e0
 short SGSRand(unsigned short limit) {
-	short z;
-	short x;
+	/*bp-0x4*/   short x;
+	/*bp-0x8*/   short z;
 
 // LINE 165:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(limit);

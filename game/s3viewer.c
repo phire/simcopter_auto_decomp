@@ -20,8 +20,8 @@ struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 // Contribution: 1:000ed720-000ee1b4 Module: 177, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004ee720
 void S3ViewerInit() {
-	/*packed*/ struct Point3d IdealCameraLoc;
-	int32_t rotmat[4][4];
+	/*bp-0x40*/  int32_t rotmat[4][4]; // 0x40 bytes
+	/*bp-0x4c*/  /*packed*/ struct Point3d IdealCameraLoc; // 0xc bytes
 
 // LINE 109:
 	__asm        lea    eax, IdealCameraLoc.x;
@@ -166,13 +166,13 @@ void S3ViewerInit() {
 
 // FUNCTION: COPTER_D 0x004ee8f1
 void S3ViewerControl() {
-	int32_t timerDelay;
-	int32_t roty;
-	/*packed*/ struct Point3d IdealCameraPos;
-	int32_t rotx;
-	long lJoystickValue;
-	/*packed*/ struct Point3d vec;
-	long viewSize;
+	/*bp-0x4*/   long viewSize;
+	/*bp-0x10*/  /*packed*/ struct Point3d vec; // 0xc bytes
+	/*bp-0x14*/  long lJoystickValue;
+	/*bp-0x18*/  int32_t rotx;
+	/*bp-0x24*/  /*packed*/ struct Point3d IdealCameraPos; // 0xc bytes
+	/*bp-0x28*/  int32_t roty;
+	/*bp-0x2c*/  int32_t timerDelay;
 
 // LINE 177:
 	__asm        cmp    LoopTime, 0x200;
@@ -615,8 +615,8 @@ _T51c:
 
 // FUNCTION: COPTER_D 0x004eee12
 void S3SetBackPlaneBasedOnValue(long lValue) {
-	long nOriginalViewSize;
-	long nConvertedValue;
+	/*bp-0x4*/   long nConvertedValue;
+	/*bp-0x8*/   long nOriginalViewSize;
 
 // LINE 323:
 	nOriginalViewSize = G_ViewSize;
@@ -685,7 +685,7 @@ long GetRenderBackPlaneValue() {
 
 // FUNCTION: COPTER_D 0x004eeecc
 long ConvertGUIBackPlaneValueToRender(long lValue) {
-	long lHalfOfGOBJRange;
+	/*bp-0x4*/   long lHalfOfGOBJRange;
 
 // LINE 361:
 	lHalfOfGOBJRange = 0x18;
@@ -711,7 +711,7 @@ long ConvertGUIBackPlaneValueToRender(long lValue) {
 
 // FUNCTION: COPTER_D 0x004eef09
 long ConvertRenderBackPlaneValueToGUI(long lValue) {
-	long lHalfOfGOBJRange;
+	/*bp-0x4*/   long lHalfOfGOBJRange;
 
 // LINE 380:
 	lHalfOfGOBJRange = 0x18;
@@ -759,8 +759,8 @@ int32_t S3ViewerPosDelta() {
 
 // FUNCTION: COPTER_D 0x004eef7f
 void S3ViewerSetView() {
-	int32_t matrix[4][4];
-	/*packed*/ struct Point3d p;
+	/*bp-0xc*/   /*packed*/ struct Point3d p; // 0xc bytes
+	/*bp-0x4c*/  int32_t matrix[4][4]; // 0x40 bytes
 
 // LINE 427:
 	__asm        mov    eax, Viewer.pos.x;

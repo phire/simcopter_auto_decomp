@@ -54,14 +54,14 @@ enum DirectionTypes {
 // Contribution: 1:00137470-00138bf2 Module: 157, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00538470
 void S3RoadDataInit() {
-	int32_t dir;
-	double straightLegSize;
-	double turnRadius;
-	int32_t incline;
-	int32_t leg;
-	double turnAngle;
-	double DiagShortDist;
-	double DiagLongDist;
+	/*bp-0x8*/   double DiagLongDist; // 0x8 bytes
+	/*bp-0x10*/  double DiagShortDist; // 0x8 bytes
+	/*bp-0x18*/  double turnAngle; // 0x8 bytes
+	/*bp-0x1c*/  int32_t leg;
+	/*bp-0x20*/  int32_t incline;
+	/*bp-0x28*/  double turnRadius; // 0x8 bytes
+	/*bp-0x30*/  double straightLegSize; // 0x8 bytes
+	/*bp-0x34*/  int32_t dir;
 
 // LINE 53:
 	__asm        mov    reinterpret_cast<uint32_t>(straightLegSize), 0x9999999A;
@@ -843,7 +843,7 @@ _Tb5f:
 	__asm        jge    _Tde6;
 // LINE 250:
 // Block start:
-	int32_t tType;
+	/*bp-0x38*/  int32_t tType;
 	__asm        mov    tType, 0;
 	__asm        jmp    _Tb78;
 _Tb75:
@@ -1065,8 +1065,8 @@ _Tde6:
 
 // FUNCTION: COPTER_D 0x00539260
 int32_t IsThisAnIntersection(long x, long y) {
-	unsigned short t2;
-	unsigned short t;
+	/*bp-0x4*/   unsigned short t;
+	/*bp-0x8*/   unsigned short t2;
 
 // LINE 420:
 	__asm        cmp    x, 0;
@@ -1388,8 +1388,8 @@ _T3e5:
 
 // FUNCTION: COPTER_D 0x0053964a
 int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum DirectionTypes CurDir, enum DirectionTypes TestDir) {
-	enum DirectionTypes fromConnections;
-	enum DirectionTypes toConnections;
+	/*bp-0x4*/   enum DirectionTypes toConnections;
+	/*bp-0x8*/   enum DirectionTypes fromConnections;
 
 
 	None = toTile;

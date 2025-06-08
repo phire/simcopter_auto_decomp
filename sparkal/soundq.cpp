@@ -1508,7 +1508,7 @@ _T36:
 
 // FUNCTION: COPTER_D 0x0042151a
 void SoundQueue::ClearQueue(int32_t bStopCurrentlyPlayingSound) {
-	/*packed*/ struct SoundQueueItem *currentSoundQueueItem;
+	/*bp-0x4*/   /*packed*/ struct SoundQueueItem *currentSoundQueueItem;
 
 // LINE 199:
 	__asm        push   0x3E8;
@@ -1529,7 +1529,7 @@ void SoundQueue::ClearQueue(int32_t bStopCurrentlyPlayingSound) {
 	__asm        je     _T2a5;
 // LINE 203:
 // Block start:
-	/*packed*/ class list<SoundQueueItem *>::iterator iterator;
+	/*bp-0x8*/   /*packed*/ class list<SoundQueueItem *>::iterator iterator;
 	__asm        cmp    bStopCurrentlyPlayingSound, 0;
 	__asm        je     _T80;
 // LINE 204:
@@ -2118,7 +2118,7 @@ _T30:
 
 // FUNCTION: COPTER_D 0x00421bf9
 void SoundQueue::PlayNextSoundInQueue() {
-	/*packed*/ struct SoundQueueItem *currentSoundQueueItem;
+	/*bp-0x4*/   /*packed*/ struct SoundQueueItem *currentSoundQueueItem;
 
 // LINE 302:
 	__asm        push   0x3E8;
@@ -2228,7 +2228,7 @@ _T10b:
 
 // FUNCTION: COPTER_D 0x00421d19
 void SoundQueue::RemoveNextSoundInQueue() {
-	/*packed*/ struct SoundQueueItem *currentSoundQueueItem;
+	/*bp-0x4*/   /*packed*/ struct SoundQueueItem *currentSoundQueueItem;
 
 // LINE 336:
 	__asm        push   0x3E8;
@@ -2437,7 +2437,7 @@ void SoundQueue::StaticSoundQueueCompletionCallback(long lData) {
 
 // FUNCTION: COPTER_D 0x00421f5c
 void SoundQueue::SoundQueueCompletionCallback() {
-	/*packed*/ struct SoundQueueItem *currentSoundQueueItem;
+	/*bp-0x4*/   /*packed*/ struct SoundQueueItem *currentSoundQueueItem;
 
 // LINE 390:
 	__asm        jmp    near ptr 0x00421F6D;
@@ -2532,8 +2532,8 @@ _T33:
 
 // FUNCTION: COPTER_D 0x00422056
 int32_t SoundQueue::GetMutex(unsigned long lTimeoutValue) {
-	const /*packed*/ class SoundQueue& soundQueueReference;
-	/*packed*/ class MTimer timeoutTimer;
+	/*bp-0x10*/  /*packed*/ class MTimer timeoutTimer; // 0x10 bytes
+	/*bp-0x14*/  const /*packed*/ class SoundQueue& soundQueueReference;
 
 // LINE 429:
 	soundQueueReference = this;

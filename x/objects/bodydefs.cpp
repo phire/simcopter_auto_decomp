@@ -464,7 +464,7 @@ public:
 // Contribution: 1:0015c950-0015d654 Module: 192, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0055d950
 void SwizzlePrivAnimPartInfo(void * __ptr32 val, long size) {
-	/*unpacked*/ struct PrivAnimPartInfo *pinfo;
+	/*bp-0x4*/   /*unpacked*/ struct PrivAnimPartInfo *pinfo;
 
 // LINE 111:
 	__asm        cmp    size, 8;
@@ -485,7 +485,7 @@ _T2c:
 
 // FUNCTION: COPTER_D 0x0055d98c
 /*unpacked*/ struct TinyXZY DXZY_2_TinyXZY(/*unpacked*/ struct DXZY dxzy) {
-	/*unpacked*/ struct TinyXZY txzy;
+	/*bp-0x4*/   /*unpacked*/ struct TinyXZY txzy;
 
 // LINE 130:
 	__asm        mov    eax, dxzy.x;
@@ -513,7 +513,7 @@ _T2c:
 
 // FUNCTION: COPTER_D 0x0055d9cf
 /*unpacked*/ struct DXZY TinyXZY_2_DXZY(/*unpacked*/ struct TinyXZY txzy) {
-	/*unpacked*/ struct DXZY dxzy;
+	/*bp-0x10*/  /*unpacked*/ struct DXZY dxzy; // 0x10 bytes
 
 // LINE 139:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(txzy.x);
@@ -590,7 +590,7 @@ _T4a:
 
 // FUNCTION: COPTER_D 0x0055daa7
 void SwizzlePoint(void * __ptr32 val, long size) {
-	/*unpacked*/ struct Point *pt;
+	/*bp-0x4*/   /*unpacked*/ struct Point *pt;
 
 // LINE 167:
 	__asm        cmp    size, 4;
@@ -622,8 +622,8 @@ _T2f:
 
 // FUNCTION: COPTER_D 0x0055db01
 void InitBodiesAndAnimations() {
-	char animpath[260];
-	unsigned char privname[256];
+	/*bp-0x10c*/ unsigned char privname[256]; // 0x100 bytes
+	/*bp-0x210*/ char animpath[260]; // 0x104 bytes
 
 	// Function registers exception cleanup function at 0x0055e286
 // LINE 199:

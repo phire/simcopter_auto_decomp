@@ -1047,10 +1047,10 @@ _T240:
 
 // FUNCTION: COPTER_D 0x00472611
 int32_t HangarWindow::Initialize() {
-	/*packed*/ class ButtonWindow *tempButtonWindow;
-	char * szButtonFileName;
-	/*packed*/ class basic_string<char> sText;
-	int32_t nFullStringID;
+	/*bp-0x4*/   int32_t nFullStringID;
+	/*bp-0xc*/   /*packed*/ class basic_string<char> sText; // 0x8 bytes
+	/*bp-0x10*/  char * szButtonFileName;
+	/*bp-0x14*/  /*packed*/ class ButtonWindow *tempButtonWindow;
 
 // LINE 76:
 	__asm        push   0x10;
@@ -2027,7 +2027,7 @@ _T63:
 
 // FUNCTION: COPTER_D 0x00473296
 int32_t HangarWindow::ComposeSelf() {
-	long lHelpID;
+	/*bp-0x4*/   long lHelpID;
 
 // LINE 156:
 	__asm        mov    eax, this;
@@ -2225,7 +2225,7 @@ _T252:
 
 // FUNCTION: COPTER_D 0x004734ed
 int32_t HangarWindow::DoMessage(/*unpacked*/ class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
-	long lOwnerMessage;
+	/*bp-0x4*/   long lOwnerMessage;
 
 // LINE 186:
 	__asm        cmp    lWindowID, 0;
@@ -2354,7 +2354,7 @@ _T54:
 
 // FUNCTION: COPTER_D 0x0047363c
 long HangarWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
-	long lHotspotID;
+	/*bp-0x4*/   long lHotspotID;
 
 // LINE 236:
 	__asm        jmp    near ptr 0x0047364D;
@@ -2776,8 +2776,8 @@ _T30b:
 
 // FUNCTION: COPTER_D 0x00473b5c
 int32_t HangarWindow::GetHotspotFromPosition(long& lHelpID, /*packed*/ class MPoint& ptPosition) {
-	/*packed*/ class list<HotSpot>::iterator iterator;
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
+	/*bp-0x8*/   /*packed*/ class list<HotSpot>::iterator iterator;
 
 // LINE 293:
 	i = 0x0;
@@ -2875,8 +2875,8 @@ _T109:
 
 // FUNCTION: COPTER_D 0x00473c6c
 void HangarWindow::ScrollHangarView(long lDistance) {
-	long lHangarGraphicWidth;
-	long lHangarWindowWidth;
+	/*bp-0x4*/   long lHangarWindowWidth;
+	/*bp-0x8*/   long lHangarGraphicWidth;
 
 // LINE 314:
 	__asm        jmp    near ptr 0x00473C7D;
@@ -2987,8 +2987,8 @@ _T15c:
 
 // FUNCTION: COPTER_D 0x00473de1
 int32_t HangarWindow::IsHangarRectVisibleInWindow(/*packed*/ class MRect& rectHangar) {
-	/*packed*/ class MRect rectCompare;
-	/*packed*/ class MRect rectWindowLocal;
+	/*bp-0x10*/  /*packed*/ class MRect rectWindowLocal; // 0x10 bytes
+	/*bp-0x20*/  /*packed*/ class MRect rectCompare; // 0x10 bytes
 
 // LINE 367:
 	__asm        mov    eax, rectHangar;
@@ -3118,9 +3118,9 @@ _T82:
 
 // FUNCTION: COPTER_D 0x00473f53
 void HangarWindow::DisplayHelp(int32_t nHelp, /*packed*/ class MPoint& ptHelp) {
-	/*packed*/ class MRect rectTempChildWindow;
-	/*packed*/ class basic_string<char> sHelp;
-	int32_t nFullStringID;
+	/*bp-0x4*/   int32_t nFullStringID;
+	/*bp-0xc*/   /*packed*/ class basic_string<char> sHelp; // 0x8 bytes
+	/*bp-0x1c*/  /*packed*/ class MRect rectTempChildWindow; // 0x10 bytes
 
 // LINE 440:
 	__asm        push   0x10;

@@ -201,7 +201,7 @@ _T97:
 
 // FUNCTION: COPTER_D 0x00495be3
 int  CGameApp::S3PreRender() {
-	/*packed*/ struct SparkalRect rectFill;
+	/*bp-0x10*/  /*packed*/ struct SparkalRect rectFill; // 0x10 bytes
 
 // LINE 93:
 	__asm        jmp    near ptr 0x00495BF4;
@@ -518,12 +518,12 @@ _Tc3:
 
 // FUNCTION: COPTER_D 0x00495fc4
 void  CGameApp::DrawCrosshairs(/*packed*/ class CBackBuffer *bufferToDrawTo) {
-	char * pBufferStart;
-	int32_t nMidXPosition;
-	int32_t nMidYPosition;
-	int32_t i;
-	int32_t nSurfaceStride;
-	char * pBufferCurrentPosition;
+	/*bp-0x4*/   char * pBufferCurrentPosition;
+	/*bp-0x8*/   int32_t nSurfaceStride;
+	/*bp-0xc*/   int32_t i;
+	/*bp-0x10*/  int32_t nMidYPosition;
+	/*bp-0x14*/  int32_t nMidXPosition;
+	/*bp-0x18*/  char * pBufferStart;
 
 // LINE 235:
 	__asm        cmp    G_camera_mode, 0;
@@ -618,10 +618,10 @@ _Tf5:
 
 // FUNCTION: COPTER_D 0x004960c5
 void  CGameApp::S3ShowInfo() {
-	long nTextBottom;
-	long nTextTop;
-	char szBuffer1[256];
-	long nTextLeft;
+	/*bp-0x4*/   long nTextLeft;
+	/*bp-0x104*/ char szBuffer1[256]; // 0x100 bytes
+	/*bp-0x108*/ long nTextTop;
+	/*bp-0x10c*/ long nTextBottom;
 
 // LINE 267:
 	nTextLeft = 0x0;
@@ -698,7 +698,7 @@ _T42:
 	__asm        jmp    _T292;
 // LINE 305:
 // Block start:
-	/*packed*/ struct MISSION_DATA *md;
+	/*bp-0x110*/ /*packed*/ struct MISSION_DATA *md;
 _T112:
 	__asm        mov    eax, GridProjectEnd;
 	__asm        sub    eax, NextProject;

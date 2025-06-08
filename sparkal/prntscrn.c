@@ -69,8 +69,8 @@ struct _iobuf{ // packed(0x20 bytes) TI: 0x2278
 // Contribution: 1:0006a870-0006ac9e Module: 41, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0046b870
 void S3PrintScreen() {
-	char * chPalette;
-	char fname[260];
+	/*bp-0x104*/ char fname[260]; // 0x104 bytes
+	/*bp-0x108*/ char * chPalette;
 
 // LINE 56:
 	__asm        mov    eax, G_respal;
@@ -101,12 +101,12 @@ void S3PrintScreen() {
 
 // FUNCTION: COPTER_D 0x0046b8db
 void S3BufferPrint(char * fname, char * chPalette) {
-	/*packed*/ struct _iobuf *hFileOut;
-	int32_t ydim;
-	int32_t pitch;
-	int32_t xdim;
-	int32_t y;
-	char * ptr;
+	/*bp-0x4*/   char * ptr;
+	/*bp-0x8*/   int32_t y;
+	/*bp-0xc*/   int32_t xdim;
+	/*bp-0x10*/  int32_t pitch;
+	/*bp-0x14*/  int32_t ydim;
+	/*bp-0x18*/  /*packed*/ struct _iobuf *hFileOut;
 
 // LINE 74:
 	__asm        cmp    G_video_mode, 0x10;
@@ -265,9 +265,9 @@ _T1e3:
 
 // FUNCTION: COPTER_D 0x0046bac3
 int32_t S3WritePCXLine(/*packed*/ struct _iobuf *fp, char * p, unsigned short n) {
-	unsigned short j;
-	unsigned short i;
-	unsigned short t;
+	/*bp-0x4*/   unsigned short t;
+	/*bp-0x8*/   unsigned short i;
+	/*bp-0xc*/   unsigned short j;
 
 // LINE 137:
 	__asm        mov    i, 0;

@@ -572,9 +572,9 @@ void AmbulanceClass::~AmbulanceClass() {
 
 // FUNCTION: COPTER_D 0x0053592b
 /*packed*/ class AmbulanceClass* AmbulanceClass::CreateInstance(int32_t instanceID) {
-	int32_t object;
-	/*packed*/ class AmbulanceClass *youveWonABrandNewCar;
-	char * objectMemory;
+	/*bp-0x4*/   char * objectMemory;
+	/*bp-0x8*/   /*packed*/ class AmbulanceClass *youveWonABrandNewCar;
+	/*bp-0xc*/   int32_t object;
 
 // LINE 113:
 	__asm        push   0x2A0;
@@ -603,7 +603,7 @@ _T3a:
 	__asm        je     _T1b6;
 // LINE 123:
 // Block start:
-	/*packed*/ struct VRObjInfo oinfo;
+	/*bp-0x30*/  /*packed*/ struct VRObjInfo oinfo; // 0x24 bytes
 	__asm        push   0x121;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -830,8 +830,8 @@ _Ta2:
 
 // FUNCTION: COPTER_D 0x00535c21
 void AmbulanceClass::ItterateFSM() {
-	/*packed*/ struct Point3d vec;
-	int32_t dist;
+	/*bp-0x4*/   int32_t dist;
+	/*bp-0x10*/  /*packed*/ struct Point3d vec; // 0xc bytes
 
 // LINE 292:
 	__asm        mov    eax, this;

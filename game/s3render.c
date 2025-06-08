@@ -84,15 +84,15 @@ struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
 // Contribution: 1:000e9c40-000eabb1 Module: 179, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004eac40
 int32_t VRAppInit() {
-	int32_t obj;
-	int32_t j;
-	long mem2d;
-	int32_t i;
-	long memxf;
-	long maxval;
-	int32_t instanceID;
-	int32_t totalVehicles;
-	char szFilePath[260];
+	/*bp-0x104*/ char szFilePath[260]; // 0x104 bytes
+	/*bp-0x108*/ int32_t totalVehicles;
+	/*bp-0x10c*/ int32_t instanceID;
+	/*bp-0x110*/ long maxval;
+	/*bp-0x114*/ long memxf;
+	/*bp-0x118*/ int32_t i;
+	/*bp-0x11c*/ long mem2d;
+	/*bp-0x120*/ int32_t j;
+	/*bp-0x124*/ int32_t obj;
 
 // LINE 175:
 	G_InitializationProgress = 0x1;
@@ -825,9 +825,9 @@ _T944:
 
 // FUNCTION: COPTER_D 0x004eb5ca
 int32_t VRAppCityInit(int32_t reload) {
-	/*packed*/ struct tagUserPersonalInfo *up;
-	long i;
-	/*packed*/ struct Point2d *pad;
+	/*bp-0x4*/   /*packed*/ struct Point2d *pad;
+	/*bp-0x8*/   long i;
+	/*bp-0xc*/   /*packed*/ struct tagUserPersonalInfo *up;
 
 // LINE 553:
 	__asm        cmp    reload, 1;

@@ -478,8 +478,8 @@ void SoundSystem::~SoundSystem() {
 
 // FUNCTION: COPTER_D 0x0042e009
 int32_t SoundSystem::Initialize(void * __ptr32 hWindow) {
-	long hResult;
-	int32_t bReturnValue;
+	/*bp-0x4*/   int32_t bReturnValue;
+	/*bp-0x8*/   long hResult;
 
 // LINE 122:
 	bReturnValue = 0x1;
@@ -790,7 +790,7 @@ int32_t SoundSystem::SetVolume(long lNewVolume) {
 
 // FUNCTION: COPTER_D 0x0042e3a1
 void SoundManager::SoundManager() {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 
 	this-><vftable> = 0x58f448;
@@ -827,7 +827,7 @@ void SoundManager::~SoundManager() {
 
 // FUNCTION: COPTER_D 0x0042e419
 void SoundManager::DeleteAllSounds() {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 // LINE 297:
 	__asm        mov    i, 0;
@@ -895,7 +895,7 @@ _T4b:
 
 // FUNCTION: COPTER_D 0x0042e4e2
 void SoundManager::AddDigitalSound(long lResID, int32_t nIndex) {
-	/*packed*/ class DigitalSound *newDigitalSound;
+	/*bp-0x4*/   /*packed*/ class DigitalSound *newDigitalSound;
 
 // LINE 341:
 	__asm        push   0x7A;
@@ -947,7 +947,7 @@ _T7d:
 
 // FUNCTION: COPTER_D 0x0042e578
 void SoundManager::AddDigitalSound(const /*packed*/ class basic_string<char>& sNewSoundFile, int32_t nIndex, int32_t nStreamingType) {
-	/*packed*/ class DigitalSound *newDigitalSound;
+	/*bp-0x4*/   /*packed*/ class DigitalSound *newDigitalSound;
 
 // LINE 348:
 	__asm        push   0x7A;
@@ -1051,7 +1051,7 @@ _T36:
 
 // FUNCTION: COPTER_D 0x0042e6a5
 void SoundManager::StopAllSounds() {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 // LINE 394:
 	__asm        mov    i, 0;
@@ -1790,7 +1790,7 @@ unsigned long Sound::GetTotalMemoryUsage() {
 
 // FUNCTION: COPTER_D 0x0042ef87
 void DigitalSound::DigitalSound() {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 
 	__asm        mov    ecx, this;
@@ -1829,7 +1829,7 @@ _T7b:
 
 // FUNCTION: COPTER_D 0x0042f00f
 void DigitalSound::DigitalSound(const /*packed*/ class basic_string<char>& sNewSoundFile, int32_t nNewStreamingType) {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 
 	__asm        mov    ecx, this;
@@ -2369,16 +2369,16 @@ int32_t DigitalSound::LoadFromResource() {
 
 // FUNCTION: COPTER_D 0x0042f682
 int32_t DigitalSound::LoadFromFile() {
-	long hResult;
-	uint32_t cbActualRead;
-	unsigned char * pbBufferData;
-	unsigned long dwBufferLength2;
-	unsigned char * pbBufferData2;
-	int32_t bReturnValue;
-	void * __ptr32 hmmioIn;
-	/*packed*/ struct _MMCKINFO ckInRiff;
-	/*packed*/ struct _MMCKINFO ckIn;
-	unsigned long dwBufferLength;
+	/*bp-0x4*/   unsigned long dwBufferLength;
+	/*bp-0x18*/  /*packed*/ struct _MMCKINFO ckIn; // 0x14 bytes
+	/*bp-0x2c*/  /*packed*/ struct _MMCKINFO ckInRiff; // 0x14 bytes
+	/*bp-0x30*/  void * __ptr32 hmmioIn;
+	/*bp-0x34*/  int32_t bReturnValue;
+	/*bp-0x38*/  unsigned char * pbBufferData2;
+	/*bp-0x3c*/  unsigned long dwBufferLength2;
+	/*bp-0x40*/  unsigned char * pbBufferData;
+	/*bp-0x44*/  uint32_t cbActualRead;
+	/*bp-0x48*/  long hResult;
 
 // LINE 735:
 	bReturnValue = 0x1;
@@ -2681,7 +2681,7 @@ _T302:
 
 // FUNCTION: COPTER_D 0x0042f989
 int32_t DigitalSound::CreatePrimarySoundBuffer() {
-	/*packed*/ struct _DSBUFFERDESC dsBufferDescription;
+	/*bp-0x14*/  /*packed*/ struct _DSBUFFERDESC dsBufferDescription; // 0x14 bytes
 
 // LINE 843:
 	__asm        push   0x14;
@@ -2711,8 +2711,8 @@ int32_t DigitalSound::CreatePrimarySoundBuffer() {
 
 // FUNCTION: COPTER_D 0x0042f9da
 int32_t DigitalSound::CreateSoundBuffer(/*packed*/ struct _DSBUFFERDESC *dsNewBufferDescription) {
-	long hResult;
-	/*packed*/ struct _DSBUFFERDESC dsBufferDescription;
+	/*bp-0x14*/  /*packed*/ struct _DSBUFFERDESC dsBufferDescription; // 0x14 bytes
+	/*bp-0x18*/  long hResult;
 
 // LINE 881:
 	__asm        cmp    DigitalSound::lpDirectSound, 0;
@@ -2838,7 +2838,7 @@ _T149:
 
 // FUNCTION: COPTER_D 0x0042fb2a
 int32_t DigitalSound::ReleaseSoundBuffer() {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 // LINE 939:
 	i = 0x0;
@@ -2887,7 +2887,7 @@ _T7c:
 
 // FUNCTION: COPTER_D 0x0042fbb5
 int32_t DigitalSound::GetPan(long * lPan) {
-	long hResult;
+	/*bp-0x4*/   long hResult;
 
 // LINE 980:
 	__asm        mov    eax, this;
@@ -2928,7 +2928,7 @@ _T65:
 
 // FUNCTION: COPTER_D 0x0042fc21
 int32_t DigitalSound::SetPan(long lNewPan) {
-	long hResult;
+	/*bp-0x4*/   long hResult;
 
 // LINE 1009:
 	__asm        mov    eax, this;
@@ -2981,7 +2981,7 @@ _T8d:
 
 // FUNCTION: COPTER_D 0x0042fcb5
 int32_t DigitalSound::GetFrequency(long * lFrequency) {
-	long hResult;
+	/*bp-0x4*/   long hResult;
 
 // LINE 1041:
 	__asm        mov    eax, this;
@@ -3022,7 +3022,7 @@ _T65:
 
 // FUNCTION: COPTER_D 0x0042fd21
 int32_t DigitalSound::SetFrequency(long lNewFrequency) {
-	long hResult;
+	/*bp-0x4*/   long hResult;
 
 // LINE 1067:
 	__asm        mov    eax, this;
@@ -3075,7 +3075,7 @@ _T8a:
 
 // FUNCTION: COPTER_D 0x0042fdb2
 int32_t DigitalSound::GetVolume(long * lVolume) {
-	long hResult;
+	/*bp-0x4*/   long hResult;
 
 // LINE 1099:
 	__asm        mov    eax, this;
@@ -3123,7 +3123,7 @@ _T75:
 
 // FUNCTION: COPTER_D 0x0042fe2e
 int32_t DigitalSound::SetVolume(long lNewVolume) {
-	long hResult;
+	/*bp-0x4*/   long hResult;
 
 // LINE 1128:
 	this->lVolume = lNewVolume;
@@ -3172,8 +3172,8 @@ _T7c:
 
 // FUNCTION: COPTER_D 0x0042feb1
 int32_t DigitalSound::SetPosition(long lX, long lY, long lZ) {
-	long lNewVolume;
-	long lDistance;
+	/*bp-0x4*/   long lDistance;
+	/*bp-0x8*/   long lNewVolume;
 
 // LINE 1171:
 	__asm        mov    eax, lZ;
@@ -3253,9 +3253,9 @@ long DigitalSound::IsPlaying() {
 
 // FUNCTION: COPTER_D 0x0042ff90
 long DigitalSound::IsPlaying(/*packed*/ struct IDirectSoundBuffer **lplpSoundPlaying) {
-	long hResult;
-	int32_t i;
-	unsigned long dwStatus;
+	/*bp-0x4*/   unsigned long dwStatus;
+	/*bp-0x8*/   int32_t i;
+	/*bp-0xc*/   long hResult;
 
 // LINE 1230:
 	__asm        mov    i, 0;
@@ -3333,9 +3333,9 @@ _Tc3:
 
 // FUNCTION: COPTER_D 0x0043005a
 long DigitalSound::Play(long bPlayLooping, int32_t nDuplicateType) {
-	long hResult;
-	unsigned long dwLooped;
-	/*packed*/ struct IDirectSoundBuffer *lpSoundBufferToPlay;
+	/*bp-0x4*/   /*packed*/ struct IDirectSoundBuffer *lpSoundBufferToPlay;
+	/*bp-0x8*/   unsigned long dwLooped;
+	/*bp-0xc*/   long hResult;
 
 // LINE 1271:
 	dwLooped = 0x0;
@@ -3579,9 +3579,9 @@ _T298:
 
 // FUNCTION: COPTER_D 0x004302f9
 int32_t DigitalSound::GetSoundAliasToPlay(/*packed*/ struct IDirectSoundBuffer **lplpSoundBufferToPlay) {
-	long hResult;
-	int32_t i;
-	unsigned long dwStatus;
+	/*bp-0x4*/   unsigned long dwStatus;
+	/*bp-0x8*/   int32_t i;
+	/*bp-0xc*/   long hResult;
 
 // LINE 1373:
 	__asm        mov    i, 0;
@@ -3688,8 +3688,8 @@ _T11b:
 
 // FUNCTION: COPTER_D 0x0043041b
 long DigitalSound::Stop() {
-	int32_t i;
-	int32_t bWasPlaying;
+	/*bp-0x4*/   int32_t bWasPlaying;
+	/*bp-0x8*/   int32_t i;
 
 // LINE 1414:
 	__asm        mov    eax, this;
@@ -3768,9 +3768,9 @@ _Tcc:
 
 // FUNCTION: COPTER_D 0x004304ec
 long DigitalSound::ShouldWeStream() {
-	int32_t hFile;
-	/*packed*/ struct _OFSTRUCT ofStruct;
-	unsigned long dwFileSize;
+	/*bp-0x4*/   unsigned long dwFileSize;
+	/*bp-0x8c*/  /*packed*/ struct _OFSTRUCT ofStruct; // 0x88 bytes
+	/*bp-0x90*/  int32_t hFile;
 
 // LINE 1452:
 	__asm        mov    eax, this;
@@ -3906,8 +3906,8 @@ _T1d9:
 
 // FUNCTION: COPTER_D 0x004306ca
 long DigitalSound::InitializeStreamBuffer(long bStopIfCurrentlyPlaying) {
-	long hResult;
-	/*packed*/ struct _DSBUFFERDESC dsBufferDescription;
+	/*bp-0x14*/  /*packed*/ struct _DSBUFFERDESC dsBufferDescription; // 0x14 bytes
+	/*bp-0x18*/  long hResult;
 
 // LINE 1491:
 	__asm        mov    eax, this;
@@ -4220,14 +4220,14 @@ _T3a3:
 
 // FUNCTION: COPTER_D 0x00430a74
 long DigitalSound::PlayStream() {
-	long hResult;
-	unsigned long dwLength2;
-	unsigned char * lpWrite1;
-	unsigned char * lpWrite2;
-	unsigned long dwLength1;
-	uint32_t nActualBytesRead;
-	int32_t bStopIfCurrentlyPlaying;
-	uint32_t nError;
+	/*bp-0x4*/   uint32_t nError;
+	/*bp-0x8*/   int32_t bStopIfCurrentlyPlaying;
+	/*bp-0xc*/   uint32_t nActualBytesRead;
+	/*bp-0x10*/  unsigned long dwLength1;
+	/*bp-0x14*/  unsigned char * lpWrite2;
+	/*bp-0x18*/  unsigned char * lpWrite1;
+	/*bp-0x1c*/  unsigned long dwLength2;
+	/*bp-0x20*/  long hResult;
 
 // LINE 1589:
 	bStopIfCurrentlyPlaying = 0x0;
@@ -4502,7 +4502,7 @@ _T2c2:
 	__asm        je     _T34c;
 // LINE 1647:
 // Block start:
-	unsigned char * lpTemp;
+	/*bp-0x24*/  unsigned char * lpTemp;
 	lpTemp = lpWrite1;
 // LINE 1655:
 _T2e1:
@@ -4740,7 +4740,7 @@ _T53d:
 
 // FUNCTION: COPTER_D 0x00430fb6
 long DigitalSound::StopStream() {
-	uint32_t mmResult;
+	/*bp-0x4*/   uint32_t mmResult;
 
 // LINE 1750:
 	__asm        mov    eax, this;
@@ -4820,7 +4820,7 @@ _Tea:
 
 // FUNCTION: COPTER_D 0x004310a5
 void StreamingBufferTimerCallback(uint32_t __formal, uint32_t __formal, unsigned long dwUser, unsigned long __formal, unsigned long __formal) {
-	/*packed*/ class DigitalSound *digitalSoundObject;
+	/*bp-0x4*/   /*packed*/ class DigitalSound *digitalSoundObject;
 
 // LINE 1798:
 	digitalSoundObject = dwUser;
@@ -4835,15 +4835,15 @@ void StreamingBufferTimerCallback(uint32_t __formal, uint32_t __formal, unsigned
 
 // FUNCTION: COPTER_D 0x004310cb
 void DigitalSound::ProcessStreamingBufferTimerCallback() {
-	unsigned long dwLength2;
-	unsigned char * lpWrite1;
-	unsigned long dwPlay;
-	unsigned char * lpWrite2;
-	unsigned long dwLength1;
-	uint32_t nActualBytesRead;
-	unsigned long dwWrite;
-	int32_t nError;
-	unsigned char * lpTemp;
+	/*bp-0x4*/   unsigned char * lpTemp;
+	/*bp-0x8*/   int32_t nError;
+	/*bp-0xc*/   unsigned long dwWrite;
+	/*bp-0x10*/  uint32_t nActualBytesRead;
+	/*bp-0x14*/  unsigned long dwLength1;
+	/*bp-0x18*/  unsigned char * lpWrite2;
+	/*bp-0x1c*/  unsigned long dwPlay;
+	/*bp-0x20*/  unsigned char * lpWrite1;
+	/*bp-0x24*/  unsigned long dwLength2;
 
 // LINE 1813:
 	__asm        mov    eax, this;
@@ -5601,8 +5601,8 @@ _T31:
 
 // FUNCTION: COPTER_D 0x0043188b
 long DigitalSound::EstimateRemainingPlayTime() {
-	unsigned long dwPlay;
-	unsigned long dwWrite;
+	/*bp-0x4*/   unsigned long dwWrite;
+	/*bp-0x8*/   unsigned long dwPlay;
 
 // LINE 2075:
 	__asm        mov    eax, this;
@@ -5675,7 +5675,7 @@ _Tb7:
 
 // FUNCTION: COPTER_D 0x00431947
 void CompletionEstimationTimerCallback(uint32_t nTimerID, uint32_t __formal, unsigned long dwUser, unsigned long __formal, unsigned long __formal) {
-	/*packed*/ class DigitalSound *digitalSoundObject;
+	/*bp-0x4*/   /*packed*/ class DigitalSound *digitalSoundObject;
 
 // LINE 2107:
 	digitalSoundObject = dwUser;
@@ -5731,7 +5731,7 @@ _T70:
 
 // FUNCTION: COPTER_D 0x004319e5
 int32_t DigitalSound::StartCompletionNotificationEstimationTimer() {
-	long lRemainingPlayTime;
+	/*bp-0x4*/   long lRemainingPlayTime;
 
 // LINE 2138:
 	__asm        mov    eax, this;

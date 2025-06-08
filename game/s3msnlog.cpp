@@ -1112,8 +1112,8 @@ _T1f6:
 
 // FUNCTION: COPTER_D 0x004ec0ed
 int32_t LogManager::ReadLogFromFile(char * szFilePath) {
-	int32_t nReturnValue;
-	/*packed*/ class MIFF tempMIFF;
+	/*bp-0x148*/ /*packed*/ class MIFF tempMIFF; // 0x148 bytes
+	/*bp-0x14c*/ int32_t nReturnValue;
 
 // LINE 67:
 	__asm        mov    eax, szFilePath;
@@ -1144,8 +1144,8 @@ int32_t LogManager::ReadLogFromFile(char * szFilePath) {
 
 // FUNCTION: COPTER_D 0x004ec165
 int32_t LogManager::WriteLogToFile(char * szFilePath) {
-	int32_t nReturnValue;
-	/*packed*/ class MIFF tempMIFF;
+	/*bp-0x148*/ /*packed*/ class MIFF tempMIFF; // 0x148 bytes
+	/*bp-0x14c*/ int32_t nReturnValue;
 
 // LINE 82:
 	__asm        mov    eax, szFilePath;
@@ -1176,8 +1176,8 @@ int32_t LogManager::WriteLogToFile(char * szFilePath) {
 
 // FUNCTION: COPTER_D 0x004ec1dd
 int32_t LogManager::ReadFromMIFF(/*packed*/ class MIFF *miffReader) {
-	/*packed*/ struct tagLogBase tempLogBase;
-	long lPresentRecordDataLength;
+	/*bp-0x4*/   long lPresentRecordDataLength;
+	/*bp-0x10*/  /*packed*/ struct tagLogBase tempLogBase; // 0xc bytes
 
 // LINE 103:
 	__asm        mov    eax, miffReader;
@@ -1245,7 +1245,7 @@ _T96:
 
 // FUNCTION: COPTER_D 0x004ec284
 int32_t LogManager::WriteToMIFF(/*packed*/ class MIFF *miffWriter) {
-	/*packed*/ class list<tagLogBase *>::iterator iterator;
+	/*bp-0x4*/   /*packed*/ class list<tagLogBase *>::iterator iterator;
 
 
 	None = this->myLogBasePtrList;
@@ -1303,10 +1303,10 @@ _Tbc:
 	__asm        jne    _T183;
 // LINE 130:
 // Block start:
-	long lStringLength;
-	/*packed*/ struct tagLogString *tempLogStringDestination;
-	/*packed*/ struct tagLogString *tempLogStringSource;
-	char chStringBuffer[276];
+	/*bp-0x118*/ char chStringBuffer[276]; // 0x114 bytes
+	/*bp-0x11c*/ /*packed*/ struct tagLogString *tempLogStringSource;
+	/*bp-0x120*/ /*packed*/ struct tagLogString *tempLogStringDestination;
+	/*bp-0x124*/ long lStringLength;
 	__asm        jmp    near ptr 0x004EC359;
 
 	tempLogStringSource = iterator.node->data;
@@ -1535,8 +1535,8 @@ _T64:
 
 // FUNCTION: COPTER_D 0x004ec65b
 int32_t LogManager::ReadCurrentRecordFromMIFF(/*packed*/ class MIFF *miffReader) {
-	/*packed*/ struct tagLogBase tempLogBase;
-	char chBuffer[56];
+	/*bp-0x38*/  char chBuffer[56]; // 0x38 bytes
+	/*bp-0x44*/  /*packed*/ struct tagLogBase tempLogBase; // 0xc bytes
 
 // LINE 180:
 	__asm        push   0xC;
@@ -1551,8 +1551,8 @@ int32_t LogManager::ReadCurrentRecordFromMIFF(/*packed*/ class MIFF *miffReader)
 	__asm        jne    _T7d;
 // LINE 188:
 // Block start:
-	/*packed*/ struct tagLogString *tempLogString;
-	char chStringBuffer[276];
+	/*bp-0x158*/ char chStringBuffer[276]; // 0x114 bytes
+	/*bp-0x15c*/ /*packed*/ struct tagLogString *tempLogString;
 	__asm        push   0x114;
 	__asm        lea    eax, chStringBuffer[0];
 	__asm        push   eax;
@@ -1654,8 +1654,8 @@ _T5e:
 	__asm        jne    _T179;
 // LINE 227:
 // Block start:
-	/*packed*/ struct tagLogString *newLogString;
-	char * szNewStringPointer;
+	/*bp-0x4*/   char * szNewStringPointer;
+	/*bp-0x8*/   /*packed*/ struct tagLogString *newLogString;
 	__asm        push   0x14;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
@@ -1765,7 +1765,7 @@ _T179:
 	__asm        ja     _T24c;
 // LINE 236:
 // Block start:
-	/*packed*/ struct tagLogMissionEvent *newLogMissionEvent;
+	/*bp-0xc*/   /*packed*/ struct tagLogMissionEvent *newLogMissionEvent;
 	__asm        push   0x14;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
@@ -1838,7 +1838,7 @@ _T24c:
 	__asm        jne    _T32e;
 // LINE 241:
 // Block start:
-	/*packed*/ struct tagLogCityEnterExit *newLogCityEnterExit;
+	/*bp-0x10*/  /*packed*/ struct tagLogCityEnterExit *newLogCityEnterExit;
 	__asm        push   0x30;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
@@ -1907,7 +1907,7 @@ _T24c:
 	__asm        jmp    _T41f;
 // LINE 246:
 // Block start:
-	/*packed*/ struct tagLogBase *newLogBase;
+	/*bp-0x14*/  /*packed*/ struct tagLogBase *newLogBase;
 _T32e:
 	__asm        push   0xC;
 	__asm        call   operator new;
@@ -1983,7 +1983,7 @@ _T41f:
 	__asm        je     _T577;
 // LINE 252:
 // Block start:
-	/*packed*/ class basic_string<char> sCurrentText;
+	/*bp-0x1c*/  /*packed*/ class basic_string<char> sCurrentText; // 0x8 bytes
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
@@ -2079,9 +2079,9 @@ _T577:
 
 // FUNCTION: COPTER_D 0x004eccd1
 int32_t LogManager::SortLogEntriesByDate() {
-	/*packed*/ class list<tagLogBase *>::iterator currentLowest;
-	/*packed*/ class list<tagLogBase *>::iterator iterator;
-	/*packed*/ class list<tagLogBase *> *newLogBasePtrList;
+	/*bp-0x4*/   /*packed*/ class list<tagLogBase *> *newLogBasePtrList;
+	/*bp-0x8*/   /*packed*/ class list<tagLogBase *>::iterator iterator;
+	/*bp-0xc*/   /*packed*/ class list<tagLogBase *>::iterator currentLowest;
 
 // LINE 266:
 	__asm        push   8;
@@ -2485,9 +2485,9 @@ _T512:
 
 // FUNCTION: COPTER_D 0x004ed1fd
 int32_t LogManager::SortLogEntriesByType() {
-	/*packed*/ class list<tagLogBase *>::iterator currentLowest;
-	/*packed*/ class list<tagLogBase *>::iterator iterator;
-	/*packed*/ class list<tagLogBase *> *newLogBasePtrList;
+	/*bp-0x4*/   /*packed*/ class list<tagLogBase *> *newLogBasePtrList;
+	/*bp-0x8*/   /*packed*/ class list<tagLogBase *>::iterator iterator;
+	/*bp-0xc*/   /*packed*/ class list<tagLogBase *>::iterator currentLowest;
 
 // LINE 292:
 	__asm        push   8;
@@ -2891,7 +2891,7 @@ _T512:
 
 // FUNCTION: COPTER_D 0x004ed729
 int32_t LogManager::PurgeAllEntries() {
-	/*packed*/ class list<tagLogBase *>::iterator iterator;
+	/*bp-0x4*/   /*packed*/ class list<tagLogBase *>::iterator iterator;
 
 
 	None = this->myLogBasePtrList;
@@ -3090,8 +3090,8 @@ _T20a:
 
 // FUNCTION: COPTER_D 0x004ed947
 int32_t LogManager::PurgeNEntries(long lEntryCountToPurge) {
-	/*packed*/ class list<tagLogBase *>::iterator iterator;
-	long i;
+	/*bp-0x4*/   long i;
+	/*bp-0x8*/   /*packed*/ class list<tagLogBase *>::iterator iterator;
 
 
 	None = this->myLogBasePtrList;
@@ -3280,11 +3280,11 @@ _T1f1:
 
 // FUNCTION: COPTER_D 0x004edb4e
 void LogManager::MakeStringFromLogData(/*packed*/ struct tagLogBase *logData, /*packed*/ class basic_string<char>& sCurrentText, int32_t bPrintTime) {
-	/*packed*/ class MTimeLocalized tempTime;
-	char szBuffer1[256];
-	char szTime[64];
-	int32_t nFullStringID;
-	char szBuffer[256];
+	/*bp-0x100*/ char szBuffer[256]; // 0x100 bytes
+	/*bp-0x104*/ int32_t nFullStringID;
+	/*bp-0x144*/ char szTime[64]; // 0x40 bytes
+	/*bp-0x244*/ char szBuffer1[256]; // 0x100 bytes
+	/*bp-0x254*/ /*packed*/ class MTimeLocalized tempTime; // 0x10 bytes
 
 // LINE 366:
 	__asm        mov    al, ds:[0x5B4878];
@@ -3551,7 +3551,7 @@ _T39f:
 	__asm        jne    _T3fb;
 // LINE 381:
 // Block start:
-	const /*packed*/ struct tagLogString *lS;
+	/*bp-0x258*/ const /*packed*/ struct tagLogString *lS;
 	__asm        mov    eax, logData;
 	__asm        mov    lS, eax;
 	__asm        mov    eax, lS;
@@ -3587,7 +3587,7 @@ _T3fb:
 	__asm        ja     _T4ed;
 // LINE 386:
 // Block start:
-	const /*packed*/ struct tagLogMissionEvent *lME;
+	/*bp-0x25c*/ const /*packed*/ struct tagLogMissionEvent *lME;
 	lME = logData;
 // LINE 387:
 	__asm        mov    eax, lME;
@@ -3660,7 +3660,7 @@ _T4ed:
 	__asm        jne    _T606;
 // LINE 392:
 // Block start:
-	const /*packed*/ struct tagLogCityEnterExit *lCEE;
+	/*bp-0x260*/ const /*packed*/ struct tagLogCityEnterExit *lCEE;
 	lCEE = logData;
 // LINE 393:
 	__asm        mov    eax, lCEE;

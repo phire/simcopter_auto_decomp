@@ -27,8 +27,8 @@ struct Rect{ // not packed(0x8 bytes) TI: 0x3463
 // Contribution: 1:00165850-00165a00 Module: 183, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00566850
 void Swizzle16(void * __ptr32 val) {
-	char hiWord[8];
-	char loWord[8];
+	/*bp-0x8*/   char loWord[8]; // 0x8 bytes
+	/*bp-0x10*/  char hiWord[8]; // 0x8 bytes
 
 // LINE 12:
 	__asm        mov    eax, val;
@@ -62,8 +62,8 @@ void Swizzle16(void * __ptr32 val) {
 
 // FUNCTION: COPTER_D 0x0056689d
 void Swizzle8(void * __ptr32 val) {
-	long hiWord;
-	long loWord;
+	/*bp-0x4*/   long loWord;
+	/*bp-0x8*/   long hiWord;
 
 // LINE 24:
 	__asm        mov    eax, val;
@@ -108,8 +108,8 @@ void SwizzleFloat(void * __ptr32 val) {
 
 // FUNCTION: COPTER_D 0x00566906
 void Swizzle4(void * __ptr32 val) {
-	short hiWord;
-	short loWord;
+	/*bp-0x4*/   short loWord;
+	/*bp-0x8*/   short hiWord;
 
 // LINE 41:
 	__asm        mov    eax, val;
@@ -143,8 +143,8 @@ void Swizzle4(void * __ptr32 val) {
 
 // FUNCTION: COPTER_D 0x0056695b
 void Swizzle2(void * __ptr32 val) {
-	char hiByte;
-	char loByte;
+	/*bp-0x4*/   char loByte;
+	/*bp-0x8*/   char hiByte;
 
 // LINE 53:
 	__asm        mov    eax, val;
@@ -168,7 +168,7 @@ void Swizzle2(void * __ptr32 val) {
 
 // FUNCTION: COPTER_D 0x00566990
 void SwizzleRect(/*unpacked*/ struct Rect *rect) {
-	short * pShort;
+	/*bp-0x4*/   short * pShort;
 
 // LINE 64:
 	pShort = rect;

@@ -60,7 +60,7 @@ int32_t GetAllDisplayModes() {
 
 // FUNCTION: COPTER_D 0x0048b140
 int32_t IsModeAvailable(long lWidth, long lHeight, long lBPP) {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 // LINE 62:
 	__asm        mov    i, 0;
@@ -105,9 +105,9 @@ _T7f:
 
 // FUNCTION: COPTER_D 0x0048b1c4
 void GetCurrentScreenMode(/*packed*/ struct tagMode *modeCurrent, int32_t __formal) {
-	void * __ptr32 hdcScreen;
-	int32_t nPlanes;
-	int32_t nBitsPerPixel;
+	/*bp-0x4*/   int32_t nBitsPerPixel;
+	/*bp-0x8*/   int32_t nPlanes;
+	/*bp-0xc*/   void * __ptr32 hdcScreen;
 
 // LINE 84:
 	__asm        push   0;

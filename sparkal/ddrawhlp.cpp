@@ -106,7 +106,7 @@ struct ReadPalFile::__unnamed{ // packed(0x418 bytes) TI: 0x2bdc
 // Contribution: 1:0001e500-0001e869 Module: 74, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0041f500
 long DDEnable() {
-	long hResult;
+	/*bp-0x4*/   long hResult;
 
 // LINE 33:
 	__asm        cmp    lpDD, 0;
@@ -192,11 +192,11 @@ _T47:
 
 // FUNCTION: COPTER_D 0x0041f5f1
 unsigned long DDColorMatch(/*packed*/ struct IDirectDrawSurface *pdds, unsigned long rgb) {
-	unsigned long rgbT;
-	unsigned long dw;
-	void * __ptr32 hdc;
-	long hres;
-	/*packed*/ struct _DDSURFACEDESC ddsd;
+	/*bp-0x6c*/  /*packed*/ struct _DDSURFACEDESC ddsd; // 0x6c bytes
+	/*bp-0x70*/  long hres;
+	/*bp-0x74*/  void * __ptr32 hdc;
+	/*bp-0x78*/  unsigned long dw;
+	/*bp-0x7c*/  unsigned long rgbT;
 
 // LINE 87:
 	dw = 0xffffffff;
@@ -304,11 +304,11 @@ _Te6:
 
 // FUNCTION: COPTER_D 0x0041f6e4
 /*packed*/ struct IDirectDrawPalette* ReadPalFile(char * fname) {
-	/*packed*/ struct ReadPalFile::__unnamed pal;
-	long ddrval;
-	int32_t i;
-	int32_t fh;
-	/*packed*/ struct IDirectDrawPalette *ppal;
+	/*bp-0x4*/   /*packed*/ struct IDirectDrawPalette *ppal;
+	/*bp-0x8*/   int32_t fh;
+	/*bp-0xc*/   int32_t i;
+	/*bp-0x10*/  long ddrval;
+	/*bp-0x428*/ /*packed*/ struct ReadPalFile::__unnamed pal; // 0x418 bytes
 
 // LINE 143:
 	pal.dwRiff = 0x0;

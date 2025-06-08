@@ -572,9 +572,9 @@ void FireEngineClass::~FireEngineClass() {
 
 // FUNCTION: COPTER_D 0x0053618b
 /*packed*/ class FireEngineClass* FireEngineClass::CreateInstance(int32_t instanceID) {
-	int32_t object;
-	/*packed*/ class FireEngineClass *youveWonABrandNewCar;
-	char * objectMemory;
+	/*bp-0x4*/   char * objectMemory;
+	/*bp-0x8*/   /*packed*/ class FireEngineClass *youveWonABrandNewCar;
+	/*bp-0xc*/   int32_t object;
 
 // LINE 117:
 	__asm        push   0x2C0;
@@ -603,7 +603,7 @@ _T3a:
 	__asm        je     _T1c3;
 // LINE 127:
 // Block start:
-	/*packed*/ struct VRObjInfo oinfo;
+	/*bp-0x30*/  /*packed*/ struct VRObjInfo oinfo; // 0x24 bytes
 	__asm        push   0x123;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -832,8 +832,8 @@ _Ta2:
 
 // FUNCTION: COPTER_D 0x0053648e
 void FireEngineClass::ItterateFSM() {
-	/*packed*/ struct Point3d vec;
-	int32_t dist;
+	/*bp-0x4*/   int32_t dist;
+	/*bp-0x10*/  /*packed*/ struct Point3d vec; // 0xc bytes
 
 // LINE 254:
 	__asm        mov    eax, this;
@@ -1078,8 +1078,8 @@ _T2e0:
 
 // FUNCTION: COPTER_D 0x00536778
 int32_t FireEngineClass::AtScene() {
-	/*packed*/ struct Point3d vec;
-	int32_t dist;
+	/*bp-0x4*/   int32_t dist;
+	/*bp-0x10*/  /*packed*/ struct Point3d vec; // 0xc bytes
 
 // LINE 358:
 	__asm        mov    eax, this;
@@ -1198,12 +1198,12 @@ _T150:
 
 // FUNCTION: COPTER_D 0x005368cd
 int32_t FireEngineClass::ScanForFire(/*packed*/ struct _GridCoordinates fireloc) {
-	/*packed*/ struct _CELL_INFO *cptr;
-	int32_t fires_found;
-	/*packed*/ struct _GridCoordinates dyfireloc;
-	/*packed*/ struct _STOBJ_INST *stobj;
-	/*packed*/ struct _DYOBJ_INST *dyobj;
-	/*packed*/ class SpiralScan spiral;
+	/*bp-0x10*/  /*packed*/ class SpiralScan spiral; // 0x10 bytes
+	/*bp-0x14*/  /*packed*/ struct _DYOBJ_INST *dyobj;
+	/*bp-0x18*/  /*packed*/ struct _STOBJ_INST *stobj;
+	/*bp-0x1c*/  /*packed*/ struct _GridCoordinates dyfireloc;
+	/*bp-0x20*/  int32_t fires_found;
+	/*bp-0x24*/  /*packed*/ struct _CELL_INFO *cptr;
 
 // LINE 424:
 	__asm        push   5;

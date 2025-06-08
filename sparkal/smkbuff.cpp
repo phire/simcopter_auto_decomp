@@ -569,8 +569,8 @@ void SmackerBuffer::ClearBuffer(int32_t nPaletteIndex) {
 
 // FUNCTION: COPTER_D 0x0049805b
 void SmackerBuffer::SetWindow(void * __ptr32 myNewWindow) {
-	/*packed*/ struct SparkalRect rectWindowSparkal;
-	/*packed*/ struct tagRECT rectWindow;
+	/*bp-0x10*/  /*packed*/ struct tagRECT rectWindow; // 0x10 bytes
+	/*bp-0x20*/  /*packed*/ struct SparkalRect rectWindowSparkal; // 0x10 bytes
 
 // LINE 229:
 	this->myWindow = myNewWindow;
@@ -615,8 +615,8 @@ void SmackerBuffer::SetWindow(/*unpacked*/ class CSparkalWindow *myNewWindow) {
 
 // FUNCTION: COPTER_D 0x004980df
 void SmackerBuffer::CenterBufferInRect(/*packed*/ struct SparkalRect *rectParent) {
-	int32_t nActualDestinationHeight;
-	int32_t nActualDestinationWidth;
+	/*bp-0x4*/   int32_t nActualDestinationWidth;
+	/*bp-0x8*/   int32_t nActualDestinationHeight;
 
 // LINE 272:
 	__asm        mov    eax, this;
@@ -680,10 +680,10 @@ _T54:
 
 // FUNCTION: COPTER_D 0x00498188
 int32_t SmackerBuffer::ComposeToWindow() {
-	void * __ptr32 dc;
-	/*packed*/ struct tagRECT rectFill;
-	unsigned long colorRefFill;
-	void * __ptr32 hBrush;
+	/*bp-0x4*/   void * __ptr32 hBrush;
+	/*bp-0x8*/   unsigned long colorRefFill;
+	/*bp-0x18*/  /*packed*/ struct tagRECT rectFill; // 0x10 bytes
+	/*bp-0x1c*/  void * __ptr32 dc;
 
 // LINE 313:
 	__asm        mov    eax, this;
@@ -968,7 +968,7 @@ _T2fc:
 
 // FUNCTION: COPTER_D 0x00498489
 void * __ptr32 VRSmackerInit(char * szSmackerFilePath, int32_t bPreserveBufferMemory) {
-	/*packed*/ class VRBmpSmackerBuffer *tempVRBmpSmackerBuffer;
+	/*bp-0x4*/   /*packed*/ class VRBmpSmackerBuffer *tempVRBmpSmackerBuffer;
 
 // LINE 427:
 	__asm        push   0x164;
@@ -1187,8 +1187,8 @@ void VRBmpSmackerBuffer::InitializeVRBmpMembers() {
 
 // FUNCTION: COPTER_D 0x0049873d
 int32_t VRBmpSmackerBuffer::CreateSurface(int32_t bCopyOriginalBitmap) {
-	int32_t nSizeOfHeader;
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
+	/*bp-0x8*/   int32_t nSizeOfHeader;
 
 // LINE 536:
 	__asm        mov    eax, this;
@@ -1401,7 +1401,7 @@ _T70:
 
 // FUNCTION: COPTER_D 0x00498a0b
 void VRBmpSmackerBuffer::ClearBuffer(int32_t nPaletteIndex) {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 // LINE 623:
 	__asm        mov    i, 0;
@@ -1629,11 +1629,11 @@ _T3a:
 
 // FUNCTION: COPTER_D 0x00498ca3
 int32_t VRBmpSmackerBuffer::DrawDefaultVRBmp() {
-	int32_t nHeightToCopy;
-	int32_t nWidthToCopy;
-	int32_t i;
-	int32_t nBmpHeight;
-	int32_t nBmpWidth;
+	/*bp-0x4*/   int32_t nBmpWidth;
+	/*bp-0x8*/   int32_t nBmpHeight;
+	/*bp-0xc*/   int32_t i;
+	/*bp-0x10*/  int32_t nWidthToCopy;
+	/*bp-0x14*/  int32_t nHeightToCopy;
 
 // LINE 730:
 	__asm        mov    eax, this;
@@ -2034,7 +2034,7 @@ _Tba:
 
 // FUNCTION: COPTER_D 0x0049920a
 int32_t SmackerBackBuffer::CreateSurface() {
-	long ddrval;
+	/*bp-0x4*/   long ddrval;
 
 // LINE 946:
 	__asm        mov    eax, this;
@@ -2154,7 +2154,7 @@ _T2e:
 	__asm        je     _T9f;
 // LINE 1020:
 // Block start:
-	/*packed*/ struct SparkalRect rectFill;
+	/*bp-0x10*/  /*packed*/ struct SparkalRect rectFill; // 0x10 bytes
 	__asm        jmp    near ptr 0x004993E9;
 // LINE 1021:
 	rectFill.left = DestLeft;
@@ -2515,7 +2515,7 @@ _T2e:
 	__asm        je     _T89;
 // LINE 1110:
 // Block start:
-	/*packed*/ struct SparkalRect rectFill;
+	/*bp-0x10*/  /*packed*/ struct SparkalRect rectFill; // 0x10 bytes
 	__asm        jmp    near ptr 0x004997C0;
 // LINE 1111:
 	rectFill.left = DestLeft;
@@ -2852,19 +2852,19 @@ _T3c1:
 
 // FUNCTION: COPTER_D 0x00499b35
 void SmackerBackBuffer::BltParts(/*packed*/ class IFlatImage *pDestImage, long DestLeft, long DestTop, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
-	char * pOriginalSourceImageBits;
-	unsigned long nLastRecty2;
-	unsigned long nLastRectw;
-	unsigned long i;
-	unsigned long nLastRecty;
-	unsigned long nLastRectx;
-	unsigned long nLastRecth;
-	int32_t nSourceImageStride;
-	char * pDestImageBits;
-	int32_t nDestImageStride;
-	char * pSourceImageBits;
-	char * pOriginalDestImageBits;
-	unsigned long nLastRectx2;
+	/*bp-0x4*/   unsigned long nLastRectx2;
+	/*bp-0x8*/   char * pOriginalDestImageBits;
+	/*bp-0xc*/   char * pSourceImageBits;
+	/*bp-0x10*/  int32_t nDestImageStride;
+	/*bp-0x14*/  char * pDestImageBits;
+	/*bp-0x18*/  int32_t nSourceImageStride;
+	/*bp-0x1c*/  unsigned long nLastRecth;
+	/*bp-0x20*/  unsigned long nLastRectx;
+	/*bp-0x24*/  unsigned long nLastRecty;
+	/*bp-0x28*/  unsigned long i;
+	/*bp-0x2c*/  unsigned long nLastRectw;
+	/*bp-0x30*/  unsigned long nLastRecty2;
+	/*bp-0x34*/  char * pOriginalSourceImageBits;
 
 // LINE 1230:
 	__asm        mov    eax, this;
@@ -3063,13 +3063,13 @@ _T220:
 
 // FUNCTION: COPTER_D 0x00499d5c
 void SmackerBackBuffer::BltAll(/*packed*/ class IFlatImage *pDestImage, long DestLeft, long DestTop, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
-	int32_t nSourceImageWidth;
-	int32_t nSourceImageHeight;
-	int32_t i;
-	int32_t nSourceImageStride;
-	char * pDestImageBits;
-	int32_t nDestImageStride;
-	char * pSourceImageBits;
+	/*bp-0x4*/   char * pSourceImageBits;
+	/*bp-0x8*/   int32_t nDestImageStride;
+	/*bp-0xc*/   char * pDestImageBits;
+	/*bp-0x10*/  int32_t nSourceImageStride;
+	/*bp-0x14*/  int32_t i;
+	/*bp-0x18*/  int32_t nSourceImageHeight;
+	/*bp-0x1c*/  int32_t nSourceImageWidth;
 
 // LINE 1340:
 	i = 0x0;

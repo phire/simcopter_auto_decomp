@@ -2540,7 +2540,7 @@ int32_t RadioStation::IsPlaying() {
 
 // FUNCTION: COPTER_D 0x00434605
 int32_t RadioStation::DoState() {
-	unsigned long lElapsedTime;
+	/*bp-0x4*/   unsigned long lElapsedTime;
 
 // LINE 187:
 	__asm        mov    eax, this;
@@ -2920,7 +2920,7 @@ _T43c:
 
 // FUNCTION: COPTER_D 0x00434a46
 int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycleType radioStationCycleType) {
-	/*packed*/ class basic_string<char> sFullSelectionPath;
+	/*bp-0x8*/   /*packed*/ class basic_string<char> sFullSelectionPath; // 0x8 bytes
 
 // LINE 272:
 	__asm        lea    ecx, sFullSelectionPath.c_str_ptr;
@@ -3634,7 +3634,7 @@ _T995:
 
 // FUNCTION: COPTER_D 0x004353e2
 void RadioStation::LoadAllPlaylists() {
-	/*unpacked*/ class Directory tempDirectory;
+	/*bp-0x20*/  /*unpacked*/ class Directory tempDirectory;
 
 // LINE 318:
 	__asm        push   0x10;
@@ -4081,8 +4081,8 @@ _T5e1:
 
 // FUNCTION: COPTER_D 0x004359e2
 void RadioStation::ShufflePlaylist() {
-	/*packed*/ class basic_string<char> sTempItem;
-	/*packed*/ class basic_string<char> sCurrentLastItem;
+	/*bp-0x8*/   /*packed*/ class basic_string<char> sCurrentLastItem; // 0x8 bytes
+	/*bp-0x10*/  /*packed*/ class basic_string<char> sTempItem; // 0x8 bytes
 
 // LINE 350:
 	__asm        push   0x10;
@@ -5088,10 +5088,10 @@ _Td9d:
 
 // FUNCTION: COPTER_D 0x0043678e
 void RadioStation::RandomizeStringList(/*packed*/ class list<basic_string<char>>& stringList) {
-	/*packed*/ class list<basic_string<char>>::iterator stringListIterator;
-	int32_t i;
-	int32_t iEnd;
-	/*packed*/ class vector<basic_string<char>> stringArray;
+	/*bp-0xc*/   /*packed*/ class vector<basic_string<char>> stringArray; // 0xc bytes
+	/*bp-0x10*/  int32_t iEnd;
+	/*bp-0x14*/  int32_t i;
+	/*bp-0x18*/  /*packed*/ class list<basic_string<char>>::iterator stringListIterator;
 
 // LINE 412:
 	__asm        jmp    near ptr 0x004367A5;
@@ -5464,8 +5464,8 @@ _T438:
 
 // FUNCTION: COPTER_D 0x00436bcd
 void RadioStation::ShuffleCycle() {
-	int32_t nTempCycleItem;
-	int32_t nCurrentCycleLastItem;
+	/*bp-0x4*/   int32_t nCurrentCycleLastItem;
+	/*bp-0x8*/   int32_t nTempCycleItem;
 
 // LINE 450:
 	__asm        jmp    near ptr 0x00436BDE;
@@ -6130,8 +6130,8 @@ _T2d7:
 
 // FUNCTION: COPTER_D 0x00437337
 int32_t RadioStation::ReadCallSignFromDisk() {
-	/*unpacked*/ class Directory tempDirectory;
-	/*packed*/ class DirectoryEntry *tempDirectoryEntry;
+	/*bp-0x4*/   /*packed*/ class DirectoryEntry *tempDirectoryEntry;
+	/*bp-0x24*/  /*unpacked*/ class Directory tempDirectory;
 
 // LINE 543:
 	__asm        push   0x10;
@@ -6433,9 +6433,9 @@ _T3a0:
 
 // FUNCTION: COPTER_D 0x004376dc
 int32_t RadioStation::DetectRadioStationType() {
-	/*packed*/ class basic_string<char> sStationDirectoryParent;
-	int32_t i;
-	/*packed*/ class basic_string<char> sStationDirectoryName;
+	/*bp-0x8*/   /*packed*/ class basic_string<char> sStationDirectoryName; // 0x8 bytes
+	/*bp-0xc*/   int32_t i;
+	/*bp-0x14*/  /*packed*/ class basic_string<char> sStationDirectoryParent; // 0x8 bytes
 
 // LINE 563:
 	__asm        push   0x10;
@@ -6954,8 +6954,8 @@ void  Radio::GetPreferences(/*packed*/ struct RadioPreferences& currentRadioPref
 
 // FUNCTION: COPTER_D 0x00437db7
 int  Radio::GetPreferences() {
-	/*packed*/ struct RadioPreferences tempRadioPreferences;
-	char * chPrefData;
+	/*bp-0x4*/   char * chPrefData;
+	/*bp-0x20*/  /*packed*/ struct RadioPreferences tempRadioPreferences; // 0x1c bytes
 
 // LINE 679:
 	__asm        cmp    gPreferenceManager, 0;
@@ -7014,7 +7014,7 @@ _Ta1:
 
 // FUNCTION: COPTER_D 0x00437e67
 int  Radio::SavePreferences() {
-	/*packed*/ struct RadioPreferences tempRadioPreferences;
+	/*bp-0x1c*/  /*packed*/ struct RadioPreferences tempRadioPreferences; // 0x1c bytes
 
 // LINE 706:
 	__asm        cmp    gPreferenceManager, 0;
@@ -7403,8 +7403,8 @@ _Tf7:
 
 // FUNCTION: COPTER_D 0x004382ca
 int  Radio::SetStation(enum RadioStationType radioStationType) {
-	int32_t i;
-	int32_t iEnd;
+	/*bp-0x4*/   int32_t iEnd;
+	/*bp-0x8*/   int32_t i;
 
 // LINE 849:
 	__asm        mov    i, 0;
@@ -7471,8 +7471,8 @@ _Ta8:
 
 // FUNCTION: COPTER_D 0x00438379
 int  Radio::IsStationTypeAvailable(enum RadioStationType radioStationType) {
-	int32_t i;
-	int32_t iEnd;
+	/*bp-0x4*/   int32_t iEnd;
+	/*bp-0x8*/   int32_t i;
 
 // LINE 863:
 	__asm        mov    i, 0;
@@ -7589,7 +7589,7 @@ _T5a:
 
 // FUNCTION: COPTER_D 0x004384b6
 int  Radio::StationDirectoryNameIsValid(/*packed*/ class basic_string<char>& sStationDirectory) {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 // LINE 898:
 	__asm        mov    i, 0;
@@ -7752,16 +7752,16 @@ _T1c0:
 
 // FUNCTION: COPTER_D 0x0043867d
 int  Radio::SetupStations() {
-	/*packed*/ class basic_string<char> sStationDirectory;
-	/*packed*/ class basic_string<char> sScratch;
-	/*packed*/ class list<basic_string<char>> radioStationStringList;
-	/*unpacked*/ class Directory tempDirectory;
-	/*packed*/ class basic_string<char> sCurrentLanguage;
-	int32_t nStationCount;
-	/*packed*/ class basic_string<char> sCommercialDirectory;
-	/*packed*/ class RadioStation tempRadioStation;
-	/*packed*/ class basic_string<char> sRadioDirectory;
-	/*packed*/ class list<basic_string<char>>::iterator radioStationStringListIterator;
+	/*bp-0x4*/   /*packed*/ class list<basic_string<char>>::iterator radioStationStringListIterator;
+	/*bp-0xc*/   /*packed*/ class basic_string<char> sRadioDirectory; // 0x8 bytes
+	/*bp-0xa4*/  /*packed*/ class RadioStation tempRadioStation; // 0x98 bytes
+	/*bp-0xac*/  /*packed*/ class basic_string<char> sCommercialDirectory; // 0x8 bytes
+	/*bp-0xb0*/  int32_t nStationCount;
+	/*bp-0xb8*/  /*packed*/ class basic_string<char> sCurrentLanguage; // 0x8 bytes
+	/*bp-0xd8*/  /*unpacked*/ class Directory tempDirectory;
+	/*bp-0xe0*/  /*packed*/ class list<basic_string<char>> radioStationStringList; // 0x8 bytes
+	/*bp-0xe8*/  /*packed*/ class basic_string<char> sScratch; // 0x8 bytes
+	/*bp-0xf0*/  /*packed*/ class basic_string<char> sStationDirectory; // 0x8 bytes
 
 // LINE 915:
 	__asm        lea    ecx, sRadioDirectory.c_str_ptr;

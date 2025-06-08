@@ -537,7 +537,7 @@ _T22:
 
 // FUNCTION: COPTER_D 0x0047bdaa
 /*packed*/ class PreferenceItem* PreferenceItem::DuplicatePointer() {
-	/*packed*/ class PreferenceItem *prefItemReturn;
+	/*bp-0x4*/   /*packed*/ class PreferenceItem *prefItemReturn;
 
 // LINE 132:
 	__asm        push   0xC;
@@ -1047,8 +1047,8 @@ _T21a:
 
 // FUNCTION: COPTER_D 0x0047c3e2
 void PreferenceManager::EnumeratePrefs() {
-	long j;
-	/*packed*/ class list<PreferenceItem>::iterator i;
+	/*bp-0x4*/   /*packed*/ class list<PreferenceItem>::iterator i;
+	/*bp-0x8*/   long j;
 
 // LINE 204:
 	__asm        jmp    near ptr 0x0047C3F3;
@@ -1125,8 +1125,8 @@ _Tc1:
 
 // FUNCTION: COPTER_D 0x0047c4ad
 long PreferenceManager::SaveAllPrefs() {
-	/*packed*/ class list<PreferenceItem>::iterator i;
-	char szStringRudelyEmbeddedDirectly[41];
+	/*bp-0x2c*/  char szStringRudelyEmbeddedDirectly[41]; // 0x29 bytes
+	/*bp-0x30*/  /*packed*/ class list<PreferenceItem>::iterator i;
 
 // LINE 227:
 	__asm        jmp    near ptr 0x0047C4BE;
@@ -1303,10 +1303,10 @@ _T1be:
 
 // FUNCTION: COPTER_D 0x0047c670
 long PreferenceManager::LoadAllPrefs() {
-	int32_t bStillMoreRecords;
-	int32_t bFileOK;
-	/*packed*/ class PreferenceItem tempPrefItem;
-	long lRecordDataSize;
+	/*bp-0x4*/   long lRecordDataSize;
+	/*bp-0x10*/  /*packed*/ class PreferenceItem tempPrefItem; // 0xc bytes
+	/*bp-0x14*/  int32_t bFileOK;
+	/*bp-0x18*/  int32_t bStillMoreRecords;
 
 // LINE 274:
 	__asm        lea    ecx, tempPrefItem.lPreferenceType;
@@ -1581,7 +1581,7 @@ _T11e:
 
 // FUNCTION: COPTER_D 0x0047c970
 long PreferenceManager::RemovePref(long lPrefType) {
-	/*packed*/ class list<PreferenceItem>::iterator i;
+	/*bp-0x4*/   /*packed*/ class list<PreferenceItem>::iterator i;
 
 // LINE 327:
 	__asm        jmp    near ptr 0x0047C981;
@@ -1718,7 +1718,7 @@ _T169:
 
 // FUNCTION: COPTER_D 0x0047cae0
 /*packed*/ class PreferenceItem* PreferenceManager::GetPrefPointer(long lPrefType) {
-	/*packed*/ class list<PreferenceItem>::iterator i;
+	/*bp-0x4*/   /*packed*/ class list<PreferenceItem>::iterator i;
 
 // LINE 355:
 	__asm        jmp    near ptr 0x0047CAF1;
@@ -1806,8 +1806,8 @@ _Tdc:
 
 // FUNCTION: COPTER_D 0x0047cbc3
 /*packed*/ class PreferenceItem* PreferenceManager::GetPrefCopy(long lPrefType) {
-	/*packed*/ class PreferenceItem *prefItemReturn;
-	/*packed*/ class PreferenceItem *prefItemTemp;
+	/*bp-0x4*/   /*packed*/ class PreferenceItem *prefItemTemp;
+	/*bp-0x8*/   /*packed*/ class PreferenceItem *prefItemReturn;
 
 // LINE 379:
 	__asm        mov    eax, lPrefType;
@@ -1837,7 +1837,7 @@ _T42:
 
 // FUNCTION: COPTER_D 0x0047cc0c
 char * PreferenceManager::GetPrefDataPointer(long lPrefType) {
-	/*packed*/ class PreferenceItem *prefItemTemp;
+	/*bp-0x4*/   /*packed*/ class PreferenceItem *prefItemTemp;
 
 // LINE 404:
 	__asm        mov    eax, lPrefType;
@@ -1864,8 +1864,8 @@ _T3a:
 
 // FUNCTION: COPTER_D 0x0047cc4d
 char * PreferenceManager::GetPrefDataCopy(long lPrefType) {
-	/*packed*/ class PreferenceItem *prefItemTemp;
-	char * chDataCopy;
+	/*bp-0x4*/   char * chDataCopy;
+	/*bp-0x8*/   /*packed*/ class PreferenceItem *prefItemTemp;
 
 // LINE 426:
 	__asm        mov    eax, lPrefType;
@@ -1909,7 +1909,7 @@ _T63:
 
 // FUNCTION: COPTER_D 0x0047ccb7
 long PreferenceManager::GetPrefDataLength(long lPrefType) {
-	/*packed*/ class PreferenceItem *prefItemTemp;
+	/*bp-0x4*/   /*packed*/ class PreferenceItem *prefItemTemp;
 
 // LINE 453:
 	__asm        mov    eax, lPrefType;
@@ -1936,7 +1936,7 @@ _T3a:
 
 // FUNCTION: COPTER_D 0x0047ccf8
 long PreferenceManager::SetPref(long lPrefType, char * chPref, long lSizeofPref) {
-	/*packed*/ class PreferenceItem *prefItemToSet;
+	/*bp-0x4*/   /*packed*/ class PreferenceItem *prefItemToSet;
 
 // LINE 472:
 	__asm        mov    eax, this;
@@ -2588,7 +2588,7 @@ _T237:
 
 // FUNCTION: COPTER_D 0x0047d4cf
 int32_t NotificationPreferenceManager::AddNotification(long lPreferenceType, /*packed*/ class NotificationSink *newNotificationSink) {
-	/*packed*/ class NotificationItem tempNewNotificationItem;
+	/*bp-0x8*/   /*packed*/ class NotificationItem tempNewNotificationItem; // 0x8 bytes
 
 // LINE 547:
 	__asm        mov    eax, newNotificationSink;
@@ -2833,8 +2833,8 @@ _T267:
 
 // FUNCTION: COPTER_D 0x0047d7c7
 int32_t NotificationPreferenceManager::RemoveNotification(/*packed*/ class NotificationSink *theNotificationSink, long lPreferenceType) {
-	/*packed*/ class list<NotificationItem>::iterator iterator;
-	int32_t nFound;
+	/*bp-0x4*/   int32_t nFound;
+	/*bp-0x8*/   /*packed*/ class list<NotificationItem>::iterator iterator;
 
 // LINE 571:
 	__asm        jmp    near ptr 0x0047D7D8;
@@ -2969,7 +2969,7 @@ _T159:
 
 // FUNCTION: COPTER_D 0x0047d92f
 long NotificationPreferenceManager::SetPref(long lPrefType, char * chPref, long lSizeofPref) {
-	long lReturnValue;
+	/*bp-0x4*/   long lReturnValue;
 
 // LINE 594:
 	__asm        mov    eax, lSizeofPref;
@@ -3000,7 +3000,7 @@ _T3c:
 
 // FUNCTION: COPTER_D 0x0047d97a
 long NotificationPreferenceManager::SetPref(/*packed*/ class PreferenceItem *prefItemToUse) {
-	long lReturnValue;
+	/*bp-0x4*/   long lReturnValue;
 
 // LINE 605:
 	__asm        mov    eax, prefItemToUse;
@@ -3028,7 +3028,7 @@ _T36:
 
 // FUNCTION: COPTER_D 0x0047d9bf
 void NotificationPreferenceManager::DoNotification(long lPrefType) {
-	/*packed*/ class list<NotificationItem>::iterator iterator;
+	/*bp-0x4*/   /*packed*/ class list<NotificationItem>::iterator iterator;
 
 // LINE 618:
 	__asm        mov    eax, this;

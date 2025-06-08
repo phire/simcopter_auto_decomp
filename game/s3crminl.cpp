@@ -492,7 +492,7 @@ void CriminalEvaderCarClass::~CriminalEvaderCarClass() {
 
 // FUNCTION: COPTER_D 0x00534a73
 /*packed*/ class CriminalEvaderCarClass* CriminalEvaderCarClass::CreateInstance(int32_t instanceID) {
-	/*packed*/ class CriminalEvaderCarClass *youveWonABrandNewCar;
+	/*bp-0x4*/   /*packed*/ class CriminalEvaderCarClass *youveWonABrandNewCar;
 
 // LINE 127:
 	__asm        push   0x12A;
@@ -554,9 +554,9 @@ _Ta9:
 
 // FUNCTION: COPTER_D 0x00534b21
 int32_t CriminalEvaderCarClass::StartCriminalMission(short mID, short mType, long x, long y) {
-	/*packed*/ struct _MISSION_PARMS mp;
-	int32_t i;
-	/*packed*/ struct _GridCoordinates startLoc;
+	/*bp-0x4*/   /*packed*/ struct _GridCoordinates startLoc;
+	/*bp-0x8*/   int32_t i;
+	/*bp-0x20*/  /*packed*/ struct _MISSION_PARMS mp; // 0x18 bytes
 
 // LINE 159:
 	startLoc.x = reinterpret_cast<uint8_t>(x);
@@ -651,7 +651,7 @@ _T11f:
 
 // FUNCTION: COPTER_D 0x00534c45
 void CriminalEvaderCarClass::ItterateFSM() {
-	/*packed*/ struct _MISSION_PARMS mp;
+	/*bp-0x18*/  /*packed*/ struct _MISSION_PARMS mp; // 0x18 bytes
 
 // LINE 209:
 	__asm        mov    eax, this;
@@ -675,7 +675,7 @@ void CriminalEvaderCarClass::ItterateFSM() {
 	__asm        jne    _T13c;
 // LINE 222:
 // Block start:
-	/*packed*/ struct Point3d loc;
+	/*bp-0x24*/  /*packed*/ struct Point3d loc; // 0xc bytes
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x24];
 	__asm        mov    ecx, this;
@@ -839,7 +839,7 @@ _T20b:
 	__asm        jmp    _T2a0;
 // LINE 269:
 // Block start:
-	/*packed*/ struct _MISSION_PARMS mp;
+	/*bp-0x3c*/  /*packed*/ struct _MISSION_PARMS mp; // 0x18 bytes
 _T258:
 	__asm        push   0x10D;
 	__asm        push   0x5B7CC0;
@@ -955,7 +955,7 @@ _T368:
 	__asm        jmp    _T422;
 // LINE 338:
 // Block start:
-	/*packed*/ struct _MISSION_PARMS mp;
+	/*bp-0x54*/  /*packed*/ struct _MISSION_PARMS mp; // 0x18 bytes
 _T3da:
 	__asm        push   0x152;
 	__asm        push   0x5B7CEC;
@@ -1102,8 +1102,8 @@ _T45:
 
 // FUNCTION: COPTER_D 0x00535202
 int32_t CriminalEvaderCarClass::NearToBuilding() {
-	/*packed*/ struct _GridCoordinates scanLoc;
-	/*packed*/ class SpiralScan scan;
+	/*bp-0x10*/  /*packed*/ class SpiralScan scan; // 0x10 bytes
+	/*bp-0x14*/  /*packed*/ struct _GridCoordinates scanLoc;
 
 // LINE 442:
 	__asm        movsx  eax, CriminalEvaderCarClass::maxSearchForBuildingRadius;
@@ -1114,7 +1114,7 @@ int32_t CriminalEvaderCarClass::NearToBuilding() {
 	reinterpret_cast<uint16_t>(scanLoc.x) = reinterpret_cast<uint16_t>(this->goal.gridLoc.x);
 // LINE 447:
 // Block start:
-	unsigned short tt;
+	/*bp-0x18*/  unsigned short tt;
 _T27:
 	__asm        xor    eax, eax;
 	__asm        mov    al, scanLoc.x;
@@ -1303,7 +1303,7 @@ _T502:
 
 // FUNCTION: COPTER_D 0x00535709
 void CriminalEvaderCarClass::ShowWhereWeAre() {
-	/*packed*/ struct _MISSION_PARMS mp;
+	/*bp-0x18*/  /*packed*/ struct _MISSION_PARMS mp; // 0x18 bytes
 
 // LINE 649:
 	mp.op = 0xa;

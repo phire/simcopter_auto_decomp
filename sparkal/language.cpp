@@ -348,7 +348,7 @@ int32_t LanguageManager::Uninitialize() {
 
 // FUNCTION: COPTER_D 0x0042a528
 int32_t LanguageManager::SetDefaultLanguage(int32_t nLanguage) {
-	/*packed*/ class basic_string<char> sLocale;
+	/*bp-0x8*/   /*packed*/ class basic_string<char> sLocale; // 0x8 bytes
 
 // LINE 65:
 	__asm        push   0x10;
@@ -698,8 +698,8 @@ _T3ff:
 
 // FUNCTION: COPTER_D 0x0042a92c
 int32_t LanguageManager::ConvertIDToName(int32_t nLanguage, char * szLanguageName) {
-	int32_t nStringFound;
-	/*packed*/ class basic_string<char> stringLanguage;
+	/*bp-0x8*/   /*packed*/ class basic_string<char> stringLanguage; // 0x8 bytes
+	/*bp-0xc*/   int32_t nStringFound;
 
 // LINE 96:
 	__asm        push   0x10;
@@ -1054,10 +1054,10 @@ _T464:
 
 // FUNCTION: COPTER_D 0x0042ad95
 int32_t LanguageManager::ConvertNameToID(char * szLanguageName, int32_t * nLanguage) {
-	/*packed*/ class basic_string<char> stringLanguageCompare;
-	int32_t nStringFound;
-	int32_t i;
-	/*packed*/ class basic_string<char> stringLanguageName;
+	/*bp-0x8*/   /*packed*/ class basic_string<char> stringLanguageName; // 0x8 bytes
+	/*bp-0xc*/   int32_t i;
+	/*bp-0x10*/  int32_t nStringFound;
+	/*bp-0x18*/  /*packed*/ class basic_string<char> stringLanguageCompare; // 0x8 bytes
 
 // LINE 129:
 	__asm        push   0x10;
@@ -1418,8 +1418,8 @@ _T4b:
 
 // FUNCTION: COPTER_D 0x0042b1af
 int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo) {
-	int32_t nFullStringID;
-	/*packed*/ class basic_string<char> sMessage;
+	/*bp-0x8*/   /*packed*/ class basic_string<char> sMessage; // 0x8 bytes
+	/*bp-0xc*/   int32_t nFullStringID;
 
 // LINE 178:
 	__asm        push   0x10;
@@ -1862,7 +1862,7 @@ _T5ed:
 
 // FUNCTION: COPTER_D 0x0042b7ae
 int32_t LanguageManager::GetNextLanguage(int32_t nCurrentLanguage) {
-	int32_t nInitialLanguage;
+	/*bp-0x4*/   int32_t nInitialLanguage;
 
 // LINE 193:
 	nInitialLanguage = nCurrentLanguage;
@@ -2095,7 +2095,7 @@ int32_t LanguageManager::GetLanguageDirectoryName(/*packed*/ class basic_string<
 
 // FUNCTION: COPTER_D 0x0042ba46
 int32_t LanguageManager::GetLanguageEnglishName(/*packed*/ class basic_string<char>& sLanguage, int32_t nLanguage) {
-	int32_t nFullStringID;
+	/*bp-0x4*/   int32_t nFullStringID;
 
 // LINE 328:
 	__asm        cmp    nLanguage, 0;
@@ -2610,7 +2610,7 @@ _T693:
 
 // FUNCTION: COPTER_D 0x0042c0de
 int32_t LanguageManager::GetLanguageLocalName(/*packed*/ class basic_string<char>& sLanguage, int32_t nLanguage) {
-	int32_t nFullStringID;
+	/*bp-0x4*/   int32_t nFullStringID;
 
 // LINE 350:
 	__asm        cmp    nLanguage, 0;
@@ -3125,7 +3125,7 @@ _T693:
 
 // FUNCTION: COPTER_D 0x0042c776
 int32_t LanguageManager::GetLanguageRuntimeLibraryName(/*packed*/ class basic_string<char>& sLanguage, int32_t nLanguage) {
-	int32_t nFullStringID;
+	/*bp-0x4*/   int32_t nFullStringID;
 
 // LINE 372:
 	__asm        cmp    nLanguage, 0;
@@ -3718,8 +3718,8 @@ _T36:
 
 // FUNCTION: COPTER_D 0x0042ceda
 int32_t LanguageManager::LoadLanguageSystemFonts(int32_t nLanguage) {
-	char szFontPath[260];
-	int32_t nReturnValue;
+	/*bp-0x4*/   int32_t nReturnValue;
+	/*bp-0x108*/ char szFontPath[260]; // 0x104 bytes
 
 // LINE 459:
 	__asm        mov    eax, nLanguage;
@@ -3786,8 +3786,8 @@ _Taf:
 
 // FUNCTION: COPTER_D 0x0042cf8e
 int32_t LanguageManager::UnloadLanguageSystemFonts(int32_t nLanguage) {
-	char szFontPath[260];
-	int32_t nReturnValue;
+	/*bp-0x4*/   int32_t nReturnValue;
+	/*bp-0x108*/ char szFontPath[260]; // 0x104 bytes
 
 // LINE 492:
 	__asm        mov    eax, nLanguage;
@@ -3844,8 +3844,8 @@ _T90:
 
 // FUNCTION: COPTER_D 0x0042d023
 int32_t LanguageManager::IsTypefaceLoaded(char * szFaceName) {
-	/*packed*/ struct TypefaceTestStruct tempTypefaceTestStruct;
-	void * __ptr32 hdcScreen;
+	/*bp-0x4*/   void * __ptr32 hdcScreen;
+	/*bp-0xc*/   /*packed*/ struct TypefaceTestStruct tempTypefaceTestStruct; // 0x8 bytes
 
 // LINE 527:
 	__asm        push   0;
@@ -3884,8 +3884,8 @@ _T5b:
 
 // FUNCTION: COPTER_D 0x0042d083
 int32_t LanguageManager::GetCurrentSystemLocale() {
-	unsigned short currentLanguageID;
-	unsigned long currentLCID;
+	/*bp-0x4*/   unsigned long currentLCID;
+	/*bp-0x8*/   unsigned short currentLanguageID;
 
 // LINE 554:
 	__asm        call   dword ptr ds:[0x6C364C];
@@ -4087,8 +4087,8 @@ _T3d:
 
 // FUNCTION: COPTER_D 0x0042d3c9
 int32_t EnumFontFamilyProcecure(/*packed*/ struct tagENUMLOGFONTA *lpelf, /*packed*/ struct tagNEWTEXTMETRICA *lpntm, int32_t FontType, long lParam) {
-	/*packed*/ struct TypefaceTestStruct *tempTypefaceTestStruct;
-	char * szEnumeratedFaceName;
+	/*bp-0x4*/   char * szEnumeratedFaceName;
+	/*bp-0x8*/   /*packed*/ struct TypefaceTestStruct *tempTypefaceTestStruct;
 
 // LINE 627:
 	tempTypefaceTestStruct = lParam;

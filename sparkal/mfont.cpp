@@ -712,10 +712,10 @@ _T23a:
 
 // FUNCTION: COPTER_D 0x0049ff74
 int32_t MFont::CreateFontA() {
-	unsigned long dwItalic;
-	unsigned long dwStrikeOut;
-	int32_t nWeight;
-	unsigned long dwUnderline;
+	/*bp-0x4*/   unsigned long dwUnderline;
+	/*bp-0x8*/   int32_t nWeight;
+	/*bp-0xc*/   unsigned long dwStrikeOut;
+	/*bp-0x10*/  unsigned long dwItalic;
 
 // LINE 128:
 	__asm        mov    eax, this;
@@ -902,7 +902,7 @@ _T1e4:
 
 // FUNCTION: COPTER_D 0x004a015d
 void MFont::SetFontCharacteristics(long lNewHeight, long lNewWidth, long lNewAttributes) {
-	int32_t bFontChanged;
+	/*bp-0x4*/   int32_t bFontChanged;
 
 // LINE 164:
 	bFontChanged = 0x0;
@@ -976,7 +976,7 @@ int32_t MFont::IsFontAvailable(char * szFaceName, unsigned long lNewHeight, unsi
 
 // FUNCTION: COPTER_D 0x004a0235
 int32_t MFont::LoadFont(char * szPath) {
-	int32_t nReturnValue;
+	/*bp-0x4*/   int32_t nReturnValue;
 
 // LINE 224:
 	__asm        mov    eax, szPath;
@@ -1001,7 +1001,7 @@ _T31:
 
 // FUNCTION: COPTER_D 0x004a0273
 int32_t MFont::UnloadFont(char * szPath) {
-	int32_t nReturnValue;
+	/*bp-0x4*/   int32_t nReturnValue;
 
 // LINE 241:
 	__asm        mov    eax, szPath;
@@ -1026,12 +1026,12 @@ _T31:
 
 // FUNCTION: COPTER_D 0x004a02b1
 int32_t MFont::GetTextDimensions(char * szString, long& lWidth, long& lHeight) {
-	/*packed*/ struct tagSIZE sizeText;
-	/*packed*/ struct tagRECT rectText;
-	void * __ptr32 hdcScreen;
-	long lStringLength;
-	int32_t nReturnValue;
-	void * __ptr32 hFontOriginal;
+	/*bp-0x4*/   void * __ptr32 hFontOriginal;
+	/*bp-0x8*/   int32_t nReturnValue;
+	/*bp-0xc*/   long lStringLength;
+	/*bp-0x10*/  void * __ptr32 hdcScreen;
+	/*bp-0x20*/  /*packed*/ struct tagRECT rectText; // 0x10 bytes
+	/*bp-0x28*/  /*packed*/ struct tagSIZE sizeText; // 0x8 bytes
 
 // LINE 265:
 	nReturnValue = 0x1;

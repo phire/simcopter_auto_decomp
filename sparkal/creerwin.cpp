@@ -585,12 +585,12 @@ _T63:
 
 // FUNCTION: COPTER_D 0x0047e19e
 int32_t CareerWindow::Initialize() {
-	char szFullCityVideoFileName[256];
-	long lCityLevelString;
-	char szFullCityVideoFilePath[260];
-	long lCityNameString;
-	/*packed*/ class basic_string<char> sText;
-	int32_t nFullStringID;
+	/*bp-0x4*/   int32_t nFullStringID;
+	/*bp-0xc*/   /*packed*/ class basic_string<char> sText; // 0x8 bytes
+	/*bp-0x10*/  long lCityNameString;
+	/*bp-0x114*/ char szFullCityVideoFilePath[260]; // 0x104 bytes
+	/*bp-0x118*/ long lCityLevelString;
+	/*bp-0x218*/ char szFullCityVideoFileName[256]; // 0x100 bytes
 
 // LINE 103:
 	__asm        push   0x10;
@@ -629,8 +629,8 @@ _T85:
 	__asm        je     _T6fe;
 // LINE 115:
 // Block start:
-	/*packed*/ class ButtonWindow *tempButtonWindow2;
-	/*packed*/ class ButtonWindow *tempButtonWindow1;
+	/*bp-0x21c*/ /*packed*/ class ButtonWindow *tempButtonWindow1;
+	/*bp-0x220*/ /*packed*/ class ButtonWindow *tempButtonWindow2;
 	__asm        push   0x94;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
@@ -1073,7 +1073,7 @@ _T6b5:
 	__asm        jmp    _T9df;
 // LINE 134:
 // Block start:
-	/*packed*/ class ButtonWindow *tempButtonWindow1;
+	/*bp-0x224*/ /*packed*/ class ButtonWindow *tempButtonWindow1;
 _T6fe:
 	__asm        push   0x94;
 	__asm        call   operator new;
@@ -1824,8 +1824,8 @@ _T11de:
 
 // FUNCTION: COPTER_D 0x0047f391
 int32_t CareerWindow::CreateImage(int32_t __formal) {
-	/*packed*/ class basic_string<char> sImagePath;
-	/*packed*/ class basic_string<char> sImageFile;
+	/*bp-0x8*/   /*packed*/ class basic_string<char> sImageFile; // 0x8 bytes
+	/*bp-0x10*/  /*packed*/ class basic_string<char> sImagePath; // 0x8 bytes
 
 // LINE 202:
 	__asm        push   0x10;
@@ -2177,8 +2177,8 @@ _T63:
 
 // FUNCTION: COPTER_D 0x0047f7cf
 int32_t CareerWindow::DrawSelf() {
-	int32_t i;
-	unsigned long nErrorCode;
+	/*bp-0x4*/   unsigned long nErrorCode;
+	/*bp-0x8*/   int32_t i;
 
 // LINE 241:
 	__asm        mov    i, 0;
@@ -2257,10 +2257,10 @@ _Tcf:
 
 // FUNCTION: COPTER_D 0x0047f8ab
 void CareerWindow::DrawCitySelection() {
-	/*packed*/ class MPoint ptDestinations[3][4];
-	int32_t j;
-	int32_t i;
-	/*packed*/ class MRect rectSources[3][4];
+	/*bp-0xc0*/  /*packed*/ class MRect rectSources[3][4]; // 0xc0 bytes
+	/*bp-0xc4*/  int32_t i;
+	/*bp-0xc8*/  int32_t j;
+	/*bp-0x128*/ /*packed*/ class MPoint ptDestinations[3][4]; // 0x60 bytes
 
 
 	__asm        mov    dword ptr [ebp-0x12C], 0xC;
@@ -2434,7 +2434,7 @@ _T8e:
 
 // FUNCTION: COPTER_D 0x0047fb14
 long CareerWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 // LINE 299:
 	__asm        mov    i, 0;
@@ -2543,7 +2543,7 @@ _T12c:
 
 // FUNCTION: COPTER_D 0x0047fc47
 long CareerWindow::DoCursorMove(long nCursorX, long nCursorY) {
-	int32_t i;
+	/*bp-0x4*/   int32_t i;
 
 // LINE 324:
 	__asm        mov    i, 0;
@@ -2790,9 +2790,9 @@ _T130:
 
 // FUNCTION: COPTER_D 0x0047ff29
 void CareerWindow::GetCoordinatesForCitySelections(/*packed*/ class MPoint *ptDestinations[4], /*packed*/ class MRect *rectSources[4]) {
-	/*packed*/ class CareerWindow::CitySelectionFrame lowerLeft;
-	/*packed*/ class CareerWindow::CitySelectionFrame upperLeft;
-	/*packed*/ class CareerWindow::CitySelectionFrame upperRight;
+	/*bp-0x50*/  /*packed*/ class CareerWindow::CitySelectionFrame upperRight; // 0x50 bytes
+	/*bp-0xa0*/  /*packed*/ class CareerWindow::CitySelectionFrame upperLeft; // 0x50 bytes
+	/*bp-0xf0*/  /*packed*/ class CareerWindow::CitySelectionFrame lowerLeft; // 0x50 bytes
 
 // LINE 385:
 	__asm        mov    eax, this;
@@ -3169,7 +3169,7 @@ _T459:
 
 // FUNCTION: COPTER_D 0x0048049d
 void CareerWindow::CitySelectionFrame::FillDestinationPoints(/*packed*/ class MPoint *ptDest) {
-	int32_t nN;
+	/*bp-0x4*/   int32_t nN;
 
 // LINE 427:
 	__asm        mov    nN, 0;
@@ -3202,7 +3202,7 @@ _T4e:
 
 // FUNCTION: COPTER_D 0x004804f7
 void CareerWindow::CitySelectionFrame::FillSourceRects(/*packed*/ class MRect *rectSrc) {
-	int32_t nN;
+	/*bp-0x4*/   int32_t nN;
 
 // LINE 435:
 	__asm        mov    nN, 0;

@@ -69,7 +69,7 @@ long GetJoystickValue(int32_t nCommand) {
 
 // FUNCTION: COPTER_D 0x00431bfb
 long GetJoystickValueEither(int32_t nCommand1, int32_t nCommand2) {
-	long lReturnValue;
+	/*bp-0x4*/   long lReturnValue;
 
 // LINE 58:
 	__asm        mov    eax, nCommand1;

@@ -12,7 +12,7 @@ void MPoint::MPoint() {
 // Function in module: Dialwin.obj
 // FUNCTION: COPTER_D 0x0044fc60
 void MRect::NormalizeRect() {
-	long nTemp;
+	/*bp-0x4*/   long nTemp;
 
 // LINE 592:
 	__asm        mov    eax, this;

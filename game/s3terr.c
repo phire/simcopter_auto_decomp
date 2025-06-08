@@ -59,8 +59,8 @@ struct _STOBJ_INST{ // packed(0x10 bytes) TI: 0x193f
 // Contribution: 1:00112d50-00117f8b Module: 169, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00513d50
 short GetAltitude(int32_t x, int32_t y) {
-	short alt;
-	short wat;
+	/*bp-0x4*/   short wat;
+	/*bp-0x8*/   short alt;
 
 // LINE 96:
 	__asm        cmp    x, 0;
@@ -129,7 +129,7 @@ _Tc0:
 
 // FUNCTION: COPTER_D 0x00513e15
 void S3TerrainInit() {
-	long i;
+	/*bp-0x4*/   long i;
 
 // LINE 130:
 	__asm        push   0x400000;
@@ -165,16 +165,16 @@ _T62:
 
 // FUNCTION: COPTER_D 0x00513e81
 short S3TerrainInitMap() {
-	short tile;
-	short alt;
-	long y;
-	long x;
-	int32_t k3;
-	unsigned char texval;
-	short alt2;
-	int32_t k2;
-	int32_t k1;
-	short wflags;
+	/*bp-0x4*/   short wflags;
+	/*bp-0x8*/   int32_t k1;
+	/*bp-0xc*/   int32_t k2;
+	/*bp-0x10*/  short alt2;
+	/*bp-0x14*/  unsigned char texval;
+	/*bp-0x18*/  int32_t k3;
+	/*bp-0x1c*/  long x;
+	/*bp-0x20*/  long y;
+	/*bp-0x24*/  short alt;
+	/*bp-0x28*/  short tile;
 
 // LINE 164:
 	G_terr_minalt = 0x7530;
@@ -1228,7 +1228,7 @@ _Tdb5:
 	__asm        jge    _Tee2;
 // LINE 434:
 // Block start:
-	unsigned char texid;
+	/*bp-0x2c*/  unsigned char texid;
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        shl    ecx, 8;
@@ -1347,7 +1347,7 @@ _Tf0f:
 	__asm        jge    _T102e;
 // LINE 460:
 // Block start:
-	unsigned char texid;
+	/*bp-0x30*/  unsigned char texid;
 	__asm        mov    eax, y;
 	__asm        mov    ecx, x;
 	__asm        shl    ecx, 8;
@@ -4247,9 +4247,9 @@ _T33a0:
 
 // FUNCTION: COPTER_D 0x0051723c
 void do_map_square(short x, short y, short msize) {
-	unsigned short hght;
-	short midp;
-	short is_odd;
+	/*bp-0x4*/   short is_odd;
+	/*bp-0x8*/   short midp;
+	/*bp-0xc*/   unsigned short hght;
 
 // LINE 1015:
 	__asm        movsx  eax, msize;
@@ -5129,9 +5129,9 @@ _Tb85:
 
 // FUNCTION: COPTER_D 0x00517dc6
 unsigned short noise(unsigned short hght, unsigned short edge_len) {
-	long delta;
-	long max_noise;
-	long new_height;
+	/*bp-0x4*/   long new_height;
+	/*bp-0x8*/   long max_noise;
+	/*bp-0xc*/   long delta;
 
 // LINE 1110:
 	max_noise = 0x7ff;
@@ -5184,10 +5184,10 @@ _T89:
 
 // FUNCTION: COPTER_D 0x00517e5d
 void S3TerrSetGridObj() {
-	long y;
-	long x;
-	int32_t * yptr;
-	/*packed*/ struct Point2d ulp;
+	/*bp-0x8*/   /*packed*/ struct Point2d ulp; // 0x8 bytes
+	/*bp-0xc*/   int32_t * yptr;
+	/*bp-0x10*/  long x;
+	/*bp-0x14*/  long y;
 
 // LINE 1144:
 	__asm        mov    eax, G_grid_ulc.x;
@@ -5279,9 +5279,9 @@ _T10e:
 
 // FUNCTION: COPTER_D 0x00517f70
 void S3TerrainMorph() {
-	/*packed*/ struct Point2d mcell;
-	/*packed*/ struct Point3d *v;
-	/*packed*/ struct Point2d ulp;
+	/*bp-0x8*/   /*packed*/ struct Point2d ulp; // 0x8 bytes
+	/*bp-0xc*/   /*packed*/ struct Point3d *v;
+	/*bp-0x14*/  /*packed*/ struct Point2d mcell; // 0x8 bytes
 
 // LINE 1199:
 	__asm        cmp    G_morphno, 0xA;
@@ -5674,13 +5674,13 @@ _T524:
 
 // FUNCTION: COPTER_D 0x00518499
 int32_t S3TerrMorphWater() {
-	long xstart;
-	long ystart;
-	long y;
-	long x;
-	short * cycle;
-	short alt0;
-	short * array1;
+	/*bp-0x4*/   short * array1;
+	/*bp-0x8*/   short alt0;
+	/*bp-0xc*/   short * cycle;
+	/*bp-0x10*/  long x;
+	/*bp-0x14*/  long y;
+	/*bp-0x18*/  long ystart;
+	/*bp-0x1c*/  long xstart;
 
 // LINE 1439:
 	__asm        mov    eax, LoopTime;
@@ -5818,16 +5818,16 @@ _T1bd:
 
 // FUNCTION: COPTER_D 0x0051865b
 void AdjustTerrainMap() {
-	int32_t start;
-	int32_t alt;
-	int32_t z;
-	int32_t i;
-	int32_t x;
-	int32_t citysize;
-	int32_t alt3;
-	int32_t alt2;
-	int32_t end;
-	int32_t alt1;
+	/*bp-0x4*/   int32_t alt1;
+	/*bp-0x8*/   int32_t end;
+	/*bp-0xc*/   int32_t alt2;
+	/*bp-0x10*/  int32_t alt3;
+	/*bp-0x14*/  int32_t citysize;
+	/*bp-0x18*/  int32_t x;
+	/*bp-0x1c*/  int32_t i;
+	/*bp-0x20*/  int32_t z;
+	/*bp-0x24*/  int32_t alt;
+	/*bp-0x28*/  int32_t start;
 
 // LINE 1544:
 	__asm        mov    eax, G_tdim;
@@ -6190,17 +6190,17 @@ _T42c:
 
 // FUNCTION: COPTER_D 0x00518a8c
 int32_t S3TerrPrecisionAlt(int32_t worldx, int32_t worldz, int32_t * landable) {
-	/*packed*/ struct Point2d cell;
-	int32_t hypz;
-	int32_t ratio;
-	int32_t zdist;
-	int32_t z;
-	int32_t x;
-	int32_t sidez;
-	int32_t sidealt;
-	int32_t alt2;
-	int32_t hypalt;
-	int32_t alt1;
+	/*bp-0x4*/   int32_t alt1;
+	/*bp-0x8*/   int32_t hypalt;
+	/*bp-0xc*/   int32_t alt2;
+	/*bp-0x10*/  int32_t sidealt;
+	/*bp-0x14*/  int32_t sidez;
+	/*bp-0x18*/  int32_t x;
+	/*bp-0x1c*/  int32_t z;
+	/*bp-0x20*/  int32_t zdist;
+	/*bp-0x24*/  int32_t ratio;
+	/*bp-0x28*/  int32_t hypz;
+	/*bp-0x30*/  /*packed*/ struct Point2d cell; // 0x8 bytes
 
 // LINE 1613:
 	__asm        cmp    landable, 0;
@@ -6551,15 +6551,15 @@ unsigned char S3TerrGetShadeIndex(long x, long y) {
 
 // FUNCTION: COPTER_D 0x00518e76
 int32_t S3ObjectPrecisionAlt(int32_t cityx, int32_t cityy) {
-	int32_t normy;
-	int32_t normx;
-	/*packed*/ struct _CELL_INFO *cptr;
-	int32_t alt;
-	int32_t objy;
-	/*packed*/ struct _STOBJ_INST *stobj;
-	int32_t maxobjy;
-	int32_t normz;
-	int32_t flags;
+	/*bp-0x4*/   int32_t flags;
+	/*bp-0x8*/   int32_t normz;
+	/*bp-0xc*/   int32_t maxobjy;
+	/*bp-0x10*/  /*packed*/ struct _STOBJ_INST *stobj;
+	/*bp-0x14*/  int32_t objy;
+	/*bp-0x18*/  int32_t alt;
+	/*bp-0x1c*/  /*packed*/ struct _CELL_INFO *cptr;
+	/*bp-0x20*/  int32_t normx;
+	/*bp-0x24*/  int32_t normy;
 
 // LINE 1829:
 	__asm        mov    eax, cityx;

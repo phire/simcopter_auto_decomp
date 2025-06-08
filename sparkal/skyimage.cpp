@@ -352,12 +352,12 @@ _T5f:
 
 // FUNCTION: COPTER_D 0x00495575
 int32_t SkyImage::LoadImageA() {
-	char * pDestinationImage;
-	/*packed*/ struct VRResource *vrResource;
-	int32_t i;
-	char szFullSkyImagePath[260];
-	char * pSourceImage;
-	/*packed*/ struct VRBmpHdr *bmpHeader;
+	/*bp-0x4*/   /*packed*/ struct VRBmpHdr *bmpHeader;
+	/*bp-0x8*/   char * pSourceImage;
+	/*bp-0x10c*/ char szFullSkyImagePath[260]; // 0x104 bytes
+	/*bp-0x110*/ int32_t i;
+	/*bp-0x114*/ /*packed*/ struct VRResource *vrResource;
+	/*bp-0x118*/ char * pDestinationImage;
 
 // LINE 102:
 	__asm        mov    eax, this;
@@ -637,14 +637,14 @@ _T36d:
 
 // FUNCTION: COPTER_D 0x004958e7
 unsigned long SkyImage::Compose(/*packed*/ class CBackBuffer *pDestImage, int32_t nDestinationWidth) {
-	long len2;
-	int32_t pitch;
-	long start_col;
-	long len1;
-	/*packed*/ struct SparkalRect rectDestination;
-	int32_t altdiff;
-	/*packed*/ struct SparkalRect rectSource;
-	long start_row;
+	/*bp-0x4*/   long start_row;
+	/*bp-0x14*/  /*packed*/ struct SparkalRect rectSource; // 0x10 bytes
+	/*bp-0x18*/  int32_t altdiff;
+	/*bp-0x28*/  /*packed*/ struct SparkalRect rectDestination; // 0x10 bytes
+	/*bp-0x2c*/  long len1;
+	/*bp-0x30*/  long start_col;
+	/*bp-0x34*/  int32_t pitch;
+	/*bp-0x38*/  long len2;
 
 // LINE 218:
 	__asm        jmp    near ptr 0x004958F8;

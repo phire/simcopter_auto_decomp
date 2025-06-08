@@ -625,7 +625,7 @@ class MTime  MTime::BuildLocal(const /*packed*/ class MDate& date, uint32_t h) {
 
 // FUNCTION: COPTER_D 0x0043c8ce
 unsigned long  MTime::LocalSecs() {
-	/*unpacked*/ class MTime local_time;
+	/*bp-0x8*/   /*unpacked*/ class MTime local_time;
 
 
 	__asm        mov    eax, this;
@@ -653,14 +653,14 @@ _T43:
 
 // FUNCTION: COPTER_D 0x0043c91e
 class MTime  MTime::BeginDST(uint32_t year) {
-	/*packed*/ class MDate endApril;
+	/*bp-0xc*/   /*packed*/ class MDate endApril; // 0xc bytes
 
 // LINE 120:
 	__asm        cmp    year, 0x7C2;
 	__asm        jbe    _T74;
 // LINE 121:
 // Block start:
-	/*packed*/ class MDate endMarch;
+	/*bp-0x18*/  /*packed*/ class MDate endMarch; // 0xc bytes
 	__asm        mov    eax, year;
 	__asm        push   eax;
 	__asm        push   3;
@@ -759,7 +759,7 @@ _T113:
 
 // FUNCTION: COPTER_D 0x0043ca36
 class MTime  MTime::EndDST(uint32_t year) {
-	/*packed*/ class MDate endOctober;
+	/*bp-0xc*/   /*packed*/ class MDate endOctober; // 0xc bytes
 
 // LINE 148:
 	__asm        mov    eax, year;
@@ -787,9 +787,9 @@ class MTime  MTime::EndDST(uint32_t year) {
 
 // FUNCTION: COPTER_D 0x0043ca79
  MTime::MTime() {
-	/*packed*/ class MDate today;
-	/*packed*/ struct tm *t;
-	long ltime;
+	/*bp-0x4*/   long ltime;
+	/*bp-0x8*/   /*packed*/ struct tm *t;
+	/*bp-0x14*/  /*packed*/ class MDate today; // 0xc bytes
 
 
 	this-><MTime+0x04:4> = 0x0;
@@ -964,7 +964,7 @@ _T101:
 
 // FUNCTION: COPTER_D 0x0043cc5b
 int  MTime::SetShouldPrinMDate(int32_t bNewPrinMDate) {
-	int32_t bPreviousPrinMDate;
+	/*bp-0x4*/   int32_t bPreviousPrinMDate;
 
 // LINE 242:
 	bPreviousPrinMDate = this-><MTime+0x04:4>;
@@ -978,7 +978,7 @@ int  MTime::SetShouldPrinMDate(int32_t bNewPrinMDate) {
 
 // FUNCTION: COPTER_D 0x0043cc88
 int  MTime::CompareTo(const /*unpacked*/ class MTime& t) {
-	unsigned long diff;
+	/*bp-0x4*/   unsigned long diff;
 
 // LINE 254:
 	__asm        mov    eax, this;
@@ -1048,8 +1048,8 @@ unsigned int  MTime::HourGMT() {
 
 // FUNCTION: COPTER_D 0x0043cd53
 int  MTime::IsDST() {
-	uint32_t daycount;
-	uint32_t year;
+	/*bp-0x4*/   uint32_t year;
+	/*bp-0x8*/   uint32_t daycount;
 
 // LINE 305:
 	__asm        cmp    _daylight, 0;
@@ -1278,7 +1278,7 @@ unsigned int  MTime::Second() {
 
 // FUNCTION: COPTER_D 0x0043cfbf
 char *  MTime::PrintString(char * szTime) {
-	/*unpacked*/ class ostrstream strtemp;
+	/*bp-0x58*/  /*unpacked*/ class ostrstream strtemp; // 0x58 bytes
 
 // LINE 397:
 	__asm        push   1;
@@ -1317,9 +1317,9 @@ char *  MTime::PrintString(char * szTime) {
 
 // FUNCTION: COPTER_D 0x0043d02b
 /*unpacked*/ class ostream& operator<<(/*unpacked*/ class ostream& s, const /*unpacked*/ class MTime& t) {
-	uint32_t hh;
-	/*unpacked*/ class ostrstream out;
-	char buf[80];
+	/*bp-0x50*/  char buf[80]; // 0x50 bytes
+	/*bp-0xa8*/  /*unpacked*/ class ostrstream out; // 0x58 bytes
+	/*bp-0xac*/  uint32_t hh;
 
 // LINE 413:
 	__asm        push   1;

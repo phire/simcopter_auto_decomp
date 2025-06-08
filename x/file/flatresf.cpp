@@ -210,19 +210,19 @@ public:
 // Contribution: 1:00151b10-0015371d Module: 199, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00552b10
 void FlatResFile::LoadResMap(void * __ptr32 *newMap, short * numTypes, long * dataLoc) {
-	unsigned char * resMapPtr;
-	long err;
+	/*bp-0x4*/   long err;
+	/*bp-0x8*/   unsigned char * resMapPtr;
 
 // LINE 101:
 	newMap-> = 0x0;
 // LINE 105:
 // Block start:
-	long mapLocLess;
-	long mapLoc;
-	long mapSize;
-	unsigned char miscBytes[28];
-	long miscSize;
-	long res1Off;
+	/*bp-0xc*/   long res1Off;
+	/*bp-0x10*/  long miscSize;
+	/*bp-0x2c*/  unsigned char miscBytes[28]; // 0x1c bytes
+	/*bp-0x30*/  long mapSize;
+	/*bp-0x34*/  long mapLoc;
+	/*bp-0x38*/  long mapLocLess;
 	miscSize = 0x1c;
 // LINE 107:
 	__asm        mov    ecx, this;
@@ -628,7 +628,7 @@ _T58:
 
 // FUNCTION: COPTER_D 0x00552fca
 short FlatResFile::CheckForLeaks() {
-	short total;
+	/*bp-0x4*/   short total;
 
 // LINE 260:
 	__asm        call   ResMap::CheckForLeaks;
@@ -722,7 +722,7 @@ _T6a:
 
 // FUNCTION: COPTER_D 0x0055310d
 unsigned long FlatResFile::GetIndType(short index) {
-	unsigned long type;
+	/*bp-0x4*/   unsigned long type;
 
 // LINE 312:
 	__asm        mov    eax, this;
@@ -795,7 +795,7 @@ _T6a:
 
 // FUNCTION: COPTER_D 0x0055320b
 void * __ptr32 FlatResFile::GetByID(unsigned long type, short id, void (*Swizzler)(void * __ptr32, long)) {
-	/*unpacked*/ struct ResMap::Entry *entry;
+	/*bp-0x4*/   /*unpacked*/ struct ResMap::Entry *entry;
 
 // LINE 337:
 	__asm        mov    eax, this;
@@ -855,7 +855,7 @@ _T89:
 	__asm        je     _T100;
 // LINE 349:
 // Block start:
-	unsigned char * data;
+	/*bp-0x8*/   unsigned char * data;
 	__asm        mov    eax, entry;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -891,7 +891,7 @@ _T10b:
 
 // FUNCTION: COPTER_D 0x0055331d
 void * __ptr32 FlatResFile::GetByName(unsigned long type, unsigned char * name, void (*Swizzler)(void * __ptr32, long)) {
-	/*unpacked*/ struct ResMap::Entry *entry;
+	/*bp-0x4*/   /*unpacked*/ struct ResMap::Entry *entry;
 
 // LINE 364:
 	__asm        mov    eax, this;
@@ -963,7 +963,7 @@ _Tac:
 	__asm        je     _T123;
 // LINE 378:
 // Block start:
-	unsigned char * data;
+	/*bp-0x8*/   unsigned char * data;
 	__asm        mov    eax, entry;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -999,7 +999,7 @@ _T12e:
 
 // FUNCTION: COPTER_D 0x00553452
 void * __ptr32 FlatResFile::GetByIndex(unsigned long type, short index, void (*Swizzler)(void * __ptr32, long)) {
-	/*unpacked*/ struct ResMap::Entry *entry;
+	/*bp-0x4*/   /*unpacked*/ struct ResMap::Entry *entry;
 
 // LINE 393:
 	__asm        mov    eax, this;
@@ -1059,7 +1059,7 @@ _T89:
 	__asm        je     _T100;
 // LINE 405:
 // Block start:
-	unsigned char * data;
+	/*bp-0x8*/   unsigned char * data;
 	__asm        mov    eax, entry;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -1095,7 +1095,7 @@ _T10b:
 
 // FUNCTION: COPTER_D 0x00553564
 void FlatResFile::GetName(void * __ptr32 res, unsigned char * name) {
-	/*unpacked*/ struct ResMap::Entry *entry;
+	/*bp-0x4*/   /*unpacked*/ struct ResMap::Entry *entry;
 
 // LINE 420:
 	__asm        mov    eax, name;
@@ -1147,7 +1147,7 @@ _Ta2:
 
 // FUNCTION: COPTER_D 0x0055360d
 void FlatResFile::GetID(void * __ptr32 res, short * id) {
-	/*unpacked*/ struct ResMap::Entry *entry;
+	/*bp-0x4*/   /*unpacked*/ struct ResMap::Entry *entry;
 
 // LINE 437:
 	__asm        mov    eax, id;
@@ -1196,8 +1196,8 @@ _T9a:
 
 // FUNCTION: COPTER_D 0x005536ae
 unsigned long FlatResFile::GetResType(void * __ptr32 res) {
-	unsigned long returnType;
-	/*unpacked*/ struct ResMap::Entry *entry;
+	/*bp-0x4*/   /*unpacked*/ struct ResMap::Entry *entry;
+	/*bp-0x8*/   unsigned long returnType;
 
 // LINE 450:
 	__asm        mov    eax, this;
@@ -1266,7 +1266,7 @@ _Tdf:
 
 // FUNCTION: COPTER_D 0x00553794
 void FlatResFile::Release(void * __ptr32 res) {
-	/*unpacked*/ struct ResMap::Entry *entry;
+	/*bp-0x4*/   /*unpacked*/ struct ResMap::Entry *entry;
 
 // LINE 469:
 	__asm        mov    eax, this;
@@ -1318,7 +1318,7 @@ _T9f:
 
 // FUNCTION: COPTER_D 0x0055383a
 void FlatResFile::Detach(void * __ptr32 res) {
-	/*unpacked*/ struct ResMap::Entry *entry;
+	/*bp-0x4*/   /*unpacked*/ struct ResMap::Entry *entry;
 
 // LINE 497:
 	__asm        mov    eax, this;
@@ -1362,9 +1362,9 @@ _T90:
 
 // FUNCTION: COPTER_D 0x005538d1
 void FlatResFile::Load(void * __ptr32 res) {
-	/*unpacked*/ struct ResMap::Entry *entry;
-	unsigned char oldState;
-	unsigned char * ptr;
+	/*bp-0x4*/   unsigned char * ptr;
+	/*bp-0x8*/   unsigned char oldState;
+	/*bp-0xc*/   /*unpacked*/ struct ResMap::Entry *entry;
 
 // LINE 523:
 	__asm        mov    eax, this;
@@ -1443,7 +1443,7 @@ _Te6:
 
 // FUNCTION: COPTER_D 0x005539be
 void FlatResFile::GetString(unsigned char * str, short resID, short index) {
-	/*unpacked*/ class StringSet tempStrs;
+	/*bp-0x1c*/  /*unpacked*/ class StringSet tempStrs; // 0x10 bytes
 
 	// Function registers exception cleanup function at 0x00553a6a
 // LINE 596:
@@ -1470,7 +1470,7 @@ void FlatResFile::GetString(unsigned char * str, short resID, short index) {
 	__asm        jl     _T92;
 // LINE 601:
 // Block start:
-	unsigned char * foundStr;
+	/*bp-0x20*/  unsigned char * foundStr;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(index);
 	__asm        push   eax;
 	__asm        lea    ecx, tempStrs.fResFile;
@@ -1511,12 +1511,12 @@ _Tb6:
 
 // FUNCTION: COPTER_D 0x00553a84
  ResMap::ResMap(short refNum, short numTypes, void * __ptr32 resMap, unsigned char * resMapPtr, long dataLoc) {
-	short typeCnt;
-	/*unpacked*/ struct ResMap::TypeHead *typeList;
-	short total;
-	/*unpacked*/ struct ResMap::Entry *resList;
-	short resCnt;
-	unsigned char * mapStart;
+	/*bp-0x4*/   unsigned char * mapStart;
+	/*bp-0x8*/   short resCnt;
+	/*bp-0xc*/   /*unpacked*/ struct ResMap::Entry *resList;
+	/*bp-0x10*/  short total;
+	/*bp-0x14*/  /*unpacked*/ struct ResMap::TypeHead *typeList;
+	/*bp-0x18*/  short typeCnt;
 
 // LINE 672:
 	this-><ResMap+0x08:4> = resMap;
@@ -1609,9 +1609,9 @@ _Tfe:
 
 // FUNCTION: COPTER_D 0x00553ba0
  ResMap::~ResMap() {
-	/*unpacked*/ struct ResMap::Entry *srch;
-	/*unpacked*/ struct ResMap::Entry *last;
-	unsigned char hState;
+	/*bp-0x4*/   unsigned char hState;
+	/*bp-0x8*/   /*unpacked*/ struct ResMap::Entry *last;
+	/*bp-0xc*/   /*unpacked*/ struct ResMap::Entry *srch;
 
 // LINE 729:
 	__asm        mov    eax, this;
@@ -1686,11 +1686,11 @@ _T93:
 
 // FUNCTION: COPTER_D 0x00553c5b
 long  ResMap::Get(/*unpacked*/ class FlatResFile *fromFile) {
-	/*unpacked*/ class ResMap *srch;
-	short numTypes;
-	long dataLoc;
-	void * __ptr32 newMap;
-	unsigned char * resPtr;
+	/*bp-0x10*/  unsigned char * resPtr;
+	/*bp-0x14*/  void * __ptr32 newMap;
+	/*bp-0x18*/  long dataLoc;
+	/*bp-0x1c*/  short numTypes;
+	/*bp-0x20*/  /*unpacked*/ class ResMap *srch;
 
 	// Function registers exception cleanup function at 0x00553db3
 // LINE 755:
@@ -1831,7 +1831,7 @@ _T35:
 	__asm        jne    _Tc0;
 // LINE 791:
 // Block start:
-	/*unpacked*/ class ResMap **rmv;
+	/*bp-0x4*/   /*unpacked*/ class ResMap **rmv;
 	__asm        mov    rmv, 0x5BBEDC;
 	__asm        jmp    _T5c;
 _T54:
@@ -1880,8 +1880,8 @@ _Tc0:
 
 // FUNCTION: COPTER_D 0x00553e96
 short  ResMap::CheckForLeaks() {
-	/*unpacked*/ class ResMap *srch;
-	short total;
+	/*bp-0x4*/   short total;
+	/*bp-0x8*/   /*unpacked*/ class ResMap *srch;
 
 // LINE 803:
 	total = 0x0;
@@ -1906,10 +1906,10 @@ _T37:
 
 // FUNCTION: COPTER_D 0x00553edb
 void  ResMap::LoadEntry(/*unpacked*/ struct ResMap::Entry *entry, /*unpacked*/ class FlatResFile *file, unsigned short unpurge) {
-	long pos;
-	unsigned char oldHandState;
-	long err;
-	long size;
+	/*bp-0x4*/   long size;
+	/*bp-0x8*/   long err;
+	/*bp-0xc*/   unsigned char oldHandState;
+	/*bp-0x10*/  long pos;
 
 // LINE 815:
 	err = 0x0;
@@ -2043,7 +2043,7 @@ _T177:
 	__asm        jmp    _T1f8;
 // LINE 855:
 // Block start:
-	long newState;
+	/*bp-0x14*/  long newState;
 _T17c:
 	newState = 0x0;
 // LINE 856:
@@ -2094,7 +2094,7 @@ _T1e6:
 // LINE 868:
 // Block end:
 // Block start:
-	unsigned char * block;
+	/*bp-0x18*/  unsigned char * block;
 _T1f8:
 	__asm        mov    eax, entry;
 	__asm        mov    eax, [eax+8];
@@ -2179,7 +2179,7 @@ _T2c2:
 
 // FUNCTION: COPTER_D 0x005541a4
 unsigned long  ResMap::GetIndType(short index) {
-	unsigned long type;
+	/*bp-0x4*/   unsigned long type;
 
 // LINE 883:
 	__asm        mov    eax, this;
@@ -2213,8 +2213,8 @@ _T53:
 
 // FUNCTION: COPTER_D 0x005541fe
 short  ResMap::Count(unsigned long type) {
-	/*unpacked*/ struct ResMap::TypeHead *typeList;
-	short cnt;
+	/*bp-0x4*/   short cnt;
+	/*bp-0x8*/   /*unpacked*/ struct ResMap::TypeHead *typeList;
 
 // LINE 896:
 	typeList = this-><ResMap+0x0c:4>;
@@ -2259,10 +2259,10 @@ _T6d:
 
 // FUNCTION: COPTER_D 0x00554272
 unsigned long  ResMap::FindType(/*unpacked*/ struct ResMap::Entry *entry) {
-	/*unpacked*/ struct ResMap::TypeHead *typeList;
-	unsigned long type;
-	short cnt;
-	short numEntries;
+	/*bp-0x4*/   short numEntries;
+	/*bp-0x8*/   short cnt;
+	/*bp-0xc*/   unsigned long type;
+	/*bp-0x10*/  /*unpacked*/ struct ResMap::TypeHead *typeList;
 
 // LINE 912:
 	type = 0x0;
@@ -2277,7 +2277,7 @@ _T27:
 	__asm        jle    _T8b;
 // LINE 921:
 // Block start:
-	/*unpacked*/ struct ResMap::Entry *entryList;
+	/*bp-0x14*/  /*unpacked*/ struct ResMap::Entry *entryList;
 	__asm        mov    eax, typeList;
 	__asm        movsx  eax, word ptr [eax+6];
 	__asm        mov    ecx, this;
@@ -2322,9 +2322,9 @@ _T92:
 
 // FUNCTION: COPTER_D 0x0055430b
 struct ResMap::Entry *  ResMap::FindEntry(void * __ptr32 res) {
-	/*unpacked*/ struct ResMap::Entry *found;
-	/*unpacked*/ struct ResMap::Entry *srch;
-	/*unpacked*/ struct ResMap::Entry *last;
+	/*bp-0x4*/   /*unpacked*/ struct ResMap::Entry *last;
+	/*bp-0x8*/   /*unpacked*/ struct ResMap::Entry *srch;
+	/*bp-0xc*/   /*unpacked*/ struct ResMap::Entry *found;
 
 // LINE 935:
 	found = 0x0;
@@ -2368,9 +2368,9 @@ _T60:
 
 // FUNCTION: COPTER_D 0x0055437a
 struct ResMap::Entry *  ResMap::FindEntry(unsigned long type, short id) {
-	/*unpacked*/ struct ResMap::Entry *found;
-	/*unpacked*/ struct ResMap::TypeHead *typeList;
-	short cnt;
+	/*bp-0x4*/   short cnt;
+	/*bp-0x8*/   /*unpacked*/ struct ResMap::TypeHead *typeList;
+	/*bp-0xc*/   /*unpacked*/ struct ResMap::Entry *found;
 
 // LINE 948:
 	found = 0x0;
@@ -2404,7 +2404,7 @@ _T53:
 	__asm        jle    _Tb4;
 // LINE 961:
 // Block start:
-	/*unpacked*/ struct ResMap::Entry *entryList;
+	/*bp-0x10*/  /*unpacked*/ struct ResMap::Entry *entryList;
 	__asm        mov    eax, typeList;
 	__asm        movsx  eax, word ptr [eax+6];
 	__asm        mov    ecx, this;
@@ -2448,9 +2448,9 @@ _Tb4:
 
 // FUNCTION: COPTER_D 0x0055443d
 struct ResMap::Entry *  ResMap::FindEntry(unsigned long type, unsigned char * name) {
-	/*unpacked*/ struct ResMap::Entry *found;
-	/*unpacked*/ struct ResMap::TypeHead *typeList;
-	short cnt;
+	/*bp-0x4*/   short cnt;
+	/*bp-0x8*/   /*unpacked*/ struct ResMap::TypeHead *typeList;
+	/*bp-0xc*/   /*unpacked*/ struct ResMap::Entry *found;
 
 // LINE 976:
 	found = 0x0;
@@ -2484,8 +2484,8 @@ _T53:
 	__asm        jle    _Tea;
 // LINE 989:
 // Block start:
-	/*unpacked*/ struct ResMap::Entry *entryList;
-	unsigned char * namePtr;
+	/*bp-0x10*/  unsigned char * namePtr;
+	/*bp-0x14*/  /*unpacked*/ struct ResMap::Entry *entryList;
 	__asm        mov    eax, typeList;
 	__asm        movsx  eax, word ptr [eax+6];
 	__asm        mov    ecx, this;
@@ -2548,9 +2548,9 @@ _Tea:
 
 // FUNCTION: COPTER_D 0x00554536
 struct ResMap::Entry *  ResMap::FindIndEntry(unsigned long type, short index) {
-	/*unpacked*/ struct ResMap::Entry *found;
-	/*unpacked*/ struct ResMap::TypeHead *typeList;
-	short cnt;
+	/*bp-0x4*/   short cnt;
+	/*bp-0x8*/   /*unpacked*/ struct ResMap::TypeHead *typeList;
+	/*bp-0xc*/   /*unpacked*/ struct ResMap::Entry *found;
 
 // LINE 1008:
 	found = 0x0;
@@ -2584,7 +2584,7 @@ _T53:
 	__asm        jle    _Tac;
 // LINE 1021:
 // Block start:
-	/*unpacked*/ struct ResMap::Entry *entryList;
+	/*bp-0x10*/  /*unpacked*/ struct ResMap::Entry *entryList;
 	__asm        mov    eax, typeList;
 	__asm        movsx  eax, word ptr [eax+6];
 	__asm        mov    ecx, this;
@@ -2621,7 +2621,7 @@ _Tac:
 
 // FUNCTION: COPTER_D 0x005545f1
 void  ResMap::GetName(/*unpacked*/ struct ResMap::Entry *entry, unsigned char * name) {
-	unsigned char * namePtr;
+	/*bp-0x4*/   unsigned char * namePtr;
 
 // LINE 1033:
 	__asm        mov    eax, name;
@@ -2683,11 +2683,11 @@ void  ResMap::SwapTypeHead(/*unpacked*/ struct ResMap::TypeHead *typeHead) {
 
 // FUNCTION: COPTER_D 0x0055468b
 void  ResMap::SwapResEntry(/*unpacked*/ struct ResMap::Entry *resEntry) {
-	unsigned long dataLoc;
-	unsigned char hiWord;
-	unsigned char * bptr;
-	unsigned char loWord;
-	unsigned char midWord;
+	/*bp-0x4*/   unsigned char midWord;
+	/*bp-0x8*/   unsigned char loWord;
+	/*bp-0xc*/   unsigned char * bptr;
+	/*bp-0x10*/  unsigned char hiWord;
+	/*bp-0x14*/  unsigned long dataLoc;
 
 // LINE 1081:
 	__asm        mov    eax, resEntry;

@@ -308,10 +308,10 @@ _T230:
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055ed00
 void cBList<class cCopterAnim>::LoadAll(void) cBList<cCopterAnim>::LoadAll() {
-	unsigned short fileOpened;
-	void * __ptr32 h;
-	short count;
-	short numThings;
+	/*bp-0x10*/  short numThings;
+	/*bp-0x14*/  short count;
+	/*bp-0x18*/  void * __ptr32 h;
+	/*bp-0x1c*/  unsigned short fileOpened;
 
 	// Function registers exception cleanup function at 0x0055f1c0
 // LINE 181:

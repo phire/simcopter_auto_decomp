@@ -1,8 +1,8 @@
 // Function in module: Inputwin.obj
 // FUNCTION: COPTER_D 0x0040f710
 int32_t SetStringFromStringResource(/*packed*/ class basic_string<char>& stringToSet, unsigned long lResourceID) {
-	int32_t nChars;
-	char szString[4096];
+	/*bp-0x1000*/ char szString[4096]; // 0x1000 bytes
+	/*bp-0x1004*/ int32_t nChars;
 
 // LINE 123:
 	__asm        push   0xFFF;

@@ -164,8 +164,8 @@ struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
 // Contribution: 1:001235f0-00126462 Module: 165, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x005245f0
 void S3FireReset() {
-	long i;
-	/*packed*/ struct _FIRE_DATA *fd;
+	/*bp-0x4*/   /*packed*/ struct _FIRE_DATA *fd;
+	/*bp-0x8*/   long i;
 
 // LINE 105:
 	S_fire_count = 0x0;
@@ -206,12 +206,12 @@ _T88:
 
 // FUNCTION: COPTER_D 0x0052467d
 void S3FireInit() {
-	int32_t height;
-	char * mem;
-	long i;
-	/*packed*/ struct _FIRE_DATA *fd;
-	long size;
-	/*packed*/ struct VRObjInfo oinfo;
+	/*bp-0x24*/  /*packed*/ struct VRObjInfo oinfo; // 0x24 bytes
+	/*bp-0x28*/  long size;
+	/*bp-0x2c*/  /*packed*/ struct _FIRE_DATA *fd;
+	/*bp-0x30*/  long i;
+	/*bp-0x34*/  char * mem;
+	/*bp-0x38*/  int32_t height;
 
 // LINE 143:
 	__asm        lea    eax, oinfo.Faces;
@@ -334,13 +334,13 @@ _T1a7:
 
 // FUNCTION: COPTER_D 0x00524829
 int32_t S3FireStart(/*packed*/ struct _CELL_FIRE_DATA *cfd, long cellx, long celly, int32_t x, int32_t y, int32_t z, long side_flag, long mission_id, long flags) {
-	/*packed*/ struct _CELL_INFO *cptr;
-	/*packed*/ struct _MISSION_PARMS mp;
-	long i;
-	int32_t maxradius;
-	/*packed*/ struct _STOBJ_INST *stobj;
-	/*packed*/ struct _FIRE_DATA *fd;
-	/*packed*/ struct VRObjInfo oinfo;
+	/*bp-0x24*/  /*packed*/ struct VRObjInfo oinfo; // 0x24 bytes
+	/*bp-0x28*/  /*packed*/ struct _FIRE_DATA *fd;
+	/*bp-0x2c*/  /*packed*/ struct _STOBJ_INST *stobj;
+	/*bp-0x30*/  int32_t maxradius;
+	/*bp-0x34*/  long i;
+	/*bp-0x4c*/  /*packed*/ struct _MISSION_PARMS mp; // 0x18 bytes
+	/*bp-0x50*/  /*packed*/ struct _CELL_INFO *cptr;
 
 // LINE 213:
 	__asm        mov    i, 0;
@@ -564,20 +564,20 @@ _T2b1:
 
 // FUNCTION: COPTER_D 0x00524adf
 void S3FireDriver() {
-	/*packed*/ struct _STOBJ_INST **stptrptr;
-	/*packed*/ struct Point3d minloc;
-	int32_t fireloopsound;
-	/*packed*/ struct _CELL_INFO *cptr;
-	int32_t newcoord;
-	/*packed*/ struct _MISSION_PARMS mp;
-	/*packed*/ struct Point3d floc;
-	long i;
-	/*packed*/ struct Point2d *missloc;
-	/*packed*/ struct Point3d loc;
-	/*packed*/ struct _FIRE_DATA *nfd;
-	long dist;
-	/*packed*/ struct _FIRE_DATA *fd;
-	long mindist;
+	/*bp-0x4*/   long mindist;
+	/*bp-0x8*/   /*packed*/ struct _FIRE_DATA *fd;
+	/*bp-0xc*/   long dist;
+	/*bp-0x10*/  /*packed*/ struct _FIRE_DATA *nfd;
+	/*bp-0x1c*/  /*packed*/ struct Point3d loc; // 0xc bytes
+	/*bp-0x20*/  /*packed*/ struct Point2d *missloc;
+	/*bp-0x24*/  long i;
+	/*bp-0x30*/  /*packed*/ struct Point3d floc; // 0xc bytes
+	/*bp-0x48*/  /*packed*/ struct _MISSION_PARMS mp; // 0x18 bytes
+	/*bp-0x4c*/  int32_t newcoord;
+	/*bp-0x50*/  /*packed*/ struct _CELL_INFO *cptr;
+	/*bp-0x54*/  int32_t fireloopsound;
+	/*bp-0x60*/  /*packed*/ struct Point3d minloc; // 0xc bytes
+	/*bp-0x64*/  /*packed*/ struct _STOBJ_INST **stptrptr;
 
 // LINE 322:
 	fireloopsound = 0x0;
@@ -1104,12 +1104,12 @@ _T5da:
 
 // FUNCTION: COPTER_D 0x005250be
 void S3FireSpread(/*packed*/ struct _FIRE_DATA *fd) {
-	/*packed*/ struct _FIRE_DATA *tfd;
-	/*packed*/ struct _CELL_INFO *cptr;
-	long i;
-	long celly;
-	long cellx;
-	/*packed*/ struct _CELL_FIRE_DATA *cfd;
+	/*bp-0x4*/   /*packed*/ struct _CELL_FIRE_DATA *cfd;
+	/*bp-0x8*/   long cellx;
+	/*bp-0xc*/   long celly;
+	/*bp-0x10*/  long i;
+	/*bp-0x14*/  /*packed*/ struct _CELL_INFO *cptr;
+	/*bp-0x18*/  /*packed*/ struct _FIRE_DATA *tfd;
 
 // LINE 582:
 	__asm        call   rand;
@@ -1206,7 +1206,7 @@ _T113:
 
 // FUNCTION: COPTER_D 0x005251d6
 /*packed*/ struct _CELL_FIRE_DATA* S3FireGetCellData() {
-	long i;
+	/*bp-0x4*/   long i;
 
 // LINE 621:
 	__asm        mov    i, 0;
@@ -1237,18 +1237,18 @@ _T51:
 
 // FUNCTION: COPTER_D 0x0052522c
 void S3FireDouse(/*packed*/ struct _CELL_INFO *cptr, /*packed*/ struct Point3d *wloc, int32_t water_timetolive) {
-	/*packed*/ struct _STOBJ_INST **stptrptr;
-	int32_t radius;
-	/*packed*/ struct _MISSION_PARMS mp;
-	int32_t dfactor;
-	/*packed*/ struct Point3d loc;
-	/*packed*/ struct Point2d *missloc;
-	/*packed*/ struct Point3d center;
-	/*packed*/ struct Point3d dloc;
-	/*packed*/ struct _FIRE_DATA *nfd;
-	/*packed*/ struct _STOBJ_INST *stobj;
-	/*packed*/ struct _DYOBJ_INST *dyobj;
-	/*packed*/ struct _FIRE_DATA *fd;
+	/*bp-0x4*/   /*packed*/ struct _FIRE_DATA *fd;
+	/*bp-0x8*/   /*packed*/ struct _DYOBJ_INST *dyobj;
+	/*bp-0xc*/   /*packed*/ struct _STOBJ_INST *stobj;
+	/*bp-0x10*/  /*packed*/ struct _FIRE_DATA *nfd;
+	/*bp-0x1c*/  /*packed*/ struct Point3d dloc; // 0xc bytes
+	/*bp-0x28*/  /*packed*/ struct Point3d center; // 0xc bytes
+	/*bp-0x2c*/  /*packed*/ struct Point2d *missloc;
+	/*bp-0x38*/  /*packed*/ struct Point3d loc; // 0xc bytes
+	/*bp-0x3c*/  int32_t dfactor;
+	/*bp-0x54*/  /*packed*/ struct _MISSION_PARMS mp; // 0x18 bytes
+	/*bp-0x58*/  int32_t radius;
+	/*bp-0x5c*/  /*packed*/ struct _STOBJ_INST **stptrptr;
 
 // LINE 651:
 	__asm        mov    eax, S_ftwk_fire_radius;
@@ -1609,9 +1609,9 @@ _T3f3:
 
 // FUNCTION: COPTER_D 0x00525624
 int32_t S3FireStartCell(/*packed*/ struct _CELL_FIRE_DATA *cfd, long cellx, long celly, long mission_id, long flags) {
-	int32_t retval;
-	/*packed*/ struct _MISSION_PARMS mp;
-	/*packed*/ struct _LZ_INFO *lz;
+	/*bp-0x4*/   /*packed*/ struct _LZ_INFO *lz;
+	/*bp-0x1c*/  /*packed*/ struct _MISSION_PARMS mp; // 0x18 bytes
+	/*bp-0x20*/  int32_t retval;
 
 // LINE 833:
 	retval = 0x0;
@@ -2725,8 +2725,8 @@ _Taff:
 
 // FUNCTION: COPTER_D 0x00526128
 /*packed*/ struct _FIRE_DATA* S3FireGetByMission(long mission_id) {
-	long i;
-	/*packed*/ struct _FIRE_DATA *fd;
+	/*bp-0x4*/   /*packed*/ struct _FIRE_DATA *fd;
+	/*bp-0x8*/   long i;
 
 // LINE 947:
 	__asm        mov    i, 0;
@@ -2763,10 +2763,10 @@ _T65:
 
 // FUNCTION: COPTER_D 0x00526192
 int32_t S3FireGetAltitude(/*packed*/ struct _CELL_INFO *cptr, /*packed*/ struct Point3d *loc) {
-	int32_t height;
-	int32_t radius;
-	/*packed*/ struct _STOBJ_INST *stobj;
-	/*packed*/ struct _FIRE_DATA *fd;
+	/*bp-0x4*/   /*packed*/ struct _FIRE_DATA *fd;
+	/*bp-0x8*/   /*packed*/ struct _STOBJ_INST *stobj;
+	/*bp-0xc*/   int32_t radius;
+	/*bp-0x10*/  int32_t height;
 
 // LINE 972:
 	__asm        mov    eax, cptr;
@@ -2865,10 +2865,10 @@ _Tfb:
 
 // FUNCTION: COPTER_D 0x00526292
 int32_t S3FireTruckDouse(/*packed*/ struct _FIRE_DATA *fd, int32_t dist, /*packed*/ struct _DYOBJ_INST *dytruck, /*packed*/ struct Point3d *firevec) {
-	/*packed*/ struct Point2d currpos;
-	/*packed*/ struct Point3d loc;
-	/*packed*/ struct Point3d vec;
-	int32_t speed;
+	/*bp-0x4*/   int32_t speed;
+	/*bp-0x10*/  /*packed*/ struct Point3d vec; // 0xc bytes
+	/*bp-0x1c*/  /*packed*/ struct Point3d loc; // 0xc bytes
+	/*bp-0x24*/  /*packed*/ struct Point2d currpos; // 0x8 bytes
 
 // LINE 1036:
 	__asm        mov    eax, dytruck;
@@ -2993,10 +2993,10 @@ _T155:
 
 // FUNCTION: COPTER_D 0x005263ec
 int32_t S3FireTruckDouseDyObj(/*packed*/ struct _DYOBJ_INST *dyobj, int32_t dist, /*packed*/ struct _DYOBJ_INST *dytruck, /*packed*/ struct Point3d *firevec) {
-	/*packed*/ struct Point2d currpos;
-	/*packed*/ struct Point3d loc;
-	/*packed*/ struct Point3d vec;
-	int32_t speed;
+	/*bp-0x4*/   int32_t speed;
+	/*bp-0x10*/  /*packed*/ struct Point3d vec; // 0xc bytes
+	/*bp-0x1c*/  /*packed*/ struct Point3d loc; // 0xc bytes
+	/*bp-0x24*/  /*packed*/ struct Point2d currpos; // 0x8 bytes
 
 // LINE 1117:
 	__asm        mov    eax, dytruck;
@@ -3122,7 +3122,7 @@ _T159:
 
 // FUNCTION: COPTER_D 0x0052654a
 void S3FireTweakInit() {
-	int32_t * pvals[10];
+	/*bp-0x28*/  int32_t * pvals[10]; // 0x28 bytes
 
 // LINE 1178:
 	pvals[0] = 0x5b7388;
@@ -3148,7 +3148,7 @@ void S3FireTweakInit() {
 
 // FUNCTION: COPTER_D 0x00526595
 int32_t S3FireCanCellBurn(long cellx, long celly) {
-	long tile;
+	/*bp-0x4*/   long tile;
 
 // LINE 1200:
 	__asm        cmp    cellx, 0;
@@ -3215,17 +3215,17 @@ _Tc7:
 
 // FUNCTION: COPTER_D 0x00526661
 void S3FireDestroyCell(/*packed*/ struct _FIRE_DATA *fd) {
-	short tile;
-	long num_debris;
-	long j;
-	/*packed*/ struct Point3d loc;
-	long i;
-	long y;
-	long x;
-	/*packed*/ struct Point3d vec;
-	/*packed*/ struct _STOBJ_INST *stobj;
-	int32_t mat[4][4];
-	int32_t speed;
+	/*bp-0x4*/   int32_t speed;
+	/*bp-0x44*/  int32_t mat[4][4]; // 0x40 bytes
+	/*bp-0x48*/  /*packed*/ struct _STOBJ_INST *stobj;
+	/*bp-0x54*/  /*packed*/ struct Point3d vec; // 0xc bytes
+	/*bp-0x58*/  long x;
+	/*bp-0x5c*/  long y;
+	/*bp-0x60*/  long i;
+	/*bp-0x6c*/  /*packed*/ struct Point3d loc; // 0xc bytes
+	/*bp-0x70*/  long j;
+	/*bp-0x74*/  long num_debris;
+	/*bp-0x78*/  short tile;
 
 // LINE 1241:
 	__asm        mov    eax, fd;
@@ -3652,19 +3652,19 @@ long S3FireGetCount() {
 
 // FUNCTION: COPTER_D 0x00526b96
 long S3FireAddToNearest(/*packed*/ struct _CELL_INFO *fcptr, /*packed*/ struct Point2d *loc) {
-	int32_t stop_now;
-	/*packed*/ struct _CELL_INFO *cptr;
-	int32_t curr_dir;
-	int32_t y;
-	int32_t i;
-	int32_t x;
-	int32_t spiral_dist;
-	/*packed*/ struct _STOBJ_INST *stobj;
-	int32_t curr_dist;
-	/*packed*/ struct _CELL_FIRE_DATA *cfd;
-	int32_t ydir;
-	/*packed*/ struct _FIRE_DATA *fd;
-	int32_t xdir;
+	/*bp-0x4*/   int32_t xdir;
+	/*bp-0x8*/   /*packed*/ struct _FIRE_DATA *fd;
+	/*bp-0xc*/   int32_t ydir;
+	/*bp-0x10*/  /*packed*/ struct _CELL_FIRE_DATA *cfd;
+	/*bp-0x14*/  int32_t curr_dist;
+	/*bp-0x18*/  /*packed*/ struct _STOBJ_INST *stobj;
+	/*bp-0x1c*/  int32_t spiral_dist;
+	/*bp-0x20*/  int32_t x;
+	/*bp-0x24*/  int32_t i;
+	/*bp-0x28*/  int32_t y;
+	/*bp-0x2c*/  int32_t curr_dir;
+	/*bp-0x30*/  /*packed*/ struct _CELL_INFO *cptr;
+	/*bp-0x34*/  int32_t stop_now;
 
 // LINE 1397:
 	spiral_dist = 0x5;
@@ -3834,9 +3834,9 @@ _T1e3:
 
 // FUNCTION: COPTER_D 0x00526d7e
 void S3FireDyObjCollisionCheck(/*packed*/ struct _FIRE_DATA *fd, long hit_type) {
-	/*packed*/ struct Point3d loc;
-	/*packed*/ struct _DYOBJ_INST *dyobj;
-	int32_t ret_code;
+	/*bp-0x4*/   int32_t ret_code;
+	/*bp-0x8*/   /*packed*/ struct _DYOBJ_INST *dyobj;
+	/*bp-0x14*/  /*packed*/ struct Point3d loc; // 0xc bytes
 
 // LINE 1506:
 	ret_code = 0x0;
@@ -4029,9 +4029,9 @@ _T232:
 
 // FUNCTION: COPTER_D 0x00526fb5
 int32_t S3FireMIFFLoad(void * __ptr32 miffReader) {
-	long i;
-	long ret;
-	/*packed*/ struct _FIRE_DATA *fd;
+	/*bp-0x4*/   /*packed*/ struct _FIRE_DATA *fd;
+	/*bp-0x8*/   long ret;
+	/*bp-0xc*/   long i;
 
 // LINE 1626:
 	__asm        push   0xA0;
@@ -4313,8 +4313,8 @@ _T3a0:
 
 // FUNCTION: COPTER_D 0x0052735a
 int32_t S3FireMIFFSave(void * __ptr32 miffWriter) {
-	long i;
-	long ret;
+	/*bp-0x4*/   long ret;
+	/*bp-0x8*/   long i;
 
 // LINE 1731:
 	__asm        mov    i, 0;

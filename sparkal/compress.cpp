@@ -341,10 +341,10 @@ private:
 // Contribution: 1:000a9800-000aa528 Module: 7, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004aa800
 void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
-	int32_t InputMode;
-	/*unpacked*/ class ifstream InputFile;
-	char FileName[13];
-	/*unpacked*/ class ostrstream NameOut;
+	/*bp-0x58*/  /*unpacked*/ class ostrstream NameOut; // 0x58 bytes
+	/*bp-0x68*/  char FileName[13]; // 0xd bytes
+	/*bp-0xc4*/  /*unpacked*/ class ifstream InputFile; // 0x5c bytes
+	/*bp-0xc8*/  int32_t InputMode;
 
 
 	__asm        mov    eax, this;
@@ -450,7 +450,7 @@ _T174:
 	__asm        je     _T375;
 // LINE 70:
 // Block start:
-	unsigned long ImageByteCount;
+	/*bp-0xcc*/  unsigned long ImageByteCount;
 _T186:
 	__asm        push   4;
 	__asm        lea    eax, ImageByteCount;
@@ -497,7 +497,7 @@ _T21e:
 	__asm        je     _T375;
 // LINE 79:
 // Block start:
-	/*packed*/ struct RLEHeader *pCompressedImage;
+	/*bp-0xd0*/  /*packed*/ struct RLEHeader *pCompressedImage;
 	__asm        mov    pCompressedImage, 0;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -825,15 +825,15 @@ _T65:
 	__asm        je     _T253;
 // LINE 162:
 // Block start:
-	int32_t Left;
-	unsigned char * pCompressedBits;
-	short LeftClipAmount;
-	int32_t Top;
-	int32_t Right;
-	unsigned char TransparentColor;
-	short Width;
-	short Height;
-	int32_t Bottom;
+	/*bp-0x4*/   int32_t Bottom;
+	/*bp-0x8*/   short Height;
+	/*bp-0xc*/   short Width;
+	/*bp-0x10*/  unsigned char TransparentColor;
+	/*bp-0x14*/  int32_t Right;
+	/*bp-0x18*/  int32_t Top;
+	/*bp-0x1c*/  short LeftClipAmount;
+	/*bp-0x20*/  unsigned char * pCompressedBits;
+	/*bp-0x24*/  int32_t Left;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        movsx  eax, word ptr [eax+4];
@@ -961,7 +961,7 @@ _T1ae:
 	__asm        jle    _T253;
 // LINE 204:
 // Block start:
-	unsigned char * pBits;
+	/*bp-0x28*/  unsigned char * pBits;
 	__asm        jmp    near ptr 0x004AAFCD;
 
 	pBits = pDest->mpBits;
@@ -970,7 +970,7 @@ _T1ae:
 	__asm        je     _T253;
 // LINE 207:
 // Block start:
-	long DestStride;
+	/*bp-0x2c*/  long DestStride;
 	__asm        mov    eax, pDest;
 	__asm        mov    eax, [eax+0x14];
 	__asm        mov    DestStride, eax;
@@ -1038,9 +1038,9 @@ static void ConvertCompressedByteOrdering(/*packed*/ struct RLEHeader *pCompress
 
 // FUNCTION: COPTER_D 0x004ab073
 static void RLEDecompressUnclippedX(unsigned char * pDestBuffer, long DestStride, unsigned char * pSource, short Height, unsigned char TransparentColor) {
-	unsigned char * pDestinationEdge;
-	unsigned char * pDest;
-	unsigned char * pNextSourceLine;
+	/*bp-0x4*/   unsigned char * pNextSourceLine;
+	/*bp-0x8*/   unsigned char * pDest;
+	/*bp-0xc*/   unsigned char * pDestinationEdge;
 
 // LINE 323:
 	pDestinationEdge = pDestBuffer;
@@ -1061,9 +1061,9 @@ _T27:
 	__asm        je     _T17a;
 // LINE 336:
 // Block start:
-	int32_t counter;
-	unsigned char token;
-	unsigned char data;
+	/*bp-0x10*/  unsigned char data;
+	/*bp-0x14*/  unsigned char token;
+	/*bp-0x18*/  int32_t counter;
 	__asm        mov    eax, pSource;
 	__asm        cmp    pNextSourceLine, eax;
 	__asm        jne    _T66;
@@ -1212,10 +1212,10 @@ _T17a:
 
 // FUNCTION: COPTER_D 0x004ab1f7
 static void RLEDecompressClippedX(unsigned char * pDestBuffer, long DestStride, unsigned char * pSource, short LeftClip, short Width, short Height, unsigned char TransparentColor) {
-	short PixelCount;
-	unsigned char * pDestinationEdge;
-	unsigned char * pDest;
-	unsigned char * pNextSourceLine;
+	/*bp-0x4*/   unsigned char * pNextSourceLine;
+	/*bp-0x8*/   unsigned char * pDest;
+	/*bp-0xc*/   unsigned char * pDestinationEdge;
+	/*bp-0x10*/  short PixelCount;
 
 // LINE 405:
 	pDestinationEdge = pDestBuffer;
@@ -1240,9 +1240,9 @@ _T31:
 	__asm        je     _T328;
 // LINE 421:
 // Block start:
-	int32_t counter;
-	unsigned char token;
-	unsigned char data;
+	/*bp-0x14*/  unsigned char data;
+	/*bp-0x18*/  unsigned char token;
+	/*bp-0x1c*/  int32_t counter;
 	__asm        mov    eax, pSource;
 	__asm        cmp    pNextSourceLine, eax;
 	__asm        jne    _T7a;
