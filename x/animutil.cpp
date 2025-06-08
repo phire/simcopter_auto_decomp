@@ -6,18 +6,18 @@
 
 // Type: /*unpacked*/ struct DXZY;
 struct DXZY{ // not packed(0x10 bytes) TI: 0x3420
-	float x;
-	float z;
-	float y;
-	float info;
+	/*+0x0*/   float x;
+	/*+0x4*/   float z;
+	/*+0x8*/   float y;
+	/*+0xc*/   float info;
 };
 
 // Type: /*unpacked*/ struct DXZY (forward reference);
 struct DXZY{ // not packed(0x10 bytes) TI: 0x3420
-	float x;
-	float z;
-	float y;
-	float info;
+	/*+0x0*/   float x;
+	/*+0x4*/   float z;
+	/*+0x8*/   float y;
+	/*+0xc*/   float info;
 };
 
 // Type: void;
@@ -28,10 +28,10 @@ struct DXZY{ // not packed(0x10 bytes) TI: 0x3420
 
 // Type: /*unpacked*/ struct XZY (forward reference);
 struct XZY{ // not packed(0x8 bytes) TI: 0x3508
-	short x;
-	short z;
-	short y;
-	short _win8pad;
+	/*+0x0*/   short x; // 0x2 bytes
+	/*+0x2*/   short z; // 0x2 bytes
+	/*+0x4*/   short y; // 0x2 bytes
+	/*+0x6*/   short _win8pad; // 0x2 bytes
 };
 
 // Type: float *;
@@ -40,56 +40,56 @@ struct XZY{ // not packed(0x8 bytes) TI: 0x3508
 
 // Type: /*unpacked*/ struct Polar (forward reference);
 struct Polar{ // not packed(0x18 bytes) TI: 0x34dc
-	float phi;
-	float psi;
-	float tau;
-	float _win8pad;
-	short lng;
-	short lat;
-	short trq;
-	short _win8pad2;
+	/*+0x0*/   float phi;
+	/*+0x4*/   float psi;
+	/*+0x8*/   float tau;
+	/*+0xc*/   float _win8pad;
+	/*+0x10*/  short lng; // 0x2 bytes
+	/*+0x12*/  short lat; // 0x2 bytes
+	/*+0x14*/  short trq; // 0x2 bytes
+	/*+0x16*/  short _win8pad2; // 0x2 bytes
 };
 
 // Type: /*unpacked*/ struct Polar;
 struct Polar{ // not packed(0x18 bytes) TI: 0x34dc
-	float phi;
-	float psi;
-	float tau;
-	float _win8pad;
-	short lng;
-	short lat;
-	short trq;
-	short _win8pad2;
+	/*+0x0*/   float phi;
+	/*+0x4*/   float psi;
+	/*+0x8*/   float tau;
+	/*+0xc*/   float _win8pad;
+	/*+0x10*/  short lng; // 0x2 bytes
+	/*+0x12*/  short lat; // 0x2 bytes
+	/*+0x14*/  short trq; // 0x2 bytes
+	/*+0x16*/  short _win8pad2; // 0x2 bytes
 };
 
 // Type: double;
 
 // Type: /*unpacked*/ struct Rect (forward reference);
 struct Rect{ // not packed(0x8 bytes) TI: 0x3463
-	short top;
-	short left;
-	short bottom;
-	short right;
+	/*+0x0*/   short top; // 0x2 bytes
+	/*+0x2*/   short left; // 0x2 bytes
+	/*+0x4*/   short bottom; // 0x2 bytes
+	/*+0x6*/   short right; // 0x2 bytes
 };
 
 // Type: /*unpacked*/ struct Point (forward reference);
 struct Point{ // not packed(0x4 bytes) TI: 0x341c
-	short v;
-	short h;
+	/*+0x0*/   short v; // 0x2 bytes
+	/*+0x2*/   short h; // 0x2 bytes
 };
 
 // Type: /*unpacked*/ struct Point;
 struct Point{ // not packed(0x4 bytes) TI: 0x341c
-	short v;
-	short h;
+	/*+0x0*/   short v; // 0x2 bytes
+	/*+0x2*/   short h; // 0x2 bytes
 };
 
 // Type: /*unpacked*/ struct Rect;
 struct Rect{ // not packed(0x8 bytes) TI: 0x3463
-	short top;
-	short left;
-	short bottom;
-	short right;
+	/*+0x0*/   short top; // 0x2 bytes
+	/*+0x2*/   short left; // 0x2 bytes
+	/*+0x4*/   short bottom; // 0x2 bytes
+	/*+0x6*/   short right; // 0x2 bytes
 };
 
 // Type: unsigned long;

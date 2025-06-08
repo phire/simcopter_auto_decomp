@@ -21,7 +21,7 @@ public:
 	virtual /*unpacked*/ class cBList<cBBase>* GetList() /* override */;
 	virtual /*unpacked*/ struct PrivAnimPartInfo* GetPartInfo(short, short); // vtable+0x24
 	virtual /*unpacked*/ struct PrivAnimPartInfo* GetPartInfoBasePtr(short); // vtable+0x28
-	/*unpacked*/ class cArray<PrivAnimPartInfo> *fPrivPartInfo;
+	/*+0x28*/  /*unpacked*/ class cArray<PrivAnimPartInfo> *fPrivPartInfo;
 	short GetNumParts();
 	short GetNumFrames();
 	// calltype: NearC
@@ -66,18 +66,18 @@ public:
 	void Init(void * __ptr32);
 	void Init(unsigned char *);
 	void Init(unsigned long);
-	void * __ptr32 fDataHandle;
-	unsigned long fDataHandleSize;
-	unsigned char fName[16];
-	unsigned long fTinyName;
-	short fResID;
-	unsigned short fDataChanged;
+	/*+0x4*/   void * __ptr32 fDataHandle;
+	/*+0x8*/   unsigned long fDataHandleSize;
+	/*+0xc*/   unsigned char fName[16]; // 0x10 bytes
+	/*+0x1c*/  unsigned long fTinyName;
+	/*+0x20*/  short fResID; // 0x2 bytes
+	/*+0x22*/  unsigned short fDataChanged; // 0x2 bytes
 	struct cBBase::BBaseHeader{ // not packed(0x40 bytes) TI: 0x339f
-		unsigned long bodyType;
-		long _win8pad[15];
+		/*+0x0*/   unsigned long bodyType;
+		/*+0x4*/   long _win8pad[15]; // 0x3c bytes
 	};
 public:
-	/*unpacked*/ struct cBBase::BBaseHeader *fHeader;
+	/*+0x24*/  /*unpacked*/ struct cBBase::BBaseHeader *fHeader;
 	// calltype: NearC
 	static void SwizzleBBaseHeader(void * __ptr32, long);
 };

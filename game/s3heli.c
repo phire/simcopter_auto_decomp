@@ -4,146 +4,146 @@
 
 // Type: /*packed*/ struct _HELI_DATA (forward reference);
 struct _HELI_DATA{ // packed(0x32c bytes) TI: 0x2a68
-	int32_t type;
-	int32_t state;
-	int32_t flags;
-	int32_t altdelta;
-	/*packed*/ struct Point2d lastpos;
-	/*packed*/ struct Point2d currpos;
-	int32_t rotor_mat[4][4];
-	int32_t rotortl_mat[4][4];
-	/*packed*/ struct _DYOBJ_INST *dycannon;
-	/*packed*/ struct _DYOBJ_INST *dyheli;
-	/*packed*/ struct _DYOBJ_INST *dyshadow;
-	/*packed*/ struct _DYOBJ_INST *dyrotor;
-	/*packed*/ struct _DYOBJ_INST *dyrotortl;
-	/*packed*/ struct _DYOBJ_INST *dyrotshadow;
-	/*packed*/ struct _DYOBJ_INST *dyrope;
-	/*packed*/ struct _DYOBJ_INST *dybucket;
-	/*packed*/ struct _DYOBJ_INST *dyspot;
-	/*packed*/ struct _DYOBJ_INST *dybracket;
-	void * __ptr32 bucketmesh;
-	void * __ptr32 harnessmesh;
-	int32_t damage;
-	int32_t smokeseq;
-	/*packed*/ struct mv heli_p;
-	/*packed*/ struct mv heli_r;
-	/*packed*/ struct Point3d vector;
-	int32_t yaw;
-	int32_t collide_delay;
-	int32_t roll;
-	int32_t slide;
-	int32_t pitch;
-	int32_t yawrate;
-	int32_t yspeed;
-	int32_t fwd_speed;
-	int32_t delta_fwd_speed;
-	int32_t movex;
-	int32_t movez;
-	int32_t hover_ht;
-	int32_t can_land;
-	long spotlevel;
-	int32_t rotstate;
-	int32_t rotspeed;
-	int32_t fireprojectile;
-	int32_t terralt;
-	int32_t buildalt;
-	/*packed*/ struct Point3d collisvec;
-	int32_t shad_color;
-	/*packed*/ struct _MISSILE_DATA *crash_traj;
-	int32_t crash_timer;
-	long crash_seq;
-	int32_t over_water;
-	/*packed*/ struct _ROPE_DATA rinfo;
-	/*packed*/ struct _WATER_DATA winfo;
-	/*packed*/ struct tagHeliPassengerData passengerData;
-	int32_t fuel;
-	int32_t flight_time;
-	int32_t pct_load;
+	/*+0x0*/   int32_t type;
+	/*+0x4*/   int32_t state;
+	/*+0x8*/   int32_t flags;
+	/*+0xc*/   int32_t altdelta;
+	/*+0x10*/  /*packed*/ struct Point2d lastpos; // 0x8 bytes
+	/*+0x18*/  /*packed*/ struct Point2d currpos; // 0x8 bytes
+	/*+0x20*/  int32_t rotor_mat[4][4]; // 0x40 bytes
+	/*+0x60*/  int32_t rotortl_mat[4][4]; // 0x40 bytes
+	/*+0xa0*/  /*packed*/ struct _DYOBJ_INST *dycannon;
+	/*+0xa4*/  /*packed*/ struct _DYOBJ_INST *dyheli;
+	/*+0xa8*/  /*packed*/ struct _DYOBJ_INST *dyshadow;
+	/*+0xac*/  /*packed*/ struct _DYOBJ_INST *dyrotor;
+	/*+0xb0*/  /*packed*/ struct _DYOBJ_INST *dyrotortl;
+	/*+0xb4*/  /*packed*/ struct _DYOBJ_INST *dyrotshadow;
+	/*+0xb8*/  /*packed*/ struct _DYOBJ_INST *dyrope;
+	/*+0xbc*/  /*packed*/ struct _DYOBJ_INST *dybucket;
+	/*+0xc0*/  /*packed*/ struct _DYOBJ_INST *dyspot;
+	/*+0xc4*/  /*packed*/ struct _DYOBJ_INST *dybracket;
+	/*+0xc8*/  void * __ptr32 bucketmesh;
+	/*+0xcc*/  void * __ptr32 harnessmesh;
+	/*+0xd0*/  int32_t damage;
+	/*+0xd4*/  int32_t smokeseq;
+	/*+0xd8*/  /*packed*/ struct mv heli_p; // 0x14 bytes
+	/*+0xec*/  /*packed*/ struct mv heli_r; // 0x14 bytes
+	/*+0x100*/ /*packed*/ struct Point3d vector; // 0xc bytes
+	/*+0x10c*/ int32_t yaw;
+	/*+0x110*/ int32_t collide_delay;
+	/*+0x114*/ int32_t roll;
+	/*+0x118*/ int32_t slide;
+	/*+0x11c*/ int32_t pitch;
+	/*+0x120*/ int32_t yawrate;
+	/*+0x124*/ int32_t yspeed;
+	/*+0x128*/ int32_t fwd_speed;
+	/*+0x12c*/ int32_t delta_fwd_speed;
+	/*+0x130*/ int32_t movex;
+	/*+0x134*/ int32_t movez;
+	/*+0x138*/ int32_t hover_ht;
+	/*+0x13c*/ int32_t can_land;
+	/*+0x140*/ long spotlevel;
+	/*+0x144*/ int32_t rotstate;
+	/*+0x148*/ int32_t rotspeed;
+	/*+0x14c*/ int32_t fireprojectile;
+	/*+0x150*/ int32_t terralt;
+	/*+0x154*/ int32_t buildalt;
+	/*+0x158*/ /*packed*/ struct Point3d collisvec; // 0xc bytes
+	/*+0x164*/ int32_t shad_color;
+	/*+0x168*/ /*packed*/ struct _MISSILE_DATA *crash_traj;
+	/*+0x16c*/ int32_t crash_timer;
+	/*+0x170*/ long crash_seq;
+	/*+0x174*/ int32_t over_water;
+	/*+0x178*/ /*packed*/ struct _ROPE_DATA rinfo; // 0x44 bytes
+	/*+0x1bc*/ /*packed*/ struct _WATER_DATA winfo; // 0x8 bytes
+	/*+0x1c4*/ /*packed*/ struct tagHeliPassengerData passengerData; // 0x15c bytes
+	/*+0x320*/ int32_t fuel;
+	/*+0x324*/ int32_t flight_time;
+	/*+0x328*/ int32_t pct_load;
 };
 
 // Type: /*unpacked*/ struct _HELI_DATA (forward reference);
 struct _HELI_DATA{ // not packed(0x32c bytes) TI: 0x390f
-	int32_t type;
-	int32_t state;
-	int32_t flags;
-	int32_t altdelta;
-	/*unpacked*/ struct Point2d lastpos;
-	/*unpacked*/ struct Point2d currpos;
-	int32_t rotor_mat[4][4];
-	int32_t rotortl_mat[4][4];
-	/*unpacked*/ struct _DYOBJ_INST *dycannon;
-	/*unpacked*/ struct _DYOBJ_INST *dyheli;
-	/*unpacked*/ struct _DYOBJ_INST *dyshadow;
-	/*unpacked*/ struct _DYOBJ_INST *dyrotor;
-	/*unpacked*/ struct _DYOBJ_INST *dyrotortl;
-	/*unpacked*/ struct _DYOBJ_INST *dyrotshadow;
-	/*unpacked*/ struct _DYOBJ_INST *dyrope;
-	/*unpacked*/ struct _DYOBJ_INST *dybucket;
-	/*unpacked*/ struct _DYOBJ_INST *dyspot;
-	/*unpacked*/ struct _DYOBJ_INST *dybracket;
-	void * __ptr32 bucketmesh;
-	void * __ptr32 harnessmesh;
-	int32_t damage;
-	int32_t smokeseq;
-	/*unpacked*/ struct mv heli_p;
-	/*unpacked*/ struct mv heli_r;
-	/*unpacked*/ struct Point3d vector;
-	int32_t yaw;
-	int32_t collide_delay;
-	int32_t roll;
-	int32_t slide;
-	int32_t pitch;
-	int32_t yawrate;
-	int32_t yspeed;
-	int32_t fwd_speed;
-	int32_t delta_fwd_speed;
-	int32_t movex;
-	int32_t movez;
-	int32_t hover_ht;
-	int32_t can_land;
-	long spotlevel;
-	int32_t rotstate;
-	int32_t rotspeed;
-	int32_t fireprojectile;
-	int32_t terralt;
-	int32_t buildalt;
-	/*unpacked*/ struct Point3d collisvec;
-	int32_t shad_color;
-	/*unpacked*/ struct _MISSILE_DATA *crash_traj;
-	int32_t crash_timer;
-	long crash_seq;
-	int32_t over_water;
-	/*unpacked*/ struct _ROPE_DATA rinfo;
-	/*unpacked*/ struct _WATER_DATA winfo;
-	/*unpacked*/ struct tagHeliPassengerData passengerData;
-	int32_t fuel;
-	int32_t flight_time;
-	int32_t pct_load;
+	/*+0x0*/   int32_t type;
+	/*+0x4*/   int32_t state;
+	/*+0x8*/   int32_t flags;
+	/*+0xc*/   int32_t altdelta;
+	/*+0x10*/  /*unpacked*/ struct Point2d lastpos; // 0x8 bytes
+	/*+0x18*/  /*unpacked*/ struct Point2d currpos; // 0x8 bytes
+	/*+0x20*/  int32_t rotor_mat[4][4]; // 0x40 bytes
+	/*+0x60*/  int32_t rotortl_mat[4][4]; // 0x40 bytes
+	/*+0xa0*/  /*unpacked*/ struct _DYOBJ_INST *dycannon;
+	/*+0xa4*/  /*unpacked*/ struct _DYOBJ_INST *dyheli;
+	/*+0xa8*/  /*unpacked*/ struct _DYOBJ_INST *dyshadow;
+	/*+0xac*/  /*unpacked*/ struct _DYOBJ_INST *dyrotor;
+	/*+0xb0*/  /*unpacked*/ struct _DYOBJ_INST *dyrotortl;
+	/*+0xb4*/  /*unpacked*/ struct _DYOBJ_INST *dyrotshadow;
+	/*+0xb8*/  /*unpacked*/ struct _DYOBJ_INST *dyrope;
+	/*+0xbc*/  /*unpacked*/ struct _DYOBJ_INST *dybucket;
+	/*+0xc0*/  /*unpacked*/ struct _DYOBJ_INST *dyspot;
+	/*+0xc4*/  /*unpacked*/ struct _DYOBJ_INST *dybracket;
+	/*+0xc8*/  void * __ptr32 bucketmesh;
+	/*+0xcc*/  void * __ptr32 harnessmesh;
+	/*+0xd0*/  int32_t damage;
+	/*+0xd4*/  int32_t smokeseq;
+	/*+0xd8*/  /*unpacked*/ struct mv heli_p; // 0x14 bytes
+	/*+0xec*/  /*unpacked*/ struct mv heli_r; // 0x14 bytes
+	/*+0x100*/ /*unpacked*/ struct Point3d vector; // 0xc bytes
+	/*+0x10c*/ int32_t yaw;
+	/*+0x110*/ int32_t collide_delay;
+	/*+0x114*/ int32_t roll;
+	/*+0x118*/ int32_t slide;
+	/*+0x11c*/ int32_t pitch;
+	/*+0x120*/ int32_t yawrate;
+	/*+0x124*/ int32_t yspeed;
+	/*+0x128*/ int32_t fwd_speed;
+	/*+0x12c*/ int32_t delta_fwd_speed;
+	/*+0x130*/ int32_t movex;
+	/*+0x134*/ int32_t movez;
+	/*+0x138*/ int32_t hover_ht;
+	/*+0x13c*/ int32_t can_land;
+	/*+0x140*/ long spotlevel;
+	/*+0x144*/ int32_t rotstate;
+	/*+0x148*/ int32_t rotspeed;
+	/*+0x14c*/ int32_t fireprojectile;
+	/*+0x150*/ int32_t terralt;
+	/*+0x154*/ int32_t buildalt;
+	/*+0x158*/ /*unpacked*/ struct Point3d collisvec; // 0xc bytes
+	/*+0x164*/ int32_t shad_color;
+	/*+0x168*/ /*unpacked*/ struct _MISSILE_DATA *crash_traj;
+	/*+0x16c*/ int32_t crash_timer;
+	/*+0x170*/ long crash_seq;
+	/*+0x174*/ int32_t over_water;
+	/*+0x178*/ /*unpacked*/ struct _ROPE_DATA rinfo; // 0x44 bytes
+	/*+0x1bc*/ /*unpacked*/ struct _WATER_DATA winfo; // 0x8 bytes
+	/*+0x1c4*/ /*unpacked*/ struct tagHeliPassengerData passengerData; // 0x15c bytes
+	/*+0x320*/ int32_t fuel;
+	/*+0x324*/ int32_t flight_time;
+	/*+0x328*/ int32_t pct_load;
 };
 
 // Type: /*packed*/ struct _HELI_TYPE_DATA (forward reference);
 struct _HELI_TYPE_DATA{ // packed(0x58 bytes) TI: 0x486e
-	int32_t num_initialized;
-	int32_t max_seats;
-	int32_t max_load;
-	int32_t max_bank;
-	int32_t max_slide;
-	int32_t max_pitch;
-	int32_t max_yawrate;
-	int32_t pitch_rate;
-	int32_t yaw_rate;
-	int32_t roll_rate;
-	int32_t slide_rate;
-	int32_t climb_rate;
-	/*packed*/ struct Point3d tlrotor_disp;
-	int32_t flags;
-	int32_t fuel_capacity;
-	int32_t fuel_rate;
-	int32_t cost;
-	int32_t max_damage;
-	int32_t repair_rate;
-	int32_t fuel_purchase_rate;
+	/*+0x0*/   int32_t num_initialized;
+	/*+0x4*/   int32_t max_seats;
+	/*+0x8*/   int32_t max_load;
+	/*+0xc*/   int32_t max_bank;
+	/*+0x10*/  int32_t max_slide;
+	/*+0x14*/  int32_t max_pitch;
+	/*+0x18*/  int32_t max_yawrate;
+	/*+0x1c*/  int32_t pitch_rate;
+	/*+0x20*/  int32_t yaw_rate;
+	/*+0x24*/  int32_t roll_rate;
+	/*+0x28*/  int32_t slide_rate;
+	/*+0x2c*/  int32_t climb_rate;
+	/*+0x30*/  /*packed*/ struct Point3d tlrotor_disp; // 0xc bytes
+	/*+0x3c*/  int32_t flags;
+	/*+0x40*/  int32_t fuel_capacity;
+	/*+0x44*/  int32_t fuel_rate;
+	/*+0x48*/  int32_t cost;
+	/*+0x4c*/  int32_t max_damage;
+	/*+0x50*/  int32_t repair_rate;
+	/*+0x54*/  int32_t fuel_purchase_rate;
 };
 
 // Type: long;
@@ -152,187 +152,187 @@ struct _HELI_TYPE_DATA{ // packed(0x58 bytes) TI: 0x486e
 
 // Type: /*packed*/ struct _HELI_DATA;
 struct _HELI_DATA{ // packed(0x32c bytes) TI: 0x2a68
-	int32_t type;
-	int32_t state;
-	int32_t flags;
-	int32_t altdelta;
-	/*packed*/ struct Point2d lastpos;
-	/*packed*/ struct Point2d currpos;
-	int32_t rotor_mat[4][4];
-	int32_t rotortl_mat[4][4];
-	/*packed*/ struct _DYOBJ_INST *dycannon;
-	/*packed*/ struct _DYOBJ_INST *dyheli;
-	/*packed*/ struct _DYOBJ_INST *dyshadow;
-	/*packed*/ struct _DYOBJ_INST *dyrotor;
-	/*packed*/ struct _DYOBJ_INST *dyrotortl;
-	/*packed*/ struct _DYOBJ_INST *dyrotshadow;
-	/*packed*/ struct _DYOBJ_INST *dyrope;
-	/*packed*/ struct _DYOBJ_INST *dybucket;
-	/*packed*/ struct _DYOBJ_INST *dyspot;
-	/*packed*/ struct _DYOBJ_INST *dybracket;
-	void * __ptr32 bucketmesh;
-	void * __ptr32 harnessmesh;
-	int32_t damage;
-	int32_t smokeseq;
-	/*packed*/ struct mv heli_p;
-	/*packed*/ struct mv heli_r;
-	/*packed*/ struct Point3d vector;
-	int32_t yaw;
-	int32_t collide_delay;
-	int32_t roll;
-	int32_t slide;
-	int32_t pitch;
-	int32_t yawrate;
-	int32_t yspeed;
-	int32_t fwd_speed;
-	int32_t delta_fwd_speed;
-	int32_t movex;
-	int32_t movez;
-	int32_t hover_ht;
-	int32_t can_land;
-	long spotlevel;
-	int32_t rotstate;
-	int32_t rotspeed;
-	int32_t fireprojectile;
-	int32_t terralt;
-	int32_t buildalt;
-	/*packed*/ struct Point3d collisvec;
-	int32_t shad_color;
-	/*packed*/ struct _MISSILE_DATA *crash_traj;
-	int32_t crash_timer;
-	long crash_seq;
-	int32_t over_water;
-	/*packed*/ struct _ROPE_DATA rinfo;
-	/*packed*/ struct _WATER_DATA winfo;
-	/*packed*/ struct tagHeliPassengerData passengerData;
-	int32_t fuel;
-	int32_t flight_time;
-	int32_t pct_load;
+	/*+0x0*/   int32_t type;
+	/*+0x4*/   int32_t state;
+	/*+0x8*/   int32_t flags;
+	/*+0xc*/   int32_t altdelta;
+	/*+0x10*/  /*packed*/ struct Point2d lastpos; // 0x8 bytes
+	/*+0x18*/  /*packed*/ struct Point2d currpos; // 0x8 bytes
+	/*+0x20*/  int32_t rotor_mat[4][4]; // 0x40 bytes
+	/*+0x60*/  int32_t rotortl_mat[4][4]; // 0x40 bytes
+	/*+0xa0*/  /*packed*/ struct _DYOBJ_INST *dycannon;
+	/*+0xa4*/  /*packed*/ struct _DYOBJ_INST *dyheli;
+	/*+0xa8*/  /*packed*/ struct _DYOBJ_INST *dyshadow;
+	/*+0xac*/  /*packed*/ struct _DYOBJ_INST *dyrotor;
+	/*+0xb0*/  /*packed*/ struct _DYOBJ_INST *dyrotortl;
+	/*+0xb4*/  /*packed*/ struct _DYOBJ_INST *dyrotshadow;
+	/*+0xb8*/  /*packed*/ struct _DYOBJ_INST *dyrope;
+	/*+0xbc*/  /*packed*/ struct _DYOBJ_INST *dybucket;
+	/*+0xc0*/  /*packed*/ struct _DYOBJ_INST *dyspot;
+	/*+0xc4*/  /*packed*/ struct _DYOBJ_INST *dybracket;
+	/*+0xc8*/  void * __ptr32 bucketmesh;
+	/*+0xcc*/  void * __ptr32 harnessmesh;
+	/*+0xd0*/  int32_t damage;
+	/*+0xd4*/  int32_t smokeseq;
+	/*+0xd8*/  /*packed*/ struct mv heli_p; // 0x14 bytes
+	/*+0xec*/  /*packed*/ struct mv heli_r; // 0x14 bytes
+	/*+0x100*/ /*packed*/ struct Point3d vector; // 0xc bytes
+	/*+0x10c*/ int32_t yaw;
+	/*+0x110*/ int32_t collide_delay;
+	/*+0x114*/ int32_t roll;
+	/*+0x118*/ int32_t slide;
+	/*+0x11c*/ int32_t pitch;
+	/*+0x120*/ int32_t yawrate;
+	/*+0x124*/ int32_t yspeed;
+	/*+0x128*/ int32_t fwd_speed;
+	/*+0x12c*/ int32_t delta_fwd_speed;
+	/*+0x130*/ int32_t movex;
+	/*+0x134*/ int32_t movez;
+	/*+0x138*/ int32_t hover_ht;
+	/*+0x13c*/ int32_t can_land;
+	/*+0x140*/ long spotlevel;
+	/*+0x144*/ int32_t rotstate;
+	/*+0x148*/ int32_t rotspeed;
+	/*+0x14c*/ int32_t fireprojectile;
+	/*+0x150*/ int32_t terralt;
+	/*+0x154*/ int32_t buildalt;
+	/*+0x158*/ /*packed*/ struct Point3d collisvec; // 0xc bytes
+	/*+0x164*/ int32_t shad_color;
+	/*+0x168*/ /*packed*/ struct _MISSILE_DATA *crash_traj;
+	/*+0x16c*/ int32_t crash_timer;
+	/*+0x170*/ long crash_seq;
+	/*+0x174*/ int32_t over_water;
+	/*+0x178*/ /*packed*/ struct _ROPE_DATA rinfo; // 0x44 bytes
+	/*+0x1bc*/ /*packed*/ struct _WATER_DATA winfo; // 0x8 bytes
+	/*+0x1c4*/ /*packed*/ struct tagHeliPassengerData passengerData; // 0x15c bytes
+	/*+0x320*/ int32_t fuel;
+	/*+0x324*/ int32_t flight_time;
+	/*+0x328*/ int32_t pct_load;
 };
 
 // Type: /*packed*/ struct _dPoint2d (forward reference);
 struct _dPoint2d{ // packed(0x10 bytes) TI: 0x2766
-	double x;
-	double z;
+	/*+0x0*/   double x; // 0x8 bytes
+	/*+0x8*/   double z; // 0x8 bytes
 };
 
 // Type: /*packed*/ struct Point3d;
 struct Point3d{ // packed(0xc bytes) TI: 0x18b0
-	int32_t x;
-	int32_t y;
-	int32_t z;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
+	/*+0x8*/   int32_t z;
 };
 
 // Type: char;
 
 // Type: /*packed*/ struct VRBmpHdr (forward reference);
 struct VRBmpHdr{ // packed(0x10 bytes) TI: 0x2312
-	/*packed*/ struct VRBmpInfo info;
-	int32_t ScanOffset[1];
+	/*+0x0*/   /*packed*/ struct VRBmpInfo info; // 0xc bytes
+	/*+0xc*/   int32_t ScanOffset[1];
 };
 
 // Type: char *;
 
 // Type: /*packed*/ struct VRObjInfo;
 struct VRObjInfo{ // packed(0x24 bytes) TI: 0x2ea8
-	int32_t Faces;
-	int32_t Verts;
-	int32_t Attribute;
-	int32_t Radius;
-	/*packed*/ struct Point3d *ObjCenter;
-	/*packed*/ struct Point3d *VertsPtr;
-	/*packed*/ struct Xform3d *VertsXfm;
-	/*packed*/ struct Point3d *OrgVerts;
-	int32_t *Matrix[4][4];
+	/*+0x0*/   int32_t Faces;
+	/*+0x4*/   int32_t Verts;
+	/*+0x8*/   int32_t Attribute;
+	/*+0xc*/   int32_t Radius;
+	/*+0x10*/  /*packed*/ struct Point3d *ObjCenter;
+	/*+0x14*/  /*packed*/ struct Point3d *VertsPtr;
+	/*+0x18*/  /*packed*/ struct Xform3d *VertsXfm;
+	/*+0x1c*/  /*packed*/ struct Point3d *OrgVerts;
+	/*+0x20*/  int32_t *Matrix[4][4];
 };
 
 // Type: void;
 
 // Type: /*packed*/ struct _CELL_INFO (forward reference);
 struct _CELL_INFO{ // packed(0x18 bytes) TI: 0x1b03
-	short flags;
-	short x;
-	short y;
-	short z;
-	short size;
-	short ctr;
-	/*packed*/ struct _STOBJ_INST *stptr;
-	/*packed*/ struct _DYOBJ_INST *dyptr;
-	/*packed*/ struct _DYOBJ_INST *vwptr;
+	/*+0x0*/   short flags; // 0x2 bytes
+	/*+0x2*/   short x; // 0x2 bytes
+	/*+0x4*/   short y; // 0x2 bytes
+	/*+0x6*/   short z; // 0x2 bytes
+	/*+0x8*/   short size; // 0x2 bytes
+	/*+0xa*/   short ctr; // 0x2 bytes
+	/*+0xc*/   /*packed*/ struct _STOBJ_INST *stptr;
+	/*+0x10*/  /*packed*/ struct _DYOBJ_INST *dyptr;
+	/*+0x14*/  /*packed*/ struct _DYOBJ_INST *vwptr;
 };
 
 // Type: /*packed*/ struct VRview;
 struct VRview{ // packed(0x58 bytes) TI: 0x2ecc
-	/*packed*/ struct Point3d loc;
-	/*packed*/ struct Point3d scale;
-	int32_t matrix[4][4];
+	/*+0x0*/   /*packed*/ struct Point3d loc; // 0xc bytes
+	/*+0xc*/   /*packed*/ struct Point3d scale; // 0xc bytes
+	/*+0x18*/  int32_t matrix[4][4]; // 0x40 bytes
 };
 
 // Type: /*packed*/ struct Point2d (forward reference);
 struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
-	int32_t x;
-	int32_t y;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
 };
 
 // Type: /*packed*/ struct Point3d (forward reference);
 struct Point3d{ // packed(0xc bytes) TI: 0x18b0
-	int32_t x;
-	int32_t y;
-	int32_t z;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
+	/*+0x8*/   int32_t z;
 };
 
 // Type: /*packed*/ struct VRFaceInfo;
 struct VRFaceInfo{ // packed(0x20 bytes) TI: 0x30c0
-	int32_t Face;
-	int32_t Verts;
-	int32_t Attribute;
-	int32_t Plotter;
-	/*packed*/ struct VRBmpHdr *Bitmap;
-	int32_t * VertList;
-	/*packed*/ struct MapVert *MapVList;
-	/*packed*/ struct MapVert *BarryPtr;
+	/*+0x0*/   int32_t Face;
+	/*+0x4*/   int32_t Verts;
+	/*+0x8*/   int32_t Attribute;
+	/*+0xc*/   int32_t Plotter;
+	/*+0x10*/  /*packed*/ struct VRBmpHdr *Bitmap;
+	/*+0x14*/  int32_t * VertList;
+	/*+0x18*/  /*packed*/ struct MapVert *MapVList;
+	/*+0x1c*/  /*packed*/ struct MapVert *BarryPtr;
 };
 
 // Type: int32_t *;
 
 // Type: /*packed*/ struct _STOBJ_INST (forward reference);
 struct _STOBJ_INST{ // packed(0x10 bytes) TI: 0x193f
-	/*packed*/ struct _STOBJ_INST *next;
-	void * __ptr32 mesh;
-	long user1;
-	long user2;
+	/*+0x0*/   /*packed*/ struct _STOBJ_INST *next;
+	/*+0x4*/   void * __ptr32 mesh;
+	/*+0x8*/   long user1;
+	/*+0xc*/   long user2;
 };
 
 // Type: /*packed*/ struct _DYOBJ_INST (forward reference);
 struct _DYOBJ_INST{ // packed(0x64 bytes) TI: 0x1deb
-	/*packed*/ struct _DYOBJ_INST *next;
-	/*packed*/ struct _DYOBJ_INST *vnext;
-	void * __ptr32 mesh;
-	short flags;
-	short user1;
-	long radius;
-	long height;
-	/*packed*/ struct Point3d loc;
-	int32_t matrix[4][4];
+	/*+0x0*/   /*packed*/ struct _DYOBJ_INST *next;
+	/*+0x4*/   /*packed*/ struct _DYOBJ_INST *vnext;
+	/*+0x8*/   void * __ptr32 mesh;
+	/*+0xc*/   short flags; // 0x2 bytes
+	/*+0xe*/   short user1; // 0x2 bytes
+	/*+0x10*/  long radius;
+	/*+0x14*/  long height;
+	/*+0x18*/  /*packed*/ struct Point3d loc; // 0xc bytes
+	/*+0x24*/  int32_t matrix[4][4]; // 0x40 bytes
 };
 
 // Type: /*packed*/ struct VRBlit (forward reference);
 struct VRBlit{ // packed(0x10 bytes) TI: 0x3182
-	int32_t nverts;
-	/*packed*/ struct Proj2d *verts;
-	int32_t notused;
-	int32_t user1;
+	/*+0x0*/   int32_t nverts;
+	/*+0x4*/   /*packed*/ struct Proj2d *verts;
+	/*+0x8*/   int32_t notused;
+	/*+0xc*/   int32_t user1;
 };
 
 // Type: /*packed*/ struct tagUserPersonalInfo (forward reference);
 struct tagUserPersonalInfo{ // packed(0x58 bytes) TI: 0x1a2a
-	char szUserName[64];
-	long lMoney;
-	long lHelicopters;
-	long lEquipment;
-	long lTrophies;
-	long lPoints;
-	long lTeargasCount;
+	/*+0x0*/   char szUserName[64]; // 0x40 bytes
+	/*+0x40*/  long lMoney;
+	/*+0x44*/  long lHelicopters;
+	/*+0x48*/  long lEquipment;
+	/*+0x4c*/  long lTrophies;
+	/*+0x50*/  long lPoints;
+	/*+0x54*/  long lTeargasCount;
 };
 
 // Type: void * __ptr32;

@@ -20,38 +20,38 @@
 
 // Type: /*packed*/ struct Point2d;
 struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
-	int32_t x;
-	int32_t y;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
 };
 
 // Type: /*packed*/ struct Point3d (forward reference);
 struct Point3d{ // packed(0xc bytes) TI: 0x18b0
-	int32_t x;
-	int32_t y;
-	int32_t z;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
+	/*+0x8*/   int32_t z;
 };
 
 // Type: short *;
 
 // Type: /*packed*/ struct _CELL_INFO (forward reference);
 struct _CELL_INFO{ // packed(0x18 bytes) TI: 0x1b03
-	short flags;
-	short x;
-	short y;
-	short z;
-	short size;
-	short ctr;
-	/*packed*/ struct _STOBJ_INST *stptr;
-	/*packed*/ struct _DYOBJ_INST *dyptr;
-	/*packed*/ struct _DYOBJ_INST *vwptr;
+	/*+0x0*/   short flags; // 0x2 bytes
+	/*+0x2*/   short x; // 0x2 bytes
+	/*+0x4*/   short y; // 0x2 bytes
+	/*+0x6*/   short z; // 0x2 bytes
+	/*+0x8*/   short size; // 0x2 bytes
+	/*+0xa*/   short ctr; // 0x2 bytes
+	/*+0xc*/   /*packed*/ struct _STOBJ_INST *stptr;
+	/*+0x10*/  /*packed*/ struct _DYOBJ_INST *dyptr;
+	/*+0x14*/  /*packed*/ struct _DYOBJ_INST *vwptr;
 };
 
 // Type: /*packed*/ struct _STOBJ_INST (forward reference);
 struct _STOBJ_INST{ // packed(0x10 bytes) TI: 0x193f
-	/*packed*/ struct _STOBJ_INST *next;
-	void * __ptr32 mesh;
-	long user1;
-	long user2;
+	/*+0x0*/   /*packed*/ struct _STOBJ_INST *next;
+	/*+0x4*/   void * __ptr32 mesh;
+	/*+0x8*/   long user1;
+	/*+0xc*/   long user2;
 };
 
 

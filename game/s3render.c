@@ -4,44 +4,44 @@
 
 // Type: /*packed*/ struct VRResource (forward reference);
 struct VRResource{ // packed(0x10 bytes) TI: 0x18ae
-	char * mem;
-	int32_t mempoolid;
-	int32_t type;
-	int32_t entry;
+	/*+0x0*/   char * mem;
+	/*+0x4*/   int32_t mempoolid;
+	/*+0x8*/   int32_t type;
+	/*+0xc*/   int32_t entry;
 };
 
 // Type: long;
 
 // Type: /*unpacked*/ struct VRResource (forward reference);
 struct VRResource{ // not packed(0x10 bytes) TI: 0x34b5
-	char * mem;
-	int32_t mempoolid;
-	int32_t type;
-	int32_t entry;
+	/*+0x0*/   char * mem;
+	/*+0x4*/   int32_t mempoolid;
+	/*+0x8*/   int32_t type;
+	/*+0xc*/   int32_t entry;
 };
 
 // Type: /*packed*/ struct VRMemPool (forward reference);
 struct VRMemPool{ // packed(0x20 bytes) TI: 0x2453
-	int32_t ObjCount;
-	int32_t entry;
-	char * Reset_Xf;
-	char * Reset_2d;
-	char * Current_Xf;
-	char * Current_2d;
-	char * End_Xf;
-	char * End_2d;
+	/*+0x0*/   int32_t ObjCount;
+	/*+0x4*/   int32_t entry;
+	/*+0x8*/   char * Reset_Xf;
+	/*+0xc*/   char * Reset_2d;
+	/*+0x10*/  char * Current_Xf;
+	/*+0x14*/  char * Current_2d;
+	/*+0x18*/  char * End_Xf;
+	/*+0x1c*/  char * End_2d;
 };
 
 // Type: /*unpacked*/ struct VRMemPool (forward reference);
 struct VRMemPool{ // not packed(0x20 bytes) TI: 0x3e14
-	int32_t ObjCount;
-	int32_t entry;
-	char * Reset_Xf;
-	char * Reset_2d;
-	char * Current_Xf;
-	char * Current_2d;
-	char * End_Xf;
-	char * End_2d;
+	/*+0x0*/   int32_t ObjCount;
+	/*+0x4*/   int32_t entry;
+	/*+0x8*/   char * Reset_Xf;
+	/*+0xc*/   char * Reset_2d;
+	/*+0x10*/  char * Current_Xf;
+	/*+0x14*/  char * Current_2d;
+	/*+0x18*/  char * End_Xf;
+	/*+0x1c*/  char * End_2d;
 };
 
 // Type: int32_t;
@@ -50,27 +50,27 @@ struct VRMemPool{ // not packed(0x20 bytes) TI: 0x3e14
 
 // Type: /*packed*/ struct _dPoint2d (forward reference);
 struct _dPoint2d{ // packed(0x10 bytes) TI: 0x2766
-	double x;
-	double z;
+	/*+0x0*/   double x; // 0x8 bytes
+	/*+0x8*/   double z; // 0x8 bytes
 };
 
 // Type: char;
 
 // Type: /*packed*/ struct tagUserPersonalInfo (forward reference);
 struct tagUserPersonalInfo{ // packed(0x58 bytes) TI: 0x1a2a
-	char szUserName[64];
-	long lMoney;
-	long lHelicopters;
-	long lEquipment;
-	long lTrophies;
-	long lPoints;
-	long lTeargasCount;
+	/*+0x0*/   char szUserName[64]; // 0x40 bytes
+	/*+0x40*/  long lMoney;
+	/*+0x44*/  long lHelicopters;
+	/*+0x48*/  long lEquipment;
+	/*+0x4c*/  long lTrophies;
+	/*+0x50*/  long lPoints;
+	/*+0x54*/  long lTeargasCount;
 };
 
 // Type: /*packed*/ struct Point2d (forward reference);
 struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
-	int32_t x;
-	int32_t y;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
 };
 
 // Type: void * __ptr32;

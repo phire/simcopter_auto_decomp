@@ -6,12 +6,12 @@
 // VTABLE: COPTER_D 0x005936d8
 class Behavior{ // not packed(0x1c bytes) TI: 0x35de
 protected:
-	/*unpacked*/ class NResFile *fGlobFile;
-	/*unpacked*/ class NResFile *fPrivFile;
-	/*unpacked*/ class StdResLoader *fGlobalTrees;
-	/*unpacked*/ class StdResLoader *fPrivateTrees;
-	/*unpacked*/ class Language *fLanguage;
-	void (*fSwizzler)(void * __ptr32, long);
+	/*+0x4*/   /*unpacked*/ class NResFile *fGlobFile;
+	/*+0x8*/   /*unpacked*/ class NResFile *fPrivFile;
+	/*+0xc*/   /*unpacked*/ class StdResLoader *fGlobalTrees;
+	/*+0x10*/  /*unpacked*/ class StdResLoader *fPrivateTrees;
+	/*+0x14*/  /*unpacked*/ class Language *fLanguage;
+	/*+0x18*/  void (*fSwizzler)(void * __ptr32, long);
 	enum /* __unnamed */ {
 		kPrimitiveBase = 0,
 		kPrimitiveMax = 255,
@@ -30,17 +30,17 @@ protected:
 		kMaxTreeClass = 3,
 	};
 	struct Behavior::NodeParameter{ // not packed(0x8 bytes) TI: 0x35e5
-		short p1;
-		short p2;
-		short p3;
-		short p4;
+		/*+0x0*/   short p1; // 0x2 bytes
+		/*+0x2*/   short p2; // 0x2 bytes
+		/*+0x4*/   short p3; // 0x2 bytes
+		/*+0x6*/   short p4; // 0x2 bytes
 	};
 	struct Behavior::Node{ // not packed(0xc bytes) TI: 0x35e3
-		short treeID;
-		short primCode;
-		char trueTrans;
-		char falseTrans;
-		/*unpacked*/ struct Behavior::NodeParameter param;
+		/*+0x0*/   short treeID; // 0x2 bytes
+		/*+0x0*/   short primCode; // 0x2 bytes
+		/*+0x2*/   char trueTrans; // 0x1 bytes
+		/*+0x3*/   char falseTrans; // 0x1 bytes
+		/*+0x4*/   /*unpacked*/ struct Behavior::NodeParameter param; // 0x8 bytes
 	};
 	enum /* __unnamed */ {
 		kUndefined = -3,
@@ -48,8 +48,8 @@ protected:
 		kPopOutFalse = -1,
 	};
 	struct Behavior::Tree{ // not packed(0xe bytes) TI: 0x35e1
-		short numNodes;
-		/*unpacked*/ struct Behavior::Node nodes[1];
+		/*+0x0*/   short numNodes; // 0x2 bytes
+		/*+0x2*/   /*unpacked*/ struct Behavior::Node nodes[1]; // 0xc bytes
 	};
 public:
 	void Behavior(/*unpacked*/ class Language*, /*unpacked*/ class NResFile*, /*unpacked*/ class NResFile*);
@@ -90,7 +90,7 @@ public:
 class NResFile : public ResFile
 { // not packed(0x124 bytes) TI: 0x3621
 private:
-	/*unpacked*/ class PtrList<StdResLoader> fLoaders;
+	/*+0x11c*/ /*unpacked*/ class PtrList<StdResLoader> fLoaders; // 0x8 bytes
 public:
 	virtual void ~NResFile() /* override */;
 	/*unpacked*/ class StdResLoader* GetLoader(unsigned long, void (*)(void * __ptr32, long));
@@ -109,8 +109,8 @@ public:
 
 // Type: /*unpacked*/ struct Behavior::Tree (forward reference);
 struct Behavior::Tree{ // not packed(0xe bytes) TI: 0x35e1
-	short numNodes;
-	/*unpacked*/ struct Behavior::Node nodes[1];
+	/*+0x0*/   short numNodes; // 0x2 bytes
+	/*+0x2*/   /*unpacked*/ struct Behavior::Node nodes[1]; // 0xc bytes
 };
 
 // Type: long;
@@ -121,22 +121,22 @@ struct Behavior::Tree{ // not packed(0xe bytes) TI: 0x35e1
 
 // Type: /*unpacked*/ struct Behavior::Node (forward reference);
 struct Behavior::Node{ // not packed(0xc bytes) TI: 0x35e3
-	short treeID;
-	short primCode;
-	char trueTrans;
-	char falseTrans;
-	/*unpacked*/ struct Behavior::NodeParameter param;
+	/*+0x0*/   short treeID; // 0x2 bytes
+	/*+0x0*/   short primCode; // 0x2 bytes
+	/*+0x2*/   char trueTrans; // 0x1 bytes
+	/*+0x3*/   char falseTrans; // 0x1 bytes
+	/*+0x4*/   /*unpacked*/ struct Behavior::NodeParameter param; // 0x8 bytes
 };
 
 // Type: unsigned char *;
 
 // Type: /*unpacked*/ struct Behavior::Node;
 struct Behavior::Node{ // not packed(0xc bytes) TI: 0x35e3
-	short treeID;
-	short primCode;
-	char trueTrans;
-	char falseTrans;
-	/*unpacked*/ struct Behavior::NodeParameter param;
+	/*+0x0*/   short treeID; // 0x2 bytes
+	/*+0x0*/   short primCode; // 0x2 bytes
+	/*+0x2*/   char trueTrans; // 0x1 bytes
+	/*+0x3*/   char falseTrans; // 0x1 bytes
+	/*+0x4*/   /*unpacked*/ struct Behavior::NodeParameter param; // 0x8 bytes
 };
 
 // Type: void * __ptr32;
@@ -150,9 +150,9 @@ struct Behavior::Node{ // not packed(0xc bytes) TI: 0x35e3
 class FlatResFile : public FlatFile
 { // not packed(0x11c bytes) TI: 0x330e
 protected:
-	/*unpacked*/ class ResMap *fMap;
-	long fError;
-	short _alignPad;
+	/*+0x110*/ /*unpacked*/ class ResMap *fMap;
+	/*+0x114*/ long fError;
+	/*+0x118*/ short _alignPad; // 0x2 bytes
 public:
 	void FlatResFile();
 	virtual void ~FlatResFile() /* override */;
@@ -193,10 +193,10 @@ class FlatFile{ // not packed(0x110 bytes) TI: 0x32f4
 		kMaxNameLen = 255,
 	};
 protected:
-	/*unpacked*/ class FlatFile *fNext;
-	unsigned char fName[256];
-	long fFileID;
-	/*unpacked*/ struct _iobuf *fFile;
+	/*+0x4*/   /*unpacked*/ class FlatFile *fNext;
+	/*+0x8*/   unsigned char fName[256]; // 0x100 bytes
+	/*+0x108*/ long fFileID;
+	/*+0x10c*/ /*unpacked*/ struct _iobuf *fFile;
 	long UniqueID();
 private:
 	static /*unpacked*/ class FlatFile *sList;

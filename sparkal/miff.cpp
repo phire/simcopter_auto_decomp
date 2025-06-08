@@ -45,23 +45,23 @@ public:
 	virtual long WriteDataRecord(long, char *, long); // vtable+0x64
 	virtual long WriteFileHeader(long, long, long); // vtable+0x68
 	virtual long WriteEnd(); // vtable+0x6c
-	long lPresentRecordStart;
-	long lPresentRecordType;
-	long lPresentRecordLength;
-	long lPresentRecordIndex;
-	long lReadWriteMode;
-	long bFileEndWritten;
-	long bFileAppearsCorrupt;
-	/*packed*/ struct MIFFHeader myMIFFHeader;
+	/*+0x110*/ long lPresentRecordStart;
+	/*+0x114*/ long lPresentRecordType;
+	/*+0x118*/ long lPresentRecordLength;
+	/*+0x11c*/ long lPresentRecordIndex;
+	/*+0x120*/ long lReadWriteMode;
+	/*+0x124*/ long bFileEndWritten;
+	/*+0x128*/ long bFileAppearsCorrupt;
+	/*+0x12c*/ /*packed*/ struct MIFFHeader myMIFFHeader; // 0x1c bytes
 };
 
 // Type: void;
 
 // Type: /*packed*/ struct MIFFRecord (forward reference);
 struct MIFFRecord{ // packed(0xc bytes) TI: 0x148f
-	long lRecordType;
-	long lRecordLength;
-	char chRecordData[4];
+	/*+0x0*/   long lRecordType;
+	/*+0x4*/   long lRecordLength;
+	/*+0x8*/   char chRecordData[4];
 };
 
 // Type: uint32_t;
@@ -130,10 +130,10 @@ public:
 	long SetPath(char *);
 	long FileCreate(char *, int32_t);
 	long FileExists(char *);
-	char szFilePath[260];
-	int32_t Handle;
+	/*+0x4*/   char szFilePath[260]; // 0x104 bytes
+	/*+0x108*/ int32_t Handle;
 private:
-	int32_t ShouldClose;
+	/*+0x10c*/ int32_t ShouldClose;
 };
 
 

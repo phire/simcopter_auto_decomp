@@ -4,13 +4,13 @@
 
 // Type: /*packed*/ struct VRwindowType;
 struct VRwindowType{ // packed(0x1c bytes) TI: 0x10a5
-	int32_t WindowX;
-	int32_t WindowY;
-	int32_t WindowWide;
-	int32_t WindowHigh;
-	int32_t RenderMode;
-	int32_t RenderWide;
-	int32_t RenderHigh;
+	/*+0x0*/   int32_t WindowX;
+	/*+0x4*/   int32_t WindowY;
+	/*+0x8*/   int32_t WindowWide;
+	/*+0xc*/   int32_t WindowHigh;
+	/*+0x10*/  int32_t RenderMode;
+	/*+0x14*/  int32_t RenderWide;
+	/*+0x18*/  int32_t RenderHigh;
 };
 
 // Type: void;

@@ -81,8 +81,8 @@ public:
 
 // Type: /*packed*/ struct VRAppInitThreadStruct;
 struct VRAppInitThreadStruct{ // packed(0x8 bytes) TI: 0x20a4
-	long nReturnValue;
-	long nCurrentPercentageComplete;
+	/*+0x0*/   long nReturnValue;
+	/*+0x4*/   long nCurrentPercentageComplete;
 };
 
 // Type: /*packed*/ class Random;
@@ -92,9 +92,9 @@ public:
 	unsigned long operator()(unsigned long);
 	void seed(unsigned long);
 protected:
-	unsigned long table[55];
-	uint32_t index1;
-	uint32_t index2;
+	/*+0x0*/   unsigned long table[55]; // 0xdc bytes
+	/*+0xdc*/  uint32_t index1;
+	/*+0xe0*/  uint32_t index2;
 };
 
 // Type: int32_t;
@@ -108,8 +108,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -213,18 +213,18 @@ public:
 
 // Type: /*packed*/ struct VRAppInitThreadStruct (forward reference);
 struct VRAppInitThreadStruct{ // packed(0x8 bytes) TI: 0x20a4
-	long nReturnValue;
-	long nCurrentPercentageComplete;
+	/*+0x0*/   long nReturnValue;
+	/*+0x4*/   long nCurrentPercentageComplete;
 };
 
 // Type: void;
 
 // Type: /*packed*/ struct SparkalRect;
 struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
-	long left;
-	long top;
-	long right;
-	long bottom;
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
 	void SparkalRect(long, long, long, long);
 	void SparkalRect();
 };

@@ -10,42 +10,42 @@
 
 // Type: /*unpacked*/ struct PrivAnimPartInfo (forward reference);
 struct PrivAnimPartInfo{ // not packed(0x8 bytes) TI: 0x3425
-	/*unpacked*/ struct TinyXZY start;
-	/*unpacked*/ struct TinyXZY end;
+	/*+0x0*/   /*unpacked*/ struct TinyXZY start;
+	/*+0x4*/   /*unpacked*/ struct TinyXZY end;
 };
 
 // Type: void;
 
 // Type: /*unpacked*/ struct DXZY;
 struct DXZY{ // not packed(0x10 bytes) TI: 0x3420
-	float x;
-	float z;
-	float y;
-	float info;
+	/*+0x0*/   float x;
+	/*+0x4*/   float z;
+	/*+0x8*/   float y;
+	/*+0xc*/   float info;
 };
 
 // Type: /*unpacked*/ struct TinyXZY;
 struct TinyXZY{ // not packed(0x4 bytes) TI: 0x3422
-	char x;
-	char y;
-	char z;
-	char info;
+	/*+0x0*/   char x; // 0x1 bytes
+	/*+0x1*/   char y; // 0x1 bytes
+	/*+0x2*/   char z; // 0x1 bytes
+	/*+0x3*/   char info; // 0x1 bytes
 };
 
 // Type: /*unpacked*/ struct TinyXZY (forward reference);
 struct TinyXZY{ // not packed(0x4 bytes) TI: 0x3422
-	char x;
-	char y;
-	char z;
-	char info;
+	/*+0x0*/   char x; // 0x1 bytes
+	/*+0x1*/   char y; // 0x1 bytes
+	/*+0x2*/   char z; // 0x1 bytes
+	/*+0x3*/   char info; // 0x1 bytes
 };
 
 // Type: /*unpacked*/ struct DXZY (forward reference);
 struct DXZY{ // not packed(0x10 bytes) TI: 0x3420
-	float x;
-	float z;
-	float y;
-	float info;
+	/*+0x0*/   float x;
+	/*+0x4*/   float z;
+	/*+0x8*/   float y;
+	/*+0xc*/   float info;
 };
 
 // Type: char;
@@ -54,8 +54,8 @@ struct DXZY{ // not packed(0x10 bytes) TI: 0x3420
 
 // Type: /*unpacked*/ struct Point (forward reference);
 struct Point{ // not packed(0x4 bytes) TI: 0x341c
-	short v;
-	short h;
+	/*+0x0*/   short v; // 0x2 bytes
+	/*+0x2*/   short h; // 0x2 bytes
 };
 
 // Type: char;
@@ -67,9 +67,9 @@ struct Point{ // not packed(0x4 bytes) TI: 0x341c
 class FlatResFile : public FlatFile
 { // not packed(0x11c bytes) TI: 0x330e
 protected:
-	/*unpacked*/ class ResMap *fMap;
-	long fError;
-	short _alignPad;
+	/*+0x110*/ /*unpacked*/ class ResMap *fMap;
+	/*+0x114*/ long fError;
+	/*+0x118*/ short _alignPad; // 0x2 bytes
 public:
 	void FlatResFile();
 	virtual void ~FlatResFile() /* override */;
@@ -129,18 +129,18 @@ public:
 	void Init(void * __ptr32);
 	void Init(unsigned char *);
 	void Init(unsigned long);
-	void * __ptr32 fDataHandle;
-	unsigned long fDataHandleSize;
-	unsigned char fName[16];
-	unsigned long fTinyName;
-	short fResID;
-	unsigned short fDataChanged;
+	/*+0x4*/   void * __ptr32 fDataHandle;
+	/*+0x8*/   unsigned long fDataHandleSize;
+	/*+0xc*/   unsigned char fName[16]; // 0x10 bytes
+	/*+0x1c*/  unsigned long fTinyName;
+	/*+0x20*/  short fResID; // 0x2 bytes
+	/*+0x22*/  unsigned short fDataChanged; // 0x2 bytes
 	struct cBBase::BBaseHeader{ // not packed(0x40 bytes) TI: 0x339f
-		unsigned long bodyType;
-		long _win8pad[15];
+		/*+0x0*/   unsigned long bodyType;
+		/*+0x4*/   long _win8pad[15]; // 0x3c bytes
 	};
 public:
-	/*unpacked*/ struct cBBase::BBaseHeader *fHeader;
+	/*+0x24*/  /*unpacked*/ struct cBBase::BBaseHeader *fHeader;
 	// calltype: NearC
 	static void SwizzleBBaseHeader(void * __ptr32, long);
 };
@@ -149,8 +149,8 @@ public:
 class PtrList<cBBase>{ // not packed(0x8 bytes) TI: 0x33ac
 	class PtrList<cBBase>::Iter{ // not packed(0x8 bytes) TI: 0x33b6
 	private:
-		/*unpacked*/ class PtrList<cBBase> *fObject;
-		/*unpacked*/ struct PtrList<cBBase>::PtrNode *fCur;
+		/*+0x0*/   /*unpacked*/ class PtrList<cBBase> *fObject;
+		/*+0x4*/   /*unpacked*/ struct PtrList<cBBase>::PtrNode *fCur;
 	public:
 		void Iter(/*unpacked*/ class PtrList<cBBase>*);
 		/*unpacked*/ class cBBase* Current();
@@ -159,12 +159,12 @@ class PtrList<cBBase>{ // not packed(0x8 bytes) TI: 0x33ac
 		/*unpacked*/ class cBBase* First();
 	};
 	struct PtrList<cBBase>::PtrNode{ // not packed(0x8 bytes) TI: 0x33ae
-		/*unpacked*/ class cBBase *data;
-		/*unpacked*/ struct PtrList<cBBase>::PtrNode *next;
+		/*+0x0*/   /*unpacked*/ class cBBase *data;
+		/*+0x4*/   /*unpacked*/ struct PtrList<cBBase>::PtrNode *next;
 	};
 private:
-	/*unpacked*/ struct PtrList<cBBase>::PtrNode *fFirst;
-	short fCount;
+	/*+0x0*/   /*unpacked*/ struct PtrList<cBBase>::PtrNode *fFirst;
+	/*+0x4*/   short fCount; // 0x2 bytes
 public:
 	void PtrList<cBBase>();
 	void ~PtrList<cBBase>();
@@ -179,15 +179,15 @@ public:
 
 // Type: /*unpacked*/ struct PtrList<cBBase>::PtrNode (forward reference);
 struct PtrList<cBBase>::PtrNode{ // not packed(0x8 bytes) TI: 0x33ae
-	/*unpacked*/ class cBBase *data;
-	/*unpacked*/ struct PtrList<cBBase>::PtrNode *next;
+	/*+0x0*/   /*unpacked*/ class cBBase *data;
+	/*+0x4*/   /*unpacked*/ struct PtrList<cBBase>::PtrNode *next;
 };
 
 // Type: /*unpacked*/ class PtrList<cCopterAnim>::Iter (forward reference);
 class PtrList<cCopterAnim>::Iter{ // not packed(0x8 bytes) TI: 0x341b
 private:
-	/*unpacked*/ class PtrList<cCopterAnim> *fObject;
-	/*unpacked*/ struct PtrList<cCopterAnim>::PtrNode *fCur;
+	/*+0x0*/   /*unpacked*/ class PtrList<cCopterAnim> *fObject;
+	/*+0x4*/   /*unpacked*/ struct PtrList<cCopterAnim>::PtrNode *fCur;
 public:
 	void Iter(/*unpacked*/ class PtrList<cCopterAnim>*);
 	/*unpacked*/ class cCopterAnim* Current();
@@ -203,8 +203,8 @@ public:
 class PtrList<cCopterAnim>{ // not packed(0x8 bytes) TI: 0x3411
 	class PtrList<cCopterAnim>::Iter{ // not packed(0x8 bytes) TI: 0x341b
 	private:
-		/*unpacked*/ class PtrList<cCopterAnim> *fObject;
-		/*unpacked*/ struct PtrList<cCopterAnim>::PtrNode *fCur;
+		/*+0x0*/   /*unpacked*/ class PtrList<cCopterAnim> *fObject;
+		/*+0x4*/   /*unpacked*/ struct PtrList<cCopterAnim>::PtrNode *fCur;
 	public:
 		void Iter(/*unpacked*/ class PtrList<cCopterAnim>*);
 		/*unpacked*/ class cCopterAnim* Current();
@@ -213,12 +213,12 @@ class PtrList<cCopterAnim>{ // not packed(0x8 bytes) TI: 0x3411
 		/*unpacked*/ class cCopterAnim* First();
 	};
 	struct PtrList<cCopterAnim>::PtrNode{ // not packed(0x8 bytes) TI: 0x3413
-		/*unpacked*/ class cCopterAnim *data;
-		/*unpacked*/ struct PtrList<cCopterAnim>::PtrNode *next;
+		/*+0x0*/   /*unpacked*/ class cCopterAnim *data;
+		/*+0x4*/   /*unpacked*/ struct PtrList<cCopterAnim>::PtrNode *next;
 	};
 private:
-	/*unpacked*/ struct PtrList<cCopterAnim>::PtrNode *fFirst;
-	short fCount;
+	/*+0x0*/   /*unpacked*/ struct PtrList<cCopterAnim>::PtrNode *fFirst;
+	/*+0x4*/   short fCount; // 0x2 bytes
 public:
 	void PtrList<cCopterAnim>();
 	void ~PtrList<cCopterAnim>();
@@ -247,7 +247,7 @@ public:
 	virtual /*unpacked*/ class cBList<cBBase>* GetList() /* override */;
 	virtual /*unpacked*/ struct PrivAnimPartInfo* GetPartInfo(short, short); // vtable+0x24
 	virtual /*unpacked*/ struct PrivAnimPartInfo* GetPartInfoBasePtr(short); // vtable+0x28
-	/*unpacked*/ class cArray<PrivAnimPartInfo> *fPrivPartInfo;
+	/*+0x28*/  /*unpacked*/ class cArray<PrivAnimPartInfo> *fPrivPartInfo;
 	short GetNumParts();
 	short GetNumFrames();
 	// calltype: NearC
@@ -276,8 +276,8 @@ public:
 class PtrList<cCopterBody>{ // not packed(0x8 bytes) TI: 0x3432
 	class PtrList<cCopterBody>::Iter{ // not packed(0x8 bytes) TI: 0x343c
 	private:
-		/*unpacked*/ class PtrList<cCopterBody> *fObject;
-		/*unpacked*/ struct PtrList<cCopterBody>::PtrNode *fCur;
+		/*+0x0*/   /*unpacked*/ class PtrList<cCopterBody> *fObject;
+		/*+0x4*/   /*unpacked*/ struct PtrList<cCopterBody>::PtrNode *fCur;
 	public:
 		void Iter(/*unpacked*/ class PtrList<cCopterBody>*);
 		/*unpacked*/ class cCopterBody* Current();
@@ -286,12 +286,12 @@ class PtrList<cCopterBody>{ // not packed(0x8 bytes) TI: 0x3432
 		/*unpacked*/ class cCopterBody* First();
 	};
 	struct PtrList<cCopterBody>::PtrNode{ // not packed(0x8 bytes) TI: 0x3434
-		/*unpacked*/ class cCopterBody *data;
-		/*unpacked*/ struct PtrList<cCopterBody>::PtrNode *next;
+		/*+0x0*/   /*unpacked*/ class cCopterBody *data;
+		/*+0x4*/   /*unpacked*/ struct PtrList<cCopterBody>::PtrNode *next;
 	};
 private:
-	/*unpacked*/ struct PtrList<cCopterBody>::PtrNode *fFirst;
-	short fCount;
+	/*+0x0*/   /*unpacked*/ struct PtrList<cCopterBody>::PtrNode *fFirst;
+	/*+0x4*/   short fCount; // 0x2 bytes
 public:
 	void PtrList<cCopterBody>();
 	void ~PtrList<cCopterBody>();
@@ -307,8 +307,8 @@ public:
 // Type: /*unpacked*/ class PtrList<cCopterBody>::Iter (forward reference);
 class PtrList<cCopterBody>::Iter{ // not packed(0x8 bytes) TI: 0x343c
 private:
-	/*unpacked*/ class PtrList<cCopterBody> *fObject;
-	/*unpacked*/ struct PtrList<cCopterBody>::PtrNode *fCur;
+	/*+0x0*/   /*unpacked*/ class PtrList<cCopterBody> *fObject;
+	/*+0x4*/   /*unpacked*/ struct PtrList<cCopterBody>::PtrNode *fCur;
 public:
 	void Iter(/*unpacked*/ class PtrList<cCopterBody>*);
 	/*unpacked*/ class cCopterBody* Current();
@@ -335,8 +335,8 @@ public:
 	virtual void Add(/*unpacked*/ class cCopterBody*); // vtable+0x0
 	void WriteToDisk();
 	void WriteToDiskIfDirty();
-	/*unpacked*/ class ResFile *fFile;
-	unsigned long fType;
+	/*+0xc*/   /*unpacked*/ class ResFile *fFile;
+	/*+0x10*/  unsigned long fType;
 	void CompactFile();
 	// calltype: NearC
 	static /*unpacked*/ class cBList<cCopterBody>* MakeNew(unsigned char *, unsigned long);
@@ -369,18 +369,18 @@ public:
 	void Init(void * __ptr32);
 	void Init(unsigned char *);
 	void Init(unsigned long);
-	void * __ptr32 fDataHandle;
-	unsigned long fDataHandleSize;
-	unsigned char fName[16];
-	unsigned long fTinyName;
-	short fResID;
-	unsigned short fDataChanged;
+	/*+0x4*/   void * __ptr32 fDataHandle;
+	/*+0x8*/   unsigned long fDataHandleSize;
+	/*+0xc*/   unsigned char fName[16]; // 0x10 bytes
+	/*+0x1c*/  unsigned long fTinyName;
+	/*+0x20*/  short fResID; // 0x2 bytes
+	/*+0x22*/  unsigned short fDataChanged; // 0x2 bytes
 	struct cBBase::BBaseHeader{ // not packed(0x40 bytes) TI: 0x339f
-		unsigned long bodyType;
-		long _win8pad[15];
+		/*+0x0*/   unsigned long bodyType;
+		/*+0x4*/   long _win8pad[15]; // 0x3c bytes
 	};
 public:
-	/*unpacked*/ struct cBBase::BBaseHeader *fHeader;
+	/*+0x24*/  /*unpacked*/ struct cBBase::BBaseHeader *fHeader;
 	// calltype: NearC
 	static void SwizzleBBaseHeader(void * __ptr32, long);
 };
@@ -389,8 +389,8 @@ public:
 class PtrList<cCopterBody>{ // not packed(0x8 bytes) TI: 0x3432
 	class PtrList<cCopterBody>::Iter{ // not packed(0x8 bytes) TI: 0x343c
 	private:
-		/*unpacked*/ class PtrList<cCopterBody> *fObject;
-		/*unpacked*/ struct PtrList<cCopterBody>::PtrNode *fCur;
+		/*+0x0*/   /*unpacked*/ class PtrList<cCopterBody> *fObject;
+		/*+0x4*/   /*unpacked*/ struct PtrList<cCopterBody>::PtrNode *fCur;
 	public:
 		void Iter(/*unpacked*/ class PtrList<cCopterBody>*);
 		/*unpacked*/ class cCopterBody* Current();
@@ -399,12 +399,12 @@ class PtrList<cCopterBody>{ // not packed(0x8 bytes) TI: 0x3432
 		/*unpacked*/ class cCopterBody* First();
 	};
 	struct PtrList<cCopterBody>::PtrNode{ // not packed(0x8 bytes) TI: 0x3434
-		/*unpacked*/ class cCopterBody *data;
-		/*unpacked*/ struct PtrList<cCopterBody>::PtrNode *next;
+		/*+0x0*/   /*unpacked*/ class cCopterBody *data;
+		/*+0x4*/   /*unpacked*/ struct PtrList<cCopterBody>::PtrNode *next;
 	};
 private:
-	/*unpacked*/ struct PtrList<cCopterBody>::PtrNode *fFirst;
-	short fCount;
+	/*+0x0*/   /*unpacked*/ struct PtrList<cCopterBody>::PtrNode *fFirst;
+	/*+0x4*/   short fCount; // 0x2 bytes
 public:
 	void PtrList<cCopterBody>();
 	void ~PtrList<cCopterBody>();
@@ -424,10 +424,10 @@ class FlatFile{ // not packed(0x110 bytes) TI: 0x32f4
 		kMaxNameLen = 255,
 	};
 protected:
-	/*unpacked*/ class FlatFile *fNext;
-	unsigned char fName[256];
-	long fFileID;
-	/*unpacked*/ struct _iobuf *fFile;
+	/*+0x4*/   /*unpacked*/ class FlatFile *fNext;
+	/*+0x8*/   unsigned char fName[256]; // 0x100 bytes
+	/*+0x108*/ long fFileID;
+	/*+0x10c*/ /*unpacked*/ struct _iobuf *fFile;
 	long UniqueID();
 private:
 	static /*unpacked*/ class FlatFile *sList;

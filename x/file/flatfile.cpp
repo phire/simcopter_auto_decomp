@@ -9,10 +9,10 @@ class FlatFile{ // not packed(0x110 bytes) TI: 0x32f4
 		kMaxNameLen = 255,
 	};
 protected:
-	/*unpacked*/ class FlatFile *fNext;
-	unsigned char fName[256];
-	long fFileID;
-	/*unpacked*/ struct _iobuf *fFile;
+	/*+0x4*/   /*unpacked*/ class FlatFile *fNext;
+	/*+0x8*/   unsigned char fName[256]; // 0x100 bytes
+	/*+0x108*/ long fFileID;
+	/*+0x10c*/ /*unpacked*/ struct _iobuf *fFile;
 	long UniqueID();
 private:
 	static /*unpacked*/ class FlatFile *sList;

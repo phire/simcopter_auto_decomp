@@ -28,10 +28,10 @@ public:
 		MacSystem7 = 5,
 	};
 protected:
-	/*packed*/ struct SparkalColor *mpColorTable;
-	int32_t _mRuntimePlatform;
-	unsigned long _mFlags;
-	int32_t mbUseDirectDraw;
+	/*+0x4*/   /*packed*/ struct SparkalColor *mpColorTable;
+	/*+0x8*/   int32_t _mRuntimePlatform;
+	/*+0xc*/   unsigned long _mFlags;
+	/*+0x10*/  int32_t mbUseDirectDraw;
 };
 
 // Type: /*unpacked*/ class CSparkalApp (forward reference);
@@ -65,11 +65,11 @@ public:
 	int32_t IsTimerRunning();
 	unsigned long GetTickCount();
 protected:
-	enum MTimer::TimerResolution nTimerResolution;
-	unsigned long lStartTime;
-	unsigned long lTotalElapsedTime;
+	/*+0x0*/   enum MTimer::TimerResolution nTimerResolution;
+	/*+0x4*/   unsigned long lStartTime;
+	/*+0x8*/   unsigned long lTotalElapsedTime;
 	unsigned long GetWindowsTimerFrequency();
-	unsigned long lFrequency;
+	/*+0xc*/   unsigned long lFrequency;
 };
 
 // Type: void;

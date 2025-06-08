@@ -7,7 +7,7 @@
 class NResFile : public ResFile
 { // packed(0x120 bytes) TI: 0x2276
 private:
-	/*packed*/ class PtrList<StdResLoader> fLoaders;
+	/*+0x11a*/ /*packed*/ class PtrList<StdResLoader> fLoaders; // 0x6 bytes
 public:
 	virtual void ~NResFile() /* override */;
 	/*packed*/ class StdResLoader* GetLoader(unsigned long, void (*)(void * __ptr32, long));
@@ -28,8 +28,8 @@ public:
 // Type: /*packed*/ class PtrList<StdResLoader>::Iter;
 class PtrList<StdResLoader>::Iter{ // packed(0x8 bytes) TI: 0x2231
 private:
-	/*packed*/ class PtrList<StdResLoader> *fObject;
-	/*packed*/ struct PtrList<StdResLoader>::PtrNode *fCur;
+	/*+0x0*/   /*packed*/ class PtrList<StdResLoader> *fObject;
+	/*+0x4*/   /*packed*/ struct PtrList<StdResLoader>::PtrNode *fCur;
 public:
 	void Iter(/*packed*/ class PtrList<StdResLoader>*);
 	/*packed*/ class StdResLoader* Current();
@@ -45,10 +45,10 @@ public:
 // Type: /*packed*/ class ResLoader<unsigned char,StdResInfo>;
 class ResLoader<unsigned char,StdResInfo>{ // packed(0x10 bytes) TI: 0x22cf
 private:
-	long fCount;
-	/*packed*/ struct StdResInfo *fResInfo;
-	/*packed*/ class ResFile *fFile;
-	unsigned long fType;
+	/*+0x0*/   long fCount;
+	/*+0x4*/   /*packed*/ struct StdResInfo *fResInfo;
+	/*+0x8*/   /*packed*/ class ResFile *fFile;
+	/*+0xc*/   unsigned long fType;
 public:
 	unsigned long Type();
 	void ResLoader<unsigned char,StdResInfo>(/*packed*/ class ResFile*, unsigned long, void (*)(void * __ptr32, long));
@@ -73,9 +73,9 @@ public:
 class FlatResFile : public FlatFile
 { // packed(0x11a bytes) TI: 0x22bb
 protected:
-	/*unpacked*/ class ResMap *fMap;
-	long fError;
-	short _alignPad;
+	/*+0x110*/ /*unpacked*/ class ResMap *fMap;
+	/*+0x114*/ long fError;
+	/*+0x118*/ short _alignPad; // 0x2 bytes
 public:
 	void FlatResFile();
 	virtual void ~FlatResFile() /* override */;
@@ -116,10 +116,10 @@ class FlatFile{ // packed(0x110 bytes) TI: 0x229b
 		kMaxNameLen = 255,
 	};
 protected:
-	/*packed*/ class FlatFile *fNext;
-	unsigned char fName[256];
-	long fFileID;
-	/*packed*/ struct _iobuf *fFile;
+	/*+0x4*/   /*packed*/ class FlatFile *fNext;
+	/*+0x8*/   unsigned char fName[256]; // 0x100 bytes
+	/*+0x108*/ long fFileID;
+	/*+0x10c*/ /*packed*/ struct _iobuf *fFile;
 	long UniqueID();
 private:
 	static /*packed*/ class FlatFile *sList;

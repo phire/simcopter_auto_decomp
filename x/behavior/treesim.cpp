@@ -10,22 +10,22 @@ class TreeSim{ // not packed(0x14 bytes) TI: 0x3610
 		kMaxIterations = 128,
 	};
 	struct TreeSim::StackElem{ // not packed(0x14 bytes) TI: 0x3614
-		short treeID;
-		short nodeNum;
-		short objectID;
-		short _pad;
-		unsigned char * objectPtr;
-		short locals[4];
-		/*unpacked*/ class Behavior *pBehavior;
+		/*+0x0*/   short treeID; // 0x2 bytes
+		/*+0x2*/   short nodeNum; // 0x2 bytes
+		/*+0x4*/   short objectID; // 0x2 bytes
+		/*+0x4*/   short _pad; // 0x2 bytes
+		/*+0x4*/   unsigned char * objectPtr;
+		/*+0x8*/   short locals[4]; // 0x8 bytes
+		/*+0x10*/  /*unpacked*/ class Behavior *pBehavior;
 		void GetTreeName(unsigned char *);
 	};
 private:
-	/*unpacked*/ struct TreeSim::StackElem *fStack;
-	short fStackSize;
-	short fMaxStackSize;
-	short fIterations;
-	short _pad;
-	short * fAutoStackArea;
+	/*+0x4*/   /*unpacked*/ struct TreeSim::StackElem *fStack;
+	/*+0x8*/   short fStackSize; // 0x2 bytes
+	/*+0xa*/   short fMaxStackSize; // 0x2 bytes
+	/*+0xc*/   short fIterations; // 0x2 bytes
+	/*+0xe*/   short _pad; // 0x2 bytes
+	/*+0x10*/  short * fAutoStackArea;
 	enum ReturnCode {
 		kTrueComplete = 1,
 		kFalseComplete = 0,
@@ -66,12 +66,12 @@ public:
 // VTABLE: COPTER_D 0x005936d8
 class Behavior{ // not packed(0x1c bytes) TI: 0x35de
 protected:
-	/*unpacked*/ class NResFile *fGlobFile;
-	/*unpacked*/ class NResFile *fPrivFile;
-	/*unpacked*/ class StdResLoader *fGlobalTrees;
-	/*unpacked*/ class StdResLoader *fPrivateTrees;
-	/*unpacked*/ class Language *fLanguage;
-	void (*fSwizzler)(void * __ptr32, long);
+	/*+0x4*/   /*unpacked*/ class NResFile *fGlobFile;
+	/*+0x8*/   /*unpacked*/ class NResFile *fPrivFile;
+	/*+0xc*/   /*unpacked*/ class StdResLoader *fGlobalTrees;
+	/*+0x10*/  /*unpacked*/ class StdResLoader *fPrivateTrees;
+	/*+0x14*/  /*unpacked*/ class Language *fLanguage;
+	/*+0x18*/  void (*fSwizzler)(void * __ptr32, long);
 	enum /* __unnamed */ {
 		kPrimitiveBase = 0,
 		kPrimitiveMax = 255,
@@ -90,17 +90,17 @@ protected:
 		kMaxTreeClass = 3,
 	};
 	struct Behavior::NodeParameter{ // not packed(0x8 bytes) TI: 0x35e5
-		short p1;
-		short p2;
-		short p3;
-		short p4;
+		/*+0x0*/   short p1; // 0x2 bytes
+		/*+0x2*/   short p2; // 0x2 bytes
+		/*+0x4*/   short p3; // 0x2 bytes
+		/*+0x6*/   short p4; // 0x2 bytes
 	};
 	struct Behavior::Node{ // not packed(0xc bytes) TI: 0x35e3
-		short treeID;
-		short primCode;
-		char trueTrans;
-		char falseTrans;
-		/*unpacked*/ struct Behavior::NodeParameter param;
+		/*+0x0*/   short treeID; // 0x2 bytes
+		/*+0x0*/   short primCode; // 0x2 bytes
+		/*+0x2*/   char trueTrans; // 0x1 bytes
+		/*+0x3*/   char falseTrans; // 0x1 bytes
+		/*+0x4*/   /*unpacked*/ struct Behavior::NodeParameter param; // 0x8 bytes
 	};
 	enum /* __unnamed */ {
 		kUndefined = -3,
@@ -108,8 +108,8 @@ protected:
 		kPopOutFalse = -1,
 	};
 	struct Behavior::Tree{ // not packed(0xe bytes) TI: 0x35e1
-		short numNodes;
-		/*unpacked*/ struct Behavior::Node nodes[1];
+		/*+0x0*/   short numNodes; // 0x2 bytes
+		/*+0x2*/   /*unpacked*/ struct Behavior::Node nodes[1]; // 0xc bytes
 	};
 public:
 	void Behavior(/*unpacked*/ class Language*, /*unpacked*/ class NResFile*, /*unpacked*/ class NResFile*);
@@ -148,13 +148,13 @@ public:
 
 // Type: /*unpacked*/ struct TreeSim::StackElem (forward reference);
 struct TreeSim::StackElem{ // not packed(0x14 bytes) TI: 0x3614
-	short treeID;
-	short nodeNum;
-	short objectID;
-	short _pad;
-	unsigned char * objectPtr;
-	short locals[4];
-	/*unpacked*/ class Behavior *pBehavior;
+	/*+0x0*/   short treeID; // 0x2 bytes
+	/*+0x2*/   short nodeNum; // 0x2 bytes
+	/*+0x4*/   short objectID; // 0x2 bytes
+	/*+0x4*/   short _pad; // 0x2 bytes
+	/*+0x4*/   unsigned char * objectPtr;
+	/*+0x8*/   short locals[4]; // 0x8 bytes
+	/*+0x10*/  /*unpacked*/ class Behavior *pBehavior;
 	void GetTreeName(unsigned char *);
 };
 
@@ -164,11 +164,11 @@ struct TreeSim::StackElem{ // not packed(0x14 bytes) TI: 0x3614
 
 // Type: /*unpacked*/ struct Behavior::Node (forward reference);
 struct Behavior::Node{ // not packed(0xc bytes) TI: 0x35e3
-	short treeID;
-	short primCode;
-	char trueTrans;
-	char falseTrans;
-	/*unpacked*/ struct Behavior::NodeParameter param;
+	/*+0x0*/   short treeID; // 0x2 bytes
+	/*+0x0*/   short primCode; // 0x2 bytes
+	/*+0x2*/   char trueTrans; // 0x1 bytes
+	/*+0x3*/   char falseTrans; // 0x1 bytes
+	/*+0x4*/   /*unpacked*/ struct Behavior::NodeParameter param; // 0x8 bytes
 };
 
 // Type: enum TreeSim::ReturnCode;
@@ -186,7 +186,7 @@ enum ReturnCode {
 class ExtSim : public TreeSim
 { // not packed(0x18 bytes) TI: 0x35f6
 private:
-	/*unpacked*/ class TreeSim *fExt;
+	/*+0x14*/  /*unpacked*/ class TreeSim *fExt;
 public:
 	void ExtSim(/*unpacked*/ class TreeSim*, short);
 	virtual enum TreeSim::ReturnCode TryElement(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*) /* override */;
@@ -204,22 +204,22 @@ class TreeSim{ // not packed(0x14 bytes) TI: 0x3610
 		kMaxIterations = 128,
 	};
 	struct TreeSim::StackElem{ // not packed(0x14 bytes) TI: 0x3614
-		short treeID;
-		short nodeNum;
-		short objectID;
-		short _pad;
-		unsigned char * objectPtr;
-		short locals[4];
-		/*unpacked*/ class Behavior *pBehavior;
+		/*+0x0*/   short treeID; // 0x2 bytes
+		/*+0x2*/   short nodeNum; // 0x2 bytes
+		/*+0x4*/   short objectID; // 0x2 bytes
+		/*+0x4*/   short _pad; // 0x2 bytes
+		/*+0x4*/   unsigned char * objectPtr;
+		/*+0x8*/   short locals[4]; // 0x8 bytes
+		/*+0x10*/  /*unpacked*/ class Behavior *pBehavior;
 		void GetTreeName(unsigned char *);
 	};
 private:
-	/*unpacked*/ struct TreeSim::StackElem *fStack;
-	short fStackSize;
-	short fMaxStackSize;
-	short fIterations;
-	short _pad;
-	short * fAutoStackArea;
+	/*+0x4*/   /*unpacked*/ struct TreeSim::StackElem *fStack;
+	/*+0x8*/   short fStackSize; // 0x2 bytes
+	/*+0xa*/   short fMaxStackSize; // 0x2 bytes
+	/*+0xc*/   short fIterations; // 0x2 bytes
+	/*+0xe*/   short _pad; // 0x2 bytes
+	/*+0x10*/  short * fAutoStackArea;
 	enum ReturnCode {
 		kTrueComplete = 1,
 		kFalseComplete = 0,

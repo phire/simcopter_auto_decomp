@@ -6,24 +6,24 @@
 
 // Type: /*packed*/ struct VRwindowType;
 struct VRwindowType{ // packed(0x1c bytes) TI: 0x10a5
-	int32_t WindowX;
-	int32_t WindowY;
-	int32_t WindowWide;
-	int32_t WindowHigh;
-	int32_t RenderMode;
-	int32_t RenderWide;
-	int32_t RenderHigh;
+	/*+0x0*/   int32_t WindowX;
+	/*+0x4*/   int32_t WindowY;
+	/*+0x8*/   int32_t WindowWide;
+	/*+0xc*/   int32_t WindowHigh;
+	/*+0x10*/  int32_t RenderMode;
+	/*+0x14*/  int32_t RenderWide;
+	/*+0x18*/  int32_t RenderHigh;
 };
 
 // Type: /*unpacked*/ struct VRwindowType;
 struct VRwindowType{ // not packed(0x1c bytes) TI: 0x3e0f
-	int32_t WindowX;
-	int32_t WindowY;
-	int32_t WindowWide;
-	int32_t WindowHigh;
-	int32_t RenderMode;
-	int32_t RenderWide;
-	int32_t RenderHigh;
+	/*+0x0*/   int32_t WindowX;
+	/*+0x4*/   int32_t WindowY;
+	/*+0x8*/   int32_t WindowWide;
+	/*+0xc*/   int32_t WindowHigh;
+	/*+0x10*/  int32_t RenderMode;
+	/*+0x14*/  int32_t RenderWide;
+	/*+0x18*/  int32_t RenderHigh;
 };
 
 // Type: char *;
@@ -44,8 +44,8 @@ enum tagResolution {
 // Type: /*packed*/ class RoadGraph;
 class RoadGraph{ // packed(0x280 bytes) TI: 0x485e
 public:
-	/*packed*/ struct RGVertex *RGArray[128];
-	unsigned char RGLength[128];
+	/*+0x0*/   /*packed*/ struct RGVertex *RGArray[128]; // 0x200 bytes
+	/*+0x200*/ unsigned char RGLength[128]; // 0x80 bytes
 	void RoadGraph();
 	void Init();
 	void ~RoadGraph();
@@ -86,13 +86,13 @@ public:
 	short GetNextNearest(/*packed*/ struct _GridCoordinates*);
 	void DecrementQuantityOfVehicleDispatched(int32_t);
 private:
-	/*packed*/ struct _StructStation *stationList;
-	int32_t quantityOfStations;
-	/*packed*/ struct _StationHeapStruct *stationHeap;
-	int32_t stationHeapSize;
-	/*packed*/ struct _VehicleHeapStruct *vehicleHeap;
-	int32_t vehicleHeapSize;
-	int32_t maxVehicles;
+	/*+0x0*/   /*packed*/ struct _StructStation *stationList;
+	/*+0x4*/   int32_t quantityOfStations;
+	/*+0x8*/   /*packed*/ struct _StationHeapStruct *stationHeap;
+	/*+0xc*/   int32_t stationHeapSize;
+	/*+0x10*/  /*packed*/ struct _VehicleHeapStruct *vehicleHeap;
+	/*+0x14*/  int32_t vehicleHeapSize;
+	/*+0x18*/  int32_t maxVehicles;
 	int32_t FindNearestRoadToStation(/*packed*/ struct _GridCoordinates&);
 	int32_t FindNearestRoadToEmergency(/*packed*/ struct _GridCoordinates&);
 	int32_t FindNearestStation(/*packed*/ struct _GridCoordinates);
@@ -108,8 +108,8 @@ private:
 // Type: /*packed*/ class ShortestPath;
 class ShortestPath{ // packed(0x8 bytes) TI: 0x2aae
 private:
-	/*packed*/ struct _FringeHeapNode *heap;
-	long heapSize;
+	/*+0x0*/   /*packed*/ struct _FringeHeapNode *heap;
+	/*+0x4*/   long heapSize;
 public:
 	void Init();
 	int32_t BreadthFirstSearch(/*packed*/ struct _RGIndex, /*packed*/ struct _RGIndex);

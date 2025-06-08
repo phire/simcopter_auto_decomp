@@ -16,12 +16,12 @@ public:
 	unsigned long DataSize();
 	char * DataReference();
 protected:
-	int32_t nResource;
-	char * chData;
-	int32_t bWeOwnTheData;
-	void * __ptr32 hFoundResource;
-	void * __ptr32 hInstance;
-	void * __ptr32 hResource;
+	/*+0x4*/   int32_t nResource;
+	/*+0x8*/   char * chData;
+	/*+0xc*/   int32_t bWeOwnTheData;
+	/*+0x10*/  void * __ptr32 hFoundResource;
+	/*+0x14*/  void * __ptr32 hInstance;
+	/*+0x18*/  void * __ptr32 hResource;
 };
 
 // Type: void;

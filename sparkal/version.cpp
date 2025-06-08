@@ -24,8 +24,8 @@ public:
 	// calltype: NearC
 	static long GetCPUSpeed();
 protected:
-	unsigned char * lpTransBlock;
-	void * __ptr32 lpFVData;
+	/*+0x4*/   unsigned char * lpTransBlock;
+	/*+0x8*/   void * __ptr32 lpFVData;
 };
 
 // Type: unsigned long;
@@ -44,29 +44,29 @@ protected:
 
 // Type: /*packed*/ struct tagVS_FIXEDFILEINFO (forward reference);
 struct tagVS_FIXEDFILEINFO{ // packed(0x34 bytes) TI: 0x2aed
-	unsigned long dwSignature;
-	unsigned long dwStrucVersion;
-	unsigned long dwFileVersionMS;
-	unsigned long dwFileVersionLS;
-	unsigned long dwProductVersionMS;
-	unsigned long dwProductVersionLS;
-	unsigned long dwFileFlagsMask;
-	unsigned long dwFileFlags;
-	unsigned long dwFileOS;
-	unsigned long dwFileType;
-	unsigned long dwFileSubtype;
-	unsigned long dwFileDateMS;
-	unsigned long dwFileDateLS;
+	/*+0x0*/   unsigned long dwSignature;
+	/*+0x4*/   unsigned long dwStrucVersion;
+	/*+0x8*/   unsigned long dwFileVersionMS;
+	/*+0xc*/   unsigned long dwFileVersionLS;
+	/*+0x10*/  unsigned long dwProductVersionMS;
+	/*+0x14*/  unsigned long dwProductVersionLS;
+	/*+0x18*/  unsigned long dwFileFlagsMask;
+	/*+0x1c*/  unsigned long dwFileFlags;
+	/*+0x20*/  unsigned long dwFileOS;
+	/*+0x24*/  unsigned long dwFileType;
+	/*+0x28*/  unsigned long dwFileSubtype;
+	/*+0x2c*/  unsigned long dwFileDateMS;
+	/*+0x30*/  unsigned long dwFileDateLS;
 };
 
 // Type: long;
 
 // Type: /*packed*/ struct FREQ_INFO;
 struct FREQ_INFO{ // packed(0x10 bytes) TI: 0x2a8f
-	unsigned long in_cycles;
-	unsigned long ex_ticks;
-	unsigned long raw_freq;
-	unsigned long norm_freq;
+	/*+0x0*/   unsigned long in_cycles;
+	/*+0x4*/   unsigned long ex_ticks;
+	/*+0x8*/   unsigned long raw_freq;
+	/*+0xc*/   unsigned long norm_freq;
 };
 
 

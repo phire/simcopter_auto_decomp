@@ -7,7 +7,7 @@
 // Type: /*packed*/ class CopterGameMode (forward reference);
 class CopterGameMode{ // packed(0x4 bytes) TI: 0x170f
 public:
-	int32_t nModeID;
+	/*+0x0*/   int32_t nModeID;
 	void CopterGameMode(const /*packed*/ class CopterGameMode&);
 	void CopterGameMode(int32_t);
 	void CopterGameMode();
@@ -24,10 +24,10 @@ class GameModeCoreData{ // packed(0x14 bytes) TI: 0x1853
 public:
 	void GameModeCoreData();
 	virtual void ~GameModeCoreData(); // vtable+0x0
-	long lPauseCount;
-	/*packed*/ struct SparkalColor *pColorTable;
-	/*unpacked*/ class CGameApp *pGameApp;
-	/*packed*/ class ScreenWindow *pScreenWindow;
+	/*+0x4*/   long lPauseCount;
+	/*+0x8*/   /*packed*/ struct SparkalColor *pColorTable;
+	/*+0xc*/   /*unpacked*/ class CGameApp *pGameApp;
+	/*+0x10*/  /*packed*/ class ScreenWindow *pScreenWindow;
 };
 
 // Type: /*packed*/ class GameModeMainMenuData (forward reference);
@@ -41,28 +41,28 @@ public:
 	int32_t CreateAllSurfaces();
 	int32_t DestroyAllSurfaces();
 	void Shutdown();
-	/*unpacked*/ class SmackerBackBuffer *myVideoBuffer;
+	/*+0x14*/  /*unpacked*/ class SmackerBackBuffer *myVideoBuffer;
 };
 
 // Type: char;
 
 // Type: /*packed*/ struct UserMenuWindowDescription;
 struct UserMenuWindowDescription{ // packed(0x54 bytes) TI: 0x101b
-	/*packed*/ class basic_string<char> sImageFileName;
-	int32_t nTransparentIndex;
-	/*packed*/ class MRect rectPosition;
-	long lMenuStringResourceIndex;
-	long lMenuStringResourceCount;
-	long lSelectionBase;
-	/*packed*/ struct SparkalColor colorFont;
-	/*packed*/ struct SparkalColor colorFontHighlighted;
-	/*packed*/ class MPoint ptPositionFirstItem;
-	int32_t nSizeItemFont;
-	int32_t nLineHeight;
-	long lTitleStringResourceIndex;
-	int32_t bTitleCentered;
-	/*packed*/ class MPoint ptTitlePosition;
-	int32_t nSizeTitleFont;
+	/*+0x0*/   /*packed*/ class basic_string<char> sImageFileName; // 0x8 bytes
+	/*+0x8*/   int32_t nTransparentIndex;
+	/*+0xc*/   /*packed*/ class MRect rectPosition; // 0x10 bytes
+	/*+0x1c*/  long lMenuStringResourceIndex;
+	/*+0x20*/  long lMenuStringResourceCount;
+	/*+0x24*/  long lSelectionBase;
+	/*+0x28*/  /*packed*/ struct SparkalColor colorFont;
+	/*+0x2c*/  /*packed*/ struct SparkalColor colorFontHighlighted;
+	/*+0x30*/  /*packed*/ class MPoint ptPositionFirstItem; // 0x8 bytes
+	/*+0x38*/  int32_t nSizeItemFont;
+	/*+0x3c*/  int32_t nLineHeight;
+	/*+0x40*/  long lTitleStringResourceIndex;
+	/*+0x44*/  int32_t bTitleCentered;
+	/*+0x48*/  /*packed*/ class MPoint ptTitlePosition; // 0x8 bytes
+	/*+0x50*/  int32_t nSizeTitleFont;
 };
 
 // Type: /*packed*/ class UserMenuWindow (forward reference);
@@ -89,10 +89,10 @@ protected:
 	virtual void DrawSelectionIndicators(); // vtable+0xdc
 	virtual int32_t DoCursorHitTest(int32_t&, long, long); // vtable+0xe0
 	virtual int32_t GetPositionOfNthItem(int32_t, /*packed*/ class MPoint&); // vtable+0xe4
-	/*packed*/ struct UserMenuWindowDescription myUserMenuWindowDescription;
-	/*packed*/ class vector<TextWindow *> myTextWindowPtrArray;
-	int32_t nCurrentSelection;
-	/*packed*/ class DigitalSound soundSelectionChange;
+	/*+0x74*/  /*packed*/ struct UserMenuWindowDescription myUserMenuWindowDescription; // 0x54 bytes
+	/*+0xc8*/  /*packed*/ class vector<TextWindow *> myTextWindowPtrArray; // 0xc bytes
+	/*+0xd4*/  int32_t nCurrentSelection;
+	/*+0xd8*/  /*packed*/ class DigitalSound soundSelectionChange; // 0x7a bytes
 };
 
 // Type: /*packed*/ class GameModePickCareerCityData (forward reference);
@@ -111,10 +111,10 @@ public:
 	int32_t CreateAllSurfaces();
 	int32_t DestroyAllSurfaces();
 	void Shutdown();
-	/*unpacked*/ class SmackerBackBuffer *myVideoBuffer;
-	int32_t nSubMode;
-	/*packed*/ class MRect rectVideo;
-	int32_t bFirstCareerCityData;
+	/*+0x14*/  /*unpacked*/ class SmackerBackBuffer *myVideoBuffer;
+	/*+0x18*/  int32_t nSubMode;
+	/*+0x1c*/  /*packed*/ class MRect rectVideo; // 0x10 bytes
+	/*+0x2c*/  int32_t bFirstCareerCityData;
 };
 
 // Type: /*packed*/ class CareerWindow (forward reference);
@@ -140,24 +140,24 @@ public:
 		virtual void ~CitySelectionFrame(); // vtable+0x0
 		void FillDestinationPoints(/*packed*/ class MPoint*);
 		void FillSourceRects(/*packed*/ class MRect*);
-		int32_t bLeft;
-		int32_t bTop;
-		int32_t bSelected;
-		/*packed*/ class MRect rectFrame[4];
+		/*+0x4*/   int32_t bLeft;
+		/*+0x8*/   int32_t bTop;
+		/*+0xc*/   int32_t bSelected;
+		/*+0x10*/  /*packed*/ class MRect rectFrame[4]; // 0x40 bytes
 	};
 protected:
 	void DrawCitySelection();
 	void GetCoordinatesForCitySelections(/*packed*/ class MPoint[4]*, /*packed*/ class MRect[4]*);
-	long lCurrentCitySelection;
-	/*packed*/ class MRect rectCities[3];
-	long lCities[3];
-	int32_t nCityCount;
-	int32_t bAllowCancel;
-	/*packed*/ class SmackerBackBuffer mySmackerBackBuffers[3];
-	void * __ptr32 myPlatformWindow;
-	/*unpacked*/ class TextWindow *cityNameTextWindow;
-	/*unpacked*/ class TextWindow *cityLevelTextWindow;
-	/*unpacked*/ class CBackBuffer *mySelectionImage;
+	/*+0x74*/  long lCurrentCitySelection;
+	/*+0x78*/  /*packed*/ class MRect rectCities[3]; // 0x30 bytes
+	/*+0xa8*/  long lCities[3]; // 0xc bytes
+	/*+0xb4*/  int32_t nCityCount;
+	/*+0xb8*/  int32_t bAllowCancel;
+	/*+0xbc*/  /*packed*/ class SmackerBackBuffer mySmackerBackBuffers[3]; // 0x774 bytes
+	/*+0x830*/ void * __ptr32 myPlatformWindow;
+	/*+0x834*/ /*unpacked*/ class TextWindow *cityNameTextWindow;
+	/*+0x838*/ /*unpacked*/ class TextWindow *cityLevelTextWindow;
+	/*+0x83c*/ /*unpacked*/ class CBackBuffer *mySelectionImage;
 };
 
 // Type: long *;
@@ -203,30 +203,30 @@ public:
 	void RemoveUserConfigurableCommands();
 	void SetUserConfigurableCommandsToDefaults();
 	void SetNonUserConfigurableCommandsToDefaults();
-	enum GameModePlayData::ExceptionState nExceptionState;
-	int32_t nRenderWindowWidth;
-	int32_t nRenderWindowHeight;
-	int32_t nShortenedRenderWindowWidth;
-	int32_t nShortenedRenderWindowHeight;
-	int32_t bPanelsVisibleWhenInCopter;
-	int32_t bShowingPanels;
-	int32_t bShowingEquipment;
-	int32_t bUserWasInHelicopterOnLastCheck;
-	/*unpacked*/ class CBackBuffer *pStretchBuffer;
-	/*unpacked*/ class SkyImage *pSkyImage;
-	/*unpacked*/ class GraphicWindow *pPanel0;
-	/*unpacked*/ class GraphicWindow *pPanel1;
-	/*unpacked*/ class GraphicWindow *pPanel2;
-	/*unpacked*/ class GraphicWindow *pPanel3;
-	/*packed*/ class RadioCompassWindow *pPanel4;
-	/*packed*/ class MapWindow *pPanel5;
-	/*packed*/ class DialWindow *pPanel6;
-	/*unpacked*/ class GraphicWindow *pFlap0;
-	/*unpacked*/ class GraphicWindow *pFlap1;
-	/*unpacked*/ class GraphicWindow *pFlap2;
-	/*unpacked*/ class GraphicWindow *pFlap3;
-	/*packed*/ class PassengerWindow *pPassengerWindow;
-	/*packed*/ struct CommandSystem commandSystem;
+	/*+0x14*/  enum GameModePlayData::ExceptionState nExceptionState;
+	/*+0x18*/  int32_t nRenderWindowWidth;
+	/*+0x1c*/  int32_t nRenderWindowHeight;
+	/*+0x20*/  int32_t nShortenedRenderWindowWidth;
+	/*+0x24*/  int32_t nShortenedRenderWindowHeight;
+	/*+0x28*/  int32_t bPanelsVisibleWhenInCopter;
+	/*+0x2c*/  int32_t bShowingPanels;
+	/*+0x30*/  int32_t bShowingEquipment;
+	/*+0x34*/  int32_t bUserWasInHelicopterOnLastCheck;
+	/*+0x38*/  /*unpacked*/ class CBackBuffer *pStretchBuffer;
+	/*+0x3c*/  /*unpacked*/ class SkyImage *pSkyImage;
+	/*+0x40*/  /*unpacked*/ class GraphicWindow *pPanel0;
+	/*+0x44*/  /*unpacked*/ class GraphicWindow *pPanel1;
+	/*+0x48*/  /*unpacked*/ class GraphicWindow *pPanel2;
+	/*+0x4c*/  /*unpacked*/ class GraphicWindow *pPanel3;
+	/*+0x50*/  /*packed*/ class RadioCompassWindow *pPanel4;
+	/*+0x54*/  /*packed*/ class MapWindow *pPanel5;
+	/*+0x58*/  /*packed*/ class DialWindow *pPanel6;
+	/*+0x5c*/  /*unpacked*/ class GraphicWindow *pFlap0;
+	/*+0x60*/  /*unpacked*/ class GraphicWindow *pFlap1;
+	/*+0x64*/  /*unpacked*/ class GraphicWindow *pFlap2;
+	/*+0x68*/  /*unpacked*/ class GraphicWindow *pFlap3;
+	/*+0x6c*/  /*packed*/ class PassengerWindow *pPassengerWindow;
+	/*+0x70*/  /*packed*/ struct CommandSystem commandSystem; // 0xaa8 bytes
 };
 
 // Type: /*packed*/ class MRect;
@@ -299,13 +299,13 @@ public:
 
 // Type: /*packed*/ struct tagUserPersonalInfo (forward reference);
 struct tagUserPersonalInfo{ // packed(0x58 bytes) TI: 0x1a2a
-	char szUserName[64];
-	long lMoney;
-	long lHelicopters;
-	long lEquipment;
-	long lTrophies;
-	long lPoints;
-	long lTeargasCount;
+	/*+0x0*/   char szUserName[64]; // 0x40 bytes
+	/*+0x40*/  long lMoney;
+	/*+0x44*/  long lHelicopters;
+	/*+0x48*/  long lEquipment;
+	/*+0x4c*/  long lTrophies;
+	/*+0x50*/  long lPoints;
+	/*+0x54*/  long lTeargasCount;
 };
 
 // Type: long;
@@ -314,7 +314,7 @@ struct tagUserPersonalInfo{ // packed(0x58 bytes) TI: 0x1a2a
 class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
 { // packed(0x4 bytes) TI: 0x1081
 protected:
-	/*packed*/ struct list<Shortcut>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<Shortcut>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -330,12 +330,12 @@ public:
 
 // Type: /*packed*/ struct Shortcut;
 struct Shortcut{ // packed(0x18 bytes) TI: 0x1083
-	long lDeviceID;
-	long lCommand;
-	long lKey;
-	long lModifiers;
-	long lPush;
-	long lIgnoreModifiers;
+	/*+0x0*/   long lDeviceID;
+	/*+0x4*/   long lCommand;
+	/*+0x8*/   long lKey;
+	/*+0xc*/   long lModifiers;
+	/*+0x10*/  long lPush;
+	/*+0x14*/  long lIgnoreModifiers;
 };
 
 // Type: /*packed*/ class GameModeHangarData (forward reference);
@@ -352,8 +352,8 @@ public:
 	void Awake();
 	void CreatePalette();
 	void UsePalette();
-	/*unpacked*/ class HangarWindow *pHangarWindow;
-	/*packed*/ struct CommandSystem commandSystem;
+	/*+0x14*/  /*unpacked*/ class HangarWindow *pHangarWindow;
+	/*+0x18*/  /*packed*/ struct CommandSystem commandSystem; // 0xaa8 bytes
 };
 
 // Type: /*packed*/ class GameModeCatalogData (forward reference);
@@ -370,8 +370,8 @@ public:
 	void Awake();
 	void CreatePalette();
 	void UsePalette();
-	/*unpacked*/ class CatalogWindow *pCatalogWindow;
-	/*packed*/ struct CommandSystem commandSystem;
+	/*+0x14*/  /*unpacked*/ class CatalogWindow *pCatalogWindow;
+	/*+0x18*/  /*packed*/ struct CommandSystem commandSystem; // 0xaa8 bytes
 };
 
 // Type: /*packed*/ class GameModeMissionLogData (forward reference);
@@ -388,8 +388,8 @@ public:
 	void Awake();
 	void CreatePalette();
 	void UsePalette();
-	/*unpacked*/ class MissionLogWindow *pMissionLogWindow;
-	/*packed*/ struct CommandSystem commandSystem;
+	/*+0x14*/  /*unpacked*/ class MissionLogWindow *pMissionLogWindow;
+	/*+0x18*/  /*packed*/ struct CommandSystem commandSystem; // 0xaa8 bytes
 };
 
 // Type: /*packed*/ class GameModeInventoryData (forward reference);
@@ -406,8 +406,8 @@ public:
 	void Awake();
 	void CreatePalette();
 	void UsePalette();
-	/*unpacked*/ class InventoryWindow *pInventoryWindow;
-	/*packed*/ struct CommandSystem commandSystem;
+	/*+0x14*/  /*unpacked*/ class InventoryWindow *pInventoryWindow;
+	/*+0x18*/  /*packed*/ struct CommandSystem commandSystem; // 0xaa8 bytes
 };
 
 // Type: uint32_t;
@@ -422,10 +422,10 @@ class GameModeCoreData{ // packed(0x14 bytes) TI: 0x1853
 public:
 	void GameModeCoreData();
 	virtual void ~GameModeCoreData(); // vtable+0x0
-	long lPauseCount;
-	/*packed*/ struct SparkalColor *pColorTable;
-	/*unpacked*/ class CGameApp *pGameApp;
-	/*packed*/ class ScreenWindow *pScreenWindow;
+	/*+0x4*/   long lPauseCount;
+	/*+0x8*/   /*packed*/ struct SparkalColor *pColorTable;
+	/*+0xc*/   /*unpacked*/ class CGameApp *pGameApp;
+	/*+0x10*/  /*packed*/ class ScreenWindow *pScreenWindow;
 };
 
 // Type: /*unpacked*/ class GraphicWindow (forward reference);
@@ -433,10 +433,10 @@ public:
 
 // Type: /*packed*/ struct SparkalRect;
 struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
-	long left;
-	long top;
-	long right;
-	long bottom;
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
 	void SparkalRect(long, long, long, long);
 	void SparkalRect();
 };

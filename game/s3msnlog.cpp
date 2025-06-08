@@ -23,9 +23,9 @@ public:
 	static void MakeStringFromLogData(/*packed*/ struct tagLogBase*, /*packed*/ class basic_string<char>&, int32_t);
 	// calltype: NearC
 	static long GetStringIDFromLogEvent(const /*packed*/ struct tagLogMissionEvent*);
-	/*packed*/ class list<tagLogBase *> *myLogBasePtrList;
-	/*packed*/ class MessageDisplayManager *myMessageDisplayManager;
-	long lMaxEntries;
+	/*+0x0*/   /*packed*/ class list<tagLogBase *> *myLogBasePtrList;
+	/*+0x4*/   /*packed*/ class MessageDisplayManager *myMessageDisplayManager;
+	/*+0x8*/   long lMaxEntries;
 };
 
 // Type: /*packed*/ class LogManager;
@@ -49,22 +49,22 @@ public:
 	static void MakeStringFromLogData(/*packed*/ struct tagLogBase*, /*packed*/ class basic_string<char>&, int32_t);
 	// calltype: NearC
 	static long GetStringIDFromLogEvent(const /*packed*/ struct tagLogMissionEvent*);
-	/*packed*/ class list<tagLogBase *> *myLogBasePtrList;
-	/*unpacked*/ class MessageDisplayManager *myMessageDisplayManager;
-	long lMaxEntries;
+	/*+0x0*/   /*packed*/ class list<tagLogBase *> *myLogBasePtrList;
+	/*+0x4*/   /*unpacked*/ class MessageDisplayManager *myMessageDisplayManager;
+	/*+0x8*/   long lMaxEntries;
 };
 
 // Type: /*packed*/ struct list<tagLogBase *>::list_node_buffer (forward reference);
 struct list<tagLogBase *>::list_node_buffer{ // packed(0x8 bytes) TI: 0x16d2
-	void * __ptr32 next_buffer;
-	/*packed*/ struct list<tagLogBase *>::list_node *buffer;
+	/*+0x0*/   void * __ptr32 next_buffer;
+	/*+0x4*/   /*packed*/ struct list<tagLogBase *>::list_node *buffer;
 };
 
 // Type: /*packed*/ struct list<tagLogBase *>::list_node (forward reference);
 struct list<tagLogBase *>::list_node{ // packed(0xc bytes) TI: 0x16d4
-	void * __ptr32 next;
-	void * __ptr32 prev;
-	/*packed*/ struct tagLogBase *data;
+	/*+0x0*/   void * __ptr32 next;
+	/*+0x4*/   void * __ptr32 prev;
+	/*+0x8*/   /*packed*/ struct tagLogBase *data;
 };
 
 // Type: uint32_t;
@@ -75,9 +75,9 @@ struct list<tagLogBase *>::list_node{ // packed(0xc bytes) TI: 0x16d4
 
 // Type: /*packed*/ struct tagLogBase (forward reference);
 struct tagLogBase{ // packed(0xc bytes) TI: 0x1819
-	unsigned long nType;
-	unsigned long nTime;
-	unsigned long nMissionID;
+	/*+0x0*/   unsigned long nType;
+	/*+0x4*/   unsigned long nTime;
+	/*+0x8*/   unsigned long nMissionID;
 };
 
 // Type: int32_t;
@@ -103,9 +103,9 @@ public:
 	static void MakeStringFromLogData(/*packed*/ struct tagLogBase*, /*packed*/ class basic_string<char>&, int32_t);
 	// calltype: NearC
 	static long GetStringIDFromLogEvent(const /*packed*/ struct tagLogMissionEvent*);
-	/*packed*/ class list<tagLogBase *> *myLogBasePtrList;
-	/*unpacked*/ class MessageDisplayManager *myMessageDisplayManager;
-	long lMaxEntries;
+	/*+0x0*/   /*packed*/ class list<tagLogBase *> *myLogBasePtrList;
+	/*+0x4*/   /*unpacked*/ class MessageDisplayManager *myMessageDisplayManager;
+	/*+0x8*/   long lMaxEntries;
 };
 
 // Type: char *;
@@ -145,14 +145,14 @@ public:
 	virtual long WriteDataRecord(long, char *, long); // vtable+0x64
 	virtual long WriteFileHeader(long, long, long); // vtable+0x68
 	virtual long WriteEnd(); // vtable+0x6c
-	long lPresentRecordStart;
-	long lPresentRecordType;
-	long lPresentRecordLength;
-	long lPresentRecordIndex;
-	long lReadWriteMode;
-	long bFileEndWritten;
-	long bFileAppearsCorrupt;
-	/*packed*/ struct MIFFHeader myMIFFHeader;
+	/*+0x110*/ long lPresentRecordStart;
+	/*+0x114*/ long lPresentRecordType;
+	/*+0x118*/ long lPresentRecordLength;
+	/*+0x11c*/ long lPresentRecordIndex;
+	/*+0x120*/ long lReadWriteMode;
+	/*+0x124*/ long bFileEndWritten;
+	/*+0x128*/ long bFileAppearsCorrupt;
+	/*+0x12c*/ /*packed*/ struct MIFFHeader myMIFFHeader; // 0x1c bytes
 };
 
 // Type: /*packed*/ class MIFF (forward reference);
@@ -190,21 +190,21 @@ public:
 	virtual long WriteDataRecord(long, char *, long); // vtable+0x64
 	virtual long WriteFileHeader(long, long, long); // vtable+0x68
 	virtual long WriteEnd(); // vtable+0x6c
-	long lPresentRecordStart;
-	long lPresentRecordType;
-	long lPresentRecordLength;
-	long lPresentRecordIndex;
-	long lReadWriteMode;
-	long bFileEndWritten;
-	long bFileAppearsCorrupt;
-	/*packed*/ struct MIFFHeader myMIFFHeader;
+	/*+0x110*/ long lPresentRecordStart;
+	/*+0x114*/ long lPresentRecordType;
+	/*+0x118*/ long lPresentRecordLength;
+	/*+0x11c*/ long lPresentRecordIndex;
+	/*+0x120*/ long lReadWriteMode;
+	/*+0x124*/ long bFileEndWritten;
+	/*+0x128*/ long bFileAppearsCorrupt;
+	/*+0x12c*/ /*packed*/ struct MIFFHeader myMIFFHeader; // 0x1c bytes
 };
 
 // Type: /*packed*/ struct tagLogBase;
 struct tagLogBase{ // packed(0xc bytes) TI: 0x1819
-	unsigned long nType;
-	unsigned long nTime;
-	unsigned long nMissionID;
+	/*+0x0*/   unsigned long nType;
+	/*+0x4*/   unsigned long nTime;
+	/*+0x8*/   unsigned long nMissionID;
 };
 
 // Type: long;
@@ -213,7 +213,7 @@ struct tagLogBase{ // packed(0xc bytes) TI: 0x1819
 class list<tagLogBase *>::iterator : public bidirectional_iterator<tagLogBase *,int>
 { // packed(0x4 bytes) TI: 0x16d0
 protected:
-	/*packed*/ struct list<tagLogBase *>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<tagLogBase *>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -229,31 +229,31 @@ public:
 
 // Type: /*packed*/ struct tagLogString (forward reference);
 struct tagLogString{ // packed(0x14 bytes) TI: 0x31dc
-	unsigned long nType;
-	unsigned long nTime;
-	unsigned long nMissionID;
-	char * szLogString;
-	char szData[4];
+	/*+0x0*/   unsigned long nType;
+	/*+0x4*/   unsigned long nTime;
+	/*+0x8*/   unsigned long nMissionID;
+	/*+0xc*/   char * szLogString;
+	/*+0x10*/  char szData[4];
 };
 
 // Type: char;
 
 // Type: /*packed*/ struct tagLogMissionEvent (forward reference);
 struct tagLogMissionEvent{ // packed(0x14 bytes) TI: 0x2451
-	unsigned long nType;
-	unsigned long nTime;
-	unsigned long nMissionID;
-	unsigned long nInfo0;
-	unsigned long nInfo1;
+	/*+0x0*/   unsigned long nType;
+	/*+0x4*/   unsigned long nTime;
+	/*+0x8*/   unsigned long nMissionID;
+	/*+0xc*/   unsigned long nInfo0;
+	/*+0x10*/  unsigned long nInfo1;
 };
 
 // Type: /*packed*/ struct tagLogCityEnterExit (forward reference);
 struct tagLogCityEnterExit{ // packed(0x30 bytes) TI: 0x3191
-	unsigned long nType;
-	unsigned long nTime;
-	unsigned long nMissionID;
-	unsigned long nEnterOrExit;
-	char szCity[32];
+	/*+0x0*/   unsigned long nType;
+	/*+0x4*/   unsigned long nTime;
+	/*+0x8*/   unsigned long nMissionID;
+	/*+0xc*/   unsigned long nEnterOrExit;
+	/*+0x10*/  char szCity[32]; // 0x20 bytes
 };
 
 // Type: /*packed*/ class basic_string<char>;
@@ -261,8 +261,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -365,9 +365,9 @@ public:
 class list<tagLogBase *>{ // packed(0x8 bytes) TI: 0x16ae
 	using void_pointer = void * __ptr32;
 	struct list<tagLogBase *>::list_node{ // packed(0xc bytes) TI: 0x16d4
-		void * __ptr32 next;
-		void * __ptr32 prev;
-		/*packed*/ struct tagLogBase *data;
+		/*+0x0*/   void * __ptr32 next;
+		/*+0x4*/   void * __ptr32 prev;
+		/*+0x8*/   /*packed*/ struct tagLogBase *data;
 	};
 protected:
 	static /*packed*/ class allocator<list<tagLogBase *>::list_node> list_node_allocator;
@@ -384,8 +384,8 @@ protected:
 protected:
 	uint32_t buffer_size();
 	struct list<tagLogBase *>::list_node_buffer{ // packed(0x8 bytes) TI: 0x16d2
-		void * __ptr32 next_buffer;
-		/*packed*/ struct list<tagLogBase *>::list_node *buffer;
+		/*+0x0*/   void * __ptr32 next_buffer;
+		/*+0x4*/   /*packed*/ struct list<tagLogBase *>::list_node *buffer;
 	};
 	using buffer_allocator_type = /*packed*/ class allocator<list<tagLogBase *>::list_node_buffer>;
 	using buffer_pointer = /*packed*/ struct list<tagLogBase *>::list_node_buffer*;
@@ -400,12 +400,12 @@ protected:
 	void deallocate_buffers();
 	/*packed*/ struct list<tagLogBase *>::list_node* get_node();
 	void put_node(/*packed*/ struct list<tagLogBase *>::list_node*);
-	/*packed*/ struct list<tagLogBase *>::list_node *node;
-	uint32_t length;
+	/*+0x0*/   /*packed*/ struct list<tagLogBase *>::list_node *node;
+	/*+0x4*/   uint32_t length;
 	class list<tagLogBase *>::iterator : public bidirectional_iterator<tagLogBase *,int>
 	{ // packed(0x4 bytes) TI: 0x16d0
 	protected:
-		/*packed*/ struct list<tagLogBase *>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<tagLogBase *>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -421,7 +421,7 @@ protected:
 	class list<tagLogBase *>::const_iterator : public bidirectional_iterator<tagLogBase *,int>
 	{ // packed(0x4 bytes) TI: 0x16c3
 	protected:
-		/*packed*/ struct list<tagLogBase *>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<tagLogBase *>::list_node *node;
 	public:
 		void const_iterator(const /*packed*/ class list<tagLogBase *>::iterator&);
 		void const_iterator();
@@ -488,8 +488,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -598,7 +598,7 @@ public:
 	void MTimeLocalized(unsigned long);
 	void MTimeLocalized();
 	virtual char * PrintStringLocalized(char *, int32_t); // vtable+0x0
-	int32_t nLanguage;
+	/*+0xc*/   int32_t nLanguage;
 };
 
 // Type: /*packed*/ class PFile;
@@ -665,10 +665,10 @@ public:
 	long SetPath(char *);
 	long FileCreate(char *, int32_t);
 	long FileExists(char *);
-	char szFilePath[260];
-	int32_t Handle;
+	/*+0x4*/   char szFilePath[260]; // 0x104 bytes
+	/*+0x108*/ int32_t Handle;
 private:
-	int32_t ShouldClose;
+	/*+0x10c*/ int32_t ShouldClose;
 };
 
 // Type: /*unpacked*/ class MTime (forward reference);

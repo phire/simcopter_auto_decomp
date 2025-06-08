@@ -17,12 +17,12 @@ public:
 	void OutputString(char *);
 	long InstanceWindowProcedure(uint32_t, uint32_t, long);
 private:
-	/*packed*/ class deque<basic_string<char>> m_strings;
-	/*packed*/ class vector<debug_command *> m_commands;
+	/*+0x0*/   /*packed*/ class deque<basic_string<char>> m_strings; // 0x2c bytes
+	/*+0x2c*/  /*packed*/ class vector<debug_command *> m_commands; // 0xc bytes
 	static char * m_className;
 	static /*packed*/ struct tagWNDCLASSA m_class;
-	void * __ptr32 m_hWnd;
-	void * __ptr32 m_editWnd;
+	/*+0x38*/  void * __ptr32 m_hWnd;
+	/*+0x3c*/  void * __ptr32 m_editWnd;
 	// calltype: NearStd
 	static long WindowProcedure(void * __ptr32, uint32_t, uint32_t, long);
 	void OnSize(unsigned long, unsigned short, unsigned short);
@@ -40,23 +40,23 @@ private:
 
 // Type: /*packed*/ struct tagWNDCLASSA;
 struct tagWNDCLASSA{ // packed(0x28 bytes) TI: 0x26d3
-	uint32_t style;
-	long (*lpfnWndProc)(void * __ptr32, uint32_t, uint32_t, long);
-	int32_t cbClsExtra;
-	int32_t cbWndExtra;
-	void * __ptr32 hInstance;
-	void * __ptr32 hIcon;
-	void * __ptr32 hCursor;
-	void * __ptr32 hbrBackground;
-	char * lpszMenuName;
-	char * lpszClassName;
+	/*+0x0*/   uint32_t style;
+	/*+0x4*/   long (*lpfnWndProc)(void * __ptr32, uint32_t, uint32_t, long);
+	/*+0x8*/   int32_t cbClsExtra;
+	/*+0xc*/   int32_t cbWndExtra;
+	/*+0x10*/  void * __ptr32 hInstance;
+	/*+0x14*/  void * __ptr32 hIcon;
+	/*+0x18*/  void * __ptr32 hCursor;
+	/*+0x1c*/  void * __ptr32 hbrBackground;
+	/*+0x20*/  char * lpszMenuName;
+	/*+0x24*/  char * lpszClassName;
 };
 
 // Type: /*packed*/ struct debug_command (forward reference);
 // VTABLE: COPTER_D 0x0058f420
 struct debug_command{ // packed(0x14 bytes) TI: 0x43fc
-	/*packed*/ class basic_string<char> command_string;
-	/*packed*/ class basic_string<char> usage_string;
+	/*+0x4*/   /*packed*/ class basic_string<char> command_string; // 0x8 bytes
+	/*+0xc*/   /*packed*/ class basic_string<char> usage_string; // 0x8 bytes
 	virtual void execute(char *); // vtable+0x0
 };
 
@@ -75,9 +75,9 @@ class vector<basic_string<char>>{ // packed(0xc bytes) TI: 0x1f15
 	using reverse_iterator = /*unpacked*/ class reverse_iterator<basic_string<char> *,basic_string<char>,basic_string<char> &,int>;
 protected:
 	static /*packed*/ class allocator<basic_string<char>> static_allocator;
-	/*packed*/ class basic_string<char> *start;
-	/*packed*/ class basic_string<char> *finish;
-	/*packed*/ class basic_string<char> *end_of_storage;
+	/*+0x0*/   /*packed*/ class basic_string<char> *start;
+	/*+0x4*/   /*packed*/ class basic_string<char> *finish;
+	/*+0x8*/   /*packed*/ class basic_string<char> *end_of_storage;
 	void insert_aux(/*packed*/ class basic_string<char>*, const /*packed*/ class basic_string<char>&);
 public:
 	const /*packed*/ class basic_string<char>* begin();
@@ -123,30 +123,30 @@ public:
 struct class_debugger<CDebugWindow,CDebugWindowhelp_text> : public debug_command
 { // packed(0x18 bytes) TI: 0x4456
 	void class_debugger<CDebugWindow,CDebugWindowhelp_text>(/*packed*/ class CDebugWindow*);
-	/*packed*/ class CDebugWindow *m_instance;
+	/*+0x14*/  /*packed*/ class CDebugWindow *m_instance;
 	virtual void execute(char *) /* override */;
 };
 
 // Type: /*packed*/ struct _iobuf (forward reference);
 struct _iobuf{ // packed(0x20 bytes) TI: 0x2278
-	char * _ptr;
-	int32_t _cnt;
-	char * _base;
-	int32_t _flag;
-	int32_t _file;
-	int32_t _charbuf;
-	int32_t _bufsiz;
-	char * _tmpfname;
+	/*+0x0*/   char * _ptr;
+	/*+0x4*/   int32_t _cnt;
+	/*+0x8*/   char * _base;
+	/*+0xc*/   int32_t _flag;
+	/*+0x10*/  int32_t _file;
+	/*+0x14*/  int32_t _charbuf;
+	/*+0x18*/  int32_t _bufsiz;
+	/*+0x1c*/  char * _tmpfname;
 };
 
 // Type: /*packed*/ class deque<basic_string<char>>::iterator;
 class deque<basic_string<char>>::iterator : public random_access_iterator<basic_string<char>,int>
 { // packed(0x10 bytes) TI: 0x43a2
 protected:
-	/*packed*/ class basic_string<char> *current;
-	/*packed*/ class basic_string<char> *first;
-	/*packed*/ class basic_string<char> *last;
-	/*packed*/ class basic_string<char> **node;
+	/*+0x0*/   /*packed*/ class basic_string<char> *current;
+	/*+0x4*/   /*packed*/ class basic_string<char> *first;
+	/*+0x8*/   /*packed*/ class basic_string<char> *last;
+	/*+0xc*/   /*packed*/ class basic_string<char> **node;
 public:
 	void iterator();
 protected:
@@ -173,46 +173,46 @@ public:
 
 // Type: /*packed*/ struct tagRECT;
 struct tagRECT{ // packed(0x10 bytes) TI: 0x13c4
-	long left;
-	long top;
-	long right;
-	long bottom;
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
 };
 
 // Type: /*packed*/ struct tagPAINTSTRUCT;
 struct tagPAINTSTRUCT{ // packed(0x40 bytes) TI: 0x124b
-	void * __ptr32 hdc;
-	int32_t fErase;
-	/*packed*/ struct tagRECT rcPaint;
-	int32_t fRestore;
-	int32_t fIncUpdate;
-	unsigned char rgbReserved[32];
+	/*+0x0*/   void * __ptr32 hdc;
+	/*+0x4*/   int32_t fErase;
+	/*+0x8*/   /*packed*/ struct tagRECT rcPaint; // 0x10 bytes
+	/*+0x18*/  int32_t fRestore;
+	/*+0x1c*/  int32_t fIncUpdate;
+	/*+0x20*/  unsigned char rgbReserved[32]; // 0x20 bytes
 };
 
 // Type: void * __ptr32;
 
 // Type: /*packed*/ struct tagTEXTMETRICA;
 struct tagTEXTMETRICA{ // packed(0x35 bytes) TI: 0x2b94
-	long tmHeight;
-	long tmAscent;
-	long tmDescent;
-	long tmInternalLeading;
-	long tmExternalLeading;
-	long tmAveCharWidth;
-	long tmMaxCharWidth;
-	long tmWeight;
-	long tmOverhang;
-	long tmDigitizedAspectX;
-	long tmDigitizedAspectY;
-	unsigned char tmFirstChar;
-	unsigned char tmLastChar;
-	unsigned char tmDefaultChar;
-	unsigned char tmBreakChar;
-	unsigned char tmItalic;
-	unsigned char tmUnderlined;
-	unsigned char tmStruckOut;
-	unsigned char tmPitchAndFamily;
-	unsigned char tmCharSet;
+	/*+0x0*/   long tmHeight;
+	/*+0x4*/   long tmAscent;
+	/*+0x8*/   long tmDescent;
+	/*+0xc*/   long tmInternalLeading;
+	/*+0x10*/  long tmExternalLeading;
+	/*+0x14*/  long tmAveCharWidth;
+	/*+0x18*/  long tmMaxCharWidth;
+	/*+0x1c*/  long tmWeight;
+	/*+0x20*/  long tmOverhang;
+	/*+0x24*/  long tmDigitizedAspectX;
+	/*+0x28*/  long tmDigitizedAspectY;
+	/*+0x2c*/  unsigned char tmFirstChar; // 0x1 bytes
+	/*+0x2d*/  unsigned char tmLastChar; // 0x1 bytes
+	/*+0x2e*/  unsigned char tmDefaultChar; // 0x1 bytes
+	/*+0x2f*/  unsigned char tmBreakChar; // 0x1 bytes
+	/*+0x30*/  unsigned char tmItalic; // 0x1 bytes
+	/*+0x31*/  unsigned char tmUnderlined; // 0x1 bytes
+	/*+0x32*/  unsigned char tmStruckOut; // 0x1 bytes
+	/*+0x33*/  unsigned char tmPitchAndFamily; // 0x1 bytes
+	/*+0x34*/  unsigned char tmCharSet; // 0x1 bytes
 };
 
 // Type: /*packed*/ class basic_string<char>;
@@ -220,8 +220,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -339,9 +339,9 @@ class vector<basic_string<char>>{ // packed(0xc bytes) TI: 0x1f15
 	using reverse_iterator = /*unpacked*/ class reverse_iterator<basic_string<char> *,basic_string<char>,basic_string<char> &,int>;
 protected:
 	static /*packed*/ class allocator<basic_string<char>> static_allocator;
-	/*packed*/ class basic_string<char> *start;
-	/*packed*/ class basic_string<char> *finish;
-	/*packed*/ class basic_string<char> *end_of_storage;
+	/*+0x0*/   /*packed*/ class basic_string<char> *start;
+	/*+0x4*/   /*packed*/ class basic_string<char> *finish;
+	/*+0x8*/   /*packed*/ class basic_string<char> *end_of_storage;
 	void insert_aux(/*packed*/ class basic_string<char>*, const /*packed*/ class basic_string<char>&);
 public:
 	const /*packed*/ class basic_string<char>* begin();
@@ -383,7 +383,7 @@ public:
 struct class_debugger<CDebugWindow,CDebugWindowhelp_text> : public debug_command
 { // packed(0x18 bytes) TI: 0x4456
 	void class_debugger<CDebugWindow,CDebugWindowhelp_text>(/*packed*/ class CDebugWindow*);
-	/*packed*/ class CDebugWindow *m_instance;
+	/*+0x14*/  /*packed*/ class CDebugWindow *m_instance;
 	virtual void execute(char *) /* override */;
 };
 
@@ -391,10 +391,10 @@ struct class_debugger<CDebugWindow,CDebugWindowhelp_text> : public debug_command
 class deque<basic_string<char>>::iterator : public random_access_iterator<basic_string<char>,int>
 { // packed(0x10 bytes) TI: 0x43a2
 protected:
-	/*packed*/ class basic_string<char> *current;
-	/*packed*/ class basic_string<char> *first;
-	/*packed*/ class basic_string<char> *last;
-	/*packed*/ class basic_string<char> **node;
+	/*+0x0*/   /*packed*/ class basic_string<char> *current;
+	/*+0x4*/   /*packed*/ class basic_string<char> *first;
+	/*+0x8*/   /*packed*/ class basic_string<char> *last;
+	/*+0xc*/   /*packed*/ class basic_string<char> **node;
 public:
 	void iterator();
 protected:
@@ -420,8 +420,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -525,10 +525,10 @@ class deque<basic_string<char>>{ // packed(0x2c bytes) TI: 0x4377
 	class deque<basic_string<char>>::iterator : public random_access_iterator<basic_string<char>,int>
 	{ // packed(0x10 bytes) TI: 0x43a2
 	protected:
-		/*packed*/ class basic_string<char> *current;
-		/*packed*/ class basic_string<char> *first;
-		/*packed*/ class basic_string<char> *last;
-		/*packed*/ class basic_string<char> **node;
+		/*+0x0*/   /*packed*/ class basic_string<char> *current;
+		/*+0x4*/   /*packed*/ class basic_string<char> *first;
+		/*+0x8*/   /*packed*/ class basic_string<char> *last;
+		/*+0xc*/   /*packed*/ class basic_string<char> **node;
 	public:
 		void iterator();
 	protected:
@@ -551,10 +551,10 @@ class deque<basic_string<char>>{ // packed(0x2c bytes) TI: 0x4377
 	class deque<basic_string<char>>::const_iterator : public random_access_iterator<basic_string<char>,int>
 	{ // packed(0x10 bytes) TI: 0x4391
 	protected:
-		/*packed*/ class basic_string<char> *current;
-		/*packed*/ class basic_string<char> *first;
-		/*packed*/ class basic_string<char> *last;
-		/*packed*/ class basic_string<char> **node;
+		/*+0x0*/   /*packed*/ class basic_string<char> *current;
+		/*+0x4*/   /*packed*/ class basic_string<char> *first;
+		/*+0x8*/   /*packed*/ class basic_string<char> *last;
+		/*+0xc*/   /*packed*/ class basic_string<char> **node;
 	public:
 		void const_iterator(const /*packed*/ class deque<basic_string<char>>::iterator&);
 		void const_iterator();
@@ -591,11 +591,11 @@ protected:
 	using const_reverse_iterator = /*unpacked*/ class reverse_iterator<deque<basic_string<char>>::const_iterator,basic_string<char>,basic_string<char> const &,int>;
 	using reverse_iterator = /*unpacked*/ class reverse_iterator<deque<basic_string<char>>::iterator,basic_string<char>,basic_string<char> &,int>;
 protected:
-	/*packed*/ class deque<basic_string<char>>::iterator start;
-	/*packed*/ class deque<basic_string<char>>::iterator finish;
-	uint32_t length;
-	/*packed*/ class basic_string<char> **map;
-	uint32_t map_size;
+	/*+0x0*/   /*packed*/ class deque<basic_string<char>>::iterator start; // 0x10 bytes
+	/*+0x10*/  /*packed*/ class deque<basic_string<char>>::iterator finish; // 0x10 bytes
+	/*+0x20*/  uint32_t length;
+	/*+0x24*/  /*packed*/ class basic_string<char> **map;
+	/*+0x28*/  uint32_t map_size;
 	void allocate_at_begin();
 	void allocate_at_end();
 	void deallocate_at_begin();
@@ -651,9 +651,9 @@ class vector<debug_command *>{ // packed(0xc bytes) TI: 0x43dc
 	using reverse_iterator = /*unpacked*/ class reverse_iterator<debug_command * *,debug_command *,debug_command * &,int>;
 protected:
 	static /*packed*/ class allocator<debug_command *> static_allocator;
-	/*packed*/ struct debug_command **start;
-	/*packed*/ struct debug_command **finish;
-	/*packed*/ struct debug_command **end_of_storage;
+	/*+0x0*/   /*packed*/ struct debug_command **start;
+	/*+0x4*/   /*packed*/ struct debug_command **finish;
+	/*+0x8*/   /*packed*/ struct debug_command **end_of_storage;
 	void insert_aux(/*packed*/ struct debug_command**, const /*packed*/ struct debug_command*&);
 public:
 	const /*packed*/ struct debug_command** begin();
@@ -698,8 +698,8 @@ struct random_access_iterator<basic_string<char>,int>{ // packed(0x1 bytes) TI: 
 // Type: /*packed*/ struct debug_command;
 // VTABLE: COPTER_D 0x0058f420
 struct debug_command{ // packed(0x14 bytes) TI: 0x43fc
-	/*packed*/ class basic_string<char> command_string;
-	/*packed*/ class basic_string<char> usage_string;
+	/*+0x4*/   /*packed*/ class basic_string<char> command_string; // 0x8 bytes
+	/*+0xc*/   /*packed*/ class basic_string<char> usage_string; // 0x8 bytes
 	virtual void execute(char *); // vtable+0x0
 };
 

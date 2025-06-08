@@ -36,47 +36,47 @@ protected:
 	void SetButtonStates();
 	long GetHelicopterFromTab(long);
 	long GetEquipmentFromSelectionIndex(long);
-	/*packed*/ class MRect rectTabs;
-	/*packed*/ class MPoint ptHelicopterMainGraphic;
-	long lStainImageTabs[3];
-	/*packed*/ class MPoint ptStainImage[3];
-	long lPaperClipImageTabs[3];
-	/*packed*/ class MPoint ptPaperClipImage[3];
-	/*packed*/ class DigitalSound mySound;
-	long lCurrentTab;
-	long lCurrentEquipmentSelection;
-	/*packed*/ class basic_string<char> sCurrentFunds;
-	/*packed*/ class basic_string<char> sItemCost;
-	/*packed*/ class MFont myFont;
-	/*packed*/ class MRect rectHistoryText;
-	/*packed*/ class MRect rectSpecialtiesText;
-	/*packed*/ class MRect rectDescriptionText;
-	/*packed*/ class MRect rectCostText;
-	/*packed*/ class SoundButtonWindow *buttonWindowBuy;
-	/*packed*/ class SoundButtonWindow *buttonWindowSell;
-	/*packed*/ class SoundButtonWindow *buttonWindowDone;
-	/*packed*/ class MRect rectHelicopterHistoryTitle;
-	/*packed*/ class MRect rectHelicopterSpecialtiesTitle;
-	/*packed*/ class MRect rectHelicopterDescriptionTitle;
-	/*packed*/ class MRect rectHelicopterCurrentFundsTitle;
-	/*packed*/ class MRect rectHelicopterItemCostTitle;
-	/*packed*/ class basic_string<char> sHelicopterHistoryTitle;
-	/*packed*/ class basic_string<char> sHelicopterHistory;
-	/*packed*/ class basic_string<char> sHelicopterSpecialtiesTitle;
-	/*packed*/ class basic_string<char> sHelicopterSpecialties;
-	/*packed*/ class basic_string<char> sHelicopterDescriptionTitle;
-	/*packed*/ class basic_string<char> sHelicopterDescription;
-	/*packed*/ class basic_string<char> sHelicopterCurrentFundsTitle;
-	/*packed*/ class basic_string<char> sHelicopterItemCostTitle;
-	/*packed*/ class MRect rectEquipmentCurrentFundsTitle;
-	/*packed*/ class MRect rectEquipmentItemCostTitle;
-	/*packed*/ class basic_string<char> sEquipmentTab;
-	/*packed*/ class basic_string<char> sEquipmentDescriptionTitle;
-	/*packed*/ class basic_string<char> sEquipmentCurrentFundsTitle;
-	/*packed*/ class basic_string<char> sEquipmentItemCostTitle;
-	/*packed*/ class basic_string<char> sEquipmentTitle;
-	/*packed*/ class basic_string<char> sEquipmentAddress1;
-	/*packed*/ class basic_string<char> sEquipmentAddress2;
+	/*+0x74*/  /*packed*/ class MRect rectTabs; // 0x10 bytes
+	/*+0x84*/  /*packed*/ class MPoint ptHelicopterMainGraphic; // 0x8 bytes
+	/*+0x8c*/  long lStainImageTabs[3]; // 0xc bytes
+	/*+0x98*/  /*packed*/ class MPoint ptStainImage[3]; // 0x18 bytes
+	/*+0xb0*/  long lPaperClipImageTabs[3]; // 0xc bytes
+	/*+0xbc*/  /*packed*/ class MPoint ptPaperClipImage[3]; // 0x18 bytes
+	/*+0xd4*/  /*packed*/ class DigitalSound mySound; // 0x7a bytes
+	/*+0x14e*/ long lCurrentTab;
+	/*+0x152*/ long lCurrentEquipmentSelection;
+	/*+0x156*/ /*packed*/ class basic_string<char> sCurrentFunds; // 0x8 bytes
+	/*+0x15e*/ /*packed*/ class basic_string<char> sItemCost; // 0x8 bytes
+	/*+0x166*/ /*packed*/ class MFont myFont; // 0x1c bytes
+	/*+0x182*/ /*packed*/ class MRect rectHistoryText; // 0x10 bytes
+	/*+0x192*/ /*packed*/ class MRect rectSpecialtiesText; // 0x10 bytes
+	/*+0x1a2*/ /*packed*/ class MRect rectDescriptionText; // 0x10 bytes
+	/*+0x1b2*/ /*packed*/ class MRect rectCostText; // 0x10 bytes
+	/*+0x1c2*/ /*packed*/ class SoundButtonWindow *buttonWindowBuy;
+	/*+0x1c6*/ /*packed*/ class SoundButtonWindow *buttonWindowSell;
+	/*+0x1ca*/ /*packed*/ class SoundButtonWindow *buttonWindowDone;
+	/*+0x1ce*/ /*packed*/ class MRect rectHelicopterHistoryTitle; // 0x10 bytes
+	/*+0x1de*/ /*packed*/ class MRect rectHelicopterSpecialtiesTitle; // 0x10 bytes
+	/*+0x1ee*/ /*packed*/ class MRect rectHelicopterDescriptionTitle; // 0x10 bytes
+	/*+0x1fe*/ /*packed*/ class MRect rectHelicopterCurrentFundsTitle; // 0x10 bytes
+	/*+0x20e*/ /*packed*/ class MRect rectHelicopterItemCostTitle; // 0x10 bytes
+	/*+0x21e*/ /*packed*/ class basic_string<char> sHelicopterHistoryTitle; // 0x8 bytes
+	/*+0x226*/ /*packed*/ class basic_string<char> sHelicopterHistory; // 0x8 bytes
+	/*+0x22e*/ /*packed*/ class basic_string<char> sHelicopterSpecialtiesTitle; // 0x8 bytes
+	/*+0x236*/ /*packed*/ class basic_string<char> sHelicopterSpecialties; // 0x8 bytes
+	/*+0x23e*/ /*packed*/ class basic_string<char> sHelicopterDescriptionTitle; // 0x8 bytes
+	/*+0x246*/ /*packed*/ class basic_string<char> sHelicopterDescription; // 0x8 bytes
+	/*+0x24e*/ /*packed*/ class basic_string<char> sHelicopterCurrentFundsTitle; // 0x8 bytes
+	/*+0x256*/ /*packed*/ class basic_string<char> sHelicopterItemCostTitle; // 0x8 bytes
+	/*+0x25e*/ /*packed*/ class MRect rectEquipmentCurrentFundsTitle; // 0x10 bytes
+	/*+0x26e*/ /*packed*/ class MRect rectEquipmentItemCostTitle; // 0x10 bytes
+	/*+0x27e*/ /*packed*/ class basic_string<char> sEquipmentTab; // 0x8 bytes
+	/*+0x286*/ /*packed*/ class basic_string<char> sEquipmentDescriptionTitle; // 0x8 bytes
+	/*+0x28e*/ /*packed*/ class basic_string<char> sEquipmentCurrentFundsTitle; // 0x8 bytes
+	/*+0x296*/ /*packed*/ class basic_string<char> sEquipmentItemCostTitle; // 0x8 bytes
+	/*+0x29e*/ /*packed*/ class basic_string<char> sEquipmentTitle; // 0x8 bytes
+	/*+0x2a6*/ /*packed*/ class basic_string<char> sEquipmentAddress1; // 0x8 bytes
+	/*+0x2ae*/ /*packed*/ class basic_string<char> sEquipmentAddress2; // 0x8 bytes
 };
 
 // Type: int32_t;
@@ -98,9 +98,9 @@ public:
 	unsigned long operator()(unsigned long);
 	void seed(unsigned long);
 protected:
-	unsigned long table[55];
-	uint32_t index1;
-	uint32_t index2;
+	/*+0x0*/   unsigned long table[55]; // 0xdc bytes
+	/*+0xdc*/  uint32_t index1;
+	/*+0xe0*/  uint32_t index2;
 };
 
 // Type: void;
@@ -110,8 +110,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -214,13 +214,13 @@ public:
 
 // Type: /*packed*/ struct tagUserPersonalInfo (forward reference);
 struct tagUserPersonalInfo{ // packed(0x58 bytes) TI: 0x1a2a
-	char szUserName[64];
-	long lMoney;
-	long lHelicopters;
-	long lEquipment;
-	long lTrophies;
-	long lPoints;
-	long lTeargasCount;
+	/*+0x0*/   char szUserName[64]; // 0x40 bytes
+	/*+0x40*/  long lMoney;
+	/*+0x44*/  long lHelicopters;
+	/*+0x48*/  long lEquipment;
+	/*+0x4c*/  long lTrophies;
+	/*+0x50*/  long lPoints;
+	/*+0x54*/  long lTeargasCount;
 };
 
 // Type: /*packed*/ class MRect (forward reference);
@@ -364,8 +364,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -473,10 +473,10 @@ public:
 
 // Type: /*packed*/ struct SparkalColor (forward reference);
 struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
-	unsigned char Blue;
-	unsigned char Green;
-	unsigned char Red;
-	unsigned char Padding;
+	/*+0x0*/   unsigned char Blue; // 0x1 bytes
+	/*+0x1*/   unsigned char Green; // 0x1 bytes
+	/*+0x2*/   unsigned char Red; // 0x1 bytes
+	/*+0x3*/   unsigned char Padding; // 0x1 bytes
 	void SparkalColor(unsigned char, unsigned char, unsigned char);
 	void SparkalColor();
 };
@@ -514,18 +514,18 @@ public:
 
 // Type: /*packed*/ struct SparkalRect;
 struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
-	long left;
-	long top;
-	long right;
-	long bottom;
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
 	void SparkalRect(long, long, long, long);
 	void SparkalRect();
 };
 
 // Type: /*packed*/ struct SparkalPoint;
 struct SparkalPoint{ // packed(0x8 bytes) TI: 0x1a54
-	long x;
-	long y;
+	/*+0x0*/   long x;
+	/*+0x4*/   long y;
 	void SparkalPoint(long, long);
 	void SparkalPoint();
 };

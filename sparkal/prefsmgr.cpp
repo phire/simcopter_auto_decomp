@@ -4,30 +4,30 @@
 
 // Type: /*packed*/ struct list<NotificationItem>::list_node_buffer (forward reference);
 struct list<NotificationItem>::list_node_buffer{ // packed(0x8 bytes) TI: 0x26b1
-	void * __ptr32 next_buffer;
-	/*packed*/ struct list<NotificationItem>::list_node *buffer;
+	/*+0x0*/   void * __ptr32 next_buffer;
+	/*+0x4*/   /*packed*/ struct list<NotificationItem>::list_node *buffer;
 };
 
 // Type: /*packed*/ struct list<NotificationItem>::list_node (forward reference);
 struct list<NotificationItem>::list_node{ // packed(0x10 bytes) TI: 0x26b3
-	void * __ptr32 next;
-	void * __ptr32 prev;
-	/*packed*/ class NotificationItem data;
+	/*+0x0*/   void * __ptr32 next;
+	/*+0x4*/   void * __ptr32 prev;
+	/*+0x8*/   /*packed*/ class NotificationItem data; // 0x8 bytes
 };
 
 // Type: uint32_t;
 
 // Type: /*packed*/ struct list<PreferenceItem>::list_node_buffer (forward reference);
 struct list<PreferenceItem>::list_node_buffer{ // packed(0x8 bytes) TI: 0x264e
-	void * __ptr32 next_buffer;
-	/*packed*/ struct list<PreferenceItem>::list_node *buffer;
+	/*+0x0*/   void * __ptr32 next_buffer;
+	/*+0x4*/   /*packed*/ struct list<PreferenceItem>::list_node *buffer;
 };
 
 // Type: /*packed*/ struct list<PreferenceItem>::list_node (forward reference);
 struct list<PreferenceItem>::list_node{ // packed(0x14 bytes) TI: 0x2650
-	void * __ptr32 next;
-	void * __ptr32 prev;
-	/*packed*/ class PreferenceItem data;
+	/*+0x0*/   void * __ptr32 next;
+	/*+0x4*/   void * __ptr32 prev;
+	/*+0x8*/   /*packed*/ class PreferenceItem data; // 0xc bytes
 };
 
 // Type: /*packed*/ class PreferenceItem (forward reference);
@@ -39,9 +39,9 @@ public:
 	/*packed*/ class PreferenceItem& operator=(const /*packed*/ class PreferenceItem&);
 	int32_t Compare(const /*packed*/ class PreferenceItem&);
 	/*packed*/ class PreferenceItem* DuplicatePointer();
-	long lPreferenceType;
-	long lPreferenceDataLength;
-	char * chPreferenceData;
+	/*+0x0*/   long lPreferenceType;
+	/*+0x4*/   long lPreferenceDataLength;
+	/*+0x8*/   char * chPreferenceData;
 };
 
 // Type: void;
@@ -52,14 +52,14 @@ public:
 // VTABLE: COPTER_D 0x00590db0
 class PreferenceManager{ // packed(0x28 bytes) TI: 0x26c8
 protected:
-	int32_t bSaveFileAtAllChanges;
-	/*packed*/ class list<PreferenceItem> myPreferences;
-	/*packed*/ class MIFF *miffPrefsFile;
-	long lFileCreator;
-	long lFileType;
-	long lFileVersion;
-	int32_t bPrefsDirty;
-	int32_t bPrefsLocked;
+	/*+0x4*/   int32_t bSaveFileAtAllChanges;
+	/*+0x8*/   /*packed*/ class list<PreferenceItem> myPreferences; // 0x8 bytes
+	/*+0x10*/  /*packed*/ class MIFF *miffPrefsFile;
+	/*+0x14*/  long lFileCreator;
+	/*+0x18*/  long lFileType;
+	/*+0x1c*/  long lFileVersion;
+	/*+0x20*/  int32_t bPrefsDirty;
+	/*+0x24*/  int32_t bPrefsLocked;
 public:
 	void PreferenceManager(long, long, long, int32_t);
 	int32_t IPreferenceManager(char *);
@@ -86,7 +86,7 @@ public:
 class list<PreferenceItem>::iterator : public bidirectional_iterator<PreferenceItem,int>
 { // packed(0x4 bytes) TI: 0x264c
 protected:
-	/*packed*/ struct list<PreferenceItem>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<PreferenceItem>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -111,9 +111,9 @@ public:
 	/*packed*/ class PreferenceItem& operator=(const /*packed*/ class PreferenceItem&);
 	int32_t Compare(const /*packed*/ class PreferenceItem&);
 	/*packed*/ class PreferenceItem* DuplicatePointer();
-	long lPreferenceType;
-	long lPreferenceDataLength;
-	char * chPreferenceData;
+	/*+0x0*/   long lPreferenceType;
+	/*+0x4*/   long lPreferenceDataLength;
+	/*+0x8*/   char * chPreferenceData;
 };
 
 // Type: /*packed*/ class NotificationPreferenceManager (forward reference);
@@ -121,7 +121,7 @@ public:
 class NotificationPreferenceManager : public PreferenceManager
 { // packed(0x30 bytes) TI: 0x2539
 public:
-	/*packed*/ class list<NotificationItem> myNotifications;
+	/*+0x28*/  /*packed*/ class list<NotificationItem> myNotifications; // 0x8 bytes
 	void NotificationPreferenceManager(long, long, long, int32_t);
 	virtual long SetPref(/*packed*/ class PreferenceItem*) /* override */;
 	virtual long SetPref(long, char *, long) /* override */;
@@ -141,8 +141,8 @@ public:
 // Type: /*packed*/ class NotificationItem;
 class NotificationItem{ // packed(0x8 bytes) TI: 0x2557
 public:
-	long lPreferenceType;
-	/*packed*/ class NotificationSink *myNotificationSink;
+	/*+0x0*/   long lPreferenceType;
+	/*+0x4*/   /*packed*/ class NotificationSink *myNotificationSink;
 	void NotificationItem(long, /*packed*/ class NotificationSink*);
 	void NotificationItem(const /*packed*/ class NotificationItem&);
 	void NotificationItem();
@@ -152,8 +152,8 @@ public:
 // Type: /*packed*/ class NotificationItem (forward reference);
 class NotificationItem{ // packed(0x8 bytes) TI: 0x2557
 public:
-	long lPreferenceType;
-	/*packed*/ class NotificationSink *myNotificationSink;
+	/*+0x0*/   long lPreferenceType;
+	/*+0x4*/   /*packed*/ class NotificationSink *myNotificationSink;
 	void NotificationItem(long, /*packed*/ class NotificationSink*);
 	void NotificationItem(const /*packed*/ class NotificationItem&);
 	void NotificationItem();
@@ -164,7 +164,7 @@ public:
 class list<NotificationItem>::iterator : public bidirectional_iterator<NotificationItem,int>
 { // packed(0x4 bytes) TI: 0x26af
 protected:
-	/*packed*/ struct list<NotificationItem>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<NotificationItem>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -182,9 +182,9 @@ public:
 class list<PreferenceItem>{ // packed(0x8 bytes) TI: 0x262a
 	using void_pointer = void * __ptr32;
 	struct list<PreferenceItem>::list_node{ // packed(0x14 bytes) TI: 0x2650
-		void * __ptr32 next;
-		void * __ptr32 prev;
-		/*packed*/ class PreferenceItem data;
+		/*+0x0*/   void * __ptr32 next;
+		/*+0x4*/   void * __ptr32 prev;
+		/*+0x8*/   /*packed*/ class PreferenceItem data; // 0xc bytes
 	};
 protected:
 	static /*packed*/ class allocator<list<PreferenceItem>::list_node> list_node_allocator;
@@ -201,8 +201,8 @@ protected:
 protected:
 	uint32_t buffer_size();
 	struct list<PreferenceItem>::list_node_buffer{ // packed(0x8 bytes) TI: 0x264e
-		void * __ptr32 next_buffer;
-		/*packed*/ struct list<PreferenceItem>::list_node *buffer;
+		/*+0x0*/   void * __ptr32 next_buffer;
+		/*+0x4*/   /*packed*/ struct list<PreferenceItem>::list_node *buffer;
 	};
 	using buffer_allocator_type = /*packed*/ class allocator<list<PreferenceItem>::list_node_buffer>;
 	using buffer_pointer = /*packed*/ struct list<PreferenceItem>::list_node_buffer*;
@@ -217,12 +217,12 @@ protected:
 	void deallocate_buffers();
 	/*packed*/ struct list<PreferenceItem>::list_node* get_node();
 	void put_node(/*packed*/ struct list<PreferenceItem>::list_node*);
-	/*packed*/ struct list<PreferenceItem>::list_node *node;
-	uint32_t length;
+	/*+0x0*/   /*packed*/ struct list<PreferenceItem>::list_node *node;
+	/*+0x4*/   uint32_t length;
 	class list<PreferenceItem>::iterator : public bidirectional_iterator<PreferenceItem,int>
 	{ // packed(0x4 bytes) TI: 0x264c
 	protected:
-		/*packed*/ struct list<PreferenceItem>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<PreferenceItem>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -238,7 +238,7 @@ protected:
 	class list<PreferenceItem>::const_iterator : public bidirectional_iterator<PreferenceItem,int>
 	{ // packed(0x4 bytes) TI: 0x263f
 	protected:
-		/*packed*/ struct list<PreferenceItem>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<PreferenceItem>::list_node *node;
 	public:
 		void const_iterator(const /*packed*/ class list<PreferenceItem>::iterator&);
 		void const_iterator();
@@ -304,14 +304,14 @@ public:
 // VTABLE: COPTER_D 0x00590db0
 class PreferenceManager{ // packed(0x28 bytes) TI: 0x26c8
 protected:
-	int32_t bSaveFileAtAllChanges;
-	/*packed*/ class list<PreferenceItem> myPreferences;
-	/*packed*/ class MIFF *miffPrefsFile;
-	long lFileCreator;
-	long lFileType;
-	long lFileVersion;
-	int32_t bPrefsDirty;
-	int32_t bPrefsLocked;
+	/*+0x4*/   int32_t bSaveFileAtAllChanges;
+	/*+0x8*/   /*packed*/ class list<PreferenceItem> myPreferences; // 0x8 bytes
+	/*+0x10*/  /*packed*/ class MIFF *miffPrefsFile;
+	/*+0x14*/  long lFileCreator;
+	/*+0x18*/  long lFileType;
+	/*+0x1c*/  long lFileVersion;
+	/*+0x20*/  int32_t bPrefsDirty;
+	/*+0x24*/  int32_t bPrefsLocked;
 public:
 	void PreferenceManager(long, long, long, int32_t);
 	int32_t IPreferenceManager(char *);

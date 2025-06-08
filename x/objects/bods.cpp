@@ -6,43 +6,43 @@
 
 // Type: /*unpacked*/ struct Rect;
 struct Rect{ // not packed(0x8 bytes) TI: 0x3463
-	short top;
-	short left;
-	short bottom;
-	short right;
+	/*+0x0*/   short top; // 0x2 bytes
+	/*+0x2*/   short left; // 0x2 bytes
+	/*+0x4*/   short bottom; // 0x2 bytes
+	/*+0x6*/   short right; // 0x2 bytes
 };
 
 // Type: /*unpacked*/ struct TransformedInfo (forward reference);
 struct TransformedInfo{ // not packed(0x14 bytes) TI: 0x3750
-	/*unpacked*/ struct Point startPoint;
-	/*unpacked*/ struct Point endPoint;
-	short startDepth;
-	short endDepth;
-	unsigned char bStartTransformed;
-	unsigned char bEndTransformed;
-	float info;
+	/*+0x0*/   /*unpacked*/ struct Point startPoint;
+	/*+0x4*/   /*unpacked*/ struct Point endPoint;
+	/*+0x8*/   short startDepth; // 0x2 bytes
+	/*+0xa*/   short endDepth; // 0x2 bytes
+	/*+0xc*/   unsigned char bStartTransformed; // 0x1 bytes
+	/*+0xd*/   unsigned char bEndTransformed; // 0x1 bytes
+	/*+0x10*/  float info;
 };
 
 // Type: /*unpacked*/ struct cCopterBody::Part (forward reference);
 struct cCopterBody::Part{ // not packed(0x28 bytes) TI: 0x33f0
-	char drawProc;
-	char calcID;
-	char framePartID;
-	char color;
-	char scaleFlags;
-	char dontAnimateColor;
-	char _pad2;
-	char _pad3;
-	unsigned long tinyName;
-	unsigned long parentName;
-	/*unpacked*/ struct cCopterBody::Part *parent;
-	/*unpacked*/ struct Point tmpCenterPt;
-	/*unpacked*/ struct Point tmpEndPt;
-	short tmpCenterDepth;
-	short tmpEndDepth;
-	float length;
-	float width;
-	float taper;
+	/*+0x0*/   char drawProc; // 0x1 bytes
+	/*+0x1*/   char calcID; // 0x1 bytes
+	/*+0x2*/   char framePartID; // 0x1 bytes
+	/*+0x3*/   char color; // 0x1 bytes
+	/*+0x4*/   char scaleFlags; // 0x1 bytes
+	/*+0x5*/   char dontAnimateColor; // 0x1 bytes
+	/*+0x6*/   char _pad2; // 0x1 bytes
+	/*+0x7*/   char _pad3; // 0x1 bytes
+	/*+0x8*/   unsigned long tinyName;
+	/*+0xc*/   unsigned long parentName;
+	/*+0xc*/   /*unpacked*/ struct cCopterBody::Part *parent;
+	/*+0x10*/  /*unpacked*/ struct Point tmpCenterPt;
+	/*+0x14*/  /*unpacked*/ struct Point tmpEndPt;
+	/*+0x18*/  short tmpCenterDepth; // 0x2 bytes
+	/*+0x1a*/  short tmpEndDepth; // 0x2 bytes
+	/*+0x1c*/  float length;
+	/*+0x20*/  float width;
+	/*+0x24*/  float taper;
 };
 
 // Type: /*unpacked*/ class cBList<cCopterBody> (forward reference);
@@ -63,8 +63,8 @@ public:
 	virtual void Add(/*unpacked*/ class cCopterBody*); // vtable+0x0
 	void WriteToDisk();
 	void WriteToDiskIfDirty();
-	/*unpacked*/ class ResFile *fFile;
-	unsigned long fType;
+	/*+0xc*/   /*unpacked*/ class ResFile *fFile;
+	/*+0x10*/  unsigned long fType;
 	void CompactFile();
 	// calltype: NearC
 	static /*unpacked*/ class cBList<cCopterBody>* MakeNew(unsigned char *, unsigned long);
@@ -78,8 +78,8 @@ public:
 
 // Type: /*unpacked*/ struct AnimLookup (forward reference);
 struct AnimLookup{ // not packed(0x8 bytes) TI: 0x3427
-	unsigned long animName;
-	unsigned long privAnimName;
+	/*+0x0*/   unsigned long animName;
+	/*+0x4*/   unsigned long privAnimName;
 };
 
 // Type: /*unpacked*/ class cCopterAnim (forward reference);
@@ -98,7 +98,7 @@ public:
 	virtual /*unpacked*/ class cBList<cBBase>* GetList() /* override */;
 	virtual /*unpacked*/ struct PrivAnimPartInfo* GetPartInfo(short, short); // vtable+0x24
 	virtual /*unpacked*/ struct PrivAnimPartInfo* GetPartInfoBasePtr(short); // vtable+0x28
-	/*unpacked*/ class cArray<PrivAnimPartInfo> *fPrivPartInfo;
+	/*+0x28*/  /*unpacked*/ class cArray<PrivAnimPartInfo> *fPrivPartInfo;
 	short GetNumParts();
 	short GetNumFrames();
 	// calltype: NearC
@@ -119,26 +119,26 @@ public:
 
 // Type: /*unpacked*/ struct TransformedInfo;
 struct TransformedInfo{ // not packed(0x14 bytes) TI: 0x3750
-	/*unpacked*/ struct Point startPoint;
-	/*unpacked*/ struct Point endPoint;
-	short startDepth;
-	short endDepth;
-	unsigned char bStartTransformed;
-	unsigned char bEndTransformed;
-	float info;
+	/*+0x0*/   /*unpacked*/ struct Point startPoint;
+	/*+0x4*/   /*unpacked*/ struct Point endPoint;
+	/*+0x8*/   short startDepth; // 0x2 bytes
+	/*+0xa*/   short endDepth; // 0x2 bytes
+	/*+0xc*/   unsigned char bStartTransformed; // 0x1 bytes
+	/*+0xd*/   unsigned char bEndTransformed; // 0x1 bytes
+	/*+0x10*/  float info;
 };
 
 // Type: /*unpacked*/ struct Point;
 struct Point{ // not packed(0x4 bytes) TI: 0x341c
-	short v;
-	short h;
+	/*+0x0*/   short v; // 0x2 bytes
+	/*+0x2*/   short h; // 0x2 bytes
 };
 
 // Type: /*unpacked*/ struct Point3d;
 struct Point3d{ // not packed(0xc bytes) TI: 0x348f
-	int32_t x;
-	int32_t y;
-	int32_t z;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
+	/*+0x8*/   int32_t z;
 };
 
 // Type: enum SPHERE_SHADE_FLAG;
@@ -150,8 +150,8 @@ enum SPHERE_SHADE_FLAG {
 
 // Type: /*unpacked*/ struct PrivAnimPartInfo (forward reference);
 struct PrivAnimPartInfo{ // not packed(0x8 bytes) TI: 0x3425
-	/*unpacked*/ struct TinyXZY start;
-	/*unpacked*/ struct TinyXZY end;
+	/*+0x0*/   /*unpacked*/ struct TinyXZY start;
+	/*+0x4*/   /*unpacked*/ struct TinyXZY end;
 };
 
 // Type: int32_t;
@@ -160,10 +160,10 @@ struct PrivAnimPartInfo{ // not packed(0x8 bytes) TI: 0x3425
 
 // Type: /*unpacked*/ struct DXZY;
 struct DXZY{ // not packed(0x10 bytes) TI: 0x3420
-	float x;
-	float z;
-	float y;
-	float info;
+	/*+0x0*/   float x;
+	/*+0x4*/   float z;
+	/*+0x8*/   float y;
+	/*+0xc*/   float info;
 };
 
 // Type: unsigned char;
@@ -198,18 +198,18 @@ public:
 	void Init(void * __ptr32);
 	void Init(unsigned char *);
 	void Init(unsigned long);
-	void * __ptr32 fDataHandle;
-	unsigned long fDataHandleSize;
-	unsigned char fName[16];
-	unsigned long fTinyName;
-	short fResID;
-	unsigned short fDataChanged;
+	/*+0x4*/   void * __ptr32 fDataHandle;
+	/*+0x8*/   unsigned long fDataHandleSize;
+	/*+0xc*/   unsigned char fName[16]; // 0x10 bytes
+	/*+0x1c*/  unsigned long fTinyName;
+	/*+0x20*/  short fResID; // 0x2 bytes
+	/*+0x22*/  unsigned short fDataChanged; // 0x2 bytes
 	struct cBBase::BBaseHeader{ // not packed(0x40 bytes) TI: 0x339f
-		unsigned long bodyType;
-		long _win8pad[15];
+		/*+0x0*/   unsigned long bodyType;
+		/*+0x4*/   long _win8pad[15]; // 0x3c bytes
 	};
 public:
-	/*unpacked*/ struct cBBase::BBaseHeader *fHeader;
+	/*+0x24*/  /*unpacked*/ struct cBBase::BBaseHeader *fHeader;
 	// calltype: NearC
 	static void SwizzleBBaseHeader(void * __ptr32, long);
 };
@@ -218,8 +218,8 @@ public:
 class PtrList<cCopterBody>{ // not packed(0x8 bytes) TI: 0x3432
 	class PtrList<cCopterBody>::Iter{ // not packed(0x8 bytes) TI: 0x343c
 	private:
-		/*unpacked*/ class PtrList<cCopterBody> *fObject;
-		/*unpacked*/ struct PtrList<cCopterBody>::PtrNode *fCur;
+		/*+0x0*/   /*unpacked*/ class PtrList<cCopterBody> *fObject;
+		/*+0x4*/   /*unpacked*/ struct PtrList<cCopterBody>::PtrNode *fCur;
 	public:
 		void Iter(/*unpacked*/ class PtrList<cCopterBody>*);
 		/*unpacked*/ class cCopterBody* Current();
@@ -228,12 +228,12 @@ class PtrList<cCopterBody>{ // not packed(0x8 bytes) TI: 0x3432
 		/*unpacked*/ class cCopterBody* First();
 	};
 	struct PtrList<cCopterBody>::PtrNode{ // not packed(0x8 bytes) TI: 0x3434
-		/*unpacked*/ class cCopterBody *data;
-		/*unpacked*/ struct PtrList<cCopterBody>::PtrNode *next;
+		/*+0x0*/   /*unpacked*/ class cCopterBody *data;
+		/*+0x4*/   /*unpacked*/ struct PtrList<cCopterBody>::PtrNode *next;
 	};
 private:
-	/*unpacked*/ struct PtrList<cCopterBody>::PtrNode *fFirst;
-	short fCount;
+	/*+0x0*/   /*unpacked*/ struct PtrList<cCopterBody>::PtrNode *fFirst;
+	/*+0x4*/   short fCount; // 0x2 bytes
 public:
 	void PtrList<cCopterBody>();
 	void ~PtrList<cCopterBody>();

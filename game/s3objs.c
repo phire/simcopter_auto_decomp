@@ -8,11 +8,11 @@
 
 // Type: /*packed*/ struct _LZ_INFO (forward reference);
 struct _LZ_INFO{ // packed(0x14 bytes) TI: 0x3152
-	int32_t flags;
-	int32_t ulx;
-	int32_t ulz;
-	int32_t dimx;
-	int32_t dimz;
+	/*+0x0*/   int32_t flags;
+	/*+0x4*/   int32_t ulx;
+	/*+0x8*/   int32_t ulz;
+	/*+0xc*/   int32_t dimx;
+	/*+0x10*/  int32_t dimz;
 };
 
 // Type: char *;
@@ -21,56 +21,56 @@ struct _LZ_INFO{ // packed(0x14 bytes) TI: 0x3152
 
 // Type: /*packed*/ struct VRFaceInfo;
 struct VRFaceInfo{ // packed(0x20 bytes) TI: 0x30c0
-	int32_t Face;
-	int32_t Verts;
-	int32_t Attribute;
-	int32_t Plotter;
-	/*packed*/ struct VRBmpHdr *Bitmap;
-	int32_t * VertList;
-	/*packed*/ struct MapVert *MapVList;
-	/*packed*/ struct MapVert *BarryPtr;
+	/*+0x0*/   int32_t Face;
+	/*+0x4*/   int32_t Verts;
+	/*+0x8*/   int32_t Attribute;
+	/*+0xc*/   int32_t Plotter;
+	/*+0x10*/  /*packed*/ struct VRBmpHdr *Bitmap;
+	/*+0x14*/  int32_t * VertList;
+	/*+0x18*/  /*packed*/ struct MapVert *MapVList;
+	/*+0x1c*/  /*packed*/ struct MapVert *BarryPtr;
 };
 
 // Type: /*packed*/ struct VRBmpHdr (forward reference);
 struct VRBmpHdr{ // packed(0x10 bytes) TI: 0x2312
-	/*packed*/ struct VRBmpInfo info;
-	int32_t ScanOffset[1];
+	/*+0x0*/   /*packed*/ struct VRBmpInfo info; // 0xc bytes
+	/*+0xc*/   int32_t ScanOffset[1];
 };
 
 // Type: /*packed*/ struct VRObjInfo;
 struct VRObjInfo{ // packed(0x24 bytes) TI: 0x2ea8
-	int32_t Faces;
-	int32_t Verts;
-	int32_t Attribute;
-	int32_t Radius;
-	/*packed*/ struct Point3d *ObjCenter;
-	/*packed*/ struct Point3d *VertsPtr;
-	/*packed*/ struct Xform3d *VertsXfm;
-	/*packed*/ struct Point3d *OrgVerts;
-	int32_t *Matrix[4][4];
+	/*+0x0*/   int32_t Faces;
+	/*+0x4*/   int32_t Verts;
+	/*+0x8*/   int32_t Attribute;
+	/*+0xc*/   int32_t Radius;
+	/*+0x10*/  /*packed*/ struct Point3d *ObjCenter;
+	/*+0x14*/  /*packed*/ struct Point3d *VertsPtr;
+	/*+0x18*/  /*packed*/ struct Xform3d *VertsXfm;
+	/*+0x1c*/  /*packed*/ struct Point3d *OrgVerts;
+	/*+0x20*/  int32_t *Matrix[4][4];
 };
 
 // Type: void;
 
 // Type: /*packed*/ struct VRBlit (forward reference);
 struct VRBlit{ // packed(0x10 bytes) TI: 0x3182
-	int32_t nverts;
-	/*packed*/ struct Proj2d *verts;
-	int32_t notused;
-	int32_t user1;
+	/*+0x0*/   int32_t nverts;
+	/*+0x4*/   /*packed*/ struct Proj2d *verts;
+	/*+0x8*/   int32_t notused;
+	/*+0xc*/   int32_t user1;
 };
 
 // Type: /*packed*/ struct _DYOBJ_INST (forward reference);
 struct _DYOBJ_INST{ // packed(0x64 bytes) TI: 0x1deb
-	/*packed*/ struct _DYOBJ_INST *next;
-	/*packed*/ struct _DYOBJ_INST *vnext;
-	void * __ptr32 mesh;
-	short flags;
-	short user1;
-	long radius;
-	long height;
-	/*packed*/ struct Point3d loc;
-	int32_t matrix[4][4];
+	/*+0x0*/   /*packed*/ struct _DYOBJ_INST *next;
+	/*+0x4*/   /*packed*/ struct _DYOBJ_INST *vnext;
+	/*+0x8*/   void * __ptr32 mesh;
+	/*+0xc*/   short flags; // 0x2 bytes
+	/*+0xe*/   short user1; // 0x2 bytes
+	/*+0x10*/  long radius;
+	/*+0x14*/  long height;
+	/*+0x18*/  /*packed*/ struct Point3d loc; // 0xc bytes
+	/*+0x24*/  int32_t matrix[4][4]; // 0x40 bytes
 };
 
 

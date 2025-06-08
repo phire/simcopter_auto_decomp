@@ -4,15 +4,15 @@
 
 // Type: /*packed*/ struct list<basic_string<char>>::list_node_buffer (forward reference);
 struct list<basic_string<char>>::list_node_buffer{ // packed(0x8 bytes) TI: 0x1cd5
-	void * __ptr32 next_buffer;
-	/*packed*/ struct list<basic_string<char>>::list_node *buffer;
+	/*+0x0*/   void * __ptr32 next_buffer;
+	/*+0x4*/   /*packed*/ struct list<basic_string<char>>::list_node *buffer;
 };
 
 // Type: /*packed*/ struct list<basic_string<char>>::list_node (forward reference);
 struct list<basic_string<char>>::list_node{ // packed(0x10 bytes) TI: 0x1cd7
-	void * __ptr32 next;
-	void * __ptr32 prev;
-	/*packed*/ class basic_string<char> data;
+	/*+0x0*/   void * __ptr32 next;
+	/*+0x4*/   void * __ptr32 prev;
+	/*+0x8*/   /*packed*/ class basic_string<char> data; // 0x8 bytes
 };
 
 // Type: uint32_t;
@@ -44,24 +44,24 @@ protected:
 	virtual int32_t ReadCallSignFromDisk(); // vtable+0x38
 	virtual int32_t DetectRadioStationType(); // vtable+0x3c
 	virtual int32_t StartPlayingNextSelectionOfGivenType(enum RadioStationCycleType); // vtable+0x40
-	int32_t bPlaying;
-	/*packed*/ struct RadioStationState myRadioStationState;
-	enum RadioStationType myRadioStationType;
-	/*unpacked*/ class Radio *myRadio;
-	/*packed*/ class basic_string<char> sCallSign;
-	/*packed*/ class basic_string<char> sStationBaseDirectory;
-	/*packed*/ class basic_string<char> sMusicDirectory;
-	/*packed*/ class list<basic_string<char>> musicSelectionList;
-	/*packed*/ class list<basic_string<char>>::iterator musicSelectionListIterator;
-	/*packed*/ class basic_string<char> sDJDirectory;
-	/*packed*/ class list<basic_string<char>> djSelectionList;
-	/*packed*/ class list<basic_string<char>>::iterator djSelectionListIterator;
-	/*packed*/ class basic_string<char> sCommercialDirectory;
-	/*packed*/ class list<basic_string<char>> commercialSelectionList;
-	/*packed*/ class list<basic_string<char>>::iterator commercialSelectionListIterator;
-	/*packed*/ class basic_string<char> sJingleDirectory;
-	/*packed*/ class list<basic_string<char>> jingleSelectionList;
-	/*packed*/ class list<basic_string<char>>::iterator jingleSelectionListIterator;
+	/*+0x4*/   int32_t bPlaying;
+	/*+0x8*/   /*packed*/ struct RadioStationState myRadioStationState; // 0x28 bytes
+	/*+0x30*/  enum RadioStationType myRadioStationType;
+	/*+0x34*/  /*unpacked*/ class Radio *myRadio;
+	/*+0x38*/  /*packed*/ class basic_string<char> sCallSign; // 0x8 bytes
+	/*+0x40*/  /*packed*/ class basic_string<char> sStationBaseDirectory; // 0x8 bytes
+	/*+0x48*/  /*packed*/ class basic_string<char> sMusicDirectory; // 0x8 bytes
+	/*+0x50*/  /*packed*/ class list<basic_string<char>> musicSelectionList; // 0x8 bytes
+	/*+0x58*/  /*packed*/ class list<basic_string<char>>::iterator musicSelectionListIterator;
+	/*+0x5c*/  /*packed*/ class basic_string<char> sDJDirectory; // 0x8 bytes
+	/*+0x64*/  /*packed*/ class list<basic_string<char>> djSelectionList; // 0x8 bytes
+	/*+0x6c*/  /*packed*/ class list<basic_string<char>>::iterator djSelectionListIterator;
+	/*+0x70*/  /*packed*/ class basic_string<char> sCommercialDirectory; // 0x8 bytes
+	/*+0x78*/  /*packed*/ class list<basic_string<char>> commercialSelectionList; // 0x8 bytes
+	/*+0x80*/  /*packed*/ class list<basic_string<char>>::iterator commercialSelectionListIterator;
+	/*+0x84*/  /*packed*/ class basic_string<char> sJingleDirectory; // 0x8 bytes
+	/*+0x8c*/  /*packed*/ class list<basic_string<char>> jingleSelectionList; // 0x8 bytes
+	/*+0x94*/  /*packed*/ class list<basic_string<char>>::iterator jingleSelectionListIterator;
 };
 
 // Type: void;
@@ -85,8 +85,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -192,9 +192,9 @@ public:
 class list<basic_string<char>>{ // packed(0x8 bytes) TI: 0x1cb1
 	using void_pointer = void * __ptr32;
 	struct list<basic_string<char>>::list_node{ // packed(0x10 bytes) TI: 0x1cd7
-		void * __ptr32 next;
-		void * __ptr32 prev;
-		/*packed*/ class basic_string<char> data;
+		/*+0x0*/   void * __ptr32 next;
+		/*+0x4*/   void * __ptr32 prev;
+		/*+0x8*/   /*packed*/ class basic_string<char> data; // 0x8 bytes
 	};
 protected:
 	static /*packed*/ class allocator<list<basic_string<char>>::list_node> list_node_allocator;
@@ -211,8 +211,8 @@ protected:
 protected:
 	uint32_t buffer_size();
 	struct list<basic_string<char>>::list_node_buffer{ // packed(0x8 bytes) TI: 0x1cd5
-		void * __ptr32 next_buffer;
-		/*packed*/ struct list<basic_string<char>>::list_node *buffer;
+		/*+0x0*/   void * __ptr32 next_buffer;
+		/*+0x4*/   /*packed*/ struct list<basic_string<char>>::list_node *buffer;
 	};
 	using buffer_allocator_type = /*packed*/ class allocator<list<basic_string<char>>::list_node_buffer>;
 	using buffer_pointer = /*packed*/ struct list<basic_string<char>>::list_node_buffer*;
@@ -227,12 +227,12 @@ protected:
 	void deallocate_buffers();
 	/*packed*/ struct list<basic_string<char>>::list_node* get_node();
 	void put_node(/*packed*/ struct list<basic_string<char>>::list_node*);
-	/*packed*/ struct list<basic_string<char>>::list_node *node;
-	uint32_t length;
+	/*+0x0*/   /*packed*/ struct list<basic_string<char>>::list_node *node;
+	/*+0x4*/   uint32_t length;
 	class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_string<char>,int>
 	{ // packed(0x4 bytes) TI: 0x1cd3
 	protected:
-		/*packed*/ struct list<basic_string<char>>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<basic_string<char>>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -248,7 +248,7 @@ protected:
 	class list<basic_string<char>>::const_iterator : public bidirectional_iterator<basic_string<char>,int>
 	{ // packed(0x4 bytes) TI: 0x1cc6
 	protected:
-		/*packed*/ struct list<basic_string<char>>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<basic_string<char>>::list_node *node;
 	public:
 		void const_iterator(const /*packed*/ class list<basic_string<char>>::iterator&);
 		void const_iterator();
@@ -314,7 +314,7 @@ public:
 class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_string<char>,int>
 { // packed(0x4 bytes) TI: 0x1cd3
 protected:
-	/*packed*/ struct list<basic_string<char>>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<basic_string<char>>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -343,9 +343,9 @@ class vector<basic_string<char>>{ // packed(0xc bytes) TI: 0x1f15
 	using reverse_iterator = /*unpacked*/ class reverse_iterator<basic_string<char> *,basic_string<char>,basic_string<char> &,int>;
 protected:
 	static /*packed*/ class allocator<basic_string<char>> static_allocator;
-	/*packed*/ class basic_string<char> *start;
-	/*packed*/ class basic_string<char> *finish;
-	/*packed*/ class basic_string<char> *end_of_storage;
+	/*+0x0*/   /*packed*/ class basic_string<char> *start;
+	/*+0x4*/   /*packed*/ class basic_string<char> *finish;
+	/*+0x8*/   /*packed*/ class basic_string<char> *end_of_storage;
 	void insert_aux(/*packed*/ class basic_string<char>*, const /*packed*/ class basic_string<char>&);
 public:
 	const /*packed*/ class basic_string<char>* begin();
@@ -388,8 +388,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -518,9 +518,9 @@ public:
 	int32_t CreatePhysicalEntry();
 	int32_t GetEntryExtension(/*packed*/ class basic_string<char>&);
 	int32_t GetEntryMinusExtension(/*packed*/ class basic_string<char>&);
-	/*unpacked*/ class Directory *directoryParent;
-	/*packed*/ class basic_string<char> sName;
-	long lType;
+	/*+0x0*/   /*unpacked*/ class Directory *directoryParent;
+	/*+0x4*/   /*packed*/ class basic_string<char> sName; // 0x8 bytes
+	/*+0xc*/   long lType;
 };
 
 // Type: /*unpacked*/ class Radio (forward reference);
@@ -528,24 +528,24 @@ public:
 
 // Type: /*packed*/ struct RadioPreferences (forward reference);
 struct RadioPreferences{ // packed(0x1c bytes) TI: 0x2a39
-	long lVolume;
-	int32_t bPreferToBeOn;
-	long lCurrentStation;
-	int32_t bOptionDJ;
-	int32_t bOptionCommercials;
-	int32_t bAutoMute;
-	int32_t bOptionPlayEnglishIfDefaultLanguageNotFound;
+	/*+0x0*/   long lVolume;
+	/*+0x4*/   int32_t bPreferToBeOn;
+	/*+0x8*/   long lCurrentStation;
+	/*+0xc*/   int32_t bOptionDJ;
+	/*+0x10*/  int32_t bOptionCommercials;
+	/*+0x14*/  int32_t bAutoMute;
+	/*+0x18*/  int32_t bOptionPlayEnglishIfDefaultLanguageNotFound;
 };
 
 // Type: /*packed*/ struct RadioPreferences;
 struct RadioPreferences{ // packed(0x1c bytes) TI: 0x2a39
-	long lVolume;
-	int32_t bPreferToBeOn;
-	long lCurrentStation;
-	int32_t bOptionDJ;
-	int32_t bOptionCommercials;
-	int32_t bAutoMute;
-	int32_t bOptionPlayEnglishIfDefaultLanguageNotFound;
+	/*+0x0*/   long lVolume;
+	/*+0x4*/   int32_t bPreferToBeOn;
+	/*+0x8*/   long lCurrentStation;
+	/*+0xc*/   int32_t bOptionDJ;
+	/*+0x10*/  int32_t bOptionCommercials;
+	/*+0x14*/  int32_t bAutoMute;
+	/*+0x18*/  int32_t bOptionPlayEnglishIfDefaultLanguageNotFound;
 };
 
 // Type: enum RadioOption;
@@ -561,9 +561,9 @@ enum RadioOption {
 class list<basic_string<char>>{ // packed(0x8 bytes) TI: 0x1cb1
 	using void_pointer = void * __ptr32;
 	struct list<basic_string<char>>::list_node{ // packed(0x10 bytes) TI: 0x1cd7
-		void * __ptr32 next;
-		void * __ptr32 prev;
-		/*packed*/ class basic_string<char> data;
+		/*+0x0*/   void * __ptr32 next;
+		/*+0x4*/   void * __ptr32 prev;
+		/*+0x8*/   /*packed*/ class basic_string<char> data; // 0x8 bytes
 	};
 protected:
 	static /*packed*/ class allocator<list<basic_string<char>>::list_node> list_node_allocator;
@@ -580,8 +580,8 @@ protected:
 protected:
 	uint32_t buffer_size();
 	struct list<basic_string<char>>::list_node_buffer{ // packed(0x8 bytes) TI: 0x1cd5
-		void * __ptr32 next_buffer;
-		/*packed*/ struct list<basic_string<char>>::list_node *buffer;
+		/*+0x0*/   void * __ptr32 next_buffer;
+		/*+0x4*/   /*packed*/ struct list<basic_string<char>>::list_node *buffer;
 	};
 	using buffer_allocator_type = /*packed*/ class allocator<list<basic_string<char>>::list_node_buffer>;
 	using buffer_pointer = /*packed*/ struct list<basic_string<char>>::list_node_buffer*;
@@ -596,12 +596,12 @@ protected:
 	void deallocate_buffers();
 	/*packed*/ struct list<basic_string<char>>::list_node* get_node();
 	void put_node(/*packed*/ struct list<basic_string<char>>::list_node*);
-	/*packed*/ struct list<basic_string<char>>::list_node *node;
-	uint32_t length;
+	/*+0x0*/   /*packed*/ struct list<basic_string<char>>::list_node *node;
+	/*+0x4*/   uint32_t length;
 	class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_string<char>,int>
 	{ // packed(0x4 bytes) TI: 0x1cd3
 	protected:
-		/*packed*/ struct list<basic_string<char>>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<basic_string<char>>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -617,7 +617,7 @@ protected:
 	class list<basic_string<char>>::const_iterator : public bidirectional_iterator<basic_string<char>,int>
 	{ // packed(0x4 bytes) TI: 0x1cc6
 	protected:
-		/*packed*/ struct list<basic_string<char>>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<basic_string<char>>::list_node *node;
 	public:
 		void const_iterator(const /*packed*/ class list<basic_string<char>>::iterator&);
 		void const_iterator();
@@ -704,24 +704,24 @@ protected:
 	virtual int32_t ReadCallSignFromDisk(); // vtable+0x38
 	virtual int32_t DetectRadioStationType(); // vtable+0x3c
 	virtual int32_t StartPlayingNextSelectionOfGivenType(enum RadioStationCycleType); // vtable+0x40
-	int32_t bPlaying;
-	/*packed*/ struct RadioStationState myRadioStationState;
-	enum RadioStationType myRadioStationType;
-	/*unpacked*/ class Radio *myRadio;
-	/*packed*/ class basic_string<char> sCallSign;
-	/*packed*/ class basic_string<char> sStationBaseDirectory;
-	/*packed*/ class basic_string<char> sMusicDirectory;
-	/*packed*/ class list<basic_string<char>> musicSelectionList;
-	/*packed*/ class list<basic_string<char>>::iterator musicSelectionListIterator;
-	/*packed*/ class basic_string<char> sDJDirectory;
-	/*packed*/ class list<basic_string<char>> djSelectionList;
-	/*packed*/ class list<basic_string<char>>::iterator djSelectionListIterator;
-	/*packed*/ class basic_string<char> sCommercialDirectory;
-	/*packed*/ class list<basic_string<char>> commercialSelectionList;
-	/*packed*/ class list<basic_string<char>>::iterator commercialSelectionListIterator;
-	/*packed*/ class basic_string<char> sJingleDirectory;
-	/*packed*/ class list<basic_string<char>> jingleSelectionList;
-	/*packed*/ class list<basic_string<char>>::iterator jingleSelectionListIterator;
+	/*+0x4*/   int32_t bPlaying;
+	/*+0x8*/   /*packed*/ struct RadioStationState myRadioStationState; // 0x28 bytes
+	/*+0x30*/  enum RadioStationType myRadioStationType;
+	/*+0x34*/  /*unpacked*/ class Radio *myRadio;
+	/*+0x38*/  /*packed*/ class basic_string<char> sCallSign; // 0x8 bytes
+	/*+0x40*/  /*packed*/ class basic_string<char> sStationBaseDirectory; // 0x8 bytes
+	/*+0x48*/  /*packed*/ class basic_string<char> sMusicDirectory; // 0x8 bytes
+	/*+0x50*/  /*packed*/ class list<basic_string<char>> musicSelectionList; // 0x8 bytes
+	/*+0x58*/  /*packed*/ class list<basic_string<char>>::iterator musicSelectionListIterator;
+	/*+0x5c*/  /*packed*/ class basic_string<char> sDJDirectory; // 0x8 bytes
+	/*+0x64*/  /*packed*/ class list<basic_string<char>> djSelectionList; // 0x8 bytes
+	/*+0x6c*/  /*packed*/ class list<basic_string<char>>::iterator djSelectionListIterator;
+	/*+0x70*/  /*packed*/ class basic_string<char> sCommercialDirectory; // 0x8 bytes
+	/*+0x78*/  /*packed*/ class list<basic_string<char>> commercialSelectionList; // 0x8 bytes
+	/*+0x80*/  /*packed*/ class list<basic_string<char>>::iterator commercialSelectionListIterator;
+	/*+0x84*/  /*packed*/ class basic_string<char> sJingleDirectory; // 0x8 bytes
+	/*+0x8c*/  /*packed*/ class list<basic_string<char>> jingleSelectionList; // 0x8 bytes
+	/*+0x94*/  /*packed*/ class list<basic_string<char>>::iterator jingleSelectionListIterator;
 };
 
 // Type: /*packed*/ class MTimer (forward reference);
@@ -744,11 +744,11 @@ public:
 	int32_t IsTimerRunning();
 	unsigned long GetTickCount();
 protected:
-	enum MTimer::TimerResolution nTimerResolution;
-	unsigned long lStartTime;
-	unsigned long lTotalElapsedTime;
+	/*+0x0*/   enum MTimer::TimerResolution nTimerResolution;
+	/*+0x4*/   unsigned long lStartTime;
+	/*+0x8*/   unsigned long lTotalElapsedTime;
 	unsigned long GetWindowsTimerFrequency();
-	unsigned long lFrequency;
+	/*+0xc*/   unsigned long lFrequency;
 };
 
 // Type: enum MTimer::TimerResolution;
@@ -773,9 +773,9 @@ class vector<int>{ // packed(0xc bytes) TI: 0x1f70
 	using reverse_iterator = /*unpacked*/ class reverse_iterator<int *,int,int &,int>;
 protected:
 	static /*packed*/ class allocator<int> static_allocator;
-	int32_t * start;
-	int32_t * finish;
-	int32_t * end_of_storage;
+	/*+0x0*/   int32_t * start;
+	/*+0x4*/   int32_t * finish;
+	/*+0x8*/   int32_t * end_of_storage;
 	void insert_aux(int32_t *, const int32_t&);
 public:
 	int32_t * begin();
@@ -817,7 +817,7 @@ public:
 class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_string<char>,int>
 { // packed(0x4 bytes) TI: 0x1cd3
 protected:
-	/*packed*/ struct list<basic_string<char>>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<basic_string<char>>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -846,9 +846,9 @@ class vector<RadioStation>{ // packed(0xc bytes) TI: 0x1d06
 	using reverse_iterator = /*unpacked*/ class reverse_iterator<RadioStation *,RadioStation,RadioStation &,int>;
 protected:
 	static /*packed*/ class allocator<RadioStation> static_allocator;
-	/*packed*/ class RadioStation *start;
-	/*packed*/ class RadioStation *finish;
-	/*packed*/ class RadioStation *end_of_storage;
+	/*+0x0*/   /*packed*/ class RadioStation *start;
+	/*+0x4*/   /*packed*/ class RadioStation *finish;
+	/*+0x8*/   /*packed*/ class RadioStation *end_of_storage;
 	void insert_aux(/*packed*/ class RadioStation*, const /*packed*/ class RadioStation&);
 public:
 	const /*packed*/ class RadioStation* begin();
@@ -892,7 +892,7 @@ public:
 class list<basic_string<char>>::const_iterator : public bidirectional_iterator<basic_string<char>,int>
 { // packed(0x4 bytes) TI: 0x1cc6
 protected:
-	/*packed*/ struct list<basic_string<char>>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<basic_string<char>>::list_node *node;
 public:
 	void const_iterator(const /*packed*/ class list<basic_string<char>>::iterator&);
 	void const_iterator();

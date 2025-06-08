@@ -13,19 +13,19 @@ class cYObject : public TreeSim, public YObjLang
 		kNumPointers = 4,
 	};
 	struct cYObject::ObjDefHeader{ // not packed(0x1c bytes) TI: 0x374c
-		long version;
-		short stackSize;
-		short baseGraphic;
-		short numGraphics;
-		short initBhav;
-		short toolbarPict;
-		short treeTableID;
-		short personalityID;
-		short type;
-		short red;
-		short green;
-		short blue;
-		short _padding2;
+		/*+0x0*/   long version;
+		/*+0x4*/   short stackSize; // 0x2 bytes
+		/*+0x6*/   short baseGraphic; // 0x2 bytes
+		/*+0x8*/   short numGraphics; // 0x2 bytes
+		/*+0xa*/   short initBhav; // 0x2 bytes
+		/*+0xc*/   short toolbarPict; // 0x2 bytes
+		/*+0xe*/   short treeTableID; // 0x2 bytes
+		/*+0x10*/  short personalityID; // 0x2 bytes
+		/*+0x12*/  short type; // 0x2 bytes
+		/*+0x14*/  short red; // 0x2 bytes
+		/*+0x16*/  short green; // 0x2 bytes
+		/*+0x18*/  short blue; // 0x2 bytes
+		/*+0x1a*/  short _padding2; // 0x2 bytes
 	};
 	enum MoveErrorCode {
 		kMoveError = -1,
@@ -118,7 +118,7 @@ public:
 	// calltype: NearC
 	static void SetRxnTree(short, short);
 	static long sSimTicks;
-	long fLastInterrupt;
+	/*+0x18*/  long fLastInterrupt;
 	enum LocationType {
 		kOutOfCity = -1,
 		kLocNoInfo = 0,
@@ -146,8 +146,8 @@ public:
 		kSearchAnywhereAtAll = 3,
 	};
 	struct cYObject::LocationInfo{ // not packed(0x8 bytes) TI: 0x425a
-		enum cYObject::SearchType searchType;
-		short maxNormalLoiterers;
+		/*+0x0*/   enum cYObject::SearchType searchType;
+		/*+0x4*/   short maxNormalLoiterers; // 0x2 bytes
 	};
 public:
 	static /*unpacked*/ struct cYObject::LocationInfo sLocInfo[14];
@@ -179,22 +179,22 @@ public:
 	void ResetTree();
 	void ResetTree(short);
 	struct cYObject::MoveInfo{ // not packed(0x10 bytes) TI: 0x3748
-		enum cYObject::LocationType *locType;
-		char * roadDir;
-		/*unpacked*/ struct _DYOBJ_INST *dyBlock;
-		/*unpacked*/ struct _STOBJ_INST *stBlock;
+		/*+0x0*/   enum cYObject::LocationType *locType;
+		/*+0x4*/   char * roadDir;
+		/*+0x8*/   /*unpacked*/ struct _DYOBJ_INST *dyBlock;
+		/*+0xc*/   /*unpacked*/ struct _STOBJ_INST *stBlock;
 	};
 	struct cYObject::_ControlInput{ // not packed(0x18 bytes) TI: 0x3745
-		/*unpacked*/ struct Point3d vector;
-		int32_t fwdSpeed;
-		int32_t rotateRate;
-		int32_t yaw;
+		/*+0x0*/   /*unpacked*/ struct Point3d vector; // 0xc bytes
+		/*+0xc*/   int32_t fwdSpeed;
+		/*+0x10*/  int32_t rotateRate;
+		/*+0x14*/  int32_t yaw;
 	};
 	struct cYObject::_ControlInput{ // not packed(0x18 bytes) TI: 0x3745
-		/*unpacked*/ struct Point3d vector;
-		int32_t fwdSpeed;
-		int32_t rotateRate;
-		int32_t yaw;
+		/*+0x0*/   /*unpacked*/ struct Point3d vector; // 0xc bytes
+		/*+0xc*/   int32_t fwdSpeed;
+		/*+0x10*/  int32_t rotateRate;
+		/*+0x14*/  int32_t yaw;
 	};
 private:
 	static unsigned short sInited;
@@ -235,13 +235,13 @@ public:
 	void UnsetCell(unsigned char, unsigned char);
 	void Link();
 	void Link(unsigned char, unsigned char);
-	long fMissionID;
+	/*+0x1c*/  long fMissionID;
 	void PutOnGround();
 	void Unlink();
 	unsigned short CellIsSet();
-	unsigned short fbLinked;
+	/*+0x20*/  unsigned short fbLinked; // 0x2 bytes
 	unsigned short Linked();
-	unsigned short fInited;
+	/*+0x22*/  unsigned short fInited; // 0x2 bytes
 	// calltype: NearC
 	static unsigned short ConvertObjDef(void * __ptr32);
 	// calltype: NearC
@@ -258,20 +258,20 @@ public:
 	static short sAmbientTopOff;
 	static short sAmbientAbsoluteMax;
 	static short sScurkRectRad;
-	/*unpacked*/ struct _DYOBJ_INST fDyn;
-	unsigned char fCellX;
-	unsigned char fCellY;
-	unsigned long fBodyName;
-	/*unpacked*/ class cCopterBody *fBody;
-	unsigned long fAnimName;
-	/*unpacked*/ class cCopterAnim *fAnim;
-	short fFace;
+	/*+0x24*/  /*unpacked*/ struct _DYOBJ_INST fDyn; // 0x64 bytes
+	/*+0x88*/  unsigned char fCellX; // 0x1 bytes
+	/*+0x89*/  unsigned char fCellY; // 0x1 bytes
+	/*+0x8c*/  unsigned long fBodyName;
+	/*+0x90*/  /*unpacked*/ class cCopterBody *fBody;
+	/*+0x94*/  unsigned long fAnimName;
+	/*+0x98*/  /*unpacked*/ class cCopterAnim *fAnim;
+	/*+0x9c*/  short fFace; // 0x2 bytes
 	void SetFace(short);
-	/*unpacked*/ struct Point3d fLastMasterLoc;
+	/*+0xa0*/  /*unpacked*/ struct Point3d fLastMasterLoc; // 0xc bytes
 	unsigned short SetMaster(/*unpacked*/ struct _DYOBJ_INST*);
 	/*unpacked*/ struct _DYOBJ_INST* GetMaster();
 	void FollowMaster();
-	enum cYObject::LocationType fCurLocType;
+	/*+0xac*/  enum cYObject::LocationType fCurLocType;
 	// calltype: NearC
 	static unsigned short GetOutOfHeli(long);
 	// calltype: NearC
@@ -303,18 +303,18 @@ public:
 	void VisitOz();
 	unsigned long GetAnim();
 	void SetAnim(unsigned long);
-	unsigned short fSimulate;
-	/*unpacked*/ class Behavior *fBehavior;
-	/*unpacked*/ class cYObject *fNext;
-	short fID;
-	short _pad;
-	short fTemp[8];
-	short fData[48];
-	unsigned char * fPointers[4];
-	short fIterations;
-	short _pad2;
-	short fDirInc;
-	/*unpacked*/ struct cYObject::ObjDefHeader fDefinition;
+	/*+0xb0*/  unsigned short fSimulate; // 0x2 bytes
+	/*+0xb4*/  /*unpacked*/ class Behavior *fBehavior;
+	/*+0xb8*/  /*unpacked*/ class cYObject *fNext;
+	/*+0xbc*/  short fID; // 0x2 bytes
+	/*+0xbe*/  short _pad; // 0x2 bytes
+	/*+0xc0*/  short fTemp[8]; // 0x10 bytes
+	/*+0xd0*/  short fData[48]; // 0x60 bytes
+	/*+0x130*/ unsigned char * fPointers[4]; // 0x10 bytes
+	/*+0x140*/ short fIterations; // 0x2 bytes
+	/*+0x142*/ short _pad2; // 0x2 bytes
+	/*+0x144*/ short fDirInc; // 0x2 bytes
+	/*+0x148*/ /*unpacked*/ struct cYObject::ObjDefHeader fDefinition; // 0x1c bytes
 	enum /* __unnamed */ {
 		kMasterObject = 0,
 		kLastHitterObject = 1,
@@ -462,7 +462,7 @@ public:
 	/*unpacked*/ struct Point3d GetLocation();
 	/*unpacked*/ class Behavior* GetBehavior();
 	void Draw(/*unpacked*/ struct VRBlit*);
-	float fScale;
+	/*+0x164*/ float fScale;
 	void DefaultDrawStr(short, short, unsigned char, unsigned char *, int32_t);
 	void SetCellAndLoc(/*unpacked*/ struct Point3d, unsigned char, unsigned char);
 	void SetCellAndLoc(unsigned char, unsigned char, int32_t, int32_t);
@@ -666,22 +666,22 @@ class TreeSim{ // not packed(0x14 bytes) TI: 0x3610
 		kMaxIterations = 128,
 	};
 	struct TreeSim::StackElem{ // not packed(0x14 bytes) TI: 0x3614
-		short treeID;
-		short nodeNum;
-		short objectID;
-		short _pad;
-		unsigned char * objectPtr;
-		short locals[4];
-		/*unpacked*/ class Behavior *pBehavior;
+		/*+0x0*/   short treeID; // 0x2 bytes
+		/*+0x2*/   short nodeNum; // 0x2 bytes
+		/*+0x4*/   short objectID; // 0x2 bytes
+		/*+0x4*/   short _pad; // 0x2 bytes
+		/*+0x4*/   unsigned char * objectPtr;
+		/*+0x8*/   short locals[4]; // 0x8 bytes
+		/*+0x10*/  /*unpacked*/ class Behavior *pBehavior;
 		void GetTreeName(unsigned char *);
 	};
 private:
-	/*unpacked*/ struct TreeSim::StackElem *fStack;
-	short fStackSize;
-	short fMaxStackSize;
-	short fIterations;
-	short _pad;
-	short * fAutoStackArea;
+	/*+0x4*/   /*unpacked*/ struct TreeSim::StackElem *fStack;
+	/*+0x8*/   short fStackSize; // 0x2 bytes
+	/*+0xa*/   short fMaxStackSize; // 0x2 bytes
+	/*+0xc*/   short fIterations; // 0x2 bytes
+	/*+0xe*/   short _pad; // 0x2 bytes
+	/*+0x10*/  short * fAutoStackArea;
 	enum ReturnCode {
 		kTrueComplete = 1,
 		kFalseComplete = 0,
@@ -818,127 +818,127 @@ public:
 		kNumOwners = 13,
 	};
 	struct YObjLang::OwnerDataParam{ // not packed(0x8 bytes) TI: 0x3593
-		short owner1;
-		short data1;
-		short owner2;
-		short data2;
+		/*+0x0*/   short owner1; // 0x2 bytes
+		/*+0x2*/   short data1; // 0x2 bytes
+		/*+0x4*/   short owner2; // 0x2 bytes
+		/*+0x6*/   short data2; // 0x2 bytes
 	};
 	struct YObjLang::TurnToFireParam{ // not packed(0x4 bytes) TI: 0x3591
-		short xdistloc;
-		short ydistloc;
+		/*+0x0*/   short xdistloc; // 0x2 bytes
+		/*+0x2*/   short ydistloc; // 0x2 bytes
 	};
 	struct YObjLang::GetOutOfRoadParam{ // not packed(0x2 bytes) TI: 0x358f
-		short decTemp;
+		/*+0x0*/   short decTemp; // 0x2 bytes
 	};
 	struct YObjLang::SetDirectionParam{ // not packed(0x2 bytes) TI: 0x358e
-		short dirTemp;
+		/*+0x0*/   short dirTemp; // 0x2 bytes
 	};
 	struct YObjLang::CheckForSpotParam{ // not packed(0x4 bytes) TI: 0x358c
-		short brightnessTemp;
-		short dirToHeliTemp;
+		/*+0x0*/   short brightnessTemp; // 0x2 bytes
+		/*+0x2*/   short dirToHeliTemp; // 0x2 bytes
 	};
 	struct YObjLang::GetSurroundingRiotValParam{ // not packed(0x8 bytes) TI: 0x358a
-		short distTemp;
-		short dirToConcTemp;
-		short riotValTemp;
-		short numPeopleCountedTemp;
+		/*+0x0*/   short distTemp; // 0x2 bytes
+		/*+0x2*/   short dirToConcTemp; // 0x2 bytes
+		/*+0x4*/   short riotValTemp; // 0x2 bytes
+		/*+0x6*/   short numPeopleCountedTemp; // 0x2 bytes
 	};
 	struct YObjLang::IncrementRiotValParam{ // not packed(0x2 bytes) TI: 0x3588
-		short riotValLiteral;
+		/*+0x0*/   short riotValLiteral; // 0x2 bytes
 	};
 	struct YObjLang::IsThisScurkIDParam{ // not packed(0x2 bytes) TI: 0x3586
-		short scurkIDLiteral;
+		/*+0x0*/   short scurkIDLiteral; // 0x2 bytes
 	};
 	struct YObjLang::IsThisLocTypeParam{ // not packed(0x2 bytes) TI: 0x3584
-		short locTypeLiteral;
+		/*+0x0*/   short locTypeLiteral; // 0x2 bytes
 	};
 	struct YObjLang::UpdateMyMissionParam{ // not packed(0x2 bytes) TI: 0x3582
-		short updateLiteral;
+		/*+0x0*/   short updateLiteral; // 0x2 bytes
 	};
 	struct YObjLang::CheckForTrueParam{ // not packed(0x2 bytes) TI: 0x3580
-		short whatLiteral;
+		/*+0x0*/   short whatLiteral; // 0x2 bytes
 	};
 	struct YObjLang::CompareMyLocWithParam{ // not packed(0x6 bytes) TI: 0x357e
-		short withWhatLiteral;
-		short distData;
-		short distOwner;
+		/*+0x0*/   short withWhatLiteral; // 0x2 bytes
+		/*+0x2*/   short distData; // 0x2 bytes
+		/*+0x4*/   short distOwner; // 0x2 bytes
 	};
 	struct YObjLang::WalkAndGrabParam{ // not packed(0x4 bytes) TI: 0x357c
-		short decTemp;
-		short dynAnimBoolean;
+		/*+0x0*/   short decTemp; // 0x2 bytes
+		/*+0x2*/   short dynAnimBoolean; // 0x2 bytes
 	};
 	struct YObjLang::SearchForDynParam{ // not packed(0x6 bytes) TI: 0x357a
-		short searchdynobjtypetemp;
-		short onlyonmasterboolean;
-		short numcellstospiral;
+		/*+0x0*/   short searchdynobjtypetemp; // 0x2 bytes
+		/*+0x2*/   short onlyonmasterboolean; // 0x2 bytes
+		/*+0x4*/   short numcellstospiral; // 0x2 bytes
 	};
 	struct YObjLang::IdleParam{ // not packed(0x2 bytes) TI: 0x3578
-		short decTemp;
+		/*+0x0*/   short decTemp; // 0x2 bytes
 	};
 	struct YObjLang::SetAnimParam{ // not packed(0x4 bytes) TI: 0x3576
-		unsigned long animname;
+		/*+0x0*/   unsigned long animname;
 	};
 	struct YObjLang::SetBodyParam{ // not packed(0x4 bytes) TI: 0x3574
-		unsigned long bodyname;
+		/*+0x0*/   unsigned long bodyname;
 	};
 	struct YObjLang::WalkRunParam{ // not packed(0x7 bytes) TI: 0x3572
-		char decTemp;
-		char onlyNeutralBoolean;
-		char moveFailTemp;
-		char newLocTemp;
-		char roadDirTemp;
-		char dynAnimBoolean;
-		char speedTemp;
+		/*+0x0*/   char decTemp; // 0x1 bytes
+		/*+0x1*/   char onlyNeutralBoolean; // 0x1 bytes
+		/*+0x2*/   char moveFailTemp; // 0x1 bytes
+		/*+0x3*/   char newLocTemp; // 0x1 bytes
+		/*+0x4*/   char roadDirTemp; // 0x1 bytes
+		/*+0x5*/   char dynAnimBoolean; // 0x1 bytes
+		/*+0x6*/   char speedTemp; // 0x1 bytes
 	};
 	struct YObjLang::RandomParam{ // not packed(0x6 bytes) TI: 0x3570
-		short destTemp;
-		short rangeData;
-		short rangeOwner;
+		/*+0x0*/   short destTemp; // 0x2 bytes
+		/*+0x2*/   short rangeData; // 0x2 bytes
+		/*+0x4*/   short rangeOwner; // 0x2 bytes
 	};
 	struct YObjLang::RoadDirParam{ // not packed(0x6 bytes) TI: 0x356e
-		short dirTemp;
-		short distAheadData;
-		short distAheadOwner;
+		/*+0x0*/   short dirTemp; // 0x2 bytes
+		/*+0x2*/   short distAheadData; // 0x2 bytes
+		/*+0x4*/   short distAheadOwner; // 0x2 bytes
 	};
 	struct YObjLang::DirDistFirstParam{ // not packed(0x8 bytes) TI: 0x356c
-		short dirToTemp;
-		short distToTemp;
-		short whatData;
-		short whatOwner;
+		/*+0x0*/   short dirToTemp; // 0x2 bytes
+		/*+0x2*/   short distToTemp; // 0x2 bytes
+		/*+0x4*/   short whatData; // 0x2 bytes
+		/*+0x6*/   short whatOwner; // 0x2 bytes
 	};
 	struct YObjLang::DirDistPersonParam{ // not packed(0x8 bytes) TI: 0x356a
-		short dirToTemp;
-		short distToTemp;
-		short whoData;
-		short whoOwner;
+		/*+0x0*/   short dirToTemp; // 0x2 bytes
+		/*+0x2*/   short distToTemp; // 0x2 bytes
+		/*+0x4*/   short whoData; // 0x2 bytes
+		/*+0x6*/   short whoOwner; // 0x2 bytes
 	};
 	struct YObjLang::AttrParam{ // not packed(0x8 bytes) TI: 0x3568
-		short lhsData;
-		short rhsData;
-		LfBitfield @ 0x5d5b4:
+		/*+0x0*/   short lhsData; // 0x2 bytes
+		/*+0x2*/   short rhsData; // 0x2 bytes
+		/*+0x4*/   LfBitfield @ 0x5d5b4:
 		[90m   LB.[32m[  0.  1][m [95mlength[m = 0x8
 		[90m   LB.[95mTI[m = 0x3565
 		[90m   LB.[32m[  1.  1][m [95mposition[m = 0x0
 		[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
-		 isSigned;
-		LfBitfield @ 0x5d5bc:
+		 isSigned; // 0x8 bytes
+		/*+0x4*/   LfBitfield @ 0x5d5bc:
 		[90m   LB.[32m[  0.  1][m [95mlength[m = 0x8
 		[90m   LB.[95mTI[m = 0x3566
 		[90m   LB.[32m[  1.  1][m [95mposition[m = 0x8
 		[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
-		 opType;
-		LfBitfield @ 0x5d5b4:
+		 opType; // 0x8 bytes
+		/*+0x6*/   LfBitfield @ 0x5d5b4:
 		[90m   LB.[32m[  0.  1][m [95mlength[m = 0x8
 		[90m   LB.[95mTI[m = 0x3565
 		[90m   LB.[32m[  1.  1][m [95mposition[m = 0x0
 		[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
-		 lhsOwner;
-		LfBitfield @ 0x5d5bc:
+		 lhsOwner; // 0x8 bytes
+		/*+0x6*/   LfBitfield @ 0x5d5bc:
 		[90m   LB.[32m[  0.  1][m [95mlength[m = 0x8
 		[90m   LB.[95mTI[m = 0x3566
 		[90m   LB.[32m[  1.  1][m [95mposition[m = 0x8
 		[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
-		 rhsOwner;
+		 rhsOwner; // 0x8 bytes
 	};
 	enum /* __unnamed */ {
 		kGreaterThan = 0,
@@ -955,10 +955,10 @@ public:
 		kNumOps = 11,
 	};
 	struct YObjLang::MiscParam{ // not packed(0x8 bytes) TI: 0x3564
-		short m1;
-		short m2;
-		short m3;
-		short m4;
+		/*+0x0*/   short m1; // 0x2 bytes
+		/*+0x2*/   short m2; // 0x2 bytes
+		/*+0x4*/   short m3; // 0x2 bytes
+		/*+0x6*/   short m4; // 0x2 bytes
 	};
 	// TODO: Unknown nested type: <class 'tpi.LfUnion'>
 	// /*unpacked*/ union YObjLang::Param Param

@@ -4,20 +4,20 @@
 
 // Type: /*unpacked*/ struct GrafPtr;
 struct GrafPtr{ // not packed(0x8 bytes) TI: 0x344e
-	void * __ptr32 window;
-	void * __ptr32 dc;
+	/*+0x0*/   void * __ptr32 window;
+	/*+0x4*/   void * __ptr32 dc;
 };
 
 // Type: /*unpacked*/ struct Point (forward reference);
 struct Point{ // not packed(0x4 bytes) TI: 0x341c
-	short v;
-	short h;
+	/*+0x0*/   short v; // 0x2 bytes
+	/*+0x2*/   short h; // 0x2 bytes
 };
 
 // Type: /*unpacked*/ struct tagPOINT;
 struct tagPOINT{ // not packed(0x8 bytes) TI: 0x3269
-	long x;
-	long y;
+	/*+0x0*/   long x;
+	/*+0x4*/   long y;
 };
 
 // Type: void;
@@ -28,8 +28,8 @@ struct tagPOINT{ // not packed(0x8 bytes) TI: 0x3269
 
 // Type: /*unpacked*/ struct tagSIZE;
 struct tagSIZE{ // not packed(0x8 bytes) TI: 0x3441
-	long cx;
-	long cy;
+	/*+0x0*/   long cx;
+	/*+0x4*/   long cy;
 };
 
 // Type: short;
@@ -38,18 +38,18 @@ struct tagSIZE{ // not packed(0x8 bytes) TI: 0x3441
 
 // Type: /*unpacked*/ struct Rect (forward reference);
 struct Rect{ // not packed(0x8 bytes) TI: 0x3463
-	short top;
-	short left;
-	short bottom;
-	short right;
+	/*+0x0*/   short top; // 0x2 bytes
+	/*+0x2*/   short left; // 0x2 bytes
+	/*+0x4*/   short bottom; // 0x2 bytes
+	/*+0x6*/   short right; // 0x2 bytes
 };
 
 // Type: /*unpacked*/ struct tagRECT;
 struct tagRECT{ // not packed(0x10 bytes) TI: 0x3449
-	long left;
-	long top;
-	long right;
-	long bottom;
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
 };
 
 // Type: unsigned short;
@@ -58,24 +58,24 @@ struct tagRECT{ // not packed(0x10 bytes) TI: 0x3449
 
 // Type: /*unpacked*/ struct GrafPtr (forward reference);
 struct GrafPtr{ // not packed(0x8 bytes) TI: 0x344e
-	void * __ptr32 window;
-	void * __ptr32 dc;
+	/*+0x0*/   void * __ptr32 window;
+	/*+0x4*/   void * __ptr32 dc;
 };
 
 // Type: /*unpacked*/ struct tagRECT (forward reference);
 struct tagRECT{ // not packed(0x10 bytes) TI: 0x3449
-	long left;
-	long top;
-	long right;
-	long bottom;
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
 };
 
 // Type: unsigned long;
 
 // Type: /*unpacked*/ struct Point;
 struct Point{ // not packed(0x4 bytes) TI: 0x341c
-	short v;
-	short h;
+	/*+0x0*/   short v; // 0x2 bytes
+	/*+0x2*/   short h; // 0x2 bytes
 };
 
 // Type: unsigned long *;

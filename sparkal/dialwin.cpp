@@ -22,15 +22,15 @@ public:
 	void SetNewRadioStationVolume(long);
 	void CheckForRadioChange();
 protected:
-	long lFrameCount;
-	/*unpacked*/ class Radio *myRadio;
-	int32_t nRadioStationIndex;
-	long lRadioStationVolume;
-	/*unpacked*/ class CBackBuffer *myCompassImage;
-	/*packed*/ class basic_string<char> sCompassFile;
-	int32_t nLastCompassPosition;
-	/*packed*/ class MRect rectRadioStations;
-	/*packed*/ class MRect rectRadioStationVolume;
+	/*+0x74*/  long lFrameCount;
+	/*+0x78*/  /*unpacked*/ class Radio *myRadio;
+	/*+0x7c*/  int32_t nRadioStationIndex;
+	/*+0x80*/  long lRadioStationVolume;
+	/*+0x84*/  /*unpacked*/ class CBackBuffer *myCompassImage;
+	/*+0x88*/  /*packed*/ class basic_string<char> sCompassFile; // 0x8 bytes
+	/*+0x90*/  int32_t nLastCompassPosition;
+	/*+0x94*/  /*packed*/ class MRect rectRadioStations; // 0x10 bytes
+	/*+0xa4*/  /*packed*/ class MRect rectRadioStationVolume; // 0x10 bytes
 };
 
 // Type: /*packed*/ class MRect (forward reference);
@@ -125,8 +125,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -249,38 +249,38 @@ public:
 	void TurnOffSpotlightCommand(int32_t);
 	void TurnOnSpotlightCommand(int32_t);
 protected:
-	/*packed*/ struct CommandSystem *myCommandSystem;
-	/*packed*/ class BitmappedFont *myMoneyGuageFont;
-	/*unpacked*/ class CBackBuffer *mySecondImage;
-	/*unpacked*/ class CBackBuffer *myDamageImage;
-	/*unpacked*/ class CBackBuffer *myFuelLightImage;
-	/*unpacked*/ class CBackBuffer *myPointsLightImage;
-	/*unpacked*/ class CBackBuffer *myAltitudeHundredsImage;
-	/*unpacked*/ class CBackBuffer *mySpotlightBootImage;
-	/*unpacked*/ class CBackBuffer *mySpotlightBootBackImage;
-	int32_t nCurrentDamage;
-	long lCurrentFuelPercentage;
-	long lCurrentFuelLight;
-	/*packed*/ class DialHand dials[3];
-	/*packed*/ class MRect rectDials[3];
-	/*packed*/ class MRect rectMoneyFont;
-	long lCurrentMoney;
-	long lCurrentPoints;
-	int32_t bCurrentPointsOverLimit;
-	/*packed*/ class MPoint ptLastSpotlightPosition;
-	/*packed*/ class MRect rectSpotlightControl;
-	/*packed*/ class MRect rectSpotlightControlSet[4];
-	long lSpotlightControlCurrent;
+	/*+0x74*/  /*packed*/ struct CommandSystem *myCommandSystem;
+	/*+0x78*/  /*packed*/ class BitmappedFont *myMoneyGuageFont;
+	/*+0x7c*/  /*unpacked*/ class CBackBuffer *mySecondImage;
+	/*+0x80*/  /*unpacked*/ class CBackBuffer *myDamageImage;
+	/*+0x84*/  /*unpacked*/ class CBackBuffer *myFuelLightImage;
+	/*+0x88*/  /*unpacked*/ class CBackBuffer *myPointsLightImage;
+	/*+0x8c*/  /*unpacked*/ class CBackBuffer *myAltitudeHundredsImage;
+	/*+0x90*/  /*unpacked*/ class CBackBuffer *mySpotlightBootImage;
+	/*+0x94*/  /*unpacked*/ class CBackBuffer *mySpotlightBootBackImage;
+	/*+0x98*/  int32_t nCurrentDamage;
+	/*+0x9c*/  long lCurrentFuelPercentage;
+	/*+0xa0*/  long lCurrentFuelLight;
+	/*+0xa4*/  /*packed*/ class DialHand dials[3]; // 0x9c bytes
+	/*+0x140*/ /*packed*/ class MRect rectDials[3]; // 0x30 bytes
+	/*+0x170*/ /*packed*/ class MRect rectMoneyFont; // 0x10 bytes
+	/*+0x180*/ long lCurrentMoney;
+	/*+0x184*/ long lCurrentPoints;
+	/*+0x188*/ int32_t bCurrentPointsOverLimit;
+	/*+0x18c*/ /*packed*/ class MPoint ptLastSpotlightPosition; // 0x8 bytes
+	/*+0x194*/ /*packed*/ class MRect rectSpotlightControl; // 0x10 bytes
+	/*+0x1a4*/ /*packed*/ class MRect rectSpotlightControlSet[4]; // 0x40 bytes
+	/*+0x1e4*/ long lSpotlightControlCurrent;
 };
 
 // Type: /*packed*/ struct CommandSystem (forward reference);
 struct CommandSystem{ // packed(0xaa8 bytes) TI: 0x12e4
-	/*packed*/ struct Command keyboardCommands[100];
-	/*packed*/ class CharList keyboardCommandList;
-	/*packed*/ class list<Shortcut> commandShortcuts;
-	unsigned char chCommandKeyboardArray[2048];
-	unsigned char chCommandJoystickArray[4][14];
-	long joystickCommands[100];
+	/*+0x0*/   /*packed*/ struct Command keyboardCommands[100]; // 0xc8 bytes
+	/*+0xc8*/  /*packed*/ class CharList keyboardCommandList; // 0x10 bytes
+	/*+0xd8*/  /*packed*/ class list<Shortcut> commandShortcuts; // 0x8 bytes
+	/*+0xe0*/  unsigned char chCommandKeyboardArray[2048]; // 0x800 bytes
+	/*+0x8e0*/ unsigned char chCommandJoystickArray[4][14]; // 0x38 bytes
+	/*+0x918*/ long joystickCommands[100]; // 0x190 bytes
 	void CommandSystem();
 	void Initialize();
 	void ClearAllCommands();
@@ -359,27 +359,27 @@ protected:
 	void DrawPassengers();
 	void GetRectOfPassengerGraphic(int32_t, int32_t, /*packed*/ class MRect&);
 	int32_t DoesPositionHitPassenger(long, long, long&);
-	enum PassengerWindow::Position nPositionCurrent;
-	int32_t nHeightOfWindowToShow;
-	int32_t nYPositionOfWindowWhenDown;
-	/*packed*/ class MTimer timerForPositionChange;
-	int32_t nChangingPosition;
-	long lPassengerDraggedID;
-	/*packed*/ class MPoint ptLastCursorPosition;
-	/*unpacked*/ class CBackBuffer *myPassengerImage;
-	/*packed*/ class basic_string<char> sPassengerFile;
+	/*+0x74*/  enum PassengerWindow::Position nPositionCurrent;
+	/*+0x78*/  int32_t nHeightOfWindowToShow;
+	/*+0x7c*/  int32_t nYPositionOfWindowWhenDown;
+	/*+0x80*/  /*packed*/ class MTimer timerForPositionChange; // 0x10 bytes
+	/*+0x90*/  int32_t nChangingPosition;
+	/*+0x94*/  long lPassengerDraggedID;
+	/*+0x98*/  /*packed*/ class MPoint ptLastCursorPosition; // 0x8 bytes
+	/*+0xa0*/  /*unpacked*/ class CBackBuffer *myPassengerImage;
+	/*+0xa4*/  /*packed*/ class basic_string<char> sPassengerFile; // 0x8 bytes
 };
 
 // Type: /*packed*/ struct tagHeliPassengerData (forward reference);
 struct tagHeliPassengerData{ // packed(0x15c bytes) TI: 0x2a7a
-	long lPassengerDataChanged;
-	long lSeatsTotal;
-	long lSeatsUsed;
-	long lDoubleSeatsTotal;
-	long lDoubleSeatsUsed;
-	long lRowWidth;
-	long lPassengerCount;
-	/*packed*/ struct tagPassengerInfo passengers[16];
+	/*+0x0*/   long lPassengerDataChanged;
+	/*+0x4*/   long lSeatsTotal;
+	/*+0x8*/   long lSeatsUsed;
+	/*+0xc*/   long lDoubleSeatsTotal;
+	/*+0x10*/  long lDoubleSeatsUsed;
+	/*+0x14*/  long lRowWidth;
+	/*+0x18*/  long lPassengerCount;
+	/*+0x1c*/  /*packed*/ struct tagPassengerInfo passengers[16]; // 0x140 bytes
 };
 
 // Type: /*packed*/ class MRect;
@@ -468,32 +468,32 @@ public:
 	virtual void CreateAutoMessageSelectionPopupWindow(int32_t, int32_t, /*packed*/ class MPoint&); // vtable+0xcc
 	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32) /* override */;
 	virtual int32_t GetStringIDForVehicleName(int32_t); // vtable+0xd0
-	/*unpacked*/ class CBackBuffer *myButtonImage;
-	int32_t bCurrentMissionFilter;
-	int32_t bOtherMissionFilter;
-	int32_t nTrackingButton;
-	int32_t nCurrentAutoID;
-	long lCurrentMissionID;
-	/*packed*/ class MFont fontText;
-	/*packed*/ class MRect rectButtons[6];
-	/*packed*/ class MRect rectMissionText;
+	/*+0x74*/  /*unpacked*/ class CBackBuffer *myButtonImage;
+	/*+0x78*/  int32_t bCurrentMissionFilter;
+	/*+0x7c*/  int32_t bOtherMissionFilter;
+	/*+0x80*/  int32_t nTrackingButton;
+	/*+0x84*/  int32_t nCurrentAutoID;
+	/*+0x88*/  long lCurrentMissionID;
+	/*+0x8c*/  /*packed*/ class MFont fontText; // 0x1c bytes
+	/*+0xa8*/  /*packed*/ class MRect rectButtons[6]; // 0x60 bytes
+	/*+0x108*/ /*packed*/ class MRect rectMissionText; // 0x10 bytes
 };
 
 // Type: /*packed*/ struct MISSION_DATA (forward reference);
 struct MISSION_DATA{ // packed(0xd4 bytes) TI: 0x31c4
-	char mtext[32];
-	long type_ctr;
-	long key;
-	/*packed*/ struct Point2d maploc;
-	/*packed*/ struct Point2d destmaploc;
-	/*packed*/ struct Point2d pickuploc;
-	int32_t timer;
-	long money_bonus;
-	long points_bonus;
-	long flags;
-	long type;
-	long state;
-	/*packed*/ struct __unnamed mdata;
+	/*+0x0*/   char mtext[32]; // 0x20 bytes
+	/*+0x20*/  long type_ctr;
+	/*+0x24*/  long key;
+	/*+0x28*/  /*packed*/ struct Point2d maploc; // 0x8 bytes
+	/*+0x30*/  /*packed*/ struct Point2d destmaploc; // 0x8 bytes
+	/*+0x38*/  /*packed*/ struct Point2d pickuploc; // 0x8 bytes
+	/*+0x40*/  int32_t timer;
+	/*+0x44*/  long money_bonus;
+	/*+0x48*/  long points_bonus;
+	/*+0x4c*/  long flags;
+	/*+0x50*/  long type;
+	/*+0x54*/  long state;
+	/*+0x58*/  /*packed*/ struct __unnamed mdata; // 0x7c bytes
 };
 
 // Type: void * __ptr32;
@@ -565,13 +565,13 @@ protected:
 	void DoCurrentControlEnd();
 	void DrawBucketWaterGuage();
 	void DrawTeargasUsage();
-	/*packed*/ class MRect rectControls[4];
-	long lCurrentSelectedControl;
-	/*packed*/ struct CommandSystem *myCommandSystem;
-	/*unpacked*/ class CBackBuffer *myBucketWaterGuageImage;
-	/*unpacked*/ class CBackBuffer *myButtonImage;
-	long lLastBucketWaterGuageLevel;
-	long lLastTeargasCount;
+	/*+0x74*/  /*packed*/ class MRect rectControls[4]; // 0x40 bytes
+	/*+0xb4*/  long lCurrentSelectedControl;
+	/*+0xb8*/  /*packed*/ struct CommandSystem *myCommandSystem;
+	/*+0xbc*/  /*unpacked*/ class CBackBuffer *myBucketWaterGuageImage;
+	/*+0xc0*/  /*unpacked*/ class CBackBuffer *myButtonImage;
+	/*+0xc4*/  long lLastBucketWaterGuageLevel;
+	/*+0xc8*/  long lLastTeargasCount;
 };
 
 // Type: uint32_t;
@@ -599,33 +599,33 @@ public:
 	int32_t HasChangedSinceLastDraw();
 	void GetBoundingRect(/*packed*/ class MRect&);
 	void CalculateCurrentPosition();
-	int32_t bHasChangedSinceLastDraw;
-	long lCurrentValue;
-	enum DialHand::DialDirection nDialDirection;
-	long lMaxValue;
-	long lStartAngle;
-	long lDialLength;
-	long lDialWidth;
-	float fAnglePerValue;
-	/*packed*/ class MPoint ptPosition;
-	/*packed*/ class MPoint ptEndPosition;
-	int32_t nColorDial;
+	/*+0x0*/   int32_t bHasChangedSinceLastDraw;
+	/*+0x4*/   long lCurrentValue;
+	/*+0x8*/   enum DialHand::DialDirection nDialDirection;
+	/*+0xc*/   long lMaxValue;
+	/*+0x10*/  long lStartAngle;
+	/*+0x14*/  long lDialLength;
+	/*+0x18*/  long lDialWidth;
+	/*+0x1c*/  float fAnglePerValue;
+	/*+0x20*/  /*packed*/ class MPoint ptPosition; // 0x8 bytes
+	/*+0x28*/  /*packed*/ class MPoint ptEndPosition; // 0x8 bytes
+	/*+0x30*/  int32_t nColorDial;
 };
 
 // Type: /*packed*/ struct SparkalRect;
 struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
-	long left;
-	long top;
-	long right;
-	long bottom;
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
 	void SparkalRect(long, long, long, long);
 	void SparkalRect();
 };
 
 // Type: /*packed*/ struct SparkalPoint;
 struct SparkalPoint{ // packed(0x8 bytes) TI: 0x1a54
-	long x;
-	long y;
+	/*+0x0*/   long x;
+	/*+0x4*/   long y;
 	void SparkalPoint(long, long);
 	void SparkalPoint();
 };
@@ -681,21 +681,21 @@ protected:
 	virtual int32_t ModifyString(long, /*packed*/ class basic_string<char>&); // vtable+0x14c
 	virtual void SetScrollBarValue(); // vtable+0x150
 	virtual void SetScrollBarSizes(); // vtable+0x154
-	/*packed*/ class list<basic_string<char>> myStringList;
-	/*packed*/ struct SparkalColor colorFont;
-	/*packed*/ struct SparkalColor colorFontHighlighted;
-	int32_t nBackgroundIndex;
-	int32_t nBackgroundIndexHighlighted;
-	/*packed*/ class MFont fontText;
-	unsigned long nTextDrawStyle;
-	long lCurrentSelection;
-	long lVisibleLines;
-	long lFirstVisibleLine;
-	long lLineHeight;
-	int32_t bAlwaysSort;
-	/*packed*/ class ScrollBarWindow *myVerticalScrollBarWindow;
-	/*packed*/ class ScrollBarWindow *myHorizontalScrollBarWindow;
-	int32_t bBusySettingSelection;
+	/*+0x74*/  /*packed*/ class list<basic_string<char>> myStringList; // 0x8 bytes
+	/*+0x7c*/  /*packed*/ struct SparkalColor colorFont;
+	/*+0x80*/  /*packed*/ struct SparkalColor colorFontHighlighted;
+	/*+0x84*/  int32_t nBackgroundIndex;
+	/*+0x88*/  int32_t nBackgroundIndexHighlighted;
+	/*+0x8c*/  /*packed*/ class MFont fontText; // 0x1c bytes
+	/*+0xa8*/  unsigned long nTextDrawStyle;
+	/*+0xac*/  long lCurrentSelection;
+	/*+0xb0*/  long lVisibleLines;
+	/*+0xb4*/  long lFirstVisibleLine;
+	/*+0xb8*/  long lLineHeight;
+	/*+0xbc*/  int32_t bAlwaysSort;
+	/*+0xc0*/  /*packed*/ class ScrollBarWindow *myVerticalScrollBarWindow;
+	/*+0xc4*/  /*packed*/ class ScrollBarWindow *myHorizontalScrollBarWindow;
+	/*+0xc8*/  int32_t bBusySettingSelection;
 };
 
 

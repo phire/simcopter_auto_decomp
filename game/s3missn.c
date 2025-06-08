@@ -8,130 +8,130 @@
 
 // Type: /*packed*/ struct _dPoint2d (forward reference);
 struct _dPoint2d{ // packed(0x10 bytes) TI: 0x2766
-	double x;
-	double z;
+	/*+0x0*/   double x; // 0x8 bytes
+	/*+0x8*/   double z; // 0x8 bytes
 };
 
 // Type: /*packed*/ struct _MISSION_STATICS;
 struct _MISSION_STATICS{ // packed(0x1910 bytes) TI: 0x31da
-	long crime_ctr;
-	long fire_ctr;
-	long medevac_ctr;
-	long plane_ctr;
-	long rescue_ctr;
-	long riot_ctr;
-	long speeder_ctr;
-	long traffic_ctr;
-	long train_ctr;
-	long transport_ctr;
-	long num_active_missions;
-	long num_delayed_missions;
-	long key_ctr;
-	/*packed*/ struct MISSION_DATA *curr_mission;
-	/*packed*/ struct MISSION_DATA missions[30];
+	/*+0x0*/   long crime_ctr;
+	/*+0x4*/   long fire_ctr;
+	/*+0x8*/   long medevac_ctr;
+	/*+0xc*/   long plane_ctr;
+	/*+0x10*/  long rescue_ctr;
+	/*+0x14*/  long riot_ctr;
+	/*+0x18*/  long speeder_ctr;
+	/*+0x1c*/  long traffic_ctr;
+	/*+0x20*/  long train_ctr;
+	/*+0x24*/  long transport_ctr;
+	/*+0x28*/  long num_active_missions;
+	/*+0x2c*/  long num_delayed_missions;
+	/*+0x30*/  long key_ctr;
+	/*+0x34*/  /*packed*/ struct MISSION_DATA *curr_mission;
+	/*+0x38*/  /*packed*/ struct MISSION_DATA missions[30]; // 0x18d8 bytes
 };
 
 // Type: /*packed*/ struct tagLogString;
 struct tagLogString{ // packed(0x14 bytes) TI: 0x31dc
-	unsigned long nType;
-	unsigned long nTime;
-	unsigned long nMissionID;
-	char * szLogString;
-	char szData[4];
+	/*+0x0*/   unsigned long nType;
+	/*+0x4*/   unsigned long nTime;
+	/*+0x8*/   unsigned long nMissionID;
+	/*+0xc*/   char * szLogString;
+	/*+0x10*/  char szData[4];
 };
 
 // Type: void;
 
 // Type: /*packed*/ struct tagCitySettings (forward reference);
 struct tagCitySettings{ // packed(0x24 bytes) TI: 0x26eb
-	long lDifficulty;
-	long lMissionFrequencyFire;
-	long lMissionFrequencyCrime;
-	long lMissionFrequencyRescue;
-	long lMissionFrequencyRiot;
-	long lMissionFrequencyTraffic;
-	long lMissionFrequencyMedEvac;
-	long lMissionFrequencyTransport;
-	long lDaytime;
+	/*+0x0*/   long lDifficulty;
+	/*+0x4*/   long lMissionFrequencyFire;
+	/*+0x8*/   long lMissionFrequencyCrime;
+	/*+0xc*/   long lMissionFrequencyRescue;
+	/*+0x10*/  long lMissionFrequencyRiot;
+	/*+0x14*/  long lMissionFrequencyTraffic;
+	/*+0x18*/  long lMissionFrequencyMedEvac;
+	/*+0x1c*/  long lMissionFrequencyTransport;
+	/*+0x20*/  long lDaytime;
 };
 
 // Type: float;
 
 // Type: /*packed*/ struct tagCitySettings;
 struct tagCitySettings{ // packed(0x24 bytes) TI: 0x26eb
-	long lDifficulty;
-	long lMissionFrequencyFire;
-	long lMissionFrequencyCrime;
-	long lMissionFrequencyRescue;
-	long lMissionFrequencyRiot;
-	long lMissionFrequencyTraffic;
-	long lMissionFrequencyMedEvac;
-	long lMissionFrequencyTransport;
-	long lDaytime;
+	/*+0x0*/   long lDifficulty;
+	/*+0x4*/   long lMissionFrequencyFire;
+	/*+0x8*/   long lMissionFrequencyCrime;
+	/*+0xc*/   long lMissionFrequencyRescue;
+	/*+0x10*/  long lMissionFrequencyRiot;
+	/*+0x14*/  long lMissionFrequencyTraffic;
+	/*+0x18*/  long lMissionFrequencyMedEvac;
+	/*+0x1c*/  long lMissionFrequencyTransport;
+	/*+0x20*/  long lDaytime;
 };
 
 // Type: /*packed*/ struct MISSION_DATA (forward reference);
 struct MISSION_DATA{ // packed(0xd4 bytes) TI: 0x31c4
-	char mtext[32];
-	long type_ctr;
-	long key;
-	/*packed*/ struct Point2d maploc;
-	/*packed*/ struct Point2d destmaploc;
-	/*packed*/ struct Point2d pickuploc;
-	int32_t timer;
-	long money_bonus;
-	long points_bonus;
-	long flags;
-	long type;
-	long state;
-	/*packed*/ struct __unnamed mdata;
+	/*+0x0*/   char mtext[32]; // 0x20 bytes
+	/*+0x20*/  long type_ctr;
+	/*+0x24*/  long key;
+	/*+0x28*/  /*packed*/ struct Point2d maploc; // 0x8 bytes
+	/*+0x30*/  /*packed*/ struct Point2d destmaploc; // 0x8 bytes
+	/*+0x38*/  /*packed*/ struct Point2d pickuploc; // 0x8 bytes
+	/*+0x40*/  int32_t timer;
+	/*+0x44*/  long money_bonus;
+	/*+0x48*/  long points_bonus;
+	/*+0x4c*/  long flags;
+	/*+0x50*/  long type;
+	/*+0x54*/  long state;
+	/*+0x58*/  /*packed*/ struct __unnamed mdata; // 0x7c bytes
 };
 
 // Type: /*packed*/ struct _CELL_FIRE_DATA (forward reference);
 struct _CELL_FIRE_DATA{ // packed(0x8 bytes) TI: 0x303d
-	/*packed*/ struct _CELL_INFO *cptr;
-	long fire_count;
+	/*+0x0*/   /*packed*/ struct _CELL_INFO *cptr;
+	/*+0x4*/   long fire_count;
 };
 
 // Type: /*packed*/ struct _DYOBJ_INST (forward reference);
 struct _DYOBJ_INST{ // packed(0x64 bytes) TI: 0x1deb
-	/*packed*/ struct _DYOBJ_INST *next;
-	/*packed*/ struct _DYOBJ_INST *vnext;
-	void * __ptr32 mesh;
-	short flags;
-	short user1;
-	long radius;
-	long height;
-	/*packed*/ struct Point3d loc;
-	int32_t matrix[4][4];
+	/*+0x0*/   /*packed*/ struct _DYOBJ_INST *next;
+	/*+0x4*/   /*packed*/ struct _DYOBJ_INST *vnext;
+	/*+0x8*/   void * __ptr32 mesh;
+	/*+0xc*/   short flags; // 0x2 bytes
+	/*+0xe*/   short user1; // 0x2 bytes
+	/*+0x10*/  long radius;
+	/*+0x14*/  long height;
+	/*+0x18*/  /*packed*/ struct Point3d loc; // 0xc bytes
+	/*+0x24*/  int32_t matrix[4][4]; // 0x40 bytes
 };
 
 // Type: /*packed*/ struct Point2d (forward reference);
 struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
-	int32_t x;
-	int32_t y;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
 };
 
 // Type: /*packed*/ struct _MISSION_PARMS (forward reference);
 struct _MISSION_PARMS{ // packed(0x18 bytes) TI: 0x307d
-	long op;
-	long id;
-	/*packed*/ struct Point2d maploc;
-	long i2num;
-	long flags;
+	/*+0x0*/   long op;
+	/*+0x4*/   long id;
+	/*+0x8*/   /*packed*/ struct Point2d maploc; // 0x8 bytes
+	/*+0x10*/  long i2num;
+	/*+0x14*/  long flags;
 };
 
 // Type: /*packed*/ struct _CELL_INFO (forward reference);
 struct _CELL_INFO{ // packed(0x18 bytes) TI: 0x1b03
-	short flags;
-	short x;
-	short y;
-	short z;
-	short size;
-	short ctr;
-	/*packed*/ struct _STOBJ_INST *stptr;
-	/*packed*/ struct _DYOBJ_INST *dyptr;
-	/*packed*/ struct _DYOBJ_INST *vwptr;
+	/*+0x0*/   short flags; // 0x2 bytes
+	/*+0x2*/   short x; // 0x2 bytes
+	/*+0x4*/   short y; // 0x2 bytes
+	/*+0x6*/   short z; // 0x2 bytes
+	/*+0x8*/   short size; // 0x2 bytes
+	/*+0xa*/   short ctr; // 0x2 bytes
+	/*+0xc*/   /*packed*/ struct _STOBJ_INST *stptr;
+	/*+0x10*/  /*packed*/ struct _DYOBJ_INST *dyptr;
+	/*+0x14*/  /*packed*/ struct _DYOBJ_INST *vwptr;
 };
 
 // Type: char *;

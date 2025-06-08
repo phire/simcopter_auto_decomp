@@ -6,9 +6,9 @@
 
 // Type: /*packed*/ struct Point3d;
 struct Point3d{ // packed(0xc bytes) TI: 0x18b0
-	int32_t x;
-	int32_t y;
-	int32_t z;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
+	/*+0x8*/   int32_t z;
 };
 
 // Type: int32_t;

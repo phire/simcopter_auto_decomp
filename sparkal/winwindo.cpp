@@ -33,18 +33,18 @@ public:
 	virtual unsigned long SwapBuffer(); // vtable+0x28
 	virtual void UpdatePalette(long, long, /*packed*/ struct SparkalColor*); // vtable+0x2c
 protected:
-	long mHeight;
-	long mWidth;
-	unsigned long mStyle;
-	/*unpacked*/ class ICommander *mpCommander;
-	/*unpacked*/ class ScreenBuffer *mpBackBuffer;
-	void * __ptr32 mWindow;
+	/*+0x4*/   long mHeight;
+	/*+0x8*/   long mWidth;
+	/*+0xc*/   unsigned long mStyle;
+	/*+0x10*/  /*unpacked*/ class ICommander *mpCommander;
+	/*+0x14*/  /*unpacked*/ class ScreenBuffer *mpBackBuffer;
+	/*+0x18*/  void * __ptr32 mWindow;
 	// calltype: NearStd
 	virtual long MySparkalWindowProc(void * __ptr32, uint32_t, uint32_t, long); // vtable+0x30
-	void * __ptr32 mPalette;
-	void * __ptr32 mhCurrentCursor;
-	void * __ptr32 mhCustomCursor;
-	void * __ptr32 mCursors[16];
+	/*+0x1c*/  void * __ptr32 mPalette;
+	/*+0x20*/  void * __ptr32 mhCurrentCursor;
+	/*+0x24*/  void * __ptr32 mhCustomCursor;
+	/*+0x28*/  void * __ptr32 mCursors[16]; // 0x40 bytes
 };
 
 // Type: int32_t;
@@ -55,10 +55,10 @@ protected:
 
 // Type: /*packed*/ struct SparkalColor (forward reference);
 struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
-	unsigned char Blue;
-	unsigned char Green;
-	unsigned char Red;
-	unsigned char Padding;
+	/*+0x0*/   unsigned char Blue; // 0x1 bytes
+	/*+0x1*/   unsigned char Green; // 0x1 bytes
+	/*+0x2*/   unsigned char Red; // 0x1 bytes
+	/*+0x3*/   unsigned char Padding; // 0x1 bytes
 	void SparkalColor(unsigned char, unsigned char, unsigned char);
 	void SparkalColor();
 };
@@ -67,31 +67,31 @@ struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 
 // Type: /*packed*/ struct tagRECT;
 struct tagRECT{ // packed(0x10 bytes) TI: 0x13c4
-	long left;
-	long top;
-	long right;
-	long bottom;
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
 };
 
 // Type: /*packed*/ struct tagWNDCLASSA;
 struct tagWNDCLASSA{ // packed(0x28 bytes) TI: 0x26d3
-	uint32_t style;
-	long (*lpfnWndProc)(void * __ptr32, uint32_t, uint32_t, long);
-	int32_t cbClsExtra;
-	int32_t cbWndExtra;
-	void * __ptr32 hInstance;
-	void * __ptr32 hIcon;
-	void * __ptr32 hCursor;
-	void * __ptr32 hbrBackground;
-	char * lpszMenuName;
-	char * lpszClassName;
+	/*+0x0*/   uint32_t style;
+	/*+0x4*/   long (*lpfnWndProc)(void * __ptr32, uint32_t, uint32_t, long);
+	/*+0x8*/   int32_t cbClsExtra;
+	/*+0xc*/   int32_t cbWndExtra;
+	/*+0x10*/  void * __ptr32 hInstance;
+	/*+0x14*/  void * __ptr32 hIcon;
+	/*+0x18*/  void * __ptr32 hCursor;
+	/*+0x1c*/  void * __ptr32 hbrBackground;
+	/*+0x20*/  char * lpszMenuName;
+	/*+0x24*/  char * lpszClassName;
 };
 
 // Type: /*packed*/ struct CSparkalWindow::__ctor::__unnamed;
 struct CSparkalWindow::__ctor::__unnamed{ // packed(0x404 bytes) TI: 0x26d4
-	unsigned short Version;
-	unsigned short NumberOfEntries;
-	/*packed*/ struct tagPALETTEENTRY aEntries[256];
+	/*+0x0*/   unsigned short Version; // 0x2 bytes
+	/*+0x2*/   unsigned short NumberOfEntries; // 0x2 bytes
+	/*+0x4*/   /*packed*/ struct tagPALETTEENTRY aEntries[256]; // 0x400 bytes
 };
 
 // Type: void * __ptr32;
@@ -104,34 +104,34 @@ struct CSparkalWindow::__ctor::__unnamed{ // packed(0x404 bytes) TI: 0x26d4
 
 // Type: /*packed*/ struct tagSIZE;
 struct tagSIZE{ // packed(0x8 bytes) TI: 0x21e7
-	long cx;
-	long cy;
+	/*+0x0*/   long cx;
+	/*+0x4*/   long cy;
 };
 
 // Type: /*packed*/ struct tagPALETTEENTRY (forward reference);
 struct tagPALETTEENTRY{ // packed(0x4 bytes) TI: 0x1be6
-	unsigned char peRed;
-	unsigned char peGreen;
-	unsigned char peBlue;
-	unsigned char peFlags;
+	/*+0x0*/   unsigned char peRed; // 0x1 bytes
+	/*+0x1*/   unsigned char peGreen; // 0x1 bytes
+	/*+0x2*/   unsigned char peBlue; // 0x1 bytes
+	/*+0x3*/   unsigned char peFlags; // 0x1 bytes
 };
 
 // Type: unsigned char;
 
 // Type: /*packed*/ struct CheckIdentityPalette::__unnamed;
 struct CheckIdentityPalette::__unnamed{ // packed(0x428 bytes) TI: 0x26d9
-	/*packed*/ struct tagBITMAPINFOHEADER Header;
-	/*packed*/ struct tagRGBQUAD Colors[256];
+	/*+0x0*/   /*packed*/ struct tagBITMAPINFOHEADER Header; // 0x28 bytes
+	/*+0x28*/  /*packed*/ struct tagRGBQUAD Colors[256]; // 0x400 bytes
 };
 
 // Type: /*packed*/ struct tagPAINTSTRUCT;
 struct tagPAINTSTRUCT{ // packed(0x40 bytes) TI: 0x124b
-	void * __ptr32 hdc;
-	int32_t fErase;
-	/*packed*/ struct tagRECT rcPaint;
-	int32_t fRestore;
-	int32_t fIncUpdate;
-	unsigned char rgbReserved[32];
+	/*+0x0*/   void * __ptr32 hdc;
+	/*+0x4*/   int32_t fErase;
+	/*+0x8*/   /*packed*/ struct tagRECT rcPaint; // 0x10 bytes
+	/*+0x18*/  int32_t fRestore;
+	/*+0x1c*/  int32_t fIncUpdate;
+	/*+0x20*/  unsigned char rgbReserved[32]; // 0x20 bytes
 };
 
 

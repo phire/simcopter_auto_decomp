@@ -4,10 +4,10 @@
 
 // Type: /*packed*/ struct _BSPtree (forward reference);
 struct _BSPtree{ // packed(0x1c bytes) TI: 0x2ec5
-	/*packed*/ struct _FaceHdr *Polygon;
-	/*packed*/ struct _PlaneType Plane;
-	/*packed*/ struct _BSPtree *infront;
-	/*packed*/ struct _BSPtree *behind;
+	/*+0x0*/   /*packed*/ struct _FaceHdr *Polygon;
+	/*+0x4*/   /*packed*/ struct _PlaneType Plane; // 0x10 bytes
+	/*+0x14*/  /*packed*/ struct _BSPtree *infront;
+	/*+0x18*/  /*packed*/ struct _BSPtree *behind;
 };
 
 // Type: unsigned short;
@@ -18,66 +18,66 @@ struct _BSPtree{ // packed(0x1c bytes) TI: 0x2ec5
 
 // Type: /*packed*/ struct ObjInfo (forward reference);
 struct ObjInfo{ // packed(0x1c bytes) TI: 0x2f03
-	int32_t TreeCount;
-	int32_t VertCount;
-	int32_t Face2dCnt;
-	int32_t Face2dSub;
-	int32_t FaceCount;
-	int32_t XYZCount;
-	int32_t Untextured;
+	/*+0x0*/   int32_t TreeCount;
+	/*+0x4*/   int32_t VertCount;
+	/*+0x8*/   int32_t Face2dCnt;
+	/*+0xc*/   int32_t Face2dSub;
+	/*+0x10*/  int32_t FaceCount;
+	/*+0x14*/  int32_t XYZCount;
+	/*+0x18*/  int32_t Untextured;
 };
 
 // Type: /*packed*/ struct GEOM_Resource (forward reference);
 struct GEOM_Resource{ // packed(0x18 bytes) TI: 0x2f05
-	/*packed*/ struct VRResource res;
-	int32_t count;
-	int32_t barrymempool;
-	int32_t pointer[0];
+	/*+0x0*/   /*packed*/ struct VRResource res; // 0x10 bytes
+	/*+0x10*/  int32_t count;
+	/*+0x14*/  int32_t barrymempool;
+	/*+0x18*/  int32_t pointer[0]; // 0x0 bytes
 };
 
 // Type: /*packed*/ struct VRResource (forward reference);
 struct VRResource{ // packed(0x10 bytes) TI: 0x18ae
-	char * mem;
-	int32_t mempoolid;
-	int32_t type;
-	int32_t entry;
+	/*+0x0*/   char * mem;
+	/*+0x4*/   int32_t mempoolid;
+	/*+0x8*/   int32_t type;
+	/*+0xc*/   int32_t entry;
 };
 
 // Type: /*packed*/ struct VRMemPool (forward reference);
 struct VRMemPool{ // packed(0x20 bytes) TI: 0x2453
-	int32_t ObjCount;
-	int32_t entry;
-	char * Reset_Xf;
-	char * Reset_2d;
-	char * Current_Xf;
-	char * Current_2d;
-	char * End_Xf;
-	char * End_2d;
+	/*+0x0*/   int32_t ObjCount;
+	/*+0x4*/   int32_t entry;
+	/*+0x8*/   char * Reset_Xf;
+	/*+0xc*/   char * Reset_2d;
+	/*+0x10*/  char * Current_Xf;
+	/*+0x14*/  char * Current_2d;
+	/*+0x18*/  char * End_Xf;
+	/*+0x1c*/  char * End_2d;
 };
 
 // Type: void;
 
 // Type: /*packed*/ struct Point3d (forward reference);
 struct Point3d{ // packed(0xc bytes) TI: 0x18b0
-	int32_t x;
-	int32_t y;
-	int32_t z;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
+	/*+0x8*/   int32_t z;
 };
 
 // Type: /*packed*/ struct GameObjectHdrType;
 struct GameObjectHdrType{ // packed(0x7c bytes) TI: 0x2f0f
-	char Id[4];
-	long Size;
-	short NVerts;
-	short NFaces;
-	unsigned long Attrib;
-	long Radius;
-	long YRadius;
-	char ObjName[24];
-	char TextureFile[64];
-	long ObjAnimCnt;
-	long ObjAnimPtr;
-	int32_t ID;
+	/*+0x0*/   char Id[4];
+	/*+0x4*/   long Size;
+	/*+0x8*/   short NVerts; // 0x2 bytes
+	/*+0xa*/   short NFaces; // 0x2 bytes
+	/*+0xc*/   unsigned long Attrib;
+	/*+0x10*/  long Radius;
+	/*+0x14*/  long YRadius;
+	/*+0x18*/  char ObjName[24]; // 0x18 bytes
+	/*+0x30*/  char TextureFile[64]; // 0x40 bytes
+	/*+0x70*/  long ObjAnimCnt;
+	/*+0x74*/  long ObjAnimPtr;
+	/*+0x78*/  int32_t ID;
 };
 
 // Type: int32_t *;
@@ -86,112 +86,112 @@ struct GameObjectHdrType{ // packed(0x7c bytes) TI: 0x2f0f
 
 // Type: /*packed*/ struct FileBSPTreeHdrType;
 struct FileBSPTreeHdrType{ // packed(0xa bytes) TI: 0x2f12
-	char Id[4];
-	long Size;
-	short NNodes;
+	/*+0x0*/   char Id[4];
+	/*+0x4*/   long Size;
+	/*+0x8*/   short NNodes; // 0x2 bytes
 };
 
 // Type: /*packed*/ struct _FaceHdr (forward reference);
 struct _FaceHdr{ // packed(0x30 bytes) TI: 0x2e99
-	/*packed*/ struct _FaceHdr *NextFace;
-	int32_t Nverts;
-	int32_t Attrib1;
-	int32_t Attrib2;
-	int32_t Plotter;
-	int32_t Count2d;
-	/*packed*/ struct Clip3d *Verts2d;
-	int32_t PlyVerts;
-	/*packed*/ struct MapVert *MapVerts;
-	int32_t Bitmap;
-	/*packed*/ struct MapVert *Barrys;
-	/*packed*/ struct Project3d *Normal;
+	/*+0x0*/   /*packed*/ struct _FaceHdr *NextFace;
+	/*+0x4*/   int32_t Nverts;
+	/*+0x8*/   int32_t Attrib1;
+	/*+0xc*/   int32_t Attrib2;
+	/*+0x10*/  int32_t Plotter;
+	/*+0x14*/  int32_t Count2d;
+	/*+0x18*/  /*packed*/ struct Clip3d *Verts2d;
+	/*+0x1c*/  int32_t PlyVerts;
+	/*+0x20*/  /*packed*/ struct MapVert *MapVerts;
+	/*+0x24*/  int32_t Bitmap;
+	/*+0x28*/  /*packed*/ struct MapVert *Barrys;
+	/*+0x2c*/  /*packed*/ struct Project3d *Normal;
 };
 
 // Type: /*packed*/ struct FileFaceHdrType;
 struct FileFaceHdrType{ // packed(0x15 bytes) TI: 0x2f14
-	char Id[4];
-	long Size;
-	short NVerts;
-	unsigned long Attrib;
-	unsigned long AuxAttrib;
-	unsigned char Color;
-	short TextureId;
+	/*+0x0*/   char Id[4];
+	/*+0x4*/   long Size;
+	/*+0x8*/   short NVerts; // 0x2 bytes
+	/*+0xa*/   unsigned long Attrib;
+	/*+0xe*/   unsigned long AuxAttrib;
+	/*+0x12*/  unsigned char Color; // 0x1 bytes
+	/*+0x13*/  short TextureId; // 0x2 bytes
 };
 
 // Type: /*packed*/ struct ObjectHdr (forward reference);
 struct ObjectHdr{ // packed(0x90 bytes) TI: 0x2ebb
-	int32_t Attrib;
-	int32_t NVerts;
-	/*packed*/ struct Point3d *VertsPtr;
-	int32_t MemPool;
-	int32_t NFaces;
-	int32_t PolyVerts;
-	/*packed*/ struct Point3d CenterOrg;
-	/*packed*/ struct Point3d Center;
-	int32_t Radius;
-	/*packed*/ struct _BSPtree *bsptree;
-	int32_t StaticCnt;
-	int32_t StaticPtr;
-	int32_t MiscReg1;
-	int32_t ID;
-	int32_t Entry;
-	/*packed*/ struct _FaceHdr *FacePtr;
-	int32_t Matrix[4][4];
+	/*+0x0*/   int32_t Attrib;
+	/*+0x4*/   int32_t NVerts;
+	/*+0x8*/   /*packed*/ struct Point3d *VertsPtr;
+	/*+0xc*/   int32_t MemPool;
+	/*+0x10*/  int32_t NFaces;
+	/*+0x14*/  int32_t PolyVerts;
+	/*+0x18*/  /*packed*/ struct Point3d CenterOrg; // 0xc bytes
+	/*+0x24*/  /*packed*/ struct Point3d Center; // 0xc bytes
+	/*+0x30*/  int32_t Radius;
+	/*+0x34*/  /*packed*/ struct _BSPtree *bsptree;
+	/*+0x38*/  int32_t StaticCnt;
+	/*+0x3c*/  int32_t StaticPtr;
+	/*+0x40*/  int32_t MiscReg1;
+	/*+0x44*/  int32_t ID;
+	/*+0x48*/  int32_t Entry;
+	/*+0x4c*/  /*packed*/ struct _FaceHdr *FacePtr;
+	/*+0x50*/  int32_t Matrix[4][4]; // 0x40 bytes
 };
 
 // Type: /*packed*/ struct Point3d;
 struct Point3d{ // packed(0xc bytes) TI: 0x18b0
-	int32_t x;
-	int32_t y;
-	int32_t z;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
+	/*+0x8*/   int32_t z;
 };
 
 // Type: /*packed*/ struct TEXT_Resource (forward reference);
 struct TEXT_Resource{ // packed(0x18 bytes) TI: 0x2ec2
-	/*packed*/ struct VRResource res;
-	int32_t count;
-	uint32_t * bmpcolors;
-	/*packed*/ struct VRBITMAP bmp[0];
+	/*+0x0*/   /*packed*/ struct VRResource res; // 0x10 bytes
+	/*+0x10*/  int32_t count;
+	/*+0x14*/  uint32_t * bmpcolors;
+	/*+0x18*/  /*packed*/ struct VRBITMAP bmp[0]; // 0x0 bytes
 };
 
 // Type: /*packed*/ struct VRObjInfo;
 struct VRObjInfo{ // packed(0x24 bytes) TI: 0x2ea8
-	int32_t Faces;
-	int32_t Verts;
-	int32_t Attribute;
-	int32_t Radius;
-	/*packed*/ struct Point3d *ObjCenter;
-	/*packed*/ struct Point3d *VertsPtr;
-	/*packed*/ struct Xform3d *VertsXfm;
-	/*packed*/ struct Point3d *OrgVerts;
-	int32_t *Matrix[4][4];
+	/*+0x0*/   int32_t Faces;
+	/*+0x4*/   int32_t Verts;
+	/*+0x8*/   int32_t Attribute;
+	/*+0xc*/   int32_t Radius;
+	/*+0x10*/  /*packed*/ struct Point3d *ObjCenter;
+	/*+0x14*/  /*packed*/ struct Point3d *VertsPtr;
+	/*+0x18*/  /*packed*/ struct Xform3d *VertsXfm;
+	/*+0x1c*/  /*packed*/ struct Point3d *OrgVerts;
+	/*+0x20*/  int32_t *Matrix[4][4];
 };
 
 // Type: /*packed*/ struct VRBmpHdr (forward reference);
 struct VRBmpHdr{ // packed(0x10 bytes) TI: 0x2312
-	/*packed*/ struct VRBmpInfo info;
-	int32_t ScanOffset[1];
+	/*+0x0*/   /*packed*/ struct VRBmpInfo info; // 0xc bytes
+	/*+0xc*/   int32_t ScanOffset[1];
 };
 
 // Type: /*packed*/ struct MapVert (forward reference);
 struct MapVert{ // packed(0x8 bytes) TI: 0x2e89
-	int32_t x;
-	int32_t y;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
 };
 
 // Type: /*packed*/ struct Project3d (forward reference);
 struct Project3d{ // packed(0x10 bytes) TI: 0x2e8d
-	int32_t x;
-	int32_t y;
-	int32_t z;
-	/*packed*/ struct Point3d *p;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
+	/*+0x8*/   int32_t z;
+	/*+0xc*/   /*packed*/ struct Point3d *p;
 };
 
 // Type: /*packed*/ struct FPoint3d;
 struct FPoint3d{ // packed(0x18 bytes) TI: 0x2f28
-	double x;
-	double y;
-	double z;
+	/*+0x0*/   double x; // 0x8 bytes
+	/*+0x8*/   double y; // 0x8 bytes
+	/*+0x10*/  double z; // 0x8 bytes
 };
 
 // Type: double;

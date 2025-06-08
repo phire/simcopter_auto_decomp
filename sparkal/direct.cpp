@@ -19,9 +19,9 @@ public:
 	int32_t CreatePhysicalEntry();
 	int32_t GetEntryExtension(/*packed*/ class basic_string<char>&);
 	int32_t GetEntryMinusExtension(/*packed*/ class basic_string<char>&);
-	/*unpacked*/ class Directory *directoryParent;
-	/*packed*/ class basic_string<char> sName;
-	long lType;
+	/*+0x0*/   /*unpacked*/ class Directory *directoryParent;
+	/*+0x4*/   /*packed*/ class basic_string<char> sName; // 0x8 bytes
+	/*+0xc*/   long lType;
 };
 
 // Type: void;
@@ -34,8 +34,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -149,8 +149,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -264,32 +264,32 @@ public:
 	int32_t CreatePhysicalEntry();
 	int32_t GetEntryExtension(/*packed*/ class basic_string<char>&);
 	int32_t GetEntryMinusExtension(/*packed*/ class basic_string<char>&);
-	/*unpacked*/ class Directory *directoryParent;
-	/*packed*/ class basic_string<char> sName;
-	long lType;
+	/*+0x0*/   /*unpacked*/ class Directory *directoryParent;
+	/*+0x4*/   /*packed*/ class basic_string<char> sName; // 0x8 bytes
+	/*+0xc*/   long lType;
 };
 
 // Type: /*packed*/ struct _WIN32_FIND_DATAA;
 struct _WIN32_FIND_DATAA{ // packed(0x13e bytes) TI: 0x26cd
-	unsigned long dwFileAttributes;
-	/*packed*/ struct _FILETIME ftCreationTime;
-	/*packed*/ struct _FILETIME ftLastAccessTime;
-	/*packed*/ struct _FILETIME ftLastWriteTime;
-	unsigned long nFileSizeHigh;
-	unsigned long nFileSizeLow;
-	unsigned long dwReserved0;
-	unsigned long dwReserved1;
-	char cFileName[260];
-	char cAlternateFileName[14];
+	/*+0x0*/   unsigned long dwFileAttributes;
+	/*+0x4*/   /*packed*/ struct _FILETIME ftCreationTime; // 0x8 bytes
+	/*+0xc*/   /*packed*/ struct _FILETIME ftLastAccessTime; // 0x8 bytes
+	/*+0x14*/  /*packed*/ struct _FILETIME ftLastWriteTime; // 0x8 bytes
+	/*+0x1c*/  unsigned long nFileSizeHigh;
+	/*+0x20*/  unsigned long nFileSizeLow;
+	/*+0x24*/  unsigned long dwReserved0;
+	/*+0x28*/  unsigned long dwReserved1;
+	/*+0x2c*/  char cFileName[260]; // 0x104 bytes
+	/*+0x130*/ char cAlternateFileName[14]; // 0xe bytes
 };
 
 // Type: /*packed*/ class list<basic_string<char>> (forward reference);
 class list<basic_string<char>>{ // packed(0x8 bytes) TI: 0x1cb1
 	using void_pointer = void * __ptr32;
 	struct list<basic_string<char>>::list_node{ // packed(0x10 bytes) TI: 0x1cd7
-		void * __ptr32 next;
-		void * __ptr32 prev;
-		/*packed*/ class basic_string<char> data;
+		/*+0x0*/   void * __ptr32 next;
+		/*+0x4*/   void * __ptr32 prev;
+		/*+0x8*/   /*packed*/ class basic_string<char> data; // 0x8 bytes
 	};
 protected:
 	static /*packed*/ class allocator<list<basic_string<char>>::list_node> list_node_allocator;
@@ -306,8 +306,8 @@ protected:
 protected:
 	uint32_t buffer_size();
 	struct list<basic_string<char>>::list_node_buffer{ // packed(0x8 bytes) TI: 0x1cd5
-		void * __ptr32 next_buffer;
-		/*packed*/ struct list<basic_string<char>>::list_node *buffer;
+		/*+0x0*/   void * __ptr32 next_buffer;
+		/*+0x4*/   /*packed*/ struct list<basic_string<char>>::list_node *buffer;
 	};
 	using buffer_allocator_type = /*packed*/ class allocator<list<basic_string<char>>::list_node_buffer>;
 	using buffer_pointer = /*packed*/ struct list<basic_string<char>>::list_node_buffer*;
@@ -322,12 +322,12 @@ protected:
 	void deallocate_buffers();
 	/*packed*/ struct list<basic_string<char>>::list_node* get_node();
 	void put_node(/*packed*/ struct list<basic_string<char>>::list_node*);
-	/*packed*/ struct list<basic_string<char>>::list_node *node;
-	uint32_t length;
+	/*+0x0*/   /*packed*/ struct list<basic_string<char>>::list_node *node;
+	/*+0x4*/   uint32_t length;
 	class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_string<char>,int>
 	{ // packed(0x4 bytes) TI: 0x1cd3
 	protected:
-		/*packed*/ struct list<basic_string<char>>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<basic_string<char>>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -343,7 +343,7 @@ protected:
 	class list<basic_string<char>>::const_iterator : public bidirectional_iterator<basic_string<char>,int>
 	{ // packed(0x4 bytes) TI: 0x1cc6
 	protected:
-		/*packed*/ struct list<basic_string<char>>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<basic_string<char>>::list_node *node;
 	public:
 		void const_iterator(const /*packed*/ class list<basic_string<char>>::iterator&);
 		void const_iterator();
@@ -409,7 +409,7 @@ public:
 class list<DirectoryEntry>::iterator : public bidirectional_iterator<DirectoryEntry,int>
 { // packed(0x4 bytes) TI: 0x238e
 protected:
-	/*packed*/ struct list<DirectoryEntry>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<DirectoryEntry>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -429,7 +429,7 @@ public:
 class list<DirectoryEntry>::iterator : public bidirectional_iterator<DirectoryEntry,int>
 { // packed(0x4 bytes) TI: 0x238e
 protected:
-	/*packed*/ struct list<DirectoryEntry>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<DirectoryEntry>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -447,9 +447,9 @@ public:
 class list<DirectoryEntry>{ // packed(0x8 bytes) TI: 0x236c
 	using void_pointer = void * __ptr32;
 	struct list<DirectoryEntry>::list_node{ // packed(0x18 bytes) TI: 0x2392
-		void * __ptr32 next;
-		void * __ptr32 prev;
-		/*packed*/ class DirectoryEntry data;
+		/*+0x0*/   void * __ptr32 next;
+		/*+0x4*/   void * __ptr32 prev;
+		/*+0x8*/   /*packed*/ class DirectoryEntry data; // 0x10 bytes
 	};
 protected:
 	static /*packed*/ class allocator<list<DirectoryEntry>::list_node> list_node_allocator;
@@ -466,8 +466,8 @@ protected:
 protected:
 	uint32_t buffer_size();
 	struct list<DirectoryEntry>::list_node_buffer{ // packed(0x8 bytes) TI: 0x2390
-		void * __ptr32 next_buffer;
-		/*packed*/ struct list<DirectoryEntry>::list_node *buffer;
+		/*+0x0*/   void * __ptr32 next_buffer;
+		/*+0x4*/   /*packed*/ struct list<DirectoryEntry>::list_node *buffer;
 	};
 	using buffer_allocator_type = /*packed*/ class allocator<list<DirectoryEntry>::list_node_buffer>;
 	using buffer_pointer = /*packed*/ struct list<DirectoryEntry>::list_node_buffer*;
@@ -482,12 +482,12 @@ protected:
 	void deallocate_buffers();
 	/*packed*/ struct list<DirectoryEntry>::list_node* get_node();
 	void put_node(/*packed*/ struct list<DirectoryEntry>::list_node*);
-	/*packed*/ struct list<DirectoryEntry>::list_node *node;
-	uint32_t length;
+	/*+0x0*/   /*packed*/ struct list<DirectoryEntry>::list_node *node;
+	/*+0x4*/   uint32_t length;
 	class list<DirectoryEntry>::iterator : public bidirectional_iterator<DirectoryEntry,int>
 	{ // packed(0x4 bytes) TI: 0x238e
 	protected:
-		/*packed*/ struct list<DirectoryEntry>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<DirectoryEntry>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -503,7 +503,7 @@ protected:
 	class list<DirectoryEntry>::const_iterator : public bidirectional_iterator<DirectoryEntry,int>
 	{ // packed(0x4 bytes) TI: 0x2381
 	protected:
-		/*packed*/ struct list<DirectoryEntry>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<DirectoryEntry>::list_node *node;
 	public:
 		void const_iterator(const /*packed*/ class list<DirectoryEntry>::iterator&);
 		void const_iterator();
@@ -567,16 +567,16 @@ public:
 
 // Type: /*packed*/ struct list<DirectoryEntry>::list_node (forward reference);
 struct list<DirectoryEntry>::list_node{ // packed(0x18 bytes) TI: 0x2392
-	void * __ptr32 next;
-	void * __ptr32 prev;
-	/*packed*/ class DirectoryEntry data;
+	/*+0x0*/   void * __ptr32 next;
+	/*+0x4*/   void * __ptr32 prev;
+	/*+0x8*/   /*packed*/ class DirectoryEntry data; // 0x10 bytes
 };
 
 // Type: /*packed*/ class list<basic_string<char>>::iterator;
 class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_string<char>,int>
 { // packed(0x4 bytes) TI: 0x1cd3
 protected:
-	/*packed*/ struct list<basic_string<char>>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<basic_string<char>>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -592,16 +592,16 @@ public:
 
 // Type: /*packed*/ struct list<basic_string<char>>::list_node (forward reference);
 struct list<basic_string<char>>::list_node{ // packed(0x10 bytes) TI: 0x1cd7
-	void * __ptr32 next;
-	void * __ptr32 prev;
-	/*packed*/ class basic_string<char> data;
+	/*+0x0*/   void * __ptr32 next;
+	/*+0x4*/   void * __ptr32 prev;
+	/*+0x8*/   /*packed*/ class basic_string<char> data; // 0x8 bytes
 };
 
 // Type: /*packed*/ class list<basic_string<char>>::iterator (forward reference);
 class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_string<char>,int>
 { // packed(0x4 bytes) TI: 0x1cd3
 protected:
-	/*packed*/ struct list<basic_string<char>>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<basic_string<char>>::list_node *node;
 public:
 	void iterator();
 protected:

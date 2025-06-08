@@ -28,31 +28,31 @@ protected:
 	virtual void DrawSelectionIndicators(); // vtable+0xdc
 	virtual int32_t DoCursorHitTest(int32_t&, long, long); // vtable+0xe0
 	virtual int32_t GetPositionOfNthItem(int32_t, /*packed*/ class MPoint&); // vtable+0xe4
-	/*packed*/ struct UserMenuWindowDescription myUserMenuWindowDescription;
-	/*packed*/ class vector<TextWindow *> myTextWindowPtrArray;
-	int32_t nCurrentSelection;
-	/*packed*/ class DigitalSound soundSelectionChange;
+	/*+0x74*/  /*packed*/ struct UserMenuWindowDescription myUserMenuWindowDescription; // 0x54 bytes
+	/*+0xc8*/  /*packed*/ class vector<TextWindow *> myTextWindowPtrArray; // 0xc bytes
+	/*+0xd4*/  int32_t nCurrentSelection;
+	/*+0xd8*/  /*packed*/ class DigitalSound soundSelectionChange; // 0x7a bytes
 };
 
 // Type: void;
 
 // Type: /*packed*/ struct UserMenuWindowDescription (forward reference);
 struct UserMenuWindowDescription{ // packed(0x54 bytes) TI: 0x101b
-	/*packed*/ class basic_string<char> sImageFileName;
-	int32_t nTransparentIndex;
-	/*packed*/ class MRect rectPosition;
-	long lMenuStringResourceIndex;
-	long lMenuStringResourceCount;
-	long lSelectionBase;
-	/*packed*/ struct SparkalColor colorFont;
-	/*packed*/ struct SparkalColor colorFontHighlighted;
-	/*packed*/ class MPoint ptPositionFirstItem;
-	int32_t nSizeItemFont;
-	int32_t nLineHeight;
-	long lTitleStringResourceIndex;
-	int32_t bTitleCentered;
-	/*packed*/ class MPoint ptTitlePosition;
-	int32_t nSizeTitleFont;
+	/*+0x0*/   /*packed*/ class basic_string<char> sImageFileName; // 0x8 bytes
+	/*+0x8*/   int32_t nTransparentIndex;
+	/*+0xc*/   /*packed*/ class MRect rectPosition; // 0x10 bytes
+	/*+0x1c*/  long lMenuStringResourceIndex;
+	/*+0x20*/  long lMenuStringResourceCount;
+	/*+0x24*/  long lSelectionBase;
+	/*+0x28*/  /*packed*/ struct SparkalColor colorFont;
+	/*+0x2c*/  /*packed*/ struct SparkalColor colorFontHighlighted;
+	/*+0x30*/  /*packed*/ class MPoint ptPositionFirstItem; // 0x8 bytes
+	/*+0x38*/  int32_t nSizeItemFont;
+	/*+0x3c*/  int32_t nLineHeight;
+	/*+0x40*/  long lTitleStringResourceIndex;
+	/*+0x44*/  int32_t bTitleCentered;
+	/*+0x48*/  /*packed*/ class MPoint ptTitlePosition; // 0x8 bytes
+	/*+0x50*/  int32_t nSizeTitleFont;
 };
 
 // Type: int32_t;
@@ -154,12 +154,12 @@ public:
 	virtual void FitWindowToText(); // vtable+0xe0
 	virtual int32_t ResizeWindowForExactLineHeights(); // vtable+0xe4
 protected:
-	int32_t bDrawOpaqueBackground;
-	/*packed*/ struct SparkalColor colorFont;
-	int32_t nBackgroundPaletteIndex;
-	int32_t nWindowTitleTextID;
-	/*packed*/ class MFont fontText;
-	unsigned long nTextDrawStyle;
+	/*+0x74*/  int32_t bDrawOpaqueBackground;
+	/*+0x78*/  /*packed*/ struct SparkalColor colorFont;
+	/*+0x7c*/  int32_t nBackgroundPaletteIndex;
+	/*+0x80*/  int32_t nWindowTitleTextID;
+	/*+0x84*/  /*packed*/ class MFont fontText; // 0x1c bytes
+	/*+0xa0*/  unsigned long nTextDrawStyle;
 };
 
 // Type: char;
@@ -210,9 +210,9 @@ protected:
 	void DrawRatchetAndLights();
 	void GetCoordinatesForLights(/*packed*/ class MPoint*, /*packed*/ class MRect*);
 	void GetCoordinatesForRatchets(/*packed*/ class MPoint*, /*packed*/ class MRect*);
-	/*unpacked*/ class GraphicWindow *mySiblingWindows[2];
-	/*unpacked*/ class CBackBuffer *myRatchetImage;
-	/*unpacked*/ class CBackBuffer *myLightImage;
+	/*+0x152*/ /*unpacked*/ class GraphicWindow *mySiblingWindows[2]; // 0x8 bytes
+	/*+0x15a*/ /*unpacked*/ class CBackBuffer *myRatchetImage;
+	/*+0x15e*/ /*unpacked*/ class CBackBuffer *myLightImage;
 };
 
 // Type: /*packed*/ class basic_string<char>;
@@ -220,8 +220,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -402,8 +402,8 @@ public:
 protected:
 	void GetCoordinatesForRatchet(/*packed*/ class MPoint&);
 	void DrawRatchet();
-	/*packed*/ class CBackBuffer *myRatchetImage;
-	/*packed*/ class CBackBuffer *myBackgroundImage;
+	/*+0x152*/ /*packed*/ class CBackBuffer *myRatchetImage;
+	/*+0x156*/ /*packed*/ class CBackBuffer *myBackgroundImage;
 };
 
 // Type: /*packed*/ class MPoint;
@@ -459,26 +459,26 @@ protected:
 	virtual void DrawSelectionIndicators(); // vtable+0xdc
 	virtual int32_t DoCursorHitTest(int32_t&, long, long); // vtable+0xe0
 	virtual int32_t GetPositionOfNthItem(int32_t, /*packed*/ class MPoint&); // vtable+0xe4
-	/*packed*/ struct UserMenuWindowDescription myUserMenuWindowDescription;
-	/*packed*/ class vector<TextWindow *> myTextWindowPtrArray;
-	int32_t nCurrentSelection;
-	/*packed*/ class DigitalSound soundSelectionChange;
+	/*+0x74*/  /*packed*/ struct UserMenuWindowDescription myUserMenuWindowDescription; // 0x54 bytes
+	/*+0xc8*/  /*packed*/ class vector<TextWindow *> myTextWindowPtrArray; // 0xc bytes
+	/*+0xd4*/  int32_t nCurrentSelection;
+	/*+0xd8*/  /*packed*/ class DigitalSound soundSelectionChange; // 0x7a bytes
 };
 
 // Type: /*packed*/ struct SparkalRect;
 struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
-	long left;
-	long top;
-	long right;
-	long bottom;
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
 	void SparkalRect(long, long, long, long);
 	void SparkalRect();
 };
 
 // Type: /*packed*/ struct SparkalPoint;
 struct SparkalPoint{ // packed(0x8 bytes) TI: 0x1a54
-	long x;
-	long y;
+	/*+0x0*/   long x;
+	/*+0x4*/   long y;
 	void SparkalPoint(long, long);
 	void SparkalPoint();
 };

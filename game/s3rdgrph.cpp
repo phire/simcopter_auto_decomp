@@ -35,8 +35,8 @@ enum DirIndex2 {
 // Type: /*packed*/ class RoadGraph (forward reference);
 class RoadGraph{ // packed(0x280 bytes) TI: 0x485e
 public:
-	/*packed*/ struct RGVertex *RGArray[128];
-	unsigned char RGLength[128];
+	/*+0x0*/   /*packed*/ struct RGVertex *RGArray[128]; // 0x200 bytes
+	/*+0x200*/ unsigned char RGLength[128]; // 0x80 bytes
 	void RoadGraph();
 	void Init();
 	void ~RoadGraph();
@@ -68,50 +68,50 @@ private:
 
 // Type: /*packed*/ struct RGVertex (forward reference);
 struct RGVertex{ // packed(0x33 bytes) TI: 0x1776
-	unsigned char x;
-	unsigned char y;
-	LfBitfield @ 0x11f58:
+	/*+0x0*/   unsigned char x; // 0x1 bytes
+	/*+0x1*/   unsigned char y; // 0x1 bytes
+	/*+0x2*/   LfBitfield @ 0x11f58:
 	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x4
 	[90m   LB.[95mTI[m = 0x1771
 	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x0
 	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
 	 turnFlags;
-	LfBitfield @ 0x11f60:
+	/*+0x2*/   LfBitfield @ 0x11f60:
 	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x4
 	[90m   LB.[95mTI[m = 0x1772
 	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x4
 	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
 	 deadEndFlags;
-	unsigned char fElevated;
-	/*packed*/ struct Edge edge[4];
-	unsigned char yindexPrev;
-	unsigned char xPrev;
-	unsigned char edgeIndexPrev;
-	int32_t STVisited;
+	/*+0x3*/   unsigned char fElevated; // 0x1 bytes
+	/*+0x4*/   /*packed*/ struct Edge edge[4]; // 0x28 bytes
+	/*+0x2c*/  unsigned char yindexPrev; // 0x1 bytes
+	/*+0x2d*/  unsigned char xPrev; // 0x1 bytes
+	/*+0x2e*/  unsigned char edgeIndexPrev; // 0x1 bytes
+	/*+0x2f*/  int32_t STVisited;
 };
 
 // Type: /*packed*/ struct Goal (forward reference);
 struct Goal{ // packed(0x2a bytes) TI: 0x12ce
-	/*packed*/ struct RGVertex *pRGV;
-	int32_t elementIndex;
-	int32_t gridIndex;
-	/*packed*/ struct _GridCoordinates gridLoc;
-	enum DirIndex2 edgeIndex;
-	enum DirIndex2 direction;
-	int32_t distance;
-	int32_t turnFlags;
-	int32_t deadEndFlags;
-	int32_t fElevated;
-	enum SlopeIndex slope;
+	/*+0x0*/   /*packed*/ struct RGVertex *pRGV;
+	/*+0x4*/   int32_t elementIndex;
+	/*+0x8*/   int32_t gridIndex;
+	/*+0xc*/   /*packed*/ struct _GridCoordinates gridLoc; // 0x2 bytes
+	/*+0xe*/   enum DirIndex2 edgeIndex;
+	/*+0x12*/  enum DirIndex2 direction;
+	/*+0x16*/  int32_t distance;
+	/*+0x1a*/  int32_t turnFlags;
+	/*+0x1e*/  int32_t deadEndFlags;
+	/*+0x22*/  int32_t fElevated;
+	/*+0x26*/  enum SlopeIndex slope;
 };
 
 // Type: /*packed*/ struct Edge (forward reference);
 struct Edge{ // packed(0xa bytes) TI: 0x176b
-	unsigned char yindex;
-	unsigned char x;
-	unsigned short Time;
-	unsigned short numElementsToPath;
-	/*packed*/ struct Road *roadArray;
+	/*+0x0*/   unsigned char yindex; // 0x1 bytes
+	/*+0x1*/   unsigned char x; // 0x1 bytes
+	/*+0x2*/   unsigned short Time; // 0x2 bytes
+	/*+0x4*/   unsigned short numElementsToPath; // 0x2 bytes
+	/*+0x6*/   /*packed*/ struct Road *roadArray;
 };
 
 // Type: enum SlopeIndex;
@@ -123,48 +123,48 @@ enum SlopeIndex {
 
 // Type: /*packed*/ struct Road (forward reference);
 struct Road{ // packed(0x2 bytes) TI: 0x1752
-	LfBitfield @ 0x11b34:
+	/*+0x0*/   LfBitfield @ 0x11b34:
 	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x2
 	[90m   LB.[95mTI[m = 0x174e
 	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x0
 	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
-	 direction;
-	LfBitfield @ 0x11b3c:
+	 direction; // 0x2 bytes
+	/*+0x0*/   LfBitfield @ 0x11b3c:
 	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x2
 	[90m   LB.[95mTI[m = 0x174f
 	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x2
 	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
-	 slope;
-	LfBitfield @ 0x11b44:
+	 slope; // 0x2 bytes
+	/*+0x0*/   LfBitfield @ 0x11b44:
 	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x1
 	[90m   LB.[95mTI[m = 0x1750
 	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x4
 	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
-	 fElevated;
-	unsigned char repeatCount;
+	 fElevated; // 0x1 bytes
+	/*+0x1*/   unsigned char repeatCount; // 0x1 bytes
 };
 
 // Type: /*packed*/ struct _GridCoordinates;
 struct _GridCoordinates{ // packed(0x2 bytes) TI: 0x143c
-	unsigned char x;
-	unsigned char y;
+	/*+0x0*/   unsigned char x; // 0x1 bytes
+	/*+0x1*/   unsigned char y; // 0x1 bytes
 };
 
 // Type: unsigned short;
 
 // Type: /*packed*/ struct Goal;
 struct Goal{ // packed(0x2a bytes) TI: 0x12ce
-	/*packed*/ struct RGVertex *pRGV;
-	int32_t elementIndex;
-	int32_t gridIndex;
-	/*packed*/ struct _GridCoordinates gridLoc;
-	enum DirIndex2 edgeIndex;
-	enum DirIndex2 direction;
-	int32_t distance;
-	int32_t turnFlags;
-	int32_t deadEndFlags;
-	int32_t fElevated;
-	enum SlopeIndex slope;
+	/*+0x0*/   /*packed*/ struct RGVertex *pRGV;
+	/*+0x4*/   int32_t elementIndex;
+	/*+0x8*/   int32_t gridIndex;
+	/*+0xc*/   /*packed*/ struct _GridCoordinates gridLoc; // 0x2 bytes
+	/*+0xe*/   enum DirIndex2 edgeIndex;
+	/*+0x12*/  enum DirIndex2 direction;
+	/*+0x16*/  int32_t distance;
+	/*+0x1a*/  int32_t turnFlags;
+	/*+0x1e*/  int32_t deadEndFlags;
+	/*+0x22*/  int32_t fElevated;
+	/*+0x26*/  enum SlopeIndex slope;
 };
 
 // Type: short;

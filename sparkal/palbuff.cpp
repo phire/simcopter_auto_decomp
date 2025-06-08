@@ -7,7 +7,7 @@
 class PaletteBuffer : public CBackBuffer
 { // packed(0x138 bytes) TI: 0x2a99
 public:
-	/*packed*/ struct SparkalColor *paletteColors;
+	/*+0x134*/ /*packed*/ struct SparkalColor *paletteColors;
 	void PaletteBuffer(/*packed*/ struct SparkalColor*);
 	void PaletteBuffer();
 	void ~PaletteBuffer();
@@ -23,10 +23,10 @@ public:
 
 // Type: /*packed*/ struct SparkalColor (forward reference);
 struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
-	unsigned char Blue;
-	unsigned char Green;
-	unsigned char Red;
-	unsigned char Padding;
+	/*+0x0*/   unsigned char Blue; // 0x1 bytes
+	/*+0x1*/   unsigned char Green; // 0x1 bytes
+	/*+0x2*/   unsigned char Red; // 0x1 bytes
+	/*+0x3*/   unsigned char Padding; // 0x1 bytes
 	void SparkalColor(unsigned char, unsigned char, unsigned char);
 	void SparkalColor();
 };
@@ -37,18 +37,18 @@ struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 
 // Type: /*packed*/ struct tagPALETTEENTRY (forward reference);
 struct tagPALETTEENTRY{ // packed(0x4 bytes) TI: 0x1be6
-	unsigned char peRed;
-	unsigned char peGreen;
-	unsigned char peBlue;
-	unsigned char peFlags;
+	/*+0x0*/   unsigned char peRed; // 0x1 bytes
+	/*+0x1*/   unsigned char peGreen; // 0x1 bytes
+	/*+0x2*/   unsigned char peBlue; // 0x1 bytes
+	/*+0x3*/   unsigned char peFlags; // 0x1 bytes
 };
 
 // Type: /*packed*/ struct SparkalRect;
 struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
-	long left;
-	long top;
-	long right;
-	long bottom;
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
 	void SparkalRect(long, long, long, long);
 	void SparkalRect();
 };
@@ -76,11 +76,11 @@ public:
 	static unsigned long lTotalMemoryUsage;
 	static unsigned long lTotalLockCount;
 protected:
-	unsigned long mLockCount;
-	long mWidth;
-	long mHeight;
-	void * __ptr32 mpBits;
-	long mStride;
+	/*+0x4*/   unsigned long mLockCount;
+	/*+0x8*/   long mWidth;
+	/*+0xc*/   long mHeight;
+	/*+0x10*/  void * __ptr32 mpBits;
+	/*+0x14*/  long mStride;
 };
 
 // Type: unsigned long;
@@ -128,25 +128,25 @@ public:
 	virtual unsigned long DrawRectangleOutlineUnclipped(const /*packed*/ struct SparkalRect&, long); // vtable+0x5c
 	long IsLost();
 	long Restore();
-	char * szFilePath;
-	/*packed*/ struct tagRECT rectDirectDrawBuffer;
+	/*+0x18*/  char * szFilePath;
+	/*+0x1c*/  /*packed*/ struct tagRECT rectDirectDrawBuffer; // 0x10 bytes
 protected:
-	int32_t bSurfacePrimary;
-	int32_t bSurfaceTransparent;
-	/*packed*/ class MFont *mFont;
-	/*packed*/ struct SparkalColor colorFontCurrent;
-	/*packed*/ struct SparkalColor colorCurrent;
-	int32_t nColorIndexFontCurrent;
-	int32_t nColorIndexCurrent;
-	int32_t nColorIndexTransparent;
-	/*packed*/ struct IDirectDrawSurface *mpFrontSurface;
-	/*packed*/ struct IDirectDrawSurface *mpBackSurface;
-	/*packed*/ struct IDirectDrawPalette *mpPalette;
-	/*packed*/ struct _DDSURFACEDESC mDDdesc;
-	/*packed*/ struct _DDBLTFX mDDBltFx;
-	void * __ptr32 hPen;
-	int32_t nPenThickness;
-	/*packed*/ struct SparkalColor colorPenCurrent;
+	/*+0x2c*/  int32_t bSurfacePrimary;
+	/*+0x30*/  int32_t bSurfaceTransparent;
+	/*+0x34*/  /*packed*/ class MFont *mFont;
+	/*+0x38*/  /*packed*/ struct SparkalColor colorFontCurrent;
+	/*+0x3c*/  /*packed*/ struct SparkalColor colorCurrent;
+	/*+0x40*/  int32_t nColorIndexFontCurrent;
+	/*+0x44*/  int32_t nColorIndexCurrent;
+	/*+0x48*/  int32_t nColorIndexTransparent;
+	/*+0x4c*/  /*packed*/ struct IDirectDrawSurface *mpFrontSurface;
+	/*+0x50*/  /*packed*/ struct IDirectDrawSurface *mpBackSurface;
+	/*+0x54*/  /*packed*/ struct IDirectDrawPalette *mpPalette;
+	/*+0x58*/  /*packed*/ struct _DDSURFACEDESC mDDdesc; // 0x6c bytes
+	/*+0xc4*/  /*packed*/ struct _DDBLTFX mDDBltFx; // 0x64 bytes
+	/*+0x128*/ void * __ptr32 hPen;
+	/*+0x12c*/ int32_t nPenThickness;
+	/*+0x130*/ /*packed*/ struct SparkalColor colorPenCurrent;
 	virtual /*packed*/ struct IDirectDrawSurface* GetDDSurface(); // vtable+0x60
 };
 
@@ -183,11 +183,11 @@ public:
 	static unsigned long lTotalMemoryUsage;
 	static unsigned long lTotalLockCount;
 protected:
-	unsigned long mLockCount;
-	long mWidth;
-	long mHeight;
-	void * __ptr32 mpBits;
-	long mStride;
+	/*+0x4*/   unsigned long mLockCount;
+	/*+0x8*/   long mWidth;
+	/*+0xc*/   long mHeight;
+	/*+0x10*/  void * __ptr32 mpBits;
+	/*+0x14*/  long mStride;
 };
 
 

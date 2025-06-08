@@ -10,9 +10,9 @@
 class FlatResFile : public FlatFile
 { // not packed(0x11c bytes) TI: 0x330e
 protected:
-	/*unpacked*/ class ResMap *fMap;
-	long fError;
-	short _alignPad;
+	/*+0x110*/ /*unpacked*/ class ResMap *fMap;
+	/*+0x114*/ long fError;
+	/*+0x118*/ short _alignPad; // 0x2 bytes
 public:
 	void FlatResFile();
 	virtual void ~FlatResFile() /* override */;
@@ -78,30 +78,30 @@ public:
 
 // Type: /*unpacked*/ struct ResMap::Entry (forward reference);
 struct ResMap::Entry{ // not packed(0xc bytes) TI: 0x3dee
-	short id;
-	short nameOffset;
-	LfBitfield @ 0x7104c:
+	/*+0x0*/   short id; // 0x2 bytes
+	/*+0x2*/   short nameOffset; // 0x2 bytes
+	/*+0x4*/   LfBitfield @ 0x7104c:
 	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x8
 	[90m   LB.[95mTI[m = 0x3deb
 	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x0
 	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
-	 flags;
-	LfBitfield @ 0x71054:
+	 flags; // 0x8 bytes
+	/*+0x4*/   LfBitfield @ 0x71054:
 	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x18
 	[90m   LB.[95mTI[m = 0x3dec
 	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x8
 	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
-	 dataLoc;
-	void * __ptr32 hand;
+	 dataLoc; // 0x18 bytes
+	/*+0x8*/   void * __ptr32 hand;
 };
 
 // Type: /*unpacked*/ class StringSet;
 class StringSet{ // not packed(0x10 bytes) TI: 0x3487
 private:
-	/*unpacked*/ class ResFile *fResFile;
-	long fNumStrings;
-	void * __ptr32 fStringHandle;
-	unsigned char * fStringPtr;
+	/*+0x0*/   /*unpacked*/ class ResFile *fResFile;
+	/*+0x4*/   long fNumStrings;
+	/*+0x8*/   void * __ptr32 fStringHandle;
+	/*+0xc*/   unsigned char * fStringPtr;
 	void LoadStrings(short);
 	// calltype: NearC
 	static void Swizzle(void * __ptr32, long);
@@ -115,9 +115,9 @@ public:
 
 // Type: /*unpacked*/ struct ResMap::TypeHead (forward reference);
 struct ResMap::TypeHead{ // not packed(0x8 bytes) TI: 0x3df0
-	unsigned long type;
-	short resCnt;
-	short listOff;
+	/*+0x0*/   unsigned long type;
+	/*+0x4*/   short resCnt; // 0x2 bytes
+	/*+0x6*/   short listOff; // 0x2 bytes
 };
 
 // Type: unsigned short;
@@ -127,9 +127,9 @@ struct ResMap::TypeHead{ // not packed(0x8 bytes) TI: 0x3df0
 class FlatResFile : public FlatFile
 { // not packed(0x11c bytes) TI: 0x330e
 protected:
-	/*unpacked*/ class ResMap *fMap;
-	long fError;
-	short _alignPad;
+	/*+0x110*/ /*unpacked*/ class ResMap *fMap;
+	/*+0x114*/ long fError;
+	/*+0x118*/ short _alignPad; // 0x2 bytes
 public:
 	void FlatResFile();
 	virtual void ~FlatResFile() /* override */;
@@ -170,10 +170,10 @@ class FlatFile{ // not packed(0x110 bytes) TI: 0x32f4
 		kMaxNameLen = 255,
 	};
 protected:
-	/*unpacked*/ class FlatFile *fNext;
-	unsigned char fName[256];
-	long fFileID;
-	/*unpacked*/ struct _iobuf *fFile;
+	/*+0x4*/   /*unpacked*/ class FlatFile *fNext;
+	/*+0x8*/   unsigned char fName[256]; // 0x100 bytes
+	/*+0x108*/ long fFileID;
+	/*+0x10c*/ /*unpacked*/ struct _iobuf *fFile;
 	long UniqueID();
 private:
 	static /*unpacked*/ class FlatFile *sList;

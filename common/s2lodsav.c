@@ -14,14 +14,14 @@
 
 // Type: /*packed*/ struct _iobuf (forward reference);
 struct _iobuf{ // packed(0x20 bytes) TI: 0x2278
-	char * _ptr;
-	int32_t _cnt;
-	char * _base;
-	int32_t _flag;
-	int32_t _file;
-	int32_t _charbuf;
-	int32_t _bufsiz;
-	char * _tmpfname;
+	/*+0x0*/   char * _ptr;
+	/*+0x4*/   int32_t _cnt;
+	/*+0x8*/   char * _base;
+	/*+0xc*/   int32_t _flag;
+	/*+0x10*/  int32_t _file;
+	/*+0x14*/  int32_t _charbuf;
+	/*+0x18*/  int32_t _bufsiz;
+	/*+0x1c*/  char * _tmpfname;
 };
 
 // Type: unsigned short;
@@ -38,11 +38,11 @@ struct _iobuf{ // packed(0x20 bytes) TI: 0x2278
 
 // Type: /*packed*/ struct Micro (forward reference);
 struct Micro{ // packed(0x8 bytes) TI: 0x2d4d
-	unsigned char type;
-	unsigned char stat0;
-	unsigned short stat1;
-	unsigned short stat2;
-	unsigned short stat3;
+	/*+0x0*/   unsigned char type; // 0x1 bytes
+	/*+0x1*/   unsigned char stat0; // 0x1 bytes
+	/*+0x2*/   unsigned short stat1; // 0x2 bytes
+	/*+0x4*/   unsigned short stat2; // 0x2 bytes
+	/*+0x6*/   unsigned short stat3; // 0x2 bytes
 };
 
 // Type: short *;

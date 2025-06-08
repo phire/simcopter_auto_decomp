@@ -12,7 +12,7 @@ public:
 	void MTimeLocalized(unsigned long);
 	void MTimeLocalized();
 	virtual char * PrintStringLocalized(char *, int32_t); // vtable+0x0
-	int32_t nLanguage;
+	/*+0xc*/   int32_t nLanguage;
 };
 
 // Type: char *;
@@ -63,7 +63,7 @@ public:
 	static char * DayNameLocalized(uint32_t, char *, int32_t);
 	// calltype: NearC
 	static char * MonthNameLocalized(uint32_t, char *, int32_t);
-	int32_t nLanguage;
+	/*+0xc*/   int32_t nLanguage;
 };
 
 // Type: void;
@@ -148,8 +148,8 @@ protected:
 	static int32_t AssertIndexOfMonth(uint32_t);
 	void ParseFrom(/*unpacked*/ class istream&);
 	void Mdy(uint32_t&, uint32_t&, uint32_t&);
-	unsigned long Julnum;
-	enum MDate::HowToPrint PrintOption;
+	/*+0x4*/   unsigned long Julnum;
+	/*+0x8*/   enum MDate::HowToPrint PrintOption;
 };
 
 // Type: /*unpacked*/ class ios;
@@ -251,18 +251,18 @@ protected:
 		tied = 1,
 	};
 protected:
-	/*unpacked*/ class streambuf *bp;
-	int32_t state;
-	int32_t ispecial;
-	int32_t ospecial;
-	int32_t isfx_special;
-	int32_t osfx_special;
-	int32_t x_delbuf;
-	/*unpacked*/ class ostream *x_tie;
-	long x_flags;
-	int32_t x_precision;
-	char x_fill;
-	int32_t x_width;
+	/*+0x4*/   /*unpacked*/ class streambuf *bp;
+	/*+0x8*/   int32_t state;
+	/*+0xc*/   int32_t ispecial;
+	/*+0x10*/  int32_t ospecial;
+	/*+0x14*/  int32_t isfx_special;
+	/*+0x18*/  int32_t osfx_special;
+	/*+0x1c*/  int32_t x_delbuf;
+	/*+0x20*/  /*unpacked*/ class ostream *x_tie;
+	/*+0x24*/  long x_flags;
+	/*+0x28*/  int32_t x_precision;
+	/*+0x2c*/  char x_fill; // 0x1 bytes
+	/*+0x30*/  int32_t x_width;
 	static void (*stdioflush)();
 	// calltype: NearC
 	static void lockc();
@@ -279,8 +279,8 @@ private:
 	static long x_statebuf[8];
 	static int32_t fLockcInit;
 	static /*unpacked*/ struct _CRT_CRITICAL_SECTION x_lockc;
-	int32_t LockFlg;
-	/*unpacked*/ struct _CRT_CRITICAL_SECTION x_lock;
+	/*+0x34*/  int32_t LockFlg;
+	/*+0x38*/  /*unpacked*/ struct _CRT_CRITICAL_SECTION x_lock; // 0x18 bytes
 };
 
 // Type: /*packed*/ class MDate;
@@ -357,8 +357,8 @@ protected:
 	static int32_t AssertIndexOfMonth(uint32_t);
 	void ParseFrom(/*unpacked*/ class istream&);
 	void Mdy(uint32_t&, uint32_t&, uint32_t&);
-	unsigned long Julnum;
-	enum MDate::HowToPrint PrintOption;
+	/*+0x4*/   unsigned long Julnum;
+	/*+0x8*/   enum MDate::HowToPrint PrintOption;
 };
 
 

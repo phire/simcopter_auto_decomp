@@ -6,15 +6,15 @@
 
 // Type: /*packed*/ struct list<RadioButtonWindow *>::list_node_buffer (forward reference);
 struct list<RadioButtonWindow *>::list_node_buffer{ // packed(0x8 bytes) TI: 0x1634
-	void * __ptr32 next_buffer;
-	/*packed*/ struct list<RadioButtonWindow *>::list_node *buffer;
+	/*+0x0*/   void * __ptr32 next_buffer;
+	/*+0x4*/   /*packed*/ struct list<RadioButtonWindow *>::list_node *buffer;
 };
 
 // Type: /*packed*/ struct list<RadioButtonWindow *>::list_node (forward reference);
 struct list<RadioButtonWindow *>::list_node{ // packed(0xc bytes) TI: 0x1636
-	void * __ptr32 next;
-	void * __ptr32 prev;
-	/*packed*/ class RadioButtonWindow *data;
+	/*+0x0*/   void * __ptr32 next;
+	/*+0x4*/   void * __ptr32 prev;
+	/*+0x8*/   /*packed*/ class RadioButtonWindow *data;
 };
 
 // Type: uint32_t;
@@ -30,10 +30,10 @@ public:
 	virtual void SetColors(/*packed*/ struct SparkalColor&, int32_t); // vtable+0xc4
 	virtual void SetOutlineAndFillDrawing(int32_t, int32_t); // vtable+0xc8
 protected:
-	int32_t bDrawOutline;
-	int32_t bDrawFill;
-	/*packed*/ struct SparkalColor colorOutline;
-	int32_t nPaletteIndexFill;
+	/*+0x74*/  int32_t bDrawOutline;
+	/*+0x78*/  int32_t bDrawFill;
+	/*+0x7c*/  /*packed*/ struct SparkalColor colorOutline;
+	/*+0x80*/  int32_t nPaletteIndexFill;
 };
 
 // Type: void;
@@ -120,10 +120,10 @@ public:
 
 // Type: /*packed*/ struct SparkalColor (forward reference);
 struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
-	unsigned char Blue;
-	unsigned char Green;
-	unsigned char Red;
-	unsigned char Padding;
+	/*+0x0*/   unsigned char Blue; // 0x1 bytes
+	/*+0x1*/   unsigned char Green; // 0x1 bytes
+	/*+0x2*/   unsigned char Red; // 0x1 bytes
+	/*+0x3*/   unsigned char Padding; // 0x1 bytes
 	void SparkalColor(unsigned char, unsigned char, unsigned char);
 	void SparkalColor();
 };
@@ -147,12 +147,12 @@ public:
 	virtual void FitWindowToText(); // vtable+0xe0
 	virtual int32_t ResizeWindowForExactLineHeights(); // vtable+0xe4
 protected:
-	int32_t bDrawOpaqueBackground;
-	/*packed*/ struct SparkalColor colorFont;
-	int32_t nBackgroundPaletteIndex;
-	int32_t nWindowTitleTextID;
-	/*packed*/ class MFont fontText;
-	unsigned long nTextDrawStyle;
+	/*+0x74*/  int32_t bDrawOpaqueBackground;
+	/*+0x78*/  /*packed*/ struct SparkalColor colorFont;
+	/*+0x7c*/  int32_t nBackgroundPaletteIndex;
+	/*+0x80*/  int32_t nWindowTitleTextID;
+	/*+0x84*/  /*packed*/ class MFont fontText; // 0x1c bytes
+	/*+0xa0*/  unsigned long nTextDrawStyle;
 };
 
 // Type: /*packed*/ class basic_string<char> (forward reference);
@@ -160,8 +160,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -358,23 +358,23 @@ public:
 	virtual void SetTextColor(const /*packed*/ struct SparkalColor*, const /*packed*/ struct SparkalColor*); // vtable+0xd8
 	virtual int32_t CanWeRespondToMessage() /* override */;
 protected:
-	int32_t nButtonState;
-	int32_t bEnabled;
-	int32_t nButtonTextHeight;
-	/*packed*/ class MSize sizeTextOffset;
-	int32_t bBusySettingState;
-	/*packed*/ struct SparkalColor colorFont;
-	/*packed*/ struct SparkalColor colorFontHighlighted;
+	/*+0x74*/  int32_t nButtonState;
+	/*+0x78*/  int32_t bEnabled;
+	/*+0x7c*/  int32_t nButtonTextHeight;
+	/*+0x80*/  /*packed*/ class MSize sizeTextOffset; // 0x8 bytes
+	/*+0x88*/  int32_t bBusySettingState;
+	/*+0x8c*/  /*packed*/ struct SparkalColor colorFont;
+	/*+0x90*/  /*packed*/ struct SparkalColor colorFontHighlighted;
 };
 
 // Type: /*packed*/ class MFont (forward reference);
 // VTABLE: COPTER_D 0x00591640
 class MFont{ // packed(0x1c bytes) TI: 0x1a6c
 public:
-	/*packed*/ class basic_string<char> sName;
-	unsigned long lHeight;
-	unsigned long lWidth;
-	unsigned long lAttributes;
+	/*+0x4*/   /*packed*/ class basic_string<char> sName; // 0x8 bytes
+	/*+0xc*/   unsigned long lHeight;
+	/*+0x10*/  unsigned long lWidth;
+	/*+0x14*/  unsigned long lAttributes;
 	void MFont(char *, unsigned long, unsigned long, unsigned long, int32_t);
 	void MFont(const /*packed*/ class MFont&);
 	void MFont();
@@ -392,7 +392,7 @@ public:
 	virtual void DestroyFont(); // vtable+0x4
 	void * __ptr32 operator void *();
 protected:
-	void * __ptr32 hFont;
+	/*+0x18*/  void * __ptr32 hFont;
 };
 
 // Type: char;
@@ -430,7 +430,7 @@ public:
 	virtual long DoCursorUp(long, long, unsigned long) /* override */;
 	virtual long DoCursorMove(long, long) /* override */;
 protected:
-	/*unpacked*/ class ButtonGroup *myRadioButtonGroup;
+	/*+0x94*/  /*unpacked*/ class ButtonGroup *myRadioButtonGroup;
 };
 
 // Type: /*unpacked*/ class ButtonGroup (forward reference);
@@ -440,7 +440,7 @@ protected:
 class list<RadioButtonWindow *>::iterator : public bidirectional_iterator<RadioButtonWindow *,int>
 { // packed(0x4 bytes) TI: 0x1632
 protected:
-	/*packed*/ struct list<RadioButtonWindow *>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<RadioButtonWindow *>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -486,18 +486,18 @@ protected:
 	virtual long GetThumbWidth(); // vtable+0xd0
 	virtual long GetThumbHeight(); // vtable+0xd4
 public:
-	enum SliderWindow::SliderWindowDirection nSliderWindowDirection;
-	long lSliderMinimumValue;
-	long lSliderMaximumValue;
-	long lSliderCurrentValue;
-	long lMinimumThumbPosition;
-	long lCurrentThumbPosition;
-	long lMaximumThumbPosition;
-	long lThumbLimitIndentation;
-	/*packed*/ class MRect rectThumbImage;
-	/*unpacked*/ class CBackBuffer *myBackgroundImage;
-	/*packed*/ class basic_string<char> sBackgroundFile;
-	int32_t bBusySettingValue;
+	/*+0x74*/  enum SliderWindow::SliderWindowDirection nSliderWindowDirection;
+	/*+0x78*/  long lSliderMinimumValue;
+	/*+0x7c*/  long lSliderMaximumValue;
+	/*+0x80*/  long lSliderCurrentValue;
+	/*+0x84*/  long lMinimumThumbPosition;
+	/*+0x88*/  long lCurrentThumbPosition;
+	/*+0x8c*/  long lMaximumThumbPosition;
+	/*+0x90*/  long lThumbLimitIndentation;
+	/*+0x94*/  /*packed*/ class MRect rectThumbImage; // 0x10 bytes
+	/*+0xa4*/  /*unpacked*/ class CBackBuffer *myBackgroundImage;
+	/*+0xa8*/  /*packed*/ class basic_string<char> sBackgroundFile; // 0x8 bytes
+	/*+0xb0*/  int32_t bBusySettingValue;
 };
 
 // Type: enum SliderWindow::SliderWindowDirection;
@@ -511,8 +511,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -647,11 +647,11 @@ protected:
 	virtual long GetValueOfGivenLine(long); // vtable+0xfc
 	virtual long GetCurrentPage(); // vtable+0x100
 	virtual long GetValueOfGivenPage(long); // vtable+0x104
-	long lLineCount;
-	long lPageCount;
-	/*packed*/ class MTimer myTimer;
-	enum ScrollBarWindow::ScrollHitTestResult initialScrollHitTestResult;
-	int32_t bCursorIsOnInitialHitTestResult;
+	/*+0xb4*/  long lLineCount;
+	/*+0xb8*/  long lPageCount;
+	/*+0xbc*/  /*packed*/ class MTimer myTimer; // 0x10 bytes
+	/*+0xcc*/  enum ScrollBarWindow::ScrollHitTestResult initialScrollHitTestResult;
+	/*+0xd0*/  int32_t bCursorIsOnInitialHitTestResult;
 };
 
 // Type: enum ScrollBarWindow::ScrollHitTestResult;
@@ -715,21 +715,21 @@ protected:
 	virtual int32_t ModifyString(long, /*packed*/ class basic_string<char>&); // vtable+0x14c
 	virtual void SetScrollBarValue(); // vtable+0x150
 	virtual void SetScrollBarSizes(); // vtable+0x154
-	/*packed*/ class list<basic_string<char>> myStringList;
-	/*packed*/ struct SparkalColor colorFont;
-	/*packed*/ struct SparkalColor colorFontHighlighted;
-	int32_t nBackgroundIndex;
-	int32_t nBackgroundIndexHighlighted;
-	/*packed*/ class MFont fontText;
-	unsigned long nTextDrawStyle;
-	long lCurrentSelection;
-	long lVisibleLines;
-	long lFirstVisibleLine;
-	long lLineHeight;
-	int32_t bAlwaysSort;
-	/*packed*/ class ScrollBarWindow *myVerticalScrollBarWindow;
-	/*packed*/ class ScrollBarWindow *myHorizontalScrollBarWindow;
-	int32_t bBusySettingSelection;
+	/*+0x74*/  /*packed*/ class list<basic_string<char>> myStringList; // 0x8 bytes
+	/*+0x7c*/  /*packed*/ struct SparkalColor colorFont;
+	/*+0x80*/  /*packed*/ struct SparkalColor colorFontHighlighted;
+	/*+0x84*/  int32_t nBackgroundIndex;
+	/*+0x88*/  int32_t nBackgroundIndexHighlighted;
+	/*+0x8c*/  /*packed*/ class MFont fontText; // 0x1c bytes
+	/*+0xa8*/  unsigned long nTextDrawStyle;
+	/*+0xac*/  long lCurrentSelection;
+	/*+0xb0*/  long lVisibleLines;
+	/*+0xb4*/  long lFirstVisibleLine;
+	/*+0xb8*/  long lLineHeight;
+	/*+0xbc*/  int32_t bAlwaysSort;
+	/*+0xc0*/  /*packed*/ class ScrollBarWindow *myVerticalScrollBarWindow;
+	/*+0xc4*/  /*packed*/ class ScrollBarWindow *myHorizontalScrollBarWindow;
+	/*+0xc8*/  int32_t bBusySettingSelection;
 };
 
 // Type: void * __ptr32;
@@ -738,7 +738,7 @@ protected:
 class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_string<char>,int>
 { // packed(0x4 bytes) TI: 0x1cd3
 protected:
-	/*packed*/ struct list<basic_string<char>>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<basic_string<char>>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -773,9 +773,9 @@ protected:
 class list<basic_string<char>>{ // packed(0x8 bytes) TI: 0x1cb1
 	using void_pointer = void * __ptr32;
 	struct list<basic_string<char>>::list_node{ // packed(0x10 bytes) TI: 0x1cd7
-		void * __ptr32 next;
-		void * __ptr32 prev;
-		/*packed*/ class basic_string<char> data;
+		/*+0x0*/   void * __ptr32 next;
+		/*+0x4*/   void * __ptr32 prev;
+		/*+0x8*/   /*packed*/ class basic_string<char> data; // 0x8 bytes
 	};
 protected:
 	static /*packed*/ class allocator<list<basic_string<char>>::list_node> list_node_allocator;
@@ -792,8 +792,8 @@ protected:
 protected:
 	uint32_t buffer_size();
 	struct list<basic_string<char>>::list_node_buffer{ // packed(0x8 bytes) TI: 0x1cd5
-		void * __ptr32 next_buffer;
-		/*packed*/ struct list<basic_string<char>>::list_node *buffer;
+		/*+0x0*/   void * __ptr32 next_buffer;
+		/*+0x4*/   /*packed*/ struct list<basic_string<char>>::list_node *buffer;
 	};
 	using buffer_allocator_type = /*packed*/ class allocator<list<basic_string<char>>::list_node_buffer>;
 	using buffer_pointer = /*packed*/ struct list<basic_string<char>>::list_node_buffer*;
@@ -808,12 +808,12 @@ protected:
 	void deallocate_buffers();
 	/*packed*/ struct list<basic_string<char>>::list_node* get_node();
 	void put_node(/*packed*/ struct list<basic_string<char>>::list_node*);
-	/*packed*/ struct list<basic_string<char>>::list_node *node;
-	uint32_t length;
+	/*+0x0*/   /*packed*/ struct list<basic_string<char>>::list_node *node;
+	/*+0x4*/   uint32_t length;
 	class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_string<char>,int>
 	{ // packed(0x4 bytes) TI: 0x1cd3
 	protected:
-		/*packed*/ struct list<basic_string<char>>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<basic_string<char>>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -829,7 +829,7 @@ protected:
 	class list<basic_string<char>>::const_iterator : public bidirectional_iterator<basic_string<char>,int>
 	{ // packed(0x4 bytes) TI: 0x1cc6
 	protected:
-		/*packed*/ struct list<basic_string<char>>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<basic_string<char>>::list_node *node;
 	public:
 		void const_iterator(const /*packed*/ class list<basic_string<char>>::iterator&);
 		void const_iterator();
@@ -893,16 +893,16 @@ public:
 
 // Type: /*packed*/ struct list<basic_string<char>>::list_node_buffer (forward reference);
 struct list<basic_string<char>>::list_node_buffer{ // packed(0x8 bytes) TI: 0x1cd5
-	void * __ptr32 next_buffer;
-	/*packed*/ struct list<basic_string<char>>::list_node *buffer;
+	/*+0x0*/   void * __ptr32 next_buffer;
+	/*+0x4*/   /*packed*/ struct list<basic_string<char>>::list_node *buffer;
 };
 
 // Type: /*packed*/ struct SparkalRect;
 struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
-	long left;
-	long top;
-	long right;
-	long bottom;
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
 	void SparkalRect(long, long, long, long);
 	void SparkalRect();
 };
@@ -939,18 +939,18 @@ protected:
 	virtual long GetThumbWidth(); // vtable+0xd0
 	virtual long GetThumbHeight(); // vtable+0xd4
 public:
-	enum SliderWindow::SliderWindowDirection nSliderWindowDirection;
-	long lSliderMinimumValue;
-	long lSliderMaximumValue;
-	long lSliderCurrentValue;
-	long lMinimumThumbPosition;
-	long lCurrentThumbPosition;
-	long lMaximumThumbPosition;
-	long lThumbLimitIndentation;
-	/*packed*/ class MRect rectThumbImage;
-	/*unpacked*/ class CBackBuffer *myBackgroundImage;
-	/*packed*/ class basic_string<char> sBackgroundFile;
-	int32_t bBusySettingValue;
+	/*+0x74*/  enum SliderWindow::SliderWindowDirection nSliderWindowDirection;
+	/*+0x78*/  long lSliderMinimumValue;
+	/*+0x7c*/  long lSliderMaximumValue;
+	/*+0x80*/  long lSliderCurrentValue;
+	/*+0x84*/  long lMinimumThumbPosition;
+	/*+0x88*/  long lCurrentThumbPosition;
+	/*+0x8c*/  long lMaximumThumbPosition;
+	/*+0x90*/  long lThumbLimitIndentation;
+	/*+0x94*/  /*packed*/ class MRect rectThumbImage; // 0x10 bytes
+	/*+0xa4*/  /*unpacked*/ class CBackBuffer *myBackgroundImage;
+	/*+0xa8*/  /*packed*/ class basic_string<char> sBackgroundFile; // 0x8 bytes
+	/*+0xb0*/  int32_t bBusySettingValue;
 };
 
 // Type: /*packed*/ class ButtonWindow;
@@ -979,13 +979,13 @@ public:
 	virtual void SetTextColor(const /*packed*/ struct SparkalColor*, const /*packed*/ struct SparkalColor*); // vtable+0xd8
 	virtual int32_t CanWeRespondToMessage() /* override */;
 protected:
-	int32_t nButtonState;
-	int32_t bEnabled;
-	int32_t nButtonTextHeight;
-	/*packed*/ class MSize sizeTextOffset;
-	int32_t bBusySettingState;
-	/*packed*/ struct SparkalColor colorFont;
-	/*packed*/ struct SparkalColor colorFontHighlighted;
+	/*+0x74*/  int32_t nButtonState;
+	/*+0x78*/  int32_t bEnabled;
+	/*+0x7c*/  int32_t nButtonTextHeight;
+	/*+0x80*/  /*packed*/ class MSize sizeTextOffset; // 0x8 bytes
+	/*+0x88*/  int32_t bBusySettingState;
+	/*+0x8c*/  /*packed*/ struct SparkalColor colorFont;
+	/*+0x90*/  /*packed*/ struct SparkalColor colorFontHighlighted;
 };
 
 // Type: /*packed*/ struct bidirectional_iterator<RadioButtonWindow *,int>;
@@ -1043,21 +1043,21 @@ protected:
 	virtual int32_t ModifyString(long, /*packed*/ class basic_string<char>&); // vtable+0x14c
 	virtual void SetScrollBarValue(); // vtable+0x150
 	virtual void SetScrollBarSizes(); // vtable+0x154
-	/*packed*/ class list<basic_string<char>> myStringList;
-	/*packed*/ struct SparkalColor colorFont;
-	/*packed*/ struct SparkalColor colorFontHighlighted;
-	int32_t nBackgroundIndex;
-	int32_t nBackgroundIndexHighlighted;
-	/*packed*/ class MFont fontText;
-	unsigned long nTextDrawStyle;
-	long lCurrentSelection;
-	long lVisibleLines;
-	long lFirstVisibleLine;
-	long lLineHeight;
-	int32_t bAlwaysSort;
-	/*packed*/ class ScrollBarWindow *myVerticalScrollBarWindow;
-	/*packed*/ class ScrollBarWindow *myHorizontalScrollBarWindow;
-	int32_t bBusySettingSelection;
+	/*+0x74*/  /*packed*/ class list<basic_string<char>> myStringList; // 0x8 bytes
+	/*+0x7c*/  /*packed*/ struct SparkalColor colorFont;
+	/*+0x80*/  /*packed*/ struct SparkalColor colorFontHighlighted;
+	/*+0x84*/  int32_t nBackgroundIndex;
+	/*+0x88*/  int32_t nBackgroundIndexHighlighted;
+	/*+0x8c*/  /*packed*/ class MFont fontText; // 0x1c bytes
+	/*+0xa8*/  unsigned long nTextDrawStyle;
+	/*+0xac*/  long lCurrentSelection;
+	/*+0xb0*/  long lVisibleLines;
+	/*+0xb4*/  long lFirstVisibleLine;
+	/*+0xb8*/  long lLineHeight;
+	/*+0xbc*/  int32_t bAlwaysSort;
+	/*+0xc0*/  /*packed*/ class ScrollBarWindow *myVerticalScrollBarWindow;
+	/*+0xc4*/  /*packed*/ class ScrollBarWindow *myHorizontalScrollBarWindow;
+	/*+0xc8*/  int32_t bBusySettingSelection;
 };
 
 // Type: /*packed*/ struct bidirectional_iterator<basic_string<char>,int>;

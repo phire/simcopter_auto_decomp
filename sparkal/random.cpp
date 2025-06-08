@@ -9,9 +9,9 @@ public:
 	unsigned long operator()(unsigned long);
 	void seed(unsigned long);
 protected:
-	unsigned long table[55];
-	uint32_t index1;
-	uint32_t index2;
+	/*+0x0*/   unsigned long table[55]; // 0xdc bytes
+	/*+0xdc*/  uint32_t index1;
+	/*+0xe0*/  uint32_t index2;
 };
 
 // Type: void ();
@@ -27,9 +27,9 @@ public:
 	unsigned long operator()(unsigned long);
 	void seed(unsigned long);
 protected:
-	unsigned long table[55];
-	uint32_t index1;
-	uint32_t index2;
+	/*+0x0*/   unsigned long table[55]; // 0xdc bytes
+	/*+0xdc*/  uint32_t index1;
+	/*+0xe0*/  uint32_t index2;
 };
 
 // Type: uint32_t;

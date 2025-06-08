@@ -25,20 +25,20 @@ public:
 	// calltype: NearStd
 	virtual long MySparkalWindowProc(void * __ptr32, uint32_t, uint32_t, long) /* override */;
 protected:
-	/*packed*/ class MRect rectWindowDesired;
-	/*packed*/ class MRect rectWindow;
-	/*packed*/ class MRect rectWindowClient;
-	char * szCaption;
+	/*+0x68*/  /*packed*/ class MRect rectWindowDesired; // 0x10 bytes
+	/*+0x78*/  /*packed*/ class MRect rectWindow; // 0x10 bytes
+	/*+0x88*/  /*packed*/ class MRect rectWindowClient; // 0x10 bytes
+	/*+0x98*/  char * szCaption;
 };
 
 // Type: unsigned long;
 
 // Type: /*packed*/ struct SparkalColor (forward reference);
 struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
-	unsigned char Blue;
-	unsigned char Green;
-	unsigned char Red;
-	unsigned char Padding;
+	/*+0x0*/   unsigned char Blue; // 0x1 bytes
+	/*+0x1*/   unsigned char Green; // 0x1 bytes
+	/*+0x2*/   unsigned char Red; // 0x1 bytes
+	/*+0x3*/   unsigned char Padding; // 0x1 bytes
 	void SparkalColor(unsigned char, unsigned char, unsigned char);
 	void SparkalColor();
 };
@@ -47,35 +47,35 @@ struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 
 // Type: /*packed*/ struct tagWNDCLASSA;
 struct tagWNDCLASSA{ // packed(0x28 bytes) TI: 0x26d3
-	uint32_t style;
-	long (*lpfnWndProc)(void * __ptr32, uint32_t, uint32_t, long);
-	int32_t cbClsExtra;
-	int32_t cbWndExtra;
-	void * __ptr32 hInstance;
-	void * __ptr32 hIcon;
-	void * __ptr32 hCursor;
-	void * __ptr32 hbrBackground;
-	char * lpszMenuName;
-	char * lpszClassName;
+	/*+0x0*/   uint32_t style;
+	/*+0x4*/   long (*lpfnWndProc)(void * __ptr32, uint32_t, uint32_t, long);
+	/*+0x8*/   int32_t cbClsExtra;
+	/*+0xc*/   int32_t cbWndExtra;
+	/*+0x10*/  void * __ptr32 hInstance;
+	/*+0x14*/  void * __ptr32 hIcon;
+	/*+0x18*/  void * __ptr32 hCursor;
+	/*+0x1c*/  void * __ptr32 hbrBackground;
+	/*+0x20*/  char * lpszMenuName;
+	/*+0x24*/  char * lpszClassName;
 };
 
 // Type: void;
 
 // Type: /*packed*/ struct tagRECT;
 struct tagRECT{ // packed(0x10 bytes) TI: 0x13c4
-	long left;
-	long top;
-	long right;
-	long bottom;
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
 };
 
 // Type: int32_t;
 
 // Type: /*packed*/ struct GameWindow::MakePalette::__unnamed;
 struct GameWindow::MakePalette::__unnamed{ // packed(0x404 bytes) TI: 0x283b
-	unsigned short Version;
-	unsigned short NumberOfEntries;
-	/*packed*/ struct tagPALETTEENTRY aEntries[256];
+	/*+0x0*/   unsigned short Version; // 0x2 bytes
+	/*+0x2*/   unsigned short NumberOfEntries; // 0x2 bytes
+	/*+0x4*/   /*packed*/ struct tagPALETTEENTRY aEntries[256]; // 0x400 bytes
 };
 
 // Type: void * __ptr32;
@@ -154,11 +154,11 @@ public:
 
 // Type: /*packed*/ struct tagMINMAXINFO (forward reference);
 struct tagMINMAXINFO{ // packed(0x28 bytes) TI: 0x2841
-	/*packed*/ struct tagPOINT ptReserved;
-	/*packed*/ struct tagPOINT ptMaxSize;
-	/*packed*/ struct tagPOINT ptMaxPosition;
-	/*packed*/ struct tagPOINT ptMinTrackSize;
-	/*packed*/ struct tagPOINT ptMaxTrackSize;
+	/*+0x0*/   /*packed*/ struct tagPOINT ptReserved; // 0x8 bytes
+	/*+0x8*/   /*packed*/ struct tagPOINT ptMaxSize; // 0x8 bytes
+	/*+0x10*/  /*packed*/ struct tagPOINT ptMaxPosition; // 0x8 bytes
+	/*+0x18*/  /*packed*/ struct tagPOINT ptMinTrackSize; // 0x8 bytes
+	/*+0x20*/  /*packed*/ struct tagPOINT ptMaxTrackSize; // 0x8 bytes
 };
 
 // Type: /*packed*/ class CSparkalWindow (forward reference);
@@ -190,18 +190,18 @@ public:
 	virtual unsigned long SwapBuffer(); // vtable+0x28
 	virtual void UpdatePalette(long, long, /*packed*/ struct SparkalColor*); // vtable+0x2c
 protected:
-	long mHeight;
-	long mWidth;
-	unsigned long mStyle;
-	/*unpacked*/ class ICommander *mpCommander;
-	/*unpacked*/ class ScreenBuffer *mpBackBuffer;
-	void * __ptr32 mWindow;
+	/*+0x4*/   long mHeight;
+	/*+0x8*/   long mWidth;
+	/*+0xc*/   unsigned long mStyle;
+	/*+0x10*/  /*unpacked*/ class ICommander *mpCommander;
+	/*+0x14*/  /*unpacked*/ class ScreenBuffer *mpBackBuffer;
+	/*+0x18*/  void * __ptr32 mWindow;
 	// calltype: NearStd
 	virtual long MySparkalWindowProc(void * __ptr32, uint32_t, uint32_t, long); // vtable+0x30
-	void * __ptr32 mPalette;
-	void * __ptr32 mhCurrentCursor;
-	void * __ptr32 mhCustomCursor;
-	void * __ptr32 mCursors[16];
+	/*+0x1c*/  void * __ptr32 mPalette;
+	/*+0x20*/  void * __ptr32 mhCurrentCursor;
+	/*+0x24*/  void * __ptr32 mhCustomCursor;
+	/*+0x28*/  void * __ptr32 mCursors[16]; // 0x40 bytes
 };
 
 // Type: /*packed*/ class CSparkalWindow;
@@ -233,26 +233,26 @@ public:
 	virtual unsigned long SwapBuffer(); // vtable+0x28
 	virtual void UpdatePalette(long, long, /*packed*/ struct SparkalColor*); // vtable+0x2c
 protected:
-	long mHeight;
-	long mWidth;
-	unsigned long mStyle;
-	/*unpacked*/ class ICommander *mpCommander;
-	/*unpacked*/ class ScreenBuffer *mpBackBuffer;
-	void * __ptr32 mWindow;
+	/*+0x4*/   long mHeight;
+	/*+0x8*/   long mWidth;
+	/*+0xc*/   unsigned long mStyle;
+	/*+0x10*/  /*unpacked*/ class ICommander *mpCommander;
+	/*+0x14*/  /*unpacked*/ class ScreenBuffer *mpBackBuffer;
+	/*+0x18*/  void * __ptr32 mWindow;
 	// calltype: NearStd
 	virtual long MySparkalWindowProc(void * __ptr32, uint32_t, uint32_t, long); // vtable+0x30
-	void * __ptr32 mPalette;
-	void * __ptr32 mhCurrentCursor;
-	void * __ptr32 mhCustomCursor;
-	void * __ptr32 mCursors[16];
+	/*+0x1c*/  void * __ptr32 mPalette;
+	/*+0x20*/  void * __ptr32 mhCurrentCursor;
+	/*+0x24*/  void * __ptr32 mhCustomCursor;
+	/*+0x28*/  void * __ptr32 mCursors[16]; // 0x40 bytes
 };
 
 // Type: /*packed*/ struct SparkalRect;
 struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
-	long left;
-	long top;
-	long right;
-	long bottom;
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
 	void SparkalRect(long, long, long, long);
 	void SparkalRect();
 };

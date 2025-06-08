@@ -18,7 +18,7 @@ public:
 	virtual /*unpacked*/ class CSparkalWindow* SetWindow(/*unpacked*/ class CSparkalWindow*); // vtable+0x20
 	/*unpacked*/ class CSparkalWindow* GetWindow();
 protected:
-	/*unpacked*/ class CSparkalWindow *mpWindow;
+	/*+0x4*/   /*unpacked*/ class CSparkalWindow *mpWindow;
 };
 
 // Type: void;

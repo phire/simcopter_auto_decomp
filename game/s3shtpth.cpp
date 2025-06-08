@@ -23,8 +23,8 @@ enum DirectionTypes {
 // Type: /*packed*/ class ShortestPath (forward reference);
 class ShortestPath{ // packed(0x8 bytes) TI: 0x2aae
 private:
-	/*packed*/ struct _FringeHeapNode *heap;
-	long heapSize;
+	/*+0x0*/   /*packed*/ struct _FringeHeapNode *heap;
+	/*+0x4*/   long heapSize;
 public:
 	void Init();
 	int32_t BreadthFirstSearch(/*packed*/ struct _RGIndex, /*packed*/ struct _RGIndex);
@@ -37,69 +37,69 @@ private:
 
 // Type: /*packed*/ struct _GridCoordinates;
 struct _GridCoordinates{ // packed(0x2 bytes) TI: 0x143c
-	unsigned char x;
-	unsigned char y;
+	/*+0x0*/   unsigned char x; // 0x1 bytes
+	/*+0x1*/   unsigned char y; // 0x1 bytes
 };
 
 // Type: int32_t;
 
 // Type: /*packed*/ struct _RGIndex;
 struct _RGIndex{ // packed(0x2 bytes) TI: 0x2ab2
-	unsigned char x;
-	unsigned char yindex;
+	/*+0x0*/   unsigned char x; // 0x1 bytes
+	/*+0x1*/   unsigned char yindex; // 0x1 bytes
 };
 
 // Type: /*packed*/ struct _FringeHeapNode;
 struct _FringeHeapNode{ // packed(0x9 bytes) TI: 0x2ab0
-	unsigned char xCurr;
-	unsigned char yindexCurr;
-	unsigned char edgeIndexPrev;
-	unsigned char xPrev;
-	unsigned char yindexPrev;
-	long cost;
+	/*+0x0*/   unsigned char xCurr; // 0x1 bytes
+	/*+0x1*/   unsigned char yindexCurr; // 0x1 bytes
+	/*+0x2*/   unsigned char edgeIndexPrev; // 0x1 bytes
+	/*+0x3*/   unsigned char xPrev; // 0x1 bytes
+	/*+0x4*/   unsigned char yindexPrev; // 0x1 bytes
+	/*+0x5*/   long cost;
 };
 
 // Type: /*packed*/ struct RGVertex (forward reference);
 struct RGVertex{ // packed(0x33 bytes) TI: 0x1776
-	unsigned char x;
-	unsigned char y;
-	LfBitfield @ 0x11f58:
+	/*+0x0*/   unsigned char x; // 0x1 bytes
+	/*+0x1*/   unsigned char y; // 0x1 bytes
+	/*+0x2*/   LfBitfield @ 0x11f58:
 	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x4
 	[90m   LB.[95mTI[m = 0x1771
 	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x0
 	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
 	 turnFlags;
-	LfBitfield @ 0x11f60:
+	/*+0x2*/   LfBitfield @ 0x11f60:
 	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x4
 	[90m   LB.[95mTI[m = 0x1772
 	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x4
 	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
 	 deadEndFlags;
-	unsigned char fElevated;
-	/*packed*/ struct Edge edge[4];
-	unsigned char yindexPrev;
-	unsigned char xPrev;
-	unsigned char edgeIndexPrev;
-	int32_t STVisited;
+	/*+0x3*/   unsigned char fElevated; // 0x1 bytes
+	/*+0x4*/   /*packed*/ struct Edge edge[4]; // 0x28 bytes
+	/*+0x2c*/  unsigned char yindexPrev; // 0x1 bytes
+	/*+0x2d*/  unsigned char xPrev; // 0x1 bytes
+	/*+0x2e*/  unsigned char edgeIndexPrev; // 0x1 bytes
+	/*+0x2f*/  int32_t STVisited;
 };
 
 // Type: /*packed*/ struct Edge (forward reference);
 struct Edge{ // packed(0xa bytes) TI: 0x176b
-	unsigned char yindex;
-	unsigned char x;
-	unsigned short Time;
-	unsigned short numElementsToPath;
-	/*packed*/ struct Road *roadArray;
+	/*+0x0*/   unsigned char yindex; // 0x1 bytes
+	/*+0x1*/   unsigned char x; // 0x1 bytes
+	/*+0x2*/   unsigned short Time; // 0x2 bytes
+	/*+0x4*/   unsigned short numElementsToPath; // 0x2 bytes
+	/*+0x6*/   /*packed*/ struct Road *roadArray;
 };
 
 // Type: /*packed*/ struct _FringeHeapNode (forward reference);
 struct _FringeHeapNode{ // packed(0x9 bytes) TI: 0x2ab0
-	unsigned char xCurr;
-	unsigned char yindexCurr;
-	unsigned char edgeIndexPrev;
-	unsigned char xPrev;
-	unsigned char yindexPrev;
-	long cost;
+	/*+0x0*/   unsigned char xCurr; // 0x1 bytes
+	/*+0x1*/   unsigned char yindexCurr; // 0x1 bytes
+	/*+0x2*/   unsigned char edgeIndexPrev; // 0x1 bytes
+	/*+0x3*/   unsigned char xPrev; // 0x1 bytes
+	/*+0x4*/   unsigned char yindexPrev; // 0x1 bytes
+	/*+0x5*/   long cost;
 };
 
 // Type: void;

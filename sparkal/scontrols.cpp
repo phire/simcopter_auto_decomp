@@ -7,14 +7,14 @@
 class DigitalSound : public Sound
 { // packed(0x7a bytes) TI: 0x45d4
 protected:
-	int32_t nStreamingType;
-	int32_t nCompletionEstimationTimerSet;
+	/*+0x34*/  int32_t nStreamingType;
+	/*+0x38*/  int32_t nCompletionEstimationTimerSet;
 	static /*packed*/ struct IDirectSound *lpDirectSound;
-	uint32_t cbSize;
-	/*packed*/ struct tWAVEFORMATEX waveFormatEx;
-	/*packed*/ struct IDirectSoundBuffer *lpSound[8];
-	/*packed*/ struct _STREAMBUFINFO *lpStreamBufferInfo;
-	unsigned long dwDesiredBufferDescFlags;
+	/*+0x3c*/  uint32_t cbSize;
+	/*+0x40*/  /*packed*/ struct tWAVEFORMATEX waveFormatEx; // 0x12 bytes
+	/*+0x52*/  /*packed*/ struct IDirectSoundBuffer *lpSound[8]; // 0x20 bytes
+	/*+0x72*/  /*packed*/ struct _STREAMBUFINFO *lpStreamBufferInfo;
+	/*+0x76*/  unsigned long dwDesiredBufferDescFlags;
 public:
 	void DigitalSound(long);
 	void DigitalSound(const /*packed*/ class basic_string<char>&, int32_t);
@@ -246,13 +246,13 @@ public:
 	virtual void SetTextColor(const /*packed*/ struct SparkalColor*, const /*packed*/ struct SparkalColor*); // vtable+0xd8
 	virtual int32_t CanWeRespondToMessage() /* override */;
 protected:
-	int32_t nButtonState;
-	int32_t bEnabled;
-	int32_t nButtonTextHeight;
-	/*packed*/ class MSize sizeTextOffset;
-	int32_t bBusySettingState;
-	/*packed*/ struct SparkalColor colorFont;
-	/*packed*/ struct SparkalColor colorFontHighlighted;
+	/*+0x74*/  int32_t nButtonState;
+	/*+0x78*/  int32_t bEnabled;
+	/*+0x7c*/  int32_t nButtonTextHeight;
+	/*+0x80*/  /*packed*/ class MSize sizeTextOffset; // 0x8 bytes
+	/*+0x88*/  int32_t bBusySettingState;
+	/*+0x8c*/  /*packed*/ struct SparkalColor colorFont;
+	/*+0x90*/  /*packed*/ struct SparkalColor colorFontHighlighted;
 };
 
 // Type: uint32_t;
@@ -283,13 +283,13 @@ public:
 	virtual void SetTextColor(const /*packed*/ struct SparkalColor*, const /*packed*/ struct SparkalColor*); // vtable+0xd8
 	virtual int32_t CanWeRespondToMessage() /* override */;
 protected:
-	int32_t nButtonState;
-	int32_t bEnabled;
-	int32_t nButtonTextHeight;
-	/*packed*/ class MSize sizeTextOffset;
-	int32_t bBusySettingState;
-	/*packed*/ struct SparkalColor colorFont;
-	/*packed*/ struct SparkalColor colorFontHighlighted;
+	/*+0x74*/  int32_t nButtonState;
+	/*+0x78*/  int32_t bEnabled;
+	/*+0x7c*/  int32_t nButtonTextHeight;
+	/*+0x80*/  /*packed*/ class MSize sizeTextOffset; // 0x8 bytes
+	/*+0x88*/  int32_t bBusySettingState;
+	/*+0x8c*/  /*packed*/ struct SparkalColor colorFont;
+	/*+0x90*/  /*packed*/ struct SparkalColor colorFontHighlighted;
 };
 
 // Type: /*packed*/ class Sound;
@@ -300,7 +300,7 @@ class Sound{ // packed(0x34 bytes) TI: 0x4335
 		nSoundSourceTypeFile = 1,
 	};
 public:
-	enum Sound::SoundSourceType nSoundSourceType;
+	/*+0x4*/   enum Sound::SoundSourceType nSoundSourceType;
 	enum SoundDuplicateType {
 		nSoundDuplicateDefault = 0,
 		nSoundDuplicateInterrupt = 1,
@@ -308,16 +308,16 @@ public:
 		nSoundDuplicateOverlap = 3,
 	};
 public:
-	enum Sound::SoundDuplicateType nSoundDuplicateType;
-	long lID;
-	long lResID;
-	/*packed*/ class basic_string<char> sSoundFile;
-	long bLooping;
-	long bStreaming;
-	long lVolume;
-	void (*soundCompletionFunction)(long);
-	long lSoundCompletionData;
-	int32_t bUnloadBeforeNextPlay;
+	/*+0x8*/   enum Sound::SoundDuplicateType nSoundDuplicateType;
+	/*+0xc*/   long lID;
+	/*+0x10*/  long lResID;
+	/*+0x14*/  /*packed*/ class basic_string<char> sSoundFile; // 0x8 bytes
+	/*+0x1c*/  long bLooping;
+	/*+0x20*/  long bStreaming;
+	/*+0x24*/  long lVolume;
+	/*+0x28*/  void (*soundCompletionFunction)(long);
+	/*+0x2c*/  long lSoundCompletionData;
+	/*+0x30*/  int32_t bUnloadBeforeNextPlay;
 	void Sound();
 	virtual void ~Sound(); // vtable+0x0
 	/*packed*/ class Sound& operator=(const /*packed*/ class Sound&);
@@ -338,10 +338,10 @@ public:
 
 // Type: /*packed*/ struct SparkalRect;
 struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
-	long left;
-	long top;
-	long right;
-	long bottom;
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
 	void SparkalRect(long, long, long, long);
 	void SparkalRect();
 };
@@ -397,11 +397,11 @@ protected:
 	virtual long GetValueOfGivenLine(long); // vtable+0xfc
 	virtual long GetCurrentPage(); // vtable+0x100
 	virtual long GetValueOfGivenPage(long); // vtable+0x104
-	long lLineCount;
-	long lPageCount;
-	/*packed*/ class MTimer myTimer;
-	enum ScrollBarWindow::ScrollHitTestResult initialScrollHitTestResult;
-	int32_t bCursorIsOnInitialHitTestResult;
+	/*+0xb4*/  long lLineCount;
+	/*+0xb8*/  long lPageCount;
+	/*+0xbc*/  /*packed*/ class MTimer myTimer; // 0x10 bytes
+	/*+0xcc*/  enum ScrollBarWindow::ScrollHitTestResult initialScrollHitTestResult;
+	/*+0xd0*/  int32_t bCursorIsOnInitialHitTestResult;
 };
 
 // Type: /*packed*/ class RadioButtonWindow;
@@ -422,7 +422,7 @@ public:
 	virtual long DoCursorUp(long, long, unsigned long) /* override */;
 	virtual long DoCursorMove(long, long) /* override */;
 protected:
-	/*unpacked*/ class ButtonGroup *myRadioButtonGroup;
+	/*+0x94*/  /*unpacked*/ class ButtonGroup *myRadioButtonGroup;
 };
 
 // Type: /*packed*/ class SliderWindow;
@@ -457,18 +457,18 @@ protected:
 	virtual long GetThumbWidth(); // vtable+0xd0
 	virtual long GetThumbHeight(); // vtable+0xd4
 public:
-	enum SliderWindow::SliderWindowDirection nSliderWindowDirection;
-	long lSliderMinimumValue;
-	long lSliderMaximumValue;
-	long lSliderCurrentValue;
-	long lMinimumThumbPosition;
-	long lCurrentThumbPosition;
-	long lMaximumThumbPosition;
-	long lThumbLimitIndentation;
-	/*packed*/ class MRect rectThumbImage;
-	/*unpacked*/ class CBackBuffer *myBackgroundImage;
-	/*packed*/ class basic_string<char> sBackgroundFile;
-	int32_t bBusySettingValue;
+	/*+0x74*/  enum SliderWindow::SliderWindowDirection nSliderWindowDirection;
+	/*+0x78*/  long lSliderMinimumValue;
+	/*+0x7c*/  long lSliderMaximumValue;
+	/*+0x80*/  long lSliderCurrentValue;
+	/*+0x84*/  long lMinimumThumbPosition;
+	/*+0x88*/  long lCurrentThumbPosition;
+	/*+0x8c*/  long lMaximumThumbPosition;
+	/*+0x90*/  long lThumbLimitIndentation;
+	/*+0x94*/  /*packed*/ class MRect rectThumbImage; // 0x10 bytes
+	/*+0xa4*/  /*unpacked*/ class CBackBuffer *myBackgroundImage;
+	/*+0xa8*/  /*packed*/ class basic_string<char> sBackgroundFile; // 0x8 bytes
+	/*+0xb0*/  int32_t bBusySettingValue;
 };
 
 

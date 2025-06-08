@@ -22,9 +22,9 @@ public:
 	unsigned long Compose(/*unpacked*/ class IFlatImage*, long, long, long, long, long, long);
 	unsigned long Compose(/*unpacked*/ class IFlatImage*, long, long);
 protected:
-	void * __ptr32 mhRLEImage;
-	/*packed*/ struct RLEHeader *mpLockedImage;
-	unsigned long mLockCount;
+	/*+0x0*/   void * __ptr32 mhRLEImage;
+	/*+0x4*/   /*packed*/ struct RLEHeader *mpLockedImage;
+	/*+0x8*/   unsigned long mLockCount;
 };
 
 // Type: long;
@@ -71,10 +71,10 @@ public:
 
 // Type: /*packed*/ struct RLEHeader (forward reference);
 struct RLEHeader{ // packed(0x8 bytes) TI: 0x218b
-	short Width;
-	short Height;
-	short XOffset;
-	short YOffset;
+	/*+0x0*/   short Width; // 0x2 bytes
+	/*+0x2*/   short Height; // 0x2 bytes
+	/*+0x4*/   short XOffset; // 0x2 bytes
+	/*+0x6*/   short YOffset; // 0x2 bytes
 };
 
 // Type: void;
@@ -91,7 +91,7 @@ public:
 	virtual unsigned long Lock() /* override */;
 	virtual unsigned long Unlock() /* override */;
 protected:
-	void * __ptr32 mBitsHandle;
+	/*+0x18*/  void * __ptr32 mBitsHandle;
 };
 
 // Type: /*packed*/ class IFlatImage (forward reference);
@@ -117,11 +117,11 @@ public:
 	static unsigned long lTotalMemoryUsage;
 	static unsigned long lTotalLockCount;
 protected:
-	unsigned long mLockCount;
-	long mWidth;
-	long mHeight;
-	void * __ptr32 mpBits;
-	long mStride;
+	/*+0x4*/   unsigned long mLockCount;
+	/*+0x8*/   long mWidth;
+	/*+0xc*/   long mHeight;
+	/*+0x10*/  void * __ptr32 mpBits;
+	/*+0x14*/  long mStride;
 };
 
 // Type: unsigned char *;
@@ -198,8 +198,8 @@ protected:
 private:
 	int32_t getint(char *);
 	int32_t getdouble(char *, int32_t);
-	int32_t _fGline;
-	int32_t x_gcount;
+	/*+0x4*/   int32_t _fGline;
+	/*+0x8*/   int32_t x_gcount;
 };
 
 // Type: /*unpacked*/ class ios;
@@ -301,18 +301,18 @@ protected:
 		tied = 1,
 	};
 protected:
-	/*unpacked*/ class streambuf *bp;
-	int32_t state;
-	int32_t ispecial;
-	int32_t ospecial;
-	int32_t isfx_special;
-	int32_t osfx_special;
-	int32_t x_delbuf;
-	/*unpacked*/ class ostream *x_tie;
-	long x_flags;
-	int32_t x_precision;
-	char x_fill;
-	int32_t x_width;
+	/*+0x4*/   /*unpacked*/ class streambuf *bp;
+	/*+0x8*/   int32_t state;
+	/*+0xc*/   int32_t ispecial;
+	/*+0x10*/  int32_t ospecial;
+	/*+0x14*/  int32_t isfx_special;
+	/*+0x18*/  int32_t osfx_special;
+	/*+0x1c*/  int32_t x_delbuf;
+	/*+0x20*/  /*unpacked*/ class ostream *x_tie;
+	/*+0x24*/  long x_flags;
+	/*+0x28*/  int32_t x_precision;
+	/*+0x2c*/  char x_fill; // 0x1 bytes
+	/*+0x30*/  int32_t x_width;
 	static void (*stdioflush)();
 	// calltype: NearC
 	static void lockc();
@@ -329,8 +329,8 @@ private:
 	static long x_statebuf[8];
 	static int32_t fLockcInit;
 	static /*unpacked*/ struct _CRT_CRITICAL_SECTION x_lockc;
-	int32_t LockFlg;
-	/*unpacked*/ struct _CRT_CRITICAL_SECTION x_lock;
+	/*+0x34*/  int32_t LockFlg;
+	/*+0x38*/  /*unpacked*/ struct _CRT_CRITICAL_SECTION x_lock; // 0x18 bytes
 };
 
 // Type: /*unpacked*/ class ostream (forward reference);

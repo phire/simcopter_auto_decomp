@@ -66,10 +66,10 @@ public:
 	long SetPath(char *);
 	long FileCreate(char *, int32_t);
 	long FileExists(char *);
-	char szFilePath[260];
-	int32_t Handle;
+	/*+0x4*/   char szFilePath[260]; // 0x104 bytes
+	/*+0x108*/ int32_t Handle;
 private:
-	int32_t ShouldClose;
+	/*+0x10c*/ int32_t ShouldClose;
 };
 
 // Type: char *;
@@ -84,12 +84,12 @@ private:
 
 // Type: /*packed*/ struct _OFSTRUCT;
 struct _OFSTRUCT{ // packed(0x88 bytes) TI: 0x21e5
-	unsigned char cBytes;
-	unsigned char fFixedDisk;
-	unsigned short nErrCode;
-	unsigned short Reserved1;
-	unsigned short Reserved2;
-	char szPathName[128];
+	/*+0x0*/   unsigned char cBytes; // 0x1 bytes
+	/*+0x1*/   unsigned char fFixedDisk; // 0x1 bytes
+	/*+0x2*/   unsigned short nErrCode; // 0x2 bytes
+	/*+0x4*/   unsigned short Reserved1; // 0x2 bytes
+	/*+0x6*/   unsigned short Reserved2; // 0x2 bytes
+	/*+0x8*/   char szPathName[128]; // 0x80 bytes
 };
 
 // Type: unsigned char;
@@ -158,10 +158,10 @@ public:
 	long SetPath(char *);
 	long FileCreate(char *, int32_t);
 	long FileExists(char *);
-	char szFilePath[260];
-	int32_t Handle;
+	/*+0x4*/   char szFilePath[260]; // 0x104 bytes
+	/*+0x108*/ int32_t Handle;
 private:
-	int32_t ShouldClose;
+	/*+0x10c*/ int32_t ShouldClose;
 };
 
 // Type: unsigned char *;

@@ -5,7 +5,7 @@
 // Type: /*packed*/ class DirectDrawError (forward reference);
 class DirectDrawError{ // packed(0x4 bytes) TI: 0x1976
 public:
-	long hErrorValue;
+	/*+0x0*/   long hErrorValue;
 	void DirectDrawError(long);
 	void DisplayError(char *);
 	void MakeErrorString(char *, char *);
@@ -20,7 +20,7 @@ public:
 // Type: /*packed*/ class DirectSoundError (forward reference);
 class DirectSoundError{ // packed(0x4 bytes) TI: 0x117b
 public:
-	long hErrorValue;
+	/*+0x0*/   long hErrorValue;
 	void DirectSoundError(long);
 	void DisplayError(char *);
 	void MakeErrorString(char *, char *);

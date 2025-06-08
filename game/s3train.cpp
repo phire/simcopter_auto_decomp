@@ -4,14 +4,14 @@
 
 // Type: /*packed*/ struct CONNECTION_INFO_TYPE (forward reference);
 struct CONNECTION_INFO_TYPE{ // packed(0x8 bytes) TI: 0x30c5
-	enum RailTypes tile;
-	enum DirectionTypes connections;
+	/*+0x0*/   enum RailTypes tile;
+	/*+0x4*/   enum DirectionTypes connections;
 };
 
 // Type: /*packed*/ struct Point2d;
 struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
-	int32_t x;
-	int32_t y;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
 };
 
 // Type: /*packed*/ class TrainClass;
@@ -76,40 +76,40 @@ class TrainClass{ // packed(0x1d9 bytes) TI: 0x42ad
 private:
 	static /*packed*/ struct Point2d lastScannedLocation;
 	static /*packed*/ class TrainClass lsTrain;
-	char flags[9];
-	int32_t stalledTimer;
-	enum DirectionTypes direction;
-	/*packed*/ struct Point3d directionVector;
-	int32_t remainingDist;
-	int32_t remainingTime;
-	enum DirectionTypes utdirection;
-	int32_t speed;
-	int32_t desiredSpeed;
-	/*packed*/ struct Point2d currentLocation1;
-	/*packed*/ struct Point2d currentLocation2;
-	/*packed*/ struct Point2d currentLocation3;
-	/*packed*/ struct Point2d currentCell;
-	/*packed*/ struct Point2d nextLocation;
-	int32_t beamDelay;
-	int32_t beamTimer;
-	long utRotation;
-	long missionId;
-	int32_t smokeTime;
-	int32_t timeToLive;
-	/*packed*/ struct Point2d northCell;
-	/*packed*/ struct Point2d southCell;
-	/*packed*/ struct Point2d eastCell;
-	/*packed*/ struct Point2d westCell;
+	/*+0x4*/   char flags[9]; // 0x9 bytes
+	/*+0xd*/   int32_t stalledTimer;
+	/*+0x11*/  enum DirectionTypes direction;
+	/*+0x15*/  /*packed*/ struct Point3d directionVector; // 0xc bytes
+	/*+0x21*/  int32_t remainingDist;
+	/*+0x25*/  int32_t remainingTime;
+	/*+0x29*/  enum DirectionTypes utdirection;
+	/*+0x2d*/  int32_t speed;
+	/*+0x31*/  int32_t desiredSpeed;
+	/*+0x35*/  /*packed*/ struct Point2d currentLocation1; // 0x8 bytes
+	/*+0x3d*/  /*packed*/ struct Point2d currentLocation2; // 0x8 bytes
+	/*+0x45*/  /*packed*/ struct Point2d currentLocation3; // 0x8 bytes
+	/*+0x4d*/  /*packed*/ struct Point2d currentCell; // 0x8 bytes
+	/*+0x55*/  /*packed*/ struct Point2d nextLocation; // 0x8 bytes
+	/*+0x5d*/  int32_t beamDelay;
+	/*+0x61*/  int32_t beamTimer;
+	/*+0x65*/  long utRotation;
+	/*+0x69*/  long missionId;
+	/*+0x6d*/  int32_t smokeTime;
+	/*+0x71*/  int32_t timeToLive;
+	/*+0x75*/  /*packed*/ struct Point2d northCell; // 0x8 bytes
+	/*+0x7d*/  /*packed*/ struct Point2d southCell; // 0x8 bytes
+	/*+0x85*/  /*packed*/ struct Point2d eastCell; // 0x8 bytes
+	/*+0x8d*/  /*packed*/ struct Point2d westCell; // 0x8 bytes
 protected:
-	long trainModel1;
-	long trainModel2;
-	long trainModel3;
-	/*packed*/ struct _DYOBJ_INST dyObj1;
-	/*packed*/ struct _DYOBJ_INST dyObj2;
-	/*packed*/ struct _DYOBJ_INST dyObj3;
-	/*packed*/ struct _DYOBJ_INST *leadcar;
-	/*packed*/ struct _DYOBJ_INST *midcar;
-	/*packed*/ struct _DYOBJ_INST *endcar;
+	/*+0x95*/  long trainModel1;
+	/*+0x99*/  long trainModel2;
+	/*+0x9d*/  long trainModel3;
+	/*+0xa1*/  /*packed*/ struct _DYOBJ_INST dyObj1; // 0x64 bytes
+	/*+0x105*/ /*packed*/ struct _DYOBJ_INST dyObj2; // 0x64 bytes
+	/*+0x169*/ /*packed*/ struct _DYOBJ_INST dyObj3; // 0x64 bytes
+	/*+0x1cd*/ /*packed*/ struct _DYOBJ_INST *leadcar;
+	/*+0x1d1*/ /*packed*/ struct _DYOBJ_INST *midcar;
+	/*+0x1d5*/ /*packed*/ struct _DYOBJ_INST *endcar;
 public:
 	void TrainClass(const /*packed*/ class TrainClass&);
 	void TrainClass(long, long);
@@ -278,40 +278,40 @@ class TrainClass{ // packed(0x1d9 bytes) TI: 0x42ad
 private:
 	static /*packed*/ struct Point2d lastScannedLocation;
 	static /*packed*/ class TrainClass lsTrain;
-	char flags[9];
-	int32_t stalledTimer;
-	enum DirectionTypes direction;
-	/*packed*/ struct Point3d directionVector;
-	int32_t remainingDist;
-	int32_t remainingTime;
-	enum DirectionTypes utdirection;
-	int32_t speed;
-	int32_t desiredSpeed;
-	/*packed*/ struct Point2d currentLocation1;
-	/*packed*/ struct Point2d currentLocation2;
-	/*packed*/ struct Point2d currentLocation3;
-	/*packed*/ struct Point2d currentCell;
-	/*packed*/ struct Point2d nextLocation;
-	int32_t beamDelay;
-	int32_t beamTimer;
-	long utRotation;
-	long missionId;
-	int32_t smokeTime;
-	int32_t timeToLive;
-	/*packed*/ struct Point2d northCell;
-	/*packed*/ struct Point2d southCell;
-	/*packed*/ struct Point2d eastCell;
-	/*packed*/ struct Point2d westCell;
+	/*+0x4*/   char flags[9]; // 0x9 bytes
+	/*+0xd*/   int32_t stalledTimer;
+	/*+0x11*/  enum DirectionTypes direction;
+	/*+0x15*/  /*packed*/ struct Point3d directionVector; // 0xc bytes
+	/*+0x21*/  int32_t remainingDist;
+	/*+0x25*/  int32_t remainingTime;
+	/*+0x29*/  enum DirectionTypes utdirection;
+	/*+0x2d*/  int32_t speed;
+	/*+0x31*/  int32_t desiredSpeed;
+	/*+0x35*/  /*packed*/ struct Point2d currentLocation1; // 0x8 bytes
+	/*+0x3d*/  /*packed*/ struct Point2d currentLocation2; // 0x8 bytes
+	/*+0x45*/  /*packed*/ struct Point2d currentLocation3; // 0x8 bytes
+	/*+0x4d*/  /*packed*/ struct Point2d currentCell; // 0x8 bytes
+	/*+0x55*/  /*packed*/ struct Point2d nextLocation; // 0x8 bytes
+	/*+0x5d*/  int32_t beamDelay;
+	/*+0x61*/  int32_t beamTimer;
+	/*+0x65*/  long utRotation;
+	/*+0x69*/  long missionId;
+	/*+0x6d*/  int32_t smokeTime;
+	/*+0x71*/  int32_t timeToLive;
+	/*+0x75*/  /*packed*/ struct Point2d northCell; // 0x8 bytes
+	/*+0x7d*/  /*packed*/ struct Point2d southCell; // 0x8 bytes
+	/*+0x85*/  /*packed*/ struct Point2d eastCell; // 0x8 bytes
+	/*+0x8d*/  /*packed*/ struct Point2d westCell; // 0x8 bytes
 protected:
-	long trainModel1;
-	long trainModel2;
-	long trainModel3;
-	/*packed*/ struct _DYOBJ_INST dyObj1;
-	/*packed*/ struct _DYOBJ_INST dyObj2;
-	/*packed*/ struct _DYOBJ_INST dyObj3;
-	/*packed*/ struct _DYOBJ_INST *leadcar;
-	/*packed*/ struct _DYOBJ_INST *midcar;
-	/*packed*/ struct _DYOBJ_INST *endcar;
+	/*+0x95*/  long trainModel1;
+	/*+0x99*/  long trainModel2;
+	/*+0x9d*/  long trainModel3;
+	/*+0xa1*/  /*packed*/ struct _DYOBJ_INST dyObj1; // 0x64 bytes
+	/*+0x105*/ /*packed*/ struct _DYOBJ_INST dyObj2; // 0x64 bytes
+	/*+0x169*/ /*packed*/ struct _DYOBJ_INST dyObj3; // 0x64 bytes
+	/*+0x1cd*/ /*packed*/ struct _DYOBJ_INST *leadcar;
+	/*+0x1d1*/ /*packed*/ struct _DYOBJ_INST *midcar;
+	/*+0x1d5*/ /*packed*/ struct _DYOBJ_INST *endcar;
 public:
 	void TrainClass(const /*packed*/ class TrainClass&);
 	void TrainClass(long, long);
@@ -428,38 +428,38 @@ public:
 
 // Type: /*packed*/ struct VRview;
 struct VRview{ // packed(0x58 bytes) TI: 0x2ecc
-	/*packed*/ struct Point3d loc;
-	/*packed*/ struct Point3d scale;
-	int32_t matrix[4][4];
+	/*+0x0*/   /*packed*/ struct Point3d loc; // 0xc bytes
+	/*+0xc*/   /*packed*/ struct Point3d scale; // 0xc bytes
+	/*+0x18*/  int32_t matrix[4][4]; // 0x40 bytes
 };
 
 // Type: /*packed*/ struct Point3d;
 struct Point3d{ // packed(0xc bytes) TI: 0x18b0
-	int32_t x;
-	int32_t y;
-	int32_t z;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
+	/*+0x8*/   int32_t z;
 };
 
 // Type: /*packed*/ struct _MISSION_PARMS;
 struct _MISSION_PARMS{ // packed(0x18 bytes) TI: 0x307d
-	long op;
-	long id;
-	/*packed*/ struct Point2d maploc;
-	long i2num;
-	long flags;
+	/*+0x0*/   long op;
+	/*+0x4*/   long id;
+	/*+0x8*/   /*packed*/ struct Point2d maploc; // 0x8 bytes
+	/*+0x10*/  long i2num;
+	/*+0x14*/  long flags;
 };
 
 // Type: /*packed*/ struct _CELL_INFO (forward reference);
 struct _CELL_INFO{ // packed(0x18 bytes) TI: 0x1b03
-	short flags;
-	short x;
-	short y;
-	short z;
-	short size;
-	short ctr;
-	/*packed*/ struct _STOBJ_INST *stptr;
-	/*packed*/ struct _DYOBJ_INST *dyptr;
-	/*packed*/ struct _DYOBJ_INST *vwptr;
+	/*+0x0*/   short flags; // 0x2 bytes
+	/*+0x2*/   short x; // 0x2 bytes
+	/*+0x4*/   short y; // 0x2 bytes
+	/*+0x6*/   short z; // 0x2 bytes
+	/*+0x8*/   short size; // 0x2 bytes
+	/*+0xa*/   short ctr; // 0x2 bytes
+	/*+0xc*/   /*packed*/ struct _STOBJ_INST *stptr;
+	/*+0x10*/  /*packed*/ struct _DYOBJ_INST *dyptr;
+	/*+0x14*/  /*packed*/ struct _DYOBJ_INST *vwptr;
 };
 
 // Type: enum TrainClass::StoppedReasons;
@@ -474,30 +474,30 @@ enum StoppedReasons {
 
 // Type: /*packed*/ struct Point2d (forward reference);
 struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
-	int32_t x;
-	int32_t y;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
 };
 
 // Type: /*packed*/ struct Point3d (forward reference);
 struct Point3d{ // packed(0xc bytes) TI: 0x18b0
-	int32_t x;
-	int32_t y;
-	int32_t z;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
+	/*+0x8*/   int32_t z;
 };
 
 // Type: unsigned short;
 
 // Type: /*packed*/ struct _DYOBJ_INST (forward reference);
 struct _DYOBJ_INST{ // packed(0x64 bytes) TI: 0x1deb
-	/*packed*/ struct _DYOBJ_INST *next;
-	/*packed*/ struct _DYOBJ_INST *vnext;
-	void * __ptr32 mesh;
-	short flags;
-	short user1;
-	long radius;
-	long height;
-	/*packed*/ struct Point3d loc;
-	int32_t matrix[4][4];
+	/*+0x0*/   /*packed*/ struct _DYOBJ_INST *next;
+	/*+0x4*/   /*packed*/ struct _DYOBJ_INST *vnext;
+	/*+0x8*/   void * __ptr32 mesh;
+	/*+0xc*/   short flags; // 0x2 bytes
+	/*+0xe*/   short user1; // 0x2 bytes
+	/*+0x10*/  long radius;
+	/*+0x14*/  long height;
+	/*+0x18*/  /*packed*/ struct Point3d loc; // 0xc bytes
+	/*+0x24*/  int32_t matrix[4][4]; // 0x40 bytes
 };
 
 // Type: enum TrainClass::IntersectionTypes;
@@ -532,15 +532,15 @@ enum DirectionTypes {
 
 // Type: /*packed*/ struct VRObjInfo;
 struct VRObjInfo{ // packed(0x24 bytes) TI: 0x2ea8
-	int32_t Faces;
-	int32_t Verts;
-	int32_t Attribute;
-	int32_t Radius;
-	/*packed*/ struct Point3d *ObjCenter;
-	/*packed*/ struct Point3d *VertsPtr;
-	/*packed*/ struct Xform3d *VertsXfm;
-	/*packed*/ struct Point3d *OrgVerts;
-	int32_t *Matrix[4][4];
+	/*+0x0*/   int32_t Faces;
+	/*+0x4*/   int32_t Verts;
+	/*+0x8*/   int32_t Attribute;
+	/*+0xc*/   int32_t Radius;
+	/*+0x10*/  /*packed*/ struct Point3d *ObjCenter;
+	/*+0x14*/  /*packed*/ struct Point3d *VertsPtr;
+	/*+0x18*/  /*packed*/ struct Xform3d *VertsXfm;
+	/*+0x1c*/  /*packed*/ struct Point3d *OrgVerts;
+	/*+0x20*/  int32_t *Matrix[4][4];
 };
 
 // Type: short;

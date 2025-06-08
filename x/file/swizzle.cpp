@@ -14,10 +14,10 @@
 
 // Type: /*unpacked*/ struct Rect (forward reference);
 struct Rect{ // not packed(0x8 bytes) TI: 0x3463
-	short top;
-	short left;
-	short bottom;
-	short right;
+	/*+0x0*/   short top; // 0x2 bytes
+	/*+0x2*/   short left; // 0x2 bytes
+	/*+0x4*/   short bottom; // 0x2 bytes
+	/*+0x6*/   short right; // 0x2 bytes
 };
 
 // Type: short *;

@@ -6,12 +6,12 @@
 
 // Type: /*packed*/ struct CommandSystem (forward reference);
 struct CommandSystem{ // packed(0xaa8 bytes) TI: 0x12e4
-	/*packed*/ struct Command keyboardCommands[100];
-	/*packed*/ class CharList keyboardCommandList;
-	/*packed*/ class list<Shortcut> commandShortcuts;
-	unsigned char chCommandKeyboardArray[2048];
-	unsigned char chCommandJoystickArray[4][14];
-	long joystickCommands[100];
+	/*+0x0*/   /*packed*/ struct Command keyboardCommands[100]; // 0xc8 bytes
+	/*+0xc8*/  /*packed*/ class CharList keyboardCommandList; // 0x10 bytes
+	/*+0xd8*/  /*packed*/ class list<Shortcut> commandShortcuts; // 0x8 bytes
+	/*+0xe0*/  unsigned char chCommandKeyboardArray[2048]; // 0x800 bytes
+	/*+0x8e0*/ unsigned char chCommandJoystickArray[4][14]; // 0x38 bytes
+	/*+0x918*/ long joystickCommands[100]; // 0x190 bytes
 	void CommandSystem();
 	void Initialize();
 	void ClearAllCommands();
@@ -41,7 +41,7 @@ struct CommandSystem{ // packed(0xaa8 bytes) TI: 0x12e4
 class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
 { // packed(0x4 bytes) TI: 0x1081
 protected:
-	/*packed*/ struct list<Shortcut>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<Shortcut>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -78,7 +78,7 @@ public:
 	virtual unsigned long OnWindowDeactivate() /* override */;
 	virtual void ProcessSystemCloseRequest(); // vtable+0x4c
 	virtual void SetNewGameApp(/*unpacked*/ class CGameApp*); // vtable+0x50
-	/*unpacked*/ class CGameApp *myGameApp;
+	/*+0x8*/   /*unpacked*/ class CGameApp *myGameApp;
 };
 
 // Type: unsigned long;
@@ -86,9 +86,9 @@ public:
 // Type: /*packed*/ class CharData (forward reference);
 class CharData{ // packed(0x9 bytes) TI: 0x4578
 public:
-	unsigned char chValue;
-	/*packed*/ class CharData *previousCharData;
-	/*packed*/ class CharData *nextCharData;
+	/*+0x0*/   unsigned char chValue; // 0x1 bytes
+	/*+0x1*/   /*packed*/ class CharData *previousCharData;
+	/*+0x5*/   /*packed*/ class CharData *nextCharData;
 	void CharData(unsigned char);
 	void CharData();
 };
@@ -97,9 +97,9 @@ public:
 class list<Shortcut>{ // packed(0x8 bytes) TI: 0x1b79
 	using void_pointer = void * __ptr32;
 	struct list<Shortcut>::list_node{ // packed(0x20 bytes) TI: 0x1b8e
-		void * __ptr32 next;
-		void * __ptr32 prev;
-		/*packed*/ struct Shortcut data;
+		/*+0x0*/   void * __ptr32 next;
+		/*+0x4*/   void * __ptr32 prev;
+		/*+0x8*/   /*packed*/ struct Shortcut data; // 0x18 bytes
 	};
 protected:
 	static /*packed*/ class allocator<list<Shortcut>::list_node> list_node_allocator;
@@ -116,8 +116,8 @@ protected:
 protected:
 	uint32_t buffer_size();
 	struct list<Shortcut>::list_node_buffer{ // packed(0x8 bytes) TI: 0x1b8c
-		void * __ptr32 next_buffer;
-		/*packed*/ struct list<Shortcut>::list_node *buffer;
+		/*+0x0*/   void * __ptr32 next_buffer;
+		/*+0x4*/   /*packed*/ struct list<Shortcut>::list_node *buffer;
 	};
 	using buffer_allocator_type = /*packed*/ class allocator<list<Shortcut>::list_node_buffer>;
 	using buffer_pointer = /*packed*/ struct list<Shortcut>::list_node_buffer*;
@@ -132,12 +132,12 @@ protected:
 	void deallocate_buffers();
 	/*packed*/ struct list<Shortcut>::list_node* get_node();
 	void put_node(/*packed*/ struct list<Shortcut>::list_node*);
-	/*packed*/ struct list<Shortcut>::list_node *node;
-	uint32_t length;
+	/*+0x0*/   /*packed*/ struct list<Shortcut>::list_node *node;
+	/*+0x4*/   uint32_t length;
 	class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
 	{ // packed(0x4 bytes) TI: 0x1081
 	protected:
-		/*packed*/ struct list<Shortcut>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<Shortcut>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -153,7 +153,7 @@ protected:
 	class list<Shortcut>::const_iterator : public bidirectional_iterator<Shortcut,int>
 	{ // packed(0x4 bytes) TI: 0x1b8a
 	protected:
-		/*packed*/ struct list<Shortcut>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<Shortcut>::list_node *node;
 	public:
 		void const_iterator(const /*packed*/ class list<Shortcut>::iterator&);
 		void const_iterator();
@@ -250,36 +250,36 @@ public:
 	virtual long WriteDataRecord(long, char *, long); // vtable+0x64
 	virtual long WriteFileHeader(long, long, long); // vtable+0x68
 	virtual long WriteEnd(); // vtable+0x6c
-	long lPresentRecordStart;
-	long lPresentRecordType;
-	long lPresentRecordLength;
-	long lPresentRecordIndex;
-	long lReadWriteMode;
-	long bFileEndWritten;
-	long bFileAppearsCorrupt;
-	/*packed*/ struct MIFFHeader myMIFFHeader;
+	/*+0x110*/ long lPresentRecordStart;
+	/*+0x114*/ long lPresentRecordType;
+	/*+0x118*/ long lPresentRecordLength;
+	/*+0x11c*/ long lPresentRecordIndex;
+	/*+0x120*/ long lReadWriteMode;
+	/*+0x124*/ long bFileEndWritten;
+	/*+0x128*/ long bFileAppearsCorrupt;
+	/*+0x12c*/ /*packed*/ struct MIFFHeader myMIFFHeader; // 0x1c bytes
 };
 
 // Type: /*packed*/ struct Shortcut;
 struct Shortcut{ // packed(0x18 bytes) TI: 0x1083
-	long lDeviceID;
-	long lCommand;
-	long lKey;
-	long lModifiers;
-	long lPush;
-	long lIgnoreModifiers;
+	/*+0x0*/   long lDeviceID;
+	/*+0x4*/   long lCommand;
+	/*+0x8*/   long lKey;
+	/*+0xc*/   long lModifiers;
+	/*+0x10*/  long lPush;
+	/*+0x14*/  long lIgnoreModifiers;
 };
 
 // Type: char;
 
 // Type: /*packed*/ struct Shortcut (forward reference);
 struct Shortcut{ // packed(0x18 bytes) TI: 0x1083
-	long lDeviceID;
-	long lCommand;
-	long lKey;
-	long lModifiers;
-	long lPush;
-	long lIgnoreModifiers;
+	/*+0x0*/   long lDeviceID;
+	/*+0x4*/   long lCommand;
+	/*+0x8*/   long lKey;
+	/*+0xc*/   long lModifiers;
+	/*+0x10*/  long lPush;
+	/*+0x14*/  long lIgnoreModifiers;
 };
 
 // Type: long *;
@@ -291,16 +291,16 @@ struct Shortcut{ // packed(0x18 bytes) TI: 0x1083
 
 // Type: /*packed*/ struct list<Shortcut>::list_node (forward reference);
 struct list<Shortcut>::list_node{ // packed(0x20 bytes) TI: 0x1b8e
-	void * __ptr32 next;
-	void * __ptr32 prev;
-	/*packed*/ struct Shortcut data;
+	/*+0x0*/   void * __ptr32 next;
+	/*+0x4*/   void * __ptr32 prev;
+	/*+0x8*/   /*packed*/ struct Shortcut data; // 0x18 bytes
 };
 
 // Type: /*packed*/ class list<Shortcut>::iterator (forward reference);
 class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
 { // packed(0x4 bytes) TI: 0x1081
 protected:
-	/*packed*/ struct list<Shortcut>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<Shortcut>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -382,10 +382,10 @@ public:
 	long SetPath(char *);
 	long FileCreate(char *, int32_t);
 	long FileExists(char *);
-	char szFilePath[260];
-	int32_t Handle;
+	/*+0x4*/   char szFilePath[260]; // 0x104 bytes
+	/*+0x108*/ int32_t Handle;
 private:
-	int32_t ShouldClose;
+	/*+0x10c*/ int32_t ShouldClose;
 };
 
 // Type: /*packed*/ class CDefaultCommander;

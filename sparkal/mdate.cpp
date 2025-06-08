@@ -82,21 +82,21 @@ protected:
 	static int32_t AssertIndexOfMonth(uint32_t);
 	void ParseFrom(/*unpacked*/ class istream&);
 	void Mdy(uint32_t&, uint32_t&, uint32_t&);
-	unsigned long Julnum;
-	enum MDate::HowToPrint PrintOption;
+	/*+0x4*/   unsigned long Julnum;
+	/*+0x8*/   enum MDate::HowToPrint PrintOption;
 };
 
 // Type: /*packed*/ struct tm (forward reference);
 struct tm{ // packed(0x24 bytes) TI: 0x2033
-	int32_t tm_sec;
-	int32_t tm_min;
-	int32_t tm_hour;
-	int32_t tm_mday;
-	int32_t tm_mon;
-	int32_t tm_year;
-	int32_t tm_wday;
-	int32_t tm_yday;
-	int32_t tm_isdst;
+	/*+0x0*/   int32_t tm_sec;
+	/*+0x4*/   int32_t tm_min;
+	/*+0x8*/   int32_t tm_hour;
+	/*+0xc*/   int32_t tm_mday;
+	/*+0x10*/  int32_t tm_mon;
+	/*+0x14*/  int32_t tm_year;
+	/*+0x18*/  int32_t tm_wday;
+	/*+0x1c*/  int32_t tm_yday;
+	/*+0x20*/  int32_t tm_isdst;
 };
 
 // Type: long;
@@ -237,18 +237,18 @@ protected:
 		tied = 1,
 	};
 protected:
-	/*unpacked*/ class streambuf *bp;
-	int32_t state;
-	int32_t ispecial;
-	int32_t ospecial;
-	int32_t isfx_special;
-	int32_t osfx_special;
-	int32_t x_delbuf;
-	/*unpacked*/ class ostream *x_tie;
-	long x_flags;
-	int32_t x_precision;
-	char x_fill;
-	int32_t x_width;
+	/*+0x4*/   /*unpacked*/ class streambuf *bp;
+	/*+0x8*/   int32_t state;
+	/*+0xc*/   int32_t ispecial;
+	/*+0x10*/  int32_t ospecial;
+	/*+0x14*/  int32_t isfx_special;
+	/*+0x18*/  int32_t osfx_special;
+	/*+0x1c*/  int32_t x_delbuf;
+	/*+0x20*/  /*unpacked*/ class ostream *x_tie;
+	/*+0x24*/  long x_flags;
+	/*+0x28*/  int32_t x_precision;
+	/*+0x2c*/  char x_fill; // 0x1 bytes
+	/*+0x30*/  int32_t x_width;
 	static void (*stdioflush)();
 	// calltype: NearC
 	static void lockc();
@@ -265,8 +265,8 @@ private:
 	static long x_statebuf[8];
 	static int32_t fLockcInit;
 	static /*unpacked*/ struct _CRT_CRITICAL_SECTION x_lockc;
-	int32_t LockFlg;
-	/*unpacked*/ struct _CRT_CRITICAL_SECTION x_lock;
+	/*+0x34*/  int32_t LockFlg;
+	/*+0x38*/  /*unpacked*/ struct _CRT_CRITICAL_SECTION x_lock; // 0x18 bytes
 };
 
 

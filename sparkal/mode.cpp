@@ -6,9 +6,9 @@
 
 // Type: /*packed*/ struct tagMode (forward reference);
 struct tagMode{ // packed(0xc bytes) TI: 0x2407
-	long lWidth;
-	long lHeight;
-	long lBPP;
+	/*+0x0*/   long lWidth;
+	/*+0x4*/   long lHeight;
+	/*+0x8*/   long lBPP;
 };
 
 // Type: long;
@@ -19,22 +19,22 @@ struct tagMode{ // packed(0xc bytes) TI: 0x2407
 
 // Type: /*packed*/ struct _DDSURFACEDESC (forward reference);
 struct _DDSURFACEDESC{ // packed(0x6c bytes) TI: 0x1737
-	unsigned long dwSize;
-	unsigned long dwFlags;
-	unsigned long dwHeight;
-	unsigned long dwWidth;
-	long lPitch;
-	unsigned long dwBackBufferCount;
-	unsigned long dwZBufferBitDepth;
-	unsigned long dwAlphaBitDepth;
-	unsigned long dwReserved;
-	void * __ptr32 lpSurface;
-	/*packed*/ struct _DDCOLORKEY ddckCKDestOverlay;
-	/*packed*/ struct _DDCOLORKEY ddckCKDestBlt;
-	/*packed*/ struct _DDCOLORKEY ddckCKSrcOverlay;
-	/*packed*/ struct _DDCOLORKEY ddckCKSrcBlt;
-	/*packed*/ struct _DDPIXELFORMAT ddpfPixelFormat;
-	/*packed*/ struct _DDSCAPS ddsCaps;
+	/*+0x0*/   unsigned long dwSize;
+	/*+0x4*/   unsigned long dwFlags;
+	/*+0x8*/   unsigned long dwHeight;
+	/*+0xc*/   unsigned long dwWidth;
+	/*+0x10*/  long lPitch;
+	/*+0x14*/  unsigned long dwBackBufferCount;
+	/*+0x18*/  unsigned long dwZBufferBitDepth;
+	/*+0x1c*/  unsigned long dwAlphaBitDepth;
+	/*+0x20*/  unsigned long dwReserved;
+	/*+0x24*/  void * __ptr32 lpSurface;
+	/*+0x28*/  /*packed*/ struct _DDCOLORKEY ddckCKDestOverlay; // 0x8 bytes
+	/*+0x30*/  /*packed*/ struct _DDCOLORKEY ddckCKDestBlt; // 0x8 bytes
+	/*+0x38*/  /*packed*/ struct _DDCOLORKEY ddckCKSrcOverlay; // 0x8 bytes
+	/*+0x40*/  /*packed*/ struct _DDCOLORKEY ddckCKSrcBlt; // 0x8 bytes
+	/*+0x48*/  /*packed*/ struct _DDPIXELFORMAT ddpfPixelFormat; // 0x20 bytes
+	/*+0x68*/  /*packed*/ struct _DDSCAPS ddsCaps;
 };
 
 

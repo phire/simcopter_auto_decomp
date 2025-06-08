@@ -6,21 +6,21 @@
 
 // Type: /*packed*/ struct _dPoint2d (forward reference);
 struct _dPoint2d{ // packed(0x10 bytes) TI: 0x2766
-	double x;
-	double z;
+	/*+0x0*/   double x; // 0x8 bytes
+	/*+0x8*/   double z; // 0x8 bytes
 };
 
 // Type: /*packed*/ struct _fPoint2d (forward reference);
 struct _fPoint2d{ // packed(0x8 bytes) TI: 0x3008
-	int32_t x;
-	int32_t z;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t z;
 };
 
 // Type: /*packed*/ struct Point3d (forward reference);
 struct Point3d{ // packed(0xc bytes) TI: 0x18b0
-	int32_t x;
-	int32_t y;
-	int32_t z;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
+	/*+0x8*/   int32_t z;
 };
 
 // Type: double;

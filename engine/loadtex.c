@@ -8,40 +8,40 @@
 
 // Type: /*packed*/ struct BMPFileHdr;
 struct BMPFileHdr{ // packed(0x10 bytes) TI: 0x2edb
-	int32_t MaxBmpFileSize;
-	int32_t MinBmpFileSize;
-	int32_t BmpCount;
-	int32_t StaticCount;
+	/*+0x0*/   int32_t MaxBmpFileSize;
+	/*+0x4*/   int32_t MinBmpFileSize;
+	/*+0x8*/   int32_t BmpCount;
+	/*+0xc*/   int32_t StaticCount;
 };
 
 // Type: /*packed*/ struct TEXT_Resource (forward reference);
 struct TEXT_Resource{ // packed(0x18 bytes) TI: 0x2ec2
-	/*packed*/ struct VRResource res;
-	int32_t count;
-	uint32_t * bmpcolors;
-	/*packed*/ struct VRBITMAP bmp[0];
+	/*+0x0*/   /*packed*/ struct VRResource res; // 0x10 bytes
+	/*+0x10*/  int32_t count;
+	/*+0x14*/  uint32_t * bmpcolors;
+	/*+0x18*/  /*packed*/ struct VRBITMAP bmp[0]; // 0x0 bytes
 };
 
 // Type: /*packed*/ struct VRBmpInfo (forward reference);
 struct VRBmpInfo{ // packed(0xc bytes) TI: 0x230e
-	int32_t width;
-	int32_t height;
-	short attrib;
-	short scale;
+	/*+0x0*/   int32_t width;
+	/*+0x4*/   int32_t height;
+	/*+0x8*/   short attrib; // 0x2 bytes
+	/*+0xa*/   short scale; // 0x2 bytes
 };
 
 // Type: /*packed*/ struct VRResource (forward reference);
 struct VRResource{ // packed(0x10 bytes) TI: 0x18ae
-	char * mem;
-	int32_t mempoolid;
-	int32_t type;
-	int32_t entry;
+	/*+0x0*/   char * mem;
+	/*+0x4*/   int32_t mempoolid;
+	/*+0x8*/   int32_t type;
+	/*+0xc*/   int32_t entry;
 };
 
 // Type: /*packed*/ struct VRBmpHdr (forward reference);
 struct VRBmpHdr{ // packed(0x10 bytes) TI: 0x2312
-	/*packed*/ struct VRBmpInfo info;
-	int32_t ScanOffset[1];
+	/*+0x0*/   /*packed*/ struct VRBmpInfo info; // 0xc bytes
+	/*+0xc*/   int32_t ScanOffset[1];
 };
 
 // Type: unsigned char *;

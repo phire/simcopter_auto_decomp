@@ -4,15 +4,15 @@
 
 // Type: /*packed*/ struct list<CopterGameMode>::list_node_buffer (forward reference);
 struct list<CopterGameMode>::list_node_buffer{ // packed(0x8 bytes) TI: 0x1a1a
-	void * __ptr32 next_buffer;
-	/*packed*/ struct list<CopterGameMode>::list_node *buffer;
+	/*+0x0*/   void * __ptr32 next_buffer;
+	/*+0x4*/   /*packed*/ struct list<CopterGameMode>::list_node *buffer;
 };
 
 // Type: /*packed*/ struct list<CopterGameMode>::list_node (forward reference);
 struct list<CopterGameMode>::list_node{ // packed(0xc bytes) TI: 0x1a1c
-	void * __ptr32 next;
-	void * __ptr32 prev;
-	/*packed*/ class CopterGameMode data;
+	/*+0x0*/   void * __ptr32 next;
+	/*+0x4*/   void * __ptr32 prev;
+	/*+0x8*/   /*packed*/ class CopterGameMode data;
 };
 
 // Type: char *;
@@ -31,18 +31,18 @@ struct list<CopterGameMode>::list_node{ // packed(0xc bytes) TI: 0x1a1c
 
 // Type: /*packed*/ struct SoundPreferences;
 struct SoundPreferences{ // packed(0x10 bytes) TI: 0x2845
-	long lMasterVolume;
-	long lDispatchVolume;
-	long lSoundEffectsVolume;
-	long lVehicleVolume;
+	/*+0x0*/   long lMasterVolume;
+	/*+0x4*/   long lDispatchVolume;
+	/*+0x8*/   long lSoundEffectsVolume;
+	/*+0xc*/   long lVehicleVolume;
 };
 
 // Type: /*packed*/ struct SoundPreferences (forward reference);
 struct SoundPreferences{ // packed(0x10 bytes) TI: 0x2845
-	long lMasterVolume;
-	long lDispatchVolume;
-	long lSoundEffectsVolume;
-	long lVehicleVolume;
+	/*+0x0*/   long lMasterVolume;
+	/*+0x4*/   long lDispatchVolume;
+	/*+0x8*/   long lSoundEffectsVolume;
+	/*+0xc*/   long lVehicleVolume;
 };
 
 // Type: long;
@@ -51,7 +51,7 @@ struct SoundPreferences{ // packed(0x10 bytes) TI: 0x2845
 class list<CopterGameMode>::iterator : public bidirectional_iterator<CopterGameMode,int>
 { // packed(0x4 bytes) TI: 0x1a18
 protected:
-	/*packed*/ struct list<CopterGameMode>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<CopterGameMode>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -70,14 +70,14 @@ public:
 class DigitalSound : public Sound
 { // packed(0x7a bytes) TI: 0x45d4
 protected:
-	int32_t nStreamingType;
-	int32_t nCompletionEstimationTimerSet;
+	/*+0x34*/  int32_t nStreamingType;
+	/*+0x38*/  int32_t nCompletionEstimationTimerSet;
 	static /*packed*/ struct IDirectSound *lpDirectSound;
-	uint32_t cbSize;
-	/*packed*/ struct tWAVEFORMATEX waveFormatEx;
-	/*packed*/ struct IDirectSoundBuffer *lpSound[8];
-	/*packed*/ struct _STREAMBUFINFO *lpStreamBufferInfo;
-	unsigned long dwDesiredBufferDescFlags;
+	/*+0x3c*/  uint32_t cbSize;
+	/*+0x40*/  /*packed*/ struct tWAVEFORMATEX waveFormatEx; // 0x12 bytes
+	/*+0x52*/  /*packed*/ struct IDirectSoundBuffer *lpSound[8]; // 0x20 bytes
+	/*+0x72*/  /*packed*/ struct _STREAMBUFINFO *lpStreamBufferInfo;
+	/*+0x76*/  unsigned long dwDesiredBufferDescFlags;
 public:
 	void DigitalSound(long);
 	void DigitalSound(const /*packed*/ class basic_string<char>&, int32_t);
@@ -134,8 +134,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -300,10 +300,10 @@ public:
 	long SetPath(char *);
 	long FileCreate(char *, int32_t);
 	long FileExists(char *);
-	char szFilePath[260];
-	int32_t Handle;
+	/*+0x4*/   char szFilePath[260]; // 0x104 bytes
+	/*+0x108*/ int32_t Handle;
 private:
-	int32_t ShouldClose;
+	/*+0x10c*/ int32_t ShouldClose;
 };
 
 // Type: uint32_t;
@@ -312,9 +312,9 @@ private:
 class list<CopterGameMode>{ // packed(0x8 bytes) TI: 0x19f6
 	using void_pointer = void * __ptr32;
 	struct list<CopterGameMode>::list_node{ // packed(0xc bytes) TI: 0x1a1c
-		void * __ptr32 next;
-		void * __ptr32 prev;
-		/*packed*/ class CopterGameMode data;
+		/*+0x0*/   void * __ptr32 next;
+		/*+0x4*/   void * __ptr32 prev;
+		/*+0x8*/   /*packed*/ class CopterGameMode data;
 	};
 protected:
 	static /*packed*/ class allocator<list<CopterGameMode>::list_node> list_node_allocator;
@@ -331,8 +331,8 @@ protected:
 protected:
 	uint32_t buffer_size();
 	struct list<CopterGameMode>::list_node_buffer{ // packed(0x8 bytes) TI: 0x1a1a
-		void * __ptr32 next_buffer;
-		/*packed*/ struct list<CopterGameMode>::list_node *buffer;
+		/*+0x0*/   void * __ptr32 next_buffer;
+		/*+0x4*/   /*packed*/ struct list<CopterGameMode>::list_node *buffer;
 	};
 	using buffer_allocator_type = /*packed*/ class allocator<list<CopterGameMode>::list_node_buffer>;
 	using buffer_pointer = /*packed*/ struct list<CopterGameMode>::list_node_buffer*;
@@ -347,12 +347,12 @@ protected:
 	void deallocate_buffers();
 	/*packed*/ struct list<CopterGameMode>::list_node* get_node();
 	void put_node(/*packed*/ struct list<CopterGameMode>::list_node*);
-	/*packed*/ struct list<CopterGameMode>::list_node *node;
-	uint32_t length;
+	/*+0x0*/   /*packed*/ struct list<CopterGameMode>::list_node *node;
+	/*+0x4*/   uint32_t length;
 	class list<CopterGameMode>::iterator : public bidirectional_iterator<CopterGameMode,int>
 	{ // packed(0x4 bytes) TI: 0x1a18
 	protected:
-		/*packed*/ struct list<CopterGameMode>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<CopterGameMode>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -368,7 +368,7 @@ protected:
 	class list<CopterGameMode>::const_iterator : public bidirectional_iterator<CopterGameMode,int>
 	{ // packed(0x4 bytes) TI: 0x1a0b
 	protected:
-		/*packed*/ struct list<CopterGameMode>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<CopterGameMode>::list_node *node;
 	public:
 		void const_iterator(const /*packed*/ class list<CopterGameMode>::iterator&);
 		void const_iterator();
@@ -433,7 +433,7 @@ public:
 // Type: /*packed*/ class CopterGameMode (forward reference);
 class CopterGameMode{ // packed(0x4 bytes) TI: 0x170f
 public:
-	int32_t nModeID;
+	/*+0x0*/   int32_t nModeID;
 	void CopterGameMode(const /*packed*/ class CopterGameMode&);
 	void CopterGameMode(int32_t);
 	void CopterGameMode();
@@ -448,7 +448,7 @@ class Sound{ // packed(0x34 bytes) TI: 0x4335
 		nSoundSourceTypeFile = 1,
 	};
 public:
-	enum Sound::SoundSourceType nSoundSourceType;
+	/*+0x4*/   enum Sound::SoundSourceType nSoundSourceType;
 	enum SoundDuplicateType {
 		nSoundDuplicateDefault = 0,
 		nSoundDuplicateInterrupt = 1,
@@ -456,16 +456,16 @@ public:
 		nSoundDuplicateOverlap = 3,
 	};
 public:
-	enum Sound::SoundDuplicateType nSoundDuplicateType;
-	long lID;
-	long lResID;
-	/*packed*/ class basic_string<char> sSoundFile;
-	long bLooping;
-	long bStreaming;
-	long lVolume;
-	void (*soundCompletionFunction)(long);
-	long lSoundCompletionData;
-	int32_t bUnloadBeforeNextPlay;
+	/*+0x8*/   enum Sound::SoundDuplicateType nSoundDuplicateType;
+	/*+0xc*/   long lID;
+	/*+0x10*/  long lResID;
+	/*+0x14*/  /*packed*/ class basic_string<char> sSoundFile; // 0x8 bytes
+	/*+0x1c*/  long bLooping;
+	/*+0x20*/  long bStreaming;
+	/*+0x24*/  long lVolume;
+	/*+0x28*/  void (*soundCompletionFunction)(long);
+	/*+0x2c*/  long lSoundCompletionData;
+	/*+0x30*/  int32_t bUnloadBeforeNextPlay;
 	void Sound();
 	virtual void ~Sound(); // vtable+0x0
 	/*packed*/ class Sound& operator=(const /*packed*/ class Sound&);

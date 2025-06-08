@@ -4,23 +4,23 @@
 
 // Type: /*packed*/ struct Point3d;
 struct Point3d{ // packed(0xc bytes) TI: 0x18b0
-	int32_t x;
-	int32_t y;
-	int32_t z;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
+	/*+0x8*/   int32_t z;
 };
 
 // Type: /*unpacked*/ struct Point3d;
 struct Point3d{ // not packed(0xc bytes) TI: 0x348f
-	int32_t x;
-	int32_t y;
-	int32_t z;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
+	/*+0x8*/   int32_t z;
 };
 
 // Type: /*packed*/ struct Point3d (forward reference);
 struct Point3d{ // packed(0xc bytes) TI: 0x18b0
-	int32_t x;
-	int32_t y;
-	int32_t z;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
+	/*+0x8*/   int32_t z;
 };
 
 // Type: double;
@@ -29,33 +29,33 @@ struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 
 // Type: /*packed*/ struct Plane (forward reference);
 struct Plane{ // packed(0x10 bytes) TI: 0x2e46
-	int32_t A;
-	int32_t B;
-	int32_t C;
-	int32_t D;
+	/*+0x0*/   int32_t A;
+	/*+0x4*/   int32_t B;
+	/*+0x8*/   int32_t C;
+	/*+0xc*/   int32_t D;
 };
 
 // Type: void;
 
 // Type: /*packed*/ struct Plane;
 struct Plane{ // packed(0x10 bytes) TI: 0x2e46
-	int32_t A;
-	int32_t B;
-	int32_t C;
-	int32_t D;
+	/*+0x0*/   int32_t A;
+	/*+0x4*/   int32_t B;
+	/*+0x8*/   int32_t C;
+	/*+0xc*/   int32_t D;
 };
 
 // Type: /*packed*/ struct mv (forward reference);
 struct mv{ // packed(0x14 bytes) TI: 0x2a5e
-	int32_t M;
-	int32_t Vmag;
-	/*packed*/ struct Point3d V;
+	/*+0x0*/   int32_t M;
+	/*+0x4*/   int32_t Vmag;
+	/*+0x8*/   /*packed*/ struct Point3d V; // 0xc bytes
 };
 
 // Type: /*packed*/ struct Point2d (forward reference);
 struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
-	int32_t x;
-	int32_t y;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
 };
 
 

@@ -15,19 +15,19 @@ class cYObject : public TreeSim, public YObjLang
 		kNumPointers = 4,
 	};
 	struct cYObject::ObjDefHeader{ // not packed(0x1c bytes) TI: 0x374c
-		long version;
-		short stackSize;
-		short baseGraphic;
-		short numGraphics;
-		short initBhav;
-		short toolbarPict;
-		short treeTableID;
-		short personalityID;
-		short type;
-		short red;
-		short green;
-		short blue;
-		short _padding2;
+		/*+0x0*/   long version;
+		/*+0x4*/   short stackSize; // 0x2 bytes
+		/*+0x6*/   short baseGraphic; // 0x2 bytes
+		/*+0x8*/   short numGraphics; // 0x2 bytes
+		/*+0xa*/   short initBhav; // 0x2 bytes
+		/*+0xc*/   short toolbarPict; // 0x2 bytes
+		/*+0xe*/   short treeTableID; // 0x2 bytes
+		/*+0x10*/  short personalityID; // 0x2 bytes
+		/*+0x12*/  short type; // 0x2 bytes
+		/*+0x14*/  short red; // 0x2 bytes
+		/*+0x16*/  short green; // 0x2 bytes
+		/*+0x18*/  short blue; // 0x2 bytes
+		/*+0x1a*/  short _padding2; // 0x2 bytes
 	};
 	enum MoveErrorCode {
 		kMoveError = -1,
@@ -120,7 +120,7 @@ public:
 	// calltype: NearC
 	static void SetRxnTree(short, short);
 	static long sSimTicks;
-	long fLastInterrupt;
+	/*+0x18*/  long fLastInterrupt;
 	enum LocationType {
 		kOutOfCity = -1,
 		kLocNoInfo = 0,
@@ -148,8 +148,8 @@ public:
 		kSearchAnywhereAtAll = 3,
 	};
 	struct cYObject::LocationInfo{ // not packed(0x8 bytes) TI: 0x425a
-		enum cYObject::SearchType searchType;
-		short maxNormalLoiterers;
+		/*+0x0*/   enum cYObject::SearchType searchType;
+		/*+0x4*/   short maxNormalLoiterers; // 0x2 bytes
 	};
 public:
 	static /*unpacked*/ struct cYObject::LocationInfo sLocInfo[14];
@@ -181,22 +181,22 @@ public:
 	void ResetTree();
 	void ResetTree(short);
 	struct cYObject::MoveInfo{ // not packed(0x10 bytes) TI: 0x3748
-		enum cYObject::LocationType *locType;
-		char * roadDir;
-		/*unpacked*/ struct _DYOBJ_INST *dyBlock;
-		/*unpacked*/ struct _STOBJ_INST *stBlock;
+		/*+0x0*/   enum cYObject::LocationType *locType;
+		/*+0x4*/   char * roadDir;
+		/*+0x8*/   /*unpacked*/ struct _DYOBJ_INST *dyBlock;
+		/*+0xc*/   /*unpacked*/ struct _STOBJ_INST *stBlock;
 	};
 	struct cYObject::_ControlInput{ // not packed(0x18 bytes) TI: 0x3745
-		/*unpacked*/ struct Point3d vector;
-		int32_t fwdSpeed;
-		int32_t rotateRate;
-		int32_t yaw;
+		/*+0x0*/   /*unpacked*/ struct Point3d vector; // 0xc bytes
+		/*+0xc*/   int32_t fwdSpeed;
+		/*+0x10*/  int32_t rotateRate;
+		/*+0x14*/  int32_t yaw;
 	};
 	struct cYObject::_ControlInput{ // not packed(0x18 bytes) TI: 0x3745
-		/*unpacked*/ struct Point3d vector;
-		int32_t fwdSpeed;
-		int32_t rotateRate;
-		int32_t yaw;
+		/*+0x0*/   /*unpacked*/ struct Point3d vector; // 0xc bytes
+		/*+0xc*/   int32_t fwdSpeed;
+		/*+0x10*/  int32_t rotateRate;
+		/*+0x14*/  int32_t yaw;
 	};
 private:
 	static unsigned short sInited;
@@ -237,13 +237,13 @@ public:
 	void UnsetCell(unsigned char, unsigned char);
 	void Link();
 	void Link(unsigned char, unsigned char);
-	long fMissionID;
+	/*+0x1c*/  long fMissionID;
 	void PutOnGround();
 	void Unlink();
 	unsigned short CellIsSet();
-	unsigned short fbLinked;
+	/*+0x20*/  unsigned short fbLinked; // 0x2 bytes
 	unsigned short Linked();
-	unsigned short fInited;
+	/*+0x22*/  unsigned short fInited; // 0x2 bytes
 	// calltype: NearC
 	static unsigned short ConvertObjDef(void * __ptr32);
 	// calltype: NearC
@@ -260,20 +260,20 @@ public:
 	static short sAmbientTopOff;
 	static short sAmbientAbsoluteMax;
 	static short sScurkRectRad;
-	/*unpacked*/ struct _DYOBJ_INST fDyn;
-	unsigned char fCellX;
-	unsigned char fCellY;
-	unsigned long fBodyName;
-	/*unpacked*/ class cCopterBody *fBody;
-	unsigned long fAnimName;
-	/*unpacked*/ class cCopterAnim *fAnim;
-	short fFace;
+	/*+0x24*/  /*unpacked*/ struct _DYOBJ_INST fDyn; // 0x64 bytes
+	/*+0x88*/  unsigned char fCellX; // 0x1 bytes
+	/*+0x89*/  unsigned char fCellY; // 0x1 bytes
+	/*+0x8c*/  unsigned long fBodyName;
+	/*+0x90*/  /*unpacked*/ class cCopterBody *fBody;
+	/*+0x94*/  unsigned long fAnimName;
+	/*+0x98*/  /*unpacked*/ class cCopterAnim *fAnim;
+	/*+0x9c*/  short fFace; // 0x2 bytes
 	void SetFace(short);
-	/*unpacked*/ struct Point3d fLastMasterLoc;
+	/*+0xa0*/  /*unpacked*/ struct Point3d fLastMasterLoc; // 0xc bytes
 	unsigned short SetMaster(/*unpacked*/ struct _DYOBJ_INST*);
 	/*unpacked*/ struct _DYOBJ_INST* GetMaster();
 	void FollowMaster();
-	enum cYObject::LocationType fCurLocType;
+	/*+0xac*/  enum cYObject::LocationType fCurLocType;
 	// calltype: NearC
 	static unsigned short GetOutOfHeli(long);
 	// calltype: NearC
@@ -305,18 +305,18 @@ public:
 	void VisitOz();
 	unsigned long GetAnim();
 	void SetAnim(unsigned long);
-	unsigned short fSimulate;
-	/*unpacked*/ class Behavior *fBehavior;
-	/*unpacked*/ class cYObject *fNext;
-	short fID;
-	short _pad;
-	short fTemp[8];
-	short fData[48];
-	unsigned char * fPointers[4];
-	short fIterations;
-	short _pad2;
-	short fDirInc;
-	/*unpacked*/ struct cYObject::ObjDefHeader fDefinition;
+	/*+0xb0*/  unsigned short fSimulate; // 0x2 bytes
+	/*+0xb4*/  /*unpacked*/ class Behavior *fBehavior;
+	/*+0xb8*/  /*unpacked*/ class cYObject *fNext;
+	/*+0xbc*/  short fID; // 0x2 bytes
+	/*+0xbe*/  short _pad; // 0x2 bytes
+	/*+0xc0*/  short fTemp[8]; // 0x10 bytes
+	/*+0xd0*/  short fData[48]; // 0x60 bytes
+	/*+0x130*/ unsigned char * fPointers[4]; // 0x10 bytes
+	/*+0x140*/ short fIterations; // 0x2 bytes
+	/*+0x142*/ short _pad2; // 0x2 bytes
+	/*+0x144*/ short fDirInc; // 0x2 bytes
+	/*+0x148*/ /*unpacked*/ struct cYObject::ObjDefHeader fDefinition; // 0x1c bytes
 	enum /* __unnamed */ {
 		kMasterObject = 0,
 		kLastHitterObject = 1,
@@ -464,7 +464,7 @@ public:
 	/*unpacked*/ struct Point3d GetLocation();
 	/*unpacked*/ class Behavior* GetBehavior();
 	void Draw(/*unpacked*/ struct VRBlit*);
-	float fScale;
+	/*+0x164*/ float fScale;
 	void DefaultDrawStr(short, short, unsigned char, unsigned char *, int32_t);
 	void SetCellAndLoc(/*unpacked*/ struct Point3d, unsigned char, unsigned char);
 	void SetCellAndLoc(unsigned char, unsigned char, int32_t, int32_t);
@@ -678,9 +678,9 @@ enum LocationType {
 
 // Type: /*unpacked*/ struct Point3d (forward reference);
 struct Point3d{ // not packed(0xc bytes) TI: 0x348f
-	int32_t x;
-	int32_t y;
-	int32_t z;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
+	/*+0x8*/   int32_t z;
 };
 
 // Type: short;
@@ -693,7 +693,7 @@ public:
 	void cAvatar(/*unpacked*/ struct Point3d);
 	// calltype: NearC
 	static /*unpacked*/ class cAvatar* MakeAvatar();
-	/*unpacked*/ struct cYObject::_ControlInput fUserControl;
+	/*+0x168*/ /*unpacked*/ struct cYObject::_ControlInput fUserControl; // 0x18 bytes
 	void RotateMatrixAndYawForEngine();
 	void GetControlInput();
 	void Start(int32_t, int32_t, int32_t, int32_t);
@@ -706,15 +706,15 @@ public:
 
 // Type: /*unpacked*/ struct cYObject::LocationInfo (forward reference);
 struct cYObject::LocationInfo{ // not packed(0x8 bytes) TI: 0x425a
-	enum cYObject::SearchType searchType;
-	short maxNormalLoiterers;
+	/*+0x0*/   enum cYObject::SearchType searchType;
+	/*+0x4*/   short maxNormalLoiterers; // 0x2 bytes
 };
 
 // Type: /*unpacked*/ struct BodyDebugInfo (forward reference);
 struct BodyDebugInfo{ // not packed(0x1c bytes) TI: 0x3e09
-	long screenx;
-	long screeny;
-	char text[20];
+	/*+0x0*/   long screenx;
+	/*+0x4*/   long screeny;
+	/*+0x8*/   char text[20]; // 0x14 bytes
 };
 
 // Type: unsigned short;
@@ -724,7 +724,7 @@ struct BodyDebugInfo{ // not packed(0x1c bytes) TI: 0x3e09
 class NResFile : public ResFile
 { // not packed(0x124 bytes) TI: 0x3621
 private:
-	/*unpacked*/ class PtrList<StdResLoader> fLoaders;
+	/*+0x11c*/ /*unpacked*/ class PtrList<StdResLoader> fLoaders; // 0x8 bytes
 public:
 	virtual void ~NResFile() /* override */;
 	/*unpacked*/ class StdResLoader* GetLoader(unsigned long, void (*)(void * __ptr32, long));
@@ -841,127 +841,127 @@ public:
 		kNumOwners = 13,
 	};
 	struct YObjLang::OwnerDataParam{ // not packed(0x8 bytes) TI: 0x3593
-		short owner1;
-		short data1;
-		short owner2;
-		short data2;
+		/*+0x0*/   short owner1; // 0x2 bytes
+		/*+0x2*/   short data1; // 0x2 bytes
+		/*+0x4*/   short owner2; // 0x2 bytes
+		/*+0x6*/   short data2; // 0x2 bytes
 	};
 	struct YObjLang::TurnToFireParam{ // not packed(0x4 bytes) TI: 0x3591
-		short xdistloc;
-		short ydistloc;
+		/*+0x0*/   short xdistloc; // 0x2 bytes
+		/*+0x2*/   short ydistloc; // 0x2 bytes
 	};
 	struct YObjLang::GetOutOfRoadParam{ // not packed(0x2 bytes) TI: 0x358f
-		short decTemp;
+		/*+0x0*/   short decTemp; // 0x2 bytes
 	};
 	struct YObjLang::SetDirectionParam{ // not packed(0x2 bytes) TI: 0x358e
-		short dirTemp;
+		/*+0x0*/   short dirTemp; // 0x2 bytes
 	};
 	struct YObjLang::CheckForSpotParam{ // not packed(0x4 bytes) TI: 0x358c
-		short brightnessTemp;
-		short dirToHeliTemp;
+		/*+0x0*/   short brightnessTemp; // 0x2 bytes
+		/*+0x2*/   short dirToHeliTemp; // 0x2 bytes
 	};
 	struct YObjLang::GetSurroundingRiotValParam{ // not packed(0x8 bytes) TI: 0x358a
-		short distTemp;
-		short dirToConcTemp;
-		short riotValTemp;
-		short numPeopleCountedTemp;
+		/*+0x0*/   short distTemp; // 0x2 bytes
+		/*+0x2*/   short dirToConcTemp; // 0x2 bytes
+		/*+0x4*/   short riotValTemp; // 0x2 bytes
+		/*+0x6*/   short numPeopleCountedTemp; // 0x2 bytes
 	};
 	struct YObjLang::IncrementRiotValParam{ // not packed(0x2 bytes) TI: 0x3588
-		short riotValLiteral;
+		/*+0x0*/   short riotValLiteral; // 0x2 bytes
 	};
 	struct YObjLang::IsThisScurkIDParam{ // not packed(0x2 bytes) TI: 0x3586
-		short scurkIDLiteral;
+		/*+0x0*/   short scurkIDLiteral; // 0x2 bytes
 	};
 	struct YObjLang::IsThisLocTypeParam{ // not packed(0x2 bytes) TI: 0x3584
-		short locTypeLiteral;
+		/*+0x0*/   short locTypeLiteral; // 0x2 bytes
 	};
 	struct YObjLang::UpdateMyMissionParam{ // not packed(0x2 bytes) TI: 0x3582
-		short updateLiteral;
+		/*+0x0*/   short updateLiteral; // 0x2 bytes
 	};
 	struct YObjLang::CheckForTrueParam{ // not packed(0x2 bytes) TI: 0x3580
-		short whatLiteral;
+		/*+0x0*/   short whatLiteral; // 0x2 bytes
 	};
 	struct YObjLang::CompareMyLocWithParam{ // not packed(0x6 bytes) TI: 0x357e
-		short withWhatLiteral;
-		short distData;
-		short distOwner;
+		/*+0x0*/   short withWhatLiteral; // 0x2 bytes
+		/*+0x2*/   short distData; // 0x2 bytes
+		/*+0x4*/   short distOwner; // 0x2 bytes
 	};
 	struct YObjLang::WalkAndGrabParam{ // not packed(0x4 bytes) TI: 0x357c
-		short decTemp;
-		short dynAnimBoolean;
+		/*+0x0*/   short decTemp; // 0x2 bytes
+		/*+0x2*/   short dynAnimBoolean; // 0x2 bytes
 	};
 	struct YObjLang::SearchForDynParam{ // not packed(0x6 bytes) TI: 0x357a
-		short searchdynobjtypetemp;
-		short onlyonmasterboolean;
-		short numcellstospiral;
+		/*+0x0*/   short searchdynobjtypetemp; // 0x2 bytes
+		/*+0x2*/   short onlyonmasterboolean; // 0x2 bytes
+		/*+0x4*/   short numcellstospiral; // 0x2 bytes
 	};
 	struct YObjLang::IdleParam{ // not packed(0x2 bytes) TI: 0x3578
-		short decTemp;
+		/*+0x0*/   short decTemp; // 0x2 bytes
 	};
 	struct YObjLang::SetAnimParam{ // not packed(0x4 bytes) TI: 0x3576
-		unsigned long animname;
+		/*+0x0*/   unsigned long animname;
 	};
 	struct YObjLang::SetBodyParam{ // not packed(0x4 bytes) TI: 0x3574
-		unsigned long bodyname;
+		/*+0x0*/   unsigned long bodyname;
 	};
 	struct YObjLang::WalkRunParam{ // not packed(0x7 bytes) TI: 0x3572
-		char decTemp;
-		char onlyNeutralBoolean;
-		char moveFailTemp;
-		char newLocTemp;
-		char roadDirTemp;
-		char dynAnimBoolean;
-		char speedTemp;
+		/*+0x0*/   char decTemp; // 0x1 bytes
+		/*+0x1*/   char onlyNeutralBoolean; // 0x1 bytes
+		/*+0x2*/   char moveFailTemp; // 0x1 bytes
+		/*+0x3*/   char newLocTemp; // 0x1 bytes
+		/*+0x4*/   char roadDirTemp; // 0x1 bytes
+		/*+0x5*/   char dynAnimBoolean; // 0x1 bytes
+		/*+0x6*/   char speedTemp; // 0x1 bytes
 	};
 	struct YObjLang::RandomParam{ // not packed(0x6 bytes) TI: 0x3570
-		short destTemp;
-		short rangeData;
-		short rangeOwner;
+		/*+0x0*/   short destTemp; // 0x2 bytes
+		/*+0x2*/   short rangeData; // 0x2 bytes
+		/*+0x4*/   short rangeOwner; // 0x2 bytes
 	};
 	struct YObjLang::RoadDirParam{ // not packed(0x6 bytes) TI: 0x356e
-		short dirTemp;
-		short distAheadData;
-		short distAheadOwner;
+		/*+0x0*/   short dirTemp; // 0x2 bytes
+		/*+0x2*/   short distAheadData; // 0x2 bytes
+		/*+0x4*/   short distAheadOwner; // 0x2 bytes
 	};
 	struct YObjLang::DirDistFirstParam{ // not packed(0x8 bytes) TI: 0x356c
-		short dirToTemp;
-		short distToTemp;
-		short whatData;
-		short whatOwner;
+		/*+0x0*/   short dirToTemp; // 0x2 bytes
+		/*+0x2*/   short distToTemp; // 0x2 bytes
+		/*+0x4*/   short whatData; // 0x2 bytes
+		/*+0x6*/   short whatOwner; // 0x2 bytes
 	};
 	struct YObjLang::DirDistPersonParam{ // not packed(0x8 bytes) TI: 0x356a
-		short dirToTemp;
-		short distToTemp;
-		short whoData;
-		short whoOwner;
+		/*+0x0*/   short dirToTemp; // 0x2 bytes
+		/*+0x2*/   short distToTemp; // 0x2 bytes
+		/*+0x4*/   short whoData; // 0x2 bytes
+		/*+0x6*/   short whoOwner; // 0x2 bytes
 	};
 	struct YObjLang::AttrParam{ // not packed(0x8 bytes) TI: 0x3568
-		short lhsData;
-		short rhsData;
-		LfBitfield @ 0x5d5b4:
+		/*+0x0*/   short lhsData; // 0x2 bytes
+		/*+0x2*/   short rhsData; // 0x2 bytes
+		/*+0x4*/   LfBitfield @ 0x5d5b4:
 		[90m   LB.[32m[  0.  1][m [95mlength[m = 0x8
 		[90m   LB.[95mTI[m = 0x3565
 		[90m   LB.[32m[  1.  1][m [95mposition[m = 0x0
 		[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
-		 isSigned;
-		LfBitfield @ 0x5d5bc:
+		 isSigned; // 0x8 bytes
+		/*+0x4*/   LfBitfield @ 0x5d5bc:
 		[90m   LB.[32m[  0.  1][m [95mlength[m = 0x8
 		[90m   LB.[95mTI[m = 0x3566
 		[90m   LB.[32m[  1.  1][m [95mposition[m = 0x8
 		[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
-		 opType;
-		LfBitfield @ 0x5d5b4:
+		 opType; // 0x8 bytes
+		/*+0x6*/   LfBitfield @ 0x5d5b4:
 		[90m   LB.[32m[  0.  1][m [95mlength[m = 0x8
 		[90m   LB.[95mTI[m = 0x3565
 		[90m   LB.[32m[  1.  1][m [95mposition[m = 0x0
 		[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
-		 lhsOwner;
-		LfBitfield @ 0x5d5bc:
+		 lhsOwner; // 0x8 bytes
+		/*+0x6*/   LfBitfield @ 0x5d5bc:
 		[90m   LB.[32m[  0.  1][m [95mlength[m = 0x8
 		[90m   LB.[95mTI[m = 0x3566
 		[90m   LB.[32m[  1.  1][m [95mposition[m = 0x8
 		[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
-		 rhsOwner;
+		 rhsOwner; // 0x8 bytes
 	};
 	enum /* __unnamed */ {
 		kGreaterThan = 0,
@@ -978,10 +978,10 @@ public:
 		kNumOps = 11,
 	};
 	struct YObjLang::MiscParam{ // not packed(0x8 bytes) TI: 0x3564
-		short m1;
-		short m2;
-		short m3;
-		short m4;
+		/*+0x0*/   short m1; // 0x2 bytes
+		/*+0x2*/   short m2; // 0x2 bytes
+		/*+0x4*/   short m3; // 0x2 bytes
+		/*+0x6*/   short m4; // 0x2 bytes
 	};
 	// TODO: Unknown nested type: <class 'tpi.LfUnion'>
 	// /*unpacked*/ union YObjLang::Param Param
@@ -1059,12 +1059,12 @@ public:
 // VTABLE: COPTER_D 0x005936d8
 class Behavior{ // not packed(0x1c bytes) TI: 0x35de
 protected:
-	/*unpacked*/ class NResFile *fGlobFile;
-	/*unpacked*/ class NResFile *fPrivFile;
-	/*unpacked*/ class StdResLoader *fGlobalTrees;
-	/*unpacked*/ class StdResLoader *fPrivateTrees;
-	/*unpacked*/ class Language *fLanguage;
-	void (*fSwizzler)(void * __ptr32, long);
+	/*+0x4*/   /*unpacked*/ class NResFile *fGlobFile;
+	/*+0x8*/   /*unpacked*/ class NResFile *fPrivFile;
+	/*+0xc*/   /*unpacked*/ class StdResLoader *fGlobalTrees;
+	/*+0x10*/  /*unpacked*/ class StdResLoader *fPrivateTrees;
+	/*+0x14*/  /*unpacked*/ class Language *fLanguage;
+	/*+0x18*/  void (*fSwizzler)(void * __ptr32, long);
 	enum /* __unnamed */ {
 		kPrimitiveBase = 0,
 		kPrimitiveMax = 255,
@@ -1083,17 +1083,17 @@ protected:
 		kMaxTreeClass = 3,
 	};
 	struct Behavior::NodeParameter{ // not packed(0x8 bytes) TI: 0x35e5
-		short p1;
-		short p2;
-		short p3;
-		short p4;
+		/*+0x0*/   short p1; // 0x2 bytes
+		/*+0x2*/   short p2; // 0x2 bytes
+		/*+0x4*/   short p3; // 0x2 bytes
+		/*+0x6*/   short p4; // 0x2 bytes
 	};
 	struct Behavior::Node{ // not packed(0xc bytes) TI: 0x35e3
-		short treeID;
-		short primCode;
-		char trueTrans;
-		char falseTrans;
-		/*unpacked*/ struct Behavior::NodeParameter param;
+		/*+0x0*/   short treeID; // 0x2 bytes
+		/*+0x0*/   short primCode; // 0x2 bytes
+		/*+0x2*/   char trueTrans; // 0x1 bytes
+		/*+0x3*/   char falseTrans; // 0x1 bytes
+		/*+0x4*/   /*unpacked*/ struct Behavior::NodeParameter param; // 0x8 bytes
 	};
 	enum /* __unnamed */ {
 		kUndefined = -3,
@@ -1101,8 +1101,8 @@ protected:
 		kPopOutFalse = -1,
 	};
 	struct Behavior::Tree{ // not packed(0xe bytes) TI: 0x35e1
-		short numNodes;
-		/*unpacked*/ struct Behavior::Node nodes[1];
+		/*+0x0*/   short numNodes; // 0x2 bytes
+		/*+0x2*/   /*unpacked*/ struct Behavior::Node nodes[1]; // 0xc bytes
 	};
 public:
 	void Behavior(/*unpacked*/ class Language*, /*unpacked*/ class NResFile*, /*unpacked*/ class NResFile*);
@@ -1159,11 +1159,11 @@ public:
 	int32_t IsTimerRunning();
 	unsigned long GetTickCount();
 protected:
-	enum MTimer::TimerResolution nTimerResolution;
-	unsigned long lStartTime;
-	unsigned long lTotalElapsedTime;
+	/*+0x0*/   enum MTimer::TimerResolution nTimerResolution;
+	/*+0x4*/   unsigned long lStartTime;
+	/*+0x8*/   unsigned long lTotalElapsedTime;
 	unsigned long GetWindowsTimerFrequency();
-	unsigned long lFrequency;
+	/*+0xc*/   unsigned long lFrequency;
 };
 
 // Type: void;
@@ -1172,35 +1172,35 @@ protected:
 
 // Type: /*unpacked*/ struct _DYOBJ_INST (forward reference);
 struct _DYOBJ_INST{ // not packed(0x64 bytes) TI: 0x3681
-	/*unpacked*/ struct _DYOBJ_INST *next;
-	/*unpacked*/ struct _DYOBJ_INST *vnext;
-	void * __ptr32 mesh;
-	short flags;
-	short user1;
-	long radius;
-	long height;
-	/*unpacked*/ struct Point3d loc;
-	int32_t matrix[4][4];
+	/*+0x0*/   /*unpacked*/ struct _DYOBJ_INST *next;
+	/*+0x4*/   /*unpacked*/ struct _DYOBJ_INST *vnext;
+	/*+0x8*/   void * __ptr32 mesh;
+	/*+0xc*/   short flags; // 0x2 bytes
+	/*+0xe*/   short user1; // 0x2 bytes
+	/*+0x10*/  long radius;
+	/*+0x14*/  long height;
+	/*+0x18*/  /*unpacked*/ struct Point3d loc; // 0xc bytes
+	/*+0x24*/  int32_t matrix[4][4]; // 0x40 bytes
 };
 
 // Type: /*unpacked*/ struct Point3d;
 struct Point3d{ // not packed(0xc bytes) TI: 0x348f
-	int32_t x;
-	int32_t y;
-	int32_t z;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
+	/*+0x8*/   int32_t z;
 };
 
 // Type: /*unpacked*/ struct _CELL_INFO (forward reference);
 struct _CELL_INFO{ // not packed(0x18 bytes) TI: 0x3671
-	short flags;
-	short x;
-	short y;
-	short z;
-	short size;
-	short ctr;
-	/*unpacked*/ struct _STOBJ_INST *stptr;
-	/*unpacked*/ struct _DYOBJ_INST *dyptr;
-	/*unpacked*/ struct _DYOBJ_INST *vwptr;
+	/*+0x0*/   short flags; // 0x2 bytes
+	/*+0x2*/   short x; // 0x2 bytes
+	/*+0x4*/   short y; // 0x2 bytes
+	/*+0x6*/   short z; // 0x2 bytes
+	/*+0x8*/   short size; // 0x2 bytes
+	/*+0xa*/   short ctr; // 0x2 bytes
+	/*+0xc*/   /*unpacked*/ struct _STOBJ_INST *stptr;
+	/*+0x10*/  /*unpacked*/ struct _DYOBJ_INST *dyptr;
+	/*+0x14*/  /*unpacked*/ struct _DYOBJ_INST *vwptr;
 };
 
 // Type: enum cYObject::SearchType;
@@ -1217,10 +1217,10 @@ enum SearchType {
 
 // Type: /*unpacked*/ struct cYObject::MoveInfo;
 struct cYObject::MoveInfo{ // not packed(0x10 bytes) TI: 0x3748
-	enum cYObject::LocationType *locType;
-	char * roadDir;
-	/*unpacked*/ struct _DYOBJ_INST *dyBlock;
-	/*unpacked*/ struct _STOBJ_INST *stBlock;
+	/*+0x0*/   enum cYObject::LocationType *locType;
+	/*+0x4*/   char * roadDir;
+	/*+0x8*/   /*unpacked*/ struct _DYOBJ_INST *dyBlock;
+	/*+0xc*/   /*unpacked*/ struct _STOBJ_INST *stBlock;
 };
 
 // Type: enum MissionSupertype;
@@ -1235,70 +1235,70 @@ enum MissionSupertype {
 
 // Type: /*unpacked*/ struct VRBlit (forward reference);
 struct VRBlit{ // not packed(0x10 bytes) TI: 0x3643
-	int32_t nverts;
-	/*unpacked*/ struct Proj2d *verts;
-	int32_t notused;
-	int32_t user1;
+	/*+0x0*/   int32_t nverts;
+	/*+0x4*/   /*unpacked*/ struct Proj2d *verts;
+	/*+0x8*/   int32_t notused;
+	/*+0xc*/   int32_t user1;
 };
 
 // Type: /*unpacked*/ struct _HELI_DATA (forward reference);
 struct _HELI_DATA{ // not packed(0x32c bytes) TI: 0x390f
-	int32_t type;
-	int32_t state;
-	int32_t flags;
-	int32_t altdelta;
-	/*unpacked*/ struct Point2d lastpos;
-	/*unpacked*/ struct Point2d currpos;
-	int32_t rotor_mat[4][4];
-	int32_t rotortl_mat[4][4];
-	/*unpacked*/ struct _DYOBJ_INST *dycannon;
-	/*unpacked*/ struct _DYOBJ_INST *dyheli;
-	/*unpacked*/ struct _DYOBJ_INST *dyshadow;
-	/*unpacked*/ struct _DYOBJ_INST *dyrotor;
-	/*unpacked*/ struct _DYOBJ_INST *dyrotortl;
-	/*unpacked*/ struct _DYOBJ_INST *dyrotshadow;
-	/*unpacked*/ struct _DYOBJ_INST *dyrope;
-	/*unpacked*/ struct _DYOBJ_INST *dybucket;
-	/*unpacked*/ struct _DYOBJ_INST *dyspot;
-	/*unpacked*/ struct _DYOBJ_INST *dybracket;
-	void * __ptr32 bucketmesh;
-	void * __ptr32 harnessmesh;
-	int32_t damage;
-	int32_t smokeseq;
-	/*unpacked*/ struct mv heli_p;
-	/*unpacked*/ struct mv heli_r;
-	/*unpacked*/ struct Point3d vector;
-	int32_t yaw;
-	int32_t collide_delay;
-	int32_t roll;
-	int32_t slide;
-	int32_t pitch;
-	int32_t yawrate;
-	int32_t yspeed;
-	int32_t fwd_speed;
-	int32_t delta_fwd_speed;
-	int32_t movex;
-	int32_t movez;
-	int32_t hover_ht;
-	int32_t can_land;
-	long spotlevel;
-	int32_t rotstate;
-	int32_t rotspeed;
-	int32_t fireprojectile;
-	int32_t terralt;
-	int32_t buildalt;
-	/*unpacked*/ struct Point3d collisvec;
-	int32_t shad_color;
-	/*unpacked*/ struct _MISSILE_DATA *crash_traj;
-	int32_t crash_timer;
-	long crash_seq;
-	int32_t over_water;
-	/*unpacked*/ struct _ROPE_DATA rinfo;
-	/*unpacked*/ struct _WATER_DATA winfo;
-	/*unpacked*/ struct tagHeliPassengerData passengerData;
-	int32_t fuel;
-	int32_t flight_time;
-	int32_t pct_load;
+	/*+0x0*/   int32_t type;
+	/*+0x4*/   int32_t state;
+	/*+0x8*/   int32_t flags;
+	/*+0xc*/   int32_t altdelta;
+	/*+0x10*/  /*unpacked*/ struct Point2d lastpos; // 0x8 bytes
+	/*+0x18*/  /*unpacked*/ struct Point2d currpos; // 0x8 bytes
+	/*+0x20*/  int32_t rotor_mat[4][4]; // 0x40 bytes
+	/*+0x60*/  int32_t rotortl_mat[4][4]; // 0x40 bytes
+	/*+0xa0*/  /*unpacked*/ struct _DYOBJ_INST *dycannon;
+	/*+0xa4*/  /*unpacked*/ struct _DYOBJ_INST *dyheli;
+	/*+0xa8*/  /*unpacked*/ struct _DYOBJ_INST *dyshadow;
+	/*+0xac*/  /*unpacked*/ struct _DYOBJ_INST *dyrotor;
+	/*+0xb0*/  /*unpacked*/ struct _DYOBJ_INST *dyrotortl;
+	/*+0xb4*/  /*unpacked*/ struct _DYOBJ_INST *dyrotshadow;
+	/*+0xb8*/  /*unpacked*/ struct _DYOBJ_INST *dyrope;
+	/*+0xbc*/  /*unpacked*/ struct _DYOBJ_INST *dybucket;
+	/*+0xc0*/  /*unpacked*/ struct _DYOBJ_INST *dyspot;
+	/*+0xc4*/  /*unpacked*/ struct _DYOBJ_INST *dybracket;
+	/*+0xc8*/  void * __ptr32 bucketmesh;
+	/*+0xcc*/  void * __ptr32 harnessmesh;
+	/*+0xd0*/  int32_t damage;
+	/*+0xd4*/  int32_t smokeseq;
+	/*+0xd8*/  /*unpacked*/ struct mv heli_p; // 0x14 bytes
+	/*+0xec*/  /*unpacked*/ struct mv heli_r; // 0x14 bytes
+	/*+0x100*/ /*unpacked*/ struct Point3d vector; // 0xc bytes
+	/*+0x10c*/ int32_t yaw;
+	/*+0x110*/ int32_t collide_delay;
+	/*+0x114*/ int32_t roll;
+	/*+0x118*/ int32_t slide;
+	/*+0x11c*/ int32_t pitch;
+	/*+0x120*/ int32_t yawrate;
+	/*+0x124*/ int32_t yspeed;
+	/*+0x128*/ int32_t fwd_speed;
+	/*+0x12c*/ int32_t delta_fwd_speed;
+	/*+0x130*/ int32_t movex;
+	/*+0x134*/ int32_t movez;
+	/*+0x138*/ int32_t hover_ht;
+	/*+0x13c*/ int32_t can_land;
+	/*+0x140*/ long spotlevel;
+	/*+0x144*/ int32_t rotstate;
+	/*+0x148*/ int32_t rotspeed;
+	/*+0x14c*/ int32_t fireprojectile;
+	/*+0x150*/ int32_t terralt;
+	/*+0x154*/ int32_t buildalt;
+	/*+0x158*/ /*unpacked*/ struct Point3d collisvec; // 0xc bytes
+	/*+0x164*/ int32_t shad_color;
+	/*+0x168*/ /*unpacked*/ struct _MISSILE_DATA *crash_traj;
+	/*+0x16c*/ int32_t crash_timer;
+	/*+0x170*/ long crash_seq;
+	/*+0x174*/ int32_t over_water;
+	/*+0x178*/ /*unpacked*/ struct _ROPE_DATA rinfo; // 0x44 bytes
+	/*+0x1bc*/ /*unpacked*/ struct _WATER_DATA winfo; // 0x8 bytes
+	/*+0x1c4*/ /*unpacked*/ struct tagHeliPassengerData passengerData; // 0x15c bytes
+	/*+0x320*/ int32_t fuel;
+	/*+0x324*/ int32_t flight_time;
+	/*+0x328*/ int32_t pct_load;
 };
 
 // Type: enum PersonType;
@@ -1347,42 +1347,42 @@ enum MissionType {
 
 // Type: /*unpacked*/ struct _LZ_INFO (forward reference);
 struct _LZ_INFO{ // not packed(0x14 bytes) TI: 0x3e5a
-	int32_t flags;
-	int32_t ulx;
-	int32_t ulz;
-	int32_t dimx;
-	int32_t dimz;
+	/*+0x0*/   int32_t flags;
+	/*+0x4*/   int32_t ulx;
+	/*+0x8*/   int32_t ulz;
+	/*+0xc*/   int32_t dimx;
+	/*+0x10*/  int32_t dimz;
 };
 
 // Type: /*unpacked*/ struct Rect;
 struct Rect{ // not packed(0x8 bytes) TI: 0x3463
-	short top;
-	short left;
-	short bottom;
-	short right;
+	/*+0x0*/   short top; // 0x2 bytes
+	/*+0x2*/   short left; // 0x2 bytes
+	/*+0x4*/   short bottom; // 0x2 bytes
+	/*+0x6*/   short right; // 0x2 bytes
 };
 
 // Type: /*unpacked*/ struct _SYSTEMTIME;
 struct _SYSTEMTIME{ // not packed(0x10 bytes) TI: 0x3e00
-	unsigned short wYear;
-	unsigned short wMonth;
-	unsigned short wDayOfWeek;
-	unsigned short wDay;
-	unsigned short wHour;
-	unsigned short wMinute;
-	unsigned short wSecond;
-	unsigned short wMilliseconds;
+	/*+0x0*/   unsigned short wYear; // 0x2 bytes
+	/*+0x2*/   unsigned short wMonth; // 0x2 bytes
+	/*+0x4*/   unsigned short wDayOfWeek; // 0x2 bytes
+	/*+0x6*/   unsigned short wDay; // 0x2 bytes
+	/*+0x8*/   unsigned short wHour; // 0x2 bytes
+	/*+0xa*/   unsigned short wMinute; // 0x2 bytes
+	/*+0xc*/   unsigned short wSecond; // 0x2 bytes
+	/*+0xe*/   unsigned short wMilliseconds; // 0x2 bytes
 };
 
 // Type: char *;
 
 // Type: /*unpacked*/ struct _MISSION_PARMS;
 struct _MISSION_PARMS{ // not packed(0x18 bytes) TI: 0x38f9
-	long op;
-	long id;
-	/*unpacked*/ struct Point2d maploc;
-	long i2num;
-	long flags;
+	/*+0x0*/   long op;
+	/*+0x4*/   long id;
+	/*+0x8*/   /*unpacked*/ struct Point2d maploc; // 0x8 bytes
+	/*+0x10*/  long i2num;
+	/*+0x14*/  long flags;
 };
 
 // Type: enum cYObject::SoundNum;
@@ -1413,14 +1413,14 @@ enum SoundNum {
 class DigitalSound : public Sound
 { // not packed(0x7c bytes) TI: 0x475b
 protected:
-	int32_t nStreamingType;
-	int32_t nCompletionEstimationTimerSet;
+	/*+0x34*/  int32_t nStreamingType;
+	/*+0x38*/  int32_t nCompletionEstimationTimerSet;
 	static /*unpacked*/ struct IDirectSound *lpDirectSound;
-	uint32_t cbSize;
-	/*unpacked*/ struct tWAVEFORMATEX waveFormatEx;
-	/*unpacked*/ struct IDirectSoundBuffer *lpSound[8];
-	/*unpacked*/ struct _STREAMBUFINFO *lpStreamBufferInfo;
-	unsigned long dwDesiredBufferDescFlags;
+	/*+0x3c*/  uint32_t cbSize;
+	/*+0x40*/  /*unpacked*/ struct tWAVEFORMATEX waveFormatEx; // 0x12 bytes
+	/*+0x54*/  /*unpacked*/ struct IDirectSoundBuffer *lpSound[8]; // 0x20 bytes
+	/*+0x74*/  /*unpacked*/ struct _STREAMBUFINFO *lpStreamBufferInfo;
+	/*+0x78*/  unsigned long dwDesiredBufferDescFlags;
 public:
 	void DigitalSound(long);
 	void DigitalSound(const /*unpacked*/ class basic_string<char>&, int32_t);
@@ -1467,19 +1467,19 @@ protected:
 
 // Type: /*unpacked*/ struct tagPassengerInfo;
 struct tagPassengerInfo{ // not packed(0x14 bytes) TI: 0x3a4a
-	long lPassengerFace;
-	long lPassengerExpression;
-	long lPassengerHealth;
-	long lPassengerID;
-	long lPassengerSeatUsed;
+	/*+0x0*/   long lPassengerFace;
+	/*+0x4*/   long lPassengerExpression;
+	/*+0x8*/   long lPassengerHealth;
+	/*+0xc*/   long lPassengerID;
+	/*+0x10*/  long lPassengerSeatUsed;
 };
 
 // Type: /*unpacked*/ struct cYObject::MoveInfo (forward reference);
 struct cYObject::MoveInfo{ // not packed(0x10 bytes) TI: 0x3748
-	enum cYObject::LocationType *locType;
-	char * roadDir;
-	/*unpacked*/ struct _DYOBJ_INST *dyBlock;
-	/*unpacked*/ struct _STOBJ_INST *stBlock;
+	/*+0x0*/   enum cYObject::LocationType *locType;
+	/*+0x4*/   char * roadDir;
+	/*+0x8*/   /*unpacked*/ struct _DYOBJ_INST *dyBlock;
+	/*+0xc*/   /*unpacked*/ struct _STOBJ_INST *stBlock;
 };
 
 // Type: enum cYObject::MoveErrorCode;
@@ -1502,32 +1502,32 @@ enum MoveErrorCode {
 
 // Type: /*unpacked*/ struct Point3D;
 struct Point3D{ // not packed(0x18 bytes) TI: 0x349b
-	double x;
-	double y;
-	double z;
+	/*+0x0*/   double x; // 0x8 bytes
+	/*+0x8*/   double y; // 0x8 bytes
+	/*+0x10*/  double z; // 0x8 bytes
 };
 
 // Type: unsigned long;
 
 // Type: /*unpacked*/ struct VRFaceInfo;
 struct VRFaceInfo{ // not packed(0x20 bytes) TI: 0x3e07
-	int32_t Face;
-	int32_t Verts;
-	int32_t Attribute;
-	int32_t Plotter;
-	/*unpacked*/ struct VRBmpHdr *Bitmap;
-	int32_t * VertList;
-	/*unpacked*/ struct MapVert *MapVList;
-	/*unpacked*/ struct MapVert *BarryPtr;
+	/*+0x0*/   int32_t Face;
+	/*+0x4*/   int32_t Verts;
+	/*+0x8*/   int32_t Attribute;
+	/*+0xc*/   int32_t Plotter;
+	/*+0x10*/  /*unpacked*/ struct VRBmpHdr *Bitmap;
+	/*+0x14*/  int32_t * VertList;
+	/*+0x18*/  /*unpacked*/ struct MapVert *MapVList;
+	/*+0x1c*/  /*unpacked*/ struct MapVert *BarryPtr;
 };
 
 // Type: float;
 
 // Type: /*unpacked*/ struct BodyDebugInfo;
 struct BodyDebugInfo{ // not packed(0x1c bytes) TI: 0x3e09
-	long screenx;
-	long screeny;
-	char text[20];
+	/*+0x0*/   long screenx;
+	/*+0x4*/   long screeny;
+	/*+0x8*/   char text[20]; // 0x14 bytes
 };
 
 // Type: /*unpacked*/ class CBackBuffer (forward reference);
@@ -1571,24 +1571,24 @@ public:
 	virtual unsigned long DrawLineClipped(long, long, long, long, long); // vtable+0x54
 	virtual unsigned long DrawRectangleOutline(const /*unpacked*/ struct SparkalRect&, long); // vtable+0x58
 	virtual unsigned long DrawRectangleOutlineUnclipped(const /*unpacked*/ struct SparkalRect&, long); // vtable+0x5c
-	char * szFilePath;
+	/*+0x18*/  char * szFilePath;
 protected:
-	int32_t bSurfacePrimary;
-	int32_t bSurfaceTransparent;
-	/*unpacked*/ class MFont *mFont;
-	/*unpacked*/ struct SparkalColor colorFontCurrent;
-	/*unpacked*/ struct SparkalColor colorCurrent;
-	int32_t nColorIndexFontCurrent;
-	int32_t nColorIndexCurrent;
-	int32_t nColorIndexTransparent;
+	/*+0x1c*/  int32_t bSurfacePrimary;
+	/*+0x20*/  int32_t bSurfaceTransparent;
+	/*+0x24*/  /*unpacked*/ class MFont *mFont;
+	/*+0x28*/  /*unpacked*/ struct SparkalColor colorFontCurrent;
+	/*+0x2c*/  /*unpacked*/ struct SparkalColor colorCurrent;
+	/*+0x30*/  int32_t nColorIndexFontCurrent;
+	/*+0x34*/  int32_t nColorIndexCurrent;
+	/*+0x38*/  int32_t nColorIndexTransparent;
 };
 
 // Type: /*unpacked*/ struct _STOBJ_INST (forward reference);
 struct _STOBJ_INST{ // not packed(0x10 bytes) TI: 0x365f
-	/*unpacked*/ struct _STOBJ_INST *next;
-	void * __ptr32 mesh;
-	long user1;
-	long user2;
+	/*+0x0*/   /*unpacked*/ struct _STOBJ_INST *next;
+	/*+0x4*/   void * __ptr32 mesh;
+	/*+0x8*/   long user1;
+	/*+0xc*/   long user2;
 };
 
 // Type: /*unpacked*/ class FlatResFile (forward reference);
@@ -1596,9 +1596,9 @@ struct _STOBJ_INST{ // not packed(0x10 bytes) TI: 0x365f
 class FlatResFile : public FlatFile
 { // not packed(0x11c bytes) TI: 0x330e
 protected:
-	/*unpacked*/ class ResMap *fMap;
-	long fError;
-	short _alignPad;
+	/*+0x110*/ /*unpacked*/ class ResMap *fMap;
+	/*+0x114*/ long fError;
+	/*+0x118*/ short _alignPad; // 0x2 bytes
 public:
 	void FlatResFile();
 	virtual void ~FlatResFile() /* override */;
@@ -1638,8 +1638,8 @@ public:
 class PtrList<StdResLoader>{ // not packed(0x8 bytes) TI: 0x3651
 	class PtrList<StdResLoader>::Iter{ // not packed(0x8 bytes) TI: 0x365b
 	private:
-		/*unpacked*/ class PtrList<StdResLoader> *fObject;
-		/*unpacked*/ struct PtrList<StdResLoader>::PtrNode *fCur;
+		/*+0x0*/   /*unpacked*/ class PtrList<StdResLoader> *fObject;
+		/*+0x4*/   /*unpacked*/ struct PtrList<StdResLoader>::PtrNode *fCur;
 	public:
 		void Iter(/*unpacked*/ class PtrList<StdResLoader>*);
 		/*unpacked*/ class StdResLoader* Current();
@@ -1648,12 +1648,12 @@ class PtrList<StdResLoader>{ // not packed(0x8 bytes) TI: 0x3651
 		/*unpacked*/ class StdResLoader* First();
 	};
 	struct PtrList<StdResLoader>::PtrNode{ // not packed(0x8 bytes) TI: 0x3653
-		/*unpacked*/ class StdResLoader *data;
-		/*unpacked*/ struct PtrList<StdResLoader>::PtrNode *next;
+		/*+0x0*/   /*unpacked*/ class StdResLoader *data;
+		/*+0x4*/   /*unpacked*/ struct PtrList<StdResLoader>::PtrNode *next;
 	};
 private:
-	/*unpacked*/ struct PtrList<StdResLoader>::PtrNode *fFirst;
-	short fCount;
+	/*+0x0*/   /*unpacked*/ struct PtrList<StdResLoader>::PtrNode *fFirst;
+	/*+0x4*/   short fCount; // 0x2 bytes
 public:
 	void PtrList<StdResLoader>();
 	void ~PtrList<StdResLoader>();
@@ -1691,9 +1691,9 @@ class vector<char>{ // not packed(0xc bytes) TI: 0x38ac
 	using reverse_iterator = /*unpacked*/ class reverse_iterator<char *,char,char &,int>;
 protected:
 	static /*unpacked*/ class allocator<char> static_allocator;
-	char * start;
-	char * finish;
-	char * end_of_storage;
+	/*+0x0*/   char * start;
+	/*+0x4*/   char * finish;
+	/*+0x8*/   char * end_of_storage;
 	void insert_aux(char *, const char&);
 public:
 	char * begin();
@@ -1733,23 +1733,23 @@ public:
 
 // Type: /*unpacked*/ struct TreeSim::StackElem (forward reference);
 struct TreeSim::StackElem{ // not packed(0x14 bytes) TI: 0x3614
-	short treeID;
-	short nodeNum;
-	short objectID;
-	short _pad;
-	unsigned char * objectPtr;
-	short locals[4];
-	/*unpacked*/ class Behavior *pBehavior;
+	/*+0x0*/   short treeID; // 0x2 bytes
+	/*+0x2*/   short nodeNum; // 0x2 bytes
+	/*+0x4*/   short objectID; // 0x2 bytes
+	/*+0x4*/   short _pad; // 0x2 bytes
+	/*+0x4*/   unsigned char * objectPtr;
+	/*+0x8*/   short locals[4]; // 0x8 bytes
+	/*+0x10*/  /*unpacked*/ class Behavior *pBehavior;
 	void GetTreeName(unsigned char *);
 };
 
 // Type: /*unpacked*/ struct Behavior::Node (forward reference);
 struct Behavior::Node{ // not packed(0xc bytes) TI: 0x35e3
-	short treeID;
-	short primCode;
-	char trueTrans;
-	char falseTrans;
-	/*unpacked*/ struct Behavior::NodeParameter param;
+	/*+0x0*/   short treeID; // 0x2 bytes
+	/*+0x0*/   short primCode; // 0x2 bytes
+	/*+0x2*/   char trueTrans; // 0x1 bytes
+	/*+0x3*/   char falseTrans; // 0x1 bytes
+	/*+0x4*/   /*unpacked*/ struct Behavior::NodeParameter param; // 0x8 bytes
 };
 
 // Type: enum TreeSim::ReturnCode;
@@ -1769,22 +1769,22 @@ class TreeSim{ // not packed(0x14 bytes) TI: 0x3610
 		kMaxIterations = 128,
 	};
 	struct TreeSim::StackElem{ // not packed(0x14 bytes) TI: 0x3614
-		short treeID;
-		short nodeNum;
-		short objectID;
-		short _pad;
-		unsigned char * objectPtr;
-		short locals[4];
-		/*unpacked*/ class Behavior *pBehavior;
+		/*+0x0*/   short treeID; // 0x2 bytes
+		/*+0x2*/   short nodeNum; // 0x2 bytes
+		/*+0x4*/   short objectID; // 0x2 bytes
+		/*+0x4*/   short _pad; // 0x2 bytes
+		/*+0x4*/   unsigned char * objectPtr;
+		/*+0x8*/   short locals[4]; // 0x8 bytes
+		/*+0x10*/  /*unpacked*/ class Behavior *pBehavior;
 		void GetTreeName(unsigned char *);
 	};
 private:
-	/*unpacked*/ struct TreeSim::StackElem *fStack;
-	short fStackSize;
-	short fMaxStackSize;
-	short fIterations;
-	short _pad;
-	short * fAutoStackArea;
+	/*+0x4*/   /*unpacked*/ struct TreeSim::StackElem *fStack;
+	/*+0x8*/   short fStackSize; // 0x2 bytes
+	/*+0xa*/   short fMaxStackSize; // 0x2 bytes
+	/*+0xc*/   short fIterations; // 0x2 bytes
+	/*+0xe*/   short _pad; // 0x2 bytes
+	/*+0x10*/  short * fAutoStackArea;
 	enum ReturnCode {
 		kTrueComplete = 1,
 		kFalseComplete = 0,
@@ -1921,127 +1921,127 @@ public:
 		kNumOwners = 13,
 	};
 	struct YObjLang::OwnerDataParam{ // not packed(0x8 bytes) TI: 0x3593
-		short owner1;
-		short data1;
-		short owner2;
-		short data2;
+		/*+0x0*/   short owner1; // 0x2 bytes
+		/*+0x2*/   short data1; // 0x2 bytes
+		/*+0x4*/   short owner2; // 0x2 bytes
+		/*+0x6*/   short data2; // 0x2 bytes
 	};
 	struct YObjLang::TurnToFireParam{ // not packed(0x4 bytes) TI: 0x3591
-		short xdistloc;
-		short ydistloc;
+		/*+0x0*/   short xdistloc; // 0x2 bytes
+		/*+0x2*/   short ydistloc; // 0x2 bytes
 	};
 	struct YObjLang::GetOutOfRoadParam{ // not packed(0x2 bytes) TI: 0x358f
-		short decTemp;
+		/*+0x0*/   short decTemp; // 0x2 bytes
 	};
 	struct YObjLang::SetDirectionParam{ // not packed(0x2 bytes) TI: 0x358e
-		short dirTemp;
+		/*+0x0*/   short dirTemp; // 0x2 bytes
 	};
 	struct YObjLang::CheckForSpotParam{ // not packed(0x4 bytes) TI: 0x358c
-		short brightnessTemp;
-		short dirToHeliTemp;
+		/*+0x0*/   short brightnessTemp; // 0x2 bytes
+		/*+0x2*/   short dirToHeliTemp; // 0x2 bytes
 	};
 	struct YObjLang::GetSurroundingRiotValParam{ // not packed(0x8 bytes) TI: 0x358a
-		short distTemp;
-		short dirToConcTemp;
-		short riotValTemp;
-		short numPeopleCountedTemp;
+		/*+0x0*/   short distTemp; // 0x2 bytes
+		/*+0x2*/   short dirToConcTemp; // 0x2 bytes
+		/*+0x4*/   short riotValTemp; // 0x2 bytes
+		/*+0x6*/   short numPeopleCountedTemp; // 0x2 bytes
 	};
 	struct YObjLang::IncrementRiotValParam{ // not packed(0x2 bytes) TI: 0x3588
-		short riotValLiteral;
+		/*+0x0*/   short riotValLiteral; // 0x2 bytes
 	};
 	struct YObjLang::IsThisScurkIDParam{ // not packed(0x2 bytes) TI: 0x3586
-		short scurkIDLiteral;
+		/*+0x0*/   short scurkIDLiteral; // 0x2 bytes
 	};
 	struct YObjLang::IsThisLocTypeParam{ // not packed(0x2 bytes) TI: 0x3584
-		short locTypeLiteral;
+		/*+0x0*/   short locTypeLiteral; // 0x2 bytes
 	};
 	struct YObjLang::UpdateMyMissionParam{ // not packed(0x2 bytes) TI: 0x3582
-		short updateLiteral;
+		/*+0x0*/   short updateLiteral; // 0x2 bytes
 	};
 	struct YObjLang::CheckForTrueParam{ // not packed(0x2 bytes) TI: 0x3580
-		short whatLiteral;
+		/*+0x0*/   short whatLiteral; // 0x2 bytes
 	};
 	struct YObjLang::CompareMyLocWithParam{ // not packed(0x6 bytes) TI: 0x357e
-		short withWhatLiteral;
-		short distData;
-		short distOwner;
+		/*+0x0*/   short withWhatLiteral; // 0x2 bytes
+		/*+0x2*/   short distData; // 0x2 bytes
+		/*+0x4*/   short distOwner; // 0x2 bytes
 	};
 	struct YObjLang::WalkAndGrabParam{ // not packed(0x4 bytes) TI: 0x357c
-		short decTemp;
-		short dynAnimBoolean;
+		/*+0x0*/   short decTemp; // 0x2 bytes
+		/*+0x2*/   short dynAnimBoolean; // 0x2 bytes
 	};
 	struct YObjLang::SearchForDynParam{ // not packed(0x6 bytes) TI: 0x357a
-		short searchdynobjtypetemp;
-		short onlyonmasterboolean;
-		short numcellstospiral;
+		/*+0x0*/   short searchdynobjtypetemp; // 0x2 bytes
+		/*+0x2*/   short onlyonmasterboolean; // 0x2 bytes
+		/*+0x4*/   short numcellstospiral; // 0x2 bytes
 	};
 	struct YObjLang::IdleParam{ // not packed(0x2 bytes) TI: 0x3578
-		short decTemp;
+		/*+0x0*/   short decTemp; // 0x2 bytes
 	};
 	struct YObjLang::SetAnimParam{ // not packed(0x4 bytes) TI: 0x3576
-		unsigned long animname;
+		/*+0x0*/   unsigned long animname;
 	};
 	struct YObjLang::SetBodyParam{ // not packed(0x4 bytes) TI: 0x3574
-		unsigned long bodyname;
+		/*+0x0*/   unsigned long bodyname;
 	};
 	struct YObjLang::WalkRunParam{ // not packed(0x7 bytes) TI: 0x3572
-		char decTemp;
-		char onlyNeutralBoolean;
-		char moveFailTemp;
-		char newLocTemp;
-		char roadDirTemp;
-		char dynAnimBoolean;
-		char speedTemp;
+		/*+0x0*/   char decTemp; // 0x1 bytes
+		/*+0x1*/   char onlyNeutralBoolean; // 0x1 bytes
+		/*+0x2*/   char moveFailTemp; // 0x1 bytes
+		/*+0x3*/   char newLocTemp; // 0x1 bytes
+		/*+0x4*/   char roadDirTemp; // 0x1 bytes
+		/*+0x5*/   char dynAnimBoolean; // 0x1 bytes
+		/*+0x6*/   char speedTemp; // 0x1 bytes
 	};
 	struct YObjLang::RandomParam{ // not packed(0x6 bytes) TI: 0x3570
-		short destTemp;
-		short rangeData;
-		short rangeOwner;
+		/*+0x0*/   short destTemp; // 0x2 bytes
+		/*+0x2*/   short rangeData; // 0x2 bytes
+		/*+0x4*/   short rangeOwner; // 0x2 bytes
 	};
 	struct YObjLang::RoadDirParam{ // not packed(0x6 bytes) TI: 0x356e
-		short dirTemp;
-		short distAheadData;
-		short distAheadOwner;
+		/*+0x0*/   short dirTemp; // 0x2 bytes
+		/*+0x2*/   short distAheadData; // 0x2 bytes
+		/*+0x4*/   short distAheadOwner; // 0x2 bytes
 	};
 	struct YObjLang::DirDistFirstParam{ // not packed(0x8 bytes) TI: 0x356c
-		short dirToTemp;
-		short distToTemp;
-		short whatData;
-		short whatOwner;
+		/*+0x0*/   short dirToTemp; // 0x2 bytes
+		/*+0x2*/   short distToTemp; // 0x2 bytes
+		/*+0x4*/   short whatData; // 0x2 bytes
+		/*+0x6*/   short whatOwner; // 0x2 bytes
 	};
 	struct YObjLang::DirDistPersonParam{ // not packed(0x8 bytes) TI: 0x356a
-		short dirToTemp;
-		short distToTemp;
-		short whoData;
-		short whoOwner;
+		/*+0x0*/   short dirToTemp; // 0x2 bytes
+		/*+0x2*/   short distToTemp; // 0x2 bytes
+		/*+0x4*/   short whoData; // 0x2 bytes
+		/*+0x6*/   short whoOwner; // 0x2 bytes
 	};
 	struct YObjLang::AttrParam{ // not packed(0x8 bytes) TI: 0x3568
-		short lhsData;
-		short rhsData;
-		LfBitfield @ 0x5d5b4:
+		/*+0x0*/   short lhsData; // 0x2 bytes
+		/*+0x2*/   short rhsData; // 0x2 bytes
+		/*+0x4*/   LfBitfield @ 0x5d5b4:
 		[90m   LB.[32m[  0.  1][m [95mlength[m = 0x8
 		[90m   LB.[95mTI[m = 0x3565
 		[90m   LB.[32m[  1.  1][m [95mposition[m = 0x0
 		[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
-		 isSigned;
-		LfBitfield @ 0x5d5bc:
+		 isSigned; // 0x8 bytes
+		/*+0x4*/   LfBitfield @ 0x5d5bc:
 		[90m   LB.[32m[  0.  1][m [95mlength[m = 0x8
 		[90m   LB.[95mTI[m = 0x3566
 		[90m   LB.[32m[  1.  1][m [95mposition[m = 0x8
 		[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
-		 opType;
-		LfBitfield @ 0x5d5b4:
+		 opType; // 0x8 bytes
+		/*+0x6*/   LfBitfield @ 0x5d5b4:
 		[90m   LB.[32m[  0.  1][m [95mlength[m = 0x8
 		[90m   LB.[95mTI[m = 0x3565
 		[90m   LB.[32m[  1.  1][m [95mposition[m = 0x0
 		[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
-		 lhsOwner;
-		LfBitfield @ 0x5d5bc:
+		 lhsOwner; // 0x8 bytes
+		/*+0x6*/   LfBitfield @ 0x5d5bc:
 		[90m   LB.[32m[  0.  1][m [95mlength[m = 0x8
 		[90m   LB.[95mTI[m = 0x3566
 		[90m   LB.[32m[  1.  1][m [95mposition[m = 0x8
 		[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
-		 rhsOwner;
+		 rhsOwner; // 0x8 bytes
 	};
 	enum /* __unnamed */ {
 		kGreaterThan = 0,
@@ -2058,10 +2058,10 @@ public:
 		kNumOps = 11,
 	};
 	struct YObjLang::MiscParam{ // not packed(0x8 bytes) TI: 0x3564
-		short m1;
-		short m2;
-		short m3;
-		short m4;
+		/*+0x0*/   short m1; // 0x2 bytes
+		/*+0x2*/   short m2; // 0x2 bytes
+		/*+0x4*/   short m3; // 0x2 bytes
+		/*+0x6*/   short m4; // 0x2 bytes
 	};
 	// TODO: Unknown nested type: <class 'tpi.LfUnion'>
 	// /*unpacked*/ union YObjLang::Param Param
@@ -2143,9 +2143,9 @@ public:
 class FlatResFile : public FlatFile
 { // not packed(0x11c bytes) TI: 0x330e
 protected:
-	/*unpacked*/ class ResMap *fMap;
-	long fError;
-	short _alignPad;
+	/*+0x110*/ /*unpacked*/ class ResMap *fMap;
+	/*+0x114*/ long fError;
+	/*+0x118*/ short _alignPad; // 0x2 bytes
 public:
 	void FlatResFile();
 	virtual void ~FlatResFile() /* override */;
@@ -2190,19 +2190,19 @@ class cYObject : public TreeSim, public YObjLang
 		kNumPointers = 4,
 	};
 	struct cYObject::ObjDefHeader{ // not packed(0x1c bytes) TI: 0x374c
-		long version;
-		short stackSize;
-		short baseGraphic;
-		short numGraphics;
-		short initBhav;
-		short toolbarPict;
-		short treeTableID;
-		short personalityID;
-		short type;
-		short red;
-		short green;
-		short blue;
-		short _padding2;
+		/*+0x0*/   long version;
+		/*+0x4*/   short stackSize; // 0x2 bytes
+		/*+0x6*/   short baseGraphic; // 0x2 bytes
+		/*+0x8*/   short numGraphics; // 0x2 bytes
+		/*+0xa*/   short initBhav; // 0x2 bytes
+		/*+0xc*/   short toolbarPict; // 0x2 bytes
+		/*+0xe*/   short treeTableID; // 0x2 bytes
+		/*+0x10*/  short personalityID; // 0x2 bytes
+		/*+0x12*/  short type; // 0x2 bytes
+		/*+0x14*/  short red; // 0x2 bytes
+		/*+0x16*/  short green; // 0x2 bytes
+		/*+0x18*/  short blue; // 0x2 bytes
+		/*+0x1a*/  short _padding2; // 0x2 bytes
 	};
 	enum MoveErrorCode {
 		kMoveError = -1,
@@ -2295,7 +2295,7 @@ public:
 	// calltype: NearC
 	static void SetRxnTree(short, short);
 	static long sSimTicks;
-	long fLastInterrupt;
+	/*+0x18*/  long fLastInterrupt;
 	enum LocationType {
 		kOutOfCity = -1,
 		kLocNoInfo = 0,
@@ -2323,8 +2323,8 @@ public:
 		kSearchAnywhereAtAll = 3,
 	};
 	struct cYObject::LocationInfo{ // not packed(0x8 bytes) TI: 0x425a
-		enum cYObject::SearchType searchType;
-		short maxNormalLoiterers;
+		/*+0x0*/   enum cYObject::SearchType searchType;
+		/*+0x4*/   short maxNormalLoiterers; // 0x2 bytes
 	};
 public:
 	static /*unpacked*/ struct cYObject::LocationInfo sLocInfo[14];
@@ -2356,22 +2356,22 @@ public:
 	void ResetTree();
 	void ResetTree(short);
 	struct cYObject::MoveInfo{ // not packed(0x10 bytes) TI: 0x3748
-		enum cYObject::LocationType *locType;
-		char * roadDir;
-		/*unpacked*/ struct _DYOBJ_INST *dyBlock;
-		/*unpacked*/ struct _STOBJ_INST *stBlock;
+		/*+0x0*/   enum cYObject::LocationType *locType;
+		/*+0x4*/   char * roadDir;
+		/*+0x8*/   /*unpacked*/ struct _DYOBJ_INST *dyBlock;
+		/*+0xc*/   /*unpacked*/ struct _STOBJ_INST *stBlock;
 	};
 	struct cYObject::_ControlInput{ // not packed(0x18 bytes) TI: 0x3745
-		/*unpacked*/ struct Point3d vector;
-		int32_t fwdSpeed;
-		int32_t rotateRate;
-		int32_t yaw;
+		/*+0x0*/   /*unpacked*/ struct Point3d vector; // 0xc bytes
+		/*+0xc*/   int32_t fwdSpeed;
+		/*+0x10*/  int32_t rotateRate;
+		/*+0x14*/  int32_t yaw;
 	};
 	struct cYObject::_ControlInput{ // not packed(0x18 bytes) TI: 0x3745
-		/*unpacked*/ struct Point3d vector;
-		int32_t fwdSpeed;
-		int32_t rotateRate;
-		int32_t yaw;
+		/*+0x0*/   /*unpacked*/ struct Point3d vector; // 0xc bytes
+		/*+0xc*/   int32_t fwdSpeed;
+		/*+0x10*/  int32_t rotateRate;
+		/*+0x14*/  int32_t yaw;
 	};
 private:
 	static unsigned short sInited;
@@ -2412,13 +2412,13 @@ public:
 	void UnsetCell(unsigned char, unsigned char);
 	void Link();
 	void Link(unsigned char, unsigned char);
-	long fMissionID;
+	/*+0x1c*/  long fMissionID;
 	void PutOnGround();
 	void Unlink();
 	unsigned short CellIsSet();
-	unsigned short fbLinked;
+	/*+0x20*/  unsigned short fbLinked; // 0x2 bytes
 	unsigned short Linked();
-	unsigned short fInited;
+	/*+0x22*/  unsigned short fInited; // 0x2 bytes
 	// calltype: NearC
 	static unsigned short ConvertObjDef(void * __ptr32);
 	// calltype: NearC
@@ -2435,20 +2435,20 @@ public:
 	static short sAmbientTopOff;
 	static short sAmbientAbsoluteMax;
 	static short sScurkRectRad;
-	/*unpacked*/ struct _DYOBJ_INST fDyn;
-	unsigned char fCellX;
-	unsigned char fCellY;
-	unsigned long fBodyName;
-	/*unpacked*/ class cCopterBody *fBody;
-	unsigned long fAnimName;
-	/*unpacked*/ class cCopterAnim *fAnim;
-	short fFace;
+	/*+0x24*/  /*unpacked*/ struct _DYOBJ_INST fDyn; // 0x64 bytes
+	/*+0x88*/  unsigned char fCellX; // 0x1 bytes
+	/*+0x89*/  unsigned char fCellY; // 0x1 bytes
+	/*+0x8c*/  unsigned long fBodyName;
+	/*+0x90*/  /*unpacked*/ class cCopterBody *fBody;
+	/*+0x94*/  unsigned long fAnimName;
+	/*+0x98*/  /*unpacked*/ class cCopterAnim *fAnim;
+	/*+0x9c*/  short fFace; // 0x2 bytes
 	void SetFace(short);
-	/*unpacked*/ struct Point3d fLastMasterLoc;
+	/*+0xa0*/  /*unpacked*/ struct Point3d fLastMasterLoc; // 0xc bytes
 	unsigned short SetMaster(/*unpacked*/ struct _DYOBJ_INST*);
 	/*unpacked*/ struct _DYOBJ_INST* GetMaster();
 	void FollowMaster();
-	enum cYObject::LocationType fCurLocType;
+	/*+0xac*/  enum cYObject::LocationType fCurLocType;
 	// calltype: NearC
 	static unsigned short GetOutOfHeli(long);
 	// calltype: NearC
@@ -2480,18 +2480,18 @@ public:
 	void VisitOz();
 	unsigned long GetAnim();
 	void SetAnim(unsigned long);
-	unsigned short fSimulate;
-	/*unpacked*/ class Behavior *fBehavior;
-	/*unpacked*/ class cYObject *fNext;
-	short fID;
-	short _pad;
-	short fTemp[8];
-	short fData[48];
-	unsigned char * fPointers[4];
-	short fIterations;
-	short _pad2;
-	short fDirInc;
-	/*unpacked*/ struct cYObject::ObjDefHeader fDefinition;
+	/*+0xb0*/  unsigned short fSimulate; // 0x2 bytes
+	/*+0xb4*/  /*unpacked*/ class Behavior *fBehavior;
+	/*+0xb8*/  /*unpacked*/ class cYObject *fNext;
+	/*+0xbc*/  short fID; // 0x2 bytes
+	/*+0xbe*/  short _pad; // 0x2 bytes
+	/*+0xc0*/  short fTemp[8]; // 0x10 bytes
+	/*+0xd0*/  short fData[48]; // 0x60 bytes
+	/*+0x130*/ unsigned char * fPointers[4]; // 0x10 bytes
+	/*+0x140*/ short fIterations; // 0x2 bytes
+	/*+0x142*/ short _pad2; // 0x2 bytes
+	/*+0x144*/ short fDirInc; // 0x2 bytes
+	/*+0x148*/ /*unpacked*/ struct cYObject::ObjDefHeader fDefinition; // 0x1c bytes
 	enum /* __unnamed */ {
 		kMasterObject = 0,
 		kLastHitterObject = 1,
@@ -2639,7 +2639,7 @@ public:
 	/*unpacked*/ struct Point3d GetLocation();
 	/*unpacked*/ class Behavior* GetBehavior();
 	void Draw(/*unpacked*/ struct VRBlit*);
-	float fScale;
+	/*+0x164*/ float fScale;
 	void DefaultDrawStr(short, short, unsigned char, unsigned char *, int32_t);
 	void SetCellAndLoc(/*unpacked*/ struct Point3d, unsigned char, unsigned char);
 	void SetCellAndLoc(unsigned char, unsigned char, int32_t, int32_t);
@@ -2839,7 +2839,7 @@ class Sound{ // not packed(0x34 bytes) TI: 0x4733
 		nSoundSourceTypeFile = 1,
 	};
 public:
-	enum Sound::SoundSourceType nSoundSourceType;
+	/*+0x4*/   enum Sound::SoundSourceType nSoundSourceType;
 	enum SoundDuplicateType {
 		nSoundDuplicateDefault = 0,
 		nSoundDuplicateInterrupt = 1,
@@ -2847,16 +2847,16 @@ public:
 		nSoundDuplicateOverlap = 3,
 	};
 public:
-	enum Sound::SoundDuplicateType nSoundDuplicateType;
-	long lID;
-	long lResID;
-	/*unpacked*/ class basic_string<char> sSoundFile;
-	long bLooping;
-	long bStreaming;
-	long lVolume;
-	void (*soundCompletionFunction)(long);
-	long lSoundCompletionData;
-	int32_t bUnloadBeforeNextPlay;
+	/*+0x8*/   enum Sound::SoundDuplicateType nSoundDuplicateType;
+	/*+0xc*/   long lID;
+	/*+0x10*/  long lResID;
+	/*+0x14*/  /*unpacked*/ class basic_string<char> sSoundFile; // 0x8 bytes
+	/*+0x1c*/  long bLooping;
+	/*+0x20*/  long bStreaming;
+	/*+0x24*/  long lVolume;
+	/*+0x28*/  void (*soundCompletionFunction)(long);
+	/*+0x2c*/  long lSoundCompletionData;
+	/*+0x30*/  int32_t bUnloadBeforeNextPlay;
 	void Sound();
 	virtual void ~Sound(); // vtable+0x0
 	/*unpacked*/ class Sound& operator=(const /*unpacked*/ class Sound&);
@@ -2892,10 +2892,10 @@ class FlatFile{ // not packed(0x110 bytes) TI: 0x32f4
 		kMaxNameLen = 255,
 	};
 protected:
-	/*unpacked*/ class FlatFile *fNext;
-	unsigned char fName[256];
-	long fFileID;
-	/*unpacked*/ struct _iobuf *fFile;
+	/*+0x4*/   /*unpacked*/ class FlatFile *fNext;
+	/*+0x8*/   unsigned char fName[256]; // 0x100 bytes
+	/*+0x108*/ long fFileID;
+	/*+0x10c*/ /*unpacked*/ struct _iobuf *fFile;
 	long UniqueID();
 private:
 	static /*unpacked*/ class FlatFile *sList;
@@ -2950,11 +2950,11 @@ public:
 	static unsigned long lTotalMemoryUsage;
 	static unsigned long lTotalLockCount;
 protected:
-	unsigned long mLockCount;
-	long mWidth;
-	long mHeight;
-	void * __ptr32 mpBits;
-	long mStride;
+	/*+0x4*/   unsigned long mLockCount;
+	/*+0x8*/   long mWidth;
+	/*+0xc*/   long mHeight;
+	/*+0x10*/  void * __ptr32 mpBits;
+	/*+0x14*/  long mStride;
 };
 
 

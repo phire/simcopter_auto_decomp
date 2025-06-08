@@ -8,10 +8,10 @@
 // VTABLE: COPTER_D 0x00591640
 class MFont{ // packed(0x1c bytes) TI: 0x1a6c
 public:
-	/*packed*/ class basic_string<char> sName;
-	unsigned long lHeight;
-	unsigned long lWidth;
-	unsigned long lAttributes;
+	/*+0x4*/   /*packed*/ class basic_string<char> sName; // 0x8 bytes
+	/*+0xc*/   unsigned long lHeight;
+	/*+0x10*/  unsigned long lWidth;
+	/*+0x14*/  unsigned long lAttributes;
 	void MFont(char *, unsigned long, unsigned long, unsigned long, int32_t);
 	void MFont(const /*packed*/ class MFont&);
 	void MFont();
@@ -29,7 +29,7 @@ public:
 	virtual void DestroyFont(); // vtable+0x4
 	void * __ptr32 operator void *();
 protected:
-	void * __ptr32 hFont;
+	/*+0x18*/  void * __ptr32 hFont;
 };
 
 // Type: void;
@@ -42,16 +42,16 @@ protected:
 
 // Type: /*packed*/ struct tagSIZE;
 struct tagSIZE{ // packed(0x8 bytes) TI: 0x21e7
-	long cx;
-	long cy;
+	/*+0x0*/   long cx;
+	/*+0x4*/   long cy;
 };
 
 // Type: /*packed*/ struct tagRECT;
 struct tagRECT{ // packed(0x10 bytes) TI: 0x13c4
-	long left;
-	long top;
-	long right;
-	long bottom;
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
 };
 
 // Type: void * __ptr32;

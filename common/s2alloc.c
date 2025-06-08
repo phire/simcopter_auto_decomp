@@ -6,8 +6,8 @@
 
 // Type: /*packed*/ struct alloc_root_s (forward reference);
 struct alloc_root_s{ // packed(0x8 bytes) TI: 0x2e36
-	/*packed*/ struct alloc_hdr_s *first;
-	/*packed*/ struct alloc_hdr_s *current;
+	/*+0x0*/   /*packed*/ struct alloc_hdr_s *first;
+	/*+0x4*/   /*packed*/ struct alloc_hdr_s *current;
 };
 
 // Type: int32_t;
@@ -18,17 +18,17 @@ struct alloc_root_s{ // packed(0x8 bytes) TI: 0x2e36
 
 // Type: /*packed*/ struct alloc_handle_t (forward reference);
 struct alloc_handle_t{ // packed(0x4 bytes) TI: 0x2e3a
-	int32_t dummy;
+	/*+0x0*/   int32_t dummy;
 };
 
 // Type: char *;
 
 // Type: /*packed*/ struct alloc_hdr_s (forward reference);
 struct alloc_hdr_s{ // packed(0x10 bytes) TI: 0x2e38
-	/*packed*/ struct alloc_hdr_s *next;
-	char * block;
-	char * free;
-	char * end;
+	/*+0x0*/   /*packed*/ struct alloc_hdr_s *next;
+	/*+0x4*/   char * block;
+	/*+0x8*/   char * free;
+	/*+0xc*/   char * end;
 };
 
 // Type: unsigned short;

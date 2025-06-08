@@ -7,8 +7,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -120,8 +120,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -224,26 +224,26 @@ public:
 
 // Type: /*packed*/ struct tagOFNA;
 struct tagOFNA{ // packed(0x4c bytes) TI: 0x23d8
-	unsigned long lStructSize;
-	void * __ptr32 hwndOwner;
-	void * __ptr32 hInstance;
-	char * lpstrFilter;
-	char * lpstrCustomFilter;
-	unsigned long nMaxCustFilter;
-	unsigned long nFilterIndex;
-	char * lpstrFile;
-	unsigned long nMaxFile;
-	char * lpstrFileTitle;
-	unsigned long nMaxFileTitle;
-	char * lpstrInitialDir;
-	char * lpstrTitle;
-	unsigned long Flags;
-	unsigned short nFileOffset;
-	unsigned short nFileExtension;
-	char * lpstrDefExt;
-	long lCustData;
-	uint32_t (*lpfnHook)(void * __ptr32, uint32_t, uint32_t, long);
-	char * lpTemplateName;
+	/*+0x0*/   unsigned long lStructSize;
+	/*+0x4*/   void * __ptr32 hwndOwner;
+	/*+0x8*/   void * __ptr32 hInstance;
+	/*+0xc*/   char * lpstrFilter;
+	/*+0x10*/  char * lpstrCustomFilter;
+	/*+0x14*/  unsigned long nMaxCustFilter;
+	/*+0x18*/  unsigned long nFilterIndex;
+	/*+0x1c*/  char * lpstrFile;
+	/*+0x20*/  unsigned long nMaxFile;
+	/*+0x24*/  char * lpstrFileTitle;
+	/*+0x28*/  unsigned long nMaxFileTitle;
+	/*+0x2c*/  char * lpstrInitialDir;
+	/*+0x30*/  char * lpstrTitle;
+	/*+0x34*/  unsigned long Flags;
+	/*+0x38*/  unsigned short nFileOffset; // 0x2 bytes
+	/*+0x3a*/  unsigned short nFileExtension; // 0x2 bytes
+	/*+0x3c*/  char * lpstrDefExt;
+	/*+0x40*/  long lCustData;
+	/*+0x44*/  uint32_t (*lpfnHook)(void * __ptr32, uint32_t, uint32_t, long);
+	/*+0x48*/  char * lpTemplateName;
 };
 
 

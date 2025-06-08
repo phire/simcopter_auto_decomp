@@ -31,18 +31,18 @@ public:
 	virtual unsigned long SwapBuffer(); // vtable+0x28
 	virtual void UpdatePalette(long, long, /*packed*/ struct SparkalColor*); // vtable+0x2c
 protected:
-	long mHeight;
-	long mWidth;
-	unsigned long mStyle;
-	/*unpacked*/ class ICommander *mpCommander;
-	/*unpacked*/ class ScreenBuffer *mpBackBuffer;
-	void * __ptr32 mWindow;
+	/*+0x4*/   long mHeight;
+	/*+0x8*/   long mWidth;
+	/*+0xc*/   unsigned long mStyle;
+	/*+0x10*/  /*unpacked*/ class ICommander *mpCommander;
+	/*+0x14*/  /*unpacked*/ class ScreenBuffer *mpBackBuffer;
+	/*+0x18*/  void * __ptr32 mWindow;
 	// calltype: NearStd
 	virtual long MySparkalWindowProc(void * __ptr32, uint32_t, uint32_t, long); // vtable+0x30
-	void * __ptr32 mPalette;
-	void * __ptr32 mhCurrentCursor;
-	void * __ptr32 mhCustomCursor;
-	void * __ptr32 mCursors[16];
+	/*+0x1c*/  void * __ptr32 mPalette;
+	/*+0x20*/  void * __ptr32 mhCurrentCursor;
+	/*+0x24*/  void * __ptr32 mhCustomCursor;
+	/*+0x28*/  void * __ptr32 mCursors[16]; // 0x40 bytes
 };
 
 // Type: /*unpacked*/ class ICommander (forward reference);

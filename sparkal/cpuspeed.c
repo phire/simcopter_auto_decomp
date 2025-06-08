@@ -12,20 +12,20 @@
 
 // Type: /*packed*/ struct FREQ_INFO;
 struct FREQ_INFO{ // packed(0x10 bytes) TI: 0x2a8f
-	unsigned long in_cycles;
-	unsigned long ex_ticks;
-	unsigned long raw_freq;
-	unsigned long norm_freq;
+	/*+0x0*/   unsigned long in_cycles;
+	/*+0x4*/   unsigned long ex_ticks;
+	/*+0x8*/   unsigned long raw_freq;
+	/*+0xc*/   unsigned long norm_freq;
 };
 
 // Type: unsigned short;
 
 // Type: /*packed*/ struct FREQ_INFO (forward reference);
 struct FREQ_INFO{ // packed(0x10 bytes) TI: 0x2a8f
-	unsigned long in_cycles;
-	unsigned long ex_ticks;
-	unsigned long raw_freq;
-	unsigned long norm_freq;
+	/*+0x0*/   unsigned long in_cycles;
+	/*+0x4*/   unsigned long ex_ticks;
+	/*+0x8*/   unsigned long raw_freq;
+	/*+0xc*/   unsigned long norm_freq;
 };
 
 // Type: unsigned short *;

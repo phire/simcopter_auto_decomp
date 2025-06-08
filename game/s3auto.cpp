@@ -106,46 +106,46 @@ public:
 		AUTO_UTURN = 16384,
 	};
 public:
-	long carModel;
-	int32_t flags;
-	/*packed*/ struct _DYOBJ_INST autoDynomitor;
-	/*packed*/ struct Goal goal;
+	/*+0x4*/   long carModel;
+	/*+0x8*/   int32_t flags;
+	/*+0xc*/   /*packed*/ struct _DYOBJ_INST autoDynomitor; // 0x64 bytes
+	/*+0x70*/  /*packed*/ struct Goal goal; // 0x2a bytes
 private:
 	static /*packed*/ struct Point2d lastScannedLocation;
-	int32_t DeltaFromCenter;
-	int32_t stalledTimer;
-	/*packed*/ struct Point3d directionVector;
-	int32_t remainingTime;
-	int32_t desiredSpeed;
-	int32_t desiredHiwaySpeed;
-	int32_t beamDelay;
-	int32_t beamTimer;
-	int32_t m_cellBaseY;
-	int32_t timePulledOver;
-	int32_t hornSoundId;
-	enum DirectionTypes hiwaydir;
-	/*packed*/ struct _GridCoordinates currentLocation;
-	/*packed*/ struct _GridCoordinates nextLocation;
-	/*packed*/ struct _GridCoordinates northCell;
-	/*packed*/ struct _GridCoordinates southCell;
-	/*packed*/ struct _GridCoordinates eastCell;
-	/*packed*/ struct _GridCoordinates westCell;
+	/*+0x9a*/  int32_t DeltaFromCenter;
+	/*+0x9e*/  int32_t stalledTimer;
+	/*+0xa2*/  /*packed*/ struct Point3d directionVector; // 0xc bytes
+	/*+0xae*/  int32_t remainingTime;
+	/*+0xb2*/  int32_t desiredSpeed;
+	/*+0xb6*/  int32_t desiredHiwaySpeed;
+	/*+0xba*/  int32_t beamDelay;
+	/*+0xbe*/  int32_t beamTimer;
+	/*+0xc2*/  int32_t m_cellBaseY;
+	/*+0xc6*/  int32_t timePulledOver;
+	/*+0xca*/  int32_t hornSoundId;
+	/*+0xce*/  enum DirectionTypes hiwaydir;
+	/*+0xd2*/  /*packed*/ struct _GridCoordinates currentLocation; // 0x2 bytes
+	/*+0xd4*/  /*packed*/ struct _GridCoordinates nextLocation; // 0x2 bytes
+	/*+0xd6*/  /*packed*/ struct _GridCoordinates northCell; // 0x2 bytes
+	/*+0xd8*/  /*packed*/ struct _GridCoordinates southCell; // 0x2 bytes
+	/*+0xda*/  /*packed*/ struct _GridCoordinates eastCell; // 0x2 bytes
+	/*+0xdc*/  /*packed*/ struct _GridCoordinates westCell; // 0x2 bytes
 protected:
-	int32_t speed;
-	enum DirIndex2 prevDir;
-	enum TurnIndex turnIndex;
-	int32_t currDist;
-	int32_t legOfTurn;
-	/*packed*/ struct Point3d *pDirVector;
-	int32_t personDone;
-	int32_t personState;
-	int32_t personTimer;
-	int32_t timeToLive;
-	int32_t fireTime;
-	long fireSeq;
-	long missionId;
-	/*packed*/ struct _CELL_INFO *cptr;
-	int32_t spotlightHitCounter;
+	/*+0xde*/  int32_t speed;
+	/*+0xe2*/  enum DirIndex2 prevDir;
+	/*+0xe6*/  enum TurnIndex turnIndex;
+	/*+0xea*/  int32_t currDist;
+	/*+0xee*/  int32_t legOfTurn;
+	/*+0xf2*/  /*packed*/ struct Point3d *pDirVector;
+	/*+0xf6*/  int32_t personDone;
+	/*+0xfa*/  int32_t personState;
+	/*+0xfe*/  int32_t personTimer;
+	/*+0x102*/ int32_t timeToLive;
+	/*+0x106*/ int32_t fireTime;
+	/*+0x10a*/ long fireSeq;
+	/*+0x10e*/ long missionId;
+	/*+0x112*/ /*packed*/ struct _CELL_INFO *cptr;
+	/*+0x116*/ int32_t spotlightHitCounter;
 	int32_t IsCarPersistant();
 	int32_t CanCarBeamToHiwayTile(unsigned short);
 public:
@@ -241,94 +241,94 @@ public:
 
 // Type: /*packed*/ struct CONNECTION_INFO_TYPE (forward reference);
 struct CONNECTION_INFO_TYPE{ // packed(0x8 bytes) TI: 0x30c5
-	enum RailTypes tile;
-	enum DirectionTypes connections;
+	/*+0x0*/   enum RailTypes tile;
+	/*+0x4*/   enum DirectionTypes connections;
 };
 
 // Type: int32_t;
 
 // Type: /*packed*/ struct _AUTO_LOAD_SAVE;
 struct _AUTO_LOAD_SAVE{ // packed(0x344 bytes) TI: 0x42d7
-	int32_t flags;
-	/*packed*/ struct _DYOBJ_INST autoDynomitor;
-	/*packed*/ struct Goal goal;
-	/*packed*/ struct _GridCoordinates goalpRGVFixup;
-	int32_t DeltaFromCenter;
-	int32_t stalledTimer;
-	/*packed*/ struct Point3d directionVector;
-	int32_t remainingTime;
-	int32_t desiredSpeed;
-	int32_t desiredHiwaySpeed;
-	int32_t beamDelay;
-	int32_t beamTimer;
-	int32_t m_cellBaseY;
-	int32_t timePulledOver;
-	enum DirectionTypes hiwaydir;
-	/*packed*/ struct _GridCoordinates currentLocation;
-	/*packed*/ struct _GridCoordinates nextLocation;
-	/*packed*/ struct _GridCoordinates northCell;
-	/*packed*/ struct _GridCoordinates southCell;
-	/*packed*/ struct _GridCoordinates eastCell;
-	/*packed*/ struct _GridCoordinates westCell;
-	int32_t speed;
-	long prevDir;
-	long turnIndex;
-	int32_t currDist;
-	int32_t legOfTurn;
-	/*packed*/ struct Point3d *pDirVector;
-	int32_t personDone;
-	int32_t personState;
-	int32_t personTimer;
-	int32_t timeToLive;
-	int32_t fireTime;
-	long fireSeq;
-	long missionId;
-	/*packed*/ struct _GridCoordinates cptrfixup;
-	int32_t spotlightHitCounter;
+	/*+0x0*/   int32_t flags;
+	/*+0x4*/   /*packed*/ struct _DYOBJ_INST autoDynomitor; // 0x64 bytes
+	/*+0x68*/  /*packed*/ struct Goal goal; // 0x2a bytes
+	/*+0x92*/  /*packed*/ struct _GridCoordinates goalpRGVFixup; // 0x2 bytes
+	/*+0x94*/  int32_t DeltaFromCenter;
+	/*+0x98*/  int32_t stalledTimer;
+	/*+0x9c*/  /*packed*/ struct Point3d directionVector; // 0xc bytes
+	/*+0xa8*/  int32_t remainingTime;
+	/*+0xac*/  int32_t desiredSpeed;
+	/*+0xb0*/  int32_t desiredHiwaySpeed;
+	/*+0xb4*/  int32_t beamDelay;
+	/*+0xb8*/  int32_t beamTimer;
+	/*+0xbc*/  int32_t m_cellBaseY;
+	/*+0xc0*/  int32_t timePulledOver;
+	/*+0xc4*/  enum DirectionTypes hiwaydir;
+	/*+0xc8*/  /*packed*/ struct _GridCoordinates currentLocation; // 0x2 bytes
+	/*+0xca*/  /*packed*/ struct _GridCoordinates nextLocation; // 0x2 bytes
+	/*+0xcc*/  /*packed*/ struct _GridCoordinates northCell; // 0x2 bytes
+	/*+0xce*/  /*packed*/ struct _GridCoordinates southCell; // 0x2 bytes
+	/*+0xd0*/  /*packed*/ struct _GridCoordinates eastCell; // 0x2 bytes
+	/*+0xd2*/  /*packed*/ struct _GridCoordinates westCell; // 0x2 bytes
+	/*+0xd4*/  int32_t speed;
+	/*+0xd8*/  long prevDir;
+	/*+0xdc*/  long turnIndex;
+	/*+0xe0*/  int32_t currDist;
+	/*+0xe4*/  int32_t legOfTurn;
+	/*+0xe8*/  /*packed*/ struct Point3d *pDirVector;
+	/*+0xec*/  int32_t personDone;
+	/*+0xf0*/  int32_t personState;
+	/*+0xf4*/  int32_t personTimer;
+	/*+0xf8*/  int32_t timeToLive;
+	/*+0xfc*/  int32_t fireTime;
+	/*+0x100*/ long fireSeq;
+	/*+0x104*/ long missionId;
+	/*+0x108*/ /*packed*/ struct _GridCoordinates cptrfixup; // 0x2 bytes
+	/*+0x10a*/ int32_t spotlightHitCounter;
 	struct _AUTO_LOAD_SAVE::_CRIMINAL{ // packed(0x10 bytes) TI: 0x42df
-		long missionState;
-		long criminalType;
-		int32_t timeToLeaveCar;
-		int32_t timeToBeOnTheRun;
+		/*+0x0*/   long missionState;
+		/*+0x4*/   long criminalType;
+		/*+0x8*/   int32_t timeToLeaveCar;
+		/*+0xc*/   int32_t timeToBeOnTheRun;
 	};
 public:
-	/*packed*/ struct _AUTO_LOAD_SAVE::_CRIMINAL c;
+	/*+0x10e*/ /*packed*/ struct _AUTO_LOAD_SAVE::_CRIMINAL c; // 0x10 bytes
 	struct _AUTO_LOAD_SAVE::_EMERGENCY{ // packed(0x186 bytes) TI: 0x42dd
-		/*packed*/ struct _GridCoordinates baseLocation;
-		/*packed*/ struct _GridCoordinates emergencyLocation;
-		long emergencyType;
-		long timeOfArrival;
-		/*packed*/ struct _DYOBJ_INST dispatchIcon;
-		int32_t timeToEmergency;
-		long targetfixup;
-		unsigned char dispatchPath[256];
-		unsigned char dispatchPathIndex;
-		unsigned char dispatchPathLength;
-		long emergencyState;
-		int32_t stationID;
-		int32_t numberOfSeats;
+		/*+0x0*/   /*packed*/ struct _GridCoordinates baseLocation; // 0x2 bytes
+		/*+0x2*/   /*packed*/ struct _GridCoordinates emergencyLocation; // 0x2 bytes
+		/*+0x4*/   long emergencyType;
+		/*+0x8*/   long timeOfArrival;
+		/*+0xc*/   /*packed*/ struct _DYOBJ_INST dispatchIcon; // 0x64 bytes
+		/*+0x70*/  int32_t timeToEmergency;
+		/*+0x74*/  long targetfixup;
+		/*+0x78*/  unsigned char dispatchPath[256]; // 0x100 bytes
+		/*+0x178*/ unsigned char dispatchPathIndex; // 0x1 bytes
+		/*+0x179*/ unsigned char dispatchPathLength; // 0x1 bytes
+		/*+0x17a*/ long emergencyState;
+		/*+0x17e*/ int32_t stationID;
+		/*+0x182*/ int32_t numberOfSeats;
 	};
 public:
-	/*packed*/ struct _AUTO_LOAD_SAVE::_EMERGENCY e;
+	/*+0x11e*/ /*packed*/ struct _AUTO_LOAD_SAVE::_EMERGENCY e; // 0x186 bytes
 	struct _AUTO_LOAD_SAVE::_FIRE{ // packed(0x18 bytes) TI: 0x42db
-		int32_t dousingFire;
-		int32_t distToFire;
-		/*packed*/ struct Point3d firevec;
-		int32_t pathID;
+		/*+0x0*/   int32_t dousingFire;
+		/*+0x4*/   int32_t distToFire;
+		/*+0x8*/   /*packed*/ struct Point3d firevec; // 0xc bytes
+		/*+0x14*/  int32_t pathID;
 	};
 public:
-	/*packed*/ struct _AUTO_LOAD_SAVE::_FIRE f;
+	/*+0x2a4*/ /*packed*/ struct _AUTO_LOAD_SAVE::_FIRE f; // 0x18 bytes
 	struct _AUTO_LOAD_SAVE::_POLICE{ // packed(0x88 bytes) TI: 0x42d9
-		/*packed*/ struct Goal currDestGoal;
-		/*packed*/ struct _GridCoordinates currpRGVFixup;
-		/*packed*/ struct Goal destGoal1;
-		/*packed*/ struct _GridCoordinates dest1pRGVFixup;
-		/*packed*/ struct Goal destGoal2;
-		/*packed*/ struct _GridCoordinates dest2pRGVFixup;
-		int32_t foundRoad;
+		/*+0x0*/   /*packed*/ struct Goal currDestGoal; // 0x2a bytes
+		/*+0x2a*/  /*packed*/ struct _GridCoordinates currpRGVFixup; // 0x2 bytes
+		/*+0x2c*/  /*packed*/ struct Goal destGoal1; // 0x2a bytes
+		/*+0x56*/  /*packed*/ struct _GridCoordinates dest1pRGVFixup; // 0x2 bytes
+		/*+0x58*/  /*packed*/ struct Goal destGoal2; // 0x2a bytes
+		/*+0x82*/  /*packed*/ struct _GridCoordinates dest2pRGVFixup; // 0x2 bytes
+		/*+0x84*/  int32_t foundRoad;
 	};
 public:
-	/*packed*/ struct _AUTO_LOAD_SAVE::_POLICE p;
+	/*+0x2bc*/ /*packed*/ struct _AUTO_LOAD_SAVE::_POLICE p; // 0x88 bytes
 };
 
 // Type: enum DirIndex2;
@@ -369,27 +369,27 @@ enum TurnIndex {
 
 // Type: /*packed*/ struct _dPoint2d (forward reference);
 struct _dPoint2d{ // packed(0x10 bytes) TI: 0x2766
-	double x;
-	double z;
+	/*+0x0*/   double x; // 0x8 bytes
+	/*+0x8*/   double z; // 0x8 bytes
 };
 
 // Type: /*packed*/ struct _GridCoordinates;
 struct _GridCoordinates{ // packed(0x2 bytes) TI: 0x143c
-	unsigned char x;
-	unsigned char y;
+	/*+0x0*/   unsigned char x; // 0x1 bytes
+	/*+0x1*/   unsigned char y; // 0x1 bytes
 };
 
 // Type: /*packed*/ struct _DYOBJ_INST (forward reference);
 struct _DYOBJ_INST{ // packed(0x64 bytes) TI: 0x1deb
-	/*packed*/ struct _DYOBJ_INST *next;
-	/*packed*/ struct _DYOBJ_INST *vnext;
-	void * __ptr32 mesh;
-	short flags;
-	short user1;
-	long radius;
-	long height;
-	/*packed*/ struct Point3d loc;
-	int32_t matrix[4][4];
+	/*+0x0*/   /*packed*/ struct _DYOBJ_INST *next;
+	/*+0x4*/   /*packed*/ struct _DYOBJ_INST *vnext;
+	/*+0x8*/   void * __ptr32 mesh;
+	/*+0xc*/   short flags; // 0x2 bytes
+	/*+0xe*/   short user1; // 0x2 bytes
+	/*+0x10*/  long radius;
+	/*+0x14*/  long height;
+	/*+0x18*/  /*packed*/ struct Point3d loc; // 0xc bytes
+	/*+0x24*/  int32_t matrix[4][4]; // 0x40 bytes
 };
 
 // Type: short;
@@ -400,93 +400,93 @@ struct _DYOBJ_INST{ // packed(0x64 bytes) TI: 0x1deb
 
 // Type: /*packed*/ struct VRview;
 struct VRview{ // packed(0x58 bytes) TI: 0x2ecc
-	/*packed*/ struct Point3d loc;
-	/*packed*/ struct Point3d scale;
-	int32_t matrix[4][4];
+	/*+0x0*/   /*packed*/ struct Point3d loc; // 0xc bytes
+	/*+0xc*/   /*packed*/ struct Point3d scale; // 0xc bytes
+	/*+0x18*/  int32_t matrix[4][4]; // 0x40 bytes
 };
 
 // Type: /*packed*/ struct Point3d;
 struct Point3d{ // packed(0xc bytes) TI: 0x18b0
-	int32_t x;
-	int32_t y;
-	int32_t z;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
+	/*+0x8*/   int32_t z;
 };
 
 // Type: /*packed*/ struct MISSION_DATA (forward reference);
 struct MISSION_DATA{ // packed(0xd4 bytes) TI: 0x31c4
-	char mtext[32];
-	long type_ctr;
-	long key;
-	/*packed*/ struct Point2d maploc;
-	/*packed*/ struct Point2d destmaploc;
-	/*packed*/ struct Point2d pickuploc;
-	int32_t timer;
-	long money_bonus;
-	long points_bonus;
-	long flags;
-	long type;
-	long state;
-	/*packed*/ struct __unnamed mdata;
+	/*+0x0*/   char mtext[32]; // 0x20 bytes
+	/*+0x20*/  long type_ctr;
+	/*+0x24*/  long key;
+	/*+0x28*/  /*packed*/ struct Point2d maploc; // 0x8 bytes
+	/*+0x30*/  /*packed*/ struct Point2d destmaploc; // 0x8 bytes
+	/*+0x38*/  /*packed*/ struct Point2d pickuploc; // 0x8 bytes
+	/*+0x40*/  int32_t timer;
+	/*+0x44*/  long money_bonus;
+	/*+0x48*/  long points_bonus;
+	/*+0x4c*/  long flags;
+	/*+0x50*/  long type;
+	/*+0x54*/  long state;
+	/*+0x58*/  /*packed*/ struct __unnamed mdata; // 0x7c bytes
 };
 
 // Type: /*packed*/ struct _MISSION_PARMS;
 struct _MISSION_PARMS{ // packed(0x18 bytes) TI: 0x307d
-	long op;
-	long id;
-	/*packed*/ struct Point2d maploc;
-	long i2num;
-	long flags;
+	/*+0x0*/   long op;
+	/*+0x4*/   long id;
+	/*+0x8*/   /*packed*/ struct Point2d maploc; // 0x8 bytes
+	/*+0x10*/  long i2num;
+	/*+0x14*/  long flags;
 };
 
 // Type: /*packed*/ struct _GridCoordinates (forward reference);
 struct _GridCoordinates{ // packed(0x2 bytes) TI: 0x143c
-	unsigned char x;
-	unsigned char y;
+	/*+0x0*/   unsigned char x; // 0x1 bytes
+	/*+0x1*/   unsigned char y; // 0x1 bytes
 };
 
 // Type: /*packed*/ struct _CELL_INFO (forward reference);
 struct _CELL_INFO{ // packed(0x18 bytes) TI: 0x1b03
-	short flags;
-	short x;
-	short y;
-	short z;
-	short size;
-	short ctr;
-	/*packed*/ struct _STOBJ_INST *stptr;
-	/*packed*/ struct _DYOBJ_INST *dyptr;
-	/*packed*/ struct _DYOBJ_INST *vwptr;
+	/*+0x0*/   short flags; // 0x2 bytes
+	/*+0x2*/   short x; // 0x2 bytes
+	/*+0x4*/   short y; // 0x2 bytes
+	/*+0x6*/   short z; // 0x2 bytes
+	/*+0x8*/   short size; // 0x2 bytes
+	/*+0xa*/   short ctr; // 0x2 bytes
+	/*+0xc*/   /*packed*/ struct _STOBJ_INST *stptr;
+	/*+0x10*/  /*packed*/ struct _DYOBJ_INST *dyptr;
+	/*+0x14*/  /*packed*/ struct _DYOBJ_INST *vwptr;
 };
 
 // Type: /*packed*/ struct Goal (forward reference);
 struct Goal{ // packed(0x2a bytes) TI: 0x12ce
-	/*packed*/ struct RGVertex *pRGV;
-	int32_t elementIndex;
-	int32_t gridIndex;
-	/*packed*/ struct _GridCoordinates gridLoc;
-	enum DirIndex2 edgeIndex;
-	enum DirIndex2 direction;
-	int32_t distance;
-	int32_t turnFlags;
-	int32_t deadEndFlags;
-	int32_t fElevated;
-	enum SlopeIndex slope;
+	/*+0x0*/   /*packed*/ struct RGVertex *pRGV;
+	/*+0x4*/   int32_t elementIndex;
+	/*+0x8*/   int32_t gridIndex;
+	/*+0xc*/   /*packed*/ struct _GridCoordinates gridLoc; // 0x2 bytes
+	/*+0xe*/   enum DirIndex2 edgeIndex;
+	/*+0x12*/  enum DirIndex2 direction;
+	/*+0x16*/  int32_t distance;
+	/*+0x1a*/  int32_t turnFlags;
+	/*+0x1e*/  int32_t deadEndFlags;
+	/*+0x22*/  int32_t fElevated;
+	/*+0x26*/  enum SlopeIndex slope;
 };
 
 // Type: unsigned short;
 
 // Type: /*packed*/ struct Goal;
 struct Goal{ // packed(0x2a bytes) TI: 0x12ce
-	/*packed*/ struct RGVertex *pRGV;
-	int32_t elementIndex;
-	int32_t gridIndex;
-	/*packed*/ struct _GridCoordinates gridLoc;
-	enum DirIndex2 edgeIndex;
-	enum DirIndex2 direction;
-	int32_t distance;
-	int32_t turnFlags;
-	int32_t deadEndFlags;
-	int32_t fElevated;
-	enum SlopeIndex slope;
+	/*+0x0*/   /*packed*/ struct RGVertex *pRGV;
+	/*+0x4*/   int32_t elementIndex;
+	/*+0x8*/   int32_t gridIndex;
+	/*+0xc*/   /*packed*/ struct _GridCoordinates gridLoc; // 0x2 bytes
+	/*+0xe*/   enum DirIndex2 edgeIndex;
+	/*+0x12*/  enum DirIndex2 direction;
+	/*+0x16*/  int32_t distance;
+	/*+0x1a*/  int32_t turnFlags;
+	/*+0x1e*/  int32_t deadEndFlags;
+	/*+0x22*/  int32_t fElevated;
+	/*+0x26*/  enum SlopeIndex slope;
 };
 
 // Type: /*packed*/ class SpiralScan;
@@ -497,23 +497,23 @@ public:
 	int32_t Next(/*packed*/ struct _GridCoordinates&);
 	int32_t InCityGridLimits(/*packed*/ struct _GridCoordinates);
 private:
-	int32_t currDist;
-	int32_t currDir;
-	int32_t currDia;
-	int32_t maxDia;
+	/*+0x0*/   int32_t currDist;
+	/*+0x4*/   int32_t currDir;
+	/*+0x8*/   int32_t currDia;
+	/*+0xc*/   int32_t maxDia;
 };
 
 // Type: /*packed*/ struct VRObjInfo;
 struct VRObjInfo{ // packed(0x24 bytes) TI: 0x2ea8
-	int32_t Faces;
-	int32_t Verts;
-	int32_t Attribute;
-	int32_t Radius;
-	/*packed*/ struct Point3d *ObjCenter;
-	/*packed*/ struct Point3d *VertsPtr;
-	/*packed*/ struct Xform3d *VertsXfm;
-	/*packed*/ struct Point3d *OrgVerts;
-	int32_t *Matrix[4][4];
+	/*+0x0*/   int32_t Faces;
+	/*+0x4*/   int32_t Verts;
+	/*+0x8*/   int32_t Attribute;
+	/*+0xc*/   int32_t Radius;
+	/*+0x10*/  /*packed*/ struct Point3d *ObjCenter;
+	/*+0x14*/  /*packed*/ struct Point3d *VertsPtr;
+	/*+0x18*/  /*packed*/ struct Xform3d *VertsXfm;
+	/*+0x1c*/  /*packed*/ struct Point3d *OrgVerts;
+	/*+0x20*/  int32_t *Matrix[4][4];
 };
 
 // Type: char *;
@@ -538,33 +538,33 @@ enum StoppedReasons {
 
 // Type: /*packed*/ struct Point3d (forward reference);
 struct Point3d{ // packed(0xc bytes) TI: 0x18b0
-	int32_t x;
-	int32_t y;
-	int32_t z;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
+	/*+0x8*/   int32_t z;
 };
 
 // Type: /*packed*/ struct Point2d (forward reference);
 struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
-	int32_t x;
-	int32_t y;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
 };
 
 // Type: /*packed*/ struct Point2d;
 struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
-	int32_t x;
-	int32_t y;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
 };
 
 // Type: /*packed*/ struct VRFaceInfo;
 struct VRFaceInfo{ // packed(0x20 bytes) TI: 0x30c0
-	int32_t Face;
-	int32_t Verts;
-	int32_t Attribute;
-	int32_t Plotter;
-	/*packed*/ struct VRBmpHdr *Bitmap;
-	int32_t * VertList;
-	/*packed*/ struct MapVert *MapVList;
-	/*packed*/ struct MapVert *BarryPtr;
+	/*+0x0*/   int32_t Face;
+	/*+0x4*/   int32_t Verts;
+	/*+0x8*/   int32_t Attribute;
+	/*+0xc*/   int32_t Plotter;
+	/*+0x10*/  /*packed*/ struct VRBmpHdr *Bitmap;
+	/*+0x14*/  int32_t * VertList;
+	/*+0x18*/  /*packed*/ struct MapVert *MapVList;
+	/*+0x1c*/  /*packed*/ struct MapVert *BarryPtr;
 };
 
 // Type: enum AutomobileClass::IntersectionTypes;
@@ -584,86 +584,86 @@ enum IntersectionTypes {
 
 // Type: /*packed*/ struct _AUTO_LOAD_SAVE (forward reference);
 struct _AUTO_LOAD_SAVE{ // packed(0x344 bytes) TI: 0x42d7
-	int32_t flags;
-	/*packed*/ struct _DYOBJ_INST autoDynomitor;
-	/*packed*/ struct Goal goal;
-	/*packed*/ struct _GridCoordinates goalpRGVFixup;
-	int32_t DeltaFromCenter;
-	int32_t stalledTimer;
-	/*packed*/ struct Point3d directionVector;
-	int32_t remainingTime;
-	int32_t desiredSpeed;
-	int32_t desiredHiwaySpeed;
-	int32_t beamDelay;
-	int32_t beamTimer;
-	int32_t m_cellBaseY;
-	int32_t timePulledOver;
-	enum DirectionTypes hiwaydir;
-	/*packed*/ struct _GridCoordinates currentLocation;
-	/*packed*/ struct _GridCoordinates nextLocation;
-	/*packed*/ struct _GridCoordinates northCell;
-	/*packed*/ struct _GridCoordinates southCell;
-	/*packed*/ struct _GridCoordinates eastCell;
-	/*packed*/ struct _GridCoordinates westCell;
-	int32_t speed;
-	long prevDir;
-	long turnIndex;
-	int32_t currDist;
-	int32_t legOfTurn;
-	/*packed*/ struct Point3d *pDirVector;
-	int32_t personDone;
-	int32_t personState;
-	int32_t personTimer;
-	int32_t timeToLive;
-	int32_t fireTime;
-	long fireSeq;
-	long missionId;
-	/*packed*/ struct _GridCoordinates cptrfixup;
-	int32_t spotlightHitCounter;
+	/*+0x0*/   int32_t flags;
+	/*+0x4*/   /*packed*/ struct _DYOBJ_INST autoDynomitor; // 0x64 bytes
+	/*+0x68*/  /*packed*/ struct Goal goal; // 0x2a bytes
+	/*+0x92*/  /*packed*/ struct _GridCoordinates goalpRGVFixup; // 0x2 bytes
+	/*+0x94*/  int32_t DeltaFromCenter;
+	/*+0x98*/  int32_t stalledTimer;
+	/*+0x9c*/  /*packed*/ struct Point3d directionVector; // 0xc bytes
+	/*+0xa8*/  int32_t remainingTime;
+	/*+0xac*/  int32_t desiredSpeed;
+	/*+0xb0*/  int32_t desiredHiwaySpeed;
+	/*+0xb4*/  int32_t beamDelay;
+	/*+0xb8*/  int32_t beamTimer;
+	/*+0xbc*/  int32_t m_cellBaseY;
+	/*+0xc0*/  int32_t timePulledOver;
+	/*+0xc4*/  enum DirectionTypes hiwaydir;
+	/*+0xc8*/  /*packed*/ struct _GridCoordinates currentLocation; // 0x2 bytes
+	/*+0xca*/  /*packed*/ struct _GridCoordinates nextLocation; // 0x2 bytes
+	/*+0xcc*/  /*packed*/ struct _GridCoordinates northCell; // 0x2 bytes
+	/*+0xce*/  /*packed*/ struct _GridCoordinates southCell; // 0x2 bytes
+	/*+0xd0*/  /*packed*/ struct _GridCoordinates eastCell; // 0x2 bytes
+	/*+0xd2*/  /*packed*/ struct _GridCoordinates westCell; // 0x2 bytes
+	/*+0xd4*/  int32_t speed;
+	/*+0xd8*/  long prevDir;
+	/*+0xdc*/  long turnIndex;
+	/*+0xe0*/  int32_t currDist;
+	/*+0xe4*/  int32_t legOfTurn;
+	/*+0xe8*/  /*packed*/ struct Point3d *pDirVector;
+	/*+0xec*/  int32_t personDone;
+	/*+0xf0*/  int32_t personState;
+	/*+0xf4*/  int32_t personTimer;
+	/*+0xf8*/  int32_t timeToLive;
+	/*+0xfc*/  int32_t fireTime;
+	/*+0x100*/ long fireSeq;
+	/*+0x104*/ long missionId;
+	/*+0x108*/ /*packed*/ struct _GridCoordinates cptrfixup; // 0x2 bytes
+	/*+0x10a*/ int32_t spotlightHitCounter;
 	struct _AUTO_LOAD_SAVE::_CRIMINAL{ // packed(0x10 bytes) TI: 0x42df
-		long missionState;
-		long criminalType;
-		int32_t timeToLeaveCar;
-		int32_t timeToBeOnTheRun;
+		/*+0x0*/   long missionState;
+		/*+0x4*/   long criminalType;
+		/*+0x8*/   int32_t timeToLeaveCar;
+		/*+0xc*/   int32_t timeToBeOnTheRun;
 	};
 public:
-	/*packed*/ struct _AUTO_LOAD_SAVE::_CRIMINAL c;
+	/*+0x10e*/ /*packed*/ struct _AUTO_LOAD_SAVE::_CRIMINAL c; // 0x10 bytes
 	struct _AUTO_LOAD_SAVE::_EMERGENCY{ // packed(0x186 bytes) TI: 0x42dd
-		/*packed*/ struct _GridCoordinates baseLocation;
-		/*packed*/ struct _GridCoordinates emergencyLocation;
-		long emergencyType;
-		long timeOfArrival;
-		/*packed*/ struct _DYOBJ_INST dispatchIcon;
-		int32_t timeToEmergency;
-		long targetfixup;
-		unsigned char dispatchPath[256];
-		unsigned char dispatchPathIndex;
-		unsigned char dispatchPathLength;
-		long emergencyState;
-		int32_t stationID;
-		int32_t numberOfSeats;
+		/*+0x0*/   /*packed*/ struct _GridCoordinates baseLocation; // 0x2 bytes
+		/*+0x2*/   /*packed*/ struct _GridCoordinates emergencyLocation; // 0x2 bytes
+		/*+0x4*/   long emergencyType;
+		/*+0x8*/   long timeOfArrival;
+		/*+0xc*/   /*packed*/ struct _DYOBJ_INST dispatchIcon; // 0x64 bytes
+		/*+0x70*/  int32_t timeToEmergency;
+		/*+0x74*/  long targetfixup;
+		/*+0x78*/  unsigned char dispatchPath[256]; // 0x100 bytes
+		/*+0x178*/ unsigned char dispatchPathIndex; // 0x1 bytes
+		/*+0x179*/ unsigned char dispatchPathLength; // 0x1 bytes
+		/*+0x17a*/ long emergencyState;
+		/*+0x17e*/ int32_t stationID;
+		/*+0x182*/ int32_t numberOfSeats;
 	};
 public:
-	/*packed*/ struct _AUTO_LOAD_SAVE::_EMERGENCY e;
+	/*+0x11e*/ /*packed*/ struct _AUTO_LOAD_SAVE::_EMERGENCY e; // 0x186 bytes
 	struct _AUTO_LOAD_SAVE::_FIRE{ // packed(0x18 bytes) TI: 0x42db
-		int32_t dousingFire;
-		int32_t distToFire;
-		/*packed*/ struct Point3d firevec;
-		int32_t pathID;
+		/*+0x0*/   int32_t dousingFire;
+		/*+0x4*/   int32_t distToFire;
+		/*+0x8*/   /*packed*/ struct Point3d firevec; // 0xc bytes
+		/*+0x14*/  int32_t pathID;
 	};
 public:
-	/*packed*/ struct _AUTO_LOAD_SAVE::_FIRE f;
+	/*+0x2a4*/ /*packed*/ struct _AUTO_LOAD_SAVE::_FIRE f; // 0x18 bytes
 	struct _AUTO_LOAD_SAVE::_POLICE{ // packed(0x88 bytes) TI: 0x42d9
-		/*packed*/ struct Goal currDestGoal;
-		/*packed*/ struct _GridCoordinates currpRGVFixup;
-		/*packed*/ struct Goal destGoal1;
-		/*packed*/ struct _GridCoordinates dest1pRGVFixup;
-		/*packed*/ struct Goal destGoal2;
-		/*packed*/ struct _GridCoordinates dest2pRGVFixup;
-		int32_t foundRoad;
+		/*+0x0*/   /*packed*/ struct Goal currDestGoal; // 0x2a bytes
+		/*+0x2a*/  /*packed*/ struct _GridCoordinates currpRGVFixup; // 0x2 bytes
+		/*+0x2c*/  /*packed*/ struct Goal destGoal1; // 0x2a bytes
+		/*+0x56*/  /*packed*/ struct _GridCoordinates dest1pRGVFixup; // 0x2 bytes
+		/*+0x58*/  /*packed*/ struct Goal destGoal2; // 0x2a bytes
+		/*+0x82*/  /*packed*/ struct _GridCoordinates dest2pRGVFixup; // 0x2 bytes
+		/*+0x84*/  int32_t foundRoad;
 	};
 public:
-	/*packed*/ struct _AUTO_LOAD_SAVE::_POLICE p;
+	/*+0x2bc*/ /*packed*/ struct _AUTO_LOAD_SAVE::_POLICE p; // 0x88 bytes
 };
 
 // Type: uint32_t;

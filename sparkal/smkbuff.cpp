@@ -26,22 +26,22 @@ public:
 	void SetZoomFactor(int32_t);
 	// calltype: NearC
 	static char * GetSmackerVersion(char *);
-	int32_t nStatus;
-	int32_t bLoopVideo;
-	int32_t bBlankAtEndOfVideo;
-	int32_t nBlankColorIndex;
-	/*packed*/ struct SparkalColor colorWindowFill;
-	void * __ptr32 myWindow;
-	int32_t nBufferWidth;
-	int32_t nBufferHeight;
-	int32_t nDestX;
-	int32_t nDestY;
-	int32_t nDestWidth;
-	int32_t nDestHeight;
+	/*+0x4*/   int32_t nStatus;
+	/*+0x8*/   int32_t bLoopVideo;
+	/*+0xc*/   int32_t bBlankAtEndOfVideo;
+	/*+0x10*/  int32_t nBlankColorIndex;
+	/*+0x14*/  /*packed*/ struct SparkalColor colorWindowFill;
+	/*+0x18*/  void * __ptr32 myWindow;
+	/*+0x1c*/  int32_t nBufferWidth;
+	/*+0x20*/  int32_t nBufferHeight;
+	/*+0x24*/  int32_t nDestX;
+	/*+0x28*/  int32_t nDestY;
+	/*+0x2c*/  int32_t nDestWidth;
+	/*+0x30*/  int32_t nDestHeight;
 protected:
-	/*packed*/ struct SmackBufTag *smkbuf;
-	/*packed*/ struct SmackTag *smk;
-	char szSmackFilePath[260];
+	/*+0x34*/  /*packed*/ struct SmackBufTag *smkbuf;
+	/*+0x38*/  /*packed*/ struct SmackTag *smk;
+	/*+0x3c*/  char szSmackFilePath[260]; // 0x104 bytes
 };
 
 // Type: void;
@@ -56,20 +56,20 @@ protected:
 
 // Type: /*packed*/ struct SparkalRect;
 struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
-	long left;
-	long top;
-	long right;
-	long bottom;
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
 	void SparkalRect(long, long, long, long);
 	void SparkalRect();
 };
 
 // Type: /*packed*/ struct tagRECT;
 struct tagRECT{ // packed(0x10 bytes) TI: 0x13c4
-	long left;
-	long top;
-	long right;
-	long bottom;
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
 };
 
 // Type: /*unpacked*/ class CSparkalWindow (forward reference);
@@ -77,10 +77,10 @@ struct tagRECT{ // packed(0x10 bytes) TI: 0x13c4
 
 // Type: /*packed*/ struct SparkalRect (forward reference);
 struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
-	long left;
-	long top;
-	long right;
-	long bottom;
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
 	void SparkalRect(long, long, long, long);
 	void SparkalRect();
 };
@@ -90,15 +90,15 @@ struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 class VRBmpSmackerBuffer : public SmackerBuffer
 { // packed(0x164 bytes) TI: 0x230c
 public:
-	char * szVRBmpName;
-	int32_t nVRBmpFlags;
-	/*packed*/ struct VRResource *vrOriginalResource;
-	/*packed*/ struct VRBmpHdr *bmpOriginalHeader;
-	int32_t bPreserveBmp;
-	char * chVRBmpHeader;
-	/*packed*/ struct VRBmpHdr *bmpHeader;
-	char * bmpDataStart;
-	int32_t bPreserveSmackerBuffer;
+	/*+0x140*/ char * szVRBmpName;
+	/*+0x144*/ int32_t nVRBmpFlags;
+	/*+0x148*/ /*packed*/ struct VRResource *vrOriginalResource;
+	/*+0x14c*/ /*packed*/ struct VRBmpHdr *bmpOriginalHeader;
+	/*+0x150*/ int32_t bPreserveBmp;
+	/*+0x154*/ char * chVRBmpHeader;
+	/*+0x158*/ /*packed*/ struct VRBmpHdr *bmpHeader;
+	/*+0x15c*/ char * bmpDataStart;
+	/*+0x160*/ int32_t bPreserveSmackerBuffer;
 	void VRBmpSmackerBuffer(char *, int32_t, int32_t, int32_t);
 	void VRBmpSmackerBuffer();
 	virtual void ~VRBmpSmackerBuffer() /* override */;
@@ -114,8 +114,8 @@ public:
 
 // Type: /*packed*/ struct VRBmpHdr (forward reference);
 struct VRBmpHdr{ // packed(0x10 bytes) TI: 0x2312
-	/*packed*/ struct VRBmpInfo info;
-	int32_t ScanOffset[1];
+	/*+0x0*/   /*packed*/ struct VRBmpInfo info; // 0xc bytes
+	/*+0xc*/   int32_t ScanOffset[1];
 };
 
 // Type: /*packed*/ class SmackerBackBuffer (forward reference);
@@ -123,7 +123,7 @@ struct VRBmpHdr{ // packed(0x10 bytes) TI: 0x2312
 class SmackerBackBuffer : public SmackerBuffer, public CBackBuffer
 { // packed(0x27c bytes) TI: 0x41fc
 public:
-	int32_t bUseSmackBuf;
+	/*+0x274*/ int32_t bUseSmackBuf;
 	void SmackerBackBuffer(char *, int32_t, int32_t, int32_t, int32_t, int32_t);
 	void SmackerBackBuffer();
 	virtual void ~SmackerBackBuffer() /* override */;
@@ -135,7 +135,7 @@ public:
 	virtual unsigned long Compose(/*packed*/ class IFlatImage*, long, long, long, long, long, long) /* override */;
 	virtual unsigned long StretchCompose(/*packed*/ class IFlatImage*, long, long, long, long, long, long, long, long) /* override */;
 protected:
-	int32_t bDirectBlit;
+	/*+0x278*/ int32_t bDirectBlit;
 	void BltParts(/*packed*/ class IFlatImage*, long, long, long, long, long, long);
 	void BltAll(/*packed*/ class IFlatImage*, long, long, long, long, long, long);
 };
@@ -165,11 +165,11 @@ public:
 	static unsigned long lTotalMemoryUsage;
 	static unsigned long lTotalLockCount;
 protected:
-	unsigned long mLockCount;
-	long mWidth;
-	long mHeight;
-	void * __ptr32 mpBits;
-	long mStride;
+	/*+0x4*/   unsigned long mLockCount;
+	/*+0x8*/   long mWidth;
+	/*+0xc*/   long mHeight;
+	/*+0x10*/  void * __ptr32 mpBits;
+	/*+0x14*/  long mStride;
 };
 
 // Type: uint32_t;
@@ -198,22 +198,22 @@ public:
 	void SetZoomFactor(int32_t);
 	// calltype: NearC
 	static char * GetSmackerVersion(char *);
-	int32_t nStatus;
-	int32_t bLoopVideo;
-	int32_t bBlankAtEndOfVideo;
-	int32_t nBlankColorIndex;
-	/*packed*/ struct SparkalColor colorWindowFill;
-	void * __ptr32 myWindow;
-	int32_t nBufferWidth;
-	int32_t nBufferHeight;
-	int32_t nDestX;
-	int32_t nDestY;
-	int32_t nDestWidth;
-	int32_t nDestHeight;
+	/*+0x4*/   int32_t nStatus;
+	/*+0x8*/   int32_t bLoopVideo;
+	/*+0xc*/   int32_t bBlankAtEndOfVideo;
+	/*+0x10*/  int32_t nBlankColorIndex;
+	/*+0x14*/  /*packed*/ struct SparkalColor colorWindowFill;
+	/*+0x18*/  void * __ptr32 myWindow;
+	/*+0x1c*/  int32_t nBufferWidth;
+	/*+0x20*/  int32_t nBufferHeight;
+	/*+0x24*/  int32_t nDestX;
+	/*+0x28*/  int32_t nDestY;
+	/*+0x2c*/  int32_t nDestWidth;
+	/*+0x30*/  int32_t nDestHeight;
 protected:
-	/*packed*/ struct SmackBufTag *smkbuf;
-	/*packed*/ struct SmackTag *smk;
-	char szSmackFilePath[260];
+	/*+0x34*/  /*packed*/ struct SmackBufTag *smkbuf;
+	/*+0x38*/  /*packed*/ struct SmackTag *smk;
+	/*+0x3c*/  char szSmackFilePath[260]; // 0x104 bytes
 };
 
 // Type: /*unpacked*/ class CBackBuffer (forward reference);

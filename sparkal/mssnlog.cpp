@@ -25,9 +25,9 @@ protected:
 	void SortByTimeDate();
 	void SortByType();
 	void DrawBackground();
-	/*packed*/ class ListBoxWindow *myListBoxWindow;
-	/*unpacked*/ class CBackBuffer *myBackgroundBuffer;
-	enum MissionLogWindow::MissionLogWindowSortType nCurrentSort;
+	/*+0x74*/  /*packed*/ class ListBoxWindow *myListBoxWindow;
+	/*+0x78*/  /*unpacked*/ class CBackBuffer *myBackgroundBuffer;
+	/*+0x7c*/  enum MissionLogWindow::MissionLogWindowSortType nCurrentSort;
 };
 
 // Type: int32_t;
@@ -70,13 +70,13 @@ public:
 	virtual void SetTextColor(const /*packed*/ struct SparkalColor*, const /*packed*/ struct SparkalColor*); // vtable+0xd8
 	virtual int32_t CanWeRespondToMessage() /* override */;
 protected:
-	int32_t nButtonState;
-	int32_t bEnabled;
-	int32_t nButtonTextHeight;
-	/*packed*/ class MSize sizeTextOffset;
-	int32_t bBusySettingState;
-	/*packed*/ struct SparkalColor colorFont;
-	/*packed*/ struct SparkalColor colorFontHighlighted;
+	/*+0x74*/  int32_t nButtonState;
+	/*+0x78*/  int32_t bEnabled;
+	/*+0x7c*/  int32_t nButtonTextHeight;
+	/*+0x80*/  /*packed*/ class MSize sizeTextOffset; // 0x8 bytes
+	/*+0x88*/  int32_t bBusySettingState;
+	/*+0x8c*/  /*packed*/ struct SparkalColor colorFont;
+	/*+0x90*/  /*packed*/ struct SparkalColor colorFontHighlighted;
 };
 
 // Type: /*packed*/ class basic_string<char>;
@@ -84,8 +84,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -186,20 +186,20 @@ public:
 
 // Type: /*packed*/ struct SparkalColor;
 struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
-	unsigned char Blue;
-	unsigned char Green;
-	unsigned char Red;
-	unsigned char Padding;
+	/*+0x0*/   unsigned char Blue; // 0x1 bytes
+	/*+0x1*/   unsigned char Green; // 0x1 bytes
+	/*+0x2*/   unsigned char Red; // 0x1 bytes
+	/*+0x3*/   unsigned char Padding; // 0x1 bytes
 	void SparkalColor(unsigned char, unsigned char, unsigned char);
 	void SparkalColor();
 };
 
 // Type: /*packed*/ struct SparkalColor (forward reference);
 struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
-	unsigned char Blue;
-	unsigned char Green;
-	unsigned char Red;
-	unsigned char Padding;
+	/*+0x0*/   unsigned char Blue; // 0x1 bytes
+	/*+0x1*/   unsigned char Green; // 0x1 bytes
+	/*+0x2*/   unsigned char Red; // 0x1 bytes
+	/*+0x3*/   unsigned char Padding; // 0x1 bytes
 	void SparkalColor(unsigned char, unsigned char, unsigned char);
 	void SparkalColor();
 };
@@ -214,7 +214,7 @@ struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 class list<tagLogBase *>::iterator : public bidirectional_iterator<tagLogBase *,int>
 { // packed(0x4 bytes) TI: 0x16d0
 protected:
-	/*packed*/ struct list<tagLogBase *>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<tagLogBase *>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -240,17 +240,17 @@ public:
 	virtual void DisplayCurrentMessages(/*unpacked*/ class CBackBuffer*); // vtable+0x4
 	virtual void AddNewMessage(/*packed*/ class basic_string<char>&); // vtable+0x8
 	virtual void AddNewMessage(char *); // vtable+0xc
-	/*packed*/ class MPoint ptFirstMessage;
-	long lMaximumMessageCount;
+	/*+0x4*/   /*packed*/ class MPoint ptFirstMessage; // 0x8 bytes
+	/*+0xc*/   long lMaximumMessageCount;
 protected:
-	/*packed*/ class basic_string<char> *sMessages;
-	/*packed*/ class MTimer timerMessageDisplay;
-	/*packed*/ class MFont fontMessages;
-	long lVerticalSpaceBetweenMessages;
-	unsigned long lDisplayTime;
-	long lCurrentDisplayedMessageCount;
-	int32_t bDisplayMessages;
-	/*packed*/ struct SparkalColor colorMessage;
+	/*+0x10*/  /*packed*/ class basic_string<char> *sMessages;
+	/*+0x14*/  /*packed*/ class MTimer timerMessageDisplay; // 0x10 bytes
+	/*+0x24*/  /*packed*/ class MFont fontMessages; // 0x1c bytes
+	/*+0x40*/  long lVerticalSpaceBetweenMessages;
+	/*+0x44*/  unsigned long lDisplayTime;
+	/*+0x48*/  long lCurrentDisplayedMessageCount;
+	/*+0x4c*/  int32_t bDisplayMessages;
+	/*+0x50*/  /*packed*/ struct SparkalColor colorMessage;
 };
 
 // Type: uint32_t;
@@ -331,8 +331,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -437,10 +437,10 @@ struct bidirectional_iterator<tagLogBase *,int>{ // packed(0x1 bytes) TI: 0x126f
 
 // Type: /*packed*/ struct SparkalRect;
 struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
-	long left;
-	long top;
-	long right;
-	long bottom;
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
 	void SparkalRect(long, long, long, long);
 	void SparkalRect();
 };

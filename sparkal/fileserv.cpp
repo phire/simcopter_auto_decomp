@@ -24,10 +24,10 @@ public:
 		nAppBaseTypeRemote = 2,
 	};
 public:
-	enum FileServices::AppBaseType myAppBaseType;
-	/*packed*/ class basic_string<char> sLocalDirectoryBase;
-	/*packed*/ class basic_string<char> sRemoteDirectoryBase;
-	/*packed*/ class basic_string<char> sDirs[12];
+	/*+0x0*/   enum FileServices::AppBaseType myAppBaseType;
+	/*+0x4*/   /*packed*/ class basic_string<char> sLocalDirectoryBase; // 0x8 bytes
+	/*+0xc*/   /*packed*/ class basic_string<char> sRemoteDirectoryBase; // 0x8 bytes
+	/*+0x14*/  /*packed*/ class basic_string<char> sDirs[12]; // 0x60 bytes
 };
 
 // Type: void ();
@@ -60,10 +60,10 @@ public:
 		nAppBaseTypeRemote = 2,
 	};
 public:
-	enum FileServices::AppBaseType myAppBaseType;
-	/*packed*/ class basic_string<char> sLocalDirectoryBase;
-	/*packed*/ class basic_string<char> sRemoteDirectoryBase;
-	/*packed*/ class basic_string<char> sDirs[12];
+	/*+0x0*/   enum FileServices::AppBaseType myAppBaseType;
+	/*+0x4*/   /*packed*/ class basic_string<char> sLocalDirectoryBase; // 0x8 bytes
+	/*+0xc*/   /*packed*/ class basic_string<char> sRemoteDirectoryBase; // 0x8 bytes
+	/*+0x14*/  /*packed*/ class basic_string<char> sDirs[12]; // 0x60 bytes
 };
 
 // Type: /*packed*/ class basic_string<char>;
@@ -71,8 +71,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -239,10 +239,10 @@ public:
 	long SetPath(char *);
 	long FileCreate(char *, int32_t);
 	long FileExists(char *);
-	char szFilePath[260];
-	int32_t Handle;
+	/*+0x4*/   char szFilePath[260]; // 0x104 bytes
+	/*+0x108*/ int32_t Handle;
 private:
-	int32_t ShouldClose;
+	/*+0x10c*/ int32_t ShouldClose;
 };
 
 // Type: /*packed*/ class basic_string<char> (forward reference);
@@ -250,8 +250,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -357,9 +357,9 @@ public:
 class list<basic_string<char>>{ // packed(0x8 bytes) TI: 0x1cb1
 	using void_pointer = void * __ptr32;
 	struct list<basic_string<char>>::list_node{ // packed(0x10 bytes) TI: 0x1cd7
-		void * __ptr32 next;
-		void * __ptr32 prev;
-		/*packed*/ class basic_string<char> data;
+		/*+0x0*/   void * __ptr32 next;
+		/*+0x4*/   void * __ptr32 prev;
+		/*+0x8*/   /*packed*/ class basic_string<char> data; // 0x8 bytes
 	};
 protected:
 	static /*packed*/ class allocator<list<basic_string<char>>::list_node> list_node_allocator;
@@ -376,8 +376,8 @@ protected:
 protected:
 	uint32_t buffer_size();
 	struct list<basic_string<char>>::list_node_buffer{ // packed(0x8 bytes) TI: 0x1cd5
-		void * __ptr32 next_buffer;
-		/*packed*/ struct list<basic_string<char>>::list_node *buffer;
+		/*+0x0*/   void * __ptr32 next_buffer;
+		/*+0x4*/   /*packed*/ struct list<basic_string<char>>::list_node *buffer;
 	};
 	using buffer_allocator_type = /*packed*/ class allocator<list<basic_string<char>>::list_node_buffer>;
 	using buffer_pointer = /*packed*/ struct list<basic_string<char>>::list_node_buffer*;
@@ -392,12 +392,12 @@ protected:
 	void deallocate_buffers();
 	/*packed*/ struct list<basic_string<char>>::list_node* get_node();
 	void put_node(/*packed*/ struct list<basic_string<char>>::list_node*);
-	/*packed*/ struct list<basic_string<char>>::list_node *node;
-	uint32_t length;
+	/*+0x0*/   /*packed*/ struct list<basic_string<char>>::list_node *node;
+	/*+0x4*/   uint32_t length;
 	class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_string<char>,int>
 	{ // packed(0x4 bytes) TI: 0x1cd3
 	protected:
-		/*packed*/ struct list<basic_string<char>>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<basic_string<char>>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -413,7 +413,7 @@ protected:
 	class list<basic_string<char>>::const_iterator : public bidirectional_iterator<basic_string<char>,int>
 	{ // packed(0x4 bytes) TI: 0x1cc6
 	protected:
-		/*packed*/ struct list<basic_string<char>>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<basic_string<char>>::list_node *node;
 	public:
 		void const_iterator(const /*packed*/ class list<basic_string<char>>::iterator&);
 		void const_iterator();
@@ -479,7 +479,7 @@ public:
 class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_string<char>,int>
 { // packed(0x4 bytes) TI: 0x1cd3
 protected:
-	/*packed*/ struct list<basic_string<char>>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<basic_string<char>>::list_node *node;
 public:
 	void iterator();
 protected:

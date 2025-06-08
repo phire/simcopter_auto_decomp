@@ -6,25 +6,25 @@
 
 // Type: /*packed*/ struct Point2d;
 struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
-	int32_t x;
-	int32_t y;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
 };
 
 // Type: /*packed*/ struct _dPoint2d (forward reference);
 struct _dPoint2d{ // packed(0x10 bytes) TI: 0x2766
-	double x;
-	double z;
+	/*+0x0*/   double x; // 0x8 bytes
+	/*+0x8*/   double z; // 0x8 bytes
 };
 
 // Type: /*packed*/ struct VRwindowType;
 struct VRwindowType{ // packed(0x1c bytes) TI: 0x10a5
-	int32_t WindowX;
-	int32_t WindowY;
-	int32_t WindowWide;
-	int32_t WindowHigh;
-	int32_t RenderMode;
-	int32_t RenderWide;
-	int32_t RenderHigh;
+	/*+0x0*/   int32_t WindowX;
+	/*+0x4*/   int32_t WindowY;
+	/*+0x8*/   int32_t WindowWide;
+	/*+0xc*/   int32_t WindowHigh;
+	/*+0x10*/  int32_t RenderMode;
+	/*+0x14*/  int32_t RenderWide;
+	/*+0x18*/  int32_t RenderHigh;
 };
 
 // Type: long;
@@ -35,8 +35,8 @@ struct VRwindowType{ // packed(0x1c bytes) TI: 0x10a5
 
 // Type: /*packed*/ struct VRBmpHdr (forward reference);
 struct VRBmpHdr{ // packed(0x10 bytes) TI: 0x2312
-	/*packed*/ struct VRBmpInfo info;
-	int32_t ScanOffset[1];
+	/*+0x0*/   /*packed*/ struct VRBmpInfo info; // 0xc bytes
+	/*+0xc*/   int32_t ScanOffset[1];
 };
 
 // Type: void;
@@ -45,60 +45,60 @@ struct VRBmpHdr{ // packed(0x10 bytes) TI: 0x2312
 
 // Type: /*packed*/ struct _CELL_INFO (forward reference);
 struct _CELL_INFO{ // packed(0x18 bytes) TI: 0x1b03
-	short flags;
-	short x;
-	short y;
-	short z;
-	short size;
-	short ctr;
-	/*packed*/ struct _STOBJ_INST *stptr;
-	/*packed*/ struct _DYOBJ_INST *dyptr;
-	/*packed*/ struct _DYOBJ_INST *vwptr;
+	/*+0x0*/   short flags; // 0x2 bytes
+	/*+0x2*/   short x; // 0x2 bytes
+	/*+0x4*/   short y; // 0x2 bytes
+	/*+0x6*/   short z; // 0x2 bytes
+	/*+0x8*/   short size; // 0x2 bytes
+	/*+0xa*/   short ctr; // 0x2 bytes
+	/*+0xc*/   /*packed*/ struct _STOBJ_INST *stptr;
+	/*+0x10*/  /*packed*/ struct _DYOBJ_INST *dyptr;
+	/*+0x14*/  /*packed*/ struct _DYOBJ_INST *vwptr;
 };
 
 // Type: /*packed*/ struct Point2d (forward reference);
 struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
-	int32_t x;
-	int32_t y;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
 };
 
 // Type: long *;
 
 // Type: /*packed*/ struct _MAP_CARINFO (forward reference);
 struct _MAP_CARINFO{ // packed(0x28 bytes) TI: 0x31c6
-	long flags;
-	long car_id;
-	long car_type;
-	long mission_id;
-	/*packed*/ struct _GridCoordinates *currpos;
-	/*packed*/ struct _GridCoordinates *disppos;
-	long top;
-	long bottom;
-	long left;
-	long right;
+	/*+0x0*/   long flags;
+	/*+0x4*/   long car_id;
+	/*+0x8*/   long car_type;
+	/*+0xc*/   long mission_id;
+	/*+0x10*/  /*packed*/ struct _GridCoordinates *currpos;
+	/*+0x14*/  /*packed*/ struct _GridCoordinates *disppos;
+	/*+0x18*/  long top;
+	/*+0x1c*/  long bottom;
+	/*+0x20*/  long left;
+	/*+0x24*/  long right;
 };
 
 // Type: /*packed*/ struct MISSION_DATA (forward reference);
 struct MISSION_DATA{ // packed(0xd4 bytes) TI: 0x31c4
-	char mtext[32];
-	long type_ctr;
-	long key;
-	/*packed*/ struct Point2d maploc;
-	/*packed*/ struct Point2d destmaploc;
-	/*packed*/ struct Point2d pickuploc;
-	int32_t timer;
-	long money_bonus;
-	long points_bonus;
-	long flags;
-	long type;
-	long state;
-	/*packed*/ struct __unnamed mdata;
+	/*+0x0*/   char mtext[32]; // 0x20 bytes
+	/*+0x20*/  long type_ctr;
+	/*+0x24*/  long key;
+	/*+0x28*/  /*packed*/ struct Point2d maploc; // 0x8 bytes
+	/*+0x30*/  /*packed*/ struct Point2d destmaploc; // 0x8 bytes
+	/*+0x38*/  /*packed*/ struct Point2d pickuploc; // 0x8 bytes
+	/*+0x40*/  int32_t timer;
+	/*+0x44*/  long money_bonus;
+	/*+0x48*/  long points_bonus;
+	/*+0x4c*/  long flags;
+	/*+0x50*/  long type;
+	/*+0x54*/  long state;
+	/*+0x58*/  /*packed*/ struct __unnamed mdata; // 0x7c bytes
 };
 
 // Type: /*packed*/ struct _GridCoordinates (forward reference);
 struct _GridCoordinates{ // packed(0x2 bytes) TI: 0x143c
-	unsigned char x;
-	unsigned char y;
+	/*+0x0*/   unsigned char x; // 0x1 bytes
+	/*+0x1*/   unsigned char y; // 0x1 bytes
 };
 
 

@@ -40,18 +40,18 @@ protected:
 	void HideHelp();
 	int32_t GetSoundFileNameFromHelpID(long, /*packed*/ class basic_string<char>&);
 	int32_t GetHotspotFromPosition(long&, /*packed*/ class MPoint&);
-	/*unpacked*/ class TextWindow *myTextHelpWindow;
-	/*packed*/ class DigitalSound myHelpSound;
-	int32_t bDaytime;
-	int32_t bUsingGraphicHelp;
-	int32_t bUsingAudioHelp;
-	int32_t bTestedHotspotsAlready;
-	int32_t nScrollingHangar;
-	/*packed*/ class MTimer myTimer;
-	/*packed*/ class list<HotSpot> myHotSpots;
-	/*unpacked*/ class CBackBuffer *mySecondImage;
-	/*packed*/ class MPoint ptSavedCursorPosition;
-	long lWindowPositionInHangar;
+	/*+0x74*/  /*unpacked*/ class TextWindow *myTextHelpWindow;
+	/*+0x78*/  /*packed*/ class DigitalSound myHelpSound; // 0x7a bytes
+	/*+0xf2*/  int32_t bDaytime;
+	/*+0xf6*/  int32_t bUsingGraphicHelp;
+	/*+0xfa*/  int32_t bUsingAudioHelp;
+	/*+0xfe*/  int32_t bTestedHotspotsAlready;
+	/*+0x102*/ int32_t nScrollingHangar;
+	/*+0x106*/ /*packed*/ class MTimer myTimer; // 0x10 bytes
+	/*+0x116*/ /*packed*/ class list<HotSpot> myHotSpots; // 0x8 bytes
+	/*+0x11e*/ /*unpacked*/ class CBackBuffer *mySecondImage;
+	/*+0x122*/ /*packed*/ class MPoint ptSavedCursorPosition; // 0x8 bytes
+	/*+0x12a*/ long lWindowPositionInHangar;
 };
 
 // Type: int32_t;
@@ -94,13 +94,13 @@ public:
 	virtual void SetTextColor(const /*packed*/ struct SparkalColor*, const /*packed*/ struct SparkalColor*); // vtable+0xd8
 	virtual int32_t CanWeRespondToMessage() /* override */;
 protected:
-	int32_t nButtonState;
-	int32_t bEnabled;
-	int32_t nButtonTextHeight;
-	/*packed*/ class MSize sizeTextOffset;
-	int32_t bBusySettingState;
-	/*packed*/ struct SparkalColor colorFont;
-	/*packed*/ struct SparkalColor colorFontHighlighted;
+	/*+0x74*/  int32_t nButtonState;
+	/*+0x78*/  int32_t bEnabled;
+	/*+0x7c*/  int32_t nButtonTextHeight;
+	/*+0x80*/  /*packed*/ class MSize sizeTextOffset; // 0x8 bytes
+	/*+0x88*/  int32_t bBusySettingState;
+	/*+0x8c*/  /*packed*/ struct SparkalColor colorFont;
+	/*+0x90*/  /*packed*/ struct SparkalColor colorFontHighlighted;
 };
 
 // Type: /*packed*/ class basic_string<char>;
@@ -108,8 +108,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -210,10 +210,10 @@ public:
 
 // Type: /*packed*/ struct SparkalColor (forward reference);
 struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
-	unsigned char Blue;
-	unsigned char Green;
-	unsigned char Red;
-	unsigned char Padding;
+	/*+0x0*/   unsigned char Blue; // 0x1 bytes
+	/*+0x1*/   unsigned char Green; // 0x1 bytes
+	/*+0x2*/   unsigned char Red; // 0x1 bytes
+	/*+0x3*/   unsigned char Padding; // 0x1 bytes
 	void SparkalColor(unsigned char, unsigned char, unsigned char);
 	void SparkalColor();
 };
@@ -257,7 +257,7 @@ public:
 class list<HotSpot>::iterator : public bidirectional_iterator<HotSpot,int>
 { // packed(0x4 bytes) TI: 0x1240
 protected:
-	/*packed*/ struct list<HotSpot>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<HotSpot>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -412,8 +412,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -516,18 +516,18 @@ public:
 
 // Type: /*packed*/ struct SparkalRect;
 struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
-	long left;
-	long top;
-	long right;
-	long bottom;
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
 	void SparkalRect(long, long, long, long);
 	void SparkalRect();
 };
 
 // Type: /*packed*/ struct SparkalPoint;
 struct SparkalPoint{ // packed(0x8 bytes) TI: 0x1a54
-	long x;
-	long y;
+	/*+0x0*/   long x;
+	/*+0x4*/   long y;
 	void SparkalPoint(long, long);
 	void SparkalPoint();
 };

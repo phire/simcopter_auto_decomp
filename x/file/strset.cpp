@@ -5,10 +5,10 @@
 // Type: /*unpacked*/ class StringSet (forward reference);
 class StringSet{ // not packed(0x10 bytes) TI: 0x3487
 private:
-	/*unpacked*/ class ResFile *fResFile;
-	long fNumStrings;
-	void * __ptr32 fStringHandle;
-	unsigned char * fStringPtr;
+	/*+0x0*/   /*unpacked*/ class ResFile *fResFile;
+	/*+0x4*/   long fNumStrings;
+	/*+0x8*/   void * __ptr32 fStringHandle;
+	/*+0xc*/   unsigned char * fStringPtr;
 	void LoadStrings(short);
 	// calltype: NearC
 	static void Swizzle(void * __ptr32, long);
@@ -43,9 +43,9 @@ public:
 class FlatResFile : public FlatFile
 { // not packed(0x11c bytes) TI: 0x330e
 protected:
-	/*unpacked*/ class ResMap *fMap;
-	long fError;
-	short _alignPad;
+	/*+0x110*/ /*unpacked*/ class ResMap *fMap;
+	/*+0x114*/ long fError;
+	/*+0x118*/ short _alignPad; // 0x2 bytes
 public:
 	void FlatResFile();
 	virtual void ~FlatResFile() /* override */;
@@ -86,10 +86,10 @@ class FlatFile{ // not packed(0x110 bytes) TI: 0x32f4
 		kMaxNameLen = 255,
 	};
 protected:
-	/*unpacked*/ class FlatFile *fNext;
-	unsigned char fName[256];
-	long fFileID;
-	/*unpacked*/ struct _iobuf *fFile;
+	/*+0x4*/   /*unpacked*/ class FlatFile *fNext;
+	/*+0x8*/   unsigned char fName[256]; // 0x100 bytes
+	/*+0x108*/ long fFileID;
+	/*+0x10c*/ /*unpacked*/ struct _iobuf *fFile;
 	long UniqueID();
 private:
 	static /*unpacked*/ class FlatFile *sList;

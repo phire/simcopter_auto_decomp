@@ -8,39 +8,39 @@
 
 // Type: /*packed*/ struct tWAVEFORMATEX (forward reference);
 struct tWAVEFORMATEX{ // packed(0x12 bytes) TI: 0x17d1
-	unsigned short wFormatTag;
-	unsigned short nChannels;
-	unsigned long nSamplesPerSec;
-	unsigned long nAvgBytesPerSec;
-	unsigned short nBlockAlign;
-	unsigned short wBitsPerSample;
-	unsigned short cbSize;
+	/*+0x0*/   unsigned short wFormatTag; // 0x2 bytes
+	/*+0x2*/   unsigned short nChannels; // 0x2 bytes
+	/*+0x4*/   unsigned long nSamplesPerSec;
+	/*+0x8*/   unsigned long nAvgBytesPerSec;
+	/*+0xc*/   unsigned short nBlockAlign; // 0x2 bytes
+	/*+0xe*/   unsigned short wBitsPerSample; // 0x2 bytes
+	/*+0x10*/  unsigned short cbSize; // 0x2 bytes
 };
 
 // Type: /*packed*/ struct _MMCKINFO (forward reference);
 struct _MMCKINFO{ // packed(0x14 bytes) TI: 0x1da7
-	unsigned long ckid;
-	unsigned long cksize;
-	unsigned long fccType;
-	unsigned long dwDataOffset;
-	unsigned long dwFlags;
+	/*+0x0*/   unsigned long ckid;
+	/*+0x4*/   unsigned long cksize;
+	/*+0x8*/   unsigned long fccType;
+	/*+0xc*/   unsigned long dwDataOffset;
+	/*+0x10*/  unsigned long dwFlags;
 };
 
 // Type: unsigned short;
 
 // Type: /*packed*/ struct pcmwaveformat_tag;
 struct pcmwaveformat_tag{ // packed(0x10 bytes) TI: 0x23e0
-	/*packed*/ struct waveformat_tag wf;
-	unsigned short wBitsPerSample;
+	/*+0x0*/   /*packed*/ struct waveformat_tag wf; // 0xe bytes
+	/*+0xe*/   unsigned short wBitsPerSample; // 0x2 bytes
 };
 
 // Type: /*packed*/ struct _MMCKINFO;
 struct _MMCKINFO{ // packed(0x14 bytes) TI: 0x1da7
-	unsigned long ckid;
-	unsigned long cksize;
-	unsigned long fccType;
-	unsigned long dwDataOffset;
-	unsigned long dwFlags;
+	/*+0x0*/   unsigned long ckid;
+	/*+0x4*/   unsigned long cksize;
+	/*+0x8*/   unsigned long fccType;
+	/*+0xc*/   unsigned long dwDataOffset;
+	/*+0x10*/  unsigned long dwFlags;
 };
 
 // Type: int32_t;
@@ -53,22 +53,22 @@ struct _MMCKINFO{ // packed(0x14 bytes) TI: 0x1da7
 
 // Type: /*packed*/ struct _MMIOINFO;
 struct _MMIOINFO{ // packed(0x48 bytes) TI: 0x23e7
-	unsigned long dwFlags;
-	unsigned long fccIOProc;
-	long (*pIOProc)(char *, uint32_t, long, long);
-	uint32_t wErrorRet;
-	void * __ptr32 htask;
-	long cchBuffer;
-	char * pchBuffer;
-	char * pchNext;
-	char * pchEndRead;
-	char * pchEndWrite;
-	long lBufOffset;
-	long lDiskOffset;
-	unsigned long adwInfo[3];
-	unsigned long dwReserved1;
-	unsigned long dwReserved2;
-	void * __ptr32 hmmio;
+	/*+0x0*/   unsigned long dwFlags;
+	/*+0x4*/   unsigned long fccIOProc;
+	/*+0x8*/   long (*pIOProc)(char *, uint32_t, long, long);
+	/*+0xc*/   uint32_t wErrorRet;
+	/*+0x10*/  void * __ptr32 htask;
+	/*+0x14*/  long cchBuffer;
+	/*+0x18*/  char * pchBuffer;
+	/*+0x1c*/  char * pchNext;
+	/*+0x20*/  char * pchEndRead;
+	/*+0x24*/  char * pchEndWrite;
+	/*+0x28*/  long lBufOffset;
+	/*+0x2c*/  long lDiskOffset;
+	/*+0x30*/  unsigned long adwInfo[3]; // 0xc bytes
+	/*+0x3c*/  unsigned long dwReserved1;
+	/*+0x40*/  unsigned long dwReserved2;
+	/*+0x44*/  void * __ptr32 hmmio;
 };
 
 

@@ -104,127 +104,127 @@ public:
 		kNumOwners = 13,
 	};
 	struct YObjLang::OwnerDataParam{ // not packed(0x8 bytes) TI: 0x3593
-		short owner1;
-		short data1;
-		short owner2;
-		short data2;
+		/*+0x0*/   short owner1; // 0x2 bytes
+		/*+0x2*/   short data1; // 0x2 bytes
+		/*+0x4*/   short owner2; // 0x2 bytes
+		/*+0x6*/   short data2; // 0x2 bytes
 	};
 	struct YObjLang::TurnToFireParam{ // not packed(0x4 bytes) TI: 0x3591
-		short xdistloc;
-		short ydistloc;
+		/*+0x0*/   short xdistloc; // 0x2 bytes
+		/*+0x2*/   short ydistloc; // 0x2 bytes
 	};
 	struct YObjLang::GetOutOfRoadParam{ // not packed(0x2 bytes) TI: 0x358f
-		short decTemp;
+		/*+0x0*/   short decTemp; // 0x2 bytes
 	};
 	struct YObjLang::SetDirectionParam{ // not packed(0x2 bytes) TI: 0x358e
-		short dirTemp;
+		/*+0x0*/   short dirTemp; // 0x2 bytes
 	};
 	struct YObjLang::CheckForSpotParam{ // not packed(0x4 bytes) TI: 0x358c
-		short brightnessTemp;
-		short dirToHeliTemp;
+		/*+0x0*/   short brightnessTemp; // 0x2 bytes
+		/*+0x2*/   short dirToHeliTemp; // 0x2 bytes
 	};
 	struct YObjLang::GetSurroundingRiotValParam{ // not packed(0x8 bytes) TI: 0x358a
-		short distTemp;
-		short dirToConcTemp;
-		short riotValTemp;
-		short numPeopleCountedTemp;
+		/*+0x0*/   short distTemp; // 0x2 bytes
+		/*+0x2*/   short dirToConcTemp; // 0x2 bytes
+		/*+0x4*/   short riotValTemp; // 0x2 bytes
+		/*+0x6*/   short numPeopleCountedTemp; // 0x2 bytes
 	};
 	struct YObjLang::IncrementRiotValParam{ // not packed(0x2 bytes) TI: 0x3588
-		short riotValLiteral;
+		/*+0x0*/   short riotValLiteral; // 0x2 bytes
 	};
 	struct YObjLang::IsThisScurkIDParam{ // not packed(0x2 bytes) TI: 0x3586
-		short scurkIDLiteral;
+		/*+0x0*/   short scurkIDLiteral; // 0x2 bytes
 	};
 	struct YObjLang::IsThisLocTypeParam{ // not packed(0x2 bytes) TI: 0x3584
-		short locTypeLiteral;
+		/*+0x0*/   short locTypeLiteral; // 0x2 bytes
 	};
 	struct YObjLang::UpdateMyMissionParam{ // not packed(0x2 bytes) TI: 0x3582
-		short updateLiteral;
+		/*+0x0*/   short updateLiteral; // 0x2 bytes
 	};
 	struct YObjLang::CheckForTrueParam{ // not packed(0x2 bytes) TI: 0x3580
-		short whatLiteral;
+		/*+0x0*/   short whatLiteral; // 0x2 bytes
 	};
 	struct YObjLang::CompareMyLocWithParam{ // not packed(0x6 bytes) TI: 0x357e
-		short withWhatLiteral;
-		short distData;
-		short distOwner;
+		/*+0x0*/   short withWhatLiteral; // 0x2 bytes
+		/*+0x2*/   short distData; // 0x2 bytes
+		/*+0x4*/   short distOwner; // 0x2 bytes
 	};
 	struct YObjLang::WalkAndGrabParam{ // not packed(0x4 bytes) TI: 0x357c
-		short decTemp;
-		short dynAnimBoolean;
+		/*+0x0*/   short decTemp; // 0x2 bytes
+		/*+0x2*/   short dynAnimBoolean; // 0x2 bytes
 	};
 	struct YObjLang::SearchForDynParam{ // not packed(0x6 bytes) TI: 0x357a
-		short searchdynobjtypetemp;
-		short onlyonmasterboolean;
-		short numcellstospiral;
+		/*+0x0*/   short searchdynobjtypetemp; // 0x2 bytes
+		/*+0x2*/   short onlyonmasterboolean; // 0x2 bytes
+		/*+0x4*/   short numcellstospiral; // 0x2 bytes
 	};
 	struct YObjLang::IdleParam{ // not packed(0x2 bytes) TI: 0x3578
-		short decTemp;
+		/*+0x0*/   short decTemp; // 0x2 bytes
 	};
 	struct YObjLang::SetAnimParam{ // not packed(0x4 bytes) TI: 0x3576
-		unsigned long animname;
+		/*+0x0*/   unsigned long animname;
 	};
 	struct YObjLang::SetBodyParam{ // not packed(0x4 bytes) TI: 0x3574
-		unsigned long bodyname;
+		/*+0x0*/   unsigned long bodyname;
 	};
 	struct YObjLang::WalkRunParam{ // not packed(0x7 bytes) TI: 0x3572
-		char decTemp;
-		char onlyNeutralBoolean;
-		char moveFailTemp;
-		char newLocTemp;
-		char roadDirTemp;
-		char dynAnimBoolean;
-		char speedTemp;
+		/*+0x0*/   char decTemp; // 0x1 bytes
+		/*+0x1*/   char onlyNeutralBoolean; // 0x1 bytes
+		/*+0x2*/   char moveFailTemp; // 0x1 bytes
+		/*+0x3*/   char newLocTemp; // 0x1 bytes
+		/*+0x4*/   char roadDirTemp; // 0x1 bytes
+		/*+0x5*/   char dynAnimBoolean; // 0x1 bytes
+		/*+0x6*/   char speedTemp; // 0x1 bytes
 	};
 	struct YObjLang::RandomParam{ // not packed(0x6 bytes) TI: 0x3570
-		short destTemp;
-		short rangeData;
-		short rangeOwner;
+		/*+0x0*/   short destTemp; // 0x2 bytes
+		/*+0x2*/   short rangeData; // 0x2 bytes
+		/*+0x4*/   short rangeOwner; // 0x2 bytes
 	};
 	struct YObjLang::RoadDirParam{ // not packed(0x6 bytes) TI: 0x356e
-		short dirTemp;
-		short distAheadData;
-		short distAheadOwner;
+		/*+0x0*/   short dirTemp; // 0x2 bytes
+		/*+0x2*/   short distAheadData; // 0x2 bytes
+		/*+0x4*/   short distAheadOwner; // 0x2 bytes
 	};
 	struct YObjLang::DirDistFirstParam{ // not packed(0x8 bytes) TI: 0x356c
-		short dirToTemp;
-		short distToTemp;
-		short whatData;
-		short whatOwner;
+		/*+0x0*/   short dirToTemp; // 0x2 bytes
+		/*+0x2*/   short distToTemp; // 0x2 bytes
+		/*+0x4*/   short whatData; // 0x2 bytes
+		/*+0x6*/   short whatOwner; // 0x2 bytes
 	};
 	struct YObjLang::DirDistPersonParam{ // not packed(0x8 bytes) TI: 0x356a
-		short dirToTemp;
-		short distToTemp;
-		short whoData;
-		short whoOwner;
+		/*+0x0*/   short dirToTemp; // 0x2 bytes
+		/*+0x2*/   short distToTemp; // 0x2 bytes
+		/*+0x4*/   short whoData; // 0x2 bytes
+		/*+0x6*/   short whoOwner; // 0x2 bytes
 	};
 	struct YObjLang::AttrParam{ // not packed(0x8 bytes) TI: 0x3568
-		short lhsData;
-		short rhsData;
-		LfBitfield @ 0x5d5b4:
+		/*+0x0*/   short lhsData; // 0x2 bytes
+		/*+0x2*/   short rhsData; // 0x2 bytes
+		/*+0x4*/   LfBitfield @ 0x5d5b4:
 		[90m   LB.[32m[  0.  1][m [95mlength[m = 0x8
 		[90m   LB.[95mTI[m = 0x3565
 		[90m   LB.[32m[  1.  1][m [95mposition[m = 0x0
 		[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
-		 isSigned;
-		LfBitfield @ 0x5d5bc:
+		 isSigned; // 0x8 bytes
+		/*+0x4*/   LfBitfield @ 0x5d5bc:
 		[90m   LB.[32m[  0.  1][m [95mlength[m = 0x8
 		[90m   LB.[95mTI[m = 0x3566
 		[90m   LB.[32m[  1.  1][m [95mposition[m = 0x8
 		[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
-		 opType;
-		LfBitfield @ 0x5d5b4:
+		 opType; // 0x8 bytes
+		/*+0x6*/   LfBitfield @ 0x5d5b4:
 		[90m   LB.[32m[  0.  1][m [95mlength[m = 0x8
 		[90m   LB.[95mTI[m = 0x3565
 		[90m   LB.[32m[  1.  1][m [95mposition[m = 0x0
 		[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
-		 lhsOwner;
-		LfBitfield @ 0x5d5bc:
+		 lhsOwner; // 0x8 bytes
+		/*+0x6*/   LfBitfield @ 0x5d5bc:
 		[90m   LB.[32m[  0.  1][m [95mlength[m = 0x8
 		[90m   LB.[95mTI[m = 0x3566
 		[90m   LB.[32m[  1.  1][m [95mposition[m = 0x8
 		[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
-		 rhsOwner;
+		 rhsOwner; // 0x8 bytes
 	};
 	enum /* __unnamed */ {
 		kGreaterThan = 0,
@@ -241,10 +241,10 @@ public:
 		kNumOps = 11,
 	};
 	struct YObjLang::MiscParam{ // not packed(0x8 bytes) TI: 0x3564
-		short m1;
-		short m2;
-		short m3;
-		short m4;
+		/*+0x0*/   short m1; // 0x2 bytes
+		/*+0x2*/   short m2; // 0x2 bytes
+		/*+0x4*/   short m3; // 0x2 bytes
+		/*+0x6*/   short m4; // 0x2 bytes
 	};
 	// TODO: Unknown nested type: <class 'tpi.LfUnion'>
 	// /*unpacked*/ union YObjLang::Param Param
@@ -326,40 +326,40 @@ public:
 
 // Type: /*unpacked*/ struct Behavior::NodeParameter (forward reference);
 struct Behavior::NodeParameter{ // not packed(0x8 bytes) TI: 0x35e5
-	short p1;
-	short p2;
-	short p3;
-	short p4;
+	/*+0x0*/   short p1; // 0x2 bytes
+	/*+0x2*/   short p2; // 0x2 bytes
+	/*+0x4*/   short p3; // 0x2 bytes
+	/*+0x6*/   short p4; // 0x2 bytes
 };
 
 // Type: /*unpacked*/ struct YObjLang::AttrParam (forward reference);
 struct YObjLang::AttrParam{ // not packed(0x8 bytes) TI: 0x3568
-	short lhsData;
-	short rhsData;
-	LfBitfield @ 0x5d5b4:
+	/*+0x0*/   short lhsData; // 0x2 bytes
+	/*+0x2*/   short rhsData; // 0x2 bytes
+	/*+0x4*/   LfBitfield @ 0x5d5b4:
 	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x8
 	[90m   LB.[95mTI[m = 0x3565
 	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x0
 	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
-	 isSigned;
-	LfBitfield @ 0x5d5bc:
+	 isSigned; // 0x8 bytes
+	/*+0x4*/   LfBitfield @ 0x5d5bc:
 	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x8
 	[90m   LB.[95mTI[m = 0x3566
 	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x8
 	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
-	 opType;
-	LfBitfield @ 0x5d5b4:
+	 opType; // 0x8 bytes
+	/*+0x6*/   LfBitfield @ 0x5d5b4:
 	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x8
 	[90m   LB.[95mTI[m = 0x3565
 	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x0
 	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
-	 lhsOwner;
-	LfBitfield @ 0x5d5bc:
+	 lhsOwner; // 0x8 bytes
+	/*+0x6*/   LfBitfield @ 0x5d5bc:
 	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x8
 	[90m   LB.[95mTI[m = 0x3566
 	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x8
 	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
-	 rhsOwner;
+	 rhsOwner; // 0x8 bytes
 };
 
 // Type: void * __ptr32;
@@ -368,17 +368,17 @@ struct YObjLang::AttrParam{ // not packed(0x8 bytes) TI: 0x3568
 
 // Type: /*unpacked*/ struct Behavior::Tree (forward reference);
 struct Behavior::Tree{ // not packed(0xe bytes) TI: 0x35e1
-	short numNodes;
-	/*unpacked*/ struct Behavior::Node nodes[1];
+	/*+0x0*/   short numNodes; // 0x2 bytes
+	/*+0x2*/   /*unpacked*/ struct Behavior::Node nodes[1]; // 0xc bytes
 };
 
 // Type: /*unpacked*/ struct Behavior::Node (forward reference);
 struct Behavior::Node{ // not packed(0xc bytes) TI: 0x35e3
-	short treeID;
-	short primCode;
-	char trueTrans;
-	char falseTrans;
-	/*unpacked*/ struct Behavior::NodeParameter param;
+	/*+0x0*/   short treeID; // 0x2 bytes
+	/*+0x0*/   short primCode; // 0x2 bytes
+	/*+0x2*/   char trueTrans; // 0x1 bytes
+	/*+0x3*/   char falseTrans; // 0x1 bytes
+	/*+0x4*/   /*unpacked*/ struct Behavior::NodeParameter param; // 0x8 bytes
 };
 
 // Type: unsigned short;
@@ -387,12 +387,12 @@ struct Behavior::Node{ // not packed(0xc bytes) TI: 0x35e3
 // VTABLE: COPTER_D 0x005936d8
 class Behavior{ // not packed(0x1c bytes) TI: 0x35de
 protected:
-	/*unpacked*/ class NResFile *fGlobFile;
-	/*unpacked*/ class NResFile *fPrivFile;
-	/*unpacked*/ class StdResLoader *fGlobalTrees;
-	/*unpacked*/ class StdResLoader *fPrivateTrees;
-	/*unpacked*/ class Language *fLanguage;
-	void (*fSwizzler)(void * __ptr32, long);
+	/*+0x4*/   /*unpacked*/ class NResFile *fGlobFile;
+	/*+0x8*/   /*unpacked*/ class NResFile *fPrivFile;
+	/*+0xc*/   /*unpacked*/ class StdResLoader *fGlobalTrees;
+	/*+0x10*/  /*unpacked*/ class StdResLoader *fPrivateTrees;
+	/*+0x14*/  /*unpacked*/ class Language *fLanguage;
+	/*+0x18*/  void (*fSwizzler)(void * __ptr32, long);
 	enum /* __unnamed */ {
 		kPrimitiveBase = 0,
 		kPrimitiveMax = 255,
@@ -411,17 +411,17 @@ protected:
 		kMaxTreeClass = 3,
 	};
 	struct Behavior::NodeParameter{ // not packed(0x8 bytes) TI: 0x35e5
-		short p1;
-		short p2;
-		short p3;
-		short p4;
+		/*+0x0*/   short p1; // 0x2 bytes
+		/*+0x2*/   short p2; // 0x2 bytes
+		/*+0x4*/   short p3; // 0x2 bytes
+		/*+0x6*/   short p4; // 0x2 bytes
 	};
 	struct Behavior::Node{ // not packed(0xc bytes) TI: 0x35e3
-		short treeID;
-		short primCode;
-		char trueTrans;
-		char falseTrans;
-		/*unpacked*/ struct Behavior::NodeParameter param;
+		/*+0x0*/   short treeID; // 0x2 bytes
+		/*+0x0*/   short primCode; // 0x2 bytes
+		/*+0x2*/   char trueTrans; // 0x1 bytes
+		/*+0x3*/   char falseTrans; // 0x1 bytes
+		/*+0x4*/   /*unpacked*/ struct Behavior::NodeParameter param; // 0x8 bytes
 	};
 	enum /* __unnamed */ {
 		kUndefined = -3,
@@ -429,8 +429,8 @@ protected:
 		kPopOutFalse = -1,
 	};
 	struct Behavior::Tree{ // not packed(0xe bytes) TI: 0x35e1
-		short numNodes;
-		/*unpacked*/ struct Behavior::Node nodes[1];
+		/*+0x0*/   short numNodes; // 0x2 bytes
+		/*+0x2*/   /*unpacked*/ struct Behavior::Node nodes[1]; // 0xc bytes
 	};
 public:
 	void Behavior(/*unpacked*/ class Language*, /*unpacked*/ class NResFile*, /*unpacked*/ class NResFile*);

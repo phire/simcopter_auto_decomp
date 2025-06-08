@@ -4,15 +4,15 @@
 
 // Type: /*packed*/ struct list<SoundQueueItem *>::list_node_buffer (forward reference);
 struct list<SoundQueueItem *>::list_node_buffer{ // packed(0x8 bytes) TI: 0x25ea
-	void * __ptr32 next_buffer;
-	/*packed*/ struct list<SoundQueueItem *>::list_node *buffer;
+	/*+0x0*/   void * __ptr32 next_buffer;
+	/*+0x4*/   /*packed*/ struct list<SoundQueueItem *>::list_node *buffer;
 };
 
 // Type: /*packed*/ struct list<SoundQueueItem *>::list_node (forward reference);
 struct list<SoundQueueItem *>::list_node{ // packed(0xc bytes) TI: 0x25ec
-	void * __ptr32 next;
-	void * __ptr32 prev;
-	/*packed*/ struct SoundQueueItem *data;
+	/*+0x0*/   void * __ptr32 next;
+	/*+0x4*/   void * __ptr32 prev;
+	/*+0x8*/   /*packed*/ struct SoundQueueItem *data;
 };
 
 // Type: uint32_t;
@@ -24,11 +24,11 @@ struct SoundQueueItem{ // packed(0x18 bytes) TI: 0x24b1
 	void SoundQueueItem(/*packed*/ class Sound*, long, long, int32_t);
 	void SoundQueueItem(/*packed*/ class Sound*, long, int32_t);
 	void SoundQueueItem();
-	/*packed*/ class Sound *mySound;
-	long lSoundResourceID;
-	/*packed*/ class basic_string<char> sSoundFile;
-	long lTimeToWaitBeforePlaying;
-	int32_t bDeleteSoundWhenFinished;
+	/*+0x0*/   /*packed*/ class Sound *mySound;
+	/*+0x4*/   long lSoundResourceID;
+	/*+0x8*/   /*packed*/ class basic_string<char> sSoundFile; // 0x8 bytes
+	/*+0x10*/  long lTimeToWaitBeforePlaying;
+	/*+0x14*/  int32_t bDeleteSoundWhenFinished;
 };
 
 // Type: void;
@@ -41,7 +41,7 @@ class Sound{ // packed(0x34 bytes) TI: 0x4335
 		nSoundSourceTypeFile = 1,
 	};
 public:
-	enum Sound::SoundSourceType nSoundSourceType;
+	/*+0x4*/   enum Sound::SoundSourceType nSoundSourceType;
 	enum SoundDuplicateType {
 		nSoundDuplicateDefault = 0,
 		nSoundDuplicateInterrupt = 1,
@@ -49,16 +49,16 @@ public:
 		nSoundDuplicateOverlap = 3,
 	};
 public:
-	enum Sound::SoundDuplicateType nSoundDuplicateType;
-	long lID;
-	long lResID;
-	/*packed*/ class basic_string<char> sSoundFile;
-	long bLooping;
-	long bStreaming;
-	long lVolume;
-	void (*soundCompletionFunction)(long);
-	long lSoundCompletionData;
-	int32_t bUnloadBeforeNextPlay;
+	/*+0x8*/   enum Sound::SoundDuplicateType nSoundDuplicateType;
+	/*+0xc*/   long lID;
+	/*+0x10*/  long lResID;
+	/*+0x14*/  /*packed*/ class basic_string<char> sSoundFile; // 0x8 bytes
+	/*+0x1c*/  long bLooping;
+	/*+0x20*/  long bStreaming;
+	/*+0x24*/  long lVolume;
+	/*+0x28*/  void (*soundCompletionFunction)(long);
+	/*+0x2c*/  long lSoundCompletionData;
+	/*+0x30*/  int32_t bUnloadBeforeNextPlay;
 	void Sound();
 	virtual void ~Sound(); // vtable+0x0
 	/*packed*/ class Sound& operator=(const /*packed*/ class Sound&);
@@ -86,8 +86,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -220,10 +220,10 @@ public:
 	virtual int32_t GetMutex(unsigned long); // vtable+0x24
 	virtual void ReleaseMutex(); // vtable+0x28
 protected:
-	/*packed*/ class list<SoundQueueItem *> mySoundQueueItemList;
-	int32_t bOK;
-	long bMutex;
-	int32_t nWaitTimerSet;
+	/*+0x4*/   /*packed*/ class list<SoundQueueItem *> mySoundQueueItemList; // 0x8 bytes
+	/*+0xc*/   int32_t bOK;
+	/*+0x10*/  long bMutex;
+	/*+0x14*/  int32_t nWaitTimerSet;
 	// calltype: NearStd
 	static void WindowsStaticSoundQueueCompletionCallback(uint32_t, uint32_t, unsigned long, unsigned long, unsigned long);
 	// calltype: NearStd
@@ -234,7 +234,7 @@ protected:
 class list<SoundQueueItem *>::iterator : public bidirectional_iterator<SoundQueueItem *,int>
 { // packed(0x4 bytes) TI: 0x25e8
 protected:
-	/*packed*/ struct list<SoundQueueItem *>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<SoundQueueItem *>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -270,11 +270,11 @@ public:
 	int32_t IsTimerRunning();
 	unsigned long GetTickCount();
 protected:
-	enum MTimer::TimerResolution nTimerResolution;
-	unsigned long lStartTime;
-	unsigned long lTotalElapsedTime;
+	/*+0x0*/   enum MTimer::TimerResolution nTimerResolution;
+	/*+0x4*/   unsigned long lStartTime;
+	/*+0x8*/   unsigned long lTotalElapsedTime;
 	unsigned long GetWindowsTimerFrequency();
-	unsigned long lFrequency;
+	/*+0xc*/   unsigned long lFrequency;
 };
 
 // Type: /*packed*/ struct bidirectional_iterator<SoundQueueItem *,int>;
@@ -288,11 +288,11 @@ struct SoundQueueItem{ // packed(0x18 bytes) TI: 0x24b1
 	void SoundQueueItem(/*packed*/ class Sound*, long, long, int32_t);
 	void SoundQueueItem(/*packed*/ class Sound*, long, int32_t);
 	void SoundQueueItem();
-	/*packed*/ class Sound *mySound;
-	long lSoundResourceID;
-	/*packed*/ class basic_string<char> sSoundFile;
-	long lTimeToWaitBeforePlaying;
-	int32_t bDeleteSoundWhenFinished;
+	/*+0x0*/   /*packed*/ class Sound *mySound;
+	/*+0x4*/   long lSoundResourceID;
+	/*+0x8*/   /*packed*/ class basic_string<char> sSoundFile; // 0x8 bytes
+	/*+0x10*/  long lTimeToWaitBeforePlaying;
+	/*+0x14*/  int32_t bDeleteSoundWhenFinished;
 };
 
 

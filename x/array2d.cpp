@@ -18,14 +18,14 @@ class _cArray{ // not packed(0x50 bytes) TI: 0x3254
 		kArrayNameLength = 15,
 	};
 	struct _cArray::FileAndType{ // not packed(0x8 bytes) TI: 0x3256
-		/*unpacked*/ class ResFile *file;
-		unsigned long type;
+		/*+0x0*/   /*unpacked*/ class ResFile *file;
+		/*+0x4*/   unsigned long type;
 	};
 	struct _cArray::Header{ // not packed(0x8 bytes) TI: 0x32ad
-		short entrySize;
-		short xSize;
-		short ySize;
-		short _pad;
+		/*+0x0*/   short entrySize; // 0x2 bytes
+		/*+0x2*/   short xSize; // 0x2 bytes
+		/*+0x4*/   short ySize; // 0x2 bytes
+		/*+0x6*/   short _pad; // 0x2 bytes
 	};
 public:
 	static /*unpacked*/ class _cArray **sArrayTable;
@@ -41,22 +41,22 @@ private:
 	void SetSizeAndHeaders(long, long);
 	unsigned char * _GetPointer(long, long);
 protected:
-	void * __ptr32 *fData;
+	/*+0x4*/   void * __ptr32 *fData;
 public:
-	void * __ptr32 fDataHandle;
-	unsigned char * fDataPtr;
-	long fySize;
-	long fxSize;
-	long fEntrySize;
+	/*+0x8*/   void * __ptr32 fDataHandle;
+	/*+0xc*/   unsigned char * fDataPtr;
+	/*+0x10*/  long fySize;
+	/*+0x14*/  long fxSize;
+	/*+0x18*/  long fEntrySize;
 protected:
-	unsigned long fDataHandleSize;
-	short fResID;
-	short _pad;
-	/*unpacked*/ class ResFile *fFile;
-	unsigned long fType;
-	unsigned char fFileName[16];
-	unsigned char fName[16];
-	unsigned long fTinyName;
+	/*+0x1c*/  unsigned long fDataHandleSize;
+	/*+0x20*/  short fResID; // 0x2 bytes
+	/*+0x22*/  short _pad; // 0x2 bytes
+	/*+0x24*/  /*unpacked*/ class ResFile *fFile;
+	/*+0x28*/  unsigned long fType;
+	/*+0x2c*/  unsigned char fFileName[16]; // 0x10 bytes
+	/*+0x3c*/  unsigned char fName[16]; // 0x10 bytes
+	/*+0x4c*/  unsigned long fTinyName;
 	static /*unpacked*/ struct _cArray::FileAndType fsLoaded[64];
 public:
 	void _cArray(long, long, long, unsigned long, /*unpacked*/ class ResFile*, unsigned long);
@@ -106,8 +106,8 @@ public:
 
 // Type: /*unpacked*/ struct _cArray::FileAndType (forward reference);
 struct _cArray::FileAndType{ // not packed(0x8 bytes) TI: 0x3256
-	/*unpacked*/ class ResFile *file;
-	unsigned long type;
+	/*+0x0*/   /*unpacked*/ class ResFile *file;
+	/*+0x4*/   unsigned long type;
 };
 
 // Type: /*unpacked*/ class ResFile (forward reference);
@@ -128,10 +128,10 @@ public:
 
 // Type: /*unpacked*/ struct _cArray::Header (forward reference);
 struct _cArray::Header{ // not packed(0x8 bytes) TI: 0x32ad
-	short entrySize;
-	short xSize;
-	short ySize;
-	short _pad;
+	/*+0x0*/   short entrySize; // 0x2 bytes
+	/*+0x2*/   short xSize; // 0x2 bytes
+	/*+0x4*/   short ySize; // 0x2 bytes
+	/*+0x6*/   short _pad; // 0x2 bytes
 };
 
 // Type: unsigned char;
@@ -160,14 +160,14 @@ class _cArray{ // not packed(0x50 bytes) TI: 0x3254
 		kArrayNameLength = 15,
 	};
 	struct _cArray::FileAndType{ // not packed(0x8 bytes) TI: 0x3256
-		/*unpacked*/ class ResFile *file;
-		unsigned long type;
+		/*+0x0*/   /*unpacked*/ class ResFile *file;
+		/*+0x4*/   unsigned long type;
 	};
 	struct _cArray::Header{ // not packed(0x8 bytes) TI: 0x32ad
-		short entrySize;
-		short xSize;
-		short ySize;
-		short _pad;
+		/*+0x0*/   short entrySize; // 0x2 bytes
+		/*+0x2*/   short xSize; // 0x2 bytes
+		/*+0x4*/   short ySize; // 0x2 bytes
+		/*+0x6*/   short _pad; // 0x2 bytes
 	};
 public:
 	static /*unpacked*/ class _cArray **sArrayTable;
@@ -183,22 +183,22 @@ private:
 	void SetSizeAndHeaders(long, long);
 	unsigned char * _GetPointer(long, long);
 protected:
-	void * __ptr32 *fData;
+	/*+0x4*/   void * __ptr32 *fData;
 public:
-	void * __ptr32 fDataHandle;
-	unsigned char * fDataPtr;
-	long fySize;
-	long fxSize;
-	long fEntrySize;
+	/*+0x8*/   void * __ptr32 fDataHandle;
+	/*+0xc*/   unsigned char * fDataPtr;
+	/*+0x10*/  long fySize;
+	/*+0x14*/  long fxSize;
+	/*+0x18*/  long fEntrySize;
 protected:
-	unsigned long fDataHandleSize;
-	short fResID;
-	short _pad;
-	/*unpacked*/ class ResFile *fFile;
-	unsigned long fType;
-	unsigned char fFileName[16];
-	unsigned char fName[16];
-	unsigned long fTinyName;
+	/*+0x1c*/  unsigned long fDataHandleSize;
+	/*+0x20*/  short fResID; // 0x2 bytes
+	/*+0x22*/  short _pad; // 0x2 bytes
+	/*+0x24*/  /*unpacked*/ class ResFile *fFile;
+	/*+0x28*/  unsigned long fType;
+	/*+0x2c*/  unsigned char fFileName[16]; // 0x10 bytes
+	/*+0x3c*/  unsigned char fName[16]; // 0x10 bytes
+	/*+0x4c*/  unsigned long fTinyName;
 	static /*unpacked*/ struct _cArray::FileAndType fsLoaded[64];
 public:
 	void _cArray(long, long, long, unsigned long, /*unpacked*/ class ResFile*, unsigned long);
@@ -248,8 +248,8 @@ public:
 
 // Type: /*unpacked*/ struct _cArray::FileAndType;
 struct _cArray::FileAndType{ // not packed(0x8 bytes) TI: 0x3256
-	/*unpacked*/ class ResFile *file;
-	unsigned long type;
+	/*+0x0*/   /*unpacked*/ class ResFile *file;
+	/*+0x4*/   unsigned long type;
 };
 
 // Type: /*unpacked*/ class FlatResFile;
@@ -257,9 +257,9 @@ struct _cArray::FileAndType{ // not packed(0x8 bytes) TI: 0x3256
 class FlatResFile : public FlatFile
 { // not packed(0x11c bytes) TI: 0x330e
 protected:
-	/*unpacked*/ class ResMap *fMap;
-	long fError;
-	short _alignPad;
+	/*+0x110*/ /*unpacked*/ class ResMap *fMap;
+	/*+0x114*/ long fError;
+	/*+0x118*/ short _alignPad; // 0x2 bytes
 public:
 	void FlatResFile();
 	virtual void ~FlatResFile() /* override */;
@@ -300,10 +300,10 @@ class FlatFile{ // not packed(0x110 bytes) TI: 0x32f4
 		kMaxNameLen = 255,
 	};
 protected:
-	/*unpacked*/ class FlatFile *fNext;
-	unsigned char fName[256];
-	long fFileID;
-	/*unpacked*/ struct _iobuf *fFile;
+	/*+0x4*/   /*unpacked*/ class FlatFile *fNext;
+	/*+0x8*/   unsigned char fName[256]; // 0x100 bytes
+	/*+0x108*/ long fFileID;
+	/*+0x10c*/ /*unpacked*/ struct _iobuf *fFile;
 	long UniqueID();
 private:
 	static /*unpacked*/ class FlatFile *sList;

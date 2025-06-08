@@ -21,8 +21,8 @@ protected:
 	// calltype: NearC
 	static int32_t ShouldCharBeShifted(unsigned char);
 public:
-	/*packed*/ class CharList myCharDownList;
-	char chKeyStates[256];
+	/*+0x0*/   /*packed*/ class CharList myCharDownList; // 0x10 bytes
+	/*+0x10*/  char chKeyStates[256]; // 0x100 bytes
 };
 
 // Type: /*packed*/ class Keyboard;
@@ -44,8 +44,8 @@ protected:
 	// calltype: NearC
 	static int32_t ShouldCharBeShifted(unsigned char);
 public:
-	/*packed*/ class CharList myCharDownList;
-	char chKeyStates[256];
+	/*+0x0*/   /*packed*/ class CharList myCharDownList; // 0x10 bytes
+	/*+0x10*/  char chKeyStates[256]; // 0x100 bytes
 	void ~Keyboard(); // synthetic
 };
 
@@ -76,8 +76,8 @@ protected:
 	// calltype: NearC
 	static int32_t ShouldCharBeShifted(unsigned char);
 public:
-	/*packed*/ class CharList myCharDownList;
-	char chKeyStates[256];
+	/*+0x0*/   /*packed*/ class CharList myCharDownList; // 0x10 bytes
+	/*+0x10*/  char chKeyStates[256]; // 0x100 bytes
 	void ~Keyboard(); // synthetic
 };
 

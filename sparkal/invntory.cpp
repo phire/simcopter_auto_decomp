@@ -29,19 +29,19 @@ protected:
 	long GetRowStartPixel(long);
 	void GetEquipmentTextPosition(long, /*packed*/ class MPoint&);
 	void GetTitleAndAddressRects(/*packed*/ class MRect&, /*packed*/ class MRect&, /*packed*/ class MRect&);
-	/*packed*/ class list<HotSpot> myHotSpots;
-	/*unpacked*/ class CBackBuffer *mySecondImage;
-	/*unpacked*/ class CBackBuffer *myCheckmarkImage;
-	/*packed*/ class DigitalSound mySound;
-	/*packed*/ class basic_string<char> sHelicopterNames[9];
-	/*packed*/ class basic_string<char> sEquipmentNames[5];
-	/*packed*/ class basic_string<char> sCheckmarkFileName;
-	/*packed*/ class basic_string<char> sTitle;
-	/*packed*/ class basic_string<char> sAddress1;
-	/*packed*/ class basic_string<char> sAddress2;
-	/*packed*/ class MFont myFont;
-	/*packed*/ class MFont myTitleFont;
-	/*packed*/ class MFont myAddressFont;
+	/*+0x74*/  /*packed*/ class list<HotSpot> myHotSpots; // 0x8 bytes
+	/*+0x7c*/  /*unpacked*/ class CBackBuffer *mySecondImage;
+	/*+0x80*/  /*unpacked*/ class CBackBuffer *myCheckmarkImage;
+	/*+0x84*/  /*packed*/ class DigitalSound mySound; // 0x7a bytes
+	/*+0xfe*/  /*packed*/ class basic_string<char> sHelicopterNames[9]; // 0x48 bytes
+	/*+0x146*/ /*packed*/ class basic_string<char> sEquipmentNames[5]; // 0x28 bytes
+	/*+0x16e*/ /*packed*/ class basic_string<char> sCheckmarkFileName; // 0x8 bytes
+	/*+0x176*/ /*packed*/ class basic_string<char> sTitle; // 0x8 bytes
+	/*+0x17e*/ /*packed*/ class basic_string<char> sAddress1; // 0x8 bytes
+	/*+0x186*/ /*packed*/ class basic_string<char> sAddress2; // 0x8 bytes
+	/*+0x18e*/ /*packed*/ class MFont myFont; // 0x1c bytes
+	/*+0x1aa*/ /*packed*/ class MFont myTitleFont; // 0x1c bytes
+	/*+0x1c6*/ /*packed*/ class MFont myAddressFont; // 0x1c bytes
 };
 
 // Type: int32_t;
@@ -60,10 +60,10 @@ public:
 
 // Type: /*packed*/ struct SparkalColor (forward reference);
 struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
-	unsigned char Blue;
-	unsigned char Green;
-	unsigned char Red;
-	unsigned char Padding;
+	/*+0x0*/   unsigned char Blue; // 0x1 bytes
+	/*+0x1*/   unsigned char Green; // 0x1 bytes
+	/*+0x2*/   unsigned char Red; // 0x1 bytes
+	/*+0x3*/   unsigned char Padding; // 0x1 bytes
 	void SparkalColor(unsigned char, unsigned char, unsigned char);
 	void SparkalColor();
 };
@@ -167,13 +167,13 @@ public:
 
 // Type: /*packed*/ struct tagUserPersonalInfo (forward reference);
 struct tagUserPersonalInfo{ // packed(0x58 bytes) TI: 0x1a2a
-	char szUserName[64];
-	long lMoney;
-	long lHelicopters;
-	long lEquipment;
-	long lTrophies;
-	long lPoints;
-	long lTeargasCount;
+	/*+0x0*/   char szUserName[64]; // 0x40 bytes
+	/*+0x40*/  long lMoney;
+	/*+0x44*/  long lHelicopters;
+	/*+0x48*/  long lEquipment;
+	/*+0x4c*/  long lTrophies;
+	/*+0x50*/  long lPoints;
+	/*+0x54*/  long lTeargasCount;
 };
 
 // Type: /*packed*/ class MRect;
@@ -252,7 +252,7 @@ public:
 class list<HotSpot>::iterator : public bidirectional_iterator<HotSpot,int>
 { // packed(0x4 bytes) TI: 0x1240
 protected:
-	/*packed*/ struct list<HotSpot>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<HotSpot>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -301,18 +301,18 @@ struct bidirectional_iterator<HotSpot,int>{ // packed(0x1 bytes) TI: 0x1f71
 
 // Type: /*packed*/ struct SparkalRect;
 struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
-	long left;
-	long top;
-	long right;
-	long bottom;
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
 	void SparkalRect(long, long, long, long);
 	void SparkalRect();
 };
 
 // Type: /*packed*/ struct SparkalPoint;
 struct SparkalPoint{ // packed(0x8 bytes) TI: 0x1a54
-	long x;
-	long y;
+	/*+0x0*/   long x;
+	/*+0x4*/   long y;
 	void SparkalPoint(long, long);
 	void SparkalPoint();
 };

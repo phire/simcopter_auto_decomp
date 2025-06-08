@@ -4,15 +4,15 @@
 
 // Type: /*packed*/ struct GraphicWindowColorConstants;
 struct GraphicWindowColorConstants{ // packed(0x24 bytes) TI: 0x10f2
-	int32_t nPaletteIndexBlack;
-	int32_t nPaletteIndexDarkGray;
-	int32_t nPaletteIndexLightGray;
-	int32_t nPaletteIndexWhite;
-	int32_t nPaletteIndexRed;
-	int32_t nPaletteIndexBlue;
-	int32_t nPaletteIndexGreen;
-	int32_t nPaletteIndexBlueGreen;
-	int32_t nPaletteIndexTransparent;
+	/*+0x0*/   int32_t nPaletteIndexBlack;
+	/*+0x4*/   int32_t nPaletteIndexDarkGray;
+	/*+0x8*/   int32_t nPaletteIndexLightGray;
+	/*+0xc*/   int32_t nPaletteIndexWhite;
+	/*+0x10*/  int32_t nPaletteIndexRed;
+	/*+0x14*/  int32_t nPaletteIndexBlue;
+	/*+0x18*/  int32_t nPaletteIndexGreen;
+	/*+0x1c*/  int32_t nPaletteIndexBlueGreen;
+	/*+0x20*/  int32_t nPaletteIndexTransparent;
 	void GraphicWindowColorConstants();
 };
 
@@ -23,9 +23,9 @@ struct GraphicWindowColorConstants{ // packed(0x24 bytes) TI: 0x10f2
 class list<GraphicWindow *>{ // packed(0x8 bytes) TI: 0x1ec0
 	using void_pointer = void * __ptr32;
 	struct list<GraphicWindow *>::list_node{ // packed(0xc bytes) TI: 0x1ee6
-		void * __ptr32 next;
-		void * __ptr32 prev;
-		/*unpacked*/ class GraphicWindow *data;
+		/*+0x0*/   void * __ptr32 next;
+		/*+0x4*/   void * __ptr32 prev;
+		/*+0x8*/   /*unpacked*/ class GraphicWindow *data;
 	};
 protected:
 	static /*packed*/ class allocator<list<GraphicWindow *>::list_node> list_node_allocator;
@@ -42,8 +42,8 @@ protected:
 protected:
 	uint32_t buffer_size();
 	struct list<GraphicWindow *>::list_node_buffer{ // packed(0x8 bytes) TI: 0x1ee4
-		void * __ptr32 next_buffer;
-		/*packed*/ struct list<GraphicWindow *>::list_node *buffer;
+		/*+0x0*/   void * __ptr32 next_buffer;
+		/*+0x4*/   /*packed*/ struct list<GraphicWindow *>::list_node *buffer;
 	};
 	using buffer_allocator_type = /*packed*/ class allocator<list<GraphicWindow *>::list_node_buffer>;
 	using buffer_pointer = /*packed*/ struct list<GraphicWindow *>::list_node_buffer*;
@@ -58,12 +58,12 @@ protected:
 	void deallocate_buffers();
 	/*packed*/ struct list<GraphicWindow *>::list_node* get_node();
 	void put_node(/*packed*/ struct list<GraphicWindow *>::list_node*);
-	/*packed*/ struct list<GraphicWindow *>::list_node *node;
-	uint32_t length;
+	/*+0x0*/   /*packed*/ struct list<GraphicWindow *>::list_node *node;
+	/*+0x4*/   uint32_t length;
 	class list<GraphicWindow *>::iterator : public bidirectional_iterator<GraphicWindow *,int>
 	{ // packed(0x4 bytes) TI: 0x1ee2
 	protected:
-		/*packed*/ struct list<GraphicWindow *>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<GraphicWindow *>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -79,7 +79,7 @@ protected:
 	class list<GraphicWindow *>::const_iterator : public bidirectional_iterator<GraphicWindow *,int>
 	{ // packed(0x4 bytes) TI: 0x1ed5
 	protected:
-		/*packed*/ struct list<GraphicWindow *>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<GraphicWindow *>::list_node *node;
 	public:
 		void const_iterator(const /*packed*/ class list<GraphicWindow *>::iterator&);
 		void const_iterator();
@@ -164,24 +164,24 @@ public:
 protected:
 	int32_t DeleteWindowAndRemoveItsTraces(/*unpacked*/ class GraphicWindow*);
 	int32_t DeleteAllWindowsInDeletionList();
-	int32_t nBusyIteratingCount;
-	/*unpacked*/ class GraphicWindow *baseWindow;
-	/*packed*/ class list<GraphicWindow *> listWindowsToDelete;
+	/*+0x4*/   int32_t nBusyIteratingCount;
+	/*+0x8*/   /*unpacked*/ class GraphicWindow *baseWindow;
+	/*+0xc*/   /*packed*/ class list<GraphicWindow *> listWindowsToDelete; // 0x8 bytes
 };
 
 // Type: void ();
 
 // Type: /*packed*/ struct list<GraphicWindow *>::list_node_buffer (forward reference);
 struct list<GraphicWindow *>::list_node_buffer{ // packed(0x8 bytes) TI: 0x1ee4
-	void * __ptr32 next_buffer;
-	/*packed*/ struct list<GraphicWindow *>::list_node *buffer;
+	/*+0x0*/   void * __ptr32 next_buffer;
+	/*+0x4*/   /*packed*/ struct list<GraphicWindow *>::list_node *buffer;
 };
 
 // Type: /*packed*/ struct list<GraphicWindow *>::list_node (forward reference);
 struct list<GraphicWindow *>::list_node{ // packed(0xc bytes) TI: 0x1ee6
-	void * __ptr32 next;
-	void * __ptr32 prev;
-	/*unpacked*/ class GraphicWindow *data;
+	/*+0x0*/   void * __ptr32 next;
+	/*+0x4*/   void * __ptr32 prev;
+	/*+0x8*/   /*unpacked*/ class GraphicWindow *data;
 };
 
 // Type: uint32_t;
@@ -190,15 +190,15 @@ struct list<GraphicWindow *>::list_node{ // packed(0xc bytes) TI: 0x1ee6
 
 // Type: /*packed*/ struct GraphicWindowColorConstants (forward reference);
 struct GraphicWindowColorConstants{ // packed(0x24 bytes) TI: 0x10f2
-	int32_t nPaletteIndexBlack;
-	int32_t nPaletteIndexDarkGray;
-	int32_t nPaletteIndexLightGray;
-	int32_t nPaletteIndexWhite;
-	int32_t nPaletteIndexRed;
-	int32_t nPaletteIndexBlue;
-	int32_t nPaletteIndexGreen;
-	int32_t nPaletteIndexBlueGreen;
-	int32_t nPaletteIndexTransparent;
+	/*+0x0*/   int32_t nPaletteIndexBlack;
+	/*+0x4*/   int32_t nPaletteIndexDarkGray;
+	/*+0x8*/   int32_t nPaletteIndexLightGray;
+	/*+0xc*/   int32_t nPaletteIndexWhite;
+	/*+0x10*/  int32_t nPaletteIndexRed;
+	/*+0x14*/  int32_t nPaletteIndexBlue;
+	/*+0x18*/  int32_t nPaletteIndexGreen;
+	/*+0x1c*/  int32_t nPaletteIndexBlueGreen;
+	/*+0x20*/  int32_t nPaletteIndexTransparent;
 	void GraphicWindowColorConstants();
 };
 
@@ -219,7 +219,7 @@ public:
 class list<GraphicWindow *>::iterator : public bidirectional_iterator<GraphicWindow *,int>
 { // packed(0x4 bytes) TI: 0x1ee2
 protected:
-	/*packed*/ struct list<GraphicWindow *>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<GraphicWindow *>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -380,8 +380,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -485,10 +485,10 @@ public:
 
 // Type: /*packed*/ struct SparkalColor (forward reference);
 struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
-	unsigned char Blue;
-	unsigned char Green;
-	unsigned char Red;
-	unsigned char Padding;
+	/*+0x0*/   unsigned char Blue; // 0x1 bytes
+	/*+0x1*/   unsigned char Green; // 0x1 bytes
+	/*+0x2*/   unsigned char Red; // 0x1 bytes
+	/*+0x3*/   unsigned char Padding; // 0x1 bytes
 	void SparkalColor(unsigned char, unsigned char, unsigned char);
 	void SparkalColor();
 };
@@ -507,16 +507,16 @@ public:
 	virtual int32_t DrawSelf() /* override */;
 	void SetParentBuffer(/*unpacked*/ class CBackBuffer*);
 protected:
-	/*unpacked*/ class CBackBuffer *bufferParent;
+	/*+0x74*/  /*unpacked*/ class CBackBuffer *bufferParent;
 };
 
 // Type: /*packed*/ class list<GraphicWindow *> (forward reference);
 class list<GraphicWindow *>{ // packed(0x8 bytes) TI: 0x1ec0
 	using void_pointer = void * __ptr32;
 	struct list<GraphicWindow *>::list_node{ // packed(0xc bytes) TI: 0x1ee6
-		void * __ptr32 next;
-		void * __ptr32 prev;
-		/*unpacked*/ class GraphicWindow *data;
+		/*+0x0*/   void * __ptr32 next;
+		/*+0x4*/   void * __ptr32 prev;
+		/*+0x8*/   /*unpacked*/ class GraphicWindow *data;
 	};
 protected:
 	static /*packed*/ class allocator<list<GraphicWindow *>::list_node> list_node_allocator;
@@ -533,8 +533,8 @@ protected:
 protected:
 	uint32_t buffer_size();
 	struct list<GraphicWindow *>::list_node_buffer{ // packed(0x8 bytes) TI: 0x1ee4
-		void * __ptr32 next_buffer;
-		/*packed*/ struct list<GraphicWindow *>::list_node *buffer;
+		/*+0x0*/   void * __ptr32 next_buffer;
+		/*+0x4*/   /*packed*/ struct list<GraphicWindow *>::list_node *buffer;
 	};
 	using buffer_allocator_type = /*packed*/ class allocator<list<GraphicWindow *>::list_node_buffer>;
 	using buffer_pointer = /*packed*/ struct list<GraphicWindow *>::list_node_buffer*;
@@ -549,12 +549,12 @@ protected:
 	void deallocate_buffers();
 	/*packed*/ struct list<GraphicWindow *>::list_node* get_node();
 	void put_node(/*packed*/ struct list<GraphicWindow *>::list_node*);
-	/*packed*/ struct list<GraphicWindow *>::list_node *node;
-	uint32_t length;
+	/*+0x0*/   /*packed*/ struct list<GraphicWindow *>::list_node *node;
+	/*+0x4*/   uint32_t length;
 	class list<GraphicWindow *>::iterator : public bidirectional_iterator<GraphicWindow *,int>
 	{ // packed(0x4 bytes) TI: 0x1ee2
 	protected:
-		/*packed*/ struct list<GraphicWindow *>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<GraphicWindow *>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -570,7 +570,7 @@ protected:
 	class list<GraphicWindow *>::const_iterator : public bidirectional_iterator<GraphicWindow *,int>
 	{ // packed(0x4 bytes) TI: 0x1ed5
 	protected:
-		/*packed*/ struct list<GraphicWindow *>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<GraphicWindow *>::list_node *node;
 	public:
 		void const_iterator(const /*packed*/ class list<GraphicWindow *>::iterator&);
 		void const_iterator();
@@ -636,7 +636,7 @@ public:
 class list<GraphicWindow *>::iterator : public bidirectional_iterator<GraphicWindow *,int>
 { // packed(0x4 bytes) TI: 0x1ee2
 protected:
-	/*packed*/ struct list<GraphicWindow *>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<GraphicWindow *>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -654,7 +654,7 @@ public:
 class list<GraphicWindow *>::const_iterator : public bidirectional_iterator<GraphicWindow *,int>
 { // packed(0x4 bytes) TI: 0x1ed5
 protected:
-	/*packed*/ struct list<GraphicWindow *>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<GraphicWindow *>::list_node *node;
 public:
 	void const_iterator(const /*packed*/ class list<GraphicWindow *>::iterator&);
 	void const_iterator();
@@ -673,7 +673,7 @@ public:
 class list<GraphicWindow *>::const_iterator : public bidirectional_iterator<GraphicWindow *,int>
 { // packed(0x4 bytes) TI: 0x1ed5
 protected:
-	/*packed*/ struct list<GraphicWindow *>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<GraphicWindow *>::list_node *node;
 public:
 	void const_iterator(const /*packed*/ class list<GraphicWindow *>::iterator&);
 	void const_iterator();
@@ -694,10 +694,10 @@ struct bidirectional_iterator<GraphicWindow *,int>{ // packed(0x1 bytes) TI: 0x1
 
 // Type: /*packed*/ struct SparkalRect;
 struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
-	long left;
-	long top;
-	long right;
-	long bottom;
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
 	void SparkalRect(long, long, long, long);
 	void SparkalRect();
 };

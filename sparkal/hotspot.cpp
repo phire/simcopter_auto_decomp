@@ -13,13 +13,13 @@ public:
 	/*packed*/ class HotSpot& operator=(const /*packed*/ class HotSpot&);
 	int32_t IsPointInHotspot(long, long);
 	void GetBoundingRect(/*packed*/ class MRect&);
-	long lID;
-	long lType;
+	/*+0x0*/   long lID;
+	/*+0x4*/   long lType;
 protected:
 	int32_t PointInRect(long, long);
 	int32_t PointInCircle(long, long);
 	int32_t PointInPolygon(long, long);
-	/*packed*/ class vector<MPoint> pointArray;
+	/*+0x8*/   /*packed*/ class vector<MPoint> pointArray; // 0xc bytes
 };
 
 // Type: void;
@@ -30,19 +30,19 @@ protected:
 
 // Type: /*packed*/ struct HotSpotResourceRecord (forward reference);
 struct HotSpotResourceRecord{ // packed(0x18 bytes) TI: 0x13c2
-	long lGroup;
-	long lID;
-	long lType;
-	long lCount;
-	long lCoordinates[1][2];
+	/*+0x0*/   long lGroup;
+	/*+0x4*/   long lID;
+	/*+0x8*/   long lType;
+	/*+0xc*/   long lCount;
+	/*+0x10*/  long lCoordinates[1][2]; // 0x8 bytes
 };
 
 // Type: /*packed*/ struct SparkalRect (forward reference);
 struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
-	long left;
-	long top;
-	long right;
-	long bottom;
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
 	void SparkalRect(long, long, long, long);
 	void SparkalRect();
 };
@@ -119,9 +119,9 @@ public:
 class list<HotSpot>{ // packed(0x8 bytes) TI: 0x121e
 	using void_pointer = void * __ptr32;
 	struct list<HotSpot>::list_node{ // packed(0x1c bytes) TI: 0x1244
-		void * __ptr32 next;
-		void * __ptr32 prev;
-		/*packed*/ class HotSpot data;
+		/*+0x0*/   void * __ptr32 next;
+		/*+0x4*/   void * __ptr32 prev;
+		/*+0x8*/   /*packed*/ class HotSpot data; // 0x14 bytes
 	};
 protected:
 	static /*packed*/ class allocator<list<HotSpot>::list_node> list_node_allocator;
@@ -138,8 +138,8 @@ protected:
 protected:
 	uint32_t buffer_size();
 	struct list<HotSpot>::list_node_buffer{ // packed(0x8 bytes) TI: 0x1242
-		void * __ptr32 next_buffer;
-		/*packed*/ struct list<HotSpot>::list_node *buffer;
+		/*+0x0*/   void * __ptr32 next_buffer;
+		/*+0x4*/   /*packed*/ struct list<HotSpot>::list_node *buffer;
 	};
 	using buffer_allocator_type = /*packed*/ class allocator<list<HotSpot>::list_node_buffer>;
 	using buffer_pointer = /*packed*/ struct list<HotSpot>::list_node_buffer*;
@@ -154,12 +154,12 @@ protected:
 	void deallocate_buffers();
 	/*packed*/ struct list<HotSpot>::list_node* get_node();
 	void put_node(/*packed*/ struct list<HotSpot>::list_node*);
-	/*packed*/ struct list<HotSpot>::list_node *node;
-	uint32_t length;
+	/*+0x0*/   /*packed*/ struct list<HotSpot>::list_node *node;
+	/*+0x4*/   uint32_t length;
 	class list<HotSpot>::iterator : public bidirectional_iterator<HotSpot,int>
 	{ // packed(0x4 bytes) TI: 0x1240
 	protected:
-		/*packed*/ struct list<HotSpot>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<HotSpot>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -175,7 +175,7 @@ protected:
 	class list<HotSpot>::const_iterator : public bidirectional_iterator<HotSpot,int>
 	{ // packed(0x4 bytes) TI: 0x1233
 	protected:
-		/*packed*/ struct list<HotSpot>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<HotSpot>::list_node *node;
 	public:
 		void const_iterator(const /*packed*/ class list<HotSpot>::iterator&);
 		void const_iterator();
@@ -241,10 +241,10 @@ public:
 
 // Type: /*packed*/ struct HotSpotResourceFileHeader (forward reference);
 struct HotSpotResourceFileHeader{ // packed(0x10 bytes) TI: 0x211c
-	long lType;
-	long lGroupCount;
-	long lLittleEndian;
-	long lRecordCount;
+	/*+0x0*/   long lType;
+	/*+0x4*/   long lGroupCount;
+	/*+0x8*/   long lLittleEndian;
+	/*+0xc*/   long lRecordCount;
 };
 
 // Type: /*packed*/ class ResourceRCData;
@@ -261,12 +261,12 @@ public:
 	unsigned long DataSize();
 	char * DataReference();
 protected:
-	int32_t nResource;
-	char * chData;
-	int32_t bWeOwnTheData;
-	void * __ptr32 hFoundResource;
-	void * __ptr32 hInstance;
-	void * __ptr32 hResource;
+	/*+0x4*/   int32_t nResource;
+	/*+0x8*/   char * chData;
+	/*+0xc*/   int32_t bWeOwnTheData;
+	/*+0x10*/  void * __ptr32 hFoundResource;
+	/*+0x14*/  void * __ptr32 hInstance;
+	/*+0x18*/  void * __ptr32 hResource;
 };
 
 // Type: /*packed*/ class MPoint (forward reference);
@@ -298,18 +298,18 @@ public:
 
 // Type: /*packed*/ struct SparkalRect;
 struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
-	long left;
-	long top;
-	long right;
-	long bottom;
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
 	void SparkalRect(long, long, long, long);
 	void SparkalRect();
 };
 
 // Type: /*packed*/ struct SparkalPoint;
 struct SparkalPoint{ // packed(0x8 bytes) TI: 0x1a54
-	long x;
-	long y;
+	/*+0x0*/   long x;
+	/*+0x4*/   long y;
 	void SparkalPoint(long, long);
 	void SparkalPoint();
 };

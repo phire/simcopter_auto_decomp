@@ -6,10 +6,10 @@
 
 // Type: /*packed*/ struct SparkalColor;
 struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
-	unsigned char Blue;
-	unsigned char Green;
-	unsigned char Red;
-	unsigned char Padding;
+	/*+0x0*/   unsigned char Blue; // 0x1 bytes
+	/*+0x1*/   unsigned char Green; // 0x1 bytes
+	/*+0x2*/   unsigned char Red; // 0x1 bytes
+	/*+0x3*/   unsigned char Padding; // 0x1 bytes
 	void SparkalColor(unsigned char, unsigned char, unsigned char);
 	void SparkalColor();
 };
@@ -41,24 +41,24 @@ public:
 		virtual void ~CitySelectionFrame(); // vtable+0x0
 		void FillDestinationPoints(/*packed*/ class MPoint*);
 		void FillSourceRects(/*packed*/ class MRect*);
-		int32_t bLeft;
-		int32_t bTop;
-		int32_t bSelected;
-		/*packed*/ class MRect rectFrame[4];
+		/*+0x4*/   int32_t bLeft;
+		/*+0x8*/   int32_t bTop;
+		/*+0xc*/   int32_t bSelected;
+		/*+0x10*/  /*packed*/ class MRect rectFrame[4]; // 0x40 bytes
 	};
 protected:
 	void DrawCitySelection();
 	void GetCoordinatesForCitySelections(/*packed*/ class MPoint[4]*, /*packed*/ class MRect[4]*);
-	long lCurrentCitySelection;
-	/*packed*/ class MRect rectCities[3];
-	long lCities[3];
-	int32_t nCityCount;
-	int32_t bAllowCancel;
-	/*packed*/ class SmackerBackBuffer mySmackerBackBuffers[3];
-	void * __ptr32 myPlatformWindow;
-	/*unpacked*/ class TextWindow *cityNameTextWindow;
-	/*unpacked*/ class TextWindow *cityLevelTextWindow;
-	/*unpacked*/ class CBackBuffer *mySelectionImage;
+	/*+0x74*/  long lCurrentCitySelection;
+	/*+0x78*/  /*packed*/ class MRect rectCities[3]; // 0x30 bytes
+	/*+0xa8*/  long lCities[3]; // 0xc bytes
+	/*+0xb4*/  int32_t nCityCount;
+	/*+0xb8*/  int32_t bAllowCancel;
+	/*+0xbc*/  /*packed*/ class SmackerBackBuffer mySmackerBackBuffers[3]; // 0x774 bytes
+	/*+0x830*/ void * __ptr32 myPlatformWindow;
+	/*+0x834*/ /*unpacked*/ class TextWindow *cityNameTextWindow;
+	/*+0x838*/ /*unpacked*/ class TextWindow *cityLevelTextWindow;
+	/*+0x83c*/ /*unpacked*/ class CBackBuffer *mySelectionImage;
 };
 
 // Type: /*packed*/ class MRect (forward reference);
@@ -154,8 +154,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -280,13 +280,13 @@ public:
 	virtual void SetTextColor(const /*packed*/ struct SparkalColor*, const /*packed*/ struct SparkalColor*); // vtable+0xd8
 	virtual int32_t CanWeRespondToMessage() /* override */;
 protected:
-	int32_t nButtonState;
-	int32_t bEnabled;
-	int32_t nButtonTextHeight;
-	/*packed*/ class MSize sizeTextOffset;
-	int32_t bBusySettingState;
-	/*packed*/ struct SparkalColor colorFont;
-	/*packed*/ struct SparkalColor colorFontHighlighted;
+	/*+0x74*/  int32_t nButtonState;
+	/*+0x78*/  int32_t bEnabled;
+	/*+0x7c*/  int32_t nButtonTextHeight;
+	/*+0x80*/  /*packed*/ class MSize sizeTextOffset; // 0x8 bytes
+	/*+0x88*/  int32_t bBusySettingState;
+	/*+0x8c*/  /*packed*/ struct SparkalColor colorFont;
+	/*+0x90*/  /*packed*/ struct SparkalColor colorFontHighlighted;
 };
 
 // Type: unsigned long;
@@ -325,10 +325,10 @@ public:
 	virtual void ~CitySelectionFrame(); // vtable+0x0
 	void FillDestinationPoints(/*packed*/ class MPoint*);
 	void FillSourceRects(/*packed*/ class MRect*);
-	int32_t bLeft;
-	int32_t bTop;
-	int32_t bSelected;
-	/*packed*/ class MRect rectFrame[4];
+	/*+0x4*/   int32_t bLeft;
+	/*+0x8*/   int32_t bTop;
+	/*+0xc*/   int32_t bSelected;
+	/*+0x10*/  /*packed*/ class MRect rectFrame[4]; // 0x40 bytes
 };
 
 // Type: /*packed*/ class CareerWindow::CitySelectionFrame (forward reference);
@@ -338,28 +338,28 @@ public:
 	virtual void ~CitySelectionFrame(); // vtable+0x0
 	void FillDestinationPoints(/*packed*/ class MPoint*);
 	void FillSourceRects(/*packed*/ class MRect*);
-	int32_t bLeft;
-	int32_t bTop;
-	int32_t bSelected;
-	/*packed*/ class MRect rectFrame[4];
+	/*+0x4*/   int32_t bLeft;
+	/*+0x8*/   int32_t bTop;
+	/*+0xc*/   int32_t bSelected;
+	/*+0x10*/  /*packed*/ class MRect rectFrame[4]; // 0x40 bytes
 };
 
 // Type: uint32_t;
 
 // Type: /*packed*/ struct SparkalRect;
 struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
-	long left;
-	long top;
-	long right;
-	long bottom;
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
 	void SparkalRect(long, long, long, long);
 	void SparkalRect();
 };
 
 // Type: /*packed*/ struct SparkalPoint;
 struct SparkalPoint{ // packed(0x8 bytes) TI: 0x1a54
-	long x;
-	long y;
+	/*+0x0*/   long x;
+	/*+0x4*/   long y;
 	void SparkalPoint(long, long);
 	void SparkalPoint();
 };

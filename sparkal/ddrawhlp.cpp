@@ -4,52 +4,52 @@
 
 // Type: /*packed*/ struct IDirectDraw (forward reference);
 struct IDirectDraw{ // packed(0x4 bytes) TI: 0x275c
-	/*packed*/ struct IDirectDrawVtbl *lpVtbl;
+	/*+0x0*/   /*packed*/ struct IDirectDrawVtbl *lpVtbl;
 };
 
 // Type: /*packed*/ struct IDirectDrawPalette (forward reference);
 struct IDirectDrawPalette{ // packed(0x4 bytes) TI: 0x2760
-	/*packed*/ struct IDirectDrawPaletteVtbl *lpVtbl;
+	/*+0x0*/   /*packed*/ struct IDirectDrawPaletteVtbl *lpVtbl;
 };
 
 // Type: /*packed*/ struct _DDCAPS;
 struct _DDCAPS{ // packed(0xac bytes) TI: 0x1a7b
-	unsigned long dwSize;
-	unsigned long dwCaps;
-	unsigned long dwCaps2;
-	unsigned long dwCKeyCaps;
-	unsigned long dwFXCaps;
-	unsigned long dwFXAlphaCaps;
-	unsigned long dwPalCaps;
-	unsigned long dwSVCaps;
-	unsigned long dwAlphaBltConstBitDepths;
-	unsigned long dwAlphaBltPixelBitDepths;
-	unsigned long dwAlphaBltSurfaceBitDepths;
-	unsigned long dwAlphaOverlayConstBitDepths;
-	unsigned long dwAlphaOverlayPixelBitDepths;
-	unsigned long dwAlphaOverlaySurfaceBitDepths;
-	unsigned long dwZBufferBitDepths;
-	unsigned long dwVidMemTotal;
-	unsigned long dwVidMemFree;
-	unsigned long dwMaxVisibleOverlays;
-	unsigned long dwCurrVisibleOverlays;
-	unsigned long dwNumFourCCCodes;
-	unsigned long dwAlignBoundarySrc;
-	unsigned long dwAlignSizeSrc;
-	unsigned long dwAlignBoundaryDest;
-	unsigned long dwAlignSizeDest;
-	unsigned long dwAlignStrideAlign;
-	unsigned long dwRops[8];
-	/*packed*/ struct _DDSCAPS ddsCaps;
-	unsigned long dwMinOverlayStretch;
-	unsigned long dwMaxOverlayStretch;
-	unsigned long dwMinLiveVideoStretch;
-	unsigned long dwMaxLiveVideoStretch;
-	unsigned long dwMinHwCodecStretch;
-	unsigned long dwMaxHwCodecStretch;
-	unsigned long dwReserved1;
-	unsigned long dwReserved2;
-	unsigned long dwReserved3;
+	/*+0x0*/   unsigned long dwSize;
+	/*+0x4*/   unsigned long dwCaps;
+	/*+0x8*/   unsigned long dwCaps2;
+	/*+0xc*/   unsigned long dwCKeyCaps;
+	/*+0x10*/  unsigned long dwFXCaps;
+	/*+0x14*/  unsigned long dwFXAlphaCaps;
+	/*+0x18*/  unsigned long dwPalCaps;
+	/*+0x1c*/  unsigned long dwSVCaps;
+	/*+0x20*/  unsigned long dwAlphaBltConstBitDepths;
+	/*+0x24*/  unsigned long dwAlphaBltPixelBitDepths;
+	/*+0x28*/  unsigned long dwAlphaBltSurfaceBitDepths;
+	/*+0x2c*/  unsigned long dwAlphaOverlayConstBitDepths;
+	/*+0x30*/  unsigned long dwAlphaOverlayPixelBitDepths;
+	/*+0x34*/  unsigned long dwAlphaOverlaySurfaceBitDepths;
+	/*+0x38*/  unsigned long dwZBufferBitDepths;
+	/*+0x3c*/  unsigned long dwVidMemTotal;
+	/*+0x40*/  unsigned long dwVidMemFree;
+	/*+0x44*/  unsigned long dwMaxVisibleOverlays;
+	/*+0x48*/  unsigned long dwCurrVisibleOverlays;
+	/*+0x4c*/  unsigned long dwNumFourCCCodes;
+	/*+0x50*/  unsigned long dwAlignBoundarySrc;
+	/*+0x54*/  unsigned long dwAlignSizeSrc;
+	/*+0x58*/  unsigned long dwAlignBoundaryDest;
+	/*+0x5c*/  unsigned long dwAlignSizeDest;
+	/*+0x60*/  unsigned long dwAlignStrideAlign;
+	/*+0x64*/  unsigned long dwRops[8]; // 0x20 bytes
+	/*+0x84*/  /*packed*/ struct _DDSCAPS ddsCaps;
+	/*+0x88*/  unsigned long dwMinOverlayStretch;
+	/*+0x8c*/  unsigned long dwMaxOverlayStretch;
+	/*+0x90*/  unsigned long dwMinLiveVideoStretch;
+	/*+0x94*/  unsigned long dwMaxLiveVideoStretch;
+	/*+0x98*/  unsigned long dwMinHwCodecStretch;
+	/*+0x9c*/  unsigned long dwMaxHwCodecStretch;
+	/*+0xa0*/  unsigned long dwReserved1;
+	/*+0xa4*/  unsigned long dwReserved2;
+	/*+0xa8*/  unsigned long dwReserved3;
 };
 
 // Type: long;
@@ -58,7 +58,7 @@ struct _DDCAPS{ // packed(0xac bytes) TI: 0x1a7b
 
 // Type: /*packed*/ struct IDirectDrawSurface (forward reference);
 struct IDirectDrawSurface{ // packed(0x4 bytes) TI: 0x2764
-	/*packed*/ struct IDirectDrawSurfaceVtbl *lpVtbl;
+	/*+0x0*/   /*packed*/ struct IDirectDrawSurfaceVtbl *lpVtbl;
 };
 
 // Type: unsigned long;
@@ -67,36 +67,36 @@ struct IDirectDrawSurface{ // packed(0x4 bytes) TI: 0x2764
 
 // Type: /*packed*/ struct _DDSURFACEDESC;
 struct _DDSURFACEDESC{ // packed(0x6c bytes) TI: 0x1737
-	unsigned long dwSize;
-	unsigned long dwFlags;
-	unsigned long dwHeight;
-	unsigned long dwWidth;
-	long lPitch;
-	unsigned long dwBackBufferCount;
-	unsigned long dwZBufferBitDepth;
-	unsigned long dwAlphaBitDepth;
-	unsigned long dwReserved;
-	void * __ptr32 lpSurface;
-	/*packed*/ struct _DDCOLORKEY ddckCKDestOverlay;
-	/*packed*/ struct _DDCOLORKEY ddckCKDestBlt;
-	/*packed*/ struct _DDCOLORKEY ddckCKSrcOverlay;
-	/*packed*/ struct _DDCOLORKEY ddckCKSrcBlt;
-	/*packed*/ struct _DDPIXELFORMAT ddpfPixelFormat;
-	/*packed*/ struct _DDSCAPS ddsCaps;
+	/*+0x0*/   unsigned long dwSize;
+	/*+0x4*/   unsigned long dwFlags;
+	/*+0x8*/   unsigned long dwHeight;
+	/*+0xc*/   unsigned long dwWidth;
+	/*+0x10*/  long lPitch;
+	/*+0x14*/  unsigned long dwBackBufferCount;
+	/*+0x18*/  unsigned long dwZBufferBitDepth;
+	/*+0x1c*/  unsigned long dwAlphaBitDepth;
+	/*+0x20*/  unsigned long dwReserved;
+	/*+0x24*/  void * __ptr32 lpSurface;
+	/*+0x28*/  /*packed*/ struct _DDCOLORKEY ddckCKDestOverlay; // 0x8 bytes
+	/*+0x30*/  /*packed*/ struct _DDCOLORKEY ddckCKDestBlt; // 0x8 bytes
+	/*+0x38*/  /*packed*/ struct _DDCOLORKEY ddckCKSrcOverlay; // 0x8 bytes
+	/*+0x40*/  /*packed*/ struct _DDCOLORKEY ddckCKSrcBlt; // 0x8 bytes
+	/*+0x48*/  /*packed*/ struct _DDPIXELFORMAT ddpfPixelFormat; // 0x20 bytes
+	/*+0x68*/  /*packed*/ struct _DDSCAPS ddsCaps;
 };
 
 // Type: char *;
 
 // Type: /*packed*/ struct ReadPalFile::__unnamed;
 struct ReadPalFile::__unnamed{ // packed(0x418 bytes) TI: 0x2bdc
-	unsigned long dwRiff;
-	unsigned long dwFileSize;
-	unsigned long dwPal;
-	unsigned long dwData;
-	unsigned long dwDataSize;
-	unsigned short palVersion;
-	unsigned short palNumEntries;
-	/*packed*/ struct tagPALETTEENTRY ape[256];
+	/*+0x0*/   unsigned long dwRiff;
+	/*+0x4*/   unsigned long dwFileSize;
+	/*+0x8*/   unsigned long dwPal;
+	/*+0xc*/   unsigned long dwData;
+	/*+0x10*/  unsigned long dwDataSize;
+	/*+0x14*/  unsigned short palVersion; // 0x2 bytes
+	/*+0x16*/  unsigned short palNumEntries; // 0x2 bytes
+	/*+0x18*/  /*packed*/ struct tagPALETTEENTRY ape[256]; // 0x400 bytes
 };
 
 // Type: int32_t;

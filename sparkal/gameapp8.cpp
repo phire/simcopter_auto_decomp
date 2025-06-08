@@ -4,15 +4,15 @@
 
 // Type: /*packed*/ struct list<DirectoryEntry>::list_node_buffer (forward reference);
 struct list<DirectoryEntry>::list_node_buffer{ // packed(0x8 bytes) TI: 0x2390
-	void * __ptr32 next_buffer;
-	/*packed*/ struct list<DirectoryEntry>::list_node *buffer;
+	/*+0x0*/   void * __ptr32 next_buffer;
+	/*+0x4*/   /*packed*/ struct list<DirectoryEntry>::list_node *buffer;
 };
 
 // Type: /*packed*/ struct list<DirectoryEntry>::list_node (forward reference);
 struct list<DirectoryEntry>::list_node{ // packed(0x18 bytes) TI: 0x2392
-	void * __ptr32 next;
-	void * __ptr32 prev;
-	/*packed*/ class DirectoryEntry data;
+	/*+0x0*/   void * __ptr32 next;
+	/*+0x4*/   void * __ptr32 prev;
+	/*+0x8*/   /*packed*/ class DirectoryEntry data; // 0x10 bytes
 };
 
 // Type: uint32_t;
@@ -28,9 +28,9 @@ struct list<DirectoryEntry>::list_node{ // packed(0x18 bytes) TI: 0x2392
 
 // Type: /*packed*/ struct tagUserCityInfo;
 struct tagUserCityInfo{ // packed(0x80 bytes) TI: 0x2b80
-	/*packed*/ struct tagCitySettings citySettings;
-	long bUserHasSavedGame;
-	/*packed*/ struct tagUserPersonalInfo userPersonalInfo;
+	/*+0x0*/   /*packed*/ struct tagCitySettings citySettings; // 0x24 bytes
+	/*+0x24*/  long bUserHasSavedGame;
+	/*+0x28*/  /*packed*/ struct tagUserPersonalInfo userPersonalInfo; // 0x58 bytes
 };
 
 // Type: unsigned long;
@@ -39,23 +39,23 @@ struct tagUserCityInfo{ // packed(0x80 bytes) TI: 0x2b80
 
 // Type: /*packed*/ struct tagCitySettings;
 struct tagCitySettings{ // packed(0x24 bytes) TI: 0x26eb
-	long lDifficulty;
-	long lMissionFrequencyFire;
-	long lMissionFrequencyCrime;
-	long lMissionFrequencyRescue;
-	long lMissionFrequencyRiot;
-	long lMissionFrequencyTraffic;
-	long lMissionFrequencyMedEvac;
-	long lMissionFrequencyTransport;
-	long lDaytime;
+	/*+0x0*/   long lDifficulty;
+	/*+0x4*/   long lMissionFrequencyFire;
+	/*+0x8*/   long lMissionFrequencyCrime;
+	/*+0xc*/   long lMissionFrequencyRescue;
+	/*+0x10*/  long lMissionFrequencyRiot;
+	/*+0x14*/  long lMissionFrequencyTraffic;
+	/*+0x18*/  long lMissionFrequencyMedEvac;
+	/*+0x1c*/  long lMissionFrequencyTransport;
+	/*+0x20*/  long lDaytime;
 };
 
 // Type: /*packed*/ struct tagCurrentCareerCityInfo;
 struct tagCurrentCareerCityInfo{ // packed(0x6c bytes) TI: 0x26e5
-	long lCurrentCities[3];
-	long lCurrentCityIndex;
-	long bUserHasSavedGame;
-	/*packed*/ struct tagUserPersonalInfo userPersonalInfo;
+	/*+0x0*/   long lCurrentCities[3]; // 0xc bytes
+	/*+0xc*/   long lCurrentCityIndex;
+	/*+0x10*/  long bUserHasSavedGame;
+	/*+0x14*/  /*packed*/ struct tagUserPersonalInfo userPersonalInfo; // 0x58 bytes
 };
 
 // Type: /*packed*/ class MIFF;
@@ -93,23 +93,23 @@ public:
 	virtual long WriteDataRecord(long, char *, long); // vtable+0x64
 	virtual long WriteFileHeader(long, long, long); // vtable+0x68
 	virtual long WriteEnd(); // vtable+0x6c
-	long lPresentRecordStart;
-	long lPresentRecordType;
-	long lPresentRecordLength;
-	long lPresentRecordIndex;
-	long lReadWriteMode;
-	long bFileEndWritten;
-	long bFileAppearsCorrupt;
-	/*packed*/ struct MIFFHeader myMIFFHeader;
+	/*+0x110*/ long lPresentRecordStart;
+	/*+0x114*/ long lPresentRecordType;
+	/*+0x118*/ long lPresentRecordLength;
+	/*+0x11c*/ long lPresentRecordIndex;
+	/*+0x120*/ long lReadWriteMode;
+	/*+0x124*/ long bFileEndWritten;
+	/*+0x128*/ long bFileAppearsCorrupt;
+	/*+0x12c*/ /*packed*/ struct MIFFHeader myMIFFHeader; // 0x1c bytes
 };
 
 // Type: /*packed*/ class list<DirectoryEntry> (forward reference);
 class list<DirectoryEntry>{ // packed(0x8 bytes) TI: 0x236c
 	using void_pointer = void * __ptr32;
 	struct list<DirectoryEntry>::list_node{ // packed(0x18 bytes) TI: 0x2392
-		void * __ptr32 next;
-		void * __ptr32 prev;
-		/*packed*/ class DirectoryEntry data;
+		/*+0x0*/   void * __ptr32 next;
+		/*+0x4*/   void * __ptr32 prev;
+		/*+0x8*/   /*packed*/ class DirectoryEntry data; // 0x10 bytes
 	};
 protected:
 	static /*packed*/ class allocator<list<DirectoryEntry>::list_node> list_node_allocator;
@@ -126,8 +126,8 @@ protected:
 protected:
 	uint32_t buffer_size();
 	struct list<DirectoryEntry>::list_node_buffer{ // packed(0x8 bytes) TI: 0x2390
-		void * __ptr32 next_buffer;
-		/*packed*/ struct list<DirectoryEntry>::list_node *buffer;
+		/*+0x0*/   void * __ptr32 next_buffer;
+		/*+0x4*/   /*packed*/ struct list<DirectoryEntry>::list_node *buffer;
 	};
 	using buffer_allocator_type = /*packed*/ class allocator<list<DirectoryEntry>::list_node_buffer>;
 	using buffer_pointer = /*packed*/ struct list<DirectoryEntry>::list_node_buffer*;
@@ -142,12 +142,12 @@ protected:
 	void deallocate_buffers();
 	/*packed*/ struct list<DirectoryEntry>::list_node* get_node();
 	void put_node(/*packed*/ struct list<DirectoryEntry>::list_node*);
-	/*packed*/ struct list<DirectoryEntry>::list_node *node;
-	uint32_t length;
+	/*+0x0*/   /*packed*/ struct list<DirectoryEntry>::list_node *node;
+	/*+0x4*/   uint32_t length;
 	class list<DirectoryEntry>::iterator : public bidirectional_iterator<DirectoryEntry,int>
 	{ // packed(0x4 bytes) TI: 0x238e
 	protected:
-		/*packed*/ struct list<DirectoryEntry>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<DirectoryEntry>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -163,7 +163,7 @@ protected:
 	class list<DirectoryEntry>::const_iterator : public bidirectional_iterator<DirectoryEntry,int>
 	{ // packed(0x4 bytes) TI: 0x2381
 	protected:
-		/*packed*/ struct list<DirectoryEntry>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<DirectoryEntry>::list_node *node;
 	public:
 		void const_iterator(const /*packed*/ class list<DirectoryEntry>::iterator&);
 		void const_iterator();
@@ -291,10 +291,10 @@ public:
 	long SetPath(char *);
 	long FileCreate(char *, int32_t);
 	long FileExists(char *);
-	char szFilePath[260];
-	int32_t Handle;
+	/*+0x4*/   char szFilePath[260]; // 0x104 bytes
+	/*+0x108*/ int32_t Handle;
 private:
-	int32_t ShouldClose;
+	/*+0x10c*/ int32_t ShouldClose;
 };
 
 

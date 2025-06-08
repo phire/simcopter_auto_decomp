@@ -5,8 +5,8 @@
 // Type: /*packed*/ class NotificationItem (forward reference);
 class NotificationItem{ // packed(0x8 bytes) TI: 0x2557
 public:
-	long lPreferenceType;
-	/*packed*/ class NotificationSink *myNotificationSink;
+	/*+0x0*/   long lPreferenceType;
+	/*+0x4*/   /*packed*/ class NotificationSink *myNotificationSink;
 	void NotificationItem(long, /*packed*/ class NotificationSink*);
 	void NotificationItem(const /*packed*/ class NotificationItem&);
 	void NotificationItem();

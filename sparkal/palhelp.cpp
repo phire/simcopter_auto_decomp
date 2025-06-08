@@ -6,9 +6,9 @@
 // VTABLE: COPTER_D 0x005910f8
 class SparkalPalette{ // packed(0x10 bytes) TI: 0x47c7
 public:
-	/*packed*/ struct SparkalColor *pColors;
-	long lColors;
-	int32_t bOwnColors;
+	/*+0x4*/   /*packed*/ struct SparkalColor *pColors;
+	/*+0x8*/   long lColors;
+	/*+0xc*/   int32_t bOwnColors;
 	void SparkalPalette(/*packed*/ struct SparkalColor*, int32_t, unsigned long);
 	void SparkalPalette();
 	virtual void ~SparkalPalette(); // vtable+0x0
@@ -27,10 +27,10 @@ public:
 
 // Type: /*packed*/ struct SparkalColor (forward reference);
 struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
-	unsigned char Blue;
-	unsigned char Green;
-	unsigned char Red;
-	unsigned char Padding;
+	/*+0x0*/   unsigned char Blue; // 0x1 bytes
+	/*+0x1*/   unsigned char Green; // 0x1 bytes
+	/*+0x2*/   unsigned char Red; // 0x1 bytes
+	/*+0x3*/   unsigned char Padding; // 0x1 bytes
 	void SparkalColor(unsigned char, unsigned char, unsigned char);
 	void SparkalColor();
 };
@@ -63,34 +63,34 @@ public:
 	int32_t IsTimerRunning();
 	unsigned long GetTickCount();
 protected:
-	enum MTimer::TimerResolution nTimerResolution;
-	unsigned long lStartTime;
-	unsigned long lTotalElapsedTime;
+	/*+0x0*/   enum MTimer::TimerResolution nTimerResolution;
+	/*+0x4*/   unsigned long lStartTime;
+	/*+0x8*/   unsigned long lTotalElapsedTime;
 	unsigned long GetWindowsTimerFrequency();
-	unsigned long lFrequency;
+	/*+0xc*/   unsigned long lFrequency;
 };
 
 // Type: /*packed*/ struct tagPALETTEENTRY (forward reference);
 struct tagPALETTEENTRY{ // packed(0x4 bytes) TI: 0x1be6
-	unsigned char peRed;
-	unsigned char peGreen;
-	unsigned char peBlue;
-	unsigned char peFlags;
+	/*+0x0*/   unsigned char peRed; // 0x1 bytes
+	/*+0x1*/   unsigned char peGreen; // 0x1 bytes
+	/*+0x2*/   unsigned char peBlue; // 0x1 bytes
+	/*+0x3*/   unsigned char peFlags; // 0x1 bytes
 };
 
 // Type: /*packed*/ struct SparkalColor;
 struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
-	unsigned char Blue;
-	unsigned char Green;
-	unsigned char Red;
-	unsigned char Padding;
+	/*+0x0*/   unsigned char Blue; // 0x1 bytes
+	/*+0x1*/   unsigned char Green; // 0x1 bytes
+	/*+0x2*/   unsigned char Red; // 0x1 bytes
+	/*+0x3*/   unsigned char Padding; // 0x1 bytes
 	void SparkalColor(unsigned char, unsigned char, unsigned char);
 	void SparkalColor();
 };
 
 // Type: /*packed*/ struct SparkalPalette::FadeToPalette::TempPalette (forward reference);
 struct SparkalPalette::FadeToPalette::TempPalette{ // packed(0x400 bytes) TI: 0x47cb
-	/*packed*/ struct tagPALETTEENTRY palEntries[256];
+	/*+0x0*/   /*packed*/ struct tagPALETTEENTRY palEntries[256]; // 0x400 bytes
 };
 
 // Type: /*packed*/ class CopterSparkalPalette (forward reference);
@@ -109,9 +109,9 @@ public:
 
 // Type: /*packed*/ struct ClearWindowsSystemPalette::__unnamed;
 struct ClearWindowsSystemPalette::__unnamed{ // packed(0x404 bytes) TI: 0x2314
-	unsigned short Version;
-	unsigned short NumberOfEntries;
-	/*packed*/ struct tagPALETTEENTRY aEntries[256];
+	/*+0x0*/   unsigned short Version; // 0x2 bytes
+	/*+0x2*/   unsigned short NumberOfEntries; // 0x2 bytes
+	/*+0x4*/   /*packed*/ struct tagPALETTEENTRY aEntries[256]; // 0x400 bytes
 };
 
 // Type: uint32_t;
@@ -120,9 +120,9 @@ struct ClearWindowsSystemPalette::__unnamed{ // packed(0x404 bytes) TI: 0x2314
 // VTABLE: COPTER_D 0x005910f8
 class SparkalPalette{ // packed(0x10 bytes) TI: 0x47c7
 public:
-	/*packed*/ struct SparkalColor *pColors;
-	long lColors;
-	int32_t bOwnColors;
+	/*+0x4*/   /*packed*/ struct SparkalColor *pColors;
+	/*+0x8*/   long lColors;
+	/*+0xc*/   int32_t bOwnColors;
 	void SparkalPalette(/*packed*/ struct SparkalColor*, int32_t, unsigned long);
 	void SparkalPalette();
 	virtual void ~SparkalPalette(); // vtable+0x0

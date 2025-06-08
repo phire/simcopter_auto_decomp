@@ -30,15 +30,15 @@ public:
 	int32_t GetJoystickCount();
 	int32_t GetVirtualJoystickIndex(int32_t);
 protected:
-	int32_t nJoystickCount;
-	char bJoystickPresent[16];
-	int32_t nJoystickIndexAssociation[16];
-	long lNormalizedMinimum;
-	long lNormalizedMaximum;
-	long lNormalizedCenter;
-	long lJoystickThreshold;
-	/*packed*/ struct tagJOYCAPSA joystickCaps[16];
-	/*packed*/ struct joyinfoex_tag joystickInfoCache[16];
+	/*+0x0*/   int32_t nJoystickCount;
+	/*+0x4*/   char bJoystickPresent[16]; // 0x10 bytes
+	/*+0x14*/  int32_t nJoystickIndexAssociation[16]; // 0x40 bytes
+	/*+0x54*/  long lNormalizedMinimum;
+	/*+0x58*/  long lNormalizedMaximum;
+	/*+0x5c*/  long lNormalizedCenter;
+	/*+0x60*/  long lJoystickThreshold;
+	/*+0x64*/  /*packed*/ struct tagJOYCAPSA joystickCaps[16]; // 0x1940 bytes
+	/*+0x19a4*/ /*packed*/ struct joyinfoex_tag joystickInfoCache[16]; // 0x340 bytes
 };
 
 // Type: void ();
@@ -71,25 +71,25 @@ public:
 	int32_t GetJoystickCount();
 	int32_t GetVirtualJoystickIndex(int32_t);
 protected:
-	int32_t nJoystickCount;
-	char bJoystickPresent[16];
-	int32_t nJoystickIndexAssociation[16];
-	long lNormalizedMinimum;
-	long lNormalizedMaximum;
-	long lNormalizedCenter;
-	long lJoystickThreshold;
-	/*packed*/ struct tagJOYCAPSA joystickCaps[16];
-	/*packed*/ struct joyinfoex_tag joystickInfoCache[16];
+	/*+0x0*/   int32_t nJoystickCount;
+	/*+0x4*/   char bJoystickPresent[16]; // 0x10 bytes
+	/*+0x14*/  int32_t nJoystickIndexAssociation[16]; // 0x40 bytes
+	/*+0x54*/  long lNormalizedMinimum;
+	/*+0x58*/  long lNormalizedMaximum;
+	/*+0x5c*/  long lNormalizedCenter;
+	/*+0x60*/  long lJoystickThreshold;
+	/*+0x64*/  /*packed*/ struct tagJOYCAPSA joystickCaps[16]; // 0x1940 bytes
+	/*+0x19a4*/ /*packed*/ struct joyinfoex_tag joystickInfoCache[16]; // 0x340 bytes
 };
 
 // Type: int32_t;
 
 // Type: /*packed*/ struct joyinfo_tag;
 struct joyinfo_tag{ // packed(0x10 bytes) TI: 0x21fd
-	uint32_t wXpos;
-	uint32_t wYpos;
-	uint32_t wZpos;
-	uint32_t wButtons;
+	/*+0x0*/   uint32_t wXpos;
+	/*+0x4*/   uint32_t wYpos;
+	/*+0x8*/   uint32_t wZpos;
+	/*+0xc*/   uint32_t wButtons;
 };
 
 // Type: uint32_t;
@@ -100,36 +100,36 @@ struct joyinfo_tag{ // packed(0x10 bytes) TI: 0x21fd
 
 // Type: /*packed*/ struct joyinfoex_tag;
 struct joyinfoex_tag{ // packed(0x34 bytes) TI: 0x2204
-	unsigned long dwSize;
-	unsigned long dwFlags;
-	unsigned long dwXpos;
-	unsigned long dwYpos;
-	unsigned long dwZpos;
-	unsigned long dwRpos;
-	unsigned long dwUpos;
-	unsigned long dwVpos;
-	unsigned long dwButtons;
-	unsigned long dwButtonNumber;
-	unsigned long dwPOV;
-	unsigned long dwReserved1;
-	unsigned long dwReserved2;
+	/*+0x0*/   unsigned long dwSize;
+	/*+0x4*/   unsigned long dwFlags;
+	/*+0x8*/   unsigned long dwXpos;
+	/*+0xc*/   unsigned long dwYpos;
+	/*+0x10*/  unsigned long dwZpos;
+	/*+0x14*/  unsigned long dwRpos;
+	/*+0x18*/  unsigned long dwUpos;
+	/*+0x1c*/  unsigned long dwVpos;
+	/*+0x20*/  unsigned long dwButtons;
+	/*+0x24*/  unsigned long dwButtonNumber;
+	/*+0x28*/  unsigned long dwPOV;
+	/*+0x2c*/  unsigned long dwReserved1;
+	/*+0x30*/  unsigned long dwReserved2;
 };
 
 // Type: /*packed*/ struct joyinfoex_tag (forward reference);
 struct joyinfoex_tag{ // packed(0x34 bytes) TI: 0x2204
-	unsigned long dwSize;
-	unsigned long dwFlags;
-	unsigned long dwXpos;
-	unsigned long dwYpos;
-	unsigned long dwZpos;
-	unsigned long dwRpos;
-	unsigned long dwUpos;
-	unsigned long dwVpos;
-	unsigned long dwButtons;
-	unsigned long dwButtonNumber;
-	unsigned long dwPOV;
-	unsigned long dwReserved1;
-	unsigned long dwReserved2;
+	/*+0x0*/   unsigned long dwSize;
+	/*+0x4*/   unsigned long dwFlags;
+	/*+0x8*/   unsigned long dwXpos;
+	/*+0xc*/   unsigned long dwYpos;
+	/*+0x10*/  unsigned long dwZpos;
+	/*+0x14*/  unsigned long dwRpos;
+	/*+0x18*/  unsigned long dwUpos;
+	/*+0x1c*/  unsigned long dwVpos;
+	/*+0x20*/  unsigned long dwButtons;
+	/*+0x24*/  unsigned long dwButtonNumber;
+	/*+0x28*/  unsigned long dwPOV;
+	/*+0x2c*/  unsigned long dwReserved1;
+	/*+0x30*/  unsigned long dwReserved2;
 };
 
 // Type: unsigned long *;

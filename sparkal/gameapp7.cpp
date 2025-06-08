@@ -35,22 +35,22 @@ public:
 	// calltype: NearC
 	static long GetCPUSpeed();
 protected:
-	unsigned char * lpTransBlock;
-	void * __ptr32 lpFVData;
+	/*+0x4*/   unsigned char * lpTransBlock;
+	/*+0x8*/   void * __ptr32 lpFVData;
 };
 
 // Type: int32_t;
 
 // Type: /*packed*/ struct _MEMORYSTATUS;
 struct _MEMORYSTATUS{ // packed(0x20 bytes) TI: 0x241e
-	unsigned long dwLength;
-	unsigned long dwMemoryLoad;
-	unsigned long dwTotalPhys;
-	unsigned long dwAvailPhys;
-	unsigned long dwTotalPageFile;
-	unsigned long dwAvailPageFile;
-	unsigned long dwTotalVirtual;
-	unsigned long dwAvailVirtual;
+	/*+0x0*/   unsigned long dwLength;
+	/*+0x4*/   unsigned long dwMemoryLoad;
+	/*+0x8*/   unsigned long dwTotalPhys;
+	/*+0xc*/   unsigned long dwAvailPhys;
+	/*+0x10*/  unsigned long dwTotalPageFile;
+	/*+0x14*/  unsigned long dwAvailPageFile;
+	/*+0x18*/  unsigned long dwTotalVirtual;
+	/*+0x1c*/  unsigned long dwAvailVirtual;
 };
 
 // Type: /*packed*/ class basic_string<char>;
@@ -58,8 +58,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -163,8 +163,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -265,10 +265,10 @@ public:
 
 // Type: /*packed*/ struct SparkalColor;
 struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
-	unsigned char Blue;
-	unsigned char Green;
-	unsigned char Red;
-	unsigned char Padding;
+	/*+0x0*/   unsigned char Blue; // 0x1 bytes
+	/*+0x1*/   unsigned char Green; // 0x1 bytes
+	/*+0x2*/   unsigned char Red; // 0x1 bytes
+	/*+0x3*/   unsigned char Padding; // 0x1 bytes
 	void SparkalColor(unsigned char, unsigned char, unsigned char);
 	void SparkalColor();
 };
@@ -288,15 +288,15 @@ public:
 protected:
 	virtual int32_t ConvertTypeToStringID(long); // vtable+0xcc
 	virtual void DrawTextOntoBox(); // vtable+0xd0
-	long lMessageID;
-	/*packed*/ class basic_string<char> sMessage;
-	/*packed*/ class basic_string<char> sButtonImageFileName;
-	/*packed*/ class basic_string<char> sAnimationImageFileName;
-	long lType;
-	int32_t bSelfDeleting;
-	/*packed*/ struct SparkalColor colorFont;
-	/*packed*/ struct SparkalColor colorButtonFont;
-	/*packed*/ struct SparkalColor colorButtonFontHighlighted;
+	/*+0x74*/  long lMessageID;
+	/*+0x78*/  /*packed*/ class basic_string<char> sMessage; // 0x8 bytes
+	/*+0x80*/  /*packed*/ class basic_string<char> sButtonImageFileName; // 0x8 bytes
+	/*+0x88*/  /*packed*/ class basic_string<char> sAnimationImageFileName; // 0x8 bytes
+	/*+0x90*/  long lType;
+	/*+0x94*/  int32_t bSelfDeleting;
+	/*+0x98*/  /*packed*/ struct SparkalColor colorFont;
+	/*+0x9c*/  /*packed*/ struct SparkalColor colorButtonFont;
+	/*+0xa0*/  /*packed*/ struct SparkalColor colorButtonFontHighlighted;
 };
 
 // Type: /*packed*/ class MessageBoxWindowEdit (forward reference);
@@ -310,15 +310,15 @@ public:
 	virtual void GetEditText(char *, unsigned long); // vtable+0xd4
 	virtual void GetEditText(/*packed*/ class basic_string<char>&); // vtable+0xd8
 protected:
-	/*packed*/ class BoneheadTextEditWindow *myTextEditWindow;
+	/*+0xa4*/  /*packed*/ class BoneheadTextEditWindow *myTextEditWindow;
 };
 
 // Type: uint32_t;
 
 // Type: /*packed*/ struct Point2d (forward reference);
 struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
-	int32_t x;
-	int32_t y;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
 };
 
 // Type: /*packed*/ class DigitalSound (forward reference);
@@ -326,14 +326,14 @@ struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
 class DigitalSound : public Sound
 { // packed(0x7a bytes) TI: 0x45d4
 protected:
-	int32_t nStreamingType;
-	int32_t nCompletionEstimationTimerSet;
+	/*+0x34*/  int32_t nStreamingType;
+	/*+0x38*/  int32_t nCompletionEstimationTimerSet;
 	static /*packed*/ struct IDirectSound *lpDirectSound;
-	uint32_t cbSize;
-	/*packed*/ struct tWAVEFORMATEX waveFormatEx;
-	/*packed*/ struct IDirectSoundBuffer *lpSound[8];
-	/*packed*/ struct _STREAMBUFINFO *lpStreamBufferInfo;
-	unsigned long dwDesiredBufferDescFlags;
+	/*+0x3c*/  uint32_t cbSize;
+	/*+0x40*/  /*packed*/ struct tWAVEFORMATEX waveFormatEx; // 0x12 bytes
+	/*+0x52*/  /*packed*/ struct IDirectSoundBuffer *lpSound[8]; // 0x20 bytes
+	/*+0x72*/  /*packed*/ struct _STREAMBUFINFO *lpStreamBufferInfo;
+	/*+0x76*/  unsigned long dwDesiredBufferDescFlags;
 public:
 	void DigitalSound(long);
 	void DigitalSound(const /*packed*/ class basic_string<char>&, int32_t);
@@ -380,21 +380,21 @@ protected:
 
 // Type: /*packed*/ struct UserMenuWindowDescription;
 struct UserMenuWindowDescription{ // packed(0x54 bytes) TI: 0x101b
-	/*packed*/ class basic_string<char> sImageFileName;
-	int32_t nTransparentIndex;
-	/*packed*/ class MRect rectPosition;
-	long lMenuStringResourceIndex;
-	long lMenuStringResourceCount;
-	long lSelectionBase;
-	/*packed*/ struct SparkalColor colorFont;
-	/*packed*/ struct SparkalColor colorFontHighlighted;
-	/*packed*/ class MPoint ptPositionFirstItem;
-	int32_t nSizeItemFont;
-	int32_t nLineHeight;
-	long lTitleStringResourceIndex;
-	int32_t bTitleCentered;
-	/*packed*/ class MPoint ptTitlePosition;
-	int32_t nSizeTitleFont;
+	/*+0x0*/   /*packed*/ class basic_string<char> sImageFileName; // 0x8 bytes
+	/*+0x8*/   int32_t nTransparentIndex;
+	/*+0xc*/   /*packed*/ class MRect rectPosition; // 0x10 bytes
+	/*+0x1c*/  long lMenuStringResourceIndex;
+	/*+0x20*/  long lMenuStringResourceCount;
+	/*+0x24*/  long lSelectionBase;
+	/*+0x28*/  /*packed*/ struct SparkalColor colorFont;
+	/*+0x2c*/  /*packed*/ struct SparkalColor colorFontHighlighted;
+	/*+0x30*/  /*packed*/ class MPoint ptPositionFirstItem; // 0x8 bytes
+	/*+0x38*/  int32_t nSizeItemFont;
+	/*+0x3c*/  int32_t nLineHeight;
+	/*+0x40*/  long lTitleStringResourceIndex;
+	/*+0x44*/  int32_t bTitleCentered;
+	/*+0x48*/  /*packed*/ class MPoint ptTitlePosition; // 0x8 bytes
+	/*+0x50*/  int32_t nSizeTitleFont;
 };
 
 // Type: /*packed*/ class UserMenuWindow (forward reference);
@@ -421,10 +421,10 @@ protected:
 	virtual void DrawSelectionIndicators(); // vtable+0xdc
 	virtual int32_t DoCursorHitTest(int32_t&, long, long); // vtable+0xe0
 	virtual int32_t GetPositionOfNthItem(int32_t, /*packed*/ class MPoint&); // vtable+0xe4
-	/*packed*/ struct UserMenuWindowDescription myUserMenuWindowDescription;
-	/*packed*/ class vector<TextWindow *> myTextWindowPtrArray;
-	int32_t nCurrentSelection;
-	/*packed*/ class DigitalSound soundSelectionChange;
+	/*+0x74*/  /*packed*/ struct UserMenuWindowDescription myUserMenuWindowDescription; // 0x54 bytes
+	/*+0xc8*/  /*packed*/ class vector<TextWindow *> myTextWindowPtrArray; // 0xc bytes
+	/*+0xd4*/  int32_t nCurrentSelection;
+	/*+0xd8*/  /*packed*/ class DigitalSound soundSelectionChange; // 0x7a bytes
 };
 
 // Type: /*packed*/ class UserInputWindow (forward reference);
@@ -462,17 +462,17 @@ protected:
 	void AddJoystickTwinCommand(long, long, long);
 	void RemoveJoystickTwinCommand(long, long, long);
 	int32_t DoesTwinCommandExistForShortcut(long, long, long);
-	/*packed*/ class JoystickWindow *myJoystickWindow;
-	/*packed*/ class KeyboardWindow *myKeyboardWindow;
-	/*packed*/ class ListBoxWindow *myInputDeviceListBoxWindow;
-	/*packed*/ class ListBoxWindow *myCommandListBoxWindow;
-	/*packed*/ class TextWindow *myStatusTextWindow;
-	/*packed*/ class list<StringIDAssociation> myInputDeviceStringIDAssociationList;
-	/*packed*/ class list<StringIDAssociation> myCommandStringIDAssociationList;
-	/*packed*/ class list<Shortcut> myShortcutListNonConfigurable;
-	/*packed*/ class list<Shortcut> myShortcutListConfigurable;
-	int32_t bCommandsHaveChanged;
-	int32_t bInitializing;
+	/*+0x74*/  /*packed*/ class JoystickWindow *myJoystickWindow;
+	/*+0x78*/  /*packed*/ class KeyboardWindow *myKeyboardWindow;
+	/*+0x7c*/  /*packed*/ class ListBoxWindow *myInputDeviceListBoxWindow;
+	/*+0x80*/  /*packed*/ class ListBoxWindow *myCommandListBoxWindow;
+	/*+0x84*/  /*packed*/ class TextWindow *myStatusTextWindow;
+	/*+0x88*/  /*packed*/ class list<StringIDAssociation> myInputDeviceStringIDAssociationList; // 0x8 bytes
+	/*+0x90*/  /*packed*/ class list<StringIDAssociation> myCommandStringIDAssociationList; // 0x8 bytes
+	/*+0x98*/  /*packed*/ class list<Shortcut> myShortcutListNonConfigurable; // 0x8 bytes
+	/*+0xa0*/  /*packed*/ class list<Shortcut> myShortcutListConfigurable; // 0x8 bytes
+	/*+0xa8*/  int32_t bCommandsHaveChanged;
+	/*+0xac*/  int32_t bInitializing;
 };
 
 // Type: /*packed*/ class RenderSettingsWindow (forward reference);
@@ -490,24 +490,24 @@ public:
 	void GetCurrentSettings(long&, long&, long&, long&, long&);
 	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32) /* override */;
 	virtual long DoKeyDown(long, char) /* override */;
-	long bShowBuildingTextures;
-	long bShowGroundTextures;
-	long bShowSkyAndClouds;
-	long lQuadPixelType;
-	long lFogCloseness;
+	/*+0x74*/  long bShowBuildingTextures;
+	/*+0x78*/  long bShowGroundTextures;
+	/*+0x7c*/  long bShowSkyAndClouds;
+	/*+0x80*/  long lQuadPixelType;
+	/*+0x84*/  long lFogCloseness;
 protected:
 	void SetControlsBasedOnCurrentSettings();
 	void DrawPreviewBasedOnCurrentSettings();
 	void GetPreviewFileNames(/*packed*/ class basic_string<char>&, /*packed*/ class basic_string<char>&, /*packed*/ class basic_string<char>&);
-	/*packed*/ class CheckBoxWindow *myBuildingTexturesCheckBoxWindow;
-	/*packed*/ class CheckBoxWindow *myObjectTexturesCheckBoxWindow;
-	/*packed*/ class CheckBoxWindow *mySkyDisplayCheckBoxWindow;
-	/*unpacked*/ class ButtonGroup *myDisplayResolutionButtonGroup;
-	/*packed*/ class SliderWindow *myFogSliderWindow;
-	/*packed*/ class CBackBuffer *mySkyImage;
-	/*packed*/ class CBackBuffer *myBuildingImage;
-	/*packed*/ class MTimer mySkyTimer;
-	long lSkyImagePanX;
+	/*+0x88*/  /*packed*/ class CheckBoxWindow *myBuildingTexturesCheckBoxWindow;
+	/*+0x8c*/  /*packed*/ class CheckBoxWindow *myObjectTexturesCheckBoxWindow;
+	/*+0x90*/  /*packed*/ class CheckBoxWindow *mySkyDisplayCheckBoxWindow;
+	/*+0x94*/  /*unpacked*/ class ButtonGroup *myDisplayResolutionButtonGroup;
+	/*+0x98*/  /*packed*/ class SliderWindow *myFogSliderWindow;
+	/*+0x9c*/  /*packed*/ class CBackBuffer *mySkyImage;
+	/*+0xa0*/  /*packed*/ class CBackBuffer *myBuildingImage;
+	/*+0xa4*/  /*packed*/ class MTimer mySkyTimer; // 0x10 bytes
+	/*+0xb4*/  long lSkyImagePanX;
 };
 
 // Type: /*packed*/ class SoundSettingsWindow (forward reference);
@@ -528,30 +528,30 @@ public:
 	// calltype: NearC
 	static long ConvertSliderValueToSoundValue(long);
 protected:
-	/*packed*/ class SliderWindow *myMasterVolumeSliderWindow;
-	/*packed*/ class SliderWindow *myRadioStationSliderWindow;
-	/*packed*/ class SliderWindow *myRadioVolumeSliderWindow;
-	/*packed*/ class CheckBoxWindow *myDJCheckBoxWindow;
-	/*packed*/ class CheckBoxWindow *myCommercialCheckBoxWindow;
+	/*+0x74*/  /*packed*/ class SliderWindow *myMasterVolumeSliderWindow;
+	/*+0x78*/  /*packed*/ class SliderWindow *myRadioStationSliderWindow;
+	/*+0x7c*/  /*packed*/ class SliderWindow *myRadioVolumeSliderWindow;
+	/*+0x80*/  /*packed*/ class CheckBoxWindow *myDJCheckBoxWindow;
+	/*+0x84*/  /*packed*/ class CheckBoxWindow *myCommercialCheckBoxWindow;
 };
 
 // Type: /*packed*/ struct RadioPreferences;
 struct RadioPreferences{ // packed(0x1c bytes) TI: 0x2a39
-	long lVolume;
-	int32_t bPreferToBeOn;
-	long lCurrentStation;
-	int32_t bOptionDJ;
-	int32_t bOptionCommercials;
-	int32_t bAutoMute;
-	int32_t bOptionPlayEnglishIfDefaultLanguageNotFound;
+	/*+0x0*/   long lVolume;
+	/*+0x4*/   int32_t bPreferToBeOn;
+	/*+0x8*/   long lCurrentStation;
+	/*+0xc*/   int32_t bOptionDJ;
+	/*+0x10*/  int32_t bOptionCommercials;
+	/*+0x14*/  int32_t bAutoMute;
+	/*+0x18*/  int32_t bOptionPlayEnglishIfDefaultLanguageNotFound;
 };
 
 // Type: /*packed*/ struct SoundPreferences;
 struct SoundPreferences{ // packed(0x10 bytes) TI: 0x2845
-	long lMasterVolume;
-	long lDispatchVolume;
-	long lSoundEffectsVolume;
-	long lVehicleVolume;
+	/*+0x0*/   long lMasterVolume;
+	/*+0x4*/   long lDispatchVolume;
+	/*+0x8*/   long lSoundEffectsVolume;
+	/*+0xc*/   long lVehicleVolume;
 };
 
 // Type: /*packed*/ class CitySettingsWindow (forward reference);
@@ -566,7 +566,7 @@ public:
 	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32) /* override */;
 	virtual long DoKeyDown(long, char) /* override */;
 protected:
-	/*packed*/ class SliderWindow *mySliderWindows[8];
+	/*+0x74*/  /*packed*/ class SliderWindow *mySliderWindows[8]; // 0x20 bytes
 };
 
 // Type: /*packed*/ class ControlDisplayWindow (forward reference);
@@ -581,9 +581,9 @@ public:
 protected:
 	void GetCommandString(/*packed*/ class basic_string<char>&, long);
 	void AppendKeysString(/*packed*/ class basic_string<char>&, long, long, int32_t);
-	int32_t bInitializing;
-	/*packed*/ class ListBoxWindow *myCommandListBoxWindow;
-	/*packed*/ class ListBoxWindow *myKeysListBoxWindow;
+	/*+0x74*/  int32_t bInitializing;
+	/*+0x78*/  /*packed*/ class ListBoxWindow *myCommandListBoxWindow;
+	/*+0x7c*/  /*packed*/ class ListBoxWindow *myKeysListBoxWindow;
 };
 
 // Type: /*packed*/ class CheckupWindow (forward reference);
@@ -603,8 +603,8 @@ public:
 	static int32_t ShouldWeDisplayCheckupWindow();
 	int32_t CanUserAffordCurrentSliderValues();
 protected:
-	/*packed*/ class SliderWindow *mySliderWindows[3];
-	/*packed*/ class TextWindow *myTextWindows[5];
+	/*+0x74*/  /*packed*/ class SliderWindow *mySliderWindows[3]; // 0xc bytes
+	/*+0x80*/  /*packed*/ class TextWindow *myTextWindows[5]; // 0x14 bytes
 };
 
 // Type: /*unpacked*/ class GraphicWindow (forward reference);
@@ -618,7 +618,7 @@ class Sound{ // packed(0x34 bytes) TI: 0x4335
 		nSoundSourceTypeFile = 1,
 	};
 public:
-	enum Sound::SoundSourceType nSoundSourceType;
+	/*+0x4*/   enum Sound::SoundSourceType nSoundSourceType;
 	enum SoundDuplicateType {
 		nSoundDuplicateDefault = 0,
 		nSoundDuplicateInterrupt = 1,
@@ -626,16 +626,16 @@ public:
 		nSoundDuplicateOverlap = 3,
 	};
 public:
-	enum Sound::SoundDuplicateType nSoundDuplicateType;
-	long lID;
-	long lResID;
-	/*packed*/ class basic_string<char> sSoundFile;
-	long bLooping;
-	long bStreaming;
-	long lVolume;
-	void (*soundCompletionFunction)(long);
-	long lSoundCompletionData;
-	int32_t bUnloadBeforeNextPlay;
+	/*+0x8*/   enum Sound::SoundDuplicateType nSoundDuplicateType;
+	/*+0xc*/   long lID;
+	/*+0x10*/  long lResID;
+	/*+0x14*/  /*packed*/ class basic_string<char> sSoundFile; // 0x8 bytes
+	/*+0x1c*/  long bLooping;
+	/*+0x20*/  long bStreaming;
+	/*+0x24*/  long lVolume;
+	/*+0x28*/  void (*soundCompletionFunction)(long);
+	/*+0x2c*/  long lSoundCompletionData;
+	/*+0x30*/  int32_t bUnloadBeforeNextPlay;
 	void Sound();
 	virtual void ~Sound(); // vtable+0x0
 	/*packed*/ class Sound& operator=(const /*packed*/ class Sound&);
@@ -669,15 +669,15 @@ public:
 protected:
 	virtual int32_t ConvertTypeToStringID(long); // vtable+0xcc
 	virtual void DrawTextOntoBox(); // vtable+0xd0
-	long lMessageID;
-	/*packed*/ class basic_string<char> sMessage;
-	/*packed*/ class basic_string<char> sButtonImageFileName;
-	/*packed*/ class basic_string<char> sAnimationImageFileName;
-	long lType;
-	int32_t bSelfDeleting;
-	/*packed*/ struct SparkalColor colorFont;
-	/*packed*/ struct SparkalColor colorButtonFont;
-	/*packed*/ struct SparkalColor colorButtonFontHighlighted;
+	/*+0x74*/  long lMessageID;
+	/*+0x78*/  /*packed*/ class basic_string<char> sMessage; // 0x8 bytes
+	/*+0x80*/  /*packed*/ class basic_string<char> sButtonImageFileName; // 0x8 bytes
+	/*+0x88*/  /*packed*/ class basic_string<char> sAnimationImageFileName; // 0x8 bytes
+	/*+0x90*/  long lType;
+	/*+0x94*/  int32_t bSelfDeleting;
+	/*+0x98*/  /*packed*/ struct SparkalColor colorFont;
+	/*+0x9c*/  /*packed*/ struct SparkalColor colorButtonFont;
+	/*+0xa0*/  /*packed*/ struct SparkalColor colorButtonFontHighlighted;
 };
 
 

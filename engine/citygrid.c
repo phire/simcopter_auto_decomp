@@ -12,25 +12,25 @@
 
 // Type: /*packed*/ struct MapVert (forward reference);
 struct MapVert{ // packed(0x8 bytes) TI: 0x2e89
-	int32_t x;
-	int32_t y;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
 };
 
 // Type: /*packed*/ struct GridFaceHdrType (forward reference);
 struct GridFaceHdrType{ // packed(0x18 bytes) TI: 0x2ed8
-	long TextureId;
-	long PlotterId;
-	long Pcount;
-	long Ccount;
-	void * __ptr32 Ppointer;
-	void * __ptr32 Cpointer;
+	/*+0x0*/   long TextureId;
+	/*+0x4*/   long PlotterId;
+	/*+0x8*/   long Pcount;
+	/*+0xc*/   long Ccount;
+	/*+0x10*/  void * __ptr32 Ppointer;
+	/*+0x14*/  void * __ptr32 Cpointer;
 };
 
 // Type: /*packed*/ struct Point3d (forward reference);
 struct Point3d{ // packed(0xc bytes) TI: 0x18b0
-	int32_t x;
-	int32_t y;
-	int32_t z;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
+	/*+0x8*/   int32_t z;
 };
 
 // Type: long *;

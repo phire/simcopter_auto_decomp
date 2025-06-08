@@ -44,13 +44,13 @@ public:
 	void EnableSound();
 	void DisableSound();
 	long IsSoundEnabled();
-	long bSoundEnabled;
+	/*+0x4*/   long bSoundEnabled;
 	static unsigned long dwMaxWaveFormatExSize;
 protected:
-	/*packed*/ class DigitalSound *primarySound;
-	/*packed*/ struct IDirectSoundBuffer *lpPrimarySound;
-	/*packed*/ struct IDirectSound *lpDirectSound;
-	/*packed*/ struct _DSCAPS dsCapabilities;
+	/*+0x8*/   /*packed*/ class DigitalSound *primarySound;
+	/*+0xc*/   /*packed*/ struct IDirectSoundBuffer *lpPrimarySound;
+	/*+0x10*/  /*packed*/ struct IDirectSound *lpDirectSound;
+	/*+0x14*/  /*packed*/ struct _DSCAPS dsCapabilities; // 0x60 bytes
 };
 
 // Type: void;
@@ -67,7 +67,7 @@ protected:
 // VTABLE: COPTER_D 0x0058f448
 class SoundManager{ // packed(0x204 bytes) TI: 0x1997
 public:
-	/*packed*/ class Sound *sound[128];
+	/*+0x4*/   /*packed*/ class Sound *sound[128]; // 0x200 bytes
 	void AddSound(/*packed*/ class Sound*, int32_t);
 	void AddDigitalSound(const /*packed*/ class basic_string<char>&, int32_t, int32_t);
 	void AddDigitalSound(long, int32_t);
@@ -88,7 +88,7 @@ class Sound{ // packed(0x34 bytes) TI: 0x4335
 		nSoundSourceTypeFile = 1,
 	};
 public:
-	enum Sound::SoundSourceType nSoundSourceType;
+	/*+0x4*/   enum Sound::SoundSourceType nSoundSourceType;
 	enum SoundDuplicateType {
 		nSoundDuplicateDefault = 0,
 		nSoundDuplicateInterrupt = 1,
@@ -96,16 +96,16 @@ public:
 		nSoundDuplicateOverlap = 3,
 	};
 public:
-	enum Sound::SoundDuplicateType nSoundDuplicateType;
-	long lID;
-	long lResID;
-	/*packed*/ class basic_string<char> sSoundFile;
-	long bLooping;
-	long bStreaming;
-	long lVolume;
-	void (*soundCompletionFunction)(long);
-	long lSoundCompletionData;
-	int32_t bUnloadBeforeNextPlay;
+	/*+0x8*/   enum Sound::SoundDuplicateType nSoundDuplicateType;
+	/*+0xc*/   long lID;
+	/*+0x10*/  long lResID;
+	/*+0x14*/  /*packed*/ class basic_string<char> sSoundFile; // 0x8 bytes
+	/*+0x1c*/  long bLooping;
+	/*+0x20*/  long bStreaming;
+	/*+0x24*/  long lVolume;
+	/*+0x28*/  void (*soundCompletionFunction)(long);
+	/*+0x2c*/  long lSoundCompletionData;
+	/*+0x30*/  int32_t bUnloadBeforeNextPlay;
 	void Sound();
 	virtual void ~Sound(); // vtable+0x0
 	/*packed*/ class Sound& operator=(const /*packed*/ class Sound&);
@@ -129,14 +129,14 @@ public:
 class DigitalSound : public Sound
 { // packed(0x7a bytes) TI: 0x45d4
 protected:
-	int32_t nStreamingType;
-	int32_t nCompletionEstimationTimerSet;
+	/*+0x34*/  int32_t nStreamingType;
+	/*+0x38*/  int32_t nCompletionEstimationTimerSet;
 	static /*packed*/ struct IDirectSound *lpDirectSound;
-	uint32_t cbSize;
-	/*packed*/ struct tWAVEFORMATEX waveFormatEx;
-	/*packed*/ struct IDirectSoundBuffer *lpSound[8];
-	/*packed*/ struct _STREAMBUFINFO *lpStreamBufferInfo;
-	unsigned long dwDesiredBufferDescFlags;
+	/*+0x3c*/  uint32_t cbSize;
+	/*+0x40*/  /*packed*/ struct tWAVEFORMATEX waveFormatEx; // 0x12 bytes
+	/*+0x52*/  /*packed*/ struct IDirectSoundBuffer *lpSound[8]; // 0x20 bytes
+	/*+0x72*/  /*packed*/ struct _STREAMBUFINFO *lpStreamBufferInfo;
+	/*+0x76*/  unsigned long dwDesiredBufferDescFlags;
 public:
 	void DigitalSound(long);
 	void DigitalSound(const /*packed*/ class basic_string<char>&, int32_t);
@@ -186,8 +186,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -292,29 +292,29 @@ public:
 
 // Type: /*packed*/ struct _MMCKINFO;
 struct _MMCKINFO{ // packed(0x14 bytes) TI: 0x1da7
-	unsigned long ckid;
-	unsigned long cksize;
-	unsigned long fccType;
-	unsigned long dwDataOffset;
-	unsigned long dwFlags;
+	/*+0x0*/   unsigned long ckid;
+	/*+0x4*/   unsigned long cksize;
+	/*+0x8*/   unsigned long fccType;
+	/*+0xc*/   unsigned long dwDataOffset;
+	/*+0x10*/  unsigned long dwFlags;
 };
 
 // Type: /*packed*/ struct _DSBUFFERDESC;
 struct _DSBUFFERDESC{ // packed(0x14 bytes) TI: 0x1315
-	unsigned long dwSize;
-	unsigned long dwFlags;
-	unsigned long dwBufferBytes;
-	unsigned long dwReserved;
-	/*packed*/ struct tWAVEFORMATEX *lpwfxFormat;
+	/*+0x0*/   unsigned long dwSize;
+	/*+0x4*/   unsigned long dwFlags;
+	/*+0x8*/   unsigned long dwBufferBytes;
+	/*+0xc*/   unsigned long dwReserved;
+	/*+0x10*/  /*packed*/ struct tWAVEFORMATEX *lpwfxFormat;
 };
 
 // Type: /*packed*/ struct _DSBUFFERDESC (forward reference);
 struct _DSBUFFERDESC{ // packed(0x14 bytes) TI: 0x1315
-	unsigned long dwSize;
-	unsigned long dwFlags;
-	unsigned long dwBufferBytes;
-	unsigned long dwReserved;
-	/*packed*/ struct tWAVEFORMATEX *lpwfxFormat;
+	/*+0x0*/   unsigned long dwSize;
+	/*+0x4*/   unsigned long dwFlags;
+	/*+0x8*/   unsigned long dwBufferBytes;
+	/*+0xc*/   unsigned long dwReserved;
+	/*+0x10*/  /*packed*/ struct tWAVEFORMATEX *lpwfxFormat;
 };
 
 // Type: /*packed*/ struct IDirectSoundBuffer (forward reference);
@@ -366,19 +366,19 @@ struct IDirectSoundBuffer : public IUnknown
 
 // Type: /*packed*/ struct _OFSTRUCT;
 struct _OFSTRUCT{ // packed(0x88 bytes) TI: 0x21e5
-	unsigned char cBytes;
-	unsigned char fFixedDisk;
-	unsigned short nErrCode;
-	unsigned short Reserved1;
-	unsigned short Reserved2;
-	char szPathName[128];
+	/*+0x0*/   unsigned char cBytes; // 0x1 bytes
+	/*+0x1*/   unsigned char fFixedDisk; // 0x1 bytes
+	/*+0x2*/   unsigned short nErrCode; // 0x2 bytes
+	/*+0x4*/   unsigned short Reserved1; // 0x2 bytes
+	/*+0x6*/   unsigned short Reserved2; // 0x2 bytes
+	/*+0x8*/   char szPathName[128]; // 0x80 bytes
 };
 
 // Type: void (long);
 
 // Type: /*packed*/ struct IUnknown;
 struct IUnknown{ // packed(0x4 bytes) TI: 0x27c0
-	/*packed*/ struct IUnknownVtbl *lpVtbl;
+	/*+0x0*/   /*packed*/ struct IUnknownVtbl *lpVtbl;
 };
 
 // Type: /*packed*/ class Sound;
@@ -389,7 +389,7 @@ class Sound{ // packed(0x34 bytes) TI: 0x4335
 		nSoundSourceTypeFile = 1,
 	};
 public:
-	enum Sound::SoundSourceType nSoundSourceType;
+	/*+0x4*/   enum Sound::SoundSourceType nSoundSourceType;
 	enum SoundDuplicateType {
 		nSoundDuplicateDefault = 0,
 		nSoundDuplicateInterrupt = 1,
@@ -397,16 +397,16 @@ public:
 		nSoundDuplicateOverlap = 3,
 	};
 public:
-	enum Sound::SoundDuplicateType nSoundDuplicateType;
-	long lID;
-	long lResID;
-	/*packed*/ class basic_string<char> sSoundFile;
-	long bLooping;
-	long bStreaming;
-	long lVolume;
-	void (*soundCompletionFunction)(long);
-	long lSoundCompletionData;
-	int32_t bUnloadBeforeNextPlay;
+	/*+0x8*/   enum Sound::SoundDuplicateType nSoundDuplicateType;
+	/*+0xc*/   long lID;
+	/*+0x10*/  long lResID;
+	/*+0x14*/  /*packed*/ class basic_string<char> sSoundFile; // 0x8 bytes
+	/*+0x1c*/  long bLooping;
+	/*+0x20*/  long bStreaming;
+	/*+0x24*/  long lVolume;
+	/*+0x28*/  void (*soundCompletionFunction)(long);
+	/*+0x2c*/  long lSoundCompletionData;
+	/*+0x30*/  int32_t bUnloadBeforeNextPlay;
 	void Sound();
 	virtual void ~Sound(); // vtable+0x0
 	/*packed*/ class Sound& operator=(const /*packed*/ class Sound&);

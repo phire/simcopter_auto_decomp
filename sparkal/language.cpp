@@ -56,8 +56,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -165,8 +165,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -269,8 +269,8 @@ public:
 
 // Type: /*packed*/ struct TypefaceTestStruct;
 struct TypefaceTestStruct{ // packed(0x8 bytes) TI: 0x2b62
-	char * szLanguageTypefaceName;
-	long bExists;
+	/*+0x0*/   char * szLanguageTypefaceName;
+	/*+0x4*/   long bExists;
 };
 
 // Type: void * __ptr32;
@@ -281,45 +281,45 @@ struct TypefaceTestStruct{ // packed(0x8 bytes) TI: 0x2b62
 
 // Type: /*packed*/ struct tagENUMLOGFONTA (forward reference);
 struct tagENUMLOGFONTA{ // packed(0x9c bytes) TI: 0x2b71
-	/*packed*/ struct tagLOGFONTA elfLogFont;
-	unsigned char elfFullName[64];
-	unsigned char elfStyle[32];
+	/*+0x0*/   /*packed*/ struct tagLOGFONTA elfLogFont; // 0x3c bytes
+	/*+0x3c*/  unsigned char elfFullName[64]; // 0x40 bytes
+	/*+0x7c*/  unsigned char elfStyle[32]; // 0x20 bytes
 };
 
 // Type: /*packed*/ struct tagNEWTEXTMETRICA (forward reference);
 struct tagNEWTEXTMETRICA{ // packed(0x48 bytes) TI: 0x2b73
-	long tmHeight;
-	long tmAscent;
-	long tmDescent;
-	long tmInternalLeading;
-	long tmExternalLeading;
-	long tmAveCharWidth;
-	long tmMaxCharWidth;
-	long tmWeight;
-	long tmOverhang;
-	long tmDigitizedAspectX;
-	long tmDigitizedAspectY;
-	unsigned char tmFirstChar;
-	unsigned char tmLastChar;
-	unsigned char tmDefaultChar;
-	unsigned char tmBreakChar;
-	unsigned char tmItalic;
-	unsigned char tmUnderlined;
-	unsigned char tmStruckOut;
-	unsigned char tmPitchAndFamily;
-	unsigned char tmCharSet;
-	unsigned long ntmFlags;
-	uint32_t ntmSizeEM;
-	uint32_t ntmCellHeight;
-	uint32_t ntmAvgWidth;
+	/*+0x0*/   long tmHeight;
+	/*+0x4*/   long tmAscent;
+	/*+0x8*/   long tmDescent;
+	/*+0xc*/   long tmInternalLeading;
+	/*+0x10*/  long tmExternalLeading;
+	/*+0x14*/  long tmAveCharWidth;
+	/*+0x18*/  long tmMaxCharWidth;
+	/*+0x1c*/  long tmWeight;
+	/*+0x20*/  long tmOverhang;
+	/*+0x24*/  long tmDigitizedAspectX;
+	/*+0x28*/  long tmDigitizedAspectY;
+	/*+0x2c*/  unsigned char tmFirstChar; // 0x1 bytes
+	/*+0x2d*/  unsigned char tmLastChar; // 0x1 bytes
+	/*+0x2e*/  unsigned char tmDefaultChar; // 0x1 bytes
+	/*+0x2f*/  unsigned char tmBreakChar; // 0x1 bytes
+	/*+0x30*/  unsigned char tmItalic; // 0x1 bytes
+	/*+0x31*/  unsigned char tmUnderlined; // 0x1 bytes
+	/*+0x32*/  unsigned char tmStruckOut; // 0x1 bytes
+	/*+0x33*/  unsigned char tmPitchAndFamily; // 0x1 bytes
+	/*+0x34*/  unsigned char tmCharSet; // 0x1 bytes
+	/*+0x38*/  unsigned long ntmFlags;
+	/*+0x3c*/  uint32_t ntmSizeEM;
+	/*+0x40*/  uint32_t ntmCellHeight;
+	/*+0x44*/  uint32_t ntmAvgWidth;
 };
 
 // Type: long;
 
 // Type: /*packed*/ struct TypefaceTestStruct (forward reference);
 struct TypefaceTestStruct{ // packed(0x8 bytes) TI: 0x2b62
-	char * szLanguageTypefaceName;
-	long bExists;
+	/*+0x0*/   char * szLanguageTypefaceName;
+	/*+0x4*/   long bExists;
 };
 
 

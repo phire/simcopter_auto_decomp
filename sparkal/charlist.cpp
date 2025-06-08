@@ -5,9 +5,9 @@
 // Type: /*packed*/ class CharData (forward reference);
 class CharData{ // packed(0x9 bytes) TI: 0x4578
 public:
-	unsigned char chValue;
-	/*packed*/ class CharData *previousCharData;
-	/*packed*/ class CharData *nextCharData;
+	/*+0x0*/   unsigned char chValue; // 0x1 bytes
+	/*+0x1*/   /*packed*/ class CharData *previousCharData;
+	/*+0x5*/   /*packed*/ class CharData *nextCharData;
 	void CharData(unsigned char);
 	void CharData();
 };
@@ -19,9 +19,9 @@ public:
 // Type: /*packed*/ class CharList (forward reference);
 class CharList{ // packed(0x10 bytes) TI: 0x4588
 public:
-	int32_t nCharDataCount;
-	/*packed*/ class CharData *firstCharData;
-	/*packed*/ class CharData *lastCharData;
+	/*+0x0*/   int32_t nCharDataCount;
+	/*+0x4*/   /*packed*/ class CharData *firstCharData;
+	/*+0x8*/   /*packed*/ class CharData *lastCharData;
 	void CharList();
 	void ~CharList();
 	void AddItem(/*packed*/ class CharData*);
@@ -33,7 +33,7 @@ public:
 	/*packed*/ class CharData* FindCharDataByIndex(int32_t);
 	/*packed*/ class CharData* FindCharDataByValue(unsigned char);
 protected:
-	/*packed*/ class CharData *presentCharData;
+	/*+0xc*/   /*packed*/ class CharData *presentCharData;
 };
 
 // Type: int32_t;

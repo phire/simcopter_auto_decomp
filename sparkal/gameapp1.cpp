@@ -56,7 +56,7 @@ public:
 	virtual unsigned long OnWindowDeactivate() /* override */;
 	virtual void ProcessSystemCloseRequest(); // vtable+0x4c
 	virtual void SetNewGameApp(/*unpacked*/ class CGameApp*); // vtable+0x50
-	/*unpacked*/ class CGameApp *myGameApp;
+	/*+0x8*/   /*unpacked*/ class CGameApp *myGameApp;
 };
 
 // Type: /*packed*/ class NotificationPreferenceManager (forward reference);
@@ -64,7 +64,7 @@ public:
 class NotificationPreferenceManager : public PreferenceManager
 { // packed(0x30 bytes) TI: 0x2539
 public:
-	/*packed*/ class list<NotificationItem> myNotifications;
+	/*+0x28*/  /*packed*/ class list<NotificationItem> myNotifications; // 0x8 bytes
 	void NotificationPreferenceManager(long, long, long, int32_t);
 	virtual long SetPref(/*packed*/ class PreferenceItem*) /* override */;
 	virtual long SetPref(long, char *, long) /* override */;
@@ -89,20 +89,20 @@ public:
 	void EnableSound();
 	void DisableSound();
 	long IsSoundEnabled();
-	long bSoundEnabled;
+	/*+0x4*/   long bSoundEnabled;
 	static unsigned long dwMaxWaveFormatExSize;
 protected:
-	/*packed*/ class DigitalSound *primarySound;
-	/*packed*/ struct IDirectSoundBuffer *lpPrimarySound;
-	/*packed*/ struct IDirectSound *lpDirectSound;
-	/*packed*/ struct _DSCAPS dsCapabilities;
+	/*+0x8*/   /*packed*/ class DigitalSound *primarySound;
+	/*+0xc*/   /*packed*/ struct IDirectSoundBuffer *lpPrimarySound;
+	/*+0x10*/  /*packed*/ struct IDirectSound *lpDirectSound;
+	/*+0x14*/  /*packed*/ struct _DSCAPS dsCapabilities; // 0x60 bytes
 };
 
 // Type: /*packed*/ class SoundManager;
 // VTABLE: COPTER_D 0x0058f448
 class SoundManager{ // packed(0x204 bytes) TI: 0x1997
 public:
-	/*packed*/ class Sound *sound[128];
+	/*+0x4*/   /*packed*/ class Sound *sound[128]; // 0x200 bytes
 	void AddSound(/*packed*/ class Sound*, int32_t);
 	void AddDigitalSound(const /*packed*/ class basic_string<char>&, int32_t, int32_t);
 	void AddDigitalSound(long, int32_t);
@@ -119,7 +119,7 @@ public:
 // VTABLE: COPTER_D 0x0058f448
 class SoundManager{ // not packed(0x204 bytes) TI: 0x4673
 public:
-	/*unpacked*/ class Sound *sound[128];
+	/*+0x4*/   /*unpacked*/ class Sound *sound[128]; // 0x200 bytes
 	void AddSound(/*unpacked*/ class Sound*, int32_t);
 	void AddDigitalSound(const /*unpacked*/ class basic_string<char>&, int32_t, int32_t);
 	void AddDigitalSound(long, int32_t);
@@ -156,10 +156,10 @@ public:
 	virtual int32_t GetMutex(unsigned long); // vtable+0x24
 	virtual void ReleaseMutex(); // vtable+0x28
 protected:
-	/*packed*/ class list<SoundQueueItem *> mySoundQueueItemList;
-	int32_t bOK;
-	long bMutex;
-	int32_t nWaitTimerSet;
+	/*+0x4*/   /*packed*/ class list<SoundQueueItem *> mySoundQueueItemList; // 0x8 bytes
+	/*+0xc*/   int32_t bOK;
+	/*+0x10*/  long bMutex;
+	/*+0x14*/  int32_t nWaitTimerSet;
 	// calltype: NearStd
 	static void WindowsStaticSoundQueueCompletionCallback(uint32_t, uint32_t, unsigned long, unsigned long, unsigned long);
 	// calltype: NearStd
@@ -176,17 +176,17 @@ public:
 	virtual void DisplayCurrentMessages(/*packed*/ class CBackBuffer*); // vtable+0x4
 	virtual void AddNewMessage(/*packed*/ class basic_string<char>&); // vtable+0x8
 	virtual void AddNewMessage(char *); // vtable+0xc
-	/*packed*/ class MPoint ptFirstMessage;
-	long lMaximumMessageCount;
+	/*+0x4*/   /*packed*/ class MPoint ptFirstMessage; // 0x8 bytes
+	/*+0xc*/   long lMaximumMessageCount;
 protected:
-	/*packed*/ class basic_string<char> *sMessages;
-	/*packed*/ class MTimer timerMessageDisplay;
-	/*packed*/ class MFont fontMessages;
-	long lVerticalSpaceBetweenMessages;
-	unsigned long lDisplayTime;
-	long lCurrentDisplayedMessageCount;
-	int32_t bDisplayMessages;
-	/*packed*/ struct SparkalColor colorMessage;
+	/*+0x10*/  /*packed*/ class basic_string<char> *sMessages;
+	/*+0x14*/  /*packed*/ class MTimer timerMessageDisplay; // 0x10 bytes
+	/*+0x24*/  /*packed*/ class MFont fontMessages; // 0x1c bytes
+	/*+0x40*/  long lVerticalSpaceBetweenMessages;
+	/*+0x44*/  unsigned long lDisplayTime;
+	/*+0x48*/  long lCurrentDisplayedMessageCount;
+	/*+0x4c*/  int32_t bDisplayMessages;
+	/*+0x50*/  /*packed*/ struct SparkalColor colorMessage;
 };
 
 // Type: char *;
@@ -195,23 +195,23 @@ protected:
 
 // Type: /*packed*/ struct GamePreferences (forward reference);
 struct GamePreferences{ // packed(0x20 bytes) TI: 0x2652
-	long lQuadPixelType;
-	long bShowingPalette;
-	long bShowingDebugWindow;
-	long bPlayingSoundTrack;
-	long lStartupMode;
-	long lProcessPriority;
-	long lThreadPriority;
-	long lLanguage;
+	/*+0x0*/   long lQuadPixelType;
+	/*+0x4*/   long bShowingPalette;
+	/*+0x8*/   long bShowingDebugWindow;
+	/*+0xc*/   long bPlayingSoundTrack;
+	/*+0x10*/  long lStartupMode;
+	/*+0x14*/  long lProcessPriority;
+	/*+0x18*/  long lThreadPriority;
+	/*+0x1c*/  long lLanguage;
 	void GamePreferences();
 };
 
 // Type: /*packed*/ struct RenderPreferences (forward reference);
 struct RenderPreferences{ // packed(0x10 bytes) TI: 0x24b3
-	long bShowObjectTexture;
-	long bShowGroundTexture;
-	long bShowSky;
-	long bShowPanelsWhenInHelicopter;
+	/*+0x0*/   long bShowObjectTexture;
+	/*+0x4*/   long bShowGroundTexture;
+	/*+0x8*/   long bShowSky;
+	/*+0xc*/   long bShowPanelsWhenInHelicopter;
 	void RenderPreferences();
 };
 
@@ -222,8 +222,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -330,10 +330,10 @@ public:
 
 // Type: /*packed*/ struct SparkalColor (forward reference);
 struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
-	unsigned char Blue;
-	unsigned char Green;
-	unsigned char Red;
-	unsigned char Padding;
+	/*+0x0*/   unsigned char Blue; // 0x1 bytes
+	/*+0x1*/   unsigned char Green; // 0x1 bytes
+	/*+0x2*/   unsigned char Red; // 0x1 bytes
+	/*+0x3*/   unsigned char Padding; // 0x1 bytes
 	void SparkalColor(unsigned char, unsigned char, unsigned char);
 	void SparkalColor();
 };
@@ -362,41 +362,41 @@ public:
 	// calltype: NearC
 	static long GetCPUSpeed();
 protected:
-	unsigned char * lpTransBlock;
-	void * __ptr32 lpFVData;
+	/*+0x4*/   unsigned char * lpTransBlock;
+	/*+0x8*/   void * __ptr32 lpFVData;
 };
 
 // Type: /*packed*/ struct _MEMORYSTATUS;
 struct _MEMORYSTATUS{ // packed(0x20 bytes) TI: 0x241e
-	unsigned long dwLength;
-	unsigned long dwMemoryLoad;
-	unsigned long dwTotalPhys;
-	unsigned long dwAvailPhys;
-	unsigned long dwTotalPageFile;
-	unsigned long dwAvailPageFile;
-	unsigned long dwTotalVirtual;
-	unsigned long dwAvailVirtual;
+	/*+0x0*/   unsigned long dwLength;
+	/*+0x4*/   unsigned long dwMemoryLoad;
+	/*+0x8*/   unsigned long dwTotalPhys;
+	/*+0xc*/   unsigned long dwAvailPhys;
+	/*+0x10*/  unsigned long dwTotalPageFile;
+	/*+0x14*/  unsigned long dwAvailPageFile;
+	/*+0x18*/  unsigned long dwTotalVirtual;
+	/*+0x1c*/  unsigned long dwAvailVirtual;
 };
 
 // Type: void * __ptr32;
 
 // Type: /*packed*/ struct Shortcut;
 struct Shortcut{ // packed(0x18 bytes) TI: 0x1083
-	long lDeviceID;
-	long lCommand;
-	long lKey;
-	long lModifiers;
-	long lPush;
-	long lIgnoreModifiers;
+	/*+0x0*/   long lDeviceID;
+	/*+0x4*/   long lCommand;
+	/*+0x8*/   long lKey;
+	/*+0xc*/   long lModifiers;
+	/*+0x10*/  long lPush;
+	/*+0x14*/  long lIgnoreModifiers;
 };
 
 // Type: /*packed*/ class list<Shortcut> (forward reference);
 class list<Shortcut>{ // packed(0x8 bytes) TI: 0x1b79
 	using void_pointer = void * __ptr32;
 	struct list<Shortcut>::list_node{ // packed(0x20 bytes) TI: 0x1b8e
-		void * __ptr32 next;
-		void * __ptr32 prev;
-		/*packed*/ struct Shortcut data;
+		/*+0x0*/   void * __ptr32 next;
+		/*+0x4*/   void * __ptr32 prev;
+		/*+0x8*/   /*packed*/ struct Shortcut data; // 0x18 bytes
 	};
 protected:
 	static /*packed*/ class allocator<list<Shortcut>::list_node> list_node_allocator;
@@ -413,8 +413,8 @@ protected:
 protected:
 	uint32_t buffer_size();
 	struct list<Shortcut>::list_node_buffer{ // packed(0x8 bytes) TI: 0x1b8c
-		void * __ptr32 next_buffer;
-		/*packed*/ struct list<Shortcut>::list_node *buffer;
+		/*+0x0*/   void * __ptr32 next_buffer;
+		/*+0x4*/   /*packed*/ struct list<Shortcut>::list_node *buffer;
 	};
 	using buffer_allocator_type = /*packed*/ class allocator<list<Shortcut>::list_node_buffer>;
 	using buffer_pointer = /*packed*/ struct list<Shortcut>::list_node_buffer*;
@@ -429,12 +429,12 @@ protected:
 	void deallocate_buffers();
 	/*packed*/ struct list<Shortcut>::list_node* get_node();
 	void put_node(/*packed*/ struct list<Shortcut>::list_node*);
-	/*packed*/ struct list<Shortcut>::list_node *node;
-	uint32_t length;
+	/*+0x0*/   /*packed*/ struct list<Shortcut>::list_node *node;
+	/*+0x4*/   uint32_t length;
 	class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
 	{ // packed(0x4 bytes) TI: 0x1081
 	protected:
-		/*packed*/ struct list<Shortcut>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<Shortcut>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -450,7 +450,7 @@ protected:
 	class list<Shortcut>::const_iterator : public bidirectional_iterator<Shortcut,int>
 	{ // packed(0x4 bytes) TI: 0x1b8a
 	protected:
-		/*packed*/ struct list<Shortcut>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<Shortcut>::list_node *node;
 	public:
 		void const_iterator(const /*packed*/ class list<Shortcut>::iterator&);
 		void const_iterator();
@@ -516,7 +516,7 @@ public:
 class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
 { // packed(0x4 bytes) TI: 0x1081
 protected:
-	/*packed*/ struct list<Shortcut>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<Shortcut>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -532,16 +532,16 @@ public:
 
 // Type: /*packed*/ struct list<Shortcut>::list_node (forward reference);
 struct list<Shortcut>::list_node{ // packed(0x20 bytes) TI: 0x1b8e
-	void * __ptr32 next;
-	void * __ptr32 prev;
-	/*packed*/ struct Shortcut data;
+	/*+0x0*/   void * __ptr32 next;
+	/*+0x4*/   void * __ptr32 prev;
+	/*+0x8*/   /*packed*/ struct Shortcut data; // 0x18 bytes
 };
 
 // Type: /*packed*/ class list<Shortcut>::iterator;
 class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
 { // packed(0x4 bytes) TI: 0x1081
 protected:
-	/*packed*/ struct list<Shortcut>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<Shortcut>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -559,9 +559,9 @@ public:
 class list<CopterGameMode>{ // packed(0x8 bytes) TI: 0x19f6
 	using void_pointer = void * __ptr32;
 	struct list<CopterGameMode>::list_node{ // packed(0xc bytes) TI: 0x1a1c
-		void * __ptr32 next;
-		void * __ptr32 prev;
-		/*packed*/ class CopterGameMode data;
+		/*+0x0*/   void * __ptr32 next;
+		/*+0x4*/   void * __ptr32 prev;
+		/*+0x8*/   /*packed*/ class CopterGameMode data;
 	};
 protected:
 	static /*packed*/ class allocator<list<CopterGameMode>::list_node> list_node_allocator;
@@ -578,8 +578,8 @@ protected:
 protected:
 	uint32_t buffer_size();
 	struct list<CopterGameMode>::list_node_buffer{ // packed(0x8 bytes) TI: 0x1a1a
-		void * __ptr32 next_buffer;
-		/*packed*/ struct list<CopterGameMode>::list_node *buffer;
+		/*+0x0*/   void * __ptr32 next_buffer;
+		/*+0x4*/   /*packed*/ struct list<CopterGameMode>::list_node *buffer;
 	};
 	using buffer_allocator_type = /*packed*/ class allocator<list<CopterGameMode>::list_node_buffer>;
 	using buffer_pointer = /*packed*/ struct list<CopterGameMode>::list_node_buffer*;
@@ -594,12 +594,12 @@ protected:
 	void deallocate_buffers();
 	/*packed*/ struct list<CopterGameMode>::list_node* get_node();
 	void put_node(/*packed*/ struct list<CopterGameMode>::list_node*);
-	/*packed*/ struct list<CopterGameMode>::list_node *node;
-	uint32_t length;
+	/*+0x0*/   /*packed*/ struct list<CopterGameMode>::list_node *node;
+	/*+0x4*/   uint32_t length;
 	class list<CopterGameMode>::iterator : public bidirectional_iterator<CopterGameMode,int>
 	{ // packed(0x4 bytes) TI: 0x1a18
 	protected:
-		/*packed*/ struct list<CopterGameMode>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<CopterGameMode>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -615,7 +615,7 @@ protected:
 	class list<CopterGameMode>::const_iterator : public bidirectional_iterator<CopterGameMode,int>
 	{ // packed(0x4 bytes) TI: 0x1a0b
 	protected:
-		/*packed*/ struct list<CopterGameMode>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<CopterGameMode>::list_node *node;
 	public:
 		void const_iterator(const /*packed*/ class list<CopterGameMode>::iterator&);
 		void const_iterator();
@@ -679,15 +679,15 @@ public:
 
 // Type: /*packed*/ struct list<CopterGameMode>::list_node_buffer (forward reference);
 struct list<CopterGameMode>::list_node_buffer{ // packed(0x8 bytes) TI: 0x1a1a
-	void * __ptr32 next_buffer;
-	/*packed*/ struct list<CopterGameMode>::list_node *buffer;
+	/*+0x0*/   void * __ptr32 next_buffer;
+	/*+0x4*/   /*packed*/ struct list<CopterGameMode>::list_node *buffer;
 };
 
 // Type: /*packed*/ class list<CopterGameMode>::iterator;
 class list<CopterGameMode>::iterator : public bidirectional_iterator<CopterGameMode,int>
 { // packed(0x4 bytes) TI: 0x1a18
 protected:
-	/*packed*/ struct list<CopterGameMode>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<CopterGameMode>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -729,14 +729,14 @@ struct bidirectional_iterator<CopterGameMode,int>{ // packed(0x1 bytes) TI: 0x18
 // VTABLE: COPTER_D 0x00590db0
 class PreferenceManager{ // packed(0x28 bytes) TI: 0x26c8
 protected:
-	int32_t bSaveFileAtAllChanges;
-	/*packed*/ class list<PreferenceItem> myPreferences;
-	/*packed*/ class MIFF *miffPrefsFile;
-	long lFileCreator;
-	long lFileType;
-	long lFileVersion;
-	int32_t bPrefsDirty;
-	int32_t bPrefsLocked;
+	/*+0x4*/   int32_t bSaveFileAtAllChanges;
+	/*+0x8*/   /*packed*/ class list<PreferenceItem> myPreferences; // 0x8 bytes
+	/*+0x10*/  /*packed*/ class MIFF *miffPrefsFile;
+	/*+0x14*/  long lFileCreator;
+	/*+0x18*/  long lFileType;
+	/*+0x1c*/  long lFileVersion;
+	/*+0x20*/  int32_t bPrefsDirty;
+	/*+0x24*/  int32_t bPrefsLocked;
 public:
 	void PreferenceManager(long, long, long, int32_t);
 	int32_t IPreferenceManager(char *);
@@ -759,9 +759,9 @@ public:
 // VTABLE: COPTER_D 0x005910f8
 class SparkalPalette{ // packed(0x10 bytes) TI: 0x47c7
 public:
-	/*packed*/ struct SparkalColor *pColors;
-	long lColors;
-	int32_t bOwnColors;
+	/*+0x4*/   /*packed*/ struct SparkalColor *pColors;
+	/*+0x8*/   long lColors;
+	/*+0xc*/   int32_t bOwnColors;
 	void SparkalPalette(/*packed*/ struct SparkalColor*, int32_t, unsigned long);
 	void SparkalPalette();
 	virtual void ~SparkalPalette(); // vtable+0x0

@@ -4,14 +4,14 @@
 
 // Type: /*packed*/ struct tagHeliPassengerData (forward reference);
 struct tagHeliPassengerData{ // packed(0x15c bytes) TI: 0x2a7a
-	long lPassengerDataChanged;
-	long lSeatsTotal;
-	long lSeatsUsed;
-	long lDoubleSeatsTotal;
-	long lDoubleSeatsUsed;
-	long lRowWidth;
-	long lPassengerCount;
-	/*packed*/ struct tagPassengerInfo passengers[16];
+	/*+0x0*/   long lPassengerDataChanged;
+	/*+0x4*/   long lSeatsTotal;
+	/*+0x8*/   long lSeatsUsed;
+	/*+0xc*/   long lDoubleSeatsTotal;
+	/*+0x10*/  long lDoubleSeatsUsed;
+	/*+0x14*/  long lRowWidth;
+	/*+0x18*/  long lPassengerCount;
+	/*+0x1c*/  /*packed*/ struct tagPassengerInfo passengers[16]; // 0x140 bytes
 };
 
 // Type: int32_t;
@@ -22,11 +22,11 @@ struct tagHeliPassengerData{ // packed(0x15c bytes) TI: 0x2a7a
 
 // Type: /*packed*/ struct tagPassengerInfo (forward reference);
 struct tagPassengerInfo{ // packed(0x14 bytes) TI: 0x2a6e
-	long lPassengerFace;
-	long lPassengerExpression;
-	long lPassengerHealth;
-	long lPassengerID;
-	long lPassengerSeatUsed;
+	/*+0x0*/   long lPassengerFace;
+	/*+0x4*/   long lPassengerExpression;
+	/*+0x8*/   long lPassengerHealth;
+	/*+0xc*/   long lPassengerID;
+	/*+0x10*/  long lPassengerSeatUsed;
 };
 
 // Type: int32_t *;

@@ -4,26 +4,26 @@
 
 // Type: /*packed*/ struct tagCareerCityInfo (forward reference);
 struct tagCareerCityInfo{ // packed(0x48 bytes) TI: 0x26ee
-	long lCityLevel;
-	/*packed*/ struct tagCitySettings citySettings;
-	long lNextCities[3];
-	long lPrevCities[3];
-	long lCityNameStringIndex;
-	char * chCityFileNameBase;
+	/*+0x0*/   long lCityLevel;
+	/*+0x4*/   /*packed*/ struct tagCitySettings citySettings; // 0x24 bytes
+	/*+0x28*/  long lNextCities[3]; // 0xc bytes
+	/*+0x34*/  long lPrevCities[3]; // 0xc bytes
+	/*+0x40*/  long lCityNameStringIndex;
+	/*+0x44*/  char * chCityFileNameBase;
 };
 
 // Type: /*packed*/ struct tagCurrentCareerCityInfo;
 struct tagCurrentCareerCityInfo{ // packed(0x6c bytes) TI: 0x26e5
-	long lCurrentCities[3];
-	long lCurrentCityIndex;
-	long bUserHasSavedGame;
-	/*packed*/ struct tagUserPersonalInfo userPersonalInfo;
+	/*+0x0*/   long lCurrentCities[3]; // 0xc bytes
+	/*+0xc*/   long lCurrentCityIndex;
+	/*+0x10*/  long bUserHasSavedGame;
+	/*+0x14*/  /*packed*/ struct tagUserPersonalInfo userPersonalInfo; // 0x58 bytes
 };
 
 // Type: /*packed*/ struct GraduationState;
 struct GraduationState{ // packed(0x14 bytes) TI: 0x485c
-	int32_t nGraduationState;
-	/*packed*/ class MTimer timerGraduationState;
+	/*+0x0*/   int32_t nGraduationState;
+	/*+0x4*/   /*packed*/ class MTimer timerGraduationState; // 0x10 bytes
 	void GraduationState();
 	void Reset();
 	void MoveToNewState(int32_t);
@@ -39,35 +39,35 @@ struct GraduationState{ // packed(0x14 bytes) TI: 0x485c
 
 // Type: /*packed*/ struct tagUserCityInfo;
 struct tagUserCityInfo{ // packed(0x80 bytes) TI: 0x2b80
-	/*packed*/ struct tagCitySettings citySettings;
-	long bUserHasSavedGame;
-	/*packed*/ struct tagUserPersonalInfo userPersonalInfo;
+	/*+0x0*/   /*packed*/ struct tagCitySettings citySettings; // 0x24 bytes
+	/*+0x24*/  long bUserHasSavedGame;
+	/*+0x28*/  /*packed*/ struct tagUserPersonalInfo userPersonalInfo; // 0x58 bytes
 };
 
 // Type: void;
 
 // Type: /*packed*/ struct tagUserPersonalInfo (forward reference);
 struct tagUserPersonalInfo{ // packed(0x58 bytes) TI: 0x1a2a
-	char szUserName[64];
-	long lMoney;
-	long lHelicopters;
-	long lEquipment;
-	long lTrophies;
-	long lPoints;
-	long lTeargasCount;
+	/*+0x0*/   char szUserName[64]; // 0x40 bytes
+	/*+0x40*/  long lMoney;
+	/*+0x44*/  long lHelicopters;
+	/*+0x48*/  long lEquipment;
+	/*+0x4c*/  long lTrophies;
+	/*+0x50*/  long lPoints;
+	/*+0x54*/  long lTeargasCount;
 };
 
 // Type: /*packed*/ struct tagCitySettings (forward reference);
 struct tagCitySettings{ // packed(0x24 bytes) TI: 0x26eb
-	long lDifficulty;
-	long lMissionFrequencyFire;
-	long lMissionFrequencyCrime;
-	long lMissionFrequencyRescue;
-	long lMissionFrequencyRiot;
-	long lMissionFrequencyTraffic;
-	long lMissionFrequencyMedEvac;
-	long lMissionFrequencyTransport;
-	long lDaytime;
+	/*+0x0*/   long lDifficulty;
+	/*+0x4*/   long lMissionFrequencyFire;
+	/*+0x8*/   long lMissionFrequencyCrime;
+	/*+0xc*/   long lMissionFrequencyRescue;
+	/*+0x10*/  long lMissionFrequencyRiot;
+	/*+0x14*/  long lMissionFrequencyTraffic;
+	/*+0x18*/  long lMissionFrequencyMedEvac;
+	/*+0x1c*/  long lMissionFrequencyTransport;
+	/*+0x20*/  long lDaytime;
 };
 
 // Type: int32_t;

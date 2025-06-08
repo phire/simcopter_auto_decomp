@@ -6,10 +6,10 @@
 
 // Type: /*packed*/ struct SparkalColor;
 struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
-	unsigned char Blue;
-	unsigned char Green;
-	unsigned char Red;
-	unsigned char Padding;
+	/*+0x0*/   unsigned char Blue; // 0x1 bytes
+	/*+0x1*/   unsigned char Green; // 0x1 bytes
+	/*+0x2*/   unsigned char Red; // 0x1 bytes
+	/*+0x3*/   unsigned char Padding; // 0x1 bytes
 	void SparkalColor(unsigned char, unsigned char, unsigned char);
 	void SparkalColor();
 };
@@ -33,15 +33,15 @@ public:
 protected:
 	virtual int32_t ConvertTypeToStringID(long); // vtable+0xcc
 	virtual void DrawTextOntoBox(); // vtable+0xd0
-	long lMessageID;
-	/*packed*/ class basic_string<char> sMessage;
-	/*packed*/ class basic_string<char> sButtonImageFileName;
-	/*packed*/ class basic_string<char> sAnimationImageFileName;
-	long lType;
-	int32_t bSelfDeleting;
-	/*packed*/ struct SparkalColor colorFont;
-	/*packed*/ struct SparkalColor colorButtonFont;
-	/*packed*/ struct SparkalColor colorButtonFontHighlighted;
+	/*+0x74*/  long lMessageID;
+	/*+0x78*/  /*packed*/ class basic_string<char> sMessage; // 0x8 bytes
+	/*+0x80*/  /*packed*/ class basic_string<char> sButtonImageFileName; // 0x8 bytes
+	/*+0x88*/  /*packed*/ class basic_string<char> sAnimationImageFileName; // 0x8 bytes
+	/*+0x90*/  long lType;
+	/*+0x94*/  int32_t bSelfDeleting;
+	/*+0x98*/  /*packed*/ struct SparkalColor colorFont;
+	/*+0x9c*/  /*packed*/ struct SparkalColor colorButtonFont;
+	/*+0xa0*/  /*packed*/ struct SparkalColor colorButtonFontHighlighted;
 };
 
 // Type: /*packed*/ class MPoint (forward reference);
@@ -90,8 +90,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -216,13 +216,13 @@ public:
 	virtual void SetTextColor(const /*packed*/ struct SparkalColor*, const /*packed*/ struct SparkalColor*); // vtable+0xd8
 	virtual int32_t CanWeRespondToMessage() /* override */;
 protected:
-	int32_t nButtonState;
-	int32_t bEnabled;
-	int32_t nButtonTextHeight;
-	/*packed*/ class MSize sizeTextOffset;
-	int32_t bBusySettingState;
-	/*packed*/ struct SparkalColor colorFont;
-	/*packed*/ struct SparkalColor colorFontHighlighted;
+	/*+0x74*/  int32_t nButtonState;
+	/*+0x78*/  int32_t bEnabled;
+	/*+0x7c*/  int32_t nButtonTextHeight;
+	/*+0x80*/  /*packed*/ class MSize sizeTextOffset; // 0x8 bytes
+	/*+0x88*/  int32_t bBusySettingState;
+	/*+0x8c*/  /*packed*/ struct SparkalColor colorFont;
+	/*+0x90*/  /*packed*/ struct SparkalColor colorFontHighlighted;
 };
 
 // Type: /*packed*/ class MRect (forward reference);
@@ -298,8 +298,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -430,18 +430,18 @@ public:
 	virtual int32_t ComposeSelf() /* override */;
 	virtual int32_t DoesWindowNeedUpdating() /* override */;
 protected:
-	long bRunning;
-	long bManualFrameIncrementing;
-	long lMillisecondsBetweenFrames;
-	long lMillisecondsOfLastFrame;
-	long lMillisecondsSinceLastFrame;
-	enum AnimationWindow::AnimationLoopType nAnimationLoopType;
-	enum AnimationWindow::AnimationDirection nAnimationDirection;
-	long lCurrentFrame;
-	long bPreserveTiming;
-	long lWidthOfSingleFrame;
-	long lFrameCount;
-	long lTransparentIndex;
+	/*+0x74*/  long bRunning;
+	/*+0x78*/  long bManualFrameIncrementing;
+	/*+0x7c*/  long lMillisecondsBetweenFrames;
+	/*+0x80*/  long lMillisecondsOfLastFrame;
+	/*+0x84*/  long lMillisecondsSinceLastFrame;
+	/*+0x88*/  enum AnimationWindow::AnimationLoopType nAnimationLoopType;
+	/*+0x8c*/  enum AnimationWindow::AnimationDirection nAnimationDirection;
+	/*+0x90*/  long lCurrentFrame;
+	/*+0x94*/  long bPreserveTiming;
+	/*+0x98*/  long lWidthOfSingleFrame;
+	/*+0x9c*/  long lFrameCount;
+	/*+0xa0*/  long lTransparentIndex;
 };
 
 // Type: long;
@@ -522,10 +522,10 @@ public:
 // VTABLE: COPTER_D 0x00591640
 class MFont{ // packed(0x1c bytes) TI: 0x1a6c
 public:
-	/*packed*/ class basic_string<char> sName;
-	unsigned long lHeight;
-	unsigned long lWidth;
-	unsigned long lAttributes;
+	/*+0x4*/   /*packed*/ class basic_string<char> sName; // 0x8 bytes
+	/*+0xc*/   unsigned long lHeight;
+	/*+0x10*/  unsigned long lWidth;
+	/*+0x14*/  unsigned long lAttributes;
 	void MFont(char *, unsigned long, unsigned long, unsigned long, int32_t);
 	void MFont(const /*packed*/ class MFont&);
 	void MFont();
@@ -543,15 +543,15 @@ public:
 	virtual void DestroyFont(); // vtable+0x4
 	void * __ptr32 operator void *();
 protected:
-	void * __ptr32 hFont;
+	/*+0x18*/  void * __ptr32 hFont;
 };
 
 // Type: /*packed*/ struct SparkalColor (forward reference);
 struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
-	unsigned char Blue;
-	unsigned char Green;
-	unsigned char Red;
-	unsigned char Padding;
+	/*+0x0*/   unsigned char Blue; // 0x1 bytes
+	/*+0x1*/   unsigned char Green; // 0x1 bytes
+	/*+0x2*/   unsigned char Red; // 0x1 bytes
+	/*+0x3*/   unsigned char Padding; // 0x1 bytes
 	void SparkalColor(unsigned char, unsigned char, unsigned char);
 	void SparkalColor();
 };
@@ -578,24 +578,24 @@ public:
 	void GetCurrentSettings(long&, long&, long&, long&, long&);
 	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32) /* override */;
 	virtual long DoKeyDown(long, char) /* override */;
-	long bShowBuildingTextures;
-	long bShowGroundTextures;
-	long bShowSkyAndClouds;
-	long lQuadPixelType;
-	long lFogCloseness;
+	/*+0x74*/  long bShowBuildingTextures;
+	/*+0x78*/  long bShowGroundTextures;
+	/*+0x7c*/  long bShowSkyAndClouds;
+	/*+0x80*/  long lQuadPixelType;
+	/*+0x84*/  long lFogCloseness;
 protected:
 	void SetControlsBasedOnCurrentSettings();
 	void DrawPreviewBasedOnCurrentSettings();
 	void GetPreviewFileNames(/*packed*/ class basic_string<char>&, /*packed*/ class basic_string<char>&, /*packed*/ class basic_string<char>&);
-	/*packed*/ class CheckBoxWindow *myBuildingTexturesCheckBoxWindow;
-	/*packed*/ class CheckBoxWindow *myObjectTexturesCheckBoxWindow;
-	/*packed*/ class CheckBoxWindow *mySkyDisplayCheckBoxWindow;
-	/*unpacked*/ class ButtonGroup *myDisplayResolutionButtonGroup;
-	/*packed*/ class SliderWindow *myFogSliderWindow;
-	/*packed*/ class CBackBuffer *mySkyImage;
-	/*packed*/ class CBackBuffer *myBuildingImage;
-	/*packed*/ class MTimer mySkyTimer;
-	long lSkyImagePanX;
+	/*+0x88*/  /*packed*/ class CheckBoxWindow *myBuildingTexturesCheckBoxWindow;
+	/*+0x8c*/  /*packed*/ class CheckBoxWindow *myObjectTexturesCheckBoxWindow;
+	/*+0x90*/  /*packed*/ class CheckBoxWindow *mySkyDisplayCheckBoxWindow;
+	/*+0x94*/  /*unpacked*/ class ButtonGroup *myDisplayResolutionButtonGroup;
+	/*+0x98*/  /*packed*/ class SliderWindow *myFogSliderWindow;
+	/*+0x9c*/  /*packed*/ class CBackBuffer *mySkyImage;
+	/*+0xa0*/  /*packed*/ class CBackBuffer *myBuildingImage;
+	/*+0xa4*/  /*packed*/ class MTimer mySkyTimer; // 0x10 bytes
+	/*+0xb4*/  long lSkyImagePanX;
 };
 
 // Type: /*packed*/ class TextWindow (forward reference);
@@ -617,12 +617,12 @@ public:
 	virtual void FitWindowToText(); // vtable+0xe0
 	virtual int32_t ResizeWindowForExactLineHeights(); // vtable+0xe4
 protected:
-	int32_t bDrawOpaqueBackground;
-	/*packed*/ struct SparkalColor colorFont;
-	int32_t nBackgroundPaletteIndex;
-	int32_t nWindowTitleTextID;
-	/*packed*/ class MFont fontText;
-	unsigned long nTextDrawStyle;
+	/*+0x74*/  int32_t bDrawOpaqueBackground;
+	/*+0x78*/  /*packed*/ struct SparkalColor colorFont;
+	/*+0x7c*/  int32_t nBackgroundPaletteIndex;
+	/*+0x80*/  int32_t nWindowTitleTextID;
+	/*+0x84*/  /*packed*/ class MFont fontText; // 0x1c bytes
+	/*+0xa0*/  unsigned long nTextDrawStyle;
 };
 
 // Type: /*packed*/ class RadioButtonWindow (forward reference);
@@ -643,7 +643,7 @@ public:
 	virtual long DoCursorUp(long, long, unsigned long) /* override */;
 	virtual long DoCursorMove(long, long) /* override */;
 protected:
-	/*unpacked*/ class ButtonGroup *myRadioButtonGroup;
+	/*+0x94*/  /*unpacked*/ class ButtonGroup *myRadioButtonGroup;
 };
 
 // Type: /*unpacked*/ class CBackBuffer (forward reference);
@@ -667,30 +667,30 @@ public:
 	// calltype: NearC
 	static long ConvertSliderValueToSoundValue(long);
 protected:
-	/*packed*/ class SliderWindow *myMasterVolumeSliderWindow;
-	/*packed*/ class SliderWindow *myRadioStationSliderWindow;
-	/*packed*/ class SliderWindow *myRadioVolumeSliderWindow;
-	/*packed*/ class CheckBoxWindow *myDJCheckBoxWindow;
-	/*packed*/ class CheckBoxWindow *myCommercialCheckBoxWindow;
+	/*+0x74*/  /*packed*/ class SliderWindow *myMasterVolumeSliderWindow;
+	/*+0x78*/  /*packed*/ class SliderWindow *myRadioStationSliderWindow;
+	/*+0x7c*/  /*packed*/ class SliderWindow *myRadioVolumeSliderWindow;
+	/*+0x80*/  /*packed*/ class CheckBoxWindow *myDJCheckBoxWindow;
+	/*+0x84*/  /*packed*/ class CheckBoxWindow *myCommercialCheckBoxWindow;
 };
 
 // Type: /*packed*/ struct SoundPreferences (forward reference);
 struct SoundPreferences{ // packed(0x10 bytes) TI: 0x2845
-	long lMasterVolume;
-	long lDispatchVolume;
-	long lSoundEffectsVolume;
-	long lVehicleVolume;
+	/*+0x0*/   long lMasterVolume;
+	/*+0x4*/   long lDispatchVolume;
+	/*+0x8*/   long lSoundEffectsVolume;
+	/*+0xc*/   long lVehicleVolume;
 };
 
 // Type: /*packed*/ struct RadioPreferences (forward reference);
 struct RadioPreferences{ // packed(0x1c bytes) TI: 0x2a39
-	long lVolume;
-	int32_t bPreferToBeOn;
-	long lCurrentStation;
-	int32_t bOptionDJ;
-	int32_t bOptionCommercials;
-	int32_t bAutoMute;
-	int32_t bOptionPlayEnglishIfDefaultLanguageNotFound;
+	/*+0x0*/   long lVolume;
+	/*+0x4*/   int32_t bPreferToBeOn;
+	/*+0x8*/   long lCurrentStation;
+	/*+0xc*/   int32_t bOptionDJ;
+	/*+0x10*/  int32_t bOptionCommercials;
+	/*+0x14*/  int32_t bAutoMute;
+	/*+0x18*/  int32_t bOptionPlayEnglishIfDefaultLanguageNotFound;
 };
 
 // Type: /*packed*/ class CitySettingsWindow (forward reference);
@@ -705,20 +705,20 @@ public:
 	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32) /* override */;
 	virtual long DoKeyDown(long, char) /* override */;
 protected:
-	/*packed*/ class SliderWindow *mySliderWindows[8];
+	/*+0x74*/  /*packed*/ class SliderWindow *mySliderWindows[8]; // 0x20 bytes
 };
 
 // Type: /*packed*/ struct tagCitySettings (forward reference);
 struct tagCitySettings{ // packed(0x24 bytes) TI: 0x26eb
-	long lDifficulty;
-	long lMissionFrequencyFire;
-	long lMissionFrequencyCrime;
-	long lMissionFrequencyRescue;
-	long lMissionFrequencyRiot;
-	long lMissionFrequencyTraffic;
-	long lMissionFrequencyMedEvac;
-	long lMissionFrequencyTransport;
-	long lDaytime;
+	/*+0x0*/   long lDifficulty;
+	/*+0x4*/   long lMissionFrequencyFire;
+	/*+0x8*/   long lMissionFrequencyCrime;
+	/*+0xc*/   long lMissionFrequencyRescue;
+	/*+0x10*/  long lMissionFrequencyRiot;
+	/*+0x14*/  long lMissionFrequencyTraffic;
+	/*+0x18*/  long lMissionFrequencyMedEvac;
+	/*+0x1c*/  long lMissionFrequencyTransport;
+	/*+0x20*/  long lDaytime;
 };
 
 // Type: /*packed*/ class PopupMenuExtra (forward reference);
@@ -735,15 +735,15 @@ public:
 	virtual void CalculateAllMetrics() /* override */;
 protected:
 	virtual void ResizeWindowToFitMenuItems() /* override */;
-	/*unpacked*/ class CBackBuffer *myBackgroundImage;
-	/*packed*/ class basic_string<char> myBackgroundImageFileName;
+	/*+0xcc*/  /*unpacked*/ class CBackBuffer *myBackgroundImage;
+	/*+0xd0*/  /*packed*/ class basic_string<char> myBackgroundImageFileName; // 0x8 bytes
 };
 
 // Type: /*packed*/ class list<basic_string<char>>::iterator;
 class list<basic_string<char>>::iterator : public bidirectional_iterator<basic_string<char>,int>
 { // packed(0x4 bytes) TI: 0x1cd3
 protected:
-	/*packed*/ struct list<basic_string<char>>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<basic_string<char>>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -801,8 +801,8 @@ public:
 	virtual void SetTextAndShow(/*packed*/ class MPoint&, int32_t); // vtable+0xec
 	virtual void SetTextAndShow(/*packed*/ class MPoint&, /*packed*/ class basic_string<char>&); // vtable+0xf0
 protected:
-	/*unpacked*/ class CBackBuffer *myBackgroundImage;
-	/*packed*/ class basic_string<char> myBackgroundImageFileName;
+	/*+0xa4*/  /*unpacked*/ class CBackBuffer *myBackgroundImage;
+	/*+0xa8*/  /*packed*/ class basic_string<char> myBackgroundImageFileName; // 0x8 bytes
 };
 
 // Type: /*packed*/ class BoneheadTextEditWindow (forward reference);
@@ -829,11 +829,11 @@ protected:
 	virtual int32_t DoesWindowNeedUpdating() /* override */;
 	virtual int32_t ProcessBackspace(); // vtable+0xfc
 	virtual int32_t ProcessReturn(); // vtable+0x100
-	/*unpacked*/ class CBackBuffer *mySecondImage;
-	/*packed*/ class MTimer myCaretTimer;
-	unsigned long lCaretTimerPeriod;
-	int32_t bCaretTimerExpired;
-	unsigned long lCharacterCountLimit;
+	/*+0xa4*/  /*unpacked*/ class CBackBuffer *mySecondImage;
+	/*+0xa8*/  /*packed*/ class MTimer myCaretTimer; // 0x10 bytes
+	/*+0xb8*/  unsigned long lCaretTimerPeriod;
+	/*+0xbc*/  int32_t bCaretTimerExpired;
+	/*+0xc0*/  unsigned long lCharacterCountLimit;
 };
 
 // Type: unsigned char *;
@@ -849,7 +849,7 @@ public:
 	virtual void GetEditText(char *, unsigned long); // vtable+0xd4
 	virtual void GetEditText(/*packed*/ class basic_string<char>&); // vtable+0xd8
 protected:
-	/*packed*/ class BoneheadTextEditWindow *myTextEditWindow;
+	/*+0xa4*/  /*packed*/ class BoneheadTextEditWindow *myTextEditWindow;
 };
 
 // Type: /*packed*/ class ScrollingCreditWindow (forward reference);
@@ -868,14 +868,14 @@ protected:
 	virtual int32_t DoesWindowNeedUpdating() /* override */;
 	int32_t LoadCreditStringArray();
 	int32_t Scroll();
-	/*packed*/ class vector<basic_string<char>> myCreditStringArray;
-	long lFirstStringToDraw;
-	long lTopOfVisibleTextArea;
-	/*packed*/ class MRect rectVisibleTextArea;
-	/*packed*/ class MFont fontCreditText;
-	/*packed*/ class MTimer myScrollTimer;
-	unsigned long lScrollTimerPeriod;
-	int32_t bScrollTimerExpired;
+	/*+0x74*/  /*packed*/ class vector<basic_string<char>> myCreditStringArray; // 0xc bytes
+	/*+0x80*/  long lFirstStringToDraw;
+	/*+0x84*/  long lTopOfVisibleTextArea;
+	/*+0x88*/  /*packed*/ class MRect rectVisibleTextArea; // 0x10 bytes
+	/*+0x98*/  /*packed*/ class MFont fontCreditText; // 0x1c bytes
+	/*+0xb4*/  /*packed*/ class MTimer myScrollTimer; // 0x10 bytes
+	/*+0xc4*/  unsigned long lScrollTimerPeriod;
+	/*+0xc8*/  int32_t bScrollTimerExpired;
 };
 
 // Type: /*packed*/ class CheckupWindow (forward reference);
@@ -895,8 +895,8 @@ public:
 	static int32_t ShouldWeDisplayCheckupWindow();
 	int32_t CanUserAffordCurrentSliderValues();
 protected:
-	/*packed*/ class SliderWindow *mySliderWindows[3];
-	/*packed*/ class TextWindow *myTextWindows[5];
+	/*+0x74*/  /*packed*/ class SliderWindow *mySliderWindows[3]; // 0xc bytes
+	/*+0x80*/  /*packed*/ class TextWindow *myTextWindows[5]; // 0x14 bytes
 };
 
 // Type: long *;
@@ -905,18 +905,18 @@ protected:
 
 // Type: /*packed*/ struct SparkalRect;
 struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
-	long left;
-	long top;
-	long right;
-	long bottom;
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
 	void SparkalRect(long, long, long, long);
 	void SparkalRect();
 };
 
 // Type: /*packed*/ struct SparkalPoint;
 struct SparkalPoint{ // packed(0x8 bytes) TI: 0x1a54
-	long x;
-	long y;
+	/*+0x0*/   long x;
+	/*+0x4*/   long y;
 	void SparkalPoint(long, long);
 	void SparkalPoint();
 };
@@ -936,15 +936,15 @@ public:
 protected:
 	virtual int32_t ConvertTypeToStringID(long); // vtable+0xcc
 	virtual void DrawTextOntoBox(); // vtable+0xd0
-	long lMessageID;
-	/*packed*/ class basic_string<char> sMessage;
-	/*packed*/ class basic_string<char> sButtonImageFileName;
-	/*packed*/ class basic_string<char> sAnimationImageFileName;
-	long lType;
-	int32_t bSelfDeleting;
-	/*packed*/ struct SparkalColor colorFont;
-	/*packed*/ struct SparkalColor colorButtonFont;
-	/*packed*/ struct SparkalColor colorButtonFontHighlighted;
+	/*+0x74*/  long lMessageID;
+	/*+0x78*/  /*packed*/ class basic_string<char> sMessage; // 0x8 bytes
+	/*+0x80*/  /*packed*/ class basic_string<char> sButtonImageFileName; // 0x8 bytes
+	/*+0x88*/  /*packed*/ class basic_string<char> sAnimationImageFileName; // 0x8 bytes
+	/*+0x90*/  long lType;
+	/*+0x94*/  int32_t bSelfDeleting;
+	/*+0x98*/  /*packed*/ struct SparkalColor colorFont;
+	/*+0x9c*/  /*packed*/ struct SparkalColor colorButtonFont;
+	/*+0xa0*/  /*packed*/ struct SparkalColor colorButtonFontHighlighted;
 };
 
 // Type: /*packed*/ class PopupMenuWindow;
@@ -983,12 +983,12 @@ public:
 	virtual void FitWindowToText(); // vtable+0xe0
 	virtual int32_t ResizeWindowForExactLineHeights(); // vtable+0xe4
 protected:
-	int32_t bDrawOpaqueBackground;
-	/*packed*/ struct SparkalColor colorFont;
-	int32_t nBackgroundPaletteIndex;
-	int32_t nWindowTitleTextID;
-	/*packed*/ class MFont fontText;
-	unsigned long nTextDrawStyle;
+	/*+0x74*/  int32_t bDrawOpaqueBackground;
+	/*+0x78*/  /*packed*/ struct SparkalColor colorFont;
+	/*+0x7c*/  int32_t nBackgroundPaletteIndex;
+	/*+0x80*/  int32_t nWindowTitleTextID;
+	/*+0x84*/  /*packed*/ class MFont fontText; // 0x1c bytes
+	/*+0xa0*/  unsigned long nTextDrawStyle;
 };
 
 // Type: /*packed*/ class ButtonWindow;
@@ -1017,13 +1017,13 @@ public:
 	virtual void SetTextColor(const /*packed*/ struct SparkalColor*, const /*packed*/ struct SparkalColor*); // vtable+0xd8
 	virtual int32_t CanWeRespondToMessage() /* override */;
 protected:
-	int32_t nButtonState;
-	int32_t bEnabled;
-	int32_t nButtonTextHeight;
-	/*packed*/ class MSize sizeTextOffset;
-	int32_t bBusySettingState;
-	/*packed*/ struct SparkalColor colorFont;
-	/*packed*/ struct SparkalColor colorFontHighlighted;
+	/*+0x74*/  int32_t nButtonState;
+	/*+0x78*/  int32_t bEnabled;
+	/*+0x7c*/  int32_t nButtonTextHeight;
+	/*+0x80*/  /*packed*/ class MSize sizeTextOffset; // 0x8 bytes
+	/*+0x88*/  int32_t bBusySettingState;
+	/*+0x8c*/  /*packed*/ struct SparkalColor colorFont;
+	/*+0x90*/  /*packed*/ struct SparkalColor colorFontHighlighted;
 };
 
 // Type: /*packed*/ struct bidirectional_iterator<basic_string<char>,int>;
@@ -1081,21 +1081,21 @@ protected:
 	virtual int32_t ModifyString(long, /*packed*/ class basic_string<char>&); // vtable+0x14c
 	virtual void SetScrollBarValue(); // vtable+0x150
 	virtual void SetScrollBarSizes(); // vtable+0x154
-	/*packed*/ class list<basic_string<char>> myStringList;
-	/*packed*/ struct SparkalColor colorFont;
-	/*packed*/ struct SparkalColor colorFontHighlighted;
-	int32_t nBackgroundIndex;
-	int32_t nBackgroundIndexHighlighted;
-	/*packed*/ class MFont fontText;
-	unsigned long nTextDrawStyle;
-	long lCurrentSelection;
-	long lVisibleLines;
-	long lFirstVisibleLine;
-	long lLineHeight;
-	int32_t bAlwaysSort;
-	/*packed*/ class ScrollBarWindow *myVerticalScrollBarWindow;
-	/*packed*/ class ScrollBarWindow *myHorizontalScrollBarWindow;
-	int32_t bBusySettingSelection;
+	/*+0x74*/  /*packed*/ class list<basic_string<char>> myStringList; // 0x8 bytes
+	/*+0x7c*/  /*packed*/ struct SparkalColor colorFont;
+	/*+0x80*/  /*packed*/ struct SparkalColor colorFontHighlighted;
+	/*+0x84*/  int32_t nBackgroundIndex;
+	/*+0x88*/  int32_t nBackgroundIndexHighlighted;
+	/*+0x8c*/  /*packed*/ class MFont fontText; // 0x1c bytes
+	/*+0xa8*/  unsigned long nTextDrawStyle;
+	/*+0xac*/  long lCurrentSelection;
+	/*+0xb0*/  long lVisibleLines;
+	/*+0xb4*/  long lFirstVisibleLine;
+	/*+0xb8*/  long lLineHeight;
+	/*+0xbc*/  int32_t bAlwaysSort;
+	/*+0xc0*/  /*packed*/ class ScrollBarWindow *myVerticalScrollBarWindow;
+	/*+0xc4*/  /*packed*/ class ScrollBarWindow *myHorizontalScrollBarWindow;
+	/*+0xc8*/  int32_t bBusySettingSelection;
 };
 
 

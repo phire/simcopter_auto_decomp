@@ -19,14 +19,14 @@ public:
 	void SwitchToProperSkyType();
 	void ToggleSkyType();
 	virtual unsigned long Compose(/*packed*/ class CBackBuffer*, int32_t); // vtable+0x64
-	int32_t nBitmapWidth;
-	int32_t nBitmapHeight;
-	int32_t nSkyType;
+	/*+0x134*/ int32_t nBitmapWidth;
+	/*+0x138*/ int32_t nBitmapHeight;
+	/*+0x13c*/ int32_t nSkyType;
 protected:
-	int32_t fpHorizontalPixelRatio;
-	int32_t fpMinimumAltitude;
-	int32_t fpAltitudePixelRatio;
-	int32_t fpPitchPixelRatio;
+	/*+0x140*/ int32_t fpHorizontalPixelRatio;
+	/*+0x144*/ int32_t fpMinimumAltitude;
+	/*+0x148*/ int32_t fpAltitudePixelRatio;
+	/*+0x14c*/ int32_t fpPitchPixelRatio;
 };
 
 // Type: int32_t;
@@ -41,18 +41,18 @@ enum SkyType {
 
 // Type: /*packed*/ struct VRResource (forward reference);
 struct VRResource{ // packed(0x10 bytes) TI: 0x18ae
-	char * mem;
-	int32_t mempoolid;
-	int32_t type;
-	int32_t entry;
+	/*+0x0*/   char * mem;
+	/*+0x4*/   int32_t mempoolid;
+	/*+0x8*/   int32_t type;
+	/*+0xc*/   int32_t entry;
 };
 
 // Type: char;
 
 // Type: /*packed*/ struct VRBmpHdr (forward reference);
 struct VRBmpHdr{ // packed(0x10 bytes) TI: 0x2312
-	/*packed*/ struct VRBmpInfo info;
-	int32_t ScanOffset[1];
+	/*+0x0*/   /*packed*/ struct VRBmpInfo info; // 0xc bytes
+	/*+0xc*/   int32_t ScanOffset[1];
 };
 
 // Type: /*packed*/ class CBackBuffer (forward reference);
@@ -98,25 +98,25 @@ public:
 	virtual unsigned long DrawRectangleOutlineUnclipped(const /*packed*/ struct SparkalRect&, long); // vtable+0x5c
 	long IsLost();
 	long Restore();
-	char * szFilePath;
-	/*packed*/ struct tagRECT rectDirectDrawBuffer;
+	/*+0x18*/  char * szFilePath;
+	/*+0x1c*/  /*packed*/ struct tagRECT rectDirectDrawBuffer; // 0x10 bytes
 protected:
-	int32_t bSurfacePrimary;
-	int32_t bSurfaceTransparent;
-	/*packed*/ class MFont *mFont;
-	/*packed*/ struct SparkalColor colorFontCurrent;
-	/*packed*/ struct SparkalColor colorCurrent;
-	int32_t nColorIndexFontCurrent;
-	int32_t nColorIndexCurrent;
-	int32_t nColorIndexTransparent;
-	/*packed*/ struct IDirectDrawSurface *mpFrontSurface;
-	/*packed*/ struct IDirectDrawSurface *mpBackSurface;
-	/*packed*/ struct IDirectDrawPalette *mpPalette;
-	/*packed*/ struct _DDSURFACEDESC mDDdesc;
-	/*packed*/ struct _DDBLTFX mDDBltFx;
-	void * __ptr32 hPen;
-	int32_t nPenThickness;
-	/*packed*/ struct SparkalColor colorPenCurrent;
+	/*+0x2c*/  int32_t bSurfacePrimary;
+	/*+0x30*/  int32_t bSurfaceTransparent;
+	/*+0x34*/  /*packed*/ class MFont *mFont;
+	/*+0x38*/  /*packed*/ struct SparkalColor colorFontCurrent;
+	/*+0x3c*/  /*packed*/ struct SparkalColor colorCurrent;
+	/*+0x40*/  int32_t nColorIndexFontCurrent;
+	/*+0x44*/  int32_t nColorIndexCurrent;
+	/*+0x48*/  int32_t nColorIndexTransparent;
+	/*+0x4c*/  /*packed*/ struct IDirectDrawSurface *mpFrontSurface;
+	/*+0x50*/  /*packed*/ struct IDirectDrawSurface *mpBackSurface;
+	/*+0x54*/  /*packed*/ struct IDirectDrawPalette *mpPalette;
+	/*+0x58*/  /*packed*/ struct _DDSURFACEDESC mDDdesc; // 0x6c bytes
+	/*+0xc4*/  /*packed*/ struct _DDBLTFX mDDBltFx; // 0x64 bytes
+	/*+0x128*/ void * __ptr32 hPen;
+	/*+0x12c*/ int32_t nPenThickness;
+	/*+0x130*/ /*packed*/ struct SparkalColor colorPenCurrent;
 	virtual /*packed*/ struct IDirectDrawSurface* GetDDSurface(); // vtable+0x60
 };
 
@@ -124,10 +124,10 @@ protected:
 
 // Type: /*packed*/ struct SparkalRect;
 struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
-	long left;
-	long top;
-	long right;
-	long bottom;
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
 	void SparkalRect(long, long, long, long);
 	void SparkalRect();
 };
@@ -187,25 +187,25 @@ public:
 	virtual unsigned long DrawRectangleOutlineUnclipped(const /*packed*/ struct SparkalRect&, long); // vtable+0x5c
 	long IsLost();
 	long Restore();
-	char * szFilePath;
-	/*packed*/ struct tagRECT rectDirectDrawBuffer;
+	/*+0x18*/  char * szFilePath;
+	/*+0x1c*/  /*packed*/ struct tagRECT rectDirectDrawBuffer; // 0x10 bytes
 protected:
-	int32_t bSurfacePrimary;
-	int32_t bSurfaceTransparent;
-	/*packed*/ class MFont *mFont;
-	/*packed*/ struct SparkalColor colorFontCurrent;
-	/*packed*/ struct SparkalColor colorCurrent;
-	int32_t nColorIndexFontCurrent;
-	int32_t nColorIndexCurrent;
-	int32_t nColorIndexTransparent;
-	/*packed*/ struct IDirectDrawSurface *mpFrontSurface;
-	/*packed*/ struct IDirectDrawSurface *mpBackSurface;
-	/*packed*/ struct IDirectDrawPalette *mpPalette;
-	/*packed*/ struct _DDSURFACEDESC mDDdesc;
-	/*packed*/ struct _DDBLTFX mDDBltFx;
-	void * __ptr32 hPen;
-	int32_t nPenThickness;
-	/*packed*/ struct SparkalColor colorPenCurrent;
+	/*+0x2c*/  int32_t bSurfacePrimary;
+	/*+0x30*/  int32_t bSurfaceTransparent;
+	/*+0x34*/  /*packed*/ class MFont *mFont;
+	/*+0x38*/  /*packed*/ struct SparkalColor colorFontCurrent;
+	/*+0x3c*/  /*packed*/ struct SparkalColor colorCurrent;
+	/*+0x40*/  int32_t nColorIndexFontCurrent;
+	/*+0x44*/  int32_t nColorIndexCurrent;
+	/*+0x48*/  int32_t nColorIndexTransparent;
+	/*+0x4c*/  /*packed*/ struct IDirectDrawSurface *mpFrontSurface;
+	/*+0x50*/  /*packed*/ struct IDirectDrawSurface *mpBackSurface;
+	/*+0x54*/  /*packed*/ struct IDirectDrawPalette *mpPalette;
+	/*+0x58*/  /*packed*/ struct _DDSURFACEDESC mDDdesc; // 0x6c bytes
+	/*+0xc4*/  /*packed*/ struct _DDBLTFX mDDBltFx; // 0x64 bytes
+	/*+0x128*/ void * __ptr32 hPen;
+	/*+0x12c*/ int32_t nPenThickness;
+	/*+0x130*/ /*packed*/ struct SparkalColor colorPenCurrent;
 	virtual /*packed*/ struct IDirectDrawSurface* GetDDSurface(); // vtable+0x60
 };
 
@@ -232,11 +232,11 @@ public:
 	static unsigned long lTotalMemoryUsage;
 	static unsigned long lTotalLockCount;
 protected:
-	unsigned long mLockCount;
-	long mWidth;
-	long mHeight;
-	void * __ptr32 mpBits;
-	long mStride;
+	/*+0x4*/   unsigned long mLockCount;
+	/*+0x8*/   long mWidth;
+	/*+0xc*/   long mHeight;
+	/*+0x10*/  void * __ptr32 mpBits;
+	/*+0x14*/  long mStride;
 };
 
 

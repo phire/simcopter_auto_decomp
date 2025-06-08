@@ -4,8 +4,8 @@
 
 // Type: /*packed*/ struct Point2d;
 struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
-	int32_t x;
-	int32_t y;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
 };
 
 // Type: int32_t;
@@ -62,23 +62,23 @@ protected:
 	static /*packed*/ struct Point2d lastScannedLocation;
 	static int32_t sPlaneModelSet;
 	static /*packed*/ class PlaneClass lsPlane;
-	char flags[4];
-	/*packed*/ struct Point3d directionVector;
-	int32_t remainingDist;
-	int32_t speed;
-	int32_t desiredSpeed;
-	/*packed*/ struct Point2d currentLocation;
-	/*packed*/ struct Point2d currentCell;
-	int32_t beamDelay;
-	int32_t beamTimer;
-	int32_t altAdjustment;
-	long missionId;
-	/*packed*/ struct Point2d crashLocation;
-	int32_t smokeTime;
-	long shieldCtr;
-	long missileHits;
-	long planeModel;
-	/*packed*/ struct _DYOBJ_INST dyObj;
+	/*+0x4*/   char flags[4];
+	/*+0x8*/   /*packed*/ struct Point3d directionVector; // 0xc bytes
+	/*+0x14*/  int32_t remainingDist;
+	/*+0x18*/  int32_t speed;
+	/*+0x1c*/  int32_t desiredSpeed;
+	/*+0x20*/  /*packed*/ struct Point2d currentLocation; // 0x8 bytes
+	/*+0x28*/  /*packed*/ struct Point2d currentCell; // 0x8 bytes
+	/*+0x30*/  int32_t beamDelay;
+	/*+0x34*/  int32_t beamTimer;
+	/*+0x38*/  int32_t altAdjustment;
+	/*+0x3c*/  long missionId;
+	/*+0x40*/  /*packed*/ struct Point2d crashLocation; // 0x8 bytes
+	/*+0x48*/  int32_t smokeTime;
+	/*+0x4c*/  long shieldCtr;
+	/*+0x50*/  long missileHits;
+	/*+0x54*/  long planeModel;
+	/*+0x58*/  /*packed*/ struct _DYOBJ_INST dyObj; // 0x64 bytes
 public:
 	void PlaneClass(const /*packed*/ class PlaneClass&);
 	void PlaneClass(long, long);
@@ -208,23 +208,23 @@ protected:
 	static /*packed*/ struct Point2d lastScannedLocation;
 	static int32_t sPlaneModelSet;
 	static /*packed*/ class PlaneClass lsPlane;
-	char flags[4];
-	/*packed*/ struct Point3d directionVector;
-	int32_t remainingDist;
-	int32_t speed;
-	int32_t desiredSpeed;
-	/*packed*/ struct Point2d currentLocation;
-	/*packed*/ struct Point2d currentCell;
-	int32_t beamDelay;
-	int32_t beamTimer;
-	int32_t altAdjustment;
-	long missionId;
-	/*packed*/ struct Point2d crashLocation;
-	int32_t smokeTime;
-	long shieldCtr;
-	long missileHits;
-	long planeModel;
-	/*packed*/ struct _DYOBJ_INST dyObj;
+	/*+0x4*/   char flags[4];
+	/*+0x8*/   /*packed*/ struct Point3d directionVector; // 0xc bytes
+	/*+0x14*/  int32_t remainingDist;
+	/*+0x18*/  int32_t speed;
+	/*+0x1c*/  int32_t desiredSpeed;
+	/*+0x20*/  /*packed*/ struct Point2d currentLocation; // 0x8 bytes
+	/*+0x28*/  /*packed*/ struct Point2d currentCell; // 0x8 bytes
+	/*+0x30*/  int32_t beamDelay;
+	/*+0x34*/  int32_t beamTimer;
+	/*+0x38*/  int32_t altAdjustment;
+	/*+0x3c*/  long missionId;
+	/*+0x40*/  /*packed*/ struct Point2d crashLocation; // 0x8 bytes
+	/*+0x48*/  int32_t smokeTime;
+	/*+0x4c*/  long shieldCtr;
+	/*+0x50*/  long missileHits;
+	/*+0x54*/  long planeModel;
+	/*+0x58*/  /*packed*/ struct _DYOBJ_INST dyObj; // 0x64 bytes
 public:
 	void PlaneClass(const /*packed*/ class PlaneClass&);
 	void PlaneClass(long, long);
@@ -310,16 +310,16 @@ public:
 
 // Type: /*packed*/ struct VRview;
 struct VRview{ // packed(0x58 bytes) TI: 0x2ecc
-	/*packed*/ struct Point3d loc;
-	/*packed*/ struct Point3d scale;
-	int32_t matrix[4][4];
+	/*+0x0*/   /*packed*/ struct Point3d loc; // 0xc bytes
+	/*+0xc*/   /*packed*/ struct Point3d scale; // 0xc bytes
+	/*+0x18*/  int32_t matrix[4][4]; // 0x40 bytes
 };
 
 // Type: /*packed*/ struct Point3d;
 struct Point3d{ // packed(0xc bytes) TI: 0x18b0
-	int32_t x;
-	int32_t y;
-	int32_t z;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
+	/*+0x8*/   int32_t z;
 };
 
 // Type: enum PlaneClass::StoppedReasons;
@@ -334,83 +334,83 @@ enum StoppedReasons {
 
 // Type: /*packed*/ struct Point2d (forward reference);
 struct Point2d{ // packed(0x8 bytes) TI: 0x18b2
-	int32_t x;
-	int32_t y;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
 };
 
 // Type: /*packed*/ struct Point3d (forward reference);
 struct Point3d{ // packed(0xc bytes) TI: 0x18b0
-	int32_t x;
-	int32_t y;
-	int32_t z;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
+	/*+0x8*/   int32_t z;
 };
 
 // Type: /*packed*/ struct _CELL_INFO (forward reference);
 struct _CELL_INFO{ // packed(0x18 bytes) TI: 0x1b03
-	short flags;
-	short x;
-	short y;
-	short z;
-	short size;
-	short ctr;
-	/*packed*/ struct _STOBJ_INST *stptr;
-	/*packed*/ struct _DYOBJ_INST *dyptr;
-	/*packed*/ struct _DYOBJ_INST *vwptr;
+	/*+0x0*/   short flags; // 0x2 bytes
+	/*+0x2*/   short x; // 0x2 bytes
+	/*+0x4*/   short y; // 0x2 bytes
+	/*+0x6*/   short z; // 0x2 bytes
+	/*+0x8*/   short size; // 0x2 bytes
+	/*+0xa*/   short ctr; // 0x2 bytes
+	/*+0xc*/   /*packed*/ struct _STOBJ_INST *stptr;
+	/*+0x10*/  /*packed*/ struct _DYOBJ_INST *dyptr;
+	/*+0x14*/  /*packed*/ struct _DYOBJ_INST *vwptr;
 };
 
 // Type: /*packed*/ struct _MISSION_PARMS;
 struct _MISSION_PARMS{ // packed(0x18 bytes) TI: 0x307d
-	long op;
-	long id;
-	/*packed*/ struct Point2d maploc;
-	long i2num;
-	long flags;
+	/*+0x0*/   long op;
+	/*+0x4*/   long id;
+	/*+0x8*/   /*packed*/ struct Point2d maploc; // 0x8 bytes
+	/*+0x10*/  long i2num;
+	/*+0x14*/  long flags;
 };
 
 // Type: /*packed*/ struct _STOBJ_INST (forward reference);
 struct _STOBJ_INST{ // packed(0x10 bytes) TI: 0x193f
-	/*packed*/ struct _STOBJ_INST *next;
-	void * __ptr32 mesh;
-	long user1;
-	long user2;
+	/*+0x0*/   /*packed*/ struct _STOBJ_INST *next;
+	/*+0x4*/   void * __ptr32 mesh;
+	/*+0x8*/   long user1;
+	/*+0xc*/   long user2;
 };
 
 // Type: /*packed*/ struct VRObjInfo;
 struct VRObjInfo{ // packed(0x24 bytes) TI: 0x2ea8
-	int32_t Faces;
-	int32_t Verts;
-	int32_t Attribute;
-	int32_t Radius;
-	/*packed*/ struct Point3d *ObjCenter;
-	/*packed*/ struct Point3d *VertsPtr;
-	/*packed*/ struct Xform3d *VertsXfm;
-	/*packed*/ struct Point3d *OrgVerts;
-	int32_t *Matrix[4][4];
+	/*+0x0*/   int32_t Faces;
+	/*+0x4*/   int32_t Verts;
+	/*+0x8*/   int32_t Attribute;
+	/*+0xc*/   int32_t Radius;
+	/*+0x10*/  /*packed*/ struct Point3d *ObjCenter;
+	/*+0x14*/  /*packed*/ struct Point3d *VertsPtr;
+	/*+0x18*/  /*packed*/ struct Xform3d *VertsXfm;
+	/*+0x1c*/  /*packed*/ struct Point3d *OrgVerts;
+	/*+0x20*/  int32_t *Matrix[4][4];
 };
 
 // Type: /*packed*/ struct _DYOBJ_INST (forward reference);
 struct _DYOBJ_INST{ // packed(0x64 bytes) TI: 0x1deb
-	/*packed*/ struct _DYOBJ_INST *next;
-	/*packed*/ struct _DYOBJ_INST *vnext;
-	void * __ptr32 mesh;
-	short flags;
-	short user1;
-	long radius;
-	long height;
-	/*packed*/ struct Point3d loc;
-	int32_t matrix[4][4];
+	/*+0x0*/   /*packed*/ struct _DYOBJ_INST *next;
+	/*+0x4*/   /*packed*/ struct _DYOBJ_INST *vnext;
+	/*+0x8*/   void * __ptr32 mesh;
+	/*+0xc*/   short flags; // 0x2 bytes
+	/*+0xe*/   short user1; // 0x2 bytes
+	/*+0x10*/  long radius;
+	/*+0x14*/  long height;
+	/*+0x18*/  /*packed*/ struct Point3d loc; // 0xc bytes
+	/*+0x24*/  int32_t matrix[4][4]; // 0x40 bytes
 };
 
 // Type: /*packed*/ struct VRFaceInfo;
 struct VRFaceInfo{ // packed(0x20 bytes) TI: 0x30c0
-	int32_t Face;
-	int32_t Verts;
-	int32_t Attribute;
-	int32_t Plotter;
-	/*packed*/ struct VRBmpHdr *Bitmap;
-	int32_t * VertList;
-	/*packed*/ struct MapVert *MapVList;
-	/*packed*/ struct MapVert *BarryPtr;
+	/*+0x0*/   int32_t Face;
+	/*+0x4*/   int32_t Verts;
+	/*+0x8*/   int32_t Attribute;
+	/*+0xc*/   int32_t Plotter;
+	/*+0x10*/  /*packed*/ struct VRBmpHdr *Bitmap;
+	/*+0x14*/  int32_t * VertList;
+	/*+0x18*/  /*packed*/ struct MapVert *MapVList;
+	/*+0x1c*/  /*packed*/ struct MapVert *BarryPtr;
 };
 
 // Type: void * __ptr32;

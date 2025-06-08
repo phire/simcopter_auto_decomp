@@ -14,18 +14,18 @@
 
 // Type: /*packed*/ struct _rect (forward reference);
 struct _rect{ // packed(0x8 bytes) TI: 0x2e1b
-	short Xmin;
-	short Xmax;
-	short Ymin;
-	short Ymax;
+	/*+0x0*/   short Xmin; // 0x2 bytes
+	/*+0x2*/   short Xmax; // 0x2 bytes
+	/*+0x4*/   short Ymin; // 0x2 bytes
+	/*+0x6*/   short Ymax; // 0x2 bytes
 };
 
 // Type: /*packed*/ struct S2Rect (forward reference);
 struct S2Rect{ // packed(0x8 bytes) TI: 0x2e21
-	short top;
-	short left;
-	short bottom;
-	short right;
+	/*+0x0*/   short top; // 0x2 bytes
+	/*+0x2*/   short left; // 0x2 bytes
+	/*+0x4*/   short bottom; // 0x2 bytes
+	/*+0x6*/   short right; // 0x2 bytes
 };
 
 

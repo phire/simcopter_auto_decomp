@@ -4,55 +4,55 @@
 
 // Type: /*packed*/ struct list<Shortcut>::list_node_buffer (forward reference);
 struct list<Shortcut>::list_node_buffer{ // packed(0x8 bytes) TI: 0x1b8c
-	void * __ptr32 next_buffer;
-	/*packed*/ struct list<Shortcut>::list_node *buffer;
+	/*+0x0*/   void * __ptr32 next_buffer;
+	/*+0x4*/   /*packed*/ struct list<Shortcut>::list_node *buffer;
 };
 
 // Type: /*packed*/ struct list<Shortcut>::list_node (forward reference);
 struct list<Shortcut>::list_node{ // packed(0x20 bytes) TI: 0x1b8e
-	void * __ptr32 next;
-	void * __ptr32 prev;
-	/*packed*/ struct Shortcut data;
+	/*+0x0*/   void * __ptr32 next;
+	/*+0x4*/   void * __ptr32 prev;
+	/*+0x8*/   /*packed*/ struct Shortcut data; // 0x18 bytes
 };
 
 // Type: uint32_t;
 
 // Type: /*packed*/ struct list<HotSpot>::list_node_buffer (forward reference);
 struct list<HotSpot>::list_node_buffer{ // packed(0x8 bytes) TI: 0x1242
-	void * __ptr32 next_buffer;
-	/*packed*/ struct list<HotSpot>::list_node *buffer;
+	/*+0x0*/   void * __ptr32 next_buffer;
+	/*+0x4*/   /*packed*/ struct list<HotSpot>::list_node *buffer;
 };
 
 // Type: /*packed*/ struct list<HotSpot>::list_node (forward reference);
 struct list<HotSpot>::list_node{ // packed(0x1c bytes) TI: 0x1244
-	void * __ptr32 next;
-	void * __ptr32 prev;
-	/*packed*/ class HotSpot data;
+	/*+0x0*/   void * __ptr32 next;
+	/*+0x4*/   void * __ptr32 prev;
+	/*+0x8*/   /*packed*/ class HotSpot data; // 0x14 bytes
 };
 
 // Type: char *;
 
 // Type: /*packed*/ struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node_buffer (forward reference);
 struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node_buffer{ // packed(0x8 bytes) TI: 0x2cb2
-	void * __ptr32 next_buffer;
-	/*packed*/ struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *buffer;
+	/*+0x0*/   void * __ptr32 next_buffer;
+	/*+0x4*/   /*packed*/ struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *buffer;
 };
 
 // Type: /*packed*/ struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node (forward reference);
 struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node{ // packed(0x14 bytes) TI: 0x2cb4
-	enum rb_tree<long,long,ident<long,long>,less<long>>::color_type color_field;
-	void * __ptr32 parent_link;
-	void * __ptr32 left_link;
-	void * __ptr32 right_link;
-	long value_field;
+	/*+0x0*/   enum rb_tree<long,long,ident<long,long>,less<long>>::color_type color_field;
+	/*+0x4*/   void * __ptr32 parent_link;
+	/*+0x8*/   void * __ptr32 left_link;
+	/*+0xc*/   void * __ptr32 right_link;
+	/*+0x10*/  long value_field;
 };
 
 // Type: /*packed*/ struct SparkalColor;
 struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
-	unsigned char Blue;
-	unsigned char Green;
-	unsigned char Red;
-	unsigned char Padding;
+	/*+0x0*/   unsigned char Blue; // 0x1 bytes
+	/*+0x1*/   unsigned char Green; // 0x1 bytes
+	/*+0x2*/   unsigned char Red; // 0x1 bytes
+	/*+0x3*/   unsigned char Padding; // 0x1 bytes
 	void SparkalColor(unsigned char, unsigned char, unsigned char);
 	void SparkalColor();
 };
@@ -61,28 +61,28 @@ struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 
 // Type: /*packed*/ struct list<StringIDAssociation>::list_node_buffer (forward reference);
 struct list<StringIDAssociation>::list_node_buffer{ // packed(0x8 bytes) TI: 0x2958
-	void * __ptr32 next_buffer;
-	/*packed*/ struct list<StringIDAssociation>::list_node *buffer;
+	/*+0x0*/   void * __ptr32 next_buffer;
+	/*+0x4*/   /*packed*/ struct list<StringIDAssociation>::list_node *buffer;
 };
 
 // Type: /*packed*/ struct list<StringIDAssociation>::list_node (forward reference);
 struct list<StringIDAssociation>::list_node{ // packed(0x14 bytes) TI: 0x295a
-	void * __ptr32 next;
-	void * __ptr32 prev;
-	/*packed*/ struct StringIDAssociation data;
+	/*+0x0*/   void * __ptr32 next;
+	/*+0x4*/   void * __ptr32 prev;
+	/*+0x8*/   /*packed*/ struct StringIDAssociation data; // 0xc bytes
 };
 
 // Type: /*packed*/ struct list<KeyColors>::list_node_buffer (forward reference);
 struct list<KeyColors>::list_node_buffer{ // packed(0x8 bytes) TI: 0x29dc
-	void * __ptr32 next_buffer;
-	/*packed*/ struct list<KeyColors>::list_node *buffer;
+	/*+0x0*/   void * __ptr32 next_buffer;
+	/*+0x4*/   /*packed*/ struct list<KeyColors>::list_node *buffer;
 };
 
 // Type: /*packed*/ struct list<KeyColors>::list_node (forward reference);
 struct list<KeyColors>::list_node{ // packed(0x10 bytes) TI: 0x29de
-	void * __ptr32 next;
-	void * __ptr32 prev;
-	/*packed*/ struct KeyColors data;
+	/*+0x0*/   void * __ptr32 next;
+	/*+0x4*/   void * __ptr32 prev;
+	/*+0x8*/   /*packed*/ struct KeyColors data; // 0x8 bytes
 };
 
 // Type: void;
@@ -105,11 +105,11 @@ public:
 	virtual long DoCursorDown(long, long, unsigned long) /* override */;
 	virtual long DoCursorUp(long, long, unsigned long) /* override */;
 	virtual long DoCursorMove(long, long) /* override */;
-	/*packed*/ class list<HotSpot> myHotSpotList;
-	/*packed*/ class list<HotSpot> myNumLockOnHotSpotList;
-	/*packed*/ class list<HotSpot> myNumLockOffHotSpotList;
-	/*packed*/ class list<HotSpot> *myCurrentlyUsedNumLockHotSpotList;
-	/*packed*/ class list<KeyColors> myKeyColorsList;
+	/*+0x74*/  /*packed*/ class list<HotSpot> myHotSpotList; // 0x8 bytes
+	/*+0x7c*/  /*packed*/ class list<HotSpot> myNumLockOnHotSpotList; // 0x8 bytes
+	/*+0x84*/  /*packed*/ class list<HotSpot> myNumLockOffHotSpotList; // 0x8 bytes
+	/*+0x8c*/  /*packed*/ class list<HotSpot> *myCurrentlyUsedNumLockHotSpotList;
+	/*+0x90*/  /*packed*/ class list<KeyColors> myKeyColorsList; // 0x8 bytes
 protected:
 	virtual void DrawKeyColorsOnKeyboard(); // vtable+0xc8
 	virtual void DrawCharactersOnKeyboard(); // vtable+0xcc
@@ -118,12 +118,12 @@ protected:
 	virtual int32_t DoesPositionHitKey(long, long, long&); // vtable+0xd8
 	virtual int32_t ConvertKeyToString(int32_t, long, /*packed*/ class basic_string<char>&); // vtable+0xdc
 	virtual int32_t GetRectOfNonTextImage(long, /*packed*/ class MRect&); // vtable+0xe0
-	/*unpacked*/ class CBackBuffer *myKeyLightImage;
-	/*unpacked*/ class CBackBuffer *myNonTextKeyImage;
-	/*packed*/ class MFont *mFontToUse;
-	int32_t bNumLockLastSetting;
-	int32_t bCapsLockLastSetting;
-	int32_t bScrollLockLastSetting;
+	/*+0x98*/  /*unpacked*/ class CBackBuffer *myKeyLightImage;
+	/*+0x9c*/  /*unpacked*/ class CBackBuffer *myNonTextKeyImage;
+	/*+0xa0*/  /*packed*/ class MFont *mFontToUse;
+	/*+0xa4*/  int32_t bNumLockLastSetting;
+	/*+0xa8*/  int32_t bCapsLockLastSetting;
+	/*+0xac*/  int32_t bScrollLockLastSetting;
 };
 
 // Type: /*packed*/ class MRect (forward reference);
@@ -211,8 +211,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -318,8 +318,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -422,7 +422,7 @@ public:
 class list<HotSpot>::iterator : public bidirectional_iterator<HotSpot,int>
 { // packed(0x4 bytes) TI: 0x1240
 protected:
-	/*packed*/ struct list<HotSpot>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<HotSpot>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -440,7 +440,7 @@ public:
 class list<KeyColors>::iterator : public bidirectional_iterator<KeyColors,int>
 { // packed(0x4 bytes) TI: 0x29da
 protected:
-	/*packed*/ struct list<KeyColors>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<KeyColors>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -528,8 +528,8 @@ public:
 
 // Type: /*packed*/ struct KeyboardWindowMessage;
 struct KeyboardWindowMessage{ // packed(0x8 bytes) TI: 0x2bde
-	long lKey;
-	long lCursorButton;
+	/*+0x0*/   long lKey;
+	/*+0x4*/   long lCursorButton;
 };
 
 // Type: /*packed*/ class JoystickWindow (forward reference);
@@ -548,9 +548,9 @@ public:
 	virtual long DoCursorUp(long, long, unsigned long) /* override */;
 	virtual long DoCursorMove(long, long) /* override */;
 	virtual void SetCurrentJoystick(int32_t); // vtable+0xc4
-	int32_t nCurrentJoystick;
-	long lJoystickControlStates[14];
-	char lJoystickControlColors[14];
+	/*+0x74*/  int32_t nCurrentJoystick;
+	/*+0x78*/  long lJoystickControlStates[14]; // 0x38 bytes
+	/*+0xb0*/  char lJoystickControlColors[14]; // 0xe bytes
 protected:
 	virtual int32_t GetHandleImageToUse(); // vtable+0xc8
 	virtual void DrawCurrentJoystick(); // vtable+0xcc
@@ -560,14 +560,14 @@ protected:
 	virtual void GetNewJoystickControlStates(long *); // vtable+0xdc
 	virtual int32_t DoesPositionHitKey(long, long, long&); // vtable+0xe0
 	virtual void GetSourceHandleBaseRects(/*packed*/ class MRect*); // vtable+0xe4
-	/*packed*/ class MRect rectButtons[8];
-	/*packed*/ class MRect rectSliders[4];
-	/*packed*/ class MRect rectHandle;
-	/*packed*/ class MRect rectHandleBaseGraphics[4];
-	/*unpacked*/ class CBackBuffer *myButtonImage;
-	/*unpacked*/ class CBackBuffer *mySliderImage;
-	/*unpacked*/ class CBackBuffer *myHandleImage;
-	/*unpacked*/ class CBackBuffer *myHandleBaseImage;
+	/*+0xbe*/  /*packed*/ class MRect rectButtons[8]; // 0x80 bytes
+	/*+0x13e*/ /*packed*/ class MRect rectSliders[4]; // 0x40 bytes
+	/*+0x17e*/ /*packed*/ class MRect rectHandle; // 0x10 bytes
+	/*+0x18e*/ /*packed*/ class MRect rectHandleBaseGraphics[4]; // 0x40 bytes
+	/*+0x1ce*/ /*unpacked*/ class CBackBuffer *myButtonImage;
+	/*+0x1d2*/ /*unpacked*/ class CBackBuffer *mySliderImage;
+	/*+0x1d6*/ /*unpacked*/ class CBackBuffer *myHandleImage;
+	/*+0x1da*/ /*unpacked*/ class CBackBuffer *myHandleBaseImage;
 };
 
 // Type: long *;
@@ -607,17 +607,17 @@ protected:
 	void AddJoystickTwinCommand(long, long, long);
 	void RemoveJoystickTwinCommand(long, long, long);
 	int32_t DoesTwinCommandExistForShortcut(long, long, long);
-	/*packed*/ class JoystickWindow *myJoystickWindow;
-	/*packed*/ class KeyboardWindow *myKeyboardWindow;
-	/*packed*/ class ListBoxWindow *myInputDeviceListBoxWindow;
-	/*packed*/ class ListBoxWindow *myCommandListBoxWindow;
-	/*packed*/ class TextWindow *myStatusTextWindow;
-	/*packed*/ class list<StringIDAssociation> myInputDeviceStringIDAssociationList;
-	/*packed*/ class list<StringIDAssociation> myCommandStringIDAssociationList;
-	/*packed*/ class list<Shortcut> myShortcutListNonConfigurable;
-	/*packed*/ class list<Shortcut> myShortcutListConfigurable;
-	int32_t bCommandsHaveChanged;
-	int32_t bInitializing;
+	/*+0x74*/  /*packed*/ class JoystickWindow *myJoystickWindow;
+	/*+0x78*/  /*packed*/ class KeyboardWindow *myKeyboardWindow;
+	/*+0x7c*/  /*packed*/ class ListBoxWindow *myInputDeviceListBoxWindow;
+	/*+0x80*/  /*packed*/ class ListBoxWindow *myCommandListBoxWindow;
+	/*+0x84*/  /*packed*/ class TextWindow *myStatusTextWindow;
+	/*+0x88*/  /*packed*/ class list<StringIDAssociation> myInputDeviceStringIDAssociationList; // 0x8 bytes
+	/*+0x90*/  /*packed*/ class list<StringIDAssociation> myCommandStringIDAssociationList; // 0x8 bytes
+	/*+0x98*/  /*packed*/ class list<Shortcut> myShortcutListNonConfigurable; // 0x8 bytes
+	/*+0xa0*/  /*packed*/ class list<Shortcut> myShortcutListConfigurable; // 0x8 bytes
+	/*+0xa8*/  int32_t bCommandsHaveChanged;
+	/*+0xac*/  int32_t bInitializing;
 };
 
 // Type: /*packed*/ class ButtonWindow (forward reference);
@@ -646,13 +646,13 @@ public:
 	virtual void SetTextColor(const /*packed*/ struct SparkalColor*, const /*packed*/ struct SparkalColor*); // vtable+0xd8
 	virtual int32_t CanWeRespondToMessage() /* override */;
 protected:
-	int32_t nButtonState;
-	int32_t bEnabled;
-	int32_t nButtonTextHeight;
-	/*packed*/ class MSize sizeTextOffset;
-	int32_t bBusySettingState;
-	/*packed*/ struct SparkalColor colorFont;
-	/*packed*/ struct SparkalColor colorFontHighlighted;
+	/*+0x74*/  int32_t nButtonState;
+	/*+0x78*/  int32_t bEnabled;
+	/*+0x7c*/  int32_t nButtonTextHeight;
+	/*+0x80*/  /*packed*/ class MSize sizeTextOffset; // 0x8 bytes
+	/*+0x88*/  int32_t bBusySettingState;
+	/*+0x8c*/  /*packed*/ struct SparkalColor colorFont;
+	/*+0x90*/  /*packed*/ struct SparkalColor colorFontHighlighted;
 };
 
 // Type: void * __ptr32;
@@ -669,9 +669,9 @@ public:
 protected:
 	void GetCommandString(/*packed*/ class basic_string<char>&, long);
 	void AppendKeysString(/*packed*/ class basic_string<char>&, long, long, int32_t);
-	int32_t bInitializing;
-	/*packed*/ class ListBoxWindow *myCommandListBoxWindow;
-	/*packed*/ class ListBoxWindow *myKeysListBoxWindow;
+	/*+0x74*/  int32_t bInitializing;
+	/*+0x78*/  /*packed*/ class ListBoxWindow *myCommandListBoxWindow;
+	/*+0x7c*/  /*packed*/ class ListBoxWindow *myKeysListBoxWindow;
 };
 
 // Type: enum UserInputWindow::KeyUsageType;
@@ -684,19 +684,19 @@ enum KeyUsageType {
 
 // Type: /*packed*/ struct Shortcut;
 struct Shortcut{ // packed(0x18 bytes) TI: 0x1083
-	long lDeviceID;
-	long lCommand;
-	long lKey;
-	long lModifiers;
-	long lPush;
-	long lIgnoreModifiers;
+	/*+0x0*/   long lDeviceID;
+	/*+0x4*/   long lCommand;
+	/*+0x8*/   long lKey;
+	/*+0xc*/   long lModifiers;
+	/*+0x10*/  long lPush;
+	/*+0x14*/  long lIgnoreModifiers;
 };
 
 // Type: /*packed*/ class list<Shortcut>::iterator;
 class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
 { // packed(0x4 bytes) TI: 0x1081
 protected:
-	/*packed*/ struct list<Shortcut>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<Shortcut>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -714,7 +714,7 @@ public:
 class list<StringIDAssociation>::iterator : public bidirectional_iterator<StringIDAssociation,int>
 { // packed(0x4 bytes) TI: 0x2956
 protected:
-	/*packed*/ struct list<StringIDAssociation>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<StringIDAssociation>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -730,8 +730,8 @@ public:
 
 // Type: /*packed*/ struct KeyColors;
 struct KeyColors{ // packed(0x8 bytes) TI: 0x28cf
-	long lKey;
-	long lColorIndex;
+	/*+0x0*/   long lKey;
+	/*+0x4*/   long lColorIndex;
 };
 
 // Type: /*packed*/ class MPoint;
@@ -768,9 +768,9 @@ public:
 class list<Shortcut>{ // packed(0x8 bytes) TI: 0x1b79
 	using void_pointer = void * __ptr32;
 	struct list<Shortcut>::list_node{ // packed(0x20 bytes) TI: 0x1b8e
-		void * __ptr32 next;
-		void * __ptr32 prev;
-		/*packed*/ struct Shortcut data;
+		/*+0x0*/   void * __ptr32 next;
+		/*+0x4*/   void * __ptr32 prev;
+		/*+0x8*/   /*packed*/ struct Shortcut data; // 0x18 bytes
 	};
 protected:
 	static /*packed*/ class allocator<list<Shortcut>::list_node> list_node_allocator;
@@ -787,8 +787,8 @@ protected:
 protected:
 	uint32_t buffer_size();
 	struct list<Shortcut>::list_node_buffer{ // packed(0x8 bytes) TI: 0x1b8c
-		void * __ptr32 next_buffer;
-		/*packed*/ struct list<Shortcut>::list_node *buffer;
+		/*+0x0*/   void * __ptr32 next_buffer;
+		/*+0x4*/   /*packed*/ struct list<Shortcut>::list_node *buffer;
 	};
 	using buffer_allocator_type = /*packed*/ class allocator<list<Shortcut>::list_node_buffer>;
 	using buffer_pointer = /*packed*/ struct list<Shortcut>::list_node_buffer*;
@@ -803,12 +803,12 @@ protected:
 	void deallocate_buffers();
 	/*packed*/ struct list<Shortcut>::list_node* get_node();
 	void put_node(/*packed*/ struct list<Shortcut>::list_node*);
-	/*packed*/ struct list<Shortcut>::list_node *node;
-	uint32_t length;
+	/*+0x0*/   /*packed*/ struct list<Shortcut>::list_node *node;
+	/*+0x4*/   uint32_t length;
 	class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
 	{ // packed(0x4 bytes) TI: 0x1081
 	protected:
-		/*packed*/ struct list<Shortcut>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<Shortcut>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -824,7 +824,7 @@ protected:
 	class list<Shortcut>::const_iterator : public bidirectional_iterator<Shortcut,int>
 	{ // packed(0x4 bytes) TI: 0x1b8a
 	protected:
-		/*packed*/ struct list<Shortcut>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<Shortcut>::list_node *node;
 	public:
 		void const_iterator(const /*packed*/ class list<Shortcut>::iterator&);
 		void const_iterator();
@@ -905,12 +905,12 @@ public:
 	virtual void FitWindowToText(); // vtable+0xe0
 	virtual int32_t ResizeWindowForExactLineHeights(); // vtable+0xe4
 protected:
-	int32_t bDrawOpaqueBackground;
-	/*packed*/ struct SparkalColor colorFont;
-	int32_t nBackgroundPaletteIndex;
-	int32_t nWindowTitleTextID;
-	/*packed*/ class MFont fontText;
-	unsigned long nTextDrawStyle;
+	/*+0x74*/  int32_t bDrawOpaqueBackground;
+	/*+0x78*/  /*packed*/ struct SparkalColor colorFont;
+	/*+0x7c*/  int32_t nBackgroundPaletteIndex;
+	/*+0x80*/  int32_t nWindowTitleTextID;
+	/*+0x84*/  /*packed*/ class MFont fontText; // 0x1c bytes
+	/*+0xa0*/  unsigned long nTextDrawStyle;
 };
 
 // Type: /*packed*/ class set<long,less<long>>;
@@ -921,7 +921,7 @@ class set<long,less<long>>{ // packed(0xd bytes) TI: 0x2c0e
 	using value_compare = /*packed*/ struct less<long>;
 	using rep_type = /*packed*/ class rb_tree<long,long,ident<long,long>,less<long>>;
 private:
-	/*packed*/ class rb_tree<long,long,ident<long,long>,less<long>> t;
+	/*+0x0*/   /*packed*/ class rb_tree<long,long,ident<long,long>,less<long>> t; // 0xd bytes
 	using reference = const long&;
 	using const_reference = const long&;
 	using iterator = /*packed*/ class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator;
@@ -966,7 +966,7 @@ public:
 class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator : public bidirectional_iterator<long,int>
 { // packed(0x4 bytes) TI: 0x2c27
 protected:
-	/*packed*/ struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *node;
+	/*+0x0*/   /*packed*/ struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *node;
 public:
 	void const_iterator(const /*packed*/ class rb_tree<long,long,ident<long,long>,less<long>>::iterator&);
 	void const_iterator();
@@ -984,12 +984,12 @@ public:
 
 // Type: /*packed*/ struct Shortcut (forward reference);
 struct Shortcut{ // packed(0x18 bytes) TI: 0x1083
-	long lDeviceID;
-	long lCommand;
-	long lKey;
-	long lModifiers;
-	long lPush;
-	long lIgnoreModifiers;
+	/*+0x0*/   long lDeviceID;
+	/*+0x4*/   long lCommand;
+	/*+0x8*/   long lKey;
+	/*+0xc*/   long lModifiers;
+	/*+0x10*/  long lPush;
+	/*+0x14*/  long lIgnoreModifiers;
 };
 
 // Type: /*packed*/ class vector<char> (forward reference);
@@ -1007,9 +1007,9 @@ class vector<char>{ // packed(0xc bytes) TI: 0x1e45
 	using reverse_iterator = /*unpacked*/ class reverse_iterator<char *,char,char &,int>;
 protected:
 	static /*packed*/ class allocator<char> static_allocator;
-	char * start;
-	char * finish;
-	char * end_of_storage;
+	/*+0x0*/   char * start;
+	/*+0x4*/   char * finish;
+	/*+0x8*/   char * end_of_storage;
 	void insert_aux(char *, const char&);
 public:
 	char * begin();
@@ -1083,9 +1083,9 @@ public:
 class list<KeyColors>{ // packed(0x8 bytes) TI: 0x29b8
 	using void_pointer = void * __ptr32;
 	struct list<KeyColors>::list_node{ // packed(0x10 bytes) TI: 0x29de
-		void * __ptr32 next;
-		void * __ptr32 prev;
-		/*packed*/ struct KeyColors data;
+		/*+0x0*/   void * __ptr32 next;
+		/*+0x4*/   void * __ptr32 prev;
+		/*+0x8*/   /*packed*/ struct KeyColors data; // 0x8 bytes
 	};
 protected:
 	static /*packed*/ class allocator<list<KeyColors>::list_node> list_node_allocator;
@@ -1102,8 +1102,8 @@ protected:
 protected:
 	uint32_t buffer_size();
 	struct list<KeyColors>::list_node_buffer{ // packed(0x8 bytes) TI: 0x29dc
-		void * __ptr32 next_buffer;
-		/*packed*/ struct list<KeyColors>::list_node *buffer;
+		/*+0x0*/   void * __ptr32 next_buffer;
+		/*+0x4*/   /*packed*/ struct list<KeyColors>::list_node *buffer;
 	};
 	using buffer_allocator_type = /*packed*/ class allocator<list<KeyColors>::list_node_buffer>;
 	using buffer_pointer = /*packed*/ struct list<KeyColors>::list_node_buffer*;
@@ -1118,12 +1118,12 @@ protected:
 	void deallocate_buffers();
 	/*packed*/ struct list<KeyColors>::list_node* get_node();
 	void put_node(/*packed*/ struct list<KeyColors>::list_node*);
-	/*packed*/ struct list<KeyColors>::list_node *node;
-	uint32_t length;
+	/*+0x0*/   /*packed*/ struct list<KeyColors>::list_node *node;
+	/*+0x4*/   uint32_t length;
 	class list<KeyColors>::iterator : public bidirectional_iterator<KeyColors,int>
 	{ // packed(0x4 bytes) TI: 0x29da
 	protected:
-		/*packed*/ struct list<KeyColors>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<KeyColors>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -1139,7 +1139,7 @@ protected:
 	class list<KeyColors>::const_iterator : public bidirectional_iterator<KeyColors,int>
 	{ // packed(0x4 bytes) TI: 0x29cd
 	protected:
-		/*packed*/ struct list<KeyColors>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<KeyColors>::list_node *node;
 	public:
 		void const_iterator(const /*packed*/ class list<KeyColors>::iterator&);
 		void const_iterator();
@@ -1205,7 +1205,7 @@ public:
 class list<HotSpot>::iterator : public bidirectional_iterator<HotSpot,int>
 { // packed(0x4 bytes) TI: 0x1240
 protected:
-	/*packed*/ struct list<HotSpot>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<HotSpot>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -1223,9 +1223,9 @@ public:
 class list<HotSpot>{ // packed(0x8 bytes) TI: 0x121e
 	using void_pointer = void * __ptr32;
 	struct list<HotSpot>::list_node{ // packed(0x1c bytes) TI: 0x1244
-		void * __ptr32 next;
-		void * __ptr32 prev;
-		/*packed*/ class HotSpot data;
+		/*+0x0*/   void * __ptr32 next;
+		/*+0x4*/   void * __ptr32 prev;
+		/*+0x8*/   /*packed*/ class HotSpot data; // 0x14 bytes
 	};
 protected:
 	static /*packed*/ class allocator<list<HotSpot>::list_node> list_node_allocator;
@@ -1242,8 +1242,8 @@ protected:
 protected:
 	uint32_t buffer_size();
 	struct list<HotSpot>::list_node_buffer{ // packed(0x8 bytes) TI: 0x1242
-		void * __ptr32 next_buffer;
-		/*packed*/ struct list<HotSpot>::list_node *buffer;
+		/*+0x0*/   void * __ptr32 next_buffer;
+		/*+0x4*/   /*packed*/ struct list<HotSpot>::list_node *buffer;
 	};
 	using buffer_allocator_type = /*packed*/ class allocator<list<HotSpot>::list_node_buffer>;
 	using buffer_pointer = /*packed*/ struct list<HotSpot>::list_node_buffer*;
@@ -1258,12 +1258,12 @@ protected:
 	void deallocate_buffers();
 	/*packed*/ struct list<HotSpot>::list_node* get_node();
 	void put_node(/*packed*/ struct list<HotSpot>::list_node*);
-	/*packed*/ struct list<HotSpot>::list_node *node;
-	uint32_t length;
+	/*+0x0*/   /*packed*/ struct list<HotSpot>::list_node *node;
+	/*+0x4*/   uint32_t length;
 	class list<HotSpot>::iterator : public bidirectional_iterator<HotSpot,int>
 	{ // packed(0x4 bytes) TI: 0x1240
 	protected:
-		/*packed*/ struct list<HotSpot>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<HotSpot>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -1279,7 +1279,7 @@ protected:
 	class list<HotSpot>::const_iterator : public bidirectional_iterator<HotSpot,int>
 	{ // packed(0x4 bytes) TI: 0x1233
 	protected:
-		/*packed*/ struct list<HotSpot>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<HotSpot>::list_node *node;
 	public:
 		void const_iterator(const /*packed*/ class list<HotSpot>::iterator&);
 		void const_iterator();
@@ -1345,7 +1345,7 @@ public:
 class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
 { // packed(0x4 bytes) TI: 0x1081
 protected:
-	/*packed*/ struct list<Shortcut>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<Shortcut>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -1363,7 +1363,7 @@ public:
 class list<StringIDAssociation>::iterator : public bidirectional_iterator<StringIDAssociation,int>
 { // packed(0x4 bytes) TI: 0x2956
 protected:
-	/*packed*/ struct list<StringIDAssociation>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<StringIDAssociation>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -1381,9 +1381,9 @@ public:
 class list<StringIDAssociation>{ // packed(0x8 bytes) TI: 0x2934
 	using void_pointer = void * __ptr32;
 	struct list<StringIDAssociation>::list_node{ // packed(0x14 bytes) TI: 0x295a
-		void * __ptr32 next;
-		void * __ptr32 prev;
-		/*packed*/ struct StringIDAssociation data;
+		/*+0x0*/   void * __ptr32 next;
+		/*+0x4*/   void * __ptr32 prev;
+		/*+0x8*/   /*packed*/ struct StringIDAssociation data; // 0xc bytes
 	};
 protected:
 	static /*packed*/ class allocator<list<StringIDAssociation>::list_node> list_node_allocator;
@@ -1400,8 +1400,8 @@ protected:
 protected:
 	uint32_t buffer_size();
 	struct list<StringIDAssociation>::list_node_buffer{ // packed(0x8 bytes) TI: 0x2958
-		void * __ptr32 next_buffer;
-		/*packed*/ struct list<StringIDAssociation>::list_node *buffer;
+		/*+0x0*/   void * __ptr32 next_buffer;
+		/*+0x4*/   /*packed*/ struct list<StringIDAssociation>::list_node *buffer;
 	};
 	using buffer_allocator_type = /*packed*/ class allocator<list<StringIDAssociation>::list_node_buffer>;
 	using buffer_pointer = /*packed*/ struct list<StringIDAssociation>::list_node_buffer*;
@@ -1416,12 +1416,12 @@ protected:
 	void deallocate_buffers();
 	/*packed*/ struct list<StringIDAssociation>::list_node* get_node();
 	void put_node(/*packed*/ struct list<StringIDAssociation>::list_node*);
-	/*packed*/ struct list<StringIDAssociation>::list_node *node;
-	uint32_t length;
+	/*+0x0*/   /*packed*/ struct list<StringIDAssociation>::list_node *node;
+	/*+0x4*/   uint32_t length;
 	class list<StringIDAssociation>::iterator : public bidirectional_iterator<StringIDAssociation,int>
 	{ // packed(0x4 bytes) TI: 0x2956
 	protected:
-		/*packed*/ struct list<StringIDAssociation>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<StringIDAssociation>::list_node *node;
 	public:
 		void iterator();
 	protected:
@@ -1437,7 +1437,7 @@ protected:
 	class list<StringIDAssociation>::const_iterator : public bidirectional_iterator<StringIDAssociation,int>
 	{ // packed(0x4 bytes) TI: 0x2949
 	protected:
-		/*packed*/ struct list<StringIDAssociation>::list_node *node;
+		/*+0x0*/   /*packed*/ struct list<StringIDAssociation>::list_node *node;
 	public:
 		void const_iterator(const /*packed*/ class list<StringIDAssociation>::iterator&);
 		void const_iterator();
@@ -1501,8 +1501,8 @@ public:
 
 // Type: /*packed*/ struct StringIDAssociation (forward reference);
 struct StringIDAssociation{ // packed(0xc bytes) TI: 0x29e4
-	/*packed*/ class basic_string<char> sName;
-	long lID;
+	/*+0x0*/   /*packed*/ class basic_string<char> sName; // 0x8 bytes
+	/*+0x8*/   long lID;
 	void StringIDAssociation(/*packed*/ class basic_string<char>&, long);
 	void StringIDAssociation();
 };
@@ -1511,7 +1511,7 @@ struct StringIDAssociation{ // packed(0xc bytes) TI: 0x29e4
 class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator : public bidirectional_iterator<long,int>
 { // packed(0x4 bytes) TI: 0x2c27
 protected:
-	/*packed*/ struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *node;
+	/*+0x0*/   /*packed*/ struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *node;
 public:
 	void const_iterator(const /*packed*/ class rb_tree<long,long,ident<long,long>,less<long>>::iterator&);
 	void const_iterator();
@@ -1535,11 +1535,11 @@ class rb_tree<long,long,ident<long,long>,less<long>>{ // packed(0xd bytes) TI: 0
 	};
 	using void_pointer = void * __ptr32;
 	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node{ // packed(0x14 bytes) TI: 0x2cb4
-		enum rb_tree<long,long,ident<long,long>,less<long>>::color_type color_field;
-		void * __ptr32 parent_link;
-		void * __ptr32 left_link;
-		void * __ptr32 right_link;
-		long value_field;
+		/*+0x0*/   enum rb_tree<long,long,ident<long,long>,less<long>>::color_type color_field;
+		/*+0x4*/   void * __ptr32 parent_link;
+		/*+0x8*/   void * __ptr32 left_link;
+		/*+0xc*/   void * __ptr32 right_link;
+		/*+0x10*/  long value_field;
 	};
 protected:
 	static /*packed*/ class allocator<rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node> rb_tree_node_allocator;
@@ -1556,8 +1556,8 @@ protected:
 protected:
 	uint32_t buffer_size();
 	struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node_buffer{ // packed(0x8 bytes) TI: 0x2cb2
-		void * __ptr32 next_buffer;
-		/*packed*/ struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *buffer;
+		/*+0x0*/   void * __ptr32 next_buffer;
+		/*+0x4*/   /*packed*/ struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *buffer;
 	};
 	using buffer_allocator_type = /*packed*/ class allocator<rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node_buffer>;
 	using buffer_pointer = /*packed*/ struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node_buffer*;
@@ -1572,16 +1572,16 @@ protected:
 	void deallocate_buffers();
 	/*packed*/ struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node* get_node();
 	void put_node(/*packed*/ struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*);
-	/*packed*/ struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *header;
+	/*+0x0*/   /*packed*/ struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *header;
 	/*packed*/ struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*& root();
 	/*packed*/ struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*& root();
 	/*packed*/ struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*& leftmost();
 	/*packed*/ struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*& leftmost();
 	/*packed*/ struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*& rightmost();
 	/*packed*/ struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*& rightmost();
-	uint32_t node_count;
-	int32_t insert_always;
-	/*packed*/ struct less<long> key_compare;
+	/*+0x4*/   uint32_t node_count;
+	/*+0x8*/   int32_t insert_always;
+	/*+0xc*/   /*packed*/ struct less<long> key_compare; // 0x1 bytes
 	static /*packed*/ struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *NIL;
 	// calltype: NearC
 	static /*packed*/ struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*& left(/*packed*/ struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node*);
@@ -1602,7 +1602,7 @@ protected:
 	class rb_tree<long,long,ident<long,long>,less<long>>::iterator : public bidirectional_iterator<long,int>
 	{ // packed(0x4 bytes) TI: 0x2cb0
 	protected:
-		/*packed*/ struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *node;
+		/*+0x0*/   /*packed*/ struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *node;
 	public:
 		void iterator();
 	protected:
@@ -1618,7 +1618,7 @@ protected:
 	class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator : public bidirectional_iterator<long,int>
 	{ // packed(0x4 bytes) TI: 0x2c27
 	protected:
-		/*packed*/ struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *node;
+		/*+0x0*/   /*packed*/ struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *node;
 	public:
 		void const_iterator(const /*packed*/ class rb_tree<long,long,ident<long,long>,less<long>>::iterator&);
 		void const_iterator();
@@ -1690,7 +1690,7 @@ public:
 class rb_tree<long,long,ident<long,long>,less<long>>::iterator : public bidirectional_iterator<long,int>
 { // packed(0x4 bytes) TI: 0x2cb0
 protected:
-	/*packed*/ struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *node;
+	/*+0x0*/   /*packed*/ struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *node;
 public:
 	void iterator();
 protected:
@@ -1717,7 +1717,7 @@ enum capacity {
 class rb_tree<long,long,ident<long,long>,less<long>>::iterator : public bidirectional_iterator<long,int>
 { // packed(0x4 bytes) TI: 0x2cb0
 protected:
-	/*packed*/ struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *node;
+	/*+0x0*/   /*packed*/ struct rb_tree<long,long,ident<long,long>,less<long>>::rb_tree_node *node;
 public:
 	void iterator();
 protected:
@@ -1744,18 +1744,18 @@ struct bidirectional_iterator<long,int>{ // packed(0x1 bytes) TI: 0x2c2e
 
 // Type: /*packed*/ struct SparkalRect;
 struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
-	long left;
-	long top;
-	long right;
-	long bottom;
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
 	void SparkalRect(long, long, long, long);
 	void SparkalRect();
 };
 
 // Type: /*packed*/ struct SparkalPoint;
 struct SparkalPoint{ // packed(0x8 bytes) TI: 0x1a54
-	long x;
-	long y;
+	/*+0x0*/   long x;
+	/*+0x4*/   long y;
 	void SparkalPoint(long, long);
 	void SparkalPoint();
 };

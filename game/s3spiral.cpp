@@ -10,10 +10,10 @@ public:
 	int32_t Next(/*packed*/ struct _GridCoordinates&);
 	int32_t InCityGridLimits(/*packed*/ struct _GridCoordinates);
 private:
-	int32_t currDist;
-	int32_t currDir;
-	int32_t currDia;
-	int32_t maxDia;
+	/*+0x0*/   int32_t currDist;
+	/*+0x4*/   int32_t currDir;
+	/*+0x8*/   int32_t currDia;
+	/*+0xc*/   int32_t maxDia;
 };
 
 // Type: int32_t;
@@ -22,14 +22,14 @@ private:
 
 // Type: /*packed*/ struct _GridCoordinates (forward reference);
 struct _GridCoordinates{ // packed(0x2 bytes) TI: 0x143c
-	unsigned char x;
-	unsigned char y;
+	/*+0x0*/   unsigned char x; // 0x1 bytes
+	/*+0x1*/   unsigned char y; // 0x1 bytes
 };
 
 // Type: /*packed*/ struct _GridCoordinates;
 struct _GridCoordinates{ // packed(0x2 bytes) TI: 0x143c
-	unsigned char x;
-	unsigned char y;
+	/*+0x0*/   unsigned char x; // 0x1 bytes
+	/*+0x1*/   unsigned char y; // 0x1 bytes
 };
 
 

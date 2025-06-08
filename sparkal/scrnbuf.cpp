@@ -7,8 +7,8 @@
 class ScreenBuffer : public CBackBuffer
 { // packed(0x16a bytes) TI: 0x2735
 public:
-	/*unpacked*/ class CSparkalWindow *pWindow;
-	long bOK;
+	/*+0x134*/ /*unpacked*/ class CSparkalWindow *pWindow;
+	/*+0x138*/ long bOK;
 	void ScreenBuffer(/*unpacked*/ class CSparkalWindow*, long, long, /*packed*/ struct SparkalColor*, int32_t, enum tagModeType, int32_t);
 	void ScreenBuffer();
 	virtual void ~ScreenBuffer(); // vtable+0x64
@@ -24,20 +24,20 @@ public:
 	virtual void SetNewModeType(enum tagModeType); // vtable+0x84
 	virtual void WaitTillReadyToFlip(); // vtable+0x88
 protected:
-	/*packed*/ struct SparkalRect rectBuffer;
-	short nBackBuffers;
-	enum tagModeType nCurrentModeType;
-	int32_t bUsingFlipping;
-	/*packed*/ struct IDirectDrawClipper *lpClipper;
-	/*packed*/ struct tagRECT rectDirectDrawBackBuffer;
+	/*+0x13c*/ /*packed*/ struct SparkalRect rectBuffer; // 0x10 bytes
+	/*+0x14c*/ short nBackBuffers; // 0x2 bytes
+	/*+0x14e*/ enum tagModeType nCurrentModeType;
+	/*+0x152*/ int32_t bUsingFlipping;
+	/*+0x156*/ /*packed*/ struct IDirectDrawClipper *lpClipper;
+	/*+0x15a*/ /*packed*/ struct tagRECT rectDirectDrawBackBuffer; // 0x10 bytes
 };
 
 // Type: /*packed*/ struct SparkalRect;
 struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
-	long left;
-	long top;
-	long right;
-	long bottom;
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
 	void SparkalRect(long, long, long, long);
 	void SparkalRect();
 };
@@ -51,10 +51,10 @@ struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 
 // Type: /*packed*/ struct SparkalColor (forward reference);
 struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
-	unsigned char Blue;
-	unsigned char Green;
-	unsigned char Red;
-	unsigned char Padding;
+	/*+0x0*/   unsigned char Blue; // 0x1 bytes
+	/*+0x1*/   unsigned char Green; // 0x1 bytes
+	/*+0x2*/   unsigned char Red; // 0x1 bytes
+	/*+0x3*/   unsigned char Padding; // 0x1 bytes
 	void SparkalColor(unsigned char, unsigned char, unsigned char);
 	void SparkalColor();
 };
@@ -69,69 +69,69 @@ enum tagModeType {
 
 // Type: /*packed*/ struct _DDSCAPS;
 struct _DDSCAPS{ // packed(0x4 bytes) TI: 0x176d
-	unsigned long dwCaps;
+	/*+0x0*/   unsigned long dwCaps;
 };
 
 // Type: /*packed*/ struct _DDBLTFX;
 struct _DDBLTFX{ // packed(0x64 bytes) TI: 0x12e7
-	unsigned long dwSize;
-	unsigned long dwDDFX;
-	unsigned long dwROP;
-	unsigned long dwDDROP;
-	unsigned long dwRotationAngle;
-	unsigned long dwZBufferOpCode;
-	unsigned long dwZBufferLow;
-	unsigned long dwZBufferHigh;
-	unsigned long dwZBufferBaseDest;
-	unsigned long dwZDestConstBitDepth;
-	unsigned long dwZDestConst;
-	/*packed*/ struct IDirectDrawSurface *lpDDSZBufferDest;
-	unsigned long dwZSrcConstBitDepth;
-	unsigned long dwZSrcConst;
-	/*packed*/ struct IDirectDrawSurface *lpDDSZBufferSrc;
-	unsigned long dwAlphaEdgeBlendBitDepth;
-	unsigned long dwAlphaEdgeBlend;
-	unsigned long dwReserved;
-	unsigned long dwAlphaDestConstBitDepth;
-	unsigned long dwAlphaDestConst;
-	/*packed*/ struct IDirectDrawSurface *lpDDSAlphaDest;
-	unsigned long dwAlphaSrcConstBitDepth;
-	unsigned long dwAlphaSrcConst;
-	/*packed*/ struct IDirectDrawSurface *lpDDSAlphaSrc;
-	unsigned long dwFillColor;
-	/*packed*/ struct IDirectDrawSurface *lpDDSPattern;
-	/*packed*/ struct _DDCOLORKEY ddckDestColorkey;
-	/*packed*/ struct _DDCOLORKEY ddckSrcColorkey;
+	/*+0x0*/   unsigned long dwSize;
+	/*+0x4*/   unsigned long dwDDFX;
+	/*+0x8*/   unsigned long dwROP;
+	/*+0xc*/   unsigned long dwDDROP;
+	/*+0x10*/  unsigned long dwRotationAngle;
+	/*+0x14*/  unsigned long dwZBufferOpCode;
+	/*+0x18*/  unsigned long dwZBufferLow;
+	/*+0x1c*/  unsigned long dwZBufferHigh;
+	/*+0x20*/  unsigned long dwZBufferBaseDest;
+	/*+0x24*/  unsigned long dwZDestConstBitDepth;
+	/*+0x28*/  unsigned long dwZDestConst;
+	/*+0x28*/  /*packed*/ struct IDirectDrawSurface *lpDDSZBufferDest;
+	/*+0x2c*/  unsigned long dwZSrcConstBitDepth;
+	/*+0x30*/  unsigned long dwZSrcConst;
+	/*+0x30*/  /*packed*/ struct IDirectDrawSurface *lpDDSZBufferSrc;
+	/*+0x34*/  unsigned long dwAlphaEdgeBlendBitDepth;
+	/*+0x38*/  unsigned long dwAlphaEdgeBlend;
+	/*+0x3c*/  unsigned long dwReserved;
+	/*+0x40*/  unsigned long dwAlphaDestConstBitDepth;
+	/*+0x44*/  unsigned long dwAlphaDestConst;
+	/*+0x44*/  /*packed*/ struct IDirectDrawSurface *lpDDSAlphaDest;
+	/*+0x48*/  unsigned long dwAlphaSrcConstBitDepth;
+	/*+0x4c*/  unsigned long dwAlphaSrcConst;
+	/*+0x4c*/  /*packed*/ struct IDirectDrawSurface *lpDDSAlphaSrc;
+	/*+0x50*/  unsigned long dwFillColor;
+	/*+0x50*/  /*packed*/ struct IDirectDrawSurface *lpDDSPattern;
+	/*+0x54*/  /*packed*/ struct _DDCOLORKEY ddckDestColorkey; // 0x8 bytes
+	/*+0x5c*/  /*packed*/ struct _DDCOLORKEY ddckSrcColorkey; // 0x8 bytes
 };
 
 // Type: unsigned long;
 
 // Type: /*packed*/ struct tagPALETTEENTRY (forward reference);
 struct tagPALETTEENTRY{ // packed(0x4 bytes) TI: 0x1be6
-	unsigned char peRed;
-	unsigned char peGreen;
-	unsigned char peBlue;
-	unsigned char peFlags;
+	/*+0x0*/   unsigned char peRed; // 0x1 bytes
+	/*+0x1*/   unsigned char peGreen; // 0x1 bytes
+	/*+0x2*/   unsigned char peBlue; // 0x1 bytes
+	/*+0x3*/   unsigned char peFlags; // 0x1 bytes
 };
 
 // Type: void * __ptr32;
 
 // Type: /*packed*/ struct SparkalRect (forward reference);
 struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
-	long left;
-	long top;
-	long right;
-	long bottom;
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
 	void SparkalRect(long, long, long, long);
 	void SparkalRect();
 };
 
 // Type: /*packed*/ struct tagRECT;
 struct tagRECT{ // packed(0x10 bytes) TI: 0x13c4
-	long left;
-	long top;
-	long right;
-	long bottom;
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
 };
 
 // Type: uint32_t;

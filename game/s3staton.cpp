@@ -16,13 +16,13 @@ public:
 	short GetNextNearest(/*packed*/ struct _GridCoordinates*);
 	void DecrementQuantityOfVehicleDispatched(int32_t);
 private:
-	/*packed*/ struct _StructStation *stationList;
-	int32_t quantityOfStations;
-	/*packed*/ struct _StationHeapStruct *stationHeap;
-	int32_t stationHeapSize;
-	/*packed*/ struct _VehicleHeapStruct *vehicleHeap;
-	int32_t vehicleHeapSize;
-	int32_t maxVehicles;
+	/*+0x0*/   /*packed*/ struct _StructStation *stationList;
+	/*+0x4*/   int32_t quantityOfStations;
+	/*+0x8*/   /*packed*/ struct _StationHeapStruct *stationHeap;
+	/*+0xc*/   int32_t stationHeapSize;
+	/*+0x10*/  /*packed*/ struct _VehicleHeapStruct *vehicleHeap;
+	/*+0x14*/  int32_t vehicleHeapSize;
+	/*+0x18*/  int32_t maxVehicles;
 	int32_t FindNearestRoadToStation(/*packed*/ struct _GridCoordinates&);
 	int32_t FindNearestRoadToEmergency(/*packed*/ struct _GridCoordinates&);
 	int32_t FindNearestStation(/*packed*/ struct _GridCoordinates);
@@ -37,14 +37,14 @@ private:
 
 // Type: /*packed*/ struct _GridCoordinates;
 struct _GridCoordinates{ // packed(0x2 bytes) TI: 0x143c
-	unsigned char x;
-	unsigned char y;
+	/*+0x0*/   unsigned char x; // 0x1 bytes
+	/*+0x1*/   unsigned char y; // 0x1 bytes
 };
 
 // Type: /*packed*/ struct _GridCoordinates (forward reference);
 struct _GridCoordinates{ // packed(0x2 bytes) TI: 0x143c
-	unsigned char x;
-	unsigned char y;
+	/*+0x0*/   unsigned char x; // 0x1 bytes
+	/*+0x1*/   unsigned char y; // 0x1 bytes
 };
 
 // Type: short;
@@ -59,16 +59,16 @@ public:
 	int32_t Next(/*packed*/ struct _GridCoordinates&);
 	int32_t InCityGridLimits(/*packed*/ struct _GridCoordinates);
 private:
-	int32_t currDist;
-	int32_t currDir;
-	int32_t currDia;
-	int32_t maxDia;
+	/*+0x0*/   int32_t currDist;
+	/*+0x4*/   int32_t currDir;
+	/*+0x8*/   int32_t currDia;
+	/*+0xc*/   int32_t maxDia;
 };
 
 // Type: /*packed*/ struct _StationHeapStruct;
 struct _StationHeapStruct{ // packed(0x8 bytes) TI: 0x2fc4
-	long cost;
-	int32_t stationID;
+	/*+0x0*/   long cost;
+	/*+0x4*/   int32_t stationID;
 };
 
 // Type: /*packed*/ class EmergencyVehicleClass (forward reference);
@@ -81,19 +81,19 @@ class EmergencyVehicleClass : public AutomobileClass
 		AMBULANCE_CAPACITY = 2,
 	};
 protected:
-	/*packed*/ struct _GridCoordinates baseLocation;
-	/*packed*/ struct _GridCoordinates emergencyLocation;
-	enum EmergencyType emergencyType;
-	long timeOfArrival;
-	/*packed*/ struct _DYOBJ_INST dispatchIcon;
-	int32_t timeToEmergency;
-	/*packed*/ class AutomobileClass *dispatchTarget;
-	unsigned char dispatchPath[256];
-	unsigned char dispatchPathIndex;
-	unsigned char dispatchPathLength;
-	enum EmergencyLevel emergencyState;
-	int32_t stationID;
-	int32_t numberOfSeats;
+	/*+0x11a*/ /*packed*/ struct _GridCoordinates baseLocation; // 0x2 bytes
+	/*+0x11c*/ /*packed*/ struct _GridCoordinates emergencyLocation; // 0x2 bytes
+	/*+0x11e*/ enum EmergencyType emergencyType;
+	/*+0x122*/ long timeOfArrival;
+	/*+0x126*/ /*packed*/ struct _DYOBJ_INST dispatchIcon; // 0x64 bytes
+	/*+0x18a*/ int32_t timeToEmergency;
+	/*+0x18e*/ /*packed*/ class AutomobileClass *dispatchTarget;
+	/*+0x192*/ unsigned char dispatchPath[256]; // 0x100 bytes
+	/*+0x292*/ unsigned char dispatchPathIndex; // 0x1 bytes
+	/*+0x293*/ unsigned char dispatchPathLength; // 0x1 bytes
+	/*+0x294*/ enum EmergencyLevel emergencyState;
+	/*+0x298*/ int32_t stationID;
+	/*+0x29c*/ int32_t numberOfSeats;
 public:
 	void EmergencyVehicleClass(const /*packed*/ class EmergencyVehicleClass&);
 	void EmergencyVehicleClass();
@@ -132,16 +132,16 @@ public:
 
 // Type: /*packed*/ struct _VehicleHeapStruct;
 struct _VehicleHeapStruct{ // packed(0xa bytes) TI: 0x2fca
-	long cost;
-	/*packed*/ class EmergencyVehicleClass *pVehicle;
-	/*packed*/ struct _GridCoordinates loc;
+	/*+0x0*/   long cost;
+	/*+0x4*/   /*packed*/ class EmergencyVehicleClass *pVehicle;
+	/*+0x8*/   /*packed*/ struct _GridCoordinates loc; // 0x2 bytes
 };
 
 // Type: /*packed*/ struct Point3d;
 struct Point3d{ // packed(0xc bytes) TI: 0x18b0
-	int32_t x;
-	int32_t y;
-	int32_t z;
+	/*+0x0*/   int32_t x;
+	/*+0x4*/   int32_t y;
+	/*+0x8*/   int32_t z;
 };
 
 // Type: enum EmergencyLevel;
@@ -157,15 +157,15 @@ enum EmergencyLevel {
 
 // Type: /*packed*/ struct _StationHeapStruct (forward reference);
 struct _StationHeapStruct{ // packed(0x8 bytes) TI: 0x2fc4
-	long cost;
-	int32_t stationID;
+	/*+0x0*/   long cost;
+	/*+0x4*/   int32_t stationID;
 };
 
 // Type: /*packed*/ struct _VehicleHeapStruct (forward reference);
 struct _VehicleHeapStruct{ // packed(0xa bytes) TI: 0x2fca
-	long cost;
-	/*packed*/ class EmergencyVehicleClass *pVehicle;
-	/*packed*/ struct _GridCoordinates loc;
+	/*+0x0*/   long cost;
+	/*+0x4*/   /*packed*/ class EmergencyVehicleClass *pVehicle;
+	/*+0x8*/   /*packed*/ struct _GridCoordinates loc; // 0x2 bytes
 };
 
 // Type: long;
@@ -181,23 +181,23 @@ enum EmergencyType {
 
 // Type: /*packed*/ struct Goal;
 struct Goal{ // packed(0x2a bytes) TI: 0x12ce
-	/*packed*/ struct RGVertex *pRGV;
-	int32_t elementIndex;
-	int32_t gridIndex;
-	/*packed*/ struct _GridCoordinates gridLoc;
-	enum DirIndex2 edgeIndex;
-	enum DirIndex2 direction;
-	int32_t distance;
-	int32_t turnFlags;
-	int32_t deadEndFlags;
-	int32_t fElevated;
-	enum SlopeIndex slope;
+	/*+0x0*/   /*packed*/ struct RGVertex *pRGV;
+	/*+0x4*/   int32_t elementIndex;
+	/*+0x8*/   int32_t gridIndex;
+	/*+0xc*/   /*packed*/ struct _GridCoordinates gridLoc; // 0x2 bytes
+	/*+0xe*/   enum DirIndex2 edgeIndex;
+	/*+0x12*/  enum DirIndex2 direction;
+	/*+0x16*/  int32_t distance;
+	/*+0x1a*/  int32_t turnFlags;
+	/*+0x1e*/  int32_t deadEndFlags;
+	/*+0x22*/  int32_t fElevated;
+	/*+0x26*/  enum SlopeIndex slope;
 };
 
 // Type: /*packed*/ struct _RGIndex;
 struct _RGIndex{ // packed(0x2 bytes) TI: 0x2ab2
-	unsigned char x;
-	unsigned char yindex;
+	/*+0x0*/   unsigned char x; // 0x1 bytes
+	/*+0x1*/   unsigned char yindex; // 0x1 bytes
 };
 
 // Type: /*packed*/ class basic_string<char>;
@@ -205,8 +205,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -310,14 +310,14 @@ public:
 class DigitalSound : public Sound
 { // packed(0x7a bytes) TI: 0x45d4
 protected:
-	int32_t nStreamingType;
-	int32_t nCompletionEstimationTimerSet;
+	/*+0x34*/  int32_t nStreamingType;
+	/*+0x38*/  int32_t nCompletionEstimationTimerSet;
 	static /*packed*/ struct IDirectSound *lpDirectSound;
-	uint32_t cbSize;
-	/*packed*/ struct tWAVEFORMATEX waveFormatEx;
-	/*packed*/ struct IDirectSoundBuffer *lpSound[8];
-	/*packed*/ struct _STREAMBUFINFO *lpStreamBufferInfo;
-	unsigned long dwDesiredBufferDescFlags;
+	/*+0x3c*/  uint32_t cbSize;
+	/*+0x40*/  /*packed*/ struct tWAVEFORMATEX waveFormatEx; // 0x12 bytes
+	/*+0x52*/  /*packed*/ struct IDirectSoundBuffer *lpSound[8]; // 0x20 bytes
+	/*+0x72*/  /*packed*/ struct _STREAMBUFINFO *lpStreamBufferInfo;
+	/*+0x76*/  unsigned long dwDesiredBufferDescFlags;
 public:
 	void DigitalSound(long);
 	void DigitalSound(const /*packed*/ class basic_string<char>&, int32_t);
@@ -364,36 +364,36 @@ protected:
 
 // Type: /*packed*/ struct _StructStation (forward reference);
 struct _StructStation{ // packed(0x60 bytes) TI: 0x2feb
-	/*packed*/ struct Goal goal1;
-	/*packed*/ struct Goal goal2;
-	int32_t direction;
-	/*packed*/ struct _GridCoordinates location;
-	/*packed*/ struct _GridCoordinates nearestRoadTile;
-	int32_t quanVehiclesDispatched;
+	/*+0x0*/   /*packed*/ struct Goal goal1; // 0x2a bytes
+	/*+0x2a*/  /*packed*/ struct Goal goal2; // 0x2a bytes
+	/*+0x54*/  int32_t direction;
+	/*+0x58*/  /*packed*/ struct _GridCoordinates location; // 0x2 bytes
+	/*+0x5a*/  /*packed*/ struct _GridCoordinates nearestRoadTile; // 0x2 bytes
+	/*+0x5c*/  int32_t quanVehiclesDispatched;
 };
 
 // Type: /*packed*/ struct RGVertex (forward reference);
 struct RGVertex{ // packed(0x33 bytes) TI: 0x1776
-	unsigned char x;
-	unsigned char y;
-	LfBitfield @ 0x11f58:
+	/*+0x0*/   unsigned char x; // 0x1 bytes
+	/*+0x1*/   unsigned char y; // 0x1 bytes
+	/*+0x2*/   LfBitfield @ 0x11f58:
 	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x4
 	[90m   LB.[95mTI[m = 0x1771
 	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x0
 	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
 	 turnFlags;
-	LfBitfield @ 0x11f60:
+	/*+0x2*/   LfBitfield @ 0x11f60:
 	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x4
 	[90m   LB.[95mTI[m = 0x1772
 	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x4
 	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
 	 deadEndFlags;
-	unsigned char fElevated;
-	/*packed*/ struct Edge edge[4];
-	unsigned char yindexPrev;
-	unsigned char xPrev;
-	unsigned char edgeIndexPrev;
-	int32_t STVisited;
+	/*+0x3*/   unsigned char fElevated; // 0x1 bytes
+	/*+0x4*/   /*packed*/ struct Edge edge[4]; // 0x28 bytes
+	/*+0x2c*/  unsigned char yindexPrev; // 0x1 bytes
+	/*+0x2d*/  unsigned char xPrev; // 0x1 bytes
+	/*+0x2e*/  unsigned char edgeIndexPrev; // 0x1 bytes
+	/*+0x2f*/  int32_t STVisited;
 };
 
 // Type: unsigned char *;
@@ -502,46 +502,46 @@ public:
 		AUTO_UTURN = 16384,
 	};
 public:
-	long carModel;
-	int32_t flags;
-	/*packed*/ struct _DYOBJ_INST autoDynomitor;
-	/*packed*/ struct Goal goal;
+	/*+0x4*/   long carModel;
+	/*+0x8*/   int32_t flags;
+	/*+0xc*/   /*packed*/ struct _DYOBJ_INST autoDynomitor; // 0x64 bytes
+	/*+0x70*/  /*packed*/ struct Goal goal; // 0x2a bytes
 private:
 	static /*packed*/ struct Point2d lastScannedLocation;
-	int32_t DeltaFromCenter;
-	int32_t stalledTimer;
-	/*packed*/ struct Point3d directionVector;
-	int32_t remainingTime;
-	int32_t desiredSpeed;
-	int32_t desiredHiwaySpeed;
-	int32_t beamDelay;
-	int32_t beamTimer;
-	int32_t m_cellBaseY;
-	int32_t timePulledOver;
-	int32_t hornSoundId;
-	enum DirectionTypes hiwaydir;
-	/*packed*/ struct _GridCoordinates currentLocation;
-	/*packed*/ struct _GridCoordinates nextLocation;
-	/*packed*/ struct _GridCoordinates northCell;
-	/*packed*/ struct _GridCoordinates southCell;
-	/*packed*/ struct _GridCoordinates eastCell;
-	/*packed*/ struct _GridCoordinates westCell;
+	/*+0x9a*/  int32_t DeltaFromCenter;
+	/*+0x9e*/  int32_t stalledTimer;
+	/*+0xa2*/  /*packed*/ struct Point3d directionVector; // 0xc bytes
+	/*+0xae*/  int32_t remainingTime;
+	/*+0xb2*/  int32_t desiredSpeed;
+	/*+0xb6*/  int32_t desiredHiwaySpeed;
+	/*+0xba*/  int32_t beamDelay;
+	/*+0xbe*/  int32_t beamTimer;
+	/*+0xc2*/  int32_t m_cellBaseY;
+	/*+0xc6*/  int32_t timePulledOver;
+	/*+0xca*/  int32_t hornSoundId;
+	/*+0xce*/  enum DirectionTypes hiwaydir;
+	/*+0xd2*/  /*packed*/ struct _GridCoordinates currentLocation; // 0x2 bytes
+	/*+0xd4*/  /*packed*/ struct _GridCoordinates nextLocation; // 0x2 bytes
+	/*+0xd6*/  /*packed*/ struct _GridCoordinates northCell; // 0x2 bytes
+	/*+0xd8*/  /*packed*/ struct _GridCoordinates southCell; // 0x2 bytes
+	/*+0xda*/  /*packed*/ struct _GridCoordinates eastCell; // 0x2 bytes
+	/*+0xdc*/  /*packed*/ struct _GridCoordinates westCell; // 0x2 bytes
 protected:
-	int32_t speed;
-	enum DirIndex2 prevDir;
-	enum TurnIndex turnIndex;
-	int32_t currDist;
-	int32_t legOfTurn;
-	/*packed*/ struct Point3d *pDirVector;
-	int32_t personDone;
-	int32_t personState;
-	int32_t personTimer;
-	int32_t timeToLive;
-	int32_t fireTime;
-	long fireSeq;
-	long missionId;
-	/*packed*/ struct _CELL_INFO *cptr;
-	int32_t spotlightHitCounter;
+	/*+0xde*/  int32_t speed;
+	/*+0xe2*/  enum DirIndex2 prevDir;
+	/*+0xe6*/  enum TurnIndex turnIndex;
+	/*+0xea*/  int32_t currDist;
+	/*+0xee*/  int32_t legOfTurn;
+	/*+0xf2*/  /*packed*/ struct Point3d *pDirVector;
+	/*+0xf6*/  int32_t personDone;
+	/*+0xfa*/  int32_t personState;
+	/*+0xfe*/  int32_t personTimer;
+	/*+0x102*/ int32_t timeToLive;
+	/*+0x106*/ int32_t fireTime;
+	/*+0x10a*/ long fireSeq;
+	/*+0x10e*/ long missionId;
+	/*+0x112*/ /*packed*/ struct _CELL_INFO *cptr;
+	/*+0x116*/ int32_t spotlightHitCounter;
 	int32_t IsCarPersistant();
 	int32_t CanCarBeamToHiwayTile(unsigned short);
 public:
@@ -643,7 +643,7 @@ class Sound{ // packed(0x34 bytes) TI: 0x4335
 		nSoundSourceTypeFile = 1,
 	};
 public:
-	enum Sound::SoundSourceType nSoundSourceType;
+	/*+0x4*/   enum Sound::SoundSourceType nSoundSourceType;
 	enum SoundDuplicateType {
 		nSoundDuplicateDefault = 0,
 		nSoundDuplicateInterrupt = 1,
@@ -651,16 +651,16 @@ public:
 		nSoundDuplicateOverlap = 3,
 	};
 public:
-	enum Sound::SoundDuplicateType nSoundDuplicateType;
-	long lID;
-	long lResID;
-	/*packed*/ class basic_string<char> sSoundFile;
-	long bLooping;
-	long bStreaming;
-	long lVolume;
-	void (*soundCompletionFunction)(long);
-	long lSoundCompletionData;
-	int32_t bUnloadBeforeNextPlay;
+	/*+0x8*/   enum Sound::SoundDuplicateType nSoundDuplicateType;
+	/*+0xc*/   long lID;
+	/*+0x10*/  long lResID;
+	/*+0x14*/  /*packed*/ class basic_string<char> sSoundFile; // 0x8 bytes
+	/*+0x1c*/  long bLooping;
+	/*+0x20*/  long bStreaming;
+	/*+0x24*/  long lVolume;
+	/*+0x28*/  void (*soundCompletionFunction)(long);
+	/*+0x2c*/  long lSoundCompletionData;
+	/*+0x30*/  int32_t bUnloadBeforeNextPlay;
 	void Sound();
 	virtual void ~Sound(); // vtable+0x0
 	/*packed*/ class Sound& operator=(const /*packed*/ class Sound&);

@@ -81,7 +81,7 @@ public:
 class list<CopterGameMode>::iterator : public bidirectional_iterator<CopterGameMode,int>
 { // packed(0x4 bytes) TI: 0x1a18
 protected:
-	/*packed*/ struct list<CopterGameMode>::list_node *node;
+	/*+0x0*/   /*packed*/ struct list<CopterGameMode>::list_node *node;
 public:
 	void iterator();
 protected:
@@ -97,10 +97,10 @@ public:
 
 // Type: /*packed*/ struct SparkalRect;
 struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
-	long left;
-	long top;
-	long right;
-	long bottom;
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
 	void SparkalRect(long, long, long, long);
 	void SparkalRect();
 };

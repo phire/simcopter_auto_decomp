@@ -4,16 +4,16 @@
 
 // Type: /*packed*/ struct CMAP_Resource (forward reference);
 struct CMAP_Resource{ // packed(0x10 bytes) TI: 0x2f34
-	/*packed*/ struct VRResource res;
-	char cmap[0];
+	/*+0x0*/   /*packed*/ struct VRResource res; // 0x10 bytes
+	/*+0x10*/  char cmap[0]; // 0x0 bytes
 };
 
 // Type: /*packed*/ struct VRResource (forward reference);
 struct VRResource{ // packed(0x10 bytes) TI: 0x18ae
-	char * mem;
-	int32_t mempoolid;
-	int32_t type;
-	int32_t entry;
+	/*+0x0*/   char * mem;
+	/*+0x4*/   int32_t mempoolid;
+	/*+0x8*/   int32_t type;
+	/*+0xc*/   int32_t entry;
 };
 
 // Type: char *;

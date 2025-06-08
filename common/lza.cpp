@@ -19,41 +19,41 @@ public:
 
 // Type: /*packed*/ struct tLZSSBinaryForest (forward reference);
 struct tLZSSBinaryForest{ // packed(0xd44f bytes) TI: 0x2d0d
-	unsigned char text_buf[4155];
-	long match_position;
-	long match_length;
-	long lson[4097];
-	long rson[4353];
-	long dad[4097];
+	/*+0x0*/   unsigned char text_buf[4155]; // 0x103b bytes
+	/*+0x103b*/ long match_position;
+	/*+0x103f*/ long match_length;
+	/*+0x1043*/ long lson[4097]; // 0x4004 bytes
+	/*+0x5047*/ long rson[4353]; // 0x4404 bytes
+	/*+0x944b*/ long dad[4097]; // 0x4004 bytes
 };
 
 // Type: short;
 
 // Type: /*packed*/ struct tCompressState (forward reference);
 struct tCompressState{ // packed(0x20 bytes) TI: 0x2d08
-	unsigned long putBuffer;
-	unsigned long putMask;
-	unsigned long getBuffer;
-	unsigned long getMask;
-	unsigned long textsize;
-	unsigned long codesize;
-	/*packed*/ class cGZXBitstream *infile;
-	/*packed*/ class cGZXBitstream *outfile;
+	/*+0x0*/   unsigned long putBuffer;
+	/*+0x4*/   unsigned long putMask;
+	/*+0x8*/   unsigned long getBuffer;
+	/*+0xc*/   unsigned long getMask;
+	/*+0x10*/  unsigned long textsize;
+	/*+0x14*/  unsigned long codesize;
+	/*+0x18*/  /*packed*/ class cGZXBitstream *infile;
+	/*+0x1c*/  /*packed*/ class cGZXBitstream *outfile;
 };
 
 // Type: unsigned char;
 
 // Type: /*packed*/ struct tACompModel (forward reference);
 struct tACompModel{ // packed(0x53c0 bytes) TI: 0x2d13
-	unsigned long low;
-	unsigned long high;
-	unsigned long value;
-	long shifts;
-	long char_to_sym[314];
-	long sym_to_char[315];
-	unsigned long sym_freq[315];
-	unsigned long sym_cum[315];
-	unsigned long position_cum[4097];
+	/*+0x0*/   unsigned long low;
+	/*+0x4*/   unsigned long high;
+	/*+0x8*/   unsigned long value;
+	/*+0xc*/   long shifts;
+	/*+0x10*/  long char_to_sym[314]; // 0x4e8 bytes
+	/*+0x4f8*/ long sym_to_char[315]; // 0x4ec bytes
+	/*+0x9e4*/ unsigned long sym_freq[315]; // 0x4ec bytes
+	/*+0xed0*/ unsigned long sym_cum[315]; // 0x4ec bytes
+	/*+0x13bc*/ unsigned long position_cum[4097]; // 0x4004 bytes
 };
 
 // Type: long;

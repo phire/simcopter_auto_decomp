@@ -47,18 +47,18 @@ public:
 	int32_t GetIniFileLong(char *, char *, char *, long *);
 	int32_t GetIniFileString(char *, char *, char *, char *, const long);
 	int32_t GetPathForBitmapFile(char *, char *, char *);
-	/*packed*/ class basic_string<char> sFontInfoFilePath;
-	/*packed*/ class basic_string<char> sFontBitmapFile;
-	/*unpacked*/ class CBackBuffer *myFontImage;
-	long lLanguage;
-	long lCharacterSet;
-	long lPitchType;
-	long lHeight;
-	unsigned long nStartCharacter;
-	unsigned long nCharacterCount;
-	/*packed*/ class vector<MRect> rectCharacterCells;
-	/*packed*/ class vector<MRect> rectCharacters;
-	/*packed*/ class vector<unsigned char> widthCharacters;
+	/*+0x4*/   /*packed*/ class basic_string<char> sFontInfoFilePath; // 0x8 bytes
+	/*+0xc*/   /*packed*/ class basic_string<char> sFontBitmapFile; // 0x8 bytes
+	/*+0x14*/  /*unpacked*/ class CBackBuffer *myFontImage;
+	/*+0x18*/  long lLanguage;
+	/*+0x1c*/  long lCharacterSet;
+	/*+0x20*/  long lPitchType;
+	/*+0x24*/  long lHeight;
+	/*+0x28*/  unsigned long nStartCharacter;
+	/*+0x2c*/  unsigned long nCharacterCount;
+	/*+0x30*/  /*packed*/ class vector<MRect> rectCharacterCells; // 0xc bytes
+	/*+0x3c*/  /*packed*/ class vector<MRect> rectCharacters; // 0xc bytes
+	/*+0x48*/  /*packed*/ class vector<unsigned char> widthCharacters; // 0xc bytes
 };
 
 // Type: void;
@@ -68,8 +68,8 @@ class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
 	using reference_pointer = /*unpacked*/ class basic_string_ref<char>*;
 private:
-	char * c_str_ptr;
-	/*unpacked*/ class basic_string_ref<char> *reference;
+	/*+0x0*/   char * c_str_ptr;
+	/*+0x4*/   /*unpacked*/ class basic_string_ref<char> *reference;
 	char * point();
 	uint32_t& len();
 	uint32_t ref_count();
@@ -291,25 +291,25 @@ public:
 	virtual unsigned long DrawRectangleOutlineUnclipped(const /*packed*/ struct SparkalRect&, long); // vtable+0x5c
 	long IsLost();
 	long Restore();
-	char * szFilePath;
-	/*packed*/ struct tagRECT rectDirectDrawBuffer;
+	/*+0x18*/  char * szFilePath;
+	/*+0x1c*/  /*packed*/ struct tagRECT rectDirectDrawBuffer; // 0x10 bytes
 protected:
-	int32_t bSurfacePrimary;
-	int32_t bSurfaceTransparent;
-	/*packed*/ class MFont *mFont;
-	/*packed*/ struct SparkalColor colorFontCurrent;
-	/*packed*/ struct SparkalColor colorCurrent;
-	int32_t nColorIndexFontCurrent;
-	int32_t nColorIndexCurrent;
-	int32_t nColorIndexTransparent;
-	/*packed*/ struct IDirectDrawSurface *mpFrontSurface;
-	/*packed*/ struct IDirectDrawSurface *mpBackSurface;
-	/*packed*/ struct IDirectDrawPalette *mpPalette;
-	/*packed*/ struct _DDSURFACEDESC mDDdesc;
-	/*packed*/ struct _DDBLTFX mDDBltFx;
-	void * __ptr32 hPen;
-	int32_t nPenThickness;
-	/*packed*/ struct SparkalColor colorPenCurrent;
+	/*+0x2c*/  int32_t bSurfacePrimary;
+	/*+0x30*/  int32_t bSurfaceTransparent;
+	/*+0x34*/  /*packed*/ class MFont *mFont;
+	/*+0x38*/  /*packed*/ struct SparkalColor colorFontCurrent;
+	/*+0x3c*/  /*packed*/ struct SparkalColor colorCurrent;
+	/*+0x40*/  int32_t nColorIndexFontCurrent;
+	/*+0x44*/  int32_t nColorIndexCurrent;
+	/*+0x48*/  int32_t nColorIndexTransparent;
+	/*+0x4c*/  /*packed*/ struct IDirectDrawSurface *mpFrontSurface;
+	/*+0x50*/  /*packed*/ struct IDirectDrawSurface *mpBackSurface;
+	/*+0x54*/  /*packed*/ struct IDirectDrawPalette *mpPalette;
+	/*+0x58*/  /*packed*/ struct _DDSURFACEDESC mDDdesc; // 0x6c bytes
+	/*+0xc4*/  /*packed*/ struct _DDBLTFX mDDBltFx; // 0x64 bytes
+	/*+0x128*/ void * __ptr32 hPen;
+	/*+0x12c*/ int32_t nPenThickness;
+	/*+0x130*/ /*packed*/ struct SparkalColor colorPenCurrent;
 	virtual /*packed*/ struct IDirectDrawSurface* GetDDSurface(); // vtable+0x60
 };
 
@@ -398,9 +398,9 @@ class vector<MRect>{ // packed(0xc bytes) TI: 0x15c8
 	using reverse_iterator = /*unpacked*/ class reverse_iterator<MRect *,MRect,MRect &,int>;
 protected:
 	static /*packed*/ class allocator<MRect> static_allocator;
-	/*packed*/ class MRect *start;
-	/*packed*/ class MRect *finish;
-	/*packed*/ class MRect *end_of_storage;
+	/*+0x0*/   /*packed*/ class MRect *start;
+	/*+0x4*/   /*packed*/ class MRect *finish;
+	/*+0x8*/   /*packed*/ class MRect *end_of_storage;
 	void insert_aux(/*packed*/ class MRect*, const /*packed*/ class MRect&);
 public:
 	const /*packed*/ class MRect* begin();
@@ -455,9 +455,9 @@ class vector<unsigned char>{ // packed(0xc bytes) TI: 0x1e75
 	using reverse_iterator = /*unpacked*/ class reverse_iterator<unsigned char *,unsigned char,unsigned char &,int>;
 protected:
 	static /*packed*/ class allocator<unsigned char> static_allocator;
-	unsigned char * start;
-	unsigned char * finish;
-	unsigned char * end_of_storage;
+	/*+0x0*/   unsigned char * start;
+	/*+0x4*/   unsigned char * finish;
+	/*+0x8*/   unsigned char * end_of_storage;
 	void insert_aux(unsigned char *, const unsigned char&);
 public:
 	unsigned char * begin();
@@ -499,10 +499,10 @@ public:
 
 // Type: /*packed*/ struct SparkalRect;
 struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
-	long left;
-	long top;
-	long right;
-	long bottom;
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
 	void SparkalRect(long, long, long, long);
 	void SparkalRect();
 };
@@ -540,11 +540,11 @@ public:
 	static unsigned long lTotalMemoryUsage;
 	static unsigned long lTotalLockCount;
 protected:
-	unsigned long mLockCount;
-	long mWidth;
-	long mHeight;
-	void * __ptr32 mpBits;
-	long mStride;
+	/*+0x4*/   unsigned long mLockCount;
+	/*+0x8*/   long mWidth;
+	/*+0xc*/   long mHeight;
+	/*+0x10*/  void * __ptr32 mpBits;
+	/*+0x14*/  long mStride;
 };
 
 

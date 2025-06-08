@@ -23,8 +23,8 @@ public:
 
 // Type: /*packed*/ struct tagPOINT;
 struct tagPOINT{ // packed(0x8 bytes) TI: 0x1131
-	long x;
-	long y;
+	/*+0x0*/   long x;
+	/*+0x4*/   long y;
 };
 
 
