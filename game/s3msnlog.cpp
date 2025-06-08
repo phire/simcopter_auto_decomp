@@ -3931,4 +3931,6 @@ uint32_t list<tagLogBase *>::number_of_lists = 0;
 // Contribution: 3:0006fe78-0006fe83 Module: 178, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00606e78
 /*packed*/ class LogManager gLogManager;
+// has alternate definitions: (original TI: 0x244f)
+//   /*packed*/ class LogManager gLogManager (TI: 0x2b84)
 

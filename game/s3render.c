@@ -12,8 +12,28 @@ struct VRResource{ // packed(0x10 bytes) TI: 0x18ae
 
 // Type: long;
 
+// Type: /*unpacked*/ struct VRResource (forward reference);
+struct VRResource{ // not packed(0x10 bytes) TI: 0x34b5
+	char * mem;
+	int32_t mempoolid;
+	int32_t type;
+	int32_t entry;
+};
+
 // Type: /*packed*/ struct VRMemPool (forward reference);
 struct VRMemPool{ // packed(0x20 bytes) TI: 0x2453
+	int32_t ObjCount;
+	int32_t entry;
+	char * Reset_Xf;
+	char * Reset_2d;
+	char * Current_Xf;
+	char * Current_2d;
+	char * End_Xf;
+	char * End_2d;
+};
+
+// Type: /*unpacked*/ struct VRMemPool (forward reference);
+struct VRMemPool{ // not packed(0x20 bytes) TI: 0x3e14
 	int32_t ObjCount;
 	int32_t entry;
 	char * Reset_Xf;
@@ -32,26 +52,6 @@ struct VRMemPool{ // packed(0x20 bytes) TI: 0x2453
 struct _dPoint2d{ // packed(0x10 bytes) TI: 0x2766
 	double x;
 	double z;
-};
-
-// Type: /*unpacked*/ struct VRResource (forward reference);
-struct VRResource{ // not packed(0x10 bytes) TI: 0x34b5
-	char * mem;
-	int32_t mempoolid;
-	int32_t type;
-	int32_t entry;
-};
-
-// Type: /*unpacked*/ struct VRMemPool (forward reference);
-struct VRMemPool{ // not packed(0x20 bytes) TI: 0x3e14
-	int32_t ObjCount;
-	int32_t entry;
-	char * Reset_Xf;
-	char * Reset_2d;
-	char * Current_Xf;
-	char * Current_2d;
-	char * End_Xf;
-	char * End_2d;
 };
 
 // Type: char;
@@ -1426,6 +1426,8 @@ int32_t G_AvLoopTime = 0;
 
 // GLOBAL: COPTER_D 0x005b476c
 /*packed*/ struct VRResource *G_restex = { 0 /* todo */ };
+// has alternate definitions: (original TI: 0x10f4)
+//   /*unpacked*/ struct VRResource *G_restex (TI: 0x34b0)
 
 // GLOBAL: COPTER_D 0x005b4770
 /*packed*/ struct VRResource *G_respal = { 0 /* todo */ };
@@ -1441,6 +1443,8 @@ int32_t G_AvLoopTime = 0;
 
 // GLOBAL: COPTER_D 0x005b4780
 /*packed*/ struct VRMemPool *G_main_mp = { 0 /* todo */ };
+// has alternate definitions: (original TI: 0x2420)
+//   /*unpacked*/ struct VRMemPool *G_main_mp (TI: 0x3e11)
 
 // GLOBAL: COPTER_D 0x005b4784
 char * buffer = { 0 /* todo */ };

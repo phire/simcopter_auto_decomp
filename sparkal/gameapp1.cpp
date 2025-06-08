@@ -16,6 +16,18 @@ public:
 	int32_t GetNextLighterColorIndex(int32_t);
 };
 
+// Type: /*packed*/ class CopterSparkalPalette;
+// VTABLE: COPTER_D 0x00591118
+class CopterSparkalPalette : public SparkalPalette
+{ // packed(0x10 bytes) TI: 0x47ce
+public:
+	void CopterSparkalPalette(/*packed*/ struct SparkalColor*, int32_t);
+	void CopterSparkalPalette();
+	int32_t GetNextDarkerColorIndex(int32_t);
+	int32_t GetNextLighterColorIndex(int32_t);
+	virtual void ~CopterSparkalPalette() /* override */; // synthetic
+};
+
 // Type: uint32_t;
 
 // Type: /*unpacked*/ class CGameApp (forward reference);
@@ -62,18 +74,6 @@ public:
 	virtual void DoNotification(long); // vtable+0x40
 };
 
-// Type: /*packed*/ class CopterSparkalPalette;
-// VTABLE: COPTER_D 0x00591118
-class CopterSparkalPalette : public SparkalPalette
-{ // packed(0x10 bytes) TI: 0x47ce
-public:
-	void CopterSparkalPalette(/*packed*/ struct SparkalColor*, int32_t);
-	void CopterSparkalPalette();
-	int32_t GetNextDarkerColorIndex(int32_t);
-	int32_t GetNextLighterColorIndex(int32_t);
-	virtual void ~CopterSparkalPalette() /* override */; // synthetic
-};
-
 // Type: void ();
 
 // Type: /*packed*/ class SoundSystem;
@@ -110,6 +110,23 @@ public:
 	virtual void StopSound(int32_t); // vtable+0x4
 	virtual void StopAllSounds(); // vtable+0x8
 	/*packed*/ class Sound* GetSound(int32_t);
+	void SoundManager();
+	void ~SoundManager();
+	virtual void DeleteAllSounds(); // vtable+0xc
+};
+
+// Type: /*unpacked*/ class SoundManager;
+// VTABLE: COPTER_D 0x0058f448
+class SoundManager{ // not packed(0x204 bytes) TI: 0x4673
+public:
+	/*unpacked*/ class Sound *sound[128];
+	void AddSound(/*unpacked*/ class Sound*, int32_t);
+	void AddDigitalSound(const /*unpacked*/ class basic_string<char>&, int32_t, int32_t);
+	void AddDigitalSound(long, int32_t);
+	virtual long PlaySoundA(int32_t, long, int32_t); // vtable+0x0
+	virtual void StopSound(int32_t); // vtable+0x4
+	virtual void StopAllSounds(); // vtable+0x8
+	/*unpacked*/ class Sound* GetSound(int32_t);
 	void SoundManager();
 	void ~SoundManager();
 	virtual void DeleteAllSounds(); // vtable+0xc
@@ -173,23 +190,6 @@ protected:
 };
 
 // Type: char *;
-
-// Type: /*unpacked*/ class SoundManager;
-// VTABLE: COPTER_D 0x0058f448
-class SoundManager{ // not packed(0x204 bytes) TI: 0x4673
-public:
-	/*unpacked*/ class Sound *sound[128];
-	void AddSound(/*unpacked*/ class Sound*, int32_t);
-	void AddDigitalSound(const /*unpacked*/ class basic_string<char>&, int32_t, int32_t);
-	void AddDigitalSound(long, int32_t);
-	virtual long PlaySoundA(int32_t, long, int32_t); // vtable+0x0
-	virtual void StopSound(int32_t); // vtable+0x4
-	virtual void StopAllSounds(); // vtable+0x8
-	/*unpacked*/ class Sound* GetSound(int32_t);
-	void SoundManager();
-	void ~SoundManager();
-	virtual void DeleteAllSounds(); // vtable+0xc
-};
 
 // Type: void;
 
@@ -4611,7 +4611,9 @@ uint32_t list<CopterGameMode>::number_of_lists = 0;
 
 // Contribution: 3:0006d450-0006d817 Module: 28, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00604450
-/*packed*/ class SoundQueue gSoundQueue[1];
+/*packed*/ class SoundQueue gSoundQueue[2];
+// has alternate definitions: (original TI: 0x2427)
+//   /*packed*/ class SoundQueue gSoundQueue[1] (TI: 0x2ac7)
 
 // GLOBAL: COPTER_D 0x00604480
 /*unpacked*/ class Radio gCopterRadio;
@@ -4624,7 +4626,11 @@ uint32_t list<CopterGameMode>::number_of_lists = 0;
 
 // GLOBAL: COPTER_D 0x00604600
 /*packed*/ class SoundManager gSoundManager;
+// has alternate definitions: (original TI: 0x1997)
+//   /*unpacked*/ class SoundManager gSoundManager (TI: 0x4673)
 
 // GLOBAL: COPTER_D 0x00604808
 /*packed*/ class CopterSparkalPalette gCopterPalette;
+// has alternate definitions: (original TI: 0x47bb)
+//   /*packed*/ class CopterSparkalPalette gCopterPalette (TI: 0x47ce)
 

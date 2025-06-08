@@ -62,6 +62,66 @@ struct _HELI_DATA{ // packed(0x32c bytes) TI: 0x2a68
 	int32_t pct_load;
 };
 
+// Type: /*unpacked*/ struct _HELI_DATA (forward reference);
+struct _HELI_DATA{ // not packed(0x32c bytes) TI: 0x390f
+	int32_t type;
+	int32_t state;
+	int32_t flags;
+	int32_t altdelta;
+	/*unpacked*/ struct Point2d lastpos;
+	/*unpacked*/ struct Point2d currpos;
+	int32_t rotor_mat[4][4];
+	int32_t rotortl_mat[4][4];
+	/*unpacked*/ struct _DYOBJ_INST *dycannon;
+	/*unpacked*/ struct _DYOBJ_INST *dyheli;
+	/*unpacked*/ struct _DYOBJ_INST *dyshadow;
+	/*unpacked*/ struct _DYOBJ_INST *dyrotor;
+	/*unpacked*/ struct _DYOBJ_INST *dyrotortl;
+	/*unpacked*/ struct _DYOBJ_INST *dyrotshadow;
+	/*unpacked*/ struct _DYOBJ_INST *dyrope;
+	/*unpacked*/ struct _DYOBJ_INST *dybucket;
+	/*unpacked*/ struct _DYOBJ_INST *dyspot;
+	/*unpacked*/ struct _DYOBJ_INST *dybracket;
+	void * __ptr32 bucketmesh;
+	void * __ptr32 harnessmesh;
+	int32_t damage;
+	int32_t smokeseq;
+	/*unpacked*/ struct mv heli_p;
+	/*unpacked*/ struct mv heli_r;
+	/*unpacked*/ struct Point3d vector;
+	int32_t yaw;
+	int32_t collide_delay;
+	int32_t roll;
+	int32_t slide;
+	int32_t pitch;
+	int32_t yawrate;
+	int32_t yspeed;
+	int32_t fwd_speed;
+	int32_t delta_fwd_speed;
+	int32_t movex;
+	int32_t movez;
+	int32_t hover_ht;
+	int32_t can_land;
+	long spotlevel;
+	int32_t rotstate;
+	int32_t rotspeed;
+	int32_t fireprojectile;
+	int32_t terralt;
+	int32_t buildalt;
+	/*unpacked*/ struct Point3d collisvec;
+	int32_t shad_color;
+	/*unpacked*/ struct _MISSILE_DATA *crash_traj;
+	int32_t crash_timer;
+	long crash_seq;
+	int32_t over_water;
+	/*unpacked*/ struct _ROPE_DATA rinfo;
+	/*unpacked*/ struct _WATER_DATA winfo;
+	/*unpacked*/ struct tagHeliPassengerData passengerData;
+	int32_t fuel;
+	int32_t flight_time;
+	int32_t pct_load;
+};
+
 // Type: /*packed*/ struct _HELI_TYPE_DATA (forward reference);
 struct _HELI_TYPE_DATA{ // packed(0x58 bytes) TI: 0x486e
 	int32_t num_initialized;
@@ -169,66 +229,6 @@ struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 struct VRBmpHdr{ // packed(0x10 bytes) TI: 0x2312
 	/*packed*/ struct VRBmpInfo info;
 	int32_t ScanOffset[1];
-};
-
-// Type: /*unpacked*/ struct _HELI_DATA (forward reference);
-struct _HELI_DATA{ // not packed(0x32c bytes) TI: 0x390f
-	int32_t type;
-	int32_t state;
-	int32_t flags;
-	int32_t altdelta;
-	/*unpacked*/ struct Point2d lastpos;
-	/*unpacked*/ struct Point2d currpos;
-	int32_t rotor_mat[4][4];
-	int32_t rotortl_mat[4][4];
-	/*unpacked*/ struct _DYOBJ_INST *dycannon;
-	/*unpacked*/ struct _DYOBJ_INST *dyheli;
-	/*unpacked*/ struct _DYOBJ_INST *dyshadow;
-	/*unpacked*/ struct _DYOBJ_INST *dyrotor;
-	/*unpacked*/ struct _DYOBJ_INST *dyrotortl;
-	/*unpacked*/ struct _DYOBJ_INST *dyrotshadow;
-	/*unpacked*/ struct _DYOBJ_INST *dyrope;
-	/*unpacked*/ struct _DYOBJ_INST *dybucket;
-	/*unpacked*/ struct _DYOBJ_INST *dyspot;
-	/*unpacked*/ struct _DYOBJ_INST *dybracket;
-	void * __ptr32 bucketmesh;
-	void * __ptr32 harnessmesh;
-	int32_t damage;
-	int32_t smokeseq;
-	/*unpacked*/ struct mv heli_p;
-	/*unpacked*/ struct mv heli_r;
-	/*unpacked*/ struct Point3d vector;
-	int32_t yaw;
-	int32_t collide_delay;
-	int32_t roll;
-	int32_t slide;
-	int32_t pitch;
-	int32_t yawrate;
-	int32_t yspeed;
-	int32_t fwd_speed;
-	int32_t delta_fwd_speed;
-	int32_t movex;
-	int32_t movez;
-	int32_t hover_ht;
-	int32_t can_land;
-	long spotlevel;
-	int32_t rotstate;
-	int32_t rotspeed;
-	int32_t fireprojectile;
-	int32_t terralt;
-	int32_t buildalt;
-	/*unpacked*/ struct Point3d collisvec;
-	int32_t shad_color;
-	/*unpacked*/ struct _MISSILE_DATA *crash_traj;
-	int32_t crash_timer;
-	long crash_seq;
-	int32_t over_water;
-	/*unpacked*/ struct _ROPE_DATA rinfo;
-	/*unpacked*/ struct _WATER_DATA winfo;
-	/*unpacked*/ struct tagHeliPassengerData passengerData;
-	int32_t fuel;
-	int32_t flight_time;
-	int32_t pct_load;
 };
 
 // Type: char *;
@@ -13520,6 +13520,8 @@ static int32_t S_targalt = 6553600;
 
 // GLOBAL: COPTER_D 0x005b4968
 /*packed*/ struct _HELI_DATA *G_uheli = { 0 /* todo */ };
+// has alternate definitions: (original TI: 0x2a5a)
+//   /*unpacked*/ struct _HELI_DATA *G_uheli (TI: 0x38f7)
 
 // GLOBAL: COPTER_D 0x005b496c
 /*packed*/ struct _HELI_DATA *G_testheli = { 0 /* todo */ };
@@ -13528,7 +13530,9 @@ static int32_t S_targalt = 6553600;
 static long S_numhelis = 0;
 
 // GLOBAL: COPTER_D 0x005b4978
-/*packed*/ struct _HELI_TYPE_DATA S_helitype_data[1] = { 0 /* todo */ };
+/*packed*/ struct _HELI_TYPE_DATA S_helitype_data[9] = { 0 /* todo */ };
+// has alternate definitions: (original TI: 0x486c)
+//   /*packed*/ struct _HELI_TYPE_DATA S_helitype_data[1] (TI: 0x4870)
 
 // GLOBAL: COPTER_D 0x005b4c90
 static /*packed*/ struct Point3d S_bracket_loc = { 0 /* todo */ };

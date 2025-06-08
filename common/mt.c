@@ -1841,4 +1841,6 @@ _T5e:
 
 // GLOBAL: COPTER_D 0x0059b518
 /*packed*/ struct Point3d Z_axis = { 0 /* todo */ };
+// has alternate definitions: (original TI: 0x18b0)
+//   /*unpacked*/ struct Point3d Z_axis (TI: 0x348f)
 

@@ -15,6 +15,17 @@ struct VRwindowType{ // packed(0x1c bytes) TI: 0x10a5
 	int32_t RenderHigh;
 };
 
+// Type: /*unpacked*/ struct VRwindowType;
+struct VRwindowType{ // not packed(0x1c bytes) TI: 0x3e0f
+	int32_t WindowX;
+	int32_t WindowY;
+	int32_t WindowWide;
+	int32_t WindowHigh;
+	int32_t RenderMode;
+	int32_t RenderWide;
+	int32_t RenderHigh;
+};
+
 // Type: char *;
 
 // Type: enum tagResolution;
@@ -65,23 +76,6 @@ private:
 // Type: /*unpacked*/ class Station (forward reference);
 // Station Class implementation not found
 
-// Type: /*packed*/ class ShortestPath;
-class ShortestPath{ // packed(0x8 bytes) TI: 0x2aae
-private:
-	/*packed*/ struct _FringeHeapNode *heap;
-	long heapSize;
-public:
-	void Init();
-	int32_t BreadthFirstSearch(/*packed*/ struct _RGIndex, /*packed*/ struct _RGIndex);
-	int32_t DepthFirstSearch(/*packed*/ struct _RGIndex, /*packed*/ struct _RGIndex);
-private:
-	void PriorityHeapInsert(const /*packed*/ struct _FringeHeapNode*);
-	void PriorityHeapRemove(/*packed*/ struct _FringeHeapNode*);
-	int32_t FindDistanceFromDestination(/*packed*/ struct _GridCoordinates, /*packed*/ struct _GridCoordinates);
-};
-
-// Type: void ();
-
 // Type: /*packed*/ class Station (forward reference);
 class Station{ // packed(0x1c bytes) TI: 0x47e8
 public:
@@ -111,16 +105,22 @@ private:
 	void VehicleHeapRemove(/*packed*/ struct _VehicleHeapStruct*);
 };
 
-// Type: /*unpacked*/ struct VRwindowType;
-struct VRwindowType{ // not packed(0x1c bytes) TI: 0x3e0f
-	int32_t WindowX;
-	int32_t WindowY;
-	int32_t WindowWide;
-	int32_t WindowHigh;
-	int32_t RenderMode;
-	int32_t RenderWide;
-	int32_t RenderHigh;
+// Type: /*packed*/ class ShortestPath;
+class ShortestPath{ // packed(0x8 bytes) TI: 0x2aae
+private:
+	/*packed*/ struct _FringeHeapNode *heap;
+	long heapSize;
+public:
+	void Init();
+	int32_t BreadthFirstSearch(/*packed*/ struct _RGIndex, /*packed*/ struct _RGIndex);
+	int32_t DepthFirstSearch(/*packed*/ struct _RGIndex, /*packed*/ struct _RGIndex);
+private:
+	void PriorityHeapInsert(const /*packed*/ struct _FringeHeapNode*);
+	void PriorityHeapRemove(/*packed*/ struct _FringeHeapNode*);
+	int32_t FindDistanceFromDestination(/*packed*/ struct _GridCoordinates, /*packed*/ struct _GridCoordinates);
 };
+
+// Type: void ();
 
 // Type: void;
 
@@ -259,9 +259,13 @@ long G_video_mode = 16;
 
 // GLOBAL: COPTER_D 0x00598ec0
 /*packed*/ struct VRwindowType qwindow = { 0 /* todo */ };
+// has alternate definitions: (original TI: 0x10a5)
+//   /*unpacked*/ struct VRwindowType qwindow (TI: 0x3e0f)
 
 // GLOBAL: COPTER_D 0x00598ee0
 /*packed*/ struct VRwindowType swindow = { 0 /* todo */ };
+// has alternate definitions: (original TI: 0x10a5)
+//   /*unpacked*/ struct VRwindowType swindow (TI: 0x3e0f)
 
 // GLOBAL: COPTER_D 0x00598efc
 char * S_pal = { 0 /* todo */ };
@@ -289,18 +293,24 @@ int32_t bFullScreen = 1;
 
 // GLOBAL: COPTER_D 0x005c3800
 /*unpacked*/ class Station *gPoliceStations;
+// has alternate definitions: (original TI: 0x2a9c)
+//   /*packed*/ class Station *gPoliceStations (TI: 0x2fba)
 
 // GLOBAL: COPTER_D 0x005c3808
 long G_CheatCodes[6];
 
 // GLOBAL: COPTER_D 0x005c3820
 /*unpacked*/ class Station *gHospitals;
+// has alternate definitions: (original TI: 0x2a9c)
+//   /*packed*/ class Station *gHospitals (TI: 0x2fba)
 
 // GLOBAL: COPTER_D 0x005c3828
 /*packed*/ class RoadGraph gRoadGraph;
 
 // GLOBAL: COPTER_D 0x005c3aa8
 /*unpacked*/ class Station *gFireStations;
+// has alternate definitions: (original TI: 0x2a9c)
+//   /*packed*/ class Station *gFireStations (TI: 0x2fba)
 
 // GLOBAL: COPTER_D 0x005c3ab0
 char gScratchBuffer[262144];

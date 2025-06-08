@@ -13,8 +13,6 @@ public:
 	virtual void DoNotificationChange(long, /*packed*/ class PreferenceManager*) /* override */;
 };
 
-// Type: void ();
-
 // Type: /*packed*/ class SoundChangeNotificationSink;
 // VTABLE: COPTER_D 0x0058f5c0
 class SoundChangeNotificationSink : public NotificationSink
@@ -24,6 +22,8 @@ public:
 	virtual void DoNotificationChange(long, /*packed*/ class PreferenceManager*) /* override */;
 	void SoundChangeNotificationSink(); // synthetic
 };
+
+// Type: void ();
 
 // Type: void;
 
@@ -5785,6 +5785,8 @@ static long lOriginalSoundVolumes[113];
 
 // GLOBAL: COPTER_D 0x005c37ec
 /*packed*/ class SoundChangeNotificationSink gSoundChangeNotificationSink;
+// has alternate definitions: (original TI: 0x2432)
+//   /*packed*/ class SoundChangeNotificationSink gSoundChangeNotificationSink (TI: 0x2ac5)
 
 // GLOBAL: COPTER_D 0x005c37f0
 long glMasterVolume;

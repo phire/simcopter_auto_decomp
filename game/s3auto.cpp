@@ -11877,4 +11877,6 @@ int32_t AutomobileClass::fireSirenDist;
 
 // GLOBAL: COPTER_D 0x00608f80
 /*packed*/ class AutomobileClass *cars[70];
+// has alternate definitions: (original TI: 0x3167)
+//   /*packed*/ class AutomobileClass *cars[1] (TI: 0x4204)
 

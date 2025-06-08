@@ -309,4 +309,6 @@ _T1a5:
 // Contribution: 3:00001580-00001583 Module: 56, 4 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00598580
 /*packed*/ class CSparkalApp *_gSparkalApp = { 0 /* todo */ };
+// has alternate definitions: (original TI: 0x26db)
+//   /*unpacked*/ class CSparkalApp *_gSparkalApp (TI: 0x2af3)
 
