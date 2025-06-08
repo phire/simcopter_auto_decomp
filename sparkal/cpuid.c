@@ -671,3 +671,6 @@ _Tc9:
 // GLOBAL: COPTER_D 0x00638ed4
 int32_t clone_flag; // Contrib missing
 
+// GLOBAL: COPTER_D 0x00638ed4
+int32_t clone_flag; // Contrib missing
+

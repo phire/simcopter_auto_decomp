@@ -1431,11 +1431,3 @@ static int32_t S_ctrs[256];
 // GLOBAL: COPTER_D 0x00654cdc
 int32_t VRClearClr; // Contrib missing
 
-// GLOBAL: COPTER_D 0x00662810
-int32_t GlobalError; // Contrib missing
-
-
-// WARNING: this global might actually belong to: matrix.asm
-// GLOBAL: COPTER_D 0x00662810
-int32_t GlobalError; // Contrib missing
-

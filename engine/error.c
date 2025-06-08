@@ -15,3 +15,13 @@ int32_t VRGetError() {
 // LINE 32:
 }
 
+
+
+// Unknown globals:
+// The PDB was slightly corrupted and we aren't sure which file these globals belong to.
+// GLOBAL: COPTER_D 0x00662810
+int32_t GlobalError; // Contrib missing
+
+// GLOBAL: COPTER_D 0x00662810
+int32_t GlobalError; // Contrib missing
+

@@ -7986,10 +7986,3 @@ char * SZ_CATALOG_WINDOW_PAPER_CLIP_IMAGEFILE_NAME = { 0 /* todo */ };
 // GLOBAL: COPTER_D 0x00599830
 char * SZ_CATALOG_WINDOW_TEXT_NAME = { 0 /* todo */ };
 
-
-
-// Unknown globals:
-// The PDB was slightly corrupted and we aren't sure which file these globals belong to.
-// GLOBAL: COPTER_D 0x00638ed4
-int32_t clone_flag; // Contrib missing
-
