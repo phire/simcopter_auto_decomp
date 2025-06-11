@@ -2495,7 +2495,7 @@ int32_t GraphicWindowManager::DeleteAllWindowsInDeletionList() {
 	__asm        jmp    _T1df;
 // LINE 167:
 _T20:
-	__asm        inc    nReentrancyCount;
+	nReentrancyCount++;
 // LINE 169:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
@@ -2655,7 +2655,7 @@ _T1ca:
 	__asm        jmp    _T1cf;
 // LINE 177:
 _T1cf:
-	__asm        dec    nReentrancyCount;
+	nReentrancyCount--;
 // LINE 178:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T1df;
@@ -2772,8 +2772,7 @@ long GraphicWindowManager::DoKeyDown(long lKey, char chModifiers) {
 // LINE 220:
 	nReturnValue = 0x0;
 // LINE 222:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+4];
+	this->nBusyIteratingCount++;
 // LINE 223:
 _T33:
 	__asm        mov    eax, GraphicWindow::listFocusWindows.node;
@@ -2842,8 +2841,7 @@ _Tc2:
 	__asm        jmp    _T33;
 // LINE 231:
 _Te5:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+4];
+	this->nBusyIteratingCount--;
 // LINE 232:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -2878,8 +2876,7 @@ long GraphicWindowManager::DoKeyUp(long lKey, char chModifiers) {
 // LINE 252:
 	nReturnValue = 0x0;
 // LINE 254:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+4];
+	this->nBusyIteratingCount++;
 // LINE 255:
 _T33:
 	__asm        mov    eax, GraphicWindow::listFocusWindows.node;
@@ -2948,8 +2945,7 @@ _Tc2:
 	__asm        jmp    _T33;
 // LINE 263:
 _Te5:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+4];
+	this->nBusyIteratingCount--;
 // LINE 264:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -2984,8 +2980,7 @@ long GraphicWindowManager::DoCharacter(long lCharacter) {
 // LINE 279:
 	nReturnValue = 0x0;
 // LINE 281:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+4];
+	this->nBusyIteratingCount++;
 // LINE 282:
 _T33:
 	__asm        mov    eax, GraphicWindow::listFocusWindows.node;
@@ -3052,8 +3047,7 @@ _Tbe:
 	__asm        jmp    _T33;
 // LINE 290:
 _Te1:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+4];
+	this->nBusyIteratingCount--;
 // LINE 291:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -3433,8 +3427,7 @@ int32_t GraphicWindowManager::ComposeAllWindows() {
 	/*bp-0x4*/   int32_t nReturnValue;
 
 // LINE 401:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+4];
+	this->nBusyIteratingCount++;
 // LINE 402:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -3444,8 +3437,7 @@ int32_t GraphicWindowManager::ComposeAllWindows() {
 	__asm        call   dword ptr [edx+0x18];
 	__asm        mov    nReturnValue, eax;
 // LINE 403:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+4];
+	this->nBusyIteratingCount--;
 // LINE 404:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;

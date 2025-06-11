@@ -295,7 +295,7 @@ void SoundChangeNotificationSink::DoNotificationChange(long lPreferenceType, /*p
 	__asm        mov    i, 0;
 	__asm        jmp    _T55;
 _T52:
-	__asm        inc    i;
+	i++;
 _T55:
 	__asm        cmp    i, 0x71;
 	__asm        jge    _Tc4;
@@ -344,7 +344,7 @@ int32_t S3DSInit(void * __ptr32 hWnd) {
 	__asm        mov    i, 0;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    i;
+	i++;
 _T18:
 	__asm        cmp    i, 0x71;
 	__asm        jge    _T35;
@@ -5102,7 +5102,7 @@ _T49ac:
 	__asm        mov    count, 0x62;
 	__asm        jmp    _T49de;
 _T49d8:
-	__asm        inc    count;
+	count++;
 _T49de:
 	__asm        cmp    count, 0x71;
 	__asm        jge    _T4a5a;

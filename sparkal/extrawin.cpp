@@ -2068,7 +2068,7 @@ _Tc7:
 	__asm        mov    ecx, nButtonCount;
 	__asm        mov    [ebp+ecx*4-0x48], eax;
 // LINE 99:
-	__asm        inc    nButtonCount;
+	nButtonCount++;
 // LINE 100:
 	__asm        cmp    nButtonCount, 2;
 	__asm        jne    _T124;
@@ -5998,8 +5998,7 @@ _Tfa:
 	__asm        jbe    _T290;
 // LINE 695:
 _T119:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0xB4];
+	this->lSkyImagePanX++;
 // LINE 696:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB4], 0xC8;
@@ -9534,7 +9533,7 @@ void CitySettingsWindow::CitySettingsWindow(/*packed*/ class MRect& rectNewPosit
 	__asm        mov    i, 0;
 	__asm        jmp    _T4c;
 _T49:
-	__asm        inc    i;
+	i++;
 _T4c:
 	__asm        cmp    i, 8;
 	__asm        jge    _T69;
@@ -12519,7 +12518,7 @@ _T14b:
 	__asm        mov    i, 1;
 	__asm        jmp    _T1af;
 _T1ac:
-	__asm        inc    i;
+	i++;
 _T1af:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xB0];
@@ -12827,7 +12826,7 @@ _T5e1:
 	__asm        mov    [ebp-0x40], eax;
 	__asm        jmp    near ptr 0x0045A0FC;
 // LINE 1654:
-	__asm        inc    i;
+	i++;
 // LINE 1655:
 	__asm        jmp    _T572;
 // LINE 1658:
@@ -12837,7 +12836,7 @@ _T607:
 	__asm        jmp    _T616;
 // LINE 1658:
 _T613:
-	__asm        inc    j;
+	j++;
 _T616:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
@@ -13195,7 +13194,7 @@ _Tac6:
 	__asm        mov    [ebp-0x48], eax;
 	__asm        jmp    near ptr 0x0045A5E1;
 // LINE 1680:
-	__asm        inc    i;
+	i++;
 // LINE 1681:
 	__asm        jmp    _T613;
 // LINE 1683:
@@ -18177,7 +18176,7 @@ void CheckupWindow::CheckupWindow(/*packed*/ class MRect& rectNewPosition, int32
 	__asm        mov    i, 0;
 	__asm        jmp    _T4c;
 _T49:
-	__asm        inc    i;
+	i++;
 _T4c:
 	__asm        cmp    i, 3;
 	__asm        jge    _T69;
@@ -18191,7 +18190,7 @@ _T69:
 	__asm        mov    i, 0;
 	__asm        jmp    _T78;
 _T75:
-	__asm        inc    i;
+	i++;
 _T78:
 	__asm        cmp    i, 5;
 	__asm        jge    _T98;

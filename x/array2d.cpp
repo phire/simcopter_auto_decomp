@@ -594,7 +594,7 @@ _T2b6:
 	__asm        mov    xcount, 0;
 	__asm        jmp    _T2e0;
 _T2da:
-	__asm        inc    xcount;
+	xcount++;
 _T2e0:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, xcount;
@@ -604,7 +604,7 @@ _T2e0:
 	__asm        mov    ycount, 0;
 	__asm        jmp    _T30a;
 _T304:
-	__asm        inc    ycount;
+	ycount++;
 _T30a:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, ycount;
@@ -761,7 +761,7 @@ _T40:
 	__asm        mov    cnt, 0;
 	__asm        jmp    _T62;
 _T5f:
-	__asm        inc    cnt;
+	cnt++;
 _T62:
 	__asm        cmp    cnt, 0x400;
 	__asm        jge    _T126;
@@ -848,7 +848,7 @@ _T51:
 	__asm        mov    count, 0;
 	__asm        jmp    _T60;
 _T5d:
-	__asm        inc    count;
+	count++;
 _T60:
 	__asm        cmp    count, 0x400;
 	__asm        jge    _T82;
@@ -916,7 +916,7 @@ _T42:
 	__asm        mov    count, 0;
 	__asm        jmp    _T5d;
 _T5a:
-	__asm        inc    count;
+	count++;
 _T5d:
 	__asm        cmp    count, 0x400;
 	__asm        jge    _Tdc;
@@ -1185,7 +1185,7 @@ _T109:
 	__asm        mov    cnt, 0;
 	__asm        jmp    _T118;
 _T115:
-	__asm        inc    cnt;
+	cnt++;
 _T118:
 	__asm        mov    eax, cnt;
 	__asm        cmp    numBytes, eax;
@@ -1213,7 +1213,7 @@ _T143:
 _T15f:
 	fillPtr[0] = zeropad;
 // LINE 351:
-	__asm        inc    fillPtr;
+	fillPtr++;
 // LINE 352:
 	__asm        jmp    _T115;
 // LINE 354:
@@ -1286,7 +1286,7 @@ _T72:
 	__asm        mov    count, ax;
 	__asm        jmp    _Tac;
 _Ta8:
-	__asm        dec    count;
+	count--;
 _Tac:
 	__asm        movsx  eax, count;
 	__asm        movsx  ecx, beforewhich;
@@ -1395,7 +1395,7 @@ _T72:
 	__asm        mov    xcount, 0;
 	__asm        jmp    _T9a;
 _T96:
-	__asm        inc    xcount;
+	xcount++;
 _T9a:
 	__asm        mov    eax, this;
 	__asm        movsx  ecx, xcount;
@@ -1410,7 +1410,7 @@ _T9a:
 	__asm        mov    ycount, ax;
 	__asm        jmp    _Tbe;
 _Tba:
-	__asm        dec    ycount;
+	ycount--;
 _Tbe:
 	__asm        movsx  eax, ycount;
 	__asm        movsx  ecx, beforewhich;
@@ -1527,7 +1527,7 @@ _T7c:
 	__asm        mov    count, ax;
 	__asm        jmp    _T9a;
 _T96:
-	__asm        inc    count;
+	count++;
 _T9a:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
@@ -1663,7 +1663,7 @@ _T7c:
 	__asm        mov    xcount, 0;
 	__asm        jmp    _T8b;
 _T87:
-	__asm        inc    xcount;
+	xcount++;
 _T8b:
 	__asm        mov    eax, this;
 	__asm        movsx  ecx, xcount;
@@ -1676,7 +1676,7 @@ _T8b:
 	__asm        mov    ycount, ax;
 	__asm        jmp    _Tac;
 _Ta8:
-	__asm        inc    ycount;
+	ycount++;
 _Tac:
 	__asm        mov    eax, this;
 	__asm        movsx  ecx, ycount;
@@ -1920,7 +1920,7 @@ _Tc0:
 	__asm        mov    xcnt, 0;
 	__asm        jmp    _Tdb;
 _Td8:
-	__asm        inc    xcnt;
+	xcnt++;
 _Tdb:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, xcnt;
@@ -1934,7 +1934,7 @@ _Tdb:
 	__asm        mov    ycnt, 0;
 	__asm        jmp    _T105;
 _T102:
-	__asm        inc    ycnt;
+	ycnt++;
 _T105:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, ycnt;
@@ -2152,7 +2152,7 @@ _T2d:
 	__asm        mov    count, 1;
 	__asm        jmp    _T53;
 _T4f:
-	__asm        inc    count;
+	count++;
 _T53:
 	__asm        mov    eax, this;
 	__asm        movsx  ecx, count;
@@ -2466,7 +2466,7 @@ unsigned long _cArray::GetName() {
 	__asm        mov    cnt, 0;
 	__asm        jmp    _T1d;
 _T19:
-	__asm        inc    cnt;
+	cnt++;
 _T1d:
 	__asm        movsx  eax, cnt;
 	__asm        cmp    eax, 0x400;
@@ -2589,7 +2589,7 @@ _T16f:
 	__asm        mov    count, 0;
 	__asm        jmp    _T23;
 _T1f:
-	__asm        inc    count;
+	count++;
 _T23:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x400;
@@ -2613,7 +2613,7 @@ _T23:
 	__asm        jmp    _T72;
 // LINE 639:
 _T6e:
-	__asm        inc    found;
+	found++;
 // LINE 641:
 _T72:
 	__asm        jmp    _T1f;
@@ -2638,7 +2638,7 @@ short _cArray::GetNumArraysByType(unsigned long rType) {
 	__asm        mov    cnt, 0;
 	__asm        jmp    _T23;
 _T1f:
-	__asm        inc    cnt;
+	cnt++;
 _T23:
 	__asm        movsx  eax, cnt;
 	__asm        cmp    eax, 0x400;
@@ -2653,7 +2653,7 @@ _T23:
 	__asm        cmp    [eax+0x28], ecx;
 	__asm        jne    _T55;
 // LINE 652:
-	__asm        inc    numByType;
+	numByType++;
 // LINE 653:
 // Block end:
 _T55:
@@ -2679,7 +2679,7 @@ short _cArray::GetArrayIndexInType(/*unpacked*/ class _cArray *findarr) {
 	__asm        mov    count, 0;
 	__asm        jmp    _T23;
 _T1f:
-	__asm        inc    count;
+	count++;
 _T23:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x400;
@@ -2703,7 +2703,7 @@ _T23:
 	__asm        jmp    _T72;
 // LINE 668:
 _T6e:
-	__asm        inc    found;
+	found++;
 // LINE 670:
 _T72:
 	__asm        jmp    _T1f;
@@ -2783,7 +2783,7 @@ _T7d:
 	__asm        mov    count, 1;
 	__asm        jmp    _Tce;
 _Tca:
-	__asm        inc    count;
+	count++;
 _Tce:
 	__asm        movsx  eax, numArrays;
 	__asm        movsx  ecx, count;
@@ -2953,7 +2953,7 @@ short _cArray::GetLoadedIndex(/*unpacked*/ class ResFile *pFile, unsigned long r
 	__asm        mov    cnt, 0;
 	__asm        jmp    _T2a;
 _T26:
-	__asm        inc    cnt;
+	cnt++;
 _T2a:
 	__asm        movsx  eax, cnt;
 	__asm        cmp    eax, 0x40;

@@ -134,6 +134,16 @@ struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 
 // Type: unsigned long;
 
+// Type: /*packed*/ class IBackBuffer;
+// VTABLE: COPTER_D 0x005907e0
+class IBackBuffer : public IFlatImage
+{ // packed(0x18 bytes) TI: 0x283f
+public:
+	virtual unsigned long Swap(/*packed*/ class CSparkalWindow*, long, long); // vtable+0x1c
+	virtual unsigned long SwapRect(/*packed*/ class CSparkalWindow*, long, long, long, long, long, long); // vtable+0x20
+	virtual unsigned long StretchRect(/*packed*/ class CSparkalWindow*, long, long, long, long, long, long, long, long); // vtable+0x24
+};
+
 // Type: /*packed*/ class CBackBuffer;
 // VTABLE: COPTER_D 0x00590808
 class CBackBuffer : public IBackBuffer
@@ -197,16 +207,6 @@ protected:
 	/*+0x12c*/ int32_t nPenThickness;
 	/*+0x130*/ /*packed*/ struct SparkalColor colorPenCurrent;
 	virtual /*packed*/ struct IDirectDrawSurface* GetDDSurface(); // vtable+0x60
-};
-
-// Type: /*packed*/ class IBackBuffer;
-// VTABLE: COPTER_D 0x005907e0
-class IBackBuffer : public IFlatImage
-{ // packed(0x18 bytes) TI: 0x283f
-public:
-	virtual unsigned long Swap(/*packed*/ class CSparkalWindow*, long, long); // vtable+0x1c
-	virtual unsigned long SwapRect(/*packed*/ class CSparkalWindow*, long, long, long, long, long, long); // vtable+0x20
-	virtual unsigned long StretchRect(/*packed*/ class CSparkalWindow*, long, long, long, long, long, long, long, long); // vtable+0x24
 };
 
 // Type: /*packed*/ class IFlatImage;
@@ -430,7 +430,7 @@ _T8c:
 	__asm        mov    i, 0;
 	__asm        jmp    _Tf6;
 _Tf0:
-	__asm        inc    i;
+	i++;
 _Tf6:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, i;

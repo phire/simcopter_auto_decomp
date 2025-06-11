@@ -1080,7 +1080,7 @@ void UserMenuWindow::~UserMenuWindow() {
 	__asm        mov    i, 0;
 	__asm        jmp    _T4b;
 _T48:
-	__asm        inc    i;
+	i++;
 _T4b:
 	__asm        mov    eax, i;
 	__asm        cmp    iEnd, eax;
@@ -1480,7 +1480,7 @@ _T401:
 	__asm        mov    i, 0;
 	__asm        jmp    _T429;
 _T423:
-	__asm        inc    i;
+	i++;
 _T429:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, i;
@@ -1952,7 +1952,7 @@ int32_t UserMenuWindow::DrawSelf() {
 	__asm        mov    i, 0;
 	__asm        jmp    _T42;
 _T3f:
-	__asm        inc    i;
+	i++;
 _T42:
 	__asm        mov    eax, i;
 	__asm        cmp    iEnd, eax;
@@ -2114,7 +2114,7 @@ int32_t UserMenuWindow::DoCursorHitTest(int32_t& nHitIndex, long nCursorX, long 
 	__asm        mov    iEnd, eax;
 	__asm        jmp    _T2c;
 _T29:
-	__asm        inc    i;
+	i++;
 _T2c:
 	__asm        mov    eax, i;
 	__asm        cmp    iEnd, eax;
@@ -2435,7 +2435,7 @@ _T263:
 	__asm        jmp    _T2ac;
 // LINE 272:
 _T29d:
-	__asm        inc    i;
+	i++;
 // LINE 273:
 	__asm        jmp    _T3a;
 // LINE 274:
@@ -3465,7 +3465,7 @@ _Tff:
 	__asm        mov    i, 0;
 	__asm        jmp    _T12c;
 _T129:
-	__asm        inc    i;
+	i++;
 _T12c:
 	__asm        cmp    i, 5;
 	__asm        jge    _T1b0;
@@ -3514,7 +3514,7 @@ _T1b0:
 	__asm        mov    i, 0;
 	__asm        jmp    _T1d2;
 _T1cf:
-	__asm        inc    i;
+	i++;
 _T1d2:
 	__asm        cmp    i, 5;
 	__asm        jge    _T244;

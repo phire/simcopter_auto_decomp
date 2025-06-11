@@ -366,7 +366,7 @@ _Tbb:
 	__asm        mov    i, 0;
 	__asm        jmp    _Td7;
 _Td4:
-	__asm        inc    i;
+	i++;
 _Td7:
 	__asm        cmp    i, 0x100;
 	__asm        jge    _T157;

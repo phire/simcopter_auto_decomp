@@ -317,7 +317,7 @@ static short Encode(/*packed*/ struct tACompModel *model, /*packed*/ struct tLZS
 	__asm        mov    i, eax;
 	__asm        jmp    _T55;
 _T52:
-	__asm        inc    i;
+	i++;
 _T55:
 	__asm        mov    eax, i;
 	__asm        cmp    r, eax;
@@ -332,7 +332,7 @@ _T70:
 	__asm        mov    len, 0;
 	__asm        jmp    _T7f;
 _T7c:
-	__asm        inc    len;
+	len++;
 _T7f:
 	__asm        cmp    len, 0x3C;
 	__asm        jge    _Tc3;
@@ -367,7 +367,7 @@ _Tc3:
 	__asm        mov    i, 1;
 	__asm        jmp    _Tdb;
 _Td8:
-	__asm        inc    i;
+	i++;
 _Tdb:
 	__asm        cmp    i, 0x3C;
 	__asm        jg     _Tfd;
@@ -467,7 +467,7 @@ _T1df:
 	__asm        mov    i, 0;
 	__asm        jmp    _T1fa;
 _T1f7:
-	__asm        inc    i;
+	i++;
 _T1fa:
 	__asm        mov    eax, i;
 	__asm        cmp    last_match_length, eax;
@@ -595,7 +595,7 @@ static void InitTree(/*packed*/ struct tLZSSBinaryForest *forest) {
 	__asm        mov    i, 0x1001;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    i;
+	i++;
 _T18:
 	__asm        cmp    i, 0x1100;
 	__asm        jg     _T3b;
@@ -609,7 +609,7 @@ _T3b:
 	__asm        mov    i, 0;
 	__asm        jmp    _T4a;
 _T47:
-	__asm        inc    i;
+	i++;
 _T4a:
 	__asm        cmp    i, 0x1000;
 	__asm        jge    _T6d;
@@ -718,7 +718,7 @@ _T112:
 	__asm        mov    i, 1;
 	__asm        jmp    _T121;
 _T11e:
-	__asm        inc    i;
+	i++;
 _T121:
 	__asm        cmp    i, 0x3C;
 	__asm        jge    _T15d;
@@ -1015,7 +1015,7 @@ static void StartModel(/*packed*/ struct tACompModel *model) {
 	__asm        mov    sym, 0x13A;
 	__asm        jmp    _T25;
 _T22:
-	__asm        dec    sym;
+	sym--;
 _T25:
 	__asm        cmp    sym, 1;
 	__asm        jl     _T90;
@@ -1058,7 +1058,7 @@ _T90:
 	__asm        mov    i, 0x1000;
 	__asm        jmp    _Tb9;
 _Tb6:
-	__asm        dec    i;
+	i--;
 _Tb9:
 	__asm        cmp    i, 1;
 	__asm        jl     _Tf5;
@@ -1176,8 +1176,7 @@ _Tf6:
 	__asm        cmp    dword ptr [eax+4], 0x18000;
 	__asm        ja     _T133;
 // LINE 373:
-	__asm        mov    eax, model;
-	__asm        inc    dword ptr [eax+0xC];
+	model->shifts++;
 // LINE 374:
 	model->low -= 0x8000;
 // LINE 375:
@@ -1225,7 +1224,7 @@ static void UpdateModel(long sym, /*packed*/ struct tACompModel *model) {
 	__asm        mov    i, 0x13A;
 	__asm        jmp    _T32;
 _T2f:
-	__asm        dec    i;
+	i--;
 _T32:
 	__asm        cmp    i, 0;
 	__asm        jle    _T82;
@@ -1259,7 +1258,7 @@ _T8e:
 	__asm        mov    i, eax;
 	__asm        jmp    _T9c;
 _T99:
-	__asm        dec    i;
+	i--;
 _T9c:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, model;
@@ -1343,8 +1342,7 @@ static short Output(long bit, /*packed*/ struct tACompModel *model, /*packed*/ s
 _T2a:
 	__asm        jmp    _T35;
 _T2f:
-	__asm        mov    eax, model;
-	__asm        dec    dword ptr [eax+0xC];
+	model->shifts--;
 _T35:
 	__asm        mov    eax, model;
 	__asm        cmp    dword ptr [eax+0xC], 0;
@@ -1417,8 +1415,7 @@ _T63:
 // LINE 137:
 	dest->putMask = 0x80;
 // LINE 138:
-	__asm        mov    eax, dest;
-	__asm        inc    dword ptr [eax+0x14];
+	dest->codesize++;
 // LINE 141:
 _T7c:
 	__asm        xor    ax, ax;
@@ -1516,8 +1513,7 @@ _Te9:
 	__asm        cmp    dword ptr [eax+4], 0x18000;
 	__asm        ja     _T126;
 // LINE 400:
-	__asm        mov    eax, model;
-	__asm        inc    dword ptr [eax+0xC];
+	model->shifts++;
 // LINE 401:
 	model->low -= 0x8000;
 // LINE 402:
@@ -1544,8 +1540,7 @@ _T14e:
 // FUNCTION: COPTER_D 0x004d0194
 static short EncodeEnd(/*packed*/ struct tACompModel *model, /*packed*/ struct tCompressState *dest) {
 // LINE 413:
-	__asm        mov    eax, model;
-	__asm        inc    dword ptr [eax+0xC];
+	model->shifts++;
 // LINE 414:
 	__asm        mov    eax, model;
 	__asm        cmp    dword ptr [eax], 0x8000;
@@ -1602,7 +1597,7 @@ static short FlushBitBuffer(/*packed*/ struct tCompressState *dest) {
 	__asm        mov    i, 0;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    i;
+	i++;
 _T18:
 	__asm        cmp    i, 7;
 	__asm        jge    _T4e;
@@ -1810,7 +1805,7 @@ _T49:
 	__asm        mov    i, 0;
 	__asm        jmp    _T74;
 _T71:
-	__asm        inc    i;
+	i++;
 _T74:
 	__asm        cmp    i, 0xFC4;
 	__asm        jge    _T90;
@@ -1867,7 +1862,7 @@ _Tfb:
 // LINE 613:
 	__asm        and    r, 0xFFF;
 // LINE 614:
-	__asm        inc    count;
+	count++;
 // LINE 615:
 	__asm        jmp    _T1c0;
 // LINE 616:
@@ -1891,7 +1886,7 @@ _T119:
 	__asm        mov    k, 0;
 	__asm        jmp    _T152;
 _T14f:
-	__asm        inc    k;
+	k++;
 _T152:
 	__asm        mov    eax, k;
 	__asm        cmp    j, eax;
@@ -1931,7 +1926,7 @@ _T1a2:
 // LINE 625:
 	__asm        and    r, 0xFFF;
 // LINE 626:
-	__asm        inc    count;
+	count++;
 // LINE 627:
 	__asm        jmp    _T14f;
 // LINE 629:
@@ -1953,7 +1948,7 @@ static void StartDecode(/*packed*/ struct tACompModel *model, /*packed*/ struct 
 	__asm        mov    i, 0;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    i;
+	i++;
 _T18:
 	__asm        cmp    i, 0x11;
 	__asm        jge    _T42;

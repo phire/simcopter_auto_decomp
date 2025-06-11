@@ -70,7 +70,7 @@ void S3RoadDataInit() {
 	__asm        mov    leg, 0;
 	__asm        jmp    _T29;
 _T26:
-	__asm        inc    leg;
+	leg++;
 _T29:
 	__asm        cmp    leg, 0xB;
 	__asm        jge    _T7a;
@@ -97,7 +97,7 @@ _T7a:
 	__asm        mov    leg, 0;
 	__asm        jmp    _T89;
 _T86:
-	__asm        inc    leg;
+	leg++;
 _T89:
 	__asm        cmp    leg, 0xB;
 	__asm        jge    _Tda;
@@ -124,7 +124,7 @@ _Tda:
 	__asm        mov    leg, 0;
 	__asm        jmp    _Te9;
 _Te6:
-	__asm        inc    leg;
+	leg++;
 _Te9:
 	__asm        cmp    leg, 0xB;
 	__asm        jge    _T13a;
@@ -151,7 +151,7 @@ _T13a:
 	__asm        mov    leg, 0;
 	__asm        jmp    _T149;
 _T146:
-	__asm        inc    leg;
+	leg++;
 _T149:
 	__asm        cmp    leg, 0xB;
 	__asm        jge    _T19a;
@@ -342,7 +342,7 @@ _T19a:
 	__asm        mov    leg, 0;
 	__asm        jmp    _T433;
 _T430:
-	__asm        inc    leg;
+	leg++;
 _T433:
 	__asm        cmp    leg, 0xB;
 	__asm        jge    _T4a0;
@@ -377,7 +377,7 @@ _T4a0:
 	__asm        mov    leg, 0;
 	__asm        jmp    _T4af;
 _T4ac:
-	__asm        inc    leg;
+	leg++;
 _T4af:
 	__asm        cmp    leg, 0xB;
 	__asm        jge    _T51c;
@@ -412,7 +412,7 @@ _T51c:
 	__asm        mov    leg, 0;
 	__asm        jmp    _T52b;
 _T528:
-	__asm        inc    leg;
+	leg++;
 _T52b:
 	__asm        cmp    leg, 0xB;
 	__asm        jge    _T598;
@@ -447,7 +447,7 @@ _T598:
 	__asm        mov    leg, 0;
 	__asm        jmp    _T5a7;
 _T5a4:
-	__asm        inc    leg;
+	leg++;
 _T5a7:
 	__asm        cmp    leg, 0xB;
 	__asm        jge    _T614;
@@ -489,7 +489,7 @@ _T614:
 	__asm        mov    leg, 0;
 	__asm        jmp    _T640;
 _T63d:
-	__asm        inc    leg;
+	leg++;
 _T640:
 	__asm        cmp    leg, 0xB;
 	__asm        jge    _T6ad;
@@ -524,7 +524,7 @@ _T6ad:
 	__asm        mov    leg, 0;
 	__asm        jmp    _T6bc;
 _T6b9:
-	__asm        inc    leg;
+	leg++;
 _T6bc:
 	__asm        cmp    leg, 0xB;
 	__asm        jge    _T729;
@@ -559,7 +559,7 @@ _T729:
 	__asm        mov    leg, 0;
 	__asm        jmp    _T738;
 _T735:
-	__asm        inc    leg;
+	leg++;
 _T738:
 	__asm        cmp    leg, 0xB;
 	__asm        jge    _T7a5;
@@ -594,7 +594,7 @@ _T7a5:
 	__asm        mov    leg, 0;
 	__asm        jmp    _T7b4;
 _T7b1:
-	__asm        inc    leg;
+	leg++;
 _T7b4:
 	__asm        cmp    leg, 0xB;
 	__asm        jge    _T82d;
@@ -645,7 +645,7 @@ _T82d:
 	__asm        mov    leg, 1;
 	__asm        jmp    _T884;
 _T881:
-	__asm        inc    leg;
+	leg++;
 _T884:
 	__asm        cmp    leg, 0xA;
 	__asm        jge    _T8f3;
@@ -694,7 +694,7 @@ _T8f3:
 	__asm        mov    leg, 1;
 	__asm        jmp    _T942;
 _T93f:
-	__asm        inc    leg;
+	leg++;
 _T942:
 	__asm        cmp    leg, 0xA;
 	__asm        jge    _T9b3;
@@ -744,7 +744,7 @@ _T9b3:
 	__asm        mov    leg, 1;
 	__asm        jmp    _Ta02;
 _T9ff:
-	__asm        inc    leg;
+	leg++;
 _Ta02:
 	__asm        cmp    leg, 0xA;
 	__asm        jge    _Ta75;
@@ -795,7 +795,7 @@ _Ta75:
 	__asm        mov    leg, 1;
 	__asm        jmp    _Tac4;
 _Tac1:
-	__asm        inc    leg;
+	leg++;
 _Tac4:
 	__asm        cmp    leg, 0xA;
 	__asm        jge    _Tb35;
@@ -837,7 +837,7 @@ _Tb35:
 	__asm        mov    incline, 0;
 	__asm        jmp    _Tb5f;
 _Tb5c:
-	__asm        inc    incline;
+	incline++;
 _Tb5f:
 	__asm        cmp    incline, 3;
 	__asm        jge    _Tde6;
@@ -847,7 +847,7 @@ _Tb5f:
 	__asm        mov    tType, 0;
 	__asm        jmp    _Tb78;
 _Tb75:
-	__asm        inc    tType;
+	tType++;
 _Tb78:
 	__asm        cmp    tType, 4;
 	__asm        jge    _Tde1;
@@ -855,7 +855,7 @@ _Tb78:
 	__asm        mov    dir, 0;
 	__asm        jmp    _Tb91;
 _Tb8e:
-	__asm        inc    dir;
+	dir++;
 _Tb91:
 	__asm        cmp    dir, 4;
 	__asm        jge    _Tddc;
@@ -863,7 +863,7 @@ _Tb91:
 	__asm        mov    leg, 0;
 	__asm        jmp    _Tbaa;
 _Tba7:
-	__asm        inc    leg;
+	leg++;
 _Tbaa:
 	__asm        cmp    leg, 0xA;
 	__asm        jge    _Tdd7;

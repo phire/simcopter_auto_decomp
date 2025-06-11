@@ -801,7 +801,7 @@ _T61:
 // LINE 301:
 	cptr->dyptr = ed->dy2d;
 // LINE 303:
-	__asm        inc    S_num_expls;
+	S_num_expls++;
 // LINE 304:
 _T187:
 }
@@ -939,7 +939,7 @@ _T176:
 // Switch pointers
 // LINE 388:
 _T1b6:
-	__asm        inc    S_num_smoke;
+	S_num_smoke++;
 // LINE 389:
 _T1bc:
 }
@@ -976,8 +976,7 @@ _T2c:
 	__asm        jmp    _T22;
 // LINE 416:
 _T57:
-	__asm        mov    eax, ed;
-	__asm        inc    dword ptr [eax+0x18];
+	ed->animseq++;
 // LINE 420:
 	__asm        mov    eax, ed;
 	__asm        cmp    dword ptr [eax+0x18], 1;
@@ -998,7 +997,7 @@ _T57:
 	__asm        mov    j, 0;
 	__asm        jmp    _Ta7;
 _Ta4:
-	__asm        inc    j;
+	j++;
 _Ta7:
 	__asm        cmp    j, 0xE;
 	__asm        jge    _Tff;
@@ -1065,7 +1064,7 @@ _T160:
 	__asm        mov    ecx, ed;
 	__asm        mov    [ecx], eax;
 // LINE 455:
-	__asm        dec    S_num_expls;
+	S_num_expls--;
 // LINE 456:
 	__asm        jmp    _T22;
 // LINE 460:
@@ -1184,7 +1183,7 @@ _T2bf:
 	__asm        mov    ecx, sd;
 	__asm        mov    [ecx], eax;
 // LINE 496:
-	__asm        dec    S_num_smoke;
+	S_num_smoke--;
 // LINE 497:
 	__asm        jmp    _T22b;
 // LINE 501:

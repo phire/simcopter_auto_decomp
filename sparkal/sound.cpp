@@ -798,7 +798,7 @@ void SoundManager::SoundManager() {
 	__asm        mov    i, 0;
 	__asm        jmp    _T24;
 _T21:
-	__asm        inc    i;
+	i++;
 _T24:
 	__asm        cmp    i, 0x80;
 	__asm        jge    _T44;
@@ -833,7 +833,7 @@ void SoundManager::DeleteAllSounds() {
 	__asm        mov    i, 0;
 	__asm        jmp    _T1b;
 _T18:
-	__asm        inc    i;
+	i++;
 _T1b:
 	__asm        cmp    i, 0x80;
 	__asm        jge    _T5b;
@@ -1057,7 +1057,7 @@ void SoundManager::StopAllSounds() {
 	__asm        mov    i, 0;
 	__asm        jmp    _T1b;
 _T18:
-	__asm        inc    i;
+	i++;
 _T1b:
 	__asm        cmp    i, 0x80;
 	__asm        jge    _T57;
@@ -1811,7 +1811,7 @@ void DigitalSound::DigitalSound() {
 	__asm        mov    i, 0;
 	__asm        jmp    _T5e;
 _T5b:
-	__asm        inc    i;
+	i++;
 _T5e:
 	__asm        cmp    i, 8;
 	__asm        jge    _T7b;
@@ -2021,7 +2021,7 @@ _T24c:
 	__asm        mov    i, 0;
 	__asm        jmp    _T25b;
 _T258:
-	__asm        inc    i;
+	i++;
 _T25b:
 	__asm        cmp    i, 8;
 	__asm        jge    _T278;
@@ -3257,7 +3257,7 @@ long DigitalSound::IsPlaying(/*packed*/ struct IDirectSoundBuffer **lplpSoundPla
 	__asm        mov    i, 0;
 	__asm        jmp    _T1b;
 _T18:
-	__asm        inc    i;
+	i++;
 _T1b:
 	__asm        cmp    i, 8;
 	__asm        jge    _Tbc;
@@ -3583,7 +3583,7 @@ int32_t DigitalSound::GetSoundAliasToPlay(/*packed*/ struct IDirectSoundBuffer *
 	__asm        mov    i, 0;
 	__asm        jmp    _T1b;
 _T18:
-	__asm        inc    i;
+	i++;
 _T1b:
 	__asm        cmp    i, 8;
 	__asm        jge    _T114;
@@ -3708,7 +3708,7 @@ _T37:
 	__asm        mov    i, 0;
 	__asm        jmp    _T46;
 _T43:
-	__asm        inc    i;
+	i++;
 _T46:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, this;
@@ -4950,9 +4950,7 @@ _T11b:
 	__asm        cmp    dword ptr [eax+0x48], 0;
 	__asm        je     _T23d;
 // LINE 1855:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        dec    dword ptr [eax+0x48];
+	this->lpStreamBufferInfo->nRemainingSegments--;
 // LINE 1857:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x72];

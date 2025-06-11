@@ -109,7 +109,7 @@ _T2f:
 	__asm        mov    i, 0;
 	__asm        jmp    _T3e;
 _T3b:
-	__asm        inc    i;
+	i++;
 _T3e:
 	__asm        mov    eax, i;
 	__asm        cmp    CMAP_hdr.PaletteCount, eax;
@@ -263,7 +263,7 @@ _T1ec:
 	__asm        mov    i, 0;
 	__asm        jmp    _T1fb;
 _T1f8:
-	__asm        inc    i;
+	i++;
 _T1fb:
 	__asm        mov    eax, i;
 	__asm        cmp    GEOM_hdr.GroupCount, eax;
@@ -391,7 +391,7 @@ _T363:
 	__asm        mov    i, 0;
 	__asm        jmp    _T372;
 _T36f:
-	__asm        inc    i;
+	i++;
 _T372:
 	__asm        mov    eax, i;
 	__asm        cmp    GEOM_hdr.IdCount, eax;
@@ -643,7 +643,7 @@ _T48:
 	__asm        mov    i, 0;
 	__asm        jmp    _T57;
 _T54:
-	__asm        inc    i;
+	i++;
 _T57:
 	__asm        mov    eax, i;
 	__asm        cmp    ResourceDirHdr.Count, eax;
@@ -854,7 +854,7 @@ _T3b:
 	__asm        mov    i, 0;
 	__asm        jmp    _T4a;
 _T47:
-	__asm        inc    i;
+	i++;
 _T4a:
 	__asm        mov    eax, i;
 	__asm        cmp    ResourceDirHdr.Count, eax;
@@ -1222,7 +1222,7 @@ void UnRegisterResource(/*packed*/ struct VRResource *res) {
 	__asm        jmp    _T5c;
 // LINE 1149:
 _T2a:
-	__asm        dec    NextResource;
+	NextResource--;
 // LINE 1150:
 	__asm        mov    eax, NextResource;
 	__asm        mov    eax, ResourceArray[0][eax*4];

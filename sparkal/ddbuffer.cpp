@@ -1340,7 +1340,7 @@ _T1fd:
 	__asm        mov    i, 0;
 	__asm        jmp    _T2cf;
 _T2cc:
-	__asm        inc    i;
+	i++;
 _T2cf:
 	__asm        mov    eax, biHeader.biHeight;
 	__asm        dec    eax;
@@ -2806,10 +2806,9 @@ unsigned long CBackBuffer::Lock() {
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jbe    _T30;
 // LINE 1037:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+4];
+	this->mLockCount++;
 // LINE 1039:
-	__asm        inc    IFlatImage::lTotalLockCount;
+	IFlatImage::lTotalLockCount++;
 // LINE 1041:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
@@ -2866,10 +2865,9 @@ _Ta6:
 // LINE 1056:
 	this->mStride = this->mDDdesc.lPitch;
 // LINE 1058:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+4];
+	this->mLockCount++;
 // LINE 1060:
-	__asm        inc    IFlatImage::lTotalLockCount;
+	IFlatImage::lTotalLockCount++;
 // LINE 1062:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
@@ -2888,10 +2886,9 @@ unsigned long CBackBuffer::Unlock() {
 	__asm        cmp    dword ptr [eax+4], 1;
 	__asm        jbe    _T30;
 // LINE 1090:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+4];
+	this->mLockCount--;
 // LINE 1092:
-	__asm        dec    IFlatImage::lTotalLockCount;
+	IFlatImage::lTotalLockCount--;
 // LINE 1094:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
@@ -2944,10 +2941,9 @@ _T63:
 	__asm        jmp    _Td3;
 // LINE 1109:
 _Ta5:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+4];
+	this->mLockCount--;
 // LINE 1111:
-	__asm        dec    IFlatImage::lTotalLockCount;
+	IFlatImage::lTotalLockCount--;
 // LINE 1114:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -2977,7 +2973,7 @@ void CBackBuffer::UpdatePalette(long start, long count, const /*packed*/ struct 
 	__asm        mov    i, eax;
 	__asm        jmp    _T36;
 _T30:
-	__asm        inc    i;
+	i++;
 _T36:
 	__asm        mov    eax, count;
 	__asm        add    eax, start;
@@ -3794,7 +3790,7 @@ _T22f:
 	__asm        mov    i, 1;
 	__asm        jmp    _T254;
 _T251:
-	__asm        inc    i;
+	i++;
 _T254:
 	__asm        mov    eax, i;
 	__asm        cmp    numpixels, eax;
@@ -3838,7 +3834,7 @@ _T2b9:
 	__asm        mov    i, 1;
 	__asm        jmp    _T2c8;
 _T2c5:
-	__asm        inc    i;
+	i++;
 _T2c8:
 	__asm        mov    eax, i;
 	__asm        cmp    numpixels, eax;
@@ -4435,7 +4431,7 @@ _T59a:
 	__asm        mov    i, 1;
 	__asm        jmp    _T5bf;
 _T5bc:
-	__asm        inc    i;
+	i++;
 _T5bf:
 	__asm        mov    eax, i;
 	__asm        cmp    numpixels, eax;
@@ -4598,7 +4594,7 @@ _T756:
 	y += yinc2;
 // LINE 1799:
 _T768:
-	__asm        dec    numpixels;
+	numpixels--;
 // LINE 1800:
 	__asm        jmp    _T64d;
 // LINE 1804:
@@ -4766,7 +4762,7 @@ _T907:
 	y += yinc2;
 // LINE 1856:
 _T919:
-	__asm        dec    numpixels;
+	numpixels--;
 // LINE 1857:
 // Block end:
 	__asm        jmp    _T770;

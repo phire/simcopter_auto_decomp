@@ -1404,7 +1404,7 @@ _T137:
 // FUNCTION: COPTER_D 0x004f9a4e
 void S3CameraCycleChase() {
 // LINE 782:
-	__asm        inc    S_curr_chase;
+	S_curr_chase++;
 // LINE 783:
 	__asm        cmp    S_curr_chase, 3;
 	__asm        jl     _T23;

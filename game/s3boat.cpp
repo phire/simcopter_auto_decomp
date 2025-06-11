@@ -554,7 +554,7 @@ void BoatClass::BoatClass(long mapx, long mapy, int32_t instanceID) {
 	__asm        mov    currentFlag, 0;
 	__asm        jmp    _T24;
 _T21:
-	__asm        inc    currentFlag;
+	currentFlag++;
 _T24:
 	__asm        cmp    currentFlag, 7;
 	__asm        jge    _T3e;
@@ -780,7 +780,7 @@ void BoatClass::ResetAll() {
 	__asm        mov    currentBoatIndex, 0;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    currentBoatIndex;
+	currentBoatIndex++;
 _T18:
 	__asm        cmp    currentBoatIndex, 3;
 	__asm        jge    _T36;
@@ -803,7 +803,7 @@ void BoatClass::ItterateAll() {
 	__asm        mov    currentBoatIndex, 0;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    currentBoatIndex;
+	currentBoatIndex++;
 _T18:
 	__asm        cmp    currentBoatIndex, 3;
 	__asm        jge    _T36;
@@ -1872,23 +1872,19 @@ _T236:
 	__asm        mov    [ebp-0x30], eax;
 	__asm        jmp    _T28b;
 // LINE 1183:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x47];
+	this->nextLocation.y--;
 // LINE 1184:
 	__asm        jmp    _T2c6;
 // LINE 1186:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x47];
+	this->nextLocation.y++;
 // LINE 1187:
 	__asm        jmp    _T2c6;
 // LINE 1189:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x43];
+	this->nextLocation.x++;
 // LINE 1190:
 	__asm        jmp    _T2c6;
 // LINE 1192:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x43];
+	this->nextLocation.x--;
 // LINE 1193:
 	__asm        jmp    _T2c6;
 // LINE 1194:
@@ -3990,7 +3986,7 @@ _T1c9:
 	__asm        jmp    _T490;
 // LINE 2257:
 _T1ce:
-	__asm        inc    curr_dir;
+	curr_dir++;
 // LINE 2258:
 	__asm        mov    eax, curr_dir;
 	__asm        mov    [ebp-0x60], eax;
@@ -3998,7 +3994,7 @@ _T1ce:
 // LINE 2262:
 	curr_dir = 0x0;
 // LINE 2263:
-	__asm        inc    curr_dist;
+	curr_dist++;
 // LINE 2264:
 	xdir = 0x0;
 // LINE 2265:
@@ -4012,7 +4008,7 @@ _T1ce:
 // LINE 2270:
 	__asm        jmp    _T262;
 // LINE 2272:
-	__asm        inc    curr_dist;
+	curr_dist++;
 // LINE 2273:
 	xdir = 0x0;
 // LINE 2274:
@@ -4040,7 +4036,7 @@ _T262:
 	__asm        cmp    curr_dist, eax;
 	__asm        jne    _T278;
 // LINE 2286:
-	__asm        dec    curr_dist;
+	curr_dist--;
 // LINE 2287:
 	stop_now = 0x1;
 // LINE 2291:
@@ -4048,7 +4044,7 @@ _T278:
 	__asm        mov    i, 0;
 	__asm        jmp    _T287;
 _T284:
-	__asm        inc    i;
+	i++;
 _T287:
 	__asm        mov    eax, i;
 	__asm        cmp    curr_dist, eax;
@@ -4167,7 +4163,7 @@ _T3d1:
 	__asm        mov    currentFlag, 2;
 	__asm        jmp    _T3e0;
 _T3dd:
-	__asm        inc    currentFlag;
+	currentFlag++;
 _T3e0:
 	__asm        cmp    currentFlag, 7;
 	__asm        jge    _T3fa;
@@ -4285,7 +4281,7 @@ int32_t BoatClass::BeamBoatToLocation(long mapx, long mapy) {
 	y = mapy;
 // LINE 2415:
 _T41:
-	__asm        inc    curr_dir;
+	curr_dir++;
 // LINE 2416:
 	__asm        mov    eax, curr_dir;
 	__asm        mov    [ebp-0x9C], eax;
@@ -4293,7 +4289,7 @@ _T41:
 // LINE 2420:
 	curr_dir = 0x0;
 // LINE 2421:
-	__asm        inc    curr_dist;
+	curr_dist++;
 // LINE 2422:
 	xdir = 0x0;
 // LINE 2423:
@@ -4307,7 +4303,7 @@ _T41:
 // LINE 2428:
 	__asm        jmp    _Tde;
 // LINE 2430:
-	__asm        inc    curr_dist;
+	curr_dist++;
 // LINE 2431:
 	xdir = 0x0;
 // LINE 2432:
@@ -4335,7 +4331,7 @@ _Tde:
 	__asm        cmp    spiral_dist, eax;
 	__asm        jne    _Tf4;
 // LINE 2444:
-	__asm        dec    curr_dist;
+	curr_dist--;
 // LINE 2445:
 	stop_now = 0x1;
 // LINE 2449:
@@ -4343,7 +4339,7 @@ _Tf4:
 	__asm        mov    i, 0;
 	__asm        jmp    _T103;
 _T100:
-	__asm        inc    i;
+	i++;
 _T103:
 	__asm        mov    eax, i;
 	__asm        cmp    curr_dist, eax;
@@ -4903,7 +4899,7 @@ _T7c9:
 	__asm        mov    currentFlag, 2;
 	__asm        jmp    _T7d8;
 _T7d5:
-	__asm        inc    currentFlag;
+	currentFlag++;
 _T7d8:
 	__asm        cmp    currentFlag, 7;
 	__asm        jge    _T7f5;
@@ -5352,7 +5348,7 @@ _T7d:
 	__asm        mov    count, 0;
 	__asm        jmp    _Tbb;
 _Tb8:
-	__asm        inc    count;
+	count++;
 _Tbb:
 	__asm        mov    eax, numtostart;
 	__asm        cmp    count, eax;
@@ -5378,7 +5374,7 @@ _Tbb:
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jle    _T101;
 // LINE 3092:
-	__asm        inc    totalpersons;
+	totalpersons++;
 // LINE 3094:
 _T101:
 	__asm        jmp    _Tb8;
@@ -5519,7 +5515,7 @@ _T38:
 	__asm        mov    i, 0;
 	__asm        jmp    _T47;
 _T44:
-	__asm        inc    i;
+	i++;
 _T47:
 	__asm        cmp    i, 3;
 	__asm        jge    _T257;
@@ -5703,7 +5699,7 @@ int32_t BoatClass::MIFFSave(void * __ptr32 miffWriter) {
 	__asm        mov    i, 0;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    i;
+	i++;
 _T18:
 	__asm        cmp    i, 3;
 	__asm        jge    _T5c;

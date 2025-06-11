@@ -1245,8 +1245,7 @@ int32_t RadioCompassWindow::ComposeSelf() {
 	__asm        jmp    _T118;
 // LINE 172:
 _T20:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x74];
+	this->lFrameCount++;
 // LINE 173:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
@@ -3510,7 +3509,7 @@ void DialWindow::DrawCurrentDamage() {
 	__asm        mov    i, 0;
 	__asm        jmp    _T42;
 _T3f:
-	__asm        inc    i;
+	i++;
 _T42:
 	__asm        cmp    i, 6;
 	__asm        jge    _Td5;
@@ -3596,7 +3595,7 @@ _T48:
 	__asm        mov    i, 0;
 	__asm        jmp    _T57;
 _T54:
-	__asm        inc    i;
+	i++;
 _T57:
 	__asm        cmp    i, 4;
 	__asm        jge    _T106;
@@ -3716,7 +3715,7 @@ long DialWindow::DoCursorMove(long nCursorX, long nCursorY) {
 	__asm        mov    lNewSpotlightCommand, 0xFFFFFFFF;
 	__asm        jmp    _T32;
 _T2f:
-	__asm        inc    i;
+	i++;
 _T32:
 	__asm        cmp    i, 4;
 	__asm        jge    _Tc9;
@@ -3821,7 +3820,7 @@ int32_t DialWindow::ComposeSelf() {
 	__asm        jmp    _Tebc;
 // LINE 707:
 _T3d:
-	__asm        inc    lFrameCounter;
+	lFrameCounter++;
 // LINE 708:
 	__asm        test   reinterpret_cast<uint8_t>(lFrameCounter), 1;
 	__asm        je     _Te55;
@@ -4636,7 +4635,7 @@ _Tdbf:
 	__asm        mov    ecx, [eax+0x88];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 772:
-	__asm        inc    i;
+	i++;
 // LINE 773:
 	nXPosition += 0x5;
 // LINE 776:
@@ -5061,7 +5060,7 @@ _T38b:
 	__asm        call   dword ptr [edx+0xC];
 // LINE 845:
 _T3df:
-	__asm        inc    lFrameCounter;
+	lFrameCounter++;
 // LINE 846:
 	__asm        jmp    near ptr 0x0044BE45;
 }
@@ -6016,7 +6015,7 @@ void PassengerWindow::DrawPassengers() {
 	__asm        mov    i, 0;
 	__asm        jmp    _T3c;
 _T39:
-	__asm        inc    i;
+	i++;
 _T3c:
 	__asm        cmp    i, 0x10;
 	__asm        jge    _T56;
@@ -6029,7 +6028,7 @@ _T56:
 	__asm        mov    i, 0;
 	__asm        jmp    _T65;
 _T62:
-	__asm        inc    i;
+	i++;
 _T65:
 	__asm        cmp    i, 0x10;
 	__asm        jge    _T1b6;
@@ -6168,7 +6167,7 @@ _T1b6:
 	__asm        mov    nCurrentSeat, 0;
 	__asm        jmp    _T1d5;
 _T1d2:
-	__asm        inc    nCurrentSeat;
+	nCurrentSeat++;
 _T1d5:
 	__asm        mov    eax, tempHeliPassengerData;
 	__asm        mov    ecx, nCurrentSeat;
@@ -6704,7 +6703,7 @@ int32_t PassengerWindow::DoesPositionHitPassenger(long nCursorX, long nCursorY, 
 	__asm        mov    i, 0;
 	__asm        jmp    _T32;
 _T2f:
-	__asm        inc    i;
+	i++;
 _T32:
 	__asm        cmp    i, 0x10;
 	__asm        jge    _T11b;
@@ -7141,7 +7140,7 @@ int32_t MapWindow::ComposeSelf() {
 	__asm        jmp    _T17c;
 // LINE 1408:
 _T20:
-	__asm        inc    lFrameCounter;
+	lFrameCounter++;
 // LINE 1409:
 	__asm        test   reinterpret_cast<uint8_t>(lFrameCounter), 1;
 	__asm        je     _T7a;
@@ -7643,7 +7642,7 @@ _T21a:
 	__asm        mov    i, 0;
 	__asm        jmp    _T229;
 _T226:
-	__asm        inc    i;
+	i++;
 _T229:
 	__asm        cmp    i, 4;
 	__asm        jge    _T2f1;
@@ -8634,7 +8633,7 @@ _Ta6:
 	__asm        jmp    _Tbe;
 // LINE 1786:
 _Tab:
-	__asm        inc    lFrameCounter;
+	lFrameCounter++;
 // LINE 1788:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::DoesWindowNeedUpdating;
@@ -8967,7 +8966,7 @@ _Tab:
 	__asm        mov    ecx, [eax+0xBC];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1880:
-	__asm        inc    i;
+	i++;
 // LINE 1881:
 	nXPosition += 0x5;
 // LINE 1884:
@@ -9050,7 +9049,7 @@ _T94:
 	__asm        mov    i, 0;
 	__asm        jmp    _Ta3;
 _Ta0:
-	__asm        inc    i;
+	i++;
 _Ta3:
 	__asm        mov    eax, lTeargasUsed;
 	__asm        cmp    i, eax;
@@ -9093,7 +9092,7 @@ _Ta3:
 _T108:
 	__asm        jmp    _T110;
 _T10d:
-	__asm        inc    i;
+	i++;
 _T110:
 	__asm        cmp    i, 0xA;
 	__asm        jge    _T173;
@@ -9974,7 +9973,7 @@ _Tb5:
 	__asm        mov    i, 0x22;
 	__asm        jmp    _Te3;
 _Te0:
-	__asm        inc    i;
+	i++;
 _Te3:
 	__asm        cmp    i, 0x25;
 	__asm        jg     _T10b;

@@ -1960,8 +1960,7 @@ _T4a6:
 	__asm        mov    ecx, tempMessageBoxWindow;
 	__asm        call   dword ptr [eax+0x40];
 // LINE 270:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0xA4];
+	this-><CGameApp+0xa4:4>++;
 // LINE 272:
 _T504:
 	__asm        mov    eax, tempMessageBoxWindow;
@@ -2420,8 +2419,7 @@ _T5ff:
 // FUNCTION: COPTER_D 0x0043f8cc
 void  CGameApp::DestroyMessageBox() {
 // LINE 298:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0xA4];
+	this-><CGameApp+0xa4:4>--;
 // LINE 299:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xA4], 0;
@@ -2654,8 +2652,7 @@ _T239:
 	__asm        mov    ecx, tempMessageBoxWindowEdit;
 	__asm        call   dword ptr [eax+0x40];
 // LINE 328:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0xA4];
+	this-><CGameApp+0xa4:4>++;
 // LINE 329:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T2a2;
@@ -3812,7 +3809,7 @@ int  CGameApp::CheckCommandLineForCheatCodes() {
 	__asm        mov    i, 0;
 	__asm        jmp    _T40;
 _T3a:
-	__asm        inc    i;
+	i++;
 _T40:
 	__asm        cmp    i, 0x80;
 	__asm        jge    _T74;
@@ -4462,8 +4459,7 @@ void  CGameApp::CreateUserInputWindow() {
 	__asm        cmp    nCurrentGameMode, 6;
 	__asm        jne    _T5c;
 // LINE 637:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0xA4];
+	this-><CGameApp+0xa4:4>++;
 // LINE 639:
 _T5c:
 	__asm        push   0xB0;
@@ -4562,8 +4558,7 @@ void  CGameApp::DestroyUserInputWindow(/*packed*/ class UserInputWindow *windowT
 	__asm        cmp    nCurrentGameMode, 6;
 	__asm        jne    _T5c;
 // LINE 653:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0xA4];
+	this-><CGameApp+0xa4:4>--;
 // LINE 656:
 _T5c:
 	__asm        cmp    bUseData, 0;
@@ -4628,8 +4623,7 @@ void  CGameApp::CreateRenderSettingsWindow() {
 	__asm        cmp    nCurrentGameMode, 6;
 	__asm        jne    _T5c;
 // LINE 673:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0xA4];
+	this-><CGameApp+0xa4:4>++;
 // LINE 675:
 _T5c:
 	__asm        push   0xB8;
@@ -4745,8 +4739,7 @@ void  CGameApp::DestroyRenderSettingsWindow(/*packed*/ class RenderSettingsWindo
 	__asm        cmp    nCurrentGameMode, 6;
 	__asm        jne    _T5c;
 // LINE 699:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0xA4];
+	this-><CGameApp+0xa4:4>--;
 // LINE 701:
 _T5c:
 	__asm        cmp    bUseData, 0;
@@ -4829,8 +4822,7 @@ void  CGameApp::CreateSoundSettingsWindow() {
 	__asm        cmp    nCurrentGameMode, 6;
 	__asm        jne    _T5c;
 // LINE 735:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0xA4];
+	this-><CGameApp+0xa4:4>++;
 // LINE 737:
 _T5c:
 	__asm        push   0x88;
@@ -4982,8 +4974,7 @@ void  CGameApp::DestroySoundSettingsWindow(/*packed*/ class SoundSettingsWindow 
 	__asm        cmp    nCurrentGameMode, 6;
 	__asm        jne    _T5c;
 // LINE 773:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0xA4];
+	this-><CGameApp+0xa4:4>--;
 // LINE 775:
 _T5c:
 	__asm        cmp    bUseData, 0;
@@ -5037,8 +5028,7 @@ void  CGameApp::CreateCitySettingsWindow() {
 	/*bp-0x4*/   /*packed*/ class CitySettingsWindow *myCitySettingsWindow;
 
 // LINE 808:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0xA4];
+	this-><CGameApp+0xa4:4>++;
 // LINE 810:
 	__asm        push   0x94;
 	__asm        call   operator new;
@@ -5106,8 +5096,7 @@ _Ta1:
 // FUNCTION: COPTER_D 0x00441b5f
 void  CGameApp::DestroyCitySettingsWindow(/*packed*/ class CitySettingsWindow *windowToDestroy, int32_t bUseData) {
 // LINE 825:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0xA4];
+	this-><CGameApp+0xa4:4>--;
 // LINE 826:
 	__asm        cmp    bUseData, 0;
 	__asm        je     _T4a;
@@ -5140,8 +5129,7 @@ void  CGameApp::CreateControlDisplayWindow() {
 	/*bp-0x4*/   /*packed*/ class ControlDisplayWindow *tempControlDisplayWindow;
 
 // LINE 838:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0xA4];
+	this-><CGameApp+0xa4:4>++;
 // LINE 840:
 	__asm        push   0x80;
 	__asm        call   operator new;
@@ -5212,8 +5200,7 @@ _Ta1:
 // FUNCTION: COPTER_D 0x00441c9f
 void  CGameApp::DestroyControlDisplayWindow() {
 // LINE 851:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0xA4];
+	this-><CGameApp+0xa4:4>--;
 // LINE 852:
 	__asm        jmp    near ptr 0x00441CB9;
 }
@@ -5223,8 +5210,7 @@ void  CGameApp::CreateCheckupWindow() {
 	/*bp-0x4*/   /*packed*/ class CheckupWindow *tempCheckupWindow;
 
 // LINE 859:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0xA4];
+	this-><CGameApp+0xa4:4>++;
 // LINE 861:
 	__asm        push   0x94;
 	__asm        call   operator new;
@@ -5289,8 +5275,7 @@ void  CGameApp::DestroyCheckupWindow(/*packed*/ class CheckupWindow *windowToDes
 	/*bp-0xc*/   long lSettings[3]; // 0xc bytes
 
 // LINE 873:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0xA4];
+	this-><CGameApp+0xa4:4>--;
 // LINE 874:
 	__asm        cmp    bUseData, 0;
 	__asm        je     _T85;

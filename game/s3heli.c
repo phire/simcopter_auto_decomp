@@ -1418,10 +1418,9 @@ _Tcb1:
 	__asm        call   0x004D6970;
 	__asm        add    esp, 8;
 // LINE 800:
-	__asm        inc    S_numhelis;
+	S_numhelis++;
 // LINE 801:
-	__asm        mov    eax, htd;
-	__asm        inc    dword ptr [eax];
+	htd->num_initialized++;
 // LINE 804:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax];
@@ -1447,7 +1446,7 @@ void S3HeliGenInit(/*packed*/ struct _HELI_DATA *hd, long mapx, long mapy) {
 	__asm        mov    heliidx, 0;
 	__asm        jmp    _T2f;
 _T2c:
-	__asm        inc    heliidx;
+	heliidx++;
 _T2f:
 	__asm        cmp    heliidx, 0xA;
 	__asm        jge    _T61;
@@ -6145,8 +6144,7 @@ void S3HeliMainRotor(/*packed*/ struct _HELI_DATA *hd) {
 	__asm        cmp    dword ptr [eax+0x148], 0;
 	__asm        jle    _T32;
 
-	__asm        mov    eax, hd;
-	__asm        dec    dword ptr [eax+0x148];
+	hd->rotspeed--;
 // LINE 2411:
 _T32:
 	__asm        jmp    _T80;
@@ -6368,7 +6366,7 @@ _T294:
 	__asm        mov    count, 0;
 	__asm        jmp    _T2f7;
 _T2f4:
-	__asm        inc    count;
+	count++;
 _T2f7:
 	__asm        mov    eax, count;
 	__asm        cmp    oinfo.Faces, eax;
@@ -6425,7 +6423,7 @@ _T34c:
 	__asm        mov    count, 0;
 	__asm        jmp    _T38c;
 _T389:
-	__asm        inc    count;
+	count++;
 _T38c:
 	__asm        mov    eax, count;
 	__asm        cmp    oinfo.Faces, eax;
@@ -6493,7 +6491,7 @@ _T3ee:
 	__asm        mov    count, 0;
 	__asm        jmp    _T451;
 _T44e:
-	__asm        inc    count;
+	count++;
 _T451:
 	__asm        mov    eax, count;
 	__asm        cmp    oinfo.Faces, eax;
@@ -6548,7 +6546,7 @@ _T4a2:
 	__asm        mov    count, 0;
 	__asm        jmp    _T4e2;
 _T4df:
-	__asm        inc    count;
+	count++;
 _T4e2:
 	__asm        mov    eax, count;
 	__asm        cmp    oinfo.Faces, eax;
@@ -6625,8 +6623,7 @@ void S3HeliRopeAndBucket(/*packed*/ struct _HELI_DATA *hd, /*packed*/ struct _CE
 	__asm        add    esp, 0xC;
 // LINE 2553:
 _T68:
-	__asm        mov    eax, hd;
-	__asm        dec    dword ptr [eax+0x1AC];
+	hd->rinfo.bucketdown--;
 // LINE 2555:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1AC], 0x10;
@@ -6704,8 +6701,7 @@ _T16c:
 	__asm        add    esp, 8;
 // LINE 2584:
 _T17b:
-	__asm        mov    eax, hd;
-	__asm        inc    dword ptr [eax+0x1AC];
+	hd->rinfo.bucketdown++;
 // LINE 2588:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1AC], 0x11;
@@ -7510,14 +7506,12 @@ _Tcb:
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        jle    _T100;
 // LINE 2867:
-	__asm        mov    eax, vector;
-	__asm        inc    dword ptr [eax];
+	vector->x++;
 // LINE 2868:
 	__asm        jmp    _T105;
 // LINE 2869:
 _T100:
-	__asm        mov    eax, vector;
-	__asm        dec    dword ptr [eax];
+	vector->x--;
 // LINE 2871:
 _T105:
 	__asm        jmp    _T128;
@@ -7527,14 +7521,12 @@ _T10a:
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        jle    _T122;
 // LINE 2874:
-	__asm        mov    eax, vector;
-	__asm        inc    dword ptr [eax+8];
+	vector->z++;
 // LINE 2875:
 	__asm        jmp    _T128;
 // LINE 2876:
 _T122:
-	__asm        mov    eax, vector;
-	__asm        dec    dword ptr [eax+8];
+	vector->z--;
 // LINE 2879:
 _T128:
 	__asm        cmp    length, 0x10000;
@@ -8244,7 +8236,7 @@ _T18:
 	__asm        cmp    S_avoiding, 0;
 	__asm        je     _T30;
 // LINE 3410:
-	__asm        dec    S_avoiding;
+	S_avoiding--;
 // LINE 3412:
 	__asm        jmp    _T39e;
 // LINE 3413:
@@ -8837,7 +8829,7 @@ void S3HeliSwitchType(/*packed*/ struct _HELI_DATA *hd) {
 	__asm        mov    heliidx, 0;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    heliidx;
+	heliidx++;
 _T18:
 	__asm        cmp    heliidx, 0xA;
 	__asm        jge    _T60;
@@ -8874,7 +8866,7 @@ void S3HeliNextFrameDriver() {
 	__asm        mov    heliidx, 0;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    heliidx;
+	heliidx++;
 _T18:
 	__asm        cmp    heliidx, 0xA;
 	__asm        jge    _T64;
@@ -8945,7 +8937,7 @@ _T4f:
 	__asm        mov    heliidx, 0;
 	__asm        jmp    _T6c;
 _T69:
-	__asm        inc    heliidx;
+	heliidx++;
 _T6c:
 	__asm        cmp    heliidx, 0xA;
 	__asm        jge    _T10f;
@@ -9258,7 +9250,7 @@ _T1e:
 	__asm        mov    i, 0;
 	__asm        jmp    _Td4;
 _Td1:
-	__asm        inc    i;
+	i++;
 _Td4:
 	__asm        cmp    i, 0x10;
 	__asm        jge    _T1ce;
@@ -9411,7 +9403,7 @@ _T254:
 	__asm        mov    i, 0;
 	__asm        jmp    _T2ac;
 _T2a9:
-	__asm        inc    i;
+	i++;
 _T2ac:
 	__asm        mov    eax, i;
 	__asm        cmp    oinfo.Faces, eax;
@@ -10066,7 +10058,7 @@ _T30f:
 	__asm        mov    i, 1;
 	__asm        jmp    _T352;
 _T34f:
-	__asm        inc    i;
+	i++;
 _T352:
 	__asm        cmp    i, 0xA;
 	__asm        jge    _T388;
@@ -10443,8 +10435,7 @@ _T3b6:
 	__asm        jmp    _T457;
 // LINE 4516:
 _T3c8:
-	__asm        mov    eax, hd;
-	__asm        inc    dword ptr [eax+0xD4];
+	hd->smokeseq++;
 // LINE 4517:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0xD4], 7;
@@ -11679,8 +11670,7 @@ _T9f:
 	__asm        call   S3HeliUnlink;
 	__asm        add    esp, 8;
 // LINE 4985:
-	__asm        mov    eax, hd;
-	__asm        inc    dword ptr [eax+0x170];
+	hd->crash_seq++;
 // LINE 4986:
 	__asm        jmp    _T4e0;
 // LINE 4989:
@@ -11697,7 +11687,7 @@ _T9f:
 	__asm        mov    i, 0;
 	__asm        jmp    _Tf8;
 _Tf5:
-	__asm        inc    i;
+	i++;
 _Tf8:
 	__asm        cmp    i, 5;
 	__asm        jge    _T1b8;
@@ -11838,8 +11828,7 @@ _T1b8:
 _T26c:
 	hd->crash_timer = 0x30000;
 // LINE 5033:
-	__asm        mov    eax, hd;
-	__asm        inc    dword ptr [eax+0x170];
+	hd->crash_seq++;
 // LINE 5035:
 	__asm        jmp    _T294;
 // LINE 5039:
@@ -11900,8 +11889,7 @@ _T316:
 // LINE 5061:
 	hd->crash_timer = 0x80000;
 // LINE 5062:
-	__asm        mov    eax, hd;
-	__asm        inc    dword ptr [eax+0x170];
+	hd->crash_seq++;
 // LINE 5064:
 _T33c:
 	__asm        jmp    _T4e0;
@@ -11933,8 +11921,7 @@ _T33c:
 // LINE 5074:
 	hd->crash_timer = 0x80000;
 // LINE 5075:
-	__asm        mov    eax, hd;
-	__asm        inc    dword ptr [eax+0x170];
+	hd->crash_seq++;
 // LINE 5077:
 _T3a8:
 	__asm        jmp    _T4e0;
@@ -11942,7 +11929,7 @@ _T3a8:
 	__asm        mov    i, 0;
 	__asm        jmp    _T3bc;
 _T3b9:
-	__asm        inc    i;
+	i++;
 _T3bc:
 	__asm        cmp    i, 0xA;
 	__asm        jge    _T3f1;
@@ -12241,7 +12228,7 @@ _T69:
 	y = cell->y;
 // LINE 5247:
 _T7a:
-	__asm        inc    curr_dir;
+	curr_dir++;
 // LINE 5248:
 	__asm        mov    eax, curr_dir;
 	__asm        mov    [ebp-0x34], eax;
@@ -12249,7 +12236,7 @@ _T7a:
 // LINE 5252:
 	curr_dir = 0x0;
 // LINE 5253:
-	__asm        inc    curr_dist;
+	curr_dist++;
 // LINE 5254:
 	xdir = 0x0;
 // LINE 5255:
@@ -12263,7 +12250,7 @@ _T7a:
 // LINE 5260:
 	__asm        jmp    _T10e;
 // LINE 5262:
-	__asm        inc    curr_dist;
+	curr_dist++;
 // LINE 5263:
 	xdir = 0x0;
 // LINE 5264:
@@ -12291,7 +12278,7 @@ _T10e:
 	__asm        cmp    spiral_dist, eax;
 	__asm        jne    _T124;
 // LINE 5276:
-	__asm        dec    curr_dist;
+	curr_dist--;
 // LINE 5277:
 	stop_now = 0x1;
 // LINE 5281:
@@ -12299,7 +12286,7 @@ _T124:
 	__asm        mov    i, 0;
 	__asm        jmp    _T133;
 _T130:
-	__asm        inc    i;
+	i++;
 _T133:
 	__asm        mov    eax, i;
 	__asm        cmp    curr_dist, eax;
@@ -12478,7 +12465,7 @@ _Tb0:
 	__asm        mov    i, 0;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    i;
+	i++;
 _T18:
 	__asm        cmp    i, 0xA;
 	__asm        jge    _T63;
@@ -12759,7 +12746,7 @@ _T27:
 	__asm        mov    i, 0;
 	__asm        jmp    _T3e;
 _T3b:
-	__asm        inc    i;
+	i++;
 _T3e:
 	__asm        cmp    i, 0xA;
 	__asm        jge    _Tb9;
@@ -13012,7 +12999,7 @@ _T39:
 	__asm        mov    i, 0;
 	__asm        jmp    _T48;
 _T45:
-	__asm        inc    i;
+	i++;
 _T48:
 	__asm        cmp    i, 0xA;
 	__asm        jge    _Tf9;
@@ -13078,7 +13065,7 @@ int32_t S3HeliMIFFSave(void * __ptr32 miffWriter) {
 	__asm        mov    i, 0;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    i;
+	i++;
 _T18:
 	__asm        cmp    i, 0xA;
 	__asm        jge    _T6a;

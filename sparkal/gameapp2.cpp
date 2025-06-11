@@ -741,7 +741,7 @@ void  CGameApp::SavePreferences() {
 	__asm        mov    i, 0;
 	__asm        jmp    _Tbc;
 _Tb9:
-	__asm        inc    i;
+	i++;
 _Tbc:
 	__asm        mov    eax, lCurrentJoystickCount;
 	__asm        cmp    i, eax;
@@ -804,7 +804,7 @@ unsigned long  CGameApp::TickGame() {
 	;
 
 // LINE 222:
-	__asm        inc    lFramesSinceLastSecond;
+	lFramesSinceLastSecond++;
 // LINE 223:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x416C];
@@ -1422,7 +1422,7 @@ void  CGameApp::ComposePlayFrame() {
 	;
 
 // LINE 406:
-	__asm        inc    lFrameCount;
+	lFrameCount++;
 // LINE 408:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xA4], 0;
@@ -1937,7 +1937,7 @@ _T21:
 	__asm        mov    i, 0;
 	__asm        jmp    _T71;
 _T6e:
-	__asm        inc    i;
+	i++;
 _T71:
 	__asm        jmp    near ptr 0x00462554;
 
@@ -4206,8 +4206,7 @@ _T656:
 	__asm        cmp    nCommand, 0x38;
 	__asm        jne    _T676;
 // LINE 944:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0xA4];
+	this-><CGameApp+0xa4:4>++;
 // LINE 945:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::CreatePlayMenu;
@@ -6858,8 +6857,7 @@ int  CGameApp::DoPlayMenuMessage(/*unpacked*/ class GraphicWindow *gwSource, lon
 	__asm        cmp    lMessage, 0x3EA;
 	__asm        jne    _T79;
 // LINE 1578:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0xA4];
+	this-><CGameApp+0xa4:4>--;
 // LINE 1579:
 	__asm        mov    eax, gwSource;
 	__asm        mov    eax, [eax];
@@ -7061,8 +7059,7 @@ _T287:
 	__asm        mov    ecx, gwSource;
 	__asm        call   dword ptr [eax+0x6C];
 // LINE 1644:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0xA4];
+	this-><CGameApp+0xa4:4>--;
 // LINE 1647:
 // Block end:
 _T2a5:

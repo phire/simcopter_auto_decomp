@@ -2287,7 +2287,7 @@ _Tdf:
 	__asm        jmp    _T126;
 // LINE 371:
 _Te7:
-	__asm        inc    attempts;
+	attempts++;
 // LINE 372:
 	__asm        movsx  eax, attempts;
 	__asm        cmp    eax, 8;
@@ -2297,8 +2297,7 @@ _Te7:
 	__asm        jmp    _T126;
 // LINE 374:
 _T100:
-	__asm        mov    eax, this;
-	__asm        inc    word ptr [eax+0xD0];
+	this->fData[0]++;
 // LINE 375:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD0];
@@ -3426,7 +3425,7 @@ _Tf0:
 	__asm        mov    count, 0;
 	__asm        jmp    _T2c;
 _T28:
-	__asm        inc    count;
+	count++;
 _T2c:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
@@ -3498,7 +3497,7 @@ _Te8:
 	__asm        mov    cl, [eax+0x89];
 	__asm        add    overallcelly, ecx;
 // LINE 672:
-	__asm        inc    numcounted;
+	numcounted++;
 // LINE 674:
 _T117:
 	__asm        jmp    _T28;
@@ -3579,7 +3578,7 @@ void cYObject::GetSurroundingRiotInfo(short todist, short * avgriotval, short * 
 	__asm        mov    cellx, cx;
 	__asm        jmp    _T7d;
 _T79:
-	__asm        inc    cellx;
+	cellx++;
 _T7d:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -3598,7 +3597,7 @@ _T7d:
 	__asm        mov    celly, cx;
 	__asm        jmp    _Tb8;
 _Tb4:
-	__asm        inc    celly;
+	celly++;
 _Tb8:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -3650,7 +3649,7 @@ _T138:
 	__asm        mov    cellx, cx;
 	__asm        jmp    _T156;
 _T152:
-	__asm        inc    cellx;
+	cellx++;
 _T156:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -3669,7 +3668,7 @@ _T156:
 	__asm        mov    celly, cx;
 	__asm        jmp    _T191;
 _T18d:
-	__asm        inc    celly;
+	celly++;
 _T191:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -3832,7 +3831,7 @@ _T32f:
 // LINE 717:
 	riotval += reinterpret_cast<int16_t>(thisriotval);
 // LINE 718:
-	__asm        inc    numcounted;
+	numcounted++;
 // LINE 720:
 // Block end:
 _T396:
@@ -3939,7 +3938,7 @@ unsigned short cYObject::GetNearbyFire(short todist, short * firecellx, short * 
 	__asm        mov    cellx, cx;
 	__asm        jmp    _T2a;
 _T26:
-	__asm        inc    cellx;
+	cellx++;
 _T2a:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -3958,7 +3957,7 @@ _T2a:
 	__asm        mov    celly, cx;
 	__asm        jmp    _T65;
 _T61:
-	__asm        inc    celly;
+	celly++;
 _T65:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -4010,7 +4009,7 @@ _Te5:
 	__asm        mov    cellx, cx;
 	__asm        jmp    _T103;
 _Tff:
-	__asm        inc    cellx;
+	cellx++;
 _T103:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -4029,7 +4028,7 @@ _T103:
 	__asm        mov    celly, cx;
 	__asm        jmp    _T13e;
 _T13a:
-	__asm        inc    celly;
+	celly++;
 _T13e:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -4115,7 +4114,7 @@ _T200:
 	__asm        mov    count, 0;
 	__asm        jmp    _T2f;
 _T2b:
-	__asm        inc    count;
+	count++;
 _T2f:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
@@ -4378,7 +4377,7 @@ _T77:
 	__asm        mov    count, 0;
 	__asm        jmp    _T1f;
 _T1b:
-	__asm        inc    count;
+	count++;
 _T1f:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
@@ -4549,7 +4548,7 @@ _Ta4:
 	__asm        mov    count, 0;
 	__asm        jmp    _T22;
 _T1e:
-	__asm        inc    count;
+	count++;
 _T22:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
@@ -4949,8 +4948,7 @@ _T87:
 	__asm        jmp    _T11e;
 // LINE 942:
 _Td6:
-	__asm        mov    eax, walkloc;
-	__asm        dec    word ptr [eax];
+	walkloc[0]--;
 // LINE 944:
 	movespeed = this->fData[18];
 // LINE 956:
@@ -10145,8 +10143,7 @@ _T45:
 	__asm        add    esp, 0x10;
 // LINE 1884:
 _T75:
-	__asm        mov    eax, this;
-	__asm        inc    word ptr [eax+0x140];
+	this->fIterations++;
 // LINE 1885:
 	__asm        mov    eax, node;
 	__asm        push   eax;

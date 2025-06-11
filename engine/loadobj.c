@@ -306,7 +306,7 @@ _T113:
 	__asm        mov    i, 0;
 	__asm        jmp    _T134;
 _T131:
-	__asm        inc    i;
+	i++;
 _T134:
 	__asm        mov    eax, objs;
 	__asm        cmp    i, eax;
@@ -385,7 +385,7 @@ void VRAssignMemPoolToRes(/*packed*/ struct VRResource *res, /*packed*/ struct V
 	__asm        mov    i, 0;
 	__asm        jmp    _T1e;
 _T1b:
-	__asm        inc    i;
+	i++;
 _T1e:
 	__asm        mov    eax, geo;
 	__asm        mov    ecx, i;
@@ -565,7 +565,7 @@ _T168:
 	__asm        mov    VertCount, 0;
 	__asm        jmp    _T193;
 _T18d:
-	__asm        inc    x;
+	x++;
 _T193:
 	__asm        movsx  eax, fileobjhdr.NFaces;
 	__asm        cmp    eax, x;
@@ -674,7 +674,7 @@ _T2e1:
 	__asm        mov    y, 0;
 	__asm        jmp    _T2f6;
 _T2f0:
-	__asm        inc    y;
+	y++;
 _T2f6:
 	__asm        movsx  eax, filefacehdr.NVerts;
 	__asm        cmp    eax, y;
@@ -1093,7 +1093,7 @@ _T79:
 	__asm        mov    i, 0;
 	__asm        jmp    _Ta6;
 _Ta3:
-	__asm        inc    i;
+	i++;
 _Ta6:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
@@ -1166,7 +1166,7 @@ _T12d:
 	__asm        mov    j, 0;
 	__asm        jmp    _T175;
 _T172:
-	__asm        inc    j;
+	j++;
 _T175:
 	__asm        mov    eax, faceptr;
 	__asm        mov    ecx, j;
@@ -1723,7 +1723,7 @@ _T79:
 	__asm        mov    i, 0;
 	__asm        jmp    _Ta6;
 _Ta3:
-	__asm        inc    i;
+	i++;
 _Ta6:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
@@ -1804,7 +1804,7 @@ _T143:
 	__asm        mov    j, 0;
 	__asm        jmp    _T18b;
 _T188:
-	__asm        inc    j;
+	j++;
 _T18b:
 	__asm        mov    eax, faceptr;
 	__asm        mov    ecx, j;
@@ -2357,7 +2357,7 @@ _T20:
 	__asm        mov    i, 0;
 	__asm        jmp    _T3f;
 _T3c:
-	__asm        inc    i;
+	i++;
 _T3f:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
@@ -2414,7 +2414,7 @@ _Ta4:
 	__asm        mov    j, 0;
 	__asm        jmp    _Te9;
 _Te6:
-	__asm        inc    j;
+	j++;
 _Te9:
 	__asm        mov    eax, faceptr;
 	__asm        mov    ecx, j;
@@ -2561,7 +2561,7 @@ _T20:
 	__asm        mov    i, 0;
 	__asm        jmp    _T3f;
 _T3c:
-	__asm        inc    i;
+	i++;
 _T3f:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
@@ -2618,7 +2618,7 @@ _Ta2:
 	__asm        mov    j, 0;
 	__asm        jmp    _Te7;
 _Te4:
-	__asm        inc    j;
+	j++;
 _Te7:
 	__asm        mov    eax, faceptr;
 	__asm        mov    ecx, j;
@@ -2750,7 +2750,7 @@ void VRObjResize2dFace(int32_t obj, int32_t width, int32_t height) {
 	__asm        mov    i, 0;
 	__asm        jmp    _T30;
 _T2d:
-	__asm        inc    i;
+	i++;
 _T30:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
@@ -3005,7 +3005,7 @@ _Tdd:
 // LINE 1811:
 	ThisIndex = BSPIndex;
 // LINE 1812:
-	__asm        inc    BSPIndex;
+	BSPIndex++;
 // LINE 1813:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(FaceIndex);
 	__asm        and    eax, 0xFFFF;
@@ -3092,7 +3092,7 @@ void NormalizeObj(/*packed*/ struct ObjectHdr *obj) {
 	__asm        mov    i, 0;
 	__asm        jmp    _T43;
 _T40:
-	__asm        inc    i;
+	i++;
 _T43:
 	__asm        mov    eax, obj;
 	__asm        mov    ecx, i;
@@ -3159,7 +3159,7 @@ int32_t VRAssignTextureResToGroup(/*packed*/ struct VRResource *g, /*packed*/ st
 	__asm        mov    i, 0;
 	__asm        jmp    _T24;
 _T21:
-	__asm        inc    i;
+	i++;
 _T24:
 	__asm        mov    eax, geo;
 	__asm        mov    ecx, i;
@@ -3187,7 +3187,7 @@ _T24:
 	__asm        mov    j, 0;
 	__asm        jmp    _T6e;
 _T6b:
-	__asm        inc    j;
+	j++;
 _T6e:
 	__asm        mov    eax, j;
 	__asm        cmp    oinfo.Faces, eax;
@@ -3327,7 +3327,7 @@ void VRBCApplyTiledMap(/*packed*/ struct _FaceHdr *fh, /*packed*/ struct VRBmpHd
 	__asm        mov    i, 0;
 	__asm        jmp    _T3b;
 _T38:
-	__asm        inc    i;
+	i++;
 _T3b:
 	__asm        mov    eax, fh;
 	__asm        mov    ecx, i;
@@ -3665,7 +3665,7 @@ _T5d:
 	__asm        mov    i, 0;
 	__asm        jmp    _T7e;
 _T7b:
-	__asm        inc    i;
+	i++;
 _T7e:
 	__asm        mov    eax, obj;
 	__asm        mov    ecx, i;
@@ -3703,7 +3703,7 @@ _T7e:
 	__asm        mov    j, 0;
 	__asm        jmp    _Te5;
 _Te2:
-	__asm        inc    j;
+	j++;
 _Te5:
 	__asm        mov    eax, obj;
 	__asm        mov    ecx, j;
@@ -3719,7 +3719,7 @@ _Te5:
 	__asm        mov    k, 0;
 	__asm        jmp    _T115;
 _T112:
-	__asm        inc    k;
+	k++;
 _T115:
 	__asm        mov    eax, fp;
 	__asm        mov    ecx, k;
@@ -3732,7 +3732,7 @@ _T115:
 	__asm        cmp    [ecx+eax*4], edx;
 	__asm        jne    _T160;
 // LINE 2151:
-	__asm        inc    no_vert_faces;
+	no_vert_faces++;
 // LINE 2152:
 	vn->x += fn->x;
 // LINE 2153:
@@ -3967,7 +3967,7 @@ _T84:
 	__asm        mov    i, 0;
 	__asm        jmp    _T115;
 _T112:
-	__asm        inc    i;
+	i++;
 _T115:
 	__asm        mov    eax, i;
 	__asm        cmp    nverts, eax;
@@ -4004,7 +4004,7 @@ _T14e:
 	__asm        mov    i, 0;
 	__asm        jmp    _T17a;
 _T177:
-	__asm        inc    i;
+	i++;
 _T17a:
 	__asm        mov    eax, nverts;
 	__asm        dec    eax;
@@ -4146,7 +4146,7 @@ _T82:
 	__asm        mov    i, 0;
 	__asm        jmp    _T10c;
 _T109:
-	__asm        inc    i;
+	i++;
 _T10c:
 	__asm        mov    eax, i;
 	__asm        cmp    nverts, eax;
@@ -4181,7 +4181,7 @@ _T141:
 	__asm        mov    i, 0;
 	__asm        jmp    _T16d;
 _T16a:
-	__asm        inc    i;
+	i++;
 _T16d:
 	__asm        mov    eax, i;
 	__asm        cmp    nverts, eax;
@@ -4326,7 +4326,7 @@ _T40:
 	__asm        mov    i, 0;
 	__asm        jmp    _Tb5;
 _Tb2:
-	__asm        inc    i;
+	i++;
 _Tb5:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
@@ -4624,7 +4624,7 @@ _T1a7:
 	__asm        mov    j, 0;
 	__asm        jmp    _T235;
 _T232:
-	__asm        inc    j;
+	j++;
 _T235:
 	__asm        mov    eax, fh;
 	__asm        mov    ecx, j;

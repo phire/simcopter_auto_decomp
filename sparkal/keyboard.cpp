@@ -255,7 +255,7 @@ void Keyboard::ClearSettings() {
 	__asm        mov    i, 0;
 	__asm        jmp    _T1b;
 _T18:
-	__asm        inc    i;
+	i++;
 _T1b:
 	__asm        cmp    i, 0x100;
 	__asm        jge    _T38;

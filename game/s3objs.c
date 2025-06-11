@@ -185,7 +185,7 @@ void S3ObjInit() {
 	__asm        mov    i, 0;
 	__asm        jmp    _T12f;
 _T12c:
-	__asm        inc    i;
+	i++;
 _T12f:
 	__asm        mov    eax, objcount;
 	__asm        cmp    i, eax;
@@ -278,7 +278,7 @@ _T327:
 	__asm        mov    j, 0;
 	__asm        jmp    _T345;
 _T342:
-	__asm        inc    j;
+	j++;
 _T345:
 	__asm        mov    eax, j;
 	__asm        cmp    oinfo.Faces, eax;
@@ -998,7 +998,7 @@ _T18d:
 	__asm        mov    [ecx+edx], al;
 // LINE 928:
 _T19c:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 930:
 	__asm        mov    eax, winwidth;
 	__asm        dec    eax;
@@ -1425,7 +1425,7 @@ _T3f8:
 	__asm        mov    i, 0;
 	__asm        jmp    _T430;
 _T42d:
-	__asm        inc    i;
+	i++;
 _T430:
 	__asm        mov    eax, i;
 	__asm        cmp    num3, eax;
@@ -1513,7 +1513,7 @@ _T4c4:
 // LINE 1259:
 	ptr[0] = color;
 // LINE 1260:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1261:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -1529,7 +1529,7 @@ _T4c4:
 // LINE 1264:
 	ptr[0] = color;
 // LINE 1265:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1266:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -1549,11 +1549,11 @@ _T4c4:
 // LINE 1271:
 	ptr[0] = color;
 // LINE 1272:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1273:
 	ptr[0] = color;
 // LINE 1274:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1276:
 	ptr[0] = color;
 // LINE 1277:
@@ -1569,11 +1569,11 @@ _T4c4:
 // LINE 1279:
 	ptr[0] = color;
 // LINE 1280:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1282:
 	ptr[0] = color;
 // LINE 1283:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1284:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -1595,11 +1595,11 @@ _T4c4:
 // LINE 1288:
 	ptr[0] = color;
 // LINE 1289:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1291:
 	ptr[0] = color;
 // LINE 1292:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1293:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -1619,11 +1619,11 @@ _T4c4:
 // LINE 1298:
 	ptr[0] = color;
 // LINE 1299:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1301:
 	ptr[0] = color;
 // LINE 1302:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1303:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -1633,7 +1633,7 @@ _T4c4:
 // LINE 1304:
 	ptr[0] = color;
 // LINE 1305:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1307:
 	ptr[0] = color;
 // LINE 1308:
@@ -1649,15 +1649,15 @@ _T4c4:
 // LINE 1310:
 	ptr[0] = color;
 // LINE 1311:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1313:
 	ptr[0] = color;
 // LINE 1314:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1316:
 	ptr[0] = color;
 // LINE 1317:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1318:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -1679,15 +1679,15 @@ _T4c4:
 // LINE 1322:
 	ptr[0] = color;
 // LINE 1323:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1325:
 	ptr[0] = color;
 // LINE 1326:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1328:
 	ptr[0] = color;
 // LINE 1329:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1330:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -1703,7 +1703,7 @@ _T4c4:
 // LINE 1334:
 	ptr[0] = color;
 // LINE 1335:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1336:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -1713,7 +1713,7 @@ _T4c4:
 // LINE 1337:
 	ptr[0] = color;
 // LINE 1338:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1339:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -1723,7 +1723,7 @@ _T4c4:
 // LINE 1340:
 	ptr[0] = color;
 // LINE 1341:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1343:
 	ptr[0] = color;
 // LINE 1344:
@@ -1737,7 +1737,7 @@ _T4c4:
 // LINE 1347:
 	ptr[0] = color;
 // LINE 1348:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1349:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -1747,11 +1747,11 @@ _T4c4:
 // LINE 1350:
 	ptr[0] = color;
 // LINE 1351:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1353:
 	ptr[0] = color;
 // LINE 1354:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1355:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -1761,7 +1761,7 @@ _T4c4:
 // LINE 1356:
 	ptr[0] = color;
 // LINE 1357:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1359:
 	ptr[0] = color;
 // LINE 1360:
@@ -1771,11 +1771,11 @@ _T4c4:
 // LINE 1362:
 	ptr[0] = color;
 // LINE 1363:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1365:
 	ptr[0] = color;
 // LINE 1366:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1367:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -1785,7 +1785,7 @@ _T4c4:
 // LINE 1368:
 	ptr[0] = color;
 // LINE 1369:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1370:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -1795,7 +1795,7 @@ _T4c4:
 // LINE 1371:
 	ptr[0] = color;
 // LINE 1372:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1373:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -1811,7 +1811,7 @@ _T4c4:
 // LINE 1377:
 	ptr[0] = color;
 // LINE 1378:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1379:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -1821,15 +1821,15 @@ _T4c4:
 // LINE 1380:
 	ptr[0] = color;
 // LINE 1381:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1383:
 	ptr[0] = color;
 // LINE 1384:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1386:
 	ptr[0] = color;
 // LINE 1387:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1389:
 	ptr[0] = color;
 // LINE 1390:
@@ -1845,11 +1845,11 @@ _T4c4:
 // LINE 1392:
 	ptr[0] = color;
 // LINE 1393:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1395:
 	ptr[0] = color;
 // LINE 1396:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1397:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -1859,7 +1859,7 @@ _T4c4:
 // LINE 1398:
 	ptr[0] = color;
 // LINE 1399:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1400:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -1869,7 +1869,7 @@ _T4c4:
 // LINE 1401:
 	ptr[0] = color;
 // LINE 1402:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1403:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -1885,15 +1885,15 @@ _T4c4:
 // LINE 1407:
 	ptr[0] = color;
 // LINE 1408:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1410:
 	ptr[0] = color;
 // LINE 1411:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1413:
 	ptr[0] = color;
 // LINE 1414:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1415:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -1903,7 +1903,7 @@ _T4c4:
 // LINE 1416:
 	ptr[0] = color;
 // LINE 1417:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1419:
 	ptr[0] = color;
 // LINE 1420:
@@ -1917,7 +1917,7 @@ _T4c4:
 // LINE 1423:
 	ptr[0] = color;
 // LINE 1424:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1425:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -1927,11 +1927,11 @@ _T4c4:
 // LINE 1426:
 	ptr[0] = color;
 // LINE 1427:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1429:
 	ptr[0] = color;
 // LINE 1430:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1431:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -1941,7 +1941,7 @@ _T4c4:
 // LINE 1432:
 	ptr[0] = color;
 // LINE 1433:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1434:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -1951,7 +1951,7 @@ _T4c4:
 // LINE 1435:
 	ptr[0] = color;
 // LINE 1436:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1438:
 	ptr[0] = color;
 // LINE 1439:
@@ -1961,11 +1961,11 @@ _T4c4:
 // LINE 1441:
 	ptr[0] = color;
 // LINE 1442:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1444:
 	ptr[0] = color;
 // LINE 1445:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1446:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -1975,7 +1975,7 @@ _T4c4:
 // LINE 1447:
 	ptr[0] = color;
 // LINE 1448:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1449:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -1985,7 +1985,7 @@ _T4c4:
 // LINE 1450:
 	ptr[0] = color;
 // LINE 1451:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1452:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -1995,7 +1995,7 @@ _T4c4:
 // LINE 1453:
 	ptr[0] = color;
 // LINE 1454:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1455:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2011,15 +2011,15 @@ _T4c4:
 // LINE 1459:
 	ptr[0] = color;
 // LINE 1460:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1462:
 	ptr[0] = color;
 // LINE 1463:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1465:
 	ptr[0] = color;
 // LINE 1466:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1467:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2029,7 +2029,7 @@ _T4c4:
 // LINE 1468:
 	ptr[0] = color;
 // LINE 1469:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1470:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2039,7 +2039,7 @@ _T4c4:
 // LINE 1471:
 	ptr[0] = color;
 // LINE 1472:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1473:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2061,11 +2061,11 @@ _T4c4:
 // LINE 1477:
 	ptr[0] = color;
 // LINE 1478:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1480:
 	ptr[0] = color;
 // LINE 1481:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1482:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2075,7 +2075,7 @@ _T4c4:
 // LINE 1483:
 	ptr[0] = color;
 // LINE 1484:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1485:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2085,11 +2085,11 @@ _T4c4:
 // LINE 1486:
 	ptr[0] = color;
 // LINE 1487:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1489:
 	ptr[0] = color;
 // LINE 1490:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1491:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2111,7 +2111,7 @@ _T4c4:
 // LINE 1495:
 	ptr[0] = color;
 // LINE 1496:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1497:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2121,15 +2121,15 @@ _T4c4:
 // LINE 1498:
 	ptr[0] = color;
 // LINE 1499:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1501:
 	ptr[0] = color;
 // LINE 1502:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1504:
 	ptr[0] = color;
 // LINE 1505:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1506:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2139,7 +2139,7 @@ _T4c4:
 // LINE 1507:
 	ptr[0] = color;
 // LINE 1508:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1509:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2155,7 +2155,7 @@ _T4c4:
 // LINE 1513:
 	ptr[0] = color;
 // LINE 1514:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1515:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2165,11 +2165,11 @@ _T4c4:
 // LINE 1516:
 	ptr[0] = color;
 // LINE 1517:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1519:
 	ptr[0] = color;
 // LINE 1520:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1521:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2179,11 +2179,11 @@ _T4c4:
 // LINE 1522:
 	ptr[0] = color;
 // LINE 1523:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1525:
 	ptr[0] = color;
 // LINE 1526:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1527:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2203,11 +2203,11 @@ _T4c4:
 // LINE 1532:
 	ptr[0] = color;
 // LINE 1533:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1535:
 	ptr[0] = color;
 // LINE 1536:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1537:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2217,7 +2217,7 @@ _T4c4:
 // LINE 1538:
 	ptr[0] = color;
 // LINE 1539:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1540:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2227,15 +2227,15 @@ _T4c4:
 // LINE 1541:
 	ptr[0] = color;
 // LINE 1542:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1544:
 	ptr[0] = color;
 // LINE 1545:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1547:
 	ptr[0] = color;
 // LINE 1548:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1549:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2251,11 +2251,11 @@ _T4c4:
 // LINE 1553:
 	ptr[0] = color;
 // LINE 1554:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1556:
 	ptr[0] = color;
 // LINE 1557:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1558:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2265,11 +2265,11 @@ _T4c4:
 // LINE 1559:
 	ptr[0] = color;
 // LINE 1560:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1562:
 	ptr[0] = color;
 // LINE 1563:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1564:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2279,7 +2279,7 @@ _T4c4:
 // LINE 1565:
 	ptr[0] = color;
 // LINE 1566:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1567:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2289,7 +2289,7 @@ _T4c4:
 // LINE 1568:
 	ptr[0] = color;
 // LINE 1569:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1571:
 	ptr[0] = color;
 // LINE 1572:
@@ -2299,11 +2299,11 @@ _T4c4:
 // LINE 1574:
 	ptr[0] = color;
 // LINE 1575:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1577:
 	ptr[0] = color;
 // LINE 1578:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1579:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2313,7 +2313,7 @@ _T4c4:
 // LINE 1580:
 	ptr[0] = color;
 // LINE 1581:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1582:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2323,11 +2323,11 @@ _T4c4:
 // LINE 1583:
 	ptr[0] = color;
 // LINE 1584:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1586:
 	ptr[0] = color;
 // LINE 1587:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1588:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2337,7 +2337,7 @@ _T4c4:
 // LINE 1589:
 	ptr[0] = color;
 // LINE 1590:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1592:
 	ptr[0] = color;
 // LINE 1593:
@@ -2353,11 +2353,11 @@ _T4c4:
 // LINE 1595:
 	ptr[0] = color;
 // LINE 1596:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1598:
 	ptr[0] = color;
 // LINE 1599:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1600:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2367,19 +2367,19 @@ _T4c4:
 // LINE 1601:
 	ptr[0] = color;
 // LINE 1602:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1604:
 	ptr[0] = color;
 // LINE 1605:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1607:
 	ptr[0] = color;
 // LINE 1608:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1610:
 	ptr[0] = color;
 // LINE 1611:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1612:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2401,7 +2401,7 @@ _T4c4:
 // LINE 1616:
 	ptr[0] = color;
 // LINE 1617:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1618:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2411,7 +2411,7 @@ _T4c4:
 // LINE 1619:
 	ptr[0] = color;
 // LINE 1620:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1621:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2421,11 +2421,11 @@ _T4c4:
 // LINE 1622:
 	ptr[0] = color;
 // LINE 1623:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1625:
 	ptr[0] = color;
 // LINE 1626:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1627:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2435,11 +2435,11 @@ _T4c4:
 // LINE 1628:
 	ptr[0] = color;
 // LINE 1629:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1631:
 	ptr[0] = color;
 // LINE 1632:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1634:
 	ptr[0] = color;
 // LINE 1635:
@@ -2455,7 +2455,7 @@ _T4c4:
 // LINE 1637:
 	ptr[0] = color;
 // LINE 1638:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1639:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2465,19 +2465,19 @@ _T4c4:
 // LINE 1640:
 	ptr[0] = color;
 // LINE 1641:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1643:
 	ptr[0] = color;
 // LINE 1644:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1646:
 	ptr[0] = color;
 // LINE 1647:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1649:
 	ptr[0] = color;
 // LINE 1650:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1651:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2487,7 +2487,7 @@ _T4c4:
 // LINE 1652:
 	ptr[0] = color;
 // LINE 1653:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1655:
 	ptr[0] = color;
 // LINE 1656:
@@ -2503,11 +2503,11 @@ _T4c4:
 // LINE 1658:
 	ptr[0] = color;
 // LINE 1659:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1661:
 	ptr[0] = color;
 // LINE 1662:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1663:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2517,7 +2517,7 @@ _T4c4:
 // LINE 1664:
 	ptr[0] = color;
 // LINE 1665:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1666:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2527,11 +2527,11 @@ _T4c4:
 // LINE 1667:
 	ptr[0] = color;
 // LINE 1668:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1670:
 	ptr[0] = color;
 // LINE 1671:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1672:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2541,7 +2541,7 @@ _T4c4:
 // LINE 1673:
 	ptr[0] = color;
 // LINE 1674:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1675:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2561,11 +2561,11 @@ _T4c4:
 // LINE 1680:
 	ptr[0] = color;
 // LINE 1681:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1683:
 	ptr[0] = color;
 // LINE 1684:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1685:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2575,11 +2575,11 @@ _T4c4:
 // LINE 1686:
 	ptr[0] = color;
 // LINE 1687:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1689:
 	ptr[0] = color;
 // LINE 1690:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1691:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2589,7 +2589,7 @@ _T4c4:
 // LINE 1692:
 	ptr[0] = color;
 // LINE 1693:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1694:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2599,11 +2599,11 @@ _T4c4:
 // LINE 1695:
 	ptr[0] = color;
 // LINE 1696:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1698:
 	ptr[0] = color;
 // LINE 1699:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1701:
 	ptr[0] = color;
 // LINE 1702:
@@ -2613,11 +2613,11 @@ _T4c4:
 // LINE 1704:
 	ptr[0] = color;
 // LINE 1705:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1707:
 	ptr[0] = color;
 // LINE 1708:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1709:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2627,7 +2627,7 @@ _T4c4:
 // LINE 1710:
 	ptr[0] = color;
 // LINE 1711:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1712:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2637,7 +2637,7 @@ _T4c4:
 // LINE 1713:
 	ptr[0] = color;
 // LINE 1714:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1715:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2647,11 +2647,11 @@ _T4c4:
 // LINE 1716:
 	ptr[0] = color;
 // LINE 1717:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1719:
 	ptr[0] = color;
 // LINE 1720:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1721:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2661,7 +2661,7 @@ _T4c4:
 // LINE 1722:
 	ptr[0] = color;
 // LINE 1723:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1724:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2677,11 +2677,11 @@ _T4c4:
 // LINE 1728:
 	ptr[0] = color;
 // LINE 1729:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1731:
 	ptr[0] = color;
 // LINE 1732:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1733:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2691,19 +2691,19 @@ _T4c4:
 // LINE 1734:
 	ptr[0] = color;
 // LINE 1735:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1737:
 	ptr[0] = color;
 // LINE 1738:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1740:
 	ptr[0] = color;
 // LINE 1741:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1743:
 	ptr[0] = color;
 // LINE 1744:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1745:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2713,7 +2713,7 @@ _T4c4:
 // LINE 1746:
 	ptr[0] = color;
 // LINE 1747:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1748:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2729,15 +2729,15 @@ _T4c4:
 // LINE 1752:
 	ptr[0] = color;
 // LINE 1753:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1755:
 	ptr[0] = color;
 // LINE 1756:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1758:
 	ptr[0] = color;
 // LINE 1759:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1760:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2747,11 +2747,11 @@ _T4c4:
 // LINE 1761:
 	ptr[0] = color;
 // LINE 1762:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1764:
 	ptr[0] = color;
 // LINE 1765:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1766:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2761,11 +2761,11 @@ _T4c4:
 // LINE 1767:
 	ptr[0] = color;
 // LINE 1768:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1770:
 	ptr[0] = color;
 // LINE 1771:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1773:
 	ptr[0] = color;
 // LINE 1774:
@@ -2775,7 +2775,7 @@ _T4c4:
 // LINE 1776:
 	ptr[0] = color;
 // LINE 1777:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1778:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2785,7 +2785,7 @@ _T4c4:
 // LINE 1779:
 	ptr[0] = color;
 // LINE 1780:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1781:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2795,15 +2795,15 @@ _T4c4:
 // LINE 1782:
 	ptr[0] = color;
 // LINE 1783:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1785:
 	ptr[0] = color;
 // LINE 1786:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1788:
 	ptr[0] = color;
 // LINE 1789:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1790:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2813,7 +2813,7 @@ _T4c4:
 // LINE 1791:
 	ptr[0] = color;
 // LINE 1792:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1793:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2823,7 +2823,7 @@ _T4c4:
 // LINE 1794:
 	ptr[0] = color;
 // LINE 1795:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1796:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2839,15 +2839,15 @@ _T4c4:
 // LINE 1800:
 	ptr[0] = color;
 // LINE 1801:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1803:
 	ptr[0] = color;
 // LINE 1804:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1806:
 	ptr[0] = color;
 // LINE 1807:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1808:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2857,7 +2857,7 @@ _T4c4:
 // LINE 1809:
 	ptr[0] = color;
 // LINE 1810:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1811:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2867,7 +2867,7 @@ _T4c4:
 // LINE 1812:
 	ptr[0] = color;
 // LINE 1813:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1814:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2877,11 +2877,11 @@ _T4c4:
 // LINE 1815:
 	ptr[0] = color;
 // LINE 1816:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1818:
 	ptr[0] = color;
 // LINE 1819:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1821:
 	ptr[0] = color;
 // LINE 1822:
@@ -2891,7 +2891,7 @@ _T4c4:
 // LINE 1824:
 	ptr[0] = color;
 // LINE 1825:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1826:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2901,7 +2901,7 @@ _T4c4:
 // LINE 1827:
 	ptr[0] = color;
 // LINE 1828:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1829:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2911,19 +2911,19 @@ _T4c4:
 // LINE 1830:
 	ptr[0] = color;
 // LINE 1831:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1833:
 	ptr[0] = color;
 // LINE 1834:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1836:
 	ptr[0] = color;
 // LINE 1837:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1839:
 	ptr[0] = color;
 // LINE 1840:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1841:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2933,7 +2933,7 @@ _T4c4:
 // LINE 1842:
 	ptr[0] = color;
 // LINE 1843:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1844:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2955,11 +2955,11 @@ _T4c4:
 // LINE 1848:
 	ptr[0] = color;
 // LINE 1849:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1851:
 	ptr[0] = color;
 // LINE 1852:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1853:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2969,7 +2969,7 @@ _T4c4:
 // LINE 1854:
 	ptr[0] = color;
 // LINE 1855:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1856:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2979,7 +2979,7 @@ _T4c4:
 // LINE 1857:
 	ptr[0] = color;
 // LINE 1858:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1859:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -2989,11 +2989,11 @@ _T4c4:
 // LINE 1860:
 	ptr[0] = color;
 // LINE 1861:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1863:
 	ptr[0] = color;
 // LINE 1864:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1865:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3003,7 +3003,7 @@ _T4c4:
 // LINE 1866:
 	ptr[0] = color;
 // LINE 1867:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1868:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3023,7 +3023,7 @@ _T4c4:
 // LINE 1873:
 	ptr[0] = color;
 // LINE 1874:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1875:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3033,23 +3033,23 @@ _T4c4:
 // LINE 1876:
 	ptr[0] = color;
 // LINE 1877:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1879:
 	ptr[0] = color;
 // LINE 1880:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1882:
 	ptr[0] = color;
 // LINE 1883:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1885:
 	ptr[0] = color;
 // LINE 1886:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1888:
 	ptr[0] = color;
 // LINE 1889:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1890:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3059,7 +3059,7 @@ _T4c4:
 // LINE 1891:
 	ptr[0] = color;
 // LINE 1892:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1893:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3069,7 +3069,7 @@ _T4c4:
 // LINE 1894:
 	ptr[0] = color;
 // LINE 1895:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1897:
 	ptr[0] = color;
 // LINE 1898:
@@ -3079,7 +3079,7 @@ _T4c4:
 // LINE 1900:
 	ptr[0] = color;
 // LINE 1901:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1902:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3089,7 +3089,7 @@ _T4c4:
 // LINE 1903:
 	ptr[0] = color;
 // LINE 1904:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1905:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3099,11 +3099,11 @@ _T4c4:
 // LINE 1906:
 	ptr[0] = color;
 // LINE 1907:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1909:
 	ptr[0] = color;
 // LINE 1910:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1911:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3113,11 +3113,11 @@ _T4c4:
 // LINE 1912:
 	ptr[0] = color;
 // LINE 1913:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1915:
 	ptr[0] = color;
 // LINE 1916:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1917:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3127,11 +3127,11 @@ _T4c4:
 // LINE 1918:
 	ptr[0] = color;
 // LINE 1919:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1921:
 	ptr[0] = color;
 // LINE 1922:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1923:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3153,11 +3153,11 @@ _T4c4:
 // LINE 1927:
 	ptr[0] = color;
 // LINE 1928:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1930:
 	ptr[0] = color;
 // LINE 1931:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1932:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3167,7 +3167,7 @@ _T4c4:
 // LINE 1933:
 	ptr[0] = color;
 // LINE 1934:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1935:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3177,11 +3177,11 @@ _T4c4:
 // LINE 1936:
 	ptr[0] = color;
 // LINE 1937:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1939:
 	ptr[0] = color;
 // LINE 1940:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1941:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3191,7 +3191,7 @@ _T4c4:
 // LINE 1942:
 	ptr[0] = color;
 // LINE 1943:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1944:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3201,11 +3201,11 @@ _T4c4:
 // LINE 1945:
 	ptr[0] = color;
 // LINE 1946:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1948:
 	ptr[0] = color;
 // LINE 1949:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1950:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3227,11 +3227,11 @@ _T4c4:
 // LINE 1954:
 	ptr[0] = color;
 // LINE 1955:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1957:
 	ptr[0] = color;
 // LINE 1958:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1959:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3241,11 +3241,11 @@ _T4c4:
 // LINE 1960:
 	ptr[0] = color;
 // LINE 1961:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1963:
 	ptr[0] = color;
 // LINE 1964:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1965:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3255,7 +3255,7 @@ _T4c4:
 // LINE 1966:
 	ptr[0] = color;
 // LINE 1967:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1968:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3265,11 +3265,11 @@ _T4c4:
 // LINE 1969:
 	ptr[0] = color;
 // LINE 1970:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1972:
 	ptr[0] = color;
 // LINE 1973:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1974:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3279,7 +3279,7 @@ _T4c4:
 // LINE 1975:
 	ptr[0] = color;
 // LINE 1976:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1977:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3301,7 +3301,7 @@ _T4c4:
 // LINE 1981:
 	ptr[0] = color;
 // LINE 1982:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1983:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3311,11 +3311,11 @@ _T4c4:
 // LINE 1984:
 	ptr[0] = color;
 // LINE 1985:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1987:
 	ptr[0] = color;
 // LINE 1988:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1989:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3325,7 +3325,7 @@ _T4c4:
 // LINE 1990:
 	ptr[0] = color;
 // LINE 1991:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1992:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3335,7 +3335,7 @@ _T4c4:
 // LINE 1993:
 	ptr[0] = color;
 // LINE 1994:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1995:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3345,15 +3345,15 @@ _T4c4:
 // LINE 1996:
 	ptr[0] = color;
 // LINE 1997:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 1999:
 	ptr[0] = color;
 // LINE 2000:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2002:
 	ptr[0] = color;
 // LINE 2003:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2005:
 	ptr[0] = color;
 // LINE 2006:
@@ -3363,11 +3363,11 @@ _T4c4:
 // LINE 2008:
 	ptr[0] = color;
 // LINE 2009:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2011:
 	ptr[0] = color;
 // LINE 2012:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2013:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3377,7 +3377,7 @@ _T4c4:
 // LINE 2014:
 	ptr[0] = color;
 // LINE 2015:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2016:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3387,7 +3387,7 @@ _T4c4:
 // LINE 2017:
 	ptr[0] = color;
 // LINE 2018:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2019:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3397,7 +3397,7 @@ _T4c4:
 // LINE 2020:
 	ptr[0] = color;
 // LINE 2021:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2022:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3407,15 +3407,15 @@ _T4c4:
 // LINE 2023:
 	ptr[0] = color;
 // LINE 2024:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2026:
 	ptr[0] = color;
 // LINE 2027:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2029:
 	ptr[0] = color;
 // LINE 2030:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2031:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3431,7 +3431,7 @@ _T4c4:
 // LINE 2035:
 	ptr[0] = color;
 // LINE 2036:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2037:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3441,7 +3441,7 @@ _T4c4:
 // LINE 2038:
 	ptr[0] = color;
 // LINE 2039:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2040:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3451,7 +3451,7 @@ _T4c4:
 // LINE 2041:
 	ptr[0] = color;
 // LINE 2042:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2043:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3461,7 +3461,7 @@ _T4c4:
 // LINE 2044:
 	ptr[0] = color;
 // LINE 2045:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2046:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3471,19 +3471,19 @@ _T4c4:
 // LINE 2047:
 	ptr[0] = color;
 // LINE 2048:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2050:
 	ptr[0] = color;
 // LINE 2051:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2053:
 	ptr[0] = color;
 // LINE 2054:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2056:
 	ptr[0] = color;
 // LINE 2057:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2058:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3505,7 +3505,7 @@ _T4c4:
 // LINE 2062:
 	ptr[0] = color;
 // LINE 2063:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2064:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3515,7 +3515,7 @@ _T4c4:
 // LINE 2065:
 	ptr[0] = color;
 // LINE 2066:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2067:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3525,23 +3525,23 @@ _T4c4:
 // LINE 2068:
 	ptr[0] = color;
 // LINE 2069:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2071:
 	ptr[0] = color;
 // LINE 2072:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2074:
 	ptr[0] = color;
 // LINE 2075:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2077:
 	ptr[0] = color;
 // LINE 2078:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2080:
 	ptr[0] = color;
 // LINE 2081:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2082:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3551,7 +3551,7 @@ _T4c4:
 // LINE 2083:
 	ptr[0] = color;
 // LINE 2084:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2085:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3573,7 +3573,7 @@ _T4c4:
 // LINE 2089:
 	ptr[0] = color;
 // LINE 2090:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2091:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3583,15 +3583,15 @@ _T4c4:
 // LINE 2092:
 	ptr[0] = color;
 // LINE 2093:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2095:
 	ptr[0] = color;
 // LINE 2096:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2098:
 	ptr[0] = color;
 // LINE 2099:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2100:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3601,7 +3601,7 @@ _T4c4:
 // LINE 2101:
 	ptr[0] = color;
 // LINE 2102:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2103:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3611,7 +3611,7 @@ _T4c4:
 // LINE 2104:
 	ptr[0] = color;
 // LINE 2105:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2106:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3621,11 +3621,11 @@ _T4c4:
 // LINE 2107:
 	ptr[0] = color;
 // LINE 2108:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2110:
 	ptr[0] = color;
 // LINE 2111:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2113:
 	ptr[0] = color;
 // LINE 2115:
@@ -3637,19 +3637,19 @@ _T4c4:
 // LINE 2116:
 	ptr[0] = color;
 // LINE 2117:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2119:
 	ptr[0] = color;
 // LINE 2120:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2122:
 	ptr[0] = color;
 // LINE 2123:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2125:
 	ptr[0] = color;
 // LINE 2126:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2127:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3659,7 +3659,7 @@ _T4c4:
 // LINE 2128:
 	ptr[0] = color;
 // LINE 2129:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2130:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3669,7 +3669,7 @@ _T4c4:
 // LINE 2131:
 	ptr[0] = color;
 // LINE 2132:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2133:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3679,15 +3679,15 @@ _T4c4:
 // LINE 2134:
 	ptr[0] = color;
 // LINE 2135:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2137:
 	ptr[0] = color;
 // LINE 2138:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2140:
 	ptr[0] = color;
 // LINE 2141:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2143:
 	ptr[0] = color;
 // LINE 2144:
@@ -3697,7 +3697,7 @@ _T4c4:
 // LINE 2146:
 	ptr[0] = color;
 // LINE 2147:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2148:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3707,7 +3707,7 @@ _T4c4:
 // LINE 2149:
 	ptr[0] = color;
 // LINE 2150:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2151:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3717,7 +3717,7 @@ _T4c4:
 // LINE 2152:
 	ptr[0] = color;
 // LINE 2153:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2154:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3727,7 +3727,7 @@ _T4c4:
 // LINE 2155:
 	ptr[0] = color;
 // LINE 2156:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2157:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3737,7 +3737,7 @@ _T4c4:
 // LINE 2158:
 	ptr[0] = color;
 // LINE 2159:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2160:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3747,15 +3747,15 @@ _T4c4:
 // LINE 2161:
 	ptr[0] = color;
 // LINE 2162:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2164:
 	ptr[0] = color;
 // LINE 2165:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2167:
 	ptr[0] = color;
 // LINE 2168:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2169:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3765,7 +3765,7 @@ _T4c4:
 // LINE 2170:
 	ptr[0] = color;
 // LINE 2171:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2172:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3787,11 +3787,11 @@ _T4c4:
 // LINE 2176:
 	ptr[0] = color;
 // LINE 2177:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2179:
 	ptr[0] = color;
 // LINE 2180:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2181:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3801,19 +3801,19 @@ _T4c4:
 // LINE 2182:
 	ptr[0] = color;
 // LINE 2183:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2185:
 	ptr[0] = color;
 // LINE 2186:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2188:
 	ptr[0] = color;
 // LINE 2189:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2191:
 	ptr[0] = color;
 // LINE 2192:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2193:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3823,7 +3823,7 @@ _T4c4:
 // LINE 2194:
 	ptr[0] = color;
 // LINE 2195:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2196:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3833,7 +3833,7 @@ _T4c4:
 // LINE 2197:
 	ptr[0] = color;
 // LINE 2198:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2199:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3843,7 +3843,7 @@ _T4c4:
 // LINE 2200:
 	ptr[0] = color;
 // LINE 2201:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2203:
 	ptr[0] = color;
 // LINE 2204:
@@ -3853,7 +3853,7 @@ _T4c4:
 // LINE 2206:
 	ptr[0] = color;
 // LINE 2207:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2208:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3863,7 +3863,7 @@ _T4c4:
 // LINE 2209:
 	ptr[0] = color;
 // LINE 2210:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2211:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3873,7 +3873,7 @@ _T4c4:
 // LINE 2212:
 	ptr[0] = color;
 // LINE 2213:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2214:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3883,7 +3883,7 @@ _T4c4:
 // LINE 2215:
 	ptr[0] = color;
 // LINE 2216:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2217:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3893,11 +3893,11 @@ _T4c4:
 // LINE 2218:
 	ptr[0] = color;
 // LINE 2219:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2221:
 	ptr[0] = color;
 // LINE 2222:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2223:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3907,7 +3907,7 @@ _T4c4:
 // LINE 2224:
 	ptr[0] = color;
 // LINE 2225:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2226:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3917,11 +3917,11 @@ _T4c4:
 // LINE 2227:
 	ptr[0] = color;
 // LINE 2228:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2230:
 	ptr[0] = color;
 // LINE 2231:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2232:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3943,19 +3943,19 @@ _T4c4:
 // LINE 2236:
 	ptr[0] = color;
 // LINE 2237:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2239:
 	ptr[0] = color;
 // LINE 2240:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2242:
 	ptr[0] = color;
 // LINE 2243:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2245:
 	ptr[0] = color;
 // LINE 2246:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2247:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3965,15 +3965,15 @@ _T4c4:
 // LINE 2248:
 	ptr[0] = color;
 // LINE 2249:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2251:
 	ptr[0] = color;
 // LINE 2252:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2254:
 	ptr[0] = color;
 // LINE 2255:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2256:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3983,7 +3983,7 @@ _T4c4:
 // LINE 2257:
 	ptr[0] = color;
 // LINE 2258:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2259:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -3993,7 +3993,7 @@ _T4c4:
 // LINE 2260:
 	ptr[0] = color;
 // LINE 2261:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2262:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -4009,19 +4009,19 @@ _T4c4:
 // LINE 2266:
 	ptr[0] = color;
 // LINE 2267:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2269:
 	ptr[0] = color;
 // LINE 2270:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2272:
 	ptr[0] = color;
 // LINE 2273:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2275:
 	ptr[0] = color;
 // LINE 2276:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2277:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -4031,7 +4031,7 @@ _T4c4:
 // LINE 2278:
 	ptr[0] = color;
 // LINE 2279:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2280:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -4041,7 +4041,7 @@ _T4c4:
 // LINE 2281:
 	ptr[0] = color;
 // LINE 2282:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2283:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -4051,7 +4051,7 @@ _T4c4:
 // LINE 2284:
 	ptr[0] = color;
 // LINE 2285:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2286:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -4061,11 +4061,11 @@ _T4c4:
 // LINE 2287:
 	ptr[0] = color;
 // LINE 2288:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2290:
 	ptr[0] = color;
 // LINE 2291:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2293:
 	ptr[0] = color;
 // LINE 2294:
@@ -4081,7 +4081,7 @@ _T4c4:
 // LINE 2296:
 	ptr[0] = color;
 // LINE 2297:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2298:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -4091,15 +4091,15 @@ _T4c4:
 // LINE 2299:
 	ptr[0] = color;
 // LINE 2300:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2302:
 	ptr[0] = color;
 // LINE 2303:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2305:
 	ptr[0] = color;
 // LINE 2306:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2307:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -4109,7 +4109,7 @@ _T4c4:
 // LINE 2308:
 	ptr[0] = color;
 // LINE 2309:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2310:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -4119,11 +4119,11 @@ _T4c4:
 // LINE 2311:
 	ptr[0] = color;
 // LINE 2312:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2314:
 	ptr[0] = color;
 // LINE 2315:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2316:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -4133,11 +4133,11 @@ _T4c4:
 // LINE 2317:
 	ptr[0] = color;
 // LINE 2318:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2320:
 	ptr[0] = color;
 // LINE 2321:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2323:
 	ptr[0] = color;
 // LINE 2324:
@@ -4147,7 +4147,7 @@ _T4c4:
 // LINE 2326:
 	ptr[0] = color;
 // LINE 2327:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2328:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -4157,7 +4157,7 @@ _T4c4:
 // LINE 2329:
 	ptr[0] = color;
 // LINE 2330:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2331:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -4167,7 +4167,7 @@ _T4c4:
 // LINE 2332:
 	ptr[0] = color;
 // LINE 2333:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2334:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -4177,19 +4177,19 @@ _T4c4:
 // LINE 2335:
 	ptr[0] = color;
 // LINE 2336:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2338:
 	ptr[0] = color;
 // LINE 2339:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2341:
 	ptr[0] = color;
 // LINE 2342:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2344:
 	ptr[0] = color;
 // LINE 2345:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2346:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -4199,7 +4199,7 @@ _T4c4:
 // LINE 2347:
 	ptr[0] = color;
 // LINE 2348:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2349:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -4209,7 +4209,7 @@ _T4c4:
 // LINE 2350:
 	ptr[0] = color;
 // LINE 2351:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2353:
 	ptr[0] = color;
 // LINE 2354:
@@ -4219,7 +4219,7 @@ _T4c4:
 // LINE 2356:
 	ptr[0] = color;
 // LINE 2357:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2358:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -4229,7 +4229,7 @@ _T4c4:
 // LINE 2359:
 	ptr[0] = color;
 // LINE 2360:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2361:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -4239,15 +4239,15 @@ _T4c4:
 // LINE 2362:
 	ptr[0] = color;
 // LINE 2363:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2365:
 	ptr[0] = color;
 // LINE 2366:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2368:
 	ptr[0] = color;
 // LINE 2369:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2370:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -4257,7 +4257,7 @@ _T4c4:
 // LINE 2371:
 	ptr[0] = color;
 // LINE 2372:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2373:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -4267,15 +4267,15 @@ _T4c4:
 // LINE 2374:
 	ptr[0] = color;
 // LINE 2375:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2377:
 	ptr[0] = color;
 // LINE 2378:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2380:
 	ptr[0] = color;
 // LINE 2381:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2382:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -4297,15 +4297,15 @@ _T4c4:
 // LINE 2386:
 	ptr[0] = color;
 // LINE 2387:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2389:
 	ptr[0] = color;
 // LINE 2390:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2392:
 	ptr[0] = color;
 // LINE 2393:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2394:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -4315,7 +4315,7 @@ _T4c4:
 // LINE 2395:
 	ptr[0] = color;
 // LINE 2396:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2397:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -4325,7 +4325,7 @@ _T4c4:
 // LINE 2398:
 	ptr[0] = color;
 // LINE 2399:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2400:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -4335,19 +4335,19 @@ _T4c4:
 // LINE 2401:
 	ptr[0] = color;
 // LINE 2402:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2404:
 	ptr[0] = color;
 // LINE 2405:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2407:
 	ptr[0] = color;
 // LINE 2408:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2410:
 	ptr[0] = color;
 // LINE 2411:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 2412:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
@@ -4376,7 +4376,7 @@ _T22e0:
 	__asm        mov    i, 0;
 	__asm        jmp    _T22ef;
 _T22ec:
-	__asm        inc    i;
+	i++;
 _T22ef:
 	__asm        mov    eax, i;
 	__asm        cmp    num3, eax;
@@ -7591,7 +7591,7 @@ _T53:
 	__asm        mov    i, 0;
 	__asm        jmp    _T95;
 _T92:
-	__asm        inc    i;
+	i++;
 _T95:
 	__asm        mov    eax, objcount;
 	__asm        cmp    i, eax;

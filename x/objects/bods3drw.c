@@ -134,7 +134,7 @@ _T7b:
 	__asm        cmp    G_video_mode, 0x10;
 	__asm        jne    _T117;
 // LINE 157:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 158:
 	__asm        push   0x5BEF50;
 	__asm        push   1;
@@ -168,7 +168,7 @@ _Tb3:
 _Te4:
 	ptr[0] = color;
 // LINE 163:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 164:
 	__asm        push   0x5BEF60;
 	__asm        push   1;
@@ -257,7 +257,7 @@ _T7c:
 	__asm        mov    i, 0;
 	__asm        jmp    _Tbd;
 _Tb7:
-	__asm        inc    i;
+	i++;
 _Tbd:
 	__asm        mov    eax, diameter;
 	__asm        cmp    i, eax;
@@ -292,7 +292,7 @@ _T12a:
 	__asm        mov    i, 0;
 	__asm        jmp    _T149;
 _T143:
-	__asm        inc    i;
+	i++;
 _T149:
 	__asm        mov    eax, diameter;
 	__asm        cmp    i, eax;
@@ -412,7 +412,7 @@ _T2f2:
 	__asm        mov    i, 0;
 	__asm        jmp    _T311;
 _T30b:
-	__asm        inc    i;
+	i++;
 _T311:
 	__asm        mov    eax, radius;
 	__asm        cmp    i, eax;
@@ -554,7 +554,7 @@ _T4c4:
 	__asm        mov    j, 0;
 	__asm        jmp    _T519;
 _T513:
-	__asm        inc    j;
+	j++;
 _T519:
 	__asm        mov    eax, j;
 	__asm        cmp    ditherLimit, eax;
@@ -607,7 +607,7 @@ _T519:
 	__asm        call   DrawHorzLinePat;
 	__asm        add    esp, 0x1C;
 // LINE 281:
-	__asm        inc    i;
+	i++;
 // LINE 283:
 	__asm        jmp    _T5e8;
 // LINE 285:
@@ -618,7 +618,7 @@ _T5e8:
 	__asm        jmp    _T513;
 // LINE 288:
 _T5ed:
-	__asm        inc    shftCt;
+	shftCt++;
 // LINE 290:
 	__asm        jmp    _T682;
 // LINE 293:
@@ -661,7 +661,7 @@ _T5f5:
 	__asm        call   DrawHorzLine;
 	__asm        add    esp, 0x10;
 // LINE 302:
-	__asm        inc    i;
+	i++;
 // LINE 304:
 _T682:
 	__asm        jmp    _T4c4;
@@ -673,7 +673,7 @@ _T68c:
 	__asm        mov    i, 0;
 	__asm        jmp    _T6a1;
 _T69b:
-	__asm        inc    i;
+	i++;
 _T6a1:
 	__asm        mov    eax, radius;
 	__asm        cmp    i, eax;
@@ -854,7 +854,7 @@ _T84:
 	__asm        mov    i, 0;
 	__asm        jmp    _T10d;
 _T10a:
-	__asm        inc    i;
+	i++;
 _T10d:
 	__asm        mov    eax, i;
 	__asm        cmp    vertRad, eax;
@@ -1409,13 +1409,13 @@ _T52:
 	__asm        cmp    width, eax;
 	__asm        jne    _T61;
 // LINE 670:
-	__asm        inc    width;
+	width++;
 // LINE 677:
 _T61:
 	__asm        mov    i, 0;
 	__asm        jmp    _T70;
 _T6d:
-	__asm        inc    i;
+	i++;
 _T70:
 	__asm        mov    eax, i;
 	__asm        cmp    width, eax;
@@ -1581,7 +1581,7 @@ _T215:
 	__asm        mov    i, 0;
 	__asm        jmp    _T224;
 _T221:
-	__asm        inc    i;
+	i++;
 _T224:
 	__asm        mov    eax, dx;
 	__asm        cmp    i, eax;
@@ -1606,7 +1606,7 @@ _T224:
 	__asm        mov    j, eax;
 	__asm        jmp    _T264;
 _T261:
-	__asm        inc    j;
+	j++;
 _T264:
 	__asm        mov    eax, j;
 	__asm        cmp    endWidth, eax;
@@ -1691,7 +1691,7 @@ _T329:
 	__asm        mov    i, 0;
 	__asm        jmp    _T338;
 _T335:
-	__asm        inc    i;
+	i++;
 _T338:
 	__asm        mov    eax, dy;
 	__asm        cmp    i, eax;
@@ -1872,7 +1872,7 @@ _T3e:
 	__asm        mov    i, 0;
 	__asm        jmp    _T4d;
 _T4a:
-	__asm        inc    i;
+	i++;
 _T4d:
 	__asm        mov    eax, width;
 	__asm        cmp    i, eax;
@@ -2024,7 +2024,7 @@ _T1a2:
 	__asm        mov    i, 0;
 	__asm        jmp    _T1de;
 _T1db:
-	__asm        inc    i;
+	i++;
 _T1de:
 	__asm        mov    eax, dx;
 	__asm        cmp    i, eax;
@@ -2035,7 +2035,7 @@ _T1de:
 	__asm        mov    j, 0;
 	__asm        jmp    _T1ff;
 _T1fc:
-	__asm        inc    j;
+	j++;
 _T1ff:
 	__asm        mov    eax, width;
 	__asm        cmp    j, eax;
@@ -2100,7 +2100,7 @@ _T273:
 	__asm        mov    i, 0;
 	__asm        jmp    _T2a5;
 _T2a2:
-	__asm        inc    i;
+	i++;
 _T2a5:
 	__asm        mov    eax, dy;
 	__asm        cmp    i, eax;

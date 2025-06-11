@@ -543,7 +543,7 @@ _T2c5:
 	__asm        cmp    lCurrentInitializationFlag, 0x8000;
 	__asm        jae    _T661;
 // LINE 131:
-	__asm        inc    lCurrentInitializationIndex;
+	lCurrentInitializationIndex++;
 // LINE 132:
 	__asm        shl    lCurrentInitializationFlag, 1;
 // LINE 133:

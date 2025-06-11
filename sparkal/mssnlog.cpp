@@ -1712,7 +1712,7 @@ void MissionLogWindow::DrawBackground() {
 	__asm        mov    y, 0x50;
 	__asm        jmp    _T29;
 _T26:
-	__asm        inc    i;
+	i++;
 _T29:
 	__asm        cmp    i, 0x15;
 	__asm        jge    _T67;
@@ -2817,7 +2817,7 @@ _T123:
 	__asm        mov    i, 0;
 	__asm        jmp    _T132;
 _T12f:
-	__asm        inc    i;
+	i++;
 _T132:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x48];
@@ -2990,8 +2990,7 @@ _T323:
 	__asm        jmp    _T12f;
 // LINE 333:
 _T32d:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x48];
+	this->lCurrentDisplayedMessageCount--;
 // LINE 334:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x48], 0;
@@ -3071,7 +3070,7 @@ _T3ec:
 	__asm        mov    i, 0;
 	__asm        jmp    _T42c;
 _T429:
-	__asm        inc    i;
+	i++;
 _T42c:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, i;
@@ -3151,7 +3150,7 @@ _T27:
 	__asm        mov    i, 0;
 	__asm        jmp    _T4e;
 _T4b:
-	__asm        inc    i;
+	i++;
 _T4e:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];

@@ -2176,7 +2176,7 @@ int32_t CareerWindow::DrawSelf() {
 	__asm        mov    i, 0;
 	__asm        jmp    _T1b;
 _T18:
-	__asm        inc    i;
+	i++;
 _T1b:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, i;
@@ -2295,7 +2295,7 @@ _T89:
 	__asm        mov    i, 0;
 	__asm        jmp    _Tbc;
 _Tb6:
-	__asm        inc    i;
+	i++;
 _Tbc:
 	__asm        cmp    i, 3;
 	__asm        jge    _T1c0;
@@ -2303,7 +2303,7 @@ _Tbc:
 	__asm        mov    j, 0;
 	__asm        jmp    _Tde;
 _Td8:
-	__asm        inc    j;
+	j++;
 _Tde:
 	__asm        cmp    j, 4;
 	__asm        jge    _T1bb;
@@ -2432,7 +2432,7 @@ long CareerWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nBut
 	__asm        mov    i, 0;
 	__asm        jmp    _T1b;
 _T18:
-	__asm        inc    i;
+	i++;
 _T1b:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, i;
@@ -2541,7 +2541,7 @@ long CareerWindow::DoCursorMove(long nCursorX, long nCursorY) {
 	__asm        mov    i, 0;
 	__asm        jmp    _T1b;
 _T18:
-	__asm        inc    i;
+	i++;
 _T1b:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, i;
@@ -3167,7 +3167,7 @@ void CareerWindow::CitySelectionFrame::FillDestinationPoints(/*packed*/ class MP
 	__asm        mov    nN, 0;
 	__asm        jmp    _T1b;
 _T18:
-	__asm        inc    nN;
+	nN++;
 _T1b:
 	__asm        cmp    nN, 4;
 	__asm        jge    _T4e;
@@ -3200,7 +3200,7 @@ void CareerWindow::CitySelectionFrame::FillSourceRects(/*packed*/ class MRect *r
 	__asm        mov    nN, 0;
 	__asm        jmp    _T1b;
 _T18:
-	__asm        inc    nN;
+	nN++;
 _T1b:
 	__asm        cmp    nN, 4;
 	__asm        jge    _T109;

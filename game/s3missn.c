@@ -153,7 +153,7 @@ void S3MissionReset() {
 	__asm        mov    i, 0;
 	__asm        jmp    _T22;
 _T1f:
-	__asm        inc    i;
+	i++;
 _T22:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    _T4a;
@@ -214,7 +214,7 @@ void ConvertCitySettingsToSteppedPercentages(/*packed*/ struct tagCitySettings *
 	__asm        mov    eax, [eax];
 	__asm        mov    G_diff_level, eax;
 // LINE 185:
-	__asm        inc    G_diff_level;
+	G_diff_level++;
 // LINE 193:
 	__asm        mov    eax, citySettingsIn;
 	__asm        mov    eax, [eax+0x14];
@@ -738,7 +738,7 @@ void S3MissionDriver() {
 	__asm        mov    i, 0;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    i;
+	i++;
 _T18:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    _T54b;
@@ -1070,7 +1070,7 @@ _T424:
 	__asm        mov    [ecx+4], edx;
 // LINE 609:
 _T45c:
-	__asm        inc    S_riotcheckctr;
+	S_riotcheckctr++;
 // LINE 612:
 _T462:
 	__asm        mov    eax, md;
@@ -1162,7 +1162,7 @@ long S3MissionStart(long x, long y, long type) {
 	__asm        mov    i, 0;
 	__asm        jmp    _T1f;
 _T1c:
-	__asm        inc    i;
+	i++;
 _T1f:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    _T6a;
@@ -1259,7 +1259,7 @@ _T13c:
 	__asm        mov    count, 0;
 	__asm        jmp    _T159;
 _T156:
-	__asm        inc    count;
+	count++;
 _T159:
 	__asm        mov    eax, numtostart;
 	__asm        cmp    count, eax;
@@ -1282,7 +1282,7 @@ _T159:
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jle    _T197;
 // LINE 704:
-	__asm        inc    numstarted;
+	numstarted++;
 // LINE 706:
 _T197:
 	__asm        cmp    count, 4;
@@ -1413,7 +1413,7 @@ _T2a3:
 	__asm        mov    count, 0;
 	__asm        jmp    _T30f;
 _T30c:
-	__asm        inc    count;
+	count++;
 _T30f:
 	__asm        mov    eax, count;
 	__asm        cmp    numtostart, eax;
@@ -1438,8 +1438,7 @@ _T30f:
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jle    _T35c;
 // LINE 756:
-	__asm        mov    eax, md;
-	__asm        inc    dword ptr [eax+0x8C];
+	md->mdata.total_person_rescue++;
 // LINE 757:
 	startthismission = 0x1;
 // LINE 759:
@@ -1710,7 +1709,7 @@ _T62d:
 	__asm        mov    count, 0;
 	__asm        jmp    _T66b;
 _T668:
-	__asm        inc    count;
+	count++;
 _T66b:
 	__asm        mov    eax, count;
 	__asm        cmp    numtostart, eax;
@@ -1735,8 +1734,7 @@ _T66b:
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jle    _T6b8;
 // LINE 867:
-	__asm        mov    eax, md;
-	__asm        inc    dword ptr [eax+0x88];
+	md->mdata.total_person_transport++;
 // LINE 868:
 	startthismission = 0x1;
 // LINE 870:
@@ -1814,7 +1812,7 @@ _T748:
 	__asm        cmp    cfd, 0;
 	__asm        jne    _T7a7;
 // LINE 892:
-	__asm        dec    S_mstatics.fire_ctr;
+	S_mstatics.fire_ctr--;
 // LINE 893:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x4C];
@@ -1850,7 +1848,7 @@ _T7a7:
 	__asm        test   eax, eax;
 	__asm        jne    _T811;
 // LINE 898:
-	__asm        dec    S_mstatics.fire_ctr;
+	S_mstatics.fire_ctr--;
 // LINE 899:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x4C];
@@ -1897,7 +1895,7 @@ _T830:
 	__asm        test   eax, eax;
 	__asm        jne    _T894;
 // LINE 910:
-	__asm        dec    S_mstatics.plane_ctr;
+	S_mstatics.plane_ctr--;
 // LINE 911:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x4C];
@@ -1935,7 +1933,7 @@ _T8a3:
 	__asm        test   eax, eax;
 	__asm        jne    _T907;
 // LINE 920:
-	__asm        dec    S_mstatics.train_ctr;
+	S_mstatics.train_ctr--;
 // LINE 921:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x4C];
@@ -2425,12 +2423,12 @@ _Ted1:
 	__asm        cmp    dword ptr [eax+0x54], 2;
 	__asm        jne    _Tee9;
 // LINE 1054:
-	__asm        inc    S_mstatics.num_delayed_missions;
+	S_mstatics.num_delayed_missions++;
 // LINE 1055:
 	__asm        jmp    _Teef;
 // LINE 1056:
 _Tee9:
-	__asm        inc    S_mstatics.num_active_missions;
+	S_mstatics.num_active_missions++;
 // LINE 1058:
 _Teef:
 	S_mission_timer = S_mission_interval;
@@ -2863,9 +2861,9 @@ _T1fa:
 	__asm        call   S3MissionDispatch;
 	__asm        add    esp, 0xC;
 // LINE 1351:
-	__asm        dec    S_mstatics.num_delayed_missions;
+	S_mstatics.num_delayed_missions--;
 // LINE 1352:
-	__asm        inc    S_mstatics.num_active_missions;
+	S_mstatics.num_active_missions++;
 // LINE 1355:
 _T35d:
 	__asm        jmp    _T4c9;
@@ -2911,9 +2909,9 @@ _T35d:
 	__asm        add    esp, 0xC;
 // LINE 1377:
 _T3f6:
-	__asm        dec    S_mstatics.num_delayed_missions;
+	S_mstatics.num_delayed_missions--;
 // LINE 1378:
-	__asm        inc    S_mstatics.num_active_missions;
+	S_mstatics.num_active_missions++;
 // LINE 1380:
 _T402:
 	md->state = mp->i2num;
@@ -2960,7 +2958,7 @@ void S3MissionEnd(long mission_id) {
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x4C], eax;
 // LINE 1407:
-	__asm        dec    S_mstatics.num_active_missions;
+	S_mstatics.num_active_missions--;
 // LINE 1410:
 	__asm        mov    eax, md;
 	__asm        cmp    S_mstatics.curr_mission, eax;
@@ -2971,7 +2969,7 @@ void S3MissionEnd(long mission_id) {
 	__asm        mov    i, 0;
 	__asm        jmp    _T6d;
 _T6a:
-	__asm        inc    i;
+	i++;
 _T6d:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    _Tbe;
@@ -3040,7 +3038,7 @@ long S3MissionGetByType(long mission_type) {
 	__asm        mov    count, 0;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    count;
+	count++;
 _T18:
 	__asm        cmp    count, 0x1E;
 	__asm        jge    _T6b;
@@ -3102,7 +3100,7 @@ _T14:
 	__asm        mov    i, 0;
 	__asm        jmp    _T23;
 _T20:
-	__asm        inc    i;
+	i++;
 _T23:
 	__asm        cmp    i, 0x14;
 	__asm        jge    _T90;
@@ -3166,7 +3164,7 @@ _Tb8:
 	__asm        mov    i, 0;
 	__asm        jmp    _Tc7;
 _Tc4:
-	__asm        inc    i;
+	i++;
 _Tc7:
 	__asm        cmp    i, 0x14;
 	__asm        jge    _T156;
@@ -3251,7 +3249,7 @@ _T185:
 	__asm        mov    i, 0;
 	__asm        jmp    _T194;
 _T191:
-	__asm        inc    i;
+	i++;
 _T194:
 	__asm        cmp    i, 0x14;
 	__asm        jge    _T1f2;
@@ -3299,7 +3297,7 @@ _T1f7:
 	__asm        mov    i, 0;
 	__asm        jmp    _T206;
 _T203:
-	__asm        inc    i;
+	i++;
 _T206:
 	__asm        cmp    i, 0x14;
 	__asm        jge    _T264;
@@ -3347,7 +3345,7 @@ _T269:
 	__asm        mov    i, 0;
 	__asm        jmp    _T278;
 _T275:
-	__asm        inc    i;
+	i++;
 _T278:
 	__asm        cmp    i, 0x14;
 	__asm        jge    _T2d6;
@@ -3395,7 +3393,7 @@ _T2db:
 	__asm        mov    i, 0;
 	__asm        jmp    _T2ea;
 _T2e7:
-	__asm        inc    i;
+	i++;
 _T2ea:
 	__asm        cmp    i, 0x14;
 	__asm        jge    _T348;
@@ -3443,7 +3441,7 @@ _T34d:
 	__asm        mov    i, 0;
 	__asm        jmp    _T35c;
 _T359:
-	__asm        inc    i;
+	i++;
 _T35c:
 	__asm        cmp    i, 0x14;
 	__asm        jge    _T3ba;
@@ -3598,7 +3596,7 @@ _T22:
 	__asm        mov    i, eax;
 	__asm        jmp    _T45;
 _T42:
-	__asm        inc    i;
+	i++;
 _T45:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    _T96;
@@ -3631,7 +3629,7 @@ _T96:
 	__asm        mov    i, 0;
 	__asm        jmp    _Ta5;
 _Ta2:
-	__asm        inc    i;
+	i++;
 _Ta5:
 	__asm        mov    eax, S_mstatics.curr_mission;
 	__asm        mov    ecx, 0x6072B8;
@@ -3695,7 +3693,7 @@ _T22:
 	__asm        mov    i, eax;
 	__asm        jmp    _T45;
 _T42:
-	__asm        dec    i;
+	i--;
 _T45:
 	__asm        cmp    i, 0;
 	__asm        jl     _T96;
@@ -3728,7 +3726,7 @@ _T96:
 	__asm        mov    i, 0x1E;
 	__asm        jmp    _Ta5;
 _Ta2:
-	__asm        dec    i;
+	i--;
 _Ta5:
 	__asm        mov    eax, S_mstatics.curr_mission;
 	__asm        mov    ecx, 0x6072B8;
@@ -3950,12 +3948,12 @@ _T92:
 	__asm        cmp    dword ptr [eax+0x54], 2;
 	__asm        jne    _Taa;
 // LINE 1864:
-	__asm        dec    S_mstatics.num_delayed_missions;
+	S_mstatics.num_delayed_missions--;
 // LINE 1865:
 	__asm        jmp    _Tb0;
 // LINE 1866:
 _Taa:
-	__asm        dec    S_mstatics.num_active_missions;
+	S_mstatics.num_active_missions--;
 // LINE 1870:
 _Tb0:
 	S_log.nMissionID = md->key;
@@ -3985,7 +3983,7 @@ long S3MissionStartDirect(long type) {
 	__asm        mov    i, 0;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    i;
+	i++;
 _T18:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    _T63;
@@ -4268,12 +4266,12 @@ _T38f:
 	__asm        cmp    dword ptr [eax+0x54], 2;
 	__asm        jne    _T3a7;
 // LINE 1970:
-	__asm        inc    S_mstatics.num_delayed_missions;
+	S_mstatics.num_delayed_missions++;
 // LINE 1971:
 	__asm        jmp    _T3ad;
 // LINE 1972:
 _T3a7:
-	__asm        inc    S_mstatics.num_active_missions;
+	S_mstatics.num_active_missions++;
 // LINE 1974:
 _T3ad:
 	S_mission_timer = S_mission_interval;
@@ -5258,7 +5256,7 @@ _T1d:
 	__asm        mov    i, 0;
 	__asm        jmp    _T2c;
 _T29:
-	__asm        inc    i;
+	i++;
 _T2c:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    _T7f;
@@ -5351,7 +5349,7 @@ _T39:
 	__asm        mov    i, 0;
 	__asm        jmp    _T52;
 _T4f:
-	__asm        inc    i;
+	i++;
 _T52:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    _Ta3;

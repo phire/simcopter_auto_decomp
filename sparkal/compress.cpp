@@ -710,15 +710,13 @@ _T8d:
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     _Ta5;
 // LINE 126:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+8];
+	this->mLockCount++;
 // LINE 128:
 _Ta5:
 	__asm        jmp    _Tb0;
 // LINE 129:
 _Taa:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+8];
+	this->mLockCount++;
 // LINE 131:
 _Tb0:
 	__asm        mov    eax, this;
@@ -778,15 +776,13 @@ _T8c:
 	__asm        test   eax, eax;
 	__asm        jne    _Tad;
 // LINE 141:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+8];
+	this->mLockCount--;
 // LINE 143:
 _Tad:
 	__asm        jmp    _Tb8;
 // LINE 144:
 _Tb2:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+8];
+	this->mLockCount--;
 // LINE 146:
 _Tb8:
 	__asm        mov    eax, this;
@@ -883,7 +879,7 @@ _Tc8:
 	__asm        mov    cx, [eax];
 	__asm        add    pCompressedBits, ecx;
 // LINE 177:
-	__asm        inc    Top;
+	Top++;
 // LINE 178:
 	__asm        jmp    _Tc8;
 // LINE 180:
@@ -1085,7 +1081,7 @@ _T27:
 // LINE 345:
 	pDest = pDestinationEdge;
 // LINE 347:
-	__asm        dec    Height;
+	Height--;
 // LINE 349:
 	__asm        jmp    _T175;
 // LINE 352:
@@ -1179,9 +1175,9 @@ _T103:
 	pDest[0] = pSource[0];
 // LINE 388:
 _T134:
-	__asm        inc    pDest;
+	pDest++;
 // LINE 389:
-	__asm        inc    pSource;
+	pSource++;
 // LINE 390:
 	__asm        jmp    _T103;
 // LINE 391:
@@ -1257,7 +1253,7 @@ _T31:
 // LINE 430:
 	pDest = pDestinationEdge;
 // LINE 432:
-	__asm        dec    Height;
+	Height--;
 // LINE 433:
 	__asm        movsx  eax, LeftClip;
 	__asm        neg    eax;
@@ -1335,9 +1331,9 @@ _Tfc:
 	__asm        inc    pSource;
 	__asm        inc    pDest;
 // LINE 473:
-	__asm        dec    counter;
+	counter--;
 // LINE 474:
-	__asm        inc    PixelCount;
+	PixelCount++;
 // LINE 475:
 	__asm        jmp    _Tfc;
 // LINE 476:
@@ -1395,9 +1391,9 @@ _T192:
 	__asm        mov    [ecx], al;
 	__asm        inc    pDest;
 // LINE 504:
-	__asm        dec    counter;
+	counter--;
 // LINE 505:
-	__asm        inc    PixelCount;
+	PixelCount++;
 // LINE 506:
 	__asm        jmp    _T192;
 // LINE 507:
@@ -1503,13 +1499,13 @@ _T28d:
 	pDest[0] = pSource[0];
 // LINE 563:
 _T2c5:
-	__asm        inc    pDest;
+	pDest++;
 // LINE 564:
-	__asm        inc    pSource;
+	pSource++;
 // LINE 565:
-	__asm        dec    counter;
+	counter--;
 // LINE 566:
-	__asm        inc    PixelCount;
+	PixelCount++;
 // LINE 567:
 	__asm        jmp    _T28d;
 // LINE 568:

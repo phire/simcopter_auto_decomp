@@ -1840,8 +1840,7 @@ _T37e:
 	__asm        cmp    ecx, edx;
 	__asm        jle    _T3a6;
 // LINE 622:
-	__asm        mov    eax, this;
-	__asm        inc    byte ptr [eax+0x292];
+	this->dispatchPathIndex++;
 // LINE 628:
 _T3a6:
 	__asm        mov    eax, this;

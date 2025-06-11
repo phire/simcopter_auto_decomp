@@ -3137,7 +3137,7 @@ int32_t LogManager::PurgeNEntries(long lEntryCountToPurge) {
 	__asm        mov    i, 0;
 	__asm        jmp    _T3d;
 _T3a:
-	__asm        inc    i;
+	i++;
 _T3d:
 	__asm        mov    eax, lEntryCountToPurge;
 	__asm        cmp    i, eax;

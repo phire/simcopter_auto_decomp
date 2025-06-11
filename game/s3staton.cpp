@@ -903,7 +903,7 @@ _Te9:
 	__asm        mov    i, 0;
 	__asm        jmp    _Tf8;
 _Tf5:
-	__asm        inc    i;
+	i++;
 _Tf8:
 	__asm        cmp    i, 4;
 	__asm        jge    _T26a;
@@ -1204,7 +1204,7 @@ void Station::SortStationsByDistanceFromDestination(/*packed*/ struct _GridCoord
 	__asm        mov    i, 0;
 	__asm        jmp    _T25;
 _T22:
-	__asm        inc    i;
+	i++;
 _T25:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, i;
@@ -1344,7 +1344,7 @@ void Station::SortVehiclesByDistanceFromDestination(/*packed*/ struct _GridCoord
 	__asm        mov    i, 0;
 	__asm        jmp    _T25;
 _T22:
-	__asm        inc    i;
+	i++;
 _T25:
 	__asm        mov    eax, vehicleListLength;
 	__asm        cmp    i, eax;
@@ -1476,7 +1476,7 @@ _T13c:
 	__asm        mov    i, 0;
 	__asm        jmp    _T1b;
 _T18:
-	__asm        inc    i;
+	i++;
 _T1b:
 	__asm        mov    eax, vehicleListLength;
 	__asm        cmp    i, eax;
@@ -1500,7 +1500,7 @@ _T4d:
 	__asm        mov    code, 2;
 	__asm        jmp    _T5c;
 _T59:
-	__asm        inc    code;
+	code++;
 _T5c:
 	__asm        mov    eax, code;
 	__asm        cmp    responseLevel, eax;
@@ -1509,7 +1509,7 @@ _T5c:
 	__asm        mov    i, 0;
 	__asm        jmp    _T77;
 _T74:
-	__asm        inc    i;
+	i++;
 _T77:
 	__asm        mov    eax, vehicleListLength;
 	__asm        cmp    i, eax;
@@ -1701,7 +1701,7 @@ _T71:
 	__asm        cmp    [ecx+eax*8+8], edx;
 	__asm        jge    _Tc0;
 // LINE 294:
-	__asm        inc    child;
+	child++;
 // LINE 297:
 _Tc0:
 	__asm        mov    eax, this;
@@ -1951,7 +1951,7 @@ _T8e:
 	__asm        cmp    [ecx+eax*2], edx;
 	__asm        jge    _Te3;
 // LINE 360:
-	__asm        inc    child;
+	child++;
 // LINE 363:
 _Te3:
 	__asm        mov    eax, this;
@@ -2863,8 +2863,7 @@ _T9b3:
 	__asm        cmp    pathFound, 0;
 	__asm        je     _Ta7f;
 // LINE 564:
-	__asm        mov    eax, sS;
-	__asm        inc    dword ptr [eax+0x5C];
+	sS->quanVehiclesDispatched++;
 // LINE 567:
 	__asm        mov    eax, responseLevel;
 	__asm        push   eax;
@@ -3181,7 +3180,7 @@ void Station::Station(unsigned char stationScurkID) {
 	__asm        mov    y, 0;
 	__asm        jmp    _T2c;
 _T29:
-	__asm        inc    y;
+	y++;
 _T2c:
 	__asm        cmp    y, 0x80;
 	__asm        jge    _T7e;
@@ -3189,7 +3188,7 @@ _T2c:
 	__asm        mov    x, 0;
 	__asm        jmp    _T48;
 _T45:
-	__asm        inc    x;
+	x++;
 _T48:
 	__asm        cmp    x, 0x80;
 	__asm        jge    _T79;
@@ -3213,7 +3212,7 @@ _T7e:
 	__asm        mov    x, 0;
 	__asm        jmp    _T8d;
 _T8a:
-	__asm        inc    x;
+	x++;
 _T8d:
 	__asm        cmp    x, 0x80;
 	__asm        jge    _T1a8;
@@ -3221,7 +3220,7 @@ _T8d:
 	__asm        mov    y, 0;
 	__asm        jmp    _Ta9;
 _Ta6:
-	__asm        inc    y;
+	y++;
 _Ta9:
 	__asm        cmp    y, 0x80;
 	__asm        jge    _T1a3;
@@ -3304,8 +3303,7 @@ _Ta9:
 	__asm        cmp    result, 0xFF;
 	__asm        je     _T19e;
 // LINE 635:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+4];
+	this->quantityOfStations++;
 // LINE 637:
 // Block end:
 _T19e:
@@ -3332,7 +3330,7 @@ _T1a8:
 	__asm        mov    y, 0;
 	__asm        jmp    _T1de;
 _T1db:
-	__asm        inc    y;
+	y++;
 _T1de:
 	__asm        cmp    y, 0x80;
 	__asm        jge    _T2cc;
@@ -3340,7 +3338,7 @@ _T1de:
 	__asm        mov    x, 0;
 	__asm        jmp    _T1fa;
 _T1f7:
-	__asm        inc    x;
+	x++;
 _T1fa:
 	__asm        cmp    x, 0x80;
 	__asm        jge    _T2c7;

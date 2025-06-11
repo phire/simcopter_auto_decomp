@@ -254,7 +254,7 @@ class cCopterAnim *  cCopterBody::GetPrivateAnim(unsigned long animName) {
 	__asm        mov    count, 0;
 	__asm        jmp    _T1b;
 _T17:
-	__asm        inc    count;
+	count++;
 _T1b:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x2C];
@@ -487,7 +487,7 @@ _T32:
 	__asm        mov    count, 0;
 	__asm        jmp    _T41;
 _T3d:
-	__asm        inc    count;
+	count++;
 _T41:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x28];
@@ -745,7 +745,7 @@ struct cCopterBody::Part *  cCopterBody::GetPartByName(unsigned long partname) {
 	__asm        mov    count, 0;
 	__asm        jmp    _T1b;
 _T17:
-	__asm        inc    count;
+	count++;
 _T1b:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x28];
@@ -1196,7 +1196,7 @@ _T4d:
 	__asm        mov    count, 0;
 	__asm        jmp    _T83;
 _T7f:
-	__asm        inc    count;
+	count++;
 _T83:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, numParts;
@@ -1247,7 +1247,7 @@ _Tc0:
 	__asm        mov    count, 0;
 	__asm        jmp    _T126;
 _T122:
-	__asm        inc    count;
+	count++;
 _T126:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, numParts;
@@ -1572,7 +1572,7 @@ _T4c8:
 	__asm        mov    orderID, 0;
 	__asm        jmp    _T4d7;
 _T4d3:
-	__asm        inc    orderID;
+	orderID++;
 _T4d7:
 	__asm        movsx  eax, orderID;
 	__asm        cmp    eax, drawordercount;

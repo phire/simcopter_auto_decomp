@@ -2992,7 +2992,7 @@ unsigned long  CGameApp::Initialize() {
 	__asm        mov    i, 0;
 	__asm        jmp    _T35;
 _T32:
-	__asm        inc    i;
+	i++;
 _T35:
 	__asm        cmp    i, 6;
 	__asm        jge    _T52;
@@ -3021,7 +3021,7 @@ _T52:
 // LINE 400:
 	__asm        jmp    _T90;
 _T8d:
-	__asm        dec    i;
+	i--;
 _T90:
 	__asm        cmp    i, 0;
 	__asm        jl     _Tc2;
@@ -3610,7 +3610,7 @@ _Ta3:
 	__asm        mov    i, 0;
 	__asm        jmp    _Tb2;
 _Tae:
-	__asm        inc    i;
+	i++;
 _Tb2:
 	__asm        movsx  eax, i;
 	__asm        movsx  eax, gszCommandLine[eax];
@@ -4400,7 +4400,7 @@ _T8b:
 	__asm        mov    i, 0;
 	__asm        jmp    _T9d;
 _T9a:
-	__asm        inc    i;
+	i++;
 _T9d:
 	__asm        mov    eax, i;
 	__asm        cmp    iEnd, eax;

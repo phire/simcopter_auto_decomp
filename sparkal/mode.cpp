@@ -66,7 +66,7 @@ int32_t IsModeAvailable(long lWidth, long lHeight, long lBPP) {
 	__asm        mov    i, 0;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    i;
+	i++;
 _T18:
 	__asm        mov    eax, i;
 	__asm        cmp    gNumModes, eax;
@@ -177,7 +177,7 @@ _T1a:
 	__asm        lea    ecx, [ecx+ecx*2];
 	__asm        mov    gModeList[0].lBPP[ecx*4], eax;
 // LINE 109:
-	__asm        inc    gNumModes;
+	gNumModes++;
 // LINE 111:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T6c;

@@ -478,7 +478,7 @@ void PlaneClass::PlaneClass(long mapx, long mapy) {
 	__asm        mov    currentFlag, 0;
 	__asm        jmp    _T24;
 _T21:
-	__asm        inc    currentFlag;
+	currentFlag++;
 _T24:
 	__asm        cmp    currentFlag, 4;
 	__asm        jge    _T3e;
@@ -671,7 +671,7 @@ void PlaneClass::ResetAll() {
 	__asm        mov    currentPlaneIndex, 0;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    currentPlaneIndex;
+	currentPlaneIndex++;
 _T18:
 	__asm        cmp    currentPlaneIndex, 2;
 	__asm        jge    _T36;
@@ -694,7 +694,7 @@ void PlaneClass::ItterateAll() {
 	__asm        mov    currentPlaneIndex, 0;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    currentPlaneIndex;
+	currentPlaneIndex++;
 _T18:
 	__asm        cmp    currentPlaneIndex, 2;
 	__asm        jge    _T36;
@@ -717,7 +717,7 @@ int32_t PlaneClass::FindPlaneToCrash(long mission_id) {
 	__asm        mov    currentPlaneIndex, 0;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    currentPlaneIndex;
+	currentPlaneIndex++;
 _T18:
 	__asm        cmp    currentPlaneIndex, 2;
 	__asm        jge    _Tb9;
@@ -2254,7 +2254,7 @@ _T2e4:
 	__asm        mov    j, 0;
 	__asm        jmp    _T362;
 _T35c:
-	__asm        inc    j;
+	j++;
 _T362:
 	__asm        mov    eax, num_debris;
 	__asm        cmp    j, eax;
@@ -2346,7 +2346,7 @@ _T449:
 	__asm        mov    j, 0;
 	__asm        jmp    _T479;
 _T473:
-	__asm        inc    j;
+	j++;
 _T479:
 	__asm        mov    eax, num_debris;
 	__asm        cmp    j, eax;
@@ -2575,7 +2575,7 @@ _T5e3:
 	__asm        mov    j, 0;
 	__asm        jmp    _T75a;
 _T754:
-	__asm        inc    j;
+	j++;
 _T75a:
 	__asm        mov    eax, num_debris;
 	__asm        cmp    j, eax;
@@ -3416,7 +3416,7 @@ _T1c9:
 	__asm        jmp    _T381;
 // LINE 2126:
 _T1ce:
-	__asm        inc    curr_dir;
+	curr_dir++;
 // LINE 2127:
 	__asm        mov    eax, curr_dir;
 	__asm        mov    [ebp-0x50], eax;
@@ -3424,7 +3424,7 @@ _T1ce:
 // LINE 2131:
 	curr_dir = 0x0;
 // LINE 2132:
-	__asm        inc    curr_dist;
+	curr_dist++;
 // LINE 2133:
 	xdir = 0x0;
 // LINE 2134:
@@ -3438,7 +3438,7 @@ _T1ce:
 // LINE 2139:
 	__asm        jmp    _T262;
 // LINE 2141:
-	__asm        inc    curr_dist;
+	curr_dist++;
 // LINE 2142:
 	xdir = 0x0;
 // LINE 2143:
@@ -3466,7 +3466,7 @@ _T262:
 	__asm        cmp    spiral_dist, eax;
 	__asm        jne    _T278;
 // LINE 2155:
-	__asm        dec    curr_dist;
+	curr_dist--;
 // LINE 2156:
 	stop_now = 0x1;
 // LINE 2160:
@@ -3474,7 +3474,7 @@ _T278:
 	__asm        mov    i, 0;
 	__asm        jmp    _T287;
 _T284:
-	__asm        inc    i;
+	i++;
 _T287:
 	__asm        mov    eax, i;
 	__asm        cmp    curr_dist, eax;
@@ -3507,7 +3507,7 @@ _T2c7:
 	__asm        mov    currentFlag, 3;
 	__asm        jmp    _T2d6;
 _T2d3:
-	__asm        inc    currentFlag;
+	currentFlag++;
 _T2d6:
 	__asm        cmp    currentFlag, 4;
 	__asm        jge    _T2f0;
@@ -3749,8 +3749,7 @@ void PlaneClass::HandleUFOStuff() {
 	__asm        cmp    dword ptr [eax+0x4C], 0;
 	__asm        je     _T34;
 // LINE 2479:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x4C];
+	this->shieldCtr--;
 // LINE 2480:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x4C], 0;
@@ -4049,7 +4048,7 @@ void PlaneClass::TurnOnShields() {
 	__asm        mov    count, 0;
 	__asm        jmp    _T40;
 _T3d:
-	__asm        inc    count;
+	count++;
 _T40:
 	__asm        mov    eax, count;
 	__asm        cmp    oinfo.Faces, eax;
@@ -4113,7 +4112,7 @@ void PlaneClass::TurnOffShields() {
 	__asm        mov    count, 0;
 	__asm        jmp    _T40;
 _T3d:
-	__asm        inc    count;
+	count++;
 _T40:
 	__asm        mov    eax, count;
 	__asm        cmp    oinfo.Faces, eax;
@@ -4201,7 +4200,7 @@ _T38:
 	__asm        mov    i, 0;
 	__asm        jmp    _T47;
 _T44:
-	__asm        inc    i;
+	i++;
 _T47:
 	__asm        cmp    i, 2;
 	__asm        jge    _T1d0;
@@ -4338,7 +4337,7 @@ int32_t PlaneClass::MIFFSave(void * __ptr32 miffWriter) {
 	__asm        mov    i, 0;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    i;
+	i++;
 _T18:
 	__asm        cmp    i, 2;
 	__asm        jge    _T5c;

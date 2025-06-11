@@ -1318,7 +1318,7 @@ _Tf6:
 	__asm        mov    i, 0;
 	__asm        jmp    _T116;
 _T110:
-	__asm        inc    i;
+	i++;
 _T116:
 	__asm        cmp    i, 0x100;
 	__asm        jge    _T18d;
@@ -1380,8 +1380,7 @@ void GameModePlayData::UsePalette() {
 // FUNCTION: COPTER_D 0x004be358
 void GameModePlayData::Sleep() {
 // LINE 451:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+4];
+	this->lPauseCount++;
 // LINE 452:
 	__asm        mov    ecx, this;
 	__asm        call   GameModePlayData::DestroyIndependentSurfaces;
@@ -1606,8 +1605,7 @@ _T25d:
 // FUNCTION: COPTER_D 0x004be5d0
 void GameModePlayData::Awake() {
 // LINE 492:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+4];
+	this->lPauseCount--;
 // LINE 493:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -5128,8 +5126,7 @@ void GameModeHangarData::Sleep() {
 // FUNCTION: COPTER_D 0x004c143c
 void GameModeHangarData::Awake() {
 // LINE 1473:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+4];
+	this->lPauseCount--;
 // LINE 1474:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -5773,8 +5770,7 @@ void GameModeCatalogData::Sleep() {
 // FUNCTION: COPTER_D 0x004c1cb2
 void GameModeCatalogData::Awake() {
 // LINE 1627:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+4];
+	this->lPauseCount--;
 // LINE 1628:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -6472,8 +6468,7 @@ void GameModeMissionLogData::Sleep() {
 // FUNCTION: COPTER_D 0x004c263a
 void GameModeMissionLogData::Awake() {
 // LINE 1752:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+4];
+	this->lPauseCount--;
 // LINE 1753:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -7171,8 +7166,7 @@ void GameModeInventoryData::Sleep() {
 // FUNCTION: COPTER_D 0x004c2fc2
 void GameModeInventoryData::Awake() {
 // LINE 1874:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+4];
+	this->lPauseCount--;
 // LINE 1875:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;

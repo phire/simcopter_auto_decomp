@@ -165,7 +165,7 @@ void CSparkalWindow::CSparkalWindow() {
 	__asm        mov    i, 0;
 	__asm        jmp    _T7e;
 _T7b:
-	__asm        inc    i;
+	i++;
 _T7e:
 	__asm        cmp    i, 0x10;
 	__asm        jge    _T9b;
@@ -216,7 +216,7 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 	__asm        mov    i, 0;
 	__asm        jmp    _T9f;
 _T9c:
-	__asm        inc    i;
+	i++;
 _T9f:
 	__asm        cmp    i, 0x10;
 	__asm        jge    _Tbf;
@@ -502,7 +502,7 @@ _T3aa:
 	__asm        mov    Counter, 0;
 	__asm        jmp    _T3b9;
 _T3b6:
-	__asm        inc    Counter;
+	Counter++;
 _T3b9:
 	__asm        mov    eax, Start;
 	__asm        cmp    Counter, eax;
@@ -518,7 +518,7 @@ _T3d5:
 // LINE 197:
 	__asm        jmp    _T3e7;
 _T3e4:
-	__asm        inc    Counter;
+	Counter++;
 _T3e7:
 	__asm        mov    eax, End;
 	__asm        cmp    Counter, eax;
@@ -553,7 +553,7 @@ _T43e:
 _T443:
 	__asm        jmp    _T44b;
 _T448:
-	__asm        inc    Counter;
+	Counter++;
 _T44b:
 	__asm        mov    eax, End;
 	__asm        cmp    Counter, eax;
@@ -579,7 +579,7 @@ _T44b:
 _T48e:
 	__asm        jmp    _T496;
 _T493:
-	__asm        inc    Counter;
+	Counter++;
 _T496:
 	__asm        cmp    Counter, 0x100;
 	__asm        jge    _T4b3;
@@ -722,7 +722,7 @@ _T65:
 	__asm        mov    i, 0;
 	__asm        jmp    _T74;
 _T71:
-	__asm        inc    i;
+	i++;
 _T74:
 	__asm        cmp    i, 0x10;
 	__asm        jge    _Ta5;
@@ -1220,7 +1220,7 @@ void CSparkalWindow::UpdatePalette(long start, long count, /*packed*/ struct Spa
 	__asm        mov    i, eax;
 	__asm        jmp    _T36;
 _T30:
-	__asm        inc    i;
+	i++;
 _T36:
 	__asm        mov    eax, count;
 	__asm        add    eax, start;
@@ -1339,7 +1339,7 @@ int32_t CheckIdentityPalette(void * __ptr32 hdc, void * __ptr32 hPalette, /*pack
 	__asm        mov    i, 0;
 	__asm        jmp    _T105;
 _Tff:
-	__asm        inc    i;
+	i++;
 _T105:
 	__asm        cmp    i, 0x100;
 	__asm        jge    _T175;
@@ -1371,7 +1371,7 @@ _T175:
 	__asm        mov    i, 0;
 	__asm        jmp    _T18a;
 _T184:
-	__asm        inc    i;
+	i++;
 _T18a:
 	__asm        cmp    i, 0x100;
 	__asm        jge    _T1b2;
@@ -1416,7 +1416,7 @@ _T1b2:
 	__asm        mov    i, 0;
 	__asm        jmp    _T235;
 _T22f:
-	__asm        inc    i;
+	i++;
 _T235:
 	__asm        cmp    i, 0x100;
 	__asm        jge    _T274;

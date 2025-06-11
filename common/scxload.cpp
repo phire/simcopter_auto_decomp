@@ -735,7 +735,7 @@ void SCXReadNeighbors(/*packed*/ class cGZXBitstream *AStream, unsigned char * d
 	__asm        mov    loop, 0;
 	__asm        jmp    _T2e;
 _T2b:
-	__asm        inc    loop;
+	loop++;
 _T2e:
 	__asm        mov    eax, num;
 	__asm        cmp    loop, eax;
@@ -759,7 +759,7 @@ _T5c:
 	__asm        mov    loop, 0;
 	__asm        jmp    _T6b;
 _T68:
-	__asm        inc    loop;
+	loop++;
 _T6b:
 	__asm        mov    eax, num;
 	__asm        cmp    loop, eax;
@@ -784,7 +784,7 @@ _T9c:
 	__asm        mov    loop, 0;
 	__asm        jmp    _Tab;
 _Ta8:
-	__asm        inc    loop;
+	loop++;
 _Tab:
 	__asm        mov    eax, num;
 	__asm        cmp    loop, eax;
@@ -809,7 +809,7 @@ _Tdc:
 	__asm        mov    loop, 0;
 	__asm        jmp    _Teb;
 _Te8:
-	__asm        inc    loop;
+	loop++;
 _Teb:
 	__asm        mov    eax, num;
 	__asm        cmp    loop, eax;
@@ -834,7 +834,7 @@ _T11c:
 	__asm        mov    loop, 0;
 	__asm        jmp    _T12b;
 _T128:
-	__asm        inc    loop;
+	loop++;
 _T12b:
 	__asm        mov    eax, num;
 	__asm        cmp    loop, eax;
@@ -859,7 +859,7 @@ _T15c:
 	__asm        mov    loop, 0;
 	__asm        jmp    _T16b;
 _T168:
-	__asm        inc    loop;
+	loop++;
 _T16b:
 	__asm        cmp    loop, 4;
 	__asm        jge    _T286;
@@ -1126,7 +1126,7 @@ _T1ae:
 	__asm        mov    loop, 0;
 	__asm        jmp    _T1bd;
 _T1ba:
-	__asm        inc    loop;
+	loop++;
 _T1bd:
 	__asm        mov    eax, tempLong;
 	__asm        cmp    loop, eax;
@@ -1632,7 +1632,7 @@ _T7f4:
 	__asm        mov    loop, 0;
 	__asm        jmp    _T803;
 _T800:
-	__asm        inc    loop;
+	loop++;
 _T803:
 	__asm        cmp    loop, 0x32;
 	__asm        jge    _T827;
@@ -2341,7 +2341,7 @@ _Tfa5:
 	__asm        mov    loop, 0;
 	__asm        jmp    _T10f0;
 _T10ed:
-	__asm        inc    loop;
+	loop++;
 _T10f0:
 	__asm        cmp    loop, 0x100;
 	__asm        jge    _T1119;
@@ -2412,7 +2412,7 @@ _T1119:
 	__asm        mov    loop, 0;
 	__asm        jmp    _T11cd;
 _T11ca:
-	__asm        inc    loop;
+	loop++;
 _T11cd:
 	__asm        cmp    loop, 0x32;
 	__asm        jge    _T11f6;
@@ -2431,7 +2431,7 @@ _T11f6:
 	__asm        mov    loop, 0;
 	__asm        jmp    _T1205;
 _T1202:
-	__asm        inc    loop;
+	loop++;
 _T1205:
 	__asm        cmp    loop, 0x96;
 	__asm        jge    _T128c;
@@ -2592,7 +2592,7 @@ _T128c:
 	__asm        mov    loop, 0;
 	__asm        jmp    _T141a;
 _T1417:
-	__asm        inc    loop;
+	loop++;
 _T141a:
 	__asm        cmp    loop, 0xB;
 	__asm        jge    _T1440;
@@ -2614,7 +2614,7 @@ _T1440:
 	__asm        mov    loop, 0;
 	__asm        jmp    _T1460;
 _T145d:
-	__asm        inc    loop;
+	loop++;
 _T1460:
 	__asm        cmp    loop, 0xB;
 	__asm        jge    _T1486;
@@ -2636,7 +2636,7 @@ _T1486:
 	__asm        mov    loop, 0;
 	__asm        jmp    _T14a5;
 _T14a2:
-	__asm        inc    loop;
+	loop++;
 _T14a5:
 	__asm        cmp    loop, 0x10;
 	__asm        jge    _T14cc;

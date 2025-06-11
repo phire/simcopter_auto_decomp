@@ -316,7 +316,7 @@ _T29c:
 	__asm        mov    j, 0;
 	__asm        jmp    _T2db;
 _T2d5:
-	__asm        inc    j;
+	j++;
 _T2db:
 	__asm        mov    eax, i;
 	__asm        cmp    j, eax;
@@ -368,7 +368,7 @@ _T373:
 	__asm        mov    j, 0;
 	__asm        jmp    _T39c;
 _T396:
-	__asm        inc    j;
+	j++;
 _T39c:
 	__asm        mov    eax, i;
 	__asm        cmp    j, eax;
@@ -420,7 +420,7 @@ _T434:
 	__asm        mov    j, 0;
 	__asm        jmp    _T45d;
 _T457:
-	__asm        inc    j;
+	j++;
 _T45d:
 	__asm        mov    eax, i;
 	__asm        cmp    j, eax;
@@ -634,7 +634,7 @@ _T531:
 	__asm        mov    instanceID, 0;
 	__asm        jmp    _T736;
 _T730:
-	__asm        inc    instanceID;
+	instanceID++;
 _T736:
 	__asm        cmp    instanceID, 0x32;
 	__asm        jge    _T764;
@@ -658,7 +658,7 @@ _T764:
 // LINE 446:
 	__asm        jmp    _T77e;
 _T778:
-	__asm        inc    instanceID;
+	instanceID++;
 _T77e:
 	__asm        mov    eax, instanceID;
 	__asm        cmp    totalVehicles, eax;
@@ -683,7 +683,7 @@ _T7b1:
 // LINE 453:
 	__asm        jmp    _T7cb;
 _T7c5:
-	__asm        inc    instanceID;
+	instanceID++;
 _T7cb:
 	__asm        mov    eax, instanceID;
 	__asm        cmp    totalVehicles, eax;
@@ -708,7 +708,7 @@ _T7fe:
 // LINE 460:
 	__asm        jmp    _T818;
 _T812:
-	__asm        inc    instanceID;
+	instanceID++;
 _T818:
 	__asm        mov    eax, instanceID;
 	__asm        cmp    totalVehicles, eax;
@@ -735,7 +735,7 @@ _T84b:
 // LINE 469:
 	__asm        jmp    _T86f;
 _T869:
-	__asm        inc    instanceID;
+	instanceID++;
 _T86f:
 	__asm        mov    eax, instanceID;
 	__asm        cmp    totalVehicles, eax;
@@ -757,7 +757,7 @@ _T8a2:
 	__asm        mov    i, 0;
 	__asm        jmp    _T8b7;
 _T8b1:
-	__asm        inc    i;
+	i++;
 _T8b7:
 	__asm        cmp    i, 1;
 	__asm        jge    _T8d8;
@@ -773,7 +773,7 @@ _T8d8:
 	__asm        mov    i, 0;
 	__asm        jmp    _T8ed;
 _T8e7:
-	__asm        inc    i;
+	i++;
 _T8ed:
 	__asm        cmp    i, 2;
 	__asm        jge    _T90e;
@@ -789,7 +789,7 @@ _T90e:
 	__asm        mov    i, 0;
 	__asm        jmp    _T923;
 _T91d:
-	__asm        inc    i;
+	i++;
 _T923:
 	__asm        cmp    i, 3;
 	__asm        jge    _T944;
@@ -962,7 +962,7 @@ _T1a0:
 	__asm        mov    i, 0;
 	__asm        jmp    _T1b7;
 _T1b4:
-	__asm        inc    i;
+	i++;
 _T1b7:
 	__asm        cmp    i, 9;
 	__asm        jge    _T29e;
@@ -1183,9 +1183,9 @@ void VRAppNextFrame() {
 	__asm        sar    eax, 3;
 	__asm        mov    G_AvLoopTime, eax;
 // LINE 792:
-	__asm        inc    G_framectr;
+	G_framectr++;
 // LINE 805:
-	__asm        inc    G_maptics;
+	G_maptics++;
 // LINE 806:
 	__asm        test   reinterpret_cast<uint8_t>(G_maptics), 1;
 	__asm        je     _Tb4;

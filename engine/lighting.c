@@ -151,7 +151,7 @@ _T61:
 	__asm        mov    i, 0;
 	__asm        jmp    _T70;
 _T6d:
-	__asm        inc    i;
+	i++;
 _T70:
 	__asm        mov    eax, hdr;
 	__asm        mov    ecx, i;
@@ -205,7 +205,7 @@ _Tc7:
 	__asm        mov    j, 0;
 	__asm        jmp    _Tff;
 _Tfc:
-	__asm        inc    j;
+	j++;
 _Tff:
 	__asm        mov    eax, bhdr;
 	__asm        mov    eax, [eax+4];
@@ -219,7 +219,7 @@ _Tff:
 	__asm        mov    cl, [eax];
 	__asm        inc    S_ctrs[ecx*4];
 // LINE 159:
-	__asm        inc    tptr;
+	tptr++;
 // LINE 160:
 	__asm        jmp    _Tfc;
 // LINE 162:
@@ -229,7 +229,7 @@ _T12a:
 	__asm        mov    j, 0;
 	__asm        jmp    _T140;
 _T13d:
-	__asm        inc    j;
+	j++;
 _T140:
 	__asm        cmp    j, 0x100;
 	__asm        jge    _T178;
@@ -319,7 +319,7 @@ _T6c:
 	__asm        mov    i, 0;
 	__asm        jmp    _T7b;
 _T78:
-	__asm        inc    i;
+	i++;
 _T7b:
 	__asm        mov    eax, notiles;
 	__asm        cmp    i, eax;
@@ -341,7 +341,7 @@ _T7b:
 	__asm        mov    j, 0;
 	__asm        jmp    _Tbd;
 _Tba:
-	__asm        inc    j;
+	j++;
 _Tbd:
 	__asm        mov    eax, bhdr;
 	__asm        mov    ecx, j;
@@ -351,7 +351,7 @@ _Tbd:
 	__asm        mov    k, 0;
 	__asm        jmp    _Tdb;
 _Td8:
-	__asm        inc    k;
+	k++;
 _Tdb:
 	__asm        mov    eax, bhdr;
 	__asm        mov    ecx, k;
@@ -363,7 +363,7 @@ _Tdb:
 	__asm        mov    cl, [eax];
 	__asm        inc    S_ctrs[ecx*4];
 // LINE 236:
-	__asm        inc    tptr;
+	tptr++;
 // LINE 237:
 	__asm        jmp    _Td8;
 // LINE 238:
@@ -380,7 +380,7 @@ _T111:
 	__asm        mov    j, 0;
 	__asm        jmp    _T127;
 _T124:
-	__asm        inc    j;
+	j++;
 _T127:
 	__asm        cmp    j, 0x100;
 	__asm        jge    _T15f;
@@ -607,7 +607,7 @@ void VRObjSetShading(int32_t obj) {
 	__asm        mov    i, 0;
 	__asm        jmp    _T37;
 _T34:
-	__asm        inc    i;
+	i++;
 _T37:
 	__asm        mov    eax, i;
 	__asm        cmp    oinfo.Faces, eax;
@@ -838,7 +838,7 @@ _T21:
 	__asm        mov    i, 0;
 	__asm        jmp    _T4e;
 _T4b:
-	__asm        inc    i;
+	i++;
 _T4e:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
@@ -1002,7 +1002,7 @@ _T21:
 	__asm        mov    i, 0;
 	__asm        jmp    _T45;
 _T42:
-	__asm        inc    i;
+	i++;
 _T45:
 	__asm        cmp    i, 4;
 	__asm        jge    _Ta4;
@@ -1137,7 +1137,7 @@ void VRObjSetGouraudShade(/*packed*/ struct ObjectHdr *oh, /*packed*/ struct Poi
 	__asm        mov    i, 0;
 	__asm        jmp    _T21;
 _T1e:
-	__asm        inc    i;
+	i++;
 _T21:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
@@ -1169,7 +1169,7 @@ _T63:
 	__asm        mov    j, 0;
 	__asm        jmp    _T7b;
 _T78:
-	__asm        inc    j;
+	j++;
 _T7b:
 	__asm        mov    eax, fh;
 	__asm        mov    ecx, j;
@@ -1340,7 +1340,7 @@ void VRObjSetTranslucent(int32_t obj, /*packed*/ struct VRResource *res, int32_t
 	__asm        mov    i, 0;
 	__asm        jmp    _T3a;
 _T37:
-	__asm        inc    i;
+	i++;
 _T3a:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;

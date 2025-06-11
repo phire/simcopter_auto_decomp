@@ -308,7 +308,7 @@ _T49:
 	__asm        mov    str, eax;
 	__asm        jmp    _T66;
 _T62:
-	__asm        dec    cnt;
+	cnt--;
 _T66:
 	__asm        movsx  eax, cnt;
 	__asm        cmp    eax, 1;

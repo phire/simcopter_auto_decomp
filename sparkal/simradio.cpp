@@ -2657,8 +2657,7 @@ _T110:
 	__asm        cmp    edx, 0x4B;
 	__asm        jge    _T18f;
 // LINE 200:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x18];
+	this->myRadioStationState.nCurrentCycleSubIndex++;
 // LINE 201:
 	this->myRadioStationState.bPaused = 0x0;
 // LINE 202:
@@ -2672,8 +2671,7 @@ _T110:
 	__asm        jmp    _T43c;
 // LINE 208:
 _T18f:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x14];
+	this->myRadioStationState.nCurrentCycleIndex++;
 // LINE 209:
 	__asm        jmp    near ptr 0x0043479F;
 
@@ -5351,7 +5349,7 @@ _T2c3:
 	__asm        mov    iEnd, eax;
 	__asm        jmp    _T2f2;
 _T2ef:
-	__asm        inc    i;
+	i++;
 _T2f2:
 	__asm        mov    eax, iEnd;
 	__asm        cmp    i, eax;
@@ -6517,7 +6515,7 @@ _Tfc:
 	__asm        mov    i, 0;
 	__asm        jmp    _T131;
 _T12e:
-	__asm        inc    i;
+	i++;
 _T131:
 	__asm        cmp    i, 9;
 	__asm        jge    _T358;
@@ -7170,8 +7168,7 @@ void  Radio::SetMute(int32_t bNewMute) {
 	__asm        cmp    bNewMute, 0;
 	__asm        je     _T4c;
 // LINE 760:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x14];
+	this-><Radio+0x14:4>++;
 // LINE 763:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 1;
@@ -7195,8 +7192,7 @@ _T4c:
 	__asm        cmp    dword ptr [eax+0x14], 0;
 	__asm        jle    _T8f;
 // LINE 768:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x14];
+	this-><Radio+0x14:4>--;
 // LINE 769:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;
@@ -7434,7 +7430,7 @@ int  Radio::SetStation(enum RadioStationType radioStationType) {
 	__asm        mov    iEnd, eax;
 	__asm        jmp    _T41;
 _T3e:
-	__asm        inc    i;
+	i++;
 _T41:
 	__asm        mov    eax, i;
 	__asm        cmp    iEnd, eax;
@@ -7502,7 +7498,7 @@ int  Radio::IsStationTypeAvailable(enum RadioStationType radioStationType) {
 	__asm        mov    iEnd, eax;
 	__asm        jmp    _T41;
 _T3e:
-	__asm        inc    i;
+	i++;
 _T41:
 	__asm        mov    eax, i;
 	__asm        cmp    iEnd, eax;
@@ -7605,7 +7601,7 @@ int  Radio::StationDirectoryNameIsValid(/*packed*/ class basic_string<char>& sSt
 	__asm        mov    i, 0;
 	__asm        jmp    _T1b;
 _T18:
-	__asm        inc    i;
+	i++;
 _T1b:
 	__asm        cmp    i, 9;
 	__asm        jge    _T1b9;
@@ -8692,7 +8688,7 @@ _Tcb5:
 	__asm        call   basic_string<char>::append_str;
 	__asm        jmp    near ptr 0x0043935A;
 // LINE 994:
-	__asm        inc    nStationCount;
+	nStationCount++;
 // LINE 995:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;

@@ -1228,7 +1228,7 @@ static void label_kludge() {
 	__asm        mov    i, 0;
 	__asm        jmp    _T18;
 _T14:
-	__asm        inc    i;
+	i++;
 _T18:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x100;
@@ -1281,7 +1281,7 @@ void clear_label() {
 	__asm        mov    i, 0;
 	__asm        jmp    _T18;
 _T14:
-	__asm        inc    i;
+	i++;
 _T18:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x100;
@@ -1290,7 +1290,7 @@ _T18:
 	__asm        mov    j, 0;
 	__asm        jmp    _T36;
 _T32:
-	__asm        inc    j;
+	j++;
 _T36:
 	__asm        movsx  eax, j;
 	__asm        cmp    eax, 0x19;
@@ -1320,7 +1320,7 @@ void graph_kludge() {
 	__asm        mov    i, 0;
 	__asm        jmp    _T18;
 _T14:
-	__asm        inc    i;
+	i++;
 _T18:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x10;
@@ -1335,7 +1335,7 @@ _T18:
 	__asm        mov    j, 0;
 	__asm        jmp    _T4c;
 _T48:
-	__asm        inc    j;
+	j++;
 _T4c:
 	__asm        movsx  eax, j;
 	__asm        cmp    eax, 0x34;
@@ -1368,7 +1368,7 @@ _Ta7:
 	__asm        mov    i, 1;
 	__asm        jmp    _Tb6;
 _Tb2:
-	__asm        inc    i;
+	i++;
 _Tb6:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 3;
@@ -1762,7 +1762,7 @@ _T63:
 	__asm        mov    i, 0;
 	__asm        jmp    _T31a;
 _T316:
-	__asm        inc    i;
+	i++;
 _T31a:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x14;
@@ -1798,7 +1798,7 @@ _T386:
 	__asm        mov    i, 0;
 	__asm        jmp    _T395;
 _T391:
-	__asm        inc    i;
+	i++;
 _T395:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0xB;
@@ -1834,7 +1834,7 @@ _T403:
 	__asm        mov    i, 0;
 	__asm        jmp    _T412;
 _T40e:
-	__asm        inc    i;
+	i++;
 _T412:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x100;
@@ -1853,7 +1853,7 @@ _T445:
 	__asm        mov    i, 0;
 	__asm        jmp    _T454;
 _T450:
-	__asm        inc    i;
+	i++;
 _T454:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 8;
@@ -1873,7 +1873,7 @@ _T484:
 	__asm        mov    i, 0;
 	__asm        jmp    _T493;
 _T48f:
-	__asm        inc    i;
+	i++;
 _T493:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x32;
@@ -1892,7 +1892,7 @@ _T4c2:
 	__asm        mov    i, 0;
 	__asm        jmp    _T4d1;
 _T4cd:
-	__asm        inc    i;
+	i++;
 _T4d1:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 4;
@@ -1983,7 +1983,7 @@ _T5ed:
 	__asm        mov    i, 0;
 	__asm        jmp    _T5fc;
 _T5f8:
-	__asm        inc    i;
+	i++;
 _T5fc:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 8;
@@ -2001,7 +2001,7 @@ _T62b:
 	__asm        mov    i, 0;
 	__asm        jmp    _T63a;
 _T636:
-	__asm        inc    i;
+	i++;
 _T63a:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x11;
@@ -2019,7 +2019,7 @@ _T669:
 	__asm        mov    i, 0;
 	__asm        jmp    _T678;
 _T674:
-	__asm        inc    i;
+	i++;
 _T678:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x10;
@@ -2064,7 +2064,7 @@ _T678:
 	__asm        mov    j, 0;
 	__asm        jmp    _T70f;
 _T70b:
-	__asm        inc    j;
+	j++;
 _T70f:
 	__asm        movsx  eax, j;
 	__asm        cmp    eax, 0xC;
@@ -2137,7 +2137,7 @@ _T785:
 	__asm        mov    i, 0;
 	__asm        jmp    _T806;
 _T802:
-	__asm        inc    i;
+	i++;
 _T806:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 6;
@@ -2194,7 +2194,7 @@ _T8c1:
 	__asm        mov    i, 0;
 	__asm        jmp    _T8d0;
 _T8cc:
-	__asm        inc    i;
+	i++;
 _T8d0:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 9;
@@ -2266,7 +2266,7 @@ _T99d:
 	__asm        mov    i, 0;
 	__asm        jmp    _T9d8;
 _T9d4:
-	__asm        inc    i;
+	i++;
 _T9d8:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x10;
@@ -2792,7 +2792,7 @@ _T88:
 // LINE 938:
 	__asm        jmp    _Tdc;
 _Td9:
-	__asm        dec    ix;
+	ix--;
 _Tdc:
 	__asm        cmp    ix, 0;
 	__asm        jl     _Tfa;
@@ -2812,7 +2812,7 @@ _Tff:
 // LINE 942:
 	__asm        jmp    _T10e;
 _T10b:
-	__asm        dec    ix;
+	ix--;
 _T10e:
 	__asm        cmp    ix, 0;
 	__asm        jle    _T135;
@@ -4128,7 +4128,7 @@ static unsigned short S2CityMiscWrite(/*packed*/ struct _iobuf *filNum) {
 	__asm        mov    i, 0;
 	__asm        jmp    _T2e2;
 _T2de:
-	__asm        inc    i;
+	i++;
 _T2e2:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x14;
@@ -4164,7 +4164,7 @@ _T34e:
 	__asm        mov    i, 0;
 	__asm        jmp    _T35d;
 _T359:
-	__asm        inc    i;
+	i++;
 _T35d:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0xB;
@@ -4200,7 +4200,7 @@ _T3cb:
 	__asm        mov    i, 0;
 	__asm        jmp    _T3da;
 _T3d6:
-	__asm        inc    i;
+	i++;
 _T3da:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x100;
@@ -4220,7 +4220,7 @@ _T40f:
 	__asm        mov    i, 0;
 	__asm        jmp    _T41e;
 _T41a:
-	__asm        inc    i;
+	i++;
 _T41e:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 8;
@@ -4239,7 +4239,7 @@ _T44e:
 	__asm        mov    i, 0;
 	__asm        jmp    _T45d;
 _T459:
-	__asm        inc    i;
+	i++;
 _T45d:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x32;
@@ -4257,7 +4257,7 @@ _T48c:
 	__asm        mov    i, 0;
 	__asm        jmp    _T49b;
 _T497:
-	__asm        inc    i;
+	i++;
 _T49b:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 4;
@@ -4301,7 +4301,7 @@ _T526:
 	__asm        mov    i, 0;
 	__asm        jmp    _T535;
 _T531:
-	__asm        inc    i;
+	i++;
 _T535:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 8;
@@ -4319,7 +4319,7 @@ _T564:
 	__asm        mov    i, 0;
 	__asm        jmp    _T573;
 _T56f:
-	__asm        inc    i;
+	i++;
 _T573:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x11;
@@ -4337,7 +4337,7 @@ _T5a2:
 	__asm        mov    i, 0;
 	__asm        jmp    _T5b1;
 _T5ad:
-	__asm        inc    i;
+	i++;
 _T5b1:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x10;
@@ -4382,7 +4382,7 @@ _T5b1:
 	__asm        mov    j, 0;
 	__asm        jmp    _T648;
 _T644:
-	__asm        inc    j;
+	j++;
 _T648:
 	__asm        movsx  eax, j;
 	__asm        cmp    eax, 0xC;
@@ -4459,7 +4459,7 @@ _T6be:
 	__asm        mov    i, 0;
 	__asm        jmp    _T748;
 _T744:
-	__asm        inc    i;
+	i++;
 _T748:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 6;
@@ -4521,7 +4521,7 @@ _T80d:
 	__asm        mov    i, 0;
 	__asm        jmp    _T81c;
 _T818:
-	__asm        inc    i;
+	i++;
 _T81c:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 9;
@@ -4597,7 +4597,7 @@ _T8f1:
 	__asm        mov    i, 0;
 	__asm        jmp    _T92c;
 _T928:
-	__asm        inc    i;
+	i++;
 _T92c:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x10;
@@ -4947,7 +4947,7 @@ _T95f:
 // LINE 1476:
 	__asm        jmp    _Te47;
 _Te43:
-	__asm        inc    ix;
+	ix++;
 _Te47:
 	__asm        movsx  eax, ix;
 	__asm        cmp    eax, 0x4B0;
@@ -4993,7 +4993,7 @@ void swizzle_buffer(char * data, long count) {
 	__asm        mov    i, 0;
 	__asm        jmp    _T2d;
 _T2a:
-	__asm        inc    i;
+	i++;
 _T2d:
 	__asm        mov    eax, i;
 	__asm        cmp    count, eax;
@@ -5029,7 +5029,7 @@ void swizzle_Micro(char * data, long count) {
 	__asm        mov    i, 0;
 	__asm        jmp    _T27;
 _T24:
-	__asm        inc    i;
+	i++;
 _T27:
 	__asm        mov    eax, count;
 	__asm        cmp    i, eax;
@@ -5084,7 +5084,7 @@ void swizzle_shorts(char * data, long count) {
 	__asm        mov    i, 0;
 	__asm        jmp    _T2a;
 _T27:
-	__asm        inc    i;
+	i++;
 _T2a:
 	__asm        mov    eax, i;
 	__asm        cmp    count, eax;
@@ -5387,7 +5387,7 @@ _T2ff:
 	__asm        mov    i, 0;
 	__asm        jmp    _T30e;
 _T30b:
-	__asm        inc    i;
+	i++;
 _T30e:
 	__asm        cmp    i, 0x10;
 	__asm        jge    _T37d;
@@ -5404,7 +5404,7 @@ _T30e:
 	__asm        mov    j, 0;
 	__asm        jmp    _T345;
 _T342:
-	__asm        inc    j;
+	j++;
 _T345:
 	__asm        cmp    j, 0x34;
 	__asm        jge    _T368;
@@ -5445,7 +5445,7 @@ _T3dc:
 	__asm        mov    cnt, 1;
 	__asm        jmp    _T3eb;
 _T3e8:
-	__asm        inc    cnt;
+	cnt++;
 _T3eb:
 	__asm        cmp    cnt, 0x80;
 	__asm        jge    _T413;
@@ -5474,7 +5474,7 @@ _T442:
 	__asm        mov    cnt, 0;
 	__asm        jmp    _T451;
 _T44e:
-	__asm        inc    cnt;
+	cnt++;
 _T451:
 	__asm        cmp    cnt, 0x80;
 	__asm        jge    _T479;
@@ -5503,7 +5503,7 @@ _T4a8:
 	__asm        mov    cnt, 0;
 	__asm        jmp    _T4b7;
 _T4b4:
-	__asm        inc    cnt;
+	cnt++;
 _T4b7:
 	__asm        cmp    cnt, 0x80;
 	__asm        jge    _T4df;
@@ -5532,7 +5532,7 @@ _T50e:
 	__asm        mov    cnt, 0;
 	__asm        jmp    _T51d;
 _T51a:
-	__asm        inc    cnt;
+	cnt++;
 _T51d:
 	__asm        cmp    cnt, 0x80;
 	__asm        jge    _T545;
@@ -5561,7 +5561,7 @@ _T574:
 	__asm        mov    cnt, 0;
 	__asm        jmp    _T583;
 _T580:
-	__asm        inc    cnt;
+	cnt++;
 _T583:
 	__asm        cmp    cnt, 0x80;
 	__asm        jge    _T5ab;
@@ -5590,7 +5590,7 @@ _T5da:
 	__asm        mov    cnt, 0;
 	__asm        jmp    _T5e9;
 _T5e6:
-	__asm        inc    cnt;
+	cnt++;
 _T5e9:
 	__asm        cmp    cnt, 0x80;
 	__asm        jge    _T611;
@@ -5647,7 +5647,7 @@ _T69e:
 	__asm        mov    x, 0;
 	__asm        jmp    _T6b3;
 _T6af:
-	__asm        inc    x;
+	x++;
 _T6b3:
 	__asm        movsx  eax, x;
 	__asm        cmp    eax, 0x80;
@@ -5656,7 +5656,7 @@ _T6b3:
 	__asm        mov    y, 0;
 	__asm        jmp    _T6d1;
 _T6cd:
-	__asm        inc    y;
+	y++;
 _T6d1:
 	__asm        movsx  eax, y;
 	__asm        cmp    eax, 0x80;
@@ -5837,7 +5837,7 @@ _T940:
 	__asm        mov    i, 0;
 	__asm        jmp    _T94f;
 _T94c:
-	__asm        inc    i;
+	i++;
 _T94f:
 	__asm        cmp    i, 0x80;
 	__asm        jge    _T98d;
@@ -5860,7 +5860,7 @@ _T98d:
 	__asm        mov    i, 0;
 	__asm        jmp    _T99c;
 _T999:
-	__asm        inc    i;
+	i++;
 _T99c:
 	__asm        cmp    i, 0x40;
 	__asm        jge    _Ta03;
@@ -5895,7 +5895,7 @@ _Ta03:
 	__asm        mov    i, 0;
 	__asm        jmp    _Ta12;
 _Ta0f:
-	__asm        inc    i;
+	i++;
 _Ta12:
 	__asm        cmp    i, 0x20;
 	__asm        jge    _Ta79;
@@ -6224,7 +6224,7 @@ void PStringToCString(char * string) {
 	__asm        mov    i, 0;
 	__asm        jmp    _T20;
 _T1d:
-	__asm        inc    i;
+	i++;
 _T20:
 	__asm        movsx  eax, sizePString;
 	__asm        cmp    eax, i;
@@ -6268,7 +6268,7 @@ _T2c:
 	__asm        mov    i, eax;
 	__asm        jmp    _T3b;
 _T38:
-	__asm        dec    i;
+	i--;
 _T3b:
 	__asm        cmp    i, 0;
 	__asm        jl     _T5d;
@@ -6302,7 +6302,7 @@ void CopyPString(char * stringDestination, char * stringSource) {
 	__asm        mov    i, 1;
 	__asm        jmp    _T2c;
 _T29:
-	__asm        inc    i;
+	i++;
 _T2c:
 	__asm        mov    eax, i;
 	__asm        cmp    iEnd, eax;
@@ -6341,7 +6341,7 @@ void check_backslash_terminate(char * path) {
 	__asm        cmp    eax, 0x5C;
 	__asm        je     _T43;
 // LINE 2047:
-	__asm        inc    s;
+	s++;
 // LINE 2048:
 	s[0] = 0x5c;
 // LINE 2049:
@@ -6410,10 +6410,10 @@ _T79:
 	__asm        cmp    eax, 0x5C;
 	__asm        jne    _Ta1;
 // LINE 2088:
-	__asm        inc    count;
+	count++;
 // LINE 2089:
 _Ta1:
-	__asm        dec    s;
+	s--;
 // LINE 2090:
 	__asm        mov    eax, t;
 	__asm        movsx  eax, byte ptr [eax];
@@ -6424,7 +6424,7 @@ _Ta1:
 	__asm        cmp    s, eax;
 	__asm        jae    _Tcb;
 // LINE 2092:
-	__asm        dec    count;
+	count--;
 // LINE 2094:
 	__asm        jmp    _Ted;
 _Tcb:
@@ -6437,7 +6437,7 @@ _Tcb:
 	__asm        cmp    eax, 0x3A;
 	__asm        jne    _Ted;
 // LINE 2096:
-	__asm        dec    count;
+	count--;
 // LINE 2099:
 _Ted:
 	__asm        jmp    _T79;
@@ -6500,12 +6500,12 @@ _T3b:
 	__asm        jne    _T6d;
 // LINE 2134:
 _T65:
-	__asm        inc    s;
+	s++;
 // LINE 2135:
 	__asm        jmp    _T75;
 // LINE 2137:
 _T6d:
-	__asm        dec    s;
+	s--;
 // LINE 2138:
 	__asm        jmp    _T3b;
 // LINE 2139:
@@ -6568,7 +6568,7 @@ _T30:
 	__asm        mov    i, 0;
 	__asm        jmp    _T55;
 _T51:
-	__asm        inc    i;
+	i++;
 _T55:
 	__asm        movsx  eax, i;
 	__asm        movsx  ecx, len;
@@ -6592,7 +6592,7 @@ _T55:
 	__asm        mov    [ecx], al;
 // LINE 2176:
 _T91:
-	__asm        inc    s;
+	s++;
 // LINE 2177:
 	__asm        jmp    _T51;
 // LINE 2178:
@@ -6641,12 +6641,12 @@ _T3b:
 	__asm        jne    _T6d;
 // LINE 2207:
 _T65:
-	__asm        inc    s;
+	s++;
 // LINE 2208:
 	__asm        jmp    _T75;
 // LINE 2210:
 _T6d:
-	__asm        dec    s;
+	s--;
 // LINE 2211:
 	__asm        jmp    _T3b;
 // LINE 2212:
@@ -6655,7 +6655,7 @@ _T75:
 	__asm        cmp    s, eax;
 	__asm        jae    _T89;
 // LINE 2213:
-	__asm        inc    s;
+	s++;
 // LINE 2214:
 	__asm        jmp    _T9c;
 _T89:
@@ -6716,7 +6716,7 @@ _T35:
 	__asm        jmp    _T63;
 // LINE 2247:
 _T5b:
-	__asm        dec    s;
+	s--;
 // LINE 2248:
 	__asm        jmp    _T35;
 // LINE 2249:
@@ -6782,9 +6782,9 @@ _T6b:
 	__asm        jmp    _T97;
 // LINE 2285:
 _T8b:
-	__asm        dec    s;
+	s--;
 // LINE 2286:
-	__asm        dec    len;
+	len--;
 // LINE 2287:
 	__asm        jmp    _T6b;
 // LINE 2288:
@@ -6794,7 +6794,7 @@ _T97:
 	__asm        cmp    eax, 0x2E;
 	__asm        jne    _T113;
 // LINE 2289:
-	__asm        inc    s;
+	s++;
 // LINE 2290:
 	__asm        mov    eax, ext;
 	__asm        push   eax;
@@ -7021,10 +7021,10 @@ _T42:
 	__asm        jmp    _T186;
 // LINE 2366:
 _T183:
-	__asm        inc    s;
+	s++;
 // LINE 2367:
 _T186:
-	__asm        dec    len;
+	len--;
 // LINE 2368:
 	__asm        jmp    _T42;
 // LINE 2369:
@@ -7085,10 +7085,10 @@ _T42:
 	__asm        jmp    _T78;
 // LINE 2400:
 _T75:
-	__asm        inc    s;
+	s++;
 // LINE 2401:
 _T78:
-	__asm        dec    len;
+	len--;
 // LINE 2402:
 	__asm        jmp    _T42;
 // LINE 2403:

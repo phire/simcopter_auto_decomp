@@ -1271,7 +1271,7 @@ _T78:
 	__asm        mov    i, 0;
 	__asm        jmp    _T150;
 _T14d:
-	__asm        inc    i;
+	i++;
 _T150:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, i;
@@ -1300,7 +1300,7 @@ _T191:
 	__asm        mov    i, 0;
 	__asm        jmp    _T1a0;
 _T19d:
-	__asm        inc    i;
+	i++;
 _T1a0:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, i;
@@ -1407,7 +1407,7 @@ void VRBmpSmackerBuffer::ClearBuffer(int32_t nPaletteIndex) {
 	__asm        mov    i, 0;
 	__asm        jmp    _T1b;
 _T18:
-	__asm        inc    i;
+	i++;
 _T1b:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, i;
@@ -1711,7 +1711,7 @@ _Tfd:
 	__asm        mov    i, 0;
 	__asm        jmp    _T10c;
 _T109:
-	__asm        inc    i;
+	i++;
 _T10c:
 	__asm        mov    eax, i;
 	__asm        cmp    nHeightToCopy, eax;
@@ -1767,7 +1767,7 @@ _T19d:
 // LINE 767:
 	__asm        jmp    _T1b1;
 _T1ae:
-	__asm        inc    i;
+	i++;
 _T1b1:
 	__asm        mov    eax, i;
 	__asm        cmp    nBmpHeight, eax;

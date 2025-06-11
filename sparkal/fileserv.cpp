@@ -1935,7 +1935,7 @@ _T650:
 	__asm        jmp    _T650;
 // LINE 115:
 _T676:
-	__asm        inc    i;
+	i++;
 // LINE 116:
 	__asm        jmp    _T72;
 // LINE 117:

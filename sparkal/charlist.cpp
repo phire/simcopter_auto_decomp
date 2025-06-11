@@ -152,8 +152,7 @@ _T3e:
 // FUNCTION: COPTER_D 0x0043d541
 void CharList::AddItem(/*packed*/ class CharData *charDataToAdd) {
 // LINE 60:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax];
+	this->nCharDataCount++;
 // LINE 61:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax], 1;
@@ -225,8 +224,7 @@ _T81:
 	this->lastCharData = charDataToDelete->previousCharData;
 // LINE 94:
 _T8d:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax];
+	this->nCharDataCount--;
 // LINE 95:
 	__asm        mov    eax, charDataToDelete;
 	__asm        mov    [ebp-4], eax;
@@ -303,7 +301,7 @@ void CharList::DeleteAllItems() {
 	__asm        mov    i, 0;
 	__asm        jmp    _T23;
 _T20:
-	__asm        inc    i;
+	i++;
 _T23:
 	__asm        mov    eax, i;
 	__asm        cmp    iEnd, eax;

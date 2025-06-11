@@ -681,7 +681,7 @@ _T47b:
 	__asm        mov    j, 0;
 	__asm        jmp    _T4ce;
 _T4cb:
-	__asm        inc    j;
+	j++;
 _T4ce:
 	__asm        cmp    j, 3;
 	__asm        jge    _T503;
@@ -844,7 +844,7 @@ _T88:
 // LINE 438:
 	smoke_size = 0x1;
 // LINE 440:
-	__asm        inc    S_num_active_missiles;
+	S_num_active_missiles++;
 // LINE 443:
 	__asm        jmp    _Tab6;
 _Tab:
@@ -887,7 +887,7 @@ _T109:
 // LINE 460:
 	smoke_size = 0x1;
 // LINE 462:
-	__asm        inc    S_num_active_lasers;
+	S_num_active_lasers++;
 // LINE 465:
 	__asm        jmp    _Tab6;
 _T12c:
@@ -959,7 +959,7 @@ _T1ac:
 	__asm        mov    i, 0;
 	__asm        jmp    _T1ff;
 _T1fc:
-	__asm        inc    i;
+	i++;
 _T1ff:
 	__asm        mov    eax, i;
 	__asm        cmp    oinfo.Faces, eax;
@@ -1012,7 +1012,7 @@ _T260:
 	__asm        jmp    _T1fc;
 // LINE 513:
 _T28f:
-	__asm        inc    S_num_active_bullets;
+	S_num_active_bullets++;
 // LINE 515:
 	__asm        jmp    _Tab6;
 _T29b:
@@ -1084,7 +1084,7 @@ _T31b:
 	__asm        mov    i, 0;
 	__asm        jmp    _T36e;
 _T36b:
-	__asm        inc    i;
+	i++;
 _T36e:
 	__asm        mov    eax, i;
 	__asm        cmp    oinfo.Faces, eax;
@@ -1121,7 +1121,7 @@ _T36e:
 	__asm        jmp    _T36b;
 // LINE 554:
 _T3c7:
-	__asm        inc    S_num_active_bullets;
+	S_num_active_bullets++;
 // LINE 556:
 	__asm        jmp    _Tab6;
 _T3d3:
@@ -1179,7 +1179,7 @@ _T431:
 	__asm        mov    i, 0;
 	__asm        jmp    _T484;
 _T481:
-	__asm        inc    i;
+	i++;
 _T484:
 	__asm        mov    eax, i;
 	__asm        cmp    oinfo.Faces, eax;
@@ -1216,7 +1216,7 @@ _T484:
 	__asm        jmp    _T481;
 // LINE 587:
 _T4dd:
-	__asm        inc    S_num_active_bullets;
+	S_num_active_bullets++;
 // LINE 589:
 	__asm        jmp    _Tab6;
 _T4e9:
@@ -1274,7 +1274,7 @@ _T547:
 	__asm        mov    i, 0;
 	__asm        jmp    _T59a;
 _T597:
-	__asm        inc    i;
+	i++;
 _T59a:
 	__asm        mov    eax, i;
 	__asm        cmp    oinfo.Faces, eax;
@@ -1311,7 +1311,7 @@ _T59a:
 	__asm        jmp    _T597;
 // LINE 620:
 _T5f3:
-	__asm        inc    S_num_active_bullets;
+	S_num_active_bullets++;
 // LINE 622:
 	__asm        jmp    _Tab6;
 _T5ff:
@@ -1369,7 +1369,7 @@ _T65d:
 	__asm        mov    i, 0;
 	__asm        jmp    _T6b0;
 _T6ad:
-	__asm        inc    i;
+	i++;
 _T6b0:
 	__asm        mov    eax, i;
 	__asm        cmp    oinfo.Faces, eax;
@@ -1453,7 +1453,7 @@ _T762:
 	__asm        jmp    _T6ad;
 // LINE 671:
 _T786:
-	__asm        inc    S_num_active_bullets;
+	S_num_active_bullets++;
 // LINE 673:
 	__asm        jmp    _Tab6;
 _T792:
@@ -1507,7 +1507,7 @@ _T80e:
 // LINE 696:
 	smoke_size = 0x4;
 // LINE 698:
-	__asm        inc    S_num_active_teargas;
+	S_num_active_teargas++;
 // LINE 699:
 	__asm        call   GetCurrentUserPersonalInfo;
 	__asm        mov    [ebp-0xDC], eax;
@@ -1586,7 +1586,7 @@ _T90d:
 	__asm        mov    ecx, [ecx+0x28];
 	__asm        mov    [ecx+0x10], eax;
 // LINE 727:
-	__asm        inc    S_num_active_debris;
+	S_num_active_debris++;
 // LINE 730:
 	mp.op = 0x7;
 // LINE 731:
@@ -1663,7 +1663,7 @@ _Ta01:
 	__asm        mov    ecx, [ecx+0x28];
 	__asm        mov    [ecx+0x10], eax;
 // LINE 760:
-	__asm        inc    S_num_active_debris;
+	S_num_active_debris++;
 // LINE 770:
 	__asm        jmp    _Tab6;
 _Ta39:
@@ -1699,7 +1699,7 @@ _Ta86:
 _Ta97:
 	md->flags = 0x100;
 // LINE 785:
-	__asm        inc    S_num_active_traj;
+	S_num_active_traj++;
 // LINE 787:
 	__asm        jmp    _Tab6;
 // LINE 789:
@@ -2415,7 +2415,7 @@ _T3c1:
 	__asm        jmp    _T38c;
 // LINE 1032:
 _T3ce:
-	__asm        dec    S_num_active_debris;
+	S_num_active_debris--;
 // LINE 1035:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax], 0x10;
@@ -2877,7 +2877,7 @@ _T90b:
 // LINE 1168:
 debris_unlink_next:
 _T993:
-	__asm        dec    S_num_active_debris;
+	S_num_active_debris--;
 // LINE 1172:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax], 0x10;
@@ -2995,7 +2995,7 @@ _Tb0e:
 	__asm        jmp    _Tad9;
 // LINE 1219:
 _Tb1b:
-	__asm        dec    S_num_active_teargas;
+	S_num_active_teargas--;
 // LINE 1220:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax];
@@ -3456,7 +3456,7 @@ _T1039:
 // LINE 1353:
 teargas_unlink_next:
 _T10ca:
-	__asm        dec    S_num_active_teargas;
+	S_num_active_teargas--;
 // LINE 1354:
 	__asm        mov    eax, lcptr;
 	__asm        add    eax, 0x10;
@@ -3552,7 +3552,7 @@ _T11f9:
 	__asm        jmp    _T11c4;
 // LINE 1390:
 _T1206:
-	__asm        dec    S_num_active_missiles;
+	S_num_active_missiles--;
 // LINE 1391:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax];
@@ -3780,7 +3780,7 @@ _T1434:
 // LINE 1463:
 missile_unlink_next:
 _T14c5:
-	__asm        dec    S_num_active_missiles;
+	S_num_active_missiles--;
 // LINE 1464:
 	__asm        mov    eax, lcptr;
 	__asm        add    eax, 0x10;
@@ -3876,7 +3876,7 @@ _T15f4:
 	__asm        jmp    _T15bf;
 // LINE 1499:
 _T1601:
-	__asm        dec    S_num_active_lasers;
+	S_num_active_lasers--;
 // LINE 1500:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax];
@@ -4083,7 +4083,7 @@ _T17ed:
 // LINE 1562:
 laser_unlink_next:
 _T187e:
-	__asm        dec    S_num_active_lasers;
+	S_num_active_lasers--;
 // LINE 1563:
 	__asm        mov    eax, lcptr;
 	__asm        add    eax, 0x10;
@@ -4179,7 +4179,7 @@ _T19ad:
 	__asm        jmp    _T1978;
 // LINE 1598:
 _T19ba:
-	__asm        dec    S_num_active_bullets;
+	S_num_active_bullets--;
 // LINE 1599:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax];
@@ -4541,7 +4541,7 @@ _T1da6:
 // LINE 1698:
 bullet_unlink_next:
 _T1e37:
-	__asm        dec    S_num_active_bullets;
+	S_num_active_bullets--;
 // LINE 1699:
 	__asm        mov    eax, lcptr;
 	__asm        add    eax, 0x10;
@@ -4602,7 +4602,7 @@ _T1edb:
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jg     _T1f1d;
 // LINE 1722:
-	__asm        dec    S_num_active_traj;
+	S_num_active_traj--;
 // LINE 1723:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax];
@@ -5538,7 +5538,7 @@ _T72f:
 	__asm        mov    j, 0;
 	__asm        jmp    _T7a6;
 _T7a0:
-	__asm        inc    j;
+	j++;
 _T7a6:
 	__asm        mov    eax, num_debris;
 	__asm        cmp    j, eax;
@@ -6574,7 +6574,7 @@ _Taf:
 	__asm        jmp    _T80;
 // LINE 2721:
 _Tbc:
-	__asm        dec    S_num_active_debris;
+	S_num_active_debris--;
 // LINE 2724:
 	mp.op = 0x9;
 // LINE 2725:
@@ -6620,8 +6620,7 @@ void S3MissileDebrisFire(/*packed*/ struct _CELL_INFO *cptr, /*packed*/ struct P
 	/*bp-0xc*/   /*packed*/ struct Point3d tmploc; // 0xc bytes
 
 // LINE 2751:
-	__asm        mov    eax, seq;
-	__asm        inc    dword ptr [eax];
+	seq[0]++;
 // LINE 2752:
 	__asm        mov    eax, seq;
 	__asm        and    dword ptr [eax], 7;
@@ -6683,7 +6682,7 @@ _T36:
 	__asm        mov    i, 0;
 	__asm        jmp    _T4e;
 _T4b:
-	__asm        inc    i;
+	i++;
 _T4e:
 	__asm        cmp    i, 0xA;
 	__asm        jge    _T1c7;
@@ -6776,7 +6775,7 @@ _T4e:
 // LINE 2814:
 	cptr->dyptr = md->dymissile;
 // LINE 2815:
-	__asm        inc    S_num_active_teargas;
+	S_num_active_teargas++;
 // LINE 2822:
 _T18b:
 	__asm        push   0x48;
@@ -6824,7 +6823,7 @@ _T1f4:
 	__asm        mov    i, 0;
 	__asm        jmp    _T20c;
 _T209:
-	__asm        inc    i;
+	i++;
 _T20c:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    _T385;
@@ -6917,7 +6916,7 @@ _T20c:
 // LINE 2860:
 	cptr->dyptr = md->dymissile;
 // LINE 2861:
-	__asm        inc    S_num_active_debris;
+	S_num_active_debris++;
 // LINE 2868:
 _T349:
 	__asm        push   0x48;
@@ -6958,7 +6957,7 @@ int32_t S3MissileMIFFSave(void * __ptr32 miffWriter) {
 	__asm        mov    i, 0;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    i;
+	i++;
 _T18:
 	__asm        cmp    i, 0xA;
 	__asm        jge    _T8d;
@@ -7004,7 +7003,7 @@ _T8d:
 	__asm        mov    i, 0;
 	__asm        jmp    _T9c;
 _T99:
-	__asm        inc    i;
+	i++;
 _T9c:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    _T111;

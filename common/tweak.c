@@ -37,7 +37,7 @@ _T37:
 	__asm        mov    nCt, 0;
 	__asm        jmp    _T46;
 _T43:
-	__asm        inc    nCt;
+	nCt++;
 _T46:
 	__asm        mov    eax, nCt;
 	__asm        cmp    nNumValues, eax;
@@ -77,7 +77,7 @@ _T79:
 	__asm        sub    ecx, edx;
 	__asm        mov    TWKQueue[0].nNumCtrls[ecx], eax;
 // LINE 54:
-	__asm        inc    g_nNextTWKQueueSlot;
+	g_nNextTWKQueueSlot++;
 // LINE 56:
 	__asm        mov    eax, g_nNextTWKQueueSlot;
 	__asm        jmp    _Tc6;
@@ -150,7 +150,7 @@ _Tc6:
 	__asm        mov    nCt, 0;
 	__asm        jmp    _Tdb;
 _Td5:
-	__asm        inc    nCt;
+	nCt++;
 _Tdb:
 	__asm        mov    eax, nCt;
 	__asm        cmp    g_nNextTWKQueueSlot, eax;
@@ -251,7 +251,7 @@ void TWKReadAllFiles(char * pszTWKFile) {
 	__asm        mov    nCt, 0;
 	__asm        jmp    _T38;
 _T32:
-	__asm        inc    nCt;
+	nCt++;
 _T38:
 	__asm        mov    eax, nCt;
 	__asm        cmp    g_nNextTWKQueueSlot, eax;
@@ -349,7 +349,7 @@ void TWKReadSection(char * pszFile, char * pszSection, int32_t nTweakQueueSlotId
 	__asm        mov    nCt2, 0;
 	__asm        jmp    _T7e;
 _T78:
-	__asm        inc    nCt2;
+	nCt2++;
 _T7e:
 	__asm        mov    eax, nCt2;
 	__asm        cmp    nNumCtrl, eax;
@@ -473,7 +473,7 @@ _T1ef:
 	__asm        mov    ecx, g_nNextTWKErrorSlot;
 	__asm        mov    TWKErrorSlot[ecx*4], eax;
 // LINE 246:
-	__asm        inc    g_nNextTWKErrorSlot;
+	g_nNextTWKErrorSlot++;
 // LINE 249:
 _T205:
 }
@@ -505,9 +505,9 @@ _T10:
 	__asm        mov    edx, pDest;
 	__asm        mov    [ecx+edx], al;
 // LINE 365:
-	__asm        inc    pSource;
+	pSource++;
 // LINE 366:
-	__asm        inc    nCt;
+	nCt++;
 // LINE 367:
 	__asm        jmp    _T10;
 // LINE 368:

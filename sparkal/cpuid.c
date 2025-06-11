@@ -183,7 +183,7 @@ unsigned short wincpuidext() {
 	__asm        mov    i, 0;
 	__asm        jmp    _T78;
 _T75:
-	__asm        inc    i;
+	i++;
 _T78:
 	__asm        cmp    i, 0xC;
 	__asm        jge    _Tab;
@@ -284,7 +284,7 @@ unsigned long wincpufeatures() {
 	__asm        mov    i, 0;
 	__asm        jmp    _T73;
 _T70:
-	__asm        inc    i;
+	i++;
 _T73:
 	__asm        cmp    i, 0xC;
 	__asm        jge    _Ta6;
@@ -604,7 +604,7 @@ static unsigned short check_IDProc() {
 	__asm        mov    i, 0;
 	__asm        jmp    _T6a;
 _T67:
-	__asm        inc    i;
+	i++;
 _T6a:
 	__asm        cmp    i, 0xC;
 	__asm        jge    _T9d;

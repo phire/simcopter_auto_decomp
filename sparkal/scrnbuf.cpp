@@ -1275,7 +1275,7 @@ _T94:
 	__asm        mov    i, 0;
 	__asm        jmp    _Ta3;
 _Ta0:
-	__asm        inc    i;
+	i++;
 _Ta3:
 	__asm        cmp    i, 0xA;
 	__asm        jge    _T107;
@@ -1313,7 +1313,7 @@ _T107:
 	__asm        mov    i, 0xA;
 	__asm        jmp    _T116;
 _T113:
-	__asm        inc    i;
+	i++;
 _T116:
 	__asm        cmp    i, 0xF5;
 	__asm        jg     _T16e;

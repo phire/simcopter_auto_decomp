@@ -228,7 +228,7 @@ _Tf9:
 	__asm        mov    i, 0;
 	__asm        jmp    _T1b0;
 _T1ad:
-	__asm        inc    i;
+	i++;
 _T1b0:
 	__asm        cmp    i, 8;
 	__asm        jge    _T1d4;
@@ -264,7 +264,7 @@ _T1d4:
 	__asm        mov    i, 0;
 	__asm        jmp    _T220;
 _T21d:
-	__asm        inc    i;
+	i++;
 _T220:
 	__asm        cmp    i, 3;
 	__asm        jge    _T244;
@@ -281,7 +281,7 @@ _T244:
 	__asm        mov    i, 0;
 	__asm        jmp    _T253;
 _T250:
-	__asm        inc    i;
+	i++;
 _T253:
 	__asm        cmp    i, 0x14;
 	__asm        jge    _T273;
@@ -340,7 +340,7 @@ _T30:
 	__asm        and    ecx, 3;
 	__asm        rep stosb;
 // LINE 315:
-	__asm        inc    S_fire_cycle;
+	S_fire_cycle++;
 // LINE 316:
 	__asm        movsx  eax, S_fire_cycle;
 	__asm        and    al, 0xF;
@@ -2753,7 +2753,7 @@ _T295:
 	__asm        mov    i, 0;
 	__asm        jmp    _T2b1;
 _T2ae:
-	__asm        inc    i;
+	i++;
 _T2b1:
 	__asm        mov    eax, i;
 	__asm        cmp    S_dirlen, eax;
@@ -2851,7 +2851,7 @@ _T8a:
 	__asm        mov    index, 0;
 	__asm        jmp    _Ta5;
 _Ta2:
-	__asm        inc    index;
+	index++;
 _Ta5:
 	__asm        mov    eax, dx;
 	__asm        cmp    index, eax;
@@ -2911,7 +2911,7 @@ _T138:
 	__asm        mov    index, 0;
 	__asm        jmp    _T147;
 _T144:
-	__asm        inc    index;
+	index++;
 _T147:
 	__asm        mov    eax, dy;
 	__asm        cmp    index, eax;
@@ -2996,7 +2996,7 @@ void S3MapBlit(char * destbuf, long destpitch) {
 	__asm        mov    y, 0;
 	__asm        jmp    _T38;
 _T35:
-	__asm        inc    y;
+	y++;
 _T38:
 	__asm        mov    eax, y;
 	__asm        cmp    S_borderdimy, eax;
@@ -3007,7 +3007,7 @@ _T38:
 	__asm        mov    x, 0;
 	__asm        jmp    _T5c;
 _T59:
-	__asm        inc    x;
+	x++;
 _T5c:
 	__asm        mov    eax, S_borderdimx;
 	__asm        sar    eax, 2;
@@ -3052,7 +3052,7 @@ void S3MapBlitPosition(char * destbuf, long destpitch, long xDestination, long y
 	__asm        mov    y, 0;
 	__asm        jmp    _T33;
 _T30:
-	__asm        inc    y;
+	y++;
 _T33:
 	__asm        mov    eax, y;
 	__asm        cmp    S_borderdimy, eax;
@@ -3063,7 +3063,7 @@ _T33:
 	__asm        mov    x, 0;
 	__asm        jmp    _T57;
 _T54:
-	__asm        inc    x;
+	x++;
 _T57:
 	__asm        mov    eax, S_borderdimx;
 	__asm        sar    eax, 2;
@@ -3178,7 +3178,7 @@ int32_t S3MapCursorDown(long posx, long posy) {
 	__asm        mov    i, 0;
 	__asm        jmp    _T1f;
 _T1c:
-	__asm        inc    i;
+	i++;
 _T1f:
 	__asm        cmp    i, 0x14;
 	__asm        jge    _T94;
@@ -3237,7 +3237,7 @@ void S3MapCommandZoomIn() {
 	__asm        cmp    S_mapzoom, 3;
 	__asm        jge    _T19;
 // LINE 1324:
-	__asm        inc    S_mapzoom;
+	S_mapzoom++;
 // LINE 1325:
 _T19:
 }
@@ -3248,7 +3248,7 @@ void S3MapCommandZoomOut() {
 	__asm        cmp    S_mapzoom, 0;
 	__asm        jle    _T19;
 // LINE 1334:
-	__asm        dec    S_mapzoom;
+	S_mapzoom--;
 // LINE 1335:
 _T19:
 }
@@ -3348,7 +3348,7 @@ _Ta2:
 	__asm        mov    mapy, 0;
 	__asm        jmp    _Td4;
 _Td1:
-	__asm        inc    mapy;
+	mapy++;
 _Td4:
 	__asm        mov    eax, S_icon_dim;
 	__asm        cmp    mapy, eax;
@@ -3357,7 +3357,7 @@ _Td4:
 	__asm        mov    mapx, 0;
 	__asm        jmp    _Tf1;
 _Tee:
-	__asm        inc    mapx;
+	mapx++;
 _Tf1:
 	__asm        mov    eax, S_icon_dim;
 	__asm        cmp    mapx, eax;
@@ -3378,9 +3378,9 @@ _Tf1:
 	__asm        jmp    _T128;
 // LINE 1413:
 _T122:
-	__asm        inc    bufptr;
+	bufptr++;
 // LINE 1414:
-	__asm        inc    iptr;
+	iptr++;
 // LINE 1416:
 _T128:
 	__asm        jmp    _Tee;
@@ -3604,7 +3604,7 @@ void S3MapDrawMissionIcons(long posx, long posy) {
 	__asm        mov    i, 0;
 	__asm        jmp    _T20;
 _T1d:
-	__asm        inc    i;
+	i++;
 _T20:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    _T14c;
@@ -3729,7 +3729,7 @@ void S3MapAddCarInfo(long car_id, long car_type, long mission_id, /*packed*/ str
 	__asm        mov    i, 0;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    i;
+	i++;
 _T18:
 	__asm        cmp    i, 0x14;
 	__asm        jge    _T48;
@@ -3776,7 +3776,7 @@ void S3MapRemoveCarInfo(long car_id) {
 	__asm        mov    i, 0;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    i;
+	i++;
 _T18:
 	__asm        cmp    i, 0x14;
 	__asm        jge    _T50;
@@ -3811,7 +3811,7 @@ void S3MapDrawCarIcons() {
 	__asm        mov    i, 0;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    i;
+	i++;
 _T18:
 	__asm        cmp    i, 0x14;
 	__asm        jge    _T203;
@@ -4025,7 +4025,7 @@ _T18:
 	__asm        mov    mapy, 0;
 	__asm        jmp    _T56;
 _T53:
-	__asm        inc    mapy;
+	mapy++;
 _T56:
 	__asm        mov    eax, S_dicon_dim;
 	__asm        cmp    mapy, eax;
@@ -4034,7 +4034,7 @@ _T56:
 	__asm        mov    mapx, 0;
 	__asm        jmp    _T73;
 _T70:
-	__asm        inc    mapx;
+	mapx++;
 _T73:
 	__asm        mov    eax, S_dicon_dim;
 	__asm        cmp    mapx, eax;
@@ -4055,9 +4055,9 @@ _T73:
 	__asm        jmp    _Taa;
 // LINE 1723:
 _Ta4:
-	__asm        inc    bufptr;
+	bufptr++;
 // LINE 1724:
-	__asm        inc    iptr;
+	iptr++;
 // LINE 1726:
 _Taa:
 	__asm        jmp    _T70;
@@ -4137,7 +4137,7 @@ _T81:
 	__asm        mov    index, 0;
 	__asm        jmp    _T9c;
 _T99:
-	__asm        inc    index;
+	index++;
 _T9c:
 	__asm        mov    eax, dx;
 	__asm        cmp    index, eax;
@@ -4197,7 +4197,7 @@ _T131:
 	__asm        mov    index, 0;
 	__asm        jmp    _T140;
 _T13d:
-	__asm        inc    index;
+	index++;
 _T140:
 	__asm        mov    eax, dy;
 	__asm        cmp    index, eax;

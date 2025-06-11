@@ -1844,7 +1844,7 @@ _T735:
 	__asm        mov    iEnd, eax;
 	__asm        jmp    _T8d0;
 _T8ca:
-	__asm        inc    i;
+	i++;
 _T8d0:
 	__asm        mov    eax, i;
 	__asm        cmp    iEnd, eax;
@@ -1953,7 +1953,7 @@ _Ta0d:
 	__asm        mov    iEnd, eax;
 	__asm        jmp    _Ta4c;
 _Ta46:
-	__asm        inc    i;
+	i++;
 _Ta4c:
 	__asm        mov    eax, i;
 	__asm        cmp    iEnd, eax;
@@ -2142,7 +2142,7 @@ _Tc1:
 	__asm        mov    iEnd, eax;
 	__asm        jmp    _T12a;
 _T127:
-	__asm        inc    i;
+	i++;
 _T12a:
 	__asm        mov    eax, iEnd;
 	__asm        cmp    i, eax;
@@ -2195,7 +2195,7 @@ _T12a:
 	__asm        mov    x, 0;
 	__asm        jmp    _T1d3;
 _T1d0:
-	__asm        inc    x;
+	x++;
 _T1d3:
 	__asm        mov    eax, x;
 	__asm        cmp    xEnd, eax;
@@ -2204,7 +2204,7 @@ _T1d3:
 	__asm        mov    y, 0;
 	__asm        jmp    _T1ee;
 _T1eb:
-	__asm        inc    y;
+	y++;
 _T1ee:
 	__asm        mov    eax, y;
 	__asm        cmp    yEnd, eax;
@@ -2293,9 +2293,9 @@ _T2bd:
 	__asm        jmp    _T2f5;
 // LINE 173:
 _T2ef:
-	__asm        inc    rectCurrent.right;
+	rectCurrent.right++;
 // LINE 174:
-	__asm        inc    rectCurrent.bottom;
+	rectCurrent.bottom++;
 // LINE 176:
 _T2f5:
 	__asm        mov    eax, this;
@@ -3047,7 +3047,7 @@ _T86:
 	__asm        add    lWidth, eax;
 // LINE 234:
 _Tb5:
-	__asm        inc    chText;
+	chText++;
 // LINE 235:
 	__asm        jmp    _T1c;
 // LINE 237:
@@ -3179,10 +3179,9 @@ _T102:
 	__asm        sub    lWidth, eax;
 // LINE 263:
 _T13b:
-	__asm        mov    eax, nVisibleStringLength;
-	__asm        dec    dword ptr [eax];
+	nVisibleStringLength.--;
 // LINE 264:
-	__asm        dec    chTextEnd;
+	chTextEnd--;
 // LINE 265:
 	__asm        jmp    _T42;
 // LINE 266:
@@ -3221,7 +3220,7 @@ _T1c:
 // LINE 285:
 	chText += lCurrentLineStringLength;
 // LINE 286:
-	__asm        inc    lLineCount;
+	lLineCount++;
 // LINE 287:
 	__asm        jmp    _T1c;
 // LINE 288:
@@ -3371,7 +3370,7 @@ _Tbe:
 	__asm        add    nPotentialCurrentWidth, eax;
 // LINE 356:
 _Ted:
-	__asm        inc    nPotentialCurrentChars;
+	nPotentialCurrentChars++;
 // LINE 358:
 	__asm        mov    eax, chTextCurrent;
 	__asm        mov    al, [eax];
@@ -3390,7 +3389,7 @@ _Ted:
 	nCurrentChars = nPotentialCurrentChars;
 // LINE 360:
 _T11b:
-	__asm        inc    chTextCurrent;
+	chTextCurrent++;
 // LINE 361:
 	__asm        jmp    _T27;
 // LINE 368:
@@ -3621,7 +3620,7 @@ _T1b6:
 	__asm        add    x, eax;
 // LINE 398:
 _T1e5:
-	__asm        inc    chText;
+	chText++;
 // LINE 399:
 	__asm        jmp    _T15;
 // LINE 400:
@@ -3809,7 +3808,7 @@ _T1b6:
 	__asm        add    x, eax;
 // LINE 415:
 _T1e5:
-	__asm        inc    chText;
+	chText++;
 // LINE 416:
 	__asm        jmp    _T15;
 // LINE 417:

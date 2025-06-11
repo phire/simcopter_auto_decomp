@@ -504,7 +504,7 @@ _T107:
 	__asm        jmp    _T143;
 // LINE 68:
 _T10c:
-	__asm        dec    stackSize;
+	stackSize--;
 // LINE 69:
 	__asm        jmp    _T42;
 // LINE 70:
@@ -599,8 +599,7 @@ _Tba:
 	__asm        mov    ecx, fill;
 	__asm        mov    [ecx+0xC], eax;
 // LINE 100:
-	__asm        mov    eax, this;
-	__asm        inc    word ptr [eax+8];
+	this->fStackSize++;
 // LINE 101:
 	__asm        mov    ax, 1;
 	__asm        jmp    _Tf9;
@@ -921,8 +920,7 @@ _Ta9:
 // LINE 215:
 	done = 0x0;
 // LINE 216:
-	__asm        mov    eax, this;
-	__asm        dec    word ptr [eax+8];
+	this->fStackSize--;
 // LINE 217:
 	success = 0x1;
 // LINE 218:
@@ -934,8 +932,7 @@ _Tce:
 // LINE 219:
 	done = 0x0;
 // LINE 220:
-	__asm        mov    eax, this;
-	__asm        dec    word ptr [eax+8];
+	this->fStackSize--;
 // LINE 221:
 	success = 0x0;
 // LINE 222:

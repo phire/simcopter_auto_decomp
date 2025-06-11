@@ -336,16 +336,6 @@ public:
 	static unsigned long lTotalMemoryUsage;
 };
 
-// Type: /*packed*/ struct SparkalRect;
-struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
-	/*+0x0*/   long left;
-	/*+0x4*/   long top;
-	/*+0x8*/   long right;
-	/*+0xc*/   long bottom;
-	void SparkalRect(long, long, long, long);
-	void SparkalRect();
-};
-
 // Type: /*packed*/ class ScrollBarWindow;
 // VTABLE: COPTER_D 0x00591fc0
 class ScrollBarWindow : public SliderWindow
@@ -387,6 +377,16 @@ protected:
 	/*+0xbc*/  /*packed*/ class MTimer myTimer; // 0x10 bytes
 	/*+0xcc*/  enum ScrollBarWindow::ScrollHitTestResult initialScrollHitTestResult;
 	/*+0xd0*/  int32_t bCursorIsOnInitialHitTestResult;
+};
+
+// Type: /*packed*/ struct SparkalRect;
+struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
+	void SparkalRect(long, long, long, long);
+	void SparkalRect();
 };
 
 // Type: /*packed*/ class CheckBoxWindow;
@@ -677,7 +677,7 @@ void SoundButtonWindow::SoundButtonWindow() {
 	__asm        call   DigitalSound::Load;
 // LINE 32:
 _T34:
-	__asm        inc    SoundButtonWindow::lButtonSoundReferenceCount;
+	SoundButtonWindow::lButtonSoundReferenceCount++;
 // LINE 33:
 	__asm        jmp    near ptr 0x0047183F;
 
@@ -711,7 +711,7 @@ void SoundButtonWindow::SoundButtonWindow(/*packed*/ class MRect& rectNewWindow,
 	__asm        call   DigitalSound::Load;
 // LINE 47:
 _T4c:
-	__asm        inc    SoundButtonWindow::lButtonSoundReferenceCount;
+	SoundButtonWindow::lButtonSoundReferenceCount++;
 // LINE 48:
 	__asm        jmp    near ptr 0x0047189E;
 
@@ -723,7 +723,7 @@ void SoundButtonWindow::~SoundButtonWindow() {
 
 	this-><SoundButtonWindow+0x00> = 0x590870;
 // LINE 56:
-	__asm        dec    SoundButtonWindow::lButtonSoundReferenceCount;
+	SoundButtonWindow::lButtonSoundReferenceCount--;
 // LINE 57:
 	__asm        jne    _T2b;
 // LINE 58:
@@ -798,7 +798,7 @@ void SoundRadioButtonWindow::SoundRadioButtonWindow(/*unpacked*/ class ButtonGro
 	__asm        call   DigitalSound::Load;
 // LINE 85:
 _T50:
-	__asm        inc    SoundRadioButtonWindow::lRadioSoundReferenceCount;
+	SoundRadioButtonWindow::lRadioSoundReferenceCount++;
 // LINE 86:
 	__asm        jmp    near ptr 0x004719A0;
 
@@ -810,7 +810,7 @@ void SoundRadioButtonWindow::~SoundRadioButtonWindow() {
 
 	this-><SoundRadioButtonWindow+0x00> = 0x590950;
 // LINE 92:
-	__asm        dec    SoundRadioButtonWindow::lRadioSoundReferenceCount;
+	SoundRadioButtonWindow::lRadioSoundReferenceCount--;
 // LINE 93:
 	__asm        jne    _T2b;
 // LINE 94:
@@ -870,7 +870,7 @@ void SoundCheckBoxWindow::SoundCheckBoxWindow() {
 	__asm        call   DigitalSound::Load;
 // LINE 115:
 _T34:
-	__asm        inc    SoundCheckBoxWindow::lCheckBoxSoundReferenceCount;
+	SoundCheckBoxWindow::lCheckBoxSoundReferenceCount++;
 // LINE 116:
 	__asm        jmp    near ptr 0x00471A84;
 
@@ -904,7 +904,7 @@ void SoundCheckBoxWindow::SoundCheckBoxWindow(/*packed*/ class MRect& rectNewWin
 	__asm        call   DigitalSound::Load;
 // LINE 129:
 _T4c:
-	__asm        inc    SoundCheckBoxWindow::lCheckBoxSoundReferenceCount;
+	SoundCheckBoxWindow::lCheckBoxSoundReferenceCount++;
 // LINE 130:
 	__asm        jmp    near ptr 0x00471AE3;
 
@@ -916,7 +916,7 @@ void SoundCheckBoxWindow::~SoundCheckBoxWindow() {
 
 	this-><SoundCheckBoxWindow+0x00> = 0x590a38;
 // LINE 136:
-	__asm        dec    SoundCheckBoxWindow::lCheckBoxSoundReferenceCount;
+	SoundCheckBoxWindow::lCheckBoxSoundReferenceCount--;
 // LINE 137:
 	__asm        jne    _T2b;
 // LINE 138:
@@ -976,7 +976,7 @@ void SoundScrollBarWindow::SoundScrollBarWindow() {
 	__asm        call   DigitalSound::Load;
 // LINE 159:
 _T34:
-	__asm        inc    SoundScrollBarWindow::lScrollBarSoundReferenceCount;
+	SoundScrollBarWindow::lScrollBarSoundReferenceCount++;
 // LINE 160:
 	__asm        jmp    near ptr 0x00471BC4;
 
@@ -1012,7 +1012,7 @@ void SoundScrollBarWindow::SoundScrollBarWindow(/*packed*/ class MRect& rectNewW
 	__asm        call   DigitalSound::Load;
 // LINE 173:
 _T50:
-	__asm        inc    SoundScrollBarWindow::lScrollBarSoundReferenceCount;
+	SoundScrollBarWindow::lScrollBarSoundReferenceCount++;
 // LINE 174:
 	__asm        jmp    near ptr 0x00471C27;
 
@@ -1024,7 +1024,7 @@ void SoundScrollBarWindow::~SoundScrollBarWindow() {
 
 	this-><SoundScrollBarWindow+0x00> = 0x590b18;
 // LINE 180:
-	__asm        dec    SoundScrollBarWindow::lScrollBarSoundReferenceCount;
+	SoundScrollBarWindow::lScrollBarSoundReferenceCount--;
 // LINE 181:
 	__asm        jne    _T2b;
 // LINE 182:

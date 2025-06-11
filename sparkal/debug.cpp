@@ -2769,7 +2769,7 @@ _T399:
 	__asm        jmp    _T446;
 // LINE 210:
 _T443:
-	__asm        dec    scrollStart;
+	scrollStart--;
 // LINE 211:
 _T446:
 	__asm        jmp    _Td4;
@@ -4578,7 +4578,7 @@ _Tf4:
 	__asm        cmp    pos, 0xFFFFFFFF;
 	__asm        je     _T3fc;
 // LINE 449:
-	__asm        inc    index;
+	index++;
 // LINE 452:
 	__asm        mov    eax, pos;
 	__asm        push   eax;
@@ -4830,7 +4830,7 @@ _T3fc:
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        je     _T5e8;
 // LINE 469:
-	__asm        inc    index;
+	index++;
 // LINE 470:
 	__asm        jmp    near ptr 0x00425487;
 

@@ -747,7 +747,7 @@ void cGZXParamBitstream<t_alloc,t_free>::FreeAll() {
 	__asm        mov    loop, 0;
 	__asm        jmp    _T1b;
 _T18:
-	__asm        inc    loop;
+	loop++;
 _T1b:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x10];
@@ -869,8 +869,7 @@ _T48:
 	__asm        cmp    [ecx+eax*8+4], edx;
 	__asm        ja     _Ta9;
 // LINE 290:
-	__asm        mov    eax, this;
-	__asm        inc    word ptr [eax+0xC];
+	this->nodeNo++;
 // LINE 291:
 	__asm        jmp    near ptr 0x004CE17B;
 
@@ -1381,8 +1380,7 @@ _T5e6:
 	__asm        cmp    [ecx+eax*8+4], edx;
 	__asm        ja     _Tc99;
 // LINE 326:
-	__asm        mov    eax, this;
-	__asm        inc    word ptr [eax+0xC];
+	this->nodeNo++;
 // LINE 327:
 	__asm        jmp    near ptr 0x004CE825;
 
@@ -1883,7 +1881,7 @@ long cGZXParamBitstream<t_alloc,t_free>::Size() {
 	__asm        mov    loop, 0;
 	__asm        jmp    _T22;
 _T1f:
-	__asm        inc    loop;
+	loop++;
 _T22:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x10];

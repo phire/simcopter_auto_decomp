@@ -914,7 +914,7 @@ uint32_t MDateLocalized::DayOfWeekLocalized(char * dayName, int32_t nLanguageToU
 	__asm        mov    i, 1;
 	__asm        jmp    _T1f;
 _T1c:
-	__asm        inc    i;
+	i++;
 _T1f:
 	__asm        cmp    i, 7;
 	__asm        jg     _T62;
@@ -957,7 +957,7 @@ uint32_t MDateLocalized::IndexOfMonthLocalized(char * monthName, int32_t nLangua
 	__asm        mov    i, 1;
 	__asm        jmp    _T1f;
 _T1c:
-	__asm        inc    i;
+	i++;
 _T1f:
 	__asm        cmp    i, 0x1F;
 	__asm        jg     _T62;
@@ -996,7 +996,7 @@ char * MDateLocalized::DayNameLocalized(uint32_t weekDayNumber, char * szDayName
 	/*bp-0x4*/   int32_t nFullStringID;
 
 // LINE 288:
-	__asm        dec    weekDayNumber;
+	weekDayNumber--;
 // LINE 289:
 	__asm        mov    eax, nLanguageToUse;
 	__asm        push   eax;
@@ -1051,7 +1051,7 @@ char * MDateLocalized::MonthNameLocalized(uint32_t monthNumber, char * szMonthNa
 	/*bp-0x4*/   int32_t nFullStringID;
 
 // LINE 308:
-	__asm        dec    monthNumber;
+	monthNumber--;
 // LINE 309:
 	__asm        mov    eax, nLanguageToUse;
 	__asm        push   eax;

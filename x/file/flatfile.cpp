@@ -215,7 +215,7 @@ _T32:
 	__asm        mov    test, 1;
 	__asm        jmp    _T61;
 _T5e:
-	__asm        inc    test;
+	test++;
 _T61:
 	__asm        mov    eax, name;
 	__asm        xor    ecx, ecx;
@@ -775,7 +775,7 @@ _T25:
 	__asm        cmp    list, 0;
 	__asm        je     _T38;
 // LINE 306:
-	__asm        inc    total;
+	total++;
 // LINE 307:
 	__asm        jmp    _T1c;
 // LINE 308:

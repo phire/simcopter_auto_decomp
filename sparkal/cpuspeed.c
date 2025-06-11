@@ -175,7 +175,7 @@ _T143:
 	__asm        jne    _T2fb;
 // LINE 183:
 _T157:
-	__asm        inc    tries;
+	tries++;
 // LINE 186:
 	freq3 = freq2;
 // LINE 187:
@@ -263,7 +263,7 @@ _T1cb:
 	__asm        cmp    edx, eax;
 	__asm        jbe    _T22c;
 // LINE 269:
-	__asm        inc    ticks;
+	ticks++;
 // LINE 271:
 _T22c:
 	__asm        mov    eax, cycles;
@@ -279,7 +279,7 @@ _T22c:
 	__asm        cmp    edx, eax;
 	__asm        jbe    _T250;
 // LINE 274:
-	__asm        inc    freq;
+	freq++;
 // LINE 276:
 _T250:
 	__asm        mov    eax, freq2;
@@ -334,7 +334,7 @@ _T2c1:
 	__asm        cmp    ecx, eax;
 	__asm        je     _T2e7;
 // LINE 291:
-	__asm        inc    total;
+	total++;
 // LINE 293:
 _T2e7:
 	__asm        mov    ecx, 3;
@@ -361,7 +361,7 @@ _T2fb:
 	__asm        mov    i, 0;
 	__asm        jmp    _T329;
 _T326:
-	__asm        inc    i;
+	i++;
 _T329:
 	__asm        cmp    i, 0xA;
 	__asm        jge    _T37b;
@@ -430,7 +430,7 @@ _T37b:
 	__asm        cmp    edx, eax;
 	__asm        jbe    _T3cb;
 // LINE 384:
-	__asm        inc    ticks;
+	ticks++;
 // LINE 386:
 _T3cb:
 	__asm        mov    eax, cycles;
@@ -446,7 +446,7 @@ _T3cb:
 	__asm        cmp    edx, eax;
 	__asm        jbe    _T3ef;
 // LINE 389:
-	__asm        inc    freq;
+	freq++;
 // LINE 394:
 // Block end:
 _T3ef:
@@ -574,7 +574,7 @@ _Tf9:
 	__asm        jmp    _T296;
 // LINE 451:
 _T138:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 452:
 	__asm        jmp    _Tf9;
 // LINE 454:
@@ -615,7 +615,7 @@ _T164:
 	__asm        jmp    _T296;
 // LINE 469:
 _T1a3:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 470:
 	__asm        jmp    _T164;
 // LINE 472:
@@ -656,7 +656,7 @@ _T1cf:
 	__asm        jmp    _T296;
 // LINE 487:
 _T20e:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 488:
 	__asm        jmp    _T1cf;
 // LINE 490:
@@ -697,7 +697,7 @@ _T23a:
 	__asm        jmp    _T296;
 // LINE 505:
 _T279:
-	__asm        inc    ptr;
+	ptr++;
 // LINE 506:
 	__asm        jmp    _T23a;
 // LINE 508:

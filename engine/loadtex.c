@@ -178,7 +178,7 @@ _Tf8:
 	__asm        mov    i, 0;
 	__asm        jmp    _T14d;
 _T14a:
-	__asm        inc    i;
+	i++;
 _T14d:
 	__asm        mov    eax, i;
 	__asm        cmp    bmp.BmpCount, eax;
@@ -399,7 +399,7 @@ _T122:
 	__asm        mov    i, 0;
 	__asm        jmp    _T131;
 _T12e:
-	__asm        inc    i;
+	i++;
 _T131:
 	__asm        mov    eax, notiles;
 	__asm        cmp    i, eax;

@@ -544,7 +544,7 @@ _T47:
 	__asm        cmp    month, 2;
 	__asm        jne    _T76;
 // LINE 186:
-	__asm        inc    d;
+	d++;
 // LINE 187:
 _T76:
 	__asm        mov    eax, day;
@@ -631,7 +631,7 @@ _T3d:
 _T50:
 	m += 0x9;
 // LINE 244:
-	__asm        dec    y;
+	y--;
 // LINE 247:
 _T57:
 	__asm        mov    ecx, 0x64;
@@ -853,7 +853,7 @@ _T40:
 	__asm        test   eax, eax;
 	__asm        je     _T78;
 // LINE 341:
-	__asm        inc    firstDay;
+	firstDay++;
 // LINE 342:
 _T78:
 	__asm        mov    eax, firstDay;
@@ -982,8 +982,7 @@ void MDate::Mdy(uint32_t& m, uint32_t& D, uint32_t& y) {
 _T116:
 	m. -= 0x9;
 // LINE 386:
-	__asm        mov    eax, y;
-	__asm        inc    dword ptr [eax];
+	y.++;
 // LINE 388:
 _T121:
 	__asm        jmp    near ptr 0x004BCBC6;
@@ -1103,7 +1102,7 @@ uint32_t MDate::Month() {
 	/*bp-0x8*/   unsigned long j;
 
 // LINE 451:
-	__asm        dec    desiredDayOfWeek;
+	desiredDayOfWeek--;
 // LINE 452:
 	__asm        mov    ecx, this;
 	__asm        call   MDate::WeekDay;

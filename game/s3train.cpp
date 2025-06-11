@@ -611,7 +611,7 @@ void TrainClass::TrainClass(long mapx, long mapy) {
 	__asm        mov    currentFlag, 0;
 	__asm        jmp    _T24;
 _T21:
-	__asm        inc    currentFlag;
+	currentFlag++;
 _T24:
 	__asm        cmp    currentFlag, 9;
 	__asm        jge    _T3e;
@@ -924,7 +924,7 @@ void TrainClass::ResetAll() {
 	__asm        mov    currentTrainIndex, 0;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    currentTrainIndex;
+	currentTrainIndex++;
 _T18:
 	__asm        cmp    currentTrainIndex, 1;
 	__asm        jge    _T36;
@@ -947,7 +947,7 @@ void TrainClass::ItterateAll() {
 	__asm        mov    currentTrainIndex, 0;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    currentTrainIndex;
+	currentTrainIndex++;
 _T18:
 	__asm        cmp    currentTrainIndex, 1;
 	__asm        jge    _T36;
@@ -970,7 +970,7 @@ int32_t TrainClass::FindTrainToCrash(long mission_id) {
 	__asm        mov    currentTrainIndex, 0;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    currentTrainIndex;
+	currentTrainIndex++;
 _T18:
 	__asm        cmp    currentTrainIndex, 1;
 	__asm        jge    _T89;
@@ -1731,8 +1731,7 @@ _T8b:
 	__asm        cmp    dword ptr [eax+0x6D], 0;
 	__asm        jle    _T2c4;
 // LINE 1124:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x65];
+	this->utRotation++;
 // LINE 1125:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x65];
@@ -1854,7 +1853,7 @@ _T2c4:
 	__asm        mov    j, 0;
 	__asm        jmp    _T377;
 _T374:
-	__asm        inc    j;
+	j++;
 _T377:
 	__asm        mov    eax, j;
 	__asm        cmp    num_debris, eax;
@@ -1981,7 +1980,7 @@ _T456:
 	__asm        mov    j, 0;
 	__asm        jmp    _T4ed;
 _T4ea:
-	__asm        inc    j;
+	j++;
 _T4ed:
 	__asm        mov    eax, j;
 	__asm        cmp    num_debris, eax;
@@ -2108,7 +2107,7 @@ _T5cc:
 	__asm        mov    j, 0;
 	__asm        jmp    _T663;
 _T660:
-	__asm        inc    j;
+	j++;
 _T663:
 	__asm        mov    eax, j;
 	__asm        cmp    num_debris, eax;
@@ -3048,16 +3047,14 @@ void TrainClass::SetTrainDirection(unsigned short tileType) {
 // LINE 1732:
 	this->direction = 0x9;
 // LINE 1733:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x59];
+	this->nextLocation.y--;
 // LINE 1735:
 	__asm        jmp    _T71;
 // LINE 1737:
 _T61:
 	this->direction = 0x6;
 // LINE 1738:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x55];
+	this->nextLocation.x++;
 // LINE 1740:
 _T71:
 	__asm        jmp    _T93e;
@@ -3069,16 +3066,14 @@ _T71:
 // LINE 1746:
 	this->direction = 0x3;
 // LINE 1747:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x55];
+	this->nextLocation.x++;
 // LINE 1749:
 	__asm        jmp    _Tab;
 // LINE 1751:
 _T9b:
 	this->direction = 0xc;
 // LINE 1752:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x59];
+	this->nextLocation.y++;
 // LINE 1754:
 _Tab:
 	__asm        jmp    _T93e;
@@ -3090,16 +3085,14 @@ _Tab:
 // LINE 1760:
 	this->direction = 0x9;
 // LINE 1761:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x55];
+	this->nextLocation.x--;
 // LINE 1763:
 	__asm        jmp    _Te5;
 // LINE 1765:
 _Td5:
 	this->direction = 0x6;
 // LINE 1766:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x59];
+	this->nextLocation.y++;
 // LINE 1768:
 _Te5:
 	__asm        jmp    _T93e;
@@ -3111,16 +3104,14 @@ _Te5:
 // LINE 1774:
 	this->direction = 0x3;
 // LINE 1775:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x59];
+	this->nextLocation.y--;
 // LINE 1777:
 	__asm        jmp    _T11f;
 // LINE 1779:
 _T10f:
 	this->direction = 0xc;
 // LINE 1780:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x55];
+	this->nextLocation.x--;
 // LINE 1782:
 _T11f:
 	__asm        jmp    _T93e;
@@ -3132,16 +3123,14 @@ _T11f:
 // LINE 1788:
 	this->direction = 0x1;
 // LINE 1789:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x59];
+	this->nextLocation.y--;
 // LINE 1791:
 	__asm        jmp    _T159;
 // LINE 1793:
 _T149:
 	this->direction = 0x4;
 // LINE 1794:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x59];
+	this->nextLocation.y++;
 // LINE 1796:
 _T159:
 	__asm        jmp    _T93e;
@@ -3153,16 +3142,14 @@ _T159:
 // LINE 1802:
 	this->direction = 0x8;
 // LINE 1803:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x55];
+	this->nextLocation.x--;
 // LINE 1805:
 	__asm        jmp    _T193;
 // LINE 1807:
 _T183:
 	this->direction = 0x2;
 // LINE 1808:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x55];
+	this->nextLocation.x++;
 // LINE 1810:
 _T193:
 	__asm        jmp    _T93e;
@@ -3174,16 +3161,14 @@ _T193:
 // LINE 1816:
 	this->direction = 0x1;
 // LINE 1817:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x59];
+	this->nextLocation.y--;
 // LINE 1819:
 	__asm        jmp    _T1cd;
 // LINE 1821:
 _T1bd:
 	this->direction = 0x14;
 // LINE 1822:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x59];
+	this->nextLocation.y++;
 // LINE 1824:
 _T1cd:
 	__asm        jmp    _T93e;
@@ -3195,16 +3180,14 @@ _T1cd:
 // LINE 1830:
 	this->direction = 0x11;
 // LINE 1831:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x59];
+	this->nextLocation.y--;
 // LINE 1833:
 	__asm        jmp    _T207;
 // LINE 1835:
 _T1f7:
 	this->direction = 0x4;
 // LINE 1836:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x59];
+	this->nextLocation.y++;
 // LINE 1838:
 _T207:
 	__asm        jmp    _T93e;
@@ -3216,16 +3199,14 @@ _T207:
 // LINE 1844:
 	this->direction = 0x18;
 // LINE 1845:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x55];
+	this->nextLocation.x--;
 // LINE 1847:
 	__asm        jmp    _T241;
 // LINE 1849:
 _T231:
 	this->direction = 0x2;
 // LINE 1850:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x55];
+	this->nextLocation.x++;
 // LINE 1852:
 _T241:
 	__asm        jmp    _T93e;
@@ -3237,16 +3218,14 @@ _T241:
 // LINE 1858:
 	this->direction = 0x8;
 // LINE 1859:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x55];
+	this->nextLocation.x--;
 // LINE 1861:
 	__asm        jmp    _T27b;
 // LINE 1863:
 _T26b:
 	this->direction = 0x12;
 // LINE 1864:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x55];
+	this->nextLocation.x++;
 // LINE 1866:
 _T27b:
 	__asm        jmp    _T93e;
@@ -3258,16 +3237,14 @@ _T27b:
 // LINE 1872:
 	this->direction = 0x1;
 // LINE 1873:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x59];
+	this->nextLocation.y--;
 // LINE 1875:
 	__asm        jmp    _T2b5;
 // LINE 1877:
 _T2a5:
 	this->direction = 0x14;
 // LINE 1878:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x59];
+	this->nextLocation.y++;
 // LINE 1880:
 _T2b5:
 	__asm        jmp    _T93e;
@@ -3279,16 +3256,14 @@ _T2b5:
 // LINE 1886:
 	this->direction = 0x11;
 // LINE 1887:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x59];
+	this->nextLocation.y--;
 // LINE 1889:
 	__asm        jmp    _T2ef;
 // LINE 1891:
 _T2df:
 	this->direction = 0x4;
 // LINE 1892:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x59];
+	this->nextLocation.y++;
 // LINE 1894:
 _T2ef:
 	__asm        jmp    _T93e;
@@ -3300,16 +3275,14 @@ _T2ef:
 // LINE 1900:
 	this->direction = 0x18;
 // LINE 1901:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x55];
+	this->nextLocation.x--;
 // LINE 1903:
 	__asm        jmp    _T329;
 // LINE 1905:
 _T319:
 	this->direction = 0x2;
 // LINE 1906:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x55];
+	this->nextLocation.x++;
 // LINE 1908:
 _T329:
 	__asm        jmp    _T93e;
@@ -3321,16 +3294,14 @@ _T329:
 // LINE 1914:
 	this->direction = 0x8;
 // LINE 1915:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x55];
+	this->nextLocation.x--;
 // LINE 1917:
 	__asm        jmp    _T363;
 // LINE 1919:
 _T353:
 	this->direction = 0x12;
 // LINE 1920:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x55];
+	this->nextLocation.x++;
 // LINE 1922:
 _T363:
 	__asm        jmp    _T93e;
@@ -3346,24 +3317,21 @@ _T363:
 _T380:
 	this->direction = 0x1;
 // LINE 1930:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x59];
+	this->nextLocation.y--;
 // LINE 1931:
 	__asm        jmp    _T3e7;
 // LINE 1933:
 _T395:
 	this->direction = 0x2;
 // LINE 1934:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x55];
+	this->nextLocation.x++;
 // LINE 1935:
 	__asm        jmp    _T3e7;
 // LINE 1937:
 _T3aa:
 	this->direction = 0x8;
 // LINE 1938:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x55];
+	this->nextLocation.x--;
 // LINE 1939:
 	__asm        jmp    _T3e7;
 // LINE 1940:
@@ -3394,24 +3362,21 @@ _T3e7:
 _T404:
 	this->direction = 0x1;
 // LINE 1949:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x59];
+	this->nextLocation.y--;
 // LINE 1950:
 	__asm        jmp    _T46b;
 // LINE 1952:
 _T419:
 	this->direction = 0x4;
 // LINE 1953:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x59];
+	this->nextLocation.y++;
 // LINE 1954:
 	__asm        jmp    _T46b;
 // LINE 1956:
 _T42e:
 	this->direction = 0x2;
 // LINE 1957:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x55];
+	this->nextLocation.x++;
 // LINE 1958:
 	__asm        jmp    _T46b;
 // LINE 1959:
@@ -3442,24 +3407,21 @@ _T46b:
 _T488:
 	this->direction = 0x4;
 // LINE 1968:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x59];
+	this->nextLocation.y++;
 // LINE 1969:
 	__asm        jmp    _T4ef;
 // LINE 1971:
 _T49d:
 	this->direction = 0x2;
 // LINE 1972:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x55];
+	this->nextLocation.x++;
 // LINE 1973:
 	__asm        jmp    _T4ef;
 // LINE 1975:
 _T4b2:
 	this->direction = 0x8;
 // LINE 1976:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x55];
+	this->nextLocation.x--;
 // LINE 1977:
 	__asm        jmp    _T4ef;
 // LINE 1978:
@@ -3490,24 +3452,21 @@ _T4ef:
 _T50c:
 	this->direction = 0x1;
 // LINE 1987:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x59];
+	this->nextLocation.y--;
 // LINE 1988:
 	__asm        jmp    _T573;
 // LINE 1990:
 _T521:
 	this->direction = 0x4;
 // LINE 1991:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x59];
+	this->nextLocation.y++;
 // LINE 1992:
 	__asm        jmp    _T573;
 // LINE 1994:
 _T536:
 	this->direction = 0x8;
 // LINE 1995:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x55];
+	this->nextLocation.x--;
 // LINE 1996:
 	__asm        jmp    _T573;
 // LINE 1997:
@@ -3535,29 +3494,25 @@ _T573:
 // LINE 2005:
 	this->direction = 0x1;
 // LINE 2006:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x59];
+	this->nextLocation.y--;
 // LINE 2007:
 	__asm        jmp    _T608;
 // LINE 2009:
 	this->direction = 0x4;
 // LINE 2010:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x59];
+	this->nextLocation.y++;
 // LINE 2011:
 	__asm        jmp    _T608;
 // LINE 2013:
 	this->direction = 0x8;
 // LINE 2014:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x55];
+	this->nextLocation.x--;
 // LINE 2015:
 	__asm        jmp    _T608;
 // LINE 2017:
 	this->direction = 0x2;
 // LINE 2018:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x55];
+	this->nextLocation.x++;
 // LINE 2019:
 	__asm        jmp    _T608;
 // LINE 2020:
@@ -3579,16 +3534,14 @@ _T608:
 // LINE 2028:
 	this->direction = 0x4;
 // LINE 2029:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x59];
+	this->nextLocation.y++;
 // LINE 2031:
 	__asm        jmp    _T63f;
 // LINE 2033:
 _T62f:
 	this->direction = 0x1;
 // LINE 2034:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x59];
+	this->nextLocation.y--;
 // LINE 2036:
 _T63f:
 	__asm        jmp    _T93e;
@@ -3599,16 +3552,14 @@ _T63f:
 // LINE 2043:
 	this->direction = 0x8;
 // LINE 2044:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x55];
+	this->nextLocation.x--;
 // LINE 2046:
 	__asm        jmp    _T676;
 // LINE 2048:
 _T666:
 	this->direction = 0x2;
 // LINE 2049:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x55];
+	this->nextLocation.x++;
 // LINE 2051:
 _T676:
 	__asm        jmp    _T93e;
@@ -3619,16 +3570,14 @@ _T676:
 // LINE 2058:
 	this->direction = 0x4;
 // LINE 2059:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x59];
+	this->nextLocation.y++;
 // LINE 2061:
 	__asm        jmp    _T6ad;
 // LINE 2063:
 _T69d:
 	this->direction = 0x1;
 // LINE 2064:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x59];
+	this->nextLocation.y--;
 // LINE 2066:
 _T6ad:
 	__asm        jmp    _T93e;
@@ -3639,16 +3588,14 @@ _T6ad:
 // LINE 2073:
 	this->direction = 0x8;
 // LINE 2074:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x55];
+	this->nextLocation.x--;
 // LINE 2076:
 	__asm        jmp    _T6e4;
 // LINE 2078:
 _T6d4:
 	this->direction = 0x2;
 // LINE 2079:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x55];
+	this->nextLocation.x++;
 // LINE 2081:
 _T6e4:
 	__asm        jmp    _T93e;
@@ -3659,16 +3606,14 @@ _T6e4:
 // LINE 2088:
 	this->direction = 0x4;
 // LINE 2089:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x59];
+	this->nextLocation.y++;
 // LINE 2091:
 	__asm        jmp    _T71b;
 // LINE 2093:
 _T70b:
 	this->direction = 0x1;
 // LINE 2094:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x59];
+	this->nextLocation.y--;
 // LINE 2096:
 _T71b:
 	__asm        jmp    _T93e;
@@ -3679,16 +3624,14 @@ _T71b:
 // LINE 2103:
 	this->direction = 0x8;
 // LINE 2104:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x55];
+	this->nextLocation.x--;
 // LINE 2106:
 	__asm        jmp    _T752;
 // LINE 2108:
 _T742:
 	this->direction = 0x2;
 // LINE 2109:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x55];
+	this->nextLocation.x++;
 // LINE 2111:
 _T752:
 	__asm        jmp    _T93e;
@@ -3699,16 +3642,14 @@ _T752:
 // LINE 2118:
 	this->direction = 0x4;
 // LINE 2119:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x59];
+	this->nextLocation.y++;
 // LINE 2121:
 	__asm        jmp    _T789;
 // LINE 2123:
 _T779:
 	this->direction = 0x1;
 // LINE 2124:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x59];
+	this->nextLocation.y--;
 // LINE 2126:
 _T789:
 	__asm        jmp    _T93e;
@@ -3720,16 +3661,14 @@ _T78e:
 // LINE 2133:
 	this->direction = 0x8;
 // LINE 2134:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x55];
+	this->nextLocation.x--;
 // LINE 2136:
 	__asm        jmp    _T7c0;
 // LINE 2138:
 _T7b0:
 	this->direction = 0x2;
 // LINE 2139:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x55];
+	this->nextLocation.x++;
 // LINE 2141:
 _T7c0:
 	__asm        jmp    _T93e;
@@ -3740,16 +3679,14 @@ _T7c0:
 // LINE 2148:
 	this->direction = 0x4;
 // LINE 2149:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x59];
+	this->nextLocation.y++;
 // LINE 2151:
 	__asm        jmp    _T7f7;
 // LINE 2153:
 _T7e7:
 	this->direction = 0x1;
 // LINE 2154:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x59];
+	this->nextLocation.y--;
 // LINE 2156:
 _T7f7:
 	__asm        jmp    _T93e;
@@ -3761,16 +3698,14 @@ _T7fc:
 // LINE 2163:
 	this->direction = 0x8;
 // LINE 2164:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x55];
+	this->nextLocation.x--;
 // LINE 2166:
 	__asm        jmp    _T82e;
 // LINE 2168:
 _T81e:
 	this->direction = 0x2;
 // LINE 2169:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x55];
+	this->nextLocation.x++;
 // LINE 2171:
 _T82e:
 	__asm        jmp    _T93e;
@@ -3923,16 +3858,14 @@ _Ta73:
 // LINE 2190:
 	this->direction = 0x9;
 // LINE 2191:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x59];
+	this->nextLocation.y--;
 // LINE 2193:
 	__asm        jmp    _Tacb;
 // LINE 2195:
 _Tabb:
 	this->direction = 0x6;
 // LINE 2196:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x55];
+	this->nextLocation.x++;
 // LINE 2198:
 _Tacb:
 	__asm        jmp    _T1371;
@@ -3943,16 +3876,14 @@ _Tacb:
 // LINE 2204:
 	this->direction = 0x3;
 // LINE 2205:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x55];
+	this->nextLocation.x++;
 // LINE 2207:
 	__asm        jmp    _Tb02;
 // LINE 2209:
 _Taf2:
 	this->direction = 0xc;
 // LINE 2210:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x59];
+	this->nextLocation.y++;
 // LINE 2212:
 _Tb02:
 	__asm        jmp    _T1371;
@@ -3963,16 +3894,14 @@ _Tb02:
 // LINE 2218:
 	this->direction = 0x9;
 // LINE 2219:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x55];
+	this->nextLocation.x--;
 // LINE 2221:
 	__asm        jmp    _Tb39;
 // LINE 2223:
 _Tb29:
 	this->direction = 0x6;
 // LINE 2224:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x59];
+	this->nextLocation.y++;
 // LINE 2226:
 _Tb39:
 	__asm        jmp    _T1371;
@@ -3983,16 +3912,14 @@ _Tb39:
 // LINE 2232:
 	this->direction = 0x3;
 // LINE 2233:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x59];
+	this->nextLocation.y--;
 // LINE 2235:
 	__asm        jmp    _Tb70;
 // LINE 2237:
 _Tb60:
 	this->direction = 0xc;
 // LINE 2238:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x55];
+	this->nextLocation.x--;
 // LINE 2240:
 _Tb70:
 	__asm        jmp    _T1371;
@@ -4003,16 +3930,14 @@ _Tb70:
 // LINE 2246:
 	this->direction = 0x1;
 // LINE 2247:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x59];
+	this->nextLocation.y--;
 // LINE 2249:
 	__asm        jmp    _Tba7;
 // LINE 2251:
 _Tb97:
 	this->direction = 0x4;
 // LINE 2252:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x59];
+	this->nextLocation.y++;
 // LINE 2254:
 _Tba7:
 	__asm        jmp    _T1371;
@@ -4023,16 +3948,14 @@ _Tba7:
 // LINE 2260:
 	this->direction = 0x8;
 // LINE 2261:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x55];
+	this->nextLocation.x--;
 // LINE 2263:
 	__asm        jmp    _Tbde;
 // LINE 2265:
 _Tbce:
 	this->direction = 0x2;
 // LINE 2266:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x55];
+	this->nextLocation.x++;
 // LINE 2268:
 _Tbde:
 	__asm        jmp    _T1371;
@@ -4043,16 +3966,14 @@ _Tbde:
 // LINE 2274:
 	this->direction = 0x1;
 // LINE 2275:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x59];
+	this->nextLocation.y--;
 // LINE 2277:
 	__asm        jmp    _Tc15;
 // LINE 2279:
 _Tc05:
 	this->direction = 0x14;
 // LINE 2280:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x59];
+	this->nextLocation.y++;
 // LINE 2282:
 _Tc15:
 	__asm        jmp    _T1371;
@@ -4063,16 +3984,14 @@ _Tc15:
 // LINE 2288:
 	this->direction = 0x11;
 // LINE 2289:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x59];
+	this->nextLocation.y--;
 // LINE 2291:
 	__asm        jmp    _Tc4c;
 // LINE 2293:
 _Tc3c:
 	this->direction = 0x4;
 // LINE 2294:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x59];
+	this->nextLocation.y++;
 // LINE 2296:
 _Tc4c:
 	__asm        jmp    _T1371;
@@ -4083,16 +4002,14 @@ _Tc4c:
 // LINE 2302:
 	this->direction = 0x18;
 // LINE 2303:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x55];
+	this->nextLocation.x--;
 // LINE 2305:
 	__asm        jmp    _Tc83;
 // LINE 2307:
 _Tc73:
 	this->direction = 0x2;
 // LINE 2308:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x55];
+	this->nextLocation.x++;
 // LINE 2310:
 _Tc83:
 	__asm        jmp    _T1371;
@@ -4103,16 +4020,14 @@ _Tc83:
 // LINE 2316:
 	this->direction = 0x8;
 // LINE 2317:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x55];
+	this->nextLocation.x--;
 // LINE 2319:
 	__asm        jmp    _Tcba;
 // LINE 2321:
 _Tcaa:
 	this->direction = 0x12;
 // LINE 2322:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x55];
+	this->nextLocation.x++;
 // LINE 2324:
 _Tcba:
 	__asm        jmp    _T1371;
@@ -4123,16 +4038,14 @@ _Tcba:
 // LINE 2330:
 	this->direction = 0x1;
 // LINE 2331:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x59];
+	this->nextLocation.y--;
 // LINE 2333:
 	__asm        jmp    _Tcf1;
 // LINE 2335:
 _Tce1:
 	this->direction = 0x14;
 // LINE 2336:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x59];
+	this->nextLocation.y++;
 // LINE 2338:
 _Tcf1:
 	__asm        jmp    _T1371;
@@ -4143,16 +4056,14 @@ _Tcf1:
 // LINE 2344:
 	this->direction = 0x11;
 // LINE 2345:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x59];
+	this->nextLocation.y--;
 // LINE 2347:
 	__asm        jmp    _Td28;
 // LINE 2349:
 _Td18:
 	this->direction = 0x4;
 // LINE 2350:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x59];
+	this->nextLocation.y++;
 // LINE 2352:
 _Td28:
 	__asm        jmp    _T1371;
@@ -4163,16 +4074,14 @@ _Td28:
 // LINE 2358:
 	this->direction = 0x18;
 // LINE 2359:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x55];
+	this->nextLocation.x--;
 // LINE 2361:
 	__asm        jmp    _Td5f;
 // LINE 2363:
 _Td4f:
 	this->direction = 0x2;
 // LINE 2364:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x55];
+	this->nextLocation.x++;
 // LINE 2366:
 _Td5f:
 	__asm        jmp    _T1371;
@@ -4183,16 +4092,14 @@ _Td5f:
 // LINE 2372:
 	this->direction = 0x8;
 // LINE 2373:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x55];
+	this->nextLocation.x--;
 // LINE 2375:
 	__asm        jmp    _Td96;
 // LINE 2377:
 _Td86:
 	this->direction = 0x12;
 // LINE 2378:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x55];
+	this->nextLocation.x++;
 // LINE 2380:
 _Td96:
 	__asm        jmp    _T1371;
@@ -4208,24 +4115,21 @@ _Td96:
 _Tdb3:
 	this->direction = 0x1;
 // LINE 2388:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x59];
+	this->nextLocation.y--;
 // LINE 2389:
 	__asm        jmp    _Te1a;
 // LINE 2391:
 _Tdc8:
 	this->direction = 0x2;
 // LINE 2392:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x55];
+	this->nextLocation.x++;
 // LINE 2393:
 	__asm        jmp    _Te1a;
 // LINE 2395:
 _Tddd:
 	this->direction = 0x8;
 // LINE 2396:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x55];
+	this->nextLocation.x--;
 // LINE 2397:
 	__asm        jmp    _Te1a;
 // LINE 2398:
@@ -4256,24 +4160,21 @@ _Te1a:
 _Te37:
 	this->direction = 0x1;
 // LINE 2407:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x59];
+	this->nextLocation.y--;
 // LINE 2408:
 	__asm        jmp    _Te9e;
 // LINE 2410:
 _Te4c:
 	this->direction = 0x4;
 // LINE 2411:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x59];
+	this->nextLocation.y++;
 // LINE 2412:
 	__asm        jmp    _Te9e;
 // LINE 2414:
 _Te61:
 	this->direction = 0x2;
 // LINE 2415:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x55];
+	this->nextLocation.x++;
 // LINE 2416:
 	__asm        jmp    _Te9e;
 // LINE 2417:
@@ -4304,24 +4205,21 @@ _Te9e:
 _Tebb:
 	this->direction = 0x4;
 // LINE 2426:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x59];
+	this->nextLocation.y++;
 // LINE 2427:
 	__asm        jmp    _Tf22;
 // LINE 2429:
 _Ted0:
 	this->direction = 0x2;
 // LINE 2430:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x55];
+	this->nextLocation.x++;
 // LINE 2431:
 	__asm        jmp    _Tf22;
 // LINE 2433:
 _Tee5:
 	this->direction = 0x8;
 // LINE 2434:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x55];
+	this->nextLocation.x--;
 // LINE 2435:
 	__asm        jmp    _Tf22;
 // LINE 2436:
@@ -4352,24 +4250,21 @@ _Tf22:
 _Tf3f:
 	this->direction = 0x1;
 // LINE 2445:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x59];
+	this->nextLocation.y--;
 // LINE 2446:
 	__asm        jmp    _Tfa6;
 // LINE 2448:
 _Tf54:
 	this->direction = 0x4;
 // LINE 2449:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x59];
+	this->nextLocation.y++;
 // LINE 2450:
 	__asm        jmp    _Tfa6;
 // LINE 2452:
 _Tf69:
 	this->direction = 0x8;
 // LINE 2453:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x55];
+	this->nextLocation.x--;
 // LINE 2454:
 	__asm        jmp    _Tfa6;
 // LINE 2455:
@@ -4397,29 +4292,25 @@ _Tfa6:
 // LINE 2463:
 	this->direction = 0x1;
 // LINE 2464:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x59];
+	this->nextLocation.y--;
 // LINE 2465:
 	__asm        jmp    _T103b;
 // LINE 2467:
 	this->direction = 0x4;
 // LINE 2468:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x59];
+	this->nextLocation.y++;
 // LINE 2469:
 	__asm        jmp    _T103b;
 // LINE 2471:
 	this->direction = 0x8;
 // LINE 2472:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x55];
+	this->nextLocation.x--;
 // LINE 2473:
 	__asm        jmp    _T103b;
 // LINE 2475:
 	this->direction = 0x2;
 // LINE 2476:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x55];
+	this->nextLocation.x++;
 // LINE 2477:
 	__asm        jmp    _T103b;
 // LINE 2478:
@@ -4441,16 +4332,14 @@ _T103b:
 // LINE 2486:
 	this->direction = 0x4;
 // LINE 2487:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x59];
+	this->nextLocation.y++;
 // LINE 2489:
 	__asm        jmp    _T1072;
 // LINE 2491:
 _T1062:
 	this->direction = 0x1;
 // LINE 2492:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x59];
+	this->nextLocation.y--;
 // LINE 2494:
 _T1072:
 	__asm        jmp    _T1371;
@@ -4462,16 +4351,14 @@ _T1077:
 // LINE 2501:
 	this->direction = 0x8;
 // LINE 2502:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x55];
+	this->nextLocation.x--;
 // LINE 2504:
 	__asm        jmp    _T10a9;
 // LINE 2506:
 _T1099:
 	this->direction = 0x2;
 // LINE 2507:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x55];
+	this->nextLocation.x++;
 // LINE 2509:
 _T10a9:
 	__asm        jmp    _T1371;
@@ -4482,16 +4369,14 @@ _T10a9:
 // LINE 2516:
 	this->direction = 0x4;
 // LINE 2517:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x59];
+	this->nextLocation.y++;
 // LINE 2519:
 	__asm        jmp    _T10e0;
 // LINE 2521:
 _T10d0:
 	this->direction = 0x1;
 // LINE 2522:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x59];
+	this->nextLocation.y--;
 // LINE 2524:
 _T10e0:
 	__asm        jmp    _T1371;
@@ -4503,16 +4388,14 @@ _T10e5:
 // LINE 2531:
 	this->direction = 0x8;
 // LINE 2532:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x55];
+	this->nextLocation.x--;
 // LINE 2534:
 	__asm        jmp    _T1117;
 // LINE 2536:
 _T1107:
 	this->direction = 0x2;
 // LINE 2537:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x55];
+	this->nextLocation.x++;
 // LINE 2539:
 _T1117:
 	__asm        jmp    _T1371;
@@ -4523,16 +4406,14 @@ _T1117:
 // LINE 2546:
 	this->direction = 0x4;
 // LINE 2547:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x59];
+	this->nextLocation.y++;
 // LINE 2549:
 	__asm        jmp    _T114e;
 // LINE 2551:
 _T113e:
 	this->direction = 0x1;
 // LINE 2552:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x59];
+	this->nextLocation.y--;
 // LINE 2554:
 _T114e:
 	__asm        jmp    _T1371;
@@ -4543,16 +4424,14 @@ _T114e:
 // LINE 2561:
 	this->direction = 0x8;
 // LINE 2562:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x55];
+	this->nextLocation.x--;
 // LINE 2564:
 	__asm        jmp    _T1185;
 // LINE 2566:
 _T1175:
 	this->direction = 0x2;
 // LINE 2567:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x55];
+	this->nextLocation.x++;
 // LINE 2569:
 _T1185:
 	__asm        jmp    _T1371;
@@ -4563,16 +4442,14 @@ _T1185:
 // LINE 2576:
 	this->direction = 0x4;
 // LINE 2577:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x59];
+	this->nextLocation.y++;
 // LINE 2579:
 	__asm        jmp    _T11bc;
 // LINE 2581:
 _T11ac:
 	this->direction = 0x1;
 // LINE 2582:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x59];
+	this->nextLocation.y--;
 // LINE 2584:
 _T11bc:
 	__asm        jmp    _T1371;
@@ -4583,16 +4460,14 @@ _T11bc:
 // LINE 2591:
 	this->direction = 0x8;
 // LINE 2592:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x55];
+	this->nextLocation.x--;
 // LINE 2594:
 	__asm        jmp    _T11f3;
 // LINE 2596:
 _T11e3:
 	this->direction = 0x2;
 // LINE 2597:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x55];
+	this->nextLocation.x++;
 // LINE 2599:
 _T11f3:
 	__asm        jmp    _T1371;
@@ -4603,16 +4478,14 @@ _T11f3:
 // LINE 2606:
 	this->direction = 0x4;
 // LINE 2607:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x59];
+	this->nextLocation.y++;
 // LINE 2609:
 	__asm        jmp    _T122a;
 // LINE 2611:
 _T121a:
 	this->direction = 0x1;
 // LINE 2612:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x59];
+	this->nextLocation.y--;
 // LINE 2614:
 _T122a:
 	__asm        jmp    _T1371;
@@ -4623,16 +4496,14 @@ _T122a:
 // LINE 2621:
 	this->direction = 0x8;
 // LINE 2622:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x55];
+	this->nextLocation.x--;
 // LINE 2624:
 	__asm        jmp    _T1261;
 // LINE 2626:
 _T1251:
 	this->direction = 0x2;
 // LINE 2627:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x55];
+	this->nextLocation.x++;
 // LINE 2629:
 _T1261:
 	__asm        jmp    _T1371;
@@ -8066,7 +7937,7 @@ _T166:
 	__asm        mov    y, eax;
 // LINE 3875:
 _T197:
-	__asm        inc    curr_dir;
+	curr_dir++;
 // LINE 3876:
 	__asm        mov    eax, curr_dir;
 	__asm        mov    [ebp-0x5C], eax;
@@ -8074,7 +7945,7 @@ _T197:
 // LINE 3880:
 	curr_dir = 0x0;
 // LINE 3881:
-	__asm        inc    curr_dist;
+	curr_dist++;
 // LINE 3882:
 	xdir = 0x0;
 // LINE 3883:
@@ -8088,7 +7959,7 @@ _T197:
 // LINE 3888:
 	__asm        jmp    _T22b;
 // LINE 3890:
-	__asm        inc    curr_dist;
+	curr_dist++;
 // LINE 3891:
 	xdir = 0x0;
 // LINE 3892:
@@ -8116,7 +7987,7 @@ _T22b:
 	__asm        cmp    spiral_dist, eax;
 	__asm        jne    _T241;
 // LINE 3904:
-	__asm        dec    curr_dist;
+	curr_dist--;
 // LINE 3905:
 	stop_now = 0x1;
 // LINE 3909:
@@ -8124,7 +7995,7 @@ _T241:
 	__asm        mov    i, 0;
 	__asm        jmp    _T250;
 _T24d:
-	__asm        inc    i;
+	i++;
 _T250:
 	__asm        mov    eax, i;
 	__asm        cmp    curr_dist, eax;
@@ -8473,7 +8344,7 @@ int32_t TrainClass::BeamToLocation(long mapx, long mapy) {
 	y = mapy;
 // LINE 4039:
 _T3b:
-	__asm        inc    curr_dir;
+	curr_dir++;
 // LINE 4040:
 	__asm        mov    eax, curr_dir;
 	__asm        mov    [ebp-0x4C], eax;
@@ -8481,7 +8352,7 @@ _T3b:
 // LINE 4044:
 	curr_dir = 0x0;
 // LINE 4045:
-	__asm        inc    curr_dist;
+	curr_dist++;
 // LINE 4046:
 	xdir = 0x0;
 // LINE 4047:
@@ -8495,7 +8366,7 @@ _T3b:
 // LINE 4052:
 	__asm        jmp    _Tcf;
 // LINE 4054:
-	__asm        inc    curr_dist;
+	curr_dist++;
 // LINE 4055:
 	xdir = 0x0;
 // LINE 4056:
@@ -8523,7 +8394,7 @@ _Tcf:
 	__asm        cmp    curr_dist, eax;
 	__asm        jne    _Te5;
 // LINE 4068:
-	__asm        dec    curr_dist;
+	curr_dist--;
 // LINE 4069:
 	stop_now = 0x1;
 // LINE 4073:
@@ -8531,7 +8402,7 @@ _Te5:
 	__asm        mov    i, 0;
 	__asm        jmp    _Tf4;
 _Tf1:
-	__asm        inc    i;
+	i++;
 _Tf4:
 	__asm        mov    eax, i;
 	__asm        cmp    curr_dist, eax;
@@ -9217,7 +9088,7 @@ int32_t TrainClass::FindTrainForRescue(long mission_id, int32_t timetolive) {
 	__asm        mov    currentTrainIndex, 0;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    currentTrainIndex;
+	currentTrainIndex++;
 _T18:
 	__asm        cmp    currentTrainIndex, 1;
 	__asm        jge    _T1d1;
@@ -9311,7 +9182,7 @@ _Td6:
 	__asm        mov    count, 0;
 	__asm        jmp    _T114;
 _T111:
-	__asm        inc    count;
+	count++;
 _T114:
 	__asm        mov    eax, numtostart;
 	__asm        cmp    count, eax;
@@ -9337,7 +9208,7 @@ _T114:
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jle    _T15c;
 // LINE 4783:
-	__asm        inc    totalpersons;
+	totalpersons++;
 // LINE 4785:
 _T15c:
 	__asm        jmp    _T111;
@@ -9437,7 +9308,7 @@ _T38:
 	__asm        mov    i, 0;
 	__asm        jmp    _T47;
 _T44:
-	__asm        inc    i;
+	i++;
 _T47:
 	__asm        cmp    i, 1;
 	__asm        jge    _T353;
@@ -9698,7 +9569,7 @@ int32_t TrainClass::MIFFSave(void * __ptr32 miffWriter) {
 	__asm        mov    i, 0;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    i;
+	i++;
 _T18:
 	__asm        cmp    i, 1;
 	__asm        jge    _T5c;

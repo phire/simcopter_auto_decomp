@@ -115,7 +115,7 @@ _T45:
 // LINE 72:
 	neg = 0x1;
 // LINE 73:
-	__asm        inc    count;
+	count++;
 // LINE 75:
 	__asm        jmp    _T96;
 _T7d:
@@ -127,7 +127,7 @@ _T7d:
 	__asm        cmp    edx, 0x2B;
 	__asm        jne    _T96;
 // LINE 77:
-	__asm        inc    count;
+	count++;
 // LINE 80:
 _T96:
 	digit = count;
@@ -233,7 +233,7 @@ _T13b:
 	__asm        mov    ecx, num;
 	__asm        mov    [ecx], eax;
 // LINE 92:
-	__asm        inc    digit;
+	digit++;
 // LINE 93:
 	__asm        jmp    _T13b;
 // LINE 94:
@@ -296,7 +296,7 @@ _T56:
 	__asm        test   eax, eax;
 	__asm        je     _Ta6;
 // LINE 121:
-	__asm        inc    power;
+	power++;
 // LINE 122:
 	__asm        cmp    power, 0xA;
 	__asm        jle    _T8c;
@@ -373,7 +373,7 @@ _Te9:
 	__asm        sub    eax, ecx;
 	__asm        mov    num, eax;
 // LINE 148:
-	__asm        inc    power;
+	power++;
 // LINE 149:
 // Block end:
 	__asm        jmp    _Te9;
@@ -478,7 +478,7 @@ _Td3:
 	__asm        add    eax, ecx;
 	__asm        mov    result, eax;
 // LINE 169:
-	__asm        inc    digit;
+	digit++;
 // LINE 170:
 	__asm        jmp    _T14;
 // LINE 171:
@@ -517,7 +517,7 @@ _T33:
 	__asm        test   eax, eax;
 	__asm        je     _T7f;
 // LINE 189:
-	__asm        inc    power;
+	power++;
 // LINE 190:
 	__asm        cmp    power, 7;
 	__asm        jle    _T6c;
@@ -582,7 +582,7 @@ _Td4:
 	__asm        neg    eax;
 	__asm        sub    num, eax;
 // LINE 206:
-	__asm        inc    power;
+	power++;
 // LINE 207:
 // Block end:
 	__asm        jmp    _T8e;
@@ -678,7 +678,7 @@ void CToPString(signed char * cstr, unsigned char * pstr) {
 	__asm        mov    count, 0;
 	__asm        jmp    _T29;
 _T26:
-	__asm        inc    count;
+	count++;
 _T29:
 	__asm        mov    eax, pstr;
 	__asm        xor    ecx, ecx;
@@ -1029,7 +1029,7 @@ _T3e:
 	__asm        mov    count, 1;
 	__asm        jmp    _T4d;
 _T49:
-	__asm        inc    count;
+	count++;
 _T4d:
 	__asm        movsx  eax, numChars;
 	__asm        movsx  ecx, count;

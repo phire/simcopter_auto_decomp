@@ -747,7 +747,7 @@ _Te8:
 	__asm        mov    Counter, 0;
 	__asm        jmp    _Tf7;
 _Tf4:
-	__asm        inc    Counter;
+	Counter++;
 _Tf7:
 	__asm        mov    eax, Counter;
 	__asm        cmp    Start, eax;
@@ -763,7 +763,7 @@ _T113:
 // LINE 239:
 	__asm        jmp    _T125;
 _T122:
-	__asm        inc    Counter;
+	Counter++;
 _T125:
 	__asm        mov    eax, End;
 	__asm        cmp    Counter, eax;
@@ -798,7 +798,7 @@ _T17c:
 _T181:
 	__asm        jmp    _T189;
 _T186:
-	__asm        inc    Counter;
+	Counter++;
 _T189:
 	__asm        mov    eax, End;
 	__asm        cmp    Counter, eax;
@@ -824,7 +824,7 @@ _T189:
 _T1cc:
 	__asm        jmp    _T1d4;
 _T1d1:
-	__asm        inc    Counter;
+	Counter++;
 _T1d4:
 	__asm        cmp    Counter, 0x100;
 	__asm        jge    _T1f1;

@@ -721,7 +721,7 @@ _T531:
 	__asm        jmp    _T564;
 // LINE 47:
 _T557:
-	__asm        inc    i;
+	i++;
 // LINE 48:
 	__asm        jmp    _T20;
 // LINE 49:

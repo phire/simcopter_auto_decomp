@@ -5924,7 +5924,7 @@ _Td2:
 	__asm        mov    i, 0;
 	__asm        jmp    _T123;
 _T120:
-	__asm        inc    i;
+	i++;
 _T123:
 	__asm        cmp    i, 0xE;
 	__asm        jge    _T14e;
@@ -6844,7 +6844,7 @@ _T57:
 	__asm        mov    i, 0;
 	__asm        jmp    _T78;
 _T75:
-	__asm        inc    i;
+	i++;
 _T78:
 	__asm        cmp    i, 0xE;
 	__asm        jge    _Te0;
@@ -6859,7 +6859,7 @@ _T78:
 	__asm        mov    j, 0;
 	__asm        jmp    _Ta8;
 _Ta5:
-	__asm        inc    j;
+	j++;
 _Ta8:
 	__asm        cmp    j, 0xE;
 	__asm        jge    _Tc8;
@@ -6927,7 +6927,7 @@ void JoystickWindow::DrawCurrentJoystick() {
 	__asm        mov    i, 0;
 	__asm        jmp    _T63;
 _T60:
-	__asm        inc    i;
+	i++;
 _T63:
 	__asm        cmp    i, 8;
 	__asm        jge    _T84;
@@ -6944,7 +6944,7 @@ _T84:
 	__asm        mov    i, 2;
 	__asm        jmp    _T93;
 _T90:
-	__asm        inc    i;
+	i++;
 _T93:
 	__asm        cmp    i, 6;
 	__asm        jge    _Tb4;
@@ -7151,7 +7151,7 @@ _T33:
 	__asm        mov    i, 0;
 	__asm        jmp    _T59;
 _T56:
-	__asm        inc    i;
+	i++;
 _T59:
 	__asm        cmp    i, 4;
 	__asm        jge    _Te0;
@@ -7436,7 +7436,7 @@ void JoystickWindow::GetNewJoystickControlStates(long * lNewJoystickControlState
 	__asm        mov    i, 6;
 	__asm        jmp    _T1b;
 _T18:
-	__asm        inc    i;
+	i++;
 _T1b:
 	__asm        cmp    i, 0xE;
 	__asm        jge    _T6a;
@@ -7468,7 +7468,7 @@ _T6a:
 	__asm        mov    i, 0;
 	__asm        jmp    _T79;
 _T76:
-	__asm        inc    i;
+	i++;
 _T79:
 	__asm        cmp    i, 6;
 	__asm        jge    _Ta8;
@@ -7724,7 +7724,7 @@ _T1b6:
 	__asm        mov    i, 2;
 	__asm        jmp    _T1c5;
 _T1c2:
-	__asm        inc    i;
+	i++;
 _T1c5:
 	__asm        cmp    i, 6;
 	__asm        jge    _T26f;
@@ -7783,7 +7783,7 @@ _T26f:
 	__asm        mov    i, 6;
 	__asm        jmp    _T27e;
 _T27b:
-	__asm        inc    i;
+	i++;
 _T27e:
 	__asm        cmp    i, 0xE;
 	__asm        jge    _T328;
@@ -11839,7 +11839,7 @@ _T7a:
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    near ptr 0x00409723;
 // LINE 1549:
-	__asm        inc    i;
+	i++;
 // LINE 1550:
 	__asm        jmp    _T7a;
 // LINE 1551:
@@ -11914,7 +11914,7 @@ _T7d:
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    near ptr 0x004097E7;
 // LINE 1571:
-	__asm        inc    i;
+	i++;
 // LINE 1572:
 	__asm        jmp    _T7d;
 // LINE 1573:
@@ -12229,7 +12229,7 @@ _T3eb:
 
 	__asm        jmp    near ptr 0x00409C58;
 // LINE 1622:
-	__asm        inc    i;
+	i++;
 // LINE 1623:
 	__asm        jmp    _T2a9;
 // LINE 1626:
@@ -12588,7 +12588,7 @@ _T909:
 	__asm        mov    i, 0;
 	__asm        jmp    _T99c;
 _T999:
-	__asm        inc    i;
+	i++;
 _T99c:
 	__asm        cmp    i, 0xE;
 	__asm        jge    _T9bf;
@@ -13137,7 +13137,7 @@ _T37f:
 	__asm        mov    i, 0;
 	__asm        jmp    _T3c0;
 _T3bd:
-	__asm        inc    i;
+	i++;
 _T3c0:
 	__asm        mov    eax, nJoystickCount;
 	__asm        cmp    i, eax;
@@ -13300,7 +13300,7 @@ _T6d:
 	__asm        mov    i, 2;
 	__asm        jmp    _T88;
 _T85:
-	__asm        inc    i;
+	i++;
 _T88:
 	__asm        cmp    i, 0x21;
 	__asm        jge    _T3a9;

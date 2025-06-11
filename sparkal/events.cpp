@@ -44,7 +44,7 @@ _T06:
 	__asm        jmp    _T48;
 // LINE 36:
 _T39:
-	__asm        inc    nEventStart;
+	nEventStart++;
 // LINE 37:
 	__asm        jmp    _T06;
 // LINE 38:

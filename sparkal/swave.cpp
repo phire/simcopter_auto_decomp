@@ -362,7 +362,7 @@ _T48:
 	__asm        mov    cT, 0;
 	__asm        jmp    _T64;
 _T61:
-	__asm        inc    cT;
+	cT++;
 _T64:
 	__asm        mov    eax, cbRead;
 	__asm        cmp    cT, eax;
@@ -406,7 +406,7 @@ _Tc0:
 // LINE 223:
 	tempBYTEPointerToFoolCrappyMicrosoftCompiler = mmioinfoIn.pchNext;
 // LINE 224:
-	__asm        inc    tempBYTEPointerToFoolCrappyMicrosoftCompiler;
+	tempBYTEPointerToFoolCrappyMicrosoftCompiler++;
 // LINE 225:
 	mmioinfoIn.pchNext = tempBYTEPointerToFoolCrappyMicrosoftCompiler;
 // LINE 226:

@@ -402,8 +402,7 @@ _T1f3:
 	__asm        jmp    _T2cf;
 // LINE 131:
 _T222:
-	__asm        mov    eax, numTypes;
-	__asm        inc    word ptr [eax];
+	numTypes[0]++;
 // LINE 132:
 	mapSize -= 0x2;
 // LINE 134:
@@ -1703,8 +1702,7 @@ _T33:
 	__asm        cmp    eax, [ecx+0x108];
 	__asm        jne    _T71;
 // LINE 758:
-	__asm        mov    eax, srch;
-	__asm        inc    dword ptr [eax+0x1C];
+	srch-><ResMap+0x1c:4>++;
 // LINE 759:
 	fromFile->fMap = srch;
 // LINE 760:
@@ -1815,8 +1813,7 @@ void  ResMap::Release() {
 	__asm        add    esp, 0x10;
 // LINE 787:
 _T35:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x1C];
+	this-><ResMap+0x1c:4>--;
 // LINE 788:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1C], 0;
@@ -2228,7 +2225,7 @@ _T20:
 _T3f:
 	typeList += 0x8;
 // LINE 903:
-	__asm        dec    cnt;
+	cnt--;
 // LINE 904:
 	__asm        jmp    _T20;
 // LINE 905:
@@ -2300,7 +2297,7 @@ _T27:
 _T7e:
 	typeList += 0x8;
 // LINE 928:
-	__asm        dec    cnt;
+	cnt--;
 // LINE 929:
 // Block end:
 	__asm        jmp    _T27;
@@ -2386,7 +2383,7 @@ _T27:
 _T46:
 	typeList += 0x8;
 // LINE 957:
-	__asm        dec    cnt;
+	cnt--;
 // LINE 958:
 	__asm        jmp    _T27;
 // LINE 959:
@@ -2427,7 +2424,7 @@ _T7e:
 _Ta7:
 	entryList += 0xc;
 // LINE 967:
-	__asm        dec    cnt;
+	cnt--;
 // LINE 968:
 	__asm        jmp    _T7e;
 // LINE 971:
@@ -2466,7 +2463,7 @@ _T27:
 _T46:
 	typeList += 0x8;
 // LINE 985:
-	__asm        dec    cnt;
+	cnt--;
 // LINE 986:
 	__asm        jmp    _T27;
 // LINE 987:
@@ -2527,7 +2524,7 @@ _T8d:
 _Tdd:
 	entryList += 0xc;
 // LINE 999:
-	__asm        dec    cnt;
+	cnt--;
 // LINE 1000:
 	__asm        jmp    _T8d;
 // LINE 1003:
@@ -2566,7 +2563,7 @@ _T27:
 _T46:
 	typeList += 0x8;
 // LINE 1017:
-	__asm        dec    cnt;
+	cnt--;
 // LINE 1018:
 	__asm        jmp    _T27;
 // LINE 1019:
@@ -2701,11 +2698,11 @@ void  ResMap::SwapResEntry(/*unpacked*/ struct ResMap::Entry *resEntry) {
 // LINE 1089:
 	hiWord = bptr[0];
 // LINE 1091:
-	__asm        inc    bptr;
+	bptr++;
 // LINE 1092:
 	midWord = bptr[0];
 // LINE 1094:
-	__asm        inc    bptr;
+	bptr++;
 // LINE 1095:
 	loWord = bptr[0];
 // LINE 1097:

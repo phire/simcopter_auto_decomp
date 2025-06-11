@@ -443,7 +443,7 @@ void CareerCityTweakInit() {
 	__asm        mov    i, 0;
 	__asm        jmp    _T1f;
 _T1c:
-	__asm        inc    i;
+	i++;
 _T1f:
 	__asm        cmp    i, 0x1F;
 	__asm        jge    _Ta5;
@@ -1453,7 +1453,7 @@ void InitializeAllCareerCitiesInfo() {
 	__asm        mov    i, 0;
 	__asm        jmp    _Tb58;
 _Tb55:
-	__asm        inc    i;
+	i++;
 _Tb58:
 	__asm        cmp    i, 0x1F;
 	__asm        jge    _Tc0a;

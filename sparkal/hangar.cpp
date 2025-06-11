@@ -2862,7 +2862,7 @@ _Td3:
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x00473C4D;
 // LINE 302:
-	__asm        inc    i;
+	i++;
 // LINE 303:
 	__asm        jmp    _T31;
 // LINE 304:

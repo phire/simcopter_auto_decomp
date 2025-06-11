@@ -1090,7 +1090,7 @@ _T96:
 	__asm        jmp    _Tb6;
 // LINE 368:
 _Tb3:
-	__asm        inc    lCount;
+	lCount++;
 // LINE 369:
 _Tb6:
 	__asm        jmp    _T96;
@@ -1298,8 +1298,7 @@ _T153:
 	__asm        jmp    _T19d;
 // LINE 450:
 _T18a:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x11C];
+	this->lPresentRecordIndex++;
 // LINE 451:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T19d;
@@ -1317,7 +1316,7 @@ long MIFF::GoToPreviousRecord() {
 	__asm        cmp    lTempPresentRecord, 0;
 	__asm        je     _T25;
 // LINE 475:
-	__asm        dec    lTempPresentRecord;
+	lTempPresentRecord--;
 // LINE 476:
 _T25:
 	__asm        mov    eax, lTempPresentRecord;
@@ -1422,7 +1421,7 @@ long MIFF::GoToNthRecord(long lRecordToGoTo) {
 	__asm        mov    lTempPresentRecord, 0;
 	__asm        jmp    _T26;
 _T23:
-	__asm        inc    lTempPresentRecord;
+	lTempPresentRecord++;
 _T26:
 	__asm        mov    eax, lRecordToGoTo;
 	__asm        cmp    lTempPresentRecord, eax;

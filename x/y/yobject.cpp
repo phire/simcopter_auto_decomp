@@ -3566,7 +3566,7 @@ _T10f:
 	__asm        mov    count, 0;
 	__asm        jmp    _T1f;
 _T1b:
-	__asm        inc    count;
+	count++;
 _T1f:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
@@ -3871,7 +3871,7 @@ _T5c:
 	__asm        mov    count, 0;
 	__asm        jmp    _T7e;
 _T7a:
-	__asm        inc    count;
+	count++;
 _T7e:
 	__asm        movsx  eax, count;
 	__asm        movsx  ecx, maxcount;
@@ -4316,7 +4316,7 @@ _Tad:
 	__asm        mov    count, 0;
 	__asm        jmp    _Tea;
 _Te6:
-	__asm        inc    count;
+	count++;
 _Tea:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 2;
@@ -4603,7 +4603,7 @@ _T454:
 	__asm        mov    count, 0;
 	__asm        jmp    _T468;
 _T464:
-	__asm        inc    count;
+	count++;
 _T468:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 2;
@@ -4816,7 +4816,7 @@ _T6ec:
 	__asm        mov    count, 0;
 	__asm        jmp    _T700;
 _T6fc:
-	__asm        inc    count;
+	count++;
 _T700:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 2;
@@ -5276,7 +5276,7 @@ void S3PersonInit() {
 	__asm        mov    i, 0;
 	__asm        jmp    _T1f;
 _T1c:
-	__asm        inc    i;
+	i++;
 _T1f:
 	__asm        cmp    i, 0x271;
 	__asm        jge    _T5d;
@@ -5349,7 +5349,7 @@ void S3PersonReset() {
 	__asm        mov    count, 0;
 	__asm        jmp    _T18;
 _T14:
-	__asm        inc    count;
+	count++;
 _T18:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
@@ -6621,7 +6621,7 @@ _Ta2:
 	__asm        mov    count, 0;
 	__asm        jmp    _Tb1;
 _Tad:
-	__asm        inc    count;
+	count++;
 _Tb1:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
@@ -7689,7 +7689,7 @@ _T71:
 	__asm        mov    count, 0;
 	__asm        jmp    _Tf5;
 _Tf1:
-	__asm        inc    count;
+	count++;
 _Tf5:
 	__asm        movsx  eax, count;
 	__asm        movsx  ecx, rectdiam;
@@ -7921,7 +7921,7 @@ _T53:
 	__asm        mov    count, 0;
 	__asm        jmp    _T1f;
 _T1b:
-	__asm        inc    count;
+	count++;
 _T1f:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
@@ -8076,7 +8076,7 @@ void cYObject::MakePlebes() {
 	__asm        mov    pindex, 0;
 	__asm        jmp    _T2d;
 _T2a:
-	__asm        inc    pindex;
+	pindex++;
 _T2d:
 	__asm        cmp    pindex, 0x64;
 	__asm        jge    _T1a2;
@@ -8243,7 +8243,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 	__asm        mov    count, 0;
 	__asm        jmp    _Tdd;
 _Td9:
-	__asm        inc    count;
+	count++;
 _Tdd:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 8;
@@ -8258,7 +8258,7 @@ _T101:
 	__asm        mov    count, 0;
 	__asm        jmp    _T110;
 _T10c:
-	__asm        inc    count;
+	count++;
 _T110:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 8;
@@ -8305,7 +8305,7 @@ _T1a0:
 	__asm        mov    count, 0;
 	__asm        jmp    _T1b8;
 _T1b4:
-	__asm        inc    count;
+	count++;
 _T1b8:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xE;
@@ -8385,7 +8385,7 @@ _T319:
 	__asm        mov    count, 0;
 	__asm        jmp    _T328;
 _T324:
-	__asm        inc    count;
+	count++;
 _T328:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x14;
@@ -8620,7 +8620,7 @@ _T693:
 	__asm        mov    count, 0;
 	__asm        jmp    _T6b0;
 _T6ac:
-	__asm        inc    count;
+	count++;
 _T6b0:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xE;
@@ -8637,7 +8637,7 @@ _T6b0:
 	__asm        mov    n, 1;
 	__asm        jmp    _T6ea;
 _T6e6:
-	__asm        inc    n;
+	n++;
 _T6ea:
 	__asm        movsx  eax, n;
 	__asm        cmp    eax, 0xA;
@@ -8672,7 +8672,7 @@ _T715:
 	__asm        mov    n, 4;
 	__asm        jmp    _T771;
 _T76d:
-	__asm        inc    n;
+	n++;
 _T771:
 	__asm        movsx  eax, n;
 	__asm        cmp    eax, 0xA;
@@ -8695,7 +8695,7 @@ _T79c:
 	__asm        mov    n, 3;
 	__asm        jmp    _T7c2;
 _T7be:
-	__asm        inc    n;
+	n++;
 _T7c2:
 	__asm        movsx  eax, n;
 	__asm        cmp    eax, 0xA;
@@ -8718,7 +8718,7 @@ _T7ed:
 	__asm        mov    n, 1;
 	__asm        jmp    _T813;
 _T80f:
-	__asm        inc    n;
+	n++;
 _T813:
 	__asm        movsx  eax, n;
 	__asm        cmp    eax, 0xA;
@@ -8758,7 +8758,7 @@ _T843:
 	__asm        mov    n, 5;
 	__asm        jmp    _T8ac;
 _T8a8:
-	__asm        inc    n;
+	n++;
 _T8ac:
 	__asm        movsx  eax, n;
 	__asm        cmp    eax, 0xA;
@@ -8791,7 +8791,7 @@ _T911:
 	__asm        mov    count, 0;
 	__asm        jmp    _T920;
 _T91c:
-	__asm        inc    count;
+	count++;
 _T920:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x12;
@@ -8809,7 +8809,7 @@ _T939:
 	__asm        mov    n, 1;
 	__asm        jmp    _T95a;
 _T956:
-	__asm        inc    n;
+	n++;
 _T95a:
 	__asm        movsx  eax, n;
 	__asm        cmp    eax, 0xA;
@@ -8841,7 +8841,7 @@ _T98a:
 	__asm        mov    n, 3;
 	__asm        jmp    _T9cf;
 _T9cb:
-	__asm        inc    n;
+	n++;
 _T9cf:
 	__asm        movsx  eax, n;
 	__asm        cmp    eax, 0xA;
@@ -8877,7 +8877,7 @@ _T9ff:
 	__asm        mov    n, 4;
 	__asm        jmp    _Ta56;
 _Ta52:
-	__asm        inc    n;
+	n++;
 _Ta56:
 	__asm        movsx  eax, n;
 	__asm        cmp    eax, 0xA;
@@ -8908,7 +8908,7 @@ _Taa4:
 	__asm        mov    count, 0;
 	__asm        jmp    _Tab3;
 _Taaf:
-	__asm        inc    count;
+	count++;
 _Tab3:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xE;
@@ -8968,7 +8968,7 @@ _Tb65:
 	__asm        mov    count, 0;
 	__asm        jmp    _Tb74;
 _Tb70:
-	__asm        inc    count;
+	count++;
 _Tb74:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x100;
@@ -9325,7 +9325,7 @@ _T1042:
 	__asm        mov    count, 0;
 	__asm        jmp    _T1051;
 _T104d:
-	__asm        inc    count;
+	count++;
 _T1051:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
@@ -9425,7 +9425,7 @@ _T118d:
 	__asm        mov    count, 0;
 	__asm        jmp    _T11ab;
 _T11a7:
-	__asm        inc    count;
+	count++;
 _T11ab:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x40;
@@ -10243,7 +10243,7 @@ _T156:
 	__asm        mov    y, eax;
 // LINE 1342:
 _T187:
-	__asm        inc    curr_dir;
+	curr_dir++;
 // LINE 1343:
 	__asm        mov    eax, curr_dir;
 	__asm        mov    [ebp-0x48], eax;
@@ -10251,7 +10251,7 @@ _T187:
 // LINE 1347:
 	curr_dir = 0x0;
 // LINE 1348:
-	__asm        inc    curr_dist;
+	curr_dist++;
 // LINE 1349:
 	xdir = 0x0;
 // LINE 1350:
@@ -10265,7 +10265,7 @@ _T187:
 // LINE 1355:
 	__asm        jmp    _T21b;
 // LINE 1357:
-	__asm        inc    curr_dist;
+	curr_dist++;
 // LINE 1358:
 	xdir = 0x0;
 // LINE 1359:
@@ -10293,7 +10293,7 @@ _T21b:
 	__asm        cmp    curr_dist, eax;
 	__asm        jne    _T230;
 // LINE 1371:
-	__asm        dec    curr_dist;
+	curr_dist--;
 // LINE 1372:
 	stop_now = 0x1;
 // LINE 1376:
@@ -10301,7 +10301,7 @@ _T230:
 	__asm        mov    i, 0;
 	__asm        jmp    _T23f;
 _T23c:
-	__asm        inc    i;
+	i++;
 _T23f:
 	__asm        mov    eax, i;
 	__asm        cmp    curr_dist, eax;
@@ -10359,7 +10359,7 @@ _T2c9:
 	__asm        cmp    eax, 1;
 	__asm        jne    _T301;
 // LINE 1402:
-	__asm        dec    cYObject::sBeamed;
+	cYObject::sBeamed--;
 // LINE 1403:
 	__asm        movsx  eax, cYObject::sBeamed;
 	__asm        test   eax, eax;
@@ -10689,7 +10689,7 @@ void LiberateMissionPeople(long missionid) {
 	__asm        mov    count, 0;
 	__asm        jmp    _T18;
 _T14:
-	__asm        inc    count;
+	count++;
 _T18:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
@@ -10789,7 +10789,7 @@ void KillMissionPeople(long missionid) {
 	__asm        mov    count, 0;
 	__asm        jmp    _T33;
 _T2f:
-	__asm        inc    count;
+	count++;
 _T33:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
@@ -11107,7 +11107,7 @@ _Tfb:
 	__asm        mov    count, 0;
 	__asm        jmp    _T11d;
 _T119:
-	__asm        inc    count;
+	count++;
 _T11d:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0xA;
@@ -11297,7 +11297,7 @@ _T256:
 	__asm        mov    count, 0;
 	__asm        jmp    _T26a;
 _T266:
-	__asm        inc    count;
+	count++;
 _T26a:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 4;
@@ -11638,7 +11638,7 @@ _T65e:
 	__asm        mov    count, 0;
 	__asm        jmp    _T673;
 _T66f:
-	__asm        inc    count;
+	count++;
 _T673:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 4;
@@ -11719,7 +11719,7 @@ _T673:
 	__asm        mov    cnt, 0;
 	__asm        jmp    _T749;
 _T745:
-	__asm        inc    cnt;
+	cnt++;
 _T749:
 	__asm        movsx  eax, cnt;
 	__asm        cmp    eax, 0xA;
@@ -11787,12 +11787,12 @@ _T7d7:
 	__asm        sub    eax, edx;
 	__asm        jne    _T7f6;
 // LINE 1671:
-	__asm        dec    destcellx;
+	destcellx--;
 // LINE 1672:
 	__asm        jmp    _T7fa;
 // LINE 1673:
 _T7f6:
-	__asm        dec    destcelly;
+	destcelly--;
 // LINE 1674:
 _T7fa:
 	__asm        movsx  eax, destcellx;
@@ -11905,12 +11905,12 @@ _T8fd:
 	__asm        sub    eax, edx;
 	__asm        jne    _T91c;
 // LINE 1729:
-	__asm        inc    cellx;
+	cellx++;
 // LINE 1730:
 	__asm        jmp    _T920;
 // LINE 1731:
 _T91c:
-	__asm        inc    celly;
+	celly++;
 // LINE 1733:
 // Block end:
 _T920:
@@ -13603,7 +13603,7 @@ void cYObject::SimulateAll() {
 // LINE 2089:
 	simulate = 0x1;
 // LINE 2090:
-	__asm        inc    cYObject::sSimTicks;
+	cYObject::sSimTicks++;
 // LINE 2091:
 	gNextTime = 0x147a;
 // LINE 2092:
@@ -13620,7 +13620,7 @@ _T56:
 	__asm        mov    count, 0;
 	__asm        jmp    _T77;
 _T73:
-	__asm        inc    count;
+	count++;
 _T77:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
@@ -13748,7 +13748,7 @@ _T1f8:
 	__asm        mov    count, 0;
 	__asm        jmp    _T207;
 _T203:
-	__asm        inc    count;
+	count++;
 _T207:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
@@ -14147,7 +14147,7 @@ _T53:
 	__asm        mov    count, 0;
 	__asm        jmp    _T1b;
 _T17:
-	__asm        inc    count;
+	count++;
 _T1b:
 	__asm        movsx  eax, count;
 	__asm        cmp    eax, 0x64;
@@ -18335,7 +18335,7 @@ void cYObject::DestroyObjects() {
 	__asm        mov    cnt, 0;
 	__asm        jmp    _T28;
 _T24:
-	__asm        inc    cnt;
+	cnt++;
 _T28:
 	__asm        movsx  eax, cnt;
 	__asm        cmp    eax, 0x64;
@@ -18696,7 +18696,7 @@ _T4a:
 	__asm        mov    id, 0;
 	__asm        jmp    _T59;
 _T55:
-	__asm        inc    id;
+	id++;
 _T59:
 	__asm        movsx  eax, id;
 	__asm        cmp    eax, 0x64;
@@ -19018,7 +19018,7 @@ void cYObject::cYObject(short type, /*unpacked*/ class Behavior *pBehavior, /*un
 	__asm        mov    cnt, 0;
 	__asm        jmp    _Tbe;
 _Tba:
-	__asm        inc    cnt;
+	cnt++;
 _Tbe:
 	__asm        movsx  eax, cnt;
 	__asm        cmp    eax, 0x30;
@@ -19035,7 +19035,7 @@ _Te1:
 	__asm        mov    cnt, 0;
 	__asm        jmp    _Tfc;
 _Tf8:
-	__asm        inc    cnt;
+	cnt++;
 _Tfc:
 	__asm        movsx  eax, cnt;
 	__asm        cmp    eax, 4;
@@ -19724,7 +19724,7 @@ void BodyDrawDebugInfo(/*unpacked*/ class CBackBuffer *buf) {
 	__asm        mov    count, 0;
 	__asm        jmp    _T2d;
 _T29:
-	__asm        inc    count;
+	count++;
 _T2d:
 	__asm        movsx  eax, count;
 	__asm        movsx  ecx, gBodyDebugInfoIndex;

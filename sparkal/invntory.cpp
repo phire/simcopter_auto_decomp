@@ -1153,7 +1153,7 @@ int32_t InventoryWindow::Initialize() {
 	__asm        mov    i, 0;
 	__asm        jmp    _T33;
 _T30:
-	__asm        inc    i;
+	i++;
 _T33:
 	__asm        cmp    i, 9;
 	__asm        jge    _T2bd;
@@ -1720,7 +1720,7 @@ _T873:
 	__asm        mov    i, 0;
 	__asm        jmp    _T882;
 _T87f:
-	__asm        inc    i;
+	i++;
 _T882:
 	__asm        cmp    i, 5;
 	__asm        jge    _T9a9;
@@ -2539,7 +2539,7 @@ _T24d:
 	__asm        mov    i, 0;
 	__asm        jmp    _T299;
 _T296:
-	__asm        inc    i;
+	i++;
 _T299:
 	__asm        cmp    i, 5;
 	__asm        jge    _T3bf;
@@ -2662,7 +2662,7 @@ void InventoryWindow::DrawInventory() {
 	__asm        mov    lCurrentRow, 0;
 	__asm        jmp    _T5c;
 _T59:
-	__asm        inc    lCurrentHeliType;
+	lCurrentHeliType++;
 _T5c:
 	__asm        cmp    lCurrentHeliType, 9;
 	__asm        jge    _T313;
@@ -2924,7 +2924,7 @@ _T2b4:
 	__asm        call   dword ptr [edx+0xC];
 // LINE 257:
 _T30b:
-	__asm        inc    lCurrentRow;
+	lCurrentRow++;
 // LINE 259:
 _T30e:
 	__asm        jmp    _T59;

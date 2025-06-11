@@ -499,9 +499,9 @@ _T1b8:
 	__asm        cmp    eax, G_ViewSize;
 	__asm        jne    _T3ef;
 // LINE 273:
-	__asm        dec    G_grid_ulc.x;
+	G_grid_ulc.x--;
 // LINE 274:
-	__asm        dec    G_grid_ulc.y;
+	G_grid_ulc.y--;
 // LINE 277:
 _T3ef:
 	__asm        jmp    _T51c;
@@ -535,9 +535,9 @@ _T3f4:
 	__asm        cmp    eax, G_ViewSize;
 	__asm        jne    _T455;
 // LINE 282:
-	__asm        inc    G_grid_ulc.x;
+	G_grid_ulc.x++;
 // LINE 283:
-	__asm        inc    G_grid_ulc.y;
+	G_grid_ulc.y++;
 // LINE 286:
 _T455:
 	__asm        jmp    _T51c;
@@ -575,9 +575,9 @@ _T45a:
 	__asm        cmp    eax, G_ViewSize;
 	__asm        jne    _T4c8;
 // LINE 293:
-	__asm        dec    G_grid_ulc.x;
+	G_grid_ulc.x--;
 // LINE 294:
-	__asm        dec    G_grid_ulc.y;
+	G_grid_ulc.y--;
 // LINE 297:
 _T4c8:
 	__asm        jmp    _T51c;
@@ -606,9 +606,9 @@ _T4cd:
 	__asm        cmp    eax, G_ViewSize;
 	__asm        jne    _T51c;
 // LINE 302:
-	__asm        inc    G_grid_ulc.x;
+	G_grid_ulc.x++;
 // LINE 303:
-	__asm        inc    G_grid_ulc.y;
+	G_grid_ulc.y++;
 // LINE 307:
 _T51c:
 }

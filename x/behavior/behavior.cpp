@@ -326,7 +326,7 @@ void Behavior::StdTreeSwizzle(/*unpacked*/ struct Behavior::Tree *tree, long siz
 	__asm        mov    count, 0;
 	__asm        jmp    _T24;
 _T20:
-	__asm        inc    count;
+	count++;
 _T24:
 	__asm        mov    eax, tree;
 	__asm        movsx  eax, word ptr [eax];

@@ -1279,7 +1279,7 @@ _Td5:
 	__asm        jmp    _Td5;
 // LINE 452:
 _Tf9:
-	__asm        inc    fires_found;
+	fires_found++;
 // LINE 458:
 	this->currentFire = stobj->user2;
 // LINE 461:

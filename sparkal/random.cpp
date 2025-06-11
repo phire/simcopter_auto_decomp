@@ -87,7 +87,7 @@ void Random::seed(unsigned long j) {
 	__asm        mov    i, 0;
 	__asm        jmp    _T2e;
 _T2b:
-	__asm        inc    i;
+	i++;
 _T2e:
 	__asm        cmp    i, 0x36;
 	__asm        jae    _T75;
@@ -118,7 +118,7 @@ _T75:
 	__asm        mov    loop, 0;
 	__asm        jmp    _T84;
 _T81:
-	__asm        inc    loop;
+	loop++;
 _T84:
 	__asm        cmp    loop, 4;
 	__asm        jge    _Td3;
@@ -126,7 +126,7 @@ _T84:
 	__asm        mov    i, 0;
 	__asm        jmp    _T9d;
 _T9a:
-	__asm        inc    i;
+	i++;
 _T9d:
 	__asm        cmp    i, 0x37;
 	__asm        jae    _Tce;

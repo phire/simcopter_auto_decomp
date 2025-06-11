@@ -719,7 +719,7 @@ void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long *lCoordin
 	__asm        mov    i, 0;
 	__asm        jmp    _T64;
 _T61:
-	__asm        inc    i;
+	i++;
 _T64:
 	__asm        mov    eax, lNewCount;
 	__asm        cmp    i, eax;
@@ -1114,7 +1114,7 @@ void HotSpot::HotSpot(/*packed*/ struct HotSpotResourceRecord *hotSpotResourceRe
 	__asm        mov    i, 0;
 	__asm        jmp    _T73;
 _T70:
-	__asm        inc    i;
+	i++;
 _T73:
 	__asm        mov    eax, lCount;
 	__asm        cmp    i, eax;
@@ -3255,7 +3255,7 @@ _T228:
 	__asm        mov    i, 1;
 	__asm        jmp    _T26e;
 _T26b:
-	__asm        inc    i;
+	i++;
 _T26e:
 	__asm        mov    eax, i;
 	__asm        cmp    nPointCount, eax;
@@ -3439,7 +3439,7 @@ _T9b:
 	__asm        mov    i, 0;
 	__asm        jmp    _Tba;
 _Tb7:
-	__asm        inc    i;
+	i++;
 _Tba:
 	__asm        mov    eax, nHotspotRecordCount;
 	__asm        cmp    i, eax;

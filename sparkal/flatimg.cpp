@@ -248,9 +248,9 @@ _T131:
 	__asm        neg    eax;
 	__asm        sub    XError, eax;
 // LINE 81:
-	__asm        inc    pSourceBits;
+	pSourceBits++;
 // LINE 82:
-	__asm        inc    XCount;
+	XCount++;
 // LINE 84:
 _T166:
 	__asm        jmp    _T131;
@@ -269,7 +269,7 @@ _T16b:
 // LINE 94:
 	pSourceLeft += SourceStride;
 // LINE 95:
-	__asm        inc    YCount;
+	YCount++;
 // LINE 97:
 // Block end:
 _T190:
@@ -1193,10 +1193,9 @@ _T99:
 	__asm        cmp    dword ptr [eax+0x10], 0;
 	__asm        je     _Tb2;
 // LINE 355:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+4];
+	this-><CFlatImage+0x04>++;
 // LINE 357:
-	__asm        inc    IFlatImage::lTotalLockCount;
+	IFlatImage::lTotalLockCount++;
 // LINE 360:
 _Tb2:
 	__asm        mov    eax, this;
@@ -1240,10 +1239,9 @@ _T68:
 	__asm        cmp    dword ptr [eax+0x10], 0;
 	__asm        je     _Teb;
 // LINE 368:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+4];
+	this-><CFlatImage+0x04>--;
 // LINE 370:
-	__asm        dec    IFlatImage::lTotalLockCount;
+	IFlatImage::lTotalLockCount--;
 // LINE 373:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;

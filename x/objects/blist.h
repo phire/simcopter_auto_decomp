@@ -387,7 +387,7 @@ _Tca:
 	__asm        mov    count, 1;
 	__asm        jmp    _T123;
 _T11f:
-	__asm        inc    count;
+	count++;
 _T123:
 	__asm        movsx  eax, count;
 	__asm        movsx  ecx, numThings;

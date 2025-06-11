@@ -566,7 +566,7 @@ int32_t CriminalEvaderCarClass::StartCriminalMission(short mID, short mType, lon
 	__asm        mov    i, 0;
 	__asm        jmp    _T24;
 _T21:
-	__asm        inc    i;
+	i++;
 _T24:
 	__asm        cmp    i, 5;
 	__asm        jge    _T118;

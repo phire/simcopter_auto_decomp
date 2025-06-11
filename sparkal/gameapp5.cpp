@@ -552,7 +552,7 @@ void  CGameApp::DrawCrosshairs(/*packed*/ class CBackBuffer *bufferToDrawTo) {
 	__asm        mov    i, 0;
 	__asm        jmp    _T84;
 _T81:
-	__asm        inc    i;
+	i++;
 _T84:
 	__asm        cmp    i, 0x1C;
 	__asm        jge    _Ta6;
@@ -576,7 +576,7 @@ _Ta6:
 	__asm        mov    i, 0;
 	__asm        jmp    _Tc8;
 _Tc5:
-	__asm        inc    i;
+	i++;
 _Tc8:
 	__asm        cmp    i, 0x1C;
 	__asm        jge    _Tea;
@@ -587,7 +587,7 @@ _Tc8:
 	__asm        mov    ecx, pBufferCurrentPosition;
 	__asm        mov    byte ptr [eax+ecx], 0;
 // LINE 253:
-	__asm        inc    pBufferCurrentPosition;
+	pBufferCurrentPosition++;
 // LINE 254:
 	__asm        jmp    _Tc5;
 // LINE 255:

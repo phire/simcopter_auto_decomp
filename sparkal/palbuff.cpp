@@ -404,7 +404,7 @@ int32_t PaletteBuffer::SetPalette(const /*packed*/ struct SparkalColor *pColors)
 	__asm        mov    i, 0;
 	__asm        jmp    _T1b;
 _T18:
-	__asm        inc    i;
+	i++;
 _T1b:
 	__asm        cmp    i, 0x100;
 	__asm        jge    _T45;
@@ -453,7 +453,7 @@ _T2d:
 	__asm        mov    i, 0;
 	__asm        jmp    _T5c;
 _T59:
-	__asm        inc    i;
+	i++;
 _T5c:
 	__asm        cmp    i, 0x100;
 	__asm        jge    _Tba;
@@ -528,7 +528,7 @@ void PaletteBuffer::DrawPalette() {
 	__asm        mov    i, 0;
 	__asm        jmp    _T66;
 _T63:
-	__asm        inc    i;
+	i++;
 _T66:
 	__asm        cmp    i, 0x100;
 	__asm        jge    _T15f;

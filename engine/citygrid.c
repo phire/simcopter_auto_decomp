@@ -79,7 +79,7 @@ short VRInitGridObj(long ViewSize) {
 _T38:
 	__asm        jmp    _T40;
 // LINE 144:
-	__asm        inc    ViewSize;
+	ViewSize++;
 // LINE 146:
 _T40:
 	__asm        cmp    ViewSize, 0xD;
@@ -286,7 +286,7 @@ _T6a:
 	__asm        mov    y, 0;
 	__asm        jmp    _T2ff;
 _T2fc:
-	__asm        inc    y;
+	y++;
 _T2ff:
 	__asm        mov    eax, y;
 	__asm        cmp    G_ViewSize, eax;
@@ -295,7 +295,7 @@ _T2ff:
 	__asm        mov    x, 0;
 	__asm        jmp    _T31d;
 _T31a:
-	__asm        inc    x;
+	x++;
 _T31d:
 	__asm        mov    eax, x;
 	__asm        cmp    G_ViewSize, eax;
@@ -379,7 +379,7 @@ _T35d:
 	__asm        mov    i, 0;
 	__asm        jmp    _T41c;
 _T418:
-	__asm        inc    i;
+	i++;
 _T41c:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, G_VertDim;
@@ -390,7 +390,7 @@ _T41c:
 	__asm        mov    j, 0;
 	__asm        jmp    _T441;
 _T43d:
-	__asm        inc    j;
+	j++;
 _T441:
 	__asm        movsx  eax, j;
 	__asm        cmp    eax, G_VertDim;
@@ -420,7 +420,7 @@ _T480:
 	__asm        mov    y, 0;
 	__asm        jmp    _T497;
 _T494:
-	__asm        inc    y;
+	y++;
 _T497:
 	__asm        mov    eax, y;
 	__asm        cmp    G_ViewSize, eax;
@@ -429,7 +429,7 @@ _T497:
 	__asm        mov    x, 0;
 	__asm        jmp    _T4b5;
 _T4b2:
-	__asm        inc    x;
+	x++;
 _T4b5:
 	__asm        mov    eax, x;
 	__asm        cmp    G_ViewSize, eax;
@@ -443,7 +443,7 @@ _T4b5:
 	__asm        mov    i, 0;
 	__asm        jmp    _T4e2;
 _T4de:
-	__asm        inc    i;
+	i++;
 _T4e2:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 2;

@@ -680,7 +680,7 @@ int32_t S3StartSpeederMission() {
 	__asm        mov    i, 1;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    i;
+	i++;
 _T18:
 	__asm        cmp    i, 0x46;
 	__asm        jge    _Tdd;
@@ -846,7 +846,7 @@ _Ta0:
 	__asm        mov    i, 0;
 	__asm        jmp    _T36;
 _T33:
-	__asm        inc    i;
+	i++;
 _T36:
 	__asm        cmp    i, 5;
 	__asm        jge    _Taa;
@@ -904,7 +904,7 @@ _Td5:
 	__asm        mov    i, 0;
 	__asm        jmp    _Te4;
 _Te1:
-	__asm        inc    i;
+	i++;
 _Te4:
 	__asm        cmp    i, 5;
 	__asm        jge    _T158;
@@ -962,7 +962,7 @@ _T183:
 	__asm        mov    i, 0;
 	__asm        jmp    _T192;
 _T18f:
-	__asm        inc    i;
+	i++;
 _T192:
 	__asm        cmp    i, 5;
 	__asm        jge    _T206;
@@ -1020,7 +1020,7 @@ _T231:
 	__asm        mov    i, 0;
 	__asm        jmp    _T240;
 _T23d:
-	__asm        inc    i;
+	i++;
 _T240:
 	__asm        cmp    i, 5;
 	__asm        jge    _T2b4;
@@ -1436,7 +1436,7 @@ void AutomobileClass::ResetAll() {
 	__asm        mov    currentCarIndex, 0;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    currentCarIndex;
+	currentCarIndex++;
 _T18:
 	__asm        cmp    currentCarIndex, 0x46;
 	__asm        jge    _T36;
@@ -1459,7 +1459,7 @@ void AutomobileClass::ItterateAll() {
 	__asm        mov    currentCarIndex, 0;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    currentCarIndex;
+	currentCarIndex++;
 _T18:
 	__asm        cmp    currentCarIndex, 0x46;
 	__asm        jge    _T36;
@@ -2400,8 +2400,7 @@ _T75d:
 	__asm        cmp    dword ptr [eax+0x116], 0;
 	__asm        jle    _T776;
 // LINE 1004:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x116];
+	this->spotlightHitCounter--;
 // LINE 1009:
 _T776:
 	__asm        mov    eax, this;
@@ -3507,7 +3506,7 @@ _T74a:
 	__asm        mov    i, 0;
 	__asm        jmp    _T779;
 _T773:
-	__asm        inc    i;
+	i++;
 _T779:
 	__asm        cmp    i, 4;
 	__asm        jge    _T99e;
@@ -3712,7 +3711,7 @@ _T9c5:
 	__asm        mov    i, 0;
 	__asm        jmp    _Ta26;
 _Ta20:
-	__asm        inc    i;
+	i++;
 _Ta26:
 	__asm        cmp    i, 4;
 	__asm        jge    _Ta6c;
@@ -5042,8 +5041,7 @@ void AutomobileClass::TransitionBetweenGoals() {
 	__asm        cmp    dword ptr [eax+0xEE], 9;
 	__asm        jge    _T64;
 // LINE 2233:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0xEE];
+	this->legOfTurn++;
 // LINE 2234:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x96];
@@ -7238,7 +7236,7 @@ int32_t AutomobileClass::MissionStartFire(long mission_id, /*packed*/ struct Poi
 	__asm        mov    currentCarIndex, 0;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    currentCarIndex;
+	currentCarIndex++;
 _T18:
 	__asm        cmp    currentCarIndex, 0x46;
 	__asm        jge    _T53;
@@ -7302,7 +7300,7 @@ int32_t AutomobileClass::MissionStartJam(long mission_id, /*packed*/ struct Poin
 	__asm        mov    currentCarIndex, 0;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    currentCarIndex;
+	currentCarIndex++;
 _T18:
 	__asm        cmp    currentCarIndex, 0x46;
 	__asm        jge    _T53;
@@ -7846,7 +7844,7 @@ void AutomobileClass::MissionCancel(long mission_id) {
 	__asm        mov    currentCarIndex, 0;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    currentCarIndex;
+	currentCarIndex++;
 _T18:
 	__asm        cmp    currentCarIndex, 0x46;
 	__asm        jge    _T77;
@@ -7900,7 +7898,7 @@ void AutomobileClass::SetAllHeadlights(int32_t lights_on) {
 	__asm        mov    currentCarIndex, 0;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    currentCarIndex;
+	currentCarIndex++;
 _T18:
 	__asm        cmp    currentCarIndex, 0x46;
 	__asm        jge    _T60;
@@ -7958,7 +7956,7 @@ void AutomobileClass::TurnOnHeadlight() {
 	__asm        mov    count, 0;
 	__asm        jmp    _T40;
 _T3d:
-	__asm        inc    count;
+	count++;
 _T40:
 	__asm        mov    eax, count;
 	__asm        cmp    oinfo.Faces, eax;
@@ -8022,7 +8020,7 @@ void AutomobileClass::TurnOffHeadlight() {
 	__asm        mov    count, 0;
 	__asm        jmp    _T40;
 _T3d:
-	__asm        inc    count;
+	count++;
 _T40:
 	__asm        mov    eax, count;
 	__asm        cmp    oinfo.Faces, eax;
@@ -8442,23 +8440,19 @@ _T44b:
 	__asm        mov    [ebp-0x30], eax;
 	__asm        jmp    _T4b2;
 // LINE 3690:
-	__asm        mov    eax, this;
-	__asm        dec    byte ptr [eax+0xD5];
+	this->nextLocation.y--;
 // LINE 3691:
 	__asm        jmp    _T50d;
 // LINE 3694:
-	__asm        mov    eax, this;
-	__asm        inc    byte ptr [eax+0xD5];
+	this->nextLocation.y++;
 // LINE 3695:
 	__asm        jmp    _T50d;
 // LINE 3698:
-	__asm        mov    eax, this;
-	__asm        inc    byte ptr [eax+0xD4];
+	this->nextLocation.x++;
 // LINE 3699:
 	__asm        jmp    _T50d;
 // LINE 3702:
-	__asm        mov    eax, this;
-	__asm        dec    byte ptr [eax+0xD4];
+	this->nextLocation.x--;
 // LINE 3703:
 	__asm        jmp    _T50d;
 // LINE 3704:
@@ -9728,14 +9722,12 @@ _T248:
 	__asm        test   cl, 1;
 	__asm        je     _T266;
 // LINE 4068:
-	__asm        mov    eax, this;
-	__asm        dec    byte ptr [eax+0xDC];
+	this->westCell.x--;
 // LINE 4069:
 	__asm        jmp    _T26f;
 // LINE 4070:
 _T266:
-	__asm        mov    eax, this;
-	__asm        inc    byte ptr [eax+0xDA];
+	this->eastCell.x++;
 // LINE 4071:
 _T26f:
 	__asm        mov    eax, point;
@@ -9744,14 +9736,12 @@ _T26f:
 	__asm        test   cl, 1;
 	__asm        je     _T28e;
 // LINE 4072:
-	__asm        mov    eax, this;
-	__asm        dec    byte ptr [eax+0xD7];
+	this->northCell.y--;
 // LINE 4073:
 	__asm        jmp    _T297;
 // LINE 4074:
 _T28e:
-	__asm        mov    eax, this;
-	__asm        inc    byte ptr [eax+0xD9];
+	this->southCell.y++;
 // LINE 4077:
 _T297:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(currentTile);
@@ -9765,8 +9755,7 @@ _T297:
 	__asm        test   cl, 1;
 	__asm        jne    _T2c0;
 // LINE 4081:
-	__asm        mov    eax, this;
-	__asm        inc    byte ptr [eax+0xDB];
+	this->eastCell.y++;
 // LINE 4082:
 _T2c0:
 	__asm        jmp    _T367;
@@ -9777,8 +9766,7 @@ _T2c0:
 	__asm        test   cl, 1;
 	__asm        jne    _T2de;
 // LINE 4085:
-	__asm        mov    eax, this;
-	__asm        inc    byte ptr [eax+0xD6];
+	this->northCell.x++;
 // LINE 4086:
 _T2de:
 	__asm        jmp    _T367;
@@ -9789,8 +9777,7 @@ _T2de:
 	__asm        test   cl, 1;
 	__asm        je     _T2fc;
 // LINE 4089:
-	__asm        mov    eax, this;
-	__asm        dec    byte ptr [eax+0xD8];
+	this->southCell.x--;
 // LINE 4090:
 _T2fc:
 	__asm        jmp    _T367;
@@ -9801,8 +9788,7 @@ _T2fc:
 	__asm        test   cl, 1;
 	__asm        je     _T31a;
 // LINE 4093:
-	__asm        mov    eax, this;
-	__asm        dec    byte ptr [eax+0xDD];
+	this->westCell.y--;
 // LINE 4094:
 _T31a:
 	__asm        jmp    _T367;
@@ -10737,7 +10723,7 @@ _T38:
 	__asm        mov    i, 0;
 	__asm        jmp    _T47;
 _T44:
-	__asm        inc    i;
+	i++;
 _T47:
 	__asm        cmp    i, 0x46;
 	__asm        jge    _Tad;
@@ -10787,7 +10773,7 @@ int32_t AutomobileClass::MIFFSave(void * __ptr32 miffWriter) {
 	__asm        mov    i, 0;
 	__asm        jmp    _T18;
 _T15:
-	__asm        inc    i;
+	i++;
 _T18:
 	__asm        cmp    i, 0x46;
 	__asm        jge    _T74;
@@ -11632,7 +11618,7 @@ _T4c:
 	__asm        mov    count, 0;
 	__asm        jmp    _T80;
 _T7d:
-	__asm        inc    count;
+	count++;
 _T80:
 	__asm        mov    eax, count;
 	__asm        cmp    oinfo.Faces, eax;

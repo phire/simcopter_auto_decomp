@@ -165,7 +165,7 @@ _T20:
 	__asm        mov    index, 0;
 	__asm        jmp    _T2f;
 _T2c:
-	__asm        inc    index;
+	index++;
 _T2f:
 	__asm        cmp    index, 0x20;
 	__asm        jge    _T54;
@@ -204,7 +204,7 @@ _T68:
 	__asm        jmp    _Ta6;
 // LINE 313:
 _T98:
-	__asm        inc    poolCount;
+	poolCount++;
 // LINE 314:
 	__asm        mov    eax, index;
 	__asm        jmp    _Ta6;
@@ -477,7 +477,7 @@ _T9e:
 	__asm        mov    eax, index;
 	__asm        mov    root[0][eax*4], 0;
 // LINE 513:
-	__asm        dec    poolCount;
+	poolCount--;
 // LINE 516:
 	__asm        call   _heapmin;
 // LINE 517:

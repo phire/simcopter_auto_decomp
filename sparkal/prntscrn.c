@@ -178,7 +178,7 @@ _T4b:
 	__asm        mov    y, 0;
 	__asm        jmp    _Tf6;
 _Tf3:
-	__asm        inc    y;
+	y++;
 _Tf6:
 	__asm        mov    eax, y;
 	__asm        cmp    ydim, eax;
@@ -223,7 +223,7 @@ _T121:
 	__asm        mov    y, 0;
 	__asm        jmp    _T171;
 _T16e:
-	__asm        inc    y;
+	y++;
 _T171:
 	__asm        cmp    y, 0x100;
 	__asm        jge    _T1bf;
@@ -382,7 +382,7 @@ _T131:
 	__asm        jmp    _T1d7;
 // LINE 151:
 _T16e:
-	__asm        inc    j;
+	j++;
 // LINE 153:
 _T172:
 	__asm        mov    ax, t;
@@ -404,7 +404,7 @@ _T172:
 	__asm        jmp    _T1d7;
 // LINE 154:
 _T1ad:
-	__asm        inc    j;
+	j++;
 // LINE 156:
 _T1b1:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(t);

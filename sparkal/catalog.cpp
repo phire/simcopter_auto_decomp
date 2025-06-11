@@ -1328,7 +1328,7 @@ _Tf1d:
 	__asm        mov    i, 0;
 	__asm        jmp    _Tf42;
 _Tf3f:
-	__asm        inc    i;
+	i++;
 _Tf42:
 	__asm        cmp    i, 3;
 	__asm        jge    _Tfb4;
@@ -1362,7 +1362,7 @@ _Tfb4:
 	__asm        mov    i, 0;
 	__asm        jmp    _Tfc3;
 _Tfc0:
-	__asm        inc    i;
+	i++;
 _Tfc3:
 	__asm        cmp    i, 3;
 	__asm        jge    _T1035;
@@ -4804,7 +4804,7 @@ _T1df3:
 	__asm        mov    i, 0;
 	__asm        jmp    _T1f9a;
 _T1f94:
-	__asm        inc    i;
+	i++;
 _T1f9a:
 	__asm        cmp    i, 5;
 	__asm        jge    _T2046;
@@ -4886,7 +4886,7 @@ _T2046:
 	__asm        mov    i, 0;
 	__asm        jmp    _T213c;
 _T2136:
-	__asm        inc    i;
+	i++;
 _T213c:
 	__asm        cmp    i, 5;
 	__asm        jge    _T245a;
@@ -5551,7 +5551,7 @@ _T2b1e:
 	__asm        mov    i, 0;
 	__asm        jmp    _T2b91;
 _T2b8b:
-	__asm        inc    i;
+	i++;
 _T2b91:
 	__asm        cmp    i, 3;
 	__asm        jge    _T2c21;
@@ -5629,7 +5629,7 @@ _T2c2c:
 	__asm        mov    i, 0;
 	__asm        jmp    _T2c9f;
 _T2c99:
-	__asm        inc    i;
+	i++;
 _T2c9f:
 	__asm        cmp    i, 3;
 	__asm        jge    _T2d2f;
@@ -6353,7 +6353,7 @@ int32_t CatalogWindow::DoesTabHaveAnyStains(long lTab) {
 	__asm        mov    i, 0;
 	__asm        jmp    _T1b;
 _T18:
-	__asm        inc    i;
+	i++;
 _T1b:
 	__asm        cmp    i, 3;
 	__asm        jge    _T4a;
@@ -6385,7 +6385,7 @@ int32_t CatalogWindow::DoesTabHaveAnyPaperClips(long lTab) {
 	__asm        mov    i, 0;
 	__asm        jmp    _T1b;
 _T18:
-	__asm        inc    i;
+	i++;
 _T1b:
 	__asm        cmp    i, 3;
 	__asm        jge    _T4a;
@@ -7064,7 +7064,7 @@ _Te1:
 	__asm        mov    i, 0;
 	__asm        jmp    _Tf0;
 _Ted:
-	__asm        inc    i;
+	i++;
 _Tf0:
 	__asm        cmp    i, 5;
 	__asm        jge    _T176;

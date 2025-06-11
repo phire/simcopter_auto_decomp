@@ -215,7 +215,7 @@ _T74:
 	__asm        mov    x, 0;
 	__asm        jmp    _Ta9;
 _Ta6:
-	__asm        inc    x;
+	x++;
 _Ta9:
 	__asm        cmp    x, 0x80;
 	__asm        jge    _T118;
@@ -225,7 +225,7 @@ _Ta9:
 	__asm        mov    yindex, 0;
 	__asm        jmp    _Tc5;
 _Tc2:
-	__asm        inc    yindex;
+	yindex++;
 _Tc5:
 	__asm        mov    eax, x;
 	__asm        xor    ecx, ecx;
@@ -337,7 +337,7 @@ _T1e9:
 	__asm        mov    i, 0;
 	__asm        jmp    _T1f8;
 _T1f5:
-	__asm        inc    i;
+	i++;
 _T1f8:
 	__asm        cmp    i, 4;
 	__asm        jge    _T2a3;
@@ -475,7 +475,7 @@ _T85:
 	__asm        mov    x, 0;
 	__asm        jmp    _Tba;
 _Tb7:
-	__asm        inc    x;
+	x++;
 _Tba:
 	__asm        cmp    x, 0x80;
 	__asm        jge    _T129;
@@ -485,7 +485,7 @@ _Tba:
 	__asm        mov    yindex, 0;
 	__asm        jmp    _Td6;
 _Td3:
-	__asm        inc    yindex;
+	yindex++;
 _Td6:
 	__asm        mov    eax, x;
 	__asm        xor    ecx, ecx;
@@ -619,7 +619,7 @@ _T238:
 	__asm        mov    i, 0;
 	__asm        jmp    _T247;
 _T244:
-	__asm        inc    i;
+	i++;
 _T247:
 	__asm        cmp    i, 4;
 	__asm        jge    _T30e;
@@ -887,7 +887,7 @@ _T83:
 	__asm        cmp    [eax+ecx+5], edx;
 	__asm        jge    _Td8;
 // LINE 297:
-	__asm        inc    child;
+	child++;
 // LINE 300:
 _Td8:
 	__asm        mov    eax, this;

@@ -93,8 +93,7 @@ _T25:
 	__asm        jne    _T74;
 // LINE 33:
 _T6e:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+8];
+	this->currDia++;
 // LINE 37:
 _T74:
 	__asm        mov    eax, this;
@@ -128,8 +127,7 @@ _Tb1:
 // Switch pointers
 // LINE 44:
 _Td5:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax];
+	this->currDist++;
 // LINE 46:
 	__asm        mov    eax, currLoc;
 	__asm        mov    ax, [eax];

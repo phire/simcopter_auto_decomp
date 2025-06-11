@@ -31,8 +31,7 @@ _T12:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 49:
-	__asm        mov    eax, this;
-	__asm        dec    word ptr [eax+4];
+	this->fCount--;
 // LINE 50:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+4];

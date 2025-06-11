@@ -2243,7 +2243,7 @@ _T71:
 // LINE 186:
 	rectText.left += 0x5;
 // LINE 187:
-	__asm        inc    rectText.top;
+	rectText.top++;
 // LINE 189:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -9661,7 +9661,7 @@ _Ta3:
 	__asm        cmp    dword ptr [eax+0xCC], 1;
 	__asm        jne    _Teb;
 // LINE 1640:
-	__asm        inc    nLineUpImageIndexToUse;
+	nLineUpImageIndexToUse++;
 // LINE 1641:
 	__asm        jmp    _Tfe;
 _Teb:
@@ -9669,7 +9669,7 @@ _Teb:
 	__asm        cmp    dword ptr [eax+0xCC], 2;
 	__asm        jne    _Tfe;
 // LINE 1642:
-	__asm        inc    nLineDownImageIndexToUse;
+	nLineDownImageIndexToUse++;
 // LINE 1644:
 _Tfe:
 	__asm        mov    eax, this;
@@ -11948,7 +11948,7 @@ _T243:
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    near ptr 0x004B4CFB;
 // LINE 2292:
-	__asm        inc    i;
+	i++;
 // LINE 2293:
 	__asm        jmp    _T1d4;
 // LINE 2296:
@@ -11958,7 +11958,7 @@ _T269:
 	__asm        jmp    _T278;
 // LINE 2296:
 _T275:
-	__asm        inc    j;
+	j++;
 _T278:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
@@ -12316,7 +12316,7 @@ _T71c:
 	__asm        mov    [ebp-0x40], eax;
 	__asm        jmp    near ptr 0x004B51D4;
 // LINE 2318:
-	__asm        inc    i;
+	i++;
 // LINE 2319:
 	__asm        jmp    _T275;
 // LINE 2321:
@@ -13374,7 +13374,7 @@ _T2e:
 	__asm        mov    i, 0;
 	__asm        jmp    _T58;
 _T55:
-	__asm        inc    i;
+	i++;
 _T58:
 	__asm        mov    eax, i;
 	__asm        cmp    lStringCount, eax;
@@ -13727,7 +13727,7 @@ _T154:
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x004B6250;
 // LINE 2520:
-	__asm        inc    i;
+	i++;
 // LINE 2521:
 	__asm        jmp    _T2e;
 // LINE 2522:
@@ -14022,7 +14022,7 @@ _T2e8:
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    near ptr 0x004B656C;
 // LINE 2559:
-	__asm        inc    i;
+	i++;
 // LINE 2560:
 	__asm        jmp    _T193;
 // LINE 2562:
@@ -14433,7 +14433,7 @@ _T4f3:
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    near ptr 0x004B6A96;
 // LINE 2602:
-	__asm        inc    i;
+	i++;
 // LINE 2603:
 	__asm        jmp    _T1dc;
 // LINE 2605:
@@ -15255,7 +15255,7 @@ _T1c1:
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    near ptr 0x004B73D3;
 // LINE 2911:
-	__asm        inc    i;
+	i++;
 // LINE 2912:
 	__asm        jmp    _T2e;
 // LINE 2913:
@@ -16177,8 +16177,7 @@ int32_t PopupMenuWindow::RemoveStringAtIndex(long lIndex) {
 	/*bp-0x4*/   int32_t nReturnValue;
 
 // LINE 3150:
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0xB0];
+	this->lVisibleLines--;
 // LINE 3151:
 	__asm        mov    eax, lIndex;
 	__asm        push   eax;
@@ -16201,8 +16200,7 @@ int32_t PopupMenuWindow::InsertStringAtIndex(long lIndex, /*packed*/ class basic
 	/*bp-0x4*/   int32_t nReturnValue;
 
 // LINE 3163:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0xB0];
+	this->lVisibleLines++;
 // LINE 3164:
 	__asm        mov    eax, sToInsert;
 	__asm        push   eax;

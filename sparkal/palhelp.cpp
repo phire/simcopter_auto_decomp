@@ -221,7 +221,7 @@ void SparkalPalette::GetNearestIndex(/*packed*/ struct SparkalColor& colorValue,
 	__asm        mov    i, eax;
 	__asm        jmp    _T28;
 _T25:
-	__asm        inc    i;
+	i++;
 _T28:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, i;
@@ -375,7 +375,7 @@ _Tbe:
 	__asm        mov    i, 0xA;
 	__asm        jmp    _Tcd;
 _Tca:
-	__asm        inc    i;
+	i++;
 _Tcd:
 	__asm        cmp    i, 0xF6;
 	__asm        jge    _T137;
@@ -414,7 +414,7 @@ _T137:
 	__asm        mov    i, 0;
 	__asm        jmp    _T154;
 _T151:
-	__asm        inc    i;
+	i++;
 _T154:
 	__asm        cmp    i, 0x40;
 	__asm        jge    _T442;
@@ -483,7 +483,7 @@ _T231:
 	__asm        mov    j, 0xA;
 	__asm        jmp    _T240;
 _T23d:
-	__asm        inc    j;
+	j++;
 _T240:
 	__asm        cmp    j, 0xF6;
 	__asm        jge    _T2d6;
@@ -698,7 +698,7 @@ _Tbe:
 	__asm        mov    i, 0xA;
 	__asm        jmp    _Tcd;
 _Tca:
-	__asm        inc    i;
+	i++;
 _Tcd:
 	__asm        cmp    i, 0xF6;
 	__asm        jge    _T137;
@@ -737,7 +737,7 @@ _T137:
 	__asm        mov    i, 0;
 	__asm        jmp    _T154;
 _T151:
-	__asm        inc    i;
+	i++;
 _T154:
 	__asm        cmp    i, 0x40;
 	__asm        jge    _T41e;
@@ -806,7 +806,7 @@ _T231:
 	__asm        mov    j, 0xA;
 	__asm        jmp    _T240;
 _T23d:
-	__asm        inc    j;
+	j++;
 _T240:
 	__asm        cmp    j, 0xF6;
 	__asm        jge    _T2b2;
@@ -1013,7 +1013,7 @@ _Tbe:
 	__asm        mov    i, 0xA;
 	__asm        jmp    _Tcd;
 _Tca:
-	__asm        inc    i;
+	i++;
 _Tcd:
 	__asm        cmp    i, 0xF6;
 	__asm        jge    _T137;
@@ -1052,7 +1052,7 @@ _T137:
 	__asm        mov    i, 0;
 	__asm        jmp    _T154;
 _T151:
-	__asm        inc    i;
+	i++;
 _T154:
 	__asm        cmp    i, 0x40;
 	__asm        jge    _T471;
@@ -1121,7 +1121,7 @@ _T231:
 	__asm        mov    j, 0xA;
 	__asm        jmp    _T240;
 _T23d:
-	__asm        inc    j;
+	j++;
 _T240:
 	__asm        cmp    j, 0xF6;
 	__asm        jge    _T305;
@@ -1393,7 +1393,7 @@ _Tbc:
 	__asm        mov    i, 0;
 	__asm        jmp    _Tcb;
 _Tc8:
-	__asm        inc    i;
+	i++;
 _Tcb:
 	__asm        mov    eax, lSteps;
 	__asm        cmp    i, eax;
@@ -1402,7 +1402,7 @@ _Tcb:
 	__asm        mov    j, 0xA;
 	__asm        jmp    _Te6;
 _Te3:
-	__asm        inc    j;
+	j++;
 _Te6:
 	__asm        cmp    j, 0xF5;
 	__asm        jge    _T10c;
@@ -1422,7 +1422,7 @@ _T111:
 	__asm        mov    j, 0xA;
 	__asm        jmp    _T120;
 _T11d:
-	__asm        inc    j;
+	j++;
 _T120:
 	__asm        cmp    j, 0xF6;
 	__asm        jge    _T1ad;
@@ -1479,7 +1479,7 @@ _T1ad:
 	__asm        mov    i, 1;
 	__asm        jmp    _T1ca;
 _T1c7:
-	__asm        inc    i;
+	i++;
 _T1ca:
 	__asm        mov    eax, nLastStepIndex;
 	__asm        cmp    i, eax;
@@ -1548,7 +1548,7 @@ _T284:
 	__asm        mov    j, 0xA;
 	__asm        jmp    _T293;
 _T290:
-	__asm        inc    j;
+	j++;
 _T293:
 	__asm        cmp    j, 0xF6;
 	__asm        jge    _T39a;
@@ -1802,7 +1802,7 @@ void SparkalPalette::SetSystemPaletteEntriesToRGB(/*packed*/ struct SparkalColor
 	__asm        mov    i, 0xA;
 	__asm        jmp    _T1b;
 _T18:
-	__asm        inc    i;
+	i++;
 _T1b:
 	__asm        cmp    i, 0xF6;
 	__asm        jge    _T67;
@@ -1860,7 +1860,7 @@ void SparkalPalette::ImplementNewPalette(/*packed*/ struct SparkalColor *pNewCol
 	__asm        mov    i, 0xA;
 	__asm        jmp    _T21;
 _T1e:
-	__asm        inc    i;
+	i++;
 _T21:
 	__asm        cmp    i, 0xF6;
 	__asm        jge    _T79;
@@ -1969,7 +1969,7 @@ void ClearWindowsSystemPalette() {
 	__asm        mov    Counter, 0;
 	__asm        jmp    _T3c;
 _T39:
-	__asm        inc    Counter;
+	Counter++;
 _T3c:
 	__asm        cmp    Counter, 0x100;
 	__asm        jge    _T7a;

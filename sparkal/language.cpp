@@ -1155,7 +1155,7 @@ _T120:
 	__asm        mov    i, 1;
 	__asm        jmp    _T13b;
 _T138:
-	__asm        inc    i;
+	i++;
 _T13b:
 	__asm        cmp    i, 0x2D;
 	__asm        jg     _T2ee;
@@ -1876,7 +1876,7 @@ _T23:
 	__asm        jmp    _T66;
 // LINE 199:
 _T2a:
-	__asm        inc    nCurrentLanguage;
+	nCurrentLanguage++;
 // LINE 200:
 	__asm        cmp    nCurrentLanguage, 0x2D;
 	__asm        jl     _T3e;

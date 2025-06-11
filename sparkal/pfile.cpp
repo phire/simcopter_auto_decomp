@@ -650,7 +650,7 @@ _Tf7:
 	__asm        mov    lIndex, 0;
 	__asm        jmp    _T128;
 _T122:
-	__asm        inc    lIndex;
+	lIndex++;
 _T128:
 	__asm        mov    eax, lIndex;
 	__asm        cmp    lUsedBlockSize, eax;
@@ -684,7 +684,7 @@ _T17b:
 	__asm        mov    lIndex, eax;
 	__asm        jmp    _T196;
 _T190:
-	__asm        inc    lIndex;
+	lIndex++;
 _T196:
 	__asm        mov    eax, lIndex;
 	__asm        cmp    lFileLength, eax;

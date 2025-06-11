@@ -808,8 +808,7 @@ _T166:
 	__asm        cmp    ecx, yindex;
 	__asm        jne    _T1d4;
 // LINE 310:
-	__asm        mov    eax, this;
-	__asm        dec    byte ptr [eax+0x293];
+	this->dispatchPathLength--;
 // LINE 312:
 	__asm        jmp    _T1ec;
 // LINE 314:
@@ -1165,8 +1164,7 @@ _T257:
 	__asm        cmp    ecx, yindex;
 	__asm        jne    _T2c5;
 // LINE 434:
-	__asm        mov    eax, this;
-	__asm        dec    byte ptr [eax+0x293];
+	this->dispatchPathLength--;
 // LINE 436:
 	__asm        jmp    _T2dd;
 // LINE 438:
@@ -2152,8 +2150,7 @@ _Tb1:
 	__asm        jmp    _Tb6;
 // LINE 1418:
 _Tb6:
-	__asm        mov    eax, this;
-	__asm        inc    byte ptr [eax+0x293];
+	this->dispatchPathLength++;
 // LINE 1424:
 	__asm        jmp    _T1e;
 // LINE 1432:
@@ -2167,7 +2164,7 @@ _Tc4:
 	__asm        mov    i, ecx;
 	__asm        jmp    _Te5;
 _Te2:
-	__asm        dec    i;
+	i--;
 _Te5:
 	__asm        cmp    i, 0;
 	__asm        jl     _T13a;
@@ -2226,7 +2223,7 @@ void EmergencyVehicleClass::TurnOnStrobe() {
 	__asm        mov    count, 0;
 	__asm        jmp    _T40;
 _T3d:
-	__asm        inc    count;
+	count++;
 _T40:
 	__asm        mov    eax, count;
 	__asm        cmp    oinfo.Faces, eax;
@@ -2290,7 +2287,7 @@ void EmergencyVehicleClass::TurnOffStrobe() {
 	__asm        mov    count, 0;
 	__asm        jmp    _T40;
 _T3d:
-	__asm        inc    count;
+	count++;
 _T40:
 	__asm        mov    eax, count;
 	__asm        cmp    oinfo.Faces, eax;

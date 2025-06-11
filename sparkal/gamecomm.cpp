@@ -613,7 +613,7 @@ void CommandSystem::Initialize() {
 	__asm        mov    i, 0;
 	__asm        jmp    _T1b;
 _T18:
-	__asm        inc    i;
+	i++;
 _T1b:
 	__asm        cmp    i, 0x64;
 	__asm        jge    _T3f;
@@ -630,7 +630,7 @@ _T3f:
 	__asm        mov    i, 0;
 	__asm        jmp    _T4e;
 _T4b:
-	__asm        inc    i;
+	i++;
 _T4e:
 	__asm        cmp    i, 0x800;
 	__asm        jge    _T6e;
@@ -644,7 +644,7 @@ _T6e:
 	__asm        mov    i, 0;
 	__asm        jmp    _T7d;
 _T7a:
-	__asm        inc    i;
+	i++;
 _T7d:
 	__asm        cmp    i, 4;
 	__asm        jge    _Tc4;
@@ -652,7 +652,7 @@ _T7d:
 	__asm        mov    j, 0;
 	__asm        jmp    _T96;
 _T93:
-	__asm        inc    j;
+	j++;
 _T96:
 	__asm        cmp    j, 0xE;
 	__asm        jge    _Tbf;
@@ -674,7 +674,7 @@ _Tc4:
 	__asm        mov    i, 0;
 	__asm        jmp    _Td3;
 _Td0:
-	__asm        inc    i;
+	i++;
 _Td3:
 	__asm        cmp    i, 0x64;
 	__asm        jge    _Tf3;
@@ -696,7 +696,7 @@ void CommandSystem::ClearAllCommands() {
 	__asm        mov    i, 0;
 	__asm        jmp    _T1b;
 _T18:
-	__asm        inc    i;
+	i++;
 _T1b:
 	__asm        cmp    i, 0x64;
 	__asm        jge    _T39;
@@ -724,7 +724,7 @@ void CommandSystem::ClearAllCommandsDevice(long lDevice) {
 	__asm        mov    i, 0;
 	__asm        jmp    _T1b;
 _T18:
-	__asm        inc    i;
+	i++;
 _T1b:
 	__asm        cmp    i, 0x64;
 	__asm        jge    _T51;
@@ -1035,7 +1035,7 @@ _T2a:
 	__asm        mov    i, 0;
 	__asm        jmp    _T39;
 _T36:
-	__asm        inc    i;
+	i++;
 _T39:
 	__asm        mov    eax, i;
 	__asm        cmp    iEnd, eax;
@@ -1044,7 +1044,7 @@ _T39:
 	__asm        mov    j, 0;
 	__asm        jmp    _T54;
 _T51:
-	__asm        inc    j;
+	j++;
 _T54:
 	__asm        cmp    j, 0xE;
 	__asm        jge    _T8c;
@@ -1069,7 +1069,7 @@ _T91:
 	__asm        mov    i, 0;
 	__asm        jmp    _Ta0;
 _T9d:
-	__asm        inc    i;
+	i++;
 _Ta0:
 	__asm        mov    eax, i;
 	__asm        cmp    iEnd, eax;
@@ -1078,7 +1078,7 @@ _Ta0:
 	__asm        mov    j, 0;
 	__asm        jmp    _Tbb;
 _Tb8:
-	__asm        inc    j;
+	j++;
 _Tbb:
 	__asm        cmp    j, 5;
 	__asm        jg     _T14f;
@@ -1135,7 +1135,7 @@ _T14f:
 	__asm        mov    j, 6;
 	__asm        jmp    _T15e;
 _T15b:
-	__asm        inc    j;
+	j++;
 _T15e:
 	__asm        cmp    j, 0xD;
 	__asm        jg     _T1d0;
@@ -3755,7 +3755,7 @@ _T1339:
 	__asm        mov    i, 1;
 	__asm        jmp    _T13af;
 _T13ac:
-	__asm        inc    i;
+	i++;
 _T13af:
 	__asm        cmp    i, 4;
 	__asm        jg     _T1aed;
