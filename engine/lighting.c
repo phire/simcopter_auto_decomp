@@ -368,7 +368,7 @@ _Tdb:
 	__asm        jmp    _Td8;
 // LINE 238:
 _Tff:
-	__asm        add    ltptr, 0x100;
+	ltptr += 0x100;
 // LINE 239:
 	tptr = ltptr;
 // LINE 240:
@@ -558,7 +558,7 @@ _T2e:
 	__asm        jmp    _T61;
 // LINE 358:
 _T58:
-	__asm        add    cptr, 8;
+	cptr += 0x8;
 // LINE 359:
 	__asm        jmp    _T2e;
 // LINE 361:
@@ -728,8 +728,7 @@ _T10c:
 	__asm        add    intensity, eax;
 // LINE 433:
 _T17b:
-	__asm        mov    eax, S_ambient;
-	__asm        add    intensity, eax;
+	intensity += S_ambient;
 // LINE 435:
 	__asm        cmp    intensity, 0x10000;
 	__asm        jl     _T1a4;
@@ -918,8 +917,7 @@ _Taa:
 	__asm        mov    intensity, eax;
 // LINE 519:
 _T11a:
-	__asm        mov    eax, S_ambient;
-	__asm        add    intensity, eax;
+	intensity += S_ambient;
 // LINE 521:
 	__asm        cmp    intensity, 0x10000;
 	__asm        jl     _T143;
@@ -1268,8 +1266,7 @@ _T115:
 	__asm        add    intensity, eax;
 // LINE 663:
 _T17b:
-	__asm        mov    eax, S_ambient;
-	__asm        add    intensity, eax;
+	intensity += S_ambient;
 // LINE 665:
 	__asm        cmp    intensity, 0x10000;
 	__asm        jl     _T1a4;

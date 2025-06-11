@@ -643,7 +643,7 @@ unsigned long  MTime::LocalSecs() {
 	__asm        test   eax, eax;
 	__asm        je     _T43;
 // LINE 104:
-	__asm        add    local_time<MTime+0x00:4>, 0xE10;
+	local_time<MTime+0x00:4> += 0xe10;
 // LINE 105:
 _T43:
 	__asm        mov    eax, local_time<MTime+0x00:4>;
@@ -915,9 +915,7 @@ _T3c:
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T9a;
 // LINE 218:
-	__asm        mov    eax, _timezone;
-	__asm        mov    ecx, this;
-	__asm        add    [ecx], eax;
+	this-><MTime+0x00:4> += _timezone;
 // LINE 220:
 _T9a:
 	__asm        mov    ecx, this;
@@ -925,23 +923,20 @@ _T9a:
 	__asm        test   eax, eax;
 	__asm        je     _Td1;
 // LINE 221:
-	__asm        mov    eax, this;
-	__asm        add    dword ptr [eax], 0xE10;
+	this-><MTime+0x00:4> += 0xe10;
 // LINE 222:
 	__asm        mov    ecx, this;
 	__asm        call   MTime::IsDST;
 	__asm        test   eax, eax;
 	__asm        je     _Tcc;
 // LINE 223:
-	__asm        mov    eax, this;
-	__asm        sub    dword ptr [eax], 0xE10;
+	this-><MTime+0x00:4> -= 0xe10;
 // LINE 225:
 _Tcc:
 	__asm        jmp    _Tf3;
 // LINE 226:
 _Td1:
-	__asm        mov    eax, this;
-	__asm        add    dword ptr [eax], 0xE10;
+	this-><MTime+0x00:4> += 0xe10;
 // LINE 227:
 	__asm        mov    ecx, this;
 	__asm        call   MTime::IsDST;

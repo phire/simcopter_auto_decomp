@@ -819,9 +819,7 @@ _T77:
 	__asm        jmp    _T170;
 // LINE 627:
 _T7c:
-	__asm        mov    eax, LoopTime;
-	__asm        mov    ecx, this;
-	__asm        add    [ecx+0x34], eax;
+	this->beamTimer += LoopTime;
 // LINE 628:
 	__asm        jmp    near ptr 0x0052B561;
 
@@ -1626,7 +1624,7 @@ _T28:
 	__asm        cmp    deltaX, 0x80;
 	__asm        jle    _T41;
 // LINE 1289:
-	__asm        sub    deltaX, 0x100;
+	deltaX -= 0x100;
 // LINE 1290:
 	__asm        jmp    _T28;
 // LINE 1291:
@@ -1634,7 +1632,7 @@ _T41:
 	__asm        cmp    deltaX, 0xFFFFFF80;
 	__asm        jge    _T57;
 // LINE 1293:
-	__asm        add    deltaX, 0x100;
+	deltaX += 0x100;
 // LINE 1294:
 	__asm        jmp    _T41;
 // LINE 1296:
@@ -1642,7 +1640,7 @@ _T57:
 	__asm        cmp    deltaY, 0x80;
 	__asm        jle    _T70;
 // LINE 1298:
-	__asm        sub    deltaY, 0x100;
+	deltaY -= 0x100;
 // LINE 1299:
 	__asm        jmp    _T57;
 // LINE 1300:
@@ -1650,7 +1648,7 @@ _T70:
 	__asm        cmp    deltaY, 0xFFFFFF80;
 	__asm        jge    _T86;
 // LINE 1302:
-	__asm        add    deltaY, 0x100;
+	deltaY += 0x100;
 // LINE 1303:
 	__asm        jmp    _T70;
 // LINE 1305:
@@ -1699,8 +1697,7 @@ _Te8:
 // FUNCTION: COPTER_D 0x0052be9a
 void PlaneClass::SlowDown() {
 // LINE 1342:
-	__asm        mov    eax, this;
-	__asm        sub    dword ptr [eax+0x18], 0x20000;
+	this->speed -= 0x20000;
 // LINE 1343:
 	__asm        jmp    near ptr 0x0052BEB5;
 }
@@ -1772,10 +1769,7 @@ _T50:
 	__asm        mov    ecx, this;
 	__asm        add    [ecx+0x78], eax;
 // LINE 1406:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x38];
-	__asm        mov    ecx, this;
-	__asm        add    [ecx+0x74], eax;
+	this->dyObj.loc.y += this->altAdjustment;
 // LINE 1408:
 	__asm        jmp    _T2bf;
 // LINE 1413:
@@ -2056,14 +2050,11 @@ _T64:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 1506:
-	__asm        mov    eax, center.x;
-	__asm        add    oloc.x, eax;
+	oloc.x += center.x;
 // LINE 1507:
-	__asm        mov    eax, center.y;
-	__asm        add    oloc.y, eax;
+	oloc.y += center.y;
 // LINE 1508:
-	__asm        mov    eax, center.z;
-	__asm        add    oloc.z, eax;
+	oloc.z += center.z;
 // LINE 1514:
 	__asm        mov    eax, oinfo.Radius;
 	__asm        push   eax;
@@ -2963,8 +2954,7 @@ _T91:
 	__asm        cmp    alt, 0x15E0000;
 	__asm        jge    _Tec;
 // LINE 1918:
-	__asm        mov    eax, this;
-	__asm        add    dword ptr [eax+0x74], 0x17C0000;
+	this->dyObj.loc.y += 0x17c0000;
 // LINE 1919:
 	__asm        jmp    _Tfa;
 // LINE 1920:

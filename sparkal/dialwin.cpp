@@ -4461,9 +4461,9 @@ _Tb44:
 	__asm        sub    eax, ptSpotLightPositionLocalCoordinates.y;
 	__asm        mov    ptSpotLightBackPositionCoordinates.y, eax;
 // LINE 746:
-	__asm        add    ptSpotLightPositionLocalCoordinates.x, 0xE1;
+	ptSpotLightPositionLocalCoordinates.x += 0xe1;
 // LINE 747:
-	__asm        add    ptSpotLightPositionLocalCoordinates.y, 0x21;
+	ptSpotLightPositionLocalCoordinates.y += 0x21;
 // LINE 748:
 	__asm        push   0x4B;
 	__asm        push   0x104;
@@ -4638,7 +4638,7 @@ _Tdbf:
 // LINE 772:
 	__asm        inc    i;
 // LINE 773:
-	__asm        add    nXPosition, 5;
+	nXPosition += 0x5;
 // LINE 776:
 	__asm        jmp    _Te11;
 _Te0a:
@@ -8969,7 +8969,7 @@ _Tab:
 // LINE 1880:
 	__asm        inc    i;
 // LINE 1881:
-	__asm        add    nXPosition, 5;
+	nXPosition += 0x5;
 // LINE 1884:
 	__asm        jmp    _Tf4;
 _Ted:

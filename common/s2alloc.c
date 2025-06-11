@@ -230,9 +230,7 @@ char * S2Alloc(int32_t index, int32_t size) {
 // LINE 342:
 	ptr = hdr->free;
 // LINE 343:
-	__asm        mov    eax, size;
-	__asm        mov    ecx, hdr;
-	__asm        add    [ecx+8], eax;
+	hdr->free += size;
 // LINE 347:
 	__asm        mov    eax, hdr;
 	__asm        mov    ecx, hdr;
@@ -295,8 +293,7 @@ _Tc3:
 	__asm        add    [ecx+8], eax;
 // LINE 372:
 _Te9:
-	__asm        mov    eax, size;
-	__asm        add    G_alloc_used, eax;
+	G_alloc_used += size;
 // LINE 383:
 	__asm        mov    eax, ptr;
 	__asm        jmp    near ptr 0x004CB5A6;
@@ -447,9 +444,9 @@ _T2e:
 	__asm        sub    eax, [ecx+4];
 	__asm        add    G_alloc_free, eax;
 // LINE 503:
-	__asm        sub    G_alloc_curr, 0x10;
+	G_alloc_curr -= 0x10;
 // LINE 504:
-	__asm        add    G_alloc_free, 0x10;
+	G_alloc_free += 0x10;
 // LINE 505:
 	__asm        mov    eax, hdr;
 	__asm        mov    eax, [eax+4];
@@ -473,9 +470,9 @@ _T9e:
 	__asm        call   free;
 	__asm        add    esp, 4;
 // LINE 510:
-	__asm        sub    G_alloc_curr, 8;
+	G_alloc_curr -= 0x8;
 // LINE 511:
-	__asm        add    G_alloc_free, 8;
+	G_alloc_free += 0x8;
 // LINE 512:
 	__asm        mov    eax, index;
 	__asm        mov    root[0][eax*4], 0;
@@ -521,7 +518,7 @@ _T2a:
 	__asm        and    eax, 0xFFFF0000;
 	__asm        mov    retaddr, eax;
 // LINE 764:
-	__asm        add    retaddr, 0x10000;
+	retaddr += 0x10000;
 // LINE 767:
 _T49:
 	__asm        add    G_alloc_curr, 0x10000;
@@ -532,7 +529,7 @@ _T49:
 	G_alloc_max = G_alloc_curr;
 // LINE 768:
 _T6e:
-	__asm        add    G_alloc_used, 0x10000;
+	G_alloc_used += 0x10000;
 // LINE 770:
 	__asm        mov    eax, retaddr;
 	__asm        jmp    _T80;
@@ -549,11 +546,11 @@ void S2FreeAligned(void * __ptr32 mem) {
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3734];
 // LINE 789:
-	__asm        sub    G_alloc_curr, 0x10000;
+	G_alloc_curr -= 0x10000;
 // LINE 790:
-	__asm        sub    G_alloc_used, 0x10000;
+	G_alloc_used -= 0x10000;
 // LINE 791:
-	__asm        add    G_alloc_free, 0x10000;
+	G_alloc_free += 0x10000;
 // LINE 797:
 }
 

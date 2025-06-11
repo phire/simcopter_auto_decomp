@@ -1491,9 +1491,7 @@ _T35:
 	__asm        jmp    _T3a;
 // LINE 608:
 _T3a:
-	__asm        mov    eax, LoopTime;
-	__asm        mov    ecx, this;
-	__asm        add    [ecx+0xBE], eax;
+	this->beamTimer += LoopTime;
 // LINE 613:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 2;
@@ -1718,7 +1716,7 @@ int32_t AutomobileClass::PlacePerson(int32_t personType, int32_t personAction) {
 	__asm        mov    radius, eax;
 	__asm        jmp    _T4d;
 _T46:
-	__asm        add    radius, 0xA0000;
+	radius += 0xa0000;
 _T4d:
 	__asm        mov    eax, maxRadius;
 	__asm        cmp    radius, eax;
@@ -1727,7 +1725,7 @@ _T4d:
 	__asm        mov    angle, 0;
 	__asm        jmp    _T6c;
 _T65:
-	__asm        add    angle, 0x640000;
+	angle += 0x640000;
 _T6c:
 	__asm        cmp    angle, 0xE100000;
 	__asm        jge    _T121;
@@ -1911,9 +1909,7 @@ _Tfd:
 // LINE 841:
 	__asm        jmp    _T59f;
 // LINE 845:
-	__asm        mov    eax, LoopTime;
-	__asm        mov    ecx, this;
-	__asm        add    [ecx+0x9E], eax;
+	this->stalledTimer += LoopTime;
 // LINE 849:
 	__asm        mov    eax, dyblock;
 	__asm        movsx  eax, word ptr [eax+0xE];
@@ -2068,9 +2064,7 @@ _T31a:
 // LINE 886:
 	__asm        jmp    _T59f;
 // LINE 889:
-	__asm        mov    eax, LoopTime;
-	__asm        mov    ecx, this;
-	__asm        add    [ecx+0x9E], eax;
+	this->stalledTimer += LoopTime;
 // LINE 891:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x9E], 0x1E0000;
@@ -2154,9 +2148,7 @@ _T433:
 // LINE 912:
 	__asm        jmp    _T59f;
 // LINE 916:
-	__asm        mov    eax, LoopTime;
-	__asm        mov    ecx, this;
-	__asm        add    [ecx+0x9E], eax;
+	this->stalledTimer += LoopTime;
 // LINE 918:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x9E], 0x3C0000;
@@ -2241,9 +2233,7 @@ _T54c:
 	__asm        jmp    _T59f;
 // LINE 942:
 _T556:
-	__asm        mov    eax, LoopTime;
-	__asm        mov    ecx, this;
-	__asm        add    [ecx+0x9E], eax;
+	this->stalledTimer += LoopTime;
 // LINE 943:
 	__asm        jmp    _T7e6;
 // LINE 944:
@@ -2442,9 +2432,7 @@ _T7c0:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::MoveAuto;
 // LINE 1034:
-	__asm        mov    eax, itterationDist;
-	__asm        mov    ecx, this;
-	__asm        add    [ecx+0xEA], eax;
+	this->currDist += itterationDist;
 // LINE 1044:
 	__asm        jmp    _T7e6;
 _T7e6:
@@ -5879,13 +5867,9 @@ _T348:
 	__asm        mov    pRotMatrix, eax;
 // LINE 2480:
 _T3df:
-	__asm        mov    eax, xOffset;
-	__asm        mov    ecx, this;
-	__asm        add    [ecx+0x24], eax;
+	this->autoDynomitor.loc.x += xOffset;
 // LINE 2481:
-	__asm        mov    eax, zOffset;
-	__asm        mov    ecx, this;
-	__asm        add    [ecx+0x2C], eax;
+	this->autoDynomitor.loc.z += zOffset;
 // LINE 2485:
 	__asm        mov    eax, dist;
 	__asm        push   eax;
@@ -6094,9 +6078,7 @@ void AutomobileClass::DoPullOverStuff(int32_t dist) {
 	__asm        test   byte ptr [eax+8], 0x10;
 	__asm        je     _Tc0;
 // LINE 2571:
-	__asm        mov    eax, PulloverStepSize;
-	__asm        mov    ecx, this;
-	__asm        add    [ecx+0x9A], eax;
+	this->DeltaFromCenter += PulloverStepSize;
 // LINE 2572:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x9A], 0xD0000;
@@ -6153,13 +6135,9 @@ _T101:
 	__asm        add    esp, 8;
 	__asm        mov    pulloverVector.z, eax;
 // LINE 2592:
-	__asm        mov    eax, pulloverVector.x;
-	__asm        mov    ecx, this;
-	__asm        add    [ecx+0x24], eax;
+	this->autoDynomitor.loc.x += pulloverVector.x;
 // LINE 2593:
-	__asm        mov    eax, pulloverVector.z;
-	__asm        mov    ecx, this;
-	__asm        add    [ecx+0x2C], eax;
+	this->autoDynomitor.loc.z += pulloverVector.z;
 // LINE 2594:
 	__asm        jmp    near ptr 0x00505985;
 }
@@ -6677,7 +6655,7 @@ _T577:
 // LINE 2780:
 	combinedradius = currentObject->radius;
 // LINE 2781:
-	__asm        add    combinedradius, 0x50000;
+	combinedradius += 0x50000;
 // LINE 2784:
 	__asm        mov    eax, xdiff;
 	__asm        cmp    combinedradius, eax;
@@ -6873,7 +6851,7 @@ _T7b9:
 // LINE 2871:
 	combinedradius = currentObject->radius;
 // LINE 2872:
-	__asm        add    combinedradius, 0x50000;
+	combinedradius += 0x50000;
 // LINE 2875:
 	__asm        mov    eax, xdiff;
 	__asm        cmp    combinedradius, eax;
@@ -7853,8 +7831,7 @@ _T21:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 3448:
-	__asm        mov    eax, this;
-	__asm        add    dword ptr [eax+0x116], 2;
+	this->spotlightHitCounter += 0x2;
 // LINE 3449:
 	__asm        jmp    _T49;
 _T49:
@@ -8832,11 +8809,9 @@ _Ta7:
 	__asm        test   byte ptr [eax+0xCE], 1;
 	__asm        je     _T100;
 // LINE 3827:
-	__asm        mov    eax, this;
-	__asm        add    dword ptr [eax+0x24], 0xD0000;
+	this->autoDynomitor.loc.x += 0xd0000;
 // LINE 3828:
-	__asm        mov    eax, this;
-	__asm        sub    dword ptr [eax+0x2C], 0x1E0000;
+	this->autoDynomitor.loc.z -= 0x1e0000;
 // LINE 3830:
 	__asm        jmp    _T176;
 _T100:
@@ -8844,11 +8819,9 @@ _T100:
 	__asm        test   byte ptr [eax+0xCE], 4;
 	__asm        je     _T129;
 // LINE 3832:
-	__asm        mov    eax, this;
-	__asm        sub    dword ptr [eax+0x24], 0xD0000;
+	this->autoDynomitor.loc.x -= 0xd0000;
 // LINE 3833:
-	__asm        mov    eax, this;
-	__asm        add    dword ptr [eax+0x2C], 0x1E0000;
+	this->autoDynomitor.loc.z += 0x1e0000;
 // LINE 3835:
 	__asm        jmp    _T176;
 _T129:
@@ -8856,11 +8829,9 @@ _T129:
 	__asm        test   byte ptr [eax+0xCE], 2;
 	__asm        je     _T152;
 // LINE 3837:
-	__asm        mov    eax, this;
-	__asm        sub    dword ptr [eax+0x24], 0x1E0000;
+	this->autoDynomitor.loc.x -= 0x1e0000;
 // LINE 3838:
-	__asm        mov    eax, this;
-	__asm        sub    dword ptr [eax+0x2C], 0xD0000;
+	this->autoDynomitor.loc.z -= 0xd0000;
 // LINE 3840:
 	__asm        jmp    _T176;
 _T152:
@@ -8868,15 +8839,12 @@ _T152:
 	__asm        test   byte ptr [eax+0xCE], 8;
 	__asm        je     _T176;
 // LINE 3842:
-	__asm        mov    eax, this;
-	__asm        add    dword ptr [eax+0x24], 0x1E0000;
+	this->autoDynomitor.loc.x += 0x1e0000;
 // LINE 3843:
-	__asm        mov    eax, this;
-	__asm        add    dword ptr [eax+0x2C], 0xD0000;
+	this->autoDynomitor.loc.z += 0xd0000;
 // LINE 3847:
 _T176:
-	__asm        mov    eax, this;
-	__asm        add    dword ptr [eax+0x28], 0x1F0000;
+	this->autoDynomitor.loc.y += 0x1f0000;
 // LINE 3848:
 	__asm        jmp    near ptr 0x00507907;
 }
@@ -9217,16 +9185,16 @@ _T42f:
 	__asm        je     _T44c;
 // LINE 3901:
 _T439:
-	__asm        add    nextFineLocation.x, 0x3E0000;
+	nextFineLocation.x += 0x3e0000;
 // LINE 3902:
-	__asm        add    nextFineLocation.z, 0x2D0000;
+	nextFineLocation.z += 0x2d0000;
 // LINE 3904:
 	__asm        jmp    _T45a;
 // LINE 3906:
 _T44c:
-	__asm        add    nextFineLocation.x, 0x1E0000;
+	nextFineLocation.x += 0x1e0000;
 // LINE 3907:
-	__asm        add    nextFineLocation.z, 0xD0000;
+	nextFineLocation.z += 0xd0000;
 // LINE 3909:
 _T45a:
 	this->hiwaydir = 0x8;
@@ -9281,16 +9249,16 @@ _T4ec:
 	__asm        je     _T509;
 // LINE 3917:
 _T4f6:
-	__asm        sub    nextFineLocation.x, 0x3E0000;
+	nextFineLocation.x -= 0x3e0000;
 // LINE 3918:
-	__asm        sub    nextFineLocation.z, 0x2D0000;
+	nextFineLocation.z -= 0x2d0000;
 // LINE 3920:
 	__asm        jmp    _T517;
 // LINE 3922:
 _T509:
-	__asm        sub    nextFineLocation.x, 0x1E0000;
+	nextFineLocation.x -= 0x1e0000;
 // LINE 3923:
-	__asm        sub    nextFineLocation.z, 0xD0000;
+	nextFineLocation.z -= 0xd0000;
 // LINE 3925:
 _T517:
 	this->hiwaydir = 0x2;
@@ -9345,16 +9313,16 @@ _T5a9:
 	__asm        je     _T5c6;
 // LINE 3931:
 _T5b3:
-	__asm        add    nextFineLocation.z, 0x3E0000;
+	nextFineLocation.z += 0x3e0000;
 // LINE 3932:
-	__asm        sub    nextFineLocation.x, 0x2D0000;
+	nextFineLocation.x -= 0x2d0000;
 // LINE 3934:
 	__asm        jmp    _T5d4;
 // LINE 3936:
 _T5c6:
-	__asm        add    nextFineLocation.z, 0x1E0000;
+	nextFineLocation.z += 0x1e0000;
 // LINE 3937:
-	__asm        sub    nextFineLocation.x, 0xD0000;
+	nextFineLocation.x -= 0xd0000;
 // LINE 3939:
 _T5d4:
 	this->hiwaydir = 0x4;
@@ -9409,16 +9377,16 @@ _T666:
 	__asm        je     _T683;
 // LINE 3946:
 _T670:
-	__asm        sub    nextFineLocation.z, 0x3E0000;
+	nextFineLocation.z -= 0x3e0000;
 // LINE 3947:
-	__asm        add    nextFineLocation.x, 0x2D0000;
+	nextFineLocation.x += 0x2d0000;
 // LINE 3949:
 	__asm        jmp    _T691;
 // LINE 3951:
 _T683:
-	__asm        sub    nextFineLocation.z, 0x1E0000;
+	nextFineLocation.z -= 0x1e0000;
 // LINE 3952:
-	__asm        add    nextFineLocation.x, 0xD0000;
+	nextFineLocation.x += 0xd0000;
 // LINE 3954:
 _T691:
 	this->hiwaydir = 0x1;
@@ -9467,7 +9435,7 @@ _T700:
 	__asm        test   byte ptr [eax+0xCE], 1;
 	__asm        je     _T731;
 // LINE 3972:
-	__asm        add    nextFineLocation.y, 0x1F0000;
+	nextFineLocation.y += 0x1f0000;
 // LINE 3973:
 _T731:
 	__asm        jmp    _T7fb;
@@ -9476,7 +9444,7 @@ _T731:
 	__asm        test   byte ptr [eax+0xCE], 4;
 	__asm        je     _T74d;
 // LINE 3976:
-	__asm        add    nextFineLocation.y, 0x1F0000;
+	nextFineLocation.y += 0x1f0000;
 // LINE 3977:
 _T74d:
 	__asm        jmp    _T7fb;
@@ -9485,7 +9453,7 @@ _T74d:
 	__asm        test   byte ptr [eax+0xCE], 2;
 	__asm        je     _T769;
 // LINE 3980:
-	__asm        add    nextFineLocation.y, 0x1F0000;
+	nextFineLocation.y += 0x1f0000;
 // LINE 3981:
 _T769:
 	__asm        jmp    _T7fb;
@@ -9494,13 +9462,13 @@ _T769:
 	__asm        test   byte ptr [eax+0xCE], 8;
 	__asm        je     _T785;
 // LINE 3984:
-	__asm        add    nextFineLocation.y, 0x1F0000;
+	nextFineLocation.y += 0x1f0000;
 // LINE 3985:
 _T785:
 	__asm        jmp    _T7fb;
 // LINE 3990:
 _T78a:
-	__asm        add    nextFineLocation.y, 0x1F0000;
+	nextFineLocation.y += 0x1f0000;
 // LINE 3991:
 	__asm        jmp    _T7fb;
 // LINE 3993:
@@ -9523,7 +9491,7 @@ _T7a0:
 // Switch pointers
 // LINE 3998:
 _T7fb:
-	__asm        add    nextFineLocation.y, 0x1F0000;
+	nextFineLocation.y += 0x1f0000;
 // LINE 4002:
 	__asm        mov    eax, nextFineLocation.x;
 	__asm        mov    ecx, this;
@@ -11307,8 +11275,7 @@ void S3AutoSoundDriver() {
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 4798:
-	__asm        mov    eax, dist;
-	__asm        add    loc.z, eax;
+	loc.z += dist;
 // LINE 4800:
 	__asm        push   0x12;
 	__asm        call   S3SoundIsPlaying;
@@ -11371,8 +11338,7 @@ _Tb6:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 4822:
-	__asm        mov    eax, dist;
-	__asm        add    loc.z, eax;
+	loc.z += dist;
 // LINE 4824:
 	__asm        push   0x13;
 	__asm        call   S3SoundIsPlaying;
@@ -11435,8 +11401,7 @@ _T163:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 4846:
-	__asm        mov    eax, dist;
-	__asm        add    loc.z, eax;
+	loc.z += dist;
 // LINE 4848:
 	__asm        push   0x11;
 	__asm        call   S3SoundIsPlaying;
@@ -11499,8 +11464,7 @@ _T210:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 4870:
-	__asm        mov    eax, dist;
-	__asm        add    loc.z, eax;
+	loc.z += dist;
 // LINE 4872:
 	__asm        push   0x14;
 	__asm        call   S3SoundIsPlaying;
@@ -11563,8 +11527,7 @@ _T2bd:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 4894:
-	__asm        mov    eax, dist;
-	__asm        add    loc.z, eax;
+	loc.z += dist;
 // LINE 4896:
 	__asm        push   0x14;
 	__asm        call   S3SoundIsPlaying;

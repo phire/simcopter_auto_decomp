@@ -1025,9 +1025,7 @@ void TrainClass::Itterate() {
 	__asm        test   eax, eax;
 	__asm        je     _T182;
 // LINE 710:
-	__asm        mov    eax, LoopTime;
-	__asm        mov    ecx, this;
-	__asm        add    [ecx+0x61], eax;
+	this->beamTimer += LoopTime;
 // LINE 711:
 	__asm        jmp    near ptr 0x0052E3A3;
 
@@ -1681,50 +1679,23 @@ _T8b:
 	__asm        add    esp, 8;
 	__asm        mov    loc.z, eax;
 // LINE 1105:
-	__asm        mov    eax, loc.x;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x1CD];
-	__asm        add    [ecx+0x18], eax;
+	this->leadcar->loc.x += loc.x;
 // LINE 1106:
-	__asm        mov    eax, loc.y;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x1CD];
-	__asm        add    [ecx+0x1C], eax;
+	this->leadcar->loc.y += loc.y;
 // LINE 1107:
-	__asm        mov    eax, loc.z;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x1CD];
-	__asm        add    [ecx+0x20], eax;
+	this->leadcar->loc.z += loc.z;
 // LINE 1108:
-	__asm        mov    eax, loc.x;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x1D1];
-	__asm        add    [ecx+0x18], eax;
+	this->midcar->loc.x += loc.x;
 // LINE 1109:
-	__asm        mov    eax, loc.y;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x1D1];
-	__asm        add    [ecx+0x1C], eax;
+	this->midcar->loc.y += loc.y;
 // LINE 1110:
-	__asm        mov    eax, loc.z;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x1D1];
-	__asm        add    [ecx+0x20], eax;
+	this->midcar->loc.z += loc.z;
 // LINE 1111:
-	__asm        mov    eax, loc.x;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x1D5];
-	__asm        add    [ecx+0x18], eax;
+	this->endcar->loc.x += loc.x;
 // LINE 1112:
-	__asm        mov    eax, loc.y;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x1D5];
-	__asm        add    [ecx+0x1C], eax;
+	this->endcar->loc.y += loc.y;
 // LINE 1113:
-	__asm        mov    eax, loc.z;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x1D5];
-	__asm        add    [ecx+0x20], eax;
+	this->endcar->loc.z += loc.z;
 // LINE 1115:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1CD];
@@ -2443,8 +2414,7 @@ _T241:
 // FUNCTION: COPTER_D 0x0052f394
 int32_t TrainClass::FinishedUturn() {
 // LINE 1389:
-	__asm        mov    eax, this;
-	__asm        add    dword ptr [eax+0x65], 0xA;
+	this->utRotation += 0xa;
 // LINE 1390:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x65], 0xB4;
@@ -2758,7 +2728,7 @@ _T1da:
 // LINE 1532:
 	combinedradius = currentObject->radius;
 // LINE 1533:
-	__asm        add    combinedradius, 0x50000;
+	combinedradius += 0x50000;
 // LINE 1536:
 	__asm        mov    eax, combinedradius;
 	__asm        cmp    xdiff, eax;
@@ -2920,7 +2890,7 @@ _T3b2:
 // LINE 1609:
 	combinedradius = currentObject->radius;
 // LINE 1610:
-	__asm        add    combinedradius, 0x50000;
+	combinedradius += 0x50000;
 // LINE 1613:
 	__asm        mov    eax, combinedradius;
 	__asm        cmp    xdiff, eax;
@@ -2982,7 +2952,7 @@ _T28:
 	__asm        cmp    deltaX, 0x80;
 	__asm        jle    _T41;
 // LINE 1669:
-	__asm        sub    deltaX, 0x100;
+	deltaX -= 0x100;
 // LINE 1670:
 	__asm        jmp    _T28;
 // LINE 1671:
@@ -2990,7 +2960,7 @@ _T41:
 	__asm        cmp    deltaX, 0xFFFFFF80;
 	__asm        jge    _T57;
 // LINE 1673:
-	__asm        add    deltaX, 0x100;
+	deltaX += 0x100;
 // LINE 1674:
 	__asm        jmp    _T41;
 // LINE 1676:
@@ -2998,7 +2968,7 @@ _T57:
 	__asm        cmp    deltaY, 0x80;
 	__asm        jle    _T70;
 // LINE 1678:
-	__asm        sub    deltaY, 0x100;
+	deltaY -= 0x100;
 // LINE 1679:
 	__asm        jmp    _T57;
 // LINE 1680:
@@ -3006,7 +2976,7 @@ _T70:
 	__asm        cmp    deltaY, 0xFFFFFF80;
 	__asm        jge    _T86;
 // LINE 1682:
-	__asm        add    deltaY, 0x100;
+	deltaY += 0x100;
 // LINE 1683:
 	__asm        jmp    _T70;
 // LINE 1685:
@@ -4706,8 +4676,7 @@ _T1376:
 // FUNCTION: COPTER_D 0x00530e02
 void TrainClass::SlowDown() {
 // LINE 2657:
-	__asm        mov    eax, this;
-	__asm        sub    dword ptr [eax+0x2D], 0x20000;
+	this->speed -= 0x20000;
 // LINE 2658:
 	__asm        jmp    near ptr 0x00530E1D;
 }
@@ -7054,9 +7023,7 @@ _T91:
 	__asm        or     eax, ecx;
 	__asm        je     _T107;
 // LINE 3431:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1CD];
-	__asm        sub    dword ptr [eax+0x20], 0x1E0000;
+	this->leadcar->loc.z -= 0x1e0000;
 // LINE 3433:
 	__asm        jmp    _T19e;
 _T107:
@@ -7071,9 +7038,7 @@ _T107:
 	__asm        or     eax, ecx;
 	__asm        je     _T13b;
 // LINE 3436:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1CD];
-	__asm        add    dword ptr [eax+0x20], 0x1E0000;
+	this->leadcar->loc.z += 0x1e0000;
 // LINE 3438:
 	__asm        jmp    _T19e;
 _T13b:
@@ -7088,9 +7053,7 @@ _T13b:
 	__asm        or     eax, ecx;
 	__asm        je     _T16f;
 // LINE 3440:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1CD];
-	__asm        sub    dword ptr [eax+0x18], 0x1E0000;
+	this->leadcar->loc.x -= 0x1e0000;
 // LINE 3443:
 	__asm        jmp    _T19e;
 _T16f:
@@ -7105,9 +7068,7 @@ _T16f:
 	__asm        or     eax, ecx;
 	__asm        je     _T19e;
 // LINE 3445:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1CD];
-	__asm        add    dword ptr [eax+0x18], 0x1E0000;
+	this->leadcar->loc.x += 0x1e0000;
 // LINE 3449:
 _T19e:
 	__asm        jmp    near ptr 0x00532AA6;
@@ -7291,7 +7252,7 @@ _T1a3:
 	__asm        cmp    ecx, eax;
 	__asm        jle    _T27d;
 // LINE 3496:
-	__asm        add    nextFineLocation.x, 0x1E0000;
+	nextFineLocation.x += 0x1e0000;
 // LINE 3498:
 	this->direction = 0x8;
 // LINE 3501:
@@ -7340,7 +7301,7 @@ _T27d:
 	__asm        cmp    ecx, eax;
 	__asm        jle    _T308;
 // LINE 3517:
-	__asm        sub    nextFineLocation.x, 0x1E0000;
+	nextFineLocation.x -= 0x1e0000;
 // LINE 3519:
 	this->direction = 0x2;
 // LINE 3521:
@@ -7389,7 +7350,7 @@ _T308:
 	__asm        cmp    ecx, eax;
 	__asm        jle    _T393;
 // LINE 3536:
-	__asm        add    nextFineLocation.z, 0x1E0000;
+	nextFineLocation.z += 0x1e0000;
 // LINE 3538:
 	this->direction = 0x4;
 // LINE 3540:
@@ -7438,7 +7399,7 @@ _T393:
 	__asm        cmp    ecx, eax;
 	__asm        jle    _T41e;
 // LINE 3555:
-	__asm        sub    nextFineLocation.z, 0x1E0000;
+	nextFineLocation.z -= 0x1e0000;
 // LINE 3557:
 	this->direction = 0x1;
 // LINE 3560:
@@ -7514,7 +7475,7 @@ _T47b:
 	__asm        test   byte ptr [eax+0x11], 1;
 	__asm        je     _T4a9;
 // LINE 3587:
-	__asm        add    nextFineLocation.y, 0x1F0000;
+	nextFineLocation.y += 0x1f0000;
 // LINE 3588:
 _T4a9:
 	__asm        jmp    _T56a;
@@ -7523,7 +7484,7 @@ _T4a9:
 	__asm        test   byte ptr [eax+0x11], 4;
 	__asm        je     _T4c2;
 // LINE 3591:
-	__asm        add    nextFineLocation.y, 0x1F0000;
+	nextFineLocation.y += 0x1f0000;
 // LINE 3592:
 _T4c2:
 	__asm        jmp    _T56a;
@@ -7532,7 +7493,7 @@ _T4c2:
 	__asm        test   byte ptr [eax+0x11], 2;
 	__asm        je     _T4db;
 // LINE 3595:
-	__asm        add    nextFineLocation.y, 0x1F0000;
+	nextFineLocation.y += 0x1f0000;
 // LINE 3596:
 _T4db:
 	__asm        jmp    _T56a;
@@ -7541,13 +7502,13 @@ _T4db:
 	__asm        test   byte ptr [eax+0x11], 8;
 	__asm        je     _T4f4;
 // LINE 3599:
-	__asm        add    nextFineLocation.y, 0x1F0000;
+	nextFineLocation.y += 0x1f0000;
 // LINE 3600:
 _T4f4:
 	__asm        jmp    _T56a;
 // LINE 3605:
 _T4f9:
-	__asm        add    nextFineLocation.y, 0x1F0000;
+	nextFineLocation.y += 0x1f0000;
 // LINE 3606:
 	__asm        jmp    _T56a;
 // LINE 3608:
@@ -8308,11 +8269,9 @@ _T401:
 	__asm        jmp    _T43f;
 // LINE 3924:
 _T415:
-	__asm        mov    eax, xdir;
-	__asm        add    x, eax;
+	x += xdir;
 // LINE 3925:
-	__asm        mov    eax, ydir;
-	__asm        add    y, eax;
+	y += ydir;
 // LINE 3926:
 // Block end:
 	__asm        jmp    _T24d;
@@ -8717,11 +8676,9 @@ _T2a5:
 	__asm        jmp    _T2e5;
 // LINE 4088:
 _T2b9:
-	__asm        mov    eax, xdir;
-	__asm        add    x, eax;
+	x += xdir;
 // LINE 4089:
-	__asm        mov    eax, ydir;
-	__asm        add    y, eax;
+	y += ydir;
 // LINE 4090:
 // Block end:
 	__asm        jmp    _Tf1;

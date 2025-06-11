@@ -2411,8 +2411,7 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 	__asm        test   reinterpret_cast<uint32_t>(mastermove), 0xFFFF;
 	__asm        je     _T4d;
 // LINE 405:
-	__asm        mov    eax, masterdy;
-	__asm        add    newloc.y, eax;
+	newloc.y += masterdy;
 // LINE 406:
 _T4d:
 	retcode = 0x0;
@@ -2671,8 +2670,7 @@ _T311:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 455:
-	__asm        mov    eax, masterheight;
-	__asm        add    masterloc.y, eax;
+	masterloc.y += masterheight;
 // LINE 457:
 	__asm        mov    eax, masterrad;
 	__asm        push   eax;
@@ -3832,8 +3830,7 @@ _T32f:
 	__asm        fadd   overallzloc;
 	__asm        fstp   overallzloc;
 // LINE 717:
-	__asm        movsx  eax, thisriotval;
-	__asm        add    riotval, eax;
+	riotval += reinterpret_cast<int16_t>(thisriotval);
 // LINE 718:
 	__asm        inc    numcounted;
 // LINE 720:

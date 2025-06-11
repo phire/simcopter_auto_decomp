@@ -385,7 +385,7 @@ _T1cc:
 	__asm        jmp    _T2cf;
 // LINE 125:
 _T1f3:
-	__asm        sub    mapSize, 0x1C;
+	mapSize -= 0x1c;
 // LINE 127:
 	dataLoc[0] = res1Off;
 // LINE 130:
@@ -405,7 +405,7 @@ _T222:
 	__asm        mov    eax, numTypes;
 	__asm        inc    word ptr [eax];
 // LINE 132:
-	__asm        sub    mapSize, 2;
+	mapSize -= 0x2;
 // LINE 134:
 	__asm        push   0;
 	__asm        mov    eax, mapSize;
@@ -1656,7 +1656,7 @@ _T71:
 	__asm        mov    dword ptr [eax+8], 0;
 // LINE 742:
 _T8a:
-	__asm        add    srch, 0xC;
+	srch += 0xc;
 // LINE 743:
 	__asm        jmp    _T2a;
 // LINE 745:
@@ -1941,7 +1941,7 @@ _T32:
 	__asm        jmp    _T26c;
 // LINE 826:
 _T6f:
-	__asm        add    pos, 4;
+	pos += 0x4;
 // LINE 827:
 	__asm        lea    eax, size;
 	__asm        push   eax;
@@ -2226,7 +2226,7 @@ _T20:
 	__asm        jmp    _T4c;
 // LINE 902:
 _T3f:
-	__asm        add    typeList, 8;
+	typeList += 0x8;
 // LINE 903:
 	__asm        dec    cnt;
 // LINE 904:
@@ -2298,7 +2298,7 @@ _T27:
 	__asm        jmp    _T92;
 // LINE 927:
 _T7e:
-	__asm        add    typeList, 8;
+	typeList += 0x8;
 // LINE 928:
 	__asm        dec    cnt;
 // LINE 929:
@@ -2348,7 +2348,7 @@ _T31:
 	__asm        jmp    _T60;
 // LINE 941:
 _T57:
-	__asm        add    srch, 0xC;
+	srch += 0xc;
 // LINE 942:
 	__asm        jmp    _T31;
 // LINE 943:
@@ -2384,7 +2384,7 @@ _T27:
 	__asm        jmp    _T53;
 // LINE 956:
 _T46:
-	__asm        add    typeList, 8;
+	typeList += 0x8;
 // LINE 957:
 	__asm        dec    cnt;
 // LINE 958:
@@ -2425,7 +2425,7 @@ _T7e:
 	__asm        jmp    _Tb4;
 // LINE 966:
 _Ta7:
-	__asm        add    entryList, 0xC;
+	entryList += 0xc;
 // LINE 967:
 	__asm        dec    cnt;
 // LINE 968:
@@ -2464,7 +2464,7 @@ _T27:
 	__asm        jmp    _T53;
 // LINE 984:
 _T46:
-	__asm        add    typeList, 8;
+	typeList += 0x8;
 // LINE 985:
 	__asm        dec    cnt;
 // LINE 986:
@@ -2525,7 +2525,7 @@ _T8d:
 	__asm        jmp    _Tea;
 // LINE 998:
 _Tdd:
-	__asm        add    entryList, 0xC;
+	entryList += 0xc;
 // LINE 999:
 	__asm        dec    cnt;
 // LINE 1000:
@@ -2564,7 +2564,7 @@ _T27:
 	__asm        jmp    _T53;
 // LINE 1016:
 _T46:
-	__asm        add    typeList, 8;
+	typeList += 0x8;
 // LINE 1017:
 	__asm        dec    cnt;
 // LINE 1018:

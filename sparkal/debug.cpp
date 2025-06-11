@@ -743,7 +743,7 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 // LINE 35:
 	__asm        jmp    _T7e;
 _T7a:
-	__asm        add    it, 4;
+	it += 0x4;
 _T7e:
 	__asm        jmp    near ptr 0x00422303;
 
@@ -869,7 +869,7 @@ _T1c3:
 // LINE 43:
 	__asm        jmp    _T1dd;
 _T1d9:
-	__asm        add    it, 4;
+	it += 0x4;
 _T1dd:
 	__asm        jmp    near ptr 0x00422462;
 
@@ -3572,7 +3572,7 @@ _T1c2:
 	__asm        mov    it, eax;
 	__asm        jmp    _T255;
 _T24e:
-	__asm        add    it, 4;
+	it += 0x4;
 _T255:
 	__asm        jmp    near ptr 0x00424567;
 

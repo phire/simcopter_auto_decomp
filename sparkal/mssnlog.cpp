@@ -1735,7 +1735,7 @@ _T29:
 	__asm        mov    ecx, [eax+0x78];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 194:
-	__asm        add    x, 0x18;
+	x += 0x18;
 // LINE 195:
 	__asm        jmp    _T26;
 // LINE 196:
@@ -3121,9 +3121,7 @@ _T484:
 	__asm        mov    ecx, bufferDestination;
 	__asm        call   dword ptr [eax+0x48];
 // LINE 348:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x40];
-	__asm        add    rectCurrentMessage.top, eax;
+	rectCurrentMessage.top += this->lVerticalSpaceBetweenMessages;
 // LINE 349:
 	__asm        jmp    _T429;
 // LINE 350:

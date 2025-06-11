@@ -918,9 +918,9 @@ _Tc4:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 623:
-	__asm        sub    G_testloc.x, 0x6400000;
+	G_testloc.x -= 0x6400000;
 // LINE 624:
-	__asm        add    G_testloc.z, 0x76C0000;
+	G_testloc.z += 0x76c0000;
 // LINE 627:
 _T12b:
 	__asm        or     G_InitializationProgress, 0x4000;

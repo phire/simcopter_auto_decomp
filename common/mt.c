@@ -1049,7 +1049,7 @@ void MTmat_row_normal(int32_t *mat[4]) {
 	__asm        add    esp, 8;
 	__asm        mov    factor, eax;
 // LINE 473:
-	__asm        add    factor, 0x1000;
+	factor += 0x1000;
 // LINE 474:
 	__asm        mov    eax, factor;
 	__asm        push   eax;
@@ -1117,7 +1117,7 @@ void MTmat_row_normal(int32_t *mat[4]) {
 	__asm        add    esp, 8;
 	__asm        mov    factor, eax;
 // LINE 484:
-	__asm        add    factor, 0x1000;
+	factor += 0x1000;
 // LINE 485:
 	__asm        mov    eax, factor;
 	__asm        push   eax;
@@ -1185,7 +1185,7 @@ void MTmat_row_normal(int32_t *mat[4]) {
 	__asm        add    esp, 8;
 	__asm        mov    factor, eax;
 // LINE 495:
-	__asm        add    factor, 0x1000;
+	factor += 0x1000;
 // LINE 496:
 	__asm        mov    eax, factor;
 	__asm        push   eax;
@@ -1260,7 +1260,7 @@ void MTmat_col_normal(int32_t *mat[4]) {
 	__asm        add    esp, 8;
 	__asm        mov    factor, eax;
 // LINE 512:
-	__asm        add    factor, 0x1000;
+	factor += 0x1000;
 // LINE 513:
 	__asm        mov    eax, factor;
 	__asm        push   eax;
@@ -1328,7 +1328,7 @@ void MTmat_col_normal(int32_t *mat[4]) {
 	__asm        add    esp, 8;
 	__asm        mov    factor, eax;
 // LINE 523:
-	__asm        add    factor, 0x1000;
+	factor += 0x1000;
 // LINE 524:
 	__asm        mov    eax, factor;
 	__asm        push   eax;
@@ -1396,7 +1396,7 @@ void MTmat_col_normal(int32_t *mat[4]) {
 	__asm        add    esp, 8;
 	__asm        mov    factor, eax;
 // LINE 534:
-	__asm        add    factor, 0x1000;
+	factor += 0x1000;
 // LINE 535:
 	__asm        mov    eax, factor;
 	__asm        push   eax;

@@ -571,7 +571,7 @@ _T66:
 	__asm        add    eax, 0x5A;
 	__asm        mov    rectFill.right, eax;
 // LINE 146:
-	__asm        add    rectFill.left, 0xB;
+	rectFill.left += 0xb;
 // LINE 148:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x134];

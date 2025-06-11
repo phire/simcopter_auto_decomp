@@ -237,8 +237,7 @@ _T1b0:
 	__asm        mov    ecx, i;
 	__asm        mov    S_icons[ecx*4], eax;
 // LINE 241:
-	__asm        mov    eax, S_icon_dim;
-	__asm        add    ptr, eax;
+	ptr += S_icon_dim;
 // LINE 242:
 	__asm        jmp    _T1ad;
 // LINE 245:
@@ -274,8 +273,7 @@ _T220:
 	__asm        mov    ecx, i;
 	__asm        mov    S_dicons[ecx*4], eax;
 // LINE 258:
-	__asm        mov    eax, S_dicon_dim;
-	__asm        add    ptr, eax;
+	ptr += S_dicon_dim;
 // LINE 259:
 	__asm        jmp    _T21d;
 // LINE 262:
@@ -653,7 +651,7 @@ _T409:
 	__asm        jmp    _T10e;
 // LINE 426:
 _T40e:
-	__asm        add    ptr, 0x14;
+	ptr += 0x14;
 // LINE 427:
 	__asm        jmp    _Tde;
 // LINE 428:
@@ -1028,7 +1026,7 @@ _T84e:
 	__asm        jmp    _T4ba;
 // LINE 547:
 _T853:
-	__asm        add    ptr, 0x14;
+	ptr += 0x14;
 // LINE 548:
 	__asm        mov    eax, S_mapdimx;
 	__asm        mov    edi, ptr;
@@ -1040,8 +1038,7 @@ _T853:
 	__asm        and    ecx, 3;
 	__asm        rep movsb;
 // LINE 549:
-	__asm        mov    eax, S_borderdimx;
-	__asm        add    ptr, eax;
+	ptr += S_borderdimx;
 // LINE 550:
 	__asm        jmp    _T482;
 // LINE 551:
@@ -1549,7 +1546,7 @@ _Tdf6:
 	__asm        jmp    _T91e;
 // LINE 703:
 _Tdfb:
-	__asm        add    ptr, 0x14;
+	ptr += 0x14;
 // LINE 704:
 	__asm        mov    edx, S_mapdimx;
 	__asm        mov    edi, ptr;
@@ -1561,8 +1558,7 @@ _Tdfb:
 	__asm        and    ecx, 3;
 	__asm        rep stosb;
 // LINE 705:
-	__asm        mov    eax, S_borderdimx;
-	__asm        add    ptr, eax;
+	ptr += S_borderdimx;
 // LINE 706:
 	__asm        mov    eax, S_mapdimx;
 	__asm        mov    edi, ptr;
@@ -1574,8 +1570,7 @@ _Tdfb:
 	__asm        and    ecx, 3;
 	__asm        rep movsb;
 // LINE 707:
-	__asm        mov    eax, S_borderdimx;
-	__asm        add    ptr, eax;
+	ptr += S_borderdimx;
 // LINE 708:
 	__asm        mov    eax, S_mapdimx;
 	__asm        mov    edi, ptr;
@@ -1587,8 +1582,7 @@ _Tdfb:
 	__asm        and    ecx, 3;
 	__asm        rep movsb;
 // LINE 709:
-	__asm        mov    eax, S_borderdimx;
-	__asm        add    ptr, eax;
+	ptr += S_borderdimx;
 // LINE 710:
 	__asm        jmp    _T8e6;
 // LINE 711:
@@ -2348,7 +2342,7 @@ _T1663:
 	__asm        jmp    _Tf0b;
 // LINE 924:
 _T1668:
-	__asm        add    ptr, 0x14;
+	ptr += 0x14;
 // LINE 926:
 	__asm        mov    eax, S_mapdimx;
 	__asm        mov    edi, ptr;
@@ -2360,8 +2354,7 @@ _T1668:
 	__asm        and    ecx, 3;
 	__asm        rep movsb;
 // LINE 927:
-	__asm        mov    eax, S_borderdimx;
-	__asm        add    ptr, eax;
+	ptr += S_borderdimx;
 // LINE 928:
 	__asm        mov    eax, S_mapdimx;
 	__asm        mov    edi, ptr;
@@ -2373,8 +2366,7 @@ _T1668:
 	__asm        and    ecx, 3;
 	__asm        rep movsb;
 // LINE 929:
-	__asm        mov    eax, S_borderdimx;
-	__asm        add    ptr, eax;
+	ptr += S_borderdimx;
 // LINE 930:
 	__asm        mov    eax, S_mapdimx;
 	__asm        mov    edi, ptr;
@@ -2386,8 +2378,7 @@ _T1668:
 	__asm        and    ecx, 3;
 	__asm        rep movsb;
 // LINE 931:
-	__asm        mov    eax, S_borderdimx;
-	__asm        add    ptr, eax;
+	ptr += S_borderdimx;
 // LINE 932:
 	__asm        mov    eax, S_mapdimx;
 	__asm        mov    edi, ptr;
@@ -2399,8 +2390,7 @@ _T1668:
 	__asm        and    ecx, 3;
 	__asm        rep movsb;
 // LINE 933:
-	__asm        mov    eax, S_borderdimx;
-	__asm        add    ptr, eax;
+	ptr += S_borderdimx;
 // LINE 934:
 	__asm        mov    eax, S_mapdimx;
 	__asm        mov    edi, ptr;
@@ -2412,8 +2402,7 @@ _T1668:
 	__asm        and    ecx, 3;
 	__asm        rep movsb;
 // LINE 935:
-	__asm        mov    eax, S_borderdimx;
-	__asm        add    ptr, eax;
+	ptr += S_borderdimx;
 // LINE 936:
 	__asm        mov    eax, S_mapdimx;
 	__asm        mov    edi, ptr;
@@ -2425,8 +2414,7 @@ _T1668:
 	__asm        and    ecx, 3;
 	__asm        rep movsb;
 // LINE 937:
-	__asm        mov    eax, S_borderdimx;
-	__asm        add    ptr, eax;
+	ptr += S_borderdimx;
 // LINE 938:
 	__asm        mov    edx, S_mapdimx;
 	__asm        mov    edi, ptr;
@@ -2438,8 +2426,7 @@ _T1668:
 	__asm        and    ecx, 3;
 	__asm        rep stosb;
 // LINE 939:
-	__asm        mov    eax, S_borderdimx;
-	__asm        add    ptr, eax;
+	ptr += S_borderdimx;
 // LINE 940:
 	__asm        jmp    _Ted3;
 // LINE 941:
@@ -2780,11 +2767,9 @@ _T2b1:
 	__asm        sar    eax, 0x10;
 	__asm        mov    y, eax;
 // LINE 1054:
-	__asm        mov    eax, fx;
-	__asm        add    dfx, eax;
+	dfx += fx;
 // LINE 1055:
-	__asm        mov    eax, fy;
-	__asm        add    dfy, eax;
+	dfy += fy;
 // LINE 1056:
 	__asm        mov    eax, y;
 	__asm        imul   eax, S_borderdimx;
@@ -2879,8 +2864,7 @@ _Ta5:
 	writeBuffer[0] = col;
 // LINE 1113:
 _Tc5:
-	__asm        mov    eax, dy;
-	__asm        add    error, eax;
+	error += dy;
 // LINE 1114:
 	__asm        mov    eax, dx;
 	__asm        cmp    error, eax;
@@ -2891,18 +2875,14 @@ _Tc5:
 	__asm        neg    eax;
 	__asm        sub    error, eax;
 // LINE 1117:
-	__asm        mov    eax, Yinc;
-	__asm        add    writeBuffer, eax;
+	writeBuffer += Yinc;
 // LINE 1118:
-	__asm        mov    eax, Yunit;
-	__asm        add    ypos, eax;
+	ypos += Yunit;
 // LINE 1120:
 _Ted:
-	__asm        mov    eax, Xinc;
-	__asm        add    writeBuffer, eax;
+	writeBuffer += Xinc;
 // LINE 1121:
-	__asm        mov    eax, Xinc;
-	__asm        add    xpos, eax;
+	xpos += Xinc;
 // LINE 1123:
 	__asm        cmp    ypos, 0;
 	__asm        jl     _T129;
@@ -2944,8 +2924,7 @@ _T147:
 	writeBuffer[0] = col;
 // LINE 1132:
 _T167:
-	__asm        mov    eax, dx;
-	__asm        add    error, eax;
+	error += dx;
 // LINE 1133:
 	__asm        mov    eax, dy;
 	__asm        cmp    error, eax;
@@ -2956,18 +2935,14 @@ _T167:
 	__asm        neg    eax;
 	__asm        sub    error, eax;
 // LINE 1136:
-	__asm        mov    eax, Xinc;
-	__asm        add    writeBuffer, eax;
+	writeBuffer += Xinc;
 // LINE 1137:
-	__asm        mov    eax, Xinc;
-	__asm        add    xpos, eax;
+	xpos += Xinc;
 // LINE 1139:
 _T18f:
-	__asm        mov    eax, Yinc;
-	__asm        add    writeBuffer, eax;
+	writeBuffer += Yinc;
 // LINE 1140:
-	__asm        mov    eax, Yunit;
-	__asm        add    ypos, eax;
+	ypos += Yunit;
 // LINE 1141:
 	__asm        js     _T1c7;
 
@@ -3049,8 +3024,7 @@ _T5c:
 	__asm        jmp    _T59;
 // LINE 1177:
 _T84:
-	__asm        mov    eax, destpitch;
-	__asm        add    cptr, eax;
+	cptr += destpitch;
 // LINE 1178:
 	__asm        jmp    _T35;
 // LINE 1179:
@@ -3105,8 +3079,7 @@ _T57:
 	__asm        jmp    _T54;
 // LINE 1200:
 _T7f:
-	__asm        mov    eax, destpitch;
-	__asm        add    cptr, eax;
+	cptr += destpitch;
 // LINE 1201:
 	__asm        jmp    _T30;
 // LINE 1202:
@@ -4177,8 +4150,7 @@ _T9c:
 	writeBuffer[0] = col;
 // LINE 1778:
 _Tbc:
-	__asm        mov    eax, dy;
-	__asm        add    error, eax;
+	error += dy;
 // LINE 1779:
 	__asm        mov    eax, dx;
 	__asm        cmp    error, eax;
@@ -4189,18 +4161,14 @@ _Tbc:
 	__asm        neg    eax;
 	__asm        sub    error, eax;
 // LINE 1782:
-	__asm        mov    eax, Yinc;
-	__asm        add    writeBuffer, eax;
+	writeBuffer += Yinc;
 // LINE 1783:
-	__asm        mov    eax, Yunit;
-	__asm        add    ypos, eax;
+	ypos += Yunit;
 // LINE 1785:
 _Te4:
-	__asm        mov    eax, Xinc;
-	__asm        add    writeBuffer, eax;
+	writeBuffer += Xinc;
 // LINE 1786:
-	__asm        mov    eax, Xinc;
-	__asm        add    xpos, eax;
+	xpos += Xinc;
 // LINE 1788:
 	__asm        cmp    ypos, 0;
 	__asm        jl     _T122;
@@ -4242,8 +4210,7 @@ _T140:
 	writeBuffer[0] = col;
 // LINE 1797:
 _T160:
-	__asm        mov    eax, dx;
-	__asm        add    error, eax;
+	error += dx;
 // LINE 1798:
 	__asm        mov    eax, dy;
 	__asm        cmp    error, eax;
@@ -4254,18 +4221,14 @@ _T160:
 	__asm        neg    eax;
 	__asm        sub    error, eax;
 // LINE 1801:
-	__asm        mov    eax, Xinc;
-	__asm        add    writeBuffer, eax;
+	writeBuffer += Xinc;
 // LINE 1802:
-	__asm        mov    eax, Xinc;
-	__asm        add    xpos, eax;
+	xpos += Xinc;
 // LINE 1804:
 _T188:
-	__asm        mov    eax, Yinc;
-	__asm        add    writeBuffer, eax;
+	writeBuffer += Yinc;
 // LINE 1805:
-	__asm        mov    eax, Yunit;
-	__asm        add    ypos, eax;
+	ypos += Yunit;
 // LINE 1806:
 	__asm        js     _T1c2;
 
@@ -4339,13 +4302,13 @@ _T4e:
 	__asm        cmp    x1, 0x7F;
 	__asm        jle    _T8a;
 
-	__asm        sub    from.x, 0x100;
+	from.x -= 0x100;
 // LINE 1851:
 _T8a:
 	__asm        cmp    y1, 0x7F;
 	__asm        jle    _T9b;
 
-	__asm        sub    from.y, 0x100;
+	from.y -= 0x100;
 // LINE 1854:
 _T9b:
 	__asm        lea    eax, to.x;

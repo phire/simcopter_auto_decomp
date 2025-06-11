@@ -6340,7 +6340,7 @@ _T45d1:
 	__asm        mov    x, 0x80;
 	__asm        jmp    _T45e1;
 _T45dd:
-	__asm        add    x, 0x10;
+	x += 0x10;
 _T45e1:
 	__asm        cmp    x, 0x100;
 	__asm        jge    _T4743;
@@ -6348,7 +6348,7 @@ _T45e1:
 	__asm        mov    y, 0;
 	__asm        jmp    _T45fe;
 _T45fa:
-	__asm        add    y, 0x10;
+	y += 0x10;
 _T45fe:
 	__asm        cmp    y, 0x80;
 	__asm        jge    _T473e;
@@ -6449,7 +6449,7 @@ _T4743:
 	__asm        mov    x, 0;
 	__asm        jmp    _T4753;
 _T474f:
-	__asm        add    x, 0x10;
+	x += 0x10;
 _T4753:
 	__asm        cmp    x, 0x100;
 	__asm        jge    _T48f1;
@@ -6457,7 +6457,7 @@ _T4753:
 	__asm        mov    y, 0x80;
 	__asm        jmp    _T4770;
 _T476c:
-	__asm        add    y, 0x10;
+	y += 0x10;
 _T4770:
 	__asm        cmp    y, 0x100;
 	__asm        jge    _T48ec;
@@ -6725,23 +6725,17 @@ _Tb2:
 // LINE 2583:
 	S_world_eye.y = ViewState.world_pos.y;
 // LINE 2585:
-	__asm        mov    eax, S_world_eye.x;
-	__asm        add    S_world_lstart.x, eax;
+	S_world_lstart.x += S_world_eye.x;
 // LINE 2586:
-	__asm        mov    eax, S_world_eye.y;
-	__asm        add    S_world_lstart.y, eax;
+	S_world_lstart.y += S_world_eye.y;
 // LINE 2587:
-	__asm        mov    eax, S_world_eye.z;
-	__asm        add    S_world_lstart.z, eax;
+	S_world_lstart.z += S_world_eye.z;
 // LINE 2588:
-	__asm        mov    eax, S_world_eye.x;
-	__asm        add    S_world_rstart.x, eax;
+	S_world_rstart.x += S_world_eye.x;
 // LINE 2589:
-	__asm        mov    eax, S_world_eye.y;
-	__asm        add    S_world_rstart.y, eax;
+	S_world_rstart.y += S_world_eye.y;
 // LINE 2590:
-	__asm        mov    eax, S_world_eye.z;
-	__asm        add    S_world_rstart.z, eax;
+	S_world_rstart.z += S_world_eye.z;
 // LINE 2694:
 	__asm        mov    eax, S_world_eye.x;
 	__asm        add    eax, 0x20000000;
@@ -6869,7 +6863,7 @@ _T33e:
 	__asm        cmp    [eax], ecx;
 	__asm        jle    _T37c;
 // LINE 2757:
-	__asm        add    S_rlast, 8;
+	S_rlast += 0x8;
 // LINE 2758:
 	S_rlast->y = reinterpret_cast<int16_t>(y_pos);
 // LINE 2759:
@@ -6901,7 +6895,7 @@ _T39e:
 	__asm        cmp    [eax+4], ecx;
 	__asm        jge    _T3de;
 // LINE 2771:
-	__asm        add    S_llast, 8;
+	S_llast += 0x8;
 // LINE 2772:
 	S_llast->y = reinterpret_cast<int16_t>(y_pos);
 // LINE 2773:
@@ -6955,7 +6949,7 @@ _T450:
 	__asm        cmp    [eax], ecx;
 	__asm        jle    _T48e;
 // LINE 2794:
-	__asm        add    S_llast, 8;
+	S_llast += 0x8;
 // LINE 2795:
 	S_llast->y = reinterpret_cast<int16_t>(y_pos);
 // LINE 2796:
@@ -6987,7 +6981,7 @@ _T4b0:
 	__asm        cmp    [eax+4], ecx;
 	__asm        jle    _T4f0;
 // LINE 2808:
-	__asm        add    S_rlast, 8;
+	S_rlast += 0x8;
 // LINE 2809:
 	S_rlast->y = reinterpret_cast<int16_t>(y_pos);
 // LINE 2810:
@@ -7041,7 +7035,7 @@ _T562:
 	__asm        cmp    [eax], ecx;
 	__asm        jge    _T5a0;
 // LINE 2831:
-	__asm        add    S_rlast, 8;
+	S_rlast += 0x8;
 // LINE 2832:
 	S_rlast->y = reinterpret_cast<int16_t>(y_pos);
 // LINE 2833:
@@ -7073,7 +7067,7 @@ _T5c2:
 	__asm        cmp    [eax+4], ecx;
 	__asm        jle    _T602;
 // LINE 2845:
-	__asm        add    S_llast, 8;
+	S_llast += 0x8;
 // LINE 2846:
 	S_llast->y = reinterpret_cast<int16_t>(y_pos);
 // LINE 2847:
@@ -7127,7 +7121,7 @@ _T674:
 	__asm        cmp    [eax], ecx;
 	__asm        jge    _T6b2;
 // LINE 2868:
-	__asm        add    S_llast, 8;
+	S_llast += 0x8;
 // LINE 2869:
 	S_llast->y = reinterpret_cast<int16_t>(y_pos);
 // LINE 2870:
@@ -7159,7 +7153,7 @@ _T6d4:
 	__asm        cmp    [eax+4], ecx;
 	__asm        jge    _T714;
 // LINE 2882:
-	__asm        add    S_rlast, 8;
+	S_rlast += 0x8;
 // LINE 2883:
 	S_rlast->y = reinterpret_cast<int16_t>(y_pos);
 // LINE 2884:
@@ -7281,10 +7275,9 @@ _Tb1:
 	curr_cell->y = reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(y_coord));
 // LINE 2978:
 _Te5:
-	__asm        add    curr_cell, 8;
+	curr_cell += 0x8;
 // LINE 2979:
-	__asm        mov    eax, x_delta;
-	__asm        add    x_bound, eax;
+	x_bound += x_delta;
 // LINE 2980:
 	__asm        mov    eax, x_bound;
 	__asm        add    eax, 0x20000000;
@@ -7395,10 +7388,9 @@ _T1e8:
 	curr_cell->x = reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(x_coord));
 // LINE 3027:
 _T21c:
-	__asm        add    curr_cell, 8;
+	curr_cell += 0x8;
 // LINE 3028:
-	__asm        mov    eax, y_delta;
-	__asm        add    y_bound, eax;
+	y_bound += y_delta;
 // LINE 3029:
 	__asm        mov    eax, 0x20000000;
 	__asm        sub    eax, y_bound;
@@ -7753,18 +7745,16 @@ _T62a:
 	__asm        jmp    _T7a4;
 // LINE 3166:
 _T62f:
-	__asm        add    curr_cell, 8;
+	curr_cell += 0x8;
 // LINE 3172:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(get_x_next);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 1;
 	__asm        jne    _T6e9;
 // LINE 3174:
-	__asm        mov    eax, xstepi;
-	__asm        add    xi, eax;
+	xi += xstepi;
 // LINE 3175:
-	__asm        mov    eax, y_delta;
-	__asm        add    y_bound, eax;
+	y_bound += y_delta;
 // LINE 3177:
 	__asm        mov    eax, y_bound;
 	__asm        mov    [ebp-0xA8], eax;
@@ -7805,11 +7795,9 @@ _T6e9:
 	__asm        cmp    eax, 1;
 	__asm        jne    _T79f;
 // LINE 3182:
-	__asm        mov    eax, ystepi;
-	__asm        add    yi, eax;
+	yi += ystepi;
 // LINE 3183:
-	__asm        mov    eax, x_delta;
-	__asm        add    x_bound, eax;
+	x_bound += x_delta;
 // LINE 3185:
 	__asm        mov    eax, x_bound;
 	__asm        mov    [ebp-0xC8], eax;
@@ -7920,8 +7908,7 @@ _T95:
 	__asm        mov    y, eax;
 	__asm        jmp    _Tad;
 _Ta7:
-	__asm        mov    eax, y_dir;
-	__asm        add    y, eax;
+	y += y_dir;
 _Tad:
 	__asm        mov    eax, y_dir;
 	__asm        add    eax, y_pos;
@@ -8024,7 +8011,7 @@ _T1c4:
 // LINE 3277:
 	fovcell->y = reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(y));
 // LINE 3278:
-	__asm        add    fovcell, 8;
+	fovcell += 0x8;
 // LINE 3279:
 	__asm        mov    eax, fovcell;
 	__asm        sub    eax, 0x609C50;
@@ -8048,7 +8035,7 @@ _T20e:
 // LINE 3286:
 	fovcell->y = reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(y));
 // LINE 3287:
-	__asm        add    fovcell, 8;
+	fovcell += 0x8;
 // LINE 3288:
 	__asm        mov    eax, fovcell;
 	__asm        sub    eax, 0x609C50;
@@ -8162,7 +8149,7 @@ _T35a:
 // LINE 3320:
 	fovcell->y = reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(y));
 // LINE 3321:
-	__asm        add    fovcell, 8;
+	fovcell += 0x8;
 // LINE 3322:
 	__asm        mov    eax, fovcell;
 	__asm        sub    eax, 0x609C50;
@@ -8186,7 +8173,7 @@ _T3a4:
 // LINE 3329:
 	fovcell->y = reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(y));
 // LINE 3330:
-	__asm        add    fovcell, 8;
+	fovcell += 0x8;
 // LINE 3331:
 	__asm        mov    eax, fovcell;
 	__asm        sub    eax, 0x609C50;
@@ -8218,7 +8205,7 @@ _T3e8:
 // LINE 3339:
 	fovcell->y = reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(y));
 // LINE 3340:
-	__asm        add    fovcell, 8;
+	fovcell += 0x8;
 // LINE 3341:
 	__asm        mov    eax, fovcell;
 	__asm        sub    eax, 0x609C50;
@@ -8332,8 +8319,7 @@ _T93:
 	__asm        mov    x, eax;
 	__asm        jmp    _Tab;
 _Ta5:
-	__asm        mov    eax, x_dir;
-	__asm        add    x, eax;
+	x += x_dir;
 _Tab:
 	__asm        mov    eax, x_dir;
 	__asm        add    eax, x_pos;
@@ -8436,7 +8422,7 @@ _T1c4:
 // LINE 3427:
 	fovcell->y = reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(y));
 // LINE 3428:
-	__asm        add    fovcell, 8;
+	fovcell += 0x8;
 // LINE 3429:
 	__asm        mov    eax, fovcell;
 	__asm        sub    eax, 0x609C50;
@@ -8460,7 +8446,7 @@ _T20e:
 // LINE 3435:
 	fovcell->y = reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(y));
 // LINE 3436:
-	__asm        add    fovcell, 8;
+	fovcell += 0x8;
 // LINE 3437:
 	__asm        mov    eax, fovcell;
 	__asm        sub    eax, 0x609C50;
@@ -8574,7 +8560,7 @@ _T35c:
 // LINE 3467:
 	fovcell->y = reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(y));
 // LINE 3468:
-	__asm        add    fovcell, 8;
+	fovcell += 0x8;
 // LINE 3469:
 	__asm        mov    eax, fovcell;
 	__asm        sub    eax, 0x609C50;
@@ -8598,7 +8584,7 @@ _T3a6:
 // LINE 3475:
 	fovcell->y = reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(y));
 // LINE 3476:
-	__asm        add    fovcell, 8;
+	fovcell += 0x8;
 // LINE 3477:
 	__asm        mov    eax, fovcell;
 	__asm        sub    eax, 0x609C50;
@@ -8630,7 +8616,7 @@ _T3ea:
 // LINE 3484:
 	fovcell->x = reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(x));
 // LINE 3485:
-	__asm        add    fovcell, 8;
+	fovcell += 0x8;
 // LINE 3486:
 	__asm        mov    eax, fovcell;
 	__asm        sub    eax, 0x609C50;
@@ -8801,7 +8787,7 @@ _Tad:
 // LINE 3561:
 	fovcell->y = reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(y));
 // LINE 3562:
-	__asm        add    fovcell, 8;
+	fovcell += 0x8;
 // LINE 3563:
 	__asm        mov    eax, fovcell;
 	__asm        sub    eax, 0x609C50;
@@ -8838,7 +8824,7 @@ _T1c0:
 // LINE 3571:
 	fovcell->y = reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(y));
 // LINE 3572:
-	__asm        add    fovcell, 8;
+	fovcell += 0x8;
 // LINE 3573:
 	__asm        mov    eax, fovcell;
 	__asm        sub    eax, 0x609C50;
@@ -8931,7 +8917,7 @@ _T231:
 // LINE 3596:
 	fovcell->y = reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(y));
 // LINE 3597:
-	__asm        add    fovcell, 8;
+	fovcell += 0x8;
 // LINE 3598:
 	__asm        mov    eax, fovcell;
 	__asm        sub    eax, 0x609C50;
@@ -8968,7 +8954,7 @@ _T344:
 // LINE 3606:
 	fovcell->y = reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(y));
 // LINE 3607:
-	__asm        add    fovcell, 8;
+	fovcell += 0x8;
 // LINE 3608:
 	__asm        mov    eax, fovcell;
 	__asm        sub    eax, 0x609C50;
@@ -9178,7 +9164,7 @@ _T8c:
 // LINE 3668:
 	fovcell->y = reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(y));
 // LINE 3669:
-	__asm        add    fovcell, 8;
+	fovcell += 0x8;
 // LINE 3670:
 	__asm        mov    eax, fovcell;
 	__asm        sub    eax, 0x609C50;
@@ -9215,7 +9201,7 @@ _T19f:
 // LINE 3678:
 	fovcell->y = reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(y));
 // LINE 3679:
-	__asm        add    fovcell, 8;
+	fovcell += 0x8;
 // LINE 3680:
 	__asm        mov    eax, fovcell;
 	__asm        sub    eax, 0x609C50;
@@ -9308,7 +9294,7 @@ _T213:
 // LINE 3703:
 	fovcell->y = reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(y));
 // LINE 3704:
-	__asm        add    fovcell, 8;
+	fovcell += 0x8;
 // LINE 3705:
 	__asm        mov    eax, fovcell;
 	__asm        sub    eax, 0x609C50;
@@ -9345,7 +9331,7 @@ _T326:
 // LINE 3713:
 	fovcell->y = reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(y));
 // LINE 3714:
-	__asm        add    fovcell, 8;
+	fovcell += 0x8;
 // LINE 3715:
 	__asm        mov    eax, fovcell;
 	__asm        sub    eax, 0x609C50;
@@ -9475,7 +9461,7 @@ void S3CityDrawGrid() {
 // LINE 3778:
 	__asm        jmp    _T59;
 _T55:
-	__asm        add    cellptr, 8;
+	cellptr += 0x8;
 _T59:
 	__asm        mov    eax, cellptr;
 	__asm        cmp    S_fovlast, eax;
@@ -9554,8 +9540,7 @@ _T10e:
 	__asm        jne    _T14f;
 // LINE 3801:
 _T147:
-	__asm        mov    eax, S_water_cycle;
-	__asm        add    texid, eax;
+	texid += S_water_cycle;
 // LINE 3803:
 _T14f:
 	__asm        mov    eax, texid;
@@ -9604,7 +9589,7 @@ _T1a0:
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx], eax;
 // LINE 3826:
-	__asm        add    sface, 4;
+	sface += 0x4;
 // LINE 3827:
 	__asm        mov    eax, GridFaceSize;
 	__asm        add    eax, coffset;
@@ -9617,9 +9602,9 @@ _T1a0:
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx], eax;
 // LINE 3830:
-	__asm        add    sface, 4;
+	sface += 0x4;
 // LINE 3832:
-	__asm        add    GridNSortFaces, 2;
+	GridNSortFaces += 0x2;
 // LINE 3836:
 	__asm        mov    eax, cptrptr;
 	__asm        cmp    dword ptr [eax], 0;
@@ -9790,17 +9775,16 @@ _T3a7:
 	__asm        inc    word ptr [eax+0xA];
 // LINE 3877:
 _T3b0:
-	__asm        add    cptrptr, 4;
+	cptrptr += 0x4;
 // LINE 3878:
-	__asm        add    caddr, 4;
+	caddr += 0x4;
 // LINE 3879:
 	__asm        inc    GridNSortCells;
 // LINE 3880:
 	__asm        jmp    _T55;
 // LINE 3883:
 _T3c3:
-	__asm        mov    eax, LoopTime;
-	__asm        add    S_water_timer, eax;
+	S_water_timer += LoopTime;
 // LINE 3884:
 	__asm        cmp    S_water_timer, 0xFA0;
 	__asm        jle    _T405;
@@ -9821,9 +9805,9 @@ _T405:
 	__asm        jmp    _T439;
 // LINE 3904:
 _T417:
-	__asm        sub    cptrptr, 4;
+	cptrptr -= 0x4;
 // LINE 3905:
-	__asm        sub    caddr, 4;
+	caddr -= 0x4;
 // LINE 3906:
 	__asm        mov    eax, caddr;
 	__asm        push   eax;
@@ -11049,7 +11033,7 @@ _Ta1:
 	__asm        jmp    _Tbb;
 // LINE 4336:
 _Tab:
-	__asm        sub    caddr, 4;
+	caddr -= 0x4;
 // LINE 4337:
 	__asm        jmp    _T0f;
 // LINE 4339:
@@ -11099,8 +11083,7 @@ void S3CityCheckGridPos() {
 	__asm        neg    eax;
 	__asm        sub    altdiff, eax;
 // LINE 4366:
-	__asm        mov    eax, altdiff;
-	__asm        add    G_alt, eax;
+	G_alt += altdiff;
 // LINE 4368:
 	__asm        cmp    G_alt, 0x64;
 	__asm        jge    _T9d;
@@ -11266,11 +11249,9 @@ _T28e:
 	__asm        mov    S_last_pos.x, eax;
 	__asm        mov    S_last_pos.y, ecx;
 // LINE 4433:
-	__asm        movsx  eax, reinterpret_cast<uint16_t>(xdiff);
-	__asm        add    G_grid_ulc.x, eax;
+	G_grid_ulc.x += reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(xdiff));
 // LINE 4434:
-	__asm        movsx  eax, reinterpret_cast<uint16_t>(ydiff);
-	__asm        add    G_grid_ulc.y, eax;
+	G_grid_ulc.y += reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(ydiff));
 // LINE 4435:
 	__asm        call   S3TerrSetGridObj;
 // LINE 4437:
@@ -11317,7 +11298,7 @@ void S3CitySpiralScan(long x, long y, long spiral_dist) {
 // LINE 4471:
 	fovcell->y = reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(y));
 // LINE 4472:
-	__asm        sub    fovcell, 8;
+	fovcell -= 0x8;
 // LINE 4478:
 _T53:
 	__asm        inc    curr_dir;
@@ -11384,17 +11365,15 @@ _T10c:
 	__asm        cmp    curr_dist, eax;
 	__asm        jle    _T159;
 // LINE 4514:
-	__asm        mov    eax, xdir;
-	__asm        add    x, eax;
+	x += xdir;
 // LINE 4515:
-	__asm        mov    eax, ydir;
-	__asm        add    y, eax;
+	y += ydir;
 // LINE 4516:
 	fovcell->x = reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(x));
 // LINE 4517:
 	fovcell->y = reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(y));
 // LINE 4518:
-	__asm        sub    fovcell, 8;
+	fovcell -= 0x8;
 // LINE 4520:
 	__asm        cmp    fovcell, 0x609C50;
 	__asm        jae    _T154;
@@ -11650,7 +11629,7 @@ _T240:
 	__asm        jmp    _T276;
 // LINE 4854:
 _T26f:
-	__asm        add    wradius, 0x180000;
+	wradius += 0x180000;
 // LINE 4856:
 _T276:
 	__asm        mov    eax, oradius;
@@ -12918,7 +12897,7 @@ _Taa0:
 	__asm        mov    px, eax;
 	__asm        jmp    _Tac3;
 _Tabf:
-	__asm        add    px, 4;
+	px += 0x4;
 _Tac3:
 	__asm        mov    eax, x;
 	__asm        add    eax, 0x10;
@@ -12929,7 +12908,7 @@ _Tac3:
 	__asm        mov    py, eax;
 	__asm        jmp    _Tae1;
 _Tadd:
-	__asm        add    py, 4;
+	py += 0x4;
 _Tae1:
 	__asm        mov    eax, y;
 	__asm        add    eax, 0x10;

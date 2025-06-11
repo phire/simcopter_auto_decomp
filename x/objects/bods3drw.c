@@ -322,7 +322,7 @@ _T19e:
 	__asm        mov    j, 0;
 	__asm        jmp    _T1c7;
 _T1c0:
-	__asm        add    j, 6;
+	j += 0x6;
 _T1c7:
 	__asm        mov    eax, diameter;
 	__asm        cmp    j, eax;
@@ -1214,12 +1214,12 @@ void FindFaceQuadrant(/*unpacked*/ struct VRBmpHdr *bhdr, long dir, /*unpacked*/
 	__asm        fdiv   qword ptr ds:[0x5939C0];
 	__asm        fstp   widthOverTwo;
 // LINE 588:
-	__asm        sub    dir, 6;
+	dir -= 0x6;
 // LINE 589:
 	__asm        cmp    dir, 0xFFFFFFFD;
 	__asm        jge    _T2f;
 // LINE 590:
-	__asm        add    dir, 8;
+	dir += 0x8;
 // LINE 592:
 _T2f:
 	__asm        mov    eax, dir;
@@ -1629,14 +1629,12 @@ _T28d:
 	__asm        mov    ecx, writeBufferTmp;
 	__asm        mov    [ecx], al;
 // LINE 742:
-	__asm        mov    eax, Pbufwidth;
-	__asm        add    writeBufferTmp, eax;
+	writeBufferTmp += Pbufwidth;
 // LINE 743:
 	__asm        jmp    _T261;
 // LINE 745:
 _T2a6:
-	__asm        mov    eax, dy;
-	__asm        add    error, eax;
+	error += dy;
 // LINE 746:
 	__asm        mov    eax, dx;
 	__asm        cmp    error, eax;
@@ -1647,12 +1645,10 @@ _T2a6:
 	__asm        neg    eax;
 	__asm        sub    error, eax;
 // LINE 749:
-	__asm        mov    eax, yInc;
-	__asm        add    writeBuffer, eax;
+	writeBuffer += yInc;
 // LINE 751:
 _T2c8:
-	__asm        mov    eax, xInc;
-	__asm        add    writeBuffer, eax;
+	writeBuffer += xInc;
 // LINE 752:
 	__asm        jmp    _T221;
 // LINE 754:
@@ -1716,8 +1712,7 @@ _T338:
 	__asm        sub    eax, startWidth;
 	__asm        mov    tapWidth, eax;
 // LINE 778:
-	__asm        mov    eax, startWidth;
-	__asm        add    writeBufferTmp, eax;
+	writeBufferTmp += startWidth;
 // LINE 780:
 	cInc = startWidth;
 // LINE 786:
@@ -1807,15 +1802,14 @@ _T41f:
 	__asm        mov    ecx, writeBufferTmp;
 	__asm        mov    [ecx], eax;
 // LINE 805:
-	__asm        add    writeBufferTmp, 4;
+	writeBufferTmp += 0x4;
 // LINE 806:
-	__asm        add    cInc, 4;
+	cInc += 0x4;
 // LINE 807:
 	__asm        jmp    _T3ec;
 // LINE 809:
 _T466:
-	__asm        mov    eax, dx;
-	__asm        add    error, eax;
+	error += dx;
 // LINE 810:
 	__asm        mov    eax, dy;
 	__asm        cmp    error, eax;
@@ -1826,12 +1820,10 @@ _T466:
 	__asm        neg    eax;
 	__asm        sub    error, eax;
 // LINE 813:
-	__asm        mov    eax, xInc;
-	__asm        add    writeBuffer, eax;
+	writeBuffer += xInc;
 // LINE 815:
 _T488:
-	__asm        mov    eax, yInc;
-	__asm        add    writeBuffer, eax;
+	writeBuffer += yInc;
 // LINE 816:
 	__asm        jmp    _T335;
 // LINE 818:
@@ -2066,14 +2058,12 @@ _T228:
 	__asm        mov    ecx, writeBufferTmp;
 	__asm        mov    [ecx], al;
 // LINE 904:
-	__asm        mov    eax, Pbufwidth;
-	__asm        add    writeBufferTmp, eax;
+	writeBufferTmp += Pbufwidth;
 // LINE 905:
 	__asm        jmp    _T1fc;
 // LINE 907:
 _T241:
-	__asm        mov    eax, dy;
-	__asm        add    error, eax;
+	error += dy;
 // LINE 908:
 	__asm        mov    eax, dx;
 	__asm        cmp    error, eax;
@@ -2084,12 +2074,10 @@ _T241:
 	__asm        neg    eax;
 	__asm        sub    error, eax;
 // LINE 911:
-	__asm        mov    eax, yInc;
-	__asm        add    writeBuffer, eax;
+	writeBuffer += yInc;
 // LINE 913:
 _T263:
-	__asm        mov    eax, xInc;
-	__asm        add    writeBuffer, eax;
+	writeBuffer += xInc;
 // LINE 914:
 	__asm        jmp    _T1db;
 // LINE 916:
@@ -2222,15 +2210,14 @@ _T3a3:
 	__asm        mov    ecx, writeBufferTmp;
 	__asm        mov    [ecx], eax;
 // LINE 952:
-	__asm        add    writeBufferTmp, 4;
+	writeBufferTmp += 0x4;
 // LINE 953:
-	__asm        add    cInc, 4;
+	cInc += 0x4;
 // LINE 954:
 	__asm        jmp    _T370;
 // LINE 956:
 _T3ea:
-	__asm        mov    eax, dx;
-	__asm        add    error, eax;
+	error += dx;
 // LINE 957:
 	__asm        mov    eax, dy;
 	__asm        cmp    error, eax;
@@ -2241,12 +2228,10 @@ _T3ea:
 	__asm        neg    eax;
 	__asm        sub    error, eax;
 // LINE 960:
-	__asm        mov    eax, xInc;
-	__asm        add    writeBuffer, eax;
+	writeBuffer += xInc;
 // LINE 962:
 _T40c:
-	__asm        mov    eax, yInc;
-	__asm        add    writeBuffer, eax;
+	writeBuffer += yInc;
 // LINE 963:
 	__asm        jmp    _T2a2;
 // LINE 966:
@@ -2469,7 +2454,7 @@ _T1c1:
 	__asm        mov    ecx, writeBuffer;
 	__asm        mov    [ecx], eax;
 // LINE 1045:
-	__asm        add    writeBuffer, 4;
+	writeBuffer += 0x4;
 // LINE 1046:
 	__asm        fld    stride4;
 	__asm        fadd   curPatOffset;
@@ -2633,7 +2618,7 @@ _T189:
 	__asm        mov    ecx, writeBuffer;
 	__asm        mov    [ecx], eax;
 // LINE 1119:
-	__asm        add    writeBuffer, 4;
+	writeBuffer += 0x4;
 // LINE 1120:
 	__asm        jmp    _T156;
 // LINE 1123:

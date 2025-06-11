@@ -617,7 +617,7 @@ _T65:
 // LINE 193:
 	__asm        jmp    _Tca;
 _Tc3:
-	__asm        add    lCurrentBlockStartPosition, 0x7D00;
+	lCurrentBlockStartPosition += 0x7d00;
 _Tca:
 	__asm        mov    eax, lFileLength;
 	__asm        cmp    lCurrentBlockStartPosition, eax;

@@ -336,6 +336,16 @@ public:
 	static unsigned long lTotalMemoryUsage;
 };
 
+// Type: /*packed*/ struct SparkalRect;
+struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
+	void SparkalRect(long, long, long, long);
+	void SparkalRect();
+};
+
 // Type: /*packed*/ class ScrollBarWindow;
 // VTABLE: COPTER_D 0x00591fc0
 class ScrollBarWindow : public SliderWindow
@@ -377,16 +387,6 @@ protected:
 	/*+0xbc*/  /*packed*/ class MTimer myTimer; // 0x10 bytes
 	/*+0xcc*/  enum ScrollBarWindow::ScrollHitTestResult initialScrollHitTestResult;
 	/*+0xd0*/  int32_t bCursorIsOnInitialHitTestResult;
-};
-
-// Type: /*packed*/ struct SparkalRect;
-struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
-	/*+0x0*/   long left;
-	/*+0x4*/   long top;
-	/*+0x8*/   long right;
-	/*+0xc*/   long bottom;
-	void SparkalRect(long, long, long, long);
-	void SparkalRect();
 };
 
 // Type: /*packed*/ class CheckBoxWindow;

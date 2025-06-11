@@ -4002,11 +4002,9 @@ _T1c9:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 272:
-	__asm        mov    eax, offsetx;
-	__asm        add    newloc.x, eax;
+	newloc.x += offsetx;
 // LINE 273:
-	__asm        mov    eax, offsetz;
-	__asm        add    newloc.z, eax;
+	newloc.z += offsetz;
 // LINE 278:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x34];
@@ -4090,8 +4088,7 @@ _T2c9:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 287:
-	__asm        mov    eax, objheight;
-	__asm        add    masterloc.y, eax;
+	masterloc.y += objheight;
 // LINE 288:
 	__asm        mov    eax, masterrad;
 	__asm        push   eax;
@@ -6277,9 +6274,7 @@ _T214:
 	__asm        add    esp, 8;
 	__asm        mov    tempfix, eax;
 // LINE 589:
-	__asm        mov    eax, tempfix;
-	__asm        mov    ecx, this;
-	__asm        add    [ecx+0x174], eax;
+	this->fUserControl.fwdSpeed += tempfix;
 // LINE 591:
 	__asm        jmp    _T2aa;
 // LINE 593:
@@ -10352,11 +10347,9 @@ _T2af:
 	__asm        jmp    _T322;
 // LINE 1396:
 _T2b8:
-	__asm        mov    eax, xdir;
-	__asm        add    x, eax;
+	x += xdir;
 // LINE 1397:
-	__asm        mov    eax, ydir;
-	__asm        add    y, eax;
+	y += ydir;
 // LINE 1398:
 	__asm        jmp    _T23c;
 // LINE 1400:
@@ -13598,8 +13591,7 @@ void cYObject::SimulateAll() {
 	/*bp-0x8*/   long debuglooptime;
 
 // LINE 2085:
-	__asm        mov    eax, LoopTime;
-	__asm        add    gCumTime, eax;
+	gCumTime += LoopTime;
 // LINE 2086:
 	debuglooptime = LoopTime;
 // LINE 2087:
@@ -17555,7 +17547,7 @@ void cAvatar::ResetView() {
 	__asm        test   ah, 1;
 	__asm        je     _Tc7;
 // LINE 2513:
-	__asm        add    yRot, 0xE100000;
+	yRot += 0xe100000;
 // LINE 2517:
 _Tc7:
 	__asm        mov    ebx, 2;
@@ -19919,8 +19911,7 @@ void cAvatar::RotateMatrixAndYawForEngine() {
 	__asm        cmp    dword ptr [eax+0x17C], 0xE100000;
 	__asm        jle    _T60;
 // LINE 3105:
-	__asm        mov    eax, this;
-	__asm        sub    dword ptr [eax+0x17C], 0xE100000;
+	this->fUserControl.yaw -= 0xe100000;
 // LINE 3106:
 	__asm        jmp    _T7d;
 _T60:
@@ -19928,8 +19919,7 @@ _T60:
 	__asm        cmp    dword ptr [eax+0x17C], 0;
 	__asm        jge    _T7d;
 // LINE 3107:
-	__asm        mov    eax, this;
-	__asm        add    dword ptr [eax+0x17C], 0xE100000;
+	this->fUserControl.yaw += 0xe100000;
 // LINE 3110:
 _T7d:
 	__asm        push   0;

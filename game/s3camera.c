@@ -158,8 +158,7 @@ _Td7:
 	__asm        sar    eax, 3;
 	__asm        mov    S_altdiff, eax;
 // LINE 145:
-	__asm        mov    eax, S_altdiff;
-	__asm        add    Viewer.pos.y, eax;
+	Viewer.pos.y += S_altdiff;
 // LINE 148:
 	__asm        jmp    _T238;
 _Tfe:
@@ -275,41 +274,32 @@ _T23d:
 	__asm        cmp    viewerPos.x, 0x20000000;
 	__asm        jle    _T296;
 // LINE 182:
-	__asm        sub    viewerPos.x, 0x40000000;
+	viewerPos.x -= 0x40000000;
 // LINE 183:
 _T296:
 	__asm        cmp    viewerPos.x, 0xE0000000;
 	__asm        jge    _T2aa;
 // LINE 184:
-	__asm        add    viewerPos.x, 0x40000000;
+	viewerPos.x += 0x40000000;
 // LINE 186:
 _T2aa:
 	__asm        cmp    viewerPos.z, 0x20000000;
 	__asm        jle    _T2be;
 // LINE 187:
-	__asm        sub    viewerPos.z, 0x40000000;
+	viewerPos.z -= 0x40000000;
 // LINE 188:
 _T2be:
 	__asm        cmp    viewerPos.z, 0xE0000000;
 	__asm        jge    _T2d2;
 // LINE 189:
-	__asm        add    viewerPos.z, 0x40000000;
+	viewerPos.z += 0x40000000;
 // LINE 191:
 _T2d2:
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        mov    eax, [eax+0x18];
-	__asm        add    viewerPos.x, eax;
+	viewerPos.x += G_uheli->dyheli->loc.x;
 // LINE 192:
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        mov    eax, [eax+0x1C];
-	__asm        add    viewerPos.y, eax;
+	viewerPos.y += G_uheli->dyheli->loc.y;
 // LINE 193:
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        mov    eax, [eax+0x20];
-	__asm        add    viewerPos.z, eax;
+	viewerPos.z += G_uheli->dyheli->loc.z;
 // LINE 195:
 	__asm        mov    eax, P;
 	__asm        mov    eax, [eax];
@@ -445,8 +435,7 @@ _T452:
 	__asm        sar    eax, 3;
 	__asm        mov    S_altdiff, eax;
 // LINE 275:
-	__asm        mov    eax, S_altdiff;
-	__asm        add    Viewer.pos.y, eax;
+	Viewer.pos.y += S_altdiff;
 // LINE 276:
 _T474:
 }
@@ -458,8 +447,7 @@ void NormalizeGridPoint(/*packed*/ struct Point3d *P) {
 	__asm        cmp    dword ptr [eax], 0xD0000000;
 	__asm        jg     _T23;
 // LINE 285:
-	__asm        mov    eax, P;
-	__asm        add    dword ptr [eax], 0x40000000;
+	P->x += 0x40000000;
 // LINE 286:
 	__asm        jmp    _T3b;
 _T23:
@@ -467,16 +455,14 @@ _T23:
 	__asm        cmp    dword ptr [eax], 0x10000000;
 	__asm        jl     _T3b;
 // LINE 287:
-	__asm        mov    eax, P;
-	__asm        sub    dword ptr [eax], 0x40000000;
+	P->x -= 0x40000000;
 // LINE 289:
 _T3b:
 	__asm        mov    eax, P;
 	__asm        cmp    dword ptr [eax+8], 0xF0000000;
 	__asm        jg     _T5a;
 // LINE 290:
-	__asm        mov    eax, P;
-	__asm        add    dword ptr [eax+8], 0x40000000;
+	P->z += 0x40000000;
 // LINE 291:
 	__asm        jmp    _T74;
 _T5a:
@@ -484,8 +470,7 @@ _T5a:
 	__asm        cmp    dword ptr [eax+8], 0x30000000;
 	__asm        jl     _T74;
 // LINE 292:
-	__asm        mov    eax, P;
-	__asm        sub    dword ptr [eax+8], 0x40000000;
+	P->z -= 0x40000000;
 // LINE 293:
 _T74:
 }

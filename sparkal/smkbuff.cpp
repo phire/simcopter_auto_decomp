@@ -3040,11 +3040,9 @@ _T1da:
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 1294:
-	__asm        mov    eax, nDestImageStride;
-	__asm        add    pDestImageBits, eax;
+	pDestImageBits += nDestImageStride;
 // LINE 1295:
-	__asm        mov    eax, nSourceImageStride;
-	__asm        add    pSourceImageBits, eax;
+	pSourceImageBits += nSourceImageStride;
 // LINE 1296:
 	__asm        jmp    _T1da;
 // LINE 1297:
@@ -3121,11 +3119,9 @@ _T8b:
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 1357:
-	__asm        mov    eax, nDestImageStride;
-	__asm        add    pDestImageBits, eax;
+	pDestImageBits += nDestImageStride;
 // LINE 1358:
-	__asm        mov    eax, nSourceImageStride;
-	__asm        add    pSourceImageBits, eax;
+	pSourceImageBits += nSourceImageStride;
 // LINE 1359:
 	__asm        jmp    _T8b;
 // LINE 1361:

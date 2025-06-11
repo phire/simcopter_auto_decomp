@@ -610,8 +610,7 @@ _T1da:
 	__asm        jmp    _T6b8;
 // LINE 512:
 _T214:
-	__asm        movsx  eax, filefacehdr.NVerts;
-	__asm        add    VertCount, eax;
+	VertCount += reinterpret_cast<int16_t>(filefacehdr.NVerts);
 // LINE 513:
 	faceptr->Nverts = reinterpret_cast<int16_t>(filefacehdr.NVerts);
 // LINE 514:
@@ -638,7 +637,7 @@ _T214:
 	__asm        mov    ecx, faceptr;
 	__asm        mov    [ecx+0x24], eax;
 // LINE 520:
-	__asm        add    dataptr, 0x30;
+	dataptr += 0x30;
 // LINE 528:
 	__asm        mov    eax, faceptr;
 	__asm        test   byte ptr [eax+9], 0x40;
@@ -745,7 +744,7 @@ _T385:
 // LINE 617:
 	faceptr->Normal = dataptr;
 // LINE 618:
-	__asm        add    dataptr, 0x10;
+	dataptr += 0x10;
 // LINE 619:
 	__asm        movsx  eax, w[0];
 	__asm        lea    eax, [eax+eax*2];
@@ -1148,7 +1147,7 @@ _T128:
 _T12d:
 	dataptr = faceptr;
 // LINE 835:
-	__asm        add    dataptr, 0x30;
+	dataptr += 0x30;
 // LINE 836:
 	vertno = faceptr->PlyVerts;
 // LINE 839:
@@ -1183,7 +1182,7 @@ _T175:
 	__asm        add    eax, [ecx+8];
 	__asm        mov    vert, eax;
 // LINE 855:
-	__asm        add    vertno, 4;
+	vertno += 0x4;
 // LINE 858:
 	__asm        mov    eax, vert;
 	__asm        mov    ecx, minx;
@@ -1526,7 +1525,7 @@ _T551:
 	__asm        add    eax, [ecx+8];
 	__asm        mov    vert, eax;
 // LINE 1010:
-	__asm        add    vertno, 4;
+	vertno += 0x4;
 // LINE 1012:
 	__asm        mov    eax, vertno;
 	__asm        mov    eax, [eax];
@@ -1786,7 +1785,7 @@ _T13e:
 _T143:
 	dataptr = faceptr;
 // LINE 1157:
-	__asm        add    dataptr, 0x30;
+	dataptr += 0x30;
 // LINE 1158:
 	vertno = faceptr->PlyVerts;
 // LINE 1161:
@@ -1821,7 +1820,7 @@ _T18b:
 	__asm        add    eax, [ecx+8];
 	__asm        mov    vert, eax;
 // LINE 1177:
-	__asm        add    vertno, 4;
+	vertno += 0x4;
 // LINE 1180:
 	__asm        mov    eax, vert;
 	__asm        mov    ecx, minx;
@@ -2202,7 +2201,7 @@ _T5da:
 	__asm        add    eax, [ecx+8];
 	__asm        mov    vert, eax;
 // LINE 1352:
-	__asm        add    vertno, 4;
+	vertno += 0x4;
 // LINE 1354:
 	__asm        mov    eax, vertno;
 	__asm        mov    eax, [eax];
@@ -2396,7 +2395,7 @@ _T82:
 _Ta4:
 	dataptr = faceptr;
 // LINE 1456:
-	__asm        add    dataptr, 0x30;
+	dataptr += 0x30;
 // LINE 1457:
 	vertno = dataptr;
 // LINE 1460:
@@ -2431,7 +2430,7 @@ _Te9:
 	__asm        add    eax, [ecx+8];
 	__asm        mov    vert, eax;
 // LINE 1476:
-	__asm        add    vertno, 4;
+	vertno += 0x4;
 // LINE 1479:
 	__asm        mov    eax, vert;
 	__asm        mov    ecx, minx;
@@ -2600,7 +2599,7 @@ _T81:
 _Ta2:
 	dataptr = faceptr;
 // LINE 1558:
-	__asm        add    dataptr, 0x30;
+	dataptr += 0x30;
 // LINE 1559:
 	vertno = dataptr;
 // LINE 1562:
@@ -2635,7 +2634,7 @@ _Te7:
 	__asm        add    eax, [ecx+8];
 	__asm        mov    vert, eax;
 // LINE 1578:
-	__asm        add    vertno, 4;
+	vertno += 0x4;
 // LINE 1581:
 	__asm        mov    eax, vert;
 	__asm        mov    ecx, minx;
@@ -2767,7 +2766,7 @@ _T30:
 _T51:
 	dataptr = faceptr;
 // LINE 1647:
-	__asm        add    dataptr, 0x30;
+	dataptr += 0x30;
 // LINE 1650:
 	vertno = dataptr;
 // LINE 1652:
@@ -2780,7 +2779,7 @@ _T51:
 	__asm        add    eax, [ecx+8];
 	__asm        mov    vert1, eax;
 // LINE 1657:
-	__asm        add    vertno, 4;
+	vertno += 0x4;
 // LINE 1659:
 	__asm        mov    eax, vertno;
 	__asm        mov    eax, [eax];
@@ -2840,32 +2839,20 @@ _T2b:
 	__asm        cmp    [eax+4], ecx;
 	__asm        jle    _T59;
 // LINE 1691:
-	__asm        mov    eax, x;
-	__asm        mov    ecx, vert;
-	__asm        add    [ecx], eax;
+	vert->x += x;
 // LINE 1692:
-	__asm        mov    eax, y;
-	__asm        mov    ecx, vert;
-	__asm        add    [ecx+4], eax;
+	vert->y += y;
 // LINE 1693:
-	__asm        mov    eax, z;
-	__asm        mov    ecx, vert;
-	__asm        add    [ecx+8], eax;
+	vert->z += z;
 // LINE 1694:
 	__asm        jmp    _T24;
 // LINE 1697:
 _T59:
-	__asm        mov    eax, x;
-	__asm        mov    ecx, oh;
-	__asm        add    [ecx+0x18], eax;
+	oh->CenterOrg.x += x;
 // LINE 1698:
-	__asm        mov    eax, y;
-	__asm        mov    ecx, oh;
-	__asm        add    [ecx+0x1C], eax;
+	oh->CenterOrg.y += y;
 // LINE 1699:
-	__asm        mov    eax, z;
-	__asm        mov    ecx, oh;
-	__asm        add    [ecx+0x20], eax;
+	oh->CenterOrg.z += z;
 // LINE 1701:
 }
 
@@ -2936,7 +2923,7 @@ void VR2dObjLocate(int32_t obj, int32_t x, int32_t y, int32_t z) {
 _T2a:
 	dataptr = faceptr;
 // LINE 1753:
-	__asm        add    dataptr, 0x30;
+	dataptr += 0x30;
 // LINE 1754:
 	vertno = dataptr;
 // LINE 1758:
@@ -2949,7 +2936,7 @@ _T2a:
 	__asm        add    eax, [ecx+8];
 	__asm        mov    vert1, eax;
 // LINE 1762:
-	__asm        add    vertno, 4;
+	vertno += 0x4;
 // LINE 1764:
 	__asm        mov    eax, vertno;
 	__asm        mov    eax, [eax];
@@ -3130,9 +3117,9 @@ _T43:
 	__asm        mov    ecx, d;
 	__asm        mov    [ecx+8], eax;
 // LINE 1855:
-	__asm        add    d, 0xC;
+	d += 0xc;
 // LINE 1856:
-	__asm        add    s, 0xC;
+	s += 0xc;
 // LINE 1857:
 	__asm        jmp    _T40;
 // LINE 1858:
@@ -3359,9 +3346,9 @@ _T3b:
 	__asm        mov    ecx, mv;
 	__asm        mov    [ecx+4], eax;
 // LINE 1950:
-	__asm        add    mv, 8;
+	mv += 0x8;
 // LINE 1951:
-	__asm        add    barry, 8;
+	barry += 0x8;
 // LINE 1952:
 	__asm        jmp    _T38;
 // LINE 1958:
@@ -3747,20 +3734,11 @@ _T115:
 // LINE 2151:
 	__asm        inc    no_vert_faces;
 // LINE 2152:
-	__asm        mov    eax, fn;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, vn;
-	__asm        add    [ecx], eax;
+	vn->x += fn->x;
 // LINE 2153:
-	__asm        mov    eax, fn;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, vn;
-	__asm        add    [ecx+4], eax;
+	vn->y += fn->y;
 // LINE 2154:
-	__asm        mov    eax, fn;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, vn;
-	__asm        add    [ecx+8], eax;
+	vn->z += fn->z;
 // LINE 2155:
 	__asm        jmp    _T165;
 // LINE 2157:
@@ -3956,7 +3934,7 @@ _T84:
 // LINE 2259:
 	oh = ptr;
 // LINE 2260:
-	__asm        add    ptr, 0x90;
+	ptr += 0x90;
 // LINE 2261:
 	oh->Attrib = 0x0;
 // LINE 2262:
@@ -4008,20 +3986,20 @@ _T115:
 	__asm        mov    ecx, vert;
 	__asm        mov    [ecx+4], eax;
 // LINE 2276:
-	__asm        add    vert, 0xC;
+	vert += 0xc;
 // LINE 2277:
 	__asm        jmp    _T112;
 // LINE 2281:
 _T14e:
 	mvert = ptr;
 // LINE 2282:
-	__asm        add    ptr, 0x10;
+	ptr += 0x10;
 // LINE 2285:
 	oh->FacePtr = ptr;
 // LINE 2286:
 	fh = ptr;
 // LINE 2287:
-	__asm        add    ptr, 0x30;
+	ptr += 0x30;
 // LINE 2288:
 	__asm        mov    i, 0;
 	__asm        jmp    _T17a;
@@ -4035,7 +4013,7 @@ _T17a:
 // LINE 2291:
 	iptr = ptr;
 // LINE 2292:
-	__asm        add    ptr, 8;
+	ptr += 0x8;
 // LINE 2295:
 	fh->Nverts = 0x2;
 // LINE 2296:
@@ -4067,7 +4045,7 @@ _T17a:
 // LINE 2309:
 	fh = ptr;
 // LINE 2310:
-	__asm        add    ptr, 0x30;
+	ptr += 0x30;
 // LINE 2311:
 	__asm        jmp    _T177;
 // LINE 2313:
@@ -4142,7 +4120,7 @@ _T82:
 // LINE 2364:
 	oh = ptr;
 // LINE 2365:
-	__asm        add    ptr, 0x90;
+	ptr += 0x90;
 // LINE 2366:
 	oh->Attrib = 0x0;
 // LINE 2367:
@@ -4185,20 +4163,20 @@ _T10c:
 	__asm        mov    ecx, vert;
 	__asm        mov    [ecx+4], eax;
 // LINE 2380:
-	__asm        add    vert, 0xC;
+	vert += 0xc;
 // LINE 2381:
 	__asm        jmp    _T109;
 // LINE 2385:
 _T141:
 	mvert = ptr;
 // LINE 2386:
-	__asm        add    ptr, 8;
+	ptr += 0x8;
 // LINE 2389:
 	oh->FacePtr = ptr;
 // LINE 2390:
 	fh = ptr;
 // LINE 2391:
-	__asm        add    ptr, 0x30;
+	ptr += 0x30;
 // LINE 2392:
 	__asm        mov    i, 0;
 	__asm        jmp    _T16d;
@@ -4211,7 +4189,7 @@ _T16d:
 // LINE 2395:
 	iptr = ptr;
 // LINE 2396:
-	__asm        add    ptr, 4;
+	ptr += 0x4;
 // LINE 2399:
 	fh->Nverts = 0x1;
 // LINE 2400:
@@ -4236,7 +4214,7 @@ _T16d:
 // LINE 2412:
 	fh = ptr;
 // LINE 2413:
-	__asm        add    ptr, 0x30;
+	ptr += 0x30;
 // LINE 2414:
 	__asm        jmp    _T16a;
 // LINE 2416:
@@ -4318,7 +4296,7 @@ _T40:
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 2469:
-	__asm        add    to, 0x90;
+	to += 0x90;
 // LINE 2471:
 	oh2->VertsPtr = to;
 // LINE 2474:
@@ -4365,7 +4343,7 @@ _Tb5:
 // LINE 2486:
 	fh2 = to;
 // LINE 2487:
-	__asm        add    to, 0x30;
+	to += 0x30;
 // LINE 2490:
 	__asm        mov    eax, fh;
 	__asm        mov    eax, [eax+4];
@@ -4662,7 +4640,7 @@ _T235:
 	__asm        add    eax, [ecx+8];
 	__asm        mov    v0, eax;
 // LINE 2604:
-	__asm        add    vertno, 4;
+	vertno += 0x4;
 // LINE 2607:
 	__asm        mov    eax, v0;
 	__asm        mov    ecx, minx;

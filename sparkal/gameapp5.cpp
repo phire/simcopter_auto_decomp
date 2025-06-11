@@ -561,8 +561,7 @@ _T84:
 // LINE 246:
 	pBufferCurrentPosition[1] = 0x0;
 // LINE 247:
-	__asm        mov    eax, nSurfaceStride;
-	__asm        add    pBufferCurrentPosition, eax;
+	pBufferCurrentPosition += nSurfaceStride;
 // LINE 248:
 	__asm        jmp    _T81;
 // LINE 249:
@@ -753,9 +752,9 @@ _T112:
 	__asm        call   sprintf;
 	__asm        add    esp, 0x1C;
 // LINE 315:
-	__asm        add    nTextTop, 0xC;
+	nTextTop += 0xc;
 // LINE 316:
-	__asm        add    nTextBottom, 0xC;
+	nTextBottom += 0xc;
 // LINE 317:
 	__asm        push   0;
 	__asm        push   0;
@@ -787,9 +786,9 @@ _T112:
 	__asm        call   S3MissionDebugString;
 	__asm        add    esp, 8;
 // LINE 322:
-	__asm        add    nTextTop, 0xC;
+	nTextTop += 0xc;
 // LINE 323:
-	__asm        add    nTextBottom, 0xC;
+	nTextBottom += 0xc;
 // LINE 324:
 	__asm        push   0;
 	__asm        push   0;

@@ -302,9 +302,9 @@ _T19f:
 	__asm        jmp    _Tad;
 // LINE 211:
 _T1a4:
-	__asm        sub    G_terr_minalt, 0x32;
+	G_terr_minalt -= 0x32;
 // LINE 212:
-	__asm        add    G_terr_maxalt, 0x64;
+	G_terr_maxalt += 0x64;
 // LINE 213:
 	__asm        cmp    G_terr_minalt, 0;
 	__asm        jge    _T1c9;
@@ -315,7 +315,7 @@ _T1c9:
 	__asm        mov    x, 1;
 	__asm        jmp    _T1d9;
 _T1d5:
-	__asm        add    x, 2;
+	x += 0x2;
 _T1d9:
 	__asm        cmp    x, 0x100;
 	__asm        jge    _T37c;
@@ -323,7 +323,7 @@ _T1d9:
 	__asm        mov    y, 0;
 	__asm        jmp    _T1f6;
 _T1f2:
-	__asm        add    y, 2;
+	y += 0x2;
 _T1f6:
 	__asm        cmp    y, 0x100;
 	__asm        jg     _T377;
@@ -442,7 +442,7 @@ _T37c:
 	__asm        mov    y, 1;
 	__asm        jmp    _T38c;
 _T388:
-	__asm        add    y, 2;
+	y += 0x2;
 _T38c:
 	__asm        cmp    y, 0x100;
 	__asm        jge    _T52f;
@@ -450,7 +450,7 @@ _T38c:
 	__asm        mov    x, 0;
 	__asm        jmp    _T3a9;
 _T3a5:
-	__asm        add    x, 2;
+	x += 0x2;
 _T3a9:
 	__asm        cmp    x, 0x100;
 	__asm        jg     _T52a;
@@ -569,7 +569,7 @@ _T52f:
 	__asm        mov    y, 0;
 	__asm        jmp    _T53f;
 _T53b:
-	__asm        add    y, 2;
+	y += 0x2;
 _T53f:
 	__asm        cmp    y, 0x100;
 	__asm        jg     _T6de;
@@ -577,7 +577,7 @@ _T53f:
 	__asm        mov    x, 0;
 	__asm        jmp    _T55c;
 _T558:
-	__asm        add    x, 2;
+	x += 0x2;
 _T55c:
 	__asm        cmp    x, 0x100;
 	__asm        jg     _T6d9;
@@ -5265,7 +5265,7 @@ _Tce:
 	__asm        mov    eax, yptr;
 	__asm        mov    [eax], edx;
 // LINE 1160:
-	__asm        add    yptr, 0xC;
+	yptr += 0xc;
 // LINE 1161:
 	__asm        jmp    _T59;
 // LINE 1162:
@@ -5681,8 +5681,7 @@ int32_t S3TerrMorphWater() {
 	/*bp-0x1c*/  long xstart;
 
 // LINE 1439:
-	__asm        mov    eax, LoopTime;
-	__asm        add    S_looptime, eax;
+	S_looptime += LoopTime;
 // LINE 1441:
 	__asm        mov    eax, S_looptime;
 	__asm        cmp    S_checktime, eax;
@@ -5755,7 +5754,7 @@ _Te4:
 	__asm        mov    x, eax;
 	__asm        jmp    _T10d;
 _T109:
-	__asm        add    x, 2;
+	x += 0x2;
 _T10d:
 	__asm        cmp    x, 0x80;
 	__asm        jge    _T1b3;
@@ -5764,7 +5763,7 @@ _T10d:
 	__asm        mov    y, eax;
 	__asm        jmp    _T129;
 _T125:
-	__asm        add    y, 2;
+	y += 0x2;
 _T129:
 	__asm        cmp    y, 0x80;
 	__asm        jge    _T1ae;

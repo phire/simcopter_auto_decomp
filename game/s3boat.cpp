@@ -828,9 +828,7 @@ void BoatClass::Itterate() {
 	__asm        test   eax, eax;
 	__asm        je     _Tea;
 // LINE 568:
-	__asm        mov    eax, LoopTime;
-	__asm        mov    ecx, this;
-	__asm        add    [ecx+0x4F], eax;
+	this->beamTimer += LoopTime;
 // LINE 569:
 	__asm        jmp    near ptr 0x0052785B;
 
@@ -1407,7 +1405,7 @@ _T101:
 // LINE 959:
 	combinedradius = currentObject->radius;
 // LINE 960:
-	__asm        add    combinedradius, 0x50000;
+	combinedradius += 0x50000;
 // LINE 963:
 	__asm        mov    eax, combinedradius;
 	__asm        cmp    xdiff, eax;
@@ -1547,7 +1545,7 @@ _T28e:
 // LINE 1026:
 	combinedradius = currentObject->radius;
 // LINE 1027:
-	__asm        add    combinedradius, 0x50000;
+	combinedradius += 0x50000;
 // LINE 1030:
 	__asm        mov    eax, combinedradius;
 	__asm        cmp    xdiff, eax;
@@ -1609,7 +1607,7 @@ _T28:
 	__asm        cmp    deltaX, 0x80;
 	__asm        jle    _T41;
 // LINE 1086:
-	__asm        sub    deltaX, 0x100;
+	deltaX -= 0x100;
 // LINE 1087:
 	__asm        jmp    _T28;
 // LINE 1088:
@@ -1617,7 +1615,7 @@ _T41:
 	__asm        cmp    deltaX, 0xFFFFFF80;
 	__asm        jge    _T57;
 // LINE 1090:
-	__asm        add    deltaX, 0x100;
+	deltaX += 0x100;
 // LINE 1091:
 	__asm        jmp    _T41;
 // LINE 1093:
@@ -1625,7 +1623,7 @@ _T57:
 	__asm        cmp    deltaY, 0x80;
 	__asm        jle    _T70;
 // LINE 1095:
-	__asm        sub    deltaY, 0x100;
+	deltaY -= 0x100;
 // LINE 1096:
 	__asm        jmp    _T57;
 // LINE 1097:
@@ -1633,7 +1631,7 @@ _T70:
 	__asm        cmp    deltaY, 0xFFFFFF80;
 	__asm        jge    _T86;
 // LINE 1099:
-	__asm        add    deltaY, 0x100;
+	deltaY += 0x100;
 // LINE 1100:
 	__asm        jmp    _T70;
 // LINE 1102:
@@ -1915,8 +1913,7 @@ _T2cb:
 // FUNCTION: COPTER_D 0x0052847a
 void BoatClass::SlowDown() {
 // LINE 1215:
-	__asm        mov    eax, this;
-	__asm        sub    dword ptr [eax+0x2B], 0x20000;
+	this->speed -= 0x20000;
 // LINE 1216:
 	__asm        jmp    near ptr 0x00528495;
 }
@@ -4146,11 +4143,9 @@ _T393:
 	__asm        jmp    _T3d1;
 // LINE 2306:
 _T3a7:
-	__asm        mov    eax, xdir;
-	__asm        add    x, eax;
+	x += xdir;
 // LINE 2307:
-	__asm        mov    eax, ydir;
-	__asm        add    y, eax;
+	y += ydir;
 // LINE 2308:
 // Block end:
 	__asm        jmp    _T284;
@@ -4883,11 +4878,9 @@ _T789:
 	__asm        jmp    _T7c9;
 // LINE 2487:
 _T79d:
-	__asm        mov    eax, xdir;
-	__asm        add    x, eax;
+	x += xdir;
 // LINE 2488:
-	__asm        mov    eax, ydir;
-	__asm        add    y, eax;
+	y += ydir;
 // LINE 2489:
 // Block end:
 	__asm        jmp    _T100;

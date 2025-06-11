@@ -696,7 +696,7 @@ _T4ce:
 	__asm        mov    ecx, verts;
 	__asm        mov    [ecx+8], eax;
 // LINE 347:
-	__asm        add    verts, 0xC;
+	verts += 0xc;
 // LINE 348:
 	__asm        jmp    _T4cb;
 // LINE 349:
@@ -5280,14 +5280,11 @@ _T45f:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 2003:
-	__asm        mov    eax, center.x;
-	__asm        add    oloc.x, eax;
+	oloc.x += center.x;
 // LINE 2004:
-	__asm        mov    eax, center.y;
-	__asm        add    oloc.y, eax;
+	oloc.y += center.y;
 // LINE 2005:
-	__asm        mov    eax, center.z;
-	__asm        add    oloc.z, eax;
+	oloc.z += center.z;
 // LINE 2011:
 	__asm        mov    eax, oinfo.Radius;
 	__asm        push   eax;

@@ -2755,9 +2755,9 @@ _T128:
 	__asm        mov    ecx, [eax+0x44];
 	__asm        call   dword ptr [edx+0x48];
 // LINE 225:
-	__asm        add    rectDestination.left, 3;
+	rectDestination.left += 0x3;
 // LINE 226:
-	__asm        sub    rectDestination.top, 4;
+	rectDestination.top -= 0x4;
 // LINE 227:
 	__asm        mov    eax, currentUserPersonalInfo;
 	__asm        test   byte ptr [eax+0x48], 4;

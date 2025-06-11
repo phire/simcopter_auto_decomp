@@ -788,9 +788,7 @@ _T61:
 	__asm        mov    ecx, [ecx+0x20];
 	__asm        mov    [ecx+0x10], eax;
 // LINE 294:
-	__asm        mov    eax, ed;
-	__asm        mov    eax, [eax+0x20];
-	__asm        sub    dword ptr [eax+0x1C], 0x200000;
+	ed->dy2d->loc.y -= 0x200000;
 // LINE 297:
 	__asm        mov    eax, ed;
 	__asm        mov    eax, [eax+0x20];

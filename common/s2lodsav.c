@@ -3723,8 +3723,7 @@ _T128:
 	__asm        mov    [ecx+edx], al;
 	__asm        inc    tp;
 // LINE 1226:
-	__asm        mov    eax, ix;
-	__asm        add    dp, eax;
+	dp += ix;
 // LINE 1228:
 	__asm        jmp    _T1de;
 // LINE 1229:
@@ -3780,8 +3779,7 @@ _T1c4:
 	__asm        dec    eax;
 	__asm        add    dp, eax;
 // LINE 1239:
-	__asm        mov    eax, ix;
-	__asm        add    tp, eax;
+	tp += ix;
 // LINE 1241:
 _T1de:
 	__asm        jmp    _Tb2;
@@ -5061,7 +5059,7 @@ _T27:
 	__asm        mov    ecx, mptr;
 	__asm        mov    [ecx+6], ax;
 // LINE 1536:
-	__asm        add    mptr, 8;
+	mptr += 0x8;
 // LINE 1537:
 	__asm        jmp    _T24;
 // LINE 1539:
@@ -5272,87 +5270,87 @@ short S2CityAlloc() {
 // LINE 1760:
 	poolsize = 0xd00;
 // LINE 1761:
-	__asm        add    poolsize, 0x40;
+	poolsize += 0x40;
 // LINE 1762:
-	__asm        add    poolsize, 0x8000;
+	poolsize += 0x8000;
 // LINE 1763:
-	__asm        add    poolsize, 0x4000;
+	poolsize += 0x4000;
 // LINE 1764:
-	__asm        add    poolsize, 0x4000;
+	poolsize += 0x4000;
 // LINE 1765:
-	__asm        add    poolsize, 0x4000;
+	poolsize += 0x4000;
 // LINE 1766:
-	__asm        add    poolsize, 0x4000;
+	poolsize += 0x4000;
 // LINE 1767:
-	__asm        add    poolsize, 0x4000;
+	poolsize += 0x4000;
 // LINE 1768:
-	__asm        add    poolsize, 0x1900;
+	poolsize += 0x1900;
 // LINE 1769:
-	__asm        add    poolsize, 0x4B0;
+	poolsize += 0x4b0;
 // LINE 1770:
-	__asm        add    poolsize, 0x1E0;
+	poolsize += 0x1e0;
 // LINE 1771:
-	__asm        add    poolsize, 0x8000;
+	poolsize += 0x8000;
 // LINE 1772:
-	__asm        add    poolsize, 0x4000;
+	poolsize += 0x4000;
 // LINE 1773:
-	__asm        add    poolsize, 0x1000;
+	poolsize += 0x1000;
 // LINE 1774:
-	__asm        add    poolsize, 0x1000;
+	poolsize += 0x1000;
 // LINE 1775:
-	__asm        add    poolsize, 0x1000;
+	poolsize += 0x1000;
 // LINE 1776:
-	__asm        add    poolsize, 0x1000;
+	poolsize += 0x1000;
 // LINE 1777:
-	__asm        add    poolsize, 0x400;
+	poolsize += 0x400;
 // LINE 1778:
-	__asm        add    poolsize, 0x400;
+	poolsize += 0x400;
 // LINE 1779:
-	__asm        add    poolsize, 0x400;
+	poolsize += 0x400;
 // LINE 1780:
-	__asm        add    poolsize, 0x400;
+	poolsize += 0x400;
 // LINE 1781:
-	__asm        add    poolsize, 0x700;
+	poolsize += 0x700;
 // LINE 1782:
-	__asm        add    poolsize, 0x20;
+	poolsize += 0x20;
 // LINE 1783:
-	__asm        add    poolsize, 0xC;
+	poolsize += 0xc;
 // LINE 1784:
-	__asm        add    poolsize, 8;
+	poolsize += 0x8;
 // LINE 1785:
-	__asm        add    poolsize, 0x10;
+	poolsize += 0x10;
 // LINE 1786:
-	__asm        add    poolsize, 0x10;
+	poolsize += 0x10;
 // LINE 1787:
-	__asm        add    poolsize, 0x10;
+	poolsize += 0x10;
 // LINE 1788:
-	__asm        add    poolsize, 0x50;
+	poolsize += 0x50;
 // LINE 1789:
-	__asm        add    poolsize, 0x50;
+	poolsize += 0x50;
 // LINE 1790:
-	__asm        add    poolsize, 0x50;
+	poolsize += 0x50;
 // LINE 1791:
-	__asm        add    poolsize, 0x16;
+	poolsize += 0x16;
 // LINE 1792:
-	__asm        add    poolsize, 0x16;
+	poolsize += 0x16;
 // LINE 1793:
-	__asm        add    poolsize, 0x2C;
+	poolsize += 0x2c;
 // LINE 1794:
-	__asm        add    poolsize, 0x200;
+	poolsize += 0x200;
 // LINE 1795:
-	__asm        add    poolsize, 0x20;
+	poolsize += 0x20;
 // LINE 1796:
-	__asm        add    poolsize, 0x800;
+	poolsize += 0x800;
 // LINE 1797:
-	__asm        add    poolsize, 0x40;
+	poolsize += 0x40;
 // LINE 1798:
-	__asm        add    poolsize, 0x1E;
+	poolsize += 0x1e;
 // LINE 1799:
-	__asm        add    poolsize, 0x48;
+	poolsize += 0x48;
 // LINE 1800:
-	__asm        add    poolsize, 0x12C0;
+	poolsize += 0x12c0;
 // LINE 1801:
-	__asm        add    poolsize, 0x40;
+	poolsize += 0x40;
 // LINE 1805:
 	__asm        mov    eax, poolsize;
 	__asm        push   eax;

@@ -4622,21 +4622,13 @@ _T13a:
 	__asm        add    ecx, 8;
 	__asm        call   HotSpot::GetBoundingRect;
 // LINE 341:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x20];
-	__asm        add    rectCurrentKey.left, eax;
+	rectCurrentKey.left += this-><KeyboardWindow+0x20>;
 // LINE 342:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x24];
-	__asm        add    rectCurrentKey.top, eax;
+	rectCurrentKey.top += this-><KeyboardWindow+0x24>;
 // LINE 343:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x20];
-	__asm        add    rectCurrentKey.right, eax;
+	rectCurrentKey.right += this-><KeyboardWindow+0x20>;
 // LINE 344:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x24];
-	__asm        add    rectCurrentKey.bottom, eax;
+	rectCurrentKey.bottom += this-><KeyboardWindow+0x24>;
 // LINE 345:
 	__asm        lea    eax, rectCurrentKey.left;
 	__asm        push   eax;
@@ -4803,21 +4795,13 @@ _T354:
 	__asm        add    ecx, 8;
 	__asm        call   HotSpot::GetBoundingRect;
 // LINE 368:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x20];
-	__asm        add    rectCurrentKey.left, eax;
+	rectCurrentKey.left += this-><KeyboardWindow+0x20>;
 // LINE 369:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x24];
-	__asm        add    rectCurrentKey.top, eax;
+	rectCurrentKey.top += this-><KeyboardWindow+0x24>;
 // LINE 370:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x20];
-	__asm        add    rectCurrentKey.right, eax;
+	rectCurrentKey.right += this-><KeyboardWindow+0x20>;
 // LINE 371:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x24];
-	__asm        add    rectCurrentKey.bottom, eax;
+	rectCurrentKey.bottom += this-><KeyboardWindow+0x24>;
 // LINE 372:
 	__asm        lea    eax, rectCurrentKey.left;
 	__asm        push   eax;
@@ -5016,13 +5000,9 @@ _T1d6:
 	__asm        add    ecx, 8;
 	__asm        call   HotSpot::GetBoundingRect;
 // LINE 405:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x20];
-	__asm        add    rectCurrentKey.left, eax;
+	rectCurrentKey.left += this-><KeyboardWindow+0x20>;
 // LINE 406:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x24];
-	__asm        add    rectCurrentKey.top, eax;
+	rectCurrentKey.top += this-><KeyboardWindow+0x24>;
 // LINE 409:
 	__asm        mov    eax, lCurrentHotSpotID;
 	__asm        push   eax;
@@ -5033,13 +5013,9 @@ _T1d6:
 	__asm        test   eax, eax;
 	__asm        je     _T3ba;
 // LINE 410:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x20];
-	__asm        add    rectCurrentKey.right, eax;
+	rectCurrentKey.right += this-><KeyboardWindow+0x20>;
 // LINE 411:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x24];
-	__asm        add    rectCurrentKey.bottom, eax;
+	rectCurrentKey.bottom += this-><KeyboardWindow+0x24>;
 // LINE 412:
 	__asm        lea    eax, sKey.c_str_ptr;
 	__asm        push   eax;
@@ -5267,13 +5243,9 @@ _T4ff:
 	__asm        add    ecx, 8;
 	__asm        call   HotSpot::GetBoundingRect;
 // LINE 429:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x20];
-	__asm        add    rectCurrentKey.left, eax;
+	rectCurrentKey.left += this-><KeyboardWindow+0x20>;
 // LINE 430:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x24];
-	__asm        add    rectCurrentKey.top, eax;
+	rectCurrentKey.top += this-><KeyboardWindow+0x24>;
 // LINE 433:
 	__asm        mov    eax, lCurrentHotSpotID;
 	__asm        push   eax;
@@ -5284,13 +5256,9 @@ _T4ff:
 	__asm        test   eax, eax;
 	__asm        je     _T6e3;
 // LINE 434:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x20];
-	__asm        add    rectCurrentKey.right, eax;
+	rectCurrentKey.right += this-><KeyboardWindow+0x20>;
 // LINE 435:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x24];
-	__asm        add    rectCurrentKey.bottom, eax;
+	rectCurrentKey.bottom += this-><KeyboardWindow+0x24>;
 // LINE 436:
 	__asm        lea    eax, sKey.c_str_ptr;
 	__asm        push   eax;
@@ -15715,7 +15683,7 @@ _T3c1:
 	__asm        mov    ecx, this;
 	__asm        call   ControlDisplayWindow::AppendKeysString;
 // LINE 2025:
-	__asm        add    nKeyCountForCommand, 1;
+	nKeyCountForCommand += 0x1;
 // LINE 2027:
 _T41c:
 	__asm        mov    eax, shortcutIterator.node;

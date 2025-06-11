@@ -2895,9 +2895,7 @@ void HangarWindow::ScrollHangarView(long lDistance) {
 	__asm        mov    lHangarGraphicWidth, eax;
 	__asm        jmp    near ptr 0x00473CA0;
 // LINE 317:
-	__asm        mov    eax, lDistance;
-	__asm        mov    ecx, this;
-	__asm        add    [ecx+0x12A], eax;
+	this->lWindowPositionInHangar += lDistance;
 // LINE 318:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x12A], 0;
@@ -3109,10 +3107,7 @@ _T64:
 	__asm        cmp    [eax+0x1C], ecx;
 	__asm        jge    _T82;
 // LINE 391:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        mov    ecx, rectToClip;
-	__asm        add    [ecx+0xC], eax;
+	rectToClip.bottom += this-><HangarWindow+0x1c>;
 // LINE 392:
 _T82:
 	__asm        jmp    near ptr 0x00473F4C;
@@ -3341,12 +3336,12 @@ _T20c:
 	__asm        cmp    eax, rectTempChildWindow.top;
 	__asm        jle    _T2cb;
 // LINE 459:
-	__asm        add    rectTempChildWindow.top, 0x22;
+	rectTempChildWindow.top += 0x22;
 // LINE 460:
 	__asm        jmp    _T2cf;
 // LINE 461:
 _T2cb:
-	__asm        sub    rectTempChildWindow.top, 0x22;
+	rectTempChildWindow.top -= 0x22;
 // LINE 462:
 _T2cf:
 	__asm        mov    eax, rectTempChildWindow.top;

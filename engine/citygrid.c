@@ -400,10 +400,9 @@ _T441:
 // LINE 264:
 	v->z = z_val;
 // LINE 265:
-	__asm        mov    eax, vert_inc;
-	__asm        add    x_val, eax;
+	x_val += vert_inc;
 // LINE 266:
-	__asm        add    v, 0xC;
+	v += 0xc;
 // LINE 267:
 	__asm        jmp    _T43d;
 // LINE 268:
@@ -460,8 +459,7 @@ _T4e2:
 	__asm        add    eax, 0x24;
 	__asm        mov    mapv, eax;
 // LINE 309:
-	__asm        mov    eax, GridFaceSize;
-	__asm        add    dataptr, eax;
+	dataptr += GridFaceSize;
 // LINE 311:
 	gf->PlotterId = plotter;
 // LINE 312:
@@ -493,13 +491,13 @@ _T52d:
 // LINE 321:
 	mapv->y = 0x8000;
 // LINE 322:
-	__asm        add    mapv, 8;
+	mapv += 0x8;
 // LINE 323:
 	mapv->x = 0x1f8000;
 // LINE 324:
 	mapv->y = 0x8000;
 // LINE 325:
-	__asm        add    mapv, 8;
+	mapv += 0x8;
 // LINE 326:
 	mapv->x = 0x8000;
 // LINE 327:
@@ -529,13 +527,13 @@ _T5a2:
 // LINE 334:
 	mapv->y = 0x8000;
 // LINE 335:
-	__asm        add    mapv, 8;
+	mapv += 0x8;
 // LINE 336:
 	mapv->x = 0x1f8000;
 // LINE 337:
 	mapv->y = 0x1f8000;
 // LINE 338:
-	__asm        add    mapv, 8;
+	mapv += 0x8;
 // LINE 339:
 	mapv->x = 0x8000;
 // LINE 340:
@@ -642,8 +640,7 @@ void InitGridPool() {
 	__asm        shl    eax, 4;
 	__asm        mov    GridPoolSize, eax;
 // LINE 404:
-	__asm        mov    eax, goff;
-	__asm        add    GridPoolSize, eax;
+	GridPoolSize += goff;
 // LINE 405:
 	__asm        mov    eax, GridNVerts;
 	__asm        lea    eax, [eax+eax*2];
@@ -665,8 +662,7 @@ void InitGridPool() {
 	__asm        add    eax, GridPoolSize;
 	__asm        mov    GridPoolSize, eax;
 // LINE 409:
-	__asm        mov    eax, GridNVerts;
-	__asm        add    GridPoolSize, eax;
+	GridPoolSize += GridNVerts;
 // LINE 410:
 	__asm        mov    eax, G_ViewSize;
 	__asm        imul   eax, G_ViewSize;

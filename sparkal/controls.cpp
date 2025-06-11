@@ -2241,7 +2241,7 @@ _T71:
 	__asm        mov    [ecx+0x38], eax;
 	__asm        jmp    near ptr 0x004ADA2F;
 // LINE 186:
-	__asm        add    rectText.left, 5;
+	rectText.left += 0x5;
 // LINE 187:
 	__asm        inc    rectText.top;
 // LINE 189:
@@ -3431,17 +3431,11 @@ _T3e9:
 	__asm        add    eax, nWindowWidth;
 	__asm        mov    rectCurrent.right, eax;
 // LINE 388:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x80];
-	__asm        add    rectCurrent.left, eax;
+	rectCurrent.left += this->sizeTextOffset.cx;
 // LINE 389:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x80];
-	__asm        add    rectCurrent.right, eax;
+	rectCurrent.right += this->sizeTextOffset.cx;
 // LINE 390:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x84];
-	__asm        add    rectCurrent.top, eax;
+	rectCurrent.top += this->sizeTextOffset.cy;
 // LINE 391:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x84];
@@ -6633,7 +6627,7 @@ _Tdc:
 	__asm        call   dword ptr [eax+0xC8];
 // LINE 993:
 _T100:
-	__asm        add    i, 1;
+	i += 0x1;
 // LINE 994:
 	__asm        mov    eax, iterator.node;
 	__asm        mov    [ebp-0x34], eax;
@@ -6859,7 +6853,7 @@ _T85:
 	__asm        jmp    _Te9;
 // LINE 1056:
 _Tb8:
-	__asm        add    i, 1;
+	i += 0x1;
 // LINE 1057:
 	__asm        mov    eax, iterator.node;
 	__asm        mov    [ebp-0x2C], eax;
@@ -8600,10 +8594,7 @@ _T10a:
 	__asm        mov    ecx, lNewValue;
 	__asm        mov    [ecx], eax;
 // LINE 1369:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x78];
-	__asm        mov    ecx, lNewValue;
-	__asm        add    [ecx], eax;
+	lNewValue. += this->lSliderMinimumValue;
 // LINE 1370:
 	__asm        mov    eax, 1;
 	__asm        jmp    near ptr 0x004B2499;
@@ -8701,10 +8692,7 @@ _T3c:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x88], eax;
 // LINE 1413:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x84];
-	__asm        mov    ecx, this;
-	__asm        add    [ecx+0x88], eax;
+	this->lCurrentThumbPosition += this->lMinimumThumbPosition;
 // LINE 1419:
 _T83:
 	__asm        mov    eax, this;
@@ -9866,8 +9854,7 @@ _T2a1:
 	__asm        mov    i, eax;
 	__asm        jmp    _T330;
 _T32a:
-	__asm        mov    eax, lThumbWidth;
-	__asm        add    i, eax;
+	i += lThumbWidth;
 _T330:
 	__asm        mov    eax, lPageDownButtonStartPosition;
 	__asm        cmp    i, eax;
@@ -9992,8 +9979,7 @@ _T3f9:
 	__asm        mov    i, eax;
 	__asm        jmp    _T459;
 _T453:
-	__asm        mov    eax, lThumbHeight;
-	__asm        add    i, eax;
+	i += lThumbHeight;
 _T459:
 	__asm        mov    eax, lPageDownButtonStartPosition;
 	__asm        cmp    i, eax;

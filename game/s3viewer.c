@@ -702,7 +702,7 @@ long ConvertGUIBackPlaneValueToRender(long lValue) {
 // LINE 366:
 	__asm        shl    lValue, 1;
 // LINE 367:
-	__asm        add    lValue, 0xD;
+	lValue += 0xd;
 // LINE 368:
 	__asm        mov    eax, lValue;
 	__asm        jmp    near ptr 0x004EEF04;
@@ -716,7 +716,7 @@ long ConvertRenderBackPlaneValueToGUI(long lValue) {
 // LINE 380:
 	lHalfOfGOBJRange = 0x18;
 // LINE 382:
-	__asm        sub    lValue, 0xD;
+	lValue -= 0xd;
 // LINE 383:
 	__asm        mov    eax, lValue;
 	__asm        cdq;

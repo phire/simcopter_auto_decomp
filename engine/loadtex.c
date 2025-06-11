@@ -388,7 +388,7 @@ _Tef:
 // LINE 335:
 	baseptr = bhdr;
 // LINE 336:
-	__asm        add    baseptr, 0x40C;
+	baseptr += 0x40c;
 // LINE 338:
 	__asm        jmp    _T122;
 // LINE 340:

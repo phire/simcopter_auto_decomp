@@ -296,8 +296,7 @@ static short Encode(/*packed*/ struct tACompModel *model, /*packed*/ struct tLZS
 // LINE 530:
 	tempDebug = 0x0;
 // LINE 532:
-	__asm        mov    eax, state;
-	__asm        add    dword ptr [eax+0x14], 4;
+	state->codesize += 0x4;
 // LINE 533:
 	state->textsize = 0x0;
 // LINE 534:
@@ -531,9 +530,7 @@ _T262:
 	__asm        jmp    _T1f7;
 // LINE 570:
 _T28f:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, state;
-	__asm        add    [ecx+0x10], eax;
+	state->textsize += i;
 // LINE 571:
 _T298:
 	__asm        mov    eax, i;
@@ -1165,11 +1162,9 @@ _Ta9:
 	__asm        jmp    _T16b;
 // LINE 370:
 _Tde:
-	__asm        mov    eax, model;
-	__asm        sub    dword ptr [eax], 0x10000;
+	model->low -= 0x10000;
 // LINE 371:
-	__asm        mov    eax, model;
-	__asm        sub    dword ptr [eax+4], 0x10000;
+	model->high -= 0x10000;
 // LINE 372:
 	__asm        jmp    _T138;
 _Tf6:
@@ -1184,26 +1179,18 @@ _Tf6:
 	__asm        mov    eax, model;
 	__asm        inc    dword ptr [eax+0xC];
 // LINE 374:
-	__asm        mov    eax, model;
-	__asm        sub    dword ptr [eax], 0x8000;
+	model->low -= 0x8000;
 // LINE 375:
-	__asm        mov    eax, model;
-	__asm        sub    dword ptr [eax+4], 0x8000;
+	model->high -= 0x8000;
 // LINE 376:
 	__asm        jmp    _T138;
 _T133:
 	__asm        jmp    _T153;
 // LINE 377:
 _T138:
-	__asm        mov    eax, model;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, model;
-	__asm        add    [ecx], eax;
+	model->low += model->low;
 // LINE 378:
-	__asm        mov    eax, model;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, model;
-	__asm        add    [ecx+4], eax;
+	model->high += model->high;
 // LINE 379:
 	__asm        jmp    _T6e;
 // LINE 380:
@@ -1515,11 +1502,9 @@ _T9c:
 	__asm        jmp    _T14e;
 // LINE 397:
 _Td1:
-	__asm        mov    eax, model;
-	__asm        sub    dword ptr [eax], 0x10000;
+	model->low -= 0x10000;
 // LINE 398:
-	__asm        mov    eax, model;
-	__asm        sub    dword ptr [eax+4], 0x10000;
+	model->high -= 0x10000;
 // LINE 399:
 	__asm        jmp    _T12b;
 _Te9:
@@ -1534,26 +1519,18 @@ _Te9:
 	__asm        mov    eax, model;
 	__asm        inc    dword ptr [eax+0xC];
 // LINE 401:
-	__asm        mov    eax, model;
-	__asm        sub    dword ptr [eax], 0x8000;
+	model->low -= 0x8000;
 // LINE 402:
-	__asm        mov    eax, model;
-	__asm        sub    dword ptr [eax+4], 0x8000;
+	model->high -= 0x8000;
 // LINE 403:
 	__asm        jmp    _T12b;
 _T126:
 	__asm        jmp    _T146;
 // LINE 404:
 _T12b:
-	__asm        mov    eax, model;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, model;
-	__asm        add    [ecx], eax;
+	model->low += model->low;
 // LINE 405:
-	__asm        mov    eax, model;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, model;
-	__asm        add    [ecx+4], eax;
+	model->high += model->high;
 // LINE 406:
 	__asm        jmp    _T61;
 // LINE 408:
@@ -2118,14 +2095,11 @@ _T8d:
 	__asm        cmp    dword ptr [eax], 0x10000;
 	__asm        jb     _Tbe;
 // LINE 475:
-	__asm        mov    eax, model;
-	__asm        sub    dword ptr [eax+8], 0x10000;
+	model->value -= 0x10000;
 // LINE 476:
-	__asm        mov    eax, model;
-	__asm        sub    dword ptr [eax], 0x10000;
+	model->low -= 0x10000;
 // LINE 477:
-	__asm        mov    eax, model;
-	__asm        sub    dword ptr [eax+4], 0x10000;
+	model->high -= 0x10000;
 // LINE 478:
 	__asm        jmp    _T114;
 _Tbe:
@@ -2137,14 +2111,11 @@ _Tbe:
 	__asm        cmp    dword ptr [eax+4], 0x18000;
 	__asm        ja     _Tff;
 // LINE 479:
-	__asm        mov    eax, model;
-	__asm        sub    dword ptr [eax+8], 0x8000;
+	model->value -= 0x8000;
 // LINE 480:
-	__asm        mov    eax, model;
-	__asm        sub    dword ptr [eax], 0x8000;
+	model->low -= 0x8000;
 // LINE 481:
-	__asm        mov    eax, model;
-	__asm        sub    dword ptr [eax+4], 0x8000;
+	model->high -= 0x8000;
 // LINE 482:
 	__asm        jmp    _T114;
 _Tff:
@@ -2155,15 +2126,9 @@ _Tff:
 	__asm        jmp    _T14a;
 // LINE 484:
 _T114:
-	__asm        mov    eax, model;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, model;
-	__asm        add    [ecx], eax;
+	model->low += model->low;
 // LINE 485:
-	__asm        mov    eax, model;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, model;
-	__asm        add    [ecx+4], eax;
+	model->high += model->high;
 // LINE 486:
 	__asm        mov    eax, src;
 	__asm        push   eax;
@@ -2297,14 +2262,11 @@ _T8d:
 	__asm        cmp    dword ptr [eax], 0x10000;
 	__asm        jb     _Tbe;
 // LINE 506:
-	__asm        mov    eax, model;
-	__asm        sub    dword ptr [eax+8], 0x10000;
+	model->value -= 0x10000;
 // LINE 507:
-	__asm        mov    eax, model;
-	__asm        sub    dword ptr [eax], 0x10000;
+	model->low -= 0x10000;
 // LINE 508:
-	__asm        mov    eax, model;
-	__asm        sub    dword ptr [eax+4], 0x10000;
+	model->high -= 0x10000;
 // LINE 509:
 	__asm        jmp    _T114;
 _Tbe:
@@ -2316,14 +2278,11 @@ _Tbe:
 	__asm        cmp    dword ptr [eax+4], 0x18000;
 	__asm        ja     _Tff;
 // LINE 510:
-	__asm        mov    eax, model;
-	__asm        sub    dword ptr [eax+8], 0x8000;
+	model->value -= 0x8000;
 // LINE 511:
-	__asm        mov    eax, model;
-	__asm        sub    dword ptr [eax], 0x8000;
+	model->low -= 0x8000;
 // LINE 512:
-	__asm        mov    eax, model;
-	__asm        sub    dword ptr [eax+4], 0x8000;
+	model->high -= 0x8000;
 // LINE 513:
 	__asm        jmp    _T114;
 _Tff:
@@ -2334,15 +2293,9 @@ _Tff:
 	__asm        jmp    _T14a;
 // LINE 515:
 _T114:
-	__asm        mov    eax, model;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, model;
-	__asm        add    [ecx], eax;
+	model->low += model->low;
 // LINE 516:
-	__asm        mov    eax, model;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, model;
-	__asm        add    [ecx+4], eax;
+	model->high += model->high;
 // LINE 517:
 	__asm        mov    eax, src;
 	__asm        push   eax;

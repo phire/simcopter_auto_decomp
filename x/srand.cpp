@@ -130,10 +130,9 @@ unsigned short RRand(unsigned short lim) {
 	__asm        imul   eax, ecx;
 	__asm        mov    myRandom0, eax;
 // LINE 85:
-	__asm        mov    eax, myRandom2;
-	__asm        add    myRandom0, eax;
+	myRandom0 += myRandom2;
 // LINE 87:
-	__asm        add    myRandom0, 0x3039;
+	myRandom0 += 0x3039;
 // LINE 89:
 	rrandSeed<__unnamed+0x00:4> = myRandom0;
 // LINE 91:

@@ -2956,7 +2956,7 @@ _Tc2:
 	__asm        dec    dword ptr [eax+0x2C];
 	__asm        jmp    near ptr 0x0047D8F4;
 // LINE 580:
-	__asm        add    nFound, 1;
+	nFound += 0x1;
 // LINE 582:
 	__asm        jmp    _T154;
 // LINE 583:

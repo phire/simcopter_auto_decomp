@@ -8209,7 +8209,7 @@ void  GraphicWindow::InvalidateAllOverlaps(/*packed*/ class list<GraphicWindow *
 
 	windowCurrentChild = windowChildListItem.node->data;
 // LINE 1119:
-	__asm        add    windowNextChild, 0x74;
+	windowNextChild += 0x74;
 // LINE 1120:
 _T1e:
 	__asm        mov    eax, this;
@@ -8593,15 +8593,9 @@ _T12:
 	__asm        cmp    dword ptr [eax+0x3C], 0;
 	__asm        je     _T43;
 // LINE 1302:
-	__asm        mov    eax, currentWindow;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, nXPosition;
-	__asm        add    [ecx], eax;
+	nXPosition. += currentWindow-><GraphicWindow+0x10:4>;
 // LINE 1303:
-	__asm        mov    eax, currentWindow;
-	__asm        mov    eax, [eax+0x14];
-	__asm        mov    ecx, nYPosition;
-	__asm        add    [ecx], eax;
+	nYPosition. += currentWindow-><GraphicWindow+0x14:4>;
 // LINE 1304:
 	currentWindow = currentWindow-><GraphicWindow+0x3c:4>;
 // LINE 1305:

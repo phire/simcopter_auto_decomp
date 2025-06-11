@@ -1468,7 +1468,7 @@ _T45:
 	__asm        jmp    _Tef;
 // LINE 567:
 _T4c:
-	__asm        sub    lMaxBytesToRead, 8;
+	lMaxBytesToRead -= 0x8;
 // LINE 568:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x118];

@@ -134,16 +134,6 @@ struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 
 // Type: unsigned long;
 
-// Type: /*packed*/ class IBackBuffer;
-// VTABLE: COPTER_D 0x005907e0
-class IBackBuffer : public IFlatImage
-{ // packed(0x18 bytes) TI: 0x283f
-public:
-	virtual unsigned long Swap(/*packed*/ class CSparkalWindow*, long, long); // vtable+0x1c
-	virtual unsigned long SwapRect(/*packed*/ class CSparkalWindow*, long, long, long, long, long, long); // vtable+0x20
-	virtual unsigned long StretchRect(/*packed*/ class CSparkalWindow*, long, long, long, long, long, long, long, long); // vtable+0x24
-};
-
 // Type: /*packed*/ class CBackBuffer;
 // VTABLE: COPTER_D 0x00590808
 class CBackBuffer : public IBackBuffer
@@ -207,6 +197,16 @@ protected:
 	/*+0x12c*/ int32_t nPenThickness;
 	/*+0x130*/ /*packed*/ struct SparkalColor colorPenCurrent;
 	virtual /*packed*/ struct IDirectDrawSurface* GetDDSurface(); // vtable+0x60
+};
+
+// Type: /*packed*/ class IBackBuffer;
+// VTABLE: COPTER_D 0x005907e0
+class IBackBuffer : public IFlatImage
+{ // packed(0x18 bytes) TI: 0x283f
+public:
+	virtual unsigned long Swap(/*packed*/ class CSparkalWindow*, long, long); // vtable+0x1c
+	virtual unsigned long SwapRect(/*packed*/ class CSparkalWindow*, long, long, long, long, long, long); // vtable+0x20
+	virtual unsigned long StretchRect(/*packed*/ class CSparkalWindow*, long, long, long, long, long, long, long, long); // vtable+0x24
 };
 
 // Type: /*packed*/ class IFlatImage;
@@ -449,13 +449,9 @@ _Tf6:
 // LINE 121:
 	__asm        jmp    near ptr 0x004956A8;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        add    pDestinationImage, eax;
+	pDestinationImage += this->mStride;
 // LINE 122:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x134];
-	__asm        add    pSourceImage, eax;
+	pSourceImage += this->nBitmapWidth;
 // LINE 123:
 	__asm        jmp    _Tf0;
 // LINE 124:
@@ -484,7 +480,7 @@ _T173:
 // LINE 137:
 	pDestinationImage = bmpHeader;
 // LINE 138:
-	__asm        add    pDestinationImage, 0x40C;
+	pDestinationImage += 0x40c;
 // LINE 141:
 	__asm        push   1;
 	__asm        mov    eax, vrResource;
@@ -495,7 +491,7 @@ _T173:
 // LINE 142:
 	pSourceImage = bmpHeader;
 // LINE 143:
-	__asm        add    pSourceImage, 0x40C;
+	pSourceImage += 0x40c;
 // LINE 146:
 	__asm        push   0x10000;
 	__asm        mov    eax, pSourceImage;
@@ -514,7 +510,7 @@ _T173:
 // LINE 150:
 	pDestinationImage = bmpHeader;
 // LINE 151:
-	__asm        add    pDestinationImage, 0x40C;
+	pDestinationImage += 0x40c;
 // LINE 154:
 	__asm        push   2;
 	__asm        mov    eax, vrResource;
@@ -525,7 +521,7 @@ _T173:
 // LINE 155:
 	pSourceImage = bmpHeader;
 // LINE 156:
-	__asm        add    pSourceImage, 0x40C;
+	pSourceImage += 0x40c;
 // LINE 159:
 	__asm        push   0x10000;
 	__asm        mov    eax, pSourceImage;
@@ -544,7 +540,7 @@ _T173:
 // LINE 163:
 	pDestinationImage = bmpHeader;
 // LINE 164:
-	__asm        add    pDestinationImage, 0x40C;
+	pDestinationImage += 0x40c;
 // LINE 167:
 	__asm        push   3;
 	__asm        mov    eax, vrResource;
@@ -555,7 +551,7 @@ _T173:
 // LINE 168:
 	pSourceImage = bmpHeader;
 // LINE 169:
-	__asm        add    pSourceImage, 0x40C;
+	pSourceImage += 0x40c;
 // LINE 172:
 	__asm        push   0x10000;
 	__asm        mov    eax, pSourceImage;
@@ -583,7 +579,7 @@ _T173:
 // LINE 181:
 	pSourceImage = bmpHeader;
 // LINE 182:
-	__asm        add    pSourceImage, 0x40C;
+	pSourceImage += 0x40c;
 // LINE 185:
 	__asm        push   0x10000;
 	__asm        mov    eax, pSourceImage;
@@ -602,7 +598,7 @@ _T173:
 // LINE 189:
 	pDestinationImage = bmpHeader;
 // LINE 190:
-	__asm        add    pDestinationImage, 0x40C;
+	pDestinationImage += 0x40c;
 // LINE 193:
 	__asm        push   5;
 	__asm        mov    eax, vrResource;
@@ -613,7 +609,7 @@ _T173:
 // LINE 194:
 	pSourceImage = bmpHeader;
 // LINE 195:
-	__asm        add    pSourceImage, 0x40C;
+	pSourceImage += 0x40c;
 // LINE 198:
 	__asm        push   0x10000;
 	__asm        mov    eax, pSourceImage;
@@ -661,7 +657,7 @@ unsigned long SkyImage::Compose(/*packed*/ class CBackBuffer *pDestImage, int32_
 	__asm        cmp    pitch, 0x7080000;
 	__asm        jle    _T43;
 // LINE 228:
-	__asm        sub    pitch, 0xE100000;
+	pitch -= 0xe100000;
 // LINE 232:
 _T43:
 	__asm        mov    eax, this;

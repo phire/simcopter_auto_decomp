@@ -2289,11 +2289,9 @@ _T12d:
 	__asm        cmp    nOverhangDistance, 0;
 	__asm        jle    _T15d;
 // LINE 715:
-	__asm        mov    eax, nOverhangDistance;
-	__asm        add    destRect.left, eax;
+	destRect.left += nOverhangDistance;
 // LINE 716:
-	__asm        mov    eax, nOverhangDistance;
-	__asm        add    srcRect.left, eax;
+	srcRect.left += nOverhangDistance;
 // LINE 718:
 _T15d:
 	__asm        jmp    near ptr 0x0046FAAA;
@@ -2322,11 +2320,9 @@ _T198:
 	__asm        cmp    nOverhangDistance, 0;
 	__asm        jle    _T1c2;
 // LINE 723:
-	__asm        mov    eax, nOverhangDistance;
-	__asm        add    destRect.top, eax;
+	destRect.top += nOverhangDistance;
 // LINE 724:
-	__asm        mov    eax, nOverhangDistance;
-	__asm        add    srcRect.top, eax;
+	srcRect.top += nOverhangDistance;
 // LINE 728:
 _T1c2:
 	ddbltfx.dwSize = 0x64;
@@ -3006,7 +3002,7 @@ _T36:
 	__asm        mov    eax, i;
 	__asm        mov    byte ptr [ebp+eax*4-0x3FD], 5;
 // LINE 1138:
-	__asm        add    pColor, 4;
+	pColor += 0x4;
 // LINE 1139:
 	__asm        jmp    _T30;
 // LINE 1141:
@@ -3616,9 +3612,7 @@ _T82:
 	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 1481:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        add    address, eax;
+	address += this->mStride;
 // LINE 1482:
 	__asm        jmp    _T82;
 // LINE 1486:
@@ -3671,9 +3665,7 @@ _T109:
 	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 1497:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        add    address, eax;
+	address += this->mStride;
 // LINE 1498:
 	__asm        jmp    _T109;
 // LINE 1501:
@@ -3821,26 +3813,20 @@ _T254:
 	__asm        cmp    d, 0;
 	__asm        jge    _T29d;
 // LINE 1561:
-	__asm        mov    eax, dinc1;
-	__asm        add    d, eax;
+	d += dinc1;
 // LINE 1562:
-	__asm        mov    eax, xinc1;
-	__asm        add    x, eax;
+	x += xinc1;
 // LINE 1563:
-	__asm        mov    eax, yinc1;
-	__asm        add    y, eax;
+	y += yinc1;
 // LINE 1565:
 	__asm        jmp    _T2af;
 // LINE 1567:
 _T29d:
-	__asm        mov    eax, dinc2;
-	__asm        add    d, eax;
+	d += dinc2;
 // LINE 1568:
-	__asm        mov    eax, xinc2;
-	__asm        add    x, eax;
+	x += xinc2;
 // LINE 1569:
-	__asm        mov    eax, yinc2;
-	__asm        add    y, eax;
+	y += yinc2;
 // LINE 1571:
 _T2af:
 	__asm        jmp    _T251;
@@ -3914,9 +3900,7 @@ _T319:
 	__asm        jmp    _T368;
 // LINE 1593:
 _T35f:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        add    address, eax;
+	address += this->mStride;
 // LINE 1594:
 _T368:
 	__asm        jmp    _T319;
@@ -3925,26 +3909,20 @@ _T36d:
 	__asm        cmp    d, 0;
 	__asm        jge    _T38e;
 // LINE 1598:
-	__asm        mov    eax, dinc1;
-	__asm        add    d, eax;
+	d += dinc1;
 // LINE 1599:
-	__asm        mov    eax, xinc1;
-	__asm        add    x, eax;
+	x += xinc1;
 // LINE 1600:
-	__asm        mov    eax, yinc1;
-	__asm        add    y, eax;
+	y += yinc1;
 // LINE 1602:
 	__asm        jmp    _T3a0;
 // LINE 1604:
 _T38e:
-	__asm        mov    eax, dinc2;
-	__asm        add    d, eax;
+	d += dinc2;
 // LINE 1605:
-	__asm        mov    eax, xinc2;
-	__asm        add    x, eax;
+	x += xinc2;
 // LINE 1606:
-	__asm        mov    eax, yinc2;
-	__asm        add    y, eax;
+	y += yinc2;
 // LINE 1608:
 _T3a0:
 	__asm        jmp    _T2c5;
@@ -4275,9 +4253,7 @@ _T3db:
 	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 1654:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        add    address, eax;
+	address += this->mStride;
 // LINE 1655:
 	__asm        jmp    _T3db;
 // LINE 1659:
@@ -4330,9 +4306,7 @@ _T46e:
 	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 1670:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        add    address, eax;
+	address += this->mStride;
 // LINE 1671:
 	__asm        jmp    _T46e;
 // LINE 1674:
@@ -4480,26 +4454,20 @@ _T5bf:
 	__asm        cmp    d, 0;
 	__asm        jge    _T611;
 // LINE 1734:
-	__asm        mov    eax, dinc1;
-	__asm        add    d, eax;
+	d += dinc1;
 // LINE 1735:
-	__asm        mov    eax, xinc1;
-	__asm        add    x, eax;
+	x += xinc1;
 // LINE 1736:
-	__asm        mov    eax, yinc1;
-	__asm        add    y, eax;
+	y += yinc1;
 // LINE 1738:
 	__asm        jmp    _T623;
 // LINE 1740:
 _T611:
-	__asm        mov    eax, dinc2;
-	__asm        add    d, eax;
+	d += dinc2;
 // LINE 1741:
-	__asm        mov    eax, xinc2;
-	__asm        add    x, eax;
+	x += xinc2;
 // LINE 1742:
-	__asm        mov    eax, yinc2;
-	__asm        add    y, eax;
+	y += yinc2;
 // LINE 1744:
 _T623:
 	__asm        jmp    _T5bc;
@@ -4605,9 +4573,7 @@ _T6d8:
 	__asm        jmp    _T730;
 // LINE 1783:
 _T724:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        add    address, eax;
+	address += this->mStride;
 // LINE 1784:
 _T730:
 	__asm        jmp    _T6d8;
@@ -4616,26 +4582,20 @@ _T735:
 	__asm        cmp    d, 0;
 	__asm        jge    _T756;
 // LINE 1788:
-	__asm        mov    eax, dinc1;
-	__asm        add    d, eax;
+	d += dinc1;
 // LINE 1789:
-	__asm        mov    eax, xinc1;
-	__asm        add    x, eax;
+	x += xinc1;
 // LINE 1790:
-	__asm        mov    eax, yinc1;
-	__asm        add    y, eax;
+	y += yinc1;
 // LINE 1792:
 	__asm        jmp    _T768;
 // LINE 1794:
 _T756:
-	__asm        mov    eax, dinc2;
-	__asm        add    d, eax;
+	d += dinc2;
 // LINE 1795:
-	__asm        mov    eax, xinc2;
-	__asm        add    x, eax;
+	x += xinc2;
 // LINE 1796:
-	__asm        mov    eax, yinc2;
-	__asm        add    y, eax;
+	y += yinc2;
 // LINE 1799:
 _T768:
 	__asm        dec    numpixels;
@@ -4781,9 +4741,7 @@ _T8b6:
 	__asm        jmp    _T8e1;
 // LINE 1840:
 _T8d5:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        add    address, eax;
+	address += this->mStride;
 // LINE 1841:
 _T8e1:
 	__asm        jmp    _T800;
@@ -4792,26 +4750,20 @@ _T8e6:
 	__asm        cmp    d, 0;
 	__asm        jge    _T907;
 // LINE 1845:
-	__asm        mov    eax, dinc1;
-	__asm        add    d, eax;
+	d += dinc1;
 // LINE 1846:
-	__asm        mov    eax, xinc1;
-	__asm        add    x, eax;
+	x += xinc1;
 // LINE 1847:
-	__asm        mov    eax, yinc1;
-	__asm        add    y, eax;
+	y += yinc1;
 // LINE 1849:
 	__asm        jmp    _T919;
 // LINE 1851:
 _T907:
-	__asm        mov    eax, dinc2;
-	__asm        add    d, eax;
+	d += dinc2;
 // LINE 1852:
-	__asm        mov    eax, xinc2;
-	__asm        add    x, eax;
+	x += xinc2;
 // LINE 1853:
-	__asm        mov    eax, yinc2;
-	__asm        add    y, eax;
+	y += yinc2;
 // LINE 1856:
 _T919:
 	__asm        dec    numpixels;

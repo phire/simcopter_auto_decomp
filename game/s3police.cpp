@@ -1178,8 +1178,7 @@ _T496:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x146], eax;
 // LINE 385:
-	__asm        mov    eax, this;
-	__asm        add    dword ptr [eax+0x142], 0xA0000;
+	this->dispatchIcon.loc.y += 0xa0000;
 // LINE 386:
 	__asm        mov    eax, this;
 	__asm        mov    ax, [eax+0x11C];

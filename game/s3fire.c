@@ -717,9 +717,7 @@ _T185:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 388:
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0xC];
-	__asm        add    loc.y, eax;
+	loc.y += fd->hdelta;
 // LINE 390:
 	__asm        mov    eax, fd;
 	__asm        test   byte ptr [eax], 2;
@@ -1029,8 +1027,7 @@ _T50d:
 	__asm        call   S3FireDyObjCollisionCheck;
 	__asm        add    esp, 8;
 // LINE 520:
-	__asm        mov    eax, G_AvLoopTime;
-	__asm        add    S_spread_time, eax;
+	S_spread_time += G_AvLoopTime;
 // LINE 521:
 	__asm        mov    eax, S_ftwk_spread_interval;
 	__asm        mov    ecx, G_diff_level;
@@ -1305,8 +1302,7 @@ _T77:
 _T93:
 	fd = stobj->user2;
 // LINE 675:
-	__asm        mov    eax, fd;
-	__asm        add    dword ptr [eax+4], 0x30000;
+	fd->timetolive += 0x30000;
 // LINE 678:
 	__asm        lea    eax, center.x;
 	__asm        push   eax;
@@ -2881,7 +2877,7 @@ int32_t S3FireTruckDouse(/*packed*/ struct _FIRE_DATA *fd, int32_t dist, /*packe
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 1037:
-	__asm        add    loc.y, 0x1E0000;
+	loc.y += 0x1e0000;
 // LINE 1039:
 	__asm        mov    eax, dytruck;
 	__asm        mov    eax, [eax+0x18];
@@ -2926,8 +2922,7 @@ _T61:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 1065:
-	__asm        mov    eax, S_yvaldelta;
-	__asm        add    S_yval, eax;
+	S_yval += S_yvaldelta;
 // LINE 1066:
 	__asm        cmp    S_yval, 0x40000;
 	__asm        jle    _Tce;
@@ -3009,7 +3004,7 @@ int32_t S3FireTruckDouseDyObj(/*packed*/ struct _DYOBJ_INST *dyobj, int32_t dist
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 1118:
-	__asm        add    loc.y, 0x1E0000;
+	loc.y += 0x1e0000;
 // LINE 1120:
 	__asm        mov    eax, dytruck;
 	__asm        mov    eax, [eax+0x18];
@@ -3055,8 +3050,7 @@ _T65:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 1131:
-	__asm        mov    eax, S_yvaldelta;
-	__asm        add    S_yval, eax;
+	S_yval += S_yvaldelta;
 // LINE 1132:
 	__asm        cmp    S_yval, 0x40000;
 	__asm        jle    _Td2;
@@ -3543,7 +3537,7 @@ _T38b:
 	__asm        call   S3ExplosionStart;
 	__asm        add    esp, 0x18;
 // LINE 1348:
-	__asm        add    loc.y, 0x300000;
+	loc.y += 0x300000;
 // LINE 1351:
 	__asm        call   rand;
 	__asm        mov    ecx, fd;
@@ -3744,11 +3738,9 @@ _Tef:
 	__asm        cmp    curr_dist, eax;
 	__asm        jle    _T13d;
 // LINE 1454:
-	__asm        mov    eax, xdir;
-	__asm        add    x, eax;
+	x += xdir;
 // LINE 1455:
-	__asm        mov    eax, ydir;
-	__asm        add    y, eax;
+	y += ydir;
 // LINE 1456:
 	__asm        mov    eax, x;
 	__asm        and    eax, 0xFF;

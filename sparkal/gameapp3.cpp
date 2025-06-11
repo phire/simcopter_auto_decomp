@@ -92,6 +92,10 @@ public:
 	/*packed*/ class list<CopterGameMode>::iterator& operator--();
 };
 
+// Type: /*packed*/ struct bidirectional_iterator<CopterGameMode,int>;
+struct bidirectional_iterator<CopterGameMode,int>{ // packed(0x1 bytes) TI: 0x184c
+};
+
 // Type: /*packed*/ struct SparkalRect;
 struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	/*+0x0*/   long left;
@@ -100,10 +104,6 @@ struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	/*+0xc*/   long bottom;
 	void SparkalRect(long, long, long, long);
 	void SparkalRect();
-};
-
-// Type: /*packed*/ struct bidirectional_iterator<CopterGameMode,int>;
-struct bidirectional_iterator<CopterGameMode,int>{ // packed(0x1 bytes) TI: 0x184c
 };
 
 

@@ -5352,7 +5352,7 @@ _T65:
 	__asm        sar    eax, 0x10;
 	__asm        mov    lNewVolume, eax;
 // LINE 513:
-	__asm        add    lNewVolume, 0x2710;
+	lNewVolume += 0x2710;
 // LINE 514:
 	__asm        mov    eax, lNewVolume;
 	__asm        mov    ecx, nSoundIndex;
@@ -5634,7 +5634,7 @@ _Tf5:
 	__asm        sar    eax, 0x10;
 	__asm        mov    lVolume, eax;
 // LINE 702:
-	__asm        add    lVolume, 0x2710;
+	lVolume += 0x2710;
 // LINE 714:
 	__asm        mov    eax, positionRelative.x;
 	__asm        push   eax;

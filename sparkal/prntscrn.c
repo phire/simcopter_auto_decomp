@@ -193,8 +193,7 @@ _Tf6:
 	__asm        call   S3WritePCXLine;
 	__asm        add    esp, 0xC;
 // LINE 107:
-	__asm        mov    eax, pitch;
-	__asm        add    ptr, eax;
+	ptr += pitch;
 // LINE 108:
 	__asm        jmp    _Tf3;
 // LINE 109:

@@ -3718,44 +3718,36 @@ void GameModePlayData::SetUpRenderWindowSizes() {
 	__asm        cmp    gameResolution, 0;
 	__asm        jne    _T5d;
 // LINE 1089:
-	__asm        mov    eax, this;
-	__asm        sub    dword ptr [eax+0x20], 0x28;
+	this->nShortenedRenderWindowWidth -= 0x28;
 // LINE 1090:
-	__asm        mov    eax, this;
-	__asm        sub    dword ptr [eax+0x24], 0x28;
+	this->nShortenedRenderWindowHeight -= 0x28;
 // LINE 1092:
 	__asm        jmp    _Tbe;
 _T5d:
 	__asm        cmp    gameResolution, 1;
 	__asm        jne    _T7d;
 // LINE 1093:
-	__asm        mov    eax, this;
-	__asm        sub    dword ptr [eax+0x20], 0x50;
+	this->nShortenedRenderWindowWidth -= 0x50;
 // LINE 1094:
-	__asm        mov    eax, this;
-	__asm        sub    dword ptr [eax+0x24], 0x50;
+	this->nShortenedRenderWindowHeight -= 0x50;
 // LINE 1096:
 	__asm        jmp    _Tbe;
 _T7d:
 	__asm        cmp    gameResolution, 2;
 	__asm        jne    _T9d;
 // LINE 1097:
-	__asm        mov    eax, this;
-	__asm        sub    dword ptr [eax+0x20], 0x64;
+	this->nShortenedRenderWindowWidth -= 0x64;
 // LINE 1098:
-	__asm        mov    eax, this;
-	__asm        sub    dword ptr [eax+0x24], 0x64;
+	this->nShortenedRenderWindowHeight -= 0x64;
 // LINE 1100:
 	__asm        jmp    _Tbe;
 _T9d:
 	__asm        cmp    gameResolution, 3;
 	__asm        jne    _Tbe;
 // LINE 1101:
-	__asm        mov    eax, this;
-	__asm        sub    dword ptr [eax+0x20], 0x80;
+	this->nShortenedRenderWindowWidth -= 0x80;
 // LINE 1102:
-	__asm        mov    eax, this;
-	__asm        sub    dword ptr [eax+0x24], 0x80;
+	this->nShortenedRenderWindowHeight -= 0x80;
 // LINE 1105:
 _Tbe:
 	__asm        mov    eax, this;

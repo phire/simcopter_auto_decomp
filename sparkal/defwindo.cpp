@@ -262,8 +262,7 @@ _Tb0:
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   dword ptr [edx+0x20];
 // LINE 103:
-	__asm        mov    eax, Step;
-	__asm        add    ChunkHeight, eax;
+	ChunkHeight += Step;
 // LINE 104:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, Step;

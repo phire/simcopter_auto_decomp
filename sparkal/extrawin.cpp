@@ -3681,10 +3681,7 @@ _T141:
 // FUNCTION: COPTER_D 0x00452252
 void AnimationWindow::GotoNextFrame() {
 // LINE 385:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x8C];
-	__asm        mov    ecx, this;
-	__asm        add    [ecx+0x90], eax;
+	this->lCurrentFrame += this->nAnimationDirection;
 // LINE 389:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x8C], 1;
@@ -12456,8 +12453,7 @@ _T5b:
 	__asm        mov    ecx, [eax+0xCC];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1608:
-	__asm        mov    eax, lSourceWidth;
-	__asm        add    lCurrentXPosition, eax;
+	lCurrentXPosition += lSourceWidth;
 // LINE 1609:
 _Te2:
 	__asm        mov    eax, lEndXPosition;
@@ -12489,8 +12485,7 @@ _Te2:
 	__asm        mov    ecx, [eax+0xCC];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1612:
-	__asm        mov    eax, lSourceWidth;
-	__asm        add    lCurrentXPosition, eax;
+	lCurrentXPosition += lSourceWidth;
 // LINE 1613:
 	__asm        jmp    _Te2;
 // LINE 1615:
@@ -12563,8 +12558,7 @@ _T1af:
 	__asm        mov    ecx, [eax+0xCC];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1621:
-	__asm        mov    eax, lSourceWidth;
-	__asm        add    lCurrentXPosition, eax;
+	lCurrentXPosition += lSourceWidth;
 // LINE 1622:
 _T248:
 	__asm        mov    eax, lEndXPosition;
@@ -12603,8 +12597,7 @@ _T248:
 	__asm        mov    ecx, [eax+0xCC];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1625:
-	__asm        mov    eax, lSourceWidth;
-	__asm        add    lCurrentXPosition, eax;
+	lCurrentXPosition += lSourceWidth;
 // LINE 1626:
 	__asm        jmp    _T248;
 // LINE 1628:
@@ -12680,8 +12673,7 @@ _T359:
 	__asm        mov    ecx, [eax+0xCC];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1633:
-	__asm        mov    eax, lSourceWidth;
-	__asm        add    lCurrentXPosition, eax;
+	lCurrentXPosition += lSourceWidth;
 // LINE 1634:
 _T3f4:
 	__asm        mov    eax, lEndXPosition;
@@ -12724,8 +12716,7 @@ _T3f4:
 	__asm        mov    ecx, [eax+0xCC];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1637:
-	__asm        mov    eax, lSourceWidth;
-	__asm        add    lCurrentXPosition, eax;
+	lCurrentXPosition += lSourceWidth;
 // LINE 1638:
 	__asm        jmp    _T3f4;
 // LINE 1640:
@@ -14443,8 +14434,7 @@ int32_t TooltipWindow::DrawSelf() {
 	__asm        mov    ecx, [eax+0xA4];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1874:
-	__asm        mov    eax, lSourceWidth;
-	__asm        add    lCurrentXPosition, eax;
+	lCurrentXPosition += lSourceWidth;
 // LINE 1875:
 _Ta2:
 	__asm        mov    eax, lEndXPosition;
@@ -14479,8 +14469,7 @@ _Ta2:
 	__asm        mov    ecx, [eax+0xA4];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1878:
-	__asm        mov    eax, lSourceWidth;
-	__asm        add    lCurrentXPosition, eax;
+	lCurrentXPosition += lSourceWidth;
 // LINE 1879:
 	__asm        jmp    _Ta2;
 // LINE 1881:
@@ -14514,7 +14503,7 @@ _T104:
 	__asm        mov    ecx, [eax+0xA4];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1883:
-	__asm        add    rectText.left, 5;
+	rectText.left += 0x5;
 // LINE 1884:
 	__asm        inc    rectText.top;
 	__asm        mov    eax, this;

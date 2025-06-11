@@ -603,7 +603,7 @@ unsigned long MDate::Jday(uint32_t m, uint32_t d, uint32_t y) {
 	__asm        cmp    y, 0x63;
 	__asm        ja     _T1a;
 // LINE 236:
-	__asm        add    y, 0x76C;
+	y += 0x76c;
 // LINE 237:
 _T1a:
 	__asm        mov    eax, y;
@@ -624,12 +624,12 @@ _T3d:
 	__asm        cmp    m, 2;
 	__asm        jbe    _T50;
 // LINE 241:
-	__asm        sub    m, 3;
+	m -= 0x3;
 // LINE 242:
 	__asm        jmp    _T57;
 // LINE 243:
 _T50:
-	__asm        add    m, 9;
+	m += 0x9;
 // LINE 244:
 	__asm        dec    y;
 // LINE 247:
@@ -975,14 +975,12 @@ void MDate::Mdy(uint32_t& m, uint32_t& D, uint32_t& y) {
 	__asm        cmp    dword ptr [eax], 0xA;
 	__asm        jae    _T116;
 // LINE 383:
-	__asm        mov    eax, m;
-	__asm        add    dword ptr [eax], 3;
+	m. += 0x3;
 // LINE 384:
 	__asm        jmp    _T121;
 // LINE 385:
 _T116:
-	__asm        mov    eax, m;
-	__asm        sub    dword ptr [eax], 9;
+	m. -= 0x9;
 // LINE 386:
 	__asm        mov    eax, y;
 	__asm        inc    dword ptr [eax];

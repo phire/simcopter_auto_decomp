@@ -326,35 +326,17 @@ _Tc3:
 	__asm        mov    ecx, citySettingsOut;
 	__asm        mov    [ecx+0x1C], eax;
 // LINE 218:
-	__asm        mov    eax, citySettingsOut;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, citySettingsOut;
-	__asm        add    [ecx+8], eax;
+	citySettingsOut->lMissionFrequencyCrime += citySettingsOut->lMissionFrequencyFire;
 // LINE 219:
-	__asm        mov    eax, citySettingsOut;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, citySettingsOut;
-	__asm        add    [ecx+0xC], eax;
+	citySettingsOut->lMissionFrequencyRescue += citySettingsOut->lMissionFrequencyCrime;
 // LINE 220:
-	__asm        mov    eax, citySettingsOut;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    ecx, citySettingsOut;
-	__asm        add    [ecx+0x10], eax;
+	citySettingsOut->lMissionFrequencyRiot += citySettingsOut->lMissionFrequencyRescue;
 // LINE 221:
-	__asm        mov    eax, citySettingsOut;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, citySettingsOut;
-	__asm        add    [ecx+0x14], eax;
+	citySettingsOut->lMissionFrequencyTraffic += citySettingsOut->lMissionFrequencyRiot;
 // LINE 222:
-	__asm        mov    eax, citySettingsOut;
-	__asm        mov    eax, [eax+0x14];
-	__asm        mov    ecx, citySettingsOut;
-	__asm        add    [ecx+0x18], eax;
+	citySettingsOut->lMissionFrequencyMedEvac += citySettingsOut->lMissionFrequencyTraffic;
 // LINE 223:
-	__asm        mov    eax, citySettingsOut;
-	__asm        mov    eax, [eax+0x18];
-	__asm        mov    ecx, citySettingsOut;
-	__asm        add    [ecx+0x1C], eax;
+	citySettingsOut->lMissionFrequencyTransport += citySettingsOut->lMissionFrequencyMedEvac;
 // LINE 224:
 _T1c1:
 }
@@ -777,9 +759,7 @@ _T18:
 	__asm        jmp    _T15;
 // LINE 446:
 _T4f:
-	__asm        mov    eax, G_AvLoopTime;
-	__asm        mov    ecx, md;
-	__asm        add    [ecx+0x40], eax;
+	md->timer += G_AvLoopTime;
 // LINE 449:
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+0x54], 2;
@@ -2723,59 +2703,35 @@ _T55:
 // LINE 1244:
 	__asm        jmp    _T4c9;
 // LINE 1246:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, md;
-	__asm        add    [ecx+0x58], eax;
+	md->mdata.total_fires += mp->i2num;
 // LINE 1247:
 	__asm        jmp    _T4c9;
 // LINE 1249:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, md;
-	__asm        add    [ecx+0x48], eax;
+	md->points_bonus += mp->i2num;
 // LINE 1250:
 	__asm        jmp    _T4c9;
 // LINE 1252:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, md;
-	__asm        add    [ecx+0x44], eax;
+	md->money_bonus += mp->i2num;
 // LINE 1253:
 	__asm        jmp    _T4c9;
 // LINE 1255:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, md;
-	__asm        add    [ecx+0x60], eax;
+	md->mdata.doused_fires += mp->i2num;
 // LINE 1256:
 	__asm        jmp    _T4c9;
 // LINE 1258:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, md;
-	__asm        add    [ecx+0x64], eax;
+	md->mdata.burnout_fires += mp->i2num;
 // LINE 1259:
 	__asm        jmp    _T4c9;
 // LINE 1261:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, md;
-	__asm        add    [ecx+0x68], eax;
+	md->mdata.destroyed_cels += mp->i2num;
 // LINE 1262:
 	__asm        jmp    _T4c9;
 // LINE 1264:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, md;
-	__asm        add    [ecx+0x5C], eax;
+	md->mdata.total_cels += mp->i2num;
 // LINE 1265:
 	__asm        jmp    _T4c9;
 // LINE 1267:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, md;
-	__asm        add    [ecx+0x6C], eax;
+	md->mdata.saved_cels += mp->i2num;
 // LINE 1268:
 	__asm        jmp    _T4c9;
 // LINE 1272:
@@ -2787,38 +2743,23 @@ _T55:
 	__asm        or     dword ptr [eax+0x50], 8;
 // LINE 1274:
 _T14f:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, md;
-	__asm        add    [ecx+0x70], eax;
+	md->mdata.total_debris += mp->i2num;
 // LINE 1275:
 	__asm        jmp    _T4c9;
 // LINE 1277:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, md;
-	__asm        add    [ecx+0x74], eax;
+	md->mdata.doused_debris += mp->i2num;
 // LINE 1278:
 	__asm        jmp    _T4c9;
 // LINE 1280:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, md;
-	__asm        add    [ecx+0x78], eax;
+	md->mdata.burnout_debris += mp->i2num;
 // LINE 1281:
 	__asm        jmp    _T4c9;
 // LINE 1283:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, md;
-	__asm        add    [ecx+0x80], eax;
+	md->mdata.total_person_rioting += mp->i2num;
 // LINE 1284:
 	__asm        jmp    _T4c9;
 // LINE 1286:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, md;
-	__asm        add    [ecx+0x94], eax;
+	md->mdata.total_person_crime += mp->i2num;
 // LINE 1287:
 	__asm        jmp    _T4c9;
 // LINE 1291:
@@ -2830,17 +2771,11 @@ _T14f:
 	__asm        or     dword ptr [eax+0x50], 0x20;
 // LINE 1293:
 _T1be:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, md;
-	__asm        add    [ecx+0x84], eax;
+	md->mdata.total_person_medevac += mp->i2num;
 // LINE 1294:
 	__asm        jmp    _T4c9;
 // LINE 1296:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, md;
-	__asm        add    [ecx+0x8C], eax;
+	md->mdata.total_person_rescue += mp->i2num;
 // LINE 1297:
 	__asm        jmp    _T4c9;
 // LINE 1299:
@@ -2852,101 +2787,59 @@ _T1be:
 	__asm        or     dword ptr [eax+0x50], 0x40;
 // LINE 1301:
 _T1fa:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, md;
-	__asm        add    [ecx+0x88], eax;
+	md->mdata.total_person_transport += mp->i2num;
 // LINE 1302:
 	__asm        jmp    _T4c9;
 // LINE 1304:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, md;
-	__asm        add    [ecx+0x90], eax;
+	md->mdata.total_person_onfire += mp->i2num;
 // LINE 1305:
 	__asm        jmp    _T4c9;
 // LINE 1307:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, md;
-	__asm        add    [ecx+0x98], eax;
+	md->mdata.person_rescued += mp->i2num;
 // LINE 1308:
 	__asm        jmp    _T4c9;
 // LINE 1310:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, md;
-	__asm        add    [ecx+0xBC], eax;
+	md->mdata.person_couldntwait += mp->i2num;
 // LINE 1311:
 	__asm        jmp    _T4c9;
 // LINE 1313:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, md;
-	__asm        add    [ecx+0x9C], eax;
+	md->mdata.person_transported += mp->i2num;
 // LINE 1314:
 	__asm        jmp    _T4c9;
 // LINE 1316:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, md;
-	__asm        add    [ecx+0xA0], eax;
+	md->mdata.person_medevaced += mp->i2num;
 // LINE 1317:
 	__asm        jmp    _T4c9;
 // LINE 1319:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, md;
-	__asm        add    [ecx+0xA4], eax;
+	md->mdata.person_pickedup += mp->i2num;
 // LINE 1320:
 	__asm        jmp    _T4c9;
 // LINE 1322:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, md;
-	__asm        add    [ecx+0xA8], eax;
+	md->mdata.person_rioters_freed += mp->i2num;
 // LINE 1323:
 	__asm        jmp    _T4c9;
 // LINE 1325:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, md;
-	__asm        add    [ecx+0xAC], eax;
+	md->mdata.person_rioters_left += mp->i2num;
 // LINE 1326:
 	__asm        jmp    _T4c9;
 // LINE 1328:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, md;
-	__asm        add    [ecx+0xB0], eax;
+	md->mdata.person_doused += mp->i2num;
 // LINE 1329:
 	__asm        jmp    _T4c9;
 // LINE 1331:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, md;
-	__asm        add    [ecx+0xB8], eax;
+	md->mdata.person_caught += mp->i2num;
 // LINE 1332:
 	__asm        jmp    _T4c9;
 // LINE 1334:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, md;
-	__asm        add    [ecx+0xB4], eax;
+	md->mdata.person_died += mp->i2num;
 // LINE 1335:
 	__asm        jmp    _T4c9;
 // LINE 1337:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, md;
-	__asm        add    [ecx+0xC0], eax;
+	md->mdata.total_vehicle_onfire += mp->i2num;
 // LINE 1338:
 	__asm        jmp    _T4c9;
 // LINE 1340:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, md;
-	__asm        add    [ecx+0xC4], eax;
+	md->mdata.total_vehicle_jammed += mp->i2num;
 // LINE 1343:
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+0x54], 2;
@@ -2977,31 +2870,19 @@ _T1fa:
 _T35d:
 	__asm        jmp    _T4c9;
 // LINE 1357:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, md;
-	__asm        add    [ecx+0xC8], eax;
+	md->mdata.vehicles_doused += mp->i2num;
 // LINE 1358:
 	__asm        jmp    _T4c9;
 // LINE 1360:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, md;
-	__asm        add    [ecx+0xD0], eax;
+	md->mdata.vehicles_unjammed += mp->i2num;
 // LINE 1361:
 	__asm        jmp    _T4c9;
 // LINE 1363:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, md;
-	__asm        add    [ecx+0xCC], eax;
+	md->mdata.vehicles_burned += mp->i2num;
 // LINE 1364:
 	__asm        jmp    _T4c9;
 // LINE 1366:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, md;
-	__asm        add    [ecx+0x7C], eax;
+	md->mdata.fellinwater_debris += mp->i2num;
 // LINE 1367:
 	__asm        jmp    _T4c9;
 // LINE 1369:
@@ -5179,11 +5060,9 @@ _T2b0:
 	__asm        test   byte ptr [eax+0x51], 0x10;
 	__asm        je     _T325;
 // LINE 2299:
-	__asm        mov    eax, S_pts_mission_riot;
-	__asm        add    total_pts, eax;
+	total_pts += S_pts_mission_riot;
 // LINE 2300:
-	__asm        mov    eax, S_money_mission_riot;
-	__asm        add    total_money, eax;
+	total_money += S_money_mission_riot;
 // LINE 2303:
 	__asm        mov    eax, md;
 	__asm        mov    ecx, S_mission_riot_time;
@@ -5257,55 +5136,45 @@ _T38a:
 	__asm        cmp    [eax+0x40], ecx;
 	__asm        jge    _T3b9;
 // LINE 2333:
-	__asm        mov    eax, S_pts_mission_jam;
-	__asm        add    total_pts, eax;
+	total_pts += S_pts_mission_jam;
 // LINE 2334:
-	__asm        mov    eax, S_money_mission_jam;
-	__asm        add    total_money, eax;
+	total_money += S_money_mission_jam;
 // LINE 2338:
 _T3b9:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x51], 2;
 	__asm        je     _T3d6;
 // LINE 2341:
-	__asm        mov    eax, S_pts_mission_criminal;
-	__asm        add    total_pts, eax;
+	total_pts += S_pts_mission_criminal;
 // LINE 2342:
-	__asm        mov    eax, S_money_mission_criminal;
-	__asm        add    total_money, eax;
+	total_money += S_money_mission_criminal;
 // LINE 2345:
 _T3d6:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x51], 0x20;
 	__asm        je     _T3f3;
 // LINE 2348:
-	__asm        mov    eax, S_pts_mission_criminal;
-	__asm        add    total_pts, eax;
+	total_pts += S_pts_mission_criminal;
 // LINE 2349:
-	__asm        mov    eax, S_money_mission_criminal;
-	__asm        add    total_money, eax;
+	total_money += S_money_mission_criminal;
 // LINE 2352:
 _T3f3:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x52], 2;
 	__asm        je     _T410;
 // LINE 2355:
-	__asm        mov    eax, S_pts_mission_criminal;
-	__asm        add    total_pts, eax;
+	total_pts += S_pts_mission_criminal;
 // LINE 2356:
-	__asm        mov    eax, S_money_mission_criminal;
-	__asm        add    total_money, eax;
+	total_money += S_money_mission_criminal;
 // LINE 2360:
 _T410:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x50], 2;
 	__asm        je     _T42d;
 // LINE 2363:
-	__asm        mov    eax, S_pts_mission_speeder;
-	__asm        add    total_pts, eax;
+	total_pts += S_pts_mission_speeder;
 // LINE 2364:
-	__asm        mov    eax, S_money_mission_speeder;
-	__asm        add    total_money, eax;
+	total_money += S_money_mission_speeder;
 // LINE 2371:
 _T42d:
 	__asm        cmp    total_pts, 0;

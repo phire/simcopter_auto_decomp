@@ -5956,8 +5956,7 @@ void CatalogWindow::DrawCurrentEquipmentSelection() {
 	__asm        mov    lIndexArray[4], 0x9F;
 	__asm        mov    lIndexArray[5], 0xC7;
 // LINE 404:
-	__asm        mov    eax, nColorDirection;
-	__asm        add    nColorArrayCurrentIndex, eax;
+	nColorArrayCurrentIndex += nColorDirection;
 // LINE 405:
 	__asm        cmp    nColorArrayCurrentIndex, 5;
 	__asm        je     _T72;
@@ -6250,7 +6249,7 @@ _T13a:
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ecx+0xC], eax;
 // LINE 457:
-	__asm        sub    rectFill.bottom, 2;
+	rectFill.bottom -= 0x2;
 // LINE 458:
 	__asm        lea    eax, rectFill.left;
 	__asm        push   eax;

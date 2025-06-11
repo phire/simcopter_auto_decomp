@@ -1245,7 +1245,7 @@ _T36:
 	__asm        mov    eax, i;
 	__asm        mov    byte ptr [ebp+eax*4-0x3FD], 5;
 // LINE 492:
-	__asm        add    pColor, 4;
+	pColor += 0x4;
 // LINE 493:
 	__asm        jmp    _T30;
 // LINE 494:

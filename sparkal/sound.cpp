@@ -2754,9 +2754,7 @@ _T20:
 	__asm        jmp    _T10f;
 // LINE 893:
 _T76:
-	__asm        mov    eax, dsNewBufferDescription;
-	__asm        mov    eax, [eax+8];
-	__asm        add    Sound::lTotalMemoryUsage, eax;
+	Sound::lTotalMemoryUsage += dsNewBufferDescription->dwBufferBytes;
 // LINE 896:
 	__asm        jmp    _T105;
 // LINE 899:
@@ -2802,8 +2800,7 @@ _T87:
 	__asm        jmp    _T10f;
 // LINE 913:
 _Tfc:
-	__asm        mov    eax, dsBufferDescription.dwBufferBytes;
-	__asm        add    Sound::lTotalMemoryUsage, eax;
+	Sound::lTotalMemoryUsage += dsBufferDescription.dwBufferBytes;
 // LINE 916:
 _T105:
 	__asm        mov    eax, 1;
@@ -3108,8 +3105,7 @@ int32_t DigitalSound::GetVolume(long * lVolume) {
 	__asm        jmp    _T75;
 // LINE 1105:
 _T5b:
-	__asm        mov    eax, lVolume;
-	__asm        add    dword ptr [eax], 0x2710;
+	lVolume[0] += 0x2710;
 // LINE 1106:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T75;
@@ -3132,7 +3128,7 @@ int32_t DigitalSound::SetVolume(long lNewVolume) {
 	__asm        cmp    dword ptr [eax+0x52], 0;
 	__asm        je     _T75;
 // LINE 1130:
-	__asm        sub    lNewVolume, 0x2710;
+	lNewVolume -= 0x2710;
 // LINE 1131:
 	__asm        mov    eax, lNewVolume;
 	__asm        push   eax;
@@ -4208,9 +4204,7 @@ _T2a6:
 _T384:
 	this->cbSize = dsBufferDescription.dwBufferBytes;
 // LINE 1565:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x3C];
-	__asm        add    Sound::lTotalMemoryUsage, eax;
+	Sound::lTotalMemoryUsage += this->cbSize;
 // LINE 1568:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T3a3;
@@ -4506,8 +4500,7 @@ _T2c2:
 	lpTemp = lpWrite1;
 // LINE 1655:
 _T2e1:
-	__asm        mov    eax, nActualBytesRead;
-	__asm        add    lpTemp, eax;
+	lpTemp += nActualBytesRead;
 // LINE 1656:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, nActualBytesRead;
@@ -5029,12 +5022,7 @@ _T1aa:
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x4C];
 // LINE 1891:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    eax, [eax+0x30];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x72];
-	__asm        add    [ecx+0x34], eax;
+	this->lpStreamBufferInfo->dwNextWriteOffset += this->lpStreamBufferInfo->dwBufferSegSize;
 // LINE 1892:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x72];
@@ -5218,8 +5206,7 @@ _T3d1:
 	lpTemp = lpWrite1;
 // LINE 1945:
 _T3d7:
-	__asm        mov    eax, nActualBytesRead;
-	__asm        add    lpTemp, eax;
+	lpTemp += nActualBytesRead;
 // LINE 1946:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, nActualBytesRead;
@@ -5435,8 +5422,7 @@ _T602:
 	lpTemp = lpWrite2;
 // LINE 2004:
 _T608:
-	__asm        mov    eax, nActualBytesRead;
-	__asm        add    lpTemp, eax;
+	lpTemp += nActualBytesRead;
 // LINE 2005:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, nActualBytesRead;
@@ -5523,12 +5509,7 @@ _T6ba:
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x4C];
 // LINE 2024:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    eax, [eax+0x30];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x72];
-	__asm        add    [ecx+0x34], eax;
+	this->lpStreamBufferInfo->dwNextWriteOffset += this->lpStreamBufferInfo->dwBufferSegSize;
 // LINE 2025:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x72];

@@ -3219,8 +3219,7 @@ _T1c:
 	__asm        call   BitmappedFont::CalculateCharsToFitInWidth;
 	__asm        mov    lCurrentLineStringLength, eax;
 // LINE 285:
-	__asm        mov    eax, lCurrentLineStringLength;
-	__asm        add    chText, eax;
+	chText += lCurrentLineStringLength;
 // LINE 286:
 	__asm        inc    lLineCount;
 // LINE 287:
@@ -3249,7 +3248,7 @@ long BitmappedFont::CalculateWidthOfLines(char * chText, const unsigned long nSt
 	__asm        mov    nCurrentWidth, 0x14;
 	__asm        jmp    _T2f;
 _T2b:
-	__asm        add    nCurrentWidth, 0xA;
+	nCurrentWidth += 0xa;
 _T2f:
 	__asm        cmp    nCurrentWidth, 0xFA0;
 	__asm        jae    _T66;
@@ -3877,11 +3876,9 @@ _T52:
 	__asm        mov    ecx, this;
 	__asm        call   BitmappedFont::DrawTextLine;
 // LINE 439:
-	__asm        mov    eax, lCharacterHeight;
-	__asm        add    lCurrentYPosition, eax;
+	lCurrentYPosition += lCharacterHeight;
 // LINE 440:
-	__asm        mov    eax, lCurrentLineStringLength;
-	__asm        add    chText, eax;
+	chText += lCurrentLineStringLength;
 // LINE 441:
 	__asm        jmp    _T52;
 // LINE 442:
@@ -3948,11 +3945,9 @@ _T52:
 	__asm        mov    ecx, this;
 	__asm        call   BitmappedFont::DrawTextLineNoClip;
 // LINE 465:
-	__asm        mov    eax, lCharacterHeight;
-	__asm        add    lCurrentYPosition, eax;
+	lCurrentYPosition += lCharacterHeight;
 // LINE 466:
-	__asm        mov    eax, lCurrentLineStringLength;
-	__asm        add    chText, eax;
+	chText += lCurrentLineStringLength;
 // LINE 467:
 	__asm        jmp    _T52;
 // LINE 468:
@@ -4278,11 +4273,9 @@ _T52:
 	__asm        mov    ecx, this;
 	__asm        call   BitmappedFont::DrawTextLineFormat;
 // LINE 569:
-	__asm        mov    eax, lCharacterHeight;
-	__asm        add    lCurrentYPosition, eax;
+	lCurrentYPosition += lCharacterHeight;
 // LINE 570:
-	__asm        mov    eax, lCurrentLineStringLength;
-	__asm        add    chText, eax;
+	chText += lCurrentLineStringLength;
 // LINE 571:
 	__asm        jmp    _T52;
 // LINE 572:
@@ -4368,11 +4361,9 @@ _T52:
 	__asm        mov    ecx, this;
 	__asm        call   BitmappedFont::DrawTextLineFormatNoClip;
 // LINE 598:
-	__asm        mov    eax, lCharacterHeight;
-	__asm        add    lCurrentYPosition, eax;
+	lCurrentYPosition += lCharacterHeight;
 // LINE 599:
-	__asm        mov    eax, lCurrentLineStringLength;
-	__asm        add    chText, eax;
+	chText += lCurrentLineStringLength;
 // LINE 600:
 	__asm        jmp    _T52;
 // LINE 601:

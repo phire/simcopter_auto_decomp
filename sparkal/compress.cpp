@@ -1058,7 +1058,7 @@ static void RLEDecompressUnclippedX(unsigned char * pDestBuffer, long DestStride
 	__asm        add    ecx, pSource;
 	__asm        mov    pNextSourceLine, ecx;
 // LINE 328:
-	__asm        add    pSource, 2;
+	pSource += 0x2;
 // LINE 330:
 _T27:
 	__asm        movsx  eax, Height;
@@ -1079,10 +1079,9 @@ _T27:
 	__asm        add    ecx, pSource;
 	__asm        mov    pNextSourceLine, ecx;
 // LINE 341:
-	__asm        add    pSource, 2;
+	pSource += 0x2;
 // LINE 344:
-	__asm        mov    eax, DestStride;
-	__asm        add    pDestinationEdge, eax;
+	pDestinationEdge += DestStride;
 // LINE 345:
 	pDest = pDestinationEdge;
 // LINE 347:
@@ -1120,11 +1119,9 @@ _T66:
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 362:
-	__asm        mov    eax, counter;
-	__asm        add    pSource, eax;
+	pSource += counter;
 // LINE 363:
-	__asm        mov    eax, counter;
-	__asm        add    pDest, eax;
+	pDest += counter;
 // LINE 364:
 	__asm        jmp    _T175;
 // LINE 367:
@@ -1148,8 +1145,7 @@ _T66:
 	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 372:
-	__asm        mov    eax, counter;
-	__asm        add    pDest, eax;
+	pDest += counter;
 // LINE 373:
 	__asm        jmp    _T175;
 // LINE 376:
@@ -1230,7 +1226,7 @@ static void RLEDecompressClippedX(unsigned char * pDestBuffer, long DestStride, 
 	__asm        add    ecx, pSource;
 	__asm        mov    pNextSourceLine, ecx;
 // LINE 410:
-	__asm        add    pSource, 2;
+	pSource += 0x2;
 // LINE 413:
 	__asm        movsx  eax, LeftClip;
 	__asm        neg    eax;
@@ -1255,10 +1251,9 @@ _T31:
 	__asm        add    ecx, pSource;
 	__asm        mov    pNextSourceLine, ecx;
 // LINE 426:
-	__asm        add    pSource, 2;
+	pSource += 0x2;
 // LINE 429:
-	__asm        mov    eax, DestStride;
-	__asm        add    pDestinationEdge, eax;
+	pDestinationEdge += DestStride;
 // LINE 430:
 	pDest = pDestinationEdge;
 // LINE 432:
@@ -1300,8 +1295,7 @@ _T7a:
 	__asm        cmp    eax, counter;
 	__asm        jl     _Tde;
 // LINE 454:
-	__asm        mov    eax, counter;
-	__asm        add    pSource, eax;
+	pSource += counter;
 // LINE 455:
 	__asm        movsx  eax, PixelCount;
 	__asm        add    eax, counter;
@@ -1443,8 +1437,7 @@ _T203:
 	PixelCount = 0x0;
 // LINE 528:
 _T218:
-	__asm        mov    eax, counter;
-	__asm        add    pDest, eax;
+	pDest += counter;
 // LINE 529:
 	__asm        movsx  eax, PixelCount;
 	__asm        add    eax, counter;
@@ -1466,8 +1459,7 @@ _T218:
 	__asm        cmp    eax, counter;
 	__asm        jl     _T26f;
 // LINE 542:
-	__asm        mov    eax, counter;
-	__asm        add    pSource, eax;
+	pSource += counter;
 // LINE 543:
 	__asm        movsx  eax, PixelCount;
 	__asm        add    eax, counter;

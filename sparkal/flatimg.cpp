@@ -239,8 +239,7 @@ _T131:
 	__asm        mov    [ecx], al;
 	__asm        inc    pDestBits;
 // LINE 77:
-	__asm        mov    eax, SourceWidth;
-	__asm        add    XError, eax;
+	XError += SourceWidth;
 // LINE 78:
 	__asm        js     _T166;
 // LINE 80:
@@ -257,11 +256,9 @@ _T166:
 	__asm        jmp    _T131;
 // LINE 87:
 _T16b:
-	__asm        mov    eax, DestStride;
-	__asm        add    pDestLeft, eax;
+	pDestLeft += DestStride;
 // LINE 90:
-	__asm        mov    eax, SourceHeight;
-	__asm        add    YError, eax;
+	YError += SourceHeight;
 // LINE 91:
 	__asm        js     _T190;
 // LINE 93:
@@ -270,8 +267,7 @@ _T16b:
 	__asm        neg    eax;
 	__asm        sub    YError, eax;
 // LINE 94:
-	__asm        mov    eax, SourceStride;
-	__asm        add    pSourceLeft, eax;
+	pSourceLeft += SourceStride;
 // LINE 95:
 	__asm        inc    YCount;
 // LINE 97:
@@ -505,12 +501,9 @@ _T15a:
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 180:
-	__asm        mov    eax, DestStride;
-	__asm        add    pDestBits, eax;
+	pDestBits += DestStride;
 // LINE 181:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        add    pSource, eax;
+	pSource += this->mStride;
 // LINE 182:
 	__asm        jmp    _T15a;
 // LINE 185:
@@ -632,9 +625,7 @@ _Te5:
 	__asm        call   memset;
 	__asm        add    esp, 0xC;
 // LINE 233:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        add    pBits, eax;
+	pBits += this->mStride;
 // LINE 234:
 	__asm        jmp    _Te5;
 // LINE 236:
@@ -1018,12 +1009,9 @@ _T28c:
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 307:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        add    pBits, eax;
+	pBits += this-><CFlatImage+0x14>;
 // LINE 308:
-	__asm        mov    eax, SrcStride;
-	__asm        add    pSource, eax;
+	pSource += SrcStride;
 // LINE 309:
 	__asm        jmp    _T28c;
 // LINE 311:
