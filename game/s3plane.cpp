@@ -1355,7 +1355,9 @@ _T14d:
 
 // FUNCTION: COPTER_D 0x0052baf5
 void PlaneClass::AdjustSpeed() {
-// StaticLocal: 0x005b769c	static int32_t speedAdjustor = 1;
+	// StaticLocal: 0x005b769c
+	static int32_t speedAdjustor = 1;
+	;
 
 // LINE 954:
 	this->speed = this->desiredSpeed;
@@ -1519,7 +1521,8 @@ _T15c:
 _T161:
 	__asm        jmp    near ptr 0x0052BCC6;
 
-	cptr = None;
+	__asm        mov    eax, [ebp-0x3C];
+	__asm        mov    cptr, eax;
 // LINE 1230:
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax+2];
@@ -1846,7 +1849,8 @@ _T160:
 _T165:
 	__asm        jmp    near ptr 0x0052C044;
 
-	lcptr = None;
+	__asm        mov    eax, [ebp-0x24];
+	__asm        mov    lcptr, eax;
 // LINE 1421:
 	__asm        mov    eax, newpos.y;
 	__asm        and    eax, 0xFF;
@@ -1869,7 +1873,8 @@ _T1b4:
 _T1b9:
 	__asm        jmp    near ptr 0x0052C098;
 
-	cptr = None;
+	__asm        mov    eax, [ebp-0x28];
+	__asm        mov    cptr, eax;
 // LINE 1424:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, G_AvLoopTime;
@@ -2764,7 +2769,8 @@ _T55:
 _T5a:
 	__asm        jmp    near ptr 0x0052CB2A;
 
-	cellPointer = None;
+	__asm        mov    eax, [ebp-0xC];
+	__asm        mov    cellPointer, eax;
 // LINE 1832:
 	__asm        cmp    cellPointer, 0;
 	__asm        jne    _T8b;
@@ -2856,7 +2862,8 @@ _T55:
 _T5a:
 	__asm        jmp    near ptr 0x0052CC40;
 
-	cellPointer = None;
+	__asm        mov    eax, [ebp-8];
+	__asm        mov    cellPointer, eax;
 // LINE 1880:
 	__asm        mov    eax, cellPointer;
 	__asm        mov    ecx, this;
@@ -2913,7 +2920,8 @@ _T56:
 _T5b:
 	__asm        jmp    near ptr 0x0052CCFD;
 
-	cellPointer = None;
+	__asm        mov    eax, [ebp-0xC];
+	__asm        mov    cellPointer, eax;
 // LINE 1907:
 	__asm        cmp    cellPointer, 0;
 	__asm        jne    _T8c;
@@ -2998,7 +3006,8 @@ _T55:
 _T5a:
 	__asm        jmp    near ptr 0x0052CE00;
 
-	cellPointer = None;
+	__asm        mov    eax, [ebp-0x54];
+	__asm        mov    cellPointer, eax;
 // LINE 1948:
 	__asm        cmp    cellPointer, 0;
 	__asm        jne    _T8b;
@@ -3202,7 +3211,8 @@ _T138:
 _T13d:
 	__asm        jmp    near ptr 0x0052D027;
 
-	cellPointer = None;
+	__asm        mov    eax, [ebp-0x68];
+	__asm        mov    cellPointer, eax;
 // LINE 2016:
 	__asm        mov    eax, cellPointer;
 	__asm        push   eax;
@@ -3458,7 +3468,7 @@ _T23a:
 	__asm        ja     _T262;
 
 	__asm        mov    eax, [ebp-0x50];
-	__asm        jmp    SwitchPointers5427929[0][eax*4];
+	__asm        jmp    _Switch_24e[0][eax*4];
 // Switch pointers
 // LINE 2153:
 _T262:
@@ -3997,7 +4007,7 @@ _T1f8:
 	__asm        ja     _T24c;
 
 	__asm        mov    eax, [ebp-0x18];
-	__asm        jmp    SwitchPointers5429547[0][eax*4];
+	__asm        jmp    _Switch_20c[0][eax*4];
 // Switch pointers
 // LINE 2698:
 _T24c:

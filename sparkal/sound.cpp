@@ -31,6 +31,8 @@ struct IDirectSound : public IUnknown
 	virtual long Initialize(/*unpacked*/ struct _GUID*); // vtable+0x28
 };
 
+// Type: void;
+
 // Type: /*packed*/ class SoundSystem (forward reference);
 // VTABLE: COPTER_D 0x0058f440
 class SoundSystem{ // packed(0x74 bytes) TI: 0x1a78
@@ -52,8 +54,6 @@ protected:
 	/*+0x10*/  /*packed*/ struct IDirectSound *lpDirectSound;
 	/*+0x14*/  /*packed*/ struct _DSCAPS dsCapabilities; // 0x60 bytes
 };
-
-// Type: void;
 
 // Type: void * __ptr32;
 
@@ -1437,7 +1437,7 @@ _T22:
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    _T61;
 _T5a:
-	None = 0xffffffff;
+	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 _T61:
 	__asm        jmp    near ptr 0x0042EB8E;
 
@@ -1518,7 +1518,7 @@ _T13d:
 
 	__asm        jmp    near ptr 0x0042EC6F;
 
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x1C], 0;
 _T14e:
 	__asm        jmp    _T1d3;
 _T153:

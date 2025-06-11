@@ -19,9 +19,6 @@ struct list<DirectoryEntry>::list_node{ // packed(0x18 bytes) TI: 0x2392
 
 // Type: char *;
 
-// Type: /*unpacked*/ class CGameApp (forward reference);
-// CGameApp Class implementation not found
-
 // Type: long;
 
 // Type: char;
@@ -102,6 +99,8 @@ public:
 	/*+0x128*/ long bFileAppearsCorrupt;
 	/*+0x12c*/ /*packed*/ struct MIFFHeader myMIFFHeader; // 0x1c bytes
 };
+
+// Type: void;
 
 // Type: /*packed*/ class list<DirectoryEntry> (forward reference);
 class list<DirectoryEntry>{ // packed(0x8 bytes) TI: 0x236c
@@ -224,8 +223,6 @@ public:
 	void reverse();
 	void sort();
 };
-
-// Type: void;
 
 // Type: /*packed*/ class PFile;
 // VTABLE: COPTER_D 0x00590468
@@ -1094,7 +1091,7 @@ unsigned long  CGameApp::DoSaveGameAs() {
 	__asm        mov    [ebp-0x728], eax;
 	__asm        jmp    _Ta7;
 _T9d:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x728], 0;
 _Ta7:
 	__asm        mov    dword ptr [ebp-0x72C], 0;
 	__asm        jmp    near ptr 0x0042804E;
@@ -1319,7 +1316,7 @@ _T3b1:
 	__asm        mov    [ebp-0x73C], eax;
 	__asm        jmp    _T40b;
 _T401:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x73C], 0;
 _T40b:
 	__asm        mov    dword ptr [ebp-0x740], 0;
 	__asm        jmp    near ptr 0x004283B2;
@@ -1334,7 +1331,7 @@ _T40b:
 	__asm        mov    dword ptr [ebp-0x738], 1;
 	__asm        jmp    _T44a;
 _T440:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x738], 0;
 _T44a:
 	__asm        mov    eax, [ebp-0x73C];
 	__asm        dec    dword ptr [eax+0xC];
@@ -1434,7 +1431,7 @@ _T5b7:
 	__asm        mov    [ebp-0x76C], eax;
 	__asm        jmp    _T5e4;
 _T5da:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x76C], 0;
 _T5e4:
 	__asm        mov    dword ptr [ebp-0x770], 0;
 	__asm        jmp    near ptr 0x0042858B;
@@ -1455,7 +1452,7 @@ _T5e4:
 	__asm        mov    [ebp-0x764], eax;
 	__asm        jmp    _T642;
 _T638:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x764], 0;
 _T642:
 	__asm        mov    dword ptr [ebp-0x768], 0;
 	__asm        jmp    near ptr 0x004285E9;

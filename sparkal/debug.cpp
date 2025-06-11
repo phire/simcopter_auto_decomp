@@ -387,34 +387,6 @@ struct class_debugger<CDebugWindow,CDebugWindowhelp_text> : public debug_command
 	virtual void execute(char *) /* override */;
 };
 
-// Type: /*packed*/ class deque<basic_string<char>>::iterator (forward reference);
-class deque<basic_string<char>>::iterator : public random_access_iterator<basic_string<char>,int>
-{ // packed(0x10 bytes) TI: 0x43a2
-protected:
-	/*+0x0*/   /*packed*/ class basic_string<char> *current;
-	/*+0x4*/   /*packed*/ class basic_string<char> *first;
-	/*+0x8*/   /*packed*/ class basic_string<char> *last;
-	/*+0xc*/   /*packed*/ class basic_string<char> **node;
-public:
-	void iterator();
-protected:
-	void iterator(/*packed*/ class basic_string<char>*, /*packed*/ class basic_string<char>**);
-public:
-	/*packed*/ class basic_string<char>& operator*();
-	/*packed*/ class deque<basic_string<char>>::iterator operator-(int32_t);
-	int32_t operator-(const /*packed*/ class deque<basic_string<char>>::iterator&);
-	/*packed*/ class deque<basic_string<char>>::iterator operator++(int32_t);
-	/*packed*/ class deque<basic_string<char>>::iterator& operator++();
-	/*packed*/ class deque<basic_string<char>>::iterator operator--(int32_t);
-	/*packed*/ class deque<basic_string<char>>::iterator& operator--();
-	/*packed*/ class deque<basic_string<char>>::iterator& operator+=(int32_t);
-	/*packed*/ class deque<basic_string<char>>::iterator& operator-=(int32_t);
-	/*packed*/ class deque<basic_string<char>>::iterator operator+(int32_t);
-	/*packed*/ class basic_string<char>& operator[](int32_t);
-	int32_t operator==(const /*packed*/ class deque<basic_string<char>>::iterator&);
-	int32_t operator<(const /*packed*/ class deque<basic_string<char>>::iterator&);
-};
-
 // Type: /*packed*/ class basic_string<char> (forward reference);
 class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
@@ -518,6 +490,34 @@ public:
 	int32_t compare(char *, uint32_t);
 	int32_t compare(char *, uint32_t, uint32_t);
 	int32_t compare(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+};
+
+// Type: /*packed*/ class deque<basic_string<char>>::iterator (forward reference);
+class deque<basic_string<char>>::iterator : public random_access_iterator<basic_string<char>,int>
+{ // packed(0x10 bytes) TI: 0x43a2
+protected:
+	/*+0x0*/   /*packed*/ class basic_string<char> *current;
+	/*+0x4*/   /*packed*/ class basic_string<char> *first;
+	/*+0x8*/   /*packed*/ class basic_string<char> *last;
+	/*+0xc*/   /*packed*/ class basic_string<char> **node;
+public:
+	void iterator();
+protected:
+	void iterator(/*packed*/ class basic_string<char>*, /*packed*/ class basic_string<char>**);
+public:
+	/*packed*/ class basic_string<char>& operator*();
+	/*packed*/ class deque<basic_string<char>>::iterator operator-(int32_t);
+	int32_t operator-(const /*packed*/ class deque<basic_string<char>>::iterator&);
+	/*packed*/ class deque<basic_string<char>>::iterator operator++(int32_t);
+	/*packed*/ class deque<basic_string<char>>::iterator& operator++();
+	/*packed*/ class deque<basic_string<char>>::iterator operator--(int32_t);
+	/*packed*/ class deque<basic_string<char>>::iterator& operator--();
+	/*packed*/ class deque<basic_string<char>>::iterator& operator+=(int32_t);
+	/*packed*/ class deque<basic_string<char>>::iterator& operator-=(int32_t);
+	/*packed*/ class deque<basic_string<char>>::iterator operator+(int32_t);
+	/*packed*/ class basic_string<char>& operator[](int32_t);
+	int32_t operator==(const /*packed*/ class deque<basic_string<char>>::iterator&);
+	int32_t operator<(const /*packed*/ class deque<basic_string<char>>::iterator&);
 };
 
 // Type: /*packed*/ class deque<basic_string<char>> (forward reference);
@@ -904,7 +904,7 @@ _T1dd:
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    _T244;
 _T23d:
-	None = 0xffffffff;
+	__asm        mov    dword ptr [ebp-0x1C], 0xFFFFFFFF;
 _T244:
 	__asm        jmp    near ptr 0x004224C9;
 
@@ -1242,7 +1242,9 @@ _T63c:
 
 // FUNCTION: COPTER_D 0x004228ee
 void CDebugWindow::CDebugWindow() {
-// StaticLocal: 0x005c2900	static /*packed*/ struct class_debugger<CDebugWindow,CDebugWindowhelp_text> help_command;
+	// StaticLocal: 0x005c2900
+	static /*packed*/ struct class_debugger<CDebugWindow,CDebugWindowhelp_text> help_command;
+	;
 
 
 	__asm        mov    eax, this;
@@ -1287,7 +1289,8 @@ void CDebugWindow::CDebugWindow() {
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    _Tbe;
 _Tb8:
-	None = None;
+	__asm        mov    eax, [ebp-0x18];
+	__asm        mov    [ebp-0x20], eax;
 _Tbe:
 	__asm        jmp    near ptr 0x004229B1;
 
@@ -1425,7 +1428,7 @@ _T271:
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _T2a7;
 _T2a0:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x24], 0;
 _T2a7:
 	__asm        lea    ecx, help_command.usage_string.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
@@ -1517,7 +1520,7 @@ _T393:
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    _T3c9;
 _T3c2:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x3C], 0;
 _T3c9:
 	__asm        lea    ecx, help_command.command_string.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
@@ -1556,7 +1559,7 @@ _T413:
 	__asm        call   atexit;
 	__asm        add    esp, 4;
 _T43b:
-	None = 0x5c2900;
+	__asm        mov    dword ptr [ebp-0xC], 0x5C2900;
 // LINE 60:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -1753,7 +1756,9 @@ _T26:
 // LINE 72:
 	__asm        jmp    near ptr 0x00422F80;
 
-	None = this->m_commands.start;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x2C];
+	__asm        mov    [ebp-0x6C], eax;
 _T3e:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x6C];
@@ -2822,7 +2827,7 @@ _T60:
 	__asm        ja     _T8c;
 
 	__asm        mov    eax, [ebp-0x14];
-	__asm        jmp    SwitchPointers4340761[0][eax*4];
+	__asm        jmp    _Switch_74[0][eax*4];
 // Switch pointers
 // LINE 233:
 _T8c:
@@ -2958,7 +2963,7 @@ _Tf5:
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    _T12b;
 _T124:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0xC], 0;
 _T12b:
 	__asm        lea    ecx, str.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
@@ -3601,7 +3606,7 @@ _T255:
 	__asm        mov    [ebp-0x22C], eax;
 	__asm        jmp    _T2d4;
 _T2ca:
-	None = 0xffffffff;
+	__asm        mov    dword ptr [ebp-0x22C], 0xFFFFFFFF;
 _T2d4:
 	__asm        jmp    near ptr 0x004245E6;
 
@@ -4191,7 +4196,8 @@ _T172:
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        jmp    _T1ad;
 _T1a7:
-	None = None;
+	__asm        mov    eax, [ebp-0x24];
+	__asm        mov    [ebp-0x2C], eax;
 _T1ad:
 	__asm        jmp    near ptr 0x00424D1E;
 
@@ -4687,7 +4693,7 @@ _T22d:
 	__asm        mov    [ebp-0xA8], eax;
 	__asm        jmp    _T279;
 _T26f:
-	None = 0xffffffff;
+	__asm        mov    dword ptr [ebp-0xA8], 0xFFFFFFFF;
 _T279:
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0;
@@ -4880,7 +4886,8 @@ _T4b8:
 	__asm        mov    [ebp-0x80], eax;
 	__asm        jmp    _T4fd;
 _T4f4:
-	None = None;
+	__asm        mov    eax, [ebp-0x8C];
+	__asm        mov    [ebp-0x80], eax;
 _T4fd:
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0;

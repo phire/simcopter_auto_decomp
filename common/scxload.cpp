@@ -4,6 +4,8 @@
 
 // Type: unsigned char *;
 
+// Type: void;
+
 // Type: /*packed*/ class cLZAPFileBitStream (forward reference);
 // VTABLE: COPTER_D 0x00592418
 class cLZAPFileBitStream : public cGZXBitstream
@@ -24,8 +26,6 @@ private:
 	/*+0x4*/   /*packed*/ class PFile *m_file;
 	/*+0x8*/   unsigned long m_mark;
 };
-
-// Type: void;
 
 // Type: char *;
 
@@ -214,6 +214,8 @@ public:
 	void erase(/*packed*/ struct tGZXBitstreamNode*);
 };
 
+// Type: uint32_t;
+
 // Type: /*packed*/ class cGZXParamBitstream<t_alloc,t_free> (forward reference);
 class cGZXParamBitstream<t_alloc,t_free> : public cGZXBitstream
 { // packed(0x3c bytes) TI: 0x2d3d
@@ -276,8 +278,6 @@ public:
 	virtual long Size() /* override */;
 	/*+0x38*/  /*packed*/ class CPropertyType<long> PageSize;
 };
-
-// Type: uint32_t;
 
 // Type: /*packed*/ struct tGZXBitstreamNode (forward reference);
 struct tGZXBitstreamNode{ // packed(0x8 bytes) TI: 0x2d18
@@ -1065,7 +1065,7 @@ _Te2:
 	__asm        mov    memstrm.nodeNo, 0;
 	__asm        jmp    near ptr 0x004CC0F7;
 // LINE 317:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x594], 0;
 _Tfe:
 	__asm        cmp    dword ptr [ebp-0x594], 4;
 	__asm        jae    _T1a9;
@@ -1164,7 +1164,7 @@ _T1e3:
 	__asm        mov    eax, CityNameString;
 	__asm        mov    [ebp-0x59C], eax;
 // LINE 331:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x598], 0;
 _T22e:
 	__asm        cmp    dword ptr [ebp-0x598], 0x20;
 	__asm        jae    _T2db;
@@ -1223,7 +1223,7 @@ _T2db:
 	__asm        jmp    _T2e0;
 // LINE 334:
 _T2e0:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x5A0], 0;
 _T2ea:
 	__asm        cmp    dword ptr [ebp-0x5A0], 4;
 	__asm        jae    _T395;
@@ -1281,7 +1281,7 @@ _T395:
 	__asm        jmp    _T39a;
 // LINE 337:
 _T39a:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x5A4], 0;
 _T3a4:
 	__asm        cmp    dword ptr [ebp-0x5A4], 0x10;
 	__asm        jae    _T44e;
@@ -1339,7 +1339,7 @@ _T44e:
 	__asm        jmp    _T453;
 // LINE 340:
 _T453:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x5A8], 0;
 _T45d:
 	__asm        cmp    dword ptr [ebp-0x5A8], 0x22;
 	__asm        jae    _T507;
@@ -1397,7 +1397,7 @@ _T507:
 	__asm        jmp    _T50c;
 // LINE 343:
 _T50c:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x5AC], 0;
 _T516:
 	__asm        cmp    dword ptr [ebp-0x5AC], 4;
 	__asm        jae    _T5c0;
@@ -1455,7 +1455,7 @@ _T5c0:
 	__asm        jmp    _T5c5;
 // LINE 346:
 _T5c5:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x5B0], 0;
 _T5cf:
 	__asm        cmp    dword ptr [ebp-0x5B0], 4;
 	__asm        jae    _T679;
@@ -1513,7 +1513,7 @@ _T679:
 	__asm        jmp    _T67e;
 // LINE 349:
 _T67e:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x5B4], 0;
 _T688:
 	__asm        cmp    dword ptr [ebp-0x5B4], 4;
 	__asm        jae    _T732;
@@ -1571,7 +1571,7 @@ _T732:
 	__asm        jmp    _T737;
 // LINE 354:
 _T737:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x5B8], 0;
 _T741:
 	__asm        cmp    dword ptr [ebp-0x5B8], 0xC8;
 	__asm        jae    _T7ef;
@@ -1644,7 +1644,7 @@ _T803:
 	__asm        jmp    _T800;
 // LINE 359:
 _T827:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x5BC], 0;
 _T831:
 	__asm        cmp    dword ptr [ebp-0x5BC], 4;
 	__asm        jae    _T8db;
@@ -1702,7 +1702,7 @@ _T8db:
 	__asm        jmp    _T8e0;
 // LINE 362:
 _T8e0:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x5C0], 0;
 _T8ea:
 	__asm        cmp    dword ptr [ebp-0x5C0], 2;
 	__asm        jae    _T994;
@@ -1760,7 +1760,7 @@ _T994:
 	__asm        jmp    _T999;
 // LINE 365:
 _T999:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x5C4], 0;
 _T9a3:
 	__asm        cmp    dword ptr [ebp-0x5C4], 2;
 	__asm        jae    _Ta4d;
@@ -1818,7 +1818,7 @@ _Ta4d:
 	__asm        jmp    _Ta52;
 // LINE 368:
 _Ta52:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x5C8], 0;
 _Ta5c:
 	__asm        cmp    dword ptr [ebp-0x5C8], 2;
 	__asm        jae    _Tb06;
@@ -1876,7 +1876,7 @@ _Tb06:
 	__asm        jmp    _Tb0b;
 // LINE 371:
 _Tb0b:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x5CC], 0;
 _Tb15:
 	__asm        cmp    dword ptr [ebp-0x5CC], 2;
 	__asm        jae    _Tbbf;
@@ -1934,7 +1934,7 @@ _Tbbf:
 	__asm        jmp    _Tbc4;
 // LINE 374:
 _Tbc4:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x5D0], 0;
 _Tbce:
 	__asm        cmp    dword ptr [ebp-0x5D0], 2;
 	__asm        jae    _Tc78;
@@ -1991,9 +1991,10 @@ _Tc44:
 _Tc78:
 	__asm        jmp    _Tc7d;
 _Tc7d:
-	None = TrafficMap[0];
+	__asm        mov    eax, TrafficMap[0];
+	__asm        mov    [ebp-0x5D8], eax;
 // LINE 377:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x5D4], 0;
 _Tc92:
 	__asm        cmp    dword ptr [ebp-0x5D4], 0x1000;
 	__asm        jae    _Td42;
@@ -2051,9 +2052,10 @@ _Td0b:
 _Td42:
 	__asm        jmp    _Td47;
 _Td47:
-	None = PolluteMap[0];
+	__asm        mov    eax, PolluteMap[0];
+	__asm        mov    [ebp-0x5E0], eax;
 // LINE 378:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x5DC], 0;
 _Td5c:
 	__asm        cmp    dword ptr [ebp-0x5DC], 0x1000;
 	__asm        jae    _Te0c;
@@ -2111,9 +2113,10 @@ _Tdd5:
 _Te0c:
 	__asm        jmp    _Te11;
 _Te11:
-	None = ValueMap[0];
+	__asm        mov    eax, ValueMap[0];
+	__asm        mov    [ebp-0x5E8], eax;
 // LINE 379:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x5E4], 0;
 _Te26:
 	__asm        cmp    dword ptr [ebp-0x5E4], 0x1000;
 	__asm        jae    _Ted6;
@@ -2171,9 +2174,10 @@ _Te9f:
 _Ted6:
 	__asm        jmp    _Tedb;
 _Tedb:
-	None = CrimeMap[0];
+	__asm        mov    eax, CrimeMap[0];
+	__asm        mov    [ebp-0x5F0], eax;
 // LINE 380:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x5EC], 0;
 _Tef0:
 	__asm        cmp    dword ptr [ebp-0x5EC], 0x1000;
 	__asm        jae    _Tfa0;
@@ -2440,13 +2444,25 @@ _T1205:
 // LINE 455:
 	MicroRecord->type = SCXMicroRecord.type;
 // LINE 456:
-	MicroRecord->type = SCXMicroRecord.stat0;
+	__asm        mov    al, SCXMicroRecord.stat0;
+	__asm        mov    ecx, loop;
+	__asm        mov    edx, MicroRecord;
+	__asm        mov    [edx+ecx*8+1], al;
 // LINE 457:
-	*reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&MicroRecord->type) + loop * 8 + 2) = SCXMicroRecord.stat1;
+	__asm        mov    ax, SCXMicroRecord.stat1;
+	__asm        mov    ecx, loop;
+	__asm        mov    edx, MicroRecord;
+	__asm        mov    [edx+ecx*8+2], ax;
 // LINE 458:
-	*reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&MicroRecord->type) + loop * 8 + 4) = SCXMicroRecord.stat2;
+	__asm        mov    ax, SCXMicroRecord.stat2;
+	__asm        mov    ecx, loop;
+	__asm        mov    edx, MicroRecord;
+	__asm        mov    [edx+ecx*8+4], ax;
 // LINE 459:
-	*reinterpret_cast<uint16_t*>(reinterpret_cast<char*>(&MicroRecord->type) + loop * 8 + 6) = SCXMicroRecord.stat3;
+	__asm        mov    ax, SCXMicroRecord.stat3;
+	__asm        mov    ecx, loop;
+	__asm        mov    edx, MicroRecord;
+	__asm        mov    [edx+ecx*8+6], ax;
 // LINE 460:
 	__asm        jmp    _T1202;
 // LINE 463:

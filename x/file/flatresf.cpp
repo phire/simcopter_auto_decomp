@@ -5,6 +5,20 @@
 // Type: /*unpacked*/ class ResMap (forward reference);
 // ResMap Class implementation not found
 
+// Type: void * __ptr32;
+
+// Type: short *;
+
+// Type: long *;
+
+// Type: unsigned char *;
+
+// Type: long;
+
+// Type: unsigned char;
+
+// Type: void;
+
 // Type: /*unpacked*/ class FlatResFile (forward reference);
 // VTABLE: COPTER_D 0x00593508
 class FlatResFile : public FlatFile
@@ -45,20 +59,6 @@ public:
 	// calltype: NearC
 	static short CheckForLeaks();
 };
-
-// Type: void * __ptr32;
-
-// Type: short *;
-
-// Type: long *;
-
-// Type: unsigned char *;
-
-// Type: long;
-
-// Type: unsigned char;
-
-// Type: void;
 
 // Type: char *;
 
@@ -196,7 +196,7 @@ public:
 	long ReadBlock(void * __ptr32, long *);
 	long Read4(long *);
 	long Read2(short *);
-	long Read1(char *);
+	long Read1(signed char *);
 	long SetPos(long);
 	long Advance(long);
 	// calltype: NearC
@@ -387,9 +387,7 @@ _T1cc:
 _T1f3:
 	__asm        sub    mapSize, 0x1C;
 // LINE 127:
-	__asm        mov    eax, res1Off;
-	__asm        mov    ecx, dataLoc;
-	__asm        mov    [ecx], eax;
+	dataLoc[0] = res1Off;
 // LINE 130:
 	__asm        mov    eax, numTypes;
 	__asm        push   eax;
@@ -1098,8 +1096,7 @@ void FlatResFile::GetName(void * __ptr32 res, unsigned char * name) {
 	/*bp-0x4*/   /*unpacked*/ struct ResMap::Entry *entry;
 
 // LINE 420:
-	__asm        mov    eax, name;
-	__asm        mov    byte ptr [eax], 0;
+	name[0] = 0x0;
 // LINE 422:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x110], 0;
@@ -1150,8 +1147,7 @@ void FlatResFile::GetID(void * __ptr32 res, short * id) {
 	/*bp-0x4*/   /*unpacked*/ struct ResMap::Entry *entry;
 
 // LINE 437:
-	__asm        mov    eax, id;
-	__asm        mov    word ptr [eax], 0xFFFF;
+	id[0] = 0xffff;
 // LINE 439:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x110], 0;
@@ -1185,10 +1181,7 @@ _T58:
 	__asm        jmp    _T9a;
 // LINE 445:
 _T89:
-	__asm        mov    eax, entry;
-	__asm        mov    ax, [eax];
-	__asm        mov    ecx, id;
-	__asm        mov    [ecx], ax;
+	id[0] = entry->id;
 // LINE 446:
 	__asm        jmp    _T9a;
 _T9a:
@@ -1455,8 +1448,7 @@ void FlatResFile::GetString(unsigned char * str, short resID, short index) {
 	__asm        call   StringSet::StringSet;
 	__asm        mov    dword ptr [ebp-4], 0;
 // LINE 598:
-	__asm        mov    eax, str;
-	__asm        mov    byte ptr [eax], 0;
+	str[0] = 0x0;
 // LINE 599:
 	__asm        movsx  eax, index;
 	__asm        cmp    eax, 1;
@@ -1779,7 +1771,7 @@ _Tca:
 	__asm        mov    [ebp-0x28], eax;
 	__asm        jmp    _T119;
 _T112:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x28], 0;
 _T119:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x28];
@@ -2624,8 +2616,7 @@ void  ResMap::GetName(/*unpacked*/ struct ResMap::Entry *entry, unsigned char * 
 	/*bp-0x4*/   unsigned char * namePtr;
 
 // LINE 1033:
-	__asm        mov    eax, name;
-	__asm        mov    byte ptr [eax], 0;
+	name[0] = 0x0;
 // LINE 1035:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
@@ -2706,24 +2697,17 @@ void  ResMap::SwapResEntry(/*unpacked*/ struct ResMap::Entry *resEntry) {
 	__asm        sar    eax, 8;
 	__asm        mov    dataLoc, eax;
 // LINE 1088:
-	__asm        lea    eax, dataLoc;
-	__asm        mov    bptr, eax;
+	bptr = dataLoc;
 // LINE 1089:
-	__asm        mov    eax, bptr;
-	__asm        mov    al, [eax];
-	__asm        mov    hiWord, al;
+	hiWord = bptr[0];
 // LINE 1091:
 	__asm        inc    bptr;
 // LINE 1092:
-	__asm        mov    eax, bptr;
-	__asm        mov    al, [eax];
-	__asm        mov    midWord, al;
+	midWord = bptr[0];
 // LINE 1094:
 	__asm        inc    bptr;
 // LINE 1095:
-	__asm        mov    eax, bptr;
-	__asm        mov    al, [eax];
-	__asm        mov    loWord, al;
+	loWord = bptr[0];
 // LINE 1097:
 	__asm        xor    eax, eax;
 	__asm        mov    al, midWord;

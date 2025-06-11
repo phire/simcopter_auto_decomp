@@ -4,6 +4,10 @@
 
 // Type: char;
 
+// Type: int32_t;
+
+// Type: void;
+
 // Type: /*packed*/ class CSparkalWindow (forward reference);
 // VTABLE: COPTER_D 0x00590ef8
 class CSparkalWindow{ // packed(0x68 bytes) TI: 0x20d9
@@ -46,10 +50,6 @@ protected:
 	/*+0x24*/  void * __ptr32 mhCustomCursor;
 	/*+0x28*/  void * __ptr32 mCursors[16]; // 0x40 bytes
 };
-
-// Type: int32_t;
-
-// Type: void;
 
 // Type: unsigned long;
 
@@ -692,7 +692,9 @@ void CSparkalWindow::~CSparkalWindow() {
 	__asm        cmp    dword ptr [eax+0x18], 0;
 	__asm        je     _T4b;
 
-	None = this->mWindow;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x18];
+	__asm        mov    [ebp-8], eax;
 // LINE 254:
 	__asm        push   0;
 	__asm        push   0;
@@ -1126,21 +1128,13 @@ _T183:
 	__asm        cmp    pRectBottom, 0;
 	__asm        je     _T1fc;
 // LINE 445:
-	__asm        mov    eax, TextRect.left;
-	__asm        mov    ecx, pRectLeft;
-	__asm        mov    [ecx], eax;
+	pRectLeft[0] = TextRect.left;
 // LINE 446:
-	__asm        mov    eax, TextRect.right;
-	__asm        mov    ecx, pRectRight;
-	__asm        mov    [ecx], eax;
+	pRectRight[0] = TextRect.right;
 // LINE 447:
-	__asm        mov    eax, TextRect.top;
-	__asm        mov    ecx, pRectTop;
-	__asm        mov    [ecx], eax;
+	pRectTop[0] = TextRect.top;
 // LINE 448:
-	__asm        mov    eax, TextRect.bottom;
-	__asm        mov    ecx, pRectBottom;
-	__asm        mov    [ecx], eax;
+	pRectBottom[0] = TextRect.bottom;
 // LINE 451:
 _T1fc:
 	__asm        xor    eax, eax;
@@ -1919,7 +1913,7 @@ _T414:
 	__asm        ja     _T468;
 
 	__asm        mov    eax, [ebp-0x70];
-	__asm        jmp    SwitchPointers4725385[0][eax*4];
+	__asm        jmp    _Switch_442[0][eax*4];
 // Switch pointers
 // LINE 705:
 _T468:

@@ -4,6 +4,20 @@
 
 // Type: char *;
 
+// Type: int32_t;
+
+// Type: /*unpacked*/ class GraphicWindow (forward reference);
+// GraphicWindow Class implementation not found
+
+// Type: /*packed*/ class GraphicWindowOwner (forward reference);
+// VTABLE: COPTER_D 0x00590f2c
+class GraphicWindowOwner{ // packed(0x4 bytes) TI: 0x1647
+public:
+	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
+};
+
+// Type: void;
+
 // Type: /*packed*/ class MissionLogWindow (forward reference);
 // VTABLE: COPTER_D 0x00590708
 class MissionLogWindow : public GraphicWindow
@@ -29,20 +43,6 @@ protected:
 	/*+0x78*/  /*unpacked*/ class CBackBuffer *myBackgroundBuffer;
 	/*+0x7c*/  enum MissionLogWindow::MissionLogWindowSortType nCurrentSort;
 };
-
-// Type: int32_t;
-
-// Type: /*unpacked*/ class GraphicWindow (forward reference);
-// GraphicWindow Class implementation not found
-
-// Type: /*packed*/ class GraphicWindowOwner (forward reference);
-// VTABLE: COPTER_D 0x00590f2c
-class GraphicWindowOwner{ // packed(0x4 bytes) TI: 0x1647
-public:
-	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
-};
-
-// Type: void;
 
 // Type: /*packed*/ class ButtonWindow (forward reference);
 // VTABLE: COPTER_D 0x00591b78
@@ -613,7 +613,7 @@ _T1ea:
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    _T20b;
 _T204:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x14], 0;
 _T20b:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
@@ -906,7 +906,7 @@ _T24b:
 	__asm        mov    [ebp-0x1084], eax;
 	__asm        jmp    _T296;
 _T28c:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x1084], 0;
 _T296:
 	__asm        lea    ecx, sText.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
@@ -1217,7 +1217,7 @@ _T661:
 	__asm        mov    [ebp-0x30A0], eax;
 	__asm        jmp    _T6ac;
 _T6a2:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x30A0], 0;
 _T6ac:
 	__asm        lea    ecx, sText.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
@@ -1856,10 +1856,12 @@ _T68:
 
 	__asm        jmp    near ptr 0x0046CDF9;
 
-	iterator.node = None;
+	__asm        mov    eax, [ebp-0x10];
+	__asm        mov    iterator.node, eax;
 // LINE 23:
 _Tba:
-	None = gLogManager.myLogBasePtrList;
+	__asm        mov    eax, gLogManager.myLogBasePtrList;
+	__asm        mov    [ebp-0x20], eax;
 // LINE 231:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    eax, [eax];
@@ -2051,14 +2053,16 @@ _T6e:
 
 	__asm        jmp    near ptr 0x0046D037;
 
-	iterator.node = None;
+	__asm        mov    eax, [ebp-0x14];
+	__asm        mov    iterator.node, eax;
 // LINE 252:
 	__asm        jmp    near ptr 0x0046D042;
 
 	nCurrentMissionID = iterator.node->data->nMissionID;
 // LINE 23:
 _Td7:
-	None = gLogManager.myLogBasePtrList;
+	__asm        mov    eax, gLogManager.myLogBasePtrList;
+	__asm        mov    [ebp-0x2C], eax;
 // LINE 253:
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    eax, [eax];
@@ -2157,7 +2161,7 @@ _T1e1:
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    _T202;
 _T1fb:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x1C], 0;
 _T202:
 	__asm        mov    dword ptr [ebp-0x20], 0;
 	__asm        jmp    near ptr 0x0046D185;
@@ -3304,7 +3308,7 @@ _T210:
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _T246;
 _T23f:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x24], 0;
 _T246:
 	__asm        mov    ecx, [ebp-0x38];
 	__asm        call   basic_string<char>::delete_ref;
@@ -3399,7 +3403,9 @@ _T369:
 	__asm        cmp    dword ptr [eax+0x48], 0;
 	__asm        jg     _T571;
 
-	None = this->sMessages;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x10];
+	__asm        mov    [ebp-0x50], eax;
 // LINE 369:
 	__asm        jmp    near ptr 0x0046E057;
 
@@ -3460,7 +3466,7 @@ _T40b:
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    _T441;
 _T43a:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x3C], 0;
 _T441:
 	__asm        mov    ecx, [ebp-0x50];
 	__asm        call   basic_string<char>::delete_ref;
@@ -3623,7 +3629,7 @@ _T61e:
 	__asm        mov    [ebp-0x54], eax;
 	__asm        jmp    _T654;
 _T64d:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x54], 0;
 _T654:
 	__asm        mov    eax, [ebp-0x70];
 	__asm        mov    eax, [eax+4];

@@ -1651,7 +1651,8 @@ _T86:
 _T8b:
 	__asm        jmp    near ptr 0x0052EA34;
 
-	cptr = None;
+	__asm        mov    eax, [ebp-0x88];
+	__asm        mov    cptr, eax;
 // LINE 1100:
 	__asm        mov    eax, distance;
 	__asm        push   eax;
@@ -2484,7 +2485,9 @@ _T82:
 
 // FUNCTION: COPTER_D 0x0052f41b
 void TrainClass::AdjustSpeed() {
-// StaticLocal: 0x005b7838	static int32_t speedAdjustor = 1;
+	// StaticLocal: 0x005b7838
+	static int32_t speedAdjustor = 1;
+	;
 
 // LINE 1424:
 	this->speed = this->desiredSpeed;
@@ -2668,7 +2671,8 @@ _T120:
 _T125:
 	__asm        jmp    near ptr 0x0052F659;
 
-	currentCell = None;
+	__asm        mov    eax, [ebp-0x20];
+	__asm        mov    currentCell, eax;
 // LINE 1490:
 	__asm        cmp    currentCell, 0;
 	__asm        jne    _T144;
@@ -2829,7 +2833,8 @@ _T2f8:
 _T2fd:
 	__asm        jmp    near ptr 0x0052F831;
 
-	currentCell = None;
+	__asm        mov    eax, [ebp-0x24];
+	__asm        mov    currentCell, eax;
 // LINE 1568:
 	__asm        cmp    currentCell, 0;
 	__asm        jne    _T31c;
@@ -3592,7 +3597,7 @@ _T5e4:
 	__asm        ja     _T608;
 
 	__asm        mov    eax, [ebp-0x24];
-	__asm        jmp    SwitchPointers5439613[0][eax*4];
+	__asm        jmp    _Switch_5f8[0][eax*4];
 // Switch pointers
 // LINE 2021:
 _T608:
@@ -3824,8 +3829,8 @@ _T859:
 
 	__asm        mov    eax, [ebp-0x10];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, SwitchTable5440385[0][eax];
-	__asm        jmp    SwitchPointers5440273[0][ecx*4];
+	__asm        mov    cl, _SwitchTable_8fc[0][eax];
+	__asm        jmp    _Switch_88c[0][ecx*4];
 // Switch pointers
 // Switch table
 
@@ -4454,7 +4459,7 @@ _T1017:
 	__asm        ja     _T103b;
 
 	__asm        mov    eax, [ebp-0x40];
-	__asm        jmp    SwitchPointers5442224[0][eax*4];
+	__asm        jmp    _Switch_102b[0][eax*4];
 // Switch pointers
 // LINE 2479:
 _T103b:
@@ -4686,8 +4691,8 @@ _T128c:
 
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, SwitchTable5442996[0][eax];
-	__asm        jmp    SwitchPointers5442884[0][ecx*4];
+	__asm        mov    cl, _SwitchTable_132f[0][eax];
+	__asm        jmp    _Switch_12bf[0][ecx*4];
 // Switch pointers
 // Switch table
 
@@ -5061,7 +5066,8 @@ _T55:
 _T5a:
 	__asm        jmp    near ptr 0x0053128A;
 
-	cellPointer = None;
+	__asm        mov    eax, [ebp-0xC];
+	__asm        mov    cellPointer, eax;
 // LINE 2819:
 	__asm        cmp    cellPointer, 0;
 	__asm        jne    _T8b;
@@ -5152,7 +5158,8 @@ _T55:
 _T5a:
 	__asm        jmp    near ptr 0x0053139C;
 
-	cellPointer = None;
+	__asm        mov    eax, [ebp-8];
+	__asm        mov    cellPointer, eax;
 // LINE 2867:
 	__asm        mov    eax, cellPointer;
 	__asm        mov    ecx, dyobj;
@@ -6059,7 +6066,7 @@ _Ta06:
 // FUNCTION: COPTER_D 0x00531dff
 int32_t TrainClass::DoRailTilesConnect(unsigned short fromTile, unsigned short toTile, enum DirectionTypes direction) {
 // LINE 3118:
-	None = 0x5b7bb8;
+	__asm        mov    dword ptr [ebp-0xC], 0x5B7BB8;
 _T13:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    ecx, reinterpret_cast<uint32_t>(fromTile);
@@ -6087,7 +6094,7 @@ _T60:
 	__asm        add    dword ptr [ebp-0xC], 8;
 	__asm        jmp    _T13;
 _T69:
-	None = 0x5b7bb8;
+	__asm        mov    dword ptr [ebp-0x10], 0x5B7BB8;
 _T70:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    ecx, reinterpret_cast<uint32_t>(toTile);
@@ -6317,7 +6324,7 @@ _T181:
 	__asm        ja     _T15b;
 
 	__asm        mov    eax, [ebp-8];
-	__asm        jmp    SwitchPointers5447965[0][eax*4];
+	__asm        jmp    _Switch_195[0][eax*4];
 // Switch pointers
 // LINE 3229:
 _T1b5:
@@ -6999,7 +7006,8 @@ _T56:
 _T5b:
 	__asm        jmp    near ptr 0x00532963;
 
-	cellPointer = None;
+	__asm        mov    eax, [ebp-8];
+	__asm        mov    cellPointer, eax;
 // LINE 3418:
 	__asm        cmp    cellPointer, 0;
 	__asm        jne    _T8c;
@@ -7138,7 +7146,8 @@ _T56:
 _T5b:
 	__asm        jmp    near ptr 0x00532B0B;
 
-	cellPointer = None;
+	__asm        mov    eax, [ebp-0x28];
+	__asm        mov    cellPointer, eax;
 // LINE 3473:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x35], 0;
@@ -7464,7 +7473,7 @@ _T419:
 	__asm        jmp    _T41e;
 // LINE 3579:
 _T41e:
-	None = 0x5b7bb8;
+	__asm        mov    dword ptr [ebp-0x2C], 0x5B7BB8;
 _T425:
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    ecx, reinterpret_cast<uint32_t>(ntile);
@@ -7557,7 +7566,7 @@ _T50f:
 	__asm        ja     _T56a;
 
 	__asm        mov    eax, [ebp-0x44];
-	__asm        jmp    SwitchPointers5451750[0][eax*4];
+	__asm        jmp    _Switch_53b[0][eax*4];
 // Switch pointers
 // LINE 3624:
 _T56a:
@@ -8138,7 +8147,7 @@ _T203:
 	__asm        ja     _T22b;
 
 	__asm        mov    eax, [ebp-0x5C];
-	__asm        jmp    SwitchPointers5453369[0][eax*4];
+	__asm        jmp    _Switch_217[0][eax*4];
 // Switch pointers
 // LINE 3902:
 _T22b:
@@ -8281,7 +8290,8 @@ _T3dd:
 _T3e2:
 	__asm        jmp    near ptr 0x00533809;
 
-	cptr = None;
+	__asm        mov    eax, [ebp-0x48];
+	__asm        mov    cptr, eax;
 // LINE 3918:
 	__asm        mov    eax, cptr;
 	__asm        cmp    dword ptr [eax+0x10], 0;
@@ -8546,7 +8556,7 @@ _Ta7:
 	__asm        ja     _Tcf;
 
 	__asm        mov    eax, [ebp-0x4C];
-	__asm        jmp    SwitchPointers5454582[0][eax*4];
+	__asm        jmp    _Switch_bb[0][eax*4];
 // Switch pointers
 // LINE 4066:
 _Tcf:
@@ -8689,7 +8699,8 @@ _T281:
 _T286:
 	__asm        jmp    near ptr 0x00533CC6;
 
-	cptr = None;
+	__asm        mov    eax, [ebp-0x3C];
+	__asm        mov    cptr, eax;
 // LINE 4082:
 	__asm        mov    eax, cptr;
 	__asm        cmp    dword ptr [eax+0x10], 0;

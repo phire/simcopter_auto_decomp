@@ -129,9 +129,7 @@ _T45:
 	__asm        jmp    _T117;
 // LINE 153:
 _T7b:
-	__asm        mov    al, color;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
+	ptr[0] = color;
 // LINE 155:
 	__asm        cmp    G_video_mode, 0x10;
 	__asm        jne    _T117;
@@ -150,9 +148,7 @@ _T7b:
 	__asm        jmp    _T117;
 // LINE 159:
 _Tb3:
-	__asm        mov    al, color;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
+	ptr[0] = color;
 // LINE 160:
 	__asm        mov    eax, Pbufwidth;
 	__asm        dec    eax;
@@ -170,9 +166,7 @@ _Tb3:
 	__asm        jmp    _T117;
 // LINE 162:
 _Te4:
-	__asm        mov    al, color;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
+	ptr[0] = color;
 // LINE 163:
 	__asm        inc    ptr;
 // LINE 164:
@@ -188,9 +182,7 @@ _Te4:
 	__asm        jmp    _T117;
 // LINE 165:
 _T10f:
-	__asm        mov    al, color;
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
+	ptr[0] = color;
 // LINE 169:
 _T117:
 }

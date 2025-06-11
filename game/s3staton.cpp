@@ -958,7 +958,7 @@ _T17e:
 	__asm        ja     _T1a2;
 
 	__asm        mov    eax, [ebp-0x24];
-	__asm        jmp    SwitchPointers5480245[0][eax*4];
+	__asm        jmp    _Switch_192[0][eax*4];
 // Switch pointers
 // LINE 97:
 _T1a2:
@@ -2150,7 +2150,9 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	/*bp-0x4*/   /*packed*/ struct _RGIndex startVertex;
 	/*bp-0x30*/  /*packed*/ struct Goal result; // 0x2a bytes
 	/*bp-0x38*/  /*packed*/ struct _StationHeapStruct stationHeapStruct; // 0x8 bytes
-// StaticLocal: 0x006351d0	static /*packed*/ class DigitalSound errorMsgSound;
+	// StaticLocal: 0x006351d0
+	static /*packed*/ class DigitalSound errorMsgSound;
+	;
 	/*bp-0x3c*/  /*packed*/ class EmergencyVehicleClass *availableVehicle;
 	/*bp-0x68*/  /*packed*/ struct Goal destGoal2; // 0x2a bytes
 	/*bp-0x6c*/  int32_t pathFound;
@@ -2286,7 +2288,7 @@ _T1cc:
 	__asm        mov    [ebp-0x118], eax;
 	__asm        jmp    _T1f9;
 _T1ef:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x118], 0;
 _T1f9:
 	__asm        mov    dword ptr [ebp-0x11C], 0;
 	__asm        jmp    near ptr 0x0053AD9B;
@@ -2473,7 +2475,7 @@ _T49f:
 	__asm        mov    [ebp-0x124], eax;
 	__asm        jmp    _T4cc;
 _T4c2:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x124], 0;
 _T4cc:
 	__asm        mov    dword ptr [ebp-0x128], 0;
 	__asm        jmp    near ptr 0x0053B06E;
@@ -2988,7 +2990,7 @@ _Tb5a:
 	__asm        mov    [ebp-0x1E0], eax;
 	__asm        jmp    _Tb87;
 _Tb7d:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x1E0], 0;
 _Tb87:
 	__asm        mov    dword ptr [ebp-0x1E4], 0;
 	__asm        jmp    near ptr 0x0053B729;

@@ -35,7 +35,7 @@ public:
 	long ReadBlock(void * __ptr32, long *);
 	long Read4(long *);
 	long Read2(short *);
-	long Read1(char *);
+	long Read1(signed char *);
 	long SetPos(long);
 	long Advance(long);
 	// calltype: NearC
@@ -64,7 +64,7 @@ public:
 
 // Type: short *;
 
-// Type: char *;
+// Type: signed char *;
 
 // Type: short;
 
@@ -628,7 +628,7 @@ _T3c:
 }
 
 // FUNCTION: COPTER_D 0x0055c910
-long FlatFile::Read1(char * val) {
+long FlatFile::Read1(signed char * val) {
 	/*bp-0x4*/   long size;
 	/*bp-0x8*/   long err;
 

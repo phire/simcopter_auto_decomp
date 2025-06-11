@@ -1128,7 +1128,7 @@ _T384:
 	__asm        ja     _T359;
 
 	__asm        mov    eax, [ebp-0x18];
-	__asm        jmp    SwitchPointers5463996[0][eax*4];
+	__asm        jmp    _Switch_39b[0][eax*4];
 // Switch pointers
 // LINE 404:
 _T3af:

@@ -1405,7 +1405,9 @@ _T594:
 _T599:
 	__asm        jmp    near ptr 0x00541F58;
 
-	this->cptr = None;
+	__asm        mov    eax, [ebp-0x1C];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x112], eax;
 // LINE 510:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x112];
@@ -1668,7 +1670,7 @@ _T8b:
 	__asm        ja     _Tb6;
 
 	__asm        mov    eax, [ebp-8];
-	__asm        jmp    SwitchPointers5513936[0][eax*4];
+	__asm        jmp    _Switch_a2[0][eax*4];
 // Switch pointers
 // LINE 641:
 _Tb6:
@@ -1815,7 +1817,8 @@ _T49:
 _T4e:
 	__asm        jmp    near ptr 0x005424B4;
 
-	cellPointer = None;
+	__asm        mov    eax, [ebp-0xC];
+	__asm        mov    cellPointer, eax;
 // LINE 946:
 	__asm        cmp    cellPointer, 0;
 	__asm        jne    _T7f;
@@ -1905,7 +1908,8 @@ _T49:
 _T4e:
 	__asm        jmp    near ptr 0x005425C3;
 
-	cellPointer = None;
+	__asm        mov    eax, [ebp-8];
+	__asm        mov    cellPointer, eax;
 // LINE 987:
 	__asm        cmp    cellPointer, 0;
 	__asm        jne    _T7f;
@@ -2078,7 +2082,7 @@ _T118:
 	__asm        ja     _Ted;
 
 	__asm        mov    eax, [ebp-0xC];
-	__asm        jmp    SwitchPointers5515223[0][eax*4];
+	__asm        jmp    _Switch_12c[0][eax*4];
 // Switch pointers
 // LINE 1396:
 _T140:

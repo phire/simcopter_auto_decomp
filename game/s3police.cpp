@@ -1157,7 +1157,8 @@ _T491:
 _T496:
 	__asm        jmp    near ptr 0x0053754E;
 
-	cptr = None;
+	__asm        mov    eax, [ebp-0x38];
+	__asm        mov    cptr, eax;
 // LINE 382:
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax+2];
@@ -1541,7 +1542,7 @@ _T940:
 	__asm        ja     _T915;
 
 	__asm        mov    eax, [ebp-0x48];
-	__asm        jmp    SwitchPointers5470730[0][eax*4];
+	__asm        jmp    _Switch_957[0][eax*4];
 // Switch pointers
 // LINE 535:
 _T96f:
@@ -2055,7 +2056,8 @@ _T6f:
 _T74:
 	__asm        jmp    near ptr 0x00538052;
 
-	cptr = None;
+	__asm        mov    eax, [ebp-0x28];
+	__asm        mov    cptr, eax;
 // LINE 697:
 	dyptr = cptr->dyptr;
 // LINE 701:

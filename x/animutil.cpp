@@ -358,17 +358,11 @@ void XY2Cartesian(float radius, float phi, float psi, float * xres, float * zres
 	__asm        call   XYIncrementCartesian;
 	__asm        add    esp, 0x24;
 // LINE 82:
-	__asm        mov    eax, xres;
-	__asm        mov    ecx, transformed.x;
-	__asm        mov    [eax], ecx;
+	xres[0] = transformed.x;
 // LINE 83:
-	__asm        mov    eax, zres;
-	__asm        mov    ecx, transformed.z;
-	__asm        mov    [eax], ecx;
+	zres[0] = transformed.z;
 // LINE 84:
-	__asm        mov    eax, yres;
-	__asm        mov    ecx, transformed.y;
-	__asm        mov    [eax], ecx;
+	yres[0] = transformed.y;
 // LINE 85:
 	__asm        jmp    near ptr 0x005628E6;
 }
@@ -2019,9 +2013,7 @@ void PolarDouble2Incs(float phi, float psi, float tau, short latincs, short lngi
 // Block start:
 	/*bp-0x1c*/  short trouble;
 _T117:
-	__asm        mov    eax, trq;
-	__asm        mov    ax, [eax];
-	__asm        mov    trouble, ax;
+	trouble = trq[0];
 // LINE 667:
 // Block end:
 _T121:
@@ -2031,8 +2023,7 @@ _T121:
 	__asm        cmp    eax, ecx;
 	__asm        jne    _T13b;
 
-	__asm        mov    eax, lat;
-	__asm        mov    word ptr [eax], 0;
+	lat[0] = 0x0;
 // LINE 668:
 _T13b:
 	__asm        mov    eax, lng;
@@ -2041,8 +2032,7 @@ _T13b:
 	__asm        cmp    eax, ecx;
 	__asm        jne    _T155;
 
-	__asm        mov    eax, lng;
-	__asm        mov    word ptr [eax], 0;
+	lng[0] = 0x0;
 // LINE 669:
 _T155:
 	__asm        mov    eax, trq;
@@ -2051,8 +2041,7 @@ _T155:
 	__asm        cmp    eax, ecx;
 	__asm        jne    _T16f;
 
-	__asm        mov    eax, trq;
-	__asm        mov    word ptr [eax], 0;
+	trq[0] = 0x0;
 // LINE 670:
 _T16f:
 	__asm        jmp    near ptr 0x005639CD;

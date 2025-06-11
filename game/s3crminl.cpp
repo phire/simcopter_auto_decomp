@@ -586,8 +586,7 @@ _T24:
 // LINE 175:
 	mp.op = 0xa;
 // LINE 176:
-	__asm        movsx  eax, mID;
-	__asm        mov    mp.id, eax;
+	mp.id = reinterpret_cast<int16_t>(mID);
 // LINE 180:
 	__asm        mov    eax, i;
 	__asm        mov    eax, CriminalEvaderCarClass::criminalCars[0][eax*4];
@@ -740,7 +739,9 @@ _T10e:
 _T113:
 	__asm        jmp    near ptr 0x00534D5D;
 
-	this->cptr = None;
+	__asm        mov    eax, [ebp-0x58];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x112], eax;
 // LINE 228:
 	__asm        push   6;
 	__asm        lea    eax, loc.x;
@@ -1026,7 +1027,7 @@ _T4b7:
 	__asm        ja     _T4df;
 
 	__asm        mov    eax, [ebp-0x68];
-	__asm        jmp    SwitchPointers5460240[0][eax*4];
+	__asm        jmp    _Switch_4cb[0][eax*4];
 // Switch pointers
 // LINE 387:
 _T4df:
@@ -1150,8 +1151,8 @@ _T80:
 
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, SwitchPointers5460645[32][eax];
-	__asm        jmp    SwitchPointers5460645[0][ecx*4];
+	__asm        mov    cl, _Switch_a3[32][eax];
+	__asm        jmp    _Switch_a3[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 484:
@@ -1179,8 +1180,8 @@ _T186:
 
 	__asm        mov    eax, [ebp-0x40];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, SwitchPointers5460904[52][eax];
-	__asm        jmp    SwitchPointers5460904[0][ecx*4];
+	__asm        mov    cl, _Switch_1a6[52][eax];
+	__asm        jmp    _Switch_1a6[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 513:
@@ -1208,8 +1209,8 @@ _T288:
 
 	__asm        mov    eax, [ebp-0x44];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, SwitchPointers5461165[28][eax];
-	__asm        jmp    SwitchPointers5461165[0][ecx*4];
+	__asm        mov    cl, _Switch_2ab[28][eax];
+	__asm        jmp    _Switch_2ab[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 534:
@@ -1237,8 +1238,8 @@ _T323:
 
 	__asm        mov    eax, [ebp-0x48];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, SwitchPointers5461320[52][eax];
-	__asm        jmp    SwitchPointers5461320[0][ecx*4];
+	__asm        mov    cl, _Switch_346[52][eax];
+	__asm        jmp    _Switch_346[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 575:
@@ -1266,8 +1267,8 @@ _T420:
 
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, SwitchTable5461621[0][eax];
-	__asm        jmp    SwitchPointers5461573[0][ecx*4];
+	__asm        mov    cl, _SwitchTable_473[0][eax];
+	__asm        jmp    _Switch_443[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 616:
@@ -1280,7 +1281,7 @@ _T4b2:
 	__asm        ja     _T4da;
 
 	__asm        mov    eax, [ebp-0x38];
-	__asm        jmp    SwitchPointers5461704[0][eax*4];
+	__asm        jmp    _Switch_4c6[0][eax*4];
 // Switch pointers
 // LINE 619:
 // Block end:

@@ -17,6 +17,8 @@ struct list<SoundQueueItem *>::list_node{ // packed(0xc bytes) TI: 0x25ec
 
 // Type: uint32_t;
 
+// Type: void;
+
 // Type: /*packed*/ struct SoundQueueItem (forward reference);
 struct SoundQueueItem{ // packed(0x18 bytes) TI: 0x24b1
 	void SoundQueueItem(/*packed*/ class Sound*, char *, long, int32_t);
@@ -30,8 +32,6 @@ struct SoundQueueItem{ // packed(0x18 bytes) TI: 0x24b1
 	/*+0x10*/  long lTimeToWaitBeforePlaying;
 	/*+0x14*/  int32_t bDeleteSoundWhenFinished;
 };
-
-// Type: void;
 
 // Type: /*packed*/ class Sound (forward reference);
 // VTABLE: COPTER_D 0x0058f458
@@ -776,7 +776,7 @@ _T1c7:
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    _T1e8;
 _T1e1:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-4], 0;
 _T1e8:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
@@ -979,7 +979,7 @@ _Tc9:
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _Tea;
 _Te3:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-8], 0;
 _Tea:
 	__asm        mov    dword ptr [ebp-0xC], 0;
 	__asm        jmp    near ptr 0x00420EA5;
@@ -1177,7 +1177,8 @@ _Ta7:
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _Tf2;
 _Tec:
-	None = None;
+	__asm        mov    eax, [ebp-0x1C];
+	__asm        mov    [ebp-0x24], eax;
 _Tf2:
 	__asm        jmp    near ptr 0x00421127;
 
@@ -1246,7 +1247,8 @@ _T15f:
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    _T1cc;
 _T1c6:
-	None = None;
+	__asm        mov    eax, [ebp-0x30];
+	__asm        mov    [ebp-0x38], eax;
 _T1cc:
 	__asm        jmp    near ptr 0x00421201;
 
@@ -1794,7 +1796,7 @@ _T2a5:
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _T5f;
 _T58:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-8], 0;
 _T5f:
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
@@ -1898,7 +1900,8 @@ _Td3:
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    _T11e;
 _T118:
-	None = None;
+	__asm        mov    eax, [ebp-0x30];
+	__asm        mov    [ebp-0x38], eax;
 _T11e:
 	__asm        jmp    near ptr 0x0042197E;
 
@@ -1967,7 +1970,8 @@ _T18b:
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        jmp    _T1f8;
 _T1f2:
-	None = None;
+	__asm        mov    eax, [ebp-0x44];
+	__asm        mov    [ebp-0x4C], eax;
 _T1f8:
 	__asm        jmp    near ptr 0x00421A58;
 

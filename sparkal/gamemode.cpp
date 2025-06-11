@@ -4,6 +4,8 @@
 
 // Type: char *;
 
+// Type: void;
+
 // Type: /*packed*/ class CopterGameMode (forward reference);
 class CopterGameMode{ // packed(0x4 bytes) TI: 0x170f
 public:
@@ -13,8 +15,6 @@ public:
 	void CopterGameMode();
 	/*packed*/ class CopterGameMode& operator=(const /*packed*/ class CopterGameMode&);
 };
-
-// Type: void;
 
 // Type: int32_t;
 
@@ -704,7 +704,8 @@ _T81:
 
 	__asm        jmp    near ptr 0x004BDA04;
 
-	None = SZ_MAIN_MENU_IMAGE_FILE_NAME;
+	__asm        mov    eax, SZ_MAIN_MENU_IMAGE_FILE_NAME;
+	__asm        mov    [ebp-0xA0], eax;
 // LINE 200:
 	__asm        jmp    near ptr 0x004BDA14;
 
@@ -751,14 +752,16 @@ _T81:
 	__asm        mov    byte ptr [ebp-0x6A], 0x4A;
 	__asm        jmp    near ptr 0x004BDAA8;
 
-	reinterpret_cast<uint32_t>(tempUMWD.colorFont.Blue) = None;
+	__asm        mov    eax, [ebp-0x6C];
+	__asm        mov    reinterpret_cast<uint32_t>(tempUMWD.colorFont.Blue), eax;
 // LINE 207:
 	__asm        mov    byte ptr [ebp-0x70], 0xEA;
 	__asm        mov    byte ptr [ebp-0x6F], 0xEF;
 	__asm        mov    byte ptr [ebp-0x6E], 0x9A;
 	__asm        jmp    near ptr 0x004BDABF;
 
-	reinterpret_cast<uint32_t>(tempUMWD.colorFontHighlighted.Blue) = None;
+	__asm        mov    eax, [ebp-0x70];
+	__asm        mov    reinterpret_cast<uint32_t>(tempUMWD.colorFontHighlighted.Blue), eax;
 // LINE 210:
 	__asm        jmp    near ptr 0x004BDACA;
 
@@ -811,7 +814,7 @@ _T81:
 	__asm        mov    [ebp-0x8C], eax;
 	__asm        jmp    _T23b;
 _T231:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x8C], 0;
 _T23b:
 	__asm        push   1;
 	__asm        mov    eax, [ebp-0x8C];
@@ -1069,7 +1072,7 @@ _T3b:
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    _T7a;
 _T73:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x20], 0;
 _T7a:
 	__asm        jmp    near ptr 0x004BDF0A;
 
@@ -1390,37 +1393,49 @@ void GameModePlayData::Sleep() {
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BE38A;
 
-	None = this->pPanel1;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x44];
+	__asm        mov    [ebp-8], eax;
 // LINE 454:
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BE3A2;
 
-	None = this->pPanel2;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x48];
+	__asm        mov    [ebp-0xC], eax;
 // LINE 455:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BE3BA;
 
-	None = this->pPanel3;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x4C];
+	__asm        mov    [ebp-0x10], eax;
 // LINE 456:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BE3D2;
 
-	None = this->pPanel4;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x50];
+	__asm        mov    [ebp-0x14], eax;
 // LINE 457:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BE3EA;
 
-	None = this->pPanel5;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x54];
+	__asm        mov    [ebp-0x18], eax;
 // LINE 458:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BE402;
 
-	None = this->pPanel6;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x58];
+	__asm        mov    [ebp-0x1C], eax;
 // LINE 459:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    dword ptr [eax+0x54], 0;
@@ -1722,49 +1737,65 @@ _T137:
 	__asm        cmp    dword ptr [eax+0x2C], 0;
 	__asm        je     _T2b6;
 
-	None = this->pPanel0;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x40];
+	__asm        mov    [ebp-4], eax;
 // LINE 515:
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax+0x54], 1;
 	__asm        jmp    near ptr 0x004BE73D;
 
-	None = this->pPanel1;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x44];
+	__asm        mov    [ebp-8], eax;
 // LINE 516:
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax+0x54], 1;
 	__asm        jmp    near ptr 0x004BE755;
 
-	None = this->pPanel2;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x48];
+	__asm        mov    [ebp-0xC], eax;
 // LINE 517:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    dword ptr [eax+0x54], 1;
 	__asm        jmp    near ptr 0x004BE76D;
 
-	None = this->pPanel3;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x4C];
+	__asm        mov    [ebp-0x10], eax;
 // LINE 518:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    dword ptr [eax+0x54], 1;
 	__asm        jmp    near ptr 0x004BE785;
 
-	None = this->pPanel4;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x50];
+	__asm        mov    [ebp-0x14], eax;
 // LINE 519:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    dword ptr [eax+0x54], 1;
 	__asm        jmp    near ptr 0x004BE79D;
 
-	None = this->pPanel5;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x54];
+	__asm        mov    [ebp-0x18], eax;
 // LINE 520:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    dword ptr [eax+0x54], 1;
 	__asm        jmp    near ptr 0x004BE7B5;
 
-	None = this->pPanel6;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x58];
+	__asm        mov    [ebp-0x1C], eax;
 // LINE 521:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    dword ptr [eax+0x54], 1;
 	__asm        jmp    near ptr 0x004BE7CD;
 
-	None = this->pPassengerWindow;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x6C];
+	__asm        mov    [ebp-0x20], eax;
 // LINE 522:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    dword ptr [eax+0x54], 1;
@@ -2227,49 +2258,65 @@ _T54b:
 	__asm        cmp    dword ptr [eax+0x2C], 0;
 	__asm        jne    _T73e;
 
-	None = this->pPanel0;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x40];
+	__asm        mov    [ebp-0xA4], eax;
 // LINE 610:
 	__asm        mov    eax, [ebp-0xA4];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BEE5E;
 
-	None = this->pPanel1;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x44];
+	__asm        mov    [ebp-0xA8], eax;
 // LINE 611:
 	__asm        mov    eax, [ebp-0xA8];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BEE7F;
 
-	None = this->pPanel2;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x48];
+	__asm        mov    [ebp-0xAC], eax;
 // LINE 612:
 	__asm        mov    eax, [ebp-0xAC];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BEEA0;
 
-	None = this->pPanel3;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x4C];
+	__asm        mov    [ebp-0xB0], eax;
 // LINE 613:
 	__asm        mov    eax, [ebp-0xB0];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BEEC1;
 
-	None = this->pPanel4;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x50];
+	__asm        mov    [ebp-0xB4], eax;
 // LINE 614:
 	__asm        mov    eax, [ebp-0xB4];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BEEE2;
 
-	None = this->pPanel5;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x54];
+	__asm        mov    [ebp-0xB8], eax;
 // LINE 615:
 	__asm        mov    eax, [ebp-0xB8];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BEF03;
 
-	None = this->pPanel6;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x58];
+	__asm        mov    [ebp-0xBC], eax;
 // LINE 616:
 	__asm        mov    eax, [ebp-0xBC];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BEF24;
 
-	None = this->pPassengerWindow;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x6C];
+	__asm        mov    [ebp-0xC0], eax;
 // LINE 617:
 	__asm        mov    eax, [ebp-0xC0];
 	__asm        mov    dword ptr [eax+0x54], 0;
@@ -2488,7 +2535,7 @@ _T1b3:
 	__asm        mov    [ebp-0x58], eax;
 	__asm        jmp    _T20c;
 _T205:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x58], 0;
 _T20c:
 	__asm        mov    eax, [ebp-0x58];
 	__asm        push   eax;
@@ -2580,7 +2627,7 @@ _T2c0:
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        jmp    _T319;
 _T312:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x5C], 0;
 _T319:
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        push   eax;
@@ -2672,7 +2719,7 @@ _T3cd:
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    _T426;
 _T41f:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x60], 0;
 _T426:
 	__asm        mov    eax, [ebp-0x60];
 	__asm        push   eax;
@@ -3112,43 +3159,57 @@ _T72:
 	__asm        mov    dword ptr [eax+0x54], 1;
 	__asm        jmp    near ptr 0x004BF958;
 
-	None = this->pPanel1;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x44];
+	__asm        mov    [ebp-8], eax;
 // LINE 851:
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax+0x54], 1;
 	__asm        jmp    near ptr 0x004BF970;
 
-	None = this->pPanel2;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x48];
+	__asm        mov    [ebp-0xC], eax;
 // LINE 852:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    dword ptr [eax+0x54], 1;
 	__asm        jmp    near ptr 0x004BF988;
 
-	None = this->pPanel3;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x4C];
+	__asm        mov    [ebp-0x10], eax;
 // LINE 853:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    dword ptr [eax+0x54], 1;
 	__asm        jmp    near ptr 0x004BF9A0;
 
-	None = this->pPanel4;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x50];
+	__asm        mov    [ebp-0x14], eax;
 // LINE 854:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    dword ptr [eax+0x54], 1;
 	__asm        jmp    near ptr 0x004BF9B8;
 
-	None = this->pPanel5;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x54];
+	__asm        mov    [ebp-0x18], eax;
 // LINE 855:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    dword ptr [eax+0x54], 1;
 	__asm        jmp    near ptr 0x004BF9D0;
 
-	None = this->pPanel6;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x58];
+	__asm        mov    [ebp-0x1C], eax;
 // LINE 856:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    dword ptr [eax+0x54], 1;
 	__asm        jmp    near ptr 0x004BF9E8;
 
-	None = this->pPassengerWindow;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x6C];
+	__asm        mov    [ebp-0x20], eax;
 // LINE 857:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    dword ptr [eax+0x54], 1;
@@ -3260,43 +3321,57 @@ _T65:
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BFB54;
 
-	None = this->pPanel1;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x44];
+	__asm        mov    [ebp-8], eax;
 // LINE 905:
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BFB6C;
 
-	None = this->pPanel2;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x48];
+	__asm        mov    [ebp-0xC], eax;
 // LINE 906:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BFB84;
 
-	None = this->pPanel3;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x4C];
+	__asm        mov    [ebp-0x10], eax;
 // LINE 907:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BFB9C;
 
-	None = this->pPanel4;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x50];
+	__asm        mov    [ebp-0x14], eax;
 // LINE 908:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BFBB4;
 
-	None = this->pPanel5;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x54];
+	__asm        mov    [ebp-0x18], eax;
 // LINE 909:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BFBCC;
 
-	None = this->pPanel6;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x58];
+	__asm        mov    [ebp-0x1C], eax;
 // LINE 910:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    dword ptr [eax+0x54], 0;
 	__asm        jmp    near ptr 0x004BFBE4;
 
-	None = this->pPassengerWindow;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x6C];
+	__asm        mov    [ebp-0x20], eax;
 // LINE 911:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    dword ptr [eax+0x54], 0;
@@ -4982,7 +5057,7 @@ int32_t GameModeHangarData::CreateAllSurfaces() {
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _T4b;
 _T44:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-8], 0;
 _T4b:
 	__asm        push   1;
 	__asm        mov    eax, [ebp-8];
@@ -5627,7 +5702,7 @@ int32_t GameModeCatalogData::CreateAllSurfaces() {
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _T4b;
 _T44:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-8], 0;
 _T4b:
 	__asm        push   1;
 	__asm        mov    eax, [ebp-8];
@@ -5978,7 +6053,8 @@ _T1ce:
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    _T22e;
 _T228:
-	None = None;
+	__asm        mov    eax, [ebp-0x58];
+	__asm        mov    [ebp-0x60], eax;
 _T22e:
 	__asm        jmp    near ptr 0x004C205C;
 
@@ -6022,7 +6098,8 @@ _T22e:
 	__asm        mov    [ebp-0x74], eax;
 	__asm        jmp    _T2b8;
 _T2b2:
-	None = None;
+	__asm        mov    eax, [ebp-0x6C];
+	__asm        mov    [ebp-0x74], eax;
 _T2b8:
 	__asm        jmp    near ptr 0x004C20E6;
 
@@ -6156,7 +6233,8 @@ _T423:
 	__asm        mov    [ebp-0xB8], eax;
 	__asm        jmp    _T4aa;
 _T49e:
-	None = None;
+	__asm        mov    eax, [ebp-0xB0];
+	__asm        mov    [ebp-0xB8], eax;
 _T4aa:
 	__asm        jmp    near ptr 0x004C22D8;
 
@@ -6200,7 +6278,8 @@ _T4aa:
 	__asm        mov    [ebp-0xCC], eax;
 	__asm        jmp    _T56a;
 _T55e:
-	None = None;
+	__asm        mov    eax, [ebp-0xC4];
+	__asm        mov    [ebp-0xCC], eax;
 _T56a:
 	__asm        jmp    near ptr 0x004C2398;
 
@@ -6322,7 +6401,7 @@ int32_t GameModeMissionLogData::CreateAllSurfaces() {
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _T4b;
 _T44:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-8], 0;
 _T4b:
 	__asm        push   1;
 	__asm        mov    eax, [ebp-8];
@@ -6673,7 +6752,8 @@ _T1ce:
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    _T22e;
 _T228:
-	None = None;
+	__asm        mov    eax, [ebp-0x58];
+	__asm        mov    [ebp-0x60], eax;
 _T22e:
 	__asm        jmp    near ptr 0x004C29E4;
 
@@ -6717,7 +6797,8 @@ _T22e:
 	__asm        mov    [ebp-0x74], eax;
 	__asm        jmp    _T2b8;
 _T2b2:
-	None = None;
+	__asm        mov    eax, [ebp-0x6C];
+	__asm        mov    [ebp-0x74], eax;
 _T2b8:
 	__asm        jmp    near ptr 0x004C2A6E;
 
@@ -6851,7 +6932,8 @@ _T423:
 	__asm        mov    [ebp-0xB8], eax;
 	__asm        jmp    _T4aa;
 _T49e:
-	None = None;
+	__asm        mov    eax, [ebp-0xB0];
+	__asm        mov    [ebp-0xB8], eax;
 _T4aa:
 	__asm        jmp    near ptr 0x004C2C60;
 
@@ -6895,7 +6977,8 @@ _T4aa:
 	__asm        mov    [ebp-0xCC], eax;
 	__asm        jmp    _T56a;
 _T55e:
-	None = None;
+	__asm        mov    eax, [ebp-0xC4];
+	__asm        mov    [ebp-0xCC], eax;
 _T56a:
 	__asm        jmp    near ptr 0x004C2D20;
 
@@ -7017,7 +7100,7 @@ int32_t GameModeInventoryData::CreateAllSurfaces() {
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _T4b;
 _T44:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-8], 0;
 _T4b:
 	__asm        push   1;
 	__asm        mov    eax, [ebp-8];
@@ -7368,7 +7451,8 @@ _T1ce:
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    _T22e;
 _T228:
-	None = None;
+	__asm        mov    eax, [ebp-0x58];
+	__asm        mov    [ebp-0x60], eax;
 _T22e:
 	__asm        jmp    near ptr 0x004C336C;
 
@@ -7412,7 +7496,8 @@ _T22e:
 	__asm        mov    [ebp-0x74], eax;
 	__asm        jmp    _T2b8;
 _T2b2:
-	None = None;
+	__asm        mov    eax, [ebp-0x6C];
+	__asm        mov    [ebp-0x74], eax;
 _T2b8:
 	__asm        jmp    near ptr 0x004C33F6;
 
@@ -7546,7 +7631,8 @@ _T423:
 	__asm        mov    [ebp-0xB8], eax;
 	__asm        jmp    _T4aa;
 _T49e:
-	None = None;
+	__asm        mov    eax, [ebp-0xB0];
+	__asm        mov    [ebp-0xB8], eax;
 _T4aa:
 	__asm        jmp    near ptr 0x004C35E8;
 
@@ -7590,7 +7676,8 @@ _T4aa:
 	__asm        mov    [ebp-0xCC], eax;
 	__asm        jmp    _T56a;
 _T55e:
-	None = None;
+	__asm        mov    eax, [ebp-0xC4];
+	__asm        mov    [ebp-0xCC], eax;
 _T56a:
 	__asm        jmp    near ptr 0x004C36A8;
 

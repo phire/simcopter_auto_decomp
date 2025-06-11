@@ -26,18 +26,18 @@ struct DXZY{ // not packed(0x10 bytes) TI: 0x3420
 
 // Type: /*unpacked*/ struct TinyXZY;
 struct TinyXZY{ // not packed(0x4 bytes) TI: 0x3422
-	/*+0x0*/   char x; // 0x1 bytes
-	/*+0x1*/   char y; // 0x1 bytes
-	/*+0x2*/   char z; // 0x1 bytes
-	/*+0x3*/   char info; // 0x1 bytes
+	/*+0x0*/   signed char x; // 0x1 bytes
+	/*+0x1*/   signed char y; // 0x1 bytes
+	/*+0x2*/   signed char z; // 0x1 bytes
+	/*+0x3*/   signed char info; // 0x1 bytes
 };
 
 // Type: /*unpacked*/ struct TinyXZY (forward reference);
 struct TinyXZY{ // not packed(0x4 bytes) TI: 0x3422
-	/*+0x0*/   char x; // 0x1 bytes
-	/*+0x1*/   char y; // 0x1 bytes
-	/*+0x2*/   char z; // 0x1 bytes
-	/*+0x3*/   char info; // 0x1 bytes
+	/*+0x0*/   signed char x; // 0x1 bytes
+	/*+0x1*/   signed char y; // 0x1 bytes
+	/*+0x2*/   signed char z; // 0x1 bytes
+	/*+0x3*/   signed char info; // 0x1 bytes
 };
 
 // Type: /*unpacked*/ struct DXZY (forward reference);
@@ -48,7 +48,7 @@ struct DXZY{ // not packed(0x10 bytes) TI: 0x3420
 	/*+0xc*/   float info;
 };
 
-// Type: char;
+// Type: signed char;
 
 // Type: float;
 
@@ -145,6 +145,12 @@ public:
 	static void SwizzleBBaseHeader(void * __ptr32, long);
 };
 
+// Type: /*unpacked*/ struct PtrList<cBBase>::PtrNode (forward reference);
+struct PtrList<cBBase>::PtrNode{ // not packed(0x8 bytes) TI: 0x33ae
+	/*+0x0*/   /*unpacked*/ class cBBase *data;
+	/*+0x4*/   /*unpacked*/ struct PtrList<cBBase>::PtrNode *next;
+};
+
 // Type: /*unpacked*/ class PtrList<cBBase> (forward reference);
 class PtrList<cBBase>{ // not packed(0x8 bytes) TI: 0x33ac
 	class PtrList<cBBase>::Iter{ // not packed(0x8 bytes) TI: 0x33b6
@@ -177,12 +183,6 @@ public:
 	/*unpacked*/ class cBBase* GetByOrder(long);
 };
 
-// Type: /*unpacked*/ struct PtrList<cBBase>::PtrNode (forward reference);
-struct PtrList<cBBase>::PtrNode{ // not packed(0x8 bytes) TI: 0x33ae
-	/*+0x0*/   /*unpacked*/ class cBBase *data;
-	/*+0x4*/   /*unpacked*/ struct PtrList<cBBase>::PtrNode *next;
-};
-
 // Type: /*unpacked*/ class PtrList<cCopterAnim>::Iter (forward reference);
 class PtrList<cCopterAnim>::Iter{ // not packed(0x8 bytes) TI: 0x341b
 private:
@@ -195,9 +195,6 @@ public:
 	void Reset();
 	/*unpacked*/ class cCopterAnim* First();
 };
-
-// Type: /*unpacked*/ class cBList<cCopterAnim> (forward reference);
-// cBList<cCopterAnim> Class implementation not found
 
 // Type: /*unpacked*/ class PtrList<cCopterAnim> (forward reference);
 class PtrList<cCopterAnim>{ // not packed(0x8 bytes) TI: 0x3411
@@ -450,7 +447,7 @@ public:
 	long ReadBlock(void * __ptr32, long *);
 	long Read4(long *);
 	long Read2(short *);
-	long Read1(char *);
+	long Read1(signed char *);
 	long SetPos(long);
 	long Advance(long);
 	// calltype: NearC
@@ -550,7 +547,7 @@ _T2c:
 }
 
 // FUNCTION: COPTER_D 0x0055da2e
-float Byte_2_Float(char byte) {
+float Byte_2_Float(signed char byte) {
 // LINE 152:
 	__asm        movsx  eax, byte;
 	__asm        mov    [ebp-4], eax;
@@ -560,7 +557,7 @@ float Byte_2_Float(char byte) {
 }
 
 // FUNCTION: COPTER_D 0x0055da4b
-char Float_2_Byte(float flt) {
+signed char Float_2_Byte(float flt) {
 // LINE 157:
 	__asm        fld    flt;
 	__asm        fcomp  qword ptr ds:[0x593640];
@@ -679,7 +676,7 @@ _L39430:
 _Tf0:
 	__asm        jmp    _Tff;
 _Tf5:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x21C], 0;
 _Tff:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x21C];
@@ -730,7 +727,7 @@ _L39421:
 _T1dc:
 	__asm        jmp    _T1eb;
 _T1e1:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x224], 0;
 _T1eb:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x224];
@@ -796,7 +793,8 @@ _T2b1:
 	__asm        mov    cCopterBody::fsList, eax;
 	__asm        jmp    _T310;
 
-	cCopterBody::fsList = None;
+	__asm        mov    eax, [ebp-0x234];
+	__asm        mov    cCopterBody::fsList, eax;
 _L39417:
 	__asm        mov    eax, [ebp-0x220];
 	__asm        push   eax;
@@ -810,7 +808,8 @@ _L39414:
 	__asm        add    esp, 4;
 	__asm        ret;
 _T310:
-	None = cCopterBody::fsList;
+	__asm        mov    eax, cCopterBody::fsList;
+	__asm        mov    [ebp-0x268], eax;
 // LINE 204:
 	__asm        mov    eax, [ebp-0x268];
 	__asm        cmp    dword ptr [eax+0xC], 0;
@@ -945,7 +944,7 @@ _T4ed:
 	__asm        mov    [ebp-0x240], eax;
 	__asm        jmp    _T536;
 _T52c:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x240], 0;
 _T536:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x240];
@@ -978,7 +977,7 @@ _L39460:
 _T5bd:
 	__asm        jmp    _T5cc;
 _T5c2:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x248], 0;
 _T5cc:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x248];
@@ -1044,7 +1043,8 @@ _T692:
 	__asm        mov    cCopterAnim::fsList, eax;
 	__asm        jmp    _T6f1;
 
-	cCopterAnim::fsList = None;
+	__asm        mov    eax, [ebp-0x250];
+	__asm        mov    cCopterAnim::fsList, eax;
 _L39456:
 	__asm        mov    eax, [ebp-0x244];
 	__asm        push   eax;
@@ -1106,7 +1106,8 @@ _T78f:
 // FUNCTION: COPTER_D 0x0055e29e
 void DeleteBodiesAndAnimations() {
 
-	None = cCopterAnim::fsList;
+	__asm        mov    eax, cCopterAnim::fsList;
+	__asm        mov    [ebp-0x38], eax;
 // LINE 233:
 _T11:
 	__asm        cmp    dword ptr [ebp-0x38], 0;
@@ -1117,7 +1118,7 @@ _T11:
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    _T30;
 _T29:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0xC], 0;
 _T30:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-8], eax;
@@ -1262,7 +1263,8 @@ _T1d1:
 
 	__asm        jmp    near ptr 0x0055E479;
 
-	None = cCopterBody::fsList;
+	__asm        mov    eax, cCopterBody::fsList;
+	__asm        mov    [ebp-0x70], eax;
 // LINE 234:
 _T1e3:
 	__asm        cmp    dword ptr [ebp-0x70], 0;
@@ -1273,7 +1275,7 @@ _T1e3:
 	__asm        mov    [ebp-0x44], eax;
 	__asm        jmp    _T202;
 _T1fb:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x44], 0;
 _T202:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x40], eax;

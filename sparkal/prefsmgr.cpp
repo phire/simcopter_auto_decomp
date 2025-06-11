@@ -30,6 +30,8 @@ struct list<PreferenceItem>::list_node{ // packed(0x14 bytes) TI: 0x2650
 	/*+0x8*/   /*packed*/ class PreferenceItem data; // 0xc bytes
 };
 
+// Type: void;
+
 // Type: /*packed*/ class PreferenceItem (forward reference);
 class PreferenceItem{ // packed(0xc bytes) TI: 0x2577
 public:
@@ -44,9 +46,9 @@ public:
 	/*+0x8*/   char * chPreferenceData;
 };
 
-// Type: void;
-
 // Type: int32_t;
+
+// Type: long;
 
 // Type: /*packed*/ class PreferenceManager (forward reference);
 // VTABLE: COPTER_D 0x00590db0
@@ -77,8 +79,6 @@ public:
 	virtual long SetPref(long, char *, long); // vtable+0x2c
 	virtual long RemovePref(long); // vtable+0x30
 };
-
-// Type: long;
 
 // Type: char *;
 
@@ -690,7 +690,8 @@ _Ta7:
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _Tf2;
 _Tec:
-	None = None;
+	__asm        mov    eax, [ebp-0x1C];
+	__asm        mov    [ebp-0x24], eax;
 _Tf2:
 	__asm        jmp    near ptr 0x0047BF99;
 
@@ -759,7 +760,8 @@ _T15f:
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    _T1cc;
 _T1c6:
-	None = None;
+	__asm        mov    eax, [ebp-0x30];
+	__asm        mov    [ebp-0x38], eax;
 _T1cc:
 	__asm        jmp    near ptr 0x0047C073;
 
@@ -1063,7 +1065,8 @@ void PreferenceManager::EnumeratePrefs() {
 
 	__asm        jmp    near ptr 0x0047C40E;
 
-	i.node = None;
+	__asm        mov    eax, [ebp-0xC];
+	__asm        mov    i.node, eax;
 // LINE 23:
 	__asm        jmp    _T55;
 // LINE 207:
@@ -1200,7 +1203,8 @@ _T49:
 
 	__asm        jmp    near ptr 0x0047C56F;
 
-	i.node = None;
+	__asm        mov    eax, [ebp-0x34];
+	__asm        mov    i.node, eax;
 // LINE 23:
 	__asm        jmp    _Teb;
 // LINE 241:
@@ -1596,7 +1600,8 @@ long PreferenceManager::RemovePref(long lPrefType) {
 
 	__asm        jmp    near ptr 0x0047C99C;
 
-	i.node = None;
+	__asm        mov    eax, [ebp-8];
+	__asm        mov    i.node, eax;
 // LINE 23:
 	__asm        jmp    _T55;
 // LINE 329:
@@ -1651,7 +1656,8 @@ _Tac:
 	__asm        cmp    [eax+8], ecx;
 	__asm        jne    _T15d;
 
-	None = i.node;
+	__asm        mov    eax, i.node;
+	__asm        mov    [ebp-0x28], eax;
 // LINE 331:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    eax, [eax];
@@ -1733,7 +1739,8 @@ _T169:
 
 	__asm        jmp    near ptr 0x0047CB0C;
 
-	i.node = None;
+	__asm        mov    eax, [ebp-8];
+	__asm        mov    i.node, eax;
 // LINE 23:
 	__asm        jmp    _T55;
 // LINE 357:
@@ -2227,7 +2234,8 @@ _Tc7:
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    _T112;
 _T10c:
-	None = None;
+	__asm        mov    eax, [ebp-0x30];
+	__asm        mov    [ebp-0x38], eax;
 _T112:
 	__asm        jmp    near ptr 0x0047D06E;
 
@@ -2296,7 +2304,8 @@ _T17f:
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        jmp    _T1ec;
 _T1e6:
-	None = None;
+	__asm        mov    eax, [ebp-0x44];
+	__asm        mov    [ebp-0x4C], eax;
 _T1ec:
 	__asm        jmp    near ptr 0x0047D148;
 
@@ -2466,7 +2475,8 @@ _Tbf:
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _T10a;
 _T104:
-	None = None;
+	__asm        mov    eax, [ebp-0x1C];
+	__asm        mov    [ebp-0x24], eax;
 _T10a:
 	__asm        jmp    near ptr 0x0047D35F;
 
@@ -2534,7 +2544,8 @@ _T174:
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    _T1e1;
 _T1db:
-	None = None;
+	__asm        mov    eax, [ebp-0x30];
+	__asm        mov    [ebp-0x38], eax;
 _T1e1:
 	__asm        jmp    near ptr 0x0047D436;
 
@@ -2684,7 +2695,8 @@ _Tb6:
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    _T101;
 _Tfb:
-	None = None;
+	__asm        mov    eax, [ebp-0x30];
+	__asm        mov    [ebp-0x38], eax;
 _T101:
 	__asm        jmp    near ptr 0x0047D60C;
 
@@ -2752,7 +2764,8 @@ _T16b:
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        jmp    _T1d8;
 _T1d2:
-	None = None;
+	__asm        mov    eax, [ebp-0x44];
+	__asm        mov    [ebp-0x4C], eax;
 _T1d8:
 	__asm        jmp    near ptr 0x0047D6E3;
 
@@ -2851,7 +2864,8 @@ int32_t NotificationPreferenceManager::RemoveNotification(/*packed*/ class Notif
 
 	__asm        jmp    near ptr 0x0047D7FA;
 
-	iterator.node = None;
+	__asm        mov    eax, [ebp-0xC];
+	__asm        mov    iterator.node, eax;
 // LINE 575:
 _T39:
 	__asm        mov    eax, this;

@@ -1188,7 +1188,7 @@ _T13b:
 	__asm        mov    [ebp-0x74], eax;
 	__asm        jmp    _T19b;
 _T194:
-	None = 0xffffffff;
+	__asm        mov    dword ptr [ebp-0x74], 0xFFFFFFFF;
 _T19b:
 	__asm        jmp    near ptr 0x0042AF35;
 
@@ -1223,9 +1223,7 @@ _T1d0:
 	__asm        test   eax, eax;
 	__asm        jne    _T2e9;
 // LINE 140:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, nLanguage;
-	__asm        mov    [ecx], eax;
+	nLanguage[0] = i;
 // LINE 141:
 	__asm        mov    dword ptr [ebp-0x1C], 1;
 	__asm        mov    eax, stringLanguageName.reference;
@@ -1538,7 +1536,7 @@ _T173:
 	__asm        mov    [ebp-0x1034], eax;
 	__asm        jmp    _T1be;
 _T1b4:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x1034], 0;
 _T1be:
 	__asm        lea    ecx, sMessage.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
@@ -1643,7 +1641,7 @@ _T2c9:
 	__asm        mov    [ebp-0x1048], eax;
 	__asm        jmp    _T32d;
 _T323:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x1048], 0;
 _T32d:
 	__asm        lea    ecx, sMessage.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
@@ -1737,7 +1735,7 @@ _T436:
 	__asm        mov    [ebp-0x105C], eax;
 	__asm        jmp    _T481;
 _T477:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x105C], 0;
 _T481:
 	__asm        mov    eax, sMessage.reference;
 	__asm        dec    dword ptr [eax+0xC];
@@ -2226,7 +2224,7 @@ _T162:
 	__asm        mov    [ebp-0x103C], eax;
 	__asm        jmp    _T1cc;
 _T1c2:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x103C], 0;
 _T1cc:
 	__asm        mov    ecx, sLanguage;
 	__asm        call   basic_string<char>::delete_ref;
@@ -2329,7 +2327,7 @@ _T2f4:
 	__asm        mov    [ebp-0x1050], eax;
 	__asm        jmp    _T33f;
 _T335:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x1050], 0;
 _T33f:
 	__asm        mov    eax, sLanguage;
 	__asm        mov    eax, [eax+4];
@@ -2533,7 +2531,7 @@ _T5a6:
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _T5c7;
 _T5c0:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-8], 0;
 _T5c7:
 	__asm        mov    eax, sLanguage;
 	__asm        mov    eax, [eax+4];
@@ -2565,7 +2563,9 @@ _T5c7:
 _T61c:
 	__asm        jmp    near ptr 0x0042C067;
 
-	sLanguage.reference = None;
+	__asm        mov    eax, [ebp-8];
+	__asm        mov    ecx, sLanguage;
+	__asm        mov    [ecx+4], eax;
 _T62a:
 	__asm        cmp    dword ptr [ebp-0x34], 0;
 	__asm        je     _T66c;
@@ -2741,7 +2741,7 @@ _T162:
 	__asm        mov    [ebp-0x103C], eax;
 	__asm        jmp    _T1cc;
 _T1c2:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x103C], 0;
 _T1cc:
 	__asm        mov    ecx, sLanguage;
 	__asm        call   basic_string<char>::delete_ref;
@@ -2844,7 +2844,7 @@ _T2f4:
 	__asm        mov    [ebp-0x1050], eax;
 	__asm        jmp    _T33f;
 _T335:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x1050], 0;
 _T33f:
 	__asm        mov    eax, sLanguage;
 	__asm        mov    eax, [eax+4];
@@ -3048,7 +3048,7 @@ _T5a6:
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _T5c7;
 _T5c0:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-8], 0;
 _T5c7:
 	__asm        mov    eax, sLanguage;
 	__asm        mov    eax, [eax+4];
@@ -3080,7 +3080,9 @@ _T5c7:
 _T61c:
 	__asm        jmp    near ptr 0x0042C6FF;
 
-	sLanguage.reference = None;
+	__asm        mov    eax, [ebp-8];
+	__asm        mov    ecx, sLanguage;
+	__asm        mov    [ecx+4], eax;
 _T62a:
 	__asm        cmp    dword ptr [ebp-0x34], 0;
 	__asm        je     _T66c;
@@ -3256,7 +3258,7 @@ _T162:
 	__asm        mov    [ebp-0x103C], eax;
 	__asm        jmp    _T1cc;
 _T1c2:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x103C], 0;
 _T1cc:
 	__asm        mov    ecx, sLanguage;
 	__asm        call   basic_string<char>::delete_ref;
@@ -3359,7 +3361,7 @@ _T2f4:
 	__asm        mov    [ebp-0x1050], eax;
 	__asm        jmp    _T33f;
 _T335:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x1050], 0;
 _T33f:
 	__asm        mov    eax, sLanguage;
 	__asm        mov    eax, [eax+4];
@@ -3563,7 +3565,7 @@ _T5a6:
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _T5c7;
 _T5c0:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-8], 0;
 _T5c7:
 	__asm        mov    eax, sLanguage;
 	__asm        mov    eax, [eax+4];
@@ -3595,7 +3597,9 @@ _T5c7:
 _T61c:
 	__asm        jmp    near ptr 0x0042CD97;
 
-	sLanguage.reference = None;
+	__asm        mov    eax, [ebp-8];
+	__asm        mov    ecx, sLanguage;
+	__asm        mov    [ecx+4], eax;
 _T62a:
 	__asm        cmp    dword ptr [ebp-0x34], 0;
 	__asm        je     _T66c;
@@ -4028,7 +4032,7 @@ _T196:
 	__asm        ja     _T187;
 
 	__asm        mov    eax, [ebp-0xC];
-	__asm        jmp    SwitchPointers4379207[0][eax*4];
+	__asm        jmp    _Switch_1c4[0][eax*4];
 // Switch pointers
 // Switch table
 

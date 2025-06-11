@@ -169,7 +169,8 @@ _T17a:
 	__asm        cmp    Message.message, 0x12;
 	__asm        jne    _T1bc;
 
-	None = _gSparkalApp;
+	__asm        mov    eax, _gSparkalApp;
+	__asm        mov    [ebp-0x48], eax;
 // LINE 73:
 	__asm        mov    eax, [ebp-0x48];
 	__asm        and    dword ptr [eax+0xC], 0xFFFFFFFE;

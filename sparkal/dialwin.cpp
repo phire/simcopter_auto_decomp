@@ -4,35 +4,6 @@
 
 // Type: char *;
 
-// Type: /*packed*/ class RadioCompassWindow (forward reference);
-// VTABLE: COPTER_D 0x0058f650
-class RadioCompassWindow : public GraphicWindow
-{ // packed(0xb4 bytes) TI: 0x2a7c
-public:
-	void RadioCompassWindow(/*packed*/ class MRect&, long, /*unpacked*/ class GraphicWindow*, /*unpacked*/ class Radio*, /*packed*/ class GraphicWindowOwner*, int32_t);
-	virtual void ~RadioCompassWindow() /* override */;
-	virtual int32_t Initialize() /* override */;
-	virtual void InitializeCachedSettings(); // vtable+0xc4
-	virtual int32_t CreateImage(int32_t) /* override */;
-	virtual void DestroyImage() /* override */;
-	virtual int32_t ComposeSelf() /* override */;
-	virtual long DoCursorDown(long, long, unsigned long) /* override */;
-	int32_t GetCurrentCompassPosition();
-	void SetNewRadioStation(int32_t);
-	void SetNewRadioStationVolume(long);
-	void CheckForRadioChange();
-protected:
-	/*+0x74*/  long lFrameCount;
-	/*+0x78*/  /*unpacked*/ class Radio *myRadio;
-	/*+0x7c*/  int32_t nRadioStationIndex;
-	/*+0x80*/  long lRadioStationVolume;
-	/*+0x84*/  /*unpacked*/ class CBackBuffer *myCompassImage;
-	/*+0x88*/  /*packed*/ class basic_string<char> sCompassFile; // 0x8 bytes
-	/*+0x90*/  int32_t nLastCompassPosition;
-	/*+0x94*/  /*packed*/ class MRect rectRadioStations; // 0x10 bytes
-	/*+0xa4*/  /*packed*/ class MRect rectRadioStationVolume; // 0x10 bytes
-};
-
 // Type: /*packed*/ class MRect (forward reference);
 class MRect : public SparkalRect
 { // packed(0x10 bytes) TI: 0x1067
@@ -119,6 +90,35 @@ public:
 // Type: int32_t;
 
 // Type: void;
+
+// Type: /*packed*/ class RadioCompassWindow (forward reference);
+// VTABLE: COPTER_D 0x0058f650
+class RadioCompassWindow : public GraphicWindow
+{ // packed(0xb4 bytes) TI: 0x2a7c
+public:
+	void RadioCompassWindow(/*packed*/ class MRect&, long, /*unpacked*/ class GraphicWindow*, /*unpacked*/ class Radio*, /*packed*/ class GraphicWindowOwner*, int32_t);
+	virtual void ~RadioCompassWindow() /* override */;
+	virtual int32_t Initialize() /* override */;
+	virtual void InitializeCachedSettings(); // vtable+0xc4
+	virtual int32_t CreateImage(int32_t) /* override */;
+	virtual void DestroyImage() /* override */;
+	virtual int32_t ComposeSelf() /* override */;
+	virtual long DoCursorDown(long, long, unsigned long) /* override */;
+	int32_t GetCurrentCompassPosition();
+	void SetNewRadioStation(int32_t);
+	void SetNewRadioStationVolume(long);
+	void CheckForRadioChange();
+protected:
+	/*+0x74*/  long lFrameCount;
+	/*+0x78*/  /*unpacked*/ class Radio *myRadio;
+	/*+0x7c*/  int32_t nRadioStationIndex;
+	/*+0x80*/  long lRadioStationVolume;
+	/*+0x84*/  /*unpacked*/ class CBackBuffer *myCompassImage;
+	/*+0x88*/  /*packed*/ class basic_string<char> sCompassFile; // 0x8 bytes
+	/*+0x90*/  int32_t nLastCompassPosition;
+	/*+0x94*/  /*packed*/ class MRect rectRadioStations; // 0x10 bytes
+	/*+0xa4*/  /*packed*/ class MRect rectRadioStationVolume; // 0x10 bytes
+};
 
 // Type: /*packed*/ class basic_string<char>;
 class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
@@ -227,6 +227,31 @@ public:
 
 // Type: unsigned long;
 
+// Type: /*packed*/ struct CommandSystem (forward reference);
+struct CommandSystem{ // packed(0xaa8 bytes) TI: 0x12e4
+	/*+0x0*/   /*packed*/ struct Command keyboardCommands[100]; // 0xc8 bytes
+	/*+0xc8*/  /*packed*/ class CharList keyboardCommandList; // 0x10 bytes
+	/*+0xd8*/  /*packed*/ class list<Shortcut> commandShortcuts; // 0x8 bytes
+	/*+0xe0*/  unsigned char chCommandKeyboardArray[2048]; // 0x800 bytes
+	/*+0x8e0*/ unsigned char chCommandJoystickArray[4][14]; // 0x38 bytes
+	/*+0x918*/ long joystickCommands[100]; // 0x190 bytes
+	void CommandSystem();
+	void Initialize();
+	void ClearAllCommands();
+	void ClearAllCommandsDevice(long);
+	void TurnOnCommand(int32_t);
+	void TurnOffCommand(int32_t);
+	void TurnOnCommandDevice(int32_t, long);
+	void TurnOffCommandDevice(int32_t, long);
+	int32_t IsCommandSet(int32_t);
+	int32_t IsCommandPush(int32_t);
+	void SetUpCommandArraysFromShortcuts();
+	// calltype: NearC
+	static int32_t GetKeystateIndexForChar(long, char);
+	long GetJoystickCommandValue(int32_t);
+	void PollJoysticksForCommands();
+};
+
 // Type: /*packed*/ class DialWindow (forward reference);
 // VTABLE: COPTER_D 0x0058f738
 class DialWindow : public GraphicWindow
@@ -271,31 +296,6 @@ protected:
 	/*+0x194*/ /*packed*/ class MRect rectSpotlightControl; // 0x10 bytes
 	/*+0x1a4*/ /*packed*/ class MRect rectSpotlightControlSet[4]; // 0x40 bytes
 	/*+0x1e4*/ long lSpotlightControlCurrent;
-};
-
-// Type: /*packed*/ struct CommandSystem (forward reference);
-struct CommandSystem{ // packed(0xaa8 bytes) TI: 0x12e4
-	/*+0x0*/   /*packed*/ struct Command keyboardCommands[100]; // 0xc8 bytes
-	/*+0xc8*/  /*packed*/ class CharList keyboardCommandList; // 0x10 bytes
-	/*+0xd8*/  /*packed*/ class list<Shortcut> commandShortcuts; // 0x8 bytes
-	/*+0xe0*/  unsigned char chCommandKeyboardArray[2048]; // 0x800 bytes
-	/*+0x8e0*/ unsigned char chCommandJoystickArray[4][14]; // 0x38 bytes
-	/*+0x918*/ long joystickCommands[100]; // 0x190 bytes
-	void CommandSystem();
-	void Initialize();
-	void ClearAllCommands();
-	void ClearAllCommandsDevice(long);
-	void TurnOnCommand(int32_t);
-	void TurnOffCommand(int32_t);
-	void TurnOnCommandDevice(int32_t, long);
-	void TurnOffCommandDevice(int32_t, long);
-	int32_t IsCommandSet(int32_t);
-	int32_t IsCommandPush(int32_t);
-	void SetUpCommandArraysFromShortcuts();
-	// calltype: NearC
-	static int32_t GetKeystateIndexForChar(long, char);
-	long GetJoystickCommandValue(int32_t);
-	void PollJoysticksForCommands();
 };
 
 // Type: char;
@@ -1504,7 +1504,9 @@ _T1da:
 // LINE 218:
 	__asm        jmp    _T255;
 _T1e4:
-	None = this->myRadio;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x78];
+	__asm        mov    [ebp-0x28], eax;
 // LINE 219:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    dword ptr [eax+0x18], 1;
@@ -1599,7 +1601,9 @@ void RadioCompassWindow::SetNewRadioStation(int32_t nNewRadioStationIndex) {
 _T60:
 	nStationXPosition = 0x14;
 _T67:
-	None = this-><RadioCompassWindow+0x40>;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x40];
+	__asm        mov    [ebp-0xC], eax;
 // LINE 252:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax+0x14];
@@ -1612,7 +1616,9 @@ _T67:
 	__asm        mov    byte ptr [eax+ecx], 0x32;
 	__asm        jmp    near ptr 0x00448D46;
 
-	None = this-><RadioCompassWindow+0x40>;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x40];
+	__asm        mov    [ebp-0x10], eax;
 // LINE 253:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    eax, [eax+0x14];
@@ -1627,7 +1633,9 @@ _T67:
 	__asm        mov    byte ptr [eax+ecx], 0x32;
 	__asm        jmp    near ptr 0x00448D71;
 
-	None = this-><RadioCompassWindow+0x40>;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x40];
+	__asm        mov    [ebp-0x14], eax;
 // LINE 254:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    eax, [eax+0x14];
@@ -1638,7 +1646,9 @@ _T67:
 	__asm        mov    byte ptr [eax+ecx], 0x32;
 	__asm        jmp    near ptr 0x00448D95;
 
-	None = this-><RadioCompassWindow+0x40>;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x40];
+	__asm        mov    [ebp-0x18], eax;
 // LINE 255:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    eax, [eax+0x14];
@@ -1669,7 +1679,9 @@ _T67:
 _T12a:
 	nStationXPosition = 0x14;
 _T131:
-	None = this-><RadioCompassWindow+0x40>;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x40];
+	__asm        mov    [ebp-0x1C], eax;
 // LINE 262:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    eax, [eax+0x14];
@@ -1682,7 +1694,9 @@ _T131:
 	__asm        mov    byte ptr [eax+ecx], 0xF6;
 	__asm        jmp    near ptr 0x00448E10;
 
-	None = this-><RadioCompassWindow+0x40>;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x40];
+	__asm        mov    [ebp-0x20], eax;
 // LINE 263:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    eax, [eax+0x14];
@@ -1697,7 +1711,9 @@ _T131:
 	__asm        mov    byte ptr [eax+ecx], 0xF6;
 	__asm        jmp    near ptr 0x00448E3B;
 
-	None = this-><RadioCompassWindow+0x40>;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x40];
+	__asm        mov    [ebp-0x24], eax;
 // LINE 264:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax+0x14];
@@ -1708,7 +1724,9 @@ _T131:
 	__asm        mov    byte ptr [eax+ecx], 0xF6;
 	__asm        jmp    near ptr 0x00448E5F;
 
-	None = this-><RadioCompassWindow+0x40>;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x40];
+	__asm        mov    [ebp-0x28], eax;
 // LINE 265:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    eax, [eax+0x14];
@@ -1776,7 +1794,9 @@ void RadioCompassWindow::SetNewRadioStationVolume(long lNewRadioStationVolume) {
 	__asm        mov    byte ptr [eax+ecx+0x63], 0x32;
 	__asm        jmp    near ptr 0x00448F22;
 
-	None = this-><RadioCompassWindow+0x40>;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x40];
+	__asm        mov    [ebp-0xC], eax;
 // LINE 291:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax+0x14];
@@ -1786,7 +1806,9 @@ void RadioCompassWindow::SetNewRadioStationVolume(long lNewRadioStationVolume) {
 	__asm        mov    byte ptr [eax+ecx+0x64], 0x32;
 	__asm        jmp    near ptr 0x00448F45;
 
-	None = this-><RadioCompassWindow+0x40>;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x40];
+	__asm        mov    [ebp-0x10], eax;
 // LINE 292:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    eax, [eax+0x14];
@@ -1798,7 +1820,9 @@ void RadioCompassWindow::SetNewRadioStationVolume(long lNewRadioStationVolume) {
 	__asm        mov    byte ptr [eax+ecx+0x63], 0x32;
 	__asm        jmp    near ptr 0x00448F6B;
 
-	None = this-><RadioCompassWindow+0x40>;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x40];
+	__asm        mov    [ebp-0x14], eax;
 // LINE 293:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    eax, [eax+0x14];
@@ -1831,7 +1855,9 @@ void RadioCompassWindow::SetNewRadioStationVolume(long lNewRadioStationVolume) {
 	__asm        mov    byte ptr [eax+ecx+0x63], 0xF6;
 	__asm        jmp    near ptr 0x00448FCE;
 
-	None = this-><RadioCompassWindow+0x40>;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x40];
+	__asm        mov    [ebp-0x1C], eax;
 // LINE 298:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    eax, [eax+0x14];
@@ -1841,7 +1867,9 @@ void RadioCompassWindow::SetNewRadioStationVolume(long lNewRadioStationVolume) {
 	__asm        mov    byte ptr [eax+ecx+0x64], 0xF6;
 	__asm        jmp    near ptr 0x00448FF1;
 
-	None = this-><RadioCompassWindow+0x40>;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x40];
+	__asm        mov    [ebp-0x20], eax;
 // LINE 299:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    eax, [eax+0x14];
@@ -1853,7 +1881,9 @@ void RadioCompassWindow::SetNewRadioStationVolume(long lNewRadioStationVolume) {
 	__asm        mov    byte ptr [eax+ecx+0x63], 0xF6;
 	__asm        jmp    near ptr 0x00449017;
 
-	None = this-><RadioCompassWindow+0x40>;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x40];
+	__asm        mov    [ebp-0x24], eax;
 // LINE 300:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax+0x14];
@@ -2557,7 +2587,9 @@ void DialWindow::InitializeCachedSettings() {
 	__asm        cmp    [eax+0xB0], ecx;
 	__asm        jge    _Tb6;
 
-	None = this->dials[0].lMaxValue;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0xB0];
+	__asm        mov    [ebp-4], eax;
 _Tb6:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-4];
@@ -2585,7 +2617,9 @@ _Tf0:
 	__asm        cmp    [eax+0xB0], ecx;
 	__asm        jge    _T11a;
 
-	None = this->dials[0].lMaxValue;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0xB0];
+	__asm        mov    [ebp-8], eax;
 _T11a:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-8];
@@ -2616,7 +2650,9 @@ _T14f:
 	__asm        cmp    [eax+0xE4], ecx;
 	__asm        jge    _T191;
 
-	None = this->dials[1].lMaxValue;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0xE4];
+	__asm        mov    [ebp-0xC], eax;
 _T191:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0xC];
@@ -2644,7 +2680,9 @@ _T1cb:
 	__asm        cmp    [eax+0xE4], ecx;
 	__asm        jge    _T1f5;
 
-	None = this->dials[1].lMaxValue;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0xE4];
+	__asm        mov    [ebp-0x10], eax;
 _T1f5:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x10];
@@ -2675,7 +2713,9 @@ _T22a:
 	__asm        cmp    [eax+0x118], ecx;
 	__asm        jge    _T26c;
 
-	None = this->dials[2].lMaxValue;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x118];
+	__asm        mov    [ebp-0x14], eax;
 _T26c:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x14];
@@ -2703,7 +2743,9 @@ _T2a6:
 	__asm        cmp    [eax+0x118], ecx;
 	__asm        jge    _T2d0;
 
-	None = this->dials[2].lMaxValue;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x118];
+	__asm        mov    [ebp-0x18], eax;
 _T2d0:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x18];
@@ -3444,7 +3486,9 @@ _T49f:
 // FUNCTION: COPTER_D 0x0044a784
 void DialWindow::DrawCurrentDamage() {
 	/*bp-0x4*/   int32_t nDamageInRangeOf0to15;
-// StaticLocal: 0x00598f80	static int32_t nDamageArray[6][2] = {{14, 8}, {13, 7}, {12, 6}, {11, 5}, {10, 4}, {9, 3}};
+	// StaticLocal: 0x00598f80
+	static int32_t nDamageArray[6][2] = {{14, 8}, {13, 7}, {12, 6}, {11, 5}, {10, 4}, {9, 3}};
+	;
 	/*bp-0x8*/   int32_t i;
 	/*bp-0xc*/   int32_t nSourceImageX;
 
@@ -3754,7 +3798,9 @@ _T10f:
 int32_t DialWindow::ComposeSelf() {
 	/*bp-0x10*/  char szMoneyString[16]; // 0x10 bytes
 	/*bp-0x18*/  /*packed*/ class MPoint ptSpotLightBackPositionCoordinates; // 0x8 bytes
-// StaticLocal: 0x00598fb0	static long lFrameCounter = 12;
+	// StaticLocal: 0x00598fb0
+	static long lFrameCounter = 12;
+	;
 	/*bp-0x1c*/  long lStringLength;
 	/*bp-0x24*/  /*packed*/ class MPoint ptSpotLightPositionLocalCoordinates; // 0x8 bytes
 
@@ -3808,7 +3854,9 @@ _T8f:
 	__asm        cmp    dword ptr [eax+0xA4], 0;
 	__asm        je     _T3d5;
 _Tc7:
-	None = this->mySecondImage;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x7C];
+	__asm        mov    [ebp-0x5C], eax;
 // LINE 716:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xA8];
@@ -3983,7 +4031,9 @@ _T3d5:
 	__asm        cmp    dword ptr [eax+0xD8], 0;
 	__asm        je     _T729;
 _T3fd:
-	None = this->mySecondImage;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x7C];
+	__asm        mov    [ebp-0x68], eax;
 // LINE 720:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xDC];
@@ -4158,7 +4208,9 @@ _T729:
 	__asm        cmp    dword ptr [eax+0x10C], 0;
 	__asm        je     _Ta7d;
 _T751:
-	None = this->mySecondImage;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x7C];
+	__asm        mov    [ebp-0x74], eax;
 // LINE 724:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x110];
@@ -4691,7 +4743,9 @@ _T71:
 // FUNCTION: COPTER_D 0x0044ba5b
 void DialWindow::SetNewDialPositions() {
 	/*bp-0x4*/   long lNewAltitude;
-// StaticLocal: 0x00598fb4	static long lFrameCounter = 7;
+	// StaticLocal: 0x00598fb4
+	static long lFrameCounter = 7;
+	;
 	/*bp-0x8*/   long lNewFuelLight;
 
 // LINE 816:
@@ -4728,7 +4782,9 @@ void DialWindow::SetNewDialPositions() {
 	__asm        cmp    [eax+0xB0], ecx;
 	__asm        jge    _T8a;
 
-	None = this->dials[0].lMaxValue;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0xB0];
+	__asm        mov    [ebp-0x10], eax;
 _T8a:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x10];
@@ -4858,7 +4914,9 @@ _T1d7:
 	__asm        cmp    [eax+0xE4], ecx;
 	__asm        jge    _T22a;
 
-	None = this->dials[1].lMaxValue;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0xE4];
+	__asm        mov    [ebp-0x18], eax;
 _T22a:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x18];
@@ -4950,7 +5008,9 @@ _T30f:
 	__asm        cmp    [eax+0x118], ecx;
 	__asm        jge    _T347;
 
-	None = this->dials[2].lMaxValue;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x118];
+	__asm        mov    [ebp-0x20], eax;
 _T347:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x20];
@@ -6200,11 +6260,7 @@ _T2a2:
 // FUNCTION: COPTER_D 0x0044cc1f
 void PassengerWindow::GetRectOfPassengerGraphic(int32_t face, int32_t nPassengerExpression, /*packed*/ class MRect& rectPosition) {
 // LINE 1129:
-	__asm        mov    eax, face;
-	__asm        lea    eax, [eax+eax*2+3];
-	__asm        lea    eax, [eax+eax*8];
-	__asm        mov    ecx, rectPosition;
-	__asm        mov    [ecx], eax;
+	rectPosition.left = BinaryOp(add, BinaryOp(add, BinaryOp(add, face, BinaryOp(mul, face, Const(2))), Const(3)), BinaryOp(mul, BinaryOp(add, BinaryOp(add, face, BinaryOp(mul, face, Const(2))), Const(3)), Const(8)));
 // LINE 1130:
 	__asm        mov    eax, nPassengerExpression;
 	__asm        mov    ecx, eax;
@@ -7071,7 +7127,9 @@ _Ta8:
 // FUNCTION: COPTER_D 0x0044d7cb
 int32_t MapWindow::ComposeSelf() {
 	/*bp-0x4*/   long lNewMissionID;
-// StaticLocal: 0x00598fc8	static int32_t lFrameCounter = 3;
+	// StaticLocal: 0x00598fc8
+	static int32_t lFrameCounter = 3;
+	;
 	/*bp-0x8*/   /*packed*/ struct MISSION_DATA *md;
 
 // LINE 1405:
@@ -8521,7 +8579,9 @@ _T3b:
 
 // FUNCTION: COPTER_D 0x0044eaa7
 int32_t EquipmentPanelWindow::DoesWindowNeedUpdating() {
-// StaticLocal: 0x00598fdc	static long lFrameCounter = 37;
+	// StaticLocal: 0x00598fdc
+	static long lFrameCounter = 37;
+	;
 
 // LINE 1780:
 	__asm        test   reinterpret_cast<uint8_t>(lFrameCounter), 4;

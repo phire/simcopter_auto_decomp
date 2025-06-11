@@ -548,8 +548,7 @@ static unsigned long NormFreq(unsigned short processor, unsigned long freq) {
 	__asm        cmp    eax, 3;
 	__asm        jne    _T14d;
 // LINE 442:
-	__asm        lea    eax, i386Speeds[0];
-	__asm        mov    speeds, eax;
+	speeds = i386Speeds[0];
 // LINE 444:
 _Tf9:
 	__asm        mov    eax, ptr;
@@ -590,8 +589,7 @@ _T14d:
 	__asm        cmp    eax, 4;
 	__asm        jne    _T1b8;
 // LINE 460:
-	__asm        lea    eax, i486Speeds[0];
-	__asm        mov    speeds, eax;
+	speeds = i486Speeds[0];
 // LINE 462:
 _T164:
 	__asm        mov    eax, ptr;
@@ -632,8 +630,7 @@ _T1b8:
 	__asm        cmp    eax, 5;
 	__asm        jne    _T223;
 // LINE 478:
-	__asm        lea    eax, iPentiumSpeeds[0];
-	__asm        mov    speeds, eax;
+	speeds = iPentiumSpeeds[0];
 // LINE 480:
 _T1cf:
 	__asm        mov    eax, ptr;
@@ -674,8 +671,7 @@ _T223:
 	__asm        cmp    eax, 6;
 	__asm        jne    _T28e;
 // LINE 496:
-	__asm        lea    eax, iPentiumProSpeeds[0];
-	__asm        mov    speeds, eax;
+	speeds = iPentiumProSpeeds[0];
 // LINE 498:
 _T23a:
 	__asm        mov    eax, ptr;

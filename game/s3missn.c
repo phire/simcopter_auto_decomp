@@ -3047,7 +3047,7 @@ _T41d:
 	__asm        ja     _T4c9;
 
 	__asm        mov    eax, [ebp-0xC];
-	__asm        jmp    SwitchPointers5226875[0][eax*4];
+	__asm        jmp    _Switch_431[0][eax*4];
 // Switch pointers
 // LINE 1387:
 _T4c9:
@@ -3944,8 +3944,7 @@ void S3MissionDebugString(/*packed*/ struct MISSION_DATA *md, char * p) {
 	__asm        test   byte ptr [eax+0x4C], 1;
 	__asm        jne    _T21;
 // LINE 1805:
-	__asm        mov    eax, p;
-	__asm        mov    byte ptr [eax], 0;
+	p[0] = 0x0;
 // LINE 1806:
 	__asm        jmp    _Tab;
 // LINE 1809:
@@ -4902,7 +4901,7 @@ _T53f:
 	__asm        ja     _T5f2;
 
 	__asm        mov    eax, [ebp-0x1C];
-	__asm        jmp    SwitchPointers5232188[0][eax*4];
+	__asm        jmp    _Switch_556[0][eax*4];
 // Switch pointers
 // LINE 2191:
 _T5f2:

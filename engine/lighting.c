@@ -300,9 +300,7 @@ int32_t CreateTiledTexColors(uint32_t * tabentry, /*packed*/ struct VRBmpHdr *bh
 	__asm        add    esp, 8;
 	__asm        mov    bmpcolors, eax;
 // LINE 208:
-	__asm        mov    eax, bmpcolors;
-	__asm        mov    ecx, tabentry;
-	__asm        mov    [ecx], eax;
+	tabentry[0] = bmpcolors;
 // LINE 209:
 	__asm        mov    eax, tabentry;
 	__asm        cmp    dword ptr [eax], 0;
@@ -315,9 +313,7 @@ _T5f:
 	__asm        jmp    _T6c;
 // LINE 214:
 _T64:
-	__asm        mov    eax, tabentry;
-	__asm        mov    eax, [eax];
-	__asm        mov    bmpcolors, eax;
+	bmpcolors = tabentry[0];
 // LINE 224:
 _T6c:
 	__asm        mov    i, 0;
@@ -404,10 +400,7 @@ _T15a:
 	__asm        jmp    _T124;
 // LINE 252:
 _T15f:
-	__asm        mov    eax, maxcolor;
-	__asm        mov    ecx, i;
-	__asm        mov    edx, bmpcolors;
-	__asm        mov    [edx+ecx*4], eax;
+	bmpcolors[i] = maxcolor;
 // LINE 253:
 	__asm        jmp    _T78;
 // LINE 255:
@@ -471,11 +464,7 @@ _T55:
 	__asm        mov    eax, [eax+ecx*4];
 	__asm        mov    tilebmpcolors, eax;
 // LINE 294:
-	__asm        mov    eax, loword;
-	__asm        mov    ecx, tilebmpcolors;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ecx, fh;
-	__asm        mov    [ecx+0xC], eax;
+	fh->Attrib2 = tilebmpcolors[loword];
 // LINE 296:
 	__asm        jmp    _Tb2;
 // LINE 298:
@@ -518,10 +507,7 @@ int32_t VRGetTexColor(int32_t bitmap) {
 	__asm        mov    eax, [eax+ecx*4];
 	__asm        mov    tilebmpcolors, eax;
 // LINE 328:
-	__asm        mov    eax, loword;
-	__asm        mov    ecx, tilebmpcolors;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    color, eax;
+	color = tilebmpcolors[loword];
 // LINE 330:
 	__asm        jmp    _T5a;
 // LINE 332:
@@ -1041,7 +1027,11 @@ _T45:
 // LINE 581:
 	minu = fh->Barrys->x;
 // LINE 582:
-	minv = fh->Barrys->x;
+	__asm        mov    eax, fh;
+	__asm        mov    eax, [eax+0x28];
+	__asm        mov    ecx, i;
+	__asm        mov    eax, [eax+ecx*8+4];
+	__asm        mov    minv, eax;
 // LINE 584:
 _T9f:
 	__asm        jmp    _T42;

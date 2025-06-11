@@ -1032,7 +1032,8 @@ _Td7:
 _Tdc:
 	__asm        jmp    near ptr 0x00527AD0;
 
-	cptr = None;
+	__asm        mov    eax, [ebp-0x14];
+	__asm        mov    cptr, eax;
 // LINE 709:
 	__asm        push   9;
 	__asm        mov    eax, this;
@@ -1209,7 +1210,9 @@ _T286:
 
 // FUNCTION: COPTER_D 0x00527c7a
 void BoatClass::AdjustSpeed() {
-// StaticLocal: 0x005b73f0	static int32_t speedAdjustor = 1;
+	// StaticLocal: 0x005b73f0
+	static int32_t speedAdjustor = 1;
+	;
 
 // LINE 861:
 	this->speed = this->desiredSpeed;
@@ -1339,7 +1342,8 @@ _T92:
 _T97:
 	__asm        jmp    near ptr 0x00527E12;
 
-	currentCell = None;
+	__asm        mov    eax, [ebp-0x20];
+	__asm        mov    currentCell, eax;
 // LINE 927:
 	__asm        cmp    currentCell, 0;
 	__asm        jne    _Tb6;
@@ -1478,7 +1482,8 @@ _T21f:
 _T224:
 	__asm        jmp    near ptr 0x00527F9F;
 
-	currentCell = None;
+	__asm        mov    eax, [ebp-0x24];
+	__asm        mov    currentCell, eax;
 // LINE 995:
 	__asm        cmp    currentCell, 0;
 	__asm        jne    _T243;
@@ -1897,8 +1902,8 @@ _T28b:
 
 	__asm        mov    eax, [ebp-0x30];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, SwitchPointers5407826[20][eax];
-	__asm        jmp    SwitchPointers5407826[0][ecx*4];
+	__asm        mov    cl, _Switch_2aa[20][eax];
+	__asm        jmp    _Switch_2aa[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 1196:
@@ -2164,7 +2169,8 @@ _T55:
 _T5a:
 	__asm        jmp    near ptr 0x005287A5;
 
-	cellPointer = None;
+	__asm        mov    eax, [ebp-0xC];
+	__asm        mov    cellPointer, eax;
 // LINE 1375:
 	__asm        cmp    cellPointer, 0;
 	__asm        jne    _T8b;
@@ -2256,7 +2262,8 @@ _T55:
 _T5a:
 	__asm        jmp    near ptr 0x005288BB;
 
-	cellPointer = None;
+	__asm        mov    eax, [ebp-8];
+	__asm        mov    cellPointer, eax;
 // LINE 1423:
 	__asm        mov    eax, cellPointer;
 	__asm        mov    ecx, this;
@@ -2353,7 +2360,8 @@ _Tb6:
 _Tbb:
 	__asm        jmp    near ptr 0x005289D8;
 
-	ncptr = None;
+	__asm        mov    eax, [ebp-0x2C];
+	__asm        mov    ncptr, eax;
 // LINE 1475:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x6F];
@@ -2378,7 +2386,8 @@ _T110:
 _T115:
 	__asm        jmp    near ptr 0x00528A32;
 
-	ecptr = None;
+	__asm        mov    eax, [ebp-0x30];
+	__asm        mov    ecptr, eax;
 // LINE 1476:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x77];
@@ -2403,7 +2412,8 @@ _T16a:
 _T16f:
 	__asm        jmp    near ptr 0x00528A8C;
 
-	wcptr = None;
+	__asm        mov    eax, [ebp-0x34];
+	__asm        mov    wcptr, eax;
 // LINE 1477:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x67];
@@ -2428,7 +2438,8 @@ _T1c4:
 _T1c9:
 	__asm        jmp    near ptr 0x00528AE6;
 
-	scptr = None;
+	__asm        mov    eax, [ebp-0x38];
+	__asm        mov    scptr, eax;
 // LINE 1480:
 	__asm        mov    eax, point;
 	__asm        mov    eax, [eax+4];
@@ -3227,7 +3238,7 @@ _T181:
 	__asm        ja     _T15b;
 
 	__asm        mov    eax, [ebp-8];
-	__asm        jmp    SwitchPointers5411783[0][eax*4];
+	__asm        jmp    _Switch_195[0][eax*4];
 // Switch pointers
 // LINE 1765:
 _T1b5:
@@ -4024,7 +4035,7 @@ _T23a:
 	__asm        ja     _T262;
 
 	__asm        mov    eax, [ebp-0x60];
-	__asm        jmp    SwitchPointers5414047[0][eax*4];
+	__asm        jmp    _Switch_24e[0][eax*4];
 // Switch pointers
 // LINE 2284:
 _T262:
@@ -4113,7 +4124,8 @@ _T362:
 _T367:
 	__asm        jmp    near ptr 0x00529DBD;
 
-	cptr = None;
+	__asm        mov    eax, [ebp-0x54];
+	__asm        mov    cptr, eax;
 // LINE 2300:
 	__asm        mov    eax, cptr;
 	__asm        cmp    dword ptr [eax+0x10], 0;
@@ -4320,7 +4332,7 @@ _Tb0:
 	__asm        ja     _Tde;
 
 	__asm        mov    eax, [ebp-0x9C];
-	__asm        jmp    SwitchPointers5414901[0][eax*4];
+	__asm        jmp    _Switch_ca[0][eax*4];
 // Switch pointers
 // LINE 2442:
 _Tde:
@@ -4785,7 +4797,8 @@ _T681:
 _T686:
 	__asm        jmp    near ptr 0x0052A5B6;
 
-	cptr = None;
+	__asm        mov    eax, [ebp-0x90];
+	__asm        mov    cptr, eax;
 // LINE 2470:
 	__asm        mov    eax, cptr;
 	__asm        cmp    dword ptr [eax+0x10], 0;
@@ -4852,7 +4865,8 @@ _T762:
 _T767:
 	__asm        jmp    near ptr 0x0052A697;
 
-	cptr = None;
+	__asm        mov    eax, [ebp-0x94];
+	__asm        mov    cptr, eax;
 // LINE 2481:
 	__asm        mov    eax, cptr;
 	__asm        cmp    dword ptr [eax+0x10], 0;

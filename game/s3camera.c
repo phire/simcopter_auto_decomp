@@ -1410,7 +1410,7 @@ _T107:
 	__asm        ja     _T137;
 
 	__asm        mov    eax, [ebp-4];
-	__asm        jmp    SwitchPointers5216817[0][eax*4];
+	__asm        jmp    _Switch_11f[0][eax*4];
 // Switch pointers
 // LINE 772:
 _T137:

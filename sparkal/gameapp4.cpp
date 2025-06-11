@@ -4,9 +4,6 @@
 
 // Type: char *;
 
-// Type: /*unpacked*/ class CGameApp (forward reference);
-// CGameApp Class implementation not found
-
 // Type: long;
 
 // Type: /*packed*/ class MRect;
@@ -443,7 +440,7 @@ _Td6:
 	__asm        lea    ecx, tempHourglassVideoBuffer<SmackerBackBuffer+0x00:None>;
 	__asm        call   SmackerBackBuffer::SetDirectBlit;
 // LINE 112:
-	None = 0x1;
+	__asm        mov    dword ptr [ebp-0x274], 1;
 // LINE 113:
 	__asm        push   0xFFFFFFFF;
 	__asm        push   0xFE000;
@@ -454,11 +451,13 @@ _Td6:
 // LINE 114:
 	__asm        jmp    near ptr 0x004BBCF8;
 
-	nWidth = None;
+	__asm        mov    eax, [ebp-0x134];
+	__asm        mov    nWidth, eax;
 // LINE 115:
 	__asm        jmp    near ptr 0x004BBD09;
 
-	nHeight = None;
+	__asm        mov    eax, [ebp-0x130];
+	__asm        mov    nHeight, eax;
 // LINE 116:
 	__asm        jmp    near ptr 0x004BBD1A;
 
@@ -663,7 +662,7 @@ _T4a5:
 	__asm        mov    [ebp-0x1518], eax;
 	__asm        jmp    _T4f0;
 _T4e6:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x1518], 0;
 _T4f0:
 	__asm        mov    eax, sCurrentInitializer.reference;
 	__asm        dec    dword ptr [eax+0xC];
@@ -932,7 +931,7 @@ void AppInitThreadStartRoutine(void * __ptr32 pVRAppInitThreadStruct) {
 // LINE 160:
 	tempVRAppInitThreadStruct = pVRAppInitThreadStruct;
 // LINE 165:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-4], 0;
 // LINE 167:
 	__asm        call   VRAppInit;
 	__asm        mov    ecx, tempVRAppInitThreadStruct;

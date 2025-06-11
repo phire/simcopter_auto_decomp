@@ -5,6 +5,12 @@
 // Type: /*unpacked*/ class cBList<cCopterAnim> (forward reference);
 // cBList<cCopterAnim> Class implementation not found
 
+// Type: unsigned short;
+
+// Type: unsigned char;
+
+// Type: void;
+
 // Type: /*unpacked*/ class cCopterAnim (forward reference);
 // VTABLE: COPTER_D 0x00593658
 class cCopterAnim : public cBBase
@@ -33,12 +39,6 @@ public:
 	// calltype: NearC
 	static void DestroyAll();
 };
-
-// Type: unsigned short;
-
-// Type: unsigned char;
-
-// Type: void;
 
 // Type: /*unpacked*/ class cBBase;
 // VTABLE: COPTER_D 0x00593688
@@ -151,11 +151,11 @@ _T6d:
 	__asm        mov    dword ptr [ebp-0x30], 1;
 	__asm        jmp    _Te3;
 _Tdc:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x30], 0;
 _Te3:
 	__asm        jmp    _Tef;
 _Te8:
-	None = 0x1;
+	__asm        mov    dword ptr [ebp-0x30], 1;
 _Tef:
 	__asm        cmp    dword ptr [ebp-0x30], 0;
 	__asm        jne    _T115;
@@ -263,7 +263,7 @@ _L31083:
 _T253:
 	__asm        jmp    _T25f;
 _T258:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x28], 0;
 _T25f:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x28];
@@ -284,7 +284,9 @@ _T292:
 	__asm        mov    [ecx+0x28], eax;
 	__asm        jmp    _T2b6;
 
-	this->fPrivPartInfo = None;
+	__asm        mov    eax, [ebp-0x58];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x28], eax;
 _L31071:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        push   eax;

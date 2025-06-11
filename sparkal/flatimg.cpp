@@ -4,6 +4,8 @@
 
 // Type: unsigned long;
 
+// Type: void;
+
 // Type: /*packed*/ class IFlatImage (forward reference);
 // VTABLE: COPTER_D 0x00591050
 class IFlatImage{ // packed(0x18 bytes) TI: 0x13a1
@@ -34,8 +36,6 @@ protected:
 	/*+0x14*/  long mStride;
 };
 
-// Type: void;
-
 // Type: long;
 
 // Type: unsigned char *;
@@ -62,6 +62,8 @@ struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 
 // Type: int32_t;
 
+// Type: unsigned char;
+
 // Type: /*packed*/ class CFlatImage (forward reference);
 // VTABLE: COPTER_D 0x00591070
 class CFlatImage : public IFlatImage
@@ -76,8 +78,6 @@ public:
 protected:
 	/*+0x18*/  void * __ptr32 mBitsHandle;
 };
-
-// Type: unsigned char;
 
 // Type: uint32_t;
 
@@ -702,7 +702,7 @@ _T98:
 	__asm        cmp    dword ptr [eax+0x18], 0;
 	__asm        jne    _Tbd;
 
-	None = 0xffff;
+	__asm        mov    word ptr [ebp-0x14], 0xFFFF;
 _Tbd:
 	__asm        jmp    near ptr 0x0048F760;
 // LINE 261:
@@ -710,7 +710,9 @@ _Tbd:
 	__asm        cmp    dword ptr [eax+0x18], 0;
 	__asm        je     _T1c0;
 // LINE 262:
-	None = this->mBitsHandle;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x18];
+	__asm        mov    [ebp-0x10], eax;
 // LINE 263:
 	__asm        mov    word ptr [ebp-0xC], 0;
 	__asm        cmp    dword ptr [ebp-0x10], 0;
@@ -738,7 +740,7 @@ _T115:
 	__asm        cmp    dword ptr [eax+0x10], 0;
 	__asm        jne    _T138;
 
-	None = 0xffff;
+	__asm        mov    word ptr [ebp-0xC], 0xFFFF;
 _T138:
 	__asm        jmp    near ptr 0x0048F7DB;
 // LINE 264:
@@ -923,7 +925,7 @@ _T189:
 	__asm        cmp    dword ptr [eax+0x18], 0;
 	__asm        jne    _T1ae;
 
-	None = 0xffff;
+	__asm        mov    word ptr [ebp-0x30], 0xFFFF;
 _T1ae:
 	__asm        jmp    near ptr 0x0048FA20;
 // LINE 291:
@@ -931,7 +933,9 @@ _T1ae:
 	__asm        cmp    dword ptr [eax+0x18], 0;
 	__asm        je     _T370;
 // LINE 292:
-	None = this->mBitsHandle;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x18];
+	__asm        mov    [ebp-0x2C], eax;
 // LINE 293:
 	__asm        mov    word ptr [ebp-0x28], 0;
 	__asm        cmp    dword ptr [ebp-0x2C], 0;
@@ -959,7 +963,7 @@ _T206:
 	__asm        cmp    dword ptr [eax+0x10], 0;
 	__asm        jne    _T229;
 
-	None = 0xffff;
+	__asm        mov    word ptr [ebp-0x28], 0xFFFF;
 _T229:
 	__asm        jmp    near ptr 0x0048FA9B;
 // LINE 294:
@@ -1028,7 +1032,9 @@ _T2ca:
 	__asm        jmp    _T2cf;
 // LINE 314:
 _T2cf:
-	None = this->mBitsHandle;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x18];
+	__asm        mov    [ebp-0x1C], eax;
 // LINE 316:
 	__asm        mov    word ptr [ebp-0x18], 0;
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
@@ -1052,7 +1058,9 @@ _T309:
 	__asm        jmp    _T370;
 // LINE 319:
 _T31d:
-	None = this->mBitsHandle;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x18];
+	__asm        mov    [ebp-0x24], eax;
 // LINE 320:
 	__asm        mov    word ptr [ebp-0x20], 0;
 	__asm        cmp    dword ptr [ebp-0x24], 0;
@@ -1151,7 +1159,9 @@ unsigned long CFlatImage::Lock() {
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jne    _T99;
 
-	None = this->mBitsHandle;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x18];
+	__asm        mov    [ebp-8], eax;
 // LINE 350:
 	__asm        mov    word ptr [ebp-4], 0;
 	__asm        cmp    dword ptr [ebp-8], 0;
@@ -1179,7 +1189,7 @@ _T5f:
 	__asm        cmp    dword ptr [eax+0x10], 0;
 	__asm        jne    _T82;
 
-	None = 0xffff;
+	__asm        mov    word ptr [ebp-4], 0xFFFF;
 _T82:
 	__asm        jmp    near ptr 0x0048FD4D;
 // LINE 351:

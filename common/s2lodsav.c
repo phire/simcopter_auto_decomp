@@ -234,8 +234,7 @@ short S2CityGetCityNameFromFile(char * filePath, char * cityName) {
 	/*bp-0x1c*/  long sofar;
 
 // LINE 185:
-	__asm        mov    eax, cityName;
-	__asm        mov    byte ptr [eax], 0;
+	cityName[0] = 0x0;
 // LINE 187:
 	__asm        push   0x59AFF4;
 	__asm        mov    eax, filePath;
@@ -410,28 +409,15 @@ static long stol(char * tag) {
 	/*bp-0x8*/   long buildval;
 
 // LINE 249:
-	__asm        lea    eax, buildval;
-	__asm        mov    s, eax;
+	s = buildval;
 // LINE 251:
-	__asm        mov    eax, tag;
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, s;
-	__asm        mov    [ecx], al;
+	s[0] = tag[0];
 // LINE 252:
-	__asm        mov    eax, tag;
-	__asm        mov    al, [eax+1];
-	__asm        mov    ecx, s;
-	__asm        mov    [ecx+1], al;
+	s[1] = tag[1];
 // LINE 253:
-	__asm        mov    eax, tag;
-	__asm        mov    al, [eax+2];
-	__asm        mov    ecx, s;
-	__asm        mov    [ecx+2], al;
+	s[2] = tag[2];
 // LINE 254:
-	__asm        mov    eax, tag;
-	__asm        mov    al, [eax+3];
-	__asm        mov    ecx, s;
-	__asm        mov    [ecx+3], al;
+	s[3] = tag[3];
 // LINE 256:
 	__asm        mov    eax, buildval;
 	__asm        push   eax;
@@ -2822,8 +2808,7 @@ _Tfa:
 	__asm        jmp    _T135;
 // LINE 941:
 _Tff:
-	__asm        movsx  eax, b;
-	__asm        mov    ix, eax;
+	ix = reinterpret_cast<int16_t>(b);
 // LINE 942:
 	__asm        jmp    _T10e;
 _T10b:
@@ -5016,10 +5001,7 @@ _T2d:
 	__asm        cmp    count, eax;
 	__asm        jle    _T5f;
 // LINE 1505:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, lptr;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    lval, eax;
+	lval = lptr[i];
 // LINE 1506:
 	__asm        mov    eax, lval;
 	__asm        push   eax;
@@ -5110,10 +5092,7 @@ _T2a:
 	__asm        cmp    count, eax;
 	__asm        jle    _T5f;
 // LINE 1563:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, sptr;
-	__asm        mov    ax, [ecx+eax*2];
-	__asm        mov    sval, ax;
+	sval = sptr[i];
 // LINE 1564:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(sval);
 	__asm        push   eax;
@@ -5134,21 +5113,13 @@ short swizzle_short(short svalue) {
 	/*bp-0x8*/   unsigned char cval;
 
 // LINE 1585:
-	__asm        lea    eax, svalue;
-	__asm        mov    byteptr, eax;
+	byteptr = svalue;
 // LINE 1587:
-	__asm        mov    eax, byteptr;
-	__asm        mov    al, [eax+1];
-	__asm        mov    cval, al;
+	cval = byteptr[1];
 // LINE 1588:
-	__asm        mov    eax, byteptr;
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, byteptr;
-	__asm        mov    [ecx+1], al;
+	byteptr[1] = byteptr[0];
 // LINE 1589:
-	__asm        mov    al, cval;
-	__asm        mov    ecx, byteptr;
-	__asm        mov    [ecx], al;
+	byteptr[0] = cval;
 // LINE 1591:
 	__asm        mov    ax, svalue;
 	__asm        jmp    near ptr 0x004C834B;
@@ -5161,21 +5132,13 @@ long swap_long(long lvalue) {
 	/*bp-0x8*/   unsigned short sval;
 
 // LINE 1610:
-	__asm        lea    eax, lvalue;
-	__asm        mov    shortptr, eax;
+	shortptr = lvalue;
 // LINE 1612:
-	__asm        mov    eax, shortptr;
-	__asm        mov    ax, [eax+2];
-	__asm        mov    sval, ax;
+	sval = shortptr[2];
 // LINE 1613:
-	__asm        mov    eax, shortptr;
-	__asm        mov    ax, [eax];
-	__asm        mov    ecx, shortptr;
-	__asm        mov    [ecx+2], ax;
+	shortptr[2] = shortptr[0];
 // LINE 1614:
-	__asm        mov    ax, sval;
-	__asm        mov    ecx, shortptr;
-	__asm        mov    [ecx], ax;
+	shortptr[0] = sval;
 // LINE 1617:
 	__asm        mov    eax, lvalue;
 	__asm        jmp    near ptr 0x004C8389;
@@ -5188,34 +5151,19 @@ long swizzle_long(long lvalue) {
 	/*bp-0x8*/   unsigned char cval;
 
 // LINE 1636:
-	__asm        lea    eax, lvalue;
-	__asm        mov    byteptr, eax;
+	byteptr = lvalue;
 // LINE 1638:
-	__asm        mov    eax, byteptr;
-	__asm        mov    al, [eax+3];
-	__asm        mov    cval, al;
+	cval = byteptr[3];
 // LINE 1639:
-	__asm        mov    eax, byteptr;
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, byteptr;
-	__asm        mov    [ecx+3], al;
+	byteptr[3] = byteptr[0];
 // LINE 1640:
-	__asm        mov    al, cval;
-	__asm        mov    ecx, byteptr;
-	__asm        mov    [ecx], al;
+	byteptr[0] = cval;
 // LINE 1642:
-	__asm        mov    eax, byteptr;
-	__asm        mov    al, [eax+2];
-	__asm        mov    cval, al;
+	cval = byteptr[2];
 // LINE 1643:
-	__asm        mov    eax, byteptr;
-	__asm        mov    al, [eax+1];
-	__asm        mov    ecx, byteptr;
-	__asm        mov    [ecx+2], al;
+	byteptr[2] = byteptr[1];
 // LINE 1644:
-	__asm        mov    al, cval;
-	__asm        mov    ecx, byteptr;
-	__asm        mov    [ecx+1], al;
+	byteptr[1] = cval;
 // LINE 1647:
 	__asm        mov    eax, lvalue;
 	__asm        jmp    near ptr 0x004C83DF;
@@ -5225,8 +5173,7 @@ long swizzle_long(long lvalue) {
 // FUNCTION: COPTER_D 0x004c83e4
 void GetStringResource(unsigned char * theString, short resourceID, short index) {
 // LINE 1671:
-	__asm        mov    eax, theString;
-	__asm        mov    byte ptr [eax], 0;
+	theString[0] = 0x0;
 // LINE 1674:
 }
 
@@ -5471,24 +5418,18 @@ _T345:
 	__asm        jmp    _T342;
 // LINE 1819:
 _T368:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, GraphMax;
-	__asm        mov    dword ptr [ecx+eax*4], 1;
+	GraphMax[i] = 0x1;
 // LINE 1820:
 	__asm        jmp    _T30b;
 // LINE 1821:
 _T37d:
-	__asm        mov    eax, GraphMax;
-	__asm        mov    dword ptr [eax+0x20], 0x64;
+	GraphMax[32] = 0x64;
 // LINE 1822:
-	__asm        mov    eax, GraphMax;
-	__asm        mov    dword ptr [eax+0x24], 0x64;
+	GraphMax[36] = 0x64;
 // LINE 1823:
-	__asm        mov    eax, GraphMax;
-	__asm        mov    dword ptr [eax+0x2C], 0x96;
+	GraphMax[44] = 0x96;
 // LINE 1824:
-	__asm        mov    eax, GraphMax;
-	__asm        mov    dword ptr [eax+0x28], 0x5A;
+	GraphMax[40] = 0x5a;
 // LINE 1826:
 	__asm        push   0x8000;
 	__asm        push   0x59B204;
@@ -6280,9 +6221,7 @@ void PStringToCString(char * string) {
 	/*bp-0x8*/   int32_t i;
 
 // LINE 1980:
-	__asm        mov    eax, string;
-	__asm        mov    al, [eax];
-	__asm        mov    sizePString, al;
+	sizePString = string[0];
 // LINE 1983:
 	__asm        mov    i, 0;
 	__asm        jmp    _T20;
@@ -6345,9 +6284,7 @@ _T3b:
 	__asm        jmp    _T38;
 // LINE 2002:
 _T5d:
-	__asm        mov    al, reinterpret_cast<uint8_t>(sizeCString);
-	__asm        mov    ecx, string;
-	__asm        mov    [ecx], al;
+	string[0] = reinterpret_cast<uint8_t>(sizeCString);
 // LINE 2003:
 }
 
@@ -6362,10 +6299,7 @@ void CopyPString(char * stringDestination, char * stringSource) {
 	__asm        inc    eax;
 	__asm        mov    iEnd, eax;
 // LINE 2014:
-	__asm        mov    eax, stringSource;
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, stringDestination;
-	__asm        mov    [ecx], al;
+	stringDestination[0] = stringSource[0];
 // LINE 2015:
 	__asm        mov    i, 1;
 	__asm        jmp    _T2c;
@@ -6411,11 +6345,9 @@ void check_backslash_terminate(char * path) {
 // LINE 2047:
 	__asm        inc    s;
 // LINE 2048:
-	__asm        mov    eax, s;
-	__asm        mov    byte ptr [eax], 0x5C;
+	s[0] = 0x5c;
 // LINE 2049:
-	__asm        mov    eax, s;
-	__asm        mov    byte ptr [eax+1], 0;
+	s[1] = 0x0;
 // LINE 2051:
 _T43:
 }
@@ -6534,8 +6466,7 @@ void get_path_at_start(char * ref, char * ret) {
 	/*bp-0xc*/   short len;
 
 // LINE 2125:
-	__asm        mov    eax, ret;
-	__asm        mov    byte ptr [eax], 0;
+	ret[0] = 0x0;
 // LINE 2127:
 	__asm        mov    eax, ref;
 	__asm        push   eax;
@@ -6613,8 +6544,7 @@ void do_uppercase(char * ref, char * res) {
 	/*bp-0xc*/   short len;
 
 // LINE 2165:
-	__asm        mov    eax, res;
-	__asm        mov    byte ptr [eax], 0;
+	res[0] = 0x0;
 // LINE 2167:
 	__asm        mov    eax, ref;
 	__asm        push   eax;
@@ -6677,8 +6607,7 @@ void get_name_at_end(char * ref, char * ret) {
 	/*bp-0x8*/   short len;
 
 // LINE 2197:
-	__asm        mov    eax, ret;
-	__asm        mov    byte ptr [eax], 0;
+	ret[0] = 0x0;
 // LINE 2199:
 	__asm        mov    eax, ref;
 	__asm        push   eax;
@@ -6784,8 +6713,7 @@ _T35:
 	__asm        cmp    eax, 0x2E;
 	__asm        jne    _T5b;
 // LINE 2244:
-	__asm        mov    eax, s;
-	__asm        mov    byte ptr [eax], 0;
+	s[0] = 0x0;
 // LINE 2245:
 	__asm        jmp    _T63;
 // LINE 2247:
@@ -6901,8 +6829,7 @@ _Tdb:
 	__asm        jmp    _Tdb;
 // LINE 2295:
 _Tf2:
-	__asm        mov    eax, s;
-	__asm        mov    byte ptr [eax+1], 0;
+	s[1] = 0x0;
 // LINE 2296:
 	__asm        mov    eax, ext;
 	__asm        push   eax;
@@ -6982,8 +6909,7 @@ void remove_illegals(char * ref) {
 	__asm        jmp    _T1ab;
 // LINE 2352:
 _T33:
-	__asm        lea    eax, temp[0];
-	__asm        mov    r, eax;
+	r = temp[0];
 // LINE 2353:
 	s = ref;
 // LINE 2355:
@@ -7105,8 +7031,7 @@ _T186:
 	__asm        jmp    _T42;
 // LINE 2369:
 _T192:
-	__asm        mov    eax, r;
-	__asm        mov    byte ptr [eax], 0;
+	r[0] = 0x0;
 // LINE 2370:
 	__asm        lea    eax, temp[0];
 	__asm        push   eax;
@@ -7138,8 +7063,7 @@ void compress_spaces(char * ref) {
 	__asm        jmp    _T9d;
 // LINE 2393:
 _T33:
-	__asm        lea    eax, temp[0];
-	__asm        mov    r, eax;
+	r = temp[0];
 // LINE 2394:
 	s = ref;
 // LINE 2396:
@@ -7171,8 +7095,7 @@ _T78:
 	__asm        jmp    _T42;
 // LINE 2403:
 _T84:
-	__asm        mov    eax, r;
-	__asm        mov    byte ptr [eax], 0;
+	r[0] = 0x0;
 // LINE 2404:
 	__asm        lea    eax, temp[0];
 	__asm        push   eax;

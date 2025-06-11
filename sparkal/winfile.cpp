@@ -344,7 +344,7 @@ _Te7:
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    _T116;
 _T10f:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x18], 0;
 _T116:
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
@@ -369,7 +369,9 @@ _T116:
 _T157:
 	__asm        jmp    near ptr 0x0049002C;
 
-	sFilter.reference = None;
+	__asm        mov    eax, [ebp-0x18];
+	__asm        mov    ecx, sFilter;
+	__asm        mov    [ecx+4], eax;
 _T165:
 	__asm        jmp    near ptr 0x0049003A;
 
@@ -461,7 +463,7 @@ _T245:
 	__asm        mov    [ebp-0x30], eax;
 	__asm        jmp    _T274;
 _T26d:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x30], 0;
 _T274:
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
@@ -486,7 +488,9 @@ _T274:
 _T2b5:
 	__asm        jmp    near ptr 0x0049018A;
 
-	sFilter.reference = None;
+	__asm        mov    eax, [ebp-0x30];
+	__asm        mov    ecx, sFilter;
+	__asm        mov    [ecx+4], eax;
 _T2c3:
 	__asm        jmp    near ptr 0x00490198;
 
@@ -575,7 +579,7 @@ _T397:
 	__asm        mov    [ebp-0x48], eax;
 	__asm        jmp    _T3c6;
 _T3bf:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x48], 0;
 _T3c6:
 	__asm        mov    eax, sFilter;
 	__asm        mov    eax, [eax+4];
@@ -600,7 +604,9 @@ _T3c6:
 _T407:
 	__asm        jmp    near ptr 0x004902DC;
 
-	sFilter.reference = None;
+	__asm        mov    eax, [ebp-0x48];
+	__asm        mov    ecx, sFilter;
+	__asm        mov    [ecx+4], eax;
 _T415:
 	__asm        jmp    near ptr 0x004902EA;
 
@@ -690,7 +696,7 @@ _T4f1:
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    _T520;
 _T519:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x60], 0;
 _T520:
 	__asm        mov    ecx, sFilter;
 	__asm        call   basic_string<char>::delete_ref;

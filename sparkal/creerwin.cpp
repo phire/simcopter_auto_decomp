@@ -18,49 +18,6 @@ struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 
 // Type: void;
 
-// Type: /*packed*/ class CareerWindow (forward reference);
-// VTABLE: COPTER_D 0x00590ef4
-class CareerWindow : public GraphicWindow
-{ // packed(0x840 bytes) TI: 0x47a5
-public:
-	void CareerWindow(/*packed*/ class MRect&, int32_t, void * __ptr32, long *, /*unpacked*/ class GraphicWindow*, /*packed*/ class GraphicWindowOwner*, int32_t, int32_t);
-	virtual void ~CareerWindow() /* override */;
-	virtual int32_t Initialize() /* override */;
-	virtual int32_t DrawSelf() /* override */;
-	virtual int32_t CreateImage(int32_t) /* override */;
-	virtual void DestroyImage() /* override */;
-	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32) /* override */;
-	virtual long DoKeyDown(long, char) /* override */;
-	virtual long DoCursorDown(long, long, unsigned long) /* override */;
-	virtual long DoCursorMove(long, long) /* override */;
-	long SetCurrentCitySelection(long);
-	long GetCurrentCitySelection();
-	class CareerWindow::CitySelectionFrame{ // packed(0x50 bytes) TI: 0x12ad
-	public:
-		void CitySelectionFrame(int32_t, int32_t, int32_t);
-		virtual void ~CitySelectionFrame(); // vtable+0x0
-		void FillDestinationPoints(/*packed*/ class MPoint*);
-		void FillSourceRects(/*packed*/ class MRect*);
-		/*+0x4*/   int32_t bLeft;
-		/*+0x8*/   int32_t bTop;
-		/*+0xc*/   int32_t bSelected;
-		/*+0x10*/  /*packed*/ class MRect rectFrame[4]; // 0x40 bytes
-	};
-protected:
-	void DrawCitySelection();
-	void GetCoordinatesForCitySelections(/*packed*/ class MPoint[4]*, /*packed*/ class MRect[4]*);
-	/*+0x74*/  long lCurrentCitySelection;
-	/*+0x78*/  /*packed*/ class MRect rectCities[3]; // 0x30 bytes
-	/*+0xa8*/  long lCities[3]; // 0xc bytes
-	/*+0xb4*/  int32_t nCityCount;
-	/*+0xb8*/  int32_t bAllowCancel;
-	/*+0xbc*/  /*packed*/ class SmackerBackBuffer mySmackerBackBuffers[3]; // 0x774 bytes
-	/*+0x830*/ void * __ptr32 myPlatformWindow;
-	/*+0x834*/ /*unpacked*/ class TextWindow *cityNameTextWindow;
-	/*+0x838*/ /*unpacked*/ class TextWindow *cityLevelTextWindow;
-	/*+0x83c*/ /*unpacked*/ class CBackBuffer *mySelectionImage;
-};
-
 // Type: /*packed*/ class MRect (forward reference);
 class MRect : public SparkalRect
 { // packed(0x10 bytes) TI: 0x1067
@@ -143,6 +100,49 @@ public:
 class GraphicWindowOwner{ // packed(0x4 bytes) TI: 0x1647
 public:
 	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
+};
+
+// Type: /*packed*/ class CareerWindow (forward reference);
+// VTABLE: COPTER_D 0x00590ef4
+class CareerWindow : public GraphicWindow
+{ // packed(0x840 bytes) TI: 0x47a5
+public:
+	void CareerWindow(/*packed*/ class MRect&, int32_t, void * __ptr32, long *, /*unpacked*/ class GraphicWindow*, /*packed*/ class GraphicWindowOwner*, int32_t, int32_t);
+	virtual void ~CareerWindow() /* override */;
+	virtual int32_t Initialize() /* override */;
+	virtual int32_t DrawSelf() /* override */;
+	virtual int32_t CreateImage(int32_t) /* override */;
+	virtual void DestroyImage() /* override */;
+	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32) /* override */;
+	virtual long DoKeyDown(long, char) /* override */;
+	virtual long DoCursorDown(long, long, unsigned long) /* override */;
+	virtual long DoCursorMove(long, long) /* override */;
+	long SetCurrentCitySelection(long);
+	long GetCurrentCitySelection();
+	class CareerWindow::CitySelectionFrame{ // packed(0x50 bytes) TI: 0x12ad
+	public:
+		void CitySelectionFrame(int32_t, int32_t, int32_t);
+		virtual void ~CitySelectionFrame(); // vtable+0x0
+		void FillDestinationPoints(/*packed*/ class MPoint*);
+		void FillSourceRects(/*packed*/ class MRect*);
+		/*+0x4*/   int32_t bLeft;
+		/*+0x8*/   int32_t bTop;
+		/*+0xc*/   int32_t bSelected;
+		/*+0x10*/  /*packed*/ class MRect rectFrame[4]; // 0x40 bytes
+	};
+protected:
+	void DrawCitySelection();
+	void GetCoordinatesForCitySelections(/*packed*/ class MPoint[4]*, /*packed*/ class MRect[4]*);
+	/*+0x74*/  long lCurrentCitySelection;
+	/*+0x78*/  /*packed*/ class MRect rectCities[3]; // 0x30 bytes
+	/*+0xa8*/  long lCities[3]; // 0xc bytes
+	/*+0xb4*/  int32_t nCityCount;
+	/*+0xb8*/  int32_t bAllowCancel;
+	/*+0xbc*/  /*packed*/ class SmackerBackBuffer mySmackerBackBuffers[3]; // 0x774 bytes
+	/*+0x830*/ void * __ptr32 myPlatformWindow;
+	/*+0x834*/ /*unpacked*/ class TextWindow *cityNameTextWindow;
+	/*+0x838*/ /*unpacked*/ class TextWindow *cityLevelTextWindow;
+	/*+0x83c*/ /*unpacked*/ class CBackBuffer *mySelectionImage;
 };
 
 // Type: char;
@@ -499,20 +499,11 @@ _T9a:
 	__asm        cmp    lNewCities, 0;
 	__asm        je     _T1a1;
 // LINE 69:
-	__asm        mov    eax, lNewCities;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xA8], eax;
+	this->lCities[0] = lNewCities[0];
 // LINE 70:
-	__asm        mov    eax, lNewCities;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xAC], eax;
+	this->lCities[1] = lNewCities[4];
 // LINE 71:
-	__asm        mov    eax, lNewCities;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xB0], eax;
+	this->lCities[2] = lNewCities[8];
 // LINE 73:
 	__asm        jmp    _T1cb;
 // LINE 74:
@@ -777,7 +768,7 @@ _T291:
 	__asm        mov    [ebp-0x12B0], eax;
 	__asm        jmp    _T2dc;
 _T2d2:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x12B0], 0;
 _T2dc:
 	__asm        mov    eax, sText.reference;
 	__asm        dec    dword ptr [eax+0xC];
@@ -996,7 +987,7 @@ _T5b6:
 	__asm        mov    [ebp-0x22D0], eax;
 	__asm        jmp    _T601;
 _T5f7:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x22D0], 0;
 _T601:
 	__asm        mov    eax, sText.reference;
 	__asm        dec    dword ptr [eax+0xC];
@@ -1221,7 +1212,7 @@ _T8e0:
 	__asm        mov    [ebp-0x32F0], eax;
 	__asm        jmp    _T92b;
 _T921:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x32F0], 0;
 _T92b:
 	__asm        lea    ecx, sText.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
@@ -1397,7 +1388,7 @@ _Tb46:
 	__asm        mov    [ebp-0x4308], eax;
 	__asm        jmp    _Tb91;
 _Tb87:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x4308], 0;
 _Tb91:
 	__asm        lea    ecx, sText.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
@@ -1892,7 +1883,8 @@ _Tc6:
 	__asm        cmp    dword ptr [eax+0x83C], 0;
 	__asm        jne    _T255;
 
-	None = SZ_CAREER_WINDOW_SELECTION_FILE_NAME;
+	__asm        mov    eax, SZ_CAREER_WINDOW_SELECTION_FILE_NAME;
+	__asm        mov    [ebp-0x1C], eax;
 // LINE 207:
 	__asm        jmp    near ptr 0x0047F48A;
 

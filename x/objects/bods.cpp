@@ -25,14 +25,14 @@ struct TransformedInfo{ // not packed(0x14 bytes) TI: 0x3750
 
 // Type: /*unpacked*/ struct cCopterBody::Part (forward reference);
 struct cCopterBody::Part{ // not packed(0x28 bytes) TI: 0x33f0
-	/*+0x0*/   char drawProc; // 0x1 bytes
-	/*+0x1*/   char calcID; // 0x1 bytes
-	/*+0x2*/   char framePartID; // 0x1 bytes
-	/*+0x3*/   char color; // 0x1 bytes
-	/*+0x4*/   char scaleFlags; // 0x1 bytes
-	/*+0x5*/   char dontAnimateColor; // 0x1 bytes
-	/*+0x6*/   char _pad2; // 0x1 bytes
-	/*+0x7*/   char _pad3; // 0x1 bytes
+	/*+0x0*/   signed char drawProc; // 0x1 bytes
+	/*+0x1*/   signed char calcID; // 0x1 bytes
+	/*+0x2*/   signed char framePartID; // 0x1 bytes
+	/*+0x3*/   signed char color; // 0x1 bytes
+	/*+0x4*/   signed char scaleFlags; // 0x1 bytes
+	/*+0x5*/   signed char dontAnimateColor; // 0x1 bytes
+	/*+0x6*/   signed char _pad2; // 0x1 bytes
+	/*+0x7*/   signed char _pad3; // 0x1 bytes
 	/*+0x8*/   unsigned long tinyName;
 	/*+0xc*/   unsigned long parentName;
 	/*+0xc*/   /*unpacked*/ struct cCopterBody::Part *parent;
@@ -70,9 +70,6 @@ public:
 	static /*unpacked*/ class cBList<cCopterBody>* MakeNew(unsigned char *, unsigned long);
 	void LoadAll();
 };
-
-// Type: /*unpacked*/ class cCopterBody (forward reference);
-// cCopterBody Class implementation not found
 
 // Type: unsigned long;
 
@@ -266,7 +263,9 @@ _T1b:
 	__asm        jle    _T27a;
 // Block start:
 	/*bp-0x8*/   /*unpacked*/ struct AnimLookup *al;
-	None = this-><cCopterBody+0x2c:4>;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x2C];
+	__asm        mov    [ebp-0x10], eax;
 // LINE 1944:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    eax, [eax+0xC];
@@ -345,7 +344,7 @@ _T117:
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    _T136;
 _T12f:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x20], 0;
 _T136:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x1C], eax;
@@ -357,7 +356,7 @@ _T136:
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    _T15a;
 _T153:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x18], 0;
 _T15a:
 	__asm        jmp    near ptr 0x00560D4F;
 
@@ -430,7 +429,8 @@ _T219:
 	__asm        mov    dword ptr [ebp-0x30], 0;
 	__asm        jmp    _T22b;
 _T225:
-	None = None;
+	__asm        mov    eax, [ebp-0x2C];
+	__asm        mov    [ebp-0x30], eax;
 _T22b:
 	__asm        jmp    _T241;
 _T230:
@@ -439,7 +439,8 @@ _T235:
 	__asm        mov    dword ptr [ebp-0x30], 0;
 	__asm        jmp    _T241;
 _T241:
-	privanim = None;
+	__asm        mov    eax, [ebp-0x30];
+	__asm        mov    privanim, eax;
 // LINE 1947:
 	__asm        cmp    privanim, 0;
 	__asm        jne    _T26d;
@@ -495,7 +496,9 @@ _T41:
 	__asm        jle    _T181;
 // Block start:
 	/*bp-0x8*/   /*unpacked*/ struct cCopterBody::Part *part;
-	None = this-><cCopterBody+0x28:4>;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x28];
+	__asm        mov    [ebp-0xC], eax;
 // LINE 2064:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax+0xC];
@@ -633,7 +636,7 @@ _T54:
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    _T73;
 _T6c:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x10], 0;
 _T73:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-0xC], eax;
@@ -645,7 +648,7 @@ _T73:
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _T97;
 _T90:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-8], 0;
 _T97:
 	__asm        jmp    near ptr 0x005610A1;
 
@@ -718,7 +721,8 @@ _T156:
 	__asm        mov    dword ptr [ebp-0x20], 0;
 	__asm        jmp    _T168;
 _T162:
-	None = None;
+	__asm        mov    eax, [ebp-0x1C];
+	__asm        mov    [ebp-0x20], eax;
 _T168:
 	__asm        jmp    _T17e;
 _T16d:
@@ -749,7 +753,9 @@ _T1b:
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        jle    _Te3;
 
-	None = this-><cCopterBody+0x28:4>;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x28];
+	__asm        mov    [ebp-0xC], eax;
 // LINE 2094:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax+0xC];
@@ -882,17 +888,13 @@ _T8a:
 	__asm        add    eax, ecx;
 	__asm        mov    ept.v, ax;
 // LINE 2112:
-	__asm        movsx  eax, cpt.h;
-	__asm        mov    sPt.x, eax;
+	sPt.x = reinterpret_cast<int16_t>(cpt.h);
 // LINE 2113:
-	__asm        movsx  eax, cpt.v;
-	__asm        mov    sPt.y, eax;
+	sPt.y = reinterpret_cast<int16_t>(cpt.v);
 // LINE 2114:
-	__asm        movsx  eax, ept.h;
-	__asm        mov    ePt.x, eax;
+	ePt.x = reinterpret_cast<int16_t>(ept.h);
 // LINE 2115:
-	__asm        movsx  eax, ept.v;
-	__asm        mov    ePt.y, eax;
+	ePt.y = reinterpret_cast<int16_t>(ept.v);
 // LINE 2122:
 	__asm        mov    eax, part;
 	__asm        movsx  ax, byte ptr [eax+3];
@@ -1133,7 +1135,7 @@ _T350:
 	__asm        ja     _T32a;
 
 	__asm        mov    eax, [ebp-0x4C];
-	__asm        jmp    SwitchPointers5641705[0][eax*4];
+	__asm        jmp    _Switch_368[0][eax*4];
 // Switch pointers
 // LINE 2176:
 _T384:
@@ -1252,7 +1254,9 @@ _T126:
 	__asm        jge    _T4a6;
 // Block start:
 	/*bp-0x2c*/  short drawProc;
-	None = this-><cCopterBody+0x28:4>;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x28];
+	__asm        mov    [ebp-0xA0], eax;
 // LINE 2215:
 	__asm        mov    eax, [ebp-0xA0];
 	__asm        mov    eax, [eax+0xC];
@@ -1675,11 +1679,11 @@ _T50:
 	__asm        mov    dword ptr [ebp-0x34], 1;
 	__asm        jmp    _Tc9;
 _Tc2:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x34], 0;
 _Tc9:
 	__asm        jmp    _Td5;
 _Tce:
-	None = 0x1;
+	__asm        mov    dword ptr [ebp-0x34], 1;
 _Td5:
 	__asm        cmp    dword ptr [ebp-0x34], 0;
 	__asm        jne    _Tfb;
@@ -1787,7 +1791,7 @@ _L31451:
 _T239:
 	__asm        jmp    _T245;
 _T23e:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x2C], 0;
 _T245:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x2C];
@@ -1808,7 +1812,9 @@ _T278:
 	__asm        mov    [ecx+0x28], eax;
 	__asm        jmp    _T2a2;
 
-	this-><cCopterBody+0x28:4> = None;
+	__asm        mov    eax, [ebp-0x5C];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x28], eax;
 _L31439:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        push   eax;
@@ -1847,11 +1853,11 @@ _T2a2:
 	__asm        mov    dword ptr [ebp-0x70], 1;
 	__asm        jmp    _T30f;
 _T308:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x70], 0;
 _T30f:
 	__asm        jmp    _T31b;
 _T314:
-	None = 0x1;
+	__asm        mov    dword ptr [ebp-0x70], 1;
 _T31b:
 	__asm        cmp    dword ptr [ebp-0x70], 0;
 	__asm        jne    _T341;
@@ -1959,7 +1965,7 @@ _L31498:
 _T4a3:
 	__asm        jmp    _T4af;
 _T4a8:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x68], 0;
 _T4af:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x68];
@@ -1980,7 +1986,9 @@ _T4e2:
 	__asm        mov    [ecx+0x2C], eax;
 	__asm        jmp    _T50f;
 
-	this-><cCopterBody+0x2c:4> = None;
+	__asm        mov    eax, [ebp-0x98];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x2C], eax;
 _L31486:
 	__asm        mov    eax, [ebp-0x64];
 	__asm        push   eax;
@@ -2121,7 +2129,8 @@ _T109:
 _T168:
 	__asm        jmp    _T109;
 _T16d:
-	None = cCopterBody::fsList;
+	__asm        mov    eax, cCopterBody::fsList;
+	__asm        mov    [ebp-0x4C], eax;
 // LINE 2318:
 _T175:
 	__asm        cmp    dword ptr [ebp-0x4C], 0;
@@ -2132,7 +2141,7 @@ _T175:
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _T194;
 _T18d:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x24], 0;
 _T194:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    [ebp-0x20], eax;
@@ -2144,7 +2153,7 @@ _T194:
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    _T1b8;
 _T1b1:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x1C], 0;
 _T1b8:
 	__asm        jmp    near ptr 0x0056226C;
 

@@ -84,6 +84,9 @@ protected:
 
 // Type: void;
 
+// Type: /*unpacked*/ class MTime (forward reference);
+// MTime Class implementation not found
+
 // Type: /*packed*/ class MDate (forward reference);
 // VTABLE: COPTER_D 0x0058f3e8
 class MDate{ // packed(0xc bytes) TI: 0x284c
@@ -161,9 +164,6 @@ protected:
 	/*+0x4*/   unsigned long Julnum;
 	/*+0x8*/   enum MDate::HowToPrint PrintOption;
 };
-
-// Type: /*unpacked*/ class MTime (forward reference);
-// MTime Class implementation not found
 
 // Type: uint32_t;
 
@@ -611,14 +611,14 @@ class MTime  MTime::BuildLocal(const /*packed*/ class MDate& date, uint32_t h) {
 	__asm        add    eax, ecx;
 	__asm        add    eax, _timezone;
 	__asm        mov    [ebp-4], eax;
-	__asm        mov    eax, __$ReturnUdt;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, [ebp-4];
-	__asm        mov    ecx, __$ReturnUdt;
+	__asm        mov    ecx, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        mov    [ecx], eax;
 	__asm        jmp    near ptr 0x0043C8C1;
 
-	__asm        mov    eax, __$ReturnUdt;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        jmp    near ptr 0x0043C8C9;
 // LINE 91:
 }
@@ -688,11 +688,11 @@ class MTime  MTime::BeginDST(uint32_t year) {
 	__asm        push   2;
 	__asm        lea    eax, [ebp-0x30];
 	__asm        push   eax;
-	__asm        mov    eax, __$ReturnUdt;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        push   eax;
 	__asm        call   MTime::BuildLocal;
 	__asm        add    esp, 0xC;
-	__asm        mov    eax, __$ReturnUdt;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        jmp    _T113;
 // LINE 126:
 // Block end:
@@ -707,11 +707,11 @@ _T74:
 	__asm        lea    ecx, [ebp-0x3C];
 	__asm        call   MDate::MDate;
 	__asm        push   eax;
-	__asm        mov    eax, __$ReturnUdt;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        push   eax;
 	__asm        call   MTime::BuildLocal;
 	__asm        add    esp, 0xC;
-	__asm        mov    eax, __$ReturnUdt;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        jmp    _T113;
 // LINE 128:
 _Ta9:
@@ -725,11 +725,11 @@ _Ta9:
 	__asm        lea    ecx, [ebp-0x48];
 	__asm        call   MDate::MDate;
 	__asm        push   eax;
-	__asm        mov    eax, __$ReturnUdt;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        push   eax;
 	__asm        call   MTime::BuildLocal;
 	__asm        add    esp, 0xC;
-	__asm        mov    eax, __$ReturnUdt;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        jmp    _T113;
 // LINE 131:
 _Tde:
@@ -747,11 +747,11 @@ _Tde:
 	__asm        lea    ecx, endApril<vftable>;
 	__asm        call   MDate::Previous;
 	__asm        push   eax;
-	__asm        mov    eax, __$ReturnUdt;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        push   eax;
 	__asm        call   MTime::BuildLocal;
 	__asm        add    esp, 0xC;
-	__asm        mov    eax, __$ReturnUdt;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        jmp    _T113;
 // LINE 133:
 _T113:
@@ -776,11 +776,11 @@ class MTime  MTime::EndDST(uint32_t year) {
 	__asm        lea    ecx, endOctober<vftable>;
 	__asm        call   MDate::Previous;
 	__asm        push   eax;
-	__asm        mov    eax, __$ReturnUdt;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        push   eax;
 	__asm        call   MTime::BuildLocal;
 	__asm        add    esp, 0xC;
-	__asm        mov    eax, __$ReturnUdt;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        jmp    near ptr 0x0043CA74;
 // LINE 150:
 }
@@ -1151,10 +1151,10 @@ _T35:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax];
 	__asm        mov    eax, [eax+4];
-	__asm        mov    edx, __$ReturnUdt;
+	__asm        mov    edx, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
-	__asm        mov    eax, __$ReturnUdt;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        jmp    _T6a;
 // LINE 328:
 	__asm        jmp    _T6a;
@@ -1163,10 +1163,10 @@ _T52:
 	__asm        mov    eax, t;
 	__asm        mov    ecx, [eax];
 	__asm        mov    eax, [eax+4];
-	__asm        mov    edx, __$ReturnUdt;
+	__asm        mov    edx, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
-	__asm        mov    eax, __$ReturnUdt;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        jmp    _T6a;
 // LINE 330:
 _T6a:
@@ -1194,10 +1194,10 @@ _T35:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax];
 	__asm        mov    eax, [eax+4];
-	__asm        mov    edx, __$ReturnUdt;
+	__asm        mov    edx, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
-	__asm        mov    eax, __$ReturnUdt;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        jmp    _T6a;
 // LINE 344:
 	__asm        jmp    _T6a;
@@ -1206,10 +1206,10 @@ _T52:
 	__asm        mov    eax, t;
 	__asm        mov    ecx, [eax];
 	__asm        mov    eax, [eax+4];
-	__asm        mov    edx, __$ReturnUdt;
+	__asm        mov    edx, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
-	__asm        mov    eax, __$ReturnUdt;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        jmp    _T6a;
 // LINE 346:
 _T6a:
@@ -1360,7 +1360,8 @@ _T59:
 	__asm        mov    [ebp-0xE0], eax;
 	__asm        jmp    _T94;
 _T88:
-	None = hh;
+	__asm        mov    eax, hh;
+	__asm        mov    [ebp-0xE0], eax;
 _T94:
 	__asm        mov    eax, [ebp-0xE0];
 	__asm        push   eax;

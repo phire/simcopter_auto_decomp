@@ -20,6 +20,10 @@ protected:
 
 // Type: unsigned long;
 
+// Type: uint32_t;
+
+// Type: int32_t;
+
 // Type: /*packed*/ class Random (forward reference);
 class Random{ // packed(0xe4 bytes) TI: 0x20ab
 public:
@@ -31,10 +35,6 @@ protected:
 	/*+0xdc*/  uint32_t index1;
 	/*+0xe0*/  uint32_t index2;
 };
-
-// Type: uint32_t;
-
-// Type: int32_t;
 
 
 
@@ -103,19 +103,13 @@ _T2e:
 	__asm        div    ecx;
 	__asm        mov    ii, edx;
 // LINE 39:
-	__asm        mov    eax, k;
-	__asm        mov    ecx, ii;
-	__asm        mov    edx, this;
-	__asm        mov    [edx+ecx*4], eax;
+	this->table[ii] = k;
 // LINE 40:
 	__asm        mov    eax, j;
 	__asm        sub    eax, k;
 	__asm        mov    k, eax;
 // LINE 41:
-	__asm        mov    eax, ii;
-	__asm        mov    ecx, this;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    j, eax;
+	j = this->table[ii];
 // LINE 42:
 // Block end:
 	__asm        jmp    _T2b;

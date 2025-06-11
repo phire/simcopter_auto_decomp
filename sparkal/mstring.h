@@ -90,7 +90,7 @@ _T105:
 	__asm        mov    [ebp-0x1008], eax;
 	__asm        jmp    _T150;
 _T146:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x1008], 0;
 _T150:
 	__asm        mov    eax, stringToSet;
 	__asm        mov    eax, [eax+4];
@@ -249,7 +249,7 @@ _T337:
 	__asm        mov    [ebp-0x1024], eax;
 	__asm        jmp    _T378;
 _T36e:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x1024], 0;
 _T378:
 	__asm        mov    eax, stringToSet;
 	__asm        mov    eax, [eax+4];
@@ -274,7 +274,9 @@ _T378:
 _T3c8:
 	__asm        jmp    near ptr 0x0040FADD;
 
-	stringToSet.reference = None;
+	__asm        mov    eax, [ebp-0x1024];
+	__asm        mov    ecx, stringToSet;
+	__asm        mov    [ecx+4], eax;
 _T3d9:
 	__asm        cmp    dword ptr [ebp-0x1040], 0;
 	__asm        je     _T427;
@@ -426,7 +428,7 @@ _T5e3:
 	__asm        mov    [ebp-0x1044], eax;
 	__asm        jmp    _T610;
 _T606:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x1044], 0;
 _T610:
 	__asm        mov    eax, stringToSet;
 	__asm        mov    eax, [eax+4];

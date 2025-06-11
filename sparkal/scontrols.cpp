@@ -163,6 +163,9 @@ public:
 	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
 };
 
+// Type: /*unpacked*/ class ButtonGroup (forward reference);
+// ButtonGroup Class implementation not found
+
 // Type: /*packed*/ class SoundRadioButtonWindow (forward reference);
 // VTABLE: COPTER_D 0x00590950
 class SoundRadioButtonWindow : public RadioButtonWindow
@@ -177,9 +180,6 @@ protected:
 	static /*packed*/ class DigitalSound radioButtonSound;
 	static long lRadioSoundReferenceCount;
 };
-
-// Type: /*unpacked*/ class ButtonGroup (forward reference);
-// ButtonGroup Class implementation not found
 
 // Type: /*packed*/ class SoundCheckBoxWindow (forward reference);
 // VTABLE: COPTER_D 0x00590a38
@@ -336,31 +336,6 @@ public:
 	static unsigned long lTotalMemoryUsage;
 };
 
-// Type: /*packed*/ struct SparkalRect;
-struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
-	/*+0x0*/   long left;
-	/*+0x4*/   long top;
-	/*+0x8*/   long right;
-	/*+0xc*/   long bottom;
-	void SparkalRect(long, long, long, long);
-	void SparkalRect();
-};
-
-// Type: /*packed*/ class CheckBoxWindow;
-// VTABLE: COPTER_D 0x00591c58
-class CheckBoxWindow : public ButtonWindow
-{ // packed(0x94 bytes) TI: 0x213e
-public:
-	void CheckBoxWindow(/*packed*/ class MRect&, int32_t, /*unpacked*/ class GraphicWindow*, char *, /*packed*/ class GraphicWindowOwner*, int32_t);
-	void CheckBoxWindow();
-	virtual int32_t ComposeSelf() /* override */;
-	virtual int32_t GetImageCount() /* override */;
-	virtual void SetState(int32_t) /* override */;
-	virtual long DoCursorDown(long, long, unsigned long) /* override */;
-	virtual long DoCursorUp(long, long, unsigned long) /* override */;
-	virtual long DoCursorMove(long, long) /* override */;
-};
-
 // Type: /*packed*/ class ScrollBarWindow;
 // VTABLE: COPTER_D 0x00591fc0
 class ScrollBarWindow : public SliderWindow
@@ -402,6 +377,31 @@ protected:
 	/*+0xbc*/  /*packed*/ class MTimer myTimer; // 0x10 bytes
 	/*+0xcc*/  enum ScrollBarWindow::ScrollHitTestResult initialScrollHitTestResult;
 	/*+0xd0*/  int32_t bCursorIsOnInitialHitTestResult;
+};
+
+// Type: /*packed*/ struct SparkalRect;
+struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
+	/*+0x0*/   long left;
+	/*+0x4*/   long top;
+	/*+0x8*/   long right;
+	/*+0xc*/   long bottom;
+	void SparkalRect(long, long, long, long);
+	void SparkalRect();
+};
+
+// Type: /*packed*/ class CheckBoxWindow;
+// VTABLE: COPTER_D 0x00591c58
+class CheckBoxWindow : public ButtonWindow
+{ // packed(0x94 bytes) TI: 0x213e
+public:
+	void CheckBoxWindow(/*packed*/ class MRect&, int32_t, /*unpacked*/ class GraphicWindow*, char *, /*packed*/ class GraphicWindowOwner*, int32_t);
+	void CheckBoxWindow();
+	virtual int32_t ComposeSelf() /* override */;
+	virtual int32_t GetImageCount() /* override */;
+	virtual void SetState(int32_t) /* override */;
+	virtual long DoCursorDown(long, long, unsigned long) /* override */;
+	virtual long DoCursorUp(long, long, unsigned long) /* override */;
+	virtual long DoCursorMove(long, long) /* override */;
 };
 
 // Type: /*packed*/ class RadioButtonWindow;

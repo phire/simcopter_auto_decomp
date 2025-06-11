@@ -20,7 +20,7 @@
 
 // Type: unsigned long *;
 
-// Type: char *;
+// Type: signed char *;
 
 // Type: float;
 
@@ -30,7 +30,7 @@
 
 // Type: char *;
 
-// Type: char;
+// Type: signed char;
 
 // Type: void * __ptr32;
 
@@ -60,8 +60,7 @@ struct Point{ // not packed(0x4 bytes) TI: 0x341c
 // FUNCTION: COPTER_D 0x00565ca0
 void EmptyPStr(unsigned char * str) {
 // LINE 55:
-	__asm        mov    eax, str;
-	__asm        mov    byte ptr [eax], 0;
+	str[0] = 0x0;
 // LINE 56:
 	__asm        jmp    near ptr 0x00565CB1;
 }
@@ -194,8 +193,7 @@ _T116:
 	__asm        jmp    _T1c5;
 // LINE 88:
 _T132:
-	__asm        mov    eax, num;
-	__asm        mov    dword ptr [eax], 0;
+	num[0] = 0x0;
 // LINE 89:
 _T13b:
 	__asm        xor    eax, eax;
@@ -285,11 +283,9 @@ _T3a:
 	__asm        cmp    num, 0;
 	__asm        jne    _T56;
 // LINE 114:
-	__asm        mov    eax, str;
-	__asm        mov    byte ptr [eax], 1;
+	str[0] = 0x1;
 // LINE 115:
-	__asm        mov    eax, str;
-	__asm        mov    byte ptr [eax+1], 0x30;
+	str[1] = 0x30;
 // LINE 116:
 	__asm        jmp    _T138;
 // LINE 119:
@@ -337,17 +333,14 @@ _Ta6:
 	__asm        mov    ecx, str;
 	__asm        mov    [ecx], al;
 // LINE 133:
-	__asm        mov    eax, str;
-	__asm        mov    byte ptr [eax+1], 0x2D;
+	str[1] = 0x2d;
 // LINE 134:
 	power = 0x2;
 // LINE 136:
 	__asm        jmp    _Te9;
 // LINE 138:
 _Tda:
-	__asm        mov    al, reinterpret_cast<uint8_t>(power);
-	__asm        mov    ecx, str;
-	__asm        mov    [ecx], al;
+	str[0] = reinterpret_cast<uint8_t>(power);
 // LINE 139:
 	power = 0x1;
 // LINE 142:
@@ -490,9 +483,7 @@ _Td3:
 	__asm        jmp    _T14;
 // LINE 171:
 _Teb:
-	__asm        mov    eax, result;
-	__asm        mov    ecx, num;
-	__asm        mov    [ecx], eax;
+	num[0] = result;
 // LINE 172:
 	__asm        mov    ax, 1;
 	__asm        jmp    _Tfc;
@@ -513,11 +504,9 @@ void Num2HexStr(unsigned long num, unsigned char * str) {
 	__asm        cmp    num, 0;
 	__asm        jne    _T33;
 // LINE 182:
-	__asm        mov    eax, str;
-	__asm        mov    byte ptr [eax], 1;
+	str[0] = 0x1;
 // LINE 183:
-	__asm        mov    eax, str;
-	__asm        mov    byte ptr [eax+1], 0x30;
+	str[1] = 0x30;
 // LINE 184:
 	__asm        jmp    _Tf1;
 // LINE 187:
@@ -550,9 +539,7 @@ _T6c:
 	__asm        jmp    _T33;
 // LINE 195:
 _T7f:
-	__asm        mov    al, reinterpret_cast<uint8_t>(power);
-	__asm        mov    ecx, str;
-	__asm        mov    [ecx], al;
+	str[0] = reinterpret_cast<uint8_t>(power);
 // LINE 196:
 	power = 0x1;
 // LINE 197:
@@ -608,8 +595,7 @@ _Tf1:
 // FUNCTION: COPTER_D 0x005661b4
 void Long2PStr(unsigned long namelet, unsigned char * name) {
 // LINE 215:
-	__asm        mov    eax, name;
-	__asm        mov    byte ptr [eax], 4;
+	name[0] = 0x4;
 // LINE 216:
 	__asm        mov    eax, namelet;
 	__asm        shr    eax, 0x18;
@@ -625,9 +611,7 @@ void Long2PStr(unsigned long namelet, unsigned char * name) {
 	__asm        mov    ecx, name;
 	__asm        mov    [ecx+3], ah;
 // LINE 219:
-	__asm        mov    al, reinterpret_cast<uint8_t>(namelet);
-	__asm        mov    ecx, name;
-	__asm        mov    [ecx+4], al;
+	name[4] = reinterpret_cast<uint8_t>(namelet);
 // LINE 220:
 	__asm        jmp    near ptr 0x005661EF;
 }
@@ -680,7 +664,7 @@ _T6d:
 }
 
 // FUNCTION: COPTER_D 0x00566266
-void CToPString(char * cstr, unsigned char * pstr) {
+void CToPString(signed char * cstr, unsigned char * pstr) {
 	/*bp-0x4*/   int32_t count;
 
 // LINE 260:
@@ -762,10 +746,9 @@ _T63:
 }
 
 // FUNCTION: COPTER_D 0x0056633e
-void CToPStr(char * cstr, unsigned char * pstr) {
+void CToPStr(signed char * cstr, unsigned char * pstr) {
 // LINE 366:
-	__asm        mov    eax, pstr;
-	__asm        mov    byte ptr [eax], 0;
+	pstr[0] = 0x0;
 // LINE 367:
 _T0f:
 	__asm        mov    eax, cstr;
@@ -912,17 +895,15 @@ void ConcatNum(long number, unsigned char * str, short destSize) {
 
 // FUNCTION: COPTER_D 0x005664b9
 void HexToString(unsigned long num, unsigned char * str) {
-	/*bp-0x4*/   char letter;
+	/*bp-0x4*/   signed char letter;
 	/*bp-0x8*/   short position;
 
 // LINE 500:
 	position = 0x1c;
 // LINE 503:
-	__asm        mov    eax, str;
-	__asm        mov    byte ptr [eax], 1;
+	str[0] = 0x1;
 // LINE 504:
-	__asm        mov    eax, str;
-	__asm        mov    byte ptr [eax+1], 0x78;
+	str[1] = 0x78;
 // LINE 506:
 _T1c:
 	__asm        movsx  eax, position;

@@ -428,9 +428,7 @@ _Te2:
 	__asm        jmp    _T11b;
 // LINE 231:
 _T109:
-	__asm        mov    eax, cbRead;
-	__asm        mov    ecx, cbActualRead;
-	__asm        mov    [ecx], eax;
+	cbActualRead[0] = cbRead;
 // LINE 232:
 	__asm        jmp    _T12c;
 
@@ -438,8 +436,7 @@ _T109:
 // LINE 235:
 ERROR_CANNOT_READ:
 _T11b:
-	__asm        mov    eax, cbActualRead;
-	__asm        mov    dword ptr [eax], 0;
+	cbActualRead[0] = 0x0;
 // LINE 238:
 FINISHED_READING:
 _T124:
@@ -491,8 +488,7 @@ int32_t WaveLoadFile(char * pszFileName, uint32_t * cbSize, /*packed*/ struct tW
 // LINE 285:
 	ppbData-> = 0x0;
 // LINE 286:
-	__asm        mov    eax, cbSize;
-	__asm        mov    dword ptr [eax], 0;
+	cbSize[0] = 0x0;
 // LINE 288:
 	__asm        lea    eax, ckInRiff.ckid;
 	__asm        push   eax;
@@ -585,9 +581,7 @@ _Tcb:
 	__asm        jmp    _T112;
 // LINE 315:
 _T100:
-	__asm        mov    eax, cbActualRead;
-	__asm        mov    ecx, cbSize;
-	__asm        mov    [ecx], eax;
+	cbSize[0] = cbActualRead;
 // LINE 316:
 	__asm        jmp    _T158;
 

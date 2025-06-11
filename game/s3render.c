@@ -1294,29 +1294,17 @@ void VRAppNewTextures() {
 // FUNCTION: COPTER_D 0x004ebaec
 void SetUserVars(int32_t * user) {
 // LINE 941:
-	__asm        mov    eax, user;
-	__asm        mov    eax, [eax];
-	__asm        mov    rFriction, eax;
+	rFriction = user[0];
 // LINE 942:
-	__asm        mov    eax, user;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    rForce, eax;
+	rForce = user[4];
 // LINE 943:
-	__asm        mov    eax, user;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    rVmax, eax;
+	rVmax = user[8];
 // LINE 945:
-	__asm        mov    eax, user;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    tFrictionAir, eax;
+	tFrictionAir = user[12];
 // LINE 946:
-	__asm        mov    eax, user;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    tFrictionGnd, eax;
+	tFrictionGnd = user[16];
 // LINE 947:
-	__asm        mov    eax, user;
-	__asm        mov    eax, [eax+0x14];
-	__asm        mov    tVmax, eax;
+	tVmax = user[20];
 // LINE 949:
 	__asm        mov    eax, user;
 	__asm        mov    eax, [eax+0x38];
@@ -1338,29 +1326,17 @@ void SetUserVars(int32_t * user) {
 	__asm        sar    eax, 0x10;
 	__asm        mov    keyRotateZm, eax;
 // LINE 954:
-	__asm        mov    eax, user;
-	__asm        mov    eax, [eax+0x28];
-	__asm        mov    thetaspeed, eax;
+	thetaspeed = user[40];
 // LINE 955:
-	__asm        mov    eax, user;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        mov    phispeed, eax;
+	phispeed = user[44];
 // LINE 956:
-	__asm        mov    eax, user;
-	__asm        mov    eax, [eax+0x30];
-	__asm        mov    radius, eax;
+	radius = user[48];
 // LINE 957:
-	__asm        mov    eax, user;
-	__asm        mov    eax, [eax+0x34];
-	__asm        mov    circley, eax;
+	circley = user[52];
 // LINE 958:
-	__asm        mov    eax, user;
-	__asm        mov    eax, [eax+0x38];
-	__asm        mov    yposcilate, eax;
+	yposcilate = user[56];
 // LINE 959:
-	__asm        mov    eax, user;
-	__asm        mov    eax, [eax+0x3C];
-	__asm        mov    ynoscilate, eax;
+	ynoscilate = user[60];
 // LINE 962:
 }
 

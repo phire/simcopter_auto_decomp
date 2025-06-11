@@ -8,6 +8,23 @@
 
 // Type: char *;
 
+// Type: /*packed*/ struct tm (forward reference);
+struct tm{ // packed(0x24 bytes) TI: 0x2033
+	/*+0x0*/   int32_t tm_sec;
+	/*+0x4*/   int32_t tm_min;
+	/*+0x8*/   int32_t tm_hour;
+	/*+0xc*/   int32_t tm_mday;
+	/*+0x10*/  int32_t tm_mon;
+	/*+0x14*/  int32_t tm_year;
+	/*+0x18*/  int32_t tm_wday;
+	/*+0x1c*/  int32_t tm_yday;
+	/*+0x20*/  int32_t tm_isdst;
+};
+
+// Type: long;
+
+// Type: void;
+
 // Type: /*packed*/ class MDate (forward reference);
 // VTABLE: COPTER_D 0x0058f3e8
 class MDate{ // packed(0xc bytes) TI: 0x284c
@@ -85,23 +102,6 @@ protected:
 	/*+0x4*/   unsigned long Julnum;
 	/*+0x8*/   enum MDate::HowToPrint PrintOption;
 };
-
-// Type: /*packed*/ struct tm (forward reference);
-struct tm{ // packed(0x24 bytes) TI: 0x2033
-	/*+0x0*/   int32_t tm_sec;
-	/*+0x4*/   int32_t tm_min;
-	/*+0x8*/   int32_t tm_hour;
-	/*+0xc*/   int32_t tm_mday;
-	/*+0x10*/  int32_t tm_mon;
-	/*+0x14*/  int32_t tm_year;
-	/*+0x18*/  int32_t tm_wday;
-	/*+0x1c*/  int32_t tm_yday;
-	/*+0x20*/  int32_t tm_isdst;
-};
-
-// Type: long;
-
-// Type: void;
 
 // Type: enum MDate::HowToPrint;
 enum HowToPrint {
@@ -1004,23 +1004,24 @@ _T121:
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    _T2f;
 _T29:
-	None = this;
+	__asm        mov    eax, this;
+	__asm        mov    [ebp-4], eax;
 _T2f:
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-8], eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, __$ReturnUdt;
+	__asm        mov    ecx, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        mov    [ecx+4], eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, __$ReturnUdt;
+	__asm        mov    ecx, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        mov    [ecx+8], eax;
-	__asm        mov    eax, __$ReturnUdt;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        mov    dword ptr [eax], 0x58F3E8;
 	__asm        jmp    near ptr 0x004BCC28;
 
-	__asm        mov    eax, __$ReturnUdt;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        jmp    near ptr 0x004BCC30;
 // LINE 398:
 }
@@ -1038,23 +1039,24 @@ _T2f:
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    _T2f;
 _T29:
-	None = dt;
+	__asm        mov    eax, dt;
+	__asm        mov    [ebp-4], eax;
 _T2f:
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-8], eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, __$ReturnUdt;
+	__asm        mov    ecx, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        mov    [ecx+4], eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, __$ReturnUdt;
+	__asm        mov    ecx, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        mov    [ecx+8], eax;
-	__asm        mov    eax, __$ReturnUdt;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        mov    dword ptr [eax], 0x58F3E8;
 	__asm        jmp    near ptr 0x004BCC92;
 
-	__asm        mov    eax, __$ReturnUdt;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        jmp    near ptr 0x004BCC9A;
 // LINE 408:
 }
@@ -1088,11 +1090,11 @@ uint32_t MDate::Month() {
 	__asm        call   MDate::DayOfWeek;
 	__asm        add    esp, 4;
 	__asm        push   eax;
-	__asm        mov    eax, __$ReturnUdt;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   MDate::Previous;
-	__asm        mov    eax, __$ReturnUdt;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        jmp    near ptr 0x004BCCFB;
 // LINE 437:
 }
@@ -1134,14 +1136,14 @@ _T4a:
 	__asm        neg    eax;
 	__asm        sub    j, eax;
 // LINE 463:
-	__asm        mov    eax, __$ReturnUdt;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        mov    dword ptr [eax], 0x58F3E8;
 	__asm        mov    eax, j;
-	__asm        mov    ecx, __$ReturnUdt;
+	__asm        mov    ecx, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    near ptr 0x004BCD6D;
 
-	__asm        mov    eax, __$ReturnUdt;
+	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        jmp    near ptr 0x004BCD75;
 // LINE 464:
 }
@@ -1621,7 +1623,9 @@ _T102:
 // FUNCTION: COPTER_D 0x004bd27c
 static char * ParseMonth(/*unpacked*/ class istream& s) {
 	/*bp-0x4*/   char * p;
-// StaticLocal: 0x006069a8	static char month[12];
+	// StaticLocal: 0x006069a8
+	static char month[12];
+	;
 	/*bp-0x8*/   char c;
 
 // LINE 549:
@@ -1716,8 +1720,7 @@ _Tfd:
 	__asm        call   istream::putback;
 // LINE 559:
 _T109:
-	__asm        mov    eax, p;
-	__asm        mov    byte ptr [eax], 0;
+	p[0] = 0x0;
 // LINE 560:
 	__asm        mov    eax, 0x6069A8;
 	__asm        jmp    near ptr 0x004BD395;
@@ -1912,7 +1915,7 @@ _T259:
 	__asm        ja     _T287;
 
 	__asm        mov    eax, [ebp-0xC0];
-	__asm        jmp    SwitchPointers4969997[0][eax*4];
+	__asm        jmp    _Switch_273[0][eax*4];
 // Switch pointers
 // LINE 658:
 _T287:

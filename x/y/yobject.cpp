@@ -182,7 +182,7 @@ public:
 	void ResetTree(short);
 	struct cYObject::MoveInfo{ // not packed(0x10 bytes) TI: 0x3748
 		/*+0x0*/   enum cYObject::LocationType *locType;
-		/*+0x4*/   char * roadDir;
+		/*+0x4*/   signed char * roadDir;
 		/*+0x8*/   /*unpacked*/ struct _DYOBJ_INST *dyBlock;
 		/*+0xc*/   /*unpacked*/ struct _STOBJ_INST *stBlock;
 	};
@@ -371,7 +371,7 @@ public:
 	unsigned short IsWalkable(short, short, enum cYObject::LocationType);
 	unsigned short CanJumpOffHere();
 	// calltype: NearC
-	static char GetRoadDir(/*unpacked*/ struct Point3d);
+	static signed char GetRoadDir(/*unpacked*/ struct Point3d);
 	enum SoundNum {
 		kSNone = -1,
 		kSAssertion = 1,
@@ -905,13 +905,13 @@ public:
 		/*+0x0*/   unsigned long bodyname;
 	};
 	struct YObjLang::WalkRunParam{ // not packed(0x7 bytes) TI: 0x3572
-		/*+0x0*/   char decTemp; // 0x1 bytes
-		/*+0x1*/   char onlyNeutralBoolean; // 0x1 bytes
-		/*+0x2*/   char moveFailTemp; // 0x1 bytes
-		/*+0x3*/   char newLocTemp; // 0x1 bytes
-		/*+0x4*/   char roadDirTemp; // 0x1 bytes
-		/*+0x5*/   char dynAnimBoolean; // 0x1 bytes
-		/*+0x6*/   char speedTemp; // 0x1 bytes
+		/*+0x0*/   signed char decTemp; // 0x1 bytes
+		/*+0x1*/   signed char onlyNeutralBoolean; // 0x1 bytes
+		/*+0x2*/   signed char moveFailTemp; // 0x1 bytes
+		/*+0x3*/   signed char newLocTemp; // 0x1 bytes
+		/*+0x4*/   signed char roadDirTemp; // 0x1 bytes
+		/*+0x5*/   signed char dynAnimBoolean; // 0x1 bytes
+		/*+0x6*/   signed char speedTemp; // 0x1 bytes
 	};
 	struct YObjLang::RandomParam{ // not packed(0x6 bytes) TI: 0x3570
 		/*+0x0*/   short destTemp; // 0x2 bytes
@@ -1091,8 +1091,8 @@ protected:
 	struct Behavior::Node{ // not packed(0xc bytes) TI: 0x35e3
 		/*+0x0*/   short treeID; // 0x2 bytes
 		/*+0x0*/   short primCode; // 0x2 bytes
-		/*+0x2*/   char trueTrans; // 0x1 bytes
-		/*+0x3*/   char falseTrans; // 0x1 bytes
+		/*+0x2*/   signed char trueTrans; // 0x1 bytes
+		/*+0x3*/   signed char falseTrans; // 0x1 bytes
 		/*+0x4*/   /*unpacked*/ struct Behavior::NodeParameter param; // 0x8 bytes
 	};
 	enum /* __unnamed */ {
@@ -1218,7 +1218,7 @@ enum SearchType {
 // Type: /*unpacked*/ struct cYObject::MoveInfo;
 struct cYObject::MoveInfo{ // not packed(0x10 bytes) TI: 0x3748
 	/*+0x0*/   enum cYObject::LocationType *locType;
-	/*+0x4*/   char * roadDir;
+	/*+0x4*/   signed char * roadDir;
 	/*+0x8*/   /*unpacked*/ struct _DYOBJ_INST *dyBlock;
 	/*+0xc*/   /*unpacked*/ struct _STOBJ_INST *stBlock;
 };
@@ -1477,7 +1477,7 @@ struct tagPassengerInfo{ // not packed(0x14 bytes) TI: 0x3a4a
 // Type: /*unpacked*/ struct cYObject::MoveInfo (forward reference);
 struct cYObject::MoveInfo{ // not packed(0x10 bytes) TI: 0x3748
 	/*+0x0*/   enum cYObject::LocationType *locType;
-	/*+0x4*/   char * roadDir;
+	/*+0x4*/   signed char * roadDir;
 	/*+0x8*/   /*unpacked*/ struct _DYOBJ_INST *dyBlock;
 	/*+0xc*/   /*unpacked*/ struct _STOBJ_INST *stBlock;
 };
@@ -1591,47 +1591,6 @@ struct _STOBJ_INST{ // not packed(0x10 bytes) TI: 0x365f
 	/*+0xc*/   long user2;
 };
 
-// Type: /*unpacked*/ class FlatResFile (forward reference);
-// VTABLE: COPTER_D 0x00593508
-class FlatResFile : public FlatFile
-{ // not packed(0x11c bytes) TI: 0x330e
-protected:
-	/*+0x110*/ /*unpacked*/ class ResMap *fMap;
-	/*+0x114*/ long fError;
-	/*+0x118*/ short _alignPad; // 0x2 bytes
-public:
-	void FlatResFile();
-	virtual void ~FlatResFile() /* override */;
-	void LoadResMap(void * __ptr32*, short *, long *);
-	unsigned short FileEquals(/*unpacked*/ class FlatResFile*);
-	virtual long Open(unsigned char *) /* override */;
-	virtual long Open(char *) /* override */;
-	long OpenFromName();
-	virtual long Close() /* override */;
-	short CountTypes();
-	unsigned long GetIndType(short);
-	short Count(unsigned long);
-	void * __ptr32 GetByID(unsigned long, short, void (*)(void * __ptr32, long));
-	void * __ptr32 GetByName(unsigned long, unsigned char *, void (*)(void * __ptr32, long));
-	void * __ptr32 GetByIndex(unsigned long, short, void (*)(void * __ptr32, long));
-	void GetName(void * __ptr32, unsigned char *);
-	void GetID(void * __ptr32, short *);
-	unsigned long GetResType(void * __ptr32);
-	void Release(void * __ptr32);
-	void Detach(void * __ptr32);
-	void Load(void * __ptr32);
-	long GetError();
-	void Add(void * __ptr32, unsigned long, short, unsigned char *);
-	void ExclusiveAdd(void * __ptr32, unsigned long, short, unsigned char *);
-	void FindUniqueName(unsigned long, unsigned char *);
-	short FindUniqueID(unsigned long);
-	void Write(void * __ptr32);
-	void Remove(void * __ptr32);
-	void GetString(unsigned char *, short, short);
-	// calltype: NearC
-	static short CheckForLeaks();
-};
-
 // Type: uint32_t;
 
 // Type: /*unpacked*/ class PtrList<StdResLoader> (forward reference);
@@ -1664,14 +1623,6 @@ public:
 	void Add(/*unpacked*/ class StdResLoader*);
 	/*unpacked*/ class StdResLoader* GetByIndex(long);
 	/*unpacked*/ class StdResLoader* GetByOrder(long);
-};
-
-// Type: /*unpacked*/ class ResFile (forward reference);
-// VTABLE: COPTER_D 0x00593518
-class ResFile : public FlatResFile
-{ // not packed(0x11c bytes) TI: 0x3334
-public:
-	long OpenFromOtherFile(/*unpacked*/ class ResFile*);
 };
 
 // Type: void (void * __ptr32, long);
@@ -1747,8 +1698,8 @@ struct TreeSim::StackElem{ // not packed(0x14 bytes) TI: 0x3614
 struct Behavior::Node{ // not packed(0xc bytes) TI: 0x35e3
 	/*+0x0*/   short treeID; // 0x2 bytes
 	/*+0x0*/   short primCode; // 0x2 bytes
-	/*+0x2*/   char trueTrans; // 0x1 bytes
-	/*+0x3*/   char falseTrans; // 0x1 bytes
+	/*+0x2*/   signed char trueTrans; // 0x1 bytes
+	/*+0x3*/   signed char falseTrans; // 0x1 bytes
 	/*+0x4*/   /*unpacked*/ struct Behavior::NodeParameter param; // 0x8 bytes
 };
 
@@ -1805,7 +1756,7 @@ protected:
 	virtual void Error(short); // vtable+0x4
 	void GetCurrentNode(short *, short *);
 	void Reset(/*unpacked*/ class Behavior*, short);
-	char NodeComplete(unsigned short);
+	signed char NodeComplete(unsigned short);
 	unsigned short Gosub(/*unpacked*/ class Behavior*, short *, short);
 public:
 	void TreeSim(short, short *);
@@ -1985,13 +1936,13 @@ public:
 		/*+0x0*/   unsigned long bodyname;
 	};
 	struct YObjLang::WalkRunParam{ // not packed(0x7 bytes) TI: 0x3572
-		/*+0x0*/   char decTemp; // 0x1 bytes
-		/*+0x1*/   char onlyNeutralBoolean; // 0x1 bytes
-		/*+0x2*/   char moveFailTemp; // 0x1 bytes
-		/*+0x3*/   char newLocTemp; // 0x1 bytes
-		/*+0x4*/   char roadDirTemp; // 0x1 bytes
-		/*+0x5*/   char dynAnimBoolean; // 0x1 bytes
-		/*+0x6*/   char speedTemp; // 0x1 bytes
+		/*+0x0*/   signed char decTemp; // 0x1 bytes
+		/*+0x1*/   signed char onlyNeutralBoolean; // 0x1 bytes
+		/*+0x2*/   signed char moveFailTemp; // 0x1 bytes
+		/*+0x3*/   signed char newLocTemp; // 0x1 bytes
+		/*+0x4*/   signed char roadDirTemp; // 0x1 bytes
+		/*+0x5*/   signed char dynAnimBoolean; // 0x1 bytes
+		/*+0x6*/   signed char speedTemp; // 0x1 bytes
 	};
 	struct YObjLang::RandomParam{ // not packed(0x6 bytes) TI: 0x3570
 		/*+0x0*/   short destTemp; // 0x2 bytes
@@ -2137,47 +2088,6 @@ public:
 
 // Type: /*unpacked*/ class Language (forward reference);
 // Language Class implementation not found
-
-// Type: /*unpacked*/ class FlatResFile;
-// VTABLE: COPTER_D 0x00593508
-class FlatResFile : public FlatFile
-{ // not packed(0x11c bytes) TI: 0x330e
-protected:
-	/*+0x110*/ /*unpacked*/ class ResMap *fMap;
-	/*+0x114*/ long fError;
-	/*+0x118*/ short _alignPad; // 0x2 bytes
-public:
-	void FlatResFile();
-	virtual void ~FlatResFile() /* override */;
-	void LoadResMap(void * __ptr32*, short *, long *);
-	unsigned short FileEquals(/*unpacked*/ class FlatResFile*);
-	virtual long Open(unsigned char *) /* override */;
-	virtual long Open(char *) /* override */;
-	long OpenFromName();
-	virtual long Close() /* override */;
-	short CountTypes();
-	unsigned long GetIndType(short);
-	short Count(unsigned long);
-	void * __ptr32 GetByID(unsigned long, short, void (*)(void * __ptr32, long));
-	void * __ptr32 GetByName(unsigned long, unsigned char *, void (*)(void * __ptr32, long));
-	void * __ptr32 GetByIndex(unsigned long, short, void (*)(void * __ptr32, long));
-	void GetName(void * __ptr32, unsigned char *);
-	void GetID(void * __ptr32, short *);
-	unsigned long GetResType(void * __ptr32);
-	void Release(void * __ptr32);
-	void Detach(void * __ptr32);
-	void Load(void * __ptr32);
-	long GetError();
-	void Add(void * __ptr32, unsigned long, short, unsigned char *);
-	void ExclusiveAdd(void * __ptr32, unsigned long, short, unsigned char *);
-	void FindUniqueName(unsigned long, unsigned char *);
-	short FindUniqueID(unsigned long);
-	void Write(void * __ptr32);
-	void Remove(void * __ptr32);
-	void GetString(unsigned char *, short, short);
-	// calltype: NearC
-	static short CheckForLeaks();
-};
 
 // Type: /*unpacked*/ class cYObject;
 // VTABLE: COPTER_D 0x005935e0
@@ -2357,7 +2267,7 @@ public:
 	void ResetTree(short);
 	struct cYObject::MoveInfo{ // not packed(0x10 bytes) TI: 0x3748
 		/*+0x0*/   enum cYObject::LocationType *locType;
-		/*+0x4*/   char * roadDir;
+		/*+0x4*/   signed char * roadDir;
 		/*+0x8*/   /*unpacked*/ struct _DYOBJ_INST *dyBlock;
 		/*+0xc*/   /*unpacked*/ struct _STOBJ_INST *stBlock;
 	};
@@ -2546,7 +2456,7 @@ public:
 	unsigned short IsWalkable(short, short, enum cYObject::LocationType);
 	unsigned short CanJumpOffHere();
 	// calltype: NearC
-	static char GetRoadDir(/*unpacked*/ struct Point3d);
+	static signed char GetRoadDir(/*unpacked*/ struct Point3d);
 	enum SoundNum {
 		kSNone = -1,
 		kSAssertion = 1,
@@ -2831,6 +2741,47 @@ public:
 	enum TreeSim::ReturnCode iDoIHaveAMaster(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 };
 
+// Type: /*unpacked*/ class FlatResFile;
+// VTABLE: COPTER_D 0x00593508
+class FlatResFile : public FlatFile
+{ // not packed(0x11c bytes) TI: 0x330e
+protected:
+	/*+0x110*/ /*unpacked*/ class ResMap *fMap;
+	/*+0x114*/ long fError;
+	/*+0x118*/ short _alignPad; // 0x2 bytes
+public:
+	void FlatResFile();
+	virtual void ~FlatResFile() /* override */;
+	void LoadResMap(void * __ptr32*, short *, long *);
+	unsigned short FileEquals(/*unpacked*/ class FlatResFile*);
+	virtual long Open(unsigned char *) /* override */;
+	virtual long Open(char *) /* override */;
+	long OpenFromName();
+	virtual long Close() /* override */;
+	short CountTypes();
+	unsigned long GetIndType(short);
+	short Count(unsigned long);
+	void * __ptr32 GetByID(unsigned long, short, void (*)(void * __ptr32, long));
+	void * __ptr32 GetByName(unsigned long, unsigned char *, void (*)(void * __ptr32, long));
+	void * __ptr32 GetByIndex(unsigned long, short, void (*)(void * __ptr32, long));
+	void GetName(void * __ptr32, unsigned char *);
+	void GetID(void * __ptr32, short *);
+	unsigned long GetResType(void * __ptr32);
+	void Release(void * __ptr32);
+	void Detach(void * __ptr32);
+	void Load(void * __ptr32);
+	long GetError();
+	void Add(void * __ptr32, unsigned long, short, unsigned char *);
+	void ExclusiveAdd(void * __ptr32, unsigned long, short, unsigned char *);
+	void FindUniqueName(unsigned long, unsigned char *);
+	short FindUniqueID(unsigned long);
+	void Write(void * __ptr32);
+	void Remove(void * __ptr32);
+	void GetString(unsigned char *, short, short);
+	// calltype: NearC
+	static short CheckForLeaks();
+};
+
 // Type: /*unpacked*/ class Sound;
 // VTABLE: COPTER_D 0x0058f458
 class Sound{ // not packed(0x34 bytes) TI: 0x4733
@@ -2918,7 +2869,7 @@ public:
 	long ReadBlock(void * __ptr32, long *);
 	long Read4(long *);
 	long Read2(short *);
-	long Read1(char *);
+	long Read1(signed char *);
 	long SetPos(long);
 	long Advance(long);
 	// calltype: NearC
@@ -3267,13 +3218,9 @@ _T9c:
 	__asm        jmp    _Ta1;
 // LINE 152:
 _Ta1:
-	__asm        movsx  eax, cYObject::sNumMissionAwake;
-	__asm        mov    ecx, missionawake;
-	__asm        mov    [ecx], eax;
+	missionawake[0] = reinterpret_cast<int16_t>(cYObject::sNumMissionAwake);
 // LINE 153:
-	__asm        movsx  eax, cYObject::sNumAmbientAwake;
-	__asm        mov    ecx, ambientawake;
-	__asm        mov    [ecx], eax;
+	ambientawake[0] = reinterpret_cast<int16_t>(cYObject::sNumAmbientAwake);
 // LINE 154:
 	__asm        mov    eax, 0xC;
 	__asm        movsx  ecx, cYObject::sBeamed;
@@ -3281,17 +3228,11 @@ _Ta1:
 	__asm        mov    ecx, failedtobeam;
 	__asm        mov    [ecx], eax;
 // LINE 155:
-	__asm        movsx  eax, cYObject::sDebugNumBeamed;
-	__asm        mov    ecx, numbeamed;
-	__asm        mov    [ecx], eax;
+	numbeamed[0] = reinterpret_cast<int16_t>(cYObject::sDebugNumBeamed);
 // LINE 156:
-	__asm        movsx  eax, gPersonBeamingForwardWeight;
-	__asm        mov    ecx, forwardweight;
-	__asm        mov    [ecx], eax;
+	forwardweight[0] = reinterpret_cast<int16_t>(gPersonBeamingForwardWeight);
 // LINE 157:
-	__asm        movsx  eax, gPersonBeamingSlices;
-	__asm        mov    ecx, beamslices;
-	__asm        mov    [ecx], eax;
+	beamslices[0] = reinterpret_cast<int16_t>(gPersonBeamingSlices);
 // LINE 158:
 	__asm        mov    eax, gXTimer.lTotalElapsedTime;
 	__asm        mov    [ebp-0x14], eax;
@@ -3428,7 +3369,8 @@ _T88:
 	__asm        mov    obj, eax;
 	__asm        jmp    _Ta1;
 
-	obj = None;
+	__asm        mov    eax, [ebp-8];
+	__asm        mov    obj, eax;
 // LINE 173:
 _Ta1:
 	__asm        cmp    obj, 0;
@@ -3669,7 +3611,8 @@ _Tab:
 	__asm        mov    obj, eax;
 	__asm        jmp    _Tc4;
 
-	obj = None;
+	__asm        mov    eax, [ebp-0x10];
+	__asm        mov    obj, eax;
 // LINE 228:
 _Tc4:
 	__asm        cmp    obj, 0;
@@ -3778,7 +3721,9 @@ _T207:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T223:
-	None = dyn->user1;
+	__asm        mov    eax, dyn;
+	__asm        mov    ax, [eax+0xE];
+	__asm        mov    [ebp-0x1C], ax;
 // LINE 244:
 	__asm        movsx  eax, word ptr [ebp-0x1C];
 	__asm        cmp    eax, 0x7D00;
@@ -3867,7 +3812,8 @@ _T82:
 	__asm        mov    dyobj, 0;
 	__asm        jmp    _T94;
 
-	dyobj = None;
+	__asm        mov    eax, [ebp-0x14];
+	__asm        mov    dyobj, eax;
 // LINE 254:
 _T94:
 	__asm        mov    eax, dyobj;
@@ -5067,7 +5013,7 @@ _T94a:
 	__asm        ja     _T929;
 
 	__asm        mov    eax, [ebp-0x19C];
-	__asm        jmp    SwitchPointers5527981[0][eax*4];
+	__asm        jmp    _Switch_964[0][eax*4];
 // Switch pointers
 // LINE 379:
 _T974:
@@ -5453,7 +5399,8 @@ _Ta4:
 	__asm        mov    obj, eax;
 	__asm        jmp    _Tbd;
 
-	obj = None;
+	__asm        mov    eax, [ebp-0xC];
+	__asm        mov    obj, eax;
 // LINE 448:
 _Tbd:
 	__asm        cmp    obj, 0;
@@ -5510,7 +5457,8 @@ void S3PersonUserStart(int32_t x, int32_t y, int32_t dx, int32_t dz) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T54:
-	None = gAvatar;
+	__asm        mov    eax, gAvatar;
+	__asm        mov    [ebp-0x64], eax;
 // LINE 458:
 	__asm        mov    eax, [ebp-0x64];
 	__asm        movsx  eax, word ptr [eax+0xD2];
@@ -6084,7 +6032,8 @@ _Tba:
 	__asm        mov    obj, eax;
 	__asm        jmp    _Td3;
 
-	obj = None;
+	__asm        mov    eax, [ebp-0xC];
+	__asm        mov    obj, eax;
 // LINE 538:
 _Td3:
 	__asm        cmp    obj, 0;
@@ -6177,7 +6126,8 @@ _Ta3:
 	__asm        mov    word ptr [ebp-0x1C], 0xFFFF;
 	__asm        jmp    _Tb6;
 _Tae:
-	None = None;
+	__asm        mov    ax, [ebp-0x20];
+	__asm        mov    [ebp-0x1C], ax;
 _Tb6:
 	__asm        jmp    near ptr 0x00546780;
 
@@ -6241,7 +6191,8 @@ _T172:
 	__asm        mov    word ptr [ebp-0x24], 0xFFFF;
 	__asm        jmp    _T185;
 _T17d:
-	None = None;
+	__asm        mov    ax, [ebp-0x28];
+	__asm        mov    [ebp-0x24], ax;
 _T185:
 	__asm        jmp    near ptr 0x0054684F;
 
@@ -6722,7 +6673,8 @@ _T13d:
 	__asm        mov    obj, eax;
 	__asm        jmp    _T156;
 
-	obj = None;
+	__asm        mov    eax, [ebp-0x14];
+	__asm        mov    obj, eax;
 // LINE 699:
 _T156:
 	__asm        mov    eax, obj;
@@ -7239,7 +7191,8 @@ _T237:
 	__asm        mov    obj, eax;
 	__asm        jmp    _T250;
 
-	obj = None;
+	__asm        mov    eax, [ebp-0x48];
+	__asm        mov    obj, eax;
 // LINE 770:
 _T250:
 	__asm        cmp    obj, 0;
@@ -7658,8 +7611,8 @@ _T490:
 
 	__asm        mov    eax, [ebp-0x20];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, SwitchTable5536007[0][eax];
-	__asm        jmp    SwitchPointers5535987[0][ecx*4];
+	__asm        mov    cl, _SwitchTable_4c7[0][eax];
+	__asm        jmp    _Switch_4b3[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 832:
@@ -8018,7 +7971,8 @@ _Tab:
 	__asm        mov    test, eax;
 	__asm        jmp    _Tc4;
 
-	test = None;
+	__asm        mov    eax, [ebp-0x10];
+	__asm        mov    test, eax;
 // LINE 902:
 _Tc4:
 	__asm        cmp    test, 0;
@@ -8187,7 +8141,8 @@ _Td8:
 	__asm        mov    personobj, eax;
 	__asm        jmp    _Tf1;
 
-	personobj = None;
+	__asm        mov    eax, [ebp-0x1C];
+	__asm        mov    personobj, eax;
 // LINE 955:
 _Tf1:
 	__asm        cmp    personobj, 0;
@@ -8425,7 +8380,7 @@ _T2cd:
 	__asm        ja     _T2b5;
 
 	__asm        mov    eax, [ebp-0x28];
-	__asm        jmp    SwitchPointers5538603[0][eax*4];
+	__asm        jmp    _Switch_2e4[0][eax*4];
 // Switch pointers
 // LINE 1036:
 _T314:
@@ -8831,7 +8786,7 @@ _T8e1:
 	__asm        ja     _T843;
 
 	__asm        mov    eax, [ebp-0x2C];
-	__asm        jmp    SwitchPointers5540159[0][eax*4];
+	__asm        jmp    _Switch_8f8[0][eax*4];
 // Switch pointers
 // LINE 1117:
 _T90c:
@@ -9443,7 +9398,7 @@ _T1102:
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    _T1139;
 _T1132:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x1C], 0;
 _T1139:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x1C];
@@ -9466,7 +9421,7 @@ _T1139:
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _T118d;
 _T1186:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x24], 0;
 _T118d:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x24];
@@ -10335,7 +10290,7 @@ _T1f3:
 	__asm        ja     _T21b;
 
 	__asm        mov    eax, [ebp-0x48];
-	__asm        jmp    SwitchPointers5545444[0][eax*4];
+	__asm        jmp    _Switch_207[0][eax*4];
 // Switch pointers
 // LINE 1369:
 _T21b:
@@ -10598,7 +10553,8 @@ _T17a:
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    _T1cf;
 _T1c9:
-	None = None;
+	__asm        mov    eax, [ebp-0x34];
+	__asm        mov    [ebp-0x3C], eax;
 _T1cf:
 	__asm        jmp    near ptr 0x0054A0D8;
 
@@ -10787,7 +10743,8 @@ _Ta4:
 	__asm        mov    obj, eax;
 	__asm        jmp    _Tbd;
 
-	obj = None;
+	__asm        mov    eax, [ebp-0xC];
+	__asm        mov    obj, eax;
 // LINE 1479:
 _Tbd:
 	__asm        cmp    obj, 0;
@@ -10886,7 +10843,8 @@ _Tbf:
 	__asm        mov    obj, eax;
 	__asm        jmp    _Td8;
 
-	obj = None;
+	__asm        mov    eax, [ebp-0x28];
+	__asm        mov    obj, eax;
 // LINE 1501:
 _Td8:
 	__asm        cmp    obj, 0;
@@ -11927,11 +11885,9 @@ _T88e:
 // LINE 1717:
 	mp.op = 0x0;
 // LINE 1718:
-	__asm        movsx  eax, destcellx;
-	__asm        mov    mp.maploc.x, eax;
+	mp.maploc.x = reinterpret_cast<int16_t>(destcellx);
 // LINE 1719:
-	__asm        movsx  eax, destcelly;
-	__asm        mov    mp.maploc.y, eax;
+	mp.maploc.y = reinterpret_cast<int16_t>(destcelly);
 // LINE 1720:
 	__asm        lea    eax, mp.op;
 	__asm        push   eax;
@@ -12336,7 +12292,7 @@ _Td60:
 	__asm        ja     _Tbb9;
 
 	__asm        mov    eax, [ebp-0xEC];
-	__asm        jmp    SwitchPointers5551391[0][eax*4];
+	__asm        jmp    _Switch_d7a[0][eax*4];
 // Switch pointers
 // LINE 1793:
 _Td96:
@@ -12890,7 +12846,8 @@ _Ta7:
 	__asm        mov    obj, eax;
 	__asm        jmp    _Tc0;
 
-	obj = None;
+	__asm        mov    eax, [ebp-0x34];
+	__asm        mov    obj, eax;
 // LINE 1845:
 _Tc0:
 	__asm        mov    eax, obj;
@@ -12972,7 +12929,8 @@ _T1ba:
 	__asm        mov    word ptr [ebp-0x2C], 0xFFFF;
 	__asm        jmp    _T1cd;
 _T1c5:
-	None = None;
+	__asm        mov    ax, [ebp-0x30];
+	__asm        mov    [ebp-0x2C], ax;
 _T1cd:
 	__asm        jmp    near ptr 0x0054BE0E;
 
@@ -13010,7 +12968,8 @@ _T23c:
 	__asm        mov    word ptr [ebp-0x20], 0xFFFF;
 	__asm        jmp    _T24f;
 _T247:
-	None = None;
+	__asm        mov    ax, [ebp-0x1C];
+	__asm        mov    [ebp-0x20], ax;
 _T24f:
 	__asm        jmp    near ptr 0x0054BE90;
 
@@ -13128,7 +13087,8 @@ _Tbc:
 	__asm        mov    obj, eax;
 	__asm        jmp    _Td5;
 
-	obj = None;
+	__asm        mov    eax, [ebp-0x20];
+	__asm        mov    obj, eax;
 // LINE 1871:
 _Td5:
 	__asm        mov    eax, obj;
@@ -13339,7 +13299,8 @@ _Ta4:
 	__asm        mov    actualchannel, 0xFFFF;
 	__asm        jmp    _Tb7;
 _Taf:
-	actualchannel = None;
+	__asm        mov    ax, [ebp-0x24];
+	__asm        mov    actualchannel, ax;
 _Tb7:
 	__asm        jmp    near ptr 0x0054C299;
 // LINE 1907:
@@ -13441,7 +13402,8 @@ _T1f2:
 	__asm        mov    actualSoundChannel, 0xFFFF;
 	__asm        jmp    _T205;
 _T1fd:
-	actualSoundChannel = None;
+	__asm        mov    ax, [ebp-0x28];
+	__asm        mov    actualSoundChannel, ax;
 _T205:
 	__asm        jmp    near ptr 0x0054C3E7;
 // LINE 1923:
@@ -13554,8 +13516,8 @@ _T346:
 
 	__asm        mov    eax, [ebp-0x38];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, SwitchTable5555531[0][eax];
-	__asm        jmp    SwitchPointers5555519[0][ecx*4];
+	__asm        mov    cl, _SwitchTable_36e[0][eax];
+	__asm        jmp    _Switch_362[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 2003:
@@ -13587,7 +13549,7 @@ _T3c7:
 	__asm        ja     _T3a6;
 
 	__asm        mov    eax, [ebp-0x34];
-	__asm        jmp    SwitchPointers5555643[0][eax*4];
+	__asm        jmp    _Switch_3de[0][eax*4];
 // Switch pointers
 // LINE 2009:
 _T42e:
@@ -13713,7 +13675,8 @@ _T103:
 	__asm        mov    obj, eax;
 	__asm        jmp    _T11f;
 
-	obj = None;
+	__asm        mov    eax, [ebp-0xCC];
+	__asm        mov    obj, eax;
 // LINE 2101:
 _T11f:
 	__asm        mov    eax, obj;
@@ -13840,7 +13803,8 @@ _T293:
 	__asm        mov    obj, eax;
 	__asm        jmp    _T2af;
 
-	obj = None;
+	__asm        mov    eax, [ebp-0xD0];
+	__asm        mov    obj, eax;
 // LINE 2110:
 _T2af:
 	__asm        mov    eax, obj;
@@ -13973,7 +13937,8 @@ _T47e:
 	__asm        mov    word ptr [ebp-0xD8], 0xFFFF;
 	__asm        jmp    _T49a;
 _T48c:
-	None = None;
+	__asm        mov    ax, [ebp-0xDC];
+	__asm        mov    [ebp-0xD8], ax;
 _T49a:
 	__asm        jmp    near ptr 0x0054CB10;
 
@@ -14237,7 +14202,8 @@ _Ta7:
 	__asm        mov    obj, eax;
 	__asm        jmp    _Tc0;
 
-	obj = None;
+	__asm        mov    eax, [ebp-0xC];
+	__asm        mov    obj, eax;
 // LINE 2168:
 _Tc0:
 	__asm        cmp    obj, 0;
@@ -14964,7 +14930,7 @@ _T112:
 	__asm        mov    word ptr [ebp-0x60], 1;
 	__asm        jmp    _T13f;
 _T139:
-	None = 0x0;
+	__asm        mov    word ptr [ebp-0x60], 0;
 _T13f:
 	__asm        test   dword ptr [ebp-0x64], 0xFFFF;
 	__asm        je     _T168;
@@ -15770,7 +15736,8 @@ _T393:
 	__asm        mov    word ptr [ebp-0x38], 0xFFFF;
 	__asm        jmp    _T3a6;
 _T39e:
-	None = None;
+	__asm        mov    ax, [ebp-0x3C];
+	__asm        mov    [ebp-0x38], ax;
 _T3a6:
 	__asm        jmp    near ptr 0x0054E1C3;
 
@@ -16009,7 +15976,7 @@ _T69b:
 	__asm        mov    word ptr [ebp-0x40], 4;
 	__asm        jmp    _T6c6;
 _T6c0:
-	None = 0x8;
+	__asm        mov    word ptr [ebp-0x40], 8;
 _T6c6:
 	__asm        lea    eax, moveinfo.locType;
 	__asm        push   eax;
@@ -16717,7 +16684,9 @@ _T9b8:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T9d4:
-	None = moveinfo->dyBlock;
+	__asm        mov    eax, moveinfo;
+	__asm        mov    eax, [eax+8];
+	__asm        mov    [ebp-4], eax;
 // LINE 2439:
 	__asm        jmp    near ptr 0x0054EF5B;
 
@@ -17274,7 +17243,7 @@ _T117f:
 	__asm        ja     _T1157;
 
 	__asm        mov    eax, [ebp-0x14];
-	__asm        jmp    SwitchPointers5568268[0][eax*4];
+	__asm        jmp    _Switch_1193[0][eax*4];
 // Switch pointers
 // LINE 2484:
 _T11b3:
@@ -17517,7 +17486,7 @@ _T1525:
 	__asm        ja     _T14d4;
 
 	__asm        mov    eax, [ebp-0xC];
-	__asm        jmp    SwitchPointers5569202[0][eax*4];
+	__asm        jmp    _Switch_1539[0][eax*4];
 // Switch pointers
 // LINE 2498:
 _T1569:
@@ -17859,8 +17828,8 @@ _Tb2:
 
 	__asm        mov    eax, [ebp-8];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, SwitchTable5570340[0][eax];
-	__asm        jmp    SwitchPointers5570324[0][ecx*4];
+	__asm        mov    cl, _SwitchTable_e2[0][eax];
+	__asm        jmp    _Switch_d2[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 2596:
@@ -18177,7 +18146,7 @@ _T309:
 	__asm        ja     _T2e8;
 
 	__asm        mov    eax, [ebp-0x44];
-	__asm        jmp    SwitchPointers5571284[0][eax*4];
+	__asm        jmp    _Switch_31d[0][eax*4];
 // Switch pointers
 // LINE 2725:
 _T365:
@@ -18207,7 +18176,7 @@ _T3af:
 	__asm        mov    [ebp-0x28], eax;
 	__asm        jmp    _T3ce;
 _T3c7:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x28], 0;
 _T3ce:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x24], eax;
@@ -18219,7 +18188,7 @@ _T3ce:
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    _T3f2;
 _T3eb:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x20], 0;
 _T3f2:
 	__asm        jmp    near ptr 0x005503AE;
 
@@ -18292,7 +18261,8 @@ _T4b1:
 	__asm        mov    dword ptr [ebp-0x38], 0;
 	__asm        jmp    _T4c3;
 _T4bd:
-	None = None;
+	__asm        mov    eax, [ebp-0x34];
+	__asm        mov    [ebp-0x38], eax;
 _T4c3:
 	__asm        jmp    _T4d9;
 _T4c8:
@@ -18684,7 +18654,7 @@ _L56436:
 _Td6:
 	__asm        jmp    _Te2;
 _Tdb:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x24], 0;
 _Te2:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x24];
@@ -18760,9 +18730,7 @@ _T8c:
 // LINE 2834:
 // Block start:
 	/*bp-0x14*/  /*unpacked*/ class cYObject **newObj;
-	__asm        movsx  eax, id;
-	__asm        lea    eax, cYObject::sObjects[0][eax*4];
-	__asm        mov    newObj, eax;
+	newObj = BinaryOp(add, BinaryOp(mul, reinterpret_cast<int16_t>(id), Const(4)), Const(6516032));
 // LINE 2835:
 	__asm        push   0x168;
 	__asm        call   operator new;
@@ -18789,7 +18757,7 @@ _T8c:
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    _Tf7;
 _Tf0:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x1C], 0;
 _Tf7:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x1C];
@@ -18896,8 +18864,7 @@ _T47:
 	__asm        cmp    finfo.Plotter, 0x16;
 	__asm        jne    _Tc8;
 // LINE 2857:
-	__asm        movsx  eax, id;
-	__asm        mov    finfo.Bitmap, eax;
+	finfo.Bitmap = reinterpret_cast<int16_t>(id);
 // LINE 2858:
 	__asm        and    finfo.Attribute, 0x7FFFFFFF;
 // LINE 2859:
@@ -18968,7 +18935,8 @@ _T88:
 	__asm        mov    obj, eax;
 	__asm        jmp    _Ta1;
 
-	obj = None;
+	__asm        mov    eax, [ebp-0x10];
+	__asm        mov    obj, eax;
 // LINE 2874:
 _Ta1:
 	__asm        cmp    obj, 0;
@@ -19314,7 +19282,8 @@ _T246:
 	__asm        mov    word ptr [ebp-8], 0xFFFF;
 	__asm        jmp    _T259;
 _T251:
-	None = None;
+	__asm        mov    ax, [ebp-0xC];
+	__asm        mov    [ebp-8], ax;
 _T259:
 	__asm        jmp    near ptr 0x005511FD;
 
@@ -19875,7 +19844,7 @@ _L56643:
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    _Tff;
 _Tf8:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x18], 0;
 _Tff:
 	__asm        mov    ecx, [ebp-0x18];
 	__asm        call   YObjLang::~YObjLang;

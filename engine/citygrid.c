@@ -42,7 +42,9 @@ struct Point3d{ // packed(0xc bytes) TI: 0x18b0
 // Contribution: 1:000d5b40-000d62f3 Module: 141, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004d6b40
 short VRInitGridObj(long ViewSize) {
-// StaticLocal: 0x0059d2d8	static int32_t b_FirstTime = 1;
+	// StaticLocal: 0x0059d2d8
+	static int32_t b_FirstTime = 1;
+	;
 	/*bp-0x4*/   long plotter;
 	/*bp-0x8*/   long * iptr;
 	/*bp-0xc*/   /*packed*/ struct Point3d *v;
@@ -120,9 +122,7 @@ _T6a:
 // LINE 193:
 	goff = GridNFaces;
 // LINE 194:
-	__asm        mov    eax, goff;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        mov    goff, eax;
+	goff = BinaryOp(add, goff, BinaryOp(mul, goff, Const(2)));
 // LINE 195:
 	__asm        mov    eax, goff;
 	__asm        shl    eax, 2;
@@ -631,9 +631,7 @@ void InitGridPool() {
 // LINE 398:
 	goff = GridNFaces;
 // LINE 399:
-	__asm        mov    eax, goff;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        mov    goff, eax;
+	goff = BinaryOp(add, goff, BinaryOp(mul, goff, Const(2)));
 // LINE 400:
 	__asm        mov    eax, goff;
 	__asm        shl    eax, 2;

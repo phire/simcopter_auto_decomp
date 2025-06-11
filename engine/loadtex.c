@@ -405,7 +405,10 @@ _T131:
 	__asm        cmp    i, eax;
 	__asm        jge    _T18d;
 // LINE 348:
-	bhdr->info.width = mask;
+	__asm        mov    eax, mask;
+	__asm        mov    ecx, i;
+	__asm        mov    edx, bhdr;
+	__asm        mov    [edx+ecx*8+0xC], eax;
 // LINE 349:
 	__asm        mov    eax, colmask;
 	__asm        and    eax, i;
@@ -427,7 +430,10 @@ _T131:
 	__asm        add    eax, baseptr;
 	__asm        mov    tptr, eax;
 // LINE 354:
-	bhdr->info.width = tptr;
+	__asm        mov    eax, tptr;
+	__asm        mov    ecx, i;
+	__asm        mov    edx, bhdr;
+	__asm        mov    [edx+ecx*8+0x10], eax;
 // LINE 355:
 	__asm        jmp    _T12e;
 // LINE 357:

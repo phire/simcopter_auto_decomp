@@ -499,7 +499,7 @@ _T49c:
 	__asm        ja     _T490;
 
 	__asm        mov    eax, [ebp-0xC];
-	__asm        jmp    SwitchPointers5068809[0][eax*4];
+	__asm        jmp    _Switch_4b3[0][eax*4];
 // Switch pointers
 // LINE 256:
 _T4c3:

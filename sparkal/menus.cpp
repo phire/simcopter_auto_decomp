@@ -4,6 +4,8 @@
 
 // Type: char *;
 
+// Type: void;
+
 // Type: /*packed*/ class UserMenuWindow (forward reference);
 // VTABLE: COPTER_D 0x005912f8
 class UserMenuWindow : public GraphicWindow
@@ -33,8 +35,6 @@ protected:
 	/*+0xd4*/  int32_t nCurrentSelection;
 	/*+0xd8*/  /*packed*/ class DigitalSound soundSelectionChange; // 0x7a bytes
 };
-
-// Type: void;
 
 // Type: /*packed*/ struct UserMenuWindowDescription (forward reference);
 struct UserMenuWindowDescription{ // packed(0x54 bytes) TI: 0x101b
@@ -606,7 +606,7 @@ _T175:
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    _T196;
 _T18f:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-4], 0;
 _T196:
 	__asm        mov    dword ptr [ebp-8], 0;
 	__asm        jmp    near ptr 0x0049B122;
@@ -846,7 +846,7 @@ _T19f:
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    _T1d1;
 _T1ca:
-	None = 0xffffffff;
+	__asm        mov    dword ptr [ebp-0x38], 0xFFFFFFFF;
 _T1d1:
 	__asm        jmp    near ptr 0x0049B3D1;
 
@@ -1297,7 +1297,7 @@ _Tfb:
 	__asm        mov    [ebp-0x120], eax;
 	__asm        jmp    _T128;
 _T11e:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x120], 0;
 _T128:
 	__asm        mov    dword ptr [ebp-0x124], 0;
 	__asm        jmp    near ptr 0x0049B98F;
@@ -1721,7 +1721,8 @@ _T7cc:
 	__asm        mov    [ebp-0x17C], eax;
 	__asm        jmp    _T82b;
 _T81f:
-	None = None;
+	__asm        mov    eax, [ebp-0x174];
+	__asm        mov    [ebp-0x17C], eax;
 _T82b:
 	__asm        jmp    near ptr 0x0049C088;
 
@@ -1855,7 +1856,9 @@ _Ta2b:
 
 	__asm        jmp    near ptr 0x0049C292;
 
-	None = this->myTextWindowPtrArray.start;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0xC8];
+	__asm        mov    [ebp-0x168], eax;
 _Ta4c:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x168];
@@ -2356,7 +2359,7 @@ _T1a8:
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    _T1c9;
 _T1c2:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0xC], 0;
 _T1c9:
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    eax, [eax+4];
@@ -2943,7 +2946,8 @@ _Tcc:
 	__asm        cmp    dword ptr [eax+0x15A], 0;
 	__asm        jne    _T267;
 
-	None = SZ_MAIN_RATCHET_IMAGE_FILE_NAME;
+	__asm        mov    eax, SZ_MAIN_RATCHET_IMAGE_FILE_NAME;
+	__asm        mov    [ebp-0x20], eax;
 // LINE 431:
 	__asm        jmp    near ptr 0x0049CFA0;
 
@@ -3071,7 +3075,8 @@ _T267:
 	__asm        cmp    dword ptr [eax+0x15E], 0;
 	__asm        jne    _T3ee;
 
-	None = SZ_MAIN_LIGHT_IMAGE_FILE_NAME;
+	__asm        mov    eax, SZ_MAIN_LIGHT_IMAGE_FILE_NAME;
+	__asm        mov    [ebp-0x24], eax;
 // LINE 436:
 	__asm        jmp    near ptr 0x0049D122;
 
@@ -3833,7 +3838,8 @@ _Tcc:
 	__asm        cmp    dword ptr [eax+0x152], 0;
 	__asm        jne    _T28c;
 
-	None = SZ_PLAY_RATCHET_IMAGE_FILE_NAME;
+	__asm        mov    eax, SZ_PLAY_RATCHET_IMAGE_FILE_NAME;
+	__asm        mov    [ebp-0x20], eax;
 // LINE 636:
 	__asm        jmp    near ptr 0x0049DBCD;
 
@@ -3972,7 +3978,8 @@ _T28c:
 	__asm        cmp    dword ptr [eax+0x156], 0;
 	__asm        jne    _T413;
 
-	None = SZ_PLAY_BACKGROUND_IMAGE_FILE_NAME;
+	__asm        mov    eax, SZ_PLAY_BACKGROUND_IMAGE_FILE_NAME;
+	__asm        mov    [ebp-0x24], eax;
 // LINE 642:
 	__asm        jmp    near ptr 0x0049DD74;
 

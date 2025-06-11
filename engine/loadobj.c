@@ -312,7 +312,10 @@ _T134:
 	__asm        cmp    i, eax;
 	__asm        jge    _T19b;
 // LINE 186:
-	res->res.mem = ObjData;
+	__asm        mov    eax, ObjData;
+	__asm        mov    ecx, i;
+	__asm        mov    edx, res;
+	__asm        mov    [edx+ecx*4+0x18], eax;
 // LINE 187:
 	__asm        mov    eax, res;
 	__asm        mov    eax, [eax+0x14];
@@ -491,9 +494,7 @@ _T6e:
 	__asm        mov    ecx, ObjectPtr;
 	__asm        mov    [ecx+4], eax;
 // LINE 377:
-	__asm        movsx  eax, fileobjhdr.NFaces;
-	__asm        mov    ecx, ObjectPtr;
-	__asm        mov    [ecx+0x10], eax;
+	ObjectPtr->NFaces = reinterpret_cast<int16_t>(fileobjhdr.NFaces);
 // LINE 378:
 	ObjectPtr->ID = fileobjhdr.ID;
 // LINE 379:
@@ -612,9 +613,7 @@ _T214:
 	__asm        movsx  eax, filefacehdr.NVerts;
 	__asm        add    VertCount, eax;
 // LINE 513:
-	__asm        movsx  eax, filefacehdr.NVerts;
-	__asm        mov    ecx, faceptr;
-	__asm        mov    [ecx+4], eax;
+	faceptr->Nverts = reinterpret_cast<int16_t>(filefacehdr.NVerts);
 // LINE 514:
 	faceptr->Attrib1 = filefacehdr.Attrib;
 // LINE 515:
@@ -1074,8 +1073,7 @@ _T55:
 	__asm        cmp    landable, 0;
 	__asm        je     _T68;
 // LINE 800:
-	__asm        mov    eax, landable;
-	__asm        mov    dword ptr [eax], 0;
+	landable[0] = 0x0;
 // LINE 803:
 _T68:
 	__asm        cmp    obj, 0;
@@ -1345,10 +1343,7 @@ _T330:
 // LINE 897:
 	altyupbelow = facealt;
 // LINE 898:
-	__asm        mov    eax, faceptr;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    ecx, flags;
-	__asm        mov    [ecx], eax;
+	flags[0] = faceptr->Attrib2;
 // LINE 902:
 	__asm        cmp    collisvec, 0;
 	__asm        je     _T38e;
@@ -1398,14 +1393,12 @@ _T38e:
 	__asm        cmp    eax, maxz;
 	__asm        jg     _T3fd;
 // LINE 917:
-	__asm        mov    eax, landable;
-	__asm        mov    dword ptr [eax], 1;
+	landable[0] = 0x1;
 // LINE 919:
 	__asm        jmp    _T406;
 // LINE 921:
 _T3fd:
-	__asm        mov    eax, landable;
-	__asm        mov    dword ptr [eax], 0;
+	landable[0] = 0x0;
 // LINE 925:
 _T406:
 	__asm        jmp    _T544;
@@ -1424,10 +1417,7 @@ _T40b:
 // LINE 934:
 	altyupbelow = facealt;
 // LINE 937:
-	__asm        mov    eax, faceptr;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    ecx, flags;
-	__asm        mov    [ecx], eax;
+	flags[0] = faceptr->Attrib2;
 // LINE 941:
 	__asm        cmp    collisvec, 0;
 	__asm        je     _T475;
@@ -1477,14 +1467,12 @@ _T475:
 	__asm        cmp    eax, maxz;
 	__asm        jg     _T4e4;
 // LINE 955:
-	__asm        mov    eax, landable;
-	__asm        mov    dword ptr [eax], 1;
+	landable[0] = 0x1;
 // LINE 957:
 	__asm        jmp    _T4ed;
 // LINE 959:
 _T4e4:
-	__asm        mov    eax, landable;
-	__asm        mov    dword ptr [eax], 0;
+	landable[0] = 0x0;
 // LINE 964:
 _T4ed:
 	__asm        jmp    _T510;
@@ -1591,8 +1579,7 @@ _T551:
 	__asm        cmp    landable, 0;
 	__asm        je     _T619;
 // LINE 1029:
-	__asm        mov    eax, landable;
-	__asm        mov    dword ptr [eax], 0;
+	landable[0] = 0x0;
 // LINE 1032:
 _T619:
 	__asm        cmp    collisvec, 0;
@@ -1716,8 +1703,7 @@ _T55:
 	__asm        cmp    landable, 0;
 	__asm        je     _T68;
 // LINE 1112:
-	__asm        mov    eax, landable;
-	__asm        mov    dword ptr [eax], 0;
+	landable[0] = 0x0;
 // LINE 1115:
 _T68:
 	__asm        cmp    obj, 0;
@@ -2021,10 +2007,7 @@ _T386:
 // LINE 1230:
 	altyupbelow = facealt;
 // LINE 1231:
-	__asm        mov    eax, faceptr;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    ecx, flags;
-	__asm        mov    [ecx], eax;
+	flags[0] = faceptr->Attrib2;
 // LINE 1235:
 	__asm        cmp    collisvec, 0;
 	__asm        je     _T3e4;
@@ -2074,14 +2057,12 @@ _T3e4:
 	__asm        cmp    eax, maxz;
 	__asm        jg     _T453;
 // LINE 1250:
-	__asm        mov    eax, landable;
-	__asm        mov    dword ptr [eax], 1;
+	landable[0] = 0x1;
 // LINE 1252:
 	__asm        jmp    _T45c;
 // LINE 1254:
 _T453:
-	__asm        mov    eax, landable;
-	__asm        mov    dword ptr [eax], 0;
+	landable[0] = 0x0;
 // LINE 1258:
 _T45c:
 	__asm        jmp    _T5cd;
@@ -2100,10 +2081,7 @@ _T461:
 // LINE 1267:
 	altyupbelow = facealt;
 // LINE 1270:
-	__asm        mov    eax, faceptr;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    ecx, flags;
-	__asm        mov    [ecx], eax;
+	flags[0] = faceptr->Attrib2;
 // LINE 1274:
 	__asm        cmp    collisvec, 0;
 	__asm        je     _T500;
@@ -2165,14 +2143,12 @@ _T500:
 	__asm        cmp    eax, maxz;
 	__asm        jg     _T56f;
 // LINE 1297:
-	__asm        mov    eax, landable;
-	__asm        mov    dword ptr [eax], 1;
+	landable[0] = 0x1;
 // LINE 1299:
 	__asm        jmp    _T578;
 // LINE 1301:
 _T56f:
-	__asm        mov    eax, landable;
-	__asm        mov    dword ptr [eax], 0;
+	landable[0] = 0x0;
 // LINE 1306:
 _T578:
 	__asm        jmp    _T59b;
@@ -2279,8 +2255,7 @@ _T5da:
 	__asm        cmp    landable, 0;
 	__asm        je     _T6a2;
 // LINE 1371:
-	__asm        mov    eax, landable;
-	__asm        mov    dword ptr [eax], 0;
+	landable[0] = 0x0;
 // LINE 1374:
 _T6a2:
 	__asm        cmp    collisvec, 0;
@@ -3204,7 +3179,10 @@ _T24:
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        jle    _T196;
 // LINE 1883:
-	obj = geo->res.mem;
+	__asm        mov    eax, i;
+	__asm        mov    ecx, geo;
+	__asm        mov    eax, [ecx+eax*4+0x18];
+	__asm        mov    obj, eax;
 // LINE 1884:
 	__asm        lea    eax, oinfo.Faces;
 	__asm        push   eax;

@@ -4,6 +4,20 @@
 
 // Type: char *;
 
+// Type: int32_t;
+
+// Type: /*unpacked*/ class GraphicWindow (forward reference);
+// GraphicWindow Class implementation not found
+
+// Type: /*packed*/ class GraphicWindowOwner (forward reference);
+// VTABLE: COPTER_D 0x00590f2c
+class GraphicWindowOwner{ // packed(0x4 bytes) TI: 0x1647
+public:
+	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
+};
+
+// Type: void;
+
 // Type: /*packed*/ class InventoryWindow (forward reference);
 // VTABLE: COPTER_D 0x00591888
 class InventoryWindow : public GraphicWindow
@@ -43,20 +57,6 @@ protected:
 	/*+0x1aa*/ /*packed*/ class MFont myTitleFont; // 0x1c bytes
 	/*+0x1c6*/ /*packed*/ class MFont myAddressFont; // 0x1c bytes
 };
-
-// Type: int32_t;
-
-// Type: /*unpacked*/ class GraphicWindow (forward reference);
-// GraphicWindow Class implementation not found
-
-// Type: /*packed*/ class GraphicWindowOwner (forward reference);
-// VTABLE: COPTER_D 0x00590f2c
-class GraphicWindowOwner{ // packed(0x4 bytes) TI: 0x1647
-public:
-	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
-};
-
-// Type: void;
 
 // Type: /*packed*/ struct SparkalColor (forward reference);
 struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
@@ -424,7 +424,8 @@ _T12a:
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        jmp    _T178;
 _T172:
-	None = None;
+	__asm        mov    eax, [ebp-0x64];
+	__asm        mov    [ebp-0x6C], eax;
 _T178:
 	__asm        jmp    near ptr 0x004A84DD;
 
@@ -495,7 +496,8 @@ _T1fb:
 	__asm        mov    [ebp-0x80], eax;
 	__asm        jmp    _T26b;
 _T265:
-	None = None;
+	__asm        mov    eax, [ebp-0x78];
+	__asm        mov    [ebp-0x80], eax;
 _T26b:
 	__asm        jmp    near ptr 0x004A85D0;
 
@@ -1279,7 +1281,7 @@ _T1c9:
 	__asm        mov    [ebp-0x1014], eax;
 	__asm        jmp    _T214;
 _T20a:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x1014], 0;
 _T214:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, this;
@@ -1443,7 +1445,7 @@ _T435:
 	__asm        mov    [ebp-0x202C], eax;
 	__asm        jmp    _T480;
 _T476:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x202C], 0;
 _T480:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x176;
@@ -1675,7 +1677,7 @@ _T794:
 	__asm        mov    [ebp-0x4048], eax;
 	__asm        jmp    _T7df;
 _T7d5:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x4048], 0;
 _T7df:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x186;
@@ -3058,7 +3060,9 @@ void InventoryWindow::LoadHotSpots() {
 
 // FUNCTION: COPTER_D 0x004aa656
 long InventoryWindow::GetColumnStartPixel(long lColumn) {
-// StaticLocal: 0x00591810	static const long lColumnStart[6] = {171, 297, 322, 348, 376, 404};
+	// StaticLocal: 0x00591810
+	static const long lColumnStart[6] = {171, 297, 322, 348, 376, 404};
+	;
 
 // LINE 334:
 	__asm        cmp    lColumn, 6;
@@ -3081,7 +3085,9 @@ _T36:
 
 // FUNCTION: COPTER_D 0x004aa693
 long InventoryWindow::GetRowStartPixel(long lRow) {
-// StaticLocal: 0x00591828	static const long lRowStart[11] = {240, 258, 276, 294, 313, 332, 351, 369, 388, 407, 426};
+	// StaticLocal: 0x00591828
+	static const long lRowStart[11] = {240, 258, 276, 294, 313, 332, 351, 369, 388, 407, 426};
+	;
 
 // LINE 348:
 	__asm        cmp    lRow, 0xB;
@@ -3104,8 +3110,12 @@ _T36:
 
 // FUNCTION: COPTER_D 0x004aa6d0
 void InventoryWindow::GetEquipmentTextPosition(long lEquipmentIndex, /*packed*/ class MPoint& ptEquipment) {
-// StaticLocal: 0x00591870	static const long lYPositions[5] = {166, 181, 196, 210, 225};
-// StaticLocal: 0x00591858	static const long lXPositions[5] = {333, 357, 382, 407, 409};
+	// StaticLocal: 0x00591870
+	static const long lYPositions[5] = {166, 181, 196, 210, 225};
+	;
+	// StaticLocal: 0x00591858
+	static const long lXPositions[5] = {333, 357, 382, 407, 409};
+	;
 
 // LINE 363:
 	__asm        cmp    lEquipmentIndex, 5;

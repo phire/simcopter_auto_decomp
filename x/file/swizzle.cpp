@@ -4,7 +4,7 @@
 
 // Type: void * __ptr32;
 
-// Type: char;
+// Type: signed char;
 
 // Type: void;
 
@@ -27,8 +27,8 @@ struct Rect{ // not packed(0x8 bytes) TI: 0x3463
 // Contribution: 1:00165850-00165a00 Module: 183, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00566850
 void Swizzle16(void * __ptr32 val) {
-	/*bp-0x8*/   char loWord[8]; // 0x8 bytes
-	/*bp-0x10*/  char hiWord[8]; // 0x8 bytes
+	/*bp-0x8*/   signed char loWord[8]; // 0x8 bytes
+	/*bp-0x10*/  signed char hiWord[8]; // 0x8 bytes
 
 // LINE 12:
 	__asm        mov    eax, val;
@@ -143,8 +143,8 @@ void Swizzle4(void * __ptr32 val) {
 
 // FUNCTION: COPTER_D 0x0056695b
 void Swizzle2(void * __ptr32 val) {
-	/*bp-0x4*/   char loByte;
-	/*bp-0x8*/   char hiByte;
+	/*bp-0x4*/   signed char loByte;
+	/*bp-0x8*/   signed char hiByte;
 
 // LINE 53:
 	__asm        mov    eax, val;

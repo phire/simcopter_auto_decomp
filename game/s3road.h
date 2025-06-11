@@ -132,8 +132,8 @@ _T17a:
 
 	__asm        mov    eax, [ebp-4];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, SwitchTable5510413[0][eax];
-	__asm        jmp    SwitchPointers5510397[0][ecx*4];
+	__asm        mov    cl, _SwitchTable_1ad[0][eax];
+	__asm        jmp    _Switch_19d[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 876:

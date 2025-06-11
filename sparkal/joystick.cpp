@@ -45,6 +45,8 @@ protected:
 
 // Type: void;
 
+// Type: int32_t;
+
 // Type: /*packed*/ class JoystickManager (forward reference);
 class JoystickManager{ // packed(0x1ce4 bytes) TI: 0x2218
 public:
@@ -81,8 +83,6 @@ protected:
 	/*+0x64*/  /*packed*/ struct tagJOYCAPSA joystickCaps[16]; // 0x1940 bytes
 	/*+0x19a4*/ /*packed*/ struct joyinfoex_tag joystickInfoCache[16]; // 0x340 bytes
 };
-
-// Type: int32_t;
 
 // Type: /*packed*/ struct joyinfo_tag;
 struct joyinfo_tag{ // packed(0x10 bytes) TI: 0x21fd
@@ -183,7 +183,9 @@ _T43:
 	__asm        mov    ecx, this;
 	__asm        mov    byte ptr [eax+ecx+4], 0;
 // LINE 35:
-	this->nJoystickCount = 0x0;
+	__asm        mov    eax, i;
+	__asm        mov    ecx, this;
+	__asm        mov    dword ptr [ecx+eax*4+0x14], 0;
 // LINE 36:
 	__asm        jmp    _T40;
 // LINE 38:
@@ -217,7 +219,9 @@ _T2d:
 	__asm        mov    ecx, this;
 	__asm        mov    byte ptr [eax+ecx+4], 0;
 // LINE 63:
-	this->nJoystickCount = 0x0;
+	__asm        mov    eax, i;
+	__asm        mov    ecx, this;
+	__asm        mov    dword ptr [ecx+eax*4+0x14], 0;
 // LINE 64:
 	__asm        jmp    _T2a;
 // LINE 66:
@@ -250,7 +254,11 @@ _T7e:
 	__asm        cmp    mmResult, 0;
 	__asm        jne    _Tee;
 // LINE 73:
-	this->nJoystickCount = i;
+	__asm        mov    eax, i;
+	__asm        mov    ecx, this;
+	__asm        mov    ecx, [ecx];
+	__asm        mov    edx, this;
+	__asm        mov    [edx+ecx*4+0x14], eax;
 // LINE 74:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -396,9 +404,7 @@ _T1b:
 	__asm        test   eax, eax;
 	__asm        jne    _T62;
 // LINE 130:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, nJoystick;
-	__asm        mov    [ecx], eax;
+	nJoystick[0] = i;
 // LINE 131:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T71;
@@ -516,8 +522,7 @@ _T1d:
 	__asm        jmp    _T4b;
 // LINE 233:
 _T45:
-	__asm        lea    eax, joyInfoEx.dwSize;
-	__asm        mov    joyInfoExToUse, eax;
+	joyInfoExToUse = joyInfoEx.dwSize;
 // LINE 235:
 _T4b:
 	__asm        mov    eax, nAxis;
@@ -582,7 +587,7 @@ _Te0:
 	__asm        ja     _Td4;
 
 	__asm        mov    eax, [ebp-0x50];
-	__asm        jmp    SwitchPointers4827434[0][eax*4];
+	__asm        jmp    _Switch_f4[0][eax*4];
 // Switch pointers
 // LINE 263:
 _T10c:
@@ -675,8 +680,7 @@ _T27:
 	__asm        jmp    _T55;
 // LINE 309:
 _T4f:
-	__asm        lea    eax, joyInfoEx.dwSize;
-	__asm        mov    joyInfoExToUse, eax;
+	joyInfoExToUse = joyInfoEx.dwSize;
 // LINE 311:
 _T55:
 	__asm        cmp    bUseCache, 0;
@@ -798,8 +802,7 @@ _T1d:
 	__asm        jmp    _T4b;
 // LINE 387:
 _T45:
-	__asm        lea    eax, joyInfoEx.dwSize;
-	__asm        mov    joyInfoExToUse, eax;
+	joyInfoExToUse = joyInfoEx.dwSize;
 // LINE 389:
 _T4b:
 	__asm        cmp    bUseCache, 0;

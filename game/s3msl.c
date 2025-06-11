@@ -1590,8 +1590,7 @@ _T90d:
 // LINE 730:
 	mp.op = 0x7;
 // LINE 731:
-	__asm        movsx  eax, reinterpret_cast<uint16_t>(mission_id);
-	__asm        mov    mp.id, eax;
+	mp.id = reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(mission_id));
 // LINE 732:
 	mp.i2num = 0x1;
 // LINE 733:
@@ -6464,10 +6463,7 @@ _T64:
 	__asm        jmp    _Ta9;
 // LINE 2651:
 _T9e:
-	__asm        mov    eax, blit;
-	__asm        mov    al, [eax+0xC];
-	__asm        mov    ecx, ptr;
-	__asm        mov    [ecx], al;
+	ptr[0] = reinterpret_cast<uint8_t>(blit->user1);
 // LINE 2653:
 _Ta9:
 }

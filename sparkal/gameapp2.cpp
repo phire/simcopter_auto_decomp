@@ -24,9 +24,6 @@ struct list<CopterGameMode>::list_node{ // packed(0xc bytes) TI: 0x1a1c
 
 // Type: int32_t;
 
-// Type: /*unpacked*/ class CGameApp (forward reference);
-// CGameApp Class implementation not found
-
 // Type: char;
 
 // Type: /*packed*/ struct SoundPreferences;
@@ -235,76 +232,6 @@ public:
 };
 
 // Type: float;
-
-// Type: /*packed*/ class PFile (forward reference);
-// VTABLE: COPTER_D 0x00590468
-class PFile{ // packed(0x110 bytes) TI: 0x453c
-	enum /* __unnamed */ {
-		FileNull = -1,
-	};
-	enum SeekTypes {
-		N_SEEK_FROM_FILE_START = 0,
-		N_SEEK_FROM_FILE_CURRENT = 1,
-		N_SEEK_FROM_FILE_END = 2,
-	};
-	enum AccessTypes {
-		ReadOnly = 0,
-		ReadWrite = 2,
-		WriteOnly = 1,
-		Create = 768,
-		CreateExcl = 1280,
-		Append = 8,
-		Binary = 32768,
-		Compat = 0,
-		DenyNone = 64,
-		DenyRead = 48,
-		DenyWrite = 32,
-		DenyRdWr = 16,
-		NoInherit = 128,
-	};
-	enum PermissionTypes {
-		PermRead = 256,
-		PermWrite = 128,
-		PermRdWr = 384,
-	};
-	enum seek_dir {
-		beg = 0,
-		cur = 1,
-		end = 2,
-	};
-public:
-	void PFile(char *);
-	void PFile(const /*packed*/ class PFile&);
-	void PFile(int32_t);
-	void PFile();
-	virtual void ~PFile(); // vtable+0x0
-	int32_t Open(char *, unsigned short, unsigned short, int32_t);
-	int32_t Close();
-	int32_t GetHandle();
-	long Position();
-	void Length(long);
-	long Length();
-	long Seek(long, int32_t);
-	long SeekToBegin();
-	long SeekToEnd();
-	int32_t IsOpen();
-	int32_t Read(void * __ptr32, int32_t);
-	int32_t Write(void * __ptr32, int32_t);
-	void Flush();
-	// calltype: NearC
-	static void Remove(char *);
-	// calltype: NearC
-	static void Rename(char *, char *);
-	// calltype: NearC
-	static unsigned long Checksum(char *);
-	long SetPath(char *);
-	long FileCreate(char *, int32_t);
-	long FileExists(char *);
-	/*+0x4*/   char szFilePath[260]; // 0x104 bytes
-	/*+0x108*/ int32_t Handle;
-private:
-	/*+0x10c*/ int32_t ShouldClose;
-};
 
 // Type: uint32_t;
 
@@ -872,7 +799,9 @@ _T141:
 // FUNCTION: COPTER_D 0x00461629
 unsigned long  CGameApp::TickGame() {
 	/*bp-0x4*/   long lElapsedMilliSeconds;
-// StaticLocal: 0x00599294	static long lFramesSinceLastSecond = 0;
+	// StaticLocal: 0x00599294
+	static long lFramesSinceLastSecond = 0;
+	;
 
 // LINE 222:
 	__asm        inc    lFramesSinceLastSecond;
@@ -949,7 +878,8 @@ _Tf9:
 	__asm        mov    lElapsedMilliSeconds, eax;
 	__asm        jmp    _T10a;
 
-	lElapsedMilliSeconds = None;
+	__asm        mov    eax, [ebp-0x2C];
+	__asm        mov    lElapsedMilliSeconds, eax;
 // LINE 224:
 _T10a:
 	__asm        cmp    lElapsedMilliSeconds, 0x3E8;
@@ -1122,7 +1052,7 @@ void  CGameApp::ComposeFrame() {
 	__asm        add    esp, 8;
 	__asm        jmp    _Tf0;
 
-	None = 0x0;
+	__asm        mov    byte ptr [ebp-0x228], 0;
 _Tf0:
 	__asm        jmp    near ptr 0x00461998;
 
@@ -1135,7 +1065,7 @@ _Tf0:
 	__asm        mov    dword ptr [ebp-0x11C], 1;
 	__asm        jmp    _T123;
 _T119:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x11C], 0;
 _T123:
 	__asm        mov    dword ptr [ebp-0x22C], 0x590468;
 	__asm        cmp    dword ptr [ebp-0x124], 0xFFFFFFFF;
@@ -1189,7 +1119,9 @@ _T1a5:
 _T1f2:
 	this-><CGameApp+0x42c0:4> = 0x0;
 _T202:
-	None = this-><CGameApp+0x42c0:4>;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x42C0];
+	__asm        mov    [ebp-0x238], eax;
 // LINE 282:
 	__asm        mov    eax, [ebp-0x238];
 	__asm        mov    dword ptr [eax+0x24], 0;
@@ -1301,7 +1233,7 @@ _T33d:
 	__asm        cmp    dword ptr [eax+0xB4], 0;
 	__asm        jne    _T4bc;
 // LINE 331:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-4], 0;
 // LINE 339:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -1384,7 +1316,7 @@ _T47c:
 _L56471:
 _L56471:
 _T4b0:
-	None = 0xffffffff;
+	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 // LINE 364:
 	__asm        jmp    _T4fe;
 _T4bc:
@@ -1430,7 +1362,7 @@ _T536:
 	__asm        ja     _T582;
 
 	__asm        mov    eax, [ebp-0x24C];
-	__asm        jmp    SwitchPointers4595193[0][eax*4];
+	__asm        jmp    _Switch_556[0][eax*4];
 // Switch pointers
 // LINE 385:
 _T582:
@@ -1478,10 +1410,16 @@ _T608:
 
 // FUNCTION: COPTER_D 0x00461eb9
 void  CGameApp::ComposePlayFrame() {
-// StaticLocal: 0x005992a0	static long lFrameCount = 17;
-// StaticLocal: 0x00599298	static long lLastLoopTickCount = 0;
+	// StaticLocal: 0x005992a0
+	static long lFrameCount = 17;
+	;
+	// StaticLocal: 0x00599298
+	static long lLastLoopTickCount = 0;
+	;
 	/*bp-0x4*/   long lBuildingID;
-// StaticLocal: 0x0059929c	static long lThisLoopTickCount = 0;
+	// StaticLocal: 0x0059929c
+	static long lThisLoopTickCount = 0;
+	;
 
 // LINE 406:
 	__asm        inc    lFrameCount;
@@ -2498,7 +2436,9 @@ _T733:
 // LINE 549:
 // Block start:
 	/*bp-0x4*/   int32_t bCheckForCommandLineCheatCodes;
-// StaticLocal: 0x005992a4	static int32_t bDoneJoystickChangeCheckAlready = 0;
+	// StaticLocal: 0x005992a4
+	static int32_t bDoneJoystickChangeCheckAlready = 0;
+	;
 	bCheckForCommandLineCheatCodes = 0x0;
 // LINE 551:
 	this-><CGameApp+0x28:4> = 0x0;
@@ -3698,7 +3638,7 @@ _T16d:
 	__asm        ja     _T1a5;
 
 	__asm        mov    eax, [ebp-0x34];
-	__asm        jmp    SwitchPointers4603262[0][eax*4];
+	__asm        jmp    _Switch_185[0][eax*4];
 // Switch pointers
 // LINE 781:
 _T1a5:
@@ -5378,7 +5318,7 @@ void  CGameApp::NotifyUserOfGraduation() {
 	/*bp-0x18c*/ /*packed*/ class DigitalSound *tempNotificationSound;
 
 
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x19C], 0;
 // LINE 1222:
 	__asm        push   0;
 	__asm        push   0x226;
@@ -5546,7 +5486,7 @@ _T255:
 	__asm        mov    [ebp-0x194], eax;
 	__asm        jmp    _T282;
 _T278:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x194], 0;
 _T282:
 	__asm        mov    dword ptr [ebp-0x198], 0;
 	__asm        jmp    near ptr 0x00465312;
@@ -7178,7 +7118,7 @@ int  CGameApp::StartVideoForCitySelection(long lCurrentCitySelection) {
 	__asm        add    esp, 8;
 	__asm        jmp    _Tae;
 
-	None = 0x0;
+	__asm        mov    byte ptr [ebp-0x318], 0;
 _Tae:
 	__asm        jmp    near ptr 0x00466660;
 
@@ -7191,7 +7131,7 @@ _Tae:
 	__asm        mov    dword ptr [ebp-0x20C], 1;
 	__asm        jmp    _Te1;
 _Td7:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x20C], 0;
 _Te1:
 	__asm        mov    dword ptr [ebp-0x31C], 0x590468;
 	__asm        cmp    dword ptr [ebp-0x214], 0xFFFFFFFF;
@@ -7415,7 +7355,7 @@ int  CGameApp::StartVideoForMainMenu() {
 	__asm        add    esp, 8;
 	__asm        jmp    _T75;
 
-	None = 0x0;
+	__asm        mov    byte ptr [ebp-0x214], 0;
 _T75:
 	__asm        jmp    near ptr 0x004669E2;
 
@@ -7428,7 +7368,7 @@ _T75:
 	__asm        mov    dword ptr [ebp-0x108], 1;
 	__asm        jmp    _Ta8;
 _T9e:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x108], 0;
 _Ta8:
 	__asm        mov    dword ptr [ebp-0x218], 0x590468;
 	__asm        cmp    dword ptr [ebp-0x110], 0xFFFFFFFF;

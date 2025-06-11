@@ -3492,7 +3492,7 @@ _T352:
 	__asm        ja     _T341;
 
 	__asm        mov    eax, [ebp-0x7C];
-	__asm        jmp    SwitchPointers5401034[0][eax*4];
+	__asm        jmp    _Switch_369[0][eax*4];
 // Switch pointers
 // LINE 1333:
 _T379:
@@ -3722,7 +3722,7 @@ _Ta2:
 	__asm        ja     _Tca;
 
 	__asm        mov    eax, [ebp-0x38];
-	__asm        jmp    SwitchPointers5401676[0][eax*4];
+	__asm        jmp    _Switch_b6[0][eax*4];
 // Switch pointers
 // LINE 1445:
 _Tca:
@@ -4199,11 +4199,7 @@ _T20f:
 _T22d:
 	__asm        inc    S_fire_count;
 // LINE 1695:
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x98];
-	__asm        lea    eax, S_cfdata[0].cptr[eax*8];
-	__asm        mov    ecx, fd;
-	__asm        mov    [ecx+0x98], eax;
+	fd->cfd = BinaryOp(add, BinaryOp(mul, fd->cfd, Const(8)), Const(6733456));
 // LINE 1697:
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x94];

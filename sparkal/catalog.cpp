@@ -4,6 +4,32 @@
 
 // Type: char *;
 
+// Type: int32_t;
+
+// Type: /*unpacked*/ class GraphicWindow (forward reference);
+// GraphicWindow Class implementation not found
+
+// Type: /*packed*/ class GraphicWindowOwner (forward reference);
+// VTABLE: COPTER_D 0x00590f2c
+class GraphicWindowOwner{ // packed(0x4 bytes) TI: 0x1647
+public:
+	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
+};
+
+// Type: /*packed*/ class Random;
+class Random{ // packed(0xe4 bytes) TI: 0x20ab
+public:
+	void Random(unsigned long);
+	unsigned long operator()(unsigned long);
+	void seed(unsigned long);
+protected:
+	/*+0x0*/   unsigned long table[55]; // 0xdc bytes
+	/*+0xdc*/  uint32_t index1;
+	/*+0xe0*/  uint32_t index2;
+};
+
+// Type: void;
+
 // Type: /*packed*/ class CatalogWindow (forward reference);
 // VTABLE: COPTER_D 0x00590ce8
 class CatalogWindow : public GraphicWindow
@@ -78,32 +104,6 @@ protected:
 	/*+0x2a6*/ /*packed*/ class basic_string<char> sEquipmentAddress1; // 0x8 bytes
 	/*+0x2ae*/ /*packed*/ class basic_string<char> sEquipmentAddress2; // 0x8 bytes
 };
-
-// Type: int32_t;
-
-// Type: /*unpacked*/ class GraphicWindow (forward reference);
-// GraphicWindow Class implementation not found
-
-// Type: /*packed*/ class GraphicWindowOwner (forward reference);
-// VTABLE: COPTER_D 0x00590f2c
-class GraphicWindowOwner{ // packed(0x4 bytes) TI: 0x1647
-public:
-	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
-};
-
-// Type: /*packed*/ class Random;
-class Random{ // packed(0xe4 bytes) TI: 0x20ab
-public:
-	void Random(unsigned long);
-	unsigned long operator()(unsigned long);
-	void seed(unsigned long);
-protected:
-	/*+0x0*/   unsigned long table[55]; // 0xdc bytes
-	/*+0xdc*/  uint32_t index1;
-	/*+0xe0*/  uint32_t index2;
-};
-
-// Type: void;
 
 // Type: /*packed*/ class basic_string<char>;
 class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
@@ -1257,7 +1257,8 @@ _Tdf6:
 	__asm        call   Random::seed;
 	__asm        jmp    near ptr 0x00475799;
 
-	None = SZ_CATALOG_IMAGE_FILE_NAME;
+	__asm        mov    eax, SZ_CATALOG_IMAGE_FILE_NAME;
+	__asm        mov    [ebp-0x104], eax;
 // LINE 70:
 	__asm        jmp    near ptr 0x004757A9;
 
@@ -2505,7 +2506,7 @@ _T40d:
 	__asm        mov    [ebp-0x206C], eax;
 	__asm        jmp    _T458;
 _T44e:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x206C], 0;
 _T458:
 	__asm        lea    ecx, sText.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
@@ -3458,7 +3459,7 @@ _Tac2:
 	__asm        mov    [ebp-0x195C], eax;
 	__asm        jmp    _Tb0d;
 _Tb03:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x195C], 0;
 _Tb0d:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x226;
@@ -3618,7 +3619,7 @@ _Td2f:
 	__asm        mov    [ebp-0x2974], eax;
 	__asm        jmp    _Td7a;
 _Td70:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x2974], 0;
 _Td7a:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x236;
@@ -3778,7 +3779,7 @@ _Tf9c:
 	__asm        mov    [ebp-0x398C], eax;
 	__asm        jmp    _Tfe7;
 _Tfdd:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x398C], 0;
 _Tfe7:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x246;
@@ -5009,7 +5010,7 @@ _T22d5:
 	__asm        mov    [ebp-0x49A4], eax;
 	__asm        jmp    _T2320;
 _T2316:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x49A4], 0;
 _T2320:
 	__asm        mov    eax, i;
 	__asm        lea    ecx, [ebp+eax*8-0x17C];
@@ -5932,9 +5933,13 @@ _T3146:
 // FUNCTION: COPTER_D 0x00479dbb
 void CatalogWindow::DrawCurrentEquipmentSelection() {
 	/*bp-0x18*/  unsigned long lIndexArray[6]; // 0x18 bytes
-// StaticLocal: 0x00599834	static int32_t nColorArrayCurrentIndex = 0;
+	// StaticLocal: 0x00599834
+	static int32_t nColorArrayCurrentIndex = 0;
+	;
 	/*bp-0x1c*/  const int32_t nColorArraySize;
-// StaticLocal: 0x00599838	static int32_t nColorDirection = 1;
+	// StaticLocal: 0x00599838
+	static int32_t nColorDirection = 1;
+	;
 	/*bp-0x2c*/  /*packed*/ class MRect rectOutline; // 0x10 bytes
 
 // LINE 397:
@@ -6552,7 +6557,7 @@ _T1ea:
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        jmp    _T20b;
 _T204:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x4C], 0;
 _T20b:
 	__asm        mov    eax, sMainGraphicFileName;
 	__asm        mov    eax, [eax+4];
@@ -6754,7 +6759,7 @@ _T4a1:
 	__asm        mov    [ebp-0x80], eax;
 	__asm        jmp    _T4c8;
 _T4c1:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x80], 0;
 _T4c8:
 	__asm        mov    eax, sTabFileName;
 	__asm        mov    eax, [eax+4];

@@ -8,9 +8,6 @@
 
 // Type: void;
 
-// Type: /*unpacked*/ class CGameApp (forward reference);
-// CGameApp Class implementation not found
-
 // Type: char;
 
 // Type: /*packed*/ class Version;
@@ -1514,7 +1511,7 @@ _Ta04:
 	__asm        mov    [ebp-0x290], eax;
 	__asm        jmp    _Ta48;
 _Ta3e:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x290], 0;
 _Ta48:
 	__asm        mov    dword ptr [ebp-0x294], 0;
 	__asm        jmp    near ptr 0x0043ECFC;
@@ -1613,21 +1610,24 @@ int  CGameApp::CreateMessageBox(long lID, /*packed*/ class basic_string<char>& s
 	__asm        mov    byte ptr [ebp-0x1E], 0x4D;
 	__asm        jmp    near ptr 0x0043EE4A;
 
-	reinterpret_cast<uint32_t>(colorMessageFont.Blue) = None;
+	__asm        mov    eax, [ebp-0x20];
+	__asm        mov    reinterpret_cast<uint32_t>(colorMessageFont.Blue), eax;
 // LINE 200:
 	__asm        mov    byte ptr [ebp-0x24], 0xDA;
 	__asm        mov    byte ptr [ebp-0x23], 0xDA;
 	__asm        mov    byte ptr [ebp-0x22], 0xDA;
 	__asm        jmp    near ptr 0x0043EE61;
 
-	reinterpret_cast<uint32_t>(colorButtonFont.Blue) = None;
+	__asm        mov    eax, [ebp-0x24];
+	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFont.Blue), eax;
 // LINE 201:
 	__asm        mov    byte ptr [ebp-0x28], 0xF0;
 	__asm        mov    byte ptr [ebp-0x27], 0xFA;
 	__asm        mov    byte ptr [ebp-0x26], 0xFF;
 	__asm        jmp    near ptr 0x0043EE78;
 
-	reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue) = None;
+	__asm        mov    eax, [ebp-0x28];
+	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue), eax;
 // LINE 202:
 	__asm        jmp    _T3f8;
 // LINE 204:
@@ -1653,21 +1653,24 @@ int  CGameApp::CreateMessageBox(long lID, /*packed*/ class basic_string<char>& s
 	__asm        mov    byte ptr [ebp-0x2A], 0x39;
 	__asm        jmp    near ptr 0x0043EEDD;
 
-	reinterpret_cast<uint32_t>(colorMessageFont.Blue) = None;
+	__asm        mov    eax, [ebp-0x2C];
+	__asm        mov    reinterpret_cast<uint32_t>(colorMessageFont.Blue), eax;
 // LINE 209:
 	__asm        mov    byte ptr [ebp-0x30], 0x4A;
 	__asm        mov    byte ptr [ebp-0x2F], 0x95;
 	__asm        mov    byte ptr [ebp-0x2E], 0xC0;
 	__asm        jmp    near ptr 0x0043EEF4;
 
-	reinterpret_cast<uint32_t>(colorButtonFont.Blue) = None;
+	__asm        mov    eax, [ebp-0x30];
+	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFont.Blue), eax;
 // LINE 210:
 	__asm        mov    byte ptr [ebp-0x34], 0x70;
 	__asm        mov    byte ptr [ebp-0x33], 0xCA;
 	__asm        mov    byte ptr [ebp-0x32], 0xEA;
 	__asm        jmp    near ptr 0x0043EF0B;
 
-	reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue) = None;
+	__asm        mov    eax, [ebp-0x34];
+	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue), eax;
 // LINE 212:
 	__asm        jmp    _T1cd;
 // LINE 213:
@@ -1683,21 +1686,24 @@ _T170:
 	__asm        mov    byte ptr [ebp-0x36], 0x41;
 	__asm        jmp    near ptr 0x0043EF3F;
 
-	reinterpret_cast<uint32_t>(colorMessageFont.Blue) = None;
+	__asm        mov    eax, [ebp-0x38];
+	__asm        mov    reinterpret_cast<uint32_t>(colorMessageFont.Blue), eax;
 // LINE 217:
 	__asm        mov    byte ptr [ebp-0x3C], 0x30;
 	__asm        mov    byte ptr [ebp-0x3B], 0x7A;
 	__asm        mov    byte ptr [ebp-0x3A], 0xAA;
 	__asm        jmp    near ptr 0x0043EF56;
 
-	reinterpret_cast<uint32_t>(colorButtonFont.Blue) = None;
+	__asm        mov    eax, [ebp-0x3C];
+	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFont.Blue), eax;
 // LINE 218:
 	__asm        mov    byte ptr [ebp-0x40], 0x70;
 	__asm        mov    byte ptr [ebp-0x3F], 0xCA;
 	__asm        mov    byte ptr [ebp-0x3E], 0xEA;
 	__asm        jmp    near ptr 0x0043EF6D;
 
-	reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue) = None;
+	__asm        mov    eax, [ebp-0x40];
+	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue), eax;
 // LINE 220:
 _T1cd:
 	__asm        jmp    _T3f8;
@@ -1713,21 +1719,24 @@ _T1cd:
 	__asm        mov    byte ptr [ebp-0x42], 0x4A;
 	__asm        jmp    near ptr 0x0043EFA1;
 
-	reinterpret_cast<uint32_t>(colorMessageFont.Blue) = None;
+	__asm        mov    eax, [ebp-0x44];
+	__asm        mov    reinterpret_cast<uint32_t>(colorMessageFont.Blue), eax;
 // LINE 226:
 	__asm        mov    byte ptr [ebp-0x48], 0x44;
 	__asm        mov    byte ptr [ebp-0x47], 0x8A;
 	__asm        mov    byte ptr [ebp-0x46], 0xAC;
 	__asm        jmp    near ptr 0x0043EFB8;
 
-	reinterpret_cast<uint32_t>(colorButtonFont.Blue) = None;
+	__asm        mov    eax, [ebp-0x48];
+	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFont.Blue), eax;
 // LINE 227:
 	__asm        mov    byte ptr [ebp-0x4C], 0x94;
 	__asm        mov    byte ptr [ebp-0x4B], 0xD6;
 	__asm        mov    byte ptr [ebp-0x4A], 0xFF;
 	__asm        jmp    near ptr 0x0043EFCF;
 
-	reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue) = None;
+	__asm        mov    eax, [ebp-0x4C];
+	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue), eax;
 // LINE 228:
 	__asm        jmp    _T3f8;
 // LINE 230:
@@ -1742,21 +1751,24 @@ _T1cd:
 	__asm        mov    byte ptr [ebp-0x4E], 0x4A;
 	__asm        jmp    near ptr 0x0043F003;
 
-	reinterpret_cast<uint32_t>(colorMessageFont.Blue) = None;
+	__asm        mov    eax, [ebp-0x50];
+	__asm        mov    reinterpret_cast<uint32_t>(colorMessageFont.Blue), eax;
 // LINE 234:
 	__asm        mov    byte ptr [ebp-0x54], 0x40;
 	__asm        mov    byte ptr [ebp-0x53], 0x89;
 	__asm        mov    byte ptr [ebp-0x52], 0xB5;
 	__asm        jmp    near ptr 0x0043F01A;
 
-	reinterpret_cast<uint32_t>(colorButtonFont.Blue) = None;
+	__asm        mov    eax, [ebp-0x54];
+	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFont.Blue), eax;
 // LINE 235:
 	__asm        mov    byte ptr [ebp-0x58], 0x70;
 	__asm        mov    byte ptr [ebp-0x57], 0xCA;
 	__asm        mov    byte ptr [ebp-0x56], 0xEA;
 	__asm        jmp    near ptr 0x0043F031;
 
-	reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue) = None;
+	__asm        mov    eax, [ebp-0x58];
+	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue), eax;
 // LINE 236:
 	__asm        jmp    _T3f8;
 // LINE 238:
@@ -1771,21 +1783,24 @@ _T1cd:
 	__asm        mov    byte ptr [ebp-0x5A], 0x4A;
 	__asm        jmp    near ptr 0x0043F065;
 
-	reinterpret_cast<uint32_t>(colorMessageFont.Blue) = None;
+	__asm        mov    eax, [ebp-0x5C];
+	__asm        mov    reinterpret_cast<uint32_t>(colorMessageFont.Blue), eax;
 // LINE 242:
 	__asm        mov    byte ptr [ebp-0x60], 0x40;
 	__asm        mov    byte ptr [ebp-0x5F], 0x89;
 	__asm        mov    byte ptr [ebp-0x5E], 0xB5;
 	__asm        jmp    near ptr 0x0043F07C;
 
-	reinterpret_cast<uint32_t>(colorButtonFont.Blue) = None;
+	__asm        mov    eax, [ebp-0x60];
+	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFont.Blue), eax;
 // LINE 243:
 	__asm        mov    byte ptr [ebp-0x64], 0x70;
 	__asm        mov    byte ptr [ebp-0x63], 0xCA;
 	__asm        mov    byte ptr [ebp-0x62], 0xEA;
 	__asm        jmp    near ptr 0x0043F093;
 
-	reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue) = None;
+	__asm        mov    eax, [ebp-0x64];
+	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue), eax;
 // LINE 244:
 	__asm        jmp    _T3f8;
 // LINE 246:
@@ -1800,21 +1815,24 @@ _T1cd:
 	__asm        mov    byte ptr [ebp-0x66], 0x1F;
 	__asm        jmp    near ptr 0x0043F0C7;
 
-	reinterpret_cast<uint32_t>(colorMessageFont.Blue) = None;
+	__asm        mov    eax, [ebp-0x68];
+	__asm        mov    reinterpret_cast<uint32_t>(colorMessageFont.Blue), eax;
 // LINE 250:
 	__asm        mov    byte ptr [ebp-0x6C], 0xA;
 	__asm        mov    byte ptr [ebp-0x6B], 0x85;
 	__asm        mov    byte ptr [ebp-0x6A], 0xDA;
 	__asm        jmp    near ptr 0x0043F0DE;
 
-	reinterpret_cast<uint32_t>(colorButtonFont.Blue) = None;
+	__asm        mov    eax, [ebp-0x6C];
+	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFont.Blue), eax;
 // LINE 251:
 	__asm        mov    byte ptr [ebp-0x70], 0xD3;
 	__asm        mov    byte ptr [ebp-0x6F], 0xDA;
 	__asm        mov    byte ptr [ebp-0x6E], 0xFF;
 	__asm        jmp    near ptr 0x0043F0F5;
 
-	reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue) = None;
+	__asm        mov    eax, [ebp-0x70];
+	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue), eax;
 // LINE 254:
 _T355:
 	szImageFileNameToUse = SZ_ABOUT_BOX_IMAGE_FILE_NAME_0;
@@ -1828,21 +1846,24 @@ _T355:
 	__asm        mov    byte ptr [ebp-0x72], 0x1F;
 	__asm        jmp    near ptr 0x0043F124;
 
-	reinterpret_cast<uint32_t>(colorMessageFont.Blue) = None;
+	__asm        mov    eax, [ebp-0x74];
+	__asm        mov    reinterpret_cast<uint32_t>(colorMessageFont.Blue), eax;
 // LINE 258:
 	__asm        mov    byte ptr [ebp-0x78], 0xA;
 	__asm        mov    byte ptr [ebp-0x77], 0x85;
 	__asm        mov    byte ptr [ebp-0x76], 0xDA;
 	__asm        jmp    near ptr 0x0043F13B;
 
-	reinterpret_cast<uint32_t>(colorButtonFont.Blue) = None;
+	__asm        mov    eax, [ebp-0x78];
+	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFont.Blue), eax;
 // LINE 259:
 	__asm        mov    byte ptr [ebp-0x7C], 0xD3;
 	__asm        mov    byte ptr [ebp-0x7B], 0xDA;
 	__asm        mov    byte ptr [ebp-0x7A], 0xFF;
 	__asm        jmp    near ptr 0x0043F152;
 
-	reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue) = None;
+	__asm        mov    eax, [ebp-0x7C];
+	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue), eax;
 // LINE 260:
 	__asm        jmp    _T3f8;
 _T3b7:
@@ -1851,7 +1872,7 @@ _T3b7:
 	__asm        ja     _T355;
 
 	__asm        mov    eax, [ebp-0x9C];
-	__asm        jmp    SwitchPointers4452734[0][eax*4];
+	__asm        jmp    _Switch_3d8[0][eax*4];
 // Switch pointers
 // LINE 264:
 _T3f8:
@@ -1870,7 +1891,7 @@ _T3f8:
 	__asm        mov    [ebp-0x8C], eax;
 	__asm        jmp    _T43d;
 _T433:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x8C], 0;
 _T43d:
 	__asm        jmp    near ptr 0x0043F1E8;
 
@@ -2070,7 +2091,7 @@ _T179:
 	__asm        mov    [ebp-0x1034], eax;
 	__asm        jmp    _T1c4;
 _T1ba:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x1034], 0;
 _T1c4:
 	__asm        lea    ecx, sMessage.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
@@ -2175,7 +2196,7 @@ _T2cf:
 	__asm        mov    [ebp-0x1048], eax;
 	__asm        jmp    _T333;
 _T329:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x1048], 0;
 _T333:
 	__asm        lea    ecx, sMessage.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
@@ -2269,7 +2290,7 @@ _T43c:
 	__asm        mov    [ebp-0x105C], eax;
 	__asm        jmp    _T487;
 _T47d:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x105C], 0;
 _T487:
 	__asm        mov    eax, sMessage.reference;
 	__asm        dec    dword ptr [eax+0xC];
@@ -2420,7 +2441,7 @@ int  CGameApp::CreateCheatCodeEntryMessageBox() {
 	/*bp-0x10*/  /*packed*/ struct SparkalColor colorButtonFont;
 
 
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x34], 0;
 // LINE 308:
 	__asm        jmp    near ptr 0x0043F920;
 // LINE 309:
@@ -2433,21 +2454,24 @@ int  CGameApp::CreateCheatCodeEntryMessageBox() {
 	__asm        mov    byte ptr [ebp-0x12], 0x1F;
 	__asm        jmp    near ptr 0x0043F93B;
 
-	reinterpret_cast<uint32_t>(colorMessageFont.Blue) = None;
+	__asm        mov    eax, [ebp-0x14];
+	__asm        mov    reinterpret_cast<uint32_t>(colorMessageFont.Blue), eax;
 // LINE 314:
 	__asm        mov    byte ptr [ebp-0x18], 0xA;
 	__asm        mov    byte ptr [ebp-0x17], 0x85;
 	__asm        mov    byte ptr [ebp-0x16], 0xDA;
 	__asm        jmp    near ptr 0x0043F952;
 
-	reinterpret_cast<uint32_t>(colorButtonFont.Blue) = None;
+	__asm        mov    eax, [ebp-0x18];
+	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFont.Blue), eax;
 // LINE 315:
 	__asm        mov    byte ptr [ebp-0x1C], 0xD3;
 	__asm        mov    byte ptr [ebp-0x1B], 0xDA;
 	__asm        mov    byte ptr [ebp-0x1A], 0xFF;
 	__asm        jmp    near ptr 0x0043F969;
 
-	reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue) = None;
+	__asm        mov    eax, [ebp-0x1C];
+	__asm        mov    reinterpret_cast<uint32_t>(colorButtonFontHighlighted.Blue), eax;
 // LINE 322:
 	__asm        push   0xA8;
 	__asm        call   operator new;
@@ -2464,7 +2488,7 @@ int  CGameApp::CreateCheatCodeEntryMessageBox() {
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    _Ta0;
 _T99:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x38], 0;
 _Ta0:
 	__asm        or     dword ptr [ebp-0x34], 1;
 	__asm        push   0x10;
@@ -2490,7 +2514,7 @@ _Ta0:
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _Tfb;
 _Tf4:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x24], 0;
 _Tfb:
 	__asm        mov    dword ptr [ebp-0x28], 0;
 	__asm        jmp    near ptr 0x0043FA0F;
@@ -2661,7 +2685,7 @@ int  CGameApp::DoCheatCode(/*packed*/ class basic_string<char>& sCheatCodeString
 	/*bp-0x14*/  int32_t nReturnValue;
 
 
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x14C], 0;
 // LINE 353:
 	nReturnValue = 0x0;
 // LINE 354:
@@ -3654,7 +3678,7 @@ _Td8b:
 	__asm        mov    [ebp-0x144], eax;
 	__asm        jmp    _Tdb8;
 _Tdae:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x144], 0;
 _Tdb8:
 	__asm        mov    dword ptr [ebp-0x148], 0;
 	__asm        jmp    near ptr 0x00440994;
@@ -3864,7 +3888,7 @@ _T134:
 	__asm        mov    [ebp-0x8C], eax;
 	__asm        jmp    _T161;
 _T157:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x8C], 0;
 _T161:
 	__asm        mov    dword ptr [ebp-0x90], 0;
 	__asm        jmp    near ptr 0x00440CAF;
@@ -4027,7 +4051,7 @@ _T51:
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    _Tee;
 _Te7:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x50], 0;
 _Tee:
 	__asm        mov    eax, [ebp-0x50];
 	__asm        push   eax;
@@ -4206,7 +4230,8 @@ _T81:
 
 	__asm        jmp    near ptr 0x00441129;
 
-	None = SZ_PLAY_MENU_IMAGE_FILE_NAME;
+	__asm        mov    eax, SZ_PLAY_MENU_IMAGE_FILE_NAME;
+	__asm        mov    [ebp-0xA4], eax;
 // LINE 604:
 	__asm        jmp    near ptr 0x00441139;
 
@@ -4274,14 +4299,16 @@ _T198:
 	__asm        mov    byte ptr [ebp-0x6A], 0x4A;
 	__asm        jmp    near ptr 0x00441218;
 
-	reinterpret_cast<uint32_t>(tempUMWD.colorFont.Blue) = None;
+	__asm        mov    eax, [ebp-0x6C];
+	__asm        mov    reinterpret_cast<uint32_t>(tempUMWD.colorFont.Blue), eax;
 // LINE 611:
 	__asm        mov    byte ptr [ebp-0x70], 0xEA;
 	__asm        mov    byte ptr [ebp-0x6F], 0xEF;
 	__asm        mov    byte ptr [ebp-0x6E], 0x9A;
 	__asm        jmp    near ptr 0x0044122F;
 
-	reinterpret_cast<uint32_t>(tempUMWD.colorFontHighlighted.Blue) = None;
+	__asm        mov    eax, [ebp-0x70];
+	__asm        mov    reinterpret_cast<uint32_t>(tempUMWD.colorFontHighlighted.Blue), eax;
 // LINE 614:
 	__asm        cmp    gCurrentCityType, 1;
 	__asm        jne    _T1f6;
@@ -4351,7 +4378,7 @@ _T21a:
 	__asm        mov    [ebp-0x98], eax;
 	__asm        jmp    _T2d6;
 _T2cc:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x98], 0;
 _T2d6:
 	__asm        push   1;
 	__asm        mov    eax, [ebp-0x98];
@@ -4454,7 +4481,7 @@ _T5c:
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    _T95;
 _T8e:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x20], 0;
 _T95:
 	__asm        jmp    near ptr 0x0044147F;
 
@@ -4620,7 +4647,7 @@ _T5c:
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    _T95;
 _T8e:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x20], 0;
 _T95:
 	__asm        jmp    near ptr 0x00441661;
 
@@ -4821,7 +4848,7 @@ _T5c:
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    _T95;
 _T8e:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x50], 0;
 _T95:
 	__asm        jmp    near ptr 0x00441898;
 
@@ -5028,7 +5055,7 @@ void  CGameApp::CreateCitySettingsWindow() {
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    _T4e;
 _T47:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x1C], 0;
 _T4e:
 	__asm        jmp    near ptr 0x00441ADC;
 
@@ -5131,7 +5158,7 @@ void  CGameApp::CreateControlDisplayWindow() {
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    _T4e;
 _T47:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x1C], 0;
 _T4e:
 	__asm        jmp    near ptr 0x00441C13;
 
@@ -5214,7 +5241,7 @@ void  CGameApp::CreateCheckupWindow() {
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    _T4e;
 _T47:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x1C], 0;
 _T4e:
 	__asm        jmp    near ptr 0x00441D11;
 

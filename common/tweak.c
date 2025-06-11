@@ -285,8 +285,7 @@ _T38:
 	__asm        test   eax, eax;
 	__asm        je     _Tbd;
 // LINE 177:
-	__asm        lea    eax, szTemp[0];
-	__asm        mov    pszFile, eax;
+	pszFile = szTemp[0];
 // LINE 178:
 	__asm        jmp    _Tc3;
 // LINE 179:

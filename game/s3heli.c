@@ -354,13 +354,7 @@ void S3HeliInitInstance(/*packed*/ struct _HELI_DATA *hd) {
 	/*bp-0x48*/  int32_t shadobj;
 
 // LINE 490:
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        lea    eax, [ecx+eax*2];
-	__asm        lea    eax, S_helitype_data[0].num_initialized[eax*8];
-	__asm        mov    htd, eax;
+	htd = BinaryOp(add, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, hd->type, Const(4))), Const(2))), Const(8)), Const(5982584));
 // LINE 491:
 	__asm        mov    eax, hd;
 	__asm        sub    eax, 0x6BF1D0;
@@ -601,7 +595,7 @@ _T2ee:
 	__asm        ja     _T2a7;
 
 	__asm        mov    eax, [ebp-0x4C];
-	__asm        jmp    SwitchPointers5174466[0][eax*4];
+	__asm        jmp    _Switch_302[0][eax*4];
 // Switch pointers
 // LINE 560:
 _T326:
@@ -1448,13 +1442,7 @@ void S3HeliGenInit(/*packed*/ struct _HELI_DATA *hd, long mapx, long mapy) {
 	/*bp-0x10*/  /*packed*/ struct _HELI_TYPE_DATA *htd;
 
 // LINE 829:
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        lea    eax, [ecx+eax*2];
-	__asm        lea    eax, S_helitype_data[0].num_initialized[eax*8];
-	__asm        mov    htd, eax;
+	htd = BinaryOp(add, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, hd->type, Const(4))), Const(2))), Const(8)), Const(5982584));
 // LINE 832:
 	__asm        mov    heliidx, 0;
 	__asm        jmp    _T2f;
@@ -1969,13 +1957,7 @@ void S3HeliNextFrame(/*packed*/ struct _HELI_DATA *hd) {
 	/*bp-0x10c*/ int32_t normy;
 
 // LINE 1011:
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        lea    eax, [ecx+eax*2];
-	__asm        lea    eax, S_helitype_data[0].num_initialized[eax*8];
-	__asm        mov    htd, eax;
+	htd = BinaryOp(add, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, hd->type, Const(4))), Const(2))), Const(8)), Const(5982584));
 // LINE 1025:
 	__asm        mov    eax, htd;
 	__asm        mov    eax, [eax+4];
@@ -3869,13 +3851,7 @@ int32_t S3HeliControlInputs(/*packed*/ struct _HELI_DATA *hd) {
 	/*bp-0x24*/  /*packed*/ struct _HELI_TYPE_DATA *htd;
 
 // LINE 1689:
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        lea    eax, [ecx+eax*2];
-	__asm        lea    eax, S_helitype_data[0].num_initialized[eax*8];
-	__asm        mov    htd, eax;
+	htd = BinaryOp(add, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, hd->type, Const(4))), Const(2))), Const(8)), Const(5982584));
 // LINE 1699:
 	__asm        cmp    G_testmode, 1;
 	__asm        jne    _T43;
@@ -4729,13 +4705,7 @@ void S3HeliYawPitchRollSlide(/*packed*/ struct _HELI_DATA *hd) {
 	/*bp-0x50*/  int32_t max_pitch;
 
 // LINE 1932:
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        lea    eax, [ecx+eax*2];
-	__asm        lea    eax, S_helitype_data[0].num_initialized[eax*8];
-	__asm        mov    htd, eax;
+	htd = BinaryOp(add, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, hd->type, Const(4))), Const(2))), Const(8)), Const(5982584));
 // LINE 1935:
 	max_pitch = htd->max_pitch;
 // LINE 1938:
@@ -5529,13 +5499,7 @@ void S3HeliMoveY(/*packed*/ struct _HELI_DATA *hd) {
 	/*bp-0xc*/   /*packed*/ struct _HELI_TYPE_DATA *htd;
 
 // LINE 2182:
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        lea    eax, [ecx+eax*2];
-	__asm        lea    eax, S_helitype_data[0].num_initialized[eax*8];
-	__asm        mov    htd, eax;
+	htd = BinaryOp(add, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, hd->type, Const(4))), Const(2))), Const(8)), Const(5982584));
 // LINE 2187:
 	__asm        mov    eax, hd;
 	__asm        push   eax;
@@ -6288,13 +6252,7 @@ _Td1:
 	__asm        mov    ecx, 0x10;
 	__asm        rep movsd;
 // LINE 2440:
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        lea    eax, [ecx+eax*2];
-	__asm        lea    eax, S_helitype_data[0].num_initialized[eax*8];
-	__asm        mov    htd, eax;
+	htd = BinaryOp(add, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, hd->type, Const(4))), Const(2))), Const(8)), Const(5982584));
 // LINE 2441:
 	tmpmat[0][3] = htd->tlrotor_disp.x;
 // LINE 2442:
@@ -6671,13 +6629,7 @@ void S3HeliRopeAndBucket(/*packed*/ struct _HELI_DATA *hd, /*packed*/ struct _CE
 	/*bp-0x78*/  /*packed*/ struct VRview pos; // 0x58 bytes
 
 // LINE 2542:
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        lea    eax, [ecx+eax*2];
-	__asm        lea    eax, S_helitype_data[0].num_initialized[eax*8];
-	__asm        mov    htd, eax;
+	htd = BinaryOp(add, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, hd->type, Const(4))), Const(2))), Const(8)), Const(5982584));
 // LINE 2545:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1B8], 0;
@@ -7667,13 +7619,7 @@ void S3HeliRopeNextFrame(/*packed*/ struct _HELI_DATA *hd, int32_t gralt, /*pack
 // LINE 2906:
 	ropeload = 0x8;
 // LINE 2907:
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        lea    eax, [ecx+eax*2];
-	__asm        lea    eax, S_helitype_data[0].num_initialized[eax*8];
-	__asm        mov    htd, eax;
+	htd = BinaryOp(add, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, hd->type, Const(4))), Const(2))), Const(8)), Const(5982584));
 // LINE 2910:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x1B0], 0;
@@ -8769,19 +8715,9 @@ int32_t S3HeliGetDeflection(/*packed*/ struct _HELI_DATA *hd, /*packed*/ struct 
 	__asm        shl    eax, 2;
 	__asm        mov    deltaz, eax;
 // LINE 3671:
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        mov    eax, [eax+0x18];
-	__asm        mov    ecx, deltax;
-	__asm        lea    eax, [eax+ecx*2];
-	__asm        mov    fx, eax;
+	fx = BinaryOp(add, hd->dyheli->loc.x, BinaryOp(mul, deltax, Const(2)));
 // LINE 3672:
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        mov    eax, [eax+0x20];
-	__asm        mov    ecx, deltaz;
-	__asm        lea    eax, [eax+ecx*2];
-	__asm        mov    fz, eax;
+	fz = BinaryOp(add, hd->dyheli->loc.z, BinaryOp(mul, deltaz, Const(2)));
 // LINE 3675:
 	lcptr = 0x0;
 // LINE 3680:
@@ -8841,9 +8777,7 @@ _Ted:
 	__asm        jmp    _T5d;
 // LINE 3698:
 _Tf2:
-	__asm        mov    eax, maxradius;
-	__asm        mov    ecx, alt;
-	__asm        mov    [ecx], eax;
+	alt[0] = maxradius;
 // LINE 3701:
 	__asm        cmp    i, 0x50;
 	__asm        jne    _T10b;
@@ -9914,13 +9848,7 @@ void S3HeliTurbulence(/*packed*/ struct _HELI_DATA *hd) {
 	/*bp-0x30*/  int32_t tfactor;
 
 // LINE 4292:
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        lea    eax, [ecx+eax*2];
-	__asm        lea    eax, S_helitype_data[0].num_initialized[eax*8];
-	__asm        mov    htd, eax;
+	htd = BinaryOp(add, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, hd->type, Const(4))), Const(2))), Const(8)), Const(5982584));
 // LINE 4294:
 	G_camera_targ2firey = 0x0;
 // LINE 4298:
@@ -10245,13 +10173,7 @@ void S3HeliSmokeTrail(/*packed*/ struct _HELI_DATA *hd) {
 	/*bp-0x68*/  /*packed*/ struct _HELI_TYPE_DATA *htd;
 
 // LINE 4417:
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        lea    eax, [ecx+eax*2];
-	__asm        lea    eax, S_helitype_data[0].num_initialized[eax*8];
-	__asm        mov    htd, eax;
+	htd = BinaryOp(add, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, hd->type, Const(4))), Const(2))), Const(8)), Const(5982584));
 // LINE 4419:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x1C];
@@ -11302,13 +11224,7 @@ int32_t S3HeliGetRepairRate(/*packed*/ struct _HELI_DATA *hd) {
 	/*bp-0x4*/   /*packed*/ struct _HELI_TYPE_DATA *htd;
 
 // LINE 4763:
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        lea    eax, [ecx+eax*2];
-	__asm        lea    eax, S_helitype_data[0].num_initialized[eax*8];
-	__asm        mov    htd, eax;
+	htd = BinaryOp(add, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, hd->type, Const(4))), Const(2))), Const(8)), Const(5982584));
 // LINE 4764:
 	__asm        mov    eax, htd;
 	__asm        mov    eax, [eax+0x50];
@@ -11321,13 +11237,7 @@ int32_t S3HeliGetFuelRate(/*packed*/ struct _HELI_DATA *hd) {
 	/*bp-0x4*/   /*packed*/ struct _HELI_TYPE_DATA *htd;
 
 // LINE 4771:
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        lea    eax, [ecx+eax*2];
-	__asm        lea    eax, S_helitype_data[0].num_initialized[eax*8];
-	__asm        mov    htd, eax;
+	htd = BinaryOp(add, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, hd->type, Const(4))), Const(2))), Const(8)), Const(5982584));
 // LINE 4772:
 	__asm        mov    eax, htd;
 	__asm        mov    eax, [eax+0x54];
@@ -11493,13 +11403,7 @@ int32_t S3HeliGetMaximumDamage(/*packed*/ struct _HELI_DATA *hd) {
 	/*bp-0x4*/   /*packed*/ struct _HELI_TYPE_DATA *htd;
 
 // LINE 4858:
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        lea    eax, [ecx+eax*2];
-	__asm        lea    eax, S_helitype_data[0].num_initialized[eax*8];
-	__asm        mov    htd, eax;
+	htd = BinaryOp(add, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, hd->type, Const(4))), Const(2))), Const(8)), Const(5982584));
 // LINE 4859:
 	__asm        mov    eax, htd;
 	__asm        mov    eax, [eax+0x4C];
@@ -11521,13 +11425,7 @@ int32_t S3HeliGetMaximumFuel(/*packed*/ struct _HELI_DATA *hd) {
 	/*bp-0x4*/   /*packed*/ struct _HELI_TYPE_DATA *htd;
 
 // LINE 4875:
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        lea    eax, [ecx+eax*2];
-	__asm        lea    eax, S_helitype_data[0].num_initialized[eax*8];
-	__asm        mov    htd, eax;
+	htd = BinaryOp(add, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, hd->type, Const(4))), Const(2))), Const(8)), Const(5982584));
 // LINE 4876:
 	__asm        mov    eax, htd;
 	__asm        mov    eax, [eax+0x40];
@@ -12192,7 +12090,7 @@ _T4b8:
 	__asm        ja     _T4e0;
 
 	__asm        mov    eax, [ebp-0x70];
-	__asm        jmp    SwitchPointers5209542[0][eax*4];
+	__asm        jmp    _Switch_4cc[0][eax*4];
 // Switch pointers
 // LINE 5115:
 _T4e0:
@@ -12441,7 +12339,7 @@ _Te6:
 	__asm        ja     _T10e;
 
 	__asm        mov    eax, [ebp-0x34];
-	__asm        jmp    SwitchPointers5210231[0][eax*4];
+	__asm        jmp    _Switch_fa[0][eax*4];
 // Switch pointers
 // LINE 5274:
 _T10e:
@@ -12677,12 +12575,7 @@ long S3HeliGetNewValue(long lHeliType) {
 	/*bp-0x4*/   /*packed*/ struct _HELI_TYPE_DATA *htd;
 
 // LINE 5420:
-	__asm        mov    eax, lHeliType;
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        lea    eax, [ecx+eax*2];
-	__asm        lea    eax, S_helitype_data[0].num_initialized[eax*8];
-	__asm        mov    htd, eax;
+	htd = BinaryOp(add, BinaryOp(mul, BinaryOp(add, lHeliType, BinaryOp(mul, BinaryOp(add, lHeliType, BinaryOp(mul, lHeliType, Const(4))), Const(2))), Const(8)), Const(5982584));
 // LINE 5422:
 	__asm        cmp    htd, 0;
 	__asm        je     _T33;
@@ -12711,12 +12604,7 @@ long S3HeliGetCurrentValue(long lHeliType) {
 	__asm        add    esp, 4;
 	__asm        mov    hd, eax;
 // LINE 5440:
-	__asm        mov    eax, lHeliType;
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        lea    eax, [ecx+eax*2];
-	__asm        lea    eax, S_helitype_data[0].num_initialized[eax*8];
-	__asm        mov    htd, eax;
+	htd = BinaryOp(add, BinaryOp(mul, BinaryOp(add, lHeliType, BinaryOp(mul, BinaryOp(add, lHeliType, BinaryOp(mul, lHeliType, Const(4))), Const(2))), Const(8)), Const(5982584));
 // LINE 5443:
 	__asm        cmp    hd, 0;
 	__asm        je     _T7e;
@@ -13149,7 +13037,7 @@ _T197:
 	__asm        ja     _T1ef;
 
 	__asm        mov    eax, [ebp-8];
-	__asm        jmp    SwitchPointers5212158[0][eax*4];
+	__asm        jmp    _Switch_1ab[0][eax*4];
 // Switch pointers
 // LINE 5676:
 _T1ef:

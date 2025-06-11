@@ -4,6 +4,8 @@
 
 // Type: char *;
 
+// Type: void;
+
 // Type: /*packed*/ struct CommandSystem (forward reference);
 struct CommandSystem{ // packed(0xaa8 bytes) TI: 0x12e4
 	/*+0x0*/   /*packed*/ struct Command keyboardCommands[100]; // 0xc8 bytes
@@ -28,8 +30,6 @@ struct CommandSystem{ // packed(0xaa8 bytes) TI: 0x12e4
 	long GetJoystickCommandValue(int32_t);
 	void PollJoysticksForCommands();
 };
-
-// Type: void;
 
 // Type: int32_t;
 
@@ -481,7 +481,8 @@ _Tb8:
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _T103;
 _Tfd:
-	None = None;
+	__asm        mov    eax, [ebp-0x1C];
+	__asm        mov    [ebp-0x24], eax;
 _T103:
 	__asm        jmp    near ptr 0x0048B3B8;
 
@@ -549,7 +550,8 @@ _T16d:
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    _T1da;
 _T1d4:
-	None = None;
+	__asm        mov    eax, [ebp-0x30];
+	__asm        mov    [ebp-0x38], eax;
 _T1da:
 	__asm        jmp    near ptr 0x0048B48F;
 
@@ -616,9 +618,7 @@ _T1b:
 	__asm        cmp    i, 0x64;
 	__asm        jge    _T3f;
 // LINE 47:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, this;
-	__asm        mov    byte ptr [ecx+eax*2], 0;
+	this->keyboardCommands[i].bCommandIsSet = 0x0;
 // LINE 48:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, this;
@@ -1319,7 +1319,9 @@ unsigned long CGameCommander::OnMouseMove(int32_t x, int32_t y) {
 // FUNCTION: COPTER_D 0x0048bd11
 unsigned long CGameCommander::OnWindowActivate() {
 
-	None = this->myGameApp;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+8];
+	__asm        mov    [ebp-4], eax;
 // LINE 323:
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax+0x42C4], 1;
@@ -1333,7 +1335,9 @@ unsigned long CGameCommander::OnWindowActivate() {
 // FUNCTION: COPTER_D 0x0048bd44
 unsigned long CGameCommander::OnWindowDeactivate() {
 
-	None = this->myGameApp;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+8];
+	__asm        mov    [ebp-4], eax;
 // LINE 333:
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax+0x42C4], 0;
@@ -1906,7 +1910,8 @@ _T1a9:
 	__asm        mov    [ebp-0x2A4], eax;
 	__asm        jmp    _T21e;
 _T212:
-	None = None;
+	__asm        mov    eax, [ebp-0x29C];
+	__asm        mov    [ebp-0x2A4], eax;
 _T21e:
 	__asm        jmp    near ptr 0x0048C457;
 
@@ -1974,7 +1979,8 @@ _T29d:
 	__asm        mov    [ebp-0x2B8], eax;
 	__asm        jmp    _T33a;
 _T32e:
-	None = None;
+	__asm        mov    eax, [ebp-0x2B0];
+	__asm        mov    [ebp-0x2B8], eax;
 _T33a:
 	__asm        jmp    near ptr 0x0048C573;
 
@@ -4480,23 +4486,17 @@ _T47:
 // FUNCTION: COPTER_D 0x0048e64b
 void GetReservedKeyArray(long * lKeys) {
 // LINE 1030:
-	__asm        mov    eax, lKeys;
-	__asm        mov    dword ptr [eax], 0x90;
+	lKeys[0] = 0x90;
 // LINE 1031:
-	__asm        mov    eax, lKeys;
-	__asm        mov    dword ptr [eax+4], 0x2C;
+	lKeys[4] = 0x2c;
 // LINE 1032:
-	__asm        mov    eax, lKeys;
-	__asm        mov    dword ptr [eax+8], 0x1B;
+	lKeys[8] = 0x1b;
 // LINE 1033:
-	__asm        mov    eax, lKeys;
-	__asm        mov    dword ptr [eax+0xC], 0x11;
+	lKeys[12] = 0x11;
 // LINE 1034:
-	__asm        mov    eax, lKeys;
-	__asm        mov    dword ptr [eax+0x10], 0x12;
+	lKeys[16] = 0x12;
 // LINE 1035:
-	__asm        mov    eax, lKeys;
-	__asm        mov    dword ptr [eax+0x14], 0;
+	lKeys[20] = 0x0;
 // LINE 1036:
 	__asm        jmp    near ptr 0x0048E691;
 }

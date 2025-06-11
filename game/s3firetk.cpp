@@ -1254,7 +1254,8 @@ _Ta7:
 _Tac:
 	__asm        jmp    near ptr 0x0053697E;
 
-	cptr = None;
+	__asm        mov    eax, [ebp-0x38];
+	__asm        mov    cptr, eax;
 // LINE 435:
 	__asm        mov    eax, cptr;
 	__asm        movsx  eax, word ptr [eax];

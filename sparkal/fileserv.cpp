@@ -38,34 +38,6 @@ public:
 
 // Type: char *;
 
-// Type: /*packed*/ class FileServices (forward reference);
-class FileServices{ // packed(0x74 bytes) TI: 0x1f25
-public:
-	void FileServices();
-	int32_t Initialize();
-	int32_t IsFileAvailable(char *);
-	int32_t GetPathForFile(int32_t, int32_t, char *, char *);
-	int32_t GetPathForFileString(int32_t, int32_t, /*packed*/ class basic_string<char>&, /*packed*/ class basic_string<char>&);
-	void FindLocalPath();
-	int32_t FindRemotePath();
-	int32_t ValidateRemotePath();
-	void RefreshLocalPathCache();
-	void RefreshLocalPathCache(/*packed*/ class basic_string<char>&);
-	int32_t CopyFileFromRemoteToLocal(char *);
-	int32_t IsFileAvailableLocally(char *);
-	int32_t IsFileAvailableRemotely(char *);
-	enum AppBaseType {
-		nAppBaseTypeUnknown = 0,
-		nAppBaseTypeLocal = 1,
-		nAppBaseTypeRemote = 2,
-	};
-public:
-	/*+0x0*/   enum FileServices::AppBaseType myAppBaseType;
-	/*+0x4*/   /*packed*/ class basic_string<char> sLocalDirectoryBase; // 0x8 bytes
-	/*+0xc*/   /*packed*/ class basic_string<char> sRemoteDirectoryBase; // 0x8 bytes
-	/*+0x14*/  /*packed*/ class basic_string<char> sDirs[12]; // 0x60 bytes
-};
-
 // Type: /*packed*/ class basic_string<char>;
 class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
@@ -169,6 +141,34 @@ public:
 	int32_t compare(char *, uint32_t);
 	int32_t compare(char *, uint32_t, uint32_t);
 	int32_t compare(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
+};
+
+// Type: /*packed*/ class FileServices (forward reference);
+class FileServices{ // packed(0x74 bytes) TI: 0x1f25
+public:
+	void FileServices();
+	int32_t Initialize();
+	int32_t IsFileAvailable(char *);
+	int32_t GetPathForFile(int32_t, int32_t, char *, char *);
+	int32_t GetPathForFileString(int32_t, int32_t, /*packed*/ class basic_string<char>&, /*packed*/ class basic_string<char>&);
+	void FindLocalPath();
+	int32_t FindRemotePath();
+	int32_t ValidateRemotePath();
+	void RefreshLocalPathCache();
+	void RefreshLocalPathCache(/*packed*/ class basic_string<char>&);
+	int32_t CopyFileFromRemoteToLocal(char *);
+	int32_t IsFileAvailableLocally(char *);
+	int32_t IsFileAvailableRemotely(char *);
+	enum AppBaseType {
+		nAppBaseTypeUnknown = 0,
+		nAppBaseTypeLocal = 1,
+		nAppBaseTypeRemote = 2,
+	};
+public:
+	/*+0x0*/   enum FileServices::AppBaseType myAppBaseType;
+	/*+0x4*/   /*packed*/ class basic_string<char> sLocalDirectoryBase; // 0x8 bytes
+	/*+0xc*/   /*packed*/ class basic_string<char> sRemoteDirectoryBase; // 0x8 bytes
+	/*+0x14*/  /*packed*/ class basic_string<char> sDirs[12]; // 0x60 bytes
 };
 
 // Type: long;
@@ -741,7 +741,7 @@ _T307:
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    _T33e;
 _T337:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-4], 0;
 _T33e:
 	__asm        lea    ecx, gFileServices.sDirs[11].c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
@@ -1605,7 +1605,7 @@ _T231:
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _T252;
 _T24b:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x24], 0;
 _T252:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x10];
@@ -1826,7 +1826,7 @@ _T500:
 	__asm        mov    [ebp-0x54], eax;
 	__asm        jmp    _T521;
 _T51a:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x54], 0;
 _T521:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x10];
@@ -1876,7 +1876,9 @@ _T596:
 _T5b6:
 	__asm        jmp    near ptr 0x004922D7;
 
-	this->sRemoteDirectoryBase.reference = None;
+	__asm        mov    eax, [ebp-0x54];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x10], eax;
 _T5c7:
 	__asm        cmp    dword ptr [ebp-0x88], 0;
 	__asm        je     _T615;
@@ -1998,7 +2000,7 @@ _T62:
 	__asm        mov    [ebp-0x188], eax;
 	__asm        jmp    _Ta0;
 _T96:
-	None = 0xffffffff;
+	__asm        mov    dword ptr [ebp-0x188], 0xFFFFFFFF;
 _Ta0:
 	__asm        jmp    near ptr 0x0049246B;
 
@@ -2429,7 +2431,7 @@ _T96:
 	__asm        call   Directory::ReadDirectorySpecificEntriesIntoStringList;
 	__asm        jmp    near ptr 0x00492A4F;
 
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0xC0], 0;
 // LINE 172:
 	__asm        and    dword ptr [ebp-0xC0], 3;
 	__asm        or     dword ptr [ebp-0xC0], 4;
@@ -2450,7 +2452,8 @@ _T96:
 
 	__asm        jmp    near ptr 0x00492A9D;
 
-	tempStringListIterator.node = None;
+	__asm        mov    eax, [ebp-0x40];
+	__asm        mov    tempStringListIterator.node, eax;
 // LINE 174:
 _T109:
 	__asm        mov    eax, tempStringListDirectories.node;
@@ -4731,7 +4734,7 @@ _T1998:
 	__asm        mov    [ebp-0xAC4], eax;
 	__asm        jmp    _T19d6;
 _T19cc:
-	None = 0xffffffff;
+	__asm        mov    dword ptr [ebp-0xAC4], 0xFFFFFFFF;
 _T19d6:
 	__asm        jmp    near ptr 0x0049482B;
 
@@ -4922,7 +4925,7 @@ _T1c31:
 	__asm        mov    [ebp-0xC0], eax;
 	__asm        jmp    _T1c95;
 _T1c8b:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0xC0], 0;
 _T1c95:
 	__asm        lea    ecx, sTemp.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
@@ -5509,7 +5512,7 @@ _T30d:
 	__asm        mov    [ebp-0x110], eax;
 	__asm        jmp    _T33a;
 _T330:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x110], 0;
 _T33a:
 	__asm        mov    eax, sPath;
 	__asm        mov    eax, [eax+4];

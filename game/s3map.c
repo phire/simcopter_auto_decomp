@@ -2454,7 +2454,7 @@ _T176a:
 	__asm        ja     _T178e;
 
 	__asm        mov    eax, [ebp-0x2C];
-	__asm        jmp    SwitchPointers5243281[0][eax*4];
+	__asm        jmp    _Switch_177e[0][eax*4];
 // Switch pointers
 // LINE 949:
 _T178e:
@@ -2792,8 +2792,7 @@ _T2b1:
 	__asm        add    eax, S_mapbufctr;
 	__asm        mov    ptr, eax;
 // LINE 1057:
-	__asm        mov    eax, ptr;
-	__asm        mov    byte ptr [eax], 0x70;
+	ptr[0] = 0x70;
 // LINE 1058:
 	__asm        jmp    _T2ae;
 // LINE 1059:
@@ -2877,9 +2876,7 @@ _Ta5:
 	__asm        test   eax, eax;
 	__asm        je     _Tc5;
 
-	__asm        mov    al, col;
-	__asm        mov    ecx, writeBuffer;
-	__asm        mov    [ecx], al;
+	writeBuffer[0] = col;
 // LINE 1113:
 _Tc5:
 	__asm        mov    eax, dy;
@@ -2944,9 +2941,7 @@ _T147:
 	__asm        test   eax, eax;
 	__asm        je     _T167;
 
-	__asm        mov    al, col;
-	__asm        mov    ecx, writeBuffer;
-	__asm        mov    [ecx], al;
+	writeBuffer[0] = col;
 // LINE 1132:
 _T167:
 	__asm        mov    eax, dx;
@@ -3215,10 +3210,7 @@ _T1f:
 	__asm        cmp    i, 0x14;
 	__asm        jge    _T94;
 // LINE 1292:
-	__asm        mov    eax, i;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        lea    eax, S_carinfo[0].flags[eax*8];
-	__asm        mov    ci, eax;
+	ci = BinaryOp(add, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, i, Const(4))), Const(8)), Const(7073088));
 // LINE 1293:
 	__asm        mov    eax, ci;
 	__asm        test   byte ptr [eax], 3;
@@ -3442,110 +3434,86 @@ void S3MapGetMissionIcons(long mission_type, long * desticon, long * pickicon) {
 	__asm        jmp    _T12d;
 // LINE 1435:
 _T14:
-	__asm        mov    eax, desticon;
-	__asm        mov    dword ptr [eax], 6;
+	desticon[0] = 0x6;
 // LINE 1436:
-	__asm        mov    eax, pickicon;
-	__asm        mov    dword ptr [eax], 0xFFFFFFFF;
+	pickicon[0] = 0xffffffff;
 // LINE 1437:
 	__asm        jmp    _T279;
 // LINE 1442:
 _T2b:
-	__asm        mov    eax, desticon;
-	__asm        mov    dword ptr [eax], 4;
+	desticon[0] = 0x4;
 // LINE 1443:
-	__asm        mov    eax, pickicon;
-	__asm        mov    dword ptr [eax], 0xFFFFFFFF;
+	pickicon[0] = 0xffffffff;
 // LINE 1444:
 	__asm        jmp    _T279;
 // LINE 1446:
 _T42:
-	__asm        mov    eax, desticon;
-	__asm        mov    dword ptr [eax], 1;
+	desticon[0] = 0x1;
 // LINE 1447:
-	__asm        mov    eax, pickicon;
-	__asm        mov    dword ptr [eax], 4;
+	pickicon[0] = 0x4;
 // LINE 1448:
 	__asm        jmp    _T279;
 // LINE 1450:
 _T59:
-	__asm        mov    eax, desticon;
-	__asm        mov    dword ptr [eax], 3;
+	desticon[0] = 0x3;
 // LINE 1451:
-	__asm        mov    eax, pickicon;
-	__asm        mov    dword ptr [eax], 5;
+	pickicon[0] = 0x5;
 // LINE 1452:
 	__asm        jmp    _T279;
 // LINE 1455:
 _T70:
-	__asm        mov    eax, desticon;
-	__asm        mov    dword ptr [eax], 7;
+	desticon[0] = 0x7;
 // LINE 1456:
-	__asm        mov    eax, pickicon;
-	__asm        mov    dword ptr [eax], 0xFFFFFFFF;
+	pickicon[0] = 0xffffffff;
 // LINE 1457:
 	__asm        jmp    _T279;
 // LINE 1459:
 _T87:
-	__asm        mov    eax, desticon;
-	__asm        mov    dword ptr [eax], 3;
+	desticon[0] = 0x3;
 // LINE 1460:
-	__asm        mov    eax, pickicon;
-	__asm        mov    dword ptr [eax], 0xFFFFFFFF;
+	pickicon[0] = 0xffffffff;
 // LINE 1461:
 	__asm        jmp    _T279;
 // LINE 1463:
 _T9e:
-	__asm        mov    eax, desticon;
-	__asm        mov    dword ptr [eax], 7;
+	desticon[0] = 0x7;
 // LINE 1464:
-	__asm        mov    eax, pickicon;
-	__asm        mov    dword ptr [eax], 1;
+	pickicon[0] = 0x1;
 // LINE 1465:
 	__asm        jmp    _T279;
 // LINE 1467:
 _Tb5:
-	__asm        mov    eax, desticon;
-	__asm        mov    dword ptr [eax], 7;
+	desticon[0] = 0x7;
 // LINE 1468:
-	__asm        mov    eax, pickicon;
-	__asm        mov    dword ptr [eax], 1;
+	pickicon[0] = 0x1;
 // LINE 1469:
 	__asm        jmp    _T279;
 // LINE 1476:
 _Tcc:
-	__asm        mov    eax, desticon;
-	__asm        mov    dword ptr [eax], 2;
+	desticon[0] = 0x2;
 // LINE 1477:
-	__asm        mov    eax, pickicon;
-	__asm        mov    dword ptr [eax], 0xFFFFFFFF;
+	pickicon[0] = 0xffffffff;
 // LINE 1478:
 	__asm        jmp    _T279;
 // LINE 1480:
 _Te3:
-	__asm        mov    eax, desticon;
-	__asm        mov    dword ptr [eax], 7;
+	desticon[0] = 0x7;
 // LINE 1481:
-	__asm        mov    eax, pickicon;
-	__asm        mov    dword ptr [eax], 0xFFFFFFFF;
+	pickicon[0] = 0xffffffff;
 // LINE 1482:
 	__asm        jmp    _T279;
 // LINE 1484:
 _Tfa:
-	__asm        mov    eax, desticon;
-	__asm        mov    dword ptr [eax], 5;
+	desticon[0] = 0x5;
 // LINE 1485:
-	__asm        mov    eax, pickicon;
-	__asm        mov    dword ptr [eax], 5;
+	pickicon[0] = 0x5;
 // LINE 1486:
 	__asm        jmp    _T279;
 // LINE 1488:
 _T111:
-	__asm        mov    eax, desticon;
-	__asm        mov    dword ptr [eax], 0xFFFFFFFF;
+	desticon[0] = 0xffffffff;
 // LINE 1489:
-	__asm        mov    eax, pickicon;
-	__asm        mov    dword ptr [eax], 0xFFFFFFFF;
+	pickicon[0] = 0xffffffff;
 // LINE 1490:
 	__asm        jmp    _T279;
 // LINE 1491:
@@ -3793,10 +3761,7 @@ _T18:
 	__asm        cmp    i, 0x14;
 	__asm        jge    _T48;
 // LINE 1569:
-	__asm        mov    eax, i;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        lea    eax, S_carinfo[0].flags[eax*8];
-	__asm        mov    ci, eax;
+	ci = BinaryOp(add, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, i, Const(4))), Const(8)), Const(7073088));
 // LINE 1570:
 	__asm        mov    eax, ci;
 	__asm        test   byte ptr [eax], 1;
@@ -3878,10 +3843,7 @@ _T18:
 	__asm        cmp    i, 0x14;
 	__asm        jge    _T203;
 // LINE 1633:
-	__asm        mov    eax, i;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        lea    eax, S_carinfo[0].flags[eax*8];
-	__asm        mov    ci, eax;
+	ci = BinaryOp(add, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, i, Const(4))), Const(8)), Const(7073088));
 // LINE 1634:
 	__asm        mov    eax, ci;
 	__asm        test   byte ptr [eax], 1;
@@ -4212,9 +4174,7 @@ _T9c:
 	__asm        test   eax, eax;
 	__asm        je     _Tbc;
 
-	__asm        mov    al, col;
-	__asm        mov    ecx, writeBuffer;
-	__asm        mov    [ecx], al;
+	writeBuffer[0] = col;
 // LINE 1778:
 _Tbc:
 	__asm        mov    eax, dy;
@@ -4279,9 +4239,7 @@ _T140:
 	__asm        test   eax, eax;
 	__asm        je     _T160;
 
-	__asm        mov    al, col;
-	__asm        mov    ecx, writeBuffer;
-	__asm        mov    [ecx], al;
+	writeBuffer[0] = col;
 // LINE 1797:
 _T160:
 	__asm        mov    eax, dx;

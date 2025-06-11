@@ -271,16 +271,14 @@ _T127:
 	__asm        cmp    eax, G_terr_maxalt;
 	__asm        jle    _T14e;
 // LINE 203:
-	__asm        movsx  eax, alt;
-	__asm        mov    G_terr_maxalt, eax;
+	G_terr_maxalt = reinterpret_cast<int16_t>(alt);
 // LINE 204:
 _T14e:
 	__asm        movsx  eax, alt;
 	__asm        cmp    eax, G_terr_minalt;
 	__asm        jge    _T167;
 // LINE 205:
-	__asm        movsx  eax, alt;
-	__asm        mov    G_terr_minalt, eax;
+	G_terr_minalt = reinterpret_cast<int16_t>(alt);
 // LINE 207:
 _T167:
 	__asm        mov    ax, alt;
@@ -1946,8 +1944,8 @@ _T1670:
 
 	__asm        mov    eax, [ebp-0x34];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, SwitchPointers5330193[16][eax];
-	__asm        jmp    SwitchPointers5330193[0][ecx*4];
+	__asm        mov    cl, _Switch_1690[16][eax];
+	__asm        jmp    _Switch_1690[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 562:
@@ -5730,7 +5728,7 @@ _Ta0:
 	__asm        ja     _Tc4;
 
 	__asm        mov    eax, [ebp-0x20];
-	__asm        jmp    SwitchPointers5342541[0][eax*4];
+	__asm        jmp    _Switch_b4[0][eax*4];
 // Switch pointers
 // LINE 1466:
 _Tc4:
@@ -6206,8 +6204,7 @@ int32_t S3TerrPrecisionAlt(int32_t worldx, int32_t worldz, int32_t * landable) {
 	__asm        cmp    landable, 0;
 	__asm        je     _T1c;
 // LINE 1614:
-	__asm        mov    eax, landable;
-	__asm        mov    dword ptr [eax], 0;
+	landable[0] = 0x0;
 // LINE 1617:
 _T1c:
 	__asm        mov    eax, worldx;
@@ -6346,14 +6343,12 @@ _T1c:
 	__asm        cmp    eax, 0x90000;
 	__asm        jge    _T1c9;
 // LINE 1662:
-	__asm        mov    eax, landable;
-	__asm        mov    dword ptr [eax], 1;
+	landable[0] = 0x1;
 // LINE 1664:
 	__asm        jmp    _T1d2;
 // LINE 1666:
 _T1c9:
-	__asm        mov    eax, landable;
-	__asm        mov    dword ptr [eax], 0;
+	landable[0] = 0x0;
 // LINE 1670:
 _T1d2:
 	__asm        jmp    _T35a;
@@ -6414,14 +6409,12 @@ _T1d7:
 	__asm        cmp    eax, 0x90000;
 	__asm        jge    _T293;
 // LINE 1681:
-	__asm        mov    eax, landable;
-	__asm        mov    dword ptr [eax], 1;
+	landable[0] = 0x1;
 // LINE 1683:
 	__asm        jmp    _T29c;
 // LINE 1685:
 _T293:
-	__asm        mov    eax, landable;
-	__asm        mov    dword ptr [eax], 0;
+	landable[0] = 0x0;
 // LINE 1689:
 _T29c:
 	__asm        jmp    _T35a;
@@ -6476,14 +6469,12 @@ _T2a1:
 	__asm        cmp    eax, 0x90000;
 	__asm        jge    _T349;
 // LINE 1699:
-	__asm        mov    eax, landable;
-	__asm        mov    dword ptr [eax], 1;
+	landable[0] = 0x1;
 // LINE 1701:
 	__asm        jmp    _T352;
 // LINE 1703:
 _T349:
-	__asm        mov    eax, landable;
-	__asm        mov    dword ptr [eax], 0;
+	landable[0] = 0x0;
 // LINE 1707:
 _T352:
 	__asm        mov    eax, hypalt;

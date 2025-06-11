@@ -84,12 +84,12 @@ public:
 	static unsigned short sAllLoaded;
 	// calltype: NearC
 	static void DeleteAllArrays();
-	void ClearBytes(char);
+	void ClearBytes(signed char);
 	short InsertRow(short);
 	short InsertColumn(short);
 	short DeleteRow(short);
 	short DeleteColumn(short);
-	unsigned short Resize(long, long, char);
+	unsigned short Resize(long, long, signed char);
 	virtual void WriteToDisk(); // vtable+0x0
 	void CopyFrom(/*unpacked*/ class _cArray*);
 	void CopyFrom(unsigned long);
@@ -124,7 +124,7 @@ public:
 
 // Type: void (void * __ptr32, long);
 
-// Type: char *;
+// Type: signed char *;
 
 // Type: /*unpacked*/ struct _cArray::Header (forward reference);
 struct _cArray::Header{ // not packed(0x8 bytes) TI: 0x32ad
@@ -142,7 +142,7 @@ struct _cArray::Header{ // not packed(0x8 bytes) TI: 0x32ad
 
 // Type: unsigned long;
 
-// Type: char;
+// Type: signed char;
 
 // Type: short;
 
@@ -226,12 +226,12 @@ public:
 	static unsigned short sAllLoaded;
 	// calltype: NearC
 	static void DeleteAllArrays();
-	void ClearBytes(char);
+	void ClearBytes(signed char);
 	short InsertRow(short);
 	short InsertColumn(short);
 	short DeleteRow(short);
 	short DeleteColumn(short);
-	unsigned short Resize(long, long, char);
+	unsigned short Resize(long, long, signed char);
 	virtual void WriteToDisk(); // vtable+0x0
 	void CopyFrom(/*unpacked*/ class _cArray*);
 	void CopyFrom(unsigned long);
@@ -326,7 +326,7 @@ public:
 	long ReadBlock(void * __ptr32, long *);
 	long Read4(long *);
 	long Read2(short *);
-	long Read1(char *);
+	long Read1(signed char *);
 	long SetPos(long);
 	long Advance(long);
 	// calltype: NearC
@@ -384,7 +384,7 @@ _T6d:
 void _cArray::FromDiskCreate(void * __ptr32 hArray, /*unpacked*/ class ResFile *pFile, long entrySize, void (*Swizzler)(void * __ptr32, long)) {
 	/*bp-0x100*/ unsigned char tmpname[256]; // 0x100 bytes
 	/*bp-0x104*/ /*unpacked*/ struct _cArray::Header *header;
-	/*bp-0x108*/ char * data;
+	/*bp-0x108*/ signed char * data;
 	/*bp-0x10c*/ unsigned short fileOpened;
 
 // LINE 30:
@@ -1089,8 +1089,8 @@ void _cArray::SetSizeAndHeaders(long newxSize, long newySize) {
 }
 
 // FUNCTION: COPTER_D 0x00567e6b
-void _cArray::ClearBytes(char zeropad) {
-	/*bp-0x4*/   char * fillPtr;
+void _cArray::ClearBytes(signed char zeropad) {
+	/*bp-0x4*/   signed char * fillPtr;
 	/*bp-0x8*/   long cnt;
 	/*bp-0xc*/   unsigned char * end;
 	/*bp-0x10*/  long numBytes;
@@ -1211,9 +1211,7 @@ _T143:
 	__asm        add    esp, 0x10;
 // LINE 350:
 _T15f:
-	__asm        mov    al, zeropad;
-	__asm        mov    ecx, fillPtr;
-	__asm        mov    [ecx], al;
+	fillPtr[0] = zeropad;
 // LINE 351:
 	__asm        inc    fillPtr;
 // LINE 352:
@@ -1305,11 +1303,7 @@ _Tac:
 // LINE 374:
 	__asm        jmp    near ptr 0x005680BD;
 
-	__asm        movsx  eax, count;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+4];
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    moveto, eax;
+	moveto = this->fData->;
 // LINE 375:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
@@ -1552,11 +1546,7 @@ _T9a:
 // LINE 421:
 	__asm        jmp    near ptr 0x0056835C;
 
-	__asm        movsx  eax, count;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+4];
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    moveto, eax;
+	moveto = this->fData->;
 // LINE 422:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
@@ -1856,7 +1846,7 @@ _T263:
 }
 
 // FUNCTION: COPTER_D 0x005686af
-unsigned short _cArray::Resize(long newxSize, long newySize, char zeropad) {
+unsigned short _cArray::Resize(long newxSize, long newySize, signed char zeropad) {
 	/*bp-0x10*/  unsigned char * dest;
 	/*bp-0x14*/  long xcnt;
 	/*bp-0x64*/  /*unpacked*/ class _cArray temp; // 0x50 bytes
@@ -1893,7 +1883,7 @@ _T4d:
 	__asm        call   _cArray::BeginCreate;
 	__asm        jmp    near ptr 0x0056871B;
 
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-4], 0;
 // LINE 469:
 	__asm        lea    eax, temp<vftable>;
 	__asm        push   eax;
@@ -2605,10 +2595,7 @@ _T23:
 	__asm        cmp    eax, 0x400;
 	__asm        jge    _T77;
 // LINE 634:
-	__asm        movsx  eax, count;
-	__asm        mov    ecx, _cArray::sArrayTable;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    arr, eax;
+	arr = _cArray::sArrayTable->;
 // LINE 635:
 	__asm        mov    eax, arr;
 	__asm        mov    ecx, rType;
@@ -2659,10 +2646,7 @@ _T23:
 // LINE 650:
 // Block start:
 	/*bp-0xc*/   /*unpacked*/ class _cArray *tmp;
-	__asm        movsx  eax, cnt;
-	__asm        mov    ecx, _cArray::sArrayTable;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    tmp, eax;
+	tmp = _cArray::sArrayTable->;
 // LINE 651:
 	__asm        mov    eax, tmp;
 	__asm        mov    ecx, rType;
@@ -2701,10 +2685,7 @@ _T23:
 	__asm        cmp    eax, 0x400;
 	__asm        jge    _T77;
 // LINE 663:
-	__asm        movsx  eax, count;
-	__asm        mov    ecx, _cArray::sArrayTable;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    arr, eax;
+	arr = _cArray::sArrayTable->;
 // LINE 664:
 	__asm        mov    eax, arr;
 	__asm        mov    ecx, findarr;
@@ -2893,7 +2874,7 @@ _T170:
 	__asm        mov    [ebp-0x40], eax;
 	__asm        jmp    _T1d8;
 _T1d1:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x40], 0;
 _T1d8:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, [ebp-0x40];

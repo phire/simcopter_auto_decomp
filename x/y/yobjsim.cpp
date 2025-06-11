@@ -193,7 +193,7 @@ public:
 	void ResetTree(short);
 	struct cYObject::MoveInfo{ // not packed(0x10 bytes) TI: 0x3748
 		/*+0x0*/   enum cYObject::LocationType *locType;
-		/*+0x4*/   char * roadDir;
+		/*+0x4*/   signed char * roadDir;
 		/*+0x8*/   /*unpacked*/ struct _DYOBJ_INST *dyBlock;
 		/*+0xc*/   /*unpacked*/ struct _STOBJ_INST *stBlock;
 	};
@@ -382,7 +382,7 @@ public:
 	unsigned short IsWalkable(short, short, enum cYObject::LocationType);
 	unsigned short CanJumpOffHere();
 	// calltype: NearC
-	static char GetRoadDir(/*unpacked*/ struct Point3d);
+	static signed char GetRoadDir(/*unpacked*/ struct Point3d);
 	enum SoundNum {
 		kSNone = -1,
 		kSAssertion = 1,
@@ -737,12 +737,12 @@ enum LocationType {
 	kNumLocTypes = 14,
 };
 
-// Type: char;
+// Type: signed char;
 
 // Type: /*unpacked*/ struct cYObject::MoveInfo (forward reference);
 struct cYObject::MoveInfo{ // not packed(0x10 bytes) TI: 0x3748
 	/*+0x0*/   enum cYObject::LocationType *locType;
-	/*+0x4*/   char * roadDir;
+	/*+0x4*/   signed char * roadDir;
 	/*+0x8*/   /*unpacked*/ struct _DYOBJ_INST *dyBlock;
 	/*+0xc*/   /*unpacked*/ struct _STOBJ_INST *stBlock;
 };
@@ -830,8 +830,8 @@ struct _MISSION_PARMS{ // not packed(0x18 bytes) TI: 0x38f9
 struct Behavior::Node{ // not packed(0xc bytes) TI: 0x35e3
 	/*+0x0*/   short treeID; // 0x2 bytes
 	/*+0x0*/   short primCode; // 0x2 bytes
-	/*+0x2*/   char trueTrans; // 0x1 bytes
-	/*+0x3*/   char falseTrans; // 0x1 bytes
+	/*+0x2*/   signed char trueTrans; // 0x1 bytes
+	/*+0x3*/   signed char falseTrans; // 0x1 bytes
 	/*+0x4*/   /*unpacked*/ struct Behavior::NodeParameter param; // 0x8 bytes
 };
 
@@ -859,7 +859,7 @@ struct YObjLang::SetAnimParam{ // not packed(0x4 bytes) TI: 0x3576
 // Type: /*unpacked*/ struct cYObject::MoveInfo;
 struct cYObject::MoveInfo{ // not packed(0x10 bytes) TI: 0x3748
 	/*+0x0*/   enum cYObject::LocationType *locType;
-	/*+0x4*/   char * roadDir;
+	/*+0x4*/   signed char * roadDir;
 	/*+0x8*/   /*unpacked*/ struct _DYOBJ_INST *dyBlock;
 	/*+0xc*/   /*unpacked*/ struct _STOBJ_INST *stBlock;
 };
@@ -1101,7 +1101,7 @@ protected:
 	virtual void Error(short); // vtable+0x4
 	void GetCurrentNode(short *, short *);
 	void Reset(/*unpacked*/ class Behavior*, short);
-	char NodeComplete(unsigned short);
+	signed char NodeComplete(unsigned short);
 	unsigned short Gosub(/*unpacked*/ class Behavior*, short *, short);
 public:
 	void TreeSim(short, short *);
@@ -1281,13 +1281,13 @@ public:
 		/*+0x0*/   unsigned long bodyname;
 	};
 	struct YObjLang::WalkRunParam{ // not packed(0x7 bytes) TI: 0x3572
-		/*+0x0*/   char decTemp; // 0x1 bytes
-		/*+0x1*/   char onlyNeutralBoolean; // 0x1 bytes
-		/*+0x2*/   char moveFailTemp; // 0x1 bytes
-		/*+0x3*/   char newLocTemp; // 0x1 bytes
-		/*+0x4*/   char roadDirTemp; // 0x1 bytes
-		/*+0x5*/   char dynAnimBoolean; // 0x1 bytes
-		/*+0x6*/   char speedTemp; // 0x1 bytes
+		/*+0x0*/   signed char decTemp; // 0x1 bytes
+		/*+0x1*/   signed char onlyNeutralBoolean; // 0x1 bytes
+		/*+0x2*/   signed char moveFailTemp; // 0x1 bytes
+		/*+0x3*/   signed char newLocTemp; // 0x1 bytes
+		/*+0x4*/   signed char roadDirTemp; // 0x1 bytes
+		/*+0x5*/   signed char dynAnimBoolean; // 0x1 bytes
+		/*+0x6*/   signed char speedTemp; // 0x1 bytes
 	};
 	struct YObjLang::RandomParam{ // not packed(0x6 bytes) TI: 0x3570
 		/*+0x0*/   short destTemp; // 0x2 bytes
@@ -1587,7 +1587,8 @@ _Te1:
 	__asm        mov    person, eax;
 	__asm        jmp    _Tfa;
 
-	person = None;
+	__asm        mov    eax, [ebp-0x7C];
+	__asm        mov    person, eax;
 // LINE 85:
 _Tfa:
 	__asm        cmp    person, 0;
@@ -1908,7 +1909,9 @@ _T1c5:
 	__asm        je     _T2c6;
 // Block start:
 	/*bp-0x20*/  /*unpacked*/ class cYObject *obj;
-	None = dyobj->user1;
+	__asm        mov    eax, dyobj;
+	__asm        mov    ax, [eax+0xE];
+	__asm        mov    [ebp-0x24], ax;
 // LINE 232:
 	__asm        movsx  eax, word ptr [ebp-0x24];
 	__asm        cmp    eax, 0x7D00;
@@ -1949,7 +1952,8 @@ _T268:
 	__asm        mov    obj, eax;
 	__asm        jmp    _T281;
 
-	obj = None;
+	__asm        mov    eax, [ebp-0x28];
+	__asm        mov    obj, eax;
 // LINE 233:
 _T281:
 	__asm        cmp    obj, 0;
@@ -2187,7 +2191,7 @@ _T55:
 }
 
 // FUNCTION: COPTER_D 0x00555873
-char cYObject::GetRoadDir(/*unpacked*/ struct Point3d location) {
+signed char cYObject::GetRoadDir(/*unpacked*/ struct Point3d location) {
 // LINE 345:
 	__asm        mov    al, 3;
 	__asm        jmp    near ptr 0x00555880;
@@ -3043,7 +3047,7 @@ _T7aa:
 	__asm        mov    word ptr [ebp-0x8C], 1;
 	__asm        jmp    _T7e0;
 _T7d7:
-	None = 0x0;
+	__asm        mov    word ptr [ebp-0x8C], 0;
 _T7e0:
 	__asm        test   dword ptr [ebp-0x90], 0xFFFF;
 	__asm        je     _T810;
@@ -3148,9 +3152,7 @@ _T92d:
 // LINE 583:
 	moveinfo->locType-> = 0x0;
 // LINE 584:
-	__asm        mov    eax, moveinfo;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    byte ptr [eax], 0xFF;
+	moveinfo->roadDir[0] = 0xff;
 // LINE 587:
 // Block end:
 _T964:
@@ -3471,7 +3473,8 @@ _Tb8:
 	__asm        mov    obj, eax;
 	__asm        jmp    _Td1;
 
-	obj = None;
+	__asm        mov    eax, [ebp-0x20];
+	__asm        mov    obj, eax;
 // LINE 668:
 _Td1:
 	__asm        mov    eax, obj;
@@ -3728,7 +3731,9 @@ _T210:
 	/*bp-0x38*/  short zloc;
 	/*bp-0x3c*/  short thisriotval;
 	/*bp-0x40*/  /*unpacked*/ class cYObject *obj;
-	None = dyobj->user1;
+	__asm        mov    eax, dyobj;
+	__asm        mov    ax, [eax+0xE];
+	__asm        mov    [ebp-0x4C], ax;
 // LINE 709:
 	__asm        movsx  eax, word ptr [ebp-0x4C];
 	__asm        cmp    eax, 0x7D00;
@@ -3769,7 +3774,8 @@ _T2c2:
 	__asm        mov    obj, eax;
 	__asm        jmp    _T2db;
 
-	obj = None;
+	__asm        mov    eax, [ebp-0x50];
+	__asm        mov    obj, eax;
 // LINE 710:
 _T2db:
 	__asm        cmp    obj, 0;
@@ -3911,16 +3917,12 @@ _T3bc:
 	__asm        jmp    _T45b;
 // LINE 735:
 _T44b:
-	__asm        mov    eax, dirtogreatestconcentration;
-	__asm        mov    word ptr [eax], 0xFFFF;
+	dirtogreatestconcentration[0] = 0xffff;
 // LINE 736:
-	__asm        mov    eax, avgriotval;
-	__asm        mov    word ptr [eax], 0;
+	avgriotval[0] = 0x0;
 // LINE 738:
 _T45b:
-	__asm        mov    ax, numcounted;
-	__asm        mov    ecx, counted;
-	__asm        mov    [ecx], ax;
+	counted[0] = numcounted;
 // LINE 739:
 	__asm        jmp    near ptr 0x00556CB2;
 }
@@ -4073,13 +4075,9 @@ _T1b4:
 	__asm        test   al, 0x20;
 	__asm        je     _T1df;
 // LINE 763:
-	__asm        mov    ax, cellx;
-	__asm        mov    ecx, firecellx;
-	__asm        mov    [ecx], ax;
+	firecellx[0] = cellx;
 // LINE 764:
-	__asm        mov    ax, celly;
-	__asm        mov    ecx, firecelly;
-	__asm        mov    [ecx], ax;
+	firecelly[0] = celly;
 // LINE 765:
 	__asm        mov    ax, 1;
 	__asm        jmp    _T200;
@@ -4169,7 +4167,8 @@ _Tbb:
 	__asm        mov    obj, eax;
 	__asm        jmp    _Td4;
 
-	obj = None;
+	__asm        mov    eax, [ebp-0x20];
+	__asm        mov    obj, eax;
 // LINE 780:
 _Td4:
 	__asm        cmp    obj, 0;
@@ -4318,9 +4317,7 @@ _T281:
 	__asm        cmp    closestobj, 0;
 	__asm        je     _T29f;
 // LINE 798:
-	__asm        mov    ax, closestdist;
-	__asm        mov    ecx, dist;
-	__asm        mov    [ecx], ax;
+	dist[0] = closestdist;
 // LINE 799:
 _T29f:
 	__asm        mov    eax, closestobj;
@@ -4431,7 +4428,8 @@ _Tab:
 	__asm        mov    obj, eax;
 	__asm        jmp    _Tc4;
 
-	obj = None;
+	__asm        mov    eax, [ebp-0x10];
+	__asm        mov    obj, eax;
 // LINE 825:
 _Tc4:
 	__asm        mov    eax, obj;
@@ -4601,7 +4599,8 @@ _Tae:
 	__asm        mov    obj, eax;
 	__asm        jmp    _Tc7;
 
-	obj = None;
+	__asm        mov    eax, [ebp-0x10];
+	__asm        mov    obj, eax;
 // LINE 853:
 _Tc7:
 	__asm        mov    eax, obj;
@@ -5030,7 +5029,7 @@ _T60:
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    _T7f;
 _T78:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x1C], 0;
 _T7f:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x18], eax;
@@ -5042,7 +5041,7 @@ _T7f:
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    _Ta3;
 _T9c:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x14], 0;
 _Ta3:
 	__asm        jmp    near ptr 0x005579F0;
 
@@ -5115,7 +5114,8 @@ _T162:
 	__asm        mov    dword ptr [ebp-0x2C], 0;
 	__asm        jmp    _T174;
 _T16e:
-	None = None;
+	__asm        mov    eax, [ebp-0x28];
+	__asm        mov    [ebp-0x2C], eax;
 _T174:
 	__asm        jmp    _T18a;
 _T179:
@@ -5778,7 +5778,7 @@ _T2a8:
 	__asm        ja     _T287;
 
 	__asm        mov    eax, [ebp-0x34];
-	__asm        jmp    SwitchPointers5603916[0][eax*4];
+	__asm        jmp    _Switch_2bc[0][eax*4];
 // Switch pointers
 // LINE 1105:
 _T2d0:
@@ -6181,7 +6181,7 @@ _T433:
 	__asm        ja     _T412;
 
 	__asm        mov    eax, [ebp-0x3C];
-	__asm        jmp    SwitchPointers5605046[0][eax*4];
+	__asm        jmp    _Switch_447[0][eax*4];
 // Switch pointers
 // LINE 1226:
 _T483:
@@ -6430,8 +6430,7 @@ enum TreeSim::ReturnCode cYObject::iIsThisLocType(/*unpacked*/ struct TreeSim::S
 // LINE 1277:
 	param.locTypeLiteral = nparam-><YObjLang::Param+0x00:2>;
 // LINE 1278:
-	__asm        movsx  eax, param.locTypeLiteral;
-	__asm        mov    loctype, eax;
+	loctype = reinterpret_cast<int16_t>(param.locTypeLiteral);
 // LINE 1279:
 	__asm        mov    eax, this;
 	__asm        movzx  ax, byte ptr [eax+0x89];
@@ -7231,7 +7230,8 @@ _T1d5:
 	__asm        mov    word ptr [ebp-0x80], 0xFFFF;
 	__asm        jmp    _T1eb;
 _T1e0:
-	None = None;
+	__asm        mov    ax, [ebp-0x84];
+	__asm        mov    [ebp-0x80], ax;
 _T1eb:
 	__asm        jmp    near ptr 0x005593F2;
 
@@ -7835,7 +7835,9 @@ enum TreeSim::ReturnCode cYObject::iTurnFromLastHitter(/*unpacked*/ struct TreeS
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T3f:
-	None = reinterpret_cast<uint32_t>(this->fIterations);
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x140];
+	__asm        mov    [ebp-8], eax;
 // LINE 1458:
 	__asm        jmp    near ptr 0x00559C18;
 
@@ -7884,7 +7886,9 @@ enum TreeSim::ReturnCode cYObject::iTurnTowardsLastHitter(/*unpacked*/ struct Tr
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T3f:
-	None = reinterpret_cast<uint32_t>(this->fIterations);
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x140];
+	__asm        mov    [ebp-8], eax;
 // LINE 1468:
 	__asm        jmp    near ptr 0x00559CB5;
 
@@ -8530,7 +8534,8 @@ _T198:
 	__asm        mov    word ptr [ebp-0xC], 0xFFFF;
 	__asm        jmp    _T1ab;
 _T1a3:
-	None = None;
+	__asm        mov    ax, [ebp-0x10];
+	__asm        mov    [ebp-0xC], ax;
 _T1ab:
 	__asm        jmp    near ptr 0x0055A48A;
 
@@ -8929,7 +8934,8 @@ _T1f9:
 	__asm        mov    word ptr [ebp-0x10], 0xFFFF;
 	__asm        jmp    _T20c;
 _T204:
-	None = None;
+	__asm        mov    ax, [ebp-0x14];
+	__asm        mov    [ebp-0x10], ax;
 _T20c:
 	__asm        jmp    near ptr 0x0055A9DB;
 
@@ -9140,7 +9146,8 @@ _T1df:
 	__asm        mov    obj, 0;
 	__asm        jmp    _T1f1;
 _T1eb:
-	obj = None;
+	__asm        mov    eax, [ebp-0x20];
+	__asm        mov    obj, eax;
 // LINE 1649:
 _T1f1:
 	__asm        cmp    obj, 0;
@@ -10275,7 +10282,7 @@ _T13c:
 	__asm        ja     _T11b;
 
 	__asm        mov    eax, [ebp-0x24];
-	__asm        jmp    SwitchPointers5618291[0][eax*4];
+	__asm        jmp    _Switch_153[0][eax*4];
 // Switch pointers
 // LINE 1945:
 _T163:
@@ -10329,7 +10336,7 @@ _T1ec:
 	__asm        ja     _T1cb;
 
 	__asm        mov    eax, [ebp-0x20];
-	__asm        jmp    SwitchPointers5618464[0][eax*4];
+	__asm        jmp    _Switch_200[0][eax*4];
 // Switch pointers
 // LINE 1963:
 _T228:
@@ -10433,9 +10440,7 @@ _Teb:
 	__asm        cmp    plhs, 0;
 	__asm        je     _T109;
 // LINE 2014:
-	__asm        mov    ax, rhs;
-	__asm        mov    ecx, plhs;
-	__asm        mov    [ecx], ax;
+	plhs[0] = rhs;
 // LINE 2015:
 	__asm        jmp    _T120;
 // LINE 2016:
@@ -10701,7 +10706,7 @@ _T395:
 	__asm        ja     _T374;
 
 	__asm        mov    eax, [ebp-0x18];
-	__asm        jmp    SwitchPointers5619465[0][eax*4];
+	__asm        jmp    _Switch_3a9[0][eax*4];
 // Switch pointers
 // LINE 2080:
 _T3d5:
@@ -10720,8 +10725,7 @@ _T3d5:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 2083:
-	__asm        mov    eax, plhs;
-	__asm        mov    word ptr [eax], 0x61A8;
+	plhs[0] = 0x61a8;
 // LINE 2086:
 _T414:
 	__asm        mov    eax, plhs;
@@ -10736,8 +10740,7 @@ _T414:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 2088:
-	__asm        mov    eax, plhs;
-	__asm        mov    word ptr [eax], 0x9E58;
+	plhs[0] = 0x9e58;
 // LINE 2098:
 tree_error:
 _T449:
@@ -10792,11 +10795,9 @@ short cYObject::InterpValue(short ownerField, short dataField, short * *dataRef)
 	__asm        cmp    dataRef, 0;
 	__asm        jne    _T22;
 // LINE 2114:
-	__asm        lea    eax, ptemp;
-	__asm        mov    dataRef, eax;
+	dataRef = ptemp;
 // LINE 2115:
-	__asm        lea    eax, temp;
-	__asm        mov    ptemp, eax;
+	ptemp = temp;
 // LINE 2117:
 _T22:
 	dataRef-> = 0x0;
@@ -10944,7 +10945,7 @@ _T1d9:
 	__asm        ja     _T1b8;
 
 	__asm        mov    eax, [ebp-0x14];
-	__asm        jmp    SwitchPointers5620238[0][eax*4];
+	__asm        jmp    _Switch_1ed[0][eax*4];
 // Switch pointers
 // LINE 2158:
 _T21d:

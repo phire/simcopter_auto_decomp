@@ -243,9 +243,7 @@ _T2e:
 	__asm        call   Memory::BlockMove;
 	__asm        add    esp, 0xC;
 // LINE 56:
-	__asm        mov    al, reinterpret_cast<uint8_t>(len);
-	__asm        mov    ecx, cstr;
-	__asm        mov    [ecx], al;
+	cstr[0] = reinterpret_cast<uint8_t>(len);
 // LINE 57:
 	__asm        jmp    near ptr 0x00566BA3;
 }

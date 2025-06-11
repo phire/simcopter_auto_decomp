@@ -1392,7 +1392,8 @@ int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum 
 	/*bp-0x8*/   enum DirectionTypes fromConnections;
 
 
-	None = toTile;
+	__asm        mov    ax, toTile;
+	__asm        mov    [ebp-0x24], ax;
 // LINE 498:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        and    eax, 0xFF;
@@ -1555,7 +1556,7 @@ _T1df:
 	__asm        ja     _T246;
 
 	__asm        mov    eax, [ebp-0x2C];
-	__asm        jmp    SwitchPointers5478484[0][eax*4];
+	__asm        jmp    _Switch_20a[0][eax*4];
 // Switch pointers
 // LINE 516:
 _T246:
@@ -1620,7 +1621,7 @@ _T2d4:
 	__asm        ja     _T2ae;
 
 	__asm        mov    eax, [ebp-0x30];
-	__asm        jmp    SwitchPointers5478729[0][eax*4];
+	__asm        jmp    _Switch_2ff[0][eax*4];
 // Switch pointers
 // LINE 529:
 _T33b:
@@ -1697,8 +1698,8 @@ _T401:
 
 	__asm        mov    eax, [ebp-0x34];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, SwitchTable5479038[0][eax];
-	__asm        jmp    SwitchPointers5479018[0][ecx*4];
+	__asm        mov    cl, _SwitchTable_434[0][eax];
+	__asm        jmp    _Switch_420[0][ecx*4];
 // Switch pointers
 // Switch table
 // LINE 547:
@@ -1707,7 +1708,7 @@ _T43c:
 	__asm        jmp    _T5a4;
 // LINE 552:
 _T443:
-	None = 0x5b57e8;
+	__asm        mov    dword ptr [ebp-0x1C], 0x5B57E8;
 _T44a:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    ecx, reinterpret_cast<uint32_t>(fromTile);
@@ -1736,7 +1737,7 @@ _T497:
 	__asm        jmp    _T44a;
 // LINE 553:
 _T4a0:
-	None = 0x5b57e8;
+	__asm        mov    dword ptr [ebp-0x20], 0x5B57E8;
 _T4a7:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    ecx, reinterpret_cast<uint32_t>(toTile);

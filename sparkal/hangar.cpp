@@ -4,6 +4,20 @@
 
 // Type: char *;
 
+// Type: int32_t;
+
+// Type: /*unpacked*/ class GraphicWindow (forward reference);
+// GraphicWindow Class implementation not found
+
+// Type: /*packed*/ class GraphicWindowOwner (forward reference);
+// VTABLE: COPTER_D 0x00590f2c
+class GraphicWindowOwner{ // packed(0x4 bytes) TI: 0x1647
+public:
+	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
+};
+
+// Type: void;
+
 // Type: /*packed*/ class HangarWindow (forward reference);
 // VTABLE: COPTER_D 0x00590c20
 class HangarWindow : public GraphicWindow
@@ -53,20 +67,6 @@ protected:
 	/*+0x122*/ /*packed*/ class MPoint ptSavedCursorPosition; // 0x8 bytes
 	/*+0x12a*/ long lWindowPositionInHangar;
 };
-
-// Type: int32_t;
-
-// Type: /*unpacked*/ class GraphicWindow (forward reference);
-// GraphicWindow Class implementation not found
-
-// Type: /*packed*/ class GraphicWindowOwner (forward reference);
-// VTABLE: COPTER_D 0x00590f2c
-class GraphicWindowOwner{ // packed(0x4 bytes) TI: 0x1647
-public:
-	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
-};
-
-// Type: void;
 
 // Type: /*packed*/ class ButtonWindow (forward reference);
 // VTABLE: COPTER_D 0x00591b78
@@ -682,7 +682,8 @@ _T1d2:
 	__asm        mov    [ebp-0x48], eax;
 	__asm        jmp    _T21d;
 _T217:
-	None = None;
+	__asm        mov    eax, [ebp-0x40];
+	__asm        mov    [ebp-0x48], eax;
 _T21d:
 	__asm        jmp    near ptr 0x00472192;
 
@@ -753,7 +754,8 @@ _T28e:
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        jmp    _T2fb;
 _T2f5:
-	None = None;
+	__asm        mov    eax, [ebp-0x54];
+	__asm        mov    [ebp-0x5C], eax;
 _T2fb:
 	__asm        jmp    near ptr 0x00472270;
 
@@ -1428,7 +1430,7 @@ _T4fb:
 	__asm        mov    [ebp-0x20A0], eax;
 	__asm        jmp    _T546;
 _T53c:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x20A0], 0;
 _T546:
 	__asm        lea    ecx, sText.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
@@ -2566,7 +2568,7 @@ _Taa:
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    _Te0;
 _Td9:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-4], 0;
 _Te0:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
@@ -2694,7 +2696,7 @@ _T224:
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _T25a;
 _T253:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x24], 0;
 _T25a:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
@@ -3525,7 +3527,7 @@ _T4d4:
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    _T4f5;
 _T4ee:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x20], 0;
 _T4f5:
 	__asm        mov    dword ptr [ebp-0x24], 0;
 	__asm        jmp    near ptr 0x00474454;
@@ -3630,7 +3632,9 @@ _T61d:
 // FUNCTION: COPTER_D 0x00474577
 void HangarWindow::HideHelp() {
 
-	None = this->myTextHelpWindow;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x74];
+	__asm        mov    [ebp-4], eax;
 // LINE 486:
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax+0x54], 0;
@@ -3699,7 +3703,7 @@ _Ta1:
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    _Tc2;
 _Tbb:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-4], 0;
 _Tc2:
 	__asm        mov    dword ptr [ebp-8], 0;
 	__asm        jmp    near ptr 0x00474673;

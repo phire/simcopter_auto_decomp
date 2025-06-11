@@ -390,6 +390,24 @@ struct Shortcut{ // packed(0x18 bytes) TI: 0x1083
 	/*+0x14*/  long lIgnoreModifiers;
 };
 
+// Type: /*packed*/ class list<Shortcut>::iterator (forward reference);
+class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
+{ // packed(0x4 bytes) TI: 0x1081
+protected:
+	/*+0x0*/   /*packed*/ struct list<Shortcut>::list_node *node;
+public:
+	void iterator();
+protected:
+	void iterator(/*packed*/ struct list<Shortcut>::list_node*);
+public:
+	int32_t operator==(const /*packed*/ class list<Shortcut>::iterator&);
+	/*packed*/ struct Shortcut& operator*();
+	/*packed*/ class list<Shortcut>::iterator operator++(int32_t);
+	/*packed*/ class list<Shortcut>::iterator& operator++();
+	/*packed*/ class list<Shortcut>::iterator operator--(int32_t);
+	/*packed*/ class list<Shortcut>::iterator& operator--();
+};
+
 // Type: /*packed*/ class list<Shortcut> (forward reference);
 class list<Shortcut>{ // packed(0x8 bytes) TI: 0x1b79
 	using void_pointer = void * __ptr32;
@@ -512,24 +530,6 @@ public:
 	void sort();
 };
 
-// Type: /*packed*/ class list<Shortcut>::iterator (forward reference);
-class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
-{ // packed(0x4 bytes) TI: 0x1081
-protected:
-	/*+0x0*/   /*packed*/ struct list<Shortcut>::list_node *node;
-public:
-	void iterator();
-protected:
-	void iterator(/*packed*/ struct list<Shortcut>::list_node*);
-public:
-	int32_t operator==(const /*packed*/ class list<Shortcut>::iterator&);
-	/*packed*/ struct Shortcut& operator*();
-	/*packed*/ class list<Shortcut>::iterator operator++(int32_t);
-	/*packed*/ class list<Shortcut>::iterator& operator++();
-	/*packed*/ class list<Shortcut>::iterator operator--(int32_t);
-	/*packed*/ class list<Shortcut>::iterator& operator--();
-};
-
 // Type: /*packed*/ struct list<Shortcut>::list_node (forward reference);
 struct list<Shortcut>::list_node{ // packed(0x20 bytes) TI: 0x1b8e
 	/*+0x0*/   void * __ptr32 next;
@@ -553,6 +553,12 @@ public:
 	/*packed*/ class list<Shortcut>::iterator& operator++();
 	/*packed*/ class list<Shortcut>::iterator operator--(int32_t);
 	/*packed*/ class list<Shortcut>::iterator& operator--();
+};
+
+// Type: /*packed*/ struct list<CopterGameMode>::list_node_buffer (forward reference);
+struct list<CopterGameMode>::list_node_buffer{ // packed(0x8 bytes) TI: 0x1a1a
+	/*+0x0*/   void * __ptr32 next_buffer;
+	/*+0x4*/   /*packed*/ struct list<CopterGameMode>::list_node *buffer;
 };
 
 // Type: /*packed*/ class list<CopterGameMode> (forward reference);
@@ -675,12 +681,6 @@ public:
 	void merge(/*packed*/ class list<CopterGameMode>&);
 	void reverse();
 	void sort();
-};
-
-// Type: /*packed*/ struct list<CopterGameMode>::list_node_buffer (forward reference);
-struct list<CopterGameMode>::list_node_buffer{ // packed(0x8 bytes) TI: 0x1a1a
-	/*+0x0*/   void * __ptr32 next_buffer;
-	/*+0x4*/   /*packed*/ struct list<CopterGameMode>::list_node *buffer;
 };
 
 // Type: /*packed*/ class list<CopterGameMode>::iterator;
@@ -1211,7 +1211,8 @@ _T1cc:
 	__asm        mov    [ebp-0x30], eax;
 	__asm        jmp    _T217;
 _T211:
-	None = None;
+	__asm        mov    eax, [ebp-0x28];
+	__asm        mov    [ebp-0x30], eax;
 _T217:
 	__asm        jmp    near ptr 0x00487DD3;
 
@@ -1280,7 +1281,8 @@ _T284:
 	__asm        mov    [ebp-0x44], eax;
 	__asm        jmp    _T2f1;
 _T2eb:
-	None = None;
+	__asm        mov    eax, [ebp-0x3C];
+	__asm        mov    [ebp-0x44], eax;
 _T2f1:
 	__asm        jmp    near ptr 0x00487EAD;
 
@@ -2736,7 +2738,7 @@ _Tb3f:
 	__asm        mov    [ebp-0x13C], eax;
 	__asm        jmp    _Tbd7;
 _Tbcd:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x13C], 0;
 _Tbd7:
 	__asm        mov    dword ptr [ebp-0x140], 0;
 	__asm        jmp    near ptr 0x0048939D;
@@ -2778,7 +2780,7 @@ _Tc3d:
 	__asm        mov    [ebp-0x144], eax;
 	__asm        jmp    _Tc86;
 _Tc7c:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x144], 0;
 _Tc86:
 	__asm        mov    dword ptr [ebp-0x148], 0;
 	__asm        jmp    near ptr 0x0048944C;
@@ -2820,7 +2822,7 @@ _Tcec:
 	__asm        mov    [ebp-0x14C], eax;
 	__asm        jmp    _Td35;
 _Td2b:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x14C], 0;
 _Td35:
 	__asm        mov    dword ptr [ebp-0x150], 0;
 	__asm        jmp    near ptr 0x004894FB;

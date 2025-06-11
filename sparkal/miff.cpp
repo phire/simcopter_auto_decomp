@@ -10,6 +10,8 @@
 
 // Type: int32_t;
 
+// Type: void;
+
 // Type: /*packed*/ class MIFF (forward reference);
 // VTABLE: COPTER_D 0x00591950
 class MIFF : public PFile
@@ -54,8 +56,6 @@ public:
 	/*+0x128*/ long bFileAppearsCorrupt;
 	/*+0x12c*/ /*packed*/ struct MIFFHeader myMIFFHeader; // 0x1c bytes
 };
-
-// Type: void;
 
 // Type: /*packed*/ struct MIFFRecord (forward reference);
 struct MIFFRecord{ // packed(0xc bytes) TI: 0x148f
@@ -1203,7 +1203,9 @@ _T58:
 	__asm        cmp    dword ptr [eax+0x118], 0;
 	__asm        jg     _Tab;
 _T7b:
-	None = this->lPresentRecordStart;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x110];
+	__asm        mov    [ebp-0x10], eax;
 // LINE 426:
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0x10];
@@ -1236,7 +1238,9 @@ _Tab:
 	__asm        cmp    lResult, 0xFFFFFFFF;
 	__asm        jne    _T111;
 
-	None = this->lPresentRecordStart;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x110];
+	__asm        mov    [ebp-0x18], eax;
 // LINE 436:
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0x18];

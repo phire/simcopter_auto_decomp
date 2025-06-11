@@ -87,45 +87,6 @@ struct list<KeyColors>::list_node{ // packed(0x10 bytes) TI: 0x29de
 
 // Type: void;
 
-// Type: /*packed*/ class KeyboardWindow (forward reference);
-// VTABLE: COPTER_D 0x0058f058
-class KeyboardWindow : public GraphicWindow
-{ // packed(0xb0 bytes) TI: 0x2c31
-public:
-	void KeyboardWindow(/*packed*/ class MRect&, int32_t, /*unpacked*/ class GraphicWindow*, /*packed*/ class GraphicWindowOwner*, int32_t);
-	virtual void ~KeyboardWindow() /* override */;
-	virtual int32_t Initialize() /* override */;
-	virtual int32_t CreateImage(int32_t) /* override */;
-	virtual void DestroyImage() /* override */;
-	virtual int32_t ComposeSelf() /* override */;
-	virtual int32_t DoesWindowNeedUpdating() /* override */;
-	virtual int32_t DoesKeyExistOnKeyboard(long); // vtable+0xc4
-	virtual long DoKeyDown(long, char) /* override */;
-	virtual long DoKeyUp(long, char) /* override */;
-	virtual long DoCursorDown(long, long, unsigned long) /* override */;
-	virtual long DoCursorUp(long, long, unsigned long) /* override */;
-	virtual long DoCursorMove(long, long) /* override */;
-	/*+0x74*/  /*packed*/ class list<HotSpot> myHotSpotList; // 0x8 bytes
-	/*+0x7c*/  /*packed*/ class list<HotSpot> myNumLockOnHotSpotList; // 0x8 bytes
-	/*+0x84*/  /*packed*/ class list<HotSpot> myNumLockOffHotSpotList; // 0x8 bytes
-	/*+0x8c*/  /*packed*/ class list<HotSpot> *myCurrentlyUsedNumLockHotSpotList;
-	/*+0x90*/  /*packed*/ class list<KeyColors> myKeyColorsList; // 0x8 bytes
-protected:
-	virtual void DrawKeyColorsOnKeyboard(); // vtable+0xc8
-	virtual void DrawCharactersOnKeyboard(); // vtable+0xcc
-	virtual void DrawLightsOnKeyboard(); // vtable+0xd0
-	virtual int32_t DoesKeyRequireTextDraw(long); // vtable+0xd4
-	virtual int32_t DoesPositionHitKey(long, long, long&); // vtable+0xd8
-	virtual int32_t ConvertKeyToString(int32_t, long, /*packed*/ class basic_string<char>&); // vtable+0xdc
-	virtual int32_t GetRectOfNonTextImage(long, /*packed*/ class MRect&); // vtable+0xe0
-	/*+0x98*/  /*unpacked*/ class CBackBuffer *myKeyLightImage;
-	/*+0x9c*/  /*unpacked*/ class CBackBuffer *myNonTextKeyImage;
-	/*+0xa0*/  /*packed*/ class MFont *mFontToUse;
-	/*+0xa4*/  int32_t bNumLockLastSetting;
-	/*+0xa8*/  int32_t bCapsLockLastSetting;
-	/*+0xac*/  int32_t bScrollLockLastSetting;
-};
-
 // Type: /*packed*/ class MRect (forward reference);
 class MRect : public SparkalRect
 { // packed(0x10 bytes) TI: 0x1067
@@ -204,6 +165,45 @@ public:
 class GraphicWindowOwner{ // packed(0x4 bytes) TI: 0x1647
 public:
 	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
+};
+
+// Type: /*packed*/ class KeyboardWindow (forward reference);
+// VTABLE: COPTER_D 0x0058f058
+class KeyboardWindow : public GraphicWindow
+{ // packed(0xb0 bytes) TI: 0x2c31
+public:
+	void KeyboardWindow(/*packed*/ class MRect&, int32_t, /*unpacked*/ class GraphicWindow*, /*packed*/ class GraphicWindowOwner*, int32_t);
+	virtual void ~KeyboardWindow() /* override */;
+	virtual int32_t Initialize() /* override */;
+	virtual int32_t CreateImage(int32_t) /* override */;
+	virtual void DestroyImage() /* override */;
+	virtual int32_t ComposeSelf() /* override */;
+	virtual int32_t DoesWindowNeedUpdating() /* override */;
+	virtual int32_t DoesKeyExistOnKeyboard(long); // vtable+0xc4
+	virtual long DoKeyDown(long, char) /* override */;
+	virtual long DoKeyUp(long, char) /* override */;
+	virtual long DoCursorDown(long, long, unsigned long) /* override */;
+	virtual long DoCursorUp(long, long, unsigned long) /* override */;
+	virtual long DoCursorMove(long, long) /* override */;
+	/*+0x74*/  /*packed*/ class list<HotSpot> myHotSpotList; // 0x8 bytes
+	/*+0x7c*/  /*packed*/ class list<HotSpot> myNumLockOnHotSpotList; // 0x8 bytes
+	/*+0x84*/  /*packed*/ class list<HotSpot> myNumLockOffHotSpotList; // 0x8 bytes
+	/*+0x8c*/  /*packed*/ class list<HotSpot> *myCurrentlyUsedNumLockHotSpotList;
+	/*+0x90*/  /*packed*/ class list<KeyColors> myKeyColorsList; // 0x8 bytes
+protected:
+	virtual void DrawKeyColorsOnKeyboard(); // vtable+0xc8
+	virtual void DrawCharactersOnKeyboard(); // vtable+0xcc
+	virtual void DrawLightsOnKeyboard(); // vtable+0xd0
+	virtual int32_t DoesKeyRequireTextDraw(long); // vtable+0xd4
+	virtual int32_t DoesPositionHitKey(long, long, long&); // vtable+0xd8
+	virtual int32_t ConvertKeyToString(int32_t, long, /*packed*/ class basic_string<char>&); // vtable+0xdc
+	virtual int32_t GetRectOfNonTextImage(long, /*packed*/ class MRect&); // vtable+0xe0
+	/*+0x98*/  /*unpacked*/ class CBackBuffer *myKeyLightImage;
+	/*+0x9c*/  /*unpacked*/ class CBackBuffer *myNonTextKeyImage;
+	/*+0xa0*/  /*packed*/ class MFont *mFontToUse;
+	/*+0xa4*/  int32_t bNumLockLastSetting;
+	/*+0xa8*/  int32_t bCapsLockLastSetting;
+	/*+0xac*/  int32_t bScrollLockLastSetting;
 };
 
 // Type: /*packed*/ class basic_string<char>;
@@ -1905,7 +1905,8 @@ _T78:
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _Td8;
 _Td2:
-	None = None;
+	__asm        mov    eax, [ebp-0x1C];
+	__asm        mov    [ebp-0x24], eax;
 _Td8:
 	__asm        jmp    near ptr 0x004013DB;
 
@@ -1976,7 +1977,8 @@ _T149:
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    _T1b6;
 _T1b0:
-	None = None;
+	__asm        mov    eax, [ebp-0x30];
+	__asm        mov    [ebp-0x38], eax;
 _T1b6:
 	__asm        jmp    near ptr 0x004014B9;
 
@@ -2066,7 +2068,8 @@ _T297:
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        jmp    _T2f7;
 _T2f1:
-	None = None;
+	__asm        mov    eax, [ebp-0x64];
+	__asm        mov    [ebp-0x6C], eax;
 _T2f7:
 	__asm        jmp    near ptr 0x004015FA;
 
@@ -2110,7 +2113,8 @@ _T2f7:
 	__asm        mov    [ebp-0x80], eax;
 	__asm        jmp    _T387;
 _T381:
-	None = None;
+	__asm        mov    eax, [ebp-0x78];
+	__asm        mov    [ebp-0x80], eax;
 _T387:
 	__asm        jmp    near ptr 0x0040168A;
 
@@ -2200,7 +2204,8 @@ _T477:
 	__asm        mov    [ebp-0xAC], eax;
 	__asm        jmp    _T4fe;
 _T4f2:
-	None = None;
+	__asm        mov    eax, [ebp-0xA4];
+	__asm        mov    [ebp-0xAC], eax;
 _T4fe:
 	__asm        jmp    near ptr 0x00401801;
 
@@ -2244,7 +2249,8 @@ _T4fe:
 	__asm        mov    [ebp-0xC0], eax;
 	__asm        jmp    _T5be;
 _T5b2:
-	None = None;
+	__asm        mov    eax, [ebp-0xB8];
+	__asm        mov    [ebp-0xC0], eax;
 _T5be:
 	__asm        jmp    near ptr 0x004018C1;
 
@@ -2914,7 +2920,8 @@ _Te4:
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    _T32a;
 
-	None = SZ_KEYBOARD_LIGHT_IMAGE_FILE_NAME;
+	__asm        mov    eax, SZ_KEYBOARD_LIGHT_IMAGE_FILE_NAME;
+	__asm        mov    [ebp-0x7C], eax;
 // LINE 120:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -2930,7 +2937,7 @@ _Te4:
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    _T16b;
 _T164:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x14], 0;
 _T16b:
 	__asm        mov    dword ptr [ebp-0x18], 0;
 	__asm        jmp    near ptr 0x0040227F;
@@ -3069,7 +3076,8 @@ _T32a:
 	__asm        cmp    dword ptr [eax+0x9C], 0;
 	__asm        jne    _T473;
 
-	None = SZ_KEYBOARD_NON_TEXT_IMAGE_FILE_NAME;
+	__asm        mov    eax, SZ_KEYBOARD_NON_TEXT_IMAGE_FILE_NAME;
+	__asm        mov    [ebp-0x64], eax;
 // LINE 124:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -3085,7 +3093,7 @@ _T32a:
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    _T377;
 _T370:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x20], 0;
 _T377:
 	__asm        mov    dword ptr [ebp-0x24], 0;
 	__asm        jmp    near ptr 0x0040248B;
@@ -3396,7 +3404,7 @@ _T123:
 	__asm        mov    [ebp-0x100C], eax;
 	__asm        jmp    _T16e;
 _T164:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x100C], 0;
 _T16e:
 	__asm        mov    eax, sKey;
 	__asm        mov    eax, [eax+4];
@@ -3548,7 +3556,7 @@ _T33e:
 	__asm        mov    [ebp-0x1028], eax;
 	__asm        jmp    _T37f;
 _T375:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x1028], 0;
 _T37f:
 	__asm        mov    eax, sKey;
 	__asm        mov    eax, [eax+4];
@@ -3573,7 +3581,9 @@ _T37f:
 _T3cf:
 	__asm        jmp    near ptr 0x00402AF9;
 
-	sKey.reference = None;
+	__asm        mov    eax, [ebp-0x1028];
+	__asm        mov    ecx, sKey;
+	__asm        mov    [ecx+4], eax;
 _T3e0:
 	__asm        cmp    dword ptr [ebp-0x1044], 0;
 	__asm        je     _T42e;
@@ -3724,7 +3734,7 @@ _T5ea:
 	__asm        mov    [ebp-0x1048], eax;
 	__asm        jmp    _T617;
 _T60d:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x1048], 0;
 _T617:
 	__asm        mov    eax, sKey;
 	__asm        mov    eax, [eax+4];
@@ -3869,7 +3879,9 @@ _T9c:
 // LINE 182:
 	__asm        jmp    _T27;
 _Tbf:
-	None = this->myCurrentlyUsedNumLockHotSpotList;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x8C];
+	__asm        mov    [ebp-0x40], eax;
 // LINE 185:
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    eax, [eax];
@@ -3881,10 +3893,13 @@ _Tbf:
 
 	__asm        jmp    near ptr 0x00402F16;
 
-	tempHotSpotListIterator.node = None;
+	__asm        mov    eax, [ebp-0x10];
+	__asm        mov    tempHotSpotListIterator.node, eax;
 // LINE 23:
 _Teb:
-	None = this->myCurrentlyUsedNumLockHotSpotList;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x8C];
+	__asm        mov    [ebp-0x20], eax;
 // LINE 186:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    eax, [eax];
@@ -4030,7 +4045,9 @@ _Tb8:
 // LINE 209:
 	__asm        jmp    _T27;
 _Tdb:
-	None = this->myCurrentlyUsedNumLockHotSpotList;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x8C];
+	__asm        mov    [ebp-0x40], eax;
 // LINE 212:
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    eax, [eax];
@@ -4042,10 +4059,13 @@ _Tdb:
 
 	__asm        jmp    near ptr 0x004030CE;
 
-	tempHotSpotListIterator.node = None;
+	__asm        mov    eax, [ebp-0x10];
+	__asm        mov    tempHotSpotListIterator.node, eax;
 // LINE 23:
 _T107:
-	None = this->myCurrentlyUsedNumLockHotSpotList;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x8C];
+	__asm        mov    [ebp-0x20], eax;
 // LINE 213:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    eax, [eax];
@@ -4546,7 +4566,8 @@ _Ta2:
 
 	__asm        jmp    near ptr 0x00403726;
 
-	tempKeyColorsListIterator.node = None;
+	__asm        mov    eax, [ebp-0x2C];
+	__asm        mov    tempKeyColorsListIterator.node, eax;
 // LINE 333:
 _Tdd:
 	__asm        mov    eax, this;
@@ -4658,7 +4679,9 @@ _T1f3:
 // LINE 351:
 	__asm        jmp    _T45;
 _T21c:
-	None = this->myCurrentlyUsedNumLockHotSpotList;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x8C];
+	__asm        mov    [ebp-0x94], eax;
 // LINE 354:
 	__asm        mov    eax, [ebp-0x94];
 	__asm        mov    eax, [eax];
@@ -4670,10 +4693,13 @@ _T21c:
 
 	__asm        jmp    near ptr 0x004038A0;
 
-	tempHotSpotListIterator.node = None;
+	__asm        mov    eax, [ebp-0x3C];
+	__asm        mov    tempHotSpotListIterator.node, eax;
 // LINE 23:
 _T257:
-	None = this->myCurrentlyUsedNumLockHotSpotList;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x8C];
+	__asm        mov    [ebp-0x64], eax;
 // LINE 355:
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    eax, [eax];
@@ -4721,7 +4747,8 @@ _T2bc:
 
 	__asm        jmp    near ptr 0x00403940;
 
-	tempKeyColorsListIterator.node = None;
+	__asm        mov    eax, [ebp-0x44];
+	__asm        mov    tempKeyColorsListIterator.node, eax;
 // LINE 360:
 _T2f7:
 	__asm        mov    eax, this;
@@ -4941,7 +4968,8 @@ _T115:
 
 	__asm        jmp    near ptr 0x00403BF9;
 
-	tempHotSpotListIterator.node = None;
+	__asm        mov    eax, [ebp-0x7C];
+	__asm        mov    tempHotSpotListIterator.node, eax;
 // LINE 402:
 _T170:
 	__asm        mov    eax, this;
@@ -5173,7 +5201,9 @@ _T415:
 // LINE 423:
 	__asm        jmp    _T170;
 _T441:
-	None = this->myCurrentlyUsedNumLockHotSpotList;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x8C];
+	__asm        mov    [ebp-0xB8], eax;
 // LINE 425:
 	__asm        mov    eax, [ebp-0xB8];
 	__asm        mov    eax, [eax];
@@ -5185,10 +5215,13 @@ _T441:
 
 	__asm        jmp    near ptr 0x00403F08;
 
-	tempHotSpotListIterator.node = None;
+	__asm        mov    eax, [ebp-0x88];
+	__asm        mov    tempHotSpotListIterator.node, eax;
 // LINE 23:
 _T482:
-	None = this->myCurrentlyUsedNumLockHotSpotList;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x8C];
+	__asm        mov    [ebp-0x98], eax;
 // LINE 426:
 	__asm        mov    eax, [ebp-0x98];
 	__asm        mov    eax, [eax];
@@ -6184,7 +6217,8 @@ _T81:
 	__asm        cmp    dword ptr [eax+0x1CE], 0;
 	__asm        jne    _T30a;
 
-	None = SZ_JOYSTICK_BUTTON_IMAGE_FILE_NAME;
+	__asm        mov    eax, SZ_JOYSTICK_BUTTON_IMAGE_FILE_NAME;
+	__asm        mov    [ebp-0x8C], eax;
 // LINE 669:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -6200,7 +6234,7 @@ _T81:
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    _Tf8;
 _Tf1:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0xC], 0;
 _Tf8:
 	__asm        mov    dword ptr [ebp-0x10], 0;
 	__asm        jmp    near ptr 0x00404D39;
@@ -6363,7 +6397,8 @@ _T30a:
 	__asm        cmp    dword ptr [eax+0x1D2], 0;
 	__asm        jne    _T506;
 
-	None = SZ_JOYSTICK_SLIDER_IMAGE_FILE_NAME;
+	__asm        mov    eax, SZ_JOYSTICK_SLIDER_IMAGE_FILE_NAME;
+	__asm        mov    [ebp-0x74], eax;
 // LINE 674:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -6379,7 +6414,7 @@ _T30a:
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    _T357;
 _T350:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x18], 0;
 _T357:
 	__asm        mov    dword ptr [ebp-0x1C], 0;
 	__asm        jmp    near ptr 0x00404F98;
@@ -6511,7 +6546,8 @@ _T506:
 	__asm        cmp    dword ptr [eax+0x1D6], 0;
 	__asm        jne    _T61a;
 
-	None = SZ_JOYSTICK_HANDLE_IMAGE_FILE_NAME;
+	__asm        mov    eax, SZ_JOYSTICK_HANDLE_IMAGE_FILE_NAME;
+	__asm        mov    [ebp-0x64], eax;
 // LINE 679:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -6527,7 +6563,7 @@ _T506:
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _T553;
 _T54c:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x24], 0;
 _T553:
 	__asm        mov    dword ptr [ebp-0x28], 0;
 	__asm        jmp    near ptr 0x00405194;
@@ -6592,7 +6628,8 @@ _T61a:
 	__asm        cmp    dword ptr [eax+0x1DA], 0;
 	__asm        jne    _T709;
 
-	None = SZ_JOYSTICK_HANDLE_BASE_IMAGE_FILE_NAME;
+	__asm        mov    eax, SZ_JOYSTICK_HANDLE_BASE_IMAGE_FILE_NAME;
+	__asm        mov    [ebp-0x54], eax;
 // LINE 684:
 	__asm        push   0x10;
 	__asm        call   operator new;
@@ -6608,7 +6645,7 @@ _T61a:
 	__asm        mov    [ebp-0x30], eax;
 	__asm        jmp    _T667;
 _T660:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x30], 0;
 _T667:
 	__asm        mov    dword ptr [ebp-0x34], 0;
 	__asm        jmp    near ptr 0x004052A8;
@@ -7454,9 +7491,7 @@ _T1b:
 	__asm        cmp    dword ptr [ecx+eax*4], 0;
 	__asm        je     _T65;
 // LINE 931:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, lNewJoystickControlStates;
-	__asm        mov    dword ptr [ecx+eax*4], 1;
+	lNewJoystickControlStates[i] = 0x1;
 // LINE 932:
 _T65:
 	__asm        jmp    _T18;
@@ -7913,7 +7948,8 @@ _Tc6:
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _T126;
 _T120:
-	None = None;
+	__asm        mov    eax, [ebp-0x1C];
+	__asm        mov    [ebp-0x24], eax;
 _T126:
 	__asm        jmp    near ptr 0x004062CF;
 
@@ -7982,7 +8018,8 @@ _T193:
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    _T200;
 _T1fa:
-	None = None;
+	__asm        mov    eax, [ebp-0x30];
+	__asm        mov    [ebp-0x38], eax;
 _T200:
 	__asm        jmp    near ptr 0x004063A9;
 
@@ -8070,7 +8107,8 @@ _T2ec:
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        jmp    _T34c;
 _T346:
-	None = None;
+	__asm        mov    eax, [ebp-0x64];
+	__asm        mov    [ebp-0x6C], eax;
 _T34c:
 	__asm        jmp    near ptr 0x004064F5;
 
@@ -8114,7 +8152,8 @@ _T34c:
 	__asm        mov    [ebp-0x80], eax;
 	__asm        jmp    _T3dc;
 _T3d6:
-	None = None;
+	__asm        mov    eax, [ebp-0x78];
+	__asm        mov    [ebp-0x80], eax;
 _T3dc:
 	__asm        jmp    near ptr 0x00406585;
 
@@ -8202,7 +8241,8 @@ _T4d7:
 	__asm        mov    [ebp-0xAC], eax;
 	__asm        jmp    _T55e;
 _T552:
-	None = None;
+	__asm        mov    eax, [ebp-0xA4];
+	__asm        mov    [ebp-0xAC], eax;
 _T55e:
 	__asm        jmp    near ptr 0x00406707;
 
@@ -8246,7 +8286,8 @@ _T55e:
 	__asm        mov    [ebp-0xC0], eax;
 	__asm        jmp    _T61e;
 _T612:
-	None = None;
+	__asm        mov    eax, [ebp-0xB8];
+	__asm        mov    [ebp-0xC0], eax;
 _T61e:
 	__asm        jmp    near ptr 0x004067C7;
 
@@ -8759,7 +8800,7 @@ _T5a6:
 	__asm        mov    [ebp-0x10E4], eax;
 	__asm        jmp    _T5f1;
 _T5e7:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x10E4], 0;
 _T5f1:
 	__asm        mov    eax, sText.reference;
 	__asm        dec    dword ptr [eax+0xC];
@@ -9031,7 +9072,7 @@ _T993:
 	__asm        mov    [ebp-0x2104], eax;
 	__asm        jmp    _T9de;
 _T9d4:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x2104], 0;
 _T9de:
 	__asm        mov    eax, sText.reference;
 	__asm        dec    dword ptr [eax+0xC];
@@ -9249,7 +9290,7 @@ _Tc9c:
 	__asm        mov    [ebp-0x3124], eax;
 	__asm        jmp    _Tce7;
 _Tcdd:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x3124], 0;
 _Tce7:
 	__asm        mov    eax, sText.reference;
 	__asm        dec    dword ptr [eax+0xC];
@@ -9467,7 +9508,7 @@ _Tfa5:
 	__asm        mov    [ebp-0x4144], eax;
 	__asm        jmp    _Tff0;
 _Tfe6:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x4144], 0;
 _Tff0:
 	__asm        mov    eax, sText.reference;
 	__asm        dec    dword ptr [eax+0xC];
@@ -10069,7 +10110,7 @@ _T330:
 	__asm        ja     _T383;
 
 	__asm        mov    eax, [ebp-0x4C];
-	__asm        jmp    SwitchPointers4227339[0][eax*4];
+	__asm        jmp    _Switch_35a[0][eax*4];
 // Switch pointers
 // LINE 1243:
 _T383:
@@ -10220,7 +10261,8 @@ _T17a:
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    _T1c5;
 _T1bf:
-	None = None;
+	__asm        mov    eax, [ebp-0x58];
+	__asm        mov    [ebp-0x60], eax;
 _T1c5:
 	__asm        jmp    near ptr 0x0040830C;
 
@@ -10288,7 +10330,8 @@ _T23b:
 	__asm        mov    [ebp-0x74], eax;
 	__asm        jmp    _T2a8;
 _T2a2:
-	None = None;
+	__asm        mov    eax, [ebp-0x6C];
+	__asm        mov    [ebp-0x74], eax;
 _T2a8:
 	__asm        jmp    near ptr 0x004083EF;
 
@@ -10510,7 +10553,8 @@ _T559:
 	__asm        mov    [ebp-0xC8], eax;
 	__asm        jmp    _T5ce;
 _T5c2:
-	None = None;
+	__asm        mov    eax, [ebp-0xC0];
+	__asm        mov    [ebp-0xC8], eax;
 _T5ce:
 	__asm        jmp    near ptr 0x00408715;
 
@@ -10578,7 +10622,8 @@ _T64d:
 	__asm        mov    [ebp-0xDC], eax;
 	__asm        jmp    _T6ea;
 _T6de:
-	None = None;
+	__asm        mov    eax, [ebp-0xD4];
+	__asm        mov    [ebp-0xDC], eax;
 _T6ea:
 	__asm        jmp    near ptr 0x00408831;
 
@@ -10797,7 +10842,8 @@ _T105:
 	__asm        mov    [ebp-0x54], eax;
 	__asm        jmp    _T150;
 _T14a:
-	None = None;
+	__asm        mov    eax, [ebp-0x4C];
+	__asm        mov    [ebp-0x54], eax;
 _T150:
 	__asm        jmp    near ptr 0x00408B3B;
 
@@ -10865,7 +10911,8 @@ _T1ba:
 	__asm        mov    [ebp-0x68], eax;
 	__asm        jmp    _T227;
 _T221:
-	None = None;
+	__asm        mov    eax, [ebp-0x60];
+	__asm        mov    [ebp-0x68], eax;
 _T227:
 	__asm        jmp    near ptr 0x00408C12;
 
@@ -11107,7 +11154,8 @@ _T169:
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    _T1b4;
 _T1ae:
-	None = None;
+	__asm        mov    eax, [ebp-0x5C];
+	__asm        mov    [ebp-0x64], eax;
 _T1b4:
 	__asm        jmp    near ptr 0x00408F02;
 
@@ -11175,7 +11223,8 @@ _T230:
 	__asm        mov    [ebp-0x78], eax;
 	__asm        jmp    _T2a0;
 _T29a:
-	None = None;
+	__asm        mov    eax, [ebp-0x70];
+	__asm        mov    [ebp-0x78], eax;
 _T2a0:
 	__asm        jmp    near ptr 0x00408FEE;
 
@@ -11803,7 +11852,8 @@ _T56:
 
 	__asm        jmp    near ptr 0x004096F3;
 
-	tempIterator.node = None;
+	__asm        mov    eax, [ebp-0x14];
+	__asm        mov    tempIterator.node, eax;
 // LINE 1547:
 _T7a:
 	__asm        mov    eax, i;
@@ -11877,7 +11927,8 @@ _T59:
 
 	__asm        jmp    near ptr 0x004097B7;
 
-	tempIterator.node = None;
+	__asm        mov    eax, [ebp-0x14];
+	__asm        mov    tempIterator.node, eax;
 // LINE 1569:
 _T7d:
 	__asm        mov    eax, i;
@@ -11953,7 +12004,9 @@ _T6b:
 	__asm        cmp    dword ptr [eax+0x74], 0;
 	__asm        je     _Tb3;
 
-	None = this->myJoystickWindow;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x74];
+	__asm        mov    [ebp-0xC0], eax;
 // LINE 1605:
 	__asm        mov    eax, [ebp-0xC0];
 	__asm        mov    dword ptr [eax+0x54], 0;
@@ -12508,7 +12561,9 @@ _T8c1:
 	__asm        cmp    dword ptr [eax+0x78], 0;
 	__asm        je     _T909;
 
-	None = this->myKeyboardWindow;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x78];
+	__asm        mov    [ebp-0x94], eax;
 // LINE 1653:
 	__asm        mov    eax, [ebp-0x94];
 	__asm        mov    dword ptr [eax+0x54], 0;
@@ -13390,7 +13445,7 @@ _T1c7:
 	__asm        mov    [ebp-0x40], eax;
 	__asm        jmp    _T1f3;
 _T1ec:
-	None = 0xffffffff;
+	__asm        mov    dword ptr [ebp-0x40], 0xFFFFFFFF;
 _T1f3:
 	__asm        jmp    near ptr 0x0040AC49;
 
@@ -13428,7 +13483,7 @@ _T22b:
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    _T263;
 _T25c:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x18], 0;
 _T263:
 	__asm        mov    dword ptr [ebp-0x1C], 0;
 	__asm        jmp    near ptr 0x0040ACC0;
@@ -13693,7 +13748,8 @@ _T103:
 	__asm        mov    [ebp-0x58], eax;
 	__asm        jmp    _T163;
 _T15d:
-	None = None;
+	__asm        mov    eax, [ebp-0x50];
+	__asm        mov    [ebp-0x58], eax;
 _T163:
 	__asm        jmp    near ptr 0x0040AFE4;
 
@@ -13737,7 +13793,8 @@ _T163:
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        jmp    _T1ed;
 _T1e7:
-	None = None;
+	__asm        mov    eax, [ebp-0x64];
+	__asm        mov    [ebp-0x6C], eax;
 _T1ed:
 	__asm        jmp    near ptr 0x0040B06E;
 
@@ -13869,7 +13926,8 @@ _T345:
 	__asm        mov    [ebp-0xB4], eax;
 	__asm        jmp    _T3cc;
 _T3c0:
-	None = None;
+	__asm        mov    eax, [ebp-0xAC];
+	__asm        mov    [ebp-0xB4], eax;
 _T3cc:
 	__asm        jmp    near ptr 0x0040B24D;
 
@@ -13913,7 +13971,8 @@ _T3cc:
 	__asm        mov    [ebp-0xC8], eax;
 	__asm        jmp    _T48c;
 _T480:
-	None = None;
+	__asm        mov    eax, [ebp-0xC0];
+	__asm        mov    [ebp-0xC8], eax;
 _T48c:
 	__asm        jmp    near ptr 0x0040B30D;
 
@@ -14212,7 +14271,7 @@ _T1f0:
 	__asm        mov    [ebp-0x10C4], eax;
 	__asm        jmp    _T23b;
 _T231:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x10C4], 0;
 _T23b:
 	__asm        lea    ecx, sText.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
@@ -14434,7 +14493,7 @@ _T4d8:
 	__asm        mov    [ebp-0x20DC], eax;
 	__asm        jmp    _T523;
 _T519:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x20DC], 0;
 _T523:
 	__asm        lea    ecx, sText.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
@@ -14646,7 +14705,7 @@ _T7a2:
 	__asm        mov    [ebp-0x30F4], eax;
 	__asm        jmp    _T7ed;
 _T7e3:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x30F4], 0;
 _T7ed:
 	__asm        lea    ecx, sText.c_str_ptr;
 	__asm        call   basic_string<char>::delete_ref;
@@ -15423,7 +15482,8 @@ _T12c:
 
 	__asm        jmp    near ptr 0x0040C732;
 
-	shortcutIterator.node = None;
+	__asm        mov    eax, [ebp-0x44];
+	__asm        mov    shortcutIterator.node, eax;
 // LINE 2002:
 _T187:
 	__asm        mov    eax, addedShortcutList;
@@ -15525,7 +15585,8 @@ _T28e:
 
 	__asm        jmp    near ptr 0x0040C86D;
 
-	tempLongSetIterator.node = None;
+	__asm        mov    eax, [ebp-0x58];
+	__asm        mov    tempLongSetIterator.node, eax;
 // LINE 2015:
 _T2c2:
 	__asm        mov    eax, tempLongSet.t.header;
@@ -15583,7 +15644,8 @@ _T31e:
 
 	__asm        jmp    near ptr 0x0040C90F;
 
-	shortcutIterator.node = None;
+	__asm        mov    eax, [ebp-0x60];
+	__asm        mov    shortcutIterator.node, eax;
 // LINE 2018:
 	nKeyCountForCommand = 0x0;
 // LINE 2019:
@@ -15866,7 +15928,7 @@ _T121:
 	__asm        mov    [ebp-0x100C], eax;
 	__asm        jmp    _T16c;
 _T162:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x100C], 0;
 _T16c:
 	__asm        mov    eax, sCommand;
 	__asm        mov    eax, [eax+4];
@@ -16018,7 +16080,7 @@ _T33c:
 	__asm        mov    [ebp-0x1028], eax;
 	__asm        jmp    _T37d;
 _T373:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x1028], 0;
 _T37d:
 	__asm        mov    eax, sCommand;
 	__asm        mov    eax, [eax+4];
@@ -16043,7 +16105,9 @@ _T37d:
 _T3cd:
 	__asm        jmp    near ptr 0x0040CF24;
 
-	sCommand.reference = None;
+	__asm        mov    eax, [ebp-0x1028];
+	__asm        mov    ecx, sCommand;
+	__asm        mov    [ecx+4], eax;
 _T3de:
 	__asm        cmp    dword ptr [ebp-0x1044], 0;
 	__asm        je     _T42c;
@@ -16193,7 +16257,7 @@ _T5e2:
 	__asm        mov    [ebp-0x1048], eax;
 	__asm        jmp    _T60f;
 _T605:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-0x1048], 0;
 _T60f:
 	__asm        mov    eax, sCommand;
 	__asm        mov    eax, [eax+4];

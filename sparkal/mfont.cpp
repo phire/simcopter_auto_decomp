@@ -4,6 +4,8 @@
 
 // Type: char *;
 
+// Type: void;
+
 // Type: /*packed*/ class MFont (forward reference);
 // VTABLE: COPTER_D 0x00591640
 class MFont{ // packed(0x1c bytes) TI: 0x1a6c
@@ -31,8 +33,6 @@ public:
 protected:
 	/*+0x18*/  void * __ptr32 hFont;
 };
-
-// Type: void;
 
 // Type: unsigned long;
 
@@ -341,7 +341,7 @@ _T1c8:
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    _T1e9;
 _T1e2:
-	None = 0x0;
+	__asm        mov    dword ptr [ebp-4], 0;
 _T1e9:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];

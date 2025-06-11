@@ -82,8 +82,7 @@ short LZACompress(/*packed*/ class cGZXBitstream *inStream, /*packed*/ class cGZ
 	__asm        mov    header[3], 0;
 	__asm        mov    header[4], 0;
 // LINE 653:
-	__asm        mov    eax, cSize;
-	__asm        mov    dword ptr [eax], 0;
+	cSize[0] = 0x0;
 // LINE 655:
 	__asm        push   0x53C0;
 	__asm        call   operator new;
@@ -232,10 +231,7 @@ _T18c:
 	__asm        jmp    _T1e9;
 // LINE 707:
 _T1d8:
-	__asm        mov    eax, state;
-	__asm        mov    eax, [eax+0x14];
-	__asm        mov    ecx, cSize;
-	__asm        mov    [ecx], eax;
+	cSize[0] = state->codesize;
 // LINE 708:
 	retVal = 0x0;
 // LINE 715:
@@ -1031,11 +1027,19 @@ _T25:
 	__asm        dec    eax;
 	__asm        mov    ch, eax;
 // LINE 306:
-	model->low = sym;
+	__asm        mov    eax, sym;
+	__asm        mov    ecx, ch;
+	__asm        mov    edx, model;
+	__asm        mov    [edx+ecx*4+0x10], eax;
 // LINE 307:
-	model->low = ch;
+	__asm        mov    eax, ch;
+	__asm        mov    ecx, sym;
+	__asm        mov    edx, model;
+	__asm        mov    [edx+ecx*4+0x4F8], eax;
 // LINE 308:
-	model->low = 0x1;
+	__asm        mov    eax, sym;
+	__asm        mov    ecx, model;
+	__asm        mov    dword ptr [ecx+eax*4+0x9E4], 1;
 // LINE 309:
 	__asm        mov    eax, sym;
 	__asm        mov    ecx, model;
@@ -1086,7 +1090,10 @@ static short EncodeChar(long ch, /*packed*/ struct tACompModel *model, /*packed*
 	/*bp-0x8*/   unsigned long range;
 
 // LINE 360:
-	sym = model->low;
+	__asm        mov    eax, ch;
+	__asm        mov    ecx, model;
+	__asm        mov    eax, [ecx+eax*4+0x10];
+	__asm        mov    sym, eax;
 // LINE 361:
 	__asm        mov    eax, model;
 	__asm        mov    eax, [eax+4];
@@ -1236,7 +1243,10 @@ _T32:
 	__asm        cmp    i, 0;
 	__asm        jle    _T82;
 // LINE 326:
-	model->low = c;
+	__asm        mov    eax, c;
+	__asm        mov    ecx, i;
+	__asm        mov    edx, model;
+	__asm        mov    [edx+ecx*4+0xED0], eax;
 // LINE 327:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, model;
@@ -1279,17 +1289,35 @@ _Tc1:
 	__asm        cmp    sym, eax;
 	__asm        jle    _T127;
 // LINE 333:
-	ch_i = model->low;
+	__asm        mov    eax, i;
+	__asm        mov    ecx, model;
+	__asm        mov    eax, [ecx+eax*4+0x4F8];
+	__asm        mov    ch_i, eax;
 // LINE 334:
-	ch_sym = model->low;
+	__asm        mov    eax, sym;
+	__asm        mov    ecx, model;
+	__asm        mov    eax, [ecx+eax*4+0x4F8];
+	__asm        mov    ch_sym, eax;
 // LINE 335:
-	model->low = ch_sym;
+	__asm        mov    eax, ch_sym;
+	__asm        mov    ecx, i;
+	__asm        mov    edx, model;
+	__asm        mov    [edx+ecx*4+0x4F8], eax;
 // LINE 336:
-	model->low = ch_i;
+	__asm        mov    eax, ch_i;
+	__asm        mov    ecx, sym;
+	__asm        mov    edx, model;
+	__asm        mov    [edx+ecx*4+0x4F8], eax;
 // LINE 337:
-	model->low = sym;
+	__asm        mov    eax, sym;
+	__asm        mov    ecx, ch_i;
+	__asm        mov    edx, model;
+	__asm        mov    [edx+ecx*4+0x10], eax;
 // LINE 338:
-	model->low = i;
+	__asm        mov    eax, i;
+	__asm        mov    ecx, ch_sym;
+	__asm        mov    edx, model;
+	__asm        mov    [edx+ecx*4+0x10], eax;
 // LINE 340:
 _T127:
 	__asm        mov    eax, i;
@@ -2150,7 +2178,10 @@ _T114:
 	__asm        jmp    _T8d;
 // LINE 488:
 _T14a:
-	ch = model->low;
+	__asm        mov    eax, sym;
+	__asm        mov    ecx, model;
+	__asm        mov    eax, [ecx+eax*4+0x4F8];
+	__asm        mov    ch, eax;
 // LINE 489:
 	__asm        mov    eax, model;
 	__asm        push   eax;

@@ -236,7 +236,8 @@ _T32c:
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    _T367;
 _T361:
-	None = None;
+	__asm        mov    eax, [ebp-0x5C];
+	__asm        mov    [ebp-0x64], eax;
 _T367:
 	__asm        jmp    near ptr 0x004CD90C;
 
@@ -346,7 +347,9 @@ _T47a:
 
 	__asm        jmp    near ptr 0x004CDA6E;
 
-	None = this->nodeList.start;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x16];
+	__asm        mov    [ebp-0x50], eax;
 _T4da:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x50];
@@ -548,7 +551,8 @@ _T76f:
 	__asm        mov    [ebp-0xC4], eax;
 	__asm        jmp    _T7ce;
 _T7c2:
-	None = None;
+	__asm        mov    eax, [ebp-0xBC];
+	__asm        mov    [ebp-0xC4], eax;
 _T7ce:
 	__asm        jmp    near ptr 0x004CDD73;
 
@@ -630,7 +634,9 @@ _T887:
 
 	__asm        jmp    near ptr 0x004CDE7E;
 
-	None = this->nodeList.start;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x16];
+	__asm        mov    [ebp-0xB0], eax;
 _T8ed:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0xB0];
@@ -1145,7 +1151,8 @@ _T2d7:
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        jmp    _T312;
 _T30c:
-	None = None;
+	__asm        mov    eax, [ebp-0x54];
+	__asm        mov    [ebp-0x5C], eax;
 _T312:
 	__asm        jmp    near ptr 0x004CE517;
 
@@ -1285,7 +1292,9 @@ _T4e5:
 
 	__asm        jmp    near ptr 0x004CE6F4;
 
-	None = this->nodeList.start;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x16];
+	__asm        mov    [ebp-0x48], eax;
 _T500:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0x48];
@@ -1595,7 +1604,8 @@ _T90e:
 	__asm        mov    [ebp-0xD4], eax;
 	__asm        jmp    _T96d;
 _T961:
-	None = None;
+	__asm        mov    eax, [ebp-0xCC];
+	__asm        mov    [ebp-0xD4], eax;
 _T96d:
 	__asm        jmp    near ptr 0x004CEB72;
 
@@ -1735,7 +1745,9 @@ _Tb70:
 
 	__asm        jmp    near ptr 0x004CED7F;
 
-	None = this->nodeList.start;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x16];
+	__asm        mov    [ebp-0xC0], eax;
 _Tb8e:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [ebp-0xC0];

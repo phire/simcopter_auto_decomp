@@ -4,29 +4,6 @@
 
 // Type: unsigned short *;
 
-// Type: /*packed*/ class CRLECompressedImage (forward reference);
-class CRLECompressedImage{ // packed(0xc bytes) TI: 0x2b8a
-public:
-	static unsigned short * RLEGraphicsPool;
-	// calltype: NearC
-	static void * __ptr32 operator new(uint32_t);
-	// calltype: NearC
-	static void operator delete(void * __ptr32);
-	void CRLECompressedImage(const /*packed*/ class CFlatImage*, long, long, long, long, int32_t);
-	void CRLECompressedImage(long);
-	void ~CRLECompressedImage();
-	unsigned long Lock();
-	unsigned long Unlock();
-	long GetHeight();
-	long GetWidth();
-	unsigned long Compose(/*unpacked*/ class IFlatImage*, long, long, long, long, long, long);
-	unsigned long Compose(/*unpacked*/ class IFlatImage*, long, long);
-protected:
-	/*+0x0*/   void * __ptr32 mhRLEImage;
-	/*+0x4*/   /*packed*/ struct RLEHeader *mpLockedImage;
-	/*+0x8*/   unsigned long mLockCount;
-};
-
 // Type: long;
 
 // Type: int32_t;
@@ -78,6 +55,29 @@ struct RLEHeader{ // packed(0x8 bytes) TI: 0x218b
 };
 
 // Type: void;
+
+// Type: /*packed*/ class CRLECompressedImage (forward reference);
+class CRLECompressedImage{ // packed(0xc bytes) TI: 0x2b8a
+public:
+	static unsigned short * RLEGraphicsPool;
+	// calltype: NearC
+	static void * __ptr32 operator new(uint32_t);
+	// calltype: NearC
+	static void operator delete(void * __ptr32);
+	void CRLECompressedImage(const /*packed*/ class CFlatImage*, long, long, long, long, int32_t);
+	void CRLECompressedImage(long);
+	void ~CRLECompressedImage();
+	unsigned long Lock();
+	unsigned long Unlock();
+	long GetHeight();
+	long GetWidth();
+	unsigned long Compose(/*unpacked*/ class IFlatImage*, long, long, long, long, long, long);
+	unsigned long Compose(/*unpacked*/ class IFlatImage*, long, long);
+protected:
+	/*+0x0*/   void * __ptr32 mhRLEImage;
+	/*+0x4*/   /*packed*/ struct RLEHeader *mpLockedImage;
+	/*+0x8*/   unsigned long mLockCount;
+};
 
 // Type: /*packed*/ class CFlatImage (forward reference);
 // VTABLE: COPTER_D 0x00591070
@@ -159,28 +159,28 @@ public:
 	/*unpacked*/ class istream& operator>>(int32_t&);
 	/*unpacked*/ class istream& operator>>(unsigned short&);
 	/*unpacked*/ class istream& operator>>(short&);
-	/*unpacked*/ class istream& operator>>(char&);
+	/*unpacked*/ class istream& operator>>(signed char&);
 	/*unpacked*/ class istream& operator>>(unsigned char&);
 	/*unpacked*/ class istream& operator>>(char&);
-	/*unpacked*/ class istream& operator>>(char *);
+	/*unpacked*/ class istream& operator>>(signed char *);
 	/*unpacked*/ class istream& operator>>(unsigned char *);
 	/*unpacked*/ class istream& operator>>(char *);
 	/*unpacked*/ class istream& operator>>(/*unpacked*/ class ios& (*)(/*unpacked*/ class ios&));
 	/*unpacked*/ class istream& operator>>(/*unpacked*/ class istream& (*)(/*unpacked*/ class istream&));
 	/*unpacked*/ class istream& get(char *, int32_t, int32_t);
 	/*unpacked*/ class istream& get(/*unpacked*/ class streambuf&, char);
-	/*unpacked*/ class istream& get(char&);
+	/*unpacked*/ class istream& get(signed char&);
 	/*unpacked*/ class istream& get(unsigned char&);
 	/*unpacked*/ class istream& get(char&);
-	/*unpacked*/ class istream& get(char *, int32_t, char);
+	/*unpacked*/ class istream& get(signed char *, int32_t, char);
 	/*unpacked*/ class istream& get(unsigned char *, int32_t, char);
 	/*unpacked*/ class istream& get(char *, int32_t, char);
 	int32_t get();
-	/*unpacked*/ class istream& getline(char *, int32_t, char);
+	/*unpacked*/ class istream& getline(signed char *, int32_t, char);
 	/*unpacked*/ class istream& getline(unsigned char *, int32_t, char);
 	/*unpacked*/ class istream& getline(char *, int32_t, char);
 	/*unpacked*/ class istream& ignore(int32_t, int32_t);
-	/*unpacked*/ class istream& read(char *, int32_t);
+	/*unpacked*/ class istream& read(signed char *, int32_t);
 	/*unpacked*/ class istream& read(unsigned char *, int32_t);
 	/*unpacked*/ class istream& read(char *, int32_t);
 	int32_t gcount();
@@ -421,7 +421,7 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 	__asm        or     InputMode, 0x20;
 // LINE 65:
 	__asm        push   1;
-	__asm        mov    eax, Function(void *  ifstream::`scalar deleting destructor'(uint32_t __flags), 0x56fc10);
+	__asm        mov    eax, ds:[0x593E30];
 	__asm        push   eax;
 	__asm        mov    eax, InputMode;
 	__asm        push   eax;
@@ -460,7 +460,8 @@ _T186:
 // LINE 71:
 	__asm        jmp    near ptr 0x004AA99F;
 
-	None = ImageByteCount;
+	__asm        mov    eax, ImageByteCount;
+	__asm        mov    [ebp-0x108], eax;
 // LINE 76:
 	__asm        mov    word ptr [ebp-0x104], 0;
 	__asm        cmp    this, 0;
@@ -488,7 +489,7 @@ _T1ef:
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        jne    _T21e;
 
-	None = 0xffff;
+	__asm        mov    word ptr [ebp-0x104], 0xFFFF;
 _T21e:
 	__asm        jmp    near ptr 0x004AAA23;
 // LINE 77:
@@ -525,7 +526,7 @@ _T286:
 	__asm        cmp    pCompressedImage, 0;
 	__asm        jne    _T2af;
 
-	None = 0xffff;
+	__asm        mov    word ptr [ebp-0xFC], 0xFFFF;
 _T2af:
 	__asm        jmp    near ptr 0x004AAAB4;
 // LINE 81:
@@ -671,7 +672,9 @@ unsigned long CRLECompressedImage::Lock() {
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _Taa;
 // LINE 123:
-	None = this->mhRLEImage;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax];
+	__asm        mov    [ebp-8], eax;
 // LINE 124:
 	__asm        mov    word ptr [ebp-4], 0;
 	__asm        cmp    dword ptr [ebp-8], 0;
@@ -699,7 +702,7 @@ _T6a:
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jne    _T8d;
 
-	None = 0xffff;
+	__asm        mov    word ptr [ebp-4], 0xFFFF;
 _T8d:
 	__asm        jmp    near ptr 0x004AAD0C;
 // LINE 125:
@@ -749,7 +752,9 @@ _T3a:
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _Tb2;
 // LINE 139:
-	None = this->mhRLEImage;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax];
+	__asm        mov    [ebp-8], eax;
 // LINE 140:
 	__asm        mov    word ptr [ebp-4], 0;
 	__asm        cmp    dword ptr [ebp-8], 0;
@@ -1175,10 +1180,7 @@ _T103:
 	__asm        cmp    ecx, eax;
 	__asm        je     _T134;
 // LINE 386:
-	__asm        mov    eax, pSource;
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, pDest;
-	__asm        mov    [ecx], al;
+	pDest[0] = pSource[0];
 // LINE 388:
 _T134:
 	__asm        inc    pDest;
@@ -1199,7 +1201,7 @@ _T14e:
 	__asm        ja     _T175;
 
 	__asm        mov    eax, [ebp-0x20];
-	__asm        jmp    SwitchPointers4895192[0][eax*4];
+	__asm        jmp    _Switch_165[0][eax*4];
 // Switch pointers
 // LINE 398:
 // Block end:
@@ -1506,10 +1508,7 @@ _T28d:
 	__asm        cmp    ecx, eax;
 	__asm        je     _T2c5;
 // LINE 561:
-	__asm        mov    eax, pSource;
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, pDest;
-	__asm        mov    [ecx], al;
+	pDest[0] = pSource[0];
 // LINE 563:
 _T2c5:
 	__asm        inc    pDest;
@@ -1534,7 +1533,7 @@ _T2e6:
 	__asm        ja     _T30d;
 
 	__asm        mov    eax, [ebp-0x20];
-	__asm        jmp    SwitchPointers4895988[0][eax*4];
+	__asm        jmp    _Switch_2fd[0][eax*4];
 // Switch pointers
 // LINE 576:
 _T30d:

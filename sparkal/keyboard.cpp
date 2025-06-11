@@ -348,9 +348,13 @@ _T61:
 
 // FUNCTION: COPTER_D 0x00431f1f
 char Keyboard::ConvertKeyToCharacter(unsigned char chKey, unsigned char chModifiers) {
-// StaticLocal: 0x00598350	static char chNumberArray[10] = {41, 33, 64, 35, 36, 37, 94, 38, 42, 40};
+	// StaticLocal: 0x00598350
+	static char chNumberArray[10] = {41, 33, 64, 35, 36, 37, 94, 38, 42, 40};
+	;
 	/*bp-0x4*/   char chIndex;
-// StaticLocal: 0x00598360	static char chExtraArray[11] = {126, 95, 43, 123, 125, 124, 58, 34, 60, 62, 63};
+	// StaticLocal: 0x00598360
+	static char chExtraArray[11] = {126, 95, 43, 123, 125, 124, 58, 34, 60, 62, 63};
+	;
 
 // LINE 171:
 	__asm        xor    eax, eax;

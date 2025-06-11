@@ -937,7 +937,7 @@ _T176:
 	__asm        ja     _T162;
 
 	__asm        mov    eax, [ebp-0x2C];
-	__asm        jmp    SwitchPointers5390950[0][eax*4];
+	__asm        jmp    _Switch_18a[0][eax*4];
 // Switch pointers
 // LINE 388:
 _T1b6:
