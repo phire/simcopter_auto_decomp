@@ -263,8 +263,7 @@ CompressDone:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 719:
-	__asm        mov    ax, retVal;
-	__asm        jmp    _T258;
+	return retVal;
 // LINE 720:
 _T23a:
 	__asm        jmp    CompressDone;
@@ -278,7 +277,6 @@ _T24e:
 	__asm        jmp    CompressDone;
 _T253:
 	__asm        jmp    CompressDone;
-_T258:
 }
 
 // FUNCTION: COPTER_D 0x004cf2ed
@@ -1589,17 +1587,14 @@ _T18:
 	__asm        test   eax, eax;
 	__asm        je     _T49;
 // LINE 155:
-	__asm        mov    ax, retVal;
-	__asm        jmp    _T56;
+	return retVal;
 // LINE 157:
 _T49:
 	__asm        jmp    _T15;
 // LINE 158:
 _T4e:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T56;
+	return 0x0;
 // LINE 159:
-_T56:
 }
 
 // FUNCTION: COPTER_D 0x004d0271
@@ -1717,8 +1712,7 @@ ExpandDone:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 774:
-	__asm        mov    ax, retVal;
-	__asm        jmp    _T170;
+	return retVal;
 // LINE 775:
 _T161:
 	__asm        jmp    ExpandDone;
@@ -1726,7 +1720,6 @@ _T166:
 	__asm        jmp    ExpandDone;
 _T16b:
 	__asm        jmp    ExpandDone;
-_T170:
 }
 
 // FUNCTION: COPTER_D 0x004d03e6

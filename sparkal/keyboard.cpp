@@ -344,10 +344,8 @@ _T46:
 	__asm        mov    chReturnValue, al;
 // LINE 136:
 _T61:
-	__asm        mov    al, chReturnValue;
-	__asm        jmp    _T69;
+	return chReturnValue;
 // LINE 137:
-_T69:
 }
 
 // FUNCTION: COPTER_D 0x00431f1f
@@ -403,8 +401,7 @@ _T89:
 	__asm        cmp    dword ptr [ebp-0x10], 0;
 	__asm        je     _Ta0;
 // LINE 173:
-	__asm        mov    al, chKey;
-	__asm        jmp    _T302;
+	return chKey;
 // LINE 174:
 	__asm        jmp    _Tad;
 // LINE 175:
@@ -465,8 +462,7 @@ _T12d:
 	__asm        jmp    _T154;
 // LINE 184:
 _T14c:
-	__asm        mov    al, chKey;
-	__asm        jmp    _T302;
+	return chKey;
 // LINE 189:
 _T154:
 	chIndex = 0xff;
@@ -612,8 +608,7 @@ _T2c0:
 	__asm        jmp    _T2e6;
 // LINE 217:
 _T2de:
-	__asm        mov    al, chKey;
-	__asm        jmp    _T302;
+	return chKey;
 // LINE 220:
 _T2e6:
 	__asm        xor    eax, eax;

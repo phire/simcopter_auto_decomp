@@ -115,14 +115,12 @@ _T47:
 	__asm        cmp    edx, 0xF;
 	__asm        jle    _Tb7;
 // LINE 106:
-	__asm        mov    ax, wat;
-	__asm        jmp    _Tc0;
+	return wat;
 // LINE 107:
 	__asm        jmp    _Tc0;
 // LINE 108:
 _Tb7:
-	__asm        mov    ax, alt;
-	__asm        jmp    _Tc0;
+	return alt;
 // LINE 110:
 _Tc0:
 }
@@ -5180,10 +5178,8 @@ _T62:
 	__asm        mov    new_height, eax;
 // LINE 1120:
 _T89:
-	__asm        mov    ax, reinterpret_cast<uint16_t>(new_height);
-	__asm        jmp    _T92;
+	return reinterpret_cast<uint16_t>(new_height);
 // LINE 1121:
-_T92:
 }
 
 // FUNCTION: COPTER_D 0x00517e5d

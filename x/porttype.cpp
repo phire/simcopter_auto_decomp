@@ -338,10 +338,8 @@ unsigned short SectRect(/*unpacked*/ struct Rect *rect1, /*unpacked*/ struct Rec
 	__asm        mov    edx, result;
 	__asm        mov    [edx+6], cx;
 // LINE 80:
-	__asm        mov    ax, sect;
-	__asm        jmp    _T9d;
+	return sect;
 // LINE 81:
-_T9d:
 }
 
 // FUNCTION: COPTER_D 0x00566ca8

@@ -730,10 +730,8 @@ _T63:
 	__asm        call   0x0056EBE8;
 	__asm        mov    intval, ax;
 // LINE 279:
-	__asm        mov    ax, intval;
-	__asm        jmp    _T78;
+	return intval;
 // LINE 280:
-_T78:
 }
 
 // FUNCTION: COPTER_D 0x0056633e

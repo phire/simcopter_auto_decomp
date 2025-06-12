@@ -286,11 +286,8 @@ void cBBase::Dirty() {
 // FUNCTION: COPTER_D 0x0055f500
 unsigned short cBBase::IsDirty() {
 // LINE 80:
-	__asm        mov    eax, this;
-	__asm        mov    ax, [eax+0x22];
-	__asm        jmp    _T18;
+	return this->fDataChanged;
 // LINE 81:
-_T18:
 }
 
 // Function in module: Bodydefs.obj

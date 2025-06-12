@@ -757,10 +757,8 @@ _T25:
 	__asm        jmp    _T1c;
 // LINE 308:
 _T38:
-	__asm        mov    ax, total;
-	__asm        jmp    _T41;
+	return total;
 // LINE 309:
-_T41:
 }
 
 

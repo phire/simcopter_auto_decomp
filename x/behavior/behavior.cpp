@@ -704,10 +704,8 @@ _T4c:
 //   _T3c
 // LINE 205:
 _T70:
-	__asm        mov    ax, baseID;
-	__asm        jmp    _T79;
+	return baseID;
 // LINE 206:
-_T79:
 }
 
 // FUNCTION: COPTER_D 0x005607fb
@@ -755,10 +753,8 @@ _T4c:
 //   _T3c
 // LINE 224:
 _T70:
-	__asm        mov    ax, maxID;
-	__asm        jmp    _T79;
+	return maxID;
 // LINE 225:
-_T79:
 }
 
 // FUNCTION: COPTER_D 0x00560879

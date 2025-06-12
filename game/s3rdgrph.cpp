@@ -2113,8 +2113,7 @@ _T18:
 	__asm        cmp    edx, y;
 	__asm        jne    _T64;
 // LINE 599:
-	__asm        mov    al, yindex;
-	__asm        jmp    _Tad;
+	return yindex;
 // LINE 603:
 _T64:
 	__asm        jmp    _T15;
@@ -2140,7 +2139,6 @@ _Ta1:
 _Ta6:
 	return 0xff;
 // LINE 606:
-_Tad:
 }
 
 // FUNCTION: COPTER_D 0x0053d21b

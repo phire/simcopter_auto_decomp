@@ -57,10 +57,8 @@ unsigned short wincpuidsupport() {
 	cpuid_support = 0x0;
 // LINE 83:
 support:
-	__asm        mov    ax, reinterpret_cast<uint16_t>(cpuid_support);
-	__asm        jmp    _T35;
+	return reinterpret_cast<uint16_t>(cpuid_support);
 // LINE 85:
-_T35:
 }
 
 // FUNCTION: COPTER_D 0x0047b67a
@@ -126,10 +124,8 @@ end:
 	__asm        mov    cpuid, ax;
 // LINE 137:
 _Tb1:
-	__asm        mov    ax, cpuid;
-	__asm        jmp    _Tba;
+	return cpuid;
 // LINE 139:
-_Tba:
 }
 
 // FUNCTION: COPTER_D 0x0047b739
@@ -230,10 +226,8 @@ _Tc6:
 	__asm        mov    cpuidext, ax;
 // LINE 213:
 _Tde:
-	__asm        mov    ax, cpuidext;
-	__asm        jmp    _Te7;
+	return cpuidext;
 // LINE 215:
-_Te7:
 }
 
 // FUNCTION: COPTER_D 0x0047b825
@@ -361,10 +355,8 @@ unsigned short getdllversion() {
 // LINE 360:
 	Version = 0x100;
 // LINE 362:
-	__asm        mov    ax, Version;
-	__asm        jmp    _T18;
+	return Version;
 // LINE 364:
-_T18:
 }
 
 // FUNCTION: COPTER_D 0x0047b94a
@@ -406,10 +398,8 @@ clone:
 	__asm        and    eax, 1;
 	__asm        mov    cpu_type, ax;
 // LINE 405:
-	__asm        mov    ax, cpu_type;
-	__asm        jmp    _T4a;
+	return cpu_type;
 // LINE 407:
-_T4a:
 }
 
 // FUNCTION: COPTER_D 0x0047b999
@@ -452,10 +442,8 @@ end_8086:
 // LINE 444:
 	__asm        mov    ax, cpu_type;
 // LINE 448:
-	__asm        mov    ax, cpu_type;
-	__asm        jmp    _T4d;
+	return cpu_type;
 // LINE 450:
-_T4d:
 }
 
 // FUNCTION: COPTER_D 0x0047b9eb
@@ -496,10 +484,8 @@ end_80286:
 // LINE 490:
 	__asm        mov    ax, cpu_type;
 // LINE 494:
-	__asm        mov    ax, cpu_type;
-	__asm        jmp    _T4a;
+	return cpu_type;
 // LINE 496:
-_T4a:
 }
 
 // FUNCTION: COPTER_D 0x0047ba3a
@@ -548,10 +534,8 @@ end_80386:
 // LINE 541:
 	__asm        and    eax, 0xFFFF;
 // LINE 544:
-	__asm        mov    ax, cpu_type;
-	__asm        jmp    _T4e;
+	return cpu_type;
 // LINE 546:
-_T4e:
 }
 
 // FUNCTION: COPTER_D 0x0047ba8d
@@ -654,10 +638,8 @@ _T9d:
 end_IDProc:
 	__asm        mov    ax, cpu_type;
 // LINE 614:
-	__asm        mov    ax, cpu_type;
-	__asm        jmp    _Td6;
+	return cpu_type;
 // LINE 616:
-_Td6:
 }
 
 

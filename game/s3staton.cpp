@@ -2097,8 +2097,7 @@ short Station::GetNextNearest(/*packed*/ struct _GridCoordinates *result) {
 	__asm        mov    edx, result;
 	__asm        mov    [edx], cx;
 // LINE 410:
-	__asm        mov    ax, reinterpret_cast<uint16_t>(removedStruct.cost);
-	__asm        jmp    _T5b;
+	return reinterpret_cast<uint16_t>(removedStruct.cost);
 // LINE 412:
 // Block end:
 	__asm        jmp    _T5b;

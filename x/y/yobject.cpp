@@ -5264,10 +5264,8 @@ _Tc1c:
 // LINE 400:
 // Block end:
 _Tc6a:
-	__asm        mov    ax, ret;
-	__asm        jmp    _Tc73;
+	return ret;
 // LINE 401:
-_Tc73:
 }
 
 // FUNCTION: COPTER_D 0x00545cc3
@@ -5914,11 +5912,8 @@ unsigned char GetAvatarCellX() {
 	__asm        add    esp, 0x10;
 // LINE 508:
 _T2f:
-	__asm        mov    eax, gAvatar;
-	__asm        mov    al, [eax+0x88];
-	__asm        jmp    _T3f;
+	return gAvatar->fCellX;
 // LINE 509:
-_T3f:
 }
 
 // FUNCTION: COPTER_D 0x005464bc
@@ -5935,11 +5930,8 @@ unsigned char GetAvatarCellY() {
 	__asm        add    esp, 0x10;
 // LINE 514:
 _T2f:
-	__asm        mov    eax, gAvatar;
-	__asm        mov    al, [eax+0x89];
-	__asm        jmp    _T3f;
+	return gAvatar->fCellY;
 // LINE 515:
-_T3f:
 }
 
 // FUNCTION: COPTER_D 0x00546500
@@ -6886,10 +6878,8 @@ _Tea:
 	__asm        jmp    _Tef;
 // LINE 725:
 _Tef:
-	__asm        mov    ax, ret;
-	__asm        jmp    _Tf8;
+	return ret;
 // LINE 726:
-_Tf8:
 }
 
 // FUNCTION: COPTER_D 0x00547044
@@ -10753,10 +10743,8 @@ short StartPerson(enum PersonType persontype, enum MissionType mission, short ce
 	ret = newperson->fID;
 // LINE 1472:
 _T5e:
-	__asm        mov    ax, ret;
-	__asm        jmp    _T67;
+	return ret;
 // LINE 1473:
-_T67:
 }
 
 // FUNCTION: COPTER_D 0x0054a23f
@@ -11212,10 +11200,8 @@ _T152:
 // Block end:
 // Block end:
 _T157:
-	__asm        mov    ax, ret;
-	__asm        jmp    _T160;
+	return ret;
 // LINE 1561:
-_T160:
 }
 
 // FUNCTION: COPTER_D 0x0054a7a5
@@ -12576,10 +12562,8 @@ _T1066:
 	__asm        jmp    _T106b;
 // LINE 1800:
 _T106b:
-	__asm        mov    ax, ret;
-	__asm        jmp    _T1074;
+	return ret;
 // LINE 1801:
-_T1074:
 }
 
 // FUNCTION: COPTER_D 0x0054b820
@@ -13270,10 +13254,8 @@ _T1b4:
 	__asm        jmp    _T17;
 // LINE 1882:
 _T1b9:
-	__asm        mov    ax, soundchannel;
-	__asm        jmp    _T1c2;
+	return soundchannel;
 // LINE 1883:
-_T1c2:
 }
 
 // FUNCTION: COPTER_D 0x0054c0e7
@@ -14528,10 +14510,8 @@ _T1c7:
 	__asm        mov    [ecx+8], eax;
 // LINE 2217:
 _T209:
-	__asm        mov    ax, success;
-	__asm        jmp    _T212;
+	return success;
 // LINE 2218:
-_T212:
 }
 
 // FUNCTION: COPTER_D 0x0054d0e3
@@ -18994,8 +18974,7 @@ _T11a:
 	__asm        add    esp, 0x10;
 // LINE 2840:
 _T136:
-	__asm        mov    ax, id;
-	__asm        jmp    _T156;
+	return id;
 // LINE 2841:
 _L56449:
 	__asm        mov    eax, [ebp-0x18];
@@ -19006,7 +18985,7 @@ _L56449:
 _L56448:
 	__asm        mov    eax, 0x595E30;
 	__asm        jmp    near ptr 0x0056F590;
-_T156:
+
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    fs:[0], ecx;
 }

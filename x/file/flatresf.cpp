@@ -628,10 +628,8 @@ short FlatResFile::CheckForLeaks() {
 	__asm        add    eax, ecx;
 	__asm        mov    total, ax;
 // LINE 262:
-	__asm        mov    ax, total;
-	__asm        jmp    _T2d;
+	return total;
 // LINE 263:
-_T2d:
 }
 
 // FUNCTION: COPTER_D 0x00552ffc
@@ -698,12 +696,8 @@ _T3b:
 _T53:
 	__asm        jmp    _T58;
 _T58:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x110];
-	__asm        mov    ax, [eax+6];
-	__asm        jmp    _T6a;
+	return this->fMap-><ResMap+0x06:2>;
 // LINE 304:
-_T6a:
 }
 
 // FUNCTION: COPTER_D 0x0055310d
@@ -1871,10 +1865,8 @@ _T24:
 	__asm        jmp    _T1c;
 // LINE 806:
 _T37:
-	__asm        mov    ax, total;
-	__asm        jmp    _T40;
+	return total;
 // LINE 807:
-_T40:
 }
 
 // FUNCTION: COPTER_D 0x00553edb

@@ -960,16 +960,13 @@ _T11a:
 	__asm        jmp    _T12;
 // LINE 227:
 _T11f:
-	__asm        mov    al, trans;
-	__asm        jmp    _T133;
+	return trans;
 // LINE 231:
 tree_error:
-	__asm        mov    al, 0xFD;
-	__asm        jmp    _T133;
+	return 0xfd;
 // LINE 233:
 _T12e:
 	__asm        jmp    tree_error;
-_T133:
 }
 
 // FUNCTION: COPTER_D 0x0055d2fd
@@ -1087,10 +1084,8 @@ unsigned short ExtSim::Simulate(long ticks, unsigned short bOnceOnly) {
 // LINE 284:
 	this->fExt->fMaxStackSize = savemaxstacksize;
 // LINE 286:
-	__asm        mov    ax, ret;
-	__asm        jmp    _Taa;
+	return ret;
 // LINE 287:
-_Taa:
 }
 
 

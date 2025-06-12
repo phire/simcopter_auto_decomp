@@ -10961,12 +10961,10 @@ _T1d9:
 //   _T137
 // LINE 2158:
 _T21d:
-	__asm        mov    ax, data;
-	__asm        jmp    _T23d;
+	return data;
 // LINE 2161:
 tree_error:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T23d;
+	return 0x0;
 // LINE 2162:
 _T22e:
 	__asm        jmp    tree_error;
@@ -10974,7 +10972,6 @@ _T233:
 	__asm        jmp    tree_error;
 _T238:
 	__asm        jmp    tree_error;
-_T23d:
 }
 
 

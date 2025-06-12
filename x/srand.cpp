@@ -195,10 +195,8 @@ _T39:
 	__asm        add    esp, 0x10;
 // LINE 115:
 _T66:
-	__asm        mov    ax, temp;
-	__asm        jmp    _T6f;
+	return temp;
 // LINE 116:
-_T6f:
 }
 
 // FUNCTION: COPTER_D 0x0055d717
@@ -324,8 +322,7 @@ unsigned short SGIRand(unsigned short limit) {
 	__asm        cmp    eax, ecx;
 	__asm        jle    _T50;
 // LINE 138:
-	__asm        mov    ax, z;
-	__asm        jmp    _T59;
+	return z;
 // LINE 139:
 	__asm        jmp    _T59;
 // LINE 140:
@@ -361,8 +358,7 @@ unsigned short SGRand(unsigned short limit) {
 	__asm        cmp    eax, ecx;
 	__asm        jge    _T50;
 // LINE 153:
-	__asm        mov    ax, z;
-	__asm        jmp    _T59;
+	return z;
 // LINE 154:
 	__asm        jmp    _T59;
 // LINE 155:
@@ -409,10 +405,8 @@ _T41:
 	__asm        mov    x, ax;
 // LINE 171:
 _T5b:
-	__asm        mov    ax, x;
-	__asm        jmp    _T64;
+	return x;
 // LINE 172:
-_T64:
 }
 
 

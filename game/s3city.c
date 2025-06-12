@@ -12295,10 +12295,8 @@ _T9c:
 	__asm        jmp    _T1a;
 // LINE 4955:
 _Ta1:
-	__asm        mov    ax, minalt;
-	__asm        jmp    _Taa;
+	return minalt;
 // LINE 4956:
-_Taa:
 }
 
 // FUNCTION: COPTER_D 0x00512af5

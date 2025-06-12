@@ -1330,10 +1330,8 @@ _T12d:
 // LINE 382:
 // Block end:
 _T132:
-	__asm        mov    ax, beforewhich;
-	__asm        jmp    _T13b;
+	return beforewhich;
 // LINE 383:
-_T13b:
 }
 
 // FUNCTION: COPTER_D 0x00568128
@@ -1470,10 +1468,8 @@ _T157:
 // LINE 406:
 // Block end:
 _T15c:
-	__asm        mov    ax, beforewhich;
-	__asm        jmp    _T165;
+	return beforewhich;
 // LINE 407:
-_T165:
 }
 
 // FUNCTION: COPTER_D 0x00568294
@@ -1612,11 +1608,8 @@ _T166:
 	__asm        add    esp, 0x10;
 // LINE 429:
 _T192:
-	__asm        mov    eax, this;
-	__asm        mov    ax, [eax+0x14];
-	__asm        jmp    _T19e;
+	return reinterpret_cast<uint16_t>(this->fxSize);
 // LINE 430:
-_T19e:
 }
 
 // FUNCTION: COPTER_D 0x00568439
@@ -1839,11 +1832,8 @@ _T238:
 	__asm        add    esp, 0x10;
 // LINE 460:
 _T263:
-	__asm        mov    eax, this;
-	__asm        mov    ax, [eax+0x10];
-	__asm        jmp    _T26f;
+	return reinterpret_cast<uint16_t>(this->fySize);
 // LINE 461:
-_T26f:
 }
 
 // FUNCTION: COPTER_D 0x005686af
@@ -2644,10 +2634,8 @@ _T55:
 	__asm        jmp    _T1f;
 // LINE 654:
 _T5a:
-	__asm        mov    ax, numByType;
-	__asm        jmp    _T63;
+	return numByType;
 // LINE 655:
-_T63:
 }
 
 // FUNCTION: COPTER_D 0x00569010
@@ -2682,8 +2670,7 @@ _T23:
 	__asm        cmp    arr, eax;
 	__asm        jne    _T6e;
 // LINE 666:
-	__asm        mov    ax, found;
-	__asm        jmp    _T80;
+	return found;
 // LINE 667:
 	__asm        jmp    _T72;
 // LINE 668:
@@ -2696,7 +2683,6 @@ _T72:
 _T77:
 	return 0xffff;
 // LINE 672:
-_T80:
 }
 
 // FUNCTION: COPTER_D 0x00569095
@@ -2977,10 +2963,8 @@ _Ta4:
 	__asm        jmp    _T26;
 // LINE 793:
 _Ta9:
-	__asm        mov    ax, foundcount;
-	__asm        jmp    _Tb2;
+	return foundcount;
 // LINE 794:
-_Tb2:
 }
 
 

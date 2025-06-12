@@ -5057,10 +5057,8 @@ short swizzle_short(short svalue) {
 // LINE 1589:
 	byteptr[0] = cval;
 // LINE 1591:
-	__asm        mov    ax, svalue;
-	__asm        jmp    _T34;
+	return svalue;
 // LINE 1592:
-_T34:
 }
 
 // FUNCTION: COPTER_D 0x004c8350
