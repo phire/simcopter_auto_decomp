@@ -824,7 +824,7 @@ _T1b7:
 	this-><RadioCompassWindow+0x00> = 0x58f650;
 // LINE 76:
 	return;
-_T1c5:
+
 	__asm        mov    eax, this;
 }
 
@@ -901,7 +901,7 @@ _Tbc:
 	__asm        add    esp, 4;
 _Tea:
 	return;
-_Tef:
+
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
 }
@@ -920,8 +920,7 @@ int32_t RadioCompassWindow::Initialize() {
 	__asm        test   eax, eax;
 	__asm        jne    _T30;
 // LINE 95:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T93;
+	return 0x0;
 // LINE 98:
 _T30:
 	__asm        mov    eax, this;
@@ -957,10 +956,8 @@ _T77:
 	__asm        call   RadioCompassWindow::SetNewRadioStationVolume;
 // LINE 106:
 _T89:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T93;
+	return 0x1;
 // LINE 107:
-_T93:
 }
 
 // FUNCTION: COPTER_D 0x004485d3
@@ -973,7 +970,6 @@ void RadioCompassWindow::InitializeCachedSettings() {
 	this->nLastCompassPosition = 0xf4240;
 // LINE 117:
 	return;
-_T35:
 }
 
 // FUNCTION: COPTER_D 0x0044860d
@@ -1009,7 +1005,6 @@ _T5e:
 // LINE 132:
 _T6b:
 	return;
-_T70:
 }
 
 // FUNCTION: COPTER_D 0x00448682
@@ -1248,8 +1243,7 @@ int32_t RadioCompassWindow::ComposeSelf() {
 	__asm        cmp    dword ptr [eax+0x54], 0;
 	__asm        jne    _T20;
 // LINE 170:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T118;
+	return 0x0;
 // LINE 172:
 _T20:
 	this->lFrameCount++;
@@ -1337,10 +1331,8 @@ _Td0:
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 192:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T118;
+	return 0x1;
 // LINE 193:
-_T118:
 }
 
 // FUNCTION: COPTER_D 0x00448a45
@@ -1563,10 +1555,8 @@ _T255:
 	__asm        call   RadioCompassWindow::SetNewRadioStationVolume;
 // LINE 225:
 _T261:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T26b;
+	return 0x1;
 // LINE 226:
-_T26b:
 }
 
 // FUNCTION: COPTER_D 0x00448cb7
@@ -1762,7 +1752,6 @@ _T1e0:
 	this->nRadioStationIndex = nNewRadioStationIndex;
 // LINE 270:
 	return;
-_T1ee:
 }
 
 // FUNCTION: COPTER_D 0x00448eac
@@ -1921,7 +1910,6 @@ _T1a2:
 	this->lRadioStationVolume = lNewRadioStationVolume;
 // LINE 305:
 	return;
-_T1b3:
 }
 
 // FUNCTION: COPTER_D 0x00449066
@@ -1967,7 +1955,6 @@ _T49:
 // LINE 322:
 _T67:
 	return;
-_T6c:
 }
 
 // FUNCTION: COPTER_D 0x004490d7
@@ -2571,7 +2558,7 @@ _T935:
 // LINE 401:
 _T96e:
 	return;
-_T973:
+
 	__asm        mov    eax, this;
 }
 
@@ -2584,7 +2571,7 @@ void DialWindow::~DialWindow() {
 	__asm        call   DialWindow::DestroyImage;
 // LINE 409:
 	return;
-_T22:
+
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
 }
@@ -2816,7 +2803,6 @@ _T305:
 	this->lSpotlightControlCurrent = 0xffffffff;
 // LINE 454:
 	return;
-_T317:
 }
 
 // FUNCTION: COPTER_D 0x00449dca
@@ -3069,7 +3055,6 @@ _T303:
 // LINE 503:
 _T322:
 	return;
-_T327:
 }
 
 // FUNCTION: COPTER_D 0x0044a0f6
@@ -3146,7 +3131,6 @@ _Ta8:
 // LINE 518:
 _Td7:
 	return;
-_Tdc:
 }
 
 // FUNCTION: COPTER_D 0x0044a1d9
@@ -3223,7 +3207,6 @@ _Ta8:
 // LINE 534:
 _Td7:
 	return;
-_Tdc:
 }
 
 // FUNCTION: COPTER_D 0x0044a2bc
@@ -3628,7 +3611,6 @@ _T91:
 // LINE 631:
 _Td5:
 	return;
-_Tda:
 }
 
 // FUNCTION: COPTER_D 0x0044a863
@@ -3717,10 +3699,8 @@ _T101:
 	__asm        jmp    _T54;
 // LINE 650:
 _T106:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T110;
+	return 0x1;
 // LINE 651:
-_T110:
 }
 
 // FUNCTION: COPTER_D 0x0044a97a
@@ -3761,10 +3741,8 @@ _T45:
 	this->lSpotlightControlCurrent = 0xffffffff;
 // LINE 664:
 _T74:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T7e;
+	return 0x1;
 // LINE 665:
-_T7e:
 }
 
 // FUNCTION: COPTER_D 0x0044a9ff
@@ -3854,10 +3832,8 @@ _Tc9:
 	this->lSpotlightControlCurrent = lNewSpotlightCommand;
 // LINE 689:
 _T10f:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T119;
+	return 0x1;
 // LINE 690:
-_T119:
 }
 
 // FUNCTION: COPTER_D 0x0044ab1f
@@ -3885,8 +3861,7 @@ _T26:
 	__asm        cmp    dword ptr [eax+0x54], 0;
 	__asm        jne    _T3d;
 // LINE 705:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tebc;
+	return 0x0;
 // LINE 707:
 _T3d:
 	lFrameCounter++;
@@ -4770,10 +4745,8 @@ _Te5f:
 	__asm        mov    ecx, [eax+0x7C];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 786:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tebc;
+	return 0x1;
 // LINE 787:
-_Tebc:
 }
 
 // FUNCTION: COPTER_D 0x0044b9e0
@@ -5137,7 +5110,6 @@ _T3df:
 	lFrameCounter++;
 // LINE 846:
 	return;
-_T3ea:
 }
 
 // FUNCTION: COPTER_D 0x0044be4a
@@ -5273,7 +5245,7 @@ _T1c5:
 	this-><PassengerWindow+0x58> = GraphicWindow::colorConstants.nPaletteIndexTransparent;
 // LINE 912:
 	return;
-_T1de:
+
 	__asm        mov    eax, this;
 }
 
@@ -5352,7 +5324,7 @@ _Tea:
 	__asm        jmp    _Tef;
 _Tef:
 	return;
-_Tf4:
+
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
 }
@@ -5387,7 +5359,6 @@ void PassengerWindow::InitializeCachedSettings() {
 // LINE 943:
 _T2c:
 	return;
-_T31:
 }
 
 // FUNCTION: COPTER_D 0x0044c194
@@ -5706,7 +5677,6 @@ _T92:
 // LINE 984:
 _Tb1:
 	return;
-_Tb6:
 }
 
 // FUNCTION: COPTER_D 0x0044c549
@@ -5716,8 +5686,7 @@ int32_t PassengerWindow::ComposeSelf() {
 	__asm        cmp    dword ptr [eax+0x54], 0;
 	__asm        jne    _T20;
 // LINE 992:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T419;
+	return 0x0;
 // LINE 997:
 _T20:
 	__asm        mov    eax, this;
@@ -5727,8 +5696,7 @@ _T20:
 	__asm        test   eax, eax;
 	__asm        jne    _T3d;
 // LINE 998:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T419;
+	return 0x0;
 // LINE 999:
 _T3d:
 	__asm        push   1;
@@ -6067,10 +6035,8 @@ _T3fd:
 // LINE 1056:
 // Block end:
 _T40f:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T419;
+	return 0x1;
 // LINE 1057:
-_T419:
 }
 
 // FUNCTION: COPTER_D 0x0044c967
@@ -6339,7 +6305,6 @@ _T2a2:
 	__asm        add    esp, 4;
 // LINE 1110:
 	return;
-_T2b3:
 }
 
 // FUNCTION: COPTER_D 0x0044cc1f
@@ -6367,7 +6332,6 @@ void PassengerWindow::GetRectOfPassengerGraphic(int32_t face, int32_t nPassenger
 	__asm        mov    [ecx+0xC], eax;
 // LINE 1133:
 	return;
-_T4d:
 }
 
 // FUNCTION: COPTER_D 0x0044cc73
@@ -6471,7 +6435,6 @@ _Tdb:
 	this->nChangingPosition = 0x1;
 // LINE 1161:
 	return;
-_Ted:
 }
 
 // FUNCTION: COPTER_D 0x0044cdd1
@@ -6540,7 +6503,6 @@ _Tdb:
 	this->nChangingPosition = 0xffffffff;
 // LINE 1174:
 	return;
-_Ted:
 }
 
 // FUNCTION: COPTER_D 0x0044cec3
@@ -6565,7 +6527,6 @@ _T2c:
 // LINE 1185:
 _T3a:
 	return;
-_T3f:
 }
 
 // FUNCTION: COPTER_D 0x0044cf07
@@ -6705,10 +6666,8 @@ _T16d:
 	this->ptLastCursorPosition.y = nCursorY;
 // LINE 1214:
 _T1ab:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1b5;
+	return 0x1;
 // LINE 1215:
-_T1b5:
 }
 
 // FUNCTION: COPTER_D 0x0044d0c3
@@ -6761,10 +6720,8 @@ _T85:
 	this->lPassengerDraggedID = 0xffffffff;
 // LINE 1231:
 _T92:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T9c;
+	return 0x1;
 // LINE 1232:
-_T9c:
 }
 
 // FUNCTION: COPTER_D 0x0044d166
@@ -6774,10 +6731,8 @@ long PassengerWindow::DoCursorMove(long nCursorX, long nCursorY) {
 // LINE 1240:
 	this->ptLastCursorPosition.y = nCursorY;
 // LINE 1241:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2e;
+	return 0x1;
 // LINE 1242:
-_T2e:
 }
 
 // FUNCTION: COPTER_D 0x0044d19b
@@ -6883,17 +6838,14 @@ _Tf7:
 	__asm        mov    ecx, lPassengerID;
 	__asm        mov    [ecx], eax;
 // LINE 1265:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T122;
+	return 0x1;
 // LINE 1267:
 _T116:
 	__asm        jmp    _T2f;
 // LINE 1268:
 _T11b:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T122;
+	return 0x0;
 // LINE 1269:
-_T122:
 }
 
 // FUNCTION: COPTER_D 0x0044d2c4
@@ -7038,7 +6990,7 @@ _T244:
 	__asm        call   dword ptr [eax];
 // LINE 1319:
 	return;
-_T27c:
+
 	__asm        mov    eax, this;
 }
 
@@ -7051,7 +7003,7 @@ void MapWindow::~MapWindow() {
 	__asm        call   MapWindow::DestroyImage;
 // LINE 1327:
 	return;
-_T22:
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x8C;
 	__asm        call   MFont::~MFont;
@@ -7085,7 +7037,6 @@ void MapWindow::InitializeCachedSettings() {
 	this->lCurrentMissionID = 0xffffffff;
 // LINE 1350:
 	return;
-_T32:
 }
 
 // FUNCTION: COPTER_D 0x0044d5e9
@@ -7228,7 +7179,6 @@ _T89:
 // LINE 1391:
 _Ta8:
 	return;
-_Tad:
 }
 
 // FUNCTION: COPTER_D 0x0044d7cb
@@ -7244,8 +7194,7 @@ int32_t MapWindow::ComposeSelf() {
 	__asm        cmp    dword ptr [eax+0x54], 0;
 	__asm        jne    _T20;
 // LINE 1406:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T17c;
+	return 0x0;
 // LINE 1408:
 _T20:
 	lFrameCounter++;
@@ -7375,10 +7324,8 @@ _T134:
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1433:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T17c;
+	return 0x1;
 // LINE 1434:
-_T17c:
 }
 
 // FUNCTION: COPTER_D 0x0044d94c
@@ -7572,7 +7519,6 @@ _T2af:
 	__asm        call   dword ptr [edx+0x2C];
 // LINE 1476:
 	return;
-_T2d4:
 }
 
 // FUNCTION: COPTER_D 0x0044dc27
@@ -7813,17 +7759,14 @@ _T2b0:
 // LINE 1511:
 	this->nTrackingButton = i;
 // LINE 1512:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2fb;
+	return 0x1;
 // LINE 1514:
 _T2ec:
 	__asm        jmp    _T226;
 // LINE 1516:
 _T2f1:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2fb;
+	return 0x1;
 // LINE 1517:
-_T2fb:
 }
 
 // FUNCTION: COPTER_D 0x0044df29
@@ -8020,14 +7963,11 @@ _T24c:
 // LINE 1540:
 	this->nTrackingButton = 0xffffffff;
 // LINE 1541:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T287;
+	return 0x1;
 // LINE 1550:
 _T27d:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T287;
+	return 0x1;
 // LINE 1551:
-_T287:
 }
 
 // FUNCTION: COPTER_D 0x0044e1b7
@@ -8056,10 +7996,8 @@ int32_t MapWindow::DoMessage(/*unpacked*/ class GraphicWindow *gwSource, long lW
 	__asm        add    esp, 8;
 // LINE 1565:
 _T49:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T53;
+	return 0x1;
 // LINE 1566:
-_T53:
 }
 
 // FUNCTION: COPTER_D 0x0044e211
@@ -8166,7 +8104,6 @@ _Tb0:
 	__asm        call   dword ptr [eax+0xD0];
 // LINE 1586:
 	return;
-_T115:
 }
 
 // FUNCTION: COPTER_D 0x0044e32d
@@ -8177,8 +8114,7 @@ int32_t MapWindow::GetStringIDForVehicleName(int32_t nAutoID) {
 	__asm        cmp    nAutoID, 0x46;
 	__asm        jl     _T1d;
 // LINE 1596:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T116;
+	return 0x0;
 // LINE 1598:
 _T1d:
 	__asm        mov    eax, nAutoID;
@@ -8212,50 +8148,42 @@ _T77:
 	__asm        test   byte ptr [eax+9], 0x10;
 	__asm        je     _T95;
 // LINE 1607:
-	__asm        mov    eax, 0x5B;
-	__asm        jmp    _T116;
+	return 0x5b;
 // LINE 1608:
 _T95:
-	__asm        mov    eax, 0x5A;
-	__asm        jmp    _T116;
+	return 0x5a;
 // LINE 1610:
 	__asm        jmp    _T10f;
 _Ta4:
 	__asm        cmp    lCarModel, 0x11E;
 	__asm        jne    _Tc0;
 // LINE 1611:
-	__asm        mov    eax, 0x5C;
-	__asm        jmp    _T116;
+	return 0x5c;
 // LINE 1612:
 	__asm        jmp    _T10f;
 _Tc0:
 	__asm        cmp    lCarModel, 0x11F;
 	__asm        jne    _Tdc;
 // LINE 1613:
-	__asm        mov    eax, 0x5E;
-	__asm        jmp    _T116;
+	return 0x5e;
 // LINE 1614:
 	__asm        jmp    _T10f;
 _Tdc:
 	__asm        cmp    lCarModel, 0x11C;
 	__asm        jne    _Tf8;
 // LINE 1615:
-	__asm        mov    eax, 0x5F;
-	__asm        jmp    _T116;
+	return 0x5f;
 // LINE 1616:
 	__asm        jmp    _T10f;
 _Tf8:
 	__asm        cmp    lCarModel, 0x11D;
 	__asm        jne    _T10f;
 // LINE 1617:
-	__asm        mov    eax, 0x5D;
-	__asm        jmp    _T116;
+	return 0x5d;
 // LINE 1618:
 _T10f:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T116;
+	return 0x0;
 // LINE 1619:
-_T116:
 }
 
 // FUNCTION: COPTER_D 0x0044e44a
@@ -8417,7 +8345,7 @@ _T25b:
 // LINE 1684:
 _T298:
 	return;
-_T29d:
+
 	__asm        mov    eax, this;
 }
 
@@ -8430,7 +8358,7 @@ void EquipmentPanelWindow::~EquipmentPanelWindow() {
 	__asm        call   EquipmentPanelWindow::DestroyImage;
 // LINE 1692:
 	return;
-_T22:
+
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
 }
@@ -8459,7 +8387,6 @@ void EquipmentPanelWindow::InitializeCachedSettings() {
 	this->lLastTeargasCount = 0x0;
 // LINE 1710:
 	return;
-_T2b:
 }
 
 // FUNCTION: COPTER_D 0x0044e77b
@@ -8673,7 +8600,6 @@ _Te9:
 // LINE 1759:
 _T108:
 	return;
-_T10d:
 }
 
 // FUNCTION: COPTER_D 0x0044ea5d
@@ -8696,10 +8622,8 @@ _T26:
 	__asm        call   EquipmentPanelWindow::DrawTeargasUsage;
 // LINE 1770:
 _T3b:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T45;
+	return 0x1;
 // LINE 1771:
-_T45:
 }
 
 // FUNCTION: COPTER_D 0x0044eaa7
@@ -9020,7 +8944,6 @@ _T36b:
 	__asm        call   dword ptr [edx+0x2C];
 // LINE 1861:
 	return;
-_T396:
 }
 
 // FUNCTION: COPTER_D 0x0044ef07
@@ -9134,7 +9057,6 @@ _Tf4:
 // LINE 1887:
 _T12f:
 	return;
-_T134:
 }
 
 // FUNCTION: COPTER_D 0x0044f040
@@ -9273,7 +9195,6 @@ _T110:
 // LINE 1916:
 _T173:
 	return;
-_T178:
 }
 
 // FUNCTION: COPTER_D 0x0044f1bd
@@ -9292,10 +9213,8 @@ int32_t EquipmentPanelWindow::DoMessage(/*unpacked*/ class GraphicWindow *gwSour
 	__asm        add    esp, 4;
 // LINE 1925:
 _T31:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T3b;
+	return 0x1;
 // LINE 1926:
-_T3b:
 }
 
 // FUNCTION: COPTER_D 0x0044f1ff
@@ -9442,8 +9361,7 @@ _T1ca:
 	__asm        jmp    _T1e6;
 // LINE 1943:
 _T1dc:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T448;
+	return 0x1;
 // LINE 1945:
 _T1e6:
 	__asm        jmp    _T3fa;
@@ -9521,8 +9439,7 @@ _T2c3:
 	__asm        jmp    _T2df;
 // LINE 1951:
 _T2d5:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T448;
+	return 0x1;
 // LINE 1953:
 _T2df:
 	__asm        jmp    _T3fa;
@@ -9566,8 +9483,7 @@ _T349:
 	__asm        jmp    _T365;
 // LINE 1957:
 _T35b:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T448;
+	return 0x1;
 // LINE 1959:
 _T365:
 	__asm        jmp    _T3fa;
@@ -9611,15 +9527,13 @@ _T3cf:
 	__asm        jmp    _T3eb;
 // LINE 1963:
 _T3e1:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T448;
+	return 0x1;
 // LINE 1965:
 _T3eb:
 	__asm        jmp    _T3fa;
 // LINE 1966:
 _T3f0:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T448;
+	return 0x1;
 // LINE 1968:
 _T3fa:
 	__asm        mov    eax, this;
@@ -9646,10 +9560,8 @@ _T3fa:
 	__asm        call   EquipmentPanelWindow::DoCurrentControlStart;
 // LINE 1972:
 _T43e:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T448;
+	return 0x1;
 // LINE 1973:
-_T448:
 }
 
 // FUNCTION: COPTER_D 0x0044f64e
@@ -9745,10 +9657,8 @@ _T113:
 	this->lCurrentSelectedControl = 0x0;
 // LINE 1997:
 _T120:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T12a;
+	return 0x1;
 // LINE 1998:
-_T12a:
 }
 
 // FUNCTION: COPTER_D 0x0044f77f
@@ -9904,7 +9814,6 @@ _T1a7:
 // LINE 2028:
 _T1d1:
 	return;
-_T1d6:
 }
 
 // FUNCTION: COPTER_D 0x0044f95a
@@ -10043,7 +9952,6 @@ _T170:
 // LINE 2054:
 _T1a2:
 	return;
-_T1a7:
 }
 
 // FUNCTION: COPTER_D 0x0044fb06
@@ -10146,7 +10054,6 @@ _Te3:
 // LINE 2076:
 _T10b:
 	return;
-_T110:
 }
 
 

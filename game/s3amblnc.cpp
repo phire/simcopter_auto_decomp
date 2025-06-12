@@ -556,7 +556,7 @@ void AmbulanceClass::AmbulanceClass() {
 	this->carModel = 0x11f;
 // LINE 85:
 	return;
-_T2c:
+
 	__asm        mov    eax, this;
 }
 
@@ -662,8 +662,7 @@ _T102:
 	__asm        jmp    _T107;
 // LINE 143:
 _T107:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1e4;
+	return 0x0;
 // LINE 146:
 _T10e:
 	__asm        jmp    _T145;
@@ -682,8 +681,7 @@ _T139:
 	__asm        jmp    _T13e;
 // LINE 151:
 _T13e:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1e4;
+	return 0x0;
 // LINE 157:
 _T145:
 	youveWonABrandNewCar->dispatchIcon.user1 = 0x0;
@@ -712,8 +710,7 @@ _T145:
 	__asm        mov    ambulances[0][ecx*4], eax;
 	__asm        inc    curAmbulances;
 // LINE 165:
-	__asm        mov    eax, youveWonABrandNewCar;
-	__asm        jmp    _T1e4;
+	return youveWonABrandNewCar;
 // LINE 167:
 // Block end:
 	__asm        jmp    _T1dd;
@@ -734,10 +731,8 @@ _T1b6:
 	__asm        jmp    _T1dd;
 // LINE 176:
 _T1dd:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1e4;
+	return 0x0;
 // LINE 177:
-_T1e4:
 }
 
 // FUNCTION: COPTER_D 0x00535b14
@@ -1146,7 +1141,6 @@ _T384:
 // LINE 404:
 _T3af:
 	return;
-_T3b4:
 }
 
 // FUNCTION: COPTER_D 0x00535fda
@@ -1168,7 +1162,6 @@ void AmbulanceClass::SetSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) {
 	__asm        call   EmergencyVehicleClass::SetSaveData;
 // LINE 425:
 	return;
-_T1d:
 }
 
 // FUNCTION: COPTER_D 0x0053601d
@@ -1214,7 +1207,6 @@ _T5c:
 // LINE 460:
 _T75:
 	return;
-_T7a:
 }
 
 

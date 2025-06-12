@@ -328,10 +328,8 @@ struct TypefaceTestStruct{ // packed(0x8 bytes) TI: 0x2b62
 // FUNCTION: COPTER_D 0x0042a4f0
 int32_t LanguageManager::Initialize() {
 // LINE 44:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T10;
+	return 0x1;
 // LINE 45:
-_T10:
 }
 
 // FUNCTION: COPTER_D 0x0042a505
@@ -342,10 +340,8 @@ int32_t LanguageManager::Uninitialize() {
 	__asm        call   LanguageManager::UnloadLanguageSystemFonts;
 	__asm        add    esp, 4;
 // LINE 54:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1e;
+	return 0x1;
 // LINE 55:
-_T1e:
 }
 
 // FUNCTION: COPTER_D 0x0042a528
@@ -1880,8 +1876,7 @@ int32_t LanguageManager::GetNextLanguage(int32_t nCurrentLanguage) {
 	__asm        jge    _T2a;
 // LINE 196:
 _T23:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T66;
+	return 0x0;
 // LINE 199:
 _T2a:
 	nCurrentLanguage++;
@@ -1904,10 +1899,8 @@ _T3e:
 	__asm        jne    _T2a;
 // LINE 203:
 _T5e:
-	__asm        mov    eax, nCurrentLanguage;
-	__asm        jmp    _T66;
+	return nCurrentLanguage;
 // LINE 204:
-_T66:
 }
 
 // FUNCTION: COPTER_D 0x0042b819
@@ -1922,8 +1915,7 @@ _T18:
 	__asm        cmp    nLanguage, 2;
 	__asm        jne    _T2c;
 // LINE 236:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tfc;
+	return 0x1;
 // LINE 239:
 _T2c:
 	__asm        cmp    nLanguage, 0x20;
@@ -1936,70 +1928,59 @@ _T2c:
 	__asm        jne    _T54;
 // LINE 240:
 _T4a:
-	__asm        mov    eax, 3;
-	__asm        jmp    _Tfc;
+	return 0x3;
 // LINE 241:
 _T54:
 	__asm        cmp    nLanguage, 0x23;
 	__asm        jne    _T68;
 // LINE 242:
-	__asm        mov    eax, 4;
-	__asm        jmp    _Tfc;
+	return 0x4;
 // LINE 243:
 _T68:
 	__asm        cmp    nLanguage, 0x24;
 	__asm        jne    _T7c;
 // LINE 244:
-	__asm        mov    eax, 5;
-	__asm        jmp    _Tfc;
+	return 0x5;
 // LINE 245:
 _T7c:
 	__asm        cmp    nLanguage, 0x25;
 	__asm        jne    _T90;
 // LINE 246:
-	__asm        mov    eax, 7;
-	__asm        jmp    _Tfc;
+	return 0x7;
 // LINE 247:
 _T90:
 	__asm        cmp    nLanguage, 0x26;
 	__asm        jne    _Ta4;
 // LINE 248:
-	__asm        mov    eax, 6;
-	__asm        jmp    _Tfc;
+	return 0x6;
 // LINE 249:
 _Ta4:
 	__asm        cmp    nLanguage, 0x27;
 	__asm        jne    _Tb8;
 // LINE 250:
-	__asm        mov    eax, 0xA;
-	__asm        jmp    _Tfc;
+	return 0xa;
 // LINE 251:
 _Tb8:
 	__asm        cmp    nLanguage, 0x2A;
 	__asm        jne    _Tcc;
 // LINE 252:
-	__asm        mov    eax, 0x2B;
-	__asm        jmp    _Tfc;
+	return 0x2b;
 // LINE 253:
 _Tcc:
 	__asm        cmp    nLanguage, 0xE;
 	__asm        jne    _Te0;
 // LINE 254:
-	__asm        mov    eax, 0x10;
-	__asm        jmp    _Tfc;
+	return 0x10;
 // LINE 255:
 _Te0:
 	__asm        cmp    nLanguage, 0xF;
 	__asm        jne    _Tf4;
 // LINE 256:
-	__asm        mov    eax, 0x10;
-	__asm        jmp    _Tfc;
+	return 0x10;
 // LINE 260:
 _Tf4:
-	__asm        mov    eax, nLanguage;
-	__asm        jmp    _Tfc;
+	return nLanguage;
 // LINE 261:
-_Tfc:
 }
 
 // FUNCTION: COPTER_D 0x0042b91a
@@ -2609,14 +2590,11 @@ _T67d:
 	__asm        jmp    _T682;
 // LINE 334:
 _T682:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T693;
+	return 0x1;
 // LINE 336:
 _T68c:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T693;
+	return 0x0;
 // LINE 337:
-_T693:
 }
 
 // FUNCTION: COPTER_D 0x0042c0de
@@ -3127,14 +3105,11 @@ _T67d:
 	__asm        jmp    _T682;
 // LINE 356:
 _T682:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T693;
+	return 0x1;
 // LINE 358:
 _T68c:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T693;
+	return 0x0;
 // LINE 359:
-_T693:
 }
 
 // FUNCTION: COPTER_D 0x0042c776
@@ -3645,14 +3620,11 @@ _T67d:
 	__asm        jmp    _T682;
 // LINE 378:
 _T682:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T693;
+	return 0x1;
 // LINE 380:
 _T68c:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T693;
+	return 0x0;
 // LINE 381:
-_T693:
 }
 
 // FUNCTION: COPTER_D 0x0042ce0e
@@ -3677,8 +3649,7 @@ _T18:
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 401:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T8c;
+	return 0x1;
 // LINE 403:
 	__asm        jmp    _T85;
 // LINE 405:
@@ -3699,14 +3670,11 @@ _T6a:
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 408:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T8c;
+	return 0x1;
 // LINE 412:
 _T85:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T8c;
+	return 0x0;
 // LINE 413:
-_T8c:
 }
 
 // FUNCTION: COPTER_D 0x0042ce9f
@@ -3723,14 +3691,11 @@ int32_t LanguageManager::GetFontFilePathForLanguage(int32_t nLanguage, int32_t n
 	__asm        call   GetPathForFile;
 	__asm        add    esp, 0x10;
 // LINE 429:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T36;
+	return 0x1;
 // LINE 433:
 _T2f:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T36;
+	return 0x0;
 // LINE 434:
-_T36:
 }
 
 // FUNCTION: COPTER_D 0x0042ceda
@@ -3746,8 +3711,7 @@ int32_t LanguageManager::LoadLanguageSystemFonts(int32_t nLanguage) {
 	__asm        test   eax, eax;
 	__asm        je     _T2a;
 // LINE 460:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Taf;
+	return 0x1;
 // LINE 462:
 _T2a:
 	__asm        mov    eax, nLanguage;
@@ -3787,18 +3751,14 @@ _T2a:
 	__asm        call   dword ptr ds:[0x6C385C];
 // LINE 472:
 _T96:
-	__asm        mov    eax, nReturnValue;
-	__asm        jmp    _Taf;
+	return nReturnValue;
 // LINE 474:
 _T9e:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Taf;
+	return 0x1;
 // LINE 476:
 _Ta8:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Taf;
+	return 0x0;
 // LINE 477:
-_Taf:
 }
 
 // FUNCTION: COPTER_D 0x0042cf8e
@@ -3814,8 +3774,7 @@ int32_t LanguageManager::UnloadLanguageSystemFonts(int32_t nLanguage) {
 	__asm        test   eax, eax;
 	__asm        je     _T2a;
 // LINE 493:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T90;
+	return 0x1;
 // LINE 495:
 _T2a:
 	__asm        mov    eax, nLanguage;
@@ -3849,14 +3808,11 @@ _T2a:
 	__asm        call   dword ptr ds:[0x6C385C];
 // LINE 504:
 _T81:
-	__asm        mov    eax, nReturnValue;
-	__asm        jmp    _T90;
+	return nReturnValue;
 // LINE 506:
 _T89:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T90;
+	return 0x0;
 // LINE 507:
-_T90:
 }
 
 // FUNCTION: COPTER_D 0x0042d023
@@ -3889,14 +3845,11 @@ int32_t LanguageManager::IsTypefaceLoaded(char * szFaceName) {
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C384C];
 // LINE 536:
-	__asm        mov    eax, tempTypefaceTestStruct.bExists;
-	__asm        jmp    _T5b;
+	return tempTypefaceTestStruct.bExists;
 // LINE 538:
 _T54:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T5b;
+	return 0x0;
 // LINE 542:
-_T5b:
 }
 
 // FUNCTION: COPTER_D 0x0042d083
@@ -3929,24 +3882,19 @@ _T3d:
 	__asm        jmp    _T2ff;
 // LINE 561:
 _T47:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2ff;
+	return 0x1;
 // LINE 562:
 _T51:
-	__asm        mov    eax, 2;
-	__asm        jmp    _T2ff;
+	return 0x2;
 // LINE 563:
 _T5b:
-	__asm        mov    eax, 2;
-	__asm        jmp    _T2ff;
+	return 0x2;
 // LINE 564:
 _T65:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2ff;
+	return 0x1;
 // LINE 565:
 _T6f:
-	__asm        mov    eax, 2;
-	__asm        jmp    _T2ff;
+	return 0x2;
 // LINE 566:
 _T79:
 	__asm        mov    eax, 2;
@@ -3989,20 +3937,16 @@ _Td3:
 	__asm        jmp    _T2ff;
 // LINE 576:
 _Tdd:
-	__asm        mov    eax, 5;
-	__asm        jmp    _T2ff;
+	return 0x5;
 // LINE 577:
 _Te7:
-	__asm        mov    eax, 5;
-	__asm        jmp    _T2ff;
+	return 0x5;
 // LINE 578:
 _Tf1:
-	__asm        mov    eax, 0x14;
-	__asm        jmp    _T2ff;
+	return 0x14;
 // LINE 579:
 _Tfb:
-	__asm        mov    eax, 0x14;
-	__asm        jmp    _T2ff;
+	return 0x14;
 // LINE 580:
 _T105:
 	__asm        mov    eax, 0xA;
@@ -4045,20 +3989,16 @@ _T15f:
 	__asm        jmp    _T2ff;
 // LINE 590:
 _T169:
-	__asm        mov    eax, 0x16;
-	__asm        jmp    _T2ff;
+	return 0x16;
 // LINE 591:
 _T173:
-	__asm        mov    eax, 0x10;
-	__asm        jmp    _T2ff;
+	return 0x10;
 // LINE 592:
 _T17d:
-	__asm        mov    eax, 0x13;
-	__asm        jmp    _T2ff;
+	return 0x13;
 // LINE 593:
 _T187:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2ff;
+	return 0x1;
 // LINE 594:
 	__asm        jmp    _T2ff;
 _T196:
@@ -4173,14 +4113,11 @@ _T18:
 	__asm        jne    _T33;
 // LINE 610:
 _T2c:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T3d;
+	return 0x0;
 // LINE 612:
 _T33:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T3d;
+	return 0x1;
 // LINE 613:
-_T3d:
 }
 
 // FUNCTION: COPTER_D 0x0042d3c9
@@ -4207,14 +4144,11 @@ int32_t EnumFontFamilyProcecure(/*packed*/ struct tagENUMLOGFONTA *lpelf, /*pack
 // LINE 631:
 	tempTypefaceTestStruct->bExists = 0x1;
 // LINE 632:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4d;
+	return 0x0;
 // LINE 634:
 _T43:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T4d;
+	return 0x1;
 // LINE 635:
-_T4d:
 }
 
 

@@ -320,10 +320,8 @@ end_cpuff:
 	__asm        mov    eax, cpuff;
 // LINE 297:
 _Tba:
-	__asm        mov    eax, cpuff;
-	__asm        jmp    _Tc2;
+	return cpuff;
 // LINE 299:
-_Tc2:
 }
 
 // FUNCTION: COPTER_D 0x0047b8ec

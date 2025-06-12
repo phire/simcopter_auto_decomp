@@ -113,7 +113,6 @@ _T60:
 	__asm        jmp    _T6f;
 _T6f:
 	return;
-_T74:
 }
 
 // STATIC INITIALIZER:
@@ -136,7 +135,6 @@ _T0b:
 	__asm        jmp    _T10;
 _T10:
 	return;
-_T15:
 }
 
 // FUNCTION: COPTER_D 0x00428f4a
@@ -173,7 +171,6 @@ _T23:
 	__asm        rep movsd;
 // LINE 96:
 	return;
-_T38:
 }
 
 // FUNCTION: COPTER_D 0x00428fb5
@@ -196,7 +193,6 @@ void SetUserMoney(long lNewMoney) {
 	__asm        mov    [ecx+0x40], eax;
 // LINE 110:
 	return;
-_T1f:
 }
 
 // FUNCTION: COPTER_D 0x00428ff1
@@ -209,7 +205,6 @@ void ChangeUserMoney(long lNewMoneyDelta) {
 	__asm        add    [ecx+0x40], eax;
 // LINE 117:
 	return;
-_T1f:
 }
 
 // FUNCTION: COPTER_D 0x00429015
@@ -232,7 +227,6 @@ void SetUserPoints(long lNewPoints) {
 	__asm        mov    [ecx+0x50], eax;
 // LINE 133:
 	return;
-_T1f:
 }
 
 // FUNCTION: COPTER_D 0x00429051
@@ -245,7 +239,6 @@ void ChangeUserPoints(long lNewPointsDelta) {
 	__asm        add    [ecx+0x50], eax;
 // LINE 140:
 	return;
-_T1f:
 }
 
 // FUNCTION: COPTER_D 0x00429075
@@ -254,8 +247,7 @@ _T1f:
 	__asm        cmp    gCurrentCityType, 1;
 	__asm        jne    _T1d;
 // LINE 148:
-	__asm        mov    eax, 0x5C2A20;
-	__asm        jmp    _T31;
+	return 0x5c2a20;
 // LINE 149:
 _T1d:
 	__asm        mov    eax, gCurrentCareerCityInfo.lCurrentCityIndex;
@@ -280,16 +272,13 @@ void SetCurrentCitySettings(/*packed*/ struct tagCitySettings *newCitySettings) 
 	__asm        rep movsd;
 // LINE 159:
 	return;
-_T23:
 }
 
 // FUNCTION: COPTER_D 0x004290d3
 char * GetCurrentCityPath() {
 // LINE 167:
-	__asm        mov    eax, 0x5C2918;
-	__asm        jmp    _T10;
+	return 0x5c2918;
 // LINE 168:
-_T10:
 }
 
 // FUNCTION: COPTER_D 0x004290e8
@@ -302,7 +291,6 @@ void SetCurrentCityPath(char * szNewCurrentCityPath) {
 	__asm        add    esp, 8;
 // LINE 179:
 	return;
-_T1c:
 }
 
 // FUNCTION: COPTER_D 0x00429109
@@ -320,7 +308,6 @@ _T22:
 // LINE 190:
 _T2c:
 	return;
-_T31:
 }
 
 // FUNCTION: COPTER_D 0x0042913f
@@ -329,14 +316,12 @@ int32_t GetUserHasSavedCurrentCity() {
 	__asm        cmp    gCurrentCityType, 1;
 	__asm        jne    _T22;
 // LINE 198:
-	__asm        mov    eax, gCurrentUserCityInfo.bUserHasSavedGame;
-	__asm        jmp    _T2c;
+	return gCurrentUserCityInfo.bUserHasSavedGame;
 // LINE 199:
 	__asm        jmp    _T2c;
 // LINE 200:
 _T22:
-	__asm        mov    eax, gCurrentCareerCityInfo.bUserHasSavedGame;
-	__asm        jmp    _T2c;
+	return gCurrentCareerCityInfo.bUserHasSavedGame;
 // LINE 201:
 _T2c:
 }
@@ -387,7 +372,6 @@ _T58:
 // LINE 223:
 _T74:
 	return;
-_T79:
 }
 
 // FUNCTION: COPTER_D 0x004291ee
@@ -444,7 +428,6 @@ void InitializeAllUserInfo() {
 	gCurrentCityType = 0x0;
 // LINE 259:
 	return;
-_Tf9:
 }
 
 // FUNCTION: COPTER_D 0x004292ec
@@ -520,7 +503,6 @@ _T1f:
 // LINE 286:
 _Ta5:
 	return;
-_Taa:
 }
 
 // FUNCTION: COPTER_D 0x0042939b
@@ -649,7 +631,6 @@ _T1b5:
 	gCurrentCareerCityInfo.userPersonalInfo.lTeargasCount = 0xa;
 // LINE 332:
 	return;
-_T1e2:
 }
 
 // FUNCTION: COPTER_D 0x00429582
@@ -781,7 +762,6 @@ _T1ac:
 	gCurrentUserCityInfo.userPersonalInfo.lTeargasCount = 0xa;
 // LINE 377:
 	return;
-_T1d9:
 }
 
 // FUNCTION: COPTER_D 0x00429760
@@ -890,7 +870,6 @@ _T163:
 	__asm        add    esp, 4;
 // LINE 408:
 	return;
-_T172:
 }
 
 // FUNCTION: COPTER_D 0x004298d7
@@ -1527,7 +1506,6 @@ _Tb58:
 // LINE 755:
 _Tc0a:
 	return;
-_Tc0f:
 }
 
 

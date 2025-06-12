@@ -420,8 +420,7 @@ _T2b7:
 	__asm        jmp    _T2f6;
 // LINE 22:
 _T2f6:
-	__asm        mov    eax, loader;
-	__asm        jmp    _T2fe;
+	return loader;
 // LINE 23:
 _T2fe:
 }
@@ -611,7 +610,7 @@ _T230:
 	__asm        jmp    _T235;
 _T235:
 	return;
-_T23a:
+
 	__asm        mov    ecx, this;
 	__asm        call   FlatResFile::~FlatResFile;
 }

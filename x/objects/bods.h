@@ -240,8 +240,7 @@ _T2c0:
 	__asm        jmp    _T321;
 // LINE 113:
 _T321:
-	__asm        mov    eax, thing;
-	__asm        jmp    _T340;
+	return thing;
 // LINE 114:
 _L45522:
 	__asm        mov    eax, [ebp-0x14];
@@ -252,7 +251,7 @@ _L45522:
 _L45521:
 	__asm        mov    eax, 0x5960E0;
 	__asm        jmp    near ptr 0x0056F590;
-_T340:
+
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    fs:[0], ecx;
 }

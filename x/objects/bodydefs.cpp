@@ -478,7 +478,6 @@ _T2c:
 	pinfo = val;
 // LINE 125:
 	return;
-_T37:
 }
 
 // FUNCTION: COPTER_D 0x0055d98c
@@ -504,10 +503,8 @@ _T37:
 	__asm        add    esp, 4;
 	__asm        mov    txzy.y, al;
 // LINE 133:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(txzy.x);
-	__asm        jmp    _T3e;
+	return reinterpret_cast<uint32_t>(txzy.x);
 // LINE 134:
-_T3e:
 }
 
 // FUNCTION: COPTER_D 0x0055d9cf
@@ -620,7 +617,6 @@ _T2f:
 	__asm        add    esp, 4;
 // LINE 172:
 	return;
-_T55:
 }
 
 // FUNCTION: COPTER_D 0x0055db01
@@ -1105,7 +1101,7 @@ _T780:
 _L39413:
 	__asm        mov    eax, 0x595FA8;
 	__asm        jmp    near ptr 0x0056F590;
-_T78f:
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
 }
@@ -1429,7 +1425,6 @@ _T3a8:
 // LINE 247:
 _T3ad:
 	return;
-_T3b2:
 }
 
 

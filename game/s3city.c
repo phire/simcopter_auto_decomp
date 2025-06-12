@@ -7173,7 +7173,7 @@ void S3CityGrid() {
 	__asm        call   S3CitySpiralScan;
 	__asm        add    esp, 0xC;
 // LINE 2469:
-	return;
+	__asm        jmp    _T72b;
 // LINE 2473:
 _Tb2:
 	__asm        cmp    view_changed, 1;
@@ -7672,7 +7672,7 @@ _T719:
 	__asm        cmp    S_fovlast, 0;
 	__asm        jne    _T72b;
 // LINE 2894:
-	return;
+	__asm        jmp    _T72b;
 // LINE 2896:
 _T72b:
 }
@@ -8343,7 +8343,6 @@ _T7a4:
 	__asm        mov    ecx, cell_last;
 	__asm        mov    [ecx], eax;
 // LINE 3191:
-_T7af:
 }
 
 // FUNCTION: COPTER_D 0x0050fe32
@@ -9552,7 +9551,6 @@ _T433:
 _T46a:
 	how_deep--;
 // LINE 3632:
-_T470:
 }
 
 // FUNCTION: COPTER_D 0x00510beb
@@ -10320,7 +10318,6 @@ _T417:
 // LINE 3912:
 	__asm        call   0x004D6AFC;
 // LINE 3913:
-_T439:
 }
 
 // FUNCTION: COPTER_D 0x0051147c
@@ -11526,8 +11523,7 @@ _T0f:
 	__asm        mov    [ecx], eax;
 // LINE 4334:
 _Ta1:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tbb;
+	return 0x1;
 // LINE 4336:
 _Tab:
 	caddr -= 0x4;
@@ -11535,10 +11531,8 @@ _Tab:
 	__asm        jmp    _T0f;
 // LINE 4339:
 _Tb4:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tbb;
+	return 0x0;
 // LINE 4340:
-_Tbb:
 }
 
 // FUNCTION: COPTER_D 0x0051221e
@@ -11900,7 +11894,6 @@ _T159:
 _T168:
 	__asm        jmp    _T53;
 // LINE 4530:
-_T16d:
 }
 
 // FUNCTION: COPTER_D 0x00512670
@@ -11924,8 +11917,7 @@ int32_t S3CityCellViewReject(/*packed*/ struct _CELL_INFO *cptr) {
 	__asm        cmp    S_used_spiralscan, 0;
 	__asm        jne    _T2d;
 // LINE 4746:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T2ec;
+	return 0x0;
 // LINE 4749:
 _T2d:
 	__asm        mov    eax, cptr;
@@ -11938,14 +11930,12 @@ _T2d:
 	__asm        test   al, 0x10;
 	__asm        je     _T58;
 // LINE 4753:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2ec;
+	return 0x1;
 // LINE 4754:
 	__asm        jmp    _T5f;
 // LINE 4755:
 _T58:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T2ec;
+	return 0x0;
 // LINE 4759:
 _T5f:
 	__asm        mov    eax, cptr;
@@ -11968,8 +11958,7 @@ _T5f:
 	__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
 	__asm        jne    _Tb3;
 // LINE 4766:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T2ec;
+	return 0x0;
 // LINE 4769:
 _Tb3:
 	__asm        mov    eax, cptr;
@@ -12012,8 +12001,7 @@ _Tb3:
 	__asm        cmp    eax, farz;
 	__asm        jle    _T127;
 // LINE 4791:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2ec;
+	return 0x1;
 // LINE 4795:
 _T127:
 	__asm        mov    eax, vpos.x;
@@ -12036,8 +12024,7 @@ _T127:
 	__asm        cmp    dotp, 0xFFFFFF9C;
 	__asm        jge    _T169;
 // LINE 4800:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2ec;
+	return 0x1;
 // LINE 4804:
 _T169:
 	__asm        mov    eax, vpos.x;
@@ -12060,8 +12047,7 @@ _T169:
 	__asm        cmp    dotp, 0xFFFFFF9C;
 	__asm        jge    _T1ab;
 // LINE 4809:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2ec;
+	return 0x1;
 // LINE 4813:
 _T1ab:
 	__asm        mov    eax, vpos.y;
@@ -12084,15 +12070,13 @@ _T1ab:
 	__asm        cmp    dotp, 0xFFFFFF9C;
 	__asm        jge    _T1ed;
 // LINE 4818:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2ec;
+	return 0x1;
 // LINE 4828:
 _T1ed:
 	__asm        cmp    G_alt, 0x28;
 	__asm        jge    _T201;
 // LINE 4829:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T2ec;
+	return 0x0;
 // LINE 4832:
 _T201:
 	dyobj = cptr->dyptr;
@@ -12150,8 +12134,7 @@ _T288:
 	__asm        cmp    eax, 0x10000;
 	__asm        jge    _T2a3;
 // LINE 4861:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2ec;
+	return 0x1;
 // LINE 4867:
 _T2a3:
 	__asm        mov    eax, vpos.y;
@@ -12174,14 +12157,11 @@ _T2a3:
 	__asm        cmp    dotp, 0xFFFFFF9C;
 	__asm        jge    _T2e5;
 // LINE 4872:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2ec;
+	return 0x1;
 // LINE 4876:
 _T2e5:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T2ec;
+	return 0x0;
 // LINE 4878:
-_T2ec:
 }
 
 // FUNCTION: COPTER_D 0x00512961
@@ -12410,14 +12390,11 @@ int32_t S3CityIsCellFlat(long x, long y) {
 	__asm        cmp    edx, ebx;
 	__asm        jne    _T12a;
 // LINE 4970:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T131;
+	return 0x1;
 // LINE 4973:
 _T12a:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T131;
+	return 0x0;
 // LINE 4974:
-_T131:
 }
 
 // FUNCTION: COPTER_D 0x00512c2b
@@ -13756,7 +13733,6 @@ _Tdc6:
 // LINE 5409:
 	G_helibase_found = 0x1;
 // LINE 5410:
-_Tf04:
 }
 
 

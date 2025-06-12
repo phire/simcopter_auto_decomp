@@ -437,7 +437,6 @@ _T452:
 // LINE 275:
 	Viewer.pos.y += S_altdiff;
 // LINE 276:
-_T474:
 }
 
 // FUNCTION: COPTER_D 0x004f8f69
@@ -464,7 +463,7 @@ _T3b:
 // LINE 290:
 	P->z += 0x40000000;
 // LINE 291:
-	return;
+	__asm        jmp    _T74;
 _T5a:
 	__asm        mov    eax, P;
 	__asm        cmp    dword ptr [eax+8], 0x30000000;
@@ -673,7 +672,6 @@ _T24a:
 	__asm        and    eax, 0xFFFFFF00;
 	__asm        mov    CameraIdeal.y, eax;
 // LINE 398:
-_T259:
 }
 
 // FUNCTION: COPTER_D 0x004f9240
@@ -1298,7 +1296,6 @@ _T139:
 	__asm        call   CalcCameraAngles;
 	__asm        add    esp, 4;
 // LINE 699:
-_T1a2:
 }
 
 // FUNCTION: COPTER_D 0x004f98dc
@@ -1352,7 +1349,7 @@ _T5c:
 	__asm        lea    eax, [eax+eax*2];
 	__asm        add    S_chase[0].dist[eax*4], 0x40000;
 // LINE 752:
-	return;
+	__asm        jmp    _T137;
 // LINE 754:
 _T74:
 	__asm        mov    eax, S_curr_chase;
@@ -1376,23 +1373,23 @@ _T8c:
 	__asm        mov    S_chase[0].height[eax*4], 0;
 // LINE 761:
 _Tc8:
-	return;
+	__asm        jmp    _T137;
 // LINE 763:
 _Tcd:
 	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        sub    S_chase[0].focus[eax*4], 0x40000;
 // LINE 764:
-	return;
+	__asm        jmp    _T137;
 // LINE 766:
 _Te5:
 	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        add    S_chase[0].focus[eax*4], 0x40000;
 // LINE 767:
-	return;
+	__asm        jmp    _T137;
 // LINE 770:
-	return;
+	__asm        jmp    _T137;
 // LINE 771:
 	return;
 _T107:
@@ -1429,10 +1426,8 @@ _T23:
 // FUNCTION: COPTER_D 0x004f9a76
 /*packed*/ struct _CHASE_INFO* S3CameraGetChaseInfo() {
 // LINE 795:
-	__asm        mov    eax, 0x6BF160;
-	__asm        jmp    _T10;
+	return 0x6bf160;
 // LINE 796:
-_T10:
 }
 
 // FUNCTION: COPTER_D 0x004f9a8b
@@ -1546,10 +1541,8 @@ _Tf2:
 	__asm        jmp    _T9d;
 // LINE 853:
 _Tff:
-	__asm        mov    eax, maxobjy;
-	__asm        jmp    _T107;
+	return maxobjy;
 // LINE 854:
-_T107:
 }
 
 

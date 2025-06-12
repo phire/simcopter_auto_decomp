@@ -1731,7 +1731,6 @@ _T2ae:
 // LINE 122:
 _T2b3:
 	return;
-_T2b8:
 }
 
 // FUNCTION: COPTER_D 0x00555369
@@ -1992,10 +1991,8 @@ _T2db:
 	__asm        jmp    _T6e;
 // LINE 249:
 _T2e8:
-	__asm        mov    eax, founddyobj;
-	__asm        jmp    _T2f0;
+	return founddyobj;
 // LINE 250:
-_T2f0:
 }
 
 // FUNCTION: COPTER_D 0x0055565e
@@ -2079,8 +2076,7 @@ _T82:
 	__asm        cmp    objy, 0;
 	__asm        jle    _Tcf;
 // LINE 306:
-	__asm        mov    eax, stobj;
-	__asm        jmp    _Te3;
+	return stobj;
 // LINE 310:
 _Tcf:
 	stobj = stobj->next;
@@ -2088,10 +2084,8 @@ _Tcf:
 	__asm        jmp    _T82;
 // LINE 314:
 _Tdc:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Te3;
+	return 0x0;
 // LINE 315:
-_Te3:
 }
 
 // FUNCTION: COPTER_D 0x00555746
@@ -2147,8 +2141,7 @@ _Ta2:
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    _Tbe;
 // LINE 323:
-	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _Tce;
+	return 0xffffffff;
 // LINE 324:
 	__asm        jmp    _Tce;
 // LINE 325:
@@ -2269,8 +2262,7 @@ _T12:
 	__asm        test   eax, eax;
 	__asm        jne    _Tb7;
 // LINE 363:
-	__asm        mov    eax, movecode;
-	__asm        jmp    _T126;
+	return movecode;
 // LINE 368:
 _Tb7:
 	__asm        cmp    movecode, 0;
@@ -2286,8 +2278,7 @@ _Tb7:
 	__asm        jne    _Te7;
 // LINE 369:
 _Tdf:
-	__asm        mov    eax, movecode;
-	__asm        jmp    _T126;
+	return movecode;
 // LINE 371:
 _Te7:
 	attempts++;
@@ -2296,8 +2287,7 @@ _Te7:
 	__asm        cmp    eax, 8;
 	__asm        jle    _T100;
 // LINE 373:
-	__asm        mov    eax, movecode;
-	__asm        jmp    _T126;
+	return movecode;
 // LINE 374:
 _T100:
 	this->fData[0]++;
@@ -2310,7 +2300,6 @@ _T100:
 // LINE 376:
 	__asm        jmp    _T12;
 // LINE 377:
-_T126:
 }
 
 // FUNCTION: COPTER_D 0x005559b2
@@ -2566,8 +2555,7 @@ _T1ab:
 // LINE 439:
 // Block end:
 _T1ec:
-	__asm        mov    eax, retcode;
-	__asm        jmp    _Ta09;
+	return retcode;
 // LINE 442:
 _T1f4:
 	__asm        jmp    _T1f9;
@@ -2616,8 +2604,7 @@ _T26b:
 	__asm        cmp    [eax+4], ecx;
 	__asm        jne    _T28e;
 // LINE 450:
-	__asm        mov    eax, 0xA;
-	__asm        jmp    _Ta09;
+	return 0xa;
 // LINE 451:
 _T28e:
 	__asm        mov    eax, this;
@@ -2733,8 +2720,7 @@ _T39f:
 	__asm        test   eax, eax;
 	__asm        jne    _T3dc;
 // LINE 464:
-	__asm        mov    eax, 6;
-	__asm        jmp    _Ta09;
+	return 0x6;
 // LINE 466:
 // Block end:
 _T3dc:
@@ -2778,14 +2764,12 @@ _T3dc:
 	__asm        test   al, 8;
 	__asm        je     _T45b;
 // LINE 471:
-	__asm        mov    eax, 5;
-	__asm        jmp    _Ta09;
+	return 0x5;
 // LINE 472:
 	__asm        jmp    _T465;
 // LINE 473:
 _T45b:
-	__asm        mov    eax, 4;
-	__asm        jmp    _Ta09;
+	return 0x4;
 // LINE 502:
 // Block end:
 // Block end:
@@ -2964,8 +2948,7 @@ _T662:
 	__asm        test   eax, eax;
 	__asm        jne    _T69d;
 // LINE 549:
-	__asm        mov    eax, 0xB;
-	__asm        jmp    _Ta09;
+	return 0xb;
 // LINE 550:
 	__asm        jmp    _T911;
 _T69d:
@@ -3125,15 +3108,13 @@ _T8fd:
 	__asm        cmp    newloctype, 7;
 	__asm        je     _T911;
 // LINE 566:
-	__asm        mov    eax, 0xC;
-	__asm        jmp    _Ta09;
+	return 0xc;
 // LINE 569:
 _T911:
 	__asm        test   reinterpret_cast<uint32_t>(failnonneutral), 0xFFFF;
 	__asm        je     _T928;
 // LINE 570:
-	__asm        mov    eax, 3;
-	__asm        jmp    _Ta09;
+	return 0x3;
 // LINE 582:
 // Block end:
 _T928:
@@ -3200,10 +3181,8 @@ _T9e6:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 595:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Ta09;
+	return 0x0;
 // LINE 596:
-_Ta09:
 }
 
 // FUNCTION: COPTER_D 0x00556470
@@ -3926,7 +3905,6 @@ _T45b:
 	counted[0] = numcounted;
 // LINE 739:
 	return;
-_T46a:
 }
 
 // FUNCTION: COPTER_D 0x00556cb9
@@ -4323,10 +4301,8 @@ _T281:
 	dist[0] = closestdist;
 // LINE 799:
 _T29f:
-	__asm        mov    eax, closestobj;
-	__asm        jmp    _T2a7;
+	return closestobj;
 // LINE 800:
-_T2a7:
 }
 
 // FUNCTION: COPTER_D 0x0055716e
@@ -4372,7 +4348,6 @@ _T77:
 	this->fData[15] = 0x1;
 // LINE 817:
 	return;
-_T88:
 }
 
 // FUNCTION: COPTER_D 0x005571fb
@@ -4475,18 +4450,15 @@ _T122:
 	__asm        cmp    eax, ecx;
 	__asm        jne    _T140;
 // LINE 830:
-	__asm        mov    eax, obj;
-	__asm        jmp    _T14c;
+	return obj;
 // LINE 831:
 // Block end:
 _T140:
 	__asm        jmp    _T1b;
 // LINE 832:
 _T145:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T14c;
+	return 0x0;
 // LINE 833:
-_T14c:
 }
 
 // FUNCTION: COPTER_D 0x0055734c
@@ -4534,14 +4506,12 @@ _T86:
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::SetMaster;
 // LINE 842:
-	__asm        mov    eax, obj;
-	__asm        jmp    _Ta4;
+	return obj;
 // LINE 844:
 	__asm        jmp    _Ta4;
 // LINE 845:
 _T9d:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Ta4;
+	return 0x0;
 // LINE 846:
 _Ta4:
 }
@@ -4642,10 +4612,8 @@ _T124:
 	__asm        jmp    _T1e;
 // LINE 860:
 _T129:
-	__asm        mov    eax, found;
-	__asm        jmp    _T131;
+	return found;
 // LINE 861:
-_T131:
 }
 
 // FUNCTION: COPTER_D 0x0055752b
@@ -4667,10 +4635,8 @@ _T2f:
 	result = 0x0;
 // LINE 881:
 _T36:
-	__asm        mov    eax, result;
-	__asm        jmp    _T3e;
+	return result;
 // LINE 882:
-_T3e:
 }
 
 // FUNCTION: COPTER_D 0x00557570
@@ -4707,10 +4673,8 @@ enum TreeSim::ReturnCode cYObject::iPutMyCarInStack(/*unpacked*/ struct TreeSim:
 // LINE 895:
 // Block end:
 _T5d:
-	__asm        mov    eax, result;
-	__asm        jmp    _T65;
+	return result;
 // LINE 896:
-_T65:
 }
 
 // FUNCTION: COPTER_D 0x005575dc
@@ -4797,10 +4761,8 @@ _Tfe:
 	result = 0x2;
 // LINE 907:
 _T10b:
-	__asm        mov    eax, result;
-	__asm        jmp    _T113;
+	return result;
 // LINE 908:
-_T113:
 }
 
 // FUNCTION: COPTER_D 0x005576f6
@@ -4861,10 +4823,8 @@ _Tbc:
 _Tc1:
 	result = 0x1;
 // LINE 916:
-	__asm        mov    eax, result;
-	__asm        jmp    _Td0;
+	return result;
 // LINE 917:
-_Td0:
 }
 
 // FUNCTION: COPTER_D 0x005577cd
@@ -4884,10 +4844,8 @@ enum TreeSim::ReturnCode cYObject::iAttr(/*unpacked*/ struct TreeSim::StackElem 
 	__asm        call   cYObject::TryExpression;
 	__asm        mov    result, eax;
 // LINE 923:
-	__asm        mov    eax, result;
-	__asm        jmp    _T33;
+	return result;
 // LINE 924:
-_T33:
 }
 
 // FUNCTION: COPTER_D 0x00557807
@@ -4997,10 +4955,8 @@ _T11e:
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::DynEffects;
 // LINE 962:
-	__asm        mov    eax, result;
-	__asm        jmp    _T13a;
+	return result;
 // LINE 963:
-_T13a:
 }
 
 // FUNCTION: COPTER_D 0x00557948
@@ -5155,10 +5111,8 @@ _T1c2:
 _T1c7:
 	result = 0x1;
 // LINE 972:
-	__asm        mov    eax, result;
-	__asm        jmp    _T1d6;
+	return result;
 // LINE 973:
-_T1d6:
 }
 
 // FUNCTION: COPTER_D 0x00557b25
@@ -5242,10 +5196,8 @@ _Td3:
 // LINE 983:
 	result = 0x1;
 // LINE 985:
-	__asm        mov    eax, result;
-	__asm        jmp    _Tf4;
+	return result;
 // LINE 986:
-_Tf4:
 }
 
 // FUNCTION: COPTER_D 0x00557c20
@@ -5515,10 +5467,8 @@ _T2fd:
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::DynEffects;
 // LINE 1029:
-	__asm        mov    eax, result;
-	__asm        jmp    _T319;
+	return result;
 // LINE 1030:
-_T319:
 }
 
 // FUNCTION: COPTER_D 0x00557f40
@@ -5545,10 +5495,8 @@ enum TreeSim::ReturnCode cYObject::iUpdateMyMission(/*unpacked*/ struct TreeSim:
 // LINE 1037:
 	result = 0x1;
 // LINE 1039:
-	__asm        mov    eax, result;
-	__asm        jmp    _T49;
+	return result;
 // LINE 1040:
-_T49:
 }
 
 // FUNCTION: COPTER_D 0x00557f90
@@ -5810,10 +5758,8 @@ _T2a8:
 //   _T1ec
 // LINE 1105:
 _T2d0:
-	__asm        mov    eax, result;
-	__asm        jmp    _T2d8;
+	return result;
 // LINE 1106:
-_T2d8:
 }
 
 // FUNCTION: COPTER_D 0x0055826f
@@ -6322,10 +6268,8 @@ _T543:
 // LINE 1241:
 // Block end:
 _T54a:
-	__asm        mov    eax, result;
-	__asm        jmp    _T552;
+	return result;
 // LINE 1242:
-_T552:
 }
 
 // FUNCTION: COPTER_D 0x005587c8
@@ -6340,10 +6284,8 @@ enum TreeSim::ReturnCode cYObject::iSelfDecommission(/*unpacked*/ struct TreeSim
 // LINE 1248:
 	result = 0x3;
 // LINE 1250:
-	__asm        mov    eax, result;
-	__asm        jmp    _T2a;
+	return result;
 // LINE 1251:
-_T2a:
 }
 
 // FUNCTION: COPTER_D 0x005587f9
@@ -6420,10 +6362,8 @@ _Te4:
 	result = 0x0;
 // LINE 1261:
 _Teb:
-	__asm        mov    eax, result;
-	__asm        jmp    _Tf3;
+	return result;
 // LINE 1262:
-_Tf3:
 }
 
 // FUNCTION: COPTER_D 0x005588f3
@@ -6472,10 +6412,8 @@ _T4a:
 // LINE 1269:
 	result = 0x1;
 // LINE 1271:
-	__asm        mov    eax, result;
-	__asm        jmp    _T90;
+	return result;
 // LINE 1272:
-_T90:
 }
 
 // FUNCTION: COPTER_D 0x0055898a
@@ -6514,10 +6452,8 @@ _T62:
 	result = 0x0;
 // LINE 1284:
 _T69:
-	__asm        mov    eax, result;
-	__asm        jmp    _T71;
+	return result;
 // LINE 1285:
-_T71:
 }
 
 // FUNCTION: COPTER_D 0x00558a02
@@ -6576,10 +6512,8 @@ _Ta3:
 	result = 0x0;
 // LINE 1296:
 _Taa:
-	__asm        mov    eax, result;
-	__asm        jmp    _Tb2;
+	return result;
 // LINE 1297:
-_Tb2:
 }
 
 // FUNCTION: COPTER_D 0x00558abb
@@ -6603,10 +6537,8 @@ _T32:
 	result = 0x0;
 // LINE 1307:
 _T39:
-	__asm        mov    eax, result;
-	__asm        jmp    _T41;
+	return result;
 // LINE 1308:
-_T41:
 }
 
 // FUNCTION: COPTER_D 0x00558b03
@@ -6737,10 +6669,8 @@ _T183:
 	result = 0x0;
 // LINE 1324:
 _T18a:
-	__asm        mov    eax, result;
-	__asm        jmp    _T192;
+	return result;
 // LINE 1325:
-_T192:
 }
 
 // FUNCTION: COPTER_D 0x00558c9c
@@ -6788,10 +6718,8 @@ _T96:
 _T9b:
 	result = 0x1;
 // LINE 1334:
-	__asm        mov    eax, result;
-	__asm        jmp    _Taa;
+	return result;
 // LINE 1335:
-_Taa:
 }
 
 // FUNCTION: COPTER_D 0x00558d4d
@@ -6969,10 +6897,8 @@ _T20f:
 // LINE 1348:
 	result = 0x1;
 // LINE 1350:
-	__asm        mov    eax, result;
-	__asm        jmp    _T228;
+	return result;
 // LINE 1351:
-_T228:
 }
 
 // FUNCTION: COPTER_D 0x00558f7c
@@ -7062,10 +6988,8 @@ _T110:
 	result = 0x0;
 // LINE 1363:
 _T117:
-	__asm        mov    eax, result;
-	__asm        jmp    _T11f;
+	return result;
 // LINE 1364:
-_T11f:
 }
 
 // FUNCTION: COPTER_D 0x005590a2
@@ -7142,10 +7066,8 @@ _Tc6:
 _Te2:
 	result = 0x1;
 // LINE 1376:
-	__asm        mov    eax, result;
-	__asm        jmp    _Tf1;
+	return result;
 // LINE 1377:
-_Tf1:
 }
 
 // FUNCTION: COPTER_D 0x0055919a
@@ -7175,10 +7097,8 @@ _T4d:
 _T52:
 	result = 0x1;
 // LINE 1385:
-	__asm        mov    eax, result;
-	__asm        jmp    _T61;
+	return result;
 // LINE 1386:
-_T61:
 }
 
 // FUNCTION: COPTER_D 0x00559202
@@ -7546,10 +7466,8 @@ _T571:
 	__asm        jmp    _T576;
 // LINE 1401:
 _T576:
-	__asm        mov    eax, result;
-	__asm        jmp    _T57e;
+	return result;
 // LINE 1402:
-_T57e:
 }
 
 // FUNCTION: COPTER_D 0x00559787
@@ -7638,10 +7556,8 @@ _T106:
 // LINE 1414:
 	result = 0x1;
 // LINE 1416:
-	__asm        mov    eax, result;
-	__asm        jmp    _T12c;
+	return result;
 // LINE 1417:
-_T12c:
 }
 
 // FUNCTION: COPTER_D 0x005598ba
@@ -7841,10 +7757,8 @@ _T25c:
 _T261:
 	result = 0x1;
 // LINE 1441:
-	__asm        mov    eax, result;
-	__asm        jmp    _T270;
+	return result;
 // LINE 1442:
-_T270:
 }
 
 // FUNCTION: COPTER_D 0x00559b31
@@ -7893,10 +7807,8 @@ _T4a:
 // LINE 1449:
 	result = 0x1;
 // LINE 1451:
-	__asm        mov    eax, result;
-	__asm        jmp    _T90;
+	return result;
 // LINE 1452:
-_T90:
 }
 
 // FUNCTION: COPTER_D 0x00559bc8
@@ -7945,10 +7857,8 @@ _T50:
 // LINE 1459:
 	result = 0x1;
 // LINE 1461:
-	__asm        mov    eax, result;
-	__asm        jmp    _T96;
+	return result;
 // LINE 1462:
-_T96:
 }
 
 // FUNCTION: COPTER_D 0x00559c65
@@ -7997,10 +7907,8 @@ _T50:
 // LINE 1469:
 	result = 0x1;
 // LINE 1471:
-	__asm        mov    eax, result;
-	__asm        jmp    _T96;
+	return result;
 // LINE 1472:
-_T96:
 }
 
 // FUNCTION: COPTER_D 0x00559d02
@@ -8178,10 +8086,8 @@ _T1f9:
 // LINE 1526:
 // Block end:
 _T20d:
-	__asm        mov    eax, result;
-	__asm        jmp    _T215;
+	return result;
 // LINE 1527:
-_T215:
 }
 
 // FUNCTION: COPTER_D 0x00559f1e
@@ -8208,10 +8114,8 @@ enum TreeSim::ReturnCode cYObject::iGenerateMedevacAndSetSelfAsVictim(/*unpacked
 // LINE 1537:
 	result = 0x3;
 // LINE 1539:
-	__asm        mov    eax, result;
-	__asm        jmp    _T4f;
+	return result;
 // LINE 1540:
-_T4f:
 }
 
 // FUNCTION: COPTER_D 0x00559f74
@@ -8371,10 +8275,8 @@ _T1d1:
 	result = 0x0;
 // LINE 1556:
 _T1d8:
-	__asm        mov    eax, result;
-	__asm        jmp    _T1e0;
+	return result;
 // LINE 1557:
-_T1e0:
 }
 
 // FUNCTION: COPTER_D 0x0055a15b
@@ -8401,10 +8303,8 @@ enum TreeSim::ReturnCode cYObject::iDie(/*unpacked*/ struct TreeSim::StackElem *
 // LINE 1565:
 	result = 0x3;
 // LINE 1567:
-	__asm        mov    eax, result;
-	__asm        jmp    _T4f;
+	return result;
 // LINE 1568:
-_T4f:
 }
 
 // FUNCTION: COPTER_D 0x0055a1b1
@@ -8503,10 +8403,8 @@ _Te6:
 _Teb:
 	result = 0x1;
 // LINE 1585:
-	__asm        mov    eax, result;
-	__asm        jmp    _Tfa;
+	return result;
 // LINE 1586:
-_Tfa:
 }
 
 // FUNCTION: COPTER_D 0x0055a2da
@@ -8692,10 +8590,8 @@ _T282:
 _T28f:
 	result = 0x2;
 // LINE 1594:
-	__asm        mov    eax, result;
-	__asm        jmp    _T29e;
+	return result;
 // LINE 1595:
-_T29e:
 }
 
 // FUNCTION: COPTER_D 0x0055a57f
@@ -8754,10 +8650,8 @@ _Ta9:
 // LINE 1605:
 	result = 0x1;
 // LINE 1607:
-	__asm        mov    eax, result;
-	__asm        jmp    _Tc4;
+	return result;
 // LINE 1608:
-_Tc4:
 }
 
 // FUNCTION: COPTER_D 0x0055a64a
@@ -8776,10 +8670,8 @@ enum TreeSim::ReturnCode cYObject::iMakeMyMedevacVictimInvisible(/*unpacked*/ st
 // LINE 1615:
 	result = 0x1;
 // LINE 1617:
-	__asm        mov    eax, result;
-	__asm        jmp    _T3e;
+	return result;
 // LINE 1618:
-_T3e:
 }
 
 // FUNCTION: COPTER_D 0x0055a68f
@@ -8878,10 +8770,8 @@ _T116:
 // LINE 1628:
 	result = 0x1;
 // LINE 1630:
-	__asm        mov    eax, result;
-	__asm        jmp    _T134;
+	return result;
 // LINE 1631:
-_T134:
 }
 
 // FUNCTION: COPTER_D 0x0055a7ca
@@ -9098,10 +8988,8 @@ _T2e3:
 _T2f0:
 	result = 0x1;
 // LINE 1642:
-	__asm        mov    eax, result;
-	__asm        jmp    _T2ff;
+	return result;
 // LINE 1643:
-_T2ff:
 }
 
 // FUNCTION: COPTER_D 0x0055aad0
@@ -9267,10 +9155,8 @@ _T213:
 	result = 0x0;
 // LINE 1656:
 _T21a:
-	__asm        mov    eax, result;
-	__asm        jmp    _T222;
+	return result;
 // LINE 1657:
-_T222:
 }
 
 // FUNCTION: COPTER_D 0x0055acf9
@@ -9349,10 +9235,8 @@ _Te1:
 	result = 0x0;
 // LINE 1674:
 _Te8:
-	__asm        mov    eax, result;
-	__asm        jmp    _Tf0;
+	return result;
 // LINE 1675:
-_Tf0:
 }
 
 // FUNCTION: COPTER_D 0x0055adf0
@@ -9455,10 +9339,8 @@ _T133:
 	result = 0x0;
 // LINE 1688:
 _T13a:
-	__asm        mov    eax, result;
-	__asm        jmp    _T142;
+	return result;
 // LINE 1689:
-_T142:
 }
 
 // FUNCTION: COPTER_D 0x0055af39
@@ -9521,10 +9403,8 @@ _Ta3:
 // LINE 1699:
 	result = 0x1;
 // LINE 1701:
-	__asm        mov    eax, result;
-	__asm        jmp    _Tc3;
+	return result;
 // LINE 1702:
-_Tc3:
 }
 
 // FUNCTION: COPTER_D 0x0055b003
@@ -9649,10 +9529,8 @@ _T16c:
 _T188:
 	result = 0x1;
 // LINE 1718:
-	__asm        mov    eax, result;
-	__asm        jmp    _T197;
+	return result;
 // LINE 1719:
-_T197:
 }
 
 // FUNCTION: COPTER_D 0x0055b1a1
@@ -9683,10 +9561,8 @@ _T40:
 	result = 0x0;
 // LINE 1732:
 _T47:
-	__asm        mov    eax, result;
-	__asm        jmp    _T4f;
+	return result;
 // LINE 1733:
-_T4f:
 }
 
 // FUNCTION: COPTER_D 0x0055b1f7
@@ -9749,10 +9625,8 @@ _Ta3:
 // LINE 1743:
 	result = 0x1;
 // LINE 1745:
-	__asm        mov    eax, result;
-	__asm        jmp    _Tc3;
+	return result;
 // LINE 1746:
-_Tc3:
 }
 
 // FUNCTION: COPTER_D 0x0055b2c1
@@ -9825,10 +9699,8 @@ _Tbd:
 	result = 0x1;
 // LINE 1758:
 _Td5:
-	__asm        mov    eax, result;
-	__asm        jmp    _Tdd;
+	return result;
 // LINE 1759:
-_Tdd:
 }
 
 // FUNCTION: COPTER_D 0x0055b3a5
@@ -9864,10 +9736,8 @@ enum TreeSim::ReturnCode cYObject::iSetMyExpression(/*unpacked*/ struct TreeSim:
 // LINE 1769:
 	result = 0x1;
 // LINE 1771:
-	__asm        mov    eax, result;
-	__asm        jmp    _T6b;
+	return result;
 // LINE 1772:
-_T6b:
 }
 
 // FUNCTION: COPTER_D 0x0055b417
@@ -9969,10 +9839,8 @@ _T10e:
 // LINE 1786:
 	result = 0x1;
 // LINE 1788:
-	__asm        mov    eax, result;
-	__asm        jmp    _T12b;
+	return result;
 // LINE 1789:
-_T12b:
 }
 
 // FUNCTION: COPTER_D 0x0055b549
@@ -10011,10 +9879,8 @@ _T6b:
 	result = 0x0;
 // LINE 1801:
 _T72:
-	__asm        mov    eax, result;
-	__asm        jmp    _T7a;
+	return result;
 // LINE 1802:
-_T7a:
 }
 
 // FUNCTION: COPTER_D 0x0055b5ca
@@ -10050,10 +9916,8 @@ _T51:
 	result = 0x0;
 // LINE 1826:
 _T58:
-	__asm        mov    eax, result;
-	__asm        jmp    _T60;
+	return result;
 // LINE 1827:
-_T60:
 }
 
 // FUNCTION: COPTER_D 0x0055b631
@@ -10130,10 +9994,8 @@ _Tf2:
 	result = 0x0;
 // LINE 1847:
 _Tf9:
-	__asm        mov    eax, result;
-	__asm        jmp    _T101;
+	return result;
 // LINE 1848:
-_T101:
 }
 
 // FUNCTION: COPTER_D 0x0055b739
@@ -10157,10 +10019,8 @@ _T3a:
 	result = 0x0;
 // LINE 1858:
 _T41:
-	__asm        mov    eax, result;
-	__asm        jmp    _T49;
+	return result;
 // LINE 1859:
-_T49:
 }
 
 // FUNCTION: COPTER_D 0x0055b789
@@ -10223,10 +10083,8 @@ _T5b:
 _T86:
 	result = 0x1;
 // LINE 1875:
-	__asm        mov    eax, result;
-	__asm        jmp    _T95;
+	return result;
 // LINE 1876:
-_T95:
 }
 
 // FUNCTION: COPTER_D 0x0055b84d
@@ -10290,10 +10148,8 @@ _T75:
 	__asm        add    esp, 0x10;
 // LINE 1888:
 _Tc4:
-	__asm        mov    eax, res;
-	__asm        jmp    _Tcc;
+	return res;
 // LINE 1889:
-_Tcc:
 }
 
 // FUNCTION: COPTER_D 0x0055b920
@@ -10489,7 +10345,6 @@ _T228:
 	__asm        add    esp, 4;
 // LINE 1964:
 	return;
-_T239:
 }
 
 // FUNCTION: COPTER_D 0x0055bb60
@@ -10909,8 +10764,7 @@ _T414:
 	plhs[0] = 0x9e58;
 // LINE 2098:
 tree_error:
-	__asm        mov    eax, result;
-	__asm        jmp    _T488;
+	return result;
 // LINE 2099:
 _T451:
 	__asm        jmp    tree_error;
@@ -10934,7 +10788,6 @@ _T47e:
 	__asm        jmp    tree_error;
 _T483:
 	__asm        jmp    tree_error;
-_T488:
 }
 
 // FUNCTION: COPTER_D 0x0055bfef
@@ -10948,7 +10801,6 @@ void cYObject::HandleOverflow() {
 	__asm        add    esp, 0x10;
 // LINE 2105:
 	return;
-_T2d:
 }
 
 // FUNCTION: COPTER_D 0x0055c021

@@ -453,8 +453,7 @@ _T241:
 	__asm        add    esp, 0x10;
 // LINE 1948:
 _T26d:
-	__asm        mov    eax, privanim;
-	__asm        jmp    _T281;
+	return privanim;
 // LINE 1950:
 // Block end:
 // Block end:
@@ -462,10 +461,8 @@ _T275:
 	__asm        jmp    _T17;
 // LINE 1951:
 _T27a:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T281;
+	return 0x0;
 // LINE 1952:
-_T281:
 }
 
 // FUNCTION: COPTER_D 0x00560e78
@@ -808,17 +805,14 @@ _Tb2:
 	__asm        cmp    [eax+8], ecx;
 	__asm        jne    _Tde;
 // LINE 2096:
-	__asm        mov    eax, part;
-	__asm        jmp    _Tea;
+	return part;
 // LINE 2097:
 _Tde:
 	__asm        jmp    _T17;
 // LINE 2098:
 _Te3:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tea;
+	return 0x0;
 // LINE 2099:
-_Tea:
 }
 
 // FUNCTION: COPTER_D 0x00561281
@@ -2312,8 +2306,7 @@ int32_t cCopterBodyCompareDrawOrder(void * __ptr32 p1, void * __ptr32 p2) {
 	__asm        cmp    eax, ecx;
 	__asm        jge    _T2f;
 // LINE 2326:
-	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _T39;
+	return 0xffffffff;
 // LINE 2327:
 	__asm        jmp    _T39;
 // LINE 2328:
@@ -2376,7 +2369,6 @@ _T35:
 	__asm        add    esp, 4;
 // LINE 2343:
 	return;
-_T8b:
 }
 
 // FUNCTION: COPTER_D 0x0056249b
@@ -2409,7 +2401,6 @@ _T2f:
 	__asm        add    esp, 4;
 // LINE 2353:
 	return;
-_T55:
 }
 
 

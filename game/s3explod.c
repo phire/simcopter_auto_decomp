@@ -803,7 +803,6 @@ _T61:
 // LINE 303:
 	S_num_expls++;
 // LINE 304:
-_T187:
 }
 
 // FUNCTION: COPTER_D 0x005240dc
@@ -959,7 +958,6 @@ _T176:
 _T1b6:
 	S_num_smoke++;
 // LINE 389:
-_T1bc:
 }
 
 // FUNCTION: COPTER_D 0x0052429d
@@ -1250,7 +1248,6 @@ _T2d7:
 _T347:
 	return;
 // LINE 511:
-_T34c:
 }
 
 

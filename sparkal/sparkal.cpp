@@ -154,10 +154,8 @@ long ConvertRange(long lPositionSource, long lMinSource, long lMaxSource, long l
 	__asm        neg    eax;
 	__asm        sub    lPositionSource, eax;
 // LINE 78:
-	__asm        mov    eax, lPositionSource;
-	__asm        jmp    _T3e;
+	return lPositionSource;
 // LINE 79:
-_T3e:
 }
 
 // FUNCTION: COPTER_D 0x0043d91f
@@ -303,7 +301,6 @@ _T1a5:
 	__asm        jmp    _T1aa;
 _T1aa:
 	return;
-_T1af:
 }
 
 

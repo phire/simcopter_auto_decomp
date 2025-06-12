@@ -652,7 +652,7 @@ _T189:
 	this-><vftable> = 0x5904d0;
 // LINE 25:
 	return;
-_T197:
+
 	__asm        mov    eax, this;
 }
 
@@ -869,7 +869,7 @@ _T2c2:
 	this-><vftable> = 0x5904d0;
 // LINE 38:
 	return;
-_T2d0:
+
 	__asm        mov    eax, this;
 }
 
@@ -1010,7 +1010,7 @@ _T1db:
 	this-><vftable> = 0x5904d0;
 // LINE 50:
 	return;
-_T1e9:
+
 	__asm        mov    eax, this;
 }
 
@@ -1224,7 +1224,6 @@ _T238:
 	__asm        add    esp, 4;
 _T260:
 	return;
-_T265:
 }
 
 // FUNCTION: COPTER_D 0x00468976
@@ -1248,7 +1247,6 @@ void BitmappedFont::DeInitialize() {
 	__asm        call   dword ptr [eax+0x18];
 // LINE 75:
 	return;
-_T1c:
 }
 
 // FUNCTION: COPTER_D 0x004689b8
@@ -2695,7 +2693,6 @@ _T7ea:
 	__asm        call   dword ptr [edx+4];
 // LINE 179:
 	return;
-_T806:
 }
 
 // FUNCTION: COPTER_D 0x00469d3d
@@ -2992,7 +2989,6 @@ _T50:
 // LINE 214:
 _T5a:
 	return;
-_T5f:
 }
 
 // FUNCTION: COPTER_D 0x0046a159
@@ -3069,10 +3065,8 @@ _Tb5:
 	__asm        jmp    _T1c;
 // LINE 237:
 _Tbd:
-	__asm        mov    eax, lWidth;
-	__asm        jmp    _Tc5;
+	return lWidth;
 // LINE 238:
-_Tc5:
 }
 
 // FUNCTION: COPTER_D 0x0046a225
@@ -3097,8 +3091,7 @@ long BitmappedFont::GetStringVisibleWidth(char * chText, const unsigned long nSt
 	__asm        cmp    nStringLength, 0;
 	__asm        ja     _T3a;
 // LINE 256:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T150;
+	return 0x0;
 // LINE 260:
 _T3a:
 	nVisibleStringLength. = nStringLength;
@@ -3204,10 +3197,8 @@ _T13b:
 	__asm        jmp    _T42;
 // LINE 266:
 _T148:
-	__asm        mov    eax, lWidth;
-	__asm        jmp    _T150;
+	return lWidth;
 // LINE 267:
-_T150:
 }
 
 // FUNCTION: COPTER_D 0x0046a37c
@@ -3243,10 +3234,8 @@ _T1c:
 	__asm        jmp    _T1c;
 // LINE 288:
 _T49:
-	__asm        mov    eax, lLineCount;
-	__asm        jmp    _T51;
+	return lLineCount;
 // LINE 289:
-_T51:
 }
 
 // FUNCTION: COPTER_D 0x0046a3d4
@@ -3282,17 +3271,14 @@ _T2f:
 	__asm        cmp    eax, lLines;
 	__asm        jg     _T61;
 // LINE 313:
-	__asm        mov    eax, nCurrentWidth;
-	__asm        jmp    _T70;
+	return nCurrentWidth;
 // LINE 314:
 _T61:
 	__asm        jmp    _T2b;
 // LINE 315:
 _T66:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T70;
+	return 0x1;
 // LINE 316:
-_T70:
 }
 
 // FUNCTION: COPTER_D 0x0046a44b
@@ -3321,8 +3307,7 @@ _T27:
 	__asm        test   eax, eax;
 	__asm        jne    _T49;
 // LINE 345:
-	__asm        mov    eax, nPotentialCurrentChars;
-	__asm        jmp    _T191;
+	return nPotentialCurrentChars;
 // LINE 350:
 _T49:
 	__asm        mov    eax, chTextCurrent;
@@ -3453,10 +3438,8 @@ _T164:
 	__asm        jmp    _T164;
 // LINE 378:
 _T189:
-	__asm        mov    eax, nCurrentChars;
-	__asm        jmp    _T191;
+	return nCurrentChars;
 // LINE 379:
-_T191:
 }
 
 // FUNCTION: COPTER_D 0x0046a5e3
@@ -3645,7 +3628,6 @@ _T1e5:
 // LINE 400:
 _T1ed:
 	return;
-_T1f2:
 }
 
 // FUNCTION: COPTER_D 0x0046a7dc
@@ -3834,7 +3816,6 @@ _T1e5:
 // LINE 417:
 _T1ed:
 	return;
-_T1f2:
 }
 
 // FUNCTION: COPTER_D 0x0046a9d5
@@ -3906,7 +3887,6 @@ _T52:
 // LINE 442:
 _T9e:
 	return;
-_Ta3:
 }
 
 // FUNCTION: COPTER_D 0x0046aa7f
@@ -3978,7 +3958,6 @@ _T52:
 // LINE 468:
 _T9e:
 	return;
-_Ta3:
 }
 
 // FUNCTION: COPTER_D 0x0046ab29
@@ -4099,7 +4078,6 @@ _Td2:
 // LINE 505:
 _T111:
 	return;
-_T116:
 }
 
 // FUNCTION: COPTER_D 0x0046ac46
@@ -4220,7 +4198,6 @@ _Td2:
 // LINE 542:
 _T111:
 	return;
-_T116:
 }
 
 // FUNCTION: COPTER_D 0x0046ad63
@@ -4311,7 +4288,6 @@ _Ta7:
 // LINE 572:
 _Td4:
 	return;
-_Td9:
 }
 
 // FUNCTION: COPTER_D 0x0046ae43
@@ -4402,7 +4378,6 @@ _Ta7:
 // LINE 601:
 _Td4:
 	return;
-_Td9:
 }
 
 // FUNCTION: COPTER_D 0x0046af23
@@ -4478,14 +4453,11 @@ int32_t BitmappedFont::GetIniFileLong(char * chHeader, char * chSection, char * 
 	__asm        cmp    dword ptr [eax], 0xFFFFD8F1;
 	__asm        jne    _T3e;
 // LINE 649:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T48;
+	return 0x0;
 // LINE 650:
 _T3e:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T48;
+	return 0x1;
 // LINE 654:
-_T48:
 }
 
 // FUNCTION: COPTER_D 0x0046b012
@@ -4550,10 +4522,8 @@ int32_t BitmappedFont::GetPathForBitmapFile(char * chFontInfoPath, char * chBitm
 	__asm        call   strcat;
 	__asm        add    esp, 8;
 // LINE 689:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T7a;
+	return 0x1;
 // LINE 690:
-_T7a:
 }
 
 

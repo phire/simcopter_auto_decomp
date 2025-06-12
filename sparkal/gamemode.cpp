@@ -450,7 +450,7 @@ void CopterGameMode::CopterGameMode() {
 	this->nModeID = 0x0;
 // LINE 52:
 	return;
-_T1a:
+
 	__asm        mov    eax, this;
 }
 
@@ -460,7 +460,7 @@ void CopterGameMode::CopterGameMode(int32_t nNewModeID) {
 	this->nModeID = nNewModeID;
 // LINE 57:
 	return;
-_T19:
+
 	__asm        mov    eax, this;
 }
 
@@ -473,7 +473,7 @@ void CopterGameMode::CopterGameMode(const /*packed*/ class CopterGameMode& newGa
 	__asm        call   CopterGameMode::operator=;
 // LINE 62:
 	return;
-_T1d:
+
 	__asm        mov    eax, this;
 }
 
@@ -482,10 +482,8 @@ _T1d:
 // LINE 65:
 	this->nModeID = newGameMode.nModeID;
 // LINE 66:
-	__asm        mov    eax, this;
-	__asm        jmp    _T1e;
+	return this;
 // LINE 67:
-_T1e:
 }
 
 // FUNCTION: COPTER_D 0x004bd701
@@ -522,7 +520,7 @@ void GameModeCoreData::GameModeCoreData() {
 	__asm        mov    dword ptr [eax], 0x5923C0;
 // LINE 133:
 	return;
-_T42:
+
 	__asm        mov    eax, this;
 }
 
@@ -549,7 +547,6 @@ void GameModeCoreData::~GameModeCoreData() {
 // LINE 144:
 _T47:
 	return;
-_T4c:
 }
 
 // FUNCTION: COPTER_D 0x004bd7c8
@@ -569,7 +566,7 @@ void GameModeMainMenuData::GameModeMainMenuData() {
 	this->myVideoBuffer = 0x0;
 // LINE 161:
 	return;
-_T4a:
+
 	__asm        mov    eax, this;
 }
 
@@ -629,7 +626,6 @@ _Ta1:
 	__asm        add    esp, 8;
 // LINE 177:
 	return;
-_Td8:
 }
 
 // FUNCTION: COPTER_D 0x004bd8f7
@@ -654,7 +650,6 @@ void GameModeMainMenuData::UsePalette() {
 	gCopterPalette.bOwnColors = 0x0;
 // LINE 189:
 	return;
-_T4e:
 }
 
 // FUNCTION: COPTER_D 0x004bd94a
@@ -916,10 +911,8 @@ _T43:
 	this->myVideoBuffer = 0x0;
 // LINE 234:
 _T4d:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T57;
+	return 0x1;
 // LINE 235:
-_T57:
 }
 
 // FUNCTION: COPTER_D 0x004bdccb
@@ -946,7 +939,7 @@ _T1e:
 	this->bFirstCareerCityData = 0x1;
 // LINE 257:
 	return;
-_T68:
+
 	__asm        mov    eax, this;
 }
 
@@ -956,7 +949,6 @@ void GameModePickCareerCityData::Initialize() {
 	this->nSubMode = 0x0;
 // LINE 266:
 	return;
-_T1b:
 }
 
 // FUNCTION: COPTER_D 0x004bdd5b
@@ -1015,7 +1007,6 @@ _Ta1:
 	__asm        add    esp, 8;
 // LINE 281:
 	return;
-_Td8:
 }
 
 // FUNCTION: COPTER_D 0x004bde38
@@ -1040,7 +1031,6 @@ void GameModePickCareerCityData::UsePalette() {
 	gCopterPalette.bOwnColors = 0x0;
 // LINE 293:
 	return;
-_T4e:
 }
 
 // FUNCTION: COPTER_D 0x004bde8b
@@ -1138,10 +1128,8 @@ _Tea:
 	__asm        mov    ecx, this;
 	__asm        call   GameModePickCareerCityData::CreatePalette;
 // LINE 317:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T119;
+	return 0x1;
 // LINE 318:
-_T119:
 }
 
 // FUNCTION: COPTER_D 0x004bdfa9
@@ -1170,10 +1158,8 @@ _T43:
 	this->myVideoBuffer = 0x0;
 // LINE 329:
 _T4d:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T57;
+	return 0x1;
 // LINE 330:
-_T57:
 }
 
 // FUNCTION: COPTER_D 0x004be005
@@ -1242,7 +1228,7 @@ void GameModePlayData::GameModePlayData() {
 	this->pColorTable = 0x0;
 // LINE 370:
 	return;
-_T13b:
+
 	__asm        mov    eax, this;
 }
 
@@ -1256,7 +1242,6 @@ void GameModePlayData::Initialize() {
 	__asm        call   GameModePlayData::ReadUserConfigurableCommands;
 // LINE 392:
 	return;
-_T21:
 }
 
 // FUNCTION: COPTER_D 0x004be16e
@@ -1365,7 +1350,6 @@ _T116:
 // LINE 430:
 _T18d:
 	return;
-_T192:
 }
 
 // FUNCTION: COPTER_D 0x004be305
@@ -1390,7 +1374,6 @@ void GameModePlayData::UsePalette() {
 	gCopterPalette.bOwnColors = 0x0;
 // LINE 443:
 	return;
-_T4e:
 }
 
 // FUNCTION: COPTER_D 0x004be358
@@ -1618,7 +1601,6 @@ _T25d:
 	__asm        call   dword ptr [edx+0xC];
 // LINE 485:
 	return;
-_T273:
 }
 
 // FUNCTION: COPTER_D 0x004be5d0
@@ -1876,7 +1858,6 @@ _T2b6:
 // LINE 536:
 _T2be:
 	return;
-_T2c3:
 }
 
 // FUNCTION: COPTER_D 0x004be898
@@ -1891,10 +1872,8 @@ int32_t GameModePlayData::CreateAllSurfaces() {
 	__asm        mov    ecx, this;
 	__asm        call   GameModePlayData::CreatePalette;
 // LINE 546:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2e;
+	return 0x1;
 // LINE 547:
-_T2e:
 }
 
 // FUNCTION: COPTER_D 0x004be8cb
@@ -2407,10 +2386,8 @@ _T70d:
 	__asm        jmp    _T73e;
 // LINE 628:
 _T73e:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T748;
+	return 0x1;
 // LINE 629:
-_T748:
 }
 
 // FUNCTION: COPTER_D 0x004bf018
@@ -2832,7 +2809,6 @@ _T4b2:
 // LINE 712:
 _T4da:
 	return;
-_T4df:
 }
 
 // FUNCTION: COPTER_D 0x004bf4fc
@@ -2897,10 +2873,8 @@ _Tb5:
 	this->pStretchBuffer = 0x0;
 // LINE 726:
 _Tbf:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tc9;
+	return 0x1;
 // LINE 727:
-_Tc9:
 }
 
 // FUNCTION: COPTER_D 0x004bf5ca
@@ -2961,7 +2935,6 @@ _Ta3:
 // LINE 744:
 _Tad:
 	return;
-_Tb2:
 }
 
 // FUNCTION: COPTER_D 0x004bf681
@@ -2974,7 +2947,6 @@ void GameModePlayData::DestroyAllSurfaces() {
 	__asm        call   GameModePlayData::DestroyPanels;
 // LINE 755:
 	return;
-_T21:
 }
 
 // FUNCTION: COPTER_D 0x004bf6a7
@@ -3148,10 +3120,8 @@ _T1c4:
 	this->pPassengerWindow = 0x0;
 // LINE 811:
 _T1ec:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1f6;
+	return 0x1;
 // LINE 812:
-_T1f6:
 }
 
 // FUNCTION: COPTER_D 0x004bf8a2
@@ -3319,7 +3289,6 @@ _T1da:
 // LINE 870:
 _T1ff:
 	return;
-_T204:
 }
 
 // FUNCTION: COPTER_D 0x004bfaab
@@ -3479,7 +3448,6 @@ _T1c0:
 // LINE 922:
 _T1e5:
 	return;
-_T1ea:
 }
 
 // FUNCTION: COPTER_D 0x004bfc9a
@@ -3548,7 +3516,6 @@ _Tac:
 // LINE 943:
 _Td1:
 	return;
-_Td6:
 }
 
 // FUNCTION: COPTER_D 0x004bfd75
@@ -3609,7 +3576,6 @@ _T92:
 // LINE 963:
 _Tb7:
 	return;
-_Tbc:
 }
 
 // FUNCTION: COPTER_D 0x004bfe36
@@ -3634,7 +3600,6 @@ _T30:
 // LINE 982:
 _T42:
 	return;
-_T47:
 }
 
 // FUNCTION: COPTER_D 0x004bfe82
@@ -3655,7 +3620,6 @@ _T26:
 // LINE 995:
 _T2e:
 	return;
-_T33:
 }
 
 // FUNCTION: COPTER_D 0x004bfeba
@@ -3665,7 +3629,6 @@ void GameModePlayData::Shutdown() {
 	__asm        call   GameModePlayData::DestroyAllSurfaces;
 // LINE 1004:
 	return;
-_T19:
 }
 
 // FUNCTION: COPTER_D 0x004bfed8
@@ -3733,10 +3696,8 @@ long GameModePlayData::ProcessUserJustJumpedIntoHelicopter() {
 	__asm        call   GameModePlayData::ShowPanels;
 // LINE 1049:
 _T29:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T33;
+	return 0x1;
 // LINE 1050:
-_T33:
 }
 
 // FUNCTION: COPTER_D 0x004bffa3
@@ -3748,14 +3709,11 @@ long GameModePlayData::ProcessUserJustJumpedOutOfHelicopter() {
 	__asm        cmp    gGraduationState.nGraduationState, 1;
 	__asm        jne    _T2b;
 // LINE 1066:
-	__asm        mov    eax, 3;
-	__asm        jmp    _T32;
+	return 0x3;
 // LINE 1068:
 _T2b:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T32;
+	return 0x0;
 // LINE 1069:
-_T32:
 }
 
 // FUNCTION: COPTER_D 0x004bffda
@@ -3879,7 +3837,6 @@ _T181:
 // LINE 1125:
 _T192:
 	return;
-_T197:
 }
 
 // FUNCTION: COPTER_D 0x004c0176
@@ -3902,7 +3859,6 @@ _T2d:
 	__asm        call   CommandSystem::SetUpCommandArraysFromShortcuts;
 // LINE 1137:
 	return;
-_T3d:
 }
 
 // FUNCTION: COPTER_D 0x004c01b8
@@ -4023,7 +3979,6 @@ _T138:
 // LINE 1154:
 _T13d:
 	return;
-_T142:
 }
 
 // FUNCTION: COPTER_D 0x004c02ff
@@ -4036,7 +3991,6 @@ void GameModePlayData::SetUserConfigurableCommandsToDefaults() {
 	__asm        add    esp, 4;
 // LINE 1165:
 	return;
-_T22:
 }
 
 // FUNCTION: COPTER_D 0x004c0326
@@ -5087,7 +5041,6 @@ _Tf73:
 // LINE 1413:
 _Tf78:
 	return;
-_Tf7d:
 }
 
 // FUNCTION: COPTER_D 0x004c12a8
@@ -5115,7 +5068,7 @@ void GameModeHangarData::GameModeHangarData() {
 	__asm        call   GameModeHangarData::SetCommandsToDefaults;
 // LINE 1433:
 	return;
-_T67:
+
 	__asm        mov    eax, this;
 }
 
@@ -5167,10 +5120,8 @@ _T7a:
 	__asm        mov    ecx, this;
 	__asm        call   GameModeHangarData::CreatePalette;
 // LINE 1446:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T9d;
+	return 0x1;
 // LINE 1447:
-_T9d:
 }
 
 // FUNCTION: COPTER_D 0x004c13b9
@@ -5191,7 +5142,6 @@ void GameModeHangarData::DestroyAllSurfaces() {
 // LINE 1457:
 _T34:
 	return;
-_T39:
 }
 
 // FUNCTION: COPTER_D 0x004c13f7
@@ -5216,7 +5166,6 @@ _T2a:
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1467:
 	return;
-_T40:
 }
 
 // FUNCTION: COPTER_D 0x004c143c
@@ -5257,7 +5206,6 @@ void GameModeHangarData::Awake() {
 // LINE 1481:
 _T69:
 	return;
-_T6e:
 }
 
 // FUNCTION: COPTER_D 0x004c14af
@@ -5304,7 +5252,6 @@ _T77:
 	__asm        call   HangarWindow::ReadPalette;
 // LINE 1492:
 	return;
-_T8e:
 }
 
 // FUNCTION: COPTER_D 0x004c1542
@@ -5329,7 +5276,6 @@ void GameModeHangarData::UsePalette() {
 	gCopterPalette.bOwnColors = 0x0;
 // LINE 1503:
 	return;
-_T4e:
 }
 
 // FUNCTION: COPTER_D 0x004c1595
@@ -5339,7 +5285,6 @@ void GameModeHangarData::Shutdown() {
 	__asm        call   GameModeHangarData::DestroyAllSurfaces;
 // LINE 1511:
 	return;
-_T19:
 }
 
 // FUNCTION: COPTER_D 0x004c15b3
@@ -5755,7 +5700,6 @@ _T57b:
 	__asm        call   CommandSystem::SetUpCommandArraysFromShortcuts;
 // LINE 1569:
 	return;
-_T58e:
 }
 
 // FUNCTION: COPTER_D 0x004c1b46
@@ -5775,7 +5719,7 @@ void GameModeCatalogData::GameModeCatalogData() {
 	__asm        call   GameModeCatalogData::SetCommandsToDefaults;
 // LINE 1588:
 	return;
-_T3f:
+
 	__asm        mov    eax, this;
 }
 
@@ -5827,10 +5771,8 @@ _T7a:
 	__asm        mov    ecx, this;
 	__asm        call   GameModeCatalogData::CreatePalette;
 // LINE 1600:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T9d;
+	return 0x1;
 // LINE 1601:
-_T9d:
 }
 
 // FUNCTION: COPTER_D 0x004c1c2f
@@ -5851,7 +5793,6 @@ void GameModeCatalogData::DestroyAllSurfaces() {
 // LINE 1611:
 _T34:
 	return;
-_T39:
 }
 
 // FUNCTION: COPTER_D 0x004c1c6d
@@ -5876,7 +5817,6 @@ _T2a:
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1621:
 	return;
-_T40:
 }
 
 // FUNCTION: COPTER_D 0x004c1cb2
@@ -5917,7 +5857,6 @@ void GameModeCatalogData::Awake() {
 // LINE 1635:
 _T69:
 	return;
-_T6e:
 }
 
 // FUNCTION: COPTER_D 0x004c1d25
@@ -5964,7 +5903,6 @@ _T77:
 	__asm        call   CatalogWindow::ReadPalette;
 // LINE 1646:
 	return;
-_T8e:
 }
 
 // FUNCTION: COPTER_D 0x004c1db8
@@ -5989,7 +5927,6 @@ void GameModeCatalogData::UsePalette() {
 	gCopterPalette.bOwnColors = 0x0;
 // LINE 1657:
 	return;
-_T4e:
 }
 
 // FUNCTION: COPTER_D 0x004c1e0b
@@ -5999,7 +5936,6 @@ void GameModeCatalogData::Shutdown() {
 	__asm        call   GameModeCatalogData::DestroyAllSurfaces;
 // LINE 1665:
 	return;
-_T19:
 }
 
 // FUNCTION: COPTER_D 0x004c1e29
@@ -6465,7 +6401,6 @@ _T68d:
 	__asm        call   CommandSystem::SetUpCommandArraysFromShortcuts;
 // LINE 1695:
 	return;
-_T6a0:
 }
 
 // FUNCTION: COPTER_D 0x004c24ce
@@ -6485,7 +6420,7 @@ void GameModeMissionLogData::GameModeMissionLogData() {
 	__asm        call   GameModeMissionLogData::SetCommandsToDefaults;
 // LINE 1713:
 	return;
-_T3f:
+
 	__asm        mov    eax, this;
 }
 
@@ -6537,10 +6472,8 @@ _T7a:
 	__asm        mov    ecx, this;
 	__asm        call   GameModeMissionLogData::CreatePalette;
 // LINE 1725:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T9d;
+	return 0x1;
 // LINE 1726:
-_T9d:
 }
 
 // FUNCTION: COPTER_D 0x004c25b7
@@ -6561,7 +6494,6 @@ void GameModeMissionLogData::DestroyAllSurfaces() {
 // LINE 1736:
 _T34:
 	return;
-_T39:
 }
 
 // FUNCTION: COPTER_D 0x004c25f5
@@ -6586,7 +6518,6 @@ _T2a:
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1746:
 	return;
-_T40:
 }
 
 // FUNCTION: COPTER_D 0x004c263a
@@ -6627,7 +6558,6 @@ void GameModeMissionLogData::Awake() {
 // LINE 1760:
 _T69:
 	return;
-_T6e:
 }
 
 // FUNCTION: COPTER_D 0x004c26ad
@@ -6674,7 +6604,6 @@ _T77:
 	__asm        call   MissionLogWindow::ReadPalette;
 // LINE 1771:
 	return;
-_T8e:
 }
 
 // FUNCTION: COPTER_D 0x004c2740
@@ -6699,7 +6628,6 @@ void GameModeMissionLogData::UsePalette() {
 	gCopterPalette.bOwnColors = 0x0;
 // LINE 1782:
 	return;
-_T4e:
 }
 
 // FUNCTION: COPTER_D 0x004c2793
@@ -6709,7 +6637,6 @@ void GameModeMissionLogData::Shutdown() {
 	__asm        call   GameModeMissionLogData::DestroyAllSurfaces;
 // LINE 1790:
 	return;
-_T19:
 }
 
 // FUNCTION: COPTER_D 0x004c27b1
@@ -7175,7 +7102,6 @@ _T68d:
 	__asm        call   CommandSystem::SetUpCommandArraysFromShortcuts;
 // LINE 1820:
 	return;
-_T6a0:
 }
 
 // FUNCTION: COPTER_D 0x004c2e56
@@ -7195,7 +7121,7 @@ void GameModeInventoryData::GameModeInventoryData() {
 	__asm        call   GameModeInventoryData::SetCommandsToDefaults;
 // LINE 1835:
 	return;
-_T3f:
+
 	__asm        mov    eax, this;
 }
 
@@ -7247,10 +7173,8 @@ _T7a:
 	__asm        mov    ecx, this;
 	__asm        call   GameModeInventoryData::CreatePalette;
 // LINE 1847:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T9d;
+	return 0x1;
 // LINE 1848:
-_T9d:
 }
 
 // FUNCTION: COPTER_D 0x004c2f3f
@@ -7271,7 +7195,6 @@ void GameModeInventoryData::DestroyAllSurfaces() {
 // LINE 1858:
 _T34:
 	return;
-_T39:
 }
 
 // FUNCTION: COPTER_D 0x004c2f7d
@@ -7296,7 +7219,6 @@ _T2a:
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1868:
 	return;
-_T40:
 }
 
 // FUNCTION: COPTER_D 0x004c2fc2
@@ -7337,7 +7259,6 @@ void GameModeInventoryData::Awake() {
 // LINE 1882:
 _T69:
 	return;
-_T6e:
 }
 
 // FUNCTION: COPTER_D 0x004c3035
@@ -7384,7 +7305,6 @@ _T77:
 	__asm        call   InventoryWindow::ReadPalette;
 // LINE 1893:
 	return;
-_T8e:
 }
 
 // FUNCTION: COPTER_D 0x004c30c8
@@ -7409,7 +7329,6 @@ void GameModeInventoryData::UsePalette() {
 	gCopterPalette.bOwnColors = 0x0;
 // LINE 1904:
 	return;
-_T4e:
 }
 
 // FUNCTION: COPTER_D 0x004c311b
@@ -7419,7 +7338,6 @@ void GameModeInventoryData::Shutdown() {
 	__asm        call   GameModeInventoryData::DestroyAllSurfaces;
 // LINE 1912:
 	return;
-_T19:
 }
 
 // FUNCTION: COPTER_D 0x004c3139
@@ -7885,7 +7803,6 @@ _T68d:
 	__asm        call   CommandSystem::SetUpCommandArraysFromShortcuts;
 // LINE 1941:
 	return;
-_T6a0:
 }
 
 

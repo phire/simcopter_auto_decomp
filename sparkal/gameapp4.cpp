@@ -310,10 +310,8 @@ _Ta7:
 // LINE 70:
 	__asm        call   DDDisable;
 // LINE 73:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Te2;
+	return 0x0;
 // LINE 74:
-_Te2:
 }
 
 // FUNCTION: COPTER_D 0x004bbb17
@@ -959,7 +957,7 @@ _L44245:
 _L48859:
 	__asm        mov    eax, 0x595CE0;
 	__asm        jmp    near ptr 0x0056F590;
-_T6f:
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
 }

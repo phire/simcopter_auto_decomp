@@ -704,7 +704,7 @@ _T2f3:
 	__asm        call   GraphicWindow::SetImageToDrawOnto;
 // LINE 52:
 	return;
-_T30a:
+
 	__asm        mov    eax, this;
 }
 
@@ -717,7 +717,7 @@ void MissionLogWindow::~MissionLogWindow() {
 	__asm        call   MissionLogWindow::DestroyImage;
 // LINE 60:
 	return;
-_T22:
+
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
 }
@@ -1616,7 +1616,6 @@ _T5a:
 	__asm        call   GraphicWindow::DestroyImage;
 // LINE 148:
 	return;
-_T67:
 }
 
 // FUNCTION: COPTER_D 0x0046cb62
@@ -1626,8 +1625,7 @@ int32_t MissionLogWindow::ComposeSelf() {
 	__asm        cmp    dword ptr [eax+0x54], 0;
 	__asm        jne    _T20;
 // LINE 161:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tdd;
+	return 0x0;
 // LINE 164:
 _T20:
 	__asm        mov    eax, this;
@@ -1701,10 +1699,8 @@ _T95:
 	__asm        call   dword ptr [edx+0xC];
 // LINE 175:
 _Td3:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tdd;
+	return 0x1;
 // LINE 176:
-_Tdd:
 }
 
 // FUNCTION: COPTER_D 0x0046cc44
@@ -1748,7 +1744,6 @@ _T29:
 // LINE 196:
 _T67:
 	return;
-_T6c:
 }
 
 // FUNCTION: COPTER_D 0x0046ccb5
@@ -1801,10 +1796,8 @@ _T54:
 	__asm        call   dword ptr [edx];
 // LINE 217:
 _T7f:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T89;
+	return 0x1;
 // LINE 218:
-_T89:
 }
 
 // FUNCTION: COPTER_D 0x0046cd45
@@ -2004,7 +1997,6 @@ _T223:
 	__asm        jmp    _T228;
 _T228:
 	return;
-_T22d:
 }
 
 // FUNCTION: COPTER_D 0x0046cf77
@@ -2353,7 +2345,6 @@ _T402:
 	__asm        jmp    _T407;
 _T407:
 	return;
-_T40c:
 }
 
 // FUNCTION: COPTER_D 0x0046d388
@@ -2428,7 +2419,7 @@ _Td9:
 	__asm        call   dword ptr [eax];
 // LINE 294:
 	return;
-_T106:
+
 	__asm        mov    eax, this;
 }
 
@@ -2727,10 +2718,8 @@ _T1cd:
 _T1d7:
 	this->lCurrentDisplayedMessageCount = 0x0;
 // LINE 316:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1eb;
+	return 0x1;
 // LINE 317:
-_T1eb:
 }
 
 // FUNCTION: COPTER_D 0x0046d802
@@ -3148,7 +3137,6 @@ _T484:
 // LINE 350:
 _T4bf:
 	return;
-_T4c4:
 }
 
 // FUNCTION: COPTER_D 0x0046dccd
@@ -3711,7 +3699,6 @@ _T6ec:
 // LINE 377:
 _T6f1:
 	return;
-_T6f6:
 }
 
 // FUNCTION: COPTER_D 0x0046e3ca
@@ -3818,7 +3805,6 @@ _T10a:
 	__asm        call   dword ptr [eax+0xC];
 // LINE 384:
 	return;
-_T120:
 }
 
 

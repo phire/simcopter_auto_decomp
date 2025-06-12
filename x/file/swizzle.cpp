@@ -58,7 +58,6 @@ void Swizzle16(void * __ptr32 val) {
 	__asm        mov    [ecx+8], al;
 // LINE 19:
 	return;
-_T48:
 }
 
 // FUNCTION: COPTER_D 0x0056689d
@@ -94,7 +93,6 @@ void Swizzle8(void * __ptr32 val) {
 	__asm        mov    [ecx+4], eax;
 // LINE 31:
 	return;
-_T48:
 }
 
 // FUNCTION: COPTER_D 0x005668ea
@@ -106,7 +104,6 @@ void SwizzleFloat(void * __ptr32 val) {
 	__asm        add    esp, 4;
 // LINE 36:
 	return;
-_T17:
 }
 
 // FUNCTION: COPTER_D 0x00566906
@@ -142,7 +139,6 @@ void Swizzle4(void * __ptr32 val) {
 	__asm        mov    [ecx+2], ax;
 // LINE 48:
 	return;
-_T50:
 }
 
 // FUNCTION: COPTER_D 0x0056695b
@@ -168,7 +164,6 @@ void Swizzle2(void * __ptr32 val) {
 	__asm        mov    [ecx+1], al;
 // LINE 58:
 	return;
-_T30:
 }
 
 // FUNCTION: COPTER_D 0x00566990
@@ -211,6 +206,5 @@ void SwizzleRect(/*unpacked*/ struct Rect *rect) {
 	__asm        add    esp, 4;
 // LINE 70:
 	return;
-_T6c:
 }
 

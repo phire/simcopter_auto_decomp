@@ -504,7 +504,7 @@ _T1b8:
 	G_grid_ulc.y--;
 // LINE 277:
 _T3ef:
-	return;
+	__asm        jmp    _T51c;
 _T3f4:
 	__asm        push   0x2B;
 	__asm        call   IsEventSet;
@@ -540,7 +540,7 @@ _T3f4:
 	G_grid_ulc.y++;
 // LINE 286:
 _T455:
-	return;
+	__asm        jmp    _T51c;
 _T45a:
 	__asm        push   0x2B;
 	__asm        push   0x2C;
@@ -580,7 +580,7 @@ _T45a:
 	G_grid_ulc.y--;
 // LINE 297:
 _T4c8:
-	return;
+	__asm        jmp    _T51c;
 // LINE 298:
 _T4cd:
 	viewSize = G_ViewSize;
@@ -678,10 +678,8 @@ _Ta0:
 // FUNCTION: COPTER_D 0x004eeeb7
 long GetRenderBackPlaneValue() {
 // LINE 349:
-	__asm        mov    eax, G_ViewSize;
-	__asm        jmp    _T10;
+	return G_ViewSize;
 // LINE 350:
-_T10:
 }
 
 // FUNCTION: COPTER_D 0x004eeecc
@@ -705,10 +703,8 @@ long ConvertGUIBackPlaneValueToRender(long lValue) {
 // LINE 367:
 	lValue += 0xd;
 // LINE 368:
-	__asm        mov    eax, lValue;
-	__asm        jmp    _T38;
+	return lValue;
 // LINE 369:
-_T38:
 }
 
 // FUNCTION: COPTER_D 0x004eef09
@@ -737,10 +733,8 @@ long ConvertRenderBackPlaneValueToGUI(long lValue) {
 	__asm        idiv   lHalfOfGOBJRange;
 	__asm        mov    lValue, eax;
 // LINE 387:
-	__asm        mov    eax, lValue;
-	__asm        jmp    _T41;
+	return lValue;
 // LINE 388:
-_T41:
 }
 
 // FUNCTION: COPTER_D 0x004eef4f
@@ -756,10 +750,8 @@ _T16:
 // FUNCTION: COPTER_D 0x004eef6a
 int32_t S3ViewerPosDelta() {
 // LINE 412:
-	__asm        mov    eax, S_posdelta;
-	__asm        jmp    _T10;
+	return S_posdelta;
 // LINE 413:
-_T10:
 }
 
 // FUNCTION: COPTER_D 0x004eef7f
@@ -814,14 +806,14 @@ void S3ViewerCommand(int32_t nCommand) {
 	__asm        call   S3CameraChaseAdjust;
 	__asm        add    esp, 4;
 // LINE 449:
-	return;
+	__asm        jmp    _T16d;
 _T2b:
 	__asm        cmp    nCommand, 0x2D;
 	__asm        jne    _T41;
 // LINE 450:
 	__asm        xor    G_texobjs, 1;
 // LINE 451:
-	return;
+	__asm        jmp    _T16d;
 _T41:
 	__asm        cmp    nCommand, 0x2E;
 	__asm        jne    _T57;
@@ -839,7 +831,7 @@ _T57:
 	__asm        call   S3CameraCycleChase;
 // LINE 458:
 _T73:
-	return;
+	__asm        jmp    _T16d;
 _T78:
 	__asm        cmp    nCommand, 4;
 	__asm        jne    _T8c;
@@ -871,7 +863,7 @@ _Taf:
 // LINE 465:
 	G_camera_mode = 0x0;
 // LINE 466:
-	return;
+	__asm        jmp    _T16d;
 _Te2:
 	__asm        cmp    G_camera_mode, 0;
 	__asm        jne    _T13d;

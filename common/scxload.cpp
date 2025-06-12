@@ -316,7 +316,7 @@ _T1a:
 	this->m_mark = 0x0;
 // LINE 88:
 	return;
-_T3c:
+
 	__asm        mov    eax, this;
 }
 
@@ -342,7 +342,6 @@ void cLZAPFileBitStream::~cLZAPFileBitStream() {
 // LINE 92:
 _T3f:
 	return;
-_T44:
 }
 
 // FUNCTION: COPTER_D 0x004cb90d
@@ -425,7 +424,6 @@ _T36:
 	this->m_file = 0x0;
 // LINE 105:
 	return;
-_T45:
 }
 
 // FUNCTION: COPTER_D 0x004cba1c
@@ -539,7 +537,6 @@ void cLZAPFileBitStream::Rewind() {
 // LINE 125:
 _T3d:
 	return;
-_T42:
 }
 
 // FUNCTION: COPTER_D 0x004cbb63
@@ -567,7 +564,6 @@ void cLZAPFileBitStream::RewindToMark() {
 // LINE 131:
 _T48:
 	return;
-_T4d:
 }
 
 // FUNCTION: COPTER_D 0x004cbbb5
@@ -597,7 +593,6 @@ _T44:
 // LINE 138:
 _T4e:
 	return;
-_T53:
 }
 
 // FUNCTION: COPTER_D 0x004cbc0d
@@ -638,7 +633,6 @@ void SCXReadBudget(/*packed*/ class cGZXBitstream *AStream, unsigned char * data
 	__asm        call   dword ptr [eax];
 // LINE 172:
 	return;
-_T1e:
 }
 
 // FUNCTION: COPTER_D 0x004cbc7b
@@ -653,7 +647,6 @@ void SCXReadGraphData(/*packed*/ class cGZXBitstream *AStream, unsigned char * d
 	__asm        call   dword ptr [eax];
 // LINE 186:
 	return;
-_T1e:
 }
 
 // FUNCTION: COPTER_D 0x004cbc9e
@@ -722,7 +715,6 @@ void SCXReadPlayer(/*packed*/ class cGZXBitstream *AStream, unsigned char * data
 	__asm        add    esp, 8;
 // LINE 205:
 	return;
-_T95:
 }
 
 // FUNCTION: COPTER_D 0x004cbd38
@@ -969,7 +961,6 @@ _T221:
 // LINE 258:
 _T286:
 	return;
-_T28b:
 }
 
 // FUNCTION: COPTER_D 0x004cbfc8
@@ -997,7 +988,6 @@ void SCXReadContracts(/*packed*/ class cGZXBitstream *AStream, unsigned char * d
 	__asm        call   dword ptr [eax];
 // LINE 284:
 	return;
-_T36:
 }
 
 // FUNCTION: COPTER_D 0x004cc003

@@ -161,7 +161,6 @@ _T2f:
 _T62:
 	return;
 // LINE 144:
-_T67:
 }
 
 // FUNCTION: COPTER_D 0x00513e81
@@ -5131,7 +5130,6 @@ _Tb01:
 	__asm        call   do_map_square;
 	__asm        add    esp, 0xC;
 // LINE 1100:
-_Tb85:
 }
 
 // FUNCTION: COPTER_D 0x00517dc6
@@ -5677,7 +5675,6 @@ _T45d:
 	__asm        mov    eax, v;
 	__asm        mov    [eax+0x1C], ecx;
 // LINE 1277:
-_T524:
 }
 
 // FUNCTION: COPTER_D 0x00518499
@@ -5697,8 +5694,7 @@ int32_t S3TerrMorphWater() {
 	__asm        cmp    S_checktime, eax;
 	__asm        jle    _T2c;
 // LINE 1442:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1bd;
+	return 0x0;
 // LINE 1444:
 _T2c:
 	S_looptime = 0x0;
@@ -5822,10 +5818,8 @@ _T1ae:
 	__asm        jmp    _T109;
 // LINE 1488:
 _T1b3:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1bd;
+	return 0x1;
 // LINE 1489:
-_T1bd:
 }
 
 // FUNCTION: COPTER_D 0x0051865b
@@ -6491,8 +6485,7 @@ _T349:
 	landable[0] = 0x0;
 // LINE 1707:
 _T352:
-	__asm        mov    eax, hypalt;
-	__asm        jmp    _T3d3;
+	return hypalt;
 // LINE 1710:
 _T35a:
 	__asm        mov    eax, ratio;
@@ -6516,8 +6509,7 @@ _T35a:
 	__asm        cmp    zdist, 0xFFFFFF9C;
 	__asm        jle    _T39a;
 // LINE 1719:
-	__asm        mov    eax, hypalt;
-	__asm        jmp    _T3d3;
+	return hypalt;
 // LINE 1721:
 _T39a:
 	__asm        mov    eax, zdist;
@@ -6540,10 +6532,8 @@ _T39a:
 	__asm        add    ecx, eax;
 	__asm        mov    alt1, ecx;
 // LINE 1726:
-	__asm        mov    eax, alt1;
-	__asm        jmp    _T3d3;
+	return alt1;
 // LINE 1727:
-_T3d3:
 }
 
 // FUNCTION: COPTER_D 0x00518e64
@@ -6661,10 +6651,8 @@ _Tf9:
 	__asm        mov    alt, eax;
 // LINE 1865:
 _T109:
-	__asm        mov    eax, alt;
-	__asm        jmp    _T111;
+	return alt;
 // LINE 1866:
-_T111:
 }
 
 

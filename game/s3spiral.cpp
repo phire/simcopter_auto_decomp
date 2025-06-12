@@ -50,7 +50,7 @@ void SpiralScan::SpiralScan(int32_t radius) {
 	__asm        mov    [ecx+0xC], eax;
 // LINE 14:
 	return;
-_T39:
+
 	__asm        mov    eax, this;
 }
 
@@ -64,8 +64,7 @@ _T0c:
 	__asm        cmp    [eax+8], ecx;
 	__asm        jle    _T25;
 // LINE 23:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tfb;
+	return 0x0;
 // LINE 27:
 _T25:
 	__asm        mov    eax, this;
@@ -145,10 +144,8 @@ _Td5:
 	__asm        test   eax, eax;
 	__asm        je     _T0c;
 // LINE 48:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tfb;
+	return 0x1;
 // LINE 49:
-_Tfb:
 }
 
 // FUNCTION: COPTER_D 0x00542f05
@@ -159,8 +156,7 @@ int32_t SpiralScan::InCityGridLimits(/*packed*/ struct _GridCoordinates currLoc)
 	__asm        cmp    eax, 0x80;
 	__asm        jl     _T23;
 
-	__asm        xor    eax, eax;
-	__asm        jmp    _T6c;
+	return 0x0;
 // LINE 54:
 _T23:
 	__asm        xor    eax, eax;
@@ -168,8 +164,7 @@ _T23:
 	__asm        test   eax, eax;
 	__asm        jge    _T37;
 
-	__asm        xor    eax, eax;
-	__asm        jmp    _T6c;
+	return 0x0;
 // LINE 55:
 _T37:
 	__asm        xor    eax, eax;
@@ -177,8 +172,7 @@ _T37:
 	__asm        cmp    eax, 0x80;
 	__asm        jl     _T4e;
 
-	__asm        xor    eax, eax;
-	__asm        jmp    _T6c;
+	return 0x0;
 // LINE 56:
 _T4e:
 	__asm        xor    eax, eax;
@@ -186,13 +180,10 @@ _T4e:
 	__asm        test   eax, eax;
 	__asm        jge    _T62;
 
-	__asm        xor    eax, eax;
-	__asm        jmp    _T6c;
+	return 0x0;
 // LINE 58:
 _T62:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T6c;
+	return 0x1;
 // LINE 59:
-_T6c:
 }
 

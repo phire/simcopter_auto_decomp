@@ -82,7 +82,6 @@ _T33:
 	__asm        call   S2AllocFreePool;
 	__asm        add    esp, 4;
 // LINE 122:
-_T42:
 }
 
 // FUNCTION: COPTER_D 0x004d5356
@@ -103,8 +102,7 @@ _T14:
 	__asm        test   eax, eax;
 	__asm        jne    _T2f;
 // LINE 147:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4ca;
+	return 0x0;
 // LINE 148:
 _T2f:
 	__asm        mov    i, 0;
@@ -148,8 +146,7 @@ _T3e:
 // LINE 154:
 	GlobalError = 0x3;
 // LINE 155:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4ca;
+	return 0x0;
 // LINE 157:
 _Tbd:
 	__asm        push   0x3E8;
@@ -159,8 +156,7 @@ _Tbd:
 	__asm        cmp    G_currmempool, 0;
 	__asm        jge    _Te3;
 // LINE 158:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4ca;
+	return 0x0;
 // LINE 159:
 _Te3:
 	__asm        call   LoadPalette;
@@ -169,8 +165,7 @@ _Te3:
 	__asm        cmp    res, 0;
 	__asm        jne    _Tfc;
 // LINE 161:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4ca;
+	return 0x0;
 // LINE 162:
 _Tfc:
 	res->mempoolid = G_currmempool;
@@ -187,12 +182,10 @@ _Tfc:
 	__asm        call   VRUnLoadResource;
 	__asm        add    esp, 4;
 // LINE 165:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4ca;
+	return 0x0;
 // LINE 167:
 _T12e:
-	__asm        mov    eax, res;
-	__asm        jmp    _T4ca;
+	return res;
 // LINE 169:
 _T136:
 	__asm        jmp    _T3b;
@@ -200,8 +193,7 @@ _T136:
 _T13b:
 	GlobalError = 0x7;
 // LINE 171:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4ca;
+	return 0x0;
 // LINE 172:
 	__asm        jmp    _T4c3;
 // LINE 176:
@@ -213,8 +205,7 @@ _T151:
 	__asm        cmp    G_currmempool, 0;
 	__asm        jge    _T177;
 // LINE 177:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4ca;
+	return 0x0;
 // LINE 178:
 _T177:
 	__asm        mov    eax, name;
@@ -226,8 +217,7 @@ _T177:
 	__asm        cmp    res, 0;
 	__asm        jne    _T197;
 // LINE 180:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4ca;
+	return 0x0;
 // LINE 181:
 _T197:
 	res->mempoolid = G_currmempool;
@@ -244,12 +234,10 @@ _T197:
 	__asm        call   VRUnLoadResource;
 	__asm        add    esp, 4;
 // LINE 184:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4ca;
+	return 0x0;
 // LINE 186:
 _T1c9:
-	__asm        mov    eax, res;
-	__asm        jmp    _T4ca;
+	return res;
 // LINE 190:
 _T1d1:
 	__asm        mov    eax, name;
@@ -259,8 +247,7 @@ _T1d1:
 	__asm        test   eax, eax;
 	__asm        jne    _T1ec;
 // LINE 191:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4ca;
+	return 0x0;
 // LINE 193:
 _T1ec:
 	__asm        mov    i, 0;
@@ -306,8 +293,7 @@ _T1fb:
 // LINE 199:
 	GlobalError = 0x3;
 // LINE 200:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4ca;
+	return 0x0;
 // LINE 202:
 _T280:
 	__asm        push   0x10000;
@@ -317,8 +303,7 @@ _T280:
 	__asm        cmp    G_currmempool, 0;
 	__asm        jge    _T2a6;
 // LINE 203:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4ca;
+	return 0x0;
 // LINE 204:
 _T2a6:
 	__asm        mov    eax, i;
@@ -344,8 +329,7 @@ _T2a6:
 	__asm        cmp    res, 0;
 	__asm        jne    _T2f3;
 // LINE 206:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4ca;
+	return 0x0;
 // LINE 207:
 _T2f3:
 	res->mempoolid = G_currmempool;
@@ -362,12 +346,10 @@ _T2f3:
 	__asm        call   VRUnLoadResource;
 	__asm        add    esp, 4;
 // LINE 210:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4ca;
+	return 0x0;
 // LINE 212:
 _T325:
-	__asm        mov    eax, res;
-	__asm        jmp    _T4ca;
+	return res;
 // LINE 214:
 _T32d:
 	__asm        jmp    _T1f8;
@@ -375,8 +357,7 @@ _T32d:
 _T332:
 	GlobalError = 0x7;
 // LINE 216:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4ca;
+	return 0x0;
 // LINE 217:
 	__asm        jmp    _T4c3;
 // LINE 221:
@@ -388,8 +369,7 @@ _T348:
 	__asm        test   eax, eax;
 	__asm        jne    _T363;
 // LINE 222:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4ca;
+	return 0x0;
 // LINE 224:
 _T363:
 	__asm        mov    i, 0;
@@ -427,8 +407,7 @@ _T372:
 // LINE 230:
 	GlobalError = 0x3;
 // LINE 231:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4ca;
+	return 0x0;
 // LINE 233:
 _T3e4:
 	__asm        push   0x10000;
@@ -438,8 +417,7 @@ _T3e4:
 	__asm        cmp    G_currmempool, 0;
 	__asm        jge    _T40a;
 // LINE 234:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4ca;
+	return 0x0;
 // LINE 235:
 _T40a:
 	__asm        push   1;
@@ -456,8 +434,7 @@ _T40a:
 	__asm        cmp    res, 0;
 	__asm        jne    _T43b;
 // LINE 237:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4ca;
+	return 0x0;
 // LINE 238:
 _T43b:
 	res->mempoolid = G_currmempool;
@@ -474,12 +451,10 @@ _T43b:
 	__asm        call   VRUnLoadResource;
 	__asm        add    esp, 4;
 // LINE 241:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4ca;
+	return 0x0;
 // LINE 243:
 _T46d:
-	__asm        mov    eax, res;
-	__asm        jmp    _T4ca;
+	return res;
 // LINE 245:
 _T475:
 	__asm        jmp    _T36f;
@@ -487,14 +462,12 @@ _T475:
 _T47a:
 	GlobalError = 0x8;
 // LINE 247:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4ca;
+	return 0x0;
 // LINE 248:
 	__asm        jmp    _T4c3;
 // LINE 253:
 _T490:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4ca;
+	return 0x0;
 // LINE 255:
 	__asm        jmp    _T4c3;
 _T49c:
@@ -511,10 +484,8 @@ _T49c:
 //   _T14
 // LINE 256:
 _T4c3:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4ca;
+	return 0x0;
 // LINE 257:
-_T4ca:
 }
 
 // FUNCTION: COPTER_D 0x004d5825
@@ -535,17 +506,14 @@ _T09:
 	__asm        test   eax, eax;
 	__asm        jne    _T39;
 // LINE 281:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T48;
+	return 0x0;
 // LINE 282:
 _T39:
 	__asm        jmp    _T09;
 // LINE 283:
 _T3e:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T48;
+	return 0x1;
 // LINE 284:
-_T48:
 }
 
 // FUNCTION: COPTER_D 0x004d5872
@@ -587,8 +555,7 @@ _T3f:
 _T50:
 	GlobalError = 0xb;
 // LINE 329:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Taf;
+	return 0x0;
 // LINE 331:
 	__asm        jmp    _T89;
 _T66:
@@ -615,10 +582,8 @@ _T89:
 	__asm        add    esp, 4;
 // LINE 337:
 _Ta5:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Taf;
+	return 0x1;
 // LINE 338:
-_Taf:
 }
 
 // FUNCTION: COPTER_D 0x004d5926
@@ -634,8 +599,7 @@ int32_t GetDir_GEOM(char * name) {
 	__asm        test   eax, eax;
 	__asm        jne    _T24;
 // LINE 365:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T284;
+	return 0x0;
 // LINE 369:
 _T24:
 	__asm        cmp    GEOM_GPdir, 0;
@@ -644,8 +608,7 @@ _T24:
 	__asm        cmp    GEOM_IDdir, 0;
 	__asm        je     _T48;
 // LINE 370:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T284;
+	return 0x1;
 // LINE 375:
 _T48:
 	__asm        mov    i, 0;
@@ -678,8 +641,7 @@ _T57:
 // LINE 382:
 	GlobalError = 0x3;
 // LINE 383:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T284;
+	return 0x0;
 // LINE 386:
 _Tbe:
 	__asm        push   8;
@@ -690,8 +652,7 @@ _Tbe:
 	__asm        test   eax, eax;
 	__asm        jne    _Tdb;
 // LINE 387:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T284;
+	return 0x0;
 // LINE 403:
 _Tdb:
 	__asm        cmp    chunk.Id, 0x4D4F4547;
@@ -699,8 +660,7 @@ _Tdb:
 // LINE 404:
 	GlobalError = 0x6;
 // LINE 405:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T284;
+	return 0x0;
 // LINE 408:
 _Tf9:
 	__asm        push   0x10;
@@ -710,8 +670,7 @@ _Tf9:
 	__asm        test   eax, eax;
 	__asm        jne    _T117;
 // LINE 409:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T284;
+	return 0x0;
 // LINE 438:
 _T117:
 	__asm        mov    eax, GEOM_hdr.GroupCount;
@@ -748,8 +707,7 @@ _T117:
 // LINE 444:
 	GlobalError = 0x4;
 // LINE 445:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T284;
+	return 0x0;
 // LINE 449:
 _T199:
 	bufferBad = 0x1;
@@ -766,8 +724,7 @@ _T199:
 // LINE 452:
 	GlobalError = 0x3;
 // LINE 453:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T284;
+	return 0x0;
 // LINE 456:
 _T1d3:
 	__asm        mov    eax, GEOM_hdr.GroupCount;
@@ -783,8 +740,7 @@ _T1d3:
 	__asm        test   eax, eax;
 	__asm        jne    _T201;
 // LINE 457:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T284;
+	return 0x0;
 // LINE 533:
 _T201:
 	bufferBad = 0x1;
@@ -801,8 +757,7 @@ _T201:
 // LINE 536:
 	GlobalError = 0x3;
 // LINE 537:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T284;
+	return 0x0;
 // LINE 540:
 _T23b:
 	__asm        mov    eax, GEOM_hdr.IdCount;
@@ -816,12 +771,10 @@ _T23b:
 	__asm        test   eax, eax;
 	__asm        jne    _T264;
 // LINE 541:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T284;
+	return 0x0;
 // LINE 609:
 _T264:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T284;
+	return 0x1;
 // LINE 611:
 _T26e:
 	__asm        jmp    _T54;
@@ -829,10 +782,8 @@ _T26e:
 _T273:
 	GlobalError = 0x5;
 // LINE 613:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T284;
+	return 0x0;
 // LINE 615:
-_T284:
 }
 
 // FUNCTION: COPTER_D 0x004d5baf
@@ -848,15 +799,13 @@ int32_t GetDir_CMAP(char * name) {
 	__asm        test   eax, eax;
 	__asm        jne    _T24;
 // LINE 641:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T194;
+	return 0x0;
 // LINE 645:
 _T24:
 	__asm        cmp    CMAP_directory, 0;
 	__asm        je     _T3b;
 // LINE 646:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T194;
+	return 0x1;
 // LINE 651:
 _T3b:
 	__asm        mov    i, 0;
@@ -889,8 +838,7 @@ _T4a:
 // LINE 658:
 	GlobalError = 0x3;
 // LINE 659:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T194;
+	return 0x0;
 // LINE 662:
 _Tb1:
 	__asm        push   8;
@@ -901,8 +849,7 @@ _Tb1:
 	__asm        test   eax, eax;
 	__asm        jne    _Tce;
 // LINE 663:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T194;
+	return 0x0;
 // LINE 678:
 _Tce:
 	__asm        cmp    chunk.Id, 0x50414D43;
@@ -910,8 +857,7 @@ _Tce:
 // LINE 679:
 	GlobalError = 0x6;
 // LINE 680:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T194;
+	return 0x0;
 // LINE 683:
 _Tec:
 	__asm        push   4;
@@ -921,8 +867,7 @@ _Tec:
 	__asm        test   eax, eax;
 	__asm        jne    _T10a;
 // LINE 684:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T194;
+	return 0x0;
 // LINE 694:
 _T10a:
 	__asm        mov    eax, CMAP_hdr.PaletteCount;
@@ -941,8 +886,7 @@ _T10a:
 // LINE 696:
 	GlobalError = 0x4;
 // LINE 697:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T194;
+	return 0x0;
 // LINE 700:
 _T149:
 	__asm        mov    eax, CMAP_hdr.PaletteCount;
@@ -957,12 +901,10 @@ _T149:
 	__asm        test   eax, eax;
 	__asm        jne    _T174;
 // LINE 701:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T194;
+	return 0x0;
 // LINE 726:
 _T174:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T194;
+	return 0x1;
 // LINE 728:
 _T17e:
 	__asm        jmp    _T47;
@@ -970,10 +912,8 @@ _T17e:
 _T183:
 	GlobalError = 0x5;
 // LINE 730:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T194;
+	return 0x0;
 // LINE 732:
-_T194:
 }
 
 // FUNCTION: COPTER_D 0x004d5d48
@@ -992,8 +932,7 @@ int32_t GetResourceDir(char * name) {
 	__asm        cmp    ResourceDir, 0;
 	__asm        je     _T39;
 // LINE 760:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T134;
+	return 0x1;
 // LINE 766:
 _T39:
 	bufferBad = 0x1;
@@ -1009,8 +948,7 @@ _T39:
 // LINE 769:
 	GlobalError = 0x3;
 // LINE 770:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T134;
+	return 0x0;
 // LINE 773:
 _T6f:
 	__asm        jmp    _T8f;
@@ -1023,8 +961,7 @@ _T74:
 	__asm        test   eax, eax;
 	__asm        jne    _T8f;
 // LINE 775:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T134;
+	return 0x0;
 // LINE 783:
 _T8f:
 	__asm        push   8;
@@ -1035,8 +972,7 @@ _T8f:
 	__asm        test   eax, eax;
 	__asm        jne    _Tac;
 // LINE 784:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T134;
+	return 0x0;
 // LINE 801:
 _Tac:
 	__asm        push   4;
@@ -1046,8 +982,7 @@ _Tac:
 	__asm        test   eax, eax;
 	__asm        jne    _Tca;
 // LINE 802:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T134;
+	return 0x0;
 // LINE 815:
 _Tca:
 	__asm        mov    eax, ResourceDirHdr.Count;
@@ -1064,8 +999,7 @@ _Tca:
 // LINE 817:
 	GlobalError = 0x4;
 // LINE 818:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T134;
+	return 0x0;
 // LINE 821:
 _T104:
 	__asm        mov    eax, ResourceDirHdr.Count;
@@ -1078,14 +1012,11 @@ _T104:
 	__asm        test   eax, eax;
 	__asm        jne    _T12a;
 // LINE 822:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T134;
+	return 0x0;
 // LINE 848:
 _T12a:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T134;
+	return 0x1;
 // LINE 849:
-_T134:
 }
 
 // FUNCTION: COPTER_D 0x004d5e81
@@ -1104,8 +1035,7 @@ int32_t OpenResourceFile(char * name) {
 // LINE 874:
 	GlobalError = 0x1;
 // LINE 875:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T98;
+	return 0x0;
 // LINE 878:
 _T3f:
 	__asm        push   0x7D0;
@@ -1122,8 +1052,7 @@ _T3f:
 // LINE 881:
 	GlobalError = 0x1;
 // LINE 882:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T98;
+	return 0x0;
 // LINE 884:
 _T7d:
 	__asm        mov    eax, name;
@@ -1132,10 +1061,8 @@ _T7d:
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 885:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T98;
+	return 0x1;
 // LINE 887:
-_T98:
 }
 
 // FUNCTION: COPTER_D 0x004d5f1e
@@ -1154,14 +1081,11 @@ int32_t ReadResource(void * __ptr32 buf, int32_t s) {
 // LINE 1059:
 	GlobalError = 0x2;
 // LINE 1060:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T40;
+	return 0x0;
 // LINE 1062:
 _T36:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T40;
+	return 0x1;
 // LINE 1064:
-_T40:
 }
 
 // FUNCTION: COPTER_D 0x004d5f63
@@ -1197,8 +1121,7 @@ int32_t RegisterResource(/*packed*/ struct VRResource *res) {
 // LINE 1120:
 	GlobalError = 0xc;
 // LINE 1121:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4f;
+	return 0x0;
 // LINE 1123:
 _T24:
 	res->entry = NextResource;
@@ -1208,10 +1131,8 @@ _T24:
 	__asm        mov    ResourceArray[0][ecx*4], eax;
 	__asm        inc    NextResource;
 // LINE 1125:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T4f;
+	return 0x1;
 // LINE 1127:
-_T4f:
 }
 
 // FUNCTION: COPTER_D 0x004d5ffd
@@ -1242,7 +1163,6 @@ _T2a:
 // LINE 1151:
 	r->entry = i;
 // LINE 1153:
-_T5c:
 }
 
 

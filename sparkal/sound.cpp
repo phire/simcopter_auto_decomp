@@ -461,7 +461,7 @@ _T30:
 	this->dsCapabilities.dwSize = 0x60;
 // LINE 104:
 	return;
-_T7a:
+
 	__asm        mov    eax, this;
 }
 
@@ -474,7 +474,6 @@ void SoundSystem::~SoundSystem() {
 	__asm        call   SoundSystem::DeInitialize;
 // LINE 109:
 	return;
-_T22:
 }
 
 // FUNCTION: COPTER_D 0x0042e009
@@ -697,8 +696,7 @@ _T263:
 	__asm        mov    [ecx+0x10], eax;
 // LINE 216:
 END_OF_ROUTINE:
-	__asm        mov    eax, bReturnValue;
-	__asm        jmp    _T2bd;
+	return bReturnValue;
 // LINE 218:
 _T29f:
 	__asm        jmp    END_OF_ROUTINE;
@@ -712,7 +710,6 @@ _T2b3:
 	__asm        jmp    ERROR_CLEANUP;
 _T2b8:
 	__asm        jmp    ERROR_CLEANUP;
-_T2bd:
 }
 
 // FUNCTION: COPTER_D 0x0042e2cd
@@ -744,7 +741,6 @@ _T4d:
 	this->lpDirectSound = 0x0;
 // LINE 239:
 	return;
-_T5c:
 }
 
 // FUNCTION: COPTER_D 0x0042e32e
@@ -763,14 +759,11 @@ int32_t SoundSystem::GetVolume(long * lVolume) {
 	__asm        mov    ecx, [eax+8];
 	__asm        call   dword ptr [edx+0x20];
 // LINE 255:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T3f;
+	return 0x1;
 // LINE 257:
 _T38:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T3f;
+	return 0x0;
 // LINE 258:
-_T3f:
 }
 
 // FUNCTION: COPTER_D 0x0042e374
@@ -811,7 +804,7 @@ _T24:
 // LINE 287:
 _T44:
 	return;
-_T49:
+
 	__asm        mov    eax, this;
 }
 
@@ -824,7 +817,6 @@ void SoundManager::~SoundManager() {
 	__asm        call   SoundManager::DeleteAllSounds;
 // LINE 292:
 	return;
-_T22:
 }
 
 // FUNCTION: COPTER_D 0x0042e419
@@ -860,7 +852,6 @@ _T56:
 // LINE 299:
 _T5b:
 	return;
-_T60:
 }
 
 // FUNCTION: COPTER_D 0x0042e47e
@@ -894,7 +885,6 @@ _T4b:
 	__asm        mov    [edx+ecx*4+4], eax;
 // LINE 319:
 	return;
-_T5d:
 }
 
 // FUNCTION: COPTER_D 0x0042e4e2
@@ -947,7 +937,6 @@ _T7d:
 	__asm        mov    [edx+ecx*4+4], eax;
 // LINE 345:
 	return;
-_T8f:
 }
 
 // FUNCTION: COPTER_D 0x0042e578
@@ -1002,7 +991,6 @@ _T81:
 	__asm        mov    [edx+ecx*4+4], eax;
 // LINE 352:
 	return;
-_T93:
 }
 
 // FUNCTION: COPTER_D 0x0042e612
@@ -1053,7 +1041,6 @@ void SoundManager::StopSound(int32_t nIndex) {
 // LINE 381:
 _T36:
 	return;
-_T3b:
 }
 
 // FUNCTION: COPTER_D 0x0042e6a5
@@ -1088,7 +1075,6 @@ _T52:
 // LINE 398:
 _T57:
 	return;
-_T5c:
 }
 
 // FUNCTION: COPTER_D 0x0042e706
@@ -1145,7 +1131,7 @@ _T78:
 	this->bUnloadBeforeNextPlay = 0x0;
 // LINE 423:
 	return;
-_Te0:
+
 	__asm        mov    eax, this;
 }
 
@@ -1219,7 +1205,6 @@ _Tab:
 	__asm        add    esp, 4;
 _Td3:
 	return;
-_Td8:
 }
 
 // FUNCTION: COPTER_D 0x0042e8cb
@@ -1392,10 +1377,8 @@ _T20f:
 _T214:
 	this->lResID = newSound.lResID;
 // LINE 451:
-	__asm        mov    eax, this;
-	__asm        jmp    _T228;
+	return this;
 // LINE 452:
-_T228:
 }
 
 // FUNCTION: COPTER_D 0x0042eafa
@@ -1783,25 +1766,20 @@ _T1d3:
 	this->bUnloadBeforeNextPlay = 0x1;
 // LINE 505:
 	return;
-_T1ec:
 }
 
 // FUNCTION: COPTER_D 0x0042ef5a
 int32_t Sound::GetSoundType() {
 // LINE 512:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
+	return 0x0;
 // LINE 513:
-_T13:
 }
 
 // FUNCTION: COPTER_D 0x0042ef72
 unsigned long Sound::GetTotalMemoryUsage() {
 // LINE 520:
-	__asm        mov    eax, Sound::lTotalMemoryUsage;
-	__asm        jmp    _T10;
+	return Sound::lTotalMemoryUsage;
 // LINE 521:
-_T10:
 }
 
 // FUNCTION: COPTER_D 0x0042ef87
@@ -1839,7 +1817,7 @@ _T5e:
 // LINE 556:
 _T7b:
 	return;
-_T80:
+
 	__asm        mov    eax, this;
 }
 
@@ -2050,7 +2028,7 @@ _T25b:
 // LINE 587:
 _T278:
 	return;
-_T27d:
+
 	__asm        mov    eax, this;
 }
 
@@ -2071,7 +2049,7 @@ void DigitalSound::DigitalSound(long lNewResID) {
 	this->nCompletionEstimationTimerSet = 0x0;
 // LINE 608:
 	return;
-_T49:
+
 	__asm        mov    eax, this;
 }
 
@@ -2084,7 +2062,7 @@ void DigitalSound::~DigitalSound() {
 	__asm        call   DigitalSound::Unload;
 // LINE 624:
 	return;
-_T22:
+
 	__asm        mov    ecx, this;
 	__asm        call   Sound::~Sound;
 }
@@ -2271,7 +2249,6 @@ _T207:
 // LINE 648:
 _T225:
 	return;
-_T22a:
 }
 
 // FUNCTION: COPTER_D 0x0042f549
@@ -2323,7 +2300,6 @@ _T77:
 	__asm        call   dword ptr [eax+0x74];
 // LINE 671:
 	return;
-_T87:
 }
 
 // FUNCTION: COPTER_D 0x0042f5d5
@@ -2334,10 +2310,8 @@ _T87:
 	__asm        mov    ecx, this;
 	__asm        call   Sound::operator=;
 // LINE 684:
-	__asm        mov    eax, this;
-	__asm        jmp    _T20;
+	return this;
 // LINE 685:
-_T20:
 }
 
 // FUNCTION: COPTER_D 0x0042f5fc
@@ -2383,10 +2357,8 @@ _T69:
 // FUNCTION: COPTER_D 0x0042f66a
 int32_t DigitalSound::LoadFromResource() {
 // LINE 717:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
+	return 0x0;
 // LINE 718:
-_T13:
 }
 
 // FUNCTION: COPTER_D 0x0042f682
@@ -2516,8 +2488,7 @@ _T124:
 	__asm        test   eax, eax;
 	__asm        je     _T151;
 // LINE 759:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T302;
+	return 0x0;
 // LINE 764:
 _T151:
 	__asm        push   0;
@@ -2535,8 +2506,7 @@ _T151:
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C391C];
 // LINE 766:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T302;
+	return 0x0;
 // LINE 770:
 _T180:
 	ckIn.ckid = 0x61746164;
@@ -2557,8 +2527,7 @@ _T180:
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C391C];
 // LINE 773:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T302;
+	return 0x0;
 // LINE 775:
 _T1b6:
 	this->cbSize = ckIn.cksize;
@@ -2637,8 +2606,7 @@ _T241:
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C391C];
 // LINE 799:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T302;
+	return 0x0;
 // LINE 802:
 _T27b:
 	__asm        push   0;
@@ -2679,8 +2647,7 @@ _T2c1:
 	__asm        jmp    ERROR_DONE_ROUTINE;
 // LINE 819:
 _T2d8:
-	__asm        mov    eax, bReturnValue;
-	__asm        jmp    _T302;
+	return bReturnValue;
 // LINE 822:
 ERROR_DONE_ROUTINE:
 	__asm        mov    eax, this;
@@ -2688,8 +2655,7 @@ ERROR_DONE_ROUTINE:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x74];
 // LINE 823:
-	__asm        mov    eax, bReturnValue;
-	__asm        jmp    _T302;
+	return bReturnValue;
 // LINE 825:
 _T2f3:
 	__asm        jmp    ERROR_DONE_ROUTINE;
@@ -2697,7 +2663,6 @@ _T2f8:
 	__asm        jmp    ERROR_DONE_ROUTINE;
 _T2fd:
 	__asm        jmp    ERROR_DONE_ROUTINE;
-_T302:
 }
 
 // FUNCTION: COPTER_D 0x0042f989
@@ -2740,8 +2705,7 @@ int32_t DigitalSound::CreateSoundBuffer(/*packed*/ struct _DSBUFFERDESC *dsNewBu
 	__asm        cmp    DigitalSound::lpDirectSound, 0;
 	__asm        jne    _T20;
 // LINE 882:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T149;
+	return 0x0;
 // LINE 884:
 _T20:
 	__asm        cmp    dsNewBufferDescription, 0;
@@ -2825,8 +2789,7 @@ _Tfc:
 	Sound::lTotalMemoryUsage += dsBufferDescription.dwBufferBytes;
 // LINE 916:
 _T105:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T149;
+	return 0x1;
 // LINE 919:
 ERROR_IN_ROUTINE:
 	__asm        mov    eax, this;
@@ -2844,14 +2807,12 @@ ERROR_IN_ROUTINE:
 	this->lpSound[0] = 0x0;
 // LINE 924:
 _T138:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T149;
+	return 0x0;
 // LINE 925:
 _T13f:
 	__asm        jmp    ERROR_IN_ROUTINE;
 _T144:
 	__asm        jmp    ERROR_IN_ROUTINE;
-_T149:
 }
 
 // FUNCTION: COPTER_D 0x0042fb2a
@@ -2898,10 +2859,8 @@ _T34:
 	__asm        jmp    _T34;
 // LINE 957:
 _T7c:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T86;
+	return 0x1;
 // LINE 958:
-_T86:
 }
 
 // FUNCTION: COPTER_D 0x0042fbb5
@@ -2935,14 +2894,11 @@ _T47:
 	__asm        lea    ecx, [ebp-8];
 	__asm        call   DirectSoundError::DisplayError;
 // LINE 984:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T65;
+	return 0x0;
 // LINE 987:
 _T5b:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T65;
+	return 0x1;
 // LINE 989:
-_T65:
 }
 
 // FUNCTION: COPTER_D 0x0042fc21
@@ -2988,14 +2944,11 @@ _T6f:
 	__asm        lea    ecx, [ebp-8];
 	__asm        call   DirectSoundError::DisplayError;
 // LINE 1017:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T8d;
+	return 0x0;
 // LINE 1020:
 _T83:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T8d;
+	return 0x1;
 // LINE 1022:
-_T8d:
 }
 
 // FUNCTION: COPTER_D 0x0042fcb5
@@ -3029,14 +2982,11 @@ _T47:
 	__asm        lea    ecx, [ebp-8];
 	__asm        call   DirectSoundError::DisplayError;
 // LINE 1045:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T65;
+	return 0x0;
 // LINE 1048:
 _T5b:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T65;
+	return 0x1;
 // LINE 1050:
-_T65:
 }
 
 // FUNCTION: COPTER_D 0x0042fd21
@@ -3082,14 +3032,11 @@ _T6c:
 	__asm        lea    ecx, [ebp-8];
 	__asm        call   DirectSoundError::DisplayError;
 // LINE 1075:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T8a;
+	return 0x0;
 // LINE 1078:
 _T80:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T8a;
+	return 0x1;
 // LINE 1080:
-_T8a:
 }
 
 // FUNCTION: COPTER_D 0x0042fdb2
@@ -3123,20 +3070,16 @@ _T47:
 	__asm        lea    ecx, [ebp-8];
 	__asm        call   DirectSoundError::DisplayError;
 // LINE 1103:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T75;
+	return 0x0;
 // LINE 1105:
 _T5b:
 	lVolume[0] += 0x2710;
 // LINE 1106:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T75;
+	return 0x1;
 // LINE 1108:
 _T6e:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T75;
+	return 0x0;
 // LINE 1110:
-_T75:
 }
 
 // FUNCTION: COPTER_D 0x0042fe2e
@@ -3174,18 +3117,14 @@ _T57:
 	__asm        lea    ecx, [ebp-8];
 	__asm        call   DirectSoundError::DisplayError;
 // LINE 1134:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T7c;
+	return 0x0;
 // LINE 1136:
 _T6b:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T7c;
+	return 0x1;
 // LINE 1138:
 _T75:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T7c;
+	return 0x0;
 // LINE 1140:
-_T7c:
 }
 
 // FUNCTION: COPTER_D 0x0042feb1
@@ -3331,24 +3270,20 @@ _T7e:
 	__asm        mov    [ecx], eax;
 // LINE 1244:
 _Ta1:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tc3;
+	return 0x1;
 // LINE 1247:
 _Tab:
 	__asm        jmp    _Tb7;
 // LINE 1248:
 _Tb0:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tc3;
+	return 0x0;
 // LINE 1249:
 _Tb7:
 	__asm        jmp    _T18;
 // LINE 1250:
 _Tbc:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tc3;
+	return 0x0;
 // LINE 1251:
-_Tc3:
 }
 
 // FUNCTION: COPTER_D 0x0043005a
@@ -3394,8 +3329,7 @@ _T52:
 	__asm        test   eax, eax;
 	__asm        jne    _T79;
 // LINE 1287:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T298;
+	return 0x0;
 // LINE 1290:
 _T79:
 	__asm        cmp    nDuplicateType, 0;
@@ -3454,16 +3388,14 @@ _Tb4:
 	__asm        call   dword ptr [eax+0x88];
 // LINE 1305:
 _T118:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T298;
+	return 0x1;
 // LINE 1307:
 	__asm        jmp    _T168;
 _T127:
 	__asm        cmp    nDuplicateType, 2;
 	__asm        jne    _T140;
 // LINE 1308:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T298;
+	return 0x1;
 // LINE 1310:
 	__asm        jmp    _T168;
 _T140:
@@ -3479,8 +3411,7 @@ _T140:
 	__asm        test   eax, eax;
 	__asm        jne    _T168;
 // LINE 1315:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T298;
+	return 0x0;
 // LINE 1318:
 _T168:
 	__asm        jmp    _T176;
@@ -3565,8 +3496,7 @@ _T1ea:
 	__asm        call   dword ptr [eax+0x88];
 // LINE 1333:
 _T248:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T298;
+	return 0x1;
 // LINE 1338:
 _T252:
 	__asm        xor    eax, eax;
@@ -3591,8 +3521,7 @@ _T259:
 	__asm        call   dword ptr [eax+0x88];
 // LINE 1344:
 _T28e:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T298;
+	return 0x1;
 // LINE 1346:
 _T298:
 }
@@ -3652,8 +3581,7 @@ _T7e:
 	__asm        mov    ecx, lplpSoundBufferToPlay;
 	__asm        mov    [ecx], eax;
 // LINE 1381:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T11b;
+	return 0x1;
 // LINE 1384:
 _Ta1:
 	__asm        jmp    _T10f;
@@ -3662,8 +3590,7 @@ _Ta6:
 	__asm        cmp    DigitalSound::lpDirectSound, 0;
 	__asm        jne    _Tba;
 // LINE 1386:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T11b;
+	return 0x0;
 // LINE 1387:
 _Tba:
 	__asm        mov    eax, lplpSoundBufferToPlay;
@@ -3689,21 +3616,17 @@ _Tf1:
 	__asm        lea    ecx, [ebp-0x14];
 	__asm        call   DirectSoundError::DisplayError;
 // LINE 1389:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T11b;
+	return 0x0;
 // LINE 1391:
 _T105:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T11b;
+	return 0x1;
 // LINE 1393:
 _T10f:
 	__asm        jmp    _T18;
 // LINE 1394:
 _T114:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T11b;
+	return 0x0;
 // LINE 1396:
-_T11b:
 }
 
 // FUNCTION: COPTER_D 0x0043041b
@@ -3780,8 +3703,7 @@ _T9b:
 	__asm        add    esp, 4;
 // LINE 1430:
 _Tc2:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tcc;
+	return 0x1;
 // LINE 1432:
 _Tcc:
 }
@@ -3897,8 +3819,7 @@ _T169:
 	__asm        cmp    hFile, 0xFFFFFFFF;
 	__asm        jne    _T19c;
 // LINE 1454:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1d9;
+	return 0x0;
 // LINE 1455:
 _T19c:
 	__asm        push   0;
@@ -3914,14 +3835,11 @@ _T19c:
 	__asm        cmp    dwFileSize, 0x30D40;
 	__asm        jb     _T1d2;
 // LINE 1460:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1d9;
+	return 0x1;
 // LINE 1461:
 _T1d2:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1d9;
+	return 0x0;
 // LINE 1463:
-_T1d9:
 }
 
 // FUNCTION: COPTER_D 0x004306ca
@@ -3948,15 +3866,13 @@ long DigitalSound::InitializeStreamBuffer(long bStopIfCurrentlyPlaying) {
 	__asm        jmp    _T40;
 // LINE 1495:
 _T39:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T3a3;
+	return 0x0;
 // LINE 1498:
 _T40:
 	__asm        cmp    DigitalSound::lpDirectSound, 0;
 	__asm        jne    _T54;
 // LINE 1499:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T3a3;
+	return 0x0;
 // LINE 1500:
 _T54:
 	__asm        mov    eax, this;
@@ -3974,8 +3890,7 @@ _T71:
 	__asm        cmp    dword ptr [eax+0x72], 0;
 	__asm        jne    _T85;
 // LINE 1503:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T3a3;
+	return 0x0;
 // LINE 1512:
 _T85:
 	this->lpStreamBufferInfo->hmmio = 0x0;
@@ -4114,8 +4029,7 @@ _T230:
 	__asm        test   eax, eax;
 	__asm        je     _T266;
 // LINE 1529:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T3a3;
+	return 0x0;
 // LINE 1533:
 _T266:
 	__asm        mov    eax, this;
@@ -4130,8 +4044,7 @@ _T266:
 	__asm        call   WaveCloseReadFile;
 	__asm        add    esp, 4;
 // LINE 1535:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T3a3;
+	return 0x0;
 // LINE 1538:
 _T28e:
 	__asm        mov    eax, this;
@@ -4222,18 +4135,15 @@ _T370:
 	__asm        lea    ecx, [ebp-0x1C];
 	__asm        call   DirectSoundError::DisplayError;
 // LINE 1561:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T3a3;
+	return 0x0;
 // LINE 1564:
 _T384:
 	this->cbSize = dsBufferDescription.dwBufferBytes;
 // LINE 1565:
 	Sound::lTotalMemoryUsage += this->cbSize;
 // LINE 1568:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T3a3;
+	return 0x1;
 // LINE 1570:
-_T3a3:
 }
 
 // FUNCTION: COPTER_D 0x00430a74
@@ -4266,8 +4176,7 @@ _T27:
 	__asm        test   eax, eax;
 	__asm        jne    _T45;
 // LINE 1599:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T53d;
+	return 0x0;
 // LINE 1606:
 _T45:
 	__asm        mov    eax, this;
@@ -4382,8 +4291,7 @@ _T148:
 	__asm        cmp    nError, 0;
 	__asm        je     _T183;
 // LINE 1608:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T53d;
+	return 0x0;
 // LINE 1612:
 _T183:
 	__asm        mov    eax, this;
@@ -4410,8 +4318,7 @@ _T183:
 	__asm        call   WaveCloseReadFile;
 	__asm        add    esp, 4;
 // LINE 1616:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T53d;
+	return 0x0;
 // LINE 1621:
 _T1c9:
 	this->lpStreamBufferInfo->bFoundEnd = 0x0;
@@ -4458,8 +4365,7 @@ _T22b:
 	__asm        call   WaveCloseReadFile;
 	__asm        add    esp, 4;
 // LINE 1631:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T53d;
+	return 0x0;
 // LINE 1634:
 _T24e:
 	__asm        cmp    dwLength1, 0;
@@ -4507,8 +4413,7 @@ _T24e:
 	__asm        call   WaveCloseReadFile;
 	__asm        add    esp, 4;
 // LINE 1640:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T53d;
+	return 0x0;
 // LINE 1642:
 _T2c2:
 	__asm        mov    eax, dwLength1;
@@ -4624,8 +4529,7 @@ _T39d:
 	__asm        call   WaveCloseReadFile;
 	__asm        add    esp, 4;
 // LINE 1680:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T53d;
+	return 0x0;
 // LINE 1685:
 _T3e0:
 	__asm        mov    eax, this;
@@ -4667,8 +4571,7 @@ _T3e0:
 	__asm        call   WaveCloseReadFile;
 	__asm        add    esp, 4;
 // LINE 1696:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T53d;
+	return 0x0;
 // LINE 1699:
 _T462:
 	__asm        mov    eax, this;
@@ -4724,8 +4627,7 @@ _T484:
 	__asm        mov    ecx, [ecx+0x72];
 	__asm        mov    [ecx+0x54], eax;
 // LINE 1712:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T53d;
+	return 0x0;
 // LINE 1714:
 	__asm        jmp    _T533;
 // LINE 1720:
@@ -4749,10 +4651,8 @@ _T4f8:
 	this->lpStreamBufferInfo->bTimerInstalled = 0x1;
 // LINE 1728:
 _T533:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T53d;
+	return 0x1;
 // LINE 1729:
-_T53d:
 }
 
 // FUNCTION: COPTER_D 0x00430fb6
@@ -4764,8 +4664,7 @@ long DigitalSound::StopStream() {
 	__asm        cmp    dword ptr [eax+0x52], 0;
 	__asm        jne    _T23;
 // LINE 1751:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tea;
+	return 0x1;
 // LINE 1753:
 _T23:
 	__asm        mov    eax, this;
@@ -4829,10 +4728,8 @@ _Td1:
 	__asm        add    esp, 4;
 // LINE 1780:
 _Te0:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tea;
+	return 0x1;
 // LINE 1781:
-_Tea:
 }
 
 // FUNCTION: COPTER_D 0x004310a5
@@ -4848,7 +4745,6 @@ void StreamingBufferTimerCallback(uint32_t __formal, uint32_t __formal, unsigned
 	__asm        call   dword ptr [eax+0x7C];
 // LINE 1800:
 	return;
-_T1f:
 }
 
 // FUNCTION: COPTER_D 0x004310cb
@@ -5569,7 +5465,6 @@ _T747:
 	__asm        jmp    END_OF_FUNCTION;
 _T74c:
 	__asm        jmp    END_OF_FUNCTION;
-_T751:
 }
 
 // FUNCTION: COPTER_D 0x00431821
@@ -5579,10 +5474,8 @@ int32_t DigitalSound::SetCompletionNotification(void (*newSoundCompletionFunctio
 // LINE 2045:
 	this->lSoundCompletionData = lNewSoundCompletionData;
 // LINE 2046:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T28;
+	return 0x1;
 // LINE 2047:
-_T28:
 }
 
 // FUNCTION: COPTER_D 0x00431850
@@ -5601,7 +5494,6 @@ void DigitalSound::StopCompletionNotification() {
 // LINE 2058:
 _T31:
 	return;
-_T36:
 }
 
 // FUNCTION: COPTER_D 0x0043188b
@@ -5691,7 +5583,6 @@ void CompletionEstimationTimerCallback(uint32_t nTimerID, uint32_t __formal, uns
 	__asm        call   dword ptr [eax+0x80];
 // LINE 2109:
 	return;
-_T22:
 }
 
 // FUNCTION: COPTER_D 0x00431970
@@ -5732,7 +5623,6 @@ _T4b:
 	__asm        call   dword ptr [eax+0x88];
 // LINE 2129:
 	return;
-_T70:
 }
 
 // FUNCTION: COPTER_D 0x004319e5
@@ -5770,8 +5660,7 @@ _T4f:
 	__asm        test   eax, eax;
 	__asm        je     _T6b;
 // LINE 2159:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T93;
+	return 0x0;
 // LINE 2160:
 	__asm        jmp    _T88;
 // LINE 2166:
@@ -5814,7 +5703,6 @@ void DigitalSound::StopCompletionNotificationEstimationTimer() {
 // LINE 2182:
 _T38:
 	return;
-_T3d:
 }
 
 

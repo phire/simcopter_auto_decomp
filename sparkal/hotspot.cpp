@@ -334,7 +334,7 @@ void HotSpot::HotSpot() {
 // LINE 26:
 _T42:
 	return;
-_T47:
+
 	__asm        mov    eax, this;
 }
 
@@ -695,7 +695,7 @@ _T3c9:
 // LINE 38:
 _T3ec:
 	return;
-_T3f1:
+
 	__asm        mov    eax, this;
 }
 
@@ -1091,7 +1091,7 @@ _T4d2:
 // LINE 54:
 _T4d7:
 	return;
-_T4dc:
+
 	__asm        mov    eax, this;
 }
 
@@ -1488,7 +1488,7 @@ _T4eb:
 // LINE 74:
 _T4f0:
 	return;
-_T4f5:
+
 	__asm        mov    eax, this;
 }
 
@@ -2164,7 +2164,7 @@ _T903:
 // LINE 91:
 _T908:
 	return;
-_T90d:
+
 	__asm        mov    eax, this;
 }
 
@@ -2175,8 +2175,7 @@ _T90d:
 	__asm        cmp    this, eax;
 	__asm        jne    _T20;
 // LINE 103:
-	__asm        mov    eax, this;
-	__asm        jmp    _T3e5;
+	return this;
 // LINE 105:
 _T20:
 	this->lID = newHotSpot.lID;
@@ -2523,10 +2522,8 @@ _T3ba:
 	__asm        jmp    _T3dd;
 // LINE 108:
 _T3dd:
-	__asm        mov    eax, this;
-	__asm        jmp    _T3e5;
+	return this;
 // LINE 109:
-_T3e5:
 }
 
 // FUNCTION: COPTER_D 0x004bab7b
@@ -2538,8 +2535,7 @@ int32_t operator==(const /*packed*/ class HotSpot& hs1, const /*packed*/ class H
 	__asm        cmp    [eax], ecx;
 	__asm        je     _T20;
 // LINE 118:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T185;
+	return 0x0;
 // LINE 119:
 _T20:
 	__asm        mov    eax, hs1;
@@ -2548,8 +2544,7 @@ _T20:
 	__asm        cmp    [eax+4], ecx;
 	__asm        je     _T39;
 // LINE 120:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T185;
+	return 0x0;
 // LINE 121:
 _T39:
 	__asm        jmp    _T3e;
@@ -2666,14 +2661,11 @@ _T165:
 	__asm        je     _T17b;
 // LINE 122:
 _T174:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T185;
+	return 0x0;
 // LINE 123:
 _T17b:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T185;
+	return 0x1;
 // LINE 124:
-_T185:
 }
 
 // FUNCTION: COPTER_D 0x004bad05
@@ -3033,10 +3025,8 @@ _T194:
 	__asm        jmp    _T47;
 // LINE 194:
 _T199:
-	__asm        mov    eax, c;
-	__asm        jmp    _T1a1;
+	return c;
 // LINE 195:
-_T1a1:
 }
 
 // FUNCTION: COPTER_D 0x004bb0d2
@@ -3391,7 +3381,6 @@ _T38b:
 // LINE 262:
 _T3bd:
 	return;
-_T3c2:
 }
 
 // FUNCTION: COPTER_D 0x004bb49b

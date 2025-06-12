@@ -144,8 +144,7 @@ _T40:
 // LINE 134:
 	GlobalError = 0x4;
 // LINE 135:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T193;
+	return 0x1;
 // LINE 141:
 _T61:
 	__asm        mov    i, 0;
@@ -258,10 +257,8 @@ _T178:
 	__asm        jmp    _T6d;
 // LINE 174:
 _T18c:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T193;
+	return 0x0;
 // LINE 175:
-_T193:
 }
 
 // FUNCTION: COPTER_D 0x004d8e58
@@ -306,8 +303,7 @@ int32_t CreateTiledTexColors(uint32_t * tabentry, /*packed*/ struct VRBmpHdr *bh
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        jne    _T5f;
 // LINE 210:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T17a;
+	return 0x0;
 // LINE 212:
 _T5f:
 	__asm        jmp    _T6c;
@@ -405,10 +401,8 @@ _T15f:
 	__asm        jmp    _T78;
 // LINE 255:
 _T170:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T17a;
+	return 0x1;
 // LINE 256:
-_T17a:
 }
 
 // FUNCTION: COPTER_D 0x004d8fd7
@@ -479,7 +473,6 @@ _T9e:
 _Tb2:
 	return;
 // LINE 302:
-_Tb7:
 }
 
 // FUNCTION: COPTER_D 0x004d9093
@@ -519,10 +512,8 @@ _T49:
 	__asm        mov    color, eax;
 // LINE 334:
 _T5a:
-	__asm        mov    eax, color;
-	__asm        jmp    _T62;
+	return color;
 // LINE 335:
-_T62:
 }
 
 // FUNCTION: COPTER_D 0x004d90fa
@@ -539,8 +530,7 @@ _T62:
 	__asm        jle    _T2e;
 // LINE 351:
 _T27:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T61;
+	return 0x0;
 // LINE 355:
 _T2e:
 	__asm        mov    eax, cptr;
@@ -555,15 +545,13 @@ _T2e:
 	__asm        cmp    eax, color;
 	__asm        jle    _T58;
 // LINE 356:
-	__asm        mov    eax, cptr;
-	__asm        jmp    _T61;
+	return cptr;
 // LINE 358:
 _T58:
 	cptr += 0x8;
 // LINE 359:
 	__asm        jmp    _T2e;
 // LINE 361:
-_T61:
 }
 
 // FUNCTION: COPTER_D 0x004d9160
@@ -822,7 +810,7 @@ void VRDyObjSetShading(int32_t obj, int32_t *tmat[4][4]) {
 	__asm        test   byte ptr [eax+1], 1;
 	__asm        jne    _T21;
 // LINE 490:
-	return;
+	__asm        jmp    _T1b1;
 // LINE 493:
 _T21:
 	__asm        mov    eax, tmat;
@@ -1117,7 +1105,6 @@ _Ta4:
 	__asm        mov    ecx, fh;
 	__asm        mov    [ecx+0x24], eax;
 // LINE 600:
-_T181:
 }
 
 // FUNCTION: COPTER_D 0x004d9712

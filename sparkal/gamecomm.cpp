@@ -601,7 +601,7 @@ _T26f:
 	__asm        call   CommandSystem::Initialize;
 // LINE 33:
 	return;
-_T27c:
+
 	__asm        mov    eax, this;
 }
 
@@ -689,7 +689,6 @@ _Td3:
 // LINE 61:
 _Tf3:
 	return;
-_Tf8:
 }
 
 // FUNCTION: COPTER_D 0x0048b631
@@ -718,7 +717,6 @@ _T39:
 	__asm        call   CharList::DeleteAllItems;
 // LINE 77:
 	return;
-_T4c:
 }
 
 // FUNCTION: COPTER_D 0x0048b682
@@ -756,7 +754,6 @@ _T51:
 	__asm        call   CharList::DeleteAllItems;
 // LINE 92:
 	return;
-_T64:
 }
 
 // FUNCTION: COPTER_D 0x0048b6ed
@@ -1020,7 +1017,6 @@ _T2ad:
 // LINE 182:
 _T2b2:
 	return;
-_T2b7:
 }
 
 // FUNCTION: COPTER_D 0x0048b9a9
@@ -1192,7 +1188,6 @@ _T1d0:
 // LINE 233:
 _T1d5:
 	return;
-_T1da:
 }
 
 // FUNCTION: COPTER_D 0x0048bb88
@@ -1206,7 +1201,7 @@ void CGameCommander::CGameCommander() {
 	this->myGameApp = 0x0;
 // LINE 252:
 	return;
-_T2c:
+
 	__asm        mov    eax, this;
 }
 
@@ -1216,7 +1211,7 @@ void CGameCommander::~CGameCommander() {
 	this-><CGameCommander+0x00> = 0x590ff8;
 // LINE 256:
 	return;
-_T1a:
+
 	__asm        mov    ecx, this;
 	__asm        call   CDefaultCommander::~CDefaultCommander;
 }
@@ -1224,10 +1219,8 @@ _T1a:
 // FUNCTION: COPTER_D 0x0048bbe3
 unsigned long CGameCommander::Idle() {
 // LINE 264:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
+	return 0x0;
 // LINE 265:
-_T13:
 }
 
 // FUNCTION: COPTER_D 0x0048bbfb
@@ -1245,10 +1238,8 @@ unsigned long CGameCommander::OnLMouseDown(int32_t x, int32_t y) {
 	__asm        mov    ecx, [eax+8];
 	__asm        call   dword ptr [edx+0xAC];
 // LINE 275:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T31;
+	return 0x0;
 // LINE 276:
-_T31:
 }
 
 // FUNCTION: COPTER_D 0x0048bc33
@@ -1266,10 +1257,8 @@ unsigned long CGameCommander::OnLMouseUp(int32_t x, int32_t y) {
 	__asm        mov    ecx, [eax+8];
 	__asm        call   dword ptr [edx+0xB0];
 // LINE 285:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T31;
+	return 0x0;
 // LINE 286:
-_T31:
 }
 
 // FUNCTION: COPTER_D 0x0048bc6b
@@ -1287,10 +1276,8 @@ unsigned long CGameCommander::OnRMouseDown(int32_t x, int32_t y) {
 	__asm        mov    ecx, [eax+8];
 	__asm        call   dword ptr [edx+0xAC];
 // LINE 294:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T31;
+	return 0x0;
 // LINE 295:
-_T31:
 }
 
 // FUNCTION: COPTER_D 0x0048bca3
@@ -1308,10 +1295,8 @@ unsigned long CGameCommander::OnRMouseUp(int32_t x, int32_t y) {
 	__asm        mov    ecx, [eax+8];
 	__asm        call   dword ptr [edx+0xB0];
 // LINE 304:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T31;
+	return 0x0;
 // LINE 305:
-_T31:
 }
 
 // FUNCTION: COPTER_D 0x0048bcdb
@@ -1328,10 +1313,8 @@ unsigned long CGameCommander::OnMouseMove(int32_t x, int32_t y) {
 	__asm        mov    ecx, [eax+8];
 	__asm        call   dword ptr [edx+0xB4];
 // LINE 314:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T2f;
+	return 0x0;
 // LINE 315:
-_T2f:
 }
 
 // FUNCTION: COPTER_D 0x0048bd11
@@ -1346,10 +1329,8 @@ unsigned long CGameCommander::OnWindowActivate() {
 	__asm        jmp    _T27;
 // LINE 325:
 _T27:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T2e;
+	return 0x0;
 // LINE 326:
-_T2e:
 }
 
 // FUNCTION: COPTER_D 0x0048bd44
@@ -1364,10 +1345,8 @@ unsigned long CGameCommander::OnWindowDeactivate() {
 	__asm        jmp    _T27;
 // LINE 335:
 _T27:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T2e;
+	return 0x0;
 // LINE 336:
-_T2e:
 }
 
 // FUNCTION: COPTER_D 0x0048bd77
@@ -1384,7 +1363,6 @@ void CGameCommander::ProcessSetFocus() {
 	__asm        call   dword ptr [edx+0x98];
 // LINE 356:
 	return;
-_T2f:
 }
 
 // FUNCTION: COPTER_D 0x0048bdab
@@ -1399,10 +1377,8 @@ unsigned long CGameCommander::OnCharacter(long lCharacter) {
 	__asm        mov    ecx, [eax+8];
 	__asm        call   dword ptr [edx+0xA8];
 // LINE 365:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T2b;
+	return 0x0;
 // LINE 366:
-_T2b:
 }
 
 // FUNCTION: COPTER_D 0x0048bddd
@@ -1426,7 +1402,6 @@ void CGameCommander::ProcessKeyDown(long lKey) {
 	__asm        call   dword ptr [edx+0xA0];
 // LINE 376:
 	return;
-_T42:
 }
 
 // FUNCTION: COPTER_D 0x0048be26
@@ -1450,7 +1425,6 @@ void CGameCommander::ProcessKeyUp(long lKey) {
 	__asm        call   dword ptr [edx+0xA4];
 // LINE 388:
 	return;
-_T42:
 }
 
 // FUNCTION: COPTER_D 0x0048be6f
@@ -1633,7 +1607,6 @@ _T1d7:
 // LINE 466:
 _T1e9:
 	return;
-_T1ee:
 }
 
 // FUNCTION: COPTER_D 0x0048c064
@@ -1795,7 +1768,6 @@ _T191:
 // LINE 520:
 _T1a3:
 	return;
-_T1a8:
 }
 
 // FUNCTION: COPTER_D 0x0048c213
@@ -1806,7 +1778,6 @@ void CGameCommander::ProcessSystemCloseRequest() {
 	__asm        call   CGameApp::ProcessSystemCloseRequest;
 // LINE 529:
 	return;
-_T1c:
 }
 
 // FUNCTION: COPTER_D 0x0048c234
@@ -4332,7 +4303,6 @@ _T1ae8:
 // LINE 922:
 _T1aed:
 	return;
-_T1af2:
 }
 
 // FUNCTION: COPTER_D 0x0048e3b4
@@ -4413,10 +4383,8 @@ _Te9:
 	lIgnoreModifiers. = 0x0;
 // LINE 961:
 _Tf2:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tfc;
+	return 0x1;
 // LINE 962:
-_Tfc:
 }
 
 // FUNCTION: COPTER_D 0x0048e4b5
@@ -4450,7 +4418,6 @@ void DeleteShortcutPrefsFile() {
 // LINE 973:
 _T56:
 	return;
-_T5b:
 }
 
 // FUNCTION: COPTER_D 0x0048e515
@@ -4469,8 +4436,7 @@ int32_t ValidateConfigurableShortcut(/*packed*/ struct Shortcut& shortcutToValid
 	__asm        jle    _T31;
 // LINE 984:
 _T2a:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Te0;
+	return 0x0;
 // LINE 987:
 _T31:
 	__asm        mov    eax, shortcutToValidate;
@@ -4485,8 +4451,7 @@ _T31:
 	__asm        test   eax, eax;
 	__asm        je     _T5b;
 // LINE 989:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Te0;
+	return 0x0;
 // LINE 993:
 _T5b:
 	__asm        mov    eax, shortcutToValidate;
@@ -4501,16 +4466,14 @@ _T5b:
 	__asm        cmp    dword ptr [eax+8], 0xE;
 	__asm        jl     _T87;
 // LINE 995:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Te0;
+	return 0x0;
 // LINE 997:
 _T87:
 	__asm        mov    eax, shortcutToValidate;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        je     _T9b;
 // LINE 998:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Te0;
+	return 0x0;
 // LINE 999:
 _T9b:
 	__asm        mov    eax, shortcutToValidate;
@@ -4521,8 +4484,7 @@ _T9b:
 	__asm        test   eax, eax;
 	__asm        jne    _Tb9;
 // LINE 1000:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Te0;
+	return 0x0;
 // LINE 1005:
 _Tb9:
 	__asm        mov    eax, shortcutToValidate;
@@ -4537,10 +4499,8 @@ _Tb9:
 	__asm        call   GetPushAndIgnoreSettingsForCommand;
 	__asm        add    esp, 0xC;
 // LINE 1006:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Te0;
+	return 0x1;
 // LINE 1007:
-_Te0:
 }
 
 // FUNCTION: COPTER_D 0x0048e5fa
@@ -4587,7 +4547,6 @@ void GetReservedKeyArray(long * lKeys) {
 	lKeys[20] = 0x0;
 // LINE 1036:
 	return;
-_T46:
 }
 
 // FUNCTION: COPTER_D 0x0048e696
@@ -4615,150 +4574,130 @@ long GetJoystickCommandTwin(long lCommand) {
 	__asm        cmp    lCommand, 6;
 	__asm        jne    _T1f;
 // LINE 1058:
-	__asm        mov    eax, 7;
-	__asm        jmp    _T1ca;
+	return 0x7;
 // LINE 1059:
 	__asm        jmp    _T1c3;
 _T1f:
 	__asm        cmp    lCommand, 7;
 	__asm        jne    _T38;
 // LINE 1060:
-	__asm        mov    eax, 6;
-	__asm        jmp    _T1ca;
+	return 0x6;
 // LINE 1061:
 	__asm        jmp    _T1c3;
 _T38:
 	__asm        cmp    lCommand, 8;
 	__asm        jne    _T51;
 // LINE 1062:
-	__asm        mov    eax, 9;
-	__asm        jmp    _T1ca;
+	return 0x9;
 // LINE 1063:
 	__asm        jmp    _T1c3;
 _T51:
 	__asm        cmp    lCommand, 9;
 	__asm        jne    _T6a;
 // LINE 1064:
-	__asm        mov    eax, 8;
-	__asm        jmp    _T1ca;
+	return 0x8;
 // LINE 1065:
 	__asm        jmp    _T1c3;
 _T6a:
 	__asm        cmp    lCommand, 0xA;
 	__asm        jne    _T83;
 // LINE 1066:
-	__asm        mov    eax, 0xB;
-	__asm        jmp    _T1ca;
+	return 0xb;
 // LINE 1067:
 	__asm        jmp    _T1c3;
 _T83:
 	__asm        cmp    lCommand, 0xB;
 	__asm        jne    _T9c;
 // LINE 1068:
-	__asm        mov    eax, 0xA;
-	__asm        jmp    _T1ca;
+	return 0xa;
 // LINE 1069:
 	__asm        jmp    _T1c3;
 _T9c:
 	__asm        cmp    lCommand, 0xC;
 	__asm        jne    _Tb5;
 // LINE 1070:
-	__asm        mov    eax, 0xD;
-	__asm        jmp    _T1ca;
+	return 0xd;
 // LINE 1071:
 	__asm        jmp    _T1c3;
 _Tb5:
 	__asm        cmp    lCommand, 0xD;
 	__asm        jne    _Tce;
 // LINE 1072:
-	__asm        mov    eax, 0xC;
-	__asm        jmp    _T1ca;
+	return 0xc;
 // LINE 1073:
 	__asm        jmp    _T1c3;
 _Tce:
 	__asm        cmp    lCommand, 0xE;
 	__asm        jne    _Te7;
 // LINE 1074:
-	__asm        mov    eax, 0xF;
-	__asm        jmp    _T1ca;
+	return 0xf;
 // LINE 1075:
 	__asm        jmp    _T1c3;
 _Te7:
 	__asm        cmp    lCommand, 0xF;
 	__asm        jne    _T100;
 // LINE 1076:
-	__asm        mov    eax, 0xE;
-	__asm        jmp    _T1ca;
+	return 0xe;
 // LINE 1077:
 	__asm        jmp    _T1c3;
 _T100:
 	__asm        cmp    lCommand, 0x11;
 	__asm        jne    _T119;
 // LINE 1078:
-	__asm        mov    eax, 0x12;
-	__asm        jmp    _T1ca;
+	return 0x12;
 // LINE 1079:
 	__asm        jmp    _T1c3;
 _T119:
 	__asm        cmp    lCommand, 0x12;
 	__asm        jne    _T132;
 // LINE 1080:
-	__asm        mov    eax, 0x11;
-	__asm        jmp    _T1ca;
+	return 0x11;
 // LINE 1081:
 	__asm        jmp    _T1c3;
 _T132:
 	__asm        cmp    lCommand, 0x1B;
 	__asm        jne    _T14b;
 // LINE 1082:
-	__asm        mov    eax, 0x1C;
-	__asm        jmp    _T1ca;
+	return 0x1c;
 // LINE 1083:
 	__asm        jmp    _T1c3;
 _T14b:
 	__asm        cmp    lCommand, 0x1C;
 	__asm        jne    _T164;
 // LINE 1084:
-	__asm        mov    eax, 0x1B;
-	__asm        jmp    _T1ca;
+	return 0x1b;
 // LINE 1085:
 	__asm        jmp    _T1c3;
 _T164:
 	__asm        cmp    lCommand, 0x1D;
 	__asm        jne    _T17d;
 // LINE 1086:
-	__asm        mov    eax, 0x1E;
-	__asm        jmp    _T1ca;
+	return 0x1e;
 // LINE 1087:
 	__asm        jmp    _T1c3;
 _T17d:
 	__asm        cmp    lCommand, 0x1E;
 	__asm        jne    _T196;
 // LINE 1088:
-	__asm        mov    eax, 0x1D;
-	__asm        jmp    _T1ca;
+	return 0x1d;
 // LINE 1089:
 	__asm        jmp    _T1c3;
 _T196:
 	__asm        cmp    lCommand, 0x1F;
 	__asm        jne    _T1af;
 // LINE 1090:
-	__asm        mov    eax, 0x20;
-	__asm        jmp    _T1ca;
+	return 0x20;
 // LINE 1091:
 	__asm        jmp    _T1c3;
 _T1af:
 	__asm        cmp    lCommand, 0x20;
 	__asm        jne    _T1c3;
 // LINE 1092:
-	__asm        mov    eax, 0x1F;
-	__asm        jmp    _T1ca;
+	return 0x1f;
 // LINE 1093:
 _T1c3:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1ca;
+	return 0x0;
 // LINE 1094:
-_T1ca:
 }
 
 

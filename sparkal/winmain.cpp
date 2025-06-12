@@ -83,8 +83,7 @@ _T9a:
 	__asm        jmp    _Tac;
 // LINE 53:
 _Tac:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T24b;
+	return 0x0;
 // LINE 56:
 _Tb3:
 	__asm        mov    eax, _gSparkalApp;
@@ -112,8 +111,7 @@ _Td0:
 	__asm        jmp    _Tf9;
 // LINE 59:
 _Tf9:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T24b;
+	return 0x0;
 // LINE 62:
 _T100:
 	__asm        mov    eax, _gSparkalApp;
@@ -150,8 +148,7 @@ _T136:
 	__asm        jmp    _T15f;
 // LINE 67:
 _T15f:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T24b;
+	return 0x0;
 // LINE 70:
 _T166:
 	__asm        jmp    _T16b;
@@ -238,12 +235,10 @@ _T216:
 	__asm        jmp    _T23f;
 // LINE 92:
 _T23f:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T24b;
+	return 0x0;
 // LINE 93:
 _T246:
 	__asm        jmp    Cleanup;
-_T24b:
 }
 
 

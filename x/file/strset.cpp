@@ -135,7 +135,7 @@ void StringSet::StringSet(/*unpacked*/ class ResFile *file, short resID) {
 	__asm        call   StringSet::LoadStrings;
 // LINE 16:
 	return;
-_T25:
+
 	__asm        mov    eax, this;
 }
 
@@ -165,7 +165,7 @@ void StringSet::StringSet(/*unpacked*/ class ResFile *file, short resID, short n
 // LINE 28:
 _T4e:
 	return;
-_T53:
+
 	__asm        mov    eax, this;
 }
 
@@ -236,7 +236,6 @@ _Tb4:
 // LINE 48:
 _Tc8:
 	return;
-_Tcd:
 }
 
 // FUNCTION: COPTER_D 0x00565ba0
@@ -248,7 +247,6 @@ void StringSet::Swizzle(void * __ptr32 data, long size) {
 	__asm        add    esp, 4;
 // LINE 54:
 	return;
-_T17:
 }
 
 // FUNCTION: COPTER_D 0x00565bbc
@@ -273,7 +271,6 @@ void StringSet::~StringSet() {
 // LINE 62:
 _T39:
 	return;
-_T3e:
 }
 
 // FUNCTION: COPTER_D 0x00565bff
@@ -299,8 +296,7 @@ _T29:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 68:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T8b;
+	return 0x0;
 // LINE 74:
 _T49:
 	__asm        mov    ax, which;
@@ -325,10 +321,8 @@ _T66:
 	__asm        jmp    _T62;
 // LINE 76:
 _T83:
-	__asm        mov    eax, str;
-	__asm        jmp    _T8b;
+	return str;
 // LINE 77:
-_T8b:
 }
 
 

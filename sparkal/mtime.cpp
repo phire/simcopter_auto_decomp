@@ -489,7 +489,6 @@ static void $E13() {
 	__asm        jmp    _T10;
 _T10:
 	return;
-_T15:
 }
 
 // FUNCTION: COPTER_D 0x0043c73f
@@ -524,7 +523,7 @@ _T5b:
 // LINE 57:
 _T65:
 	return;
-_T6a:
+
 	__asm        mov    eax, this;
 }
 
@@ -625,10 +624,8 @@ _T0e:
 	__asm        mov    [ecx], eax;
 	__asm        jmp    _T5a;
 _T5a:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
-	__asm        jmp    _T62;
+	return reinterpret_cast<uint32_t>(__$ReturnUdt);
 // LINE 91:
-_T62:
 }
 
 // FUNCTION: COPTER_D 0x0043c8ce
@@ -655,10 +652,8 @@ _T2c:
 	local_time<MTime+0x00:4> += 0xe10;
 // LINE 105:
 _T43:
-	__asm        mov    eax, local_time<MTime+0x00:4>;
-	__asm        jmp    _T4b;
+	return local_time<MTime+0x00:4>;
 // LINE 106:
-_T4b:
 }
 
 // FUNCTION: COPTER_D 0x0043c91e
@@ -977,10 +972,8 @@ int  MTime::SetShouldPrinMDate(int32_t bNewPrinMDate) {
 // LINE 243:
 	this-><MTime+0x04:4> = bNewPrinMDate;
 // LINE 244:
-	__asm        mov    eax, bPreviousPrinMDate;
-	__asm        jmp    _T26;
+	return bPreviousPrinMDate;
 // LINE 245:
-_T26:
 }
 
 // FUNCTION: COPTER_D 0x0043cc88

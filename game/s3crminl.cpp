@@ -477,7 +477,7 @@ void CriminalEvaderCarClass::CriminalEvaderCarClass() {
 	this->carModel = 0x11e;
 // LINE 99:
 	return;
-_T2c:
+
 	__asm        mov    eax, this;
 }
 
@@ -527,8 +527,7 @@ _T3a:
 	__asm        mov    CriminalEvaderCarClass::criminalCars[0][ecx*4], eax;
 	__asm        inc    CriminalEvaderCarClass::curCriminalCars;
 // LINE 138:
-	__asm        mov    eax, youveWonABrandNewCar;
-	__asm        jmp    _Ta9;
+	return youveWonABrandNewCar;
 // LINE 140:
 	__asm        jmp    _Ta2;
 // LINE 143:
@@ -548,10 +547,8 @@ _T7b:
 	__asm        jmp    _Ta2;
 // LINE 149:
 _Ta2:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Ta9;
+	return 0x0;
 // LINE 150:
-_Ta9:
 }
 
 // FUNCTION: COPTER_D 0x00534b21
@@ -631,23 +628,19 @@ _T24:
 	__asm        mov    ecx, CriminalEvaderCarClass::criminalCars[0][ecx*4];
 	__asm        mov    [ecx+0x122], eax;
 // LINE 190:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T11f;
+	return 0x1;
 // LINE 192:
 	__asm        jmp    _T113;
 // LINE 193:
 _T10c:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T11f;
+	return 0x0;
 // LINE 195:
 _T113:
 	__asm        jmp    _T21;
 // LINE 198:
 _T118:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T11f;
+	return 0x0;
 // LINE 199:
-_T11f:
 }
 
 // FUNCTION: COPTER_D 0x00534c45
@@ -1044,7 +1037,6 @@ _T4b7:
 // LINE 387:
 _T4df:
 	return;
-_T4e4:
 }
 
 // FUNCTION: COPTER_D 0x0053512e
@@ -1086,7 +1078,6 @@ _T6d:
 // LINE 399:
 _T79:
 	return;
-_T7e:
 }
 
 // FUNCTION: COPTER_D 0x005351b3
@@ -1111,7 +1102,6 @@ void CriminalEvaderCarClass::AdjustSpeed() {
 // LINE 424:
 _T45:
 	return;
-_T4a:
 }
 
 // FUNCTION: COPTER_D 0x00535202
@@ -1413,7 +1403,6 @@ void CriminalEvaderCarClass::ShowWhereWeAre() {
 	__asm        add    esp, 4;
 // LINE 657:
 	return;
-_T46:
 }
 
 // FUNCTION: COPTER_D 0x00535754
@@ -1433,7 +1422,6 @@ void CriminalEvaderCarClass::SetSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) 
 	__asm        call   AutomobileClass::SetSaveData;
 // LINE 676:
 	return;
-_T65:
 }
 
 // FUNCTION: COPTER_D 0x005357c0
@@ -1460,7 +1448,6 @@ _T1d:
 	this->timeToBeOnTheRun = sd->c.timeToBeOnTheRun;
 // LINE 702:
 	return;
-_T76:
 }
 
 

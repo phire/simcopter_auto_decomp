@@ -1096,7 +1096,7 @@ _T2d:
 	__asm        mov    [ecx+0x7E], al;
 // LINE 30:
 	return;
-_T68:
+
 	__asm        mov    eax, this;
 }
 
@@ -1139,7 +1139,7 @@ _T41:
 	__asm        mov    [ecx+0x7E], al;
 // LINE 45:
 	return;
-_T7c:
+
 	__asm        mov    eax, this;
 }
 
@@ -1175,10 +1175,8 @@ _T36:
 	__asm        call   dword ptr [eax+0x2C];
 // LINE 56:
 _T55:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T5f;
+	return 0x1;
 // LINE 57:
-_T5f:
 }
 
 // FUNCTION: COPTER_D 0x004acbea
@@ -1189,7 +1187,6 @@ void BoxWindow::SetColors(/*packed*/ struct SparkalColor& colorNewOutline, int32
 	this->nPaletteIndexFill = nNewPaletteIndexFill;
 // LINE 66:
 	return;
-_T28:
 }
 
 // FUNCTION: COPTER_D 0x004acc19
@@ -1200,7 +1197,6 @@ void BoxWindow::SetOutlineAndFillDrawing(int32_t bNewDrawOutline, int32_t bNewDr
 	this->bDrawFill = bNewDrawFill;
 // LINE 75:
 	return;
-_T23:
 }
 
 // FUNCTION: COPTER_D 0x004acc43
@@ -1243,7 +1239,7 @@ _T19:
 	__asm        call   dword ptr [eax];
 // LINE 104:
 	return;
-_T9b:
+
 	__asm        mov    eax, this;
 }
 
@@ -1300,7 +1296,7 @@ _T2d:
 	__asm        call   TextWindow::LoadStrings;
 // LINE 122:
 	return;
-_Tb2:
+
 	__asm        mov    eax, this;
 }
 
@@ -1506,7 +1502,7 @@ _T259:
 	__asm        call   dword ptr [eax];
 // LINE 141:
 	return;
-_T272:
+
 	__asm        mov    eax, this;
 }
 
@@ -2003,7 +1999,6 @@ _T748:
 // LINE 154:
 _T74d:
 	return;
-_T752:
 }
 
 // FUNCTION: COPTER_D 0x004ad775
@@ -2024,7 +2019,6 @@ void TextWindow::SetWindowTitle(int32_t nNewWindowTitleTextID) {
 	__asm        call   dword ptr [eax+0x30];
 // LINE 163:
 	return;
-_T3a:
 }
 
 // FUNCTION: COPTER_D 0x004ad7b6
@@ -2191,7 +2185,6 @@ _T1d3:
 	__asm        call   dword ptr [eax+0x30];
 // LINE 171:
 	return;
-_T1e7:
 }
 
 // FUNCTION: COPTER_D 0x004ad9a4
@@ -2370,10 +2363,8 @@ _T195:
 	__asm        mov    ecx, [eax+0x44];
 	__asm        call   dword ptr [edx+0x4C];
 // LINE 190:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1da;
+	return 0x1;
 // LINE 191:
-_T1da:
 }
 
 // FUNCTION: COPTER_D 0x004adb83
@@ -2382,7 +2373,6 @@ void TextWindow::SetBackgroundDrawing(int32_t bNewDrawOpaqueBackground) {
 	this->bDrawOpaqueBackground = bNewDrawOpaqueBackground;
 // LINE 200:
 	return;
-_T1a:
 }
 
 // FUNCTION: COPTER_D 0x004adba4
@@ -2406,7 +2396,6 @@ void TextWindow::SetFontCharacteristics(long lNewHeight, long lNewWidth, long lN
 	__asm        call   dword ptr [eax+0x30];
 // LINE 209:
 	return;
-_T3a:
 }
 
 // FUNCTION: COPTER_D 0x004adbe5
@@ -2422,7 +2411,6 @@ void TextWindow::SetTextDrawStyle(unsigned long nNewTextDrawStyle) {
 	__asm        call   dword ptr [eax+0x30];
 // LINE 218:
 	return;
-_T2c:
 }
 
 // FUNCTION: COPTER_D 0x004adc18
@@ -2549,7 +2537,6 @@ _T10f:
 // LINE 230:
 _T14d:
 	return;
-_T152:
 }
 
 // FUNCTION: COPTER_D 0x004add6f
@@ -2565,7 +2552,6 @@ void TextWindow::SetTextColor(const /*packed*/ struct SparkalColor& colorNewFont
 	__asm        call   dword ptr [eax+0x30];
 // LINE 239:
 	return;
-_T2b:
 }
 
 // FUNCTION: COPTER_D 0x004adda1
@@ -2629,10 +2615,8 @@ _T7e:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 263:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T97;
+	return 0x1;
 // LINE 264:
-_T97:
 }
 
 // FUNCTION: COPTER_D 0x004ade3d
@@ -2795,7 +2779,7 @@ _T20e:
 // LINE 294:
 _T213:
 	return;
-_T218:
+
 	__asm        mov    eax, this;
 }
 
@@ -3051,7 +3035,7 @@ _T314:
 // LINE 311:
 _T319:
 	return;
-_T31e:
+
 	__asm        mov    eax, this;
 }
 
@@ -3086,16 +3070,13 @@ _T24:
 // LINE 333:
 _T3c:
 	return;
-_T41:
 }
 
 // FUNCTION: COPTER_D 0x004ae3fb
 int32_t ButtonWindow::GetImageCount() {
 // LINE 340:
-	__asm        mov    eax, 3;
-	__asm        jmp    _T16;
+	return 0x3;
 // LINE 341:
-_T16:
 }
 
 // FUNCTION: COPTER_D 0x004ae416
@@ -3607,10 +3588,8 @@ _T6a4:
 	__asm        jmp    _T6a9;
 // LINE 400:
 _T6a9:
-	__asm        mov    eax, nReturnValue;
-	__asm        jmp    _T6b1;
+	return nReturnValue;
 // LINE 401:
-_T6b1:
 }
 
 // FUNCTION: COPTER_D 0x004aeace
@@ -3632,7 +3611,6 @@ void ButtonWindow::SetState(int32_t nNewButtonState) {
 // LINE 413:
 _T33:
 	return;
-_T38:
 }
 
 // FUNCTION: COPTER_D 0x004aeb0d
@@ -3648,7 +3626,6 @@ void ButtonWindow::Enable() {
 	__asm        call   dword ptr [eax+0x30];
 // LINE 422:
 	return;
-_T2a:
 }
 
 // FUNCTION: COPTER_D 0x004aeb3c
@@ -3664,7 +3641,6 @@ void ButtonWindow::Disable() {
 	__asm        call   dword ptr [eax+0x30];
 // LINE 430:
 	return;
-_T2a:
 }
 
 // FUNCTION: COPTER_D 0x004aeb6b
@@ -3677,8 +3653,7 @@ int32_t ButtonWindow::ComposeSelf() {
 	__asm        cmp    dword ptr [eax+0x54], 0;
 	__asm        jne    _T23;
 // LINE 442:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Td7;
+	return 0x1;
 // LINE 443:
 _T23:
 	__asm        jmp    _T28;
@@ -3687,8 +3662,7 @@ _T28:
 	__asm        cmp    dword ptr [eax+0x48], 0;
 	__asm        jne    _T3f;
 // LINE 444:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Td7;
+	return 0x1;
 // LINE 445:
 _T3f:
 	__asm        push   1;
@@ -3750,10 +3724,8 @@ _T8d:
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 457:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Td7;
+	return 0x1;
 // LINE 458:
-_Td7:
 }
 
 // FUNCTION: COPTER_D 0x004aec47
@@ -3763,8 +3735,7 @@ long ButtonWindow::DoCursorDown(long __formal, long __formal, unsigned long __fo
 	__asm        cmp    dword ptr [eax+0x78], 0;
 	__asm        jne    _T20;
 // LINE 467:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4c;
+	return 0x0;
 // LINE 469:
 _T20:
 	__asm        mov    eax, this;
@@ -3780,10 +3751,8 @@ _T20:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xC8];
 // LINE 472:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T4c;
+	return 0x1;
 // LINE 473:
-_T4c:
 }
 
 // FUNCTION: COPTER_D 0x004aec9a
@@ -3846,10 +3815,8 @@ _T33:
 	__asm        call   dword ptr [edx];
 // LINE 487:
 _Ta2:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tac;
+	return 0x1;
 // LINE 488:
-_Tac:
 }
 
 // FUNCTION: COPTER_D 0x004aed4d
@@ -3904,10 +3871,8 @@ _T76:
 	__asm        call   dword ptr [eax+0x30];
 // LINE 503:
 _T85:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T8f;
+	return 0x1;
 // LINE 504:
-_T8f:
 }
 
 // FUNCTION: COPTER_D 0x004aede3
@@ -3918,22 +3883,18 @@ int32_t ButtonWindow::CanWeRespondToMessage() {
 	__asm        test   eax, eax;
 	__asm        jne    _T23;
 // LINE 513:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T41;
+	return 0x0;
 // LINE 514:
 _T23:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x78], 0;
 	__asm        jne    _T37;
 // LINE 515:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T41;
+	return 0x0;
 // LINE 516:
 _T37:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T41;
+	return 0x1;
 // LINE 517:
-_T41:
 }
 
 // FUNCTION: COPTER_D 0x004aee29
@@ -4145,7 +4106,7 @@ _T270:
 // LINE 541:
 _T275:
 	return;
-_T27a:
+
 	__asm        mov    eax, this;
 }
 
@@ -4574,17 +4535,15 @@ _T4e7:
 // LINE 557:
 _T4ec:
 	return;
-_T4f1:
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x004af5a6
 int32_t CheckBoxWindow::GetImageCount() {
 // LINE 564:
-	__asm        mov    eax, 4;
-	__asm        jmp    _T16;
+	return 0x4;
 // LINE 565:
-_T16:
 }
 
 // FUNCTION: COPTER_D 0x004af5c1
@@ -4597,8 +4556,7 @@ int32_t CheckBoxWindow::ComposeSelf() {
 	__asm        cmp    dword ptr [eax+0x54], 0;
 	__asm        jne    _T23;
 // LINE 577:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Te5;
+	return 0x1;
 // LINE 578:
 _T23:
 	__asm        jmp    _T28;
@@ -4607,8 +4565,7 @@ _T28:
 	__asm        cmp    dword ptr [eax+0x48], 0;
 	__asm        jne    _T3f;
 // LINE 579:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Te5;
+	return 0x1;
 // LINE 580:
 _T3f:
 	__asm        push   1;
@@ -4677,10 +4634,8 @@ _T9b:
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 591:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Te5;
+	return 0x1;
 // LINE 592:
-_Te5:
 }
 
 // FUNCTION: COPTER_D 0x004af6ab
@@ -4733,7 +4688,6 @@ _T89:
 	this->bBusySettingState = 0x0;
 // LINE 613:
 	return;
-_T9b:
 }
 
 // FUNCTION: COPTER_D 0x004af74d
@@ -4743,8 +4697,7 @@ long CheckBoxWindow::DoCursorDown(long __formal, long __formal, unsigned long __
 	__asm        cmp    dword ptr [eax+0x78], 0;
 	__asm        jne    _T20;
 // LINE 623:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T69;
+	return 0x0;
 // LINE 625:
 _T20:
 	__asm        mov    eax, this;
@@ -4770,28 +4723,22 @@ _T42:
 	__asm        call   dword ptr [eax+0xC8];
 // LINE 630:
 _T5f:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T69;
+	return 0x1;
 // LINE 631:
-_T69:
 }
 
 // FUNCTION: COPTER_D 0x004af7bd
 long CheckBoxWindow::DoCursorUp(long __formal, long __formal, unsigned long __formal) {
 // LINE 639:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T16;
+	return 0x1;
 // LINE 640:
-_T16:
 }
 
 // FUNCTION: COPTER_D 0x004af7da
 long CheckBoxWindow::DoCursorMove(long __formal, long __formal) {
 // LINE 648:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T16;
+	return 0x1;
 // LINE 649:
-_T16:
 }
 
 // FUNCTION: COPTER_D 0x004af7f7
@@ -5222,7 +5169,7 @@ _T4f3:
 // LINE 681:
 _T4f8:
 	return;
-_T4fd:
+
 	__asm        mov    eax, this;
 }
 
@@ -5234,7 +5181,7 @@ void RadioButtonWindow::~RadioButtonWindow() {
 	__asm        jmp    _T1a;
 _T1a:
 	return;
-_T1f:
+
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
 }
@@ -5270,8 +5217,7 @@ int32_t RadioButtonWindow::ComposeSelf() {
 	__asm        cmp    dword ptr [eax+0x54], 0;
 	__asm        jne    _T23;
 // LINE 726:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Te5;
+	return 0x1;
 // LINE 727:
 _T23:
 	__asm        jmp    _T28;
@@ -5280,8 +5226,7 @@ _T28:
 	__asm        cmp    dword ptr [eax+0x48], 0;
 	__asm        jne    _T3f;
 // LINE 728:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Te5;
+	return 0x1;
 // LINE 729:
 _T3f:
 	__asm        push   1;
@@ -5350,19 +5295,15 @@ _T9b:
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 740:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Te5;
+	return 0x1;
 // LINE 741:
-_Te5:
 }
 
 // FUNCTION: COPTER_D 0x004afe54
 int32_t RadioButtonWindow::GetImageCount() {
 // LINE 752:
-	__asm        mov    eax, 4;
-	__asm        jmp    _T16;
+	return 0x4;
 // LINE 753:
-_T16:
 }
 
 // FUNCTION: COPTER_D 0x004afe6f
@@ -5376,7 +5317,6 @@ void RadioButtonWindow::AddToGroup(/*unpacked*/ class ButtonGroup *myNewRadioBut
 	__asm        call   ButtonGroup::AddButton;
 // LINE 762:
 	return;
-_T29:
 }
 
 // FUNCTION: COPTER_D 0x004afe9f
@@ -5392,14 +5332,11 @@ int32_t RadioButtonWindow::RemoveFromGroup() {
 	__asm        mov    ecx, [eax+0x94];
 	__asm        call   ButtonGroup::RemoveButton;
 // LINE 771:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T3f;
+	return 0x1;
 // LINE 773:
 _T38:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T3f;
+	return 0x0;
 // LINE 774:
-_T3f:
 }
 
 // FUNCTION: COPTER_D 0x004afee3
@@ -5478,7 +5415,6 @@ _Td8:
 	this->bBusySettingState = 0x0;
 // LINE 797:
 	return;
-_Tea:
 }
 
 // FUNCTION: COPTER_D 0x004affd4
@@ -5488,8 +5424,7 @@ long RadioButtonWindow::DoCursorDown(long __formal, long __formal, unsigned long
 	__asm        cmp    dword ptr [eax+0x78], 0;
 	__asm        jne    _T20;
 // LINE 807:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T6e;
+	return 0x0;
 // LINE 809:
 _T20:
 	__asm        mov    eax, this;
@@ -5516,28 +5451,22 @@ _T54:
 	__asm        call   dword ptr [eax+0xC8];
 // LINE 824:
 _T64:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T6e;
+	return 0x1;
 // LINE 825:
-_T6e:
 }
 
 // FUNCTION: COPTER_D 0x004b0049
 long RadioButtonWindow::DoCursorUp(long __formal, long __formal, unsigned long __formal) {
 // LINE 831:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T16;
+	return 0x1;
 // LINE 832:
-_T16:
 }
 
 // FUNCTION: COPTER_D 0x004b0066
 long RadioButtonWindow::DoCursorMove(long __formal, long __formal) {
 // LINE 838:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T16;
+	return 0x1;
 // LINE 839:
-_T16:
 }
 
 // FUNCTION: COPTER_D 0x004b0083
@@ -6795,8 +6724,7 @@ _T83:
 _Tae:
 	radioButtonWindow. = iterator.node->data;
 // LINE 1017:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Ted;
+	return 0x1;
 // LINE 1019:
 _Tc3:
 	__asm        mov    eax, iterator.node;
@@ -6814,10 +6742,8 @@ _Te1:
 	__asm        jmp    _T27;
 // LINE 1021:
 _Te6:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Ted;
+	return 0x0;
 // LINE 1022:
-_Ted:
 }
 
 // FUNCTION: COPTER_D 0x004b0f41
@@ -6832,14 +6758,11 @@ int  ButtonGroup::GetSelection(long& lCurrentSelection) {
 	__asm        test   eax, eax;
 	__asm        je     _T2a;
 // LINE 1037:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T31;
+	return 0x1;
 // LINE 1039:
 _T2a:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T31;
+	return 0x0;
 // LINE 1040:
-_T31:
 }
 
 // FUNCTION: COPTER_D 0x004b0f79
@@ -6908,8 +6831,7 @@ _T8a:
 	__asm        cmp    eax, 2;
 	__asm        jne    _Tb8;
 // LINE 1055:
-	__asm        mov    eax, i;
-	__asm        jmp    _Te9;
+	return i;
 // LINE 1056:
 _Tb8:
 	i += 0x1;
@@ -6929,10 +6851,8 @@ _Tda:
 	__asm        jmp    _T2e;
 // LINE 1059:
 _Tdf:
-	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _Te9;
+	return 0xffffffff;
 // LINE 1060:
-_Te9:
 }
 
 // FUNCTION: COPTER_D 0x004b1067
@@ -6990,8 +6910,7 @@ _T83:
 	__asm        cmp    [eax+8], ecx;
 	__asm        jne    _T9c;
 // LINE 1073:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tc6;
+	return 0x1;
 // LINE 1074:
 _T9c:
 	__asm        mov    eax, i.node;
@@ -7009,10 +6928,8 @@ _Tba:
 	__asm        jmp    _T27;
 // LINE 1076:
 _Tbf:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tc6;
+	return 0x0;
 // LINE 1077:
-_Tc6:
 }
 
 // FUNCTION: COPTER_D 0x004b1134
@@ -7078,7 +6995,7 @@ _Tff:
 	__asm        mov    dword ptr [eax], 0x591EE8;
 // LINE 1110:
 	return;
-_T11a:
+
 	__asm        mov    eax, this;
 }
 
@@ -7691,7 +7608,7 @@ _T776:
 // LINE 1152:
 _T77b:
 	return;
-_T780:
+
 	__asm        mov    eax, this;
 }
 
@@ -7768,7 +7685,7 @@ _Tbc:
 	__asm        add    esp, 4;
 _Tea:
 	return;
-_Tef:
+
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
 }
@@ -7817,10 +7734,8 @@ _T6e:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xCC];
 // LINE 1175:
-	__asm        mov    eax, nReturnValue;
-	__asm        jmp    _T84;
+	return nReturnValue;
 // LINE 1176:
-_T84:
 }
 
 // FUNCTION: COPTER_D 0x004b1b65
@@ -8117,7 +8032,6 @@ _T5e:
 // LINE 1213:
 _T6b:
 	return;
-_T70:
 }
 
 // FUNCTION: COPTER_D 0x004b1ed9
@@ -8136,7 +8050,6 @@ void SliderWindow::MoveWindow(int32_t nXPosition, int32_t nYPosition) {
 	__asm        call   dword ptr [eax+0xCC];
 // LINE 1222:
 	return;
-_T2f:
 }
 
 // FUNCTION: COPTER_D 0x004b1f0f
@@ -8155,7 +8068,6 @@ void SliderWindow::SetWidthAndHeight(int32_t nNewWidth, int32_t nNewHeight) {
 	__asm        call   dword ptr [eax+0xCC];
 // LINE 1231:
 	return;
-_T2f:
 }
 
 // FUNCTION: COPTER_D 0x004b1f45
@@ -8170,8 +8082,7 @@ int32_t SliderWindow::ComposeSelf() {
 	__asm        cmp    dword ptr [eax+0x54], 0;
 	__asm        jne    _T23;
 // LINE 1247:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2b8;
+	return 0x1;
 // LINE 1248:
 _T23:
 	__asm        jmp    _T28;
@@ -8180,8 +8091,7 @@ _T28:
 	__asm        cmp    dword ptr [eax+0x48], 0;
 	__asm        jne    _T3f;
 // LINE 1249:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2b8;
+	return 0x1;
 // LINE 1250:
 _T3f:
 	__asm        push   1;
@@ -8427,10 +8337,8 @@ _T25e:
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1284:
 _T2ae:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2b8;
+	return 0x1;
 // LINE 1285:
-_T2b8:
 }
 
 // FUNCTION: COPTER_D 0x004b2202
@@ -8469,10 +8377,8 @@ _T4c:
 	__asm        call   GraphicWindow::MakeFocus;
 	__asm        add    esp, 4;
 // LINE 1300:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T62;
+	return 0x1;
 // LINE 1301:
-_T62:
 }
 
 // FUNCTION: COPTER_D 0x004b226b
@@ -8520,10 +8426,8 @@ _T33:
 	__asm        call   SliderWindow::SetValue;
 // LINE 1315:
 _T73:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T7d;
+	return 0x1;
 // LINE 1316:
-_T7d:
 }
 
 // FUNCTION: COPTER_D 0x004b22ef
@@ -8564,10 +8468,8 @@ _T33:
 	__asm        call   SliderWindow::SetValue;
 // LINE 1330:
 _T61:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T6b;
+	return 0x1;
 // LINE 1331:
-_T6b:
 }
 
 // FUNCTION: COPTER_D 0x004b2361
@@ -8671,10 +8573,8 @@ _T10a:
 // LINE 1369:
 	lNewValue. += this->lSliderMinimumValue;
 // LINE 1370:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T138;
+	return 0x1;
 // LINE 1371:
-_T138:
 }
 
 // FUNCTION: COPTER_D 0x004b24a0
@@ -8730,7 +8630,6 @@ _Ta8:
 	__asm        call   dword ptr [eax+0xC8];
 // LINE 1392:
 	return;
-_Tbb:
 }
 
 // FUNCTION: COPTER_D 0x004b2560
@@ -8867,7 +8766,6 @@ _T128:
 // LINE 1431:
 _T1b1:
 	return;
-_T1b6:
 }
 
 // FUNCTION: COPTER_D 0x004b271b
@@ -8956,7 +8854,6 @@ _Te1:
 	this->bBusySettingValue = 0x0;
 // LINE 1467:
 	return;
-_Tf3:
 }
 
 // FUNCTION: COPTER_D 0x004b2834
@@ -8977,7 +8874,6 @@ void SliderWindow::SetMinimumValue(long lNewSliderMinimumValue) {
 	__asm        call   dword ptr [eax+0xCC];
 // LINE 1476:
 	return;
-_T37:
 }
 
 // FUNCTION: COPTER_D 0x004b2872
@@ -8998,7 +8894,6 @@ void SliderWindow::SetMaximumValue(long lNewSliderMaximumValue) {
 	__asm        call   dword ptr [eax+0xCC];
 // LINE 1485:
 	return;
-_T37:
 }
 
 // FUNCTION: COPTER_D 0x004b28b0
@@ -9275,7 +9170,7 @@ _T313:
 	this->lThumbLimitIndentation = 0x0;
 // LINE 1550:
 	return;
-_T325:
+
 	__asm        mov    eax, this;
 }
 
@@ -9599,7 +9494,7 @@ _T3d4:
 // LINE 1573:
 _T3d9:
 	return;
-_T3de:
+
 	__asm        mov    eax, this;
 }
 
@@ -9661,10 +9556,8 @@ _T86:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xCC];
 // LINE 1594:
-	__asm        mov    eax, nReturnValue;
-	__asm        jmp    _T9c;
+	return nReturnValue;
 // LINE 1595:
-_T9c:
 }
 
 // FUNCTION: COPTER_D 0x004b30ae
@@ -9681,8 +9574,7 @@ int32_t ScrollBarWindow::ComposeSelf() {
 	__asm        cmp    dword ptr [eax+0x54], 0;
 	__asm        jne    _T23;
 // LINE 1613:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T52a;
+	return 0x1;
 // LINE 1614:
 _T23:
 	__asm        jmp    _T28;
@@ -9691,8 +9583,7 @@ _T28:
 	__asm        cmp    dword ptr [eax+0x48], 0;
 	__asm        jne    _T3f;
 // LINE 1615:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T52a;
+	return 0x1;
 // LINE 1616:
 _T3f:
 	__asm        push   1;
@@ -10152,10 +10043,8 @@ _T4a3:
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1709:
 _T520:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T52a;
+	return 0x1;
 // LINE 1710:
-_T52a:
 }
 
 // FUNCTION: COPTER_D 0x004b35dd
@@ -10301,8 +10190,7 @@ _T1a4:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xDC];
 // LINE 1728:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T26c;
+	return 0x1;
 // LINE 1730:
 	__asm        jmp    _T262;
 _T1e0:
@@ -10315,8 +10203,7 @@ _T1e0:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xE0];
 // LINE 1732:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T26c;
+	return 0x1;
 // LINE 1734:
 	__asm        jmp    _T262;
 _T20d:
@@ -10329,8 +10216,7 @@ _T20d:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xE4];
 // LINE 1736:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T26c;
+	return 0x1;
 // LINE 1738:
 	__asm        jmp    _T262;
 _T23a:
@@ -10343,14 +10229,11 @@ _T23a:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xE8];
 // LINE 1740:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T26c;
+	return 0x1;
 // LINE 1749:
 _T262:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T26c;
+	return 0x1;
 // LINE 1750:
-_T26c:
 }
 
 // FUNCTION: COPTER_D 0x004b3850
@@ -10402,10 +10285,8 @@ _T33:
 	__asm        call   SliderWindow::SetValue;
 // LINE 1767:
 _T83:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T8d;
+	return 0x1;
 // LINE 1768:
-_T8d:
 }
 
 // FUNCTION: COPTER_D 0x004b38e4
@@ -10484,10 +10365,8 @@ _Tce:
 	this->bCursorIsOnInitialHitTestResult = 0x0;
 // LINE 1791:
 _Tdb:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Te5;
+	return 0x1;
 // LINE 1792:
-_Te5:
 }
 
 // FUNCTION: COPTER_D 0x004b39d0
@@ -10531,7 +10410,6 @@ _T60:
 // LINE 1810:
 _T6c:
 	return;
-_T71:
 }
 
 // FUNCTION: COPTER_D 0x004b3a46
@@ -10576,7 +10454,6 @@ _T62:
 // LINE 1828:
 _T6e:
 	return;
-_T73:
 }
 
 // FUNCTION: COPTER_D 0x004b3abe
@@ -10620,7 +10497,6 @@ _T60:
 // LINE 1845:
 _T6c:
 	return;
-_T71:
 }
 
 // FUNCTION: COPTER_D 0x004b3b34
@@ -10665,7 +10541,6 @@ _T62:
 // LINE 1862:
 _T6e:
 	return;
-_T73:
 }
 
 // FUNCTION: COPTER_D 0x004b3bac
@@ -10714,7 +10589,6 @@ _T82:
 	__asm        call   dword ptr [eax+0xCC];
 // LINE 1885:
 	return;
-_T95:
 }
 
 // FUNCTION: COPTER_D 0x004b3c48
@@ -10800,8 +10674,7 @@ long ScrollBarWindow::GetCurrentPage() {
 	__asm        cmp    dword ptr [eax+0xB8], 1;
 	__asm        jne    _T32;
 // LINE 1923:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T57;
+	return 0x0;
 // LINE 1924:
 _T32:
 	__asm        mov    eax, this;
@@ -10872,8 +10745,7 @@ int32_t ScrollBarWindow::DoCursorPositionHitTest(enum ScrollBarWindow::ScrollHit
 // LINE 1969:
 	nNewScrollHitTestResult. = 0x0;
 // LINE 1970:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1b4;
+	return 0x0;
 // LINE 1973:
 _T3a:
 	__asm        mov    eax, this;
@@ -10993,10 +10865,8 @@ _T1a1:
 	nNewScrollHitTestResult. = 0x2;
 // LINE 1999:
 _T1aa:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1b4;
+	return 0x1;
 // LINE 2000:
-_T1b4:
 }
 
 // FUNCTION: COPTER_D 0x004b3f73
@@ -11068,7 +10938,6 @@ _Tc0:
 	__asm        call   dword ptr [eax+0xC8];
 // LINE 2017:
 	return;
-_Td3:
 }
 
 // FUNCTION: COPTER_D 0x004b404b
@@ -11375,7 +11244,7 @@ _T261:
 	__asm        call   ListBoxWindow::CalculateAllMetrics;
 // LINE 2096:
 	return;
-_T377:
+
 	__asm        mov    eax, this;
 }
 
@@ -11638,7 +11507,7 @@ _T275:
 	__asm        call   ListBoxWindow::CalculateAllMetrics;
 // LINE 2125:
 	return;
-_T38b:
+
 	__asm        mov    eax, this;
 }
 
@@ -11676,10 +11545,8 @@ int32_t ListBoxWindow::DoMessage(/*unpacked*/ class GraphicWindow *gwSource, lon
 	__asm        call   dword ptr [eax+0x110];
 // LINE 2149:
 _T37:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T3e;
+	return 0x0;
 // LINE 2150:
-_T3e:
 }
 
 // FUNCTION: COPTER_D 0x004b4867
@@ -11718,7 +11585,6 @@ _T42:
 // LINE 2166:
 _T61:
 	return;
-_T66:
 }
 
 // FUNCTION: COPTER_D 0x004b48d2
@@ -11747,7 +11613,6 @@ void ListBoxWindow::SetFontCharacteristics(long lNewHeight, long lNewWidth, long
 	__asm        call   dword ptr [eax+0x30];
 // LINE 2176:
 	return;
-_T48:
 }
 
 // FUNCTION: COPTER_D 0x004b4921
@@ -11803,10 +11668,8 @@ _T69:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x154];
 // LINE 2202:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T90;
+	return 0x1;
 // LINE 2203:
-_T90:
 }
 
 // FUNCTION: COPTER_D 0x004b49b6
@@ -11828,7 +11691,6 @@ _T35:
 // LINE 2219:
 _T4f:
 	return;
-_T54:
 }
 
 // FUNCTION: COPTER_D 0x004b4a11
@@ -11847,7 +11709,6 @@ _T22:
 // LINE 2232:
 _T38:
 	return;
-_T3d:
 }
 
 // FUNCTION: COPTER_D 0x004b4a55
@@ -11866,7 +11727,6 @@ _T21:
 // LINE 2246:
 _T39:
 	return;
-_T3e:
 }
 
 // FUNCTION: COPTER_D 0x004b4a9a
@@ -11904,8 +11764,7 @@ _T44:
 	__asm        cmp    dword ptr [eax+0x54], 0;
 	__asm        jne    _T5b;
 // LINE 2265:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T76f;
+	return 0x0;
 // LINE 2267:
 _T5b:
 	__asm        mov    eax, this;
@@ -12445,10 +12304,8 @@ _T742:
 	__asm        call   dword ptr [eax+0x2C];
 // LINE 2323:
 _T765:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T76f;
+	return 0x1;
 // LINE 2324:
-_T76f:
 }
 
 // FUNCTION: COPTER_D 0x004b520e
@@ -12502,8 +12359,7 @@ int32_t ListBoxWindow::RemoveString(long lIndex) {
 	__asm        cmp    eax, lIndex;
 	__asm        jge    _T31;
 // LINE 2359:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tde;
+	return 0x0;
 // LINE 2362:
 _T31:
 	__asm        mov    eax, lIndex;
@@ -12568,10 +12424,8 @@ _Tb7:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x150];
 // LINE 2377:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tde;
+	return 0x1;
 // LINE 2378:
-_Tde:
 }
 
 // FUNCTION: COPTER_D 0x004b5347
@@ -12734,7 +12588,6 @@ _T19f:
 	__asm        call   dword ptr [eax+0x134];
 // LINE 2389:
 	return;
-_T1c2:
 }
 
 // FUNCTION: COPTER_D 0x004b550e
@@ -12815,10 +12668,8 @@ _Tb2:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x150];
 // LINE 2421:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Td9;
+	return 0x1;
 // LINE 2422:
-_Td9:
 }
 
 // FUNCTION: COPTER_D 0x004b55ee
@@ -13450,14 +13301,11 @@ _T1f4:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 2451:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T214;
+	return 0x1;
 // LINE 2453:
 _T20d:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T214;
+	return 0x0;
 // LINE 2454:
-_T214:
 }
 
 // FUNCTION: COPTER_D 0x004b5e21
@@ -13476,8 +13324,7 @@ _T11:
 	__asm        cmp    eax, lIndex;
 	__asm        jge    _T2e;
 // LINE 2469:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tb4;
+	return 0x0;
 // LINE 2471:
 _T2e:
 	__asm        mov    eax, this;
@@ -13511,8 +13358,7 @@ _T75:
 	__asm        mov    ecx, sFound;
 	__asm        mov    [ecx], eax;
 // LINE 2478:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tb4;
+	return 0x1;
 // LINE 2480:
 _T8a:
 	__asm        mov    eax, tempStringListIterator.node;
@@ -13530,10 +13376,8 @@ _Ta8:
 	__asm        jmp    _T55;
 // LINE 2482:
 _Tad:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tb4;
+	return 0x0;
 // LINE 2483:
-_Tb4:
 }
 
 // FUNCTION: COPTER_D 0x004b5edc
@@ -13707,10 +13551,8 @@ _T1ef:
 	__asm        jmp    _T1f4;
 // LINE 2501:
 _T1f4:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1fb;
+	return 0x0;
 // LINE 2502:
-_T1fb:
 }
 
 // FUNCTION: COPTER_D 0x004b60de
@@ -13834,8 +13676,7 @@ _T133:
 _T142:
 	lIndex. = i;
 // LINE 2517:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T181;
+	return 0x1;
 // LINE 2519:
 _T154:
 	__asm        mov    eax, tempStringListIterator.node;
@@ -13855,10 +13696,8 @@ _T172:
 	__asm        jmp    _T2e;
 // LINE 2522:
 _T17a:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T181;
+	return 0x0;
 // LINE 2523:
-_T181:
 }
 
 // FUNCTION: COPTER_D 0x004b6266
@@ -13875,8 +13714,7 @@ int32_t ListBoxWindow::RemoveStringAtIndex(long lIndex) {
 	__asm        cmp    lOriginalLineCount, 0;
 	__asm        jne    _T2e;
 // LINE 2539:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T318;
+	return 0x0;
 // LINE 2541:
 _T2e:
 	__asm        cmp    lIndex, 0;
@@ -14155,10 +13993,8 @@ _T306:
 // LINE 2562:
 // Block end:
 _T30e:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T318;
+	return 0x1;
 // LINE 2563:
-_T318:
 }
 
 // FUNCTION: COPTER_D 0x004b6585
@@ -14570,19 +14406,15 @@ _T511:
 // LINE 2605:
 // Block end:
 _T519:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T523;
+	return 0x1;
 // LINE 2606:
-_T523:
 }
 
 // FUNCTION: COPTER_D 0x004b6aaf
 long ListBoxWindow::DoCharacter(long lCharacter) {
 // LINE 2619:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
+	return 0x0;
 // LINE 2620:
-_T13:
 }
 
 // FUNCTION: COPTER_D 0x004b6ac9
@@ -14592,8 +14424,7 @@ long ListBoxWindow::DoKeyDown(long lKey, char chModifiers) {
 	__asm        cmp    dword ptr [eax+0x54], 0;
 	__asm        jne    _T20;
 // LINE 2631:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tbe;
+	return 0x0;
 // LINE 2633:
 _T20:
 	__asm        cmp    lKey, 0x28;
@@ -14604,8 +14435,7 @@ _T20:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xF0];
 // LINE 2635:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tbe;
+	return 0x1;
 // LINE 2637:
 	__asm        jmp    _Tb7;
 _T47:
@@ -14617,8 +14447,7 @@ _T47:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xEC];
 // LINE 2639:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tbe;
+	return 0x1;
 // LINE 2641:
 	__asm        jmp    _Tb7;
 _T6e:
@@ -14630,8 +14459,7 @@ _T6e:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xFC];
 // LINE 2643:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tbe;
+	return 0x1;
 // LINE 2645:
 	__asm        jmp    _Tb7;
 _T95:
@@ -14643,14 +14471,11 @@ _T95:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x100];
 // LINE 2647:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tbe;
+	return 0x1;
 // LINE 2649:
 _Tb7:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tbe;
+	return 0x0;
 // LINE 2650:
-_Tbe:
 }
 
 // FUNCTION: COPTER_D 0x004b6b8e
@@ -14695,10 +14520,8 @@ _T66:
 	__asm        call   GraphicWindow::MakeFocus;
 	__asm        add    esp, 4;
 // LINE 2670:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T7c;
+	return 0x1;
 // LINE 2671:
-_T7c:
 }
 
 // FUNCTION: COPTER_D 0x004b6c11
@@ -14708,8 +14531,7 @@ int32_t ListBoxWindow::SetSelection(long lIndex) {
 	__asm        cmp    dword ptr [eax+0xC8], 0;
 	__asm        je     _T23;
 // LINE 2683:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T136;
+	return 0x0;
 // LINE 2684:
 _T23:
 	this->bBusySettingSelection = 0x1;
@@ -14730,8 +14552,7 @@ _T23:
 _T5b:
 	this->bBusySettingSelection = 0x0;
 // LINE 2688:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T136;
+	return 0x0;
 // LINE 2690:
 _T6f:
 	__asm        mov    eax, this;
@@ -14741,8 +14562,7 @@ _T6f:
 // LINE 2691:
 	this->bBusySettingSelection = 0x0;
 // LINE 2692:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T136;
+	return 0x1;
 // LINE 2695:
 _T98:
 	this->lCurrentSelection = lIndex;
@@ -14797,10 +14617,8 @@ _Tda:
 _T11f:
 	this->bBusySettingSelection = 0x0;
 // LINE 2706:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T136;
+	return 0x1;
 // LINE 2707:
-_T136:
 }
 
 // FUNCTION: COPTER_D 0x004b6d4e
@@ -14888,7 +14706,6 @@ _T6f:
 	__asm        call   dword ptr [eax+0x150];
 // LINE 2738:
 	return;
-_T91:
 }
 
 // FUNCTION: COPTER_D 0x004b6e56
@@ -14965,7 +14782,6 @@ _T92:
 // LINE 2763:
 _Te5:
 	return;
-_Tea:
 }
 
 // FUNCTION: COPTER_D 0x004b6f47
@@ -14985,10 +14801,8 @@ int32_t ListBoxWindow::ScrollToStart() {
 	__asm        call   dword ptr [eax+0x110];
 // LINE 2774:
 _T32:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T39;
+	return 0x0;
 // LINE 2775:
-_T39:
 }
 
 // FUNCTION: COPTER_D 0x004b6f85
@@ -15029,10 +14843,8 @@ _T4e:
 	__asm        call   dword ptr [eax+0x110];
 // LINE 2797:
 _T69:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T73;
+	return 0x1;
 // LINE 2798:
-_T73:
 }
 
 // FUNCTION: COPTER_D 0x004b6ffd
@@ -15049,8 +14861,7 @@ int32_t ListBoxWindow::MoveLineUp() {
 	__asm        cmp    lCurrentLineCount, 0;
 	__asm        jg     _T2e;
 // LINE 2814:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T68;
+	return 0x0;
 // LINE 2816:
 _T2e:
 	__asm        mov    eax, this;
@@ -15066,14 +14877,11 @@ _T2e:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xDC];
 // LINE 2818:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T68;
+	return 0x1;
 // LINE 2820:
 _T61:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T68;
+	return 0x0;
 // LINE 2821:
-_T68:
 }
 
 // FUNCTION: COPTER_D 0x004b706a
@@ -15090,8 +14898,7 @@ int32_t ListBoxWindow::MoveLineDown() {
 	__asm        cmp    lCurrentLineCount, 0;
 	__asm        jg     _T2e;
 // LINE 2839:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T6b;
+	return 0x0;
 // LINE 2841:
 _T2e:
 	__asm        mov    eax, this;
@@ -15109,14 +14916,11 @@ _T2e:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xDC];
 // LINE 2843:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T6b;
+	return 0x1;
 // LINE 2845:
 _T64:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T6b;
+	return 0x0;
 // LINE 2846:
-_T6b:
 }
 
 // FUNCTION: COPTER_D 0x004b70da
@@ -15157,10 +14961,8 @@ _T53:
 	__asm        call   dword ptr [eax+0x110];
 // LINE 2870:
 _T65:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T6f;
+	return 0x1;
 // LINE 2871:
-_T6f:
 }
 
 // FUNCTION: COPTER_D 0x004b714e
@@ -15213,10 +15015,8 @@ _T85:
 	__asm        call   dword ptr [eax+0x110];
 // LINE 2893:
 _T97:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Ta1;
+	return 0x1;
 // LINE 2894:
-_Ta1:
 }
 
 // FUNCTION: COPTER_D 0x004b71f4
@@ -15381,8 +15181,7 @@ _T191:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xDC];
 // LINE 2908:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1ee;
+	return 0x1;
 // LINE 2910:
 _T1c1:
 	__asm        mov    eax, tempStringListIterator.node;
@@ -15402,10 +15201,8 @@ _T1df:
 	__asm        jmp    _T2e;
 // LINE 2913:
 _T1e7:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1ee;
+	return 0x0;
 // LINE 2914:
-_T1ee:
 }
 
 // FUNCTION: COPTER_D 0x004b73e9
@@ -15424,7 +15221,6 @@ void ListBoxWindow::SetShouldSort() {
 // LINE 2927:
 _T37:
 	return;
-_T3c:
 }
 
 // FUNCTION: COPTER_D 0x004b742a
@@ -15754,7 +15550,6 @@ _T4ac:
 // LINE 2951:
 _T4b1:
 	return;
-_T4b6:
 }
 
 // FUNCTION: COPTER_D 0x004b78e5
@@ -15868,10 +15663,8 @@ _Tc0:
 // LINE 2991:
 // Block end:
 _Tf3:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tfd;
+	return 0x1;
 // LINE 2992:
-_Tfd:
 }
 
 // FUNCTION: COPTER_D 0x004b7a29
@@ -15906,7 +15699,6 @@ _T38:
 // LINE 3008:
 _T64:
 	return;
-_T69:
 }
 
 // FUNCTION: COPTER_D 0x004b7a99
@@ -15973,7 +15765,6 @@ _T47:
 // Block end:
 _Tbe:
 	return;
-_Tc3:
 }
 
 // FUNCTION: COPTER_D 0x004b7b61
@@ -16042,7 +15833,6 @@ _T93:
 // LINE 3041:
 _Tba:
 	return;
-_Tbf:
 }
 
 // FUNCTION: COPTER_D 0x004b7c25
@@ -16064,7 +15854,7 @@ void PopupMenuWindow::PopupMenuWindow(/*packed*/ class MRect& rectNewWindow, int
 	__asm        mov    dword ptr [eax], 0x592220;
 // LINE 3060:
 	return;
-_T36:
+
 	__asm        mov    eax, this;
 }
 
@@ -16099,10 +15889,8 @@ int32_t PopupMenuWindow::Initialize() {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x98];
 // LINE 3072:
-	__asm        mov    eax, nReturnValue;
-	__asm        jmp    _T57;
+	return nReturnValue;
 // LINE 3073:
-_T57:
 }
 
 // FUNCTION: COPTER_D 0x004b7cc1
@@ -16170,8 +15958,7 @@ _Ta0:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x6C];
 // LINE 3090:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tca;
+	return 0x1;
 // LINE 3092:
 _Tb5:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(chModifiers);
@@ -16303,10 +16090,8 @@ _T60:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x6C];
 // LINE 3125:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T75;
+	return 0x1;
 // LINE 3126:
-_T75:
 }
 
 // FUNCTION: COPTER_D 0x004b7edf
@@ -16322,10 +16107,8 @@ long PopupMenuWindow::DoCursorMove(long nCursorX, long nCursorY) {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xDC];
 // LINE 3140:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T32;
+	return 0x1;
 // LINE 3141:
-_T32:
 }
 
 // FUNCTION: COPTER_D 0x004b7f18
@@ -16346,10 +16129,8 @@ int32_t PopupMenuWindow::RemoveStringAtIndex(long lIndex) {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x158];
 // LINE 3153:
-	__asm        mov    eax, nReturnValue;
-	__asm        jmp    _T3a;
+	return nReturnValue;
 // LINE 3154:
-_T3a:
 }
 
 // FUNCTION: COPTER_D 0x004b7f59
@@ -16372,10 +16153,8 @@ int32_t PopupMenuWindow::InsertStringAtIndex(long lIndex, /*packed*/ class basic
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x158];
 // LINE 3166:
-	__asm        mov    eax, nReturnValue;
-	__asm        jmp    _T3e;
+	return nReturnValue;
 // LINE 3167:
-_T3e:
 }
 
 // FUNCTION: COPTER_D 0x004b7f9e
@@ -16634,7 +16413,6 @@ _T23d:
 // LINE 3190:
 _T2a0:
 	return;
-_T2a5:
 }
 
 

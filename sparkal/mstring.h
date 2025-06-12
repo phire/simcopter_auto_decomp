@@ -311,8 +311,7 @@ _T43b:
 	__asm        jmp    _T440;
 // LINE 133:
 _T440:
-	__asm        mov    eax, nChars;
-	__asm        jmp    _T73f;
+	return nChars;
 // LINE 136:
 _T44b:
 	__asm        jmp    _T450;
@@ -513,9 +512,7 @@ _T72f:
 	__asm        jmp    _T734;
 // LINE 137:
 _T734:
-	__asm        mov    eax, nChars;
-	__asm        jmp    _T73f;
+	return nChars;
 // LINE 139:
-_T73f:
 }
 

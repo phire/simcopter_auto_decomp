@@ -429,10 +429,8 @@ _T2f7:
 	__asm        mov    buffer1, eax;
 // LINE 188:
 _T305:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T30f;
+	return 0x1;
 // LINE 189:
-_T30f:
 }
 
 // FUNCTION: COPTER_D 0x00495ef7

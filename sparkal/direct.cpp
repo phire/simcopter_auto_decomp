@@ -663,7 +663,7 @@ _T78:
 	this->directoryParent = 0x0;
 // LINE 36:
 	return;
-_T86:
+
 	__asm        mov    eax, this;
 }
 
@@ -818,7 +818,7 @@ _T1c4:
 	this->lType = lNewType;
 // LINE 46:
 	return;
-_T1d2:
+
 	__asm        mov    eax, this;
 }
 
@@ -2199,52 +2199,41 @@ _T504:
 // LINE 106:
 _T509:
 	return;
-_T50e:
 }
 
 // FUNCTION: COPTER_D 0x00482d48
 int32_t DirectoryEntry::IsMediaRemovable() {
 // LINE 112:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
+	return 0x0;
 // LINE 113:
-_T13:
 }
 
 // FUNCTION: COPTER_D 0x00482d60
 unsigned long DirectoryEntry::GetSize() {
 // LINE 119:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
+	return 0x0;
 // LINE 131:
-_T13:
 }
 
 // FUNCTION: COPTER_D 0x00482d78
 int32_t DirectoryEntry::GetCreationDate() {
 // LINE 137:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
+	return 0x0;
 // LINE 138:
-_T13:
 }
 
 // FUNCTION: COPTER_D 0x00482d90
 int32_t DirectoryEntry::GetlastModificationDate() {
 // LINE 144:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
+	return 0x0;
 // LINE 145:
-_T13:
 }
 
 // FUNCTION: COPTER_D 0x00482da8
 int32_t DirectoryEntry::GetSerialNumber() {
 // LINE 151:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
+	return 0x0;
 // LINE 152:
-_T13:
 }
 
 // FUNCTION: COPTER_D 0x00482dc0
@@ -3083,10 +3072,8 @@ _T502:
 // FUNCTION: COPTER_D 0x004837af
 int  Directory::IsDirectoryRoot() {
 // LINE 209:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
+	return 0x0;
 // LINE 210:
-_T13:
 }
 
 // FUNCTION: COPTER_D 0x004837c7
@@ -5455,8 +5442,7 @@ _T12a:
 	__asm        je     _T143;
 // LINE 452:
 _T139:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T16d;
+	return 0x1;
 // LINE 453:
 _T143:
 	__asm        mov    eax, tempDirectoryEntryListIterator.node;
@@ -5474,10 +5460,8 @@ _T161:
 	__asm        jmp    _T26;
 // LINE 455:
 _T166:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T16d;
+	return 0x0;
 // LINE 456:
-_T16d:
 }
 
 // FUNCTION: COPTER_D 0x00485b36
@@ -5646,10 +5630,8 @@ _T1d3:
 	__asm        call   Directory::ReadDirectoryEntries;
 // LINE 478:
 _T1ed:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1f7;
+	return 0x1;
 // LINE 479:
-_T1f7:
 }
 
 // FUNCTION: COPTER_D 0x00485d34

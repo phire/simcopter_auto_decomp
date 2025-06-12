@@ -1045,10 +1045,8 @@ _T299:
 	__asm        jmp    _T1b4;
 // LINE 692:
 _T29e:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2a8;
+	return 0x1;
 // LINE 693:
-_T2a8:
 }
 
 // FUNCTION: COPTER_D 0x004eb877
@@ -1105,10 +1103,8 @@ _T75:
 	__asm        call   S3SetDayNight;
 	__asm        add    esp, 4;
 // LINE 725:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T8d;
+	return 0x1;
 // LINE 726:
-_T8d:
 }
 
 // FUNCTION: COPTER_D 0x004eb909
@@ -1154,10 +1150,8 @@ int32_t VRAppGameSave(void * __ptr32 miffWriter) {
 	__asm        call   S3AutoMIFFSave;
 	__asm        add    esp, 4;
 // LINE 751:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T70;
+	return 0x1;
 // LINE 752:
-_T70:
 }
 
 // FUNCTION: COPTER_D 0x004eb97e
@@ -1288,7 +1282,6 @@ _Tde:
 // LINE 905:
 	return;
 // LINE 906:
-_T132:
 }
 
 // FUNCTION: COPTER_D 0x004ebae1

@@ -193,7 +193,7 @@ _T43:
 // LINE 38:
 _T6b:
 	return;
-_T70:
+
 	__asm        mov    eax, this;
 }
 
@@ -324,17 +324,14 @@ _T1b:
 	__asm        test   eax, eax;
 	__asm        jne    _T5a;
 // LINE 96:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T66;
+	return 0x1;
 // LINE 98:
 _T5a:
 	__asm        jmp    _T18;
 // LINE 99:
 _T5f:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T66;
+	return 0x0;
 // LINE 100:
-_T66:
 }
 
 // FUNCTION: COPTER_D 0x0049a696
@@ -343,8 +340,7 @@ int32_t JoystickManager::GetJoystickName(uint32_t nJoystick, char * szJoystickNa
 	__asm        cmp    nJoystick, 0x10;
 	__asm        jb     _T1d;
 // LINE 108:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T64;
+	return 0x0;
 // LINE 109:
 _T1d:
 	__asm        mov    eax, nJoystick;
@@ -353,8 +349,7 @@ _T1d:
 	__asm        test   eax, eax;
 	__asm        jne    _T37;
 // LINE 110:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T64;
+	return 0x0;
 // LINE 112:
 _T37:
 	__asm        mov    eax, nJoystick;
@@ -371,10 +366,8 @@ _T37:
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 113:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T64;
+	return 0x1;
 // LINE 115:
-_T64:
 }
 
 // FUNCTION: COPTER_D 0x0049a701
@@ -408,17 +401,14 @@ _T1b:
 // LINE 130:
 	nJoystick[0] = i;
 // LINE 131:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T71;
+	return 0x1;
 // LINE 134:
 _T62:
 	__asm        jmp    _T18;
 // LINE 135:
 _T67:
-	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _T71;
+	return 0xffffffff;
 // LINE 136:
-_T71:
 }
 
 // FUNCTION: COPTER_D 0x0049a779
@@ -438,10 +428,8 @@ int32_t JoystickManager::Normalize(int32_t nPosition) {
 	__asm        add    ecx, eax;
 	__asm        mov    nPosition, ecx;
 // LINE 167:
-	__asm        mov    eax, nPosition;
-	__asm        jmp    _T3b;
+	return nPosition;
 // LINE 168:
-_T3b:
 }
 
 // FUNCTION: COPTER_D 0x0049a7bb
@@ -473,8 +461,7 @@ int32_t JoystickManager::GetPositionQualitative(int32_t nJoystick, int32_t nAxis
 	__asm        cmp    eax, nValue;
 	__asm        jle    _T51;
 // LINE 194:
-	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _T74;
+	return 0xffffffff;
 // LINE 195:
 _T51:
 	__asm        mov    eax, this;
@@ -483,14 +470,11 @@ _T51:
 	__asm        cmp    eax, nValue;
 	__asm        jge    _T6d;
 // LINE 196:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T74;
+	return 0x1;
 // LINE 199:
 _T6d:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T74;
+	return 0x0;
 // LINE 200:
-_T74:
 }
 
 // FUNCTION: COPTER_D 0x0049a836
@@ -506,8 +490,7 @@ int32_t JoystickManager::GetPositionQuantitative(int32_t nJoystick, int32_t nAxi
 	__asm        cmp    nJoystick, 0x10;
 	__asm        jle    _T1d;
 // LINE 228:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1a0;
+	return 0x0;
 // LINE 230:
 _T1d:
 	__asm        cmp    bUseCache, 0;
@@ -587,8 +570,7 @@ _Tbf:
 	__asm        jmp    _T10c;
 // LINE 261:
 _Td4:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1a0;
+	return 0x0;
 // LINE 262:
 	__asm        jmp    _T10c;
 _Te0:
@@ -627,8 +609,7 @@ _T12d:
 	__asm        cmp    mmResult, 0;
 	__asm        je     _T156;
 // LINE 268:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1a0;
+	return 0x0;
 // LINE 270:
 _T156:
 	__asm        mov    eax, dwResultToUse;
@@ -652,14 +633,11 @@ _T156:
 	__asm        cmp    eax, nReturnValue;
 	__asm        jge    _T198;
 // LINE 273:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1a0;
+	return 0x0;
 // LINE 274:
 _T198:
-	__asm        mov    eax, nReturnValue;
-	__asm        jmp    _T1a0;
+	return nReturnValue;
 // LINE 279:
-_T1a0:
 }
 
 // FUNCTION: COPTER_D 0x0049a9dd
@@ -676,8 +654,7 @@ int32_t JoystickManager::GetButtonState(int32_t nJoystick, int32_t nButton, int3
 	__asm        jle    _T27;
 // LINE 305:
 _T20:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tb5;
+	return 0x0;
 // LINE 306:
 _T27:
 	__asm        cmp    bUseCache, 0;
@@ -719,8 +696,7 @@ _T77:
 	__asm        cmp    mmResult, 0;
 	__asm        je     _Ta0;
 // LINE 316:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tb5;
+	return 0x0;
 // LINE 318:
 _Ta0:
 	__asm        mov    eax, nButton;
@@ -740,8 +716,7 @@ int32_t JoystickManager::GetCompleteState(int32_t nJoystick) {
 	__asm        cmp    nJoystick, 0x10;
 	__asm        jle    _T1d;
 // LINE 342:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T9a;
+	return 0x0;
 // LINE 343:
 _T1d:
 	__asm        mov    eax, nJoystick;
@@ -778,14 +753,11 @@ _T54:
 	__asm        cmp    mmResult, 0;
 	__asm        jne    _T93;
 // LINE 347:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T9a;
+	return 0x1;
 // LINE 349:
 _T93:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T9a;
+	return 0x0;
 // LINE 351:
-_T9a:
 }
 
 // FUNCTION: COPTER_D 0x0049ab3a
@@ -865,14 +837,11 @@ int32_t JoystickManager::Calibrate(int32_t nJoystick) {
 	__asm        cmp    nReturnValue, 0x1F;
 	__asm        jbe    _T30;
 // LINE 421:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T37;
+	return 0x1;
 // LINE 422:
 _T30:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T37;
+	return 0x0;
 // LINE 427:
-_T37:
 }
 
 // FUNCTION: COPTER_D 0x0049ac20
@@ -883,8 +852,7 @@ int32_t JoystickManager::GetWindowsThreshold(int32_t nJoystick, long * lThreshol
 	__asm        cmp    nJoystick, 0x10;
 	__asm        jle    _T1d;
 // LINE 454:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T55;
+	return 0x0;
 // LINE 455:
 _T1d:
 	__asm        jmp    _T22;
@@ -901,14 +869,11 @@ _T22:
 	__asm        cmp    mmResult, 0;
 	__asm        jne    _T4e;
 // LINE 457:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T55;
+	return 0x1;
 // LINE 458:
 _T4e:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T55;
+	return 0x0;
 // LINE 463:
-_T55:
 }
 
 // FUNCTION: COPTER_D 0x0049ac7c
@@ -919,8 +884,7 @@ int32_t JoystickManager::SetWindowsThreshold(int32_t nJoystick, long lThreshold)
 	__asm        cmp    nJoystick, 0x10;
 	__asm        jle    _T1d;
 // LINE 478:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T55;
+	return 0x0;
 // LINE 479:
 _T1d:
 	__asm        jmp    _T22;
@@ -937,14 +901,11 @@ _T22:
 	__asm        cmp    mmResult, 0;
 	__asm        jne    _T4e;
 // LINE 481:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T55;
+	return 0x1;
 // LINE 482:
 _T4e:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T55;
+	return 0x0;
 // LINE 487:
-_T55:
 }
 
 // FUNCTION: COPTER_D 0x0049acd8
@@ -968,7 +929,6 @@ void JoystickManager::SetNormalizedMinMax(long lNewMin, long lNewMax) {
 	__asm        mov    [eax+0x5C], ecx;
 // LINE 503:
 	return;
-_T43:
 }
 
 

@@ -249,8 +249,7 @@ ERROR_READING_WAVE:
 END_OF_ROUTINE:
 	phmmioIn-> = hmmioIn;
 // LINE 140:
-	__asm        mov    eax, nError;
-	__asm        jmp    _T204;
+	return nError;
 // LINE 141:
 _T1d7:
 	__asm        jmp    END_OF_ROUTINE;
@@ -270,7 +269,6 @@ _T1fa:
 	__asm        jmp    ERROR_READING_WAVE;
 _T1ff:
 	__asm        jmp    ERROR_READING_WAVE;
-_T204:
 }
 
 // FUNCTION: COPTER_D 0x0048edb9
@@ -310,12 +308,10 @@ _T38:
 	__asm        mov    nError, eax;
 // LINE 168:
 ERROR_READING_WAVE:
-	__asm        mov    eax, nError;
-	__asm        jmp    _T67;
+	return nError;
 // LINE 169:
 _T62:
 	__asm        jmp    ERROR_READING_WAVE;
-_T67:
 }
 
 // FUNCTION: COPTER_D 0x0048ee25
@@ -435,8 +431,7 @@ ERROR_CANNOT_READ:
 	cbActualRead[0] = 0x0;
 // LINE 238:
 FINISHED_READING:
-	__asm        mov    eax, nError;
-	__asm        jmp    _T145;
+	return nError;
 // LINE 239:
 _T12c:
 	__asm        jmp    FINISHED_READING;
@@ -448,7 +443,6 @@ _T13b:
 	__asm        jmp    ERROR_CANNOT_READ;
 _T140:
 	__asm        jmp    ERROR_CANNOT_READ;
-_T145:
 }
 
 // FUNCTION: COPTER_D 0x0048ef6f
@@ -467,10 +461,8 @@ int32_t WaveCloseReadFile(void * __ptr32 *phmmio) {
 	phmmio-> = 0x0;
 // LINE 257:
 _T29:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T30;
+	return 0x0;
 // LINE 258:
-_T30:
 }
 
 // FUNCTION: COPTER_D 0x0048efa4
@@ -607,8 +599,7 @@ DONE_LOADING:
 	hmmioIn = 0x0;
 // LINE 331:
 _T150:
-	__asm        mov    eax, nError;
-	__asm        jmp    _T176;
+	return nError;
 // LINE 332:
 _T158:
 	__asm        jmp    DONE_LOADING;
@@ -622,6 +613,5 @@ _T16c:
 	__asm        jmp    ERROR_LOADING;
 _T171:
 	__asm        jmp    ERROR_LOADING;
-_T176:
 }
 

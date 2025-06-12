@@ -153,7 +153,7 @@ void Keyboard::Keyboard() {
 	__asm        call   Keyboard::ClearSettings;
 // LINE 33:
 	return;
-_T21:
+
 	__asm        mov    eax, this;
 }
 
@@ -227,7 +227,6 @@ void Keyboard::ProcessKeyDown(unsigned char chKey) {
 // LINE 74:
 _T3a:
 	return;
-_T3f:
 }
 
 // FUNCTION: COPTER_D 0x00431dd3
@@ -252,7 +251,6 @@ void Keyboard::ProcessKeyUp(unsigned char chKey) {
 // LINE 87:
 _T3a:
 	return;
-_T3f:
 }
 
 // SYNTHETIC: COPTER_D 0x00431e19
@@ -278,7 +276,6 @@ _T38:
 	__asm        call   CharList::DeleteAllItems;
 // LINE 101:
 	return;
-_T45:
 }
 
 // FUNCTION: COPTER_D 0x00431e63
@@ -300,14 +297,11 @@ int32_t Keyboard::CharIsModifier(unsigned char chKey) {
 	__asm        jne    _T40;
 // LINE 112:
 _T36:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T47;
+	return 0x1;
 // LINE 115:
 _T40:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T47;
+	return 0x0;
 // LINE 116:
-_T47:
 }
 
 // FUNCTION: COPTER_D 0x00431eb1
@@ -648,14 +642,11 @@ int32_t Keyboard::IsToggleKeySet(unsigned char chToggleKey) {
 	__asm        test   al, 1;
 	__asm        je     _T27;
 // LINE 244:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2e;
+	return 0x1;
 // LINE 245:
 _T27:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T2e;
+	return 0x0;
 // LINE 249:
-_T2e:
 }
 
 

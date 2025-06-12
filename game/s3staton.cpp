@@ -734,7 +734,6 @@ _Ta7:
 // LINE 31:
 _Tb1:
 	return;
-_Tb6:
 }
 
 // FUNCTION: COPTER_D 0x00539cbb
@@ -795,7 +794,6 @@ _T9d:
 // LINE 43:
 _Ta2:
 	return;
-_Ta7:
 }
 
 // FUNCTION: COPTER_D 0x00539d67
@@ -900,8 +898,7 @@ _Td7:
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     _Te9;
 
-	__asm        mov    eax, direction;
-	__asm        jmp    _T274;
+	return direction;
 // LINE 87:
 _Te9:
 	__asm        mov    i, 0;
@@ -1031,8 +1028,7 @@ _T24c:
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     _T25e;
 
-	__asm        mov    eax, direction;
-	__asm        jmp    _T274;
+	return direction;
 // LINE 99:
 _T25e:
 	__asm        inc    direction;
@@ -1041,10 +1037,8 @@ _T25e:
 	__asm        jmp    _Tf5;
 // LINE 103:
 _T26a:
-	__asm        mov    eax, 0xFF;
-	__asm        jmp    _T274;
+	return 0xff;
 // LINE 104:
-_T274:
 }
 
 // FUNCTION: COPTER_D 0x0053a01e
@@ -1341,7 +1335,6 @@ _T14c:
 // LINE 166:
 _T151:
 	return;
-_T156:
 }
 
 // FUNCTION: COPTER_D 0x0053a358
@@ -1478,7 +1471,6 @@ _T11f:
 // LINE 218:
 _T13c:
 	return;
-_T141:
 }
 
 // FUNCTION: COPTER_D 0x0053a4a0
@@ -1550,8 +1542,7 @@ _Tb3:
 	__asm        jmp    _T59;
 // LINE 244:
 _Tb8:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tbf;
+	return 0x0;
 // LINE 245:
 _Tbf:
 }
@@ -1639,7 +1630,6 @@ _T34:
 // LINE 268:
 _Tc5:
 	return;
-_Tca:
 }
 
 // FUNCTION: COPTER_D 0x0053a637
@@ -1778,7 +1768,6 @@ _T13e:
 	__asm        mov    [edx+4], ecx;
 // LINE 311:
 	return;
-_T15a:
 }
 
 // FUNCTION: COPTER_D 0x0053a798
@@ -1881,7 +1870,6 @@ _T3f:
 // LINE 334:
 _Tfc:
 	return;
-_T101:
 }
 
 // FUNCTION: COPTER_D 0x0053a8a0
@@ -2048,7 +2036,6 @@ _T18f:
 	__asm        mov    [ecx+8], ax;
 // LINE 377:
 	return;
-_T1b8:
 }
 
 // FUNCTION: COPTER_D 0x0053aa5f
@@ -2161,7 +2148,6 @@ _T46:
 	__asm        dec    dword ptr [eax+ecx+0x5C];
 // LINE 426:
 	return;
-_T5d:
 }
 
 // FUNCTION: COPTER_D 0x0053ab93
@@ -3507,7 +3493,7 @@ _T355:
 	__asm        mov    [ecx+0x10], eax;
 // LINE 694:
 	return;
-_T37a:
+
 	__asm        mov    eax, this;
 }
 

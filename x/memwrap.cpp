@@ -109,28 +109,22 @@ enum PoolType {
 // FUNCTION: COPTER_D 0x00554720
 void * __ptr32 Memory::DetachPlatformHandle(void * __ptr32 mh) {
 // LINE 104:
-	__asm        mov    eax, mh;
-	__asm        jmp    _T0e;
+	return mh;
 // LINE 105:
-_T0e:
 }
 
 // FUNCTION: COPTER_D 0x00554733
 void * __ptr32 Memory::GetPlatformHandle(void * __ptr32 mh) {
 // LINE 108:
-	__asm        mov    eax, mh;
-	__asm        jmp    _T0e;
+	return mh;
 // LINE 109:
-_T0e:
 }
 
 // FUNCTION: COPTER_D 0x00554746
 void * __ptr32 Memory::AdoptPlatformHandle(void * __ptr32 mem) {
 // LINE 115:
-	__asm        mov    eax, mem;
-	__asm        jmp    _T0e;
+	return mem;
 // LINE 116:
-_T0e:
 }
 
 // FUNCTION: COPTER_D 0x00554759
@@ -219,10 +213,8 @@ _Tc6:
 // LINE 183:
 // Block end:
 _Te2:
-	__asm        mov    eax, mem;
-	__asm        jmp    _Tea;
+	return mem;
 // LINE 184:
-_Tea:
 }
 
 // FUNCTION: COPTER_D 0x00554848
@@ -239,7 +231,6 @@ void Memory::HUnpurge(void * __ptr32 purged, long oldSize) {
 	__asm        call   dword ptr ds:[0x6C371C];
 // LINE 197:
 	return;
-_T23:
 }
 
 // FUNCTION: COPTER_D 0x00554870
@@ -267,10 +258,8 @@ unsigned char * Memory::PAlloc(long * pool, long size) {
 	__asm        add    esp, 0x10;
 // LINE 212:
 _T46:
-	__asm        mov    eax, mem;
-	__asm        jmp    _T4e;
+	return mem;
 // LINE 214:
-_T4e:
 }
 
 // FUNCTION: COPTER_D 0x005548c3
@@ -334,7 +323,6 @@ _T75:
 // LINE 243:
 _Ta9:
 	return;
-_Tae:
 }
 
 // FUNCTION: COPTER_D 0x00554976
@@ -371,7 +359,6 @@ void Memory::PFree(unsigned char * mem) {
 // LINE 260:
 _T60:
 	return;
-_T65:
 }
 
 // FUNCTION: COPTER_D 0x005549e0
@@ -404,10 +391,8 @@ unsigned char * Memory::HLock(void * __ptr32 mem) {
 	__asm        add    esp, 0x10;
 // LINE 289:
 _T50:
-	__asm        mov    eax, p;
-	__asm        jmp    _T58;
+	return p;
 // LINE 290:
-_T58:
 }
 
 // FUNCTION: COPTER_D 0x00554a3d
@@ -438,7 +423,6 @@ void Memory::HUnlock(void * __ptr32 mem) {
 // LINE 307:
 _T4d:
 	return;
-_T52:
 }
 
 // FUNCTION: COPTER_D 0x00554a94
@@ -448,7 +432,6 @@ void Memory::HMoveHi(void * __ptr32 h) {
 	__asm        call   dword ptr ds:[0x6C3720];
 // LINE 320:
 	return;
-_T13:
 }
 
 // FUNCTION: COPTER_D 0x00554aac
@@ -462,7 +445,6 @@ void Memory::HPurge(void * __ptr32 h) {
 	__asm        add    esp, 0x10;
 // LINE 332:
 	return;
-_T27:
 }
 
 // FUNCTION: COPTER_D 0x00554ad8
@@ -476,7 +458,6 @@ void Memory::HNoPurge(void * __ptr32 h) {
 	__asm        add    esp, 0x10;
 // LINE 344:
 	return;
-_T27:
 }
 
 // FUNCTION: COPTER_D 0x00554b04
@@ -546,7 +527,6 @@ _T2f:
 	__asm        add    esp, 0xC;
 // LINE 377:
 	return;
-_T48:
 }
 
 // FUNCTION: COPTER_D 0x00554bc3
@@ -573,7 +553,6 @@ _T2f:
 	__asm        add    esp, 0xC;
 // LINE 387:
 	return;
-_T48:
 }
 
 // FUNCTION: COPTER_D 0x00554c10
@@ -610,7 +589,6 @@ void Memory::BlockFill(void * __ptr32 mem, unsigned char byteVal, unsigned long 
 // LINE 399:
 _T59:
 	return;
-_T5e:
 }
 
 // FUNCTION: COPTER_D 0x00554c73
@@ -647,10 +625,8 @@ long * Memory::PoolAlloc(long totalSize, enum Memory::PoolType poolType) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 410:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T29;
+	return 0x0;
 // LINE 411:
-_T29:
 }
 
 // FUNCTION: COPTER_D 0x00554cd9
@@ -664,7 +640,6 @@ void Memory::PoolFree(long * pool) {
 	__asm        add    esp, 0x10;
 // LINE 418:
 	return;
-_T27:
 }
 
 // FUNCTION: COPTER_D 0x00554d05
@@ -692,10 +667,8 @@ unsigned long Memory::HGetSize(void * __ptr32 mem) {
 	__asm        add    esp, 0x10;
 // LINE 432:
 _T48:
-	__asm        mov    eax, size;
-	__asm        jmp    _T50;
+	return size;
 // LINE 433:
-_T50:
 }
 
 // FUNCTION: COPTER_D 0x00554d5a
@@ -723,10 +696,8 @@ unsigned long Memory::PGetSize(unsigned char * mem) {
 	__asm        add    esp, 0x10;
 // LINE 447:
 _T48:
-	__asm        mov    eax, size;
-	__asm        jmp    _T50;
+	return size;
 // LINE 448:
-_T50:
 }
 
 // FUNCTION: COPTER_D 0x00554daf
@@ -793,10 +764,8 @@ _T44:
 	__asm        add    esp, 0x10;
 // LINE 474:
 _T6e:
-	__asm        mov    eax, state;
-	__asm        jmp    _T76;
+	return state;
 // LINE 475:
-_T76:
 }
 
 // FUNCTION: COPTER_D 0x00554e62
@@ -819,7 +788,6 @@ _T21:
 // LINE 489:
 _T2d:
 	return;
-_T32:
 }
 
 // FUNCTION: COPTER_D 0x00554e99
@@ -857,10 +825,8 @@ _T44:
 	__asm        call   dword ptr ds:[0x6C3718];
 	__asm        mov    err, eax;
 // LINE 506:
-	__asm        mov    eax, err;
-	__asm        jmp    _T68;
+	return err;
 // LINE 507:
-_T68:
 }
 
 // FUNCTION: COPTER_D 0x00554f06
@@ -871,10 +837,8 @@ long Memory::Error() {
 	__asm        call   dword ptr ds:[0x6C3718];
 	__asm        mov    err, eax;
 // LINE 543:
-	__asm        mov    eax, err;
-	__asm        jmp    _T1a;
+	return err;
 // LINE 544:
-_T1a:
 }
 
 

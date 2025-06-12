@@ -158,7 +158,7 @@ void SparkalPalette::SparkalPalette(/*packed*/ struct SparkalColor *pNewColors, 
 	__asm        mov    dword ptr [eax], 0x5910F8;
 // LINE 31:
 	return;
-_T35:
+
 	__asm        mov    eax, this;
 }
 
@@ -175,7 +175,7 @@ void SparkalPalette::SparkalPalette() {
 	__asm        mov    dword ptr [eax], 0x5910F8;
 // LINE 41:
 	return;
-_T38:
+
 	__asm        mov    eax, this;
 }
 
@@ -204,7 +204,6 @@ void SparkalPalette::~SparkalPalette() {
 // LINE 50:
 _T4a:
 	return;
-_T4f:
 }
 
 // FUNCTION: COPTER_D 0x00496483
@@ -316,7 +315,6 @@ _T119:
 	nIndex. = nCurrentBestMatch;
 // LINE 84:
 	return;
-_T126:
 }
 
 // FUNCTION: COPTER_D 0x004965b0
@@ -641,7 +639,6 @@ _T442:
 	__asm        jmp    _T458;
 _T458:
 	return;
-_T45d:
 }
 
 // FUNCTION: COPTER_D 0x00496a14
@@ -957,7 +954,6 @@ _T41e:
 	__asm        jmp    _T434;
 _T434:
 	return;
-_T439:
 }
 
 // FUNCTION: COPTER_D 0x00496e54
@@ -1304,7 +1300,6 @@ _T471:
 	__asm        jmp    _T487;
 _T487:
 	return;
-_T48c:
 }
 
 // FUNCTION: COPTER_D 0x004972e7
@@ -1323,7 +1318,6 @@ void SparkalPalette::FadeToPalette(/*packed*/ struct SparkalColor colorStart, lo
 	__asm        add    esp, 0x10;
 // LINE 362:
 	return;
-_T2c:
 }
 
 // FUNCTION: COPTER_D 0x0049731a
@@ -1804,7 +1798,6 @@ _T4b8:
 	__asm        jmp    _T520;
 _T520:
 	return;
-_T525:
 }
 
 // FUNCTION: COPTER_D 0x00497844
@@ -1862,7 +1855,6 @@ _T67:
 	__asm        call   dword ptr [eax+0x18];
 // LINE 483:
 	return;
-_Ta0:
 }
 
 // FUNCTION: COPTER_D 0x004978e9
@@ -1932,7 +1924,6 @@ _Tca:
 // LINE 519:
 _Tda:
 	return;
-_Tdf:
 }
 
 // SYNTHETIC: COPTER_D 0x004979cf
@@ -1944,7 +1935,7 @@ void CopterSparkalPalette::CopterSparkalPalette() {
 	__asm        mov    dword ptr [eax], 0x591118;
 // LINE 535:
 	return;
-_T22:
+
 	__asm        mov    eax, this;
 }
 
@@ -1962,7 +1953,7 @@ void CopterSparkalPalette::CopterSparkalPalette(/*packed*/ struct SparkalColor *
 	__asm        mov    dword ptr [eax], 0x591118;
 // LINE 544:
 	return;
-_T2f:
+
 	__asm        mov    eax, this;
 }
 
@@ -2051,7 +2042,6 @@ _T101:
 // LINE 594:
 _T110:
 	return;
-_T115:
 }
 
 

@@ -34,7 +34,7 @@ struct tagPOINT{ // packed(0x8 bytes) TI: 0x1131
 void Cursor::Cursor() {
 // LINE 20:
 	return;
-_T11:
+
 	__asm        mov    eax, this;
 }
 
@@ -42,7 +42,6 @@ _T11:
 void Cursor::~Cursor() {
 // LINE 23:
 	return;
-_T11:
 }
 
 // FUNCTION: COPTER_D 0x0047481f
@@ -81,8 +80,7 @@ _T4d:
 	__asm        test   *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&nKeyState) + 3), 0x80;
 	__asm        jne    _T6e;
 // LINE 55:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tfd;
+	return 0x0;
 // LINE 59:
 _T6e:
 	__asm        cmp    nModifiers, 0;
@@ -98,8 +96,7 @@ _T6e:
 	__asm        test   *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&nKeyState) + 3), 0x80;
 	__asm        jne    _Ta1;
 // LINE 62:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tfd;
+	return 0x0;
 // LINE 64:
 _Ta1:
 	__asm        test   reinterpret_cast<uint8_t>(nModifiers), 2;
@@ -112,8 +109,7 @@ _Ta1:
 	__asm        test   *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&nKeyState) + 3), 0x80;
 	__asm        jne    _Tca;
 // LINE 66:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tfd;
+	return 0x0;
 // LINE 68:
 _Tca:
 	__asm        test   reinterpret_cast<uint8_t>(nModifiers), 4;
@@ -126,14 +122,11 @@ _Tca:
 	__asm        test   *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&nKeyState) + 3), 0x80;
 	__asm        jne    _Tf3;
 // LINE 70:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tfd;
+	return 0x0;
 // LINE 75:
 _Tf3:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tfd;
+	return 0x1;
 // LINE 77:
-_Tfd:
 }
 
 // FUNCTION: COPTER_D 0x00474921
@@ -151,9 +144,7 @@ int32_t Cursor::WhereIsCursor(unsigned long * nXPosition, unsigned long * nYPosi
 // LINE 101:
 	nYPosition[0] = ptCursor.y;
 // LINE 102:
-	__asm        mov    eax, nReturnValue;
-	__asm        jmp    _T2e;
+	return nReturnValue;
 // LINE 104:
-_T2e:
 }
 

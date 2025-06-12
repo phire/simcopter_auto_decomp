@@ -8,8 +8,7 @@ int32_t TimeOfTravelTable(unsigned short t) {
 	__asm        jmp    _T89;
 // LINE 791:
 _T19:
-	__asm        mov    eax, 8;
-	__asm        jmp    _T1c2;
+	return 0x8;
 // LINE 798:
 _T23:
 	__asm        mov    eax, 0xA;
@@ -20,8 +19,7 @@ _T2d:
 	__asm        jmp    _T1c2;
 // LINE 818:
 _T37:
-	__asm        mov    eax, 4;
-	__asm        jmp    _T1c2;
+	return 0x4;
 // LINE 832:
 _T41:
 	__asm        mov    eax, 8;
@@ -36,8 +34,7 @@ _T55:
 	__asm        jmp    _T1c2;
 // LINE 860:
 _T5f:
-	__asm        mov    eax, 8;
-	__asm        jmp    _T1c2;
+	return 0x8;
 // LINE 863:
 _T69:
 	__asm        mov    eax, 0xA;
@@ -48,8 +45,7 @@ _T73:
 	__asm        jmp    _T1c2;
 // LINE 873:
 _T7d:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1c2;
+	return 0x0;
 // LINE 874:
 	__asm        jmp    _T1c2;
 _T89:

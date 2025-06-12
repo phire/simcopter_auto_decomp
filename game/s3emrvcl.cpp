@@ -580,14 +580,11 @@ int32_t EmergencyVehicleClass::UpdateCar(int32_t status) {
 // LINE 80:
 	this->personState = status;
 // LINE 81:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T43;
+	return 0x1;
 // LINE 84:
 _T3c:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T43;
+	return 0x0;
 // LINE 85:
-_T43:
 }
 
 // FUNCTION: COPTER_D 0x0054159d
@@ -604,8 +601,7 @@ _T43:
 	__asm        jmp    _T33;
 // LINE 95:
 _T2c:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T33;
+	return 0x0;
 // LINE 96:
 _T33:
 }
@@ -629,7 +625,7 @@ void EmergencyVehicleClass::EmergencyVehicleClass() {
 	this->emergencyLocation.y = 0x0;
 // LINE 105:
 	return;
-_T5d:
+
 	__asm        mov    eax, this;
 }
 
@@ -930,7 +926,6 @@ _T2b0:
 	this->dispatchPathIndex = 0x0;
 // LINE 352:
 	return;
-_T352:
 }
 
 // FUNCTION: COPTER_D 0x005419ba
@@ -1448,7 +1443,6 @@ _T59e:
 	__asm        call   EmergencyVehicleClass::TurnOnStrobe;
 // LINE 518:
 	return;
-_T633:
 }
 
 // FUNCTION: COPTER_D 0x00541ff4
@@ -1591,7 +1585,6 @@ _T138:
 	__asm        call   EmergencyVehicleClass::InitializePlacedVehicleForDispatch;
 // LINE 554:
 	return;
-_T1c3:
 }
 
 // FUNCTION: COPTER_D 0x005421bc
@@ -1600,7 +1593,6 @@ void EmergencyVehicleClass::CancelEmergencyDispatch() {
 	this->emergencyState = 0x2;
 // LINE 562:
 	return;
-_T1e:
 }
 
 // FUNCTION: COPTER_D 0x005421df
@@ -1626,7 +1618,6 @@ void EmergencyVehicleClass::FillSeat(/*packed*/ struct _DYOBJ_INST *carInst) {
 // LINE 576:
 _T21:
 	return;
-_T26:
 }
 
 // FUNCTION: COPTER_D 0x0054222e
@@ -1689,7 +1680,6 @@ _T8b:
 // LINE 641:
 _Tb6:
 	return;
-_Tbb:
 }
 
 // FUNCTION: COPTER_D 0x005422ee
@@ -1737,7 +1727,6 @@ void EmergencyVehicleClass::PositionIcon() {
 	__asm        add    esp, 0xC;
 // LINE 670:
 	return;
-_T80:
 }
 
 // FUNCTION: COPTER_D 0x00542373
@@ -1805,7 +1794,6 @@ void EmergencyVehicleClass::ArriveOnScene() {
 	this->emergencyType = 0x0;
 // LINE 924:
 	return;
-_T3f:
 }
 
 // FUNCTION: COPTER_D 0x00542461
@@ -1896,7 +1884,6 @@ _Tfe:
 // Block end:
 _T103:
 	return;
-_T108:
 }
 
 // FUNCTION: COPTER_D 0x00542570
@@ -1958,7 +1945,6 @@ _Tb0:
 // LINE 998:
 _Tb5:
 	return;
-_Tba:
 }
 
 // FUNCTION: COPTER_D 0x00542631
@@ -1984,7 +1970,6 @@ void EmergencyVehicleClass::Reset() {
 	__asm        call   AutomobileClass::Reset;
 // LINE 1330:
 	return;
-_T75:
 }
 
 // FUNCTION: COPTER_D 0x005426ab
@@ -2115,7 +2100,6 @@ _T118:
 // LINE 1396:
 _T140:
 	return;
-_T145:
 }
 
 // FUNCTION: COPTER_D 0x005427f5
@@ -2226,7 +2210,6 @@ _Te5:
 // LINE 1441:
 _T13a:
 	return;
-_T13f:
 }
 
 // FUNCTION: COPTER_D 0x0054293b
@@ -2291,7 +2274,6 @@ _T7d:
 // LINE 1473:
 _T91:
 	return;
-_T96:
 }
 
 // FUNCTION: COPTER_D 0x005429d6
@@ -2358,7 +2340,6 @@ _T81:
 // LINE 1496:
 _T95:
 	return;
-_T9a:
 }
 
 // FUNCTION: COPTER_D 0x00542a75
@@ -2409,7 +2390,6 @@ _T103:
 	__asm        call   AutomobileClass::SetSaveData;
 // LINE 1535:
 	return;
-_T114:
 }
 
 // FUNCTION: COPTER_D 0x00542b90
@@ -2535,7 +2515,6 @@ _T1b8:
 	__asm        add    esp, 0x14;
 // LINE 1587:
 	return;
-_T1e3:
 }
 
 

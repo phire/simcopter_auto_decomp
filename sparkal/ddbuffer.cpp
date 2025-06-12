@@ -569,7 +569,7 @@ _T31:
 	__asm        call   CBackBuffer::InitializeMemberVariables;
 // LINE 46:
 	return;
-_T47:
+
 	__asm        mov    eax, this;
 }
 
@@ -833,7 +833,7 @@ _T2fd:
 	__asm        call   CBackBuffer::Load;
 // LINE 145:
 	return;
-_T31d:
+
 	__asm        mov    eax, this;
 }
 
@@ -940,7 +940,7 @@ _T120:
 	__asm        call   CBackBuffer::Unlock;
 // LINE 208:
 	return;
-_T148:
+
 	__asm        mov    eax, this;
 }
 
@@ -1018,7 +1018,6 @@ void CBackBuffer::InitializeMemberVariables() {
 	this->nPenThickness = 0x0;
 // LINE 245:
 	return;
-_T11d:
 }
 
 // FUNCTION: COPTER_D 0x0046ec7a
@@ -1130,7 +1129,6 @@ _T119:
 // LINE 297:
 _T146:
 	return;
-_T14b:
 }
 
 // FUNCTION: COPTER_D 0x0046edca
@@ -1234,8 +1232,7 @@ _T110:
 	__asm        jmp    _T16b;
 // LINE 324:
 _T16b:
-	__asm        mov    eax, 0x80000006;
-	__asm        jmp    _T3ee;
+	return 0x80000006;
 // LINE 327:
 _T175:
 	__asm        push   0xE;
@@ -1439,10 +1436,8 @@ _T3d6:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+4];
 // LINE 367:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T3ee;
+	return 0x0;
 // LINE 369:
-_T3ee:
 }
 
 // FUNCTION: COPTER_D 0x0046f1bd
@@ -1464,8 +1459,7 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, unsigned long Style, lon
 	__asm        cmp    pOurSurface, 0;
 	__asm        jne    _T2e;
 // LINE 391:
-	__asm        mov    eax, 0x65;
-	__asm        jmp    _T23f;
+	return 0x65;
 // LINE 393:
 _T2e:
 	rectText.left = pRectLeft[0];
@@ -1514,8 +1508,7 @@ _Ta6:
 	__asm        lea    ecx, [ebp-0x28];
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 407:
-	__asm        mov    eax, 0x65;
-	__asm        jmp    _T23f;
+	return 0x65;
 // LINE 410:
 	__asm        jmp    _T238;
 // LINE 411:
@@ -1667,10 +1660,8 @@ _T228:
 	__asm        call   dword ptr [eax+0x68];
 // LINE 448:
 _T238:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T23f;
+	return 0x0;
 // LINE 449:
-_T23f:
 }
 
 // FUNCTION: COPTER_D 0x0046f403
@@ -1691,8 +1682,7 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, long nTextLength, unsign
 	__asm        cmp    pOurSurface, 0;
 	__asm        jne    _T2e;
 // LINE 470:
-	__asm        mov    eax, 0x65;
-	__asm        jmp    _T1bc;
+	return 0x65;
 // LINE 472:
 _T2e:
 	__asm        lea    eax, hdcSurface;
@@ -1715,8 +1705,7 @@ _T56:
 	__asm        lea    ecx, [ebp-0x18];
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 475:
-	__asm        mov    eax, 0x65;
-	__asm        jmp    _T1bc;
+	return 0x65;
 // LINE 478:
 	__asm        jmp    _T1b5;
 // LINE 479:
@@ -1853,10 +1842,8 @@ _T1a5:
 	__asm        call   dword ptr [eax+0x68];
 // LINE 508:
 _T1b5:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1bc;
+	return 0x0;
 // LINE 509:
-_T1bc:
 }
 
 // FUNCTION: COPTER_D 0x0046f5c6
@@ -1878,8 +1865,7 @@ unsigned long CBackBuffer::DrawLine(long nStartX, long nStartY, long nEndX, long
 	__asm        cmp    pOurSurface, 0;
 	__asm        jne    _T2e;
 // LINE 548:
-	__asm        mov    eax, 0x65;
-	__asm        jmp    _T1ee;
+	return 0x65;
 // LINE 555:
 _T2e:
 	__asm        mov    eax, this;
@@ -1966,8 +1952,7 @@ _Tc1:
 	__asm        call   DebugOutput;
 	__asm        add    esp, 8;
 // LINE 565:
-	__asm        mov    eax, 0x80000000;
-	__asm        jmp    _T1ee;
+	return 0x80000000;
 // LINE 570:
 _T146:
 	__asm        lea    eax, hdcSurface;
@@ -1990,8 +1975,7 @@ _T16e:
 	__asm        lea    ecx, [ebp-0x20];
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 573:
-	__asm        mov    eax, 0x80000000;
-	__asm        jmp    _T1ee;
+	return 0x80000000;
 // LINE 575:
 	__asm        jmp    _T1e7;
 // LINE 576:
@@ -2037,10 +2021,8 @@ _T18a:
 	__asm        call   dword ptr [eax+0x68];
 // LINE 584:
 _T1e7:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1ee;
+	return 0x0;
 // LINE 585:
-_T1ee:
 }
 
 // FUNCTION: COPTER_D 0x0046f7bb
@@ -2052,8 +2034,7 @@ unsigned long CBackBuffer::Swap(/*unpacked*/ class CSparkalWindow *pDest, long D
 	__asm        cmp    dword ptr [eax+0x4C], 0;
 	__asm        jne    _T23;
 // LINE 603:
-	__asm        mov    eax, 0x65;
-	__asm        jmp    _T66;
+	return 0x65;
 // LINE 605:
 _T23:
 	__asm        push   1;
@@ -2079,10 +2060,8 @@ _T51:
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 609:
 _T5e:
-	__asm        mov    eax, ddrval;
-	__asm        jmp    _T66;
+	return ddrval;
 // LINE 611:
-_T66:
 }
 
 // FUNCTION: COPTER_D 0x0046f828
@@ -2103,8 +2082,7 @@ unsigned long CBackBuffer::SwapRect(/*unpacked*/ class CSparkalWindow *pDest, lo
 	__asm        cmp    pOurSurface, 0;
 	__asm        jne    _T40;
 // LINE 636:
-	__asm        mov    eax, 0x65;
-	__asm        jmp    _T119;
+	return 0x65;
 // LINE 638:
 _T40:
 	__asm        mov    eax, pDest;
@@ -2198,8 +2176,7 @@ _T17:
 	__asm        cmp    [eax+8], ecx;
 	__asm        jg     _T2d;
 // LINE 683:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T262;
+	return 0x0;
 // LINE 684:
 _T2d:
 	__asm        jmp    _T32;
@@ -2209,8 +2186,7 @@ _T32:
 	__asm        cmp    [eax+0xC], ecx;
 	__asm        jg     _T48;
 // LINE 685:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T262;
+	return 0x0;
 // LINE 686:
 _T48:
 	__asm        mov    eax, SrcRight;
@@ -2218,8 +2194,7 @@ _T48:
 	__asm        add    eax, DestLeft;
 	__asm        jns    _T5e;
 // LINE 687:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T262;
+	return 0x0;
 // LINE 688:
 _T5e:
 	__asm        mov    eax, SrcBottom;
@@ -2227,8 +2202,7 @@ _T5e:
 	__asm        add    eax, DestTop;
 	__asm        jns    _T74;
 // LINE 689:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T262;
+	return 0x0;
 // LINE 691:
 _T74:
 	__asm        mov    eax, this;
@@ -2240,8 +2214,7 @@ _T74:
 	__asm        cmp    pOurSurface, 0;
 	__asm        jne    _Ta2;
 // LINE 693:
-	__asm        mov    eax, 0x65;
-	__asm        jmp    _T262;
+	return 0x65;
 // LINE 697:
 _Ta2:
 	__asm        mov    eax, pDestImage;
@@ -2376,10 +2349,8 @@ _T247:
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 740:
 _T257:
-	__asm        mov    eax, ddrval;
-	__asm        jmp    _T262;
+	return ddrval;
 // LINE 787:
-_T262:
 }
 
 // FUNCTION: COPTER_D 0x0046fbb1
@@ -2477,10 +2448,8 @@ _T112:
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 823:
 _T122:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T12c;
+	return 0x1;
 // LINE 825:
-_T12c:
 }
 
 // FUNCTION: COPTER_D 0x0046fce4
@@ -2669,8 +2638,7 @@ unsigned long CBackBuffer::Duplicate(/*packed*/ class CBackBuffer *pDestImage, i
 	__asm        cmp    pOurSurface, 0;
 	__asm        jne    _T40;
 // LINE 941:
-	__asm        mov    eax, 0x65;
-	__asm        jmp    _T149;
+	return 0x65;
 // LINE 945:
 _T40:
 	__asm        mov    eax, pDestImage;
@@ -2746,19 +2714,15 @@ _T12e:
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 965:
 _T13e:
-	__asm        mov    eax, ddrval;
-	__asm        jmp    _T149;
+	return ddrval;
 // LINE 967:
-_T149:
 }
 
 // FUNCTION: COPTER_D 0x0046ffcc
 unsigned long CBackBuffer::StretchRect(/*unpacked*/ class CSparkalWindow *pDest, long __formal, long __formal, long __formal, long __formal, long __formal, long __formal, long __formal, long __formal) {
 // LINE 981:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
+	return 0x0;
 // LINE 982:
-_T13:
 }
 
 // FUNCTION: COPTER_D 0x0046ffe6
@@ -2810,7 +2774,6 @@ _T55:
 // LINE 1014:
 _T7d:
 	return;
-_T82:
 }
 
 // FUNCTION: COPTER_D 0x0047006f
@@ -2916,8 +2879,7 @@ _T30:
 	__asm        cmp    dword ptr [eax+0x10], 0;
 	__asm        jne    _T44;
 // LINE 1099:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Td3;
+	return 0x0;
 // LINE 1101:
 _T44:
 	__asm        mov    eax, this;
@@ -2954,8 +2916,7 @@ _T91:
 	__asm        lea    ecx, [ebp-0xC];
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 1107:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Td3;
+	return 0x0;
 // LINE 1109:
 _Ta5:
 	this->mLockCount--;
@@ -3038,7 +2999,6 @@ _T97:
 // LINE 1145:
 _Tc4:
 	return;
-_Tc9:
 }
 
 // FUNCTION: COPTER_D 0x004702f1
@@ -3058,8 +3018,7 @@ unsigned long CBackBuffer::FillRect(long nPaletteIndex, const /*packed*/ struct 
 	__asm        cmp    pOurSurface, 0;
 	__asm        jne    _T2e;
 // LINE 1178:
-	__asm        mov    eax, 0x65;
-	__asm        jmp    _T148;
+	return 0x65;
 // LINE 1180:
 _T2e:
 	this->mDDdesc.dwSize = 0x6c;
@@ -3148,10 +3107,8 @@ _T134:
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 1211:
 _T141:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T148;
+	return 0x0;
 // LINE 1212:
-_T148:
 }
 
 // FUNCTION: COPTER_D 0x00470440
@@ -3182,10 +3139,8 @@ _T4b:
 _T50:
 	this->mFont = mNewFont;
 // LINE 1228:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T60;
+	return 0x0;
 // LINE 1229:
-_T60:
 }
 
 // FUNCTION: COPTER_D 0x004704a7
@@ -3291,8 +3246,7 @@ _Tcc:
 	__asm        jmp    _Tfb;
 // LINE 1268:
 _Tfb:
-	__asm        mov    eax, 0x80000000;
-	__asm        jmp    _T204;
+	return 0x80000000;
 // LINE 1271:
 _T105:
 	__asm        push   0xE;
@@ -3351,8 +3305,7 @@ _T16d:
 	__asm        jmp    _T19c;
 // LINE 1283:
 _T19c:
-	__asm        mov    eax, 0x80000000;
-	__asm        jmp    _T204;
+	return 0x80000000;
 // LINE 1285:
 _T1a6:
 	__asm        mov    eax, biHeader.biClrUsed;
@@ -3388,10 +3341,8 @@ _T1ce:
 	__asm        jmp    _T1fd;
 // LINE 1288:
 _T1fd:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T204;
+	return 0x0;
 // LINE 1290:
-_T204:
 }
 
 // FUNCTION: COPTER_D 0x004706e4
@@ -3954,10 +3905,8 @@ _T3a5:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+4];
 // LINE 1613:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T3b7;
+	return 0x0;
 // LINE 1614:
-_T3b7:
 }
 
 // FUNCTION: COPTER_D 0x00470c22
@@ -4806,10 +4755,8 @@ _T92d:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+4];
 // LINE 1868:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T945;
+	return 0x0;
 // LINE 1869:
-_T945:
 }
 
 

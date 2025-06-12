@@ -302,7 +302,7 @@ _T51:
 	__asm        call   TreeSim::Reset;
 // LINE 17:
 	return;
-_T8b:
+
 	__asm        mov    eax, this;
 }
 
@@ -344,7 +344,7 @@ _T51:
 	this->fStackSize = 0x0;
 // LINE 29:
 	return;
-_T7b:
+
 	__asm        mov    eax, this;
 }
 
@@ -360,7 +360,6 @@ void TreeSim::~TreeSim() {
 	__asm        add    esp, 4;
 // LINE 37:
 	return;
-_T29:
 }
 
 // FUNCTION: COPTER_D 0x0055cc58
@@ -405,7 +404,6 @@ _T41:
 	__asm        mov    word ptr [eax+4], 0;
 // LINE 54:
 	return;
-_T90:
 }
 
 // FUNCTION: COPTER_D 0x0055ccef
@@ -1023,7 +1021,6 @@ _T69:
 	nodeNum[0] = elem->nodeNum;
 // LINE 247:
 	return;
-_Ta1:
 }
 
 // FUNCTION: COPTER_D 0x0055d3a5
@@ -1057,7 +1054,6 @@ void ExtSim::Error(short errNum) {
 	__asm        call   dword ptr [edx+4];
 // LINE 264:
 	return;
-_T26:
 }
 
 // FUNCTION: COPTER_D 0x0055d402

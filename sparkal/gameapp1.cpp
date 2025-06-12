@@ -978,7 +978,6 @@ _T31:
 	__asm        jmp    _T36;
 _T36:
 	return;
-_T3b:
 }
 
 // STATIC INITIALIZER:
@@ -1014,7 +1013,6 @@ _T3d:
 	__asm        jmp    _T42;
 _T42:
 	return;
-_T47:
 }
 
 // STATIC INITIALIZER:
@@ -1079,7 +1077,7 @@ void GamePreferences::GamePreferences() {
 	__asm        mov    dword ptr [eax+0x1C], 0;
 // LINE 97:
 	return;
-_T60:
+
 	__asm        mov    eax, this;
 }
 
@@ -1096,7 +1094,7 @@ void RenderPreferences::RenderPreferences() {
 	__asm        mov    dword ptr [eax+0xC], 1;
 // LINE 106:
 	return;
-_T38:
+
 	__asm        mov    eax, this;
 }
 
@@ -3086,8 +3084,7 @@ _Tc2:
 	__asm        test   eax, eax;
 	__asm        jne    _Tfa;
 // LINE 412:
-	__asm        mov    eax, 0x80000000;
-	__asm        jmp    _T518;
+	return 0x80000000;
 // LINE 413:
 _Tfa:
 	__asm        push   0x599C74;
@@ -3098,8 +3095,7 @@ _Tfa:
 	__asm        test   eax, eax;
 	__asm        jne    _T120;
 // LINE 414:
-	__asm        mov    eax, 0x80000000;
-	__asm        jmp    _T518;
+	return 0x80000000;
 // LINE 419:
 // Block end:
 _T120:
@@ -3352,10 +3348,8 @@ _T50c:
 	__asm        jmp    _T511;
 // LINE 495:
 _T511:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T518;
+	return 0x0;
 // LINE 496:
-_T518:
 }
 
 // FUNCTION: COPTER_D 0x00489c43
@@ -3637,8 +3631,7 @@ _T71:
 	__asm        jmp    _Ta3;
 // LINE 610:
 _T9c:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T219;
+	return 0x0;
 // LINE 612:
 _Ta3:
 	__asm        mov    i, 0;
@@ -3745,17 +3738,14 @@ _T1f8:
 	__asm        mov    byte ptr [eax+ecx], 0;
 // LINE 631:
 _T203:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T219;
+	return 0x1;
 // LINE 633:
 _T20d:
 	__asm        jmp    _Tae;
 // LINE 634:
 _T212:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T219;
+	return 0x0;
 // LINE 635:
-_T219:
 }
 
 // FUNCTION: COPTER_D 0x0048a15d
@@ -3766,10 +3756,8 @@ int  CGameApp::SetCurrentLanguageUse(int32_t nLanguageID) {
 	__asm        call   LanguageManager::SetDefaultLanguage;
 	__asm        add    esp, 4;
 // LINE 653:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T22;
+	return 0x1;
 // LINE 654:
-_T22:
 }
 
 // FUNCTION: COPTER_D 0x0048a186
@@ -4430,8 +4418,7 @@ _T65:
 	__asm        cmp    lJoystickCountAtCurrentPlay, eax;
 	__asm        jle    _T7b;
 // LINE 826:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T118;
+	return 0x1;
 // LINE 828:
 _T7b:
 	__asm        mov    eax, lJoystickCountAtCurrentPlay;
@@ -4485,17 +4472,14 @@ _Td4:
 	__asm        test   eax, eax;
 	__asm        je     _T10c;
 // LINE 836:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T118;
+	return 0x1;
 // LINE 837:
 _T10c:
 	__asm        jmp    _T9a;
 // LINE 838:
 _T111:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T118;
+	return 0x0;
 // LINE 839:
-_T118:
 }
 
 

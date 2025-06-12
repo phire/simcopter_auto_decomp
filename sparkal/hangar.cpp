@@ -844,7 +844,7 @@ _T40a:
 	__asm        add    esp, 4;
 // LINE 59:
 	return;
-_T435:
+
 	__asm        mov    eax, this;
 }
 
@@ -1039,7 +1039,7 @@ _T240:
 	__asm        jmp    _T245;
 _T245:
 	return;
-_T24a:
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x78;
 	__asm        call   DigitalSound::~DigitalSound;
@@ -2030,7 +2030,6 @@ _T56:
 // LINE 148:
 _T63:
 	return;
-_T68:
 }
 
 // FUNCTION: COPTER_D 0x00473296
@@ -2047,8 +2046,7 @@ int32_t HangarWindow::ComposeSelf() {
 	__asm        jne    _T2d;
 // LINE 157:
 _T26:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T252;
+	return 0x0;
 // LINE 159:
 _T2d:
 	__asm        mov    eax, this;
@@ -2225,10 +2223,8 @@ _T1df:
 	__asm        call   dword ptr [eax+0xB8];
 // LINE 176:
 _T248:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T252;
+	return 0x1;
 // LINE 177:
-_T252:
 }
 
 // FUNCTION: COPTER_D 0x004734ed
@@ -2323,10 +2319,8 @@ _Tb1:
 	__asm        call   dword ptr [edx];
 // LINE 202:
 _Te3:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Ted;
+	return 0x1;
 // LINE 203:
-_Ted:
 }
 
 // FUNCTION: COPTER_D 0x004735e1
@@ -2339,8 +2333,7 @@ long HangarWindow::DoKeyDown(long lKey, char chModifiers) {
 	__asm        mov    ecx, this;
 	__asm        call   HangarWindow::ScrollHangarView;
 // LINE 218:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T54;
+	return 0x1;
 // LINE 220:
 	__asm        jmp    _T4d;
 _T2f:
@@ -2351,14 +2344,11 @@ _T2f:
 	__asm        mov    ecx, this;
 	__asm        call   HangarWindow::ScrollHangarView;
 // LINE 222:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T54;
+	return 0x1;
 // LINE 224:
 _T4d:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T54;
+	return 0x0;
 // LINE 225:
-_T54:
 }
 
 // FUNCTION: COPTER_D 0x0047363c
@@ -2399,19 +2389,15 @@ _T22:
 	__asm        call   dword ptr [edx];
 // LINE 241:
 _T5b:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T65;
+	return 0x1;
 // LINE 242:
-_T65:
 }
 
 // FUNCTION: COPTER_D 0x004736a8
 long HangarWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 251:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T16;
+	return 0x1;
 // LINE 252:
-_T16:
 }
 
 // FUNCTION: COPTER_D 0x004736c5
@@ -2505,10 +2491,8 @@ _T130:
 // LINE 271:
 	this->ptSavedCursorPosition.y = nCursorY;
 // LINE 272:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T15a;
+	return 0x1;
 // LINE 273:
-_T15a:
 }
 
 // FUNCTION: COPTER_D 0x00473826
@@ -2787,7 +2771,6 @@ _T30b:
 // LINE 285:
 _T32c:
 	return;
-_T331:
 }
 
 // FUNCTION: COPTER_D 0x00473b5c
@@ -2861,8 +2844,7 @@ _T90:
 _Tbe:
 	lHelpID. = iterator.node->data.lID;
 // LINE 299:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T109;
+	return 0x1;
 // LINE 301:
 _Td3:
 	__asm        mov    eax, iterator.node;
@@ -2884,10 +2866,8 @@ _Tf1:
 _Tf9:
 	lHelpID. = 0x0;
 // LINE 305:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T109;
+	return 0x0;
 // LINE 306:
-_T109:
 }
 
 // FUNCTION: COPTER_D 0x00473c6c
@@ -3000,7 +2980,6 @@ _T161:
 	__asm        call   HangarWindow::HideHelp;
 // LINE 325:
 	return;
-_T16e:
 }
 
 // FUNCTION: COPTER_D 0x00473de1
@@ -3131,7 +3110,6 @@ _T64:
 // LINE 392:
 _T82:
 	return;
-_T87:
 }
 
 // FUNCTION: COPTER_D 0x00473f53
@@ -3645,7 +3623,6 @@ _T613:
 	__asm        jmp    _T618;
 _T618:
 	return;
-_T61d:
 }
 
 // FUNCTION: COPTER_D 0x00474577
@@ -3661,7 +3638,6 @@ void HangarWindow::HideHelp() {
 // LINE 487:
 _T24:
 	return;
-_T29:
 }
 
 // FUNCTION: COPTER_D 0x004745a5
@@ -3799,10 +3775,8 @@ _T193:
 	__asm        jmp    _T198;
 // LINE 497:
 _T198:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1a2;
+	return 0x1;
 // LINE 498:
-_T1a2:
 }
 
 // FUNCTION: COPTER_D 0x0047474e
@@ -3816,7 +3790,6 @@ void HangarWindow::LoadHotSpots() {
 	__asm        add    esp, 8;
 // LINE 506:
 	return;
-_T24:
 }
 
 

@@ -650,7 +650,6 @@ _T39d:
 // Block end:
 _T3a2:
 	return;
-_T3a7:
 }
 
 // FUNCTION: COPTER_D 0x00567900
@@ -728,7 +727,6 @@ _Tbc:
 	__asm        call   _cArray::ClearBytes;
 // LINE 154:
 	return;
-_Te4:
 }
 
 // FUNCTION: COPTER_D 0x005679eb
@@ -822,7 +820,6 @@ _T121:
 // Block end:
 _T126:
 	return;
-_T12b:
 }
 
 // FUNCTION: COPTER_D 0x00567b1b
@@ -864,7 +861,6 @@ _T60:
 // Block end:
 _T82:
 	return;
-_T87:
 }
 
 // FUNCTION: COPTER_D 0x00567ba7
@@ -884,14 +880,12 @@ void _cArray::DeleteTable() {
 // LINE 208:
 _T30:
 	return;
-_T35:
 }
 
 // FUNCTION: COPTER_D 0x00567be1
 void _cArray::WriteToDisk() {
 // LINE 246:
 	return;
-_T11:
 }
 
 // FUNCTION: COPTER_D 0x00567bf7
@@ -979,7 +973,6 @@ _T102:
 // Block end:
 _T111:
 	return;
-_T116:
 }
 
 // FUNCTION: COPTER_D 0x00567d12
@@ -1075,7 +1068,6 @@ _Te8:
 	__asm        mov    [ecx], ax;
 // LINE 316:
 	return;
-_T11c:
 }
 
 // FUNCTION: COPTER_D 0x00567e33
@@ -1095,7 +1087,6 @@ void _cArray::SetSizeAndHeaders(long newxSize, long newySize) {
 	__asm        call   _cArray::SetXPointers;
 // LINE 323:
 	return;
-_T31:
 }
 
 // FUNCTION: COPTER_D 0x00567e6b
@@ -1229,7 +1220,6 @@ _T15f:
 // LINE 354:
 _T16f:
 	return;
-_T174:
 }
 
 // FUNCTION: COPTER_D 0x00567fe6
@@ -2191,7 +2181,6 @@ _T53:
 // LINE 527:
 _T92:
 	return;
-_T97:
 }
 
 // FUNCTION: COPTER_D 0x00568a68
@@ -2206,7 +2195,6 @@ void _cArray::CopyFrom(unsigned char * fromName) {
 	__asm        call   _cArray::CopyFrom;
 // LINE 539:
 	return;
-_T26:
 }
 
 // FUNCTION: COPTER_D 0x00568a95
@@ -2227,7 +2215,6 @@ void _cArray::CopyFrom(unsigned long oldname) {
 	__asm        call   _cArray::CopyFrom;
 // LINE 545:
 	return;
-_T2e:
 }
 
 // FUNCTION: COPTER_D 0x00568aca
@@ -2320,7 +2307,6 @@ _Tea:
 // LINE 557:
 _T112:
 	return;
-_T117:
 }
 
 // FUNCTION: COPTER_D 0x00568be8
@@ -2413,7 +2399,6 @@ _Tea:
 // LINE 577:
 _T112:
 	return;
-_T117:
 }
 
 // FUNCTION: COPTER_D 0x00568d06
@@ -2434,7 +2419,6 @@ void _cArray::CopyTo(unsigned long oldname) {
 	__asm        call   _cArray::CopyTo;
 // LINE 583:
 	return;
-_T2e:
 }
 
 // FUNCTION: COPTER_D 0x00568d3b
@@ -2449,7 +2433,6 @@ void _cArray::CopyTo(unsigned char * toName) {
 	__asm        call   _cArray::CopyTo;
 // LINE 588:
 	return;
-_T26:
 }
 
 // FUNCTION: COPTER_D 0x00568d68
@@ -2465,7 +2448,6 @@ void _cArray::GetName(unsigned char * name) {
 	__asm        add    esp, 0xC;
 // LINE 593:
 	return;
-_T26:
 }
 
 // FUNCTION: COPTER_D 0x00568d95
@@ -2591,8 +2573,7 @@ _T163:
 	__asm        jmp    _T19;
 // LINE 625:
 _T168:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T16f;
+	return 0x0;
 // LINE 626:
 _T16f:
 }
@@ -2629,8 +2610,7 @@ _T23:
 	__asm        cmp    eax, ecx;
 	__asm        jne    _T6e;
 // LINE 637:
-	__asm        mov    eax, arr;
-	__asm        jmp    _T7e;
+	return arr;
 // LINE 638:
 	__asm        jmp    _T72;
 // LINE 639:
@@ -2641,10 +2621,8 @@ _T72:
 	__asm        jmp    _T1f;
 // LINE 642:
 _T77:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T7e;
+	return 0x0;
 // LINE 643:
-_T7e:
 }
 
 // FUNCTION: COPTER_D 0x00568fa8
@@ -2954,7 +2932,7 @@ _L27272:
 _L27271:
 	__asm        mov    eax, 0x596208;
 	__asm        jmp    near ptr 0x0056F590;
-_T27a:
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
 }

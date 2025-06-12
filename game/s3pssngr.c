@@ -171,8 +171,7 @@ int32_t HeliPassengerAdd(/*packed*/ struct tagHeliPassengerData *heliPassengerDa
 	__asm        test   eax, eax;
 	__asm        jne    _T28;
 // LINE 112:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Te9;
+	return 0x0;
 // LINE 114:
 _T28:
 	__asm        mov    i, 0;
@@ -236,17 +235,14 @@ _T37:
 	__asm        call   HeliPassengerSetChanged;
 	__asm        add    esp, 4;
 // LINE 130:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Te9;
+	return 0x1;
 // LINE 132:
 _Tdd:
 	__asm        jmp    _T34;
 // LINE 135:
 _Te2:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Te9;
+	return 0x0;
 // LINE 136:
-_Te9:
 }
 
 // FUNCTION: COPTER_D 0x004f9e04
@@ -270,17 +266,14 @@ _T18:
 	__asm        cmp    [eax+ecx+0x28], edx;
 	__asm        jne    _T43;
 // LINE 149:
-	__asm        mov    eax, i;
-	__asm        jmp    _T52;
+	return i;
 // LINE 151:
 _T43:
 	__asm        jmp    _T15;
 // LINE 152:
 _T48:
-	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _T52;
+	return 0xffffffff;
 // LINE 153:
-_T52:
 }
 
 // FUNCTION: COPTER_D 0x004f9e5b
@@ -306,14 +299,11 @@ int32_t HeliPassengerSetExpression(/*packed*/ struct tagHeliPassengerData *heliP
 	__asm        mov    edx, heliPassengerData;
 	__asm        mov    [ecx+edx+0x20], eax;
 // LINE 164:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T4a;
+	return 0x1;
 // LINE 166:
 _T43:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4a;
+	return 0x0;
 // LINE 167:
-_T4a:
 }
 
 // FUNCTION: COPTER_D 0x004f9eaa
@@ -376,14 +366,11 @@ int32_t HeliPassengerRemove(/*packed*/ struct tagHeliPassengerData *heliPassenge
 	__asm        call   HeliPassengerSetChanged;
 	__asm        add    esp, 4;
 // LINE 188:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tbf;
+	return 0x1;
 // LINE 192:
 _Tb8:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tbf;
+	return 0x0;
 // LINE 193:
-_Tbf:
 }
 
 // FUNCTION: COPTER_D 0x004f9f6e
@@ -481,16 +468,13 @@ _T18:
 	__asm        cmp    dword ptr [ecx+eax*4], 0;
 	__asm        jne    _T3c;
 // LINE 247:
-	__asm        mov    eax, j;
-	__asm        jmp    _T4b;
+	return j;
 // LINE 248:
 _T3c:
 	__asm        jmp    _T15;
 // LINE 249:
 _T41:
-	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _T4b;
+	return 0xffffffff;
 // LINE 250:
-_T4b:
 }
 

@@ -200,8 +200,7 @@ int32_t ShortestPath::BreadthFirstSearch(/*packed*/ struct _RGIndex startVertex,
 // LINE 44:
 	pRGV->xPrev = destVertex.x;
 // LINE 45:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2b0;
+	return 0x1;
 // LINE 49:
 _T74:
 	pathFoundFlag = 0x0;
@@ -407,10 +406,8 @@ _T2a3:
 	__asm        jmp    _T143;
 // LINE 131:
 _T2a8:
-	__asm        mov    eax, pathFoundFlag;
-	__asm        jmp    _T2b0;
+	return pathFoundFlag;
 // LINE 132:
-_T2b0:
 }
 
 // FUNCTION: COPTER_D 0x005439bb
@@ -460,8 +457,7 @@ int32_t ShortestPath::DepthFirstSearch(/*packed*/ struct _RGIndex startVertex, /
 // LINE 150:
 	pRGV->xPrev = destVertex.x;
 // LINE 151:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T31b;
+	return 0x1;
 // LINE 155:
 _T85:
 	pathFoundFlag = 0x0;
@@ -700,10 +696,8 @@ _T30e:
 	__asm        jmp    _T192;
 // LINE 246:
 _T313:
-	__asm        mov    eax, pathFoundFlag;
-	__asm        jmp    _T31b;
+	return pathFoundFlag;
 // LINE 247:
-_T31b:
 }
 
 // FUNCTION: COPTER_D 0x00543cdd
@@ -801,7 +795,6 @@ _T39:
 // LINE 271:
 _Te2:
 	return;
-_Te7:
 }
 
 // FUNCTION: COPTER_D 0x00543dcb
@@ -968,7 +961,6 @@ _T176:
 	__asm        mov    [ecx+8], al;
 // LINE 314:
 	return;
-_T19b:
 }
 
 

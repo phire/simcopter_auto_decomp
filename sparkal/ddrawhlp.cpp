@@ -122,8 +122,7 @@ _T27:
 	__asm        cmp    hResult, 0;
 	__asm        je     _T39;
 // LINE 36:
-	__asm        mov    eax, hResult;
-	__asm        jmp    _Ta0;
+	return hResult;
 // LINE 38:
 _T39:
 	ddCaps.dwSize = 0xac;
@@ -154,14 +153,11 @@ _T67:
 _T87:
 	lpDD = 0x0;
 // LINE 43:
-	__asm        mov    eax, hResult;
-	__asm        jmp    _Ta0;
+	return hResult;
 // LINE 47:
 _T99:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Ta0;
+	return 0x0;
 // LINE 49:
-_Ta0:
 }
 
 // FUNCTION: COPTER_D 0x0041f5a5
@@ -187,7 +183,6 @@ _T38:
 	lpDD = 0x0;
 // LINE 70:
 	return;
-_T47:
 }
 
 // FUNCTION: COPTER_D 0x0041f5f1
@@ -297,10 +292,8 @@ _Tac:
 	__asm        call   dword ptr [eax+0x68];
 // LINE 114:
 _Te6:
-	__asm        mov    eax, dw;
-	__asm        jmp    _Tee;
+	return dw;
 // LINE 115:
-_Tee:
 }
 
 // FUNCTION: COPTER_D 0x0041f6e4
@@ -426,10 +419,8 @@ _T157:
 	__asm        call   dword ptr [eax+0x14];
 	__asm        mov    ddrval, eax;
 // LINE 180:
-	__asm        mov    eax, ppal;
-	__asm        jmp    _T181;
+	return ppal;
 // LINE 182:
-_T181:
 }
 
 

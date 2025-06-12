@@ -24,7 +24,6 @@ _T38:
 	__asm        add    esp, 4;
 // LINE 231:
 	return;
-_T49:
 }
 
 // Function in module: Bodydefs.obj
@@ -104,7 +103,6 @@ void cBBase::~cBBase() {
 // LINE 53:
 _T40:
 	return;
-_T45:
 }
 
 // Function in module: Bodydefs.obj
@@ -273,7 +271,6 @@ _T1ba:
 // LINE 68:
 _T1bf:
 	return;
-_T1c4:
 }
 
 // Function in module: Bodydefs.obj
@@ -283,7 +280,6 @@ void cBBase::Dirty() {
 	this->fDataChanged = 0x1;
 // LINE 77:
 	return;
-_T1a:
 }
 
 // Function in module: Bodydefs.obj
@@ -302,6 +298,5 @@ _T18:
 void cBBase::WriteToDisk() {
 // LINE 113:
 	return;
-_T11:
 }
 

@@ -734,7 +734,6 @@ void S3AddLogEntry(/*packed*/ struct tagLogBase *logData, int32_t bShowUserMessa
 	__asm        call   LogManager::AddLogEntry;
 // LINE 38:
 	return;
-_T1f:
 }
 
 // FUNCTION: COPTER_D 0x004ebc4f
@@ -943,7 +942,7 @@ _T288:
 // LINE 48:
 _T291:
 	return;
-_T296:
+
 	__asm        mov    eax, this;
 }
 
@@ -1115,7 +1114,6 @@ _T1ed:
 // LINE 59:
 _T1f6:
 	return;
-_T1fb:
 }
 
 // FUNCTION: COPTER_D 0x004ec0ed
@@ -1248,10 +1246,8 @@ _T85:
 	__asm        jmp    _T17;
 // LINE 115:
 _T96:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Ta0;
+	return 0x1;
 // LINE 116:
-_Ta0:
 }
 
 // FUNCTION: COPTER_D 0x004ec284
@@ -1509,10 +1505,8 @@ _T356:
 	__asm        jmp    _T35b;
 // LINE 149:
 _T35b:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T365;
+	return 0x1;
 // LINE 150:
-_T365:
 }
 
 // FUNCTION: COPTER_D 0x004ec5f0
@@ -1522,16 +1516,14 @@ long LogManager::GetSizeOfLogRecord(/*packed*/ struct tagLogBase *logRecord) {
 	__asm        cmp    dword ptr [eax], 1;
 	__asm        jne    _T22;
 // LINE 159:
-	__asm        mov    eax, 0x14;
-	__asm        jmp    _T64;
+	return 0x14;
 // LINE 160:
 _T22:
 	__asm        mov    eax, logRecord;
 	__asm        cmp    dword ptr [eax], 2;
 	__asm        jne    _T38;
 // LINE 161:
-	__asm        mov    eax, 0x30;
-	__asm        jmp    _T64;
+	return 0x30;
 // LINE 162:
 _T38:
 	__asm        mov    eax, logRecord;
@@ -1542,14 +1534,11 @@ _T38:
 	__asm        cmp    dword ptr [eax], 0xE;
 	__asm        ja     _T5a;
 // LINE 163:
-	__asm        mov    eax, 0x14;
-	__asm        jmp    _T64;
+	return 0x14;
 // LINE 164:
 _T5a:
-	__asm        mov    eax, 0xC;
-	__asm        jmp    _T64;
+	return 0xc;
 // LINE 165:
-_T64:
 }
 
 // FUNCTION: COPTER_D 0x004ec65b
@@ -1614,10 +1603,8 @@ _T7d:
 	__asm        call   LogManager::AddLogEntry;
 // LINE 199:
 _Ta1:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tab;
+	return 0x1;
 // LINE 200:
-_Tab:
 }
 
 // FUNCTION: COPTER_D 0x004ec70d
@@ -2096,10 +2083,8 @@ _T572:
 // LINE 257:
 // Block end:
 _T577:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T581;
+	return 0x1;
 // LINE 258:
-_T581:
 }
 
 // FUNCTION: COPTER_D 0x004eccd1
@@ -2514,10 +2499,8 @@ _T50d:
 _T512:
 	this->myLogBasePtrList = newLogBasePtrList;
 // LINE 283:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T527;
+	return 0x1;
 // LINE 284:
-_T527:
 }
 
 // FUNCTION: COPTER_D 0x004ed1fd
@@ -2932,10 +2915,8 @@ _T50d:
 _T512:
 	this->myLogBasePtrList = newLogBasePtrList;
 // LINE 309:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T527;
+	return 0x1;
 // LINE 310:
-_T527:
 }
 
 // FUNCTION: COPTER_D 0x004ed729
@@ -3140,10 +3121,8 @@ _T20a:
 	__asm        jmp    _T20f;
 // LINE 331:
 _T20f:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T219;
+	return 0x1;
 // LINE 332:
-_T219:
 }
 
 // FUNCTION: COPTER_D 0x004ed947
@@ -3340,10 +3319,8 @@ _T1f1:
 	__asm        jmp    _T1f6;
 // LINE 356:
 _T1f6:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T200;
+	return 0x1;
 // LINE 357:
-_T200:
 }
 
 // FUNCTION: COPTER_D 0x004edb4e
@@ -3905,7 +3882,6 @@ _T6e3:
 // LINE 407:
 _T70c:
 	return;
-_T711:
 }
 
 // FUNCTION: COPTER_D 0x004ee264

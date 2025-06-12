@@ -1120,7 +1120,6 @@ static void $E65() {
 	__asm        jmp    _T20;
 _T20:
 	return;
-_T25:
 }
 
 // STATIC INITIALIZER:
@@ -1142,7 +1141,6 @@ static void $E68() {
 	__asm        jmp    _T20;
 _T20:
 	return;
-_T25:
 }
 
 // FUNCTION: COPTER_D 0x004500ce
@@ -1506,7 +1504,7 @@ _T491:
 // LINE 52:
 _T496:
 	return;
-_T49b:
+
 	__asm        mov    eax, this;
 }
 
@@ -1982,7 +1980,7 @@ _T5d6:
 // LINE 75:
 _T5db:
 	return;
-_T5e0:
+
 	__asm        mov    eax, this;
 }
 
@@ -2853,10 +2851,8 @@ _T93:
 	__asm        call   dword ptr [eax+0x6C];
 // LINE 176:
 _Tae:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tb8;
+	return 0x1;
 // LINE 177:
-_Tb8:
 }
 
 // FUNCTION: COPTER_D 0x0045171a
@@ -2894,10 +2890,8 @@ _T3f:
 	__asm        call   dword ptr [eax+0x6C];
 // LINE 195:
 _T5a:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T64;
+	return 0x1;
 // LINE 196:
-_T64:
 }
 
 // FUNCTION: COPTER_D 0x00451785
@@ -2906,49 +2900,41 @@ int32_t MessageBoxWindow::ConvertTypeToStringID(long lType) {
 	__asm        test   reinterpret_cast<uint8_t>(lType), 1;
 	__asm        je     _T20;
 // LINE 209:
-	__asm        mov    eax, 0x14;
-	__asm        jmp    _T8b;
+	return 0x14;
 // LINE 210:
 _T20:
 	__asm        test   *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&lType) + 2), 1;
 	__asm        je     _T34;
 // LINE 211:
-	__asm        mov    eax, 0x15;
-	__asm        jmp    _T8b;
+	return 0x15;
 // LINE 212:
 _T34:
 	__asm        test   reinterpret_cast<uint8_t>(lType), 2;
 	__asm        je     _T48;
 // LINE 213:
-	__asm        mov    eax, 0x16;
-	__asm        jmp    _T8b;
+	return 0x16;
 // LINE 214:
 _T48:
 	__asm        test   *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&lType) + 2), 2;
 	__asm        je     _T5c;
 // LINE 215:
-	__asm        mov    eax, 0x17;
-	__asm        jmp    _T8b;
+	return 0x17;
 // LINE 216:
 _T5c:
 	__asm        test   reinterpret_cast<uint8_t>(lType), 4;
 	__asm        je     _T70;
 // LINE 217:
-	__asm        mov    eax, 0x18;
-	__asm        jmp    _T8b;
+	return 0x18;
 // LINE 218:
 _T70:
 	__asm        test   *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&lType) + 2), 4;
 	__asm        je     _T84;
 // LINE 219:
-	__asm        mov    eax, 0x19;
-	__asm        jmp    _T8b;
+	return 0x19;
 // LINE 220:
 _T84:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T8b;
+	return 0x0;
 // LINE 221:
-_T8b:
 }
 
 // FUNCTION: COPTER_D 0x00451817
@@ -3418,7 +3404,6 @@ _T64e:
 	__asm        call   dword ptr [edx+0x4C];
 // LINE 248:
 	return;
-_T688:
 }
 
 // FUNCTION: COPTER_D 0x00451ea4
@@ -3434,7 +3419,6 @@ void MessageBoxWindow::SetTextColor(const /*packed*/ struct SparkalColor& colorN
 	__asm        call   dword ptr [eax+0x30];
 // LINE 257:
 	return;
-_T2e:
 }
 
 // FUNCTION: COPTER_D 0x00451ed9
@@ -3453,7 +3437,6 @@ _T24:
 // LINE 268:
 _T3c:
 	return;
-_T41:
 }
 
 // FUNCTION: COPTER_D 0x00451f21
@@ -3489,7 +3472,7 @@ void AnimationWindow::AnimationWindow() {
 	this->lTransparentIndex = 0xffffffff;
 // LINE 295:
 	return;
-_Tb5:
+
 	__asm        mov    eax, this;
 }
 
@@ -3571,7 +3554,7 @@ _Tf5:
 	__asm        mov    [ecx+0x28], eax;
 // LINE 333:
 	return;
-_T124:
+
 	__asm        mov    eax, this;
 }
 
@@ -3592,8 +3575,7 @@ int32_t AnimationWindow::ComposeSelf() {
 	__asm        jne    _T2d;
 // LINE 348:
 _T26:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T141;
+	return 0x0;
 // LINE 350:
 _T2d:
 	__asm        mov    eax, this;
@@ -3686,14 +3668,11 @@ _T11c:
 _T124:
 	this->lMillisecondsOfLastFrame = lMillisecondsCurrent;
 // LINE 373:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T141;
+	return 0x1;
 // LINE 376:
 _T13a:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T141;
+	return 0x0;
 // LINE 377:
-_T141:
 }
 
 // FUNCTION: COPTER_D 0x00452252
@@ -3786,7 +3765,6 @@ _T136:
 // LINE 403:
 _T140:
 	return;
-_T145:
 }
 
 // FUNCTION: COPTER_D 0x0045239c
@@ -3832,7 +3810,6 @@ _T3d:
 	this->bRunning = 0x1;
 // LINE 427:
 	return;
-_T4c:
 }
 
 // FUNCTION: COPTER_D 0x0045242c
@@ -3872,7 +3849,6 @@ _T72:
 // LINE 437:
 _T77:
 	return;
-_T7c:
 }
 
 // FUNCTION: COPTER_D 0x004524ad
@@ -3948,7 +3924,7 @@ _T131:
 	__asm        mov    dword ptr [eax], 0x58FC20;
 // LINE 504:
 	return;
-_T14c:
+
 	__asm        mov    eax, this;
 }
 
@@ -3963,7 +3939,7 @@ void RenderSettingsWindow::~RenderSettingsWindow() {
 	__asm        jmp    _T22;
 _T22:
 	return;
-_T27:
+
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
 }
@@ -5944,7 +5920,6 @@ _Tb5:
 // LINE 686:
 _Tc2:
 	return;
-_Tc7:
 }
 
 // FUNCTION: COPTER_D 0x00454288
@@ -6138,10 +6113,8 @@ _T28b:
 	__asm        jmp    _T290;
 // LINE 707:
 _T290:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T29a;
+	return 0x1;
 // LINE 708:
-_T29a:
 }
 
 // FUNCTION: COPTER_D 0x00454527
@@ -6169,10 +6142,8 @@ long RenderSettingsWindow::DoKeyDown(long lKey, char chModifiers) {
 	__asm        call   dword ptr [edx];
 // LINE 720:
 _T45:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T4f;
+	return 0x1;
 // LINE 721:
-_T4f:
 }
 
 // FUNCTION: COPTER_D 0x0045457d
@@ -6194,10 +6165,8 @@ int32_t RenderSettingsWindow::SetCurrentSettings(long bNewShowBuildingTextures, 
 	__asm        mov    ecx, this;
 	__asm        call   RenderSettingsWindow::DrawPreviewBasedOnCurrentSettings;
 // LINE 746:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T59;
+	return 0x1;
 // LINE 747:
-_T59:
 }
 
 // FUNCTION: COPTER_D 0x004545dd
@@ -6214,7 +6183,6 @@ void RenderSettingsWindow::GetCurrentSettings(long& bGetShowBuildingTextures, lo
 	lGetFogCloseness. = this->lFogCloseness;
 // LINE 768:
 	return;
-_T4e:
 }
 
 // FUNCTION: COPTER_D 0x00454632
@@ -6335,7 +6303,6 @@ _T176:
 	__asm        call   SliderWindow::SetValue;
 // LINE 803:
 	return;
-_T193:
 }
 
 // FUNCTION: COPTER_D 0x004547ca
@@ -6915,7 +6882,6 @@ _T8f6:
 	__asm        jmp    _T8fb;
 _T8fb:
 	return;
-_T900:
 }
 
 // FUNCTION: COPTER_D 0x004550cf
@@ -7707,7 +7673,6 @@ _T926:
 // LINE 881:
 _T92b:
 	return;
-_T930:
 }
 
 // FUNCTION: COPTER_D 0x00455a06
@@ -7737,8 +7702,7 @@ _T17:
 	__asm        call   dword ptr [edx];
 // LINE 894:
 _T46:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1ee;
+	return 0x1;
 // LINE 897:
 _T50:
 	__asm        mov    eax, this;
@@ -7760,8 +7724,7 @@ _T50:
 	__asm        call   dword ptr [edx];
 // LINE 899:
 _T7f:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1ee;
+	return 0x1;
 // LINE 902:
 _T89:
 	__asm        cmp    lMessage, 0x10001;
@@ -7777,8 +7740,7 @@ _T89:
 	__asm        call   RenderSettingsWindow::DrawPreviewBasedOnCurrentSettings;
 // LINE 906:
 _Tb5:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1ee;
+	return 0x1;
 // LINE 909:
 _Tbf:
 	__asm        cmp    lMessage, 0x10001;
@@ -7799,8 +7761,7 @@ _Tf1:
 	__asm        call   RenderSettingsWindow::DrawPreviewBasedOnCurrentSettings;
 // LINE 913:
 _Tf9:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1ee;
+	return 0x1;
 // LINE 916:
 _T103:
 	__asm        cmp    lMessage, 0x10001;
@@ -7821,8 +7782,7 @@ _T135:
 	__asm        call   RenderSettingsWindow::DrawPreviewBasedOnCurrentSettings;
 // LINE 920:
 _T13d:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1ee;
+	return 0x1;
 // LINE 923:
 _T147:
 	__asm        cmp    lMessage, 0x10001;
@@ -7843,8 +7803,7 @@ _T179:
 	__asm        call   RenderSettingsWindow::DrawPreviewBasedOnCurrentSettings;
 // LINE 927:
 _T181:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1ee;
+	return 0x1;
 // LINE 931:
 _T18b:
 	__asm        mov    eax, pMessageData;
@@ -7852,8 +7811,7 @@ _T18b:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x84], eax;
 // LINE 932:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1ee;
+	return 0x1;
 // LINE 933:
 	__asm        jmp    _T1e7;
 _T1a8:
@@ -7876,10 +7834,8 @@ _T1a8:
 //   _T18b
 // LINE 935:
 _T1e7:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1ee;
+	return 0x0;
 // LINE 936:
-_T1ee:
 }
 
 // FUNCTION: COPTER_D 0x00455bfb
@@ -7915,7 +7871,7 @@ void SoundSettingsWindow::SoundSettingsWindow(/*packed*/ class MRect& rectNewPos
 	__asm        mov    dword ptr [eax], 0x58FCE8;
 // LINE 991:
 	return;
-_T7a:
+
 	__asm        mov    eax, this;
 }
 
@@ -9256,10 +9212,8 @@ long SoundSettingsWindow::DoKeyDown(long lKey, char chModifiers) {
 	__asm        call   dword ptr [edx];
 // LINE 1128:
 _T45:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T4f;
+	return 0x1;
 // LINE 1129:
-_T4f:
 }
 
 // FUNCTION: COPTER_D 0x00456f66
@@ -9275,10 +9229,8 @@ int32_t SoundSettingsWindow::SetCurrentVolumeSettings(/*packed*/ struct SoundPre
 	__asm        mov    ecx, [eax+0x74];
 	__asm        call   SliderWindow::SetValue;
 // LINE 1141:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T30;
+	return 0x1;
 // LINE 1142:
-_T30:
 }
 
 // FUNCTION: COPTER_D 0x00456f9d
@@ -9366,10 +9318,8 @@ _Tda:
 	__asm        call   dword ptr [edx+0xC8];
 // LINE 1179:
 _Tf6:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T100;
+	return 0x1;
 // LINE 1180:
-_T100:
 }
 
 // FUNCTION: COPTER_D 0x004570a4
@@ -9390,7 +9340,6 @@ void SoundSettingsWindow::GetCurrentVolumeSettings(/*packed*/ struct SoundPrefer
 	__asm        mov    [ecx], eax;
 // LINE 1193:
 	return;
-_T34:
 }
 
 // FUNCTION: COPTER_D 0x004570df
@@ -9469,7 +9418,6 @@ _Tf8:
 	currentRadioPreferences.bOptionPlayEnglishIfDefaultLanguageNotFound = 0x1;
 // LINE 1211:
 	return;
-_T107:
 }
 
 // FUNCTION: COPTER_D 0x004571ed
@@ -9499,8 +9447,7 @@ _T17:
 	__asm        call   dword ptr [edx];
 // LINE 1224:
 _T46:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tae;
+	return 0x1;
 // LINE 1227:
 _T50:
 	__asm        mov    eax, this;
@@ -9522,8 +9469,7 @@ _T50:
 	__asm        call   dword ptr [edx];
 // LINE 1229:
 _T7f:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tae;
+	return 0x1;
 // LINE 1230:
 	__asm        jmp    _Ta7;
 _T8e:
@@ -9536,10 +9482,8 @@ _T8e:
 	__asm        jmp    _Ta7;
 // LINE 1232:
 _Ta7:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tae;
+	return 0x0;
 // LINE 1233:
-_Tae:
 }
 
 // FUNCTION: COPTER_D 0x004572a2
@@ -9622,7 +9566,7 @@ _T4c:
 // LINE 1326:
 _T69:
 	return;
-_T6e:
+
 	__asm        mov    eax, this;
 }
 
@@ -11773,7 +11717,6 @@ void CitySettingsWindow::SetCurrentCitySettings(/*packed*/ struct tagCitySetting
 	__asm        call   SliderWindow::SetValue;
 // LINE 1478:
 	return;
-_Taf:
 }
 
 // FUNCTION: COPTER_D 0x004592ab
@@ -11828,7 +11771,6 @@ void CitySettingsWindow::GetCurrentCitySettings(/*packed*/ struct tagCitySetting
 	__asm        mov    [ecx+0x1C], eax;
 // LINE 1494:
 	return;
-_Ta7:
 }
 
 // FUNCTION: COPTER_D 0x00459359
@@ -11858,8 +11800,7 @@ _T17:
 	__asm        call   dword ptr [edx];
 // LINE 1508:
 _T46:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tae;
+	return 0x1;
 // LINE 1511:
 _T50:
 	__asm        mov    eax, this;
@@ -11881,8 +11822,7 @@ _T50:
 	__asm        call   dword ptr [edx];
 // LINE 1513:
 _T7f:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tae;
+	return 0x1;
 // LINE 1514:
 	__asm        jmp    _Ta7;
 _T8e:
@@ -11895,10 +11835,8 @@ _T8e:
 	__asm        jmp    _Ta7;
 // LINE 1516:
 _Ta7:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tae;
+	return 0x0;
 // LINE 1517:
-_Tae:
 }
 
 // FUNCTION: COPTER_D 0x0045940e
@@ -11926,10 +11864,8 @@ long CitySettingsWindow::DoKeyDown(long lKey, char chModifiers) {
 	__asm        call   dword ptr [edx];
 // LINE 1527:
 _T45:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T4f;
+	return 0x1;
 // LINE 1528:
-_T4f:
 }
 
 // FUNCTION: COPTER_D 0x00459464
@@ -12243,7 +12179,7 @@ _T3e1:
 // LINE 1556:
 _T3e6:
 	return;
-_T3eb:
+
 	__asm        mov    eax, this;
 }
 
@@ -12442,7 +12378,7 @@ _T243:
 	__asm        jmp    _T266;
 _T266:
 	return;
-_T26b:
+
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
 }
@@ -12499,8 +12435,7 @@ _T44:
 	__asm        cmp    dword ptr [eax+0x54], 0;
 	__asm        jne    _T5b;
 // LINE 1592:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Taf6;
+	return 0x0;
 // LINE 1603:
 _T5b:
 	lEndXPosition = this-><PopupMenuExtra+0x28>;
@@ -13291,10 +13226,8 @@ _Tae4:
 	__asm        jmp    _T613;
 // LINE 1683:
 _Taec:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Taf6;
+	return 0x1;
 // LINE 1684:
-_Taf6:
 }
 
 // FUNCTION: COPTER_D 0x0045a5f8
@@ -13570,7 +13503,6 @@ _T63:
 	__asm        call   GraphicWindow::DestroyImage;
 // LINE 1713:
 	return;
-_T70:
 }
 
 // FUNCTION: COPTER_D 0x0045a932
@@ -13610,7 +13542,6 @@ _T55:
 	__asm        mov    [ecx+0xB0], eax;
 // LINE 1725:
 	return;
-_T79:
 }
 
 // FUNCTION: COPTER_D 0x0045a9b0
@@ -13722,7 +13653,6 @@ _T71:
 // LINE 1771:
 _Tfa:
 	return;
-_Tff:
 }
 
 // FUNCTION: COPTER_D 0x0045aab4
@@ -14035,7 +13965,7 @@ _T3d3:
 // LINE 1804:
 _T3d8:
 	return;
-_T3dd:
+
 	__asm        mov    eax, this;
 }
 
@@ -14341,7 +14271,7 @@ _T3bb:
 // LINE 1821:
 _T3c0:
 	return;
-_T3c5:
+
 	__asm        mov    eax, this;
 }
 
@@ -14420,7 +14350,7 @@ _Tea:
 	__asm        jmp    _Tef;
 _Tef:
 	return;
-_Tf4:
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x84;
 	__asm        call   MFont::~MFont;
@@ -14457,7 +14387,6 @@ void TooltipWindow::SetWindowTitle(int32_t nNewWindowTitleTextID) {
 	__asm        call   dword ptr [eax+0xE0];
 // LINE 1848:
 	return;
-_T2b:
 }
 
 // FUNCTION: COPTER_D 0x0045b3d7
@@ -14476,7 +14405,6 @@ void TooltipWindow::SetWindowTitle(/*packed*/ class basic_string<char>& sNewWind
 	__asm        call   dword ptr [eax+0x30];
 // LINE 1858:
 	return;
-_T2c:
 }
 
 // FUNCTION: COPTER_D 0x0045b40a
@@ -14737,10 +14665,8 @@ _T276:
 	__asm        mov    ecx, [eax+0x44];
 	__asm        call   dword ptr [edx+0x4C];
 // LINE 1888:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2bb;
+	return 0x1;
 // LINE 1889:
-_T2bb:
 }
 
 // FUNCTION: COPTER_D 0x0045b6ca
@@ -15011,7 +14937,6 @@ _T63:
 	__asm        call   GraphicWindow::DestroyImage;
 // LINE 1919:
 	return;
-_T70:
 }
 
 // FUNCTION: COPTER_D 0x0045b9f6
@@ -15041,7 +14966,6 @@ void TooltipWindow::SetTextAndShow(/*packed*/ class MPoint& ptNewPosition, /*pac
 // LINE 1930:
 _T42:
 	return;
-_T47:
 }
 
 // FUNCTION: COPTER_D 0x0045ba44
@@ -15071,7 +14995,6 @@ void TooltipWindow::SetTextAndShow(/*packed*/ class MPoint& ptNewPosition, int32
 // LINE 1940:
 _T45:
 	return;
-_T4a:
 }
 
 // FUNCTION: COPTER_D 0x0045ba95
@@ -15113,7 +15036,7 @@ _T8b:
 	__asm        mov    dword ptr [eax], 0x5900F0;
 // LINE 1964:
 	return;
-_Tb3:
+
 	__asm        mov    eax, this;
 }
 
@@ -15373,7 +15296,7 @@ _T332:
 // LINE 1982:
 _T337:
 	return;
-_T33c:
+
 	__asm        mov    eax, this;
 }
 
@@ -15765,7 +15688,7 @@ _T4ad:
 // LINE 2003:
 _T4b2:
 	return;
-_T4b7:
+
 	__asm        mov    eax, this;
 }
 
@@ -15782,7 +15705,7 @@ _T22:
 	__asm        jmp    _T27;
 _T27:
 	return;
-_T2c:
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x84;
 	__asm        call   MFont::~MFont;
@@ -15852,10 +15775,8 @@ _Tbd:
 	__asm        call   GraphicWindow::MakeFocus;
 	__asm        add    esp, 4;
 // LINE 2022:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Td3;
+	return 0x1;
 // LINE 2023:
-_Td3:
 }
 
 // FUNCTION: COPTER_D 0x0045c476
@@ -15994,10 +15915,8 @@ _T1f4:
 	this->mySecondImage = 0x0;
 // LINE 2036:
 _T204:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T20e;
+	return 0x1;
 // LINE 2037:
-_T20e:
 }
 
 // FUNCTION: COPTER_D 0x0045c689
@@ -16030,7 +15949,6 @@ _T56:
 // LINE 2047:
 _T63:
 	return;
-_T68:
 }
 
 // FUNCTION: COPTER_D 0x0045c6f6
@@ -16258,10 +16176,8 @@ _T233:
 	__asm        call   dword ptr [eax+0x2C];
 // LINE 2087:
 _T286:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T290;
+	return 0x1;
 // LINE 2088:
-_T290:
 }
 
 // FUNCTION: COPTER_D 0x0045c98b
@@ -16272,8 +16188,7 @@ long BoneheadTextEditWindow::DoCharacter(long lCharacter) {
 	__asm        cmp    lCharacter, 0x20;
 	__asm        jge    _T1d;
 // LINE 2099:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T36b;
+	return 0x0;
 // LINE 2101:
 _T1d:
 	__asm        jmp    _T22;
@@ -16285,8 +16200,7 @@ _T22:
 	__asm        cmp    [eax+4], ecx;
 	__asm        jb     _T41;
 // LINE 2102:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T36b;
+	return 0x0;
 // LINE 2105:
 _T41:
 	__asm        jmp    _T46;
@@ -16565,10 +16479,8 @@ _T34a:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 2109:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T36b;
+	return 0x1;
 // LINE 2110:
-_T36b:
 }
 
 // FUNCTION: COPTER_D 0x0045ccfd
@@ -16604,10 +16516,8 @@ _T4b:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 2123:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T64;
+	return 0x1;
 // LINE 2124:
-_T64:
 }
 
 // FUNCTION: COPTER_D 0x0045cd68
@@ -16739,10 +16649,8 @@ int32_t BoneheadTextEditWindow::SetCaretPeriod(unsigned long lMicrosecondsBetwee
 // LINE 2150:
 	this->lCaretTimerPeriod = lMicrosecondsBetweenCaretChanges;
 // LINE 2151:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T22;
+	return 0x1;
 // LINE 2152:
-_T22:
 }
 
 // FUNCTION: COPTER_D 0x0045cf34
@@ -16751,7 +16659,6 @@ void BoneheadTextEditWindow::SetCharacterCountLimit(unsigned long lNewCharacterC
 	this->lCharacterCountLimit = lNewCharacterCountLimit;
 // LINE 2161:
 	return;
-_T1d:
 }
 
 // FUNCTION: COPTER_D 0x0045cf58
@@ -16766,8 +16673,7 @@ _T11:
 	__asm        cmp    dword ptr [eax+4], 1;
 	__asm        ja     _T28;
 // LINE 2173:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T491;
+	return 0x0;
 // LINE 2175:
 _T28:
 	__asm        jmp    _T2d;
@@ -17159,10 +17065,8 @@ _T482:
 	__asm        jmp    _T487;
 // LINE 2178:
 _T487:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T491;
+	return 0x1;
 // LINE 2179:
-_T491:
 }
 
 // FUNCTION: COPTER_D 0x0045d3ee
@@ -17583,7 +17487,6 @@ _T49c:
 // LINE 2198:
 _T4a1:
 	return;
-_T4a6:
 }
 
 // FUNCTION: COPTER_D 0x0045d8c1
@@ -17637,7 +17540,6 @@ _T6a:
 	__asm        mov    byte ptr [eax+ecx], 0;
 // LINE 2209:
 	return;
-_T8d:
 }
 
 // FUNCTION: COPTER_D 0x0045d955
@@ -17719,7 +17621,7 @@ _Td1:
 	__asm        call   dword ptr [edx+0xCC];
 // LINE 2248:
 	return;
-_Tf6:
+
 	__asm        mov    eax, this;
 }
 
@@ -17802,7 +17704,7 @@ _Td1:
 	__asm        call   dword ptr [edx+0xCC];
 // LINE 2277:
 	return;
-_Tf6:
+
 	__asm        mov    eax, this;
 }
 
@@ -17827,10 +17729,8 @@ int32_t MessageBoxWindowEdit::Initialize() {
 	__asm        mov    ecx, [eax+0xA4];
 	__asm        call   dword ptr [edx+0xF0];
 // LINE 2288:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T54;
+	return 0x1;
 // LINE 2289:
-_T54:
 }
 
 // FUNCTION: COPTER_D 0x0045dbae
@@ -17931,7 +17831,7 @@ _T167:
 	__asm        mov    dword ptr [eax], 0x5902D8;
 // LINE 2320:
 	return;
-_T18f:
+
 	__asm        mov    eax, this;
 }
 
@@ -18032,7 +17932,7 @@ _T113:
 	__asm        jmp    _T118;
 _T118:
 	return;
-_T11d:
+
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
 }
@@ -18089,26 +17989,21 @@ _Taa:
 	__asm        jmp    _Taf;
 // LINE 2337:
 _Taf:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tb9;
+	return 0x1;
 // LINE 2338:
-_Tb9:
 }
 
 // FUNCTION: COPTER_D 0x0045df2f
 int32_t ScrollingCreditWindow::DrawSelf() {
 // LINE 2344:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
+	return 0x0;
 // LINE 2345:
-_T13:
 }
 
 // FUNCTION: COPTER_D 0x0045df47
 void ScrollingCreditWindow::RestartCreditDisplay() {
 // LINE 2352:
 	return;
-_T11:
 }
 
 // FUNCTION: COPTER_D 0x0045df5d
@@ -18226,28 +18121,22 @@ _T17a:
 // FUNCTION: COPTER_D 0x0045e0dc
 int32_t ScrollingCreditWindow::LoadCreditStringArray() {
 // LINE 2366:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
+	return 0x0;
 // LINE 2367:
-_T13:
 }
 
 // FUNCTION: COPTER_D 0x0045e0f4
 int32_t ScrollingCreditWindow::Scroll() {
 // LINE 2373:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
+	return 0x0;
 // LINE 2374:
-_T13:
 }
 
 // FUNCTION: COPTER_D 0x0045e10c
 int32_t ScrollingCreditWindow::DoMessage(/*unpacked*/ class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 // LINE 2381:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
+	return 0x0;
 // LINE 2382:
-_T13:
 }
 
 // STATIC INITIALIZER:
@@ -18269,7 +18158,6 @@ static void $E71() {
 	__asm        jmp    _T20;
 _T20:
 	return;
-_T25:
 }
 
 // STATIC INITIALIZER:
@@ -18291,7 +18179,6 @@ static void $E74() {
 	__asm        jmp    _T20;
 _T20:
 	return;
-_T25:
 }
 
 // FUNCTION: COPTER_D 0x0045e1a4
@@ -18347,7 +18234,7 @@ _T78:
 // LINE 2425:
 _T98:
 	return;
-_T9d:
+
 	__asm        mov    eax, this;
 }
 
@@ -20286,7 +20173,6 @@ void CheckupWindow::SetCurrentSettings(long * lNewSettings) {
 	__asm        call   CheckupWindow::SetTextControlsBasedOnCurrentSliderValues;
 // LINE 2555:
 	return;
-_T4e:
 }
 
 // FUNCTION: COPTER_D 0x0045fe78
@@ -20311,7 +20197,6 @@ void CheckupWindow::GetCurrentSettings(long * lCurrentSettings) {
 	__asm        mov    [ecx+8], eax;
 // LINE 2566:
 	return;
-_T43:
 }
 
 // FUNCTION: COPTER_D 0x0045fec2
@@ -20406,7 +20291,6 @@ _Te5:
 	__asm        call   CheckupWindow::SetTextControlsBasedOnCurrentSliderValues;
 // LINE 2598:
 	return;
-_Tf2:
 }
 
 // FUNCTION: COPTER_D 0x0045ffb9
@@ -20437,14 +20321,11 @@ int32_t CheckupWindow::ShouldWeDisplayCheckupWindow() {
 	__asm        jge    _T6e;
 // LINE 2610:
 _T64:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T75;
+	return 0x1;
 // LINE 2612:
 _T6e:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T75;
+	return 0x0;
 // LINE 2613:
-_T75:
 }
 
 // FUNCTION: COPTER_D 0x00460033
@@ -21052,7 +20933,6 @@ _T7c2:
 // LINE 2669:
 _T7c7:
 	return;
-_T7cc:
 }
 
 // FUNCTION: COPTER_D 0x00460848
@@ -21070,8 +20950,7 @@ _T17:
 	__asm        call   CheckupWindow::SetTextControlsBasedOnCurrentSliderValues;
 // LINE 2686:
 _T2c:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Td5;
+	return 0x1;
 // LINE 2689:
 _T36:
 	__asm        mov    ecx, this;
@@ -21094,8 +20973,7 @@ _T36:
 	__asm        call   dword ptr [edx];
 // LINE 2692:
 _T68:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Td5;
+	return 0x1;
 // LINE 2695:
 _T72:
 	__asm        push   0;
@@ -21112,8 +20990,7 @@ _T72:
 	__asm        mov    ecx, [eax+0x38];
 	__asm        call   dword ptr [edx];
 // LINE 2696:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Td5;
+	return 0x1;
 // LINE 2697:
 	__asm        jmp    _Tce;
 _Ta3:
@@ -21131,10 +21008,8 @@ _Ta3:
 //   _T17
 // LINE 2699:
 _Tce:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Td5;
+	return 0x0;
 // LINE 2700:
-_Td5:
 }
 
 // FUNCTION: COPTER_D 0x00460924
@@ -21162,10 +21037,8 @@ long CheckupWindow::DoKeyDown(long lKey, char chModifiers) {
 	__asm        call   dword ptr [edx];
 // LINE 2713:
 _T45:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T4f;
+	return 0x1;
 // LINE 2714:
-_T4f:
 }
 
 

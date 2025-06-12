@@ -177,7 +177,7 @@ _T7e:
 // LINE 67:
 _T9b:
 	return;
-_Ta0:
+
 	__asm        mov    eax, this;
 }
 
@@ -680,7 +680,7 @@ _T5a3:
 // Block end:
 _T5b7:
 	return;
-_T5bc:
+
 	__asm        mov    eax, this;
 }
 
@@ -757,7 +757,6 @@ _Ta5:
 // LINE 269:
 _Tbf:
 	return;
-_Tc4:
 }
 
 // FUNCTION: COPTER_D 0x00480dca
@@ -820,10 +819,8 @@ _T81:
 	Error = 0x80000000;
 // LINE 292:
 _T9b:
-	__asm        mov    eax, Error;
-	__asm        jmp    _Ta3;
+	return Error;
 // LINE 293:
-_Ta3:
 }
 
 // FUNCTION: COPTER_D 0x00480e74
@@ -889,10 +886,8 @@ _Ta8:
 	ReturnCode = 0x80000007;
 // LINE 329:
 _Taf:
-	__asm        mov    eax, ReturnCode;
-	__asm        jmp    _Tb7;
+	return ReturnCode;
 // LINE 330:
-_Tb7:
 }
 
 // FUNCTION: COPTER_D 0x00480f32
@@ -918,26 +913,21 @@ unsigned long CSparkalWindow::SetCursorFromIndex(int32_t nIndex) {
 	ReturnCode = 0x80000007;
 // LINE 344:
 _T3f:
-	__asm        mov    eax, ReturnCode;
-	__asm        jmp    _T47;
+	return ReturnCode;
 // LINE 345:
-_T47:
 }
 
 // FUNCTION: COPTER_D 0x00480f80
 unsigned long CSparkalWindow::LoadGameCursors() {
 // LINE 353:
-	__asm        mov    eax, 0x80000007;
-	__asm        jmp    _T16;
+	return 0x80000007;
 // LINE 354:
-_T16:
 }
 
 // FUNCTION: COPTER_D 0x00480f9b
 void CSparkalWindow::FreeGameCursors() {
 // LINE 362:
 	return;
-_T11:
 }
 
 // FUNCTION: COPTER_D 0x00480fb1
@@ -1147,10 +1137,8 @@ _T183:
 	pRectBottom[0] = TextRect.bottom;
 // LINE 451:
 _T1fc:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T203;
+	return 0x0;
 // LINE 452:
-_T203:
 }
 
 // FUNCTION: COPTER_D 0x004811bb
@@ -1212,10 +1200,8 @@ _T3a:
 	__asm        call   dword ptr ds:[0x6C384C];
 // LINE 473:
 _T9c:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Ta3;
+	return 0x0;
 // LINE 474:
-_Ta3:
 }
 
 // FUNCTION: COPTER_D 0x00481265
@@ -1276,7 +1262,6 @@ _T97:
 // LINE 496:
 _Tba:
 	return;
-_Tbf:
 }
 
 // FUNCTION: COPTER_D 0x0048132b
@@ -1466,10 +1451,8 @@ _T295:
 // LINE 570:
 // Block end:
 _T2a2:
-	__asm        mov    eax, IsID;
-	__asm        jmp    _T2ad;
+	return IsID;
 // LINE 571:
-_T2ad:
 }
 
 // FUNCTION: COPTER_D 0x004815dd
@@ -1577,8 +1560,7 @@ _T25:
 	__asm        call   dword ptr ds:[0x6C3824];
 // LINE 621:
 _T85:
-	__asm        mov    eax, bRedraw;
-	__asm        jmp    _T483;
+	return bRedraw;
 // LINE 623:
 // Block end:
 _T8d:

@@ -179,14 +179,12 @@ void S3RoadGraphInit() {
 	__asm        call   RoadGraph::Init;
 // LINE 70:
 	return;
-_T15:
 }
 
 // FUNCTION: COPTER_D 0x0053bd5a
 void S3RoadGraphDestroy() {
 // LINE 76:
 	return;
-_T0b:
 }
 
 // FUNCTION: COPTER_D 0x0053bd6a
@@ -716,7 +714,6 @@ _T5b8:
 // LINE 191:
 _T5bd:
 	return;
-_T5c2:
 }
 
 // FUNCTION: COPTER_D 0x0053c331
@@ -1041,7 +1038,6 @@ _T353:
 	return;
 _T361:
 	__asm        jmp    IntersectionKludge;
-_T366:
 }
 
 // FUNCTION: COPTER_D 0x0053c69e
@@ -1341,7 +1337,6 @@ _T2a3:
 	__asm        mov    [eax+0x1E], ecx;
 // LINE 413:
 	return;
-_T2f3:
 }
 
 // FUNCTION: COPTER_D 0x0053c998
@@ -2083,7 +2078,6 @@ _T105:
 	__asm        jne    _T62;
 // LINE 587:
 	return;
-_T134:
 }
 
 // FUNCTION: COPTER_D 0x0053d167
@@ -2341,12 +2335,10 @@ _T1cc:
 	__asm        jmp    _T83;
 // LINE 701:
 _T1d1:
-	__asm        mov    eax, returnVal;
-	__asm        jmp    _T1de;
+	return returnVal;
 // LINE 702:
 _T1d9:
 	__asm        jmp    KlugeFirstStepIsAnIntersection;
-_T1de:
 }
 
 // FUNCTION: COPTER_D 0x0053d400
@@ -2783,7 +2775,6 @@ _T4c6:
 // LINE 758:
 _T4cb:
 	return;
-_T4d0:
 }
 
 // FUNCTION: COPTER_D 0x0053d8d5
@@ -2809,8 +2800,7 @@ int32_t RoadGraph::IsThisADeadEnd(enum DirIndex2 currentDir, unsigned char x, un
 	__asm        test   eax, eax;
 	__asm        je     _T3c;
 // LINE 771:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tf6;
+	return 0x0;
 // LINE 776:
 _T3c:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(y);
@@ -2828,15 +2818,13 @@ _T3c:
 	__asm        cmp    returnStatus, 0xFFFFFFFF;
 	__asm        jne    _T6b;
 // LINE 779:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tf6;
+	return 0x1;
 // LINE 781:
 _T6b:
 	__asm        cmp    returnStatus, 0xFFFFFFFE;
 	__asm        jne    _T7c;
 // LINE 782:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tf6;
+	return 0x0;
 // LINE 785:
 _T7c:
 	__asm        mov    eax, currentDir;
@@ -2889,7 +2877,6 @@ _Tcd:
 _Tf1:
 	__asm        jmp    _T3c;
 // LINE 803:
-_Tf6:
 }
 
 // FUNCTION: COPTER_D 0x0053d9d2
@@ -3653,7 +3640,6 @@ _T894:
 // LINE 876:
 _T927:
 	return;
-_T92c:
 }
 
 // FUNCTION: COPTER_D 0x0053e305
@@ -4161,7 +4147,6 @@ _T572:
 // LINE 1009:
 _T59f:
 	return;
-_T5a4:
 }
 
 // FUNCTION: COPTER_D 0x0053e8b0
@@ -4229,8 +4214,7 @@ _T91:
 // LINE 1023:
 	pNextDir-> = currentDir;
 // LINE 1024:
-	__asm        mov    eax, currentDir;
-	__asm        jmp    _T61f;
+	return currentDir;
 // LINE 1029:
 _Tc4:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(LocalTile);
@@ -4413,14 +4397,12 @@ _T283:
 	__asm        test   eax, eax;
 	__asm        je     _T2dd;
 // LINE 1052:
-	__asm        mov    eax, 0xFFFFFFFE;
-	__asm        jmp    _T61f;
+	return 0xfffffffe;
 // LINE 1053:
 	__asm        jmp    _T2e4;
 // LINE 1054:
 _T2dd:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T61f;
+	return 0x0;
 // LINE 1057:
 _T2e4:
 	__asm        cmp    currentDir, 3;
@@ -4507,14 +4489,12 @@ _T392:
 	__asm        test   eax, eax;
 	__asm        je     _T3ee;
 // LINE 1062:
-	__asm        mov    eax, 0xFFFFFFFE;
-	__asm        jmp    _T61f;
+	return 0xfffffffe;
 // LINE 1063:
 	__asm        jmp    _T3f8;
 // LINE 1064:
 _T3ee:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T61f;
+	return 0x1;
 // LINE 1067:
 _T3f8:
 	__asm        cmp    currentDir, 1;
@@ -4597,14 +4577,12 @@ _T495:
 	__asm        test   eax, eax;
 	__asm        je     _T4ef;
 // LINE 1072:
-	__asm        mov    eax, 0xFFFFFFFE;
-	__asm        jmp    _T61f;
+	return 0xfffffffe;
 // LINE 1073:
 	__asm        jmp    _T4f9;
 // LINE 1074:
 _T4ef:
-	__asm        mov    eax, 3;
-	__asm        jmp    _T61f;
+	return 0x3;
 // LINE 1077:
 _T4f9:
 	__asm        cmp    currentDir, 0;
@@ -4691,22 +4669,18 @@ _T5a7:
 	__asm        test   eax, eax;
 	__asm        je     _T603;
 // LINE 1082:
-	__asm        mov    eax, 0xFFFFFFFE;
-	__asm        jmp    _T61f;
+	return 0xfffffffe;
 // LINE 1083:
 	__asm        jmp    _T60d;
 // LINE 1084:
 _T603:
-	__asm        mov    eax, 2;
-	__asm        jmp    _T61f;
+	return 0x2;
 // LINE 1088:
 _T60d:
 	pNextDir-> = currentDir;
 // LINE 1089:
-	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _T61f;
+	return 0xffffffff;
 // LINE 1090:
-_T61f:
 }
 
 // FUNCTION: COPTER_D 0x0053eed6
@@ -6430,7 +6404,6 @@ _T157f:
 // LINE 1192:
 _T15ab:
 	return;
-_T15b0:
 }
 
 // FUNCTION: COPTER_D 0x0054048d
@@ -6589,7 +6562,6 @@ _T165:
 // LINE 1236:
 _T19d:
 	return;
-_T1a2:
 }
 
 // FUNCTION: COPTER_D 0x00540636
@@ -7567,7 +7539,6 @@ _Tae9:
 // LINE 1406:
 _Taee:
 	return;
-_Taf3:
 }
 
 // FUNCTION: COPTER_D 0x00541130
@@ -7728,7 +7699,6 @@ _T124:
 	__asm        mov    [eax+0x1A], ecx;
 // LINE 1440:
 	return;
-_T19a:
 }
 
 // FUNCTION: COPTER_D 0x005412d1

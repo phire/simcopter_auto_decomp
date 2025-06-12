@@ -221,8 +221,7 @@ struct FPoint3d{ // packed(0x18 bytes) TI: 0x2f28
 // LINE 154:
 	GlobalError = 0x4;
 // LINE 155:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1f4;
+	return 0x0;
 // LINE 166:
 _T3f:
 	__asm        mov    eax, info;
@@ -279,8 +278,7 @@ _T3f:
 // LINE 171:
 	GlobalError = 0x4;
 // LINE 172:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1f4;
+	return 0x0;
 // LINE 175:
 _Te1:
 	__asm        mov    eax, ObjDataSize;
@@ -295,8 +293,7 @@ _Te1:
 // LINE 176:
 	GlobalError = 0x4;
 // LINE 177:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1f4;
+	return 0x0;
 // LINE 180:
 _T113:
 	ObjData = group;
@@ -339,8 +336,7 @@ _T181:
 	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
 // LINE 192:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1f4;
+	return 0x0;
 // LINE 194:
 _T196:
 	__asm        jmp    _T131;
@@ -356,8 +352,7 @@ _T19b:
 // LINE 199:
 	GlobalError = 0xa;
 // LINE 200:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1f4;
+	return 0x0;
 // LINE 208:
 _T1c7:
 	res->res.mem = group;
@@ -368,10 +363,8 @@ _T1c7:
 // LINE 211:
 	res->count = objs;
 // LINE 212:
-	__asm        mov    eax, res;
-	__asm        jmp    _T1f4;
+	return res;
 // LINE 214:
-_T1f4:
 }
 
 // FUNCTION: COPTER_D 0x004d2379
@@ -473,8 +466,7 @@ int32_t LoadObjtType(int32_t barrymempool) {
 // LINE 302:
 	GlobalError = 0x9;
 // LINE 303:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T6b8;
+	return 0x0;
 // LINE 307:
 _T4e:
 	__asm        push   0x7C;
@@ -485,8 +477,7 @@ _T4e:
 	__asm        test   eax, eax;
 	__asm        jne    _T6e;
 // LINE 308:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T6b8;
+	return 0x0;
 // LINE 375:
 _T6e:
 	ObjectPtr->Attrib = fileobjhdr.Attrib;
@@ -515,8 +506,7 @@ _T6e:
 	__asm        test   eax, eax;
 	__asm        jne    _Te2;
 // LINE 390:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T6b8;
+	return 0x0;
 // LINE 413:
 _Te2:
 	__asm        mov    eax, ObjectPtr;
@@ -531,8 +521,7 @@ _Te2:
 	__asm        test   eax, eax;
 	__asm        jne    _T10d;
 // LINE 414:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T6b8;
+	return 0x0;
 // LINE 415:
 _T10d:
 	__asm        mov    eax, ObjectPtr;
@@ -557,8 +546,7 @@ _T10d:
 // LINE 452:
 	GlobalError = 0x4;
 // LINE 453:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T6b8;
+	return 0x0;
 // LINE 459:
 _T168:
 	ObjectPtr->FacePtr = dataptr;
@@ -588,8 +576,7 @@ _T193:
 	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
 // LINE 467:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T6b8;
+	return 0x0;
 // LINE 505:
 _T1da:
 	__asm        push   4;
@@ -608,8 +595,7 @@ _T1da:
 	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
 // LINE 508:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T6b8;
+	return 0x0;
 // LINE 512:
 _T214:
 	VertCount += reinterpret_cast<int16_t>(filefacehdr.NVerts);
@@ -669,8 +655,7 @@ _T2a4:
 	__asm        test   eax, eax;
 	__asm        jne    _T2e1;
 // LINE 545:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T6b8;
+	return 0x0;
 // LINE 566:
 _T2e1:
 	__asm        mov    y, 0;
@@ -714,8 +699,7 @@ _T339:
 	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
 // LINE 584:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T6b8;
+	return 0x0;
 // LINE 586:
 _T385:
 	__asm        movsx  eax, filefacehdr.NVerts;
@@ -908,8 +892,7 @@ _T5bf:
 	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
 // LINE 665:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T6b8;
+	return 0x0;
 // LINE 687:
 _T602:
 	BSPIndex = 0x0;
@@ -967,10 +950,8 @@ _T698:
 	__asm        add    esp, 4;
 // LINE 709:
 _T6ae:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T6b8;
+	return 0x1;
 // LINE 711:
-_T6b8:
 }
 
 // FUNCTION: COPTER_D 0x004d2ac6
@@ -1709,8 +1690,7 @@ _T68:
 	__asm        cmp    obj, 0;
 	__asm        jne    _T79;
 // LINE 1116:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T743;
+	return 0x0;
 // LINE 1119:
 _T79:
 	altydown = 0x75300000;
@@ -2299,8 +2279,7 @@ _T6f1:
 	__asm        jmp    _T71c;
 // LINE 1400:
 _T714:
-	__asm        mov    eax, altyupbelow;
-	__asm        jmp    _T743;
+	return altyupbelow;
 // LINE 1402:
 _T71c:
 	__asm        jmp    _T743;
@@ -2309,8 +2288,7 @@ _T721:
 	__asm        cmp    altyupabove, 0x75300000;
 	__asm        je     _T73b;
 // LINE 1405:
-	__asm        mov    eax, altyupabove;
-	__asm        jmp    _T743;
+	return altyupabove;
 // LINE 1406:
 	__asm        jmp    _T743;
 // LINE 1407:
@@ -2345,8 +2323,7 @@ int32_t VRGetObjZdist(int32_t obj, int32_t x, int32_t y, int32_t dir, int32_t di
 	__asm        cmp    obj, 0;
 	__asm        jne    _T20;
 // LINE 1436:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T20f;
+	return 0x0;
 // LINE 1439:
 _T20:
 	distz = 0x0;
@@ -2509,8 +2486,7 @@ _T1a4:
 // LINE 1493:
 	distz = facez;
 // LINE 1494:
-	__asm        mov    eax, distz;
-	__asm        jmp    _T20f;
+	return distz;
 // LINE 1506:
 next_face:
 	faceptr = faceptr->NextFace;
@@ -2518,10 +2494,8 @@ next_face:
 	__asm        jmp    _T3c;
 // LINE 1509:
 _T207:
-	__asm        mov    eax, distz;
-	__asm        jmp    _T20f;
+	return distz;
 // LINE 1511:
-_T20f:
 }
 
 // FUNCTION: COPTER_D 0x004d3b43
@@ -2548,8 +2522,7 @@ int32_t VRGetObjXdist(int32_t obj, int32_t y, int32_t z, int32_t dir, int32_t di
 	__asm        cmp    obj, 0;
 	__asm        jne    _T20;
 // LINE 1538:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T20d;
+	return 0x0;
 // LINE 1541:
 _T20:
 	distx = 0x0;
@@ -2712,8 +2685,7 @@ _T1a2:
 // LINE 1595:
 	distx = facex;
 // LINE 1596:
-	__asm        mov    eax, distx;
-	__asm        jmp    _T20d;
+	return distx;
 // LINE 1608:
 next_face:
 	faceptr = faceptr->NextFace;
@@ -2721,10 +2693,8 @@ next_face:
 	__asm        jmp    _T3c;
 // LINE 1611:
 _T205:
-	__asm        mov    eax, distx;
-	__asm        jmp    _T20d;
+	return distx;
 // LINE 1613:
-_T20d:
 }
 
 // FUNCTION: COPTER_D 0x004d3d55
@@ -2889,10 +2859,8 @@ _T59:
 	__asm        jmp    _T2b;
 // LINE 1724:
 _T5e:
-	__asm        mov    eax, maxy;
-	__asm        jmp    _T66;
+	return maxy;
 // LINE 1725:
-_T66:
 }
 
 // FUNCTION: COPTER_D 0x004d3f08
@@ -2980,7 +2948,6 @@ _T2a:
 // LINE 1785:
 	oh->CenterOrg.z = z;
 // LINE 1787:
-_Tdd:
 }
 
 // FUNCTION: COPTER_D 0x004d3fea
@@ -3244,8 +3211,7 @@ _Td3:
 // LINE 1905:
 	GlobalError = 0xd;
 // LINE 1906:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1a0;
+	return 0x0;
 // LINE 1909:
 _T120:
 	__asm        mov    eax, loword;
@@ -3270,8 +3236,7 @@ _T143:
 // LINE 1914:
 	GlobalError = 0xd;
 // LINE 1915:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1a0;
+	return 0x0;
 // LINE 1917:
 _T163:
 	__asm        mov    eax, k;
@@ -3297,10 +3262,8 @@ _T191:
 	__asm        jmp    _T21;
 // LINE 1922:
 _T196:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1a0;
+	return 0x1;
 // LINE 1923:
-_T1a0:
 }
 
 // FUNCTION: COPTER_D 0x004d4337
@@ -3375,8 +3338,7 @@ _T75:
 // LINE 1976:
 	GlobalError = 0x4;
 // LINE 1977:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tf3;
+	return 0x0;
 // LINE 1982:
 _T3b:
 	mp->ObjCount = 0x0;
@@ -3430,14 +3392,11 @@ _Tb5:
 // LINE 1993:
 	GlobalError = 0xe;
 // LINE 1994:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tf3;
+	return 0x0;
 // LINE 1996:
 _Teb:
-	__asm        mov    eax, mp;
-	__asm        jmp    _Tf3;
+	return mp;
 // LINE 1997:
-_Tf3:
 }
 
 // FUNCTION: COPTER_D 0x004d44bb
@@ -3849,7 +3808,6 @@ _T23f:
 	__asm        neg    eax;
 	__asm        sub    G_alloc_used, eax;
 // LINE 2192:
-_T28b:
 }
 
 // FUNCTION: COPTER_D 0x004d494c
@@ -3863,7 +3821,6 @@ void VRObjAssignLowRes(int32_t dest, int32_t src) {
 // LINE 2207:
 	return;
 // LINE 2208:
-_T1d:
 }
 
 // FUNCTION: COPTER_D 0x004d496e
@@ -3902,8 +3859,7 @@ int32_t VRObjCreateRope(int32_t nverts, int32_t color, int32_t seglen) {
 // LINE 2244:
 	GlobalError = 0x4;
 // LINE 2245:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T20d;
+	return 0x0;
 // LINE 2248:
 _T5f:
 	__asm        mov    eax, dataptr;
@@ -3915,8 +3871,7 @@ _T5f:
 // LINE 2250:
 	GlobalError = 0x9;
 // LINE 2251:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T20d;
+	return 0x0;
 // LINE 2254:
 _T84:
 	__asm        mov    eax, ObjDataSize;
@@ -4047,10 +4002,8 @@ _T17a:
 	__asm        jmp    _T177;
 // LINE 2313:
 _T205:
-	__asm        mov    eax, dataptr;
-	__asm        jmp    _T20d;
+	return dataptr;
 // LINE 2314:
-_T20d:
 }
 
 // FUNCTION: COPTER_D 0x004d4b80
@@ -4088,8 +4041,7 @@ int32_t VRObjCreatePoint(int32_t nverts, int32_t plotter) {
 // LINE 2349:
 	GlobalError = 0x4;
 // LINE 2350:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1ee;
+	return 0x0;
 // LINE 2353:
 _T5d:
 	__asm        mov    eax, dataptr;
@@ -4101,8 +4053,7 @@ _T5d:
 // LINE 2355:
 	GlobalError = 0x9;
 // LINE 2356:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1ee;
+	return 0x0;
 // LINE 2359:
 _T82:
 	__asm        mov    eax, ObjDataSize;
@@ -4216,10 +4167,8 @@ _T16d:
 	__asm        jmp    _T16a;
 // LINE 2416:
 _T1e6:
-	__asm        mov    eax, dataptr;
-	__asm        jmp    _T1ee;
+	return dataptr;
 // LINE 2417:
-_T1ee:
 }
 
 // FUNCTION: COPTER_D 0x004d4d73
@@ -4282,8 +4231,7 @@ int32_t VRCreateObjDuplicate(int32_t obj, char * mem) {
 // LINE 2463:
 	GlobalError = 0x9;
 // LINE 2464:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T161;
+	return 0x0;
 // LINE 2468:
 _T40:
 	__asm        push   0x90;
@@ -4388,10 +4336,8 @@ _Tb5:
 	__asm        jmp    _Tb2;
 // LINE 2506:
 _T159:
-	__asm        mov    eax, mem;
-	__asm        jmp    _T161;
+	return mem;
 // LINE 2508:
-_T161:
 }
 
 // FUNCTION: COPTER_D 0x004d4f25
@@ -4739,16 +4685,13 @@ _T365:
 	nptrptr-> = fh->Normal;
 // LINE 2629:
 _T37a:
-	__asm        mov    eax, tval;
-	__asm        jmp    _T391;
+	return tval;
 // LINE 2631:
 	__asm        jmp    _T4f;
 // LINE 2635:
 _T387:
-	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _T391;
+	return 0xffffffff;
 // LINE 2637:
-_T391:
 }
 
 

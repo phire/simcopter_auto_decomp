@@ -246,7 +246,6 @@ _T15:
 	__asm        jmp    _T24;
 _T24:
 	return;
-_T29:
 }
 
 // FUNCTION: COPTER_D 0x00441ea2
@@ -339,7 +338,6 @@ _Tbf:
 // LINE 97:
 _Tc4:
 	return;
-_Tc9:
 }
 
 // FUNCTION: COPTER_D 0x00441fb5
@@ -5242,10 +5240,8 @@ _T4a55:
 	__asm        jmp    _T49d8;
 // LINE 453:
 _T4a5a:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T4a64;
+	return 0x1;
 // LINE 454:
-_T4a64:
 }
 
 // FUNCTION: COPTER_D 0x00446a6b
@@ -5402,7 +5398,6 @@ _T248:
 // LINE 477:
 _T24d:
 	return;
-_T252:
 }
 
 // FUNCTION: COPTER_D 0x00446cc2
@@ -5444,8 +5439,7 @@ int32_t S3DSPlay(int32_t nSoundIndex, /*packed*/ struct Point3d *loc, int32_t nF
 	__asm        cmp    fpDistance, 0x7800000;
 	__asm        jl     _T65;
 // LINE 509:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13d;
+	return 0x0;
 // LINE 510:
 _T65:
 	__asm        push   0xF0600000;
@@ -5524,10 +5518,8 @@ _T11c:
 	__asm        call   SoundManager::PlaySoundA;
 	__asm        mov    nReturnValue, eax;
 // LINE 532:
-	__asm        mov    eax, nReturnValue;
-	__asm        jmp    _T13d;
+	return nReturnValue;
 // LINE 533:
-_T13d:
 }
 
 // FUNCTION: COPTER_D 0x00446e04
@@ -5539,7 +5531,6 @@ void S3DSStopPlay(int32_t nSoundIndex) {
 	__asm        call   SoundManager::StopSound;
 // LINE 553:
 	return;
-_T19:
 }
 
 // FUNCTION: COPTER_D 0x00446e22
@@ -5549,7 +5540,6 @@ void S3DSStopAllSounds() {
 	__asm        call   SoundManager::StopAllSounds;
 // LINE 570:
 	return;
-_T15:
 }
 
 // FUNCTION: COPTER_D 0x00446e3c
@@ -5578,7 +5568,6 @@ void S3SoundAdjFreq(int32_t nSoundIndex, long lFrequencyAdjustment) {
 // LINE 593:
 _T3c:
 	return;
-_T41:
 }
 
 // FUNCTION: COPTER_D 0x00446e82
@@ -5620,7 +5609,6 @@ _T3b:
 // LINE 619:
 _T76:
 	return;
-_T7b:
 }
 
 // FUNCTION: COPTER_D 0x00446f02
@@ -5797,7 +5785,6 @@ _T18f:
 	__asm        call   dword ptr [eax+0x54];
 // LINE 730:
 	return;
-_T1b2:
 }
 
 // FUNCTION: COPTER_D 0x004470fa
@@ -5862,7 +5849,6 @@ _T93:
 // LINE 744:
 _Ta9:
 	return;
-_Tae:
 }
 
 

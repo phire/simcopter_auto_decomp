@@ -26,7 +26,7 @@ void MTimer::MTimer(enum MTimer::TimerResolution nNewTimerResolution) {
 // LINE 65:
 _T5c:
 	return;
-_T61:
+
 	__asm        mov    eax, this;
 }
 
@@ -68,6 +68,5 @@ _T59:
 // LINE 96:
 _T72:
 	return;
-_T77:
 }
 

@@ -1263,7 +1263,7 @@ _T4ad:
 	__asm        call   MTimer::SetResolution;
 // LINE 73:
 	return;
-_T4dd:
+
 	__asm        mov    eax, this;
 }
 
@@ -1733,7 +1733,7 @@ _T554:
 	this->jingleSelectionListIterator.node = copyRadioStation.jingleSelectionListIterator.node;
 // LINE 99:
 	return;
-_T62f:
+
 	__asm        mov    eax, this;
 }
 
@@ -1744,8 +1744,7 @@ _T62f:
 	__asm        cmp    copyRadioStation, eax;
 	__asm        jne    _T20;
 // LINE 108:
-	__asm        mov    eax, this;
-	__asm        jmp    _T581;
+	return this;
 // LINE 110:
 _T20:
 	this->bPlaying = copyRadioStation.bPlaying;
@@ -2187,10 +2186,8 @@ _T550:
 // LINE 127:
 	this->jingleSelectionListIterator.node = copyRadioStation.jingleSelectionListIterator.node;
 // LINE 128:
-	__asm        mov    eax, this;
-	__asm        jmp    _T581;
+	return this;
 // LINE 129:
-_T581:
 }
 
 // FUNCTION: COPTER_D 0x004341c6
@@ -2503,16 +2500,13 @@ _T3ac:
 	__asm        jmp    _T3b1;
 _T3b1:
 	return;
-_T3b6:
 }
 
 // FUNCTION: COPTER_D 0x00434581
 int32_t RadioStation::Initialize() {
 // LINE 147:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T16;
+	return 0x1;
 // LINE 148:
-_T16:
 }
 
 // FUNCTION: COPTER_D 0x0043459c
@@ -2521,7 +2515,6 @@ void RadioStation::SetPlayStatus(int32_t bNewPlaying) {
 	this->bPlaying = bNewPlaying;
 // LINE 159:
 	return;
-_T1a:
 }
 
 // FUNCTION: COPTER_D 0x004345bd
@@ -2538,7 +2531,6 @@ void RadioStation::StationSet() {
 	__asm        call   dword ptr [eax+0x14];
 // LINE 168:
 	return;
-_T27:
 }
 
 // FUNCTION: COPTER_D 0x004345e9
@@ -2563,8 +2555,7 @@ int32_t RadioStation::DoState() {
 	__asm        test   eax, eax;
 	__asm        jne    _T29;
 // LINE 188:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T43c;
+	return 0x1;
 // LINE 190:
 _T29:
 	__asm        mov    eax, this;
@@ -2683,8 +2674,7 @@ _T127:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x40];
 // LINE 203:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T43c;
+	return 0x1;
 // LINE 208:
 _T18f:
 	this->myRadioStationState.nCurrentCycleIndex++;
@@ -2851,12 +2841,10 @@ _T2fd:
 	__asm        call   dword ptr [eax+0x40];
 // LINE 252:
 _T355:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T43c;
+	return 0x1;
 // LINE 254:
 _T35f:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T43c;
+	return 0x1;
 // LINE 258:
 _T369:
 	__asm        mov    eax, this;
@@ -2924,10 +2912,8 @@ _T42d:
 	__asm        jmp    _T432;
 // LINE 263:
 _T432:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T43c;
+	return 0x1;
 // LINE 264:
-_T43c:
 }
 
 // FUNCTION: COPTER_D 0x00434a46
@@ -5133,7 +5119,6 @@ _Td9d:
 	__asm        jmp    _Tda2;
 _Tda2:
 	return;
-_Tda7:
 }
 
 // FUNCTION: COPTER_D 0x0043678e
@@ -5515,7 +5500,6 @@ _T42e:
 	__asm        jmp    _T433;
 _T433:
 	return;
-_T438:
 }
 
 // FUNCTION: COPTER_D 0x00436bcd
@@ -5678,7 +5662,6 @@ _T1a1:
 // LINE 462:
 _T1a9:
 	return;
-_T1ae:
 }
 
 // FUNCTION: COPTER_D 0x00436d80
@@ -5838,7 +5821,6 @@ _T1ce:
 // LINE 471:
 _T1d3:
 	return;
-_T1d8:
 }
 
 // FUNCTION: COPTER_D 0x00436f5f
@@ -5913,8 +5895,7 @@ _T97:
 	__asm        cmp    dword ptr [eax+0x28], 0;
 	__asm        jne    _Tb8;
 // LINE 503:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Td2;
+	return 0x0;
 // LINE 504:
 _Tb8:
 	__asm        jmp    _Tbd;
@@ -6188,7 +6169,6 @@ _T2d2:
 // LINE 535:
 _T2d7:
 	return;
-_T2dc:
 }
 
 // FUNCTION: COPTER_D 0x00437337
@@ -6940,10 +6920,8 @@ int  Radio::Initialize() {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x14];
 // LINE 622:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2c;
+	return 0x1;
 // LINE 623:
-_T2c:
 }
 
 // FUNCTION: COPTER_D 0x00437c88
@@ -6960,10 +6938,8 @@ int  Radio::DeInitialize() {
 	__asm        add    ecx, 0x34;
 	__asm        call   dword ptr [eax+0x3C];
 // LINE 633:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T30;
+	return 0x1;
 // LINE 634:
-_T30:
 }
 
 // FUNCTION: COPTER_D 0x00437cbd
@@ -7079,10 +7055,8 @@ _T92:
 	__asm        call   dword ptr [eax+0xC];
 // LINE 695:
 _Ta1:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tab;
+	return 0x1;
 // LINE 696:
-_Tab:
 }
 
 // FUNCTION: COPTER_D 0x00437e67
@@ -7114,14 +7088,11 @@ int  Radio::SavePreferences() {
 	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   dword ptr [eax+0x2C];
 // LINE 717:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T7b;
+	return 0x1;
 // LINE 719:
 _T74:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T7b;
+	return 0x0;
 // LINE 720:
-_T7b:
 }
 
 // FUNCTION: COPTER_D 0x00437ee7
@@ -7201,8 +7172,7 @@ _Tb1:
 	__asm        add    ecx, 0x34;
 	__asm        call   dword ptr [eax+0x24];
 // LINE 740:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T117;
+	return 0x1;
 // LINE 743:
 _Te2:
 	__asm        jmp    _T10d;
@@ -7221,10 +7191,8 @@ _Te7:
 	__asm        call   dword ptr [eax+0xC];
 // LINE 749:
 _T10d:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T117;
+	return 0x1;
 // LINE 750:
-_T117:
 }
 
 // FUNCTION: COPTER_D 0x00438005
@@ -7374,10 +7342,8 @@ _T31:
 	__asm        call   dword ptr [eax+0x24];
 // LINE 819:
 _T5d:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T67;
+	return 0x1;
 // LINE 820:
-_T67:
 }
 
 // FUNCTION: COPTER_D 0x004381cc
@@ -7388,8 +7354,7 @@ int  Radio::SetStation(int32_t nStationIndex) {
 	__asm        cmp    [eax+0x20], ecx;
 	__asm        jne    _T25;
 // LINE 828:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tf7;
+	return 0x1;
 // LINE 830:
 _T25:
 	__asm        mov    ecx, this;
@@ -7443,8 +7408,7 @@ _T9e:
 	__asm        cmp    nStationIndex, 0;
 	__asm        jge    _Taf;
 // LINE 835:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tf7;
+	return 0x0;
 // LINE 836:
 _Taf:
 	this-><Radio+0x20:4> = nStationIndex;
@@ -7469,10 +7433,8 @@ _Tdc:
 	__asm        mov    ecx, [ebp-4];
 	__asm        call   dword ptr [eax+8];
 // LINE 838:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tf7;
+	return 0x1;
 // LINE 839:
-_Tf7:
 }
 
 // FUNCTION: COPTER_D 0x004382ca
@@ -7593,17 +7555,14 @@ _T6e:
 	__asm        cmp    eax, radioStationType;
 	__asm        jne    _T92;
 // LINE 865:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T9e;
+	return 0x1;
 // LINE 866:
 _T92:
 	__asm        jmp    _T3e;
 // LINE 867:
 _T97:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T9e;
+	return 0x0;
 // LINE 868:
-_T9e:
 }
 
 // FUNCTION: COPTER_D 0x0043841e
@@ -7812,17 +7771,14 @@ _T19b:
 	__asm        je     _T1b4;
 // LINE 900:
 _T1aa:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1c0;
+	return 0x1;
 // LINE 901:
 _T1b4:
 	__asm        jmp    _T18;
 // LINE 902:
 _T1b9:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1c0;
+	return 0x0;
 // LINE 903:
-_T1c0:
 }
 
 // FUNCTION: COPTER_D 0x0043867d

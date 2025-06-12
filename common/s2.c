@@ -42,9 +42,7 @@ _T53:
 	__asm        mov    size, eax;
 // LINE 55:
 _T61:
-	__asm        mov    eax, size;
-	__asm        jmp    _T69;
+	return size;
 // LINE 56:
-_T69:
 }
 

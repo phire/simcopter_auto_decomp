@@ -153,7 +153,7 @@ void Version::Version() {
 // LINE 50:
 _T120:
 	return;
-_T125:
+
 	__asm        mov    eax, this;
 }
 
@@ -178,7 +178,6 @@ void Version::~Version() {
 // LINE 62:
 _T3d:
 	return;
-_T42:
 }
 
 // FUNCTION: COPTER_D 0x0043dc57
@@ -192,8 +191,7 @@ int32_t Version::GetApplicationName(char *& szName) {
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        jne    _T29;
 // LINE 81:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T8b;
+	return 0x0;
 // LINE 94:
 _T29:
 	__asm        push   0x5985A0;
@@ -225,10 +223,8 @@ _T29:
 	__asm        call   0x004C467E;
 	__asm        mov    nReturnValue, eax;
 // LINE 96:
-	__asm        mov    eax, nReturnValue;
-	__asm        jmp    _T8b;
+	return nReturnValue;
 // LINE 98:
-_T8b:
 }
 
 // FUNCTION: COPTER_D 0x0043dce9
@@ -242,8 +238,7 @@ int32_t Version::GetApplicationVersion(char *& szVersion) {
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        jne    _T29;
 // LINE 116:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T8b;
+	return 0x0;
 // LINE 117:
 _T29:
 	__asm        push   0x5985CC;
@@ -275,10 +270,8 @@ _T29:
 	__asm        call   0x004C467E;
 	__asm        mov    nReturnValue, eax;
 // LINE 119:
-	__asm        mov    eax, nReturnValue;
-	__asm        jmp    _T8b;
+	return nReturnValue;
 // LINE 121:
-_T8b:
 }
 
 // FUNCTION: COPTER_D 0x0043dd7b
@@ -292,8 +285,7 @@ int32_t Version::GetApplicationCopyright(char *& szCopyright) {
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        jne    _T29;
 // LINE 140:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T8b;
+	return 0x0;
 // LINE 141:
 _T29:
 	__asm        push   0x5985F8;
@@ -325,10 +317,8 @@ _T29:
 	__asm        call   0x004C467E;
 	__asm        mov    nReturnValue, eax;
 // LINE 143:
-	__asm        mov    eax, nReturnValue;
-	__asm        jmp    _T8b;
+	return nReturnValue;
 // LINE 145:
-_T8b:
 }
 
 // FUNCTION: COPTER_D 0x0043de0d
@@ -342,8 +332,7 @@ int32_t Version::GetApplicationDebugVersion(char *& szVersion) {
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        jne    _T29;
 // LINE 163:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T8b;
+	return 0x0;
 // LINE 164:
 _T29:
 	__asm        push   0x598628;
@@ -375,10 +364,8 @@ _T29:
 	__asm        call   0x004C467E;
 	__asm        mov    nReturnValue, eax;
 // LINE 166:
-	__asm        mov    eax, nReturnValue;
-	__asm        jmp    _T8b;
+	return nReturnValue;
 // LINE 168:
-_T8b:
 }
 
 // FUNCTION: COPTER_D 0x0043de9f
@@ -504,10 +491,8 @@ _T42:
 	__asm        add    esp, 0x10;
 // LINE 255:
 _T60:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T6a;
+	return 0x1;
 // LINE 256:
-_T6a:
 }
 
 // FUNCTION: COPTER_D 0x0043dff2
@@ -532,10 +517,8 @@ _T32:
 	nSystemType = 0x3;
 // LINE 285:
 _T39:
-	__asm        mov    eax, nSystemType;
-	__asm        jmp    _T41;
+	return nSystemType;
 // LINE 286:
-_T41:
 }
 
 // FUNCTION: COPTER_D 0x0043e038
@@ -584,10 +567,8 @@ long Version::GetCPUVersion() {
 	lReturnValue = 0xa;
 // LINE 342:
 _T25:
-	__asm        mov    eax, lReturnValue;
-	__asm        jmp    _T2d;
+	return lReturnValue;
 // LINE 344:
-_T2d:
 }
 
 // FUNCTION: COPTER_D 0x0043e0b8
@@ -620,10 +601,8 @@ long Version::GetCPUSpeed() {
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ecx+0xC], eax;
 // LINE 361:
-	__asm        mov    eax, tempFREQ_INFO.norm_freq;
-	__asm        jmp    _T54;
+	return tempFREQ_INFO.norm_freq;
 // LINE 363:
-_T54:
 }
 
 

@@ -335,10 +335,8 @@ int32_t SideOfPlane(/*packed*/ struct Point3d *V, /*packed*/ struct Point3d *p, 
 	__asm        add    ebx, plane.D;
 	__asm        mov    s, ebx;
 // LINE 143:
-	__asm        mov    eax, s;
-	__asm        jmp    _T8f;
+	return s;
 // LINE 145:
-_T8f:
 }
 
 // FUNCTION: COPTER_D 0x00543292
@@ -457,14 +455,11 @@ int32_t VectorBounds(/*packed*/ struct Point3d *V, int32_t m) {
 	__asm        mov    ecx, V;
 	__asm        mov    [ecx+8], eax;
 // LINE 210:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T91;
+	return 0x1;
 // LINE 213:
 _T8a:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T91;
+	return 0x0;
 // LINE 214:
-_T91:
 }
 
 // FUNCTION: COPTER_D 0x005433be
@@ -663,10 +658,8 @@ _T5a:
 	__asm        mov    nv, eax;
 // LINE 313:
 _T62:
-	__asm        mov    eax, nv;
-	__asm        jmp    _T6a;
+	return nv;
 // LINE 314:
-_T6a:
 }
 
 // FUNCTION: COPTER_D 0x005435a4

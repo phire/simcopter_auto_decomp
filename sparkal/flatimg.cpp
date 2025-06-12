@@ -104,7 +104,7 @@ void IFlatImage::IFlatImage() {
 	__asm        mov    dword ptr [eax], 0x591050;
 // LINE 27:
 	return;
-_T4c:
+
 	__asm        mov    eax, this;
 }
 
@@ -288,10 +288,8 @@ _T195:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+4];
 // LINE 101:
-	__asm        mov    eax, ReturnCode;
-	__asm        jmp    _T1b3;
+	return ReturnCode;
 // LINE 102:
-_T1b3:
 }
 
 // FUNCTION: COPTER_D 0x0048f32e
@@ -523,10 +521,8 @@ _T195:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+4];
 // LINE 187:
-	__asm        mov    eax, Error;
-	__asm        jmp    _T1b3;
+	return Error;
 // LINE 188:
-_T1b3:
 }
 
 // FUNCTION: COPTER_D 0x0048f56b
@@ -641,10 +637,8 @@ _T11a:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+4];
 // LINE 238:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T12c;
+	return 0x0;
 // LINE 239:
-_T12c:
 }
 
 // FUNCTION: COPTER_D 0x0048f69e
@@ -788,7 +782,7 @@ _T1b6:
 // LINE 271:
 _T1c0:
 	return;
-_T1c5:
+
 	__asm        mov    eax, this;
 }
 
@@ -1103,7 +1097,7 @@ _T393:
 	this-><CFlatImage+0x14> = 0x0;
 // LINE 330:
 	return;
-_T3ac:
+
 	__asm        mov    eax, this;
 }
 
@@ -1153,7 +1147,6 @@ _T8a:
 // LINE 340:
 _T99:
 	return;
-_T9e:
 }
 
 // FUNCTION: COPTER_D 0x0048fcc6

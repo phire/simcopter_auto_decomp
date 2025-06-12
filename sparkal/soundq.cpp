@@ -333,7 +333,7 @@ _T69:
 // LINE 22:
 _T78:
 	return;
-_T7d:
+
 	__asm        mov    eax, this;
 }
 
@@ -380,7 +380,7 @@ _T78:
 	this->bDeleteSoundWhenFinished = bNewDeleteSoundWhenFinished;
 // LINE 34:
 	return;
-_Ta1:
+
 	__asm        mov    eax, this;
 }
 
@@ -427,7 +427,7 @@ _T78:
 	this->bDeleteSoundWhenFinished = bNewDeleteSoundWhenFinished;
 // LINE 46:
 	return;
-_Ta0:
+
 	__asm        mov    eax, this;
 }
 
@@ -627,7 +627,7 @@ _T247:
 	this->bDeleteSoundWhenFinished = bNewDeleteSoundWhenFinished;
 // LINE 59:
 	return;
-_T268:
+
 	__asm        mov    eax, this;
 }
 
@@ -872,7 +872,7 @@ _T2d0:
 	this->bDeleteSoundWhenFinished = bNewDeleteSoundWhenFinished;
 // LINE 73:
 	return;
-_T2f1:
+
 	__asm        mov    eax, this;
 }
 
@@ -908,7 +908,7 @@ _T4c:
 	this->bDeleteSoundWhenFinished = 0x1;
 // LINE 94:
 	return;
-_T6e:
+
 	__asm        mov    eax, this;
 }
 
@@ -1077,7 +1077,7 @@ _T1df:
 	this->bDeleteSoundWhenFinished = 0x1;
 // LINE 107:
 	return;
-_T201:
+
 	__asm        mov    eax, this;
 }
 
@@ -1112,7 +1112,7 @@ _T4a:
 	this->bDeleteSoundWhenFinished = 0x1;
 // LINE 121:
 	return;
-_T6c:
+
 	__asm        mov    eax, this;
 }
 
@@ -1311,7 +1311,7 @@ _T255:
 	this->nWaitTimerSet = 0x0;
 // LINE 148:
 	return;
-_T281:
+
 	__asm        mov    eax, this;
 }
 
@@ -1462,7 +1462,6 @@ _T19e:
 	__asm        jmp    _T1c1;
 _T1c1:
 	return;
-_T1c6:
 }
 
 // FUNCTION: COPTER_D 0x00421484
@@ -1483,10 +1482,8 @@ int32_t SoundQueue::Initialize() {
 	__asm        call   dword ptr [eax+0x28];
 // LINE 172:
 _T36:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T40;
+	return 0x1;
 // LINE 173:
-_T40:
 }
 
 // FUNCTION: COPTER_D 0x004214c9
@@ -1515,7 +1512,6 @@ _T36:
 	__asm        call   dword ptr [eax+8];
 // LINE 187:
 	return;
-_T4a:
 }
 
 // FUNCTION: COPTER_D 0x0042151a
@@ -1776,7 +1772,6 @@ _T2a5:
 	__asm        call   dword ptr [eax+0x28];
 // LINE 218:
 	return;
-_T2b5:
 }
 
 // FUNCTION: COPTER_D 0x004217d6
@@ -1821,10 +1816,8 @@ _T5f:
 	__asm        call   dword ptr [eax+0x28];
 // LINE 231:
 _T76:
-	__asm        mov    eax, this;
-	__asm        jmp    _T7e;
+	return this;
 // LINE 232:
-_T7e:
 }
 
 // FUNCTION: COPTER_D 0x0042185b
@@ -2091,10 +2084,8 @@ _T30f:
 	__asm        call   dword ptr [eax+0x14];
 // LINE 252:
 _T31a:
-	__asm        mov    eax, this;
-	__asm        jmp    _T322;
+	return this;
 // LINE 253:
-_T322:
 }
 
 // FUNCTION: COPTER_D 0x00421b84
@@ -2134,7 +2125,6 @@ void SoundQueue::EndPauseCallback() {
 // LINE 284:
 _T30:
 	return;
-_T35:
 }
 
 // FUNCTION: COPTER_D 0x00421bf9
@@ -2245,7 +2235,6 @@ _T10b:
 	__asm        call   dword ptr [eax+0x28];
 // LINE 321:
 	return;
-_T11b:
 }
 
 // FUNCTION: COPTER_D 0x00421d19
@@ -2423,7 +2412,6 @@ _T1d7:
 	__asm        call   dword ptr [eax+0x28];
 // LINE 345:
 	return;
-_T1e7:
 }
 
 // FUNCTION: COPTER_D 0x00421f05
@@ -2435,7 +2423,6 @@ void SoundQueue::WindowsStaticSoundQueueCompletionCallback(uint32_t nTimerID, ui
 	__asm        add    esp, 4;
 // LINE 357:
 	return;
-_T17:
 }
 
 // FUNCTION: COPTER_D 0x00421f23
@@ -2447,7 +2434,6 @@ void SoundQueue::WindowsStaticSoundQueueWaitTimeCallback(uint32_t nTimerID, uint
 	__asm        add    esp, 4;
 // LINE 369:
 	return;
-_T17:
 }
 
 // FUNCTION: COPTER_D 0x00421f41
@@ -2459,7 +2445,6 @@ void SoundQueue::StaticSoundQueueCompletionCallback(long lData) {
 	__asm        call   dword ptr [eax+0x1C];
 // LINE 378:
 	return;
-_T16:
 }
 
 // FUNCTION: COPTER_D 0x00421f5c
@@ -2524,7 +2509,6 @@ _T8d:
 // LINE 400:
 _T98:
 	return;
-_T9d:
 }
 
 // FUNCTION: COPTER_D 0x00421ffe
@@ -2536,7 +2520,6 @@ void SoundQueue::StaticSoundQueueWaitTimeCallback(long lData) {
 	__asm        call   dword ptr [eax+0x20];
 // LINE 408:
 	return;
-_T16:
 }
 
 // FUNCTION: COPTER_D 0x00422019
@@ -2557,7 +2540,6 @@ _T1b:
 // LINE 421:
 _T33:
 	return;
-_T38:
 }
 
 // FUNCTION: COPTER_D 0x00422056
@@ -2735,7 +2717,6 @@ void SoundQueue::ReleaseMutex() {
 	this->bMutex = 0x0;
 // LINE 457:
 	return;
-_T1b:
 }
 
 

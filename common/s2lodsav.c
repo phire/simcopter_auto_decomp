@@ -76,8 +76,7 @@ int32_t S2CityValidate(char * filepath) {
 	__asm        cmp    filNum, 0;
 	__asm        jne    _T2e;
 // LINE 116:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T189;
+	return 0x0;
 // LINE 119:
 _T2e:
 	__asm        push   2;
@@ -216,10 +215,8 @@ exit:
 	__asm        call   fclose;
 	__asm        add    esp, 4;
 // LINE 159:
-	__asm        mov    eax, bOK;
-	__asm        jmp    _T189;
+	return bOK;
 // LINE 160:
-_T189:
 }
 
 // FUNCTION: COPTER_D 0x004c481e
@@ -474,14 +471,11 @@ _T5c:
 	__asm        test   eax, eax;
 	__asm        jne    _T7f;
 // LINE 282:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T86;
+	return 0x1;
 // LINE 283:
 _T7f:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T86;
+	return 0x0;
 // LINE 284:
-_T86:
 }
 
 // FUNCTION: COPTER_D 0x004c4ab6
@@ -5137,10 +5131,8 @@ long swap_long(long lvalue) {
 // LINE 1614:
 	shortptr[0] = sval;
 // LINE 1617:
-	__asm        mov    eax, lvalue;
-	__asm        jmp    _T39;
+	return lvalue;
 // LINE 1618:
-_T39:
 }
 
 // FUNCTION: COPTER_D 0x004c838e
@@ -5163,10 +5155,8 @@ long swizzle_long(long lvalue) {
 // LINE 1644:
 	byteptr[1] = cval;
 // LINE 1647:
-	__asm        mov    eax, lvalue;
-	__asm        jmp    _T51;
+	return lvalue;
 // LINE 1648:
-_T51:
 }
 
 // FUNCTION: COPTER_D 0x004c83e4
@@ -6532,7 +6522,6 @@ _T86:
 	__asm        mov    ecx, ret;
 	__asm        mov    byte ptr [eax+ecx], 0;
 // LINE 2145:
-_Tab:
 }
 
 // FUNCTION: COPTER_D 0x004c9545
@@ -6674,7 +6663,6 @@ _T9c:
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 2218:
-_Tac:
 }
 
 // FUNCTION: COPTER_D 0x004c9694
@@ -6854,7 +6842,6 @@ _T113:
 	__asm        call   strcat;
 	__asm        add    esp, 8;
 // LINE 2303:
-_T134:
 }
 
 // FUNCTION: COPTER_D 0x004c9835
@@ -7038,7 +7025,6 @@ _T192:
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 2371:
-_T1ab:
 }
 
 // FUNCTION: COPTER_D 0x004c9a2e
@@ -7102,7 +7088,6 @@ _T84:
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 2405:
-_T9d:
 }
 
 

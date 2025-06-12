@@ -438,7 +438,6 @@ static void $E4() {
 	__asm        jmp    _T15;
 _T15:
 	return;
-_T1a:
 }
 
 // STATIC INITIALIZER:
@@ -469,7 +468,6 @@ static void $E5() {
 	__asm        call   PlaneClass::~PlaneClass;
 _T2d:
 	return;
-_T32:
 }
 
 // FUNCTION: COPTER_D 0x0052b14d
@@ -524,7 +522,7 @@ _Tb0:
 // LINE 205:
 _Tba:
 	return;
-_Tbf:
+
 	__asm        mov    eax, this;
 }
 
@@ -557,7 +555,6 @@ _T4c:
 	this->flags[0] = 0x0;
 // LINE 246:
 	return;
-_T58:
 }
 
 // FUNCTION: COPTER_D 0x0052b273
@@ -566,8 +563,7 @@ _T58:
 	__asm        cmp    index, 2;
 	__asm        jl     _T17;
 // LINE 267:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T26;
+	return 0x0;
 // LINE 269:
 _T17:
 	__asm        mov    eax, index;
@@ -625,8 +621,7 @@ _T42:
 	__asm        test   eax, eax;
 	__asm        je     _T6d;
 // LINE 363:
-	__asm        mov    eax, newplane;
-	__asm        jmp    _T9b;
+	return newplane;
 // LINE 365:
 	__asm        jmp    _T94;
 // LINE 369:
@@ -646,10 +641,8 @@ _T6d:
 	__asm        jmp    _T94;
 // LINE 376:
 _T94:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T9b;
+	return 0x0;
 // LINE 377:
-_T9b:
 }
 
 // FUNCTION: COPTER_D 0x0052b35e
@@ -691,7 +684,6 @@ _T18:
 // LINE 503:
 _T36:
 	return;
-_T3b:
 }
 
 // FUNCTION: COPTER_D 0x0052b3d0
@@ -715,7 +707,6 @@ _T18:
 // LINE 553:
 _T36:
 	return;
-_T3b:
 }
 
 // FUNCTION: COPTER_D 0x0052b410
@@ -774,17 +765,14 @@ _T88:
 	__asm        jmp    _Taa;
 // LINE 587:
 _Taa:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tc0;
+	return 0x1;
 // LINE 589:
 _Tb4:
 	__asm        jmp    _T15;
 // LINE 591:
 _Tb9:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tc0;
+	return 0x0;
 // LINE 592:
-_Tc0:
 }
 
 // FUNCTION: COPTER_D 0x0052b4d5
@@ -922,7 +910,6 @@ _T166:
 // LINE 669:
 _T16b:
 	return;
-_T170:
 }
 
 // FUNCTION: COPTER_D 0x0052b64a
@@ -954,7 +941,6 @@ void PlaneClass::Reset() {
 	this->missileHits = 0x0;
 // LINE 704:
 	return;
-_T81:
 }
 
 // FUNCTION: COPTER_D 0x0052b6d0
@@ -1230,7 +1216,6 @@ _T2ac:
 // LINE 852:
 _T2c9:
 	return;
-_T2ce:
 }
 
 // FUNCTION: COPTER_D 0x0052b9a3
@@ -1359,7 +1344,6 @@ _T139:
 // LINE 932:
 _T148:
 	return;
-_T14d:
 }
 
 // FUNCTION: COPTER_D 0x0052baf5
@@ -1378,25 +1362,20 @@ void PlaneClass::AdjustSpeed() {
 // LINE 960:
 _T2f:
 	return;
-_T34:
 }
 
 // FUNCTION: COPTER_D 0x0052bb2e
 enum PlaneClass::StoppedReasons PlaneClass::IsPathClear() {
 // LINE 1000:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
+	return 0x0;
 // LINE 1001:
-_T13:
 }
 
 // FUNCTION: COPTER_D 0x0052bb46
 enum PlaneClass::StoppedReasons PlaneClass::CheckDynamicObjectsAt(const /*packed*/ struct Point2d& __formal, const /*packed*/ struct Point3d& collisionPoint) {
 // LINE 1160:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
+	return 0x0;
 // LINE 1161:
-_T13:
 }
 
 // FUNCTION: COPTER_D 0x0052bb60
@@ -1615,7 +1594,6 @@ _T229:
 // LINE 1258:
 _T243:
 	return;
-_T248:
 }
 
 // FUNCTION: COPTER_D 0x0052bdad
@@ -1696,8 +1674,7 @@ _Taa:
 	__asm        jge    _Te1;
 // LINE 1317:
 _Td2:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Te8;
+	return 0x1;
 // LINE 1319:
 	__asm        jmp    _Te8;
 // LINE 1321:
@@ -1714,7 +1691,6 @@ void PlaneClass::SlowDown() {
 	this->speed -= 0x20000;
 // LINE 1343:
 	return;
-_T1b:
 }
 
 // FUNCTION: COPTER_D 0x0052beba
@@ -1723,7 +1699,6 @@ void PlaneClass::Stop() {
 	this->speed = 0x0;
 // LINE 1364:
 	return;
-_T1b:
 }
 
 // FUNCTION: COPTER_D 0x0052beda
@@ -1987,7 +1962,6 @@ _T2a6:
 // LINE 1465:
 _T2bf:
 	return;
-_T2c4:
 }
 
 // FUNCTION: COPTER_D 0x0052c1a3
@@ -2467,8 +2441,7 @@ _T55b:
 	__asm        add    esp, 4;
 // LINE 1635:
 _T5cc:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T87f;
+	return 0x1;
 // LINE 1640:
 _T5d6:
 	stobj = stobj->next;
@@ -2680,14 +2653,11 @@ _T83c:
 	__asm        call   S3MissionUpdate;
 	__asm        add    esp, 4;
 // LINE 1740:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T87f;
+	return 0x1;
 // LINE 1743:
 _T878:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T87f;
+	return 0x0;
 // LINE 1744:
-_T87f:
 }
 
 // FUNCTION: COPTER_D 0x0052ca29
@@ -2697,8 +2667,7 @@ int32_t PlaneClass::HaveIReachedNextLoc() {
 	__asm        cmp    dword ptr [eax+0x14], 0;
 	__asm        jg     _T28;
 // LINE 1767:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2f;
+	return 0x1;
 // LINE 1769:
 	__asm        jmp    _T2f;
 // LINE 1771:
@@ -2739,14 +2708,11 @@ int32_t PlaneClass::AmIInANewCell() {
 	__asm        je     _T62;
 // LINE 1804:
 _T58:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T69;
+	return 0x1;
 // LINE 1807:
 _T62:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T69;
+	return 0x0;
 // LINE 1808:
-_T69:
 }
 
 // FUNCTION: COPTER_D 0x0052cacb
@@ -2839,7 +2805,6 @@ _T105:
 // Block end:
 _T10a:
 	return;
-_T10f:
 }
 
 // FUNCTION: COPTER_D 0x0052cbe1
@@ -2897,7 +2862,6 @@ _T98:
 	__asm        mov    [ecx+0x10], eax;
 // LINE 1884:
 	return;
-_Tb5:
 }
 
 // FUNCTION: COPTER_D 0x0052cc9d
@@ -2984,7 +2948,6 @@ _Tec:
 // LINE 1923:
 _Tfa:
 	return;
-_Tff:
 }
 
 // FUNCTION: COPTER_D 0x0052cda1
@@ -3098,7 +3061,6 @@ _T90:
 // LINE 1967:
 _T13a:
 	return;
-_T13f:
 }
 
 // FUNCTION: COPTER_D 0x0052cee5
@@ -3253,7 +3215,6 @@ _T16b:
 	this->remainingDist = 0x200000;
 // LINE 2034:
 	return;
-_T1a1:
 }
 
 // FUNCTION: COPTER_D 0x0052d08b
@@ -3598,7 +3559,6 @@ _T377:
 	return;
 _T37c:
 	__asm        jmp    foundCell;
-_T381:
 }
 
 // FUNCTION: COPTER_D 0x0052d411
@@ -3623,7 +3583,6 @@ _T25:
 // LINE 2241:
 _T3b:
 	return;
-_T40:
 }
 
 // FUNCTION: COPTER_D 0x0052d456
@@ -3654,8 +3613,7 @@ int32_t PlaneClass::InitializeInstance(long mapx, long mapy, int32_t instanceID)
 	__asm        jmp    _T53;
 // LINE 2302:
 _T53:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1bb;
+	return 0x0;
 // LINE 2305:
 _T5a:
 	this->dyObj.mesh = object;
@@ -3765,10 +3723,8 @@ _T19d:
 // LINE 2451:
 	this->flags[0] = 0x1;
 // LINE 2453:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1bb;
+	return 0x1;
 // LINE 2454:
-_T1bb:
 }
 
 // FUNCTION: COPTER_D 0x0052d618
@@ -3828,7 +3784,6 @@ _T34:
 // LINE 2506:
 _T9b:
 	return;
-_Ta0:
 }
 
 // FUNCTION: COPTER_D 0x0052d6bd
@@ -3840,7 +3795,6 @@ void CreatePlaneInstance(int32_t instanceID) {
 	__asm        add    esp, 4;
 // LINE 2555:
 	return;
-_T17:
 }
 
 // FUNCTION: COPTER_D 0x0052d6d9
@@ -3861,7 +3815,6 @@ void ResetAllPlanes() {
 	__asm        call   PlaneClass::ResetAll;
 // LINE 2598:
 	return;
-_T10:
 }
 
 // FUNCTION: COPTER_D 0x0052d70a
@@ -3870,7 +3823,6 @@ void ItterateAllPlanes() {
 	__asm        call   PlaneClass::ItterateAll;
 // LINE 2621:
 	return;
-_T10:
 }
 
 // FUNCTION: COPTER_D 0x0052d71f
@@ -4069,7 +4021,6 @@ _T1f8:
 // LINE 2698:
 _T24c:
 	return;
-_T251:
 }
 
 // FUNCTION: COPTER_D 0x0052d975
@@ -4089,7 +4040,6 @@ void PlaneHitDispatch(long hitter_type, /*packed*/ struct _DYOBJ_INST *dyhitter,
 	__asm        add    esp, 0x14;
 // LINE 2709:
 	return;
-_T27:
 }
 
 // FUNCTION: COPTER_D 0x0052d9a1
@@ -4154,7 +4104,6 @@ _T7d:
 // LINE 2740:
 _T91:
 	return;
-_T96:
 }
 
 // FUNCTION: COPTER_D 0x0052da3c
@@ -4221,7 +4170,6 @@ _T81:
 // LINE 2762:
 _T95:
 	return;
-_T9a:
 }
 
 // FUNCTION: COPTER_D 0x0052dadb
@@ -4267,8 +4215,7 @@ int32_t PlaneClass::MIFFLoad(void * __ptr32 miffReader) {
 	__asm        cmp    ret, 0;
 	__asm        jne    _T38;
 // LINE 2807:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1da;
+	return 0x0;
 // LINE 2809:
 _T38:
 	__asm        mov    i, 0;
@@ -4389,17 +4336,14 @@ _T192:
 	__asm        cmp    i, 1;
 	__asm        je     _T1cb;
 // LINE 2843:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1da;
+	return 0x0;
 // LINE 2844:
 _T1cb:
 	__asm        jmp    _T44;
 // LINE 2845:
 _T1d0:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1da;
+	return 0x1;
 // LINE 2846:
-_T1da:
 }
 
 // FUNCTION: COPTER_D 0x0052dcf2
@@ -4430,17 +4374,14 @@ _T18:
 	__asm        cmp    ret, 0;
 	__asm        jne    _T57;
 // LINE 2866:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T66;
+	return 0x0;
 // LINE 2867:
 _T57:
 	__asm        jmp    _T15;
 // LINE 2868:
 _T5c:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T66;
+	return 0x1;
 // LINE 2869:
-_T66:
 }
 
 

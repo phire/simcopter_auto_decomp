@@ -679,7 +679,7 @@ _T265:
 	this-><UserMenuWindow+0x00> = 0x5912f8;
 // LINE 40:
 	return;
-_T273:
+
 	__asm        mov    eax, this;
 }
 
@@ -1052,7 +1052,7 @@ _T432:
 	__asm        add    esp, 4;
 // LINE 58:
 	return;
-_T473:
+
 	__asm        mov    eax, this;
 }
 
@@ -1212,7 +1212,7 @@ _T1a6:
 	__asm        add    esp, 4;
 _T1ce:
 	return;
-_T1d3:
+
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
 }
@@ -1928,10 +1928,8 @@ _Tb28:
 	__asm        add    ecx, 0xD8;
 	__asm        call   dword ptr [eax+0x24];
 // LINE 150:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tb50;
+	return 0x0;
 // LINE 151:
-_Tb50:
 }
 
 // FUNCTION: COPTER_D 0x0049c3ad
@@ -1980,10 +1978,8 @@ _T58:
 	__asm        jmp    _T3f;
 // LINE 173:
 _T80:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T8a;
+	return 0x1;
 // LINE 174:
-_T8a:
 }
 
 // FUNCTION: COPTER_D 0x0049c43c
@@ -2006,8 +2002,7 @@ int32_t UserMenuWindow::SetSelectionIndex(int32_t nIndex) {
 	__asm        jne    _T47;
 // LINE 183:
 _T40:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T118;
+	return 0x0;
 // LINE 185:
 _T47:
 	__asm        jmp    _T4c;
@@ -2074,10 +2069,8 @@ _T90:
 	__asm        add    ecx, 0xD8;
 	__asm        call   dword ptr [eax+8];
 // LINE 191:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T118;
+	return 0x1;
 // LINE 192:
-_T118:
 }
 
 // FUNCTION: COPTER_D 0x0049c55b
@@ -2104,7 +2097,6 @@ _T33:
 void UserMenuWindow::DrawSelectionIndicators() {
 // LINE 212:
 	return;
-_T11:
 }
 
 // FUNCTION: COPTER_D 0x0049c5ab
@@ -2183,17 +2175,14 @@ _Tce:
 _Tdd:
 	nHitIndex. = i;
 // LINE 238:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tfb;
+	return 0x1;
 // LINE 240:
 _Tef:
 	__asm        jmp    _T29;
 // LINE 241:
 _Tf4:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tfb;
+	return 0x0;
 // LINE 242:
-_Tfb:
 }
 
 // FUNCTION: COPTER_D 0x0049c6ad
@@ -2209,10 +2198,8 @@ int32_t UserMenuWindow::GetPositionOfNthItem(int32_t nIndex, /*packed*/ class MP
 	__asm        mov    ecx, ptPosition;
 	__asm        mov    [ecx+4], eax;
 // LINE 252:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T40;
+	return 0x1;
 // LINE 253:
-_T40:
 }
 
 // FUNCTION: COPTER_D 0x0049c6f4
@@ -2439,8 +2426,7 @@ _T26d:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xC4];
 // LINE 270:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2ac;
+	return 0x1;
 // LINE 272:
 _T29d:
 	i++;
@@ -2448,10 +2434,8 @@ _T29d:
 	__asm        jmp    _T3a;
 // LINE 274:
 _T2a5:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T2ac;
+	return 0x0;
 // LINE 275:
-_T2ac:
 }
 
 // FUNCTION: COPTER_D 0x0049c9a7
@@ -2492,8 +2476,7 @@ _T53:
 	__asm        call   dword ptr [eax+0xC4];
 // LINE 287:
 _T6c:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1df;
+	return 0x1;
 // LINE 289:
 	__asm        jmp    _T1d8;
 _T7b:
@@ -2536,8 +2519,7 @@ _Td2:
 	__asm        call   dword ptr [eax+0xC4];
 // LINE 294:
 _Teb:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1df;
+	return 0x1;
 // LINE 296:
 	__asm        jmp    _T1d8;
 _Tfa:
@@ -2550,8 +2532,7 @@ _Tfa:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xC4];
 // LINE 298:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1df;
+	return 0x1;
 // LINE 300:
 	__asm        jmp    _T1d8;
 _T123:
@@ -2569,8 +2550,7 @@ _T123:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xC4];
 // LINE 302:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1df;
+	return 0x1;
 // LINE 304:
 	__asm        jmp    _T1d8;
 _T15a:
@@ -2585,8 +2565,7 @@ _T15a:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xD8];
 // LINE 306:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1df;
+	return 0x1;
 // LINE 308:
 	__asm        jmp    _T1d8;
 _T18b:
@@ -2616,15 +2595,12 @@ _T18b:
 	__asm        mov    ecx, [eax+0x38];
 	__asm        call   dword ptr [edx];
 // LINE 311:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1df;
+	return 0x1;
 // LINE 313:
 // Block end:
 _T1d8:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1df;
+	return 0x0;
 // LINE 314:
-_T1df:
 }
 
 // FUNCTION: COPTER_D 0x0049cb8d
@@ -2674,10 +2650,8 @@ _T4e:
 	__asm        call   dword ptr [eax+0xD8];
 // LINE 338:
 _T7c:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T86;
+	return 0x1;
 // LINE 339:
-_T86:
 }
 
 // FUNCTION: COPTER_D 0x0049cc1a
@@ -2706,10 +2680,8 @@ long UserMenuWindow::DoCursorMove(long nCursorX, long nCursorY) {
 	__asm        call   dword ptr [eax+0xC4];
 // LINE 351:
 _T40:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T4a;
+	return 0x1;
 // LINE 352:
-_T4a:
 }
 
 // FUNCTION: COPTER_D 0x0049cc6b
@@ -2737,10 +2709,8 @@ int32_t UserMenuWindow::ExecuteSelection(int32_t nIndex) {
 	__asm        mov    ecx, [eax+0x38];
 	__asm        call   dword ptr [edx];
 // LINE 363:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T49;
+	return 0x1;
 // LINE 364:
-_T49:
 }
 
 // FUNCTION: COPTER_D 0x0049ccbb
@@ -2766,7 +2736,7 @@ void CopterMainMenu::CopterMainMenu(/*packed*/ struct UserMenuWindowDescription&
 	__asm        mov    dword ptr [eax], 0x5913E0;
 // LINE 394:
 	return;
-_T50:
+
 	__asm        mov    eax, this;
 }
 
@@ -2793,7 +2763,7 @@ void CopterMainMenu::~CopterMainMenu() {
 	__asm        call   CopterMainMenu::DestroyImage;
 // LINE 404:
 	return;
-_T50:
+
 	__asm        mov    ecx, this;
 	__asm        call   UserMenuWindow::~UserMenuWindow;
 }
@@ -3389,7 +3359,6 @@ _Tba:
 	__asm        call   GraphicWindow::DestroyImage;
 // LINE 456:
 	return;
-_Tc7:
 }
 
 // FUNCTION: COPTER_D 0x0049d4c9
@@ -3401,10 +3370,8 @@ int32_t CopterMainMenu::DrawSelf() {
 	__asm        mov    ecx, this;
 	__asm        call   CopterMainMenu::DrawRatchetAndLights;
 // LINE 465:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T26;
+	return 0x1;
 // LINE 466:
-_T26:
 }
 
 // FUNCTION: COPTER_D 0x0049d4f4
@@ -3576,7 +3543,6 @@ _T1d2:
 // LINE 490:
 _T244:
 	return;
-_T249:
 }
 
 // FUNCTION: COPTER_D 0x0049d742
@@ -3655,7 +3621,6 @@ void CopterMainMenu::GetCoordinatesForLights(/*packed*/ class MPoint *ptDestinat
 	__asm        add    dword ptr [eax+ecx+8], 0x3C;
 // LINE 539:
 	return;
-_T162:
 }
 
 // FUNCTION: COPTER_D 0x0049d8ab
@@ -3734,7 +3699,6 @@ void CopterMainMenu::GetCoordinatesForRatchets(/*packed*/ class MPoint *ptDestin
 	__asm        add    dword ptr [eax+ecx+8], 0x27;
 // LINE 583:
 	return;
-_T162:
 }
 
 // FUNCTION: COPTER_D 0x0049da14
@@ -3760,7 +3724,7 @@ void CopterPlayMenu::CopterPlayMenu(/*packed*/ struct UserMenuWindowDescription&
 	__asm        mov    dword ptr [eax], 0x5914C8;
 // LINE 605:
 	return;
-_T50:
+
 	__asm        mov    eax, this;
 }
 
@@ -3773,7 +3737,7 @@ void CopterPlayMenu::~CopterPlayMenu() {
 	__asm        call   CopterPlayMenu::DestroyImage;
 // LINE 614:
 	return;
-_T22:
+
 	__asm        mov    ecx, this;
 	__asm        call   UserMenuWindow::~UserMenuWindow;
 }
@@ -4306,7 +4270,6 @@ _Tba:
 	__asm        call   GraphicWindow::DestroyImage;
 // LINE 662:
 	return;
-_Tc7:
 }
 
 // FUNCTION: COPTER_D 0x0049e11b
@@ -4318,10 +4281,8 @@ int32_t CopterPlayMenu::DrawSelf() {
 	__asm        mov    ecx, this;
 	__asm        call   CopterPlayMenu::DrawRatchet;
 // LINE 670:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T26;
+	return 0x1;
 // LINE 671:
-_T26:
 }
 
 // FUNCTION: COPTER_D 0x0049e146
@@ -4404,7 +4365,6 @@ _T92:
 	__asm        call   dword ptr [edx+0xC];
 // LINE 687:
 	return;
-_Tdb:
 }
 
 // FUNCTION: COPTER_D 0x0049e226
@@ -4437,7 +4397,6 @@ _T42:
 // LINE 699:
 _T5a:
 	return;
-_T5f:
 }
 
 

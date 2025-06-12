@@ -377,7 +377,7 @@ _T14c:
 	__asm        call   GameWindow::MakePalette;
 // LINE 70:
 	return;
-_T165:
+
 	__asm        mov    eax, this;
 }
 
@@ -391,8 +391,7 @@ unsigned long GameWindow::CreateSparkalWindow() {
 	__asm        cmp    dword ptr [eax+0x18], 0;
 	__asm        je     _T23;
 // LINE 84:
-	__asm        mov    eax, 0x80000000;
-	__asm        jmp    _T1e7;
+	return 0x80000000;
 // LINE 86:
 _T23:
 	rectWindowForAdjust.top = 0x0;
@@ -542,14 +541,11 @@ _T13c:
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3864];
 // LINE 137:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1e7;
+	return 0x0;
 // LINE 139:
 _T1dd:
-	__asm        mov    eax, 0x80000000;
-	__asm        jmp    _T1e7;
+	return 0x80000000;
 // LINE 141:
-_T1e7:
 }
 
 // FUNCTION: COPTER_D 0x004672cb
@@ -568,7 +564,7 @@ void GameWindow::~GameWindow() {
 	__asm        add    esp, 4;
 // LINE 151:
 	return;
-_T38:
+
 	__asm        mov    ecx, this;
 	__asm        call   CSparkalWindow::~CSparkalWindow;
 }
@@ -581,10 +577,8 @@ int32_t GameWindow::Initialize() {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x14];
 // LINE 160:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T21;
+	return 0x1;
 // LINE 161:
-_T21:
 }
 
 // FUNCTION: COPTER_D 0x00467336
@@ -618,10 +612,8 @@ _T37:
 	__asm        call   dword ptr [edx+0x1C];
 // LINE 176:
 _T4e:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T55;
+	return 0x0;
 // LINE 177:
-_T55:
 }
 
 // FUNCTION: COPTER_D 0x00467390
@@ -655,10 +647,8 @@ _T37:
 	__asm        call   dword ptr [edx+0x1C];
 // LINE 189:
 _T4e:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T55;
+	return 0x0;
 // LINE 190:
-_T55:
 }
 
 // FUNCTION: COPTER_D 0x004673ea
@@ -675,12 +665,10 @@ unsigned long GameWindow::MakePalette(const /*packed*/ struct SparkalColor *pCol
 	__asm        cmp    pColors, 0;
 	__asm        jne    _T26;
 // LINE 200:
-	__asm        mov    eax, 0x80000000;
-	__asm        jmp    _T2b0;
+	return 0x80000000;
 // LINE 201:
 _T26:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T2b0;
+	return 0x0;
 // LINE 208:
 	__asm        mov    LogPalette.Version, 0x300;
 	__asm        mov    LogPalette.NumberOfEntries, 0x100;
@@ -901,10 +889,8 @@ _T295:
 	__asm        call   dword ptr ds:[0x6C384C];
 // LINE 276:
 _T2a9:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T2b0;
+	return 0x0;
 // LINE 277:
-_T2b0:
 }
 
 // FUNCTION: COPTER_D 0x004676a1
@@ -921,7 +907,6 @@ void GameWindow::UpdatePalette(long start, long count, /*packed*/ struct Sparkal
 	__asm        call   CBackBuffer::UpdatePalette;
 // LINE 289:
 	return;
-_T28:
 }
 
 // FUNCTION: COPTER_D 0x004676d0
@@ -989,16 +974,13 @@ void GameWindow::ProcessWindowMove() {
 // LINE 326:
 _Td4:
 	return;
-_Td9:
 }
 
 // FUNCTION: COPTER_D 0x004677ae
 int32_t GameWindow::PrepareForSwitchToWindowedMode() {
 // LINE 335:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T16;
+	return 0x1;
 // LINE 340:
-_T16:
 }
 
 // FUNCTION: COPTER_D 0x004677c9
@@ -1118,19 +1100,15 @@ _T101:
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C37E8];
 // LINE 380:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T14a;
+	return 0x1;
 // LINE 382:
-_T14a:
 }
 
 // FUNCTION: COPTER_D 0x00467918
 int32_t GameWindow::PrepareForSwitchToFullScreenMode() {
 // LINE 392:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T16;
+	return 0x1;
 // LINE 394:
-_T16:
 }
 
 // FUNCTION: COPTER_D 0x00467933
@@ -1230,10 +1208,8 @@ _T73:
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C37E8];
 // LINE 431:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T110;
+	return 0x1;
 // LINE 433:
-_T110:
 }
 
 // FUNCTION: COPTER_D 0x00467a48
@@ -1305,7 +1281,6 @@ _T48:
 	__asm        call   dword ptr ds:[0x6C3828];
 // LINE 455:
 	return;
-_Tac:
 }
 
 // FUNCTION: COPTER_D 0x00467af9
@@ -1373,7 +1348,6 @@ _T44:
 	__asm        mov    [ecx+0xC], eax;
 // LINE 482:
 	return;
-_T9c:
 }
 
 // FUNCTION: COPTER_D 0x00467b9c
@@ -1465,8 +1439,7 @@ _Tc1:
 // LINE 528:
 	lpMinMaxInfo->ptMaxPosition.y = this->rectWindowDesired.top;
 // LINE 529:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T477;
+	return 0x0;
 // LINE 530:
 	__asm        jmp    _T459;
 // LINE 533:
@@ -1483,8 +1456,7 @@ _Tfd:
 	__asm        call   dword ptr [edx+0x24];
 // LINE 535:
 _T11b:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T477;
+	return 0x0;
 // LINE 536:
 	__asm        jmp    _T459;
 // LINE 539:
@@ -1498,8 +1470,7 @@ _T127:
 	__asm        mov    ecx, [eax+0x10];
 	__asm        call   dword ptr [edx+0x38];
 // LINE 540:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T477;
+	return 0x0;
 // LINE 543:
 _T143:
 	__asm        mov    eax, wParam;
@@ -1524,8 +1495,7 @@ _T15f:
 	__asm        mov    ecx, [eax+0x10];
 	__asm        call   dword ptr [edx+0x34];
 // LINE 548:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T477;
+	return 0x0;
 // LINE 559:
 _T17b:
 	__asm        cmp    wParam, 0x73;
@@ -1591,8 +1561,7 @@ _T1dd:
 	__asm        mov    ecx, [eax+0x10];
 	__asm        call   dword ptr [edx+0x3C];
 // LINE 573:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T477;
+	return 0x0;
 // LINE 576:
 _T217:
 	__asm        mov    eax, Window;
@@ -1614,8 +1583,7 @@ _T217:
 	__asm        mov    ecx, [eax+0x10];
 	__asm        call   dword ptr [edx+0x44];
 // LINE 578:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T477;
+	return 0x0;
 // LINE 581:
 _T251:
 	__asm        call   dword ptr ds:[0x6C38A4];
@@ -1640,8 +1608,7 @@ _T266:
 	__asm        mov    ecx, [eax+0x10];
 	__asm        call   dword ptr [edx+0x40];
 // LINE 584:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T477;
+	return 0x0;
 // LINE 587:
 _T296:
 	__asm        call   dword ptr ds:[0x6C38A4];
@@ -1681,8 +1648,7 @@ _T2db:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xC];
 // LINE 595:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T477;
+	return 0x1;
 // LINE 597:
 _T303:
 	__asm        jmp    _T459;
@@ -1692,8 +1658,7 @@ _T308:
 	__asm        cmp    wParam, eax;
 	__asm        jne    _T31b;
 // LINE 602:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T477;
+	return 0x0;
 // LINE 606:
 _T31b:
 	__asm        mov    eax, this;

@@ -38,7 +38,7 @@ void NotificationItem::NotificationItem() {
 	__asm        mov    dword ptr [eax+4], 0;
 // LINE 10:
 	return;
-_T24:
+
 	__asm        mov    eax, this;
 }
 
@@ -51,7 +51,7 @@ void NotificationItem::NotificationItem(const /*packed*/ class NotificationItem&
 	__asm        call   NotificationItem::operator=;
 // LINE 14:
 	return;
-_T1d:
+
 	__asm        mov    eax, this;
 }
 
@@ -66,7 +66,7 @@ void NotificationItem::NotificationItem(long lNewPreferenceType, /*packed*/ clas
 	__asm        mov    [ecx+4], eax;
 // LINE 20:
 	return;
-_T22:
+
 	__asm        mov    eax, this;
 }
 
@@ -77,10 +77,8 @@ _T22:
 // LINE 24:
 	this->myNotificationSink = P2.myNotificationSink;
 // LINE 25:
-	__asm        mov    eax, this;
-	__asm        jmp    _T2a;
+	return this;
 // LINE 26:
-_T2a:
 }
 
 // FUNCTION: COPTER_D 0x0043e210

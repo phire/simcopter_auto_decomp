@@ -696,7 +696,7 @@ _T9aa:
 // LINE 242:
 _T9af:
 	return;
-_T9b4:
+
 	__asm        mov    eax, this;
 }
 
@@ -832,7 +832,6 @@ _Tc8:
 	__asm        mov    [ecx+0xC], ax;
 // LINE 375:
 	return;
-_Tfa:
 }
 
 // Function in module: scxload.obj
@@ -859,8 +858,7 @@ _T29:
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
 	__asm        jne    _T48;
 
-	__asm        mov    eax, i;
-	__asm        jmp    _Teb;
+	return i;
 // LINE 289:
 _T48:
 	__asm        jmp    _T4d;
@@ -889,8 +887,7 @@ _T80:
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
 	__asm        jne    _T9f;
 
-	__asm        mov    eax, i;
-	__asm        jmp    _Teb;
+	return i;
 // LINE 292:
 _T9f:
 	this->curPos = 0x0;
@@ -918,10 +915,8 @@ _Tb3:
 	__asm        jmp    _T13;
 // LINE 296:
 _Te3:
-	__asm        mov    eax, i;
-	__asm        jmp    _Teb;
+	return i;
 // LINE 297:
-_Teb:
 }
 
 // Function in module: scxload.obj
@@ -1370,8 +1365,7 @@ _T5c1:
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
 	__asm        jne    _T5e6;
 
-	__asm        mov    eax, i;
-	__asm        jmp    _Td35;
+	return i;
 // LINE 324:
 _T5e6:
 	__asm        jmp    _T5eb;
@@ -1822,8 +1816,7 @@ _Tc67:
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
 	__asm        jne    _Tc8c;
 
-	__asm        mov    eax, i;
-	__asm        jmp    _Td35;
+	return i;
 // LINE 342:
 _Tc8c:
 	this->curPos = 0x0;
@@ -1870,10 +1863,8 @@ _Td28:
 	__asm        jmp    _T19;
 // LINE 347:
 _Td2d:
-	__asm        mov    eax, i;
-	__asm        jmp    _Td35;
+	return i;
 // LINE 349:
-_Td35:
 }
 
 // Function in module: scxload.obj
@@ -1913,9 +1904,7 @@ _T54:
 	__asm        add    eax, retVal;
 	__asm        mov    retVal, eax;
 // LINE 360:
-	__asm        mov    eax, retVal;
-	__asm        jmp    _T68;
+	return retVal;
 // LINE 361:
-_T68:
 }
 

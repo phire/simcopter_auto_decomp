@@ -156,8 +156,7 @@ int32_t ReadFirstMIFFChunk(void * __ptr32 miffReader, long lDataType, char * ptr
 	__asm        test   eax, eax;
 	__asm        jne    _T2f;
 // LINE 20:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T47;
+	return 0x0;
 // LINE 21:
 _T2f:
 	__asm        mov    eax, lDataLength;
@@ -185,8 +184,7 @@ int32_t ReadNextMIFFChunk(void * __ptr32 miffReader, long lDataType, char * ptrD
 	__asm        test   eax, eax;
 	__asm        jne    _T24;
 // LINE 31:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T3c;
+	return 0x0;
 // LINE 32:
 _T24:
 	__asm        mov    eax, lDataLength;
@@ -265,7 +263,7 @@ _T45:
 	this->myMIFFHeader.lByteOrdering = 0x0;
 // LINE 71:
 	return;
-_T109:
+
 	__asm        mov    eax, this;
 }
 
@@ -312,7 +310,7 @@ _T67:
 	this->bFileEndWritten = 0x0;
 // LINE 91:
 	return;
-_Td0:
+
 	__asm        mov    eax, this;
 }
 
@@ -367,7 +365,6 @@ _T7d:
 	__asm        add    esp, 4;
 _T9f:
 	return;
-_Ta4:
 }
 
 // FUNCTION: COPTER_D 0x004ab878
@@ -426,14 +423,11 @@ _T86:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x44];
 // LINE 120:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tba;
+	return 0x1;
 // LINE 123:
 _Tb3:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tba;
+	return 0x0;
 // LINE 124:
-_Tba:
 }
 
 // FUNCTION: COPTER_D 0x004ab937
@@ -454,8 +448,7 @@ long MIFF::OpenForWriting(long lFileCreator, long lFileType, long lFileVersion) 
 	__asm        test   eax, eax;
 	__asm        jne    _T46;
 // LINE 142:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tee;
+	return 0x0;
 // LINE 144:
 _T46:
 	__asm        mov    eax, this;
@@ -512,14 +505,11 @@ _Tae:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x44];
 // LINE 151:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tee;
+	return 0x1;
 // LINE 153:
 _Te7:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tee;
+	return 0x0;
 // LINE 154:
-_Tee:
 }
 
 // FUNCTION: COPTER_D 0x004aba2c
@@ -540,8 +530,7 @@ long MIFF::OpenForAppending() {
 	__asm        test   eax, eax;
 	__asm        jne    _T46;
 // LINE 172:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T116;
+	return 0x0;
 // LINE 174:
 _T46:
 	__asm        mov    eax, this;
@@ -610,14 +599,11 @@ _Tdd:
 	__asm        jmp    _T105;
 // LINE 183:
 _T105:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T116;
+	return 0x1;
 // LINE 185:
 _T10f:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T116;
+	return 0x0;
 // LINE 186:
-_T116:
 }
 
 // FUNCTION: COPTER_D 0x004abb47
@@ -640,10 +626,8 @@ _T37:
 	__asm        mov    ecx, this;
 	__asm        call   PFile::Close;
 // LINE 197:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T49;
+	return 0x1;
 // LINE 198:
-_T49:
 }
 
 // FUNCTION: COPTER_D 0x004abb95
@@ -682,8 +666,7 @@ _T5a:
 	__asm        jne    _T70;
 // LINE 209:
 _T69:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T98;
+	return 0x0;
 // LINE 211:
 _T70:
 	__asm        mov    ecx, this;
@@ -692,14 +675,11 @@ _T70:
 	__asm        cmp    eax, [ecx+0x140];
 	__asm        jne    _T91;
 // LINE 212:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T98;
+	return 0x1;
 // LINE 213:
 _T91:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T98;
+	return 0x0;
 // LINE 214:
-_T98:
 }
 
 // FUNCTION: COPTER_D 0x004abc32
@@ -741,14 +721,11 @@ _T50:
 	__asm        jmp    _T72;
 // LINE 226:
 _T72:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T83;
+	return 0x1;
 // LINE 228:
 _T7c:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T83;
+	return 0x0;
 // LINE 229:
-_T83:
 }
 
 // FUNCTION: COPTER_D 0x004abcba
@@ -780,8 +757,7 @@ _T3c:
 	__asm        test   eax, eax;
 	__asm        jne    _T56;
 // LINE 242:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Taf;
+	return 0x0;
 // LINE 243:
 _T56:
 	bWeOpenedFile = 0x1;
@@ -812,10 +788,8 @@ _T7e:
 	__asm        jmp    _Ta7;
 // LINE 250:
 _Ta7:
-	__asm        mov    eax, lResult;
-	__asm        jmp    _Taf;
+	return lResult;
 // LINE 251:
-_Taf:
 }
 
 // FUNCTION: COPTER_D 0x004abd6e
@@ -847,8 +821,7 @@ _T3c:
 	__asm        test   eax, eax;
 	__asm        jne    _T56;
 // LINE 264:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Taf;
+	return 0x0;
 // LINE 265:
 _T56:
 	bWeOpenedFile = 0x1;
@@ -879,10 +852,8 @@ _T7e:
 	__asm        jmp    _Ta7;
 // LINE 272:
 _Ta7:
-	__asm        mov    eax, lResult;
-	__asm        jmp    _Taf;
+	return lResult;
 // LINE 273:
-_Taf:
 }
 
 // FUNCTION: COPTER_D 0x004abe22
@@ -914,8 +885,7 @@ _T3c:
 	__asm        test   eax, eax;
 	__asm        jne    _T56;
 // LINE 285:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Taf;
+	return 0x0;
 // LINE 286:
 _T56:
 	bWeOpenedFile = 0x1;
@@ -946,10 +916,8 @@ _T7e:
 	__asm        jmp    _Ta7;
 // LINE 293:
 _Ta7:
-	__asm        mov    eax, lResult;
-	__asm        jmp    _Taf;
+	return lResult;
 // LINE 294:
-_Taf:
 }
 
 // FUNCTION: COPTER_D 0x004abed6
@@ -988,8 +956,7 @@ _T33:
 // LINE 317:
 	this->bFileAppearsCorrupt = 0x1;
 // LINE 318:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tf1;
+	return 0x0;
 // LINE 321:
 _T77:
 	__asm        mov    eax, this;
@@ -1009,8 +976,7 @@ _Ta0:
 	__asm        cmp    lBytesRead, 0;
 	__asm        jg     _Tb1;
 // LINE 323:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tf1;
+	return 0x0;
 // LINE 324:
 _Tb1:
 	__asm        mov    ecx, this;
@@ -1024,14 +990,11 @@ _Tb1:
 // LINE 325:
 	this->bFileAppearsCorrupt = 0x1;
 // LINE 326:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tf1;
+	return 0x0;
 // LINE 328:
 _Te7:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tf1;
+	return 0x1;
 // LINE 329:
-_Tf1:
 }
 
 // FUNCTION: COPTER_D 0x004abfcc
@@ -1067,8 +1030,7 @@ _T43:
 	__asm        test   eax, eax;
 	__asm        jne    _T68;
 // LINE 357:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Te3;
+	return 0x0;
 // LINE 358:
 _T68:
 	bWeOpenedFile = 0x1;
@@ -1079,8 +1041,7 @@ _T74:
 	__asm        cmp    dword ptr [eax+0x128], 0;
 	__asm        je     _T8b;
 // LINE 361:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Te3;
+	return 0x0;
 // LINE 363:
 _T8b:
 	__asm        mov    eax, this;
@@ -1121,10 +1082,8 @@ _Tbb:
 	__asm        call   dword ptr [eax+0x10];
 // LINE 373:
 _Tdb:
-	__asm        mov    eax, lCount;
-	__asm        jmp    _Te3;
+	return lCount;
 // LINE 374:
-_Te3:
 }
 
 // FUNCTION: COPTER_D 0x004ac0b4
@@ -1148,8 +1107,7 @@ _T35:
 	__asm        je     _T4c;
 // LINE 392:
 _T45:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T96;
+	return 0x0;
 // LINE 393:
 _T4c:
 	__asm        push   0;
@@ -1171,10 +1129,8 @@ _T67:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x2C];
 // LINE 397:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T96;
+	return 0x1;
 // LINE 398:
-_T96:
 }
 
 // FUNCTION: COPTER_D 0x004ac14f
@@ -1203,8 +1159,7 @@ _T41:
 	__asm        je     _T58;
 // LINE 423:
 _T51:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T19d;
+	return 0x0;
 // LINE 425:
 _T58:
 	__asm        mov    eax, this;
@@ -1230,8 +1185,7 @@ _T7b:
 	__asm        jmp    _Ta4;
 // LINE 427:
 _Ta4:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T19d;
+	return 0x0;
 // LINE 432:
 _Tab:
 	__asm        mov    eax, this;
@@ -1267,8 +1221,7 @@ _Td7:
 	__asm        jmp    _T10a;
 // LINE 437:
 _T10a:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T19d;
+	return 0x0;
 // LINE 440:
 _T111:
 	this->lPresentRecordStart = lResult;
@@ -1289,8 +1242,7 @@ _T111:
 	__asm        jmp    _T14c;
 // LINE 443:
 _T14c:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T19d;
+	return 0x0;
 // LINE 446:
 _T153:
 	__asm        mov    eax, this;
@@ -1311,16 +1263,13 @@ _T153:
 	__asm        jmp    _T183;
 // LINE 448:
 _T183:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T19d;
+	return 0x0;
 // LINE 450:
 _T18a:
 	this->lPresentRecordIndex++;
 // LINE 451:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T19d;
+	return 0x1;
 // LINE 452:
-_T19d:
 }
 
 // FUNCTION: COPTER_D 0x004ac2f1
@@ -1343,10 +1292,8 @@ _T25:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x58];
 // LINE 477:
-	__asm        mov    eax, lTempPresentRecord;
-	__asm        jmp    _T3c;
+	return lTempPresentRecord;
 // LINE 478:
-_T3c:
 }
 
 // FUNCTION: COPTER_D 0x004ac332
@@ -1364,8 +1311,7 @@ long MIFF::GoToFirstRecordOfGivenType(long lRecordType) {
 	__asm        cmp    eax, lRecordType;
 	__asm        jne    _T35;
 // LINE 494:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T72;
+	return 0x1;
 // LINE 496:
 _T35:
 	__asm        mov    eax, this;
@@ -1382,17 +1328,14 @@ _T35:
 	__asm        cmp    eax, lRecordType;
 	__asm        jne    _T66;
 // LINE 498:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T72;
+	return 0x1;
 // LINE 499:
 _T66:
 	__asm        jmp    _T35;
 // LINE 500:
 _T6b:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T72;
+	return 0x0;
 // LINE 501:
-_T72:
 }
 
 // FUNCTION: COPTER_D 0x004ac3ab
@@ -1413,17 +1356,14 @@ _T0c:
 	__asm        cmp    eax, lRecordType;
 	__asm        jne    _T3d;
 // LINE 517:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T49;
+	return 0x1;
 // LINE 518:
 _T3d:
 	__asm        jmp    _T0c;
 // LINE 519:
 _T42:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T49;
+	return 0x0;
 // LINE 520:
-_T49:
 }
 
 // FUNCTION: COPTER_D 0x004ac3fb
@@ -1452,10 +1392,8 @@ _T26:
 	__asm        jmp    _T23;
 // LINE 543:
 _T42:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T4c;
+	return 0x1;
 // LINE 544:
-_T4c:
 }
 
 // FUNCTION: COPTER_D 0x004ac44e
@@ -1482,8 +1420,7 @@ _T35:
 	__asm        je     _T4c;
 // LINE 564:
 _T45:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tef;
+	return 0x0;
 // LINE 567:
 _T4c:
 	lMaxBytesToRead -= 0x8;
@@ -1533,14 +1470,11 @@ _Td4:
 	__asm        cmp    lReturnValue, 0xFFFFFFFF;
 	__asm        jne    _Te5;
 // LINE 580:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tef;
+	return 0x0;
 // LINE 581:
 _Te5:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tef;
+	return 0x1;
 // LINE 582:
-_Tef:
 }
 
 // FUNCTION: COPTER_D 0x004ac544
@@ -1567,8 +1501,7 @@ _T35:
 	__asm        je     _T4c;
 // LINE 602:
 _T45:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tf0;
+	return 0x0;
 // LINE 605:
 _T4c:
 	__asm        mov    eax, this;
@@ -1625,14 +1558,11 @@ _Tcb:
 	__asm        jne    _Te6;
 // LINE 617:
 _Tdf:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tf0;
+	return 0x0;
 // LINE 618:
 _Te6:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tf0;
+	return 0x1;
 // LINE 619:
-_Tf0:
 }
 
 // FUNCTION: COPTER_D 0x004ac63b
@@ -1658,8 +1588,7 @@ _T35:
 	__asm        je     _T4c;
 // LINE 646:
 _T45:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T116;
+	return 0x0;
 // LINE 648:
 _T4c:
 	this->myMIFFHeader.lMIFFIdentifier = 0x4646494d;
@@ -1708,14 +1637,11 @@ _Td1:
 	__asm        jne    _T10c;
 // LINE 660:
 _T105:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T116;
+	return 0x0;
 // LINE 661:
 _T10c:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T116;
+	return 0x1;
 // LINE 662:
-_T116:
 }
 
 // FUNCTION: COPTER_D 0x004ac758
@@ -1742,8 +1668,7 @@ _T35:
 	__asm        je     _T4c;
 // LINE 679:
 _T45:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tb2;
+	return 0x0;
 // LINE 680:
 _T4c:
 	this->bFileEndWritten = 0x0;
@@ -1774,14 +1699,11 @@ _T70:
 	__asm        jne    _Ta8;
 // LINE 691:
 _Ta1:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tb2;
+	return 0x0;
 // LINE 692:
 _Ta8:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tb2;
+	return 0x1;
 // LINE 693:
-_Tb2:
 }
 
 // FUNCTION: COPTER_D 0x004ac811
@@ -1812,8 +1734,7 @@ _T3e:
 	__asm        je     _T55;
 // LINE 708:
 _T4e:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Te3;
+	return 0x0;
 // LINE 709:
 _T55:
 	this->bFileEndWritten = 0x0;
@@ -1860,14 +1781,11 @@ _Ta1:
 	__asm        jne    _Td9;
 // LINE 722:
 _Td2:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Te3;
+	return 0x0;
 // LINE 723:
 _Td9:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Te3;
+	return 0x1;
 // LINE 724:
-_Te3:
 }
 
 // FUNCTION: COPTER_D 0x004ac8fb
@@ -1932,10 +1850,8 @@ _T84:
 	__asm        jmp    _Tac;
 // LINE 747:
 _Tac:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tb6;
+	return 0x1;
 // LINE 748:
-_Tb6:
 }
 
 

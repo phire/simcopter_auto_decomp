@@ -513,7 +513,6 @@ static void $E3() {
 	__asm        jmp    _T15;
 _T15:
 	return;
-_T1a:
 }
 
 // STATIC INITIALIZER:
@@ -544,7 +543,6 @@ static void $E4() {
 	__asm        call   BoatClass::~BoatClass;
 _T2d:
 	return;
-_T32:
 }
 
 // FUNCTION: COPTER_D 0x005274fd
@@ -631,7 +629,7 @@ _T10f:
 	this->currentLocation.y = mapy;
 // LINE 194:
 	return;
-_T126:
+
 	__asm        mov    eax, this;
 }
 
@@ -664,7 +662,6 @@ _T4c:
 	this->flags[0] = 0x0;
 // LINE 235:
 	return;
-_T58:
 }
 
 // FUNCTION: COPTER_D 0x0052768a
@@ -734,8 +731,7 @@ _T46:
 	__asm        test   eax, eax;
 	__asm        je     _T71;
 // LINE 354:
-	__asm        mov    eax, newboat;
-	__asm        jmp    _T9f;
+	return newboat;
 // LINE 356:
 	__asm        jmp    _T98;
 // LINE 360:
@@ -755,10 +751,8 @@ _T71:
 	__asm        jmp    _T98;
 // LINE 367:
 _T98:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T9f;
+	return 0x0;
 // LINE 368:
-_T9f:
 }
 
 // FUNCTION: COPTER_D 0x00527779
@@ -800,7 +794,6 @@ _T18:
 // LINE 494:
 _T36:
 	return;
-_T3b:
 }
 
 // FUNCTION: COPTER_D 0x005277eb
@@ -824,7 +817,6 @@ _T18:
 // LINE 542:
 _T36:
 	return;
-_T3b:
 }
 
 // FUNCTION: COPTER_D 0x0052782b
@@ -931,7 +923,6 @@ _T11a:
 // LINE 607:
 _T11f:
 	return;
-_T124:
 }
 
 // FUNCTION: COPTER_D 0x00527954
@@ -969,7 +960,6 @@ void BoatClass::Reset() {
 	this->nextLocation.y = 0xffffffff;
 // LINE 645:
 	return;
-_T96:
 }
 
 // FUNCTION: COPTER_D 0x005279ef
@@ -1214,7 +1204,6 @@ _T268:
 // LINE 839:
 _T281:
 	return;
-_T286:
 }
 
 // FUNCTION: COPTER_D 0x00527c7a
@@ -1233,7 +1222,6 @@ void BoatClass::AdjustSpeed() {
 // LINE 867:
 _T2f:
 	return;
-_T34:
 }
 
 // FUNCTION: COPTER_D 0x00527cb3
@@ -1360,8 +1348,7 @@ _T9c:
 	__asm        cmp    currentCell, 0;
 	__asm        jne    _Tb6;
 // LINE 929:
-	__asm        mov    eax, 4;
-	__asm        jmp    _T33e;
+	return 0x4;
 // LINE 934:
 _Tb6:
 	currentObject = currentCell->dyptr;
@@ -1440,14 +1427,12 @@ _T175:
 	__asm        test   al, 8;
 	__asm        je     _T193;
 // LINE 972:
-	__asm        mov    eax, 3;
-	__asm        jmp    _T33e;
+	return 0x3;
 // LINE 974:
 	__asm        jmp    _T19d;
 // LINE 978:
 _T193:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T33e;
+	return 0x1;
 // LINE 983:
 _T19d:
 	currentObject = currentObject->next;
@@ -1467,8 +1452,7 @@ _T1aa:
 	__asm        cmp    [eax+0x47], ecx;
 	__asm        jne    _T1d5;
 // LINE 988:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T33e;
+	return 0x0;
 // LINE 993:
 _T1d5:
 	__asm        mov    eax, this;
@@ -1500,8 +1484,7 @@ _T229:
 	__asm        cmp    currentCell, 0;
 	__asm        jne    _T243;
 // LINE 997:
-	__asm        mov    eax, 4;
-	__asm        jmp    _T33e;
+	return 0x4;
 // LINE 1001:
 _T243:
 	currentObject = currentCell->dyptr;
@@ -1580,14 +1563,12 @@ _T302:
 	__asm        test   al, 8;
 	__asm        je     _T320;
 // LINE 1038:
-	__asm        mov    eax, 3;
-	__asm        jmp    _T33e;
+	return 0x3;
 // LINE 1040:
 	__asm        jmp    _T32a;
 // LINE 1044:
 _T320:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T33e;
+	return 0x1;
 // LINE 1049:
 _T32a:
 	currentObject = currentObject->next;
@@ -1595,10 +1576,8 @@ _T32a:
 	__asm        jmp    _T24c;
 // LINE 1054:
 _T337:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T33e;
+	return 0x0;
 // LINE 1055:
-_T33e:
 }
 
 // FUNCTION: COPTER_D 0x005280bb
@@ -1679,8 +1658,7 @@ _Taa:
 	__asm        jge    _Te1;
 // LINE 1114:
 _Td2:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Te8;
+	return 0x1;
 // LINE 1116:
 	__asm        jmp    _Te8;
 // LINE 1118:
@@ -1931,7 +1909,6 @@ _T28b:
 // LINE 1196:
 _T2c6:
 	return;
-_T2cb:
 }
 
 // FUNCTION: COPTER_D 0x0052847a
@@ -1940,7 +1917,6 @@ void BoatClass::SlowDown() {
 	this->speed -= 0x20000;
 // LINE 1216:
 	return;
-_T1b:
 }
 
 // FUNCTION: COPTER_D 0x0052849a
@@ -1949,7 +1925,6 @@ void BoatClass::Stop() {
 	this->speed = 0x0;
 // LINE 1237:
 	return;
-_T1b:
 }
 
 // FUNCTION: COPTER_D 0x005284ba
@@ -2067,7 +2042,6 @@ _T15d:
 // LINE 1285:
 _T164:
 	return;
-_T169:
 }
 
 // FUNCTION: COPTER_D 0x00528628
@@ -2077,8 +2051,7 @@ int32_t BoatClass::HaveIReachedNextLoc() {
 	__asm        cmp    dword ptr [eax+0x1F], 0;
 	__asm        jg     _T28;
 // LINE 1308:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2f;
+	return 0x1;
 // LINE 1310:
 	__asm        jmp    _T2f;
 // LINE 1312:
@@ -2155,14 +2128,11 @@ _Tc0:
 	__asm        je     _Tde;
 // LINE 1347:
 _Td4:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Te5;
+	return 0x1;
 // LINE 1350:
 _Tde:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Te5;
+	return 0x0;
 // LINE 1351:
-_Te5:
 }
 
 // FUNCTION: COPTER_D 0x00528746
@@ -2255,7 +2225,6 @@ _T105:
 // Block end:
 _T10a:
 	return;
-_T10f:
 }
 
 // FUNCTION: COPTER_D 0x0052885c
@@ -2313,7 +2282,6 @@ _T98:
 	__asm        mov    [ecx+0x10], eax;
 // LINE 1427:
 	return;
-_Tb5:
 }
 
 // FUNCTION: COPTER_D 0x00528918
@@ -3017,14 +2985,11 @@ _T7b2:
 	__asm        jmp    _T7be;
 // LINE 1611:
 _T7b7:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T7c6;
+	return 0x0;
 // LINE 1622:
 _T7be:
-	__asm        mov    eax, intersection;
-	__asm        jmp    _T7c6;
+	return intersection;
 // LINE 1623:
-_T7c6:
 }
 
 // FUNCTION: COPTER_D 0x005290e5
@@ -3290,7 +3255,6 @@ _T181:
 // LINE 1765:
 _T1b5:
 	return;
-_T1ba:
 }
 
 // FUNCTION: COPTER_D 0x005293f3
@@ -3332,14 +3296,11 @@ _T73:
 	__asm        jne    _T8c;
 // LINE 1792:
 _T82:
-	__asm        mov    eax, 4;
-	__asm        jmp    _T96;
+	return 0x4;
 // LINE 1797:
 _T8c:
-	__asm        mov    eax, 3;
-	__asm        jmp    _T96;
+	return 0x3;
 // LINE 1798:
-_T96:
 }
 
 // FUNCTION: COPTER_D 0x0052948e
@@ -3401,7 +3362,6 @@ _T79:
 	__asm        mov    [ecx+8], eax;
 // LINE 1833:
 	return;
-_Tb0:
 }
 
 // FUNCTION: COPTER_D 0x00529543
@@ -3501,7 +3461,6 @@ _T79:
 // LINE 1873:
 _T112:
 	return;
-_T117:
 }
 
 // FUNCTION: COPTER_D 0x0052965f
@@ -3609,7 +3568,6 @@ _Tfe:
 // LINE 1923:
 _T11f:
 	return;
-_T124:
 }
 
 // FUNCTION: COPTER_D 0x00529788
@@ -3717,7 +3675,6 @@ _Tfe:
 // LINE 1974:
 _T11f:
 	return;
-_T124:
 }
 
 // FUNCTION: COPTER_D 0x005298b1
@@ -3825,7 +3782,6 @@ _Tfe:
 // LINE 2029:
 _T11f:
 	return;
-_T124:
 }
 
 // FUNCTION: COPTER_D 0x005299da
@@ -3854,16 +3810,13 @@ _T16:
 	__asm        call   BoatClass::AdjustNextPosition;
 // LINE 2136:
 	return;
-_T57:
 }
 
 // FUNCTION: COPTER_D 0x00529a36
 int32_t BoatClass::FinishedUturn() {
 // LINE 2158:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T16;
+	return 0x1;
 // LINE 2170:
-_T16:
 }
 
 // FUNCTION: COPTER_D 0x00529a51
@@ -4294,7 +4247,6 @@ _T44a:
 	return;
 _T48b:
 	__asm        jmp    foundCell;
-_T490:
 }
 
 // FUNCTION: COPTER_D 0x00529ee6
@@ -4319,7 +4271,6 @@ _T25:
 // LINE 2375:
 _T3b:
 	return;
-_T40:
 }
 
 // FUNCTION: COPTER_D 0x00529f2b
@@ -4974,8 +4925,7 @@ _T7bd:
 	__asm        jmp    _T41;
 // LINE 2498:
 _T7c2:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T8ea;
+	return 0x0;
 // LINE 2504:
 foundCell:
 	__asm        mov    currentFlag, 2;
@@ -5057,12 +5007,10 @@ _T890:
 	__asm        mov    ecx, this;
 	__asm        call   BoatClass::AdjustNextPosition;
 // LINE 2534:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T8ea;
+	return 0x1;
 // LINE 2536:
 _T8e5:
 	__asm        jmp    foundCell;
-_T8ea:
 }
 
 // FUNCTION: COPTER_D 0x0052a81c
@@ -5093,8 +5041,7 @@ int32_t BoatClass::InitializeInstance(long mapx, long mapy, int32_t instanceID) 
 	__asm        jmp    _T56;
 // LINE 2843:
 _T56:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T301;
+	return 0x0;
 // LINE 2847:
 _T5d:
 	__asm        cmp    instanceID, 0;
@@ -5159,8 +5106,7 @@ _T112:
 	__asm        jmp    _T117;
 // LINE 2874:
 _T117:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T301;
+	return 0x0;
 // LINE 2877:
 _T11e:
 	__asm        jmp    _T155;
@@ -5179,8 +5125,7 @@ _T149:
 	__asm        jmp    _T14e;
 // LINE 2881:
 _T14e:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T301;
+	return 0x0;
 // LINE 2886:
 // Block end:
 _T155:
@@ -5314,10 +5259,8 @@ _T2e3:
 // LINE 2950:
 	this->flags[0] = 0x1;
 // LINE 2952:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T301;
+	return 0x1;
 // LINE 2953:
-_T301:
 }
 
 // FUNCTION: COPTER_D 0x0052ab24
@@ -5346,7 +5289,6 @@ void ItterateAllBoats() {
 	__asm        call   BoatClass::ItterateAll;
 // LINE 3025:
 	return;
-_T10:
 }
 
 // FUNCTION: COPTER_D 0x0052ab69
@@ -5355,7 +5297,6 @@ void ResetAllBoats() {
 	__asm        call   BoatClass::ResetAll;
 // LINE 3048:
 	return;
-_T10:
 }
 
 // FUNCTION: COPTER_D 0x0052ab7e
@@ -5378,8 +5319,7 @@ _T16:
 	__asm        cmp    eax, 1;
 	__asm        jne    _T2d;
 // LINE 3069:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T178;
+	return 0x0;
 // LINE 3071:
 _T2d:
 	__asm        call   rand;
@@ -5472,8 +5412,7 @@ _T106:
 	__asm        mov    ecx, capboat;
 	__asm        call   BoatClass::UnPlaceBoat;
 // LINE 3100:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T178;
+	return 0x0;
 // LINE 3104:
 _T11f:
 	mp.op = 0x0;
@@ -5521,8 +5460,7 @@ _T16:
 	__asm        test   eax, eax;
 	__asm        jne    _T2c;
 // LINE 3132:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T37;
+	return 0x0;
 // LINE 3134:
 _T2c:
 	__asm        mov    eax, capboat;
@@ -5598,8 +5536,7 @@ int32_t BoatClass::MIFFLoad(void * __ptr32 miffReader) {
 	__asm        cmp    ret, 0;
 	__asm        jne    _T38;
 // LINE 3209:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T261;
+	return 0x0;
 // LINE 3211:
 _T38:
 	__asm        mov    i, 0;
@@ -5767,17 +5704,14 @@ _T219:
 	__asm        cmp    i, 2;
 	__asm        je     _T252;
 // LINE 3250:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T261;
+	return 0x0;
 // LINE 3251:
 _T252:
 	__asm        jmp    _T44;
 // LINE 3252:
 _T257:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T261;
+	return 0x1;
 // LINE 3253:
-_T261:
 }
 
 // FUNCTION: COPTER_D 0x0052b00a
@@ -5808,17 +5742,14 @@ _T18:
 	__asm        cmp    ret, 0;
 	__asm        jne    _T57;
 // LINE 3273:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T66;
+	return 0x0;
 // LINE 3274:
 _T57:
 	__asm        jmp    _T15;
 // LINE 3275:
 _T5c:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T66;
+	return 0x1;
 // LINE 3276:
-_T66:
 }
 
 

@@ -366,8 +366,7 @@ _T49:
 	__asm        cmp    i, 0x8C;
 	__asm        jne    _T5d;
 // LINE 221:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T2b1;
+	return 0x0;
 // LINE 223:
 _T5d:
 	__asm        mov    eax, celly;
@@ -382,8 +381,7 @@ _T5d:
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    _T8f;
 // LINE 226:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T2b1;
+	return 0x0;
 // LINE 228:
 _T8f:
 	fd->celloc.x = cellx;
@@ -555,10 +553,8 @@ _T170:
 	__asm        mov    ecx, cptr;
 	__asm        mov    [ecx], ax;
 // LINE 297:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2b1;
+	return 0x1;
 // LINE 299:
-_T2b1:
 }
 
 // FUNCTION: COPTER_D 0x00524adf
@@ -1093,7 +1089,6 @@ _T5bb:
 _T5d5:
 	return;
 // LINE 563:
-_T5da:
 }
 
 // FUNCTION: COPTER_D 0x005250be
@@ -1195,7 +1190,6 @@ _Te3:
 	__asm        call   S3FireStartCell;
 	__asm        add    esp, 0x14;
 // LINE 608:
-_T113:
 }
 
 // FUNCTION: COPTER_D 0x005251d6
@@ -1521,7 +1515,7 @@ _T2f5:
 _T329:
 	S_fire_count--;
 // LINE 769:
-	return;
+	__asm        jmp    _T3f3;
 // LINE 774:
 _T334:
 	return;
@@ -1611,8 +1605,7 @@ int32_t S3FireStartCell(/*packed*/ struct _CELL_FIRE_DATA *cfd, long cellx, long
 	__asm        test   al, 0x20;
 	__asm        je     _T27;
 // LINE 838:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Taff;
+	return 0x0;
 // LINE 841:
 _T27:
 	__asm        mov    eax, celly;
@@ -1624,8 +1617,7 @@ _T27:
 	__asm        test   eax, eax;
 	__asm        jne    _T46;
 // LINE 842:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Taff;
+	return 0x0;
 // LINE 846:
 _T46:
 	__asm        mov    eax, cfd;
@@ -2625,8 +2617,7 @@ _Ta07:
 	__asm        cmp    retval, 0;
 	__asm        jne    _Ta18;
 // LINE 897:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Taff;
+	return 0x0;
 // LINE 899:
 _Ta18:
 	mp.op = 0x5;
@@ -2706,10 +2697,8 @@ _Taac:
 	__asm        add    esp, 0xC;
 // LINE 933:
 _Taf5:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Taff;
+	return 0x1;
 // LINE 934:
-_Taff:
 }
 
 // FUNCTION: COPTER_D 0x00526128
@@ -2737,17 +2726,14 @@ _T26:
 	__asm        cmp    [eax+0x9C], ecx;
 	__asm        jne    _T59;
 // LINE 950:
-	__asm        mov    eax, fd;
-	__asm        jmp    _T65;
+	return fd;
 // LINE 951:
 _T59:
 	__asm        jmp    _T1c;
 // LINE 953:
 _T5e:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T65;
+	return 0x0;
 // LINE 954:
-_T65:
 }
 
 // FUNCTION: COPTER_D 0x00526192
@@ -2763,8 +2749,7 @@ int32_t S3FireGetAltitude(/*packed*/ struct _CELL_INFO *cptr, /*packed*/ struct 
 	__asm        test   al, 0x20;
 	__asm        jne    _T1e;
 // LINE 973:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tfb;
+	return 0x0;
 // LINE 976:
 _T1e:
 	__asm        mov    eax, S_ftwk_fire_radius;
@@ -2836,8 +2821,7 @@ _Tb7:
 	height = 0x1;
 // LINE 1004:
 _Tdf:
-	__asm        mov    eax, height;
-	__asm        jmp    _Tfb;
+	return height;
 // LINE 1008:
 next_obj:
 	stobj = stobj->next;
@@ -2845,10 +2829,8 @@ next_obj:
 	__asm        jmp    _T3b;
 // LINE 1012:
 _Tf4:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tfb;
+	return 0x0;
 // LINE 1013:
-_Tfb:
 }
 
 // FUNCTION: COPTER_D 0x00526292
@@ -2887,8 +2869,7 @@ int32_t S3FireTruckDouse(/*packed*/ struct _FIRE_DATA *fd, int32_t dist, /*packe
 	__asm        test   byte ptr [eax], 1;
 	__asm        jne    _T61;
 // LINE 1045:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T155;
+	return 0x1;
 // LINE 1049:
 _T61:
 	__asm        call   rand;
@@ -2972,8 +2953,7 @@ _Tef:
 	__asm        jmp    _T155;
 // LINE 1097:
 _T14b:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T155;
+	return 0x1;
 // LINE 1098:
 _T155:
 }
@@ -3150,8 +3130,7 @@ int32_t S3FireCanCellBurn(long cellx, long celly) {
 	__asm        jle    _T38;
 // LINE 1201:
 _T31:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tc7;
+	return 0x0;
 // LINE 1203:
 _T38:
 	__asm        mov    eax, cellx;
@@ -3189,14 +3168,11 @@ _T75:
 	__asm        jne    _Tbd;
 // LINE 1215:
 _Tb6:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tc7;
+	return 0x0;
 // LINE 1217:
 _Tbd:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tc7;
+	return 0x1;
 // LINE 1218:
-_Tc7:
 }
 
 // FUNCTION: COPTER_D 0x00526661
@@ -3391,7 +3367,7 @@ _T227:
 	__asm        call   S3ExplosionSmokeStart;
 	__asm        add    esp, 0xC;
 // LINE 1290:
-	return;
+	__asm        jmp    _T51b;
 // LINE 1297:
 _T246:
 	__asm        push   0;
@@ -3639,10 +3615,8 @@ _T51b:
 // FUNCTION: COPTER_D 0x00526b81
 long S3FireGetCount() {
 // LINE 1381:
-	__asm        mov    eax, S_fire_count;
-	__asm        jmp    _T10;
+	return S_fire_count;
 // LINE 1382:
-_T10:
 }
 
 // FUNCTION: COPTER_D 0x00526b96
@@ -3827,8 +3801,7 @@ _T1cc:
 	__asm        jmp    _T164;
 // LINE 1493:
 _T1d9:
-	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _T1e3;
+	return 0xffffffff;
 // LINE 1494:
 _T1e3:
 }
@@ -4024,7 +3997,6 @@ _T228:
 _T22d:
 	return;
 // LINE 1599:
-_T232:
 }
 
 // FUNCTION: COPTER_D 0x00526fb5
@@ -4047,8 +4019,7 @@ int32_t S3FireMIFFLoad(void * __ptr32 miffReader) {
 	__asm        cmp    ret, 0;
 	__asm        jne    _T39;
 // LINE 1628:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T3a0;
+	return 0x0;
 // LINE 1631:
 _T39:
 	__asm        mov    i, 0;
@@ -4119,8 +4090,7 @@ _T48:
 	__asm        cmp    i, 0x8B;
 	__asm        je     _T14c;
 // LINE 1655:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T3a0;
+	return 0x0;
 // LINE 1656:
 _T14c:
 	__asm        jmp    _T45;
@@ -4139,8 +4109,7 @@ _T151:
 	__asm        cmp    ret, 0;
 	__asm        jne    _T17e;
 // LINE 1664:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T3a0;
+	return 0x0;
 // LINE 1667:
 _T17e:
 	__asm        mov    i, 0;
@@ -4171,8 +4140,7 @@ _T18d:
 	__asm        cmp    i, 0x8B;
 	__asm        je     _T1e3;
 // LINE 1680:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T3a0;
+	return 0x0;
 // LINE 1681:
 _T1e3:
 	__asm        jmp    _T18a;
@@ -4301,10 +4269,8 @@ _T22d:
 	__asm        jmp    _T205;
 // LINE 1722:
 _T396:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T3a0;
+	return 0x1;
 // LINE 1723:
-_T3a0:
 }
 
 // FUNCTION: COPTER_D 0x0052735a
@@ -4368,8 +4334,7 @@ _T92:
 	__asm        cmp    ret, 0;
 	__asm        jne    _Tc2;
 // LINE 1751:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T104;
+	return 0x0;
 // LINE 1757:
 _Tc2:
 	__asm        push   8;
@@ -4387,17 +4352,14 @@ _Tc2:
 	__asm        cmp    ret, 0;
 	__asm        jne    _Tf5;
 // LINE 1759:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T104;
+	return 0x0;
 // LINE 1760:
 _Tf5:
 	__asm        jmp    _T15;
 // LINE 1762:
 _Tfa:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T104;
+	return 0x1;
 // LINE 1763:
-_T104:
 }
 
 

@@ -274,7 +274,7 @@ _Tdf:
 	__asm        call   PaletteBuffer::DrawPalette;
 // LINE 42:
 	return;
-_Tf8:
+
 	__asm        mov    eax, this;
 }
 
@@ -366,7 +366,7 @@ _Tf3:
 	__asm        call   PaletteBuffer::DrawPalette;
 // LINE 61:
 	return;
-_T10c:
+
 	__asm        mov    eax, this;
 }
 
@@ -391,7 +391,7 @@ void PaletteBuffer::~PaletteBuffer() {
 // LINE 72:
 _T43:
 	return;
-_T48:
+
 	__asm        mov    ecx, this;
 	__asm        call   CBackBuffer::~CBackBuffer;
 }
@@ -420,10 +420,8 @@ _T1b:
 	__asm        jmp    _T18;
 // LINE 84:
 _T45:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T4f;
+	return 0x1;
 // LINE 85:
-_T4f:
 }
 
 // FUNCTION: COPTER_D 0x00447501
@@ -441,8 +439,7 @@ int32_t PaletteBuffer::SetPalette() {
 	__asm        cmp    paletteEntries, 0;
 	__asm        jne    _T2d;
 // LINE 102:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tdc;
+	return 0x0;
 // LINE 103:
 _T2d:
 	__asm        mov    eax, paletteEntries;
@@ -501,10 +498,8 @@ _Tba:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 110:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tdc;
+	return 0x1;
 // LINE 114:
-_Tdc:
 }
 
 // FUNCTION: COPTER_D 0x004475e2
@@ -628,7 +623,6 @@ _T66:
 // LINE 152:
 _T15f:
 	return;
-_T164:
 }
 
 // FUNCTION: COPTER_D 0x0044774b

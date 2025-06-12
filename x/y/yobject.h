@@ -94,7 +94,6 @@ _T5d:
 // LINE 765:
 _Ta4:
 	return;
-_Ta9:
 }
 
 // Function in module: Yobject.obj
@@ -236,8 +235,7 @@ _T191:
 	__asm        add    esp, 0x10;
 // LINE 1033:
 _T1bf:
-	__asm        mov    eax, obj;
-	__asm        jmp    _T1d3;
+	return obj;
 // LINE 1035:
 // Block end:
 	__asm        jmp    _T1d3;

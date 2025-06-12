@@ -111,7 +111,6 @@ void GlobalToLocal(/*unpacked*/ struct Point *pt) {
 	__asm        mov    [ecx], ax;
 // LINE 15:
 	return;
-_T44:
 }
 
 // FUNCTION: COPTER_D 0x00566a59
@@ -142,7 +141,6 @@ void LocalToGlobal(/*unpacked*/ struct Point *pt) {
 	__asm        mov    [ecx], ax;
 // LINE 24:
 	return;
-_T44:
 }
 
 // FUNCTION: COPTER_D 0x00566aa2
@@ -216,7 +214,6 @@ void PtoCstr(unsigned char * pstr) {
 	__asm        mov    byte ptr [eax+ecx], 0;
 // LINE 48:
 	return;
-_T3a:
 }
 
 // FUNCTION: COPTER_D 0x00566b52
@@ -250,7 +247,6 @@ _T2e:
 	cstr[0] = reinterpret_cast<uint8_t>(len);
 // LINE 57:
 	return;
-_T51:
 }
 
 // FUNCTION: COPTER_D 0x00566ba8
@@ -285,7 +281,6 @@ void OffsetRect(/*unpacked*/ struct Rect *rect, short hoff, short voff) {
 	__asm        mov    [ecx+6], ax;
 // LINE 65:
 	return;
-_T59:
 }
 
 // FUNCTION: COPTER_D 0x00566c06
@@ -360,7 +355,6 @@ void SetPortDC(void * __ptr32 dc) {
 	gPort.window = 0x0;
 // LINE 107:
 	return;
-_T22:
 }
 
 // FUNCTION: COPTER_D 0x00566ccf
@@ -392,7 +386,6 @@ _T4b:
 	gPort.dc = 0x0;
 // LINE 92:
 	return;
-_T64:
 }
 
 // FUNCTION: COPTER_D 0x00566d38
@@ -408,7 +401,6 @@ void SetPort(void * __ptr32 newHWND) {
 	__asm        mov    gPort.dc, eax;
 // LINE 115:
 	return;
-_T29:
 }
 
 // FUNCTION: COPTER_D 0x00566d66
@@ -434,7 +426,6 @@ _T26:
 // LINE 126:
 _T37:
 	return;
-_T3c:
 }
 
 // FUNCTION: COPTER_D 0x00566da7
@@ -447,7 +438,6 @@ void GetPort(/*unpacked*/ struct GrafPtr *pPort) {
 	__asm        mov    [edx+4], ecx;
 // LINE 132:
 	return;
-_T1e:
 }
 
 // FUNCTION: COPTER_D 0x00566dca
@@ -504,7 +494,6 @@ _T32:
 	__asm        call   dword ptr ds:[0x6C358C];
 // LINE 143:
 	return;
-_T98:
 }
 
 // FUNCTION: COPTER_D 0x00566e67
@@ -531,7 +520,6 @@ void EraseRect(/*unpacked*/ struct Rect *r) {
 	__asm        add    esp, 4;
 // LINE 150:
 	return;
-_T41:
 }
 
 // FUNCTION: COPTER_D 0x00566ead
@@ -585,7 +573,6 @@ _T32:
 	__asm        call   dword ptr ds:[0x6C358C];
 // LINE 161:
 	return;
-_T90:
 }
 
 // FUNCTION: COPTER_D 0x00566f42
@@ -600,7 +587,6 @@ void SetRect(/*unpacked*/ struct Rect *rect, short left, short top, short right,
 	rect->bottom = bottom;
 // LINE 169:
 	return;
-_T36:
 }
 
 // FUNCTION: COPTER_D 0x00566f7d
@@ -667,7 +653,6 @@ _Tce:
 // LINE 192:
 _Tdc:
 	return;
-_Te1:
 }
 
 // FUNCTION: COPTER_D 0x00567063
@@ -731,7 +716,6 @@ void InsetRect(/*unpacked*/ struct Rect *r, short hdelta, short vdelta) {
 	__asm        mov    [ecx+6], ax;
 // LINE 207:
 	return;
-_T59:
 }
 
 // FUNCTION: COPTER_D 0x00567107
@@ -809,7 +793,6 @@ void GetBackColor(unsigned long * color) {
 	__asm        mov    [ecx], eax;
 // LINE 224:
 	return;
-_T1c:
 }
 
 // FUNCTION: COPTER_D 0x005671db
@@ -823,7 +806,6 @@ void RGBBackColor(unsigned long * color) {
 	__asm        call   dword ptr ds:[0x6C3544];
 // LINE 229:
 	return;
-_T1d:
 }
 
 

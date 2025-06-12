@@ -2469,7 +2469,6 @@ _T178e:
 // LINE 951:
 	__asm        call   S3MapDrawCarIcons;
 // LINE 952:
-_T17b3:
 }
 
 // FUNCTION: COPTER_D 0x005001cb
@@ -3226,19 +3225,15 @@ _T8f:
 	__asm        jmp    _T1c;
 // LINE 1305:
 _T94:
-	__asm        mov    eax, car_id;
-	__asm        jmp    _T9c;
+	return car_id;
 // LINE 1306:
-_T9c:
 }
 
 // FUNCTION: COPTER_D 0x0050098b
 int32_t S3MapCursorUp(long posx, long posy) {
 // LINE 1314:
-	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _T10;
+	return 0xffffffff;
 // LINE 1315:
-_T10:
 }
 
 // FUNCTION: COPTER_D 0x005009a0
@@ -3298,7 +3293,7 @@ void S3MapBlitIcon(long icon_id, long x, long y) {
 	__asm        cmp    icon_id, 0xFFFFFFFF;
 	__asm        jne    _T18;
 // LINE 1390:
-	return;
+	__asm        jmp    _T14e;
 // LINE 1393:
 _T18:
 	__asm        mov    eax, x;
@@ -3596,7 +3591,6 @@ _T24d:
 
 	__asm        jmp    _T111;
 // LINE 1492:
-_T279:
 }
 
 // FUNCTION: COPTER_D 0x00500de3
@@ -3775,7 +3769,6 @@ _T57:
 	__asm        mov    eax, ci;
 	__asm        or     dword ptr [eax], 1;
 // LINE 1585:
-_T8a:
 }
 
 // FUNCTION: COPTER_D 0x00500fc3
@@ -3801,7 +3794,7 @@ _T18:
 	__asm        lea    eax, [eax+eax*4];
 	__asm        and    S_carinfo[0].flags[eax*8], 0xFFFFFFFE;
 // LINE 1606:
-	return;
+	__asm        jmp    _T50;
 // LINE 1608:
 _T4b:
 	__asm        jmp    _T15;
@@ -4015,7 +4008,7 @@ void S3MapBlitDIcon(long icon_id, long x, long y) {
 	__asm        cmp    icon_id, 0xFFFFFFFF;
 	__asm        jne    _T18;
 // LINE 1702:
-	return;
+	__asm        jmp    _Td0;
 // LINE 1707:
 _T18:
 	mapx = x;
@@ -4364,7 +4357,6 @@ _Te5:
 	__asm        mov    ecx, dy;
 	__asm        mov    [ecx], eax;
 // LINE 1867:
-_T10b:
 }
 
 

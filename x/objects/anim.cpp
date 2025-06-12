@@ -299,7 +299,7 @@ _T2b6:
 _L31070:
 	__asm        mov    eax, 0x5961B0;
 	__asm        jmp    near ptr 0x0056F590;
-_T2c5:
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
 }

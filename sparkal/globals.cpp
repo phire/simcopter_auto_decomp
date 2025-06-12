@@ -144,7 +144,6 @@ static void $E1() {
 	__asm        jmp    _T0b;
 _T0b:
 	return;
-_T10:
 }
 
 // STATIC INITIALIZER:
@@ -165,7 +164,6 @@ static void $E2() {
 	__asm        jmp    _T0b;
 _T0b:
 	return;
-_T10:
 }
 
 // STATIC INITIALIZER:

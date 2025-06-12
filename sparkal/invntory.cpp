@@ -808,7 +808,7 @@ _T69d:
 	__asm        add    esp, 4;
 // LINE 60:
 	return;
-_T6e3:
+
 	__asm        mov    eax, this;
 }
 
@@ -1135,7 +1135,7 @@ _T3ee:
 	__asm        call   list<HotSpot>::deallocate_buffers;
 _T405:
 	return;
-_T40a:
+
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
 }
@@ -1809,10 +1809,8 @@ _T9a4:
 	__asm        jmp    _T87f;
 // LINE 105:
 _T9a9:
-	__asm        mov    eax, nReturnValue;
-	__asm        jmp    _T9b1;
+	return nReturnValue;
 // LINE 106:
-_T9b1:
 }
 
 // FUNCTION: COPTER_D 0x004a981d
@@ -2263,7 +2261,6 @@ _Ta4:
 // LINE 149:
 _Tb1:
 	return;
-_Tb6:
 }
 
 // FUNCTION: COPTER_D 0x004a9d40
@@ -2278,8 +2275,7 @@ int32_t InventoryWindow::ComposeSelf() {
 	__asm        jne    _T2d;
 // LINE 157:
 _T26:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tc3;
+	return 0x0;
 // LINE 163:
 _T2d:
 	__asm        jmp    _T32;
@@ -2336,10 +2332,8 @@ _Ta9:
 	__asm        mov    ecx, this;
 	__asm        call   InventoryWindow::DrawInventory;
 // LINE 167:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tc3;
+	return 0x1;
 // LINE 168:
-_Tc3:
 }
 
 // FUNCTION: COPTER_D 0x004a9e08
@@ -2638,7 +2632,6 @@ _T379:
 // LINE 197:
 _T3bf:
 	return;
-_T3c4:
 }
 
 // FUNCTION: COPTER_D 0x004aa1d1
@@ -2946,43 +2939,34 @@ _T30e:
 // LINE 260:
 _T313:
 	return;
-_T318:
 }
 
 // FUNCTION: COPTER_D 0x004aa4ee
 long InventoryWindow::DoKeyDown(long lKey, char chModifiers) {
 // LINE 269:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
+	return 0x0;
 // LINE 270:
-_T13:
 }
 
 // FUNCTION: COPTER_D 0x004aa508
 long InventoryWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 278:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T16;
+	return 0x1;
 // LINE 279:
-_T16:
 }
 
 // FUNCTION: COPTER_D 0x004aa525
 long InventoryWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 286:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T16;
+	return 0x1;
 // LINE 287:
-_T16:
 }
 
 // FUNCTION: COPTER_D 0x004aa542
 long InventoryWindow::DoCursorMove(long nCursorX, long nCursorY) {
 // LINE 294:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T16;
+	return 0x1;
 // LINE 295:
-_T16:
 }
 
 // FUNCTION: COPTER_D 0x004aa55f
@@ -3048,8 +3032,7 @@ _T97:
 	__asm        add    ecx, 8;
 	__asm        call   HotSpot::GetBoundingRect;
 // LINE 307:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tda;
+	return 0x1;
 // LINE 309:
 _Tb0:
 	__asm        mov    eax, i.node;
@@ -3067,17 +3050,14 @@ _Tce:
 	__asm        jmp    _T27;
 // LINE 311:
 _Td3:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tda;
+	return 0x0;
 // LINE 312:
-_Tda:
 }
 
 // FUNCTION: COPTER_D 0x004aa640
 void InventoryWindow::LoadHotSpots() {
 // LINE 323:
 	return;
-_T11:
 }
 
 // FUNCTION: COPTER_D 0x004aa656
@@ -3094,8 +3074,7 @@ long InventoryWindow::GetColumnStartPixel(long lColumn) {
 	__asm        jge    _T27;
 // LINE 335:
 _T20:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T36;
+	return 0x0;
 // LINE 336:
 _T27:
 	__asm        mov    eax, lColumn;
@@ -3119,8 +3098,7 @@ long InventoryWindow::GetRowStartPixel(long lRow) {
 	__asm        jge    _T27;
 // LINE 349:
 _T20:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T36;
+	return 0x0;
 // LINE 350:
 _T27:
 	__asm        mov    eax, lRow;
@@ -3161,7 +3139,6 @@ _T27:
 	__asm        mov    [ecx+4], eax;
 // LINE 367:
 	return;
-_T4b:
 }
 
 // FUNCTION: COPTER_D 0x004aa722
@@ -3201,7 +3178,6 @@ _T64:
 // LINE 381:
 _T90:
 	return;
-_T95:
 }
 
 

@@ -79,10 +79,8 @@ struct Point3d{ // not packed(0xc bytes) TI: 0x348f
 // FUNCTION: COPTER_D 0x00563ea0
 int32_t Check_Pointer(char * ptr, short numchars, char * text) {
 // LINE 119:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T10;
+	return 0x1;
 // LINE 120:
-_T10:
 }
 
 // FUNCTION: COPTER_D 0x00563eb5
@@ -127,7 +125,7 @@ _T45:
 	__asm        test   eax, eax;
 	__asm        jne    _T7b;
 
-	return;
+	__asm        jmp    _T117;
 // LINE 153:
 _T7b:
 	ptr[0] = color;
@@ -180,7 +178,7 @@ _Te4:
 	__asm        test   eax, eax;
 	__asm        jne    _T10f;
 
-	return;
+	__asm        jmp    _T117;
 // LINE 165:
 _T10f:
 	ptr[0] = color;
@@ -217,7 +215,7 @@ _T1f:
 	__asm        cmp    diameter, 0x33;
 	__asm        jle    _T2e;
 // LINE 195:
-	return;
+	__asm        jmp    _T79a;
 // LINE 198:
 _T2e:
 	__asm        cmp    diameter, 3;
@@ -991,16 +989,13 @@ _T20f:
 	__asm        call   DrawLineOnFace;
 	__asm        add    esp, 0x28;
 // LINE 482:
-_T24c:
 }
 
 // FUNCTION: COPTER_D 0x005649c1
 long ComputeViewToFigureOffset(/*unpacked*/ struct Point3D view, int32_t index) {
 // LINE 516:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T0d;
+	return 0x0;
 // LINE 517:
-_T0d:
 }
 
 // FUNCTION: COPTER_D 0x005649d3
@@ -1201,7 +1196,6 @@ _T14b:
 	__asm        call   DrawHorzLinePat;
 	__asm        add    esp, 0x1C;
 // LINE 576:
-_T1e0:
 }
 
 // FUNCTION: COPTER_D 0x00564bb8
@@ -1236,7 +1230,6 @@ _T2f:
 // LINE 594:
 	return;
 // LINE 595:
-_T53:
 }
 
 // FUNCTION: COPTER_D 0x00564c10
@@ -1357,7 +1350,6 @@ _T14b:
 _T173:
 	return;
 // LINE 631:
-_T178:
 }
 
 // FUNCTION: COPTER_D 0x00564d8d
@@ -1394,13 +1386,13 @@ void DrawTaperedLine(/*unpacked*/ struct Point3d startPt, /*unpacked*/ struct Po
 	__asm        cmp    width, 0x19;
 	__asm        jle    _T32;
 // LINE 660:
-	return;
+	__asm        jmp    _T493;
 // LINE 662:
 _T32:
 	__asm        cmp    width, 0;
 	__asm        jne    _T41;
 // LINE 663:
-	return;
+	__asm        jmp    _T493;
 // LINE 666:
 _T41:
 	__asm        cmp    taper, 0;
@@ -1492,7 +1484,7 @@ _T111:
 	__asm        jge    _T13e;
 // LINE 690:
 _T139:
-	return;
+	__asm        jmp    _T493;
 // LINE 691:
 _T13e:
 	__asm        mov    eax, Pwinheight;
@@ -1510,7 +1502,7 @@ _T13e:
 	__asm        jge    _T16b;
 // LINE 692:
 _T166:
-	return;
+	__asm        jmp    _T493;
 // LINE 695:
 _T16b:
 	__asm        mov    eax, endPt.x;
@@ -1579,7 +1571,7 @@ _T1cb:
 	__asm        cmp    segLen, 1;
 	__asm        jge    _T215;
 
-	return;
+	__asm        jmp    _T493;
 // LINE 725:
 _T215:
 	__asm        mov    i, 0;
@@ -1657,7 +1649,7 @@ _T2c8:
 	__asm        jmp    _T221;
 // LINE 754:
 _T2d3:
-	return;
+	__asm        jmp    _T493;
 // LINE 756:
 _T2d8:
 	__asm        mov    ecx, startPt.x;
@@ -1683,7 +1675,7 @@ _T2d8:
 	__asm        cmp    segLen, 1;
 	__asm        jge    _T318;
 
-	return;
+	__asm        jmp    _T493;
 // LINE 761:
 _T318:
 	__asm        cmp    segLen, 0;
@@ -1765,7 +1757,7 @@ _T3dd:
 	__asm        cmp    fourByteWrites, 0;
 	__asm        jge    _T3ec;
 
-	return;
+	__asm        jmp    _T493;
 // LINE 800:
 _T3ec:
 	__asm        mov    eax, fourByteWrites;
@@ -1783,7 +1775,7 @@ _T3ec:
 	__asm        test   eax, eax;
 	__asm        jne    _T41f;
 
-	return;
+	__asm        jmp    _T493;
 // LINE 803:
 _T41f:
 	__asm        mov    eax, cInc;
@@ -1864,7 +1856,7 @@ void DrawLine(/*unpacked*/ struct Point3d startPt, /*unpacked*/ struct Point3d e
 	__asm        cmp    width, 0x19;
 	__asm        jle    _T2f;
 // LINE 849:
-	return;
+	__asm        jmp    _T417;
 // LINE 851:
 _T2f:
 	__asm        cmp    width, 0;
@@ -1921,7 +1913,7 @@ _Tb6:
 	__asm        jge    _Tcf;
 // LINE 863:
 _Tca:
-	return;
+	__asm        jmp    _T417;
 // LINE 864:
 _Tcf:
 	__asm        cmp    startPt.y, 0;
@@ -2054,7 +2046,7 @@ _T1ff:
 	__asm        test   eax, eax;
 	__asm        jne    _T228;
 
-	return;
+	__asm        jmp    _T417;
 // LINE 903:
 _T228:
 	__asm        mov    eax, j;
@@ -2138,7 +2130,7 @@ _T2fb:
 	__asm        cmp    fourByteWrites, 0;
 	__asm        jge    _T326;
 // LINE 936:
-	return;
+	__asm        jmp    _T417;
 // LINE 937:
 	__asm        push   0x8C085;
 	__asm        push   0x5BF25C;
@@ -2191,7 +2183,7 @@ _T370:
 	__asm        test   eax, eax;
 	__asm        jne    _T3a3;
 
-	return;
+	__asm        jmp    _T417;
 // LINE 950:
 _T3a3:
 	__asm        mov    eax, cInc;
@@ -2283,7 +2275,7 @@ void DrawHorzLinePat(long startX, long endX, long yPos, unsigned char * pixPtr, 
 	__asm        jge    _T60;
 // LINE 998:
 _T5b:
-	return;
+	__asm        jmp    _T252;
 // LINE 999:
 _T60:
 	__asm        cmp    yPos, 0;
@@ -2308,7 +2300,7 @@ _T92:
 	__asm        cmp    Pwinheight, eax;
 	__asm        jge    _Ta6;
 // LINE 1004:
-	return;
+	__asm        jmp    _T252;
 // LINE 1006:
 _Ta6:
 	__asm        mov    eax, yPos;
@@ -2408,7 +2400,7 @@ _T18e:
 	__asm        test   eax, eax;
 	__asm        jne    _T1c1;
 
-	return;
+	__asm        jmp    _T252;
 // LINE 1042:
 _T1c1:
 	__asm        fld    stride2;
@@ -2485,7 +2477,7 @@ void DrawHorzLine(long startX, long endX, long yPos, unsigned char color) {
 	__asm        jge    _T22;
 // LINE 1076:
 _T1d:
-	return;
+	__asm        jmp    _T19a;
 // LINE 1077:
 _T22:
 	__asm        cmp    yPos, 0;
@@ -2510,7 +2502,7 @@ _T52:
 	__asm        cmp    yPos, eax;
 	__asm        jle    _T65;
 // LINE 1082:
-	return;
+	__asm        jmp    _T19a;
 // LINE 1084:
 _T65:
 	__asm        mov    eax, yPos;
@@ -2551,7 +2543,7 @@ _T65:
 	__asm        cmp    oneByteWrites, 0;
 	__asm        jge    _Te8;
 // LINE 1100:
-	return;
+	__asm        jmp    _T19a;
 // LINE 1101:
 	__asm        push   0x8C085;
 	__asm        push   0x5BF3A4;
@@ -2564,7 +2556,7 @@ _Te8:
 	__asm        cmp    fourByteWrites, 0;
 	__asm        jge    _T113;
 // LINE 1104:
-	return;
+	__asm        jmp    _T19a;
 // LINE 1105:
 	__asm        push   0x8C085;
 	__asm        push   0x5BF3FC;
@@ -2589,7 +2581,7 @@ _T113:
 	__asm        test   eax, eax;
 	__asm        jne    _T146;
 
-	return;
+	__asm        jmp    _T19a;
 // LINE 1112:
 _T146:
 	__asm        mov    al, color;

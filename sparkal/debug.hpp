@@ -14,6 +14,5 @@ void execute(char * data) {
 // LINE 47:
 _T28:
 	return;
-_T2d:
 }
 

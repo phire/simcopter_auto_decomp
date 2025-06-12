@@ -88,7 +88,7 @@ void FlatFile::FlatFile() {
 	__asm        call   FlatFile::Link;
 // LINE 23:
 	return;
-_T43:
+
 	__asm        mov    eax, this;
 }
 
@@ -109,7 +109,6 @@ _T2d:
 	__asm        call   FlatFile::Unlink;
 // LINE 33:
 	return;
-_T3a:
 }
 
 // FUNCTION: COPTER_D 0x0055c2fa
@@ -142,17 +141,14 @@ _T1f:
 	__asm        test   eax, eax;
 	__asm        jne    _T5f;
 
-	__asm        mov    eax, srch;
-	__asm        jmp    _T6b;
+	return srch;
 // LINE 47:
 _T5f:
 	__asm        jmp    _T16;
 // LINE 48:
 _T64:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T6b;
+	return 0x0;
 // LINE 49:
-_T6b:
 }
 
 // FUNCTION: COPTER_D 0x0055c36a
@@ -196,8 +192,7 @@ long FlatFile::Open(unsigned char * name) {
 	__asm        test   eax, eax;
 	__asm        je     _T32;
 
-	__asm        mov    eax, 0xFFFFFFD1;
-	__asm        jmp    _T1b8;
+	return 0xffffffd1;
 // LINE 63:
 _T32:
 	err = 0x0;
@@ -314,10 +309,8 @@ _T195:
 	__asm        add    esp, 0xC;
 // LINE 107:
 _T1b0:
-	__asm        mov    eax, err;
-	__asm        jmp    _T1b8;
+	return err;
 // LINE 108:
-_T1b8:
 }
 
 // FUNCTION: COPTER_D 0x0055c586
@@ -338,7 +331,6 @@ void FlatFile::OpenFromOtherFile(/*unpacked*/ class FlatFile *other) {
 	__asm        call   dword ptr [eax+4];
 // LINE 114:
 	return;
-_T3e:
 }
 
 // FUNCTION: COPTER_D 0x0055c5cb
@@ -403,10 +395,8 @@ _Ta0:
 	this->fFileID = 0x0;
 // LINE 151:
 _Tc4:
-	__asm        mov    eax, err;
-	__asm        jmp    _Tcc;
+	return err;
 // LINE 152:
-_Tcc:
 }
 
 // FUNCTION: COPTER_D 0x0055c69c
@@ -420,8 +410,7 @@ long FlatFile::ReadBlock(void * __ptr32 buffer, long * blockSize) {
 	__asm        test   eax, eax;
 	__asm        jne    _T29;
 
-	__asm        mov    eax, 0xFFFFFFCF;
-	__asm        jmp    _T6e;
+	return 0xffffffcf;
 // LINE 172:
 _T29:
 	__asm        mov    eax, this;
@@ -442,8 +431,7 @@ _T29:
 	__asm        cmp    [eax], ecx;
 	__asm        je     _T67;
 
-	__asm        mov    eax, 0xFFFFFFD0;
-	__asm        jmp    _T6e;
+	return 0xffffffd0;
 // LINE 174:
 	__asm        jmp    _T6e;
 _T67:
@@ -462,8 +450,7 @@ long FlatFile::SetPos(long fromStart) {
 	__asm        test   eax, eax;
 	__asm        jne    _T29;
 
-	__asm        mov    eax, 0xFFFFFFCF;
-	__asm        jmp    _T5f;
+	return 0xffffffcf;
 // LINE 185:
 _T29:
 	__asm        push   0;
@@ -477,13 +464,11 @@ _T29:
 	__asm        test   eax, eax;
 	__asm        je     _T58;
 
-	__asm        mov    eax, 0xFFFFFFCE;
-	__asm        jmp    _T5f;
+	return 0xffffffce;
 // LINE 186:
 	__asm        jmp    _T5f;
 _T58:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T5f;
+	return 0x0;
 // LINE 188:
 _T5f:
 }
@@ -497,8 +482,7 @@ long FlatFile::Advance(long skipAmt) {
 	__asm        test   eax, eax;
 	__asm        jne    _T29;
 
-	__asm        mov    eax, 0xFFFFFFCF;
-	__asm        jmp    _T5f;
+	return 0xffffffcf;
 // LINE 197:
 _T29:
 	__asm        push   1;
@@ -512,13 +496,11 @@ _T29:
 	__asm        test   eax, eax;
 	__asm        je     _T58;
 
-	__asm        mov    eax, 0xFFFFFFCE;
-	__asm        jmp    _T5f;
+	return 0xffffffce;
 // LINE 198:
 	__asm        jmp    _T5f;
 _T58:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T5f;
+	return 0x0;
 // LINE 200:
 _T5f:
 }
@@ -597,10 +579,8 @@ long FlatFile::Read4(long * val) {
 	__asm        add    esp, 4;
 // LINE 247:
 _T3c:
-	__asm        mov    eax, err;
-	__asm        jmp    _T44;
+	return err;
 // LINE 248:
-_T44:
 }
 
 // FUNCTION: COPTER_D 0x0055c8c5
@@ -628,10 +608,8 @@ long FlatFile::Read2(short * val) {
 	__asm        add    esp, 4;
 // LINE 255:
 _T3c:
-	__asm        mov    eax, err;
-	__asm        jmp    _T44;
+	return err;
 // LINE 256:
-_T44:
 }
 
 // FUNCTION: COPTER_D 0x0055c910
@@ -650,10 +628,8 @@ long FlatFile::Read1(signed char * val) {
 	__asm        call   FlatFile::ReadBlock;
 	__asm        mov    err, eax;
 // LINE 262:
-	__asm        mov    eax, err;
-	__asm        jmp    _T2e;
+	return err;
 // LINE 263:
-_T2e:
 }
 
 // FUNCTION: COPTER_D 0x0055c945
@@ -664,7 +640,6 @@ void FlatFile::Link() {
 	FlatFile::sList = this;
 // LINE 268:
 	return;
-_T24:
 }
 
 // FUNCTION: COPTER_D 0x0055c96e
@@ -705,7 +680,6 @@ _T4f:
 	__asm        add    esp, 0x10;
 // LINE 281:
 	return;
-_T70:
 }
 
 // FUNCTION: COPTER_D 0x0055c9e3
@@ -762,10 +736,8 @@ long FlatFile::GetFileName(unsigned char * name) {
 	__asm        call   Memory::BlockMove;
 	__asm        add    esp, 0xC;
 // LINE 297:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T30;
+	return 0x0;
 // LINE 298:
-_T30:
 }
 
 // FUNCTION: COPTER_D 0x0055ca7f

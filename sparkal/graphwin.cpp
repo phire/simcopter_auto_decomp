@@ -896,7 +896,6 @@ _T227:
 	__asm        jmp    _T24f;
 _T24f:
 	return;
-_T254:
 }
 
 // STATIC INITIALIZER:
@@ -1057,7 +1056,6 @@ _T1c0:
 	__asm        jmp    _T1c5;
 _T1c5:
 	return;
-_T1ca:
 }
 
 // STATIC INITIALIZER:
@@ -1251,7 +1249,6 @@ _T227:
 	__asm        jmp    _T24f;
 _T24f:
 	return;
-_T254:
 }
 
 // STATIC INITIALIZER:
@@ -1412,7 +1409,6 @@ _T1c0:
 	__asm        jmp    _T1c5;
 _T1c5:
 	return;
-_T1ca:
 }
 
 // STATIC INITIALIZER:
@@ -1606,7 +1602,6 @@ _T227:
 	__asm        jmp    _T24f;
 _T24f:
 	return;
-_T254:
 }
 
 // STATIC INITIALIZER:
@@ -1767,7 +1762,6 @@ _T1c0:
 	__asm        jmp    _T1c5;
 _T1c5:
 	return;
-_T1ca:
 }
 
 // STATIC INITIALIZER:
@@ -1811,17 +1805,15 @@ void GraphicWindowColorConstants::GraphicWindowColorConstants() {
 	this->nPaletteIndexTransparent = 0xffffffff;
 // LINE 48:
 	return;
-_T6a:
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x004a17be
 int32_t GraphicWindowOwner::DoMessage(/*unpacked*/ class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 // LINE 62:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
+	return 0x0;
 // LINE 63:
-_T13:
 }
 
 // FUNCTION: COPTER_D 0x004a17d8
@@ -2019,7 +2011,7 @@ _T268:
 	GraphicWindow::windowManager = this;
 // LINE 79:
 	return;
-_T27e:
+
 	__asm        mov    eax, this;
 }
 
@@ -2166,7 +2158,6 @@ _T194:
 	__asm        jmp    _T1b7;
 _T1b7:
 	return;
-_T1bc:
 }
 
 // FUNCTION: COPTER_D 0x004a1c21
@@ -2175,7 +2166,6 @@ void GraphicWindowManager::SetNewBaseWindow(/*unpacked*/ class GraphicWindow *ne
 	this->baseWindow = newBaseWindow;
 // LINE 99:
 	return;
-_T1a:
 }
 
 // FUNCTION: COPTER_D 0x004a1c42
@@ -2413,8 +2403,7 @@ _T2d1:
 	__asm        jmp    _T2d6;
 // LINE 123:
 _T2d6:
-	__asm        mov    eax, 2;
-	__asm        jmp    _T305;
+	return 0x2;
 // LINE 125:
 	__asm        jmp    _T2ef;
 // LINE 126:
@@ -2427,10 +2416,8 @@ _T2ef:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindowManager::DeleteWindowAndRemoveItsTraces;
 // LINE 130:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T305;
+	return 0x1;
 // LINE 131:
-_T305:
 }
 
 // FUNCTION: COPTER_D 0x004a1f4e
@@ -2447,8 +2434,7 @@ int32_t GraphicWindowManager::DeleteWindowAndRemoveItsTraces(/*unpacked*/ class 
 	__asm        test   eax, eax;
 	__asm        jne    _T2a;
 // LINE 140:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T9d;
+	return 0x0;
 // LINE 144:
 _T2a:
 	windowParent = windowToDelete-><GraphicWindow+0x3c:4>;
@@ -2491,10 +2477,8 @@ _T68:
 	__asm        jmp    _T93;
 // LINE 155:
 _T93:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T9d;
+	return 0x1;
 // LINE 156:
-_T9d:
 }
 
 // FUNCTION: COPTER_D 0x004a1ff2
@@ -2508,8 +2492,7 @@ int32_t GraphicWindowManager::DeleteAllWindowsInDeletionList() {
 	__asm        cmp    nReentrancyCount, 0;
 	__asm        jle    _T20;
 // LINE 166:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1df;
+	return 0x0;
 // LINE 167:
 _T20:
 	nReentrancyCount++;
@@ -2676,10 +2659,8 @@ _T1ca:
 _T1cf:
 	nReentrancyCount--;
 // LINE 178:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1df;
+	return 0x1;
 // LINE 179:
-_T1df:
 }
 
 // FUNCTION: COPTER_D 0x004a21d6
@@ -2744,8 +2725,7 @@ _T93:
 	__asm        cmp    [eax+8], ecx;
 	__asm        jne    _Tac;
 // LINE 199:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Te4;
+	return 0x1;
 // LINE 201:
 _Tac:
 	currentGraphicWindowToCheck = currentGraphicWindowToCheck-><GraphicWindow+0x3c:4>;
@@ -2768,10 +2748,8 @@ _Td8:
 	__asm        jmp    _T27;
 // LINE 205:
 _Tdd:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Te4;
+	return 0x0;
 // LINE 206:
-_Te4:
 }
 
 // FUNCTION: COPTER_D 0x004a22c1
@@ -2875,10 +2853,8 @@ _Te5:
 	__asm        call   GraphicWindowManager::DeleteAllWindowsInDeletionList;
 // LINE 237:
 _T10a:
-	__asm        mov    eax, nReturnValue;
-	__asm        jmp    _T112;
+	return nReturnValue;
 // LINE 238:
-_T112:
 }
 
 // FUNCTION: COPTER_D 0x004a23da
@@ -2982,10 +2958,8 @@ _Te5:
 	__asm        call   GraphicWindowManager::DeleteAllWindowsInDeletionList;
 // LINE 269:
 _T10a:
-	__asm        mov    eax, nReturnValue;
-	__asm        jmp    _T112;
+	return nReturnValue;
 // LINE 270:
-_T112:
 }
 
 // FUNCTION: COPTER_D 0x004a24f3
@@ -3087,10 +3061,8 @@ _Te1:
 	__asm        call   GraphicWindowManager::DeleteAllWindowsInDeletionList;
 // LINE 296:
 _T106:
-	__asm        mov    eax, nReturnValue;
-	__asm        jmp    _T10e;
+	return nReturnValue;
 // LINE 297:
-_T10e:
 }
 
 // FUNCTION: COPTER_D 0x004a2608
@@ -3394,8 +3366,7 @@ _T196:
 	__asm        test   eax, eax;
 	__asm        jne    _T1b0;
 // LINE 378:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T238;
+	return 0x0;
 // LINE 380:
 _T1b0:
 	__asm        cmp    nMessage, 1;
@@ -3477,10 +3448,8 @@ int32_t GraphicWindowManager::ComposeAllWindows() {
 	__asm        call   GraphicWindowManager::DeleteAllWindowsInDeletionList;
 // LINE 406:
 _T41:
-	__asm        mov    eax, nReturnValue;
-	__asm        jmp    _T49;
+	return nReturnValue;
 // LINE 407:
-_T49:
 }
 
 // FUNCTION: COPTER_D 0x004a2a1b
@@ -5532,10 +5501,8 @@ _T48a:
 // FUNCTION: COPTER_D 0x004a44d4
 int  GraphicWindow::Initialize() {
 // LINE 561:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T16;
+	return 0x1;
 // LINE 562:
-_T16:
 }
 
 // FUNCTION: COPTER_D 0x004a44ef
@@ -5545,8 +5512,7 @@ class GraphicWindow &  GraphicWindow::operator=(const /*unpacked*/ class Graphic
 	__asm        cmp    this, eax;
 	__asm        jne    _T20;
 // LINE 606:
-	__asm        mov    eax, this;
-	__asm        jmp    _T5aa;
+	return this;
 // LINE 608:
 _T20:
 	__asm        mov    eax, copyGraphicWindow;
@@ -6025,10 +5991,8 @@ _T59d:
 	__asm        jmp    _T5a2;
 // LINE 625:
 _T5a2:
-	__asm        mov    eax, this;
-	__asm        jmp    _T5aa;
+	return this;
 // LINE 626:
-_T5aa:
 }
 
 // FUNCTION: COPTER_D 0x004a4aa0
@@ -7121,10 +7085,8 @@ _T2b1:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 821:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2d5;
+	return 0x1;
 // LINE 822:
-_T2d5:
 }
 
 // FUNCTION: COPTER_D 0x004a569a
@@ -7278,10 +7240,8 @@ _T189:
 	__asm        jmp    _T2e;
 // LINE 852:
 _T18e:
-	__asm        mov    eax, nReturnValue;
-	__asm        jmp    _T196;
+	return nReturnValue;
 // LINE 853:
-_T196:
 }
 
 // FUNCTION: COPTER_D 0x004a5837
@@ -7454,10 +7414,8 @@ _T1a8:
 	__asm        call   GraphicWindowManager::DeleteAllWindowsInDeletionList;
 // LINE 883:
 _T1cb:
-	__asm        mov    eax, windowFound;
-	__asm        jmp    _T1d3;
+	return windowFound;
 // LINE 884:
-_T1d3:
 }
 
 // FUNCTION: COPTER_D 0x004a5a11
@@ -7580,10 +7538,8 @@ _T133:
 	__asm        jmp    _T2e;
 // LINE 905:
 _T138:
-	__asm        mov    eax, nReturnValue;
-	__asm        jmp    _T140;
+	return nReturnValue;
 // LINE 906:
-_T140:
 }
 
 // FUNCTION: COPTER_D 0x004a5b58
@@ -7979,8 +7935,7 @@ _Tbe:
 	__asm        jmp    _T23;
 // LINE 976:
 _Tc3:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tca;
+	return 0x0;
 // LINE 977:
 _Tca:
 }
@@ -8038,8 +7993,7 @@ _T7e:
 	__asm        cmp    [eax+8], ecx;
 	__asm        jne    _T97;
 // LINE 988:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tc1;
+	return 0x1;
 // LINE 989:
 _T97:
 	__asm        mov    eax, i.node;
@@ -8057,10 +8011,8 @@ _Tb5:
 	__asm        jmp    _T23;
 // LINE 991:
 _Tba:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tc1;
+	return 0x0;
 // LINE 992:
-_Tc1:
 }
 
 // FUNCTION: COPTER_D 0x004a603c
@@ -8073,10 +8025,8 @@ int  GraphicWindow::DeleteSelf() {
 	__asm        mov    ecx, GraphicWindow::windowManager;
 	__asm        call   dword ptr [eax+4];
 // LINE 1001:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2a;
+	return 0x1;
 // LINE 1002:
-_T2a:
 }
 
 // FUNCTION: COPTER_D 0x004a606b
@@ -8107,8 +8057,7 @@ int  GraphicWindow::ComposeSelf() {
 	__asm        cmp    dword ptr [eax+0x54], 0;
 	__asm        jne    _T20;
 // LINE 1029:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tc0;
+	return 0x0;
 // LINE 1032:
 _T20:
 	__asm        mov    eax, this;
@@ -8171,19 +8120,15 @@ _T78:
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1041:
 _Tb6:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tc0;
+	return 0x1;
 // LINE 1042:
-_Tc0:
 }
 
 // FUNCTION: COPTER_D 0x004a6168
 int  GraphicWindow::DrawSelf() {
 // LINE 1060:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
+	return 0x0;
 // LINE 1061:
-_T13:
 }
 
 // FUNCTION: COPTER_D 0x004a6180
@@ -8486,8 +8431,7 @@ _T11:
 	__asm        cmp    dword ptr [eax+0x48], 0;
 	__asm        je     _T28;
 // LINE 1164:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tf8;
+	return 0x1;
 // LINE 1168:
 _T28:
 	__asm        mov    eax, this;
@@ -8547,8 +8491,7 @@ _T9f:
 	__asm        test   eax, eax;
 	__asm        je     _Tce;
 // LINE 1171:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tf8;
+	return 0x1;
 // LINE 1172:
 _Tce:
 	__asm        mov    eax, i.node;
@@ -8566,64 +8509,50 @@ _Tec:
 	__asm        jmp    _T43;
 // LINE 1174:
 _Tf1:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tf8;
+	return 0x0;
 // LINE 1175:
-_Tf8:
 }
 
 // FUNCTION: COPTER_D 0x004a6568
 long  GraphicWindow::DoCharacter(long lCharacter) {
 // LINE 1187:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
+	return 0x0;
 // LINE 1188:
-_T13:
 }
 
 // FUNCTION: COPTER_D 0x004a6582
 long  GraphicWindow::DoKeyDown(long lKey, char chModifiers) {
 // LINE 1200:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
+	return 0x0;
 // LINE 1201:
-_T13:
 }
 
 // FUNCTION: COPTER_D 0x004a659c
 long  GraphicWindow::DoKeyUp(long lKey, char chModifiers) {
 // LINE 1214:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
+	return 0x0;
 // LINE 1215:
-_T13:
 }
 
 // FUNCTION: COPTER_D 0x004a65b6
 long  GraphicWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 1231:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
+	return 0x0;
 // LINE 1232:
-_T13:
 }
 
 // FUNCTION: COPTER_D 0x004a65d0
 long  GraphicWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 1244:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T16;
+	return 0x1;
 // LINE 1245:
-_T16:
 }
 
 // FUNCTION: COPTER_D 0x004a65ed
 long  GraphicWindow::DoCursorMove(long nCursorX, long nCursorY) {
 // LINE 1257:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
+	return 0x0;
 // LINE 1258:
-_T13:
 }
 
 // FUNCTION: COPTER_D 0x004a6607
@@ -8632,16 +8561,13 @@ int  GraphicWindow::CaptureCursorStart(/*unpacked*/ class GraphicWindow *windowC
 	__asm        cmp    GraphicWindow::windowCursorCapture, 0;
 	__asm        je     _T20;
 // LINE 1271:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T32;
+	return 0x0;
 // LINE 1272:
 _T20:
 	GraphicWindow::windowCursorCapture = windowCapture;
 // LINE 1273:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T32;
+	return 0x1;
 // LINE 1274:
-_T32:
 }
 
 // FUNCTION: COPTER_D 0x004a6640
@@ -8651,16 +8577,13 @@ int  GraphicWindow::CaptureCursorEnd(/*unpacked*/ class GraphicWindow *windowCap
 	__asm        cmp    GraphicWindow::windowCursorCapture, eax;
 	__asm        je     _T22;
 // LINE 1283:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T36;
+	return 0x0;
 // LINE 1284:
 _T22:
 	GraphicWindow::windowCursorCapture = 0x0;
 // LINE 1285:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T36;
+	return 0x1;
 // LINE 1286:
-_T36:
 }
 
 // FUNCTION: COPTER_D 0x004a667d
@@ -9104,8 +9027,7 @@ _T5c:
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ecx+0xC], eax;
 // LINE 1376:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T11e;
+	return 0x1;
 // LINE 1381:
 _Tb3:
 	__asm        mov    eax, gwCurrentParent;
@@ -9144,10 +9066,8 @@ _T109:
 	__asm        jmp    _T5c;
 // LINE 1384:
 _T117:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T11e;
+	return 0x0;
 // LINE 1385:
-_T11e:
 }
 
 // FUNCTION: COPTER_D 0x004a6cf0
@@ -9736,10 +9656,8 @@ _T2b7:
 	__asm        jmp    _T2bc;
 // LINE 1487:
 _T2bc:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2c6;
+	return 0x1;
 // LINE 1488:
-_T2c6:
 }
 
 // FUNCTION: COPTER_D 0x004a7340
@@ -9851,10 +9769,8 @@ _T11c:
 	__asm        jmp    _T23;
 // LINE 1507:
 _T121:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T12b;
+	return 0x1;
 // LINE 1508:
-_T12b:
 }
 
 // FUNCTION: COPTER_D 0x004a7470
@@ -10083,10 +9999,8 @@ _T2b7:
 	__asm        jmp    _T2bc;
 // LINE 1533:
 _T2bc:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2c6;
+	return 0x1;
 // LINE 1534:
-_T2c6:
 }
 
 // FUNCTION: COPTER_D 0x004a773b
@@ -10198,10 +10112,8 @@ _T11c:
 	__asm        jmp    _T23;
 // LINE 1552:
 _T121:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T12b;
+	return 0x1;
 // LINE 1553:
-_T12b:
 }
 
 // FUNCTION: COPTER_D 0x004a786b
@@ -10254,18 +10166,14 @@ _T7a:
 	__asm        cmp    gwModal, 0;
 	__asm        jne    _T8b;
 // LINE 1579:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T9f;
+	return 0x0;
 // LINE 1580:
 _T8b:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T9f;
+	return 0x1;
 // LINE 1582:
 _T95:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T9f;
+	return 0x1;
 // LINE 1583:
-_T9f:
 }
 
 // FUNCTION: COPTER_D 0x004a790f
@@ -10281,7 +10189,7 @@ void ScreenWindow::ScreenWindow() {
 	this-><ScreenWindow+0x50> = 0x0;
 // LINE 1602:
 	return;
-_T36:
+
 	__asm        mov    eax, this;
 }
 
@@ -10298,7 +10206,7 @@ void ScreenWindow::ScreenWindow(const /*packed*/ class ScreenWindow& copyScreenW
 	this->bufferParent = copyScreenWindow.bufferParent;
 // LINE 1613:
 	return;
-_T32:
+
 	__asm        mov    eax, this;
 }
 
@@ -10328,7 +10236,7 @@ void ScreenWindow::ScreenWindow(/*packed*/ class MRect& rectNewWindow, int32_t n
 	this-><ScreenWindow+0x44> = 0x0;
 // LINE 1629:
 	return;
-_T5a:
+
 	__asm        mov    eax, this;
 }
 
@@ -10340,7 +10248,7 @@ void ScreenWindow::~ScreenWindow() {
 	this-><ScreenWindow+0x40> = 0x0;
 // LINE 1638:
 	return;
-_T24:
+
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
 }
@@ -10355,10 +10263,8 @@ _T24:
 // LINE 1647:
 	this->bufferParent = copyScreenWindow.bufferParent;
 // LINE 1649:
-	__asm        mov    eax, this;
-	__asm        jmp    _T2c;
+	return this;
 // LINE 1650:
-_T2c:
 }
 
 // FUNCTION: COPTER_D 0x004a7a51
@@ -10371,8 +10277,7 @@ int32_t ScreenWindow::ComposeSelf() {
 	__asm        cmp    dword ptr [eax+0x54], 0;
 	__asm        jne    _T20;
 // LINE 1666:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Te2;
+	return 0x0;
 // LINE 1668:
 _T20:
 	__asm        mov    eax, this;
@@ -10444,19 +10349,15 @@ _Tbe:
 	__asm        jmp    _T3b;
 // LINE 1680:
 _Td8:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Te2;
+	return 0x1;
 // LINE 1681:
-_Te2:
 }
 
 // FUNCTION: COPTER_D 0x004a7b38
 int32_t ScreenWindow::DrawSelf() {
 // LINE 1695:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T16;
+	return 0x1;
 // LINE 1696:
-_T16:
 }
 
 

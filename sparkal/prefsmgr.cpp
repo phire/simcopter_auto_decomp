@@ -351,7 +351,7 @@ void PreferenceItem::PreferenceItem() {
 	this->chPreferenceData = 0x0;
 // LINE 21:
 	return;
-_T2e:
+
 	__asm        mov    eax, this;
 }
 
@@ -405,7 +405,7 @@ _T88:
 // LINE 45:
 _T92:
 	return;
-_T97:
+
 	__asm        mov    eax, this;
 }
 
@@ -428,7 +428,6 @@ void PreferenceItem::~PreferenceItem() {
 // LINE 55:
 _T34:
 	return;
-_T39:
 }
 
 // FUNCTION: COPTER_D 0x0047bc85
@@ -480,10 +479,8 @@ _T88:
 	this->chPreferenceData = 0x0;
 // LINE 77:
 _T92:
-	__asm        mov    eax, this;
-	__asm        jmp    _T9a;
+	return this;
 // LINE 78:
-_T9a:
 }
 
 // FUNCTION: COPTER_D 0x0047bd26
@@ -510,14 +507,11 @@ int32_t PreferenceItem::Compare(const /*packed*/ class PreferenceItem& P2) {
 	__asm        cmp    this, eax;
 	__asm        jne    _T22;
 // LINE 96:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T29;
+	return 0x1;
 // LINE 97:
 _T22:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T29;
+	return 0x0;
 // LINE 113:
-_T29:
 }
 
 // FUNCTION: COPTER_D 0x0047bd7e
@@ -621,10 +615,8 @@ _Te1:
 	prefItemReturn->chPreferenceData = 0x0;
 // LINE 148:
 _Teb:
-	__asm        mov    eax, prefItemReturn;
-	__asm        jmp    _Tf3;
+	return prefItemReturn;
 // LINE 149:
-_Tf3:
 }
 
 // FUNCTION: COPTER_D 0x0047bea2
@@ -827,7 +819,7 @@ _T255:
 	this->lFileVersion = lTheFileVersion;
 // LINE 172:
 	return;
-_T29b:
+
 	__asm        mov    eax, this;
 }
 
@@ -856,8 +848,7 @@ _T47:
 	__asm        cmp    dword ptr [eax+0x10], 0;
 	__asm        jne    _T5b;
 // LINE 181:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T70;
+	return 0x0;
 // LINE 182:
 _T5b:
 	__asm        mov    eax, this;
@@ -865,10 +856,8 @@ _T5b:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+8];
 // LINE 183:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T70;
+	return 0x1;
 // LINE 184:
-_T70:
 }
 
 // FUNCTION: COPTER_D 0x0047c1be
@@ -1050,7 +1039,6 @@ _T1f7:
 	__asm        jmp    _T21a;
 _T21a:
 	return;
-_T21f:
 }
 
 // FUNCTION: COPTER_D 0x0047c3e2
@@ -1131,7 +1119,6 @@ _Tb1:
 // LINE 209:
 _Tc1:
 	return;
-_Tc6:
 }
 
 // FUNCTION: COPTER_D 0x0047c4ad
@@ -1153,16 +1140,14 @@ _T11:
 	__asm        cmp    dword ptr [eax+0x20], 0;
 	__asm        jne    _T35;
 // LINE 231:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1be;
+	return 0x0;
 // LINE 232:
 _T35:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0;
 	__asm        jne    _T49;
 // LINE 233:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1be;
+	return 0x0;
 // LINE 235:
 _T49:
 	__asm        mov    eax, this;
@@ -1302,16 +1287,13 @@ _T17c:
 	__asm        jmp    _T1aa;
 // LINE 249:
 _T1a3:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1be;
+	return 0x0;
 // LINE 251:
 _T1aa:
 	this->bPrefsDirty = 0x0;
 // LINE 252:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1be;
+	return 0x1;
 // LINE 253:
-_T1be:
 }
 
 // FUNCTION: COPTER_D 0x0047c670
@@ -1588,10 +1570,8 @@ _T11e:
 _T123:
 	this->bPrefsDirty = 0x1;
 // LINE 315:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T137;
+	return 0x1;
 // LINE 316:
-_T137:
 }
 
 // FUNCTION: COPTER_D 0x0047c970
@@ -1722,17 +1702,14 @@ _T131:
 	__asm        call   dword ptr [eax+4];
 // LINE 335:
 _T153:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T169;
+	return 0x1;
 // LINE 337:
 _T15d:
 	__asm        jmp    _T37;
 // LINE 338:
 _T162:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T169;
+	return 0x0;
 // LINE 339:
-_T169:
 }
 
 // FUNCTION: COPTER_D 0x0047cae0
@@ -1846,14 +1823,11 @@ _Tdc:
 	__asm        call   PreferenceItem::DuplicatePointer;
 	__asm        mov    prefItemReturn, eax;
 // LINE 382:
-	__asm        mov    eax, prefItemReturn;
-	__asm        jmp    _T42;
+	return prefItemReturn;
 // LINE 384:
 _T3b:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T42;
+	return 0x0;
 // LINE 385:
-_T42:
 }
 
 // FUNCTION: COPTER_D 0x0047cc0c
@@ -1918,14 +1892,11 @@ char * PreferenceManager::GetPrefDataCopy(long lPrefType) {
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 433:
-	__asm        mov    eax, chDataCopy;
-	__asm        jmp    _T63;
+	return chDataCopy;
 // LINE 435:
 _T5c:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T63;
+	return 0x0;
 // LINE 436:
-_T63:
 }
 
 // FUNCTION: COPTER_D 0x0047ccb7
@@ -2013,8 +1984,7 @@ _Ta4:
 	__asm        jmp    _Ta9;
 // LINE 480:
 _Ta9:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T258;
+	return 0x0;
 // LINE 484:
 _Tb0:
 	__asm        mov    eax, lSizeofPref;
@@ -2159,10 +2129,8 @@ _T243:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x10];
 // LINE 498:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T258;
+	return 0x1;
 // LINE 499:
-_T258:
 }
 
 // FUNCTION: COPTER_D 0x0047cf57
@@ -2408,10 +2376,8 @@ _T2c6:
 	__asm        call   dword ptr [eax+4];
 // LINE 517:
 _T2e8:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2f2;
+	return 0x1;
 // LINE 518:
-_T2f2:
 }
 
 // FUNCTION: COPTER_D 0x0047d250
@@ -2610,7 +2576,7 @@ _T267:
 	this-><NotificationPreferenceManager+0x00> = 0x590de8;
 // LINE 535:
 	return;
-_T275:
+
 	__asm        mov    eax, this;
 }
 
@@ -2858,10 +2824,8 @@ _T2ab:
 	__asm        jmp    _T2b0;
 // LINE 557:
 _T2b0:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2ba;
+	return 0x1;
 // LINE 558:
-_T2ba:
 }
 
 // FUNCTION: COPTER_D 0x0047d7c7
@@ -2998,10 +2962,8 @@ _T154:
 	__asm        jmp    _T39;
 // LINE 585:
 _T159:
-	__asm        mov    eax, nFound;
-	__asm        jmp    _T161;
+	return nFound;
 // LINE 586:
-_T161:
 }
 
 // FUNCTION: COPTER_D 0x0047d92f
@@ -3030,10 +2992,8 @@ long NotificationPreferenceManager::SetPref(long lPrefType, char * chPref, long 
 	__asm        call   dword ptr [eax+0x40];
 // LINE 597:
 _T3c:
-	__asm        mov    eax, lReturnValue;
-	__asm        jmp    _T44;
+	return lReturnValue;
 // LINE 598:
-_T44:
 }
 
 // FUNCTION: COPTER_D 0x0047d97a
@@ -3059,10 +3019,8 @@ long NotificationPreferenceManager::SetPref(/*packed*/ class PreferenceItem *pre
 	__asm        call   dword ptr [eax+0x40];
 // LINE 608:
 _T36:
-	__asm        mov    eax, lReturnValue;
-	__asm        jmp    _T3e;
+	return lReturnValue;
 // LINE 609:
-_T3e:
 }
 
 // FUNCTION: COPTER_D 0x0047d9bf
@@ -3153,7 +3111,6 @@ _Td6:
 // LINE 625:
 _Tdb:
 	return;
-_Te0:
 }
 
 

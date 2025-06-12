@@ -56,7 +56,7 @@ void ResourceRCData::ResourceRCData() {
 	__asm        mov    dword ptr [eax], 0x58F648;
 // LINE 27:
 	return;
-_T56:
+
 	__asm        mov    eax, this;
 }
 
@@ -87,7 +87,7 @@ void ResourceRCData::ResourceRCData(int32_t nTheResource, int32_t bLoadNow) {
 // LINE 47:
 _T63:
 	return;
-_T68:
+
 	__asm        mov    eax, this;
 }
 
@@ -137,7 +137,7 @@ void ResourceRCData::ResourceRCData(/*packed*/ class ResourceRCData& resData) {
 // Block end:
 _T8d:
 	return;
-_T92:
+
 	__asm        mov    eax, this;
 }
 
@@ -150,7 +150,6 @@ void ResourceRCData::~ResourceRCData() {
 	__asm        call   ResourceRCData::Reset;
 // LINE 74:
 	return;
-_T22:
 }
 
 // FUNCTION: COPTER_D 0x00447943
@@ -160,8 +159,7 @@ _T22:
 	__asm        cmp    this, eax;
 	__asm        jne    _T20;
 // LINE 83:
-	__asm        mov    eax, this;
-	__asm        jmp    _Ta0;
+	return this;
 // LINE 85:
 _T20:
 	this->hFoundResource = 0x0;
@@ -204,10 +202,8 @@ _T20:
 // LINE 96:
 // Block end:
 _T98:
-	__asm        mov    eax, this;
-	__asm        jmp    _Ta0;
+	return this;
 // LINE 97:
-_Ta0:
 }
 
 // FUNCTION: COPTER_D 0x004479ea
@@ -249,7 +245,6 @@ _T76:
 	this->chData = 0x0;
 // LINE 116:
 	return;
-_T85:
 }
 
 // FUNCTION: COPTER_D 0x00447a74
@@ -315,14 +310,11 @@ int32_t ResourceRCData::ReadResource() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+8], eax;
 // LINE 150:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T83;
+	return 0x1;
 // LINE 154:
 _T7c:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T83;
+	return 0x0;
 // LINE 155:
-_T83:
 }
 
 // FUNCTION: COPTER_D 0x00447b3a

@@ -73,8 +73,7 @@ struct VRBmpHdr{ // packed(0x10 bytes) TI: 0x2312
 // LINE 79:
 	GlobalError = 0x1;
 // LINE 81:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1e1;
+	return 0x0;
 // LINE 86:
 _T38:
 	__asm        push   0x10;
@@ -95,8 +94,7 @@ _T38:
 // LINE 89:
 	GlobalError = 0x2;
 // LINE 91:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1e1;
+	return 0x0;
 // LINE 143:
 _T74:
 	__asm        mov    eax, bmp.BmpCount;
@@ -115,8 +113,7 @@ _T74:
 // LINE 145:
 	GlobalError = 0x4;
 // LINE 147:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1e1;
+	return 0x0;
 // LINE 169:
 _Tad:
 	__asm        mov    eax, file;
@@ -142,8 +139,7 @@ _Tad:
 	__asm        call   _close;
 	__asm        add    esp, 4;
 // LINE 180:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1e1;
+	return 0x0;
 // LINE 183:
 _Tf8:
 	byteptr = group;
@@ -227,10 +223,8 @@ _T1b4:
 // LINE 209:
 	res->count = bmp.BmpCount;
 // LINE 210:
-	__asm        mov    eax, res;
-	__asm        jmp    _T1e1;
+	return res;
 // LINE 212:
-_T1e1:
 }
 
 // FUNCTION: COPTER_D 0x004d6246
@@ -361,8 +355,7 @@ _T88:
 	__asm        jmp    _Tef;
 // LINE 323:
 _Tb7:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T197;
+	return 0x0;
 // LINE 324:
 	__asm        jmp    _Tef;
 _Tc3:
@@ -439,10 +432,8 @@ _T131:
 	__asm        jmp    _T12e;
 // LINE 357:
 _T18d:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T197;
+	return 0x1;
 // LINE 358:
-_T197:
 }
 
 // FUNCTION: COPTER_D 0x004d6460
@@ -460,8 +451,7 @@ int32_t VRLoadAlignedBmp(char * name, /*packed*/ struct VRResource *res, int32_t
 	__asm        cmp    alignptr, 0;
 	__asm        jne    _T22;
 // LINE 393:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1a7;
+	return 0x0;
 // LINE 396:
 _T22:
 	__asm        push   0x8000;
@@ -475,8 +465,7 @@ _T22:
 // LINE 398:
 	GlobalError = 0x1;
 // LINE 399:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1a7;
+	return 0x0;
 // LINE 406:
 _T51:
 	__asm        push   0x10;
@@ -497,8 +486,7 @@ _T51:
 // LINE 408:
 	GlobalError = 0x2;
 // LINE 409:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1a7;
+	return 0x0;
 // LINE 448:
 _T8d:
 	__asm        cmp    bmp.BmpCount, 1;
@@ -511,8 +499,7 @@ _T8d:
 // LINE 451:
 	GlobalError = 0x2;
 // LINE 452:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1a7;
+	return 0x0;
 // LINE 456:
 _Tb4:
 	__asm        mov    eax, bmp.BmpCount;
@@ -552,8 +539,7 @@ _T105:
 // LINE 474:
 	GlobalError = 0x2;
 // LINE 475:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1a7;
+	return 0x0;
 // LINE 479:
 _T122:
 	__asm        push   0x400;
@@ -583,8 +569,7 @@ _T122:
 // LINE 486:
 	GlobalError = 0x2;
 // LINE 487:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1a7;
+	return 0x0;
 // LINE 490:
 _T179:
 	__asm        mov    eax, file;
@@ -603,9 +588,7 @@ _T179:
 	__asm        call   VRSetBmpToTiled;
 	__asm        add    esp, 0x10;
 // LINE 495:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1a7;
+	return 0x1;
 // LINE 496:
-_T1a7:
 }
 

@@ -1824,7 +1824,6 @@ static void $E96() {
 	__asm        jmp    _T20;
 _T20:
 	return;
-_T25:
 }
 
 // STATIC INITIALIZER:
@@ -1846,7 +1845,6 @@ static void $E99() {
 	__asm        jmp    _T20;
 _T20:
 	return;
-_T25:
 }
 
 // FUNCTION: COPTER_D 0x004012fe
@@ -2364,7 +2362,7 @@ _T780:
 	__asm        mov    dword ptr [eax], 0x58F058;
 // LINE 69:
 	return;
-_T7c1:
+
 	__asm        mov    eax, this;
 }
 
@@ -2755,7 +2753,7 @@ _T512:
 	__asm        call   list<HotSpot>::deallocate_buffers;
 _T52c:
 	return;
-_T531:
+
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
 }
@@ -3315,7 +3313,6 @@ _Tb5:
 // LINE 149:
 _Tc2:
 	return;
-_Tc7:
 }
 
 // FUNCTION: COPTER_D 0x00402725
@@ -3874,8 +3871,7 @@ _T83:
 	__asm        cmp    [eax+8], ecx;
 	__asm        jne    _T9c;
 // LINE 180:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T195;
+	return 0x1;
 // LINE 181:
 _T9c:
 	__asm        mov    eax, tempHotSpotListIterator.node;
@@ -3953,8 +3949,7 @@ _T152:
 	__asm        cmp    [eax+8], ecx;
 	__asm        jne    _T16b;
 // LINE 188:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T195;
+	return 0x1;
 // LINE 189:
 _T16b:
 	__asm        mov    eax, tempHotSpotListIterator.node;
@@ -3972,10 +3967,8 @@ _T189:
 	__asm        jmp    _Teb;
 // LINE 191:
 _T18e:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T195;
+	return 0x0;
 // LINE 192:
-_T195:
 }
 
 // FUNCTION: COPTER_D 0x00402fcd
@@ -4042,8 +4035,7 @@ _T83:
 _Ta3:
 	lKey. = tempHotSpotListIterator.node->data.lID;
 // LINE 206:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1cd;
+	return 0x1;
 // LINE 208:
 _Tb8:
 	__asm        mov    eax, tempHotSpotListIterator.node;
@@ -4130,8 +4122,7 @@ _T16e:
 _T18e:
 	lKey. = tempHotSpotListIterator.node->data.lID;
 // LINE 216:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1cd;
+	return 0x1;
 // LINE 218:
 _T1a3:
 	__asm        mov    eax, tempHotSpotListIterator.node;
@@ -4149,10 +4140,8 @@ _T1c1:
 	__asm        jmp    _T107;
 // LINE 220:
 _T1c6:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1cd;
+	return 0x0;
 // LINE 221:
-_T1cd:
 }
 
 // FUNCTION: COPTER_D 0x004031a1
@@ -4395,14 +4384,11 @@ _T2a4:
 	__asm        jmp    _T2b0;
 // LINE 276:
 _T2a9:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T2ba;
+	return 0x0;
 // LINE 277:
 _T2b0:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2ba;
+	return 0x1;
 // LINE 278:
-_T2ba:
 }
 
 // FUNCTION: COPTER_D 0x00403508
@@ -4412,8 +4398,7 @@ int32_t KeyboardWindow::ComposeSelf() {
 	__asm        cmp    dword ptr [eax+0x54], 0;
 	__asm        jne    _T23;
 // LINE 289:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T142;
+	return 0x1;
 // LINE 290:
 _T23:
 	__asm        mov    eax, this;
@@ -4423,8 +4408,7 @@ _T23:
 	__asm        test   eax, eax;
 	__asm        jne    _T43;
 // LINE 291:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T142;
+	return 0x1;
 // LINE 292:
 _T43:
 	__asm        push   1;
@@ -4515,10 +4499,8 @@ _Tde:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xCC];
 // LINE 308:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T142;
+	return 0x1;
 // LINE 309:
-_T142:
 }
 
 // FUNCTION: COPTER_D 0x0040364f
@@ -4880,7 +4862,6 @@ _T431:
 // LINE 379:
 _T436:
 	return;
-_T43b:
 }
 
 // FUNCTION: COPTER_D 0x00403a8f
@@ -5523,7 +5504,6 @@ _T847:
 	__asm        jmp    _T84c;
 _T84c:
 	return;
-_T851:
 }
 
 // FUNCTION: COPTER_D 0x004042e5
@@ -5627,7 +5607,6 @@ _T75:
 	__asm        call   dword ptr [edx+0xC];
 // LINE 484:
 	return;
-_T116:
 }
 
 // FUNCTION: COPTER_D 0x00404400
@@ -5677,8 +5656,7 @@ long KeyboardWindow::DoKeyDown(long lKey, char chModifiers) {
 	__asm        cmp    dword ptr [eax+0x54], 0;
 	__asm        jne    _T20;
 // LINE 506:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T5b;
+	return 0x0;
 // LINE 507:
 _T20:
 	__asm        mov    eax, this;
@@ -5701,10 +5679,8 @@ _T20:
 	__asm        call   dword ptr [edx];
 // LINE 509:
 _T51:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T5b;
+	return 0x1;
 // LINE 510:
-_T5b:
 }
 
 // FUNCTION: COPTER_D 0x004044e7
@@ -5714,8 +5690,7 @@ long KeyboardWindow::DoKeyUp(long lKey, char chModifiers) {
 	__asm        cmp    dword ptr [eax+0x54], 0;
 	__asm        jne    _T20;
 // LINE 519:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T5b;
+	return 0x0;
 // LINE 520:
 _T20:
 	__asm        mov    eax, this;
@@ -5738,10 +5713,8 @@ _T20:
 	__asm        call   dword ptr [edx];
 // LINE 522:
 _T51:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T5b;
+	return 0x1;
 // LINE 523:
-_T5b:
 }
 
 // FUNCTION: COPTER_D 0x00404549
@@ -5789,10 +5762,8 @@ long KeyboardWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nB
 	__asm        call   dword ptr [edx];
 // LINE 541:
 _T71:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T7b;
+	return 0x1;
 // LINE 542:
-_T7b:
 }
 
 // FUNCTION: COPTER_D 0x004045cb
@@ -5835,10 +5806,8 @@ long KeyboardWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nBut
 	__asm        call   dword ptr [edx];
 // LINE 559:
 _T65:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T6f;
+	return 0x1;
 // LINE 560:
-_T6f:
 }
 
 // FUNCTION: COPTER_D 0x00404641
@@ -5881,10 +5850,8 @@ long KeyboardWindow::DoCursorMove(long nCursorX, long nCursorY) {
 	__asm        call   dword ptr [edx];
 // LINE 577:
 _T66:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T70;
+	return 0x1;
 // LINE 578:
-_T70:
 }
 
 // FUNCTION: COPTER_D 0x004046b8
@@ -6176,7 +6143,7 @@ _T4de:
 // LINE 640:
 _T517:
 	return;
-_T51c:
+
 	__asm        mov    eax, this;
 }
 
@@ -6189,7 +6156,7 @@ void JoystickWindow::~JoystickWindow() {
 	__asm        call   JoystickWindow::DestroyImage;
 // LINE 648:
 	return;
-_T22:
+
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
 }
@@ -6203,10 +6170,8 @@ int32_t JoystickWindow::Initialize() {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x10];
 // LINE 656:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T23;
+	return 0x1;
 // LINE 657:
-_T23:
 }
 
 // FUNCTION: COPTER_D 0x00404c35
@@ -6868,7 +6833,6 @@ _T163:
 // LINE 717:
 _T170:
 	return;
-_T175:
 }
 
 // FUNCTION: COPTER_D 0x004054fd
@@ -6882,8 +6846,7 @@ int32_t JoystickWindow::ComposeSelf() {
 	__asm        cmp    dword ptr [eax+0x54], 0;
 	__asm        jne    _T23;
 // LINE 734:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tea;
+	return 0x1;
 // LINE 737:
 _T23:
 	__asm        jmp    _T28;
@@ -6956,10 +6919,8 @@ _Tdb:
 	__asm        jmp    _T75;
 // LINE 754:
 _Te0:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tea;
+	return 0x1;
 // LINE 755:
-_Tea:
 }
 
 // FUNCTION: COPTER_D 0x004055ec
@@ -7037,7 +6998,6 @@ _Tb4:
 	__asm        call   dword ptr [eax+0xD8];
 // LINE 777:
 	return;
-_Tc7:
 }
 
 // FUNCTION: COPTER_D 0x004056b8
@@ -7107,7 +7067,6 @@ _T5a:
 	__asm        call   dword ptr [edx+0xC];
 // LINE 799:
 	return;
-_Tc2:
 }
 
 // FUNCTION: COPTER_D 0x00405781
@@ -7189,7 +7148,6 @@ _T71:
 	__asm        call   dword ptr [edx+0xC];
 // LINE 825:
 	return;
-_Tdf:
 }
 
 // FUNCTION: COPTER_D 0x00405867
@@ -7332,7 +7290,6 @@ _T125:
 	__asm        call   dword ptr [edx+0xC];
 // LINE 860:
 	return;
-_T17f:
 }
 
 // FUNCTION: COPTER_D 0x004059eb
@@ -7501,7 +7458,6 @@ _T256:
 // LINE 898:
 _T283:
 	return;
-_T288:
 }
 
 // FUNCTION: COPTER_D 0x00405c7a
@@ -7579,16 +7535,13 @@ _T79:
 // LINE 936:
 _Ta8:
 	return;
-_Tad:
 }
 
 // FUNCTION: COPTER_D 0x00405d58
 int32_t JoystickWindow::DoesWindowNeedUpdating() {
 // LINE 943:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T16;
+	return 0x1;
 // LINE 944:
-_T16:
 }
 
 // FUNCTION: COPTER_D 0x00405d73
@@ -7612,7 +7565,6 @@ void JoystickWindow::SetCurrentJoystick(int32_t nNewCurrentJoystick) {
 	__asm        call   dword ptr [eax+0x30];
 // LINE 958:
 	return;
-_T3e:
 }
 
 // FUNCTION: COPTER_D 0x00405db8
@@ -7658,28 +7610,22 @@ long JoystickWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nB
 	__asm        call   dword ptr [edx];
 // LINE 972:
 _T6b:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T75;
+	return 0x1;
 // LINE 973:
-_T75:
 }
 
 // FUNCTION: COPTER_D 0x00405e34
 long JoystickWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 980:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T16;
+	return 0x1;
 // LINE 981:
-_T16:
 }
 
 // FUNCTION: COPTER_D 0x00405e51
 long JoystickWindow::DoCursorMove(long nCursorX, long nCursorY) {
 // LINE 988:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T16;
+	return 0x1;
 // LINE 989:
-_T16:
 }
 
 // FUNCTION: COPTER_D 0x00405e6e
@@ -7748,8 +7694,7 @@ _Tbf:
 _Tce:
 	lKey. = 0x0;
 // LINE 1003:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T32f;
+	return 0x1;
 // LINE 1008:
 _Te1:
 	__asm        mov    eax, this;
@@ -7813,8 +7758,7 @@ _T194:
 _T1a3:
 	lKey. = 0x1;
 // LINE 1011:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T32f;
+	return 0x1;
 // LINE 1015:
 _T1b6:
 	__asm        mov    i, 2;
@@ -7869,8 +7813,7 @@ _T249:
 _T258:
 	lKey. = i;
 // LINE 1018:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T32f;
+	return 0x1;
 // LINE 1020:
 _T26a:
 	__asm        jmp    _T1c2;
@@ -7928,17 +7871,14 @@ _T302:
 _T311:
 	lKey. = i;
 // LINE 1026:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T32f;
+	return 0x1;
 // LINE 1028:
 _T323:
 	__asm        jmp    _T27b;
 // LINE 1029:
 _T328:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T32f;
+	return 0x0;
 // LINE 1030:
-_T32f:
 }
 
 // FUNCTION: COPTER_D 0x004061a4
@@ -8456,7 +8396,7 @@ _T7d9:
 	__asm        mov    dword ptr [eax], 0x58F228;
 // LINE 1079:
 	return;
-_T80a:
+
 	__asm        mov    eax, this;
 }
 
@@ -9850,8 +9790,7 @@ long UserInputWindow::DoKeyDown(long lKey, char chModifiers) {
 	__asm        cmp    dword ptr [eax+0x54], 0;
 	__asm        jne    _T20;
 // LINE 1180:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T63;
+	return 0x0;
 // LINE 1182:
 _T20:
 	__asm        cmp    lKey, 0x1B;
@@ -9876,10 +9815,8 @@ _T20:
 	__asm        call   dword ptr [edx];
 // LINE 1186:
 _T59:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T63;
+	return 0x1;
 // LINE 1187:
-_T63:
 }
 
 // FUNCTION: COPTER_D 0x00407db1
@@ -9891,8 +9828,7 @@ int32_t UserInputWindow::DoMessage(/*unpacked*/ class GraphicWindow *gwSource, l
 	__asm        cmp    dword ptr [eax+0xAC], 0;
 	__asm        je     _T23;
 // LINE 1199:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T38a;
+	return 0x0;
 // LINE 1201:
 _T23:
 	__asm        mov    eax, lWindowID;
@@ -9919,8 +9855,7 @@ _T2e:
 	__asm        call   dword ptr [edx];
 // LINE 1205:
 _T5d:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T38a;
+	return 0x1;
 // LINE 1207:
 _T67:
 	__asm        mov    eax, this;
@@ -9942,8 +9877,7 @@ _T67:
 	__asm        call   dword ptr [edx];
 // LINE 1209:
 _T96:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T38a;
+	return 0x1;
 // LINE 1212:
 _Ta0:
 	__asm        mov    eax, this;
@@ -10047,8 +9981,7 @@ _T19c:
 	__asm        mov    ecx, this;
 	__asm        call   UserInputWindow::UpdateDisplay;
 // LINE 1216:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T38a;
+	return 0x1;
 // LINE 1218:
 _T1ce:
 	__asm        mov    eax, pMessageData;
@@ -10058,8 +9991,7 @@ _T1ce:
 	__asm        mov    ecx, this;
 	__asm        call   UserInputWindow::DoKeyboardWindowMessage;
 // LINE 1219:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T38a;
+	return 0x1;
 // LINE 1221:
 _T1e8:
 	__asm        mov    eax, pMessageData;
@@ -10069,8 +10001,7 @@ _T1e8:
 	__asm        mov    ecx, this;
 	__asm        call   UserInputWindow::DoJoystickWindowMessage;
 // LINE 1222:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T38a;
+	return 0x1;
 // LINE 1224:
 _T202:
 	__asm        mov    eax, pMessageData;
@@ -10080,8 +10011,7 @@ _T202:
 	__asm        mov    ecx, this;
 	__asm        call   UserInputWindow::DoInputDeviceListBoxWindowMessage;
 // LINE 1225:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T38a;
+	return 0x1;
 // LINE 1227:
 _T21c:
 	__asm        mov    eax, pMessageData;
@@ -10091,8 +10021,7 @@ _T21c:
 	__asm        mov    ecx, this;
 	__asm        call   UserInputWindow::DoCommandListBoxWindowMessage;
 // LINE 1228:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T38a;
+	return 0x1;
 // LINE 1230:
 _T236:
 	__asm        push   0x80;
@@ -10159,8 +10088,7 @@ _T2a2:
 	__asm        jmp    _T2fb;
 // LINE 1236:
 _T2fb:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T38a;
+	return 0x1;
 // LINE 1238:
 _T305:
 	__asm        cmp    lMessage, 0x3E9;
@@ -10171,8 +10099,7 @@ _T305:
 	__asm        jmp    _T321;
 // LINE 1240:
 _T321:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T38a;
+	return 0x1;
 // LINE 1241:
 	__asm        jmp    _T383;
 _T330:
@@ -10201,10 +10128,8 @@ _T330:
 	__asm        jmp    _T383;
 // LINE 1243:
 _T383:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T38a;
+	return 0x0;
 // LINE 1244:
-_T38a:
 }
 
 // FUNCTION: COPTER_D 0x00408142
@@ -10546,8 +10471,7 @@ _T42e:
 	__asm        mov    ecx, this;
 	__asm        call   UserInputWindow::DisplayError;
 // LINE 1289:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T89d;
+	return 0x1;
 // LINE 1292:
 _T44f:
 	__asm        jmp    _T893;
@@ -10821,14 +10745,11 @@ _T872:
 	__asm        mov    ecx, this;
 	__asm        call   UserInputWindow::DisplayError;
 // LINE 1311:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T89d;
+	return 0x1;
 // LINE 1315:
 _T893:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T89d;
+	return 0x1;
 // LINE 1316:
-_T89d:
 }
 
 // FUNCTION: COPTER_D 0x004089e6
@@ -11077,7 +10998,6 @@ _T30d:
 // LINE 1355:
 _T312:
 	return;
-_T317:
 }
 
 // FUNCTION: COPTER_D 0x00408d04
@@ -11105,7 +11025,6 @@ void UserInputWindow::RemoveJoystickTwinCommand(long lCommand, long lDevice, lon
 // LINE 1370:
 _T39:
 	return;
-_T3e:
 }
 
 // FUNCTION: COPTER_D 0x00408d49
@@ -11396,8 +11315,7 @@ _T393:
 	__asm        mov    ecx, this;
 	__asm        call   UserInputWindow::UpdateDisplay;
 // LINE 1405:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T4be;
+	return 0x1;
 // LINE 1407:
 	__asm        jmp    _T439;
 _T3bf:
@@ -11422,8 +11340,7 @@ _T3bf:
 	__asm        mov    ecx, this;
 	__asm        call   UserInputWindow::UpdateDisplay;
 // LINE 1412:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T4be;
+	return 0x1;
 // LINE 1414:
 	__asm        jmp    _T439;
 _T418:
@@ -11443,8 +11360,7 @@ _T43e:
 	__asm        cmp    lMessage, 0x10002;
 	__asm        jne    _T457;
 // LINE 1420:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4be;
+	return 0x0;
 // LINE 1422:
 	__asm        jmp    _T4b7;
 _T457:
@@ -11467,20 +11383,17 @@ _T48a:
 	__asm        cmp    lMessage, 0x10004;
 	__asm        jne    _T4a3;
 // LINE 1427:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4be;
+	return 0x0;
 // LINE 1429:
 	__asm        jmp    _T4b7;
 _T4a3:
 	__asm        cmp    lMessage, 0x10005;
 	__asm        jne    _T4b7;
 // LINE 1431:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4be;
+	return 0x0;
 // LINE 1434:
 _T4b7:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4be;
+	return 0x0;
 // LINE 1435:
 _T4be:
 }
@@ -11502,8 +11415,7 @@ enum UserInputWindow::KeyUsageType UserInputWindow::GetKeyUsageType(long lKey, l
 	__asm        test   eax, eax;
 	__asm        je     _T34;
 // LINE 1448:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T27f;
+	return 0x1;
 // LINE 1449:
 _T34:
 	__asm        mov    ecx, this;
@@ -11574,14 +11486,12 @@ _Te4:
 	__asm        cmp    [eax+0xC], ecx;
 	__asm        jne    _T102;
 // LINE 1455:
-	__asm        mov    eax, 2;
-	__asm        jmp    _T27f;
+	return 0x2;
 // LINE 1456:
 	__asm        jmp    _T10c;
 // LINE 1457:
 _T102:
-	__asm        mov    eax, 3;
-	__asm        jmp    _T27f;
+	return 0x3;
 // LINE 1459:
 _T10c:
 	__asm        mov    eax, iterator.node;
@@ -11700,14 +11610,12 @@ _T211:
 	__asm        je     _T24b;
 // LINE 1472:
 _T23c:
-	__asm        mov    eax, 2;
-	__asm        jmp    _T27f;
+	return 0x2;
 // LINE 1474:
 	__asm        jmp    _T255;
 // LINE 1475:
 _T24b:
-	__asm        mov    eax, 3;
-	__asm        jmp    _T27f;
+	return 0x3;
 // LINE 1477:
 _T255:
 	__asm        mov    eax, iterator.node;
@@ -11726,10 +11634,8 @@ _T273:
 // LINE 1481:
 // Block end:
 _T278:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T27f;
+	return 0x0;
 // LINE 1482:
-_T27f:
 }
 
 // FUNCTION: COPTER_D 0x00409494
@@ -11863,7 +11769,6 @@ _T164:
 // LINE 1506:
 _T169:
 	return;
-_T16e:
 }
 
 // FUNCTION: COPTER_D 0x00409609
@@ -11876,14 +11781,11 @@ int32_t UserInputWindow::DoInputDeviceListBoxWindowMessage(long lMessage, void *
 	__asm        mov    ecx, this;
 	__asm        call   UserInputWindow::UpdateDisplay;
 // LINE 1515:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T34;
+	return 0x1;
 // LINE 1517:
 _T2d:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T34;
+	return 0x0;
 // LINE 1518:
-_T34:
 }
 
 // FUNCTION: COPTER_D 0x00409644
@@ -11896,14 +11798,11 @@ int32_t UserInputWindow::DoCommandListBoxWindowMessage(long lMessage, void * __p
 	__asm        mov    ecx, this;
 	__asm        call   UserInputWindow::UpdateDisplay;
 // LINE 1527:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T34;
+	return 0x1;
 // LINE 1529:
 _T2d:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T34;
+	return 0x0;
 // LINE 1530:
-_T34:
 }
 
 // FUNCTION: COPTER_D 0x0040967f
@@ -11935,8 +11834,7 @@ _T34:
 	__asm        cmp    nDeviceCount, eax;
 	__asm        jg     _T56;
 // LINE 1545:
-	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _Tbc;
+	return 0xffffffff;
 // LINE 1546:
 _T56:
 	__asm        mov    eax, this;
@@ -12855,7 +12753,6 @@ _Tb30:
 // Block end:
 _Tb35:
 	return;
-_Tb3a:
 }
 
 // FUNCTION: COPTER_D 0x0040a345
@@ -12937,8 +12834,7 @@ _Tc0:
 	__asm        cmp    lCommand, 5;
 	__asm        jg     _Te3;
 // LINE 1704:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T10d;
+	return 0x1;
 // LINE 1706:
 _Te3:
 	__asm        mov    eax, tempShortcutListIterator.node;
@@ -12956,10 +12852,8 @@ _T101:
 	__asm        jmp    _T39;
 // LINE 1708:
 _T106:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T10d;
+	return 0x0;
 // LINE 1709:
-_T10d:
 }
 
 // FUNCTION: COPTER_D 0x0040a459
@@ -13410,7 +13304,6 @@ _T53a:
 	__asm        jmp    _T53f;
 _T53f:
 	return;
-_T544:
 }
 
 // FUNCTION: COPTER_D 0x0040aa51
@@ -13752,7 +13645,6 @@ _T41c:
 	__asm        jmp    _T421;
 _T421:
 	return;
-_T426:
 }
 
 // FUNCTION: COPTER_D 0x0040ae7c
@@ -14190,7 +14082,6 @@ _T5dc:
 	__asm        call   UserInputWindow::UpdateDisplay;
 // LINE 1798:
 	return;
-_T5ee:
 }
 
 // FUNCTION: COPTER_D 0x0040b471
@@ -14203,14 +14094,12 @@ void UserInputWindow::WriteShortcutsToPreferenceFile() {
 	__asm        add    esp, 4;
 // LINE 1807:
 	return;
-_T22:
 }
 
 // FUNCTION: COPTER_D 0x0040b498
 void UserInputWindow::DisplayError(int32_t nErrorType) {
 // LINE 1815:
 	return;
-_T11:
 }
 
 // FUNCTION: COPTER_D 0x0040b4b0
@@ -14242,7 +14131,7 @@ void ControlDisplayWindow::ControlDisplayWindow(/*packed*/ class MRect& rectNewP
 	__asm        mov    dword ptr [eax], 0x58F300;
 // LINE 1854:
 	return;
-_T60:
+
 	__asm        mov    eax, this;
 }
 
@@ -15304,8 +15193,7 @@ int32_t ControlDisplayWindow::DoMessage(/*unpacked*/ class GraphicWindow *gwSour
 	__asm        cmp    dword ptr [eax+0x74], 0;
 	__asm        je     _T20;
 // LINE 1933:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T258;
+	return 0x0;
 // LINE 1936:
 _T20:
 	__asm        cmp    lWindowID, 3;
@@ -15501,10 +15389,8 @@ _T243:
 	__asm        call   dword ptr [eax+0x6C];
 // LINE 1972:
 _T24e:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T258;
+	return 0x1;
 // LINE 1973:
-_T258:
 }
 
 // FUNCTION: COPTER_D 0x0040c5b1
@@ -16463,7 +16349,6 @@ _T6e7:
 // LINE 2048:
 _T6ec:
 	return;
-_T6f1:
 }
 
 // FUNCTION: COPTER_D 0x0040d24a
@@ -16939,7 +16824,6 @@ _T57a:
 	__asm        jmp    _T57f;
 _T57f:
 	return;
-_T584:
 }
 
 

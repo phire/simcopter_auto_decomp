@@ -98,10 +98,8 @@ _T50:
 	__asm        call   dword ptr [eax+0x20];
 // LINE 32:
 _T68:
-	__asm        mov    eax, ReturnCommander;
-	__asm        jmp    _T70;
+	return ReturnCommander;
 // LINE 33:
-_T70:
 }
 
 // FUNCTION: COPTER_D 0x004322d7
@@ -113,10 +111,8 @@ _T70:
 // LINE 43:
 	this->mpBackBuffer = pBuffer;
 // LINE 44:
-	__asm        mov    eax, ReturnBuffer;
-	__asm        jmp    _T26;
+	return ReturnBuffer;
 // LINE 45:
-_T26:
 }
 
 // FUNCTION: COPTER_D 0x00432304
@@ -166,10 +162,8 @@ unsigned long CSparkalWindow::SwapBuffer() {
 	__asm        call   dword ptr [edx+4];
 // LINE 70:
 _T5b:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T62;
+	return 0x0;
 // LINE 71:
-_T62:
 }
 
 // FUNCTION: COPTER_D 0x0043238c
@@ -307,10 +301,8 @@ _Tb0:
 // LINE 110:
 // Block end:
 _T13a:
-	__asm        mov    eax, Error;
-	__asm        jmp    _T142;
+	return Error;
 // LINE 111:
-_T142:
 }
 
 

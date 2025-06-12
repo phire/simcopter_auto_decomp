@@ -1824,7 +1824,7 @@ _T1455:
 	__asm        add    esp, 4;
 // LINE 116:
 	return;
-_T15e0:
+
 	__asm        mov    eax, this;
 }
 
@@ -2193,7 +2193,7 @@ _T553:
 	__asm        add    esp, 4;
 _T5a4:
 	return;
-_T5a9:
+
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xD4;
 	__asm        call   DigitalSound::~DigitalSound;
@@ -5960,7 +5960,6 @@ _T3146:
 	__asm        jmp    _T314b;
 _T314b:
 	return;
-_T3150:
 }
 
 // FUNCTION: COPTER_D 0x00479dbb
@@ -6170,7 +6169,6 @@ _T2bd:
 	__asm        call   dword ptr [edx+0x5C];
 // LINE 431:
 	return;
-_T2df:
 }
 
 // FUNCTION: COPTER_D 0x0047a09f
@@ -6383,7 +6381,6 @@ _T216:
 // LINE 466:
 _T263:
 	return;
-_T268:
 }
 
 // FUNCTION: COPTER_D 0x0047a30e
@@ -6405,17 +6402,14 @@ _T1b:
 	__asm        cmp    [ecx+eax*4+0x8C], edx;
 	__asm        jne    _T45;
 // LINE 479:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T51;
+	return 0x1;
 // LINE 480:
 _T45:
 	__asm        jmp    _T18;
 // LINE 481:
 _T4a:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T51;
+	return 0x0;
 // LINE 482:
-_T51:
 }
 
 // FUNCTION: COPTER_D 0x0047a366
@@ -6437,17 +6431,14 @@ _T1b:
 	__asm        cmp    [ecx+eax*4+0xB0], edx;
 	__asm        jne    _T45;
 // LINE 493:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T51;
+	return 0x1;
 // LINE 494:
 _T45:
 	__asm        jmp    _T18;
 // LINE 495:
 _T4a:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T51;
+	return 0x0;
 // LINE 496:
-_T51:
 }
 
 // FUNCTION: COPTER_D 0x0047a3be
@@ -6883,7 +6874,6 @@ _T5e4:
 // LINE 514:
 _T5e9:
 	return;
-_T5ee:
 }
 
 // FUNCTION: COPTER_D 0x0047a9b3
@@ -7047,10 +7037,8 @@ int32_t CatalogWindow::ComposeSelf() {
 	__asm        call   CatalogWindow::DrawCurrentEquipmentSelection;
 // LINE 549:
 _T2c:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T36;
+	return 0x1;
 // LINE 550:
-_T36:
 }
 
 // FUNCTION: COPTER_D 0x0047ab89
@@ -7105,8 +7093,7 @@ _Tca:
 	__asm        cmp    dword ptr [eax+0x14E], 8;
 	__asm        je     _Te1;
 // LINE 564:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T17d;
+	return 0x0;
 // LINE 566:
 _Te1:
 	__asm        mov    i, 0;
@@ -7153,17 +7140,14 @@ _T150:
 _T15f:
 	lEquipment. = i;
 // LINE 569:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T17d;
+	return 0x1;
 // LINE 571:
 _T171:
 	__asm        jmp    _Ted;
 // LINE 572:
 _T176:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T17d;
+	return 0x0;
 // LINE 573:
-_T17d:
 }
 
 // FUNCTION: COPTER_D 0x0047ad0d
@@ -7226,14 +7210,11 @@ _T89:
 	__asm        mov    [ecx], eax;
 // LINE 586:
 _Ta9:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tba;
+	return 0x1;
 // LINE 588:
 _Tb3:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tba;
+	return 0x0;
 // LINE 589:
-_Tba:
 }
 
 // FUNCTION: COPTER_D 0x0047adce
@@ -7252,10 +7233,8 @@ long CatalogWindow::DoKeyDown(long lKey, char chModifiers) {
 	__asm        add    esp, 4;
 // LINE 608:
 _T2f:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T39;
+	return 0x1;
 // LINE 609:
-_T39:
 }
 
 // FUNCTION: COPTER_D 0x0047ae0e
@@ -7310,28 +7289,22 @@ _T55:
 	__asm        call   CatalogWindow::SetNewEquipmentSelection;
 // LINE 627:
 _T7d:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T87;
+	return 0x1;
 // LINE 628:
-_T87:
 }
 
 // FUNCTION: COPTER_D 0x0047ae9c
 long CatalogWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 636:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T16;
+	return 0x1;
 // LINE 637:
-_T16:
 }
 
 // FUNCTION: COPTER_D 0x0047aeb9
 long CatalogWindow::DoCursorMove(long nCursorX, long nCursorY) {
 // LINE 646:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T16;
+	return 0x1;
 // LINE 647:
-_T16:
 }
 
 // FUNCTION: COPTER_D 0x0047aed6
@@ -7489,7 +7462,6 @@ _T1c4:
 // LINE 693:
 _T1f8:
 	return;
-_T1fd:
 }
 
 // FUNCTION: COPTER_D 0x0047b0d8
@@ -7565,8 +7537,7 @@ _T8e:
 	__asm        call   dword ptr [edx];
 // LINE 715:
 _Tc9:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T154;
+	return 0x1;
 // LINE 717:
 	__asm        jmp    _T113;
 // LINE 718:
@@ -7592,8 +7563,7 @@ _Td8:
 	__asm        call   dword ptr [edx];
 // LINE 720:
 _T109:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T154;
+	return 0x1;
 // LINE 723:
 _T113:
 	__asm        jmp    _T14d;
@@ -7616,14 +7586,11 @@ _T118:
 	__asm        mov    ecx, [eax+0x38];
 	__asm        call   dword ptr [edx];
 // LINE 725:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T154;
+	return 0x1;
 // LINE 727:
 _T14d:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T154;
+	return 0x0;
 // LINE 728:
-_T154:
 }
 
 // FUNCTION: COPTER_D 0x0047b233
@@ -7779,8 +7746,7 @@ int32_t CatalogWindow::DoCatalogWindowBuy() {
 	__asm        test   eax, eax;
 	__asm        jne    _T2b;
 // LINE 808:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tfa;
+	return 0x0;
 // LINE 810:
 _T2b:
 	__asm        call   GetUserMoney;
@@ -7855,10 +7821,8 @@ _Td0:
 	__asm        mov    ecx, this;
 	__asm        call   CatalogWindow::SwitchGraphicsForTab;
 // LINE 826:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tfa;
+	return 0x1;
 // LINE 827:
-_Tfa:
 }
 
 // FUNCTION: COPTER_D 0x0047b4d0
@@ -7878,8 +7842,7 @@ int32_t CatalogWindow::DoCatalogWindowSell() {
 	__asm        test   eax, eax;
 	__asm        jne    _T2b;
 // LINE 841:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tfc;
+	return 0x0;
 // LINE 843:
 _T2b:
 	__asm        call   GetUserMoney;
@@ -7955,10 +7918,8 @@ _Td4:
 	__asm        mov    ecx, this;
 	__asm        call   CatalogWindow::SwitchGraphicsForTab;
 // LINE 860:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tfc;
+	return 0x1;
 // LINE 861:
-_Tfc:
 }
 
 

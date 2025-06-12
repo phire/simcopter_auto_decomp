@@ -434,7 +434,6 @@ void S3SwitchToProperSkyType() {
 // LINE 93:
 _T35:
 	return;
-_T3a:
 }
 
 // FUNCTION: COPTER_D 0x004611bf
@@ -456,14 +455,11 @@ int32_t IsActualTimeDaytime() {
 	__asm        jbe    _T3a;
 // LINE 102:
 _T33:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T44;
+	return 0x0;
 // LINE 103:
 _T3a:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T44;
+	return 0x1;
 // LINE 104:
-_T44:
 }
 
 // FUNCTION: COPTER_D 0x00461208
@@ -993,10 +989,8 @@ _T24e:
 	__asm        add    esp, 8;
 // LINE 256:
 _T26e:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T275;
+	return 0x0;
 // LINE 257:
-_T275:
 }
 
 // FUNCTION: COPTER_D 0x004618a3
@@ -2051,8 +2045,7 @@ _Tea:
 	__asm        jmp    _Tef;
 // LINE 506:
 _Tef:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T107f;
+	return 0x1;
 // LINE 508:
 	__asm        jmp    _T1078;
 _Tfe:
@@ -2196,8 +2189,7 @@ _T2ce:
 	__asm        jmp    _T2d3;
 // LINE 516:
 _T2d3:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T107f;
+	return 0x1;
 // LINE 518:
 	__asm        jmp    _T1078;
 _T2e2:
@@ -2269,8 +2261,7 @@ _T3fc:
 	__asm        jmp    _T401;
 // LINE 521:
 _T401:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T107f;
+	return 0x1;
 // LINE 523:
 	__asm        jmp    _T1078;
 _T410:
@@ -2359,8 +2350,7 @@ _T52e:
 // LINE 531:
 	this-><CGameApp+0x1c:4> = 0x1;
 // LINE 532:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T107f;
+	return 0x1;
 // LINE 534:
 	__asm        jmp    _T1078;
 _T592:
@@ -2457,8 +2447,7 @@ _T6c9:
 // LINE 543:
 	this-><CGameApp+0x1c:4> = 0x1;
 // LINE 544:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T107f;
+	return 0x1;
 // LINE 547:
 	__asm        jmp    _T1078;
 _T733:
@@ -2606,8 +2595,7 @@ _T912:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::CreateMessageBox;
 // LINE 578:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T107f;
+	return 0x1;
 // LINE 585:
 _T97b:
 	__asm        mov    eax, this;
@@ -2676,8 +2664,7 @@ _Ta4b:
 _Ta60:
 	this-><CGameApp+0x1c:4> = 0x1;
 // LINE 607:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T107f;
+	return 0x1;
 // LINE 609:
 // Block end:
 	__asm        jmp    _T1078;
@@ -2771,8 +2758,7 @@ _Tbb3:
 // LINE 617:
 	this-><CGameApp+0x1c:4> = 0x1;
 // LINE 618:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T107f;
+	return 0x1;
 // LINE 621:
 	__asm        jmp    _T1078;
 _Tc18:
@@ -2863,8 +2849,7 @@ _Td4f:
 	__asm        add    ecx, 0x1678;
 	__asm        call   GameModeCatalogData::UsePalette;
 // LINE 629:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T107f;
+	return 0x1;
 // LINE 631:
 	__asm        jmp    _T1078;
 _Tda7:
@@ -2946,8 +2931,7 @@ _Teba:
 	__asm        add    ecx, 0x2138;
 	__asm        call   GameModeMissionLogData::UsePalette;
 // LINE 639:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T107f;
+	return 0x1;
 // LINE 641:
 	__asm        jmp    _T1078;
 _Tf12:
@@ -3029,14 +3013,11 @@ _T1025:
 	__asm        add    ecx, 0x2BF8;
 	__asm        call   GameModeInventoryData::UsePalette;
 // LINE 649:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T107f;
+	return 0x1;
 // LINE 651:
 _T1078:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T107f;
+	return 0x0;
 // LINE 652:
-_T107f:
 }
 
 // FUNCTION: COPTER_D 0x00463608
@@ -3067,8 +3048,7 @@ _T40:
 	__asm        jmp    _T57;
 // LINE 663:
 _T57:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T5ea;
+	return 0x1;
 // LINE 665:
 	__asm        jmp    _T5e3;
 _T66:
@@ -3119,8 +3099,7 @@ _Tea:
 	__asm        jmp    _Tef;
 // LINE 667:
 _Tef:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T5ea;
+	return 0x1;
 // LINE 669:
 	__asm        jmp    _T5e3;
 _Tfe:
@@ -3180,8 +3159,7 @@ _T18f:
 	__asm        jmp    _T1a6;
 // LINE 681:
 _T1a6:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T5ea;
+	return 0x1;
 // LINE 683:
 	__asm        jmp    _T5e3;
 _T1b5:
@@ -3247,8 +3225,7 @@ _T25f:
 	__asm        jmp    _T264;
 // LINE 693:
 _T264:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T5ea;
+	return 0x1;
 // LINE 695:
 	__asm        jmp    _T5e3;
 _T273:
@@ -3289,8 +3266,7 @@ _T2c5:
 	__asm        jmp    _T2dc;
 // LINE 700:
 _T2dc:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T5ea;
+	return 0x1;
 // LINE 702:
 	__asm        jmp    _T5e3;
 _T2eb:
@@ -3367,8 +3343,7 @@ _T3b8:
 	__asm        jmp    _T3bd;
 // LINE 713:
 _T3bd:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T5ea;
+	return 0x1;
 // LINE 715:
 	__asm        jmp    _T5e3;
 _T3cc:
@@ -3401,8 +3376,7 @@ _T40e:
 	__asm        jmp    _T425;
 // LINE 719:
 _T425:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T5ea;
+	return 0x1;
 // LINE 721:
 	__asm        jmp    _T5e3;
 _T434:
@@ -3457,8 +3431,7 @@ _T4c6:
 	__asm        jmp    _T4cb;
 // LINE 725:
 _T4cb:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T5ea;
+	return 0x1;
 // LINE 727:
 	__asm        jmp    _T5e3;
 _T4da:
@@ -3491,8 +3464,7 @@ _T51c:
 	__asm        jmp    _T533;
 // LINE 731:
 _T533:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T5ea;
+	return 0x1;
 // LINE 733:
 	__asm        jmp    _T5e3;
 _T542:
@@ -3547,14 +3519,11 @@ _T5d4:
 	__asm        jmp    _T5d9;
 // LINE 737:
 _T5d9:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T5ea;
+	return 0x1;
 // LINE 739:
 _T5e3:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T5ea;
+	return 0x0;
 // LINE 740:
-_T5ea:
 }
 
 // FUNCTION: COPTER_D 0x00463bf9
@@ -5161,8 +5130,7 @@ int  CGameApp::CheckForWarpToCareerLevel() {
 	__asm        jmp    _T4a;
 // LINE 1152:
 _T43:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4a;
+	return 0x0;
 // LINE 1153:
 _T4a:
 }
@@ -5177,8 +5145,7 @@ int  CGameApp::WarpToCareerLevel(int32_t nNewLevel) {
 	__asm        jl     _T27;
 // LINE 1165:
 _T20:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Ta9;
+	return 0x0;
 // LINE 1166:
 _T27:
 	__asm        mov    eax, this;
@@ -5203,8 +5170,7 @@ _T5b:
 	__asm        cmp    dword ptr [eax+8], 6;
 	__asm        je     _T6f;
 // LINE 1167:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Ta9;
+	return 0x0;
 // LINE 1168:
 _T6f:
 	__asm        push   6;
@@ -5226,10 +5192,8 @@ _T6f:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x68];
 // LINE 1172:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Ta9;
+	return 0x1;
 // LINE 1173:
-_Ta9:
 }
 
 // FUNCTION: COPTER_D 0x00464eb2
@@ -5257,8 +5221,7 @@ _T40:
 	__asm        cmp    dword ptr [eax+8], 6;
 	__asm        je     _T54;
 // LINE 1183:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T167;
+	return 0x0;
 // LINE 1185:
 _T54:
 	__asm        cmp    gCurrentCareerCityInfo.lCurrentCityIndex, 0x1E;
@@ -5338,8 +5301,7 @@ _T12c:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x68];
 // LINE 1197:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T167;
+	return 0x1;
 // LINE 1198:
 _T167:
 }
@@ -5369,14 +5331,11 @@ _T40:
 	__asm        cmp    dword ptr [eax+8], 6;
 	__asm        je     _T54;
 // LINE 1208:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T5e;
+	return 0x0;
 // LINE 1209:
 _T54:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T5e;
+	return 0x1;
 // LINE 1210:
-_T5e:
 }
 
 // FUNCTION: COPTER_D 0x00465081
@@ -6473,8 +6432,7 @@ _T91f:
 	__asm        sub    ecx, 0x14;
 	__asm        call   CGameApp::CreateMessageBox;
 // LINE 1419:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Ta30;
+	return 0x1;
 // LINE 1422:
 _T947:
 	__asm        jmp    _T9b1;
@@ -6631,11 +6589,9 @@ _T58:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x68];
 // LINE 1480:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T418;
+	return 0x1;
 // LINE 1482:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T418;
+	return 0x0;
 // LINE 1484:
 // Block end:
 	__asm        jmp    _T40e;
@@ -6759,8 +6715,7 @@ _T1f1:
 	__asm        cmp    nResult, 0;
 	__asm        je     _T278;
 // LINE 1526:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T418;
+	return 0x0;
 // LINE 1530:
 _T278:
 	__asm        lea    eax, szSplitPathExtension[0];
@@ -6820,8 +6775,7 @@ _T278:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::DisplayFileOpenError;
 // LINE 1541:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T418;
+	return 0x0;
 // LINE 1545:
 _T341:
 	__asm        mov    eax, lFileType;
@@ -6840,8 +6794,7 @@ _T341:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::DisplayFileOpenError;
 // LINE 1548:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T418;
+	return 0x0;
 // LINE 1551:
 _T386:
 	__asm        mov    eax, gwSource;
@@ -6884,19 +6837,15 @@ _T3bc:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x68];
 // LINE 1560:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T418;
+	return 0x1;
 // LINE 1562:
 _T404:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T418;
+	return 0x1;
 // LINE 1564:
 // Block end:
 _T40e:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T418;
+	return 0x1;
 // LINE 1565:
-_T418:
 }
 
 // FUNCTION: COPTER_D 0x004662fa
@@ -6937,8 +6886,7 @@ _T40:
 	__asm        mov    ecx, gwSource;
 	__asm        call   dword ptr [eax+0x6C];
 // LINE 1580:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2ac;
+	return 0x1;
 // LINE 1583:
 	__asm        jmp    _T2a5;
 _T79:
@@ -6962,8 +6910,7 @@ _Ta7:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::CreateCitySettingsWindow;
 // LINE 1590:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2ac;
+	return 0x1;
 // LINE 1592:
 _Tb9:
 	__asm        cmp    lResult, 1;
@@ -6977,8 +6924,7 @@ _Td2:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::CreateRenderSettingsWindow;
 // LINE 1595:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2ac;
+	return 0x1;
 // LINE 1597:
 	__asm        jmp    _T2a5;
 _Te9:
@@ -6993,8 +6939,7 @@ _T102:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::CreateSoundSettingsWindow;
 // LINE 1600:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2ac;
+	return 0x1;
 // LINE 1602:
 	__asm        jmp    _T2a5;
 _T119:
@@ -7009,8 +6954,7 @@ _T132:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::CreateUserInputWindow;
 // LINE 1605:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2ac;
+	return 0x1;
 // LINE 1607:
 	__asm        jmp    _T2a5;
 _T149:
@@ -7033,8 +6977,7 @@ _T149:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::DisplayFileOpenError;
 // LINE 1612:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T2ac;
+	return 0x0;
 // LINE 1615:
 _T188:
 	__asm        jmp    _T1d5;
@@ -7054,8 +6997,7 @@ _T18d:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::DisplayFileOpenError;
 // LINE 1619:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T2ac;
+	return 0x0;
 // LINE 1621:
 	__asm        jmp    _T1d5;
 // LINE 1622:
@@ -7067,8 +7009,7 @@ _T1c4:
 	__asm        call   CGameApp::CreateMessageBox;
 // LINE 1624:
 _T1d5:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2ac;
+	return 0x1;
 // LINE 1626:
 	__asm        jmp    _T2a5;
 _T1e4:
@@ -7090,8 +7031,7 @@ _T1e4:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::DisplayFileOpenError;
 // LINE 1630:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T2ac;
+	return 0x0;
 // LINE 1632:
 	__asm        jmp    _T240;
 _T225:
@@ -7105,8 +7045,7 @@ _T225:
 	__asm        call   CGameApp::CreateMessageBox;
 // LINE 1634:
 _T240:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2ac;
+	return 0x1;
 // LINE 1637:
 	__asm        jmp    _T2a5;
 _T24f:
@@ -7140,10 +7079,8 @@ _T287:
 // LINE 1647:
 // Block end:
 _T2a5:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T2ac;
+	return 0x0;
 // LINE 1648:
-_T2ac:
 }
 
 // FUNCTION: COPTER_D 0x004665ad
@@ -7235,8 +7172,7 @@ _T135:
 	__asm        cmp    dword ptr [ebp-0x324], 0;
 	__asm        je     _T155;
 // LINE 1670:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T2f9;
+	return 0x0;
 // LINE 1673:
 _T155:
 	__asm        push   0x27C;
@@ -7336,10 +7272,8 @@ _T2ac:
 	__asm        mov    eax, this;
 	__asm        mov    [eax+0x98], ecx;
 // LINE 1684:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2f9;
+	return 0x1;
 // LINE 1685:
-_T2f9:
 }
 
 // FUNCTION: COPTER_D 0x004668ad
@@ -7476,8 +7410,7 @@ _Tfc:
 // LINE 1720:
 	this-><CGameApp+0x6c:4> = 0x0;
 // LINE 1721:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1c5;
+	return 0x0;
 // LINE 1725:
 _T129:
 	__asm        push   0x27C;
@@ -7518,10 +7451,8 @@ _T16f:
 	__asm        mov    eax, [eax+0x6C];
 	__asm        mov    dword ptr [eax+8], 1;
 // LINE 1730:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1c5;
+	return 0x1;
 // LINE 1731:
-_T1c5:
 }
 
 // FUNCTION: COPTER_D 0x00466b32

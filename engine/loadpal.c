@@ -38,8 +38,7 @@ struct VRResource{ // packed(0x10 bytes) TI: 0x18ae
 // LINE 58:
 	GlobalError = 0x4;
 // LINE 59:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T82;
+	return 0x0;
 // LINE 62:
 _T3a:
 	__asm        push   0x300;
@@ -51,8 +50,7 @@ _T3a:
 	__asm        test   eax, eax;
 	__asm        jne    _T5d;
 // LINE 63:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T82;
+	return 0x0;
 // LINE 94:
 _T5d:
 	res->res.mem = 0x0;
@@ -61,10 +59,8 @@ _T5d:
 // LINE 96:
 	res->res.entry = 0x0;
 // LINE 97:
-	__asm        mov    eax, res;
-	__asm        jmp    _T82;
+	return res;
 // LINE 99:
-_T82:
 }
 
 // FUNCTION: COPTER_D 0x004d2157

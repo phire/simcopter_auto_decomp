@@ -479,7 +479,7 @@ _T1a:
 	this-><YObjLang+0x00> = 0x5936e8;
 // LINE 48:
 	return;
-_T28:
+
 	__asm        mov    eax, this;
 }
 
@@ -558,7 +558,6 @@ _T8f:
 // LINE 72:
 _Tb2:
 	return;
-_Tb7:
 }
 
 // FUNCTION: COPTER_D 0x00560abe
@@ -577,7 +576,6 @@ void YObjLang::SwizzleTree(void * __ptr32 treevoid, long size) {
 	__asm        add    esp, 0xC;
 // LINE 79:
 	return;
-_T29:
 }
 
 // FUNCTION: COPTER_D 0x00560aec
@@ -590,7 +588,7 @@ _T1a:
 	this-><YObjLang+0x00> = 0x5936e8;
 // LINE 88:
 	return;
-_T28:
+
 	__asm        mov    eax, this;
 }
 
@@ -600,7 +598,6 @@ void YObjLang::~YObjLang() {
 	this-><YObjLang+0x00> = 0x5936e8;
 // LINE 95:
 	return;
-_T1a:
 }
 
 // FUNCTION: COPTER_D 0x00560b3d
@@ -616,7 +613,6 @@ _T15:
 void YObjLang::GetPrimName(short primCode, unsigned char * str) {
 // LINE 112:
 	return;
-_T11:
 }
 
 // FUNCTION: COPTER_D 0x00560b6f
@@ -632,7 +628,6 @@ _T14:
 void YObjLang::GetNodeText(/*unpacked*/ class Behavior *bhav, /*unpacked*/ struct Behavior::Node *node, unsigned char * str) {
 // LINE 478:
 	return;
-_T11:
 }
 
 

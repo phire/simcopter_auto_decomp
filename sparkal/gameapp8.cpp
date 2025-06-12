@@ -309,8 +309,7 @@ unsigned long  CGameApp::GetLoadFileType(char * szFilePath, long& lFileType) {
 // LINE 64:
 	lFileType. = 0x1;
 // LINE 65:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T8c;
+	return 0x0;
 // LINE 67:
 	__asm        jmp    _T82;
 _T35:
@@ -323,8 +322,7 @@ _T35:
 // LINE 68:
 	lFileType. = 0x5;
 // LINE 69:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T8c;
+	return 0x0;
 // LINE 71:
 	__asm        jmp    _T82;
 // LINE 72:
@@ -340,14 +338,11 @@ _T5e:
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T82;
 // LINE 74:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T8c;
+	return 0x0;
 // LINE 76:
 _T82:
-	__asm        mov    eax, 6;
-	__asm        jmp    _T8c;
+	return 0x6;
 // LINE 77:
-_T8c:
 }
 
 // FUNCTION: COPTER_D 0x004275e3
@@ -374,8 +369,7 @@ _T3e:
 	__asm        call   SetUpNewUserCity;
 	__asm        add    esp, 4;
 // LINE 91:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Ta7;
+	return 0x0;
 // LINE 93:
 	__asm        jmp    _T9d;
 _T56:
@@ -453,8 +447,7 @@ unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 	__asm        test   eax, eax;
 	__asm        jne    _T7c;
 // LINE 130:
-	__asm        mov    eax, 3;
-	__asm        jmp    _T55c;
+	return 0x3;
 // LINE 132:
 _T7c:
 	__asm        mov    ecx, this;
@@ -480,8 +473,7 @@ _Tc5:
 	__asm        add    ecx, 0x4174;
 	__asm        call   dword ptr [eax+0x10];
 // LINE 134:
-	__asm        mov    eax, 4;
-	__asm        jmp    _T55c;
+	return 0x4;
 // LINE 137:
 _Tea:
 	__asm        mov    ecx, this;
@@ -503,8 +495,7 @@ _Tea:
 	__asm        add    ecx, 0x4174;
 	__asm        call   dword ptr [eax+0x10];
 // LINE 140:
-	__asm        mov    eax, 6;
-	__asm        jmp    _T55c;
+	return 0x6;
 // LINE 143:
 _T150:
 	__asm        mov    bSaveGameInfoFound, 0;
@@ -611,8 +602,7 @@ _T2dc:
 	__asm        add    ecx, 0x4174;
 	__asm        call   dword ptr [eax+0x10];
 // LINE 169:
-	__asm        mov    eax, 2;
-	__asm        jmp    _T55c;
+	return 0x2;
 // LINE 173:
 _T301:
 	__asm        lea    eax, szSplitPathExtension[0];
@@ -662,8 +652,7 @@ _T301:
 	__asm        add    ecx, 0x4174;
 	__asm        call   dword ptr [eax+0x10];
 // LINE 179:
-	__asm        mov    eax, 5;
-	__asm        jmp    _T55c;
+	return 0x5;
 // LINE 181:
 _T3a7:
 	__asm        cmp    lFileType, 0x55534552;
@@ -772,10 +761,8 @@ _T52d:
 	__asm        call   dword ptr [eax+0x10];
 // LINE 212:
 _T555:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T55c;
+	return 0x0;
 // LINE 213:
-_T55c:
 }
 
 // FUNCTION: COPTER_D 0x00427bf4
@@ -829,8 +816,7 @@ _T7a:
 	__asm        test   eax, eax;
 	__asm        jne    _Tb8;
 // LINE 242:
-	__asm        mov    eax, 7;
-	__asm        jmp    _T39d;
+	return 0x7;
 // LINE 244:
 _Tb8:
 	__asm        lea    eax, szSplitPathExtension[0];
@@ -883,8 +869,7 @@ _Tb8:
 	__asm        add    ecx, 0x4174;
 	__asm        call   dword ptr [eax+0x10];
 // LINE 249:
-	__asm        mov    eax, 7;
-	__asm        jmp    _T39d;
+	return 0x7;
 // LINE 251:
 _T171:
 	__asm        cmp    gCurrentCityType, 2;
@@ -907,8 +892,7 @@ _T171:
 	__asm        add    ecx, 0x4174;
 	__asm        call   dword ptr [eax+0x10];
 // LINE 254:
-	__asm        mov    eax, 7;
-	__asm        jmp    _T39d;
+	return 0x7;
 // LINE 260:
 _T1d2:
 	__asm        mov    eax, gCurrentCareerCityInfo.lCurrentCityIndex;
@@ -938,8 +922,7 @@ _T1d2:
 	__asm        add    ecx, 0x4174;
 	__asm        call   dword ptr [eax+0x10];
 // LINE 264:
-	__asm        mov    eax, 7;
-	__asm        jmp    _T39d;
+	return 0x7;
 // LINE 267:
 _T24f:
 	__asm        jmp    _T2b8;
@@ -964,8 +947,7 @@ _T254:
 	__asm        add    ecx, 0x4174;
 	__asm        call   dword ptr [eax+0x10];
 // LINE 270:
-	__asm        mov    eax, 7;
-	__asm        jmp    _T39d;
+	return 0x7;
 // LINE 274:
 _T2b8:
 	__asm        mov    eax, this;
@@ -994,8 +976,7 @@ _T2b8:
 	__asm        add    ecx, 0x4174;
 	__asm        call   dword ptr [eax+0x10];
 // LINE 279:
-	__asm        mov    eax, 7;
-	__asm        jmp    _T39d;
+	return 0x7;
 // LINE 283:
 _T31e:
 	__asm        mov    eax, szCityPath;
@@ -1032,10 +1013,8 @@ _T31e:
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 291:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T39d;
+	return 0x0;
 // LINE 292:
-_T39d:
 }
 
 // FUNCTION: COPTER_D 0x00427f98
@@ -1611,8 +1590,7 @@ _T844:
 	__asm        cmp    nResult, 0;
 	__asm        je     _T8ae;
 // LINE 367:
-	__asm        mov    eax, 9;
-	__asm        jmp    _Tad7;
+	return 0x9;
 // LINE 373:
 _T8ae:
 	__asm        lea    eax, szSplitPathExtension[0];
@@ -1786,10 +1764,8 @@ _Ta07:
 	__asm        call   dword ptr [eax+0x2C];
 // LINE 405:
 _Tacc:
-	__asm        mov    eax, nResult;
-	__asm        jmp    _Tad7;
+	return nResult;
 // LINE 406:
-_Tad7:
 }
 
 // FUNCTION: COPTER_D 0x00428a74

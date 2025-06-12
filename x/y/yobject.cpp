@@ -2978,7 +2978,7 @@ _Tf9:
 _L54996:
 	__asm        mov    eax, 0x595D38;
 	__asm        jmp    near ptr 0x0056F590;
-_T108:
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
 }
@@ -3011,7 +3011,6 @@ static void $E72() {
 	__asm        call   NResFile::~NResFile;
 _T2d:
 	return;
-_T32:
 }
 
 // STATIC INITIALIZER:
@@ -3060,7 +3059,7 @@ _T9d:
 _L55021:
 	__asm        mov    eax, 0x595D78;
 	__asm        jmp    near ptr 0x0056F590;
-_Tac:
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
 }
@@ -3105,7 +3104,7 @@ _T60:
 _L55033:
 	__asm        mov    eax, 0x595DA8;
 	__asm        jmp    near ptr 0x0056F590;
-_T6f:
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
 }
@@ -3120,7 +3119,6 @@ void RemoveAvatarFromBuilding() {
 // LINE 140:
 _T1d:
 	return;
-_T22:
 }
 
 // STATIC INITIALIZER:
@@ -3156,7 +3154,6 @@ _T5b:
 	__asm        jmp    _T60;
 _T60:
 	return;
-_T65:
 }
 
 // STATIC INITIALIZER:
@@ -3177,7 +3174,6 @@ static void $E84() {
 	__asm        jmp    _T0b;
 _T0b:
 	return;
-_T10:
 }
 
 // FUNCTION: COPTER_D 0x0054433f
@@ -3323,7 +3319,6 @@ _T1fc:
 // LINE 162:
 _T205:
 	return;
-_T20a:
 }
 
 // FUNCTION: COPTER_D 0x0054454e
@@ -3565,7 +3560,6 @@ _Tf8:
 // LINE 220:
 _T10a:
 	return;
-_T10f:
 }
 
 // FUNCTION: COPTER_D 0x00544874
@@ -3831,10 +3825,8 @@ _T82:
 	__asm        mov    dyobj, eax;
 // LINE 254:
 _T94:
-	__asm        mov    eax, dyobj;
-	__asm        jmp    _T9c;
+	return dyobj;
 // LINE 255:
-_T9c:
 }
 
 // FUNCTION: COPTER_D 0x00544bde
@@ -5339,7 +5331,6 @@ _T5d:
 	__asm        add    esp, 8;
 // LINE 420:
 	return;
-_T9c:
 }
 
 // FUNCTION: COPTER_D 0x00545d74
@@ -5350,7 +5341,6 @@ void S3PersonDelete() {
 	__asm        call   DeleteAllPeople;
 // LINE 429:
 	return;
-_T15:
 }
 
 // FUNCTION: COPTER_D 0x00545d8e
@@ -5359,7 +5349,6 @@ void S3PersonNextFrame() {
 	__asm        call   cYObject::SimulateAll;
 // LINE 437:
 	return;
-_T10:
 }
 
 // FUNCTION: COPTER_D 0x00545da3
@@ -5369,7 +5358,6 @@ void S3PersonUserNextFrame() {
 	__asm        call   cAvatar::Simulate;
 // LINE 442:
 	return;
-_T16:
 }
 
 // FUNCTION: COPTER_D 0x00545dbe
@@ -5457,7 +5445,6 @@ _Tf3:
 	__asm        call   dword ptr [eax+0x18];
 // LINE 452:
 	return;
-_T108:
 }
 
 // FUNCTION: COPTER_D 0x00545ecb
@@ -5657,7 +5644,6 @@ _T282:
 	__asm        call   cYObject::SetMaster;
 // LINE 461:
 	return;
-_T2ac:
 }
 
 // FUNCTION: COPTER_D 0x0054617c
@@ -5806,7 +5792,6 @@ _T180:
 // Block end:
 _T1c6:
 	return;
-_T1cb:
 }
 
 // FUNCTION: COPTER_D 0x0054634c
@@ -5888,7 +5873,6 @@ _T9e:
 	__asm        add    esp, 8;
 // LINE 493:
 	return;
-_Tdd:
 }
 
 // FUNCTION: COPTER_D 0x0054642e
@@ -5910,8 +5894,7 @@ int32_t IsThisABadGuy(/*unpacked*/ struct _DYOBJ_INST *guy) {
 	__asm        cmp    mt, 0;
 	__asm        jne    _T3e;
 // LINE 500:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T45;
+	return 0x1;
 // LINE 501:
 	__asm        jmp    _T45;
 // LINE 502:
@@ -6107,7 +6090,6 @@ _T12b:
 // Block end:
 _T137:
 	return;
-_T13c:
 }
 
 // FUNCTION: COPTER_D 0x005466c5
@@ -6449,7 +6431,6 @@ _T3dd:
 // LINE 619:
 _T3ff:
 	return;
-_T404:
 }
 
 // FUNCTION: COPTER_D 0x00546ace
@@ -6494,7 +6475,6 @@ _T62:
 // LINE 635:
 _T7e:
 	return;
-_T83:
 }
 
 // FUNCTION: COPTER_D 0x00546b56
@@ -6548,8 +6528,7 @@ _T7c:
 	__asm        cmp    dyobj, 0;
 	__asm        jne    _T8d;
 // LINE 670:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T12a;
+	return 0x0;
 // LINE 676:
 _T8d:
 	__asm        mov    eax, dyobj;
@@ -6581,8 +6560,7 @@ _T8d:
 	__asm        jle    _Tee;
 // LINE 679:
 _Te7:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T12a;
+	return 0x0;
 // LINE 683:
 _Tee:
 	__asm        mov    eax, dyobj;
@@ -6594,22 +6572,18 @@ _Tee:
 	__asm        cmp    hd, 0;
 	__asm        jne    _T10e;
 // LINE 685:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T12a;
+	return 0x0;
 // LINE 688:
 _T10e:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     _T122;
 // LINE 689:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T12a;
+	return 0x0;
 // LINE 691:
 _T122:
-	__asm        mov    eax, hd;
-	__asm        jmp    _T12a;
+	return hd;
 // LINE 692:
-_T12a:
 }
 
 // FUNCTION: COPTER_D 0x00546c85
@@ -6757,18 +6731,15 @@ _T197:
 	__asm        cmp    eax, ecx;
 	__asm        jne    _T1da;
 // LINE 702:
-	__asm        mov    eax, obj;
-	__asm        jmp    _T1e6;
+	return obj;
 // LINE 704:
 // Block end:
 _T1da:
 	__asm        jmp    _Tad;
 // LINE 705:
 _T1df:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1e6;
+	return 0x0;
 // LINE 706:
-_T1e6:
 }
 
 // FUNCTION: COPTER_D 0x00546e70
@@ -7048,7 +7019,6 @@ _Tfe:
 	__asm        add    esp, 0x20;
 // LINE 741:
 	return;
-_T169:
 }
 
 // FUNCTION: COPTER_D 0x005471b2
@@ -7252,7 +7222,6 @@ _T276:
 	obj->fData[22] = id;
 // LINE 774:
 	return;
-_T289:
 }
 
 // FUNCTION: COPTER_D 0x00547440
@@ -7671,7 +7640,6 @@ _T490:
 // LINE 832:
 _T4ed:
 	return;
-_T4f2:
 }
 
 // FUNCTION: COPTER_D 0x00547937
@@ -7802,7 +7770,6 @@ _T17c:
 // LINE 868:
 _T181:
 	return;
-_T186:
 }
 
 // FUNCTION: COPTER_D 0x00547ac2
@@ -7934,7 +7901,6 @@ _T19a:
 // LINE 885:
 _T19f:
 	return;
-_T1a4:
 }
 
 // FUNCTION: COPTER_D 0x00547c6b
@@ -7967,7 +7933,6 @@ _T4e:
 // LINE 895:
 _T53:
 	return;
-_T58:
 }
 
 // FUNCTION: COPTER_D 0x00547cc8
@@ -8055,10 +8020,8 @@ _T107:
 	__asm        jmp    _T1b;
 // LINE 908:
 _T10c:
-	__asm        mov    eax, sleeper;
-	__asm        jmp    _T114;
+	return sleeper;
 // LINE 909:
-_T114:
 }
 
 // FUNCTION: COPTER_D 0x00547de1
@@ -8099,7 +8062,6 @@ void MakeAllPeople() {
 	__asm        mov    gAvatar, eax;
 // LINE 926:
 	return;
-_T73:
 }
 
 // FUNCTION: COPTER_D 0x00547e59
@@ -8123,7 +8085,6 @@ _T33:
 	__asm        call   cYObject::DestroyObjects;
 // LINE 932:
 	return;
-_T3d:
 }
 
 // FUNCTION: COPTER_D 0x00547e9b
@@ -8258,7 +8219,6 @@ _T19d:
 // LINE 961:
 _T1a2:
 	return;
-_T1a7:
 }
 
 // FUNCTION: COPTER_D 0x00548047
@@ -10197,7 +10157,7 @@ _L55486:
 _L55485:
 	__asm        mov    eax, 0x595DD0;
 	__asm        jmp    near ptr 0x0056F590;
-_T1b88:
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
 }
@@ -10896,7 +10856,6 @@ _T10c:
 // LINE 1484:
 _T111:
 	return;
-_T116:
 }
 
 // FUNCTION: COPTER_D 0x0054a35a
@@ -11087,7 +11046,6 @@ _T23b:
 // LINE 1530:
 _T240:
 	return;
-_T245:
 }
 
 // FUNCTION: COPTER_D 0x0054a5a4
@@ -11135,7 +11093,6 @@ _T84:
 	__asm        call   cYObject::SetPersonType;
 // LINE 1537:
 	return;
-_T95:
 }
 
 // FUNCTION: COPTER_D 0x0054a640
@@ -12756,7 +12713,6 @@ _T19a:
 // LINE 1810:
 _T1bc:
 	return;
-_T1c1:
 }
 
 // FUNCTION: COPTER_D 0x0054b9e6
@@ -12932,10 +12888,8 @@ _T244:
 // LINE 1835:
 // Block end:
 _T249:
-	__asm        mov    eax, riotMissionID;
-	__asm        jmp    _T251;
+	return riotMissionID;
 // LINE 1836:
-_T251:
 }
 
 // FUNCTION: COPTER_D 0x0054bc3c
@@ -13174,7 +13128,6 @@ _T2ba:
 	__asm        add    esp, 8;
 // LINE 1861:
 	return;
-_T2df:
 }
 
 // FUNCTION: COPTER_D 0x0054bf20
@@ -13395,7 +13348,6 @@ _Tce:
 	this->fData[25] = soundchannel;
 // LINE 1894:
 	return;
-_Tef:
 }
 
 // FUNCTION: COPTER_D 0x0054c1dd
@@ -14271,7 +14223,6 @@ _T62e:
 // Block end:
 _T642:
 	return;
-_T647:
 }
 
 // FUNCTION: COPTER_D 0x0054ccbd
@@ -14350,7 +14301,6 @@ _T53:
 	this->fData[9] = 0x1;
 // LINE 2162:
 	return;
-_T64:
 }
 
 // FUNCTION: COPTER_D 0x0054cdb2
@@ -14430,18 +14380,15 @@ _Teb:
 	__asm        cmp    [eax+0x130], ecx;
 	__asm        jne    _T105;
 // LINE 2170:
-	__asm        mov    eax, obj;
-	__asm        jmp    _T111;
+	return obj;
 // LINE 2171:
 // Block end:
 _T105:
 	__asm        jmp    _T17;
 // LINE 2172:
 _T10a:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T111;
+	return 0x0;
 // LINE 2173:
-_T111:
 }
 
 // FUNCTION: COPTER_D 0x0054ceca
@@ -15546,7 +15493,6 @@ _T1dc:
 // LINE 2284:
 _T1e1:
 	return;
-_T1e6:
 }
 
 // FUNCTION: COPTER_D 0x0054dcde
@@ -15655,10 +15601,8 @@ _Te3:
 	__asm        jmp    _T12b;
 // LINE 2304:
 _T12b:
-	__asm        mov    eax, movecode;
-	__asm        jmp    _T133;
+	return movecode;
 // LINE 2305:
-_T133:
 }
 
 // FUNCTION: COPTER_D 0x0054de18
@@ -16235,7 +16179,6 @@ _T752:
 // LINE 2381:
 _T757:
 	return;
-_T75c:
 }
 
 // FUNCTION: COPTER_D 0x0054e579
@@ -17740,7 +17683,6 @@ _T1525:
 // LINE 2498:
 _T1569:
 	return;
-_T156e:
 }
 
 // FUNCTION: COPTER_D 0x0054faee
@@ -17842,7 +17784,6 @@ _T131:
 	__asm        call   SetIdealCameraPos;
 // LINE 2526:
 	return;
-_T13b:
 }
 
 // FUNCTION: COPTER_D 0x0054fc2e
@@ -17940,7 +17881,6 @@ _Tf6:
 // LINE 2556:
 _T113:
 	return;
-_T118:
 }
 
 // FUNCTION: COPTER_D 0x0054fd4d
@@ -18029,7 +17969,6 @@ _Ta1:
 	__asm        call   cYObject::SetCellAndLoc;
 // LINE 2567:
 	return;
-_Tee:
 }
 
 // FUNCTION: COPTER_D 0x0054fe42
@@ -18126,7 +18065,6 @@ _T14e:
 // LINE 2611:
 _T169:
 	return;
-_T16e:
 }
 
 // FUNCTION: COPTER_D 0x0054ffb7
@@ -18628,7 +18566,6 @@ _T57d:
 // LINE 2735:
 _T5a4:
 	return;
-_T5a9:
 }
 
 // FUNCTION: COPTER_D 0x00550567
@@ -18728,7 +18665,6 @@ _T125:
 // Block end:
 _T12a:
 	return;
-_T12f:
 }
 
 // FUNCTION: COPTER_D 0x0055069b
@@ -18829,7 +18765,6 @@ _T103:
 	this->fbLinked = 0x1;
 // LINE 2791:
 	return;
-_T14c:
 }
 
 // FUNCTION: COPTER_D 0x005507ec
@@ -18892,7 +18827,6 @@ _Ta4:
 	this->fbLinked = 0x0;
 // LINE 2813:
 	return;
-_Tb2:
 }
 
 // FUNCTION: COPTER_D 0x005508a3
@@ -18969,8 +18903,7 @@ _Te2:
 	__asm        mov    ecx, avatar;
 	__asm        call   dword ptr [eax+0x18];
 // LINE 2821:
-	__asm        mov    eax, avatar;
-	__asm        jmp    _T119;
+	return avatar;
 // LINE 2822:
 _L56432:
 	__asm        mov    eax, [ebp-0x20];
@@ -18981,7 +18914,7 @@ _L56432:
 _L56431:
 	__asm        mov    eax, 0x595E00;
 	__asm        jmp    near ptr 0x0056F590;
-_T119:
+
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    fs:[0], ecx;
 }
@@ -19193,7 +19126,6 @@ _Tc8:
 	__asm        add    esp, 4;
 // LINE 2869:
 	return;
-_Tf9:
 }
 
 // FUNCTION: COPTER_D 0x00550c30
@@ -19281,7 +19213,6 @@ _Td6:
 // LINE 2880:
 _T113:
 	return;
-_T118:
 }
 
 // FUNCTION: COPTER_D 0x00550d4d
@@ -19435,7 +19366,6 @@ _T2f:
 	this->fUserControl.yaw = 0x0;
 // LINE 2928:
 	return;
-_T82:
 }
 
 // FUNCTION: COPTER_D 0x00550f9f
@@ -19692,7 +19622,6 @@ _T3d6:
 	this->fInited = 0x0;
 // LINE 2960:
 	return;
-_T3e4:
 }
 
 // FUNCTION: COPTER_D 0x00551388
@@ -20025,7 +19954,6 @@ _T460:
 	__asm        inc    gBodyDebugInfoIndex;
 // LINE 3044:
 	return;
-_T48b:
 }
 
 // FUNCTION: COPTER_D 0x0055181a
@@ -20083,7 +20011,6 @@ _T80:
 	gBodyDebugInfoIndex = 0x0;
 // LINE 3058:
 	return;
-_T8e:
 }
 
 // FUNCTION: COPTER_D 0x005518ad
@@ -20199,14 +20126,12 @@ void S3PersonTweakInit() {
 	__asm        add    esp, 0xC;
 // LINE 3092:
 	return;
-_T52:
 }
 
 // FUNCTION: COPTER_D 0x00551a2d
 void UpdateFigureVals() {
 // LINE 3096:
 	return;
-_T0b:
 }
 
 // FUNCTION: COPTER_D 0x00551a3d
@@ -20262,7 +20187,6 @@ _T7d:
 	__asm        add    esp, 8;
 // LINE 3112:
 	return;
-_Taf:
 }
 
 // FUNCTION: COPTER_D 0x00551af1
@@ -20532,7 +20456,6 @@ _T38:
 // LINE 3218:
 _T58:
 	return;
-_T5d:
 }
 
 

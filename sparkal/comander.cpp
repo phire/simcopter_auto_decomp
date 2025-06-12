@@ -64,7 +64,7 @@ void ICommander::ICommander() {
 	this->mpWindow = 0x0;
 // LINE 16:
 	return;
-_T24:
+
 	__asm        mov    eax, this;
 }
 
@@ -74,7 +74,6 @@ void ICommander::~ICommander() {
 	this-><vftable> = 0x5912a8;
 // LINE 25:
 	return;
-_T1a:
 }
 
 // FUNCTION: COPTER_D 0x0049ad7b
@@ -97,10 +96,8 @@ _T30:
 	this->mpWindow = pWindow;
 // LINE 36:
 _T39:
-	__asm        mov    eax, ReturnWindow;
-	__asm        jmp    _T41;
+	return ReturnWindow;
 // LINE 37:
-_T41:
 }
 
 // FUNCTION: COPTER_D 0x0049adc3
@@ -112,7 +109,7 @@ void CDefaultCommander::CDefaultCommander() {
 	__asm        mov    dword ptr [eax], 0x5912D0;
 // LINE 45:
 	return;
-_T22:
+
 	__asm        mov    eax, this;
 }
 
@@ -122,7 +119,7 @@ void CDefaultCommander::~CDefaultCommander() {
 	this-><CDefaultCommander+0x00> = 0x5912d0;
 // LINE 49:
 	return;
-_T1a:
+
 	__asm        mov    ecx, this;
 	__asm        call   ICommander::~ICommander;
 }
@@ -130,46 +127,36 @@ _T1a:
 // FUNCTION: COPTER_D 0x0049ae14
 unsigned long CDefaultCommander::Idle() {
 // LINE 56:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
+	return 0x0;
 // LINE 57:
-_T13:
 }
 
 // FUNCTION: COPTER_D 0x0049ae2c
 unsigned long CDefaultCommander::OnCharacter(char Character, int32_t RepeatCount) {
 // LINE 61:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
+	return 0x0;
 // LINE 62:
-_T13:
 }
 
 // FUNCTION: COPTER_D 0x0049ae46
 unsigned long CDefaultCommander::OnMouseDown(int32_t x, int32_t y) {
 // LINE 66:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
+	return 0x0;
 // LINE 67:
-_T13:
 }
 
 // FUNCTION: COPTER_D 0x0049ae60
 unsigned long CDefaultCommander::OnMouseUp(int32_t x, int32_t y) {
 // LINE 71:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
+	return 0x0;
 // LINE 72:
-_T13:
 }
 
 // FUNCTION: COPTER_D 0x0049ae7a
 unsigned long CDefaultCommander::OnMouseMove(int32_t x, int32_t y) {
 // LINE 76:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
+	return 0x0;
 // LINE 77:
-_T13:
 }
 
 // FUNCTION: COPTER_D 0x0049ae94
@@ -204,10 +191,8 @@ _T4f:
 // FUNCTION: COPTER_D 0x0049aee8
 unsigned long CDefaultCommander::OnWindowDeactivate() {
 // LINE 87:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
+	return 0x0;
 // LINE 88:
-_T13:
 }
 
 

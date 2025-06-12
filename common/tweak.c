@@ -23,15 +23,13 @@ int32_t TWKEnQueue(int32_t * *pValues, int32_t nNumValues, char * pszSection) {
 	__asm        cmp    g_nNextTWKQueueSlot, 0xC8;
 	__asm        jle    _T23;
 // LINE 44:
-	__asm        mov    eax, 0xFFFFFF9B;
-	__asm        jmp    _Tc6;
+	return 0xffffff9b;
 // LINE 46:
 _T23:
 	__asm        cmp    nNumValues, 0x32;
 	__asm        jle    _T37;
 // LINE 47:
-	__asm        mov    eax, 0xFFFFFF99;
-	__asm        jmp    _Tc6;
+	return 0xffffff99;
 // LINE 49:
 _T37:
 	__asm        mov    nCt, 0;
@@ -79,10 +77,8 @@ _T79:
 // LINE 54:
 	g_nNextTWKQueueSlot++;
 // LINE 56:
-	__asm        mov    eax, g_nNextTWKQueueSlot;
-	__asm        jmp    _Tc6;
+	return g_nNextTWKQueueSlot;
 // LINE 57:
-_Tc6:
 }
 
 // FUNCTION: COPTER_D 0x004c9b9b
@@ -143,8 +139,7 @@ int32_t TWKReadFile(char * pszTWKFile, int32_t bIsOnMessageRead) {
 	__asm        test   eax, eax;
 	__asm        jne    _Tc6;
 // LINE 86:
-	__asm        mov    eax, 0xFFFFFF9A;
-	__asm        jmp    _T18e;
+	return 0xffffff9a;
 // LINE 88:
 _Tc6:
 	__asm        mov    nCt, 0;
@@ -206,10 +201,8 @@ _T178:
 	__asm        add    esp, 4;
 // LINE 104:
 _T184:
-	__asm        mov    eax, g_nNextTWKErrorSlot;
-	__asm        jmp    _T18e;
+	return g_nNextTWKErrorSlot;
 // LINE 105:
-_T18e:
 }
 
 // FUNCTION: COPTER_D 0x004c9d2e
@@ -475,16 +468,13 @@ _T1ef:
 // LINE 246:
 	g_nNextTWKErrorSlot++;
 // LINE 249:
-_T205:
 }
 
 // FUNCTION: COPTER_D 0x004ca059
 int32_t TWKDOSRead(char * pszTWKFile) {
 // LINE 265:
-	__asm        mov    eax, g_nNextTWKErrorSlot;
-	__asm        jmp    _T10;
+	return g_nNextTWKErrorSlot;
 // LINE 352:
-_T10:
 }
 
 // FUNCTION: COPTER_D 0x004ca06e

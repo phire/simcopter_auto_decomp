@@ -137,10 +137,8 @@ _T53:
 // FUNCTION: COPTER_D 0x00432538
 int  CGameApp::CanWeSwitchToFullScreenMode() {
 // LINE 41:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T16;
+	return 0x1;
 // LINE 45:
-_T16:
 }
 
 // FUNCTION: COPTER_D 0x00432553
@@ -152,16 +150,14 @@ int  CGameApp::SwitchToWindowedMode() {
 	__asm        cmp    dword ptr [eax+0x2C], 0;
 	__asm        je     _T20;
 // LINE 59:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T173;
+	return 0x0;
 // LINE 60:
 _T20:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x30], 1;
 	__asm        jne    _T37;
 // LINE 61:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T173;
+	return 0x1;
 // LINE 62:
 _T37:
 	__asm        mov    eax, this;
@@ -171,8 +167,7 @@ _T37:
 	__asm        test   eax, eax;
 	__asm        jne    _T51;
 // LINE 63:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T173;
+	return 0x0;
 // LINE 67:
 _T51:
 	this-><CGameApp+0x2c:4> = 0x1;
@@ -233,8 +228,7 @@ _Te4:
 	__asm        lea    ecx, [ebp-8];
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 84:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T173;
+	return 0x0;
 // LINE 87:
 _Tf8:
 	__asm        mov    eax, this;
@@ -281,10 +275,8 @@ _Tf8:
 // LINE 98:
 	this-><CGameApp+0x2c:4> = 0x0;
 // LINE 99:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T173;
+	return 0x1;
 // LINE 100:
-_T173:
 }
 
 // FUNCTION: COPTER_D 0x004326cb
@@ -296,16 +288,14 @@ int  CGameApp::SwitchToFullScreenMode() {
 	__asm        cmp    dword ptr [eax+0x2C], 0;
 	__asm        je     _T20;
 // LINE 114:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T173;
+	return 0x0;
 // LINE 115:
 _T20:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x30], 0;
 	__asm        jne    _T37;
 // LINE 116:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T173;
+	return 0x1;
 // LINE 117:
 _T37:
 	__asm        mov    eax, this;
@@ -315,8 +305,7 @@ _T37:
 	__asm        test   eax, eax;
 	__asm        jne    _T51;
 // LINE 118:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T173;
+	return 0x0;
 // LINE 122:
 _T51:
 	this-><CGameApp+0x2c:4> = 0x1;
@@ -377,8 +366,7 @@ _Te4:
 	__asm        lea    ecx, [ebp-8];
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 140:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T173;
+	return 0x0;
 // LINE 143:
 _Tf8:
 	__asm        mov    eax, this;
@@ -425,10 +413,8 @@ _Tf8:
 // LINE 154:
 	this-><CGameApp+0x2c:4> = 0x0;
 // LINE 155:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T173;
+	return 0x1;
 // LINE 156:
-_T173:
 }
 
 // FUNCTION: COPTER_D 0x00432843
@@ -443,10 +429,8 @@ int  CGameApp::ConvertMonitorToWindowedMode() {
 	__asm        call   dword ptr [eax+0x4C];
 	__asm        mov    hResult, eax;
 // LINE 171:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T29;
+	return 0x1;
 // LINE 172:
-_T29:
 }
 
 // FUNCTION: COPTER_D 0x00432871
@@ -470,10 +454,8 @@ int  CGameApp::ConvertMonitorToFullScreenMode() {
 	__asm        call   dword ptr [eax+0x54];
 	__asm        mov    hResult, eax;
 // LINE 187:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T47;
+	return 0x1;
 // LINE 188:
-_T47:
 }
 
 // FUNCTION: COPTER_D 0x004328bd
@@ -660,10 +642,8 @@ _T1c2:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::CreateDebugBuffer;
 // LINE 238:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1e9;
+	return 0x1;
 // LINE 239:
-_T1e9:
 }
 
 // FUNCTION: COPTER_D 0x00432aee
@@ -736,10 +716,8 @@ _Tc5:
 	this-><CGameApp+0x34:4> = 0x0;
 // LINE 259:
 _Tcf:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Td9;
+	return 0x1;
 // LINE 260:
-_Td9:
 }
 
 // FUNCTION: COPTER_D 0x00432bcc
@@ -840,10 +818,8 @@ _T102:
 	__asm        jmp    _T4a;
 // LINE 300:
 _T107:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T111;
+	return 0x1;
 // LINE 301:
-_T111:
 }
 
 // FUNCTION: COPTER_D 0x00432ce2
@@ -962,10 +938,8 @@ _T141:
 	__asm        jmp    _T89;
 // LINE 343:
 _T146:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T150;
+	return 0x1;
 // LINE 344:
-_T150:
 }
 
 // FUNCTION: COPTER_D 0x00432e37

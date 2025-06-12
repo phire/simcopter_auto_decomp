@@ -522,7 +522,6 @@ static void $E62() {
 	__asm        call   DigitalSound::~DigitalSound;
 _T2d:
 	return;
-_T32:
 }
 
 // STATIC INITIALIZER:
@@ -573,7 +572,6 @@ static void $E68() {
 	__asm        call   DigitalSound::~DigitalSound;
 _T2d:
 	return;
-_T32:
 }
 
 // STATIC INITIALIZER:
@@ -624,7 +622,6 @@ static void $E73() {
 	__asm        call   DigitalSound::~DigitalSound;
 _T2d:
 	return;
-_T32:
 }
 
 // STATIC INITIALIZER:
@@ -675,7 +672,6 @@ static void $E78() {
 	__asm        call   DigitalSound::~DigitalSound;
 _T2d:
 	return;
-_T32:
 }
 
 // FUNCTION: COPTER_D 0x00471800
@@ -696,7 +692,7 @@ _T34:
 	SoundButtonWindow::lButtonSoundReferenceCount++;
 // LINE 33:
 	return;
-_T3f:
+
 	__asm        mov    eax, this;
 }
 
@@ -730,7 +726,7 @@ _T4c:
 	SoundButtonWindow::lButtonSoundReferenceCount++;
 // LINE 48:
 	return;
-_T57:
+
 	__asm        mov    eax, this;
 }
 
@@ -750,7 +746,7 @@ _T2b:
 	__asm        jmp    _T30;
 _T30:
 	return;
-_T35:
+
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
 }
@@ -783,7 +779,6 @@ _T43:
 	__asm        call   ButtonWindow::SetState;
 // LINE 71:
 	return;
-_T54:
 }
 
 // FUNCTION: COPTER_D 0x00471945
@@ -818,7 +813,7 @@ _T50:
 	SoundRadioButtonWindow::lRadioSoundReferenceCount++;
 // LINE 86:
 	return;
-_T5b:
+
 	__asm        mov    eax, this;
 }
 
@@ -836,7 +831,7 @@ void SoundRadioButtonWindow::~SoundRadioButtonWindow() {
 // LINE 95:
 _T2b:
 	return;
-_T30:
+
 	__asm        mov    ecx, this;
 	__asm        call   RadioButtonWindow::~RadioButtonWindow;
 }
@@ -870,7 +865,6 @@ _T46:
 	__asm        call   RadioButtonWindow::SetState;
 // LINE 107:
 	return;
-_T57:
 }
 
 // FUNCTION: COPTER_D 0x00471a45
@@ -891,7 +885,7 @@ _T34:
 	SoundCheckBoxWindow::lCheckBoxSoundReferenceCount++;
 // LINE 116:
 	return;
-_T3f:
+
 	__asm        mov    eax, this;
 }
 
@@ -925,7 +919,7 @@ _T4c:
 	SoundCheckBoxWindow::lCheckBoxSoundReferenceCount++;
 // LINE 130:
 	return;
-_T57:
+
 	__asm        mov    eax, this;
 }
 
@@ -947,7 +941,7 @@ _T30:
 	__asm        jmp    _T35;
 _T35:
 	return;
-_T3a:
+
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
 }
@@ -977,7 +971,6 @@ _T39:
 	__asm        call   CheckBoxWindow::SetState;
 // LINE 151:
 	return;
-_T4a:
 }
 
 // FUNCTION: COPTER_D 0x00471b85
@@ -998,7 +991,7 @@ _T34:
 	SoundScrollBarWindow::lScrollBarSoundReferenceCount++;
 // LINE 160:
 	return;
-_T3f:
+
 	__asm        mov    eax, this;
 }
 
@@ -1034,7 +1027,7 @@ _T50:
 	SoundScrollBarWindow::lScrollBarSoundReferenceCount++;
 // LINE 174:
 	return;
-_T5b:
+
 	__asm        mov    eax, this;
 }
 
@@ -1056,7 +1049,7 @@ _T30:
 	__asm        jmp    _T35;
 _T35:
 	return;
-_T3a:
+
 	__asm        mov    ecx, this;
 	__asm        call   SliderWindow::~SliderWindow;
 }
@@ -1085,7 +1078,6 @@ _T3f:
 	__asm        call   ScrollBarWindow::MoveLinePrevious;
 // LINE 196:
 	return;
-_T4c:
 }
 
 // FUNCTION: COPTER_D 0x00471cc9
@@ -1112,7 +1104,6 @@ _T3f:
 	__asm        call   ScrollBarWindow::MoveLineNext;
 // LINE 210:
 	return;
-_T4c:
 }
 
 

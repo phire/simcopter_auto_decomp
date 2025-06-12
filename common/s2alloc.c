@@ -82,10 +82,8 @@ _T4c:
 	__asm        mov    [ecx+4], eax;
 // LINE 279:
 _T90:
-	__asm        mov    eax, old;
-	__asm        jmp    _T98;
+	return old;
 // LINE 280:
-_T98:
 }
 
 // FUNCTION: COPTER_D 0x004cb34d
@@ -145,10 +143,8 @@ _T59:
 	G_alloc_max = G_alloc_curr;
 // LINE 253:
 _Ta7:
-	__asm        mov    eax, hdr;
-	__asm        jmp    _Taf;
+	return hdr;
 // LINE 254:
-_Taf:
 }
 
 // FUNCTION: COPTER_D 0x004cb401
@@ -160,8 +156,7 @@ int32_t S2AllocPool(unsigned long poolsize) {
 	__asm        cmp    poolCount, 0x20;
 	__asm        jne    _T20;
 // LINE 296:
-	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _Ta6;
+	return 0xffffffff;
 // LINE 299:
 _T20:
 	__asm        mov    index, 0;
@@ -185,8 +180,7 @@ _T54:
 	__asm        cmp    index, 0x20;
 	__asm        jne    _T68;
 // LINE 306:
-	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _Ta6;
+	return 0xffffffff;
 // LINE 308:
 _T68:
 	__asm        mov    eax, poolsize;
@@ -202,16 +196,13 @@ _T68:
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        jne    _T98;
 // LINE 311:
-	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _Ta6;
+	return 0xffffffff;
 // LINE 313:
 _T98:
 	poolCount++;
 // LINE 314:
-	__asm        mov    eax, index;
-	__asm        jmp    _Ta6;
+	return index;
 // LINE 315:
-_Ta6:
 }
 
 // FUNCTION: COPTER_D 0x004cb4ac
@@ -297,10 +288,8 @@ _Tc3:
 _Te9:
 	G_alloc_used += size;
 // LINE 383:
-	__asm        mov    eax, ptr;
-	__asm        jmp    _Tfa;
+	return ptr;
 // LINE 384:
-_Tfa:
 }
 
 // FUNCTION: COPTER_D 0x004cb5ab
@@ -332,10 +321,8 @@ char * S2AllocMem(int32_t index, char * name, int32_t size) {
 	__asm        add    esp, 8;
 	__asm        mov    ptr, eax;
 // LINE 423:
-	__asm        mov    eax, ptr;
-	__asm        jmp    _T24;
+	return ptr;
 // LINE 424:
-_T24:
 }
 
 // FUNCTION: COPTER_D 0x004cb5f8
@@ -351,10 +338,8 @@ _T24:
 	__asm        mov    ecx, index;
 	__asm        mov    root[0][ecx*4], eax;
 // LINE 442:
-	__asm        mov    eax, old;
-	__asm        jmp    _T2b;
+	return old;
 // LINE 443:
-_T2b:
 }
 
 // FUNCTION: COPTER_D 0x004cb628
@@ -408,7 +393,6 @@ _T5d:
 	__asm        mov    ecx, [ecx+4];
 	__asm        mov    [ecx+8], eax;
 // LINE 474:
-_T96:
 }
 
 // FUNCTION: COPTER_D 0x004cb6c3
@@ -489,7 +473,6 @@ _T9e:
 // LINE 517:
 	__asm        call   _heapchk;
 // LINE 523:
-_Tdd:
 }
 
 // FUNCTION: COPTER_D 0x004cb7a5
@@ -514,8 +497,7 @@ void * __ptr32 DOSAllocAlignedHack() {
 	__asm        cmp    retaddr, 0;
 	__asm        jne    _T2a;
 // LINE 755:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T80;
+	return 0x0;
 // LINE 759:
 _T2a:
 	__asm        test   retaddr, 0xFFFF;
@@ -538,10 +520,8 @@ _T49:
 _T6e:
 	G_alloc_used += 0x10000;
 // LINE 770:
-	__asm        mov    eax, retaddr;
-	__asm        jmp    _T80;
+	return retaddr;
 // LINE 771:
-_T80:
 }
 
 // FUNCTION: COPTER_D 0x004cb83f

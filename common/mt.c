@@ -358,10 +358,8 @@ int32_t MTSideOfPlane(/*packed*/ struct Point3d *V, /*packed*/ struct Point3d *p
 	__asm        add    ebx, plane.D;
 	__asm        mov    s, ebx;
 // LINE 157:
-	__asm        mov    eax, s;
-	__asm        jmp    _T8f;
+	return s;
 // LINE 159:
-_T8f:
 }
 
 // FUNCTION: COPTER_D 0x004ca3f0
@@ -480,14 +478,11 @@ int32_t MTVectorBounds(/*packed*/ struct Point3d *V, int32_t m) {
 	__asm        mov    ecx, V;
 	__asm        mov    [ecx+8], eax;
 // LINE 227:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T91;
+	return 0x1;
 // LINE 230:
 _T8a:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T91;
+	return 0x0;
 // LINE 231:
-_T91:
 }
 
 // FUNCTION: COPTER_D 0x004ca51c
@@ -695,10 +690,8 @@ _T5e:
 	__asm        mov    nv, eax;
 // LINE 337:
 _T66:
-	__asm        mov    eax, nv;
-	__asm        jmp    _T6e;
+	return nv;
 // LINE 338:
-_T6e:
 }
 
 // FUNCTION: COPTER_D 0x004ca721
@@ -1829,10 +1822,8 @@ _T53:
 	__asm        mov    dist, eax;
 // LINE 732:
 _T5e:
-	__asm        mov    eax, dist;
-	__asm        jmp    _T66;
+	return dist;
 // LINE 733:
-_T66:
 }
 
 

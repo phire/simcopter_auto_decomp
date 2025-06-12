@@ -802,8 +802,7 @@ _T600:
 	__asm        cmp    S_msl_fire_delay, 0;
 	__asm        jle    _T2a;
 // LINE 419:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tfa0;
+	return 0x0;
 // LINE 421:
 _T2a:
 	S_msl_fire_delay = 0x3333;
@@ -831,8 +830,7 @@ _T77:
 	__asm        cmp    i, 0xA;
 	__asm        jne    _T88;
 // LINE 432:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tfa0;
+	return 0x0;
 // LINE 435:
 _T88:
 	__asm        push   0;
@@ -874,8 +872,7 @@ _Tf8:
 	__asm        cmp    i, 2;
 	__asm        jne    _T109;
 // LINE 454:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tfa0;
+	return 0x0;
 // LINE 457:
 _T109:
 	__asm        push   0;
@@ -917,8 +914,7 @@ _T179:
 	__asm        cmp    i, 0x50;
 	__asm        jne    _T18a;
 // LINE 476:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tfa0;
+	return 0x0;
 // LINE 481:
 _T18a:
 	__asm        push   5;
@@ -1042,8 +1038,7 @@ _T2e8:
 	__asm        cmp    i, 0x50;
 	__asm        jne    _T2f9;
 // LINE 526:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tfa0;
+	return 0x0;
 // LINE 531:
 _T2f9:
 	__asm        push   0x25;
@@ -1151,8 +1146,7 @@ _T420:
 	__asm        cmp    i, 0x50;
 	__asm        jne    _T431;
 // LINE 567:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tfa0;
+	return 0x0;
 // LINE 569:
 _T431:
 	smoke_size = 0x8;
@@ -1246,8 +1240,7 @@ _T536:
 	__asm        cmp    i, 0x50;
 	__asm        jne    _T547;
 // LINE 600:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tfa0;
+	return 0x0;
 // LINE 602:
 _T547:
 	smoke_size = 0x3;
@@ -1341,8 +1334,7 @@ _T64c:
 	__asm        cmp    i, 0x50;
 	__asm        jne    _T65d;
 // LINE 633:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tfa0;
+	return 0x0;
 // LINE 635:
 _T65d:
 	smoke_size = 0x4;
@@ -1463,8 +1455,7 @@ _T792:
 	__asm        cmp    S_msl_fire_delay, 0;
 	__asm        jle    _T7b0;
 // LINE 676:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tfa0;
+	return 0x0;
 // LINE 678:
 _T7b0:
 	S_msl_fire_delay = 0x3333;
@@ -1492,8 +1483,7 @@ _T7fd:
 	__asm        cmp    i, 0xA;
 	__asm        jne    _T80e;
 // LINE 689:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tfa0;
+	return 0x0;
 // LINE 691:
 _T80e:
 	md->gas_on = 0x0;
@@ -1552,8 +1542,7 @@ _T8c6:
 	__asm        cmp    i, 0x1E;
 	__asm        jne    _T8d7;
 // LINE 714:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tfa0;
+	return 0x0;
 // LINE 716:
 _T8d7:
 	md->flags = 0x10;
@@ -1629,8 +1618,7 @@ _T9ba:
 	__asm        cmp    i, 0x1E;
 	__asm        jne    _T9cb;
 // LINE 747:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tfa0;
+	return 0x0;
 // LINE 749:
 _T9cb:
 	md->flags = 0x400;
@@ -1693,8 +1681,7 @@ _Ta86:
 	__asm        cmp    i, 0xA;
 	__asm        jne    _Ta97;
 // LINE 781:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tfa0;
+	return 0x0;
 // LINE 783:
 _Ta97:
 	md->flags = 0x100;
@@ -1704,8 +1691,7 @@ _Ta97:
 	__asm        jmp    _Tab6;
 // LINE 789:
 _Taaf:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tfa0;
+	return 0x0;
 // LINE 792:
 _Tab6:
 	__asm        mov    eax, celloc;
@@ -2008,8 +1994,7 @@ _Te79:
 	__asm        test   byte ptr [eax+1], 1;
 	__asm        je     _Te94;
 // LINE 877:
-	__asm        mov    eax, md;
-	__asm        jmp    _Tfa0;
+	return md;
 // LINE 881:
 _Te94:
 	__asm        cmp    msl_type, 7;
@@ -2086,10 +2071,8 @@ _Tee5:
 	__asm        call   0x004D8781;
 	__asm        add    esp, 0xC;
 // LINE 902:
-	__asm        mov    eax, md;
-	__asm        jmp    _Tfa0;
+	return md;
 // LINE 904:
-_Tfa0:
 }
 
 // FUNCTION: COPTER_D 0x0051fe8a
@@ -4842,7 +4825,6 @@ _T21ca:
 _T2202:
 	return;
 // LINE 1777:
-_T2207:
 }
 
 // FUNCTION: COPTER_D 0x00522096
@@ -5224,8 +5206,7 @@ _T3d8:
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx], eax;
 // LINE 1975:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Td21;
+	return 0x1;
 // LINE 1981:
 _T41b:
 	__asm        mov    eax, dyobj;
@@ -5711,8 +5692,7 @@ _T96c:
 	__asm        mov    [ecx], eax;
 // LINE 2145:
 _T979:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Td21;
+	return 0x1;
 // LINE 2150:
 _T983:
 	stobj = stobj->next;
@@ -6039,14 +6019,11 @@ _Tcc9:
 	__asm        mov    [ecx], eax;
 // LINE 2235:
 _Td10:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Td21;
+	return 0x1;
 // LINE 2238:
 _Td1a:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Td21;
+	return 0x0;
 // LINE 2239:
-_Td21:
 }
 
 // FUNCTION: COPTER_D 0x00522dbc
@@ -6142,8 +6119,7 @@ _T5f:
 	__asm        jmp    _Tf2;
 // LINE 2289:
 _Te8:
-	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _Tf2;
+	return 0xffffffff;
 // LINE 2290:
 _Tf2:
 }
@@ -6203,8 +6179,7 @@ int32_t S3MissileSphereHit(/*packed*/ struct Point3d *sp, /*packed*/ struct Poin
 	__asm        cmp    eax, [ecx+8];
 	__asm        jg     _T8d;
 // LINE 2527:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T30a;
+	return 0x0;
 // LINE 2533:
 _T8d:
 	__asm        mov    eax, tc;
@@ -6351,8 +6326,7 @@ _T254:
 	__asm        test   ah, 1;
 	__asm        je     _T2a2;
 // LINE 2569:
-	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _T30a;
+	return 0xffffffff;
 // LINE 2578:
 _T2a2:
 	__asm        fld    dotp1;
@@ -6377,8 +6351,7 @@ _T2ca:
 	__asm        test   ah, 1;
 	__asm        je     _T2f7;
 // LINE 2581:
-	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _T30a;
+	return 0xffffffff;
 // LINE 2586:
 _T2f7:
 	__asm        fld    newdist;
@@ -6457,7 +6430,6 @@ _T64:
 _T9e:
 	ptr[0] = reinterpret_cast<uint8_t>(blit->user1);
 // LINE 2653:
-_Ta9:
 }
 
 // FUNCTION: COPTER_D 0x00523270
@@ -6485,17 +6457,14 @@ _T23:
 	__asm        cmp    [eax+0x40], ecx;
 	__asm        jne    _T50;
 // LINE 2670:
-	__asm        mov    eax, md;
-	__asm        jmp    _T5c;
+	return md;
 // LINE 2671:
 _T50:
 	__asm        jmp    _T1c;
 // LINE 2673:
 _T55:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T5c;
+	return 0x0;
 // LINE 2674:
-_T5c:
 }
 
 // FUNCTION: COPTER_D 0x005232d1
@@ -6607,7 +6576,6 @@ _Tbc:
 	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2736:
-_T129:
 }
 
 // FUNCTION: COPTER_D 0x005233ff
@@ -6668,8 +6636,7 @@ int32_t S3MissileMIFFLoad(void * __ptr32 miffReader) {
 	__asm        cmp    ret, 0;
 	__asm        jne    _T36;
 // LINE 2787:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T38f;
+	return 0x0;
 // LINE 2789:
 _T36:
 	S_num_active_teargas = 0x0;
@@ -6789,8 +6756,7 @@ _T18b:
 	__asm        cmp    i, 9;
 	__asm        je     _T1c2;
 // LINE 2824:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T38f;
+	return 0x0;
 // LINE 2825:
 _T1c2:
 	__asm        jmp    _T4b;
@@ -6809,8 +6775,7 @@ _T1c7:
 	__asm        cmp    ret, 0;
 	__asm        jne    _T1f4;
 // LINE 2833:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T38f;
+	return 0x0;
 // LINE 2836:
 _T1f4:
 	S_num_active_debris = 0x0;
@@ -6930,17 +6895,14 @@ _T349:
 	__asm        cmp    i, 0x1D;
 	__asm        je     _T380;
 // LINE 2870:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T38f;
+	return 0x0;
 // LINE 2871:
 _T380:
 	__asm        jmp    _T209;
 // LINE 2872:
 _T385:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T38f;
+	return 0x1;
 // LINE 2873:
-_T38f:
 }
 
 // FUNCTION: COPTER_D 0x005237ee
@@ -6988,8 +6950,7 @@ _T18:
 	__asm        cmp    ret, 0;
 	__asm        jne    _T88;
 // LINE 2892:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T11b;
+	return 0x0;
 // LINE 2894:
 _T88:
 	__asm        jmp    _T15;
@@ -7034,17 +6995,14 @@ _T9c:
 	__asm        cmp    ret, 0;
 	__asm        jne    _T10c;
 // LINE 2908:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T11b;
+	return 0x0;
 // LINE 2910:
 _T10c:
 	__asm        jmp    _T99;
 // LINE 2912:
 _T111:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T11b;
+	return 0x1;
 // LINE 2913:
-_T11b:
 }
 
 

@@ -294,7 +294,7 @@ _Tf8:
 // LINE 38:
 _T114:
 	return;
-_T119:
+
 	__asm        mov    eax, this;
 }
 
@@ -353,7 +353,6 @@ _Tb3:
 // LINE 52:
 _Tb8:
 	return;
-_Tbd:
 }
 
 // FUNCTION: COPTER_D 0x004271a3
@@ -452,10 +451,8 @@ _T51:
 	Window = 0x0;
 // LINE 108:
 _T58:
-	__asm        mov    eax, Window;
-	__asm        jmp    _T60;
+	return Window;
 // LINE 109:
-_T60:
 }
 
 // FUNCTION: COPTER_D 0x004272be
@@ -517,10 +514,8 @@ _T95:
 // LINE 132:
 // Block end:
 _T9b:
-	__asm        mov    eax, pBitmap;
-	__asm        jmp    _Ta3;
+	return pBitmap;
 // LINE 133:
-_Ta3:
 }
 
 // FUNCTION: COPTER_D 0x00427368
@@ -646,37 +641,29 @@ _T143:
 // LINE 165:
 // Block end:
 _T149:
-	__asm        mov    eax, pBitmap;
-	__asm        jmp    _T151;
+	return pBitmap;
 // LINE 166:
-_T151:
 }
 
 // FUNCTION: COPTER_D 0x004274c0
 unsigned long CSparkalApp::PrepareGame() {
 // LINE 175:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
+	return 0x0;
 // LINE 176:
-_T13:
 }
 
 // FUNCTION: COPTER_D 0x004274d8
 unsigned long CSparkalApp::TickGame() {
 // LINE 180:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
+	return 0x0;
 // LINE 181:
-_T13:
 }
 
 // FUNCTION: COPTER_D 0x004274f0
 unsigned long CSparkalApp::FinishGame() {
 // LINE 185:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
+	return 0x0;
 // LINE 186:
-_T13:
 }
 
 

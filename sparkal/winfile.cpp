@@ -727,7 +727,6 @@ _T557:
 // LINE 49:
 _T55f:
 	return;
-_T564:
 }
 
 // FUNCTION: COPTER_D 0x00490439
@@ -1181,14 +1180,11 @@ unsigned long GetLoadFilePath(char * pFilePath, char * pLoadTitle, char * pFilte
 	__asm        test   eax, eax;
 	__asm        jne    _Tad;
 // LINE 109:
-	__asm        mov    eax, 0x80000000;
-	__asm        jmp    _Tb4;
+	return 0x80000000;
 // LINE 110:
 _Tad:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tb4;
+	return 0x0;
 // LINE 111:
-_Tb4:
 }
 
 // FUNCTION: COPTER_D 0x004909e3
@@ -1642,13 +1638,10 @@ unsigned long GetSaveFilePath(char * pFilePath, char * pSaveTitle, char * pFilte
 	__asm        test   eax, eax;
 	__asm        jne    _Tad;
 // LINE 166:
-	__asm        mov    eax, 0x80000000;
-	__asm        jmp    _Tb4;
+	return 0x80000000;
 // LINE 167:
 _Tad:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tb4;
+	return 0x0;
 // LINE 168:
-_Tb4:
 }
 

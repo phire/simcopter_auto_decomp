@@ -283,7 +283,7 @@ void Behavior::Behavior(/*unpacked*/ class Language *lang, /*unpacked*/ class NR
 	__asm        mov    [ecx+0x10], eax;
 // LINE 30:
 	return;
-_T94:
+
 	__asm        mov    eax, this;
 }
 
@@ -293,7 +293,6 @@ void Behavior::~Behavior() {
 	this-><vftable> = 0x5936d8;
 // LINE 34:
 	return;
-_T1a:
 }
 
 // FUNCTION: COPTER_D 0x0056034d
@@ -364,7 +363,6 @@ _T24:
 // LINE 54:
 _T7b:
 	return;
-_T80:
 }
 
 // FUNCTION: COPTER_D 0x0056040a
@@ -517,7 +515,6 @@ _T19b:
 void Behavior::GetNodeText(/*unpacked*/ struct Behavior::Node *node, unsigned char * str) {
 // LINE 128:
 	return;
-_T11:
 }
 
 // FUNCTION: COPTER_D 0x005605c4
@@ -551,7 +548,6 @@ _T36:
 	__asm        call   Behavior::GetNodeText;
 // LINE 136:
 	return;
-_T4b:
 }
 
 // FUNCTION: COPTER_D 0x00560616
@@ -646,7 +642,6 @@ _Tb5:
 // LINE 174:
 // Block end:
 	return;
-_Teb:
 }
 
 // FUNCTION: COPTER_D 0x0056072f
@@ -897,7 +892,6 @@ _T7a:
 	__asm        add    esp, 0xC;
 // LINE 260:
 	return;
-_Ta0:
 }
 
 

@@ -1061,7 +1061,6 @@ _Tde1:
 // LINE 274:
 _Tde6:
 	return;
-_Tdeb:
 }
 
 // FUNCTION: COPTER_D 0x00539260
@@ -1113,8 +1112,7 @@ _T7a:
 	__asm        test   al, 1;
 	__asm        je     _T9e;
 
-	__asm        xor    eax, eax;
-	__asm        jmp    _T3e5;
+	return 0x0;
 // LINE 426:
 _T9e:
 	__asm        mov    eax, y;
@@ -1122,8 +1120,7 @@ _T9e:
 	__asm        test   al, 1;
 	__asm        je     _Tb1;
 
-	__asm        xor    eax, eax;
-	__asm        jmp    _T3e5;
+	return 0x0;
 // LINE 430:
 _Tb1:
 	__asm        jmp    _T3de;
@@ -1138,8 +1135,7 @@ _Tb6:
 	__asm        cmp    eax, 0x2B;
 	__asm        jg     _Te7;
 // LINE 432:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T3e5;
+	return 0x1;
 // LINE 436:
 	__asm        jmp    _T3de;
 _Te7:
@@ -1203,8 +1199,7 @@ _T181:
 	__asm        jne    _T1b1;
 // LINE 442:
 _T1a7:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T3e5;
+	return 0x1;
 // LINE 445:
 _T1b1:
 	__asm        cmp    x, 0x7C;
@@ -1257,8 +1252,7 @@ _T232:
 	__asm        jne    _T262;
 // LINE 449:
 _T258:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T3e5;
+	return 0x1;
 // LINE 452:
 _T262:
 	__asm        jmp    _T3de;
@@ -1323,8 +1317,7 @@ _T303:
 	__asm        jne    _T32f;
 // LINE 458:
 _T325:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T3e5;
+	return 0x1;
 // LINE 461:
 _T32f:
 	__asm        cmp    y, 0x7C;
@@ -1377,14 +1370,11 @@ _T3b2:
 	__asm        jne    _T3de;
 // LINE 465:
 _T3d4:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T3e5;
+	return 0x1;
 // LINE 469:
 _T3de:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T3e5;
+	return 0x0;
 // LINE 470:
-_T3e5:
 }
 
 // FUNCTION: COPTER_D 0x0053964a
@@ -1703,8 +1693,7 @@ _T391:
 	__asm        test   reinterpret_cast<uint8_t>(TestDir), 1;
 	__asm        je     _T3a5;
 
-	__asm        mov    eax, 1;
-	__asm        jmp    _T5a4;
+	return 0x1;
 _T3a5:
 	__asm        jmp    _T43c;
 // LINE 541:

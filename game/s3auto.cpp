@@ -734,17 +734,14 @@ _T86:
 // LINE 93:
 	lastSpeederID = i;
 // LINE 94:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Te4;
+	return 0x1;
 // LINE 96:
 _Td8:
 	__asm        jmp    _T15;
 // LINE 98:
 _Tdd:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Te4;
+	return 0x0;
 // LINE 99:
-_Te4:
 }
 
 // FUNCTION: COPTER_D 0x005016c9
@@ -890,8 +887,7 @@ _Taa:
 	__asm        cmp    minDist, 0x7D00;
 	__asm        jne    _Tc3;
 // LINE 169:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T316;
+	return 0x0;
 // LINE 170:
 	__asm        jmp    _Td5;
 // LINE 171:
@@ -1119,8 +1115,7 @@ int32_t AutomobileClass::AutoMessage(short messID) {
 	__asm        test   byte ptr [eax+8], 2;
 	__asm        jne    _T20;
 
-	__asm        xor    eax, eax;
-	__asm        jmp    _T45;
+	return 0x0;
 // LINE 254:
 _T20:
 	__asm        movsx  eax, messID;
@@ -1134,19 +1129,15 @@ _T36:
 	__asm        jmp    _T3b;
 // LINE 261:
 _T3b:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T45;
+	return 0x1;
 // LINE 262:
-_T45:
 }
 
 // FUNCTION: COPTER_D 0x00501af9
 int32_t GetTheCurrentNumberOfAutomobiles() {
 // LINE 269:
-	__asm        mov    eax, curAutos;
-	__asm        jmp    _T10;
+	return curAutos;
 // LINE 270:
-_T10:
 }
 
 // FUNCTION: COPTER_D 0x00501b0e
@@ -1157,14 +1148,11 @@ int32_t SetTheCurrentNumberOfAutomobiles(int32_t num) {
 // LINE 277:
 	curAutos = num;
 // LINE 278:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T29;
+	return 0x1;
 // LINE 281:
 _T22:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T29;
+	return 0x0;
 // LINE 282:
-_T29:
 }
 
 // FUNCTION: COPTER_D 0x00501b3c
@@ -1307,7 +1295,7 @@ _T189:
 	__asm        and    dword ptr [eax+8], 0xFFFFFF8F;
 // LINE 402:
 	return;
-_T195:
+
 	__asm        mov    eax, this;
 }
 
@@ -1335,7 +1323,6 @@ _T3e:
 	__asm        and    dword ptr [eax+8], 0xFFFFFFFE;
 // LINE 431:
 	return;
-_T4a:
 }
 
 // FUNCTION: COPTER_D 0x00501d58
@@ -1400,8 +1387,7 @@ _T3a:
 	__asm        test   eax, eax;
 	__asm        je     _T65;
 // LINE 488:
-	__asm        mov    eax, youveWonABrandNewCar;
-	__asm        jmp    _Tb4;
+	return youveWonABrandNewCar;
 // LINE 490:
 	__asm        jmp    _Tad;
 // LINE 493:
@@ -1431,10 +1417,8 @@ _T8c:
 	__asm        jmp    _Tad;
 // LINE 500:
 _Tad:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tb4;
+	return 0x0;
 // LINE 501:
-_Tb4:
 }
 
 // FUNCTION: COPTER_D 0x00501e71
@@ -1458,7 +1442,6 @@ _T18:
 // LINE 547:
 _T36:
 	return;
-_T3b:
 }
 
 // FUNCTION: COPTER_D 0x00501eb1
@@ -1482,7 +1465,6 @@ _T18:
 // LINE 578:
 _T36:
 	return;
-_T3b:
 }
 
 // FUNCTION: COPTER_D 0x00501ef1
@@ -1692,7 +1674,6 @@ _T25e:
 // LINE 685:
 _T281:
 	return;
-_T286:
 }
 
 // FUNCTION: COPTER_D 0x0050217c
@@ -1802,8 +1783,7 @@ _T6c:
 	__asm        test   eax, eax;
 	__asm        je     _T11c;
 // LINE 767:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T12d;
+	return 0x1;
 // LINE 768:
 _T11c:
 	__asm        jmp    _T65;
@@ -1812,10 +1792,8 @@ _T121:
 	__asm        jmp    _T46;
 // LINE 771:
 _T126:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T12d;
+	return 0x0;
 // LINE 772:
-_T12d:
 }
 
 // FUNCTION: COPTER_D 0x005022b0
@@ -2455,7 +2433,6 @@ _T7c0:
 	this->currDist += itterationDist;
 // LINE 1044:
 	return;
-_T7e6:
 }
 
 // FUNCTION: COPTER_D 0x00502a9b
@@ -2532,7 +2509,6 @@ _Tc8:
 // Block end:
 _Tcd:
 	return;
-_Td2:
 }
 
 // FUNCTION: COPTER_D 0x00502b74
@@ -2633,7 +2609,6 @@ _Tf9:
 // Block end:
 _T112:
 	return;
-_T117:
 }
 
 // FUNCTION: COPTER_D 0x00502c92
@@ -2852,10 +2827,8 @@ _T23d:
 //   _T1b4
 // LINE 1193:
 _T270:
-	__asm        mov    eax, turn;
-	__asm        jmp    _T278;
+	return turn;
 // LINE 1194:
-_T278:
 }
 
 // FUNCTION: COPTER_D 0x00502f11
@@ -3008,7 +2981,6 @@ _T150:
 	__asm        call   dword ptr [eax+0x20];
 // LINE 1262:
 	return;
-_T194:
 }
 
 // FUNCTION: COPTER_D 0x005030aa
@@ -4049,7 +4021,6 @@ _T5f:
 // LINE 1674:
 _T66:
 	return;
-_T6b:
 }
 
 // FUNCTION: COPTER_D 0x00503ede
@@ -4127,7 +4098,6 @@ _Td3:
 	__asm        add    esp, 0xC;
 // LINE 1725:
 	return;
-_Teb:
 }
 
 // FUNCTION: COPTER_D 0x00503fd0
@@ -4194,7 +4164,6 @@ _T67:
 	__asm        add    esp, 0xC;
 // LINE 1764:
 	return;
-_Tc3:
 }
 
 // FUNCTION: COPTER_D 0x0050409a
@@ -4228,7 +4197,6 @@ _T45:
 // LINE 1777:
 _T72:
 	return;
-_T77:
 }
 
 // FUNCTION: COPTER_D 0x00504116
@@ -4240,7 +4208,6 @@ void AutomobileClass::Reset() {
 	this->flags = 0x1;
 // LINE 1794:
 	return;
-_T23:
 }
 
 // FUNCTION: COPTER_D 0x0050413e
@@ -4255,14 +4222,11 @@ int32_t AutomobileClass::AmIABadGuy() {
 	__asm        je     _T33;
 // LINE 1800:
 _T29:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T3a;
+	return 0x1;
 // LINE 1802:
 _T33:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T3a;
+	return 0x0;
 // LINE 1803:
-_T3a:
 }
 
 // FUNCTION: COPTER_D 0x0050417d
@@ -4410,7 +4374,6 @@ _T197:
 	__asm        jmp    _T1b0;
 _T1b0:
 	return;
-_T1b5:
 }
 
 // FUNCTION: COPTER_D 0x00504337
@@ -4592,10 +4555,8 @@ _T1f8:
 	__asm        mov    eax, this;
 	__asm        or     dword ptr [eax+8], 1;
 // LINE 1952:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T216;
+	return 0x1;
 // LINE 1953:
-_T216:
 }
 
 // FUNCTION: COPTER_D 0x00504554
@@ -4625,7 +4586,6 @@ void ItterateAllAutomobiles() {
 	__asm        call   AutomobileClass::ItterateAll;
 // LINE 2025:
 	return;
-_T10:
 }
 
 // FUNCTION: COPTER_D 0x005045a1
@@ -4634,7 +4594,6 @@ void ResetAllAutomobiles() {
 	__asm        call   AutomobileClass::ResetAll;
 // LINE 2047:
 	return;
-_T10:
 }
 
 // FUNCTION: COPTER_D 0x005045b6
@@ -4719,24 +4678,21 @@ _Te1:
 	__asm        je     _Tf2;
 // LINE 2100:
 _Teb:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T312;
+	return 0x0;
 // LINE 2103:
 _Tf2:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 0x80;
 	__asm        je     _T106;
 // LINE 2104:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T312;
+	return 0x0;
 // LINE 2107:
 _T106:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x9E], 0;
 	__asm        jle    _T11d;
 // LINE 2108:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T312;
+	return 0x0;
 // LINE 2112:
 _T11d:
 	__asm        mov    eax, this;
@@ -4831,8 +4787,7 @@ _T223:
 	__asm        je     _T234;
 // LINE 2117:
 _T22d:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T312;
+	return 0x0;
 // LINE 2119:
 _T234:
 	__asm        mov    eax, this;
@@ -4898,8 +4853,7 @@ _T2c7:
 	__asm        test   byte ptr [eax+8], 0xF0;
 	__asm        je     _T2fb;
 // LINE 2140:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T312;
+	return 0x0;
 // LINE 2143:
 // Block end:
 _T2fb:
@@ -4908,10 +4862,8 @@ _T2fb:
 	__asm        jmp    _T2a1;
 // LINE 2146:
 _T308:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T312;
+	return 0x1;
 // LINE 2147:
-_T312:
 }
 
 // FUNCTION: COPTER_D 0x005048cd
@@ -4997,7 +4949,6 @@ _Tcd:
 // LINE 2173:
 _T125:
 	return;
-_T12a:
 }
 
 // FUNCTION: COPTER_D 0x005049fe
@@ -5072,8 +5023,7 @@ _T9f:
 	__asm        test   byte ptr [eax+8], 0x20;
 	__asm        jne    _Tf0;
 // LINE 2196:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T107;
+	return 0x0;
 // LINE 2199:
 _Tf0:
 	currentObject = currentObject->next;
@@ -5081,10 +5031,8 @@ _Tf0:
 	__asm        jmp    _T79;
 // LINE 2202:
 _Tfd:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T107;
+	return 0x1;
 // LINE 2203:
-_T107:
 }
 
 // FUNCTION: COPTER_D 0x00504b0a
@@ -5104,7 +5052,6 @@ void AutomobileClass::PullOut() {
 // LINE 2215:
 _T34:
 	return;
-_T39:
 }
 
 // FUNCTION: COPTER_D 0x00504b48
@@ -5508,7 +5455,6 @@ _T4da:
 	__asm        call   dword ptr [eax+8];
 // LINE 2345:
 	return;
-_T4f2:
 }
 
 // FUNCTION: COPTER_D 0x0050503f
@@ -5658,7 +5604,6 @@ _T1c7:
 // LINE 2404:
 _T1eb:
 	return;
-_T1f0:
 }
 
 // FUNCTION: COPTER_D 0x00505234
@@ -6048,7 +5993,6 @@ _T4b6:
 	__asm        rep movsd;
 // LINE 2507:
 	return;
-_T4cb:
 }
 
 // FUNCTION: COPTER_D 0x00505706
@@ -6127,16 +6071,13 @@ _Tf5:
 	__asm        mov    [ecx+0xEA], eax;
 // LINE 2545:
 	return;
-_T115:
 }
 
 // FUNCTION: COPTER_D 0x00505820
 int32_t AutomobileClass::CanIDoAUTurn() {
 // LINE 2552:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T16;
+	return 0x1;
 // LINE 2553:
-_T16:
 }
 
 // FUNCTION: COPTER_D 0x0050583b
@@ -6238,7 +6179,6 @@ _T101:
 	this->autoDynomitor.loc.z += pulloverVector.z;
 // LINE 2594:
 	return;
-_T14a:
 }
 
 // FUNCTION: COPTER_D 0x0050598c
@@ -6268,8 +6208,7 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 	__asm        test   cl, 0x1F;
 	__asm        je     _T3c;
 // LINE 2626:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T914;
+	return 0x0;
 // LINE 2629:
 _T3c:
 	__asm        mov    eax, this;
@@ -6652,12 +6591,10 @@ _T487:
 	__asm        test   byte ptr [eax+8], 0x20;
 	__asm        jne    _T4ab;
 // LINE 2725:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T914;
+	return 0x1;
 // LINE 2728:
 _T4ab:
-	__asm        mov    eax, 4;
-	__asm        jmp    _T914;
+	return 0x4;
 // LINE 2730:
 	__asm        jmp    _T51f;
 _T4ba:
@@ -6666,8 +6603,7 @@ _T4ba:
 	__asm        test   al, 8;
 	__asm        je     _T4d8;
 // LINE 2732:
-	__asm        mov    eax, 3;
-	__asm        jmp    _T914;
+	return 0x3;
 // LINE 2734:
 	__asm        jmp    _T51f;
 _T4d8:
@@ -6676,8 +6612,7 @@ _T4d8:
 	__asm        test   al, 4;
 	__asm        je     _T4f6;
 // LINE 2736:
-	__asm        mov    eax, 7;
-	__asm        jmp    _T914;
+	return 0x7;
 // LINE 2738:
 	__asm        jmp    _T51f;
 _T4f6:
@@ -6686,14 +6621,12 @@ _T4f6:
 	__asm        test   ah, 4;
 	__asm        je     _T515;
 // LINE 2740:
-	__asm        mov    eax, 5;
-	__asm        jmp    _T914;
+	return 0x5;
 // LINE 2742:
 	__asm        jmp    _T51f;
 // LINE 2744:
 _T515:
-	__asm        mov    eax, 6;
-	__asm        jmp    _T914;
+	return 0x6;
 // LINE 2748:
 _T51f:
 	currentObject = currentObject->next;
@@ -6797,8 +6730,7 @@ _T577:
 	__asm        test   eax, eax;
 	__asm        jne    _T654;
 // LINE 2805:
-	__asm        mov    eax, 4;
-	__asm        jmp    _T914;
+	return 0x4;
 // LINE 2808:
 _T654:
 	__asm        jmp    _T6be;
@@ -6808,8 +6740,7 @@ _T659:
 	__asm        test   al, 8;
 	__asm        je     _T677;
 // LINE 2810:
-	__asm        mov    eax, 3;
-	__asm        jmp    _T914;
+	return 0x3;
 // LINE 2812:
 	__asm        jmp    _T6be;
 _T677:
@@ -6818,8 +6749,7 @@ _T677:
 	__asm        test   al, 4;
 	__asm        je     _T695;
 // LINE 2814:
-	__asm        mov    eax, 7;
-	__asm        jmp    _T914;
+	return 0x7;
 // LINE 2816:
 	__asm        jmp    _T6be;
 _T695:
@@ -6828,14 +6758,12 @@ _T695:
 	__asm        test   ah, 4;
 	__asm        je     _T6b4;
 // LINE 2818:
-	__asm        mov    eax, 5;
-	__asm        jmp    _T914;
+	return 0x5;
 // LINE 2820:
 	__asm        jmp    _T6be;
 // LINE 2822:
 _T6b4:
-	__asm        mov    eax, 6;
-	__asm        jmp    _T914;
+	return 0x6;
 // LINE 2827:
 _T6be:
 	currentObject = currentObject->next;
@@ -6857,8 +6785,7 @@ _T6cb:
 	__asm        cmp    eax, ecx;
 	__asm        jne    _T6f6;
 // LINE 2832:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T914;
+	return 0x0;
 // LINE 2837:
 _T6f6:
 	__asm        xor    eax, eax;
@@ -6993,8 +6920,7 @@ _T7b9:
 	__asm        test   eax, eax;
 	__asm        jne    _T896;
 // LINE 2896:
-	__asm        mov    eax, 4;
-	__asm        jmp    _T914;
+	return 0x4;
 // LINE 2899:
 _T896:
 	__asm        jmp    _T900;
@@ -7004,8 +6930,7 @@ _T89b:
 	__asm        test   al, 8;
 	__asm        je     _T8b9;
 // LINE 2901:
-	__asm        mov    eax, 3;
-	__asm        jmp    _T914;
+	return 0x3;
 // LINE 2903:
 	__asm        jmp    _T900;
 _T8b9:
@@ -7014,8 +6939,7 @@ _T8b9:
 	__asm        test   al, 4;
 	__asm        je     _T8d7;
 // LINE 2905:
-	__asm        mov    eax, 7;
-	__asm        jmp    _T914;
+	return 0x7;
 // LINE 2907:
 	__asm        jmp    _T900;
 _T8d7:
@@ -7024,14 +6948,12 @@ _T8d7:
 	__asm        test   ah, 4;
 	__asm        je     _T8f6;
 // LINE 2909:
-	__asm        mov    eax, 5;
-	__asm        jmp    _T914;
+	return 0x5;
 // LINE 2911:
 	__asm        jmp    _T900;
 // LINE 2913:
 _T8f6:
-	__asm        mov    eax, 6;
-	__asm        jmp    _T914;
+	return 0x6;
 // LINE 2918:
 _T900:
 	currentObject = currentObject->next;
@@ -7039,10 +6961,8 @@ _T900:
 	__asm        jmp    _T777;
 // LINE 2923:
 _T90d:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T914;
+	return 0x0;
 // LINE 2924:
-_T914:
 }
 
 // FUNCTION: COPTER_D 0x005062a7
@@ -7085,14 +7005,11 @@ int32_t AutomobileClass::AreCarsHeadOn(/*packed*/ struct Point3d *dirvect) {
 	__asm        cmp    dotp, 0x3333;
 	__asm        jl     _T7b;
 // LINE 2955:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T85;
+	return 0x0;
 // LINE 2958:
 _T7b:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T85;
+	return 0x1;
 // LINE 2959:
-_T85:
 }
 
 // FUNCTION: COPTER_D 0x00506333
@@ -7175,8 +7092,7 @@ _Tab:
 	__asm        cmp    eax, dist;
 	__asm        jge    _Td4;
 // LINE 3008:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tdb;
+	return 0x1;
 // LINE 3010:
 	__asm        jmp    _Tdb;
 // LINE 3012:
@@ -7313,7 +7229,6 @@ _Td9:
 // LINE 3075:
 _T12d:
 	return;
-_T132:
 }
 
 // FUNCTION: COPTER_D 0x0050654c
@@ -7333,7 +7248,6 @@ void AutoHitDispatch(long hitter_type, /*packed*/ struct _DYOBJ_INST *dyhitter, 
 	__asm        call   AutomobileClass::HitDispatch;
 // LINE 3087:
 	return;
-_T2e:
 }
 
 // FUNCTION: COPTER_D 0x0050657f
@@ -7399,8 +7313,7 @@ _T53:
 	__asm        cmp    currentCarIndex, 0x46;
 	__asm        jne    _T64;
 // LINE 3136:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Ta1;
+	return 0x0;
 // LINE 3138:
 _T64:
 	__asm        mov    eax, mission_id;
@@ -7422,10 +7335,8 @@ _T64:
 	__asm        mov    ecx, celloc;
 	__asm        mov    [ecx+4], eax;
 // LINE 3144:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Ta1;
+	return 0x1;
 // LINE 3145:
-_Ta1:
 }
 
 // FUNCTION: COPTER_D 0x00506665
@@ -7463,8 +7374,7 @@ _T53:
 	__asm        cmp    currentCarIndex, 0x46;
 	__asm        jne    _T64;
 // LINE 3169:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Ta1;
+	return 0x0;
 // LINE 3171:
 _T64:
 	__asm        mov    eax, mission_id;
@@ -7486,10 +7396,8 @@ _T64:
 	__asm        mov    ecx, celloc;
 	__asm        mov    [ecx+4], eax;
 // LINE 3177:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Ta1;
+	return 0x1;
 // LINE 3178:
-_Ta1:
 }
 
 // FUNCTION: COPTER_D 0x0050670b
@@ -7591,7 +7499,6 @@ _T4c:
 // LINE 3233:
 _T142:
 	return;
-_T147:
 }
 
 // FUNCTION: COPTER_D 0x00506859
@@ -7674,7 +7581,6 @@ _T4c:
 // LINE 3281:
 _T10c:
 	return;
-_T111:
 }
 
 // FUNCTION: COPTER_D 0x00506971
@@ -7883,7 +7789,6 @@ _T203:
 // LINE 3362:
 _T254:
 	return;
-_T259:
 }
 
 // FUNCTION: COPTER_D 0x00506bcf
@@ -7932,7 +7837,6 @@ _T37:
 // LINE 3397:
 _T88:
 	return;
-_T8d:
 }
 
 // FUNCTION: COPTER_D 0x00506c61
@@ -7944,7 +7848,6 @@ void AutoMissionCancel(long mission_id) {
 	__asm        add    esp, 4;
 // LINE 3410:
 	return;
-_T17:
 }
 
 // FUNCTION: COPTER_D 0x00506c7d
@@ -7972,7 +7875,6 @@ _T21:
 	this->spotlightHitCounter += 0x2;
 // LINE 3449:
 	return;
-_T49:
 }
 
 // FUNCTION: COPTER_D 0x00506ccd
@@ -8016,7 +7918,6 @@ _T72:
 // LINE 3482:
 _T77:
 	return;
-_T7c:
 }
 
 // FUNCTION: COPTER_D 0x00506d4e
@@ -8028,7 +7929,6 @@ void AutoSetAllHeadlights(int32_t lights_on) {
 	__asm        add    esp, 4;
 // LINE 3495:
 	return;
-_T17:
 }
 
 // FUNCTION: COPTER_D 0x00506d6a
@@ -8070,7 +7970,6 @@ _T5b:
 // LINE 3524:
 _T60:
 	return;
-_T65:
 }
 
 // FUNCTION: COPTER_D 0x00506dd4
@@ -8135,7 +8034,6 @@ _T7d:
 // LINE 3556:
 _T91:
 	return;
-_T96:
 }
 
 // FUNCTION: COPTER_D 0x00506e6f
@@ -8202,7 +8100,6 @@ _T81:
 // LINE 3579:
 _T95:
 	return;
-_T9a:
 }
 
 // FUNCTION: COPTER_D 0x00506f0e
@@ -8214,8 +8111,7 @@ int32_t AutomobileClass::IsThisAnEmergencyVehicle() {
 	__asm        jmp    _T29;
 // LINE 3591:
 _T1a:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T5c;
+	return 0x1;
 // LINE 3592:
 	__asm        jmp    _T55;
 _T29:
@@ -8231,10 +8127,8 @@ _T29:
 	__asm        jmp    _T55;
 // LINE 3594:
 _T55:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T5c;
+	return 0x0;
 // LINE 3595:
-_T5c:
 }
 
 // FUNCTION: COPTER_D 0x00506f6f
@@ -8630,7 +8524,6 @@ _T4b2:
 // LINE 3706:
 _T50d:
 	return;
-_T512:
 }
 
 // FUNCTION: COPTER_D 0x00507488
@@ -8839,8 +8732,7 @@ _T24c:
 	__asm        test   reinterpret_cast<uint8_t>(toConnections), 4;
 	__asm        je     _T274;
 // LINE 3767:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2f3;
+	return 0x1;
 // LINE 3771:
 _T274:
 	__asm        test   reinterpret_cast<uint8_t>(direction), 4;
@@ -8852,8 +8744,7 @@ _T274:
 	__asm        test   reinterpret_cast<uint8_t>(toConnections), 1;
 	__asm        je     _T29c;
 // LINE 3773:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2f3;
+	return 0x1;
 // LINE 3777:
 _T29c:
 	__asm        test   reinterpret_cast<uint8_t>(direction), 8;
@@ -8865,8 +8756,7 @@ _T29c:
 	__asm        test   reinterpret_cast<uint8_t>(toConnections), 2;
 	__asm        je     _T2c4;
 // LINE 3779:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2f3;
+	return 0x1;
 // LINE 3783:
 _T2c4:
 	__asm        test   reinterpret_cast<uint8_t>(direction), 2;
@@ -8878,15 +8768,12 @@ _T2c4:
 	__asm        test   reinterpret_cast<uint8_t>(toConnections), 8;
 	__asm        je     _T2ec;
 // LINE 3785:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2f3;
+	return 0x1;
 // LINE 3790:
 // Block end:
 _T2ec:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T2f3;
+	return 0x0;
 // LINE 3791:
-_T2f3:
 }
 
 // FUNCTION: COPTER_D 0x00507782
@@ -9000,7 +8887,6 @@ _T176:
 	this->autoDynomitor.loc.y += 0x1f0000;
 // LINE 3848:
 	return;
-_T185:
 }
 
 // FUNCTION: COPTER_D 0x0050790c
@@ -9699,7 +9585,6 @@ _T7fb:
 	__asm        add    esp, 8;
 // LINE 4011:
 	return;
-_T86f:
 }
 
 // FUNCTION: COPTER_D 0x00508180
@@ -10471,8 +10356,7 @@ _T90b:
 	__asm        jmp    _T917;
 // LINE 4193:
 _T910:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T94d;
+	return 0x0;
 // LINE 4200:
 _T917:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(currentTile);
@@ -10491,10 +10375,8 @@ _T93e:
 	intersection = 0x0;
 // LINE 4216:
 _T945:
-	__asm        mov    eax, intersection;
-	__asm        jmp    _T94d;
+	return intersection;
 // LINE 4217:
-_T94d:
 }
 
 // FUNCTION: COPTER_D 0x00508ad4
@@ -10676,7 +10558,6 @@ _T18e:
 // LINE 4325:
 _T1e3:
 	return;
-_T1e8:
 }
 
 // FUNCTION: COPTER_D 0x00508cc3
@@ -10726,7 +10607,6 @@ _Tb0:
 // LINE 4371:
 _Td1:
 	return;
-_Td6:
 }
 
 // FUNCTION: COPTER_D 0x00508d9e
@@ -10776,7 +10656,6 @@ _Tb0:
 // LINE 4418:
 _Td1:
 	return;
-_Td6:
 }
 
 // FUNCTION: COPTER_D 0x00508e79
@@ -10826,7 +10705,6 @@ _Tb0:
 // LINE 4469:
 _Td1:
 	return;
-_Td6:
 }
 
 // FUNCTION: COPTER_D 0x00508f54
@@ -10888,7 +10766,6 @@ _T45:
 	__asm        add    [ecx+0x2C], eax;
 // LINE 4506:
 	return;
-_Tae:
 }
 
 // FUNCTION: COPTER_D 0x00509007
@@ -10933,8 +10810,7 @@ int32_t AutomobileClass::MIFFLoad(void * __ptr32 miffReader) {
 	__asm        cmp    ret, 0;
 	__asm        jne    _T38;
 // LINE 4551:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tb7;
+	return 0x0;
 // LINE 4553:
 _T38:
 	__asm        mov    i, 0;
@@ -10968,17 +10844,14 @@ _T47:
 	__asm        cmp    i, 0x45;
 	__asm        je     _Ta8;
 // LINE 4564:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tb7;
+	return 0x0;
 // LINE 4565:
 _Ta8:
 	__asm        jmp    _T44;
 // LINE 4566:
 _Tad:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tb7;
+	return 0x1;
 // LINE 4567:
-_Tb7:
 }
 
 // FUNCTION: COPTER_D 0x005090fb
@@ -11015,17 +10888,14 @@ _T18:
 	__asm        cmp    ret, 0;
 	__asm        jne    _T6f;
 // LINE 4590:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T7e;
+	return 0x0;
 // LINE 4591:
 _T6f:
 	__asm        jmp    _T15;
 // LINE 4592:
 _T74:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T7e;
+	return 0x1;
 // LINE 4593:
-_T7e:
 }
 
 // FUNCTION: COPTER_D 0x0050917e
@@ -11149,7 +11019,6 @@ _T2ee:
 // LINE 4655:
 _T2ff:
 	return;
-_T304:
 }
 
 // FUNCTION: COPTER_D 0x00509489
@@ -11381,7 +11250,6 @@ _T400:
 // LINE 4727:
 _T41b:
 	return;
-_T420:
 }
 
 // FUNCTION: COPTER_D 0x005098b0
@@ -11440,7 +11308,6 @@ _T5c:
 // LINE 4759:
 _T91:
 	return;
-_T96:
 }
 
 // FUNCTION: COPTER_D 0x0050994b
@@ -11455,7 +11322,6 @@ void S3AutoSoundDistReset() {
 	AutomobileClass::fireHoseDist = 0x7800000;
 // LINE 4777:
 	return;
-_T33:
 }
 
 // FUNCTION: COPTER_D 0x00509983
@@ -11781,7 +11647,6 @@ _T34d:
 // LINE 4912:
 _T36a:
 	return;
-_T36f:
 }
 
 // FUNCTION: COPTER_D 0x00509cf7
@@ -11994,7 +11859,6 @@ _T29d:
 // LINE 4988:
 _T2b1:
 	return;
-_T2b6:
 }
 
 

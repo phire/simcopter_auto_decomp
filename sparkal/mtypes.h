@@ -5,7 +5,7 @@ void MPoint::MPoint() {
 	__asm        jmp    _T11;
 _T11:
 	return;
-_T16:
+
 	__asm        mov    eax, this;
 }
 
@@ -42,7 +42,6 @@ _T39:
 // LINE 602:
 _T69:
 	return;
-_T6e:
 }
 
 // Function in module: Inputwin.obj
@@ -52,7 +51,7 @@ void MRect::MRect() {
 	__asm        jmp    _T11;
 _T11:
 	return;
-_T16:
+
 	__asm        mov    eax, this;
 }
 

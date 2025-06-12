@@ -386,7 +386,6 @@ static void $E63() {
 	__asm        jmp    _T20;
 _T20:
 	return;
-_T25:
 }
 
 // STATIC INITIALIZER:
@@ -408,7 +407,6 @@ static void $E66() {
 	__asm        jmp    _T20;
 _T20:
 	return;
-_T25:
 }
 
 // FUNCTION: COPTER_D 0x0047defe
@@ -541,7 +539,7 @@ _T212:
 	this->lCurrentCitySelection = 0xffffffff;
 // LINE 87:
 	return;
-_T221:
+
 	__asm        mov    eax, this;
 }
 
@@ -576,7 +574,7 @@ _T46:
 	__asm        jmp    _T46;
 _T63:
 	return;
-_T68:
+
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
 }
@@ -2179,7 +2177,6 @@ _T63:
 	__asm        call   GraphicWindow::DestroyImage;
 // LINE 225:
 	return;
-_T70:
 }
 
 // FUNCTION: COPTER_D 0x0047f7cf
@@ -2257,10 +2254,8 @@ _T37:
 	__asm        jmp    _T18;
 // LINE 247:
 _Tcf:
-	__asm        mov    eax, nErrorCode;
-	__asm        jmp    _Td7;
+	return nErrorCode;
 // LINE 248:
-_Td7:
 }
 
 // FUNCTION: COPTER_D 0x0047f8ab
@@ -2382,7 +2377,6 @@ _T1bb:
 // LINE 273:
 _T1c0:
 	return;
-_T1c5:
 }
 
 // FUNCTION: COPTER_D 0x0047fa75
@@ -2437,10 +2431,8 @@ _T55:
 	__asm        call   dword ptr [edx];
 // LINE 288:
 _T8e:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T98;
+	return 0x1;
 // LINE 289:
-_T98:
 }
 
 // FUNCTION: COPTER_D 0x0047fb14
@@ -2528,8 +2520,7 @@ _Tba:
 	__asm        call   dword ptr [edx];
 // LINE 305:
 _Tf8:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T12c;
+	return 0x1;
 // LINE 307:
 	__asm        jmp    _T11d;
 // LINE 308:
@@ -2539,17 +2530,14 @@ _T107:
 	__asm        mov    ecx, this;
 	__asm        call   CareerWindow::SetCurrentCitySelection;
 // LINE 309:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T12c;
+	return 0x1;
 // LINE 312:
 _T11d:
 	__asm        jmp    _T18;
 // LINE 313:
 _T122:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T12c;
+	return 0x1;
 // LINE 314:
-_T12c:
 }
 
 // FUNCTION: COPTER_D 0x0047fc47
@@ -2618,17 +2606,14 @@ _Tba:
 	__asm        mov    ecx, this;
 	__asm        call   CareerWindow::SetCurrentCitySelection;
 // LINE 327:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tdf;
+	return 0x1;
 // LINE 329:
 _Td0:
 	__asm        jmp    _T18;
 // LINE 330:
 _Td5:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tdf;
+	return 0x1;
 // LINE 331:
-_Tdf:
 }
 
 // FUNCTION: COPTER_D 0x0047fd2d
@@ -2658,8 +2643,7 @@ _T17:
 	__asm        call   dword ptr [edx];
 // LINE 343:
 _T46:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tbe;
+	return 0x1;
 // LINE 346:
 _T50:
 	__asm        mov    eax, this;
@@ -2685,8 +2669,7 @@ _T50:
 	__asm        call   dword ptr [edx];
 // LINE 348:
 _T8f:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tbe;
+	return 0x1;
 // LINE 349:
 	__asm        jmp    _Tb7;
 _T9e:
@@ -2699,10 +2682,8 @@ _T9e:
 	__asm        jmp    _Tb7;
 // LINE 351:
 _Tb7:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tbe;
+	return 0x0;
 // LINE 352:
-_Tbe:
 }
 
 // FUNCTION: COPTER_D 0x0047fdf2
@@ -2717,8 +2698,7 @@ long CareerWindow::SetCurrentCitySelection(long lNewCitySelection) {
 	__asm        jge    _T2f;
 // LINE 360:
 _T28:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T130;
+	return 0x0;
 // LINE 362:
 _T2f:
 	__asm        mov    eax, this;
@@ -2793,10 +2773,8 @@ _T85:
 	__asm        call   dword ptr [eax+0x30];
 // LINE 370:
 _T126:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T130;
+	return 0x1;
 // LINE 371:
-_T130:
 }
 
 // FUNCTION: COPTER_D 0x0047ff29
@@ -2884,7 +2862,6 @@ _Tee:
 	__asm        jmp    _Tfd;
 _Tfd:
 	return;
-_T102:
 }
 
 // FUNCTION: COPTER_D 0x00480032
@@ -3175,7 +3152,7 @@ _T434:
 // LINE 423:
 _T459:
 	return;
-_T45e:
+
 	__asm        mov    eax, this;
 }
 
@@ -3210,7 +3187,6 @@ _T2a:
 // LINE 431:
 _T4e:
 	return;
-_T53:
 }
 
 // FUNCTION: COPTER_D 0x004804f7
@@ -3309,7 +3285,6 @@ _T104:
 // LINE 450:
 _T109:
 	return;
-_T10e:
 }
 
 

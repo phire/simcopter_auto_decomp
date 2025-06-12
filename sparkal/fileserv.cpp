@@ -777,7 +777,6 @@ _T39f:
 	__asm        jmp    _T3a4;
 _T3a4:
 	return;
-_T3a9:
 }
 
 // STATIC INITIALIZER:
@@ -934,7 +933,6 @@ _T1b7:
 	__asm        jmp    _T1bc;
 _T1bc:
 	return;
-_T1c1:
 }
 
 // FUNCTION: COPTER_D 0x0049172b
@@ -1963,10 +1961,8 @@ _T67e:
 _T696:
 	nReturnValue = 0x1;
 // LINE 123:
-	__asm        mov    eax, nReturnValue;
-	__asm        jmp    _T6a5;
+	return nReturnValue;
 // LINE 127:
-_T6a5:
 }
 
 // FUNCTION: COPTER_D 0x004923c6
@@ -2764,10 +2760,8 @@ _T495:
 // FUNCTION: COPTER_D 0x00492e36
 int32_t FileServices::CopyFileFromRemoteToLocal(char * szPartialPath) {
 // LINE 196:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
+	return 0x0;
 // LINE 197:
-_T13:
 }
 
 // FUNCTION: COPTER_D 0x00492e50
@@ -5622,10 +5616,8 @@ _T459:
 	__asm        jmp    _T45e;
 // LINE 399:
 _T45e:
-	__asm        mov    eax, nReturnValue;
-	__asm        jmp    _T469;
+	return nReturnValue;
 // LINE 400:
-_T469:
 }
 
 

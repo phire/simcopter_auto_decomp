@@ -61,7 +61,6 @@ static void $E1() {
 	__asm        jmp    _T24;
 _T24:
 	return;
-_T29:
 }
 
 // FUNCTION: COPTER_D 0x00490fd3
@@ -163,7 +162,6 @@ _Td3:
 	this->index2 = 0x1f;
 // LINE 49:
 	return;
-_Tf2:
 }
 
 // FUNCTION: COPTER_D 0x004910ea

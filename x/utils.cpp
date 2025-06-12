@@ -63,7 +63,6 @@ void EmptyPStr(unsigned char * str) {
 	str[0] = 0x0;
 // LINE 56:
 	return;
-_T11:
 }
 
 // FUNCTION: COPTER_D 0x00565cb6
@@ -381,7 +380,6 @@ _Te9:
 // LINE 150:
 _T133:
 	return;
-_T138:
 }
 
 // FUNCTION: COPTER_D 0x00565fbd
@@ -590,7 +588,6 @@ _Td4:
 // LINE 208:
 _Tec:
 	return;
-_Tf1:
 }
 
 // FUNCTION: COPTER_D 0x005661b4
@@ -615,7 +612,6 @@ void Long2PStr(unsigned long namelet, unsigned char * name) {
 	name[4] = reinterpret_cast<uint8_t>(namelet);
 // LINE 220:
 	return;
-_T3b:
 }
 
 // FUNCTION: COPTER_D 0x005661f4
@@ -627,8 +623,7 @@ unsigned long PStr2Long(unsigned char * name) {
 	__asm        test   ecx, ecx;
 	__asm        jne    _T24;
 // LINE 225:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T6d;
+	return 0x0;
 // LINE 226:
 	__asm        jmp    _T6d;
 // LINE 227:
@@ -658,8 +653,7 @@ _T50:
 	__asm        call   Swizzle4;
 	__asm        add    esp, 4;
 // LINE 230:
-	__asm        mov    eax, name4;
-	__asm        jmp    _T6d;
+	return name4;
 // LINE 232:
 // Block end:
 _T6d:
@@ -698,7 +692,6 @@ _T29:
 // LINE 263:
 _T51:
 	return;
-_T56:
 }
 
 // FUNCTION: COPTER_D 0x005662c1
@@ -782,7 +775,6 @@ _T0f:
 // LINE 368:
 _T54:
 	return;
-_T59:
 }
 
 // FUNCTION: COPTER_D 0x0056639c
@@ -842,7 +834,6 @@ _T47:
 	__asm        mov    [eax], cl;
 // LINE 452:
 	return;
-_T84:
 }
 
 // FUNCTION: COPTER_D 0x00566425
@@ -873,7 +864,6 @@ void ConcatCPStr(char * src, unsigned char * dest, short destSize) {
 	__asm        add    esp, 0xC;
 // LINE 460:
 	return;
-_T4f:
 }
 
 // FUNCTION: COPTER_D 0x00566479
@@ -898,7 +888,6 @@ void ConcatNum(long number, unsigned char * str, short destSize) {
 	__asm        add    esp, 0xC;
 // LINE 469:
 	return;
-_T3b:
 }
 
 // FUNCTION: COPTER_D 0x005664b9
@@ -1000,7 +989,6 @@ _Tda:
 // LINE 523:
 _Tf4:
 	return;
-_Tf9:
 }
 
 // FUNCTION: COPTER_D 0x005665b7
@@ -1093,8 +1081,7 @@ _Tc5:
 	__asm        cmp    eax, ecx;
 	__asm        jge    _Te1;
 
-	__asm        mov    eax, 1;
-	__asm        jmp    _T149;
+	return 0x1;
 // LINE 920:
 _Te1:
 	__asm        xor    eax, eax;
@@ -1104,8 +1091,7 @@ _Te1:
 	__asm        cmp    eax, ecx;
 	__asm        jle    _Tfd;
 
-	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _T149;
+	return 0xffffffff;
 // LINE 921:
 _Tfd:
 	__asm        jmp    _T49;
@@ -1120,8 +1106,7 @@ _T102:
 	__asm        cmp    ecx, edx;
 	__asm        jge    _T122;
 
-	__asm        mov    eax, 1;
-	__asm        jmp    _T149;
+	return 0x1;
 // LINE 923:
 _T122:
 	__asm        mov    eax, second;
@@ -1133,14 +1118,11 @@ _T122:
 	__asm        cmp    ecx, edx;
 	__asm        jle    _T142;
 
-	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _T149;
+	return 0xffffffff;
 // LINE 924:
 _T142:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T149;
+	return 0x0;
 // LINE 925:
-_T149:
 }
 
 // FUNCTION: COPTER_D 0x00566705
@@ -1191,7 +1173,6 @@ _T3e:
 	__asm        add    esp, 0xC;
 // LINE 935:
 	return;
-_T73:
 }
 
 // FUNCTION: COPTER_D 0x0056677d
@@ -1241,7 +1222,6 @@ _T54:
 	__asm        call   dword ptr ds:[0x6C3558];
 // LINE 1084:
 	return;
-_T7c:
 }
 
 // FUNCTION: COPTER_D 0x005667fe
@@ -1269,10 +1249,8 @@ _T7c:
 	__asm        sar    eax, 1;
 	__asm        mov    tmp.h, ax;
 // LINE 1258:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(tmp.v);
-	__asm        jmp    _T44;
+	return reinterpret_cast<uint32_t>(tmp.v);
 // LINE 1259:
-_T44:
 }
 
 

@@ -192,7 +192,7 @@ _T27:
 	this->rectDirectDrawBackBuffer.bottom = 0x0;
 // LINE 51:
 	return;
-_Tdc:
+
 	__asm        mov    eax, this;
 }
 
@@ -269,7 +269,7 @@ _Tc5:
 	__asm        call   ScreenBuffer::UsePalette;
 // LINE 103:
 	return;
-_T129:
+
 	__asm        mov    eax, this;
 }
 
@@ -285,7 +285,7 @@ void ScreenBuffer::~ScreenBuffer() {
 	__asm        call   ScreenBuffer::FreePalette;
 // LINE 115:
 	return;
-_T2a:
+
 	__asm        mov    ecx, this;
 	__asm        call   CBackBuffer::~CBackBuffer;
 }
@@ -355,8 +355,7 @@ _Tc9:
 	__asm        lea    ecx, [ebp-0xC];
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 148:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T3c7;
+	return 0x0;
 // LINE 153:
 _Tdd:
 	__asm        mov    eax, this;
@@ -394,8 +393,7 @@ _T137:
 	__asm        lea    ecx, [ebp-0x10];
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 164:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T3c7;
+	return 0x0;
 // LINE 167:
 // Block end:
 _T14b:
@@ -445,8 +443,7 @@ _T1d3:
 	__asm        lea    ecx, [ebp-0x14];
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 178:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T3c7;
+	return 0x0;
 // LINE 182:
 _T1e7:
 	__asm        push   0x6C;
@@ -506,8 +503,7 @@ _T29e:
 	__asm        lea    ecx, [ebp-0x18];
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 195:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T3c7;
+	return 0x0;
 // LINE 200:
 _T2b2:
 	__asm        mov    eax, this;
@@ -556,8 +552,7 @@ _T339:
 	__asm        lea    ecx, [ebp-0x1C];
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 217:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T3c7;
+	return 0x0;
 // LINE 219:
 _T34d:
 	__asm        jmp    _T352;
@@ -605,10 +600,8 @@ _T39b:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x70];
 // LINE 229:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T3c7;
+	return 0x1;
 // LINE 230:
-_T3c7:
 }
 
 // FUNCTION: COPTER_D 0x0049ea6a
@@ -684,10 +677,8 @@ _Taa:
 	this->lpClipper = 0x0;
 // LINE 272:
 _Tdf:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Te9;
+	return 0x1;
 // LINE 273:
-_Te9:
 }
 
 // FUNCTION: COPTER_D 0x0049eb58
@@ -734,8 +725,7 @@ _T76:
 	__asm        lea    ecx, [ebp-0x6C];
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 291:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T2b6;
+	return 0x0;
 // LINE 294:
 _T8a:
 	ddbltfx.dwSize = 0x64;
@@ -831,8 +821,7 @@ _T172:
 	__asm        lea    ecx, [ebp-0x70];
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 317:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T2b6;
+	return 0x0;
 // LINE 320:
 _T186:
 	__asm        mov    eax, this;
@@ -865,8 +854,7 @@ _T1cd:
 	__asm        lea    ecx, [ebp-0x74];
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 324:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T2b6;
+	return 0x0;
 // LINE 327:
 _T1e1:
 	ddbltfx.dwSize = 0x64;
@@ -905,8 +893,7 @@ _T239:
 	__asm        lea    ecx, [ebp-0x78];
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 336:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T2b6;
+	return 0x0;
 // LINE 342:
 _T24d:
 	__asm        lea    eax, ddbltfx.dwSize;
@@ -940,14 +927,11 @@ _T298:
 	__asm        lea    ecx, [ebp-0x7C];
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 345:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T2b6;
+	return 0x0;
 // LINE 349:
 _T2ac:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2b6;
+	return 0x1;
 // LINE 350:
-_T2b6:
 }
 
 // FUNCTION: COPTER_D 0x0049ee15
@@ -993,8 +977,7 @@ _T73:
 	__asm        lea    ecx, [ebp-8];
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 370:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1e3;
+	return 0x0;
 // LINE 374:
 _T87:
 	__asm        push   1;
@@ -1019,8 +1002,7 @@ _Tb5:
 	__asm        lea    ecx, [ebp-0xC];
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 378:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1e3;
+	return 0x0;
 // LINE 381:
 _Tc9:
 	__asm        jmp    _T1d9;
@@ -1056,8 +1038,7 @@ _T115:
 	__asm        lea    ecx, [ebp-0x10];
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 386:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1e3;
+	return 0x0;
 // LINE 389:
 _T129:
 	__asm        mov    eax, this;
@@ -1090,8 +1071,7 @@ _T170:
 	__asm        lea    ecx, [ebp-0x14];
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 393:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1e3;
+	return 0x0;
 // LINE 401:
 _T184:
 	__asm        push   0;
@@ -1123,14 +1103,11 @@ _T1c5:
 	__asm        lea    ecx, [ebp-0x18];
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 404:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1e3;
+	return 0x0;
 // LINE 408:
 _T1d9:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1e3;
+	return 0x1;
 // LINE 409:
-_T1e3:
 }
 
 // FUNCTION: COPTER_D 0x0049efff
@@ -1157,7 +1134,6 @@ _T0c:
 // LINE 429:
 _T37:
 	return;
-_T3c:
 }
 
 // FUNCTION: COPTER_D 0x0049f040
@@ -1227,7 +1203,6 @@ _Ta3:
 // LINE 455:
 _Tb0:
 	return;
-_Tb5:
 }
 
 // FUNCTION: COPTER_D 0x0049f0fa
@@ -1473,17 +1448,15 @@ _T2d5:
 	__asm        jmp    _T30c;
 // LINE 606:
 _T305:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T320;
+	return 0x0;
 // LINE 610:
 _T30c:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T320;
+	return 0x1;
 // LINE 611:
 _L40603:
 	__asm        mov    eax, 0x595C58;
 	__asm        jmp    near ptr 0x0056F590;
-_T320:
+
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    fs:[0], ecx;
 }
@@ -1506,7 +1479,6 @@ void ScreenBuffer::FreePalette() {
 // LINE 626:
 _T3d:
 	return;
-_T42:
 }
 
 // FUNCTION: COPTER_D 0x0049f472
@@ -1590,8 +1562,7 @@ _Tf4:
 	__asm        lea    ecx, [ebp-0x18];
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 679:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T217;
+	return 0x0;
 // LINE 683:
 _T108:
 	__asm        jmp    _T1c3;
@@ -1627,8 +1598,7 @@ _T154:
 	__asm        lea    ecx, [ebp-0x1C];
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 690:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T217;
+	return 0x0;
 // LINE 693:
 _T168:
 	__asm        mov    eax, this;
@@ -1661,8 +1631,7 @@ _T1af:
 	__asm        lea    ecx, [ebp-0x20];
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 697:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T217;
+	return 0x0;
 // LINE 705:
 _T1c3:
 	__asm        mov    eax, this;
@@ -1694,10 +1663,8 @@ _T203:
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 710:
 _T210:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T217;
+	return 0x0;
 // LINE 711:
-_T217:
 }
 
 // FUNCTION: COPTER_D 0x0049f690
@@ -1724,7 +1691,6 @@ void ScreenBuffer::SetWindowRect(/*packed*/ struct SparkalRect *rectWindow) {
 	this-><ScreenBuffer+0x28> = this->rectBuffer.bottom;
 // LINE 732:
 	return;
-_T6f:
 }
 
 

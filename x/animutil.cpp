@@ -152,7 +152,6 @@ void GetAxis(float XY2Par, float XZ2Par, /*unpacked*/ struct DXZY paraxis, /*unp
 // LINE 48:
 _T83:
 	return;
-_T88:
 }
 
 // FUNCTION: COPTER_D 0x0056269d
@@ -193,7 +192,6 @@ void GetAxes(float XY2Par, float XZ2Par, /*unpacked*/ struct DXZY parmaj, /*unpa
 	__asm        add    esp, 0x1C;
 // LINE 54:
 	return;
-_T53:
 }
 
 // FUNCTION: COPTER_D 0x005626f5
@@ -368,7 +366,6 @@ void XY2Cartesian(float radius, float phi, float psi, float * xres, float * zres
 	yres[0] = transformed.y;
 // LINE 85:
 	return;
-_Te4:
 }
 
 // FUNCTION: COPTER_D 0x005628eb
@@ -409,7 +406,6 @@ void XYIncrementCartesian(float sinXangle, float cosXangle, float sinYangle, flo
 	__asm        fstp   dword ptr [eax+8];
 // LINE 99:
 	return;
-_T60:
 }
 
 // FUNCTION: COPTER_D 0x00562950
@@ -495,7 +491,6 @@ void TransformToAxes(/*unpacked*/ struct DXZY *xAxis, /*unpacked*/ struct DXZY *
 	__asm        fstp   dword ptr [eax+8];
 // LINE 115:
 	return;
-_Tdc:
 }
 
 // FUNCTION: COPTER_D 0x00562a31
@@ -560,7 +555,6 @@ _T60:
 	__asm        mov    [ecx+0xC], eax;
 // LINE 129:
 	return;
-_T8f:
 }
 
 // FUNCTION: COPTER_D 0x00562ac5
@@ -639,7 +633,6 @@ _T9b:
 // LINE 146:
 _Tb3:
 	return;
-_Tb8:
 }
 
 // FUNCTION: COPTER_D 0x00562b82
@@ -672,7 +665,6 @@ void IncrementXY(/*unpacked*/ struct Polar *inc, /*unpacked*/ struct Polar *part
 	__asm        add    esp, 4;
 // LINE 156:
 	return;
-_T54:
 }
 
 // FUNCTION: COPTER_D 0x00562bdb
@@ -710,7 +702,6 @@ _T31:
 // LINE 164:
 _T5c:
 	return;
-_T61:
 }
 
 // FUNCTION: COPTER_D 0x00562c41
@@ -734,7 +725,6 @@ void Keep0to2pi(/*unpacked*/ struct Polar *polar) {
 	__asm        add    esp, 4;
 // LINE 171:
 	return;
-_T35:
 }
 
 // FUNCTION: COPTER_D 0x00562c7b
@@ -778,7 +768,6 @@ void IncrementFloat(/*unpacked*/ struct Polar inc, /*unpacked*/ struct Polar *pa
 	__asm        add    esp, 4;
 // LINE 185:
 	return;
-_T42:
 }
 
 // FUNCTION: COPTER_D 0x00562ce1
@@ -880,7 +869,6 @@ _T10c:
 void NormalizeTo1(/*unpacked*/ struct DXZY *vec) {
 // LINE 209:
 	return;
-_T0b:
 }
 
 // FUNCTION: COPTER_D 0x00562e02
@@ -956,7 +944,6 @@ void DrawDirectionDisk(/*unpacked*/ struct Rect *rect, short latint, short lngin
 	__asm        add    esp, 0x18;
 // LINE 228:
 	return;
-_T56:
 }
 
 // FUNCTION: COPTER_D 0x00562eab
@@ -1179,7 +1166,6 @@ _T1f6:
 	__asm        add    esp, 0x18;
 // LINE 265:
 	return;
-_T220:
 }
 
 // FUNCTION: COPTER_D 0x005630d0
@@ -1206,7 +1192,6 @@ void DrawDirectionDisk(/*unpacked*/ struct Point centerPt, /*unpacked*/ struct D
 	__asm        add    esp, 0x18;
 // LINE 270:
 	return;
-_T41:
 }
 
 // FUNCTION: COPTER_D 0x00563116
@@ -1278,21 +1263,18 @@ void DrawDirectionDisk(/*unpacked*/ struct DXZY start, /*unpacked*/ struct DXZY 
 	__asm        add    esp, 0x18;
 // LINE 279:
 	return;
-_Tb5:
 }
 
 // FUNCTION: COPTER_D 0x005631d0
 void DrawDirectionDisk(/*unpacked*/ struct Point centerPt, float hdist, float vdist, float depth, float rad, unsigned short bigol) {
 // LINE 355:
 	return;
-_T0b:
 }
 
 // FUNCTION: COPTER_D 0x005631e0
 void Score(/*unpacked*/ struct Point centerPt, /*unpacked*/ struct Point leftOff, /*unpacked*/ struct Point rightOff) {
 // LINE 370:
 	return;
-_T0b:
 }
 
 // FUNCTION: COPTER_D 0x005631f0
@@ -1504,7 +1486,6 @@ _T203:
 	__asm        fstp   dword ptr [eax+8];
 // LINE 565:
 	return;
-_T217:
 }
 
 // FUNCTION: COPTER_D 0x00563420
@@ -1583,7 +1564,6 @@ _Tc2:
 	__asm        mov    [eax], ecx;
 // LINE 580:
 	return;
-_Td7:
 }
 
 // FUNCTION: COPTER_D 0x005634fc
@@ -1773,7 +1753,6 @@ _T1b1:
 	__asm        add    esp, 4;
 // LINE 619:
 	return;
-_T1d4:
 }
 
 // FUNCTION: COPTER_D 0x005636d5
@@ -1823,7 +1802,6 @@ _T61:
 	__asm        add    esp, 4;
 // LINE 628:
 	return;
-_T72:
 }
 
 // FUNCTION: COPTER_D 0x0056374c
@@ -1876,7 +1854,6 @@ _T71:
 	__asm        add    esp, 4;
 // LINE 636:
 	return;
-_T82:
 }
 
 // FUNCTION: COPTER_D 0x005637d3
@@ -1927,7 +1904,6 @@ void SnapToIncs(/*unpacked*/ struct Polar *polar, short latIncs, short lngIncs, 
 	__asm        add    esp, 0x10;
 // LINE 644:
 	return;
-_T81:
 }
 
 // FUNCTION: COPTER_D 0x00563859
@@ -2074,7 +2050,6 @@ _T155:
 // LINE 670:
 _T16f:
 	return;
-_T174:
 }
 
 // FUNCTION: COPTER_D 0x005639d2
@@ -2111,7 +2086,6 @@ void PolarIncs2Double(short lat, short lng, short trq, short latincs, short lngi
 	__asm        fstp   dword ptr [eax];
 // LINE 677:
 	return;
-_T6b:
 }
 
 // FUNCTION: COPTER_D 0x00563a42
@@ -2175,7 +2149,6 @@ void Polar2Cartesian(float radius, float phi, float psi, float * x, float * z, f
 	__asm        fstp   dword ptr [eax];
 // LINE 693:
 	return;
-_Ta5:
 }
 
 // FUNCTION: COPTER_D 0x00563aec
@@ -2201,7 +2174,6 @@ void Polar2Cartesian(float radius, /*unpacked*/ struct Polar *polar, /*unpacked*
 	__asm        add    esp, 0x18;
 // LINE 698:
 	return;
-_T36:
 }
 
 // FUNCTION: COPTER_D 0x00563b27
@@ -2309,7 +2281,6 @@ _Td7:
 // LINE 717:
 _Tef:
 	return;
-_Tf4:
 }
 
 // FUNCTION: COPTER_D 0x00563c20
@@ -2397,7 +2368,6 @@ _Tb5:
 	__asm        fstp   dword ptr [eax];
 // LINE 760:
 	return;
-_Td1:
 }
 
 // FUNCTION: COPTER_D 0x00563cf6
@@ -2422,7 +2392,6 @@ void Cartesian2Polar(/*unpacked*/ struct DXZY dxzy, /*unpacked*/ struct Polar *p
 	polar->tau = 0x0;
 // LINE 766:
 	return;
-_T38:
 }
 
 // FUNCTION: COPTER_D 0x00563d33
@@ -2486,7 +2455,6 @@ void IncrementTorque(float dinc, /*unpacked*/ struct Polar *parentPolar, /*unpac
 	__asm        fstp   parPolar.phi;
 // LINE 952:
 	return;
-_T9b:
 }
 
 // FUNCTION: COPTER_D 0x00563dd3
@@ -2546,7 +2514,6 @@ void IncrementXYTorque(float dinc, /*unpacked*/ struct Polar *parentPolar, /*unp
 	__asm        add    esp, 8;
 // LINE 963:
 	return;
-_T8f:
 }
 
 // FUNCTION: COPTER_D 0x00563e67

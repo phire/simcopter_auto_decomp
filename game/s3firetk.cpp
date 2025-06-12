@@ -556,7 +556,7 @@ void FireEngineClass::FireEngineClass() {
 	this->carModel = 0x11c;
 // LINE 84:
 	return;
-_T2c:
+
 	__asm        mov    eax, this;
 }
 
@@ -662,8 +662,7 @@ _T102:
 	__asm        jmp    _T107;
 // LINE 147:
 _T107:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1f1;
+	return 0x0;
 // LINE 150:
 _T10e:
 	__asm        jmp    _T145;
@@ -682,8 +681,7 @@ _T139:
 	__asm        jmp    _T13e;
 // LINE 155:
 _T13e:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1f1;
+	return 0x0;
 // LINE 161:
 _T145:
 	youveWonABrandNewCar->dousingFire = 0x0;
@@ -714,8 +712,7 @@ _T145:
 	__asm        mov    fireTrucks[0][ecx*4], eax;
 	__asm        inc    curFireTrucks;
 // LINE 171:
-	__asm        mov    eax, youveWonABrandNewCar;
-	__asm        jmp    _T1f1;
+	return youveWonABrandNewCar;
 // LINE 173:
 // Block end:
 	__asm        jmp    _T1ea;
@@ -736,10 +733,8 @@ _T1c3:
 	__asm        jmp    _T1ea;
 // LINE 183:
 _T1ea:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1f1;
+	return 0x0;
 // LINE 184:
-_T1f1:
 }
 
 // FUNCTION: COPTER_D 0x00536381
@@ -1078,7 +1073,6 @@ _T2bd:
 // LINE 348:
 _T2e0:
 	return;
-_T2e5:
 }
 
 // FUNCTION: COPTER_D 0x00536778
@@ -1122,8 +1116,7 @@ int32_t FireEngineClass::AtScene() {
 	__asm        jmp    _T7f;
 // LINE 370:
 _T78:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T150;
+	return 0x0;
 // LINE 374:
 _T7f:
 	__asm        jmp    _Tf7;
@@ -1163,8 +1156,7 @@ _T84:
 	__asm        jmp    _Tf7;
 // LINE 386:
 _Tf0:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T150;
+	return 0x0;
 // LINE 392:
 _Tf7:
 	__asm        mov    eax, ViewState.world_pos.x;
@@ -1195,10 +1187,8 @@ _Tf7:
 	AutomobileClass::fireHoseDist = dist;
 // LINE 399:
 _T146:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T150;
+	return 0x1;
 // LINE 400:
-_T150:
 }
 
 // FUNCTION: COPTER_D 0x005368cd
@@ -1474,7 +1464,6 @@ _Tfe:
 	__asm        mov    [ecx+0x2AC], eax;
 // LINE 542:
 	return;
-_T156:
 }
 
 // FUNCTION: COPTER_D 0x00536c3d
@@ -1503,7 +1492,6 @@ void FireEngineClass::SetSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) {
 	__asm        call   EmergencyVehicleClass::SetSaveData;
 // LINE 561:
 	return;
-_T74:
 }
 
 // FUNCTION: COPTER_D 0x00536cb8
@@ -1578,7 +1566,6 @@ _T75:
 // LINE 606:
 _Tef:
 	return;
-_Tf4:
 }
 
 

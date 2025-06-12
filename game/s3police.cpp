@@ -590,7 +590,7 @@ void PoliceCarClass::PoliceCarClass() {
 	this->foundRoad = 0x0;
 // LINE 98:
 	return;
-_T39:
+
 	__asm        mov    eax, this;
 }
 
@@ -696,8 +696,7 @@ _T102:
 	__asm        jmp    _T107;
 // LINE 155:
 _T107:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1e4;
+	return 0x0;
 // LINE 158:
 _T10e:
 	__asm        jmp    _T145;
@@ -716,8 +715,7 @@ _T139:
 	__asm        jmp    _T13e;
 // LINE 163:
 _T13e:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1e4;
+	return 0x0;
 // LINE 169:
 _T145:
 	youveWonABrandNewCar->dispatchIcon.user1 = 0x0;
@@ -746,8 +744,7 @@ _T145:
 	__asm        mov    policeCars[0][ecx*4], eax;
 	__asm        inc    curPoliceCars;
 // LINE 177:
-	__asm        mov    eax, youveWonABrandNewCar;
-	__asm        jmp    _T1e4;
+	return youveWonABrandNewCar;
 // LINE 179:
 // Block end:
 	__asm        jmp    _T1dd;
@@ -768,10 +765,8 @@ _T1b6:
 	__asm        jmp    _T1dd;
 // LINE 188:
 _T1dd:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1e4;
+	return 0x0;
 // LINE 189:
-_T1e4:
 }
 
 // FUNCTION: COPTER_D 0x00537081
@@ -1560,7 +1555,6 @@ _T940:
 // LINE 535:
 _T96f:
 	return;
-_T974:
 }
 
 // FUNCTION: COPTER_D 0x00537a2c
@@ -2021,10 +2015,8 @@ _T48:
 	__asm        jmp    _T22;
 // LINE 681:
 _T61:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T68;
+	return 0x0;
 // LINE 682:
-_T68:
 }
 
 // FUNCTION: COPTER_D 0x00537fd9
@@ -2192,7 +2184,6 @@ _Tf7:
 	__asm        call   EmergencyVehicleClass::SetSaveData;
 // LINE 749:
 	return;
-_T108:
 }
 
 // FUNCTION: COPTER_D 0x0053822e
@@ -2354,7 +2345,6 @@ _Td8:
 	__asm        mov    [ecx+0x322], eax;
 // LINE 807:
 	return;
-_T1f3:
 }
 
 

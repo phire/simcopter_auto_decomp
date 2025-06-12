@@ -192,8 +192,7 @@ _T2d:
 	__asm        je     _T46;
 // LINE 40:
 _T3c:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T149;
+	return 0x1;
 // LINE 43:
 _T46:
 	__asm        cmp    name, 0;
@@ -215,8 +214,7 @@ _T46:
 	__asm        jmp    _T7d;
 // LINE 47:
 _T76:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T149;
+	return 0x0;
 // LINE 49:
 _T7d:
 	__asm        mov    eax, this;
@@ -224,8 +222,7 @@ _T7d:
 	__asm        test   eax, eax;
 	__asm        jne    _T93;
 // LINE 50:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T149;
+	return 0x0;
 // LINE 53:
 _T93:
 	__asm        mov    eax, this;
@@ -251,8 +248,7 @@ _T93:
 	__asm        jmp    _Td8;
 // LINE 57:
 _Td1:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T149;
+	return 0x0;
 // LINE 59:
 _Td8:
 	__asm        jmp    _T120;
@@ -327,14 +323,11 @@ _T35:
 // LINE 78:
 	this->Handle = 0xffffffff;
 // LINE 79:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T6d;
+	return 0x1;
 // LINE 82:
 _T66:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T6d;
+	return 0x0;
 // LINE 83:
-_T6d:
 }
 
 // FUNCTION: COPTER_D 0x004a0562
@@ -375,8 +368,7 @@ _T35:
 	__asm        mov    ecx, this;
 	__asm        call   PFile::Close;
 // LINE 98:
-	__asm        mov    eax, lFileLength;
-	__asm        jmp    _T8c;
+	return lFileLength;
 // LINE 101:
 _T75:
 	__asm        mov    eax, this;
@@ -429,8 +421,7 @@ _T3c:
 	__asm        jmp    _T73;
 // LINE 121:
 _T6c:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tec;
+	return 0x0;
 // LINE 123:
 _T73:
 	__asm        mov    eax, this;
@@ -537,8 +528,7 @@ _T26:
 	__asm        je     _T3c;
 // LINE 163:
 _T35:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T59;
+	return 0x0;
 // LINE 164:
 _T3c:
 	__asm        mov    eax, szPath;
@@ -549,10 +539,8 @@ _T3c:
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 165:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T59;
+	return 0x1;
 // LINE 166:
-_T59:
 }
 
 // FUNCTION: COPTER_D 0x004a07b9

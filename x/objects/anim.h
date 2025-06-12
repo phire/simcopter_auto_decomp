@@ -10,7 +10,6 @@ void cCopterAnim::Destroy() {
 	__asm        add    esp, 0x10;
 // LINE 225:
 	return;
-_T2d:
 }
 
 // Function in module: Bodydefs.obj
@@ -28,7 +27,6 @@ void cCopterAnim::WriteToDisk() {
 // LINE 230:
 _T21:
 	return;
-_T26:
 }
 
 // Function in module: Bodydefs.obj

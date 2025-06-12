@@ -41,8 +41,7 @@ _T17:
 	__asm        test   edx, edx;
 	__asm        je     _T39;
 // LINE 35:
-	__asm        mov    eax, nEventStart;
-	__asm        jmp    _T48;
+	return nEventStart;
 // LINE 36:
 _T39:
 	nEventStart++;
@@ -50,10 +49,8 @@ _T39:
 	__asm        jmp    _T06;
 // LINE 38:
 _T41:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T48;
+	return 0x0;
 // LINE 39:
-_T48:
 }
 
 // FUNCTION: COPTER_D 0x00431bd6

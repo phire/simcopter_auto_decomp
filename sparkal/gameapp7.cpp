@@ -699,7 +699,6 @@ void SoundCompletionDeletionFunction(long lSoundPointer) {
 // LINE 78:
 _T30:
 	return;
-_T35:
 }
 
 // FUNCTION: COPTER_D 0x0043e28a
@@ -711,7 +710,6 @@ void SoundCompletionUnloadFunction(long lSoundPointer) {
 	__asm        call   dword ptr [eax+0x3C];
 // LINE 88:
 	return;
-_T16:
 }
 
 // FUNCTION: COPTER_D 0x0043e2a5
@@ -1985,10 +1983,8 @@ _T4a6:
 	this-><CGameApp+0xa4:4>++;
 // LINE 272:
 _T504:
-	__asm        mov    eax, tempMessageBoxWindow;
-	__asm        jmp    _T50c;
+	return tempMessageBoxWindow;
 // LINE 273:
-_T50c:
 }
 
 // FUNCTION: COPTER_D 0x0043f2b9
@@ -2683,14 +2679,11 @@ _T239:
 // LINE 328:
 	this-><CGameApp+0xa4:4>++;
 // LINE 329:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2a2;
+	return 0x1;
 // LINE 331:
 _T29b:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T2a2;
+	return 0x0;
 // LINE 332:
-_T2a2:
 }
 
 // FUNCTION: COPTER_D 0x0043fbaf
@@ -3817,10 +3810,8 @@ _Tf4f:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x84];
 // LINE 492:
-	__asm        mov    eax, nReturnValue;
-	__asm        jmp    _Tf6b;
+	return nReturnValue;
 // LINE 493:
-_Tf6b:
 }
 
 // FUNCTION: COPTER_D 0x00440b3f

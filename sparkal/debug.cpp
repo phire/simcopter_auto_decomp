@@ -1239,7 +1239,6 @@ _T65d:
 	__asm        jmp    _T662;
 _T662:
 	return;
-_T667:
 }
 
 // FUNCTION: COPTER_D 0x004228ee
@@ -1610,7 +1609,7 @@ _T4b5:
 	this->m_hWnd = 0x0;
 // LINE 64:
 	return;
-_T4c4:
+
 	__asm        mov    eax, this;
 }
 
@@ -1741,7 +1740,6 @@ _T182:
 	__asm        jmp    _T187;
 _T187:
 	return;
-_T18c:
 }
 
 // FUNCTION: COPTER_D 0x00422f4b
@@ -1972,7 +1970,6 @@ _T28c:
 	__asm        jmp    _T84;
 _T291:
 	return;
-_T296:
 }
 
 // FUNCTION: COPTER_D 0x004231e6
@@ -2094,15 +2091,12 @@ _Td5:
 	__asm        mov    ecx, this;
 	__asm        call   CDebugWindow::OnSize;
 // LINE 126:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T17a;
+	return 0x1;
 // LINE 129:
 // Block end:
 _T173:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T17a;
+	return 0x0;
 // LINE 130:
-_T17a:
 }
 
 // FUNCTION: COPTER_D 0x00423367
@@ -2115,7 +2109,6 @@ void CDebugWindow::ShowWindow() {
 	__asm        call   dword ptr ds:[0x6C3820];
 // LINE 138:
 	return;
-_T20:
 }
 
 // FUNCTION: COPTER_D 0x0042338c
@@ -2128,7 +2121,6 @@ void CDebugWindow::HideWindow() {
 	__asm        call   dword ptr ds:[0x6C3820];
 // LINE 144:
 	return;
-_T20:
 }
 
 // FUNCTION: COPTER_D 0x004233b1
@@ -2147,8 +2139,7 @@ int32_t CDebugWindow::Save(char * filePath) {
 	__asm        cmp    file, 0;
 	__asm        jne    _T31;
 // LINE 155:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T30e;
+	return 0x0;
 // LINE 157:
 _T31:
 	__asm        mov    eax, this;
@@ -2417,10 +2408,8 @@ _T2ec:
 	__asm        call   fclose;
 	__asm        add    esp, 4;
 // LINE 167:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T30e;
+	return 0x1;
 // LINE 168:
-_T30e:
 }
 
 // FUNCTION: COPTER_D 0x004236c6
@@ -2468,7 +2457,6 @@ void CDebugWindow::OnSize(unsigned long sizeType, unsigned short width, unsigned
 	__asm        call   dword ptr ds:[0x6C3824];
 // LINE 185:
 	return;
-_T6c:
 }
 
 // FUNCTION: COPTER_D 0x00423739
@@ -2794,7 +2782,6 @@ _T44b:
 	__asm        call   dword ptr ds:[0x6C3830];
 // LINE 215:
 	return;
-_T467:
 }
 
 // FUNCTION: COPTER_D 0x00423ba5
@@ -2894,7 +2881,6 @@ _Tc6:
 	__asm        call   dword ptr ds:[0x6C3824];
 // LINE 240:
 	return;
-_Tf1:
 }
 
 // FUNCTION: COPTER_D 0x00423c9d
@@ -3319,7 +3305,6 @@ _T551:
 	__asm        jmp    _T556;
 _T556:
 	return;
-_T55b:
 }
 
 // FUNCTION: COPTER_D 0x004241ff
@@ -3440,7 +3425,6 @@ _Tf3:
 	__asm        call   dword ptr ds:[0x6C3844];
 // LINE 288:
 	return;
-_T109:
 }
 
 // FUNCTION: COPTER_D 0x0042430d
@@ -3845,7 +3829,6 @@ _T5b8:
 // Block end:
 _T5bd:
 	return;
-_T5c2:
 }
 
 // FUNCTION: COPTER_D 0x004248d4
@@ -4022,7 +4005,6 @@ _T49:
 // LINE 389:
 _T59:
 	return;
-_T5e:
 }
 
 // FUNCTION: COPTER_D 0x00424ab4
@@ -4053,7 +4035,6 @@ _T4c:
 // LINE 398:
 _T56:
 	return;
-_T5b:
 }
 
 // FUNCTION: COPTER_D 0x00424b14
@@ -4084,7 +4065,6 @@ void DebugOutput(char * text, ...) {
 // LINE 408:
 _T4e:
 	return;
-_T53:
 }
 
 // FUNCTION: COPTER_D 0x00424b6c
@@ -4428,7 +4408,6 @@ _T3b5:
 // LINE 414:
 _T3ba:
 	return;
-_T3bf:
 }
 
 // FUNCTION: COPTER_D 0x00424f30
@@ -4510,7 +4489,6 @@ _Td6:
 // LINE 420:
 _Tdb:
 	return;
-_Te0:
 }
 
 // FUNCTION: COPTER_D 0x00425015
@@ -4526,7 +4504,6 @@ void SaveDebugWindow(char * fileName) {
 // LINE 426:
 _T22:
 	return;
-_T27:
 }
 
 // FUNCTION: COPTER_D 0x00425041

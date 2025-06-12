@@ -58,7 +58,6 @@ _T8f:
 // LINE 55:
 _T9f:
 	return;
-_Ta4:
 }
 
 // Function in module: Bodydefs.obj
@@ -79,7 +78,6 @@ _T2a:
 	this->fCur = 0x0;
 _T34:
 	return;
-_T39:
 }
 
 // Function in module: Bodydefs.obj
@@ -152,7 +150,6 @@ _Ta6:
 // LINE 24:
 _Tce:
 	return;
-_Td3:
 }
 
 // Function in module: Bodydefs.obj
@@ -225,7 +222,6 @@ _Ta6:
 // LINE 24:
 _Tce:
 	return;
-_Td3:
 }
 
 // Function in module: Bodydefs.obj
@@ -246,7 +242,6 @@ _T2a:
 	this->fCur = 0x0;
 _T34:
 	return;
-_T39:
 }
 
 // Function in module: Yobject.obj
@@ -319,6 +314,5 @@ _Ta6:
 // LINE 24:
 _Tce:
 	return;
-_Td3:
 }
 

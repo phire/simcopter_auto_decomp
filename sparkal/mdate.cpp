@@ -311,7 +311,7 @@ void MDate::MDate() {
 	__asm        mov    [ecx+4], eax;
 // LINE 79:
 	return;
-_T69:
+
 	__asm        mov    eax, this;
 }
 
@@ -348,7 +348,7 @@ _T4a:
 // LINE 99:
 _T58:
 	return;
-_T5d:
+
 	__asm        mov    eax, this;
 }
 
@@ -375,7 +375,7 @@ void MDate::MDate(uint32_t day, char * monthName, uint32_t year) {
 	__asm        mov    [ecx+4], eax;
 // LINE 114:
 	return;
-_T47:
+
 	__asm        mov    eax, this;
 }
 
@@ -399,7 +399,7 @@ void MDate::MDate(uint32_t day, uint32_t month, uint32_t year) {
 	__asm        mov    [ecx+4], eax;
 // LINE 129:
 	return;
-_T3e:
+
 	__asm        mov    eax, this;
 }
 
@@ -412,10 +412,8 @@ enum MDate::HowToPrint MDate::SetPrintOption(enum MDate::HowToPrint h) {
 // LINE 138:
 	this->PrintOption = h;
 // LINE 139:
-	__asm        mov    eax, oldoption;
-	__asm        jmp    _T26;
+	return oldoption;
 // LINE 140:
-_T26:
 }
 
 // FUNCTION: COPTER_D 0x004bc5fe
@@ -499,10 +497,8 @@ _T52:
 	__asm        jmp    _T18;
 // LINE 62:
 _T57:
-	__asm        mov    eax, icand;
-	__asm        jmp    _T5f;
+	return icand;
 // LINE 63:
-_T5f:
 }
 
 // FUNCTION: COPTER_D 0x004bc6d7
@@ -529,8 +525,7 @@ _T31:
 	__asm        jne    _T47;
 // LINE 183:
 _T40:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T93;
+	return 0x0;
 // LINE 184:
 _T47:
 	__asm        mov    eax, month;
@@ -815,10 +810,8 @@ uint32_t MDate::DayOfMonth() {
 	__asm        mov    ecx, this;
 	__asm        call   MDate::Mdy;
 // LINE 323:
-	__asm        mov    eax, d;
-	__asm        jmp    _T28;
+	return d;
 // LINE 324:
-_T28:
 }
 
 // FUNCTION: COPTER_D 0x004bc9fd
@@ -842,8 +835,7 @@ _T2a:
 	__asm        jne    _T40;
 // LINE 338:
 _T39:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T80;
+	return 0x0;
 // LINE 339:
 _T40:
 	__asm        mov    eax, month;
@@ -866,10 +858,8 @@ _T5c:
 	firstDay++;
 // LINE 342:
 _T78:
-	__asm        mov    eax, firstDay;
-	__asm        jmp    _T80;
+	return firstDay;
 // LINE 343:
-_T80:
 }
 
 // FUNCTION: COPTER_D 0x004bca84
@@ -997,7 +987,6 @@ _T116:
 // LINE 388:
 _T121:
 	return;
-_T126:
 }
 
 // FUNCTION: COPTER_D 0x004bcbcd
@@ -1030,10 +1019,8 @@ _T2f:
 	__asm        mov    dword ptr [eax], 0x58F3E8;
 	__asm        jmp    _T5b;
 _T5b:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
-	__asm        jmp    _T63;
+	return reinterpret_cast<uint32_t>(__$ReturnUdt);
 // LINE 398:
-_T63:
 }
 
 // FUNCTION: COPTER_D 0x004bcc37
@@ -1066,10 +1053,8 @@ _T2f:
 	__asm        mov    dword ptr [eax], 0x58F3E8;
 	__asm        jmp    _T5b;
 _T5b:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
-	__asm        jmp    _T63;
+	return reinterpret_cast<uint32_t>(__$ReturnUdt);
 // LINE 408:
-_T63:
 }
 
 // FUNCTION: COPTER_D 0x004bcca1
@@ -1088,10 +1073,8 @@ uint32_t MDate::Month() {
 	__asm        mov    ecx, this;
 	__asm        call   MDate::Mdy;
 // LINE 422:
-	__asm        mov    eax, m;
-	__asm        jmp    _T28;
+	return m;
 // LINE 423:
-_T28:
 }
 
 // FUNCTION: COPTER_D 0x004bccce
@@ -1156,10 +1139,8 @@ _T4a:
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    _T6b;
 _T6b:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
-	__asm        jmp    _T73;
+	return reinterpret_cast<uint32_t>(__$ReturnUdt);
 // LINE 464:
-_T73:
 }
 
 // FUNCTION: COPTER_D 0x004bcd7c
@@ -1197,10 +1178,8 @@ uint32_t MDate::Year() {
 	__asm        mov    ecx, this;
 	__asm        call   MDate::Mdy;
 // LINE 487:
-	__asm        mov    eax, y;
-	__asm        jmp    _T28;
+	return y;
 // LINE 488:
-_T28:
 }
 
 // FUNCTION: COPTER_D 0x004bcdde
@@ -1543,7 +1522,6 @@ _T2f1:
 // LINE 608:
 _T2f6:
 	return;
-_T2fb:
 }
 
 // FUNCTION: COPTER_D 0x004bd175
@@ -1638,7 +1616,6 @@ _Tf1:
 // LINE 536:
 _Tfd:
 	return;
-_T102:
 }
 
 // FUNCTION: COPTER_D 0x004bd27c
@@ -1743,10 +1720,8 @@ _Tfd:
 _T109:
 	p[0] = 0x0;
 // LINE 560:
-	__asm        mov    eax, 0x6069A8;
-	__asm        jmp    _T119;
+	return 0x6069a8;
 // LINE 561:
-_T119:
 }
 
 // FUNCTION: COPTER_D 0x004bd39a

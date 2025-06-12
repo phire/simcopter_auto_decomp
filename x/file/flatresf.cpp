@@ -506,7 +506,6 @@ _T330:
 	__asm        jmp    error;
 _T335:
 	__asm        jmp    error;
-_T33a:
 }
 
 // FUNCTION: COPTER_D 0x00552e51
@@ -589,10 +588,8 @@ long ResFile::OpenFromOtherFile(/*unpacked*/ class ResFile *otherFile) {
 	__asm        mov    ecx, this;
 	__asm        call   FlatFile::OpenFromOtherFile;
 // LINE 199:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1f;
+	return 0x0;
 // LINE 200:
-_T1f:
 }
 
 // FUNCTION: COPTER_D 0x00552f5f
@@ -741,8 +738,7 @@ _T3b:
 	__asm        cmp    dword ptr [eax+0x114], 0;
 	__asm        je     _T52;
 
-	__asm        xor    eax, eax;
-	__asm        jmp    _T86;
+	return 0x0;
 // LINE 314:
 _T52:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(index);
@@ -758,10 +754,8 @@ _T52:
 	this->fError = 0xffffff9c;
 // LINE 317:
 _T7e:
-	__asm        mov    eax, type;
-	__asm        jmp    _T86;
+	return type;
 // LINE 318:
-_T86:
 }
 
 // FUNCTION: COPTER_D 0x0055319a
@@ -1018,8 +1012,7 @@ _T3b:
 	__asm        cmp    dword ptr [eax+0x114], 0;
 	__asm        je     _T52;
 
-	__asm        xor    eax, eax;
-	__asm        jmp    _T10b;
+	return 0x0;
 // LINE 395:
 _T52:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(index);
@@ -1116,7 +1109,7 @@ _T41:
 	__asm        cmp    dword ptr [eax+0x114], 0;
 	__asm        je     _T56;
 
-	return;
+	__asm        jmp    _Ta2;
 // LINE 424:
 _T56:
 	__asm        mov    eax, res;
@@ -1142,7 +1135,7 @@ _T87:
 	__asm        mov    ecx, [eax+0x110];
 	__asm        call   ResMap::GetName;
 // LINE 429:
-	return;
+	__asm        jmp    _Ta2;
 _Ta2:
 }
 
@@ -1255,8 +1248,7 @@ _Tc0:
 	this->fError = 0xffffff9d;
 // LINE 460:
 _Td7:
-	__asm        mov    eax, returnType;
-	__asm        jmp    _Tdf;
+	return returnType;
 // LINE 461:
 _Tdf:
 }
@@ -1310,7 +1302,6 @@ _T81:
 	__asm        mov    dword ptr [eax+8], 0;
 // LINE 489:
 	return;
-_T9f:
 }
 
 // FUNCTION: COPTER_D 0x0055383a
@@ -1422,7 +1413,7 @@ _T81:
 	__asm        call   Memory::HSetState;
 	__asm        add    esp, 8;
 // LINE 534:
-	return;
+	__asm        jmp    _Te6;
 // LINE 537:
 _Tc9:
 	__asm        push   1;
@@ -1787,8 +1778,7 @@ _T119:
 // LINE 777:
 	ResMap::sMaps = srch;
 // LINE 778:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T162;
+	return 0x0;
 // LINE 779:
 _L27102:
 	__asm        mov    eax, [ebp-0x24];
@@ -2189,8 +2179,7 @@ unsigned long  ResMap::GetIndType(short index) {
 	__asm        jge    _T33;
 // LINE 885:
 _T2c:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T53;
+	return 0x0;
 // LINE 888:
 _T33:
 	type = 0x0;
@@ -2201,10 +2190,8 @@ _T33:
 	__asm        mov    eax, [ecx+eax*8-8];
 	__asm        mov    type, eax;
 // LINE 891:
-	__asm        mov    eax, type;
-	__asm        jmp    _T53;
+	return type;
 // LINE 892:
-_T53:
 }
 
 // FUNCTION: COPTER_D 0x005541fe
@@ -2357,10 +2344,8 @@ _T57:
 	__asm        jmp    _T31;
 // LINE 943:
 _T60:
-	__asm        mov    eax, found;
-	__asm        jmp    _T68;
+	return found;
 // LINE 944:
-_T68:
 }
 
 // FUNCTION: COPTER_D 0x0055437a
@@ -2438,10 +2423,8 @@ _Ta7:
 // LINE 971:
 // Block end:
 _Tb4:
-	__asm        mov    eax, found;
-	__asm        jmp    _Tbc;
+	return found;
 // LINE 972:
-_Tbc:
 }
 
 // FUNCTION: COPTER_D 0x0055443d
@@ -2539,10 +2522,8 @@ _Tdd:
 // LINE 1003:
 // Block end:
 _Tea:
-	__asm        mov    eax, found;
-	__asm        jmp    _Tf2;
+	return found;
 // LINE 1004:
-_Tf2:
 }
 
 // FUNCTION: COPTER_D 0x00554536
@@ -2613,10 +2594,8 @@ _T53:
 // LINE 1028:
 // Block end:
 _Tac:
-	__asm        mov    eax, found;
-	__asm        jmp    _Tb4;
+	return found;
 // LINE 1029:
-_Tb4:
 }
 
 // FUNCTION: COPTER_D 0x005545f1

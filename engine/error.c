@@ -10,10 +10,8 @@
 // FUNCTION: COPTER_D 0x004d8450
 int32_t VRGetError() {
 // LINE 30:
-	__asm        mov    eax, GlobalError;
-	__asm        jmp    _T10;
+	return GlobalError;
 // LINE 32:
-_T10:
 }
 
 

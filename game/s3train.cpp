@@ -570,7 +570,6 @@ static void $E3() {
 	__asm        jmp    _T15;
 _T15:
 	return;
-_T1a:
 }
 
 // STATIC INITIALIZER:
@@ -601,7 +600,6 @@ static void $E4() {
 	__asm        call   TrainClass::~TrainClass;
 _T2d:
 	return;
-_T32:
 }
 
 // FUNCTION: COPTER_D 0x0052de2d
@@ -705,7 +703,7 @@ _T15b:
 	this->currentLocation3.y = mapy;
 // LINE 230:
 	return;
-_T196:
+
 	__asm        mov    eax, this;
 }
 
@@ -758,7 +756,6 @@ void TrainClass::Reset() {
 	this->nextLocation.y = 0xffffffff;
 // LINE 271:
 	return;
-_Td6:
 }
 
 // FUNCTION: COPTER_D 0x0052e0a8
@@ -811,7 +808,6 @@ _T88:
 	this->flags[0] = 0x0;
 // LINE 315:
 	return;
-_T94:
 }
 
 // FUNCTION: COPTER_D 0x0052e141
@@ -820,8 +816,7 @@ _T94:
 	__asm        cmp    index, 1;
 	__asm        jl     _T17;
 // LINE 336:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T26;
+	return 0x0;
 // LINE 338:
 _T17:
 	__asm        mov    eax, index;
@@ -879,8 +874,7 @@ _T42:
 	__asm        test   eax, eax;
 	__asm        je     _T6d;
 // LINE 457:
-	__asm        mov    eax, newtrain;
-	__asm        jmp    _T9b;
+	return newtrain;
 // LINE 459:
 	__asm        jmp    _T94;
 // LINE 463:
@@ -900,10 +894,8 @@ _T6d:
 	__asm        jmp    _T94;
 // LINE 470:
 _T94:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T9b;
+	return 0x0;
 // LINE 471:
-_T9b:
 }
 
 // FUNCTION: COPTER_D 0x0052e22c
@@ -945,7 +937,6 @@ _T18:
 // LINE 597:
 _T36:
 	return;
-_T3b:
 }
 
 // FUNCTION: COPTER_D 0x0052e29e
@@ -969,7 +960,6 @@ _T18:
 // LINE 646:
 _T36:
 	return;
-_T3b:
 }
 
 // FUNCTION: COPTER_D 0x0052e2de
@@ -1013,17 +1003,14 @@ _T42:
 	__asm        jmp    _T7a;
 // LINE 678:
 _T7a:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T90;
+	return 0x1;
 // LINE 680:
 _T84:
 	__asm        jmp    _T15;
 // LINE 682:
 _T89:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T90;
+	return 0x0;
 // LINE 683:
-_T90:
 }
 
 // FUNCTION: COPTER_D 0x0052e373
@@ -1186,7 +1173,6 @@ _T1b2:
 // LINE 759:
 _T1b7:
 	return;
-_T1bc:
 }
 
 // FUNCTION: COPTER_D 0x0052e534
@@ -1303,7 +1289,6 @@ _T116:
 // LINE 819:
 _T133:
 	return;
-_T138:
 }
 
 // FUNCTION: COPTER_D 0x0052e671
@@ -1553,7 +1538,6 @@ _T27c:
 // LINE 1024:
 _T295:
 	return;
-_T29a:
 }
 
 // FUNCTION: COPTER_D 0x0052e910
@@ -1612,7 +1596,6 @@ _T68:
 	this->utRotation = 0x0;
 // LINE 1065:
 	return;
-_T8f:
 }
 
 // FUNCTION: COPTER_D 0x0052e9a4
@@ -2227,7 +2210,6 @@ _T742:
 // LINE 1298:
 _T7a0:
 	return;
-_T7a5:
 }
 
 // FUNCTION: COPTER_D 0x0052f14e
@@ -2420,7 +2402,6 @@ _T21b:
 // LINE 1368:
 _T23c:
 	return;
-_T241:
 }
 
 // FUNCTION: COPTER_D 0x0052f394
@@ -2436,8 +2417,7 @@ int32_t TrainClass::FinishedUturn() {
 // LINE 1393:
 	this->direction = this->utdirection;
 // LINE 1394:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T82;
+	return 0x1;
 // LINE 1397:
 _T40:
 	__asm        mov    eax, this;
@@ -2459,10 +2439,8 @@ _T40:
 	__asm        call   0x004D2094;
 	__asm        add    esp, 0xC;
 // LINE 1400:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T82;
+	return 0x0;
 // LINE 1402:
-_T82:
 }
 
 // FUNCTION: COPTER_D 0x0052f41b
@@ -2481,7 +2459,6 @@ void TrainClass::AdjustSpeed() {
 // LINE 1430:
 _T2f:
 	return;
-_T34:
 }
 
 // FUNCTION: COPTER_D 0x0052f454
@@ -2661,8 +2638,7 @@ _T12a:
 	__asm        cmp    currentCell, 0;
 	__asm        jne    _T144;
 // LINE 1492:
-	__asm        mov    eax, 4;
-	__asm        jmp    _T462;
+	return 0x4;
 // LINE 1497:
 _T144:
 	currentObject = currentCell->dyptr;
@@ -2763,14 +2739,12 @@ _T24e:
 	__asm        test   al, 8;
 	__asm        je     _T26c;
 // LINE 1545:
-	__asm        mov    eax, 3;
-	__asm        jmp    _T462;
+	return 0x3;
 // LINE 1547:
 	__asm        jmp    _T276;
 // LINE 1551:
 _T26c:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T462;
+	return 0x1;
 // LINE 1556:
 _T276:
 	currentObject = currentObject->next;
@@ -2790,8 +2764,7 @@ _T283:
 	__asm        cmp    [eax+0x39], ecx;
 	__asm        jne    _T2ae;
 // LINE 1561:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T462;
+	return 0x0;
 // LINE 1566:
 _T2ae:
 	__asm        mov    eax, this;
@@ -2823,8 +2796,7 @@ _T302:
 	__asm        cmp    currentCell, 0;
 	__asm        jne    _T31c;
 // LINE 1570:
-	__asm        mov    eax, 4;
-	__asm        jmp    _T462;
+	return 0x4;
 // LINE 1574:
 _T31c:
 	currentObject = currentCell->dyptr;
@@ -2925,14 +2897,12 @@ _T426:
 	__asm        test   al, 8;
 	__asm        je     _T444;
 // LINE 1621:
-	__asm        mov    eax, 3;
-	__asm        jmp    _T462;
+	return 0x3;
 // LINE 1623:
 	__asm        jmp    _T44e;
 // LINE 1627:
 _T444:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T462;
+	return 0x1;
 // LINE 1632:
 _T44e:
 	currentObject = currentObject->next;
@@ -2940,10 +2910,8 @@ _T44e:
 	__asm        jmp    _T325;
 // LINE 1637:
 _T45b:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T462;
+	return 0x0;
 // LINE 1638:
-_T462:
 }
 
 // FUNCTION: COPTER_D 0x0052f998
@@ -3024,8 +2992,7 @@ _Taa:
 	__asm        jge    _Te1;
 // LINE 1697:
 _Td2:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Te8;
+	return 0x1;
 // LINE 1699:
 	__asm        jmp    _Te8;
 // LINE 1701:
@@ -4690,7 +4657,6 @@ _T135f:
 // LINE 2638:
 _T1371:
 	return;
-_T1376:
 }
 
 // FUNCTION: COPTER_D 0x00530e02
@@ -4699,7 +4665,6 @@ void TrainClass::SlowDown() {
 	this->speed -= 0x20000;
 // LINE 2658:
 	return;
-_T1b:
 }
 
 // FUNCTION: COPTER_D 0x00530e22
@@ -4708,7 +4673,6 @@ void TrainClass::Stop() {
 	this->speed = 0x0;
 // LINE 2679:
 	return;
-_T1b:
 }
 
 // FUNCTION: COPTER_D 0x00530e42
@@ -4873,7 +4837,6 @@ _T1f7:
 	this->stalledTimer = 0x0;
 // LINE 2729:
 	return;
-_T206:
 }
 
 // FUNCTION: COPTER_D 0x0053104d
@@ -4883,8 +4846,7 @@ int32_t TrainClass::HaveIReachedNextLoc() {
 	__asm        cmp    dword ptr [eax+0x21], 0;
 	__asm        jg     _T28;
 // LINE 2752:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T2f;
+	return 0x1;
 // LINE 2754:
 	__asm        jmp    _T2f;
 // LINE 2756:
@@ -5020,14 +4982,11 @@ _T18a:
 	__asm        je     _T19e;
 // LINE 2791:
 _T194:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1a5;
+	return 0x1;
 // LINE 2794:
 _T19e:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1a5;
+	return 0x0;
 // LINE 2795:
-_T1a5:
 }
 
 // FUNCTION: COPTER_D 0x0053122b
@@ -5119,7 +5078,6 @@ _T101:
 // Block end:
 _T106:
 	return;
-_T10b:
 }
 
 // FUNCTION: COPTER_D 0x0053133d
@@ -5173,7 +5131,6 @@ _T95:
 	cellPointer->dyptr = dyobj;
 // LINE 2872:
 	return;
-_Tae:
 }
 
 // FUNCTION: COPTER_D 0x005313f2
@@ -6046,14 +6003,11 @@ _T9d6:
 	__asm        jmp    _T9f7;
 // LINE 3075:
 _T9f7:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Ta06;
+	return 0x0;
 // LINE 3086:
 _T9fe:
-	__asm        mov    eax, intersection;
-	__asm        jmp    _Ta06;
+	return intersection;
 // LINE 3087:
-_Ta06:
 }
 
 // FUNCTION: COPTER_D 0x00531dff
@@ -6339,7 +6293,6 @@ _T181:
 // LINE 3229:
 _T1b5:
 	return;
-_T1ba:
 }
 
 // FUNCTION: COPTER_D 0x00532149
@@ -6438,14 +6391,11 @@ _T132:
 	__asm        jne    _T146;
 // LINE 3256:
 _T13c:
-	__asm        mov    eax, 4;
-	__asm        jmp    _T150;
+	return 0x4;
 // LINE 3261:
 _T146:
-	__asm        mov    eax, 3;
-	__asm        jmp    _T150;
+	return 0x3;
 // LINE 3262:
-_T150:
 }
 
 // FUNCTION: COPTER_D 0x0053229e
@@ -6640,7 +6590,6 @@ void TrainClass::SetTrailingCars() {
 	__asm        rep movsd;
 // LINE 3310:
 	return;
-_T275:
 }
 
 // FUNCTION: COPTER_D 0x00532518
@@ -6988,7 +6937,6 @@ _T3c8:
 	__asm        add    esp, 8;
 // LINE 3395:
 	return;
-_T3e6:
 }
 
 // FUNCTION: COPTER_D 0x00532903
@@ -7116,7 +7064,6 @@ _T174:
 // LINE 3449:
 _T19e:
 	return;
-_T1a3:
 }
 
 // FUNCTION: COPTER_D 0x00532aab
@@ -7640,7 +7587,6 @@ _T56a:
 // Block end:
 _T5ef:
 	return;
-_T5f4:
 }
 
 // FUNCTION: COPTER_D 0x005330a4
@@ -7748,7 +7694,6 @@ _Tff:
 // LINE 3687:
 _T120:
 	return;
-_T125:
 }
 
 // FUNCTION: COPTER_D 0x005331ce
@@ -7856,7 +7801,6 @@ _Tff:
 // LINE 3738:
 _T120:
 	return;
-_T125:
 }
 
 // FUNCTION: COPTER_D 0x005332f8
@@ -7964,7 +7908,6 @@ _Tff:
 // LINE 3793:
 _T120:
 	return;
-_T125:
 }
 
 // FUNCTION: COPTER_D 0x00533422
@@ -8464,7 +8407,6 @@ _T551:
 	return;
 _T584:
 	__asm        jmp    foundCell;
-_T589:
 }
 
 // FUNCTION: COPTER_D 0x005339b0
@@ -8514,7 +8456,6 @@ _T61:
 // LINE 3999:
 _T81:
 	return;
-_T86:
 }
 
 // FUNCTION: COPTER_D 0x00533a3b
@@ -8777,8 +8718,7 @@ _T2d9:
 	__asm        jmp    _T3b;
 // LINE 4099:
 _T2de:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T434;
+	return 0x0;
 // LINE 4106:
 foundCell:
 	this->stalledTimer = 0x0;
@@ -8879,12 +8819,10 @@ _T3f7:
 // LINE 4132:
 	this->beamTimer = 0x0;
 // LINE 4134:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T434;
+	return 0x1;
 // LINE 4136:
 _T42f:
 	__asm        jmp    foundCell;
-_T434:
 }
 
 // FUNCTION: COPTER_D 0x00533e76
@@ -8971,8 +8909,7 @@ _T10c:
 	__asm        jmp    _T111;
 // LINE 4431:
 _T111:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T45e;
+	return 0x0;
 // LINE 4435:
 _T118:
 	__asm        cmp    instanceID, 0;
@@ -8987,8 +8924,7 @@ _T118:
 	__asm        jmp    _T152;
 // LINE 4446:
 _T14b:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T45e;
+	return 0x0;
 // LINE 4490:
 _T152:
 	__asm        mov    eax, instanceID;
@@ -9213,10 +9149,8 @@ _T440:
 // LINE 4575:
 	this->flags[0] = 0x1;
 // LINE 4577:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T45e;
+	return 0x1;
 // LINE 4578:
-_T45e:
 }
 
 // FUNCTION: COPTER_D 0x005342db
@@ -9254,7 +9188,6 @@ void ResetAllTrains() {
 	__asm        call   TrainClass::ResetAll;
 // LINE 4646:
 	return;
-_T10:
 }
 
 // FUNCTION: COPTER_D 0x00534334
@@ -9263,7 +9196,6 @@ void ItterateAllTrains() {
 	__asm        call   TrainClass::ItterateAll;
 // LINE 4669:
 	return;
-_T10:
 }
 
 // FUNCTION: COPTER_D 0x00534349
@@ -9338,8 +9270,7 @@ _T5c:
 	__asm        je     _T72;
 // LINE 4752:
 _T6b:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1e2;
+	return 0x0;
 // LINE 4756:
 _T72:
 	__asm        jmp    _T77;
@@ -9380,8 +9311,7 @@ _T77:
 	__asm        test   eax, eax;
 	__asm        jne    _Td6;
 // LINE 4764:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1e2;
+	return 0x0;
 // LINE 4768:
 _Td6:
 	t->missionId = mission_id;
@@ -9438,8 +9368,7 @@ _T161:
 // LINE 4790:
 	t->flags[8] = 0x0;
 // LINE 4791:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1e2;
+	return 0x0;
 // LINE 4795:
 _T179:
 	mp.op = 0x0;
@@ -9473,10 +9402,8 @@ _T179:
 _T1d1:
 	t->flags[8] = 0x1;
 // LINE 4811:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1e2;
+	return 0x1;
 // LINE 4812:
-_T1e2:
 }
 
 // FUNCTION: COPTER_D 0x0053456c
@@ -9522,8 +9449,7 @@ int32_t TrainClass::MIFFLoad(void * __ptr32 miffReader) {
 	__asm        cmp    ret, 0;
 	__asm        jne    _T38;
 // LINE 4860:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T35d;
+	return 0x0;
 // LINE 4862:
 _T38:
 	__asm        mov    i, 0;
@@ -9768,17 +9694,14 @@ _T315:
 	__asm        cmp    i, 0;
 	__asm        je     _T34e;
 // LINE 4912:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T35d;
+	return 0x0;
 // LINE 4913:
 _T34e:
 	__asm        jmp    _T44;
 // LINE 4914:
 _T353:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T35d;
+	return 0x1;
 // LINE 4915:
-_T35d:
 }
 
 // FUNCTION: COPTER_D 0x00534906
@@ -9809,17 +9732,14 @@ _T18:
 	__asm        cmp    ret, 0;
 	__asm        jne    _T57;
 // LINE 4935:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T66;
+	return 0x0;
 // LINE 4936:
 _T57:
 	__asm        jmp    _T15;
 // LINE 4937:
 _T5c:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T66;
+	return 0x1;
 // LINE 4938:
-_T66:
 }
 
 

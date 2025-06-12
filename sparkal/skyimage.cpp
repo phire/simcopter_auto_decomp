@@ -298,7 +298,7 @@ void SkyImage::SkyImage(int32_t nNewSkyType, int32_t nNewBitmapWidth, int32_t nN
 	__asm        call   SkyImage::LoadImageA;
 // LINE 52:
 	return;
-_Tc4:
+
 	__asm        mov    eax, this;
 }
 
@@ -317,7 +317,6 @@ void SkyImage::SwitchToSkyType(enum SkyImage::SkyType nNewSkyType) {
 // LINE 64:
 _T32:
 	return;
-_T37:
 }
 
 // FUNCTION: COPTER_D 0x0049550c
@@ -349,7 +348,6 @@ _T38:
 // LINE 75:
 _T5f:
 	return;
-_T64:
 }
 
 // FUNCTION: COPTER_D 0x00495575
@@ -399,8 +397,7 @@ _T5c:
 	__asm        cmp    vrResource, 0;
 	__asm        jne    _T8c;
 // LINE 109:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T36d;
+	return 0x0;
 // LINE 112:
 _T8c:
 	__asm        push   0;
@@ -466,8 +463,7 @@ _T156:
 	__asm        jmp    _T173;
 // LINE 127:
 _T16c:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T36d;
+	return 0x0;
 // LINE 133:
 _T173:
 	__asm        cmp    G_restex, 0;
@@ -627,10 +623,8 @@ _T354:
 	__asm        call   VRUnLoadResource;
 	__asm        add    esp, 4;
 // LINE 204:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T36d;
+	return 0x1;
 // LINE 205:
-_T36d:
 }
 
 // FUNCTION: COPTER_D 0x004958e7
@@ -692,8 +686,7 @@ _T43:
 	__asm        cmp    [eax+0x138], ecx;
 	__asm        jg     _Ta2;
 // LINE 235:
-	__asm        mov    eax, 0x80000000;
-	__asm        jmp    _T244;
+	return 0x80000000;
 // LINE 236:
 _Ta2:
 	__asm        cmp    start_row, 0;
@@ -855,10 +848,8 @@ _T1e1:
 	__asm        call   CBackBuffer::Compose;
 // LINE 299:
 _T23a:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T244;
+	return 0x1;
 // LINE 300:
-_T244:
 }
 
 

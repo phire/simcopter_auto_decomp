@@ -142,7 +142,7 @@ _Tdd:
 	this->hFont = 0x0;
 // LINE 32:
 	return;
-_T113:
+
 	__asm        mov    eax, this;
 }
 
@@ -187,7 +187,7 @@ _T78:
 	__asm        call   MFont::operator=;
 // LINE 44:
 	return;
-_T92:
+
 	__asm        mov    eax, this;
 }
 
@@ -440,7 +440,7 @@ _T2d1:
 // LINE 64:
 _T308:
 	return;
-_T30d:
+
 	__asm        mov    eax, this;
 }
 
@@ -517,7 +517,6 @@ _Tb3:
 	__asm        add    esp, 4;
 _Tdb:
 	return;
-_Te0:
 }
 
 // FUNCTION: COPTER_D 0x0049fd33
@@ -527,8 +526,7 @@ _Te0:
 	__asm        cmp    this, eax;
 	__asm        jne    _T20;
 // LINE 83:
-	__asm        mov    eax, this;
-	__asm        jmp    _T23a;
+	return this;
 // LINE 84:
 _T20:
 	__asm        mov    eax, this;
@@ -707,10 +705,8 @@ _T1ec:
 	__asm        call   dword ptr [eax];
 // LINE 95:
 _T232:
-	__asm        mov    eax, this;
-	__asm        jmp    _T23a;
+	return this;
 // LINE 96:
-_T23a:
 }
 
 // FUNCTION: COPTER_D 0x0049ff74
@@ -743,8 +739,7 @@ _T35:
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jne    _T4c;
 // LINE 133:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1e4;
+	return 0x0;
 // LINE 134:
 _T4c:
 	__asm        mov    eax, this;
@@ -893,14 +888,11 @@ _T187:
 	__asm        cmp    dword ptr [eax+0x18], 0;
 	__asm        je     _T1dd;
 // LINE 146:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1e4;
+	return 0x1;
 // LINE 147:
 _T1dd:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1e4;
+	return 0x0;
 // LINE 151:
-_T1e4:
 }
 
 // FUNCTION: COPTER_D 0x004a015d
@@ -949,7 +941,6 @@ _T61:
 // LINE 182:
 _T80:
 	return;
-_T85:
 }
 
 // FUNCTION: COPTER_D 0x004a01e9
@@ -968,16 +959,13 @@ void MFont::DestroyFont() {
 // LINE 199:
 _T30:
 	return;
-_T35:
 }
 
 // FUNCTION: COPTER_D 0x004a0223
 int32_t MFont::IsFontAvailable(char * szFaceName, unsigned long lNewHeight, unsigned long lNewWidth, unsigned long lNewAttributes) {
 // LINE 210:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T0d;
+	return 0x0;
 // LINE 214:
-_T0d:
 }
 
 // FUNCTION: COPTER_D 0x004a0235
@@ -1000,10 +988,8 @@ int32_t MFont::LoadFont(char * szPath) {
 	__asm        call   dword ptr ds:[0x6C385C];
 // LINE 230:
 _T31:
-	__asm        mov    eax, nReturnValue;
-	__asm        jmp    _T39;
+	return nReturnValue;
 // LINE 231:
-_T39:
 }
 
 // FUNCTION: COPTER_D 0x004a0273
@@ -1026,10 +1012,8 @@ int32_t MFont::UnloadFont(char * szPath) {
 	__asm        call   dword ptr ds:[0x6C385C];
 // LINE 247:
 _T31:
-	__asm        mov    eax, nReturnValue;
-	__asm        jmp    _T39;
+	return nReturnValue;
 // LINE 248:
-_T39:
 }
 
 // FUNCTION: COPTER_D 0x004a02b1
@@ -1048,8 +1032,7 @@ int32_t MFont::GetTextDimensions(char * szString, long& lWidth, long& lHeight) {
 	__asm        cmp    dword ptr [eax+0x18], 0;
 	__asm        jne    _T27;
 // LINE 269:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Te1;
+	return 0x0;
 // LINE 270:
 _T27:
 	__asm        push   0;
@@ -1113,14 +1096,11 @@ _T4e:
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C384C];
 // LINE 294:
-	__asm        mov    eax, nReturnValue;
-	__asm        jmp    _Te1;
+	return nReturnValue;
 // LINE 296:
 _Tda:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Te1;
+	return 0x0;
 // LINE 300:
-_Te1:
 }
 
 
