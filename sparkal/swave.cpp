@@ -100,7 +100,7 @@ int32_t WaveOpenFile(char * pszFileName, void * __ptr32 *phmmioIn, /*packed*/ st
 // LINE 63:
 	__asm        jmp    _T1ff;
 
-	__asm        jmp    _T1aa;
+	__asm        jmp    ERROR_READING_WAVE;
 // LINE 67:
 _T46:
 	__asm        push   0;
@@ -116,7 +116,7 @@ _T46:
 // LINE 68:
 	__asm        jmp    _T1fa;
 
-	__asm        jmp    _T1aa;
+	__asm        jmp    ERROR_READING_WAVE;
 // LINE 70:
 _T6f:
 	__asm        mov    eax, pckInRIFF;
@@ -132,7 +132,7 @@ _T8e:
 // LINE 72:
 	__asm        jmp    _T1f5;
 
-	__asm        jmp    _T1aa;
+	__asm        jmp    ERROR_READING_WAVE;
 // LINE 76:
 _T9f:
 	ckIn.ckid = 0x20746d66;
@@ -151,7 +151,7 @@ _T9f:
 // LINE 78:
 	__asm        jmp    _T1f0;
 
-	__asm        jmp    _T1aa;
+	__asm        jmp    ERROR_READING_WAVE;
 // LINE 83:
 _Td1:
 	__asm        cmp    ckIn.cksize, 0x10;
@@ -161,7 +161,7 @@ _Td1:
 // LINE 85:
 	__asm        jmp    _T1eb;
 
-	__asm        jmp    _T1aa;
+	__asm        jmp    ERROR_READING_WAVE;
 // LINE 89:
 _Tec:
 	__asm        push   0x10;
@@ -177,7 +177,7 @@ _Tec:
 // LINE 91:
 	__asm        jmp    _T1e6;
 
-	__asm        jmp    _T1aa;
+	__asm        jmp    ERROR_READING_WAVE;
 // LINE 98:
 _T116:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(pcmWaveFormat.wf.wFormatTag);
@@ -203,7 +203,7 @@ _T132:
 // LINE 105:
 	__asm        jmp    _T1e1;
 
-	__asm        jmp    _T1aa;
+	__asm        jmp    ERROR_READING_WAVE;
 // LINE 110:
 _T15c:
 	__asm        push   0x10;
@@ -228,17 +228,16 @@ _T15c:
 // LINE 127:
 	__asm        jmp    _T1dc;
 
-	__asm        jmp    _T1aa;
+	__asm        jmp    ERROR_READING_WAVE;
 // LINE 129:
 _T1a0:
 	__asm        jmp    _T1d7;
 
-	__asm        jmp    _T1c7;
+	__asm        jmp    END_OF_ROUTINE;
 // LINE 132:
 ERROR_READING_WAVE:
-_T1aa:
 	__asm        cmp    hmmioIn, 0;
-	__asm        je     _T1c7;
+	__asm        je     END_OF_ROUTINE;
 // LINE 133:
 	__asm        push   0;
 	__asm        mov    eax, hmmioIn;
@@ -248,30 +247,29 @@ _T1aa:
 	hmmioIn = 0x0;
 // LINE 138:
 END_OF_ROUTINE:
-_T1c7:
 	phmmioIn-> = hmmioIn;
 // LINE 140:
 	__asm        mov    eax, nError;
 	__asm        jmp    _T204;
 // LINE 141:
 _T1d7:
-	__asm        jmp    _T1c7;
+	__asm        jmp    END_OF_ROUTINE;
 _T1dc:
-	__asm        jmp    _T1aa;
+	__asm        jmp    ERROR_READING_WAVE;
 _T1e1:
-	__asm        jmp    _T1aa;
+	__asm        jmp    ERROR_READING_WAVE;
 _T1e6:
-	__asm        jmp    _T1aa;
+	__asm        jmp    ERROR_READING_WAVE;
 _T1eb:
-	__asm        jmp    _T1aa;
+	__asm        jmp    ERROR_READING_WAVE;
 _T1f0:
-	__asm        jmp    _T1aa;
+	__asm        jmp    ERROR_READING_WAVE;
 _T1f5:
-	__asm        jmp    _T1aa;
+	__asm        jmp    ERROR_READING_WAVE;
 _T1fa:
-	__asm        jmp    _T1aa;
+	__asm        jmp    ERROR_READING_WAVE;
 _T1ff:
-	__asm        jmp    _T1aa;
+	__asm        jmp    ERROR_READING_WAVE;
 _T204:
 }
 
@@ -295,7 +293,7 @@ int32_t WaveStartDataRead(void * __ptr32 *phmmioIn, /*packed*/ struct _MMCKINFO 
 // LINE 161:
 	__asm        jmp    _T62;
 
-	__asm        jmp    _T5a;
+	__asm        jmp    ERROR_READING_WAVE;
 // LINE 164:
 _T38:
 	pckIn->ckid = 0x61746164;
@@ -312,12 +310,11 @@ _T38:
 	__asm        mov    nError, eax;
 // LINE 168:
 ERROR_READING_WAVE:
-_T5a:
 	__asm        mov    eax, nError;
 	__asm        jmp    _T67;
 // LINE 169:
 _T62:
-	__asm        jmp    _T5a;
+	__asm        jmp    ERROR_READING_WAVE;
 _T67:
 }
 
@@ -342,7 +339,7 @@ int32_t WaveReadFile(void * __ptr32 hmmioIn, uint32_t cbRead, unsigned char * pb
 // LINE 200:
 	__asm        jmp    _T140;
 
-	__asm        jmp    _T11b;
+	__asm        jmp    ERROR_CANNOT_READ;
 // LINE 203:
 _T30:
 	__asm        mov    eax, pckIn;
@@ -384,7 +381,7 @@ _T64:
 // LINE 212:
 	__asm        jmp    _T13b;
 
-	__asm        jmp    _T11b;
+	__asm        jmp    ERROR_CANNOT_READ;
 // LINE 214:
 _Ta3:
 	__asm        mov    eax, mmioinfoIn.pchEndRead;
@@ -395,7 +392,7 @@ _Ta3:
 // LINE 216:
 	__asm        jmp    _T136;
 
-	__asm        jmp    _T11b;
+	__asm        jmp    ERROR_CANNOT_READ;
 // LINE 222:
 _Tc0:
 	__asm        mov    eax, mmioinfoIn.pchNext;
@@ -425,34 +422,32 @@ _Te2:
 // LINE 229:
 	__asm        jmp    _T131;
 
-	__asm        jmp    _T11b;
+	__asm        jmp    ERROR_CANNOT_READ;
 // LINE 231:
 _T109:
 	cbActualRead[0] = cbRead;
 // LINE 232:
 	__asm        jmp    _T12c;
 
-	__asm        jmp    _T124;
+	__asm        jmp    FINISHED_READING;
 // LINE 235:
 ERROR_CANNOT_READ:
-_T11b:
 	cbActualRead[0] = 0x0;
 // LINE 238:
 FINISHED_READING:
-_T124:
 	__asm        mov    eax, nError;
 	__asm        jmp    _T145;
 // LINE 239:
 _T12c:
-	__asm        jmp    _T124;
+	__asm        jmp    FINISHED_READING;
 _T131:
-	__asm        jmp    _T11b;
+	__asm        jmp    ERROR_CANNOT_READ;
 _T136:
-	__asm        jmp    _T11b;
+	__asm        jmp    ERROR_CANNOT_READ;
 _T13b:
-	__asm        jmp    _T11b;
+	__asm        jmp    ERROR_CANNOT_READ;
 _T140:
-	__asm        jmp    _T11b;
+	__asm        jmp    ERROR_CANNOT_READ;
 _T145:
 }
 
@@ -506,7 +501,7 @@ int32_t WaveLoadFile(char * pszFileName, uint32_t * cbSize, /*packed*/ struct tW
 // LINE 289:
 	__asm        jmp    _T171;
 
-	__asm        jmp    _T112;
+	__asm        jmp    ERROR_LOADING;
 // LINE 294:
 _T4a:
 	__asm        push   0;
@@ -521,7 +516,7 @@ _T4a:
 // LINE 295:
 	__asm        jmp    _T16c;
 
-	__asm        jmp    _T112;
+	__asm        jmp    ERROR_LOADING;
 // LINE 298:
 _T70:
 	ckIn.ckid = 0x61746164;
@@ -539,7 +534,7 @@ _T70:
 // LINE 300:
 	__asm        jmp    _T167;
 
-	__asm        jmp    _T112;
+	__asm        jmp    ERROR_LOADING;
 // LINE 303:
 _T9d:
 	__asm        mov    eax, ckIn.cksize;
@@ -556,7 +551,7 @@ _T9d:
 // LINE 305:
 	__asm        jmp    _T162;
 
-	__asm        jmp    _T112;
+	__asm        jmp    ERROR_LOADING;
 // LINE 311:
 _Tcb:
 	__asm        lea    eax, cbActualRead;
@@ -578,20 +573,19 @@ _Tcb:
 // LINE 312:
 	__asm        jmp    _T15d;
 
-	__asm        jmp    _T112;
+	__asm        jmp    ERROR_LOADING;
 // LINE 315:
 _T100:
 	cbSize[0] = cbActualRead;
 // LINE 316:
 	__asm        jmp    _T158;
 
-	__asm        jmp    _T133;
+	__asm        jmp    DONE_LOADING;
 // LINE 319:
 ERROR_LOADING:
-_T112:
 	__asm        mov    eax, ppbData;
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        je     _T133;
+	__asm        je     DONE_LOADING;
 // LINE 320:
 	__asm        mov    eax, ppbData;
 	__asm        mov    eax, [eax];
@@ -601,7 +595,6 @@ _T112:
 	ppbData-> = 0x0;
 // LINE 326:
 DONE_LOADING:
-_T133:
 	__asm        cmp    hmmioIn, 0;
 	__asm        je     _T150;
 // LINE 327:
@@ -617,17 +610,17 @@ _T150:
 	__asm        jmp    _T176;
 // LINE 332:
 _T158:
-	__asm        jmp    _T133;
+	__asm        jmp    DONE_LOADING;
 _T15d:
-	__asm        jmp    _T112;
+	__asm        jmp    ERROR_LOADING;
 _T162:
-	__asm        jmp    _T112;
+	__asm        jmp    ERROR_LOADING;
 _T167:
-	__asm        jmp    _T112;
+	__asm        jmp    ERROR_LOADING;
 _T16c:
-	__asm        jmp    _T112;
+	__asm        jmp    ERROR_LOADING;
 _T171:
-	__asm        jmp    _T112;
+	__asm        jmp    ERROR_LOADING;
 _T176:
 }
 

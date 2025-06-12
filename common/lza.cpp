@@ -96,7 +96,7 @@ short LZACompress(/*packed*/ class cGZXBitstream *inStream, /*packed*/ class cGZ
 // LINE 658:
 	__asm        jmp    _T253;
 
-	__asm        jmp    _T1e9;
+	__asm        jmp    CompressDone;
 // LINE 660:
 _T50:
 	__asm        push   0xD44F;
@@ -111,7 +111,7 @@ _T50:
 // LINE 663:
 	__asm        jmp    _T24e;
 
-	__asm        jmp    _T1e9;
+	__asm        jmp    CompressDone;
 // LINE 665:
 _T7a:
 	__asm        push   0x20;
@@ -126,7 +126,7 @@ _T7a:
 // LINE 668:
 	__asm        jmp    _T249;
 
-	__asm        jmp    _T1e9;
+	__asm        jmp    CompressDone;
 // LINE 671:
 _Ta1:
 	state->textsize = 0x0;
@@ -179,7 +179,7 @@ _Ta1:
 // LINE 690:
 	__asm        jmp    _T244;
 
-	__asm        jmp    _T1e9;
+	__asm        jmp    CompressDone;
 // LINE 693:
 _T15e:
 	__asm        mov    eax, state;
@@ -198,7 +198,7 @@ _T15e:
 // LINE 696:
 	__asm        jmp    _T23f;
 
-	__asm        jmp    _T1e9;
+	__asm        jmp    CompressDone;
 // LINE 700:
 _T18c:
 	__asm        mov    eax, state;
@@ -228,7 +228,7 @@ _T18c:
 // LINE 705:
 	__asm        jmp    _T23a;
 
-	__asm        jmp    _T1e9;
+	__asm        jmp    CompressDone;
 // LINE 707:
 _T1d8:
 	cSize[0] = state->codesize;
@@ -236,7 +236,6 @@ _T1d8:
 	retVal = 0x0;
 // LINE 715:
 CompressDone:
-_T1e9:
 	__asm        mov    eax, model;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        mov    eax, [ebp-0x1C];
@@ -268,17 +267,17 @@ _T1e9:
 	__asm        jmp    _T258;
 // LINE 720:
 _T23a:
-	__asm        jmp    _T1e9;
+	__asm        jmp    CompressDone;
 _T23f:
-	__asm        jmp    _T1e9;
+	__asm        jmp    CompressDone;
 _T244:
-	__asm        jmp    _T1e9;
+	__asm        jmp    CompressDone;
 _T249:
-	__asm        jmp    _T1e9;
+	__asm        jmp    CompressDone;
 _T24e:
-	__asm        jmp    _T1e9;
+	__asm        jmp    CompressDone;
 _T253:
-	__asm        jmp    _T1e9;
+	__asm        jmp    CompressDone;
 _T258:
 }
 
@@ -1646,7 +1645,7 @@ short LZAExpand(/*packed*/ class cGZXBitstream *inStream, /*packed*/ class cGZXB
 // LINE 740:
 	__asm        jmp    _T16b;
 
-	__asm        jmp    _T110;
+	__asm        jmp    ExpandDone;
 // LINE 742:
 _T33:
 	__asm        push   0xD44F;
@@ -1661,7 +1660,7 @@ _T33:
 // LINE 745:
 	__asm        jmp    _T166;
 
-	__asm        jmp    _T110;
+	__asm        jmp    ExpandDone;
 // LINE 747:
 _T5d:
 	__asm        push   0x20;
@@ -1676,7 +1675,7 @@ _T5d:
 // LINE 750:
 	__asm        jmp    _T161;
 
-	__asm        jmp    _T110;
+	__asm        jmp    ExpandDone;
 // LINE 753:
 _T84:
 	state->infile = inStream;
@@ -1714,7 +1713,6 @@ _T84:
 	__asm        mov    retVal, ax;
 // LINE 770:
 ExpandDone:
-_T110:
 	__asm        mov    eax, model;
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    eax, [ebp-0x14];
@@ -1746,11 +1744,11 @@ _T110:
 	__asm        jmp    _T170;
 // LINE 775:
 _T161:
-	__asm        jmp    _T110;
+	__asm        jmp    ExpandDone;
 _T166:
-	__asm        jmp    _T110;
+	__asm        jmp    ExpandDone;
 _T16b:
-	__asm        jmp    _T110;
+	__asm        jmp    ExpandDone;
 _T170:
 }
 

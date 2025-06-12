@@ -1514,6 +1514,7 @@ long CSparkalWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message
 // Block start:
 	/*bp-0x40*/  /*packed*/ struct tagPAINTSTRUCT Paint; // 0x40 bytes
 	/*bp-0x44*/  void * __ptr32 hdc;
+_T14:
 	__asm        mov    eax, Window;
 	__asm        cmp    wParam, eax;
 	__asm        jne    _T25;
@@ -1691,6 +1692,7 @@ _T198:
 _T1c3:
 	__asm        jmp    _T468;
 // LINE 663:
+_T1c8:
 	__asm        mov    eax, Window;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38A0];
@@ -1725,6 +1727,7 @@ _T1c3:
 _T221:
 	__asm        jmp    _T468;
 // LINE 670:
+_T226:
 	__asm        mov    eax, Window;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38A0];
@@ -1759,6 +1762,7 @@ _T221:
 _T27f:
 	__asm        jmp    _T468;
 // LINE 677:
+_T284:
 	__asm        call   dword ptr ds:[0x6C38A8];
 // LINE 678:
 	__asm        jmp    near ptr 0x004818D6;
@@ -1791,6 +1795,7 @@ _T27f:
 _T2d9:
 	__asm        jmp    _T468;
 // LINE 684:
+_T2de:
 	__asm        call   dword ptr ds:[0x6C38A8];
 // LINE 685:
 	__asm        jmp    near ptr 0x00481930;
@@ -1914,7 +1919,17 @@ _T414:
 
 	__asm        mov    eax, [ebp-0x70];
 	__asm        jmp    _Switch_442[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T1c8
+//   _T284
+//   _T468
+//   _T226
+//   _T2de
+_T456:
+	__asm        cmp    dword ptr [ebp-0x70], 0x311;
+	__asm        je     _T14;
+
+	__asm        jmp    _T468;
 // LINE 705:
 _T468:
 	__asm        mov    eax, lParam;

@@ -539,7 +539,7 @@ _T47:
 // LINE 150:
 	__asm        jmp    _T2b8;
 
-	__asm        jmp    _T229;
+	__asm        jmp    ERROR_CLEANUP;
 // LINE 155:
 _Ted:
 	DigitalSound::lpDirectSound = this->lpDirectSound;
@@ -571,7 +571,7 @@ _Ted:
 // LINE 162:
 	__asm        jmp    _T2b3;
 
-	__asm        jmp    _T229;
+	__asm        jmp    ERROR_CLEANUP;
 // LINE 168:
 _T147:
 	__asm        push   1;
@@ -599,7 +599,7 @@ _T147:
 // LINE 171:
 	__asm        jmp    _T2ae;
 
-	__asm        jmp    _T229;
+	__asm        jmp    ERROR_CLEANUP;
 // LINE 175:
 _T18e:
 	__asm        mov    eax, this;
@@ -615,7 +615,7 @@ _T18e:
 // LINE 177:
 	__asm        jmp    _T2a9;
 
-	__asm        jmp    _T229;
+	__asm        jmp    ERROR_CLEANUP;
 // LINE 179:
 _T1b8:
 	this->lpPrimarySound = this->primarySound->lpSound[0];
@@ -647,17 +647,16 @@ _T1b8:
 // LINE 195:
 	__asm        jmp    _T2a4;
 
-	__asm        jmp    _T229;
+	__asm        jmp    ERROR_CLEANUP;
 // LINE 197:
 _T215:
 	this->bSoundEnabled = 0x1;
 // LINE 198:
 	__asm        jmp    _T29f;
 
-	__asm        jmp    _T297;
+	__asm        jmp    END_OF_ROUTINE;
 // LINE 201:
 ERROR_CLEANUP:
-_T229:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        cmp    dword ptr [eax+0x52], 0;
@@ -681,7 +680,7 @@ _T229:
 _T263:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0;
-	__asm        je     _T297;
+	__asm        je     END_OF_ROUTINE;
 // LINE 206:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x10];
@@ -697,22 +696,21 @@ _T263:
 	__asm        mov    [ecx+0x10], eax;
 // LINE 216:
 END_OF_ROUTINE:
-_T297:
 	__asm        mov    eax, bReturnValue;
 	__asm        jmp    _T2bd;
 // LINE 218:
 _T29f:
-	__asm        jmp    _T297;
+	__asm        jmp    END_OF_ROUTINE;
 _T2a4:
-	__asm        jmp    _T229;
+	__asm        jmp    ERROR_CLEANUP;
 _T2a9:
-	__asm        jmp    _T229;
+	__asm        jmp    ERROR_CLEANUP;
 _T2ae:
-	__asm        jmp    _T229;
+	__asm        jmp    ERROR_CLEANUP;
 _T2b3:
-	__asm        jmp    _T229;
+	__asm        jmp    ERROR_CLEANUP;
 _T2b8:
-	__asm        jmp    _T229;
+	__asm        jmp    ERROR_CLEANUP;
 _T2bd:
 }
 
@@ -2553,7 +2551,7 @@ _T1b6:
 // LINE 780:
 	__asm        jmp    _T2fd;
 
-	__asm        jmp    _T2e0;
+	__asm        jmp    ERROR_DONE_ROUTINE;
 // LINE 785:
 _T1e5:
 	__asm        push   0;
@@ -2591,7 +2589,7 @@ _T1e5:
 // LINE 788:
 	__asm        jmp    _T2f8;
 
-	__asm        jmp    _T2e0;
+	__asm        jmp    ERROR_DONE_ROUTINE;
 // LINE 797:
 _T241:
 	__asm        lea    eax, cbActualRead;
@@ -2654,14 +2652,13 @@ _T27b:
 // LINE 809:
 	__asm        jmp    _T2f3;
 
-	__asm        jmp    _T2e0;
+	__asm        jmp    ERROR_DONE_ROUTINE;
 // LINE 819:
 _T2d8:
 	__asm        mov    eax, bReturnValue;
 	__asm        jmp    _T302;
 // LINE 822:
 ERROR_DONE_ROUTINE:
-_T2e0:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
@@ -2671,11 +2668,11 @@ _T2e0:
 	__asm        jmp    _T302;
 // LINE 825:
 _T2f3:
-	__asm        jmp    _T2e0;
+	__asm        jmp    ERROR_DONE_ROUTINE;
 _T2f8:
-	__asm        jmp    _T2e0;
+	__asm        jmp    ERROR_DONE_ROUTINE;
 _T2fd:
-	__asm        jmp    _T2e0;
+	__asm        jmp    ERROR_DONE_ROUTINE;
 _T302:
 }
 
@@ -2751,7 +2748,7 @@ _T20:
 // LINE 888:
 	__asm        jmp    _T144;
 
-	__asm        jmp    _T10f;
+	__asm        jmp    ERROR_IN_ROUTINE;
 // LINE 893:
 _T76:
 	Sound::lTotalMemoryUsage += dsNewBufferDescription->dwBufferBytes;
@@ -2797,7 +2794,7 @@ _T87:
 // LINE 908:
 	__asm        jmp    _T13f;
 
-	__asm        jmp    _T10f;
+	__asm        jmp    ERROR_IN_ROUTINE;
 // LINE 913:
 _Tfc:
 	Sound::lTotalMemoryUsage += dsBufferDescription.dwBufferBytes;
@@ -2807,7 +2804,6 @@ _T105:
 	__asm        jmp    _T149;
 // LINE 919:
 ERROR_IN_ROUTINE:
-_T10f:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x52], 0;
 	__asm        je     _T138;
@@ -2827,9 +2823,9 @@ _T138:
 	__asm        jmp    _T149;
 // LINE 925:
 _T13f:
-	__asm        jmp    _T10f;
+	__asm        jmp    ERROR_IN_ROUTINE;
 _T144:
-	__asm        jmp    _T10f;
+	__asm        jmp    ERROR_IN_ROUTINE;
 _T149:
 }
 
@@ -4878,7 +4874,7 @@ _T21:
 // LINE 1826:
 	__asm        jmp    _T74c;
 
-	__asm        jmp    _T71c;
+	__asm        jmp    END_OF_FUNCTION;
 // LINE 1830:
 _T7f:
 	__asm        mov    eax, this;
@@ -4906,7 +4902,7 @@ _T7f:
 _Tc7:
 	__asm        jmp    _T747;
 
-	__asm        jmp    _T71c;
+	__asm        jmp    END_OF_FUNCTION;
 // LINE 1841:
 _Td1:
 	__asm        mov    eax, this;
@@ -4986,7 +4982,7 @@ _T11b:
 // LINE 1863:
 	__asm        jmp    _T742;
 
-	__asm        jmp    _T71c;
+	__asm        jmp    END_OF_FUNCTION;
 // LINE 1880:
 _T1aa:
 	__asm        mov    eax, dwLength1;
@@ -5042,7 +5038,7 @@ _T1aa:
 _T233:
 	__asm        jmp    _T73d;
 
-	__asm        jmp    _T71c;
+	__asm        jmp    END_OF_FUNCTION;
 // LINE 1902:
 _T23d:
 	__asm        push   0;
@@ -5074,7 +5070,7 @@ _T23d:
 // LINE 1904:
 	__asm        jmp    _T738;
 
-	__asm        jmp    _T71c;
+	__asm        jmp    END_OF_FUNCTION;
 // LINE 1907:
 _T287:
 	__asm        cmp    dwLength1, 0;
@@ -5131,7 +5127,7 @@ _T287:
 // LINE 1914:
 	__asm        jmp    _T733;
 
-	__asm        jmp    _T71c;
+	__asm        jmp    END_OF_FUNCTION;
 // LINE 1916:
 _T319:
 	__asm        mov    eax, nActualBytesRead;
@@ -5329,7 +5325,7 @@ _T489:
 // LINE 1973:
 	__asm        jmp    _T72e;
 
-	__asm        jmp    _T71c;
+	__asm        jmp    END_OF_FUNCTION;
 // LINE 1975:
 _T51b:
 	__asm        mov    eax, nActualBytesRead;
@@ -5515,7 +5511,7 @@ _T6ba:
 	__asm        mov    ecx, [ecx+0x72];
 	__asm        mov    ecx, [ecx+0x34];
 	__asm        cmp    [eax+0x2C], ecx;
-	__asm        ja     _T71c;
+	__asm        ja     END_OF_FUNCTION;
 // LINE 2026:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, this;
@@ -5527,24 +5523,23 @@ _T6ba:
 	__asm        sub    [ecx+0x34], eax;
 // LINE 2030:
 END_OF_FUNCTION:
-_T71c:
 	this->lpStreamBufferInfo->bInTimerCallback = 0x0;
 // LINE 2032:
 	__asm        jmp    _T751;
 _T72e:
-	__asm        jmp    _T71c;
+	__asm        jmp    END_OF_FUNCTION;
 _T733:
-	__asm        jmp    _T71c;
+	__asm        jmp    END_OF_FUNCTION;
 _T738:
-	__asm        jmp    _T71c;
+	__asm        jmp    END_OF_FUNCTION;
 _T73d:
-	__asm        jmp    _T71c;
+	__asm        jmp    END_OF_FUNCTION;
 _T742:
-	__asm        jmp    _T71c;
+	__asm        jmp    END_OF_FUNCTION;
 _T747:
-	__asm        jmp    _T71c;
+	__asm        jmp    END_OF_FUNCTION;
 _T74c:
-	__asm        jmp    _T71c;
+	__asm        jmp    END_OF_FUNCTION;
 _T751:
 }
 

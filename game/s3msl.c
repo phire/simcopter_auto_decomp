@@ -2694,7 +2694,7 @@ _T729:
 	__asm        test   byte ptr [eax], 1;
 	__asm        jne    _T75d;
 // LINE 1110:
-	__asm        jmp    _T993;
+	__asm        jmp    debris_unlink_next;
 // LINE 1113:
 _T75d:
 	__asm        mov    eax, md;
@@ -2741,7 +2741,7 @@ _T7ae:
 	__asm        test   byte ptr [eax], 1;
 	__asm        jne    _T7ee;
 // LINE 1125:
-	__asm        jmp    _T993;
+	__asm        jmp    debris_unlink_next;
 // LINE 1128:
 _T7ee:
 	__asm        mov    eax, md;
@@ -2876,7 +2876,6 @@ _T90b:
 	__asm        jmp    _T9d;
 // LINE 1168:
 debris_unlink_next:
-_T993:
 	S_num_active_debris--;
 // LINE 1172:
 	__asm        mov    eax, md;
@@ -3283,7 +3282,7 @@ _Te8a:
 	__asm        test   byte ptr [eax], 1;
 	__asm        jne    _Tebe;
 // LINE 1297:
-	__asm        jmp    _T10ca;
+	__asm        jmp    teargas_unlink_next;
 // LINE 1300:
 _Tebe:
 	__asm        mov    eax, md;
@@ -3330,7 +3329,7 @@ _Tf0f:
 	__asm        test   byte ptr [eax], 1;
 	__asm        jne    _Tf4f;
 // LINE 1312:
-	__asm        jmp    _T10ca;
+	__asm        jmp    teargas_unlink_next;
 // LINE 1315:
 _Tf4f:
 	__asm        mov    eax, md;
@@ -3455,7 +3454,6 @@ _T1039:
 	__asm        jmp    _Ta3c;
 // LINE 1353:
 teargas_unlink_next:
-_T10ca:
 	S_num_active_teargas--;
 // LINE 1354:
 	__asm        mov    eax, lcptr;
@@ -3673,7 +3671,7 @@ _T135b:
 	__asm        test   byte ptr [eax], 1;
 	__asm        jne    _T1386;
 // LINE 1421:
-	__asm        jmp    _T14c5;
+	__asm        jmp    missile_unlink_next;
 // LINE 1425:
 _T1386:
 	__asm        mov    eax, lcptr;
@@ -3693,7 +3691,7 @@ _T1386:
 	__asm        test   byte ptr [eax], 1;
 	__asm        jne    _T13bd;
 // LINE 1429:
-	__asm        jmp    _T14c5;
+	__asm        jmp    missile_unlink_next;
 // LINE 1433:
 _T13bd:
 	__asm        mov    eax, lcptr;
@@ -3779,7 +3777,6 @@ _T1434:
 	__asm        jmp    _T1137;
 // LINE 1463:
 missile_unlink_next:
-_T14c5:
 	S_num_active_missiles--;
 // LINE 1464:
 	__asm        mov    eax, lcptr;
@@ -3976,7 +3973,7 @@ _T1620:
 	__asm        test   byte ptr [eax], 1;
 	__asm        jne    _T173f;
 // LINE 1520:
-	__asm        jmp    _T187e;
+	__asm        jmp    laser_unlink_next;
 // LINE 1524:
 _T173f:
 	__asm        mov    eax, lcptr;
@@ -3996,7 +3993,7 @@ _T173f:
 	__asm        test   byte ptr [eax], 1;
 	__asm        jne    _T1776;
 // LINE 1528:
-	__asm        jmp    _T187e;
+	__asm        jmp    laser_unlink_next;
 // LINE 1532:
 _T1776:
 	__asm        mov    eax, lcptr;
@@ -4082,7 +4079,6 @@ _T17ed:
 	__asm        jmp    _T1532;
 // LINE 1562:
 laser_unlink_next:
-_T187e:
 	S_num_active_lasers--;
 // LINE 1563:
 	__asm        mov    eax, lcptr;
@@ -4434,7 +4430,7 @@ _T1bd9:
 	__asm        test   byte ptr [eax], 1;
 	__asm        jne    _T1cf8;
 // LINE 1659:
-	__asm        jmp    _T1e37;
+	__asm        jmp    bullet_unlink_next;
 // LINE 1662:
 _T1cf8:
 	__asm        mov    eax, lcptr;
@@ -4454,7 +4450,7 @@ _T1cf8:
 	__asm        test   byte ptr [eax], 1;
 	__asm        jne    _T1d2f;
 // LINE 1666:
-	__asm        jmp    _T1e37;
+	__asm        jmp    bullet_unlink_next;
 // LINE 1670:
 _T1d2f:
 	__asm        mov    eax, lcptr;
@@ -4540,7 +4536,6 @@ _T1da6:
 	__asm        jmp    _T18eb;
 // LINE 1698:
 bullet_unlink_next:
-_T1e37:
 	S_num_active_bullets--;
 // LINE 1699:
 	__asm        mov    eax, lcptr;
@@ -4900,7 +4895,7 @@ int32_t S3MissileCollisionCheck(/*packed*/ struct _MISSILE_DATA *md, int32_t dis
 	__asm        test   byte ptr [eax+1], 9;
 	__asm        je     _T67;
 // LINE 1815:
-	__asm        jmp    _T456;
+	__asm        jmp    skip_dynamic_objs;
 // LINE 1817:
 _T67:
 	hit_type = 0xffffffff;
@@ -4956,7 +4951,7 @@ _T100:
 // LINE 1845:
 _T109:
 	__asm        cmp    dyobj, 0;
-	__asm        je     _T456;
+	__asm        je     skip_dynamic_objs;
 // LINE 1848:
 	__asm        mov    eax, md;
 	__asm        mov    ecx, dyobj;
@@ -5248,7 +5243,6 @@ _T451:
 	__asm        jmp    _T109;
 // LINE 1992:
 skip_dynamic_objs:
-_T456:
 	stobj = cptr->stptr;
 // LINE 1994:
 _T45f:

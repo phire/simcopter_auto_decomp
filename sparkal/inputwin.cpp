@@ -9801,6 +9801,7 @@ _T23:
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        jmp    _T330;
 // LINE 1203:
+_T2e:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x38], 0;
 	__asm        je     _T5d;
@@ -9823,6 +9824,7 @@ _T5d:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T38a;
 // LINE 1207:
+_T67:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x38], 0;
 	__asm        je     _T96;
@@ -9845,6 +9847,7 @@ _T96:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T38a;
 // LINE 1212:
+_Ta0:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xA0];
 	__asm        mov    [ebp-0x24], eax;
@@ -9948,6 +9951,7 @@ _T197:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T38a;
 // LINE 1218:
+_T1ce:
 	__asm        mov    eax, pMessageData;
 	__asm        push   eax;
 	__asm        mov    eax, lMessage;
@@ -9958,6 +9962,7 @@ _T197:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T38a;
 // LINE 1221:
+_T1e8:
 	__asm        mov    eax, pMessageData;
 	__asm        push   eax;
 	__asm        mov    eax, lMessage;
@@ -9968,6 +9973,7 @@ _T197:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T38a;
 // LINE 1224:
+_T202:
 	__asm        mov    eax, pMessageData;
 	__asm        push   eax;
 	__asm        mov    eax, lMessage;
@@ -9978,6 +9984,7 @@ _T197:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T38a;
 // LINE 1227:
+_T21c:
 	__asm        mov    eax, pMessageData;
 	__asm        push   eax;
 	__asm        mov    eax, lMessage;
@@ -9988,6 +9995,7 @@ _T197:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T38a;
 // LINE 1230:
+_T236:
 	__asm        push   0x80;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
@@ -10079,7 +10087,18 @@ _T330:
 
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        jmp    _Switch_35a[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T2e
+//   _T67
+//   _Ta0
+//   _T383
+//   _T1ce
+//   _T1e8
+//   _T202
+//   _T21c
+//   _T236
+_T37e:
+	__asm        jmp    _T383;
 // LINE 1243:
 _T383:
 	__asm        xor    eax, eax;

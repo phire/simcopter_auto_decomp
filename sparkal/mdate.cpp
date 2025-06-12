@@ -1743,6 +1743,7 @@ _T109:
 	__asm        mov    [ebp-0xC0], eax;
 	__asm        jmp    _T259;
 // LINE 630:
+_T32:
 	__asm        jmp    near ptr 0x004BD3D1;
 
 	__asm        mov    ecx, d;
@@ -1778,6 +1779,7 @@ _T109:
 // LINE 631:
 	__asm        jmp    _T287;
 // LINE 636:
+_Tab:
 	__asm        jmp    near ptr 0x004BD44A;
 
 	__asm        mov    ecx, d;
@@ -1803,6 +1805,7 @@ _T109:
 // LINE 637:
 	__asm        jmp    _T287;
 // LINE 638:
+_Tf3:
 	__asm        mov    ecx, d;
 	__asm        call   MDate::Year;
 	__asm        mov    ecx, 0x64;
@@ -1837,6 +1840,7 @@ _T109:
 // LINE 642:
 	__asm        jmp    _T287;
 // LINE 643:
+_T167:
 	__asm        mov    ecx, d;
 	__asm        call   MDate::Year;
 	__asm        mov    ecx, 0x64;
@@ -1871,6 +1875,7 @@ _T109:
 // LINE 647:
 	__asm        jmp    _T287;
 // LINE 651:
+_T1db:
 	__asm        jmp    near ptr 0x004BD57A;
 
 	__asm        mov    ecx, d;
@@ -1913,7 +1918,12 @@ _T259:
 
 	__asm        mov    eax, [ebp-0xC0];
 	__asm        jmp    _Switch_273[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T32
+//   _Tab
+//   _Tf3
+//   _T167
+//   _T1db
 // LINE 658:
 _T287:
 	__asm        lea    eax, buf[0];

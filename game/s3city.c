@@ -719,6 +719,7 @@ _T199:
 	__asm        mov    [ebp-0x44], eax;
 	__asm        jmp    _T545;
 // LINE 526:
+_T1ae:
 	__asm        movsx  eax, size;
 	__asm        push   eax;
 	__asm        mov    eax, y;
@@ -738,6 +739,7 @@ _T199:
 // LINE 529:
 	__asm        jmp    _T5b9;
 // LINE 531:
+_T1e3:
 	__asm        movsx  eax, size;
 	__asm        push   eax;
 	__asm        mov    eax, y;
@@ -757,6 +759,7 @@ _T199:
 // LINE 534:
 	__asm        jmp    _T5b9;
 // LINE 536:
+_T218:
 	__asm        movsx  eax, size;
 	__asm        push   eax;
 	__asm        mov    eax, y;
@@ -776,6 +779,7 @@ _T199:
 // LINE 539:
 	__asm        jmp    _T5b9;
 // LINE 541:
+_T24d:
 	__asm        movsx  eax, size;
 	__asm        push   eax;
 	__asm        mov    eax, y;
@@ -795,6 +799,7 @@ _T199:
 // LINE 544:
 	__asm        jmp    _T5b9;
 // LINE 546:
+_T282:
 	__asm        movsx  eax, size;
 	__asm        push   eax;
 	__asm        mov    eax, y;
@@ -814,6 +819,7 @@ _T199:
 // LINE 549:
 	__asm        jmp    _T5b9;
 // LINE 551:
+_T2b7:
 	__asm        movsx  eax, size;
 	__asm        push   eax;
 	__asm        mov    eax, y;
@@ -833,6 +839,7 @@ _T199:
 // LINE 554:
 	__asm        jmp    _T5b9;
 // LINE 556:
+_T2ec:
 	__asm        movsx  eax, size;
 	__asm        push   eax;
 	__asm        mov    eax, y;
@@ -852,6 +859,7 @@ _T199:
 // LINE 559:
 	__asm        jmp    _T5b9;
 // LINE 561:
+_T321:
 	__asm        movsx  eax, size;
 	__asm        push   eax;
 	__asm        mov    eax, y;
@@ -871,6 +879,7 @@ _T199:
 // LINE 564:
 	__asm        jmp    _T5b9;
 // LINE 566:
+_T356:
 	__asm        push   0x55;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -882,6 +891,7 @@ _T199:
 // LINE 569:
 	__asm        jmp    _T5b9;
 // LINE 571:
+_T376:
 	__asm        push   0x56;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -893,6 +903,7 @@ _T199:
 // LINE 574:
 	__asm        jmp    _T5b9;
 // LINE 576:
+_T396:
 	__asm        push   0x57;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -904,6 +915,7 @@ _T199:
 // LINE 579:
 	__asm        jmp    _T5b9;
 // LINE 581:
+_T3b6:
 	__asm        push   0x58;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -915,6 +927,7 @@ _T199:
 // LINE 584:
 	__asm        jmp    _T5b9;
 // LINE 586:
+_T3d6:
 	__asm        push   0x59;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -926,6 +939,7 @@ _T199:
 // LINE 589:
 	__asm        jmp    _T5b9;
 // LINE 591:
+_T3f6:
 	__asm        push   0x5A;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -937,6 +951,7 @@ _T199:
 // LINE 594:
 	__asm        jmp    _T5b9;
 // LINE 596:
+_T416:
 	__asm        push   0x5B;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -948,6 +963,7 @@ _T199:
 // LINE 599:
 	__asm        jmp    _T5b9;
 // LINE 601:
+_T436:
 	__asm        push   0x5C;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -959,6 +975,7 @@ _T199:
 // LINE 604:
 	__asm        jmp    _T5b9;
 // LINE 606:
+_T456:
 	__asm        push   0x5D;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -970,6 +987,7 @@ _T199:
 // LINE 609:
 	__asm        jmp    _T5b9;
 // LINE 611:
+_T476:
 	__asm        push   0x5E;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -981,6 +999,7 @@ _T199:
 // LINE 614:
 	__asm        jmp    _T5b9;
 // LINE 616:
+_T496:
 	__asm        push   0x5F;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -992,6 +1011,7 @@ _T199:
 // LINE 619:
 	__asm        jmp    _T5b9;
 // LINE 621:
+_T4b6:
 	__asm        push   0x60;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -1003,6 +1023,7 @@ _T199:
 // LINE 624:
 	__asm        jmp    _T5b9;
 // LINE 626:
+_T4d6:
 	__asm        push   0x61;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -1014,6 +1035,7 @@ _T199:
 // LINE 629:
 	__asm        jmp    _T5b9;
 // LINE 631:
+_T4f6:
 	__asm        push   0x62;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -1025,6 +1047,7 @@ _T199:
 // LINE 634:
 	__asm        jmp    _T5b9;
 // LINE 636:
+_T516:
 	__asm        push   0x63;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -1048,7 +1071,30 @@ _T545:
 
 	__asm        mov    eax, [ebp-0x44];
 	__asm        jmp    _Switch_55d[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T1ae
+//   _T1e3
+//   _T218
+//   _T24d
+//   _T282
+//   _T2b7
+//   _T2ec
+//   _T321
+//   _T356
+//   _T376
+//   _T396
+//   _T3b6
+//   _T3d6
+//   _T3f6
+//   _T416
+//   _T436
+//   _T456
+//   _T476
+//   _T496
+//   _T4b6
+//   _T4d6
+//   _T4f6
+//   _T516
 // LINE 649:
 _T5b9:
 	__asm        jmp    _T3814;
@@ -1060,6 +1106,7 @@ _T5be:
 	__asm        mov    [ebp-0x48], eax;
 	__asm        jmp    _T16bd;
 // LINE 659:
+_T5d3:
 	obj1user = 0x20;
 // LINE 660:
 	__asm        mov    eax, y;
@@ -1089,6 +1136,7 @@ _T60a:
 _T617:
 	__asm        jmp    _T1811;
 // LINE 671:
+_T61c:
 	obj1user = 0x20;
 // LINE 672:
 	__asm        mov    eax, y;
@@ -1118,6 +1166,7 @@ _T653:
 _T660:
 	__asm        jmp    _T1811;
 // LINE 683:
+_T665:
 	__asm        push   0x1F;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -1127,6 +1176,7 @@ _T660:
 // LINE 685:
 	__asm        jmp    _T1811;
 // LINE 687:
+_T67e:
 	__asm        push   0x20;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -1136,6 +1186,7 @@ _T660:
 // LINE 689:
 	__asm        jmp    _T1811;
 // LINE 691:
+_T697:
 	__asm        push   0x21;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -1145,6 +1196,7 @@ _T660:
 // LINE 693:
 	__asm        jmp    _T1811;
 // LINE 695:
+_T6b0:
 	__asm        push   0x22;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -1154,6 +1206,7 @@ _T660:
 // LINE 697:
 	__asm        jmp    _T1811;
 // LINE 699:
+_T6c9:
 	obj1user = 0x20;
 // LINE 700:
 	__asm        mov    eax, y;
@@ -1183,6 +1236,7 @@ _T700:
 _T70d:
 	__asm        jmp    _T1811;
 // LINE 711:
+_T712:
 	obj1user = 0x20;
 // LINE 712:
 	__asm        mov    eax, y;
@@ -1212,6 +1266,7 @@ _T749:
 _T756:
 	__asm        jmp    _T1811;
 // LINE 723:
+_T75b:
 	obj1user = 0x20;
 // LINE 724:
 	__asm        mov    eax, y;
@@ -1241,6 +1296,7 @@ _T792:
 _T79f:
 	__asm        jmp    _T1811;
 // LINE 735:
+_T7a4:
 	obj1user = 0x20;
 // LINE 736:
 	__asm        mov    eax, y;
@@ -1270,6 +1326,7 @@ _T7db:
 _T7e8:
 	__asm        jmp    _T1811;
 // LINE 747:
+_T7ed:
 	obj1user = 0x20;
 // LINE 748:
 	__asm        mov    eax, y;
@@ -1299,6 +1356,7 @@ _T824:
 _T831:
 	__asm        jmp    _T1811;
 // LINE 759:
+_T836:
 	obj1user = 0x20;
 // LINE 760:
 	__asm        mov    eax, y;
@@ -1328,6 +1386,7 @@ _T86d:
 _T87a:
 	__asm        jmp    _T1811;
 // LINE 771:
+_T87f:
 	obj1user = 0x20;
 // LINE 772:
 	__asm        mov    eax, y;
@@ -1357,6 +1416,7 @@ _T8b6:
 _T8c3:
 	__asm        jmp    _T1811;
 // LINE 783:
+_T8c8:
 	obj1user = 0x20;
 // LINE 784:
 	__asm        mov    eax, y;
@@ -1386,6 +1446,7 @@ _T8ff:
 _T90c:
 	__asm        jmp    _T1811;
 // LINE 795:
+_T911:
 	obj1user = 0x20;
 // LINE 796:
 	__asm        mov    eax, y;
@@ -1415,6 +1476,7 @@ _T948:
 _T955:
 	__asm        jmp    _T1811;
 // LINE 810:
+_T95a:
 	__asm        push   0x2C;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -1424,6 +1486,7 @@ _T955:
 // LINE 812:
 	__asm        jmp    _T1811;
 // LINE 816:
+_T973:
 	__asm        push   0x2D;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -1433,6 +1496,7 @@ _T955:
 // LINE 818:
 	__asm        jmp    _T1811;
 // LINE 820:
+_T98c:
 	__asm        push   0x2E;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -1442,6 +1506,7 @@ _T955:
 // LINE 822:
 	__asm        jmp    _T1811;
 // LINE 824:
+_T9a5:
 	__asm        push   0x2F;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -1451,6 +1516,7 @@ _T955:
 // LINE 826:
 	__asm        jmp    _T1811;
 // LINE 828:
+_T9be:
 	__asm        push   0x30;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -1460,6 +1526,7 @@ _T955:
 // LINE 830:
 	__asm        jmp    _T1811;
 // LINE 832:
+_T9d7:
 	__asm        push   0x31;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -1469,6 +1536,7 @@ _T955:
 // LINE 834:
 	__asm        jmp    _T1811;
 // LINE 836:
+_T9f0:
 	__asm        push   0x32;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -1478,6 +1546,7 @@ _T955:
 // LINE 838:
 	__asm        jmp    _T1811;
 // LINE 840:
+_Ta09:
 	__asm        push   0x33;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -1487,6 +1556,7 @@ _T955:
 // LINE 842:
 	__asm        jmp    _T1811;
 // LINE 844:
+_Ta22:
 	__asm        push   0x34;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -1496,6 +1566,7 @@ _T955:
 // LINE 846:
 	__asm        jmp    _T1811;
 // LINE 848:
+_Ta3b:
 	__asm        push   0x35;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -1505,6 +1576,7 @@ _T955:
 // LINE 850:
 	__asm        jmp    _T1811;
 // LINE 852:
+_Ta54:
 	__asm        push   0x36;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -1514,6 +1586,7 @@ _T955:
 // LINE 854:
 	__asm        jmp    _T1811;
 // LINE 856:
+_Ta6d:
 	__asm        push   0x37;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -1523,6 +1596,7 @@ _T955:
 // LINE 858:
 	__asm        jmp    _T1811;
 // LINE 860:
+_Ta86:
 	__asm        push   0x38;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -1532,6 +1606,7 @@ _T955:
 // LINE 862:
 	__asm        jmp    _T1811;
 // LINE 864:
+_Ta9f:
 	__asm        push   0x39;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -1541,6 +1616,7 @@ _T955:
 // LINE 866:
 	__asm        jmp    _T1811;
 // LINE 868:
+_Tab8:
 	__asm        push   0x3A;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -1550,6 +1626,7 @@ _T955:
 // LINE 870:
 	__asm        jmp    _T1811;
 // LINE 873:
+_Tad1:
 	__asm        mov    eax, y;
 	__asm        push   eax;
 	__asm        mov    eax, x;
@@ -1581,6 +1658,7 @@ _Tb14:
 // LINE 884:
 	__asm        jmp    _T1811;
 // LINE 886:
+_Tb27:
 	__asm        mov    eax, y;
 	__asm        push   eax;
 	__asm        mov    eax, x;
@@ -1612,6 +1690,7 @@ _Tb6a:
 // LINE 897:
 	__asm        jmp    _T1811;
 // LINE 900:
+_Tb7d:
 	objcount = 0x2;
 // LINE 901:
 	__asm        mov    eax, y;
@@ -1646,6 +1725,7 @@ _Tbc1:
 // LINE 911:
 	__asm        jmp    _T1811;
 // LINE 913:
+_Tbd3:
 	objcount = 0x2;
 // LINE 914:
 	__asm        mov    eax, y;
@@ -1680,6 +1760,7 @@ _Tc17:
 // LINE 924:
 	__asm        jmp    _T1811;
 // LINE 927:
+_Tc29:
 	__asm        push   0x17D;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -1689,6 +1770,7 @@ _Tc17:
 // LINE 929:
 	__asm        jmp    _T1811;
 // LINE 931:
+_Tc45:
 	__asm        push   0x17E;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -1698,6 +1780,7 @@ _Tc17:
 // LINE 933:
 	__asm        jmp    _T1811;
 // LINE 937:
+_Tc61:
 	__asm        mov    eax, x;
 	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, y;
@@ -1718,6 +1801,7 @@ _Tc17:
 // LINE 940:
 	__asm        jmp    _T1811;
 // LINE 942:
+_Tc9c:
 	__asm        mov    eax, x;
 	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, y;
@@ -1738,6 +1822,7 @@ _Tc17:
 // LINE 945:
 	__asm        jmp    _T1811;
 // LINE 947:
+_Tcd7:
 	__asm        mov    eax, x;
 	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, y;
@@ -1758,6 +1843,7 @@ _Tc17:
 // LINE 950:
 	__asm        jmp    _T1811;
 // LINE 952:
+_Td12:
 	__asm        mov    eax, x;
 	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, y;
@@ -1778,6 +1864,7 @@ _Tc17:
 // LINE 955:
 	__asm        jmp    _T1811;
 // LINE 957:
+_Td4d:
 	__asm        mov    eax, x;
 	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, y;
@@ -1798,6 +1885,7 @@ _Tc17:
 // LINE 960:
 	__asm        jmp    _T1811;
 // LINE 962:
+_Td88:
 	__asm        mov    eax, x;
 	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, y;
@@ -1818,6 +1906,7 @@ _Tc17:
 // LINE 965:
 	__asm        jmp    _T1811;
 // LINE 967:
+_Tdc3:
 	__asm        mov    eax, x;
 	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, y;
@@ -1838,6 +1927,7 @@ _Tc17:
 // LINE 970:
 	__asm        jmp    _T1811;
 // LINE 973:
+_Tdfe:
 	__asm        mov    eax, x;
 	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, y;
@@ -1858,6 +1948,7 @@ _Tc17:
 // LINE 976:
 	__asm        jmp    _T1811;
 // LINE 978:
+_Te39:
 	__asm        mov    eax, x;
 	__asm        mov    eax, BitsMap[eax*4];
 	__asm        mov    ecx, y;
@@ -1878,6 +1969,7 @@ _Tc17:
 // LINE 981:
 	__asm        jmp    _T1811;
 // LINE 983:
+_Te74:
 	size = 0x1;
 // LINE 984:
 	objcount = 0x1;
@@ -1891,6 +1983,7 @@ _Tc17:
 // LINE 987:
 	__asm        jmp    _T1811;
 // LINE 989:
+_Te9d:
 	size = 0x1;
 // LINE 990:
 	objcount = 0x1;
@@ -1904,6 +1997,7 @@ _Tc17:
 // LINE 993:
 	__asm        jmp    _T1811;
 // LINE 995:
+_Tec6:
 	size = 0x1;
 // LINE 996:
 	objcount = 0x1;
@@ -1917,6 +2011,7 @@ _Tc17:
 // LINE 999:
 	__asm        jmp    _T1811;
 // LINE 1001:
+_Teef:
 	size = 0x1;
 // LINE 1002:
 	objcount = 0x1;
@@ -1930,6 +2025,7 @@ _Tc17:
 // LINE 1005:
 	__asm        jmp    _T1811;
 // LINE 1007:
+_Tf18:
 	size = 0x1;
 // LINE 1008:
 	objcount = 0x2;
@@ -1946,6 +2042,7 @@ _Tc17:
 // LINE 1011:
 	__asm        jmp    _T1811;
 // LINE 1013:
+_Tf47:
 	size = 0x1;
 // LINE 1014:
 	objcount = 0x2;
@@ -1962,6 +2059,7 @@ _Tc17:
 // LINE 1017:
 	__asm        jmp    _T1811;
 // LINE 1019:
+_Tf76:
 	size = 0x1;
 // LINE 1020:
 	objcount = 0x1;
@@ -1975,6 +2073,7 @@ _Tc17:
 // LINE 1024:
 	__asm        jmp    _T1811;
 // LINE 1026:
+_Tf9f:
 	size = 0x1;
 // LINE 1027:
 	objcount = 0x1;
@@ -1988,6 +2087,7 @@ _Tc17:
 // LINE 1031:
 	__asm        jmp    _T1811;
 // LINE 1033:
+_Tfc8:
 	objcount = 0x1;
 // LINE 1034:
 	__asm        mov    eax, x;
@@ -2008,6 +2108,7 @@ _Tc17:
 // LINE 1036:
 	__asm        jmp    _T1811;
 // LINE 1038:
+_T1005:
 	objcount = 0x1;
 // LINE 1039:
 	__asm        mov    eax, x;
@@ -2028,6 +2129,7 @@ _Tc17:
 // LINE 1041:
 	__asm        jmp    _T1811;
 // LINE 1043:
+_T1042:
 	objcount = 0x1;
 // LINE 1044:
 	__asm        mov    eax, x;
@@ -2048,6 +2150,7 @@ _Tc17:
 // LINE 1046:
 	__asm        jmp    _T1811;
 // LINE 1048:
+_T107f:
 	objcount = 0x1;
 // LINE 1049:
 	__asm        mov    eax, x;
@@ -2068,6 +2171,7 @@ _Tc17:
 // LINE 1051:
 	__asm        jmp    _T1811;
 // LINE 1053:
+_T10bc:
 	objcount = 0x1;
 // LINE 1054:
 	__asm        push   0x103;
@@ -2112,6 +2216,7 @@ _T1125:
 // LINE 1061:
 	__asm        jmp    _T1811;
 // LINE 1063:
+_T1138:
 	objcount = 0x1;
 // LINE 1064:
 	__asm        push   0x104;
@@ -2156,6 +2261,7 @@ _T11a1:
 // LINE 1071:
 	__asm        jmp    _T1811;
 // LINE 1073:
+_T11b4:
 	objcount = 0x1;
 // LINE 1074:
 	__asm        push   0x105;
@@ -2165,6 +2271,7 @@ _T11a1:
 // LINE 1075:
 	__asm        jmp    _T1811;
 // LINE 1077:
+_T11d0:
 	objcount = 0x1;
 // LINE 1078:
 	__asm        push   0x106;
@@ -2174,6 +2281,7 @@ _T11a1:
 // LINE 1079:
 	__asm        jmp    _T1811;
 // LINE 1081:
+_T11ec:
 	objcount = 0x1;
 // LINE 1082:
 	__asm        push   0x107;
@@ -2185,6 +2293,7 @@ _T11a1:
 // LINE 1084:
 	__asm        jmp    _T1811;
 // LINE 1086:
+_T120f:
 	objcount = 0x1;
 // LINE 1087:
 	__asm        push   0x108;
@@ -2196,6 +2305,7 @@ _T11a1:
 // LINE 1089:
 	__asm        jmp    _T1811;
 // LINE 1091:
+_T1232:
 	objcount = 0x1;
 // LINE 1092:
 	__asm        push   0x109;
@@ -2207,6 +2317,7 @@ _T11a1:
 // LINE 1094:
 	__asm        jmp    _T1811;
 // LINE 1096:
+_T1255:
 	objcount = 0x1;
 // LINE 1097:
 	__asm        push   0x10A;
@@ -2218,6 +2329,7 @@ _T11a1:
 // LINE 1099:
 	__asm        jmp    _T1811;
 // LINE 1101:
+_T1278:
 	objcount = 0x1;
 // LINE 1102:
 	__asm        push   0x10B;
@@ -2229,6 +2341,7 @@ _T11a1:
 // LINE 1104:
 	__asm        jmp    _T1811;
 // LINE 1107:
+_T129b:
 	objcount = 0x1;
 // LINE 1108:
 	__asm        mov    eax, x;
@@ -2251,6 +2364,7 @@ _T11a1:
 // LINE 1111:
 	__asm        jmp    _T1811;
 // LINE 1121:
+_T12df:
 	__asm        push   0x178;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -2318,6 +2432,7 @@ _T11a1:
 // LINE 1141:
 	__asm        jmp    _T1811;
 // LINE 1143:
+_T13d4:
 	__asm        push   0x17A;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -2385,6 +2500,7 @@ _T11a1:
 // LINE 1163:
 	__asm        jmp    _T1811;
 // LINE 1165:
+_T14c9:
 	__asm        push   0x179;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -2452,6 +2568,7 @@ _T11a1:
 // LINE 1185:
 	__asm        jmp    _T1811;
 // LINE 1187:
+_T15be:
 	__asm        push   0x17B;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -2519,6 +2636,7 @@ _T11a1:
 // LINE 1207:
 	__asm        jmp    _T1811;
 // LINE 1209:
+_T16b3:
 	__asm        jmp    _T3f;
 // LINE 1210:
 	__asm        jmp    _T1811;
@@ -2529,7 +2647,86 @@ _T16bd:
 
 	__asm        mov    eax, [ebp-0x48];
 	__asm        jmp    _Switch_16d5[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T5d3
+//   _T61c
+//   _T665
+//   _T67e
+//   _T697
+//   _T6b0
+//   _T6c9
+//   _T712
+//   _T75b
+//   _T7a4
+//   _T7ed
+//   _T836
+//   _T87f
+//   _T8c8
+//   _T911
+//   _T95a
+//   _T973
+//   _T9f0
+//   _Ta09
+//   _Ta22
+//   _Ta3b
+//   _T98c
+//   _T9a5
+//   _T9be
+//   _T9d7
+//   _Ta54
+//   _Ta6d
+//   _Ta86
+//   _Ta9f
+//   _Tab8
+//   _T973
+//   _T95a
+//   _T973
+//   _T95a
+//   _T12df
+//   _T14c9
+//   _T13d4
+//   _T15be
+//   _Tad1
+//   _Tb27
+//   _Tb7d
+//   _Tbd3
+//   _Tc29
+//   _Tc45
+//   _Te74
+//   _Te9d
+//   _Tec6
+//   _Teef
+//   _Tf18
+//   _Tf47
+//   _Tf76
+//   _Tf9f
+//   _Tc9c
+//   _Tcd7
+//   _Td12
+//   _Td4d
+//   _Td88
+//   _Tdc3
+//   _Tc61
+//   _Tc61
+//   _T16b3
+//   _Tdfe
+//   _Tdfe
+//   _Te39
+//   _Tfc8
+//   _T1005
+//   _T1042
+//   _T107f
+//   _T10bc
+//   _T1138
+//   _T11b4
+//   _T11d0
+//   _T11ec
+//   _T120f
+//   _T1232
+//   _T1255
+//   _T1278
+//   _T129b
+//   _T129b
 // LINE 1213:
 _T1811:
 	__asm        jmp    _T3814;
@@ -2541,6 +2738,7 @@ _T1816:
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        jmp    _T35b9;
 // LINE 1224:
+_T1827:
 	objcount = 0x2;
 // LINE 1225:
 	__asm        push   0xAF;
@@ -2560,6 +2758,7 @@ _T1816:
 // LINE 1227:
 	__asm        jmp    _T3814;
 // LINE 1229:
+_T185b:
 	objcount = 0x1;
 // LINE 1230:
 	flags = 0x0;
@@ -2571,6 +2770,7 @@ _T1816:
 // LINE 1232:
 	__asm        jmp    _T3814;
 // LINE 1234:
+_T187d:
 	objcount = 0x2;
 // LINE 1235:
 	__asm        push   0xB0;
@@ -2590,6 +2790,7 @@ _T1816:
 // LINE 1237:
 	__asm        jmp    _T3814;
 // LINE 1239:
+_T18b1:
 	objcount = 0x2;
 // LINE 1240:
 	__asm        push   0xB1;
@@ -2609,6 +2810,7 @@ _T1816:
 // LINE 1242:
 	__asm        jmp    _T3814;
 // LINE 1244:
+_T18e5:
 	objcount = 0x2;
 // LINE 1245:
 	__asm        push   0xB2;
@@ -2628,6 +2830,7 @@ _T1816:
 // LINE 1247:
 	__asm        jmp    _T3814;
 // LINE 1249:
+_T1919:
 	objcount = 0x2;
 // LINE 1250:
 	__asm        push   0xB3;
@@ -2647,6 +2850,7 @@ _T1816:
 // LINE 1252:
 	__asm        jmp    _T3814;
 // LINE 1254:
+_T194d:
 	objcount = 0x2;
 // LINE 1255:
 	__asm        push   0xB4;
@@ -2666,6 +2870,7 @@ _T1816:
 // LINE 1257:
 	__asm        jmp    _T3814;
 // LINE 1259:
+_T1981:
 	objcount = 0x2;
 // LINE 1260:
 	__asm        push   0xB5;
@@ -2685,6 +2890,7 @@ _T1816:
 // LINE 1262:
 	__asm        jmp    _T3814;
 // LINE 1264:
+_T19b5:
 	objcount = 0x2;
 // LINE 1265:
 	__asm        push   0xB6;
@@ -2704,6 +2910,7 @@ _T1816:
 // LINE 1267:
 	__asm        jmp    _T3814;
 // LINE 1269:
+_T19e9:
 	objcount = 0x2;
 // LINE 1270:
 	__asm        push   0xB7;
@@ -2723,6 +2930,7 @@ _T1816:
 // LINE 1272:
 	__asm        jmp    _T3814;
 // LINE 1274:
+_T1a1d:
 	objcount = 0x2;
 // LINE 1275:
 	__asm        push   0xB8;
@@ -2742,6 +2950,7 @@ _T1816:
 // LINE 1277:
 	__asm        jmp    _T3814;
 // LINE 1279:
+_T1a51:
 	objcount = 0x2;
 // LINE 1280:
 	__asm        push   0xB9;
@@ -2761,6 +2970,7 @@ _T1816:
 // LINE 1282:
 	__asm        jmp    _T3814;
 // LINE 1284:
+_T1a85:
 	objcount = 0x2;
 // LINE 1285:
 	__asm        push   0xBA;
@@ -2780,6 +2990,7 @@ _T1816:
 // LINE 1287:
 	__asm        jmp    _T3814;
 // LINE 1289:
+_T1ab9:
 	objcount = 0x2;
 // LINE 1290:
 	__asm        push   0xBB;
@@ -2799,6 +3010,7 @@ _T1816:
 // LINE 1292:
 	__asm        jmp    _T3814;
 // LINE 1294:
+_T1aed:
 	objcount = 0x2;
 // LINE 1295:
 	__asm        push   0xBC;
@@ -2818,6 +3030,7 @@ _T1816:
 // LINE 1297:
 	__asm        jmp    _T3814;
 // LINE 1299:
+_T1b21:
 	objcount = 0x2;
 // LINE 1300:
 	__asm        push   0xBD;
@@ -2837,6 +3050,7 @@ _T1816:
 // LINE 1302:
 	__asm        jmp    _T3814;
 // LINE 1304:
+_T1b55:
 	objcount = 0x2;
 // LINE 1305:
 	__asm        push   0xBE;
@@ -2856,6 +3070,7 @@ _T1816:
 // LINE 1307:
 	__asm        jmp    _T3814;
 // LINE 1309:
+_T1b89:
 	objcount = 0x2;
 // LINE 1310:
 	__asm        push   0xBF;
@@ -2875,6 +3090,7 @@ _T1816:
 // LINE 1312:
 	__asm        jmp    _T3814;
 // LINE 1314:
+_T1bbd:
 	objcount = 0x2;
 // LINE 1315:
 	__asm        or     obj1user, 0x200;
@@ -2896,6 +3112,7 @@ _T1816:
 // LINE 1318:
 	__asm        jmp    _T3814;
 // LINE 1320:
+_T1bf8:
 	objcount = 0x2;
 // LINE 1321:
 	__asm        push   0xC1;
@@ -2915,6 +3132,7 @@ _T1816:
 // LINE 1323:
 	__asm        jmp    _T3814;
 // LINE 1325:
+_T1c2c:
 	objcount = 0x2;
 // LINE 1326:
 	__asm        push   0x9D;
@@ -2934,6 +3152,7 @@ _T1816:
 // LINE 1328:
 	__asm        jmp    _T3814;
 // LINE 1330:
+_T1c60:
 	objcount = 0x2;
 // LINE 1331:
 	__asm        or     obj1user, 0x200;
@@ -2955,6 +3174,7 @@ _T1816:
 // LINE 1334:
 	__asm        jmp    _T3814;
 // LINE 1336:
+_T1c9b:
 	objcount = 0x2;
 // LINE 1337:
 	__asm        push   0xC3;
@@ -2974,6 +3194,7 @@ _T1816:
 // LINE 1339:
 	__asm        jmp    _T3814;
 // LINE 1341:
+_T1ccf:
 	objcount = 0x2;
 // LINE 1342:
 	__asm        push   0x9E;
@@ -2993,6 +3214,7 @@ _T1816:
 // LINE 1344:
 	__asm        jmp    _T3814;
 // LINE 1346:
+_T1d03:
 	objcount = 0x2;
 // LINE 1347:
 	__asm        push   5;
@@ -3012,6 +3234,7 @@ _T1816:
 // LINE 1349:
 	__asm        jmp    _T3814;
 // LINE 1351:
+_T1d34:
 	objcount = 0x2;
 // LINE 1352:
 	__asm        push   0x9F;
@@ -3031,6 +3254,7 @@ _T1816:
 // LINE 1354:
 	__asm        jmp    _T3814;
 // LINE 1356:
+_T1d68:
 	objcount = 0x2;
 // LINE 1357:
 	__asm        push   0xA0;
@@ -3050,6 +3274,7 @@ _T1816:
 // LINE 1359:
 	__asm        jmp    _T3814;
 // LINE 1361:
+_T1d9c:
 	objcount = 0x2;
 // LINE 1362:
 	__asm        push   0xA1;
@@ -3069,6 +3294,7 @@ _T1816:
 // LINE 1364:
 	__asm        jmp    _T3814;
 // LINE 1366:
+_T1dd0:
 	objcount = 0x2;
 // LINE 1367:
 	__asm        push   0xA2;
@@ -3088,6 +3314,7 @@ _T1816:
 // LINE 1369:
 	__asm        jmp    _T3814;
 // LINE 1371:
+_T1e04:
 	objcount = 0x2;
 // LINE 1372:
 	__asm        push   0xA3;
@@ -3107,6 +3334,7 @@ _T1816:
 // LINE 1374:
 	__asm        jmp    _T3814;
 // LINE 1376:
+_T1e38:
 	objcount = 0x2;
 // LINE 1377:
 	__asm        push   0xA4;
@@ -3126,6 +3354,7 @@ _T1816:
 // LINE 1379:
 	__asm        jmp    _T3814;
 // LINE 1381:
+_T1e6c:
 	objcount = 0x2;
 // LINE 1382:
 	__asm        push   0xA5;
@@ -3145,6 +3374,7 @@ _T1816:
 // LINE 1384:
 	__asm        jmp    _T3814;
 // LINE 1386:
+_T1ea0:
 	objcount = 0x2;
 // LINE 1387:
 	__asm        push   0x84;
@@ -3164,6 +3394,7 @@ _T1816:
 // LINE 1389:
 	__asm        jmp    _T3814;
 // LINE 1391:
+_T1ed4:
 	objcount = 0x2;
 // LINE 1392:
 	__asm        push   0x85;
@@ -3183,6 +3414,7 @@ _T1816:
 // LINE 1394:
 	__asm        jmp    _T3814;
 // LINE 1396:
+_T1f08:
 	objcount = 0x2;
 // LINE 1397:
 	__asm        push   0xA7;
@@ -3202,6 +3434,7 @@ _T1816:
 // LINE 1399:
 	__asm        jmp    _T3814;
 // LINE 1401:
+_T1f3c:
 	objcount = 0x2;
 // LINE 1402:
 	__asm        push   0xD1;
@@ -3221,6 +3454,7 @@ _T1816:
 // LINE 1404:
 	__asm        jmp    _T3814;
 // LINE 1406:
+_T1f70:
 	objcount = 0x2;
 // LINE 1407:
 	__asm        push   0xA8;
@@ -3240,6 +3474,7 @@ _T1816:
 // LINE 1409:
 	__asm        jmp    _T3814;
 // LINE 1411:
+_T1fa4:
 	objcount = 0x2;
 // LINE 1412:
 	__asm        push   0xD2;
@@ -3259,6 +3494,7 @@ _T1816:
 // LINE 1414:
 	__asm        jmp    _T3814;
 // LINE 1416:
+_T1fd8:
 	objcount = 0x2;
 // LINE 1417:
 	__asm        push   0xD3;
@@ -3278,6 +3514,7 @@ _T1816:
 // LINE 1419:
 	__asm        jmp    _T3814;
 // LINE 1421:
+_T200c:
 	objcount = 0x2;
 // LINE 1422:
 	__asm        push   0xD4;
@@ -3297,6 +3534,7 @@ _T1816:
 // LINE 1424:
 	__asm        jmp    _T3814;
 // LINE 1426:
+_T2040:
 	objcount = 0x2;
 // LINE 1427:
 	__asm        push   0xD5;
@@ -3318,6 +3556,7 @@ _T1816:
 // LINE 1430:
 	__asm        jmp    _T3814;
 // LINE 1432:
+_T207b:
 	objcount = 0x2;
 // LINE 1433:
 	__asm        push   0xD6;
@@ -3339,6 +3578,7 @@ _T1816:
 // LINE 1436:
 	__asm        jmp    _T3814;
 // LINE 1438:
+_T20b6:
 	objcount = 0x2;
 // LINE 1439:
 	__asm        push   0xD7;
@@ -3358,6 +3598,7 @@ _T1816:
 // LINE 1441:
 	__asm        jmp    _T3814;
 // LINE 1443:
+_T20ea:
 	objcount = 0x2;
 // LINE 1444:
 	__asm        push   0xD8;
@@ -3377,6 +3618,7 @@ _T1816:
 // LINE 1446:
 	__asm        jmp    _T3814;
 // LINE 1448:
+_T211e:
 	objcount = 0x1;
 // LINE 1449:
 	flags = 0x0;
@@ -3388,6 +3630,7 @@ _T1816:
 // LINE 1451:
 	__asm        jmp    _T3814;
 // LINE 1453:
+_T2140:
 	objcount = 0x1;
 // LINE 1454:
 	flags = 0x0;
@@ -3399,6 +3642,7 @@ _T1816:
 // LINE 1456:
 	__asm        jmp    _T3814;
 // LINE 1458:
+_T2162:
 	objcount = 0x2;
 // LINE 1459:
 	__asm        push   0xDB;
@@ -3420,6 +3664,7 @@ _T1816:
 // LINE 1462:
 	__asm        jmp    _T3814;
 // LINE 1464:
+_T219d:
 	objcount = 0x2;
 // LINE 1465:
 	__asm        push   0xDC;
@@ -3439,6 +3684,7 @@ _T1816:
 // LINE 1467:
 	__asm        jmp    _T3814;
 // LINE 1469:
+_T21d1:
 	objcount = 0x2;
 // LINE 1470:
 	__asm        push   0xDD;
@@ -3458,6 +3704,7 @@ _T1816:
 // LINE 1472:
 	__asm        jmp    _T3814;
 // LINE 1474:
+_T2205:
 	objcount = 0x2;
 // LINE 1475:
 	__asm        push   0xDE;
@@ -3477,6 +3724,7 @@ _T1816:
 // LINE 1477:
 	__asm        jmp    _T3814;
 // LINE 1479:
+_T2239:
 	objcount = 0x2;
 // LINE 1480:
 	__asm        push   0xDF;
@@ -3496,6 +3744,7 @@ _T1816:
 // LINE 1482:
 	__asm        jmp    _T3814;
 // LINE 1484:
+_T226d:
 	objcount = 0x2;
 // LINE 1485:
 	__asm        push   0xE0;
@@ -3517,6 +3766,7 @@ _T1816:
 // LINE 1488:
 	__asm        jmp    _T3814;
 // LINE 1490:
+_T22a8:
 	objcount = 0x2;
 // LINE 1491:
 	__asm        push   0xE1;
@@ -3536,6 +3786,7 @@ _T1816:
 // LINE 1493:
 	__asm        jmp    _T3814;
 // LINE 1495:
+_T22dc:
 	objcount = 0x2;
 // LINE 1496:
 	__asm        push   0xE2;
@@ -3555,6 +3806,7 @@ _T1816:
 // LINE 1498:
 	__asm        jmp    _T3814;
 // LINE 1500:
+_T2310:
 	objcount = 0x2;
 // LINE 1501:
 	__asm        push   0xA9;
@@ -3574,6 +3826,7 @@ _T1816:
 // LINE 1503:
 	__asm        jmp    _T3814;
 // LINE 1505:
+_T2344:
 	objcount = 0x2;
 // LINE 1506:
 	__asm        push   0xAA;
@@ -3593,6 +3846,7 @@ _T1816:
 // LINE 1508:
 	__asm        jmp    _T3814;
 // LINE 1510:
+_T2378:
 	objcount = 0x2;
 // LINE 1511:
 	__asm        push   0xAB;
@@ -3612,6 +3866,7 @@ _T1816:
 // LINE 1513:
 	__asm        jmp    _T3814;
 // LINE 1515:
+_T23ac:
 	objcount = 0x2;
 // LINE 1516:
 	__asm        push   0xAC;
@@ -3631,6 +3886,7 @@ _T1816:
 // LINE 1518:
 	__asm        jmp    _T3814;
 // LINE 1520:
+_T23e0:
 	objcount = 0x2;
 // LINE 1521:
 	__asm        push   0xAD;
@@ -3650,6 +3906,7 @@ _T1816:
 // LINE 1523:
 	__asm        jmp    _T3814;
 // LINE 1525:
+_T2414:
 	objcount = 0x2;
 // LINE 1526:
 	__asm        push   0xA6;
@@ -3669,6 +3926,7 @@ _T1816:
 // LINE 1528:
 	__asm        jmp    _T3814;
 // LINE 1530:
+_T2448:
 	objcount = 0x2;
 // LINE 1531:
 	__asm        push   0x86;
@@ -3688,6 +3946,7 @@ _T1816:
 // LINE 1533:
 	__asm        jmp    _T3814;
 // LINE 1535:
+_T247c:
 	objcount = 0x2;
 // LINE 1536:
 	__asm        push   0x87;
@@ -3707,6 +3966,7 @@ _T1816:
 // LINE 1538:
 	__asm        jmp    _T3814;
 // LINE 1540:
+_T24b0:
 	objcount = 0x2;
 // LINE 1541:
 	__asm        push   0x88;
@@ -3726,6 +3986,7 @@ _T1816:
 // LINE 1543:
 	__asm        jmp    _T3814;
 // LINE 1545:
+_T24e4:
 	objcount = 0x2;
 // LINE 1546:
 	__asm        push   0x89;
@@ -3745,6 +4006,7 @@ _T1816:
 // LINE 1548:
 	__asm        jmp    _T3814;
 // LINE 1550:
+_T2518:
 	objcount = 0x2;
 // LINE 1551:
 	__asm        push   0x9A;
@@ -3764,6 +4026,7 @@ _T1816:
 // LINE 1553:
 	__asm        jmp    _T3814;
 // LINE 1555:
+_T254c:
 	objcount = 0x2;
 // LINE 1556:
 	__asm        push   0x9B;
@@ -3783,6 +4046,7 @@ _T1816:
 // LINE 1558:
 	__asm        jmp    _T3814;
 // LINE 1560:
+_T2580:
 	objcount = 0x2;
 // LINE 1561:
 	__asm        push   0xCB;
@@ -3802,6 +4066,7 @@ _T1816:
 // LINE 1563:
 	__asm        jmp    _T3814;
 // LINE 1565:
+_T25b4:
 	objcount = 0x2;
 // LINE 1566:
 	__asm        push   0xCC;
@@ -3823,6 +4088,7 @@ _T1816:
 // LINE 1569:
 	__asm        jmp    _T3814;
 // LINE 1571:
+_T25ef:
 	objcount = 0x2;
 // LINE 1572:
 	__asm        push   0x9C;
@@ -3844,6 +4110,7 @@ _T1816:
 // LINE 1575:
 	__asm        jmp    _T3814;
 // LINE 1577:
+_T262a:
 	objcount = 0x2;
 // LINE 1578:
 	__asm        push   0xCD;
@@ -3865,6 +4132,7 @@ _T1816:
 // LINE 1581:
 	__asm        jmp    _T3814;
 // LINE 1583:
+_T2665:
 	objcount = 0x1;
 // LINE 1584:
 	flags = 0x0;
@@ -3898,6 +4166,7 @@ _T26af:
 _T26bf:
 	__asm        jmp    _T3814;
 // LINE 1592:
+_T26c4:
 	objcount = 0x1;
 // LINE 1593:
 	flags = 0x0;
@@ -3909,6 +4178,7 @@ _T26bf:
 // LINE 1595:
 	__asm        jmp    _T3814;
 // LINE 1597:
+_T26e6:
 	objcount = 0x1;
 // LINE 1598:
 	flags = 0x0;
@@ -3942,6 +4212,7 @@ _T2730:
 _T2740:
 	__asm        jmp    _T3814;
 // LINE 1606:
+_T2745:
 	objcount = 0x2;
 // LINE 1607:
 	__asm        push   0x8D;
@@ -3963,6 +4234,7 @@ _T2740:
 // LINE 1610:
 	__asm        jmp    _T3814;
 // LINE 1612:
+_T2780:
 	objcount = 0x2;
 // LINE 1613:
 	__asm        push   0x8E;
@@ -3982,6 +4254,7 @@ _T2740:
 // LINE 1615:
 	__asm        jmp    _T3814;
 // LINE 1617:
+_T27b4:
 	objcount = 0x2;
 // LINE 1618:
 	__asm        push   0x8F;
@@ -4001,6 +4274,7 @@ _T2740:
 // LINE 1620:
 	__asm        jmp    _T3814;
 // LINE 1622:
+_T27e8:
 	objcount = 0x2;
 // LINE 1623:
 	__asm        push   0x90;
@@ -4020,6 +4294,7 @@ _T2740:
 // LINE 1625:
 	__asm        jmp    _T3814;
 // LINE 1627:
+_T281c:
 	objcount = 0x2;
 // LINE 1628:
 	__asm        push   0x91;
@@ -4039,6 +4314,7 @@ _T2740:
 // LINE 1630:
 	__asm        jmp    _T3814;
 // LINE 1632:
+_T2850:
 	objcount = 0x2;
 // LINE 1633:
 	__asm        push   0x92;
@@ -4058,6 +4334,7 @@ _T2740:
 // LINE 1635:
 	__asm        jmp    _T3814;
 // LINE 1637:
+_T2884:
 	objcount = 0x2;
 // LINE 1638:
 	__asm        push   0x93;
@@ -4077,6 +4354,7 @@ _T2740:
 // LINE 1640:
 	__asm        jmp    _T3814;
 // LINE 1644:
+_T28b8:
 	__asm        cmp    G_apachebase_found, 0;
 	__asm        jne    _T2903;
 // LINE 1646:
@@ -4121,6 +4399,7 @@ _T2903:
 _T2932:
 	__asm        jmp    _T3814;
 // LINE 1660:
+_T2937:
 	objcount = 0x2;
 // LINE 1661:
 	__asm        push   0x95;
@@ -4140,6 +4419,7 @@ _T2932:
 // LINE 1663:
 	__asm        jmp    _T3814;
 // LINE 1665:
+_T296b:
 	objcount = 0x2;
 // LINE 1666:
 	__asm        push   0xE8;
@@ -4159,6 +4439,7 @@ _T2932:
 // LINE 1668:
 	__asm        jmp    _T3814;
 // LINE 1670:
+_T299f:
 	objcount = 0x2;
 // LINE 1671:
 	__asm        push   0xE9;
@@ -4178,6 +4459,7 @@ _T2932:
 // LINE 1673:
 	__asm        jmp    _T3814;
 // LINE 1675:
+_T29d3:
 	objcount = 0x2;
 // LINE 1676:
 	__asm        push   0x96;
@@ -4197,6 +4479,7 @@ _T2932:
 // LINE 1678:
 	__asm        jmp    _T3814;
 // LINE 1681:
+_T2a07:
 	objcount = 0x2;
 // LINE 1682:
 	__asm        push   0x97;
@@ -4218,6 +4501,7 @@ _T2932:
 // LINE 1685:
 	__asm        jmp    _T3814;
 // LINE 1687:
+_T2a42:
 	objcount = 0x2;
 // LINE 1688:
 	__asm        push   0xF5;
@@ -4239,6 +4523,7 @@ _T2932:
 // LINE 1691:
 	__asm        jmp    _T3814;
 // LINE 1693:
+_T2a7d:
 	objcount = 0x2;
 // LINE 1694:
 	__asm        push   0xF6;
@@ -4260,6 +4545,7 @@ _T2932:
 // LINE 1697:
 	__asm        jmp    _T3814;
 // LINE 1699:
+_T2ab8:
 	objcount = 0x2;
 // LINE 1700:
 	__asm        push   0x98;
@@ -4281,6 +4567,7 @@ _T2932:
 // LINE 1703:
 	__asm        jmp    _T3814;
 // LINE 1705:
+_T2af3:
 	objcount = 0x2;
 // LINE 1706:
 	__asm        push   0x99;
@@ -4302,6 +4589,7 @@ _T2932:
 // LINE 1709:
 	__asm        jmp    _T3814;
 // LINE 1711:
+_T2b2e:
 	objcount = 0x2;
 // LINE 1712:
 	__asm        push   6;
@@ -4321,6 +4609,7 @@ _T2932:
 // LINE 1714:
 	__asm        jmp    _T3814;
 // LINE 1716:
+_T2b5f:
 	objcount = 0x2;
 // LINE 1717:
 	__asm        push   7;
@@ -4340,6 +4629,7 @@ _T2932:
 // LINE 1719:
 	__asm        jmp    _T3814;
 // LINE 1721:
+_T2b90:
 	objcount = 0x2;
 // LINE 1722:
 	__asm        push   8;
@@ -4359,6 +4649,7 @@ _T2932:
 // LINE 1724:
 	__asm        jmp    _T3814;
 // LINE 1726:
+_T2bc1:
 	objcount = 0x2;
 // LINE 1727:
 	__asm        push   9;
@@ -4378,6 +4669,7 @@ _T2932:
 // LINE 1729:
 	__asm        jmp    _T3814;
 // LINE 1731:
+_T2bf2:
 	objcount = 0x2;
 // LINE 1732:
 	__asm        push   0xD0;
@@ -4397,6 +4689,7 @@ _T2932:
 // LINE 1734:
 	__asm        jmp    _T3814;
 // LINE 1736:
+_T2c26:
 	objcount = 0x2;
 // LINE 1737:
 	__asm        push   0xA;
@@ -4416,6 +4709,7 @@ _T2932:
 // LINE 1739:
 	__asm        jmp    _T3814;
 // LINE 1741:
+_T2c57:
 	objcount = 0x2;
 // LINE 1742:
 	__asm        push   0xCE;
@@ -4435,6 +4729,7 @@ _T2932:
 // LINE 1744:
 	__asm        jmp    _T3814;
 // LINE 1746:
+_T2c8b:
 	objcount = 0x2;
 // LINE 1747:
 	__asm        push   0xB;
@@ -4454,6 +4749,7 @@ _T2932:
 // LINE 1749:
 	__asm        jmp    _T3814;
 // LINE 1751:
+_T2cbc:
 	objcount = 0x2;
 // LINE 1752:
 	__asm        push   0xCF;
@@ -4473,6 +4769,7 @@ _T2932:
 // LINE 1754:
 	__asm        jmp    _T3814;
 // LINE 1756:
+_T2cf0:
 	objcount = 0x2;
 // LINE 1757:
 	__asm        push   0xC;
@@ -4492,6 +4789,7 @@ _T2932:
 // LINE 1759:
 	__asm        jmp    _T3814;
 // LINE 1761:
+_T2d21:
 	objcount = 0x2;
 // LINE 1762:
 	__asm        push   0xD;
@@ -4511,6 +4809,7 @@ _T2932:
 // LINE 1764:
 	__asm        jmp    _T3814;
 // LINE 1766:
+_T2d52:
 	objcount = 0x2;
 // LINE 1767:
 	__asm        push   0xE;
@@ -4530,6 +4829,7 @@ _T2932:
 // LINE 1769:
 	__asm        jmp    _T3814;
 // LINE 1771:
+_T2d83:
 	objcount = 0x2;
 // LINE 1772:
 	__asm        push   0x80;
@@ -4549,6 +4849,7 @@ _T2932:
 // LINE 1774:
 	__asm        jmp    _T3814;
 // LINE 1776:
+_T2db7:
 	objcount = 0x2;
 // LINE 1777:
 	__asm        push   0x81;
@@ -4568,6 +4869,7 @@ _T2932:
 // LINE 1779:
 	__asm        jmp    _T3814;
 // LINE 1781:
+_T2deb:
 	objcount = 0x2;
 // LINE 1782:
 	__asm        push   0xC9;
@@ -4587,6 +4889,7 @@ _T2932:
 // LINE 1784:
 	__asm        jmp    _T3814;
 // LINE 1786:
+_T2e1f:
 	objcount = 0x2;
 // LINE 1787:
 	__asm        push   0xCA;
@@ -4606,6 +4909,7 @@ _T2932:
 // LINE 1789:
 	__asm        jmp    _T3814;
 // LINE 1791:
+_T2e53:
 	objcount = 0x2;
 // LINE 1792:
 	__asm        push   0xF;
@@ -4625,6 +4929,7 @@ _T2932:
 // LINE 1794:
 	__asm        jmp    _T3814;
 // LINE 1796:
+_T2e84:
 	objcount = 0x2;
 // LINE 1797:
 	__asm        push   0x10;
@@ -4644,6 +4949,7 @@ _T2932:
 // LINE 1799:
 	__asm        jmp    _T3814;
 // LINE 1801:
+_T2eb5:
 	objcount = 0x2;
 // LINE 1802:
 	__asm        push   0x11;
@@ -4663,6 +4969,7 @@ _T2932:
 // LINE 1804:
 	__asm        jmp    _T3814;
 // LINE 1806:
+_T2ee6:
 	objcount = 0x2;
 // LINE 1807:
 	__asm        push   0x12;
@@ -4682,6 +4989,7 @@ _T2932:
 // LINE 1809:
 	__asm        jmp    _T3814;
 // LINE 1811:
+_T2f17:
 	objcount = 0x2;
 // LINE 1812:
 	__asm        push   0x13;
@@ -4701,6 +5009,7 @@ _T2932:
 // LINE 1814:
 	__asm        jmp    _T3814;
 // LINE 1816:
+_T2f48:
 	objcount = 0x2;
 // LINE 1817:
 	__asm        push   0x14;
@@ -4720,6 +5029,7 @@ _T2932:
 // LINE 1819:
 	__asm        jmp    _T3814;
 // LINE 1821:
+_T2f79:
 	objcount = 0x1;
 // LINE 1822:
 	flags = 0x0;
@@ -4731,6 +5041,7 @@ _T2932:
 // LINE 1825:
 	__asm        jmp    _T3814;
 // LINE 1827:
+_T2f9b:
 	objcount = 0x2;
 // LINE 1828:
 	__asm        push   0xF4;
@@ -4750,6 +5061,7 @@ _T2932:
 // LINE 1830:
 	__asm        jmp    _T3814;
 // LINE 1832:
+_T2fcf:
 	objcount = 0x2;
 // LINE 1833:
 	__asm        push   0x15;
@@ -4769,6 +5081,7 @@ _T2932:
 // LINE 1835:
 	__asm        jmp    _T3814;
 // LINE 1837:
+_T3000:
 	objcount = 0x2;
 // LINE 1838:
 	__asm        push   0x16;
@@ -4788,6 +5101,7 @@ _T2932:
 // LINE 1840:
 	__asm        jmp    _T3814;
 // LINE 1842:
+_T3031:
 	objcount = 0x2;
 // LINE 1843:
 	__asm        push   0x17;
@@ -4807,6 +5121,7 @@ _T2932:
 // LINE 1845:
 	__asm        jmp    _T3814;
 // LINE 1847:
+_T3062:
 	objcount = 0x2;
 // LINE 1848:
 	__asm        push   0xE3;
@@ -4826,6 +5141,7 @@ _T2932:
 // LINE 1850:
 	__asm        jmp    _T3814;
 // LINE 1852:
+_T3096:
 	objcount = 0x2;
 // LINE 1853:
 	__asm        push   0x18;
@@ -4845,6 +5161,7 @@ _T2932:
 // LINE 1855:
 	__asm        jmp    _T3814;
 // LINE 1857:
+_T30c7:
 	objcount = 0x2;
 // LINE 1858:
 	__asm        push   0xC4;
@@ -4864,6 +5181,7 @@ _T2932:
 // LINE 1860:
 	__asm        jmp    _T3814;
 // LINE 1862:
+_T30fb:
 	objcount = 0x2;
 // LINE 1863:
 	__asm        push   0x19;
@@ -4883,6 +5201,7 @@ _T2932:
 // LINE 1865:
 	__asm        jmp    _T3814;
 // LINE 1867:
+_T312c:
 	objcount = 0x2;
 // LINE 1868:
 	__asm        push   0x1A;
@@ -4902,6 +5221,7 @@ _T2932:
 // LINE 1870:
 	__asm        jmp    _T3814;
 // LINE 1872:
+_T315d:
 	objcount = 0x2;
 // LINE 1873:
 	__asm        push   0xC5;
@@ -4921,6 +5241,7 @@ _T2932:
 // LINE 1875:
 	__asm        jmp    _T3814;
 // LINE 1877:
+_T3191:
 	objcount = 0x2;
 // LINE 1878:
 	__asm        push   0xC6;
@@ -4940,6 +5261,7 @@ _T2932:
 // LINE 1880:
 	__asm        jmp    _T3814;
 // LINE 1882:
+_T31c5:
 	objcount = 0x2;
 // LINE 1883:
 	__asm        push   0xC7;
@@ -4959,6 +5281,7 @@ _T2932:
 // LINE 1885:
 	__asm        jmp    _T3814;
 // LINE 1887:
+_T31f9:
 	objcount = 0x2;
 // LINE 1888:
 	__asm        push   0xC8;
@@ -4978,6 +5301,7 @@ _T2932:
 // LINE 1890:
 	__asm        jmp    _T3814;
 // LINE 1892:
+_T322d:
 	objcount = 0x2;
 // LINE 1893:
 	__asm        push   0x1B;
@@ -4997,6 +5321,7 @@ _T2932:
 // LINE 1895:
 	__asm        jmp    _T3814;
 // LINE 1897:
+_T325e:
 	objcount = 0x2;
 // LINE 1898:
 	__asm        push   0x82;
@@ -5011,6 +5336,7 @@ _T2932:
 // LINE 1900:
 	__asm        jmp    _T3814;
 // LINE 1902:
+_T3287:
 	objcount = 0x2;
 // LINE 1903:
 	__asm        push   0xE4;
@@ -5030,6 +5356,7 @@ _T2932:
 // LINE 1905:
 	__asm        jmp    _T3814;
 // LINE 1907:
+_T32bb:
 	objcount = 0x2;
 // LINE 1908:
 	__asm        push   0xE5;
@@ -5049,6 +5376,7 @@ _T2932:
 // LINE 1910:
 	__asm        jmp    _T3814;
 // LINE 1912:
+_T32ef:
 	__asm        push   0x16F;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -5058,6 +5386,7 @@ _T2932:
 // LINE 1914:
 	__asm        jmp    _T3814;
 // LINE 1916:
+_T330a:
 	objcount = 0x2;
 // LINE 1917:
 	__asm        push   0xE6;
@@ -5077,6 +5406,7 @@ _T2932:
 // LINE 1919:
 	__asm        jmp    _T3814;
 // LINE 1921:
+_T333e:
 	objcount = 0x2;
 // LINE 1922:
 	__asm        push   0xE7;
@@ -5096,6 +5426,7 @@ _T2932:
 // LINE 1924:
 	__asm        jmp    _T3814;
 // LINE 1926:
+_T3372:
 	objcount = 0x2;
 // LINE 1927:
 	__asm        push   0x1C;
@@ -5117,6 +5448,7 @@ _T2932:
 // LINE 1930:
 	__asm        jmp    _T3814;
 // LINE 1932:
+_T33aa:
 	objcount = 0x2;
 // LINE 1933:
 	__asm        push   0xEA;
@@ -5136,6 +5468,7 @@ _T2932:
 // LINE 1935:
 	__asm        jmp    _T3814;
 // LINE 1937:
+_T33de:
 	objcount = 0x2;
 // LINE 1938:
 	__asm        push   0xEB;
@@ -5155,6 +5488,7 @@ _T2932:
 // LINE 1940:
 	__asm        jmp    _T3814;
 // LINE 1942:
+_T3412:
 	objcount = 0x2;
 // LINE 1943:
 	__asm        push   0xEC;
@@ -5174,6 +5508,7 @@ _T2932:
 // LINE 1945:
 	__asm        jmp    _T3814;
 // LINE 1947:
+_T3446:
 	objcount = 0x2;
 // LINE 1948:
 	__asm        push   0xED;
@@ -5193,6 +5528,7 @@ _T2932:
 // LINE 1950:
 	__asm        jmp    _T3814;
 // LINE 1952:
+_T347a:
 	objcount = 0x2;
 // LINE 1953:
 	__asm        push   0xEE;
@@ -5212,6 +5548,7 @@ _T2932:
 // LINE 1955:
 	__asm        jmp    _T3814;
 // LINE 1957:
+_T34ae:
 	objcount = 0x2;
 // LINE 1958:
 	__asm        push   0xEF;
@@ -5231,6 +5568,7 @@ _T2932:
 // LINE 1960:
 	__asm        jmp    _T3814;
 // LINE 1962:
+_T34e2:
 	objcount = 0x2;
 // LINE 1963:
 	__asm        push   0xF0;
@@ -5250,6 +5588,7 @@ _T2932:
 // LINE 1965:
 	__asm        jmp    _T3814;
 // LINE 1967:
+_T3516:
 	objcount = 0x2;
 // LINE 1968:
 	__asm        push   0xF1;
@@ -5269,6 +5608,7 @@ _T2932:
 // LINE 1970:
 	__asm        jmp    _T3814;
 // LINE 1972:
+_T354a:
 	objcount = 0x2;
 // LINE 1973:
 	__asm        push   0xF2;
@@ -5288,6 +5628,7 @@ _T2932:
 // LINE 1975:
 	__asm        jmp    _T3814;
 // LINE 1977:
+_T357e:
 	objcount = 0x2;
 // LINE 1978:
 	__asm        push   0;
@@ -5317,7 +5658,151 @@ _T35b9:
 
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        jmp    _Switch_35d4[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T1827
+//   _T187d
+//   _T18b1
+//   _T18e5
+//   _T1919
+//   _T194d
+//   _T1981
+//   _T19b5
+//   _T19e9
+//   _T1a1d
+//   _T1a51
+//   _T1a85
+//   _T1ab9
+//   _T1aed
+//   _T1b21
+//   _T1b55
+//   _T1b89
+//   _T1bbd
+//   _T2310
+//   _T1bf8
+//   _T1c2c
+//   _T1c60
+//   _T1c9b
+//   _T1ccf
+//   _T2518
+//   _T254c
+//   _T1ea0
+//   _T1ed4
+//   _T30c7
+//   _T30fb
+//   _T312c
+//   _T315d
+//   _T3191
+//   _T2d83
+//   _T31c5
+//   _T31f9
+//   _T2db7
+//   _T2deb
+//   _T1d03
+//   _T2b2e
+//   _T2d52
+//   _T2e1f
+//   _T2e53
+//   _T2e84
+//   _T2eb5
+//   _T2ee6
+//   _T1d34
+//   _T1d68
+//   _T1d9c
+//   _T1dd0
+//   _T1e04
+//   _T1e38
+//   _T1e6c
+//   _T2414
+//   _T2580
+//   _T25b4
+//   _T25ef
+//   _T262a
+//   _T2448
+//   _T247c
+//   _T24b0
+//   _T24e4
+//   _T2c57
+//   _T2c8b
+//   _T2cbc
+//   _T2cf0
+//   _T2f17
+//   _T2344
+//   _T2378
+//   _T23ac
+//   _T2b5f
+//   _T2b90
+//   _T2bc1
+//   _T2bf2
+//   _T23e0
+//   _T2c26
+//   _T1f08
+//   _T1f3c
+//   _T1f70
+//   _T1fa4
+//   _T1fd8
+//   _T200c
+//   _T2040
+//   _T207b
+//   _T20b6
+//   _T20ea
+//   _T211e
+//   _T2140
+//   _T2162
+//   _T219d
+//   _T21d1
+//   _T2205
+//   _T2239
+//   _T226d
+//   _T22a8
+//   _T22dc
+//   _T2d21
+//   _T3000
+//   _T357e
+//   _T3062
+//   _T3096
+//   _T185b
+//   _T322d
+//   _T325e
+//   _T3287
+//   _T32bb
+//   _T32ef
+//   _T330a
+//   _T333e
+//   _T2665
+//   _T26c4
+//   _T26e6
+//   _T2745
+//   _T2780
+//   _T27b4
+//   _T27e8
+//   _T281c
+//   _T2850
+//   _T2884
+//   _T28b8
+//   _T2937
+//   _T296b
+//   _T299f
+//   _T3372
+//   _T33aa
+//   _T33de
+//   _T3412
+//   _T3446
+//   _T347a
+//   _T34ae
+//   _T34e2
+//   _T3516
+//   _T354a
+//   _T3031
+//   _T29d3
+//   _T2f48
+//   _T2f79
+//   _T2f9b
+//   _T2fcf
+//   _T2a07
+//   _T2a42
+//   _T2a7d
+//   _T2ab8
+//   _T2af3
 // LINE 2017:
 _T3814:
 	__asm        push   0x18;
@@ -5338,6 +5823,7 @@ _T3814:
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    _T3d40;
 // LINE 2024:
+_T3846:
 	__asm        mov    eax, cptr;
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
@@ -5364,6 +5850,7 @@ _T3814:
 // LINE 2030:
 	__asm        jmp    _T3d67;
 // LINE 2032:
+_T38a3:
 	__asm        mov    eax, cptr;
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
@@ -5418,6 +5905,7 @@ _T3814:
 // LINE 2041:
 	__asm        jmp    _T3d67;
 // LINE 2043:
+_T3961:
 	__asm        mov    eax, cptr;
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
@@ -5520,6 +6008,7 @@ _T3814:
 // LINE 2057:
 	__asm        jmp    _T3d67;
 // LINE 2059:
+_T3ace:
 	__asm        mov    eax, cptr;
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
@@ -5700,7 +6189,11 @@ _T3d40:
 
 	__asm        mov    eax, [ebp-0x50];
 	__asm        jmp    _Switch_3d57[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T3846
+//   _T38a3
+//   _T3961
+//   _T3ace
 // LINE 2086:
 _T3d67:
 	cptr->y = alt;
@@ -5908,6 +6401,7 @@ _T3fce:
 	__asm        mov    [ebp-0x54], eax;
 	__asm        jmp    _T44ed;
 // LINE 2170:
+_T3fed:
 	__asm        mov    eax, cptr;
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
@@ -5934,6 +6428,7 @@ _T3fce:
 // LINE 2176:
 	__asm        jmp    _T4514;
 // LINE 2178:
+_T404a:
 	__asm        mov    eax, cptr;
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
@@ -5988,6 +6483,7 @@ _T3fce:
 // LINE 2187:
 	__asm        jmp    _T4514;
 // LINE 2189:
+_T4108:
 	__asm        mov    eax, cptr;
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
@@ -6090,6 +6586,7 @@ _T3fce:
 // LINE 2203:
 	__asm        jmp    _T4514;
 // LINE 2205:
+_T4275:
 	__asm        mov    eax, cptr;
 	__asm        mov    ecx, y;
 	__asm        and    ecx, 0xFF;
@@ -6273,7 +6770,11 @@ _T44ed:
 
 	__asm        mov    eax, [ebp-0x54];
 	__asm        jmp    _Switch_4504[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T3fed
+//   _T404a
+//   _T4108
+//   _T4275
 // LINE 2234:
 _T4514:
 	__asm        mov    eax, y;
@@ -9933,7 +10434,7 @@ _T119:
 	__asm        mov    ecx, dyobj;
 	__asm        mov    [ecx+0xC], ax;
 // LINE 4052:
-	__asm        jmp    _T5dd;
+	__asm        jmp    next_dyobj;
 // LINE 4056:
 _T144:
 	rad = dyobj->radius;
@@ -10050,7 +10551,7 @@ _T144:
 	__asm        cmp    cptr4, eax;
 	__asm        jne    _T2b2;
 // LINE 4079:
-	__asm        jmp    _T5dd;
+	__asm        jmp    next_dyobj;
 // LINE 4086:
 _T2b2:
 	__asm        mov    eax, endcptrptr;
@@ -10064,7 +10565,7 @@ _T2c3:
 _T2cb:
 	__asm        mov    eax, cptrptr1;
 	__asm        cmp    cptrptr2, eax;
-	__asm        jbe    _T5dd;
+	__asm        jbe    next_dyobj;
 // LINE 4088:
 	__asm        mov    eax, cptrptr2;
 	__asm        mov    ecx, cptrptr1;
@@ -10132,7 +10633,7 @@ _T379:
 	__asm        mov    ecx, dyobj;
 	__asm        mov    [ecx+0xC], ax;
 // LINE 4108:
-	__asm        jmp    _T5dd;
+	__asm        jmp    next_dyobj;
 // LINE 4110:
 	__asm        jmp    _T5d8;
 _T3a9:
@@ -10196,7 +10697,7 @@ _T435:
 	__asm        mov    ecx, dyobj;
 	__asm        mov    [ecx+0xC], ax;
 // LINE 4128:
-	__asm        jmp    _T5dd;
+	__asm        jmp    next_dyobj;
 // LINE 4130:
 	__asm        jmp    _T5d8;
 _T465:
@@ -10260,7 +10761,7 @@ _T4f1:
 	__asm        mov    ecx, dyobj;
 	__asm        mov    [ecx+0xC], ax;
 // LINE 4148:
-	__asm        jmp    _T5dd;
+	__asm        jmp    next_dyobj;
 // LINE 4150:
 	__asm        jmp    _T5d8;
 _T521:
@@ -10324,13 +10825,12 @@ _T5ad:
 	__asm        mov    ecx, dyobj;
 	__asm        mov    [ecx+0xC], ax;
 // LINE 4168:
-	__asm        jmp    _T5dd;
+	__asm        jmp    next_dyobj;
 // LINE 4171:
 _T5d8:
 	__asm        jmp    _T2c3;
 // LINE 4181:
 next_dyobj:
-_T5dd:
 	__asm        mov    eax, dyobj;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 4;
@@ -11303,6 +11803,7 @@ _T53:
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    _Tbf;
 // LINE 4483:
+_T61:
 	curr_dir = 0x0;
 // LINE 4484:
 	curr_dist++;
@@ -11313,12 +11814,14 @@ _T53:
 // LINE 4487:
 	__asm        jmp    _Te7;
 // LINE 4489:
+_T7e:
 	xdir = 0x1;
 // LINE 4490:
 	ydir = 0x0;
 // LINE 4491:
 	__asm        jmp    _Te7;
 // LINE 4493:
+_T91:
 	curr_dist++;
 // LINE 4494:
 	xdir = 0x0;
@@ -11327,6 +11830,7 @@ _T53:
 // LINE 4496:
 	__asm        jmp    _Te7;
 // LINE 4498:
+_Ta7:
 	xdir = 0xffffffff;
 // LINE 4499:
 	ydir = 0x0;
@@ -11340,7 +11844,12 @@ _Tbf:
 
 	__asm        mov    eax, [ebp-0x20];
 	__asm        jmp    _Switch_d3[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T61
+//   _T7e
+//   _T91
+//   _Ta7
+//   _T61
 // LINE 4505:
 _Te7:
 	__asm        mov    eax, spiral_dist;
@@ -11952,21 +12461,25 @@ _T69:
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _Tb5;
 // LINE 4997:
+_T74:
 	__asm        push   1;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        jmp    _T20a;
 // LINE 4999:
+_T83:
 	__asm        push   2;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        jmp    _T20a;
 // LINE 5001:
+_T92:
 	__asm        push   3;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        jmp    _T20a;
 // LINE 5003:
+_Ta1:
 	__asm        push   4;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -11980,7 +12493,11 @@ _Tb5:
 
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    _Switch_cc[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T74
+//   _T83
+//   _T92
+//   _Ta1
 // LINE 5006:
 _Tdc:
 	__asm        jmp    _T1f8;
@@ -11996,21 +12513,25 @@ _Tf5:
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    _T14d;
 // LINE 5011:
+_T100:
 	__asm        push   0x168;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        jmp    _T20a;
 // LINE 5013:
+_T112:
 	__asm        push   0x169;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        jmp    _T20a;
 // LINE 5015:
+_T124:
 	__asm        push   0x16A;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        jmp    _T20a;
 // LINE 5017:
+_T136:
 	__asm        push   0x16B;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -12024,7 +12545,11 @@ _T14d:
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        jmp    _Switch_164[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T100
+//   _T112
+//   _T124
+//   _T136
 // LINE 5020:
 _T174:
 	__asm        jmp    _T1f8;
@@ -12034,21 +12559,25 @@ _T179:
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    _T1d1;
 // LINE 5025:
+_T184:
 	__asm        push   0x164;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        jmp    _T20a;
 // LINE 5027:
+_T196:
 	__asm        push   0x165;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        jmp    _T20a;
 // LINE 5029:
+_T1a8:
 	__asm        push   0x166;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
 	__asm        jmp    _T20a;
 // LINE 5031:
+_T1ba:
 	__asm        push   0x167;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -12062,7 +12591,11 @@ _T1d1:
 
 	__asm        mov    eax, [ebp-0x10];
 	__asm        jmp    _Switch_1e8[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T184
+//   _T196
+//   _T1a8
+//   _T1ba
 // LINE 5036:
 _T1f8:
 	__asm        push   0x164;

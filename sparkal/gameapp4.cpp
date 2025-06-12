@@ -936,7 +936,7 @@ void AppInitThreadStartRoutine(void * __ptr32 pVRAppInitThreadStruct) {
 	__asm        call   VRAppInit;
 	__asm        mov    ecx, tempVRAppInitThreadStruct;
 	__asm        mov    [ecx], eax;
-	__asm        jmp    _T4f;
+	__asm        jmp    _L44245;
 // LINE 171:
 _L48858:
 	tempVRAppInitThreadStruct->nReturnValue = 0xffffffff;
@@ -946,7 +946,6 @@ _L48858:
 // LINE 174:
 _L44245:
 _L44245:
-_T4f:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, tempVRAppInitThreadStruct;
 	__asm        mov    dword ptr [eax+4], 0x64;

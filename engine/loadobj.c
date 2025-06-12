@@ -1104,14 +1104,14 @@ _Ta6:
 	__asm        test   byte ptr [eax+8], 4;
 	__asm        je     _Tc7;
 // LINE 817:
-	__asm        jmp    _T551;
+	__asm        jmp    do_2d_face;
 // LINE 819:
 _Tc7:
 	__asm        mov    eax, faceptr;
 	__asm        test   dword ptr [eax+8], 0x18000;
 	__asm        je     _Tdc;
 // LINE 820:
-	__asm        jmp    _T544;
+	__asm        jmp    next_face;
 // LINE 823:
 _Tdc:
 	__asm        mov    eax, faceptr;
@@ -1131,7 +1131,7 @@ _Tf8:
 	__asm        cmp    check_for_overhang, 0;
 	__asm        jne    _T11c;
 // LINE 827:
-	__asm        jmp    _T544;
+	__asm        jmp    next_face;
 // LINE 828:
 	__asm        jmp    _T123;
 // LINE 829:
@@ -1142,7 +1142,7 @@ _T123:
 	__asm        jmp    _T12d;
 // LINE 831:
 _T128:
-	__asm        jmp    _T544;
+	__asm        jmp    next_face;
 // LINE 834:
 _T12d:
 	dataptr = faceptr;
@@ -1238,22 +1238,22 @@ _T230:
 	__asm        mov    eax, dim;
 	__asm        add    eax, x;
 	__asm        cmp    eax, minx;
-	__asm        jl     _T544;
+	__asm        jl     next_face;
 
 	__asm        mov    eax, x;
 	__asm        sub    eax, dim;
 	__asm        cmp    eax, maxx;
-	__asm        jg     _T544;
+	__asm        jg     next_face;
 
 	__asm        mov    eax, dim;
 	__asm        add    eax, z;
 	__asm        cmp    eax, minz;
-	__asm        jl     _T544;
+	__asm        jl     next_face;
 
 	__asm        mov    eax, z;
 	__asm        sub    eax, dim;
 	__asm        cmp    eax, maxz;
-	__asm        jg     _T544;
+	__asm        jg     next_face;
 // LINE 877:
 	__asm        mov    eax, faceptr;
 	__asm        mov    eax, [eax+0x2C];
@@ -1400,7 +1400,7 @@ _T3fd:
 	landable[0] = 0x0;
 // LINE 925:
 _T406:
-	__asm        jmp    _T544;
+	__asm        jmp    next_face;
 // LINE 929:
 _T40b:
 	__asm        cmp    normaldir, 0;
@@ -1487,7 +1487,7 @@ _T4f2:
 	altyupabove = facealt;
 // LINE 971:
 _T510:
-	__asm        jmp    _T544;
+	__asm        jmp    next_face;
 // LINE 978:
 _T515:
 	__asm        mov    eax, y;
@@ -1495,25 +1495,23 @@ _T515:
 	__asm        cmp    eax, facealt;
 	__asm        jle    _T52b;
 // LINE 979:
-	__asm        jmp    _T544;
+	__asm        jmp    next_face;
 // LINE 981:
 _T52b:
 	overhang = 0x1;
 // LINE 984:
 	__asm        mov    eax, facealt;
 	__asm        cmp    altydown, eax;
-	__asm        jle    _T544;
+	__asm        jle    next_face;
 // LINE 986:
 	altydown = facealt;
 // LINE 994:
 next_face:
-_T544:
 	faceptr = faceptr->NextFace;
 // LINE 995:
 	__asm        jmp    _Ta3;
 // LINE 1003:
 do_2d_face:
-_T551:
 	vertno = faceptr->PlyVerts;
 // LINE 1005:
 	__asm        mov    eax, vertno;
@@ -1734,14 +1732,14 @@ _Ta6:
 	__asm        test   byte ptr [eax+8], 4;
 	__asm        je     _Tc7;
 // LINE 1129:
-	__asm        jmp    _T5da;
+	__asm        jmp    do_2d_face;
 // LINE 1131:
 _Tc7:
 	__asm        mov    eax, faceptr;
 	__asm        test   dword ptr [eax+8], 0x18004;
 	__asm        je     _Tdc;
 // LINE 1132:
-	__asm        jmp    _T5cd;
+	__asm        jmp    next_face;
 // LINE 1135:
 _Tdc:
 	__asm        mov    eax, faceptr;
@@ -1761,7 +1759,7 @@ _Tf8:
 	__asm        cmp    check_for_overhang, 0;
 	__asm        jne    _T11c;
 // LINE 1142:
-	__asm        jmp    _T5cd;
+	__asm        jmp    next_face;
 // LINE 1143:
 	__asm        jmp    _T123;
 // LINE 1144:
@@ -1780,7 +1778,7 @@ _T128:
 	__asm        jmp    _T143;
 // LINE 1152:
 _T13e:
-	__asm        jmp    _T5cd;
+	__asm        jmp    next_face;
 // LINE 1156:
 _T143:
 	dataptr = faceptr;
@@ -1876,22 +1874,22 @@ _T246:
 	__asm        mov    eax, dim;
 	__asm        add    eax, x;
 	__asm        cmp    eax, minx;
-	__asm        jl     _T5cd;
+	__asm        jl     next_face;
 
 	__asm        mov    eax, x;
 	__asm        sub    eax, dim;
 	__asm        cmp    eax, maxx;
-	__asm        jg     _T5cd;
+	__asm        jg     next_face;
 
 	__asm        mov    eax, dim;
 	__asm        add    eax, z;
 	__asm        cmp    eax, minz;
-	__asm        jl     _T5cd;
+	__asm        jl     next_face;
 
 	__asm        mov    eax, z;
 	__asm        sub    eax, dim;
 	__asm        cmp    eax, maxz;
-	__asm        jg     _T5cd;
+	__asm        jg     next_face;
 // LINE 1195:
 	__asm        cmp    normaldir, 0;
 	__asm        je     _T355;
@@ -1994,7 +1992,7 @@ _T355:
 	__asm        jmp    _T386;
 // LINE 1223:
 _T381:
-	__asm        jmp    _T5cd;
+	__asm        jmp    next_face;
 // LINE 1226:
 _T386:
 	__asm        cmp    check_for_overhang, 0;
@@ -2064,7 +2062,7 @@ _T453:
 	landable[0] = 0x0;
 // LINE 1258:
 _T45c:
-	__asm        jmp    _T5cd;
+	__asm        jmp    next_face;
 // LINE 1262:
 _T461:
 	__asm        cmp    normaldir, 0;
@@ -2163,7 +2161,7 @@ _T57d:
 	altyupabove = facealt;
 // LINE 1313:
 _T59b:
-	__asm        jmp    _T5cd;
+	__asm        jmp    next_face;
 // LINE 1320:
 _T5a0:
 	__asm        mov    eax, ydim;
@@ -2171,25 +2169,23 @@ _T5a0:
 	__asm        cmp    eax, facealt;
 	__asm        jle    _T5b4;
 // LINE 1321:
-	__asm        jmp    _T5cd;
+	__asm        jmp    next_face;
 // LINE 1323:
 _T5b4:
 	overhang = 0x1;
 // LINE 1326:
 	__asm        mov    eax, facealt;
 	__asm        cmp    altydown, eax;
-	__asm        jle    _T5cd;
+	__asm        jle    next_face;
 // LINE 1328:
 	altydown = facealt;
 // LINE 1336:
 next_face:
-_T5cd:
 	faceptr = faceptr->NextFace;
 // LINE 1337:
 	__asm        jmp    _Ta3;
 // LINE 1345:
 do_2d_face:
-_T5da:
 	vertno = faceptr->PlyVerts;
 // LINE 1347:
 	__asm        mov    eax, vertno;
@@ -2368,7 +2364,7 @@ _T3f:
 	__asm        test   byte ptr [eax+8], 4;
 	__asm        je     _T60;
 
-	__asm        jmp    _T1fa;
+	__asm        jmp    next_face;
 // LINE 1449:
 _T60:
 	__asm        cmp    dir, 0;
@@ -2379,7 +2375,7 @@ _T60:
 	__asm        cmp    dword ptr [eax+8], 0xFFFFD8F0;
 	__asm        jle    _T82;
 // LINE 1450:
-	__asm        jmp    _T1fa;
+	__asm        jmp    next_face;
 // LINE 1451:
 _T82:
 	__asm        cmp    dir, 0;
@@ -2390,7 +2386,7 @@ _T82:
 	__asm        cmp    dword ptr [eax+8], 0x2710;
 	__asm        jge    _Ta4;
 // LINE 1452:
-	__asm        jmp    _T1fa;
+	__asm        jmp    next_face;
 // LINE 1455:
 _Ta4:
 	dataptr = faceptr;
@@ -2486,22 +2482,22 @@ _T1a4:
 	__asm        mov    eax, dim;
 	__asm        add    eax, y;
 	__asm        cmp    eax, miny;
-	__asm        jl     _T1fa;
+	__asm        jl     next_face;
 
 	__asm        mov    eax, y;
 	__asm        sub    eax, dim;
 	__asm        cmp    eax, maxy;
-	__asm        jg     _T1fa;
+	__asm        jg     next_face;
 
 	__asm        mov    eax, x;
 	__asm        add    eax, dim;
 	__asm        cmp    eax, minx;
-	__asm        jl     _T1fa;
+	__asm        jl     next_face;
 
 	__asm        mov    eax, x;
 	__asm        sub    eax, dim;
 	__asm        cmp    eax, maxx;
-	__asm        jg     _T1fa;
+	__asm        jg     next_face;
 // LINE 1492:
 	__asm        mov    eax, maxz;
 	__asm        add    eax, minz;
@@ -2514,7 +2510,6 @@ _T1a4:
 	__asm        jmp    _T20f;
 // LINE 1506:
 next_face:
-_T1fa:
 	faceptr = faceptr->NextFace;
 // LINE 1507:
 	__asm        jmp    _T3c;
@@ -2572,7 +2567,7 @@ _T3f:
 	__asm        test   byte ptr [eax+8], 4;
 	__asm        je     _T60;
 
-	__asm        jmp    _T1f8;
+	__asm        jmp    next_face;
 // LINE 1551:
 _T60:
 	__asm        cmp    dir, 0;
@@ -2583,7 +2578,7 @@ _T60:
 	__asm        cmp    dword ptr [eax], 0xFFFFD8F0;
 	__asm        jle    _T81;
 // LINE 1552:
-	__asm        jmp    _T1f8;
+	__asm        jmp    next_face;
 // LINE 1553:
 _T81:
 	__asm        cmp    dir, 0;
@@ -2594,7 +2589,7 @@ _T81:
 	__asm        cmp    dword ptr [eax], 0x2710;
 	__asm        jge    _Ta2;
 // LINE 1554:
-	__asm        jmp    _T1f8;
+	__asm        jmp    next_face;
 // LINE 1557:
 _Ta2:
 	dataptr = faceptr;
@@ -2690,22 +2685,22 @@ _T1a2:
 	__asm        mov    eax, dim;
 	__asm        add    eax, y;
 	__asm        cmp    eax, miny;
-	__asm        jl     _T1f8;
+	__asm        jl     next_face;
 
 	__asm        mov    eax, y;
 	__asm        sub    eax, dim;
 	__asm        cmp    eax, maxy;
-	__asm        jg     _T1f8;
+	__asm        jg     next_face;
 
 	__asm        mov    eax, dim;
 	__asm        add    eax, z;
 	__asm        cmp    eax, minz;
-	__asm        jl     _T1f8;
+	__asm        jl     next_face;
 
 	__asm        mov    eax, z;
 	__asm        sub    eax, dim;
 	__asm        cmp    eax, maxz;
-	__asm        jg     _T1f8;
+	__asm        jg     next_face;
 // LINE 1594:
 	__asm        mov    eax, minx;
 	__asm        add    eax, maxx;
@@ -2718,7 +2713,6 @@ _T1a2:
 	__asm        jmp    _T20d;
 // LINE 1608:
 next_face:
-_T1f8:
 	faceptr = faceptr->NextFace;
 // LINE 1609:
 	__asm        jmp    _T3c;
@@ -2761,7 +2755,7 @@ _T30:
 	__asm        test   byte ptr [eax+8], 4;
 	__asm        jne    _T51;
 // LINE 1643:
-	__asm        jmp    _Tbd;
+	__asm        jmp    next_face;
 // LINE 1646:
 _T51:
 	dataptr = faceptr;
@@ -2808,7 +2802,6 @@ _T51:
 	__asm        mov    [ecx+4], eax;
 // LINE 1670:
 next_face:
-_Tbd:
 	faceptr = faceptr->NextFace;
 // LINE 1671:
 	__asm        jmp    _T2d;
@@ -3220,7 +3213,7 @@ _T9a:
 	__asm        je     _Td3;
 // LINE 1894:
 _Tce:
-	__asm        jmp    _T17d;
+	__asm        jmp    next_face;
 // LINE 1895:
 _Td3:
 	__asm        mov    eax, face;
@@ -3263,7 +3256,7 @@ _T120:
 	__asm        call   VRBCApplyTiledMap;
 	__asm        add    esp, 0xC;
 // LINE 1911:
-	__asm        jmp    _T17d;
+	__asm        jmp    next_face;
 // LINE 1913:
 _T143:
 	__asm        mov    eax, bmp;
@@ -3288,7 +3281,6 @@ _T163:
 	__asm        add    esp, 8;
 // LINE 1919:
 next_face:
-_T17d:
 	__asm        mov    eax, face;
 	__asm        push   eax;
 	__asm        call   0x004D85F8;

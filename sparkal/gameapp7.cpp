@@ -1599,6 +1599,7 @@ int  CGameApp::CreateMessageBox(long lID, /*packed*/ class basic_string<char>& s
 	__asm        mov    [ebp-0x9C], eax;
 	__asm        jmp    _T3b7;
 // LINE 196:
+_T7b:
 	szImageFileNameToUse = SZ_ABOUT_BOX_IMAGE_FILE_NAME_1;
 // LINE 197:
 	szButtonImageFileNameToUse = SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_1;
@@ -1631,6 +1632,7 @@ int  CGameApp::CreateMessageBox(long lID, /*packed*/ class basic_string<char>& s
 // LINE 202:
 	__asm        jmp    _T3f8;
 // LINE 204:
+_Tdd:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xBCC], 0;
 	__asm        je     _T170;
@@ -1708,6 +1710,7 @@ _T170:
 _T1cd:
 	__asm        jmp    _T3f8;
 // LINE 222:
+_T1d2:
 	szImageFileNameToUse = SZ_ABOUT_BOX_IMAGE_FILE_NAME_3;
 // LINE 223:
 	szButtonImageFileNameToUse = SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_3;
@@ -1740,6 +1743,7 @@ _T1cd:
 // LINE 228:
 	__asm        jmp    _T3f8;
 // LINE 230:
+_T234:
 	szImageFileNameToUse = SZ_ABOUT_BOX_IMAGE_FILE_NAME_4;
 // LINE 231:
 	szButtonImageFileNameToUse = SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_4;
@@ -1772,6 +1776,7 @@ _T1cd:
 // LINE 236:
 	__asm        jmp    _T3f8;
 // LINE 238:
+_T296:
 	szImageFileNameToUse = SZ_ABOUT_BOX_IMAGE_FILE_NAME_5;
 // LINE 239:
 	szButtonImageFileNameToUse = SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_5;
@@ -1804,6 +1809,7 @@ _T1cd:
 // LINE 244:
 	__asm        jmp    _T3f8;
 // LINE 246:
+_T2f8:
 	szImageFileNameToUse = SZ_ABOUT_BOX_IMAGE_FILE_NAME_6;
 // LINE 247:
 	szButtonImageFileNameToUse = SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_6;
@@ -1873,7 +1879,15 @@ _T3b7:
 
 	__asm        mov    eax, [ebp-0x9C];
 	__asm        jmp    _Switch_3d8[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T2f8
+//   _T7b
+//   _T355
+//   _Tdd
+//   _T1d2
+//   _T234
+//   _T355
+//   _T296
 // LINE 264:
 _T3f8:
 	__asm        push   0xA4;

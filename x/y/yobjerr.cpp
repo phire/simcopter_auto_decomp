@@ -1045,6 +1045,7 @@ void cYObject::Error(short errNum) {
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _Tb3;
 // LINE 16:
+_T18:
 	__asm        push   0x8C085;
 	__asm        push   0x5BEBAC;
 	__asm        push   0x10;
@@ -1054,6 +1055,7 @@ void cYObject::Error(short errNum) {
 // LINE 17:
 	__asm        jmp    _Tff;
 // LINE 20:
+_T36:
 	__asm        push   0x8C085;
 	__asm        push   0x5BEBE8;
 	__asm        push   0x14;
@@ -1063,6 +1065,7 @@ void cYObject::Error(short errNum) {
 // LINE 21:
 	__asm        jmp    _Tff;
 // LINE 24:
+_T54:
 	__asm        push   0x8C085;
 	__asm        push   0x5BEC20;
 	__asm        push   0x18;
@@ -1072,6 +1075,7 @@ void cYObject::Error(short errNum) {
 // LINE 25:
 	__asm        jmp    _Tff;
 // LINE 28:
+_T72:
 	__asm        push   0x8C085;
 	__asm        push   0x5BEC58;
 	__asm        push   0x1C;
@@ -1101,7 +1105,12 @@ _Tb3:
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, _SwitchTable_e6[0][eax];
 	__asm        jmp    _Switch_d2[0][ecx*4];
-// Switch pointers
+// Switch pointers:
+//   _T18
+//   _T36
+//   _T54
+//   _T72
+//   _T90
 // Switch table
 // LINE 69:
 _Tff:

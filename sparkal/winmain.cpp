@@ -153,7 +153,7 @@ _T166:
 _T16b:
 	__asm        mov    eax, _gSparkalApp;
 	__asm        test   byte ptr [eax+0xC], 1;
-	__asm        je     _T201;
+	__asm        je     Cleanup;
 // LINE 71:
 _T17a:
 	__asm        push   1;
@@ -178,7 +178,7 @@ _T17a:
 // LINE 74:
 	__asm        jmp    _T246;
 
-	__asm        jmp    _T201;
+	__asm        jmp    Cleanup;
 // LINE 76:
 _T1bc:
 	__asm        lea    eax, Message.hwnd;
@@ -209,7 +209,6 @@ _T1fc:
 	__asm        jmp    _T16b;
 // LINE 89:
 Cleanup:
-_T201:
 	__asm        mov    eax, _gSparkalApp;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, _gSparkalApp;
@@ -236,7 +235,7 @@ _T23f:
 	__asm        jmp    _T24b;
 // LINE 93:
 _T246:
-	__asm        jmp    _T201;
+	__asm        jmp    Cleanup;
 _T24b:
 }
 

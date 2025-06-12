@@ -95,6 +95,7 @@ _T42:
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    _T49c;
 // LINE 146:
+_T14:
 	__asm        mov    eax, name;
 	__asm        push   eax;
 	__asm        call   GetDir_CMAP;
@@ -204,6 +205,7 @@ _T13b:
 // LINE 172:
 	__asm        jmp    _T4c3;
 // LINE 176:
+_T151:
 	__asm        push   0x10000;
 	__asm        call   S2AllocPool;
 	__asm        add    esp, 4;
@@ -249,6 +251,7 @@ _T1c9:
 	__asm        mov    eax, res;
 	__asm        jmp    _T4ca;
 // LINE 190:
+_T1d1:
 	__asm        mov    eax, name;
 	__asm        push   eax;
 	__asm        call   GetDir_GEOM;
@@ -377,6 +380,7 @@ _T332:
 // LINE 217:
 	__asm        jmp    _T4c3;
 // LINE 221:
+_T348:
 	__asm        mov    eax, name;
 	__asm        push   eax;
 	__asm        call   GetDir_GEOM;
@@ -500,7 +504,11 @@ _T49c:
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        jmp    _Switch_4b3[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T1d1
+//   _T348
+//   _T151
+//   _T14
 // LINE 256:
 _T4c3:
 	__asm        xor    eax, eax;

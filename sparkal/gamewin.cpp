@@ -1394,10 +1394,12 @@ _T3c:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T477;
 // LINE 508:
+_T54:
 	this->mWindow = 0x0;
 // LINE 509:
 	__asm        jmp    _T459;
 // LINE 513:
+_T63:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
@@ -1406,6 +1408,7 @@ _T3c:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T477;
 // LINE 517:
+_T75:
 	lpMinMaxInfo = lParam;
 // LINE 520:
 	__asm        mov    eax, this;
@@ -1451,6 +1454,7 @@ _T3c:
 // LINE 530:
 	__asm        jmp    _T459;
 // LINE 533:
+_Tfd:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0;
 	__asm        je     _T11b;
@@ -1468,6 +1472,7 @@ _T11b:
 // LINE 536:
 	__asm        jmp    _T459;
 // LINE 539:
+_T127:
 	__asm        mov    eax, wParam;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -1480,6 +1485,7 @@ _T11b:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T477;
 // LINE 543:
+_T143:
 	__asm        mov    eax, wParam;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -1492,6 +1498,7 @@ _T11b:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T477;
 // LINE 547:
+_T15f:
 	__asm        mov    eax, wParam;
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -1504,6 +1511,7 @@ _T11b:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T477;
 // LINE 559:
+_T17b:
 	__asm        cmp    wParam, 0x73;
 	__asm        jne    _T19b;
 // LINE 560:
@@ -1530,6 +1538,7 @@ _T1b0:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T477;
 // LINE 566:
+_T1b7:
 	__asm        cmp    wParam, 0x73;
 	__asm        je     _T1d6;
 // LINE 567:
@@ -1546,6 +1555,7 @@ _T1d6:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T477;
 // LINE 571:
+_T1dd:
 	__asm        mov    eax, Window;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38A0];
@@ -1568,6 +1578,7 @@ _T1d6:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T477;
 // LINE 576:
+_T217:
 	__asm        mov    eax, Window;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38A0];
@@ -1590,6 +1601,7 @@ _T1d6:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T477;
 // LINE 581:
+_T251:
 	__asm        call   dword ptr ds:[0x6C38A4];
 	__asm        cmp    eax, Window;
 	__asm        jne    _T266;
@@ -1615,6 +1627,7 @@ _T266:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T477;
 // LINE 587:
+_T296:
 	__asm        call   dword ptr ds:[0x6C38A4];
 	__asm        cmp    eax, Window;
 	__asm        jne    _T2ab;
@@ -1640,6 +1653,7 @@ _T2ab:
 	__asm        xor    eax, eax;
 	__asm        jmp    _T477;
 // LINE 593:
+_T2db:
 	__asm        mov    eax, lParam;
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 1;
@@ -1657,6 +1671,7 @@ _T2ab:
 _T303:
 	__asm        jmp    _T459;
 // LINE 601:
+_T308:
 	__asm        mov    eax, Window;
 	__asm        cmp    wParam, eax;
 	__asm        jne    _T31b;
@@ -1693,7 +1708,72 @@ _T345:
 
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    _Switch_36d[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T54
+//   _T63
+//   _T459
+//   _T63
+//   _T459
+//   _Tfd
+_T385:
+	__asm        cmp    dword ptr [ebp-8], 0x20;
+	__asm        ja     _T3a4;
+
+	__asm        je     _T2db;
+
+	__asm        cmp    dword ptr [ebp-8], 0x1C;
+	__asm        je     _T31b;
+
+	__asm        jmp    _T459;
+_T3a4:
+	__asm        cmp    dword ptr [ebp-8], 0x100;
+	__asm        ja     _T3c6;
+
+	__asm        je     _T143;
+
+	__asm        cmp    dword ptr [ebp-8], 0x24;
+	__asm        je     _T75;
+
+	__asm        jmp    _T459;
+_T3c6:
+	__asm        cmp    dword ptr [ebp-8], 0x201;
+	__asm        ja     _T408;
+
+	__asm        je     _T1dd;
+
+	__asm        sub    dword ptr [ebp-8], 0x101;
+	__asm        cmp    dword ptr [ebp-8], 4;
+	__asm        ja     _T459;
+
+	__asm        mov    eax, [ebp-8];
+	__asm        jmp    _Switch_3f4[0][eax*4];
+// Switch pointers:
+//   _T15f
+//   _T127
+//   _T459
+//   _T17b
+//   _T1b7
+_T408:
+	__asm        cmp    dword ptr [ebp-8], 0x30F;
+	__asm        ja     _T447;
+
+	__asm        je     _T31b;
+
+	__asm        cmp    dword ptr [ebp-8], 0x202;
+	__asm        je     _T251;
+
+	__asm        cmp    dword ptr [ebp-8], 0x204;
+	__asm        je     _T217;
+
+	__asm        cmp    dword ptr [ebp-8], 0x205;
+	__asm        je     _T296;
+
+	__asm        jmp    _T459;
+_T447:
+	__asm        cmp    dword ptr [ebp-8], 0x311;
+	__asm        je     _T308;
+
+	__asm        jmp    _T459;
 // LINE 610:
 _T459:
 	__asm        mov    eax, lParam;

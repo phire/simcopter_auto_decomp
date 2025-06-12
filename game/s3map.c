@@ -350,6 +350,7 @@ _T30:
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        jmp    _T176a;
 // LINE 322:
+_T82:
 	__asm        mov    eax, posx;
 	__asm        mov    ecx, S_mapdimx;
 	__asm        sar    ecx, 1;
@@ -658,6 +659,7 @@ _T40e:
 _T417:
 	__asm        jmp    _T178e;
 // LINE 432:
+_T41c:
 	__asm        mov    eax, posx;
 	__asm        mov    ecx, S_mapdimx;
 	__asm        sar    ecx, 2;
@@ -1045,6 +1047,7 @@ _T853:
 _T87d:
 	__asm        jmp    _T178e;
 // LINE 555:
+_T882:
 	__asm        mov    eax, posx;
 	__asm        mov    ecx, S_mapdimx;
 	__asm        sar    ecx, 3;
@@ -1589,6 +1592,7 @@ _Tdfb:
 _Te6a:
 	__asm        jmp    _T178e;
 // LINE 715:
+_Te6f:
 	__asm        mov    eax, posx;
 	__asm        mov    ecx, S_mapdimx;
 	__asm        sar    ecx, 4;
@@ -2442,7 +2446,11 @@ _T176a:
 
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        jmp    _Switch_177e[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T82
+//   _T41c
+//   _T882
+//   _Te6f
 // LINE 949:
 _T178e:
 	__asm        mov    eax, posy;

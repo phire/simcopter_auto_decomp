@@ -1352,7 +1352,7 @@ _T16e:
 	__asm        mov    eax, lpPalette;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+8];
-	__asm        jmp    _T1bb;
+	__asm        jmp    _L37298;
 // LINE 569:
 _L40600:
 	__asm        mov    eax, hResult;
@@ -1368,7 +1368,6 @@ _L40600:
 // LINE 571:
 _L37298:
 _L37298:
-_T1bb:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    lpPalette, 0;
 // LINE 573:
@@ -1400,7 +1399,7 @@ _T1cc:
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x7C];
-	__asm        jmp    _T25a;
+	__asm        jmp    _L37305;
 // LINE 584:
 _L40602:
 	__asm        mov    eax, hResult;
@@ -1416,7 +1415,6 @@ _L40602:
 // LINE 592:
 _L37305:
 _L37305:
-_T25a:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        jmp    near ptr 0x0049F360;
 

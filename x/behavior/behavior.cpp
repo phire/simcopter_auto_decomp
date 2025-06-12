@@ -678,18 +678,22 @@ short Behavior::GetBaseID(short treeclass) {
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _T4c;
 // LINE 193:
+_T1b:
 	baseID = 0x0;
 // LINE 194:
 	__asm        jmp    _T70;
 // LINE 196:
+_T26:
 	baseID = 0x100;
 // LINE 197:
 	__asm        jmp    _T70;
 // LINE 199:
+_T31:
 	baseID = 0x1000;
 // LINE 200:
 	__asm        jmp    _T70;
 // LINE 202:
+_T3c:
 	baseID = 0x2000;
 // LINE 203:
 	__asm        jmp    _T70;
@@ -701,7 +705,11 @@ _T4c:
 
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    _Switch_60[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T1b
+//   _T26
+//   _T31
+//   _T3c
 // LINE 205:
 _T70:
 	__asm        mov    ax, baseID;
@@ -720,18 +728,22 @@ short Behavior::GetMaxID(short treeclass) {
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _T4c;
 // LINE 212:
+_T1b:
 	maxID = 0x0;
 // LINE 213:
 	__asm        jmp    _T70;
 // LINE 215:
+_T26:
 	maxID = 0xfff;
 // LINE 216:
 	__asm        jmp    _T70;
 // LINE 218:
+_T31:
 	maxID = 0x1fff;
 // LINE 219:
 	__asm        jmp    _T70;
 // LINE 221:
+_T3c:
 	maxID = 0x7530;
 // LINE 222:
 	__asm        jmp    _T70;
@@ -743,7 +755,11 @@ _T4c:
 
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    _Switch_60[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T1b
+//   _T26
+//   _T31
+//   _T3c
 // LINE 224:
 _T70:
 	__asm        mov    ax, maxID;
@@ -817,18 +833,22 @@ void Behavior::GetClassNameA(short cl, unsigned char * name) {
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _T56;
 // LINE 243:
+_T15:
 	str = 0x5be5f8;
 // LINE 244:
 	__asm        jmp    _T7a;
 // LINE 246:
+_T21:
 	str = 0x5be604;
 // LINE 247:
 	__asm        jmp    _T7a;
 // LINE 249:
+_T2d:
 	str = 0x5be60c;
 // LINE 250:
 	__asm        jmp    _T7a;
 // LINE 252:
+_T39:
 	str = 0x5be614;
 // LINE 253:
 	__asm        jmp    _T7a;
@@ -845,7 +865,11 @@ _T56:
 
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    _Switch_6a[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T15
+//   _T21
+//   _T2d
+//   _T39
 // LINE 258:
 _T7a:
 	__asm        mov    eax, name;

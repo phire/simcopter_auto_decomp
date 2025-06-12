@@ -1872,18 +1872,22 @@ _T236:
 	__asm        mov    [ebp-0x30], eax;
 	__asm        jmp    _T28b;
 // LINE 1183:
+_T25a:
 	this->nextLocation.y--;
 // LINE 1184:
 	__asm        jmp    _T2c6;
 // LINE 1186:
+_T265:
 	this->nextLocation.y++;
 // LINE 1187:
 	__asm        jmp    _T2c6;
 // LINE 1189:
+_T270:
 	this->nextLocation.x++;
 // LINE 1190:
 	__asm        jmp    _T2c6;
 // LINE 1192:
+_T27b:
 	this->nextLocation.x--;
 // LINE 1193:
 	__asm        jmp    _T2c6;
@@ -1896,9 +1900,14 @@ _T28b:
 
 	__asm        mov    eax, [ebp-0x30];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, _Switch_2aa[20][eax];
+	__asm        mov    cl, _SwitchTable_2be[0][eax];
 	__asm        jmp    _Switch_2aa[0][ecx*4];
-// Switch pointers
+// Switch pointers:
+//   _T25a
+//   _T265
+//   _T270
+//   _T27b
+//   _T2c6
 // Switch table
 // LINE 1196:
 _T2c6:
@@ -3092,26 +3101,31 @@ void BoatClass::MakeATurn(enum BoatClass::IntersectionTypes intersectionType) {
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _T181;
 // LINE 1679:
+_T17:
 	__asm        mov    ecx, this;
 	__asm        call   BoatClass::UnPlaceBoat;
 // LINE 1681:
 	__asm        jmp    _T1b5;
 // LINE 1691:
+_T24:
 	__asm        mov    ecx, this;
 	__asm        call   BoatClass::GoStraight;
 // LINE 1693:
 	__asm        jmp    _T1b5;
 // LINE 1697:
+_T31:
 	__asm        mov    ecx, this;
 	__asm        call   BoatClass::TurnLeft;
 // LINE 1699:
 	__asm        jmp    _T1b5;
 // LINE 1703:
+_T3e:
 	__asm        mov    ecx, this;
 	__asm        call   BoatClass::TurnRight;
 // LINE 1705:
 	__asm        jmp    _T1b5;
 // LINE 1709:
+_T4b:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        test   al, 1;
@@ -3129,6 +3143,7 @@ _T68:
 _T70:
 	__asm        jmp    _T1b5;
 // LINE 1722:
+_T75:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        test   al, 1;
@@ -3146,6 +3161,7 @@ _T92:
 _T9a:
 	__asm        jmp    _T1b5;
 // LINE 1735:
+_T9f:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        test   al, 1;
@@ -3163,6 +3179,7 @@ _Tbc:
 _Tc4:
 	__asm        jmp    _T1b5;
 // LINE 1748:
+_Tc9:
 	__asm        call   rand;
 	__asm        mov    ecx, 3;
 	__asm        movsx  eax, ax;
@@ -3232,7 +3249,15 @@ _T181:
 
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    _Switch_195[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T17
+//   _T24
+//   _T31
+//   _T4b
+//   _T3e
+//   _T9f
+//   _T75
+//   _Tc9
 // LINE 1765:
 _T1b5:
 	__asm        jmp    near ptr 0x005293EC;
@@ -3992,6 +4017,7 @@ _T1ce:
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    _T23a;
 // LINE 2262:
+_T1dc:
 	curr_dir = 0x0;
 // LINE 2263:
 	curr_dist++;
@@ -4002,12 +4028,14 @@ _T1ce:
 // LINE 2266:
 	__asm        jmp    _T262;
 // LINE 2268:
+_T1f9:
 	xdir = 0x1;
 // LINE 2269:
 	ydir = 0x0;
 // LINE 2270:
 	__asm        jmp    _T262;
 // LINE 2272:
+_T20c:
 	curr_dist++;
 // LINE 2273:
 	xdir = 0x0;
@@ -4016,6 +4044,7 @@ _T1ce:
 // LINE 2275:
 	__asm        jmp    _T262;
 // LINE 2277:
+_T222:
 	xdir = 0xffffffff;
 // LINE 2278:
 	ydir = 0x0;
@@ -4029,7 +4058,12 @@ _T23a:
 
 	__asm        mov    eax, [ebp-0x60];
 	__asm        jmp    _Switch_24e[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T1dc
+//   _T1f9
+//   _T20c
+//   _T222
+//   _T1dc
 // LINE 2284:
 _T262:
 	__asm        mov    eax, spiral_dist;
@@ -4136,7 +4170,7 @@ _T393:
 
 	__asm        jmp    _T48b;
 
-	__asm        jmp    _T3d1;
+	__asm        jmp    foundCell;
 // LINE 2306:
 _T3a7:
 	x += xdir;
@@ -4159,7 +4193,6 @@ _T3cc:
 	__asm        jmp    _T490;
 // LINE 2323:
 foundCell:
-_T3d1:
 	__asm        mov    currentFlag, 2;
 	__asm        jmp    _T3e0;
 _T3dd:
@@ -4221,7 +4254,7 @@ _T3fa:
 // LINE 2347:
 	__asm        jmp    _T490;
 _T48b:
-	__asm        jmp    _T3d1;
+	__asm        jmp    foundCell;
 _T490:
 }
 
@@ -4287,6 +4320,7 @@ _T41:
 	__asm        mov    [ebp-0x9C], eax;
 	__asm        jmp    _Tb0;
 // LINE 2420:
+_T52:
 	curr_dir = 0x0;
 // LINE 2421:
 	curr_dist++;
@@ -4297,12 +4331,14 @@ _T41:
 // LINE 2424:
 	__asm        jmp    _Tde;
 // LINE 2426:
+_T6f:
 	xdir = 0x1;
 // LINE 2427:
 	ydir = 0x0;
 // LINE 2428:
 	__asm        jmp    _Tde;
 // LINE 2430:
+_T82:
 	curr_dist++;
 // LINE 2431:
 	xdir = 0x0;
@@ -4311,6 +4347,7 @@ _T41:
 // LINE 2433:
 	__asm        jmp    _Tde;
 // LINE 2435:
+_T98:
 	xdir = 0xffffffff;
 // LINE 2436:
 	ydir = 0x0;
@@ -4324,7 +4361,12 @@ _Tb0:
 
 	__asm        mov    eax, [ebp-0x9C];
 	__asm        jmp    _Switch_ca[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T52
+//   _T6f
+//   _T82
+//   _T98
+//   _T52
 // LINE 2442:
 _Tde:
 	__asm        mov    eax, curr_dist;
@@ -4871,7 +4913,7 @@ _T789:
 
 	__asm        jmp    _T8e5;
 
-	__asm        jmp    _T7c9;
+	__asm        jmp    foundCell;
 // LINE 2487:
 _T79d:
 	x += xdir;
@@ -4895,7 +4937,6 @@ _T7c2:
 	__asm        jmp    _T8ea;
 // LINE 2504:
 foundCell:
-_T7c9:
 	__asm        mov    currentFlag, 2;
 	__asm        jmp    _T7d8;
 _T7d5:
@@ -4978,7 +5019,7 @@ _T84f:
 	__asm        jmp    _T8ea;
 // LINE 2536:
 _T8e5:
-	__asm        jmp    _T7c9;
+	__asm        jmp    foundCell;
 _T8ea:
 }
 

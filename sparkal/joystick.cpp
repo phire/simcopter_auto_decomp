@@ -528,6 +528,7 @@ _T4b:
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    _Te0;
 // LINE 237:
+_T56:
 	dwFlagToUse = 0x1;
 // LINE 238:
 	__asm        mov    eax, joyInfoExToUse;
@@ -536,6 +537,7 @@ _T4b:
 // LINE 239:
 	__asm        jmp    _T10c;
 // LINE 241:
+_T6b:
 	dwFlagToUse = 0x2;
 // LINE 242:
 	__asm        mov    eax, joyInfoExToUse;
@@ -544,6 +546,7 @@ _T4b:
 // LINE 243:
 	__asm        jmp    _T10c;
 // LINE 245:
+_T80:
 	dwFlagToUse = 0x4;
 // LINE 246:
 	__asm        mov    eax, joyInfoExToUse;
@@ -552,6 +555,7 @@ _T4b:
 // LINE 247:
 	__asm        jmp    _T10c;
 // LINE 249:
+_T95:
 	dwFlagToUse = 0x8;
 // LINE 250:
 	__asm        mov    eax, joyInfoExToUse;
@@ -560,6 +564,7 @@ _T4b:
 // LINE 251:
 	__asm        jmp    _T10c;
 // LINE 253:
+_Taa:
 	dwFlagToUse = 0x10;
 // LINE 254:
 	__asm        mov    eax, joyInfoExToUse;
@@ -568,6 +573,7 @@ _T4b:
 // LINE 255:
 	__asm        jmp    _T10c;
 // LINE 257:
+_Tbf:
 	dwFlagToUse = 0x20;
 // LINE 258:
 	__asm        mov    eax, joyInfoExToUse;
@@ -587,7 +593,13 @@ _Te0:
 
 	__asm        mov    eax, [ebp-0x50];
 	__asm        jmp    _Switch_f4[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T56
+//   _T6b
+//   _T80
+//   _T95
+//   _Taa
+//   _Tbf
 // LINE 263:
 _T10c:
 	__asm        cmp    bUseCache, 0;

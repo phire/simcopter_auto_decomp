@@ -240,6 +240,7 @@ _T1a7:
 // LINE 510:
 	__asm        jmp    _T327;
 // LINE 525:
+_T1ba:
 	__asm        jmp    _T327;
 // LINE 526:
 	__asm        jmp    _T327;
@@ -263,9 +264,21 @@ _T1f9:
 
 	__asm        mov    eax, [ebp-0xB0];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, _Switch_228[48][eax];
+	__asm        mov    cl, _SwitchTable_258[0][eax];
 	__asm        jmp    _Switch_228[0][ecx*4];
-// Switch pointers
+// Switch pointers:
+//   _T1a7
+//   _T1a7
+//   _T1a7
+//   _T1a7
+//   _T1a7
+//   _T1a7
+//   _T1a7
+//   _T1a7
+//   _T1a7
+//   _T1a7
+//   _T1a7
+//   _T1ba
 // Switch table
 // LINE 530:
 _T327:
@@ -276,10 +289,9 @@ _T327:
 	__asm        mov    face, eax;
 // LINE 531:
 	__asm        mov    j, 0;
-	__asm        jmp    _T345;
+	__asm        jmp    near ptr 0x005192D5;
 _T342:
-	j++;
-_T345:
+	__asm        inc    j;
 	__asm        mov    eax, j;
 	__asm        cmp    oinfo.Faces, eax;
 	__asm        jle    _T5d5;
@@ -306,6 +318,7 @@ _T380:
 // LINE 607:
 	__asm        jmp    _T5a5;
 // LINE 611:
+_T38c:
 	__asm        or     finfo.Attribute, 0x40080000;
 // LINE 612:
 	__asm        jmp    _T5a5;
@@ -315,12 +328,14 @@ _T398:
 // LINE 656:
 	__asm        jmp    _T5a5;
 // LINE 659:
+_T3a4:
 	finfo.Bitmap = 0xf;
 // LINE 660:
 	finfo.Plotter = 0x18;
 // LINE 661:
 	__asm        jmp    _T5a5;
 // LINE 663:
+_T3b7:
 	__asm        jmp    _T5a5;
 // LINE 664:
 	__asm        jmp    _T5a5;
@@ -359,9 +374,27 @@ _T433:
 
 	__asm        mov    eax, [ebp-0xB4];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, _Switch_45f[72][eax];
+	__asm        mov    cl, _SwitchTable_4a7[0][eax];
 	__asm        jmp    _Switch_45f[0][ecx*4];
-// Switch pointers
+// Switch pointers:
+//   _T3a4
+//   _T380
+//   _T398
+//   _T380
+//   _T380
+//   _T38c
+//   _T380
+//   _T398
+//   _T380
+//   _T380
+//   _T380
+//   _T380
+//   _T380
+//   _T380
+//   _T398
+//   _T380
+//   _T380
+//   _T3b7
 // Switch table
 // LINE 667:
 _T5a5:
@@ -869,6 +902,7 @@ void S3DrawBlinkingLight(/*packed*/ struct VRBlit *blit) {
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    _Tb4;
 // LINE 865:
+_T37:
 	__asm        cmp    ctr, 0;
 	__asm        je     _T46;
 
@@ -877,6 +911,7 @@ void S3DrawBlinkingLight(/*packed*/ struct VRBlit *blit) {
 _T46:
 	__asm        jmp    _Teb;
 // LINE 868:
+_T4b:
 	__asm        cmp    ctr, 1;
 	__asm        je     _T5a;
 
@@ -885,6 +920,7 @@ _T46:
 _T5a:
 	__asm        jmp    _Teb;
 // LINE 871:
+_T5f:
 	__asm        cmp    ctr, 2;
 	__asm        je     _T6e;
 
@@ -893,6 +929,7 @@ _T5a:
 _T6e:
 	__asm        jmp    _Teb;
 // LINE 874:
+_T73:
 	__asm        cmp    ctr, 3;
 	__asm        je     _T82;
 
@@ -901,6 +938,7 @@ _T6e:
 _T82:
 	__asm        jmp    _Teb;
 // LINE 877:
+_T87:
 	__asm        cmp    ctr, 4;
 	__asm        je     _T96;
 
@@ -926,7 +964,14 @@ _Tb4:
 
 	__asm        mov    eax, [ebp-0x20];
 	__asm        jmp    _Switch_cf[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T37
+//   _T9b
+//   _T9b
+//   _T4b
+//   _T5f
+//   _T73
+//   _T87
 // LINE 894:
 _Teb:
 	__asm        cmp    G_video_mode, 0x10;
@@ -1127,6 +1172,7 @@ _Tba:
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        jmp    _T258;
 // LINE 1016:
+_Tdc:
 	__asm        mov    eax, scale;
 	__asm        shl    eax, 3;
 	__asm        sar    eax, 0x10;
@@ -1155,6 +1201,7 @@ _Tba:
 // LINE 1021:
 	__asm        jmp    _T29c;
 // LINE 1024:
+_T120:
 	__asm        mov    eax, scale;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        sar    eax, 0x10;
@@ -1184,6 +1231,7 @@ _Tba:
 // LINE 1029:
 	__asm        jmp    _T29c;
 // LINE 1031:
+_T166:
 	__asm        mov    eax, scale;
 	__asm        add    eax, eax;
 	__asm        sar    eax, 0x10;
@@ -1210,6 +1258,7 @@ _Tba:
 // LINE 1035:
 	__asm        jmp    _T29c;
 // LINE 1037:
+_T1a4:
 	__asm        mov    eax, scale;
 	__asm        sar    eax, 0x10;
 	__asm        mov    minval, eax;
@@ -1233,6 +1282,7 @@ _Tba:
 // LINE 1041:
 	__asm        jmp    _T29c;
 // LINE 1045:
+_T1dc:
 	__asm        mov    eax, scale;
 	__asm        add    eax, eax;
 	__asm        sar    eax, 0x10;
@@ -1257,6 +1307,7 @@ _Tba:
 // LINE 1049:
 	__asm        jmp    _T29c;
 // LINE 1051:
+_T214:
 	__asm        mov    eax, scale;
 	__asm        add    eax, eax;
 	__asm        sar    eax, 0x10;
@@ -1290,7 +1341,19 @@ _T258:
 
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        jmp    _Switch_26c[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T166
+//   _Tdc
+//   _Tdc
+//   _T214
+//   _T1dc
+//   _T1a4
+//   _T1dc
+//   _Tdc
+//   _T1dc
+//   _Tdc
+//   _T120
+//   _T120
 // LINE 1060:
 _T29c:
 	__asm        mov    eax, maxval;
@@ -1495,6 +1558,7 @@ _T4c4:
 	__asm        mov    [ebp-0x60], eax;
 	__asm        jmp    _T229a;
 // LINE 1254:
+_T4e2:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        mov    ecx, tablerow;
@@ -1505,6 +1569,7 @@ _T4c4:
 // LINE 1256:
 	__asm        jmp    _T22d6;
 // LINE 1258:
+_T4fe:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        mov    ecx, tablerow;
@@ -1541,6 +1606,7 @@ _T4c4:
 // LINE 1268:
 	__asm        jmp    _T22d6;
 // LINE 1270:
+_T55d:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        mov    ecx, tablerow;
@@ -1611,6 +1677,7 @@ _T4c4:
 // LINE 1295:
 	__asm        jmp    _T22d6;
 // LINE 1297:
+_T619:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        mov    ecx, tablerow;
@@ -1729,6 +1796,7 @@ _T4c4:
 // LINE 1344:
 	__asm        jmp    _T22d6;
 // LINE 1346:
+_T755:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        mov    ecx, tablerow;
@@ -1909,6 +1977,7 @@ _T4c4:
 // LINE 1420:
 	__asm        jmp    _T22d6;
 // LINE 1422:
+_T936:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        mov    ecx, tablerow;
@@ -2195,6 +2264,7 @@ _T4c4:
 // LINE 1529:
 	__asm        jmp    _T22d6;
 // LINE 1531:
+_Tc2c:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        mov    ecx, tablerow;
@@ -2553,6 +2623,7 @@ _T4c4:
 // LINE 1677:
 	__asm        jmp    _T22d6;
 // LINE 1679:
+_Tfe4:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        mov    ecx, tablerow;
@@ -3015,6 +3086,7 @@ _T4c4:
 // LINE 1870:
 	__asm        jmp    _T22d6;
 // LINE 1872:
+_T14b0:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        mov    ecx, tablerow;
@@ -3629,6 +3701,7 @@ _T4c4:
 // LINE 2113:
 	ptr[0] = color;
 // LINE 2115:
+_T1b0a:
 	__asm        mov    eax, ptr;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        mov    ecx, tablerow;
@@ -4364,7 +4437,17 @@ _T229a:
 
 	__asm        mov    eax, [ebp-0x60];
 	__asm        jmp    _Switch_22ae[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T4e2
+//   _T4fe
+//   _T55d
+//   _T619
+//   _T755
+//   _T936
+//   _Tc2c
+//   _Tfe4
+//   _T14b0
+//   _T1b0a
 // LINE 2416:
 _T22d6:
 	__asm        jmp    _T42d;
@@ -4450,6 +4533,7 @@ _T238b:
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    _T3d8f;
 // LINE 2444:
+_T23a9:
 	__asm        mov    eax, S_color_no;
 	__asm        and    eax, 7;
 	__asm        mov    ecx, S_hires_color;
@@ -4461,6 +4545,7 @@ _T238b:
 // LINE 2446:
 	__asm        jmp    _T3dcb;
 // LINE 2449:
+_T23d0:
 	__asm        mov    eax, S_color_no;
 	__asm        and    eax, 7;
 	__asm        mov    ecx, S_hires_color;
@@ -4494,6 +4579,7 @@ _T238b:
 // LINE 2460:
 	__asm        jmp    _T3dcb;
 // LINE 2463:
+_T243c:
 	__asm        mov    eax, S_color_no;
 	__asm        and    eax, 7;
 	__asm        mov    ecx, S_hires_color;
@@ -4557,6 +4643,7 @@ _T238b:
 // LINE 2490:
 	__asm        jmp    _T3dcb;
 // LINE 2493:
+_T2505:
 	__asm        mov    eax, S_color_no;
 	__asm        and    eax, 7;
 	__asm        mov    ecx, S_hires_color;
@@ -4658,6 +4745,7 @@ _T238b:
 // LINE 2543:
 	__asm        jmp    _T3dcb;
 // LINE 2546:
+_T2643:
 	__asm        mov    eax, S_color_no;
 	__asm        and    eax, 7;
 	__asm        mov    ecx, S_hires_color;
@@ -4805,6 +4893,7 @@ _T238b:
 // LINE 2624:
 	__asm        jmp    _T3dcb;
 // LINE 2627:
+_T280e:
 	__asm        mov    eax, S_color_no;
 	__asm        and    eax, 7;
 	__asm        mov    ecx, S_hires_color;
@@ -5013,6 +5102,7 @@ _T238b:
 // LINE 2740:
 	__asm        jmp    _T3dcb;
 // LINE 2743:
+_T2a98:
 	__asm        mov    eax, S_color_no;
 	__asm        and    eax, 7;
 	__asm        mov    ecx, S_hires_color;
@@ -5283,6 +5373,7 @@ _T238b:
 // LINE 2896:
 	__asm        jmp    _T3dcb;
 // LINE 2899:
+_T2ddf:
 	__asm        mov    eax, S_color_no;
 	__asm        and    eax, 7;
 	__asm        mov    ecx, S_hires_color;
@@ -5637,6 +5728,7 @@ _T238b:
 // LINE 3100:
 	__asm        jmp    _T3dcb;
 // LINE 3103:
+_T322f:
 	__asm        mov    eax, S_color_no;
 	__asm        and    eax, 7;
 	__asm        mov    ecx, S_hires_color;
@@ -6060,6 +6152,7 @@ _T238b:
 // LINE 3354:
 	ptr[0] = color;
 // LINE 3357:
+_T374d:
 	__asm        mov    eax, S_color_no;
 	__asm        and    eax, 7;
 	__asm        mov    ecx, S_hires_color;
@@ -6583,7 +6676,17 @@ _T3d8f:
 
 	__asm        mov    eax, [ebp-0x64];
 	__asm        jmp    _Switch_3da3[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T23a9
+//   _T23d0
+//   _T243c
+//   _T2505
+//   _T2643
+//   _T280e
+//   _T2a98
+//   _T2ddf
+//   _T322f
+//   _T374d
 // LINE 3670:
 _T3dcb:
 	__asm        jmp    _T22ec;
@@ -6749,18 +6852,24 @@ _T14a:
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _Tbab;
 // LINE 3745:
+_T155:
 	__asm        mov    eax, hittee_type;
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    _T1a9;
 // LINE 3748:
+_T160:
 	__asm        jmp    _T1f3;
 // LINE 3750:
+_T165:
 	__asm        jmp    _T1f3;
 // LINE 3752:
+_T16a:
 	__asm        jmp    _T1f3;
 // LINE 3754:
+_T16f:
 	__asm        jmp    _T1f3;
 // LINE 3756:
+_T174:
 	__asm        mov    eax, xtra_msg;
 	__asm        push   eax;
 	__asm        mov    eax, mission_id;
@@ -6776,10 +6885,13 @@ _T14a:
 // LINE 3757:
 	__asm        jmp    _T1f3;
 // LINE 3759:
+_T195:
 	__asm        jmp    _T1f3;
 // LINE 3761:
+_T19a:
 	__asm        jmp    _T1f3;
 // LINE 3763:
+_T19f:
 	__asm        jmp    _T1f3;
 // LINE 3764:
 	__asm        jmp    _T1f3;
@@ -6789,26 +6901,40 @@ _T1a9:
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, _Switch_1c5[32][eax];
+	__asm        mov    cl, _SwitchTable_1e5[0][eax];
 	__asm        jmp    _Switch_1c5[0][ecx*4];
-// Switch pointers
+// Switch pointers:
+//   _T160
+//   _T165
+//   _T16a
+//   _T16f
+//   _T174
+//   _T195
+//   _T19a
+//   _T19f
 // Switch table
 // LINE 3765:
 _T1f3:
 	__asm        jmp    _Tbff;
 // LINE 3768:
+_T1f8:
 	__asm        mov    eax, hittee_type;
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    _T24c;
 // LINE 3771:
+_T203:
 	__asm        jmp    _T296;
 // LINE 3773:
+_T208:
 	__asm        jmp    _T296;
 // LINE 3775:
+_T20d:
 	__asm        jmp    _T296;
 // LINE 3777:
+_T212:
 	__asm        jmp    _T296;
 // LINE 3779:
+_T217:
 	__asm        mov    eax, xtra_msg;
 	__asm        push   eax;
 	__asm        mov    eax, mission_id;
@@ -6824,10 +6950,13 @@ _T1f3:
 // LINE 3780:
 	__asm        jmp    _T296;
 // LINE 3782:
+_T238:
 	__asm        jmp    _T296;
 // LINE 3784:
+_T23d:
 	__asm        jmp    _T296;
 // LINE 3786:
+_T242:
 	__asm        jmp    _T296;
 // LINE 3787:
 	__asm        jmp    _T296;
@@ -6839,24 +6968,38 @@ _T24c:
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, _SwitchTable_288[0][eax];
 	__asm        jmp    _Switch_268[0][ecx*4];
-// Switch pointers
+// Switch pointers:
+//   _T203
+//   _T208
+//   _T20d
+//   _T212
+//   _T217
+//   _T238
+//   _T23d
+//   _T242
 // Switch table
 // LINE 3788:
 _T296:
 	__asm        jmp    _Tbff;
 // LINE 3791:
+_T29b:
 	__asm        mov    eax, hittee_type;
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    _T2ef;
 // LINE 3794:
+_T2a6:
 	__asm        jmp    _T339;
 // LINE 3796:
+_T2ab:
 	__asm        jmp    _T339;
 // LINE 3798:
+_T2b0:
 	__asm        jmp    _T339;
 // LINE 3800:
+_T2b5:
 	__asm        jmp    _T339;
 // LINE 3802:
+_T2ba:
 	__asm        mov    eax, xtra_msg;
 	__asm        push   eax;
 	__asm        mov    eax, mission_id;
@@ -6872,10 +7015,13 @@ _T296:
 // LINE 3803:
 	__asm        jmp    _T339;
 // LINE 3805:
+_T2db:
 	__asm        jmp    _T339;
 // LINE 3807:
+_T2e0:
 	__asm        jmp    _T339;
 // LINE 3809:
+_T2e5:
 	__asm        jmp    _T339;
 // LINE 3810:
 	__asm        jmp    _T339;
@@ -6885,26 +7031,40 @@ _T2ef:
 
 	__asm        mov    eax, [ebp-0x14];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, _Switch_30b[32][eax];
+	__asm        mov    cl, _SwitchTable_32b[0][eax];
 	__asm        jmp    _Switch_30b[0][ecx*4];
-// Switch pointers
+// Switch pointers:
+//   _T2a6
+//   _T2ab
+//   _T2b0
+//   _T2b5
+//   _T2ba
+//   _T2db
+//   _T2e0
+//   _T2e5
 // Switch table
 // LINE 3811:
 _T339:
 	__asm        jmp    _Tbff;
 // LINE 3814:
+_T33e:
 	__asm        mov    eax, hittee_type;
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    _T392;
 // LINE 3817:
+_T349:
 	__asm        jmp    _T3dc;
 // LINE 3819:
+_T34e:
 	__asm        jmp    _T3dc;
 // LINE 3821:
+_T353:
 	__asm        jmp    _T3dc;
 // LINE 3823:
+_T358:
 	__asm        jmp    _T3dc;
 // LINE 3825:
+_T35d:
 	__asm        mov    eax, xtra_msg;
 	__asm        push   eax;
 	__asm        mov    eax, mission_id;
@@ -6920,10 +7080,13 @@ _T339:
 // LINE 3826:
 	__asm        jmp    _T3dc;
 // LINE 3828:
+_T37e:
 	__asm        jmp    _T3dc;
 // LINE 3830:
+_T383:
 	__asm        jmp    _T3dc;
 // LINE 3832:
+_T388:
 	__asm        jmp    _T3dc;
 // LINE 3833:
 	__asm        jmp    _T3dc;
@@ -6933,18 +7096,28 @@ _T392:
 
 	__asm        mov    eax, [ebp-0x18];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, _Switch_3ae[32][eax];
+	__asm        mov    cl, _SwitchTable_3ce[0][eax];
 	__asm        jmp    _Switch_3ae[0][ecx*4];
-// Switch pointers
+// Switch pointers:
+//   _T349
+//   _T34e
+//   _T353
+//   _T358
+//   _T35d
+//   _T37e
+//   _T383
+//   _T388
 // Switch table
 // LINE 3834:
 _T3dc:
 	__asm        jmp    _Tbff;
 // LINE 3837:
+_T3e1:
 	__asm        mov    eax, hittee_type;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    _T451;
 // LINE 3840:
+_T3ec:
 	__asm        mov    eax, dyhittee;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   ah, 0x10;
@@ -6958,12 +7131,16 @@ _T3dc:
 _T408:
 	__asm        jmp    _T49b;
 // LINE 3844:
+_T40d:
 	__asm        jmp    _T49b;
 // LINE 3846:
+_T412:
 	__asm        jmp    _T49b;
 // LINE 3848:
+_T417:
 	__asm        jmp    _T49b;
 // LINE 3850:
+_T41c:
 	__asm        mov    eax, xtra_msg;
 	__asm        push   eax;
 	__asm        mov    eax, mission_id;
@@ -6979,10 +7156,13 @@ _T408:
 // LINE 3851:
 	__asm        jmp    _T49b;
 // LINE 3853:
+_T43d:
 	__asm        jmp    _T49b;
 // LINE 3855:
+_T442:
 	__asm        jmp    _T49b;
 // LINE 3857:
+_T447:
 	__asm        jmp    _T49b;
 // LINE 3858:
 	__asm        jmp    _T49b;
@@ -6992,26 +7172,40 @@ _T451:
 
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, _Switch_46d[32][eax];
+	__asm        mov    cl, _SwitchTable_48d[0][eax];
 	__asm        jmp    _Switch_46d[0][ecx*4];
-// Switch pointers
+// Switch pointers:
+//   _T3ec
+//   _T40d
+//   _T412
+//   _T417
+//   _T41c
+//   _T43d
+//   _T442
+//   _T447
 // Switch table
 // LINE 3859:
 _T49b:
 	__asm        jmp    _Tbff;
 // LINE 3862:
+_T4a0:
 	__asm        mov    eax, hittee_type;
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    _T4f4;
 // LINE 3865:
+_T4ab:
 	__asm        jmp    _T53e;
 // LINE 3867:
+_T4b0:
 	__asm        jmp    _T53e;
 // LINE 3869:
+_T4b5:
 	__asm        jmp    _T53e;
 // LINE 3871:
+_T4ba:
 	__asm        jmp    _T53e;
 // LINE 3873:
+_T4bf:
 	__asm        mov    eax, xtra_msg;
 	__asm        push   eax;
 	__asm        mov    eax, mission_id;
@@ -7027,10 +7221,13 @@ _T49b:
 // LINE 3874:
 	__asm        jmp    _T53e;
 // LINE 3876:
+_T4e0:
 	__asm        jmp    _T53e;
 // LINE 3878:
+_T4e5:
 	__asm        jmp    _T53e;
 // LINE 3880:
+_T4ea:
 	__asm        jmp    _T53e;
 // LINE 3881:
 	__asm        jmp    _T53e;
@@ -7040,26 +7237,40 @@ _T4f4:
 
 	__asm        mov    eax, [ebp-0x20];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, _Switch_510[32][eax];
+	__asm        mov    cl, _SwitchTable_530[0][eax];
 	__asm        jmp    _Switch_510[0][ecx*4];
-// Switch pointers
+// Switch pointers:
+//   _T4ab
+//   _T4b0
+//   _T4b5
+//   _T4ba
+//   _T4bf
+//   _T4e0
+//   _T4e5
+//   _T4ea
 // Switch table
 // LINE 3882:
 _T53e:
 	__asm        jmp    _Tbff;
 // LINE 3885:
+_T543:
 	__asm        mov    eax, hittee_type;
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _T597;
 // LINE 3888:
+_T54e:
 	__asm        jmp    _T5e1;
 // LINE 3890:
+_T553:
 	__asm        jmp    _T5e1;
 // LINE 3892:
+_T558:
 	__asm        jmp    _T5e1;
 // LINE 3894:
+_T55d:
 	__asm        jmp    _T5e1;
 // LINE 3896:
+_T562:
 	__asm        mov    eax, xtra_msg;
 	__asm        push   eax;
 	__asm        mov    eax, mission_id;
@@ -7075,10 +7286,13 @@ _T53e:
 // LINE 3897:
 	__asm        jmp    _T5e1;
 // LINE 3899:
+_T583:
 	__asm        jmp    _T5e1;
 // LINE 3901:
+_T588:
 	__asm        jmp    _T5e1;
 // LINE 3903:
+_T58d:
 	__asm        jmp    _T5e1;
 // LINE 3904:
 	__asm        jmp    _T5e1;
@@ -7088,26 +7302,40 @@ _T597:
 
 	__asm        mov    eax, [ebp-0x24];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, _Switch_5b3[32][eax];
+	__asm        mov    cl, _SwitchTable_5d3[0][eax];
 	__asm        jmp    _Switch_5b3[0][ecx*4];
-// Switch pointers
+// Switch pointers:
+//   _T54e
+//   _T553
+//   _T558
+//   _T55d
+//   _T562
+//   _T583
+//   _T588
+//   _T58d
 // Switch table
 // LINE 3905:
 _T5e1:
 	__asm        jmp    _Tbff;
 // LINE 3908:
+_T5e6:
 	__asm        mov    eax, hittee_type;
 	__asm        mov    [ebp-0x28], eax;
 	__asm        jmp    _T63a;
 // LINE 3911:
+_T5f1:
 	__asm        jmp    _T684;
 // LINE 3913:
+_T5f6:
 	__asm        jmp    _T684;
 // LINE 3915:
+_T5fb:
 	__asm        jmp    _T684;
 // LINE 3917:
+_T600:
 	__asm        jmp    _T684;
 // LINE 3919:
+_T605:
 	__asm        mov    eax, xtra_msg;
 	__asm        push   eax;
 	__asm        mov    eax, mission_id;
@@ -7123,10 +7351,13 @@ _T5e1:
 // LINE 3920:
 	__asm        jmp    _T684;
 // LINE 3922:
+_T626:
 	__asm        jmp    _T684;
 // LINE 3924:
+_T62b:
 	__asm        jmp    _T684;
 // LINE 3926:
+_T630:
 	__asm        jmp    _T684;
 // LINE 3927:
 	__asm        jmp    _T684;
@@ -7136,26 +7367,40 @@ _T63a:
 
 	__asm        mov    eax, [ebp-0x28];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, _Switch_656[32][eax];
+	__asm        mov    cl, _SwitchTable_676[0][eax];
 	__asm        jmp    _Switch_656[0][ecx*4];
-// Switch pointers
+// Switch pointers:
+//   _T5f1
+//   _T5f6
+//   _T5fb
+//   _T600
+//   _T605
+//   _T626
+//   _T62b
+//   _T630
 // Switch table
 // LINE 3928:
 _T684:
 	__asm        jmp    _Tbff;
 // LINE 3931:
+_T689:
 	__asm        mov    eax, hittee_type;
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        jmp    _T6dd;
 // LINE 3934:
+_T694:
 	__asm        jmp    _T727;
 // LINE 3936:
+_T699:
 	__asm        jmp    _T727;
 // LINE 3938:
+_T69e:
 	__asm        jmp    _T727;
 // LINE 3940:
+_T6a3:
 	__asm        jmp    _T727;
 // LINE 3942:
+_T6a8:
 	__asm        mov    eax, xtra_msg;
 	__asm        push   eax;
 	__asm        mov    eax, mission_id;
@@ -7171,10 +7416,13 @@ _T684:
 // LINE 3943:
 	__asm        jmp    _T727;
 // LINE 3945:
+_T6c9:
 	__asm        jmp    _T727;
 // LINE 3947:
+_T6ce:
 	__asm        jmp    _T727;
 // LINE 3949:
+_T6d3:
 	__asm        jmp    _T727;
 // LINE 3950:
 	__asm        jmp    _T727;
@@ -7184,26 +7432,40 @@ _T6dd:
 
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, _Switch_6f9[32][eax];
+	__asm        mov    cl, _SwitchTable_719[0][eax];
 	__asm        jmp    _Switch_6f9[0][ecx*4];
-// Switch pointers
+// Switch pointers:
+//   _T694
+//   _T699
+//   _T69e
+//   _T6a3
+//   _T6a8
+//   _T6c9
+//   _T6ce
+//   _T6d3
 // Switch table
 // LINE 3951:
 _T727:
 	__asm        jmp    _Tbff;
 // LINE 3954:
+_T72c:
 	__asm        mov    eax, hittee_type;
 	__asm        mov    [ebp-0x30], eax;
 	__asm        jmp    _T780;
 // LINE 3957:
+_T737:
 	__asm        jmp    _T7ca;
 // LINE 3959:
+_T73c:
 	__asm        jmp    _T7ca;
 // LINE 3961:
+_T741:
 	__asm        jmp    _T7ca;
 // LINE 3963:
+_T746:
 	__asm        jmp    _T7ca;
 // LINE 3965:
+_T74b:
 	__asm        mov    eax, xtra_msg;
 	__asm        push   eax;
 	__asm        mov    eax, mission_id;
@@ -7219,10 +7481,13 @@ _T727:
 // LINE 3966:
 	__asm        jmp    _T7ca;
 // LINE 3968:
+_T76c:
 	__asm        jmp    _T7ca;
 // LINE 3970:
+_T771:
 	__asm        jmp    _T7ca;
 // LINE 3972:
+_T776:
 	__asm        jmp    _T7ca;
 // LINE 3973:
 	__asm        jmp    _T7ca;
@@ -7234,24 +7499,38 @@ _T780:
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, _SwitchTable_7bc[0][eax];
 	__asm        jmp    _Switch_79c[0][ecx*4];
-// Switch pointers
+// Switch pointers:
+//   _T737
+//   _T73c
+//   _T741
+//   _T746
+//   _T74b
+//   _T76c
+//   _T771
+//   _T776
 // Switch table
 // LINE 3974:
 _T7ca:
 	__asm        jmp    _Tbff;
 // LINE 3977:
+_T7cf:
 	__asm        mov    eax, hittee_type;
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    _T823;
 // LINE 3980:
+_T7da:
 	__asm        jmp    _T86d;
 // LINE 3982:
+_T7df:
 	__asm        jmp    _T86d;
 // LINE 3984:
+_T7e4:
 	__asm        jmp    _T86d;
 // LINE 3986:
+_T7e9:
 	__asm        jmp    _T86d;
 // LINE 3988:
+_T7ee:
 	__asm        mov    eax, xtra_msg;
 	__asm        push   eax;
 	__asm        mov    eax, mission_id;
@@ -7267,10 +7546,13 @@ _T7ca:
 // LINE 3989:
 	__asm        jmp    _T86d;
 // LINE 3991:
+_T80f:
 	__asm        jmp    _T86d;
 // LINE 3993:
+_T814:
 	__asm        jmp    _T86d;
 // LINE 3995:
+_T819:
 	__asm        jmp    _T86d;
 // LINE 3996:
 	__asm        jmp    _T86d;
@@ -7280,26 +7562,40 @@ _T823:
 
 	__asm        mov    eax, [ebp-0x34];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, _Switch_83f[32][eax];
+	__asm        mov    cl, _SwitchTable_85f[0][eax];
 	__asm        jmp    _Switch_83f[0][ecx*4];
-// Switch pointers
+// Switch pointers:
+//   _T7da
+//   _T7df
+//   _T7e4
+//   _T7e9
+//   _T7ee
+//   _T80f
+//   _T814
+//   _T819
 // Switch table
 // LINE 3997:
 _T86d:
 	__asm        jmp    _Tbff;
 // LINE 4000:
+_T872:
 	__asm        mov    eax, hittee_type;
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    _T8c6;
 // LINE 4003:
+_T87d:
 	__asm        jmp    _T910;
 // LINE 4005:
+_T882:
 	__asm        jmp    _T910;
 // LINE 4007:
+_T887:
 	__asm        jmp    _T910;
 // LINE 4009:
+_T88c:
 	__asm        jmp    _T910;
 // LINE 4011:
+_T891:
 	__asm        mov    eax, xtra_msg;
 	__asm        push   eax;
 	__asm        mov    eax, mission_id;
@@ -7315,10 +7611,13 @@ _T86d:
 // LINE 4012:
 	__asm        jmp    _T910;
 // LINE 4014:
+_T8b2:
 	__asm        jmp    _T910;
 // LINE 4016:
+_T8b7:
 	__asm        jmp    _T910;
 // LINE 4018:
+_T8bc:
 	__asm        jmp    _T910;
 // LINE 4019:
 	__asm        jmp    _T910;
@@ -7330,24 +7629,38 @@ _T8c6:
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, _SwitchTable_902[0][eax];
 	__asm        jmp    _Switch_8e2[0][ecx*4];
-// Switch pointers
+// Switch pointers:
+//   _T87d
+//   _T882
+//   _T887
+//   _T88c
+//   _T891
+//   _T8b2
+//   _T8b7
+//   _T8bc
 // Switch table
 // LINE 4020:
 _T910:
 	__asm        jmp    _Tbff;
 // LINE 4023:
+_T915:
 	__asm        mov    eax, hittee_type;
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    _T969;
 // LINE 4026:
+_T920:
 	__asm        jmp    _T9b3;
 // LINE 4028:
+_T925:
 	__asm        jmp    _T9b3;
 // LINE 4030:
+_T92a:
 	__asm        jmp    _T9b3;
 // LINE 4032:
+_T92f:
 	__asm        jmp    _T9b3;
 // LINE 4034:
+_T934:
 	__asm        mov    eax, xtra_msg;
 	__asm        push   eax;
 	__asm        mov    eax, mission_id;
@@ -7363,10 +7676,13 @@ _T910:
 // LINE 4035:
 	__asm        jmp    _T9b3;
 // LINE 4037:
+_T955:
 	__asm        jmp    _T9b3;
 // LINE 4039:
+_T95a:
 	__asm        jmp    _T9b3;
 // LINE 4041:
+_T95f:
 	__asm        jmp    _T9b3;
 // LINE 4042:
 	__asm        jmp    _T9b3;
@@ -7378,24 +7694,38 @@ _T969:
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, _SwitchTable_9a5[0][eax];
 	__asm        jmp    _Switch_985[0][ecx*4];
-// Switch pointers
+// Switch pointers:
+//   _T920
+//   _T925
+//   _T92a
+//   _T92f
+//   _T934
+//   _T955
+//   _T95a
+//   _T95f
 // Switch table
 // LINE 4043:
 _T9b3:
 	__asm        jmp    _Tbff;
 // LINE 4046:
+_T9b8:
 	__asm        mov    eax, hittee_type;
 	__asm        mov    [ebp-0x40], eax;
 	__asm        jmp    _Ta0c;
 // LINE 4049:
+_T9c3:
 	__asm        jmp    _Ta56;
 // LINE 4051:
+_T9c8:
 	__asm        jmp    _Ta56;
 // LINE 4053:
+_T9cd:
 	__asm        jmp    _Ta56;
 // LINE 4055:
+_T9d2:
 	__asm        jmp    _Ta56;
 // LINE 4057:
+_T9d7:
 	__asm        mov    eax, xtra_msg;
 	__asm        push   eax;
 	__asm        mov    eax, mission_id;
@@ -7411,10 +7741,13 @@ _T9b3:
 // LINE 4058:
 	__asm        jmp    _Ta56;
 // LINE 4060:
+_T9f8:
 	__asm        jmp    _Ta56;
 // LINE 4062:
+_T9fd:
 	__asm        jmp    _Ta56;
 // LINE 4064:
+_Ta02:
 	__asm        jmp    _Ta56;
 // LINE 4065:
 	__asm        jmp    _Ta56;
@@ -7424,26 +7757,40 @@ _Ta0c:
 
 	__asm        mov    eax, [ebp-0x40];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, _Switch_a28[32][eax];
+	__asm        mov    cl, _SwitchTable_a48[0][eax];
 	__asm        jmp    _Switch_a28[0][ecx*4];
-// Switch pointers
+// Switch pointers:
+//   _T9c3
+//   _T9c8
+//   _T9cd
+//   _T9d2
+//   _T9d7
+//   _T9f8
+//   _T9fd
+//   _Ta02
 // Switch table
 // LINE 4066:
 _Ta56:
 	__asm        jmp    _Tbff;
 // LINE 4069:
+_Ta5b:
 	__asm        mov    eax, hittee_type;
 	__asm        mov    [ebp-0x44], eax;
 	__asm        jmp    _Taaf;
 // LINE 4072:
+_Ta66:
 	__asm        jmp    _Taf9;
 // LINE 4074:
+_Ta6b:
 	__asm        jmp    _Taf9;
 // LINE 4076:
+_Ta70:
 	__asm        jmp    _Taf9;
 // LINE 4078:
+_Ta75:
 	__asm        jmp    _Taf9;
 // LINE 4080:
+_Ta7a:
 	__asm        mov    eax, xtra_msg;
 	__asm        push   eax;
 	__asm        mov    eax, mission_id;
@@ -7459,10 +7806,13 @@ _Ta56:
 // LINE 4081:
 	__asm        jmp    _Taf9;
 // LINE 4083:
+_Ta9b:
 	__asm        jmp    _Taf9;
 // LINE 4085:
+_Taa0:
 	__asm        jmp    _Taf9;
 // LINE 4087:
+_Taa5:
 	__asm        jmp    _Taf9;
 // LINE 4088:
 	__asm        jmp    _Taf9;
@@ -7472,26 +7822,40 @@ _Taaf:
 
 	__asm        mov    eax, [ebp-0x44];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, _Switch_acb[32][eax];
+	__asm        mov    cl, _SwitchTable_aeb[0][eax];
 	__asm        jmp    _Switch_acb[0][ecx*4];
-// Switch pointers
+// Switch pointers:
+//   _Ta66
+//   _Ta6b
+//   _Ta70
+//   _Ta75
+//   _Ta7a
+//   _Ta9b
+//   _Taa0
+//   _Taa5
 // Switch table
 // LINE 4089:
 _Taf9:
 	__asm        jmp    _Tbff;
 // LINE 4092:
+_Tafe:
 	__asm        mov    eax, hittee_type;
 	__asm        mov    [ebp-0x48], eax;
 	__asm        jmp    _Tb52;
 // LINE 4095:
+_Tb09:
 	__asm        jmp    _Tb9c;
 // LINE 4097:
+_Tb0e:
 	__asm        jmp    _Tb9c;
 // LINE 4099:
+_Tb13:
 	__asm        jmp    _Tb9c;
 // LINE 4101:
+_Tb18:
 	__asm        jmp    _Tb9c;
 // LINE 4103:
+_Tb1d:
 	__asm        mov    eax, xtra_msg;
 	__asm        push   eax;
 	__asm        mov    eax, mission_id;
@@ -7507,10 +7871,13 @@ _Taf9:
 // LINE 4104:
 	__asm        jmp    _Tb9c;
 // LINE 4106:
+_Tb3e:
 	__asm        jmp    _Tb9c;
 // LINE 4108:
+_Tb43:
 	__asm        jmp    _Tb9c;
 // LINE 4110:
+_Tb48:
 	__asm        jmp    _Tb9c;
 // LINE 4111:
 	__asm        jmp    _Tb9c;
@@ -7520,9 +7887,17 @@ _Tb52:
 
 	__asm        mov    eax, [ebp-0x48];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, _Switch_b6e[32][eax];
+	__asm        mov    cl, _SwitchTable_b8e[0][eax];
 	__asm        jmp    _Switch_b6e[0][ecx*4];
-// Switch pointers
+// Switch pointers:
+//   _Tb09
+//   _Tb0e
+//   _Tb13
+//   _Tb18
+//   _Tb1d
+//   _Tb3e
+//   _Tb43
+//   _Tb48
 // Switch table
 // LINE 4112:
 _Tb9c:
@@ -7537,7 +7912,23 @@ _Tbab:
 
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    _Switch_bbf[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T155
+//   _T1f8
+//   _T29b
+//   _T33e
+//   _T3e1
+//   _T4a0
+//   _T543
+//   _T5e6
+//   _T689
+//   _T72c
+//   _T7cf
+//   _T872
+//   _T915
+//   _T9b8
+//   _Ta5b
+//   _Tafe
 // LINE 4117:
 _Tbff:
 }

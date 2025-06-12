@@ -628,7 +628,7 @@ _T37:
 	__asm        je     _T75;
 // LINE 408:
 _T70:
-	__asm        jmp    _T232;
+	__asm        jmp    next_face;
 // LINE 411:
 _T75:
 	__asm        mov    eax, fh;
@@ -641,7 +641,7 @@ _T75:
 	__asm        cmp    cptr, 0;
 	__asm        jne    _T96;
 
-	__asm        jmp    _T232;
+	__asm        jmp    next_face;
 // LINE 416:
 _T96:
 	intensity = 0x0;
@@ -782,16 +782,15 @@ _T1f9:
 
 	__asm        mov    eax, fh;
 	__asm        test   byte ptr [eax+9], 8;
-	__asm        je     _T232;
+	__asm        je     next_face;
 _T21c:
 	__asm        mov    eax, fh;
 	__asm        cmp    dword ptr [eax+0x10], 0xB;
-	__asm        je     _T232;
+	__asm        je     next_face;
 // LINE 458:
 	fh->Bitmap = color;
 // LINE 461:
 next_face:
-_T232:
 	__asm        mov    eax, face;
 	__asm        push   eax;
 	__asm        call   0x004D85F8;
@@ -858,7 +857,7 @@ _T4e:
 	__asm        je     _T89;
 // LINE 502:
 _T84:
-	__asm        jmp    _T1a4;
+	__asm        jmp    next_face;
 // LINE 505:
 _T89:
 	__asm        mov    eax, fh;
@@ -871,7 +870,7 @@ _T89:
 	__asm        cmp    cptr, 0;
 	__asm        jne    _Taa;
 
-	__asm        jmp    _T1a4;
+	__asm        jmp    next_face;
 // LINE 510:
 _Taa:
 	intensity = 0x0;
@@ -958,16 +957,15 @@ _T16b:
 
 	__asm        mov    eax, fh;
 	__asm        test   byte ptr [eax+9], 8;
-	__asm        je     _T1a4;
+	__asm        je     next_face;
 _T18e:
 	__asm        mov    eax, fh;
 	__asm        cmp    dword ptr [eax+0x10], 0xB;
-	__asm        je     _T1a4;
+	__asm        je     next_face;
 // LINE 535:
 	fh->Bitmap = color;
 // LINE 539:
 next_face:
-_T1a4:
 	fh = fh->NextFace;
 // LINE 540:
 	__asm        jmp    _T4b;
@@ -1148,7 +1146,7 @@ _T21:
 	__asm        test   byte ptr [eax+9], 0x40;
 	__asm        jne    _T42;
 
-	__asm        jmp    _T1e3;
+	__asm        jmp    next_face;
 // LINE 625:
 _T42:
 	__asm        mov    eax, fh;
@@ -1161,7 +1159,7 @@ _T42:
 	__asm        cmp    cptr, 0;
 	__asm        jne    _T63;
 
-	__asm        jmp    _T1e3;
+	__asm        jmp    next_face;
 // LINE 633:
 _T63:
 	faceverts = fh->PlyVerts;
@@ -1174,7 +1172,7 @@ _T7b:
 	__asm        mov    eax, fh;
 	__asm        mov    ecx, j;
 	__asm        cmp    [eax+4], ecx;
-	__asm        jle    _T1e3;
+	__asm        jle    next_face;
 // LINE 641:
 	__asm        mov    eax, j;
 	__asm        mov    ecx, faceverts;
@@ -1309,7 +1307,6 @@ _T1cc:
 	__asm        jmp    _T78;
 // LINE 681:
 next_face:
-_T1e3:
 	fh = fh->NextFace;
 // LINE 682:
 	__asm        jmp    _T1e;

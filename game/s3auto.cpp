@@ -843,6 +843,7 @@ _Ta0:
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    _T2eb;
 // LINE 153:
+_T27:
 	__asm        mov    i, 0;
 	__asm        jmp    _T36;
 _T33:
@@ -1085,7 +1086,11 @@ _T2eb:
 
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        jmp    _Switch_2ff[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T27
+//   _Td5
+//   _T183
+//   _T231
 // LINE 240:
 _T30f:
 	__asm        xor    eax, eax;
@@ -1907,8 +1912,10 @@ _Tfd:
 	__asm        mov    [ebp-0x58], eax;
 	__asm        jmp    _T573;
 // LINE 841:
+_T115:
 	__asm        jmp    _T59f;
 // LINE 845:
+_T11a:
 	this->stalledTimer += LoopTime;
 // LINE 849:
 	__asm        mov    eax, dyblock;
@@ -2064,6 +2071,7 @@ _T31a:
 // LINE 886:
 	__asm        jmp    _T59f;
 // LINE 889:
+_T324:
 	this->stalledTimer += LoopTime;
 // LINE 891:
 	__asm        mov    eax, this;
@@ -2148,6 +2156,7 @@ _T433:
 // LINE 912:
 	__asm        jmp    _T59f;
 // LINE 916:
+_T43d:
 	this->stalledTimer += LoopTime;
 // LINE 918:
 	__asm        mov    eax, this;
@@ -2246,7 +2255,13 @@ _T573:
 
 	__asm        mov    eax, [ebp-0x58];
 	__asm        jmp    _Switch_587[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T115
+//   _T556
+//   _T556
+//   _T43d
+//   _T11a
+//   _T324
 // LINE 949:
 _T59f:
 	__asm        mov    ecx, this;
@@ -2570,15 +2585,19 @@ _T53:
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    _Td5;
 // LINE 1101:
+_Ta0:
 	__asm        sub    z, 0x200000;
 	__asm        jmp    _Tf9;
 // LINE 1102:
+_Tac:
 	__asm        add    z, 0x200000;
 	__asm        jmp    _Tf9;
 // LINE 1103:
+_Tb8:
 	__asm        add    x, 0x200000;
 	__asm        jmp    _Tf9;
 // LINE 1104:
+_Tc4:
 	__asm        sub    x, 0x200000;
 	__asm        jmp    _Tf9;
 // LINE 1105:
@@ -2589,7 +2608,11 @@ _Td5:
 
 	__asm        mov    eax, [ebp-0x14];
 	__asm        jmp    _Switch_e9[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _Ta0
+//   _Tc4
+//   _Tac
+//   _Tb8
 // LINE 1107:
 _Tf9:
 	__asm        mov    eax, z;
@@ -2680,12 +2703,15 @@ _Tc3:
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    _T23d;
 // LINE 1175:
+_Tce:
 	__asm        mov    turn, 2;
 	__asm        jmp    _T270;
 // LINE 1177:
+_Tda:
 	__asm        mov    turn, 1;
 	__asm        jmp    _T270;
 // LINE 1179:
+_Te6:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        test   al, 1;
@@ -2698,9 +2724,11 @@ _T102:
 _T109:
 	__asm        jmp    _T270;
 // LINE 1181:
+_T10e:
 	__asm        mov    turn, 0;
 	__asm        jmp    _T270;
 // LINE 1183:
+_T11a:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -2727,6 +2755,7 @@ _T153:
 _T162:
 	__asm        jmp    _T270;
 // LINE 1185:
+_T167:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -2753,6 +2782,7 @@ _T1a0:
 _T1af:
 	__asm        jmp    _T270;
 // LINE 1187:
+_T1b4:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        cdq;
@@ -2805,7 +2835,14 @@ _T23d:
 
 	__asm        mov    eax, [ebp-0x14];
 	__asm        jmp    _Switch_254[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _Tce
+//   _Tda
+//   _Te6
+//   _T10e
+//   _T11a
+//   _T167
+//   _T1b4
 // LINE 1193:
 _T270:
 	__asm        mov    eax, turn;
@@ -3520,6 +3557,7 @@ _T779:
 	__asm        mov    [ebp-0x114], eax;
 	__asm        jmp    _T7fc;
 // LINE 1530:
+_T7a7:
 	__asm        mov    al, scanLoc.x;
 	__asm        mov    nextLoc.x, al;
 	__asm        xor    eax, eax;
@@ -3528,6 +3566,7 @@ _T779:
 	__asm        mov    nextLoc.y, al;
 	__asm        jmp    _T826;
 // LINE 1531:
+_T7bb:
 	__asm        xor    eax, eax;
 	__asm        mov    al, scanLoc.x;
 	__asm        inc    eax;
@@ -3536,6 +3575,7 @@ _T779:
 	__asm        mov    nextLoc.y, al;
 	__asm        jmp    _T826;
 // LINE 1532:
+_T7cf:
 	__asm        mov    al, scanLoc.x;
 	__asm        mov    nextLoc.x, al;
 	__asm        xor    eax, eax;
@@ -3544,6 +3584,7 @@ _T779:
 	__asm        mov    nextLoc.y, al;
 	__asm        jmp    _T826;
 // LINE 1533:
+_T7e3:
 	__asm        xor    eax, eax;
 	__asm        mov    al, scanLoc.x;
 	__asm        dec    eax;
@@ -3559,7 +3600,11 @@ _T7fc:
 
 	__asm        mov    eax, [ebp-0x114];
 	__asm        jmp    _Switch_816[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T7a7
+//   _T7bb
+//   _T7cf
+//   _T7e3
 // LINE 1539:
 _T826:
 	__asm        xor    eax, eax;
@@ -3831,6 +3876,7 @@ _Tbf3:
 	__asm        mov    [ebp-0x118], eax;
 	__asm        jmp    _Tc65;
 // LINE 1609:
+_Tc10:
 	__asm        mov    al, scanLoc.x;
 	__asm        mov    nextLoc.x, al;
 	__asm        xor    eax, eax;
@@ -3839,6 +3885,7 @@ _Tbf3:
 	__asm        mov    nextLoc.y, al;
 	__asm        jmp    _Tc8f;
 // LINE 1610:
+_Tc24:
 	__asm        xor    eax, eax;
 	__asm        mov    al, scanLoc.x;
 	__asm        inc    eax;
@@ -3847,6 +3894,7 @@ _Tbf3:
 	__asm        mov    nextLoc.y, al;
 	__asm        jmp    _Tc8f;
 // LINE 1611:
+_Tc38:
 	__asm        mov    al, scanLoc.x;
 	__asm        mov    nextLoc.x, al;
 	__asm        xor    eax, eax;
@@ -3855,6 +3903,7 @@ _Tbf3:
 	__asm        mov    nextLoc.y, al;
 	__asm        jmp    _Tc8f;
 // LINE 1612:
+_Tc4c:
 	__asm        xor    eax, eax;
 	__asm        mov    al, scanLoc.x;
 	__asm        dec    eax;
@@ -3870,7 +3919,11 @@ _Tc65:
 
 	__asm        mov    eax, [ebp-0x118];
 	__asm        jmp    _Switch_c7f[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _Tc10
+//   _Tc24
+//   _Tc38
+//   _Tc4c
 // LINE 1615:
 _Tc8f:
 	__asm        xor    eax, eax;
@@ -5072,6 +5125,7 @@ _T64:
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        jmp    _Td9;
 // LINE 2243:
+_T84:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x7D];
@@ -5080,6 +5134,7 @@ _T64:
 	__asm        mov    [eax+0x7D], cl;
 	__asm        jmp    _Tfd;
 // LINE 2244:
+_T98:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x7C];
@@ -5088,6 +5143,7 @@ _T64:
 	__asm        mov    [eax+0x7C], cl;
 	__asm        jmp    _Tfd;
 // LINE 2245:
+_Tac:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x7D];
@@ -5096,6 +5152,7 @@ _T64:
 	__asm        mov    [eax+0x7D], cl;
 	__asm        jmp    _Tfd;
 // LINE 2246:
+_Tc0:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x7C];
@@ -5111,7 +5168,11 @@ _Td9:
 
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        jmp    _Switch_ed[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T84
+//   _T98
+//   _Tac
+//   _Tc0
 // LINE 2250:
 _Tfd:
 	__asm        mov    eax, this;
@@ -5452,6 +5513,7 @@ void AutomobileClass::DoDiagonalRoadFixup() {
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    _T1c7;
 // LINE 2380:
+_T39:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xE2], 2;
 	__asm        jne    _T55;
@@ -5478,6 +5540,7 @@ _T5c:
 // LINE 2383:
 	__asm        jmp    _T1eb;
 // LINE 2385:
+_T9a:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xE2], 3;
 	__asm        jne    _Tb6;
@@ -5504,6 +5567,7 @@ _Tbd:
 // LINE 2388:
 	__asm        jmp    _T1eb;
 // LINE 2390:
+_Tfb:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xE2], 0;
 	__asm        jne    _T117;
@@ -5530,6 +5594,7 @@ _T11e:
 // LINE 2393:
 	__asm        jmp    _T1eb;
 // LINE 2395:
+_T15c:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xE2], 1;
 	__asm        jne    _T178;
@@ -5565,7 +5630,11 @@ _T1c7:
 
 	__asm        mov    eax, [ebp-0x10];
 	__asm        jmp    _Switch_1db[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T39
+//   _T9a
+//   _Tfb
+//   _T15c
 // LINE 2404:
 _T1eb:
 	__asm        jmp    near ptr 0x0050522F;
@@ -5652,6 +5721,7 @@ _T6b:
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        jmp    _T197;
 // LINE 2449:
+_Ted:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xE2], 2;
 	__asm        jne    _T109;
@@ -5663,6 +5733,7 @@ _T109:
 _T110:
 	__asm        jmp    _T1bb;
 // LINE 2450:
+_T115:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xE2], 3;
 	__asm        jne    _T131;
@@ -5674,6 +5745,7 @@ _T131:
 _T138:
 	__asm        jmp    _T1bb;
 // LINE 2451:
+_T13d:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xE2], 0;
 	__asm        jne    _T159;
@@ -5685,6 +5757,7 @@ _T159:
 _T160:
 	__asm        jmp    _T1bb;
 // LINE 2452:
+_T165:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xE2], 1;
 	__asm        jne    _T181;
@@ -5705,7 +5778,11 @@ _T197:
 
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        jmp    _Switch_1ab[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _Ted
+//   _T115
+//   _T13d
+//   _T165
 // LINE 2456:
 _T1bb:
 	__asm        mov    eax, diagRoad;
@@ -7093,8 +7170,10 @@ void AutomobileClass::HitDispatch(long hitter_type, /*packed*/ struct _DYOBJ_INS
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _Td9;
 // LINE 3032:
+_T17:
 	__asm        jmp    _T12d;
 // LINE 3034:
+_T1c:
 	__asm        mov    eax, dyhitter;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
@@ -7102,6 +7181,7 @@ void AutomobileClass::HitDispatch(long hitter_type, /*packed*/ struct _DYOBJ_INS
 // LINE 3035:
 	__asm        jmp    _T12d;
 // LINE 3037:
+_T2d:
 	__asm        mov    eax, xtra_msg;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
@@ -7109,6 +7189,7 @@ void AutomobileClass::HitDispatch(long hitter_type, /*packed*/ struct _DYOBJ_INS
 // LINE 3038:
 	__asm        jmp    _T12d;
 // LINE 3040:
+_T3e:
 	__asm        mov    eax, mission_id;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
@@ -7116,6 +7197,7 @@ void AutomobileClass::HitDispatch(long hitter_type, /*packed*/ struct _DYOBJ_INS
 // LINE 3041:
 	__asm        jmp    _T12d;
 // LINE 3043:
+_T4f:
 	__asm        mov    eax, dyhitter;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
@@ -7123,10 +7205,13 @@ void AutomobileClass::HitDispatch(long hitter_type, /*packed*/ struct _DYOBJ_INS
 // LINE 3044:
 	__asm        jmp    _T12d;
 // LINE 3046:
+_T60:
 	__asm        jmp    _T12d;
 // LINE 3048:
+_T65:
 	__asm        jmp    _T12d;
 // LINE 3050:
+_T6a:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::IsThisAnEmergencyVehicle;
 	__asm        test   eax, eax;
@@ -7140,20 +7225,28 @@ void AutomobileClass::HitDispatch(long hitter_type, /*packed*/ struct _DYOBJ_INS
 _T86:
 	__asm        jmp    _T12d;
 // LINE 3054:
+_T8b:
 	__asm        jmp    _T12d;
 // LINE 3056:
+_T90:
 	__asm        jmp    _T12d;
 // LINE 3058:
+_T95:
 	__asm        jmp    _T12d;
 // LINE 3060:
+_T9a:
 	__asm        jmp    _T12d;
 // LINE 3062:
+_T9f:
 	__asm        jmp    _T12d;
 // LINE 3064:
+_Ta4:
 	__asm        jmp    _T12d;
 // LINE 3066:
+_Ta9:
 	__asm        jmp    _T12d;
 // LINE 3068:
+_Tae:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::IsThisAnEmergencyVehicle;
 	__asm        test   eax, eax;
@@ -7176,7 +7269,23 @@ _Td9:
 
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    _Switch_ed[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T17
+//   _T1c
+//   _T2d
+//   _T3e
+//   _T4f
+//   _T60
+//   _T65
+//   _T6a
+//   _T8b
+//   _T90
+//   _T95
+//   _T9a
+//   _T9f
+//   _Ta4
+//   _Ta9
+//   _Tae
 // LINE 3075:
 _T12d:
 	__asm        jmp    near ptr 0x00506545;
@@ -8440,18 +8549,22 @@ _T44b:
 	__asm        mov    [ebp-0x30], eax;
 	__asm        jmp    _T4b2;
 // LINE 3690:
+_T475:
 	this->nextLocation.y--;
 // LINE 3691:
 	__asm        jmp    _T50d;
 // LINE 3694:
+_T483:
 	this->nextLocation.y++;
 // LINE 3695:
 	__asm        jmp    _T50d;
 // LINE 3698:
+_T491:
 	this->nextLocation.x++;
 // LINE 3699:
 	__asm        jmp    _T50d;
 // LINE 3702:
+_T49f:
 	this->nextLocation.x--;
 // LINE 3703:
 	__asm        jmp    _T50d;
@@ -8466,7 +8579,16 @@ _T4b2:
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, _SwitchTable_4f5[0][eax];
 	__asm        jmp    _Switch_4d1[0][ecx*4];
-// Switch pointers
+// Switch pointers:
+//   _T475
+//   _T491
+//   _T483
+//   _T49f
+//   _T475
+//   _T491
+//   _T483
+//   _T49f
+//   _T50d
 // Switch table
 // LINE 3706:
 _T50d:
@@ -9425,6 +9547,7 @@ _T700:
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    _T7a0;
 // LINE 3971:
+_T71a:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0xCE], 1;
 	__asm        je     _T731;
@@ -9434,6 +9557,7 @@ _T700:
 _T731:
 	__asm        jmp    _T7fb;
 // LINE 3975:
+_T736:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0xCE], 4;
 	__asm        je     _T74d;
@@ -9443,6 +9567,7 @@ _T731:
 _T74d:
 	__asm        jmp    _T7fb;
 // LINE 3979:
+_T752:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0xCE], 2;
 	__asm        je     _T769;
@@ -9452,6 +9577,7 @@ _T74d:
 _T769:
 	__asm        jmp    _T7fb;
 // LINE 3983:
+_T76e:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0xCE], 8;
 	__asm        je     _T785;
@@ -9482,7 +9608,19 @@ _T7a0:
 
 	__asm        mov    eax, [ebp-0x64];
 	__asm        jmp    _Switch_7cc[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T752
+//   _T736
+//   _T76e
+//   _T71a
+_T7dc:
+	__asm        cmp    dword ptr [ebp-0x64], 0x806A;
+	__asm        jl     _T7fb;
+
+	__asm        cmp    dword ptr [ebp-0x64], 0x806B;
+	__asm        jle    _T78a;
+
+	__asm        jmp    _T7fb;
 // LINE 3998:
 _T7fb:
 	nextFineLocation.y += 0x1f0000;
@@ -9749,6 +9887,7 @@ _T297:
 	__asm        mov    [ebp-0x28], eax;
 	__asm        jmp    _T32f;
 // LINE 4080:
+_T2a7:
 	__asm        mov    eax, point;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax];
@@ -9760,6 +9899,7 @@ _T297:
 _T2c0:
 	__asm        jmp    _T367;
 // LINE 4084:
+_T2c5:
 	__asm        mov    eax, point;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax];
@@ -9771,6 +9911,7 @@ _T2c0:
 _T2de:
 	__asm        jmp    _T367;
 // LINE 4088:
+_T2e3:
 	__asm        mov    eax, point;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax];
@@ -9782,6 +9923,7 @@ _T2de:
 _T2fc:
 	__asm        jmp    _T367;
 // LINE 4092:
+_T301:
 	__asm        mov    eax, point;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax];
@@ -9793,6 +9935,7 @@ _T2fc:
 _T31a:
 	__asm        jmp    _T367;
 // LINE 4097:
+_T31f:
 	westTile = 0x0;
 // LINE 4098:
 	__asm        jmp    _T367;
@@ -9805,7 +9948,15 @@ _T32f:
 
 	__asm        mov    eax, [ebp-0x28];
 	__asm        jmp    _Switch_347[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T31f
+//   _T367
+//   _T367
+//   _T367
+//   _T2a7
+//   _T2e3
+//   _T301
+//   _T2c5
 // LINE 4103:
 _T367:
 	__asm        mov    eax, this;
@@ -10314,26 +10465,31 @@ void AutomobileClass::MakeAHiwayTurn(enum AutomobileClass::IntersectionTypes int
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _T18e;
 // LINE 4241:
+_T17:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::UnPlaceCar;
 // LINE 4242:
 	__asm        jmp    _T1e3;
 // LINE 4246:
+_T24:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::GoStraight;
 // LINE 4248:
 	__asm        jmp    _T1e3;
 // LINE 4252:
+_T31:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::TurnLeft;
 // LINE 4254:
 	__asm        jmp    _T1e3;
 // LINE 4258:
+_T3e:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::TurnRight;
 // LINE 4260:
 	__asm        jmp    _T1e3;
 // LINE 4264:
+_T4b:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        test   al, 1;
@@ -10351,6 +10507,7 @@ _T68:
 _T70:
 	__asm        jmp    _T1e3;
 // LINE 4277:
+_T75:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        test   al, 1;
@@ -10368,6 +10525,7 @@ _T92:
 _T9a:
 	__asm        jmp    _T1e3;
 // LINE 4290:
+_T9f:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        test   al, 1;
@@ -10385,6 +10543,7 @@ _Tbc:
 _Tc4:
 	__asm        jmp    _T1e3;
 // LINE 4303:
+_Tc9:
 	__asm        call   rand;
 	__asm        mov    ecx, 3;
 	__asm        movsx  eax, ax;
@@ -10436,6 +10595,7 @@ _T133:
 _T156:
 	__asm        jmp    _T1e3;
 // LINE 4315:
+_T15b:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::UnPlaceCar;
 // LINE 4316:
@@ -10461,7 +10621,17 @@ _T18e:
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, _SwitchTable_1d2[0][eax];
 	__asm        jmp    _Switch_1aa[0][ecx*4];
-// Switch pointers
+// Switch pointers:
+//   _T17
+//   _T24
+//   _T31
+//   _T4b
+//   _T3e
+//   _T9f
+//   _T75
+//   _Tc9
+//   _T15b
+//   _T168
 // Switch table
 // LINE 4325:
 _T1e3:
@@ -11649,6 +11819,7 @@ _T80:
 	__asm        mov    [ebp-0x64], eax;
 	__asm        jmp    _T1ab;
 // LINE 4958:
+_Tcc:
 	__asm        cmp    base, 0x80;
 	__asm        jne    _Tec;
 // LINE 4959:
@@ -11663,6 +11834,7 @@ _T80:
 _Tec:
 	__asm        jmp    _T29d;
 // LINE 4962:
+_Tf1:
 	__asm        cmp    base, 0x80;
 	__asm        jne    _T111;
 // LINE 4963:
@@ -11677,6 +11849,7 @@ _Tec:
 _T111:
 	__asm        jmp    _T29d;
 // LINE 4966:
+_T116:
 	__asm        cmp    base, 0x50;
 	__asm        jne    _T133;
 // LINE 4967:
@@ -11691,6 +11864,7 @@ _T111:
 _T133:
 	__asm        jmp    _T29d;
 // LINE 4970:
+_T138:
 	__asm        cmp    base, 0x50;
 	__asm        jne    _T155;
 // LINE 4971:
@@ -11705,6 +11879,7 @@ _T133:
 _T155:
 	__asm        jmp    _T29d;
 // LINE 4974:
+_T15a:
 	__asm        cmp    base, 0xA0;
 	__asm        jne    _T17a;
 // LINE 4975:
@@ -11719,6 +11894,7 @@ _T155:
 _T17a:
 	__asm        jmp    _T29d;
 // LINE 4978:
+_T17f:
 	__asm        cmp    base, 0x30;
 	__asm        jne    _T19c;
 // LINE 4979:
@@ -11733,6 +11909,7 @@ _T17a:
 _T19c:
 	__asm        jmp    _T29d;
 // LINE 4982:
+_T1a1:
 	__asm        jmp    _T29d;
 // LINE 4983:
 	__asm        jmp    _T29d;
@@ -11745,7 +11922,14 @@ _T1ab:
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, _SwitchTable_1ea[0][eax];
 	__asm        jmp    _Switch_1ce[0][ecx*4];
-// Switch pointers
+// Switch pointers:
+//   _Tcc
+//   _T116
+//   _T15a
+//   _Tf1
+//   _T17f
+//   _T138
+//   _T1a1
 // Switch table
 // LINE 4986:
 _T29d:

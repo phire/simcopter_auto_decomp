@@ -1256,7 +1256,7 @@ void S3FireDouse(/*packed*/ struct _CELL_INFO *cptr, /*packed*/ struct Point3d *
 	__asm        test   al, 0x20;
 	__asm        jne    _T30;
 // LINE 655:
-	__asm        jmp    _T346;
+	__asm        jmp    check_dyobjs;
 // LINE 658:
 _T30:
 	__asm        mov    eax, wloc;
@@ -1287,13 +1287,13 @@ _T30:
 // LINE 665:
 _T77:
 	__asm        cmp    stobj, 0;
-	__asm        je     _T346;
+	__asm        je     check_dyobjs;
 // LINE 667:
 	__asm        mov    eax, stobj;
 	__asm        test   byte ptr [eax+8], 1;
 	__asm        jne    _T93;
 // LINE 668:
-	__asm        jmp    _T339;
+	__asm        jmp    next_obj;
 // LINE 671:
 _T93:
 	fd = stobj->user2;
@@ -1329,7 +1329,7 @@ _T93:
 	__asm        jl     _Tfa;
 // LINE 686:
 _Tf5:
-	__asm        jmp    _T339;
+	__asm        jmp    next_obj;
 // LINE 692:
 _Tfa:
 	__asm        cmp    water_timetolive, 0;
@@ -1526,13 +1526,11 @@ _T334:
 	__asm        jmp    _T3f3;
 // LINE 777:
 next_obj:
-_T339:
 	stobj = stobj->next;
 // LINE 778:
 	__asm        jmp    _T77;
 // LINE 786:
 check_dyobjs:
-_T346:
 	__asm        jmp    _T3f3;
 // LINE 788:
 	dyobj = cptr->dyptr;
@@ -2785,7 +2783,7 @@ _T3b:
 	__asm        test   byte ptr [eax+8], 1;
 	__asm        jne    _T57;
 // LINE 984:
-	__asm        jmp    _Te7;
+	__asm        jmp    next_obj;
 // LINE 987:
 _T57:
 	fd = stobj->user2;
@@ -2819,7 +2817,7 @@ _T57:
 	__asm        jl     _Tb7;
 // LINE 994:
 _Tb2:
-	__asm        jmp    _Te7;
+	__asm        jmp    next_obj;
 // LINE 999:
 _Tb7:
 	__asm        mov    eax, loc;
@@ -2841,7 +2839,6 @@ _Tdf:
 	__asm        jmp    _Tfb;
 // LINE 1008:
 next_obj:
-_Te7:
 	stobj = stobj->next;
 // LINE 1009:
 	__asm        jmp    _T3b;
@@ -3420,6 +3417,7 @@ _T267:
 	__asm        mov    [ebp-0x7C], eax;
 	__asm        jmp    _T352;
 // LINE 1309:
+_T295:
 	__asm        push   0x14F;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -3432,6 +3430,7 @@ _T267:
 // LINE 1312:
 	__asm        jmp    _T379;
 // LINE 1314:
+_T2c0:
 	__asm        push   0x150;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -3444,6 +3443,7 @@ _T267:
 // LINE 1317:
 	__asm        jmp    _T379;
 // LINE 1319:
+_T2eb:
 	__asm        push   0x151;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -3456,6 +3456,7 @@ _T267:
 // LINE 1322:
 	__asm        jmp    _T379;
 // LINE 1324:
+_T316:
 	__asm        push   0x152;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
@@ -3481,7 +3482,11 @@ _T352:
 
 	__asm        mov    eax, [ebp-0x7C];
 	__asm        jmp    _Switch_369[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T295
+//   _T2c0
+//   _T2eb
+//   _T316
 // LINE 1333:
 _T379:
 	__asm        jmp    _T38b;
@@ -3674,6 +3679,7 @@ _T36:
 	__asm        mov    [ebp-0x38], eax;
 	__asm        jmp    _Ta2;
 // LINE 1423:
+_T44:
 	curr_dir = 0x0;
 // LINE 1424:
 	curr_dist++;
@@ -3684,12 +3690,14 @@ _T36:
 // LINE 1427:
 	__asm        jmp    _Tca;
 // LINE 1429:
+_T61:
 	xdir = 0x1;
 // LINE 1430:
 	ydir = 0x0;
 // LINE 1431:
 	__asm        jmp    _Tca;
 // LINE 1433:
+_T74:
 	curr_dist++;
 // LINE 1434:
 	xdir = 0x0;
@@ -3698,6 +3706,7 @@ _T36:
 // LINE 1436:
 	__asm        jmp    _Tca;
 // LINE 1438:
+_T8a:
 	xdir = 0xffffffff;
 // LINE 1439:
 	ydir = 0x0;
@@ -3711,7 +3720,12 @@ _Ta2:
 
 	__asm        mov    eax, [ebp-0x38];
 	__asm        jmp    _Switch_b6[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T44
+//   _T61
+//   _T74
+//   _T8a
+//   _T44
 // LINE 1445:
 _Tca:
 	__asm        mov    eax, spiral_dist;
@@ -3749,7 +3763,7 @@ _Tef:
 	__asm        test   al, 0x20;
 	__asm        je     _T138;
 // LINE 1458:
-	__asm        jmp    _T15b;
+	__asm        jmp    FoundFire;
 // LINE 1459:
 _T138:
 	__asm        jmp    _Tec;
@@ -3768,7 +3782,6 @@ _T151:
 	__asm        jmp    _T1e3;
 // LINE 1474:
 FoundFire:
-_T15b:
 	stobj = cptr->stptr;
 // LINE 1475:
 _T164:
@@ -3886,7 +3899,7 @@ _T60:
 	__asm        add    esp, 0x14;
 // LINE 1540:
 _Tc5:
-	__asm        jmp    _T1f2;
+	__asm        jmp    next_dyobj;
 // LINE 1545:
 _Tca:
 	__asm        mov    eax, dyobj;
@@ -3899,7 +3912,7 @@ _Tca:
 	__asm        cmp    [eax+0xA4], ecx;
 	__asm        jne    _Tf2;
 // LINE 1547:
-	__asm        jmp    _T1f2;
+	__asm        jmp    next_dyobj;
 // LINE 1552:
 _Tf2:
 	__asm        mov    eax, dyobj;
@@ -3907,7 +3920,7 @@ _Tf2:
 	__asm        test   al, 0x20;
 	__asm        je     _T106;
 // LINE 1554:
-	__asm        jmp    _T1f2;
+	__asm        jmp    next_dyobj;
 // LINE 1558:
 _T106:
 	__asm        mov    eax, dyobj;
@@ -3915,7 +3928,7 @@ _T106:
 	__asm        test   al, 0x40;
 	__asm        je     _T11a;
 // LINE 1560:
-	__asm        jmp    _T1f2;
+	__asm        jmp    next_dyobj;
 // LINE 1563:
 _T11a:
 	__asm        mov    eax, fd;
@@ -3935,7 +3948,7 @@ _T11a:
 	__asm        mov    ecx, loc.x;
 	__asm        sub    ecx, 0xA0000;
 	__asm        cmp    eax, ecx;
-	__asm        jle    _T1f2;
+	__asm        jle    next_dyobj;
 
 	__asm        mov    eax, dyobj;
 	__asm        mov    eax, [eax+0x18];
@@ -3944,19 +3957,19 @@ _T11a:
 	__asm        mov    ecx, loc.x;
 	__asm        add    ecx, 0xA0000;
 	__asm        cmp    eax, ecx;
-	__asm        jge    _T1f2;
+	__asm        jge    next_dyobj;
 
 	__asm        mov    eax, loc.y;
 	__asm        sub    eax, 0xF0000;
 	__asm        mov    ecx, dyobj;
 	__asm        cmp    eax, [ecx+0x1C];
-	__asm        jge    _T1f2;
+	__asm        jge    next_dyobj;
 
 	__asm        mov    eax, loc.y;
 	__asm        add    eax, 0x320000;
 	__asm        mov    ecx, dyobj;
 	__asm        cmp    eax, [ecx+0x1C];
-	__asm        jle    _T1f2;
+	__asm        jle    next_dyobj;
 
 	__asm        mov    eax, dyobj;
 	__asm        mov    eax, [eax+0x10];
@@ -3965,7 +3978,7 @@ _T11a:
 	__asm        mov    ecx, loc.z;
 	__asm        sub    ecx, 0xA0000;
 	__asm        cmp    eax, ecx;
-	__asm        jle    _T1f2;
+	__asm        jle    next_dyobj;
 
 	__asm        mov    eax, dyobj;
 	__asm        mov    eax, [eax+0x20];
@@ -3974,7 +3987,7 @@ _T11a:
 	__asm        mov    ecx, loc.z;
 	__asm        add    ecx, 0xA0000;
 	__asm        cmp    eax, ecx;
-	__asm        jge    _T1f2;
+	__asm        jge    next_dyobj;
 // LINE 1574:
 	__asm        push   0;
 	__asm        mov    eax, fd;
@@ -3991,7 +4004,6 @@ _T11a:
 	__asm        add    esp, 0x14;
 // LINE 1590:
 next_dyobj:
-_T1f2:
 	__asm        mov    eax, dyobj;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 4;

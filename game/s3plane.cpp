@@ -3422,6 +3422,7 @@ _T1ce:
 	__asm        mov    [ebp-0x50], eax;
 	__asm        jmp    _T23a;
 // LINE 2131:
+_T1dc:
 	curr_dir = 0x0;
 // LINE 2132:
 	curr_dist++;
@@ -3432,12 +3433,14 @@ _T1ce:
 // LINE 2135:
 	__asm        jmp    _T262;
 // LINE 2137:
+_T1f9:
 	xdir = 0x1;
 // LINE 2138:
 	ydir = 0x0;
 // LINE 2139:
 	__asm        jmp    _T262;
 // LINE 2141:
+_T20c:
 	curr_dist++;
 // LINE 2142:
 	xdir = 0x0;
@@ -3446,6 +3449,7 @@ _T1ce:
 // LINE 2144:
 	__asm        jmp    _T262;
 // LINE 2146:
+_T222:
 	xdir = 0xffffffff;
 // LINE 2147:
 	ydir = 0x0;
@@ -3459,7 +3463,12 @@ _T23a:
 
 	__asm        mov    eax, [ebp-0x50];
 	__asm        jmp    _Switch_24e[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T1dc
+//   _T1f9
+//   _T20c
+//   _T222
+//   _T1dc
 // LINE 2153:
 _T262:
 	__asm        mov    eax, curr_dist;
@@ -3486,7 +3495,7 @@ _T287:
 // LINE 2164:
 	__asm        jmp    _T37c;
 
-	__asm        jmp    _T2c7;
+	__asm        jmp    foundCell;
 // LINE 2167:
 	__asm        jmp    _T284;
 // LINE 2169:
@@ -3503,7 +3512,6 @@ _T2c2:
 	__asm        jmp    _T381;
 // LINE 2182:
 foundCell:
-_T2c7:
 	__asm        mov    currentFlag, 3;
 	__asm        jmp    _T2d6;
 _T2d3:
@@ -3567,7 +3575,7 @@ _T36d:
 _T377:
 	__asm        jmp    _T381;
 _T37c:
-	__asm        jmp    _T2c7;
+	__asm        jmp    foundCell;
 _T381:
 }
 
@@ -3844,12 +3852,16 @@ void PlaneClass::HitDispatch(long hitter_type, /*packed*/ struct _DYOBJ_INST *dy
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    _T1f8;
 // LINE 2638:
+_T14:
 	__asm        jmp    _T24c;
 // LINE 2640:
+_T19:
 	__asm        jmp    _T24c;
 // LINE 2642:
+_T1e:
 	__asm        jmp    _T24c;
 // LINE 2644:
+_T23:
 	__asm        mov    eax, dyhittee;
 	__asm        movsx  eax, word ptr [eax+0xE];
 	__asm        mov    eax, planes[0][eax*4];
@@ -3919,12 +3931,16 @@ _Td4:
 _T110:
 	__asm        jmp    _T24c;
 // LINE 2660:
+_T115:
 	__asm        jmp    _T24c;
 // LINE 2662:
+_T11a:
 	__asm        jmp    _T24c;
 // LINE 2664:
+_T11f:
 	__asm        jmp    _T24c;
 // LINE 2666:
+_T124:
 	__asm        mov    eax, dyhittee;
 	__asm        movsx  eax, word ptr [eax+0xE];
 	__asm        mov    eax, planes[0][eax*4];
@@ -3972,20 +3988,28 @@ _T185:
 _T1c1:
 	__asm        jmp    _T24c;
 // LINE 2679:
+_T1c6:
 	__asm        jmp    _T24c;
 // LINE 2681:
+_T1cb:
 	__asm        jmp    _T24c;
 // LINE 2683:
+_T1d0:
 	__asm        jmp    _T24c;
 // LINE 2685:
+_T1d5:
 	__asm        jmp    _T24c;
 // LINE 2687:
+_T1da:
 	__asm        jmp    _T24c;
 // LINE 2689:
+_T1df:
 	__asm        jmp    _T24c;
 // LINE 2691:
+_T1e4:
 	__asm        jmp    _T24c;
 // LINE 2693:
+_T1e9:
 	__asm        jmp    _T24c;
 // LINE 2695:
 	__asm        jmp    _T24c;
@@ -3997,7 +4021,23 @@ _T1f8:
 
 	__asm        mov    eax, [ebp-0x18];
 	__asm        jmp    _Switch_20c[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T14
+//   _T19
+//   _T1e
+//   _T23
+//   _T115
+//   _T11a
+//   _T11f
+//   _T124
+//   _T1c6
+//   _T1cb
+//   _T1d0
+//   _T1d5
+//   _T1da
+//   _T1df
+//   _T1e4
+//   _T1e9
 // LINE 2698:
 _T24c:
 	__asm        jmp    near ptr 0x0052D970;

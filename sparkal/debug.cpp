@@ -2803,18 +2803,23 @@ void CDebugWindow::OnScroll(int32_t scrollCode, int32_t pos) {
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    _T60;
 // LINE 225:
+_T29:
 	__asm        dec    curPos;
 	__asm        jmp    _T8c;
 // LINE 226:
+_T31:
 	__asm        inc    curPos;
 	__asm        jmp    _T8c;
 // LINE 227:
+_T39:
 	__asm        sub    curPos, 0xA;
 	__asm        jmp    _T8c;
 // LINE 228:
+_T42:
 	__asm        add    curPos, 0xA;
 	__asm        jmp    _T8c;
 // LINE 230:
+_T4b:
 	__asm        mov    eax, pos;
 	__asm        mov    curPos, eax;
 	__asm        jmp    _T8c;
@@ -2828,7 +2833,13 @@ _T60:
 
 	__asm        mov    eax, [ebp-0x14];
 	__asm        jmp    _Switch_74[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T29
+//   _T31
+//   _T39
+//   _T42
+//   _T4b
+//   _T4b
 // LINE 233:
 _T8c:
 	__asm        cmp    curPos, 0;

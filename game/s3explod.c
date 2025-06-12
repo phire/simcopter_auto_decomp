@@ -896,30 +896,37 @@ _T61:
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        jmp    _T176;
 // LINE 359:
+_Tf9:
 	sd->speed = 0xd0000;
 // LINE 360:
 	__asm        jmp    _T1b6;
 // LINE 362:
+_T108:
 	sd->speed = 0xa0000;
 // LINE 363:
 	__asm        jmp    _T1b6;
 // LINE 365:
+_T117:
 	sd->speed = 0x190000;
 // LINE 366:
 	__asm        jmp    _T1b6;
 // LINE 368:
+_T126:
 	sd->speed = 0x1e0000;
 // LINE 369:
 	__asm        jmp    _T1b6;
 // LINE 371:
+_T135:
 	sd->speed = 0x110000;
 // LINE 372:
 	__asm        jmp    _T1b6;
 // LINE 374:
+_T144:
 	sd->speed = 0x190000;
 // LINE 375:
 	__asm        jmp    _T1b6;
 // LINE 377:
+_T153:
 	sd->speed = 0x140000;
 // LINE 378:
 	__asm        jmp    _T1b6;
@@ -936,7 +943,18 @@ _T176:
 
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        jmp    _Switch_18a[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T108
+//   _T117
+//   _T135
+//   _Tf9
+//   _T126
+//   _T144
+//   _T162
+//   _T162
+//   _T162
+//   _T162
+//   _T153
 // LINE 388:
 _T1b6:
 	S_num_smoke++;

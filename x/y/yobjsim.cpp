@@ -5546,6 +5546,7 @@ enum TreeSim::ReturnCode cYObject::iCheckForTrue(/*unpacked*/ struct TreeSim::St
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    _T2a8;
 // LINE 1050:
+_T32:
 	__asm        mov    eax, G_uheli;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jne    _T4d;
@@ -5563,6 +5564,7 @@ _T54:
 // Block start:
 	/*bp-0x10*/  short copterheight;
 	/*bp-0x14*/  /*unpacked*/ struct _HELI_DATA *hd;
+_T59:
 	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        push   eax;
@@ -5603,6 +5605,7 @@ _Tbb:
 	/*bp-0x18*/  short delta_y;
 	/*bp-0x1c*/  int32_t y;
 	/*bp-0x20*/  /*unpacked*/ struct _DYOBJ_INST *obj;
+_Tc0:
 	obj = this->fPointers[0];
 // LINE 1068:
 	__asm        cmp    obj, 0;
@@ -5650,6 +5653,7 @@ _T142:
 	__asm        jmp    _T2d0;
 // LINE 1078:
 // Block end:
+_T147:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x130];
 	__asm        mov    [ebp-0x28], eax;
@@ -5704,6 +5708,7 @@ _T1e0:
 _T1e7:
 	__asm        jmp    _T2d0;
 // LINE 1085:
+_T1ec:
 	__asm        mov    eax, elem;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jne    _T215;
@@ -5774,7 +5779,12 @@ _T2a8:
 
 	__asm        mov    eax, [ebp-0x34];
 	__asm        jmp    _Switch_2bc[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T32
+//   _T59
+//   _Tc0
+//   _T147
+//   _T1ec
 // LINE 1105:
 _T2d0:
 	__asm        mov    eax, result;
@@ -5821,6 +5831,7 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(/*unpacked*/ struct TreeSim
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        jmp    _T433;
 // LINE 1118:
+_T5a:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD8];
 	__asm        test   eax, eax;
@@ -5858,6 +5869,7 @@ _Tb1:
 // LINE 1121:
 	__asm        jmp    _T483;
 // LINE 1123:
+_Td0:
 	destobj = reinterpret_cast<uint32_t>(this->fIterations);
 // LINE 1124:
 	__asm        cmp    destobj, 0;
@@ -5873,6 +5885,7 @@ _Tb1:
 _T102:
 	__asm        jmp    _T483;
 // LINE 1127:
+_T107:
 	__asm        mov    eax, elem;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    destobj, eax;
@@ -5890,14 +5903,17 @@ _T102:
 _T136:
 	__asm        jmp    _T483;
 // LINE 1131:
+_T13b:
 	destobj = G_uheli->dybucket;
 // LINE 1133:
 	__asm        jmp    _T483;
 // LINE 1136:
+_T14e:
 	destobj = G_uheli->dyheli;
 // LINE 1138:
 	__asm        jmp    _T483;
 // LINE 1141:
+_T161:
 	__asm        push   0x8C085;
 	__asm        push   0x5BCF44;
 	__asm        push   0x475;
@@ -5909,6 +5925,7 @@ _T136:
 // LINE 1147:
 // Block start:
 	/*bp-0x24*/  /*unpacked*/ class cYObject *obj;
+_T182:
 	__asm        push   0;
 	__asm        push   1;
 	__asm        push   0xFFFFFFFE;
@@ -5946,6 +5963,7 @@ _T1df:
 	__asm        jmp    _T483;
 // LINE 1157:
 // Block end:
+_T1e4:
 	__asm        mov    eax, gAvatar;
 	__asm        add    eax, 0x24;
 	__asm        mov    destobj, eax;
@@ -5956,6 +5974,7 @@ _T1df:
 // LINE 1162:
 // Block start:
 	/*bp-0x28*/  /*unpacked*/ class cYObject *obj;
+_T1fb:
 	__asm        push   0;
 	__asm        push   1;
 	__asm        push   0xFFFFFFFE;
@@ -5995,6 +6014,7 @@ _T258:
 // Block end:
 // Block start:
 	/*bp-0x2c*/  /*unpacked*/ class cYObject *obj;
+_T25d:
 	__asm        push   0;
 	__asm        push   1;
 	__asm        push   6;
@@ -6032,6 +6052,7 @@ _T2ba:
 	__asm        jmp    _T483;
 // LINE 1182:
 // Block end:
+_T2bf:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x89];
@@ -6058,6 +6079,7 @@ _T2fa:
 _T301:
 	__asm        jmp    _T483;
 // LINE 1190:
+_T306:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x89];
@@ -6084,6 +6106,7 @@ _T341:
 _T348:
 	__asm        jmp    _T483;
 // LINE 1199:
+_T34d:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x89];
@@ -6110,6 +6133,7 @@ _T388:
 _T38f:
 	__asm        jmp    _T483;
 // LINE 1207:
+_T394:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x89];
@@ -6138,6 +6162,7 @@ _T3d6:
 // LINE 1215:
 // Block start:
 	/*bp-0x30*/  /*unpacked*/ class cYObject *obj;
+_T3db:
 	__asm        push   0;
 	__asm        push   1;
 	__asm        push   0;
@@ -6177,7 +6202,22 @@ _T433:
 
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        jmp    _Switch_447[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T5a
+//   _T107
+//   _T14e
+//   _T13b
+//   _Td0
+//   _T25d
+//   _T1fb
+//   _T161
+//   _T182
+//   _T1e4
+//   _T2bf
+//   _T34d
+//   _T394
+//   _T306
+//   _T3db
 // LINE 1226:
 _T483:
 	__asm        cmp    result, 0;
@@ -10208,53 +10248,62 @@ _T60:
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    _T1ec;
 // LINE 1906:
+_T71:
 	mp.op = 0x14;
 // LINE 1907:
 	mp.i2num = 0x1;
 // LINE 1908:
 	__asm        jmp    _T228;
 // LINE 1911:
+_T84:
 	mp.op = 0x15;
 // LINE 1912:
 	mp.i2num = 0x1;
 // LINE 1913:
 	__asm        jmp    _T228;
 // LINE 1916:
+_T97:
 	mp.op = 0x12;
 // LINE 1917:
 	mp.i2num = 0x1;
 // LINE 1918:
 	__asm        jmp    _T228;
 // LINE 1920:
+_Taa:
 	mp.op = 0x13;
 // LINE 1921:
 	mp.i2num = 0x1;
 // LINE 1922:
 	__asm        jmp    _T228;
 // LINE 1924:
+_Tbd:
 	mp.op = 0x13;
 // LINE 1925:
 	mp.i2num = 0x1;
 // LINE 1926:
 	__asm        jmp    _T228;
 // LINE 1928:
+_Td0:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD8];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _T13c;
 // LINE 1930:
+_Te2:
 	mp.op = 0x15;
 // LINE 1931:
 	mp.i2num = 0x1;
 // LINE 1932:
 	__asm        jmp    _T163;
 // LINE 1934:
+_Tf5:
 	mp.op = 0x11;
 // LINE 1935:
 	mp.i2num = 0x1;
 // LINE 1936:
 	__asm        jmp    _T163;
 // LINE 1939:
+_T108:
 	mp.op = 0x10;
 // LINE 1940:
 	mp.i2num = 0x1;
@@ -10277,11 +10326,16 @@ _T13c:
 
 	__asm        mov    eax, [ebp-0x24];
 	__asm        jmp    _Switch_153[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T108
+//   _T108
+//   _Te2
+//   _Tf5
 // LINE 1945:
 _T163:
 	__asm        jmp    _T228;
 // LINE 1947:
+_T168:
 	mp.op = 0x1e;
 // LINE 1948:
 	__asm        mov    eax, this;
@@ -10296,6 +10350,7 @@ _T163:
 // LINE 1950:
 	__asm        jmp    _T228;
 // LINE 1952:
+_T190:
 	mp.op = 0x0;
 // LINE 1953:
 	__asm        mov    eax, this;
@@ -10310,6 +10365,7 @@ _T163:
 // LINE 1955:
 	__asm        jmp    _T228;
 // LINE 1957:
+_T1b8:
 	mp.op = 0x25;
 // LINE 1958:
 	mp.i2num = 0x1;
@@ -10331,7 +10387,17 @@ _T1ec:
 
 	__asm        mov    eax, [ebp-0x20];
 	__asm        jmp    _Switch_200[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _Tbd
+//   _Td0
+//   _T168
+//   _T1cb
+//   _T71
+//   _T84
+//   _T190
+//   _T97
+//   _Taa
+//   _T1b8
 // LINE 1963:
 _T228:
 	__asm        lea    eax, mp.op;
@@ -10389,6 +10455,7 @@ enum TreeSim::ReturnCode cYObject::TryExpression(/*unpacked*/ struct YObjLang::A
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    _T395;
 // LINE 2001:
+_T78:
 	__asm        movsx  eax, rhs;
 	__asm        movsx  ecx, lhs;
 	__asm        cmp    eax, ecx;
@@ -10403,6 +10470,7 @@ _T94:
 _T9b:
 	__asm        jmp    _T3d5;
 // LINE 2005:
+_Ta0:
 	__asm        movsx  eax, rhs;
 	__asm        movsx  ecx, lhs;
 	__asm        cmp    eax, ecx;
@@ -10417,6 +10485,7 @@ _Tbc:
 _Tc3:
 	__asm        jmp    _T3d5;
 // LINE 2009:
+_Tc8:
 	__asm        movsx  eax, rhs;
 	__asm        movsx  ecx, lhs;
 	__asm        cmp    eax, ecx;
@@ -10431,6 +10500,7 @@ _Te4:
 _Teb:
 	__asm        jmp    _T3d5;
 // LINE 2013:
+_Tf0:
 	__asm        cmp    plhs, 0;
 	__asm        je     _T109;
 // LINE 2014:
@@ -10446,13 +10516,14 @@ _T109:
 	__asm        call   dword ptr [eax+4];
 	__asm        jmp    _T483;
 
-	__asm        jmp    _T449;
+	__asm        jmp    tree_error;
 // LINE 2018:
 _T120:
 	result = 0x1;
 // LINE 2019:
 	__asm        jmp    _T3d5;
 // LINE 2021:
+_T12c:
 	__asm        cmp    plhs, 0;
 	__asm        je     _T14d;
 // LINE 2022:
@@ -10473,13 +10544,14 @@ _T14d:
 	__asm        call   dword ptr [eax+4];
 	__asm        jmp    _T47e;
 
-	__asm        jmp    _T449;
+	__asm        jmp    tree_error;
 // LINE 2026:
 _T164:
 	result = 0x1;
 // LINE 2027:
 	__asm        jmp    _T3d5;
 // LINE 2029:
+_T170:
 	__asm        cmp    plhs, 0;
 	__asm        je     _T191;
 // LINE 2030:
@@ -10500,13 +10572,14 @@ _T191:
 	__asm        call   dword ptr [eax+4];
 	__asm        jmp    _T479;
 
-	__asm        jmp    _T449;
+	__asm        jmp    tree_error;
 // LINE 2034:
 _T1a8:
 	result = 0x1;
 // LINE 2035:
 	__asm        jmp    _T3d5;
 // LINE 2037:
+_T1b4:
 	__asm        cmp    plhs, 0;
 	__asm        je     _T1d6;
 // LINE 2038:
@@ -10527,13 +10600,14 @@ _T1d6:
 	__asm        call   dword ptr [eax+4];
 	__asm        jmp    _T474;
 
-	__asm        jmp    _T449;
+	__asm        jmp    tree_error;
 // LINE 2042:
 _T1ed:
 	result = 0x1;
 // LINE 2043:
 	__asm        jmp    _T3d5;
 // LINE 2045:
+_T1f9:
 	__asm        cmp    plhs, 0;
 	__asm        je     _T21b;
 // LINE 2046:
@@ -10555,13 +10629,14 @@ _T21b:
 	__asm        call   dword ptr [eax+4];
 	__asm        jmp    _T46f;
 
-	__asm        jmp    _T449;
+	__asm        jmp    tree_error;
 // LINE 2050:
 _T232:
 	result = 0x1;
 // LINE 2051:
 	__asm        jmp    _T3d5;
 // LINE 2053:
+_T23e:
 	__asm        movsx  eax, rhs;
 	__asm        cmp    eax, 0xE;
 	__asm        jle    _T262;
@@ -10573,7 +10648,7 @@ _T232:
 	__asm        call   dword ptr [eax+4];
 	__asm        jmp    _T46a;
 
-	__asm        jmp    _T449;
+	__asm        jmp    tree_error;
 // LINE 2054:
 _T262:
 	__asm        cmp    plhs, 0;
@@ -10599,13 +10674,14 @@ _T28b:
 	__asm        call   dword ptr [eax+4];
 	__asm        jmp    _T465;
 
-	__asm        jmp    _T449;
+	__asm        jmp    tree_error;
 // LINE 2058:
 _T2a2:
 	result = 0x1;
 // LINE 2059:
 	__asm        jmp    _T3d5;
 // LINE 2061:
+_T2ae:
 	__asm        movsx  eax, rhs;
 	__asm        cmp    eax, 0xE;
 	__asm        jle    _T2d2;
@@ -10617,7 +10693,7 @@ _T2a2:
 	__asm        call   dword ptr [eax+4];
 	__asm        jmp    _T460;
 
-	__asm        jmp    _T449;
+	__asm        jmp    tree_error;
 // LINE 2062:
 _T2d2:
 	__asm        cmp    plhs, 0;
@@ -10644,13 +10720,14 @@ _T2fd:
 	__asm        call   dword ptr [eax+4];
 	__asm        jmp    _T45b;
 
-	__asm        jmp    _T449;
+	__asm        jmp    tree_error;
 // LINE 2066:
 _T314:
 	result = 0x1;
 // LINE 2067:
 	__asm        jmp    _T3d5;
 // LINE 2069:
+_T320:
 	__asm        movsx  eax, rhs;
 	__asm        cmp    eax, 0xE;
 	__asm        jle    _T344;
@@ -10662,7 +10739,7 @@ _T314:
 	__asm        call   dword ptr [eax+4];
 	__asm        jmp    _T456;
 
-	__asm        jmp    _T449;
+	__asm        jmp    tree_error;
 // LINE 2070:
 _T344:
 	__asm        mov    eax, 1;
@@ -10690,7 +10767,7 @@ _T374:
 	__asm        call   dword ptr [eax+4];
 	__asm        jmp    _T451;
 
-	__asm        jmp    _T449;
+	__asm        jmp    tree_error;
 // LINE 2076:
 	__asm        jmp    _T3d5;
 // LINE 2077:
@@ -10701,11 +10778,22 @@ _T395:
 
 	__asm        mov    eax, [ebp-0x18];
 	__asm        jmp    _Switch_3a9[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _Ta0
+//   _T78
+//   _Tc8
+//   _T12c
+//   _T170
+//   _Tf0
+//   _T1b4
+//   _T1f9
+//   _T320
+//   _T23e
+//   _T2ae
 // LINE 2080:
 _T3d5:
 	__asm        cmp    plhs, 0;
-	__asm        je     _T449;
+	__asm        je     tree_error;
 // LINE 2081:
 	__asm        mov    eax, plhs;
 	__asm        movsx  eax, word ptr [eax];
@@ -10725,7 +10813,7 @@ _T414:
 	__asm        mov    eax, plhs;
 	__asm        movsx  eax, word ptr [eax];
 	__asm        cmp    eax, 0xFFFF9E58;
-	__asm        jge    _T449;
+	__asm        jge    tree_error;
 // LINE 2087:
 	__asm        push   0x8C085;
 	__asm        push   0x5BDB84;
@@ -10737,32 +10825,31 @@ _T414:
 	plhs[0] = 0x9e58;
 // LINE 2098:
 tree_error:
-_T449:
 	__asm        mov    eax, result;
 	__asm        jmp    _T488;
 // LINE 2099:
 _T451:
-	__asm        jmp    _T449;
+	__asm        jmp    tree_error;
 _T456:
-	__asm        jmp    _T449;
+	__asm        jmp    tree_error;
 _T45b:
-	__asm        jmp    _T449;
+	__asm        jmp    tree_error;
 _T460:
-	__asm        jmp    _T449;
+	__asm        jmp    tree_error;
 _T465:
-	__asm        jmp    _T449;
+	__asm        jmp    tree_error;
 _T46a:
-	__asm        jmp    _T449;
+	__asm        jmp    tree_error;
 _T46f:
-	__asm        jmp    _T449;
+	__asm        jmp    tree_error;
 _T474:
-	__asm        jmp    _T449;
+	__asm        jmp    tree_error;
 _T479:
-	__asm        jmp    _T449;
+	__asm        jmp    tree_error;
 _T47e:
-	__asm        jmp    _T449;
+	__asm        jmp    tree_error;
 _T483:
-	__asm        jmp    _T449;
+	__asm        jmp    tree_error;
 _T488:
 }
 
@@ -10802,6 +10889,7 @@ _T22:
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    _T1d9;
 // LINE 2121:
+_T3d:
 	__asm        push   0x8C085;
 	__asm        push   0x5BDC10;
 	__asm        push   0x849;
@@ -10811,6 +10899,7 @@ _T22:
 // LINE 2124:
 	__asm        jmp    _T21d;
 // LINE 2126:
+_T5e:
 	__asm        push   0x8C085;
 	__asm        push   0x5BDC44;
 	__asm        push   0x84E;
@@ -10820,6 +10909,7 @@ _T22:
 // LINE 2130:
 	__asm        jmp    _T21d;
 // LINE 2132:
+_T7f:
 	__asm        push   0x8C085;
 	__asm        push   0x5BDC7C;
 	__asm        push   0x854;
@@ -10829,6 +10919,7 @@ _T22:
 // LINE 2133:
 	__asm        jmp    _T21d;
 // LINE 2135:
+_Ta0:
 	__asm        movsx  eax, dataField;
 	__asm        cmp    eax, 0x30;
 	__asm        jl     _Tc4;
@@ -10840,7 +10931,7 @@ _T22:
 	__asm        call   dword ptr [eax+4];
 	__asm        jmp    _T238;
 
-	__asm        jmp    _T226;
+	__asm        jmp    tree_error;
 // LINE 2136:
 _Tc4:
 	__asm        movsx  eax, dataField;
@@ -10856,6 +10947,7 @@ _Tc4:
 // LINE 2137:
 	__asm        jmp    _T21d;
 // LINE 2139:
+_Te8:
 	__asm        push   0x8C085;
 	__asm        push   0x5BDCC8;
 	__asm        push   0x85B;
@@ -10865,10 +10957,12 @@ _Tc4:
 // LINE 2140:
 	__asm        jmp    _T21d;
 // LINE 2142:
+_T109:
 	data = dataField;
 // LINE 2143:
 	__asm        jmp    _T21d;
 // LINE 2145:
+_T116:
 	__asm        push   0x8C085;
 	__asm        push   0x5BDD04;
 	__asm        push   0x861;
@@ -10878,6 +10972,7 @@ _Tc4:
 // LINE 2146:
 	__asm        jmp    _T21d;
 // LINE 2148:
+_T137:
 	__asm        push   0x8C085;
 	__asm        push   0x5BDD44;
 	__asm        push   0x864;
@@ -10887,6 +10982,7 @@ _Tc4:
 // LINE 2149:
 	__asm        jmp    _T21d;
 // LINE 2151:
+_T158:
 	__asm        movsx  eax, dataField;
 	__asm        cmp    eax, 4;
 	__asm        jl     _T17c;
@@ -10898,7 +10994,7 @@ _Tc4:
 	__asm        call   dword ptr [eax+4];
 	__asm        jmp    _T233;
 
-	__asm        jmp    _T226;
+	__asm        jmp    tree_error;
 // LINE 2152:
 _T17c:
 	__asm        jmp    near ptr 0x0055C1A2;
@@ -10929,7 +11025,7 @@ _T1b8:
 	__asm        call   dword ptr [eax+4];
 	__asm        jmp    _T22e;
 
-	__asm        jmp    _T226;
+	__asm        jmp    tree_error;
 // LINE 2156:
 	__asm        jmp    _T21d;
 // LINE 2157:
@@ -10940,23 +11036,34 @@ _T1d9:
 
 	__asm        mov    eax, [ebp-0x14];
 	__asm        jmp    _Switch_1ed[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T3d
+//   _T7f
+//   _T1b8
+//   _Ta0
+//   _Te8
+//   _T1b8
+//   _T1b8
+//   _T109
+//   _T116
+//   _T158
+//   _T5e
+//   _T137
 // LINE 2158:
 _T21d:
 	__asm        mov    ax, data;
 	__asm        jmp    _T23d;
 // LINE 2161:
 tree_error:
-_T226:
 	__asm        xor    ax, ax;
 	__asm        jmp    _T23d;
 // LINE 2162:
 _T22e:
-	__asm        jmp    _T226;
+	__asm        jmp    tree_error;
 _T233:
-	__asm        jmp    _T226;
+	__asm        jmp    tree_error;
 _T238:
-	__asm        jmp    _T226;
+	__asm        jmp    tree_error;
 _T23d:
 }
 

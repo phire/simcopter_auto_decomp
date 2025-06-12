@@ -912,6 +912,7 @@ _Tf8:
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _T17e;
 // LINE 91:
+_T10d:
 	__asm        xor    eax, eax;
 	__asm        mov    al, center.y;
 	__asm        sub    eax, 2;
@@ -922,6 +923,7 @@ _Tf8:
 	__asm        mov    [ecx], al;
 	__asm        jmp    _T1a2;
 // LINE 92:
+_T128:
 	__asm        xor    eax, eax;
 	__asm        mov    al, center.x;
 	__asm        add    eax, 2;
@@ -932,6 +934,7 @@ _Tf8:
 	__asm        mov    [ecx+1], al;
 	__asm        jmp    _T1a2;
 // LINE 93:
+_T143:
 	__asm        xor    eax, eax;
 	__asm        mov    al, center.y;
 	__asm        add    eax, 2;
@@ -942,6 +945,7 @@ _Tf8:
 	__asm        mov    [ecx], al;
 	__asm        jmp    _T1a2;
 // LINE 94:
+_T15e:
 	__asm        xor    eax, eax;
 	__asm        mov    al, center.x;
 	__asm        sub    eax, 2;
@@ -959,7 +963,11 @@ _T17e:
 
 	__asm        mov    eax, [ebp-0x24];
 	__asm        jmp    _Switch_192[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T10d
+//   _T128
+//   _T143
+//   _T15e
 // LINE 97:
 _T1a2:
 	__asm        mov    eax, loc;

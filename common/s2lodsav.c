@@ -112,7 +112,7 @@ _T2e:
 // LINE 124:
 	bOK = 0x0;
 // LINE 125:
-	__asm        jmp    _T175;
+	__asm        jmp    exit;
 // LINE 128:
 _T84:
 	bOK = 0x1;
@@ -133,7 +133,7 @@ _T92:
 // LINE 133:
 	bOK = 0x0;
 // LINE 134:
-	__asm        jmp    _T175;
+	__asm        jmp    exit;
 // LINE 136:
 _Tba:
 	__asm        mov    eax, lChunkType;
@@ -155,7 +155,7 @@ _Tba:
 // LINE 139:
 	bOK = 0x0;
 // LINE 140:
-	__asm        jmp    _T175;
+	__asm        jmp    exit;
 // LINE 142:
 _Tf1:
 	__asm        mov    eax, lChunkDataSize;
@@ -179,7 +179,7 @@ _Tf1:
 _T124:
 	bOK = 0x0;
 // LINE 145:
-	__asm        jmp    _T175;
+	__asm        jmp    exit;
 // LINE 147:
 _T130:
 	__asm        push   1;
@@ -194,7 +194,7 @@ _T130:
 // LINE 148:
 	bOK = 0x0;
 // LINE 149:
-	__asm        jmp    _T175;
+	__asm        jmp    exit;
 // LINE 152:
 _T156:
 	__asm        mov    eax, lChunkDataSize;
@@ -205,13 +205,12 @@ _T156:
 	__asm        cmp    lCityDataChunkLength, eax;
 	__asm        jg     _T170;
 // LINE 154:
-	__asm        jmp    _T175;
+	__asm        jmp    exit;
 // LINE 155:
 _T170:
 	__asm        jmp    _T92;
 // LINE 158:
 exit:
-_T175:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
 	__asm        call   fclose;
@@ -539,7 +538,7 @@ _T6b:
 	__asm        test   eax, eax;
 	__asm        jne    _T91;
 // LINE 314:
-	__asm        jmp    _T8a1;
+	__asm        jmp    badread;
 // LINE 316:
 _T91:
 	bDone = 0x0;
@@ -565,7 +564,7 @@ _Tb6:
 	__asm        test   eax, eax;
 	__asm        jne    _Ted;
 // LINE 323:
-	__asm        jmp    _T8a1;
+	__asm        jmp    badread;
 // LINE 324:
 _Ted:
 	__asm        mov    eax, dp;
@@ -585,7 +584,7 @@ _Ted:
 	__asm        test   eax, eax;
 	__asm        jne    _T126;
 // LINE 328:
-	__asm        jmp    _T8a1;
+	__asm        jmp    badread;
 // LINE 329:
 _T126:
 	__asm        mov    eax, size;
@@ -610,7 +609,7 @@ _T126:
 	__asm        test   eax, eax;
 	__asm        jne    _T171;
 // LINE 333:
-	__asm        jmp    _T8a1;
+	__asm        jmp    badread;
 // LINE 335:
 _T171:
 	__asm        jmp    _T7ca;
@@ -633,7 +632,7 @@ _T176:
 	__asm        test   eax, eax;
 	__asm        jne    _T1b8;
 // LINE 337:
-	__asm        jmp    _T8a1;
+	__asm        jmp    badread;
 // LINE 338:
 _T1b8:
 	__asm        mov    eax, size;
@@ -664,7 +663,7 @@ _T1cf:
 	__asm        test   eax, eax;
 	__asm        jne    _T216;
 // LINE 342:
-	__asm        jmp    _T8a1;
+	__asm        jmp    badread;
 // LINE 344:
 _T216:
 	__asm        jmp    _T7ca;
@@ -688,7 +687,7 @@ _T21b:
 	__asm        test   eax, eax;
 	__asm        jne    _T262;
 // LINE 346:
-	__asm        jmp    _T8a1;
+	__asm        jmp    badread;
 // LINE 348:
 _T262:
 	__asm        jmp    _T7ca;
@@ -712,7 +711,7 @@ _T267:
 	__asm        test   eax, eax;
 	__asm        jne    _T2ae;
 // LINE 350:
-	__asm        jmp    _T8a1;
+	__asm        jmp    badread;
 // LINE 352:
 _T2ae:
 	__asm        jmp    _T7ca;
@@ -736,7 +735,7 @@ _T2b3:
 	__asm        test   eax, eax;
 	__asm        jne    _T2fa;
 // LINE 354:
-	__asm        jmp    _T8a1;
+	__asm        jmp    badread;
 // LINE 356:
 _T2fa:
 	__asm        jmp    _T7ca;
@@ -760,7 +759,7 @@ _T2ff:
 	__asm        test   eax, eax;
 	__asm        jne    _T346;
 // LINE 358:
-	__asm        jmp    _T8a1;
+	__asm        jmp    badread;
 // LINE 360:
 _T346:
 	__asm        jmp    _T7ca;
@@ -786,7 +785,7 @@ _T34b:
 	__asm        test   eax, eax;
 	__asm        jne    _T39b;
 // LINE 364:
-	__asm        jmp    _T8a1;
+	__asm        jmp    badread;
 // LINE 366:
 _T39b:
 	__asm        jmp    _T7ca;
@@ -810,7 +809,7 @@ _T3a0:
 	__asm        test   eax, eax;
 	__asm        jne    _T3e7;
 // LINE 369:
-	__asm        jmp    _T8a1;
+	__asm        jmp    badread;
 // LINE 370:
 _T3e7:
 	__asm        push   0x4B0;
@@ -840,7 +839,7 @@ _T3ff:
 	__asm        test   eax, eax;
 	__asm        jne    _T446;
 // LINE 375:
-	__asm        jmp    _T8a1;
+	__asm        jmp    badread;
 // LINE 377:
 _T446:
 	__asm        jmp    _T7ca;
@@ -864,7 +863,7 @@ _T44b:
 	__asm        test   eax, eax;
 	__asm        jne    _T492;
 // LINE 380:
-	__asm        jmp    _T8a1;
+	__asm        jmp    badread;
 // LINE 382:
 _T492:
 	__asm        jmp    _T7ca;
@@ -888,7 +887,7 @@ _T497:
 	__asm        test   eax, eax;
 	__asm        jne    _T4de;
 // LINE 384:
-	__asm        jmp    _T8a1;
+	__asm        jmp    badread;
 // LINE 386:
 _T4de:
 	__asm        jmp    _T7ca;
@@ -912,7 +911,7 @@ _T4e3:
 	__asm        test   eax, eax;
 	__asm        jne    _T52a;
 // LINE 388:
-	__asm        jmp    _T8a1;
+	__asm        jmp    badread;
 // LINE 390:
 _T52a:
 	__asm        jmp    _T7ca;
@@ -936,7 +935,7 @@ _T52f:
 	__asm        test   eax, eax;
 	__asm        jne    _T576;
 // LINE 392:
-	__asm        jmp    _T8a1;
+	__asm        jmp    badread;
 // LINE 394:
 _T576:
 	__asm        jmp    _T7ca;
@@ -960,7 +959,7 @@ _T57b:
 	__asm        test   eax, eax;
 	__asm        jne    _T5c2;
 // LINE 396:
-	__asm        jmp    _T8a1;
+	__asm        jmp    badread;
 // LINE 398:
 _T5c2:
 	__asm        jmp    _T7ca;
@@ -984,7 +983,7 @@ _T5c7:
 	__asm        test   eax, eax;
 	__asm        jne    _T60e;
 // LINE 400:
-	__asm        jmp    _T8a1;
+	__asm        jmp    badread;
 // LINE 402:
 _T60e:
 	__asm        jmp    _T7ca;
@@ -1008,7 +1007,7 @@ _T613:
 	__asm        test   eax, eax;
 	__asm        jne    _T65a;
 // LINE 404:
-	__asm        jmp    _T8a1;
+	__asm        jmp    badread;
 // LINE 406:
 _T65a:
 	__asm        jmp    _T7ca;
@@ -1032,7 +1031,7 @@ _T65f:
 	__asm        test   eax, eax;
 	__asm        jne    _T6a6;
 // LINE 408:
-	__asm        jmp    _T8a1;
+	__asm        jmp    badread;
 // LINE 410:
 _T6a6:
 	__asm        jmp    _T7ca;
@@ -1056,7 +1055,7 @@ _T6ab:
 	__asm        test   eax, eax;
 	__asm        jne    _T6f2;
 // LINE 412:
-	__asm        jmp    _T8a1;
+	__asm        jmp    badread;
 // LINE 414:
 _T6f2:
 	__asm        jmp    _T7ca;
@@ -1080,7 +1079,7 @@ _T6f7:
 	__asm        test   eax, eax;
 	__asm        jne    _T73e;
 // LINE 416:
-	__asm        jmp    _T8a1;
+	__asm        jmp    badread;
 // LINE 417:
 _T73e:
 	__asm        push   0xD00;
@@ -1109,7 +1108,7 @@ _T756:
 	__asm        test   eax, eax;
 	__asm        jne    _T799;
 // LINE 421:
-	__asm        jmp    _T8a1;
+	__asm        jmp    badread;
 // LINE 422:
 _T799:
 	bFoundName = 0x1;
@@ -1126,7 +1125,7 @@ _T7a7:
 	__asm        test   eax, eax;
 	__asm        jne    _T7ca;
 // LINE 425:
-	__asm        jmp    _T8a1;
+	__asm        jmp    badread;
 // LINE 428:
 _T7ca:
 	__asm        mov    eax, size;
@@ -1207,7 +1206,6 @@ _T889:
 	__asm        jmp    _T8b8;
 // LINE 457:
 badread:
-_T8a1:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
 	__asm        call   fclose;
@@ -2878,7 +2876,7 @@ _T2f:
 	__asm        test   eax, eax;
 	__asm        jne    _T4d;
 // LINE 984:
-	__asm        jmp    _T4d7;
+	__asm        jmp    badwrite;
 // LINE 987:
 _T4d:
 	WriteLength = 0x4;
@@ -2910,7 +2908,7 @@ _T4d:
 	__asm        test   eax, eax;
 	__asm        jne    _Ta5;
 // LINE 992:
-	__asm        jmp    _T4d7;
+	__asm        jmp    badwrite;
 // LINE 993:
 _Ta5:
 	__asm        mov    eax, filNum;
@@ -2921,7 +2919,7 @@ _Ta5:
 	__asm        test   eax, eax;
 	__asm        jne    _Tc1;
 // LINE 994:
-	__asm        jmp    _T4d7;
+	__asm        jmp    badwrite;
 // LINE 995:
 _Tc1:
 	__asm        push   0x8000;
@@ -2939,7 +2937,7 @@ _Tc1:
 	__asm        test   eax, eax;
 	__asm        jne    _Tf6;
 // LINE 996:
-	__asm        jmp    _T4d7;
+	__asm        jmp    badwrite;
 // LINE 997:
 _Tf6:
 	__asm        push   0x4000;
@@ -2957,7 +2955,7 @@ _Tf6:
 	__asm        test   eax, eax;
 	__asm        jne    _T12b;
 // LINE 998:
-	__asm        jmp    _T4d7;
+	__asm        jmp    badwrite;
 // LINE 999:
 _T12b:
 	__asm        push   0x4000;
@@ -2975,7 +2973,7 @@ _T12b:
 	__asm        test   eax, eax;
 	__asm        jne    _T160;
 // LINE 1000:
-	__asm        jmp    _T4d7;
+	__asm        jmp    badwrite;
 // LINE 1001:
 _T160:
 	__asm        push   0x4000;
@@ -2993,7 +2991,7 @@ _T160:
 	__asm        test   eax, eax;
 	__asm        jne    _T195;
 // LINE 1002:
-	__asm        jmp    _T4d7;
+	__asm        jmp    badwrite;
 // LINE 1003:
 _T195:
 	__asm        push   0x4000;
@@ -3011,7 +3009,7 @@ _T195:
 	__asm        test   eax, eax;
 	__asm        jne    _T1ca;
 // LINE 1004:
-	__asm        jmp    _T4d7;
+	__asm        jmp    badwrite;
 // LINE 1005:
 _T1ca:
 	__asm        push   0x4000;
@@ -3029,7 +3027,7 @@ _T1ca:
 	__asm        test   eax, eax;
 	__asm        jne    _T1ff;
 // LINE 1006:
-	__asm        jmp    _T4d7;
+	__asm        jmp    badwrite;
 // LINE 1009:
 _T1ff:
 	__asm        push   0x1900;
@@ -3047,7 +3045,7 @@ _T1ff:
 	__asm        test   eax, eax;
 	__asm        jne    _T234;
 // LINE 1010:
-	__asm        jmp    _T4d7;
+	__asm        jmp    badwrite;
 // LINE 1013:
 _T234:
 	__asm        push   0x4B0;
@@ -3065,7 +3063,7 @@ _T234:
 	__asm        test   eax, eax;
 	__asm        jne    _T269;
 // LINE 1014:
-	__asm        jmp    _T4d7;
+	__asm        jmp    badwrite;
 // LINE 1017:
 _T269:
 	__asm        push   0x1E0;
@@ -3083,7 +3081,7 @@ _T269:
 	__asm        test   eax, eax;
 	__asm        jne    _T29e;
 // LINE 1018:
-	__asm        jmp    _T4d7;
+	__asm        jmp    badwrite;
 // LINE 1021:
 _T29e:
 	__asm        push   0x4000;
@@ -3101,7 +3099,7 @@ _T29e:
 	__asm        test   eax, eax;
 	__asm        jne    _T2d3;
 // LINE 1022:
-	__asm        jmp    _T4d7;
+	__asm        jmp    badwrite;
 // LINE 1023:
 _T2d3:
 	__asm        push   0x1000;
@@ -3119,7 +3117,7 @@ _T2d3:
 	__asm        test   eax, eax;
 	__asm        jne    _T308;
 // LINE 1024:
-	__asm        jmp    _T4d7;
+	__asm        jmp    badwrite;
 // LINE 1025:
 _T308:
 	__asm        push   0x1000;
@@ -3137,7 +3135,7 @@ _T308:
 	__asm        test   eax, eax;
 	__asm        jne    _T33d;
 // LINE 1026:
-	__asm        jmp    _T4d7;
+	__asm        jmp    badwrite;
 // LINE 1027:
 _T33d:
 	__asm        push   0x1000;
@@ -3155,7 +3153,7 @@ _T33d:
 	__asm        test   eax, eax;
 	__asm        jne    _T372;
 // LINE 1028:
-	__asm        jmp    _T4d7;
+	__asm        jmp    badwrite;
 // LINE 1029:
 _T372:
 	__asm        push   0x1000;
@@ -3173,7 +3171,7 @@ _T372:
 	__asm        test   eax, eax;
 	__asm        jne    _T3a7;
 // LINE 1030:
-	__asm        jmp    _T4d7;
+	__asm        jmp    badwrite;
 // LINE 1031:
 _T3a7:
 	__asm        push   0x400;
@@ -3191,7 +3189,7 @@ _T3a7:
 	__asm        test   eax, eax;
 	__asm        jne    _T3dc;
 // LINE 1032:
-	__asm        jmp    _T4d7;
+	__asm        jmp    badwrite;
 // LINE 1033:
 _T3dc:
 	__asm        push   0x400;
@@ -3209,7 +3207,7 @@ _T3dc:
 	__asm        test   eax, eax;
 	__asm        jne    _T411;
 // LINE 1034:
-	__asm        jmp    _T4d7;
+	__asm        jmp    badwrite;
 // LINE 1035:
 _T411:
 	__asm        push   0x400;
@@ -3227,7 +3225,7 @@ _T411:
 	__asm        test   eax, eax;
 	__asm        jne    _T446;
 // LINE 1036:
-	__asm        jmp    _T4d7;
+	__asm        jmp    badwrite;
 // LINE 1037:
 _T446:
 	__asm        push   0x400;
@@ -3245,7 +3243,7 @@ _T446:
 	__asm        test   eax, eax;
 	__asm        jne    _T47b;
 // LINE 1038:
-	__asm        jmp    _T4d7;
+	__asm        jmp    badwrite;
 // LINE 1039:
 _T47b:
 	__asm        push   0xD00;
@@ -3263,7 +3261,7 @@ _T47b:
 	__asm        test   eax, eax;
 	__asm        jne    _T4b0;
 // LINE 1040:
-	__asm        jmp    _T4d7;
+	__asm        jmp    badwrite;
 // LINE 1043:
 _T4b0:
 	__asm        mov    eax, WriteLength;
@@ -3282,7 +3280,6 @@ _T4b0:
 	__asm        jmp    _T4eb;
 // LINE 1051:
 badwrite:
-_T4d7:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
 	__asm        call   fclose;
@@ -3858,7 +3855,7 @@ _T266:
 	__asm        test   eax, eax;
 	__asm        jne    _T2ab;
 // LINE 1263:
-	__asm        jmp    _T32d;
+	__asm        jmp    BadCompWrite;
 // LINE 1266:
 _T2ab:
 	count = 0x4;
@@ -3881,7 +3878,7 @@ _T2ab:
 	__asm        test   eax, eax;
 	__asm        jne    _T2e4;
 // LINE 1269:
-	__asm        jmp    _T32d;
+	__asm        jmp    BadCompWrite;
 // LINE 1272:
 _T2e4:
 	__asm        mov    eax, tp;
@@ -3902,7 +3899,7 @@ _T2e4:
 	__asm        test   eax, eax;
 	__asm        jne    _T316;
 // LINE 1275:
-	__asm        jmp    _T32d;
+	__asm        jmp    BadCompWrite;
 // LINE 1278:
 _T316:
 	__asm        mov    eax, ScratchPoolIndex;
@@ -3914,7 +3911,6 @@ _T316:
 	__asm        jmp    _T343;
 // LINE 1282:
 BadCompWrite:
-_T32d:
 	__asm        mov    eax, ScratchPoolIndex;
 	__asm        push   eax;
 	__asm        call   S2AllocReset;
@@ -5368,7 +5364,7 @@ short S2CityAlloc() {
 	__asm        cmp    GraphData[0], 0;
 	__asm        jne    _T2d3;
 // LINE 1812:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1813:
 _T2d3:
 	__asm        push   0x40;
@@ -5381,7 +5377,7 @@ _T2d3:
 	__asm        cmp    GraphMax, 0;
 	__asm        jne    _T2ff;
 // LINE 1814:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1815:
 _T2ff:
 	__asm        mov    i, 0;
@@ -5439,7 +5435,7 @@ _T37d:
 	__asm        cmp    AltMap[0], 0;
 	__asm        jne    _T3dc;
 // LINE 1827:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1828:
 _T3dc:
 	__asm        mov    cnt, 1;
@@ -5468,7 +5464,7 @@ _T413:
 	__asm        cmp    S_ptr1, 0;
 	__asm        jne    _T442;
 // LINE 1831:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1832:
 _T442:
 	__asm        mov    cnt, 0;
@@ -5497,7 +5493,7 @@ _T479:
 	__asm        cmp    S_ptr2, 0;
 	__asm        jne    _T4a8;
 // LINE 1835:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1836:
 _T4a8:
 	__asm        mov    cnt, 0;
@@ -5526,7 +5522,7 @@ _T4df:
 	__asm        cmp    S_ptr3, 0;
 	__asm        jne    _T50e;
 // LINE 1839:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1840:
 _T50e:
 	__asm        mov    cnt, 0;
@@ -5555,7 +5551,7 @@ _T545:
 	__asm        cmp    S_ptr4, 0;
 	__asm        jne    _T574;
 // LINE 1843:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1844:
 _T574:
 	__asm        mov    cnt, 0;
@@ -5584,7 +5580,7 @@ _T5ab:
 	__asm        cmp    S_ptr5, 0;
 	__asm        jne    _T5da;
 // LINE 1847:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1848:
 _T5da:
 	__asm        mov    cnt, 0;
@@ -5613,7 +5609,7 @@ _T611:
 	__asm        cmp    LabelArray, 0;
 	__asm        jne    _T640;
 // LINE 1851:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1852:
 _T640:
 	__asm        push   0x4B0;
@@ -5626,7 +5622,7 @@ _T640:
 	__asm        cmp    MicroRecord, 0;
 	__asm        jne    _T66f;
 // LINE 1853:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1854:
 _T66f:
 	__asm        push   0x1E0;
@@ -5639,7 +5635,7 @@ _T66f:
 	__asm        cmp    ThingList, 0;
 	__asm        jne    _T69e;
 // LINE 1855:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1857:
 _T69e:
 	z = 0x0;
@@ -5714,7 +5710,7 @@ _T76a:
 	__asm        cmp    TMap[0], 0;
 	__asm        jne    _T799;
 // LINE 1870:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1871:
 _T799:
 	__asm        push   0x4000;
@@ -5727,7 +5723,7 @@ _T799:
 	__asm        cmp    BitsMap[0], 0;
 	__asm        jne    _T7c8;
 // LINE 1872:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1873:
 _T7c8:
 	__asm        push   0x1000;
@@ -5740,7 +5736,7 @@ _T7c8:
 	__asm        cmp    TrafficMap[0], 0;
 	__asm        jne    _T7f7;
 // LINE 1874:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1875:
 _T7f7:
 	__asm        push   0x1000;
@@ -5753,7 +5749,7 @@ _T7f7:
 	__asm        cmp    PolluteMap[0], 0;
 	__asm        jne    _T826;
 // LINE 1876:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1877:
 _T826:
 	__asm        push   0x1000;
@@ -5766,7 +5762,7 @@ _T826:
 	__asm        cmp    ValueMap[0], 0;
 	__asm        jne    _T855;
 // LINE 1878:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1879:
 _T855:
 	__asm        push   0x1000;
@@ -5779,7 +5775,7 @@ _T855:
 	__asm        cmp    CrimeMap[0], 0;
 	__asm        jne    _T884;
 // LINE 1880:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1881:
 _T884:
 	__asm        push   0x400;
@@ -5792,7 +5788,7 @@ _T884:
 	__asm        cmp    PoliceMap[0], 0;
 	__asm        jne    _T8b3;
 // LINE 1882:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1883:
 _T8b3:
 	__asm        push   0x400;
@@ -5805,7 +5801,7 @@ _T8b3:
 	__asm        cmp    FireMap[0], 0;
 	__asm        jne    _T8e2;
 // LINE 1884:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1886:
 _T8e2:
 	__asm        push   0x400;
@@ -5818,7 +5814,7 @@ _T8e2:
 	__asm        cmp    PopMap[0], 0;
 	__asm        jne    _T911;
 // LINE 1887:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1888:
 _T911:
 	__asm        push   0x400;
@@ -5831,7 +5827,7 @@ _T911:
 	__asm        cmp    ROGMap[0], 0;
 	__asm        jne    _T940;
 // LINE 1889:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1890:
 _T940:
 	__asm        mov    i, 0;
@@ -5937,7 +5933,7 @@ _Ta79:
 	__asm        cmp    budgetList, 0;
 	__asm        jne    _Taa8;
 // LINE 1907:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1908:
 _Taa8:
 	__asm        push   0x20;
@@ -5950,7 +5946,7 @@ _Taa8:
 	__asm        cmp    ZonePop, 0;
 	__asm        jne    _Tad4;
 // LINE 1909:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1910:
 _Tad4:
 	__asm        push   0xC;
@@ -5963,7 +5959,7 @@ _Tad4:
 	__asm        cmp    TaxPop, 0;
 	__asm        jne    _Tb00;
 // LINE 1911:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1912:
 _Tb00:
 	__asm        push   8;
@@ -5976,7 +5972,7 @@ _Tb00:
 	__asm        cmp    NeighborName, 0;
 	__asm        jne    _Tb2c;
 // LINE 1913:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1914:
 _Tb2c:
 	__asm        push   0x10;
@@ -5989,7 +5985,7 @@ _Tb2c:
 	__asm        cmp    NeighborValue, 0;
 	__asm        jne    _Tb58;
 // LINE 1915:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1916:
 _Tb58:
 	__asm        push   0x10;
@@ -6002,7 +5998,7 @@ _Tb58:
 	__asm        cmp    NeighborPop, 0;
 	__asm        jne    _Tb84;
 // LINE 1917:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1918:
 _Tb84:
 	__asm        push   0x10;
@@ -6015,7 +6011,7 @@ _Tb84:
 	__asm        cmp    NeighborFame, 0;
 	__asm        jne    _Tbb0;
 // LINE 1919:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1920:
 _Tbb0:
 	__asm        push   0x50;
@@ -6028,7 +6024,7 @@ _Tbb0:
 	__asm        cmp    PopRatio, 0;
 	__asm        jne    _Tbdc;
 // LINE 1921:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1922:
 _Tbdc:
 	__asm        push   0x50;
@@ -6041,7 +6037,7 @@ _Tbdc:
 	__asm        cmp    EducateRatio, 0;
 	__asm        jne    _Tc08;
 // LINE 1923:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1924:
 _Tc08:
 	__asm        push   0x50;
@@ -6054,7 +6050,7 @@ _Tc08:
 	__asm        cmp    HealthRatio, 0;
 	__asm        jne    _Tc34;
 // LINE 1925:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1926:
 _Tc34:
 	__asm        push   0x16;
@@ -6067,7 +6063,7 @@ _Tc34:
 	__asm        cmp    IndDemand, 0;
 	__asm        jne    _Tc60;
 // LINE 1927:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1928:
 _Tc60:
 	__asm        push   0x16;
@@ -6080,7 +6076,7 @@ _Tc60:
 	__asm        cmp    IndRates, 0;
 	__asm        jne    _Tc8c;
 // LINE 1929:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1930:
 _Tc8c:
 	__asm        push   0x2C;
@@ -6093,7 +6089,7 @@ _Tc8c:
 	__asm        cmp    IndRatio, 0;
 	__asm        jne    _Tcb8;
 // LINE 1931:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1932:
 _Tcb8:
 	__asm        push   0x200;
@@ -6106,7 +6102,7 @@ _Tcb8:
 	__asm        cmp    TileCnt, 0;
 	__asm        jne    _Tce7;
 // LINE 1933:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1934:
 _Tce7:
 	__asm        push   0x20;
@@ -6119,7 +6115,7 @@ _Tce7:
 	__asm        cmp    MilCnt, 0;
 	__asm        jne    _Td13;
 // LINE 1935:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1936:
 _Td13:
 	__asm        push   0x800;
@@ -6132,7 +6128,7 @@ _Td13:
 	__asm        cmp    StackPts, 0;
 	__asm        jne    _Td42;
 // LINE 1937:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1938:
 _Td42:
 	__asm        push   0x21;
@@ -6145,7 +6141,7 @@ _Td42:
 	__asm        cmp    CityNameString, 0;
 	__asm        jne    _Td6e;
 // LINE 1939:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1940:
 _Td6e:
 	__asm        push   0x1E;
@@ -6158,7 +6154,7 @@ _Td6e:
 	__asm        cmp    PaperList, 0;
 	__asm        jne    _Td9a;
 // LINE 1941:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1942:
 _Td9a:
 	__asm        push   0x48;
@@ -6171,7 +6167,7 @@ _Td9a:
 	__asm        cmp    NewsList, 0;
 	__asm        jne    _Tdc6;
 // LINE 1943:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1944:
 _Tdc6:
 	__asm        push   0x12C0;
@@ -6184,14 +6180,13 @@ _Tdc6:
 	__asm        cmp    MiscInfo, 0;
 	__asm        jne    _Tdf5;
 // LINE 1945:
-	__asm        jmp    _Tdfd;
+	__asm        jmp    alloc_failure;
 // LINE 1947:
 _Tdf5:
 	__asm        xor    ax, ax;
 	__asm        jmp    _Te14;
 // LINE 1950:
 alloc_failure:
-_Tdfd:
 	__asm        mov    eax, G_citymempool;
 	__asm        push   eax;
 	__asm        call   S2AllocFreePool;

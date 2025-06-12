@@ -677,7 +677,7 @@ _T23:
 	__asm        call   dword ptr [eax+4];
 	__asm        jmp    _T280;
 
-	__asm        jmp    _T268;
+	__asm        jmp    tree_error;
 // LINE 133:
 _Ta0:
 	stackPass = 0x0;
@@ -738,6 +738,7 @@ _T118:
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _T1e9;
 // LINE 146:
+_T138:
 	__asm        push   1;
 	__asm        mov    ecx, this;
 	__asm        call   TreeSim::NodeComplete;
@@ -752,11 +753,12 @@ _T118:
 	__asm        call   dword ptr [eax+4];
 	__asm        jmp    _T27b;
 
-	__asm        jmp    _T268;
+	__asm        jmp    tree_error;
 // LINE 150:
 _T168:
 	__asm        jmp    _T214;
 // LINE 152:
+_T16d:
 	__asm        push   0;
 	__asm        mov    ecx, this;
 	__asm        call   TreeSim::NodeComplete;
@@ -771,17 +773,20 @@ _T168:
 	__asm        call   dword ptr [eax+4];
 	__asm        jmp    _T276;
 
-	__asm        jmp    _T268;
+	__asm        jmp    tree_error;
 // LINE 156:
 _T19d:
 	__asm        jmp    _T214;
 // LINE 159:
+_T1a2:
 	__asm        jmp    _T214;
 // LINE 161:
+_T1a7:
 	done = 0x1;
 // LINE 162:
 	__asm        jmp    _T214;
 // LINE 164:
+_T1b2:
 	done = 0x1;
 // LINE 165:
 	__asm        jmp    _T214;
@@ -806,7 +811,12 @@ _T1e9:
 
 	__asm        mov    eax, [ebp-0x24];
 	__asm        jmp    _Switch_200[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T1b2
+//   _T16d
+//   _T138
+//   _T1a7
+//   _T1a2
 // LINE 173:
 _T214:
 	__asm        mov    eax, this;
@@ -821,7 +831,7 @@ _T214:
 	__asm        call   dword ptr [eax+4];
 	__asm        jmp    _T271;
 
-	__asm        jmp    _T268;
+	__asm        jmp    tree_error;
 // LINE 177:
 _T240:
 	__asm        test   reinterpret_cast<uint32_t>(done), 0xFFFF;
@@ -838,18 +848,17 @@ _T263:
 	__asm        jmp    _T285;
 // LINE 188:
 tree_error:
-_T268:
 	__asm        mov    ax, 1;
 	__asm        jmp    _T285;
 // LINE 190:
 _T271:
-	__asm        jmp    _T268;
+	__asm        jmp    tree_error;
 _T276:
-	__asm        jmp    _T268;
+	__asm        jmp    tree_error;
 _T27b:
-	__asm        jmp    _T268;
+	__asm        jmp    tree_error;
 _T280:
-	__asm        jmp    _T268;
+	__asm        jmp    tree_error;
 _T285:
 }
 
@@ -879,7 +888,7 @@ _T12:
 	__asm        call   dword ptr [eax+4];
 	__asm        jmp    _T12e;
 
-	__asm        jmp    _T127;
+	__asm        jmp    tree_error;
 // LINE 209:
 _T49:
 	__asm        mov    eax, this;
@@ -958,12 +967,11 @@ _T11f:
 	__asm        jmp    _T133;
 // LINE 231:
 tree_error:
-_T127:
 	__asm        mov    al, 0xFD;
 	__asm        jmp    _T133;
 // LINE 233:
 _T12e:
-	__asm        jmp    _T127;
+	__asm        jmp    tree_error;
 _T133:
 }
 

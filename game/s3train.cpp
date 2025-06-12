@@ -3040,6 +3040,7 @@ void TrainClass::SetTrainDirection(unsigned short tileType) {
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    _T859;
 // LINE 1730:
+_T3c:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        test   al, 1;
@@ -3059,6 +3060,7 @@ _T61:
 _T71:
 	__asm        jmp    _T93e;
 // LINE 1744:
+_T76:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        test   al, 1;
@@ -3078,6 +3080,7 @@ _T9b:
 _Tab:
 	__asm        jmp    _T93e;
 // LINE 1758:
+_Tb0:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        test   al, 1;
@@ -3097,6 +3100,7 @@ _Td5:
 _Te5:
 	__asm        jmp    _T93e;
 // LINE 1772:
+_Tea:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        test   al, 1;
@@ -3116,6 +3120,7 @@ _T10f:
 _T11f:
 	__asm        jmp    _T93e;
 // LINE 1786:
+_T124:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        test   al, 1;
@@ -3135,6 +3140,7 @@ _T149:
 _T159:
 	__asm        jmp    _T93e;
 // LINE 1800:
+_T15e:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        test   al, 1;
@@ -3154,6 +3160,7 @@ _T183:
 _T193:
 	__asm        jmp    _T93e;
 // LINE 1814:
+_T198:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        test   al, 1;
@@ -3173,6 +3180,7 @@ _T1bd:
 _T1cd:
 	__asm        jmp    _T93e;
 // LINE 1828:
+_T1d2:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        test   al, 1;
@@ -3192,6 +3200,7 @@ _T1f7:
 _T207:
 	__asm        jmp    _T93e;
 // LINE 1842:
+_T20c:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        test   al, 1;
@@ -3211,6 +3220,7 @@ _T231:
 _T241:
 	__asm        jmp    _T93e;
 // LINE 1856:
+_T246:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        test   al, 1;
@@ -3230,6 +3240,7 @@ _T26b:
 _T27b:
 	__asm        jmp    _T93e;
 // LINE 1870:
+_T280:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        test   al, 1;
@@ -3249,6 +3260,7 @@ _T2a5:
 _T2b5:
 	__asm        jmp    _T93e;
 // LINE 1884:
+_T2ba:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        test   al, 1;
@@ -3268,6 +3280,7 @@ _T2df:
 _T2ef:
 	__asm        jmp    _T93e;
 // LINE 1898:
+_T2f4:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        test   al, 1;
@@ -3287,6 +3300,7 @@ _T319:
 _T329:
 	__asm        jmp    _T93e;
 // LINE 1912:
+_T32e:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        test   al, 1;
@@ -3306,6 +3320,7 @@ _T353:
 _T363:
 	__asm        jmp    _T93e;
 // LINE 1926:
+_T368:
 	__asm        call   rand;
 	__asm        mov    ecx, 3;
 	__asm        movsx  eax, ax;
@@ -3351,6 +3366,7 @@ _T3c4:
 _T3e7:
 	__asm        jmp    _T93e;
 // LINE 1945:
+_T3ec:
 	__asm        call   rand;
 	__asm        mov    ecx, 3;
 	__asm        movsx  eax, ax;
@@ -3396,6 +3412,7 @@ _T448:
 _T46b:
 	__asm        jmp    _T93e;
 // LINE 1964:
+_T470:
 	__asm        call   rand;
 	__asm        mov    ecx, 3;
 	__asm        movsx  eax, ax;
@@ -3441,6 +3458,7 @@ _T4cc:
 _T4ef:
 	__asm        jmp    _T93e;
 // LINE 1983:
+_T4f4:
 	__asm        call   rand;
 	__asm        mov    ecx, 3;
 	__asm        movsx  eax, ax;
@@ -3486,30 +3504,35 @@ _T550:
 _T573:
 	__asm        jmp    _T93e;
 // LINE 2002:
+_T578:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        and    eax, 3;
 	__asm        mov    [ebp-0x24], eax;
 	__asm        jmp    _T5e4;
 // LINE 2005:
+_T58b:
 	this->direction = 0x1;
 // LINE 2006:
 	this->nextLocation.y--;
 // LINE 2007:
 	__asm        jmp    _T608;
 // LINE 2009:
+_T5a0:
 	this->direction = 0x4;
 // LINE 2010:
 	this->nextLocation.y++;
 // LINE 2011:
 	__asm        jmp    _T608;
 // LINE 2013:
+_T5b5:
 	this->direction = 0x8;
 // LINE 2014:
 	this->nextLocation.x--;
 // LINE 2015:
 	__asm        jmp    _T608;
 // LINE 2017:
+_T5ca:
 	this->direction = 0x2;
 // LINE 2018:
 	this->nextLocation.x++;
@@ -3523,11 +3546,16 @@ _T5e4:
 
 	__asm        mov    eax, [ebp-0x24];
 	__asm        jmp    _Switch_5f8[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T58b
+//   _T5a0
+//   _T5b5
+//   _T5ca
 // LINE 2021:
 _T608:
 	__asm        jmp    _T93e;
 // LINE 2026:
+_T60d:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0x35], 1;
 	__asm        jne    _T62f;
@@ -3546,6 +3574,7 @@ _T62f:
 _T63f:
 	__asm        jmp    _T93e;
 // LINE 2041:
+_T644:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0x39], 1;
 	__asm        jne    _T666;
@@ -3564,6 +3593,7 @@ _T666:
 _T676:
 	__asm        jmp    _T93e;
 // LINE 2056:
+_T67b:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0x35], 1;
 	__asm        jne    _T69d;
@@ -3582,6 +3612,7 @@ _T69d:
 _T6ad:
 	__asm        jmp    _T93e;
 // LINE 2071:
+_T6b2:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0x39], 1;
 	__asm        jne    _T6d4;
@@ -3600,6 +3631,7 @@ _T6d4:
 _T6e4:
 	__asm        jmp    _T93e;
 // LINE 2086:
+_T6e9:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0x35], 1;
 	__asm        jne    _T70b;
@@ -3618,6 +3650,7 @@ _T70b:
 _T71b:
 	__asm        jmp    _T93e;
 // LINE 2101:
+_T720:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0x39], 1;
 	__asm        jne    _T742;
@@ -3636,6 +3669,7 @@ _T742:
 _T752:
 	__asm        jmp    _T93e;
 // LINE 2116:
+_T757:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0x35], 1;
 	__asm        jne    _T779;
@@ -3673,6 +3707,7 @@ _T7b0:
 _T7c0:
 	__asm        jmp    _T93e;
 // LINE 2146:
+_T7c5:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0x35], 1;
 	__asm        jne    _T7e7;
@@ -3736,8 +3771,39 @@ _T859:
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, _SwitchTable_8fc[0][eax];
 	__asm        jmp    _Switch_88c[0][ecx*4];
-// Switch pointers
+// Switch pointers:
+//   _T124
+//   _T15e
+//   _T20c
+//   _T1d2
+//   _T246
+//   _T198
+//   _T3c
+//   _T76
+//   _Tb0
+//   _Tea
+//   _T368
+//   _T3ec
+//   _T470
+//   _T4f4
+//   _T578
+//   _T2f4
+//   _T2ba
+//   _T32e
+//   _T280
+//   _T6b2
+//   _T67b
+//   _T6e9
+//   _T720
+//   _T644
+//   _T60d
+//   _T757
+//   _T7c5
+//   _T833
 // Switch table
+_T92c:
+	__asm        cmp    dword ptr [ebp-0x10], 0x805B;
+	__asm        je     _T7fc;
 
 	__asm        jmp    _T833;
 // LINE 2179:
@@ -3852,6 +3918,7 @@ _Ta73:
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        jmp    _T128c;
 // LINE 2188:
+_Ta99:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x11], 6;
 	__asm        jne    _Tabb;
@@ -3870,6 +3937,7 @@ _Tabb:
 _Tacb:
 	__asm        jmp    _T1371;
 // LINE 2202:
+_Tad0:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x11], 0xC;
 	__asm        jne    _Taf2;
@@ -3888,6 +3956,7 @@ _Taf2:
 _Tb02:
 	__asm        jmp    _T1371;
 // LINE 2216:
+_Tb07:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x11], 6;
 	__asm        jne    _Tb29;
@@ -3906,6 +3975,7 @@ _Tb29:
 _Tb39:
 	__asm        jmp    _T1371;
 // LINE 2230:
+_Tb3e:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x11], 0xC;
 	__asm        jne    _Tb60;
@@ -3924,6 +3994,7 @@ _Tb60:
 _Tb70:
 	__asm        jmp    _T1371;
 // LINE 2244:
+_Tb75:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x11], 1;
 	__asm        jne    _Tb97;
@@ -3942,6 +4013,7 @@ _Tb97:
 _Tba7:
 	__asm        jmp    _T1371;
 // LINE 2258:
+_Tbac:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x11], 2;
 	__asm        jne    _Tbce;
@@ -3960,6 +4032,7 @@ _Tbce:
 _Tbde:
 	__asm        jmp    _T1371;
 // LINE 2272:
+_Tbe3:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x11], 0x14;
 	__asm        jne    _Tc05;
@@ -3978,6 +4051,7 @@ _Tc05:
 _Tc15:
 	__asm        jmp    _T1371;
 // LINE 2286:
+_Tc1a:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x11], 4;
 	__asm        jne    _Tc3c;
@@ -3996,6 +4070,7 @@ _Tc3c:
 _Tc4c:
 	__asm        jmp    _T1371;
 // LINE 2300:
+_Tc51:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x11], 2;
 	__asm        jne    _Tc73;
@@ -4014,6 +4089,7 @@ _Tc73:
 _Tc83:
 	__asm        jmp    _T1371;
 // LINE 2314:
+_Tc88:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x11], 0x18;
 	__asm        jne    _Tcaa;
@@ -4032,6 +4108,7 @@ _Tcaa:
 _Tcba:
 	__asm        jmp    _T1371;
 // LINE 2328:
+_Tcbf:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x11], 0x14;
 	__asm        jne    _Tce1;
@@ -4050,6 +4127,7 @@ _Tce1:
 _Tcf1:
 	__asm        jmp    _T1371;
 // LINE 2342:
+_Tcf6:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x11], 4;
 	__asm        jne    _Td18;
@@ -4068,6 +4146,7 @@ _Td18:
 _Td28:
 	__asm        jmp    _T1371;
 // LINE 2356:
+_Td2d:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x11], 2;
 	__asm        jne    _Td4f;
@@ -4086,6 +4165,7 @@ _Td4f:
 _Td5f:
 	__asm        jmp    _T1371;
 // LINE 2370:
+_Td64:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x11], 0x18;
 	__asm        jne    _Td86;
@@ -4104,6 +4184,7 @@ _Td86:
 _Td96:
 	__asm        jmp    _T1371;
 // LINE 2384:
+_Td9b:
 	__asm        call   rand;
 	__asm        mov    ecx, 3;
 	__asm        movsx  eax, ax;
@@ -4149,6 +4230,7 @@ _Tdf7:
 _Te1a:
 	__asm        jmp    _T1371;
 // LINE 2403:
+_Te1f:
 	__asm        call   rand;
 	__asm        mov    ecx, 3;
 	__asm        movsx  eax, ax;
@@ -4194,6 +4276,7 @@ _Te7b:
 _Te9e:
 	__asm        jmp    _T1371;
 // LINE 2422:
+_Tea3:
 	__asm        call   rand;
 	__asm        mov    ecx, 3;
 	__asm        movsx  eax, ax;
@@ -4239,6 +4322,7 @@ _Teff:
 _Tf22:
 	__asm        jmp    _T1371;
 // LINE 2441:
+_Tf27:
 	__asm        call   rand;
 	__asm        mov    ecx, 3;
 	__asm        movsx  eax, ax;
@@ -4284,30 +4368,35 @@ _Tf83:
 _Tfa6:
 	__asm        jmp    _T1371;
 // LINE 2460:
+_Tfab:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        and    eax, 3;
 	__asm        mov    [ebp-0x40], eax;
 	__asm        jmp    _T1017;
 // LINE 2463:
+_Tfbe:
 	this->direction = 0x1;
 // LINE 2464:
 	this->nextLocation.y--;
 // LINE 2465:
 	__asm        jmp    _T103b;
 // LINE 2467:
+_Tfd3:
 	this->direction = 0x4;
 // LINE 2468:
 	this->nextLocation.y++;
 // LINE 2469:
 	__asm        jmp    _T103b;
 // LINE 2471:
+_Tfe8:
 	this->direction = 0x8;
 // LINE 2472:
 	this->nextLocation.x--;
 // LINE 2473:
 	__asm        jmp    _T103b;
 // LINE 2475:
+_Tffd:
 	this->direction = 0x2;
 // LINE 2476:
 	this->nextLocation.x++;
@@ -4321,11 +4410,16 @@ _T1017:
 
 	__asm        mov    eax, [ebp-0x40];
 	__asm        jmp    _Switch_102b[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _Tfbe
+//   _Tfd3
+//   _Tfe8
+//   _Tffd
 // LINE 2479:
 _T103b:
 	__asm        jmp    _T1371;
 // LINE 2484:
+_T1040:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0x35], 1;
 	__asm        jne    _T1062;
@@ -4363,6 +4457,7 @@ _T1099:
 _T10a9:
 	__asm        jmp    _T1371;
 // LINE 2514:
+_T10ae:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0x35], 1;
 	__asm        jne    _T10d0;
@@ -4400,6 +4495,7 @@ _T1107:
 _T1117:
 	__asm        jmp    _T1371;
 // LINE 2544:
+_T111c:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0x35], 1;
 	__asm        jne    _T113e;
@@ -4418,6 +4514,7 @@ _T113e:
 _T114e:
 	__asm        jmp    _T1371;
 // LINE 2559:
+_T1153:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0x39], 1;
 	__asm        jne    _T1175;
@@ -4436,6 +4533,7 @@ _T1175:
 _T1185:
 	__asm        jmp    _T1371;
 // LINE 2574:
+_T118a:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0x35], 1;
 	__asm        jne    _T11ac;
@@ -4454,6 +4552,7 @@ _T11ac:
 _T11bc:
 	__asm        jmp    _T1371;
 // LINE 2589:
+_T11c1:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0x39], 1;
 	__asm        jne    _T11e3;
@@ -4472,6 +4571,7 @@ _T11e3:
 _T11f3:
 	__asm        jmp    _T1371;
 // LINE 2604:
+_T11f8:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0x35], 1;
 	__asm        jne    _T121a;
@@ -4490,6 +4590,7 @@ _T121a:
 _T122a:
 	__asm        jmp    _T1371;
 // LINE 2619:
+_T122f:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0x39], 1;
 	__asm        jne    _T1251;
@@ -4534,8 +4635,39 @@ _T128c:
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, _SwitchTable_132f[0][eax];
 	__asm        jmp    _Switch_12bf[0][ecx*4];
-// Switch pointers
+// Switch pointers:
+//   _Tb75
+//   _Tbac
+//   _Tc51
+//   _Tc1a
+//   _Tc88
+//   _Tbe3
+//   _Ta99
+//   _Tad0
+//   _Tb07
+//   _Tb3e
+//   _Td9b
+//   _Te1f
+//   _Tea3
+//   _Tf27
+//   _Tfab
+//   _Td2d
+//   _Tcf6
+//   _Td64
+//   _Tcbf
+//   _T1153
+//   _T111c
+//   _T11f8
+//   _T122f
+//   _T11c1
+//   _T118a
+//   _T1040
+//   _T10ae
+//   _T1266
 // Switch table
+_T135f:
+	__asm        cmp    dword ptr [ebp-0x2C], 0x805B;
+	__asm        je     _T10e5;
 
 	__asm        jmp    _T1266;
 // LINE 2638:
@@ -6025,26 +6157,31 @@ void TrainClass::MakeATurn(enum TrainClass::IntersectionTypes intersectionType) 
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _T181;
 // LINE 3143:
+_T17:
 	__asm        mov    ecx, this;
 	__asm        call   TrainClass::MakeUturn;
 // LINE 3145:
 	__asm        jmp    _T1b5;
 // LINE 3155:
+_T24:
 	__asm        mov    ecx, this;
 	__asm        call   TrainClass::GoStraight;
 // LINE 3157:
 	__asm        jmp    _T1b5;
 // LINE 3161:
+_T31:
 	__asm        mov    ecx, this;
 	__asm        call   TrainClass::TurnLeft;
 // LINE 3163:
 	__asm        jmp    _T1b5;
 // LINE 3167:
+_T3e:
 	__asm        mov    ecx, this;
 	__asm        call   TrainClass::TurnRight;
 // LINE 3169:
 	__asm        jmp    _T1b5;
 // LINE 3173:
+_T4b:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        test   al, 1;
@@ -6062,6 +6199,7 @@ _T68:
 _T70:
 	__asm        jmp    _T1b5;
 // LINE 3186:
+_T75:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        test   al, 1;
@@ -6079,6 +6217,7 @@ _T92:
 _T9a:
 	__asm        jmp    _T1b5;
 // LINE 3199:
+_T9f:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
 	__asm        test   al, 1;
@@ -6096,6 +6235,7 @@ _Tbc:
 _Tc4:
 	__asm        jmp    _T1b5;
 // LINE 3212:
+_Tc9:
 	__asm        call   rand;
 	__asm        mov    ecx, 3;
 	__asm        movsx  eax, ax;
@@ -6165,7 +6305,15 @@ _T181:
 
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    _Switch_195[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T17
+//   _T24
+//   _T31
+//   _T4b
+//   _T3e
+//   _T9f
+//   _T75
+//   _Tc9
 // LINE 3229:
 _T1b5:
 	__asm        jmp    near ptr 0x00532142;
@@ -7342,6 +7490,7 @@ _T47b:
 	__asm        mov    [ebp-0x44], eax;
 	__asm        jmp    _T50f;
 // LINE 3586:
+_T495:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0x11], 1;
 	__asm        je     _T4a9;
@@ -7351,6 +7500,7 @@ _T47b:
 _T4a9:
 	__asm        jmp    _T56a;
 // LINE 3590:
+_T4ae:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0x11], 4;
 	__asm        je     _T4c2;
@@ -7360,6 +7510,7 @@ _T4a9:
 _T4c2:
 	__asm        jmp    _T56a;
 // LINE 3594:
+_T4c7:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0x11], 2;
 	__asm        je     _T4db;
@@ -7369,6 +7520,7 @@ _T4c2:
 _T4db:
 	__asm        jmp    _T56a;
 // LINE 3598:
+_T4e0:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+0x11], 8;
 	__asm        je     _T4f4;
@@ -7399,7 +7551,19 @@ _T50f:
 
 	__asm        mov    eax, [ebp-0x44];
 	__asm        jmp    _Switch_53b[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T4c7
+//   _T4ae
+//   _T4e0
+//   _T495
+_T54b:
+	__asm        cmp    dword ptr [ebp-0x44], 0x805A;
+	__asm        jl     _T56a;
+
+	__asm        cmp    dword ptr [ebp-0x44], 0x805B;
+	__asm        jle    _T4f9;
+
+	__asm        jmp    _T56a;
 // LINE 3624:
 _T56a:
 	__asm        mov    eax, nextFineLocation.x;
@@ -7943,6 +8107,7 @@ _T197:
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        jmp    _T203;
 // LINE 3880:
+_T1a5:
 	curr_dir = 0x0;
 // LINE 3881:
 	curr_dist++;
@@ -7953,12 +8118,14 @@ _T197:
 // LINE 3884:
 	__asm        jmp    _T22b;
 // LINE 3886:
+_T1c2:
 	xdir = 0x1;
 // LINE 3887:
 	ydir = 0x0;
 // LINE 3888:
 	__asm        jmp    _T22b;
 // LINE 3890:
+_T1d5:
 	curr_dist++;
 // LINE 3891:
 	xdir = 0x0;
@@ -7967,6 +8134,7 @@ _T197:
 // LINE 3893:
 	__asm        jmp    _T22b;
 // LINE 3895:
+_T1eb:
 	xdir = 0xffffffff;
 // LINE 3896:
 	ydir = 0x0;
@@ -7980,7 +8148,12 @@ _T203:
 
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        jmp    _Switch_217[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T1a5
+//   _T1c2
+//   _T1d5
+//   _T1eb
+//   _T1a5
 // LINE 3902:
 _T22b:
 	__asm        mov    eax, curr_dist;
@@ -8137,7 +8310,7 @@ _T401:
 
 	__asm        jmp    _T584;
 
-	__asm        jmp    _T43f;
+	__asm        jmp    foundCell;
 // LINE 3924:
 _T415:
 	x += xdir;
@@ -8160,7 +8333,6 @@ _T43a:
 	__asm        jmp    _T589;
 // LINE 3941:
 foundCell:
-_T43f:
 	this->stalledTimer = 0x0;
 // LINE 3942:
 	this->direction = 0x0;
@@ -8260,7 +8432,7 @@ _T551:
 // LINE 3969:
 	__asm        jmp    _T589;
 _T584:
-	__asm        jmp    _T43f;
+	__asm        jmp    foundCell;
 _T589:
 }
 
@@ -8350,6 +8522,7 @@ _T3b:
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        jmp    _Ta7;
 // LINE 4044:
+_T49:
 	curr_dir = 0x0;
 // LINE 4045:
 	curr_dist++;
@@ -8360,12 +8533,14 @@ _T3b:
 // LINE 4048:
 	__asm        jmp    _Tcf;
 // LINE 4050:
+_T66:
 	xdir = 0x1;
 // LINE 4051:
 	ydir = 0x0;
 // LINE 4052:
 	__asm        jmp    _Tcf;
 // LINE 4054:
+_T79:
 	curr_dist++;
 // LINE 4055:
 	xdir = 0x0;
@@ -8374,6 +8549,7 @@ _T3b:
 // LINE 4057:
 	__asm        jmp    _Tcf;
 // LINE 4059:
+_T8f:
 	xdir = 0xffffffff;
 // LINE 4060:
 	ydir = 0x0;
@@ -8387,7 +8563,12 @@ _Ta7:
 
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        jmp    _Switch_bb[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T49
+//   _T66
+//   _T79
+//   _T8f
+//   _T49
 // LINE 4066:
 _Tcf:
 	__asm        mov    eax, spiral_dist;
@@ -8544,7 +8725,7 @@ _T2a5:
 
 	__asm        jmp    _T42f;
 
-	__asm        jmp    _T2e5;
+	__asm        jmp    foundCell;
 // LINE 4088:
 _T2b9:
 	x += xdir;
@@ -8568,7 +8749,6 @@ _T2de:
 	__asm        jmp    _T434;
 // LINE 4106:
 foundCell:
-_T2e5:
 	this->stalledTimer = 0x0;
 // LINE 4107:
 	this->direction = 0x0;
@@ -8670,7 +8850,7 @@ _T3f7:
 	__asm        jmp    _T434;
 // LINE 4136:
 _T42f:
-	__asm        jmp    _T2e5;
+	__asm        jmp    foundCell;
 _T434:
 }
 

@@ -545,6 +545,7 @@ _T194:
 	__asm        mov    [ebp-0x128], eax;
 	__asm        jmp    _T211;
 // LINE 85:
+_T1a5:
 	__asm        mov    eax, mm;
 	__asm        push   eax;
 	__asm        mov    eax, hh;
@@ -557,6 +558,7 @@ _T194:
 // LINE 86:
 	__asm        jmp    _T29f;
 // LINE 96:
+_T1c9:
 	__asm        mov    eax, mm;
 	__asm        push   eax;
 	__asm        mov    eax, hh;
@@ -590,7 +592,23 @@ _T211:
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, _SwitchTable_27a[0][eax];
 	__asm        jmp    _Switch_23a[0][ecx*4];
-// Switch pointers
+// Switch pointers:
+//   _T1a5
+//   _T1c9
+//   _T1a5
+//   _T1c9
+//   _T1a5
+//   _T1c9
+//   _T1a5
+//   _T1a5
+//   _T1a5
+//   _T1c9
+//   _T1a5
+//   _T1c9
+//   _T1a5
+//   _T1c9
+//   _T1a5
+//   _T1ed
 // Switch table
 // LINE 104:
 _T29f:
@@ -1119,6 +1137,7 @@ _T24:
 	__asm        mov    [ebp-0x58], eax;
 	__asm        jmp    _T155;
 // LINE 340:
+_T2f:
 	__asm        mov    ecx, d;
 	__asm        call   MDate::YearLastTwoDigits;
 	__asm        push   eax;
@@ -1136,6 +1155,7 @@ _T24:
 // LINE 341:
 	__asm        jmp    _T1e0;
 // LINE 356:
+_T60:
 	__asm        mov    ecx, d;
 	__asm        call   MDate::YearLastTwoDigits;
 	__asm        push   eax;
@@ -1153,6 +1173,7 @@ _T24:
 // LINE 357:
 	__asm        jmp    _T1e0;
 // LINE 366:
+_T91:
 	__asm        mov    ecx, d;
 	__asm        call   MDate::YearLastTwoDigits;
 	__asm        push   eax;
@@ -1170,6 +1191,7 @@ _T24:
 // LINE 367:
 	__asm        jmp    _T1e0;
 // LINE 382:
+_Tc2:
 	__asm        mov    ecx, d;
 	__asm        call   MDate::YearLastTwoDigits;
 	__asm        push   eax;
@@ -1187,6 +1209,7 @@ _T24:
 // LINE 383:
 	__asm        jmp    _T1e0;
 // LINE 393:
+_Tf3:
 	__asm        mov    ecx, d;
 	__asm        call   MDate::DayOfMonth;
 	__asm        push   eax;
@@ -1228,9 +1251,26 @@ _T155:
 
 	__asm        mov    eax, [ebp-0x58];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, _Switch_174[68][eax];
+	__asm        mov    cl, _SwitchTable_1b8[0][eax];
 	__asm        jmp    _Switch_174[0][ecx*4];
-// Switch pointers
+// Switch pointers:
+//   _T2f
+//   _T60
+//   _Tc2
+//   _T60
+//   _T91
+//   _Tf3
+//   _T91
+//   _Tf3
+//   _T60
+//   _Tc2
+//   _Tc2
+//   _Tf3
+//   _Tc2
+//   _T60
+//   _Tc2
+//   _T60
+//   _T124
 // Switch table
 // LINE 403:
 _T1e0:

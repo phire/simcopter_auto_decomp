@@ -809,6 +809,7 @@ void PoliceCarClass::ItterateFSM() {
 	__asm        mov    [ebp-0x48], eax;
 	__asm        jmp    _T940;
 // LINE 253:
+_T2a:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xFE], 0;
 	__asm        jle    _T4d;
@@ -916,6 +917,7 @@ _Td4:
 _T18f:
 	__asm        jmp    _T96f;
 // LINE 295:
+_T194:
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::TurnOffStrobe;
 // LINE 298:
@@ -960,6 +962,7 @@ _T204:
 // LINE 309:
 	__asm        jmp    _T96f;
 // LINE 312:
+_T211:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 0x10;
 	__asm        je     _T22b;
@@ -1211,6 +1214,7 @@ _T530:
 _T538:
 	__asm        jmp    _T96f;
 // LINE 396:
+_T53d:
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::PositionIcon;
 // LINE 399:
@@ -1370,6 +1374,7 @@ _T71a:
 _T72a:
 	__asm        jmp    _T96f;
 // LINE 466:
+_T72f:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 0x20;
 	__asm        jne    _T749;
@@ -1460,6 +1465,7 @@ _T847:
 _T854:
 	__asm        jmp    _T96f;
 // LINE 509:
+_T859:
 	reinterpret_cast<uint16_t>(badGuyLoc.x) = reinterpret_cast<uint16_t>(this->goal.gridLoc.x);
 // LINE 510:
 	__asm        lea    eax, badGuyLoc.x;
@@ -1542,7 +1548,13 @@ _T940:
 
 	__asm        mov    eax, [ebp-0x48];
 	__asm        jmp    _Switch_957[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T2a
+//   _T194
+//   _T211
+//   _T53d
+//   _T72f
+//   _T859
 // LINE 535:
 _T96f:
 	__asm        jmp    _T974;

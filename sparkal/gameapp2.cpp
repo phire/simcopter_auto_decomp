@@ -1031,6 +1031,7 @@ void  CGameApp::ComposeFrame() {
 // LINE 277:
 // Block start:
 	/*bp-0x118*/ char szPath[260]; // 0x104 bytes
+_T8d:
 	__asm        lea    eax, szPath[0];
 	__asm        push   eax;
 	__asm        mov    eax, SZ_SMACKER_INTRO_FILE_NAME;
@@ -1162,6 +1163,7 @@ _T27c:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x68];
 // LINE 297:
+_T2a2:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x42C0], 0;
 	__asm        je     _T2da;
@@ -1191,6 +1193,7 @@ _T2da:
 _T300:
 	__asm        jmp    _T582;
 // LINE 305:
+_T305:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x88], 1;
 	__asm        jne    _T328;
@@ -1210,9 +1213,11 @@ _T328:
 _T33d:
 	__asm        jmp    _T582;
 // LINE 312:
+_T342:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::ComposeMainMenuVideoFrame;
 // LINE 318:
+_T34d:
 	__asm        push   0x1E;
 	__asm        call   SparkalDelay;
 	__asm        add    esp, 4;
@@ -1229,6 +1234,7 @@ _T33d:
 // LINE 324:
 	__asm        jmp    _T582;
 // LINE 327:
+_T37b:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB4], 0;
 	__asm        jne    _T4bc;
@@ -1245,7 +1251,7 @@ _T33d:
 	__asm        mov    eax, [eax+0x3C];
 	__asm        add    ecx, 0x3C;
 	__asm        call   dword ptr [eax+0x24];
-	__asm        jmp    _T4b0;
+	__asm        jmp    _L56471;
 // LINE 345:
 _L64109:
 	this-><CGameApp+0xb4:4> = 0x2;
@@ -1315,7 +1321,6 @@ _T47c:
 // LINE 363:
 _L56471:
 _L56471:
-_T4b0:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 // LINE 364:
 	__asm        jmp    _T4fe;
@@ -1342,6 +1347,7 @@ _T4e9:
 _T4fe:
 	__asm        jmp    _T582;
 // LINE 375:
+_T503:
 	this-><CGameApp+0x36b8:4> = 0x1;
 // LINE 376:
 	__asm        mov    eax, this;
@@ -1363,7 +1369,18 @@ _T536:
 
 	__asm        mov    eax, [ebp-0x24C];
 	__asm        jmp    _Switch_556[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T503
+//   _T8d
+//   _T2a2
+//   _T342
+//   _T305
+//   _T37b
+//   _T34d
+//   _T34d
+//   _T34d
+//   _T582
+//   _T34d
 // LINE 385:
 _T582:
 	__asm        mov    eax, this;
@@ -3594,6 +3611,7 @@ _Tdb:
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    _T16d;
 // LINE 763:
+_Tf4:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x58;
 	__asm        call   GameModeMainMenuData::DestroyAllSurfaces;
@@ -3601,30 +3619,35 @@ _Tdb:
 // LINE 764:
 	__asm        jmp    _T1a5;
 // LINE 766:
+_T109:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xA0;
 	__asm        call   GameModePlayData::Shutdown;
 // LINE 767:
 	__asm        jmp    _T1a5;
 // LINE 769:
+_T11c:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xBB8;
 	__asm        call   GameModeHangarData::Shutdown;
 // LINE 770:
 	__asm        jmp    _T1a5;
 // LINE 772:
+_T12f:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x1678;
 	__asm        call   GameModeCatalogData::Shutdown;
 // LINE 773:
 	__asm        jmp    _T1a5;
 // LINE 775:
+_T142:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x2138;
 	__asm        call   GameModeMissionLogData::Shutdown;
 // LINE 776:
 	__asm        jmp    _T1a5;
 // LINE 778:
+_T155:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x2BF8;
 	__asm        call   GameModeInventoryData::Shutdown;
@@ -3639,7 +3662,15 @@ _T16d:
 
 	__asm        mov    eax, [ebp-0x34];
 	__asm        jmp    _Switch_185[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _Tf4
+//   _T1a5
+//   _T109
+//   _T11c
+//   _T12f
+//   _T142
+//   _T1a5
+//   _T155
 // LINE 781:
 _T1a5:
 	__asm        mov    eax, i.node;

@@ -248,7 +248,7 @@ _T48:
 
 	__asm        jmp    _T335;
 
-	__asm        jmp    _T2cf;
+	__asm        jmp    error;
 // LINE 110:
 _T69:
 	__asm        lea    eax, res1Off;
@@ -261,7 +261,7 @@ _T69:
 
 	__asm        jmp    _T330;
 
-	__asm        jmp    _T2cf;
+	__asm        jmp    error;
 // LINE 111:
 _T8c:
 	__asm        cmp    res1Off, 0x100;
@@ -285,7 +285,7 @@ _Tb2:
 
 	__asm        jmp    _T32b;
 
-	__asm        jmp    _T2cf;
+	__asm        jmp    error;
 // LINE 114:
 _Td5:
 	__asm        mov    eax, res1Off;
@@ -313,7 +313,7 @@ _T107:
 
 	__asm        jmp    _T326;
 
-	__asm        jmp    _T2cf;
+	__asm        jmp    error;
 // LINE 117:
 _T12a:
 	__asm        mov    eax, mapLoc;
@@ -340,7 +340,7 @@ _T156:
 
 	__asm        jmp    _T321;
 
-	__asm        jmp    _T2cf;
+	__asm        jmp    error;
 // LINE 120:
 _T179:
 	__asm        cmp    mapSize, 0;
@@ -367,7 +367,7 @@ _T1a9:
 
 	__asm        jmp    _T31c;
 
-	__asm        jmp    _T2cf;
+	__asm        jmp    error;
 // LINE 124:
 _T1cc:
 	__asm        lea    eax, miscSize;
@@ -382,7 +382,7 @@ _T1cc:
 
 	__asm        jmp    _T317;
 
-	__asm        jmp    _T2cf;
+	__asm        jmp    error;
 // LINE 125:
 _T1f3:
 	mapSize -= 0x1c;
@@ -399,7 +399,7 @@ _T1f3:
 
 	__asm        jmp    _T312;
 
-	__asm        jmp    _T2cf;
+	__asm        jmp    error;
 // LINE 131:
 _T222:
 	numTypes[0]++;
@@ -421,7 +421,7 @@ _T222:
 
 	__asm        jmp    _T30d;
 
-	__asm        jmp    _T2cf;
+	__asm        jmp    error;
 // LINE 136:
 _T25b:
 	__asm        mov    eax, newMap;
@@ -438,7 +438,7 @@ _T25b:
 
 	__asm        jmp    _T308;
 
-	__asm        jmp    _T2cf;
+	__asm        jmp    error;
 // LINE 139:
 _T288:
 	__asm        lea    eax, mapSize;
@@ -453,7 +453,7 @@ _T288:
 
 	__asm        jmp    _T303;
 
-	__asm        jmp    _T2cf;
+	__asm        jmp    error;
 // LINE 141:
 _T2af:
 	__asm        mov    eax, newMap;
@@ -468,7 +468,6 @@ _T2af:
 	__asm        jmp    _T33a;
 // LINE 147:
 error:
-_T2cf:
 	__asm        mov    eax, newMap;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T2f2;
@@ -486,27 +485,27 @@ _T2f2:
 // LINE 153:
 	__asm        jmp    _T33a;
 _T303:
-	__asm        jmp    _T2cf;
+	__asm        jmp    error;
 _T308:
-	__asm        jmp    _T2cf;
+	__asm        jmp    error;
 _T30d:
-	__asm        jmp    _T2cf;
+	__asm        jmp    error;
 _T312:
-	__asm        jmp    _T2cf;
+	__asm        jmp    error;
 _T317:
-	__asm        jmp    _T2cf;
+	__asm        jmp    error;
 _T31c:
-	__asm        jmp    _T2cf;
+	__asm        jmp    error;
 _T321:
-	__asm        jmp    _T2cf;
+	__asm        jmp    error;
 _T326:
-	__asm        jmp    _T2cf;
+	__asm        jmp    error;
 _T32b:
-	__asm        jmp    _T2cf;
+	__asm        jmp    error;
 _T330:
-	__asm        jmp    _T2cf;
+	__asm        jmp    error;
 _T335:
-	__asm        jmp    _T2cf;
+	__asm        jmp    error;
 _T33a:
 }
 
@@ -1935,7 +1934,7 @@ _T32:
 
 	__asm        jmp    _T2bd;
 
-	__asm        jmp    _T26c;
+	__asm        jmp    done;
 // LINE 826:
 _T6f:
 	pos += 0x4;
@@ -1964,7 +1963,7 @@ _Ta8:
 
 	__asm        jmp    _T2b8;
 
-	__asm        jmp    _T26c;
+	__asm        jmp    done;
 // LINE 833:
 _Tc7:
 	__asm        cmp    size, 0;
@@ -2000,7 +1999,7 @@ _T10c:
 // LINE 842:
 	__asm        jmp    _T2b3;
 
-	__asm        jmp    _T26c;
+	__asm        jmp    done;
 // LINE 844:
 	__asm        jmp    _T177;
 // LINE 846:
@@ -2026,7 +2025,7 @@ _T139:
 
 	__asm        jmp    _T2ae;
 
-	__asm        jmp    _T26c;
+	__asm        jmp    done;
 // LINE 851:
 _T177:
 	__asm        jmp    _T1f8;
@@ -2071,7 +2070,7 @@ _T1b6:
 
 	__asm        jmp    _T2a9;
 
-	__asm        jmp    _T26c;
+	__asm        jmp    done;
 // LINE 863:
 _T1e6:
 	__asm        mov    eax, entry;
@@ -2099,7 +2098,7 @@ _T1f8:
 	__asm        mov    err, eax;
 	__asm        jmp    _T2a4;
 
-	__asm        jmp    _T26c;
+	__asm        jmp    done;
 // LINE 870:
 _T226:
 	__asm        mov    eax, pos;
@@ -2115,7 +2114,7 @@ _T226:
 
 	__asm        jmp    _T29f;
 
-	__asm        jmp    _T26c;
+	__asm        jmp    done;
 // LINE 872:
 _T251:
 	__asm        lea    eax, size;
@@ -2131,7 +2130,6 @@ _T251:
 // LINE 876:
 done:
 // Block end:
-_T26c:
 	__asm        mov    eax, entry;
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     _T28e;
@@ -2150,19 +2148,19 @@ _T28e:
 // LINE 878:
 	__asm        jmp    _T2c2;
 _T29f:
-	__asm        jmp    _T26c;
+	__asm        jmp    done;
 _T2a4:
-	__asm        jmp    _T26c;
+	__asm        jmp    done;
 _T2a9:
-	__asm        jmp    _T26c;
+	__asm        jmp    done;
 _T2ae:
-	__asm        jmp    _T26c;
+	__asm        jmp    done;
 _T2b3:
-	__asm        jmp    _T26c;
+	__asm        jmp    done;
 _T2b8:
-	__asm        jmp    _T26c;
+	__asm        jmp    done;
 _T2bd:
-	__asm        jmp    _T26c;
+	__asm        jmp    done;
 _T2c2:
 }
 

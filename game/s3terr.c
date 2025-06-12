@@ -1932,8 +1932,10 @@ _T1625:
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    _T1670;
 // LINE 556:
+_T1661:
 	__asm        jmp    _T16be;
 // LINE 558:
+_T1666:
 	__asm        jmp    _T1622;
 // LINE 559:
 	__asm        jmp    _T16be;
@@ -1944,9 +1946,13 @@ _T1670:
 
 	__asm        mov    eax, [ebp-0x34];
 	__asm        xor    ecx, ecx;
-	__asm        mov    cl, _Switch_1690[16][eax];
+	__asm        mov    cl, _SwitchTable_16a0[0][eax];
 	__asm        jmp    _Switch_1690[0][ecx*4];
-// Switch pointers
+// Switch pointers:
+//   _T1661
+//   _T1661
+//   _T1661
+//   _T1666
 // Switch table
 // LINE 562:
 _T16be:
@@ -5697,6 +5703,7 @@ _T2c:
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    _Ta0;
 // LINE 1450:
+_T45:
 	xstart = 0x0;
 // LINE 1451:
 	ystart = 0x0;
@@ -5709,6 +5716,7 @@ _T2c:
 // LINE 1455:
 	__asm        jmp    _Tc4;
 // LINE 1458:
+_T70:
 	xstart = 0x1;
 // LINE 1459:
 	ystart = 0x1;
@@ -5728,7 +5736,11 @@ _Ta0:
 
 	__asm        mov    eax, [ebp-0x20];
 	__asm        jmp    _Switch_b4[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T45
+//   _T70
+//   _T45
+//   _T70
 // LINE 1466:
 _Tc4:
 	S_cycle++;

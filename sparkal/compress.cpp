@@ -1101,6 +1101,7 @@ _T66:
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    _T14e;
 // LINE 358:
+_T89:
 	__asm        xor    eax, eax;
 	__asm        mov    al, data;
 	__asm        inc    eax;
@@ -1121,6 +1122,7 @@ _T66:
 // LINE 364:
 	__asm        jmp    _T175;
 // LINE 367:
+_Tb7:
 	__asm        xor    eax, eax;
 	__asm        mov    al, data;
 	__asm        inc    eax;
@@ -1145,6 +1147,7 @@ _T66:
 // LINE 373:
 	__asm        jmp    _T175;
 // LINE 376:
+_Tec:
 	__asm        xor    eax, eax;
 	__asm        mov    al, data;
 	__asm        inc    eax;
@@ -1152,6 +1155,7 @@ _T66:
 // LINE 377:
 	__asm        jmp    _T175;
 // LINE 380:
+_Tfa:
 	__asm        xor    eax, eax;
 	__asm        mov    al, data;
 	__asm        inc    eax;
@@ -1194,7 +1198,11 @@ _T14e:
 
 	__asm        mov    eax, [ebp-0x20];
 	__asm        jmp    _Switch_165[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T89
+//   _Tb7
+//   _Tec
+//   _Tfa
 // LINE 398:
 // Block end:
 _T175:
@@ -1277,6 +1285,7 @@ _T7a:
 	__asm        mov    [ebp-0x20], eax;
 	__asm        jmp    _T2e6;
 // LINE 445:
+_T9d:
 	__asm        xor    eax, eax;
 	__asm        mov    al, data;
 	__asm        inc    eax;
@@ -1340,6 +1349,7 @@ _Tfc:
 _T132:
 	__asm        jmp    _T30d;
 // LINE 479:
+_T137:
 	__asm        xor    eax, eax;
 	__asm        mov    al, data;
 	__asm        inc    eax;
@@ -1400,6 +1410,7 @@ _T192:
 _T1c3:
 	__asm        jmp    _T30d;
 // LINE 510:
+_T1c8:
 	__asm        xor    eax, eax;
 	__asm        mov    al, data;
 	__asm        inc    eax;
@@ -1441,6 +1452,7 @@ _T218:
 // LINE 530:
 	__asm        jmp    _T30d;
 // LINE 533:
+_T22e:
 	__asm        xor    eax, eax;
 	__asm        mov    al, data;
 	__asm        inc    eax;
@@ -1522,7 +1534,11 @@ _T2e6:
 
 	__asm        mov    eax, [ebp-0x20];
 	__asm        jmp    _Switch_2fd[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T9d
+//   _T137
+//   _T1c8
+//   _T22e
 // LINE 576:
 _T30d:
 	__asm        movsx  eax, Width;

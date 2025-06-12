@@ -839,6 +839,7 @@ void AmbulanceClass::ItterateFSM() {
 	__asm        mov    [ebp-0x18], eax;
 	__asm        jmp    _T384;
 // LINE 296:
+_T1d:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xFE], 0;
 	__asm        jle    _T40;
@@ -887,6 +888,7 @@ _T40:
 _Tad:
 	__asm        jmp    _T3af;
 // LINE 317:
+_Tb2:
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::PositionIcon;
 // LINE 319:
@@ -931,6 +933,7 @@ _T122:
 // LINE 329:
 	__asm        jmp    _T3af;
 // LINE 333:
+_T12f:
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::PositionIcon;
 // LINE 334:
@@ -1033,6 +1036,7 @@ _T253:
 _T263:
 	__asm        jmp    _T3af;
 // LINE 368:
+_T268:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 0x20;
 	__asm        jne    _T282;
@@ -1129,7 +1133,12 @@ _T384:
 
 	__asm        mov    eax, [ebp-0x18];
 	__asm        jmp    _Switch_39b[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T1d
+//   _Tb2
+//   _T359
+//   _T12f
+//   _T268
 // LINE 404:
 _T3af:
 	__asm        jmp    _T3b4;

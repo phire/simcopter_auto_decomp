@@ -1328,6 +1328,7 @@ void S3CameraChaseAdjust(int32_t camevent) {
 	__asm        mov    [ebp-4], eax;
 	__asm        jmp    _T107;
 // LINE 746:
+_T14:
 	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        sub    S_chase[0].dist[eax*4], 0x40000;
@@ -1346,18 +1347,21 @@ void S3CameraChaseAdjust(int32_t camevent) {
 _T57:
 	__asm        jmp    _T137;
 // LINE 751:
+_T5c:
 	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        add    S_chase[0].dist[eax*4], 0x40000;
 // LINE 752:
 	__asm        jmp    _T137;
 // LINE 754:
+_T74:
 	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        add    S_chase[0].height[eax*4], 0x40000;
 // LINE 755:
 	__asm        jmp    _T137;
 // LINE 757:
+_T8c:
 	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        sub    S_chase[0].height[eax*4], 0x40000;
@@ -1374,12 +1378,14 @@ _T57:
 _Tc8:
 	__asm        jmp    _T137;
 // LINE 763:
+_Tcd:
 	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        sub    S_chase[0].focus[eax*4], 0x40000;
 // LINE 764:
 	__asm        jmp    _T137;
 // LINE 766:
+_Te5:
 	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        add    S_chase[0].focus[eax*4], 0x40000;
@@ -1396,7 +1402,13 @@ _T107:
 
 	__asm        mov    eax, [ebp-4];
 	__asm        jmp    _Switch_11f[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T14
+//   _T5c
+//   _T74
+//   _T8c
+//   _Te5
+//   _Tcd
 // LINE 772:
 _T137:
 }

@@ -2668,6 +2668,7 @@ _T55:
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    _T41d;
 // LINE 1237:
+_T62:
 	__asm        mov    eax, mp;
 	__asm        add    eax, 8;
 	__asm        mov    ecx, [eax];
@@ -2679,6 +2680,7 @@ _T55:
 // LINE 1238:
 	__asm        jmp    _T4c9;
 // LINE 1240:
+_T7d:
 	__asm        mov    eax, mp;
 	__asm        add    eax, 8;
 	__asm        mov    ecx, [eax];
@@ -2690,6 +2692,7 @@ _T55:
 // LINE 1241:
 	__asm        jmp    _T4c9;
 // LINE 1243:
+_T98:
 	__asm        mov    eax, mp;
 	__asm        add    eax, 8;
 	__asm        mov    ecx, [eax];
@@ -2701,38 +2704,47 @@ _T55:
 // LINE 1244:
 	__asm        jmp    _T4c9;
 // LINE 1246:
+_Tb3:
 	md->mdata.total_fires += mp->i2num;
 // LINE 1247:
 	__asm        jmp    _T4c9;
 // LINE 1249:
+_Tc4:
 	md->points_bonus += mp->i2num;
 // LINE 1250:
 	__asm        jmp    _T4c9;
 // LINE 1252:
+_Td5:
 	md->money_bonus += mp->i2num;
 // LINE 1253:
 	__asm        jmp    _T4c9;
 // LINE 1255:
+_Te6:
 	md->mdata.doused_fires += mp->i2num;
 // LINE 1256:
 	__asm        jmp    _T4c9;
 // LINE 1258:
+_Tf7:
 	md->mdata.burnout_fires += mp->i2num;
 // LINE 1259:
 	__asm        jmp    _T4c9;
 // LINE 1261:
+_T108:
 	md->mdata.destroyed_cels += mp->i2num;
 // LINE 1262:
 	__asm        jmp    _T4c9;
 // LINE 1264:
+_T119:
 	md->mdata.total_cels += mp->i2num;
 // LINE 1265:
 	__asm        jmp    _T4c9;
 // LINE 1267:
+_T12a:
 	md->mdata.saved_cels += mp->i2num;
 // LINE 1268:
 	__asm        jmp    _T4c9;
 // LINE 1272:
+_T13b:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x50], 8;
 	__asm        jne    _T14f;
@@ -2745,22 +2757,27 @@ _T14f:
 // LINE 1275:
 	__asm        jmp    _T4c9;
 // LINE 1277:
+_T160:
 	md->mdata.doused_debris += mp->i2num;
 // LINE 1278:
 	__asm        jmp    _T4c9;
 // LINE 1280:
+_T171:
 	md->mdata.burnout_debris += mp->i2num;
 // LINE 1281:
 	__asm        jmp    _T4c9;
 // LINE 1283:
+_T182:
 	md->mdata.total_person_rioting += mp->i2num;
 // LINE 1284:
 	__asm        jmp    _T4c9;
 // LINE 1286:
+_T196:
 	md->mdata.total_person_crime += mp->i2num;
 // LINE 1287:
 	__asm        jmp    _T4c9;
 // LINE 1291:
+_T1aa:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x50], 0x20;
 	__asm        jne    _T1be;
@@ -2773,10 +2790,12 @@ _T1be:
 // LINE 1294:
 	__asm        jmp    _T4c9;
 // LINE 1296:
+_T1d2:
 	md->mdata.total_person_rescue += mp->i2num;
 // LINE 1297:
 	__asm        jmp    _T4c9;
 // LINE 1299:
+_T1e6:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x50], 0x40;
 	__asm        jne    _T1fa;
@@ -2789,54 +2808,67 @@ _T1fa:
 // LINE 1302:
 	__asm        jmp    _T4c9;
 // LINE 1304:
+_T20e:
 	md->mdata.total_person_onfire += mp->i2num;
 // LINE 1305:
 	__asm        jmp    _T4c9;
 // LINE 1307:
+_T222:
 	md->mdata.person_rescued += mp->i2num;
 // LINE 1308:
 	__asm        jmp    _T4c9;
 // LINE 1310:
+_T236:
 	md->mdata.person_couldntwait += mp->i2num;
 // LINE 1311:
 	__asm        jmp    _T4c9;
 // LINE 1313:
+_T24a:
 	md->mdata.person_transported += mp->i2num;
 // LINE 1314:
 	__asm        jmp    _T4c9;
 // LINE 1316:
+_T25e:
 	md->mdata.person_medevaced += mp->i2num;
 // LINE 1317:
 	__asm        jmp    _T4c9;
 // LINE 1319:
+_T272:
 	md->mdata.person_pickedup += mp->i2num;
 // LINE 1320:
 	__asm        jmp    _T4c9;
 // LINE 1322:
+_T286:
 	md->mdata.person_rioters_freed += mp->i2num;
 // LINE 1323:
 	__asm        jmp    _T4c9;
 // LINE 1325:
+_T29a:
 	md->mdata.person_rioters_left += mp->i2num;
 // LINE 1326:
 	__asm        jmp    _T4c9;
 // LINE 1328:
+_T2ae:
 	md->mdata.person_doused += mp->i2num;
 // LINE 1329:
 	__asm        jmp    _T4c9;
 // LINE 1331:
+_T2c2:
 	md->mdata.person_caught += mp->i2num;
 // LINE 1332:
 	__asm        jmp    _T4c9;
 // LINE 1334:
+_T2d6:
 	md->mdata.person_died += mp->i2num;
 // LINE 1335:
 	__asm        jmp    _T4c9;
 // LINE 1337:
+_T2ea:
 	md->mdata.total_vehicle_onfire += mp->i2num;
 // LINE 1338:
 	__asm        jmp    _T4c9;
 // LINE 1340:
+_T2fe:
 	md->mdata.total_vehicle_jammed += mp->i2num;
 // LINE 1343:
 	__asm        mov    eax, md;
@@ -2868,22 +2900,27 @@ _T1fa:
 _T35d:
 	__asm        jmp    _T4c9;
 // LINE 1357:
+_T362:
 	md->mdata.vehicles_doused += mp->i2num;
 // LINE 1358:
 	__asm        jmp    _T4c9;
 // LINE 1360:
+_T376:
 	md->mdata.vehicles_unjammed += mp->i2num;
 // LINE 1361:
 	__asm        jmp    _T4c9;
 // LINE 1363:
+_T38a:
 	md->mdata.vehicles_burned += mp->i2num;
 // LINE 1364:
 	__asm        jmp    _T4c9;
 // LINE 1366:
+_T39e:
 	md->mdata.fellinwater_debris += mp->i2num;
 // LINE 1367:
 	__asm        jmp    _T4c9;
 // LINE 1369:
+_T3af:
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+0x54], 2;
 	__asm        jne    _T402;
@@ -2918,6 +2955,7 @@ _T402:
 // LINE 1381:
 	__asm        jmp    _T4c9;
 // LINE 1385:
+_T413:
 	__asm        jmp    _T4c9;
 // LINE 1386:
 	__asm        jmp    _T4c9;
@@ -2927,7 +2965,45 @@ _T41d:
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        jmp    _Switch_431[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T62
+//   _Tb3
+//   _Te6
+//   _Tf7
+//   _T108
+//   _T119
+//   _T12a
+//   _T13b
+//   _T171
+//   _T160
+//   _T98
+//   _T182
+//   _T1aa
+//   _T1e6
+//   _T1d2
+//   _T20e
+//   _T222
+//   _T24a
+//   _T25e
+//   _T272
+//   _T286
+//   _T29a
+//   _T2ae
+//   _T2d6
+//   _T2ea
+//   _T2fe
+//   _T362
+//   _T376
+//   _T38a
+//   _T3af
+//   _T7d
+//   _T236
+//   _T39e
+//   _T413
+//   _Tc4
+//   _Td5
+//   _T196
+//   _T2c2
 // LINE 1387:
 _T4c9:
 }
@@ -4375,6 +4451,7 @@ _T9c:
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    _T53f;
 // LINE 2045:
+_Ta9:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
 	__asm        imul   eax, S_pts_flame;
@@ -4393,6 +4470,7 @@ _T9c:
 // LINE 2048:
 	__asm        jmp    _T5f2;
 // LINE 2050:
+_Tdf:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
 	__asm        imul   eax, S_money_flame;
@@ -4417,8 +4495,10 @@ _T9c:
 // LINE 2056:
 	__asm        jmp    _T5f2;
 // LINE 2058:
+_T126:
 	__asm        jmp    _T5f2;
 // LINE 2060:
+_T12b:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
 	__asm        imul   eax, S_pts_destroyed_building;
@@ -4437,8 +4517,10 @@ _T9c:
 // LINE 2063:
 	__asm        jmp    _T5f2;
 // LINE 2065:
+_T161:
 	__asm        jmp    _T5f2;
 // LINE 2067:
+_T166:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
 	__asm        imul   eax, S_money_saved_building;
@@ -4463,6 +4545,7 @@ _T9c:
 // LINE 2073:
 	__asm        jmp    _T5f2;
 // LINE 2075:
+_T1ad:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
 	__asm        imul   eax, S_pts_new_debris;
@@ -4481,6 +4564,7 @@ _T9c:
 // LINE 2078:
 	__asm        jmp    _T5f2;
 // LINE 2080:
+_T1e3:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
 	__asm        imul   eax, S_money_debris_doused;
@@ -4505,18 +4589,25 @@ _T9c:
 // LINE 2086:
 	__asm        jmp    _T5f2;
 // LINE 2088:
+_T22a:
 	__asm        jmp    _T5f2;
 // LINE 2090:
+_T22f:
 	__asm        jmp    _T5f2;
 // LINE 2092:
+_T234:
 	__asm        jmp    _T5f2;
 // LINE 2094:
+_T239:
 	__asm        jmp    _T5f2;
 // LINE 2096:
+_T23e:
 	__asm        jmp    _T5f2;
 // LINE 2098:
+_T243:
 	__asm        jmp    _T5f2;
 // LINE 2100:
+_T248:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
 	__asm        imul   eax, S_money_person_rescued;
@@ -4541,6 +4632,7 @@ _T9c:
 // LINE 2106:
 	__asm        jmp    _T5f2;
 // LINE 2108:
+_T28f:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
 	__asm        imul   eax, S_money_person_transport;
@@ -4565,6 +4657,7 @@ _T9c:
 // LINE 2114:
 	__asm        jmp    _T5f2;
 // LINE 2116:
+_T2d6:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
 	__asm        imul   eax, S_money_person_medevaced;
@@ -4589,6 +4682,7 @@ _T9c:
 // LINE 2122:
 	__asm        jmp    _T5f2;
 // LINE 2124:
+_T31d:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
 	__asm        imul   eax, S_money_person_pickup;
@@ -4613,18 +4707,25 @@ _T9c:
 // LINE 2130:
 	__asm        jmp    _T5f2;
 // LINE 2132:
+_T364:
 	__asm        jmp    _T5f2;
 // LINE 2134:
+_T369:
 	__asm        jmp    _T5f2;
 // LINE 2136:
+_T36e:
 	__asm        jmp    _T5f2;
 // LINE 2138:
+_T373:
 	__asm        jmp    _T5f2;
 // LINE 2140:
+_T378:
 	__asm        jmp    _T5f2;
 // LINE 2142:
+_T37d:
 	__asm        jmp    _T5f2;
 // LINE 2144:
+_T382:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
 	__asm        imul   eax, S_money_vehicle_doused;
@@ -4649,6 +4750,7 @@ _T9c:
 // LINE 2150:
 	__asm        jmp    _T5f2;
 // LINE 2152:
+_T3c9:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
 	__asm        imul   eax, S_money_vehicle_unjammed;
@@ -4673,6 +4775,7 @@ _T9c:
 // LINE 2158:
 	__asm        jmp    _T5f2;
 // LINE 2160:
+_T410:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
 	__asm        imul   eax, S_pts_vehicle_burned;
@@ -4691,6 +4794,7 @@ _T9c:
 // LINE 2163:
 	__asm        jmp    _T5f2;
 // LINE 2165:
+_T446:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
 	__asm        imul   eax, S_pts_mission_speeder;
@@ -4727,6 +4831,7 @@ _T9c:
 // LINE 2173:
 	__asm        jmp    _T5f2;
 // LINE 2175:
+_T4b3:
 	__asm        mov    eax, mp;
 	__asm        mov    eax, [eax+0x10];
 	__asm        imul   eax, S_pts_mission_ufo;
@@ -4771,6 +4876,7 @@ _T9c:
 // LINE 2184:
 	__asm        jmp    _T5f2;
 // LINE 2187:
+_T535:
 	__asm        jmp    _T5f2;
 // LINE 2188:
 	__asm        jmp    _T5f2;
@@ -4781,7 +4887,46 @@ _T53f:
 
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        jmp    _Switch_556[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _Ta9
+//   _Tdf
+//   _T126
+//   _T12b
+//   _T161
+//   _T166
+//   _T1ad
+//   _T22a
+//   _T1e3
+//   _T535
+//   _T22f
+//   _T234
+//   _T23e
+//   _T239
+//   _T243
+//   _T248
+//   _T28f
+//   _T2d6
+//   _T31d
+//   _T364
+//   _T369
+//   _T36e
+//   _T373
+//   _T378
+//   _T37d
+//   _T382
+//   _T3c9
+//   _T410
+//   _T535
+//   _T535
+//   _T535
+//   _T535
+//   _T535
+//   _T535
+//   _T535
+//   _T535
+//   _T535
+//   _T446
+//   _T4b3
 // LINE 2191:
 _T5f2:
 	S_log.nMissionID = key;

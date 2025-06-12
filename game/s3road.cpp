@@ -1511,6 +1511,7 @@ _T172:
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        jmp    _T1df;
 // LINE 505:
+_T182:
 	__asm        mov    eax, TestDir;
 	__asm        and    eax, 2;
 	__asm        jmp    _T5a4;
@@ -1520,26 +1521,32 @@ _T18d:
 	__asm        and    eax, 8;
 	__asm        jmp    _T5a4;
 // LINE 507:
+_T198:
 	__asm        mov    eax, TestDir;
 	__asm        and    eax, 1;
 	__asm        jmp    _T5a4;
 // LINE 508:
+_T1a3:
 	__asm        mov    eax, TestDir;
 	__asm        and    eax, 1;
 	__asm        jmp    _T5a4;
 // LINE 509:
+_T1ae:
 	__asm        mov    eax, TestDir;
 	__asm        and    eax, 8;
 	__asm        jmp    _T5a4;
 // LINE 510:
+_T1b9:
 	__asm        mov    eax, TestDir;
 	__asm        and    eax, 2;
 	__asm        jmp    _T5a4;
 // LINE 511:
+_T1c4:
 	__asm        mov    eax, TestDir;
 	__asm        and    eax, 4;
 	__asm        jmp    _T5a4;
 // LINE 512:
+_T1cf:
 	__asm        mov    eax, TestDir;
 	__asm        and    eax, 4;
 	__asm        jmp    _T5a4;
@@ -1557,7 +1564,22 @@ _T1df:
 
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        jmp    _Switch_20a[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T182
+//   _T198
+//   _T1ae
+//   _T1c4
+_T21a:
+	__asm        cmp    dword ptr [ebp-0x2C], 0x805E;
+	__asm        je     _T1a3;
+
+	__asm        cmp    dword ptr [ebp-0x2C], 0x805F;
+	__asm        je     _T1b9;
+
+	__asm        cmp    dword ptr [ebp-0x2C], 0x8060;
+	__asm        je     _T1cf;
+
+	__asm        jmp    _T246;
 // LINE 516:
 _T246:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(toTile);
@@ -1565,6 +1587,7 @@ _T246:
 	__asm        mov    [ebp-0x30], eax;
 	__asm        jmp    _T2d4;
 // LINE 518:
+_T256:
 	__asm        mov    eax, TestDir;
 	__asm        and    eax, 4;
 	__asm        jmp    _T5a4;
@@ -1574,26 +1597,32 @@ _T261:
 	__asm        and    eax, 1;
 	__asm        jmp    _T5a4;
 // LINE 520:
+_T26c:
 	__asm        mov    eax, TestDir;
 	__asm        and    eax, 2;
 	__asm        jmp    _T5a4;
 // LINE 521:
+_T277:
 	__asm        mov    eax, TestDir;
 	__asm        and    eax, 2;
 	__asm        jmp    _T5a4;
 // LINE 522:
+_T282:
 	__asm        mov    eax, TestDir;
 	__asm        and    eax, 1;
 	__asm        jmp    _T5a4;
 // LINE 523:
+_T28d:
 	__asm        mov    eax, TestDir;
 	__asm        and    eax, 4;
 	__asm        jmp    _T5a4;
 // LINE 524:
+_T298:
 	__asm        mov    eax, TestDir;
 	__asm        and    eax, 8;
 	__asm        jmp    _T5a4;
 // LINE 525:
+_T2a3:
 	__asm        mov    eax, TestDir;
 	__asm        and    eax, 8;
 	__asm        jmp    _T5a4;
@@ -1622,7 +1651,22 @@ _T2d4:
 
 	__asm        mov    eax, [ebp-0x30];
 	__asm        jmp    _Switch_2ff[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T256
+//   _T26c
+//   _T282
+//   _T298
+_T30f:
+	__asm        cmp    dword ptr [ebp-0x30], 0x805E;
+	__asm        je     _T277;
+
+	__asm        cmp    dword ptr [ebp-0x30], 0x805F;
+	__asm        je     _T28d;
+
+	__asm        cmp    dword ptr [ebp-0x30], 0x8060;
+	__asm        je     _T2a3;
+
+	__asm        jmp    _T2ae;
 // LINE 529:
 _T33b:
 	__asm        xor    eax, eax;
@@ -1654,6 +1698,7 @@ _T386:
 	__asm        mov    [ebp-0x34], eax;
 	__asm        jmp    _T401;
 // LINE 540:
+_T391:
 	__asm        test   reinterpret_cast<uint8_t>(TestDir), 1;
 	__asm        je     _T3a5;
 
@@ -1662,6 +1707,7 @@ _T386:
 _T3a5:
 	__asm        jmp    _T43c;
 // LINE 541:
+_T3aa:
 	__asm        test   reinterpret_cast<uint8_t>(TestDir), 2;
 	__asm        je     _T3be;
 
@@ -1670,6 +1716,7 @@ _T3a5:
 _T3be:
 	__asm        jmp    _T43c;
 // LINE 542:
+_T3c3:
 	__asm        test   reinterpret_cast<uint8_t>(TestDir), 4;
 	__asm        je     _T3d7;
 
@@ -1678,6 +1725,7 @@ _T3be:
 _T3d7:
 	__asm        jmp    _T43c;
 // LINE 543:
+_T3dc:
 	__asm        test   reinterpret_cast<uint8_t>(TestDir), 8;
 	__asm        je     _T3f0;
 
@@ -1700,7 +1748,12 @@ _T401:
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, _SwitchTable_434[0][eax];
 	__asm        jmp    _Switch_420[0][ecx*4];
-// Switch pointers
+// Switch pointers:
+//   _T391
+//   _T3aa
+//   _T3c3
+//   _T3dc
+//   _T3f5
 // Switch table
 // LINE 547:
 _T43c:

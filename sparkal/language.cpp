@@ -3903,18 +3903,23 @@ int32_t LanguageManager::GetCurrentSystemLocale() {
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    _T196;
 // LINE 558:
+_T29:
 	__asm        mov    eax, 8;
 	__asm        jmp    _T2ff;
 // LINE 559:
+_T33:
 	__asm        mov    eax, 7;
 	__asm        jmp    _T2ff;
 // LINE 560:
+_T3d:
 	__asm        mov    eax, 3;
 	__asm        jmp    _T2ff;
 // LINE 561:
+_T47:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T2ff;
 // LINE 562:
+_T51:
 	__asm        mov    eax, 2;
 	__asm        jmp    _T2ff;
 // LINE 563:
@@ -3934,12 +3939,15 @@ _T79:
 	__asm        mov    eax, 2;
 	__asm        jmp    _T2ff;
 // LINE 567:
+_T83:
 	__asm        mov    eax, 0x15;
 	__asm        jmp    _T2ff;
 // LINE 568:
+_T8d:
 	__asm        mov    eax, 3;
 	__asm        jmp    _T2ff;
 // LINE 569:
+_T97:
 	__asm        mov    eax, 3;
 	__asm        jmp    _T2ff;
 // LINE 570:
@@ -3951,6 +3959,7 @@ _Tab:
 	__asm        mov    eax, 3;
 	__asm        jmp    _T2ff;
 // LINE 572:
+_Tb5:
 	__asm        mov    eax, 4;
 	__asm        jmp    _T2ff;
 // LINE 573:
@@ -3958,36 +3967,47 @@ _Tbf:
 	__asm        mov    eax, 4;
 	__asm        jmp    _T2ff;
 // LINE 574:
+_Tc9:
 	__asm        mov    eax, 4;
 	__asm        jmp    _T2ff;
 // LINE 575:
+_Td3:
 	__asm        mov    eax, 0x17;
 	__asm        jmp    _T2ff;
 // LINE 576:
+_Tdd:
 	__asm        mov    eax, 5;
 	__asm        jmp    _T2ff;
 // LINE 577:
+_Te7:
 	__asm        mov    eax, 5;
 	__asm        jmp    _T2ff;
 // LINE 578:
+_Tf1:
 	__asm        mov    eax, 0x14;
 	__asm        jmp    _T2ff;
 // LINE 579:
+_Tfb:
 	__asm        mov    eax, 0x14;
 	__asm        jmp    _T2ff;
 // LINE 580:
+_T105:
 	__asm        mov    eax, 0xA;
 	__asm        jmp    _T2ff;
 // LINE 581:
+_T10f:
 	__asm        mov    eax, 0xA;
 	__asm        jmp    _T2ff;
 // LINE 582:
+_T119:
 	__asm        mov    eax, 0xB;
 	__asm        jmp    _T2ff;
 // LINE 583:
+_T123:
 	__asm        mov    eax, 6;
 	__asm        jmp    _T2ff;
 // LINE 584:
+_T12d:
 	__asm        mov    eax, 6;
 	__asm        jmp    _T2ff;
 // LINE 585:
@@ -3995,24 +4015,31 @@ _T137:
 	__asm        mov    eax, 6;
 	__asm        jmp    _T2ff;
 // LINE 586:
+_T141:
 	__asm        mov    eax, 0x1D;
 	__asm        jmp    _T2ff;
 // LINE 587:
+_T14b:
 	__asm        mov    eax, 9;
 	__asm        jmp    _T2ff;
 // LINE 588:
+_T155:
 	__asm        mov    eax, 0x12;
 	__asm        jmp    _T2ff;
 // LINE 589:
+_T15f:
 	__asm        mov    eax, 0x1A;
 	__asm        jmp    _T2ff;
 // LINE 590:
+_T169:
 	__asm        mov    eax, 0x16;
 	__asm        jmp    _T2ff;
 // LINE 591:
+_T173:
 	__asm        mov    eax, 0x10;
 	__asm        jmp    _T2ff;
 // LINE 592:
+_T17d:
 	__asm        mov    eax, 0x13;
 	__asm        jmp    _T2ff;
 // LINE 593:
@@ -4033,8 +4060,61 @@ _T196:
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        jmp    _Switch_1c4[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T155
+//   _T29
+//   _Tb5
+//   _T17d
+//   _T47
+//   _T123
+//   _T83
+//   _T8d
+//   _T187
+//   _T169
+//   _Td3
+//   _Tdd
+//   _T187
+//   _T187
+//   _T33
+//   _Tf1
+//   _T14b
+//   _T105
+//   _T187
+//   _T187
+//   _T173
+//   _T187
+//   _T15f
+//   _T187
+//   _T119
+//   _T187
+//   _T141
+_T230:
+	__asm        cmp    dword ptr [ebp-0xC], 0xC07;
+	__asm        jg     _T294;
+
+	__asm        je     _Tc9;
+
+	__asm        sub    dword ptr [ebp-0xC], 0x809;
+	__asm        cmp    dword ptr [ebp-0xC], 0xD;
+	__asm        ja     _T187;
+
+	__asm        mov    eax, [ebp-0xC];
+	__asm        xor    ecx, ecx;
+	__asm        mov    cl, _SwitchTable_286[0][eax];
+	__asm        jmp    _Switch_266[0][ecx*4];
+// Switch pointers:
+//   _T51
+//   _T12d
+//   _T97
+//   _Te7
+//   _T3d
+//   _Tfb
+//   _T10f
+//   _T187
 // Switch table
+_T294:
+	__asm        cmp    dword ptr [ebp-0xC], 0x1009;
+	__asm        jg     _T2d3;
 
 	__asm        je     _T65;
 

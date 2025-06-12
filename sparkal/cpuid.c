@@ -52,12 +52,11 @@ unsigned short wincpuidsupport() {
 // LINE 76:
 	__asm        xor    eax, ecx;
 // LINE 77:
-	__asm        jne    _T2c;
+	__asm        jne    support;
 // LINE 79:
 	cpuid_support = 0x0;
 // LINE 83:
 support:
-_T2c:
 	__asm        mov    ax, reinterpret_cast<uint16_t>(cpuid_support);
 	__asm        jmp    near ptr 0x0047B675;
 // LINE 85:
@@ -76,7 +75,7 @@ unsigned short wincpuid() {
 	__asm        call   check_IDProc;
 	__asm        mov    cpuid, ax;
 // LINE 114:
-	__asm        jmp    _T93;
+	__asm        jmp    end;
 // LINE 116:
 _T27:
 	__asm        call   check_clone;
@@ -89,7 +88,7 @@ _T27:
 	__asm        test   reinterpret_cast<uint32_t>(cpuid), 0xFFFF;
 	__asm        jne    _T4f;
 
-	__asm        jmp    _T93;
+	__asm        jmp    end;
 // LINE 121:
 _T4f:
 	__asm        call   check_80286;
@@ -100,7 +99,7 @@ _T4f:
 	__asm        cmp    eax, 2;
 	__asm        jne    _T6e;
 
-	__asm        jmp    _T93;
+	__asm        jmp    end;
 // LINE 124:
 _T6e:
 	__asm        call   check_80386;
@@ -111,13 +110,12 @@ _T6e:
 	__asm        cmp    eax, 3;
 	__asm        jne    _T8d;
 
-	__asm        jmp    _T93;
+	__asm        jmp    end;
 // LINE 127:
 _T8d:
 	cpuid = 0x4;
 // LINE 133:
 end:
-_T93:
 	__asm        cmp    clone_flag, 0;
 	__asm        je     _Tb1;
 // LINE 134:
@@ -205,7 +203,7 @@ _Ta6:
 _Tab:
 	__asm        cmp    eax, 1;
 // LINE 194:
-	__asm        jl     _Tbd;
+	__asm        jl     end_cpuidext;
 // LINE 195:
 	__asm        xor    eax, eax;
 // LINE 196:
@@ -216,7 +214,6 @@ _Tab:
 	__asm        mov    cpuidext, ax;
 // LINE 203:
 end_cpuidext:
-_Tbd:
 	__asm        mov    ax, cpuidext;
 // LINE 206:
 	__asm        jmp    _Tde;
@@ -306,7 +303,7 @@ _Ta1:
 _Ta6:
 	__asm        cmp    eax, 1;
 // LINE 284:
-	__asm        jl     _Tb7;
+	__asm        jl     end_cpuff;
 // LINE 285:
 	__asm        xor    eax, eax;
 // LINE 286:
@@ -317,7 +314,6 @@ _Ta6:
 	__asm        mov    cpuff, edx;
 // LINE 293:
 end_cpuff:
-_Tb7:
 	__asm        mov    eax, cpuff;
 // LINE 297:
 _Tba:
@@ -384,16 +380,14 @@ static unsigned short check_clone() {
 // LINE 390:
 	__asm        clc;
 // LINE 391:
-	__asm        jne    _T29;
+	__asm        jne    no_clone;
 // LINE 392:
-	__asm        jmp    _T2a;
+	__asm        jmp    clone;
 // LINE 393:
 no_clone:
-_T29:
 	__asm        stc;
 // LINE 394:
 clone:
-_T2a:
 	__asm        pushf;
 // LINE 395:
 	__asm        pop    ax;
@@ -442,12 +436,11 @@ static unsigned short check_8086() {
 // LINE 437:
 	cpu_type = 0x0;
 // LINE 438:
-	__asm        je     _T3c;
+	__asm        je     end_8086;
 // LINE 440:
 	cpu_type = 0xffff;
 // LINE 442:
 end_8086:
-_T3c:
 	__asm        push   cx;
 // LINE 443:
 	__asm        popf;
@@ -486,12 +479,11 @@ static unsigned short check_80286() {
 // LINE 480:
 	cpu_type = 0x2;
 // LINE 483:
-	__asm        je     _T39;
+	__asm        je     end_80286;
 // LINE 486:
 	cpu_type = 0xffff;
 // LINE 488:
 end_80286:
-_T39:
 	__asm        push   bx;
 // LINE 489:
 	__asm        popf;
@@ -534,12 +526,11 @@ static unsigned short check_80386() {
 // LINE 533:
 	cpu_type = 0x3;
 // LINE 534:
-	__asm        je     _T37;
+	__asm        je     end_80386;
 // LINE 535:
 	cpu_type = 0xffff;
 // LINE 537:
 end_80386:
-_T37:
 	__asm        push   ecx;
 // LINE 538:
 	__asm        popfd;
@@ -626,7 +617,7 @@ _T98:
 _T9d:
 	__asm        cmp    eax, 1;
 // LINE 592:
-	__asm        jl     _Tc9;
+	__asm        jl     end_IDProc;
 // LINE 593:
 	__asm        xor    eax, eax;
 // LINE 594:
@@ -653,7 +644,6 @@ _T9d:
 	__asm        mov    cpu_type, ax;
 // LINE 611:
 end_IDProc:
-_Tc9:
 	__asm        mov    ax, cpu_type;
 // LINE 614:
 	__asm        mov    ax, cpu_type;

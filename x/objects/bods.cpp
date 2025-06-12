@@ -945,6 +945,7 @@ _T16f:
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        jmp    _T350;
 // LINE 2133:
+_T17d:
 	__asm        mov    eax, part;
 	__asm        fld    dword ptr [eax+0x20];
 	__asm        fmul   scale;
@@ -971,6 +972,7 @@ _T16f:
 // LINE 2137:
 // Block start:
 	/*bp-0x3c*/  float drawwidth;
+_T1b5:
 	__asm        mov    eax, part;
 	__asm        fld    dword ptr [eax+0x20];
 	__asm        fmul   scale;
@@ -1004,6 +1006,7 @@ _T16f:
 	__asm        jmp    _T384;
 // LINE 2142:
 // Block end:
+_T205:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(color);
 	__asm        push   eax;
 	__asm        mov    eax, sPt.y;
@@ -1017,6 +1020,7 @@ _T16f:
 // LINE 2149:
 // Block start:
 	/*bp-0x40*/  enum SPHERE_SHADE_FLAG flag;
+_T21e:
 	__asm        mov    eax, part;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        mov    [ebp-0x50], eax;
@@ -1072,6 +1076,7 @@ _T278:
 // Block end:
 // Block start:
 	/*bp-0x44*/  float smallPsi;
+_T2ae:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x30];
 	__asm        cmp    eax, 0xFFFFFFFF;
@@ -1136,7 +1141,14 @@ _T350:
 
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        jmp    _Switch_368[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T21e
+//   _T2ae
+//   _T1b5
+//   _T17d
+//   _T205
+//   _T21e
+//   _T21e
 // LINE 2176:
 _T384:
 	__asm        jmp    near ptr 0x0056160A;

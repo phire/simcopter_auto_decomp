@@ -7666,6 +7666,7 @@ int32_t RenderSettingsWindow::DoMessage(/*unpacked*/ class GraphicWindow *gwSour
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _T1a8;
 // LINE 892:
+_T17:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x38], 0;
 	__asm        je     _T46;
@@ -7688,6 +7689,7 @@ _T46:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T1ee;
 // LINE 897:
+_T50:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x38], 0;
 	__asm        je     _T7f;
@@ -7710,6 +7712,7 @@ _T7f:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T1ee;
 // LINE 902:
+_T89:
 	__asm        cmp    lMessage, 0x10001;
 	__asm        jne    _Tb5;
 // LINE 903:
@@ -7726,6 +7729,7 @@ _Tb5:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T1ee;
 // LINE 909:
+_Tbf:
 	__asm        cmp    lMessage, 0x10001;
 	__asm        jne    _Tf9;
 // LINE 910:
@@ -7747,6 +7751,7 @@ _Tf9:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T1ee;
 // LINE 916:
+_T103:
 	__asm        cmp    lMessage, 0x10001;
 	__asm        jne    _T13d;
 // LINE 917:
@@ -7768,6 +7773,7 @@ _T13d:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T1ee;
 // LINE 923:
+_T147:
 	__asm        cmp    lMessage, 0x10001;
 	__asm        jne    _T181;
 // LINE 924:
@@ -7789,6 +7795,7 @@ _T181:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T1ee;
 // LINE 931:
+_T18b:
 	__asm        mov    eax, pMessageData;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
@@ -7805,7 +7812,17 @@ _T1a8:
 
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    _Switch_1bf[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T17
+//   _T50
+//   _Tbf
+//   _T103
+//   _T147
+//   _T89
+//   _T1e7
+//   _T1e7
+//   _T1e7
+//   _T18b
 // LINE 935:
 _T1e7:
 	__asm        xor    eax, eax;
@@ -20902,6 +20919,7 @@ int32_t CheckupWindow::DoMessage(/*unpacked*/ class GraphicWindow *gwSource, lon
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _Ta3;
 // LINE 2684:
+_T17:
 	__asm        cmp    lMessage, 0x10001;
 	__asm        jne    _T2c;
 // LINE 2685:
@@ -20912,6 +20930,7 @@ _T2c:
 	__asm        mov    eax, 1;
 	__asm        jmp    _Td5;
 // LINE 2689:
+_T36:
 	__asm        mov    ecx, this;
 	__asm        call   CheckupWindow::CanUserAffordCurrentSliderValues;
 	__asm        test   eax, eax;
@@ -20935,6 +20954,7 @@ _T68:
 	__asm        mov    eax, 1;
 	__asm        jmp    _Td5;
 // LINE 2695:
+_T72:
 	__asm        push   0;
 	__asm        push   0x3EA;
 	__asm        mov    eax, this;
@@ -20960,7 +20980,12 @@ _Ta3:
 
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    _Switch_ba[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T36
+//   _T72
+//   _T17
+//   _T17
+//   _T17
 // LINE 2699:
 _Tce:
 	__asm        xor    eax, eax;

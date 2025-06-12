@@ -375,12 +375,11 @@ _T329:
 	__asm        mov    bx, 0xFA0;
 // LINE 344:
 loop1:
-_T346:
 	__asm        bsf    ecx, eax;
 // LINE 346:
 	__asm        dec    bx;
 // LINE 347:
-	__asm        jne    _T346;
+	__asm        jne    loop1;
 // LINE 350:
 	__asm        lea    eax, t1<_LARGE_INTEGER+0x00:None>;
 	__asm        push   eax;

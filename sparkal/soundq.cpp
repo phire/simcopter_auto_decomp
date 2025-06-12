@@ -2561,14 +2561,14 @@ _T53:
 	__asm        jmp    near ptr 0x004220AE;
 // LINE 432:
 	__asm        cmp    lTimeoutValue, 0;
-	__asm        je     _Td9;
+	__asm        je     WeDidNotGetIt;
 // LINE 433:
 	__asm        jmp    near ptr 0x004220BD;
 
 	__asm        cmp    timeoutTimer.lStartTime, 0;
 	__asm        je     _T76;
 
-	__asm        jmp    _Td9;
+	__asm        jmp    WeDidNotGetIt;
 _T76:
 	__asm        cmp    timeoutTimer.nTimerResolution, 1;
 	__asm        jne    _T93;
@@ -2600,10 +2600,9 @@ _Tbd:
 	__asm        mov    timeoutTimer.lStartTime, eax;
 	__asm        jmp    _Td4;
 _Td4:
-	__asm        jmp    _Td9;
+	__asm        jmp    WeDidNotGetIt;
 // LINE 435:
 WeDidNotGetIt:
-_Td9:
 	__asm        cmp    lTimeoutValue, 0;
 	__asm        je     _T1dc;
 // LINE 436:
@@ -2692,7 +2691,7 @@ _T1bd:
 _T1dc:
 	__asm        bts    timeoutTimer.lFrequency, 0;
 // LINE 446:
-	__asm        jb     _Td9;
+	__asm        jb     WeDidNotGetIt;
 // LINE 448:
 	__asm        mov    dword ptr [ebp-0x1C], 1;
 	__asm        jmp    near ptr 0x00422249;

@@ -1632,8 +1632,10 @@ void EmergencyVehicleClass::AdjustSpeed() {
 	__asm        mov    [ebp-8], eax;
 	__asm        jmp    _T8b;
 // LINE 630:
+_T25:
 	__asm        jmp    _Tb6;
 // LINE 632:
+_T2a:
 	__asm        push   0x1CCCC;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xDE];
@@ -1645,6 +1647,7 @@ void EmergencyVehicleClass::AdjustSpeed() {
 // LINE 633:
 	__asm        jmp    _Tb6;
 // LINE 635:
+_T4f:
 	__asm        push   0x14000;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xDE];
@@ -1656,6 +1659,7 @@ void EmergencyVehicleClass::AdjustSpeed() {
 // LINE 636:
 	__asm        jmp    _Tb6;
 // LINE 638:
+_T74:
 	this->speed = 0x0;
 // LINE 639:
 	__asm        jmp    _Tb6;
@@ -1668,7 +1672,12 @@ _T8b:
 
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    _Switch_a2[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T25
+//   _T25
+//   _T2a
+//   _T4f
+//   _T74
 // LINE 641:
 _Tb6:
 	__asm        jmp    near ptr 0x005422E9;
@@ -1996,6 +2005,7 @@ _T3c:
 	__asm        mov    [ebp-0xC], eax;
 	__asm        jmp    _T118;
 // LINE 1363:
+_T53:
 	__asm        push   0x553;
 	__asm        push   0x5B8570;
 	__asm        push   0x5B8594;
@@ -2008,6 +2018,7 @@ _T3c:
 _T74:
 	__asm        jmp    _T140;
 // LINE 1370:
+_T79:
 	__asm        mov    eax, mapy;
 	__asm        push   eax;
 	__asm        mov    eax, mapx;
@@ -2021,6 +2032,7 @@ _T74:
 // LINE 1371:
 	__asm        jmp    _T140;
 // LINE 1375:
+_T96:
 	__asm        mov    eax, mapy;
 	__asm        push   eax;
 	__asm        mov    eax, mapx;
@@ -2034,6 +2046,7 @@ _T74:
 // LINE 1376:
 	__asm        jmp    _T140;
 // LINE 1381:
+_Tb3:
 	__asm        mov    eax, mapy;
 	__asm        push   eax;
 	__asm        mov    eax, mapx;
@@ -2047,6 +2060,7 @@ _T74:
 // LINE 1382:
 	__asm        jmp    _T140;
 // LINE 1386:
+_Td0:
 	__asm        mov    eax, mapy;
 	__asm        push   eax;
 	__asm        mov    eax, mapx;
@@ -2080,7 +2094,12 @@ _T118:
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        jmp    _Switch_12c[0][eax*4];
-// Switch pointers
+// Switch pointers:
+//   _T53
+//   _T79
+//   _T96
+//   _Td0
+//   _Tb3
 // LINE 1396:
 _T140:
 	__asm        jmp    _T145;
