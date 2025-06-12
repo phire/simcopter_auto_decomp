@@ -521,7 +521,7 @@ static void $E62() {
 	__asm        mov    ecx, 0x6042C8;
 	__asm        call   DigitalSound::~DigitalSound;
 _T2d:
-	__asm        jmp    _T32;
+	return;
 _T32:
 }
 
@@ -572,7 +572,7 @@ static void $E68() {
 	__asm        mov    ecx, 0x6043C8;
 	__asm        call   DigitalSound::~DigitalSound;
 _T2d:
-	__asm        jmp    _T32;
+	return;
 _T32:
 }
 
@@ -623,7 +623,7 @@ static void $E73() {
 	__asm        mov    ecx, 0x604348;
 	__asm        call   DigitalSound::~DigitalSound;
 _T2d:
-	__asm        jmp    _T32;
+	return;
 _T32:
 }
 
@@ -674,7 +674,7 @@ static void $E78() {
 	__asm        mov    ecx, 0x604248;
 	__asm        call   DigitalSound::~DigitalSound;
 _T2d:
-	__asm        jmp    _T32;
+	return;
 _T32:
 }
 
@@ -695,7 +695,7 @@ void SoundButtonWindow::SoundButtonWindow() {
 _T34:
 	SoundButtonWindow::lButtonSoundReferenceCount++;
 // LINE 33:
-	__asm        jmp    _T3f;
+	return;
 _T3f:
 	__asm        mov    eax, this;
 }
@@ -729,7 +729,7 @@ void SoundButtonWindow::SoundButtonWindow(/*packed*/ class MRect& rectNewWindow,
 _T4c:
 	SoundButtonWindow::lButtonSoundReferenceCount++;
 // LINE 48:
-	__asm        jmp    _T57;
+	return;
 _T57:
 	__asm        mov    eax, this;
 }
@@ -749,7 +749,7 @@ void SoundButtonWindow::~SoundButtonWindow() {
 _T2b:
 	__asm        jmp    _T30;
 _T30:
-	__asm        jmp    _T35;
+	return;
 _T35:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
@@ -782,7 +782,7 @@ _T43:
 	__asm        mov    ecx, this;
 	__asm        call   ButtonWindow::SetState;
 // LINE 71:
-	__asm        jmp    _T54;
+	return;
 _T54:
 }
 
@@ -817,7 +817,7 @@ void SoundRadioButtonWindow::SoundRadioButtonWindow(/*unpacked*/ class ButtonGro
 _T50:
 	SoundRadioButtonWindow::lRadioSoundReferenceCount++;
 // LINE 86:
-	__asm        jmp    _T5b;
+	return;
 _T5b:
 	__asm        mov    eax, this;
 }
@@ -835,7 +835,7 @@ void SoundRadioButtonWindow::~SoundRadioButtonWindow() {
 	__asm        call   DigitalSound::Unload;
 // LINE 95:
 _T2b:
-	__asm        jmp    _T30;
+	return;
 _T30:
 	__asm        mov    ecx, this;
 	__asm        call   RadioButtonWindow::~RadioButtonWindow;
@@ -869,7 +869,7 @@ _T46:
 	__asm        mov    ecx, this;
 	__asm        call   RadioButtonWindow::SetState;
 // LINE 107:
-	__asm        jmp    _T57;
+	return;
 _T57:
 }
 
@@ -890,7 +890,7 @@ void SoundCheckBoxWindow::SoundCheckBoxWindow() {
 _T34:
 	SoundCheckBoxWindow::lCheckBoxSoundReferenceCount++;
 // LINE 116:
-	__asm        jmp    _T3f;
+	return;
 _T3f:
 	__asm        mov    eax, this;
 }
@@ -924,7 +924,7 @@ void SoundCheckBoxWindow::SoundCheckBoxWindow(/*packed*/ class MRect& rectNewWin
 _T4c:
 	SoundCheckBoxWindow::lCheckBoxSoundReferenceCount++;
 // LINE 130:
-	__asm        jmp    _T57;
+	return;
 _T57:
 	__asm        mov    eax, this;
 }
@@ -946,7 +946,7 @@ _T2b:
 _T30:
 	__asm        jmp    _T35;
 _T35:
-	__asm        jmp    _T3a;
+	return;
 _T3a:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
@@ -976,7 +976,7 @@ _T39:
 	__asm        mov    ecx, this;
 	__asm        call   CheckBoxWindow::SetState;
 // LINE 151:
-	__asm        jmp    _T4a;
+	return;
 _T4a:
 }
 
@@ -997,7 +997,7 @@ void SoundScrollBarWindow::SoundScrollBarWindow() {
 _T34:
 	SoundScrollBarWindow::lScrollBarSoundReferenceCount++;
 // LINE 160:
-	__asm        jmp    _T3f;
+	return;
 _T3f:
 	__asm        mov    eax, this;
 }
@@ -1033,7 +1033,7 @@ void SoundScrollBarWindow::SoundScrollBarWindow(/*packed*/ class MRect& rectNewW
 _T50:
 	SoundScrollBarWindow::lScrollBarSoundReferenceCount++;
 // LINE 174:
-	__asm        jmp    _T5b;
+	return;
 _T5b:
 	__asm        mov    eax, this;
 }
@@ -1055,7 +1055,7 @@ _T2b:
 _T30:
 	__asm        jmp    _T35;
 _T35:
-	__asm        jmp    _T3a;
+	return;
 _T3a:
 	__asm        mov    ecx, this;
 	__asm        call   SliderWindow::~SliderWindow;
@@ -1084,7 +1084,7 @@ _T3f:
 	__asm        mov    ecx, this;
 	__asm        call   ScrollBarWindow::MoveLinePrevious;
 // LINE 196:
-	__asm        jmp    _T4c;
+	return;
 _T4c:
 }
 
@@ -1111,7 +1111,7 @@ _T3f:
 	__asm        mov    ecx, this;
 	__asm        call   ScrollBarWindow::MoveLineNext;
 // LINE 210:
-	__asm        jmp    _T4c;
+	return;
 _T4c:
 }
 

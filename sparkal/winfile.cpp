@@ -718,7 +718,7 @@ _T54c:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    byte ptr [eax], 0;
 // LINE 44:
-	__asm        jmp    _T564;
+	return;
 // LINE 47:
 _T557:
 	i++;
@@ -726,7 +726,7 @@ _T557:
 	__asm        jmp    _T20;
 // LINE 49:
 _T55f:
-	__asm        jmp    _T564;
+	return;
 _T564:
 }
 

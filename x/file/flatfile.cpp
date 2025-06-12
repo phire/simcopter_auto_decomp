@@ -87,7 +87,7 @@ void FlatFile::FlatFile() {
 	__asm        mov    ecx, this;
 	__asm        call   FlatFile::Link;
 // LINE 23:
-	__asm        jmp    _T43;
+	return;
 _T43:
 	__asm        mov    eax, this;
 }
@@ -108,7 +108,7 @@ _T2d:
 	__asm        mov    ecx, this;
 	__asm        call   FlatFile::Unlink;
 // LINE 33:
-	__asm        jmp    _T3a;
+	return;
 _T3a:
 }
 
@@ -337,7 +337,7 @@ void FlatFile::OpenFromOtherFile(/*unpacked*/ class FlatFile *other) {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+4];
 // LINE 114:
-	__asm        jmp    _T3e;
+	return;
 _T3e:
 }
 
@@ -663,7 +663,7 @@ void FlatFile::Link() {
 // LINE 267:
 	FlatFile::sList = this;
 // LINE 268:
-	__asm        jmp    _T24;
+	return;
 _T24:
 }
 
@@ -686,7 +686,7 @@ _T13:
 // LINE 275:
 	srch-> = srch->->fNext;
 // LINE 276:
-	__asm        jmp    _T70;
+	return;
 // LINE 278:
 _T3f:
 	__asm        mov    eax, srch;
@@ -704,7 +704,7 @@ _T4f:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 281:
-	__asm        jmp    _T70;
+	return;
 _T70:
 }
 

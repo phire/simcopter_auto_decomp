@@ -6476,7 +6476,7 @@ void get_path_at_start(char * ref, char * ret) {
 	__asm        test   eax, eax;
 	__asm        jne    _T30;
 // LINE 2129:
-	__asm        jmp    _Tab;
+	return;
 // LINE 2131:
 _T30:
 	__asm        movsx  eax, len;
@@ -6514,7 +6514,7 @@ _T75:
 	__asm        cmp    s, eax;
 	__asm        jae    _T86;
 // LINE 2140:
-	__asm        jmp    _Tab;
+	return;
 // LINE 2142:
 _T86:
 	__asm        mov    eax, s;
@@ -6553,7 +6553,7 @@ void do_uppercase(char * ref, char * res) {
 	__asm        test   eax, eax;
 	__asm        jne    _T30;
 // LINE 2168:
-	__asm        jmp    _T99;
+	return;
 // LINE 2170:
 _T30:
 	__asm        mov    eax, ref;
@@ -6617,7 +6617,7 @@ void get_name_at_end(char * ref, char * ret) {
 	__asm        test   eax, eax;
 	__asm        jne    _T30;
 // LINE 2201:
-	__asm        jmp    _Tac;
+	return;
 // LINE 2203:
 _T30:
 	__asm        movsx  eax, len;
@@ -6664,7 +6664,7 @@ _T89:
 	__asm        test   eax, eax;
 	__asm        jne    _T9c;
 // LINE 2215:
-	__asm        jmp    _Tac;
+	return;
 // LINE 2217:
 _T9c:
 	__asm        mov    eax, s;
@@ -6693,7 +6693,7 @@ void strip_extension(char * ref) {
 	__asm        test   eax, eax;
 	__asm        jne    _T2a;
 // LINE 2239:
-	__asm        jmp    _T63;
+	return;
 // LINE 2241:
 _T2a:
 	__asm        movsx  eax, len;
@@ -6713,7 +6713,7 @@ _T35:
 // LINE 2244:
 	s[0] = 0x0;
 // LINE 2245:
-	__asm        jmp    _T63;
+	return;
 // LINE 2247:
 _T5b:
 	s--;
@@ -6761,7 +6761,7 @@ void check_extension(char * pathname, char * ext) {
 	__asm        call   strcat;
 	__asm        add    esp, 8;
 // LINE 2277:
-	__asm        jmp    _T134;
+	return;
 // LINE 2280:
 _T5f:
 	__asm        movsx  eax, len;
@@ -6805,7 +6805,7 @@ _T97:
 	__asm        test   eax, eax;
 	__asm        jne    _Tc6;
 // LINE 2291:
-	__asm        jmp    _T134;
+	return;
 // LINE 2292:
 _Tc6:
 	__asm        mov    eax, pathname;
@@ -6836,9 +6836,9 @@ _Tf2:
 	__asm        call   strcat;
 	__asm        add    esp, 8;
 // LINE 2297:
-	__asm        jmp    _T134;
+	return;
 // LINE 2299:
-	__asm        jmp    _T134;
+	return;
 // LINE 2300:
 _T113:
 	__asm        push   0x59B3A0;
@@ -6904,7 +6904,7 @@ void remove_illegals(char * ref) {
 	__asm        test   eax, eax;
 	__asm        jne    _T33;
 // LINE 2350:
-	__asm        jmp    _T1ab;
+	return;
 // LINE 2352:
 _T33:
 	r = temp[0];
@@ -7058,7 +7058,7 @@ void compress_spaces(char * ref) {
 	__asm        test   eax, eax;
 	__asm        jne    _T33;
 // LINE 2391:
-	__asm        jmp    _T9d;
+	return;
 // LINE 2393:
 _T33:
 	r = temp[0];

@@ -703,7 +703,7 @@ _T2f3:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::SetImageToDrawOnto;
 // LINE 52:
-	__asm        jmp    _T30a;
+	return;
 _T30a:
 	__asm        mov    eax, this;
 }
@@ -716,7 +716,7 @@ void MissionLogWindow::~MissionLogWindow() {
 	__asm        mov    ecx, this;
 	__asm        call   MissionLogWindow::DestroyImage;
 // LINE 60:
-	__asm        jmp    _T22;
+	return;
 _T22:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
@@ -1615,7 +1615,7 @@ _T5a:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::DestroyImage;
 // LINE 148:
-	__asm        jmp    _T67;
+	return;
 _T67:
 }
 
@@ -1747,7 +1747,7 @@ _T29:
 	__asm        jmp    _T26;
 // LINE 196:
 _T67:
-	__asm        jmp    _T6c;
+	return;
 _T6c:
 }
 
@@ -2003,7 +2003,7 @@ _T201:
 _T223:
 	__asm        jmp    _T228;
 _T228:
-	__asm        jmp    _T22d;
+	return;
 _T22d:
 }
 
@@ -2352,7 +2352,7 @@ _T3e0:
 _T402:
 	__asm        jmp    _T407;
 _T407:
-	__asm        jmp    _T40c;
+	return;
 _T40c:
 }
 
@@ -2427,7 +2427,7 @@ _Td9:
 	__asm        add    ecx, 0x24;
 	__asm        call   dword ptr [eax];
 // LINE 294:
-	__asm        jmp    _T106;
+	return;
 _T106:
 	__asm        mov    eax, this;
 }
@@ -2748,7 +2748,7 @@ _T16:
 	__asm        cmp    dword ptr [eax+0x48], 0;
 	__asm        jg     _T28;
 // LINE 328:
-	__asm        jmp    _T4c4;
+	return;
 // LINE 330:
 _T28:
 	__asm        mov    eax, this;
@@ -3017,7 +3017,7 @@ _T32d:
 	__asm        cmp    dword ptr [eax+0x48], 0;
 	__asm        jg     _T345;
 // LINE 335:
-	__asm        jmp    _T4c4;
+	return;
 // LINE 336:
 _T345:
 	__asm        mov    eax, this;
@@ -3147,7 +3147,7 @@ _T484:
 	__asm        jmp    _T429;
 // LINE 350:
 _T4bf:
-	__asm        jmp    _T4c4;
+	return;
 _T4c4:
 }
 
@@ -3160,7 +3160,7 @@ void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jg     _T27;
 // LINE 360:
-	__asm        jmp    _T6f6;
+	return;
 // LINE 362:
 _T27:
 	__asm        mov    eax, this;
@@ -3710,7 +3710,7 @@ _T6ec:
 	__asm        jmp    _T6f1;
 // LINE 377:
 _T6f1:
-	__asm        jmp    _T6f6;
+	return;
 _T6f6:
 }
 
@@ -3817,7 +3817,7 @@ _T10a:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xC];
 // LINE 384:
-	__asm        jmp    _T120;
+	return;
 _T120:
 }
 

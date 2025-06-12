@@ -2375,7 +2375,7 @@ _T35:
 	__asm        call   SwizzleFloat;
 	__asm        add    esp, 4;
 // LINE 2343:
-	__asm        jmp    _T8b;
+	return;
 _T8b:
 }
 
@@ -2408,7 +2408,7 @@ _T2f:
 	__asm        call   Swizzle4;
 	__asm        add    esp, 4;
 // LINE 2353:
-	__asm        jmp    _T55;
+	return;
 _T55:
 }
 

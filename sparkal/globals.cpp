@@ -143,7 +143,7 @@ static void $E1() {
 
 	__asm        jmp    _T0b;
 _T0b:
-	__asm        jmp    _T10;
+	return;
 _T10:
 }
 
@@ -164,7 +164,7 @@ static void $E2() {
 
 	__asm        jmp    _T0b;
 _T0b:
-	__asm        jmp    _T10;
+	return;
 _T10:
 }
 

@@ -437,7 +437,7 @@ static void $E4() {
 	__asm        mov    PlaneClass::lsPlane<vftable>, 0x593220;
 	__asm        jmp    _T15;
 _T15:
-	__asm        jmp    _T1a;
+	return;
 _T1a:
 }
 
@@ -468,7 +468,7 @@ static void $E5() {
 	__asm        mov    ecx, 0x62B6E8;
 	__asm        call   PlaneClass::~PlaneClass;
 _T2d:
-	__asm        jmp    _T32;
+	return;
 _T32:
 }
 
@@ -523,7 +523,7 @@ _Tb0:
 	this->planeModel = 0x17c;
 // LINE 205:
 _Tba:
-	__asm        jmp    _Tbf;
+	return;
 _Tbf:
 	__asm        mov    eax, this;
 }
@@ -556,7 +556,7 @@ _T2e:
 _T4c:
 	this->flags[0] = 0x0;
 // LINE 246:
-	__asm        jmp    _T58;
+	return;
 _T58:
 }
 
@@ -690,7 +690,7 @@ _T18:
 	__asm        jmp    _T15;
 // LINE 503:
 _T36:
-	__asm        jmp    _T3b;
+	return;
 _T3b:
 }
 
@@ -714,7 +714,7 @@ _T18:
 	__asm        jmp    _T15;
 // LINE 553:
 _T36:
-	__asm        jmp    _T3b;
+	return;
 _T3b:
 }
 
@@ -826,7 +826,7 @@ _T5d:
 	__asm        jl     _T7c;
 // LINE 624:
 _T77:
-	__asm        jmp    _T170;
+	return;
 // LINE 627:
 _T7c:
 	this->beamTimer += LoopTime;
@@ -921,7 +921,7 @@ _T166:
 	__asm        jmp    _T16b;
 // LINE 669:
 _T16b:
-	__asm        jmp    _T170;
+	return;
 _T170:
 }
 
@@ -953,7 +953,7 @@ void PlaneClass::Reset() {
 // LINE 702:
 	this->missileHits = 0x0;
 // LINE 704:
-	__asm        jmp    _T81;
+	return;
 _T81:
 }
 
@@ -1007,7 +1007,7 @@ _T66:
 	__asm        add    esp, 4;
 // LINE 763:
 _T83:
-	__asm        jmp    _T2ce;
+	return;
 // LINE 767:
 _T88:
 	__asm        mov    eax, ViewState.world_pos.x;
@@ -1155,7 +1155,7 @@ _T1d8:
 	__asm        add    esp, 4;
 // LINE 822:
 _T204:
-	__asm        jmp    _T2ce;
+	return;
 // LINE 826:
 _T209:
 	__asm        mov    eax, ViewState.world_pos.x;
@@ -1229,7 +1229,7 @@ _T2ac:
 	__asm        add    esp, 4;
 // LINE 852:
 _T2c9:
-	__asm        jmp    _T2ce;
+	return;
 _T2ce:
 }
 
@@ -1251,7 +1251,7 @@ _T21:
 	__asm        mov    ecx, this;
 	__asm        call   PlaneClass::UnPlacePlane;
 // LINE 876:
-	__asm        jmp    _T14d;
+	return;
 // LINE 880:
 _T3d:
 	__asm        mov    eax, this;
@@ -1293,7 +1293,7 @@ _T8f:
 	__asm        mov    ecx, this;
 	__asm        call   PlaneClass::MoveForward;
 // LINE 895:
-	__asm        jmp    _T14d;
+	return;
 // LINE 898:
 _Tab:
 	__asm        mov    eax, this;
@@ -1358,7 +1358,7 @@ _T139:
 	__asm        jmp    _T134;
 // LINE 932:
 _T148:
-	__asm        jmp    _T14d;
+	return;
 _T14d:
 }
 
@@ -1377,7 +1377,7 @@ void PlaneClass::AdjustSpeed() {
 	this->speed = 0x1;
 // LINE 960:
 _T2f:
-	__asm        jmp    _T34;
+	return;
 _T34:
 }
 
@@ -1479,7 +1479,7 @@ _Tb7:
 	__asm        cmp    dist, 0x14;
 	__asm        jle    _Tc6;
 // LINE 1207:
-	__asm        jmp    _T248;
+	return;
 // LINE 1211:
 _Tc6:
 	__asm        mov    eax, this;
@@ -1614,7 +1614,7 @@ _T229:
 	__asm        jmp    _T243;
 // LINE 1258:
 _T243:
-	__asm        jmp    _T248;
+	return;
 _T248:
 }
 
@@ -1713,7 +1713,7 @@ void PlaneClass::SlowDown() {
 // LINE 1342:
 	this->speed -= 0x20000;
 // LINE 1343:
-	__asm        jmp    _T1b;
+	return;
 _T1b:
 }
 
@@ -1722,7 +1722,7 @@ void PlaneClass::Stop() {
 // LINE 1363:
 	this->speed = 0x0;
 // LINE 1364:
-	__asm        jmp    _T1b;
+	return;
 _T1b:
 }
 
@@ -1921,7 +1921,7 @@ _T212:
 	__asm        test   eax, eax;
 	__asm        jne    _T226;
 // LINE 1437:
-	__asm        jmp    _T2c4;
+	return;
 // LINE 1441:
 _T226:
 	__asm        mov    eax, lcptr;
@@ -1942,7 +1942,7 @@ _T247:
 	__asm        test   eax, eax;
 	__asm        jne    _T25b;
 // LINE 1445:
-	__asm        jmp    _T2c4;
+	return;
 // LINE 1456:
 _T25b:
 	__asm        mov    eax, lcptr;
@@ -1986,7 +1986,7 @@ _T2a6:
 	__asm        mov    [ecx+8], eax;
 // LINE 1465:
 _T2bf:
-	__asm        jmp    _T2c4;
+	return;
 _T2c4:
 }
 
@@ -2815,7 +2815,7 @@ _Ta3:
 // LINE 1846:
 	dyptrptr-> = this->dyObj.next;
 // LINE 1848:
-	__asm        jmp    _T10f;
+	return;
 // LINE 1851:
 _Td0:
 	dyptrptr = dyptrptr->;
@@ -2838,7 +2838,7 @@ _T105:
 // LINE 1856:
 // Block end:
 _T10a:
-	__asm        jmp    _T10f;
+	return;
 _T10f:
 }
 
@@ -2896,7 +2896,7 @@ _T98:
 	__asm        mov    ecx, cellPointer;
 	__asm        mov    [ecx+0x10], eax;
 // LINE 1884:
-	__asm        jmp    _Tb5;
+	return;
 _Tb5:
 }
 
@@ -2983,7 +2983,7 @@ _Tec:
 	__asm        add    [ecx+0x74], eax;
 // LINE 1923:
 _Tfa:
-	__asm        jmp    _Tff;
+	return;
 _Tff:
 }
 
@@ -3097,7 +3097,7 @@ _T90:
 	__asm        add    esp, 8;
 // LINE 1967:
 _T13a:
-	__asm        jmp    _T13f;
+	return;
 _T13f:
 }
 
@@ -3252,7 +3252,7 @@ _T16b:
 // LINE 2029:
 	this->remainingDist = 0x200000;
 // LINE 2034:
-	__asm        jmp    _T1a1;
+	return;
 _T1a1:
 }
 
@@ -3434,7 +3434,7 @@ _T170:
 	__asm        jle    _T1ce;
 // LINE 2119:
 _T1c9:
-	__asm        jmp    _T381;
+	return;
 // LINE 2126:
 _T1ce:
 	curr_dir++;
@@ -3530,7 +3530,7 @@ _T2bd:
 	__asm        jmp    _T1ce;
 // LINE 2176:
 _T2c2:
-	__asm        jmp    _T381;
+	return;
 // LINE 2182:
 foundCell:
 	__asm        mov    currentFlag, 3;
@@ -3595,7 +3595,7 @@ _T36d:
 	this->missileHits = 0x0;
 // LINE 2213:
 _T377:
-	__asm        jmp    _T381;
+	return;
 _T37c:
 	__asm        jmp    foundCell;
 _T381:
@@ -3622,7 +3622,7 @@ _T25:
 	this->flags[1] = 0x0;
 // LINE 2241:
 _T3b:
-	__asm        jmp    _T40;
+	return;
 _T40:
 }
 
@@ -3827,7 +3827,7 @@ _T34:
 	__asm        add    esp, 0x20;
 // LINE 2506:
 _T9b:
-	__asm        jmp    _Ta0;
+	return;
 _Ta0:
 }
 
@@ -3839,7 +3839,7 @@ void CreatePlaneInstance(int32_t instanceID) {
 	__asm        call   PlaneClass::CreateInstance;
 	__asm        add    esp, 4;
 // LINE 2555:
-	__asm        jmp    _T17;
+	return;
 _T17:
 }
 
@@ -3860,7 +3860,7 @@ void ResetAllPlanes() {
 // LINE 2597:
 	__asm        call   PlaneClass::ResetAll;
 // LINE 2598:
-	__asm        jmp    _T10;
+	return;
 _T10:
 }
 
@@ -3869,7 +3869,7 @@ void ItterateAllPlanes() {
 // LINE 2620:
 	__asm        call   PlaneClass::ItterateAll;
 // LINE 2621:
-	__asm        jmp    _T10;
+	return;
 _T10:
 }
 
@@ -4068,7 +4068,7 @@ _T1f8:
 //   _T1e9
 // LINE 2698:
 _T24c:
-	__asm        jmp    _T251;
+	return;
 _T251:
 }
 
@@ -4088,7 +4088,7 @@ void PlaneHitDispatch(long hitter_type, /*packed*/ struct _DYOBJ_INST *dyhitter,
 	__asm        call   PlaneClass::HitDispatch;
 	__asm        add    esp, 0x14;
 // LINE 2709:
-	__asm        jmp    _T27;
+	return;
 _T27:
 }
 
@@ -4153,7 +4153,7 @@ _T7d:
 	__asm        jmp    _T3d;
 // LINE 2740:
 _T91:
-	__asm        jmp    _T96;
+	return;
 _T96:
 }
 
@@ -4220,7 +4220,7 @@ _T81:
 	__asm        jmp    _T3d;
 // LINE 2762:
 _T95:
-	__asm        jmp    _T9a;
+	return;
 _T9a:
 }
 

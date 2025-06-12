@@ -955,7 +955,7 @@ _L44245:
 	__asm        mov    eax, tempVRAppInitThreadStruct;
 	__asm        mov    dword ptr [eax+4], 0x64;
 // LINE 178:
-	__asm        jmp    _T6f;
+	return;
 _L48859:
 	__asm        mov    eax, 0x595CE0;
 	__asm        jmp    near ptr 0x0056F590;

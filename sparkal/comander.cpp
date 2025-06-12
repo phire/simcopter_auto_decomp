@@ -63,7 +63,7 @@ void ICommander::ICommander() {
 // LINE 15:
 	this->mpWindow = 0x0;
 // LINE 16:
-	__asm        jmp    _T24;
+	return;
 _T24:
 	__asm        mov    eax, this;
 }
@@ -73,7 +73,7 @@ void ICommander::~ICommander() {
 
 	this-><vftable> = 0x5912a8;
 // LINE 25:
-	__asm        jmp    _T1a;
+	return;
 _T1a:
 }
 
@@ -111,7 +111,7 @@ void CDefaultCommander::CDefaultCommander() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5912D0;
 // LINE 45:
-	__asm        jmp    _T22;
+	return;
 _T22:
 	__asm        mov    eax, this;
 }
@@ -121,7 +121,7 @@ void CDefaultCommander::~CDefaultCommander() {
 
 	this-><CDefaultCommander+0x00> = 0x5912d0;
 // LINE 49:
-	__asm        jmp    _T1a;
+	return;
 _T1a:
 	__asm        mov    ecx, this;
 	__asm        call   ICommander::~ICommander;

@@ -60,7 +60,7 @@ static void $E1() {
 	__asm        call   Random::seed;
 	__asm        jmp    _T24;
 _T24:
-	__asm        jmp    _T29;
+	return;
 _T29:
 }
 
@@ -162,7 +162,7 @@ _Td3:
 // LINE 48:
 	this->index2 = 0x1f;
 // LINE 49:
-	__asm        jmp    _Tf2;
+	return;
 _Tf2:
 }
 

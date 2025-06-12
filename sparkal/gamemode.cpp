@@ -449,7 +449,7 @@ void CopterGameMode::CopterGameMode() {
 // LINE 51:
 	this->nModeID = 0x0;
 // LINE 52:
-	__asm        jmp    _T1a;
+	return;
 _T1a:
 	__asm        mov    eax, this;
 }
@@ -459,7 +459,7 @@ void CopterGameMode::CopterGameMode(int32_t nNewModeID) {
 
 	this->nModeID = nNewModeID;
 // LINE 57:
-	__asm        jmp    _T19;
+	return;
 _T19:
 	__asm        mov    eax, this;
 }
@@ -472,7 +472,7 @@ void CopterGameMode::CopterGameMode(const /*packed*/ class CopterGameMode& newGa
 	__asm        mov    ecx, this;
 	__asm        call   CopterGameMode::operator=;
 // LINE 62:
-	__asm        jmp    _T1d;
+	return;
 _T1d:
 	__asm        mov    eax, this;
 }
@@ -521,7 +521,7 @@ void GameModeCoreData::GameModeCoreData() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5923C0;
 // LINE 133:
-	__asm        jmp    _T42;
+	return;
 _T42:
 	__asm        mov    eax, this;
 }
@@ -548,7 +548,7 @@ void GameModeCoreData::~GameModeCoreData() {
 	this->pColorTable = 0x0;
 // LINE 144:
 _T47:
-	__asm        jmp    _T4c;
+	return;
 _T4c:
 }
 
@@ -568,7 +568,7 @@ void GameModeMainMenuData::GameModeMainMenuData() {
 // LINE 160:
 	this->myVideoBuffer = 0x0;
 // LINE 161:
-	__asm        jmp    _T4a;
+	return;
 _T4a:
 	__asm        mov    eax, this;
 }
@@ -628,7 +628,7 @@ _Ta1:
 	__asm        call   CBackBuffer::GetPaletteFromImage;
 	__asm        add    esp, 8;
 // LINE 177:
-	__asm        jmp    _Td8;
+	return;
 _Td8:
 }
 
@@ -653,7 +653,7 @@ void GameModeMainMenuData::UsePalette() {
 // LINE 188:
 	gCopterPalette.bOwnColors = 0x0;
 // LINE 189:
-	__asm        jmp    _T4e;
+	return;
 _T4e:
 }
 
@@ -945,7 +945,7 @@ _T1e:
 // LINE 256:
 	this->bFirstCareerCityData = 0x1;
 // LINE 257:
-	__asm        jmp    _T68;
+	return;
 _T68:
 	__asm        mov    eax, this;
 }
@@ -955,7 +955,7 @@ void GameModePickCareerCityData::Initialize() {
 // LINE 265:
 	this->nSubMode = 0x0;
 // LINE 266:
-	__asm        jmp    _T1b;
+	return;
 _T1b:
 }
 
@@ -1014,7 +1014,7 @@ _Ta1:
 	__asm        call   CBackBuffer::GetPaletteFromImage;
 	__asm        add    esp, 8;
 // LINE 281:
-	__asm        jmp    _Td8;
+	return;
 _Td8:
 }
 
@@ -1039,7 +1039,7 @@ void GameModePickCareerCityData::UsePalette() {
 // LINE 292:
 	gCopterPalette.bOwnColors = 0x0;
 // LINE 293:
-	__asm        jmp    _T4e;
+	return;
 _T4e:
 }
 
@@ -1241,7 +1241,7 @@ void GameModePlayData::GameModePlayData() {
 // LINE 369:
 	this->pColorTable = 0x0;
 // LINE 370:
-	__asm        jmp    _T13b;
+	return;
 _T13b:
 	__asm        mov    eax, this;
 }
@@ -1255,7 +1255,7 @@ void GameModePlayData::Initialize() {
 	__asm        mov    ecx, this;
 	__asm        call   GameModePlayData::ReadUserConfigurableCommands;
 // LINE 392:
-	__asm        jmp    _T21;
+	return;
 _T21:
 }
 
@@ -1364,7 +1364,7 @@ _T116:
 	__asm        jmp    _T110;
 // LINE 430:
 _T18d:
-	__asm        jmp    _T192;
+	return;
 _T192:
 }
 
@@ -1389,7 +1389,7 @@ void GameModePlayData::UsePalette() {
 // LINE 442:
 	gCopterPalette.bOwnColors = 0x0;
 // LINE 443:
-	__asm        jmp    _T4e;
+	return;
 _T4e:
 }
 
@@ -1617,7 +1617,7 @@ _T25d:
 	__asm        mov    ecx, [eax+0x6C];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 485:
-	__asm        jmp    _T273;
+	return;
 _T273:
 }
 
@@ -1875,7 +1875,7 @@ _T2b6:
 	__asm        call   GameModePlayData::UsePalette;
 // LINE 536:
 _T2be:
-	__asm        jmp    _T2c3;
+	return;
 _T2c3:
 }
 
@@ -2831,7 +2831,7 @@ _T4b2:
 	this->pFlap3 = 0x0;
 // LINE 712:
 _T4da:
-	__asm        jmp    _T4df;
+	return;
 _T4df:
 }
 
@@ -2960,7 +2960,7 @@ _Ta3:
 	this->pSkyImage = 0x0;
 // LINE 744:
 _Tad:
-	__asm        jmp    _Tb2;
+	return;
 _Tb2:
 }
 
@@ -2973,7 +2973,7 @@ void GameModePlayData::DestroyAllSurfaces() {
 	__asm        mov    ecx, this;
 	__asm        call   GameModePlayData::DestroyPanels;
 // LINE 755:
-	__asm        jmp    _T21;
+	return;
 _T21:
 }
 
@@ -3318,7 +3318,7 @@ _T1da:
 	__asm        jmp    _T1ff;
 // LINE 870:
 _T1ff:
-	__asm        jmp    _T204;
+	return;
 _T204:
 }
 
@@ -3478,7 +3478,7 @@ _T1c0:
 	__asm        jmp    _T1e5;
 // LINE 922:
 _T1e5:
-	__asm        jmp    _T1ea;
+	return;
 _T1ea:
 }
 
@@ -3547,7 +3547,7 @@ _Tac:
 	__asm        jmp    _Td1;
 // LINE 943:
 _Td1:
-	__asm        jmp    _Td6;
+	return;
 _Td6:
 }
 
@@ -3608,7 +3608,7 @@ _T92:
 	__asm        jmp    _Tb7;
 // LINE 963:
 _Tb7:
-	__asm        jmp    _Tbc;
+	return;
 _Tbc:
 }
 
@@ -3633,7 +3633,7 @@ _T30:
 	__asm        call   GameModePlayData::ShowPanels;
 // LINE 982:
 _T42:
-	__asm        jmp    _T47;
+	return;
 _T47:
 }
 
@@ -3654,7 +3654,7 @@ _T26:
 	__asm        call   GameModePlayData::ShowEquipment;
 // LINE 995:
 _T2e:
-	__asm        jmp    _T33;
+	return;
 _T33:
 }
 
@@ -3664,7 +3664,7 @@ void GameModePlayData::Shutdown() {
 	__asm        mov    ecx, this;
 	__asm        call   GameModePlayData::DestroyAllSurfaces;
 // LINE 1004:
-	__asm        jmp    _T19;
+	return;
 _T19:
 }
 
@@ -3878,7 +3878,7 @@ _T181:
 	__asm        mov    swindow.RenderWide, eax;
 // LINE 1125:
 _T192:
-	__asm        jmp    _T197;
+	return;
 _T197:
 }
 
@@ -3901,7 +3901,7 @@ _T2d:
 	__asm        add    ecx, 0x70;
 	__asm        call   CommandSystem::SetUpCommandArraysFromShortcuts;
 // LINE 1137:
-	__asm        jmp    _T3d;
+	return;
 _T3d:
 }
 
@@ -4022,7 +4022,7 @@ _T138:
 	__asm        jmp    _T2a;
 // LINE 1154:
 _T13d:
-	__asm        jmp    _T142;
+	return;
 _T142:
 }
 
@@ -4035,7 +4035,7 @@ void GameModePlayData::SetUserConfigurableCommandsToDefaults() {
 	__asm        call   MakeDefaultConfigurableShortcuts;
 	__asm        add    esp, 4;
 // LINE 1165:
-	__asm        jmp    _T22;
+	return;
 _T22:
 }
 
@@ -5086,7 +5086,7 @@ _Tf73:
 	__asm        jmp    _Tf78;
 // LINE 1413:
 _Tf78:
-	__asm        jmp    _Tf7d;
+	return;
 _Tf7d:
 }
 
@@ -5114,7 +5114,7 @@ void GameModeHangarData::GameModeHangarData() {
 	__asm        mov    ecx, this;
 	__asm        call   GameModeHangarData::SetCommandsToDefaults;
 // LINE 1433:
-	__asm        jmp    _T67;
+	return;
 _T67:
 	__asm        mov    eax, this;
 }
@@ -5190,7 +5190,7 @@ void GameModeHangarData::DestroyAllSurfaces() {
 	this->pHangarWindow = 0x0;
 // LINE 1457:
 _T34:
-	__asm        jmp    _T39;
+	return;
 _T39:
 }
 
@@ -5215,7 +5215,7 @@ _T2a:
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1467:
-	__asm        jmp    _T40;
+	return;
 _T40:
 }
 
@@ -5256,7 +5256,7 @@ void GameModeHangarData::Awake() {
 	__asm        jmp    _T69;
 // LINE 1481:
 _T69:
-	__asm        jmp    _T6e;
+	return;
 _T6e:
 }
 
@@ -5303,7 +5303,7 @@ _T77:
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   HangarWindow::ReadPalette;
 // LINE 1492:
-	__asm        jmp    _T8e;
+	return;
 _T8e:
 }
 
@@ -5328,7 +5328,7 @@ void GameModeHangarData::UsePalette() {
 // LINE 1502:
 	gCopterPalette.bOwnColors = 0x0;
 // LINE 1503:
-	__asm        jmp    _T4e;
+	return;
 _T4e:
 }
 
@@ -5338,7 +5338,7 @@ void GameModeHangarData::Shutdown() {
 	__asm        mov    ecx, this;
 	__asm        call   GameModeHangarData::DestroyAllSurfaces;
 // LINE 1511:
-	__asm        jmp    _T19;
+	return;
 _T19:
 }
 
@@ -5754,7 +5754,7 @@ _T57b:
 	__asm        add    ecx, 0x18;
 	__asm        call   CommandSystem::SetUpCommandArraysFromShortcuts;
 // LINE 1569:
-	__asm        jmp    _T58e;
+	return;
 _T58e:
 }
 
@@ -5774,7 +5774,7 @@ void GameModeCatalogData::GameModeCatalogData() {
 	__asm        mov    ecx, this;
 	__asm        call   GameModeCatalogData::SetCommandsToDefaults;
 // LINE 1588:
-	__asm        jmp    _T3f;
+	return;
 _T3f:
 	__asm        mov    eax, this;
 }
@@ -5850,7 +5850,7 @@ void GameModeCatalogData::DestroyAllSurfaces() {
 	this->pCatalogWindow = 0x0;
 // LINE 1611:
 _T34:
-	__asm        jmp    _T39;
+	return;
 _T39:
 }
 
@@ -5875,7 +5875,7 @@ _T2a:
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1621:
-	__asm        jmp    _T40;
+	return;
 _T40:
 }
 
@@ -5916,7 +5916,7 @@ void GameModeCatalogData::Awake() {
 	__asm        jmp    _T69;
 // LINE 1635:
 _T69:
-	__asm        jmp    _T6e;
+	return;
 _T6e:
 }
 
@@ -5963,7 +5963,7 @@ _T77:
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   CatalogWindow::ReadPalette;
 // LINE 1646:
-	__asm        jmp    _T8e;
+	return;
 _T8e:
 }
 
@@ -5988,7 +5988,7 @@ void GameModeCatalogData::UsePalette() {
 // LINE 1656:
 	gCopterPalette.bOwnColors = 0x0;
 // LINE 1657:
-	__asm        jmp    _T4e;
+	return;
 _T4e:
 }
 
@@ -5998,7 +5998,7 @@ void GameModeCatalogData::Shutdown() {
 	__asm        mov    ecx, this;
 	__asm        call   GameModeCatalogData::DestroyAllSurfaces;
 // LINE 1665:
-	__asm        jmp    _T19;
+	return;
 _T19:
 }
 
@@ -6464,7 +6464,7 @@ _T68d:
 	__asm        add    ecx, 0x18;
 	__asm        call   CommandSystem::SetUpCommandArraysFromShortcuts;
 // LINE 1695:
-	__asm        jmp    _T6a0;
+	return;
 _T6a0:
 }
 
@@ -6484,7 +6484,7 @@ void GameModeMissionLogData::GameModeMissionLogData() {
 	__asm        mov    ecx, this;
 	__asm        call   GameModeMissionLogData::SetCommandsToDefaults;
 // LINE 1713:
-	__asm        jmp    _T3f;
+	return;
 _T3f:
 	__asm        mov    eax, this;
 }
@@ -6560,7 +6560,7 @@ void GameModeMissionLogData::DestroyAllSurfaces() {
 	this->pMissionLogWindow = 0x0;
 // LINE 1736:
 _T34:
-	__asm        jmp    _T39;
+	return;
 _T39:
 }
 
@@ -6585,7 +6585,7 @@ _T2a:
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1746:
-	__asm        jmp    _T40;
+	return;
 _T40:
 }
 
@@ -6626,7 +6626,7 @@ void GameModeMissionLogData::Awake() {
 	__asm        jmp    _T69;
 // LINE 1760:
 _T69:
-	__asm        jmp    _T6e;
+	return;
 _T6e:
 }
 
@@ -6673,7 +6673,7 @@ _T77:
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   MissionLogWindow::ReadPalette;
 // LINE 1771:
-	__asm        jmp    _T8e;
+	return;
 _T8e:
 }
 
@@ -6698,7 +6698,7 @@ void GameModeMissionLogData::UsePalette() {
 // LINE 1781:
 	gCopterPalette.bOwnColors = 0x0;
 // LINE 1782:
-	__asm        jmp    _T4e;
+	return;
 _T4e:
 }
 
@@ -6708,7 +6708,7 @@ void GameModeMissionLogData::Shutdown() {
 	__asm        mov    ecx, this;
 	__asm        call   GameModeMissionLogData::DestroyAllSurfaces;
 // LINE 1790:
-	__asm        jmp    _T19;
+	return;
 _T19:
 }
 
@@ -7174,7 +7174,7 @@ _T68d:
 	__asm        add    ecx, 0x18;
 	__asm        call   CommandSystem::SetUpCommandArraysFromShortcuts;
 // LINE 1820:
-	__asm        jmp    _T6a0;
+	return;
 _T6a0:
 }
 
@@ -7194,7 +7194,7 @@ void GameModeInventoryData::GameModeInventoryData() {
 	__asm        mov    ecx, this;
 	__asm        call   GameModeInventoryData::SetCommandsToDefaults;
 // LINE 1835:
-	__asm        jmp    _T3f;
+	return;
 _T3f:
 	__asm        mov    eax, this;
 }
@@ -7270,7 +7270,7 @@ void GameModeInventoryData::DestroyAllSurfaces() {
 	this->pInventoryWindow = 0x0;
 // LINE 1858:
 _T34:
-	__asm        jmp    _T39;
+	return;
 _T39:
 }
 
@@ -7295,7 +7295,7 @@ _T2a:
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1868:
-	__asm        jmp    _T40;
+	return;
 _T40:
 }
 
@@ -7336,7 +7336,7 @@ void GameModeInventoryData::Awake() {
 	__asm        jmp    _T69;
 // LINE 1882:
 _T69:
-	__asm        jmp    _T6e;
+	return;
 _T6e:
 }
 
@@ -7383,7 +7383,7 @@ _T77:
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   InventoryWindow::ReadPalette;
 // LINE 1893:
-	__asm        jmp    _T8e;
+	return;
 _T8e:
 }
 
@@ -7408,7 +7408,7 @@ void GameModeInventoryData::UsePalette() {
 // LINE 1903:
 	gCopterPalette.bOwnColors = 0x0;
 // LINE 1904:
-	__asm        jmp    _T4e;
+	return;
 _T4e:
 }
 
@@ -7418,7 +7418,7 @@ void GameModeInventoryData::Shutdown() {
 	__asm        mov    ecx, this;
 	__asm        call   GameModeInventoryData::DestroyAllSurfaces;
 // LINE 1912:
-	__asm        jmp    _T19;
+	return;
 _T19:
 }
 
@@ -7884,7 +7884,7 @@ _T68d:
 	__asm        add    ecx, 0x18;
 	__asm        call   CommandSystem::SetUpCommandArraysFromShortcuts;
 // LINE 1941:
-	__asm        jmp    _T6a0;
+	return;
 _T6a0:
 }
 

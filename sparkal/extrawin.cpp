@@ -1119,7 +1119,7 @@ static void $E65() {
 	__asm        mov    colorTextGamePaletteNormal.Red, 0xDA;
 	__asm        jmp    _T20;
 _T20:
-	__asm        jmp    _T25;
+	return;
 _T25:
 }
 
@@ -1141,7 +1141,7 @@ static void $E68() {
 	__asm        mov    colorTextGamePaletteHighlighted.Red, 0xFF;
 	__asm        jmp    _T20;
 _T20:
-	__asm        jmp    _T25;
+	return;
 _T25:
 }
 
@@ -1505,7 +1505,7 @@ _T491:
 	__asm        jmp    _T496;
 // LINE 52:
 _T496:
-	__asm        jmp    _T49b;
+	return;
 _T49b:
 	__asm        mov    eax, this;
 }
@@ -1981,7 +1981,7 @@ _T5d6:
 	__asm        jmp    _T5db;
 // LINE 75:
 _T5db:
-	__asm        jmp    _T5e0;
+	return;
 _T5e0:
 	__asm        mov    eax, this;
 }
@@ -3417,7 +3417,7 @@ _T64e:
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+0x4C];
 // LINE 248:
-	__asm        jmp    _T688;
+	return;
 _T688:
 }
 
@@ -3433,7 +3433,7 @@ void MessageBoxWindow::SetTextColor(const /*packed*/ struct SparkalColor& colorN
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 257:
-	__asm        jmp    _T2e;
+	return;
 _T2e:
 }
 
@@ -3452,7 +3452,7 @@ _T24:
 	reinterpret_cast<uint32_t>(this->colorButtonFontHighlighted.Blue) = reinterpret_cast<uint32_t>(colorNewFontHighlighted->Blue);
 // LINE 268:
 _T3c:
-	__asm        jmp    _T41;
+	return;
 _T41:
 }
 
@@ -3488,7 +3488,7 @@ void AnimationWindow::AnimationWindow() {
 // LINE 294:
 	this->lTransparentIndex = 0xffffffff;
 // LINE 295:
-	__asm        jmp    _Tb5;
+	return;
 _Tb5:
 	__asm        mov    eax, this;
 }
@@ -3570,7 +3570,7 @@ _Tf5:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x28], eax;
 // LINE 333:
-	__asm        jmp    _T124;
+	return;
 _T124:
 	__asm        mov    eax, this;
 }
@@ -3785,7 +3785,7 @@ _T136:
 	this->bRunning = 0x0;
 // LINE 403:
 _T140:
-	__asm        jmp    _T145;
+	return;
 _T145:
 }
 
@@ -3831,7 +3831,7 @@ _T21:
 _T3d:
 	this->bRunning = 0x1;
 // LINE 427:
-	__asm        jmp    _T4c;
+	return;
 _T4c:
 }
 
@@ -3871,7 +3871,7 @@ _T72:
 	__asm        jmp    _T77;
 // LINE 437:
 _T77:
-	__asm        jmp    _T7c;
+	return;
 _T7c:
 }
 
@@ -3947,7 +3947,7 @@ _T131:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58FC20;
 // LINE 504:
-	__asm        jmp    _T14c;
+	return;
 _T14c:
 	__asm        mov    eax, this;
 }
@@ -3962,7 +3962,7 @@ void RenderSettingsWindow::~RenderSettingsWindow() {
 // LINE 513:
 	__asm        jmp    _T22;
 _T22:
-	__asm        jmp    _T27;
+	return;
 _T27:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
@@ -5943,7 +5943,7 @@ _Tb5:
 	this->myBuildingImage = 0x0;
 // LINE 686:
 _Tc2:
-	__asm        jmp    _Tc7;
+	return;
 _Tc7:
 }
 
@@ -6213,7 +6213,7 @@ void RenderSettingsWindow::GetCurrentSettings(long& bGetShowBuildingTextures, lo
 // LINE 767:
 	lGetFogCloseness. = this->lFogCloseness;
 // LINE 768:
-	__asm        jmp    _T4e;
+	return;
 _T4e:
 }
 
@@ -6334,7 +6334,7 @@ _T176:
 	__asm        mov    ecx, [eax+0x98];
 	__asm        call   SliderWindow::SetValue;
 // LINE 803:
-	__asm        jmp    _T193;
+	return;
 _T193:
 }
 
@@ -6914,7 +6914,7 @@ _T8c0:
 _T8f6:
 	__asm        jmp    _T8fb;
 _T8fb:
-	__asm        jmp    _T900;
+	return;
 _T900:
 }
 
@@ -7706,7 +7706,7 @@ _T926:
 	__asm        jmp    _T92b;
 // LINE 881:
 _T92b:
-	__asm        jmp    _T930;
+	return;
 _T930:
 }
 
@@ -7914,7 +7914,7 @@ void SoundSettingsWindow::SoundSettingsWindow(/*packed*/ class MRect& rectNewPos
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58FCE8;
 // LINE 991:
-	__asm        jmp    _T7a;
+	return;
 _T7a:
 	__asm        mov    eax, this;
 }
@@ -9389,7 +9389,7 @@ void SoundSettingsWindow::GetCurrentVolumeSettings(/*packed*/ struct SoundPrefer
 	__asm        mov    ecx, currentSoundPreferences;
 	__asm        mov    [ecx], eax;
 // LINE 1193:
-	__asm        jmp    _T34;
+	return;
 _T34:
 }
 
@@ -9468,7 +9468,7 @@ _Tee:
 _Tf8:
 	currentRadioPreferences.bOptionPlayEnglishIfDefaultLanguageNotFound = 0x1;
 // LINE 1211:
-	__asm        jmp    _T107;
+	return;
 _T107:
 }
 
@@ -9621,7 +9621,7 @@ _T4c:
 	__asm        jmp    _T49;
 // LINE 1326:
 _T69:
-	__asm        jmp    _T6e;
+	return;
 _T6e:
 	__asm        mov    eax, this;
 }
@@ -11772,7 +11772,7 @@ void CitySettingsWindow::SetCurrentCitySettings(/*packed*/ struct tagCitySetting
 	__asm        mov    ecx, [eax+0x90];
 	__asm        call   SliderWindow::SetValue;
 // LINE 1478:
-	__asm        jmp    _Taf;
+	return;
 _Taf:
 }
 
@@ -11827,7 +11827,7 @@ void CitySettingsWindow::GetCurrentCitySettings(/*packed*/ struct tagCitySetting
 	__asm        mov    ecx, currentCitySettings;
 	__asm        mov    [ecx+0x1C], eax;
 // LINE 1494:
-	__asm        jmp    _Ta7;
+	return;
 _Ta7:
 }
 
@@ -12242,7 +12242,7 @@ _T3e1:
 	__asm        jmp    _T3e6;
 // LINE 1556:
 _T3e6:
-	__asm        jmp    _T3eb;
+	return;
 _T3eb:
 	__asm        mov    eax, this;
 }
@@ -12441,7 +12441,7 @@ _T243:
 	__asm        mov    list<basic_string<char>>::last, 0;
 	__asm        jmp    _T266;
 _T266:
-	__asm        jmp    _T26b;
+	return;
 _T26b:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
@@ -13569,7 +13569,7 @@ _T63:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::DestroyImage;
 // LINE 1713:
-	__asm        jmp    _T70;
+	return;
 _T70:
 }
 
@@ -13609,7 +13609,7 @@ _T55:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xB0], eax;
 // LINE 1725:
-	__asm        jmp    _T79;
+	return;
 _T79:
 }
 
@@ -13721,7 +13721,7 @@ _T71:
 	__asm        call   dword ptr [eax+0x34];
 // LINE 1771:
 _Tfa:
-	__asm        jmp    _Tff;
+	return;
 _Tff:
 }
 
@@ -14034,7 +14034,7 @@ _T3d3:
 	__asm        jmp    _T3d8;
 // LINE 1804:
 _T3d8:
-	__asm        jmp    _T3dd;
+	return;
 _T3dd:
 	__asm        mov    eax, this;
 }
@@ -14340,7 +14340,7 @@ _T3bb:
 	__asm        jmp    _T3c0;
 // LINE 1821:
 _T3c0:
-	__asm        jmp    _T3c5;
+	return;
 _T3c5:
 	__asm        mov    eax, this;
 }
@@ -14419,7 +14419,7 @@ _Tbc:
 _Tea:
 	__asm        jmp    _Tef;
 _Tef:
-	__asm        jmp    _Tf4;
+	return;
 _Tf4:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x84;
@@ -14456,7 +14456,7 @@ void TooltipWindow::SetWindowTitle(int32_t nNewWindowTitleTextID) {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xE0];
 // LINE 1848:
-	__asm        jmp    _T2b;
+	return;
 _T2b:
 }
 
@@ -14475,7 +14475,7 @@ void TooltipWindow::SetWindowTitle(/*packed*/ class basic_string<char>& sNewWind
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 1858:
-	__asm        jmp    _T2c;
+	return;
 _T2c:
 }
 
@@ -15010,7 +15010,7 @@ _T63:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::DestroyImage;
 // LINE 1919:
-	__asm        jmp    _T70;
+	return;
 _T70:
 }
 
@@ -15040,7 +15040,7 @@ void TooltipWindow::SetTextAndShow(/*packed*/ class MPoint& ptNewPosition, /*pac
 	__asm        jmp    _T42;
 // LINE 1930:
 _T42:
-	__asm        jmp    _T47;
+	return;
 _T47:
 }
 
@@ -15070,7 +15070,7 @@ void TooltipWindow::SetTextAndShow(/*packed*/ class MPoint& ptNewPosition, int32
 	__asm        jmp    _T45;
 // LINE 1940:
 _T45:
-	__asm        jmp    _T4a;
+	return;
 _T4a:
 }
 
@@ -15112,7 +15112,7 @@ _T8b:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5900F0;
 // LINE 1964:
-	__asm        jmp    _Tb3;
+	return;
 _Tb3:
 	__asm        mov    eax, this;
 }
@@ -15372,7 +15372,7 @@ _T332:
 	__asm        jmp    _T337;
 // LINE 1982:
 _T337:
-	__asm        jmp    _T33c;
+	return;
 _T33c:
 	__asm        mov    eax, this;
 }
@@ -15764,7 +15764,7 @@ _T4ad:
 	__asm        jmp    _T4b2;
 // LINE 2003:
 _T4b2:
-	__asm        jmp    _T4b7;
+	return;
 _T4b7:
 	__asm        mov    eax, this;
 }
@@ -15781,7 +15781,7 @@ void BoneheadTextEditWindow::~BoneheadTextEditWindow() {
 _T22:
 	__asm        jmp    _T27;
 _T27:
-	__asm        jmp    _T2c;
+	return;
 _T2c:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x84;
@@ -16029,7 +16029,7 @@ _T56:
 	this->mySecondImage = 0x0;
 // LINE 2047:
 _T63:
-	__asm        jmp    _T68;
+	return;
 _T68:
 }
 
@@ -16750,7 +16750,7 @@ void BoneheadTextEditWindow::SetCharacterCountLimit(unsigned long lNewCharacterC
 // LINE 2160:
 	this->lCharacterCountLimit = lNewCharacterCountLimit;
 // LINE 2161:
-	__asm        jmp    _T1d;
+	return;
 _T1d:
 }
 
@@ -17582,7 +17582,7 @@ _T49c:
 	__asm        jmp    _T4a1;
 // LINE 2198:
 _T4a1:
-	__asm        jmp    _T4a6;
+	return;
 _T4a6:
 }
 
@@ -17636,7 +17636,7 @@ _T6a:
 	__asm        mov    ecx, szText;
 	__asm        mov    byte ptr [eax+ecx], 0;
 // LINE 2209:
-	__asm        jmp    _T8d;
+	return;
 _T8d:
 }
 
@@ -17718,7 +17718,7 @@ _Td1:
 	__asm        mov    ecx, [eax+0xA4];
 	__asm        call   dword ptr [edx+0xCC];
 // LINE 2248:
-	__asm        jmp    _Tf6;
+	return;
 _Tf6:
 	__asm        mov    eax, this;
 }
@@ -17801,7 +17801,7 @@ _Td1:
 	__asm        mov    ecx, [eax+0xA4];
 	__asm        call   dword ptr [edx+0xCC];
 // LINE 2277:
-	__asm        jmp    _Tf6;
+	return;
 _Tf6:
 	__asm        mov    eax, this;
 }
@@ -17930,7 +17930,7 @@ _T167:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5902D8;
 // LINE 2320:
-	__asm        jmp    _T18f;
+	return;
 _T18f:
 	__asm        mov    eax, this;
 }
@@ -18031,7 +18031,7 @@ _Tf9:
 _T113:
 	__asm        jmp    _T118;
 _T118:
-	__asm        jmp    _T11d;
+	return;
 _T11d:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
@@ -18107,7 +18107,7 @@ _T13:
 // FUNCTION: COPTER_D 0x0045df47
 void ScrollingCreditWindow::RestartCreditDisplay() {
 // LINE 2352:
-	__asm        jmp    _T11;
+	return;
 _T11:
 }
 
@@ -18268,7 +18268,7 @@ static void $E71() {
 	__asm        mov    colorTextCheckupNormal.Red, 0;
 	__asm        jmp    _T20;
 _T20:
-	__asm        jmp    _T25;
+	return;
 _T25:
 }
 
@@ -18290,7 +18290,7 @@ static void $E74() {
 	__asm        mov    colorTextCheckupHighlighted.Red, 0xC5;
 	__asm        jmp    _T20;
 _T20:
-	__asm        jmp    _T25;
+	return;
 _T25:
 }
 
@@ -18346,7 +18346,7 @@ _T78:
 	__asm        jmp    _T75;
 // LINE 2425:
 _T98:
-	__asm        jmp    _T9d;
+	return;
 _T9d:
 	__asm        mov    eax, this;
 }
@@ -20285,7 +20285,7 @@ void CheckupWindow::SetCurrentSettings(long * lNewSettings) {
 	__asm        mov    ecx, this;
 	__asm        call   CheckupWindow::SetTextControlsBasedOnCurrentSliderValues;
 // LINE 2555:
-	__asm        jmp    _T4e;
+	return;
 _T4e:
 }
 
@@ -20310,7 +20310,7 @@ void CheckupWindow::GetCurrentSettings(long * lCurrentSettings) {
 	__asm        mov    ecx, lCurrentSettings;
 	__asm        mov    [ecx+8], eax;
 // LINE 2566:
-	__asm        jmp    _T43;
+	return;
 _T43:
 }
 
@@ -20405,7 +20405,7 @@ _Te5:
 	__asm        mov    ecx, this;
 	__asm        call   CheckupWindow::SetTextControlsBasedOnCurrentSliderValues;
 // LINE 2598:
-	__asm        jmp    _Tf2;
+	return;
 _Tf2:
 }
 
@@ -21051,7 +21051,7 @@ _T7c2:
 	__asm        jmp    _T7c7;
 // LINE 2669:
 _T7c7:
-	__asm        jmp    _T7cc;
+	return;
 _T7cc:
 }
 

@@ -46,7 +46,7 @@ _T12:
 	__asm        add    esp, 0x10;
 // LINE 51:
 _T8a:
-	__asm        jmp    _Ta4;
+	return;
 // LINE 53:
 _T8f:
 	__asm        mov    eax, srch;
@@ -57,7 +57,7 @@ _T8f:
 	__asm        jmp    _T12;
 // LINE 55:
 _T9f:
-	__asm        jmp    _Ta4;
+	return;
 _Ta4:
 }
 
@@ -78,7 +78,7 @@ void PtrList<cCopterAnim>::Iter::Reset() {
 _T2a:
 	this->fCur = 0x0;
 _T34:
-	__asm        jmp    _T39;
+	return;
 _T39:
 }
 
@@ -151,7 +151,7 @@ _Ta6:
 	__asm        add    esp, 0x10;
 // LINE 24:
 _Tce:
-	__asm        jmp    _Td3;
+	return;
 _Td3:
 }
 
@@ -224,7 +224,7 @@ _Ta6:
 	__asm        add    esp, 0x10;
 // LINE 24:
 _Tce:
-	__asm        jmp    _Td3;
+	return;
 _Td3:
 }
 
@@ -245,7 +245,7 @@ void PtrList<cCopterBody>::Iter::Reset() {
 _T2a:
 	this->fCur = 0x0;
 _T34:
-	__asm        jmp    _T39;
+	return;
 _T39:
 }
 
@@ -318,7 +318,7 @@ _Ta6:
 	__asm        add    esp, 0x10;
 // LINE 24:
 _Tce:
-	__asm        jmp    _Td3;
+	return;
 _Td3:
 }
 

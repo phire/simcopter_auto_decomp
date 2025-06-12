@@ -1738,10 +1738,6 @@ public:
 struct bidirectional_iterator<Shortcut,int>{ // packed(0x1 bytes) TI: 0x1ee7
 };
 
-// Type: /*packed*/ struct bidirectional_iterator<long,int>;
-struct bidirectional_iterator<long,int>{ // packed(0x1 bytes) TI: 0x2c2e
-};
-
 // Type: /*packed*/ struct SparkalRect;
 struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	/*+0x0*/   long left;
@@ -1750,6 +1746,10 @@ struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 	/*+0xc*/   long bottom;
 	void SparkalRect(long, long, long, long);
 	void SparkalRect();
+};
+
+// Type: /*packed*/ struct bidirectional_iterator<long,int>;
+struct bidirectional_iterator<long,int>{ // packed(0x1 bytes) TI: 0x2c2e
 };
 
 // Type: /*packed*/ struct SparkalPoint;
@@ -1823,7 +1823,7 @@ static void $E96() {
 	__asm        mov    colorTextGamePaletteNormal.Red, 0xDA;
 	__asm        jmp    _T20;
 _T20:
-	__asm        jmp    _T25;
+	return;
 _T25:
 }
 
@@ -1845,7 +1845,7 @@ static void $E99() {
 	__asm        mov    colorTextGamePaletteHighlighted.Red, 0xFF;
 	__asm        jmp    _T20;
 _T20:
-	__asm        jmp    _T25;
+	return;
 _T25:
 }
 
@@ -2363,7 +2363,7 @@ _T780:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F058;
 // LINE 69:
-	__asm        jmp    _T7c1;
+	return;
 _T7c1:
 	__asm        mov    eax, this;
 }
@@ -2754,7 +2754,7 @@ _T512:
 	__asm        add    ecx, 0x74;
 	__asm        call   list<HotSpot>::deallocate_buffers;
 _T52c:
-	__asm        jmp    _T531;
+	return;
 _T531:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
@@ -3314,7 +3314,7 @@ _Tb5:
 	this->myNonTextKeyImage = 0x0;
 // LINE 149:
 _Tc2:
-	__asm        jmp    _Tc7;
+	return;
 _Tc7:
 }
 
@@ -4879,7 +4879,7 @@ _T431:
 	__asm        jmp    _T257;
 // LINE 379:
 _T436:
-	__asm        jmp    _T43b;
+	return;
 _T43b:
 }
 
@@ -5522,7 +5522,7 @@ _T819:
 _T847:
 	__asm        jmp    _T84c;
 _T84c:
-	__asm        jmp    _T851;
+	return;
 _T851:
 }
 
@@ -5626,7 +5626,7 @@ _T75:
 	__asm        mov    ecx, [eax+0x98];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 484:
-	__asm        jmp    _T116;
+	return;
 _T116:
 }
 
@@ -6175,7 +6175,7 @@ _T4de:
 	__asm        jmp    _T517;
 // LINE 640:
 _T517:
-	__asm        jmp    _T51c;
+	return;
 _T51c:
 	__asm        mov    eax, this;
 }
@@ -6188,7 +6188,7 @@ void JoystickWindow::~JoystickWindow() {
 	__asm        mov    ecx, this;
 	__asm        call   JoystickWindow::DestroyImage;
 // LINE 648:
-	__asm        jmp    _T22;
+	return;
 _T22:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
@@ -6867,7 +6867,7 @@ _T163:
 	this->myHandleBaseImage = 0x0;
 // LINE 717:
 _T170:
-	__asm        jmp    _T175;
+	return;
 _T175:
 }
 
@@ -7036,7 +7036,7 @@ _Tb4:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xD8];
 // LINE 777:
-	__asm        jmp    _Tc7;
+	return;
 _Tc7:
 }
 
@@ -7106,7 +7106,7 @@ _T5a:
 	__asm        mov    ecx, [eax+0x1CE];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 799:
-	__asm        jmp    _Tc2;
+	return;
 _Tc2:
 }
 
@@ -7188,7 +7188,7 @@ _T71:
 	__asm        mov    ecx, [eax+0x1D2];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 825:
-	__asm        jmp    _Tdf;
+	return;
 _Tdf:
 }
 
@@ -7331,7 +7331,7 @@ _T125:
 	__asm        mov    ecx, [eax+0x1D6];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 860:
-	__asm        jmp    _T17f;
+	return;
 _T17f:
 }
 
@@ -7500,7 +7500,7 @@ _T256:
 	__asm        jmp    _T283;
 // LINE 898:
 _T283:
-	__asm        jmp    _T288;
+	return;
 _T288:
 }
 
@@ -7578,7 +7578,7 @@ _T79:
 	__asm        jmp    _T76;
 // LINE 936:
 _Ta8:
-	__asm        jmp    _Tad;
+	return;
 _Tad:
 }
 
@@ -7611,7 +7611,7 @@ void JoystickWindow::SetCurrentJoystick(int32_t nNewCurrentJoystick) {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 958:
-	__asm        jmp    _T3e;
+	return;
 _T3e:
 }
 
@@ -8455,7 +8455,7 @@ _T7d9:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F228;
 // LINE 1079:
-	__asm        jmp    _T80a;
+	return;
 _T80a:
 	__asm        mov    eax, this;
 }
@@ -11076,7 +11076,7 @@ _T30d:
 	__asm        jmp    _T312;
 // LINE 1355:
 _T312:
-	__asm        jmp    _T317;
+	return;
 _T317:
 }
 
@@ -11104,7 +11104,7 @@ void UserInputWindow::RemoveJoystickTwinCommand(long lCommand, long lDevice, lon
 	__asm        call   UserInputWindow::RemoveShortcutFromList;
 // LINE 1370:
 _T39:
-	__asm        jmp    _T3e;
+	return;
 _T3e:
 }
 
@@ -11862,7 +11862,7 @@ _T164:
 	__asm        jmp    _T2a;
 // LINE 1506:
 _T169:
-	__asm        jmp    _T16e;
+	return;
 _T16e:
 }
 
@@ -12077,7 +12077,7 @@ void UserInputWindow::UpdateDisplay(int32_t bRedrawBackground) {
 	__asm        cmp    lCurrentDevice, 0xFFFFFFFF;
 	__asm        jne    _T2f;
 // LINE 1595:
-	__asm        jmp    _Tb3a;
+	return;
 // LINE 1596:
 _T2f:
 	__asm        mov    ecx, this;
@@ -12087,7 +12087,7 @@ _T2f:
 	__asm        cmp    lCurrentCommand, 0;
 	__asm        jne    _T4c;
 // LINE 1598:
-	__asm        jmp    _Tb3a;
+	return;
 // LINE 1601:
 _T4c:
 	__asm        cmp    lCurrentDevice, 0;
@@ -12854,7 +12854,7 @@ _Tb30:
 // LINE 1687:
 // Block end:
 _Tb35:
-	__asm        jmp    _Tb3a;
+	return;
 _Tb3a:
 }
 
@@ -13409,7 +13409,7 @@ _T512:
 _T53a:
 	__asm        jmp    _T53f;
 _T53f:
-	__asm        jmp    _T544;
+	return;
 _T544:
 }
 
@@ -13751,7 +13751,7 @@ _T3fa:
 _T41c:
 	__asm        jmp    _T421;
 _T421:
-	__asm        jmp    _T426;
+	return;
 _T426:
 }
 
@@ -14189,7 +14189,7 @@ _T5dc:
 	__asm        mov    ecx, this;
 	__asm        call   UserInputWindow::UpdateDisplay;
 // LINE 1798:
-	__asm        jmp    _T5ee;
+	return;
 _T5ee:
 }
 
@@ -14202,14 +14202,14 @@ void UserInputWindow::WriteShortcutsToPreferenceFile() {
 	__asm        call   WriteShortcutPrefsFile;
 	__asm        add    esp, 4;
 // LINE 1807:
-	__asm        jmp    _T22;
+	return;
 _T22:
 }
 
 // FUNCTION: COPTER_D 0x0040b498
 void UserInputWindow::DisplayError(int32_t nErrorType) {
 // LINE 1815:
-	__asm        jmp    _T11;
+	return;
 _T11:
 }
 
@@ -14241,7 +14241,7 @@ void ControlDisplayWindow::ControlDisplayWindow(/*packed*/ class MRect& rectNewP
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F300;
 // LINE 1854:
-	__asm        jmp    _T60;
+	return;
 _T60:
 	__asm        mov    eax, this;
 }
@@ -16462,7 +16462,7 @@ _T6e7:
 	__asm        jmp    _T6ec;
 // LINE 2048:
 _T6ec:
-	__asm        jmp    _T6f1;
+	return;
 _T6f1:
 }
 
@@ -16938,7 +16938,7 @@ _T550:
 _T57a:
 	__asm        jmp    _T57f;
 _T57f:
-	__asm        jmp    _T584;
+	return;
 _T584:
 }
 

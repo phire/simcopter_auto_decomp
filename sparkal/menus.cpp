@@ -678,7 +678,7 @@ _T260:
 _T265:
 	this-><UserMenuWindow+0x00> = 0x5912f8;
 // LINE 40:
-	__asm        jmp    _T273;
+	return;
 _T273:
 	__asm        mov    eax, this;
 }
@@ -1051,7 +1051,7 @@ _T432:
 	__asm        call   GraphicWindow::MakeFocus;
 	__asm        add    esp, 4;
 // LINE 58:
-	__asm        jmp    _T473;
+	return;
 _T473:
 	__asm        mov    eax, this;
 }
@@ -1211,7 +1211,7 @@ _T1a6:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T1ce:
-	__asm        jmp    _T1d3;
+	return;
 _T1d3:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
@@ -2103,7 +2103,7 @@ _T33:
 // FUNCTION: COPTER_D 0x0049c595
 void UserMenuWindow::DrawSelectionIndicators() {
 // LINE 212:
-	__asm        jmp    _T11;
+	return;
 _T11:
 }
 
@@ -2765,7 +2765,7 @@ void CopterMainMenu::CopterMainMenu(/*packed*/ struct UserMenuWindowDescription&
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5913E0;
 // LINE 394:
-	__asm        jmp    _T50;
+	return;
 _T50:
 	__asm        mov    eax, this;
 }
@@ -2792,7 +2792,7 @@ void CopterMainMenu::~CopterMainMenu() {
 	__asm        mov    ecx, this;
 	__asm        call   CopterMainMenu::DestroyImage;
 // LINE 404:
-	__asm        jmp    _T50;
+	return;
 _T50:
 	__asm        mov    ecx, this;
 	__asm        call   UserMenuWindow::~UserMenuWindow;
@@ -3388,7 +3388,7 @@ _Tba:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::DestroyImage;
 // LINE 456:
-	__asm        jmp    _Tc7;
+	return;
 _Tc7:
 }
 
@@ -3575,7 +3575,7 @@ _T1d2:
 	__asm        jmp    _T1cf;
 // LINE 490:
 _T244:
-	__asm        jmp    _T249;
+	return;
 _T249:
 }
 
@@ -3654,7 +3654,7 @@ void CopterMainMenu::GetCoordinatesForLights(/*packed*/ class MPoint *ptDestinat
 	__asm        mov    ecx, rectSourceArray;
 	__asm        add    dword ptr [eax+ecx+8], 0x3C;
 // LINE 539:
-	__asm        jmp    _T162;
+	return;
 _T162:
 }
 
@@ -3733,7 +3733,7 @@ void CopterMainMenu::GetCoordinatesForRatchets(/*packed*/ class MPoint *ptDestin
 	__asm        mov    ecx, rectSourceArray;
 	__asm        add    dword ptr [eax+ecx+8], 0x27;
 // LINE 583:
-	__asm        jmp    _T162;
+	return;
 _T162:
 }
 
@@ -3759,7 +3759,7 @@ void CopterPlayMenu::CopterPlayMenu(/*packed*/ struct UserMenuWindowDescription&
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5914C8;
 // LINE 605:
-	__asm        jmp    _T50;
+	return;
 _T50:
 	__asm        mov    eax, this;
 }
@@ -3772,7 +3772,7 @@ void CopterPlayMenu::~CopterPlayMenu() {
 	__asm        mov    ecx, this;
 	__asm        call   CopterPlayMenu::DestroyImage;
 // LINE 614:
-	__asm        jmp    _T22;
+	return;
 _T22:
 	__asm        mov    ecx, this;
 	__asm        call   UserMenuWindow::~UserMenuWindow;
@@ -4305,7 +4305,7 @@ _Tba:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::DestroyImage;
 // LINE 662:
-	__asm        jmp    _Tc7;
+	return;
 _Tc7:
 }
 
@@ -4403,7 +4403,7 @@ _T92:
 	__asm        mov    ecx, [eax+0x152];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 687:
-	__asm        jmp    _Tdb;
+	return;
 _Tdb:
 }
 
@@ -4436,7 +4436,7 @@ _T42:
 	__asm        mov    [ecx+4], eax;
 // LINE 699:
 _T5a:
-	__asm        jmp    _T5f;
+	return;
 _T5f:
 }
 

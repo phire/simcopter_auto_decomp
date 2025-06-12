@@ -1060,7 +1060,7 @@ _Tde1:
 	__asm        jmp    _Tb5c;
 // LINE 274:
 _Tde6:
-	__asm        jmp    _Tdeb;
+	return;
 _Tdeb:
 }
 

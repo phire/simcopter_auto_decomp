@@ -57,7 +57,7 @@ void Swizzle16(void * __ptr32 val) {
 	__asm        mov    ecx, val;
 	__asm        mov    [ecx+8], al;
 // LINE 19:
-	__asm        jmp    _T48;
+	return;
 _T48:
 }
 
@@ -93,7 +93,7 @@ void Swizzle8(void * __ptr32 val) {
 	__asm        mov    ecx, val;
 	__asm        mov    [ecx+4], eax;
 // LINE 31:
-	__asm        jmp    _T48;
+	return;
 _T48:
 }
 
@@ -105,7 +105,7 @@ void SwizzleFloat(void * __ptr32 val) {
 	__asm        call   Swizzle4;
 	__asm        add    esp, 4;
 // LINE 36:
-	__asm        jmp    _T17;
+	return;
 _T17:
 }
 
@@ -141,7 +141,7 @@ void Swizzle4(void * __ptr32 val) {
 	__asm        mov    ecx, val;
 	__asm        mov    [ecx+2], ax;
 // LINE 48:
-	__asm        jmp    _T50;
+	return;
 _T50:
 }
 
@@ -167,7 +167,7 @@ void Swizzle2(void * __ptr32 val) {
 	__asm        mov    ecx, val;
 	__asm        mov    [ecx+1], al;
 // LINE 58:
-	__asm        jmp    _T30;
+	return;
 _T30:
 }
 
@@ -210,7 +210,7 @@ void SwizzleRect(/*unpacked*/ struct Rect *rect) {
 	__asm        call   Swizzle2;
 	__asm        add    esp, 4;
 // LINE 70:
-	__asm        jmp    _T6c;
+	return;
 _T6c:
 }
 

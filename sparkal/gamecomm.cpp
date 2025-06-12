@@ -600,7 +600,7 @@ _T26f:
 	__asm        mov    ecx, this;
 	__asm        call   CommandSystem::Initialize;
 // LINE 33:
-	__asm        jmp    _T27c;
+	return;
 _T27c:
 	__asm        mov    eax, this;
 }
@@ -688,7 +688,7 @@ _Td3:
 	__asm        jmp    _Td0;
 // LINE 61:
 _Tf3:
-	__asm        jmp    _Tf8;
+	return;
 _Tf8:
 }
 
@@ -717,7 +717,7 @@ _T39:
 	__asm        add    ecx, 0xC8;
 	__asm        call   CharList::DeleteAllItems;
 // LINE 77:
-	__asm        jmp    _T4c;
+	return;
 _T4c:
 }
 
@@ -755,7 +755,7 @@ _T51:
 	__asm        add    ecx, 0xC8;
 	__asm        call   CharList::DeleteAllItems;
 // LINE 92:
-	__asm        jmp    _T64;
+	return;
 _T64:
 }
 
@@ -1019,7 +1019,7 @@ _T2ad:
 	__asm        jmp    _T3c;
 // LINE 182:
 _T2b2:
-	__asm        jmp    _T2b7;
+	return;
 _T2b7:
 }
 
@@ -1191,7 +1191,7 @@ _T1d0:
 	__asm        jmp    _T9d;
 // LINE 233:
 _T1d5:
-	__asm        jmp    _T1da;
+	return;
 _T1da:
 }
 
@@ -1205,7 +1205,7 @@ void CGameCommander::CGameCommander() {
 // LINE 249:
 	this->myGameApp = 0x0;
 // LINE 252:
-	__asm        jmp    _T2c;
+	return;
 _T2c:
 	__asm        mov    eax, this;
 }
@@ -1215,7 +1215,7 @@ void CGameCommander::~CGameCommander() {
 
 	this-><CGameCommander+0x00> = 0x590ff8;
 // LINE 256:
-	__asm        jmp    _T1a;
+	return;
 _T1a:
 	__asm        mov    ecx, this;
 	__asm        call   CDefaultCommander::~CDefaultCommander;
@@ -1383,7 +1383,7 @@ void CGameCommander::ProcessSetFocus() {
 	__asm        mov    ecx, [eax+8];
 	__asm        call   dword ptr [edx+0x98];
 // LINE 356:
-	__asm        jmp    _T2f;
+	return;
 _T2f:
 }
 
@@ -1425,7 +1425,7 @@ void CGameCommander::ProcessKeyDown(long lKey) {
 	__asm        mov    ecx, [eax+8];
 	__asm        call   dword ptr [edx+0xA0];
 // LINE 376:
-	__asm        jmp    _T42;
+	return;
 _T42:
 }
 
@@ -1449,7 +1449,7 @@ void CGameCommander::ProcessKeyUp(long lKey) {
 	__asm        mov    ecx, [eax+8];
 	__asm        call   dword ptr [edx+0xA4];
 // LINE 388:
-	__asm        jmp    _T42;
+	return;
 _T42:
 }
 
@@ -1632,7 +1632,7 @@ _T1d7:
 	__asm        call   CharList::AddItem;
 // LINE 466:
 _T1e9:
-	__asm        jmp    _T1ee;
+	return;
 _T1ee:
 }
 
@@ -1794,7 +1794,7 @@ _T191:
 	__asm        call   CharList::DeleteItem;
 // LINE 520:
 _T1a3:
-	__asm        jmp    _T1a8;
+	return;
 _T1a8:
 }
 
@@ -1805,7 +1805,7 @@ void CGameCommander::ProcessSystemCloseRequest() {
 	__asm        mov    ecx, [eax+8];
 	__asm        call   CGameApp::ProcessSystemCloseRequest;
 // LINE 529:
-	__asm        jmp    _T1c;
+	return;
 _T1c:
 }
 
@@ -4331,7 +4331,7 @@ _T1ae8:
 	__asm        jmp    _T13ac;
 // LINE 922:
 _T1aed:
-	__asm        jmp    _T1af2;
+	return;
 _T1af2:
 }
 
@@ -4449,7 +4449,7 @@ void DeleteShortcutPrefsFile() {
 	__asm        jmp    _T56;
 // LINE 973:
 _T56:
-	__asm        jmp    _T5b;
+	return;
 _T5b:
 }
 
@@ -4586,7 +4586,7 @@ void GetReservedKeyArray(long * lKeys) {
 // LINE 1035:
 	lKeys[20] = 0x0;
 // LINE 1036:
-	__asm        jmp    _T46;
+	return;
 _T46:
 }
 

@@ -512,7 +512,7 @@ static void $E3() {
 	__asm        mov    BoatClass::lsBoat<vftable>, 0x593200;
 	__asm        jmp    _T15;
 _T15:
-	__asm        jmp    _T1a;
+	return;
 _T1a:
 }
 
@@ -543,7 +543,7 @@ static void $E4() {
 	__asm        mov    ecx, 0x62B5F0;
 	__asm        call   BoatClass::~BoatClass;
 _T2d:
-	__asm        jmp    _T32;
+	return;
 _T32:
 }
 
@@ -630,7 +630,7 @@ _T10f:
 // LINE 193:
 	this->currentLocation.y = mapy;
 // LINE 194:
-	__asm        jmp    _T126;
+	return;
 _T126:
 	__asm        mov    eax, this;
 }
@@ -663,7 +663,7 @@ _T2e:
 _T4c:
 	this->flags[0] = 0x0;
 // LINE 235:
-	__asm        jmp    _T58;
+	return;
 _T58:
 }
 
@@ -799,7 +799,7 @@ _T18:
 	__asm        jmp    _T15;
 // LINE 494:
 _T36:
-	__asm        jmp    _T3b;
+	return;
 _T3b:
 }
 
@@ -823,7 +823,7 @@ _T18:
 	__asm        jmp    _T15;
 // LINE 542:
 _T36:
-	__asm        jmp    _T3b;
+	return;
 _T3b:
 }
 
@@ -930,7 +930,7 @@ _T11a:
 	__asm        jmp    _T11f;
 // LINE 607:
 _T11f:
-	__asm        jmp    _T124;
+	return;
 _T124:
 }
 
@@ -968,7 +968,7 @@ void BoatClass::Reset() {
 // LINE 644:
 	this->nextLocation.y = 0xffffffff;
 // LINE 645:
-	__asm        jmp    _T96;
+	return;
 _T96:
 }
 
@@ -987,7 +987,7 @@ void BoatClass::ItterateFSM() {
 	__asm        mov    ecx, this;
 	__asm        call   BoatClass::UnPlaceBoat;
 // LINE 691:
-	__asm        jmp    _T286;
+	return;
 // LINE 698:
 _T39:
 	__asm        mov    eax, this;
@@ -1081,7 +1081,7 @@ _Te1:
 // LINE 717:
 // Block end:
 _T141:
-	__asm        jmp    _T286;
+	return;
 // LINE 720:
 _T146:
 	__asm        mov    eax, this;
@@ -1213,7 +1213,7 @@ _T268:
 	__asm        jmp    _T25b;
 // LINE 839:
 _T281:
-	__asm        jmp    _T286;
+	return;
 _T286:
 }
 
@@ -1232,7 +1232,7 @@ void BoatClass::AdjustSpeed() {
 	this->speed = 0x1;
 // LINE 867:
 _T2f:
-	__asm        jmp    _T34;
+	return;
 _T34:
 }
 
@@ -1874,7 +1874,7 @@ _T227:
 	__asm        cmp    i, 0;
 	__asm        jne    _T236;
 // LINE 1176:
-	__asm        jmp    _T2cb;
+	return;
 // LINE 1178:
 _T236:
 	__asm        call   rand;
@@ -1930,7 +1930,7 @@ _T28b:
 //  [0, 1, 4, 2, 4, 4, 4, 3]
 // LINE 1196:
 _T2c6:
-	__asm        jmp    _T2cb;
+	return;
 _T2cb:
 }
 
@@ -1939,7 +1939,7 @@ void BoatClass::SlowDown() {
 // LINE 1215:
 	this->speed -= 0x20000;
 // LINE 1216:
-	__asm        jmp    _T1b;
+	return;
 _T1b:
 }
 
@@ -1948,7 +1948,7 @@ void BoatClass::Stop() {
 // LINE 1236:
 	this->speed = 0x0;
 // LINE 1237:
-	__asm        jmp    _T1b;
+	return;
 _T1b:
 }
 
@@ -2066,7 +2066,7 @@ _T15d:
 	this->flags[3] = 0x0;
 // LINE 1285:
 _T164:
-	__asm        jmp    _T169;
+	return;
 _T169:
 }
 
@@ -2231,7 +2231,7 @@ _Ta3:
 // LINE 1389:
 	dyptrptr-> = this->dyObj.next;
 // LINE 1391:
-	__asm        jmp    _T10f;
+	return;
 // LINE 1394:
 _Td0:
 	dyptrptr = dyptrptr->;
@@ -2254,7 +2254,7 @@ _T105:
 // LINE 1399:
 // Block end:
 _T10a:
-	__asm        jmp    _T10f;
+	return;
 _T10f:
 }
 
@@ -2312,7 +2312,7 @@ _T98:
 	__asm        mov    ecx, cellPointer;
 	__asm        mov    [ecx+0x10], eax;
 // LINE 1427:
-	__asm        jmp    _Tb5;
+	return;
 _Tb5:
 }
 
@@ -3289,7 +3289,7 @@ _T181:
 //   _Tc9
 // LINE 1765:
 _T1b5:
-	__asm        jmp    _T1ba;
+	return;
 _T1ba:
 }
 
@@ -3400,7 +3400,7 @@ _T79:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 1833:
-	__asm        jmp    _Tb0;
+	return;
 _Tb0:
 }
 
@@ -3500,7 +3500,7 @@ _T79:
 	__asm        add    esp, 8;
 // LINE 1873:
 _T112:
-	__asm        jmp    _T117;
+	return;
 _T117:
 }
 
@@ -3608,7 +3608,7 @@ _Tfe:
 	__asm        jmp    _T11f;
 // LINE 1923:
 _T11f:
-	__asm        jmp    _T124;
+	return;
 _T124:
 }
 
@@ -3716,7 +3716,7 @@ _Tfe:
 	__asm        jmp    _T11f;
 // LINE 1974:
 _T11f:
-	__asm        jmp    _T124;
+	return;
 _T124:
 }
 
@@ -3824,7 +3824,7 @@ _Tfe:
 	__asm        jmp    _T11f;
 // LINE 2029:
 _T11f:
-	__asm        jmp    _T124;
+	return;
 _T124:
 }
 
@@ -3853,7 +3853,7 @@ _T16:
 	__asm        mov    ecx, this;
 	__asm        call   BoatClass::AdjustNextPosition;
 // LINE 2136:
-	__asm        jmp    _T57;
+	return;
 _T57:
 }
 
@@ -4045,7 +4045,7 @@ _T170:
 	__asm        jle    _T1ce;
 // LINE 2250:
 _T1c9:
-	__asm        jmp    _T490;
+	return;
 // LINE 2257:
 _T1ce:
 	curr_dir++;
@@ -4228,7 +4228,7 @@ _T3c7:
 	__asm        jmp    _T1ce;
 // LINE 2317:
 _T3cc:
-	__asm        jmp    _T490;
+	return;
 // LINE 2323:
 foundCell:
 	__asm        mov    currentFlag, 2;
@@ -4291,7 +4291,7 @@ _T44a:
 	__asm        mov    ecx, this;
 	__asm        call   BoatClass::AdjustNextPosition;
 // LINE 2347:
-	__asm        jmp    _T490;
+	return;
 _T48b:
 	__asm        jmp    foundCell;
 _T490:
@@ -4318,7 +4318,7 @@ _T25:
 	this->flags[1] = 0x0;
 // LINE 2375:
 _T3b:
-	__asm        jmp    _T40;
+	return;
 _T40:
 }
 
@@ -5345,7 +5345,7 @@ void ItterateAllBoats() {
 // LINE 3024:
 	__asm        call   BoatClass::ItterateAll;
 // LINE 3025:
-	__asm        jmp    _T10;
+	return;
 _T10:
 }
 
@@ -5354,7 +5354,7 @@ void ResetAllBoats() {
 // LINE 3047:
 	__asm        call   BoatClass::ResetAll;
 // LINE 3048:
-	__asm        jmp    _T10;
+	return;
 _T10:
 }
 

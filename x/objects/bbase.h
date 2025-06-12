@@ -23,7 +23,7 @@ _T38:
 	__asm        call   Swizzle4;
 	__asm        add    esp, 4;
 // LINE 231:
-	__asm        jmp    _T49;
+	return;
 _T49:
 }
 
@@ -103,7 +103,7 @@ void cBBase::~cBBase() {
 	__asm        add    esp, 4;
 // LINE 53:
 _T40:
-	__asm        jmp    _T45;
+	return;
 _T45:
 }
 
@@ -119,7 +119,7 @@ void cBBase::Destroy() {
 	__asm        test   eax, eax;
 	__asm        jne    _T27;
 
-	__asm        jmp    _T1c4;
+	return;
 // LINE 59:
 _T27:
 	__asm        mov    eax, this;
@@ -272,7 +272,7 @@ _T1ba:
 	__asm        jmp    _T1bf;
 // LINE 68:
 _T1bf:
-	__asm        jmp    _T1c4;
+	return;
 _T1c4:
 }
 
@@ -282,7 +282,7 @@ void cBBase::Dirty() {
 // LINE 76:
 	this->fDataChanged = 0x1;
 // LINE 77:
-	__asm        jmp    _T1a;
+	return;
 _T1a:
 }
 
@@ -301,7 +301,7 @@ _T18:
 // FUNCTION: COPTER_D 0x0055f520
 void cBBase::WriteToDisk() {
 // LINE 113:
-	__asm        jmp    _T11;
+	return;
 _T11:
 }
 

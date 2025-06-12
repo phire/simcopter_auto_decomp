@@ -640,7 +640,7 @@ _T36:
 	__asm        mov    ecx, p;
 	__asm        mov    [ecx+0x10], eax;
 // LINE 299:
-	__asm        jmp    _Tf6;
+	return;
 // LINE 300:
 _Td8:
 	p->V.x = 0x0;

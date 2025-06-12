@@ -466,7 +466,7 @@ _T1e5:
 	__asm        jmp    _T78;
 // LINE 234:
 _T1ea:
-	__asm        jmp    _T205;
+	return;
 // LINE 245:
 _T1ef:
 	__asm        mov    eax, nTweakQueueSlotIdx;

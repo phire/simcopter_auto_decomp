@@ -55,7 +55,7 @@ void ResourceRCData::ResourceRCData() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F648;
 // LINE 27:
-	__asm        jmp    _T56;
+	return;
 _T56:
 	__asm        mov    eax, this;
 }
@@ -86,7 +86,7 @@ void ResourceRCData::ResourceRCData(int32_t nTheResource, int32_t bLoadNow) {
 	__asm        call   ResourceRCData::ReadResource;
 // LINE 47:
 _T63:
-	__asm        jmp    _T68;
+	return;
 _T68:
 	__asm        mov    eax, this;
 }
@@ -136,7 +136,7 @@ void ResourceRCData::ResourceRCData(/*packed*/ class ResourceRCData& resData) {
 // LINE 65:
 // Block end:
 _T8d:
-	__asm        jmp    _T92;
+	return;
 _T92:
 	__asm        mov    eax, this;
 }
@@ -149,7 +149,7 @@ void ResourceRCData::~ResourceRCData() {
 	__asm        mov    ecx, this;
 	__asm        call   ResourceRCData::Reset;
 // LINE 74:
-	__asm        jmp    _T22;
+	return;
 _T22:
 }
 
@@ -248,7 +248,7 @@ _T26:
 _T76:
 	this->chData = 0x0;
 // LINE 116:
-	__asm        jmp    _T85;
+	return;
 _T85:
 }
 

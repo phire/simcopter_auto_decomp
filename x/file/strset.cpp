@@ -134,7 +134,7 @@ void StringSet::StringSet(/*unpacked*/ class ResFile *file, short resID) {
 	__asm        mov    ecx, this;
 	__asm        call   StringSet::LoadStrings;
 // LINE 16:
-	__asm        jmp    _T25;
+	return;
 _T25:
 	__asm        mov    eax, this;
 }
@@ -164,7 +164,7 @@ void StringSet::StringSet(/*unpacked*/ class ResFile *file, short resID, short n
 	__asm        add    esp, 0x10;
 // LINE 28:
 _T4e:
-	__asm        jmp    _T53;
+	return;
 _T53:
 	__asm        mov    eax, this;
 }
@@ -235,7 +235,7 @@ _Tb4:
 	this->fNumStrings = 0x0;
 // LINE 48:
 _Tc8:
-	__asm        jmp    _Tcd;
+	return;
 _Tcd:
 }
 
@@ -247,7 +247,7 @@ void StringSet::Swizzle(void * __ptr32 data, long size) {
 	__asm        call   Swizzle2;
 	__asm        add    esp, 4;
 // LINE 54:
-	__asm        jmp    _T17;
+	return;
 _T17:
 }
 
@@ -272,7 +272,7 @@ void StringSet::~StringSet() {
 	__asm        call   FlatResFile::Release;
 // LINE 62:
 _T39:
-	__asm        jmp    _T3e;
+	return;
 _T3e:
 }
 

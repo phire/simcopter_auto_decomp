@@ -4840,7 +4840,7 @@ _T21ca:
 	__asm        jmp    _T1ea4;
 // LINE 1776:
 _T2202:
-	__asm        jmp    _T2207;
+	return;
 // LINE 1777:
 _T2207:
 }
@@ -6452,7 +6452,7 @@ _T64:
 // LINE 2649:
 	__asm        jmp    _T9e;
 
-	__asm        jmp    _Ta9;
+	return;
 // LINE 2651:
 _T9e:
 	ptr[0] = reinterpret_cast<uint8_t>(blit->user1);
@@ -6517,7 +6517,7 @@ void S3MissileDebrisDouse(/*packed*/ struct _DYOBJ_INST *dyobj) {
 	__asm        jl     _T2d;
 // LINE 2696:
 _T28:
-	__asm        jmp    _T129;
+	return;
 // LINE 2699:
 _T2d:
 	__asm        mov    eax, dyobj;
@@ -6531,7 +6531,7 @@ _T2d:
 	__asm        test   byte ptr [eax], 1;
 	__asm        jne    _T53;
 // LINE 2704:
-	__asm        jmp    _T129;
+	return;
 // LINE 2707:
 _T53:
 	__asm        mov    eax, md;

@@ -295,7 +295,7 @@ _L31071:
 	__asm        ret;
 // LINE 47:
 _T2b6:
-	__asm        jmp    _T2c5;
+	return;
 _L31070:
 	__asm        mov    eax, 0x5961B0;
 	__asm        jmp    near ptr 0x0056F590;

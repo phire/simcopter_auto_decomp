@@ -807,7 +807,7 @@ _T69d:
 	__asm        call   GraphicWindow::MakeFocus;
 	__asm        add    esp, 4;
 // LINE 60:
-	__asm        jmp    _T6e3;
+	return;
 _T6e3:
 	__asm        mov    eax, this;
 }
@@ -1134,7 +1134,7 @@ _T3ee:
 	__asm        add    ecx, 0x74;
 	__asm        call   list<HotSpot>::deallocate_buffers;
 _T405:
-	__asm        jmp    _T40a;
+	return;
 _T40a:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
@@ -2262,7 +2262,7 @@ _Ta4:
 	this->myCheckmarkImage = 0x0;
 // LINE 149:
 _Tb1:
-	__asm        jmp    _Tb6;
+	return;
 _Tb6:
 }
 
@@ -2637,7 +2637,7 @@ _T379:
 	__asm        jmp    _T296;
 // LINE 197:
 _T3bf:
-	__asm        jmp    _T3c4;
+	return;
 _T3c4:
 }
 
@@ -2945,7 +2945,7 @@ _T30e:
 	__asm        jmp    _T59;
 // LINE 260:
 _T313:
-	__asm        jmp    _T318;
+	return;
 _T318:
 }
 
@@ -3076,7 +3076,7 @@ _Tda:
 // FUNCTION: COPTER_D 0x004aa640
 void InventoryWindow::LoadHotSpots() {
 // LINE 323:
-	__asm        jmp    _T11;
+	return;
 _T11:
 }
 
@@ -3160,7 +3160,7 @@ _T27:
 	__asm        mov    ecx, ptEquipment;
 	__asm        mov    [ecx+4], eax;
 // LINE 367:
-	__asm        jmp    _T4b;
+	return;
 _T4b:
 }
 
@@ -3200,7 +3200,7 @@ _T64:
 	__asm        jmp    _T90;
 // LINE 381:
 _T90:
-	__asm        jmp    _T95;
+	return;
 _T95:
 }
 

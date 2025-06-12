@@ -178,14 +178,14 @@ void S3RoadGraphInit() {
 	__asm        mov    ecx, 0x5C3828;
 	__asm        call   RoadGraph::Init;
 // LINE 70:
-	__asm        jmp    _T15;
+	return;
 _T15:
 }
 
 // FUNCTION: COPTER_D 0x0053bd5a
 void S3RoadGraphDestroy() {
 // LINE 76:
-	__asm        jmp    _T0b;
+	return;
 _T0b:
 }
 
@@ -715,7 +715,7 @@ _T5b8:
 	__asm        jmp    _T52d;
 // LINE 191:
 _T5bd:
-	__asm        jmp    _T5c2;
+	return;
 _T5c2:
 }
 
@@ -1038,7 +1038,7 @@ _T34c:
 _T353:
 	pGoal->slope = slope;
 // LINE 327:
-	__asm        jmp    _T366;
+	return;
 _T361:
 	__asm        jmp    IntersectionKludge;
 _T366:
@@ -1340,7 +1340,7 @@ _T2a3:
 	__asm        mov    eax, pGoal;
 	__asm        mov    [eax+0x1E], ecx;
 // LINE 413:
-	__asm        jmp    _T2f3;
+	return;
 _T2f3:
 }
 
@@ -2003,7 +2003,7 @@ void RoadGraph::SamePlaceOtherDirection(/*packed*/ struct Goal *pGoal) {
 	__asm        mov    ecx, pGoal;
 	__asm        mov    [ecx+0xE], eax;
 // LINE 562:
-	__asm        jmp    _T134;
+	return;
 // LINE 567:
 _T62:
 	prevDir = pGoal->direction;
@@ -2082,7 +2082,7 @@ _T105:
 	__asm        cmp    ecx, eax;
 	__asm        jne    _T62;
 // LINE 587:
-	__asm        jmp    _T134;
+	return;
 _T134:
 }
 
@@ -2782,7 +2782,7 @@ _T4c6:
 	__asm        jmp    _T18;
 // LINE 758:
 _T4cb:
-	__asm        jmp    _T4d0;
+	return;
 _T4d0:
 }
 
@@ -3652,7 +3652,7 @@ _T894:
 	__asm        call   RoadGraph::FindNumRoadElements;
 // LINE 876:
 _T927:
-	__asm        jmp    _T92c;
+	return;
 _T92c:
 }
 
@@ -3694,7 +3694,7 @@ void RoadGraph::FindNumRoadElements(/*packed*/ struct RGVertex *pRGV, /*packed*/
 // LINE 891:
 	pEdge->numElementsToPath = 0x0;
 // LINE 892:
-	__asm        jmp    _T5a4;
+	return;
 // LINE 895:
 _T65:
 	__asm        cmp    fDeadEnd, 0;
@@ -4160,7 +4160,7 @@ _T572:
 	pEdge->numElementsToPath--;
 // LINE 1009:
 _T59f:
-	__asm        jmp    _T5a4;
+	return;
 _T5a4:
 }
 
@@ -6429,7 +6429,7 @@ _T157f:
 	__asm        jmp    _T151e;
 // LINE 1192:
 _T15ab:
-	__asm        jmp    _T15b0;
+	return;
 _T15b0:
 }
 
@@ -6588,7 +6588,7 @@ _T165:
 	__asm        call   RoadGraph::MakeRoad;
 // LINE 1236:
 _T19d:
-	__asm        jmp    _T1a2;
+	return;
 _T1a2:
 }
 
@@ -6634,7 +6634,7 @@ void RoadGraph::MakeRoad(/*packed*/ struct RGVertex *pRGV, unsigned char x, unsi
 	__asm        test   eax, eax;
 	__asm        je     _T5e;
 
-	__asm        jmp    _Taf3;
+	return;
 // LINE 1270:
 _T5e:
 	startLoc.x = x;
@@ -6881,7 +6881,7 @@ _T331:
 	__asm        mov    ecx, pRoad;
 	__asm        mov    [ecx], al;
 // LINE 1290:
-	__asm        jmp    _Taf3;
+	return;
 // LINE 1296:
 _T34d:
 	__asm        cmp    deadEnd, 0;
@@ -7566,7 +7566,7 @@ _Tae9:
 	__asm        jmp    _T6bf;
 // LINE 1406:
 _Taee:
-	__asm        jmp    _Taf3;
+	return;
 _Taf3:
 }
 
@@ -7727,7 +7727,7 @@ _T124:
 	__asm        mov    eax, goal;
 	__asm        mov    [eax+0x1A], ecx;
 // LINE 1440:
-	__asm        jmp    _T19a;
+	return;
 _T19a:
 }
 

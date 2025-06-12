@@ -152,7 +152,7 @@ void Version::Version() {
 	this->lpFVData = 0x0;
 // LINE 50:
 _T120:
-	__asm        jmp    _T125;
+	return;
 _T125:
 	__asm        mov    eax, this;
 }
@@ -177,7 +177,7 @@ void Version::~Version() {
 	__asm        add    esp, 4;
 // LINE 62:
 _T3d:
-	__asm        jmp    _T42;
+	return;
 _T42:
 }
 

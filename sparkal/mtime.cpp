@@ -488,7 +488,7 @@ static void $E13() {
 	__asm        call   _tzset;
 	__asm        jmp    _T10;
 _T10:
-	__asm        jmp    _T15;
+	return;
 _T15:
 }
 
@@ -523,7 +523,7 @@ _T5b:
 	this->Julnum = 0x0;
 // LINE 57:
 _T65:
-	__asm        jmp    _T6a;
+	return;
 _T6a:
 	__asm        mov    eax, this;
 }

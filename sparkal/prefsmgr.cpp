@@ -350,7 +350,7 @@ void PreferenceItem::PreferenceItem() {
 // LINE 20:
 	this->chPreferenceData = 0x0;
 // LINE 21:
-	__asm        jmp    _T2e;
+	return;
 _T2e:
 	__asm        mov    eax, this;
 }
@@ -404,7 +404,7 @@ _T88:
 	this->chPreferenceData = 0x0;
 // LINE 45:
 _T92:
-	__asm        jmp    _T97;
+	return;
 _T97:
 	__asm        mov    eax, this;
 }
@@ -427,7 +427,7 @@ void PreferenceItem::~PreferenceItem() {
 	__asm        add    esp, 4;
 // LINE 55:
 _T34:
-	__asm        jmp    _T39;
+	return;
 _T39:
 }
 
@@ -826,7 +826,7 @@ _T255:
 // LINE 171:
 	this->lFileVersion = lTheFileVersion;
 // LINE 172:
-	__asm        jmp    _T29b;
+	return;
 _T29b:
 	__asm        mov    eax, this;
 }
@@ -1049,7 +1049,7 @@ _T1f7:
 	__asm        mov    list<PreferenceItem>::last, 0;
 	__asm        jmp    _T21a;
 _T21a:
-	__asm        jmp    _T21f;
+	return;
 _T21f:
 }
 
@@ -1130,7 +1130,7 @@ _Tb1:
 	__asm        jmp    _T37;
 // LINE 209:
 _Tc1:
-	__asm        jmp    _Tc6;
+	return;
 _Tc6:
 }
 
@@ -2609,7 +2609,7 @@ _T23c:
 _T267:
 	this-><NotificationPreferenceManager+0x00> = 0x590de8;
 // LINE 535:
-	__asm        jmp    _T275;
+	return;
 _T275:
 	__asm        mov    eax, this;
 }
@@ -3152,7 +3152,7 @@ _Td6:
 	__asm        jmp    _T27;
 // LINE 625:
 _Tdb:
-	__asm        jmp    _Te0;
+	return;
 _Te0:
 }
 

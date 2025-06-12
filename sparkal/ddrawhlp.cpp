@@ -170,7 +170,7 @@ void DDDisable() {
 	__asm        cmp    lpDD, 0;
 	__asm        jne    _T18;
 // LINE 61:
-	__asm        jmp    _T47;
+	return;
 // LINE 65:
 _T18:
 	__asm        mov    eax, lpDD;
@@ -186,7 +186,7 @@ _T18:
 _T38:
 	lpDD = 0x0;
 // LINE 70:
-	__asm        jmp    _T47;
+	return;
 _T47:
 }
 

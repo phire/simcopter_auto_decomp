@@ -433,7 +433,7 @@ void S3SwitchToProperSkyType() {
 	__asm        call   SkyImage::SwitchToProperSkyType;
 // LINE 93:
 _T35:
-	__asm        jmp    _T3a;
+	return;
 _T3a:
 }
 

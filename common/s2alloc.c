@@ -366,7 +366,7 @@ void S2AllocReset(int32_t index) {
 	__asm        cmp    root[0][eax*4], 0;
 	__asm        jne    _T1f;
 // LINE 460:
-	__asm        jmp    _T96;
+	return;
 // LINE 462:
 _T1f:
 	__asm        mov    eax, index;
@@ -421,7 +421,7 @@ void S2AllocFreePool(int32_t index) {
 	__asm        cmp    root[0][eax*4], 0;
 	__asm        jne    _T1f;
 // LINE 494:
-	__asm        jmp    _Tdd;
+	return;
 // LINE 496:
 _T1f:
 	__asm        mov    eax, index;

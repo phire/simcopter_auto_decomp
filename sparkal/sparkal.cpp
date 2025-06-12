@@ -302,7 +302,7 @@ _T1a0:
 _T1a5:
 	__asm        jmp    _T1aa;
 _T1aa:
-	__asm        jmp    _T1af;
+	return;
 _T1af:
 }
 

@@ -460,7 +460,7 @@ _T30:
 // LINE 100:
 	this->dsCapabilities.dwSize = 0x60;
 // LINE 104:
-	__asm        jmp    _T7a;
+	return;
 _T7a:
 	__asm        mov    eax, this;
 }
@@ -473,7 +473,7 @@ void SoundSystem::~SoundSystem() {
 	__asm        mov    ecx, this;
 	__asm        call   SoundSystem::DeInitialize;
 // LINE 109:
-	__asm        jmp    _T22;
+	return;
 _T22:
 }
 
@@ -743,7 +743,7 @@ _T43:
 _T4d:
 	this->lpDirectSound = 0x0;
 // LINE 239:
-	__asm        jmp    _T5c;
+	return;
 _T5c:
 }
 
@@ -810,7 +810,7 @@ _T24:
 	__asm        jmp    _T21;
 // LINE 287:
 _T44:
-	__asm        jmp    _T49;
+	return;
 _T49:
 	__asm        mov    eax, this;
 }
@@ -823,7 +823,7 @@ void SoundManager::~SoundManager() {
 	__asm        mov    ecx, this;
 	__asm        call   SoundManager::DeleteAllSounds;
 // LINE 292:
-	__asm        jmp    _T22;
+	return;
 _T22:
 }
 
@@ -859,7 +859,7 @@ _T56:
 	__asm        jmp    _T18;
 // LINE 299:
 _T5b:
-	__asm        jmp    _T60;
+	return;
 _T60:
 }
 
@@ -893,7 +893,7 @@ _T4b:
 	__asm        mov    edx, this;
 	__asm        mov    [edx+ecx*4+4], eax;
 // LINE 319:
-	__asm        jmp    _T5d;
+	return;
 _T5d:
 }
 
@@ -946,7 +946,7 @@ _T7d:
 	__asm        mov    edx, this;
 	__asm        mov    [edx+ecx*4+4], eax;
 // LINE 345:
-	__asm        jmp    _T8f;
+	return;
 _T8f:
 }
 
@@ -1001,7 +1001,7 @@ _T81:
 	__asm        mov    edx, this;
 	__asm        mov    [edx+ecx*4+4], eax;
 // LINE 352:
-	__asm        jmp    _T93;
+	return;
 _T93:
 }
 
@@ -1052,7 +1052,7 @@ void SoundManager::StopSound(int32_t nIndex) {
 	__asm        call   dword ptr [edx+0xC];
 // LINE 381:
 _T36:
-	__asm        jmp    _T3b;
+	return;
 _T3b:
 }
 
@@ -1087,7 +1087,7 @@ _T52:
 	__asm        jmp    _T18;
 // LINE 398:
 _T57:
-	__asm        jmp    _T5c;
+	return;
 _T5c:
 }
 
@@ -1144,7 +1144,7 @@ _T78:
 // LINE 422:
 	this->bUnloadBeforeNextPlay = 0x0;
 // LINE 423:
-	__asm        jmp    _Te0;
+	return;
 _Te0:
 	__asm        mov    eax, this;
 }
@@ -1218,7 +1218,7 @@ _Tab:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _Td3:
-	__asm        jmp    _Td8;
+	return;
 _Td8:
 }
 
@@ -1782,7 +1782,7 @@ _T1d3:
 // LINE 504:
 	this->bUnloadBeforeNextPlay = 0x1;
 // LINE 505:
-	__asm        jmp    _T1ec;
+	return;
 _T1ec:
 }
 
@@ -1838,7 +1838,7 @@ _T5e:
 	__asm        jmp    _T5b;
 // LINE 556:
 _T7b:
-	__asm        jmp    _T80;
+	return;
 _T80:
 	__asm        mov    eax, this;
 }
@@ -2049,7 +2049,7 @@ _T25b:
 	__asm        jmp    _T258;
 // LINE 587:
 _T278:
-	__asm        jmp    _T27d;
+	return;
 _T27d:
 	__asm        mov    eax, this;
 }
@@ -2070,7 +2070,7 @@ void DigitalSound::DigitalSound(long lNewResID) {
 // LINE 602:
 	this->nCompletionEstimationTimerSet = 0x0;
 // LINE 608:
-	__asm        jmp    _T49;
+	return;
 _T49:
 	__asm        mov    eax, this;
 }
@@ -2083,7 +2083,7 @@ void DigitalSound::~DigitalSound() {
 	__asm        mov    ecx, this;
 	__asm        call   DigitalSound::Unload;
 // LINE 624:
-	__asm        jmp    _T22;
+	return;
 _T22:
 	__asm        mov    ecx, this;
 	__asm        call   Sound::~Sound;
@@ -2270,7 +2270,7 @@ _T207:
 	__asm        mov    [ecx+0x20], eax;
 // LINE 648:
 _T225:
-	__asm        jmp    _T22a;
+	return;
 _T22a:
 }
 
@@ -2322,7 +2322,7 @@ _T77:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x74];
 // LINE 671:
-	__asm        jmp    _T87;
+	return;
 _T87:
 }
 
@@ -4847,7 +4847,7 @@ void StreamingBufferTimerCallback(uint32_t __formal, uint32_t __formal, unsigned
 	__asm        mov    ecx, digitalSoundObject;
 	__asm        call   dword ptr [eax+0x7C];
 // LINE 1800:
-	__asm        jmp    _T1f;
+	return;
 _T1f:
 }
 
@@ -4869,7 +4869,7 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 	__asm        cmp    dword ptr [eax+0x58], 0;
 	__asm        je     _T21;
 // LINE 1814:
-	__asm        jmp    _T751;
+	return;
 // LINE 1815:
 _T21:
 	this->lpStreamBufferInfo->bInTimerCallback = 0x1;
@@ -5554,7 +5554,7 @@ _T6ba:
 END_OF_FUNCTION:
 	this->lpStreamBufferInfo->bInTimerCallback = 0x0;
 // LINE 2032:
-	__asm        jmp    _T751;
+	return;
 _T72e:
 	__asm        jmp    END_OF_FUNCTION;
 _T733:
@@ -5600,7 +5600,7 @@ void DigitalSound::StopCompletionNotification() {
 	__asm        call   dword ptr [eax+0x84];
 // LINE 2058:
 _T31:
-	__asm        jmp    _T36;
+	return;
 _T36:
 }
 
@@ -5690,7 +5690,7 @@ void CompletionEstimationTimerCallback(uint32_t nTimerID, uint32_t __formal, uns
 	__asm        mov    ecx, digitalSoundObject;
 	__asm        call   dword ptr [eax+0x80];
 // LINE 2109:
-	__asm        jmp    _T22;
+	return;
 _T22:
 }
 
@@ -5718,7 +5718,7 @@ void DigitalSound::ProcessCompletionEstimationTimerCallback() {
 	__asm        add    esp, 4;
 // LINE 2120:
 _T46:
-	__asm        jmp    _T70;
+	return;
 // LINE 2126:
 _T4b:
 	__asm        push   0x14;
@@ -5731,7 +5731,7 @@ _T4b:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x88];
 // LINE 2129:
-	__asm        jmp    _T70;
+	return;
 _T70:
 }
 
@@ -5813,7 +5813,7 @@ void DigitalSound::StopCompletionNotificationEstimationTimer() {
 	this->nCompletionEstimationTimerSet = 0x0;
 // LINE 2182:
 _T38:
-	__asm        jmp    _T3d;
+	return;
 _T3d:
 }
 

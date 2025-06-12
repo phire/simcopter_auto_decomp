@@ -333,7 +333,7 @@ void HotSpot::HotSpot() {
 	__asm        jmp    _T42;
 // LINE 26:
 _T42:
-	__asm        jmp    _T47;
+	return;
 _T47:
 	__asm        mov    eax, this;
 }
@@ -694,7 +694,7 @@ _T3c9:
 	__asm        jmp    _T3ec;
 // LINE 38:
 _T3ec:
-	__asm        jmp    _T3f1;
+	return;
 _T3f1:
 	__asm        mov    eax, this;
 }
@@ -1090,7 +1090,7 @@ _T4d2:
 	__asm        jmp    _T61;
 // LINE 54:
 _T4d7:
-	__asm        jmp    _T4dc;
+	return;
 _T4dc:
 	__asm        mov    eax, this;
 }
@@ -1487,7 +1487,7 @@ _T4eb:
 	__asm        jmp    _T70;
 // LINE 74:
 _T4f0:
-	__asm        jmp    _T4f5;
+	return;
 _T4f5:
 	__asm        mov    eax, this;
 }
@@ -2163,7 +2163,7 @@ _T903:
 	__asm        jmp    _T908;
 // LINE 91:
 _T908:
-	__asm        jmp    _T90d;
+	return;
 _T90d:
 	__asm        mov    eax, this;
 }
@@ -3078,7 +3078,7 @@ _T67:
 _T6c:
 	rectBounds.bottom = this->pointArray.start-><MPoint+0x0c>;
 // LINE 216:
-	__asm        jmp    _T3c2;
+	return;
 // LINE 219:
 _T80:
 	__asm        mov    eax, this;
@@ -3197,7 +3197,7 @@ _T1a2:
 	__asm        mov    ecx, rectBounds;
 	__asm        mov    [ecx+0xC], eax;
 // LINE 230:
-	__asm        jmp    _T3c2;
+	return;
 // LINE 233:
 _T1b9:
 	__asm        mov    eax, this;
@@ -3237,7 +3237,7 @@ _T1d5:
 	__asm        jmp    _T223;
 // LINE 237:
 _T223:
-	__asm        jmp    _T3c2;
+	return;
 // LINE 239:
 _T228:
 	__asm        jmp    _T22d;
@@ -3370,7 +3370,7 @@ _T363:
 // LINE 256:
 	rectBounds.bottom = nMaxY;
 // LINE 257:
-	__asm        jmp    _T3c2;
+	return;
 // LINE 261:
 _T38b:
 	__asm        mov    eax, rectBounds;
@@ -3390,7 +3390,7 @@ _T38b:
 	__asm        jmp    _T3bd;
 // LINE 262:
 _T3bd:
-	__asm        jmp    _T3c2;
+	return;
 _T3c2:
 }
 

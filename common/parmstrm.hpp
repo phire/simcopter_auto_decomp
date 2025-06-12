@@ -695,7 +695,7 @@ _T9aa:
 	__asm        jmp    _T9af;
 // LINE 242:
 _T9af:
-	__asm        jmp    _T9b4;
+	return;
 _T9b4:
 	__asm        mov    eax, this;
 }
@@ -831,7 +831,7 @@ _Tc8:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], ax;
 // LINE 375:
-	__asm        jmp    _Tfa;
+	return;
 _Tfa:
 }
 

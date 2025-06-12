@@ -264,7 +264,7 @@ _T45:
 // LINE 70:
 	this->myMIFFHeader.lByteOrdering = 0x0;
 // LINE 71:
-	__asm        jmp    _T109;
+	return;
 _T109:
 	__asm        mov    eax, this;
 }
@@ -311,7 +311,7 @@ _T67:
 // LINE 90:
 	this->bFileEndWritten = 0x0;
 // LINE 91:
-	__asm        jmp    _Td0;
+	return;
 _Td0:
 	__asm        mov    eax, this;
 }
@@ -366,7 +366,7 @@ _T7d:
 	__asm        call   _close;
 	__asm        add    esp, 4;
 _T9f:
-	__asm        jmp    _Ta4;
+	return;
 _Ta4:
 }
 

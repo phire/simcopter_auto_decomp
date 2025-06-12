@@ -93,7 +93,7 @@ _T5d:
 	__asm        add    esp, 0x10;
 // LINE 765:
 _Ta4:
-	__asm        jmp    _Ta9;
+	return;
 _Ta9:
 }
 

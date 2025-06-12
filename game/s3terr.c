@@ -159,7 +159,7 @@ _T2f:
 	__asm        jmp    _T2c;
 // LINE 143:
 _T62:
-	__asm        jmp    _T67;
+	return;
 // LINE 144:
 _T67:
 }
@@ -4267,7 +4267,7 @@ void do_map_square(short x, short y, short msize) {
 	__asm        cmp    eax, 1;
 	__asm        jg     _T26;
 // LINE 1018:
-	__asm        jmp    _Tb85;
+	return;
 // LINE 1019:
 _T26:
 	__asm        movsx  eax, msize;
@@ -5563,7 +5563,7 @@ _T38c:
 	__asm        jl     _T3dd;
 // LINE 1256:
 _T3d8:
-	__asm        jmp    _T524;
+	return;
 // LINE 1259:
 _T3dd:
 	__asm        mov    eax, mcell.y;

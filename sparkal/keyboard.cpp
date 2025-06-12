@@ -152,7 +152,7 @@ void Keyboard::Keyboard() {
 	__asm        mov    ecx, this;
 	__asm        call   Keyboard::ClearSettings;
 // LINE 33:
-	__asm        jmp    _T21;
+	return;
 _T21:
 	__asm        mov    eax, this;
 }
@@ -226,7 +226,7 @@ void Keyboard::ProcessKeyDown(unsigned char chKey) {
 	__asm        call   CharList::AddItem;
 // LINE 74:
 _T3a:
-	__asm        jmp    _T3f;
+	return;
 _T3f:
 }
 
@@ -251,7 +251,7 @@ void Keyboard::ProcessKeyUp(unsigned char chKey) {
 	__asm        call   CharList::DeleteItem;
 // LINE 87:
 _T3a:
-	__asm        jmp    _T3f;
+	return;
 _T3f:
 }
 
@@ -277,7 +277,7 @@ _T38:
 	__asm        mov    ecx, this;
 	__asm        call   CharList::DeleteAllItems;
 // LINE 101:
-	__asm        jmp    _T45;
+	return;
 _T45:
 }
 

@@ -610,7 +610,7 @@ _T205:
 _T230:
 	__asm        jmp    _T235;
 _T235:
-	__asm        jmp    _T23a;
+	return;
 _T23a:
 	__asm        mov    ecx, this;
 	__asm        call   FlatResFile::~FlatResFile;

@@ -695,13 +695,13 @@ _T43:
 	__asm        cmp    i, 0x14;
 	__asm        jne    _T52;
 // LINE 249:
-	__asm        jmp    _T187;
+	return;
 // LINE 254:
 _T52:
 	__asm        cmp    cptr, 0;
 	__asm        jne    _T61;
 // LINE 255:
-	__asm        jmp    _T187;
+	return;
 // LINE 258:
 _T61:
 	__asm        mov    eax, 4;
@@ -836,13 +836,13 @@ _T43:
 	__asm        cmp    i, 0x64;
 	__asm        jne    _T52;
 // LINE 328:
-	__asm        jmp    _T1bc;
+	return;
 // LINE 333:
 _T52:
 	__asm        cmp    cptr, 0;
 	__asm        jne    _T61;
 // LINE 334:
-	__asm        jmp    _T1bc;
+	return;
 // LINE 337:
 _T61:
 	__asm        lea    eax, finfo.Face;
@@ -1248,7 +1248,7 @@ _T2d7:
 	__asm        jmp    _T22b;
 // LINE 510:
 _T347:
-	__asm        jmp    _T34c;
+	return;
 // LINE 511:
 _T34c:
 }

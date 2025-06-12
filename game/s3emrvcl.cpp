@@ -628,7 +628,7 @@ void EmergencyVehicleClass::EmergencyVehicleClass() {
 // LINE 104:
 	this->emergencyLocation.y = 0x0;
 // LINE 105:
-	__asm        jmp    _T5d;
+	return;
 _T5d:
 	__asm        mov    eax, this;
 }
@@ -929,7 +929,7 @@ _T2b0:
 // LINE 351:
 	this->dispatchPathIndex = 0x0;
 // LINE 352:
-	__asm        jmp    _T352;
+	return;
 _T352:
 }
 
@@ -1447,7 +1447,7 @@ _T59e:
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::TurnOnStrobe;
 // LINE 518:
-	__asm        jmp    _T633;
+	return;
 _T633:
 }
 
@@ -1590,7 +1590,7 @@ _T138:
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::InitializePlacedVehicleForDispatch;
 // LINE 554:
-	__asm        jmp    _T1c3;
+	return;
 _T1c3:
 }
 
@@ -1599,7 +1599,7 @@ void EmergencyVehicleClass::CancelEmergencyDispatch() {
 // LINE 561:
 	this->emergencyState = 0x2;
 // LINE 562:
-	__asm        jmp    _T1e;
+	return;
 _T1e:
 }
 
@@ -1625,7 +1625,7 @@ void EmergencyVehicleClass::FillSeat(/*packed*/ struct _DYOBJ_INST *carInst) {
 	__asm        jl     _T21;
 // LINE 576:
 _T21:
-	__asm        jmp    _T26;
+	return;
 _T26:
 }
 
@@ -1688,7 +1688,7 @@ _T8b:
 //   _T74
 // LINE 641:
 _Tb6:
-	__asm        jmp    _Tbb;
+	return;
 _Tbb:
 }
 
@@ -1736,7 +1736,7 @@ void EmergencyVehicleClass::PositionIcon() {
 	__asm        call   0x004D8781;
 	__asm        add    esp, 0xC;
 // LINE 670:
-	__asm        jmp    _T80;
+	return;
 _T80:
 }
 
@@ -1804,7 +1804,7 @@ void EmergencyVehicleClass::ArriveOnScene() {
 // LINE 923:
 	this->emergencyType = 0x0;
 // LINE 924:
-	__asm        jmp    _T3f;
+	return;
 _T3f:
 }
 
@@ -1872,7 +1872,7 @@ _T97:
 // LINE 958:
 	dyptrptr-> = this->dispatchIcon.next;
 // LINE 959:
-	__asm        jmp    _T108;
+	return;
 // LINE 961:
 _Tc9:
 	dyptrptr = dyptrptr->;
@@ -1895,7 +1895,7 @@ _Tfe:
 // LINE 965:
 // Block end:
 _T103:
-	__asm        jmp    _T108;
+	return;
 _T108:
 }
 
@@ -1954,10 +1954,10 @@ _T84:
 	__asm        jmp    _Tb5;
 // LINE 996:
 _Tb0:
-	__asm        jmp    _Tba;
+	return;
 // LINE 998:
 _Tb5:
-	__asm        jmp    _Tba;
+	return;
 _Tba:
 }
 
@@ -1983,7 +1983,7 @@ void EmergencyVehicleClass::Reset() {
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::Reset;
 // LINE 1330:
-	__asm        jmp    _T75;
+	return;
 _T75:
 }
 
@@ -2006,7 +2006,7 @@ void DispatchEmergencyVehicle(int32_t responseType, int32_t responseLevel, long 
 	__asm        jge    _T3c;
 // LINE 1354:
 _T37:
-	__asm        jmp    _T145;
+	return;
 // LINE 1356:
 _T3c:
 	emergencyType = responseType;
@@ -2114,7 +2114,7 @@ _T118:
 //   _Tb3
 // LINE 1396:
 _T140:
-	__asm        jmp    _T145;
+	return;
 _T145:
 }
 
@@ -2225,7 +2225,7 @@ _Te5:
 	__asm        jmp    _Te2;
 // LINE 1441:
 _T13a:
-	__asm        jmp    _T13f;
+	return;
 _T13f:
 }
 
@@ -2290,7 +2290,7 @@ _T7d:
 	__asm        jmp    _T3d;
 // LINE 1473:
 _T91:
-	__asm        jmp    _T96;
+	return;
 _T96:
 }
 
@@ -2357,7 +2357,7 @@ _T81:
 	__asm        jmp    _T3d;
 // LINE 1496:
 _T95:
-	__asm        jmp    _T9a;
+	return;
 _T9a:
 }
 
@@ -2408,7 +2408,7 @@ _T103:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::SetSaveData;
 // LINE 1535:
-	__asm        jmp    _T114;
+	return;
 _T114:
 }
 
@@ -2421,7 +2421,7 @@ void EmergencyVehicleClass::LoadSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) 
 	__asm        test   byte ptr [eax], 2;
 	__asm        jne    _T1d;
 // LINE 1550:
-	__asm        jmp    _T1e3;
+	return;
 // LINE 1554:
 _T1d:
 	__asm        mov    eax, sd;
@@ -2534,7 +2534,7 @@ _T1b8:
 	__asm        call   S3MapAddCarInfo;
 	__asm        add    esp, 0x14;
 // LINE 1587:
-	__asm        jmp    _T1e3;
+	return;
 _T1e3:
 }
 

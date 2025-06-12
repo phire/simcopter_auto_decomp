@@ -7173,7 +7173,7 @@ void S3CityGrid() {
 	__asm        call   S3CitySpiralScan;
 	__asm        add    esp, 0xC;
 // LINE 2469:
-	__asm        jmp    _T72b;
+	return;
 // LINE 2473:
 _Tb2:
 	__asm        cmp    view_changed, 1;
@@ -7672,7 +7672,7 @@ _T719:
 	__asm        cmp    S_fovlast, 0;
 	__asm        jne    _T72b;
 // LINE 2894:
-	__asm        jmp    _T72b;
+	return;
 // LINE 2896:
 _T72b:
 }
@@ -7816,7 +7816,7 @@ _T141:
 	__asm        mov    ecx, cell_last;
 	__asm        mov    [ecx], eax;
 // LINE 2992:
-	__asm        jmp    _T7af;
+	return;
 // LINE 2995:
 _T151:
 	__asm        mov    eax, vec;
@@ -7929,7 +7929,7 @@ _T27a:
 	__asm        mov    ecx, cell_last;
 	__asm        mov    [ecx], eax;
 // LINE 3040:
-	__asm        jmp    _T7af;
+	return;
 // LINE 3046:
 _T28a:
 	__asm        mov    eax, vec;
@@ -9209,7 +9209,7 @@ _T58:
 // LINE 3535:
 	how_deep--;
 // LINE 3536:
-	__asm        jmp    _T470;
+	return;
 // LINE 3539:
 _T72:
 	y = edge->y;
@@ -9586,7 +9586,7 @@ _T3c:
 	__asm        cmp    [eax], ecx;
 	__asm        jne    _T4f;
 // LINE 3646:
-	__asm        jmp    _T44e;
+	return;
 // LINE 3648:
 _T4f:
 	x = edge->x;
@@ -10302,7 +10302,7 @@ _T405:
 	__asm        cmp    GridNSortCells, 0;
 	__asm        jne    _T417;
 // LINE 3897:
-	__asm        jmp    _T439;
+	return;
 // LINE 3904:
 _T417:
 	cptrptr -= 0x4;
@@ -11729,7 +11729,7 @@ _T1bd:
 	__asm        neg    eax;
 	__asm        sub    GridPos.loc.z, eax;
 // LINE 4430:
-	__asm        jmp    _T2db;
+	return;
 _T26d:
 	__asm        cmp    xdiff, 0;
 	__asm        jne    _T28e;
@@ -11895,7 +11895,7 @@ _T159:
 	__asm        cmp    stop_now, 1;
 	__asm        jne    _T168;
 // LINE 4528:
-	__asm        jmp    _T16d;
+	return;
 // LINE 4529:
 _T168:
 	__asm        jmp    _T53;
@@ -12658,7 +12658,7 @@ _T5c:
 	__asm        jle    _T84;
 // LINE 5072:
 _T7f:
-	__asm        jmp    _Tf04;
+	return;
 // LINE 5075:
 _T84:
 	__asm        mov    eax, px;
@@ -12670,7 +12670,7 @@ _T84:
 	__asm        cmp    dl, 8;
 	__asm        je     _Ta7;
 // LINE 5076:
-	__asm        jmp    _Tf04;
+	return;
 // LINE 5079:
 _Ta7:
 	__asm        mov    eax, px;
@@ -12719,7 +12719,7 @@ _Ta7:
 	__asm        je     _T141;
 // LINE 5087:
 _T13c:
-	__asm        jmp    _Tf04;
+	return;
 // LINE 5091:
 _T141:
 	__asm        mov    eax, py;
@@ -12768,7 +12768,7 @@ _T141:
 	__asm        je     _T1de;
 // LINE 5099:
 _T1d9:
-	__asm        jmp    _Tf04;
+	return;
 // LINE 5103:
 _T1de:
 	__asm        jmp    _T59;

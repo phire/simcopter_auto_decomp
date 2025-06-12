@@ -442,7 +442,7 @@ void VRFaceSetTexColor(int32_t face) {
 	__asm        je     _T55;
 // LINE 282:
 _T50:
-	__asm        jmp    _Tb7;
+	return;
 // LINE 288:
 _T55:
 	__asm        mov    eax, fh;
@@ -477,7 +477,7 @@ _T9e:
 	__asm        mov    [ecx+0xC], eax;
 // LINE 301:
 _Tb2:
-	__asm        jmp    _Tb7;
+	return;
 // LINE 302:
 _Tb7:
 }
@@ -822,7 +822,7 @@ void VRDyObjSetShading(int32_t obj, int32_t *tmat[4][4]) {
 	__asm        test   byte ptr [eax+1], 1;
 	__asm        jne    _T21;
 // LINE 490:
-	__asm        jmp    _T1b1;
+	return;
 // LINE 493:
 _T21:
 	__asm        mov    eax, tmat;
@@ -989,7 +989,7 @@ void VRTexTileSqFace(int32_t face, /*packed*/ struct VRResource *res, int32_t tf
 	__asm        cmp    dword ptr [eax+4], 4;
 	__asm        je     _T21;
 // LINE 570:
-	__asm        jmp    _T181;
+	return;
 // LINE 573:
 _T21:
 	stvert = 0x0;

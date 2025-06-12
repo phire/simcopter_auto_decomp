@@ -9,7 +9,7 @@ void cCopterAnim::Destroy() {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 225:
-	__asm        jmp    _T2d;
+	return;
 _T2d:
 }
 
@@ -27,7 +27,7 @@ void cCopterAnim::WriteToDisk() {
 	__asm        jmp    _T21;
 // LINE 230:
 _T21:
-	__asm        jmp    _T26;
+	return;
 _T26:
 }
 

@@ -238,7 +238,7 @@ void Memory::HUnpurge(void * __ptr32 purged, long oldSize) {
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C371C];
 // LINE 197:
-	__asm        jmp    _T23;
+	return;
 _T23:
 }
 
@@ -333,7 +333,7 @@ _T75:
 	__asm        add    esp, 0x10;
 // LINE 243:
 _Ta9:
-	__asm        jmp    _Tae;
+	return;
 _Tae:
 }
 
@@ -370,7 +370,7 @@ void Memory::PFree(unsigned char * mem) {
 	__asm        add    esp, 0x10;
 // LINE 260:
 _T60:
-	__asm        jmp    _T65;
+	return;
 _T65:
 }
 
@@ -437,7 +437,7 @@ void Memory::HUnlock(void * __ptr32 mem) {
 	__asm        add    esp, 0x10;
 // LINE 307:
 _T4d:
-	__asm        jmp    _T52;
+	return;
 _T52:
 }
 
@@ -447,7 +447,7 @@ void Memory::HMoveHi(void * __ptr32 h) {
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3720];
 // LINE 320:
-	__asm        jmp    _T13;
+	return;
 _T13:
 }
 
@@ -461,7 +461,7 @@ void Memory::HPurge(void * __ptr32 h) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 332:
-	__asm        jmp    _T27;
+	return;
 _T27:
 }
 
@@ -475,7 +475,7 @@ void Memory::HNoPurge(void * __ptr32 h) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 344:
-	__asm        jmp    _T27;
+	return;
 _T27:
 }
 
@@ -545,7 +545,7 @@ _T2f:
 	__asm        call   memmove;
 	__asm        add    esp, 0xC;
 // LINE 377:
-	__asm        jmp    _T48;
+	return;
 _T48:
 }
 
@@ -572,7 +572,7 @@ _T2f:
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 387:
-	__asm        jmp    _T48;
+	return;
 _T48:
 }
 
@@ -609,7 +609,7 @@ void Memory::BlockFill(void * __ptr32 mem, unsigned char byteVal, unsigned long 
 	__asm        add    esp, 0x10;
 // LINE 399:
 _T59:
-	__asm        jmp    _T5e;
+	return;
 _T5e:
 }
 
@@ -663,7 +663,7 @@ void Memory::PoolFree(long * pool) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 418:
-	__asm        jmp    _T27;
+	return;
 _T27:
 }
 
@@ -818,7 +818,7 @@ _T21:
 	__asm        add    esp, 4;
 // LINE 489:
 _T2d:
-	__asm        jmp    _T32;
+	return;
 _T32:
 }
 

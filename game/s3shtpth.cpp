@@ -800,7 +800,7 @@ _T39:
 	__asm        jmp    _T39;
 // LINE 271:
 _Te2:
-	__asm        jmp    _Te7;
+	return;
 _Te7:
 }
 
@@ -967,7 +967,7 @@ _T176:
 	__asm        mov    al, [eax+8];
 	__asm        mov    [ecx+8], al;
 // LINE 314:
-	__asm        jmp    _T19b;
+	return;
 _T19b:
 }
 

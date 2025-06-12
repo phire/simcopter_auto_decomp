@@ -649,7 +649,7 @@ _T39d:
 // LINE 105:
 // Block end:
 _T3a2:
-	__asm        jmp    _T3a7;
+	return;
 _T3a7:
 }
 
@@ -727,7 +727,7 @@ _Tbc:
 	__asm        mov    ecx, this;
 	__asm        call   _cArray::ClearBytes;
 // LINE 154:
-	__asm        jmp    _Te4;
+	return;
 _Te4:
 }
 
@@ -821,7 +821,7 @@ _T121:
 // LINE 190:
 // Block end:
 _T126:
-	__asm        jmp    _T12b;
+	return;
 _T12b:
 }
 
@@ -863,7 +863,7 @@ _T60:
 // LINE 202:
 // Block end:
 _T82:
-	__asm        jmp    _T87;
+	return;
 _T87:
 }
 
@@ -883,14 +883,14 @@ void _cArray::DeleteTable() {
 	__asm        add    esp, 4;
 // LINE 208:
 _T30:
-	__asm        jmp    _T35;
+	return;
 _T35:
 }
 
 // FUNCTION: COPTER_D 0x00567be1
 void _cArray::WriteToDisk() {
 // LINE 246:
-	__asm        jmp    _T11;
+	return;
 _T11:
 }
 
@@ -978,7 +978,7 @@ _T102:
 // LINE 264:
 // Block end:
 _T111:
-	__asm        jmp    _T116;
+	return;
 _T116:
 }
 
@@ -1074,7 +1074,7 @@ _Te8:
 	__asm        mov    ecx, header;
 	__asm        mov    [ecx], ax;
 // LINE 316:
-	__asm        jmp    _T11c;
+	return;
 _T11c:
 }
 
@@ -1094,7 +1094,7 @@ void _cArray::SetSizeAndHeaders(long newxSize, long newySize) {
 	__asm        mov    ecx, this;
 	__asm        call   _cArray::SetXPointers;
 // LINE 323:
-	__asm        jmp    _T31;
+	return;
 _T31:
 }
 
@@ -1118,7 +1118,7 @@ void _cArray::ClearBytes(signed char zeropad) {
 	__asm        jne    _T2b;
 // LINE 329:
 _T26:
-	__asm        jmp    _T174;
+	return;
 // LINE 334:
 _T2b:
 	begin = this->fDataPtr;
@@ -1228,7 +1228,7 @@ _T15f:
 	__asm        jmp    _T115;
 // LINE 354:
 _T16f:
-	__asm        jmp    _T174;
+	return;
 _T174:
 }
 
@@ -2151,7 +2151,7 @@ void _cArray::SetXPointers() {
 	__asm        cmp    dword ptr [eax+0x14], 0;
 	__asm        jne    _T2d;
 
-	__asm        jmp    _T97;
+	return;
 // LINE 521:
 _T2d:
 	__asm        mov    eax, this;
@@ -2190,7 +2190,7 @@ _T53:
 	__asm        jmp    _T4f;
 // LINE 527:
 _T92:
-	__asm        jmp    _T97;
+	return;
 _T97:
 }
 
@@ -2205,7 +2205,7 @@ void _cArray::CopyFrom(unsigned char * fromName) {
 	__asm        mov    ecx, this;
 	__asm        call   _cArray::CopyFrom;
 // LINE 539:
-	__asm        jmp    _T26;
+	return;
 _T26:
 }
 
@@ -2226,7 +2226,7 @@ void _cArray::CopyFrom(unsigned long oldname) {
 	__asm        mov    ecx, this;
 	__asm        call   _cArray::CopyFrom;
 // LINE 545:
-	__asm        jmp    _T2e;
+	return;
 _T2e:
 }
 
@@ -2319,7 +2319,7 @@ _Tea:
 	__asm        add    esp, 0xC;
 // LINE 557:
 _T112:
-	__asm        jmp    _T117;
+	return;
 _T117:
 }
 
@@ -2412,7 +2412,7 @@ _Tea:
 	__asm        add    esp, 0xC;
 // LINE 577:
 _T112:
-	__asm        jmp    _T117;
+	return;
 _T117:
 }
 
@@ -2433,7 +2433,7 @@ void _cArray::CopyTo(unsigned long oldname) {
 	__asm        mov    ecx, this;
 	__asm        call   _cArray::CopyTo;
 // LINE 583:
-	__asm        jmp    _T2e;
+	return;
 _T2e:
 }
 
@@ -2448,7 +2448,7 @@ void _cArray::CopyTo(unsigned char * toName) {
 	__asm        mov    ecx, this;
 	__asm        call   _cArray::CopyTo;
 // LINE 588:
-	__asm        jmp    _T26;
+	return;
 _T26:
 }
 
@@ -2464,7 +2464,7 @@ void _cArray::GetName(unsigned char * name) {
 	__asm        call   Memory::BlockMove;
 	__asm        add    esp, 0xC;
 // LINE 593:
-	__asm        jmp    _T26;
+	return;
 _T26:
 }
 
@@ -2944,7 +2944,7 @@ _T246:
 	__asm        call   dword ptr [eax+0xC];
 // LINE 760:
 _T25e:
-	__asm        jmp    _T27a;
+	return;
 _L27272:
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        push   eax;

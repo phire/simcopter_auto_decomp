@@ -157,7 +157,7 @@ void SparkalPalette::SparkalPalette(/*packed*/ struct SparkalColor *pNewColors, 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5910F8;
 // LINE 31:
-	__asm        jmp    _T35;
+	return;
 _T35:
 	__asm        mov    eax, this;
 }
@@ -174,7 +174,7 @@ void SparkalPalette::SparkalPalette() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5910F8;
 // LINE 41:
-	__asm        jmp    _T38;
+	return;
 _T38:
 	__asm        mov    eax, this;
 }
@@ -203,7 +203,7 @@ void SparkalPalette::~SparkalPalette() {
 	__asm        add    esp, 4;
 // LINE 50:
 _T4a:
-	__asm        jmp    _T4f;
+	return;
 _T4f:
 }
 
@@ -315,7 +315,7 @@ _T114:
 _T119:
 	nIndex. = nCurrentBestMatch;
 // LINE 84:
-	__asm        jmp    _T126;
+	return;
 _T126:
 }
 
@@ -372,7 +372,7 @@ _T88:
 // LINE 117:
 	__asm        jmp    _Tb9;
 _Tb9:
-	__asm        jmp    _T45d;
+	return;
 // LINE 118:
 _Tbe:
 	__asm        mov    i, 0xA;
@@ -640,7 +640,7 @@ _T442:
 // LINE 171:
 	__asm        jmp    _T458;
 _T458:
-	__asm        jmp    _T45d;
+	return;
 _T45d:
 }
 
@@ -697,7 +697,7 @@ _T88:
 // LINE 204:
 	__asm        jmp    _Tb9;
 _Tb9:
-	__asm        jmp    _T439;
+	return;
 // LINE 206:
 _Tbe:
 	__asm        mov    i, 0xA;
@@ -956,7 +956,7 @@ _T41e:
 // LINE 260:
 	__asm        jmp    _T434;
 _T434:
-	__asm        jmp    _T439;
+	return;
 _T439:
 }
 
@@ -1014,7 +1014,7 @@ _T88:
 // LINE 294:
 	__asm        jmp    _Tb9;
 _Tb9:
-	__asm        jmp    _T48c;
+	return;
 // LINE 295:
 _Tbe:
 	__asm        mov    i, 0xA;
@@ -1303,7 +1303,7 @@ _T471:
 // LINE 353:
 	__asm        jmp    _T487;
 _T487:
-	__asm        jmp    _T48c;
+	return;
 _T48c:
 }
 
@@ -1322,7 +1322,7 @@ void SparkalPalette::FadeToPalette(/*packed*/ struct SparkalColor colorStart, lo
 	__asm        call   SparkalPalette::FadeToPalette;
 	__asm        add    esp, 0x10;
 // LINE 362:
-	__asm        jmp    _T2c;
+	return;
 _T2c:
 }
 
@@ -1397,7 +1397,7 @@ _T6d:
 // LINE 400:
 	__asm        jmp    _Tb7;
 _Tb7:
-	__asm        jmp    _T525;
+	return;
 // LINE 401:
 _Tbc:
 	__asm        mov    i, 0;
@@ -1803,7 +1803,7 @@ _T4b8:
 // LINE 456:
 	__asm        jmp    _T520;
 _T520:
-	__asm        jmp    _T525;
+	return;
 _T525:
 }
 
@@ -1861,7 +1861,7 @@ _T67:
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x18];
 // LINE 483:
-	__asm        jmp    _Ta0;
+	return;
 _Ta0:
 }
 
@@ -1931,7 +1931,7 @@ _Tca:
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 519:
 _Tda:
-	__asm        jmp    _Tdf;
+	return;
 _Tdf:
 }
 
@@ -1943,7 +1943,7 @@ void CopterSparkalPalette::CopterSparkalPalette() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591118;
 // LINE 535:
-	__asm        jmp    _T22;
+	return;
 _T22:
 	__asm        mov    eax, this;
 }
@@ -1961,7 +1961,7 @@ void CopterSparkalPalette::CopterSparkalPalette(/*packed*/ struct SparkalColor *
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591118;
 // LINE 544:
-	__asm        jmp    _T2f;
+	return;
 _T2f:
 	__asm        mov    eax, this;
 }
@@ -2050,7 +2050,7 @@ _T101:
 	__asm        call   dword ptr ds:[0x6C384C];
 // LINE 594:
 _T110:
-	__asm        jmp    _T115;
+	return;
 _T115:
 }
 

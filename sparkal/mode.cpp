@@ -147,7 +147,7 @@ void GetCurrentScreenMode(/*packed*/ struct tagMode *modeCurrent, int32_t __form
 	__asm        mov    ecx, modeCurrent;
 	__asm        mov    [ecx+8], eax;
 // LINE 93:
-	__asm        jmp    _T6b;
+	return;
 _T6b:
 }
 

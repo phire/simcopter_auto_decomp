@@ -2190,7 +2190,7 @@ _T29d:
 	__asm        call   S3ViewerControl;
 // LINE 1099:
 _T2a7:
-	__asm        jmp    _Tfae;
+	return;
 // LINE 1103:
 _T2ac:
 	__asm        mov    eax, hd;
@@ -2268,7 +2268,7 @@ _T33a:
 // LINE 1129:
 	__asm        call   S3PersonUserNextFrame;
 // LINE 1130:
-	__asm        jmp    _Tfae;
+	return;
 // LINE 1132:
 _T3a4:
 	__asm        mov    eax, hd;
@@ -2360,7 +2360,7 @@ _T48a:
 	__asm        jne    _T4ac;
 // LINE 1161:
 _T4ac:
-	__asm        jmp    _Tfae;
+	return;
 // LINE 1165:
 _T4b1:
 	__asm        mov    eax, hd;
@@ -3701,14 +3701,14 @@ _T23:
 	__asm        call   0x004D6970;
 	__asm        add    esp, 8;
 // LINE 1625:
-	__asm        jmp    _T202;
+	return;
 // LINE 1628:
 _T56:
 	__asm        mov    eax, hd;
 	__asm        test   byte ptr [eax+8], 1;
 	__asm        jne    _T68;
 // LINE 1629:
-	__asm        jmp    _T202;
+	return;
 // LINE 1631:
 _T68:
 	__asm        push   0;
@@ -4801,7 +4801,7 @@ _Td4:
 	__asm        add    esp, 8;
 // LINE 1959:
 _T119:
-	__asm        jmp    _T5ae;
+	return;
 // LINE 1962:
 _T11e:
 	__asm        mov    eax, hd;
@@ -4839,7 +4839,7 @@ _T11e:
 	__asm        call   0x004D8C2E;
 	__asm        add    esp, 8;
 // LINE 1970:
-	__asm        jmp    _T5ae;
+	return;
 // LINE 1974:
 _T1a7:
 	__asm        mov    eax, hd;
@@ -5179,7 +5179,7 @@ void S3HeliMoveXZ(/*packed*/ struct _HELI_DATA *hd) {
 // LINE 2096:
 	hd->movez = 0x0;
 // LINE 2097:
-	__asm        jmp    _T430;
+	return;
 // LINE 2101:
 _T41:
 	__asm        mov    eax, hd;
@@ -5220,7 +5220,7 @@ _T41:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 2106:
-	__asm        jmp    _T430;
+	return;
 // LINE 2110:
 _Tc6:
 	__asm        mov    eax, hd;
@@ -5563,7 +5563,7 @@ _Tf4:
 	__asm        jne    _T113;
 // LINE 2209:
 _T10e:
-	__asm        jmp    _T87f;
+	return;
 // LINE 2213:
 _T113:
 	__asm        mov    eax, hd;
@@ -5930,7 +5930,7 @@ _T5bc:
 	hd->state = 0x4;
 // LINE 2335:
 _T5c6:
-	__asm        jmp    _T87f;
+	return;
 // LINE 2340:
 _T5cb:
 	__asm        mov    eax, hd;
@@ -6029,7 +6029,7 @@ _T6d2:
 	hd->damage = htd->max_damage;
 // LINE 2359:
 _T70a:
-	__asm        jmp    _T87f;
+	return;
 // LINE 2366:
 _T70f:
 	__asm        mov    eax, hd;
@@ -6813,7 +6813,7 @@ _T2a3:
 	__asm        cmp    dword ptr [eax+0x1B4], 1;
 	__asm        jne    _T2c8;
 // LINE 2626:
-	__asm        jmp    _T69a;
+	return;
 // LINE 2628:
 _T2c8:
 	__asm        mov    eax, hd;
@@ -7125,7 +7125,7 @@ void S3HeliDropWater(/*packed*/ struct _HELI_DATA *hd, int32_t alt, /*packed*/ s
 	__asm        cmp    dword ptr [eax+0x1C0], 0;
 	__asm        jne    _T1e;
 // LINE 2707:
-	__asm        jmp    _T181;
+	return;
 // LINE 2710:
 _T1e:
 	__asm        mov    eax, hd;
@@ -7251,7 +7251,7 @@ _T5e:
 	__asm        add    esp, 0x20;
 // LINE 2742:
 _T17c:
-	__asm        jmp    _T181;
+	return;
 // LINE 2744:
 _T181:
 }
@@ -7304,7 +7304,7 @@ _T7b:
 	__asm        cmp    num, 0;
 	__asm        jge    _T8a;
 
-	__asm        jmp    _T178;
+	return;
 // LINE 2770:
 _T8a:
 	__asm        mov    eax, hd;
@@ -7395,7 +7395,7 @@ _T8a:
 	__asm        add    esp, 0xC;
 // LINE 2800:
 _T173:
-	__asm        jmp    _T178;
+	return;
 // LINE 2802:
 _T178:
 }
@@ -8250,7 +8250,7 @@ void S3HeliTestCopter(/*packed*/ struct _HELI_DATA *hd) {
 	__asm        cmp    hd, 0;
 	__asm        jne    _T18;
 // LINE 3404:
-	__asm        jmp    _T39e;
+	return;
 // LINE 3406:
 _T18:
 	__asm        cmp    S_avoiding, 0;
@@ -8258,7 +8258,7 @@ _T18:
 // LINE 3410:
 	S_avoiding--;
 // LINE 3412:
-	__asm        jmp    _T39e;
+	return;
 // LINE 3413:
 _T30:
 	__asm        mov    eax, hd;
@@ -8283,7 +8283,7 @@ _T4a:
 // LINE 3418:
 	S_avoiding = 0x8;
 // LINE 3420:
-	__asm        jmp    _T39e;
+	return;
 // LINE 3421:
 _T8a:
 	__asm        mov    eax, hd;
@@ -8369,7 +8369,7 @@ _Ted:
 	__asm        mov    S_targalt, eax;
 // LINE 3448:
 _T19b:
-	__asm        jmp    _T39e;
+	return;
 _T1a0:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 4;
@@ -8399,7 +8399,7 @@ _T1dc:
 	hd->state = 0x1;
 // LINE 3464:
 _T208:
-	__asm        jmp    _T39e;
+	return;
 // LINE 3467:
 _T20d:
 	__asm        mov    eax, hd;
@@ -8501,7 +8501,7 @@ _T34d:
 // LINE 3512:
 	hd->winfo.dropwater = 0x1;
 // LINE 3514:
-	__asm        jmp    _T39e;
+	return;
 // LINE 3516:
 _T377:
 	hd->winfo.dropwater = 0x0;
@@ -8838,7 +8838,7 @@ _T6f:
 // FUNCTION: COPTER_D 0x004f5a80
 void S3HeliSwitchType(/*packed*/ struct _HELI_DATA *hd) {
 // LINE 3760:
-	__asm        jmp    _T0b;
+	return;
 // LINE 3761:
 _T0b:
 }
@@ -8941,7 +8941,7 @@ void S3HeliSoundDriver() {
 	__asm        jmp    _T35;
 // LINE 3847:
 _T30:
-	__asm        jmp    _T2f8;
+	return;
 // LINE 3852:
 _T35:
 	__asm        cmp    G_camera_mode, 3;
@@ -9019,7 +9019,7 @@ _T10f:
 	__asm        call   S3DSStopPlay;
 	__asm        add    esp, 4;
 // LINE 3885:
-	__asm        jmp    _T2f8;
+	return;
 // LINE 3887:
 	__asm        jmp    _T133;
 // LINE 3889:
@@ -9071,7 +9071,7 @@ _T1be:
 	__asm        call   S3DSStopPlay;
 	__asm        add    esp, 4;
 // LINE 3904:
-	__asm        jmp    _T2f8;
+	return;
 // LINE 3909:
 _T1cd:
 	__asm        push   0;
@@ -9127,7 +9127,7 @@ _T247:
 	__asm        call   S3DSStopPlay;
 	__asm        add    esp, 4;
 // LINE 3930:
-	__asm        jmp    _T2f8;
+	return;
 // LINE 3935:
 _T269:
 	__asm        push   0;
@@ -9152,7 +9152,7 @@ _T269:
 	__asm        jmp    _T2ae;
 // LINE 3940:
 _T2a9:
-	__asm        jmp    _T2f8;
+	return;
 // LINE 3944:
 _T2ae:
 	__asm        mov    eax, hd;
@@ -9183,7 +9183,7 @@ _T2ae:
 	__asm        add    esp, 8;
 // LINE 3952:
 _T2f3:
-	__asm        jmp    _T2f8;
+	return;
 // LINE 3953:
 _T2f8:
 }
@@ -9207,7 +9207,7 @@ void S3HeliSetSpotlite(/*packed*/ struct _HELI_DATA *hd, int32_t maxobjy, int32_
 	__asm        test   byte ptr [eax+8], 1;
 	__asm        jne    _T1e;
 // LINE 3980:
-	__asm        jmp    _T4b5;
+	return;
 // LINE 3983:
 _T1e:
 	__asm        mov    color, 1;
@@ -9587,7 +9587,7 @@ _T3e6:
 	__asm        call   0x004D6970;
 	__asm        add    esp, 8;
 // LINE 4115:
-	__asm        jmp    _T4b5;
+	return;
 // LINE 4118:
 _T4b5:
 }
@@ -10430,14 +10430,14 @@ _T320:
 	__asm        add    esp, 0xC;
 // LINE 4494:
 _T385:
-	__asm        jmp    _T457;
+	return;
 // LINE 4498:
 _T38a:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 6;
 	__asm        jne    _T39c;
 // LINE 4500:
-	__asm        jmp    _T457;
+	return;
 // LINE 4504:
 _T39c:
 	__asm        mov    eax, hd;
@@ -10446,14 +10446,14 @@ _T39c:
 	__asm        cmp    [eax+0xD0], ecx;
 	__asm        jl     _T3b6;
 // LINE 4506:
-	__asm        jmp    _T457;
+	return;
 // LINE 4509:
 _T3b6:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jne    _T3c8;
 // LINE 4510:
-	__asm        jmp    _T457;
+	return;
 // LINE 4516:
 _T3c8:
 	hd->smokeseq++;
@@ -10489,7 +10489,7 @@ _T42a:
 	hd->smokeseq = 0x0;
 // LINE 4527:
 _T437:
-	__asm        jmp    _T457;
+	return;
 // LINE 4530:
 _T43c:
 	__asm        push   1;
@@ -11454,10 +11454,10 @@ void S3HeliCommand(int32_t nCommand) {
 	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 4901:
-	__asm        jmp    _T1e8;
+	return;
 // LINE 4904:
 _Tc0:
-	__asm        jmp    _T1e8;
+	return;
 _Tc5:
 	__asm        cmp    nCommand, 0x15;
 	__asm        jne    _T10f;
@@ -11479,7 +11479,7 @@ _Tc5:
 	__asm        call   DispatchEmergencyVehicle;
 	__asm        add    esp, 0x10;
 // LINE 4908:
-	__asm        jmp    _T1e8;
+	return;
 _T10f:
 	__asm        cmp    nCommand, 0x16;
 	__asm        jne    _T159;
@@ -11501,7 +11501,7 @@ _T10f:
 	__asm        call   DispatchEmergencyVehicle;
 	__asm        add    esp, 0x10;
 // LINE 4912:
-	__asm        jmp    _T1e8;
+	return;
 _T159:
 	__asm        cmp    nCommand, 0x17;
 	__asm        jne    _T1a3;
@@ -11523,7 +11523,7 @@ _T159:
 	__asm        call   DispatchEmergencyVehicle;
 	__asm        add    esp, 0x10;
 // LINE 4916:
-	__asm        jmp    _T1e8;
+	return;
 _T1a3:
 	__asm        cmp    nCommand, 0x18;
 	__asm        jne    _T1e8;
@@ -12246,7 +12246,7 @@ _T35:
 // LINE 5232:
 	__asm        jmp    _T69;
 // LINE 5234:
-	__asm        jmp    _T239;
+	return;
 // LINE 5235:
 	__asm        jmp    _T69;
 // LINE 5236:
@@ -12258,7 +12258,7 @@ _T50:
 	__asm        cmp    dword ptr [ebp-0x30], 2;
 	__asm        je     _T35;
 
-	__asm        jmp    _T239;
+	return;
 // LINE 5238:
 _T69:
 	x = cell->x;
@@ -12424,7 +12424,7 @@ _T225:
 	__asm        cmp    stop_now, 1;
 	__asm        jne    _T234;
 // LINE 5333:
-	__asm        jmp    _T239;
+	return;
 // LINE 5334:
 _T234:
 	__asm        jmp    _T7a;
@@ -12726,7 +12726,7 @@ void S3HeliMakeHelicopter(long lHeliType) {
 	__asm        test   [eax+0x44], edx;
 	__asm        je     _T3b;
 // LINE 5538:
-	__asm        jmp    _T93;
+	return;
 // LINE 5540:
 _T3b:
 	__asm        cmp    lHeliType, 2;
@@ -12783,7 +12783,7 @@ void S3HeliRemoveHelicopter(long lHeliType) {
 	__asm        cmp    hd, 0;
 	__asm        jne    _T27;
 // LINE 5564:
-	__asm        jmp    _Tb9;
+	return;
 // LINE 5566:
 _T27:
 	__asm        call   GetCurrentUserPersonalInfo;
@@ -12829,7 +12829,7 @@ _T3e:
 	__asm        mov    ecx, up;
 	__asm        and    [ecx+0x44], eax;
 // LINE 5577:
-	__asm        jmp    _Tb9;
+	return;
 // LINE 5579:
 _Tb4:
 	__asm        jmp    _T3b;
@@ -12859,7 +12859,7 @@ _T12:
 // LINE 5599:
 	dyptrptr-> = hd->dyheli->next->next->next->next->next->next->next->next->next->next;
 // LINE 5600:
-	__asm        jmp    _T66;
+	return;
 // LINE 5602:
 _T59:
 	dyptrptr = dyptrptr->;
@@ -12901,13 +12901,13 @@ _T32:
 	__asm        sub    [ecx+0xD0], eax;
 // LINE 5625:
 _T57:
-	__asm        jmp    _T1ef;
+	return;
 // LINE 5627:
 _T5c:
-	__asm        jmp    _T1ef;
+	return;
 // LINE 5629:
 _T61:
-	__asm        jmp    _T1ef;
+	return;
 // LINE 5631:
 _T66:
 	__asm        cmp    G_CheatCodes[1], 0;
@@ -12922,13 +12922,13 @@ _T66:
 	__asm        sub    [ecx+0xD0], eax;
 // LINE 5633:
 _T8b:
-	__asm        jmp    _T1ef;
+	return;
 // LINE 5635:
 _T90:
-	__asm        jmp    _T1ef;
+	return;
 // LINE 5637:
 _T95:
-	__asm        jmp    _T1ef;
+	return;
 // LINE 5639:
 _T9a:
 	__asm        cmp    G_CheatCodes[1], 0;
@@ -12943,7 +12943,7 @@ _T9a:
 	__asm        sub    [ecx+0xD0], eax;
 // LINE 5641:
 _Tbf:
-	__asm        jmp    _T1ef;
+	return;
 // LINE 5643:
 _Tc4:
 	__asm        cmp    G_CheatCodes[1], 0;
@@ -12956,10 +12956,10 @@ _Tc4:
 	__asm        sub    [ecx+0xD0], eax;
 // LINE 5645:
 _Te4:
-	__asm        jmp    _T1ef;
+	return;
 // LINE 5647:
 _Te9:
-	__asm        jmp    _T1ef;
+	return;
 // LINE 5649:
 _Tee:
 	__asm        cmp    G_CheatCodes[1], 0;
@@ -12974,13 +12974,13 @@ _Tee:
 	__asm        sub    [ecx+0xD0], eax;
 // LINE 5651:
 _T113:
-	__asm        jmp    _T1ef;
+	return;
 // LINE 5653:
 _T118:
-	__asm        jmp    _T1ef;
+	return;
 // LINE 5655:
 _T11d:
-	__asm        jmp    _T1ef;
+	return;
 // LINE 5657:
 _T122:
 	__asm        cmp    G_CheatCodes[1], 0;
@@ -12993,18 +12993,18 @@ _T122:
 	__asm        sub    [ecx+0xD0], eax;
 // LINE 5659:
 _T142:
-	__asm        jmp    _T1ef;
+	return;
 // LINE 5661:
 _T147:
-	__asm        jmp    _T1ef;
+	return;
 // LINE 5663:
 _T14c:
-	__asm        jmp    _T1ef;
+	return;
 // LINE 5666:
 _T151:
 	hd->damage = 0xffffffff;
 // LINE 5667:
-	__asm        jmp    _T1ef;
+	return;
 // LINE 5669:
 _T163:
 	__asm        cmp    G_CheatCodes[1], 0;
@@ -13019,11 +13019,11 @@ _T163:
 	__asm        sub    [ecx+0xD0], eax;
 // LINE 5671:
 _T188:
-	__asm        jmp    _T1ef;
+	return;
 // LINE 5673:
-	__asm        jmp    _T1ef;
+	return;
 // LINE 5674:
-	__asm        jmp    _T1ef;
+	return;
 _T197:
 	__asm        cmp    dword ptr [ebp-8], 0x10;
 	__asm        ja     _T1ef;
@@ -13281,7 +13281,7 @@ _T63:
 	__asm        call   S3PersonUserAppearNew;
 	__asm        add    esp, 8;
 // LINE 5785:
-	__asm        jmp    _T11f;
+	return;
 // LINE 5788:
 _T115:
 	__asm        jmp    _T5c;

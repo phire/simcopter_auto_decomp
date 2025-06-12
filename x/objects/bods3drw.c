@@ -96,7 +96,7 @@ void MyPixel(int32_t x, int32_t y, unsigned char color) {
 	__asm        cmp    y, 0;
 	__asm        jge    _T22;
 _T1d:
-	__asm        jmp    _T117;
+	return;
 // LINE 149:
 _T22:
 	__asm        mov    eax, Pwinwidth;
@@ -109,7 +109,7 @@ _T22:
 	__asm        cmp    eax, y;
 	__asm        jge    _T45;
 _T40:
-	__asm        jmp    _T117;
+	return;
 // LINE 151:
 _T45:
 	__asm        mov    eax, y;
@@ -127,7 +127,7 @@ _T45:
 	__asm        test   eax, eax;
 	__asm        jne    _T7b;
 
-	__asm        jmp    _T117;
+	return;
 // LINE 153:
 _T7b:
 	ptr[0] = color;
@@ -146,7 +146,7 @@ _T7b:
 	__asm        test   eax, eax;
 	__asm        jne    _Tb3;
 
-	__asm        jmp    _T117;
+	return;
 // LINE 159:
 _Tb3:
 	ptr[0] = color;
@@ -164,7 +164,7 @@ _Tb3:
 	__asm        test   eax, eax;
 	__asm        jne    _Te4;
 
-	__asm        jmp    _T117;
+	return;
 // LINE 162:
 _Te4:
 	ptr[0] = color;
@@ -180,7 +180,7 @@ _Te4:
 	__asm        test   eax, eax;
 	__asm        jne    _T10f;
 
-	__asm        jmp    _T117;
+	return;
 // LINE 165:
 _T10f:
 	ptr[0] = color;
@@ -211,13 +211,13 @@ void DrawSphere(/*unpacked*/ struct Point3d centerPt, long diameter, unsigned ch
 	__asm        cmp    diameter, 0;
 	__asm        jne    _T1f;
 // LINE 192:
-	__asm        jmp    _T79a;
+	return;
 // LINE 194:
 _T1f:
 	__asm        cmp    diameter, 0x33;
 	__asm        jle    _T2e;
 // LINE 195:
-	__asm        jmp    _T79a;
+	return;
 // LINE 198:
 _T2e:
 	__asm        cmp    diameter, 3;
@@ -495,7 +495,7 @@ _T3f3:
 	__asm        add    esp, 0x10;
 // LINE 252:
 _T42b:
-	__asm        jmp    _T79a;
+	return;
 _T430:
 	__asm        cmp    shadeFlag, 2;
 	__asm        jne    _T68c;
@@ -613,7 +613,7 @@ _T519:
 	__asm        jmp    _T5e8;
 // LINE 285:
 _T5e3:
-	__asm        jmp    _T79a;
+	return;
 // LINE 287:
 _T5e8:
 	__asm        jmp    _T513;
@@ -668,7 +668,7 @@ _T682:
 	__asm        jmp    _T4c4;
 // LINE 306:
 _T687:
-	__asm        jmp    _T79a;
+	return;
 // LINE 308:
 _T68c:
 	__asm        mov    i, 0;
@@ -776,7 +776,7 @@ void DrawFaceTwo(/*unpacked*/ struct Point3d centerPt, long vertRad, float psi, 
 	__asm        cmp    vertRad, 0;
 	__asm        jne    _T1f;
 // LINE 423:
-	__asm        jmp    _T24c;
+	return;
 // LINE 425:
 _T1f:
 	__asm        movsx  eax, facenum;
@@ -1060,7 +1060,7 @@ void DrawLineOnFace(long startX, long endX, long yLine, /*unpacked*/ struct Poin
 	__asm        call   DrawHorzLinePat;
 	__asm        add    esp, 0x1C;
 // LINE 546:
-	__asm        jmp    _T1e0;
+	return;
 _T83:
 	__asm        cmp    loBitmapLimit, 0;
 	__asm        jge    _Ta5;
@@ -1070,9 +1070,9 @@ _T83:
 	__asm        cmp    [eax], ecx;
 	__asm        jge    _Ta5;
 // LINE 548:
-	__asm        jmp    _T1e0;
+	return;
 // LINE 550:
-	__asm        jmp    _T1e0;
+	return;
 _Ta5:
 	__asm        cmp    loBitmapLimit, 0;
 	__asm        jge    _T14b;
@@ -1138,7 +1138,7 @@ _Ta5:
 	__asm        call   DrawHorzLinePat;
 	__asm        add    esp, 0x1C;
 // LINE 563:
-	__asm        jmp    _T1e0;
+	return;
 // LINE 565:
 _T14b:
 	__asm        mov    eax, faceCenter.x;
@@ -1234,7 +1234,7 @@ _T2f:
 	__asm        mov    ecx, faceCenter;
 	__asm        mov    [ecx], eax;
 // LINE 594:
-	__asm        jmp    _T53;
+	return;
 // LINE 595:
 _T53:
 }
@@ -1355,7 +1355,7 @@ _T14b:
 	__asm        add    esp, 0x10;
 // LINE 630:
 _T173:
-	__asm        jmp    _T178;
+	return;
 // LINE 631:
 _T178:
 }
@@ -1394,13 +1394,13 @@ void DrawTaperedLine(/*unpacked*/ struct Point3d startPt, /*unpacked*/ struct Po
 	__asm        cmp    width, 0x19;
 	__asm        jle    _T32;
 // LINE 660:
-	__asm        jmp    _T493;
+	return;
 // LINE 662:
 _T32:
 	__asm        cmp    width, 0;
 	__asm        jne    _T41;
 // LINE 663:
-	__asm        jmp    _T493;
+	return;
 // LINE 666:
 _T41:
 	__asm        cmp    taper, 0;
@@ -1464,7 +1464,7 @@ _Tdf:
 	__asm        jge    _Tf8;
 // LINE 686:
 _Tf3:
-	__asm        jmp    _T493;
+	return;
 // LINE 687:
 _Tf8:
 	__asm        cmp    startPt.y, 0;
@@ -1474,7 +1474,7 @@ _Tf8:
 	__asm        jge    _T111;
 // LINE 688:
 _T10c:
-	__asm        jmp    _T493;
+	return;
 // LINE 689:
 _T111:
 	__asm        mov    eax, Pwinwidth;
@@ -1492,7 +1492,7 @@ _T111:
 	__asm        jge    _T13e;
 // LINE 690:
 _T139:
-	__asm        jmp    _T493;
+	return;
 // LINE 691:
 _T13e:
 	__asm        mov    eax, Pwinheight;
@@ -1510,7 +1510,7 @@ _T13e:
 	__asm        jge    _T16b;
 // LINE 692:
 _T166:
-	__asm        jmp    _T493;
+	return;
 // LINE 695:
 _T16b:
 	__asm        mov    eax, endPt.x;
@@ -1579,7 +1579,7 @@ _T1cb:
 	__asm        cmp    segLen, 1;
 	__asm        jge    _T215;
 
-	__asm        jmp    _T493;
+	return;
 // LINE 725:
 _T215:
 	__asm        mov    i, 0;
@@ -1625,7 +1625,7 @@ _T264:
 	__asm        test   eax, eax;
 	__asm        jne    _T28d;
 
-	__asm        jmp    _T493;
+	return;
 // LINE 741:
 _T28d:
 	__asm        mov    eax, j;
@@ -1657,7 +1657,7 @@ _T2c8:
 	__asm        jmp    _T221;
 // LINE 754:
 _T2d3:
-	__asm        jmp    _T493;
+	return;
 // LINE 756:
 _T2d8:
 	__asm        mov    ecx, startPt.x;
@@ -1683,7 +1683,7 @@ _T2d8:
 	__asm        cmp    segLen, 1;
 	__asm        jge    _T318;
 
-	__asm        jmp    _T493;
+	return;
 // LINE 761:
 _T318:
 	__asm        cmp    segLen, 0;
@@ -1731,7 +1731,7 @@ _T338:
 	__asm        cmp    oneByteWrites, 0;
 	__asm        jge    _T393;
 
-	__asm        jmp    _T493;
+	return;
 // LINE 791:
 _T393:
 	__asm        mov    eax, oneByteWrites;
@@ -1749,7 +1749,7 @@ _T393:
 	__asm        test   eax, eax;
 	__asm        jne    _T3c6;
 
-	__asm        jmp    _T493;
+	return;
 // LINE 795:
 _T3c6:
 	__asm        mov    eax, cInc;
@@ -1765,7 +1765,7 @@ _T3dd:
 	__asm        cmp    fourByteWrites, 0;
 	__asm        jge    _T3ec;
 
-	__asm        jmp    _T493;
+	return;
 // LINE 800:
 _T3ec:
 	__asm        mov    eax, fourByteWrites;
@@ -1783,7 +1783,7 @@ _T3ec:
 	__asm        test   eax, eax;
 	__asm        jne    _T41f;
 
-	__asm        jmp    _T493;
+	return;
 // LINE 803:
 _T41f:
 	__asm        mov    eax, cInc;
@@ -1864,13 +1864,13 @@ void DrawLine(/*unpacked*/ struct Point3d startPt, /*unpacked*/ struct Point3d e
 	__asm        cmp    width, 0x19;
 	__asm        jle    _T2f;
 // LINE 849:
-	__asm        jmp    _T417;
+	return;
 // LINE 851:
 _T2f:
 	__asm        cmp    width, 0;
 	__asm        jne    _T3e;
 // LINE 852:
-	__asm        jmp    _T417;
+	return;
 // LINE 855:
 _T3e:
 	__asm        mov    i, 0;
@@ -1921,7 +1921,7 @@ _Tb6:
 	__asm        jge    _Tcf;
 // LINE 863:
 _Tca:
-	__asm        jmp    _T417;
+	return;
 // LINE 864:
 _Tcf:
 	__asm        cmp    startPt.y, 0;
@@ -1931,7 +1931,7 @@ _Tcf:
 	__asm        jge    _Te8;
 // LINE 865:
 _Te3:
-	__asm        jmp    _T417;
+	return;
 // LINE 866:
 _Te8:
 	__asm        mov    eax, Pwinwidth;
@@ -1949,7 +1949,7 @@ _Te8:
 	__asm        jge    _T115;
 // LINE 867:
 _T110:
-	__asm        jmp    _T417;
+	return;
 // LINE 868:
 _T115:
 	__asm        mov    eax, Pwinheight;
@@ -1967,7 +1967,7 @@ _T115:
 	__asm        jge    _T142;
 // LINE 869:
 _T13d:
-	__asm        jmp    _T417;
+	return;
 // LINE 871:
 _T142:
 	__asm        mov    eax, endPt.x;
@@ -2054,7 +2054,7 @@ _T1ff:
 	__asm        test   eax, eax;
 	__asm        jne    _T228;
 
-	__asm        jmp    _T417;
+	return;
 // LINE 903:
 _T228:
 	__asm        mov    eax, j;
@@ -2086,7 +2086,7 @@ _T263:
 	__asm        jmp    _T1db;
 // LINE 916:
 _T26e:
-	__asm        jmp    _T417;
+	return;
 // LINE 918:
 _T273:
 	__asm        mov    ecx, startPt.x;
@@ -2125,7 +2125,7 @@ _T2a5:
 	__asm        cmp    oneByteWrites, 0;
 	__asm        jge    _T2fb;
 // LINE 932:
-	__asm        jmp    _T417;
+	return;
 // LINE 933:
 	__asm        push   0x8C085;
 	__asm        push   0x5BF208;
@@ -2138,7 +2138,7 @@ _T2fb:
 	__asm        cmp    fourByteWrites, 0;
 	__asm        jge    _T326;
 // LINE 936:
-	__asm        jmp    _T417;
+	return;
 // LINE 937:
 	__asm        push   0x8C085;
 	__asm        push   0x5BF25C;
@@ -2163,7 +2163,7 @@ _T326:
 	__asm        test   eax, eax;
 	__asm        jne    _T359;
 
-	__asm        jmp    _T417;
+	return;
 // LINE 944:
 _T359:
 	__asm        mov    eax, cInc;
@@ -2191,7 +2191,7 @@ _T370:
 	__asm        test   eax, eax;
 	__asm        jne    _T3a3;
 
-	__asm        jmp    _T417;
+	return;
 // LINE 950:
 _T3a3:
 	__asm        mov    eax, cInc;
@@ -2283,13 +2283,13 @@ void DrawHorzLinePat(long startX, long endX, long yPos, unsigned char * pixPtr, 
 	__asm        jge    _T60;
 // LINE 998:
 _T5b:
-	__asm        jmp    _T252;
+	return;
 // LINE 999:
 _T60:
 	__asm        cmp    yPos, 0;
 	__asm        jge    _T6f;
 // LINE 1000:
-	__asm        jmp    _T252;
+	return;
 // LINE 1001:
 _T6f:
 	__asm        mov    eax, startX;
@@ -2301,14 +2301,14 @@ _T6f:
 	__asm        jge    _T92;
 // LINE 1002:
 _T8d:
-	__asm        jmp    _T252;
+	return;
 // LINE 1003:
 _T92:
 	__asm        mov    eax, yPos;
 	__asm        cmp    Pwinheight, eax;
 	__asm        jge    _Ta6;
 // LINE 1004:
-	__asm        jmp    _T252;
+	return;
 // LINE 1006:
 _Ta6:
 	__asm        mov    eax, yPos;
@@ -2333,7 +2333,7 @@ _Ta6:
 	__asm        cmp    oneByteWrites, 0;
 	__asm        jge    _T103;
 // LINE 1019:
-	__asm        jmp    _T252;
+	return;
 // LINE 1020:
 	__asm        push   0x8C085;
 	__asm        push   0x5BF2C8;
@@ -2346,7 +2346,7 @@ _T103:
 	__asm        cmp    fourByteWrites, 0;
 	__asm        jge    _T12e;
 // LINE 1023:
-	__asm        jmp    _T252;
+	return;
 // LINE 1024:
 	__asm        push   0x8C085;
 	__asm        push   0x5BF324;
@@ -2371,7 +2371,7 @@ _T12e:
 	__asm        test   eax, eax;
 	__asm        jne    _T161;
 
-	__asm        jmp    _T252;
+	return;
 // LINE 1031:
 _T161:
 	__asm        fld    curPatOffset;
@@ -2408,7 +2408,7 @@ _T18e:
 	__asm        test   eax, eax;
 	__asm        jne    _T1c1;
 
-	__asm        jmp    _T252;
+	return;
 // LINE 1042:
 _T1c1:
 	__asm        fld    stride2;
@@ -2485,13 +2485,13 @@ void DrawHorzLine(long startX, long endX, long yPos, unsigned char color) {
 	__asm        jge    _T22;
 // LINE 1076:
 _T1d:
-	__asm        jmp    _T19a;
+	return;
 // LINE 1077:
 _T22:
 	__asm        cmp    yPos, 0;
 	__asm        jge    _T31;
 // LINE 1078:
-	__asm        jmp    _T19a;
+	return;
 // LINE 1079:
 _T31:
 	__asm        mov    eax, Pwinwidth;
@@ -2503,14 +2503,14 @@ _T31:
 	__asm        jle    _T52;
 // LINE 1080:
 _T4d:
-	__asm        jmp    _T19a;
+	return;
 // LINE 1081:
 _T52:
 	__asm        mov    eax, Pwinheight;
 	__asm        cmp    yPos, eax;
 	__asm        jle    _T65;
 // LINE 1082:
-	__asm        jmp    _T19a;
+	return;
 // LINE 1084:
 _T65:
 	__asm        mov    eax, yPos;
@@ -2551,7 +2551,7 @@ _T65:
 	__asm        cmp    oneByteWrites, 0;
 	__asm        jge    _Te8;
 // LINE 1100:
-	__asm        jmp    _T19a;
+	return;
 // LINE 1101:
 	__asm        push   0x8C085;
 	__asm        push   0x5BF3A4;
@@ -2564,7 +2564,7 @@ _Te8:
 	__asm        cmp    fourByteWrites, 0;
 	__asm        jge    _T113;
 // LINE 1104:
-	__asm        jmp    _T19a;
+	return;
 // LINE 1105:
 	__asm        push   0x8C085;
 	__asm        push   0x5BF3FC;
@@ -2589,7 +2589,7 @@ _T113:
 	__asm        test   eax, eax;
 	__asm        jne    _T146;
 
-	__asm        jmp    _T19a;
+	return;
 // LINE 1112:
 _T146:
 	__asm        mov    al, color;
@@ -2615,7 +2615,7 @@ _T156:
 	__asm        test   eax, eax;
 	__asm        jne    _T189;
 
-	__asm        jmp    _T19a;
+	return;
 // LINE 1118:
 _T189:
 	__asm        mov    eax, fourByteColor;

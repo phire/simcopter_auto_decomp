@@ -192,7 +192,7 @@ _T43:
 	__asm        jmp    _T40;
 // LINE 38:
 _T6b:
-	__asm        jmp    _T70;
+	return;
 _T70:
 	__asm        mov    eax, this;
 }
@@ -967,7 +967,7 @@ void JoystickManager::SetNormalizedMinMax(long lNewMin, long lNewMax) {
 	__asm        mov    eax, this;
 	__asm        mov    [eax+0x5C], ecx;
 // LINE 503:
-	__asm        jmp    _T43;
+	return;
 _T43:
 }
 

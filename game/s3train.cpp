@@ -569,7 +569,7 @@ static void $E3() {
 	__asm        mov    TrainClass::lsTrain<vftable>, 0x593238;
 	__asm        jmp    _T15;
 _T15:
-	__asm        jmp    _T1a;
+	return;
 _T1a:
 }
 
@@ -600,7 +600,7 @@ static void $E4() {
 	__asm        mov    ecx, 0x62B7B8;
 	__asm        call   TrainClass::~TrainClass;
 _T2d:
-	__asm        jmp    _T32;
+	return;
 _T32:
 }
 
@@ -704,7 +704,7 @@ _T15b:
 // LINE 229:
 	this->currentLocation3.y = mapy;
 // LINE 230:
-	__asm        jmp    _T196;
+	return;
 _T196:
 	__asm        mov    eax, this;
 }
@@ -757,7 +757,7 @@ void TrainClass::Reset() {
 // LINE 270:
 	this->nextLocation.y = 0xffffffff;
 // LINE 271:
-	__asm        jmp    _Td6;
+	return;
 _Td6:
 }
 
@@ -810,7 +810,7 @@ _T2e:
 _T88:
 	this->flags[0] = 0x0;
 // LINE 315:
-	__asm        jmp    _T94;
+	return;
 _T94:
 }
 
@@ -944,7 +944,7 @@ _T18:
 	__asm        jmp    _T15;
 // LINE 597:
 _T36:
-	__asm        jmp    _T3b;
+	return;
 _T3b:
 }
 
@@ -968,7 +968,7 @@ _T18:
 	__asm        jmp    _T15;
 // LINE 646:
 _T36:
-	__asm        jmp    _T3b;
+	return;
 _T3b:
 }
 
@@ -1185,7 +1185,7 @@ _T1b2:
 	__asm        jmp    _T1b7;
 // LINE 759:
 _T1b7:
-	__asm        jmp    _T1bc;
+	return;
 _T1bc:
 }
 
@@ -1228,7 +1228,7 @@ _T46:
 	__asm        add    esp, 4;
 // LINE 789:
 _T63:
-	__asm        jmp    _T138;
+	return;
 // LINE 793:
 _T68:
 	__asm        mov    eax, ViewState.world_pos.x;
@@ -1302,7 +1302,7 @@ _T116:
 	__asm        add    esp, 4;
 // LINE 819:
 _T133:
-	__asm        jmp    _T138;
+	return;
 _T138:
 }
 
@@ -1362,7 +1362,7 @@ _T95:
 	__asm        mov    ecx, this;
 	__asm        call   TrainClass::UnPlaceTrain;
 // LINE 859:
-	__asm        jmp    _T29a;
+	return;
 // LINE 863:
 _Tb1:
 	__asm        jmp    _Tb6;
@@ -1386,7 +1386,7 @@ _Td2:
 	__asm        mov    ecx, this;
 	__asm        call   TrainClass::TrainCrashMovement;
 // LINE 871:
-	__asm        jmp    _T29a;
+	return;
 // LINE 874:
 _Tee:
 	__asm        jmp    _Tf3;
@@ -1404,7 +1404,7 @@ _Tf3:
 	__asm        mov    ecx, this;
 	__asm        call   TrainClass::AdjustTrailingCars;
 // LINE 879:
-	__asm        jmp    _T29a;
+	return;
 // LINE 882:
 _T11f:
 	__asm        mov    eax, this;
@@ -1552,7 +1552,7 @@ _T27c:
 	__asm        jmp    _T26f;
 // LINE 1024:
 _T295:
-	__asm        jmp    _T29a;
+	return;
 _T29a:
 }
 
@@ -1600,7 +1600,7 @@ _T59:
 	__asm        cmp    dist, 0x14;
 	__asm        jle    _T68;
 // LINE 1057:
-	__asm        jmp    _T8f;
+	return;
 // LINE 1059:
 _T68:
 	this->flags[6] = 0x0;
@@ -1611,7 +1611,7 @@ _T68:
 // LINE 1063:
 	this->utRotation = 0x0;
 // LINE 1065:
-	__asm        jmp    _T8f;
+	return;
 _T8f:
 }
 
@@ -2226,7 +2226,7 @@ _T742:
 	__asm        add    esp, 4;
 // LINE 1298:
 _T7a0:
-	__asm        jmp    _T7a5;
+	return;
 _T7a5:
 }
 
@@ -2237,7 +2237,7 @@ void TrainClass::MakeUturn() {
 	__asm        cmp    dword ptr [eax+0x11], 0;
 	__asm        jne    _T1e;
 // LINE 1322:
-	__asm        jmp    _T241;
+	return;
 // LINE 1326:
 _T1e:
 	this->flags[4] = 0x1;
@@ -2419,7 +2419,7 @@ _T21b:
 	__asm        jmp    _T23c;
 // LINE 1368:
 _T23c:
-	__asm        jmp    _T241;
+	return;
 _T241:
 }
 
@@ -2480,7 +2480,7 @@ void TrainClass::AdjustSpeed() {
 	this->speed = 0x1;
 // LINE 1430:
 _T2f:
-	__asm        jmp    _T34;
+	return;
 _T34:
 }
 
@@ -3917,7 +3917,7 @@ _Ta64:
 	__asm        je     _Ta73;
 // LINE 2180:
 _Ta6e:
-	__asm        jmp    _T1376;
+	return;
 // LINE 2183:
 _Ta73:
 	__asm        mov    eax, this;
@@ -4689,7 +4689,7 @@ _T135f:
 	__asm        jmp    _T1266;
 // LINE 2638:
 _T1371:
-	__asm        jmp    _T1376;
+	return;
 _T1376:
 }
 
@@ -4698,7 +4698,7 @@ void TrainClass::SlowDown() {
 // LINE 2657:
 	this->speed -= 0x20000;
 // LINE 2658:
-	__asm        jmp    _T1b;
+	return;
 _T1b:
 }
 
@@ -4707,7 +4707,7 @@ void TrainClass::Stop() {
 // LINE 2678:
 	this->speed = 0x0;
 // LINE 2679:
-	__asm        jmp    _T1b;
+	return;
 _T1b:
 }
 
@@ -4872,7 +4872,7 @@ _T1f0:
 _T1f7:
 	this->stalledTimer = 0x0;
 // LINE 2729:
-	__asm        jmp    _T206;
+	return;
 _T206:
 }
 
@@ -5095,7 +5095,7 @@ _Ta3:
 // LINE 2833:
 	dyptrptr-> = dyobj->next;
 // LINE 2835:
-	__asm        jmp    _T10b;
+	return;
 // LINE 2838:
 _Tcc:
 	dyptrptr = dyptrptr->;
@@ -5118,7 +5118,7 @@ _T101:
 // LINE 2843:
 // Block end:
 _T106:
-	__asm        jmp    _T10b;
+	return;
 _T10b:
 }
 
@@ -5172,7 +5172,7 @@ _T95:
 // LINE 2870:
 	cellPointer->dyptr = dyobj;
 // LINE 2872:
-	__asm        jmp    _Tae;
+	return;
 _Tae:
 }
 
@@ -6338,7 +6338,7 @@ _T181:
 //   _Tc9
 // LINE 3229:
 _T1b5:
-	__asm        jmp    _T1ba;
+	return;
 _T1ba:
 }
 
@@ -6639,7 +6639,7 @@ void TrainClass::SetTrailingCars() {
 	__asm        mov    ecx, 0x10;
 	__asm        rep movsd;
 // LINE 3310:
-	__asm        jmp    _T275;
+	return;
 _T275:
 }
 
@@ -6987,7 +6987,7 @@ _T3c8:
 	__asm        call   MTCreateDOF4x4;
 	__asm        add    esp, 8;
 // LINE 3395:
-	__asm        jmp    _T3e6;
+	return;
 _T3e6:
 }
 
@@ -7115,7 +7115,7 @@ _T174:
 	this->leadcar->loc.x += 0x1e0000;
 // LINE 3449:
 _T19e:
-	__asm        jmp    _T1a3;
+	return;
 _T1a3:
 }
 
@@ -7639,7 +7639,7 @@ _T56a:
 // LINE 3637:
 // Block end:
 _T5ef:
-	__asm        jmp    _T5f4;
+	return;
 _T5f4:
 }
 
@@ -7747,7 +7747,7 @@ _Tff:
 	__asm        jmp    _T120;
 // LINE 3687:
 _T120:
-	__asm        jmp    _T125;
+	return;
 _T125:
 }
 
@@ -7855,7 +7855,7 @@ _Tff:
 	__asm        jmp    _T120;
 // LINE 3738:
 _T120:
-	__asm        jmp    _T125;
+	return;
 _T125:
 }
 
@@ -7963,7 +7963,7 @@ _Tff:
 	__asm        jmp    _T120;
 // LINE 3793:
 _T120:
-	__asm        jmp    _T125;
+	return;
 _T125:
 }
 
@@ -8360,7 +8360,7 @@ _T435:
 	__asm        jmp    _T197;
 // LINE 3935:
 _T43a:
-	__asm        jmp    _T589;
+	return;
 // LINE 3941:
 foundCell:
 	this->stalledTimer = 0x0;
@@ -8461,7 +8461,7 @@ _T551:
 // LINE 3967:
 	this->beamTimer = 0x0;
 // LINE 3969:
-	__asm        jmp    _T589;
+	return;
 _T584:
 	__asm        jmp    foundCell;
 _T589:
@@ -8513,7 +8513,7 @@ _T61:
 	this->flags[1] = 0x0;
 // LINE 3999:
 _T81:
-	__asm        jmp    _T86;
+	return;
 _T86:
 }
 
@@ -9253,7 +9253,7 @@ void ResetAllTrains() {
 // LINE 4645:
 	__asm        call   TrainClass::ResetAll;
 // LINE 4646:
-	__asm        jmp    _T10;
+	return;
 _T10:
 }
 
@@ -9262,7 +9262,7 @@ void ItterateAllTrains() {
 // LINE 4668:
 	__asm        call   TrainClass::ItterateAll;
 // LINE 4669:
-	__asm        jmp    _T10;
+	return;
 _T10:
 }
 

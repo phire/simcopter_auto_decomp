@@ -568,7 +568,7 @@ _T31:
 	__asm        mov    ecx, this;
 	__asm        call   CBackBuffer::InitializeMemberVariables;
 // LINE 46:
-	__asm        jmp    _T47;
+	return;
 _T47:
 	__asm        mov    eax, this;
 }
@@ -720,7 +720,7 @@ _T16c:
 	__asm        jmp    _T1b1;
 // LINE 83:
 _T1b1:
-	__asm        jmp    _T31d;
+	return;
 // LINE 86:
 _T1b6:
 	__asm        push   0xE;
@@ -820,7 +820,7 @@ _T2eb:
 	__asm        lea    ecx, [ebp-0x5C];
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 126:
-	__asm        jmp    _T31d;
+	return;
 // LINE 139:
 _T2fd:
 	__asm        mov    eax, this;
@@ -832,7 +832,7 @@ _T2fd:
 	__asm        mov    ecx, this;
 	__asm        call   CBackBuffer::Load;
 // LINE 145:
-	__asm        jmp    _T31d;
+	return;
 _T31d:
 	__asm        mov    eax, this;
 }
@@ -924,7 +924,7 @@ _T10e:
 	__asm        lea    ecx, [ebp-8];
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 186:
-	__asm        jmp    _T148;
+	return;
 // LINE 191:
 _T120:
 	__asm        mov    eax, this;
@@ -939,7 +939,7 @@ _T120:
 	__asm        mov    ecx, this;
 	__asm        call   CBackBuffer::Unlock;
 // LINE 208:
-	__asm        jmp    _T148;
+	return;
 _T148:
 	__asm        mov    eax, this;
 }
@@ -1017,7 +1017,7 @@ void CBackBuffer::InitializeMemberVariables() {
 // LINE 241:
 	this->nPenThickness = 0x0;
 // LINE 245:
-	__asm        jmp    _T11d;
+	return;
 _T11d:
 }
 
@@ -1129,7 +1129,7 @@ _T119:
 	this->hPen = 0x0;
 // LINE 297:
 _T146:
-	__asm        jmp    _T14b;
+	return;
 _T14b:
 }
 
@@ -2789,7 +2789,7 @@ _T38:
 	__asm        cmp    pOurSurface, 0;
 	__asm        jne    _T55;
 // LINE 1006:
-	__asm        jmp    _T82;
+	return;
 // LINE 1008:
 _T55:
 	__asm        cmp    bEnable, 0;
@@ -2809,7 +2809,7 @@ _T55:
 	__asm        call   dword ptr [eax+0x74];
 // LINE 1014:
 _T7d:
-	__asm        jmp    _T82;
+	return;
 _T82:
 }
 
@@ -3037,7 +3037,7 @@ _T97:
 	__asm        call   dword ptr [eax+0x18];
 // LINE 1145:
 _Tc4:
-	__asm        jmp    _Tc9;
+	return;
 _Tc9:
 }
 

@@ -250,7 +250,7 @@ _T1f2:
 	__asm        mov    Viewer.pos.y, eax;
 // LINE 174:
 _T238:
-	__asm        jmp    _T474;
+	return;
 // LINE 177:
 _T23d:
 	__asm        mov    eax, ViewState.world_pos.x;
@@ -464,7 +464,7 @@ _T3b:
 // LINE 290:
 	P->z += 0x40000000;
 // LINE 291:
-	__asm        jmp    _T74;
+	return;
 _T5a:
 	__asm        mov    eax, P;
 	__asm        cmp    dword ptr [eax+8], 0x30000000;
@@ -498,7 +498,7 @@ void SetIdealCameraPos() {
 	__asm        call   NormalizeGridPoint;
 	__asm        add    esp, 4;
 // LINE 321:
-	__asm        jmp    _T259;
+	return;
 // LINE 325:
 _T43:
 	__asm        mov    eax, G_uheli;
@@ -511,7 +511,7 @@ _T43:
 	__asm        cmp    G_camera_mode, 0;
 	__asm        je     _T6c;
 // LINE 329:
-	__asm        jmp    _T259;
+	return;
 // LINE 332:
 _T6c:
 	__asm        mov    eax, S_curr_chase;
@@ -1199,7 +1199,7 @@ void S3CameraRotate() {
 	__asm        add    esp, 4;
 // LINE 636:
 // Block end:
-	__asm        jmp    _T1a2;
+	return;
 _T5c:
 	__asm        cmp    G_camera_mode, 2;
 	__asm        jne    _Td6;
@@ -1235,7 +1235,7 @@ _T8b:
 	__asm        call   CalcCameraAngles;
 	__asm        add    esp, 4;
 // LINE 656:
-	__asm        jmp    _T1a2;
+	return;
 _Td6:
 	__asm        cmp    G_camera_mode, 0;
 	__asm        je     _T114;
@@ -1255,7 +1255,7 @@ _Td6:
 	__asm        call   CalcCameraAngles;
 	__asm        add    esp, 4;
 // LINE 673:
-	__asm        jmp    _T1a2;
+	return;
 // LINE 676:
 _T114:
 	__asm        mov    eax, 0x11;
@@ -1345,21 +1345,21 @@ _T14:
 	__asm        mov    S_chase[0].dist[ecx*4], eax;
 // LINE 749:
 _T57:
-	__asm        jmp    _T137;
+	return;
 // LINE 751:
 _T5c:
 	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        add    S_chase[0].dist[eax*4], 0x40000;
 // LINE 752:
-	__asm        jmp    _T137;
+	return;
 // LINE 754:
 _T74:
 	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        add    S_chase[0].height[eax*4], 0x40000;
 // LINE 755:
-	__asm        jmp    _T137;
+	return;
 // LINE 757:
 _T8c:
 	__asm        mov    eax, S_curr_chase;
@@ -1376,25 +1376,25 @@ _T8c:
 	__asm        mov    S_chase[0].height[eax*4], 0;
 // LINE 761:
 _Tc8:
-	__asm        jmp    _T137;
+	return;
 // LINE 763:
 _Tcd:
 	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        sub    S_chase[0].focus[eax*4], 0x40000;
 // LINE 764:
-	__asm        jmp    _T137;
+	return;
 // LINE 766:
 _Te5:
 	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        add    S_chase[0].focus[eax*4], 0x40000;
 // LINE 767:
-	__asm        jmp    _T137;
+	return;
 // LINE 770:
-	__asm        jmp    _T137;
+	return;
 // LINE 771:
-	__asm        jmp    _T137;
+	return;
 _T107:
 	__asm        sub    dword ptr [ebp-4], 0x1B;
 	__asm        cmp    dword ptr [ebp-4], 5;

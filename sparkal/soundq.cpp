@@ -332,7 +332,7 @@ _T69:
 	__asm        jmp    _T78;
 // LINE 22:
 _T78:
-	__asm        jmp    _T7d;
+	return;
 _T7d:
 	__asm        mov    eax, this;
 }
@@ -379,7 +379,7 @@ _T78:
 // LINE 33:
 	this->bDeleteSoundWhenFinished = bNewDeleteSoundWhenFinished;
 // LINE 34:
-	__asm        jmp    _Ta1;
+	return;
 _Ta1:
 	__asm        mov    eax, this;
 }
@@ -426,7 +426,7 @@ _T78:
 // LINE 45:
 	this->bDeleteSoundWhenFinished = bNewDeleteSoundWhenFinished;
 // LINE 46:
-	__asm        jmp    _Ta0;
+	return;
 _Ta0:
 	__asm        mov    eax, this;
 }
@@ -626,7 +626,7 @@ _T247:
 // LINE 58:
 	this->bDeleteSoundWhenFinished = bNewDeleteSoundWhenFinished;
 // LINE 59:
-	__asm        jmp    _T268;
+	return;
 _T268:
 	__asm        mov    eax, this;
 }
@@ -871,7 +871,7 @@ _T2d0:
 // LINE 72:
 	this->bDeleteSoundWhenFinished = bNewDeleteSoundWhenFinished;
 // LINE 73:
-	__asm        jmp    _T2f1;
+	return;
 _T2f1:
 	__asm        mov    eax, this;
 }
@@ -907,7 +907,7 @@ _T4c:
 // LINE 93:
 	this->bDeleteSoundWhenFinished = 0x1;
 // LINE 94:
-	__asm        jmp    _T6e;
+	return;
 _T6e:
 	__asm        mov    eax, this;
 }
@@ -1076,7 +1076,7 @@ _T1df:
 // LINE 106:
 	this->bDeleteSoundWhenFinished = 0x1;
 // LINE 107:
-	__asm        jmp    _T201;
+	return;
 _T201:
 	__asm        mov    eax, this;
 }
@@ -1111,7 +1111,7 @@ _T4a:
 // LINE 120:
 	this->bDeleteSoundWhenFinished = 0x1;
 // LINE 121:
-	__asm        jmp    _T6c;
+	return;
 _T6c:
 	__asm        mov    eax, this;
 }
@@ -1310,7 +1310,7 @@ _T255:
 // LINE 146:
 	this->nWaitTimerSet = 0x0;
 // LINE 148:
-	__asm        jmp    _T281;
+	return;
 _T281:
 	__asm        mov    eax, this;
 }
@@ -1461,7 +1461,7 @@ _T19e:
 	__asm        mov    list<SoundQueueItem *>::last, 0;
 	__asm        jmp    _T1c1;
 _T1c1:
-	__asm        jmp    _T1c6;
+	return;
 _T1c6:
 }
 
@@ -1514,7 +1514,7 @@ _T36:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+8];
 // LINE 187:
-	__asm        jmp    _T4a;
+	return;
 _T4a:
 }
 
@@ -1775,7 +1775,7 @@ _T2a5:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x28];
 // LINE 218:
-	__asm        jmp    _T2b5;
+	return;
 _T2b5:
 }
 
@@ -2133,7 +2133,7 @@ void SoundQueue::EndPauseCallback() {
 	this->nWaitTimerSet = 0x0;
 // LINE 284:
 _T30:
-	__asm        jmp    _T35;
+	return;
 _T35:
 }
 
@@ -2244,7 +2244,7 @@ _T10b:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x28];
 // LINE 321:
-	__asm        jmp    _T11b;
+	return;
 _T11b:
 }
 
@@ -2422,7 +2422,7 @@ _T1d7:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x28];
 // LINE 345:
-	__asm        jmp    _T1e7;
+	return;
 _T1e7:
 }
 
@@ -2434,7 +2434,7 @@ void SoundQueue::WindowsStaticSoundQueueCompletionCallback(uint32_t nTimerID, ui
 	__asm        call   SoundQueue::StaticSoundQueueCompletionCallback;
 	__asm        add    esp, 4;
 // LINE 357:
-	__asm        jmp    _T17;
+	return;
 _T17:
 }
 
@@ -2446,7 +2446,7 @@ void SoundQueue::WindowsStaticSoundQueueWaitTimeCallback(uint32_t nTimerID, uint
 	__asm        call   SoundQueue::StaticSoundQueueWaitTimeCallback;
 	__asm        add    esp, 4;
 // LINE 369:
-	__asm        jmp    _T17;
+	return;
 _T17:
 }
 
@@ -2458,7 +2458,7 @@ void SoundQueue::StaticSoundQueueCompletionCallback(long lData) {
 	__asm        mov    ecx, lData;
 	__asm        call   dword ptr [eax+0x1C];
 // LINE 378:
-	__asm        jmp    _T16;
+	return;
 _T16:
 }
 
@@ -2523,7 +2523,7 @@ _T8d:
 	__asm        call   dword ptr [eax+0x14];
 // LINE 400:
 _T98:
-	__asm        jmp    _T9d;
+	return;
 _T9d:
 }
 
@@ -2535,7 +2535,7 @@ void SoundQueue::StaticSoundQueueWaitTimeCallback(long lData) {
 	__asm        mov    ecx, lData;
 	__asm        call   dword ptr [eax+0x20];
 // LINE 408:
-	__asm        jmp    _T16;
+	return;
 _T16:
 }
 
@@ -2556,7 +2556,7 @@ _T1b:
 	__asm        call   dword ptr [eax+0x14];
 // LINE 421:
 _T33:
-	__asm        jmp    _T38;
+	return;
 _T38:
 }
 
@@ -2734,7 +2734,7 @@ void SoundQueue::ReleaseMutex() {
 // LINE 456:
 	this->bMutex = 0x0;
 // LINE 457:
-	__asm        jmp    _T1b;
+	return;
 _T1b:
 }
 

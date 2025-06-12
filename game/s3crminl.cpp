@@ -476,7 +476,7 @@ void CriminalEvaderCarClass::CriminalEvaderCarClass() {
 // LINE 98:
 	this->carModel = 0x11e;
 // LINE 99:
-	__asm        jmp    _T2c;
+	return;
 _T2c:
 	__asm        mov    eax, this;
 }
@@ -866,7 +866,7 @@ _T279:
 // LINE 277:
 // Block end:
 _T2a0:
-	__asm        jmp    _T4e4;
+	return;
 // LINE 280:
 _T2a5:
 	__asm        mov    ecx, this;
@@ -902,7 +902,7 @@ _T2e5:
 // LINE 299:
 	this->missionState = 0x4;
 // LINE 300:
-	__asm        jmp    _T4e4;
+	return;
 // LINE 304:
 _T321:
 	__asm        mov    eax, this;
@@ -1043,7 +1043,7 @@ _T4b7:
 //   _T49a
 // LINE 387:
 _T4df:
-	__asm        jmp    _T4e4;
+	return;
 _T4e4:
 }
 
@@ -1059,7 +1059,7 @@ void CriminalEvaderCarClass::PullOver(short carModel) {
 	__asm        jne    _T31;
 // LINE 394:
 _T2c:
-	__asm        jmp    _T7e;
+	return;
 // LINE 397:
 _T31:
 	__asm        movsx  eax, carModel;
@@ -1085,7 +1085,7 @@ _T6d:
 	__asm        call   AutomobileClass::PullOver;
 // LINE 399:
 _T79:
-	__asm        jmp    _T7e;
+	return;
 _T7e:
 }
 
@@ -1110,7 +1110,7 @@ void CriminalEvaderCarClass::AdjustSpeed() {
 	__asm        mov    [ecx+0xDE], eax;
 // LINE 424:
 _T45:
-	__asm        jmp    _T4a;
+	return;
 _T4a:
 }
 
@@ -1412,7 +1412,7 @@ void CriminalEvaderCarClass::ShowWhereWeAre() {
 	__asm        call   S3MissionUpdate;
 	__asm        add    esp, 4;
 // LINE 657:
-	__asm        jmp    _T46;
+	return;
 _T46:
 }
 
@@ -1432,7 +1432,7 @@ void CriminalEvaderCarClass::SetSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) 
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::SetSaveData;
 // LINE 676:
-	__asm        jmp    _T65;
+	return;
 _T65:
 }
 
@@ -1443,7 +1443,7 @@ void CriminalEvaderCarClass::LoadSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd)
 	__asm        test   byte ptr [eax], 2;
 	__asm        jne    _T1d;
 // LINE 691:
-	__asm        jmp    _T76;
+	return;
 // LINE 695:
 _T1d:
 	__asm        mov    eax, sd;
@@ -1459,7 +1459,7 @@ _T1d:
 // LINE 701:
 	this->timeToBeOnTheRun = sd->c.timeToBeOnTheRun;
 // LINE 702:
-	__asm        jmp    _T76;
+	return;
 _T76:
 }
 

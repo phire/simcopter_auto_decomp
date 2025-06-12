@@ -698,7 +698,7 @@ void SoundCompletionDeletionFunction(long lSoundPointer) {
 	__asm        jmp    _T30;
 // LINE 78:
 _T30:
-	__asm        jmp    _T35;
+	return;
 _T35:
 }
 
@@ -710,7 +710,7 @@ void SoundCompletionUnloadFunction(long lSoundPointer) {
 	__asm        mov    ecx, lSoundPointer;
 	__asm        call   dword ptr [eax+0x3C];
 // LINE 88:
-	__asm        jmp    _T16;
+	return;
 _T16:
 }
 

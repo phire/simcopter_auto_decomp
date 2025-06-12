@@ -33,7 +33,7 @@ struct tagPOINT{ // packed(0x8 bytes) TI: 0x1131
 // FUNCTION: COPTER_D 0x004747f0
 void Cursor::Cursor() {
 // LINE 20:
-	__asm        jmp    _T11;
+	return;
 _T11:
 	__asm        mov    eax, this;
 }
@@ -41,7 +41,7 @@ _T11:
 // FUNCTION: COPTER_D 0x00474809
 void Cursor::~Cursor() {
 // LINE 23:
-	__asm        jmp    _T11;
+	return;
 _T11:
 }
 

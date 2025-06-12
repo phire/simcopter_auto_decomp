@@ -555,7 +555,7 @@ void FireEngineClass::FireEngineClass() {
 // LINE 83:
 	this->carModel = 0x11c;
 // LINE 84:
-	__asm        jmp    _T2c;
+	return;
 _T2c:
 	__asm        mov    eax, this;
 }
@@ -1077,7 +1077,7 @@ _T2bd:
 	__asm        jmp    _T292;
 // LINE 348:
 _T2e0:
-	__asm        jmp    _T2e5;
+	return;
 _T2e5:
 }
 
@@ -1473,7 +1473,7 @@ _Tfe:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x2AC], eax;
 // LINE 542:
-	__asm        jmp    _T156;
+	return;
 _T156:
 }
 
@@ -1502,7 +1502,7 @@ void FireEngineClass::SetSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) {
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::SetSaveData;
 // LINE 561:
-	__asm        jmp    _T74;
+	return;
 _T74:
 }
 
@@ -1513,7 +1513,7 @@ void FireEngineClass::LoadSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) {
 	__asm        test   byte ptr [eax], 2;
 	__asm        jne    _T1d;
 // LINE 577:
-	__asm        jmp    _Tf4;
+	return;
 // LINE 581:
 _T1d:
 	__asm        mov    eax, sd;
@@ -1577,7 +1577,7 @@ _T75:
 	__asm        call   FireEngineClass::PointStreamAtFire;
 // LINE 606:
 _Tef:
-	__asm        jmp    _Tf4;
+	return;
 _Tf4:
 }
 

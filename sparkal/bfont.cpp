@@ -651,7 +651,7 @@ _T166:
 _T189:
 	this-><vftable> = 0x5904d0;
 // LINE 25:
-	__asm        jmp    _T197;
+	return;
 _T197:
 	__asm        mov    eax, this;
 }
@@ -868,7 +868,7 @@ _T29f:
 _T2c2:
 	this-><vftable> = 0x5904d0;
 // LINE 38:
-	__asm        jmp    _T2d0;
+	return;
 _T2d0:
 	__asm        mov    eax, this;
 }
@@ -1009,7 +1009,7 @@ _T1b8:
 _T1db:
 	this-><vftable> = 0x5904d0;
 // LINE 50:
-	__asm        jmp    _T1e9;
+	return;
 _T1e9:
 	__asm        mov    eax, this;
 }
@@ -1223,7 +1223,7 @@ _T238:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T260:
-	__asm        jmp    _T265;
+	return;
 _T265:
 }
 
@@ -1247,7 +1247,7 @@ void BitmappedFont::DeInitialize() {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x18];
 // LINE 75:
-	__asm        jmp    _T1c;
+	return;
 _T1c:
 }
 
@@ -2694,7 +2694,7 @@ _T7ea:
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   dword ptr [edx+4];
 // LINE 179:
-	__asm        jmp    _T806;
+	return;
 _T806:
 }
 
@@ -2991,7 +2991,7 @@ _T50:
 	this->myFontImage = 0x0;
 // LINE 214:
 _T5a:
-	__asm        jmp    _T5f;
+	return;
 _T5f:
 }
 
@@ -3644,7 +3644,7 @@ _T1e5:
 	__asm        jmp    _T15;
 // LINE 400:
 _T1ed:
-	__asm        jmp    _T1f2;
+	return;
 _T1f2:
 }
 
@@ -3833,7 +3833,7 @@ _T1e5:
 	__asm        jmp    _T15;
 // LINE 417:
 _T1ed:
-	__asm        jmp    _T1f2;
+	return;
 _T1f2:
 }
 
@@ -3905,7 +3905,7 @@ _T52:
 	__asm        jmp    _T52;
 // LINE 442:
 _T9e:
-	__asm        jmp    _Ta3;
+	return;
 _Ta3:
 }
 
@@ -3977,7 +3977,7 @@ _T52:
 	__asm        jmp    _T52;
 // LINE 468:
 _T9e:
-	__asm        jmp    _Ta3;
+	return;
 _Ta3:
 }
 
@@ -4098,7 +4098,7 @@ _Td2:
 	__asm        call   BitmappedFont::DrawTextLine;
 // LINE 505:
 _T111:
-	__asm        jmp    _T116;
+	return;
 _T116:
 }
 
@@ -4219,7 +4219,7 @@ _Td2:
 	__asm        call   BitmappedFont::DrawTextLineNoClip;
 // LINE 542:
 _T111:
-	__asm        jmp    _T116;
+	return;
 _T116:
 }
 
@@ -4310,7 +4310,7 @@ _Ta7:
 	__asm        jmp    _T52;
 // LINE 572:
 _Td4:
-	__asm        jmp    _Td9;
+	return;
 _Td9:
 }
 
@@ -4401,7 +4401,7 @@ _Ta7:
 	__asm        jmp    _T52;
 // LINE 601:
 _Td4:
-	__asm        jmp    _Td9;
+	return;
 _Td9:
 }
 

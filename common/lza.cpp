@@ -619,7 +619,7 @@ _T4a:
 	__asm        jmp    _T47;
 // LINE 208:
 _T6d:
-	__asm        jmp    _T72;
+	return;
 _T72:
 }
 
@@ -683,7 +683,7 @@ _T97:
 	__asm        mov    edx, forest;
 	__asm        mov    [edx+ecx*4+0x944B], eax;
 // LINE 232:
-	__asm        jmp    _T2e7;
+	return;
 // LINE 234:
 _Tbc:
 	__asm        jmp    _T112;
@@ -712,7 +712,7 @@ _Ted:
 	__asm        mov    edx, forest;
 	__asm        mov    [edx+ecx*4+0x944B], eax;
 // LINE 239:
-	__asm        jmp    _T2e7;
+	return;
 // LINE 242:
 _T112:
 	__asm        mov    i, 1;
@@ -852,7 +852,7 @@ _T2d1:
 	__asm        mov    ecx, forest;
 	__asm        mov    dword ptr [ecx+eax*4+0x944B], 0x1000;
 // LINE 263:
-	__asm        jmp    _T2e7;
+	return;
 _T2e7:
 }
 
@@ -866,7 +866,7 @@ static void DeleteNode(long p, /*packed*/ struct tLZSSBinaryForest *forest) {
 	__asm        cmp    dword ptr [ecx+eax*4+0x944B], 0x1000;
 	__asm        jne    _T25;
 
-	__asm        jmp    _T204;
+	return;
 // LINE 270:
 _T25:
 	__asm        mov    eax, p;
@@ -999,7 +999,7 @@ _T1ee:
 	__asm        mov    ecx, forest;
 	__asm        mov    dword ptr [ecx+eax*4+0x944B], 0x1000;
 // LINE 290:
-	__asm        jmp    _T204;
+	return;
 _T204:
 }
 
@@ -1078,7 +1078,7 @@ _Tb9:
 	__asm        jmp    _Tb6;
 // LINE 317:
 _Tf5:
-	__asm        jmp    _Tfa;
+	return;
 _Tfa:
 }
 
@@ -1321,7 +1321,7 @@ _T134:
 	__asm        jmp    _T134;
 // LINE 342:
 _T14f:
-	__asm        jmp    _T154;
+	return;
 _T154:
 }
 
@@ -1966,7 +1966,7 @@ _T18:
 	__asm        jmp    _T15;
 // LINE 460:
 _T42:
-	__asm        jmp    _T47;
+	return;
 _T47:
 }
 

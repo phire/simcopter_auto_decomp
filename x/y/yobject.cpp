@@ -2974,7 +2974,7 @@ _L54998:
 	__asm        call   ResFile::~ResFile;
 	__asm        ret;
 _Tf9:
-	__asm        jmp    _T108;
+	return;
 _L54996:
 	__asm        mov    eax, 0x595D38;
 	__asm        jmp    near ptr 0x0056F590;
@@ -3010,7 +3010,7 @@ static void $E72() {
 	__asm        mov    ecx, 0x636BB8;
 	__asm        call   NResFile::~NResFile;
 _T2d:
-	__asm        jmp    _T32;
+	return;
 _T32:
 }
 
@@ -3056,7 +3056,7 @@ _L55023:
 	__asm        call   FlatResFile::~FlatResFile;
 	__asm        ret;
 _T9d:
-	__asm        jmp    _Tac;
+	return;
 _L55021:
 	__asm        mov    eax, 0x595D78;
 	__asm        jmp    near ptr 0x0056F590;
@@ -3101,7 +3101,7 @@ _L55035:
 	__asm        call   FlatResFile::~FlatResFile;
 	__asm        ret;
 _T60:
-	__asm        jmp    _T6f;
+	return;
 _L55033:
 	__asm        mov    eax, 0x595DA8;
 	__asm        jmp    near ptr 0x0056F590;
@@ -3119,7 +3119,7 @@ void RemoveAvatarFromBuilding() {
 	gIDOfBuildingAvatarIsIn = 0xffffffff;
 // LINE 140:
 _T1d:
-	__asm        jmp    _T22;
+	return;
 _T22:
 }
 
@@ -3155,7 +3155,7 @@ static void $E83() {
 _T5b:
 	__asm        jmp    _T60;
 _T60:
-	__asm        jmp    _T65;
+	return;
 _T65:
 }
 
@@ -3176,7 +3176,7 @@ static void $E84() {
 
 	__asm        jmp    _T0b;
 _T0b:
-	__asm        jmp    _T10;
+	return;
 _T10:
 }
 
@@ -3322,7 +3322,7 @@ _T1fc:
 	cYObject::sDebugNumBeamed = 0x0;
 // LINE 162:
 _T205:
-	__asm        jmp    _T20a;
+	return;
 _T20a:
 }
 
@@ -3498,7 +3498,7 @@ void AdjustPersonBeamingSlices(int32_t velocity) {
 	__asm        cmp    velocity, 0;
 	__asm        jne    _T15;
 
-	__asm        jmp    _T10f;
+	return;
 // LINE 193:
 _T15:
 	__asm        inc    gPersonBeamingSlicesSlice;
@@ -3564,7 +3564,7 @@ _Tf8:
 	gPersonBeamingForwardWeight = 0x4;
 // LINE 220:
 _T10a:
-	__asm        jmp    _T10f;
+	return;
 _T10f:
 }
 
@@ -5338,7 +5338,7 @@ _T5d:
 	__asm        call   duh;
 	__asm        add    esp, 8;
 // LINE 420:
-	__asm        jmp    _T9c;
+	return;
 _T9c:
 }
 
@@ -5349,7 +5349,7 @@ void S3PersonDelete() {
 // LINE 428:
 	__asm        call   DeleteAllPeople;
 // LINE 429:
-	__asm        jmp    _T15;
+	return;
 _T15:
 }
 
@@ -5358,7 +5358,7 @@ void S3PersonNextFrame() {
 // LINE 435:
 	__asm        call   cYObject::SimulateAll;
 // LINE 437:
-	__asm        jmp    _T10;
+	return;
 _T10:
 }
 
@@ -5368,7 +5368,7 @@ void S3PersonUserNextFrame() {
 	__asm        mov    ecx, gAvatar;
 	__asm        call   cAvatar::Simulate;
 // LINE 442:
-	__asm        jmp    _T16;
+	return;
 _T16:
 }
 
@@ -5456,7 +5456,7 @@ _Tf3:
 	__asm        mov    ecx, gAvatar;
 	__asm        call   dword ptr [eax+0x18];
 // LINE 452:
-	__asm        jmp    _T108;
+	return;
 _T108:
 }
 
@@ -5656,7 +5656,7 @@ _T282:
 	__asm        mov    ecx, gAvatar;
 	__asm        call   cYObject::SetMaster;
 // LINE 461:
-	__asm        jmp    _T2ac;
+	return;
 _T2ac:
 }
 
@@ -5805,7 +5805,7 @@ _T180:
 // LINE 487:
 // Block end:
 _T1c6:
-	__asm        jmp    _T1cb;
+	return;
 _T1cb:
 }
 
@@ -5887,7 +5887,7 @@ _T9e:
 	__asm        call   S3PersonUserAppearNew;
 	__asm        add    esp, 8;
 // LINE 493:
-	__asm        jmp    _Tdd;
+	return;
 _Tdd:
 }
 
@@ -6106,7 +6106,7 @@ _T12b:
 // LINE 543:
 // Block end:
 _T137:
-	__asm        jmp    _T13c;
+	return;
 _T13c:
 }
 
@@ -6448,7 +6448,7 @@ _T3dd:
 	__asm        mov    [ecx+0x178], eax;
 // LINE 619:
 _T3ff:
-	__asm        jmp    _T404;
+	return;
 _T404:
 }
 
@@ -6493,7 +6493,7 @@ _T62:
 	__asm        add    esp, 0x10;
 // LINE 635:
 _T7e:
-	__asm        jmp    _T83;
+	return;
 _T83:
 }
 
@@ -7047,7 +7047,7 @@ _Tfe:
 	__asm        call   cYObject::StartForScurkID;
 	__asm        add    esp, 0x20;
 // LINE 741:
-	__asm        jmp    _T169;
+	return;
 _T169:
 }
 
@@ -7192,7 +7192,7 @@ _T135:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 766:
-	__asm        jmp    _T289;
+	return;
 // LINE 769:
 _T1b8:
 	__asm        movsx  eax, ret;
@@ -7251,7 +7251,7 @@ _T250:
 _T276:
 	obj->fData[22] = id;
 // LINE 774:
-	__asm        jmp    _T289;
+	return;
 _T289:
 }
 
@@ -7321,7 +7321,7 @@ _Tae:
 	__asm        test   eax, eax;
 	__asm        je     _Tcb;
 // LINE 785:
-	__asm        jmp    _T4f2;
+	return;
 // LINE 786:
 _Tcb:
 	__asm        lea    eax, dist;
@@ -7366,7 +7366,7 @@ _T117:
 	__asm        test   eax, eax;
 	__asm        je     _T134;
 // LINE 793:
-	__asm        jmp    _T4f2;
+	return;
 // LINE 794:
 _T134:
 	__asm        push   0;
@@ -7392,7 +7392,7 @@ _T151:
 	__asm        test   eax, eax;
 	__asm        je     _T16e;
 // LINE 799:
-	__asm        jmp    _T4f2;
+	return;
 // LINE 800:
 _T16e:
 	__asm        cmp    gCurrentCityType, 2;
@@ -7435,7 +7435,7 @@ _T1c5:
 	__asm        test   eax, eax;
 	__asm        je     _T1e2;
 // LINE 809:
-	__asm        jmp    _T4f2;
+	return;
 // LINE 818:
 _T1e2:
 	__asm        call   cYObject::GetSleepingPerson;
@@ -7670,7 +7670,7 @@ _T490:
 //  [0, 1, 4, 4, 4, 4, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3]
 // LINE 832:
 _T4ed:
-	__asm        jmp    _T4f2;
+	return;
 _T4f2:
 }
 
@@ -7688,7 +7688,7 @@ void cYObject::StartScurkPeopleNearAvatar() {
 	__asm        cmp    eax, ecx;
 	__asm        jge    _T24;
 // LINE 840:
-	__asm        jmp    _T186;
+	return;
 // LINE 841:
 _T24:
 	__asm        mov    eax, gAvatar;
@@ -7709,7 +7709,7 @@ _T24:
 	__asm        cmp    eax, ecx;
 	__asm        jne    _T71;
 // LINE 845:
-	__asm        jmp    _T186;
+	return;
 // LINE 847:
 _T71:
 	sAvLastCellX = cellx;
@@ -7795,13 +7795,13 @@ _Tf5:
 	__asm        cmp    eax, ecx;
 	__asm        jge    _T17c;
 // LINE 866:
-	__asm        jmp    _T186;
+	return;
 // LINE 867:
 _T17c:
 	__asm        jmp    _Tf1;
 // LINE 868:
 _T181:
-	__asm        jmp    _T186;
+	return;
 _T186:
 }
 
@@ -7933,7 +7933,7 @@ _T19a:
 	__asm        jmp    _T0f;
 // LINE 885:
 _T19f:
-	__asm        jmp    _T1a4;
+	return;
 _T1a4:
 }
 
@@ -7966,7 +7966,7 @@ _T4e:
 	__asm        call   cYObject::BeamRemainingAmbients;
 // LINE 895:
 _T53:
-	__asm        jmp    _T58;
+	return;
 _T58:
 }
 
@@ -8098,7 +8098,7 @@ void MakeAllPeople() {
 	__asm        call   cAvatar::MakeAvatar;
 	__asm        mov    gAvatar, eax;
 // LINE 926:
-	__asm        jmp    _T73;
+	return;
 _T73:
 }
 
@@ -8122,7 +8122,7 @@ void DeleteAllPeople() {
 _T33:
 	__asm        call   cYObject::DestroyObjects;
 // LINE 932:
-	__asm        jmp    _T3d;
+	return;
 _T3d:
 }
 
@@ -8257,7 +8257,7 @@ _T19d:
 	__asm        jmp    _T2a;
 // LINE 961:
 _T1a2:
-	__asm        jmp    _T1a7;
+	return;
 _T1a7:
 }
 
@@ -10181,7 +10181,7 @@ _T1b55:
 // LINE 1275:
 // Block end:
 _T1b5f:
-	__asm        jmp    _T1b88;
+	return;
 _L55489:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        push   eax;
@@ -10895,7 +10895,7 @@ _T10c:
 	__asm        jmp    _T14;
 // LINE 1484:
 _T111:
-	__asm        jmp    _T116;
+	return;
 _T116:
 }
 
@@ -11086,7 +11086,7 @@ _T23b:
 	__asm        jmp    _T2f;
 // LINE 1530:
 _T240:
-	__asm        jmp    _T245;
+	return;
 _T245:
 }
 
@@ -11134,7 +11134,7 @@ _T84:
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::SetPersonType;
 // LINE 1537:
-	__asm        jmp    _T95;
+	return;
 _T95:
 }
 
@@ -12755,7 +12755,7 @@ _T19a:
 	__asm        jmp    _T1bc;
 // LINE 1810:
 _T1bc:
-	__asm        jmp    _T1c1;
+	return;
 _T1c1:
 }
 
@@ -13173,7 +13173,7 @@ _T2ba:
 	__asm        call   cYObject::DistributeSoundChannels;
 	__asm        add    esp, 8;
 // LINE 1861:
-	__asm        jmp    _T2df;
+	return;
 _T2df:
 }
 
@@ -13394,7 +13394,7 @@ _Tce:
 // LINE 1893:
 	this->fData[25] = soundchannel;
 // LINE 1894:
-	__asm        jmp    _Tef;
+	return;
 _Tef:
 }
 
@@ -14270,7 +14270,7 @@ _T62e:
 // LINE 2134:
 // Block end:
 _T642:
-	__asm        jmp    _T647;
+	return;
 _T647:
 }
 
@@ -14349,7 +14349,7 @@ void cYObject::RemoveFromHeli() {
 _T53:
 	this->fData[9] = 0x1;
 // LINE 2162:
-	__asm        jmp    _T64;
+	return;
 _T64:
 }
 
@@ -15545,7 +15545,7 @@ _T1dc:
 	__asm        jmp    _T1e1;
 // LINE 2284:
 _T1e1:
-	__asm        jmp    _T1e6;
+	return;
 _T1e6:
 }
 
@@ -15786,7 +15786,7 @@ _T17b:
 	__asm        jmp    _T1a5;
 // LINE 2314:
 _T1a5:
-	__asm        jmp    _T75c;
+	return;
 // LINE 2316:
 // Block end:
 _T1aa:
@@ -15985,7 +15985,7 @@ _T3c7:
 	__asm        call   S3HeliNextFrame;
 	__asm        add    esp, 4;
 // LINE 2359:
-	__asm        jmp    _T75c;
+	return;
 // LINE 2362:
 // Block end:
 _T41a:
@@ -16234,7 +16234,7 @@ _T752:
 	__asm        jmp    _T757;
 // LINE 2381:
 _T757:
-	__asm        jmp    _T75c;
+	return;
 _T75c:
 }
 
@@ -17739,7 +17739,7 @@ _T1525:
 //   _T11b8
 // LINE 2498:
 _T1569:
-	__asm        jmp    _T156e;
+	return;
 _T156e:
 }
 
@@ -17841,7 +17841,7 @@ _Tc7:
 _T131:
 	__asm        call   SetIdealCameraPos;
 // LINE 2526:
-	__asm        jmp    _T13b;
+	return;
 _T13b:
 }
 
@@ -17939,7 +17939,7 @@ _Tf6:
 	__asm        jmp    _T113;
 // LINE 2556:
 _T113:
-	__asm        jmp    _T118;
+	return;
 _T118:
 }
 
@@ -18028,7 +18028,7 @@ _Ta1:
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::SetCellAndLoc;
 // LINE 2567:
-	__asm        jmp    _Tee;
+	return;
 _Tee:
 }
 
@@ -18125,7 +18125,7 @@ _T14e:
 	__asm        jmp    _T169;
 // LINE 2611:
 _T169:
-	__asm        jmp    _T16e;
+	return;
 _T16e:
 }
 
@@ -18627,7 +18627,7 @@ _T57d:
 	__asm        mov    [ecx+0xF0], ax;
 // LINE 2735:
 _T5a4:
-	__asm        jmp    _T5a9;
+	return;
 _T5a9:
 }
 
@@ -18727,7 +18727,7 @@ _T125:
 // LINE 2774:
 // Block end:
 _T12a:
-	__asm        jmp    _T12f;
+	return;
 _T12f:
 }
 
@@ -18828,7 +18828,7 @@ _T103:
 // LINE 2790:
 	this->fbLinked = 0x1;
 // LINE 2791:
-	__asm        jmp    _T14c;
+	return;
 _T14c:
 }
 
@@ -18891,7 +18891,7 @@ _T97:
 _Ta4:
 	this->fbLinked = 0x0;
 // LINE 2813:
-	__asm        jmp    _Tb2;
+	return;
 _Tb2:
 }
 
@@ -19192,7 +19192,7 @@ _Tc8:
 	__asm        call   0x004D1FF1;
 	__asm        add    esp, 4;
 // LINE 2869:
-	__asm        jmp    _Tf9;
+	return;
 _Tf9:
 }
 
@@ -19258,7 +19258,7 @@ _Tc7:
 	__asm        cmp    obj, 0;
 	__asm        jne    _Td6;
 
-	__asm        jmp    _T118;
+	return;
 // LINE 2877:
 _Td6:
 	__asm        mov    eax, obj;
@@ -19280,7 +19280,7 @@ _Td6:
 	__asm        jmp    _T113;
 // LINE 2880:
 _T113:
-	__asm        jmp    _T118;
+	return;
 _T118:
 }
 
@@ -19434,7 +19434,7 @@ _T2f:
 // LINE 2927:
 	this->fUserControl.yaw = 0x0;
 // LINE 2928:
-	__asm        jmp    _T82;
+	return;
 _T82:
 }
 
@@ -19691,7 +19691,7 @@ _T3d1:
 _T3d6:
 	this->fInited = 0x0;
 // LINE 2960:
-	__asm        jmp    _T3e4;
+	return;
 _T3e4:
 }
 
@@ -19729,7 +19729,7 @@ _T43:
 	__asm        test   eax, eax;
 	__asm        jne    _T5d;
 // LINE 2970:
-	__asm        jmp    _T48b;
+	return;
 // LINE 2976:
 _T5d:
 	__asm        cmp    G_video_mode, 0x10;
@@ -19757,7 +19757,7 @@ _Taa:
 	__asm        cmp    dword ptr [eax+0x98], 0;
 	__asm        jne    _Tc2;
 // LINE 2983:
-	__asm        jmp    _T48b;
+	return;
 // LINE 2985:
 _Tc2:
 	__asm        mov    eax, blit;
@@ -19850,7 +19850,7 @@ _T13a:
 	__asm        cmp    screenPt.z, eax;
 	__asm        jle    _T228;
 // LINE 3012:
-	__asm        jmp    _T48b;
+	return;
 // LINE 3013:
 	__asm        jmp    _T293;
 _T228:
@@ -19879,7 +19879,7 @@ _T26c:
 	__asm        jmp    _T293;
 // LINE 3020:
 _T28e:
-	__asm        jmp    _T48b;
+	return;
 // LINE 3022:
 _T293:
 	__asm        lea    eax, phiOff;
@@ -20024,7 +20024,7 @@ _T460:
 	__asm        rep movsd;
 	__asm        inc    gBodyDebugInfoIndex;
 // LINE 3044:
-	__asm        jmp    _T48b;
+	return;
 _T48b:
 }
 
@@ -20082,7 +20082,7 @@ _T2d:
 _T80:
 	gBodyDebugInfoIndex = 0x0;
 // LINE 3058:
-	__asm        jmp    _T8e;
+	return;
 _T8e:
 }
 
@@ -20198,14 +20198,14 @@ void S3PersonTweakInit() {
 	__asm        call   TWKEnQueue;
 	__asm        add    esp, 0xC;
 // LINE 3092:
-	__asm        jmp    _T52;
+	return;
 _T52:
 }
 
 // FUNCTION: COPTER_D 0x00551a2d
 void UpdateFigureVals() {
 // LINE 3096:
-	__asm        jmp    _T0b;
+	return;
 _T0b:
 }
 
@@ -20261,7 +20261,7 @@ _T7d:
 	__asm        call   0x004D8C2E;
 	__asm        add    esp, 8;
 // LINE 3112:
-	__asm        jmp    _Taf;
+	return;
 _Taf:
 }
 
@@ -20531,7 +20531,7 @@ _T38:
 	__asm        mov    Pwinheight, eax;
 // LINE 3218:
 _T58:
-	__asm        jmp    _T5d;
+	return;
 _T5d:
 }
 

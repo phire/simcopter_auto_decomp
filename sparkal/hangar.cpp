@@ -843,7 +843,7 @@ _T40a:
 	__asm        call   GraphicWindow::MakeFocus;
 	__asm        add    esp, 4;
 // LINE 59:
-	__asm        jmp    _T435;
+	return;
 _T435:
 	__asm        mov    eax, this;
 }
@@ -1038,7 +1038,7 @@ _T21d:
 _T240:
 	__asm        jmp    _T245;
 _T245:
-	__asm        jmp    _T24a;
+	return;
 _T24a:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x78;
@@ -2029,7 +2029,7 @@ _T56:
 	this->mySecondImage = 0x0;
 // LINE 148:
 _T63:
-	__asm        jmp    _T68;
+	return;
 _T68:
 }
 
@@ -2786,7 +2786,7 @@ _T30b:
 	__asm        jmp    _T32c;
 // LINE 285:
 _T32c:
-	__asm        jmp    _T331;
+	return;
 _T331:
 }
 
@@ -2999,7 +2999,7 @@ _T161:
 	__asm        mov    ecx, this;
 	__asm        call   HangarWindow::HideHelp;
 // LINE 325:
-	__asm        jmp    _T16e;
+	return;
 _T16e:
 }
 
@@ -3130,7 +3130,7 @@ _T64:
 	rectToClip.bottom += this-><HangarWindow+0x1c>;
 // LINE 392:
 _T82:
-	__asm        jmp    _T87;
+	return;
 _T87:
 }
 
@@ -3219,7 +3219,7 @@ _Tde:
 _T100:
 	__asm        jmp    _T105;
 _T105:
-	__asm        jmp    _T61d;
+	return;
 // LINE 446:
 _T10a:
 	__asm        mov    eax, this;
@@ -3644,7 +3644,7 @@ _T5f1:
 _T613:
 	__asm        jmp    _T618;
 _T618:
-	__asm        jmp    _T61d;
+	return;
 _T61d:
 }
 
@@ -3660,7 +3660,7 @@ void HangarWindow::HideHelp() {
 	__asm        jmp    _T24;
 // LINE 487:
 _T24:
-	__asm        jmp    _T29;
+	return;
 _T29:
 }
 
@@ -3815,7 +3815,7 @@ void HangarWindow::LoadHotSpots() {
 	__asm        call   LoadListFromResource;
 	__asm        add    esp, 8;
 // LINE 506:
-	__asm        jmp    _T24;
+	return;
 _T24:
 }
 

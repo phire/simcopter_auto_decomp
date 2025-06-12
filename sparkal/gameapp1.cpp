@@ -977,7 +977,7 @@ _T17:
 _T31:
 	__asm        jmp    _T36;
 _T36:
-	__asm        jmp    _T3b;
+	return;
 _T3b:
 }
 
@@ -1013,7 +1013,7 @@ _T23:
 _T3d:
 	__asm        jmp    _T42;
 _T42:
-	__asm        jmp    _T47;
+	return;
 _T47:
 }
 
@@ -1078,7 +1078,7 @@ void GamePreferences::GamePreferences() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x1C], 0;
 // LINE 97:
-	__asm        jmp    _T60;
+	return;
 _T60:
 	__asm        mov    eax, this;
 }
@@ -1095,7 +1095,7 @@ void RenderPreferences::RenderPreferences() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xC], 1;
 // LINE 106:
-	__asm        jmp    _T38;
+	return;
 _T38:
 	__asm        mov    eax, this;
 }

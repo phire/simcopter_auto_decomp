@@ -477,7 +477,7 @@ void SwizzlePrivAnimPartInfo(void * __ptr32 val, long size) {
 _T2c:
 	pinfo = val;
 // LINE 125:
-	__asm        jmp    _T37;
+	return;
 _T37:
 }
 
@@ -619,7 +619,7 @@ _T2f:
 	__asm        call   Swizzle2;
 	__asm        add    esp, 4;
 // LINE 172:
-	__asm        jmp    _T55;
+	return;
 _T55:
 }
 
@@ -1101,7 +1101,7 @@ _T6f1:
 	__asm        add    esp, 0x10;
 // LINE 225:
 _T780:
-	__asm        jmp    _T78f;
+	return;
 _L39413:
 	__asm        mov    eax, 0x595FA8;
 	__asm        jmp    near ptr 0x0056F590;
@@ -1428,7 +1428,7 @@ _T3a8:
 	__asm        jmp    _T3ad;
 // LINE 247:
 _T3ad:
-	__asm        jmp    _T3b2;
+	return;
 _T3b2:
 }
 

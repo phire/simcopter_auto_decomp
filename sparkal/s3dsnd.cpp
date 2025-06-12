@@ -245,7 +245,7 @@ _T15:
 	__asm        mov    gSoundChangeNotificationSink<SoundChangeNotificationSink+0x00>, 0x58F5C0;
 	__asm        jmp    _T24;
 _T24:
-	__asm        jmp    _T29;
+	return;
 _T29:
 }
 
@@ -338,7 +338,7 @@ _Tbf:
 	__asm        jmp    _T52;
 // LINE 97:
 _Tc4:
-	__asm        jmp    _Tc9;
+	return;
 _Tc9:
 }
 
@@ -5401,7 +5401,7 @@ _T248:
 	__asm        jmp    _T24d;
 // LINE 477:
 _T24d:
-	__asm        jmp    _T252;
+	return;
 _T252:
 }
 
@@ -5538,7 +5538,7 @@ void S3DSStopPlay(int32_t nSoundIndex) {
 	__asm        mov    ecx, 0x604600;
 	__asm        call   SoundManager::StopSound;
 // LINE 553:
-	__asm        jmp    _T19;
+	return;
 _T19:
 }
 
@@ -5548,7 +5548,7 @@ void S3DSStopAllSounds() {
 	__asm        mov    ecx, 0x604600;
 	__asm        call   SoundManager::StopAllSounds;
 // LINE 570:
-	__asm        jmp    _T15;
+	return;
 _T15:
 }
 
@@ -5577,7 +5577,7 @@ void S3SoundAdjFreq(int32_t nSoundIndex, long lFrequencyAdjustment) {
 	__asm        call   dword ptr [eax+0x64];
 // LINE 593:
 _T3c:
-	__asm        jmp    _T41;
+	return;
 _T41:
 }
 
@@ -5619,7 +5619,7 @@ _T3b:
 	__asm        call   dword ptr [edx+0x24];
 // LINE 619:
 _T76:
-	__asm        jmp    _T7b;
+	return;
 _T7b:
 }
 
@@ -5662,7 +5662,7 @@ void S3SoundSetPosition(int32_t nSoundIndex, /*packed*/ struct Point3d *loc) {
 	__asm        cmp    theSound, 0;
 	__asm        jne    _T25;
 // LINE 687:
-	__asm        jmp    _T1b2;
+	return;
 // LINE 691:
 _T25:
 	__asm        mov    eax, loc;
@@ -5796,7 +5796,7 @@ _T18f:
 	__asm        mov    ecx, theSound;
 	__asm        call   dword ptr [eax+0x54];
 // LINE 730:
-	__asm        jmp    _T1b2;
+	return;
 _T1b2:
 }
 
@@ -5861,7 +5861,7 @@ _T93:
 	__asm        call   SoundQueue::operator+=;
 // LINE 744:
 _Ta9:
-	__asm        jmp    _Tae;
+	return;
 _Tae:
 }
 

@@ -385,7 +385,7 @@ static void $E63() {
 	__asm        mov    colorTextGamePaletteNormal.Red, 0xDA;
 	__asm        jmp    _T20;
 _T20:
-	__asm        jmp    _T25;
+	return;
 _T25:
 }
 
@@ -407,7 +407,7 @@ static void $E66() {
 	__asm        mov    colorTextGamePaletteHighlighted.Red, 0xFF;
 	__asm        jmp    _T20;
 _T20:
-	__asm        jmp    _T25;
+	return;
 _T25:
 }
 
@@ -540,7 +540,7 @@ _T1f5:
 _T212:
 	this->lCurrentCitySelection = 0xffffffff;
 // LINE 87:
-	__asm        jmp    _T221;
+	return;
 _T221:
 	__asm        mov    eax, this;
 }
@@ -575,7 +575,7 @@ _T46:
 	__asm        call   SmackerBackBuffer::~SmackerBackBuffer;
 	__asm        jmp    _T46;
 _T63:
-	__asm        jmp    _T68;
+	return;
 _T68:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
@@ -2178,7 +2178,7 @@ _T63:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::DestroyImage;
 // LINE 225:
-	__asm        jmp    _T70;
+	return;
 _T70:
 }
 
@@ -2381,7 +2381,7 @@ _T1bb:
 	__asm        jmp    _Tb6;
 // LINE 273:
 _T1c0:
-	__asm        jmp    _T1c5;
+	return;
 _T1c5:
 }
 
@@ -2883,7 +2883,7 @@ _Tee:
 	__asm        mov    upperLeft<vftable>, 0x590EF4;
 	__asm        jmp    _Tfd;
 _Tfd:
-	__asm        jmp    _T102;
+	return;
 _T102:
 }
 
@@ -3174,7 +3174,7 @@ _T434:
 	__asm        mov    [ecx+0xC], eax;
 // LINE 423:
 _T459:
-	__asm        jmp    _T45e;
+	return;
 _T45e:
 	__asm        mov    eax, this;
 }
@@ -3209,7 +3209,7 @@ _T2a:
 	__asm        jmp    _T18;
 // LINE 431:
 _T4e:
-	__asm        jmp    _T53;
+	return;
 _T53:
 }
 
@@ -3308,7 +3308,7 @@ _T104:
 	__asm        jmp    _T18;
 // LINE 450:
 _T109:
-	__asm        jmp    _T10e;
+	return;
 _T10e:
 }
 

@@ -62,7 +62,7 @@ void EmptyPStr(unsigned char * str) {
 // LINE 55:
 	str[0] = 0x0;
 // LINE 56:
-	__asm        jmp    _T11;
+	return;
 _T11:
 }
 
@@ -288,7 +288,7 @@ _T3a:
 // LINE 115:
 	str[1] = 0x30;
 // LINE 116:
-	__asm        jmp    _T138;
+	return;
 // LINE 119:
 _T56:
 	__asm        mov    eax, num;
@@ -380,7 +380,7 @@ _Te9:
 	__asm        jmp    _Te9;
 // LINE 150:
 _T133:
-	__asm        jmp    _T138;
+	return;
 _T138:
 }
 
@@ -509,7 +509,7 @@ void Num2HexStr(unsigned long num, unsigned char * str) {
 // LINE 183:
 	str[1] = 0x30;
 // LINE 184:
-	__asm        jmp    _Tf1;
+	return;
 // LINE 187:
 _T33:
 	__asm        mov    eax, num;
@@ -589,7 +589,7 @@ _Td4:
 	__asm        jmp    _T8e;
 // LINE 208:
 _Tec:
-	__asm        jmp    _Tf1;
+	return;
 _Tf1:
 }
 
@@ -614,7 +614,7 @@ void Long2PStr(unsigned long namelet, unsigned char * name) {
 // LINE 219:
 	name[4] = reinterpret_cast<uint8_t>(namelet);
 // LINE 220:
-	__asm        jmp    _T3b;
+	return;
 _T3b:
 }
 
@@ -697,7 +697,7 @@ _T29:
 	__asm        jmp    _T26;
 // LINE 263:
 _T51:
-	__asm        jmp    _T56;
+	return;
 _T56:
 }
 
@@ -781,7 +781,7 @@ _T0f:
 	__asm        jmp    _T0f;
 // LINE 368:
 _T54:
-	__asm        jmp    _T59;
+	return;
 _T59:
 }
 
@@ -841,7 +841,7 @@ _T47:
 	__asm        mov    eax, str2;
 	__asm        mov    [eax], cl;
 // LINE 452:
-	__asm        jmp    _T84;
+	return;
 _T84:
 }
 
@@ -872,7 +872,7 @@ void ConcatCPStr(char * src, unsigned char * dest, short destSize) {
 	__asm        call   ConcatPStr;
 	__asm        add    esp, 0xC;
 // LINE 460:
-	__asm        jmp    _T4f;
+	return;
 _T4f:
 }
 
@@ -897,7 +897,7 @@ void ConcatNum(long number, unsigned char * str, short destSize) {
 	__asm        call   ConcatPStr;
 	__asm        add    esp, 0xC;
 // LINE 469:
-	__asm        jmp    _T3b;
+	return;
 _T3b:
 }
 
@@ -945,7 +945,7 @@ _T51:
 	__asm        mov    eax, str;
 	__asm        mov    byte ptr [ecx+eax], 0x30;
 // LINE 512:
-	__asm        jmp    _Tf9;
+	return;
 // LINE 515:
 _T75:
 	__asm        jmp    _T85;
@@ -999,7 +999,7 @@ _Tda:
 	__asm        jmp    _T7a;
 // LINE 523:
 _Tf4:
-	__asm        jmp    _Tf9;
+	return;
 _Tf9:
 }
 
@@ -1190,7 +1190,7 @@ _T3e:
 	__asm        call   Memory::BlockMove;
 	__asm        add    esp, 0xC;
 // LINE 935:
-	__asm        jmp    _T73;
+	return;
 _T73:
 }
 
@@ -1240,7 +1240,7 @@ _T54:
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3558];
 // LINE 1084:
-	__asm        jmp    _T7c;
+	return;
 _T7c:
 }
 

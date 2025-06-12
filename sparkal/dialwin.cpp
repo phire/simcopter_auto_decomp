@@ -823,7 +823,7 @@ _T17e:
 _T1b7:
 	this-><RadioCompassWindow+0x00> = 0x58f650;
 // LINE 76:
-	__asm        jmp    _T1c5;
+	return;
 _T1c5:
 	__asm        mov    eax, this;
 }
@@ -900,7 +900,7 @@ _Tbc:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _Tea:
-	__asm        jmp    _Tef;
+	return;
 _Tef:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
@@ -972,7 +972,7 @@ void RadioCompassWindow::InitializeCachedSettings() {
 // LINE 116:
 	this->nLastCompassPosition = 0xf4240;
 // LINE 117:
-	__asm        jmp    _T35;
+	return;
 _T35:
 }
 
@@ -1008,7 +1008,7 @@ _T5e:
 	this->myCompassImage = 0x0;
 // LINE 132:
 _T6b:
-	__asm        jmp    _T70;
+	return;
 _T70:
 }
 
@@ -1761,7 +1761,7 @@ _T1cf:
 _T1e0:
 	this->nRadioStationIndex = nNewRadioStationIndex;
 // LINE 270:
-	__asm        jmp    _T1ee;
+	return;
 _T1ee:
 }
 
@@ -1920,7 +1920,7 @@ _T191:
 _T1a2:
 	this->lRadioStationVolume = lNewRadioStationVolume;
 // LINE 305:
-	__asm        jmp    _T1b3;
+	return;
 _T1b3:
 }
 
@@ -1966,7 +1966,7 @@ _T49:
 	__asm        call   RadioCompassWindow::SetNewRadioStationVolume;
 // LINE 322:
 _T67:
-	__asm        jmp    _T6c;
+	return;
 _T6c:
 }
 
@@ -2570,7 +2570,7 @@ _T935:
 	__asm        jmp    _T96e;
 // LINE 401:
 _T96e:
-	__asm        jmp    _T973;
+	return;
 _T973:
 	__asm        mov    eax, this;
 }
@@ -2583,7 +2583,7 @@ void DialWindow::~DialWindow() {
 	__asm        mov    ecx, this;
 	__asm        call   DialWindow::DestroyImage;
 // LINE 409:
-	__asm        jmp    _T22;
+	return;
 _T22:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
@@ -2815,7 +2815,7 @@ _T300:
 _T305:
 	this->lSpotlightControlCurrent = 0xffffffff;
 // LINE 454:
-	__asm        jmp    _T317;
+	return;
 _T317:
 }
 
@@ -3068,7 +3068,7 @@ _T303:
 	this->lSpotlightControlCurrent = 0xffffffff;
 // LINE 503:
 _T322:
-	__asm        jmp    _T327;
+	return;
 _T327:
 }
 
@@ -3145,7 +3145,7 @@ _Ta8:
 	__asm        jmp    _Td7;
 // LINE 518:
 _Td7:
-	__asm        jmp    _Tdc;
+	return;
 _Tdc:
 }
 
@@ -3222,7 +3222,7 @@ _Ta8:
 	__asm        jmp    _Td7;
 // LINE 534:
 _Td7:
-	__asm        jmp    _Tdc;
+	return;
 _Tdc:
 }
 
@@ -3627,7 +3627,7 @@ _T91:
 	__asm        jmp    _T3f;
 // LINE 631:
 _Td5:
-	__asm        jmp    _Tda;
+	return;
 _Tda:
 }
 
@@ -5136,7 +5136,7 @@ _T38b:
 _T3df:
 	lFrameCounter++;
 // LINE 846:
-	__asm        jmp    _T3ea;
+	return;
 _T3ea:
 }
 
@@ -5272,7 +5272,7 @@ _T1c5:
 // LINE 911:
 	this-><PassengerWindow+0x58> = GraphicWindow::colorConstants.nPaletteIndexTransparent;
 // LINE 912:
-	__asm        jmp    _T1de;
+	return;
 _T1de:
 	__asm        mov    eax, this;
 }
@@ -5351,7 +5351,7 @@ _Tbc:
 _Tea:
 	__asm        jmp    _Tef;
 _Tef:
-	__asm        jmp    _Tf4;
+	return;
 _Tf4:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
@@ -5386,7 +5386,7 @@ void PassengerWindow::InitializeCachedSettings() {
 	__asm        add    esp, 4;
 // LINE 943:
 _T2c:
-	__asm        jmp    _T31;
+	return;
 _T31:
 }
 
@@ -5705,7 +5705,7 @@ _T92:
 	this->lPassengerDraggedID = 0xffffffff;
 // LINE 984:
 _Tb1:
-	__asm        jmp    _Tb6;
+	return;
 _Tb6:
 }
 
@@ -6338,7 +6338,7 @@ _T2a2:
 	__asm        call   HeliPassengerClearChanged;
 	__asm        add    esp, 4;
 // LINE 1110:
-	__asm        jmp    _T2b3;
+	return;
 _T2b3:
 }
 
@@ -6366,7 +6366,7 @@ void PassengerWindow::GetRectOfPassengerGraphic(int32_t face, int32_t nPassenger
 	__asm        mov    ecx, rectPosition;
 	__asm        mov    [ecx+0xC], eax;
 // LINE 1133:
-	__asm        jmp    _T4d;
+	return;
 _T4d:
 }
 
@@ -6412,7 +6412,7 @@ void PassengerWindow::MoveToUpPosition() {
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        je     _T21;
 // LINE 1156:
-	__asm        jmp    _Ted;
+	return;
 // LINE 1158:
 _T21:
 	__asm        mov    eax, this;
@@ -6470,7 +6470,7 @@ _Td6:
 _Tdb:
 	this->nChangingPosition = 0x1;
 // LINE 1161:
-	__asm        jmp    _Ted;
+	return;
 _Ted:
 }
 
@@ -6481,7 +6481,7 @@ void PassengerWindow::MoveToDownPosition() {
 	__asm        cmp    dword ptr [eax+0x90], 0;
 	__asm        je     _T21;
 // LINE 1169:
-	__asm        jmp    _Ted;
+	return;
 // LINE 1171:
 _T21:
 	__asm        mov    eax, this;
@@ -6539,7 +6539,7 @@ _Td6:
 _Tdb:
 	this->nChangingPosition = 0xffffffff;
 // LINE 1174:
-	__asm        jmp    _Ted;
+	return;
 _Ted:
 }
 
@@ -6564,7 +6564,7 @@ _T2c:
 	__asm        call   dword ptr [eax+0xCC];
 // LINE 1185:
 _T3a:
-	__asm        jmp    _T3f;
+	return;
 _T3f:
 }
 
@@ -7037,7 +7037,7 @@ _T244:
 	__asm        add    ecx, 0x8C;
 	__asm        call   dword ptr [eax];
 // LINE 1319:
-	__asm        jmp    _T27c;
+	return;
 _T27c:
 	__asm        mov    eax, this;
 }
@@ -7050,7 +7050,7 @@ void MapWindow::~MapWindow() {
 	__asm        mov    ecx, this;
 	__asm        call   MapWindow::DestroyImage;
 // LINE 1327:
-	__asm        jmp    _T22;
+	return;
 _T22:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x8C;
@@ -7084,7 +7084,7 @@ void MapWindow::InitializeCachedSettings() {
 // LINE 1349:
 	this->lCurrentMissionID = 0xffffffff;
 // LINE 1350:
-	__asm        jmp    _T32;
+	return;
 _T32:
 }
 
@@ -7227,7 +7227,7 @@ _T89:
 	this->nTrackingButton = 0xffffffff;
 // LINE 1391:
 _Ta8:
-	__asm        jmp    _Tad;
+	return;
 _Tad:
 }
 
@@ -7571,7 +7571,7 @@ _T2af:
 	__asm        mov    ecx, [eax+0x74];
 	__asm        call   dword ptr [edx+0x2C];
 // LINE 1476:
-	__asm        jmp    _T2d4;
+	return;
 _T2d4:
 }
 
@@ -8165,7 +8165,7 @@ _Tb0:
 	__asm        mov    ecx, tempPopupMenuWindow;
 	__asm        call   dword ptr [eax+0xD0];
 // LINE 1586:
-	__asm        jmp    _T115;
+	return;
 _T115:
 }
 
@@ -8416,7 +8416,7 @@ _T25b:
 	__asm        jmp    _T298;
 // LINE 1684:
 _T298:
-	__asm        jmp    _T29d;
+	return;
 _T29d:
 	__asm        mov    eax, this;
 }
@@ -8429,7 +8429,7 @@ void EquipmentPanelWindow::~EquipmentPanelWindow() {
 	__asm        mov    ecx, this;
 	__asm        call   EquipmentPanelWindow::DestroyImage;
 // LINE 1692:
-	__asm        jmp    _T22;
+	return;
 _T22:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
@@ -8458,7 +8458,7 @@ void EquipmentPanelWindow::InitializeCachedSettings() {
 // LINE 1709:
 	this->lLastTeargasCount = 0x0;
 // LINE 1710:
-	__asm        jmp    _T2b;
+	return;
 _T2b:
 }
 
@@ -8672,7 +8672,7 @@ _Te9:
 	this->lCurrentSelectedControl = 0x0;
 // LINE 1759:
 _T108:
-	__asm        jmp    _T10d;
+	return;
 _T10d:
 }
 
@@ -9019,7 +9019,7 @@ _T36b:
 	__asm        mov    ecx, [eax+0xC0];
 	__asm        call   dword ptr [edx+0x2C];
 // LINE 1861:
-	__asm        jmp    _T396;
+	return;
 _T396:
 }
 
@@ -9133,7 +9133,7 @@ _Tf4:
 	__asm        jmp    _Ted;
 // LINE 1887:
 _T12f:
-	__asm        jmp    _T134;
+	return;
 _T134:
 }
 
@@ -9272,7 +9272,7 @@ _T110:
 	__asm        jmp    _T10d;
 // LINE 1916:
 _T173:
-	__asm        jmp    _T178;
+	return;
 _T178:
 }
 
@@ -9758,7 +9758,7 @@ void EquipmentPanelWindow::DoCurrentControlStart() {
 	__asm        cmp    dword ptr [eax+0xB4], 0;
 	__asm        jne    _T26;
 // LINE 2007:
-	__asm        jmp    _T1d6;
+	return;
 // LINE 2008:
 	__asm        jmp    _T1d1;
 _T26:
@@ -9903,7 +9903,7 @@ _T1a7:
 	__asm        call   EquipmentPanelWindow::CreateMegaphoneSelectionPopupWindow;
 // LINE 2028:
 _T1d1:
-	__asm        jmp    _T1d6;
+	return;
 _T1d6:
 }
 
@@ -9914,7 +9914,7 @@ void EquipmentPanelWindow::DoCurrentControlEnd() {
 	__asm        cmp    dword ptr [eax+0xB4], 0;
 	__asm        jne    _T26;
 // LINE 2039:
-	__asm        jmp    _T1a7;
+	return;
 // LINE 2040:
 	__asm        jmp    _T1a2;
 _T26:
@@ -10042,7 +10042,7 @@ _T170:
 	__asm        jmp    _T1a2;
 // LINE 2054:
 _T1a2:
-	__asm        jmp    _T1a7;
+	return;
 _T1a7:
 }
 
@@ -10145,7 +10145,7 @@ _Te3:
 	__asm        jmp    _Te0;
 // LINE 2076:
 _T10b:
-	__asm        jmp    _T110;
+	return;
 _T110:
 }
 

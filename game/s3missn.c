@@ -253,7 +253,7 @@ void ConvertCitySettingsToSteppedPercentages(/*packed*/ struct tagCitySettings *
 // LINE 202:
 	citySettingsOut->lMissionFrequencyTransport = 0x0;
 // LINE 203:
-	__asm        jmp    _T1c1;
+	return;
 // LINE 205:
 	__asm        jmp    _Tc3;
 // LINE 206:
@@ -710,7 +710,7 @@ _T3ce:
 	__asm        jmp    _T3d8;
 // LINE 402:
 _T3d3:
-	__asm        jmp    _T3dd;
+	return;
 // LINE 408:
 _T3d8:
 	__asm        call   S3MissionDriver;
@@ -2644,7 +2644,7 @@ void S3MissionUpdate(/*packed*/ struct _MISSION_PARMS *mp) {
 	__asm        cmp    mission_id, 0xFFFFFFFF;
 	__asm        jne    _T28;
 // LINE 1224:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1226:
 _T28:
 	__asm        mov    eax, mission_id;
@@ -2660,7 +2660,7 @@ _T28:
 	__asm        test   byte ptr [eax+0x4C], 1;
 	__asm        jne    _T55;
 // LINE 1230:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1234:
 _T55:
 	__asm        mov    eax, mp;
@@ -2678,7 +2678,7 @@ _T62:
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 // LINE 1238:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1240:
 _T7d:
 	__asm        mov    eax, mp;
@@ -2690,7 +2690,7 @@ _T7d:
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 // LINE 1241:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1243:
 _T98:
 	__asm        mov    eax, mp;
@@ -2702,47 +2702,47 @@ _T98:
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 // LINE 1244:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1246:
 _Tb3:
 	md->mdata.total_fires += mp->i2num;
 // LINE 1247:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1249:
 _Tc4:
 	md->points_bonus += mp->i2num;
 // LINE 1250:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1252:
 _Td5:
 	md->money_bonus += mp->i2num;
 // LINE 1253:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1255:
 _Te6:
 	md->mdata.doused_fires += mp->i2num;
 // LINE 1256:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1258:
 _Tf7:
 	md->mdata.burnout_fires += mp->i2num;
 // LINE 1259:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1261:
 _T108:
 	md->mdata.destroyed_cels += mp->i2num;
 // LINE 1262:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1264:
 _T119:
 	md->mdata.total_cels += mp->i2num;
 // LINE 1265:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1267:
 _T12a:
 	md->mdata.saved_cels += mp->i2num;
 // LINE 1268:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1272:
 _T13b:
 	__asm        mov    eax, md;
@@ -2755,27 +2755,27 @@ _T13b:
 _T14f:
 	md->mdata.total_debris += mp->i2num;
 // LINE 1275:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1277:
 _T160:
 	md->mdata.doused_debris += mp->i2num;
 // LINE 1278:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1280:
 _T171:
 	md->mdata.burnout_debris += mp->i2num;
 // LINE 1281:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1283:
 _T182:
 	md->mdata.total_person_rioting += mp->i2num;
 // LINE 1284:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1286:
 _T196:
 	md->mdata.total_person_crime += mp->i2num;
 // LINE 1287:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1291:
 _T1aa:
 	__asm        mov    eax, md;
@@ -2788,12 +2788,12 @@ _T1aa:
 _T1be:
 	md->mdata.total_person_medevac += mp->i2num;
 // LINE 1294:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1296:
 _T1d2:
 	md->mdata.total_person_rescue += mp->i2num;
 // LINE 1297:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1299:
 _T1e6:
 	__asm        mov    eax, md;
@@ -2806,67 +2806,67 @@ _T1e6:
 _T1fa:
 	md->mdata.total_person_transport += mp->i2num;
 // LINE 1302:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1304:
 _T20e:
 	md->mdata.total_person_onfire += mp->i2num;
 // LINE 1305:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1307:
 _T222:
 	md->mdata.person_rescued += mp->i2num;
 // LINE 1308:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1310:
 _T236:
 	md->mdata.person_couldntwait += mp->i2num;
 // LINE 1311:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1313:
 _T24a:
 	md->mdata.person_transported += mp->i2num;
 // LINE 1314:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1316:
 _T25e:
 	md->mdata.person_medevaced += mp->i2num;
 // LINE 1317:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1319:
 _T272:
 	md->mdata.person_pickedup += mp->i2num;
 // LINE 1320:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1322:
 _T286:
 	md->mdata.person_rioters_freed += mp->i2num;
 // LINE 1323:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1325:
 _T29a:
 	md->mdata.person_rioters_left += mp->i2num;
 // LINE 1326:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1328:
 _T2ae:
 	md->mdata.person_doused += mp->i2num;
 // LINE 1329:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1331:
 _T2c2:
 	md->mdata.person_caught += mp->i2num;
 // LINE 1332:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1334:
 _T2d6:
 	md->mdata.person_died += mp->i2num;
 // LINE 1335:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1337:
 _T2ea:
 	md->mdata.total_vehicle_onfire += mp->i2num;
 // LINE 1338:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1340:
 _T2fe:
 	md->mdata.total_vehicle_jammed += mp->i2num;
@@ -2898,27 +2898,27 @@ _T2fe:
 	S_mstatics.num_active_missions++;
 // LINE 1355:
 _T35d:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1357:
 _T362:
 	md->mdata.vehicles_doused += mp->i2num;
 // LINE 1358:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1360:
 _T376:
 	md->mdata.vehicles_unjammed += mp->i2num;
 // LINE 1361:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1363:
 _T38a:
 	md->mdata.vehicles_burned += mp->i2num;
 // LINE 1364:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1366:
 _T39e:
 	md->mdata.fellinwater_debris += mp->i2num;
 // LINE 1367:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1369:
 _T3af:
 	__asm        mov    eax, md;
@@ -2953,12 +2953,12 @@ _T3f6:
 _T402:
 	md->state = mp->i2num;
 // LINE 1381:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1385:
 _T413:
-	__asm        jmp    _T4c9;
+	return;
 // LINE 1386:
-	__asm        jmp    _T4c9;
+	return;
 _T41d:
 	__asm        cmp    dword ptr [ebp-0xC], 0x25;
 	__asm        ja     _T4c9;
@@ -3069,7 +3069,7 @@ _T6d:
 // LINE 1418:
 	S_mstatics.curr_mission = md;
 // LINE 1419:
-	__asm        jmp    _Tbe;
+	return;
 // LINE 1421:
 _Tb9:
 	__asm        jmp    _T6a;
@@ -3223,7 +3223,7 @@ _T90:
 	__asm        cmp    i, 0x14;
 	__asm        jne    _T9f;
 // LINE 1497:
-	__asm        jmp    _T4e4;
+	return;
 // LINE 1499:
 _T9f:
 	__asm        mov    eax, type;
@@ -3235,7 +3235,7 @@ _T9f:
 	__asm        call   S3MissionStart;
 	__asm        add    esp, 0xC;
 // LINE 1500:
-	__asm        jmp    _T4e4;
+	return;
 // LINE 1509:
 _Tb8:
 	__asm        mov    i, 0;
@@ -3300,7 +3300,7 @@ _T151:
 	__asm        jmp    _Tc4;
 // LINE 1523:
 _T156:
-	__asm        jmp    _T4e4;
+	return;
 // LINE 1527:
 _T15b:
 	__asm        mov    eax, type;
@@ -3310,7 +3310,7 @@ _T15b:
 	__asm        call   S3MissionStart;
 	__asm        add    esp, 0xC;
 // LINE 1528:
-	__asm        jmp    _T4e4;
+	return;
 // LINE 1531:
 _T170:
 	__asm        mov    eax, type;
@@ -3320,7 +3320,7 @@ _T170:
 	__asm        call   S3MissionStart;
 	__asm        add    esp, 0xC;
 // LINE 1532:
-	__asm        jmp    _T4e4;
+	return;
 // LINE 1535:
 _T185:
 	__asm        mov    i, 0;
@@ -3368,7 +3368,7 @@ _T1ed:
 	__asm        jmp    _T191;
 // LINE 1542:
 _T1f2:
-	__asm        jmp    _T4e4;
+	return;
 // LINE 1547:
 _T1f7:
 	__asm        mov    i, 0;
@@ -3416,7 +3416,7 @@ _T25f:
 	__asm        jmp    _T203;
 // LINE 1554:
 _T264:
-	__asm        jmp    _T4e4;
+	return;
 // LINE 1557:
 _T269:
 	__asm        mov    i, 0;
@@ -3464,7 +3464,7 @@ _T2d1:
 	__asm        jmp    _T275;
 // LINE 1564:
 _T2d6:
-	__asm        jmp    _T4e4;
+	return;
 // LINE 1567:
 _T2db:
 	__asm        mov    i, 0;
@@ -3512,7 +3512,7 @@ _T343:
 	__asm        jmp    _T2e7;
 // LINE 1574:
 _T348:
-	__asm        jmp    _T4e4;
+	return;
 // LINE 1577:
 _T34d:
 	__asm        mov    i, 0;
@@ -3560,9 +3560,9 @@ _T3b5:
 	__asm        jmp    _T359;
 // LINE 1584:
 _T3ba:
-	__asm        jmp    _T4e4;
+	return;
 // LINE 1587:
-	__asm        jmp    _T4e4;
+	return;
 _T3c4:
 	__asm        cmp    dword ptr [ebp-0x18], 4;
 	__asm        jg     _T3e3;
@@ -3572,7 +3572,7 @@ _T3c4:
 	__asm        cmp    dword ptr [ebp-0x18], 1;
 	__asm        je     _T14;
 
-	__asm        jmp    _T4e4;
+	return;
 _T3e3:
 	__asm        cmp    dword ptr [ebp-0x18], 0x20;
 	__asm        jg     _T402;
@@ -3582,7 +3582,7 @@ _T3e3:
 	__asm        cmp    dword ptr [ebp-0x18], 0x10;
 	__asm        je     _T1f7;
 
-	__asm        jmp    _T4e4;
+	return;
 _T402:
 	__asm        cmp    dword ptr [ebp-0x18], 0x90;
 	__asm        jg     _T424;
@@ -3592,7 +3592,7 @@ _T402:
 	__asm        cmp    dword ptr [ebp-0x18], 0x40;
 	__asm        je     _Tb8;
 
-	__asm        jmp    _T4e4;
+	return;
 _T424:
 	__asm        cmp    dword ptr [ebp-0x18], 0x110;
 	__asm        jg     _T449;
@@ -3602,7 +3602,7 @@ _T424:
 	__asm        cmp    dword ptr [ebp-0x18], 0x100;
 	__asm        je     _T170;
 
-	__asm        jmp    _T4e4;
+	return;
 _T449:
 	__asm        cmp    dword ptr [ebp-0x18], 0x408;
 	__asm        jg     _T46e;
@@ -3612,7 +3612,7 @@ _T449:
 	__asm        cmp    dword ptr [ebp-0x18], 0x200;
 	__asm        je     _Tb8;
 
-	__asm        jmp    _T4e4;
+	return;
 _T46e:
 	__asm        cmp    dword ptr [ebp-0x18], 0x1000;
 	__asm        jg     _T493;
@@ -3622,7 +3622,7 @@ _T46e:
 	__asm        cmp    dword ptr [ebp-0x18], 0x800;
 	__asm        je     _T34d;
 
-	__asm        jmp    _T4e4;
+	return;
 _T493:
 	__asm        cmp    dword ptr [ebp-0x18], 0x4000;
 	__asm        jg     _T4b8;
@@ -3632,7 +3632,7 @@ _T493:
 	__asm        cmp    dword ptr [ebp-0x18], 0x2000;
 	__asm        je     _Tb8;
 
-	__asm        jmp    _T4e4;
+	return;
 _T4b8:
 	__asm        cmp    dword ptr [ebp-0x18], 0x10000;
 	__asm        je     _Tb8;
@@ -3643,7 +3643,7 @@ _T4b8:
 	__asm        cmp    dword ptr [ebp-0x18], 0x40000;
 	__asm        je     _Tb8;
 
-	__asm        jmp    _T4e4;
+	return;
 // LINE 1590:
 _T4e4:
 }
@@ -3659,7 +3659,7 @@ void S3MissionSetCurrNext() {
 	__asm        cmp    S_mstatics.curr_mission, 0;
 	__asm        jne    _T22;
 // LINE 1604:
-	__asm        jmp    _T10c;
+	return;
 // LINE 1606:
 _T22:
 	__asm        mov    eax, S_mstatics.curr_mission;
@@ -3697,7 +3697,7 @@ _T45:
 // LINE 1611:
 	S_mstatics.curr_mission = md;
 // LINE 1612:
-	__asm        jmp    _T10c;
+	return;
 // LINE 1614:
 _T91:
 	__asm        jmp    _T42;
@@ -3737,7 +3737,7 @@ _Ta5:
 // LINE 1621:
 	S_mstatics.curr_mission = md;
 // LINE 1622:
-	__asm        jmp    _T10c;
+	return;
 // LINE 1624:
 _T107:
 	__asm        jmp    _Ta2;
@@ -3756,7 +3756,7 @@ void S3MissionSetCurrPrev() {
 	__asm        cmp    S_mstatics.curr_mission, 0;
 	__asm        jne    _T22;
 // LINE 1639:
-	__asm        jmp    _T10c;
+	return;
 // LINE 1641:
 _T22:
 	__asm        mov    eax, S_mstatics.curr_mission;
@@ -3794,7 +3794,7 @@ _T45:
 // LINE 1646:
 	S_mstatics.curr_mission = md;
 // LINE 1647:
-	__asm        jmp    _T10c;
+	return;
 // LINE 1649:
 _T91:
 	__asm        jmp    _T42;
@@ -3834,7 +3834,7 @@ _Ta5:
 // LINE 1656:
 	S_mstatics.curr_mission = md;
 // LINE 1657:
-	__asm        jmp    _T10c;
+	return;
 // LINE 1659:
 _T107:
 	__asm        jmp    _Ta2;
@@ -3902,7 +3902,7 @@ void S3MissionDebugString(/*packed*/ struct MISSION_DATA *md, char * p) {
 // LINE 1805:
 	p[0] = 0x0;
 // LINE 1806:
-	__asm        jmp    _Tab;
+	return;
 // LINE 1809:
 _T21:
 	__asm        mov    eax, md;
@@ -3937,7 +3937,7 @@ _T2f:
 	__asm        call   sprintf;
 	__asm        add    esp, 0x24;
 // LINE 1823:
-	__asm        jmp    _Tab;
+	return;
 // LINE 1828:
 _T73:
 	__asm        mov    eax, md;
@@ -3948,9 +3948,9 @@ _T73:
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 1829:
-	__asm        jmp    _Tab;
+	return;
 // LINE 1830:
-	__asm        jmp    _Tab;
+	return;
 _T92:
 	__asm        cmp    dword ptr [ebp-4], 1;
 	__asm        je     _T2f;
@@ -3981,7 +3981,7 @@ void S3MissionCancel(long mission_id) {
 	__asm        test   byte ptr [eax+0x4C], 1;
 	__asm        jne    _T36;
 // LINE 1848:
-	__asm        jmp    _Te1;
+	return;
 // LINE 1851:
 _T36:
 	__asm        mov    eax, md;
@@ -4418,7 +4418,7 @@ void S3MissionScoreUpdate(/*packed*/ struct _MISSION_PARMS *mp, long * mission_i
 	__asm        test   byte ptr [eax+0x14], 1;
 	__asm        je     _T52;
 // LINE 2024:
-	__asm        jmp    _T66a;
+	return;
 // LINE 2029:
 _T52:
 	__asm        mov    eax, mission_id;
@@ -4439,7 +4439,7 @@ _T52:
 	__asm        cmp    dword ptr [eax+0x54], 2;
 	__asm        jne    _T8d;
 // LINE 2034:
-	__asm        jmp    _T66a;
+	return;
 // LINE 2035:
 _T8d:
 	mname = md;

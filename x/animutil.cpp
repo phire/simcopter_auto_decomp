@@ -151,7 +151,7 @@ void GetAxis(float XY2Par, float XZ2Par, /*unpacked*/ struct DXZY paraxis, /*unp
 	__asm        jmp    _T83;
 // LINE 48:
 _T83:
-	__asm        jmp    _T88;
+	return;
 _T88:
 }
 
@@ -192,7 +192,7 @@ void GetAxes(float XY2Par, float XZ2Par, /*unpacked*/ struct DXZY parmaj, /*unpa
 	__asm        call   GetAxis;
 	__asm        add    esp, 0x1C;
 // LINE 54:
-	__asm        jmp    _T53;
+	return;
 _T53:
 }
 
@@ -367,7 +367,7 @@ void XY2Cartesian(float radius, float phi, float psi, float * xres, float * zres
 // LINE 84:
 	yres[0] = transformed.y;
 // LINE 85:
-	__asm        jmp    _Te4;
+	return;
 _Te4:
 }
 
@@ -408,7 +408,7 @@ void XYIncrementCartesian(float sinXangle, float cosXangle, float sinYangle, flo
 	__asm        mov    eax, transformed;
 	__asm        fstp   dword ptr [eax+8];
 // LINE 99:
-	__asm        jmp    _T60;
+	return;
 _T60:
 }
 
@@ -494,7 +494,7 @@ void TransformToAxes(/*unpacked*/ struct DXZY *xAxis, /*unpacked*/ struct DXZY *
 	__asm        mov    eax, real;
 	__asm        fstp   dword ptr [eax+8];
 // LINE 115:
-	__asm        jmp    _Tdc;
+	return;
 _Tdc:
 }
 
@@ -559,7 +559,7 @@ _T60:
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ecx+0xC], eax;
 // LINE 129:
-	__asm        jmp    _T8f;
+	return;
 _T8f:
 }
 
@@ -638,7 +638,7 @@ _T9b:
 	__asm        mov    [ecx], ax;
 // LINE 146:
 _Tb3:
-	__asm        jmp    _Tb8;
+	return;
 _Tb8:
 }
 
@@ -671,7 +671,7 @@ void IncrementXY(/*unpacked*/ struct Polar *inc, /*unpacked*/ struct Polar *part
 	__asm        call   Keep0to2pi;
 	__asm        add    esp, 4;
 // LINE 156:
-	__asm        jmp    _T54;
+	return;
 _T54:
 }
 
@@ -709,7 +709,7 @@ _T31:
 	__asm        jmp    _T31;
 // LINE 164:
 _T5c:
-	__asm        jmp    _T61;
+	return;
 _T61:
 }
 
@@ -733,7 +733,7 @@ void Keep0to2pi(/*unpacked*/ struct Polar *polar) {
 	__asm        call   Keep0to2pi;
 	__asm        add    esp, 4;
 // LINE 171:
-	__asm        jmp    _T35;
+	return;
 _T35:
 }
 
@@ -777,7 +777,7 @@ void IncrementFloat(/*unpacked*/ struct Polar inc, /*unpacked*/ struct Polar *pa
 	__asm        call   Keep0to2pi;
 	__asm        add    esp, 4;
 // LINE 185:
-	__asm        jmp    _T42;
+	return;
 _T42:
 }
 
@@ -879,7 +879,7 @@ _T10c:
 // FUNCTION: COPTER_D 0x00562df2
 void NormalizeTo1(/*unpacked*/ struct DXZY *vec) {
 // LINE 209:
-	__asm        jmp    _T0b;
+	return;
 _T0b:
 }
 
@@ -955,7 +955,7 @@ void DrawDirectionDisk(/*unpacked*/ struct Rect *rect, short latint, short lngin
 	__asm        call   DrawDirectionDisk;
 	__asm        add    esp, 0x18;
 // LINE 228:
-	__asm        jmp    _T56;
+	return;
 _T56:
 }
 
@@ -1178,7 +1178,7 @@ _T1f6:
 	__asm        call   DrawDirectionDisk;
 	__asm        add    esp, 0x18;
 // LINE 265:
-	__asm        jmp    _T220;
+	return;
 _T220:
 }
 
@@ -1205,7 +1205,7 @@ void DrawDirectionDisk(/*unpacked*/ struct Point centerPt, /*unpacked*/ struct D
 	__asm        call   DrawDirectionDisk;
 	__asm        add    esp, 0x18;
 // LINE 270:
-	__asm        jmp    _T41;
+	return;
 _T41:
 }
 
@@ -1277,21 +1277,21 @@ void DrawDirectionDisk(/*unpacked*/ struct DXZY start, /*unpacked*/ struct DXZY 
 	__asm        call   DrawDirectionDisk;
 	__asm        add    esp, 0x18;
 // LINE 279:
-	__asm        jmp    _Tb5;
+	return;
 _Tb5:
 }
 
 // FUNCTION: COPTER_D 0x005631d0
 void DrawDirectionDisk(/*unpacked*/ struct Point centerPt, float hdist, float vdist, float depth, float rad, unsigned short bigol) {
 // LINE 355:
-	__asm        jmp    _T0b;
+	return;
 _T0b:
 }
 
 // FUNCTION: COPTER_D 0x005631e0
 void Score(/*unpacked*/ struct Point centerPt, /*unpacked*/ struct Point leftOff, /*unpacked*/ struct Point rightOff) {
 // LINE 370:
-	__asm        jmp    _T0b;
+	return;
 _T0b:
 }
 
@@ -1503,7 +1503,7 @@ _T203:
 	__asm        mov    eax, amountToInc;
 	__asm        fstp   dword ptr [eax+8];
 // LINE 565:
-	__asm        jmp    _T217;
+	return;
 _T217:
 }
 
@@ -1582,7 +1582,7 @@ _Tc2:
 	__asm        mov    ecx, polar.psi;
 	__asm        mov    [eax], ecx;
 // LINE 580:
-	__asm        jmp    _Td7;
+	return;
 _Td7:
 }
 
@@ -1772,7 +1772,7 @@ _T1b1:
 	__asm        call   Keep0to2pi;
 	__asm        add    esp, 4;
 // LINE 619:
-	__asm        jmp    _T1d4;
+	return;
 _T1d4:
 }
 
@@ -1822,7 +1822,7 @@ _T61:
 	__asm        call   Keep0to2pi;
 	__asm        add    esp, 4;
 // LINE 628:
-	__asm        jmp    _T72;
+	return;
 _T72:
 }
 
@@ -1875,7 +1875,7 @@ _T71:
 	__asm        call   Keep0to2pi;
 	__asm        add    esp, 4;
 // LINE 636:
-	__asm        jmp    _T82;
+	return;
 _T82:
 }
 
@@ -1926,7 +1926,7 @@ void SnapToIncs(/*unpacked*/ struct Polar *polar, short latIncs, short lngIncs, 
 	__asm        call   FillPhiPsiTau;
 	__asm        add    esp, 0x10;
 // LINE 644:
-	__asm        jmp    _T81;
+	return;
 _T81:
 }
 
@@ -2073,7 +2073,7 @@ _T155:
 	trq[0] = 0x0;
 // LINE 670:
 _T16f:
-	__asm        jmp    _T174;
+	return;
 _T174:
 }
 
@@ -2110,7 +2110,7 @@ void PolarIncs2Double(short lat, short lng, short trq, short latincs, short lngi
 	__asm        mov    eax, tau;
 	__asm        fstp   dword ptr [eax];
 // LINE 677:
-	__asm        jmp    _T6b;
+	return;
 _T6b:
 }
 
@@ -2174,7 +2174,7 @@ void Polar2Cartesian(float radius, float phi, float psi, float * x, float * z, f
 	__asm        mov    eax, y;
 	__asm        fstp   dword ptr [eax];
 // LINE 693:
-	__asm        jmp    _Ta5;
+	return;
 _Ta5:
 }
 
@@ -2200,7 +2200,7 @@ void Polar2Cartesian(float radius, /*unpacked*/ struct Polar *polar, /*unpacked*
 	__asm        call   Polar2Cartesian;
 	__asm        add    esp, 0x18;
 // LINE 698:
-	__asm        jmp    _T36;
+	return;
 _T36:
 }
 
@@ -2308,7 +2308,7 @@ _Td7:
 	__asm        mov    [ecx], ax;
 // LINE 717:
 _Tef:
-	__asm        jmp    _Tf4;
+	return;
 _Tf4:
 }
 
@@ -2396,7 +2396,7 @@ _Tb5:
 	__asm        mov    eax, phi;
 	__asm        fstp   dword ptr [eax];
 // LINE 760:
-	__asm        jmp    _Td1;
+	return;
 _Td1:
 }
 
@@ -2421,7 +2421,7 @@ void Cartesian2Polar(/*unpacked*/ struct DXZY dxzy, /*unpacked*/ struct Polar *p
 // LINE 765:
 	polar->tau = 0x0;
 // LINE 766:
-	__asm        jmp    _T38;
+	return;
 _T38:
 }
 
@@ -2485,7 +2485,7 @@ void IncrementTorque(float dinc, /*unpacked*/ struct Polar *parentPolar, /*unpac
 	__asm        fadd   parPhiToZero;
 	__asm        fstp   parPolar.phi;
 // LINE 952:
-	__asm        jmp    _T9b;
+	return;
 _T9b:
 }
 
@@ -2545,7 +2545,7 @@ void IncrementXYTorque(float dinc, /*unpacked*/ struct Polar *parentPolar, /*unp
 	__asm        call   IncrementXY;
 	__asm        add    esp, 8;
 // LINE 963:
-	__asm        jmp    _T8f;
+	return;
 _T8f:
 }
 

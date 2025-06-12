@@ -297,7 +297,7 @@ void SkyImage::SkyImage(int32_t nNewSkyType, int32_t nNewBitmapWidth, int32_t nN
 	__asm        mov    ecx, this;
 	__asm        call   SkyImage::LoadImageA;
 // LINE 52:
-	__asm        jmp    _Tc4;
+	return;
 _Tc4:
 	__asm        mov    eax, this;
 }
@@ -316,7 +316,7 @@ void SkyImage::SwitchToSkyType(enum SkyImage::SkyType nNewSkyType) {
 	__asm        call   SkyImage::LoadImageA;
 // LINE 64:
 _T32:
-	__asm        jmp    _T37;
+	return;
 _T37:
 }
 
@@ -348,7 +348,7 @@ _T38:
 	__asm        call   SkyImage::SwitchToSkyType;
 // LINE 75:
 _T5f:
-	__asm        jmp    _T64;
+	return;
 _T64:
 }
 

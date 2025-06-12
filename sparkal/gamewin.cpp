@@ -376,7 +376,7 @@ _T14c:
 	__asm        mov    ecx, this;
 	__asm        call   GameWindow::MakePalette;
 // LINE 70:
-	__asm        jmp    _T165;
+	return;
 _T165:
 	__asm        mov    eax, this;
 }
@@ -567,7 +567,7 @@ void GameWindow::~GameWindow() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 151:
-	__asm        jmp    _T38;
+	return;
 _T38:
 	__asm        mov    ecx, this;
 	__asm        call   CSparkalWindow::~CSparkalWindow;
@@ -920,7 +920,7 @@ void GameWindow::UpdatePalette(long start, long count, /*packed*/ struct Sparkal
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   CBackBuffer::UpdatePalette;
 // LINE 289:
-	__asm        jmp    _T28;
+	return;
 _T28:
 }
 
@@ -988,7 +988,7 @@ void GameWindow::ProcessWindowMove() {
 	__asm        call   dword ptr [edx+0x80];
 // LINE 326:
 _Td4:
-	__asm        jmp    _Td9;
+	return;
 _Td9:
 }
 
@@ -1304,7 +1304,7 @@ _T48:
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3828];
 // LINE 455:
-	__asm        jmp    _Tac;
+	return;
 _Tac:
 }
 
@@ -1372,7 +1372,7 @@ _T44:
 	__asm        mov    ecx, rectWindowToPlace;
 	__asm        mov    [ecx+0xC], eax;
 // LINE 482:
-	__asm        jmp    _T9c;
+	return;
 _T9c:
 }
 

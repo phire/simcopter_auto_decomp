@@ -310,7 +310,7 @@ void MDate::MDate() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
 // LINE 79:
-	__asm        jmp    _T69;
+	return;
 _T69:
 	__asm        mov    eax, this;
 }
@@ -347,7 +347,7 @@ _T4a:
 	__asm        mov    [ecx+4], eax;
 // LINE 99:
 _T58:
-	__asm        jmp    _T5d;
+	return;
 _T5d:
 	__asm        mov    eax, this;
 }
@@ -374,7 +374,7 @@ void MDate::MDate(uint32_t day, char * monthName, uint32_t year) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
 // LINE 114:
-	__asm        jmp    _T47;
+	return;
 _T47:
 	__asm        mov    eax, this;
 }
@@ -398,7 +398,7 @@ void MDate::MDate(uint32_t day, uint32_t month, uint32_t year) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
 // LINE 129:
-	__asm        jmp    _T3e;
+	return;
 _T3e:
 	__asm        mov    eax, this;
 }
@@ -996,7 +996,7 @@ _T116:
 	y.++;
 // LINE 388:
 _T121:
-	__asm        jmp    _T126;
+	return;
 _T126:
 }
 
@@ -1308,7 +1308,7 @@ _T6e:
 	__asm        test   byte ptr [eax+ecx+8], 1;
 	__asm        je     _T89;
 // LINE 586:
-	__asm        jmp    _T2fb;
+	return;
 // LINE 587:
 _T89:
 	__asm        jmp    _T8e;
@@ -1395,7 +1395,7 @@ _T153:
 	__asm        test   byte ptr [eax+ecx+8], 1;
 	__asm        je     _T16e;
 
-	__asm        jmp    _T2fb;
+	return;
 // LINE 596:
 _T16e:
 	__asm        jmp    _T173;
@@ -1542,7 +1542,7 @@ _T2f1:
 	__asm        jmp    _T2f6;
 // LINE 608:
 _T2f6:
-	__asm        jmp    _T2fb;
+	return;
 _T2fb:
 }
 
@@ -1568,7 +1568,7 @@ _T29:
 	__asm        jne    _T3d;
 // LINE 528:
 _T38:
-	__asm        jmp    _T102;
+	return;
 // LINE 531:
 _T3d:
 	__asm        lea    eax, c;
@@ -1637,7 +1637,7 @@ _Tf1:
 	__asm        call   istream::putback;
 // LINE 536:
 _Tfd:
-	__asm        jmp    _T102;
+	return;
 _T102:
 }
 

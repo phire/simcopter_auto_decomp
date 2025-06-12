@@ -1542,7 +1542,7 @@ _T36:
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    _T57;
 // LINE 82:
-	__asm        jmp    _T2b8;
+	return;
 // LINE 84:
 _T57:
 	__asm        mov    eax, dyhittee;
@@ -1624,7 +1624,7 @@ _T158:
 	__asm        jne    _T16c;
 // LINE 91:
 _T167:
-	__asm        jmp    _T2b8;
+	return;
 // LINE 94:
 // Block end:
 _T16c:
@@ -1638,7 +1638,7 @@ _T16c:
 	__asm        cmp    eax, 4;
 	__asm        jge    _T194;
 // LINE 95:
-	__asm        jmp    _T2b8;
+	return;
 // LINE 101:
 _T194:
 	__asm        mov    eax, person;
@@ -1646,7 +1646,7 @@ _T194:
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    _T1ae;
 // LINE 102:
-	__asm        jmp    _T2b8;
+	return;
 // LINE 107:
 _T1ae:
 	person->fLastInterrupt = cYObject::sSimTicks;
@@ -1730,7 +1730,7 @@ _T2ae:
 	__asm        jmp    _T2b3;
 // LINE 122:
 _T2b3:
-	__asm        jmp    _T2b8;
+	return;
 _T2b8:
 }
 
@@ -3925,7 +3925,7 @@ _T44b:
 _T45b:
 	counted[0] = numcounted;
 // LINE 739:
-	__asm        jmp    _T46a;
+	return;
 _T46a:
 }
 
@@ -4371,7 +4371,7 @@ _T55:
 _T77:
 	this->fData[15] = 0x1;
 // LINE 817:
-	__asm        jmp    _T88;
+	return;
 _T88:
 }
 
@@ -10488,7 +10488,7 @@ _T228:
 	__asm        call   S3MissionUpdate;
 	__asm        add    esp, 4;
 // LINE 1964:
-	__asm        jmp    _T239;
+	return;
 _T239:
 }
 
@@ -10947,7 +10947,7 @@ void cYObject::HandleOverflow() {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 2105:
-	__asm        jmp    _T2d;
+	return;
 _T2d:
 }
 

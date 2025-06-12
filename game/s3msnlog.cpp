@@ -733,7 +733,7 @@ void S3AddLogEntry(/*packed*/ struct tagLogBase *logData, int32_t bShowUserMessa
 	__asm        mov    ecx, 0x606E78;
 	__asm        call   LogManager::AddLogEntry;
 // LINE 38:
-	__asm        jmp    _T1f;
+	return;
 _T1f:
 }
 
@@ -942,7 +942,7 @@ _T288:
 	this->myLogBasePtrList = 0x0;
 // LINE 48:
 _T291:
-	__asm        jmp    _T296;
+	return;
 _T296:
 	__asm        mov    eax, this;
 }
@@ -1114,7 +1114,7 @@ _T1ed:
 	this->myLogBasePtrList = 0x0;
 // LINE 59:
 _T1f6:
-	__asm        jmp    _T1fb;
+	return;
 _T1fb:
 }
 
@@ -3646,7 +3646,7 @@ _T3c8:
 	__asm        jmp    _T3f1;
 // LINE 383:
 _T3f1:
-	__asm        jmp    _T711;
+	return;
 // LINE 385:
 // Block end:
 	__asm        jmp    _T6de;
@@ -3904,7 +3904,7 @@ _T6e3:
 	__asm        jmp    _T70c;
 // LINE 407:
 _T70c:
-	__asm        jmp    _T711;
+	return;
 _T711:
 }
 

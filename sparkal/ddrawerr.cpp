@@ -47,7 +47,7 @@ void DirectDrawError::DisplayError(char * szErrorDescription) {
 	__asm        call   DebugOutput;
 	__asm        add    esp, 8;
 // LINE 22:
-	__asm        jmp    _T41;
+	return;
 _T41:
 }
 
@@ -760,7 +760,7 @@ _T7db:
 	__asm        add    esp, 8;
 // LINE 183:
 _T7f5:
-	__asm        jmp    _T7fa;
+	return;
 _T7fa:
 }
 
@@ -782,7 +782,7 @@ void DirectSoundError::DisplayError(char * szErrorDescription) {
 	__asm        call   DebugOutput;
 	__asm        add    esp, 8;
 // LINE 202:
-	__asm        jmp    _T41;
+	return;
 _T41:
 }
 
@@ -1023,7 +1023,7 @@ _T285:
 	__asm        add    esp, 8;
 // LINE 262:
 _T29f:
-	__asm        jmp    _T2a4;
+	return;
 _T2a4:
 }
 

@@ -776,7 +776,7 @@ _T39a:
 _T39f:
 	__asm        jmp    _T3a4;
 _T3a4:
-	__asm        jmp    _T3a9;
+	return;
 _T3a9:
 }
 
@@ -933,7 +933,7 @@ _T190:
 _T1b7:
 	__asm        jmp    _T1bc;
 _T1bc:
-	__asm        jmp    _T1c1;
+	return;
 _T1c1:
 }
 

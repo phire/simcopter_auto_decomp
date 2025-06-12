@@ -301,7 +301,7 @@ _T51:
 	__asm        mov    ecx, this;
 	__asm        call   TreeSim::Reset;
 // LINE 17:
-	__asm        jmp    _T8b;
+	return;
 _T8b:
 	__asm        mov    eax, this;
 }
@@ -343,7 +343,7 @@ _T51:
 // LINE 28:
 	this->fStackSize = 0x0;
 // LINE 29:
-	__asm        jmp    _T7b;
+	return;
 _T7b:
 	__asm        mov    eax, this;
 }
@@ -359,7 +359,7 @@ void TreeSim::~TreeSim() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 37:
-	__asm        jmp    _T29;
+	return;
 _T29:
 }
 
@@ -404,7 +404,7 @@ _T41:
 	__asm        mov    eax, bottom;
 	__asm        mov    word ptr [eax+4], 0;
 // LINE 54:
-	__asm        jmp    _T90;
+	return;
 _T90:
 }
 
@@ -1022,7 +1022,7 @@ _T69:
 // LINE 246:
 	nodeNum[0] = elem->nodeNum;
 // LINE 247:
-	__asm        jmp    _Ta1;
+	return;
 _Ta1:
 }
 
@@ -1056,7 +1056,7 @@ void ExtSim::Error(short errNum) {
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   dword ptr [edx+4];
 // LINE 264:
-	__asm        jmp    _T26;
+	return;
 _T26:
 }
 

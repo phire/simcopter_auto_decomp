@@ -4,7 +4,7 @@ void MPoint::MPoint() {
 
 	__asm        jmp    _T11;
 _T11:
-	__asm        jmp    _T16;
+	return;
 _T16:
 	__asm        mov    eax, this;
 }
@@ -41,7 +41,7 @@ _T39:
 	this->bottom = nTemp;
 // LINE 602:
 _T69:
-	__asm        jmp    _T6e;
+	return;
 _T6e:
 }
 
@@ -51,7 +51,7 @@ void MRect::MRect() {
 
 	__asm        jmp    _T11;
 _T11:
-	__asm        jmp    _T16;
+	return;
 _T16:
 	__asm        mov    eax, this;
 }

@@ -608,7 +608,7 @@ void Apply_Friction(int32_t F, /*packed*/ struct mv *p, int32_t t) {
 	__asm        mov    ecx, p;
 	__asm        mov    [ecx+0x10], eax;
 // LINE 276:
-	__asm        jmp    _Tdb;
+	return;
 // LINE 277:
 _Tbd:
 	p->V.x = 0x0;

@@ -1262,7 +1262,7 @@ _T4ad:
 	__asm        add    ecx, 0x20;
 	__asm        call   MTimer::SetResolution;
 // LINE 73:
-	__asm        jmp    _T4dd;
+	return;
 _T4dd:
 	__asm        mov    eax, this;
 }
@@ -1732,7 +1732,7 @@ _T554:
 // LINE 98:
 	this->jingleSelectionListIterator.node = copyRadioStation.jingleSelectionListIterator.node;
 // LINE 99:
-	__asm        jmp    _T62f;
+	return;
 _T62f:
 	__asm        mov    eax, this;
 }
@@ -2502,7 +2502,7 @@ _T392:
 _T3ac:
 	__asm        jmp    _T3b1;
 _T3b1:
-	__asm        jmp    _T3b6;
+	return;
 _T3b6:
 }
 
@@ -2520,7 +2520,7 @@ void RadioStation::SetPlayStatus(int32_t bNewPlaying) {
 // LINE 156:
 	this->bPlaying = bNewPlaying;
 // LINE 159:
-	__asm        jmp    _T1a;
+	return;
 _T1a:
 }
 
@@ -2537,7 +2537,7 @@ void RadioStation::StationSet() {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x14];
 // LINE 168:
-	__asm        jmp    _T27;
+	return;
 _T27:
 }
 
@@ -5132,7 +5132,7 @@ _Td67:
 _Td9d:
 	__asm        jmp    _Tda2;
 _Tda2:
-	__asm        jmp    _Tda7;
+	return;
 _Tda7:
 }
 
@@ -5150,7 +5150,7 @@ _T17:
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jne    _T29;
 // LINE 413:
-	__asm        jmp    _T438;
+	return;
 // LINE 415:
 _T29:
 	__asm        mov    eax, stringList;
@@ -5514,7 +5514,7 @@ _T429:
 _T42e:
 	__asm        jmp    _T433;
 _T433:
-	__asm        jmp    _T438;
+	return;
 _T438:
 }
 
@@ -5677,7 +5677,7 @@ _T1a1:
 	__asm        mov    [ecx], eax;
 // LINE 462:
 _T1a9:
-	__asm        jmp    _T1ae;
+	return;
 _T1ae:
 }
 
@@ -5837,7 +5837,7 @@ _T1ce:
 	__asm        jmp    _T1d3;
 // LINE 471:
 _T1d3:
-	__asm        jmp    _T1d8;
+	return;
 _T1d8:
 }
 
@@ -6187,7 +6187,7 @@ _T2d2:
 	__asm        jmp    _T2d7;
 // LINE 535:
 _T2d7:
-	__asm        jmp    _T2dc;
+	return;
 _T2dc:
 }
 

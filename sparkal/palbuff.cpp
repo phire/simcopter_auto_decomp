@@ -273,7 +273,7 @@ _Tdf:
 	__asm        mov    ecx, this;
 	__asm        call   PaletteBuffer::DrawPalette;
 // LINE 42:
-	__asm        jmp    _Tf8;
+	return;
 _Tf8:
 	__asm        mov    eax, this;
 }
@@ -365,7 +365,7 @@ _Tf3:
 	__asm        mov    ecx, this;
 	__asm        call   PaletteBuffer::DrawPalette;
 // LINE 61:
-	__asm        jmp    _T10c;
+	return;
 _T10c:
 	__asm        mov    eax, this;
 }
@@ -390,7 +390,7 @@ void PaletteBuffer::~PaletteBuffer() {
 	__asm        add    esp, 4;
 // LINE 72:
 _T43:
-	__asm        jmp    _T48;
+	return;
 _T48:
 	__asm        mov    ecx, this;
 	__asm        call   CBackBuffer::~CBackBuffer;
@@ -627,7 +627,7 @@ _T66:
 	__asm        jmp    _T63;
 // LINE 152:
 _T15f:
-	__asm        jmp    _T164;
+	return;
 _T164:
 }
 

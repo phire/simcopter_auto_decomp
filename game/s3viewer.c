@@ -504,7 +504,7 @@ _T1b8:
 	G_grid_ulc.y--;
 // LINE 277:
 _T3ef:
-	__asm        jmp    _T51c;
+	return;
 _T3f4:
 	__asm        push   0x2B;
 	__asm        call   IsEventSet;
@@ -540,7 +540,7 @@ _T3f4:
 	G_grid_ulc.y++;
 // LINE 286:
 _T455:
-	__asm        jmp    _T51c;
+	return;
 _T45a:
 	__asm        push   0x2B;
 	__asm        push   0x2C;
@@ -580,7 +580,7 @@ _T45a:
 	G_grid_ulc.y--;
 // LINE 297:
 _T4c8:
-	__asm        jmp    _T51c;
+	return;
 // LINE 298:
 _T4cd:
 	viewSize = G_ViewSize;
@@ -814,21 +814,21 @@ void S3ViewerCommand(int32_t nCommand) {
 	__asm        call   S3CameraChaseAdjust;
 	__asm        add    esp, 4;
 // LINE 449:
-	__asm        jmp    _T16d;
+	return;
 _T2b:
 	__asm        cmp    nCommand, 0x2D;
 	__asm        jne    _T41;
 // LINE 450:
 	__asm        xor    G_texobjs, 1;
 // LINE 451:
-	__asm        jmp    _T16d;
+	return;
 _T41:
 	__asm        cmp    nCommand, 0x2E;
 	__asm        jne    _T57;
 // LINE 452:
 	__asm        xor    G_texterr, 1;
 // LINE 453:
-	__asm        jmp    _T16d;
+	return;
 _T57:
 	__asm        cmp    nCommand, 5;
 	__asm        jne    _T78;
@@ -839,14 +839,14 @@ _T57:
 	__asm        call   S3CameraCycleChase;
 // LINE 458:
 _T73:
-	__asm        jmp    _T16d;
+	return;
 _T78:
 	__asm        cmp    nCommand, 4;
 	__asm        jne    _T8c;
 // LINE 459:
 	__asm        call   S3MissionSetCurrNext;
 // LINE 460:
-	__asm        jmp    _T16d;
+	return;
 _T8c:
 	__asm        cmp    nCommand, 0x2F;
 	__asm        jne    _Taf;
@@ -858,7 +858,7 @@ _T8c:
 	__asm        call   S3SetDayNight;
 	__asm        add    esp, 4;
 // LINE 462:
-	__asm        jmp    _T16d;
+	return;
 _Taf:
 	__asm        cmp    nCommand, 0x14;
 	__asm        jne    _T16d;
@@ -871,7 +871,7 @@ _Taf:
 // LINE 465:
 	G_camera_mode = 0x0;
 // LINE 466:
-	__asm        jmp    _T16d;
+	return;
 _Te2:
 	__asm        cmp    G_camera_mode, 0;
 	__asm        jne    _T13d;
@@ -898,7 +898,7 @@ _Te2:
 _T12e:
 	G_camera_mode = 0x1;
 // LINE 473:
-	__asm        jmp    _T16d;
+	return;
 _T13d:
 	__asm        cmp    G_camera_mode, 1;
 	__asm        jne    _T16d;

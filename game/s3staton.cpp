@@ -733,7 +733,7 @@ _Ta7:
 	gFireStations = 0x0;
 // LINE 31:
 _Tb1:
-	__asm        jmp    _Tb6;
+	return;
 _Tb6:
 }
 
@@ -794,7 +794,7 @@ _T9d:
 	__asm        jmp    _Ta2;
 // LINE 43:
 _Ta2:
-	__asm        jmp    _Ta7;
+	return;
 _Ta7:
 }
 
@@ -1340,7 +1340,7 @@ _T14c:
 	__asm        jmp    _T22;
 // LINE 166:
 _T151:
-	__asm        jmp    _T156;
+	return;
 _T156:
 }
 
@@ -1477,7 +1477,7 @@ _T11f:
 	__asm        jmp    _T22;
 // LINE 218:
 _T13c:
-	__asm        jmp    _T141;
+	return;
 _T141:
 }
 
@@ -1638,7 +1638,7 @@ _T34:
 	__asm        jmp    _T34;
 // LINE 268:
 _Tc5:
-	__asm        jmp    _Tca;
+	return;
 _Tca:
 }
 
@@ -1777,7 +1777,7 @@ _T13e:
 	__asm        mov    [edx], eax;
 	__asm        mov    [edx+4], ecx;
 // LINE 311:
-	__asm        jmp    _T15a;
+	return;
 _T15a:
 }
 
@@ -1880,7 +1880,7 @@ _T3f:
 	__asm        jmp    _T3f;
 // LINE 334:
 _Tfc:
-	__asm        jmp    _T101;
+	return;
 _T101:
 }
 
@@ -2047,7 +2047,7 @@ _T18f:
 	__asm        mov    ax, [eax+8];
 	__asm        mov    [ecx+8], ax;
 // LINE 377:
-	__asm        jmp    _T1b8;
+	return;
 _T1b8:
 }
 
@@ -2160,7 +2160,7 @@ _T46:
 	__asm        mov    ecx, [ecx];
 	__asm        dec    dword ptr [eax+ecx+0x5C];
 // LINE 426:
-	__asm        jmp    _T5d;
+	return;
 _T5d:
 }
 
@@ -3506,7 +3506,7 @@ _T355:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x10], eax;
 // LINE 694:
-	__asm        jmp    _T37a;
+	return;
 _T37a:
 	__asm        mov    eax, this;
 }

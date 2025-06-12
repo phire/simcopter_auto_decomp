@@ -37,7 +37,7 @@ void NotificationItem::NotificationItem() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 // LINE 10:
-	__asm        jmp    _T24;
+	return;
 _T24:
 	__asm        mov    eax, this;
 }
@@ -50,7 +50,7 @@ void NotificationItem::NotificationItem(const /*packed*/ class NotificationItem&
 	__asm        mov    ecx, this;
 	__asm        call   NotificationItem::operator=;
 // LINE 14:
-	__asm        jmp    _T1d;
+	return;
 _T1d:
 	__asm        mov    eax, this;
 }
@@ -65,7 +65,7 @@ void NotificationItem::NotificationItem(long lNewPreferenceType, /*packed*/ clas
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
 // LINE 20:
-	__asm        jmp    _T22;
+	return;
 _T22:
 	__asm        mov    eax, this;
 }

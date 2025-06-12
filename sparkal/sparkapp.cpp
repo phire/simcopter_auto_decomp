@@ -293,7 +293,7 @@ _Tf8:
 	__asm        add    esp, 8;
 // LINE 38:
 _T114:
-	__asm        jmp    _T119;
+	return;
 _T119:
 	__asm        mov    eax, this;
 }
@@ -352,7 +352,7 @@ _Tb3:
 	__asm        jmp    _Tb8;
 // LINE 52:
 _Tb8:
-	__asm        jmp    _Tbd;
+	return;
 _Tbd:
 }
 

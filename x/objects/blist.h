@@ -951,7 +951,7 @@ _T1fa:
 	__asm        jmp    _T230;
 // LINE 121:
 _T230:
-	__asm        jmp    _T235;
+	return;
 _T235:
 }
 

@@ -895,7 +895,7 @@ _T227:
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    _T24f;
 _T24f:
-	__asm        jmp    _T254;
+	return;
 _T254:
 }
 
@@ -1056,7 +1056,7 @@ _T19d:
 _T1c0:
 	__asm        jmp    _T1c5;
 _T1c5:
-	__asm        jmp    _T1ca;
+	return;
 _T1ca:
 }
 
@@ -1250,7 +1250,7 @@ _T227:
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    _T24f;
 _T24f:
-	__asm        jmp    _T254;
+	return;
 _T254:
 }
 
@@ -1411,7 +1411,7 @@ _T19d:
 _T1c0:
 	__asm        jmp    _T1c5;
 _T1c5:
-	__asm        jmp    _T1ca;
+	return;
 _T1ca:
 }
 
@@ -1605,7 +1605,7 @@ _T227:
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    _T24f;
 _T24f:
-	__asm        jmp    _T254;
+	return;
 _T254:
 }
 
@@ -1766,7 +1766,7 @@ _T19d:
 _T1c0:
 	__asm        jmp    _T1c5;
 _T1c5:
-	__asm        jmp    _T1ca;
+	return;
 _T1ca:
 }
 
@@ -1810,7 +1810,7 @@ void GraphicWindowColorConstants::GraphicWindowColorConstants() {
 // LINE 44:
 	this->nPaletteIndexTransparent = 0xffffffff;
 // LINE 48:
-	__asm        jmp    _T6a;
+	return;
 _T6a:
 	__asm        mov    eax, this;
 }
@@ -2018,7 +2018,7 @@ _T268:
 // LINE 78:
 	GraphicWindow::windowManager = this;
 // LINE 79:
-	__asm        jmp    _T27e;
+	return;
 _T27e:
 	__asm        mov    eax, this;
 }
@@ -2165,7 +2165,7 @@ _T194:
 	__asm        mov    list<GraphicWindow *>::last, 0;
 	__asm        jmp    _T1b7;
 _T1b7:
-	__asm        jmp    _T1bc;
+	return;
 _T1bc:
 }
 
@@ -2174,7 +2174,7 @@ void GraphicWindowManager::SetNewBaseWindow(/*unpacked*/ class GraphicWindow *ne
 // LINE 98:
 	this->baseWindow = newBaseWindow;
 // LINE 99:
-	__asm        jmp    _T1a;
+	return;
 _T1a:
 }
 
@@ -10280,7 +10280,7 @@ void ScreenWindow::ScreenWindow() {
 // LINE 1601:
 	this-><ScreenWindow+0x50> = 0x0;
 // LINE 1602:
-	__asm        jmp    _T36;
+	return;
 _T36:
 	__asm        mov    eax, this;
 }
@@ -10297,7 +10297,7 @@ void ScreenWindow::ScreenWindow(const /*packed*/ class ScreenWindow& copyScreenW
 // LINE 1612:
 	this->bufferParent = copyScreenWindow.bufferParent;
 // LINE 1613:
-	__asm        jmp    _T32;
+	return;
 _T32:
 	__asm        mov    eax, this;
 }
@@ -10327,7 +10327,7 @@ void ScreenWindow::ScreenWindow(/*packed*/ class MRect& rectNewWindow, int32_t n
 // LINE 1628:
 	this-><ScreenWindow+0x44> = 0x0;
 // LINE 1629:
-	__asm        jmp    _T5a;
+	return;
 _T5a:
 	__asm        mov    eax, this;
 }
@@ -10339,7 +10339,7 @@ void ScreenWindow::~ScreenWindow() {
 // LINE 1637:
 	this-><ScreenWindow+0x40> = 0x0;
 // LINE 1638:
-	__asm        jmp    _T24;
+	return;
 _T24:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;

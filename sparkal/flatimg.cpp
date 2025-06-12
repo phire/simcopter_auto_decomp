@@ -103,7 +103,7 @@ void IFlatImage::IFlatImage() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591050;
 // LINE 27:
-	__asm        jmp    _T4c;
+	return;
 _T4c:
 	__asm        mov    eax, this;
 }
@@ -787,7 +787,7 @@ _T1b6:
 	this-><CFlatImage+0x10> = 0x0;
 // LINE 271:
 _T1c0:
-	__asm        jmp    _T1c5;
+	return;
 _T1c5:
 	__asm        mov    eax, this;
 }
@@ -1102,7 +1102,7 @@ _T393:
 // LINE 329:
 	this-><CFlatImage+0x14> = 0x0;
 // LINE 330:
-	__asm        jmp    _T3ac;
+	return;
 _T3ac:
 	__asm        mov    eax, this;
 }
@@ -1152,7 +1152,7 @@ _T8a:
 	__asm        jmp    _T99;
 // LINE 340:
 _T99:
-	__asm        jmp    _T9e;
+	return;
 _T9e:
 }
 

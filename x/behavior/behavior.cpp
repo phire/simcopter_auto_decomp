@@ -282,7 +282,7 @@ void Behavior::Behavior(/*unpacked*/ class Language *lang, /*unpacked*/ class NR
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x10], eax;
 // LINE 30:
-	__asm        jmp    _T94;
+	return;
 _T94:
 	__asm        mov    eax, this;
 }
@@ -292,7 +292,7 @@ void Behavior::~Behavior() {
 
 	this-><vftable> = 0x5936d8;
 // LINE 34:
-	__asm        jmp    _T1a;
+	return;
 _T1a:
 }
 
@@ -363,7 +363,7 @@ _T24:
 	__asm        jmp    _T20;
 // LINE 54:
 _T7b:
-	__asm        jmp    _T80;
+	return;
 _T80:
 }
 
@@ -516,7 +516,7 @@ _T19b:
 // FUNCTION: COPTER_D 0x005605ac
 void Behavior::GetNodeText(/*unpacked*/ struct Behavior::Node *node, unsigned char * str) {
 // LINE 128:
-	__asm        jmp    _T11;
+	return;
 _T11:
 }
 
@@ -550,7 +550,7 @@ _T36:
 	__asm        mov    ecx, this;
 	__asm        call   Behavior::GetNodeText;
 // LINE 136:
-	__asm        jmp    _T4b;
+	return;
 _T4b:
 }
 
@@ -589,7 +589,7 @@ void Behavior::GetTreeName(short treeID, unsigned char * name) {
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   dword ptr [edx+4];
 // LINE 152:
-	__asm        jmp    _Teb;
+	return;
 // LINE 154:
 _T45:
 	__asm        movsx  eax, treeID;
@@ -645,7 +645,7 @@ _Tb5:
 	__asm        add    esp, 0xC;
 // LINE 174:
 // Block end:
-	__asm        jmp    _Teb;
+	return;
 _Teb:
 }
 
@@ -896,7 +896,7 @@ _T7a:
 	__asm        call   ConcatCPStr;
 	__asm        add    esp, 0xC;
 // LINE 260:
-	__asm        jmp    _Ta0;
+	return;
 _Ta0:
 }
 

@@ -2915,7 +2915,7 @@ void VR2dObjLocate(int32_t obj, int32_t x, int32_t y, int32_t z) {
 	__asm        test   byte ptr [eax+8], 4;
 	__asm        jne    _T2a;
 // LINE 1750:
-	__asm        jmp    _Tdd;
+	return;
 // LINE 1752:
 _T2a:
 	dataptr = faceptr;
@@ -3637,7 +3637,7 @@ void ObjCalcVnormsAndShade(/*packed*/ struct ObjectHdr *obj) {
 	__asm        cmp    vnorms, 0;
 	__asm        jne    _T30;
 // LINE 2107:
-	__asm        jmp    _T28b;
+	return;
 // LINE 2109:
 _T30:
 	__asm        mov    eax, obj;
@@ -3861,7 +3861,7 @@ void VRObjAssignLowRes(int32_t dest, int32_t src) {
 // LINE 2206:
 	destptr->MiscReg1 = src;
 // LINE 2207:
-	__asm        jmp    _T1d;
+	return;
 // LINE 2208:
 _T1d:
 }

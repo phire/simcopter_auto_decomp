@@ -555,7 +555,7 @@ void AmbulanceClass::AmbulanceClass() {
 // LINE 84:
 	this->carModel = 0x11f;
 // LINE 85:
-	__asm        jmp    _T2c;
+	return;
 _T2c:
 	__asm        mov    eax, this;
 }
@@ -929,7 +929,7 @@ _Tb2:
 	__asm        call   S3MapRemoveCarInfo;
 	__asm        add    esp, 4;
 // LINE 325:
-	__asm        jmp    _T3b4;
+	return;
 // LINE 328:
 _T122:
 	__asm        mov    ecx, this;
@@ -1145,7 +1145,7 @@ _T384:
 //   _T268
 // LINE 404:
 _T3af:
-	__asm        jmp    _T3b4;
+	return;
 _T3b4:
 }
 
@@ -1167,7 +1167,7 @@ void AmbulanceClass::SetSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) {
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::SetSaveData;
 // LINE 425:
-	__asm        jmp    _T1d;
+	return;
 _T1d:
 }
 
@@ -1178,7 +1178,7 @@ void AmbulanceClass::LoadSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) {
 	__asm        test   byte ptr [eax], 2;
 	__asm        jne    _T1d;
 // LINE 441:
-	__asm        jmp    _T7a;
+	return;
 // LINE 445:
 _T1d:
 	__asm        mov    eax, sd;
@@ -1213,7 +1213,7 @@ _T5c:
 	__asm        jmp    _T75;
 // LINE 460:
 _T75:
-	__asm        jmp    _T7a;
+	return;
 _T7a:
 }
 

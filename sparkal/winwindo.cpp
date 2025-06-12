@@ -176,7 +176,7 @@ _T7e:
 	__asm        jmp    _T7b;
 // LINE 67:
 _T9b:
-	__asm        jmp    _Ta0;
+	return;
 _Ta0:
 	__asm        mov    eax, this;
 }
@@ -679,7 +679,7 @@ _T5a3:
 // LINE 241:
 // Block end:
 _T5b7:
-	__asm        jmp    _T5bc;
+	return;
 _T5bc:
 	__asm        mov    eax, this;
 }
@@ -756,7 +756,7 @@ _Ta5:
 	__asm        call   dword ptr ds:[0x6C358C];
 // LINE 269:
 _Tbf:
-	__asm        jmp    _Tc4;
+	return;
 _Tc4:
 }
 
@@ -936,7 +936,7 @@ _T16:
 // FUNCTION: COPTER_D 0x00480f9b
 void CSparkalWindow::FreeGameCursors() {
 // LINE 362:
-	__asm        jmp    _T11;
+	return;
 _T11:
 }
 
@@ -1275,7 +1275,7 @@ _T97:
 	__asm        call   dword ptr ds:[0x6C35AC];
 // LINE 496:
 _Tba:
-	__asm        jmp    _Tbf;
+	return;
 _Tbf:
 }
 

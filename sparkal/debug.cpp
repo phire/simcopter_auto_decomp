@@ -1238,7 +1238,7 @@ _T658:
 _T65d:
 	__asm        jmp    _T662;
 _T662:
-	__asm        jmp    _T667;
+	return;
 _T667:
 }
 
@@ -1609,7 +1609,7 @@ _T4b0:
 _T4b5:
 	this->m_hWnd = 0x0;
 // LINE 64:
-	__asm        jmp    _T4c4;
+	return;
 _T4c4:
 	__asm        mov    eax, this;
 }
@@ -1740,7 +1740,7 @@ _T15b:
 _T182:
 	__asm        jmp    _T187;
 _T187:
-	__asm        jmp    _T18c;
+	return;
 _T18c:
 }
 
@@ -1971,7 +1971,7 @@ _T287:
 _T28c:
 	__asm        jmp    _T84;
 _T291:
-	__asm        jmp    _T296;
+	return;
 _T296:
 }
 
@@ -2114,7 +2114,7 @@ void CDebugWindow::ShowWindow() {
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3820];
 // LINE 138:
-	__asm        jmp    _T20;
+	return;
 _T20:
 }
 
@@ -2127,7 +2127,7 @@ void CDebugWindow::HideWindow() {
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3820];
 // LINE 144:
-	__asm        jmp    _T20;
+	return;
 _T20:
 }
 
@@ -2467,7 +2467,7 @@ void CDebugWindow::OnSize(unsigned long sizeType, unsigned short width, unsigned
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3824];
 // LINE 185:
-	__asm        jmp    _T6c;
+	return;
 _T6c:
 }
 
@@ -2793,7 +2793,7 @@ _T44b:
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3830];
 // LINE 215:
-	__asm        jmp    _T467;
+	return;
 _T467:
 }
 
@@ -2893,7 +2893,7 @@ _Tc6:
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3824];
 // LINE 240:
-	__asm        jmp    _Tf1;
+	return;
 _Tf1:
 }
 
@@ -3318,7 +3318,7 @@ _T52f:
 _T551:
 	__asm        jmp    _T556;
 _T556:
-	__asm        jmp    _T55b;
+	return;
 _T55b:
 }
 
@@ -3439,7 +3439,7 @@ _Tf3:
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3844];
 // LINE 288:
-	__asm        jmp    _T109;
+	return;
 _T109:
 }
 
@@ -3844,7 +3844,7 @@ _T5b8:
 // LINE 325:
 // Block end:
 _T5bd:
-	__asm        jmp    _T5c2;
+	return;
 _T5c2:
 }
 
@@ -4021,7 +4021,7 @@ _T49:
 	__asm        call   CDebugWindow::Create;
 // LINE 389:
 _T59:
-	__asm        jmp    _T5e;
+	return;
 _T5e:
 }
 
@@ -4052,7 +4052,7 @@ _T4c:
 	gDebugWindow = 0x0;
 // LINE 398:
 _T56:
-	__asm        jmp    _T5b;
+	return;
 _T5b:
 }
 
@@ -4083,7 +4083,7 @@ void DebugOutput(char * text, ...) {
 	__asm        call   CDebugWindow::OutputString;
 // LINE 408:
 _T4e:
-	__asm        jmp    _T53;
+	return;
 _T53:
 }
 
@@ -4427,7 +4427,7 @@ _T3b5:
 	__asm        jmp    _T3ba;
 // LINE 414:
 _T3ba:
-	__asm        jmp    _T3bf;
+	return;
 _T3bf:
 }
 
@@ -4509,7 +4509,7 @@ _Td6:
 	__asm        jmp    _Tdb;
 // LINE 420:
 _Tdb:
-	__asm        jmp    _Te0;
+	return;
 _Te0:
 }
 
@@ -4525,7 +4525,7 @@ void SaveDebugWindow(char * fileName) {
 	__asm        call   CDebugWindow::Save;
 // LINE 426:
 _T22:
-	__asm        jmp    _T27;
+	return;
 _T27:
 }
 

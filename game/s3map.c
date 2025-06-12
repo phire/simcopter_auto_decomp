@@ -322,7 +322,7 @@ void S3MapRender(long posx, long posy) {
 	__asm        cmp    G_camera_mode, 3;
 	__asm        je     _T30;
 // LINE 306:
-	__asm        jmp    _T17b3;
+	return;
 // LINE 308:
 _T30:
 	__asm        and    posy, 0xFF;
@@ -3298,7 +3298,7 @@ void S3MapBlitIcon(long icon_id, long x, long y) {
 	__asm        cmp    icon_id, 0xFFFFFFFF;
 	__asm        jne    _T18;
 // LINE 1390:
-	__asm        jmp    _T14e;
+	return;
 // LINE 1393:
 _T18:
 	__asm        mov    eax, x;
@@ -3421,86 +3421,86 @@ _T14:
 // LINE 1436:
 	pickicon[0] = 0xffffffff;
 // LINE 1437:
-	__asm        jmp    _T279;
+	return;
 // LINE 1442:
 _T2b:
 	desticon[0] = 0x4;
 // LINE 1443:
 	pickicon[0] = 0xffffffff;
 // LINE 1444:
-	__asm        jmp    _T279;
+	return;
 // LINE 1446:
 _T42:
 	desticon[0] = 0x1;
 // LINE 1447:
 	pickicon[0] = 0x4;
 // LINE 1448:
-	__asm        jmp    _T279;
+	return;
 // LINE 1450:
 _T59:
 	desticon[0] = 0x3;
 // LINE 1451:
 	pickicon[0] = 0x5;
 // LINE 1452:
-	__asm        jmp    _T279;
+	return;
 // LINE 1455:
 _T70:
 	desticon[0] = 0x7;
 // LINE 1456:
 	pickicon[0] = 0xffffffff;
 // LINE 1457:
-	__asm        jmp    _T279;
+	return;
 // LINE 1459:
 _T87:
 	desticon[0] = 0x3;
 // LINE 1460:
 	pickicon[0] = 0xffffffff;
 // LINE 1461:
-	__asm        jmp    _T279;
+	return;
 // LINE 1463:
 _T9e:
 	desticon[0] = 0x7;
 // LINE 1464:
 	pickicon[0] = 0x1;
 // LINE 1465:
-	__asm        jmp    _T279;
+	return;
 // LINE 1467:
 _Tb5:
 	desticon[0] = 0x7;
 // LINE 1468:
 	pickicon[0] = 0x1;
 // LINE 1469:
-	__asm        jmp    _T279;
+	return;
 // LINE 1476:
 _Tcc:
 	desticon[0] = 0x2;
 // LINE 1477:
 	pickicon[0] = 0xffffffff;
 // LINE 1478:
-	__asm        jmp    _T279;
+	return;
 // LINE 1480:
 _Te3:
 	desticon[0] = 0x7;
 // LINE 1481:
 	pickicon[0] = 0xffffffff;
 // LINE 1482:
-	__asm        jmp    _T279;
+	return;
 // LINE 1484:
 _Tfa:
 	desticon[0] = 0x5;
 // LINE 1485:
 	pickicon[0] = 0x5;
 // LINE 1486:
-	__asm        jmp    _T279;
+	return;
 // LINE 1488:
 _T111:
 	desticon[0] = 0xffffffff;
 // LINE 1489:
 	pickicon[0] = 0xffffffff;
 // LINE 1490:
-	__asm        jmp    _T279;
+	return;
 // LINE 1491:
-	__asm        jmp    _T279;
+	return;
 _T12d:
 	__asm        cmp    dword ptr [ebp-4], 9;
 	__asm        jg     _T156;
@@ -3759,7 +3759,7 @@ _T48:
 	__asm        cmp    i, 0x14;
 	__asm        jne    _T57;
 // LINE 1576:
-	__asm        jmp    _T8a;
+	return;
 // LINE 1579:
 _T57:
 	ci->car_id = car_id;
@@ -3801,7 +3801,7 @@ _T18:
 	__asm        lea    eax, [eax+eax*4];
 	__asm        and    S_carinfo[0].flags[eax*8], 0xFFFFFFFE;
 // LINE 1606:
-	__asm        jmp    _T50;
+	return;
 // LINE 1608:
 _T4b:
 	__asm        jmp    _T15;
@@ -4015,7 +4015,7 @@ void S3MapBlitDIcon(long icon_id, long x, long y) {
 	__asm        cmp    icon_id, 0xFFFFFFFF;
 	__asm        jne    _T18;
 // LINE 1702:
-	__asm        jmp    _Td0;
+	return;
 // LINE 1707:
 _T18:
 	mapx = x;
@@ -4201,7 +4201,7 @@ _T127:
 	__asm        jmp    _T99;
 // LINE 1792:
 _T12c:
-	__asm        jmp    _T1cc;
+	return;
 // LINE 1794:
 _T131:
 	__asm        mov    index, 0;
@@ -4254,7 +4254,7 @@ _T188:
 	__asm        jg     _T1c7;
 // LINE 1807:
 _T1c2:
-	__asm        jmp    _T1cc;
+	return;
 // LINE 1808:
 _T1c7:
 	__asm        jmp    _T13d;
@@ -4290,7 +4290,7 @@ void S3MapGetDxDy(long x1, long y1, long x2, long y2, long * dx, long * dy) {
 	__asm        mov    ecx, dy;
 	__asm        mov    [ecx], eax;
 // LINE 1836:
-	__asm        jmp    _T10b;
+	return;
 // LINE 1840:
 _T4e:
 	from.x = x1;
@@ -4347,7 +4347,7 @@ _T9b:
 	__asm        mov    ecx, dy;
 	__asm        mov    [ecx], eax;
 // LINE 1862:
-	__asm        jmp    _T10b;
+	return;
 // LINE 1864:
 _Te5:
 	__asm        mov    eax, x2;

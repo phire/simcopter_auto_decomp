@@ -597,7 +597,7 @@ void S3FireDriver() {
 	__asm        add    esp, 4;
 // LINE 335:
 _T3e:
-	__asm        jmp    _T5da;
+	return;
 // LINE 338:
 _T43:
 	mindist = 0x7d00;
@@ -1091,7 +1091,7 @@ _T5bb:
 	__asm        add    esp, 0xC;
 // LINE 562:
 _T5d5:
-	__asm        jmp    _T5da;
+	return;
 // LINE 563:
 _T5da:
 }
@@ -1141,14 +1141,14 @@ void S3FireSpread(/*packed*/ struct _FIRE_DATA *fd) {
 	__asm        test   al, 0x20;
 	__asm        je     _T7d;
 // LINE 590:
-	__asm        jmp    _T113;
+	return;
 // LINE 593:
 _T7d:
 	__asm        mov    eax, cptr;
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    _T8f;
 // LINE 594:
-	__asm        jmp    _T113;
+	return;
 // LINE 599:
 _T8f:
 	__asm        mov    i, 0;
@@ -1171,7 +1171,7 @@ _Tac:
 	__asm        cmp    [eax], ecx;
 	__asm        jne    _Tde;
 // LINE 602:
-	__asm        jmp    _T113;
+	return;
 // LINE 603:
 _Tde:
 	__asm        jmp    _Ta2;
@@ -1336,7 +1336,7 @@ _Tfa:
 	__asm        cmp    water_timetolive, 0;
 	__asm        jg     _T109;
 // LINE 693:
-	__asm        jmp    _T3f3;
+	return;
 // LINE 696:
 _T109:
 	__asm        push   0x50000;
@@ -1521,10 +1521,10 @@ _T2f5:
 _T329:
 	S_fire_count--;
 // LINE 769:
-	__asm        jmp    _T3f3;
+	return;
 // LINE 774:
 _T334:
-	__asm        jmp    _T3f3;
+	return;
 // LINE 777:
 next_obj:
 	stobj = stobj->next;
@@ -1532,7 +1532,7 @@ next_obj:
 	__asm        jmp    _T77;
 // LINE 786:
 check_dyobjs:
-	__asm        jmp    _T3f3;
+	return;
 // LINE 788:
 	dyobj = cptr->dyptr;
 // LINE 789:
@@ -1586,7 +1586,7 @@ _T354:
 	__asm        jmp    _T3e1;
 // LINE 813:
 _T3e1:
-	__asm        jmp    _T3f3;
+	return;
 // LINE 817:
 _T3e6:
 	dyobj = dyobj->next;
@@ -3391,7 +3391,7 @@ _T227:
 	__asm        call   S3ExplosionSmokeStart;
 	__asm        add    esp, 0xC;
 // LINE 1290:
-	__asm        jmp    _T51b;
+	return;
 // LINE 1297:
 _T246:
 	__asm        push   0;
@@ -3855,7 +3855,7 @@ void S3FireDyObjCollisionCheck(/*packed*/ struct _FIRE_DATA *fd, long hit_type) 
 	__asm        cmp    dword ptr [eax+0x88], 0;
 	__asm        jle    _T42;
 // LINE 1514:
-	__asm        jmp    _T232;
+	return;
 // LINE 1517:
 _T42:
 	fd->dycheck_timer = 0x8000;
@@ -4022,7 +4022,7 @@ _T228:
 	__asm        jmp    _T60;
 // LINE 1598:
 _T22d:
-	__asm        jmp    _T232;
+	return;
 // LINE 1599:
 _T232:
 }

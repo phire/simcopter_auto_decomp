@@ -1823,7 +1823,7 @@ _T1455:
 	__asm        call   GraphicWindow::MakeFocus;
 	__asm        add    esp, 4;
 // LINE 116:
-	__asm        jmp    _T15e0;
+	return;
 _T15e0:
 	__asm        mov    eax, this;
 }
@@ -2192,7 +2192,7 @@ _T553:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T5a4:
-	__asm        jmp    _T5a9;
+	return;
 _T5a9:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0xD4;
@@ -5959,7 +5959,7 @@ _T3112:
 _T3146:
 	__asm        jmp    _T314b;
 _T314b:
-	__asm        jmp    _T3150;
+	return;
 _T3150:
 }
 
@@ -6169,7 +6169,7 @@ _T2bd:
 	__asm        mov    ecx, [eax+0x44];
 	__asm        call   dword ptr [edx+0x5C];
 // LINE 431:
-	__asm        jmp    _T2df;
+	return;
 _T2df:
 }
 
@@ -6382,7 +6382,7 @@ _T216:
 	__asm        call   dword ptr [eax+0x30];
 // LINE 466:
 _T263:
-	__asm        jmp    _T268;
+	return;
 _T268:
 }
 
@@ -6882,7 +6882,7 @@ _T5e4:
 	__asm        jmp    _T5e9;
 // LINE 514:
 _T5e9:
-	__asm        jmp    _T5ee;
+	return;
 _T5ee:
 }
 
@@ -7488,7 +7488,7 @@ _T1c4:
 	__asm        call   dword ptr [edx+0xD4];
 // LINE 693:
 _T1f8:
-	__asm        jmp    _T1fd;
+	return;
 _T1fd:
 }
 

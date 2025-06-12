@@ -112,7 +112,7 @@ _T60:
 	__asm        mov    gGraduationState.nGraduationState, 0;
 	__asm        jmp    _T6f;
 _T6f:
-	__asm        jmp    _T74;
+	return;
 _T74:
 }
 
@@ -135,7 +135,7 @@ static void $E46() {
 _T0b:
 	__asm        jmp    _T10;
 _T10:
-	__asm        jmp    _T15;
+	return;
 _T15:
 }
 
@@ -172,7 +172,7 @@ _T23:
 	__asm        mov    ecx, 0x16;
 	__asm        rep movsd;
 // LINE 96:
-	__asm        jmp    _T38;
+	return;
 _T38:
 }
 
@@ -195,7 +195,7 @@ void SetUserMoney(long lNewMoney) {
 	__asm        mov    ecx, [ebp-4];
 	__asm        mov    [ecx+0x40], eax;
 // LINE 110:
-	__asm        jmp    _T1f;
+	return;
 _T1f:
 }
 
@@ -208,7 +208,7 @@ void ChangeUserMoney(long lNewMoneyDelta) {
 	__asm        mov    ecx, [ebp-4];
 	__asm        add    [ecx+0x40], eax;
 // LINE 117:
-	__asm        jmp    _T1f;
+	return;
 _T1f:
 }
 
@@ -231,7 +231,7 @@ void SetUserPoints(long lNewPoints) {
 	__asm        mov    ecx, [ebp-4];
 	__asm        mov    [ecx+0x50], eax;
 // LINE 133:
-	__asm        jmp    _T1f;
+	return;
 _T1f:
 }
 
@@ -244,7 +244,7 @@ void ChangeUserPoints(long lNewPointsDelta) {
 	__asm        mov    ecx, [ebp-4];
 	__asm        add    [ecx+0x50], eax;
 // LINE 140:
-	__asm        jmp    _T1f;
+	return;
 _T1f:
 }
 
@@ -279,7 +279,7 @@ void SetCurrentCitySettings(/*packed*/ struct tagCitySettings *newCitySettings) 
 	__asm        mov    ecx, 9;
 	__asm        rep movsd;
 // LINE 159:
-	__asm        jmp    _T23;
+	return;
 _T23:
 }
 
@@ -301,7 +301,7 @@ void SetCurrentCityPath(char * szNewCurrentCityPath) {
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 179:
-	__asm        jmp    _T1c;
+	return;
 _T1c:
 }
 
@@ -319,7 +319,7 @@ _T22:
 	gCurrentCareerCityInfo.bUserHasSavedGame = 0x1;
 // LINE 190:
 _T2c:
-	__asm        jmp    _T31;
+	return;
 _T31:
 }
 
@@ -386,7 +386,7 @@ _T58:
 	__asm        add    esp, 8;
 // LINE 223:
 _T74:
-	__asm        jmp    _T79;
+	return;
 _T79:
 }
 
@@ -443,7 +443,7 @@ void InitializeAllUserInfo() {
 // LINE 258:
 	gCurrentCityType = 0x0;
 // LINE 259:
-	__asm        jmp    _Tf9;
+	return;
 _Tf9:
 }
 
@@ -519,7 +519,7 @@ _T1f:
 	__asm        jmp    _T1c;
 // LINE 286:
 _Ta5:
-	__asm        jmp    _Taa;
+	return;
 _Taa:
 }
 
@@ -648,7 +648,7 @@ _T1b5:
 // LINE 330:
 	gCurrentCareerCityInfo.userPersonalInfo.lTeargasCount = 0xa;
 // LINE 332:
-	__asm        jmp    _T1e2;
+	return;
 _T1e2:
 }
 
@@ -780,7 +780,7 @@ _T1ac:
 // LINE 375:
 	gCurrentUserCityInfo.userPersonalInfo.lTeargasCount = 0xa;
 // LINE 377:
-	__asm        jmp    _T1d9;
+	return;
 _T1d9:
 }
 
@@ -889,7 +889,7 @@ _T163:
 	__asm        call   SetUserPoints;
 	__asm        add    esp, 4;
 // LINE 408:
-	__asm        jmp    _T172;
+	return;
 _T172:
 }
 
@@ -1526,7 +1526,7 @@ _Tb58:
 	__asm        jmp    _Tb55;
 // LINE 755:
 _Tc0a:
-	__asm        jmp    _Tc0f;
+	return;
 _Tc0f:
 }
 

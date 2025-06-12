@@ -612,7 +612,7 @@ void CRLECompressedImage::CRLECompressedImage(const /*packed*/ class CFlatImage 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
 // LINE 104:
-	__asm        jmp    _T24;
+	return;
 _T24:
 	__asm        mov    eax, this;
 }
@@ -660,7 +660,7 @@ _T7c:
 	__asm        jmp    _T8b;
 // LINE 115:
 _T8b:
-	__asm        jmp    _T90;
+	return;
 _T90:
 }
 
@@ -1042,7 +1042,7 @@ _T25a:
 // FUNCTION: COPTER_D 0x004ab063
 static void ConvertCompressedByteOrdering(/*packed*/ struct RLEHeader *pCompressedImage) {
 // LINE 312:
-	__asm        jmp    _T0b;
+	return;
 _T0b:
 }
 
@@ -1218,7 +1218,7 @@ _T175:
 	__asm        jmp    _T27;
 // LINE 399:
 _T17a:
-	__asm        jmp    _T17f;
+	return;
 _T17f:
 }
 
@@ -1563,7 +1563,7 @@ _T323:
 	__asm        jmp    _T31;
 // LINE 580:
 _T328:
-	__asm        jmp    _T32d;
+	return;
 _T32d:
 }
 

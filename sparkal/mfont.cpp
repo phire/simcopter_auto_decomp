@@ -141,7 +141,7 @@ _Tdd:
 // LINE 30:
 	this->hFont = 0x0;
 // LINE 32:
-	__asm        jmp    _T113;
+	return;
 _T113:
 	__asm        mov    eax, this;
 }
@@ -186,7 +186,7 @@ _T78:
 	__asm        mov    ecx, this;
 	__asm        call   MFont::operator=;
 // LINE 44:
-	__asm        jmp    _T92;
+	return;
 _T92:
 	__asm        mov    eax, this;
 }
@@ -439,7 +439,7 @@ _T2d1:
 	__asm        call   MFont::CreateFontA;
 // LINE 64:
 _T308:
-	__asm        jmp    _T30d;
+	return;
 _T30d:
 	__asm        mov    eax, this;
 }
@@ -516,7 +516,7 @@ _Tb3:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _Tdb:
-	__asm        jmp    _Te0;
+	return;
 _Te0:
 }
 
@@ -948,7 +948,7 @@ _T61:
 	__asm        call   dword ptr [eax];
 // LINE 182:
 _T80:
-	__asm        jmp    _T85;
+	return;
 _T85:
 }
 
@@ -967,7 +967,7 @@ void MFont::DestroyFont() {
 	this->hFont = 0x0;
 // LINE 199:
 _T30:
-	__asm        jmp    _T35;
+	return;
 _T35:
 }
 

@@ -91,7 +91,7 @@ _T97:
 	__asm        jmp    _T14c;
 // LINE 344:
 _T14c:
-	__asm        jmp    _T151;
+	return;
 _T151:
 	__asm        mov    eax, this;
 }

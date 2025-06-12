@@ -101,7 +101,7 @@ _Te0:
 // LINE 45:
 // Block end:
 _T106:
-	__asm        jmp    _T10b;
+	return;
 _T10b:
 }
 

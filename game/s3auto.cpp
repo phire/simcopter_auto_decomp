@@ -1306,7 +1306,7 @@ _T189:
 	__asm        mov    eax, this;
 	__asm        and    dword ptr [eax+8], 0xFFFFFF8F;
 // LINE 402:
-	__asm        jmp    _T195;
+	return;
 _T195:
 	__asm        mov    eax, this;
 }
@@ -1334,7 +1334,7 @@ _T3e:
 	__asm        mov    eax, this;
 	__asm        and    dword ptr [eax+8], 0xFFFFFFFE;
 // LINE 431:
-	__asm        jmp    _T4a;
+	return;
 _T4a:
 }
 
@@ -1457,7 +1457,7 @@ _T18:
 	__asm        jmp    _T15;
 // LINE 547:
 _T36:
-	__asm        jmp    _T3b;
+	return;
 _T3b:
 }
 
@@ -1481,7 +1481,7 @@ _T18:
 	__asm        jmp    _T15;
 // LINE 578:
 _T36:
-	__asm        jmp    _T3b;
+	return;
 _T3b:
 }
 
@@ -1552,7 +1552,7 @@ _Tc5:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::UnPlaceCar;
 // LINE 620:
-	__asm        jmp    _T286;
+	return;
 // LINE 623:
 _Tec:
 	__asm        mov    eax, this;
@@ -1691,7 +1691,7 @@ _T25e:
 	__asm        call   dword ptr [eax+0x1C];
 // LINE 685:
 _T281:
-	__asm        jmp    _T286;
+	return;
 _T286:
 }
 
@@ -1833,7 +1833,7 @@ void AutomobileClass::ItterateFSM() {
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::RunFireState;
 // LINE 799:
-	__asm        jmp    _T7e6;
+	return;
 // LINE 801:
 	__asm        jmp    _Tae;
 _T2b:
@@ -1844,7 +1844,7 @@ _T2b:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::RunJamState;
 // LINE 804:
-	__asm        jmp    _T7e6;
+	return;
 // LINE 806:
 	__asm        jmp    _Tae;
 _T4a:
@@ -2073,7 +2073,7 @@ _T2fd:
 	__asm        jmp    _T59f;
 // LINE 885:
 _T31a:
-	__asm        jmp    _T7e6;
+	return;
 // LINE 886:
 	__asm        jmp    _T59f;
 // LINE 889:
@@ -2158,7 +2158,7 @@ _T416:
 	__asm        jmp    _T59f;
 // LINE 911:
 _T433:
-	__asm        jmp    _T7e6;
+	return;
 // LINE 912:
 	__asm        jmp    _T59f;
 // LINE 916:
@@ -2243,14 +2243,14 @@ _T52f:
 	__asm        jmp    _T59f;
 // LINE 938:
 _T54c:
-	__asm        jmp    _T7e6;
+	return;
 // LINE 939:
 	__asm        jmp    _T59f;
 // LINE 942:
 _T556:
 	this->stalledTimer += LoopTime;
 // LINE 943:
-	__asm        jmp    _T7e6;
+	return;
 // LINE 944:
 	__asm        jmp    _T59f;
 // LINE 945:
@@ -2414,7 +2414,7 @@ _T6ce:
 	__asm        call   AutomobileClass::AdjustNextHiwayPosition;
 // LINE 991:
 _T758:
-	__asm        jmp    _T7e6;
+	return;
 // LINE 1003:
 _T75d:
 	__asm        mov    eax, this;
@@ -2454,7 +2454,7 @@ _T7c0:
 // LINE 1034:
 	this->currDist += itterationDist;
 // LINE 1044:
-	__asm        jmp    _T7e6;
+	return;
 _T7e6:
 }
 
@@ -2508,7 +2508,7 @@ _T66:
 // LINE 1067:
 	dyptrptr-> = this->autoDynomitor.next;
 // LINE 1068:
-	__asm        jmp    _Td2;
+	return;
 // LINE 1070:
 _T93:
 	dyptrptr = dyptrptr->;
@@ -2531,7 +2531,7 @@ _Tc8:
 // LINE 1075:
 // Block end:
 _Tcd:
-	__asm        jmp    _Td2;
+	return;
 _Td2:
 }
 
@@ -2632,7 +2632,7 @@ _Tf9:
 // LINE 1109:
 // Block end:
 _T112:
-	__asm        jmp    _T117;
+	return;
 _T117:
 }
 
@@ -3007,7 +3007,7 @@ _T150:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x20];
 // LINE 1262:
-	__asm        jmp    _T194;
+	return;
 _T194:
 }
 
@@ -4048,7 +4048,7 @@ _T5f:
 	__asm        and    dword ptr [eax+8], 0xFFFFFFFD;
 // LINE 1674:
 _T66:
-	__asm        jmp    _T6b;
+	return;
 _T6b:
 }
 
@@ -4061,7 +4061,7 @@ void AutomobileClass::WaterDouse(/*packed*/ struct _DYOBJ_INST *dyhittee) {
 	__asm        test   byte ptr [eax+9], 3;
 	__asm        jne    _T1e;
 // LINE 1691:
-	__asm        jmp    _Teb;
+	return;
 // LINE 1693:
 _T1e:
 	__asm        mov    eax, this;
@@ -4126,7 +4126,7 @@ _Td3:
 	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 1725:
-	__asm        jmp    _Teb;
+	return;
 _Teb:
 }
 
@@ -4157,14 +4157,14 @@ void AutomobileClass::IveBeenMegaphoned(long msg_id) {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+4];
 // LINE 1738:
-	__asm        jmp    _Tc3;
+	return;
 // LINE 1743:
 _T55:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+9], 2;
 	__asm        jne    _T67;
 // LINE 1744:
-	__asm        jmp    _Tc3;
+	return;
 // LINE 1748:
 _T67:
 	__asm        mov    eax, this;
@@ -4193,7 +4193,7 @@ _T67:
 	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 1764:
-	__asm        jmp    _Tc3;
+	return;
 _Tc3:
 }
 
@@ -4227,7 +4227,7 @@ _T45:
 	__asm        mov    [ecx+0xDE], eax;
 // LINE 1777:
 _T72:
-	__asm        jmp    _T77;
+	return;
 _T77:
 }
 
@@ -4239,7 +4239,7 @@ void AutomobileClass::Reset() {
 // LINE 1792:
 	this->flags = 0x1;
 // LINE 1794:
-	__asm        jmp    _T23;
+	return;
 _T23:
 }
 
@@ -4409,7 +4409,7 @@ _T197:
 // LINE 1844:
 	__asm        jmp    _T1b0;
 _T1b0:
-	__asm        jmp    _T1b5;
+	return;
 _T1b5:
 }
 
@@ -4624,7 +4624,7 @@ void ItterateAllAutomobiles() {
 // LINE 2024:
 	__asm        call   AutomobileClass::ItterateAll;
 // LINE 2025:
-	__asm        jmp    _T10;
+	return;
 _T10:
 }
 
@@ -4633,7 +4633,7 @@ void ResetAllAutomobiles() {
 // LINE 2046:
 	__asm        call   AutomobileClass::ResetAll;
 // LINE 2047:
-	__asm        jmp    _T10;
+	return;
 _T10:
 }
 
@@ -4996,7 +4996,7 @@ _Tcd:
 	this->personTimer = 0x780000;
 // LINE 2173:
 _T125:
-	__asm        jmp    _T12a;
+	return;
 _T12a:
 }
 
@@ -5103,7 +5103,7 @@ void AutomobileClass::PullOut() {
 	this->DeltaFromCenter = 0xd0000;
 // LINE 2215:
 _T34:
-	__asm        jmp    _T39;
+	return;
 _T39:
 }
 
@@ -5131,7 +5131,7 @@ void AutomobileClass::TransitionBetweenGoals() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x86], eax;
 // LINE 2235:
-	__asm        jmp    _T4f2;
+	return;
 // LINE 2239:
 _T64:
 	__asm        mov    eax, this;
@@ -5295,7 +5295,7 @@ _T221:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x1C];
 // LINE 2260:
-	__asm        jmp    _T4f2;
+	return;
 // LINE 2264:
 // Block end:
 _T238:
@@ -5507,7 +5507,7 @@ _T4da:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+8];
 // LINE 2345:
-	__asm        jmp    _T4f2;
+	return;
 _T4f2:
 }
 
@@ -5657,7 +5657,7 @@ _T1c7:
 //   _T15c
 // LINE 2404:
 _T1eb:
-	__asm        jmp    _T1f0;
+	return;
 _T1f0:
 }
 
@@ -6047,7 +6047,7 @@ _T4b6:
 	__asm        mov    ecx, 0x10;
 	__asm        rep movsd;
 // LINE 2507:
-	__asm        jmp    _T4cb;
+	return;
 _T4cb:
 }
 
@@ -6062,7 +6062,7 @@ void AutomobileClass::DoAUTurn() {
 	__asm        cmp    dword ptr [eax+0xE6], 3;
 	__asm        jne    _T31;
 // LINE 2519:
-	__asm        jmp    _T115;
+	return;
 // LINE 2522:
 _T31:
 	__asm        mov    eax, this;
@@ -6126,7 +6126,7 @@ _Tf5:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xEA], eax;
 // LINE 2545:
-	__asm        jmp    _T115;
+	return;
 _T115:
 }
 
@@ -6237,7 +6237,7 @@ _T101:
 // LINE 2593:
 	this->autoDynomitor.loc.z += pulloverVector.z;
 // LINE 2594:
-	__asm        jmp    _T14a;
+	return;
 _T14a:
 }
 
@@ -7312,7 +7312,7 @@ _Td9:
 //   _Tae
 // LINE 3075:
 _T12d:
-	__asm        jmp    _T132;
+	return;
 _T132:
 }
 
@@ -7332,7 +7332,7 @@ void AutoHitDispatch(long hitter_type, /*packed*/ struct _DYOBJ_INST *dyhitter, 
 	__asm        mov    ecx, cars[0][eax*4];
 	__asm        call   AutomobileClass::HitDispatch;
 // LINE 3087:
-	__asm        jmp    _T2e;
+	return;
 _T2e:
 }
 
@@ -7502,7 +7502,7 @@ void AutomobileClass::StartFire(long mission_id) {
 	__asm        test   byte ptr [eax+9], 1;
 	__asm        je     _T1e;
 // LINE 3196:
-	__asm        jmp    _T147;
+	return;
 // LINE 3199:
 _T1e:
 	__asm        mov    eax, this;
@@ -7518,7 +7518,7 @@ _T1e:
 	__asm        test   cl, 0x1F;
 	__asm        je     _T4c;
 // LINE 3200:
-	__asm        jmp    _T147;
+	return;
 // LINE 3204:
 _T4c:
 	__asm        mov    eax, this;
@@ -7590,7 +7590,7 @@ _T4c:
 	__asm        add    esp, 4;
 // LINE 3233:
 _T142:
-	__asm        jmp    _T147;
+	return;
 _T147:
 }
 
@@ -7604,7 +7604,7 @@ void AutomobileClass::StartJam(long mission_id) {
 	__asm        test   byte ptr [eax+9], 3;
 	__asm        je     _T1e;
 // LINE 3250:
-	__asm        jmp    _T111;
+	return;
 // LINE 3253:
 _T1e:
 	__asm        mov    eax, this;
@@ -7620,7 +7620,7 @@ _T1e:
 	__asm        test   cl, 0x1F;
 	__asm        je     _T4c;
 // LINE 3254:
-	__asm        jmp    _T111;
+	return;
 // LINE 3257:
 _T4c:
 	__asm        mov    eax, this;
@@ -7673,7 +7673,7 @@ _T4c:
 	__asm        add    esp, 4;
 // LINE 3281:
 _T10c:
-	__asm        jmp    _T111;
+	return;
 _T111:
 }
 
@@ -7853,7 +7853,7 @@ _T1f6:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::UnPlaceCar;
 // LINE 3349:
-	__asm        jmp    _T259;
+	return;
 // LINE 3354:
 _T203:
 	__asm        mov    eax, this;
@@ -7882,7 +7882,7 @@ _T203:
 	__asm        add    esp, 4;
 // LINE 3362:
 _T254:
-	__asm        jmp    _T259;
+	return;
 _T259:
 }
 
@@ -7931,7 +7931,7 @@ _T37:
 	__asm        add    esp, 4;
 // LINE 3397:
 _T88:
-	__asm        jmp    _T8d;
+	return;
 _T8d:
 }
 
@@ -7943,7 +7943,7 @@ void AutoMissionCancel(long mission_id) {
 	__asm        call   AutomobileClass::MissionCancel;
 	__asm        add    esp, 4;
 // LINE 3410:
-	__asm        jmp    _T17;
+	return;
 _T17:
 }
 
@@ -7956,7 +7956,7 @@ void AutomobileClass::IveBeenSpotlighted(/*packed*/ struct _DYOBJ_INST *dyhitter
 	__asm        cmp    dword ptr [eax+0x116], 0xA;
 	__asm        jl     _T21;
 // LINE 3434:
-	__asm        jmp    _T49;
+	return;
 // LINE 3442:
 _T21:
 	__asm        mov    eax, dyhitter;
@@ -7971,7 +7971,7 @@ _T21:
 // LINE 3448:
 	this->spotlightHitCounter += 0x2;
 // LINE 3449:
-	__asm        jmp    _T49;
+	return;
 _T49:
 }
 
@@ -8015,7 +8015,7 @@ _T72:
 	__asm        jmp    _T15;
 // LINE 3482:
 _T77:
-	__asm        jmp    _T7c;
+	return;
 _T7c:
 }
 
@@ -8027,7 +8027,7 @@ void AutoSetAllHeadlights(int32_t lights_on) {
 	__asm        call   AutomobileClass::SetAllHeadlights;
 	__asm        add    esp, 4;
 // LINE 3495:
-	__asm        jmp    _T17;
+	return;
 _T17:
 }
 
@@ -8069,7 +8069,7 @@ _T5b:
 	__asm        jmp    _T15;
 // LINE 3524:
 _T60:
-	__asm        jmp    _T65;
+	return;
 _T65:
 }
 
@@ -8134,7 +8134,7 @@ _T7d:
 	__asm        jmp    _T3d;
 // LINE 3556:
 _T91:
-	__asm        jmp    _T96;
+	return;
 _T96:
 }
 
@@ -8201,7 +8201,7 @@ _T81:
 	__asm        jmp    _T3d;
 // LINE 3579:
 _T95:
-	__asm        jmp    _T9a;
+	return;
 _T9a:
 }
 
@@ -8569,7 +8569,7 @@ _T43c:
 	__asm        cmp    i, 0;
 	__asm        jne    _T44b;
 // LINE 3682:
-	__asm        jmp    _T512;
+	return;
 // LINE 3684:
 _T44b:
 	__asm        call   rand;
@@ -8629,7 +8629,7 @@ _T4b2:
 //  [0, 1, 8, 2, 8, 8, 8, 3, 8, 8, 8, 8, 8, 8, 8, 8, 4, 5, 8, 6, 8, 8, 8, 7]
 // LINE 3706:
 _T50d:
-	__asm        jmp    _T512;
+	return;
 _T512:
 }
 
@@ -8999,7 +8999,7 @@ _T152:
 _T176:
 	this->autoDynomitor.loc.y += 0x1f0000;
 // LINE 3848:
-	__asm        jmp    _T185;
+	return;
 _T185:
 }
 
@@ -9698,7 +9698,7 @@ _T7fb:
 	__asm        call   MTCreateDOF4x4;
 	__asm        add    esp, 8;
 // LINE 4011:
-	__asm        jmp    _T86f;
+	return;
 _T86f:
 }
 
@@ -10675,7 +10675,7 @@ _T18e:
 //  [0, 1, 2, 3, 4, 5, 6, 7, 9, 9, 9, 9, 9, 9, 9, 9, 8]
 // LINE 4325:
 _T1e3:
-	__asm        jmp    _T1e8;
+	return;
 _T1e8:
 }
 
@@ -10725,7 +10725,7 @@ _Tb0:
 	__asm        jmp    _Td1;
 // LINE 4371:
 _Td1:
-	__asm        jmp    _Td6;
+	return;
 _Td6:
 }
 
@@ -10775,7 +10775,7 @@ _Tb0:
 	__asm        jmp    _Td1;
 // LINE 4418:
 _Td1:
-	__asm        jmp    _Td6;
+	return;
 _Td6:
 }
 
@@ -10825,7 +10825,7 @@ _Tb0:
 	__asm        jmp    _Td1;
 // LINE 4469:
 _Td1:
-	__asm        jmp    _Td6;
+	return;
 _Td6:
 }
 
@@ -10887,7 +10887,7 @@ _T45:
 	__asm        mov    ecx, this;
 	__asm        add    [ecx+0x2C], eax;
 // LINE 4506:
-	__asm        jmp    _Tae;
+	return;
 _Tae:
 }
 
@@ -11148,7 +11148,7 @@ _T2ee:
 	reinterpret_cast<uint16_t>(sd->cptrfixup.x) = reinterpret_cast<uint16_t>(this->goal.gridLoc.x);
 // LINE 4655:
 _T2ff:
-	__asm        jmp    _T304;
+	return;
 _T304:
 }
 
@@ -11161,7 +11161,7 @@ void AutomobileClass::LoadSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) {
 	__asm        test   byte ptr [eax], 2;
 	__asm        jne    _T1d;
 // LINE 4672:
-	__asm        jmp    _T420;
+	return;
 // LINE 4675:
 _T1d:
 	this->flags = sd->flags;
@@ -11380,7 +11380,7 @@ _T400:
 	__asm        call   AutomobileClass::LinkToCell;
 // LINE 4727:
 _T41b:
-	__asm        jmp    _T420;
+	return;
 _T420:
 }
 
@@ -11401,7 +11401,7 @@ void AutomobileClass::HonkHorn() {
 	__asm        sub    eax, edx;
 	__asm        je     _T38;
 // LINE 4744:
-	__asm        jmp    _T96;
+	return;
 // LINE 4746:
 _T38:
 	__asm        jmp    _T5c;
@@ -11417,7 +11417,7 @@ _T3d:
 	__asm        sub    eax, edx;
 	__asm        je     _T5c;
 // LINE 4750:
-	__asm        jmp    _T96;
+	return;
 // LINE 4753:
 _T5c:
 	__asm        mov    eax, this;
@@ -11439,7 +11439,7 @@ _T5c:
 	__asm        add    esp, 0xC;
 // LINE 4759:
 _T91:
-	__asm        jmp    _T96;
+	return;
 _T96:
 }
 
@@ -11454,7 +11454,7 @@ void S3AutoSoundDistReset() {
 // LINE 4776:
 	AutomobileClass::fireHoseDist = 0x7800000;
 // LINE 4777:
-	__asm        jmp    _T33;
+	return;
 _T33:
 }
 
@@ -11780,7 +11780,7 @@ _T34d:
 	__asm        add    esp, 4;
 // LINE 4912:
 _T36a:
-	__asm        jmp    _T36f;
+	return;
 _T36f:
 }
 
@@ -11993,7 +11993,7 @@ _T29d:
 	__asm        jmp    _T7d;
 // LINE 4988:
 _T2b1:
-	__asm        jmp    _T2b6;
+	return;
 _T2b6:
 }
 

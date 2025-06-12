@@ -13,7 +13,7 @@ void execute(char * data) {
 	__asm        call   CDebugWindow::HandleDebugCommand;
 // LINE 47:
 _T28:
-	__asm        jmp    _T2d;
+	return;
 _T2d:
 }
 

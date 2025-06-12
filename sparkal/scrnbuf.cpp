@@ -191,7 +191,7 @@ _T27:
 // LINE 48:
 	this->rectDirectDrawBackBuffer.bottom = 0x0;
 // LINE 51:
-	__asm        jmp    _Tdc;
+	return;
 _Tdc:
 	__asm        mov    eax, this;
 }
@@ -268,7 +268,7 @@ _Tc5:
 	__asm        mov    ecx, this;
 	__asm        call   ScreenBuffer::UsePalette;
 // LINE 103:
-	__asm        jmp    _T129;
+	return;
 _T129:
 	__asm        mov    eax, this;
 }
@@ -284,7 +284,7 @@ void ScreenBuffer::~ScreenBuffer() {
 	__asm        mov    ecx, this;
 	__asm        call   ScreenBuffer::FreePalette;
 // LINE 115:
-	__asm        jmp    _T2a;
+	return;
 _T2a:
 	__asm        mov    ecx, this;
 	__asm        call   CBackBuffer::~CBackBuffer;
@@ -1156,7 +1156,7 @@ _T0c:
 	__asm        je     _T0c;
 // LINE 429:
 _T37:
-	__asm        jmp    _T3c;
+	return;
 _T3c:
 }
 
@@ -1199,7 +1199,7 @@ _T60:
 	__asm        lea    ecx, [ebp-8];
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 447:
-	__asm        jmp    _Tb5;
+	return;
 // LINE 450:
 _T72:
 	__asm        mov    eax, this;
@@ -1226,7 +1226,7 @@ _Ta3:
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 455:
 _Tb0:
-	__asm        jmp    _Tb5;
+	return;
 _Tb5:
 }
 
@@ -1505,7 +1505,7 @@ void ScreenBuffer::FreePalette() {
 	this-><ScreenBuffer+0x54> = 0x0;
 // LINE 626:
 _T3d:
-	__asm        jmp    _T42;
+	return;
 _T42:
 }
 
@@ -1723,7 +1723,7 @@ void ScreenBuffer::SetWindowRect(/*packed*/ struct SparkalRect *rectWindow) {
 // LINE 730:
 	this-><ScreenBuffer+0x28> = this->rectBuffer.bottom;
 // LINE 732:
-	__asm        jmp    _T6f;
+	return;
 _T6f:
 }
 

@@ -66,14 +66,14 @@ void VRResFreeBarrys(/*packed*/ struct VRResource *res) {
 	__asm        cmp    dword ptr [eax+8], 1;
 	__asm        je     _T21;
 // LINE 116:
-	__asm        jmp    _T42;
+	return;
 // LINE 118:
 _T21:
 	__asm        mov    eax, geo;
 	__asm        cmp    dword ptr [eax+0x14], 0;
 	__asm        jge    _T33;
 // LINE 119:
-	__asm        jmp    _T42;
+	return;
 // LINE 121:
 _T33:
 	__asm        mov    eax, geo;
@@ -1227,7 +1227,7 @@ void UnRegisterResource(/*packed*/ struct VRResource *res) {
 	__asm        cmp    ResourceArray[0][eax*4], ecx;
 	__asm        je     _T2a;
 // LINE 1148:
-	__asm        jmp    _T5c;
+	return;
 // LINE 1149:
 _T2a:
 	NextResource--;

@@ -1095,7 +1095,7 @@ _T2d:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x7E], al;
 // LINE 30:
-	__asm        jmp    _T68;
+	return;
 _T68:
 	__asm        mov    eax, this;
 }
@@ -1138,7 +1138,7 @@ _T41:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x7E], al;
 // LINE 45:
-	__asm        jmp    _T7c;
+	return;
 _T7c:
 	__asm        mov    eax, this;
 }
@@ -1188,7 +1188,7 @@ void BoxWindow::SetColors(/*packed*/ struct SparkalColor& colorNewOutline, int32
 // LINE 65:
 	this->nPaletteIndexFill = nNewPaletteIndexFill;
 // LINE 66:
-	__asm        jmp    _T28;
+	return;
 _T28:
 }
 
@@ -1199,7 +1199,7 @@ void BoxWindow::SetOutlineAndFillDrawing(int32_t bNewDrawOutline, int32_t bNewDr
 // LINE 74:
 	this->bDrawFill = bNewDrawFill;
 // LINE 75:
-	__asm        jmp    _T23;
+	return;
 _T23:
 }
 
@@ -1242,7 +1242,7 @@ _T19:
 	__asm        add    ecx, 0x84;
 	__asm        call   dword ptr [eax];
 // LINE 104:
-	__asm        jmp    _T9b;
+	return;
 _T9b:
 	__asm        mov    eax, this;
 }
@@ -1299,7 +1299,7 @@ _T2d:
 	__asm        mov    ecx, this;
 	__asm        call   TextWindow::LoadStrings;
 // LINE 122:
-	__asm        jmp    _Tb2;
+	return;
 _Tb2:
 	__asm        mov    eax, this;
 }
@@ -1505,7 +1505,7 @@ _T259:
 	__asm        add    ecx, 0x84;
 	__asm        call   dword ptr [eax];
 // LINE 141:
-	__asm        jmp    _T272;
+	return;
 _T272:
 	__asm        mov    eax, this;
 }
@@ -2002,7 +2002,7 @@ _T748:
 	__asm        jmp    _T74d;
 // LINE 154:
 _T74d:
-	__asm        jmp    _T752;
+	return;
 _T752:
 }
 
@@ -2023,7 +2023,7 @@ void TextWindow::SetWindowTitle(int32_t nNewWindowTitleTextID) {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 163:
-	__asm        jmp    _T3a;
+	return;
 _T3a:
 }
 
@@ -2190,7 +2190,7 @@ _T1d3:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 171:
-	__asm        jmp    _T1e7;
+	return;
 _T1e7:
 }
 
@@ -2381,7 +2381,7 @@ void TextWindow::SetBackgroundDrawing(int32_t bNewDrawOpaqueBackground) {
 // LINE 199:
 	this->bDrawOpaqueBackground = bNewDrawOpaqueBackground;
 // LINE 200:
-	__asm        jmp    _T1a;
+	return;
 _T1a:
 }
 
@@ -2405,7 +2405,7 @@ void TextWindow::SetFontCharacteristics(long lNewHeight, long lNewWidth, long lN
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 209:
-	__asm        jmp    _T3a;
+	return;
 _T3a:
 }
 
@@ -2421,7 +2421,7 @@ void TextWindow::SetTextDrawStyle(unsigned long nNewTextDrawStyle) {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 218:
-	__asm        jmp    _T2c;
+	return;
 _T2c:
 }
 
@@ -2548,7 +2548,7 @@ _T10f:
 	__asm        call   dword ptr [eax+0x38];
 // LINE 230:
 _T14d:
-	__asm        jmp    _T152;
+	return;
 _T152:
 }
 
@@ -2564,7 +2564,7 @@ void TextWindow::SetTextColor(const /*packed*/ struct SparkalColor& colorNewFont
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 239:
-	__asm        jmp    _T2b;
+	return;
 _T2b:
 }
 
@@ -2794,7 +2794,7 @@ _T20e:
 	__asm        jmp    _T213;
 // LINE 294:
 _T213:
-	__asm        jmp    _T218;
+	return;
 _T218:
 	__asm        mov    eax, this;
 }
@@ -3050,7 +3050,7 @@ _T314:
 	__asm        jmp    _T319;
 // LINE 311:
 _T319:
-	__asm        jmp    _T31e;
+	return;
 _T31e:
 	__asm        mov    eax, this;
 }
@@ -3085,7 +3085,7 @@ _T24:
 	reinterpret_cast<uint32_t>(this->colorFontHighlighted.Blue) = reinterpret_cast<uint32_t>(colorNewFontHighlighted->Blue);
 // LINE 333:
 _T3c:
-	__asm        jmp    _T41;
+	return;
 _T41:
 }
 
@@ -3631,7 +3631,7 @@ void ButtonWindow::SetState(int32_t nNewButtonState) {
 	__asm        call   dword ptr [eax+0x30];
 // LINE 413:
 _T33:
-	__asm        jmp    _T38;
+	return;
 _T38:
 }
 
@@ -3647,7 +3647,7 @@ void ButtonWindow::Enable() {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 422:
-	__asm        jmp    _T2a;
+	return;
 _T2a:
 }
 
@@ -3663,7 +3663,7 @@ void ButtonWindow::Disable() {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 430:
-	__asm        jmp    _T2a;
+	return;
 _T2a:
 }
 
@@ -4144,7 +4144,7 @@ _T270:
 	__asm        jmp    _T275;
 // LINE 541:
 _T275:
-	__asm        jmp    _T27a;
+	return;
 _T27a:
 	__asm        mov    eax, this;
 }
@@ -4573,7 +4573,7 @@ _T4e7:
 	__asm        jmp    _T4ec;
 // LINE 557:
 _T4ec:
-	__asm        jmp    _T4f1;
+	return;
 _T4f1:
 	__asm        mov    eax, this;
 }
@@ -4690,7 +4690,7 @@ void CheckBoxWindow::SetState(int32_t nNewButtonState) {
 	__asm        cmp    dword ptr [eax+0x88], 0;
 	__asm        je     _T21;
 // LINE 603:
-	__asm        jmp    _T9b;
+	return;
 // LINE 604:
 _T21:
 	this->bBusySettingState = 0x1;
@@ -4732,7 +4732,7 @@ _T21:
 _T89:
 	this->bBusySettingState = 0x0;
 // LINE 613:
-	__asm        jmp    _T9b;
+	return;
 _T9b:
 }
 
@@ -5221,7 +5221,7 @@ _T4f3:
 	__asm        jmp    _T4f8;
 // LINE 681:
 _T4f8:
-	__asm        jmp    _T4fd;
+	return;
 _T4fd:
 	__asm        mov    eax, this;
 }
@@ -5233,7 +5233,7 @@ void RadioButtonWindow::~RadioButtonWindow() {
 // LINE 703:
 	__asm        jmp    _T1a;
 _T1a:
-	__asm        jmp    _T1f;
+	return;
 _T1f:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
@@ -5375,7 +5375,7 @@ void RadioButtonWindow::AddToGroup(/*unpacked*/ class ButtonGroup *myNewRadioBut
 	__asm        mov    ecx, myNewRadioButtonGroup;
 	__asm        call   ButtonGroup::AddButton;
 // LINE 762:
-	__asm        jmp    _T29;
+	return;
 _T29:
 }
 
@@ -5409,7 +5409,7 @@ void RadioButtonWindow::SetState(int32_t nNewButtonState) {
 	__asm        cmp    dword ptr [eax+0x88], 0;
 	__asm        je     _T21;
 // LINE 783:
-	__asm        jmp    _Tea;
+	return;
 // LINE 784:
 _T21:
 	this->bBusySettingState = 0x1;
@@ -5477,7 +5477,7 @@ _Ta4:
 _Td8:
 	this->bBusySettingState = 0x0;
 // LINE 797:
-	__asm        jmp    _Tea;
+	return;
 _Tea:
 }
 
@@ -7077,7 +7077,7 @@ _Tff:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591EE8;
 // LINE 1110:
-	__asm        jmp    _T11a;
+	return;
 _T11a:
 	__asm        mov    eax, this;
 }
@@ -7690,7 +7690,7 @@ _T776:
 	__asm        jmp    _T77b;
 // LINE 1152:
 _T77b:
-	__asm        jmp    _T780;
+	return;
 _T780:
 	__asm        mov    eax, this;
 }
@@ -7767,7 +7767,7 @@ _Tbc:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _Tea:
-	__asm        jmp    _Tef;
+	return;
 _Tef:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
@@ -8116,7 +8116,7 @@ _T5e:
 	this->myBackgroundImage = 0x0;
 // LINE 1213:
 _T6b:
-	__asm        jmp    _T70;
+	return;
 _T70:
 }
 
@@ -8135,7 +8135,7 @@ void SliderWindow::MoveWindow(int32_t nXPosition, int32_t nYPosition) {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xCC];
 // LINE 1222:
-	__asm        jmp    _T2f;
+	return;
 _T2f:
 }
 
@@ -8154,7 +8154,7 @@ void SliderWindow::SetWidthAndHeight(int32_t nNewWidth, int32_t nNewHeight) {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xCC];
 // LINE 1231:
-	__asm        jmp    _T2f;
+	return;
 _T2f:
 }
 
@@ -8729,7 +8729,7 @@ _Ta8:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xC8];
 // LINE 1392:
-	__asm        jmp    _Tbb;
+	return;
 _Tbb:
 }
 
@@ -8866,7 +8866,7 @@ _T128:
 	__asm        mov    [eax+0xA0], ecx;
 // LINE 1431:
 _T1b1:
-	__asm        jmp    _T1b6;
+	return;
 _T1b6:
 }
 
@@ -8887,7 +8887,7 @@ void SliderWindow::SetValue(long lNewSliderValue) {
 	__asm        cmp    dword ptr [eax+0xB0], 0;
 	__asm        je     _T21;
 // LINE 1449:
-	__asm        jmp    _Tf3;
+	return;
 // LINE 1450:
 _T21:
 	this->bBusySettingValue = 0x1;
@@ -8899,7 +8899,7 @@ _T21:
 // LINE 1453:
 	this->bBusySettingValue = 0x0;
 // LINE 1454:
-	__asm        jmp    _Tf3;
+	return;
 // LINE 1456:
 _T52:
 	__asm        mov    eax, this;
@@ -8955,7 +8955,7 @@ _T82:
 _Te1:
 	this->bBusySettingValue = 0x0;
 // LINE 1467:
-	__asm        jmp    _Tf3;
+	return;
 _Tf3:
 }
 
@@ -8976,7 +8976,7 @@ void SliderWindow::SetMinimumValue(long lNewSliderMinimumValue) {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xCC];
 // LINE 1476:
-	__asm        jmp    _T37;
+	return;
 _T37:
 }
 
@@ -8997,7 +8997,7 @@ void SliderWindow::SetMaximumValue(long lNewSliderMaximumValue) {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xCC];
 // LINE 1485:
-	__asm        jmp    _T37;
+	return;
 _T37:
 }
 
@@ -9274,7 +9274,7 @@ _T30e:
 _T313:
 	this->lThumbLimitIndentation = 0x0;
 // LINE 1550:
-	__asm        jmp    _T325;
+	return;
 _T325:
 	__asm        mov    eax, this;
 }
@@ -9598,7 +9598,7 @@ _T3d4:
 	__asm        jmp    _T3d9;
 // LINE 1573:
 _T3d9:
-	__asm        jmp    _T3de;
+	return;
 _T3de:
 	__asm        mov    eax, this;
 }
@@ -10530,7 +10530,7 @@ _T60:
 	__asm        call   SliderWindow::SetValue;
 // LINE 1810:
 _T6c:
-	__asm        jmp    _T71;
+	return;
 _T71:
 }
 
@@ -10575,7 +10575,7 @@ _T62:
 	__asm        call   SliderWindow::SetValue;
 // LINE 1828:
 _T6e:
-	__asm        jmp    _T73;
+	return;
 _T73:
 }
 
@@ -10619,7 +10619,7 @@ _T60:
 	__asm        call   SliderWindow::SetValue;
 // LINE 1845:
 _T6c:
-	__asm        jmp    _T71;
+	return;
 _T71:
 }
 
@@ -10664,7 +10664,7 @@ _T62:
 	__asm        call   SliderWindow::SetValue;
 // LINE 1862:
 _T6e:
-	__asm        jmp    _T73;
+	return;
 _T73:
 }
 
@@ -10678,7 +10678,7 @@ void ScrollBarWindow::SetLineAndPageCount(long lNewLineCount, long lNewPageCount
 	__asm        jg     _T25;
 // LINE 1874:
 _T20:
-	__asm        jmp    _T95;
+	return;
 // LINE 1876:
 _T25:
 	__asm        cmp    lNewLineCount, 0;
@@ -10713,7 +10713,7 @@ _T82:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xCC];
 // LINE 1885:
-	__asm        jmp    _T95;
+	return;
 _T95:
 }
 
@@ -11067,7 +11067,7 @@ _Tc0:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xC8];
 // LINE 2017:
-	__asm        jmp    _Td3;
+	return;
 _Td3:
 }
 
@@ -11374,7 +11374,7 @@ _T261:
 	__asm        mov    ecx, this;
 	__asm        call   ListBoxWindow::CalculateAllMetrics;
 // LINE 2096:
-	__asm        jmp    _T377;
+	return;
 _T377:
 	__asm        mov    eax, this;
 }
@@ -11637,7 +11637,7 @@ _T275:
 	__asm        mov    ecx, this;
 	__asm        call   ListBoxWindow::CalculateAllMetrics;
 // LINE 2125:
-	__asm        jmp    _T38b;
+	return;
 _T38b:
 	__asm        mov    eax, this;
 }
@@ -11717,7 +11717,7 @@ _T42:
 	__asm        mov    [ecx+0xB0], eax;
 // LINE 2166:
 _T61:
-	__asm        jmp    _T66;
+	return;
 _T66:
 }
 
@@ -11746,7 +11746,7 @@ void ListBoxWindow::SetFontCharacteristics(long lNewHeight, long lNewWidth, long
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 2176:
-	__asm        jmp    _T48;
+	return;
 _T48:
 }
 
@@ -11827,7 +11827,7 @@ _T35:
 	this->nBackgroundIndexHighlighted = 0xfffffffe;
 // LINE 2219:
 _T4f:
-	__asm        jmp    _T54;
+	return;
 _T54:
 }
 
@@ -11846,7 +11846,7 @@ _T22:
 	this->nBackgroundIndexHighlighted = nNewBackgroundIndexHighlighted;
 // LINE 2232:
 _T38:
-	__asm        jmp    _T3d;
+	return;
 _T3d:
 }
 
@@ -11865,7 +11865,7 @@ _T21:
 	reinterpret_cast<uint32_t>(this->colorFontHighlighted.Blue) = reinterpret_cast<uint32_t>(colorNewFontHighlighted->Blue);
 // LINE 2246:
 _T39:
-	__asm        jmp    _T3e;
+	return;
 _T3e:
 }
 
@@ -12733,7 +12733,7 @@ _T19f:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x134];
 // LINE 2389:
-	__asm        jmp    _T1c2;
+	return;
 _T1c2:
 }
 
@@ -14887,7 +14887,7 @@ _T6f:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x150];
 // LINE 2738:
-	__asm        jmp    _T91;
+	return;
 _T91:
 }
 
@@ -14899,7 +14899,7 @@ void ListBoxWindow::SetIndexOfTopLine(long lIndex) {
 	__asm        cmp    [eax+0xB4], ecx;
 	__asm        jne    _T23;
 // LINE 2752:
-	__asm        jmp    _Tea;
+	return;
 // LINE 2754:
 _T23:
 	this->lFirstVisibleLine = lIndex;
@@ -14964,7 +14964,7 @@ _T92:
 	__asm        call   dword ptr [edx];
 // LINE 2763:
 _Te5:
-	__asm        jmp    _Tea;
+	return;
 _Tea:
 }
 
@@ -15423,7 +15423,7 @@ void ListBoxWindow::SetShouldSort() {
 	__asm        call   dword ptr [eax+0xE8];
 // LINE 2927:
 _T37:
-	__asm        jmp    _T3c;
+	return;
 _T3c:
 }
 
@@ -15753,7 +15753,7 @@ _T4ac:
 	__asm        jmp    _T4b1;
 // LINE 2951:
 _T4b1:
-	__asm        jmp    _T4b6;
+	return;
 _T4b6:
 }
 
@@ -15905,7 +15905,7 @@ _T38:
 	this->myHorizontalScrollBarWindow = 0x0;
 // LINE 3008:
 _T64:
-	__asm        jmp    _T69;
+	return;
 _T69:
 }
 
@@ -15972,7 +15972,7 @@ _T47:
 // LINE 3025:
 // Block end:
 _Tbe:
-	__asm        jmp    _Tc3;
+	return;
 _Tc3:
 }
 
@@ -16041,7 +16041,7 @@ _T93:
 	__asm        call   dword ptr [edx+0x38];
 // LINE 3041:
 _Tba:
-	__asm        jmp    _Tbf;
+	return;
 _Tbf:
 }
 
@@ -16063,7 +16063,7 @@ void PopupMenuWindow::PopupMenuWindow(/*packed*/ class MRect& rectNewWindow, int
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x592220;
 // LINE 3060:
-	__asm        jmp    _T36;
+	return;
 _T36:
 	__asm        mov    eax, this;
 }
@@ -16633,7 +16633,7 @@ _T23d:
 	__asm        jmp    _T2a0;
 // LINE 3190:
 _T2a0:
-	__asm        jmp    _T2a5;
+	return;
 _T2a5:
 }
 

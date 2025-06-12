@@ -29,7 +29,7 @@ void ERexit(char * p) {
 // LINE 58:
 	__asm        call   abort;
 // LINE 59:
-	__asm        jmp    _T49;
+	return;
 _T39:
 	__asm        cmp    answer, 4;
 	__asm        jne    _T49;

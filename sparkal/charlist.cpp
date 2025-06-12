@@ -46,7 +46,7 @@ void CharData::CharData() {
 // LINE 10:
 	this->chValue = 0x0;
 // LINE 11:
-	__asm        jmp    _T17;
+	return;
 _T17:
 	__asm        mov    eax, this;
 }
@@ -56,7 +56,7 @@ void CharData::CharData(unsigned char chNewValue) {
 // LINE 15:
 	this->chValue = chNewValue;
 // LINE 16:
-	__asm        jmp    _T19;
+	return;
 _T19:
 	__asm        mov    eax, this;
 }
@@ -77,7 +77,7 @@ void CharList::CharList() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
 // LINE 29:
-	__asm        jmp    _T3c;
+	return;
 _T3c:
 	__asm        mov    eax, this;
 }
@@ -116,7 +116,7 @@ _T32:
 	__asm        jmp    _T29;
 // LINE 44:
 _T6b:
-	__asm        jmp    _T70;
+	return;
 _T70:
 }
 
@@ -147,7 +147,7 @@ _T3e:
 	__asm        mov    ecx, this;
 	__asm        call   CharList::AddItem;
 // LINE 54:
-	__asm        jmp    _T4f;
+	return;
 _T4f:
 }
 
@@ -182,7 +182,7 @@ _T51:
 	this->lastCharData = charDataToAdd;
 // LINE 74:
 _T7c:
-	__asm        jmp    _T81;
+	return;
 _T81:
 }
 
@@ -238,7 +238,7 @@ _T8d:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 96:
-	__asm        jmp    _Taf;
+	return;
 _Taf:
 }
 
@@ -256,7 +256,7 @@ void CharList::DeleteItem(unsigned char chValue) {
 	__asm        cmp    charDataToDelete, 0;
 	__asm        jne    _T2a;
 // LINE 105:
-	__asm        jmp    _T3b;
+	return;
 // LINE 106:
 _T2a:
 	__asm        mov    eax, charDataToDelete;
@@ -264,7 +264,7 @@ _T2a:
 	__asm        mov    ecx, this;
 	__asm        call   CharList::DeleteItem;
 // LINE 107:
-	__asm        jmp    _T3b;
+	return;
 _T3b:
 }
 
@@ -282,7 +282,7 @@ void CharList::DeleteItem(int32_t nIndex) {
 	__asm        cmp    charDataToDelete, 0;
 	__asm        jne    _T2a;
 // LINE 115:
-	__asm        jmp    _T3b;
+	return;
 // LINE 116:
 _T2a:
 	__asm        mov    eax, charDataToDelete;
@@ -290,7 +290,7 @@ _T2a:
 	__asm        mov    ecx, this;
 	__asm        call   CharList::DeleteItem;
 // LINE 117:
-	__asm        jmp    _T3b;
+	return;
 _T3b:
 }
 
@@ -318,7 +318,7 @@ _T23:
 	__asm        jmp    _T20;
 // LINE 125:
 _T40:
-	__asm        jmp    _T45;
+	return;
 _T45:
 }
 

@@ -662,7 +662,7 @@ _T69:
 _T78:
 	this->directoryParent = 0x0;
 // LINE 36:
-	__asm        jmp    _T86;
+	return;
 _T86:
 	__asm        mov    eax, this;
 }
@@ -817,7 +817,7 @@ _T1b5:
 _T1c4:
 	this->lType = lNewType;
 // LINE 46:
-	__asm        jmp    _T1d2;
+	return;
 _T1d2:
 	__asm        mov    eax, this;
 }
@@ -2198,7 +2198,7 @@ _T504:
 	__asm        jmp    _T509;
 // LINE 106:
 _T509:
-	__asm        jmp    _T50e;
+	return;
 _T50e:
 }
 

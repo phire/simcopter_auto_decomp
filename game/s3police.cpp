@@ -589,7 +589,7 @@ void PoliceCarClass::PoliceCarClass() {
 // LINE 97:
 	this->foundRoad = 0x0;
 // LINE 98:
-	__asm        jmp    _T39;
+	return;
 _T39:
 	__asm        mov    eax, this;
 }
@@ -956,7 +956,7 @@ _T194:
 	__asm        call   S3MapRemoveCarInfo;
 	__asm        add    esp, 4;
 // LINE 305:
-	__asm        jmp    _T974;
+	return;
 // LINE 308:
 _T204:
 	__asm        mov    ecx, this;
@@ -1330,7 +1330,7 @@ _T689:
 	this->personTimer = 0x12c0000;
 // LINE 445:
 _T6b8:
-	__asm        jmp    _T974;
+	return;
 // LINE 448:
 _T6bd:
 	__asm        mov    ecx, this;
@@ -1559,7 +1559,7 @@ _T940:
 //   _T859
 // LINE 535:
 _T96f:
-	__asm        jmp    _T974;
+	return;
 _T974:
 }
 
@@ -2191,7 +2191,7 @@ _Tf7:
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::SetSaveData;
 // LINE 749:
-	__asm        jmp    _T108;
+	return;
 _T108:
 }
 
@@ -2205,7 +2205,7 @@ void PoliceCarClass::LoadSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) {
 	__asm        test   byte ptr [eax], 2;
 	__asm        jne    _T1d;
 // LINE 766:
-	__asm        jmp    _T1f3;
+	return;
 // LINE 770:
 _T1d:
 	__asm        mov    eax, sd;
@@ -2353,7 +2353,7 @@ _Td8:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x322], eax;
 // LINE 807:
-	__asm        jmp    _T1f3;
+	return;
 _T1f3:
 }
 

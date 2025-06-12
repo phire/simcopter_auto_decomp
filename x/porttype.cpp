@@ -110,7 +110,7 @@ void GlobalToLocal(/*unpacked*/ struct Point *pt) {
 	__asm        mov    ecx, pt;
 	__asm        mov    [ecx], ax;
 // LINE 15:
-	__asm        jmp    _T44;
+	return;
 _T44:
 }
 
@@ -141,7 +141,7 @@ void LocalToGlobal(/*unpacked*/ struct Point *pt) {
 	__asm        mov    ecx, pt;
 	__asm        mov    [ecx], ax;
 // LINE 24:
-	__asm        jmp    _T44;
+	return;
 _T44:
 }
 
@@ -215,7 +215,7 @@ void PtoCstr(unsigned char * pstr) {
 	__asm        mov    ecx, pstr;
 	__asm        mov    byte ptr [eax+ecx], 0;
 // LINE 48:
-	__asm        jmp    _T3a;
+	return;
 _T3a:
 }
 
@@ -249,7 +249,7 @@ _T2e:
 // LINE 56:
 	cstr[0] = reinterpret_cast<uint8_t>(len);
 // LINE 57:
-	__asm        jmp    _T51;
+	return;
 _T51:
 }
 
@@ -284,7 +284,7 @@ void OffsetRect(/*unpacked*/ struct Rect *rect, short hoff, short voff) {
 	__asm        mov    ecx, rect;
 	__asm        mov    [ecx+6], ax;
 // LINE 65:
-	__asm        jmp    _T59;
+	return;
 _T59:
 }
 
@@ -359,7 +359,7 @@ void SetPortDC(void * __ptr32 dc) {
 // LINE 106:
 	gPort.window = 0x0;
 // LINE 107:
-	__asm        jmp    _T22;
+	return;
 _T22:
 }
 
@@ -391,7 +391,7 @@ _T4b:
 // LINE 91:
 	gPort.dc = 0x0;
 // LINE 92:
-	__asm        jmp    _T64;
+	return;
 _T64:
 }
 
@@ -407,7 +407,7 @@ void SetPort(void * __ptr32 newHWND) {
 	__asm        call   dword ptr ds:[0x6C3850];
 	__asm        mov    gPort.dc, eax;
 // LINE 115:
-	__asm        jmp    _T29;
+	return;
 _T29:
 }
 
@@ -433,7 +433,7 @@ _T26:
 	__asm        mov    gPort.dc, ecx;
 // LINE 126:
 _T37:
-	__asm        jmp    _T3c;
+	return;
 _T3c:
 }
 
@@ -446,7 +446,7 @@ void GetPort(/*unpacked*/ struct GrafPtr *pPort) {
 	__asm        mov    [edx], eax;
 	__asm        mov    [edx+4], ecx;
 // LINE 132:
-	__asm        jmp    _T1e;
+	return;
 _T1e:
 }
 
@@ -503,7 +503,7 @@ _T32:
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C358C];
 // LINE 143:
-	__asm        jmp    _T98;
+	return;
 _T98:
 }
 
@@ -530,7 +530,7 @@ void EraseRect(/*unpacked*/ struct Rect *r) {
 	__asm        call   EraseRect;
 	__asm        add    esp, 4;
 // LINE 150:
-	__asm        jmp    _T41;
+	return;
 _T41:
 }
 
@@ -584,7 +584,7 @@ _T32:
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C358C];
 // LINE 161:
-	__asm        jmp    _T90;
+	return;
 _T90:
 }
 
@@ -599,7 +599,7 @@ void SetRect(/*unpacked*/ struct Rect *rect, short left, short top, short right,
 // LINE 168:
 	rect->bottom = bottom;
 // LINE 169:
-	__asm        jmp    _T36;
+	return;
 _T36:
 }
 
@@ -666,7 +666,7 @@ _Tce:
 	result->bottom = rect2->bottom;
 // LINE 192:
 _Tdc:
-	__asm        jmp    _Te1;
+	return;
 _Te1:
 }
 
@@ -730,7 +730,7 @@ void InsetRect(/*unpacked*/ struct Rect *r, short hdelta, short vdelta) {
 	__asm        mov    ecx, r;
 	__asm        mov    [ecx+6], ax;
 // LINE 207:
-	__asm        jmp    _T59;
+	return;
 _T59:
 }
 
@@ -808,7 +808,7 @@ void GetBackColor(unsigned long * color) {
 	__asm        mov    ecx, color;
 	__asm        mov    [ecx], eax;
 // LINE 224:
-	__asm        jmp    _T1c;
+	return;
 _T1c:
 }
 
@@ -822,7 +822,7 @@ void RGBBackColor(unsigned long * color) {
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3544];
 // LINE 229:
-	__asm        jmp    _T1d;
+	return;
 _T1d:
 }
 

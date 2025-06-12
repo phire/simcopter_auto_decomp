@@ -648,7 +648,7 @@ void MDateLocalized::MDateLocalized() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F3D0;
 // LINE 122:
-	__asm        jmp    _T2c;
+	return;
 _T2c:
 	__asm        mov    eax, this;
 }
@@ -667,7 +667,7 @@ void MDateLocalized::MDateLocalized(uint32_t day, uint32_t year) {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F3D0;
 // LINE 130:
-	__asm        jmp    _T34;
+	return;
 _T34:
 	__asm        mov    eax, this;
 }
@@ -703,7 +703,7 @@ void MDateLocalized::MDateLocalized(uint32_t day, char * monthName, uint32_t yea
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
 // LINE 139:
-	__asm        jmp    _T5d;
+	return;
 _T5d:
 	__asm        mov    eax, this;
 }
@@ -724,7 +724,7 @@ void MDateLocalized::MDateLocalized(uint32_t day, uint32_t month, uint32_t year)
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F3D0;
 // LINE 147:
-	__asm        jmp    _T38;
+	return;
 _T38:
 	__asm        mov    eax, this;
 }
@@ -745,7 +745,7 @@ _T26:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F3D0;
 // LINE 155:
-	__asm        jmp    _T3e;
+	return;
 _T3e:
 	__asm        mov    eax, this;
 }
@@ -762,7 +762,7 @@ void MDateLocalized::MDateLocalized(const /*unpacked*/ class MTime& time) {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F3D0;
 // LINE 163:
-	__asm        jmp    _T30;
+	return;
 _T30:
 	__asm        mov    eax, this;
 }

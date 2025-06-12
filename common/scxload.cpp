@@ -315,7 +315,7 @@ _T1a:
 // LINE 87:
 	this->m_mark = 0x0;
 // LINE 88:
-	__asm        jmp    _T3c;
+	return;
 _T3c:
 	__asm        mov    eax, this;
 }
@@ -341,7 +341,7 @@ void cLZAPFileBitStream::~cLZAPFileBitStream() {
 	__asm        jmp    _T3f;
 // LINE 92:
 _T3f:
-	__asm        jmp    _T44;
+	return;
 _T44:
 }
 
@@ -424,7 +424,7 @@ void cLZAPFileBitStream::Close() {
 _T36:
 	this->m_file = 0x0;
 // LINE 105:
-	__asm        jmp    _T45;
+	return;
 _T45:
 }
 
@@ -538,7 +538,7 @@ void cLZAPFileBitStream::Rewind() {
 	__asm        jmp    _T3d;
 // LINE 125:
 _T3d:
-	__asm        jmp    _T42;
+	return;
 _T42:
 }
 
@@ -566,7 +566,7 @@ void cLZAPFileBitStream::RewindToMark() {
 	__asm        jmp    _T48;
 // LINE 131:
 _T48:
-	__asm        jmp    _T4d;
+	return;
 _T4d:
 }
 
@@ -596,7 +596,7 @@ _T44:
 	this->m_mark = 0x0;
 // LINE 138:
 _T4e:
-	__asm        jmp    _T53;
+	return;
 _T53:
 }
 
@@ -637,7 +637,7 @@ void SCXReadBudget(/*packed*/ class cGZXBitstream *AStream, unsigned char * data
 	__asm        mov    ecx, AStream;
 	__asm        call   dword ptr [eax];
 // LINE 172:
-	__asm        jmp    _T1e;
+	return;
 _T1e:
 }
 
@@ -652,7 +652,7 @@ void SCXReadGraphData(/*packed*/ class cGZXBitstream *AStream, unsigned char * d
 	__asm        mov    ecx, AStream;
 	__asm        call   dword ptr [eax];
 // LINE 186:
-	__asm        jmp    _T1e;
+	return;
 _T1e:
 }
 
@@ -721,7 +721,7 @@ void SCXReadPlayer(/*packed*/ class cGZXBitstream *AStream, unsigned char * data
 	__asm        call   SCXReadGraphData;
 	__asm        add    esp, 8;
 // LINE 205:
-	__asm        jmp    _T95;
+	return;
 _T95:
 }
 
@@ -968,7 +968,7 @@ _T221:
 	__asm        jmp    _T168;
 // LINE 258:
 _T286:
-	__asm        jmp    _T28b;
+	return;
 _T28b:
 }
 
@@ -996,7 +996,7 @@ void SCXReadContracts(/*packed*/ class cGZXBitstream *AStream, unsigned char * d
 	__asm        mov    ecx, AStream;
 	__asm        call   dword ptr [eax];
 // LINE 284:
-	__asm        jmp    _T36;
+	return;
 _T36:
 }
 

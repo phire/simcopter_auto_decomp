@@ -875,7 +875,7 @@ void S3ObjLinkLowRes() {
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 827:
-	__asm        jmp    _T524;
+	return;
 // LINE 831:
 _T524:
 }
@@ -910,7 +910,7 @@ _T37:
 	__asm        cmp    ctr, 0;
 	__asm        je     _T46;
 
-	__asm        jmp    _T1dd;
+	return;
 // LINE 866:
 _T46:
 	__asm        jmp    _Teb;
@@ -919,7 +919,7 @@ _T4b:
 	__asm        cmp    ctr, 1;
 	__asm        je     _T5a;
 
-	__asm        jmp    _T1dd;
+	return;
 // LINE 869:
 _T5a:
 	__asm        jmp    _Teb;
@@ -928,7 +928,7 @@ _T5f:
 	__asm        cmp    ctr, 2;
 	__asm        je     _T6e;
 
-	__asm        jmp    _T1dd;
+	return;
 // LINE 872:
 _T6e:
 	__asm        jmp    _Teb;
@@ -937,7 +937,7 @@ _T73:
 	__asm        cmp    ctr, 3;
 	__asm        je     _T82;
 
-	__asm        jmp    _T1dd;
+	return;
 // LINE 875:
 _T82:
 	__asm        jmp    _Teb;
@@ -946,7 +946,7 @@ _T87:
 	__asm        cmp    ctr, 4;
 	__asm        je     _T96;
 
-	__asm        jmp    _T1dd;
+	return;
 // LINE 878:
 _T96:
 	__asm        jmp    _Teb;
@@ -955,7 +955,7 @@ _T9b:
 	__asm        cmp    ctr, 5;
 	__asm        je     _Taa;
 
-	__asm        jmp    _T1dd;
+	return;
 // LINE 881:
 _Taa:
 	__asm        jmp    _Teb;
@@ -1025,7 +1025,7 @@ _T131:
 // LINE 918:
 	__asm        jmp    _T16b;
 
-	__asm        jmp    _T1dd;
+	return;
 // LINE 920:
 _T16b:
 	ptr[0] = reinterpret_cast<uint8_t>(blit->user1);
@@ -1037,7 +1037,7 @@ _T16b:
 // LINE 924:
 	__asm        jmp    _T18d;
 
-	__asm        jmp    _T1dd;
+	return;
 // LINE 925:
 _T18d:
 	__asm        mov    eax, blit;
@@ -1063,7 +1063,7 @@ _T19c:
 // LINE 935:
 	__asm        jmp    _T1ce;
 
-	__asm        jmp    _T1dd;
+	return;
 // LINE 936:
 _T1ce:
 	__asm        mov    eax, blit;
@@ -1161,7 +1161,7 @@ _T64:
 	__asm        cmp    z, 0;
 	__asm        jg     _Tba;
 // LINE 1007:
-	__asm        jmp    _T3dd0;
+	return;
 // LINE 1009:
 _Tba:
 	__asm        push   0x5900000;
@@ -1336,7 +1336,7 @@ _T214:
 // LINE 1055:
 	__asm        jmp    _T29c;
 // LINE 1057:
-	__asm        jmp    _T3dd0;
+	return;
 // LINE 1058:
 	__asm        jmp    _T29c;
 _T258:
@@ -1527,13 +1527,13 @@ _T430:
 	__asm        cmp    plotx, 0;
 	__asm        jge    _T48d;
 
-	__asm        jmp    _T3dd0;
+	return;
 // LINE 1242:
 _T48d:
 	__asm        cmp    ploty, 0;
 	__asm        jge    _T49c;
 
-	__asm        jmp    _T3dd0;
+	return;
 // LINE 1243:
 _T49c:
 	__asm        mov    eax, winwidth;
@@ -1541,7 +1541,7 @@ _T49c:
 	__asm        cmp    eax, plotx;
 	__asm        jge    _T4b0;
 
-	__asm        jmp    _T3dd0;
+	return;
 // LINE 1244:
 _T4b0:
 	__asm        mov    eax, winheight;
@@ -1549,7 +1549,7 @@ _T4b0:
 	__asm        cmp    eax, ploty;
 	__asm        jge    _T4c4;
 
-	__asm        jmp    _T3dd0;
+	return;
 // LINE 1247:
 _T4c4:
 	__asm        mov    eax, bufwidth;
@@ -4457,7 +4457,7 @@ _T22d6:
 	__asm        jmp    _T42d;
 // LINE 2419:
 _T22db:
-	__asm        jmp    _T3dd0;
+	return;
 // LINE 2421:
 _T22e0:
 	__asm        mov    i, 0;
@@ -4498,13 +4498,13 @@ _T22ef:
 	__asm        cmp    plotx, 0;
 	__asm        jge    _T234c;
 
-	__asm        jmp    _T3dd0;
+	return;
 // LINE 2431:
 _T234c:
 	__asm        cmp    ploty, 0;
 	__asm        jge    _T235b;
 
-	__asm        jmp    _T3dd0;
+	return;
 // LINE 2432:
 _T235b:
 	__asm        mov    eax, winwidth;
@@ -4514,7 +4514,7 @@ _T235b:
 	__asm        cmp    eax, plotx;
 	__asm        jge    _T2373;
 
-	__asm        jmp    _T3dd0;
+	return;
 // LINE 2433:
 _T2373:
 	__asm        mov    eax, winheight;
@@ -4524,7 +4524,7 @@ _T2373:
 	__asm        cmp    eax, ploty;
 	__asm        jge    _T238b;
 
-	__asm        jmp    _T3dd0;
+	return;
 // LINE 2436:
 _T238b:
 	__asm        mov    eax, bufwidth;
@@ -6730,7 +6730,7 @@ void S3ObjHitDispatch(long hitter_type, /*packed*/ struct _DYOBJ_INST *dyhitter,
 	__asm        test   al, 0x20;
 	__asm        je     _T1d;
 // LINE 3708:
-	__asm        jmp    _Tbff;
+	return;
 // LINE 3711:
 _T1d:
 	__asm        mov    eax, dyhittee;
@@ -6751,7 +6751,7 @@ _T1d:
 	__asm        call   S3HeliHitDispatch;
 	__asm        add    esp, 0x14;
 // LINE 3714:
-	__asm        jmp    _Tbff;
+	return;
 // LINE 3716:
 	__asm        jmp    _T14a;
 _T52:
@@ -6773,7 +6773,7 @@ _T52:
 	__asm        call   PersonHitDispatch;
 	__asm        add    esp, 0x14;
 // LINE 3719:
-	__asm        jmp    _Tbff;
+	return;
 // LINE 3721:
 	__asm        jmp    _T14a;
 _T87:
@@ -6795,7 +6795,7 @@ _T87:
 	__asm        call   AutoHitDispatch;
 	__asm        add    esp, 0x14;
 // LINE 3724:
-	__asm        jmp    _Tbff;
+	return;
 // LINE 3726:
 	__asm        jmp    _T14a;
 _Tbc:
@@ -6826,7 +6826,7 @@ _Td7:
 	__asm        call   PlaneHitDispatch;
 	__asm        add    esp, 0x14;
 // LINE 3731:
-	__asm        jmp    _Tbff;
+	return;
 // LINE 3733:
 	__asm        jmp    _T14a;
 _T10d:
@@ -6849,7 +6849,7 @@ _T129:
 	__asm        jmp    _T14a;
 // LINE 3738:
 _T145:
-	__asm        jmp    _Tbff;
+	return;
 // LINE 3741:
 _T14a:
 	__asm        mov    eax, hitter_type;
@@ -6920,7 +6920,7 @@ _T1a9:
 //  [0, 7, 7, 7, 7, 7, 7, 7, 1, 2, 3, 4, 5, 6]
 // LINE 3765:
 _T1f3:
-	__asm        jmp    _Tbff;
+	return;
 // LINE 3768:
 _T1f8:
 	__asm        mov    eax, hittee_type;
@@ -6986,7 +6986,7 @@ _T24c:
 //  [0, 7, 7, 7, 7, 7, 7, 7, 1, 2, 3, 4, 5, 6]
 // LINE 3788:
 _T296:
-	__asm        jmp    _Tbff;
+	return;
 // LINE 3791:
 _T29b:
 	__asm        mov    eax, hittee_type;
@@ -7052,7 +7052,7 @@ _T2ef:
 //  [0, 7, 7, 7, 7, 7, 7, 7, 1, 2, 3, 4, 5, 6]
 // LINE 3811:
 _T339:
-	__asm        jmp    _Tbff;
+	return;
 // LINE 3814:
 _T33e:
 	__asm        mov    eax, hittee_type;
@@ -7118,7 +7118,7 @@ _T392:
 //  [0, 7, 7, 7, 7, 7, 7, 7, 1, 2, 3, 4, 5, 6]
 // LINE 3834:
 _T3dc:
-	__asm        jmp    _Tbff;
+	return;
 // LINE 3837:
 _T3e1:
 	__asm        mov    eax, hittee_type;
@@ -7195,7 +7195,7 @@ _T451:
 //  [0, 7, 7, 7, 7, 7, 7, 7, 1, 2, 3, 4, 5, 6]
 // LINE 3859:
 _T49b:
-	__asm        jmp    _Tbff;
+	return;
 // LINE 3862:
 _T4a0:
 	__asm        mov    eax, hittee_type;
@@ -7261,7 +7261,7 @@ _T4f4:
 //  [0, 7, 7, 7, 7, 7, 7, 7, 1, 2, 3, 4, 5, 6]
 // LINE 3882:
 _T53e:
-	__asm        jmp    _Tbff;
+	return;
 // LINE 3885:
 _T543:
 	__asm        mov    eax, hittee_type;
@@ -7327,7 +7327,7 @@ _T597:
 //  [0, 7, 7, 7, 7, 7, 7, 7, 1, 2, 3, 4, 5, 6]
 // LINE 3905:
 _T5e1:
-	__asm        jmp    _Tbff;
+	return;
 // LINE 3908:
 _T5e6:
 	__asm        mov    eax, hittee_type;
@@ -7393,7 +7393,7 @@ _T63a:
 //  [0, 7, 7, 7, 7, 7, 7, 7, 1, 2, 3, 4, 5, 6]
 // LINE 3928:
 _T684:
-	__asm        jmp    _Tbff;
+	return;
 // LINE 3931:
 _T689:
 	__asm        mov    eax, hittee_type;
@@ -7459,7 +7459,7 @@ _T6dd:
 //  [0, 7, 7, 7, 7, 7, 7, 7, 1, 2, 3, 4, 5, 6]
 // LINE 3951:
 _T727:
-	__asm        jmp    _Tbff;
+	return;
 // LINE 3954:
 _T72c:
 	__asm        mov    eax, hittee_type;
@@ -7525,7 +7525,7 @@ _T780:
 //  [0, 7, 7, 7, 7, 7, 7, 7, 1, 2, 3, 4, 5, 6]
 // LINE 3974:
 _T7ca:
-	__asm        jmp    _Tbff;
+	return;
 // LINE 3977:
 _T7cf:
 	__asm        mov    eax, hittee_type;
@@ -7591,7 +7591,7 @@ _T823:
 //  [0, 7, 7, 7, 7, 7, 7, 7, 1, 2, 3, 4, 5, 6]
 // LINE 3997:
 _T86d:
-	__asm        jmp    _Tbff;
+	return;
 // LINE 4000:
 _T872:
 	__asm        mov    eax, hittee_type;
@@ -7657,7 +7657,7 @@ _T8c6:
 //  [0, 7, 7, 7, 7, 7, 7, 7, 1, 2, 3, 4, 5, 6]
 // LINE 4020:
 _T910:
-	__asm        jmp    _Tbff;
+	return;
 // LINE 4023:
 _T915:
 	__asm        mov    eax, hittee_type;
@@ -7723,7 +7723,7 @@ _T969:
 //  [0, 7, 7, 7, 7, 7, 7, 7, 1, 2, 3, 4, 5, 6]
 // LINE 4043:
 _T9b3:
-	__asm        jmp    _Tbff;
+	return;
 // LINE 4046:
 _T9b8:
 	__asm        mov    eax, hittee_type;
@@ -7789,7 +7789,7 @@ _Ta0c:
 //  [0, 7, 7, 7, 7, 7, 7, 7, 1, 2, 3, 4, 5, 6]
 // LINE 4066:
 _Ta56:
-	__asm        jmp    _Tbff;
+	return;
 // LINE 4069:
 _Ta5b:
 	__asm        mov    eax, hittee_type;
@@ -7855,7 +7855,7 @@ _Taaf:
 //  [0, 7, 7, 7, 7, 7, 7, 7, 1, 2, 3, 4, 5, 6]
 // LINE 4089:
 _Taf9:
-	__asm        jmp    _Tbff;
+	return;
 // LINE 4092:
 _Tafe:
 	__asm        mov    eax, hittee_type;
@@ -7921,11 +7921,11 @@ _Tb52:
 //  [0, 7, 7, 7, 7, 7, 7, 7, 1, 2, 3, 4, 5, 6]
 // LINE 4112:
 _Tb9c:
-	__asm        jmp    _Tbff;
+	return;
 // LINE 4114:
-	__asm        jmp    _Tbff;
+	return;
 // LINE 4115:
-	__asm        jmp    _Tbff;
+	return;
 _Tbab:
 	__asm        cmp    dword ptr [ebp-8], 0xF;
 	__asm        ja     _Tbff;

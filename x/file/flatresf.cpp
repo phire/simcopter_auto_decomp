@@ -465,7 +465,7 @@ _T2af:
 // Block end:
 	this->fError = 0x0;
 // LINE 144:
-	__asm        jmp    _T33a;
+	return;
 // LINE 147:
 error:
 	__asm        mov    eax, newMap;
@@ -483,7 +483,7 @@ error:
 _T2f2:
 	this->fError = err;
 // LINE 153:
-	__asm        jmp    _T33a;
+	return;
 _T303:
 	__asm        jmp    error;
 _T308:
@@ -1116,7 +1116,7 @@ _T41:
 	__asm        cmp    dword ptr [eax+0x114], 0;
 	__asm        je     _T56;
 
-	__asm        jmp    _Ta2;
+	return;
 // LINE 424:
 _T56:
 	__asm        mov    eax, res;
@@ -1142,7 +1142,7 @@ _T87:
 	__asm        mov    ecx, [eax+0x110];
 	__asm        call   ResMap::GetName;
 // LINE 429:
-	__asm        jmp    _Ta2;
+	return;
 _Ta2:
 }
 
@@ -1167,7 +1167,7 @@ _T43:
 	__asm        cmp    dword ptr [eax+0x114], 0;
 	__asm        je     _T58;
 
-	__asm        jmp    _T9a;
+	return;
 // LINE 441:
 _T58:
 	__asm        mov    eax, res;
@@ -1187,7 +1187,7 @@ _T58:
 _T89:
 	id[0] = entry->id;
 // LINE 446:
-	__asm        jmp    _T9a;
+	return;
 _T9a:
 }
 
@@ -1280,7 +1280,7 @@ _T3b:
 	__asm        cmp    dword ptr [eax+0x114], 0;
 	__asm        je     _T50;
 
-	__asm        jmp    _T9f;
+	return;
 // LINE 471:
 _T50:
 	__asm        mov    eax, res;
@@ -1297,7 +1297,7 @@ _T50:
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        jne    _T81;
 _T7c:
-	__asm        jmp    _T9f;
+	return;
 // LINE 475:
 _T81:
 	__asm        mov    eax, entry;
@@ -1309,7 +1309,7 @@ _T81:
 	__asm        mov    eax, entry;
 	__asm        mov    dword ptr [eax+8], 0;
 // LINE 489:
-	__asm        jmp    _T9f;
+	return;
 _T9f:
 }
 
@@ -1332,7 +1332,7 @@ _T3b:
 	__asm        cmp    dword ptr [eax+0x114], 0;
 	__asm        je     _T50;
 
-	__asm        jmp    _T90;
+	return;
 // LINE 499:
 _T50:
 	__asm        mov    eax, res;
@@ -1353,7 +1353,7 @@ _T81:
 	__asm        mov    eax, entry;
 	__asm        mov    dword ptr [eax+8], 0;
 // LINE 515:
-	__asm        jmp    _T90;
+	return;
 _T90:
 }
 
@@ -1378,7 +1378,7 @@ _T3b:
 	__asm        cmp    dword ptr [eax+0x114], 0;
 	__asm        je     _T50;
 
-	__asm        jmp    _Te6;
+	return;
 // LINE 525:
 _T50:
 	__asm        mov    eax, res;
@@ -1422,7 +1422,7 @@ _T81:
 	__asm        call   Memory::HSetState;
 	__asm        add    esp, 8;
 // LINE 534:
-	__asm        jmp    _Te6;
+	return;
 // LINE 537:
 _Tc9:
 	__asm        push   1;
@@ -1434,7 +1434,7 @@ _Tc9:
 	__asm        mov    ecx, [eax+0x110];
 	__asm        call   ResMap::LoadEntry;
 // LINE 538:
-	__asm        jmp    _Te6;
+	return;
 _Te6:
 }
 

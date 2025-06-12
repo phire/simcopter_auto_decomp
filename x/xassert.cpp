@@ -76,7 +76,7 @@ _Tac:
 	__asm        call   abort;
 // LINE 70:
 _Tb1:
-	__asm        jmp    _Tb6;
+	return;
 _Tb6:
 }
 

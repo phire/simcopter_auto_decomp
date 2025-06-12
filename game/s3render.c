@@ -1286,7 +1286,7 @@ _Tde:
 // LINE 884:
 	__asm        call   S3CityGrid;
 // LINE 905:
-	__asm        jmp    _T132;
+	return;
 // LINE 906:
 _T132:
 }

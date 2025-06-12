@@ -49,7 +49,7 @@ void SpiralScan::SpiralScan(int32_t radius) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], eax;
 // LINE 14:
-	__asm        jmp    _T39;
+	return;
 _T39:
 	__asm        mov    eax, this;
 }
