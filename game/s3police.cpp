@@ -572,9 +572,9 @@ int32_t CreatePoliceCarInstance(int32_t instanceID) {
 _T24:
 	__asm        xor    eax, eax;
 _T26:
-	__asm        jmp    _T2b;
+	__asm        jmp    __RETURN;
 // LINE 91:
-_T2b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00536e30
@@ -599,8 +599,8 @@ void PoliceCarClass::~PoliceCarClass() {
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593310;
-	__asm        jmp    _T1a;
-_T1a:
+	__asm        jmp    __RETURN;
+__RETURN:
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::~EmergencyVehicleClass;
 }
@@ -784,9 +784,9 @@ unsigned char PoliceCarClass::Dispatch(enum EmergencyType responseType, enum Eme
 	__asm        push   eax;
 	__asm        mov    ecx, gPoliceStations;
 	__asm        call   Station::DispatchNearestAvailableVehicle;
-	__asm        jmp    _T2d;
+	__asm        jmp    __RETURN;
 // LINE 218:
-_T2d:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x005370b3
@@ -1692,7 +1692,7 @@ _T14e:
 	__asm        mov    ecx, [ecx+0xE2];
 	__asm        shl    ecx, 4;
 	__asm        mov    eax, TILUT[0][0][ecx+eax*4];
-	__asm        jmp    _T3fc;
+	__asm        jmp    __RETURN;
 // LINE 579:
 	__asm        jmp    _T28d;
 _T1c4:
@@ -1728,7 +1728,7 @@ _T1c4:
 	__asm        mov    ecx, [ecx+0xE2];
 	__asm        shl    ecx, 4;
 	__asm        mov    eax, TILUT[0][0][ecx+eax*4];
-	__asm        jmp    _T3fc;
+	__asm        jmp    __RETURN;
 // LINE 584:
 	__asm        jmp    _T28d;
 _T23a:
@@ -1812,7 +1812,7 @@ _T2ce:
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::PickTurnDir;
-	__asm        jmp    _T3fc;
+	__asm        jmp    __RETURN;
 // LINE 605:
 	__asm        jmp    _T36f;
 // LINE 608:
@@ -1861,7 +1861,7 @@ _T3a6:
 	__asm        mov    eax, [eax+0xE2];
 	__asm        shl    eax, 4;
 	__asm        mov    eax, TILUT[0][0][eax+edx*4];
-	__asm        jmp    _T3fc;
+	__asm        jmp    __RETURN;
 // LINE 630:
 	__asm        jmp    _T3eb;
 // LINE 633:
@@ -1870,16 +1870,16 @@ _T3da:
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::PickTurnDir;
-	__asm        jmp    _T3fc;
+	__asm        jmp    __RETURN;
 // LINE 636:
 _T3eb:
 	__asm        mov    eax, pGoal;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::PickTurnDir;
-	__asm        jmp    _T3fc;
+	__asm        jmp    __RETURN;
 // LINE 637:
-_T3fc:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00537e2f
@@ -1964,7 +1964,7 @@ _Te4:
 	__asm        jmp    _T108;
 _T108:
 	__asm        mov    eax, [ebp-0x18];
-	__asm        jmp    _T138;
+	__asm        jmp    __RETURN;
 // LINE 659:
 _T110:
 	__asm        lea    eax, loc.x;
@@ -1978,9 +1978,9 @@ _T110:
 	__asm        jmp    _T130;
 _T130:
 	__asm        mov    eax, [ebp-0x1C];
-	__asm        jmp    _T138;
+	__asm        jmp    __RETURN;
 // LINE 662:
-_T138:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00537f6c
@@ -2087,7 +2087,7 @@ _T88:
 	__asm        jmp    _Tc0;
 _Tc0:
 	__asm        mov    eax, [ebp-0x1C];
-	__asm        jmp    _T13f;
+	__asm        jmp    __RETURN;
 // LINE 707:
 	__asm        jmp    _T10a;
 _Tcd:
@@ -2108,7 +2108,7 @@ _Tcd:
 	__asm        jmp    _T102;
 _T102:
 	__asm        mov    eax, [ebp-0x20];
-	__asm        jmp    _T13f;
+	__asm        jmp    __RETURN;
 // LINE 712:
 _T10a:
 	dyptr = dyptr->next;
@@ -2127,9 +2127,9 @@ _T117:
 	__asm        jmp    _T137;
 _T137:
 	__asm        mov    eax, [ebp-0x24];
-	__asm        jmp    _T13f;
+	__asm        jmp    __RETURN;
 // LINE 718:
-_T13f:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0053811f

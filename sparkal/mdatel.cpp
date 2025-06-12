@@ -413,9 +413,9 @@ _T7b:
 	__asm        lea    ecx, strtemp<ostrstream+0x08>;
 	__asm        call   ios::~ios;
 	__asm        mov    eax, [ebp-0x60];
-	__asm        jmp    _T93;
+	__asm        jmp    __RETURN;
 // LINE 38:
-_T93:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0041fb6a
@@ -633,9 +633,9 @@ _T2c7:
 	__asm        lea    ecx, out<ostrstream+0x08>;
 	__asm        call   ios::~ios;
 	__asm        mov    eax, [ebp-0x118];
-	__asm        jmp    _T2e8;
+	__asm        jmp    __RETURN;
 // LINE 106:
-_T2e8:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0041fe57
@@ -791,9 +791,9 @@ _T31:
 	__asm        push   eax;
 	__asm        call   MDateLocalized::DayNameLocalized;
 	__asm        add    esp, 0xC;
-	__asm        jmp    _T4f;
+	__asm        jmp    __RETURN;
 // LINE 177:
-_T4f:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0042004a
@@ -820,9 +820,9 @@ _T31:
 	__asm        push   eax;
 	__asm        call   MDateLocalized::MonthNameLocalized;
 	__asm        add    esp, 0xC;
-	__asm        jmp    _T4f;
+	__asm        jmp    __RETURN;
 // LINE 190:
-_T4f:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004200a0
@@ -880,9 +880,9 @@ _T8d:
 	__asm        lea    ecx, strtemp<ostrstream+0x08>;
 	__asm        call   ios::~ios;
 	__asm        mov    eax, [ebp-0x60];
-	__asm        jmp    _Ta5;
+	__asm        jmp    __RETURN;
 // LINE 212:
-_Ta5:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0042014c
@@ -920,15 +920,15 @@ _T31:
 	__asm        mov    ecx, this;
 	__asm        call   MDate::Previous;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
-	__asm        jmp    _T76;
+	__asm        jmp    __RETURN;
 // LINE 230:
 _T66:
 	__asm        mov    ecx, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        call   MDate::MDate;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
-	__asm        jmp    _T76;
+	__asm        jmp    __RETURN;
 // LINE 231:
-_T76:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004201c9

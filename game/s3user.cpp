@@ -83,8 +83,8 @@ static void $E48() {
 
 	__asm        call   $E45;
 	__asm        call   $E47;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -122,8 +122,8 @@ static void $E47() {
 	__asm        push   0x428F30;
 	__asm        call   atexit;
 	__asm        add    esp, 4;
-	__asm        jmp    _T18;
-_T18:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -144,13 +144,13 @@ _T10:
 	__asm        jne    _T1e;
 // LINE 85:
 	__asm        lea    eax, gCurrentUserCityInfo.userPersonalInfo.szUserName[0];
-	__asm        jmp    _T29;
+	__asm        jmp    __RETURN;
 // LINE 86:
 _T1e:
 	__asm        lea    eax, gCurrentCareerCityInfo.userPersonalInfo.szUserName[0];
-	__asm        jmp    _T29;
+	__asm        jmp    __RETURN;
 // LINE 87:
-_T29:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00428f78
@@ -178,9 +178,9 @@ long GetUserMoney() {
 // LINE 102:
 	__asm        call   GetCurrentUserPersonalInfo;
 	__asm        mov    eax, [eax+0x40];
-	__asm        jmp    _T13;
+	__asm        jmp    __RETURN;
 // LINE 103:
-_T13:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00428fcd
@@ -212,9 +212,9 @@ long GetUserPoints() {
 // LINE 125:
 	__asm        call   GetCurrentUserPersonalInfo;
 	__asm        mov    eax, [eax+0x50];
-	__asm        jmp    _T13;
+	__asm        jmp    __RETURN;
 // LINE 126:
-_T13:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0042902d
@@ -253,9 +253,9 @@ _T1d:
 	__asm        mov    eax, gCurrentCareerCityInfo.lCurrentCityIndex;
 	__asm        shl    eax, 3;
 	__asm        lea    eax, gAllCareerCities[0].citySettings.lDifficulty[eax+eax*8];
-	__asm        jmp    _T31;
+	__asm        jmp    __RETURN;
 // LINE 150:
-_T31:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004290ab
@@ -318,12 +318,12 @@ int32_t GetUserHasSavedCurrentCity() {
 // LINE 198:
 	return gCurrentUserCityInfo.bUserHasSavedGame;
 // LINE 199:
-	__asm        jmp    _T2c;
+	__asm        jmp    __RETURN;
 // LINE 200:
 _T22:
 	return gCurrentCareerCityInfo.bUserHasSavedGame;
 // LINE 201:
-_T2c:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00429170

@@ -92,8 +92,8 @@ static void $E4() {
 
 	__asm        call   $E1;
 	__asm        call   $E3;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -102,8 +102,8 @@ static void $E1() {
 
 	__asm        mov    ecx, 0x5C34F0;
 	__asm        call   Keyboard::Keyboard;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -113,8 +113,8 @@ static void $E3() {
 	__asm        push   0x431CA1;
 	__asm        call   atexit;
 	__asm        add    esp, 4;
-	__asm        jmp    _T18;
-_T18:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -125,8 +125,8 @@ static void $E2() {
 _T0b:
 	__asm        mov    ecx, 0x5C34F0;
 	__asm        call   CharList::~CharList;
-	__asm        jmp    _T1a;
-_T1a:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00431cc0
@@ -138,9 +138,9 @@ int32_t IsModifierSet(unsigned char chModifiers) {
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, chModifiers;
 	__asm        and    eax, ecx;
-	__asm        jmp    _T1f;
+	__asm        jmp    __RETURN;
 // LINE 18:
-_T1f:
+__RETURN:
 }
 
 // SYNTHETIC: COPTER_D 0x00431ce4
@@ -164,9 +164,9 @@ int32_t Keyboard::IsKeyDown(unsigned char chKey) {
 	__asm        mov    al, chKey;
 	__asm        mov    ecx, this;
 	__asm        movsx  eax, byte ptr [eax+ecx+0x10];
-	__asm        jmp    _T1e;
+	__asm        jmp    __RETURN;
 // LINE 42:
-_T1e:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00431d32
@@ -199,9 +199,9 @@ _T27:
 _T4d:
 	__asm        xor    eax, eax;
 _T4f:
-	__asm        jmp    _T54;
+	__asm        jmp    __RETURN;
 // LINE 59:
-_T54:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00431d8d
@@ -408,7 +408,7 @@ _Ta0:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
 	__asm        add    eax, 0x20;
-	__asm        jmp    _T302;
+	__asm        jmp    __RETURN;
 // LINE 180:
 _Tad:
 	__asm        xor    eax, eax;
@@ -456,7 +456,7 @@ _T12d:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chKey;
 	__asm        mov    al, [eax+0x598320];
-	__asm        jmp    _T302;
+	__asm        jmp    __RETURN;
 // LINE 183:
 	__asm        jmp    _T154;
 // LINE 184:
@@ -602,7 +602,7 @@ _T2c0:
 // LINE 215:
 	__asm        movsx  eax, chIndex;
 	__asm        mov    al, chExtraArray[eax];
-	__asm        jmp    _T302;
+	__asm        jmp    __RETURN;
 // LINE 216:
 	__asm        jmp    _T2e6;
 // LINE 217:
@@ -620,7 +620,7 @@ _T2e6:
 _T2fb:
 	return 0x0;
 // LINE 226:
-_T302:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00432226

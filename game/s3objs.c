@@ -189,7 +189,7 @@ _T12c:
 _T12f:
 	__asm        mov    eax, objcount;
 	__asm        cmp    i, eax;
-	__asm        jge    _T5e6;
+	__asm        jge    __RETURN;
 // LINE 420:
 	__asm        mov    eax, i;
 	__asm        push   eax;
@@ -429,7 +429,7 @@ _T5d5:
 // LINE 679:
 	__asm        jmp    _T12c;
 // LINE 680:
-_T5e6:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0051957b
@@ -1051,14 +1051,14 @@ _T19c:
 	__asm        mov    eax, winwidth;
 	__asm        dec    eax;
 	__asm        cmp    eax, x;
-	__asm        jle    _T1dd;
+	__asm        jle    __RETURN;
 // LINE 932:
 	ptr[0] = reinterpret_cast<uint8_t>(blit->user1);
 // LINE 933:
 	__asm        mov    eax, winheight;
 	__asm        dec    eax;
 	__asm        cmp    eax, y;
-	__asm        jle    _T1dd;
+	__asm        jle    __RETURN;
 // LINE 935:
 	__asm        jmp    _T1ce;
 
@@ -1071,7 +1071,7 @@ _T1ce:
 	__asm        mov    edx, ptr;
 	__asm        mov    [ecx+edx], al;
 // LINE 940:
-_T1dd:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00519c86
@@ -1340,7 +1340,7 @@ _T214:
 	__asm        jmp    _T29c;
 _T258:
 	__asm        cmp    dword ptr [ebp-0x5C], 0xB;
-	__asm        ja     _T3dd0;
+	__asm        ja     __RETURN;
 
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        jmp    _Switch_26c[0][eax*4];
@@ -4466,7 +4466,7 @@ _T22ec:
 _T22ef:
 	__asm        mov    eax, i;
 	__asm        cmp    num3, eax;
-	__asm        jle    _T3dd0;
+	__asm        jle    __RETURN;
 // LINE 2423:
 	__asm        call   rand;
 	__asm        movsx  eax, ax;
@@ -6694,7 +6694,7 @@ _T3d8f:
 _T3dcb:
 	__asm        jmp    _T22ec;
 // LINE 3672:
-_T3dd0:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0051da5b
@@ -6713,9 +6713,9 @@ _T24:
 	__asm        mov    eax, tile;
 	__asm        shl    eax, 2;
 	__asm        lea    eax, S_objlzinfo[0].flags[eax+eax*4];
-	__asm        jmp    _T36;
+	__asm        jmp    __RETURN;
 // LINE 3689:
-_T36:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0051da96
@@ -7926,7 +7926,7 @@ _Tb9c:
 	return;
 _Tbab:
 	__asm        cmp    dword ptr [ebp-8], 0xF;
-	__asm        ja     _Tbff;
+	__asm        ja     __RETURN;
 
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    _Switch_bbf[0][eax*4];
@@ -7948,7 +7948,7 @@ _Tbab:
 //   _Ta5b
 //   _Tafe
 // LINE 4117:
-_Tbff:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0051e69a
@@ -8004,7 +8004,7 @@ _T92:
 _T95:
 	__asm        mov    eax, objcount;
 	__asm        cmp    i, eax;
-	__asm        jge    _Tcb;
+	__asm        jge    __RETURN;
 // LINE 4169:
 	__asm        mov    eax, i;
 	__asm        push   eax;
@@ -8023,7 +8023,7 @@ _Tba:
 // LINE 4178:
 	__asm        jmp    _T92;
 // LINE 4179:
-_Tcb:
+__RETURN:
 }
 
 

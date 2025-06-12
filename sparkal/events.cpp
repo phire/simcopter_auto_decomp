@@ -19,9 +19,9 @@ _T0b:
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+eax*2+0x110];
 	__asm        mov    eax, edx;
-	__asm        jmp    _T24;
+	__asm        jmp    __RETURN;
 // LINE 24:
-_T24:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00431b89
@@ -61,9 +61,9 @@ _T0b:
 	__asm        mov    eax, nCommand;
 	__asm        mov    ecx, gGameApp;
 	__asm        mov    eax, [ecx+eax*4+0xA28];
-	__asm        jmp    _T20;
+	__asm        jmp    __RETURN;
 // LINE 48:
-_T20:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00431bfb
@@ -88,8 +88,8 @@ _T38:
 	__asm        mov    eax, nCommand2;
 	__asm        mov    ecx, gGameApp;
 	__asm        mov    eax, [ecx+eax*4+0xA28];
-	__asm        jmp    _T4d;
+	__asm        jmp    __RETURN;
 // LINE 61:
-_T4d:
+__RETURN:
 }
 

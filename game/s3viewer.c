@@ -548,7 +548,7 @@ _T45a:
 	__asm        add    esp, 8;
 	__asm        mov    lJoystickValue, eax;
 	__asm        cmp    lJoystickValue, 0;
-	__asm        je     _T51c;
+	__asm        je     __RETURN;
 // LINE 287:
 	__asm        jle    _T4cd;
 // LINE 288:
@@ -604,13 +604,13 @@ _T4cd:
 	__asm        mov    eax, viewSize;
 	__asm        sub    eax, 2;
 	__asm        cmp    eax, G_ViewSize;
-	__asm        jne    _T51c;
+	__asm        jne    __RETURN;
 // LINE 302:
 	G_grid_ulc.x++;
 // LINE 303:
 	G_grid_ulc.y++;
 // LINE 307:
-_T51c:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004eee12
@@ -656,7 +656,7 @@ _T33:
 // LINE 335:
 	__asm        mov    eax, G_ViewSize;
 	__asm        cmp    nConvertedValue, eax;
-	__asm        jne    _Ta0;
+	__asm        jne    __RETURN;
 // LINE 337:
 	__asm        mov    eax, nOriginalViewSize;
 	__asm        sub    eax, G_ViewSize;
@@ -672,7 +672,7 @@ _T33:
 	__asm        sar    eax, 1;
 	__asm        add    G_grid_ulc.y, eax;
 // LINE 340:
-_Ta0:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004eeeb7
@@ -742,9 +742,9 @@ int32_t S3ViewerRotDelta() {
 // LINE 401:
 	__asm        mov    eax, 0x10000;
 	__asm        sub    eax, S_rotdelta;
-	__asm        jmp    _T16;
+	__asm        jmp    __RETURN;
 // LINE 402:
-_T16:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004eef6a
@@ -853,10 +853,10 @@ _T8c:
 	return;
 _Taf:
 	__asm        cmp    nCommand, 0x14;
-	__asm        jne    _T16d;
+	__asm        jne    __RETURN;
 
 	__asm        cmp    G_camera_mode, 3;
-	__asm        je     _T16d;
+	__asm        je     __RETURN;
 // LINE 464:
 	__asm        cmp    G_camera_mode, 2;
 	__asm        jne    _Te2;
@@ -893,7 +893,7 @@ _T12e:
 	return;
 _T13d:
 	__asm        cmp    G_camera_mode, 1;
-	__asm        jne    _T16d;
+	__asm        jne    __RETURN;
 // LINE 475:
 	__asm        push   0;
 	__asm        mov    eax, G_uheli;
@@ -905,7 +905,7 @@ _T13d:
 // LINE 476:
 	G_camera_mode = 0x2;
 // LINE 481:
-_T16d:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004ef14b
@@ -914,7 +914,7 @@ void S3SetDayNight(int32_t nDayOrNight) {
 	G_daynight = nDayOrNight;
 // LINE 490:
 	__asm        cmp    G_VRAppInitCalled, 0;
-	__asm        je     _T65;
+	__asm        je     __RETURN;
 // LINE 492:
 	__asm        call   S3ObjSetFlatShading;
 // LINE 493:
@@ -945,7 +945,7 @@ _T46:
 // LINE 498:
 	__asm        call   S3SwitchToProperSkyType;
 // LINE 500:
-_T65:
+__RETURN:
 }
 
 

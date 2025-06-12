@@ -1810,8 +1810,8 @@ struct bidirectional_iterator<KeyColors,int>{ // packed(0x1 bytes) TI: 0x2877
 static void $E97() {
 
 	__asm        call   $E96;
-	__asm        jmp    _T10;
-_T10:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -1831,8 +1831,8 @@ _T20:
 static void $E100() {
 
 	__asm        call   $E99;
-	__asm        jmp    _T10;
-_T10:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -2837,9 +2837,9 @@ _Td8:
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x10];
-	__asm        jmp    _Tf6;
+	__asm        jmp    __RETURN;
 // LINE 104:
-_Tf6:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00402108
@@ -3249,9 +3249,9 @@ _T53d:
 	__asm        jmp    _T542;
 _T542:
 	__asm        mov    eax, [ebp-0x2C];
-	__asm        jmp    _T54a;
+	__asm        jmp    __RETURN;
 // LINE 130:
-_T54a:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00402659
@@ -3811,9 +3811,9 @@ _T6ef:
 
 	__asm        mov    eax, [ebp-0x1070];
 _T700:
-	__asm        jmp    _T705;
+	__asm        jmp    __RETURN;
 // LINE 167:
-_T705:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00402e31
@@ -4191,9 +4191,9 @@ int32_t KeyboardWindow::DoesKeyRequireTextDraw(long lKey) {
 _T98:
 	__asm        xor    eax, eax;
 _T9a:
-	__asm        jmp    _T9f;
+	__asm        jmp    __RETURN;
 // LINE 244:
-_T9f:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00403247
@@ -5644,9 +5644,9 @@ _T6f:
 _T79:
 	__asm        xor    eax, eax;
 _T7b:
-	__asm        jmp    _T80;
+	__asm        jmp    __RETURN;
 // LINE 497:
-_T80:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00404485
@@ -6717,9 +6717,9 @@ _T73a:
 	__asm        jmp    _T73f;
 _T73f:
 	__asm        mov    eax, [ebp-0x3C];
-	__asm        jmp    _T747;
+	__asm        jmp    __RETURN;
 // LINE 691:
-_T747:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00405383
@@ -7469,9 +7469,9 @@ int32_t JoystickWindow::GetHandleImageToUse() {
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x78];
 	__asm        lea    eax, [eax+ecx+1];
-	__asm        jmp    _T25;
+	__asm        jmp    __RETURN;
 // LINE 915:
-_T25:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00405ca4
@@ -9778,9 +9778,9 @@ _T1377:
 	__asm        jmp    _T137c;
 _T137c:
 	__asm        mov    eax, [ebp-0xC8];
-	__asm        jmp    _T1387;
+	__asm        jmp    __RETURN;
 // LINE 1172:
-_T1387:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00407d47
@@ -11374,7 +11374,7 @@ _T457:
 	__asm        push   0x10001;
 	__asm        mov    ecx, this;
 	__asm        call   UserInputWindow::DoKeyboardWindowMessage;
-	__asm        jmp    _T4be;
+	__asm        jmp    __RETURN;
 // LINE 1426:
 	__asm        jmp    _T4b7;
 _T48a:
@@ -11393,7 +11393,7 @@ _T4a3:
 _T4b7:
 	return 0x0;
 // LINE 1435:
-_T4be:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0040920e
@@ -12897,8 +12897,8 @@ _T65:
 // LINE 1725:
 	__asm        lea    ecx, tempImage<CBackBuffer+0x00:None>;
 	__asm        call   CBackBuffer::~CBackBuffer;
-	__asm        jmp    _Taa;
-_Taa:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0040a508
@@ -15172,9 +15172,9 @@ _Te23:
 	__asm        jmp    _Te28;
 _Te28:
 	__asm        mov    eax, [ebp-0xA8];
-	__asm        jmp    _Te33;
+	__asm        jmp    __RETURN;
 // LINE 1924:
-_Te33:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0040c352
@@ -15843,8 +15843,8 @@ _T588:
 _T58d:
 	__asm        lea    ecx, tempLongSet.t.header;
 	__asm        call   rb_tree<long,long,ident<long,long>,less<long>>::~rb_tree<long,long,ident<long,long>,less<long>>;
-	__asm        jmp    _T59a;
-_T59a:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0040cb52

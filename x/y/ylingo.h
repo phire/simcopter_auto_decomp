@@ -3,7 +3,7 @@
 void (*)(void * __ptr32, long) YObjLang::GetSwizzler() {
 
 	__asm        mov    eax, 0x560ABE;
-	__asm        jmp    _T16;
-_T16:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 

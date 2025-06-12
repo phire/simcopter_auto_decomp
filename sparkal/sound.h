@@ -3,7 +3,7 @@
 int32_t DigitalSound::GetSoundType() {
 
 	__asm        mov    eax, 1;
-	__asm        jmp    _T16;
-_T16:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 

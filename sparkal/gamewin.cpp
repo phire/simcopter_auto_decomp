@@ -1760,9 +1760,9 @@ _T459:
 	__asm        mov    eax, this;
 	__asm        push   eax;
 	__asm        call   CSparkalWindow::MySparkalWindowProc;
-	__asm        jmp    _T477;
+	__asm        jmp    __RETURN;
 // LINE 611:
-_T477:
+__RETURN:
 }
 
 

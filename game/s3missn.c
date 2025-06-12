@@ -739,7 +739,7 @@ _T15:
 	i++;
 _T18:
 	__asm        cmp    i, 0x1E;
-	__asm        jge    _T54b;
+	__asm        jge    __RETURN;
 // LINE 440:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, eax;
@@ -1142,7 +1142,7 @@ _T4cc:
 _T546:
 	__asm        jmp    _T15;
 // LINE 641:
-_T54b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004fac6d
@@ -1246,7 +1246,7 @@ _T107:
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _Tf04;
+	__asm        jmp    __RETURN;
 // LINE 695:
 _T13c:
 	numtostart = 0x14;
@@ -1295,7 +1295,7 @@ _T197:
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _Tf04;
+	__asm        jmp    __RETURN;
 // LINE 709:
 _T1ca:
 	__asm        jmp    _T156;
@@ -1322,7 +1322,7 @@ _T1f5:
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _Tf04;
+	__asm        jmp    __RETURN;
 // LINE 724:
 _T214:
 	__asm        mov    eax, md;
@@ -1480,7 +1480,7 @@ _T3b2:
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _Tf04;
+	__asm        jmp    __RETURN;
 // LINE 774:
 _T3d1:
 	__asm        jmp    _Te60;
@@ -1506,7 +1506,7 @@ _T3d6:
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _Tf04;
+	__asm        jmp    __RETURN;
 // LINE 785:
 _T416:
 	__asm        mov    eax, md;
@@ -1560,7 +1560,7 @@ _T473:
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _Tf04;
+	__asm        jmp    __RETURN;
 // LINE 802:
 _T4ae:
 	__asm        mov    eax, md;
@@ -1607,7 +1607,7 @@ _T50b:
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _Tf04;
+	__asm        jmp    __RETURN;
 // LINE 813:
 _T537:
 	md->pickuploc.x = 0xffffffff;
@@ -1628,7 +1628,7 @@ _T537:
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _Tf04;
+	__asm        jmp    __RETURN;
 // LINE 827:
 _T589:
 	__asm        push   0;
@@ -1657,7 +1657,7 @@ _T589:
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _Tf04;
+	__asm        jmp    __RETURN;
 // LINE 840:
 _T5d9:
 	md->mdata.total_person_medevac = 0x1;
@@ -1785,7 +1785,7 @@ _T724:
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _Tf04;
+	__asm        jmp    __RETURN;
 // LINE 886:
 _T743:
 	__asm        jmp    _Te60;
@@ -1818,7 +1818,7 @@ _T748:
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _Tf04;
+	__asm        jmp    __RETURN;
 // LINE 895:
 _T7a7:
 	__asm        mov    eax, x;
@@ -1854,7 +1854,7 @@ _T7a7:
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _Tf04;
+	__asm        jmp    __RETURN;
 // LINE 902:
 _T811:
 	__asm        mov    eax, type;
@@ -1901,7 +1901,7 @@ _T830:
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _Tf04;
+	__asm        jmp    __RETURN;
 // LINE 913:
 _T894:
 	md->state = 0x2;
@@ -1939,7 +1939,7 @@ _T8a3:
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _Tf04;
+	__asm        jmp    __RETURN;
 // LINE 923:
 _T907:
 	md->state = 0x2;
@@ -1980,7 +1980,7 @@ _T916:
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _Tf04;
+	__asm        jmp    __RETURN;
 // LINE 930:
 _T97e:
 	md->mdata.total_person_crime = 0x1;
@@ -2037,7 +2037,7 @@ _T9aa:
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _Tf04;
+	__asm        jmp    __RETURN;
 // LINE 952:
 _Ta34:
 	md->mdata.total_person_crime = 0x1;
@@ -2107,7 +2107,7 @@ _Ta88:
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _Tf04;
+	__asm        jmp    __RETURN;
 // LINE 978:
 _Tb12:
 	md->mdata.total_person_crime = 0x1;
@@ -2177,7 +2177,7 @@ _Tb66:
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _Tf04;
+	__asm        jmp    __RETURN;
 // LINE 1004:
 _Tbf0:
 	md->mdata.total_person_crime = 0x1;
@@ -2227,7 +2227,7 @@ _Tc44:
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _Tf04;
+	__asm        jmp    __RETURN;
 // LINE 1017:
 _Tc81:
 	__asm        mov    eax, S_mstatics.traffic_ctr;
@@ -2274,7 +2274,7 @@ _Tcc8:
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _Tf04;
+	__asm        jmp    __RETURN;
 // LINE 1030:
 _Td02:
 	__asm        mov    eax, S_mstatics.traffic_ctr;
@@ -2302,7 +2302,7 @@ _Td39:
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _Tf04;
+	__asm        jmp    __RETURN;
 // LINE 1039:
 	__asm        jmp    _Te60;
 // LINE 1040:
@@ -2432,7 +2432,7 @@ _Teef:
 // LINE 1060:
 	return md->key;
 // LINE 1061:
-_Tf04:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004fbb76
@@ -2464,9 +2464,9 @@ _T29:
 // LINE 1088:
 	__asm        mov    eax, md;
 	__asm        add    eax, 0x28;
-	__asm        jmp    _T4f;
+	__asm        jmp    __RETURN;
 // LINE 1089:
-_T4f:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004fbbca
@@ -2505,9 +2505,9 @@ _T29:
 _T58:
 	__asm        mov    eax, md;
 	__asm        add    eax, 0x30;
-	__asm        jmp    _T63;
+	__asm        jmp    __RETURN;
 // LINE 1119:
-_T63:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004fbc32
@@ -2546,9 +2546,9 @@ _T29:
 _T58:
 	__asm        mov    eax, md;
 	__asm        add    eax, 0x38;
-	__asm        jmp    _T63;
+	__asm        jmp    __RETURN;
 // LINE 1150:
-_T63:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004fbc9a
@@ -2562,9 +2562,9 @@ _T63:
 _T1a:
 	__asm        mov    eax, S_mstatics.curr_mission;
 	__asm        add    eax, 0x28;
-	__asm        jmp    _T27;
+	__asm        jmp    __RETURN;
 // LINE 1166:
-_T27:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004fbcc6
@@ -2585,9 +2585,9 @@ _T1a:
 _T30:
 	__asm        mov    eax, S_mstatics.curr_mission;
 	__asm        add    eax, 0x30;
-	__asm        jmp    _T3d;
+	__asm        jmp    __RETURN;
 // LINE 1186:
-_T3d:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004fbd08
@@ -2608,9 +2608,9 @@ _T1a:
 _T30:
 	__asm        mov    eax, S_mstatics.curr_mission;
 	__asm        add    eax, 0x38;
-	__asm        jmp    _T3d;
+	__asm        jmp    __RETURN;
 // LINE 1206:
-_T3d:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004fbd4a
@@ -2946,7 +2946,7 @@ _T413:
 	return;
 _T41d:
 	__asm        cmp    dword ptr [ebp-0xC], 0x25;
-	__asm        ja     _T4c9;
+	__asm        ja     __RETURN;
 
 	__asm        mov    eax, [ebp-0xC];
 	__asm        jmp    _Switch_431[0][eax*4];
@@ -2990,7 +2990,7 @@ _T41d:
 //   _T196
 //   _T2c2
 // LINE 1387:
-_T4c9:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004fc218
@@ -3023,7 +3023,7 @@ void S3MissionEnd(long mission_id) {
 // LINE 1410:
 	__asm        mov    eax, md;
 	__asm        cmp    S_mstatics.curr_mission, eax;
-	__asm        jne    _Tbe;
+	__asm        jne    __RETURN;
 // LINE 1412:
 	S_mstatics.curr_mission = 0x0;
 // LINE 1413:
@@ -3033,7 +3033,7 @@ _T6a:
 	i++;
 _T6d:
 	__asm        cmp    i, 0x1E;
-	__asm        jge    _Tbe;
+	__asm        jge    __RETURN;
 // LINE 1415:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, eax;
@@ -3059,7 +3059,7 @@ _T6d:
 _Tb9:
 	__asm        jmp    _T6a;
 // LINE 1424:
-_Tbe:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004fc2db
@@ -3085,9 +3085,9 @@ _T29:
 	__asm        lea    eax, [ecx+eax*4];
 	__asm        lea    eax, [ecx+eax*4];
 	__asm        lea    eax, S_mstatics.missions[0].mtext[eax*4];
-	__asm        jmp    _T43;
+	__asm        jmp    __RETURN;
 // LINE 1442:
-_T43:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004fc323
@@ -3123,7 +3123,7 @@ _T18:
 	__asm        lea    eax, [ecx+eax*4];
 	__asm        lea    eax, [ecx+eax*4];
 	__asm        mov    eax, S_mstatics.missions[0].key[eax*4];
-	__asm        jmp    _T75;
+	__asm        jmp    __RETURN;
 // LINE 1454:
 _T66:
 	__asm        jmp    _T15;
@@ -3131,7 +3131,7 @@ _T66:
 _T6b:
 	return 0xffffffff;
 // LINE 1456:
-_T75:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004fc39d
@@ -3696,7 +3696,7 @@ _Ta5:
 	__asm        cdq;
 	__asm        idiv   ecx;
 	__asm        cmp    eax, i;
-	__asm        jle    _T10c;
+	__asm        jle    __RETURN;
 // LINE 1618:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, eax;
@@ -3722,7 +3722,7 @@ _Ta5:
 _T107:
 	__asm        jmp    _Ta2;
 // LINE 1625:
-_T10c:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004fc9ac
@@ -3793,7 +3793,7 @@ _Ta5:
 	__asm        cdq;
 	__asm        idiv   ecx;
 	__asm        cmp    eax, i;
-	__asm        jge    _T10c;
+	__asm        jge    __RETURN;
 // LINE 1653:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, eax;
@@ -3819,7 +3819,7 @@ _Ta5:
 _T107:
 	__asm        jmp    _Ta2;
 // LINE 1660:
-_T10c:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004fcabd
@@ -4109,7 +4109,7 @@ _T102:
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _T411;
+	__asm        jmp    __RETURN;
 // LINE 1928:
 	__asm        jmp    _T36d;
 // LINE 1930:
@@ -4121,7 +4121,7 @@ _T126:
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _T411;
+	__asm        jmp    __RETURN;
 // LINE 1931:
 	__asm        jmp    _T36d;
 // LINE 1933:
@@ -4133,7 +4133,7 @@ _T14a:
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _T411;
+	__asm        jmp    __RETURN;
 // LINE 1934:
 	__asm        jmp    _T36d;
 // LINE 1936:
@@ -4145,7 +4145,7 @@ _T16e:
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _T411;
+	__asm        jmp    __RETURN;
 // LINE 1937:
 	__asm        jmp    _T36d;
 // LINE 1939:
@@ -4157,7 +4157,7 @@ _T192:
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _T411;
+	__asm        jmp    __RETURN;
 // LINE 1940:
 	__asm        jmp    _T36d;
 // LINE 1942:
@@ -4169,7 +4169,7 @@ _T1b6:
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _T411;
+	__asm        jmp    __RETURN;
 // LINE 1943:
 	__asm        jmp    _T36d;
 // LINE 1945:
@@ -4181,7 +4181,7 @@ _T1da:
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _T411;
+	__asm        jmp    __RETURN;
 // LINE 1946:
 	__asm        jmp    _T36d;
 // LINE 1948:
@@ -4193,7 +4193,7 @@ _T1fe:
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _T411;
+	__asm        jmp    __RETURN;
 // LINE 1949:
 	__asm        jmp    _T36d;
 // LINE 1951:
@@ -4205,7 +4205,7 @@ _T222:
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _T411;
+	__asm        jmp    __RETURN;
 // LINE 1952:
 	__asm        jmp    _T36d;
 // LINE 1954:
@@ -4217,7 +4217,7 @@ _T246:
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _T411;
+	__asm        jmp    __RETURN;
 // LINE 1955:
 	__asm        jmp    _T36d;
 // LINE 1957:
@@ -4247,7 +4247,7 @@ _T2a1:
 	__asm        mov    [ecx+0x4C], eax;
 	__asm        dec    S_mstatics.key_ctr;
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _T411;
+	__asm        jmp    __RETURN;
 // LINE 1963:
 	__asm        jmp    _T36d;
 // LINE 1964:
@@ -4353,7 +4353,7 @@ _T3ad:
 // LINE 1984:
 	return md->key;
 // LINE 1985:
-_T411:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004fd0e6
@@ -4924,7 +4924,7 @@ _T5f2:
 // LINE 2204:
 _T632:
 	__asm        cmp    points, 0;
-	__asm        je     _T66a;
+	__asm        je     __RETURN;
 // LINE 2210:
 	__asm        mov    eax, points;
 	__asm        push   eax;
@@ -4943,7 +4943,7 @@ _T632:
 	__asm        call   S3AddLogEntry;
 	__asm        add    esp, 8;
 // LINE 2214:
-_T66a:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004fd755
@@ -5426,9 +5426,9 @@ _T21:
 	__asm        lea    eax, [ecx+eax*4];
 	__asm        lea    eax, [ecx+eax*4];
 	__asm        lea    eax, S_mstatics.missions[0].mtext[eax*4];
-	__asm        jmp    _T3b;
+	__asm        jmp    __RETURN;
 // LINE 2472:
-_T3b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004fdcfb
@@ -6251,7 +6251,7 @@ _T7d0:
 // LINE 2771:
 _T7ea:
 	__asm        cmp    sid3, 0xFFFFFFFF;
-	__asm        je     _T804;
+	__asm        je     __RETURN;
 // LINE 2772:
 	__asm        push   0x32;
 	__asm        mov    eax, sid3;
@@ -6260,7 +6260,7 @@ _T7ea:
 	__asm        call   S3SoundAddToQueue;
 	__asm        add    esp, 0xC;
 // LINE 2774:
-_T804:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004fe5fe

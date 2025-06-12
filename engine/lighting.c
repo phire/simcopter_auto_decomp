@@ -600,7 +600,7 @@ _T34:
 _T37:
 	__asm        mov    eax, i;
 	__asm        cmp    oinfo.Faces, eax;
-	__asm        jle    _T246;
+	__asm        jle    __RETURN;
 // LINE 403:
 	fh = face;
 // LINE 406:
@@ -788,7 +788,7 @@ next_face:
 // LINE 462:
 	__asm        jmp    _T34;
 // LINE 463:
-_T246:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004d93d6
@@ -831,7 +831,7 @@ _T4e:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x10], ecx;
-	__asm        jle    _T1b1;
+	__asm        jle    __RETURN;
 // LINE 500:
 	__asm        mov    eax, fh;
 	__asm        test   byte ptr [eax+8], 4;
@@ -959,7 +959,7 @@ next_face:
 // LINE 540:
 	__asm        jmp    _T4b;
 // LINE 541:
-_T1b1:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004d958c
@@ -1132,7 +1132,7 @@ _T21:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x10], ecx;
-	__asm        jle    _T1f0;
+	__asm        jle    __RETURN;
 // LINE 624:
 	__asm        mov    eax, fh;
 	__asm        test   byte ptr [eax+9], 0x40;
@@ -1303,7 +1303,7 @@ next_face:
 // LINE 682:
 	__asm        jmp    _T1e;
 // LINE 683:
-_T1f0:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004d9907
@@ -1334,7 +1334,7 @@ _T3a:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x10], ecx;
-	__asm        jle    _T73;
+	__asm        jle    __RETURN;
 // LINE 711:
 	fh->Attrib1 = 0x3;
 // LINE 712:
@@ -1346,7 +1346,7 @@ _T3a:
 // LINE 715:
 	__asm        jmp    _T37;
 // LINE 716:
-_T73:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004d997f

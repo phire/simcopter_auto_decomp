@@ -131,7 +131,7 @@ _T7b:
 	ptr[0] = color;
 // LINE 155:
 	__asm        cmp    G_video_mode, 0x10;
-	__asm        jne    _T117;
+	__asm        jne    __RETURN;
 // LINE 157:
 	ptr++;
 // LINE 158:
@@ -183,7 +183,7 @@ _Te4:
 _T10f:
 	ptr[0] = color;
 // LINE 169:
-_T117:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00563fd1
@@ -734,7 +734,7 @@ _T6a1:
 // LINE 324:
 _T76c:
 	__asm        test   reinterpret_cast<uint8_t>(diameter), 1;
-	__asm        je     _T79a;
+	__asm        je     __RETURN;
 // LINE 325:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(color);
 	__asm        push   eax;
@@ -749,7 +749,7 @@ _T76c:
 	__asm        call   DrawHorzLine;
 	__asm        add    esp, 0x10;
 // LINE 328:
-_T79a:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00564770
@@ -1691,7 +1691,7 @@ _T335:
 _T338:
 	__asm        mov    eax, dy;
 	__asm        cmp    i, eax;
-	__asm        jge    _T493;
+	__asm        jge    __RETURN;
 // LINE 766:
 	writeBufferTmp = writeBuffer;
 // LINE 775:
@@ -1823,7 +1823,7 @@ _T488:
 // LINE 816:
 	__asm        jmp    _T335;
 // LINE 818:
-_T493:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00565225
@@ -2100,7 +2100,7 @@ _T2a2:
 _T2a5:
 	__asm        mov    eax, dy;
 	__asm        cmp    i, eax;
-	__asm        jge    _T417;
+	__asm        jge    __RETURN;
 // LINE 922:
 	writeBufferTmp = writeBuffer;
 // LINE 923:
@@ -2231,7 +2231,7 @@ _T40c:
 // LINE 963:
 	__asm        jmp    _T2a2;
 // LINE 966:
-_T417:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00565641
@@ -2389,7 +2389,7 @@ _T18e:
 	__asm        mov    [ebp-0x44], eax;
 	__asm        dec    fourByteWrites;
 	__asm        cmp    dword ptr [ebp-0x44], 0;
-	__asm        je     _T252;
+	__asm        je     __RETURN;
 // LINE 1038:
 	__asm        push   0x5BF394;
 	__asm        push   4;
@@ -2458,7 +2458,7 @@ _T1c1:
 // LINE 1047:
 	__asm        jmp    _T18e;
 // LINE 1050:
-_T252:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00565898
@@ -2596,7 +2596,7 @@ _T156:
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        dec    fourByteWrites;
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
-	__asm        je     _T19a;
+	__asm        je     __RETURN;
 // LINE 1117:
 	__asm        push   0x5BF468;
 	__asm        push   4;
@@ -2618,7 +2618,7 @@ _T189:
 // LINE 1120:
 	__asm        jmp    _T156;
 // LINE 1123:
-_T19a:
+__RETURN:
 }
 
 

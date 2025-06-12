@@ -129,9 +129,9 @@ int  CGameApp::CanWeSwitchToWindowedMode() {
 _T4c:
 	__asm        xor    eax, eax;
 _T4e:
-	__asm        jmp    _T53;
+	__asm        jmp    __RETURN;
 // LINE 32:
-_T53:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00432538
@@ -469,18 +469,18 @@ int  CGameApp::ToggleScreenMode() {
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x4C];
-	__asm        jmp    _T3e;
+	__asm        jmp    __RETURN;
 // LINE 201:
-	__asm        jmp    _T3e;
+	__asm        jmp    __RETURN;
 // LINE 202:
 _T2e:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x50];
-	__asm        jmp    _T3e;
+	__asm        jmp    __RETURN;
 // LINE 203:
-_T3e:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00432900
@@ -1168,8 +1168,8 @@ _T280:
 	__asm        call   GameModeInventoryData::UsePalette;
 // LINE 388:
 _T2a9:
-	__asm        jmp    _T2ae;
-_T2ae:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004330ea
@@ -1182,8 +1182,8 @@ void  CGameApp::PaletteUninitialize() {
 	__asm        mov    ecx, [eax+0x34];
 	__asm        call   dword ptr [edx+0x78];
 // LINE 400:
-	__asm        jmp    _T22;
-_T22:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 

@@ -500,9 +500,9 @@ _T188:
 	__asm        lea    eax, [eax+eax*2];
 	__asm        mov    ecx, tree;
 	__asm        lea    eax, [ecx+eax*4+2];
-	__asm        jmp    _T19b;
+	__asm        jmp    __RETURN;
 // LINE 85:
-_T19b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x005605ac
@@ -553,9 +553,9 @@ short Behavior::CountPrimitives() {
 	__asm        mov    edx, [ecx];
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   dword ptr [edx+8];
-	__asm        jmp    _T22;
+	__asm        jmp    __RETURN;
 // LINE 141:
-_T22:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0056063d

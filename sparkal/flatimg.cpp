@@ -350,9 +350,9 @@ unsigned long IFlatImage::StretchCompose(/*packed*/ class IFlatImage *pDestImage
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x10];
-	__asm        jmp    _T7c;
+	__asm        jmp    __RETURN;
 // LINE 127:
-_T7c:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0048f3b1

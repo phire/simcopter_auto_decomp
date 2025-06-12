@@ -213,8 +213,8 @@ public:
 static void $E55() {
 
 	__asm        call   $E54;
-	__asm        jmp    _T10;
-_T10:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -222,8 +222,8 @@ _T10:
 static void $E54() {
 
 	__asm        mov    glMasterVolume, 0x2710;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -231,8 +231,8 @@ _T15:
 static void $E58() {
 
 	__asm        call   $E57;
-	__asm        jmp    _T10;
-_T10:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -261,12 +261,12 @@ int32_t SoundChangeNotificationSink::Initialize() {
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, gPreferenceManager;
 	__asm        call   dword ptr [eax+0x38];
-	__asm        jmp    _T3e;
+	__asm        jmp    __RETURN;
 // LINE 60:
 _T37:
 	return 0x0;
 // LINE 61:
-_T3e:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00441ee5
@@ -362,9 +362,9 @@ _T35:
 	__asm        push   eax;
 	__asm        mov    ecx, 0x604588;
 	__asm        call   SoundSystem::Initialize;
-	__asm        jmp    _T48;
+	__asm        jmp    __RETURN;
 // LINE 135:
-_T48:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00442002
@@ -5623,12 +5623,12 @@ int32_t S3SoundIsPlaying(int32_t nSoundIndex) {
 	__asm        mov    edx, [ecx];
 	__asm        mov    ecx, gSoundManager.sound[0][eax*4];
 	__asm        call   dword ptr [edx+0x10];
-	__asm        jmp    _T3c;
+	__asm        jmp    __RETURN;
 // LINE 640:
 _T35:
 	return 0x0;
 // LINE 641:
-_T3c:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00446f43

@@ -938,7 +938,7 @@ _T2a2:
 	__asm        jmp    _T2a7;
 _T2a7:
 	__asm        mov    eax, [ebp-0x14];
-	__asm        jmp    _T4ec;
+	__asm        jmp    __RETURN;
 // LINE 68:
 _T2af:
 	__asm        push   0xFFF;
@@ -1050,7 +1050,7 @@ _T411:
 	__asm        jmp    _T416;
 _T416:
 	__asm        mov    eax, [ebp-0x18];
-	__asm        jmp    _T4ec;
+	__asm        jmp    __RETURN;
 // LINE 70:
 _T41e:
 	__asm        push   0x3F;
@@ -1123,9 +1123,9 @@ _T4df:
 	__asm        jmp    _T4e4;
 _T4e4:
 	__asm        mov    eax, [ebp-0x1C];
-	__asm        jmp    _T4ec;
+	__asm        jmp    __RETURN;
 // LINE 73:
-_T4ec:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0049092a
@@ -1396,7 +1396,7 @@ _T2a2:
 	__asm        jmp    _T2a7;
 _T2a7:
 	__asm        mov    eax, [ebp-0x14];
-	__asm        jmp    _T4ec;
+	__asm        jmp    __RETURN;
 // LINE 126:
 _T2af:
 	__asm        push   0xFFF;
@@ -1508,7 +1508,7 @@ _T411:
 	__asm        jmp    _T416;
 _T416:
 	__asm        mov    eax, [ebp-0x18];
-	__asm        jmp    _T4ec;
+	__asm        jmp    __RETURN;
 // LINE 128:
 _T41e:
 	__asm        push   0x3F;
@@ -1581,9 +1581,9 @@ _T4df:
 	__asm        jmp    _T4e4;
 _T4e4:
 	__asm        mov    eax, [ebp-0x1C];
-	__asm        jmp    _T4ec;
+	__asm        jmp    __RETURN;
 // LINE 131:
-_T4ec:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00490ed4

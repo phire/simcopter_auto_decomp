@@ -241,7 +241,7 @@ _Te5:
 _Tec:
 	__asm        mov    eax, [ebp-0x1C];
 _Tef:
-	__asm        jmp    _T2fe;
+	__asm        jmp    __RETURN;
 // LINE 17:
 _Tf4:
 	__asm        jmp    _T44;
@@ -422,7 +422,7 @@ _T2b7:
 _T2f6:
 	return loader;
 // LINE 23:
-_T2fe:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0049a1f5

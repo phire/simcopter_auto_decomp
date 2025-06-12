@@ -278,13 +278,13 @@ _T14c:
 	__asm        add    md, 0x48;
 _T153:
 	__asm        cmp    i, 0x50;
-	__asm        jge    _T16b;
+	__asm        jge    __RETURN;
 // LINE 181:
 	md->flags = 0x4;
 // LINE 182:
 	__asm        jmp    _T14c;
 // LINE 184:
-_T16b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0051e8e0
@@ -714,7 +714,7 @@ _T527:
 	__asm        add    md, 0x48;
 _T52e:
 	__asm        cmp    i, 0xA;
-	__asm        jge    _T600;
+	__asm        jge    __RETURN;
 // LINE 360:
 	md->animseq = 0x0;
 // LINE 361:
@@ -778,7 +778,7 @@ _T5c1:
 // LINE 383:
 	__asm        jmp    _T527;
 // LINE 385:
-_T600:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0051eee5
@@ -6114,12 +6114,12 @@ _T5f:
 // LINE 2285:
 	__asm        mov    eax, dist;
 	__asm        sar    eax, 1;
-	__asm        jmp    _Tf2;
+	__asm        jmp    __RETURN;
 // LINE 2289:
 _Te8:
 	return 0xffffffff;
 // LINE 2290:
-_Tf2:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00522eb3
@@ -6354,9 +6354,9 @@ _T2f7:
 	__asm        fld    newdist;
 	__asm        fmul   qword ptr ds:[0x592FD8];
 	__asm        call   0x0056EBE8;
-	__asm        jmp    _T30a;
+	__asm        jmp    __RETURN;
 // LINE 2587:
-_T30a:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x005231c2

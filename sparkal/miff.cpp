@@ -167,9 +167,9 @@ _T2f:
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, miffReader;
 	__asm        call   dword ptr [eax+0x40];
-	__asm        jmp    _T47;
+	__asm        jmp    __RETURN;
 // LINE 22:
-_T47:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004ab57c
@@ -195,9 +195,9 @@ _T24:
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, miffReader;
 	__asm        call   dword ptr [eax+0x40];
-	__asm        jmp    _T3c;
+	__asm        jmp    __RETURN;
 // LINE 33:
-_T3c:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004ab5bd
@@ -213,9 +213,9 @@ int32_t WriteMIFFChunk(void * __ptr32 miffWriter, long lDataType, char * ptrData
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, miffWriter;
 	__asm        call   dword ptr [eax+0x64];
-	__asm        jmp    _T22;
+	__asm        jmp    __RETURN;
 // LINE 42:
-_T22:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004ab5e4

@@ -805,9 +805,9 @@ short S3GetNearestStation(/*packed*/ class Station *station, /*packed*/ struct _
 	__asm        push   eax;
 	__asm        mov    ecx, station;
 	__asm        call   Station::GetNearestStation;
-	__asm        jmp    _T1b;
+	__asm        jmp    __RETURN;
 // LINE 50:
-_T1b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00539d87
@@ -817,9 +817,9 @@ short S3GetNextNearest(/*packed*/ class Station *station, /*packed*/ struct _Gri
 	__asm        push   eax;
 	__asm        mov    ecx, station;
 	__asm        call   Station::GetNextNearest;
-	__asm        jmp    _T17;
+	__asm        jmp    __RETURN;
 // LINE 58:
-_T17:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00539da3
@@ -1111,7 +1111,7 @@ _Tc3:
 	__asm        jmp    _Td9;
 _Td9:
 	__asm        mov    eax, [ebp-0x14];
-	__asm        jmp    _T1d6;
+	__asm        jmp    __RETURN;
 // LINE 116:
 _Te1:
 	__asm        mov    eax, loc;
@@ -1182,7 +1182,7 @@ _T19f:
 	__asm        jmp    _T1b5;
 _T1b5:
 	__asm        mov    eax, [ebp-0x18];
-	__asm        jmp    _T1d6;
+	__asm        jmp    __RETURN;
 // LINE 120:
 _T1bd:
 	__asm        jmp    _Te1;
@@ -1192,9 +1192,9 @@ _T1c2:
 	__asm        jmp    _T1ce;
 _T1ce:
 	__asm        mov    eax, [ebp-0x1C];
-	__asm        jmp    _T1d6;
+	__asm        jmp    __RETURN;
 // LINE 123:
-_T1d6:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0053a1fb
@@ -2062,14 +2062,14 @@ short Station::GetNearestStation(/*packed*/ struct _GridCoordinates gc, /*packed
 	return reinterpret_cast<uint16_t>(removedStruct.cost);
 // LINE 394:
 // Block end:
-	__asm        jmp    _T67;
+	__asm        jmp    __RETURN;
 // LINE 396:
 _T58:
 	result = 0x0;
 // LINE 397:
 	return 0x0;
 // LINE 399:
-_T67:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0053aacd
@@ -2098,14 +2098,14 @@ short Station::GetNextNearest(/*packed*/ struct _GridCoordinates *result) {
 	return reinterpret_cast<uint16_t>(removedStruct.cost);
 // LINE 412:
 // Block end:
-	__asm        jmp    _T5b;
+	__asm        jmp    __RETURN;
 // LINE 414:
 _T4c:
 	result = 0x0;
 // LINE 415:
 	return 0x0;
 // LINE 417:
-_T5b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0053ab2f
@@ -2399,7 +2399,7 @@ _T3a9:
 	__asm        jmp    _T3ae;
 _T3ae:
 	__asm        mov    eax, [ebp-0x120];
-	__asm        jmp    _Te01;
+	__asm        jmp    __RETURN;
 // LINE 467:
 _T3b9:
 	__asm        lea    eax, destLoc.x;
@@ -2587,7 +2587,7 @@ _T67c:
 	__asm        jmp    _T681;
 _T681:
 	__asm        mov    eax, [ebp-0x12C];
-	__asm        jmp    _Te01;
+	__asm        jmp    __RETURN;
 // LINE 479:
 _T68c:
 	__asm        mov    eax, availableVehicle;
@@ -3102,7 +3102,7 @@ _Td37:
 	__asm        jmp    _Td3c;
 _Td3c:
 	__asm        mov    eax, [ebp-0x1E8];
-	__asm        jmp    _Te01;
+	__asm        jmp    __RETURN;
 // LINE 584:
 _Td47:
 	__asm        mov    dword ptr [ebp-0x1EC], 1;
@@ -3148,9 +3148,9 @@ _Tdf1:
 	__asm        jmp    _Tdf6;
 _Tdf6:
 	__asm        mov    eax, [ebp-0x1EC];
-	__asm        jmp    _Te01;
+	__asm        jmp    __RETURN;
 // LINE 585:
-_Te01:
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -3159,8 +3159,8 @@ static void $E36() {
 
 	__asm        mov    ecx, 0x6351D0;
 	__asm        call   DigitalSound::~DigitalSound;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0053b9b5

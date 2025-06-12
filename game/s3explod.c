@@ -144,13 +144,13 @@ _T62:
 	__asm        add    sd, 0x1C;
 _T69:
 	__asm        cmp    i, 0x64;
-	__asm        jge    _T81;
+	__asm        jge    __RETURN;
 // LINE 73:
 	sd->flags = 0x0;
 // LINE 75:
 	__asm        jmp    _T62;
 // LINE 77:
-_T81:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00523996

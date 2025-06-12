@@ -711,8 +711,8 @@ static void $E48() {
 
 	__asm        call   $E44;
 	__asm        call   $E47;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -905,8 +905,8 @@ static void $E47() {
 	__asm        push   0x4A0C90;
 	__asm        call   atexit;
 	__asm        add    esp, 4;
-	__asm        jmp    _T18;
-_T18:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -1064,8 +1064,8 @@ static void $E53() {
 
 	__asm        call   $E50;
 	__asm        call   $E52;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -1258,8 +1258,8 @@ static void $E52() {
 	__asm        push   0x4A10EF;
 	__asm        call   atexit;
 	__asm        add    esp, 4;
-	__asm        jmp    _T18;
-_T18:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -1417,8 +1417,8 @@ static void $E58() {
 
 	__asm        call   $E55;
 	__asm        call   $E57;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -1611,8 +1611,8 @@ static void $E57() {
 	__asm        push   0x4A154E;
 	__asm        call   atexit;
 	__asm        add    esp, 4;
-	__asm        jmp    _T18;
-_T18:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -1769,8 +1769,8 @@ _T1c5:
 static void $E61() {
 
 	__asm        call   $E60;
-	__asm        jmp    _T10;
-_T10:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -1779,8 +1779,8 @@ static void $E60() {
 
 	__asm        mov    ecx, 0x606968;
 	__asm        call   GraphicWindowColorConstants::GraphicWindowColorConstants;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a174c
@@ -3090,7 +3090,7 @@ long GraphicWindowManager::DoCursorDown(long nCursorX, long nCursorY, unsigned l
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, GraphicWindow::windowCursorCapture;
 	__asm        call   dword ptr [eax+0x8C];
-	__asm        jmp    _T7d;
+	__asm        jmp    __RETURN;
 // LINE 320:
 _T58:
 	__asm        mov    eax, nButton;
@@ -3107,9 +3107,9 @@ _T58:
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x20];
-	__asm        jmp    _T7d;
+	__asm        jmp    __RETURN;
 // LINE 321:
-_T7d:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a268c
@@ -3137,7 +3137,7 @@ long GraphicWindowManager::DoCursorUp(long nCursorX, long nCursorY, unsigned lon
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, GraphicWindow::windowCursorCapture;
 	__asm        call   dword ptr [eax+0x90];
-	__asm        jmp    _T7d;
+	__asm        jmp    __RETURN;
 // LINE 336:
 _T58:
 	__asm        mov    eax, nButton;
@@ -3154,9 +3154,9 @@ _T58:
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x20];
-	__asm        jmp    _T7d;
+	__asm        jmp    __RETURN;
 // LINE 337:
-_T7d:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a2710
@@ -3182,7 +3182,7 @@ long GraphicWindowManager::DoCursorMove(long nCursorX, long nCursorY) {
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, GraphicWindow::windowCursorCapture;
 	__asm        call   dword ptr [eax+0x94];
-	__asm        jmp    _T77;
+	__asm        jmp    __RETURN;
 // LINE 350:
 _T54:
 	__asm        push   0;
@@ -3198,9 +3198,9 @@ _T54:
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x20];
-	__asm        jmp    _T77;
+	__asm        jmp    __RETURN;
 // LINE 351:
-_T77:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a278e
@@ -3322,7 +3322,7 @@ _T116:
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x20];
-	__asm        jmp    _T238;
+	__asm        jmp    __RETURN;
 // LINE 375:
 _T13d:
 	__asm        mov    eax, childWindow;
@@ -3382,7 +3382,7 @@ _T1b0:
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, childWindow;
 	__asm        call   dword ptr [eax+0x8C];
-	__asm        jmp    _T238;
+	__asm        jmp    __RETURN;
 // LINE 382:
 	__asm        jmp    _T231;
 _T1de:
@@ -3399,7 +3399,7 @@ _T1de:
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, childWindow;
 	__asm        call   dword ptr [eax+0x90];
-	__asm        jmp    _T238;
+	__asm        jmp    __RETURN;
 // LINE 384:
 	__asm        jmp    _T231;
 _T20c:
@@ -3414,12 +3414,12 @@ _T20c:
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, childWindow;
 	__asm        call   dword ptr [eax+0x94];
-	__asm        jmp    _T238;
+	__asm        jmp    __RETURN;
 // LINE 386:
 _T231:
 	return 0x0;
 // LINE 387:
-_T238:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a29cd
@@ -3458,9 +3458,9 @@ int32_t GraphicWindowManager::IsWindowValid(/*unpacked*/ class GraphicWindow *wi
 	__asm        push   eax;
 	__asm        call   GraphicWindow::FindWindowA;
 	__asm        add    esp, 4;
-	__asm        jmp    _T1d;
+	__asm        jmp    __RETURN;
 // LINE 416:
-_T1d:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a2a3f
@@ -3840,8 +3840,8 @@ _T4ac:
 // LINE 455:
 	this-><GraphicWindow+0x58:4> = 0xffffffff;
 // LINE 456:
-	__asm        jmp    _T515;
-_T515:
+	__asm        jmp    __RETURN;
+__RETURN:
 	__asm        mov    eax, this;
 }
 
@@ -4200,8 +4200,8 @@ _T477:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::operator=;
 // LINE 467:
-	__asm        jmp    _T488;
-_T488:
+	__asm        jmp    __RETURN;
+__RETURN:
 	__asm        mov    eax, this;
 }
 
@@ -4614,8 +4614,8 @@ _T538:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::SetImageToDrawOnto;
 // LINE 493:
-	__asm        jmp    _T545;
-_T545:
+	__asm        jmp    __RETURN;
+__RETURN:
 	__asm        mov    eax, this;
 }
 
@@ -5124,8 +5124,8 @@ _T6d3:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::SetImageToDrawOnto;
 // LINE 528:
-	__asm        jmp    _T6fb;
-_T6fb:
+	__asm        jmp    __RETURN;
+__RETURN:
 	__asm        mov    eax, this;
 }
 
@@ -5493,8 +5493,8 @@ _T457:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T485:
-	__asm        jmp    _T48a;
-_T48a:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a44d4
@@ -6208,8 +6208,8 @@ _T5d:
 	this-><GraphicWindow+0x40:4> = 0x0;
 // LINE 668:
 _T67:
-	__asm        jmp    _T6c;
-_T6c:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a4d1c
@@ -6245,8 +6245,8 @@ _T41:
 	__asm        call   dword ptr [edx+8];
 // LINE 682:
 _T56:
-	__asm        jmp    _T5b;
-_T5b:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a4d7e
@@ -6287,8 +6287,8 @@ _T4d:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 694:
-	__asm        jmp    _T6c;
-_T6c:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a4df1
@@ -6326,8 +6326,8 @@ _T3e:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 708:
-	__asm        jmp    _T5d;
-_T5d:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a4e55
@@ -6358,8 +6358,8 @@ _T16:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x3C];
 // LINE 717:
-	__asm        jmp    _T4c;
-_T4c:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a4ea8
@@ -6432,8 +6432,8 @@ _T69:
 	__asm        call   dword ptr [eax+0x34];
 // LINE 743:
 _Ta8:
-	__asm        jmp    _Tad;
-_Tad:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a4f5c
@@ -6583,9 +6583,9 @@ _T14f:
 _T176:
 	__asm        xor    eax, eax;
 _T178:
-	__asm        jmp    _T17d;
+	__asm        jmp    __RETURN;
 // LINE 778:
-_T17d:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a50e0
@@ -6675,8 +6675,8 @@ _Tdf:
 // LINE 797:
 // Block end:
 _Te4:
-	__asm        jmp    _Te9;
-_Te9:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a51d0
@@ -6842,8 +6842,8 @@ _T1d3:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 811:
-	__asm        jmp    _T1e7;
-_T1e7:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a53be
@@ -7673,8 +7673,8 @@ _T153:
 	__asm        call   GraphicWindowManager::DeleteAllWindowsInDeletionList;
 // LINE 929:
 _T176:
-	__asm        jmp    _T17b;
-_T17b:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a5cd8
@@ -7766,8 +7766,8 @@ _Tea:
 	__asm        jmp    _T27;
 // LINE 940:
 _Tef:
-	__asm        jmp    _Tf4;
-_Tf4:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a5dd1
@@ -8034,8 +8034,8 @@ void  GraphicWindow::RemoveSelf() {
 	__asm        call   dword ptr [edx+0x60];
 // LINE 1013:
 _T2e:
-	__asm        jmp    _T33;
-_T33:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a60a3
@@ -8129,7 +8129,7 @@ void  GraphicWindow::DrawChildren() {
 	__asm        cmp    dword ptr [eax+0x54], 0;
 	__asm        jne    _T1e;
 // LINE 1079:
-	__asm        jmp    _Td1;
+	__asm        jmp    __RETURN;
 // LINE 1081:
 _T1e:
 	__asm        mov    eax, this;
@@ -8199,8 +8199,8 @@ _Tbc:
 	__asm        jmp    _T39;
 // LINE 1092:
 _Tcc:
-	__asm        jmp    _Td1;
-_Td1:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a6256
@@ -8322,8 +8322,8 @@ _T132:
 	__asm        jmp    _T1e;
 // LINE 1130:
 _T137:
-	__asm        jmp    _T13c;
-_T13c:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a6399
@@ -8404,8 +8404,8 @@ _Tc1:
 	__asm        jmp    _T27;
 // LINE 1142:
 _Tc6:
-	__asm        jmp    _Tcb;
-_Tcb:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a646b
@@ -8595,8 +8595,8 @@ _T12:
 	__asm        jmp    _T12;
 // LINE 1307:
 _T43:
-	__asm        jmp    _T48;
-_T48:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a66cc
@@ -8630,8 +8630,8 @@ void  GraphicWindow::ScreenToWindowCoordinates(long& nXPosition, long& nYPositio
 	__asm        mov    ecx, nYPosition;
 	__asm        sub    [ecx], eax;
 // LINE 1327:
-	__asm        jmp    _T4d;
-_T4d:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a6720
@@ -8946,8 +8946,8 @@ _T482:
 	__asm        jmp    _T487;
 // LINE 1358:
 _T487:
-	__asm        jmp    _T48c;
-_T48c:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a6bcd
@@ -9135,8 +9135,8 @@ _Tc6:
 	__asm        jmp    _T32;
 // LINE 1410:
 _Tcb:
-	__asm        jmp    _Td0;
-_Td0:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a6dc5
@@ -9225,8 +9225,8 @@ _Td3:
 	__asm        jmp    _T3f;
 // LINE 1430:
 _Td8:
-	__asm        jmp    _Tdd;
-_Tdd:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a6ea7
@@ -9309,8 +9309,8 @@ _Tc6:
 	__asm        jmp    _T32;
 // LINE 1449:
 _Tcb:
-	__asm        jmp    _Td0;
-_Td0:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a6f7c
@@ -9411,8 +9411,8 @@ _T2f:
 	__asm        mov    ecx, [eax+0x44];
 	__asm        call   dword ptr [edx+0x40];
 // LINE 1468:
-	__asm        jmp    _Tf2;
-_Tf2:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a7075

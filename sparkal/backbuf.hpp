@@ -20,8 +20,8 @@ unsigned long IBackBuffer::Swap(/*unpacked*/ class CSparkalWindow *pDest, long D
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x20];
-	__asm        jmp    _T3a;
+	__asm        jmp    __RETURN;
 // LINE 68:
-_T3a:
+__RETURN:
 }
 

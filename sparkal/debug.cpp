@@ -3905,7 +3905,7 @@ _Ta2:
 	__asm        mov    eax, [eax+0x38];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3860];
-	__asm        jmp    _T114;
+	__asm        jmp    __RETURN;
 // LINE 358:
 	__asm        jmp    _T10d;
 _Tc5:
@@ -3933,7 +3933,7 @@ _Tee:
 _T10d:
 	return 0x0;
 // LINE 360:
-_T114:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004249ef
@@ -3958,9 +3958,9 @@ long CDebugWindow::WindowProcedure(void * __ptr32 hWindow, uint32_t Message, uin
 	__asm        push   eax;
 	__asm        mov    ecx, debugWin;
 	__asm        call   CDebugWindow::InstanceWindowProcedure;
-	__asm        jmp    _T5b;
+	__asm        jmp    __RETURN;
 // LINE 366:
-	__asm        jmp    _T5b;
+	__asm        jmp    __RETURN;
 // LINE 367:
 _T40:
 	__asm        mov    eax, LParam;
@@ -3972,9 +3972,9 @@ _T40:
 	__asm        mov    eax, hWindow;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3860];
-	__asm        jmp    _T5b;
+	__asm        jmp    __RETURN;
 // LINE 368:
-_T5b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00424a51
@@ -4523,7 +4523,7 @@ _T11:
 	__asm        lea    ecx, str.c_str_ptr;
 	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        mov    eax, [ebp-0x1C];
-	__asm        jmp    _T683;
+	__asm        jmp    __RETURN;
 // LINE 434:
 _T35:
 	__asm        lea    ecx, subString.c_str_ptr;
@@ -4556,7 +4556,7 @@ _T4f:
 	__asm        lea    ecx, str.c_str_ptr;
 	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        mov    eax, [ebp-0x20];
-	__asm        jmp    _T683;
+	__asm        jmp    __RETURN;
 // LINE 441:
 _Ta0:
 	__asm        push   0xFFFFFFFF;
@@ -5036,9 +5036,9 @@ _T676:
 	__asm        jmp    _T67b;
 _T67b:
 	__asm        mov    eax, [ebp-0x4C];
-	__asm        jmp    _T683;
+	__asm        jmp    __RETURN;
 // LINE 473:
-_T683:
+__RETURN:
 }
 
 

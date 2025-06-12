@@ -564,9 +564,9 @@ int32_t EmergencyVehicleClass::S3UpdateCar(int32_t id, int32_t status) {
 	__asm        mov    eax, id;
 	__asm        mov    ecx, cars[0][eax*4];
 	__asm        call   EmergencyVehicleClass::UpdateCar;
-	__asm        jmp    _T1e;
+	__asm        jmp    __RETURN;
 // LINE 72:
-_T1e:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00541553
@@ -598,12 +598,12 @@ _T3c:
 	__asm        mov    eax, id;
 	__asm        mov    eax, cars[0][eax*4];
 	__asm        add    eax, 0xC;
-	__asm        jmp    _T33;
+	__asm        jmp    __RETURN;
 // LINE 95:
 _T2c:
 	return 0x0;
 // LINE 96:
-_T33:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x005415d5
@@ -634,8 +634,8 @@ void EmergencyVehicleClass::~EmergencyVehicleClass() {
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5934C0;
-	__asm        jmp    _T1a;
-_T1a:
+	__asm        jmp    __RETURN;
+__RETURN:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::~AutomobileClass;
 }
@@ -1602,9 +1602,9 @@ int32_t EmergencyVehicleClass::AreThereMoreSeats(/*packed*/ struct _DYOBJ_INST *
 	__asm        movsx  eax, word ptr [eax+0xE];
 	__asm        mov    eax, cars[0][eax*4];
 	__asm        mov    eax, [eax+0x29C];
-	__asm        jmp    _T1f;
+	__asm        jmp    __RETURN;
 // LINE 569:
-_T1f:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00542203
@@ -1740,7 +1740,7 @@ enum TurnIndex EmergencyVehicleClass::PickTurnDir(/*packed*/ struct Goal *pGoal)
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::PickTurnDir;
-	__asm        jmp    _Ta3;
+	__asm        jmp    __RETURN;
 // LINE 680:
 _T2d:
 	__asm        mov    eax, this;
@@ -1773,9 +1773,9 @@ _T65:
 	__asm        mov    eax, [eax+0xE2];
 	__asm        shl    eax, 4;
 	__asm        mov    eax, TILUT[0][0][eax+edx*4];
-	__asm        jmp    _Ta3;
+	__asm        jmp    __RETURN;
 // LINE 684:
-_Ta3:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0054241d

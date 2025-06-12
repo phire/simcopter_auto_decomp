@@ -1483,7 +1483,7 @@ _T91:
 	__asm        rep movsd;
 	__asm        movsw;
 	__asm        mov    eax, __$ReturnUdt;
-	__asm        jmp    _T68d;
+	__asm        jmp    __RETURN;
 // LINE 453:
 // Block end:
 _T1a1:
@@ -1958,9 +1958,9 @@ _T676:
 	__asm        rep movsd;
 	__asm        movsw;
 	__asm        mov    eax, __$ReturnUdt;
-	__asm        jmp    _T68d;
+	__asm        jmp    __RETURN;
 // LINE 530:
-_T68d:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0053d02c
@@ -7738,9 +7738,9 @@ _T5f:
 _T7e:
 	__asm        mov    eax, [ebp-4];
 _T81:
-	__asm        jmp    _T86;
+	__asm        jmp    __RETURN;
 // LINE 1448:
-_T86:
+__RETURN:
 }
 
 

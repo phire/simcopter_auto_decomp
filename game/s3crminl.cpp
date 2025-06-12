@@ -443,9 +443,9 @@ int32_t CreateCriminalCarInstance(int32_t instanceID) {
 _T24:
 	__asm        xor    eax, eax;
 _T26:
-	__asm        jmp    _T2b;
+	__asm        jmp    __RETURN;
 // LINE 83:
-_T2b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x005349f0
@@ -461,9 +461,9 @@ int32_t S3CriminalMissionStart(short mID, short mType, long x, long y) {
 	__asm        push   eax;
 	__asm        call   CriminalEvaderCarClass::StartCriminalMission;
 	__asm        add    esp, 0x10;
-	__asm        jmp    _T23;
+	__asm        jmp    __RETURN;
 // LINE 89:
-_T23:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00534a18
@@ -486,8 +486,8 @@ void CriminalEvaderCarClass::~CriminalEvaderCarClass() {
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593258;
-	__asm        jmp    _T1a;
-_T1a:
+	__asm        jmp    __RETURN;
+__RETURN:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::~AutomobileClass;
 }
@@ -1144,7 +1144,7 @@ _T62:
 	__asm        jmp    _T6e;
 _T6e:
 	__asm        mov    eax, [ebp-0x1C];
-	__asm        jmp    _T502;
+	__asm        jmp    __RETURN;
 // LINE 481:
 	__asm        jmp    _T153;
 // LINE 482:
@@ -1184,7 +1184,7 @@ _T168:
 	__asm        jmp    _T174;
 _T174:
 	__asm        mov    eax, [ebp-0x20];
-	__asm        jmp    _T502;
+	__asm        jmp    __RETURN;
 // LINE 511:
 	__asm        jmp    _T255;
 // LINE 512:
@@ -1229,7 +1229,7 @@ _T26a:
 	__asm        jmp    _T276;
 _T276:
 	__asm        mov    eax, [ebp-0x24];
-	__asm        jmp    _T502;
+	__asm        jmp    __RETURN;
 // LINE 532:
 	__asm        jmp    _T2f0;
 // LINE 533:
@@ -1268,7 +1268,7 @@ _T305:
 	__asm        jmp    _T311;
 _T311:
 	__asm        mov    eax, [ebp-0x28];
-	__asm        jmp    _T502;
+	__asm        jmp    __RETURN;
 // LINE 573:
 	__asm        jmp    _T3ed;
 // LINE 574:
@@ -1313,7 +1313,7 @@ _T402:
 	__asm        jmp    _T40e;
 _T40e:
 	__asm        mov    eax, [ebp-0x2C];
-	__asm        jmp    _T502;
+	__asm        jmp    __RETURN;
 // LINE 614:
 	__asm        jmp    _T4a8;
 // LINE 615:
@@ -1373,9 +1373,9 @@ _T4da:
 	__asm        jmp    _T4fa;
 _T4fa:
 	__asm        mov    eax, [ebp-0x30];
-	__asm        jmp    _T502;
+	__asm        jmp    __RETURN;
 // LINE 622:
-_T502:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00535709

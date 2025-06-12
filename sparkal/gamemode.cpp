@@ -500,9 +500,9 @@ int32_t operator==(const /*packed*/ class CopterGameMode& gameMode1, const /*pac
 _T20:
 	__asm        xor    eax, eax;
 _T22:
-	__asm        jmp    _T27;
+	__asm        jmp    __RETURN;
 // LINE 71:
-_T27:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004bd72d
@@ -880,9 +880,9 @@ _T310:
 	__asm        jmp    _T315;
 _T315:
 	__asm        mov    eax, [ebp-0x88];
-	__asm        jmp    _T320;
+	__asm        jmp    __RETURN;
 // LINE 223:
-_T320:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004bdc6f
@@ -3659,7 +3659,7 @@ _T39:
 // LINE 1021:
 	__asm        mov    ecx, this;
 	__asm        call   GameModePlayData::ProcessUserJustJumpedIntoHelicopter;
-	__asm        jmp    _T8e;
+	__asm        jmp    __RETURN;
 // LINE 1024:
 _T5d:
 	__asm        jmp    _T86;
@@ -3673,12 +3673,12 @@ _T62:
 // LINE 1031:
 	__asm        mov    ecx, this;
 	__asm        call   GameModePlayData::ProcessUserJustJumpedOutOfHelicopter;
-	__asm        jmp    _T8e;
+	__asm        jmp    __RETURN;
 // LINE 1034:
 _T86:
 	return lReturnValue;
 // LINE 1035:
-_T8e:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004bff6b

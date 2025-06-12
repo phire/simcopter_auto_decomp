@@ -540,9 +540,9 @@ int32_t CreateFireTruckInstance(int32_t instanceID) {
 _T24:
 	__asm        xor    eax, eax;
 _T26:
-	__asm        jmp    _T2b;
+	__asm        jmp    __RETURN;
 // LINE 78:
-_T2b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00536130
@@ -565,8 +565,8 @@ void FireEngineClass::~FireEngineClass() {
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5932A8;
-	__asm        jmp    _T1a;
-_T1a:
+	__asm        jmp    __RETURN;
+__RETURN:
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::~EmergencyVehicleClass;
 }
@@ -752,9 +752,9 @@ int32_t FireEngineClass::Dispatch(enum EmergencyType responseType, enum Emergenc
 	__asm        push   eax;
 	__asm        mov    ecx, gFireStations;
 	__asm        call   Station::DispatchNearestAvailableVehicle;
-	__asm        jmp    _T2d;
+	__asm        jmp    __RETURN;
 // LINE 212:
-_T2d:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x005363b3
@@ -770,9 +770,9 @@ int32_t FireEngineClass::IsThisAFireStation(unsigned short tileType) {
 _T23:
 	__asm        xor    eax, eax;
 _T25:
-	__asm        jmp    _T2a;
+	__asm        jmp    __RETURN;
 // LINE 219:
-_T2a:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x005363e2
@@ -824,9 +824,9 @@ _T96:
 _Ta0:
 	__asm        xor    eax, eax;
 _Ta2:
-	__asm        jmp    _Ta7;
+	__asm        jmp    __RETURN;
 // LINE 226:
-_Ta7:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0053648e
@@ -1294,7 +1294,7 @@ _Tf9:
 	__asm        jmp    _T13e;
 _T13e:
 	__asm        mov    eax, [ebp-0x28];
-	__asm        jmp    _T20e;
+	__asm        jmp    __RETURN;
 // LINE 468:
 _T146:
 	stobj = stobj->next;
@@ -1319,7 +1319,7 @@ _T15c:
 	__asm        jmp    _T18e;
 _T18e:
 	__asm        mov    eax, [ebp-0x2C];
-	__asm        jmp    _T20e;
+	__asm        jmp    __RETURN;
 // LINE 483:
 _T196:
 	__asm        mov    eax, dyobj;
@@ -1349,16 +1349,16 @@ _T1d6:
 	__asm        jmp    _T1f2;
 _T1f2:
 	__asm        mov    eax, [ebp-0x30];
-	__asm        jmp    _T20e;
+	__asm        jmp    __RETURN;
 // LINE 497:
 _T1fa:
 	__asm        mov    dword ptr [ebp-0x34], 0;
 	__asm        jmp    _T206;
 _T206:
 	__asm        mov    eax, [ebp-0x34];
-	__asm        jmp    _T20e;
+	__asm        jmp    __RETURN;
 // LINE 498:
-_T20e:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00536ae2

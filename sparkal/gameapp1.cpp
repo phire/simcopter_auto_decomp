@@ -790,8 +790,8 @@ static void $E118() {
 
 	__asm        call   $E115;
 	__asm        call   $E117;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -800,8 +800,8 @@ static void $E115() {
 
 	__asm        mov    ecx, 0x604808;
 	__asm        call   CopterSparkalPalette::CopterSparkalPalette;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -811,8 +811,8 @@ static void $E117() {
 	__asm        push   0x487881;
 	__asm        call   atexit;
 	__asm        add    esp, 4;
-	__asm        jmp    _T18;
-_T18:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -823,8 +823,8 @@ static void $E116() {
 _T0b:
 	__asm        mov    ecx, 0x604808;
 	__asm        call   SparkalPalette::~SparkalPalette;
-	__asm        jmp    _T1a;
-_T1a:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -833,8 +833,8 @@ static void $E123() {
 
 	__asm        call   $E120;
 	__asm        call   $E122;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -843,8 +843,8 @@ static void $E120() {
 
 	__asm        mov    ecx, 0x604588;
 	__asm        call   SoundSystem::SoundSystem;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -854,8 +854,8 @@ static void $E122() {
 	__asm        push   0x4878F1;
 	__asm        call   atexit;
 	__asm        add    esp, 4;
-	__asm        jmp    _T18;
-_T18:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -864,8 +864,8 @@ static void $E121() {
 
 	__asm        mov    ecx, 0x604588;
 	__asm        call   SoundSystem::~SoundSystem;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -874,8 +874,8 @@ static void $E128() {
 
 	__asm        call   $E125;
 	__asm        call   $E127;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -884,8 +884,8 @@ static void $E125() {
 
 	__asm        mov    ecx, 0x604600;
 	__asm        call   SoundManager::SoundManager;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -895,8 +895,8 @@ static void $E127() {
 	__asm        push   0x48795C;
 	__asm        call   atexit;
 	__asm        add    esp, 4;
-	__asm        jmp    _T18;
-_T18:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -905,8 +905,8 @@ static void $E126() {
 
 	__asm        mov    ecx, 0x604600;
 	__asm        call   SoundManager::~SoundManager;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -915,8 +915,8 @@ static void $E133() {
 
 	__asm        call   $E130;
 	__asm        call   $E132;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -925,8 +925,8 @@ static void $E130() {
 
 	__asm        mov    ecx, 0x604480;
 	__asm        call   Radio::Radio;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -936,8 +936,8 @@ static void $E132() {
 	__asm        push   0x4879C7;
 	__asm        call   atexit;
 	__asm        add    esp, 4;
-	__asm        jmp    _T18;
-_T18:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -946,8 +946,8 @@ static void $E131() {
 
 	__asm        mov    ecx, 0x604480;
 	__asm        call   Radio::~Radio;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -956,8 +956,8 @@ static void $E138() {
 
 	__asm        call   $E135;
 	__asm        call   $E137;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -987,8 +987,8 @@ static void $E137() {
 	__asm        push   0x487A58;
 	__asm        call   atexit;
 	__asm        add    esp, 4;
-	__asm        jmp    _T18;
-_T18:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -1021,8 +1021,8 @@ static void $E143() {
 
 	__asm        call   $E140;
 	__asm        call   $E142;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -1031,8 +1031,8 @@ static void $E140() {
 
 	__asm        mov    ecx, 0x604530;
 	__asm        call   MessageDisplayManager::MessageDisplayManager;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -1042,8 +1042,8 @@ static void $E142() {
 	__asm        push   0x487AF5;
 	__asm        call   atexit;
 	__asm        add    esp, 4;
-	__asm        jmp    _T18;
-_T18:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -1052,8 +1052,8 @@ static void $E141() {
 
 	__asm        mov    ecx, 0x604530;
 	__asm        call   MessageDisplayManager::~MessageDisplayManager;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00487b0f
@@ -1362,8 +1362,8 @@ _T389:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::EnterMode;
 // LINE 124:
-	__asm        jmp    _T3b3;
-_T3b3:
+	__asm        jmp    __RETURN;
+__RETURN:
 	__asm        mov    eax, this;
 }
 
@@ -1809,8 +1809,8 @@ _T63c:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x70;
 	__asm        call   GameModeCoreData::~GameModeCoreData;
-	__asm        jmp    _T64f;
-_T64f:
+	__asm        jmp    __RETURN;
+__RETURN:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x58;
 	__asm        call   GameModeCoreData::~GameModeCoreData;
@@ -1919,8 +1919,8 @@ _T19f:
 	__asm        mov    [ecx+8], eax;
 // LINE 250:
 _T1c0:
-	__asm        jmp    _T1c5;
-_T1c5:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004887b7
@@ -2244,7 +2244,7 @@ _T4b3:
 	__asm        jmp    _T4b8;
 _T4b8:
 	__asm        mov    eax, [ebp-0x12C];
-	__asm        jmp    _Tf15;
+	__asm        jmp    __RETURN;
 // LINE 284:
 _T4c3:
 	__asm        push   0;
@@ -2469,7 +2469,7 @@ _T7c5:
 	__asm        jmp    _T7ca;
 _T7ca:
 	__asm        mov    eax, [ebp-0x134];
-	__asm        jmp    _Tf15;
+	__asm        jmp    __RETURN;
 // LINE 314:
 _T7d5:
 	__asm        mov    eax, this;
@@ -2555,7 +2555,7 @@ _T905:
 	__asm        jmp    _T90a;
 _T90a:
 	__asm        mov    eax, [ebp-0x138];
-	__asm        jmp    _Tf15;
+	__asm        jmp    __RETURN;
 // LINE 328:
 _T915:
 	__asm        jmp    _T91a;
@@ -2974,9 +2974,9 @@ _Tf05:
 	__asm        jmp    _Tf0a;
 _Tf0a:
 	__asm        mov    eax, [ebp-0x158];
-	__asm        jmp    _Tf15;
+	__asm        jmp    __RETURN;
 // LINE 361:
-_Tf15:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004896d1
@@ -3005,9 +3005,9 @@ class CSparkalWindow *  CGameApp::NewWindow(unsigned long Width, unsigned long H
 _T47:
 	__asm        xor    eax, eax;
 _T49:
-	__asm        jmp    _T4e;
+	__asm        jmp    __RETURN;
 // LINE 375:
-_T4e:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00489726
@@ -3567,8 +3567,8 @@ _T2e5:
 	G_max_emptycel_size = lValue;
 // LINE 573:
 _T2f0:
-	__asm        jmp    _T2f5;
-_T2f5:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00489f3d
@@ -3916,8 +3916,8 @@ _T137:
 // LINE 704:
 	__asm        lea    ecx, tempVersion<vftable>;
 	__asm        call   Version::~Version;
-	__asm        jmp    _T1e5;
-_T1e5:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0048a370
@@ -3962,8 +3962,8 @@ _T6d:
 	__asm        call   dword ptr ds:[0x6C35F8];
 	__asm        mov    bReturnValue, eax;
 // LINE 740:
-	__asm        jmp    _T92;
-_T92:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0048a409
@@ -4350,8 +4350,8 @@ _T51f:
 	__asm        add    ecx, 0x36BC;
 	__asm        call   CommandSystem::SetUpCommandArraysFromShortcuts;
 // LINE 785:
-	__asm        jmp    _T535;
-_T535:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0048a943
@@ -4369,8 +4369,8 @@ void  CGameApp::InitializeJoysticks() {
 	__asm        jmp    _T33;
 // LINE 796:
 _T33:
-	__asm        jmp    _T38;
-_T38:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0048a980

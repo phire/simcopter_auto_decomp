@@ -21,7 +21,7 @@ _T39:
 _T62:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, this;
-	__asm        jmp    _T87;
+	__asm        jmp    __RETURN;
 _L44596:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 4;
@@ -30,7 +30,7 @@ _L44596:
 _L44595:
 	__asm        mov    eax, 0x596030;
 	__asm        jmp    near ptr 0x0056F590;
-_T87:
+__RETURN:
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    fs:[0], ecx;
 }
@@ -91,7 +91,7 @@ _Tb7:
 _Tbc:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        call   _L44659;
-	__asm        jmp    _Tff;
+	__asm        jmp    __RETURN;
 _L44659:
 	__asm        cmp    this, 0;
 	__asm        je     _Te5;
@@ -109,7 +109,7 @@ _Tec:
 _L44658:
 	__asm        mov    eax, 0x596058;
 	__asm        jmp    near ptr 0x0056F590;
-_Tff:
+__RETURN:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
 }
@@ -303,8 +303,8 @@ _T1fa:
 	__asm        jmp    _T230;
 // LINE 121:
 _T230:
-	__asm        jmp    _T235;
-_T235:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // Function in module: Bodydefs.obj
@@ -674,11 +674,11 @@ _T497:
 	__asm        call   dword ptr [edx+0xC];
 // LINE 199:
 _T4bb:
-	__asm        jmp    _T4ca;
+	__asm        jmp    __RETURN;
 _L45273:
 	__asm        mov    eax, 0x596080;
 	__asm        jmp    near ptr 0x0056F590;
-_T4ca:
+__RETURN:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
 }
@@ -739,7 +739,7 @@ _Tb7:
 _Tbc:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        call   _L45612;
-	__asm        jmp    _Tff;
+	__asm        jmp    __RETURN;
 _L45612:
 	__asm        cmp    this, 0;
 	__asm        je     _Te5;
@@ -757,7 +757,7 @@ _Tec:
 _L45611:
 	__asm        mov    eax, 0x596110;
 	__asm        jmp    near ptr 0x0056F590;
-_Tff:
+__RETURN:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
 }

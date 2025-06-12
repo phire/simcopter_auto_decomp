@@ -175,9 +175,9 @@ long FlatFile::Open(char * name) {
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+4];
-	__asm        jmp    _T56;
+	__asm        jmp    __RETURN;
 // LINE 57:
-_T56:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0055c3c7
@@ -433,11 +433,11 @@ _T29:
 
 	return 0xffffffd0;
 // LINE 174:
-	__asm        jmp    _T6e;
+	__asm        jmp    __RETURN;
 _T67:
 	return 0x0;
 // LINE 176:
-_T6e:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0055c711
@@ -465,11 +465,11 @@ _T29:
 
 	return 0xffffffce;
 // LINE 186:
-	__asm        jmp    _T5f;
+	__asm        jmp    __RETURN;
 _T58:
 	return 0x0;
 // LINE 188:
-_T5f:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0055c777
@@ -497,11 +497,11 @@ _T29:
 
 	return 0xffffffce;
 // LINE 198:
-	__asm        jmp    _T5f;
+	__asm        jmp    __RETURN;
 _T58:
 	return 0x0;
 // LINE 200:
-_T5f:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0055c7dd
@@ -513,11 +513,11 @@ unsigned short FlatFile::ValidFile() {
 
 	return 0x0;
 // LINE 222:
-	__asm        jmp    _T32;
+	__asm        jmp    __RETURN;
 _T29:
 	return 0x1;
 // LINE 223:
-_T32:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0055c814
@@ -541,12 +541,12 @@ _T21:
 // LINE 236:
 	return 0x1;
 // LINE 237:
-	__asm        jmp    _T5f;
+	__asm        jmp    __RETURN;
 // LINE 238:
 _T57:
 	return 0x0;
 // LINE 239:
-_T5f:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0055c87a

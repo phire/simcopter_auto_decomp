@@ -44,8 +44,8 @@ protected:
 static void $E2() {
 
 	__asm        call   $E1;
-	__asm        jmp    _T10;
-_T10:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -70,9 +70,9 @@ unsigned long __long_random(unsigned long limit) {
 	__asm        push   eax;
 	__asm        mov    ecx, 0x604B18;
 	__asm        call   Random::operator();
-	__asm        jmp    _T19;
+	__asm        jmp    __RETURN;
 // LINE 28:
-_T19:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00490ff1
@@ -203,9 +203,9 @@ unsigned long Random::operator()(unsigned long limit) {
 	__asm        sub    edx, edx;
 	__asm        div    limit;
 	__asm        mov    eax, edx;
-	__asm        jmp    _T81;
+	__asm        jmp    __RETURN;
 // LINE 63:
-_T81:
+__RETURN:
 }
 
 

@@ -284,7 +284,7 @@ _T250:
 	i++;
 _T253:
 	__asm        cmp    i, 0x14;
-	__asm        jge    _T273;
+	__asm        jge    __RETURN;
 // LINE 264:
 	__asm        mov    eax, i;
 	__asm        lea    eax, [eax+eax*4];
@@ -292,7 +292,7 @@ _T253:
 // LINE 265:
 	__asm        jmp    _T250;
 // LINE 267:
-_T273:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004fea08
@@ -2764,7 +2764,7 @@ _T2ae:
 _T2b1:
 	__asm        mov    eax, i;
 	__asm        cmp    S_dirlen, eax;
-	__asm        jle    _T2ff;
+	__asm        jle    __RETURN;
 // LINE 1052:
 	__asm        mov    eax, dfx;
 	__asm        sar    eax, 0x10;
@@ -2788,7 +2788,7 @@ _T2b1:
 // LINE 1058:
 	__asm        jmp    _T2ae;
 // LINE 1059:
-_T2ff:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x005004cf
@@ -3007,7 +3007,7 @@ _T35:
 _T38:
 	__asm        mov    eax, y;
 	__asm        cmp    S_borderdimy, eax;
-	__asm        jle    _T8f;
+	__asm        jle    __RETURN;
 // LINE 1173:
 	ptr = cptr;
 // LINE 1174:
@@ -3035,7 +3035,7 @@ _T84:
 // LINE 1178:
 	__asm        jmp    _T35;
 // LINE 1179:
-_T8f:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0050074d
@@ -3063,7 +3063,7 @@ _T30:
 _T33:
 	__asm        mov    eax, y;
 	__asm        cmp    S_borderdimy, eax;
-	__asm        jle    _T8a;
+	__asm        jle    __RETURN;
 // LINE 1197:
 	ptr = cptr;
 // LINE 1198:
@@ -3090,7 +3090,7 @@ _T7f:
 // LINE 1201:
 	__asm        jmp    _T30;
 // LINE 1202:
-_T8a:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x005007dc
@@ -3240,22 +3240,22 @@ int32_t S3MapCursorUp(long posx, long posy) {
 void S3MapCommandZoomIn() {
 // LINE 1323:
 	__asm        cmp    S_mapzoom, 3;
-	__asm        jge    _T19;
+	__asm        jge    __RETURN;
 // LINE 1324:
 	S_mapzoom++;
 // LINE 1325:
-_T19:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x005009be
 void S3MapCommandZoomOut() {
 // LINE 1333:
 	__asm        cmp    S_mapzoom, 0;
-	__asm        jle    _T19;
+	__asm        jle    __RETURN;
 // LINE 1334:
 	S_mapzoom--;
 // LINE 1335:
-_T19:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x005009dc
@@ -3357,7 +3357,7 @@ _Td1:
 _Td4:
 	__asm        mov    eax, S_icon_dim;
 	__asm        cmp    mapy, eax;
-	__asm        jge    _T14e;
+	__asm        jge    __RETURN;
 // LINE 1405:
 	__asm        mov    mapx, 0;
 	__asm        jmp    _Tf1;
@@ -3401,7 +3401,7 @@ _T12d:
 // LINE 1419:
 	__asm        jmp    _Td1;
 // LINE 1421:
-_T14e:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00500b65
@@ -3611,7 +3611,7 @@ _T1d:
 	i++;
 _T20:
 	__asm        cmp    i, 0x1E;
-	__asm        jge    _T14c;
+	__asm        jge    __RETURN;
 // LINE 1512:
 	__asm        mov    eax, i;
 	__asm        push   eax;
@@ -3721,7 +3721,7 @@ _T108:
 _T147:
 	__asm        jmp    _T1d;
 // LINE 1549:
-_T14c:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00500f34
@@ -3782,7 +3782,7 @@ _T15:
 	i++;
 _T18:
 	__asm        cmp    i, 0x14;
-	__asm        jge    _T50;
+	__asm        jge    __RETURN;
 // LINE 1603:
 	__asm        mov    eax, i;
 	__asm        lea    eax, [eax+eax*4];
@@ -3799,7 +3799,7 @@ _T18:
 _T4b:
 	__asm        jmp    _T15;
 // LINE 1610:
-_T50:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00501018
@@ -3817,7 +3817,7 @@ _T15:
 	i++;
 _T18:
 	__asm        cmp    i, 0x14;
-	__asm        jge    _T203;
+	__asm        jge    __RETURN;
 // LINE 1633:
 	ci = BinaryOp(add, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, i, Const(4))), Const(8)), Const(7073088));
 // LINE 1634:
@@ -3994,7 +3994,7 @@ _T1bf:
 // LINE 1683:
 	__asm        jmp    _T15;
 // LINE 1684:
-_T203:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00501220
@@ -4032,7 +4032,7 @@ _T53:
 _T56:
 	__asm        mov    eax, S_dicon_dim;
 	__asm        cmp    mapy, eax;
-	__asm        jge    _Td0;
+	__asm        jge    __RETURN;
 // LINE 1715:
 	__asm        mov    mapx, 0;
 	__asm        jmp    _T73;
@@ -4076,7 +4076,7 @@ _Taf:
 // LINE 1729:
 	__asm        jmp    _T53;
 // LINE 1731:
-_Td0:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x005012f5
@@ -4204,7 +4204,7 @@ _T13d:
 _T140:
 	__asm        mov    eax, dy;
 	__asm        cmp    index, eax;
-	__asm        jg     _T1cc;
+	__asm        jg     __RETURN;
 // LINE 1796:
 	__asm        movsx  eax, col;
 	__asm        test   eax, eax;
@@ -4252,7 +4252,7 @@ _T1c2:
 _T1c7:
 	__asm        jmp    _T13d;
 // LINE 1811:
-_T1cc:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x005014c6

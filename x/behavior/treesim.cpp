@@ -501,7 +501,7 @@ _Teb:
 _T104:
 	__asm        mov    eax, [ebp-0x10];
 _T107:
-	__asm        jmp    _T143;
+	__asm        jmp    __RETURN;
 // LINE 68:
 _T10c:
 	stackSize--;
@@ -525,9 +525,9 @@ _T130:
 _T13b:
 	__asm        mov    eax, [ebp-0x14];
 _T13e:
-	__asm        jmp    _T143;
+	__asm        jmp    __RETURN;
 // LINE 71:
-_T143:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0055ce37
@@ -842,7 +842,7 @@ _T240:
 _T260:
 	__asm        xor    ax, ax;
 _T263:
-	__asm        jmp    _T285;
+	__asm        jmp    __RETURN;
 // LINE 188:
 tree_error:
 	return 0x1;
@@ -855,7 +855,7 @@ _T27b:
 	__asm        jmp    tree_error;
 _T280:
 	__asm        jmp    tree_error;
-_T285:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0055d1c3
@@ -1029,9 +1029,9 @@ enum TreeSim::ReturnCode ExtSim::TryElement(/*unpacked*/ struct TreeSim::StackEl
 	__asm        mov    edx, [ecx];
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   dword ptr [edx];
-	__asm        jmp    _T29;
+	__asm        jmp    __RETURN;
 // LINE 257:
-_T29:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0055d3d5

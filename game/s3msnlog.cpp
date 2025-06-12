@@ -687,8 +687,8 @@ static void $E57() {
 
 	__asm        call   $E54;
 	__asm        call   $E56;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -697,8 +697,8 @@ static void $E54() {
 
 	__asm        mov    ecx, 0x606E78;
 	__asm        call   LogManager::LogManager;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -708,8 +708,8 @@ static void $E56() {
 	__asm        push   0x4EBC11;
 	__asm        call   atexit;
 	__asm        add    esp, 4;
-	__asm        jmp    _T18;
-_T18:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -718,8 +718,8 @@ static void $E55() {
 
 	__asm        mov    ecx, 0x606E78;
 	__asm        call   LogManager::~LogManager;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004ebc2b
@@ -1144,9 +1144,9 @@ int32_t LogManager::ReadLogFromFile(char * szFilePath) {
 	__asm        lea    ecx, tempMIFF<MIFF+0x00>;
 	__asm        call   MIFF::~MIFF;
 	__asm        mov    eax, [ebp-0x150];
-	__asm        jmp    _T71;
+	__asm        jmp    __RETURN;
 // LINE 74:
-_T71:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004ec165
@@ -1177,9 +1177,9 @@ int32_t LogManager::WriteLogToFile(char * szFilePath) {
 	__asm        lea    ecx, tempMIFF<MIFF+0x00>;
 	__asm        call   MIFF::~MIFF;
 	__asm        mov    eax, [ebp-0x150];
-	__asm        jmp    _T71;
+	__asm        jmp    __RETURN;
 // LINE 89:
-_T71:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004ec1dd
@@ -1623,9 +1623,9 @@ int32_t LogManager::ValidateLogEntry(/*packed*/ struct tagLogBase *logData) {
 _T2e:
 	__asm        xor    eax, eax;
 _T30:
-	__asm        jmp    _T35;
+	__asm        jmp    __RETURN;
 // LINE 209:
-_T35:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004ec749
@@ -3890,9 +3890,9 @@ long LogManager::GetStringIDFromLogEvent(const /*packed*/ struct tagLogMissionEv
 	__asm        mov    eax, lME;
 	__asm        mov    eax, [eax];
 	__asm        add    eax, 0x214;
-	__asm        jmp    _T15;
+	__asm        jmp    __RETURN;
 // LINE 434:
-_T15:
+__RETURN:
 }
 
 

@@ -2088,9 +2088,9 @@ int32_t UserMenuWindow::SetSelectionValue(int32_t nValue) {
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xC4];
-	__asm        jmp    _T33;
+	__asm        jmp    __RETURN;
 // LINE 200:
-_T33:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0049c595
@@ -2853,9 +2853,9 @@ _T10a:
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x10];
-	__asm        jmp    _T124;
+	__asm        jmp    __RETURN;
 // LINE 418:
-_T124:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0049ce9b
@@ -3295,9 +3295,9 @@ _T54e:
 	__asm        jmp    _T553;
 _T553:
 	__asm        mov    eax, [ebp-0x1C];
-	__asm        jmp    _T55b;
+	__asm        jmp    __RETURN;
 // LINE 441:
-_T55b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0049d3fd
@@ -3753,9 +3753,9 @@ int32_t CopterPlayMenu::Initialize() {
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x10];
-	__asm        jmp    _T26;
+	__asm        jmp    __RETURN;
 // LINE 624:
-_T26:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0049dac8
@@ -4206,9 +4206,9 @@ _T573:
 	__asm        jmp    _T578;
 _T578:
 	__asm        mov    eax, [ebp-0x1C];
-	__asm        jmp    _T580;
+	__asm        jmp    __RETURN;
 // LINE 647:
-_T580:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0049e04f
@@ -4428,9 +4428,9 @@ _T1b:
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0xC8];
 	__asm        sar    eax, 2;
-	__asm        jmp    _T35;
+	__asm        jmp    __RETURN;
 // LINE 220:
-_T35:
+__RETURN:
 }
 
 

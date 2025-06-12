@@ -122,9 +122,9 @@ unsigned long CSparkalWindow::Draw() {
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x28];
-	__asm        jmp    _T1c;
+	__asm        jmp    __RETURN;
 // LINE 56:
-_T1c:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00432325

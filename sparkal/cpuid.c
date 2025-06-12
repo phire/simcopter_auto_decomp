@@ -343,9 +343,9 @@ _Tba:
 _T31:
 	__asm        mov    eax, timestamp.High;
 	__asm        mov    edx, timestamp.Low;
-	__asm        jmp    _T3c;
+	__asm        jmp    __RETURN;
 // LINE 343:
-_T3c:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0047b92d

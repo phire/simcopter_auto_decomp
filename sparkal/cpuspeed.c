@@ -98,7 +98,7 @@ int32_t DllMain(void * __ptr32 hDLL, unsigned long dwReason, void * __ptr32 lpRe
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ecx+0xC], eax;
 	__asm        mov    eax, [ebp+8];
-	__asm        jmp    _T452;
+	__asm        jmp    __RETURN;
 // LINE 139:
 _T87:
 	__asm        cmp    clocks, 0;
@@ -144,7 +144,7 @@ _Te9:
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ecx+0xC], eax;
 	__asm        mov    eax, [ebp+8];
-	__asm        jmp    _T452;
+	__asm        jmp    __RETURN;
 // LINE 159:
 _T10d:
 	__asm        lea    eax, count_freq<_LARGE_INTEGER+0x00:None>;
@@ -164,7 +164,7 @@ _T10d:
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ecx+0xC], eax;
 	__asm        mov    eax, [ebp+8];
-	__asm        jmp    _T452;
+	__asm        jmp    __RETURN;
 // LINE 166:
 _T143:
 	__asm        test   reinterpret_cast<uint8_t>(features), 0x10;
@@ -483,9 +483,9 @@ _T409:
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ecx+0xC], eax;
 	__asm        mov    eax, [ebp+8];
-	__asm        jmp    _T452;
+	__asm        jmp    __RETURN;
 // LINE 409:
-_T452:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00447fce
@@ -569,7 +569,7 @@ _Tf9:
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [ecx+eax*2];
 	__asm        mov    eax, edx;
-	__asm        jmp    _T296;
+	__asm        jmp    __RETURN;
 // LINE 451:
 _T138:
 	ptr++;
@@ -579,7 +579,7 @@ _T138:
 _T140:
 	return freq;
 // LINE 458:
-	__asm        jmp    _T296;
+	__asm        jmp    __RETURN;
 _T14d:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(processor);
 	__asm        and    eax, 0xFFFF;
@@ -609,7 +609,7 @@ _T164:
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [ecx+eax*2];
 	__asm        mov    eax, edx;
-	__asm        jmp    _T296;
+	__asm        jmp    __RETURN;
 // LINE 469:
 _T1a3:
 	ptr++;
@@ -619,7 +619,7 @@ _T1a3:
 _T1ab:
 	return freq;
 // LINE 476:
-	__asm        jmp    _T296;
+	__asm        jmp    __RETURN;
 _T1b8:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(processor);
 	__asm        and    eax, 0xFFFF;
@@ -649,7 +649,7 @@ _T1cf:
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [ecx+eax*2];
 	__asm        mov    eax, edx;
-	__asm        jmp    _T296;
+	__asm        jmp    __RETURN;
 // LINE 487:
 _T20e:
 	ptr++;
@@ -659,7 +659,7 @@ _T20e:
 _T216:
 	return freq;
 // LINE 494:
-	__asm        jmp    _T296;
+	__asm        jmp    __RETURN;
 _T223:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(processor);
 	__asm        and    eax, 0xFFFF;
@@ -689,7 +689,7 @@ _T23a:
 	__asm        xor    edx, edx;
 	__asm        mov    dx, [ecx+eax*2];
 	__asm        mov    eax, edx;
-	__asm        jmp    _T296;
+	__asm        jmp    __RETURN;
 // LINE 505:
 _T279:
 	ptr++;
@@ -699,12 +699,12 @@ _T279:
 _T281:
 	return freq;
 // LINE 512:
-	__asm        jmp    _T296;
+	__asm        jmp    __RETURN;
 // LINE 513:
 _T28e:
 	return freq;
 // LINE 515:
-_T296:
+__RETURN:
 }
 
 

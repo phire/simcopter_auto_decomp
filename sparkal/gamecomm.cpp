@@ -2078,16 +2078,16 @@ _T46d:
 	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::~MIFF;
 	__asm        mov    eax, [ebp-0x268];
-	__asm        jmp    _T4b8;
+	__asm        jmp    __RETURN;
 // LINE 578:
 _T498:
 	__asm        mov    dword ptr [ebp-0x26C], 0;
 	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::~MIFF;
 	__asm        mov    eax, [ebp-0x26C];
-	__asm        jmp    _T4b8;
+	__asm        jmp    __RETURN;
 // LINE 579:
-_T4b8:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0048c6f1
@@ -2216,7 +2216,7 @@ _T171:
 	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::~MIFF;
 	__asm        mov    eax, [ebp-0x278];
-	__asm        jmp    _T1c7;
+	__asm        jmp    __RETURN;
 // LINE 604:
 // Block end:
 _T1a7:
@@ -2224,9 +2224,9 @@ _T1a7:
 	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::~MIFF;
 	__asm        mov    eax, [ebp-0x27C];
-	__asm        jmp    _T1c7;
+	__asm        jmp    __RETURN;
 // LINE 605:
-_T1c7:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0048c8bd
@@ -4526,9 +4526,9 @@ _T3b:
 _T45:
 	__asm        xor    eax, eax;
 _T47:
-	__asm        jmp    _T4c;
+	__asm        jmp    __RETURN;
 // LINE 1019:
-_T4c:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0048e64b
@@ -4563,9 +4563,9 @@ int32_t IsCommandConfigurable(long lCommand) {
 _T24:
 	__asm        xor    eax, eax;
 _T26:
-	__asm        jmp    _T2b;
+	__asm        jmp    __RETURN;
 // LINE 1046:
-_T2b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0048e6c6

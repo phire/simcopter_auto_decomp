@@ -730,9 +730,9 @@ float Keep0to2pi(float radians) {
 	__asm        add    esp, 4;
 // LINE 176:
 	__asm        fld    radians;
-	__asm        jmp    _T1a;
+	__asm        jmp    __RETURN;
 // LINE 177:
-_T1a:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00562c9a
@@ -854,9 +854,9 @@ _Ted:
 // LINE 203:
 _T104:
 	__asm        fld    res;
-	__asm        jmp    _T10c;
+	__asm        jmp    __RETURN;
 // LINE 204:
-_T10c:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00562df2
@@ -891,9 +891,9 @@ double GetLength(float x, float z, float y) {
 	__asm        add    esp, 8;
 	__asm        fst    rad;
 // LINE 216:
-	__asm        jmp    _T49;
+	__asm        jmp    __RETURN;
 // LINE 217:
-_T49:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00562e50

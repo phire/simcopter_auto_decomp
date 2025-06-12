@@ -12,8 +12,8 @@ int  Directory::ReadDirectoryDirectoryEntriesIntoStringList(/*packed*/ class lis
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   Directory::ReadDirectorySpecificEntriesIntoStringList;
-	__asm        jmp    _T29;
+	__asm        jmp    __RETURN;
 // LINE 203:
-_T29:
+__RETURN:
 }
 

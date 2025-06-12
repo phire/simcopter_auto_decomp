@@ -708,8 +708,8 @@ void cGZXParamBitstream<t_alloc,t_free>::Rewind() {
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, this;
 	__asm        mov    word ptr [eax+0xC], 0;
-	__asm        jmp    _T24;
-_T24:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // Function in module: scxload.obj
@@ -724,8 +724,8 @@ void cGZXParamBitstream<t_alloc,t_free>::RewindToMark() {
 	__asm        mov    ax, [eax+0xE];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], ax;
-	__asm        jmp    _T2b;
-_T2b:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // Function in module: scxload.obj
@@ -740,8 +740,8 @@ void cGZXParamBitstream<t_alloc,t_free>::Mark() {
 	__asm        mov    ax, [eax+0xC];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xE], ax;
-	__asm        jmp    _T2b;
-_T2b:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // Function in module: scxload.obj

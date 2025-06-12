@@ -2724,7 +2724,7 @@ _T94:
 
 	__asm        mov    eax, [ebp-4];
 _T9c:
-	__asm        jmp    _Tec;
+	__asm        jmp    __RETURN;
 // LINE 135:
 _Ta1:
 	__asm        mov    eax, this;
@@ -2737,7 +2737,7 @@ _Ta1:
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   HotSpot::PointInCircle;
-	__asm        jmp    _Tec;
+	__asm        jmp    __RETURN;
 // LINE 137:
 _Tc3:
 	__asm        mov    eax, this;
@@ -2750,12 +2750,12 @@ _Tc3:
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   HotSpot::PointInPolygon;
-	__asm        jmp    _Tec;
+	__asm        jmp    __RETURN;
 // LINE 139:
 _Te5:
 	return 0x0;
 // LINE 140:
-_Tec:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004badf8
@@ -2871,9 +2871,9 @@ _Td5:
 _T124:
 	__asm        xor    eax, eax;
 _T126:
-	__asm        jmp    _T12b;
+	__asm        jmp    __RETURN;
 // LINE 168:
-_T12b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004baf2a
@@ -3414,7 +3414,7 @@ int32_t LoadListFromResource(/*packed*/ class list<HotSpot>& hotSpotList, int32_
 	__asm        lea    ecx, resourceHangarHotspots<vftable>;
 	__asm        call   ResourceRCData::~ResourceRCData;
 	__asm        mov    eax, [ebp-0x38];
-	__asm        jmp    _T4a7;
+	__asm        jmp    __RETURN;
 // LINE 282:
 _T51:
 	__asm        mov    eax, fileImage;
@@ -3425,7 +3425,7 @@ _T51:
 	__asm        lea    ecx, resourceHangarHotspots<vftable>;
 	__asm        call   ResourceRCData::~ResourceRCData;
 	__asm        mov    eax, [ebp-0x3C];
-	__asm        jmp    _T4a7;
+	__asm        jmp    __RETURN;
 // LINE 284:
 _T75:
 	__asm        mov    eax, fileImage;
@@ -3436,7 +3436,7 @@ _T75:
 	__asm        lea    ecx, resourceHangarHotspots<vftable>;
 	__asm        call   ResourceRCData::~ResourceRCData;
 	__asm        mov    eax, [ebp-0x40];
-	__asm        jmp    _T4a7;
+	__asm        jmp    __RETURN;
 // LINE 286:
 _T9b:
 	nHotspotRecordCount = fileImage->lRecordCount;
@@ -3727,9 +3727,9 @@ _T490:
 	__asm        lea    ecx, resourceHangarHotspots<vftable>;
 	__asm        call   ResourceRCData::~ResourceRCData;
 	__asm        mov    eax, [ebp-0x58];
-	__asm        jmp    _T4a7;
+	__asm        jmp    __RETURN;
 // LINE 294:
-_T4a7:
+__RETURN:
 }
 
 

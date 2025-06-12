@@ -1923,9 +1923,9 @@ _T10f:
 _T134:
 	__asm        xor    eax, eax;
 _T136:
-	__asm        jmp    _T13b;
+	__asm        jmp    __RETURN;
 // LINE 114:
-_T13b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a995f
@@ -3076,9 +3076,9 @@ _T20:
 _T27:
 	__asm        mov    eax, lColumn;
 	__asm        mov    eax, lColumnStart[eax*4];
-	__asm        jmp    _T36;
+	__asm        jmp    __RETURN;
 // LINE 337:
-_T36:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004aa693
@@ -3100,9 +3100,9 @@ _T20:
 _T27:
 	__asm        mov    eax, lRow;
 	__asm        mov    eax, lRowStart[eax*4];
-	__asm        jmp    _T36;
+	__asm        jmp    __RETURN;
 // LINE 351:
-_T36:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004aa6d0

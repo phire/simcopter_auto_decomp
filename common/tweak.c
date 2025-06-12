@@ -248,7 +248,7 @@ _T32:
 _T38:
 	__asm        mov    eax, nCt;
 	__asm        cmp    g_nNextTWKQueueSlot, eax;
-	__asm        jle    _Te2;
+	__asm        jle    __RETURN;
 // LINE 172:
 	__asm        mov    eax, nCt;
 	__asm        mov    ecx, eax;
@@ -297,7 +297,7 @@ _Tc3:
 // LINE 185:
 	__asm        jmp    _T32;
 // LINE 191:
-_Te2:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004c9e4f

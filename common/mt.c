@@ -103,9 +103,9 @@ int32_t MTMagnitude(/*packed*/ struct Point3d *V) {
 	__asm        add    esp, 8;
 	__asm        fmul   qword ptr ds:[0x5923E8];
 	__asm        call   0x0056EBE8;
-	__asm        jmp    _T7b;
+	__asm        jmp    __RETURN;
 // LINE 48:
-_T7b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004ca140
@@ -162,9 +162,9 @@ int32_t MTDistance(/*packed*/ struct Point3d *p1, /*packed*/ struct Point3d *p2)
 	__asm        add    esp, 8;
 	__asm        fmul   qword ptr ds:[0x5923E8];
 	__asm        call   0x0056EBE8;
-	__asm        jmp    _T9e;
+	__asm        jmp    __RETURN;
 // LINE 70:
-_T9e:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004ca1e3
@@ -253,9 +253,9 @@ _Te6:
 	__asm        fld    r;
 	__asm        fmul   qword ptr ds:[0x5923E8];
 	__asm        call   0x0056EBE8;
-	__asm        jmp    _Tf9;
+	__asm        jmp    __RETURN;
 // LINE 100:
-_Tf9:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004ca2e1
@@ -421,9 +421,9 @@ int32_t MTSameSigns(int32_t s1, int32_t s2) {
 	__asm        cmp    s2, 0;
 	__asm        setge  al;
 	__asm        xor    eax, s1;
-	__asm        jmp    _T17;
+	__asm        jmp    __RETURN;
 // LINE 203:
-_T17:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004ca486
@@ -574,7 +574,7 @@ void MTApply_Friction(int32_t F, /*packed*/ struct mv *p, int32_t t) {
 // LINE 290:
 _T36:
 	__asm        cmp    v, 0;
-	__asm        jle    _Tf6;
+	__asm        jle    __RETURN;
 // LINE 291:
 	__asm        mov    eax, p;
 	__asm        mov    eax, [eax];
@@ -644,7 +644,7 @@ _Td8:
 // LINE 302:
 	p->V.z = 0x0;
 // LINE 305:
-_Tf6:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004ca6ae
@@ -749,12 +749,12 @@ _T1d:
 	__asm        push   eax;
 	__asm        call   0x004D19BD;
 	__asm        add    esp, 8;
-	__asm        jmp    _T8e;
+	__asm        jmp    __RETURN;
 // LINE 368:
 _T87:
 	return 0x0;
 // LINE 369:
-_T8e:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004ca7b4
@@ -784,9 +784,9 @@ _T35:
 _T4f:
 	__asm        mov    eax, a;
 _T52:
-	__asm        jmp    _T57;
+	__asm        jmp    __RETURN;
 // LINE 388:
-_T57:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004ca810

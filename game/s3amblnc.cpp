@@ -540,9 +540,9 @@ int32_t CreateAmbulanceInstance(int32_t instanceID) {
 _T24:
 	__asm        xor    eax, eax;
 _T26:
-	__asm        jmp    _T2b;
+	__asm        jmp    __RETURN;
 // LINE 78:
-_T2b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x005358d0
@@ -565,8 +565,8 @@ void AmbulanceClass::~AmbulanceClass() {
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593280;
-	__asm        jmp    _T1a;
-_T1a:
+	__asm        jmp    __RETURN;
+__RETURN:
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::~EmergencyVehicleClass;
 }
@@ -750,9 +750,9 @@ unsigned char AmbulanceClass::Dispatch(enum EmergencyType responseType, enum Eme
 	__asm        push   eax;
 	__asm        mov    ecx, gHospitals;
 	__asm        call   Station::DispatchNearestAvailableVehicle;
-	__asm        jmp    _T2d;
+	__asm        jmp    __RETURN;
 // LINE 252:
-_T2d:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00535b46
@@ -768,9 +768,9 @@ int32_t AmbulanceClass::IsThisAHospital(unsigned short tileType) {
 _T23:
 	__asm        xor    eax, eax;
 _T25:
-	__asm        jmp    _T2a;
+	__asm        jmp    __RETURN;
 // LINE 259:
-_T2a:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00535b75
@@ -822,9 +822,9 @@ _T96:
 _Ta0:
 	__asm        xor    eax, eax;
 _Ta2:
-	__asm        jmp    _Ta7;
+	__asm        jmp    __RETURN;
 // LINE 266:
-_Ta7:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00535c21

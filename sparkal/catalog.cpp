@@ -2728,9 +2728,9 @@ _T73b:
 	__asm        jmp    _T740;
 _T740:
 	__asm        mov    eax, [ebp-0x4C];
-	__asm        jmp    _T748;
+	__asm        jmp    __RETURN;
 // LINE 161:
-_T748:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00476c64
@@ -6986,9 +6986,9 @@ _T10f:
 _T134:
 	__asm        xor    eax, eax;
 _T136:
-	__asm        jmp    _T13b;
+	__asm        jmp    __RETURN;
 // LINE 523:
-_T13b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0047aaf5
@@ -7607,9 +7607,9 @@ long CatalogWindow::GetHelicopterFromTab(long lTab) {
 // LINE 738:
 	__asm        mov    eax, lTab;
 	__asm        mov    eax, [ebp+eax*4-0x20];
-	__asm        jmp    _T50;
+	__asm        jmp    __RETURN;
 // LINE 739:
-_T50:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0047b28a
@@ -7626,9 +7626,9 @@ long CatalogWindow::GetEquipmentFromSelectionIndex(long lSelectionIndex) {
 // LINE 749:
 	__asm        mov    eax, lSelectionIndex;
 	__asm        mov    eax, [ebp+eax*4-0x14];
-	__asm        jmp    _T3b;
+	__asm        jmp    __RETURN;
 // LINE 750:
-_T3b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0047b2cc
@@ -7677,9 +7677,9 @@ _T65:
 _T7b:
 	__asm        xor    eax, eax;
 _T7d:
-	__asm        jmp    _T82;
+	__asm        jmp    __RETURN;
 // LINE 772:
-_T82:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0047b353
@@ -7705,9 +7705,9 @@ int32_t CatalogWindow::CanUserSell() {
 	__asm        mov    eax, currentUserPersonalInfo;
 	__asm        and    ebx, [eax+0x48];
 	__asm        mov    eax, ebx;
-	__asm        jmp    _T79;
+	__asm        jmp    __RETURN;
 // LINE 788:
-	__asm        jmp    _T79;
+	__asm        jmp    __RETURN;
 // LINE 789:
 _T51:
 	__asm        mov    ebx, 1;
@@ -7721,9 +7721,9 @@ _T51:
 	__asm        mov    eax, currentUserPersonalInfo;
 	__asm        and    ebx, [eax+0x44];
 	__asm        mov    eax, ebx;
-	__asm        jmp    _T79;
+	__asm        jmp    __RETURN;
 // LINE 790:
-_T79:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0047b3d1

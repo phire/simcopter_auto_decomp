@@ -133,8 +133,8 @@ static void $E4() {
 
 	__asm        call   $E1;
 	__asm        call   $E3;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -153,8 +153,8 @@ static void $E3() {
 	__asm        push   0x4471FC;
 	__asm        call   atexit;
 	__asm        add    esp, 4;
-	__asm        jmp    _T18;
-_T18:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -171,16 +171,16 @@ _T0b:
 static void $E7() {
 
 	__asm        call   $E6;
-	__asm        jmp    _T10;
-_T10:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
 // SYNTHETIC: COPTER_D 0x00447226
 static void $E6() {
 
-	__asm        jmp    _T0b;
-_T0b:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 

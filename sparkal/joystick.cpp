@@ -146,8 +146,8 @@ struct joyinfoex_tag{ // packed(0x34 bytes) TI: 0x2204
 static void $E2() {
 
 	__asm        call   $E1;
-	__asm        jmp    _T10;
-_T10:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -156,8 +156,8 @@ static void $E1() {
 
 	__asm        mov    ecx, 0x604C78;
 	__asm        call   JoystickManager::JoystickManager;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0049a4af
@@ -700,9 +700,9 @@ _Ta0:
 	__asm        mov    eax, dwJoystickButtonConstants[eax*4];
 	__asm        mov    ecx, joyInfoExToUse;
 	__asm        and    eax, [ecx+0x20];
-	__asm        jmp    _Tb5;
+	__asm        jmp    __RETURN;
 // LINE 323:
-_Tb5:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0049aa99

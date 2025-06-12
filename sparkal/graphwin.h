@@ -6,8 +6,8 @@ int32_t GraphicWindowManager::IncrementBusyCount() {
 	__asm        inc    dword ptr [eax+4];
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
-	__asm        jmp    _T1d;
-_T1d:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // Function in module: Graphwin.obj
@@ -18,8 +18,8 @@ int32_t GraphicWindowManager::DecrementBusyCount() {
 	__asm        dec    dword ptr [eax+4];
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
-	__asm        jmp    _T1d;
-_T1d:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // Function in module: Inputwin.obj
@@ -28,8 +28,8 @@ void  GraphicWindow::SetParent(/*unpacked*/ class GraphicWindow *windowNewParent
 // LINE 324:
 	this-><GraphicWindow+0x3c:4> = windowNewParent;
 // LINE 325:
-	__asm        jmp    _T1a;
-_T1a:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // Function in module: Inputwin.obj
@@ -38,8 +38,8 @@ void  GraphicWindow::SetBorderDrawing(int32_t bNewDrawBorder) {
 // LINE 328:
 	this-><GraphicWindow+0x6c:4> = bNewDrawBorder;
 // LINE 329:
-	__asm        jmp    _T1a;
-_T1a:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // Function in module: Inputwin.obj
@@ -75,8 +75,8 @@ void  GraphicWindow::SetWindowPosition(/*packed*/ class MPoint& ptNewPosition) {
 	__asm        jmp    _T5b;
 // LINE 337:
 _T5b:
-	__asm        jmp    _T60;
-_T60:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // Function in module: Inputwin.obj
@@ -112,8 +112,8 @@ _T3f:
 _T5e:
 	__asm        xor    eax, eax;
 _T60:
-	__asm        jmp    _T65;
+	__asm        jmp    __RETURN;
 // LINE 365:
-_T65:
+__RETURN:
 }
 

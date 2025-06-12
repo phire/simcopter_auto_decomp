@@ -254,16 +254,16 @@ _T1b4:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, bhdr;
 	__asm        lea    eax, [ecx+eax*8+0xC];
-	__asm        jmp    _T5a;
+	__asm        jmp    __RETURN;
 // LINE 241:
 _T48:
 	__asm        mov    eax, i;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        mov    ecx, hdr;
 	__asm        mov    eax, [ecx+eax*4+0x20];
-	__asm        jmp    _T5a;
+	__asm        jmp    __RETURN;
 // LINE 243:
-_T5a:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004d62a5

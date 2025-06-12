@@ -183,9 +183,9 @@ _T37:
 	__asm        mov    edx, [ecx];
 	__asm        mov    ecx, [eax+4];
 	__asm        call   dword ptr [edx+0xC];
-	__asm        jmp    _T4f;
+	__asm        jmp    __RETURN;
 // LINE 83:
-_T4f:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0049aee8

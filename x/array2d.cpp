@@ -1986,7 +1986,7 @@ _T18b:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        call   _L27257;
 	__asm        mov    ax, [ebp-0x70];
-	__asm        jmp    _T1b9;
+	__asm        jmp    __RETURN;
 // LINE 490:
 _L27257:
 	__asm        lea    ecx, temp<vftable>;
@@ -1995,7 +1995,7 @@ _L27257:
 _L27256:
 	__asm        mov    eax, 0x5961E0;
 	__asm        jmp    near ptr 0x0056F590;
-_T1b9:
+__RETURN:
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    fs:[0], ecx;
 }

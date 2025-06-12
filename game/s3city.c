@@ -430,11 +430,11 @@ _T4c:
 	__asm        add    esp, 8;
 // LINE 348:
 	__asm        cmp    S_S2CityAlloc_Count, 0;
-	__asm        jle    _T6d;
+	__asm        jle    __RETURN;
 // LINE 350:
 	S_S2CityAlloc_Count--;
 // LINE 352:
-_T6d:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0050a478
@@ -550,11 +550,11 @@ _Te0:
 	__asm        mov    G_plotglob, eax;
 // LINE 417:
 	__asm        cmp    G_plotglob, 0x2580000;
-	__asm        jge    _T162;
+	__asm        jge    __RETURN;
 // LINE 418:
 	G_plotglob = 0x2580000;
 // LINE 419:
-_T162:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0050a5df
@@ -7663,11 +7663,11 @@ _T714:
 // LINE 2893:
 _T719:
 	__asm        cmp    S_fovlast, 0;
-	__asm        jne    _T72b;
+	__asm        jne    __RETURN;
 // LINE 2894:
 	return;
 // LINE 2896:
-_T72b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0050f67e
@@ -9910,14 +9910,14 @@ _T416:
 	__asm        shl    ecx, 0xA;
 	__asm        mov    edx, cptr;
 	__asm        cmp    G_omap[0][0][ecx+eax*4], edx;
-	__asm        jne    _T44e;
+	__asm        jne    __RETURN;
 
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(y_dir);
 	__asm        mov    ecx, edge;
 	__asm        add    [ecx+4], eax;
 	__asm        jmp    _T416;
 // LINE 3738:
-_T44e:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0051103e
@@ -10349,7 +10349,7 @@ _T27:
 _T35:
 	__asm        mov    eax, GridNSortCells;
 	__asm        cmp    i, eax;
-	__asm        jge    _Tcdd;
+	__asm        jge    __RETURN;
 // LINE 3973:
 	__asm        mov    eax, cptrptr1;
 	__asm        mov    eax, [eax];
@@ -11465,7 +11465,7 @@ _Tccb:
 _Tcd8:
 	__asm        jmp    _T27;
 // LINE 4301:
-_Tcdd:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0051215e
@@ -11725,7 +11725,7 @@ _T26d:
 	__asm        jne    _T28e;
 
 	__asm        cmp    S_watermorph, 1;
-	__asm        jne    _T2db;
+	__asm        jne    __RETURN;
 // LINE 4432:
 _T28e:
 	__asm        mov    eax, S_curr_pos.x;
@@ -11750,7 +11750,7 @@ _T28e:
 	__asm        neg    eax;
 	__asm        sub    GridPos.loc.z, eax;
 // LINE 4440:
-_T2db:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x005124fe
@@ -12435,25 +12435,25 @@ _T74:
 	__asm        push   1;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
-	__asm        jmp    _T20a;
+	__asm        jmp    __RETURN;
 // LINE 4999:
 _T83:
 	__asm        push   2;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
-	__asm        jmp    _T20a;
+	__asm        jmp    __RETURN;
 // LINE 5001:
 _T92:
 	__asm        push   3;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
-	__asm        jmp    _T20a;
+	__asm        jmp    __RETURN;
 // LINE 5003:
 _Ta1:
 	__asm        push   4;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
-	__asm        jmp    _T20a;
+	__asm        jmp    __RETURN;
 // LINE 5004:
 	__asm        jmp    _Tdc;
 _Tb5:
@@ -12487,25 +12487,25 @@ _T100:
 	__asm        push   0x168;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
-	__asm        jmp    _T20a;
+	__asm        jmp    __RETURN;
 // LINE 5013:
 _T112:
 	__asm        push   0x169;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
-	__asm        jmp    _T20a;
+	__asm        jmp    __RETURN;
 // LINE 5015:
 _T124:
 	__asm        push   0x16A;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
-	__asm        jmp    _T20a;
+	__asm        jmp    __RETURN;
 // LINE 5017:
 _T136:
 	__asm        push   0x16B;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
-	__asm        jmp    _T20a;
+	__asm        jmp    __RETURN;
 // LINE 5018:
 	__asm        jmp    _T174;
 _T14d:
@@ -12533,25 +12533,25 @@ _T184:
 	__asm        push   0x164;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
-	__asm        jmp    _T20a;
+	__asm        jmp    __RETURN;
 // LINE 5027:
 _T196:
 	__asm        push   0x165;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
-	__asm        jmp    _T20a;
+	__asm        jmp    __RETURN;
 // LINE 5029:
 _T1a8:
 	__asm        push   0x166;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
-	__asm        jmp    _T20a;
+	__asm        jmp    __RETURN;
 // LINE 5031:
 _T1ba:
 	__asm        push   0x167;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
-	__asm        jmp    _T20a;
+	__asm        jmp    __RETURN;
 // LINE 5032:
 	__asm        jmp    _T1f8;
 _T1d1:
@@ -12571,9 +12571,9 @@ _T1f8:
 	__asm        push   0x164;
 	__asm        call   0x004D8821;
 	__asm        add    esp, 4;
-	__asm        jmp    _T20a;
+	__asm        jmp    __RETURN;
 // LINE 5037:
-_T20a:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00512e3a

@@ -86,9 +86,9 @@ int32_t Magnitude(/*packed*/ struct Point3d *V) {
 	__asm        call   0x0056EC1A;
 	__asm        fmul   qword ptr ds:[0x5934E8];
 	__asm        call   0x0056EBE8;
-	__asm        jmp    _T6f;
+	__asm        jmp    __RETURN;
 // LINE 38:
-_T6f:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00542ff4
@@ -142,9 +142,9 @@ int32_t Distance(/*packed*/ struct Point3d *p1, /*packed*/ struct Point3d *p2) {
 	__asm        call   0x0056EC1A;
 	__asm        fmul   qword ptr ds:[0x5934E8];
 	__asm        call   0x0056EBE8;
-	__asm        jmp    _T95;
+	__asm        jmp    __RETURN;
 // LINE 59:
-_T95:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0054308e
@@ -230,9 +230,9 @@ _Tdd:
 	__asm        fld    r;
 	__asm        fmul   qword ptr ds:[0x5934E8];
 	__asm        call   0x0056EBE8;
-	__asm        jmp    _Tf0;
+	__asm        jmp    __RETURN;
 // LINE 88:
-_Tf0:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00543183
@@ -398,9 +398,9 @@ int32_t SameSigns(int32_t s1, int32_t s2) {
 	__asm        cmp    s2, 0;
 	__asm        setge  al;
 	__asm        xor    eax, s1;
-	__asm        jmp    _T17;
+	__asm        jmp    __RETURN;
 // LINE 187:
-_T17:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00543328
@@ -542,7 +542,7 @@ void Apply_Friction(int32_t F, /*packed*/ struct mv *p, int32_t t) {
 	__asm        mov    v, eax;
 // LINE 267:
 	__asm        cmp    v, 0;
-	__asm        jle    _Tdb;
+	__asm        jle    __RETURN;
 // LINE 268:
 	__asm        mov    eax, p;
 	__asm        mov    eax, [eax];
@@ -612,7 +612,7 @@ _Tbd:
 // LINE 279:
 	p->V.z = 0x0;
 // LINE 282:
-_Tdb:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00543535
@@ -713,12 +713,12 @@ int32_t Apply_Friction1D(int32_t F, int32_t M, int32_t V, int32_t t) {
 	__asm        push   eax;
 	__asm        call   0x004D19BD;
 	__asm        add    esp, 8;
-	__asm        jmp    _T80;
+	__asm        jmp    __RETURN;
 // LINE 343:
 _T79:
 	return 0x0;
 // LINE 344:
-_T80:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00543629
@@ -748,9 +748,9 @@ _T35:
 _T4f:
 	__asm        mov    eax, a;
 _T52:
-	__asm        jmp    _T57;
+	__asm        jmp    __RETURN;
 // LINE 362:
-_T57:
+__RETURN:
 }
 
 

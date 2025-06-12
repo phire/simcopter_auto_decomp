@@ -1750,9 +1750,9 @@ _T93e:
 	__asm        jmp    _T943;
 _T943:
 	__asm        mov    eax, [ebp-0x7C];
-	__asm        jmp    _T94b;
+	__asm        jmp    __RETURN;
 // LINE 113:
-_T94b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00472f61
@@ -1865,9 +1865,9 @@ _T10f:
 _T134:
 	__asm        xor    eax, eax;
 _T136:
-	__asm        jmp    _T13b;
+	__asm        jmp    __RETURN;
 // LINE 123:
-_T13b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004730a3
@@ -3062,9 +3062,9 @@ _Td0:
 
 	__asm        mov    eax, [ebp-0x24];
 _Td8:
-	__asm        jmp    _Tdd;
+	__asm        jmp    __RETURN;
 // LINE 374:
-_Tdd:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00473ec5

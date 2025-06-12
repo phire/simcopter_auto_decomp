@@ -3,8 +3,8 @@
 unsigned long CSparkalWindow::Sleep() {
 
 	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
-_T13:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // Function in module: gamewin.obj
@@ -12,7 +12,7 @@ _T13:
 unsigned long CSparkalWindow::WakeUp() {
 
 	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
-_T13:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 

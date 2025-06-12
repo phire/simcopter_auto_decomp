@@ -1556,9 +1556,9 @@ _T6c:
 	__asm        push   eax;
 	__asm        call   FlushBitBuffer;
 	__asm        add    esp, 4;
-	__asm        jmp    _T7d;
+	__asm        jmp    __RETURN;
 // LINE 420:
-_T7d:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004d0216
@@ -1989,9 +1989,9 @@ _T79:
 _T95:
 	__asm        xor    eax, eax;
 _T97:
-	__asm        jmp    _T9c;
+	__asm        jmp    __RETURN;
 // LINE 188:
-_T9c:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004d06a5
@@ -2311,8 +2311,8 @@ _T5a:
 _T5f:
 	__asm        mov    eax, i;
 	__asm        dec    eax;
-	__asm        jmp    _T68;
+	__asm        jmp    __RETURN;
 // LINE 452:
-_T68:
+__RETURN:
 }
 

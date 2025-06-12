@@ -440,9 +440,9 @@ _T36:
 _T45:
 	__asm        xor    eax, eax;
 _T47:
-	__asm        jmp    _T4c;
+	__asm        jmp    __RETURN;
 // LINE 154:
-_T4c:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004bc64f
@@ -455,9 +455,9 @@ uint32_t MDate::DayOfWeek(char * nameOfDay) {
 	__asm        call   FindMatch;
 	__asm        add    esp, 0xC;
 	__asm        inc    eax;
-	__asm        jmp    _T1f;
+	__asm        jmp    __RETURN;
 // LINE 169:
-_T1f:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004bc673
@@ -555,9 +555,9 @@ _T76:
 _T8c:
 	__asm        xor    eax, eax;
 _T8e:
-	__asm        jmp    _T93;
+	__asm        jmp    __RETURN;
 // LINE 188:
-_T93:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004bc76f
@@ -575,9 +575,9 @@ uint32_t MDate::DaysInYear(uint32_t year) {
 _T24:
 	__asm        mov    eax, 0x16D;
 _T29:
-	__asm        jmp    _T2e;
+	__asm        jmp    __RETURN;
 // LINE 202:
-_T2e:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004bc7a2
@@ -590,9 +590,9 @@ uint32_t MDate::IndexOfMonth(char * nameOfMonth) {
 	__asm        call   FindMatch;
 	__asm        add    esp, 0xC;
 	__asm        inc    eax;
-	__asm        jmp    _T1f;
+	__asm        jmp    __RETURN;
 // LINE 217:
-_T1f:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004bc7c6
@@ -677,9 +677,9 @@ _T57:
 	__asm        add    eax, ecx;
 	__asm        mov    ecx, d;
 	__asm        lea    eax, [eax+ecx+0x1A431F];
-	__asm        jmp    _Td4;
+	__asm        jmp    __RETURN;
 // LINE 250:
-_Td4:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004bc89f
@@ -707,9 +707,9 @@ _T38:
 _T42:
 	__asm        xor    eax, eax;
 _T44:
-	__asm        jmp    _T49;
+	__asm        jmp    __RETURN;
 // LINE 264:
-_T49:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004bc8ed
@@ -736,9 +736,9 @@ _T36:
 _T45:
 	__asm        xor    eax, eax;
 _T47:
-	__asm        jmp    _T4c;
+	__asm        jmp    __RETURN;
 // LINE 279:
-_T4c:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004bc93e
@@ -752,7 +752,7 @@ int32_t MDate::CompareTo(const /*packed*/ class MDate& d) {
 // LINE 294:
 	return 0xffffffff;
 // LINE 295:
-	__asm        jmp    _T55;
+	__asm        jmp    __RETURN;
 _T2d:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, d;
@@ -762,12 +762,12 @@ _T2d:
 // LINE 296:
 	return 0x1;
 // LINE 297:
-	__asm        jmp    _T55;
+	__asm        jmp    __RETURN;
 // LINE 298:
 _T4e:
 	return 0x0;
 // LINE 299:
-_T55:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004bc99a
@@ -785,9 +785,9 @@ uint32_t MDate::Day() {
 	__asm        add    esp, 0xC;
 	__asm        sub    ebx, eax;
 	__asm        mov    eax, ebx;
-	__asm        jmp    _T31;
+	__asm        jmp    __RETURN;
 // LINE 309:
-_T31:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004bc9d0
@@ -1083,9 +1083,9 @@ uint32_t MDate::Month() {
 	__asm        mov    ecx, this;
 	__asm        call   MDate::Previous;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
-	__asm        jmp    _T2d;
+	__asm        jmp    __RETURN;
 // LINE 437:
-_T2d:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004bcd02
@@ -1150,9 +1150,9 @@ uint32_t MDate::WeekDay() {
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        lea    eax, [edx+1];
-	__asm        jmp    _T30;
+	__asm        jmp    __RETURN;
 // LINE 474:
-_T30:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004bcdb1
@@ -1184,9 +1184,9 @@ uint32_t MDate::YearLastTwoDigits() {
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    eax, edx;
-	__asm        jmp    _T24;
+	__asm        jmp    __RETURN;
 // LINE 500:
-_T24:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004bce07
@@ -1225,9 +1225,9 @@ _T4d:
 	__asm        lea    ecx, strtemp<ostrstream+0x08>;
 	__asm        call   ios::~ios;
 	__asm        mov    eax, [ebp-0x5C];
-	__asm        jmp    _T65;
+	__asm        jmp    __RETURN;
 // LINE 514:
-_T65:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004bce73
@@ -1937,9 +1937,9 @@ _T2a1:
 	__asm        lea    ecx, out<ostrstream+0x08>;
 	__asm        call   ios::~ios;
 	__asm        mov    eax, [ebp-0xAC];
-	__asm        jmp    _T2c2;
+	__asm        jmp    __RETURN;
 // LINE 660:
-_T2c2:
+__RETURN:
 }
 
 

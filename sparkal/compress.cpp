@@ -599,8 +599,8 @@ _T395:
 	__asm        call   ostrstream::~ostrstream;
 	__asm        lea    ecx, NameOut<ostrstream+0x08>;
 	__asm        call   ios::~ios;
-	__asm        jmp    _T3aa;
-_T3aa:
+	__asm        jmp    __RETURN;
+__RETURN:
 	__asm        mov    eax, this;
 }
 

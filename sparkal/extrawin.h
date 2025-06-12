@@ -10,8 +10,8 @@ void MessageBoxWindowEdit::GetEditText(/*packed*/ class basic_string<char>& sTex
 	__asm        mov    edx, [ecx];
 	__asm        mov    ecx, [eax+0xA4];
 	__asm        call   dword ptr [edx+0xF8];
-	__asm        jmp    _T2f;
-_T2f:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // Function in module: Extrawin.obj
@@ -28,7 +28,7 @@ void MessageBoxWindowEdit::GetEditText(char * szText, unsigned long lLength) {
 	__asm        mov    edx, [ecx];
 	__asm        mov    ecx, [eax+0xA4];
 	__asm        call   dword ptr [edx+0xF4];
-	__asm        jmp    _T33;
-_T33:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 

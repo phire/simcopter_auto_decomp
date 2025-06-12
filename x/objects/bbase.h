@@ -37,8 +37,8 @@ unsigned long cBBase::GetBodyType() {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        xor    eax, eax;
-	__asm        jmp    _T2c;
-_T2c:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // Function in module: Bodydefs.obj
@@ -52,8 +52,8 @@ _T2c:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        xor    eax, eax;
-	__asm        jmp    _T2c;
-_T2c:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // Function in module: Bodydefs.obj
@@ -61,8 +61,8 @@ _T2c:
 unsigned short cBBase::CanDestroy() {
 
 	__asm        mov    ax, 1;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // Function in module: Bodydefs.obj
@@ -75,8 +75,8 @@ void cBBase::InstallArrayPointers(unsigned short fromdisk) {
 	__asm        push   0x5BE258;
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
-	__asm        jmp    _T2a;
-_T2a:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // Function in module: Bodydefs.obj

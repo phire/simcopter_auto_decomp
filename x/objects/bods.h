@@ -260,8 +260,8 @@ _L45521:
 // FUNCTION: COPTER_D 0x0055fc70
 void  cCopterBody::WriteToDisk() {
 // LINE 139:
-	__asm        jmp    _T11;
-_T11:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // Function in module: Bodydefs.obj
@@ -269,7 +269,7 @@ _T11:
 class cBList<class cBBase> *  cCopterBody::GetList() {
 
 	__asm        mov    eax, cCopterBody::fsList;
-	__asm        jmp    _T16;
-_T16:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 

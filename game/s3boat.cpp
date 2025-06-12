@@ -501,8 +501,8 @@ static void $E7() {
 
 	__asm        call   $E3;
 	__asm        call   $E6;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -522,8 +522,8 @@ static void $E6() {
 	__asm        push   0x5274C6;
 	__asm        call   atexit;
 	__asm        add    esp, 4;
-	__asm        jmp    _T18;
-_T18:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -675,9 +675,9 @@ _T4c:
 _T17:
 	__asm        mov    eax, index;
 	__asm        mov    eax, boats[0][eax*4];
-	__asm        jmp    _T26;
+	__asm        jmp    __RETURN;
 // LINE 259:
-_T26:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x005276b5
@@ -689,9 +689,9 @@ _T26:
 	__asm        push   0xFFFFFFFF;
 	__asm        call   BoatClass::CreateInstance;
 	__asm        add    esp, 0xC;
-	__asm        jmp    _T1b;
+	__asm        jmp    __RETURN;
 // LINE 319:
-_T1b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x005276d5
@@ -767,9 +767,9 @@ int32_t BoatClass::Initialize(int32_t instanceID) {
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   BoatClass::InitializeInstance;
-	__asm        jmp    _T2b;
+	__asm        jmp    __RETURN;
 // LINE 445:
-_T2b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x005277ab
@@ -1286,9 +1286,9 @@ enum BoatClass::StoppedReasons BoatClass::IsWaterPathClear() {
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   BoatClass::CheckWaterDynamicObjectsAt;
-	__asm        jmp    _Tbe;
+	__asm        jmp    __RETURN;
 // LINE 901:
-_Tbe:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00527d76
@@ -1659,12 +1659,12 @@ _Taa:
 _Td2:
 	return 0x1;
 // LINE 1116:
-	__asm        jmp    _Te8;
+	__asm        jmp    __RETURN;
 // LINE 1118:
 _Te1:
 	return 0x0;
 // LINE 1120:
-_Te8:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x005281a8
@@ -2051,12 +2051,12 @@ int32_t BoatClass::HaveIReachedNextLoc() {
 // LINE 1308:
 	return 0x1;
 // LINE 1310:
-	__asm        jmp    _T2f;
+	__asm        jmp    __RETURN;
 // LINE 1312:
 _T28:
 	return 0x0;
 // LINE 1314:
-_T2f:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052865c
@@ -3080,9 +3080,9 @@ _T132:
 	__asm        jmp    _T13e;
 _T13e:
 	__asm        mov    eax, [ebp-0xC];
-	__asm        jmp    _T146;
+	__asm        jmp    __RETURN;
 // LINE 1655:
-_T146:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00529232
@@ -5275,9 +5275,9 @@ int32_t CreateBoatInstance(int32_t instanceID) {
 _T24:
 	__asm        xor    eax, eax;
 _T26:
-	__asm        jmp    _T2b;
+	__asm        jmp    __RETURN;
 // LINE 3002:
-_T2b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052ab54
@@ -5437,9 +5437,9 @@ _T11f:
 // LINE 3115:
 	__asm        mov    eax, capboat;
 	__asm        add    eax, 0x7F;
-	__asm        jmp    _T178;
+	__asm        jmp    __RETURN;
 // LINE 3116:
-_T178:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052acfb
@@ -5461,9 +5461,9 @@ _T16:
 _T2c:
 	__asm        mov    eax, capboat;
 	__asm        add    eax, 0x7F;
-	__asm        jmp    _T37;
+	__asm        jmp    __RETURN;
 // LINE 3135:
-_T37:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052ad37
@@ -5475,18 +5475,18 @@ _T37:
 	__asm        push   eax;
 	__asm        call   BoatClass::StartCapsizedBoat;
 	__asm        add    esp, 8;
-	__asm        jmp    _T1b;
+	__asm        jmp    __RETURN;
 // LINE 3149:
-_T1b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052ad57
 /*packed*/ struct _DYOBJ_INST* GetCapsizedBoat() {
 // LINE 3162:
 	__asm        call   BoatClass::GetCapsizedBoat;
-	__asm        jmp    _T10;
+	__asm        jmp    __RETURN;
 // LINE 3163:
-_T10:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052ad6c
@@ -5496,9 +5496,9 @@ int32_t S3BoatMIFFLoad(void * __ptr32 miffReader) {
 	__asm        push   eax;
 	__asm        call   BoatClass::MIFFLoad;
 	__asm        add    esp, 4;
-	__asm        jmp    _T17;
+	__asm        jmp    __RETURN;
 // LINE 3176:
-_T17:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052ad88
@@ -5508,9 +5508,9 @@ int32_t S3BoatMIFFSave(void * __ptr32 miffWriter) {
 	__asm        push   eax;
 	__asm        call   BoatClass::MIFFSave;
 	__asm        add    esp, 4;
-	__asm        jmp    _T17;
+	__asm        jmp    __RETURN;
 // LINE 3189:
-_T17:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052ada4

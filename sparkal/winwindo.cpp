@@ -1484,7 +1484,7 @@ _T0e:
 	__asm        mov    eax, pWindow;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x30];
-	__asm        jmp    _T63;
+	__asm        jmp    __RETURN;
 // LINE 588:
 _T48:
 	__asm        mov    eax, lParam;
@@ -1496,9 +1496,9 @@ _T48:
 	__asm        mov    eax, Window;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3860];
-	__asm        jmp    _T63;
+	__asm        jmp    __RETURN;
 // LINE 589:
-_T63:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00481647
@@ -1943,9 +1943,9 @@ _T468:
 	__asm        mov    eax, Window;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3860];
-	__asm        jmp    _T483;
+	__asm        jmp    __RETURN;
 // LINE 706:
-_T483:
+__RETURN:
 }
 
 

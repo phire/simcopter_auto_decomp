@@ -1233,9 +1233,9 @@ int32_t BitmappedFont::Initialize() {
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x1C];
-	__asm        jmp    _T1c;
+	__asm        jmp    __RETURN;
 // LINE 67:
-_T1c:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00468997
@@ -4390,9 +4390,9 @@ _T26:
 _T30:
 	__asm        xor    eax, eax;
 _T32:
-	__asm        jmp    _T37;
+	__asm        jmp    __RETURN;
 // LINE 615:
-_T37:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0046af61
@@ -4407,9 +4407,9 @@ int32_t BitmappedFont::IsCharReturnChar(const char chText) {
 _T23:
 	__asm        xor    eax, eax;
 _T25:
-	__asm        jmp    _T2a;
+	__asm        jmp    __RETURN;
 // LINE 627:
-_T2a:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0046af92
@@ -4424,9 +4424,9 @@ int32_t BitmappedFont::IsCharWhitespace(const char chText) {
 _T23:
 	__asm        xor    eax, eax;
 _T25:
-	__asm        jmp    _T2a;
+	__asm        jmp    __RETURN;
 // LINE 636:
-_T2a:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0046afc3
@@ -4469,9 +4469,9 @@ int32_t BitmappedFont::GetIniFileString(char * chHeader, char * chSection, char 
 	__asm        mov    eax, chHeader;
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3618];
-	__asm        jmp    _T30;
+	__asm        jmp    __RETURN;
 // LINE 669:
-_T30:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0046b049

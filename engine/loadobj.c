@@ -383,7 +383,7 @@ _T1e:
 	__asm        mov    eax, geo;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x10], ecx;
-	__asm        jle    _T49;
+	__asm        jle    __RETURN;
 // LINE 231:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -396,7 +396,7 @@ _T1e:
 // LINE 232:
 	__asm        jmp    _T1b;
 // LINE 233:
-_T49:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004d23c7
@@ -420,9 +420,9 @@ int32_t VRGetResObject(/*packed*/ struct VRResource *res, int32_t i) {
 	__asm        mov    eax, i;
 	__asm        mov    ecx, geo;
 	__asm        mov    eax, [ecx+eax*4+0x18];
-	__asm        jmp    _T1e;
+	__asm        jmp    __RETURN;
 // LINE 267:
-_T1e:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004d2409
@@ -992,9 +992,9 @@ int32_t VRGetDyObjAlt(int32_t obj, int32_t *dymat[4][4], /*packed*/ struct Point
 	__asm        push   eax;
 	__asm        call   VRGetObjAlt;
 	__asm        add    esp, 0x20;
-	__asm        jmp    _T5d;
+	__asm        jmp    __RETURN;
 // LINE 744:
-_T5d:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004d2b28
@@ -1040,7 +1040,7 @@ int32_t VRGetObjAlt(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * flag
 	__asm        mov    eax, oh;
 	__asm        mov    eax, [eax+0x30];
 	__asm        sar    eax, 3;
-	__asm        jmp    _T6ba;
+	__asm        jmp    __RETURN;
 // LINE 796:
 _T41:
 	__asm        mov    eax, flags;
@@ -1603,7 +1603,7 @@ _T68b:
 	return altyupbelow;
 // LINE 1060:
 _T693:
-	__asm        jmp    _T6ba;
+	__asm        jmp    __RETURN;
 // LINE 1062:
 _T698:
 	__asm        cmp    altyupabove, 0x75300000;
@@ -1611,12 +1611,12 @@ _T698:
 // LINE 1063:
 	return altyupabove;
 // LINE 1064:
-	__asm        jmp    _T6ba;
+	__asm        jmp    __RETURN;
 // LINE 1065:
 _T6b2:
 	return altyupbelow;
 // LINE 1067:
-_T6ba:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004d31e7
@@ -1662,7 +1662,7 @@ int32_t VRGetObjAlt2(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * fla
 	__asm        mov    eax, oh;
 	__asm        mov    eax, [eax+0x30];
 	__asm        sar    eax, 3;
-	__asm        jmp    _T743;
+	__asm        jmp    __RETURN;
 // LINE 1108:
 _T41:
 	__asm        mov    eax, flags;
@@ -2271,7 +2271,7 @@ _T714:
 	return altyupbelow;
 // LINE 1402:
 _T71c:
-	__asm        jmp    _T743;
+	__asm        jmp    __RETURN;
 // LINE 1404:
 _T721:
 	__asm        cmp    altyupabove, 0x75300000;
@@ -2279,12 +2279,12 @@ _T721:
 // LINE 1405:
 	return altyupabove;
 // LINE 1406:
-	__asm        jmp    _T743;
+	__asm        jmp    __RETURN;
 // LINE 1407:
 _T73b:
 	return altyupbelow;
 // LINE 1409:
-_T743:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004d392f
@@ -2710,7 +2710,7 @@ _T30:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
 	__asm        cmp    [eax+0x10], ecx;
-	__asm        jle    _Tca;
+	__asm        jle    __RETURN;
 // LINE 1642:
 	__asm        mov    eax, faceptr;
 	__asm        test   byte ptr [eax+8], 4;
@@ -2767,7 +2767,7 @@ next_face:
 // LINE 1671:
 	__asm        jmp    _T2d;
 // LINE 1673:
-_Tca:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004d3e24
@@ -3009,13 +3009,13 @@ _T2a:
 	__asm        sub    eax, ecx;
 	__asm        shl    eax, 2;
 	__asm        add    eax, Tree;
-	__asm        jmp    _Tf2;
+	__asm        jmp    __RETURN;
 // LINE 1831:
-	__asm        jmp    _Tf2;
+	__asm        jmp    __RETURN;
 _Teb:
 	return 0x0;
 // LINE 1833:
-_Tf2:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004d40e1
@@ -4188,9 +4188,9 @@ int32_t VRGetObjDupMemReq(int32_t obj) {
 	__asm        mov    eax, size3;
 	__asm        add    eax, size2;
 	__asm        add    eax, size1;
-	__asm        jmp    _T47;
+	__asm        jmp    __RETURN;
 // LINE 2441:
-_T47:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004d4dbf

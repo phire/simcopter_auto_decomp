@@ -397,9 +397,9 @@ _Ta1:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+4];
 	__asm        call   PFile::Open;
-	__asm        jmp    _Tbe;
+	__asm        jmp    __RETURN;
 // LINE 99:
-_Tbe:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004cb9d2
@@ -462,12 +462,12 @@ _T53:
 	__asm        push   eax;
 	__asm        call   _read;
 	__asm        add    esp, 0xC;
-	__asm        jmp    _T79;
+	__asm        jmp    __RETURN;
 // LINE 111:
 _T72:
 	return 0x0;
 // LINE 112:
-_T79:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004cba9c
@@ -506,12 +506,12 @@ _T53:
 	__asm        push   eax;
 	__asm        call   _write;
 	__asm        add    esp, 0xC;
-	__asm        jmp    _T79;
+	__asm        jmp    __RETURN;
 // LINE 118:
 _T72:
 	return 0x0;
 // LINE 119:
-_T79:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004cbb1c
@@ -603,19 +603,19 @@ long cLZAPFileBitStream::Size() {
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+4];
 	__asm        call   PFile::Length;
-	__asm        jmp    _T30;
+	__asm        jmp    __RETURN;
 // LINE 143:
 _T29:
 	return 0x0;
 // LINE 144:
-_T30:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004cbc42
 void cLZAPFileBitStream::FreeAll() {
 
-	__asm        jmp    _T11;
-_T11:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004cbc58
@@ -1023,7 +1023,7 @@ int32_t ReadSCXFile(char * filePath) {
 	__asm        lea    ecx, fileStream<cLZAPFileBitStream+0x00>;
 	__asm        call   cLZAPFileBitStream::~cLZAPFileBitStream;
 	__asm        mov    eax, [ebp-0x580];
-	__asm        jmp    _T152e;
+	__asm        jmp    __RETURN;
 // LINE 306:
 _T6a:
 	__asm        push   0x2C;
@@ -1057,7 +1057,7 @@ _Tc4:
 	__asm        lea    ecx, fileStream<cLZAPFileBitStream+0x00>;
 	__asm        call   cLZAPFileBitStream::~cLZAPFileBitStream;
 	__asm        mov    eax, [ebp-0x584];
-	__asm        jmp    _T152e;
+	__asm        jmp    __RETURN;
 // LINE 314:
 _Te2:
 	__asm        mov    memstrm.curPos, 0;
@@ -2673,9 +2673,9 @@ _T1510:
 	__asm        lea    ecx, fileStream<cLZAPFileBitStream+0x00>;
 	__asm        call   cLZAPFileBitStream::~cLZAPFileBitStream;
 	__asm        mov    eax, [ebp-0x58C];
-	__asm        jmp    _T152e;
+	__asm        jmp    __RETURN;
 // LINE 531:
-_T152e:
+__RETURN:
 }
 
 

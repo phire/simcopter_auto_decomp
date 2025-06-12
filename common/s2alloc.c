@@ -303,9 +303,9 @@ char * S2AllocMem1(int32_t index, char * name, int32_t size, unsigned short prot
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        jmp    _T1f;
+	__asm        jmp    __RETURN;
 // LINE 400:
-_T1f:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004cb5cf
@@ -479,9 +479,9 @@ _T9e:
 void * __ptr32 S2AllocAligned() {
 // LINE 591:
 	__asm        call   DOSAllocAlignedHack;
-	__asm        jmp    _T10;
+	__asm        jmp    __RETURN;
 // LINE 592:
-_T10:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004cb7ba

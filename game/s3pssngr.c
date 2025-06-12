@@ -111,7 +111,7 @@ _T96:
 	i++;
 _T99:
 	__asm        cmp    i, 0x10;
-	__asm        jge    _Tf8;
+	__asm        jge    __RETURN;
 // LINE 77:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 2;
@@ -139,7 +139,7 @@ _T99:
 // LINE 81:
 	__asm        jmp    _T96;
 // LINE 82:
-_Tf8:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004f9cfa
@@ -149,9 +149,9 @@ int32_t HeliPassengerCanAdd(/*packed*/ struct tagHeliPassengerData *heliPassenge
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, heliPassengerData;
 	__asm        sub    eax, [ecx+8];
-	__asm        jmp    _T17;
+	__asm        jmp    __RETURN;
 // LINE 96:
-_T17:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004f9d16
@@ -377,9 +377,9 @@ long HeliPassengerCountFreeSeats(/*packed*/ struct tagHeliPassengerData *heliPas
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, heliPassengerData;
 	__asm        sub    eax, [ecx+8];
-	__asm        jmp    _T17;
+	__asm        jmp    __RETURN;
 // LINE 205:
-_T17:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004f9f8a
@@ -408,7 +408,7 @@ _T3e:
 	i++;
 _T41:
 	__asm        cmp    i, 0x10;
-	__asm        jge    _Ta4;
+	__asm        jge    __RETURN;
 // LINE 224:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 2;
@@ -443,7 +443,7 @@ _T41:
 _T9f:
 	__asm        jmp    _T3e;
 // LINE 230:
-_Ta4:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004fa033

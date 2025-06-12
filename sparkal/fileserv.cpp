@@ -508,8 +508,8 @@ static void $E32() {
 
 	__asm        call   $E29;
 	__asm        call   $E31;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -786,8 +786,8 @@ static void $E31() {
 	__asm        push   0x491565;
 	__asm        call   atexit;
 	__asm        add    esp, 4;
-	__asm        jmp    _T18;
-_T18:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -948,9 +948,9 @@ int32_t GetPathForFile(int32_t nType, int32_t nLanguage, char * szFile, char * s
 	__asm        push   eax;
 	__asm        mov    ecx, 0x604C00;
 	__asm        call   FileServices::GetPathForFile;
-	__asm        jmp    _T25;
+	__asm        jmp    __RETURN;
 // LINE 27:
-_T25:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00491755
@@ -1134,7 +1134,7 @@ _T25a:
 	__asm        jmp    _T25f;
 _T25f:
 	__asm        mov    eax, [ebp-0x20];
-	__asm        jmp    _T5c2;
+	__asm        jmp    __RETURN;
 // LINE 51:
 _T267:
 	this->myAppBaseType = 0x1;
@@ -1344,7 +1344,7 @@ _T4fb:
 	__asm        jmp    _T500;
 _T500:
 	__asm        mov    eax, [ebp-0x24];
-	__asm        jmp    _T5c2;
+	__asm        jmp    __RETURN;
 // LINE 65:
 _T508:
 	__asm        mov    ecx, this;
@@ -1407,9 +1407,9 @@ _T5b5:
 	__asm        jmp    _T5ba;
 _T5ba:
 	__asm        mov    eax, [ebp-0x28];
-	__asm        jmp    _T5c2;
+	__asm        jmp    __RETURN;
 // LINE 69:
-_T5c2:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00491d1c
@@ -2236,7 +2236,7 @@ _T3bf:
 	__asm        jmp    _T3c4;
 _T3c4:
 	__asm        mov    eax, [ebp-0x11C];
-	__asm        jmp    _T5cf;
+	__asm        jmp    __RETURN;
 // LINE 145:
 _T3cf:
 	__asm        push   0;
@@ -2313,7 +2313,7 @@ _T4d5:
 	__asm        jmp    _T4da;
 _T4da:
 	__asm        mov    eax, [ebp-0x120];
-	__asm        jmp    _T5cf;
+	__asm        jmp    __RETURN;
 // LINE 150:
 _T4e5:
 	__asm        lea    ecx, tempPFile<vftable>;
@@ -2378,9 +2378,9 @@ _T5bf:
 	__asm        jmp    _T5c4;
 _T5c4:
 	__asm        mov    eax, [ebp-0x124];
-	__asm        jmp    _T5cf;
+	__asm        jmp    __RETURN;
 // LINE 152:
-_T5cf:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0049299a
@@ -2753,8 +2753,8 @@ _T480:
 	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
 	__asm        call   list<DirectoryEntry>::~list<DirectoryEntry>;
-	__asm        jmp    _T495;
-_T495:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00492e36
@@ -2987,7 +2987,7 @@ _T2b2:
 _T2d7:
 	return 0x1;
 // LINE 236:
-	__asm        jmp    _T212b;
+	__asm        jmp    __RETURN;
 _T2e6:
 	__asm        cmp    nType, 0xA;
 	__asm        jne    _T5a8;
@@ -3201,7 +3201,7 @@ _T574:
 _T599:
 	return 0x1;
 // LINE 251:
-	__asm        jmp    _T212b;
+	__asm        jmp    __RETURN;
 _T5a8:
 	__asm        cmp    nType, 4;
 	__asm        jne    _T86a;
@@ -3415,7 +3415,7 @@ _T836:
 _T85b:
 	return 0x1;
 // LINE 266:
-	__asm        jmp    _T212b;
+	__asm        jmp    __RETURN;
 _T86a:
 	__asm        cmp    nType, 5;
 	__asm        jne    _Tb2c;
@@ -3629,7 +3629,7 @@ _Taf8:
 _Tb1d:
 	return 0x1;
 // LINE 281:
-	__asm        jmp    _T212b;
+	__asm        jmp    __RETURN;
 _Tb2c:
 	__asm        cmp    nType, 6;
 	__asm        jne    _Tdee;
@@ -3843,7 +3843,7 @@ _Tdba:
 _Tddf:
 	return 0x1;
 // LINE 296:
-	__asm        jmp    _T212b;
+	__asm        jmp    __RETURN;
 _Tdee:
 	__asm        cmp    nType, 7;
 	__asm        jne    _T10b0;
@@ -4057,7 +4057,7 @@ _T107c:
 _T10a1:
 	return 0x1;
 // LINE 311:
-	__asm        jmp    _T212b;
+	__asm        jmp    __RETURN;
 _T10b0:
 	__asm        cmp    nType, 8;
 	__asm        jne    _T1372;
@@ -4271,7 +4271,7 @@ _T133e:
 _T1363:
 	return 0x1;
 // LINE 326:
-	__asm        jmp    _T212b;
+	__asm        jmp    __RETURN;
 _T1372:
 	__asm        cmp    nType, 1;
 	__asm        jne    _T1658;
@@ -4485,7 +4485,7 @@ _T1624:
 _T1649:
 	return 0x1;
 // LINE 341:
-	__asm        jmp    _T212b;
+	__asm        jmp    __RETURN;
 _T1658:
 	__asm        cmp    nType, 0xB;
 	__asm        jne    _T193e;
@@ -4699,7 +4699,7 @@ _T190a:
 _T192f:
 	return 0x1;
 // LINE 356:
-	__asm        jmp    _T212b;
+	__asm        jmp    __RETURN;
 _T193e:
 	__asm        cmp    nType, 3;
 	__asm        jne    _T1ff8;
@@ -5190,10 +5190,10 @@ _T1fe6:
 	__asm        jmp    _T1feb;
 _T1feb:
 	__asm        mov    eax, [ebp-0x10];
-	__asm        jmp    _T212b;
+	__asm        jmp    __RETURN;
 // LINE 373:
 // Block end:
-	__asm        jmp    _T212b;
+	__asm        jmp    __RETURN;
 _T1ff8:
 	__asm        cmp    nType, 9;
 	__asm        jne    _T2099;
@@ -5243,7 +5243,7 @@ _T206e:
 // LINE 376:
 	return 0x1;
 // LINE 378:
-	__asm        jmp    _T212b;
+	__asm        jmp    __RETURN;
 // LINE 379:
 _T2099:
 	__asm        jmp    _T209e;
@@ -5291,7 +5291,7 @@ _T2105:
 // LINE 381:
 	return 0x1;
 // LINE 383:
-_T212b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00494f82

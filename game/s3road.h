@@ -40,7 +40,7 @@ _T73:
 _T7d:
 	return 0x0;
 // LINE 874:
-	__asm        jmp    _T1c2;
+	__asm        jmp    __RETURN;
 _T89:
 	__asm        cmp    dword ptr [ebp-4], 0x2B;
 	__asm        jg     _Tb6;
@@ -131,6 +131,6 @@ _T17a:
 // Switch table
 //  [0, 0, 0, 3, 3, 3, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2]
 // LINE 876:
-_T1c2:
+__RETURN:
 }
 

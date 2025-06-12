@@ -407,7 +407,7 @@ _T50:
 	__asm        shr    eax, 0x10;
 	__asm        and    eax, 0xFFFF;
 	__asm        movzx  eax, ax;
-	__asm        jmp    _Tdd;
+	__asm        jmp    __RETURN;
 // LINE 200:
 	__asm        jmp    _Td3;
 _T75:
@@ -418,7 +418,7 @@ _T75:
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax+8];
 	__asm        mov    eax, ecx;
-	__asm        jmp    _Tdd;
+	__asm        jmp    __RETURN;
 // LINE 202:
 	__asm        jmp    _Td3;
 _T94:
@@ -430,7 +430,7 @@ _T94:
 	__asm        shr    eax, 0x10;
 	__asm        and    eax, 0xFFFF;
 	__asm        movzx  eax, ax;
-	__asm        jmp    _Tdd;
+	__asm        jmp    __RETURN;
 // LINE 204:
 	__asm        jmp    _Td3;
 _Tb9:
@@ -441,12 +441,12 @@ _Tb9:
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax+0xC];
 	__asm        mov    eax, ecx;
-	__asm        jmp    _Tdd;
+	__asm        jmp    __RETURN;
 // LINE 206:
 _Td3:
 	return 0xffffffff;
 // LINE 208:
-_Tdd:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0043df83
@@ -531,7 +531,7 @@ long Version::GetSystemVersion(int32_t nVersionComponent) {
 // LINE 310:
 	__asm        xor    eax, eax;
 	__asm        mov    al, reinterpret_cast<uint8_t>(dwVersion);
-	__asm        jmp    _T49;
+	__asm        jmp    __RETURN;
 // LINE 311:
 	__asm        jmp    _T3f;
 _T2b:
@@ -540,12 +540,12 @@ _T2b:
 // LINE 312:
 	__asm        xor    eax, eax;
 	__asm        mov    al, *reinterpret_cast<uint8_t*>(reinterpret_cast<char*>(&dwVersion) + 1);
-	__asm        jmp    _T49;
+	__asm        jmp    __RETURN;
 // LINE 313:
 _T3f:
 	return 0xffffffff;
 // LINE 316:
-_T49:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0043e086

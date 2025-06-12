@@ -346,9 +346,9 @@ int32_t SmackerBuffer::Initialize() {
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+8];
-	__asm        jmp    _T1c;
+	__asm        jmp    __RETURN;
 // LINE 107:
-_T1c:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00497de9
@@ -364,12 +364,12 @@ int32_t SmackerBuffer::SetPalette() {
 	__asm        call   0x004C4618;
 	__asm        add    esp, 4;
 	__asm        movzx  eax, ax;
-	__asm        jmp    _T37;
+	__asm        jmp    __RETURN;
 // LINE 117:
 _T30:
 	return 0x0;
 // LINE 118:
-_T37:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00497e25
@@ -1020,9 +1020,9 @@ int32_t VRSmackerSetBitmap(void * __ptr32 pVRSmacker, char * szVRBitmap, int32_t
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, pVRSmacker;
 	__asm        call   dword ptr [eax+0x28];
-	__asm        jmp    _T22;
+	__asm        jmp    __RETURN;
 // LINE 442:
-_T22:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0049853d
@@ -1030,9 +1030,9 @@ int32_t VRSmackerNextFrame(void * __ptr32 pVRSmacker) {
 // LINE 446:
 	__asm        mov    ecx, pVRSmacker;
 	__asm        call   VRBmpSmackerBuffer::Compose;
-	__asm        jmp    _T13;
+	__asm        jmp    __RETURN;
 // LINE 447:
-_T13:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00498555
@@ -1049,9 +1049,9 @@ int32_t VRSmackerStatus(void * __ptr32 pVRSmacker) {
 // LINE 454:
 	__asm        mov    eax, pVRSmacker;
 	__asm        mov    eax, [eax+4];
-	__asm        jmp    _T11;
+	__asm        jmp    __RETURN;
 // LINE 455:
-_T11:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00498583
@@ -1059,9 +1059,9 @@ _T11:
 // LINE 458:
 	__asm        mov    eax, pVRSmacker;
 	__asm        mov    eax, [eax+0x158];
-	__asm        jmp    _T14;
+	__asm        jmp    __RETURN;
 // LINE 459:
-_T14:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0049859c
@@ -1069,9 +1069,9 @@ char * VRSmackerGetBitmapBits(void * __ptr32 pVRSmacker) {
 // LINE 462:
 	__asm        mov    eax, pVRSmacker;
 	__asm        mov    eax, [eax+0x15C];
-	__asm        jmp    _T14;
+	__asm        jmp    __RETURN;
 // LINE 463:
-_T14:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004985b5
@@ -1880,10 +1880,10 @@ _T59:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x140;
 	__asm        mov    [ebp-4], eax;
-	__asm        jmp    _T7a;
+	__asm        jmp    __RETURN;
 _T73:
 	__asm        mov    dword ptr [ebp-4], 0;
-_T7a:
+__RETURN:
 	__asm        mov    ecx, [ebp-4];
 	__asm        call   CBackBuffer::~CBackBuffer;
 	__asm        mov    ecx, this;
@@ -1912,9 +1912,9 @@ _T26:
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+8];
-	__asm        jmp    _T36;
+	__asm        jmp    __RETURN;
 // LINE 869:
-_T36:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004990d2

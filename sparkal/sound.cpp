@@ -777,9 +777,9 @@ int32_t SoundSystem::SetVolume(long lNewVolume) {
 	__asm        mov    edx, [ecx];
 	__asm        mov    ecx, [eax+8];
 	__asm        call   dword ptr [edx+0x24];
-	__asm        jmp    _T26;
+	__asm        jmp    __RETURN;
 // LINE 273:
-_T26:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0042e3a1
@@ -1013,12 +1013,12 @@ long SoundManager::PlaySoundA(int32_t nIndex, long bPlayLooping, int32_t nDuplic
 	__asm        mov    edx, [edx];
 	__asm        mov    ecx, [ecx+eax*4+4];
 	__asm        call   dword ptr [edx+8];
-	__asm        jmp    _T4a;
+	__asm        jmp    __RETURN;
 // LINE 366:
 _T43:
 	return 0x0;
 // LINE 367:
-_T4a:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0042e663
@@ -1394,9 +1394,9 @@ int32_t operator<(const /*packed*/ class Sound& compareSound1, const /*packed*/ 
 _T22:
 	__asm        xor    eax, eax;
 _T24:
-	__asm        jmp    _T29;
+	__asm        jmp    __RETURN;
 // LINE 469:
-_T29:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0042eb28
@@ -1575,7 +1575,7 @@ _T1ee:
 
 	__asm        mov    eax, [ebp-0x24];
 _T1f6:
-	__asm        jmp    _T23a;
+	__asm        jmp    __RETURN;
 // LINE 489:
 	__asm        jmp    _T230;
 _T200:
@@ -1594,12 +1594,12 @@ _T200:
 _T229:
 	__asm        xor    eax, eax;
 _T22b:
-	__asm        jmp    _T23a;
+	__asm        jmp    __RETURN;
 // LINE 491:
 _T230:
 	return 0x1;
 // LINE 492:
-_T23a:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0042ed67
@@ -2329,7 +2329,7 @@ _T23:
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x38];
-	__asm        jmp    _T69;
+	__asm        jmp    __RETURN;
 // LINE 707:
 	__asm        jmp    _T62;
 _T45:
@@ -2341,12 +2341,12 @@ _T45:
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x34];
-	__asm        jmp    _T69;
+	__asm        jmp    __RETURN;
 // LINE 709:
 _T62:
 	return 0x0;
 // LINE 710:
-_T69:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0042f66a
@@ -2686,9 +2686,9 @@ int32_t DigitalSound::CreatePrimarySoundBuffer() {
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x6C];
-	__asm        jmp    _T4c;
+	__asm        jmp    __RETURN;
 // LINE 853:
-_T4c:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0042f9da
@@ -3146,7 +3146,7 @@ int32_t DigitalSound::SetPosition(long lX, long lY, long lZ) {
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x24];
-	__asm        jmp    _T99;
+	__asm        jmp    __RETURN;
 // LINE 1177:
 _T47:
 	__asm        mov    eax, lDistance;
@@ -3177,9 +3177,9 @@ _T47:
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x24];
-	__asm        jmp    _T99;
+	__asm        jmp    __RETURN;
 // LINE 1185:
-_T99:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0042ff51
@@ -3197,9 +3197,9 @@ long DigitalSound::IsPlaying() {
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x4C];
-	__asm        jmp    _T1e;
+	__asm        jmp    __RETURN;
 // LINE 1223:
-_T1e:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0042ff90
@@ -3307,7 +3307,7 @@ _T35:
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x44];
-	__asm        jmp    _T298;
+	__asm        jmp    __RETURN;
 // LINE 1285:
 _T52:
 	__asm        mov    eax, this;
@@ -3514,7 +3514,7 @@ _T259:
 _T28e:
 	return 0x1;
 // LINE 1346:
-_T298:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004302f9
@@ -3640,7 +3640,7 @@ long DigitalSound::Stop() {
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x48];
-	__asm        jmp    _Tcc;
+	__asm        jmp    __RETURN;
 // LINE 1419:
 _T37:
 	__asm        mov    i, 0;
@@ -3696,7 +3696,7 @@ _T9b:
 _Tc2:
 	return 0x1;
 // LINE 1432:
-_Tcc:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004304ec
@@ -5518,7 +5518,7 @@ long DigitalSound::EstimateRemainingPlayTime() {
 	__asm        lea    eax, [eax+eax*4];
 	__asm        lea    eax, [eax+eax*4];
 	__asm        shl    eax, 3;
-	__asm        jmp    _Tb7;
+	__asm        jmp    __RETURN;
 // LINE 2081:
 _T57:
 	__asm        mov    eax, this;
@@ -5555,9 +5555,9 @@ _T6e:
 	__asm        mov    ecx, this;
 	__asm        sub    edx, edx;
 	__asm        div    dword ptr [ecx+0x44];
-	__asm        jmp    _Tb7;
+	__asm        jmp    __RETURN;
 // LINE 2096:
-_Tb7:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00431947

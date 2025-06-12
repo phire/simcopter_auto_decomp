@@ -495,9 +495,9 @@ int32_t operator==(const /*packed*/ class PreferenceItem& P1, const /*packed*/ c
 _T1c:
 	__asm        xor    eax, eax;
 _T1e:
-	__asm        jmp    _T23;
+	__asm        jmp    __RETURN;
 // LINE 87:
-_T23:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0047bd4e
@@ -528,9 +528,9 @@ int32_t operator<(const /*packed*/ class PreferenceItem& P1, const /*packed*/ cl
 _T20:
 	__asm        xor    eax, eax;
 _T22:
-	__asm        jmp    _T27;
+	__asm        jmp    __RETURN;
 // LINE 121:
-_T27:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0047bdaa
@@ -1315,7 +1315,7 @@ long PreferenceManager::LoadAllPrefs() {
 	__asm        lea    ecx, tempPrefItem.lPreferenceType;
 	__asm        call   PreferenceItem::~PreferenceItem;
 	__asm        mov    eax, [ebp-0x1C];
-	__asm        jmp    _T1bf;
+	__asm        jmp    __RETURN;
 // LINE 278:
 _T38:
 	__asm        mov    eax, this;
@@ -1333,7 +1333,7 @@ _T38:
 	__asm        lea    ecx, tempPrefItem.lPreferenceType;
 	__asm        call   PreferenceItem::~PreferenceItem;
 	__asm        mov    eax, [ebp-0x20];
-	__asm        jmp    _T1bf;
+	__asm        jmp    __RETURN;
 // LINE 281:
 _T6d:
 	__asm        mov    eax, this;
@@ -1357,7 +1357,7 @@ _T6d:
 	__asm        lea    ecx, tempPrefItem.lPreferenceType;
 	__asm        call   PreferenceItem::~PreferenceItem;
 	__asm        mov    eax, [ebp-0x24];
-	__asm        jmp    _T1bf;
+	__asm        jmp    __RETURN;
 // LINE 286:
 _Tb2:
 	__asm        mov    eax, this;
@@ -1458,9 +1458,9 @@ _T18d:
 	__asm        lea    ecx, tempPrefItem.lPreferenceType;
 	__asm        call   PreferenceItem::~PreferenceItem;
 	__asm        mov    eax, [ebp-0x2C];
-	__asm        jmp    _T1bf;
+	__asm        jmp    __RETURN;
 // LINE 304:
-_T1bf:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0047c834
@@ -1790,7 +1790,7 @@ _Tb1:
 _Tc5:
 	__asm        mov    eax, i.node;
 	__asm        add    eax, 8;
-	__asm        jmp    _Tdc;
+	__asm        jmp    __RETURN;
 // LINE 360:
 _Td0:
 	__asm        jmp    _T37;
@@ -1798,7 +1798,7 @@ _Td0:
 _Td5:
 	return 0x0;
 // LINE 362:
-_Tdc:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0047cbc3
@@ -2589,9 +2589,9 @@ int32_t NotificationPreferenceManager::AddNotification(long lPreferenceType, /*p
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x34];
-	__asm        jmp    _T30;
+	__asm        jmp    __RETURN;
 // LINE 549:
-_T30:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0047d506

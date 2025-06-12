@@ -2135,14 +2135,14 @@ _Ta2:
 // LINE 323:
 	return 0xffffffff;
 // LINE 324:
-	__asm        jmp    _Tce;
+	__asm        jmp    __RETURN;
 // LINE 325:
 _Tbe:
 	__asm        movsx  eax, scurkID;
 	__asm        mov    eax, cYObject::sLocType[0][eax*4];
-	__asm        jmp    _Tce;
+	__asm        jmp    __RETURN;
 // LINE 326:
-_Tce:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00555819
@@ -2167,12 +2167,12 @@ unsigned short cYObject::IsWater(short cellx, short celly) {
 // LINE 332:
 	return 0x1;
 // LINE 333:
-	__asm        jmp    _T55;
+	__asm        jmp    __RETURN;
 // LINE 334:
 _T4d:
 	return 0x0;
 // LINE 335:
-_T55:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00555873
@@ -2356,9 +2356,9 @@ _T20:
 	__asm        push   0;
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::TryMove;
-	__asm        jmp    _Ta7;
+	__asm        jmp    __RETURN;
 // LINE 393:
-_Ta7:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00555a60
@@ -3359,9 +3359,9 @@ _Te7:
 	__asm        mov    [ebp-4], edx;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    edx, [ebp-4];
-	__asm        jmp    _T26;
+	__asm        jmp    __RETURN;
 // LINE 658:
-_T26:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x005566da
@@ -3486,9 +3486,9 @@ _T144:
 // LINE 678:
 	__asm        mov    eax, cent.x;
 	__asm        mov    edx, cent.y;
-	__asm        jmp    _T169;
+	__asm        jmp    __RETURN;
 // LINE 679:
-_T169:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00556848
@@ -4479,12 +4479,12 @@ _T86:
 // LINE 842:
 	return obj;
 // LINE 844:
-	__asm        jmp    _Ta4;
+	__asm        jmp    __RETURN;
 // LINE 845:
 _T9d:
 	return 0x0;
 // LINE 846:
-_Ta4:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x005573f5
@@ -8287,9 +8287,9 @@ enum TreeSim::ReturnCode cYObject::iWalkToStackObject(/*unpacked*/ struct TreeSi
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::iWalkToAndGrabOntoStackObject;
-	__asm        jmp    _T21;
+	__asm        jmp    __RETURN;
 // LINE 1573:
-_T21:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0055a1d9
@@ -10003,9 +10003,9 @@ enum TreeSim::ReturnCode cYObject::iThrowFieryProjectile(/*unpacked*/ struct Tre
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::iThrowProjectile;
-	__asm        jmp    _T21;
+	__asm        jmp    __RETURN;
 // LINE 1864:
-_T21:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0055b7b1

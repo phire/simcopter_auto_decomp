@@ -383,7 +383,7 @@ _T6a:
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::LoadUserOrCareerGame;
-	__asm        jmp    _Ta7;
+	__asm        jmp    __RETURN;
 // LINE 96:
 	__asm        jmp    _T9d;
 _T80:
@@ -400,7 +400,7 @@ _T80:
 _T9d:
 	return 0x80000000;
 // LINE 102:
-_Ta7:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00427691
@@ -1785,7 +1785,7 @@ long  CGameApp::ValidateCopterSaveGameFile(char * szGamePath) {
 	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::~MIFF;
 	__asm        mov    eax, [ebp-0x150];
-	__asm        jmp    _T1bd;
+	__asm        jmp    __RETURN;
 // LINE 428:
 _T54:
 	__asm        lea    ecx, myMIFF<MIFF+0x00>;
@@ -1806,7 +1806,7 @@ _T7d:
 	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::~MIFF;
 	__asm        mov    eax, [ebp-0x154];
-	__asm        jmp    _T1bd;
+	__asm        jmp    __RETURN;
 // LINE 433:
 _Ta8:
 	__asm        lea    ecx, myMIFF<MIFF+0x00>;
@@ -1826,7 +1826,7 @@ _Ta8:
 	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::~MIFF;
 	__asm        mov    eax, [ebp-0x158];
-	__asm        jmp    _T1bd;
+	__asm        jmp    __RETURN;
 // LINE 443:
 _Tfb:
 	__asm        push   0x4346494C;
@@ -1842,7 +1842,7 @@ _Tfb:
 	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::~MIFF;
 	__asm        mov    eax, [ebp-0x15C];
-	__asm        jmp    _T1bd;
+	__asm        jmp    __RETURN;
 // LINE 450:
 _T13e:
 	__asm        cmp    lFileType, 0x55534552;
@@ -1852,7 +1852,7 @@ _T13e:
 	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::~MIFF;
 	__asm        mov    eax, [ebp-0x160];
-	__asm        jmp    _T1bd;
+	__asm        jmp    __RETURN;
 // LINE 452:
 	__asm        jmp    _T19d;
 _T170:
@@ -1863,16 +1863,16 @@ _T170:
 	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::~MIFF;
 	__asm        mov    eax, [ebp-0x164];
-	__asm        jmp    _T1bd;
+	__asm        jmp    __RETURN;
 // LINE 454:
 _T19d:
 	__asm        mov    dword ptr [ebp-0x168], 0;
 	__asm        lea    ecx, myMIFF<MIFF+0x00>;
 	__asm        call   MIFF::~MIFF;
 	__asm        mov    eax, [ebp-0x168];
-	__asm        jmp    _T1bd;
+	__asm        jmp    __RETURN;
 // LINE 455:
-_T1bd:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00428c38
@@ -1885,9 +1885,9 @@ int  CGameApp::DisplayFileOpenError(unsigned long nResult) {
 	__asm        push   0x7D9;
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::CreateMessageBox;
-	__asm        jmp    _T29;
+	__asm        jmp    __RETURN;
 // LINE 464:
-_T29:
+__RETURN:
 }
 
 

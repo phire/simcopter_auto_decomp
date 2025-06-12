@@ -477,8 +477,8 @@ private:
 static void $E14() {
 
 	__asm        call   $E13;
-	__asm        jmp    _T10;
-_T10:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -532,8 +532,8 @@ _T65:
 static void $E17() {
 
 	__asm        call   $E16;
-	__asm        jmp    _T10;
-_T10:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -544,8 +544,8 @@ static void $E16() {
 	__asm        push   0;
 	__asm        mov    ecx, 0x5C3608;
 	__asm        call   MDate::MDate;
-	__asm        jmp    _T19;
-_T19:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -553,8 +553,8 @@ _T19:
 static void $E20() {
 
 	__asm        call   $E19;
-	__asm        jmp    _T10;
-_T10:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -565,8 +565,8 @@ static void $E19() {
 	__asm        push   0xC22D;
 	__asm        mov    ecx, 0x5C3618;
 	__asm        call   MDate::MDate;
-	__asm        jmp    _T1c;
-_T1c:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0043c81c
@@ -591,9 +591,9 @@ _T39:
 
 	__asm        mov    eax, [ebp-4];
 _T41:
-	__asm        jmp    _T46;
+	__asm        jmp    __RETURN;
 // LINE 78:
-_T46:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0043c867
@@ -698,7 +698,7 @@ _T5a:
 	__asm        call   MTime::BuildLocal;
 	__asm        add    esp, 0xC;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
-	__asm        jmp    _T113;
+	__asm        jmp    __RETURN;
 // LINE 126:
 // Block end:
 _T74:
@@ -717,7 +717,7 @@ _T74:
 	__asm        call   MTime::BuildLocal;
 	__asm        add    esp, 0xC;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
-	__asm        jmp    _T113;
+	__asm        jmp    __RETURN;
 // LINE 128:
 _Ta9:
 	__asm        cmp    year, 0x7B7;
@@ -735,7 +735,7 @@ _Ta9:
 	__asm        call   MTime::BuildLocal;
 	__asm        add    esp, 0xC;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
-	__asm        jmp    _T113;
+	__asm        jmp    __RETURN;
 // LINE 131:
 _Tde:
 	__asm        mov    eax, year;
@@ -757,9 +757,9 @@ _Tde:
 	__asm        call   MTime::BuildLocal;
 	__asm        add    esp, 0xC;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
-	__asm        jmp    _T113;
+	__asm        jmp    __RETURN;
 // LINE 133:
-_T113:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0043ca36
@@ -786,9 +786,9 @@ class MTime  MTime::EndDST(uint32_t year) {
 	__asm        call   MTime::BuildLocal;
 	__asm        add    esp, 0xC;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
-	__asm        jmp    _T3e;
+	__asm        jmp    __RETURN;
 // LINE 150:
-_T3e:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0043ca79
@@ -843,8 +843,8 @@ _T3e:
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 // LINE 178:
-	__asm        jmp    _T81;
-_T81:
+	__asm        jmp    __RETURN;
+__RETURN:
 	__asm        mov    eax, this;
 }
 
@@ -868,8 +868,8 @@ _T81:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx], eax;
 // LINE 192:
-	__asm        jmp    _T3f;
-_T3f:
+	__asm        jmp    __RETURN;
+__RETURN:
 	__asm        mov    eax, this;
 }
 
@@ -958,8 +958,8 @@ _Tf8:
 	this-><MTime+0x00:4> = 0x0;
 // LINE 233:
 _T101:
-	__asm        jmp    _T106;
-_T106:
+	__asm        jmp    __RETURN;
+__RETURN:
 	__asm        mov    eax, this;
 }
 
@@ -1001,9 +1001,9 @@ _T2a:
 _T3e:
 	__asm        mov    eax, 0xFFFFFFFF;
 _T43:
-	__asm        jmp    _T48;
+	__asm        jmp    __RETURN;
 // LINE 256:
-_T48:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0043ccd7
@@ -1025,9 +1025,9 @@ unsigned int  MTime::Hour() {
 	__asm        mov    eax, edx;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
-	__asm        jmp    _T2d;
+	__asm        jmp    __RETURN;
 // LINE 279:
-_T2d:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0043cd24
@@ -1042,9 +1042,9 @@ unsigned int  MTime::HourGMT() {
 	__asm        mov    eax, edx;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
-	__asm        jmp    _T2a;
+	__asm        jmp    __RETURN;
 // LINE 292:
-_T2a:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0043cd53
@@ -1124,9 +1124,9 @@ _Tc1:
 _Tcb:
 	__asm        xor    eax, eax;
 _Tcd:
-	__asm        jmp    _Td2;
+	__asm        jmp    __RETURN;
 // LINE 314:
-_Td2:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0043ce2a
@@ -1155,9 +1155,9 @@ _T35:
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
-	__asm        jmp    _T6a;
+	__asm        jmp    __RETURN;
 // LINE 328:
-	__asm        jmp    _T6a;
+	__asm        jmp    __RETURN;
 // LINE 329:
 _T52:
 	__asm        mov    eax, t;
@@ -1167,9 +1167,9 @@ _T52:
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
-	__asm        jmp    _T6a;
+	__asm        jmp    __RETURN;
 // LINE 330:
-_T6a:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0043ce9b
@@ -1198,9 +1198,9 @@ _T35:
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
-	__asm        jmp    _T6a;
+	__asm        jmp    __RETURN;
 // LINE 344:
-	__asm        jmp    _T6a;
+	__asm        jmp    __RETURN;
 // LINE 345:
 _T52:
 	__asm        mov    eax, t;
@@ -1210,9 +1210,9 @@ _T52:
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
-	__asm        jmp    _T6a;
+	__asm        jmp    __RETURN;
 // LINE 346:
-_T6a:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0043cf0c
@@ -1231,9 +1231,9 @@ unsigned int  MTime::Minute() {
 	__asm        mov    eax, edx;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
-	__asm        jmp    _T38;
+	__asm        jmp    __RETURN;
 // LINE 359:
-_T38:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0043cf49
@@ -1252,9 +1252,9 @@ unsigned int  MTime::MinuteGMT() {
 	__asm        mov    eax, edx;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
-	__asm        jmp    _T35;
+	__asm        jmp    __RETURN;
 // LINE 372:
-_T35:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0043cf83
@@ -1274,9 +1274,9 @@ unsigned int  MTime::Second() {
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    eax, edx;
-	__asm        jmp    _T37;
+	__asm        jmp    __RETURN;
 // LINE 384:
-_T37:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0043cfbf
@@ -1315,9 +1315,9 @@ _T4d:
 	__asm        lea    ecx, strtemp<ostrstream+0x08>;
 	__asm        call   ios::~ios;
 	__asm        mov    eax, [ebp-0x5C];
-	__asm        jmp    _T65;
+	__asm        jmp    __RETURN;
 // LINE 400:
-_T65:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0043d02b
@@ -1542,9 +1542,9 @@ _T339:
 	__asm        lea    ecx, out<ostrstream+0x08>;
 	__asm        call   ios::~ios;
 	__asm        mov    eax, [ebp-0xDC];
-	__asm        jmp    _T35a;
+	__asm        jmp    __RETURN;
 // LINE 431:
-_T35a:
+__RETURN:
 }
 
 

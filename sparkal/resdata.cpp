@@ -261,12 +261,12 @@ unsigned long ResourceRCData::DataSize() {
 	__asm        mov    eax, [eax+0x14];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3630];
-	__asm        jmp    _T39;
+	__asm        jmp    __RETURN;
 // LINE 135:
 _T32:
 	return 0x0;
 // LINE 136:
-_T39:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00447ab2

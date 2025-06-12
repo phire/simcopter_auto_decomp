@@ -467,11 +467,11 @@ _T3b:
 _T5a:
 	__asm        mov    eax, P;
 	__asm        cmp    dword ptr [eax+8], 0x30000000;
-	__asm        jl     _T74;
+	__asm        jl     __RETURN;
 // LINE 292:
 	P->z -= 0x40000000;
 // LINE 293:
-_T74:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004f8fe2
@@ -956,7 +956,7 @@ _T116:
 	__asm        je     _T2d7;
 
 	__asm        cmp    G_camera_mode, 1;
-	__asm        jne    _T2f7;
+	__asm        jne    __RETURN;
 // LINE 517:
 _T2d7:
 	__asm        mov    eax, 0x6C12A0;
@@ -969,7 +969,7 @@ _T2d7:
 	__asm        call   0x004D2034;
 	__asm        add    esp, 8;
 // LINE 520:
-_T2f7:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004f955f
@@ -1395,7 +1395,7 @@ _Te5:
 _T107:
 	__asm        sub    dword ptr [ebp-4], 0x1B;
 	__asm        cmp    dword ptr [ebp-4], 5;
-	__asm        ja     _T137;
+	__asm        ja     __RETURN;
 
 	__asm        mov    eax, [ebp-4];
 	__asm        jmp    _Switch_11f[0][eax*4];
@@ -1407,7 +1407,7 @@ _T107:
 //   _Te5
 //   _Tcd
 // LINE 772:
-_T137:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004f9a4e
@@ -1416,11 +1416,11 @@ void S3CameraCycleChase() {
 	S_curr_chase++;
 // LINE 783:
 	__asm        cmp    S_curr_chase, 3;
-	__asm        jl     _T23;
+	__asm        jl     __RETURN;
 // LINE 784:
 	S_curr_chase = 0x0;
 // LINE 785:
-_T23:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004f9a76

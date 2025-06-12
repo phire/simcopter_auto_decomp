@@ -1558,8 +1558,8 @@ _Taea:
 _Taef:
 	__asm        lea    ecx, tempVersion<vftable>;
 	__asm        call   Version::~Version;
-	__asm        jmp    _Tafc;
-_Tafc:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0043eda6
@@ -2432,9 +2432,9 @@ _T5ff:
 	__asm        jmp    _T604;
 _T604:
 	__asm        mov    eax, [ebp-0x10];
-	__asm        jmp    _T60c;
+	__asm        jmp    __RETURN;
 // LINE 287:
-_T60c:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0043f8cc
@@ -2449,8 +2449,8 @@ void  CGameApp::DestroyMessageBox() {
 	this-><CGameApp+0xa4:4> = 0x0;
 // LINE 301:
 _T32:
-	__asm        jmp    _T37;
-_T37:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0043f908
@@ -2692,8 +2692,8 @@ void  CGameApp::DestroyCheatCodeEntryMessageBox() {
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::DestroyMessageBox;
 // LINE 341:
-	__asm        jmp    _T19;
-_T19:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0043fbcd
@@ -3977,12 +3977,12 @@ _T274:
 	__asm        jmp    _T279;
 _T279:
 	__asm        mov    eax, [ebp-0x88];
-	__asm        jmp    _T28b;
+	__asm        jmp    __RETURN;
 // LINE 515:
 _T284:
 	return 0x0;
 // LINE 516:
-_T28b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00440dcf
@@ -4079,8 +4079,8 @@ _Tee:
 	__asm        mov    ecx, [eax+0x54];
 	__asm        call   CBackBuffer::SetFont;
 // LINE 536:
-	__asm        jmp    _T102;
-_T102:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00440ed6
@@ -4112,8 +4112,8 @@ _T50:
 	this-><CGameApp+0x54:4> = 0x0;
 // LINE 548:
 _T5a:
-	__asm        jmp    _T5f;
-_T5f:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00440f3a
@@ -4139,8 +4139,8 @@ _T4c:
 	this-><CGameApp+0x42bc:4> = 0x0;
 // LINE 558:
 _T59:
-	__asm        jmp    _T5e;
-_T5e:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00440f9d
@@ -4166,8 +4166,8 @@ _T46:
 	this-><CGameApp+0x430c:4> = 0x0;
 // LINE 574:
 _T53:
-	__asm        jmp    _T58;
-_T58:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00440ffa
@@ -4199,8 +4199,8 @@ _T5e:
 	this-><CGameApp+0x4310:4> = 0x0;
 // LINE 592:
 _T6b:
-	__asm        jmp    _T70;
-_T70:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0044106f
@@ -4454,8 +4454,8 @@ _T331:
 _T367:
 	__asm        jmp    _T36c;
 _T36c:
-	__asm        jmp    _T371;
-_T371:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004413e5
@@ -4555,8 +4555,8 @@ _Te8:
 	__asm        mov    ecx, myUserInputWindow;
 	__asm        call   dword ptr [eax+0xCC];
 // LINE 643:
-	__asm        jmp    _T121;
-_T121:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0044150b
@@ -4620,8 +4620,8 @@ _Ta5:
 	__asm        mov    ecx, windowToDestroy;
 	__asm        call   dword ptr [eax+0x6C];
 // LINE 662:
-	__asm        jmp    _Tb5;
-_Tb5:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004415c7
@@ -4733,8 +4733,8 @@ _Te8:
 	__asm        mov    ecx, myRenderSettingsWindow;
 	__asm        call   RenderSettingsWindow::SetCurrentSettings;
 // LINE 683:
-	__asm        jmp    _T149;
-_T149:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00441715
@@ -4818,8 +4818,8 @@ _Td2:
 	__asm        mov    ecx, windowToDestroy;
 	__asm        call   dword ptr [eax+0x6C];
 // LINE 721:
-	__asm        jmp    _Te2;
-_Te2:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004417fe
@@ -4973,8 +4973,8 @@ _T17f:
 	__asm        mov    ecx, mySoundSettingsWindow;
 	__asm        call   SoundSettingsWindow::SetCurrentRadioSettings;
 // LINE 761:
-	__asm        jmp    _T1b5;
-_T1b5:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004419b8
@@ -5055,8 +5055,8 @@ _Tba:
 	__asm        mov    ecx, windowToDestroy;
 	__asm        call   dword ptr [eax+0x6C];
 // LINE 800:
-	__asm        jmp    _Tca;
-_Tca:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00441a89
@@ -5126,8 +5126,8 @@ _Ta1:
 	__asm        mov    ecx, myCitySettingsWindow;
 	__asm        call   CitySettingsWindow::SetCurrentCitySettings;
 // LINE 814:
-	__asm        jmp    _Td1;
-_Td1:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00441b5f
@@ -5158,8 +5158,8 @@ _T4a:
 	__asm        mov    ecx, windowToDestroy;
 	__asm        call   dword ptr [eax+0x6C];
 // LINE 831:
-	__asm        jmp    _T5a;
-_T5a:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00441bc0
@@ -5232,8 +5232,8 @@ _Ta1:
 	__asm        mov    ecx, tempControlDisplayWindow;
 	__asm        call   dword ptr [eax+0xC4];
 // LINE 844:
-	__asm        jmp    _Tda;
-_Tda:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00441c9f
@@ -5241,8 +5241,8 @@ void  CGameApp::DestroyControlDisplayWindow() {
 // LINE 851:
 	this-><CGameApp+0xa4:4>--;
 // LINE 852:
-	__asm        jmp    _T1a;
-_T1a:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00441cbe
@@ -5307,8 +5307,8 @@ _Ta1:
 	__asm        mov    ecx, tempCheckupWindow;
 	__asm        call   dword ptr [eax+0x40];
 // LINE 864:
-	__asm        jmp    _Tc3;
-_Tc3:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00441d86
@@ -5369,8 +5369,8 @@ _T85:
 	__asm        mov    ecx, windowToDestroy;
 	__asm        call   dword ptr [eax+0x6C];
 // LINE 889:
-	__asm        jmp    _T95;
-_T95:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 

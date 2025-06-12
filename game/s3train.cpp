@@ -558,8 +558,8 @@ static void $E7() {
 
 	__asm        call   $E3;
 	__asm        call   $E6;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -579,8 +579,8 @@ static void $E6() {
 	__asm        push   0x52DDF6;
 	__asm        call   atexit;
 	__asm        add    esp, 4;
-	__asm        jmp    _T18;
-_T18:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -821,9 +821,9 @@ _T88:
 _T17:
 	__asm        mov    eax, index;
 	__asm        mov    eax, trains[0][eax*4];
-	__asm        jmp    _T26;
+	__asm        jmp    __RETURN;
 // LINE 339:
-_T26:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052e16c
@@ -835,9 +835,9 @@ _T26:
 	__asm        push   0xFFFFFFFF;
 	__asm        call   TrainClass::CreateInstance;
 	__asm        add    esp, 0xC;
-	__asm        jmp    _T1b;
+	__asm        jmp    __RETURN;
 // LINE 422:
-_T1b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052e18c
@@ -911,9 +911,9 @@ int32_t TrainClass::Initialize(int32_t instanceID) {
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   TrainClass::InitializeInstance;
-	__asm        jmp    _T2b;
+	__asm        jmp    __RETURN;
 // LINE 548:
-_T2b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052e25e
@@ -2532,9 +2532,9 @@ enum TrainClass::StoppedReasons TrainClass::IsPathClear() {
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   TrainClass::CheckDynamicObjectsAt;
-	__asm        jmp    _Td6;
+	__asm        jmp    __RETURN;
 // LINE 1464:
-_Td6:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052f52f
@@ -2994,12 +2994,12 @@ _Taa:
 _Td2:
 	return 0x1;
 // LINE 1699:
-	__asm        jmp    _Te8;
+	__asm        jmp    __RETURN;
 // LINE 1701:
 _Te1:
 	return 0x0;
 // LINE 1703:
-_Te8:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052fa85
@@ -4847,12 +4847,12 @@ int32_t TrainClass::HaveIReachedNextLoc() {
 // LINE 2752:
 	return 0x1;
 // LINE 2754:
-	__asm        jmp    _T2f;
+	__asm        jmp    __RETURN;
 // LINE 2756:
 _T28:
 	return 0x0;
 // LINE 2758:
-_T2f:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00531081
@@ -6119,9 +6119,9 @@ _T16e:
 	__asm        jmp    _T17a;
 _T17a:
 	__asm        mov    eax, [ebp-0x14];
-	__asm        jmp    _T182;
+	__asm        jmp    __RETURN;
 // LINE 3119:
-_T182:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00531f88
@@ -9173,9 +9173,9 @@ int32_t CreateTrainInstance(int32_t instanceID) {
 _T24:
 	__asm        xor    eax, eax;
 _T26:
-	__asm        jmp    _T2b;
+	__asm        jmp    __RETURN;
 // LINE 4627:
-_T2b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0053431f
@@ -9201,9 +9201,9 @@ int32_t S3TrainCrashWhenReady(long mission_id) {
 	__asm        push   eax;
 	__asm        call   TrainClass::FindTrainToCrash;
 	__asm        add    esp, 4;
-	__asm        jmp    _T17;
+	__asm        jmp    __RETURN;
 // LINE 4690:
-_T17:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00534365
@@ -9215,9 +9215,9 @@ int32_t S3TrainStartRescue(long mission_id, int32_t timetolive) {
 	__asm        push   eax;
 	__asm        call   TrainClass::FindTrainForRescue;
 	__asm        add    esp, 8;
-	__asm        jmp    _T1b;
+	__asm        jmp    __RETURN;
 // LINE 4711:
-_T1b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00534385
@@ -9409,9 +9409,9 @@ int32_t S3TrainMIFFLoad(void * __ptr32 miffReader) {
 	__asm        push   eax;
 	__asm        call   TrainClass::MIFFLoad;
 	__asm        add    esp, 4;
-	__asm        jmp    _T17;
+	__asm        jmp    __RETURN;
 // LINE 4827:
-_T17:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00534588
@@ -9421,9 +9421,9 @@ int32_t S3TrainMIFFSave(void * __ptr32 miffWriter) {
 	__asm        push   eax;
 	__asm        call   TrainClass::MIFFSave;
 	__asm        add    esp, 4;
-	__asm        jmp    _T17;
+	__asm        jmp    __RETURN;
 // LINE 4840:
-_T17:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x005345a4

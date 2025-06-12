@@ -163,7 +163,7 @@ _T4b:
 	__asm        mov    hFileOut, eax;
 // LINE 100:
 	__asm        cmp    hFileOut, 0;
-	__asm        je     _T1e3;
+	__asm        je     __RETURN;
 // LINE 101:
 	__asm        mov    eax, hFileOut;
 	__asm        push   eax;
@@ -259,7 +259,7 @@ _T1bf:
 	__asm        call   fclose;
 	__asm        add    esp, 4;
 // LINE 127:
-_T1e3:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0046bac3
@@ -412,9 +412,9 @@ _T1b1:
 // LINE 157:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(n);
 	__asm        and    eax, 0xFFFF;
-	__asm        jmp    _T1d7;
+	__asm        jmp    __RETURN;
 // LINE 158:
-_T1d7:
+__RETURN:
 }
 
 

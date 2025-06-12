@@ -414,9 +414,9 @@ static long stol(char * tag) {
 	__asm        push   eax;
 	__asm        call   swizzle_long;
 	__asm        add    esp, 4;
-	__asm        jmp    _T4e;
+	__asm        jmp    __RETURN;
 // LINE 257:
-_T4e:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004c4a2b
@@ -497,7 +497,7 @@ short S2CityLoad(char * filePath) {
 	__asm        push   eax;
 	__asm        call   ReadSCXFile;
 	__asm        add    esp, 4;
-	__asm        jmp    _T8b8;
+	__asm        jmp    __RETURN;
 // LINE 308:
 _T31:
 	__asm        mov    eax, ScratchPoolIndex;
@@ -1201,7 +1201,7 @@ badread:
 // LINE 458:
 	return 0x0;
 // LINE 459:
-_T8b8:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004c5373
@@ -1217,7 +1217,7 @@ _T14:
 _T18:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x100;
-	__asm        jge    _T9a;
+	__asm        jge    __RETURN;
 // LINE 477:
 	__asm        movsx  eax, i;
 	__asm        lea    eax, [eax+eax*4];
@@ -1254,7 +1254,7 @@ _T7a:
 // LINE 481:
 	__asm        jmp    _T14;
 // LINE 482:
-_T9a:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004c5412
@@ -1270,7 +1270,7 @@ _T14:
 _T18:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 0x100;
-	__asm        jge    _T67;
+	__asm        jge    __RETURN;
 // LINE 500:
 	__asm        mov    j, 0;
 	__asm        jmp    _T36;
@@ -1293,7 +1293,7 @@ _T36:
 _T62:
 	__asm        jmp    _T14;
 // LINE 503:
-_T67:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004c547e
@@ -1357,7 +1357,7 @@ _Tb2:
 _Tb6:
 	__asm        movsx  eax, i;
 	__asm        cmp    eax, 3;
-	__asm        jg     _Tdc;
+	__asm        jg     __RETURN;
 // LINE 527:
 	__asm        mov    eax, GraphMax;
 	__asm        mov    eax, [eax];
@@ -1366,7 +1366,7 @@ _Tb6:
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        jmp    _Tb2;
 // LINE 528:
-_Tdc:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004c555f
@@ -4906,9 +4906,9 @@ _Te6c:
 	__asm        push   eax;
 	__asm        call   S2CityGameWriteCompressed;
 	__asm        add    esp, 0x10;
-	__asm        jmp    _Te96;
+	__asm        jmp    __RETURN;
 // LINE 1480:
-_Te96:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004c81c9
@@ -4934,7 +4934,7 @@ _T2a:
 _T2d:
 	__asm        mov    eax, i;
 	__asm        cmp    count, eax;
-	__asm        jle    _T5f;
+	__asm        jle    __RETURN;
 // LINE 1505:
 	lval = lptr[i];
 // LINE 1506:
@@ -4948,7 +4948,7 @@ _T2d:
 // LINE 1507:
 	__asm        jmp    _T2a;
 // LINE 1509:
-_T5f:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004c822d
@@ -4970,7 +4970,7 @@ _T24:
 _T27:
 	__asm        mov    eax, count;
 	__asm        cmp    i, eax;
-	__asm        jge    _T81;
+	__asm        jge    __RETURN;
 // LINE 1533:
 	__asm        mov    eax, mptr;
 	__asm        mov    ax, [eax+2];
@@ -5000,7 +5000,7 @@ _T27:
 // LINE 1537:
 	__asm        jmp    _T24;
 // LINE 1539:
-_T81:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004c82b3
@@ -5025,7 +5025,7 @@ _T27:
 _T2a:
 	__asm        mov    eax, i;
 	__asm        cmp    count, eax;
-	__asm        jle    _T5f;
+	__asm        jle    __RETURN;
 // LINE 1563:
 	sval = sptr[i];
 // LINE 1564:
@@ -5039,7 +5039,7 @@ _T2a:
 // LINE 1565:
 	__asm        jmp    _T27;
 // LINE 1567:
-_T5f:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004c8317
@@ -6236,7 +6236,7 @@ _T29:
 _T2c:
 	__asm        mov    eax, i;
 	__asm        cmp    iEnd, eax;
-	__asm        jle    _T4f;
+	__asm        jle    __RETURN;
 // LINE 2016:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, stringSource;
@@ -6246,7 +6246,7 @@ _T2c:
 	__asm        mov    [ecx+edx], al;
 	__asm        jmp    _T29;
 // LINE 2017:
-_T4f:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004c9339
@@ -6269,7 +6269,7 @@ void check_backslash_terminate(char * path) {
 	__asm        mov    eax, s;
 	__asm        movsx  eax, byte ptr [eax];
 	__asm        cmp    eax, 0x5C;
-	__asm        je     _T43;
+	__asm        je     __RETURN;
 // LINE 2047:
 	s++;
 // LINE 2048:
@@ -6277,7 +6277,7 @@ void check_backslash_terminate(char * path) {
 // LINE 2049:
 	s[1] = 0x0;
 // LINE 2051:
-_T43:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004c9381
@@ -6497,7 +6497,7 @@ _T55:
 	__asm        movsx  eax, i;
 	__asm        movsx  ecx, len;
 	__asm        cmp    eax, ecx;
-	__asm        jge    _T99;
+	__asm        jge    __RETURN;
 // LINE 2174:
 	__asm        mov    eax, s;
 	__asm        movsx  eax, byte ptr [eax];
@@ -6520,7 +6520,7 @@ _T91:
 // LINE 2177:
 	__asm        jmp    _T51;
 // LINE 2178:
-_T99:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004c95e3
@@ -6627,7 +6627,7 @@ _T2a:
 _T35:
 	__asm        mov    eax, ref;
 	__asm        cmp    s, eax;
-	__asm        je     _T63;
+	__asm        je     __RETURN;
 // LINE 2243:
 	__asm        mov    eax, s;
 	__asm        movsx  eax, byte ptr [eax];
@@ -6643,7 +6643,7 @@ _T5b:
 // LINE 2248:
 	__asm        jmp    _T35;
 // LINE 2249:
-_T63:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004c96fc

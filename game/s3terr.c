@@ -115,12 +115,12 @@ _T47:
 // LINE 106:
 	return wat;
 // LINE 107:
-	__asm        jmp    _Tc0;
+	__asm        jmp    __RETURN;
 // LINE 108:
 _Tb7:
 	return alt;
 // LINE 110:
-_Tc0:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00513e15
@@ -5209,7 +5209,7 @@ _T3c:
 	__asm        mov    eax, ulp.y;
 	__asm        add    eax, G_VertDim;
 	__asm        cmp    eax, y;
-	__asm        jle    _T10e;
+	__asm        jle    __RETURN;
 // LINE 1152:
 	__asm        mov    eax, ulp.x;
 	__asm        mov    x, eax;
@@ -5272,7 +5272,7 @@ _Tce:
 _T109:
 	__asm        jmp    _T39;
 // LINE 1163:
-_T10e:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00517f70
@@ -6156,7 +6156,7 @@ _T3ca:
 	x++;
 _T3cd:
 	__asm        cmp    x, 0x90;
-	__asm        jg     _T42c;
+	__asm        jg     __RETURN;
 // LINE 1582:
 	__asm        mov    z, 0x80;
 	__asm        jmp    _T3e9;
@@ -6183,7 +6183,7 @@ _T3e9:
 _T427:
 	__asm        jmp    _T3ca;
 // LINE 1588:
-_T42c:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00518a8c

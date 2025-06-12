@@ -2917,8 +2917,8 @@ static void $E75() {
 
 	__asm        call   $E71;
 	__asm        call   $E74;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -2990,8 +2990,8 @@ static void $E74() {
 	__asm        push   0x5440BD;
 	__asm        call   atexit;
 	__asm        add    esp, 4;
-	__asm        jmp    _T18;
-_T18:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -3019,8 +3019,8 @@ static void $E81() {
 
 	__asm        call   $E77;
 	__asm        call   $E80;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -3071,8 +3071,8 @@ static void $E80() {
 	__asm        push   0x5441E5;
 	__asm        call   atexit;
 	__asm        add    esp, 4;
-	__asm        jmp    _T18;
-_T18:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -3127,8 +3127,8 @@ static void $E86() {
 
 	__asm        call   $E83;
 	__asm        call   $E85;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -3163,8 +3163,8 @@ static void $E85() {
 	__asm        push   0x54432A;
 	__asm        call   atexit;
 	__asm        add    esp, 4;
-	__asm        jmp    _T18;
-_T18:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -3328,9 +3328,9 @@ unsigned short GetOutOfHeli(long personID) {
 	__asm        push   eax;
 	__asm        call   cYObject::GetOutOfHeli;
 	__asm        add    esp, 4;
-	__asm        jmp    _T17;
+	__asm        jmp    __RETURN;
 // LINE 168:
-_T17:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0054456a
@@ -3477,12 +3477,12 @@ _T1b9:
 _T1db:
 	return 0x1;
 // LINE 180:
-	__asm        jmp    _T1f1;
+	__asm        jmp    __RETURN;
 // LINE 181:
 _T1e9:
 	return 0x0;
 // LINE 182:
-_T1f1:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00544760
@@ -3770,9 +3770,9 @@ _T2aa:
 
 	__asm        mov    eax, [ebp-0x20];
 _T2bd:
-	__asm        jmp    _T2c2;
+	__asm        jmp    __RETURN;
 // LINE 245:
-_T2c2:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00544b3b
@@ -4237,12 +4237,12 @@ _T88:
 // LINE 309:
 	return 0x1;
 // LINE 311:
-	__asm        jmp    _Tca;
+	__asm        jmp    __RETURN;
 // LINE 312:
 _Tc2:
 	return 0x0;
 // LINE 313:
-_Tca:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00545049
@@ -5269,8 +5269,8 @@ _Tc6a:
 // FUNCTION: COPTER_D 0x00545cc3
 void duh(double __formal) {
 
-	__asm        jmp    _T0b;
-_T0b:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00545cd3
@@ -5887,12 +5887,12 @@ int32_t IsThisABadGuy(/*unpacked*/ struct _DYOBJ_INST *guy) {
 // LINE 500:
 	return 0x1;
 // LINE 501:
-	__asm        jmp    _T45;
+	__asm        jmp    __RETURN;
 // LINE 502:
 _T3e:
 	return 0x0;
 // LINE 503:
-_T45:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00546478
@@ -5947,9 +5947,9 @@ _T2f:
 _T2f:
 	__asm        mov    eax, gAvatar;
 	__asm        add    eax, 0x24;
-	__asm        jmp    _T3c;
+	__asm        jmp    __RETURN;
 // LINE 521:
-_T3c:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00546541
@@ -5968,9 +5968,9 @@ _T3c:
 _T2f:
 	__asm        mov    eax, gAvatar;
 	__asm        add    eax, 0x168;
-	__asm        jmp    _T3e;
+	__asm        jmp    __RETURN;
 // LINE 527:
-_T3e:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00546584
@@ -6797,9 +6797,9 @@ _T79:
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::StartScurkAmbientMission;
-	__asm        jmp    _Tce;
+	__asm        jmp    __RETURN;
 // LINE 713:
-_Tce:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00546f45
@@ -10512,7 +10512,7 @@ _Tc1:
 	return 0x0;
 // LINE 1425:
 _Tc9:
-	__asm        jmp    _T2ca;
+	__asm        jmp    __RETURN;
 // LINE 1426:
 // Block start:
 	/*bp-0x4*/   long debug2;
@@ -10690,13 +10690,13 @@ _T28a:
 // LINE 1455:
 	return 0x1;
 // LINE 1456:
-	__asm        jmp    _T2ca;
+	__asm        jmp    __RETURN;
 // LINE 1457:
 _T2c2:
 	return 0x0;
 // LINE 1459:
 // Block end:
-_T2ca:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0054a1d3
@@ -19266,7 +19266,7 @@ _T120:
 _T18c:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, this;
-	__asm        jmp    _T1ba;
+	__asm        jmp    __RETURN;
 _L56469:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x14;
@@ -19279,7 +19279,7 @@ _L56468:
 _L56467:
 	__asm        mov    eax, 0x595E58;
 	__asm        jmp    near ptr 0x0056F590;
-_T1ba:
+__RETURN:
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    fs:[0], ecx;
 }
@@ -20018,7 +20018,7 @@ _Tc6:
 	__asm        call   _L56643;
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        call   _L56642;
-	__asm        jmp    _T11b;
+	__asm        jmp    __RETURN;
 _L56643:
 	__asm        cmp    this, 0;
 	__asm        je     _Tf8;
@@ -20040,7 +20040,7 @@ _L56642:
 _L56641:
 	__asm        mov    eax, 0x595E88;
 	__asm        jmp    near ptr 0x0056F590;
-_T11b:
+__RETURN:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
 }
@@ -20237,9 +20237,9 @@ _Tf2:
 // LINE 3148:
 _Tf8:
 	__asm        movsx  eax, dir;
-	__asm        jmp    _T101;
+	__asm        jmp    __RETURN;
 // LINE 3149:
-_T101:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00551bf7
@@ -20277,7 +20277,7 @@ int32_t S3PUtilsGetAlt(int32_t x, int32_t y, int32_t z) {
 	__asm        push   eax;
 	__asm        call   S3TerrPrecisionAlt;
 	__asm        add    esp, 0xC;
-	__asm        jmp    _T13a;
+	__asm        jmp    __RETURN;
 // LINE 3163:
 _T59:
 	__asm        mov    eax, x;
@@ -20367,7 +20367,7 @@ _T122:
 _T132:
 	return alt;
 // LINE 3188:
-_T13a:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00551d36
@@ -20430,7 +20430,7 @@ _T58:
 _T2d:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        call   _L55562;
-	__asm        jmp    _T51;
+	__asm        jmp    __RETURN;
 _L55562:
 	__asm        mov    ecx, this;
 	__asm        call   FlatResFile::~FlatResFile;
@@ -20438,7 +20438,7 @@ _L55562:
 _L55561:
 	__asm        mov    eax, 0x595EE0;
 	__asm        jmp    near ptr 0x0056F590;
-_T51:
+__RETURN:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
 }

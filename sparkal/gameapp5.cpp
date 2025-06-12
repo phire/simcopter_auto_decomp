@@ -185,8 +185,8 @@ _T78:
 	nHeight[0] = 0x300;
 // LINE 84:
 _T97:
-	__asm        jmp    _T9c;
-_T9c:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00495be3
@@ -503,8 +503,8 @@ _T94:
 	__asm        add    esp, 4;
 // LINE 216:
 _Tc3:
-	__asm        jmp    _Tc8;
-_Tc8:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00495fc4
@@ -600,8 +600,8 @@ _Tea:
 	__asm        call   dword ptr [eax+4];
 // LINE 257:
 _Tf5:
-	__asm        jmp    _Tfa;
-_Tfa:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004960c5
@@ -622,7 +622,7 @@ void  CGameApp::S3ShowInfo() {
 	__asm        cmp    dword ptr [eax+0x54], 0;
 	__asm        jne    _T42;
 // LINE 272:
-	__asm        jmp    _T2d9;
+	__asm        jmp    __RETURN;
 // LINE 275:
 _T42:
 	__asm        push   0;
@@ -834,8 +834,8 @@ _T297:
 	__asm        mov    ecx, [eax+0x54];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 380:
-	__asm        jmp    _T2d9;
-_T2d9:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 

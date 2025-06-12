@@ -101,8 +101,8 @@ int32_t operator==(const /*packed*/ class NotificationItem& P1, const /*packed*/
 _T32:
 	__asm        xor    eax, eax;
 _T34:
-	__asm        jmp    _T39;
+	__asm        jmp    __RETURN;
 // LINE 32:
-_T39:
+__RETURN:
 }
 

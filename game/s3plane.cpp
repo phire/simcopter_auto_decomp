@@ -426,8 +426,8 @@ static void $E8() {
 
 	__asm        call   $E4;
 	__asm        call   $E7;
-	__asm        jmp    _T15;
-_T15:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -447,8 +447,8 @@ static void $E7() {
 	__asm        push   0x52B116;
 	__asm        call   atexit;
 	__asm        add    esp, 4;
-	__asm        jmp    _T18;
-_T18:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -568,9 +568,9 @@ _T4c:
 _T17:
 	__asm        mov    eax, index;
 	__asm        mov    eax, planes[0][eax*4];
-	__asm        jmp    _T26;
+	__asm        jmp    __RETURN;
 // LINE 270:
-_T26:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052b29e
@@ -582,9 +582,9 @@ _T26:
 	__asm        push   0xFFFFFFFF;
 	__asm        call   PlaneClass::CreateInstance;
 	__asm        add    esp, 0xC;
-	__asm        jmp    _T1b;
+	__asm        jmp    __RETURN;
 // LINE 328:
-_T1b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052b2be
@@ -658,9 +658,9 @@ int32_t PlaneClass::Initialize(int32_t instanceID) {
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   PlaneClass::InitializeInstance;
-	__asm        jmp    _T2b;
+	__asm        jmp    __RETURN;
 // LINE 454:
-_T2b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052b390
@@ -1676,12 +1676,12 @@ _Taa:
 _Td2:
 	return 0x1;
 // LINE 1319:
-	__asm        jmp    _Te8;
+	__asm        jmp    __RETURN;
 // LINE 1321:
 _Te1:
 	return 0x0;
 // LINE 1323:
-_Te8:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052be9a
@@ -2668,12 +2668,12 @@ int32_t PlaneClass::HaveIReachedNextLoc() {
 // LINE 1767:
 	return 0x1;
 // LINE 1769:
-	__asm        jmp    _T2f;
+	__asm        jmp    __RETURN;
 // LINE 1771:
 _T28:
 	return 0x0;
 // LINE 1773:
-_T2f:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052ca5d
@@ -3802,9 +3802,9 @@ int32_t S3PlaneCrashWhenReady(long mission_id) {
 	__asm        push   eax;
 	__asm        call   PlaneClass::FindPlaneToCrash;
 	__asm        add    esp, 4;
-	__asm        jmp    _T17;
+	__asm        jmp    __RETURN;
 // LINE 2575:
-_T17:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052d6f5
@@ -4177,9 +4177,9 @@ int32_t S3PlaneMIFFLoad(void * __ptr32 miffReader) {
 	__asm        push   eax;
 	__asm        call   PlaneClass::MIFFLoad;
 	__asm        add    esp, 4;
-	__asm        jmp    _T17;
+	__asm        jmp    __RETURN;
 // LINE 2774:
-_T17:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052daf7
@@ -4189,9 +4189,9 @@ int32_t S3PlaneMIFFSave(void * __ptr32 miffWriter) {
 	__asm        push   eax;
 	__asm        call   PlaneClass::MIFFSave;
 	__asm        add    esp, 4;
-	__asm        jmp    _T17;
+	__asm        jmp    __RETURN;
 // LINE 2787:
-_T17:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052db13

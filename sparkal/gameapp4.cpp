@@ -853,7 +853,7 @@ _T798:
 	__asm        lea    ecx, tempHourglassVideoBuffer<SmackerBackBuffer+0x00:None>;
 	__asm        call   SmackerBackBuffer::~SmackerBackBuffer;
 	__asm        mov    eax, [ebp-0x4BC];
-	__asm        jmp    _T8bf;
+	__asm        jmp    __RETURN;
 // LINE 146:
 _T7ae:
 	__asm        mov    dword ptr [ebp-0x4C0], 1;
@@ -919,9 +919,9 @@ _T8a9:
 	__asm        lea    ecx, tempHourglassVideoBuffer<SmackerBackBuffer+0x00:None>;
 	__asm        call   SmackerBackBuffer::~SmackerBackBuffer;
 	__asm        mov    eax, [ebp-0x4C0];
-	__asm        jmp    _T8bf;
+	__asm        jmp    __RETURN;
 // LINE 150:
-_T8bf:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004bc3db

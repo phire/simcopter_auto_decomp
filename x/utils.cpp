@@ -619,7 +619,7 @@ unsigned long PStr2Long(unsigned char * name) {
 // LINE 225:
 	return 0x0;
 // LINE 226:
-	__asm        jmp    _T6d;
+	__asm        jmp    __RETURN;
 // LINE 227:
 // Block start:
 	/*bp-0x4*/   unsigned long name4;
@@ -650,7 +650,7 @@ _T50:
 	return name4;
 // LINE 232:
 // Block end:
-_T6d:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00566266

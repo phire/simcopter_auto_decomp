@@ -3561,7 +3561,7 @@ _T8a8:
 	__asm        jmp    _T8ad;
 _T8ad:
 	__asm        mov    eax, [ebp-0x5C];
-	__asm        jmp    _T995;
+	__asm        jmp    __RETURN;
 // LINE 304:
 _T8b5:
 	__asm        mov    eax, this;
@@ -3633,9 +3633,9 @@ _T988:
 	__asm        jmp    _T98d;
 _T98d:
 	__asm        mov    eax, [ebp-0x60];
-	__asm        jmp    _T995;
+	__asm        jmp    __RETURN;
 // LINE 310:
-_T995:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004353e2
@@ -4092,8 +4092,8 @@ _T5e6:
 	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
 	__asm        call   list<DirectoryEntry>::~list<DirectoryEntry>;
-	__asm        jmp    _T5fb;
-_T5fb:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004359e2
@@ -6412,7 +6412,7 @@ _T2fe:
 	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
 	__asm        call   list<DirectoryEntry>::~list<DirectoryEntry>;
 	__asm        mov    eax, [ebp-0x38];
-	__asm        jmp    _T3a0;
+	__asm        jmp    __RETURN;
 // LINE 554:
 _T30e:
 	__asm        mov    dword ptr [ebp-0x3C], 0;
@@ -6453,9 +6453,9 @@ _T390:
 	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
 	__asm        call   list<DirectoryEntry>::~list<DirectoryEntry>;
 	__asm        mov    eax, [ebp-0x3C];
-	__asm        jmp    _T3a0;
+	__asm        jmp    __RETURN;
 // LINE 555:
-_T3a0:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004376dc
@@ -6714,7 +6714,7 @@ _T346:
 	__asm        jmp    _T34b;
 _T34b:
 	__asm        mov    eax, [ebp-0x24];
-	__asm        jmp    _T42f;
+	__asm        jmp    __RETURN;
 // LINE 577:
 _T353:
 	__asm        jmp    _T12e;
@@ -6790,9 +6790,9 @@ _T422:
 	__asm        jmp    _T427;
 _T427:
 	__asm        mov    eax, [ebp-0x28];
-	__asm        jmp    _T42f;
+	__asm        jmp    __RETURN;
 // LINE 579:
-_T42f:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00437b10
@@ -6830,8 +6830,8 @@ _T2f:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F560;
 // LINE 604:
-	__asm        jmp    _Ta2;
-_Ta2:
+	__asm        jmp    __RETURN;
+__RETURN:
 	__asm        mov    eax, this;
 }
 
@@ -6885,8 +6885,8 @@ _T74:
 _T8e:
 	__asm        jmp    _T93;
 _T93:
-	__asm        jmp    _T98;
-_T98:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00437c57
@@ -6957,8 +6957,8 @@ void  Radio::SetPreferences(/*packed*/ struct RadioPreferences& newRadioPreferen
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x34];
 // LINE 653:
-	__asm        jmp    _T88;
-_T88:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00437d4c
@@ -6978,8 +6978,8 @@ void  Radio::GetPreferences(/*packed*/ struct RadioPreferences& currentRadioPref
 // LINE 667:
 	currentRadioPreferences.bOptionPlayEnglishIfDefaultLanguageNotFound = this-><Radio+0x30:4>;
 // LINE 668:
-	__asm        jmp    _T64;
-_T64:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00437db7
@@ -7227,8 +7227,8 @@ _T4c:
 	__asm        call   dword ptr [eax+0x24];
 // LINE 774:
 _T8f:
-	__asm        jmp    _T94;
-_T94:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004380a0
@@ -7254,8 +7254,8 @@ _T3c:
 	this-><Radio+0x30:4> = bNewOption;
 // LINE 787:
 _T4f:
-	__asm        jmp    _T54;
-_T54:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004380fb
@@ -7467,7 +7467,7 @@ _T6e:
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x34];
-	__asm        jmp    _Ta8;
+	__asm        jmp    __RETURN;
 // LINE 852:
 _T9c:
 	__asm        jmp    _T3e;
@@ -7475,7 +7475,7 @@ _T9c:
 _Ta1:
 	return 0x0;
 // LINE 854:
-_Ta8:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00438379
@@ -7554,9 +7554,9 @@ _T1b:
 	__asm        mov    ecx, 0x98;
 	__asm        cdq;
 	__asm        idiv   ecx;
-	__asm        jmp    _T34;
+	__asm        jmp    __RETURN;
 // LINE 877:
-_T34:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00438457
@@ -7588,9 +7588,9 @@ _T44:
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    ecx, [ebp-4];
 	__asm        call   dword ptr [eax+0xC];
-	__asm        jmp    _T5a;
+	__asm        jmp    __RETURN;
 // LINE 888:
-_T5a:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004384b6
@@ -8890,9 +8890,9 @@ _Tfd1:
 	__asm        jmp    _Tfd6;
 _Tfd6:
 	__asm        mov    eax, [ebp-0x160];
-	__asm        jmp    _Tfe1;
+	__asm        jmp    __RETURN;
 // LINE 1006:
-_Tfe1:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00439663
@@ -9178,9 +9178,9 @@ _T342:
 	__asm        jmp    _T347;
 _T347:
 	__asm        mov    eax, [ebp-4];
-	__asm        jmp    _T34f;
+	__asm        jmp    __RETURN;
 // LINE 1015:
-_T34f:
+__RETURN:
 }
 
 

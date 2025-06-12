@@ -2152,9 +2152,9 @@ _Td6:
 	__asm        mov    eax, pDestSurface;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x14];
-	__asm        jmp    _T119;
+	__asm        jmp    __RETURN;
 // LINE 658:
-_T119:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0046f948
@@ -2479,9 +2479,9 @@ unsigned long CBackBuffer::ComposeNoClip(/*packed*/ class IFlatImage *pDestImage
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x3C];
-	__asm        jmp    _T48;
+	__asm        jmp    __RETURN;
 // LINE 837:
-_T48:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0046fd33
@@ -2511,9 +2511,9 @@ unsigned long CBackBuffer::Compose(/*packed*/ class IFlatImage *pDestImage, cons
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xC];
-	__asm        jmp    _T48;
+	__asm        jmp    __RETURN;
 // LINE 849:
-_T48:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0046fd82
@@ -2570,9 +2570,9 @@ _T65:
 	__asm        mov    eax, pDestSurface;
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x14];
-	__asm        jmp    _T8a;
+	__asm        jmp    __RETURN;
 // LINE 892:
-_T8a:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0046fe13
@@ -2612,9 +2612,9 @@ _T16:
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
-	__asm        jmp    _T62;
+	__asm        jmp    __RETURN;
 // LINE 917:
-_T62:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0046fe7c
@@ -3404,9 +3404,9 @@ unsigned long CBackBuffer::DrawRectangleOutline(const /*packed*/ struct SparkalR
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x54];
-	__asm        jmp    _Tb9;
+	__asm        jmp    __RETURN;
 // LINE 1314:
-_Tb9:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004707a4
@@ -3487,9 +3487,9 @@ unsigned long CBackBuffer::DrawRectangleOutlineUnclipped(const /*packed*/ struct
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x50];
-	__asm        jmp    _Tb9;
+	__asm        jmp    __RETURN;
 // LINE 1338:
-_Tb9:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00470864

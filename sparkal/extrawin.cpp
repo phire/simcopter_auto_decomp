@@ -1106,8 +1106,8 @@ protected:
 static void $E66() {
 
 	__asm        call   $E65;
-	__asm        jmp    _T10;
-_T10:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -1127,8 +1127,8 @@ _T20:
 static void $E69() {
 
 	__asm        call   $E68;
-	__asm        jmp    _T10;
-_T10:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -2784,9 +2784,9 @@ _Taec:
 	__asm        jmp    _Taf1;
 _Taf1:
 	__asm        mov    eax, [ebp-0x6C];
-	__asm        jmp    _Taf9;
+	__asm        jmp    __RETURN;
 // LINE 152:
-_Taf9:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0045165b
@@ -3783,9 +3783,9 @@ int32_t AnimationWindow::DoesWindowNeedUpdating() {
 _T33:
 	__asm        xor    eax, eax;
 _T35:
-	__asm        jmp    _T3a;
+	__asm        jmp    __RETURN;
 // LINE 417:
-_T3a:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004523db
@@ -4036,7 +4036,7 @@ _T14f:
 	__asm        jmp    _T154;
 _T154:
 	__asm        mov    eax, [ebp-0x1C];
-	__asm        jmp    _T1b27;
+	__asm        jmp    __RETURN;
 // LINE 533:
 _T15c:
 	__asm        push   0xA4;
@@ -5822,9 +5822,9 @@ _T1b17:
 	__asm        jmp    _T1b1c;
 _T1b1c:
 	__asm        mov    eax, [ebp-0x18C];
-	__asm        jmp    _T1b27;
+	__asm        jmp    __RETURN;
 // LINE 652:
-_T1b27:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00454163
@@ -9179,9 +9179,9 @@ _T127c:
 	__asm        jmp    _T1281;
 _T1281:
 	__asm        mov    eax, [ebp-0xF8];
-	__asm        jmp    _T128c;
+	__asm        jmp    __RETURN;
 // LINE 1116:
-_T128c:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00456f10
@@ -9499,9 +9499,9 @@ long SoundSettingsWindow::ConvertSoundValueToSliderValue(long lSoundValue) {
 	__asm        add    esp, 0x10;
 	__asm        fdivr  qword ptr ds:[0x58FDB0];
 	__asm        call   0x0056EBE8;
-	__asm        jmp    _T43;
+	__asm        jmp    __RETURN;
 // LINE 1254:
-_T43:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004572ea
@@ -9519,9 +9519,9 @@ long SoundSettingsWindow::ConvertSliderValueToSoundValue(long lSliderValue) {
 	__asm        fmul   qword ptr ds:[0x58FDB8];
 	__asm        fsubr  qword ptr ds:[0x58FDB0];
 	__asm        call   0x0056EBE8;
-	__asm        jmp    _T42;
+	__asm        jmp    __RETURN;
 // LINE 1283:
-_T42:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00457331
@@ -11649,9 +11649,9 @@ _T1e37:
 	__asm        jmp    _T1e3c;
 _T1e3c:
 	__asm        mov    eax, [ebp-0x180];
-	__asm        jmp    _T1e47;
+	__asm        jmp    __RETURN;
 // LINE 1461:
-_T1e47:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004591f5
@@ -12390,9 +12390,9 @@ int32_t PopupMenuExtra::Initialize() {
 // LINE 1572:
 	__asm        mov    ecx, this;
 	__asm        call   PopupMenuWindow::Initialize;
-	__asm        jmp    _T27;
+	__asm        jmp    __RETURN;
 // LINE 1573:
-_T27:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00459afd
@@ -13462,9 +13462,9 @@ _T2b3:
 	__asm        jmp    _T2b8;
 _T2b8:
 	__asm        mov    eax, [ebp-0x10];
-	__asm        jmp    _T2c0;
+	__asm        jmp    __RETURN;
 // LINE 1701:
-_T2c0:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0045a8bd
@@ -14365,9 +14365,9 @@ int32_t TooltipWindow::Initialize() {
 // LINE 1837:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::Initialize;
-	__asm        jmp    _T27;
+	__asm        jmp    __RETURN;
 // LINE 1838:
-_T27:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0045b3a5
@@ -14896,9 +14896,9 @@ _T2a5:
 	__asm        jmp    _T2aa;
 _T2aa:
 	__asm        mov    eax, [ebp-0x10];
-	__asm        jmp    _T2b2;
+	__asm        jmp    __RETURN;
 // LINE 1906:
-_T2b2:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0045b981
@@ -16524,9 +16524,9 @@ long BoneheadTextEditWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned
 	__asm        push   eax;
 	__asm        call   GraphicWindow::MakeFocus;
 	__asm        add    esp, 4;
-	__asm        jmp    _T1d;
+	__asm        jmp    __RETURN;
 // LINE 2133:
-_T1d:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0045cd8c
@@ -16636,9 +16636,9 @@ _T169:
 _T173:
 	__asm        xor    eax, eax;
 _T175:
-	__asm        jmp    _T17a;
+	__asm        jmp    __RETURN;
 // LINE 2142:
-_T17a:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0045cf0b
@@ -17074,9 +17074,9 @@ int32_t BoneheadTextEditWindow::ProcessReturn() {
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x80];
-	__asm        jmp    _T21;
+	__asm        jmp    __RETURN;
 // LINE 2188:
-_T21:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0045d414
@@ -18110,9 +18110,9 @@ _T169:
 _T173:
 	__asm        xor    eax, eax;
 _T175:
-	__asm        jmp    _T17a;
+	__asm        jmp    __RETURN;
 // LINE 2359:
-_T17a:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0045e0dc
@@ -18141,8 +18141,8 @@ int32_t ScrollingCreditWindow::DoMessage(/*unpacked*/ class GraphicWindow *gwSou
 static void $E72() {
 
 	__asm        call   $E71;
-	__asm        jmp    _T10;
-_T10:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -18162,8 +18162,8 @@ _T20:
 static void $E75() {
 
 	__asm        call   $E74;
-	__asm        jmp    _T10;
-_T10:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -20137,9 +20137,9 @@ _T1bc3:
 	__asm        jmp    _T1bc8;
 _T1bc8:
 	__asm        mov    eax, [ebp-0x158];
-	__asm        jmp    _T1bd3;
+	__asm        jmp    __RETURN;
 // LINE 2539:
-_T1bd3:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0045fe23
@@ -20347,9 +20347,9 @@ int32_t CheckupWindow::CanUserAffordCurrentSliderValues() {
 _T38:
 	__asm        xor    eax, eax;
 _T3a:
-	__asm        jmp    _T3f;
+	__asm        jmp    __RETURN;
 // LINE 2625:
-_T3f:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00460077

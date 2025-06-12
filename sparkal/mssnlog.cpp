@@ -1416,9 +1416,9 @@ _T915:
 	__asm        jmp    _T91a;
 _T91a:
 	__asm        mov    eax, [ebp-0x68];
-	__asm        jmp    _T922;
+	__asm        jmp    __RETURN;
 // LINE 111:
-_T922:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0046c90a
@@ -1531,9 +1531,9 @@ _T10f:
 _T134:
 	__asm        xor    eax, eax;
 _T136:
-	__asm        jmp    _T13b;
+	__asm        jmp    __RETURN;
 // LINE 120:
-_T13b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0046ca4c
@@ -2545,8 +2545,8 @@ _T167:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x24;
 	__asm        call   MFont::~MFont;
-	__asm        jmp    _T177;
-_T177:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0046d612

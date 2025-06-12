@@ -2360,7 +2360,7 @@ _T1bf:
 	__asm        jmp    _T1c4;
 _T1c4:
 	__asm        mov    eax, [ebp-8];
-	__asm        jmp    _T4de;
+	__asm        jmp    __RETURN;
 // LINE 165:
 	__asm        jmp    _T4d7;
 _T1d1:
@@ -2630,13 +2630,13 @@ _T4bc:
 _T4d0:
 	__asm        xor    eax, eax;
 _T4d2:
-	__asm        jmp    _T4de;
+	__asm        jmp    __RETURN;
 // LINE 177:
 // Block end:
 _T4d7:
 	return 0x0;
 // LINE 178:
-_T4de:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004832a3
@@ -3051,8 +3051,8 @@ _T4d1:
 	__asm        call   Directory::ReadDirectoryEntries;
 // LINE 202:
 _T4fd:
-	__asm        jmp    _T502;
-_T502:
+	__asm        jmp    __RETURN;
+__RETURN:
 	__asm        mov    eax, this;
 }
 
@@ -3206,7 +3206,7 @@ _T205:
 	__asm        jmp    _T20a;
 _T20a:
 	__asm        mov    eax, [ebp-0x18C];
-	__asm        jmp    _T1181;
+	__asm        jmp    __RETURN;
 // LINE 239:
 _T215:
 	directoryEntryCurrent.directoryParent = this;
@@ -4212,9 +4212,9 @@ _T1171:
 	__asm        jmp    _T1176;
 _T1176:
 	__asm        mov    eax, [ebp-0x1E4];
-	__asm        jmp    _T1181;
+	__asm        jmp    __RETURN;
 // LINE 328:
-_T1181:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0048494d
@@ -4272,7 +4272,7 @@ _Taa:
 	__asm        lea    ecx, sPathWithFilter.c_str_ptr;
 	__asm        call   basic_string<char>::~basic_string<char>;
 	__asm        mov    eax, [ebp-0x174];
-	__asm        jmp    _Tde1;
+	__asm        jmp    __RETURN;
 // LINE 361:
 _Tcb:
 	__asm        test   reinterpret_cast<uint8_t>(findData.dwFileAttributes), 0x10;
@@ -5124,8 +5124,8 @@ _Td92:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _Tddc:
-	__asm        jmp    _Tde1;
-_Tde1:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00485735
@@ -5308,9 +5308,9 @@ _T278:
 	__asm        jmp    _T27d;
 _T27d:
 	__asm        mov    eax, [ebp-0x158];
-	__asm        jmp    _T288;
+	__asm        jmp    __RETURN;
 // LINE 440:
-_T288:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004859c2
@@ -5700,9 +5700,9 @@ _Tda:
 	__asm        jmp    _Tdf;
 _Tdf:
 	__asm        mov    eax, [ebp-0x14];
-	__asm        jmp    _Te7;
+	__asm        jmp    __RETURN;
 // LINE 489:
-_Te7:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00485e22
@@ -5755,7 +5755,7 @@ _T61:
 _T7e:
 	__asm        mov    eax, iterator.node;
 	__asm        add    eax, 8;
-	__asm        jmp    _T95;
+	__asm        jmp    __RETURN;
 // LINE 503:
 _T89:
 	__asm        jmp    _T40;
@@ -5763,7 +5763,7 @@ _T89:
 _T8e:
 	return 0x0;
 // LINE 505:
-_T95:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00485ebe
@@ -6136,8 +6136,8 @@ _T440:
 	__asm        call   Directory::ReadDirectoryEntries;
 // LINE 517:
 _T452:
-	__asm        jmp    _T457;
-_T457:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0048631c
@@ -6156,7 +6156,7 @@ _T1d:
 	__asm        cmp    nDirectoryPathLength, 0;
 	__asm        ja     _T2c;
 // LINE 529:
-	__asm        jmp    _T4b1;
+	__asm        jmp    __RETURN;
 // LINE 530:
 _T2c:
 	__asm        jmp    _T31;
@@ -6550,8 +6550,8 @@ _T49e:
 	__asm        jmp    _T4ac;
 // LINE 533:
 _T4ac:
-	__asm        jmp    _T4b1;
-_T4b1:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004867d2
@@ -6570,7 +6570,7 @@ _T1a:
 	__asm        cmp    nDirectoryPathLength, 0;
 	__asm        ja     _T29;
 // LINE 550:
-	__asm        jmp    _T5f4;
+	__asm        jmp    __RETURN;
 // LINE 553:
 _T29:
 	__asm        jmp    _T2e;
@@ -6853,7 +6853,7 @@ _T343:
 	__asm        jmp    _T348;
 // LINE 557:
 _T348:
-	__asm        jmp    _T5f4;
+	__asm        jmp    __RETURN;
 // LINE 561:
 _T34d:
 	__asm        jmp    _T352;
@@ -6999,7 +6999,7 @@ _T4c9:
 	__asm        mov    ecx, sLastPart;
 	__asm        call   basic_string<char>::assign;
 // LINE 565:
-	__asm        jmp    _T5f4;
+	__asm        jmp    __RETURN;
 // LINE 570:
 _T4e1:
 	__asm        mov    eax, SZ_DIR_SEPARATOR_1;
@@ -7095,8 +7095,8 @@ _T5ea:
 	__asm        jmp    _T5ef;
 // LINE 572:
 _T5ef:
-	__asm        jmp    _T5f4;
-_T5f4:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 

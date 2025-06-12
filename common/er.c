@@ -32,11 +32,11 @@ void ERexit(char * p) {
 	return;
 _T39:
 	__asm        cmp    answer, 4;
-	__asm        jne    _T49;
+	__asm        jne    __RETURN;
 // LINE 60:
 	__asm        call   dword ptr ds:[0x6C369C];
 // LINE 65:
-_T49:
+__RETURN:
 }
 
 

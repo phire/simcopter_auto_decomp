@@ -1229,9 +1229,9 @@ _T292:
 	__asm        jmp    _T297;
 _T297:
 	__asm        mov    eax, [ebp-0x10];
-	__asm        jmp    _T29f;
+	__asm        jmp    __RETURN;
 // LINE 152:
-_T29f:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00448928
@@ -2587,9 +2587,9 @@ int32_t DialWindow::Initialize() {
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x10];
-	__asm        jmp    _T26;
+	__asm        jmp    __RETURN;
 // LINE 421:
-_T26:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00449aae
@@ -4778,9 +4778,9 @@ _T65:
 _T6f:
 	__asm        xor    eax, eax;
 _T71:
-	__asm        jmp    _T76;
+	__asm        jmp    __RETURN;
 // LINE 799:
-_T76:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0044ba5b
@@ -5337,9 +5337,9 @@ int32_t PassengerWindow::Initialize() {
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x10];
-	__asm        jmp    _T26;
+	__asm        jmp    __RETURN;
 // LINE 933:
-_T26:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0044c15e
@@ -5612,9 +5612,9 @@ _T2e6:
 	__asm        jmp    _T2eb;
 _T2eb:
 	__asm        mov    eax, [ebp-0x10];
-	__asm        jmp    _T2f3;
+	__asm        jmp    __RETURN;
 // LINE 967:
-_T2f3:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0044c48e
@@ -6361,9 +6361,9 @@ _T56:
 _T60:
 	__asm        xor    eax, eax;
 _T62:
-	__asm        jmp    _T67;
+	__asm        jmp    __RETURN;
 // LINE 1147:
-_T67:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0044ccdf
@@ -7019,9 +7019,9 @@ int32_t MapWindow::Initialize() {
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x10];
-	__asm        jmp    _T26;
+	__asm        jmp    __RETURN;
 // LINE 1340:
-_T26:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0044d5b2
@@ -8368,9 +8368,9 @@ int32_t EquipmentPanelWindow::Initialize() {
 // LINE 1701:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::Initialize;
-	__asm        jmp    _T26;
+	__asm        jmp    __RETURN;
 // LINE 1702:
-_T26:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0044e74b
@@ -8506,9 +8506,9 @@ _T1a1:
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::CreateImage;
-	__asm        jmp    _T1c9;
+	__asm        jmp    __RETURN;
 // LINE 1739:
-_T1c9:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0044e94b
@@ -8655,7 +8655,7 @@ int32_t EquipmentPanelWindow::DoesWindowNeedUpdating() {
 _T6a:
 	__asm        xor    eax, eax;
 _T6c:
-	__asm        jmp    _Tbe;
+	__asm        jmp    __RETURN;
 // LINE 1783:
 	__asm        jmp    _Tab;
 _T76:
@@ -8674,16 +8674,16 @@ _T76:
 _Ta4:
 	__asm        xor    eax, eax;
 _Ta6:
-	__asm        jmp    _Tbe;
+	__asm        jmp    __RETURN;
 // LINE 1786:
 _Tab:
 	lFrameCounter++;
 // LINE 1788:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::DoesWindowNeedUpdating;
-	__asm        jmp    _Tbe;
+	__asm        jmp    __RETURN;
 // LINE 1789:
-_Tbe:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0044eb6a

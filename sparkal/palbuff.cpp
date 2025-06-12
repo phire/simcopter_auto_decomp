@@ -644,9 +644,9 @@ unsigned long PaletteBuffer::Compose(/*packed*/ class IFlatImage *pDestImage, lo
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   CBackBuffer::Compose;
-	__asm        jmp    _T37;
+	__asm        jmp    __RETURN;
 // LINE 163:
-_T37:
+__RETURN:
 }
 
 

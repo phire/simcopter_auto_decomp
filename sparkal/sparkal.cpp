@@ -115,18 +115,18 @@ _T53:
 // LINE 46:
 _T69:
 	__asm        fld    Time;
-	__asm        jmp    _T71;
+	__asm        jmp    __RETURN;
 // LINE 47:
-_T71:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0043d8c6
 long GetMillisecondTimeLong() {
 // LINE 56:
 	__asm        call   dword ptr ds:[0x6C3908];
-	__asm        jmp    _T11;
+	__asm        jmp    __RETURN;
 // LINE 61:
-_T11:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0043d8dc

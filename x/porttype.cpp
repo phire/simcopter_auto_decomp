@@ -153,9 +153,9 @@ long TickCount() {
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
-	__asm        jmp    _T23;
+	__asm        jmp    __RETURN;
 // LINE 33:
-_T23:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00566aca
@@ -180,12 +180,12 @@ short StringWidth(unsigned char * str) {
 // LINE 38:
 	return 0x0;
 // LINE 39:
-	__asm        jmp    _T44;
+	__asm        jmp    __RETURN;
 // LINE 40:
 _T3b:
 	return reinterpret_cast<uint16_t>(textSize.cx);
 // LINE 41:
-_T44:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00566b13
@@ -739,11 +739,11 @@ unsigned short PtInRect(/*unpacked*/ struct Point p, /*unpacked*/ struct Rect *r
 _T51:
 	return 0x0;
 // LINE 212:
-	__asm        jmp    _T67;
+	__asm        jmp    __RETURN;
 _T5e:
 	return 0x1;
 // LINE 213:
-_T67:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00567173

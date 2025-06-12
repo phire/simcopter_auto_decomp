@@ -146,17 +146,17 @@ int32_t ShortestPath::FindDistanceFromDestination(/*packed*/ struct _GridCoordin
 	__asm        mov    eax, y;
 	__asm        sar    eax, 1;
 	__asm        add    eax, x;
-	__asm        jmp    _T6d;
+	__asm        jmp    __RETURN;
 // LINE 26:
-	__asm        jmp    _T6d;
+	__asm        jmp    __RETURN;
 // LINE 28:
 _T5f:
 	__asm        mov    eax, x;
 	__asm        sar    eax, 1;
 	__asm        add    eax, y;
-	__asm        jmp    _T6d;
+	__asm        jmp    __RETURN;
 // LINE 30:
-_T6d:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00543704

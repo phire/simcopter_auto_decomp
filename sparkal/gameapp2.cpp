@@ -584,8 +584,8 @@ _T164:
 	__asm        add    esp, 4;
 // LINE 136:
 _T1b9:
-	__asm        jmp    _T1be;
-_T1be:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004613cb
@@ -630,7 +630,7 @@ void  CGameApp::GetSoundPreferences() {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 153:
-	__asm        jmp    _Tc4;
+	__asm        jmp    __RETURN;
 // LINE 161:
 _T7c:
 	__asm        mov    tempSoundPreferences.lVehicleVolume, 0x2710;
@@ -657,8 +657,8 @@ _T7c:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 165:
-	__asm        jmp    _Tc4;
-_Tc4:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00461494
@@ -679,8 +679,8 @@ void  CGameApp::SetSoundPreferences(/*packed*/ struct SoundPreferences& newSound
 	__asm        call   dword ptr [eax+0x2C];
 // LINE 179:
 _T3e:
-	__asm        jmp    _T43;
-_T43:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004614de
@@ -792,8 +792,8 @@ _T137:
 	gPreferenceManager = 0x0;
 // LINE 209:
 _T141:
-	__asm        jmp    _T146;
-_T146:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00461629
@@ -1416,11 +1416,11 @@ _T5a0:
 	__asm        call   dword ptr [edx+0xC];
 // LINE 391:
 _T5f9:
-	__asm        jmp    _T608;
+	__asm        jmp    __RETURN;
 _L64110:
 	__asm        mov    eax, 0x595C00;
 	__asm        jmp    near ptr 0x0056F590;
-_T608:
+__RETURN:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
 }
@@ -1725,7 +1725,7 @@ _T3de:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x8C];
 // LINE 437:
-	__asm        jmp    _T620;
+	__asm        jmp    __RETURN;
 // LINE 440:
 _T3f1:
 	__asm        jmp    _T542;
@@ -1914,8 +1914,8 @@ _T601:
 	__asm        add    esp, 4;
 // LINE 478:
 _T61b:
-	__asm        jmp    _T620;
-_T620:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004624de
@@ -1970,8 +1970,8 @@ _T76:
 	__asm        jmp    _T6e;
 // LINE 494:
 _T98:
-	__asm        jmp    _T9d;
-_T9d:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00462582
@@ -3687,8 +3687,8 @@ _T1c3:
 	__asm        jmp    _T81;
 // LINE 783:
 _T1c8:
-	__asm        jmp    _T1cd;
-_T1cd:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00463dcb
@@ -3702,7 +3702,7 @@ void  CGameApp::ProcessCommand(int32_t nCommand) {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x5C];
 // LINE 793:
-	__asm        jmp    _T67b;
+	__asm        jmp    __RETURN;
 // LINE 795:
 	__asm        jmp    _T142;
 _T2b:
@@ -3712,7 +3712,7 @@ _T2b:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::TogglePaletteBufferDisplay;
 // LINE 797:
-	__asm        jmp    _T67b;
+	__asm        jmp    __RETURN;
 // LINE 799:
 	__asm        jmp    _T142;
 _T4a:
@@ -3722,7 +3722,7 @@ _T4a:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::ToggleDebugWindowDisplay;
 // LINE 801:
-	__asm        jmp    _T67b;
+	__asm        jmp    __RETURN;
 // LINE 803:
 	__asm        jmp    _T142;
 _T69:
@@ -3740,7 +3740,7 @@ _T98:
 	this-><CGameApp+0x42c8:4> = 0x0;
 // LINE 805:
 _Ta5:
-	__asm        jmp    _T67b;
+	__asm        jmp    __RETURN;
 // LINE 807:
 	__asm        jmp    _T142;
 _Taf:
@@ -3773,7 +3773,7 @@ _Tf0:
 	__asm        call   CGameApp::ShowVersion;
 // LINE 810:
 _T105:
-	__asm        jmp    _T67b;
+	__asm        jmp    __RETURN;
 // LINE 812:
 	__asm        jmp    _T142;
 _T10f:
@@ -3848,7 +3848,7 @@ _T1b2:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x68];
 // LINE 830:
-	__asm        jmp    _T67b;
+	__asm        jmp    __RETURN;
 // LINE 832:
 	__asm        jmp    _T23a;
 _T1e1:
@@ -3865,7 +3865,7 @@ _T1e1:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x68];
 // LINE 835:
-	__asm        jmp    _T67b;
+	__asm        jmp    __RETURN;
 // LINE 837:
 	__asm        jmp    _T23a;
 _T210:
@@ -3882,7 +3882,7 @@ _T210:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x68];
 // LINE 840:
-	__asm        jmp    _T67b;
+	__asm        jmp    __RETURN;
 // LINE 844:
 _T23a:
 	__asm        mov    eax, this;
@@ -4023,7 +4023,7 @@ _T3a5:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::ToggleMusicSoundTrack;
 // LINE 868:
-	__asm        jmp    _T67b;
+	__asm        jmp    __RETURN;
 // LINE 870:
 	__asm        jmp    _T676;
 _T3ce:
@@ -4050,7 +4050,7 @@ _T3fc:
 	__asm        add    esp, 4;
 // LINE 878:
 _T415:
-	__asm        jmp    _T67b;
+	__asm        jmp    __RETURN;
 // LINE 882:
 	__asm        jmp    _T676;
 // LINE 889:
@@ -4098,7 +4098,7 @@ _T498:
 	this-><CGameApp+0x432c:4> = G_texterr;
 // LINE 898:
 _T4b0:
-	__asm        jmp    _T67b;
+	__asm        jmp    __RETURN;
 // LINE 900:
 	__asm        jmp    _T676;
 // LINE 901:
@@ -4123,7 +4123,7 @@ _T4ba:
 	__asm        add    esp, 4;
 // LINE 905:
 _T4f9:
-	__asm        jmp    _T67b;
+	__asm        jmp    __RETURN;
 // LINE 908:
 	__asm        jmp    _T676;
 _T503:
@@ -4133,7 +4133,7 @@ _T503:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::CreateControlDisplayWindow;
 // LINE 910:
-	__asm        jmp    _T67b;
+	__asm        jmp    __RETURN;
 // LINE 913:
 	__asm        jmp    _T676;
 _T51f:
@@ -4151,7 +4151,7 @@ _T54f:
 	__asm        jmp    _T554;
 // LINE 915:
 _T554:
-	__asm        jmp    _T67b;
+	__asm        jmp    __RETURN;
 // LINE 917:
 	__asm        jmp    _T676;
 _T55e:
@@ -4162,7 +4162,7 @@ _T55e:
 	__asm        add    ecx, 0xA0;
 	__asm        call   GameModePlayData::TogglePanelDisplay;
 // LINE 919:
-	__asm        jmp    _T67b;
+	__asm        jmp    __RETURN;
 // LINE 921:
 	__asm        jmp    _T676;
 _T580:
@@ -4173,7 +4173,7 @@ _T580:
 	__asm        add    ecx, 0xA0;
 	__asm        call   GameModePlayData::ToggleEquipmentDisplay;
 // LINE 923:
-	__asm        jmp    _T67b;
+	__asm        jmp    __RETURN;
 // LINE 925:
 	__asm        jmp    _T676;
 _T5a2:
@@ -4191,7 +4191,7 @@ _T5ce:
 	this-><CGameApp+0x4330:4> = 0x0;
 // LINE 927:
 _T5db:
-	__asm        jmp    _T67b;
+	__asm        jmp    __RETURN;
 // LINE 929:
 	__asm        jmp    _T676;
 _T5e5:
@@ -4222,7 +4222,7 @@ _T615:
 	__asm        call   dword ptr [eax+0x68];
 // LINE 936:
 _T630:
-	__asm        jmp    _T67b;
+	__asm        jmp    __RETURN;
 // LINE 938:
 	__asm        jmp    _T676;
 _T63a:
@@ -4232,7 +4232,7 @@ _T63a:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::CreateCheatCodeEntryMessageBox;
 // LINE 940:
-	__asm        jmp    _T67b;
+	__asm        jmp    __RETURN;
 // LINE 942:
 	__asm        jmp    _T676;
 _T656:
@@ -4244,11 +4244,11 @@ _T656:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::CreatePlayMenu;
 // LINE 946:
-	__asm        jmp    _T67b;
+	__asm        jmp    __RETURN;
 // LINE 956:
 _T676:
-	__asm        jmp    _T67b;
-_T67b:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0046444d
@@ -4281,7 +4281,7 @@ void  CGameApp::DoKeyDown(long lKey, char chModifiers) {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x9C];
 // LINE 973:
-	__asm        jmp    _T42b;
+	__asm        jmp    __RETURN;
 // LINE 976:
 _T52:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(chModifiers);
@@ -4296,7 +4296,7 @@ _T52:
 	__asm        test   eax, eax;
 	__asm        je     _T76;
 // LINE 977:
-	__asm        jmp    _T42b;
+	__asm        jmp    __RETURN;
 // LINE 981:
 _T76:
 	__asm        mov    eax, this;
@@ -4385,7 +4385,7 @@ _T124:
 	__asm        call   dword ptr [eax+0x68];
 // LINE 1001:
 _T165:
-	__asm        jmp    _T42b;
+	__asm        jmp    __RETURN;
 // LINE 1004:
 	__asm        jmp    _T426;
 _T16f:
@@ -4435,7 +4435,7 @@ _T1a3:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x9C];
 // LINE 1009:
-	__asm        jmp    _T42b;
+	__asm        jmp    __RETURN;
 // LINE 1012:
 _T1f6:
 	__asm        jmp    _T426;
@@ -4486,7 +4486,7 @@ _T22f:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x9C];
 // LINE 1017:
-	__asm        jmp    _T42b;
+	__asm        jmp    __RETURN;
 // LINE 1020:
 _T282:
 	__asm        jmp    _T426;
@@ -4537,7 +4537,7 @@ _T2bb:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x9C];
 // LINE 1024:
-	__asm        jmp    _T42b;
+	__asm        jmp    __RETURN;
 // LINE 1027:
 _T30e:
 	__asm        jmp    _T426;
@@ -4588,7 +4588,7 @@ _T347:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x9C];
 // LINE 1031:
-	__asm        jmp    _T42b;
+	__asm        jmp    __RETURN;
 // LINE 1034:
 _T39a:
 	__asm        jmp    _T426;
@@ -4639,11 +4639,11 @@ _T3d3:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x9C];
 // LINE 1038:
-	__asm        jmp    _T42b;
+	__asm        jmp    __RETURN;
 // LINE 1041:
 _T426:
-	__asm        jmp    _T42b;
-_T42b:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0046487f
@@ -4661,7 +4661,7 @@ void  CGameApp::DoKeyUp(long lKey, char chModifiers) {
 	__asm        test   eax, eax;
 	__asm        je     _T30;
 // LINE 1051:
-	__asm        jmp    _T21f;
+	__asm        jmp    __RETURN;
 // LINE 1054:
 _T30:
 	__asm        mov    eax, this;
@@ -4833,8 +4833,8 @@ _T1f0:
 	__asm        call   dword ptr [eax+0x30];
 // LINE 1064:
 _T21a:
-	__asm        jmp    _T21f;
-_T21f:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00464aa5
@@ -4848,8 +4848,8 @@ void  CGameApp::DoCharacter(long lCharacter) {
 	__asm        add    ecx, 0x3C;
 	__asm        call   dword ptr [eax+8];
 // LINE 1073:
-	__asm        jmp    _T24;
-_T24:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00464ad0
@@ -4867,8 +4867,8 @@ void  CGameApp::DoCursorDown(int32_t nCursorX, int32_t nCursorY, int32_t nButton
 	__asm        add    ecx, 0x3C;
 	__asm        call   dword ptr [eax+0x14];
 // LINE 1081:
-	__asm        jmp    _T2c;
-_T2c:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00464b03
@@ -4886,8 +4886,8 @@ void  CGameApp::DoCursorUp(int32_t nCursorX, int32_t nCursorY, int32_t nButton) 
 	__asm        add    ecx, 0x3C;
 	__asm        call   dword ptr [eax+0x18];
 // LINE 1090:
-	__asm        jmp    _T2c;
-_T2c:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00464b36
@@ -4903,8 +4903,8 @@ void  CGameApp::DoCursorMove(int32_t nCursorX, int32_t nCursorY) {
 	__asm        add    ecx, 0x3C;
 	__asm        call   dword ptr [eax+0x1C];
 // LINE 1099:
-	__asm        jmp    _T28;
-_T28:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00464b65
@@ -5049,8 +5049,8 @@ _T190:
 	__asm        call   CommandSystem::ClearAllCommands;
 // LINE 1120:
 _T1ab:
-	__asm        jmp    _T1b0;
-_T1b0:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00464d1a
@@ -5060,7 +5060,7 @@ void  CGameApp::ProcessSystemCloseRequest() {
 	__asm        cmp    dword ptr [eax+0x18], 0;
 	__asm        je     _T1e;
 // LINE 1130:
-	__asm        jmp    _T94;
+	__asm        jmp    __RETURN;
 // LINE 1131:
 _T1e:
 	this-><CGameApp+0x18:4> = 0x1;
@@ -5103,8 +5103,8 @@ _T82:
 	__asm        call   dword ptr [eax+0x68];
 // LINE 1138:
 _T8f:
-	__asm        jmp    _T94;
-_T94:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00464db3
@@ -5127,12 +5127,12 @@ int  CGameApp::CheckForWarpToCareerLevel() {
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x88];
-	__asm        jmp    _T4a;
+	__asm        jmp    __RETURN;
 // LINE 1152:
 _T43:
 	return 0x0;
 // LINE 1153:
-_T4a:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00464e02
@@ -5231,7 +5231,7 @@ _T54:
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x90];
-	__asm        jmp    _T167;
+	__asm        jmp    __RETURN;
 // LINE 1192:
 _T74:
 	__asm        mov    gGraduationState.nGraduationState, 0;
@@ -5303,7 +5303,7 @@ _T12c:
 // LINE 1197:
 	return 0x1;
 // LINE 1198:
-_T167:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0046501e
@@ -5619,8 +5619,8 @@ _T3d0:
 	__asm        mov    ecx, tempNotificationSound;
 	__asm        call   dword ptr [eax+8];
 // LINE 1235:
-	__asm        jmp    _T41e;
-_T41e:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004654a4
@@ -5820,7 +5820,7 @@ _T23e:
 	__asm        jmp    _T243;
 _T243:
 	__asm        mov    eax, [ebp-0x18];
-	__asm        jmp    _Ta30;
+	__asm        jmp    __RETURN;
 // LINE 1266:
 // Block end:
 _T24b:
@@ -5866,7 +5866,7 @@ _T294:
 	__asm        mov    eax, [eax-0x14];
 	__asm        sub    ecx, 0x14;
 	__asm        call   dword ptr [eax+0x80];
-	__asm        jmp    _Ta30;
+	__asm        jmp    __RETURN;
 // LINE 1276:
 	__asm        jmp    _Ta29;
 _T2cd:
@@ -5886,7 +5886,7 @@ _T2cd:
 	__asm        mov    eax, [eax-0x14];
 	__asm        sub    ecx, 0x14;
 	__asm        call   dword ptr [eax+0x7C];
-	__asm        jmp    _Ta30;
+	__asm        jmp    __RETURN;
 // LINE 1280:
 	__asm        jmp    _Ta29;
 _T303:
@@ -6506,7 +6506,7 @@ _T9e3:
 _Ta29:
 	return 0x0;
 // LINE 1453:
-_Ta30:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00465edb
@@ -7323,8 +7323,8 @@ _T16:
 	__asm        call   dword ptr [eax+0x68];
 // LINE 1708:
 _Tb1:
-	__asm        jmp    _Tb6;
-_Tb6:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00466968
@@ -7473,8 +7473,8 @@ _T4e:
 	this-><CGameApp+0x6c:4> = 0x0;
 // LINE 1743:
 _T58:
-	__asm        jmp    _T5d;
-_T5d:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00466b94
@@ -7521,8 +7521,8 @@ _T23:
 	__asm        call   CGameApp::EndVideoForMainMenu;
 // LINE 1761:
 _T7c:
-	__asm        jmp    _T81;
-_T81:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 

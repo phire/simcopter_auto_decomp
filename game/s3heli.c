@@ -1949,11 +1949,11 @@ _T61:
 _T803:
 	__asm        mov    eax, hd;
 	__asm        test   byte ptr [eax+8], 1;
-	__asm        je     _T815;
+	__asm        je     __RETURN;
 // LINE 997:
 	__asm        call   SetIdealCameraPos;
 // LINE 998:
-_T815:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004f07ba
@@ -3114,7 +3114,7 @@ _Te52:
 // LINE 1381:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x14C], 0;
-	__asm        je     _Tfae;
+	__asm        je     __RETURN;
 // LINE 1386:
 // Block start:
 	/*bp-0x110*/ int32_t speed;
@@ -3214,7 +3214,7 @@ _Tf2b:
 	__asm        add    esp, 0x20;
 // LINE 1425:
 // Block end:
-_Tfae:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004f176d
@@ -6019,7 +6019,7 @@ _T70a:
 _T70f:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x13C], 1;
-	__asm        jne    _T87f;
+	__asm        jne    __RETURN;
 
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
@@ -6027,7 +6027,7 @@ _T70f:
 	__asm        mov    ecx, [ecx+0x154];
 	__asm        add    ecx, 0x10000;
 	__asm        cmp    [eax+0x1C], ecx;
-	__asm        jge    _T87f;
+	__asm        jge    __RETURN;
 
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
@@ -6035,11 +6035,11 @@ _T70f:
 	__asm        mov    ecx, [ecx+0x154];
 	__asm        sub    ecx, 0x10000;
 	__asm        cmp    [eax+0x1C], ecx;
-	__asm        jle    _T87f;
+	__asm        jle    __RETURN;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x110], 0;
-	__asm        jg     _T87f;
+	__asm        jg     __RETURN;
 
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x11C];
@@ -6047,7 +6047,7 @@ _T70f:
 	__asm        xor    eax, edx;
 	__asm        sub    eax, edx;
 	__asm        cmp    eax, S_htwk_landing_pitch;
-	__asm        jg     _T87f;
+	__asm        jg     __RETURN;
 
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x124];
@@ -6055,7 +6055,7 @@ _T70f:
 	__asm        xor    eax, edx;
 	__asm        sub    eax, edx;
 	__asm        cmp    eax, S_htwk_landing_yspeed;
-	__asm        jg     _T87f;
+	__asm        jg     __RETURN;
 
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x118];
@@ -6063,7 +6063,7 @@ _T70f:
 	__asm        xor    eax, edx;
 	__asm        sub    eax, edx;
 	__asm        cmp    eax, S_htwk_landing_slide;
-	__asm        jg     _T87f;
+	__asm        jg     __RETURN;
 
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x128];
@@ -6071,19 +6071,19 @@ _T70f:
 	__asm        xor    eax, edx;
 	__asm        sub    eax, edx;
 	__asm        cmp    eax, S_htwk_landing_speed;
-	__asm        jg     _T87f;
+	__asm        jg     __RETURN;
 // LINE 2368:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 4;
-	__asm        je     _T87f;
+	__asm        je     __RETURN;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+4], 0;
-	__asm        je     _T87f;
+	__asm        je     __RETURN;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0xC], 1;
-	__asm        je     _T87f;
+	__asm        je     __RETURN;
 // LINE 2371:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x320], 0;
@@ -6124,7 +6124,7 @@ _T847:
 // LINE 2381:
 	hd->damage = htd->max_damage;
 // LINE 2385:
-_T87f:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004f3b82
@@ -6469,11 +6469,11 @@ _T3e1:
 _T3ee:
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x148], 0x12C;
-	__asm        jl     _T540;
+	__asm        jl     __RETURN;
 
 	__asm        mov    eax, hd;
 	__asm        cmp    dword ptr [eax+0x144], 0;
-	__asm        jne    _T540;
+	__asm        jne    __RETURN;
 // LINE 2498:
 	__asm        lea    eax, oinfo.Faces;
 	__asm        push   eax;
@@ -6587,7 +6587,7 @@ _T51f:
 _T533:
 	hd->rotstate = 0x1;
 // LINE 2526:
-_T540:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004f40c7
@@ -7408,11 +7408,11 @@ _T36:
 _T4e:
 	__asm        mov    eax, z;
 	__asm        cmp    dword ptr [eax], 0xE0000000;
-	__asm        jge    _T66;
+	__asm        jge    __RETURN;
 // LINE 2821:
 	z[0] += 0x40000000;
 // LINE 2822:
-_T66:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004f4ad4
@@ -7663,7 +7663,7 @@ _T13d:
 	__asm        add    pvert, 0xC;
 _T148:
 	__asm        cmp    c, 0x14;
-	__asm        jge    _T51b;
+	__asm        jge    __RETURN;
 // LINE 2934:
 	__asm        mov    eax, vert;
 	__asm        mov    eax, [eax];
@@ -8036,7 +8036,7 @@ _T4ab:
 // LINE 3061:
 	__asm        jmp    _T13d;
 // LINE 3063:
-_T51b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004f512e
@@ -8485,11 +8485,11 @@ _T377:
 	hd->winfo.dropwater = 0x0;
 // LINE 3517:
 	__asm        cmp    S_test_frames, 0x96;
-	__asm        jle    _T39e;
+	__asm        jle    __RETURN;
 
 	S_test_frames = 0x0;
 // LINE 3520:
-_T39e:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004f56b9
@@ -8796,9 +8796,9 @@ _T58:
 _T65:
 	__asm        mov    eax, maxradius;
 	__asm        add    eax, eax;
-	__asm        jmp    _T6f;
+	__asm        jmp    __RETURN;
 // LINE 3748:
-_T6f:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004f5a80
@@ -8833,7 +8833,7 @@ _T18:
 // LINE 3780:
 	__asm        mov    eax, heliidx;
 	__asm        mov    eax, G_helis[0][eax*4];
-	__asm        jmp    _T67;
+	__asm        jmp    __RETURN;
 // LINE 3782:
 _T5b:
 	__asm        jmp    _T15;
@@ -8841,7 +8841,7 @@ _T5b:
 _T60:
 	return 0x0;
 // LINE 3785:
-_T67:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004f5afc
@@ -9540,7 +9540,7 @@ _T3e6:
 	__asm        add    esp, 0x14;
 // LINE 4112:
 	__asm        cmp    G_camera_mode, 3;
-	__asm        jne    _T4b5;
+	__asm        jne    __RETURN;
 // LINE 4114:
 	__asm        push   1;
 	__asm        mov    eax, hd;
@@ -9552,7 +9552,7 @@ _T3e6:
 // LINE 4115:
 	return;
 // LINE 4118:
-_T4b5:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004f6321
@@ -11185,9 +11185,9 @@ long S3GetFullRepairCost(/*packed*/ struct _HELI_DATA *hd) {
 	__asm        call   0x004D19BD;
 	__asm        add    esp, 8;
 	__asm        sar    eax, 0x10;
-	__asm        jmp    _T51;
+	__asm        jmp    __RETURN;
 // LINE 4788:
-_T51:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004f7473
@@ -11226,11 +11226,11 @@ void S3HeliPurchaseRepairs(/*packed*/ struct _HELI_DATA *hd, long lPurchaseBucks
 	__asm        mov    eax, hd;
 	__asm        mov    ecx, max_damage;
 	__asm        cmp    [eax+0xD0], ecx;
-	__asm        jle    _T73;
+	__asm        jle    __RETURN;
 // LINE 4810:
 	hd->damage = max_damage;
 // LINE 4811:
-_T73:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004f74eb
@@ -11262,9 +11262,9 @@ long S3GetFullRefuelCost(/*packed*/ struct _HELI_DATA *hd) {
 	__asm        call   0x004D19BD;
 	__asm        add    esp, 8;
 	__asm        sar    eax, 0x10;
-	__asm        jmp    _T4e;
+	__asm        jmp    __RETURN;
 // LINE 4828:
-_T4e:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004f753e
@@ -11303,11 +11303,11 @@ void S3HeliPurchaseFuel(/*packed*/ struct _HELI_DATA *hd, long lPurchaseBucks) {
 	__asm        mov    eax, hd;
 	__asm        mov    ecx, max_fuel;
 	__asm        cmp    [eax+0x320], ecx;
-	__asm        jle    _T72;
+	__asm        jle    __RETURN;
 // LINE 4849:
 	hd->fuel = max_fuel;
 // LINE 4850:
-_T72:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004f75b5
@@ -11469,7 +11469,7 @@ _T159:
 	return;
 _T1a3:
 	__asm        cmp    nCommand, 0x18;
-	__asm        jne    _T1e8;
+	__asm        jne    __RETURN;
 // LINE 4918:
 	__asm        mov    eax, 0x20000000;
 	__asm        mov    ecx, G_uheli;
@@ -11488,7 +11488,7 @@ _T1a3:
 	__asm        call   DispatchEmergencyVehicle;
 	__asm        add    esp, 0x10;
 // LINE 4928:
-_T1e8:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004f781b
@@ -12466,7 +12466,7 @@ _T18:
 	__asm        lea    eax, [eax+eax*8];
 	__asm        add    eax, ecx;
 	__asm        lea    eax, G_helidata[0].type[eax*2];
-	__asm        jmp    _T6a;
+	__asm        jmp    __RETURN;
 // LINE 5408:
 _T5e:
 	__asm        jmp    _T15;
@@ -12474,7 +12474,7 @@ _T5e:
 _T63:
 	return 0x0;
 // LINE 5410:
-_T6a:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004f82df
@@ -12537,12 +12537,12 @@ long S3HeliGetCurrentValue(long lHeliType) {
 
 	__asm        mov    eax, ecx;
 _T79:
-	__asm        jmp    _T85;
+	__asm        jmp    __RETURN;
 // LINE 5454:
 _T7e:
 	return 0x0;
 // LINE 5455:
-_T85:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004f83a8
@@ -12571,7 +12571,7 @@ long S3HeliGetEquipmentNewValue(long lEquipmentType) {
 	__asm        mov    eax, lValues[3];
 	__asm        shl    eax, 2;
 	__asm        lea    eax, [eax+eax*4];
-	__asm        jmp    _T91;
+	__asm        jmp    __RETURN;
 // LINE 5486:
 	__asm        jmp    _T85;
 // LINE 5487:
@@ -12589,14 +12589,14 @@ _T74:
 	__asm        mov    eax, 0xA;
 	__asm        sub    eax, lTeargasCanisterCount;
 	__asm        imul   eax, lValues[3];
-	__asm        jmp    _T91;
+	__asm        jmp    __RETURN;
 // LINE 5493:
 _T85:
 	__asm        mov    eax, lEquipmentType;
 	__asm        mov    eax, [ebp+eax*4-0x14];
-	__asm        jmp    _T91;
+	__asm        jmp    __RETURN;
 // LINE 5494:
-_T91:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004f843e
@@ -12626,9 +12626,9 @@ long S3HeliGetEquipmentCurrentValue(long lEquipmentType) {
 	__asm        mov    ecx, 0x64;
 	__asm        cdq;
 	__asm        idiv   ecx;
-	__asm        jmp    _T28;
+	__asm        jmp    __RETURN;
 // LINE 5517:
-_T28:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004f8492
@@ -12722,7 +12722,7 @@ _T3b:
 	i++;
 _T3e:
 	__asm        cmp    i, 0xA;
-	__asm        jge    _Tb9;
+	__asm        jge    __RETURN;
 // LINE 5571:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, hd;
@@ -12761,7 +12761,7 @@ _T3e:
 _Tb4:
 	__asm        jmp    _T3b;
 // LINE 5581:
-_Tb9:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004f85e8
@@ -12776,7 +12776,7 @@ void S3HeliUnlink(/*packed*/ struct _HELI_DATA *hd, /*packed*/ struct _CELL_INFO
 _T12:
 	__asm        mov    eax, dyptrptr;
 	__asm        cmp    dword ptr [eax], 0;
-	__asm        je     _T66;
+	__asm        je     __RETURN;
 // LINE 5597:
 	__asm        mov    eax, hd;
 	__asm        mov    ecx, dyptrptr;
@@ -12793,7 +12793,7 @@ _T59:
 // LINE 5603:
 	__asm        jmp    _T12;
 // LINE 5604:
-_T66:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004f8653
@@ -12953,7 +12953,7 @@ _T188:
 	return;
 _T197:
 	__asm        cmp    dword ptr [ebp-8], 0x10;
-	__asm        ja     _T1ef;
+	__asm        ja     __RETURN;
 
 	__asm        mov    eax, [ebp-8];
 	__asm        jmp    _Switch_1ab[0][eax*4];
@@ -12976,7 +12976,7 @@ _T197:
 //   _T163
 //   _T151
 // LINE 5676:
-_T1ef:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004f8847
@@ -13134,7 +13134,7 @@ _T3d:
 _T44:
 	__asm        mov    eax, maxRadius;
 	__asm        cmp    radius, eax;
-	__asm        jge    _T11f;
+	__asm        jge    __RETURN;
 // LINE 5770:
 	__asm        mov    angle, 0;
 	__asm        jmp    _T63;
@@ -13209,7 +13209,7 @@ _T115:
 _T11a:
 	__asm        jmp    _T3d;
 // LINE 5790:
-_T11f:
+__RETURN:
 }
 
 

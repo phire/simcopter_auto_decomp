@@ -597,8 +597,8 @@ _T17c:
 	__asm        jmp    _T3d;
 // LINE 2081:
 _T181:
-	__asm        jmp    _T186;
-_T186:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00561005
@@ -730,9 +730,9 @@ _T172:
 	__asm        jmp    _T17e;
 _T17e:
 	__asm        mov    eax, [ebp-0x20];
-	__asm        jmp    _T186;
+	__asm        jmp    __RETURN;
 // LINE 2088:
-_T186:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00561190
@@ -1147,8 +1147,8 @@ _T350:
 //   _T21e
 // LINE 2176:
 _T384:
-	__asm        jmp    _T389;
-_T389:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00561611
@@ -1173,7 +1173,7 @@ _T17:
 	__asm        test   eax, eax;
 	__asm        jne    _T2e;
 
-	__asm        jmp    _T55c;
+	__asm        jmp    __RETURN;
 // LINE 2182:
 _T2e:
 	__asm        jmp    _T33;
@@ -1184,7 +1184,7 @@ _T33:
 	__asm        test   eax, eax;
 	__asm        jne    _T4d;
 
-	__asm        jmp    _T55c;
+	__asm        jmp    __RETURN;
 // LINE 2184:
 _T4d:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(framenum);
@@ -1629,8 +1629,8 @@ _T552:
 	__asm        jmp    _T4d3;
 // LINE 2282:
 _T557:
-	__asm        jmp    _T55c;
-_T55c:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00561b74
@@ -2010,11 +2010,11 @@ _T50f:
 	__asm        mov    ecx, this;
 	__asm        call   cCopterBody::ActivateAllPartPointers;
 // LINE 2297:
-	__asm        jmp    _T52b;
+	__asm        jmp    __RETURN;
 _L31438:
 	__asm        mov    eax, 0x596170;
 	__asm        jmp    near ptr 0x0056F590;
-_T52b:
+__RETURN:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
 }
@@ -2290,8 +2290,8 @@ _T2fe:
 	__asm        mov    ecx, [eax+0xC];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 2321:
-	__asm        jmp    _T319;
-_T319:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x005623cd
@@ -2308,12 +2308,12 @@ int32_t cCopterBodyCompareDrawOrder(void * __ptr32 p1, void * __ptr32 p2) {
 // LINE 2326:
 	return 0xffffffff;
 // LINE 2327:
-	__asm        jmp    _T39;
+	__asm        jmp    __RETURN;
 // LINE 2328:
 _T2f:
 	return 0x1;
 // LINE 2329:
-_T39:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0056240b

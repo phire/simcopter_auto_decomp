@@ -40,8 +40,8 @@ unsigned short cCopterAnim::IsDirty() {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        xor    ax, ax;
-	__asm        jmp    _T30;
-_T30:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // Function in module: Bodydefs.obj
@@ -55,8 +55,8 @@ unsigned long cCopterAnim::GetBodyType() {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        xor    eax, eax;
-	__asm        jmp    _T2f;
-_T2f:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // Function in module: Bodydefs.obj
@@ -64,8 +64,8 @@ _T2f:
 /*unpacked*/ class cBList<cBBase>* cCopterAnim::GetList() {
 
 	__asm        mov    eax, cCopterAnim::fsList;
-	__asm        jmp    _T16;
-_T16:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // Function in module: Bodydefs.obj
@@ -122,8 +122,8 @@ _T9f:
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, partnum;
 	__asm        lea    eax, [eax+ecx*8];
-	__asm        jmp    _Tb8;
-_Tb8:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // Function in module: Bodydefs.obj
@@ -175,7 +175,7 @@ _T95:
 	__asm        mov    ecx, [ebp-4];
 	__asm        mov    ecx, [ecx+4];
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        jmp    _Ta7;
-_Ta7:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 

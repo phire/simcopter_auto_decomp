@@ -372,8 +372,8 @@ struct SparkalPoint{ // packed(0x8 bytes) TI: 0x1a54
 static void $E64() {
 
 	__asm        call   $E63;
-	__asm        jmp    _T10;
-_T10:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -393,8 +393,8 @@ _T20:
 static void $E67() {
 
 	__asm        call   $E66;
-	__asm        jmp    _T10;
-_T10:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // STATIC INITIALIZER:
@@ -1815,9 +1815,9 @@ _T11de:
 	__asm        jmp    _T11e3;
 _T11e3:
 	__asm        mov    eax, [ebp-0x294];
-	__asm        jmp    _T11ee;
+	__asm        jmp    __RETURN;
 // LINE 195:
-_T11ee:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0047f391
@@ -2139,9 +2139,9 @@ _T3b5:
 	__asm        jmp    _T3ba;
 _T3ba:
 	__asm        mov    eax, [ebp-0x18];
-	__asm        jmp    _T3c2;
+	__asm        jmp    __RETURN;
 // LINE 212:
-_T3c2:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0047f75a

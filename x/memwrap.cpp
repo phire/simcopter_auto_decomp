@@ -498,9 +498,9 @@ _T5c:
 	__asm        push   eax;
 	__asm        call   Memory::HLock;
 	__asm        add    esp, 4;
-	__asm        jmp    _T6d;
+	__asm        jmp    __RETURN;
 // LINE 364:
-_T6d:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00554b76
@@ -610,9 +610,9 @@ unsigned short Memory::BlockCompare(void * __ptr32 first, void * __ptr32 second,
 _T2b:
 	__asm        xor    ax, ax;
 _T2e:
-	__asm        jmp    _T33;
+	__asm        jmp    __RETURN;
 // LINE 403:
-_T33:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00554cab
@@ -719,9 +719,9 @@ unsigned short Memory::HIsLocked(void * __ptr32 h) {
 _T2b:
 	__asm        xor    ax, ax;
 _T2e:
-	__asm        jmp    _T33;
+	__asm        jmp    __RETURN;
 // LINE 457:
-_T33:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00554de7

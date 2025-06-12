@@ -2692,7 +2692,7 @@ _T1bd:
 	__asm        jmp    _T1d4;
 _T1d4:
 	__asm        mov    eax, [ebp-0x18];
-	__asm        jmp    _T1fb;
+	__asm        jmp    __RETURN;
 // LINE 445:
 _T1dc:
 	__asm        bts    timeoutTimer.lFrequency, 0;
@@ -2703,9 +2703,9 @@ _T1dc:
 	__asm        jmp    _T1f3;
 _T1f3:
 	__asm        mov    eax, [ebp-0x1C];
-	__asm        jmp    _T1fb;
+	__asm        jmp    __RETURN;
 // LINE 449:
-_T1fb:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00422258

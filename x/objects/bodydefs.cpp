@@ -541,9 +541,9 @@ _T2c:
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ecx+0xC], eax;
 	__asm        mov    eax, [ebp+8];
-	__asm        jmp    _T5a;
+	__asm        jmp    __RETURN;
 // LINE 146:
-_T5a:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0055da2e
@@ -552,9 +552,9 @@ float Byte_2_Float(signed char byte) {
 	__asm        movsx  eax, byte;
 	__asm        mov    [ebp-4], eax;
 	__asm        fild   dword ptr [ebp-4];
-	__asm        jmp    _T18;
+	__asm        jmp    __RETURN;
 // LINE 153:
-_T18:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0055da4b
@@ -582,9 +582,9 @@ _T2e:
 _T4a:
 	__asm        fld    flt;
 	__asm        call   0x0056EBE8;
-	__asm        jmp    _T57;
+	__asm        jmp    __RETURN;
 // LINE 161:
-_T57:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0055daa7

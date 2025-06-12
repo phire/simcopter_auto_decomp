@@ -807,17 +807,17 @@ _T73:
 	__asm        mov    eax, deltay;
 	__asm        sar    eax, 1;
 	__asm        add    eax, deltax;
-	__asm        jmp    _Ta0;
+	__asm        jmp    __RETURN;
 // LINE 123:
-	__asm        jmp    _Ta0;
+	__asm        jmp    __RETURN;
 // LINE 125:
 _T92:
 	__asm        mov    eax, deltax;
 	__asm        sar    eax, 1;
 	__asm        add    eax, deltay;
-	__asm        jmp    _Ta0;
+	__asm        jmp    __RETURN;
 // LINE 127:
-_Ta0:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0050176e
@@ -895,7 +895,7 @@ _Tc3:
 	__asm        mov    eax, carID;
 	__asm        mov    eax, ambulances[0][eax*4];
 	__asm        add    eax, 0xC;
-	__asm        jmp    _T316;
+	__asm        jmp    __RETURN;
 // LINE 174:
 _Td5:
 	__asm        mov    i, 0;
@@ -952,7 +952,7 @@ _T171:
 	__asm        mov    eax, carID;
 	__asm        mov    eax, policeCars[0][eax*4];
 	__asm        add    eax, 0xC;
-	__asm        jmp    _T316;
+	__asm        jmp    __RETURN;
 // LINE 195:
 _T183:
 	__asm        mov    i, 0;
@@ -1009,7 +1009,7 @@ _T21f:
 	__asm        mov    eax, carID;
 	__asm        mov    eax, fireTrucks[0][eax*4];
 	__asm        add    eax, 0xC;
-	__asm        jmp    _T316;
+	__asm        jmp    __RETURN;
 // LINE 216:
 _T231:
 	__asm        mov    i, 0;
@@ -1066,7 +1066,7 @@ _T2cd:
 	__asm        mov    eax, carID;
 	__asm        mov    eax, CriminalEvaderCarClass::criminalCars[0][eax*4];
 	__asm        add    eax, 0xC;
-	__asm        jmp    _T316;
+	__asm        jmp    __RETURN;
 // LINE 237:
 _T2df:
 	return 0x0;
@@ -1087,7 +1087,7 @@ _T2eb:
 _T30f:
 	return 0x0;
 // LINE 241:
-_T316:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00501a89
@@ -1098,9 +1098,9 @@ int32_t AutomobileClass::S3AutoMessage(short vehicleID, short messID) {
 	__asm        movsx  eax, vehicleID;
 	__asm        mov    ecx, cars[0][eax*4];
 	__asm        call   AutomobileClass::AutoMessage;
-	__asm        jmp    _T1f;
+	__asm        jmp    __RETURN;
 // LINE 247:
-_T1f:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00501aad
@@ -1165,9 +1165,9 @@ int32_t CreateAutomobileInstance(int32_t instanceID) {
 _T24:
 	__asm        xor    eax, eax;
 _T26:
-	__asm        jmp    _T2b;
+	__asm        jmp    __RETURN;
 // LINE 305:
-_T2b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00501b6c
@@ -1346,9 +1346,9 @@ _T36:
 _T4c:
 	__asm        mov    eax, index;
 	__asm        mov    eax, cars[0][eax*4];
-	__asm        jmp    _T5b;
+	__asm        jmp    __RETURN;
 // LINE 457:
-_T5b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00501db8
@@ -3344,7 +3344,7 @@ _T4be:
 	__asm        jmp    _T4e1;
 _T4e1:
 	__asm        mov    eax, [ebp-0xB8];
-	__asm        jmp    _Tdbd;
+	__asm        jmp    __RETURN;
 // LINE 1477:
 _T4ec:
 	__asm        mov    eax, this;
@@ -3470,7 +3470,7 @@ _T68a:
 	__asm        jmp    _T6e9;
 _T6e9:
 	__asm        mov    eax, [ebp-0xBC];
-	__asm        jmp    _Tdbd;
+	__asm        jmp    __RETURN;
 // LINE 1512:
 	__asm        jmp    _Tdb8;
 // LINE 1515:
@@ -3707,7 +3707,7 @@ _T99e:
 	__asm        jmp    _T9ba;
 _T9ba:
 	__asm        mov    eax, [ebp-0xC0];
-	__asm        jmp    _Tdbd;
+	__asm        jmp    __RETURN;
 // LINE 1567:
 _T9c5:
 	this->prevDir = dirIndex;
@@ -3938,7 +3938,7 @@ _Tcdc:
 	__asm        jmp    _Td1d;
 _Td1d:
 	__asm        mov    eax, [ebp-0xC4];
-	__asm        jmp    _Tdbd;
+	__asm        jmp    __RETURN;
 // LINE 1624:
 _Td28:
 	__asm        mov    eax, this;
@@ -3969,12 +3969,12 @@ _Td28:
 	__asm        jmp    _Tdad;
 _Tdad:
 	__asm        mov    eax, [ebp-0xC8];
-	__asm        jmp    _Tdbd;
+	__asm        jmp    __RETURN;
 // LINE 1646:
 // Block end:
 _Tdb8:
-	__asm        jmp    _Tdbd;
-_Tdbd:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00503e6e
@@ -4560,9 +4560,9 @@ int32_t AutomobileClass::Initialize(int32_t instanceID) {
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::InitializeInstance;
-	__asm        jmp    _T1d;
+	__asm        jmp    __RETURN;
 // LINE 1980:
-_T1d:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00504578
@@ -7086,12 +7086,12 @@ _Tab:
 // LINE 3008:
 	return 0x1;
 // LINE 3010:
-	__asm        jmp    _Tdb;
+	__asm        jmp    __RETURN;
 // LINE 3012:
 _Td4:
 	return 0x0;
 // LINE 3014:
-_Tdb:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00506413
@@ -7250,9 +7250,9 @@ int32_t AutoMissionStartFire(long mission_id, /*packed*/ struct Point2d *celloc)
 	__asm        push   eax;
 	__asm        call   AutomobileClass::MissionStartFire;
 	__asm        add    esp, 8;
-	__asm        jmp    _T1b;
+	__asm        jmp    __RETURN;
 // LINE 3099:
-_T1b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0050659f
@@ -7264,9 +7264,9 @@ int32_t AutoMissionStartJam(long mission_id, /*packed*/ struct Point2d *celloc) 
 	__asm        push   eax;
 	__asm        call   AutomobileClass::MissionStartJam;
 	__asm        add    esp, 8;
-	__asm        jmp    _T1b;
+	__asm        jmp    __RETURN;
 // LINE 3112:
-_T1b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x005065bf
@@ -10766,9 +10766,9 @@ int32_t S3AutoMIFFLoad(void * __ptr32 miffReader) {
 	__asm        push   eax;
 	__asm        call   AutomobileClass::MIFFLoad;
 	__asm        add    esp, 4;
-	__asm        jmp    _T17;
+	__asm        jmp    __RETURN;
 // LINE 4519:
-_T17:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00509023
@@ -10778,9 +10778,9 @@ int32_t S3AutoMIFFSave(void * __ptr32 miffWriter) {
 	__asm        push   eax;
 	__asm        call   AutomobileClass::MIFFSave;
 	__asm        add    esp, 4;
-	__asm        jmp    _T17;
+	__asm        jmp    __RETURN;
 // LINE 4532:
-_T17:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0050903f

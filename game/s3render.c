@@ -819,9 +819,9 @@ _T944:
 	__asm        push   0;
 	__asm        call   VRAppCityInit;
 	__asm        add    esp, 4;
-	__asm        jmp    _T985;
+	__asm        jmp    __RETURN;
 // LINE 530:
-_T985:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004eb5ca

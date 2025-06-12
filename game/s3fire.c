@@ -191,7 +191,7 @@ _T57:
 	i++;
 _T5a:
 	__asm        cmp    i, 0x8C;
-	__asm        jge    _T88;
+	__asm        jge    __RETURN;
 // LINE 121:
 	__asm        mov    eax, i;
 	__asm        mov    S_cfdata[0].cptr[eax*8], 0;
@@ -201,7 +201,7 @@ _T5a:
 // LINE 123:
 	__asm        jmp    _T57;
 // LINE 126:
-_T88:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052467d
@@ -319,7 +319,7 @@ _T176:
 	i++;
 _T179:
 	__asm        cmp    i, 0x8C;
-	__asm        jge    _T1a7;
+	__asm        jge    __RETURN;
 // LINE 183:
 	__asm        mov    eax, i;
 	__asm        mov    S_cfdata[0].cptr[eax*8], 0;
@@ -329,7 +329,7 @@ _T179:
 // LINE 185:
 	__asm        jmp    _T176;
 // LINE 187:
-_T1a7:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00524829
@@ -1211,7 +1211,7 @@ _T18:
 // LINE 624:
 	__asm        mov    eax, i;
 	__asm        lea    eax, S_cfdata[0].cptr[eax*8];
-	__asm        jmp    _T51;
+	__asm        jmp    __RETURN;
 // LINE 625:
 _T45:
 	__asm        jmp    _T15;
@@ -1219,7 +1219,7 @@ _T45:
 _T4a:
 	return 0x0;
 // LINE 628:
-_T51:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052522c
@@ -1531,7 +1531,7 @@ check_dyobjs:
 // LINE 789:
 _T354:
 	__asm        cmp    dyobj, 0;
-	__asm        je     _T3f3;
+	__asm        je     __RETURN;
 // LINE 792:
 	__asm        mov    eax, dyobj;
 	__asm        movsx  eax, word ptr [eax+0xC];
@@ -1586,7 +1586,7 @@ _T3e6:
 // LINE 818:
 	__asm        jmp    _T354;
 // LINE 820:
-_T3f3:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00525624
@@ -2948,12 +2948,12 @@ _Tef:
 // LINE 1095:
 	return 0x0;
 // LINE 1096:
-	__asm        jmp    _T155;
+	__asm        jmp    __RETURN;
 // LINE 1097:
 _T14b:
 	return 0x1;
 // LINE 1098:
-_T155:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x005263ec
@@ -3073,12 +3073,12 @@ _Tf3:
 // LINE 1161:
 	return 0x0;
 // LINE 1162:
-	__asm        jmp    _T159;
+	__asm        jmp    __RETURN;
 // LINE 1163:
 _T14f:
 	return 0x1;
 // LINE 1164:
-_T159:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052654a
@@ -3528,7 +3528,7 @@ _T444:
 _T447:
 	__asm        mov    eax, j;
 	__asm        cmp    num_debris, eax;
-	__asm        jle    _T51b;
+	__asm        jle    __RETURN;
 // LINE 1354:
 	__asm        call   rand;
 	__asm        mov    ecx, 0x64;
@@ -3604,7 +3604,7 @@ _T447:
 // LINE 1370:
 	__asm        jmp    _T444;
 // LINE 1371:
-_T51b:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00526b81

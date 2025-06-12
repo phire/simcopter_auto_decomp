@@ -3,8 +3,8 @@
 unsigned short  Language::IsSingleExit(/*unpacked*/ struct Behavior::Node *node) {
 
 	__asm        xor    ax, ax;
-	__asm        jmp    _T14;
-_T14:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
 // Function in module: Ylingo.obj
@@ -12,7 +12,7 @@ _T14:
 void (__cdecl *  Language::GetSwizzler() {
 
 	__asm        xor    eax, eax;
-	__asm        jmp    _T13;
-_T13:
+	__asm        jmp    __RETURN;
+__RETURN:
 }
 
