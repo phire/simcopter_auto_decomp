@@ -3521,11 +3521,8 @@ _T49f:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xC4];
 // LINE 590:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x7C];
-	__asm        jmp    _T4c1;
+	return this->mySecondImage;
 // LINE 591:
-_T4c1:
 }
 
 // FUNCTION: COPTER_D 0x0044a784
@@ -7115,11 +7112,8 @@ _T107:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xC4];
 // LINE 1371:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x40];
-	__asm        jmp    _T129;
+	return this-><MapWindow+0x40>;
 // LINE 1372:
-_T129:
 }
 
 // FUNCTION: COPTER_D 0x0044d719

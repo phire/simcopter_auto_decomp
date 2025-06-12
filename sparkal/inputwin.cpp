@@ -11874,11 +11874,8 @@ _Ta4:
 _Tac:
 	__asm        jmp    _Tb1;
 _Tb1:
-	__asm        mov    eax, tempIterator.node;
-	__asm        mov    eax, [eax+0x10];
-	__asm        jmp    _Tbc;
+	return tempIterator.node->data.lID;
 // LINE 1552:
-_Tbc:
 }
 
 // FUNCTION: COPTER_D 0x00409740
@@ -11910,8 +11907,7 @@ _T3a:
 	__asm        cmp    nCommandCount, eax;
 	__asm        jg     _T59;
 // LINE 1567:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tbf;
+	return 0x0;
 // LINE 1568:
 _T59:
 	__asm        mov    eax, this;
@@ -11951,11 +11947,8 @@ _Ta7:
 _Taf:
 	__asm        jmp    _Tb4;
 _Tb4:
-	__asm        mov    eax, tempIterator.node;
-	__asm        mov    eax, [eax+0x10];
-	__asm        jmp    _Tbf;
+	return tempIterator.node->data.lID;
 // LINE 1574:
-_Tbf:
 }
 
 // FUNCTION: COPTER_D 0x00409804

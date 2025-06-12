@@ -7016,11 +7016,8 @@ _T35:
 	__asm        call   CatalogWindow::SwitchGraphicsForTab;
 // LINE 535:
 _T47:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x40];
-	__asm        jmp    _T52;
+	return this-><CatalogWindow+0x40>;
 // LINE 536:
-_T52:
 }
 
 // FUNCTION: COPTER_D 0x0047ab4e

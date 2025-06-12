@@ -1846,15 +1846,11 @@ char * PreferenceManager::GetPrefDataPointer(long lPrefType) {
 	__asm        cmp    prefItemTemp, 0;
 	__asm        je     _T33;
 // LINE 406:
-	__asm        mov    eax, prefItemTemp;
-	__asm        mov    eax, [eax+8];
-	__asm        jmp    _T3a;
+	return prefItemTemp->chPreferenceData;
 // LINE 408:
 _T33:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T3a;
+	return 0x0;
 // LINE 409:
-_T3a:
 }
 
 // FUNCTION: COPTER_D 0x0047cc4d
@@ -1915,15 +1911,11 @@ long PreferenceManager::GetPrefDataLength(long lPrefType) {
 	__asm        cmp    prefItemTemp, 0;
 	__asm        je     _T33;
 // LINE 455:
-	__asm        mov    eax, prefItemTemp;
-	__asm        mov    eax, [eax+4];
-	__asm        jmp    _T3a;
+	return prefItemTemp->lPreferenceDataLength;
 // LINE 456:
 _T33:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T3a;
+	return 0x0;
 // LINE 457:
-_T3a:
 }
 
 // FUNCTION: COPTER_D 0x0047ccf8

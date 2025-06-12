@@ -1146,11 +1146,8 @@ _T3af:
 // FUNCTION: COPTER_D 0x00535fda
 int32_t AmbulanceClass::AtScene() {
 // LINE 410:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xF6];
-	__asm        jmp    _T1a;
+	return this->personDone;
 // LINE 411:
-_T1a:
 }
 
 // FUNCTION: COPTER_D 0x00535ff9

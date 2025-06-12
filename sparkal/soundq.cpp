@@ -2102,11 +2102,8 @@ int32_t SoundQueue::StartPauseCallback(long lMillisecondsToPause) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x14], eax;
 // LINE 268:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        jmp    _T34;
+	return this->nWaitTimerSet;
 // LINE 270:
-_T34:
 }
 
 // FUNCTION: COPTER_D 0x00421bbf

@@ -5854,11 +5854,8 @@ _T3f:
 	__asm        mov    ecx, this;
 	__asm        call   RenderSettingsWindow::DrawPreviewBasedOnCurrentSettings;
 // LINE 666:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x40];
-	__asm        jmp    _T52;
+	return this-><RenderSettingsWindow+0x40>;
 // LINE 667:
-_T52:
 }
 
 // FUNCTION: COPTER_D 0x004541bc

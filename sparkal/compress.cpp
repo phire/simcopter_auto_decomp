@@ -722,11 +722,8 @@ _Taa:
 	this->mLockCount++;
 // LINE 131:
 _Tb0:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        jmp    _Tbb;
+	return this->mLockCount;
 // LINE 132:
-_Tbb:
 }
 
 // FUNCTION: COPTER_D 0x004aad3a
@@ -789,11 +786,8 @@ _Tb2:
 	this->mLockCount--;
 // LINE 146:
 _Tb8:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        jmp    _Tc3;
+	return this->mLockCount;
 // LINE 147:
-_Tc3:
 }
 
 // FUNCTION: COPTER_D 0x004aae02

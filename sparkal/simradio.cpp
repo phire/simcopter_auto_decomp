@@ -2536,11 +2536,8 @@ void RadioStation::StationSet() {
 // FUNCTION: COPTER_D 0x004345e9
 int32_t RadioStation::IsPlaying() {
 // LINE 176:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        jmp    _T17;
+	return this->bPlaying;
 // LINE 177:
-_T17:
 }
 
 // FUNCTION: COPTER_D 0x00434605
@@ -5826,11 +5823,8 @@ _T1d3:
 // FUNCTION: COPTER_D 0x00436f5f
 enum RadioStationType RadioStation::GetRadioStationType() {
 // LINE 479:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x30];
-	__asm        jmp    _T17;
+	return this->myRadioStationType;
 // LINE 480:
-_T17:
 }
 
 // FUNCTION: COPTER_D 0x00436f7b
@@ -5841,9 +5835,7 @@ int32_t RadioStation::IsCycleTypePresent(enum RadioStationCycleType radioStation
 // LINE 489:
 	__asm        jmp    _T1b;
 _T1b:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x54];
-	__asm        jmp    _Td2;
+	return this->musicSelectionList.length;
 // LINE 491:
 	__asm        jmp    _Tcb;
 _T2b:
@@ -5855,15 +5847,12 @@ _T2b:
 	__asm        cmp    dword ptr [eax+0x24], 0;
 	__asm        jne    _T4c;
 // LINE 493:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Td2;
+	return 0x0;
 // LINE 494:
 _T4c:
 	__asm        jmp    _T51;
 _T51:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x68];
-	__asm        jmp    _Td2;
+	return this->djSelectionList.length;
 // LINE 496:
 	__asm        jmp    _Tcb;
 _T61:
@@ -5875,15 +5864,12 @@ _T61:
 	__asm        cmp    dword ptr [eax+0x28], 0;
 	__asm        jne    _T82;
 // LINE 498:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Td2;
+	return 0x0;
 // LINE 499:
 _T82:
 	__asm        jmp    _T87;
 _T87:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x7C];
-	__asm        jmp    _Td2;
+	return this->commercialSelectionList.length;
 // LINE 501:
 	__asm        jmp    _Tcb;
 _T97:
@@ -5900,15 +5886,11 @@ _T97:
 _Tb8:
 	__asm        jmp    _Tbd;
 _Tbd:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x90];
-	__asm        jmp    _Td2;
+	return this->jingleSelectionList.length;
 // LINE 506:
 _Tcb:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Td2;
+	return 0x0;
 // LINE 507:
-_Td2:
 }
 
 // FUNCTION: COPTER_D 0x00437054
@@ -7282,33 +7264,25 @@ int  Radio::GetOption(enum RadioOption nRadioOption) {
 	__asm        cmp    nRadioOption, 0;
 	__asm        jne    _T26;
 // LINE 795:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x24];
-	__asm        jmp    _T5c;
+	return this-><Radio+0x24:4>;
 // LINE 796:
 	__asm        jmp    _T55;
 _T26:
 	__asm        cmp    nRadioOption, 1;
 	__asm        jne    _T40;
 // LINE 797:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x28];
-	__asm        jmp    _T5c;
+	return this-><Radio+0x28:4>;
 // LINE 798:
 	__asm        jmp    _T55;
 _T40:
 	__asm        cmp    nRadioOption, 2;
 	__asm        jne    _T55;
 // LINE 799:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x30];
-	__asm        jmp    _T5c;
+	return this-><Radio+0x30:4>;
 // LINE 800:
 _T55:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T5c;
+	return 0x0;
 // LINE 801:
-_T5c:
 }
 
 // FUNCTION: COPTER_D 0x0043815e

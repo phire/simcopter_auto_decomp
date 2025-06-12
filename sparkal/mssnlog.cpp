@@ -1576,11 +1576,8 @@ _T88:
 	this->myBackgroundBuffer = 0x0;
 // LINE 135:
 _T95:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x40];
-	__asm        jmp    _Ta3;
+	return this-><MissionLogWindow+0x40>;
 // LINE 136:
-_Ta3:
 }
 
 // FUNCTION: COPTER_D 0x0046caf6

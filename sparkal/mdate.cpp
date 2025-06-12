@@ -865,11 +865,8 @@ _T78:
 // FUNCTION: COPTER_D 0x004bca84
 uint32_t MDate::Hash() {
 // LINE 352:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        jmp    _T17;
+	return this->Julnum;
 // LINE 353:
-_T17:
 }
 
 // FUNCTION: COPTER_D 0x004bcaa0

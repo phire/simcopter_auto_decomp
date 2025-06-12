@@ -298,21 +298,15 @@ void Behavior::~Behavior() {
 // FUNCTION: COPTER_D 0x0056034d
 /*unpacked*/ class ResFile* Behavior::GetPrivFile() {
 // LINE 39:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        jmp    _T17;
+	return this->fPrivFile;
 // LINE 40:
-_T17:
 }
 
 // FUNCTION: COPTER_D 0x00560369
 /*unpacked*/ class ResFile* Behavior::GetGlobFile() {
 // LINE 44:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        jmp    _T17;
+	return this->fGlobFile;
 // LINE 45:
-_T17:
 }
 
 // FUNCTION: COPTER_D 0x00560385
@@ -651,24 +645,18 @@ _Tb5:
 	__asm        cmp    eax, 0x100;
 	__asm        jge    _T22;
 // LINE 180:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T47;
+	return 0x0;
 // LINE 182:
 _T22:
 	__asm        movsx  eax, treeID;
 	__asm        cmp    eax, 0xFFF;
 	__asm        jge    _T3c;
 // LINE 184:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        jmp    _T47;
+	return this->fGlobFile;
 // LINE 186:
 _T3c:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        jmp    _T47;
+	return this->fPrivFile;
 // LINE 187:
-_T47:
 }
 
 // FUNCTION: COPTER_D 0x0056077d

@@ -37,11 +37,8 @@ struct tagPassengerInfo{ // packed(0x14 bytes) TI: 0x2a6e
 // FUNCTION: COPTER_D 0x004f9bc0
 int32_t HeliPassengerHasChanged(/*packed*/ struct tagHeliPassengerData *heliPassengerData) {
 // LINE 30:
-	__asm        mov    eax, heliPassengerData;
-	__asm        mov    eax, [eax];
-	__asm        jmp    _T10;
+	return heliPassengerData->lPassengerDataChanged;
 // LINE 31:
-_T10:
 }
 
 // FUNCTION: COPTER_D 0x004f9bd5

@@ -1009,11 +1009,8 @@ _T48:
 // FUNCTION: COPTER_D 0x0043ccd7
 unsigned int  MTime::Hash() {
 // LINE 265:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax];
-	__asm        jmp    _T16;
+	return this-><MTime+0x00:4>;
 // LINE 266:
-_T16:
 }
 
 // FUNCTION: COPTER_D 0x0043ccf2

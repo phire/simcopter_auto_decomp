@@ -537,11 +537,8 @@ _T4a:
 	__asm        mov    [ecx+0x114], eax;
 // LINE 170:
 _T5f:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x114];
-	__asm        jmp    _T6d;
+	return this->fError;
 // LINE 172:
-_T6d:
 }
 
 // FUNCTION: COPTER_D 0x00552ec5
@@ -573,11 +570,8 @@ _T4a:
 	__asm        mov    [ecx+0x114], eax;
 // LINE 191:
 _T5f:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x114];
-	__asm        jmp    _T6d;
+	return this->fError;
 // LINE 192:
-_T6d:
 }
 
 // FUNCTION: COPTER_D 0x00552f39
@@ -616,11 +610,8 @@ _T4b:
 	this->fMap = 0x0;
 // LINE 213:
 _T58:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x114];
-	__asm        jmp    _T66;
+	return this->fError;
 // LINE 214:
-_T66:
 }
 
 // FUNCTION: COPTER_D 0x00552fca
@@ -646,11 +637,8 @@ _T2d:
 // FUNCTION: COPTER_D 0x00552ffc
 long FlatResFile::GetError() {
 // LINE 270:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x114];
-	__asm        jmp    _T1a;
+	return this->fError;
 // LINE 271:
-_T1a:
 }
 
 // FUNCTION: COPTER_D 0x0055301b
@@ -2284,9 +2272,7 @@ _T27:
 	__asm        cmp    eax, entry;
 	__asm        jbe    _T7e;
 // LINE 925:
-	__asm        mov    eax, typeList;
-	__asm        mov    eax, [eax];
-	__asm        jmp    _T92;
+	return typeList->type;
 // LINE 927:
 _T7e:
 	typeList += 0x8;
@@ -2297,10 +2283,8 @@ _T7e:
 	__asm        jmp    _T27;
 // LINE 930:
 _T8b:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T92;
+	return 0x0;
 // LINE 931:
-_T92:
 }
 
 // FUNCTION: COPTER_D 0x0055430b

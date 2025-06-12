@@ -1494,10 +1494,7 @@ _T1b:
 	__asm        test   byte ptr [eax+8], 2;
 	__asm        jne    _T48;
 // LINE 230:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, vehicleList;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        jmp    _Tbf;
+	return vehicleList->;
 // LINE 231:
 _T48:
 	__asm        jmp    _T18;
@@ -1530,10 +1527,7 @@ _T88:
 	__asm        cmp    [eax+0x294], ecx;
 	__asm        jge    _Tae;
 // LINE 240:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, vehicleList;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        jmp    _Tbf;
+	return vehicleList->;
 // LINE 241:
 _Tae:
 	__asm        jmp    _T74;
@@ -1544,7 +1538,6 @@ _Tb3:
 _Tb8:
 	return 0x0;
 // LINE 245:
-_Tbf:
 }
 
 // FUNCTION: COPTER_D 0x0053a566

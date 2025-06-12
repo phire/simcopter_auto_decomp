@@ -1208,11 +1208,8 @@ _T99:
 	IFlatImage::lTotalLockCount++;
 // LINE 360:
 _Tb2:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        jmp    _Tbd;
+	return this-><CFlatImage+0x04>;
 // LINE 361:
-_Tbd:
 }
 
 // FUNCTION: COPTER_D 0x0048fd88
@@ -1285,11 +1282,8 @@ _Tdc:
 	__asm        jmp    _Teb;
 // LINE 380:
 _Teb:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        jmp    _Tf6;
+	return this-><CFlatImage+0x04>;
 // LINE 381:
-_Tf6:
 }
 
 

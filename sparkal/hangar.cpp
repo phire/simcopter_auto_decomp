@@ -1993,11 +1993,8 @@ _T164:
 	this->mySecondImage = 0x0;
 // LINE 137:
 _T171:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x11E];
-	__asm        jmp    _T17f;
+	return this->mySecondImage;
 // LINE 138:
-_T17f:
 }
 
 // FUNCTION: COPTER_D 0x00473229

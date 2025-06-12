@@ -288,11 +288,8 @@ _Tee:
 	__asm        jmp    _T7b;
 // LINE 82:
 _Tf3:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax];
-	__asm        jmp    _Tfd;
+	return this->nJoystickCount;
 // LINE 83:
-_Tfd:
 }
 
 // FUNCTION: COPTER_D 0x0049a629
@@ -770,8 +767,7 @@ int32_t JoystickManager::GetPointOfView(int32_t nJoystick, int32_t bUseCache) {
 	__asm        cmp    nJoystick, 0x10;
 	__asm        jle    _T1d;
 // LINE 383:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Ta1;
+	return 0x0;
 // LINE 384:
 _T1d:
 	__asm        cmp    bUseCache, 0;
@@ -813,15 +809,11 @@ _T6d:
 	__asm        cmp    mmResult, 0;
 	__asm        je     _T96;
 // LINE 394:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Ta1;
+	return 0x0;
 // LINE 396:
 _T96:
-	__asm        mov    eax, joyInfoExToUse;
-	__asm        mov    eax, [eax+0x28];
-	__asm        jmp    _Ta1;
+	return joyInfoExToUse->dwPOV;
 // LINE 401:
-_Ta1:
 }
 
 // FUNCTION: COPTER_D 0x0049abe2

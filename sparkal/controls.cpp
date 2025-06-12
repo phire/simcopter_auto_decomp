@@ -8771,11 +8771,8 @@ _T1b1:
 // FUNCTION: COPTER_D 0x004b271b
 long SliderWindow::GetValue() {
 // LINE 1439:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x80];
-	__asm        jmp    _T1a;
+	return this->lSliderCurrentValue;
 // LINE 1440:
-_T1a:
 }
 
 // FUNCTION: COPTER_D 0x004b273a
@@ -10640,9 +10637,7 @@ long ScrollBarWindow::GetValueOfGivenLine(long lLine) {
 	__asm        cmp    dword ptr [eax+0xB4], 1;
 	__asm        jne    _T36;
 // LINE 1909:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x78];
-	__asm        jmp    _T55;
+	return this->lSliderMinimumValue;
 // LINE 1910:
 _T36:
 	__asm        mov    eax, lValueRange;
@@ -10707,9 +10702,7 @@ long ScrollBarWindow::GetValueOfGivenPage(long lPage) {
 	__asm        cmp    dword ptr [eax+0xB8], 1;
 	__asm        jne    _T36;
 // LINE 1936:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x78];
-	__asm        jmp    _T55;
+	return this->lSliderMinimumValue;
 // LINE 1937:
 _T36:
 	__asm        mov    eax, lValueRange;
@@ -14624,11 +14617,8 @@ _T11f:
 // FUNCTION: COPTER_D 0x004b6d4e
 long ListBoxWindow::GetSelection() {
 // LINE 2714:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xAC];
-	__asm        jmp    _T1a;
+	return this->lCurrentSelection;
 // LINE 2715:
-_T1a:
 }
 
 // FUNCTION: COPTER_D 0x004b6d6d
@@ -15557,21 +15547,15 @@ long ListBoxWindow::GetLineCount() {
 // LINE 2958:
 	__asm        jmp    _T11;
 _T11:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x78];
-	__asm        jmp    _T1c;
+	return this->myStringList.length;
 // LINE 2959:
-_T1c:
 }
 
 // FUNCTION: COPTER_D 0x004b7906
 long ListBoxWindow::GetIndexOfTopLine() {
 // LINE 2966:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xB4];
-	__asm        jmp    _T1a;
+	return this->lFirstVisibleLine;
 // LINE 2967:
-_T1a:
 }
 
 // FUNCTION: COPTER_D 0x004b7925

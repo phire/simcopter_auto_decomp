@@ -11141,11 +11141,8 @@ int32_t S3HeliGetRepairRate(/*packed*/ struct _HELI_DATA *hd) {
 // LINE 4763:
 	htd = BinaryOp(add, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, hd->type, Const(4))), Const(2))), Const(8)), Const(5982584));
 // LINE 4764:
-	__asm        mov    eax, htd;
-	__asm        mov    eax, [eax+0x50];
-	__asm        jmp    _T2b;
+	return htd->repair_rate;
 // LINE 4765:
-_T2b:
 }
 
 // FUNCTION: COPTER_D 0x004f73ed
@@ -11155,11 +11152,8 @@ int32_t S3HeliGetFuelRate(/*packed*/ struct _HELI_DATA *hd) {
 // LINE 4771:
 	htd = BinaryOp(add, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, hd->type, Const(4))), Const(2))), Const(8)), Const(5982584));
 // LINE 4772:
-	__asm        mov    eax, htd;
-	__asm        mov    eax, [eax+0x54];
-	__asm        jmp    _T2b;
+	return htd->fuel_purchase_rate;
 // LINE 4773:
-_T2b:
 }
 
 // FUNCTION: COPTER_D 0x004f741d
@@ -11324,21 +11318,15 @@ int32_t S3HeliGetMaximumDamage(/*packed*/ struct _HELI_DATA *hd) {
 // LINE 4858:
 	htd = BinaryOp(add, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, hd->type, Const(4))), Const(2))), Const(8)), Const(5982584));
 // LINE 4859:
-	__asm        mov    eax, htd;
-	__asm        mov    eax, [eax+0x4C];
-	__asm        jmp    _T2b;
+	return htd->max_damage;
 // LINE 4860:
-_T2b:
 }
 
 // FUNCTION: COPTER_D 0x004f75e5
 int32_t S3HeliGetCurrentDamage(/*packed*/ struct _HELI_DATA *hd) {
 // LINE 4867:
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0xD0];
-	__asm        jmp    _T14;
+	return hd->damage;
 // LINE 4868:
-_T14:
 }
 
 // FUNCTION: COPTER_D 0x004f75fe
@@ -11348,11 +11336,8 @@ int32_t S3HeliGetMaximumFuel(/*packed*/ struct _HELI_DATA *hd) {
 // LINE 4875:
 	htd = BinaryOp(add, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, hd->type, Const(4))), Const(2))), Const(8)), Const(5982584));
 // LINE 4876:
-	__asm        mov    eax, htd;
-	__asm        mov    eax, [eax+0x40];
-	__asm        jmp    _T2b;
+	return htd->fuel_capacity;
 // LINE 4877:
-_T2b:
 }
 
 // FUNCTION: COPTER_D 0x004f762e
@@ -12504,15 +12489,11 @@ long S3HeliGetNewValue(long lHeliType) {
 	__asm        cmp    htd, 0;
 	__asm        je     _T33;
 // LINE 5425:
-	__asm        mov    eax, htd;
-	__asm        mov    eax, [eax+0x48];
-	__asm        jmp    _T3a;
+	return htd->cost;
 // LINE 5427:
 _T33:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T3a;
+	return 0x0;
 // LINE 5428:
-_T3a:
 }
 
 // FUNCTION: COPTER_D 0x004f831e

@@ -412,11 +412,8 @@ _T8c:
 	this->_mRuntimePlatform = 0x4;
 // LINE 86:
 _Ta4:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        jmp    _Taf;
+	return this->_mRuntimePlatform;
 // LINE 87:
-_Taf:
 }
 
 // FUNCTION: COPTER_D 0x00427257

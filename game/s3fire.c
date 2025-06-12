@@ -3754,8 +3754,7 @@ _T14c:
 	__asm        jmp    _T36;
 // LINE 1468:
 _T151:
-	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _T1e3;
+	return 0xffffffff;
 // LINE 1474:
 FoundFire:
 	stobj = cptr->stptr;
@@ -3791,9 +3790,7 @@ _T164:
 	__asm        add    esp, 0x14;
 // LINE 1486:
 _T1be:
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x9C];
-	__asm        jmp    _T1e3;
+	return fd->mission_id;
 // LINE 1490:
 _T1cc:
 	stobj = stobj->next;
@@ -3803,7 +3800,6 @@ _T1cc:
 _T1d9:
 	return 0xffffffff;
 // LINE 1494:
-_T1e3:
 }
 
 // FUNCTION: COPTER_D 0x00526d7e

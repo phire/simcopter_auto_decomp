@@ -273,11 +273,8 @@ int32_t VRGetResTextureCnt(/*packed*/ struct VRResource *res) {
 // LINE 257:
 	hdr = res;
 // LINE 258:
-	__asm        mov    eax, hdr;
-	__asm        mov    eax, [eax+0x10];
-	__asm        jmp    _T1a;
+	return hdr->count;
 // LINE 259:
-_T1a:
 }
 
 // FUNCTION: COPTER_D 0x004d62c4

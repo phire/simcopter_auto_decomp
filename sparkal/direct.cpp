@@ -1169,10 +1169,7 @@ _T3ef:
 _T3f4:
 	__asm        jmp    _T3f9;
 _T3f9:
-	__asm        mov    eax, sEntryExtension;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    eax, [eax+4];
-	__asm        jmp    _T5eb;
+	return sEntryExtension.reference-><basic_string_ref<char>+0x04:4>;
 // LINE 67:
 _T407:
 	__asm        jmp    _T40c;
@@ -1339,10 +1336,8 @@ _T5df:
 	__asm        jmp    _T5e4;
 // LINE 68:
 _T5e4:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T5eb;
+	return 0x0;
 // LINE 69:
-_T5eb:
 }
 
 // FUNCTION: COPTER_D 0x0048237c
@@ -1602,10 +1597,7 @@ _T2e5:
 _T2ea:
 	__asm        jmp    _T2ef;
 _T2ef:
-	__asm        mov    eax, sEntryMinusExtension;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    eax, [eax+4];
-	__asm        jmp    _T4b0;
+	return sEntryMinusExtension.reference-><basic_string_ref<char>+0x04:4>;
 // LINE 91:
 _T2fd:
 	__asm        mov    eax, this;
@@ -1749,12 +1741,8 @@ _T498:
 _T49d:
 	__asm        jmp    _T4a2;
 _T4a2:
-	__asm        mov    eax, sEntryMinusExtension;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    eax, [eax+4];
-	__asm        jmp    _T4b0;
+	return sEntryMinusExtension.reference-><basic_string_ref<char>+0x04:4>;
 // LINE 93:
-_T4b0:
 }
 
 // FUNCTION: COPTER_D 0x00482833

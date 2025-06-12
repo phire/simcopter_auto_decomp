@@ -2453,11 +2453,8 @@ void _cArray::GetName(unsigned char * name) {
 // FUNCTION: COPTER_D 0x00568d95
 unsigned long _cArray::GetName() {
 // LINE 597:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x4C];
-	__asm        jmp    _T17;
+	return this->fTinyName;
 // LINE 598:
-_T17:
 }
 
 // FUNCTION: COPTER_D 0x00568db1
@@ -2511,10 +2508,7 @@ _T73:
 	__asm        cmp    [eax+0x4C], ecx;
 	__asm        jne    _Tc4;
 // LINE 616:
-	__asm        movsx  eax, cnt;
-	__asm        mov    ecx, _cArray::sArrayTable;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        jmp    _T16f;
+	return _cArray::sArrayTable->;
 // LINE 618:
 	__asm        jmp    _T163;
 _Tc4:
@@ -2563,10 +2557,7 @@ _T12c:
 	__asm        cmp    eax, edx;
 	__asm        jne    _T163;
 // LINE 622:
-	__asm        movsx  eax, cnt;
-	__asm        mov    ecx, _cArray::sArrayTable;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        jmp    _T16f;
+	return _cArray::sArrayTable->;
 // LINE 624:
 // Block end:
 _T163:
@@ -2575,7 +2566,6 @@ _T163:
 _T168:
 	return 0x0;
 // LINE 626:
-_T16f:
 }
 
 // FUNCTION: COPTER_D 0x00568f25

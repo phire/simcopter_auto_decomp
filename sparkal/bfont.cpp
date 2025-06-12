@@ -2038,11 +2038,8 @@ _Tb45:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x20];
 // LINE 125:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        jmp    _Tb75;
+	return this->myFontImage;
 // LINE 126:
-_Tb75:
 }
 
 // FUNCTION: COPTER_D 0x00469532
@@ -2952,11 +2949,8 @@ _T35e:
 	__asm        call   dword ptr [edx+8];
 // LINE 202:
 _T3a5:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        jmp    _T3b3;
+	return this->myFontImage;
 // LINE 203:
-_T3b3:
 }
 
 // FUNCTION: COPTER_D 0x0046a0f5

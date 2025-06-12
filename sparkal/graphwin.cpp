@@ -6010,8 +6010,7 @@ _T1e:
 	__asm        jne    _T38;
 // LINE 643:
 _T2e:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T204;
+	return 0x1;
 // LINE 645:
 _T38:
 	__asm        mov    eax, this;
@@ -6173,11 +6172,8 @@ _T1bd:
 	__asm        call   dword ptr [edx+8];
 // LINE 653:
 _T1f9:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x40];
-	__asm        jmp    _T204;
+	return this-><GraphicWindow+0x40:4>;
 // LINE 654:
-_T204:
 }
 
 // FUNCTION: COPTER_D 0x004a4cab
@@ -7833,9 +7829,7 @@ _T83:
 // LINE 955:
 	__asm        jmp    _T9a;
 _T9a:
-	__asm        mov    eax, i.node;
-	__asm        mov    eax, [eax+8];
-	__asm        jmp    _Tcf;
+	return i.node->data;
 // LINE 956:
 _Ta5:
 	__asm        mov    eax, i.node;
@@ -7853,10 +7847,8 @@ _Tc3:
 	__asm        jmp    _T27;
 // LINE 958:
 _Tc8:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tcf;
+	return 0x0;
 // LINE 959:
-_Tcf:
 }
 
 // FUNCTION: COPTER_D 0x004a5ea7
@@ -7915,9 +7907,7 @@ _T7e:
 // LINE 973:
 	__asm        jmp    _T95;
 _T95:
-	__asm        mov    eax, i.node;
-	__asm        mov    eax, [eax+8];
-	__asm        jmp    _Tca;
+	return i.node->data;
 // LINE 974:
 _Ta0:
 	__asm        mov    eax, i.node;
@@ -7937,7 +7927,6 @@ _Tbe:
 _Tc3:
 	return 0x0;
 // LINE 977:
-_Tca:
 }
 
 // FUNCTION: COPTER_D 0x004a5f76
@@ -8649,11 +8638,8 @@ _T4d:
 // FUNCTION: COPTER_D 0x004a6720
 class CBackBuffer *  GraphicWindow::GetImage() {
 // LINE 1341:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x40];
-	__asm        jmp    _T17;
+	return this-><GraphicWindow+0x40:4>;
 // LINE 1342:
-_T17:
 }
 
 // FUNCTION: COPTER_D 0x004a673c

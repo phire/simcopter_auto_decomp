@@ -2198,11 +2198,8 @@ _T2f5:
 	__asm        call   dword ptr [edx+8];
 // LINE 133:
 _T314:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x7C];
-	__asm        jmp    _T31f;
+	return this->mySecondImage;
 // LINE 134:
-_T31f:
 }
 
 // FUNCTION: COPTER_D 0x004a9c85

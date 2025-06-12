@@ -320,11 +320,8 @@ _T7c:
 // FUNCTION: COPTER_D 0x00447b3a
 char * ResourceRCData::DataReference() {
 // LINE 162:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        jmp    _T17;
+	return this->chData;
 // LINE 163:
-_T17:
 }
 
 

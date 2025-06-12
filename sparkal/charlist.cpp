@@ -326,8 +326,7 @@ _T40:
 	__asm        cmp    [eax], ecx;
 	__asm        jg     _T21;
 // LINE 134:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T7a;
+	return 0x0;
 // LINE 136:
 _T21:
 	__asm        mov    nPresentIndex, 0;
@@ -356,11 +355,8 @@ _T45:
 	__asm        jmp    _T39;
 // LINE 144:
 _T6f:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        jmp    _T7a;
+	return this->presentCharData;
 // LINE 145:
-_T7a:
 }
 
 // FUNCTION: COPTER_D 0x0043d7ce
@@ -389,9 +385,7 @@ _T26:
 	__asm        cmp    ecx, eax;
 	__asm        jne    _T61;
 // LINE 158:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        jmp    _T6d;
+	return this->presentCharData;
 // LINE 159:
 _T61:
 	__asm        jmp    _T1d;
@@ -399,6 +393,5 @@ _T61:
 _T66:
 	return 0x0;
 // LINE 161:
-_T6d:
 }
 

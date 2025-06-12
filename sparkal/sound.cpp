@@ -3190,11 +3190,8 @@ _T99:
 // FUNCTION: COPTER_D 0x0042ff51
 long DigitalSound::GetOriginalFrequency() {
 // LINE 1194:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x44];
-	__asm        jmp    _T17;
+	return this->waveFormatEx.nSamplesPerSec;
 // LINE 1196:
-_T17:
 }
 
 // FUNCTION: COPTER_D 0x0042ff6d
@@ -5639,8 +5636,7 @@ int32_t DigitalSound::StartCompletionNotificationEstimationTimer() {
 	__asm        jne    _T2d;
 // LINE 2139:
 _T26:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T93;
+	return 0x0;
 // LINE 2146:
 _T2d:
 	__asm        mov    eax, this;
@@ -5677,11 +5673,8 @@ _T6b:
 	__asm        mov    [ecx+0x38], eax;
 // LINE 2169:
 _T88:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x38];
-	__asm        jmp    _T93;
+	return this->nCompletionEstimationTimerSet;
 // LINE 2170:
-_T93:
 }
 
 // FUNCTION: COPTER_D 0x00431a7d

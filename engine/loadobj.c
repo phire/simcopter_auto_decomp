@@ -406,11 +406,8 @@ int32_t VRGetResObjectCnt(/*packed*/ struct VRResource *res) {
 // LINE 247:
 	geo = res;
 // LINE 248:
-	__asm        mov    eax, geo;
-	__asm        mov    eax, [eax+0x10];
-	__asm        jmp    _T1a;
+	return geo->count;
 // LINE 250:
-_T1a:
 }
 
 // FUNCTION: COPTER_D 0x004d23e6

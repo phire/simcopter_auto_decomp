@@ -2790,9 +2790,7 @@ unsigned long CBackBuffer::Lock() {
 // LINE 1039:
 	IFlatImage::lTotalLockCount++;
 // LINE 1041:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        jmp    _Td5;
+	return this->mLockCount;
 // LINE 1045:
 _T30:
 	__asm        mov    eax, this;
@@ -2804,8 +2802,7 @@ _T30:
 	__asm        cmp    pOurSurface, 0;
 	__asm        jne    _T4f;
 // LINE 1047:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Td5;
+	return 0x0;
 // LINE 1050:
 _T4f:
 	__asm        push   0;
@@ -2837,8 +2834,7 @@ _T92:
 	__asm        lea    ecx, [ebp-0xC];
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 1053:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Td5;
+	return 0x0;
 // LINE 1055:
 _Ta6:
 	this->mpBits = this->mDDdesc.lpSurface;
@@ -2849,11 +2845,8 @@ _Ta6:
 // LINE 1060:
 	IFlatImage::lTotalLockCount++;
 // LINE 1062:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        jmp    _Td5;
+	return this->mLockCount;
 // LINE 1064:
-_Td5:
 }
 
 // FUNCTION: COPTER_D 0x00470149
@@ -2870,9 +2863,7 @@ unsigned long CBackBuffer::Unlock() {
 // LINE 1092:
 	IFlatImage::lTotalLockCount--;
 // LINE 1094:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        jmp    _Td3;
+	return this->mLockCount;
 // LINE 1098:
 _T30:
 	__asm        mov    eax, this;
@@ -2891,8 +2882,7 @@ _T44:
 	__asm        cmp    pOurSurface, 0;
 	__asm        jne    _T63;
 // LINE 1103:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Td3;
+	return 0x0;
 // LINE 1104:
 _T63:
 	__asm        mov    eax, this;
@@ -2930,11 +2920,8 @@ _Ta5:
 	this->mpBits = 0x0;
 // LINE 1117:
 _Tc8:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        jmp    _Td3;
+	return this->mLockCount;
 // LINE 1119:
-_Td3:
 }
 
 // FUNCTION: COPTER_D 0x00470221
@@ -3150,16 +3137,11 @@ _T50:
 	__asm        cmp    dword ptr [eax+0x2C], 0;
 	__asm        je     _T24;
 // LINE 1245:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x50];
-	__asm        jmp    _T2f;
+	return this->mpBackSurface;
 // LINE 1246:
 _T24:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x4C];
-	__asm        jmp    _T2f;
+	return this->mpFrontSurface;
 // LINE 1247:
-_T2f:
 }
 
 // FUNCTION: COPTER_D 0x004704db
