@@ -443,8 +443,9 @@ int32_t CreateCriminalCarInstance(int32_t instanceID) {
 _T24:
 	__asm        xor    eax, eax;
 _T26:
-	__asm        jmp    near ptr 0x005349EB;
+	__asm        jmp    _T2b;
 // LINE 83:
+_T2b:
 }
 
 // FUNCTION: COPTER_D 0x005349f0
@@ -460,8 +461,9 @@ int32_t S3CriminalMissionStart(short mID, short mType, long x, long y) {
 	__asm        push   eax;
 	__asm        call   CriminalEvaderCarClass::StartCriminalMission;
 	__asm        add    esp, 0x10;
-	__asm        jmp    near ptr 0x00534A13;
+	__asm        jmp    _T23;
 // LINE 89:
+_T23:
 }
 
 // FUNCTION: COPTER_D 0x00534a18
@@ -474,8 +476,8 @@ void CriminalEvaderCarClass::CriminalEvaderCarClass() {
 // LINE 98:
 	this->carModel = 0x11e;
 // LINE 99:
-	__asm        jmp    near ptr 0x00534A44;
-
+	__asm        jmp    _T2c;
+_T2c:
 	__asm        mov    eax, this;
 }
 
@@ -484,8 +486,8 @@ void CriminalEvaderCarClass::~CriminalEvaderCarClass() {
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593258;
-	__asm        jmp    near ptr 0x00534A66;
-
+	__asm        jmp    _T1a;
+_T1a:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::~AutomobileClass;
 }
@@ -738,8 +740,8 @@ _T1d:
 _T10e:
 	__asm        jmp    _T113;
 _T113:
-	__asm        jmp    near ptr 0x00534D5D;
-
+	__asm        jmp    _T118;
+_T118:
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x112], eax;
@@ -1108,7 +1110,8 @@ void CriminalEvaderCarClass::AdjustSpeed() {
 	__asm        mov    [ecx+0xDE], eax;
 // LINE 424:
 _T45:
-	__asm        jmp    near ptr 0x005351FD;
+	__asm        jmp    _T4a;
+_T4a:
 }
 
 // FUNCTION: COPTER_D 0x00535202
@@ -1148,8 +1151,8 @@ _T52:
 // LINE 480:
 _T62:
 	__asm        mov    dword ptr [ebp-0x1C], 1;
-	__asm        jmp    near ptr 0x00535270;
-
+	__asm        jmp    _T6e;
+_T6e:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        jmp    _T502;
 // LINE 481:
@@ -1187,8 +1190,8 @@ _T158:
 // LINE 510:
 _T168:
 	__asm        mov    dword ptr [ebp-0x20], 1;
-	__asm        jmp    near ptr 0x00535376;
-
+	__asm        jmp    _T174;
+_T174:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        jmp    _T502;
 // LINE 511:
@@ -1231,8 +1234,8 @@ _T25a:
 // LINE 531:
 _T26a:
 	__asm        mov    dword ptr [ebp-0x24], 1;
-	__asm        jmp    near ptr 0x00535478;
-
+	__asm        jmp    _T276;
+_T276:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        jmp    _T502;
 // LINE 532:
@@ -1269,8 +1272,8 @@ _T2f5:
 // LINE 572:
 _T305:
 	__asm        mov    dword ptr [ebp-0x28], 1;
-	__asm        jmp    near ptr 0x00535513;
-
+	__asm        jmp    _T311;
+_T311:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        jmp    _T502;
 // LINE 573:
@@ -1313,8 +1316,8 @@ _T3f2:
 // LINE 613:
 _T402:
 	__asm        mov    dword ptr [ebp-0x2C], 1;
-	__asm        jmp    near ptr 0x00535610;
-
+	__asm        jmp    _T40e;
+_T40e:
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        jmp    _T502;
 // LINE 614:
@@ -1372,8 +1375,8 @@ _T4da:
 	__asm        jne    _T27;
 // LINE 621:
 	__asm        mov    dword ptr [ebp-0x30], 0;
-	__asm        jmp    near ptr 0x005356FC;
-
+	__asm        jmp    _T4fa;
+_T4fa:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        jmp    _T502;
 // LINE 622:
@@ -1404,7 +1407,8 @@ void CriminalEvaderCarClass::ShowWhereWeAre() {
 	__asm        call   S3MissionUpdate;
 	__asm        add    esp, 4;
 // LINE 657:
-	__asm        jmp    near ptr 0x0053574F;
+	__asm        jmp    _T46;
+_T46:
 }
 
 // FUNCTION: COPTER_D 0x00535754
@@ -1423,7 +1427,8 @@ void CriminalEvaderCarClass::SetSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) 
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::SetSaveData;
 // LINE 676:
-	__asm        jmp    near ptr 0x005357B9;
+	__asm        jmp    _T65;
+_T65:
 }
 
 // FUNCTION: COPTER_D 0x005357c0

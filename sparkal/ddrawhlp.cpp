@@ -298,8 +298,9 @@ _Tac:
 // LINE 114:
 _Te6:
 	__asm        mov    eax, dw;
-	__asm        jmp    near ptr 0x0041F6DF;
+	__asm        jmp    _Tee;
 // LINE 115:
+_Tee:
 }
 
 // FUNCTION: COPTER_D 0x0041f6e4
@@ -426,8 +427,9 @@ _T157:
 	__asm        mov    ddrval, eax;
 // LINE 180:
 	__asm        mov    eax, ppal;
-	__asm        jmp    near ptr 0x0041F865;
+	__asm        jmp    _T181;
 // LINE 182:
+_T181:
 }
 
 

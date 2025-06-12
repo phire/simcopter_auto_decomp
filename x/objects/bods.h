@@ -17,15 +17,15 @@ class cBBase *  cCopterBody::MakeNew(void * __ptr32 h) {
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    dword ptr [eax], 0x593688;
-	__asm        jmp    near ptr 0x0055F973;
-
+	__asm        jmp    _T53;
+_T53:
 	__asm        mov    byte ptr [ebp-4], 1;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    dword ptr [eax], 0x5936B0;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    word ptr [eax+0x30], 0xFFFF;
-	__asm        jmp    near ptr 0x0055F98E;
-
+	__asm        jmp    _T6e;
+_T6e:
 	__asm        mov    byte ptr [ebp-4], 0;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x18], eax;
@@ -237,8 +237,9 @@ _T2c0:
 	__asm        mov    eax, [ebp-0x130];
 	__asm        mov    ecx, [ebp-0x12C];
 	__asm        call   dword ptr [eax];
-	__asm        jmp    near ptr 0x0055FC41;
+	__asm        jmp    _T321;
 // LINE 113:
+_T321:
 	__asm        mov    eax, thing;
 	__asm        jmp    _T340;
 // LINE 114:
@@ -260,7 +261,8 @@ _T340:
 // FUNCTION: COPTER_D 0x0055fc70
 void  cCopterBody::WriteToDisk() {
 // LINE 139:
-	__asm        jmp    near ptr 0x0055FC81;
+	__asm        jmp    _T11;
+_T11:
 }
 
 // Function in module: Bodydefs.obj
@@ -268,6 +270,7 @@ void  cCopterBody::WriteToDisk() {
 class cBList<class cBBase> *  cCopterBody::GetList() {
 
 	__asm        mov    eax, cCopterBody::fsList;
-	__asm        jmp    near ptr 0x0055FCA6;
+	__asm        jmp    _T16;
+_T16:
 }
 

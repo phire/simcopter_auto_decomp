@@ -268,8 +268,8 @@ _Tac:
 
 	__asm        mov    word ptr [ebp-0xC], 0xFFFF;
 _Tc9:
-	__asm        jmp    near ptr 0x0042708E;
-
+	__asm        jmp    _Tce;
+_Tce:
 	__asm        cmp    dword ptr [ebp-8], 0;
 	__asm        je     _Ted;
 
@@ -281,8 +281,9 @@ _Tc9:
 _Ted:
 	__asm        mov    word ptr [ebp-4], 0xFFFF;
 _Tf3:
-	__asm        jmp    near ptr 0x004270B8;
+	__asm        jmp    _Tf8;
 // LINE 35:
+_Tf8:
 	__asm        cmp    CRLECompressedImage::RLEGraphicsPool, 0;
 	__asm        jne    _T114;
 // LINE 37:
@@ -292,8 +293,8 @@ _Tf3:
 	__asm        add    esp, 8;
 // LINE 38:
 _T114:
-	__asm        jmp    near ptr 0x004270D9;
-
+	__asm        jmp    _T119;
+_T119:
 	__asm        mov    eax, this;
 }
 
@@ -346,11 +347,13 @@ _T79:
 
 	__asm        mov    word ptr [ebp-4], 0xFFFF;
 _Tae:
-	__asm        jmp    near ptr 0x00427194;
-
-	__asm        jmp    near ptr 0x00427199;
+	__asm        jmp    _Tb3;
+_Tb3:
+	__asm        jmp    _Tb8;
 // LINE 52:
-	__asm        jmp    near ptr 0x0042719E;
+_Tb8:
+	__asm        jmp    _Tbd;
+_Tbd:
 }
 
 // FUNCTION: COPTER_D 0x004271a3
@@ -412,8 +415,9 @@ _T8c:
 _Ta4:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
-	__asm        jmp    near ptr 0x00427252;
+	__asm        jmp    _Taf;
 // LINE 87:
+_Taf:
 }
 
 // FUNCTION: COPTER_D 0x00427257
@@ -449,8 +453,9 @@ _T51:
 // LINE 108:
 _T58:
 	__asm        mov    eax, Window;
-	__asm        jmp    near ptr 0x004272B7;
+	__asm        jmp    _T60;
 // LINE 109:
+_T60:
 }
 
 // FUNCTION: COPTER_D 0x004272be
@@ -513,8 +518,9 @@ _T95:
 // Block end:
 _T9b:
 	__asm        mov    eax, pBitmap;
-	__asm        jmp    near ptr 0x00427361;
+	__asm        jmp    _Ta3;
 // LINE 133:
+_Ta3:
 }
 
 // FUNCTION: COPTER_D 0x00427368
@@ -641,32 +647,36 @@ _T143:
 // Block end:
 _T149:
 	__asm        mov    eax, pBitmap;
-	__asm        jmp    near ptr 0x004274B9;
+	__asm        jmp    _T151;
 // LINE 166:
+_T151:
 }
 
 // FUNCTION: COPTER_D 0x004274c0
 unsigned long CSparkalApp::PrepareGame() {
 // LINE 175:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004274D3;
+	__asm        jmp    _T13;
 // LINE 176:
+_T13:
 }
 
 // FUNCTION: COPTER_D 0x004274d8
 unsigned long CSparkalApp::TickGame() {
 // LINE 180:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004274EB;
+	__asm        jmp    _T13;
 // LINE 181:
+_T13:
 }
 
 // FUNCTION: COPTER_D 0x004274f0
 unsigned long CSparkalApp::FinishGame() {
 // LINE 185:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00427503;
+	__asm        jmp    _T13;
 // LINE 186:
+_T13:
 }
 
 

@@ -110,24 +110,27 @@ enum PoolType {
 void * __ptr32 Memory::DetachPlatformHandle(void * __ptr32 mh) {
 // LINE 104:
 	__asm        mov    eax, mh;
-	__asm        jmp    near ptr 0x0055472E;
+	__asm        jmp    _T0e;
 // LINE 105:
+_T0e:
 }
 
 // FUNCTION: COPTER_D 0x00554733
 void * __ptr32 Memory::GetPlatformHandle(void * __ptr32 mh) {
 // LINE 108:
 	__asm        mov    eax, mh;
-	__asm        jmp    near ptr 0x00554741;
+	__asm        jmp    _T0e;
 // LINE 109:
+_T0e:
 }
 
 // FUNCTION: COPTER_D 0x00554746
 void * __ptr32 Memory::AdoptPlatformHandle(void * __ptr32 mem) {
 // LINE 115:
 	__asm        mov    eax, mem;
-	__asm        jmp    near ptr 0x00554754;
+	__asm        jmp    _T0e;
 // LINE 116:
+_T0e:
 }
 
 // FUNCTION: COPTER_D 0x00554759
@@ -217,8 +220,9 @@ _Tc6:
 // Block end:
 _Te2:
 	__asm        mov    eax, mem;
-	__asm        jmp    near ptr 0x00554843;
+	__asm        jmp    _Tea;
 // LINE 184:
+_Tea:
 }
 
 // FUNCTION: COPTER_D 0x00554848
@@ -234,7 +238,8 @@ void Memory::HUnpurge(void * __ptr32 purged, long oldSize) {
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C371C];
 // LINE 197:
-	__asm        jmp    near ptr 0x0055486B;
+	__asm        jmp    _T23;
+_T23:
 }
 
 // FUNCTION: COPTER_D 0x00554870
@@ -263,8 +268,9 @@ unsigned char * Memory::PAlloc(long * pool, long size) {
 // LINE 212:
 _T46:
 	__asm        mov    eax, mem;
-	__asm        jmp    near ptr 0x005548BE;
+	__asm        jmp    _T4e;
 // LINE 214:
+_T4e:
 }
 
 // FUNCTION: COPTER_D 0x005548c3
@@ -327,7 +333,8 @@ _T75:
 	__asm        add    esp, 0x10;
 // LINE 243:
 _Ta9:
-	__asm        jmp    near ptr 0x00554971;
+	__asm        jmp    _Tae;
+_Tae:
 }
 
 // FUNCTION: COPTER_D 0x00554976
@@ -363,7 +370,8 @@ void Memory::PFree(unsigned char * mem) {
 	__asm        add    esp, 0x10;
 // LINE 260:
 _T60:
-	__asm        jmp    near ptr 0x005549DB;
+	__asm        jmp    _T65;
+_T65:
 }
 
 // FUNCTION: COPTER_D 0x005549e0
@@ -397,8 +405,9 @@ unsigned char * Memory::HLock(void * __ptr32 mem) {
 // LINE 289:
 _T50:
 	__asm        mov    eax, p;
-	__asm        jmp    near ptr 0x00554A38;
+	__asm        jmp    _T58;
 // LINE 290:
+_T58:
 }
 
 // FUNCTION: COPTER_D 0x00554a3d
@@ -428,7 +437,8 @@ void Memory::HUnlock(void * __ptr32 mem) {
 	__asm        add    esp, 0x10;
 // LINE 307:
 _T4d:
-	__asm        jmp    near ptr 0x00554A8F;
+	__asm        jmp    _T52;
+_T52:
 }
 
 // FUNCTION: COPTER_D 0x00554a94
@@ -437,7 +447,8 @@ void Memory::HMoveHi(void * __ptr32 h) {
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3720];
 // LINE 320:
-	__asm        jmp    near ptr 0x00554AA7;
+	__asm        jmp    _T13;
+_T13:
 }
 
 // FUNCTION: COPTER_D 0x00554aac
@@ -450,7 +461,8 @@ void Memory::HPurge(void * __ptr32 h) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 332:
-	__asm        jmp    near ptr 0x00554AD3;
+	__asm        jmp    _T27;
+_T27:
 }
 
 // FUNCTION: COPTER_D 0x00554ad8
@@ -463,7 +475,8 @@ void Memory::HNoPurge(void * __ptr32 h) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 344:
-	__asm        jmp    near ptr 0x00554AFF;
+	__asm        jmp    _T27;
+_T27:
 }
 
 // FUNCTION: COPTER_D 0x00554b04
@@ -504,8 +517,9 @@ _T5c:
 	__asm        push   eax;
 	__asm        call   Memory::HLock;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x00554B71;
+	__asm        jmp    _T6d;
 // LINE 364:
+_T6d:
 }
 
 // FUNCTION: COPTER_D 0x00554b76
@@ -531,7 +545,8 @@ _T2f:
 	__asm        call   memmove;
 	__asm        add    esp, 0xC;
 // LINE 377:
-	__asm        jmp    near ptr 0x00554BBE;
+	__asm        jmp    _T48;
+_T48:
 }
 
 // FUNCTION: COPTER_D 0x00554bc3
@@ -557,7 +572,8 @@ _T2f:
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 387:
-	__asm        jmp    near ptr 0x00554C0B;
+	__asm        jmp    _T48;
+_T48:
 }
 
 // FUNCTION: COPTER_D 0x00554c10
@@ -593,7 +609,8 @@ void Memory::BlockFill(void * __ptr32 mem, unsigned char byteVal, unsigned long 
 	__asm        add    esp, 0x10;
 // LINE 399:
 _T59:
-	__asm        jmp    near ptr 0x00554C6E;
+	__asm        jmp    _T5e;
+_T5e:
 }
 
 // FUNCTION: COPTER_D 0x00554c73
@@ -615,8 +632,9 @@ unsigned short Memory::BlockCompare(void * __ptr32 first, void * __ptr32 second,
 _T2b:
 	__asm        xor    ax, ax;
 _T2e:
-	__asm        jmp    near ptr 0x00554CA6;
+	__asm        jmp    _T33;
 // LINE 403:
+_T33:
 }
 
 // FUNCTION: COPTER_D 0x00554cab
@@ -630,8 +648,9 @@ long * Memory::PoolAlloc(long totalSize, enum Memory::PoolType poolType) {
 	__asm        add    esp, 0x10;
 // LINE 410:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00554CD4;
+	__asm        jmp    _T29;
 // LINE 411:
+_T29:
 }
 
 // FUNCTION: COPTER_D 0x00554cd9
@@ -644,7 +663,8 @@ void Memory::PoolFree(long * pool) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 418:
-	__asm        jmp    near ptr 0x00554D00;
+	__asm        jmp    _T27;
+_T27:
 }
 
 // FUNCTION: COPTER_D 0x00554d05
@@ -673,8 +693,9 @@ unsigned long Memory::HGetSize(void * __ptr32 mem) {
 // LINE 432:
 _T48:
 	__asm        mov    eax, size;
-	__asm        jmp    near ptr 0x00554D55;
+	__asm        jmp    _T50;
 // LINE 433:
+_T50:
 }
 
 // FUNCTION: COPTER_D 0x00554d5a
@@ -703,8 +724,9 @@ unsigned long Memory::PGetSize(unsigned char * mem) {
 // LINE 447:
 _T48:
 	__asm        mov    eax, size;
-	__asm        jmp    near ptr 0x00554DAA;
+	__asm        jmp    _T50;
 // LINE 448:
+_T50:
 }
 
 // FUNCTION: COPTER_D 0x00554daf
@@ -726,8 +748,9 @@ unsigned short Memory::HIsLocked(void * __ptr32 h) {
 _T2b:
 	__asm        xor    ax, ax;
 _T2e:
-	__asm        jmp    near ptr 0x00554DE2;
+	__asm        jmp    _T33;
 // LINE 457:
+_T33:
 }
 
 // FUNCTION: COPTER_D 0x00554de7
@@ -771,8 +794,9 @@ _T44:
 // LINE 474:
 _T6e:
 	__asm        mov    eax, state;
-	__asm        jmp    near ptr 0x00554E5D;
+	__asm        jmp    _T76;
 // LINE 475:
+_T76:
 }
 
 // FUNCTION: COPTER_D 0x00554e62
@@ -794,7 +818,8 @@ _T21:
 	__asm        add    esp, 4;
 // LINE 489:
 _T2d:
-	__asm        jmp    near ptr 0x00554E94;
+	__asm        jmp    _T32;
+_T32:
 }
 
 // FUNCTION: COPTER_D 0x00554e99
@@ -833,8 +858,9 @@ _T44:
 	__asm        mov    err, eax;
 // LINE 506:
 	__asm        mov    eax, err;
-	__asm        jmp    near ptr 0x00554F01;
+	__asm        jmp    _T68;
 // LINE 507:
+_T68:
 }
 
 // FUNCTION: COPTER_D 0x00554f06
@@ -846,8 +872,9 @@ long Memory::Error() {
 	__asm        mov    err, eax;
 // LINE 543:
 	__asm        mov    eax, err;
-	__asm        jmp    near ptr 0x00554F20;
+	__asm        jmp    _T1a;
 // LINE 544:
+_T1a:
 }
 
 

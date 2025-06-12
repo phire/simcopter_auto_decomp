@@ -354,8 +354,9 @@ unsigned short OpenFile(/*unpacked*/ class ResFile *pFile) {
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, pFile;
 	__asm        call   dword ptr [eax+4];
-	__asm        jmp    near ptr 0x00567510;
+	__asm        jmp    _T30;
 // LINE 19:
+_T30:
 	__asm        mov    ecx, pFile;
 	__asm        call   FlatFile::ValidFile;
 	__asm        movzx  eax, ax;
@@ -648,7 +649,8 @@ _T39d:
 // LINE 105:
 // Block end:
 _T3a2:
-	__asm        jmp    near ptr 0x005678F9;
+	__asm        jmp    _T3a7;
+_T3a7:
 }
 
 // FUNCTION: COPTER_D 0x00567900
@@ -725,7 +727,8 @@ _Tbc:
 	__asm        mov    ecx, this;
 	__asm        call   _cArray::ClearBytes;
 // LINE 154:
-	__asm        jmp    near ptr 0x005679E4;
+	__asm        jmp    _Te4;
+_Te4:
 }
 
 // FUNCTION: COPTER_D 0x005679eb
@@ -818,7 +821,8 @@ _T121:
 // LINE 190:
 // Block end:
 _T126:
-	__asm        jmp    near ptr 0x00567B16;
+	__asm        jmp    _T12b;
+_T12b:
 }
 
 // FUNCTION: COPTER_D 0x00567b1b
@@ -859,7 +863,8 @@ _T60:
 // LINE 202:
 // Block end:
 _T82:
-	__asm        jmp    near ptr 0x00567BA2;
+	__asm        jmp    _T87;
+_T87:
 }
 
 // FUNCTION: COPTER_D 0x00567ba7
@@ -878,13 +883,15 @@ void _cArray::DeleteTable() {
 	__asm        add    esp, 4;
 // LINE 208:
 _T30:
-	__asm        jmp    near ptr 0x00567BDC;
+	__asm        jmp    _T35;
+_T35:
 }
 
 // FUNCTION: COPTER_D 0x00567be1
 void _cArray::WriteToDisk() {
 // LINE 246:
-	__asm        jmp    near ptr 0x00567BF2;
+	__asm        jmp    _T11;
+_T11:
 }
 
 // FUNCTION: COPTER_D 0x00567bf7
@@ -971,7 +978,8 @@ _T102:
 // LINE 264:
 // Block end:
 _T111:
-	__asm        jmp    near ptr 0x00567D0D;
+	__asm        jmp    _T116;
+_T116:
 }
 
 // FUNCTION: COPTER_D 0x00567d12
@@ -1066,7 +1074,8 @@ _Te8:
 	__asm        mov    ecx, header;
 	__asm        mov    [ecx], ax;
 // LINE 316:
-	__asm        jmp    near ptr 0x00567E2E;
+	__asm        jmp    _T11c;
+_T11c:
 }
 
 // FUNCTION: COPTER_D 0x00567e33
@@ -1085,7 +1094,8 @@ void _cArray::SetSizeAndHeaders(long newxSize, long newySize) {
 	__asm        mov    ecx, this;
 	__asm        call   _cArray::SetXPointers;
 // LINE 323:
-	__asm        jmp    near ptr 0x00567E64;
+	__asm        jmp    _T31;
+_T31:
 }
 
 // FUNCTION: COPTER_D 0x00567e6b
@@ -1293,16 +1303,16 @@ _Tac:
 	__asm        cmp    eax, ecx;
 	__asm        jle    _T132;
 // LINE 373:
-	__asm        jmp    near ptr 0x005680A7;
-
+	__asm        jmp    _Tc1;
+_Tc1:
 	__asm        movsx  eax, count;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+4];
 	__asm        mov    eax, [ecx+eax*4-4];
 	__asm        mov    movefrom, eax;
 // LINE 374:
-	__asm        jmp    near ptr 0x005680BD;
-
+	__asm        jmp    _Td7;
+_Td7:
 	moveto = this->fData->;
 // LINE 375:
 	__asm        mov    eax, this;
@@ -1334,8 +1344,9 @@ _T12d:
 // Block end:
 _T132:
 	__asm        mov    ax, beforewhich;
-	__asm        jmp    near ptr 0x00568121;
+	__asm        jmp    _T13b;
 // LINE 383:
+_T13b:
 }
 
 // FUNCTION: COPTER_D 0x00568128
@@ -1429,8 +1440,8 @@ _Tbe:
 	__asm        add    esp, 0x10;
 // LINE 400:
 _Tf6:
-	__asm        jmp    near ptr 0x00568223;
-
+	__asm        jmp    _Tfb;
+_Tfb:
 	__asm        movsx  eax, ycount;
 	__asm        dec    eax;
 	__asm        mov    ecx, this;
@@ -1441,8 +1452,8 @@ _Tf6:
 	__asm        add    eax, [edx+ecx*4];
 	__asm        mov    movefrom, eax;
 // LINE 401:
-	__asm        jmp    near ptr 0x00568244;
-
+	__asm        jmp    _T11c;
+_T11c:
 	__asm        movsx  eax, xcount;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+4];
@@ -1473,8 +1484,9 @@ _T157:
 // Block end:
 _T15c:
 	__asm        mov    ax, beforewhich;
-	__asm        jmp    near ptr 0x0056828D;
+	__asm        jmp    _T165;
 // LINE 407:
+_T165:
 }
 
 // FUNCTION: COPTER_D 0x00568294
@@ -1536,16 +1548,16 @@ _T9a:
 	__asm        cmp    eax, ecx;
 	__asm        jle    _Tfb;
 // LINE 420:
-	__asm        jmp    near ptr 0x00568346;
-
+	__asm        jmp    _Tb2;
+_Tb2:
 	__asm        movsx  eax, count;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+4];
 	__asm        mov    eax, [ecx+eax*4+4];
 	__asm        mov    movefrom, eax;
 // LINE 421:
-	__asm        jmp    near ptr 0x0056835C;
-
+	__asm        jmp    _Tc8;
+_Tc8:
 	moveto = this->fData->;
 // LINE 422:
 	__asm        mov    eax, this;
@@ -1615,8 +1627,9 @@ _T166:
 _T192:
 	__asm        mov    eax, this;
 	__asm        mov    ax, [eax+0x14];
-	__asm        jmp    near ptr 0x00568432;
+	__asm        jmp    _T19e;
 // LINE 430:
+_T19e:
 }
 
 // FUNCTION: COPTER_D 0x00568439
@@ -1689,8 +1702,8 @@ _Tac:
 	__asm        cmp    eax, [ecx+0x10];
 	__asm        jge    _T129;
 // LINE 444:
-	__asm        jmp    near ptr 0x0056850B;
-
+	__asm        jmp    _Td2;
+_Td2:
 	__asm        movsx  eax, xcount;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+4];
@@ -1702,8 +1715,8 @@ _Tac:
 	__asm        add    eax, ecx;
 	__asm        mov    thisone, eax;
 // LINE 445:
-	__asm        jmp    near ptr 0x0056852F;
-
+	__asm        jmp    _Tf6;
+_Tf6:
 	__asm        movsx  eax, ycount;
 	__asm        inc    eax;
 	__asm        mov    ecx, this;
@@ -1738,8 +1751,8 @@ _T12e:
 // Block start:
 	/*bp-0x1c*/  unsigned char * nextToLast;
 	/*bp-0x20*/  unsigned char * lastPart;
-	__asm        jmp    near ptr 0x0056857F;
-
+	__asm        jmp    _T146;
+_T146:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x10];
 	__asm        dec    eax;
@@ -1751,8 +1764,8 @@ _T12e:
 	__asm        add    eax, [edx+ecx*4];
 	__asm        mov    lastPart, eax;
 // LINE 452:
-	__asm        jmp    near ptr 0x005685A2;
-
+	__asm        jmp    _T169;
+_T169:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x10];
 	__asm        sub    eax, 2;
@@ -1841,8 +1854,9 @@ _T238:
 _T263:
 	__asm        mov    eax, this;
 	__asm        mov    ax, [eax+0x10];
-	__asm        jmp    near ptr 0x005686A8;
+	__asm        jmp    _T26f;
 // LINE 461:
+_T26f:
 }
 
 // FUNCTION: COPTER_D 0x005686af
@@ -1881,8 +1895,8 @@ _T4d:
 	__asm        push   eax;
 	__asm        lea    ecx, temp<vftable>;
 	__asm        call   _cArray::BeginCreate;
-	__asm        jmp    near ptr 0x0056871B;
-
+	__asm        jmp    _T6c;
+_T6c:
 	__asm        mov    dword ptr [ebp-4], 0;
 // LINE 469:
 	__asm        lea    eax, temp<vftable>;
@@ -2191,7 +2205,8 @@ void _cArray::CopyFrom(unsigned char * fromName) {
 	__asm        mov    ecx, this;
 	__asm        call   _cArray::CopyFrom;
 // LINE 539:
-	__asm        jmp    near ptr 0x00568A8E;
+	__asm        jmp    _T26;
+_T26:
 }
 
 // FUNCTION: COPTER_D 0x00568a95
@@ -2211,7 +2226,8 @@ void _cArray::CopyFrom(unsigned long oldname) {
 	__asm        mov    ecx, this;
 	__asm        call   _cArray::CopyFrom;
 // LINE 545:
-	__asm        jmp    near ptr 0x00568AC3;
+	__asm        jmp    _T2e;
+_T2e:
 }
 
 // FUNCTION: COPTER_D 0x00568aca
@@ -2303,7 +2319,8 @@ _Tea:
 	__asm        add    esp, 0xC;
 // LINE 557:
 _T112:
-	__asm        jmp    near ptr 0x00568BE1;
+	__asm        jmp    _T117;
+_T117:
 }
 
 // FUNCTION: COPTER_D 0x00568be8
@@ -2395,7 +2412,8 @@ _Tea:
 	__asm        add    esp, 0xC;
 // LINE 577:
 _T112:
-	__asm        jmp    near ptr 0x00568CFF;
+	__asm        jmp    _T117;
+_T117:
 }
 
 // FUNCTION: COPTER_D 0x00568d06
@@ -2415,7 +2433,8 @@ void _cArray::CopyTo(unsigned long oldname) {
 	__asm        mov    ecx, this;
 	__asm        call   _cArray::CopyTo;
 // LINE 583:
-	__asm        jmp    near ptr 0x00568D34;
+	__asm        jmp    _T2e;
+_T2e:
 }
 
 // FUNCTION: COPTER_D 0x00568d3b
@@ -2429,7 +2448,8 @@ void _cArray::CopyTo(unsigned char * toName) {
 	__asm        mov    ecx, this;
 	__asm        call   _cArray::CopyTo;
 // LINE 588:
-	__asm        jmp    near ptr 0x00568D61;
+	__asm        jmp    _T26;
+_T26:
 }
 
 // FUNCTION: COPTER_D 0x00568d68
@@ -2444,7 +2464,8 @@ void _cArray::GetName(unsigned char * name) {
 	__asm        call   Memory::BlockMove;
 	__asm        add    esp, 0xC;
 // LINE 593:
-	__asm        jmp    near ptr 0x00568D8E;
+	__asm        jmp    _T26;
+_T26:
 }
 
 // FUNCTION: COPTER_D 0x00568d95
@@ -2452,8 +2473,9 @@ unsigned long _cArray::GetName() {
 // LINE 597:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4C];
-	__asm        jmp    near ptr 0x00568DAC;
+	__asm        jmp    _T17;
 // LINE 598:
+_T17:
 }
 
 // FUNCTION: COPTER_D 0x00568db1
@@ -2661,8 +2683,9 @@ _T55:
 // LINE 654:
 _T5a:
 	__asm        mov    ax, numByType;
-	__asm        jmp    near ptr 0x0056900B;
+	__asm        jmp    _T63;
 // LINE 655:
+_T63:
 }
 
 // FUNCTION: COPTER_D 0x00569010
@@ -2868,8 +2891,8 @@ _T170:
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x3C];
 	__asm        call   _cArray::FromDiskCreate;
-	__asm        jmp    near ptr 0x0056925B;
-
+	__asm        jmp    _T1c6;
+_T1c6:
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    [ebp-0x40], eax;
 	__asm        jmp    _T1d8;
@@ -2994,8 +3017,9 @@ _Ta4:
 // LINE 793:
 _Ta9:
 	__asm        mov    ax, foundcount;
-	__asm        jmp    near ptr 0x005693CF;
+	__asm        jmp    _Tb2;
 // LINE 794:
+_Tb2:
 }
 
 

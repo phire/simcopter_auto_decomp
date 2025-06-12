@@ -555,21 +555,21 @@ void CBackBuffer::CBackBuffer() {
 	__asm        call   IFlatImage::IFlatImage;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5907E0;
-	__asm        jmp    near ptr 0x0046E6B2;
-
-	__asm        jmp    near ptr 0x0046E6B7;
-
-	__asm        jmp    near ptr 0x0046E6BC;
-
-	__asm        jmp    near ptr 0x0046E6C1;
-
+	__asm        jmp    _T22;
+_T22:
+	__asm        jmp    _T27;
+_T27:
+	__asm        jmp    _T2c;
+_T2c:
+	__asm        jmp    _T31;
+_T31:
 	this-><CBackBuffer+0x00> = 0x590808;
 // LINE 45:
 	__asm        mov    ecx, this;
 	__asm        call   CBackBuffer::InitializeMemberVariables;
 // LINE 46:
-	__asm        jmp    near ptr 0x0046E6D7;
-
+	__asm        jmp    _T47;
+_T47:
 	__asm        mov    eax, this;
 }
 
@@ -586,14 +586,14 @@ void CBackBuffer::CBackBuffer(char * imageFileName) {
 	__asm        call   IFlatImage::IFlatImage;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5907E0;
-	__asm        jmp    near ptr 0x0046E701;
-
-	__asm        jmp    near ptr 0x0046E706;
-
-	__asm        jmp    near ptr 0x0046E70B;
-
-	__asm        jmp    near ptr 0x0046E710;
-
+	__asm        jmp    _T22;
+_T22:
+	__asm        jmp    _T27;
+_T27:
+	__asm        jmp    _T2c;
+_T2c:
+	__asm        jmp    _T31;
+_T31:
 	this-><CBackBuffer+0x00> = 0x590808;
 // LINE 68:
 	__asm        mov    ecx, this;
@@ -665,8 +665,8 @@ _T112:
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    byte ptr [eax+4], 0;
 _T119:
-	__asm        jmp    near ptr 0x0046E7FD;
-
+	__asm        jmp    _T11e;
+_T11e:
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    fileImage, eax;
 	__asm        jmp    _T130;
@@ -731,8 +731,9 @@ _T1b6:
 	__asm        push   eax;
 	__asm        call   _read;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0046E8B2;
+	__asm        jmp    _T1d3;
 // LINE 87:
+_T1d3:
 	__asm        push   0x28;
 	__asm        lea    eax, biHeader.biSize;
 	__asm        push   eax;
@@ -741,8 +742,9 @@ _T1b6:
 	__asm        push   eax;
 	__asm        call   _read;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0046E8CF;
+	__asm        jmp    _T1f0;
 // LINE 88:
+_T1f0:
 	this->mWidth = biHeader.biWidth;
 // LINE 89:
 	this->mHeight = biHeader.biHeight;
@@ -812,8 +814,8 @@ _T25d:
 // LINE 125:
 	__asm        mov    eax, ddrval;
 	__asm        mov    [ebp-0x5C], eax;
-	__asm        jmp    near ptr 0x0046E9CA;
-
+	__asm        jmp    _T2eb;
+_T2eb:
 	__asm        push   0x5994D0;
 	__asm        lea    ecx, [ebp-0x5C];
 	__asm        call   DirectDrawError::DisplayError;
@@ -844,14 +846,14 @@ void CBackBuffer::CBackBuffer(long Width, long Height, const /*packed*/ struct S
 	__asm        call   IFlatImage::IFlatImage;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5907E0;
-	__asm        jmp    near ptr 0x0046EA28;
-
-	__asm        jmp    near ptr 0x0046EA2D;
-
-	__asm        jmp    near ptr 0x0046EA32;
-
-	__asm        jmp    near ptr 0x0046EA37;
-
+	__asm        jmp    _T22;
+_T22:
+	__asm        jmp    _T27;
+_T27:
+	__asm        jmp    _T2c;
+_T2c:
+	__asm        jmp    _T31;
+_T31:
 	this-><CBackBuffer+0x00> = 0x590808;
 // LINE 161:
 	__asm        mov    ecx, this;
@@ -916,8 +918,8 @@ void CBackBuffer::CBackBuffer(long Width, long Height, const /*packed*/ struct S
 // LINE 185:
 	__asm        mov    eax, ddrval;
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x0046EB14;
-
+	__asm        jmp    _T10e;
+_T10e:
 	__asm        push   0x59950C;
 	__asm        lea    ecx, [ebp-8];
 	__asm        call   DirectDrawError::DisplayError;
@@ -1015,7 +1017,8 @@ void CBackBuffer::InitializeMemberVariables() {
 // LINE 241:
 	this->nPenThickness = 0x0;
 // LINE 245:
-	__asm        jmp    near ptr 0x0046EC75;
+	__asm        jmp    _T11d;
+_T11d:
 }
 
 // FUNCTION: COPTER_D 0x0046ec7a
@@ -1041,8 +1044,8 @@ void CBackBuffer::~CBackBuffer() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x0046ECCE;
-
+	__asm        jmp    _T54;
+_T54:
 	__asm        jmp    _T59;
 // LINE 256:
 _T59:
@@ -1126,7 +1129,8 @@ _T119:
 	this->hPen = 0x0;
 // LINE 297:
 _T146:
-	__asm        jmp    near ptr 0x0046EDC5;
+	__asm        jmp    _T14b;
+_T14b:
 }
 
 // FUNCTION: COPTER_D 0x0046edca
@@ -1174,8 +1178,8 @@ _Ta2:
 	__asm        mov    eax, [ebp-0x454];
 	__asm        mov    byte ptr [eax+4], 0;
 _Tac:
-	__asm        jmp    near ptr 0x0046EE7B;
-
+	__asm        jmp    _Tb1;
+_Tb1:
 	__asm        mov    eax, [ebp-0x454];
 	__asm        mov    fileImage, eax;
 	__asm        jmp    _Tc6;
@@ -1243,8 +1247,9 @@ _T175:
 	__asm        call   _read;
 	__asm        add    esp, 0xC;
 	__asm        mov    nBytesRead, eax;
-	__asm        jmp    near ptr 0x0046EF5F;
+	__asm        jmp    _T195;
 // LINE 328:
+_T195:
 	__asm        push   0x28;
 	__asm        lea    eax, biHeader.biSize;
 	__asm        push   eax;
@@ -1254,10 +1259,11 @@ _T175:
 	__asm        call   _read;
 	__asm        add    esp, 0xC;
 	__asm        mov    nBytesRead, eax;
-	__asm        jmp    near ptr 0x0046EF82;
+	__asm        jmp    _T1b8;
 // LINE 329:
-	__asm        jmp    near ptr 0x0046EF87;
-
+_T1b8:
+	__asm        jmp    _T1bd;
+_T1bd:
 	__asm        mov    eax, fileImage;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
@@ -1291,10 +1297,11 @@ _T1fd:
 	__asm        call   _read;
 	__asm        add    esp, 0xC;
 	__asm        mov    nBytesRead, eax;
-	__asm        jmp    near ptr 0x0046EFFE;
+	__asm        jmp    _T234;
 // LINE 339:
-	__asm        jmp    near ptr 0x0046F003;
-
+_T234:
+	__asm        jmp    _T239;
+_T239:
 	__asm        mov    eax, fileImage;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
@@ -1328,8 +1335,8 @@ _T1fd:
 	__asm        call   PFile::Length;
 	__asm        mov    nFileLength, eax;
 // LINE 351:
-	__asm        jmp    near ptr 0x0046F075;
-
+	__asm        jmp    _T2ab;
+_T2ab:
 	__asm        mov    eax, fileImage;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
@@ -1360,14 +1367,15 @@ _T2cf:
 	__asm        call   _read;
 	__asm        add    esp, 0xC;
 	__asm        mov    nBytesRead, eax;
-	__asm        jmp    near ptr 0x0046F0DA;
+	__asm        jmp    _T310;
 // LINE 354:
+_T310:
 	__asm        mov    ecx, fileImage;
 	__asm        call   PFile::Length;
 	__asm        mov    nFileLength, eax;
 // LINE 355:
-	__asm        jmp    near ptr 0x0046F0EA;
-
+	__asm        jmp    _T320;
+_T320:
 	__asm        mov    eax, fileImage;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
@@ -1396,10 +1404,11 @@ _T34a:
 	__asm        call   _read;
 	__asm        add    esp, 0xC;
 	__asm        mov    nBytesRead, eax;
-	__asm        jmp    near ptr 0x0046F145;
+	__asm        jmp    _T37b;
 // LINE 362:
-	__asm        jmp    near ptr 0x0046F14A;
-
+_T37b:
+	__asm        jmp    _T380;
+_T380:
 	__asm        mov    eax, fileImage;
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
@@ -1499,8 +1508,8 @@ _T7e:
 // LINE 406:
 	__asm        mov    eax, ddrval;
 	__asm        mov    [ebp-0x28], eax;
-	__asm        jmp    near ptr 0x0046F263;
-
+	__asm        jmp    _Ta6;
+_Ta6:
 	__asm        push   0x599548;
 	__asm        lea    ecx, [ebp-0x28];
 	__asm        call   DirectDrawError::DisplayError;
@@ -1560,8 +1569,8 @@ _T135:
 	__asm        cmp    mfontToUse, 0;
 	__asm        je     _T15d;
 // LINE 428:
-	__asm        jmp    near ptr 0x0046F301;
-
+	__asm        jmp    _T144;
+_T144:
 	__asm        mov    eax, mfontToUse;
 	__asm        mov    eax, [eax+0x18];
 	__asm        push   eax;
@@ -1576,8 +1585,8 @@ _T15d:
 	__asm        cmp    dword ptr [eax+0x34], 0;
 	__asm        je     _T186;
 // LINE 430:
-	__asm        jmp    near ptr 0x0046F32C;
-
+	__asm        jmp    _T16f;
+_T16f:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x34];
 	__asm        mov    eax, [eax+0x18];
@@ -1700,8 +1709,8 @@ _T2e:
 // LINE 474:
 	__asm        mov    eax, ddrval;
 	__asm        mov    [ebp-0x18], eax;
-	__asm        jmp    near ptr 0x0046F459;
-
+	__asm        jmp    _T56;
+_T56:
 	__asm        push   0x599580;
 	__asm        lea    ecx, [ebp-0x18];
 	__asm        call   DirectDrawError::DisplayError;
@@ -1761,8 +1770,8 @@ _Te5:
 	__asm        cmp    mfontToUse, 0;
 	__asm        je     _T10d;
 // LINE 496:
-	__asm        jmp    near ptr 0x0046F4F7;
-
+	__asm        jmp    _Tf4;
+_Tf4:
 	__asm        mov    eax, mfontToUse;
 	__asm        mov    eax, [eax+0x18];
 	__asm        push   eax;
@@ -1777,8 +1786,8 @@ _T10d:
 	__asm        cmp    dword ptr [eax+0x34], 0;
 	__asm        je     _T136;
 // LINE 498:
-	__asm        jmp    near ptr 0x0046F522;
-
+	__asm        jmp    _T11f;
+_T11f:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x34];
 	__asm        mov    eax, [eax+0x18];
@@ -1975,8 +1984,8 @@ _T146:
 // LINE 572:
 	__asm        mov    eax, ddrval;
 	__asm        mov    [ebp-0x20], eax;
-	__asm        jmp    near ptr 0x0046F734;
-
+	__asm        jmp    _T16e;
+_T16e:
 	__asm        push   0x5995F4;
 	__asm        lea    ecx, [ebp-0x20];
 	__asm        call   DirectDrawError::DisplayError;
@@ -2063,8 +2072,8 @@ _T23:
 // LINE 607:
 	__asm        mov    eax, ddrval;
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x0046F80C;
-
+	__asm        jmp    _T51;
+_T51:
 	__asm        push   0x59962C;
 	__asm        lea    ecx, [ebp-8];
 	__asm        call   DirectDrawError::DisplayError;
@@ -2101,8 +2110,8 @@ _T40:
 	__asm        mov    eax, pDest;
 	__asm        mov    eax, [eax+0x14];
 	__asm        mov    [ebp-0x90], eax;
-	__asm        jmp    near ptr 0x0046F879;
-
+	__asm        jmp    _T51;
+_T51:
 	__asm        mov    eax, [ebp-0x90];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x94], eax;
@@ -2182,8 +2191,8 @@ unsigned long CBackBuffer::Compose(/*packed*/ class IFlatImage *pDestImage, long
 	/*bp-0x98*/  /*packed*/ struct IDirectDrawSurface *pOurSurface;
 
 // LINE 682:
-	__asm        jmp    near ptr 0x0046F95F;
-
+	__asm        jmp    _T17;
+_T17:
 	__asm        mov    eax, pDestImage;
 	__asm        mov    ecx, DestLeft;
 	__asm        cmp    [eax+8], ecx;
@@ -2193,8 +2202,8 @@ unsigned long CBackBuffer::Compose(/*packed*/ class IFlatImage *pDestImage, long
 	__asm        jmp    _T262;
 // LINE 684:
 _T2d:
-	__asm        jmp    near ptr 0x0046F97A;
-
+	__asm        jmp    _T32;
+_T32:
 	__asm        mov    eax, pDestImage;
 	__asm        mov    ecx, DestTop;
 	__asm        cmp    [eax+0xC], ecx;
@@ -2263,8 +2272,8 @@ _Ta2:
 	__asm        add    eax, DestTop;
 	__asm        mov    destRect.bottom, eax;
 // LINE 710:
-	__asm        jmp    near ptr 0x0046FA3F;
-
+	__asm        jmp    _Tf7;
+_Tf7:
 	__asm        mov    eax, destRect.right;
 	__asm        mov    ecx, pDestImage;
 	__asm        sub    eax, [ecx+8];
@@ -2294,8 +2303,8 @@ _T12d:
 	srcRect.left += nOverhangDistance;
 // LINE 718:
 _T15d:
-	__asm        jmp    near ptr 0x0046FAAA;
-
+	__asm        jmp    _T162;
+_T162:
 	__asm        mov    eax, destRect.bottom;
 	__asm        mov    ecx, pDestImage;
 	__asm        sub    eax, [ecx+0xC];
@@ -2360,8 +2369,8 @@ _T1f4:
 // LINE 738:
 	__asm        mov    eax, ddrval;
 	__asm        mov    [ebp-0x9C], eax;
-	__asm        jmp    near ptr 0x0046FB8F;
-
+	__asm        jmp    _T247;
+_T247:
 	__asm        push   0x599678;
 	__asm        lea    ecx, [ebp-0x9C];
 	__asm        call   DirectDrawError::DisplayError;
@@ -2384,8 +2393,8 @@ unsigned long CBackBuffer::ComposeNoClip(/*packed*/ class IFlatImage *pDestImage
 	/*bp-0x94*/  /*packed*/ struct IDirectDrawSurface *pOurSurface;
 
 // LINE 802:
-	__asm        jmp    near ptr 0x0046FBC8;
-
+	__asm        jmp    _T17;
+_T17:
 	__asm        mov    eax, DestLeft;
 	__asm        mov    destRect.left, eax;
 	__asm        mov    eax, DestTop;
@@ -2398,10 +2407,11 @@ unsigned long CBackBuffer::ComposeNoClip(/*packed*/ class IFlatImage *pDestImage
 	__asm        sub    eax, SrcTop;
 	__asm        add    eax, DestTop;
 	__asm        mov    destRect.bottom, eax;
-	__asm        jmp    near ptr 0x0046FBF4;
+	__asm        jmp    _T43;
 // LINE 803:
-	__asm        jmp    near ptr 0x0046FBF9;
-
+_T43:
+	__asm        jmp    _T48;
+_T48:
 	__asm        mov    eax, SrcLeft;
 	__asm        mov    sourceRect.left, eax;
 	__asm        mov    eax, SrcTop;
@@ -2410,8 +2420,9 @@ unsigned long CBackBuffer::ComposeNoClip(/*packed*/ class IFlatImage *pDestImage
 	__asm        mov    sourceRect.right, eax;
 	__asm        mov    eax, SrcBottom;
 	__asm        mov    sourceRect.bottom, eax;
-	__asm        jmp    near ptr 0x0046FC16;
+	__asm        jmp    _T65;
 // LINE 805:
+_T65:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
@@ -2459,16 +2470,17 @@ _Tbf:
 // LINE 819:
 	__asm        mov    eax, ddrval;
 	__asm        mov    [ebp-0x98], eax;
-	__asm        jmp    near ptr 0x0046FCC3;
-
+	__asm        jmp    _T112;
+_T112:
 	__asm        push   0x5996B4;
 	__asm        lea    ecx, [ebp-0x98];
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 823:
 _T122:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0046FCDD;
+	__asm        jmp    _T12c;
 // LINE 825:
+_T12c:
 }
 
 // FUNCTION: COPTER_D 0x0046fce4
@@ -2498,8 +2510,9 @@ unsigned long CBackBuffer::ComposeNoClip(/*packed*/ class IFlatImage *pDestImage
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x3C];
-	__asm        jmp    near ptr 0x0046FD2C;
+	__asm        jmp    _T48;
 // LINE 837:
+_T48:
 }
 
 // FUNCTION: COPTER_D 0x0046fd33
@@ -2529,8 +2542,9 @@ unsigned long CBackBuffer::Compose(/*packed*/ class IFlatImage *pDestImage, cons
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xC];
-	__asm        jmp    near ptr 0x0046FD7B;
+	__asm        jmp    _T48;
 // LINE 849:
+_T48:
 }
 
 // FUNCTION: COPTER_D 0x0046fd82
@@ -2599,10 +2613,11 @@ unsigned long CBackBuffer::StretchCompose(/*packed*/ class IFlatImage *pDestImag
 	/*bp-0x20*/  /*packed*/ struct SparkalRect destRect; // 0x10 bytes
 
 // LINE 904:
-	__asm        jmp    near ptr 0x0046FE24;
-
-	__asm        jmp    near ptr 0x0046FE29;
+	__asm        jmp    _T11;
+_T11:
+	__asm        jmp    _T16;
 // LINE 906:
+_T16:
 	srcRect.left = SrcLeft;
 // LINE 907:
 	srcRect.top = SrcTop;
@@ -2629,8 +2644,9 @@ unsigned long CBackBuffer::StretchCompose(/*packed*/ class IFlatImage *pDestImag
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
-	__asm        jmp    near ptr 0x0046FE75;
+	__asm        jmp    _T62;
 // LINE 917:
+_T62:
 }
 
 // FUNCTION: COPTER_D 0x0046fe7c
@@ -2674,15 +2690,15 @@ _T40:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    destRect.right, eax;
-	__asm        jmp    near ptr 0x0046FEFE;
-
+	__asm        jmp    _T82;
+_T82:
 	srcRect.right = destRect.right;
 // LINE 950:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    destRect.bottom, eax;
-	__asm        jmp    near ptr 0x0046FF15;
-
+	__asm        jmp    _T99;
+_T99:
 	srcRect.bottom = destRect.bottom;
 // LINE 952:
 	ddbltfx.dwSize = 0x64;
@@ -2723,8 +2739,8 @@ _Tdb:
 // LINE 963:
 	__asm        mov    eax, ddrval;
 	__asm        mov    [ebp-0x98], eax;
-	__asm        jmp    near ptr 0x0046FFAA;
-
+	__asm        jmp    _T12e;
+_T12e:
 	__asm        push   0x5996F0;
 	__asm        lea    ecx, [ebp-0x98];
 	__asm        call   DirectDrawError::DisplayError;
@@ -2740,8 +2756,9 @@ _T149:
 unsigned long CBackBuffer::StretchRect(/*unpacked*/ class CSparkalWindow *pDest, long __formal, long __formal, long __formal, long __formal, long __formal, long __formal, long __formal, long __formal) {
 // LINE 981:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0046FFDF;
+	__asm        jmp    _T13;
 // LINE 982:
+_T13:
 }
 
 // FUNCTION: COPTER_D 0x0046ffe6
@@ -2851,8 +2868,8 @@ _T7d:
 // LINE 1052:
 	__asm        mov    eax, ddrval;
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x00470101;
-
+	__asm        jmp    _T92;
+_T92:
 	__asm        push   0x59972C;
 	__asm        lea    ecx, [ebp-0xC];
 	__asm        call   DirectDrawError::DisplayError;
@@ -2931,8 +2948,8 @@ _T63:
 // LINE 1106:
 	__asm        mov    eax, ddrval;
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x004701DA;
-
+	__asm        jmp    _T91;
+_T91:
 	__asm        push   0x599758;
 	__asm        lea    ecx, [ebp-0xC];
 	__asm        call   DirectDrawError::DisplayError;
@@ -3020,7 +3037,8 @@ _T97:
 	__asm        call   dword ptr [eax+0x18];
 // LINE 1145:
 _Tc4:
-	__asm        jmp    near ptr 0x004702EA;
+	__asm        jmp    _Tc9;
+_Tc9:
 }
 
 // FUNCTION: COPTER_D 0x004702f1
@@ -3123,8 +3141,8 @@ _Tfa:
 // LINE 1208:
 	__asm        mov    eax, ddrval;
 	__asm        mov    [ebp-0x20], eax;
-	__asm        jmp    near ptr 0x00470425;
-
+	__asm        jmp    _T134;
+_T134:
 	__asm        push   0x599788;
 	__asm        lea    ecx, [ebp-0x20];
 	__asm        call   DirectDrawError::DisplayError;
@@ -3157,16 +3175,17 @@ unsigned long CBackBuffer::SetFont(/*packed*/ class MFont *mNewFont) {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x0047048B;
-
+	__asm        jmp    _T4b;
+_T4b:
 	__asm        jmp    _T50;
 // LINE 1227:
 _T50:
 	this->mFont = mNewFont;
 // LINE 1228:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004704A0;
+	__asm        jmp    _T60;
 // LINE 1229:
+_T60:
 }
 
 // FUNCTION: COPTER_D 0x004704a7
@@ -3224,8 +3243,8 @@ _T72:
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    byte ptr [eax+4], 0;
 _T79:
-	__asm        jmp    near ptr 0x00470559;
-
+	__asm        jmp    _T7e;
+_T7e:
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    fileImage, eax;
 	__asm        jmp    _T90;
@@ -3284,8 +3303,9 @@ _T105:
 	__asm        push   eax;
 	__asm        call   _read;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x004705FD;
+	__asm        jmp    _T122;
 // LINE 1272:
+_T122:
 	__asm        push   0x28;
 	__asm        lea    eax, biHeader.biSize;
 	__asm        push   eax;
@@ -3294,8 +3314,9 @@ _T105:
 	__asm        push   eax;
 	__asm        call   _read;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x0047061A;
+	__asm        jmp    _T13f;
 // LINE 1278:
+_T13f:
 	__asm        cmp    biHeader.biClrUsed, 0;
 	__asm        jne    _T156;
 // LINE 1279:
@@ -3346,8 +3367,9 @@ _T1a6:
 	__asm        push   eax;
 	__asm        call   _read;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x004706A9;
+	__asm        jmp    _T1ce;
 // LINE 1286:
+_T1ce:
 	__asm        mov    ecx, fileImage;
 	__asm        call   PFile::Close;
 // LINE 1287:
@@ -3450,8 +3472,9 @@ unsigned long CBackBuffer::DrawRectangleOutline(const /*packed*/ struct SparkalR
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x54];
-	__asm        jmp    near ptr 0x0047079D;
+	__asm        jmp    _Tb9;
 // LINE 1314:
+_Tb9:
 }
 
 // FUNCTION: COPTER_D 0x004707a4
@@ -3532,8 +3555,9 @@ unsigned long CBackBuffer::DrawRectangleOutlineUnclipped(const /*packed*/ struct
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x50];
-	__asm        jmp    near ptr 0x0047085D;
+	__asm        jmp    _Tb9;
 // LINE 1338:
+_Tb9:
 }
 
 // FUNCTION: COPTER_D 0x00470864
@@ -3552,12 +3576,12 @@ unsigned long CBackBuffer::DrawLineUnclipped(long nStartX, long nStartY, long nE
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax];
 // LINE 1463:
-	__asm        jmp    near ptr 0x0047087F;
-
+	__asm        jmp    _T1b;
+_T1b:
 	bufferWidth = this->mWidth;
 // LINE 1464:
-	__asm        jmp    near ptr 0x0047088D;
-
+	__asm        jmp    _T29;
+_T29:
 	bufferHeight = this->mHeight;
 // LINE 1467:
 	__asm        mov    eax, nStartY;
@@ -3931,8 +3955,9 @@ _T3a5:
 	__asm        call   dword ptr [eax+4];
 // LINE 1613:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00470C1B;
+	__asm        jmp    _T3b7;
 // LINE 1614:
+_T3b7:
 }
 
 // FUNCTION: COPTER_D 0x00470c22
@@ -3951,12 +3976,12 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax];
 // LINE 1633:
-	__asm        jmp    near ptr 0x00470C49;
-
+	__asm        jmp    _T27;
+_T27:
 	bufferWidth = this->mWidth;
 // LINE 1634:
-	__asm        jmp    near ptr 0x00470C5A;
-
+	__asm        jmp    _T38;
+_T38:
 	bufferHeight = this->mHeight;
 // LINE 1637:
 	__asm        mov    dword ptr [ebp-0x7C], 0;
@@ -3988,8 +4013,8 @@ _T91:
 _Ta5:
 	__asm        mov    eax, [ebp-0x94];
 	__asm        mov    [ebp-0x88], eax;
-	__asm        jmp    near ptr 0x00470CD8;
-
+	__asm        jmp    _Tb6;
+_Tb6:
 	__asm        mov    dword ptr [ebp-0x98], 0;
 	__asm        cmp    nEndX, 0;
 	__asm        jge    _Td1;
@@ -4156,8 +4181,8 @@ _T2cc:
 _T2e0:
 	__asm        mov    eax, [ebp-0x9C];
 	__asm        mov    [ebp-0x88], eax;
-	__asm        jmp    near ptr 0x00470F13;
-
+	__asm        jmp    _T2f1;
+_T2f1:
 	__asm        jmp    _T36c;
 _T2f6:
 	__asm        mov    eax, [ebp-0x84];
@@ -4196,8 +4221,8 @@ _T36c:
 	__asm        cmp    dword ptr [ebp-0x80], 0;
 	__asm        je     _T11a;
 
-	__asm        jmp    near ptr 0x00470F9D;
-
+	__asm        jmp    _T37b;
+_T37b:
 	__asm        cmp    dword ptr [ebp-0x7C], 1;
 	__asm        jne    _T926;
 // LINE 1640:
@@ -4782,8 +4807,9 @@ _T92d:
 	__asm        call   dword ptr [eax+4];
 // LINE 1868:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00471567;
+	__asm        jmp    _T945;
 // LINE 1869:
+_T945:
 }
 
 

@@ -43,7 +43,8 @@ _T53:
 // LINE 55:
 _T61:
 	__asm        mov    eax, size;
-	__asm        jmp    near ptr 0x0058E3D9;
+	__asm        jmp    _T69;
 // LINE 56:
+_T69:
 }
 

@@ -515,8 +515,9 @@ _T39:
 _T65:
 	__asm        xor    eax, eax;
 _T67:
-	__asm        jmp    near ptr 0x004A0752;
+	__asm        jmp    _T6c;
 // LINE 152:
+_T6c:
 }
 
 // FUNCTION: COPTER_D 0x004a0759
@@ -588,8 +589,9 @@ unsigned long PFile::Checksum(char * name) {
 _T5e:
 	tempPFile.szFilePath[0] = 0x0;
 _T65:
-	__asm        jmp    near ptr 0x004A0823;
+	__asm        jmp    _T6a;
 // LINE 183:
+_T6a:
 	__asm        push   0;
 	__asm        push   0x100;
 	__asm        push   0;
@@ -635,8 +637,8 @@ _Tca:
 	__asm        mov    lUsedBlockSize, eax;
 // LINE 198:
 _Tf7:
-	__asm        jmp    near ptr 0x004A08B5;
-
+	__asm        jmp    _Tfc;
+_Tfc:
 	__asm        mov    eax, lUsedBlockSize;
 	__asm        push   eax;
 	__asm        mov    eax, chBuffer;
@@ -697,8 +699,9 @@ _T196:
 	__asm        push   eax;
 	__asm        call   _read;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x004A0978;
+	__asm        jmp    _T1bf;
 // LINE 208:
+_T1bf:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chValue;
 	__asm        add    lCurrentValue, eax;
@@ -733,10 +736,11 @@ _T213:
 	__asm        call   _close;
 	__asm        add    esp, 4;
 _T229:
-	__asm        jmp    near ptr 0x004A09E7;
-
+	__asm        jmp    _T22e;
+_T22e:
 	__asm        mov    eax, [ebp-0x138];
-	__asm        jmp    near ptr 0x004A09F2;
+	__asm        jmp    _T239;
 // LINE 214:
+_T239:
 }
 

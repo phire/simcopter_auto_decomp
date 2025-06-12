@@ -4,7 +4,8 @@ long MIFF::GetPresentRecordType() {
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x114];
-	__asm        jmp    near ptr 0x004AC9DA;
+	__asm        jmp    _T1a;
+_T1a:
 }
 
 // Function in module: Miff.obj
@@ -13,7 +14,8 @@ long MIFF::GetPresentRecordSize() {
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x118];
-	__asm        jmp    near ptr 0x004AC9FA;
+	__asm        jmp    _T1a;
+_T1a:
 }
 
 // Function in module: Miff.obj
@@ -23,7 +25,8 @@ long MIFF::GetPresentRecordDataSize() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x118];
 	__asm        sub    eax, 8;
-	__asm        jmp    near ptr 0x004ACA1D;
+	__asm        jmp    _T1d;
+_T1d:
 }
 
 // Function in module: Miff.obj
@@ -32,6 +35,7 @@ long MIFF::GetPresentRecordIndex() {
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11C];
-	__asm        jmp    near ptr 0x004ACA4A;
+	__asm        jmp    _T1a;
+_T1a:
 }
 

@@ -46,8 +46,8 @@ void CharData::CharData() {
 // LINE 10:
 	this->chValue = 0x0;
 // LINE 11:
-	__asm        jmp    near ptr 0x0043D407;
-
+	__asm        jmp    _T17;
+_T17:
 	__asm        mov    eax, this;
 }
 
@@ -56,8 +56,8 @@ void CharData::CharData(unsigned char chNewValue) {
 // LINE 15:
 	this->chValue = chNewValue;
 // LINE 16:
-	__asm        jmp    near ptr 0x0043D428;
-
+	__asm        jmp    _T19;
+_T19:
 	__asm        mov    eax, this;
 }
 
@@ -77,8 +77,8 @@ void CharList::CharList() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
 // LINE 29:
-	__asm        jmp    near ptr 0x0043D46E;
-
+	__asm        jmp    _T3c;
+_T3c:
 	__asm        mov    eax, this;
 }
 
@@ -116,7 +116,8 @@ _T32:
 	__asm        jmp    _T29;
 // LINE 44:
 _T6b:
-	__asm        jmp    near ptr 0x0043D4E6;
+	__asm        jmp    _T70;
+_T70:
 }
 
 // FUNCTION: COPTER_D 0x0043d4eb
@@ -146,7 +147,8 @@ _T3e:
 	__asm        mov    ecx, this;
 	__asm        call   CharList::AddItem;
 // LINE 54:
-	__asm        jmp    near ptr 0x0043D53A;
+	__asm        jmp    _T4f;
+_T4f:
 }
 
 // FUNCTION: COPTER_D 0x0043d541
@@ -180,7 +182,8 @@ _T51:
 	this->lastCharData = charDataToAdd;
 // LINE 74:
 _T7c:
-	__asm        jmp    near ptr 0x0043D5C2;
+	__asm        jmp    _T81;
+_T81:
 }
 
 // FUNCTION: COPTER_D 0x0043d5c9
@@ -235,7 +238,8 @@ _T8d:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 96:
-	__asm        jmp    near ptr 0x0043D678;
+	__asm        jmp    _Taf;
+_Taf:
 }
 
 // FUNCTION: COPTER_D 0x0043d67f
@@ -314,7 +318,8 @@ _T23:
 	__asm        jmp    _T20;
 // LINE 125:
 _T40:
-	__asm        jmp    near ptr 0x0043D748;
+	__asm        jmp    _T45;
+_T45:
 }
 
 // FUNCTION: COPTER_D 0x0043d74d

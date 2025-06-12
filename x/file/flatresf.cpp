@@ -540,8 +540,9 @@ _T4a:
 _T5f:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x114];
-	__asm        jmp    near ptr 0x00552EBE;
+	__asm        jmp    _T6d;
 // LINE 172:
+_T6d:
 }
 
 // FUNCTION: COPTER_D 0x00552ec5
@@ -575,8 +576,9 @@ _T4a:
 _T5f:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x114];
-	__asm        jmp    near ptr 0x00552F32;
+	__asm        jmp    _T6d;
 // LINE 192:
+_T6d:
 }
 
 // FUNCTION: COPTER_D 0x00552f39
@@ -588,8 +590,9 @@ long ResFile::OpenFromOtherFile(/*unpacked*/ class ResFile *otherFile) {
 	__asm        call   FlatFile::OpenFromOtherFile;
 // LINE 199:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00552F58;
+	__asm        jmp    _T1f;
 // LINE 200:
+_T1f:
 }
 
 // FUNCTION: COPTER_D 0x00552f5f
@@ -618,8 +621,9 @@ _T4b:
 _T58:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x114];
-	__asm        jmp    near ptr 0x00552FC5;
+	__asm        jmp    _T66;
 // LINE 214:
+_T66:
 }
 
 // FUNCTION: COPTER_D 0x00552fca
@@ -637,8 +641,9 @@ short FlatResFile::CheckForLeaks() {
 	__asm        mov    total, ax;
 // LINE 262:
 	__asm        mov    ax, total;
-	__asm        jmp    near ptr 0x00552FF7;
+	__asm        jmp    _T2d;
 // LINE 263:
+_T2d:
 }
 
 // FUNCTION: COPTER_D 0x00552ffc
@@ -646,8 +651,9 @@ long FlatResFile::GetError() {
 // LINE 270:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x114];
-	__asm        jmp    near ptr 0x00553016;
+	__asm        jmp    _T1a;
 // LINE 271:
+_T1a:
 }
 
 // FUNCTION: COPTER_D 0x0055301b
@@ -668,8 +674,8 @@ void FlatResFile::~FlatResFile() {
 	__asm        call   FlatResFile::Close;
 // LINE 279:
 _T4c:
-	__asm        jmp    near ptr 0x0055306C;
-
+	__asm        jmp    _T51;
+_T51:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        call   _L27084;
 	__asm        jmp    _T75;
@@ -706,8 +712,8 @@ _T3b:
 	__asm        jmp    _T6a;
 // LINE 289:
 _T53:
-	__asm        jmp    near ptr 0x005530F6;
-
+	__asm        jmp    _T58;
+_T58:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x110];
 	__asm        mov    ax, [eax+6];
@@ -1452,8 +1458,8 @@ void FlatResFile::GetString(unsigned char * str, short resID, short index) {
 	__asm        cmp    eax, 1;
 	__asm        jl     _T92;
 
-	__asm        jmp    near ptr 0x00553A0E;
-
+	__asm        jmp    _T50;
+_T50:
 	__asm        movsx  eax, reinterpret_cast<uint16_t>(tempStrs.fNumStrings);
 	__asm        movsx  ecx, index;
 	__asm        cmp    eax, ecx;
@@ -1592,8 +1598,8 @@ _Tfe:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x14], eax;
 // LINE 722:
-	__asm        jmp    near ptr 0x00553B96;
-
+	__asm        jmp    _T112;
+_T112:
 	__asm        mov    eax, this;
 }
 
@@ -1671,7 +1677,8 @@ _T93:
 	__asm        call   Memory::HFree;
 	__asm        add    esp, 4;
 // LINE 747:
-	__asm        jmp    near ptr 0x00553C56;
+	__asm        jmp    _Tb6;
+_Tb6:
 }
 
 // FUNCTION: COPTER_D 0x00553c5b
@@ -1693,8 +1700,8 @@ _T33:
 	__asm        cmp    srch, 0;
 	__asm        je     _T76;
 // LINE 756:
-	__asm        jmp    near ptr 0x00553C9D;
-
+	__asm        jmp    _T42;
+_T42:
 	__asm        mov    eax, srch;
 	__asm        movsx  eax, word ptr [eax+4];
 	__asm        mov    ecx, fromFile;
@@ -1857,13 +1864,14 @@ _T8c:
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x00553E87;
-
+	__asm        jmp    _Tbb;
+_Tbb:
 	__asm        jmp    _Tc0;
 // LINE 796:
 // Block end:
 _Tc0:
-	__asm        jmp    near ptr 0x00553E91;
+	__asm        jmp    _Tc5;
+_Tc5:
 }
 
 // FUNCTION: COPTER_D 0x00553e96
@@ -1888,8 +1896,9 @@ _T24:
 // LINE 806:
 _T37:
 	__asm        mov    ax, total;
-	__asm        jmp    near ptr 0x00553ED6;
+	__asm        jmp    _T40;
 // LINE 807:
+_T40:
 }
 
 // FUNCTION: COPTER_D 0x00553edb
@@ -2349,8 +2358,9 @@ _T57:
 // LINE 943:
 _T60:
 	__asm        mov    eax, found;
-	__asm        jmp    near ptr 0x00554373;
+	__asm        jmp    _T68;
 // LINE 944:
+_T68:
 }
 
 // FUNCTION: COPTER_D 0x0055437a
@@ -2429,8 +2439,9 @@ _Ta7:
 // Block end:
 _Tb4:
 	__asm        mov    eax, found;
-	__asm        jmp    near ptr 0x00554436;
+	__asm        jmp    _Tbc;
 // LINE 972:
+_Tbc:
 }
 
 // FUNCTION: COPTER_D 0x0055443d
@@ -2529,8 +2540,9 @@ _Tdd:
 // Block end:
 _Tea:
 	__asm        mov    eax, found;
-	__asm        jmp    near ptr 0x0055452F;
+	__asm        jmp    _Tf2;
 // LINE 1004:
+_Tf2:
 }
 
 // FUNCTION: COPTER_D 0x00554536
@@ -2602,8 +2614,9 @@ _T53:
 // Block end:
 _Tac:
 	__asm        mov    eax, found;
-	__asm        jmp    near ptr 0x005545EA;
+	__asm        jmp    _Tb4;
 // LINE 1029:
+_Tb4:
 }
 
 // FUNCTION: COPTER_D 0x005545f1
@@ -2641,7 +2654,8 @@ void  ResMap::GetName(/*unpacked*/ struct ResMap::Entry *entry, unsigned char * 
 	__asm        add    esp, 0xC;
 // LINE 1042:
 _T54:
-	__asm        jmp    near ptr 0x0055464A;
+	__asm        jmp    _T59;
+_T59:
 }
 
 // FUNCTION: COPTER_D 0x00554651
@@ -2664,7 +2678,8 @@ void  ResMap::SwapTypeHead(/*unpacked*/ struct ResMap::TypeHead *typeHead) {
 	__asm        call   Swizzle2;
 	__asm        add    esp, 4;
 // LINE 1062:
-	__asm        jmp    near ptr 0x00554686;
+	__asm        jmp    _T35;
+_T35:
 }
 
 // FUNCTION: COPTER_D 0x0055468b
@@ -2725,7 +2740,8 @@ void  ResMap::SwapResEntry(/*unpacked*/ struct ResMap::Entry *resEntry) {
 	__asm        mov    ecx, resEntry;
 	__asm        mov    [ecx+4], eax;
 // LINE 1100:
-	__asm        jmp    near ptr 0x00554719;
+	__asm        jmp    _T8e;
+_T8e:
 }
 
 

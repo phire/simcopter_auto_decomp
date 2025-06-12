@@ -167,8 +167,8 @@ _Tef:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T115:
-	__asm        jmp    near ptr 0x0056731A;
-
+	__asm        jmp    _T11a;
+_T11a:
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    [ebp-0x20], eax;
 	__asm        test   dword ptr [ebp-0x50], 0xFFFF;
@@ -245,13 +245,13 @@ _T206:
 	__asm        push   8;
 	__asm        mov    ecx, [ebp-0x4C];
 	__asm        call   _cArray::BeginCreate;
-	__asm        jmp    near ptr 0x00567429;
-
+	__asm        jmp    _T229;
+_T229:
 	__asm        mov    byte ptr [ebp-4], 1;
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    dword ptr [eax], 0x593A30;
-	__asm        jmp    near ptr 0x0056743B;
-
+	__asm        jmp    _T23b;
+_T23b:
 	__asm        mov    byte ptr [ebp-4], 0;
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    [ebp-0x28], eax;

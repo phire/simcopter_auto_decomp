@@ -37,8 +37,9 @@ struct FREQ_INFO{ // packed(0x10 bytes) TI: 0x2a8f
 int32_t DllMain(void * __ptr32 hDLL, unsigned long dwReason, void * __ptr32 lpReserved) {
 // LINE 65:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00447B70;
+	__asm        jmp    _T10;
 // LINE 67:
+_T10:
 }
 
 // FUNCTION: COPTER_D 0x00447b77

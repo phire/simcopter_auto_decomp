@@ -213,7 +213,8 @@ public:
 static void $E55() {
 
 	__asm        call   $E54;
-	__asm        jmp    near ptr 0x00441E40;
+	__asm        jmp    _T10;
+_T10:
 }
 
 // STATIC INITIALIZER:
@@ -221,7 +222,8 @@ static void $E55() {
 static void $E54() {
 
 	__asm        mov    glMasterVolume, 0x2710;
-	__asm        jmp    near ptr 0x00441E5A;
+	__asm        jmp    _T15;
+_T15:
 }
 
 // STATIC INITIALIZER:
@@ -229,7 +231,8 @@ static void $E54() {
 static void $E58() {
 
 	__asm        call   $E57;
-	__asm        jmp    near ptr 0x00441E6F;
+	__asm        jmp    _T10;
+_T10:
 }
 
 // STATIC INITIALIZER:
@@ -237,12 +240,13 @@ static void $E58() {
 static void $E57() {
 
 	__asm        mov    gSoundChangeNotificationSink<SoundChangeNotificationSink+0x00>, 0x58F5C8;
-	__asm        jmp    near ptr 0x00441E89;
-
+	__asm        jmp    _T15;
+_T15:
 	__asm        mov    gSoundChangeNotificationSink<SoundChangeNotificationSink+0x00>, 0x58F5C0;
-	__asm        jmp    near ptr 0x00441E98;
-
-	__asm        jmp    near ptr 0x00441E9D;
+	__asm        jmp    _T24;
+_T24:
+	__asm        jmp    _T29;
+_T29:
 }
 
 // FUNCTION: COPTER_D 0x00441ea2
@@ -318,8 +322,9 @@ _T55:
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    lNewVolume, eax;
-	__asm        jmp    near ptr 0x00441F87;
+	__asm        jmp    _Ta2;
 // LINE 92:
+_Ta2:
 	__asm        mov    eax, lNewVolume;
 	__asm        push   eax;
 	__asm        mov    eax, i;
@@ -333,7 +338,8 @@ _Tbf:
 	__asm        jmp    _T52;
 // LINE 97:
 _Tc4:
-	__asm        jmp    near ptr 0x00441FAE;
+	__asm        jmp    _Tc9;
+_Tc9:
 }
 
 // FUNCTION: COPTER_D 0x00441fb5
@@ -359,8 +365,9 @@ _T35:
 	__asm        push   eax;
 	__asm        mov    ecx, 0x604588;
 	__asm        call   SoundSystem::Initialize;
-	__asm        jmp    near ptr 0x00441FFD;
+	__asm        jmp    _T48;
 // LINE 135:
+_T48:
 }
 
 // FUNCTION: COPTER_D 0x00442002
@@ -394,8 +401,8 @@ _T5e:
 	__asm        mov    dword ptr [ebp-0x10C], 0;
 _T68:
 	__asm        mov    dword ptr [ebp-0x110], 0;
-	__asm        jmp    near ptr 0x00442079;
-
+	__asm        jmp    _T77;
+_T77:
 	__asm        push   2;
 	__asm        push   0;
 	__asm        lea    eax, [ebp-0x110];
@@ -416,8 +423,9 @@ _T68:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _Tcb:
-	__asm        jmp    near ptr 0x004420D2;
+	__asm        jmp    _Td0;
 // LINE 156:
+_Td0:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598980;
@@ -443,8 +451,8 @@ _T122:
 	__asm        mov    dword ptr [ebp-0x114], 0;
 _T12c:
 	__asm        mov    dword ptr [ebp-0x118], 0;
-	__asm        jmp    near ptr 0x0044213D;
-
+	__asm        jmp    _T13b;
+_T13b:
 	__asm        push   2;
 	__asm        push   1;
 	__asm        lea    eax, [ebp-0x118];
@@ -465,8 +473,9 @@ _T12c:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T18f:
-	__asm        jmp    near ptr 0x00442196;
+	__asm        jmp    _T194;
 // LINE 159:
+_T194:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x59898C;
@@ -492,8 +501,8 @@ _T1e6:
 	__asm        mov    dword ptr [ebp-0x11C], 0;
 _T1f0:
 	__asm        mov    dword ptr [ebp-0x120], 0;
-	__asm        jmp    near ptr 0x00442201;
-
+	__asm        jmp    _T1ff;
+_T1ff:
 	__asm        push   2;
 	__asm        push   2;
 	__asm        lea    eax, [ebp-0x120];
@@ -514,8 +523,9 @@ _T1f0:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T253:
-	__asm        jmp    near ptr 0x0044225A;
+	__asm        jmp    _T258;
 // LINE 162:
+_T258:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x59899C;
@@ -541,8 +551,8 @@ _T2aa:
 	__asm        mov    dword ptr [ebp-0x124], 0;
 _T2b4:
 	__asm        mov    dword ptr [ebp-0x128], 0;
-	__asm        jmp    near ptr 0x004422C5;
-
+	__asm        jmp    _T2c3;
+_T2c3:
 	__asm        push   2;
 	__asm        push   3;
 	__asm        lea    eax, [ebp-0x128];
@@ -563,8 +573,9 @@ _T2b4:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T317:
-	__asm        jmp    near ptr 0x0044231E;
+	__asm        jmp    _T31c;
 // LINE 165:
+_T31c:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x5989AC;
@@ -590,8 +601,8 @@ _T36e:
 	__asm        mov    dword ptr [ebp-0x12C], 0;
 _T378:
 	__asm        mov    dword ptr [ebp-0x130], 0;
-	__asm        jmp    near ptr 0x00442389;
-
+	__asm        jmp    _T387;
+_T387:
 	__asm        push   2;
 	__asm        push   4;
 	__asm        lea    eax, [ebp-0x130];
@@ -612,8 +623,9 @@ _T378:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T3db:
-	__asm        jmp    near ptr 0x004423E2;
+	__asm        jmp    _T3e0;
 // LINE 168:
+_T3e0:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x5989B8;
@@ -639,8 +651,8 @@ _T432:
 	__asm        mov    dword ptr [ebp-0x134], 0;
 _T43c:
 	__asm        mov    dword ptr [ebp-0x138], 0;
-	__asm        jmp    near ptr 0x0044244D;
-
+	__asm        jmp    _T44b;
+_T44b:
 	__asm        push   2;
 	__asm        push   5;
 	__asm        lea    eax, [ebp-0x138];
@@ -661,8 +673,9 @@ _T43c:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T49f:
-	__asm        jmp    near ptr 0x004424A6;
+	__asm        jmp    _T4a4;
 // LINE 171:
+_T4a4:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x5989C8;
@@ -688,8 +701,8 @@ _T4f6:
 	__asm        mov    dword ptr [ebp-0x13C], 0;
 _T500:
 	__asm        mov    dword ptr [ebp-0x140], 0;
-	__asm        jmp    near ptr 0x00442511;
-
+	__asm        jmp    _T50f;
+_T50f:
 	__asm        push   2;
 	__asm        push   6;
 	__asm        lea    eax, [ebp-0x140];
@@ -710,8 +723,9 @@ _T500:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T563:
-	__asm        jmp    near ptr 0x0044256A;
+	__asm        jmp    _T568;
 // LINE 174:
+_T568:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x5989D4;
@@ -737,8 +751,8 @@ _T5ba:
 	__asm        mov    dword ptr [ebp-0x144], 0;
 _T5c4:
 	__asm        mov    dword ptr [ebp-0x148], 0;
-	__asm        jmp    near ptr 0x004425D5;
-
+	__asm        jmp    _T5d3;
+_T5d3:
 	__asm        push   2;
 	__asm        push   7;
 	__asm        lea    eax, [ebp-0x148];
@@ -759,8 +773,9 @@ _T5c4:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T627:
-	__asm        jmp    near ptr 0x0044262E;
+	__asm        jmp    _T62c;
 // LINE 177:
+_T62c:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x5989E0;
@@ -786,8 +801,8 @@ _T67e:
 	__asm        mov    dword ptr [ebp-0x14C], 0;
 _T688:
 	__asm        mov    dword ptr [ebp-0x150], 0;
-	__asm        jmp    near ptr 0x00442699;
-
+	__asm        jmp    _T697;
+_T697:
 	__asm        push   2;
 	__asm        push   8;
 	__asm        lea    eax, [ebp-0x150];
@@ -808,8 +823,9 @@ _T688:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T6eb:
-	__asm        jmp    near ptr 0x004426F2;
+	__asm        jmp    _T6f0;
 // LINE 180:
+_T6f0:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x5989EC;
@@ -835,8 +851,8 @@ _T742:
 	__asm        mov    dword ptr [ebp-0x154], 0;
 _T74c:
 	__asm        mov    dword ptr [ebp-0x158], 0;
-	__asm        jmp    near ptr 0x0044275D;
-
+	__asm        jmp    _T75b;
+_T75b:
 	__asm        push   2;
 	__asm        push   9;
 	__asm        lea    eax, [ebp-0x158];
@@ -857,8 +873,9 @@ _T74c:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T7af:
-	__asm        jmp    near ptr 0x004427B6;
+	__asm        jmp    _T7b4;
 // LINE 183:
+_T7b4:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x5989F8;
@@ -884,8 +901,8 @@ _T806:
 	__asm        mov    dword ptr [ebp-0x15C], 0;
 _T810:
 	__asm        mov    dword ptr [ebp-0x160], 0;
-	__asm        jmp    near ptr 0x00442821;
-
+	__asm        jmp    _T81f;
+_T81f:
 	__asm        push   2;
 	__asm        push   0xA;
 	__asm        lea    eax, [ebp-0x160];
@@ -906,8 +923,9 @@ _T810:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T873:
-	__asm        jmp    near ptr 0x0044287A;
+	__asm        jmp    _T878;
 // LINE 186:
+_T878:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598A04;
@@ -933,8 +951,8 @@ _T8ca:
 	__asm        mov    dword ptr [ebp-0x164], 0;
 _T8d4:
 	__asm        mov    dword ptr [ebp-0x168], 0;
-	__asm        jmp    near ptr 0x004428E5;
-
+	__asm        jmp    _T8e3;
+_T8e3:
 	__asm        push   2;
 	__asm        push   0xB;
 	__asm        lea    eax, [ebp-0x168];
@@ -955,8 +973,9 @@ _T8d4:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T937:
-	__asm        jmp    near ptr 0x0044293E;
+	__asm        jmp    _T93c;
 // LINE 189:
+_T93c:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598A14;
@@ -982,8 +1001,8 @@ _T98e:
 	__asm        mov    dword ptr [ebp-0x16C], 0;
 _T998:
 	__asm        mov    dword ptr [ebp-0x170], 0;
-	__asm        jmp    near ptr 0x004429A9;
-
+	__asm        jmp    _T9a7;
+_T9a7:
 	__asm        push   2;
 	__asm        push   0xC;
 	__asm        lea    eax, [ebp-0x170];
@@ -1004,8 +1023,9 @@ _T998:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T9fb:
-	__asm        jmp    near ptr 0x00442A02;
+	__asm        jmp    _Ta00;
 // LINE 192:
+_Ta00:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598A20;
@@ -1031,8 +1051,8 @@ _Ta52:
 	__asm        mov    dword ptr [ebp-0x174], 0;
 _Ta5c:
 	__asm        mov    dword ptr [ebp-0x178], 0;
-	__asm        jmp    near ptr 0x00442A6D;
-
+	__asm        jmp    _Ta6b;
+_Ta6b:
 	__asm        push   2;
 	__asm        push   0xD;
 	__asm        lea    eax, [ebp-0x178];
@@ -1053,8 +1073,9 @@ _Ta5c:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _Tabf:
-	__asm        jmp    near ptr 0x00442AC6;
+	__asm        jmp    _Tac4;
 // LINE 195:
+_Tac4:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598A30;
@@ -1080,8 +1101,8 @@ _Tb16:
 	__asm        mov    dword ptr [ebp-0x17C], 0;
 _Tb20:
 	__asm        mov    dword ptr [ebp-0x180], 0;
-	__asm        jmp    near ptr 0x00442B31;
-
+	__asm        jmp    _Tb2f;
+_Tb2f:
 	__asm        push   2;
 	__asm        push   0xE;
 	__asm        lea    eax, [ebp-0x180];
@@ -1102,8 +1123,9 @@ _Tb20:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _Tb83:
-	__asm        jmp    near ptr 0x00442B8A;
+	__asm        jmp    _Tb88;
 // LINE 198:
+_Tb88:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598A40;
@@ -1129,8 +1151,8 @@ _Tbda:
 	__asm        mov    dword ptr [ebp-0x184], 0;
 _Tbe4:
 	__asm        mov    dword ptr [ebp-0x188], 0;
-	__asm        jmp    near ptr 0x00442BF5;
-
+	__asm        jmp    _Tbf3;
+_Tbf3:
 	__asm        push   2;
 	__asm        push   0xF;
 	__asm        lea    eax, [ebp-0x188];
@@ -1151,8 +1173,9 @@ _Tbe4:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _Tc47:
-	__asm        jmp    near ptr 0x00442C4E;
+	__asm        jmp    _Tc4c;
 // LINE 201:
+_Tc4c:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598A4C;
@@ -1178,8 +1201,8 @@ _Tc9e:
 	__asm        mov    dword ptr [ebp-0x18C], 0;
 _Tca8:
 	__asm        mov    dword ptr [ebp-0x190], 0;
-	__asm        jmp    near ptr 0x00442CB9;
-
+	__asm        jmp    _Tcb7;
+_Tcb7:
 	__asm        push   2;
 	__asm        push   0x10;
 	__asm        lea    eax, [ebp-0x190];
@@ -1200,8 +1223,9 @@ _Tca8:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _Td0b:
-	__asm        jmp    near ptr 0x00442D12;
+	__asm        jmp    _Td10;
 // LINE 204:
+_Td10:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598A58;
@@ -1227,8 +1251,8 @@ _Td62:
 	__asm        mov    dword ptr [ebp-0x194], 0;
 _Td6c:
 	__asm        mov    dword ptr [ebp-0x198], 0;
-	__asm        jmp    near ptr 0x00442D7D;
-
+	__asm        jmp    _Td7b;
+_Td7b:
 	__asm        push   2;
 	__asm        push   0x11;
 	__asm        lea    eax, [ebp-0x198];
@@ -1249,8 +1273,9 @@ _Td6c:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _Tdcf:
-	__asm        jmp    near ptr 0x00442DD6;
+	__asm        jmp    _Tdd4;
 // LINE 207:
+_Tdd4:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598A68;
@@ -1276,8 +1301,8 @@ _Te26:
 	__asm        mov    dword ptr [ebp-0x19C], 0;
 _Te30:
 	__asm        mov    dword ptr [ebp-0x1A0], 0;
-	__asm        jmp    near ptr 0x00442E41;
-
+	__asm        jmp    _Te3f;
+_Te3f:
 	__asm        push   2;
 	__asm        push   0x26;
 	__asm        lea    eax, [ebp-0x1A0];
@@ -1298,8 +1323,9 @@ _Te30:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _Te93:
-	__asm        jmp    near ptr 0x00442E9A;
+	__asm        jmp    _Te98;
 // LINE 210:
+_Te98:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598A78;
@@ -1325,8 +1351,8 @@ _Teea:
 	__asm        mov    dword ptr [ebp-0x1A4], 0;
 _Tef4:
 	__asm        mov    dword ptr [ebp-0x1A8], 0;
-	__asm        jmp    near ptr 0x00442F05;
-
+	__asm        jmp    _Tf03;
+_Tf03:
 	__asm        push   2;
 	__asm        push   0x12;
 	__asm        lea    eax, [ebp-0x1A8];
@@ -1347,8 +1373,9 @@ _Tef4:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _Tf57:
-	__asm        jmp    near ptr 0x00442F5E;
+	__asm        jmp    _Tf5c;
 // LINE 213:
+_Tf5c:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598A88;
@@ -1374,8 +1401,8 @@ _Tfae:
 	__asm        mov    dword ptr [ebp-0x1AC], 0;
 _Tfb8:
 	__asm        mov    dword ptr [ebp-0x1B0], 0;
-	__asm        jmp    near ptr 0x00442FC9;
-
+	__asm        jmp    _Tfc7;
+_Tfc7:
 	__asm        push   2;
 	__asm        push   0x13;
 	__asm        lea    eax, [ebp-0x1B0];
@@ -1396,8 +1423,9 @@ _Tfb8:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T101b:
-	__asm        jmp    near ptr 0x00443022;
+	__asm        jmp    _T1020;
 // LINE 216:
+_T1020:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598A98;
@@ -1423,8 +1451,8 @@ _T1072:
 	__asm        mov    dword ptr [ebp-0x1B4], 0;
 _T107c:
 	__asm        mov    dword ptr [ebp-0x1B8], 0;
-	__asm        jmp    near ptr 0x0044308D;
-
+	__asm        jmp    _T108b;
+_T108b:
 	__asm        push   2;
 	__asm        push   0x14;
 	__asm        lea    eax, [ebp-0x1B8];
@@ -1445,8 +1473,9 @@ _T107c:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T10df:
-	__asm        jmp    near ptr 0x004430E6;
+	__asm        jmp    _T10e4;
 // LINE 219:
+_T10e4:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598AA8;
@@ -1472,8 +1501,8 @@ _T1136:
 	__asm        mov    dword ptr [ebp-0x1BC], 0;
 _T1140:
 	__asm        mov    dword ptr [ebp-0x1C0], 0;
-	__asm        jmp    near ptr 0x00443151;
-
+	__asm        jmp    _T114f;
+_T114f:
 	__asm        push   2;
 	__asm        push   0x15;
 	__asm        lea    eax, [ebp-0x1C0];
@@ -1494,8 +1523,9 @@ _T1140:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T11a3:
-	__asm        jmp    near ptr 0x004431AA;
+	__asm        jmp    _T11a8;
 // LINE 222:
+_T11a8:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598AB4;
@@ -1521,8 +1551,8 @@ _T11fa:
 	__asm        mov    dword ptr [ebp-0x1C4], 0;
 _T1204:
 	__asm        mov    dword ptr [ebp-0x1C8], 0;
-	__asm        jmp    near ptr 0x00443215;
-
+	__asm        jmp    _T1213;
+_T1213:
 	__asm        push   2;
 	__asm        push   0x16;
 	__asm        lea    eax, [ebp-0x1C8];
@@ -1543,8 +1573,9 @@ _T1204:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T1267:
-	__asm        jmp    near ptr 0x0044326E;
+	__asm        jmp    _T126c;
 // LINE 225:
+_T126c:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598AC4;
@@ -1570,8 +1601,8 @@ _T12be:
 	__asm        mov    dword ptr [ebp-0x1CC], 0;
 _T12c8:
 	__asm        mov    dword ptr [ebp-0x1D0], 0;
-	__asm        jmp    near ptr 0x004432D9;
-
+	__asm        jmp    _T12d7;
+_T12d7:
 	__asm        push   2;
 	__asm        push   0x17;
 	__asm        lea    eax, [ebp-0x1D0];
@@ -1592,8 +1623,9 @@ _T12c8:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T132b:
-	__asm        jmp    near ptr 0x00443332;
+	__asm        jmp    _T1330;
 // LINE 228:
+_T1330:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598AD0;
@@ -1619,8 +1651,8 @@ _T1382:
 	__asm        mov    dword ptr [ebp-0x1D4], 0;
 _T138c:
 	__asm        mov    dword ptr [ebp-0x1D8], 0;
-	__asm        jmp    near ptr 0x0044339D;
-
+	__asm        jmp    _T139b;
+_T139b:
 	__asm        push   2;
 	__asm        push   0x18;
 	__asm        lea    eax, [ebp-0x1D8];
@@ -1641,8 +1673,9 @@ _T138c:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T13ef:
-	__asm        jmp    near ptr 0x004433F6;
+	__asm        jmp    _T13f4;
 // LINE 231:
+_T13f4:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598ADC;
@@ -1668,8 +1701,8 @@ _T1446:
 	__asm        mov    dword ptr [ebp-0x1DC], 0;
 _T1450:
 	__asm        mov    dword ptr [ebp-0x1E0], 0;
-	__asm        jmp    near ptr 0x00443461;
-
+	__asm        jmp    _T145f;
+_T145f:
 	__asm        push   2;
 	__asm        push   0x19;
 	__asm        lea    eax, [ebp-0x1E0];
@@ -1690,8 +1723,9 @@ _T1450:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T14b3:
-	__asm        jmp    near ptr 0x004434BA;
+	__asm        jmp    _T14b8;
 // LINE 234:
+_T14b8:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598AE8;
@@ -1717,8 +1751,8 @@ _T150a:
 	__asm        mov    dword ptr [ebp-0x1E4], 0;
 _T1514:
 	__asm        mov    dword ptr [ebp-0x1E8], 0;
-	__asm        jmp    near ptr 0x00443525;
-
+	__asm        jmp    _T1523;
+_T1523:
 	__asm        push   2;
 	__asm        push   0x1A;
 	__asm        lea    eax, [ebp-0x1E8];
@@ -1739,8 +1773,9 @@ _T1514:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T1577:
-	__asm        jmp    near ptr 0x0044357E;
+	__asm        jmp    _T157c;
 // LINE 237:
+_T157c:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598AF4;
@@ -1766,8 +1801,8 @@ _T15ce:
 	__asm        mov    dword ptr [ebp-0x1EC], 0;
 _T15d8:
 	__asm        mov    dword ptr [ebp-0x1F0], 0;
-	__asm        jmp    near ptr 0x004435E9;
-
+	__asm        jmp    _T15e7;
+_T15e7:
 	__asm        push   2;
 	__asm        push   0x1B;
 	__asm        lea    eax, [ebp-0x1F0];
@@ -1788,8 +1823,9 @@ _T15d8:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T163b:
-	__asm        jmp    near ptr 0x00443642;
+	__asm        jmp    _T1640;
 // LINE 240:
+_T1640:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598B00;
@@ -1815,8 +1851,8 @@ _T1692:
 	__asm        mov    dword ptr [ebp-0x1F4], 0;
 _T169c:
 	__asm        mov    dword ptr [ebp-0x1F8], 0;
-	__asm        jmp    near ptr 0x004436AD;
-
+	__asm        jmp    _T16ab;
+_T16ab:
 	__asm        push   2;
 	__asm        push   0x1C;
 	__asm        lea    eax, [ebp-0x1F8];
@@ -1837,8 +1873,9 @@ _T169c:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T16ff:
-	__asm        jmp    near ptr 0x00443706;
+	__asm        jmp    _T1704;
 // LINE 243:
+_T1704:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598B0C;
@@ -1864,8 +1901,8 @@ _T1756:
 	__asm        mov    dword ptr [ebp-0x1FC], 0;
 _T1760:
 	__asm        mov    dword ptr [ebp-0x200], 0;
-	__asm        jmp    near ptr 0x00443771;
-
+	__asm        jmp    _T176f;
+_T176f:
 	__asm        push   2;
 	__asm        push   0x1D;
 	__asm        lea    eax, [ebp-0x200];
@@ -1886,8 +1923,9 @@ _T1760:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T17c3:
-	__asm        jmp    near ptr 0x004437CA;
+	__asm        jmp    _T17c8;
 // LINE 246:
+_T17c8:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598B18;
@@ -1913,8 +1951,8 @@ _T181a:
 	__asm        mov    dword ptr [ebp-0x204], 0;
 _T1824:
 	__asm        mov    dword ptr [ebp-0x208], 0;
-	__asm        jmp    near ptr 0x00443835;
-
+	__asm        jmp    _T1833;
+_T1833:
 	__asm        push   2;
 	__asm        push   0x1E;
 	__asm        lea    eax, [ebp-0x208];
@@ -1935,8 +1973,9 @@ _T1824:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T1887:
-	__asm        jmp    near ptr 0x0044388E;
+	__asm        jmp    _T188c;
 // LINE 249:
+_T188c:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598B24;
@@ -1962,8 +2001,8 @@ _T18de:
 	__asm        mov    dword ptr [ebp-0x20C], 0;
 _T18e8:
 	__asm        mov    dword ptr [ebp-0x210], 0;
-	__asm        jmp    near ptr 0x004438F9;
-
+	__asm        jmp    _T18f7;
+_T18f7:
 	__asm        push   2;
 	__asm        push   0x1F;
 	__asm        lea    eax, [ebp-0x210];
@@ -1984,8 +2023,9 @@ _T18e8:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T194b:
-	__asm        jmp    near ptr 0x00443952;
+	__asm        jmp    _T1950;
 // LINE 252:
+_T1950:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598B30;
@@ -2011,8 +2051,8 @@ _T19a2:
 	__asm        mov    dword ptr [ebp-0x214], 0;
 _T19ac:
 	__asm        mov    dword ptr [ebp-0x218], 0;
-	__asm        jmp    near ptr 0x004439BD;
-
+	__asm        jmp    _T19bb;
+_T19bb:
 	__asm        push   2;
 	__asm        push   0x20;
 	__asm        lea    eax, [ebp-0x218];
@@ -2033,8 +2073,9 @@ _T19ac:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T1a0f:
-	__asm        jmp    near ptr 0x00443A16;
+	__asm        jmp    _T1a14;
 // LINE 255:
+_T1a14:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598B3C;
@@ -2060,8 +2101,8 @@ _T1a66:
 	__asm        mov    dword ptr [ebp-0x21C], 0;
 _T1a70:
 	__asm        mov    dword ptr [ebp-0x220], 0;
-	__asm        jmp    near ptr 0x00443A81;
-
+	__asm        jmp    _T1a7f;
+_T1a7f:
 	__asm        push   2;
 	__asm        push   0x21;
 	__asm        lea    eax, [ebp-0x220];
@@ -2082,8 +2123,9 @@ _T1a70:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T1ad3:
-	__asm        jmp    near ptr 0x00443ADA;
+	__asm        jmp    _T1ad8;
 // LINE 258:
+_T1ad8:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598B48;
@@ -2109,8 +2151,8 @@ _T1b2a:
 	__asm        mov    dword ptr [ebp-0x224], 0;
 _T1b34:
 	__asm        mov    dword ptr [ebp-0x228], 0;
-	__asm        jmp    near ptr 0x00443B45;
-
+	__asm        jmp    _T1b43;
+_T1b43:
 	__asm        push   2;
 	__asm        push   0x22;
 	__asm        lea    eax, [ebp-0x228];
@@ -2131,8 +2173,9 @@ _T1b34:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T1b97:
-	__asm        jmp    near ptr 0x00443B9E;
+	__asm        jmp    _T1b9c;
 // LINE 261:
+_T1b9c:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598B54;
@@ -2158,8 +2201,8 @@ _T1bee:
 	__asm        mov    dword ptr [ebp-0x22C], 0;
 _T1bf8:
 	__asm        mov    dword ptr [ebp-0x230], 0;
-	__asm        jmp    near ptr 0x00443C09;
-
+	__asm        jmp    _T1c07;
+_T1c07:
 	__asm        push   2;
 	__asm        push   0x23;
 	__asm        lea    eax, [ebp-0x230];
@@ -2180,8 +2223,9 @@ _T1bf8:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T1c5b:
-	__asm        jmp    near ptr 0x00443C62;
+	__asm        jmp    _T1c60;
 // LINE 264:
+_T1c60:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598B60;
@@ -2207,8 +2251,8 @@ _T1cb2:
 	__asm        mov    dword ptr [ebp-0x234], 0;
 _T1cbc:
 	__asm        mov    dword ptr [ebp-0x238], 0;
-	__asm        jmp    near ptr 0x00443CCD;
-
+	__asm        jmp    _T1ccb;
+_T1ccb:
 	__asm        push   2;
 	__asm        push   0x24;
 	__asm        lea    eax, [ebp-0x238];
@@ -2229,8 +2273,9 @@ _T1cbc:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T1d1f:
-	__asm        jmp    near ptr 0x00443D26;
+	__asm        jmp    _T1d24;
 // LINE 267:
+_T1d24:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598B70;
@@ -2256,8 +2301,8 @@ _T1d76:
 	__asm        mov    dword ptr [ebp-0x23C], 0;
 _T1d80:
 	__asm        mov    dword ptr [ebp-0x240], 0;
-	__asm        jmp    near ptr 0x00443D91;
-
+	__asm        jmp    _T1d8f;
+_T1d8f:
 	__asm        push   2;
 	__asm        push   0x25;
 	__asm        lea    eax, [ebp-0x240];
@@ -2278,8 +2323,9 @@ _T1d80:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T1de3:
-	__asm        jmp    near ptr 0x00443DEA;
+	__asm        jmp    _T1de8;
 // LINE 270:
+_T1de8:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598B80;
@@ -2305,8 +2351,8 @@ _T1e3a:
 	__asm        mov    dword ptr [ebp-0x244], 0;
 _T1e44:
 	__asm        mov    dword ptr [ebp-0x248], 0;
-	__asm        jmp    near ptr 0x00443E55;
-
+	__asm        jmp    _T1e53;
+_T1e53:
 	__asm        push   2;
 	__asm        push   0x27;
 	__asm        lea    eax, [ebp-0x248];
@@ -2327,8 +2373,9 @@ _T1e44:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T1ea7:
-	__asm        jmp    near ptr 0x00443EAE;
+	__asm        jmp    _T1eac;
 // LINE 273:
+_T1eac:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598B8C;
@@ -2354,8 +2401,8 @@ _T1efe:
 	__asm        mov    dword ptr [ebp-0x24C], 0;
 _T1f08:
 	__asm        mov    dword ptr [ebp-0x250], 0;
-	__asm        jmp    near ptr 0x00443F19;
-
+	__asm        jmp    _T1f17;
+_T1f17:
 	__asm        push   2;
 	__asm        push   0x28;
 	__asm        lea    eax, [ebp-0x250];
@@ -2376,8 +2423,9 @@ _T1f08:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T1f6b:
-	__asm        jmp    near ptr 0x00443F72;
+	__asm        jmp    _T1f70;
 // LINE 276:
+_T1f70:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598B94;
@@ -2403,8 +2451,8 @@ _T1fc2:
 	__asm        mov    dword ptr [ebp-0x254], 0;
 _T1fcc:
 	__asm        mov    dword ptr [ebp-0x258], 0;
-	__asm        jmp    near ptr 0x00443FDD;
-
+	__asm        jmp    _T1fdb;
+_T1fdb:
 	__asm        push   2;
 	__asm        push   0x29;
 	__asm        lea    eax, [ebp-0x258];
@@ -2425,8 +2473,9 @@ _T1fcc:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T202f:
-	__asm        jmp    near ptr 0x00444036;
+	__asm        jmp    _T2034;
 // LINE 279:
+_T2034:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598B9C;
@@ -2452,8 +2501,8 @@ _T2086:
 	__asm        mov    dword ptr [ebp-0x25C], 0;
 _T2090:
 	__asm        mov    dword ptr [ebp-0x260], 0;
-	__asm        jmp    near ptr 0x004440A1;
-
+	__asm        jmp    _T209f;
+_T209f:
 	__asm        push   2;
 	__asm        push   0x2A;
 	__asm        lea    eax, [ebp-0x260];
@@ -2474,8 +2523,9 @@ _T2090:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T20f3:
-	__asm        jmp    near ptr 0x004440FA;
+	__asm        jmp    _T20f8;
 // LINE 282:
+_T20f8:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598BA8;
@@ -2501,8 +2551,8 @@ _T214a:
 	__asm        mov    dword ptr [ebp-0x264], 0;
 _T2154:
 	__asm        mov    dword ptr [ebp-0x268], 0;
-	__asm        jmp    near ptr 0x00444165;
-
+	__asm        jmp    _T2163;
+_T2163:
 	__asm        push   2;
 	__asm        push   0x2B;
 	__asm        lea    eax, [ebp-0x268];
@@ -2523,8 +2573,9 @@ _T2154:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T21b7:
-	__asm        jmp    near ptr 0x004441BE;
+	__asm        jmp    _T21bc;
 // LINE 285:
+_T21bc:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598BB4;
@@ -2550,8 +2601,8 @@ _T220e:
 	__asm        mov    dword ptr [ebp-0x26C], 0;
 _T2218:
 	__asm        mov    dword ptr [ebp-0x270], 0;
-	__asm        jmp    near ptr 0x00444229;
-
+	__asm        jmp    _T2227;
+_T2227:
 	__asm        push   2;
 	__asm        push   0x2C;
 	__asm        lea    eax, [ebp-0x270];
@@ -2572,8 +2623,9 @@ _T2218:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T227b:
-	__asm        jmp    near ptr 0x00444282;
+	__asm        jmp    _T2280;
 // LINE 288:
+_T2280:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598BC0;
@@ -2599,8 +2651,8 @@ _T22d2:
 	__asm        mov    dword ptr [ebp-0x274], 0;
 _T22dc:
 	__asm        mov    dword ptr [ebp-0x278], 0;
-	__asm        jmp    near ptr 0x004442ED;
-
+	__asm        jmp    _T22eb;
+_T22eb:
 	__asm        push   2;
 	__asm        push   0x2D;
 	__asm        lea    eax, [ebp-0x278];
@@ -2621,8 +2673,9 @@ _T22dc:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T233f:
-	__asm        jmp    near ptr 0x00444346;
+	__asm        jmp    _T2344;
 // LINE 291:
+_T2344:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598BCC;
@@ -2648,8 +2701,8 @@ _T2396:
 	__asm        mov    dword ptr [ebp-0x27C], 0;
 _T23a0:
 	__asm        mov    dword ptr [ebp-0x280], 0;
-	__asm        jmp    near ptr 0x004443B1;
-
+	__asm        jmp    _T23af;
+_T23af:
 	__asm        push   2;
 	__asm        push   0x2E;
 	__asm        lea    eax, [ebp-0x280];
@@ -2670,8 +2723,9 @@ _T23a0:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T2403:
-	__asm        jmp    near ptr 0x0044440A;
+	__asm        jmp    _T2408;
 // LINE 294:
+_T2408:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598BD8;
@@ -2697,8 +2751,8 @@ _T245a:
 	__asm        mov    dword ptr [ebp-0x284], 0;
 _T2464:
 	__asm        mov    dword ptr [ebp-0x288], 0;
-	__asm        jmp    near ptr 0x00444475;
-
+	__asm        jmp    _T2473;
+_T2473:
 	__asm        push   2;
 	__asm        push   0x2F;
 	__asm        lea    eax, [ebp-0x288];
@@ -2719,8 +2773,9 @@ _T2464:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T24c7:
-	__asm        jmp    near ptr 0x004444CE;
+	__asm        jmp    _T24cc;
 // LINE 297:
+_T24cc:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598BE4;
@@ -2746,8 +2801,8 @@ _T251e:
 	__asm        mov    dword ptr [ebp-0x28C], 0;
 _T2528:
 	__asm        mov    dword ptr [ebp-0x290], 0;
-	__asm        jmp    near ptr 0x00444539;
-
+	__asm        jmp    _T2537;
+_T2537:
 	__asm        push   2;
 	__asm        push   0x30;
 	__asm        lea    eax, [ebp-0x290];
@@ -2768,8 +2823,9 @@ _T2528:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T258b:
-	__asm        jmp    near ptr 0x00444592;
+	__asm        jmp    _T2590;
 // LINE 300:
+_T2590:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598BF0;
@@ -2795,8 +2851,8 @@ _T25e2:
 	__asm        mov    dword ptr [ebp-0x294], 0;
 _T25ec:
 	__asm        mov    dword ptr [ebp-0x298], 0;
-	__asm        jmp    near ptr 0x004445FD;
-
+	__asm        jmp    _T25fb;
+_T25fb:
 	__asm        push   2;
 	__asm        push   0x31;
 	__asm        lea    eax, [ebp-0x298];
@@ -2817,8 +2873,9 @@ _T25ec:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T264f:
-	__asm        jmp    near ptr 0x00444656;
+	__asm        jmp    _T2654;
 // LINE 305:
+_T2654:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598C00;
@@ -2844,8 +2901,8 @@ _T26a6:
 	__asm        mov    dword ptr [ebp-0x29C], 0;
 _T26b0:
 	__asm        mov    dword ptr [ebp-0x2A0], 0;
-	__asm        jmp    near ptr 0x004446C1;
-
+	__asm        jmp    _T26bf;
+_T26bf:
 	__asm        push   2;
 	__asm        push   0x32;
 	__asm        lea    eax, [ebp-0x2A0];
@@ -2866,8 +2923,9 @@ _T26b0:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T2713:
-	__asm        jmp    near ptr 0x0044471A;
+	__asm        jmp    _T2718;
 // LINE 308:
+_T2718:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598C0C;
@@ -2893,8 +2951,8 @@ _T276a:
 	__asm        mov    dword ptr [ebp-0x2A4], 0;
 _T2774:
 	__asm        mov    dword ptr [ebp-0x2A8], 0;
-	__asm        jmp    near ptr 0x00444785;
-
+	__asm        jmp    _T2783;
+_T2783:
 	__asm        push   2;
 	__asm        push   0x33;
 	__asm        lea    eax, [ebp-0x2A8];
@@ -2915,8 +2973,9 @@ _T2774:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T27d7:
-	__asm        jmp    near ptr 0x004447DE;
+	__asm        jmp    _T27dc;
 // LINE 311:
+_T27dc:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598C18;
@@ -2942,8 +3001,8 @@ _T282e:
 	__asm        mov    dword ptr [ebp-0x2AC], 0;
 _T2838:
 	__asm        mov    dword ptr [ebp-0x2B0], 0;
-	__asm        jmp    near ptr 0x00444849;
-
+	__asm        jmp    _T2847;
+_T2847:
 	__asm        push   2;
 	__asm        push   0x34;
 	__asm        lea    eax, [ebp-0x2B0];
@@ -2964,8 +3023,9 @@ _T2838:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T289b:
-	__asm        jmp    near ptr 0x004448A2;
+	__asm        jmp    _T28a0;
 // LINE 314:
+_T28a0:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598C24;
@@ -2991,8 +3051,8 @@ _T28f2:
 	__asm        mov    dword ptr [ebp-0x2B4], 0;
 _T28fc:
 	__asm        mov    dword ptr [ebp-0x2B8], 0;
-	__asm        jmp    near ptr 0x0044490D;
-
+	__asm        jmp    _T290b;
+_T290b:
 	__asm        push   2;
 	__asm        push   0x35;
 	__asm        lea    eax, [ebp-0x2B8];
@@ -3013,8 +3073,9 @@ _T28fc:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T295f:
-	__asm        jmp    near ptr 0x00444966;
+	__asm        jmp    _T2964;
 // LINE 317:
+_T2964:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598C30;
@@ -3040,8 +3101,8 @@ _T29b6:
 	__asm        mov    dword ptr [ebp-0x2BC], 0;
 _T29c0:
 	__asm        mov    dword ptr [ebp-0x2C0], 0;
-	__asm        jmp    near ptr 0x004449D1;
-
+	__asm        jmp    _T29cf;
+_T29cf:
 	__asm        push   2;
 	__asm        push   0x36;
 	__asm        lea    eax, [ebp-0x2C0];
@@ -3062,8 +3123,9 @@ _T29c0:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T2a23:
-	__asm        jmp    near ptr 0x00444A2A;
+	__asm        jmp    _T2a28;
 // LINE 320:
+_T2a28:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598C3C;
@@ -3089,8 +3151,8 @@ _T2a7a:
 	__asm        mov    dword ptr [ebp-0x2C4], 0;
 _T2a84:
 	__asm        mov    dword ptr [ebp-0x2C8], 0;
-	__asm        jmp    near ptr 0x00444A95;
-
+	__asm        jmp    _T2a93;
+_T2a93:
 	__asm        push   2;
 	__asm        push   0x37;
 	__asm        lea    eax, [ebp-0x2C8];
@@ -3111,8 +3173,9 @@ _T2a84:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T2ae7:
-	__asm        jmp    near ptr 0x00444AEE;
+	__asm        jmp    _T2aec;
 // LINE 323:
+_T2aec:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598C48;
@@ -3138,8 +3201,8 @@ _T2b3e:
 	__asm        mov    dword ptr [ebp-0x2CC], 0;
 _T2b48:
 	__asm        mov    dword ptr [ebp-0x2D0], 0;
-	__asm        jmp    near ptr 0x00444B59;
-
+	__asm        jmp    _T2b57;
+_T2b57:
 	__asm        push   2;
 	__asm        push   0x38;
 	__asm        lea    eax, [ebp-0x2D0];
@@ -3160,8 +3223,9 @@ _T2b48:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T2bab:
-	__asm        jmp    near ptr 0x00444BB2;
+	__asm        jmp    _T2bb0;
 // LINE 326:
+_T2bb0:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598C54;
@@ -3187,8 +3251,8 @@ _T2c02:
 	__asm        mov    dword ptr [ebp-0x2D4], 0;
 _T2c0c:
 	__asm        mov    dword ptr [ebp-0x2D8], 0;
-	__asm        jmp    near ptr 0x00444C1D;
-
+	__asm        jmp    _T2c1b;
+_T2c1b:
 	__asm        push   2;
 	__asm        push   0x39;
 	__asm        lea    eax, [ebp-0x2D8];
@@ -3209,8 +3273,9 @@ _T2c0c:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T2c6f:
-	__asm        jmp    near ptr 0x00444C76;
+	__asm        jmp    _T2c74;
 // LINE 329:
+_T2c74:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598C60;
@@ -3236,8 +3301,8 @@ _T2cc6:
 	__asm        mov    dword ptr [ebp-0x2DC], 0;
 _T2cd0:
 	__asm        mov    dword ptr [ebp-0x2E0], 0;
-	__asm        jmp    near ptr 0x00444CE1;
-
+	__asm        jmp    _T2cdf;
+_T2cdf:
 	__asm        push   2;
 	__asm        push   0x3A;
 	__asm        lea    eax, [ebp-0x2E0];
@@ -3258,8 +3323,9 @@ _T2cd0:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T2d33:
-	__asm        jmp    near ptr 0x00444D3A;
+	__asm        jmp    _T2d38;
 // LINE 332:
+_T2d38:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598C6C;
@@ -3285,8 +3351,8 @@ _T2d8a:
 	__asm        mov    dword ptr [ebp-0x2E4], 0;
 _T2d94:
 	__asm        mov    dword ptr [ebp-0x2E8], 0;
-	__asm        jmp    near ptr 0x00444DA5;
-
+	__asm        jmp    _T2da3;
+_T2da3:
 	__asm        push   2;
 	__asm        push   0x3B;
 	__asm        lea    eax, [ebp-0x2E8];
@@ -3307,8 +3373,9 @@ _T2d94:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T2df7:
-	__asm        jmp    near ptr 0x00444DFE;
+	__asm        jmp    _T2dfc;
 // LINE 335:
+_T2dfc:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598C78;
@@ -3334,8 +3401,8 @@ _T2e4e:
 	__asm        mov    dword ptr [ebp-0x2EC], 0;
 _T2e58:
 	__asm        mov    dword ptr [ebp-0x2F0], 0;
-	__asm        jmp    near ptr 0x00444E69;
-
+	__asm        jmp    _T2e67;
+_T2e67:
 	__asm        push   2;
 	__asm        push   0x3C;
 	__asm        lea    eax, [ebp-0x2F0];
@@ -3356,8 +3423,9 @@ _T2e58:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T2ebb:
-	__asm        jmp    near ptr 0x00444EC2;
+	__asm        jmp    _T2ec0;
 // LINE 338:
+_T2ec0:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598C84;
@@ -3383,8 +3451,8 @@ _T2f12:
 	__asm        mov    dword ptr [ebp-0x2F4], 0;
 _T2f1c:
 	__asm        mov    dword ptr [ebp-0x2F8], 0;
-	__asm        jmp    near ptr 0x00444F2D;
-
+	__asm        jmp    _T2f2b;
+_T2f2b:
 	__asm        push   2;
 	__asm        push   0x3D;
 	__asm        lea    eax, [ebp-0x2F8];
@@ -3405,8 +3473,9 @@ _T2f1c:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T2f7f:
-	__asm        jmp    near ptr 0x00444F86;
+	__asm        jmp    _T2f84;
 // LINE 341:
+_T2f84:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598C90;
@@ -3432,8 +3501,8 @@ _T2fd6:
 	__asm        mov    dword ptr [ebp-0x2FC], 0;
 _T2fe0:
 	__asm        mov    dword ptr [ebp-0x300], 0;
-	__asm        jmp    near ptr 0x00444FF1;
-
+	__asm        jmp    _T2fef;
+_T2fef:
 	__asm        push   2;
 	__asm        push   0x3E;
 	__asm        lea    eax, [ebp-0x300];
@@ -3454,8 +3523,9 @@ _T2fe0:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T3043:
-	__asm        jmp    near ptr 0x0044504A;
+	__asm        jmp    _T3048;
 // LINE 344:
+_T3048:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598C9C;
@@ -3481,8 +3551,8 @@ _T309a:
 	__asm        mov    dword ptr [ebp-0x304], 0;
 _T30a4:
 	__asm        mov    dword ptr [ebp-0x308], 0;
-	__asm        jmp    near ptr 0x004450B5;
-
+	__asm        jmp    _T30b3;
+_T30b3:
 	__asm        push   2;
 	__asm        push   0x3F;
 	__asm        lea    eax, [ebp-0x308];
@@ -3503,8 +3573,9 @@ _T30a4:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T3107:
-	__asm        jmp    near ptr 0x0044510E;
+	__asm        jmp    _T310c;
 // LINE 347:
+_T310c:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598CA8;
@@ -3530,8 +3601,8 @@ _T315e:
 	__asm        mov    dword ptr [ebp-0x30C], 0;
 _T3168:
 	__asm        mov    dword ptr [ebp-0x310], 0;
-	__asm        jmp    near ptr 0x00445179;
-
+	__asm        jmp    _T3177;
+_T3177:
 	__asm        push   2;
 	__asm        push   0x40;
 	__asm        lea    eax, [ebp-0x310];
@@ -3552,8 +3623,9 @@ _T3168:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T31cb:
-	__asm        jmp    near ptr 0x004451D2;
+	__asm        jmp    _T31d0;
 // LINE 350:
+_T31d0:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598CB4;
@@ -3579,8 +3651,8 @@ _T3222:
 	__asm        mov    dword ptr [ebp-0x314], 0;
 _T322c:
 	__asm        mov    dword ptr [ebp-0x318], 0;
-	__asm        jmp    near ptr 0x0044523D;
-
+	__asm        jmp    _T323b;
+_T323b:
 	__asm        push   2;
 	__asm        push   0x41;
 	__asm        lea    eax, [ebp-0x318];
@@ -3601,8 +3673,9 @@ _T322c:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T328f:
-	__asm        jmp    near ptr 0x00445296;
+	__asm        jmp    _T3294;
 // LINE 353:
+_T3294:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598CC0;
@@ -3628,8 +3701,8 @@ _T32e6:
 	__asm        mov    dword ptr [ebp-0x31C], 0;
 _T32f0:
 	__asm        mov    dword ptr [ebp-0x320], 0;
-	__asm        jmp    near ptr 0x00445301;
-
+	__asm        jmp    _T32ff;
+_T32ff:
 	__asm        push   2;
 	__asm        push   0x42;
 	__asm        lea    eax, [ebp-0x320];
@@ -3650,8 +3723,9 @@ _T32f0:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T3353:
-	__asm        jmp    near ptr 0x0044535A;
+	__asm        jmp    _T3358;
 // LINE 356:
+_T3358:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598CCC;
@@ -3677,8 +3751,8 @@ _T33aa:
 	__asm        mov    dword ptr [ebp-0x324], 0;
 _T33b4:
 	__asm        mov    dword ptr [ebp-0x328], 0;
-	__asm        jmp    near ptr 0x004453C5;
-
+	__asm        jmp    _T33c3;
+_T33c3:
 	__asm        push   2;
 	__asm        push   0x43;
 	__asm        lea    eax, [ebp-0x328];
@@ -3699,8 +3773,9 @@ _T33b4:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T3417:
-	__asm        jmp    near ptr 0x0044541E;
+	__asm        jmp    _T341c;
 // LINE 359:
+_T341c:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598CD8;
@@ -3726,8 +3801,8 @@ _T346e:
 	__asm        mov    dword ptr [ebp-0x32C], 0;
 _T3478:
 	__asm        mov    dword ptr [ebp-0x330], 0;
-	__asm        jmp    near ptr 0x00445489;
-
+	__asm        jmp    _T3487;
+_T3487:
 	__asm        push   2;
 	__asm        push   0x44;
 	__asm        lea    eax, [ebp-0x330];
@@ -3748,8 +3823,9 @@ _T3478:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T34db:
-	__asm        jmp    near ptr 0x004454E2;
+	__asm        jmp    _T34e0;
 // LINE 362:
+_T34e0:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598CE4;
@@ -3775,8 +3851,8 @@ _T3532:
 	__asm        mov    dword ptr [ebp-0x334], 0;
 _T353c:
 	__asm        mov    dword ptr [ebp-0x338], 0;
-	__asm        jmp    near ptr 0x0044554D;
-
+	__asm        jmp    _T354b;
+_T354b:
 	__asm        push   2;
 	__asm        push   0x45;
 	__asm        lea    eax, [ebp-0x338];
@@ -3797,8 +3873,9 @@ _T353c:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T359f:
-	__asm        jmp    near ptr 0x004455A6;
+	__asm        jmp    _T35a4;
 // LINE 365:
+_T35a4:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598CF0;
@@ -3824,8 +3901,8 @@ _T35f6:
 	__asm        mov    dword ptr [ebp-0x33C], 0;
 _T3600:
 	__asm        mov    dword ptr [ebp-0x340], 0;
-	__asm        jmp    near ptr 0x00445611;
-
+	__asm        jmp    _T360f;
+_T360f:
 	__asm        push   2;
 	__asm        push   0x46;
 	__asm        lea    eax, [ebp-0x340];
@@ -3846,8 +3923,9 @@ _T3600:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T3663:
-	__asm        jmp    near ptr 0x0044566A;
+	__asm        jmp    _T3668;
 // LINE 368:
+_T3668:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598CFC;
@@ -3873,8 +3951,8 @@ _T36ba:
 	__asm        mov    dword ptr [ebp-0x344], 0;
 _T36c4:
 	__asm        mov    dword ptr [ebp-0x348], 0;
-	__asm        jmp    near ptr 0x004456D5;
-
+	__asm        jmp    _T36d3;
+_T36d3:
 	__asm        push   2;
 	__asm        push   0x47;
 	__asm        lea    eax, [ebp-0x348];
@@ -3895,8 +3973,9 @@ _T36c4:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T3727:
-	__asm        jmp    near ptr 0x0044572E;
+	__asm        jmp    _T372c;
 // LINE 371:
+_T372c:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598D08;
@@ -3922,8 +4001,8 @@ _T377e:
 	__asm        mov    dword ptr [ebp-0x34C], 0;
 _T3788:
 	__asm        mov    dword ptr [ebp-0x350], 0;
-	__asm        jmp    near ptr 0x00445799;
-
+	__asm        jmp    _T3797;
+_T3797:
 	__asm        push   2;
 	__asm        push   0x48;
 	__asm        lea    eax, [ebp-0x350];
@@ -3944,8 +4023,9 @@ _T3788:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T37eb:
-	__asm        jmp    near ptr 0x004457F2;
+	__asm        jmp    _T37f0;
 // LINE 374:
+_T37f0:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598D14;
@@ -3971,8 +4051,8 @@ _T3842:
 	__asm        mov    dword ptr [ebp-0x354], 0;
 _T384c:
 	__asm        mov    dword ptr [ebp-0x358], 0;
-	__asm        jmp    near ptr 0x0044585D;
-
+	__asm        jmp    _T385b;
+_T385b:
 	__asm        push   2;
 	__asm        push   0x49;
 	__asm        lea    eax, [ebp-0x358];
@@ -3993,8 +4073,9 @@ _T384c:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T38af:
-	__asm        jmp    near ptr 0x004458B6;
+	__asm        jmp    _T38b4;
 // LINE 377:
+_T38b4:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598D20;
@@ -4020,8 +4101,8 @@ _T3906:
 	__asm        mov    dword ptr [ebp-0x35C], 0;
 _T3910:
 	__asm        mov    dword ptr [ebp-0x360], 0;
-	__asm        jmp    near ptr 0x00445921;
-
+	__asm        jmp    _T391f;
+_T391f:
 	__asm        push   2;
 	__asm        push   0x4A;
 	__asm        lea    eax, [ebp-0x360];
@@ -4042,8 +4123,9 @@ _T3910:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T3973:
-	__asm        jmp    near ptr 0x0044597A;
+	__asm        jmp    _T3978;
 // LINE 380:
+_T3978:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598D2C;
@@ -4069,8 +4151,8 @@ _T39ca:
 	__asm        mov    dword ptr [ebp-0x364], 0;
 _T39d4:
 	__asm        mov    dword ptr [ebp-0x368], 0;
-	__asm        jmp    near ptr 0x004459E5;
-
+	__asm        jmp    _T39e3;
+_T39e3:
 	__asm        push   2;
 	__asm        push   0x4B;
 	__asm        lea    eax, [ebp-0x368];
@@ -4091,8 +4173,9 @@ _T39d4:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T3a37:
-	__asm        jmp    near ptr 0x00445A3E;
+	__asm        jmp    _T3a3c;
 // LINE 383:
+_T3a3c:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598D38;
@@ -4118,8 +4201,8 @@ _T3a8e:
 	__asm        mov    dword ptr [ebp-0x36C], 0;
 _T3a98:
 	__asm        mov    dword ptr [ebp-0x370], 0;
-	__asm        jmp    near ptr 0x00445AA9;
-
+	__asm        jmp    _T3aa7;
+_T3aa7:
 	__asm        push   2;
 	__asm        push   0x4C;
 	__asm        lea    eax, [ebp-0x370];
@@ -4140,8 +4223,9 @@ _T3a98:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T3afb:
-	__asm        jmp    near ptr 0x00445B02;
+	__asm        jmp    _T3b00;
 // LINE 386:
+_T3b00:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598D44;
@@ -4167,8 +4251,8 @@ _T3b52:
 	__asm        mov    dword ptr [ebp-0x374], 0;
 _T3b5c:
 	__asm        mov    dword ptr [ebp-0x378], 0;
-	__asm        jmp    near ptr 0x00445B6D;
-
+	__asm        jmp    _T3b6b;
+_T3b6b:
 	__asm        push   2;
 	__asm        push   0x4D;
 	__asm        lea    eax, [ebp-0x378];
@@ -4189,8 +4273,9 @@ _T3b5c:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T3bbf:
-	__asm        jmp    near ptr 0x00445BC6;
+	__asm        jmp    _T3bc4;
 // LINE 389:
+_T3bc4:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598D50;
@@ -4216,8 +4301,8 @@ _T3c16:
 	__asm        mov    dword ptr [ebp-0x37C], 0;
 _T3c20:
 	__asm        mov    dword ptr [ebp-0x380], 0;
-	__asm        jmp    near ptr 0x00445C31;
-
+	__asm        jmp    _T3c2f;
+_T3c2f:
 	__asm        push   2;
 	__asm        push   0x4E;
 	__asm        lea    eax, [ebp-0x380];
@@ -4238,8 +4323,9 @@ _T3c20:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T3c83:
-	__asm        jmp    near ptr 0x00445C8A;
+	__asm        jmp    _T3c88;
 // LINE 392:
+_T3c88:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598D5C;
@@ -4265,8 +4351,8 @@ _T3cda:
 	__asm        mov    dword ptr [ebp-0x384], 0;
 _T3ce4:
 	__asm        mov    dword ptr [ebp-0x388], 0;
-	__asm        jmp    near ptr 0x00445CF5;
-
+	__asm        jmp    _T3cf3;
+_T3cf3:
 	__asm        push   2;
 	__asm        push   0x4F;
 	__asm        lea    eax, [ebp-0x388];
@@ -4287,8 +4373,9 @@ _T3ce4:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T3d47:
-	__asm        jmp    near ptr 0x00445D4E;
+	__asm        jmp    _T3d4c;
 // LINE 395:
+_T3d4c:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598D68;
@@ -4314,8 +4401,8 @@ _T3d9e:
 	__asm        mov    dword ptr [ebp-0x38C], 0;
 _T3da8:
 	__asm        mov    dword ptr [ebp-0x390], 0;
-	__asm        jmp    near ptr 0x00445DB9;
-
+	__asm        jmp    _T3db7;
+_T3db7:
 	__asm        push   2;
 	__asm        push   0x50;
 	__asm        lea    eax, [ebp-0x390];
@@ -4336,8 +4423,9 @@ _T3da8:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T3e0b:
-	__asm        jmp    near ptr 0x00445E12;
+	__asm        jmp    _T3e10;
 // LINE 398:
+_T3e10:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598D74;
@@ -4363,8 +4451,8 @@ _T3e62:
 	__asm        mov    dword ptr [ebp-0x394], 0;
 _T3e6c:
 	__asm        mov    dword ptr [ebp-0x398], 0;
-	__asm        jmp    near ptr 0x00445E7D;
-
+	__asm        jmp    _T3e7b;
+_T3e7b:
 	__asm        push   2;
 	__asm        push   0x51;
 	__asm        lea    eax, [ebp-0x398];
@@ -4385,8 +4473,9 @@ _T3e6c:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T3ecf:
-	__asm        jmp    near ptr 0x00445ED6;
+	__asm        jmp    _T3ed4;
 // LINE 401:
+_T3ed4:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598D80;
@@ -4412,8 +4501,8 @@ _T3f26:
 	__asm        mov    dword ptr [ebp-0x39C], 0;
 _T3f30:
 	__asm        mov    dword ptr [ebp-0x3A0], 0;
-	__asm        jmp    near ptr 0x00445F41;
-
+	__asm        jmp    _T3f3f;
+_T3f3f:
 	__asm        push   2;
 	__asm        push   0x52;
 	__asm        lea    eax, [ebp-0x3A0];
@@ -4434,8 +4523,9 @@ _T3f30:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T3f93:
-	__asm        jmp    near ptr 0x00445F9A;
+	__asm        jmp    _T3f98;
 // LINE 404:
+_T3f98:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598D8C;
@@ -4461,8 +4551,8 @@ _T3fea:
 	__asm        mov    dword ptr [ebp-0x3A4], 0;
 _T3ff4:
 	__asm        mov    dword ptr [ebp-0x3A8], 0;
-	__asm        jmp    near ptr 0x00446005;
-
+	__asm        jmp    _T4003;
+_T4003:
 	__asm        push   2;
 	__asm        push   0x53;
 	__asm        lea    eax, [ebp-0x3A8];
@@ -4483,8 +4573,9 @@ _T3ff4:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T4057:
-	__asm        jmp    near ptr 0x0044605E;
+	__asm        jmp    _T405c;
 // LINE 407:
+_T405c:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598D98;
@@ -4510,8 +4601,8 @@ _T40ae:
 	__asm        mov    dword ptr [ebp-0x3AC], 0;
 _T40b8:
 	__asm        mov    dword ptr [ebp-0x3B0], 0;
-	__asm        jmp    near ptr 0x004460C9;
-
+	__asm        jmp    _T40c7;
+_T40c7:
 	__asm        push   2;
 	__asm        push   0x54;
 	__asm        lea    eax, [ebp-0x3B0];
@@ -4532,8 +4623,9 @@ _T40b8:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T411b:
-	__asm        jmp    near ptr 0x00446122;
+	__asm        jmp    _T4120;
 // LINE 410:
+_T4120:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598DA4;
@@ -4559,8 +4651,8 @@ _T4172:
 	__asm        mov    dword ptr [ebp-0x3B4], 0;
 _T417c:
 	__asm        mov    dword ptr [ebp-0x3B8], 0;
-	__asm        jmp    near ptr 0x0044618D;
-
+	__asm        jmp    _T418b;
+_T418b:
 	__asm        push   2;
 	__asm        push   0x55;
 	__asm        lea    eax, [ebp-0x3B8];
@@ -4581,8 +4673,9 @@ _T417c:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T41df:
-	__asm        jmp    near ptr 0x004461E6;
+	__asm        jmp    _T41e4;
 // LINE 413:
+_T41e4:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598DB0;
@@ -4608,8 +4701,8 @@ _T4236:
 	__asm        mov    dword ptr [ebp-0x3BC], 0;
 _T4240:
 	__asm        mov    dword ptr [ebp-0x3C0], 0;
-	__asm        jmp    near ptr 0x00446251;
-
+	__asm        jmp    _T424f;
+_T424f:
 	__asm        push   2;
 	__asm        push   0x56;
 	__asm        lea    eax, [ebp-0x3C0];
@@ -4630,8 +4723,9 @@ _T4240:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T42a3:
-	__asm        jmp    near ptr 0x004462AA;
+	__asm        jmp    _T42a8;
 // LINE 416:
+_T42a8:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598DBC;
@@ -4657,8 +4751,8 @@ _T42fa:
 	__asm        mov    dword ptr [ebp-0x3C4], 0;
 _T4304:
 	__asm        mov    dword ptr [ebp-0x3C8], 0;
-	__asm        jmp    near ptr 0x00446315;
-
+	__asm        jmp    _T4313;
+_T4313:
 	__asm        push   2;
 	__asm        push   0x57;
 	__asm        lea    eax, [ebp-0x3C8];
@@ -4679,8 +4773,9 @@ _T4304:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T4367:
-	__asm        jmp    near ptr 0x0044636E;
+	__asm        jmp    _T436c;
 // LINE 419:
+_T436c:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598DC8;
@@ -4706,8 +4801,8 @@ _T43be:
 	__asm        mov    dword ptr [ebp-0x3CC], 0;
 _T43c8:
 	__asm        mov    dword ptr [ebp-0x3D0], 0;
-	__asm        jmp    near ptr 0x004463D9;
-
+	__asm        jmp    _T43d7;
+_T43d7:
 	__asm        push   2;
 	__asm        push   0x58;
 	__asm        lea    eax, [ebp-0x3D0];
@@ -4728,8 +4823,9 @@ _T43c8:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T442b:
-	__asm        jmp    near ptr 0x00446432;
+	__asm        jmp    _T4430;
 // LINE 422:
+_T4430:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598DD4;
@@ -4755,8 +4851,8 @@ _T4482:
 	__asm        mov    dword ptr [ebp-0x3D4], 0;
 _T448c:
 	__asm        mov    dword ptr [ebp-0x3D8], 0;
-	__asm        jmp    near ptr 0x0044649D;
-
+	__asm        jmp    _T449b;
+_T449b:
 	__asm        push   2;
 	__asm        push   0x59;
 	__asm        lea    eax, [ebp-0x3D8];
@@ -4777,8 +4873,9 @@ _T448c:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T44ef:
-	__asm        jmp    near ptr 0x004464F6;
+	__asm        jmp    _T44f4;
 // LINE 425:
+_T44f4:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598DE0;
@@ -4804,8 +4901,8 @@ _T4546:
 	__asm        mov    dword ptr [ebp-0x3DC], 0;
 _T4550:
 	__asm        mov    dword ptr [ebp-0x3E0], 0;
-	__asm        jmp    near ptr 0x00446561;
-
+	__asm        jmp    _T455f;
+_T455f:
 	__asm        push   2;
 	__asm        push   0x5A;
 	__asm        lea    eax, [ebp-0x3E0];
@@ -4826,8 +4923,9 @@ _T4550:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T45b3:
-	__asm        jmp    near ptr 0x004465BA;
+	__asm        jmp    _T45b8;
 // LINE 428:
+_T45b8:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598DEC;
@@ -4853,8 +4951,8 @@ _T460a:
 	__asm        mov    dword ptr [ebp-0x3E4], 0;
 _T4614:
 	__asm        mov    dword ptr [ebp-0x3E8], 0;
-	__asm        jmp    near ptr 0x00446625;
-
+	__asm        jmp    _T4623;
+_T4623:
 	__asm        push   2;
 	__asm        push   0x5B;
 	__asm        lea    eax, [ebp-0x3E8];
@@ -4875,8 +4973,9 @@ _T4614:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T4677:
-	__asm        jmp    near ptr 0x0044667E;
+	__asm        jmp    _T467c;
 // LINE 431:
+_T467c:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598DF8;
@@ -4902,8 +5001,8 @@ _T46ce:
 	__asm        mov    dword ptr [ebp-0x3EC], 0;
 _T46d8:
 	__asm        mov    dword ptr [ebp-0x3F0], 0;
-	__asm        jmp    near ptr 0x004466E9;
-
+	__asm        jmp    _T46e7;
+_T46e7:
 	__asm        push   2;
 	__asm        push   0x5C;
 	__asm        lea    eax, [ebp-0x3F0];
@@ -4924,8 +5023,9 @@ _T46d8:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T473b:
-	__asm        jmp    near ptr 0x00446742;
+	__asm        jmp    _T4740;
 // LINE 434:
+_T4740:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598E04;
@@ -4957,8 +5057,9 @@ _T473b:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T47b8:
-	__asm        jmp    near ptr 0x004467BF;
+	__asm        jmp    _T47bd;
 // LINE 437:
+_T47bd:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598E10;
@@ -4990,8 +5091,9 @@ _T47b8:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T4835:
-	__asm        jmp    near ptr 0x0044683C;
+	__asm        jmp    _T483a;
 // LINE 440:
+_T483a:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598E1C;
@@ -5023,8 +5125,9 @@ _T4835:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T48b2:
-	__asm        jmp    near ptr 0x004468B9;
+	__asm        jmp    _T48b7;
 // LINE 443:
+_T48b7:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598E28;
@@ -5056,8 +5159,9 @@ _T48b2:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T492f:
-	__asm        jmp    near ptr 0x00446936;
+	__asm        jmp    _T4934;
 // LINE 446:
+_T4934:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598E34;
@@ -5089,8 +5193,9 @@ _T492f:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T49ac:
-	__asm        jmp    near ptr 0x004469B3;
+	__asm        jmp    _T49b1;
 // LINE 449:
+_T49b1:
 	__asm        lea    eax, szFullSoundPath[0];
 	__asm        push   eax;
 	__asm        push   0x598E40;
@@ -5131,14 +5236,16 @@ _T49de:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T4a50:
-	__asm        jmp    near ptr 0x00446A57;
+	__asm        jmp    _T4a55;
 // LINE 452:
+_T4a55:
 	__asm        jmp    _T49d8;
 // LINE 453:
 _T4a5a:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00446A66;
+	__asm        jmp    _T4a64;
 // LINE 454:
+_T4a64:
 }
 
 // FUNCTION: COPTER_D 0x00446a6b
@@ -5176,8 +5283,8 @@ void S3DSSetFile(int32_t nSoundIndex, char * szSoundFile) {
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-0x12C];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x00446AE5;
-
+	__asm        jmp    _T7a;
+_T7a:
 	__asm        mov    eax, [ebp-0x12C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, [ebp-0x12C];
@@ -5207,8 +5314,8 @@ void S3DSSetFile(int32_t nSoundIndex, char * szSoundFile) {
 	__asm        push   eax;
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x00446B60;
-
+	__asm        jmp    _Tf5;
+_Tf5:
 	__asm        jmp    _T106;
 _Tfa:
 	__asm        mov    eax, [ebp-0x12C];
@@ -5216,8 +5323,8 @@ _Tfa:
 _T106:
 	__asm        mov    eax, [ebp-0x12C];
 	__asm        mov    dword ptr [eax+0xC], 1;
-	__asm        jmp    near ptr 0x00446B83;
-
+	__asm        jmp    _T118;
+_T118:
 	__asm        mov    eax, [ebp-0x12C];
 	__asm        mov    [ebp-0x10C], eax;
 	__asm        jmp    _T133;
@@ -5225,8 +5332,8 @@ _T129:
 	__asm        mov    dword ptr [ebp-0x10C], 0;
 _T133:
 	__asm        mov    dword ptr [ebp-0x110], 0;
-	__asm        jmp    near ptr 0x00446BAD;
-
+	__asm        jmp    _T142;
+_T142:
 	__asm        push   2;
 	__asm        lea    eax, [ebp-0x110];
 	__asm        push   eax;
@@ -5265,20 +5372,20 @@ _T133:
 	__asm        mov    eax, [ebp-0x11C];
 	__asm        mov    dword ptr [eax], 0;
 _T1ec:
-	__asm        jmp    near ptr 0x00446C5C;
-
-	__asm        jmp    near ptr 0x00446C61;
-
+	__asm        jmp    _T1f1;
+_T1f1:
+	__asm        jmp    _T1f6;
+_T1f6:
 	__asm        mov    eax, [ebp-0x11C];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x00446C75;
-
+	__asm        jmp    _T20a;
+_T20a:
 	__asm        jmp    _T20f;
 _T20f:
-	__asm        jmp    near ptr 0x00446C7F;
-
+	__asm        jmp    _T214;
+_T214:
 	__asm        cmp    dword ptr [ebp-0x110], 0;
 	__asm        je     _T248;
 
@@ -5294,7 +5401,8 @@ _T248:
 	__asm        jmp    _T24d;
 // LINE 477:
 _T24d:
-	__asm        jmp    near ptr 0x00446CBD;
+	__asm        jmp    _T252;
+_T252:
 }
 
 // FUNCTION: COPTER_D 0x00446cc2
@@ -5370,8 +5478,9 @@ _T65:
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    lNewVolume, eax;
-	__asm        jmp    near ptr 0x00446D8B;
+	__asm        jmp    _Tc9;
 // LINE 516:
+_Tc9:
 	__asm        cmp    theSound, 0;
 	__asm        je     _Te2;
 // LINE 517:
@@ -5429,7 +5538,8 @@ void S3DSStopPlay(int32_t nSoundIndex) {
 	__asm        mov    ecx, 0x604600;
 	__asm        call   SoundManager::StopSound;
 // LINE 553:
-	__asm        jmp    near ptr 0x00446E1D;
+	__asm        jmp    _T19;
+_T19:
 }
 
 // FUNCTION: COPTER_D 0x00446e22
@@ -5438,7 +5548,8 @@ void S3DSStopAllSounds() {
 	__asm        mov    ecx, 0x604600;
 	__asm        call   SoundManager::StopAllSounds;
 // LINE 570:
-	__asm        jmp    near ptr 0x00446E37;
+	__asm        jmp    _T15;
+_T15:
 }
 
 // FUNCTION: COPTER_D 0x00446e3c
@@ -5466,7 +5577,8 @@ void S3SoundAdjFreq(int32_t nSoundIndex, long lFrequencyAdjustment) {
 	__asm        call   dword ptr [eax+0x64];
 // LINE 593:
 _T3c:
-	__asm        jmp    near ptr 0x00446E7D;
+	__asm        jmp    _T41;
+_T41:
 }
 
 // FUNCTION: COPTER_D 0x00446e82
@@ -5486,8 +5598,9 @@ void S3SoundAdjVol(int32_t nSoundIndex, long lNewVolume) {
 	__asm        mov    [ebp-4], eax;
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    lNewVolume, eax;
-	__asm        jmp    near ptr 0x00446EBD;
+	__asm        jmp    _T3b;
 // LINE 616:
+_T3b:
 	__asm        mov    eax, lNewVolume;
 	__asm        mov    ecx, nSoundIndex;
 	__asm        mov    lOriginalSoundVolumes[ecx*4], eax;
@@ -5506,7 +5619,8 @@ void S3SoundAdjVol(int32_t nSoundIndex, long lNewVolume) {
 	__asm        call   dword ptr [edx+0x24];
 // LINE 619:
 _T76:
-	__asm        jmp    near ptr 0x00446EFD;
+	__asm        jmp    _T7b;
+_T7b:
 }
 
 // FUNCTION: COPTER_D 0x00446f02
@@ -5620,8 +5734,9 @@ _Tf5:
 	__asm        fmul   qword ptr ds:[0x58F5D0];
 	__asm        call   0x0056EBE8;
 	__asm        mov    fpDistance, eax;
-	__asm        jmp    near ptr 0x0044704E;
+	__asm        jmp    _T10b;
 // LINE 701:
+_T10b:
 	__asm        push   0xF0600000;
 	__asm        push   0x7800000;
 	__asm        mov    eax, fpDistance;
@@ -5664,8 +5779,9 @@ _Tf5:
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    lVolume, eax;
-	__asm        jmp    near ptr 0x004470D2;
+	__asm        jmp    _T18f;
 // LINE 728:
+_T18f:
 	__asm        mov    eax, lVolume;
 	__asm        push   eax;
 	__asm        mov    eax, theSound;
@@ -5705,8 +5821,9 @@ void S3SoundAddToQueue(int32_t nQueue, int32_t nSoundIndex, int32_t nDelayBefore
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    lNewVolume, eax;
-	__asm        jmp    near ptr 0x0044713C;
+	__asm        jmp    _T42;
 // LINE 740:
+_T42:
 	__asm        cmp    theSound, 0;
 	__asm        je     _Ta9;
 // LINE 741:
@@ -5744,7 +5861,8 @@ _T93:
 	__asm        call   SoundQueue::operator+=;
 // LINE 744:
 _Ta9:
-	__asm        jmp    near ptr 0x004471A8;
+	__asm        jmp    _Tae;
+_Tae:
 }
 
 

@@ -18,22 +18,23 @@ void DialHand::DialHand() {
 	__asm        mov    dword ptr [eax+0x18], 1;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x1C], 0x3F800000;
-	__asm        jmp    near ptr 0x0044FD40;
-
+	__asm        jmp    _T60;
+_T60:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x20], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x24], 0;
-	__asm        jmp    near ptr 0x0044FD59;
-
-	__asm        jmp    near ptr 0x0044FD5E;
-
+	__asm        jmp    _T79;
+_T79:
+	__asm        jmp    _T7e;
+_T7e:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x28], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x2C], 0;
-	__asm        jmp    near ptr 0x0044FD77;
+	__asm        jmp    _T97;
 // LINE 342:
+_T97:
 	this->nColorDial = 0x3f;
 // LINE 343:
 	__asm        mov    eax, this;
@@ -87,10 +88,11 @@ void DialHand::DialHand() {
 	__asm        sub    ebx, eax;
 	__asm        mov    eax, this;
 	__asm        mov    [eax+0x2C], ebx;
-	__asm        jmp    near ptr 0x0044FE2C;
+	__asm        jmp    _T14c;
 // LINE 344:
-	__asm        jmp    near ptr 0x0044FE31;
-
+_T14c:
+	__asm        jmp    _T151;
+_T151:
 	__asm        mov    eax, this;
 }
 

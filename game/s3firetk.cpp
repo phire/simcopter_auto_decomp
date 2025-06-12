@@ -540,8 +540,9 @@ int32_t CreateFireTruckInstance(int32_t instanceID) {
 _T24:
 	__asm        xor    eax, eax;
 _T26:
-	__asm        jmp    near ptr 0x0053612B;
+	__asm        jmp    _T2b;
 // LINE 78:
+_T2b:
 }
 
 // FUNCTION: COPTER_D 0x00536130
@@ -554,8 +555,8 @@ void FireEngineClass::FireEngineClass() {
 // LINE 83:
 	this->carModel = 0x11c;
 // LINE 84:
-	__asm        jmp    near ptr 0x0053615C;
-
+	__asm        jmp    _T2c;
+_T2c:
 	__asm        mov    eax, this;
 }
 
@@ -564,8 +565,8 @@ void FireEngineClass::~FireEngineClass() {
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5932A8;
-	__asm        jmp    near ptr 0x0053617E;
-
+	__asm        jmp    _T1a;
+_T1a:
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::~EmergencyVehicleClass;
 }
@@ -756,8 +757,9 @@ int32_t FireEngineClass::Dispatch(enum EmergencyType responseType, enum Emergenc
 	__asm        push   eax;
 	__asm        mov    ecx, gFireStations;
 	__asm        call   Station::DispatchNearestAvailableVehicle;
-	__asm        jmp    near ptr 0x005363AE;
+	__asm        jmp    _T2d;
 // LINE 212:
+_T2d:
 }
 
 // FUNCTION: COPTER_D 0x005363b3
@@ -773,8 +775,9 @@ int32_t FireEngineClass::IsThisAFireStation(unsigned short tileType) {
 _T23:
 	__asm        xor    eax, eax;
 _T25:
-	__asm        jmp    near ptr 0x005363DD;
+	__asm        jmp    _T2a;
 // LINE 219:
+_T2a:
 }
 
 // FUNCTION: COPTER_D 0x005363e2
@@ -826,8 +829,9 @@ _T96:
 _Ta0:
 	__asm        xor    eax, eax;
 _Ta2:
-	__asm        jmp    near ptr 0x00536489;
+	__asm        jmp    _Ta7;
 // LINE 226:
+_Ta7:
 }
 
 // FUNCTION: COPTER_D 0x0053648e
@@ -1073,7 +1077,8 @@ _T2bd:
 	__asm        jmp    _T292;
 // LINE 348:
 _T2e0:
-	__asm        jmp    near ptr 0x00536773;
+	__asm        jmp    _T2e5;
+_T2e5:
 }
 
 // FUNCTION: COPTER_D 0x00536778
@@ -1252,8 +1257,8 @@ _T3f:
 _Ta7:
 	__asm        jmp    _Tac;
 _Tac:
-	__asm        jmp    near ptr 0x0053697E;
-
+	__asm        jmp    _Tb1;
+_Tb1:
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    cptr, eax;
 // LINE 435:
@@ -1296,8 +1301,8 @@ _Tf9:
 	__asm        jne    _T146;
 // LINE 464:
 	__asm        mov    dword ptr [ebp-0x28], 1;
-	__asm        jmp    near ptr 0x00536A0B;
-
+	__asm        jmp    _T13e;
+_T13e:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        jmp    _T20e;
 // LINE 468:
@@ -1321,8 +1326,8 @@ _T15c:
 	this->currentDyObjFire = dyobj;
 // LINE 479:
 	__asm        mov    dword ptr [ebp-0x2C], 1;
-	__asm        jmp    near ptr 0x00536A5B;
-
+	__asm        jmp    _T18e;
+_T18e:
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        jmp    _T20e;
 // LINE 483:
@@ -1351,15 +1356,15 @@ _T1d6:
 	__asm        je     _T1fa;
 // LINE 495:
 	__asm        mov    dword ptr [ebp-0x30], 1;
-	__asm        jmp    near ptr 0x00536ABF;
-
+	__asm        jmp    _T1f2;
+_T1f2:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        jmp    _T20e;
 // LINE 497:
 _T1fa:
 	__asm        mov    dword ptr [ebp-0x34], 0;
-	__asm        jmp    near ptr 0x00536AD3;
-
+	__asm        jmp    _T206;
+_T206:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        jmp    _T20e;
 // LINE 498:
@@ -1468,7 +1473,8 @@ _Tfe:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x2AC], eax;
 // LINE 542:
-	__asm        jmp    near ptr 0x00536C38;
+	__asm        jmp    _T156;
+_T156:
 }
 
 // FUNCTION: COPTER_D 0x00536c3d
@@ -1496,7 +1502,8 @@ void FireEngineClass::SetSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) {
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::SetSaveData;
 // LINE 561:
-	__asm        jmp    near ptr 0x00536CB1;
+	__asm        jmp    _T74;
+_T74:
 }
 
 // FUNCTION: COPTER_D 0x00536cb8

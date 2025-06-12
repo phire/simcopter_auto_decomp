@@ -47,7 +47,8 @@ void DirectDrawError::DisplayError(char * szErrorDescription) {
 	__asm        call   DebugOutput;
 	__asm        add    esp, 8;
 // LINE 22:
-	__asm        jmp    near ptr 0x0042D461;
+	__asm        jmp    _T41;
+_T41:
 }
 
 // FUNCTION: COPTER_D 0x0042d468
@@ -759,7 +760,8 @@ _T7db:
 	__asm        add    esp, 8;
 // LINE 183:
 _T7f5:
-	__asm        jmp    near ptr 0x0042DC62;
+	__asm        jmp    _T7fa;
+_T7fa:
 }
 
 // FUNCTION: COPTER_D 0x0042dc69
@@ -780,7 +782,8 @@ void DirectSoundError::DisplayError(char * szErrorDescription) {
 	__asm        call   DebugOutput;
 	__asm        add    esp, 8;
 // LINE 202:
-	__asm        jmp    near ptr 0x0042DCAA;
+	__asm        jmp    _T41;
+_T41:
 }
 
 // FUNCTION: COPTER_D 0x0042dcb1
@@ -1020,7 +1023,8 @@ _T285:
 	__asm        add    esp, 8;
 // LINE 262:
 _T29f:
-	__asm        jmp    near ptr 0x0042DF55;
+	__asm        jmp    _T2a4;
+_T2a4:
 }
 
 

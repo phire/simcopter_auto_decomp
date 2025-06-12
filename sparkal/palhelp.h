@@ -9,6 +9,7 @@ void SparkalPalette::GetRGBValue(int32_t nIndex, /*packed*/ struct SparkalColor&
 	__asm        mov    ecx, colorValue;
 	__asm        mov    [ecx], eax;
 // LINE 109:
-	__asm        jmp    near ptr 0x00497B72;
+	__asm        jmp    _T22;
+_T22:
 }
 

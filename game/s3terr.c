@@ -159,8 +159,9 @@ _T2f:
 	__asm        jmp    _T2c;
 // LINE 143:
 _T62:
-	__asm        jmp    near ptr 0x00513E7C;
+	__asm        jmp    _T67;
 // LINE 144:
+_T67:
 }
 
 // FUNCTION: COPTER_D 0x00513e81
@@ -4245,8 +4246,9 @@ _T33a0:
 	__asm        shl    G_terr_maxalt, 0x10;
 // LINE 1001:
 	__asm        xor    ax, ax;
-	__asm        jmp    near ptr 0x00517237;
+	__asm        jmp    _T33b6;
 // LINE 1002:
+_T33b6:
 }
 
 // FUNCTION: COPTER_D 0x0051723c
@@ -5182,8 +5184,9 @@ _T62:
 // LINE 1120:
 _T89:
 	__asm        mov    ax, reinterpret_cast<uint16_t>(new_height);
-	__asm        jmp    near ptr 0x00517E58;
+	__asm        jmp    _T92;
 // LINE 1121:
+_T92:
 }
 
 // FUNCTION: COPTER_D 0x00517e5d
@@ -6546,8 +6549,9 @@ _T3d3:
 unsigned char S3TerrGetShadeIndex(long x, long y) {
 // LINE 1804:
 	__asm        xor    al, al;
-	__asm        jmp    near ptr 0x00518E71;
+	__asm        jmp    _T0d;
 // LINE 1805:
+_T0d:
 }
 
 // FUNCTION: COPTER_D 0x00518e76
@@ -6657,8 +6661,9 @@ _Tf9:
 // LINE 1865:
 _T109:
 	__asm        mov    eax, alt;
-	__asm        jmp    near ptr 0x00518F87;
+	__asm        jmp    _T111;
 // LINE 1866:
+_T111:
 }
 
 

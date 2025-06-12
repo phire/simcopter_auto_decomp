@@ -13,6 +13,7 @@ void execute(char * data) {
 	__asm        call   CDebugWindow::HandleDebugCommand;
 // LINE 47:
 _T28:
-	__asm        jmp    near ptr 0x004256FD;
+	__asm        jmp    _T2d;
+_T2d:
 }
 

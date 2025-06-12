@@ -4,6 +4,7 @@ int32_t ButtonWindow::GetState() {
 
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x74];
-	__asm        jmp    near ptr 0x00471D37;
+	__asm        jmp    _T17;
+_T17:
 }
 

@@ -148,9 +148,11 @@ void GetAxis(float XY2Par, float XZ2Par, /*unpacked*/ struct DXZY paraxis, /*unp
 	__asm        fstp   dword ptr [esp];
 	__asm        call   XYIncrementCartesian;
 	__asm        add    esp, 0x24;
-	__asm        jmp    near ptr 0x00562693;
+	__asm        jmp    _T83;
 // LINE 48:
-	__asm        jmp    near ptr 0x00562698;
+_T83:
+	__asm        jmp    _T88;
+_T88:
 }
 
 // FUNCTION: COPTER_D 0x0056269d
@@ -190,7 +192,8 @@ void GetAxes(float XY2Par, float XZ2Par, /*unpacked*/ struct DXZY parmaj, /*unpa
 	__asm        call   GetAxis;
 	__asm        add    esp, 0x1C;
 // LINE 54:
-	__asm        jmp    near ptr 0x005626F0;
+	__asm        jmp    _T53;
+_T53:
 }
 
 // FUNCTION: COPTER_D 0x005626f5
@@ -364,7 +367,8 @@ void XY2Cartesian(float radius, float phi, float psi, float * xres, float * zres
 // LINE 84:
 	yres[0] = transformed.y;
 // LINE 85:
-	__asm        jmp    near ptr 0x005628E6;
+	__asm        jmp    _Te4;
+_Te4:
 }
 
 // FUNCTION: COPTER_D 0x005628eb
@@ -404,7 +408,8 @@ void XYIncrementCartesian(float sinXangle, float cosXangle, float sinYangle, flo
 	__asm        mov    eax, transformed;
 	__asm        fstp   dword ptr [eax+8];
 // LINE 99:
-	__asm        jmp    near ptr 0x0056294B;
+	__asm        jmp    _T60;
+_T60:
 }
 
 // FUNCTION: COPTER_D 0x00562950
@@ -489,7 +494,8 @@ void TransformToAxes(/*unpacked*/ struct DXZY *xAxis, /*unpacked*/ struct DXZY *
 	__asm        mov    eax, real;
 	__asm        fstp   dword ptr [eax+8];
 // LINE 115:
-	__asm        jmp    near ptr 0x00562A2C;
+	__asm        jmp    _Tdc;
+_Tdc:
 }
 
 // FUNCTION: COPTER_D 0x00562a31
@@ -553,7 +559,8 @@ _T60:
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ecx+0xC], eax;
 // LINE 129:
-	__asm        jmp    near ptr 0x00562AC0;
+	__asm        jmp    _T8f;
+_T8f:
 }
 
 // FUNCTION: COPTER_D 0x00562ac5
@@ -631,7 +638,8 @@ _T9b:
 	__asm        mov    [ecx], ax;
 // LINE 146:
 _Tb3:
-	__asm        jmp    near ptr 0x00562B7D;
+	__asm        jmp    _Tb8;
+_Tb8:
 }
 
 // FUNCTION: COPTER_D 0x00562b82
@@ -663,7 +671,8 @@ void IncrementXY(/*unpacked*/ struct Polar *inc, /*unpacked*/ struct Polar *part
 	__asm        call   Keep0to2pi;
 	__asm        add    esp, 4;
 // LINE 156:
-	__asm        jmp    near ptr 0x00562BD6;
+	__asm        jmp    _T54;
+_T54:
 }
 
 // FUNCTION: COPTER_D 0x00562bdb
@@ -700,7 +709,8 @@ _T31:
 	__asm        jmp    _T31;
 // LINE 164:
 _T5c:
-	__asm        jmp    near ptr 0x00562C3C;
+	__asm        jmp    _T61;
+_T61:
 }
 
 // FUNCTION: COPTER_D 0x00562c41
@@ -723,7 +733,8 @@ void Keep0to2pi(/*unpacked*/ struct Polar *polar) {
 	__asm        call   Keep0to2pi;
 	__asm        add    esp, 4;
 // LINE 171:
-	__asm        jmp    near ptr 0x00562C76;
+	__asm        jmp    _T35;
+_T35:
 }
 
 // FUNCTION: COPTER_D 0x00562c7b
@@ -735,8 +746,9 @@ float Keep0to2pi(float radians) {
 	__asm        add    esp, 4;
 // LINE 176:
 	__asm        fld    radians;
-	__asm        jmp    near ptr 0x00562C95;
+	__asm        jmp    _T1a;
 // LINE 177:
+_T1a:
 }
 
 // FUNCTION: COPTER_D 0x00562c9a
@@ -765,7 +777,8 @@ void IncrementFloat(/*unpacked*/ struct Polar inc, /*unpacked*/ struct Polar *pa
 	__asm        call   Keep0to2pi;
 	__asm        add    esp, 4;
 // LINE 185:
-	__asm        jmp    near ptr 0x00562CDC;
+	__asm        jmp    _T42;
+_T42:
 }
 
 // FUNCTION: COPTER_D 0x00562ce1
@@ -858,14 +871,16 @@ _Ted:
 // LINE 203:
 _T104:
 	__asm        fld    res;
-	__asm        jmp    near ptr 0x00562DED;
+	__asm        jmp    _T10c;
 // LINE 204:
+_T10c:
 }
 
 // FUNCTION: COPTER_D 0x00562df2
 void NormalizeTo1(/*unpacked*/ struct DXZY *vec) {
 // LINE 209:
-	__asm        jmp    near ptr 0x00562DFD;
+	__asm        jmp    _T0b;
+_T0b:
 }
 
 // FUNCTION: COPTER_D 0x00562e02
@@ -894,8 +909,9 @@ double GetLength(float x, float z, float y) {
 	__asm        add    esp, 8;
 	__asm        fst    rad;
 // LINE 216:
-	__asm        jmp    near ptr 0x00562E4B;
+	__asm        jmp    _T49;
 // LINE 217:
+_T49:
 }
 
 // FUNCTION: COPTER_D 0x00562e50
@@ -939,7 +955,8 @@ void DrawDirectionDisk(/*unpacked*/ struct Rect *rect, short latint, short lngin
 	__asm        call   DrawDirectionDisk;
 	__asm        add    esp, 0x18;
 // LINE 228:
-	__asm        jmp    near ptr 0x00562EA6;
+	__asm        jmp    _T56;
+_T56:
 }
 
 // FUNCTION: COPTER_D 0x00562eab
@@ -1161,7 +1178,8 @@ _T1f6:
 	__asm        call   DrawDirectionDisk;
 	__asm        add    esp, 0x18;
 // LINE 265:
-	__asm        jmp    near ptr 0x005630CB;
+	__asm        jmp    _T220;
+_T220:
 }
 
 // FUNCTION: COPTER_D 0x005630d0
@@ -1187,7 +1205,8 @@ void DrawDirectionDisk(/*unpacked*/ struct Point centerPt, /*unpacked*/ struct D
 	__asm        call   DrawDirectionDisk;
 	__asm        add    esp, 0x18;
 // LINE 270:
-	__asm        jmp    near ptr 0x00563111;
+	__asm        jmp    _T41;
+_T41:
 }
 
 // FUNCTION: COPTER_D 0x00563116
@@ -1258,27 +1277,31 @@ void DrawDirectionDisk(/*unpacked*/ struct DXZY start, /*unpacked*/ struct DXZY 
 	__asm        call   DrawDirectionDisk;
 	__asm        add    esp, 0x18;
 // LINE 279:
-	__asm        jmp    near ptr 0x005631CB;
+	__asm        jmp    _Tb5;
+_Tb5:
 }
 
 // FUNCTION: COPTER_D 0x005631d0
 void DrawDirectionDisk(/*unpacked*/ struct Point centerPt, float hdist, float vdist, float depth, float rad, unsigned short bigol) {
 // LINE 355:
-	__asm        jmp    near ptr 0x005631DB;
+	__asm        jmp    _T0b;
+_T0b:
 }
 
 // FUNCTION: COPTER_D 0x005631e0
 void Score(/*unpacked*/ struct Point centerPt, /*unpacked*/ struct Point leftOff, /*unpacked*/ struct Point rightOff) {
 // LINE 370:
-	__asm        jmp    near ptr 0x005631EB;
+	__asm        jmp    _T0b;
+_T0b:
 }
 
 // FUNCTION: COPTER_D 0x005631f0
 unsigned short DrawGrid(float phiOff, float psiOff, short cntrh, short cntrv, unsigned short persp, float scale, short thickness, unsigned long edgecolor, unsigned long hatchcolor, enum UseDrawGrid how, short pth, short ptv, short ptdepth) {
 // LINE 498:
 	__asm        mov    ax, 1;
-	__asm        jmp    near ptr 0x005631FF;
+	__asm        jmp    _T0f;
 // LINE 499:
+_T0f:
 }
 
 // FUNCTION: COPTER_D 0x00563204
@@ -1480,7 +1503,8 @@ _T203:
 	__asm        mov    eax, amountToInc;
 	__asm        fstp   dword ptr [eax+8];
 // LINE 565:
-	__asm        jmp    near ptr 0x0056341B;
+	__asm        jmp    _T217;
+_T217:
 }
 
 // FUNCTION: COPTER_D 0x00563420
@@ -1558,7 +1582,8 @@ _Tc2:
 	__asm        mov    ecx, polar.psi;
 	__asm        mov    [eax], ecx;
 // LINE 580:
-	__asm        jmp    near ptr 0x005634F7;
+	__asm        jmp    _Td7;
+_Td7:
 }
 
 // FUNCTION: COPTER_D 0x005634fc
@@ -1747,7 +1772,8 @@ _T1b1:
 	__asm        call   Keep0to2pi;
 	__asm        add    esp, 4;
 // LINE 619:
-	__asm        jmp    near ptr 0x005636D0;
+	__asm        jmp    _T1d4;
+_T1d4:
 }
 
 // FUNCTION: COPTER_D 0x005636d5
@@ -1796,7 +1822,8 @@ _T61:
 	__asm        call   Keep0to2pi;
 	__asm        add    esp, 4;
 // LINE 628:
-	__asm        jmp    near ptr 0x00563747;
+	__asm        jmp    _T72;
+_T72:
 }
 
 // FUNCTION: COPTER_D 0x0056374c
@@ -1848,7 +1875,8 @@ _T71:
 	__asm        call   Keep0to2pi;
 	__asm        add    esp, 4;
 // LINE 636:
-	__asm        jmp    near ptr 0x005637CE;
+	__asm        jmp    _T82;
+_T82:
 }
 
 // FUNCTION: COPTER_D 0x005637d3
@@ -1898,7 +1926,8 @@ void SnapToIncs(/*unpacked*/ struct Polar *polar, short latIncs, short lngIncs, 
 	__asm        call   FillPhiPsiTau;
 	__asm        add    esp, 0x10;
 // LINE 644:
-	__asm        jmp    near ptr 0x00563854;
+	__asm        jmp    _T81;
+_T81:
 }
 
 // FUNCTION: COPTER_D 0x00563859
@@ -2044,7 +2073,8 @@ _T155:
 	trq[0] = 0x0;
 // LINE 670:
 _T16f:
-	__asm        jmp    near ptr 0x005639CD;
+	__asm        jmp    _T174;
+_T174:
 }
 
 // FUNCTION: COPTER_D 0x005639d2
@@ -2080,7 +2110,8 @@ void PolarIncs2Double(short lat, short lng, short trq, short latincs, short lngi
 	__asm        mov    eax, tau;
 	__asm        fstp   dword ptr [eax];
 // LINE 677:
-	__asm        jmp    near ptr 0x00563A3D;
+	__asm        jmp    _T6b;
+_T6b:
 }
 
 // FUNCTION: COPTER_D 0x00563a42
@@ -2143,7 +2174,8 @@ void Polar2Cartesian(float radius, float phi, float psi, float * x, float * z, f
 	__asm        mov    eax, y;
 	__asm        fstp   dword ptr [eax];
 // LINE 693:
-	__asm        jmp    near ptr 0x00563AE7;
+	__asm        jmp    _Ta5;
+_Ta5:
 }
 
 // FUNCTION: COPTER_D 0x00563aec
@@ -2168,7 +2200,8 @@ void Polar2Cartesian(float radius, /*unpacked*/ struct Polar *polar, /*unpacked*
 	__asm        call   Polar2Cartesian;
 	__asm        add    esp, 0x18;
 // LINE 698:
-	__asm        jmp    near ptr 0x00563B22;
+	__asm        jmp    _T36;
+_T36:
 }
 
 // FUNCTION: COPTER_D 0x00563b27
@@ -2275,7 +2308,8 @@ _Td7:
 	__asm        mov    [ecx], ax;
 // LINE 717:
 _Tef:
-	__asm        jmp    near ptr 0x00563C1B;
+	__asm        jmp    _Tf4;
+_Tf4:
 }
 
 // FUNCTION: COPTER_D 0x00563c20
@@ -2294,10 +2328,10 @@ void Cartesian2Polar(float x, float z, float y, float * phi, float * psi, float 
 	__asm        add    esp, 0xC;
 	__asm        fstp   rad;
 // LINE 745:
-	__asm        jmp    near ptr 0x00563C45;
-
-	__asm        jmp    near ptr 0x00563C4A;
-
+	__asm        jmp    _T25;
+_T25:
+	__asm        jmp    _T2a;
+_T2a:
 	__asm        fld    rad;
 	__asm        fabs;
 	__asm        fld    z;
@@ -2362,7 +2396,8 @@ _Tb5:
 	__asm        mov    eax, phi;
 	__asm        fstp   dword ptr [eax];
 // LINE 760:
-	__asm        jmp    near ptr 0x00563CF1;
+	__asm        jmp    _Td1;
+_Td1:
 }
 
 // FUNCTION: COPTER_D 0x00563cf6
@@ -2386,7 +2421,8 @@ void Cartesian2Polar(/*unpacked*/ struct DXZY dxzy, /*unpacked*/ struct Polar *p
 // LINE 765:
 	polar->tau = 0x0;
 // LINE 766:
-	__asm        jmp    near ptr 0x00563D2E;
+	__asm        jmp    _T38;
+_T38:
 }
 
 // FUNCTION: COPTER_D 0x00563d33
@@ -2449,7 +2485,8 @@ void IncrementTorque(float dinc, /*unpacked*/ struct Polar *parentPolar, /*unpac
 	__asm        fadd   parPhiToZero;
 	__asm        fstp   parPolar.phi;
 // LINE 952:
-	__asm        jmp    near ptr 0x00563DCE;
+	__asm        jmp    _T9b;
+_T9b:
 }
 
 // FUNCTION: COPTER_D 0x00563dd3
@@ -2508,7 +2545,8 @@ void IncrementXYTorque(float dinc, /*unpacked*/ struct Polar *parentPolar, /*unp
 	__asm        call   IncrementXY;
 	__asm        add    esp, 8;
 // LINE 963:
-	__asm        jmp    near ptr 0x00563E62;
+	__asm        jmp    _T8f;
+_T8f:
 }
 
 // FUNCTION: COPTER_D 0x00563e67
@@ -2522,8 +2560,9 @@ unsigned short IsPixelFilled(void * __ptr32 h, short x, short y) {
 	__asm        add    esp, 0x10;
 // LINE 1819:
 	__asm        xor    ax, ax;
-	__asm        jmp    near ptr 0x00563E91;
+	__asm        jmp    _T2a;
 // LINE 1820:
+_T2a:
 }
 
 

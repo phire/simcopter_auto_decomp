@@ -520,8 +520,9 @@ _T49:
 // LINE 334:
 _T5a:
 	__asm        mov    eax, color;
-	__asm        jmp    near ptr 0x004D90F5;
+	__asm        jmp    _T62;
 // LINE 335:
+_T62:
 }
 
 // FUNCTION: COPTER_D 0x004d90fa

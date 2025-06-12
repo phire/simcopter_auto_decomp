@@ -101,7 +101,8 @@ _Te0:
 // LINE 45:
 // Block end:
 _T106:
-	__asm        jmp    near ptr 0x0045004B;
+	__asm        jmp    _T10b;
+_T10b:
 }
 
 

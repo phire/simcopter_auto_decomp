@@ -564,8 +564,9 @@ int32_t EmergencyVehicleClass::S3UpdateCar(int32_t id, int32_t status) {
 	__asm        mov    eax, id;
 	__asm        mov    ecx, cars[0][eax*4];
 	__asm        call   EmergencyVehicleClass::UpdateCar;
-	__asm        jmp    near ptr 0x0054154E;
+	__asm        jmp    _T1e;
 // LINE 72:
+_T1e:
 }
 
 // FUNCTION: COPTER_D 0x00541553
@@ -627,8 +628,8 @@ void EmergencyVehicleClass::EmergencyVehicleClass() {
 // LINE 104:
 	this->emergencyLocation.y = 0x0;
 // LINE 105:
-	__asm        jmp    near ptr 0x00541632;
-
+	__asm        jmp    _T5d;
+_T5d:
 	__asm        mov    eax, this;
 }
 
@@ -637,8 +638,8 @@ void EmergencyVehicleClass::~EmergencyVehicleClass() {
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5934C0;
-	__asm        jmp    near ptr 0x00541654;
-
+	__asm        jmp    _T1a;
+_T1a:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::~AutomobileClass;
 }
@@ -928,7 +929,8 @@ _T2b0:
 // LINE 351:
 	this->dispatchPathIndex = 0x0;
 // LINE 352:
-	__asm        jmp    near ptr 0x005419B3;
+	__asm        jmp    _T352;
+_T352:
 }
 
 // FUNCTION: COPTER_D 0x005419ba
@@ -1401,8 +1403,8 @@ _T50e:
 _T594:
 	__asm        jmp    _T599;
 _T599:
-	__asm        jmp    near ptr 0x00541F58;
-
+	__asm        jmp    _T59e;
+_T59e:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x112], eax;
@@ -1445,7 +1447,8 @@ _T599:
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::TurnOnStrobe;
 // LINE 518:
-	__asm        jmp    near ptr 0x00541FED;
+	__asm        jmp    _T633;
+_T633:
 }
 
 // FUNCTION: COPTER_D 0x00541ff4
@@ -1587,7 +1590,8 @@ _T138:
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::InitializePlacedVehicleForDispatch;
 // LINE 554:
-	__asm        jmp    near ptr 0x005421B7;
+	__asm        jmp    _T1c3;
+_T1c3:
 }
 
 // FUNCTION: COPTER_D 0x005421bc
@@ -1595,7 +1599,8 @@ void EmergencyVehicleClass::CancelEmergencyDispatch() {
 // LINE 561:
 	this->emergencyState = 0x2;
 // LINE 562:
-	__asm        jmp    near ptr 0x005421DA;
+	__asm        jmp    _T1e;
+_T1e:
 }
 
 // FUNCTION: COPTER_D 0x005421df
@@ -1605,8 +1610,9 @@ int32_t EmergencyVehicleClass::AreThereMoreSeats(/*packed*/ struct _DYOBJ_INST *
 	__asm        movsx  eax, word ptr [eax+0xE];
 	__asm        mov    eax, cars[0][eax*4];
 	__asm        mov    eax, [eax+0x29C];
-	__asm        jmp    near ptr 0x005421FE;
+	__asm        jmp    _T1f;
 // LINE 569:
+_T1f:
 }
 
 // FUNCTION: COPTER_D 0x00542203
@@ -1616,9 +1622,11 @@ void EmergencyVehicleClass::FillSeat(/*packed*/ struct _DYOBJ_INST *carInst) {
 	__asm        movsx  eax, word ptr [eax+0xE];
 	__asm        mov    eax, cars[0][eax*4];
 	__asm        cmp    dword ptr [eax+0x29C], 2;
-	__asm        jl     near ptr 0x00542224;
+	__asm        jl     _T21;
 // LINE 576:
-	__asm        jmp    near ptr 0x00542229;
+_T21:
+	__asm        jmp    _T26;
+_T26:
 }
 
 // FUNCTION: COPTER_D 0x0054222e
@@ -1680,7 +1688,8 @@ _T8b:
 //   _T74
 // LINE 641:
 _Tb6:
-	__asm        jmp    near ptr 0x005422E9;
+	__asm        jmp    _Tbb;
+_Tbb:
 }
 
 // FUNCTION: COPTER_D 0x005422ee
@@ -1727,7 +1736,8 @@ void EmergencyVehicleClass::PositionIcon() {
 	__asm        call   0x004D8781;
 	__asm        add    esp, 0xC;
 // LINE 670:
-	__asm        jmp    near ptr 0x0054236E;
+	__asm        jmp    _T80;
+_T80:
 }
 
 // FUNCTION: COPTER_D 0x00542373
@@ -1794,7 +1804,8 @@ void EmergencyVehicleClass::ArriveOnScene() {
 // LINE 923:
 	this->emergencyType = 0x0;
 // LINE 924:
-	__asm        jmp    near ptr 0x0054245C;
+	__asm        jmp    _T3f;
+_T3f:
 }
 
 // FUNCTION: COPTER_D 0x00542461
@@ -1821,8 +1832,8 @@ void EmergencyVehicleClass::UnLinkIconFromCell(/*packed*/ struct _GridCoordinate
 _T49:
 	__asm        jmp    _T4e;
 _T4e:
-	__asm        jmp    near ptr 0x005424B4;
-
+	__asm        jmp    _T53;
+_T53:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    cellPointer, eax;
 // LINE 946:
@@ -1912,8 +1923,8 @@ void EmergencyVehicleClass::LinkIconToCell(/*packed*/ struct _GridCoordinates po
 _T49:
 	__asm        jmp    _T4e;
 _T4e:
-	__asm        jmp    near ptr 0x005425C3;
-
+	__asm        jmp    _T53;
+_T53:
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    cellPointer, eax;
 // LINE 987:
@@ -1972,7 +1983,8 @@ void EmergencyVehicleClass::Reset() {
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::Reset;
 // LINE 1330:
-	__asm        jmp    near ptr 0x005426A6;
+	__asm        jmp    _T75;
+_T75:
 }
 
 // FUNCTION: COPTER_D 0x005426ab
@@ -2213,7 +2225,8 @@ _Te5:
 	__asm        jmp    _Te2;
 // LINE 1441:
 _T13a:
-	__asm        jmp    near ptr 0x00542934;
+	__asm        jmp    _T13f;
+_T13f:
 }
 
 // FUNCTION: COPTER_D 0x0054293b
@@ -2277,7 +2290,8 @@ _T7d:
 	__asm        jmp    _T3d;
 // LINE 1473:
 _T91:
-	__asm        jmp    near ptr 0x005429D1;
+	__asm        jmp    _T96;
+_T96:
 }
 
 // FUNCTION: COPTER_D 0x005429d6
@@ -2343,7 +2357,8 @@ _T81:
 	__asm        jmp    _T3d;
 // LINE 1496:
 _T95:
-	__asm        jmp    near ptr 0x00542A70;
+	__asm        jmp    _T9a;
+_T9a:
 }
 
 // FUNCTION: COPTER_D 0x00542a75
@@ -2385,14 +2400,16 @@ void EmergencyVehicleClass::SetSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) {
 // LINE 1520:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 2;
-	__asm        je     near ptr 0x00542B78;
+	__asm        je     _T103;
 // LINE 1534:
+_T103:
 	__asm        mov    eax, sd;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::SetSaveData;
 // LINE 1535:
-	__asm        jmp    near ptr 0x00542B89;
+	__asm        jmp    _T114;
+_T114:
 }
 
 // FUNCTION: COPTER_D 0x00542b90

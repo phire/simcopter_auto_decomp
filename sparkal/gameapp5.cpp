@@ -185,7 +185,8 @@ _T78:
 	nHeight[0] = 0x300;
 // LINE 84:
 _T97:
-	__asm        jmp    near ptr 0x00495BDC;
+	__asm        jmp    _T9c;
+_T9c:
 }
 
 // FUNCTION: COPTER_D 0x00495be3
@@ -193,8 +194,9 @@ int  CGameApp::S3PreRender() {
 	/*bp-0x10*/  /*packed*/ struct SparkalRect rectFill; // 0x10 bytes
 
 // LINE 93:
-	__asm        jmp    near ptr 0x00495BF4;
+	__asm        jmp    _T11;
 // LINE 95:
+_T11:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x42F8], 0x280;
 	__asm        jl     _T171;
@@ -362,8 +364,8 @@ _T236:
 	__asm        mov    ecx, [eax+0xD8];
 	__asm        call   dword ptr [edx];
 // LINE 159:
-	__asm        jmp    near ptr 0x00495E34;
-
+	__asm        jmp    _T251;
+_T251:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xD8];
 	__asm        mov    eax, [eax+0x10];
@@ -419,8 +421,8 @@ _T2e2:
 	__asm        mov    ecx, [eax+0x34];
 	__asm        call   dword ptr [edx];
 // LINE 176:
-	__asm        jmp    near ptr 0x00495EDA;
-
+	__asm        jmp    _T2f7;
+_T2f7:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x34];
 	__asm        mov    eax, [eax+0x10];
@@ -428,8 +430,9 @@ _T2e2:
 // LINE 188:
 _T305:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00495EF2;
+	__asm        jmp    _T30f;
 // LINE 189:
+_T30f:
 }
 
 // FUNCTION: COPTER_D 0x00495ef7
@@ -502,7 +505,8 @@ _T94:
 	__asm        add    esp, 4;
 // LINE 216:
 _Tc3:
-	__asm        jmp    near ptr 0x00495FBF;
+	__asm        jmp    _Tc8;
+_Tc8:
 }
 
 // FUNCTION: COPTER_D 0x00495fc4
@@ -526,12 +530,12 @@ void  CGameApp::DrawCrosshairs(/*packed*/ class CBackBuffer *bufferToDrawTo) {
 	__asm        mov    ecx, bufferToDrawTo;
 	__asm        call   dword ptr [eax];
 // LINE 238:
-	__asm        jmp    near ptr 0x00495FF9;
-
+	__asm        jmp    _T35;
+_T35:
 	pBufferStart = bufferToDrawTo->mpBits;
 // LINE 239:
-	__asm        jmp    near ptr 0x00496007;
-
+	__asm        jmp    _T43;
+_T43:
 	nSurfaceStride = bufferToDrawTo->mStride;
 // LINE 241:
 	__asm        mov    eax, swindow.WindowWide;
@@ -598,7 +602,8 @@ _Tea:
 	__asm        call   dword ptr [eax+4];
 // LINE 257:
 _Tf5:
-	__asm        jmp    near ptr 0x004960BE;
+	__asm        jmp    _Tfa;
+_Tfa:
 }
 
 // FUNCTION: COPTER_D 0x004960c5
@@ -636,19 +641,19 @@ _T42:
 	__asm        mov    [ebp-0x118], eax;
 	__asm        mov    eax, [ebp-0x118];
 	__asm        mov    [ebp-0x114], eax;
-	__asm        jmp    near ptr 0x00496148;
-
-	__asm        jmp    near ptr 0x0049614D;
-
+	__asm        jmp    _T83;
+_T83:
+	__asm        jmp    _T88;
+_T88:
 	__asm        mov    eax, [ebp-0x114];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x114], eax;
-	__asm        jmp    near ptr 0x00496161;
-
-	__asm        jmp    near ptr 0x00496166;
-
-	__asm        jmp    near ptr 0x0049616B;
-
+	__asm        jmp    _T9c;
+_T9c:
+	__asm        jmp    _Ta1;
+_Ta1:
+	__asm        jmp    _Ta6;
+_Ta6:
 	__asm        mov    eax, [ebp-0x114];
 	__asm        cmp    dword ptr [eax+8], 6;
 	__asm        je     _T112;
@@ -809,8 +814,8 @@ _T112:
 // LINE 379:
 // Block end:
 _T292:
-	__asm        jmp    near ptr 0x0049635C;
-
+	__asm        jmp    _T297;
+_T297:
 	__asm        mov    eax, nTextBottom;
 	__asm        push   eax;
 	__asm        mov    eax, this;

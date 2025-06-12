@@ -540,8 +540,9 @@ int32_t CreateAmbulanceInstance(int32_t instanceID) {
 _T24:
 	__asm        xor    eax, eax;
 _T26:
-	__asm        jmp    near ptr 0x005358CB;
+	__asm        jmp    _T2b;
 // LINE 78:
+_T2b:
 }
 
 // FUNCTION: COPTER_D 0x005358d0
@@ -554,8 +555,8 @@ void AmbulanceClass::AmbulanceClass() {
 // LINE 84:
 	this->carModel = 0x11f;
 // LINE 85:
-	__asm        jmp    near ptr 0x005358FC;
-
+	__asm        jmp    _T2c;
+_T2c:
 	__asm        mov    eax, this;
 }
 
@@ -564,8 +565,8 @@ void AmbulanceClass::~AmbulanceClass() {
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593280;
-	__asm        jmp    near ptr 0x0053591E;
-
+	__asm        jmp    _T1a;
+_T1a:
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::~EmergencyVehicleClass;
 }
@@ -754,8 +755,9 @@ unsigned char AmbulanceClass::Dispatch(enum EmergencyType responseType, enum Eme
 	__asm        push   eax;
 	__asm        mov    ecx, gHospitals;
 	__asm        call   Station::DispatchNearestAvailableVehicle;
-	__asm        jmp    near ptr 0x00535B41;
+	__asm        jmp    _T2d;
 // LINE 252:
+_T2d:
 }
 
 // FUNCTION: COPTER_D 0x00535b46
@@ -771,8 +773,9 @@ int32_t AmbulanceClass::IsThisAHospital(unsigned short tileType) {
 _T23:
 	__asm        xor    eax, eax;
 _T25:
-	__asm        jmp    near ptr 0x00535B70;
+	__asm        jmp    _T2a;
 // LINE 259:
+_T2a:
 }
 
 // FUNCTION: COPTER_D 0x00535b75
@@ -824,8 +827,9 @@ _T96:
 _Ta0:
 	__asm        xor    eax, eax;
 _Ta2:
-	__asm        jmp    near ptr 0x00535C1C;
+	__asm        jmp    _Ta7;
 // LINE 266:
+_Ta7:
 }
 
 // FUNCTION: COPTER_D 0x00535c21
@@ -1150,8 +1154,9 @@ int32_t AmbulanceClass::AtScene() {
 // LINE 410:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF6];
-	__asm        jmp    near ptr 0x00535FF4;
+	__asm        jmp    _T1a;
 // LINE 411:
+_T1a:
 }
 
 // FUNCTION: COPTER_D 0x00535ff9
@@ -1162,7 +1167,8 @@ void AmbulanceClass::SetSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) {
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::SetSaveData;
 // LINE 425:
-	__asm        jmp    near ptr 0x00536016;
+	__asm        jmp    _T1d;
+_T1d:
 }
 
 // FUNCTION: COPTER_D 0x0053601d

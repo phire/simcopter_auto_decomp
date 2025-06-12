@@ -39,8 +39,9 @@ int32_t HeliPassengerHasChanged(/*packed*/ struct tagHeliPassengerData *heliPass
 // LINE 30:
 	__asm        mov    eax, heliPassengerData;
 	__asm        mov    eax, [eax];
-	__asm        jmp    near ptr 0x004F9BD0;
+	__asm        jmp    _T10;
 // LINE 31:
+_T10:
 }
 
 // FUNCTION: COPTER_D 0x004f9bd5
@@ -151,8 +152,9 @@ int32_t HeliPassengerCanAdd(/*packed*/ struct tagHeliPassengerData *heliPassenge
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, heliPassengerData;
 	__asm        sub    eax, [ecx+8];
-	__asm        jmp    near ptr 0x004F9D11;
+	__asm        jmp    _T17;
 // LINE 96:
+_T17:
 }
 
 // FUNCTION: COPTER_D 0x004f9d16
@@ -391,8 +393,9 @@ long HeliPassengerCountFreeSeats(/*packed*/ struct tagHeliPassengerData *heliPas
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, heliPassengerData;
 	__asm        sub    eax, [ecx+8];
-	__asm        jmp    near ptr 0x004F9F85;
+	__asm        jmp    _T17;
 // LINE 205:
+_T17:
 }
 
 // FUNCTION: COPTER_D 0x004f9f8a

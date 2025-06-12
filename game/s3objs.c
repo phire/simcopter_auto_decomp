@@ -872,8 +872,9 @@ void S3ObjLinkLowRes() {
 	__asm        call   VRObjAssignLowRes;
 	__asm        add    esp, 8;
 // LINE 827:
-	__asm        jmp    near ptr 0x00519A9F;
+	__asm        jmp    _T524;
 // LINE 831:
+_T524:
 }
 
 // FUNCTION: COPTER_D 0x00519aa4
@@ -7995,8 +7996,9 @@ _T95:
 	__asm        mov    obj, eax;
 // LINE 4170:
 	__asm        cmp    obj, 0;
-	__asm        jne    near ptr 0x0051E754;
+	__asm        jne    _Tba;
 // LINE 4177:
+_Tba:
 	__asm        mov    eax, obj;
 	__asm        push   eax;
 	__asm        call   VRObjSetShading;

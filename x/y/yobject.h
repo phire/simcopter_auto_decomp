@@ -93,7 +93,8 @@ _T5d:
 	__asm        add    esp, 0x10;
 // LINE 765:
 _Ta4:
-	__asm        jmp    near ptr 0x00552189;
+	__asm        jmp    _Ta9;
+_Ta9:
 }
 
 // Function in module: Yobject.obj
@@ -135,8 +136,8 @@ _T32:
 	__asm        add    esp, 0x10;
 // LINE 1027:
 _T76:
-	__asm        jmp    near ptr 0x0055220B;
-
+	__asm        jmp    _T7b;
+_T7b:
 	__asm        mov    eax, obj;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x24;
@@ -161,8 +162,8 @@ _Tac:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _Td2:
-	__asm        jmp    near ptr 0x00552267;
-
+	__asm        jmp    _Td7;
+_Td7:
 	__asm        mov    eax, obj;
 	__asm        mov    eax, [eax+0x3C];
 	__asm        mov    ecx, thing;
@@ -181,8 +182,8 @@ _Td2:
 	__asm        xor    eax, edx;
 	__asm        sub    eax, edx;
 	__asm        mov    [ebp-0xC], ax;
-	__asm        jmp    near ptr 0x0055229F;
-
+	__asm        jmp    _T10f;
+_T10f:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x1E;
@@ -258,7 +259,8 @@ enum TreeSim::ReturnCode cYObject::sIdle(/*unpacked*/ class cYObject *obj, /*unp
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iIdle;
-	__asm        jmp    near ptr 0x0055238B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -271,7 +273,8 @@ enum TreeSim::ReturnCode cYObject::sSetAnim(/*unpacked*/ class cYObject *obj, /*
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iSetAnim;
-	__asm        jmp    near ptr 0x005523AB;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -284,7 +287,8 @@ enum TreeSim::ReturnCode cYObject::sAttr(/*unpacked*/ class cYObject *obj, /*unp
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iAttr;
-	__asm        jmp    near ptr 0x005523CB;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -297,7 +301,8 @@ enum TreeSim::ReturnCode cYObject::sWalk(/*unpacked*/ class cYObject *obj, /*unp
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iWalk;
-	__asm        jmp    near ptr 0x005523EB;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -310,7 +315,8 @@ enum TreeSim::ReturnCode cYObject::sSetBody(/*unpacked*/ class cYObject *obj, /*
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iSetBody;
-	__asm        jmp    near ptr 0x0055240B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -323,7 +329,8 @@ enum TreeSim::ReturnCode cYObject::sRandom(/*unpacked*/ class cYObject *obj, /*u
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iRandom;
-	__asm        jmp    near ptr 0x0055242B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -336,7 +343,8 @@ enum TreeSim::ReturnCode cYObject::sWalkToAndGrabOntoStackObject(/*unpacked*/ cl
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iWalkToAndGrabOntoStackObject;
-	__asm        jmp    near ptr 0x0055244B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -349,7 +357,8 @@ enum TreeSim::ReturnCode cYObject::sUpdateMyMission(/*unpacked*/ class cYObject 
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iUpdateMyMission;
-	__asm        jmp    near ptr 0x0055246B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -362,7 +371,8 @@ enum TreeSim::ReturnCode cYObject::sCheckForTrue(/*unpacked*/ class cYObject *ob
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iCheckForTrue;
-	__asm        jmp    near ptr 0x0055248B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -375,7 +385,8 @@ enum TreeSim::ReturnCode cYObject::sCompareMyLocWith(/*unpacked*/ class cYObject
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iCompareMyLocWith;
-	__asm        jmp    near ptr 0x005524AB;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -388,7 +399,8 @@ enum TreeSim::ReturnCode cYObject::sSelfDecommission(/*unpacked*/ class cYObject
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iSelfDecommission;
-	__asm        jmp    near ptr 0x005524CB;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -401,7 +413,8 @@ enum TreeSim::ReturnCode cYObject::sGetOffMasterObject(/*unpacked*/ class cYObje
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iGetOffMasterObject;
-	__asm        jmp    near ptr 0x005524EB;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -414,7 +427,8 @@ enum TreeSim::ReturnCode cYObject::sTurnTowardsStackObject(/*unpacked*/ class cY
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iTurnTowardsStackObject;
-	__asm        jmp    near ptr 0x0055250B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -427,7 +441,8 @@ enum TreeSim::ReturnCode cYObject::sIsThisLocType(/*unpacked*/ class cYObject *o
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iIsThisLocType;
-	__asm        jmp    near ptr 0x0055252B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -440,7 +455,8 @@ enum TreeSim::ReturnCode cYObject::sIsThisLocTypeNeutral(/*unpacked*/ class cYOb
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iIsThisLocTypeNeutral;
-	__asm        jmp    near ptr 0x0055254B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -453,7 +469,8 @@ enum TreeSim::ReturnCode cYObject::sCanJumpOffHere(/*unpacked*/ class cYObject *
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iCanJumpOffHere;
-	__asm        jmp    near ptr 0x0055256B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -466,7 +483,8 @@ enum TreeSim::ReturnCode cYObject::sCheckForSpotlightInMyCell(/*unpacked*/ class
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iCheckForSpotlightInMyCell;
-	__asm        jmp    near ptr 0x0055258B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -479,7 +497,8 @@ enum TreeSim::ReturnCode cYObject::sIncrementRiotVal(/*unpacked*/ class cYObject
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iIncrementRiotVal;
-	__asm        jmp    near ptr 0x005525AB;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -492,7 +511,8 @@ enum TreeSim::ReturnCode cYObject::sGetSurroundingRiotVal(/*unpacked*/ class cYO
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iGetSurroundingRiotVal;
-	__asm        jmp    near ptr 0x005525CB;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -505,7 +525,8 @@ enum TreeSim::ReturnCode cYObject::sIsThisScurkID(/*unpacked*/ class cYObject *o
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iIsThisScurkID;
-	__asm        jmp    near ptr 0x005525EB;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -518,7 +539,8 @@ enum TreeSim::ReturnCode cYObject::sGosubToInitbhav(/*unpacked*/ class cYObject 
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iGosubToInitbhav;
-	__asm        jmp    near ptr 0x0055260B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -531,7 +553,8 @@ enum TreeSim::ReturnCode cYObject::sAdjustRadiusForRiotVal(/*unpacked*/ class cY
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iAdjustRadiusForRiotVal;
-	__asm        jmp    near ptr 0x0055262B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -544,7 +567,8 @@ enum TreeSim::ReturnCode cYObject::sJoinRiot(/*unpacked*/ class cYObject *obj, /
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iJoinRiot;
-	__asm        jmp    near ptr 0x0055264B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -557,7 +581,8 @@ enum TreeSim::ReturnCode cYObject::sSetDirection(/*unpacked*/ class cYObject *ob
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iSetDirection;
-	__asm        jmp    near ptr 0x0055266B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -570,7 +595,8 @@ enum TreeSim::ReturnCode cYObject::sThrowProjectile(/*unpacked*/ class cYObject 
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iThrowProjectile;
-	__asm        jmp    near ptr 0x0055268B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -583,7 +609,8 @@ enum TreeSim::ReturnCode cYObject::sTurnFromStackObject(/*unpacked*/ class cYObj
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iTurnFromStackObject;
-	__asm        jmp    near ptr 0x005526AB;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -596,7 +623,8 @@ enum TreeSim::ReturnCode cYObject::sTurnFromLastHitter(/*unpacked*/ class cYObje
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iTurnFromLastHitter;
-	__asm        jmp    near ptr 0x005526CB;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -609,7 +637,8 @@ enum TreeSim::ReturnCode cYObject::sTurnTowardsLastHitter(/*unpacked*/ class cYO
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iTurnTowardsLastHitter;
-	__asm        jmp    near ptr 0x005526EB;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -622,7 +651,8 @@ enum TreeSim::ReturnCode cYObject::sGetOutOfRoadEtc(/*unpacked*/ class cYObject 
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iGetOutOfRoadEtc;
-	__asm        jmp    near ptr 0x0055270B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -635,7 +665,8 @@ enum TreeSim::ReturnCode cYObject::sGenerateMedevacAndSetSelfAsVictim(/*unpacked
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iGenerateMedevacAndSetSelfAsVictim;
-	__asm        jmp    near ptr 0x0055272B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -648,7 +679,8 @@ enum TreeSim::ReturnCode cYObject::sTurnToNearbyFire(/*unpacked*/ class cYObject
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iTurnToNearbyFire;
-	__asm        jmp    near ptr 0x0055274B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -661,7 +693,8 @@ enum TreeSim::ReturnCode cYObject::sDie(/*unpacked*/ class cYObject *obj, /*unpa
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iDie;
-	__asm        jmp    near ptr 0x0055276B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -674,7 +707,8 @@ enum TreeSim::ReturnCode cYObject::sWalkToStackObject(/*unpacked*/ class cYObjec
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iWalkToStackObject;
-	__asm        jmp    near ptr 0x0055278B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -687,7 +721,8 @@ enum TreeSim::ReturnCode cYObject::sPutObjIntoTreeNum(/*unpacked*/ class cYObjec
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iPutObjIntoTreeNum;
-	__asm        jmp    near ptr 0x005527AB;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -700,7 +735,8 @@ enum TreeSim::ReturnCode cYObject::sVisitOz(/*unpacked*/ class cYObject *obj, /*
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iVisitOz;
-	__asm        jmp    near ptr 0x005527CB;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -713,7 +749,8 @@ enum TreeSim::ReturnCode cYObject::sMakeMyMedevacVictimVisible(/*unpacked*/ clas
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iMakeMyMedevacVictimVisible;
-	__asm        jmp    near ptr 0x005527EB;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -726,7 +763,8 @@ enum TreeSim::ReturnCode cYObject::sMakeMyMedevacVictimInvisible(/*unpacked*/ cl
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iMakeMyMedevacVictimInvisible;
-	__asm        jmp    near ptr 0x0055280B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -739,7 +777,8 @@ enum TreeSim::ReturnCode cYObject::sMakeMeMasterOfStackObject(/*unpacked*/ class
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iMakeMeMasterOfStackObject;
-	__asm        jmp    near ptr 0x0055282B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -752,7 +791,8 @@ enum TreeSim::ReturnCode cYObject::sMakeMyStackObjectVisitOz(/*unpacked*/ class 
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iMakeMyStackObjectVisitOz;
-	__asm        jmp    near ptr 0x0055284B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -765,7 +805,8 @@ enum TreeSim::ReturnCode cYObject::sPutTotedMedVicOnStackObject(/*unpacked*/ cla
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iPutTotedMedVicOnStackObject;
-	__asm        jmp    near ptr 0x0055286B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -778,7 +819,8 @@ enum TreeSim::ReturnCode cYObject::sTakeAnyMedVicOffStackObject(/*unpacked*/ cla
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iTakeAnyMedVicOffStackObject;
-	__asm        jmp    near ptr 0x0055288B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -791,7 +833,8 @@ enum TreeSim::ReturnCode cYObject::sGetOnStackObject(/*unpacked*/ class cYObject
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iGetOnStackObject;
-	__asm        jmp    near ptr 0x005528AB;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -804,7 +847,8 @@ enum TreeSim::ReturnCode cYObject::sUpdateStackVictimToted(/*unpacked*/ class cY
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iUpdateStackVictimToted;
-	__asm        jmp    near ptr 0x005528CB;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -817,7 +861,8 @@ enum TreeSim::ReturnCode cYObject::sGetNumSpacesOnStackObject(/*unpacked*/ class
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iGetNumSpacesOnStackObject;
-	__asm        jmp    near ptr 0x005528EB;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -830,7 +875,8 @@ enum TreeSim::ReturnCode cYObject::sDropToted(/*unpacked*/ class cYObject *obj, 
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iDropToted;
-	__asm        jmp    near ptr 0x0055290B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -843,7 +889,8 @@ enum TreeSim::ReturnCode cYObject::sUpdateStackVictimPickedUp(/*unpacked*/ class
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iUpdateStackVictimPickedUp;
-	__asm        jmp    near ptr 0x0055292B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -856,7 +903,8 @@ enum TreeSim::ReturnCode cYObject::sCloseToHeli(/*unpacked*/ class cYObject *obj
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iCloseToHeli;
-	__asm        jmp    near ptr 0x0055294B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -869,7 +917,8 @@ enum TreeSim::ReturnCode cYObject::sSetMyExpression(/*unpacked*/ class cYObject 
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iSetMyExpression;
-	__asm        jmp    near ptr 0x0055296B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -882,7 +931,8 @@ enum TreeSim::ReturnCode cYObject::sGetHeliSpeedPlusDamage(/*unpacked*/ class cY
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iGetHeliSpeedPlusDamage;
-	__asm        jmp    near ptr 0x0055298B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -895,7 +945,8 @@ enum TreeSim::ReturnCode cYObject::sIsThisCellSafe(/*unpacked*/ class cYObject *
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iIsThisCellSafe;
-	__asm        jmp    near ptr 0x005529AB;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -908,7 +959,8 @@ enum TreeSim::ReturnCode cYObject::sPlaySound(/*unpacked*/ class cYObject *obj, 
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iPlaySound;
-	__asm        jmp    near ptr 0x005529CB;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -921,7 +973,8 @@ enum TreeSim::ReturnCode cYObject::sGetOnHeliIfHarnessRaised(/*unpacked*/ class 
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iGetOnHeliIfHarnessRaised;
-	__asm        jmp    near ptr 0x005529EB;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -934,7 +987,8 @@ enum TreeSim::ReturnCode cYObject::sAmIOnHeli(/*unpacked*/ class cYObject *obj, 
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iAmIOnHeli;
-	__asm        jmp    near ptr 0x00552A0B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -947,7 +1001,8 @@ enum TreeSim::ReturnCode cYObject::sThrowFieryProjectile(/*unpacked*/ class cYOb
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iThrowFieryProjectile;
-	__asm        jmp    near ptr 0x00552A2B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -960,7 +1015,8 @@ enum TreeSim::ReturnCode cYObject::sTellStartingObjectTrueOrFalse(/*unpacked*/ c
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iTellStartingObjectTrueOrFalse;
-	__asm        jmp    near ptr 0x00552A4B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -973,7 +1029,8 @@ enum TreeSim::ReturnCode cYObject::sPutMyCarInStack(/*unpacked*/ class cYObject 
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iPutMyCarInStack;
-	__asm        jmp    near ptr 0x00552A6B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // Function in module: Yobject.obj
@@ -986,6 +1043,7 @@ enum TreeSim::ReturnCode cYObject::sDoIHaveAMaster(/*unpacked*/ class cYObject *
 	__asm        push   eax;
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::iDoIHaveAMaster;
-	__asm        jmp    near ptr 0x00552A8B;
+	__asm        jmp    _T1b;
+_T1b:
 }
 

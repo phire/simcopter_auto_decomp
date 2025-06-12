@@ -7111,8 +7111,9 @@ _T495d:
 // LINE 2430:
 _T4962:
 	__asm        xor    ax, ax;
-	__asm        jmp    near ptr 0x0050EF49;
+	__asm        jmp    _T496a;
 // LINE 2431:
+_T496a:
 }
 
 // FUNCTION: COPTER_D 0x0050ef4e
@@ -12322,8 +12323,9 @@ _T9c:
 // LINE 4955:
 _Ta1:
 	__asm        mov    ax, minalt;
-	__asm        jmp    near ptr 0x00512AF0;
+	__asm        jmp    _Taa;
 // LINE 4956:
+_Taa:
 }
 
 // FUNCTION: COPTER_D 0x00512af5

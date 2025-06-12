@@ -12,15 +12,16 @@
 // FUNCTION: COPTER_D 0x00431b60
 int32_t IsEventSet(int32_t nEvent) {
 // LINE 23:
-	__asm        jmp    near ptr 0x00431B6B;
-
+	__asm        jmp    _T0b;
+_T0b:
 	__asm        mov    eax, nEvent;
 	__asm        mov    ecx, gGameApp;
 	__asm        xor    edx, edx;
 	__asm        mov    dl, [ecx+eax*2+0x110];
 	__asm        mov    eax, edx;
-	__asm        jmp    near ptr 0x00431B84;
+	__asm        jmp    _T24;
 // LINE 24:
+_T24:
 }
 
 // FUNCTION: COPTER_D 0x00431b89
@@ -31,8 +32,8 @@ _T06:
 	__asm        cmp    nEventEnd, eax;
 	__asm        jl     _T41;
 // LINE 34:
-	__asm        jmp    near ptr 0x00431BA0;
-
+	__asm        jmp    _T17;
+_T17:
 	__asm        mov    eax, nEventStart;
 	__asm        mov    ecx, gGameApp;
 	__asm        xor    edx, edx;
@@ -58,13 +59,14 @@ _T48:
 // FUNCTION: COPTER_D 0x00431bd6
 long GetJoystickValue(int32_t nCommand) {
 // LINE 47:
-	__asm        jmp    near ptr 0x00431BE1;
-
+	__asm        jmp    _T0b;
+_T0b:
 	__asm        mov    eax, nCommand;
 	__asm        mov    ecx, gGameApp;
 	__asm        mov    eax, [ecx+eax*4+0xA28];
-	__asm        jmp    near ptr 0x00431BF6;
+	__asm        jmp    _T20;
 // LINE 48:
+_T20:
 }
 
 // FUNCTION: COPTER_D 0x00431bfb
@@ -76,8 +78,8 @@ long GetJoystickValueEither(int32_t nCommand1, int32_t nCommand2) {
 	__asm        mov    ecx, gGameApp;
 	__asm        mov    eax, [ecx+eax*4+0xA28];
 	__asm        mov    lReturnValue, eax;
-	__asm        jmp    near ptr 0x00431C1C;
-
+	__asm        jmp    _T21;
+_T21:
 	__asm        cmp    lReturnValue, 0;
 	__asm        je     _T33;
 // LINE 59:
@@ -85,8 +87,8 @@ long GetJoystickValueEither(int32_t nCommand1, int32_t nCommand2) {
 	__asm        jmp    _T4d;
 // LINE 60:
 _T33:
-	__asm        jmp    near ptr 0x00431C33;
-
+	__asm        jmp    _T38;
+_T38:
 	__asm        mov    eax, nCommand2;
 	__asm        mov    ecx, gGameApp;
 	__asm        mov    eax, [ecx+eax*4+0xA28];

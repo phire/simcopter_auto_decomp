@@ -415,8 +415,9 @@ int32_t VRGetResObjectCnt(/*packed*/ struct VRResource *res) {
 // LINE 248:
 	__asm        mov    eax, geo;
 	__asm        mov    eax, [eax+0x10];
-	__asm        jmp    near ptr 0x004D23E1;
+	__asm        jmp    _T1a;
 // LINE 250:
+_T1a:
 }
 
 // FUNCTION: COPTER_D 0x004d23e6
@@ -429,8 +430,9 @@ int32_t VRGetResObject(/*packed*/ struct VRResource *res, int32_t i) {
 	__asm        mov    eax, i;
 	__asm        mov    ecx, geo;
 	__asm        mov    eax, [ecx+eax*4+0x18];
-	__asm        jmp    near ptr 0x004D2404;
+	__asm        jmp    _T1e;
 // LINE 267:
+_T1e:
 }
 
 // FUNCTION: COPTER_D 0x004d2409
@@ -1012,8 +1014,9 @@ int32_t VRGetDyObjAlt(int32_t obj, int32_t *dymat[4][4], /*packed*/ struct Point
 	__asm        push   eax;
 	__asm        call   VRGetObjAlt;
 	__asm        add    esp, 0x20;
-	__asm        jmp    near ptr 0x004D2B23;
+	__asm        jmp    _T5d;
 // LINE 744:
+_T5d:
 }
 
 // FUNCTION: COPTER_D 0x004d2b28
@@ -2887,8 +2890,9 @@ _T59:
 // LINE 1724:
 _T5e:
 	__asm        mov    eax, maxy;
-	__asm        jmp    near ptr 0x004D3F03;
+	__asm        jmp    _T66;
 // LINE 1725:
+_T66:
 }
 
 // FUNCTION: COPTER_D 0x004d3f08
@@ -3857,8 +3861,9 @@ void VRObjAssignLowRes(int32_t dest, int32_t src) {
 // LINE 2206:
 	destptr->MiscReg1 = src;
 // LINE 2207:
-	__asm        jmp    near ptr 0x004D4969;
+	__asm        jmp    _T1d;
 // LINE 2208:
+_T1d:
 }
 
 // FUNCTION: COPTER_D 0x004d496e
@@ -4247,8 +4252,9 @@ int32_t VRGetObjDupMemReq(int32_t obj) {
 	__asm        mov    eax, size3;
 	__asm        add    eax, size2;
 	__asm        add    eax, size1;
-	__asm        jmp    near ptr 0x004D4DBA;
+	__asm        jmp    _T47;
 // LINE 2441:
+_T47:
 }
 
 // FUNCTION: COPTER_D 0x004d4dbf

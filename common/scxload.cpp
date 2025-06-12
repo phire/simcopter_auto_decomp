@@ -307,16 +307,16 @@ void cLZAPFileBitStream::cLZAPFileBitStream() {
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5923F8;
-	__asm        jmp    near ptr 0x004CB89A;
-
+	__asm        jmp    _T1a;
+_T1a:
 	this-><cLZAPFileBitStream+0x00> = 0x592418;
 // LINE 86:
 	this->m_file = 0x0;
 // LINE 87:
 	this->m_mark = 0x0;
 // LINE 88:
-	__asm        jmp    near ptr 0x004CB8BC;
-
+	__asm        jmp    _T3c;
+_T3c:
 	__asm        mov    eax, this;
 }
 
@@ -341,7 +341,8 @@ void cLZAPFileBitStream::~cLZAPFileBitStream() {
 	__asm        jmp    _T3f;
 // LINE 92:
 _T3f:
-	__asm        jmp    near ptr 0x004CB908;
+	__asm        jmp    _T44;
+_T44:
 }
 
 // FUNCTION: COPTER_D 0x004cb90d
@@ -379,8 +380,8 @@ _T36:
 	__asm        mov    _fmode, 0x8000;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    byte ptr [eax+4], 0;
-	__asm        jmp    near ptr 0x004CB996;
-
+	__asm        jmp    _T89;
+_T89:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
@@ -397,8 +398,9 @@ _Ta1:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+4];
 	__asm        call   PFile::Open;
-	__asm        jmp    near ptr 0x004CB9CB;
+	__asm        jmp    _Tbe;
 // LINE 99:
+_Tbe:
 }
 
 // FUNCTION: COPTER_D 0x004cb9d2
@@ -422,7 +424,8 @@ void cLZAPFileBitStream::Close() {
 _T36:
 	this->m_file = 0x0;
 // LINE 105:
-	__asm        jmp    near ptr 0x004CBA17;
+	__asm        jmp    _T45;
+_T45:
 }
 
 // FUNCTION: COPTER_D 0x004cba1c
@@ -450,8 +453,8 @@ _T45:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x004CBA6F;
-
+	__asm        jmp    _T53;
+_T53:
 	__asm        mov    eax, nBytes;
 	__asm        push   eax;
 	__asm        mov    eax, buffer;
@@ -495,8 +498,8 @@ _T45:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x004CBAEF;
-
+	__asm        jmp    _T53;
+_T53:
 	__asm        mov    eax, nBytes;
 	__asm        push   eax;
 	__asm        mov    eax, buffer;
@@ -535,7 +538,8 @@ void cLZAPFileBitStream::Rewind() {
 	__asm        jmp    _T3d;
 // LINE 125:
 _T3d:
-	__asm        jmp    near ptr 0x004CBB5E;
+	__asm        jmp    _T42;
+_T42:
 }
 
 // FUNCTION: COPTER_D 0x004cbb63
@@ -562,7 +566,8 @@ void cLZAPFileBitStream::RewindToMark() {
 	__asm        jmp    _T48;
 // LINE 131:
 _T48:
-	__asm        jmp    near ptr 0x004CBBB0;
+	__asm        jmp    _T4d;
+_T4d:
 }
 
 // FUNCTION: COPTER_D 0x004cbbb5
@@ -575,8 +580,8 @@ void cLZAPFileBitStream::Mark() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-4], eax;
-	__asm        jmp    near ptr 0x004CBBDC;
-
+	__asm        jmp    _T27;
+_T27:
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax+0x108];
 	__asm        push   eax;
@@ -591,7 +596,8 @@ _T44:
 	this->m_mark = 0x0;
 // LINE 138:
 _T4e:
-	__asm        jmp    near ptr 0x004CBC08;
+	__asm        jmp    _T53;
+_T53:
 }
 
 // FUNCTION: COPTER_D 0x004cbc0d
@@ -616,7 +622,8 @@ _T30:
 // FUNCTION: COPTER_D 0x004cbc42
 void cLZAPFileBitStream::FreeAll() {
 
-	__asm        jmp    near ptr 0x004CBC53;
+	__asm        jmp    _T11;
+_T11:
 }
 
 // FUNCTION: COPTER_D 0x004cbc58
@@ -630,7 +637,8 @@ void SCXReadBudget(/*packed*/ class cGZXBitstream *AStream, unsigned char * data
 	__asm        mov    ecx, AStream;
 	__asm        call   dword ptr [eax];
 // LINE 172:
-	__asm        jmp    near ptr 0x004CBC76;
+	__asm        jmp    _T1e;
+_T1e:
 }
 
 // FUNCTION: COPTER_D 0x004cbc7b
@@ -644,7 +652,8 @@ void SCXReadGraphData(/*packed*/ class cGZXBitstream *AStream, unsigned char * d
 	__asm        mov    ecx, AStream;
 	__asm        call   dword ptr [eax];
 // LINE 186:
-	__asm        jmp    near ptr 0x004CBC99;
+	__asm        jmp    _T1e;
+_T1e:
 }
 
 // FUNCTION: COPTER_D 0x004cbc9e
@@ -712,7 +721,8 @@ void SCXReadPlayer(/*packed*/ class cGZXBitstream *AStream, unsigned char * data
 	__asm        call   SCXReadGraphData;
 	__asm        add    esp, 8;
 // LINE 205:
-	__asm        jmp    near ptr 0x004CBD33;
+	__asm        jmp    _T95;
+_T95:
 }
 
 // FUNCTION: COPTER_D 0x004cbd38
@@ -958,7 +968,8 @@ _T221:
 	__asm        jmp    _T168;
 // LINE 258:
 _T286:
-	__asm        jmp    near ptr 0x004CBFC3;
+	__asm        jmp    _T28b;
+_T28b:
 }
 
 // FUNCTION: COPTER_D 0x004cbfc8
@@ -985,7 +996,8 @@ void SCXReadContracts(/*packed*/ class cGZXBitstream *AStream, unsigned char * d
 	__asm        mov    ecx, AStream;
 	__asm        call   dword ptr [eax];
 // LINE 284:
-	__asm        jmp    near ptr 0x004CBFFE;
+	__asm        jmp    _T36;
+_T36:
 }
 
 // FUNCTION: COPTER_D 0x004cc003
@@ -1051,8 +1063,8 @@ _T6a:
 	__asm        mov    memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>, 0x592440;
 	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::FreeAll;
-	__asm        jmp    near ptr 0x004CC0C7;
-
+	__asm        jmp    _Tc4;
+_Tc4:
 	__asm        lea    ecx, memstrm.nodeList.start;
 	__asm        call   vector<tGZXBitstreamNode>::~vector<tGZXBitstreamNode>;
 	__asm        lea    ecx, fileStream<cLZAPFileBitStream+0x00>;
@@ -1063,17 +1075,18 @@ _T6a:
 _Te2:
 	__asm        mov    memstrm.curPos, 0;
 	__asm        mov    memstrm.nodeNo, 0;
-	__asm        jmp    near ptr 0x004CC0F7;
+	__asm        jmp    _Tf4;
 // LINE 317:
+_Tf4:
 	__asm        mov    dword ptr [ebp-0x594], 0;
 _Tfe:
 	__asm        cmp    dword ptr [ebp-0x594], 4;
 	__asm        jae    _T1a9;
 
-	__asm        jmp    near ptr 0x004CC113;
-
-	__asm        jmp    near ptr 0x004CC118;
-
+	__asm        jmp    _T110;
+_T110:
+	__asm        jmp    _T115;
+_T115:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -1081,10 +1094,10 @@ _Tfe:
 
 	__asm        jmp    _T1ae;
 _T12b:
-	__asm        jmp    near ptr 0x004CC133;
-
-	__asm        jmp    near ptr 0x004CC138;
-
+	__asm        jmp    _T130;
+_T130:
+	__asm        jmp    _T135;
+_T135:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
@@ -1092,10 +1105,10 @@ _T12b:
 	__asm        ja     _T174;
 
 	__asm        inc    memstrm.nodeNo;
-	__asm        jmp    near ptr 0x004CC155;
-
-	__asm        jmp    near ptr 0x004CC15A;
-
+	__asm        jmp    _T152;
+_T152:
+	__asm        jmp    _T157;
+_T157:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -1105,10 +1118,10 @@ _T12b:
 _T16d:
 	memstrm.curPos = 0x0;
 _T174:
-	__asm        jmp    near ptr 0x004CC17C;
-
-	__asm        jmp    near ptr 0x004CC181;
-
+	__asm        jmp    _T179;
+_T179:
+	__asm        jmp    _T17e;
+_T17e:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    eax, [ecx+eax*8];
@@ -1169,10 +1182,10 @@ _T22e:
 	__asm        cmp    dword ptr [ebp-0x598], 0x20;
 	__asm        jae    _T2db;
 
-	__asm        jmp    near ptr 0x004CC243;
-
-	__asm        jmp    near ptr 0x004CC248;
-
+	__asm        jmp    _T240;
+_T240:
+	__asm        jmp    _T245;
+_T245:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -1180,10 +1193,10 @@ _T22e:
 
 	__asm        jmp    _T2e0;
 _T25b:
-	__asm        jmp    near ptr 0x004CC263;
-
-	__asm        jmp    near ptr 0x004CC268;
-
+	__asm        jmp    _T260;
+_T260:
+	__asm        jmp    _T265;
+_T265:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
@@ -1191,10 +1204,10 @@ _T25b:
 	__asm        ja     _T2a4;
 
 	__asm        inc    memstrm.nodeNo;
-	__asm        jmp    near ptr 0x004CC285;
-
-	__asm        jmp    near ptr 0x004CC28A;
-
+	__asm        jmp    _T282;
+_T282:
+	__asm        jmp    _T287;
+_T287:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -1204,10 +1217,10 @@ _T25b:
 _T29d:
 	memstrm.curPos = 0x0;
 _T2a4:
-	__asm        jmp    near ptr 0x004CC2AC;
-
-	__asm        jmp    near ptr 0x004CC2B1;
-
+	__asm        jmp    _T2a9;
+_T2a9:
+	__asm        jmp    _T2ae;
+_T2ae:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    eax, [ecx+eax*8];
@@ -1228,10 +1241,10 @@ _T2ea:
 	__asm        cmp    dword ptr [ebp-0x5A0], 4;
 	__asm        jae    _T395;
 
-	__asm        jmp    near ptr 0x004CC2FF;
-
-	__asm        jmp    near ptr 0x004CC304;
-
+	__asm        jmp    _T2fc;
+_T2fc:
+	__asm        jmp    _T301;
+_T301:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -1239,10 +1252,10 @@ _T2ea:
 
 	__asm        jmp    _T39a;
 _T317:
-	__asm        jmp    near ptr 0x004CC31F;
-
-	__asm        jmp    near ptr 0x004CC324;
-
+	__asm        jmp    _T31c;
+_T31c:
+	__asm        jmp    _T321;
+_T321:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
@@ -1250,10 +1263,10 @@ _T317:
 	__asm        ja     _T360;
 
 	__asm        inc    memstrm.nodeNo;
-	__asm        jmp    near ptr 0x004CC341;
-
-	__asm        jmp    near ptr 0x004CC346;
-
+	__asm        jmp    _T33e;
+_T33e:
+	__asm        jmp    _T343;
+_T343:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -1263,10 +1276,10 @@ _T317:
 _T359:
 	memstrm.curPos = 0x0;
 _T360:
-	__asm        jmp    near ptr 0x004CC368;
-
-	__asm        jmp    near ptr 0x004CC36D;
-
+	__asm        jmp    _T365;
+_T365:
+	__asm        jmp    _T36a;
+_T36a:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    eax, [ecx+eax*8];
@@ -1286,10 +1299,10 @@ _T3a4:
 	__asm        cmp    dword ptr [ebp-0x5A4], 0x10;
 	__asm        jae    _T44e;
 
-	__asm        jmp    near ptr 0x004CC3B9;
-
-	__asm        jmp    near ptr 0x004CC3BE;
-
+	__asm        jmp    _T3b6;
+_T3b6:
+	__asm        jmp    _T3bb;
+_T3bb:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -1297,10 +1310,10 @@ _T3a4:
 
 	__asm        jmp    _T453;
 _T3d1:
-	__asm        jmp    near ptr 0x004CC3D9;
-
-	__asm        jmp    near ptr 0x004CC3DE;
-
+	__asm        jmp    _T3d6;
+_T3d6:
+	__asm        jmp    _T3db;
+_T3db:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
@@ -1308,10 +1321,10 @@ _T3d1:
 	__asm        ja     _T41a;
 
 	__asm        inc    memstrm.nodeNo;
-	__asm        jmp    near ptr 0x004CC3FB;
-
-	__asm        jmp    near ptr 0x004CC400;
-
+	__asm        jmp    _T3f8;
+_T3f8:
+	__asm        jmp    _T3fd;
+_T3fd:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -1321,10 +1334,10 @@ _T3d1:
 _T413:
 	memstrm.curPos = 0x0;
 _T41a:
-	__asm        jmp    near ptr 0x004CC422;
-
-	__asm        jmp    near ptr 0x004CC427;
-
+	__asm        jmp    _T41f;
+_T41f:
+	__asm        jmp    _T424;
+_T424:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    eax, [ecx+eax*8];
@@ -1344,10 +1357,10 @@ _T45d:
 	__asm        cmp    dword ptr [ebp-0x5A8], 0x22;
 	__asm        jae    _T507;
 
-	__asm        jmp    near ptr 0x004CC472;
-
-	__asm        jmp    near ptr 0x004CC477;
-
+	__asm        jmp    _T46f;
+_T46f:
+	__asm        jmp    _T474;
+_T474:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -1355,10 +1368,10 @@ _T45d:
 
 	__asm        jmp    _T50c;
 _T48a:
-	__asm        jmp    near ptr 0x004CC492;
-
-	__asm        jmp    near ptr 0x004CC497;
-
+	__asm        jmp    _T48f;
+_T48f:
+	__asm        jmp    _T494;
+_T494:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
@@ -1366,10 +1379,10 @@ _T48a:
 	__asm        ja     _T4d3;
 
 	__asm        inc    memstrm.nodeNo;
-	__asm        jmp    near ptr 0x004CC4B4;
-
-	__asm        jmp    near ptr 0x004CC4B9;
-
+	__asm        jmp    _T4b1;
+_T4b1:
+	__asm        jmp    _T4b6;
+_T4b6:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -1379,10 +1392,10 @@ _T48a:
 _T4cc:
 	memstrm.curPos = 0x0;
 _T4d3:
-	__asm        jmp    near ptr 0x004CC4DB;
-
-	__asm        jmp    near ptr 0x004CC4E0;
-
+	__asm        jmp    _T4d8;
+_T4d8:
+	__asm        jmp    _T4dd;
+_T4dd:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    eax, [ecx+eax*8];
@@ -1402,10 +1415,10 @@ _T516:
 	__asm        cmp    dword ptr [ebp-0x5AC], 4;
 	__asm        jae    _T5c0;
 
-	__asm        jmp    near ptr 0x004CC52B;
-
-	__asm        jmp    near ptr 0x004CC530;
-
+	__asm        jmp    _T528;
+_T528:
+	__asm        jmp    _T52d;
+_T52d:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -1413,10 +1426,10 @@ _T516:
 
 	__asm        jmp    _T5c5;
 _T543:
-	__asm        jmp    near ptr 0x004CC54B;
-
-	__asm        jmp    near ptr 0x004CC550;
-
+	__asm        jmp    _T548;
+_T548:
+	__asm        jmp    _T54d;
+_T54d:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
@@ -1424,10 +1437,10 @@ _T543:
 	__asm        ja     _T58c;
 
 	__asm        inc    memstrm.nodeNo;
-	__asm        jmp    near ptr 0x004CC56D;
-
-	__asm        jmp    near ptr 0x004CC572;
-
+	__asm        jmp    _T56a;
+_T56a:
+	__asm        jmp    _T56f;
+_T56f:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -1437,10 +1450,10 @@ _T543:
 _T585:
 	memstrm.curPos = 0x0;
 _T58c:
-	__asm        jmp    near ptr 0x004CC594;
-
-	__asm        jmp    near ptr 0x004CC599;
-
+	__asm        jmp    _T591;
+_T591:
+	__asm        jmp    _T596;
+_T596:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    eax, [ecx+eax*8];
@@ -1460,10 +1473,10 @@ _T5cf:
 	__asm        cmp    dword ptr [ebp-0x5B0], 4;
 	__asm        jae    _T679;
 
-	__asm        jmp    near ptr 0x004CC5E4;
-
-	__asm        jmp    near ptr 0x004CC5E9;
-
+	__asm        jmp    _T5e1;
+_T5e1:
+	__asm        jmp    _T5e6;
+_T5e6:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -1471,10 +1484,10 @@ _T5cf:
 
 	__asm        jmp    _T67e;
 _T5fc:
-	__asm        jmp    near ptr 0x004CC604;
-
-	__asm        jmp    near ptr 0x004CC609;
-
+	__asm        jmp    _T601;
+_T601:
+	__asm        jmp    _T606;
+_T606:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
@@ -1482,10 +1495,10 @@ _T5fc:
 	__asm        ja     _T645;
 
 	__asm        inc    memstrm.nodeNo;
-	__asm        jmp    near ptr 0x004CC626;
-
-	__asm        jmp    near ptr 0x004CC62B;
-
+	__asm        jmp    _T623;
+_T623:
+	__asm        jmp    _T628;
+_T628:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -1495,10 +1508,10 @@ _T5fc:
 _T63e:
 	memstrm.curPos = 0x0;
 _T645:
-	__asm        jmp    near ptr 0x004CC64D;
-
-	__asm        jmp    near ptr 0x004CC652;
-
+	__asm        jmp    _T64a;
+_T64a:
+	__asm        jmp    _T64f;
+_T64f:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    eax, [ecx+eax*8];
@@ -1518,10 +1531,10 @@ _T688:
 	__asm        cmp    dword ptr [ebp-0x5B4], 4;
 	__asm        jae    _T732;
 
-	__asm        jmp    near ptr 0x004CC69D;
-
-	__asm        jmp    near ptr 0x004CC6A2;
-
+	__asm        jmp    _T69a;
+_T69a:
+	__asm        jmp    _T69f;
+_T69f:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -1529,10 +1542,10 @@ _T688:
 
 	__asm        jmp    _T737;
 _T6b5:
-	__asm        jmp    near ptr 0x004CC6BD;
-
-	__asm        jmp    near ptr 0x004CC6C2;
-
+	__asm        jmp    _T6ba;
+_T6ba:
+	__asm        jmp    _T6bf;
+_T6bf:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
@@ -1540,10 +1553,10 @@ _T6b5:
 	__asm        ja     _T6fe;
 
 	__asm        inc    memstrm.nodeNo;
-	__asm        jmp    near ptr 0x004CC6DF;
-
-	__asm        jmp    near ptr 0x004CC6E4;
-
+	__asm        jmp    _T6dc;
+_T6dc:
+	__asm        jmp    _T6e1;
+_T6e1:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -1553,10 +1566,10 @@ _T6b5:
 _T6f7:
 	memstrm.curPos = 0x0;
 _T6fe:
-	__asm        jmp    near ptr 0x004CC706;
-
-	__asm        jmp    near ptr 0x004CC70B;
-
+	__asm        jmp    _T703;
+_T703:
+	__asm        jmp    _T708;
+_T708:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    eax, [ecx+eax*8];
@@ -1576,10 +1589,10 @@ _T741:
 	__asm        cmp    dword ptr [ebp-0x5B8], 0xC8;
 	__asm        jae    _T7ef;
 
-	__asm        jmp    near ptr 0x004CC759;
-
-	__asm        jmp    near ptr 0x004CC75E;
-
+	__asm        jmp    _T756;
+_T756:
+	__asm        jmp    _T75b;
+_T75b:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -1587,10 +1600,10 @@ _T741:
 
 	__asm        jmp    _T7f4;
 _T771:
-	__asm        jmp    near ptr 0x004CC779;
-
-	__asm        jmp    near ptr 0x004CC77E;
-
+	__asm        jmp    _T776;
+_T776:
+	__asm        jmp    _T77b;
+_T77b:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
@@ -1598,10 +1611,10 @@ _T771:
 	__asm        ja     _T7ba;
 
 	__asm        inc    memstrm.nodeNo;
-	__asm        jmp    near ptr 0x004CC79B;
-
-	__asm        jmp    near ptr 0x004CC7A0;
-
+	__asm        jmp    _T798;
+_T798:
+	__asm        jmp    _T79d;
+_T79d:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -1611,10 +1624,10 @@ _T771:
 _T7b3:
 	memstrm.curPos = 0x0;
 _T7ba:
-	__asm        jmp    near ptr 0x004CC7C2;
-
-	__asm        jmp    near ptr 0x004CC7C7;
-
+	__asm        jmp    _T7bf;
+_T7bf:
+	__asm        jmp    _T7c4;
+_T7c4:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    eax, [ecx+eax*8];
@@ -1649,10 +1662,10 @@ _T831:
 	__asm        cmp    dword ptr [ebp-0x5BC], 4;
 	__asm        jae    _T8db;
 
-	__asm        jmp    near ptr 0x004CC846;
-
-	__asm        jmp    near ptr 0x004CC84B;
-
+	__asm        jmp    _T843;
+_T843:
+	__asm        jmp    _T848;
+_T848:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -1660,10 +1673,10 @@ _T831:
 
 	__asm        jmp    _T8e0;
 _T85e:
-	__asm        jmp    near ptr 0x004CC866;
-
-	__asm        jmp    near ptr 0x004CC86B;
-
+	__asm        jmp    _T863;
+_T863:
+	__asm        jmp    _T868;
+_T868:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
@@ -1671,10 +1684,10 @@ _T85e:
 	__asm        ja     _T8a7;
 
 	__asm        inc    memstrm.nodeNo;
-	__asm        jmp    near ptr 0x004CC888;
-
-	__asm        jmp    near ptr 0x004CC88D;
-
+	__asm        jmp    _T885;
+_T885:
+	__asm        jmp    _T88a;
+_T88a:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -1684,10 +1697,10 @@ _T85e:
 _T8a0:
 	memstrm.curPos = 0x0;
 _T8a7:
-	__asm        jmp    near ptr 0x004CC8AF;
-
-	__asm        jmp    near ptr 0x004CC8B4;
-
+	__asm        jmp    _T8ac;
+_T8ac:
+	__asm        jmp    _T8b1;
+_T8b1:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    eax, [ecx+eax*8];
@@ -1707,10 +1720,10 @@ _T8ea:
 	__asm        cmp    dword ptr [ebp-0x5C0], 2;
 	__asm        jae    _T994;
 
-	__asm        jmp    near ptr 0x004CC8FF;
-
-	__asm        jmp    near ptr 0x004CC904;
-
+	__asm        jmp    _T8fc;
+_T8fc:
+	__asm        jmp    _T901;
+_T901:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -1718,10 +1731,10 @@ _T8ea:
 
 	__asm        jmp    _T999;
 _T917:
-	__asm        jmp    near ptr 0x004CC91F;
-
-	__asm        jmp    near ptr 0x004CC924;
-
+	__asm        jmp    _T91c;
+_T91c:
+	__asm        jmp    _T921;
+_T921:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
@@ -1729,10 +1742,10 @@ _T917:
 	__asm        ja     _T960;
 
 	__asm        inc    memstrm.nodeNo;
-	__asm        jmp    near ptr 0x004CC941;
-
-	__asm        jmp    near ptr 0x004CC946;
-
+	__asm        jmp    _T93e;
+_T93e:
+	__asm        jmp    _T943;
+_T943:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -1742,10 +1755,10 @@ _T917:
 _T959:
 	memstrm.curPos = 0x0;
 _T960:
-	__asm        jmp    near ptr 0x004CC968;
-
-	__asm        jmp    near ptr 0x004CC96D;
-
+	__asm        jmp    _T965;
+_T965:
+	__asm        jmp    _T96a;
+_T96a:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    eax, [ecx+eax*8];
@@ -1765,10 +1778,10 @@ _T9a3:
 	__asm        cmp    dword ptr [ebp-0x5C4], 2;
 	__asm        jae    _Ta4d;
 
-	__asm        jmp    near ptr 0x004CC9B8;
-
-	__asm        jmp    near ptr 0x004CC9BD;
-
+	__asm        jmp    _T9b5;
+_T9b5:
+	__asm        jmp    _T9ba;
+_T9ba:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -1776,10 +1789,10 @@ _T9a3:
 
 	__asm        jmp    _Ta52;
 _T9d0:
-	__asm        jmp    near ptr 0x004CC9D8;
-
-	__asm        jmp    near ptr 0x004CC9DD;
-
+	__asm        jmp    _T9d5;
+_T9d5:
+	__asm        jmp    _T9da;
+_T9da:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
@@ -1787,10 +1800,10 @@ _T9d0:
 	__asm        ja     _Ta19;
 
 	__asm        inc    memstrm.nodeNo;
-	__asm        jmp    near ptr 0x004CC9FA;
-
-	__asm        jmp    near ptr 0x004CC9FF;
-
+	__asm        jmp    _T9f7;
+_T9f7:
+	__asm        jmp    _T9fc;
+_T9fc:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -1800,10 +1813,10 @@ _T9d0:
 _Ta12:
 	memstrm.curPos = 0x0;
 _Ta19:
-	__asm        jmp    near ptr 0x004CCA21;
-
-	__asm        jmp    near ptr 0x004CCA26;
-
+	__asm        jmp    _Ta1e;
+_Ta1e:
+	__asm        jmp    _Ta23;
+_Ta23:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    eax, [ecx+eax*8];
@@ -1823,10 +1836,10 @@ _Ta5c:
 	__asm        cmp    dword ptr [ebp-0x5C8], 2;
 	__asm        jae    _Tb06;
 
-	__asm        jmp    near ptr 0x004CCA71;
-
-	__asm        jmp    near ptr 0x004CCA76;
-
+	__asm        jmp    _Ta6e;
+_Ta6e:
+	__asm        jmp    _Ta73;
+_Ta73:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -1834,10 +1847,10 @@ _Ta5c:
 
 	__asm        jmp    _Tb0b;
 _Ta89:
-	__asm        jmp    near ptr 0x004CCA91;
-
-	__asm        jmp    near ptr 0x004CCA96;
-
+	__asm        jmp    _Ta8e;
+_Ta8e:
+	__asm        jmp    _Ta93;
+_Ta93:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
@@ -1845,10 +1858,10 @@ _Ta89:
 	__asm        ja     _Tad2;
 
 	__asm        inc    memstrm.nodeNo;
-	__asm        jmp    near ptr 0x004CCAB3;
-
-	__asm        jmp    near ptr 0x004CCAB8;
-
+	__asm        jmp    _Tab0;
+_Tab0:
+	__asm        jmp    _Tab5;
+_Tab5:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -1858,10 +1871,10 @@ _Ta89:
 _Tacb:
 	memstrm.curPos = 0x0;
 _Tad2:
-	__asm        jmp    near ptr 0x004CCADA;
-
-	__asm        jmp    near ptr 0x004CCADF;
-
+	__asm        jmp    _Tad7;
+_Tad7:
+	__asm        jmp    _Tadc;
+_Tadc:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    eax, [ecx+eax*8];
@@ -1881,10 +1894,10 @@ _Tb15:
 	__asm        cmp    dword ptr [ebp-0x5CC], 2;
 	__asm        jae    _Tbbf;
 
-	__asm        jmp    near ptr 0x004CCB2A;
-
-	__asm        jmp    near ptr 0x004CCB2F;
-
+	__asm        jmp    _Tb27;
+_Tb27:
+	__asm        jmp    _Tb2c;
+_Tb2c:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -1892,10 +1905,10 @@ _Tb15:
 
 	__asm        jmp    _Tbc4;
 _Tb42:
-	__asm        jmp    near ptr 0x004CCB4A;
-
-	__asm        jmp    near ptr 0x004CCB4F;
-
+	__asm        jmp    _Tb47;
+_Tb47:
+	__asm        jmp    _Tb4c;
+_Tb4c:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
@@ -1903,10 +1916,10 @@ _Tb42:
 	__asm        ja     _Tb8b;
 
 	__asm        inc    memstrm.nodeNo;
-	__asm        jmp    near ptr 0x004CCB6C;
-
-	__asm        jmp    near ptr 0x004CCB71;
-
+	__asm        jmp    _Tb69;
+_Tb69:
+	__asm        jmp    _Tb6e;
+_Tb6e:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -1916,10 +1929,10 @@ _Tb42:
 _Tb84:
 	memstrm.curPos = 0x0;
 _Tb8b:
-	__asm        jmp    near ptr 0x004CCB93;
-
-	__asm        jmp    near ptr 0x004CCB98;
-
+	__asm        jmp    _Tb90;
+_Tb90:
+	__asm        jmp    _Tb95;
+_Tb95:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    eax, [ecx+eax*8];
@@ -1939,10 +1952,10 @@ _Tbce:
 	__asm        cmp    dword ptr [ebp-0x5D0], 2;
 	__asm        jae    _Tc78;
 
-	__asm        jmp    near ptr 0x004CCBE3;
-
-	__asm        jmp    near ptr 0x004CCBE8;
-
+	__asm        jmp    _Tbe0;
+_Tbe0:
+	__asm        jmp    _Tbe5;
+_Tbe5:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -1950,10 +1963,10 @@ _Tbce:
 
 	__asm        jmp    _Tc7d;
 _Tbfb:
-	__asm        jmp    near ptr 0x004CCC03;
-
-	__asm        jmp    near ptr 0x004CCC08;
-
+	__asm        jmp    _Tc00;
+_Tc00:
+	__asm        jmp    _Tc05;
+_Tc05:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
@@ -1961,10 +1974,10 @@ _Tbfb:
 	__asm        ja     _Tc44;
 
 	__asm        inc    memstrm.nodeNo;
-	__asm        jmp    near ptr 0x004CCC25;
-
-	__asm        jmp    near ptr 0x004CCC2A;
-
+	__asm        jmp    _Tc22;
+_Tc22:
+	__asm        jmp    _Tc27;
+_Tc27:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -1974,10 +1987,10 @@ _Tbfb:
 _Tc3d:
 	memstrm.curPos = 0x0;
 _Tc44:
-	__asm        jmp    near ptr 0x004CCC4C;
-
-	__asm        jmp    near ptr 0x004CCC51;
-
+	__asm        jmp    _Tc49;
+_Tc49:
+	__asm        jmp    _Tc4e;
+_Tc4e:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    eax, [ecx+eax*8];
@@ -1999,10 +2012,10 @@ _Tc92:
 	__asm        cmp    dword ptr [ebp-0x5D4], 0x1000;
 	__asm        jae    _Td42;
 
-	__asm        jmp    near ptr 0x004CCCAA;
-
-	__asm        jmp    near ptr 0x004CCCAF;
-
+	__asm        jmp    _Tca7;
+_Tca7:
+	__asm        jmp    _Tcac;
+_Tcac:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -2010,10 +2023,10 @@ _Tc92:
 
 	__asm        jmp    _Td47;
 _Tcc2:
-	__asm        jmp    near ptr 0x004CCCCA;
-
-	__asm        jmp    near ptr 0x004CCCCF;
-
+	__asm        jmp    _Tcc7;
+_Tcc7:
+	__asm        jmp    _Tccc;
+_Tccc:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
@@ -2021,10 +2034,10 @@ _Tcc2:
 	__asm        ja     _Td0b;
 
 	__asm        inc    memstrm.nodeNo;
-	__asm        jmp    near ptr 0x004CCCEC;
-
-	__asm        jmp    near ptr 0x004CCCF1;
-
+	__asm        jmp    _Tce9;
+_Tce9:
+	__asm        jmp    _Tcee;
+_Tcee:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -2034,10 +2047,10 @@ _Tcc2:
 _Td04:
 	memstrm.curPos = 0x0;
 _Td0b:
-	__asm        jmp    near ptr 0x004CCD13;
-
-	__asm        jmp    near ptr 0x004CCD18;
-
+	__asm        jmp    _Td10;
+_Td10:
+	__asm        jmp    _Td15;
+_Td15:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    eax, [ecx+eax*8];
@@ -2060,10 +2073,10 @@ _Td5c:
 	__asm        cmp    dword ptr [ebp-0x5DC], 0x1000;
 	__asm        jae    _Te0c;
 
-	__asm        jmp    near ptr 0x004CCD74;
-
-	__asm        jmp    near ptr 0x004CCD79;
-
+	__asm        jmp    _Td71;
+_Td71:
+	__asm        jmp    _Td76;
+_Td76:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -2071,10 +2084,10 @@ _Td5c:
 
 	__asm        jmp    _Te11;
 _Td8c:
-	__asm        jmp    near ptr 0x004CCD94;
-
-	__asm        jmp    near ptr 0x004CCD99;
-
+	__asm        jmp    _Td91;
+_Td91:
+	__asm        jmp    _Td96;
+_Td96:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
@@ -2082,10 +2095,10 @@ _Td8c:
 	__asm        ja     _Tdd5;
 
 	__asm        inc    memstrm.nodeNo;
-	__asm        jmp    near ptr 0x004CCDB6;
-
-	__asm        jmp    near ptr 0x004CCDBB;
-
+	__asm        jmp    _Tdb3;
+_Tdb3:
+	__asm        jmp    _Tdb8;
+_Tdb8:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -2095,10 +2108,10 @@ _Td8c:
 _Tdce:
 	memstrm.curPos = 0x0;
 _Tdd5:
-	__asm        jmp    near ptr 0x004CCDDD;
-
-	__asm        jmp    near ptr 0x004CCDE2;
-
+	__asm        jmp    _Tdda;
+_Tdda:
+	__asm        jmp    _Tddf;
+_Tddf:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    eax, [ecx+eax*8];
@@ -2121,10 +2134,10 @@ _Te26:
 	__asm        cmp    dword ptr [ebp-0x5E4], 0x1000;
 	__asm        jae    _Ted6;
 
-	__asm        jmp    near ptr 0x004CCE3E;
-
-	__asm        jmp    near ptr 0x004CCE43;
-
+	__asm        jmp    _Te3b;
+_Te3b:
+	__asm        jmp    _Te40;
+_Te40:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -2132,10 +2145,10 @@ _Te26:
 
 	__asm        jmp    _Tedb;
 _Te56:
-	__asm        jmp    near ptr 0x004CCE5E;
-
-	__asm        jmp    near ptr 0x004CCE63;
-
+	__asm        jmp    _Te5b;
+_Te5b:
+	__asm        jmp    _Te60;
+_Te60:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
@@ -2143,10 +2156,10 @@ _Te56:
 	__asm        ja     _Te9f;
 
 	__asm        inc    memstrm.nodeNo;
-	__asm        jmp    near ptr 0x004CCE80;
-
-	__asm        jmp    near ptr 0x004CCE85;
-
+	__asm        jmp    _Te7d;
+_Te7d:
+	__asm        jmp    _Te82;
+_Te82:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -2156,10 +2169,10 @@ _Te56:
 _Te98:
 	memstrm.curPos = 0x0;
 _Te9f:
-	__asm        jmp    near ptr 0x004CCEA7;
-
-	__asm        jmp    near ptr 0x004CCEAC;
-
+	__asm        jmp    _Tea4;
+_Tea4:
+	__asm        jmp    _Tea9;
+_Tea9:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    eax, [ecx+eax*8];
@@ -2182,10 +2195,10 @@ _Tef0:
 	__asm        cmp    dword ptr [ebp-0x5EC], 0x1000;
 	__asm        jae    _Tfa0;
 
-	__asm        jmp    near ptr 0x004CCF08;
-
-	__asm        jmp    near ptr 0x004CCF0D;
-
+	__asm        jmp    _Tf05;
+_Tf05:
+	__asm        jmp    _Tf0a;
+_Tf0a:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -2193,10 +2206,10 @@ _Tef0:
 
 	__asm        jmp    _Tfa5;
 _Tf20:
-	__asm        jmp    near ptr 0x004CCF28;
-
-	__asm        jmp    near ptr 0x004CCF2D;
-
+	__asm        jmp    _Tf25;
+_Tf25:
+	__asm        jmp    _Tf2a;
+_Tf2a:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    edx, memstrm.curPos;
@@ -2204,10 +2217,10 @@ _Tf20:
 	__asm        ja     _Tf69;
 
 	__asm        inc    memstrm.nodeNo;
-	__asm        jmp    near ptr 0x004CCF4A;
-
-	__asm        jmp    near ptr 0x004CCF4F;
-
+	__asm        jmp    _Tf47;
+_Tf47:
+	__asm        jmp    _Tf4c;
+_Tf4c:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
@@ -2217,10 +2230,10 @@ _Tf20:
 _Tf62:
 	memstrm.curPos = 0x0;
 _Tf69:
-	__asm        jmp    near ptr 0x004CCF71;
-
-	__asm        jmp    near ptr 0x004CCF76;
-
+	__asm        jmp    _Tf6e;
+_Tf6e:
+	__asm        jmp    _Tf73;
+_Tf73:
 	__asm        movsx  eax, memstrm.nodeNo;
 	__asm        mov    ecx, memstrm.nodeList.start;
 	__asm        mov    eax, [ecx+eax*8];
@@ -2666,8 +2679,8 @@ _T14cc:
 	__asm        mov    memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>, 0x592440;
 	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::FreeAll;
-	__asm        jmp    near ptr 0x004CD513;
-
+	__asm        jmp    _T1510;
+_T1510:
 	__asm        lea    ecx, memstrm.nodeList.start;
 	__asm        call   vector<tGZXBitstreamNode>::~vector<tGZXBitstreamNode>;
 	__asm        lea    ecx, fileStream<cLZAPFileBitStream+0x00>;

@@ -6,7 +6,8 @@ int32_t GraphicWindowManager::IncrementBusyCount() {
 	__asm        inc    dword ptr [eax+4];
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
-	__asm        jmp    near ptr 0x004A7B7D;
+	__asm        jmp    _T1d;
+_T1d:
 }
 
 // Function in module: Graphwin.obj
@@ -17,7 +18,8 @@ int32_t GraphicWindowManager::DecrementBusyCount() {
 	__asm        dec    dword ptr [eax+4];
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
-	__asm        jmp    near ptr 0x004A7BAD;
+	__asm        jmp    _T1d;
+_T1d:
 }
 
 // Function in module: Inputwin.obj
@@ -26,7 +28,8 @@ void  GraphicWindow::SetParent(/*unpacked*/ class GraphicWindow *windowNewParent
 // LINE 324:
 	this-><GraphicWindow+0x3c:4> = windowNewParent;
 // LINE 325:
-	__asm        jmp    near ptr 0x0040D7FA;
+	__asm        jmp    _T1a;
+_T1a:
 }
 
 // Function in module: Inputwin.obj
@@ -35,7 +38,8 @@ void  GraphicWindow::SetBorderDrawing(int32_t bNewDrawBorder) {
 // LINE 328:
 	this-><GraphicWindow+0x6c:4> = bNewDrawBorder;
 // LINE 329:
-	__asm        jmp    near ptr 0x0040D82A;
+	__asm        jmp    _T1a;
+_T1a:
 }
 
 // Function in module: Inputwin.obj
@@ -68,9 +72,11 @@ void  GraphicWindow::SetWindowPosition(/*packed*/ class MPoint& ptNewPosition) {
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, this;
 	__asm        add    [ecx+0x1C], eax;
-	__asm        jmp    near ptr 0x0040D89B;
+	__asm        jmp    _T5b;
 // LINE 337:
-	__asm        jmp    near ptr 0x0040D8A0;
+_T5b:
+	__asm        jmp    _T60;
+_T60:
 }
 
 // Function in module: Inputwin.obj
@@ -80,8 +86,8 @@ int  GraphicWindow::IsPointInWindow(long nXPosition, long nYPosition) {
 	__asm        cmp    nXPosition, 0;
 	__asm        jle    _T5e;
 
-	__asm        jmp    near ptr 0x0040D8CB;
-
+	__asm        jmp    _T1b;
+_T1b:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        mov    ecx, this;
@@ -92,8 +98,8 @@ int  GraphicWindow::IsPointInWindow(long nXPosition, long nYPosition) {
 	__asm        cmp    nYPosition, 0;
 	__asm        jle    _T5e;
 
-	__asm        jmp    near ptr 0x0040D8EF;
-
+	__asm        jmp    _T3f;
+_T3f:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1C];
 	__asm        mov    ecx, this;
@@ -106,7 +112,8 @@ int  GraphicWindow::IsPointInWindow(long nXPosition, long nYPosition) {
 _T5e:
 	__asm        xor    eax, eax;
 _T60:
-	__asm        jmp    near ptr 0x0040D915;
+	__asm        jmp    _T65;
 // LINE 365:
+_T65:
 }
 

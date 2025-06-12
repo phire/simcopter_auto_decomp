@@ -3155,8 +3155,9 @@ _T75:
 /*packed*/ struct MISSION_DATA* S3MissionGetCurr() {
 // LINE 1468:
 	__asm        mov    eax, S_mstatics.curr_mission;
-	__asm        jmp    near ptr 0x004FC3AD;
+	__asm        jmp    _T10;
 // LINE 1469:
+_T10:
 }
 
 // FUNCTION: COPTER_D 0x004fc3b2

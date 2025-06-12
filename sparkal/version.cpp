@@ -152,8 +152,8 @@ void Version::Version() {
 	this->lpFVData = 0x0;
 // LINE 50:
 _T120:
-	__asm        jmp    near ptr 0x0043DC05;
-
+	__asm        jmp    _T125;
+_T125:
 	__asm        mov    eax, this;
 }
 
@@ -177,7 +177,8 @@ void Version::~Version() {
 	__asm        add    esp, 4;
 // LINE 62:
 _T3d:
-	__asm        jmp    near ptr 0x0043DC52;
+	__asm        jmp    _T42;
+_T42:
 }
 
 // FUNCTION: COPTER_D 0x0043dc57
@@ -504,8 +505,9 @@ _T42:
 // LINE 255:
 _T60:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0043DFED;
+	__asm        jmp    _T6a;
 // LINE 256:
+_T6a:
 }
 
 // FUNCTION: COPTER_D 0x0043dff2
@@ -531,8 +533,9 @@ _T32:
 // LINE 285:
 _T39:
 	__asm        mov    eax, nSystemType;
-	__asm        jmp    near ptr 0x0043E033;
+	__asm        jmp    _T41;
 // LINE 286:
+_T41:
 }
 
 // FUNCTION: COPTER_D 0x0043e038
@@ -582,8 +585,9 @@ long Version::GetCPUVersion() {
 // LINE 342:
 _T25:
 	__asm        mov    eax, lReturnValue;
-	__asm        jmp    near ptr 0x0043E0B3;
+	__asm        jmp    _T2d;
 // LINE 344:
+_T2d:
 }
 
 // FUNCTION: COPTER_D 0x0043e0b8
@@ -617,8 +621,9 @@ long Version::GetCPUSpeed() {
 	__asm        mov    [ecx+0xC], eax;
 // LINE 361:
 	__asm        mov    eax, tempFREQ_INFO.norm_freq;
-	__asm        jmp    near ptr 0x0043E10C;
+	__asm        jmp    _T54;
 // LINE 363:
+_T54:
 }
 
 

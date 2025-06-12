@@ -115,16 +115,18 @@ _T53:
 // LINE 46:
 _T69:
 	__asm        fld    Time;
-	__asm        jmp    near ptr 0x0043D8C1;
+	__asm        jmp    _T71;
 // LINE 47:
+_T71:
 }
 
 // FUNCTION: COPTER_D 0x0043d8c6
 long GetMillisecondTimeLong() {
 // LINE 56:
 	__asm        call   dword ptr ds:[0x6C3908];
-	__asm        jmp    near ptr 0x0043D8D7;
+	__asm        jmp    _T11;
 // LINE 61:
+_T11:
 }
 
 // FUNCTION: COPTER_D 0x0043d8dc
@@ -153,8 +155,9 @@ long ConvertRange(long lPositionSource, long lMinSource, long lMaxSource, long l
 	__asm        sub    lPositionSource, eax;
 // LINE 78:
 	__asm        mov    eax, lPositionSource;
-	__asm        jmp    near ptr 0x0043D91A;
+	__asm        jmp    _T3e;
 // LINE 79:
+_T3e:
 }
 
 // FUNCTION: COPTER_D 0x0043d91f
@@ -178,10 +181,11 @@ void SparkalDelay(unsigned long lMilliseconds) {
 	__asm        mov    tempTimer.lFrequency, eax;
 	__asm        jmp    _T4a;
 _T4a:
-	__asm        jmp    near ptr 0x0043D96E;
+	__asm        jmp    _T4f;
 // LINE 104:
-	__asm        jmp    near ptr 0x0043D973;
-
+_T4f:
+	__asm        jmp    _T54;
+_T54:
 	__asm        cmp    tempTimer.lStartTime, 0;
 	__asm        je     _T63;
 
@@ -222,8 +226,8 @@ _Tc1:
 _Tc6:
 	__asm        mov    eax, tempTimer.lTotalElapsedTime;
 	__asm        mov    [ebp-0x30], eax;
-	__asm        jmp    near ptr 0x0043D9F0;
-
+	__asm        jmp    _Td1;
+_Td1:
 	__asm        cmp    tempTimer.lStartTime, 0;
 	__asm        je     _T148;
 
@@ -296,9 +300,10 @@ _T1a0:
 	__asm        jmp    _Tc6;
 // LINE 107:
 _T1a5:
-	__asm        jmp    near ptr 0x0043DAC9;
-
-	__asm        jmp    near ptr 0x0043DACE;
+	__asm        jmp    _T1aa;
+_T1aa:
+	__asm        jmp    _T1af;
+_T1af:
 }
 
 

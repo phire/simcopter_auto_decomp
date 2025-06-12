@@ -92,7 +92,8 @@ static void $E4() {
 
 	__asm        call   $E1;
 	__asm        call   $E3;
-	__asm        jmp    near ptr 0x00431C65;
+	__asm        jmp    _T15;
+_T15:
 }
 
 // STATIC INITIALIZER:
@@ -101,7 +102,8 @@ static void $E1() {
 
 	__asm        mov    ecx, 0x5C34F0;
 	__asm        call   Keyboard::Keyboard;
-	__asm        jmp    near ptr 0x00431C7F;
+	__asm        jmp    _T15;
+_T15:
 }
 
 // STATIC INITIALIZER:
@@ -111,18 +113,20 @@ static void $E3() {
 	__asm        push   0x431CA1;
 	__asm        call   atexit;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x00431C9C;
+	__asm        jmp    _T18;
+_T18:
 }
 
 // STATIC INITIALIZER:
 // SYNTHETIC: COPTER_D 0x00431ca1
 static void $E2() {
 
-	__asm        jmp    near ptr 0x00431CAC;
-
+	__asm        jmp    _T0b;
+_T0b:
 	__asm        mov    ecx, 0x5C34F0;
 	__asm        call   CharList::~CharList;
-	__asm        jmp    near ptr 0x00431CBB;
+	__asm        jmp    _T1a;
+_T1a:
 }
 
 // FUNCTION: COPTER_D 0x00431cc0
@@ -134,8 +138,9 @@ int32_t IsModifierSet(unsigned char chModifiers) {
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, chModifiers;
 	__asm        and    eax, ecx;
-	__asm        jmp    near ptr 0x00431CDF;
+	__asm        jmp    _T1f;
 // LINE 18:
+_T1f:
 }
 
 // SYNTHETIC: COPTER_D 0x00431ce4
@@ -147,8 +152,8 @@ void Keyboard::Keyboard() {
 	__asm        mov    ecx, this;
 	__asm        call   Keyboard::ClearSettings;
 // LINE 33:
-	__asm        jmp    near ptr 0x00431D05;
-
+	__asm        jmp    _T21;
+_T21:
 	__asm        mov    eax, this;
 }
 
@@ -159,8 +164,9 @@ int32_t Keyboard::IsKeyDown(unsigned char chKey) {
 	__asm        mov    al, chKey;
 	__asm        mov    ecx, this;
 	__asm        movsx  eax, byte ptr [eax+ecx+0x10];
-	__asm        jmp    near ptr 0x00431D2B;
+	__asm        jmp    _T1e;
 // LINE 42:
+_T1e:
 }
 
 // FUNCTION: COPTER_D 0x00431d32
@@ -220,7 +226,8 @@ void Keyboard::ProcessKeyDown(unsigned char chKey) {
 	__asm        call   CharList::AddItem;
 // LINE 74:
 _T3a:
-	__asm        jmp    near ptr 0x00431DCC;
+	__asm        jmp    _T3f;
+_T3f:
 }
 
 // FUNCTION: COPTER_D 0x00431dd3
@@ -244,7 +251,8 @@ void Keyboard::ProcessKeyUp(unsigned char chKey) {
 	__asm        call   CharList::DeleteItem;
 // LINE 87:
 _T3a:
-	__asm        jmp    near ptr 0x00431E12;
+	__asm        jmp    _T3f;
+_T3f:
 }
 
 // SYNTHETIC: COPTER_D 0x00431e19
@@ -269,7 +277,8 @@ _T38:
 	__asm        mov    ecx, this;
 	__asm        call   CharList::DeleteAllItems;
 // LINE 101:
-	__asm        jmp    near ptr 0x00431E5E;
+	__asm        jmp    _T45;
+_T45:
 }
 
 // FUNCTION: COPTER_D 0x00431e63
@@ -342,8 +351,9 @@ _T46:
 // LINE 136:
 _T61:
 	__asm        mov    al, chReturnValue;
-	__asm        jmp    near ptr 0x00431F1A;
+	__asm        jmp    _T69;
 // LINE 137:
+_T69:
 }
 
 // FUNCTION: COPTER_D 0x00431f1f

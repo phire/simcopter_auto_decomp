@@ -54,8 +54,9 @@ int32_t GetAllDisplayModes() {
 	__asm        call   dword ptr [eax+0x20];
 // LINE 34:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0048B13B;
+	__asm        jmp    _T2b;
 // LINE 40:
+_T2b:
 }
 
 // FUNCTION: COPTER_D 0x0048b140
@@ -146,7 +147,8 @@ void GetCurrentScreenMode(/*packed*/ struct tagMode *modeCurrent, int32_t __form
 	__asm        mov    ecx, modeCurrent;
 	__asm        mov    [ecx+8], eax;
 // LINE 93:
-	__asm        jmp    near ptr 0x0048B22F;
+	__asm        jmp    _T6b;
+_T6b:
 }
 
 // FUNCTION: COPTER_D 0x0048b234

@@ -310,8 +310,8 @@ void MDate::MDate() {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
 // LINE 79:
-	__asm        jmp    near ptr 0x004BC4C9;
-
+	__asm        jmp    _T69;
+_T69:
 	__asm        mov    eax, this;
 }
 
@@ -347,8 +347,8 @@ _T4a:
 	__asm        mov    [ecx+4], eax;
 // LINE 99:
 _T58:
-	__asm        jmp    near ptr 0x004BC52E;
-
+	__asm        jmp    _T5d;
+_T5d:
 	__asm        mov    eax, this;
 }
 
@@ -374,8 +374,8 @@ void MDate::MDate(uint32_t day, char * monthName, uint32_t year) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
 // LINE 114:
-	__asm        jmp    near ptr 0x004BC57F;
-
+	__asm        jmp    _T47;
+_T47:
 	__asm        mov    eax, this;
 }
 
@@ -398,8 +398,8 @@ void MDate::MDate(uint32_t day, uint32_t month, uint32_t year) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
 // LINE 129:
-	__asm        jmp    near ptr 0x004BC5C7;
-
+	__asm        jmp    _T3e;
+_T3e:
 	__asm        mov    eax, this;
 }
 
@@ -413,8 +413,9 @@ enum MDate::HowToPrint MDate::SetPrintOption(enum MDate::HowToPrint h) {
 	this->PrintOption = h;
 // LINE 139:
 	__asm        mov    eax, oldoption;
-	__asm        jmp    near ptr 0x004BC5F7;
+	__asm        jmp    _T26;
 // LINE 140:
+_T26:
 }
 
 // FUNCTION: COPTER_D 0x004bc5fe
@@ -441,8 +442,9 @@ _T36:
 _T45:
 	__asm        xor    eax, eax;
 _T47:
-	__asm        jmp    near ptr 0x004BC64A;
+	__asm        jmp    _T4c;
 // LINE 154:
+_T4c:
 }
 
 // FUNCTION: COPTER_D 0x004bc64f
@@ -455,8 +457,9 @@ uint32_t MDate::DayOfWeek(char * nameOfDay) {
 	__asm        call   FindMatch;
 	__asm        add    esp, 0xC;
 	__asm        inc    eax;
-	__asm        jmp    near ptr 0x004BC66E;
+	__asm        jmp    _T1f;
 // LINE 169:
+_T1f:
 }
 
 // FUNCTION: COPTER_D 0x004bc673
@@ -497,8 +500,9 @@ _T52:
 // LINE 62:
 _T57:
 	__asm        mov    eax, icand;
-	__asm        jmp    near ptr 0x004BC6D2;
+	__asm        jmp    _T5f;
 // LINE 63:
+_T5f:
 }
 
 // FUNCTION: COPTER_D 0x004bc6d7
@@ -576,8 +580,9 @@ uint32_t MDate::DaysInYear(uint32_t year) {
 _T24:
 	__asm        mov    eax, 0x16D;
 _T29:
-	__asm        jmp    near ptr 0x004BC79D;
+	__asm        jmp    _T2e;
 // LINE 202:
+_T2e:
 }
 
 // FUNCTION: COPTER_D 0x004bc7a2
@@ -590,8 +595,9 @@ uint32_t MDate::IndexOfMonth(char * nameOfMonth) {
 	__asm        call   FindMatch;
 	__asm        add    esp, 0xC;
 	__asm        inc    eax;
-	__asm        jmp    near ptr 0x004BC7C1;
+	__asm        jmp    _T1f;
 // LINE 217:
+_T1f:
 }
 
 // FUNCTION: COPTER_D 0x004bc7c6
@@ -707,8 +713,9 @@ _T38:
 _T42:
 	__asm        xor    eax, eax;
 _T44:
-	__asm        jmp    near ptr 0x004BC8E8;
+	__asm        jmp    _T49;
 // LINE 264:
+_T49:
 }
 
 // FUNCTION: COPTER_D 0x004bc8ed
@@ -735,8 +742,9 @@ _T36:
 _T45:
 	__asm        xor    eax, eax;
 _T47:
-	__asm        jmp    near ptr 0x004BC939;
+	__asm        jmp    _T4c;
 // LINE 279:
+_T4c:
 }
 
 // FUNCTION: COPTER_D 0x004bc93e
@@ -786,8 +794,9 @@ uint32_t MDate::Day() {
 	__asm        add    esp, 0xC;
 	__asm        sub    ebx, eax;
 	__asm        mov    eax, ebx;
-	__asm        jmp    near ptr 0x004BC9CB;
+	__asm        jmp    _T31;
 // LINE 309:
+_T31:
 }
 
 // FUNCTION: COPTER_D 0x004bc9d0
@@ -807,8 +816,9 @@ uint32_t MDate::DayOfMonth() {
 	__asm        call   MDate::Mdy;
 // LINE 323:
 	__asm        mov    eax, d;
-	__asm        jmp    near ptr 0x004BC9F8;
+	__asm        jmp    _T28;
 // LINE 324:
+_T28:
 }
 
 // FUNCTION: COPTER_D 0x004bc9fd
@@ -843,8 +853,8 @@ _T40:
 	__asm        cmp    month, 2;
 	__asm        jbe    _T78;
 
-	__asm        jmp    near ptr 0x004BCA59;
-
+	__asm        jmp    _T5c;
+_T5c:
 	__asm        mov    ecx, this;
 	__asm        call   MDate::Year;
 	__asm        push   eax;
@@ -867,8 +877,9 @@ uint32_t MDate::Hash() {
 // LINE 352:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
-	__asm        jmp    near ptr 0x004BCA9B;
+	__asm        jmp    _T17;
 // LINE 353:
+_T17:
 }
 
 // FUNCTION: COPTER_D 0x004bcaa0
@@ -985,7 +996,8 @@ _T116:
 	y.++;
 // LINE 388:
 _T121:
-	__asm        jmp    near ptr 0x004BCBC6;
+	__asm        jmp    _T126;
+_T126:
 }
 
 // FUNCTION: COPTER_D 0x004bcbcd
@@ -1016,11 +1028,12 @@ _T2f:
 	__asm        mov    [ecx+8], eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        mov    dword ptr [eax], 0x58F3E8;
-	__asm        jmp    near ptr 0x004BCC28;
-
+	__asm        jmp    _T5b;
+_T5b:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
-	__asm        jmp    near ptr 0x004BCC30;
+	__asm        jmp    _T63;
 // LINE 398:
+_T63:
 }
 
 // FUNCTION: COPTER_D 0x004bcc37
@@ -1051,11 +1064,12 @@ _T2f:
 	__asm        mov    [ecx+8], eax;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        mov    dword ptr [eax], 0x58F3E8;
-	__asm        jmp    near ptr 0x004BCC92;
-
+	__asm        jmp    _T5b;
+_T5b:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
-	__asm        jmp    near ptr 0x004BCC9A;
+	__asm        jmp    _T63;
 // LINE 408:
+_T63:
 }
 
 // FUNCTION: COPTER_D 0x004bcca1
@@ -1075,8 +1089,9 @@ uint32_t MDate::Month() {
 	__asm        call   MDate::Mdy;
 // LINE 422:
 	__asm        mov    eax, m;
-	__asm        jmp    near ptr 0x004BCCC9;
+	__asm        jmp    _T28;
 // LINE 423:
+_T28:
 }
 
 // FUNCTION: COPTER_D 0x004bccce
@@ -1092,8 +1107,9 @@ uint32_t MDate::Month() {
 	__asm        mov    ecx, this;
 	__asm        call   MDate::Previous;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
-	__asm        jmp    near ptr 0x004BCCFB;
+	__asm        jmp    _T2d;
 // LINE 437:
+_T2d:
 }
 
 // FUNCTION: COPTER_D 0x004bcd02
@@ -1138,11 +1154,12 @@ _T4a:
 	__asm        mov    eax, j;
 	__asm        mov    ecx, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x004BCD6D;
-
+	__asm        jmp    _T6b;
+_T6b:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
-	__asm        jmp    near ptr 0x004BCD75;
+	__asm        jmp    _T73;
 // LINE 464:
+_T73:
 }
 
 // FUNCTION: COPTER_D 0x004bcd7c
@@ -1159,8 +1176,9 @@ uint32_t MDate::WeekDay() {
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        lea    eax, [edx+1];
-	__asm        jmp    near ptr 0x004BCDAC;
+	__asm        jmp    _T30;
 // LINE 474:
+_T30:
 }
 
 // FUNCTION: COPTER_D 0x004bcdb1
@@ -1180,8 +1198,9 @@ uint32_t MDate::Year() {
 	__asm        call   MDate::Mdy;
 // LINE 487:
 	__asm        mov    eax, y;
-	__asm        jmp    near ptr 0x004BCDD9;
+	__asm        jmp    _T28;
 // LINE 488:
+_T28:
 }
 
 // FUNCTION: COPTER_D 0x004bcdde
@@ -1193,8 +1212,9 @@ uint32_t MDate::YearLastTwoDigits() {
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    eax, edx;
-	__asm        jmp    near ptr 0x004BCE02;
+	__asm        jmp    _T24;
 // LINE 500:
+_T24:
 }
 
 // FUNCTION: COPTER_D 0x004bce07
@@ -1221,19 +1241,21 @@ char * MDate::PrintString(char * szDate) {
 	__asm        push   eax;
 	__asm        call   ends;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004BCE49;
+	__asm        jmp    _T42;
 // LINE 513:
+_T42:
 	__asm        mov    eax, szDate;
 	__asm        mov    [ebp-0x5C], eax;
-	__asm        jmp    near ptr 0x004BCE54;
-
+	__asm        jmp    _T4d;
+_T4d:
 	__asm        lea    ecx, strtemp<ostrstream+0x08>;
 	__asm        call   ostrstream::~ostrstream;
 	__asm        lea    ecx, strtemp<ostrstream+0x08>;
 	__asm        call   ios::~ios;
 	__asm        mov    eax, [ebp-0x5C];
-	__asm        jmp    near ptr 0x004BCE6C;
+	__asm        jmp    _T65;
 // LINE 514:
+_T65:
 }
 
 // FUNCTION: COPTER_D 0x004bce73
@@ -1277,8 +1299,8 @@ _T45:
 	__asm        call   SkipDelim;
 	__asm        add    esp, 4;
 // LINE 585:
-	__asm        jmp    near ptr 0x004BCEE1;
-
+	__asm        jmp    _T6e;
+_T6e:
 	__asm        mov    eax, s;
 	__asm        mov    eax, [eax];
 	__asm        mov    eax, [eax+4];
@@ -1289,8 +1311,8 @@ _T45:
 	__asm        jmp    _T2fb;
 // LINE 587:
 _T89:
-	__asm        jmp    near ptr 0x004BCF01;
-
+	__asm        jmp    _T8e;
+_T8e:
 	__asm        mov    eax, s;
 	__asm        mov    eax, [eax];
 	__asm        mov    eax, [eax+4];
@@ -1308,34 +1330,35 @@ _T89:
 	__asm        cmp    dword ptr [eax+0x34], 0;
 	__asm        jge    _Td3;
 
-	__asm        jmp    near ptr 0x004BCF37;
-
+	__asm        jmp    _Tc4;
+_Tc4:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        add    eax, 0x38;
 	__asm        push   eax;
 	__asm        call   _mtlock;
 	__asm        add    esp, 4;
 _Td3:
-	__asm        jmp    near ptr 0x004BCF4B;
-
+	__asm        jmp    _Td8;
+_Td8:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        cmp    dword ptr [eax+0x34], 0;
 	__asm        jge    _T103;
 
-	__asm        jmp    near ptr 0x004BCF67;
-
+	__asm        jmp    _Tf4;
+_Tf4:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        add    eax, 0x38;
 	__asm        push   eax;
 	__asm        call   _mtunlock;
 	__asm        add    esp, 4;
 _T103:
-	__asm        jmp    near ptr 0x004BCF7B;
-
-	__asm        jmp    near ptr 0x004BCF80;
+	__asm        jmp    _T108;
+_T108:
+	__asm        jmp    _T10d;
 // LINE 589:
+_T10d:
 	__asm        mov    eax, s;
 	__asm        push   eax;
 	__asm        call   ParseMonth;
@@ -1363,8 +1386,8 @@ _T142:
 	__asm        mov    ecx, s;
 	__asm        call   istream::operator>>;
 // LINE 595:
-	__asm        jmp    near ptr 0x004BCFC6;
-
+	__asm        jmp    _T153;
+_T153:
 	__asm        mov    eax, s;
 	__asm        mov    eax, [eax];
 	__asm        mov    eax, [eax+4];
@@ -1375,8 +1398,8 @@ _T142:
 	__asm        jmp    _T2fb;
 // LINE 596:
 _T16e:
-	__asm        jmp    near ptr 0x004BCFE6;
-
+	__asm        jmp    _T173;
+_T173:
 	__asm        mov    eax, s;
 	__asm        mov    eax, [eax];
 	__asm        mov    eax, [eax+4];
@@ -1396,34 +1419,35 @@ _T16e:
 	__asm        cmp    dword ptr [eax+0x34], 0;
 	__asm        jge    _T1be;
 
-	__asm        jmp    near ptr 0x004BD022;
-
+	__asm        jmp    _T1af;
+_T1af:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        add    eax, 0x38;
 	__asm        push   eax;
 	__asm        call   _mtlock;
 	__asm        add    esp, 4;
 _T1be:
-	__asm        jmp    near ptr 0x004BD036;
-
+	__asm        jmp    _T1c3;
+_T1c3:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    dword ptr [eax+8], 0;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        cmp    dword ptr [eax+0x34], 0;
 	__asm        jge    _T1ee;
 
-	__asm        jmp    near ptr 0x004BD052;
-
+	__asm        jmp    _T1df;
+_T1df:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        add    eax, 0x38;
 	__asm        push   eax;
 	__asm        call   _mtunlock;
 	__asm        add    esp, 4;
 _T1ee:
-	__asm        jmp    near ptr 0x004BD066;
-
-	__asm        jmp    near ptr 0x004BD06B;
+	__asm        jmp    _T1f3;
+_T1f3:
+	__asm        jmp    _T1f8;
 // LINE 599:
+_T1f8:
 	__asm        mov    eax, s;
 	__asm        push   eax;
 	__asm        call   ParseMonth;
@@ -1489,32 +1513,32 @@ _T280:
 	__asm        cmp    dword ptr [eax+0x34], 0;
 	__asm        jge    _T2bc;
 
-	__asm        jmp    near ptr 0x004BD120;
-
+	__asm        jmp    _T2ad;
+_T2ad:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        add    eax, 0x38;
 	__asm        push   eax;
 	__asm        call   _mtlock;
 	__asm        add    esp, 4;
 _T2bc:
-	__asm        jmp    near ptr 0x004BD134;
-
+	__asm        jmp    _T2c1;
+_T2c1:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    dword ptr [eax+8], 4;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        cmp    dword ptr [eax+0x34], 0;
 	__asm        jge    _T2ec;
 
-	__asm        jmp    near ptr 0x004BD150;
-
+	__asm        jmp    _T2dd;
+_T2dd:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        add    eax, 0x38;
 	__asm        push   eax;
 	__asm        call   _mtunlock;
 	__asm        add    esp, 4;
 _T2ec:
-	__asm        jmp    near ptr 0x004BD164;
-
+	__asm        jmp    _T2f1;
+_T2f1:
 	__asm        jmp    _T2f6;
 // LINE 608:
 _T2f6:
@@ -1720,8 +1744,9 @@ _T109:
 	p[0] = 0x0;
 // LINE 560:
 	__asm        mov    eax, 0x6069A8;
-	__asm        jmp    near ptr 0x004BD395;
+	__asm        jmp    _T119;
 // LINE 561:
+_T119:
 }
 
 // FUNCTION: COPTER_D 0x004bd39a
@@ -1744,8 +1769,8 @@ _T109:
 	__asm        jmp    _T259;
 // LINE 630:
 _T32:
-	__asm        jmp    near ptr 0x004BD3D1;
-
+	__asm        jmp    _T37;
+_T37:
 	__asm        mov    ecx, d;
 	__asm        call   MDate::Year;
 	__asm        push   eax;
@@ -1775,13 +1800,14 @@ _T32:
 	__asm        push   eax;
 	__asm        call   ends;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004BD440;
+	__asm        jmp    _Ta6;
 // LINE 631:
+_Ta6:
 	__asm        jmp    _T287;
 // LINE 636:
 _Tab:
-	__asm        jmp    near ptr 0x004BD44A;
-
+	__asm        jmp    _Tb0;
+_Tb0:
 	__asm        mov    ecx, d;
 	__asm        call   MDate::Year;
 	__asm        mov    ecx, 0x64;
@@ -1836,8 +1862,9 @@ _Tf3:
 	__asm        push   eax;
 	__asm        call   ends;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004BD4FC;
+	__asm        jmp    _T162;
 // LINE 642:
+_T162:
 	__asm        jmp    _T287;
 // LINE 643:
 _T167:
@@ -1871,13 +1898,14 @@ _T167:
 	__asm        push   eax;
 	__asm        call   ends;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004BD570;
+	__asm        jmp    _T1d6;
 // LINE 647:
+_T1d6:
 	__asm        jmp    _T287;
 // LINE 651:
 _T1db:
-	__asm        jmp    near ptr 0x004BD57A;
-
+	__asm        jmp    _T1e0;
+_T1e0:
 	__asm        mov    ecx, d;
 	__asm        call   MDate::Year;
 	__asm        push   eax;
@@ -1907,8 +1935,9 @@ _T1db:
 	__asm        push   eax;
 	__asm        call   ends;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004BD5E9;
+	__asm        jmp    _T24f;
 // LINE 652:
+_T24f:
 	__asm        jmp    _T287;
 // LINE 653:
 	__asm        jmp    _T287;
@@ -1933,15 +1962,16 @@ _T287:
 // LINE 659:
 	__asm        mov    eax, s;
 	__asm        mov    [ebp-0xAC], eax;
-	__asm        jmp    near ptr 0x004BD63B;
-
+	__asm        jmp    _T2a1;
+_T2a1:
 	__asm        lea    ecx, out<ostrstream+0x08>;
 	__asm        call   ostrstream::~ostrstream;
 	__asm        lea    ecx, out<ostrstream+0x08>;
 	__asm        call   ios::~ios;
 	__asm        mov    eax, [ebp-0xAC];
-	__asm        jmp    near ptr 0x004BD65C;
+	__asm        jmp    _T2c2;
 // LINE 660:
+_T2c2:
 }
 
 

@@ -62,7 +62,8 @@ void EmptyPStr(unsigned char * str) {
 // LINE 55:
 	str[0] = 0x0;
 // LINE 56:
-	__asm        jmp    near ptr 0x00565CB1;
+	__asm        jmp    _T11;
+_T11:
 }
 
 // FUNCTION: COPTER_D 0x00565cb6
@@ -613,7 +614,8 @@ void Long2PStr(unsigned long namelet, unsigned char * name) {
 // LINE 219:
 	name[4] = reinterpret_cast<uint8_t>(namelet);
 // LINE 220:
-	__asm        jmp    near ptr 0x005661EF;
+	__asm        jmp    _T3b;
+_T3b:
 }
 
 // FUNCTION: COPTER_D 0x005661f4
@@ -695,7 +697,8 @@ _T29:
 	__asm        jmp    _T26;
 // LINE 263:
 _T51:
-	__asm        jmp    near ptr 0x005662BC;
+	__asm        jmp    _T56;
+_T56:
 }
 
 // FUNCTION: COPTER_D 0x005662c1
@@ -741,8 +744,9 @@ _T63:
 	__asm        mov    intval, ax;
 // LINE 279:
 	__asm        mov    ax, intval;
-	__asm        jmp    near ptr 0x00566339;
+	__asm        jmp    _T78;
 // LINE 280:
+_T78:
 }
 
 // FUNCTION: COPTER_D 0x0056633e
@@ -777,7 +781,8 @@ _T0f:
 	__asm        jmp    _T0f;
 // LINE 368:
 _T54:
-	__asm        jmp    near ptr 0x00566397;
+	__asm        jmp    _T59;
+_T59:
 }
 
 // FUNCTION: COPTER_D 0x0056639c
@@ -836,7 +841,8 @@ _T47:
 	__asm        mov    eax, str2;
 	__asm        mov    [eax], cl;
 // LINE 452:
-	__asm        jmp    near ptr 0x00566420;
+	__asm        jmp    _T84;
+_T84:
 }
 
 // FUNCTION: COPTER_D 0x00566425
@@ -866,7 +872,8 @@ void ConcatCPStr(char * src, unsigned char * dest, short destSize) {
 	__asm        call   ConcatPStr;
 	__asm        add    esp, 0xC;
 // LINE 460:
-	__asm        jmp    near ptr 0x00566474;
+	__asm        jmp    _T4f;
+_T4f:
 }
 
 // FUNCTION: COPTER_D 0x00566479
@@ -890,7 +897,8 @@ void ConcatNum(long number, unsigned char * str, short destSize) {
 	__asm        call   ConcatPStr;
 	__asm        add    esp, 0xC;
 // LINE 469:
-	__asm        jmp    near ptr 0x005664B4;
+	__asm        jmp    _T3b;
+_T3b:
 }
 
 // FUNCTION: COPTER_D 0x005664b9
@@ -1182,7 +1190,8 @@ _T3e:
 	__asm        call   Memory::BlockMove;
 	__asm        add    esp, 0xC;
 // LINE 935:
-	__asm        jmp    near ptr 0x00566778;
+	__asm        jmp    _T73;
+_T73:
 }
 
 // FUNCTION: COPTER_D 0x0056677d
@@ -1231,7 +1240,8 @@ _T54:
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3558];
 // LINE 1084:
-	__asm        jmp    near ptr 0x005667F9;
+	__asm        jmp    _T7c;
+_T7c:
 }
 
 // FUNCTION: COPTER_D 0x005667fe
@@ -1260,8 +1270,9 @@ _T54:
 	__asm        mov    tmp.h, ax;
 // LINE 1258:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(tmp.v);
-	__asm        jmp    near ptr 0x00566842;
+	__asm        jmp    _T44;
 // LINE 1259:
+_T44:
 }
 
 

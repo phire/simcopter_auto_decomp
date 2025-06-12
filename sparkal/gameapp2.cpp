@@ -433,7 +433,8 @@ void S3SwitchToProperSkyType() {
 	__asm        call   SkyImage::SwitchToProperSkyType;
 // LINE 93:
 _T35:
-	__asm        jmp    near ptr 0x004611BA;
+	__asm        jmp    _T3a;
+_T3a:
 }
 
 // FUNCTION: COPTER_D 0x004611bf
@@ -587,7 +588,8 @@ _T164:
 	__asm        add    esp, 4;
 // LINE 136:
 _T1b9:
-	__asm        jmp    near ptr 0x004613C6;
+	__asm        jmp    _T1be;
+_T1be:
 }
 
 // FUNCTION: COPTER_D 0x004613cb
@@ -681,7 +683,8 @@ void  CGameApp::SetSoundPreferences(/*packed*/ struct SoundPreferences& newSound
 	__asm        call   dword ptr [eax+0x2C];
 // LINE 179:
 _T3e:
-	__asm        jmp    near ptr 0x004614D7;
+	__asm        jmp    _T43;
+_T43:
 }
 
 // FUNCTION: COPTER_D 0x004614de
@@ -691,8 +694,8 @@ void  CGameApp::SavePreferences() {
 	/*bp-0x48*/  long lCurrentJoystickCount;
 
 // LINE 188:
-	__asm        jmp    near ptr 0x004614EF;
-
+	__asm        jmp    _T11;
+_T11:
 	lCurrentJoystickCount = gJoystickManager.nJoystickCount;
 // LINE 192:
 	__asm        cmp    gPreferenceManager, 0;
@@ -793,7 +796,8 @@ _T137:
 	gPreferenceManager = 0x0;
 // LINE 209:
 _T141:
-	__asm        jmp    near ptr 0x00461624;
+	__asm        jmp    _T146;
+_T146:
 }
 
 // FUNCTION: COPTER_D 0x00461629
@@ -809,8 +813,8 @@ unsigned long  CGameApp::TickGame() {
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x416C];
 	__asm        mov    [ebp-0x18], eax;
-	__asm        jmp    near ptr 0x0046164C;
-
+	__asm        jmp    _T23;
+_T23:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x4168], 0;
 	__asm        je     _Tb2;
@@ -901,10 +905,10 @@ _T10a:
 	__asm        mov    dword ptr [eax+0x416C], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x4168], 0;
-	__asm        jmp    near ptr 0x0046178C;
-
-	__asm        jmp    near ptr 0x00461791;
-
+	__asm        jmp    _T163;
+_T163:
+	__asm        jmp    _T168;
+_T168:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x4168], 0;
 	__asm        je     _T17d;
@@ -990,8 +994,9 @@ _T24e:
 // LINE 256:
 _T26e:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0046189E;
+	__asm        jmp    _T275;
 // LINE 257:
+_T275:
 }
 
 // FUNCTION: COPTER_D 0x004618a3
@@ -1008,19 +1013,19 @@ void  CGameApp::ComposeFrame() {
 	__asm        mov    [ebp-0x240], eax;
 	__asm        mov    eax, [ebp-0x240];
 	__asm        mov    [ebp-0x23C], eax;
-	__asm        jmp    near ptr 0x004618F3;
-
-	__asm        jmp    near ptr 0x004618F8;
-
+	__asm        jmp    _T50;
+_T50:
+	__asm        jmp    _T55;
+_T55:
 	__asm        mov    eax, [ebp-0x23C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x23C], eax;
-	__asm        jmp    near ptr 0x0046190C;
-
-	__asm        jmp    near ptr 0x00461911;
-
-	__asm        jmp    near ptr 0x00461916;
-
+	__asm        jmp    _T69;
+_T69:
+	__asm        jmp    _T6e;
+_T6e:
+	__asm        jmp    _T73;
+_T73:
 	__asm        mov    eax, [ebp-0x23C];
 	__asm        mov    eax, [eax+8];
 	__asm        mov    nCurrentMode, eax;
@@ -1055,8 +1060,8 @@ _T8d:
 
 	__asm        mov    byte ptr [ebp-0x228], 0;
 _Tf0:
-	__asm        jmp    near ptr 0x00461998;
-
+	__asm        jmp    _Tf5;
+_Tf5:
 	__asm        push   0;
 	__asm        lea    ecx, [ebp-0x22C];
 	__asm        call   PFile::FileExists;
@@ -1089,8 +1094,8 @@ _T156:
 	__asm        call   _close;
 	__asm        add    esp, 4;
 _T172:
-	__asm        jmp    near ptr 0x00461A1A;
-
+	__asm        jmp    _T177;
+_T177:
 	__asm        mov    eax, [ebp-0x11C];
 	__asm        mov    [ebp-0x234], eax;
 	__asm        cmp    dword ptr [ebp-0x234], 0;
@@ -1128,10 +1133,11 @@ _T202:
 	__asm        mov    dword ptr [eax+0x24], 0;
 	__asm        mov    eax, [ebp-0x238];
 	__asm        mov    dword ptr [eax+0x28], 0x64;
-	__asm        jmp    near ptr 0x00461AD6;
+	__asm        jmp    _T233;
 // LINE 283:
-	__asm        jmp    near ptr 0x00461ADB;
-
+_T233:
+	__asm        jmp    _T238;
+_T238:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x50];
 	__asm        mov    eax, [eax+0x18];
@@ -1258,8 +1264,8 @@ _L64109:
 // LINE 346:
 	this-><CGameApp+0x24:4> = 0x1;
 // LINE 349:
-	__asm        jmp    near ptr 0x00461C85;
-
+	__asm        jmp    _T3e2;
+_T3e2:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xD8];
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -1273,8 +1279,8 @@ _L64109:
 	__asm        call   dword ptr [edx+4];
 // LINE 351:
 _T415:
-	__asm        jmp    near ptr 0x00461CBD;
-
+	__asm        jmp    _T41a;
+_T41a:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x34];
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -1288,8 +1294,8 @@ _T415:
 	__asm        call   dword ptr [edx+4];
 // LINE 353:
 _T444:
-	__asm        jmp    near ptr 0x00461CEC;
-
+	__asm        jmp    _T449;
+_T449:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xDC];
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -1512,10 +1518,10 @@ _Tf8:
 	__asm        mov    gGraduationState.nGraduationState, 1;
 	__asm        mov    gGraduationState.timerGraduationState.lTotalElapsedTime, 0;
 	__asm        mov    gGraduationState.timerGraduationState.lStartTime, 0;
-	__asm        jmp    near ptr 0x00461FE1;
-
-	__asm        jmp    near ptr 0x00461FE6;
-
+	__asm        jmp    _T128;
+_T128:
+	__asm        jmp    _T12d;
+_T12d:
 	__asm        cmp    gGraduationState.timerGraduationState.lStartTime, 0;
 	__asm        je     _T13f;
 
@@ -1553,10 +1559,11 @@ _T190:
 _T1a9:
 	__asm        jmp    _T1ae;
 _T1ae:
-	__asm        jmp    near ptr 0x0046206C;
-
-	__asm        jmp    near ptr 0x00462071;
+	__asm        jmp    _T1b3;
+_T1b3:
+	__asm        jmp    _T1b8;
 // LINE 426:
+_T1b8:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
@@ -1569,8 +1576,8 @@ _T1cb:
 // LINE 430:
 	__asm        mov    eax, gGraduationState.timerGraduationState.lTotalElapsedTime;
 	__asm        mov    [ebp-0x30], eax;
-	__asm        jmp    near ptr 0x0046209E;
-
+	__asm        jmp    _T1e5;
+_T1e5:
 	__asm        cmp    gGraduationState.timerGraduationState.lStartTime, 0;
 	__asm        je     _T268;
 
@@ -1651,8 +1658,8 @@ _T2de:
 
 	__asm        mov    eax, gGraduationState.timerGraduationState.lTotalElapsedTime;
 	__asm        mov    [ebp-0x4C], eax;
-	__asm        jmp    near ptr 0x004621B1;
-
+	__asm        jmp    _T2f8;
+_T2f8:
 	__asm        cmp    gGraduationState.timerGraduationState.lStartTime, 0;
 	__asm        je     _T37b;
 
@@ -1786,10 +1793,10 @@ _T485:
 	__asm        mov    gGraduationState.nGraduationState, 2;
 	__asm        mov    gGraduationState.timerGraduationState.lTotalElapsedTime, 0;
 	__asm        mov    gGraduationState.timerGraduationState.lStartTime, 0;
-	__asm        jmp    near ptr 0x0046236B;
-
-	__asm        jmp    near ptr 0x00462370;
-
+	__asm        jmp    _T4b2;
+_T4b2:
+	__asm        jmp    _T4b7;
+_T4b7:
 	__asm        cmp    gGraduationState.timerGraduationState.lStartTime, 0;
 	__asm        je     _T4c9;
 
@@ -1827,8 +1834,8 @@ _T51a:
 _T533:
 	__asm        jmp    _T538;
 _T538:
-	__asm        jmp    near ptr 0x004623F6;
-
+	__asm        jmp    _T53d;
+_T53d:
 	__asm        jmp    _T542;
 // LINE 455:
 // Block end:
@@ -1872,10 +1879,10 @@ _T570:
 	__asm        mov    ecx, [eax+0x34];
 	__asm        call   dword ptr [edx];
 // LINE 467:
-	__asm        jmp    near ptr 0x0046246D;
-
-	__asm        jmp    near ptr 0x00462472;
-
+	__asm        jmp    _T5b4;
+_T5b4:
+	__asm        jmp    _T5b9;
+_T5b9:
 	__asm        push   0x144;
 	__asm        push   0x200;
 	__asm        mov    eax, this;
@@ -1934,19 +1941,19 @@ _T21:
 	__asm        mov    [ebp-0xC], eax;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x00462516;
-
-	__asm        jmp    near ptr 0x0046251B;
-
+	__asm        jmp    _T38;
+_T38:
+	__asm        jmp    _T3d;
+_T3d:
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x00462529;
-
-	__asm        jmp    near ptr 0x0046252E;
-
-	__asm        jmp    near ptr 0x00462533;
-
+	__asm        jmp    _T4b;
+_T4b:
+	__asm        jmp    _T50;
+_T50:
+	__asm        jmp    _T55;
+_T55:
 	__asm        mov    eax, [ebp-8];
 	__asm        cmp    dword ptr [eax+8], 6;
 	__asm        jne    _T98;
@@ -1956,8 +1963,8 @@ _T21:
 _T6e:
 	i++;
 _T71:
-	__asm        jmp    near ptr 0x00462554;
-
+	__asm        jmp    _T76;
+_T76:
 	__asm        mov    eax, i;
 	__asm        cmp    gJoystickManager.nJoystickCount, eax;
 	__asm        jle    _T98;
@@ -1969,7 +1976,8 @@ _T71:
 	__asm        jmp    _T6e;
 // LINE 494:
 _T98:
-	__asm        jmp    near ptr 0x0046257B;
+	__asm        jmp    _T9d;
+_T9d:
 }
 
 // FUNCTION: COPTER_D 0x00462582
@@ -1990,23 +1998,23 @@ int  CGameApp::EnterMode(int32_t nMode) {
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    [ebp-0x34], eax;
-	__asm        jmp    near ptr 0x004625D5;
-
-	__asm        jmp    near ptr 0x004625DA;
-
+	__asm        jmp    _T53;
+_T53:
+	__asm        jmp    _T58;
+_T58:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x48], eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x4338;
 	__asm        call   list<CopterGameMode>::get_node;
 	__asm        mov    [ebp-0x40], eax;
-	__asm        jmp    near ptr 0x004625F9;
-
+	__asm        jmp    _T77;
+_T77:
 	__asm        mov    eax, [ebp-0x40];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x44], eax;
-	__asm        jmp    near ptr 0x00462607;
-
+	__asm        jmp    _T85;
+_T85:
 	__asm        cmp    dword ptr [ebp-0x44], 0;
 	__asm        je     _Ta0;
 
@@ -2016,8 +2024,8 @@ int  CGameApp::EnterMode(int32_t nMode) {
 	__asm        call   CopterGameMode::CopterGameMode;
 	__asm        jmp    _Ta0;
 _Ta0:
-	__asm        jmp    near ptr 0x00462627;
-
+	__asm        jmp    _Ta5;
+_Ta5:
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    ecx, [ebp-0x40];
 	__asm        mov    [ecx], eax;
@@ -2036,12 +2044,13 @@ _Ta0:
 	__asm        add    dword ptr [eax+0x433C], 1;
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    [ebp-0x38], eax;
-	__asm        jmp    near ptr 0x00462667;
-
-	__asm        jmp    near ptr 0x0046266C;
-
-	__asm        jmp    near ptr 0x00462671;
+	__asm        jmp    _Te5;
+_Te5:
+	__asm        jmp    _Tea;
+_Tea:
+	__asm        jmp    _Tef;
 // LINE 506:
+_Tef:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T107f;
 // LINE 508:
@@ -2062,23 +2071,23 @@ _Tfe:
 	__asm        mov    [ebp-0x58], eax;
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    [ebp-0x50], eax;
-	__asm        jmp    near ptr 0x004626C1;
-
-	__asm        jmp    near ptr 0x004626C6;
-
+	__asm        jmp    _T13f;
+_T13f:
+	__asm        jmp    _T144;
+_T144:
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    [ebp-0x64], eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x4338;
 	__asm        call   list<CopterGameMode>::get_node;
 	__asm        mov    [ebp-0x5C], eax;
-	__asm        jmp    near ptr 0x004626E5;
-
+	__asm        jmp    _T163;
+_T163:
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x60], eax;
-	__asm        jmp    near ptr 0x004626F3;
-
+	__asm        jmp    _T171;
+_T171:
 	__asm        cmp    dword ptr [ebp-0x60], 0;
 	__asm        je     _T18c;
 
@@ -2088,8 +2097,8 @@ _Tfe:
 	__asm        call   CopterGameMode::CopterGameMode;
 	__asm        jmp    _T18c;
 _T18c:
-	__asm        jmp    near ptr 0x00462713;
-
+	__asm        jmp    _T191;
+_T191:
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    ecx, [ebp-0x5C];
 	__asm        mov    [ecx], eax;
@@ -2108,12 +2117,13 @@ _T18c:
 	__asm        add    dword ptr [eax+0x433C], 1;
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        mov    [ebp-0x54], eax;
-	__asm        jmp    near ptr 0x00462753;
-
-	__asm        jmp    near ptr 0x00462758;
-
-	__asm        jmp    near ptr 0x0046275D;
+	__asm        jmp    _T1d1;
+_T1d1:
+	__asm        jmp    _T1d6;
+_T1d6:
+	__asm        jmp    _T1db;
 // LINE 511:
+_T1db:
 	this-><CGameApp+0x36b8:4> = 0x0;
 // LINE 513:
 	__asm        jmp    _T1078;
@@ -2133,23 +2143,23 @@ _T1f0:
 	__asm        mov    [ebp-0x74], eax;
 	__asm        mov    eax, [ebp-0x74];
 	__asm        mov    [ebp-0x6C], eax;
-	__asm        jmp    near ptr 0x004627B6;
-
-	__asm        jmp    near ptr 0x004627BB;
-
+	__asm        jmp    _T234;
+_T234:
+	__asm        jmp    _T239;
+_T239:
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        mov    [ebp-0x80], eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x4338;
 	__asm        call   list<CopterGameMode>::get_node;
 	__asm        mov    [ebp-0x78], eax;
-	__asm        jmp    near ptr 0x004627DA;
-
+	__asm        jmp    _T258;
+_T258:
 	__asm        mov    eax, [ebp-0x78];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x7C], eax;
-	__asm        jmp    near ptr 0x004627E8;
-
+	__asm        jmp    _T266;
+_T266:
 	__asm        cmp    dword ptr [ebp-0x7C], 0;
 	__asm        je     _T284;
 
@@ -2159,8 +2169,8 @@ _T1f0:
 	__asm        call   CopterGameMode::CopterGameMode;
 	__asm        jmp    _T284;
 _T284:
-	__asm        jmp    near ptr 0x0046280B;
-
+	__asm        jmp    _T289;
+_T289:
 	__asm        mov    eax, [ebp-0x80];
 	__asm        mov    ecx, [ebp-0x78];
 	__asm        mov    [ecx], eax;
@@ -2179,12 +2189,13 @@ _T284:
 	__asm        add    dword ptr [eax+0x433C], 1;
 	__asm        mov    eax, [ebp-0x78];
 	__asm        mov    [ebp-0x70], eax;
-	__asm        jmp    near ptr 0x0046284B;
-
-	__asm        jmp    near ptr 0x00462850;
-
-	__asm        jmp    near ptr 0x00462855;
+	__asm        jmp    _T2c9;
+_T2c9:
+	__asm        jmp    _T2ce;
+_T2ce:
+	__asm        jmp    _T2d3;
 // LINE 516:
+_T2d3:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T107f;
 // LINE 518:
@@ -2205,23 +2216,23 @@ _T2e2:
 	__asm        mov    [ebp-0x90], eax;
 	__asm        mov    eax, [ebp-0x90];
 	__asm        mov    [ebp-0x88], eax;
-	__asm        jmp    near ptr 0x004628B1;
-
-	__asm        jmp    near ptr 0x004628B6;
-
+	__asm        jmp    _T32f;
+_T32f:
+	__asm        jmp    _T334;
+_T334:
 	__asm        mov    eax, [ebp-0x88];
 	__asm        mov    [ebp-0x9C], eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x4338;
 	__asm        call   list<CopterGameMode>::get_node;
 	__asm        mov    [ebp-0x94], eax;
-	__asm        jmp    near ptr 0x004628DE;
-
+	__asm        jmp    _T35c;
+_T35c:
 	__asm        mov    eax, [ebp-0x94];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x98], eax;
-	__asm        jmp    near ptr 0x004628F2;
-
+	__asm        jmp    _T370;
+_T370:
 	__asm        cmp    dword ptr [ebp-0x98], 0;
 	__asm        je     _T394;
 
@@ -2231,8 +2242,8 @@ _T2e2:
 	__asm        call   CopterGameMode::CopterGameMode;
 	__asm        jmp    _T394;
 _T394:
-	__asm        jmp    near ptr 0x0046291B;
-
+	__asm        jmp    _T399;
+_T399:
 	__asm        mov    eax, [ebp-0x9C];
 	__asm        mov    ecx, [ebp-0x94];
 	__asm        mov    [ecx], eax;
@@ -2251,12 +2262,13 @@ _T394:
 	__asm        add    dword ptr [eax+0x433C], 1;
 	__asm        mov    eax, [ebp-0x94];
 	__asm        mov    [ebp-0x8C], eax;
-	__asm        jmp    near ptr 0x00462979;
-
-	__asm        jmp    near ptr 0x0046297E;
-
-	__asm        jmp    near ptr 0x00462983;
+	__asm        jmp    _T3f7;
+_T3f7:
+	__asm        jmp    _T3fc;
+_T3fc:
+	__asm        jmp    _T401;
 // LINE 521:
+_T401:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T107f;
 // LINE 523:
@@ -2277,23 +2289,23 @@ _T410:
 	__asm        mov    [ebp-0xAC], eax;
 	__asm        mov    eax, [ebp-0xAC];
 	__asm        mov    [ebp-0xA4], eax;
-	__asm        jmp    near ptr 0x004629DF;
-
-	__asm        jmp    near ptr 0x004629E4;
-
+	__asm        jmp    _T45d;
+_T45d:
+	__asm        jmp    _T462;
+_T462:
 	__asm        mov    eax, [ebp-0xA4];
 	__asm        mov    [ebp-0xB8], eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x4338;
 	__asm        call   list<CopterGameMode>::get_node;
 	__asm        mov    [ebp-0xB0], eax;
-	__asm        jmp    near ptr 0x00462A0C;
-
+	__asm        jmp    _T48a;
+_T48a:
 	__asm        mov    eax, [ebp-0xB0];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0xB4], eax;
-	__asm        jmp    near ptr 0x00462A20;
-
+	__asm        jmp    _T49e;
+_T49e:
 	__asm        cmp    dword ptr [ebp-0xB4], 0;
 	__asm        je     _T4c2;
 
@@ -2303,8 +2315,8 @@ _T410:
 	__asm        call   CopterGameMode::CopterGameMode;
 	__asm        jmp    _T4c2;
 _T4c2:
-	__asm        jmp    near ptr 0x00462A49;
-
+	__asm        jmp    _T4c7;
+_T4c7:
 	__asm        mov    eax, [ebp-0xB8];
 	__asm        mov    ecx, [ebp-0xB0];
 	__asm        mov    [ecx], eax;
@@ -2323,12 +2335,13 @@ _T4c2:
 	__asm        inc    dword ptr [eax+0x433C];
 	__asm        mov    eax, [ebp-0xB0];
 	__asm        mov    [ebp-0xA8], eax;
-	__asm        jmp    near ptr 0x00462AA6;
-
-	__asm        jmp    near ptr 0x00462AAB;
-
-	__asm        jmp    near ptr 0x00462AB0;
+	__asm        jmp    _T524;
+_T524:
+	__asm        jmp    _T529;
+_T529:
+	__asm        jmp    _T52e;
 // LINE 526:
+_T52e:
 	this-><CGameApp+0x64:4> = this;
 // LINE 527:
 	this-><CGameApp+0x68:4> = this-><CGameApp+0x38:4>;
@@ -2373,23 +2386,23 @@ _T592:
 	__asm        mov    [ebp-0xC8], eax;
 	__asm        mov    eax, [ebp-0xC8];
 	__asm        mov    [ebp-0xC0], eax;
-	__asm        jmp    near ptr 0x00462B7A;
-
-	__asm        jmp    near ptr 0x00462B7F;
-
+	__asm        jmp    _T5f8;
+_T5f8:
+	__asm        jmp    _T5fd;
+_T5fd:
 	__asm        mov    eax, [ebp-0xC0];
 	__asm        mov    [ebp-0xD4], eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x4338;
 	__asm        call   list<CopterGameMode>::get_node;
 	__asm        mov    [ebp-0xCC], eax;
-	__asm        jmp    near ptr 0x00462BA7;
-
+	__asm        jmp    _T625;
+_T625:
 	__asm        mov    eax, [ebp-0xCC];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0xD0], eax;
-	__asm        jmp    near ptr 0x00462BBB;
-
+	__asm        jmp    _T639;
+_T639:
 	__asm        cmp    dword ptr [ebp-0xD0], 0;
 	__asm        je     _T65d;
 
@@ -2399,8 +2412,8 @@ _T592:
 	__asm        call   CopterGameMode::CopterGameMode;
 	__asm        jmp    _T65d;
 _T65d:
-	__asm        jmp    near ptr 0x00462BE4;
-
+	__asm        jmp    _T662;
+_T662:
 	__asm        mov    eax, [ebp-0xD4];
 	__asm        mov    ecx, [ebp-0xCC];
 	__asm        mov    [ecx], eax;
@@ -2419,12 +2432,13 @@ _T65d:
 	__asm        inc    dword ptr [eax+0x433C];
 	__asm        mov    eax, [ebp-0xCC];
 	__asm        mov    [ebp-0xC4], eax;
-	__asm        jmp    near ptr 0x00462C41;
-
-	__asm        jmp    near ptr 0x00462C46;
-
-	__asm        jmp    near ptr 0x00462C4B;
+	__asm        jmp    _T6bf;
+_T6bf:
+	__asm        jmp    _T6c4;
+_T6c4:
+	__asm        jmp    _T6c9;
 // LINE 538:
+_T6c9:
 	this-><CGameApp+0x7c:4> = this;
 // LINE 539:
 	this-><CGameApp+0x80:4> = this-><CGameApp+0x38:4>;
@@ -2462,8 +2476,8 @@ _T733:
 // LINE 552:
 	this-><CGameApp+0x4340:4> = 0x1;
 // LINE 553:
-	__asm        jmp    near ptr 0x00462CE8;
-
+	__asm        jmp    _T766;
+_T766:
 	__asm        cmp    dword ptr ds:[0x604498], 0;
 	__asm        je     _T77f;
 // LINE 554:
@@ -2489,23 +2503,23 @@ _T77f:
 	__asm        mov    [ebp-0xE4], eax;
 	__asm        mov    eax, [ebp-0xE4];
 	__asm        mov    [ebp-0xDC], eax;
-	__asm        jmp    near ptr 0x00462D4D;
-
-	__asm        jmp    near ptr 0x00462D52;
-
+	__asm        jmp    _T7cb;
+_T7cb:
+	__asm        jmp    _T7d0;
+_T7d0:
 	__asm        mov    eax, [ebp-0xDC];
 	__asm        mov    [ebp-0xF0], eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x4338;
 	__asm        call   list<CopterGameMode>::get_node;
 	__asm        mov    [ebp-0xE8], eax;
-	__asm        jmp    near ptr 0x00462D7A;
-
+	__asm        jmp    _T7f8;
+_T7f8:
 	__asm        mov    eax, [ebp-0xE8];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0xEC], eax;
-	__asm        jmp    near ptr 0x00462D8E;
-
+	__asm        jmp    _T80c;
+_T80c:
 	__asm        cmp    dword ptr [ebp-0xEC], 0;
 	__asm        je     _T830;
 
@@ -2515,8 +2529,8 @@ _T77f:
 	__asm        call   CopterGameMode::CopterGameMode;
 	__asm        jmp    _T830;
 _T830:
-	__asm        jmp    near ptr 0x00462DB7;
-
+	__asm        jmp    _T835;
+_T835:
 	__asm        mov    eax, [ebp-0xF0];
 	__asm        mov    ecx, [ebp-0xE8];
 	__asm        mov    [ecx], eax;
@@ -2535,12 +2549,13 @@ _T830:
 	__asm        inc    dword ptr [eax+0x433C];
 	__asm        mov    eax, [ebp-0xE8];
 	__asm        mov    [ebp-0xE0], eax;
-	__asm        jmp    near ptr 0x00462E14;
-
-	__asm        jmp    near ptr 0x00462E19;
-
-	__asm        jmp    near ptr 0x00462E1E;
+	__asm        jmp    _T892;
+_T892:
+	__asm        jmp    _T897;
+_T897:
+	__asm        jmp    _T89c;
 // LINE 557:
+_T89c:
 	this-><CGameApp+0xac:4> = this;
 // LINE 558:
 	this-><CGameApp+0xb0:4> = this-><CGameApp+0x38:4>;
@@ -2689,23 +2704,23 @@ _Ta7c:
 	__asm        mov    [ebp-0x100], eax;
 	__asm        mov    eax, [ebp-0x100];
 	__asm        mov    [ebp-0xF8], eax;
-	__asm        jmp    near ptr 0x00463064;
-
-	__asm        jmp    near ptr 0x00463069;
-
+	__asm        jmp    _Tae2;
+_Tae2:
+	__asm        jmp    _Tae7;
+_Tae7:
 	__asm        mov    eax, [ebp-0xF8];
 	__asm        mov    [ebp-0x10C], eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x4338;
 	__asm        call   list<CopterGameMode>::get_node;
 	__asm        mov    [ebp-0x104], eax;
-	__asm        jmp    near ptr 0x00463091;
-
+	__asm        jmp    _Tb0f;
+_Tb0f:
 	__asm        mov    eax, [ebp-0x104];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x108], eax;
-	__asm        jmp    near ptr 0x004630A5;
-
+	__asm        jmp    _Tb23;
+_Tb23:
 	__asm        cmp    dword ptr [ebp-0x108], 0;
 	__asm        je     _Tb47;
 
@@ -2715,8 +2730,8 @@ _Ta7c:
 	__asm        call   CopterGameMode::CopterGameMode;
 	__asm        jmp    _Tb47;
 _Tb47:
-	__asm        jmp    near ptr 0x004630CE;
-
+	__asm        jmp    _Tb4c;
+_Tb4c:
 	__asm        mov    eax, [ebp-0x10C];
 	__asm        mov    ecx, [ebp-0x104];
 	__asm        mov    [ecx], eax;
@@ -2735,12 +2750,13 @@ _Tb47:
 	__asm        inc    dword ptr [eax+0x433C];
 	__asm        mov    eax, [ebp-0x104];
 	__asm        mov    [ebp-0xFC], eax;
-	__asm        jmp    near ptr 0x0046312B;
-
-	__asm        jmp    near ptr 0x00463130;
-
-	__asm        jmp    near ptr 0x00463135;
+	__asm        jmp    _Tba9;
+_Tba9:
+	__asm        jmp    _Tbae;
+_Tbae:
+	__asm        jmp    _Tbb3;
 // LINE 613:
+_Tbb3:
 	this-><CGameApp+0xbc4:4> = this;
 // LINE 614:
 	this-><CGameApp+0xbc8:4> = this-><CGameApp+0x38:4>;
@@ -2782,23 +2798,23 @@ _Tc18:
 	__asm        mov    [ebp-0x11C], eax;
 	__asm        mov    eax, [ebp-0x11C];
 	__asm        mov    [ebp-0x114], eax;
-	__asm        jmp    near ptr 0x00463200;
-
-	__asm        jmp    near ptr 0x00463205;
-
+	__asm        jmp    _Tc7e;
+_Tc7e:
+	__asm        jmp    _Tc83;
+_Tc83:
 	__asm        mov    eax, [ebp-0x114];
 	__asm        mov    [ebp-0x128], eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x4338;
 	__asm        call   list<CopterGameMode>::get_node;
 	__asm        mov    [ebp-0x120], eax;
-	__asm        jmp    near ptr 0x0046322D;
-
+	__asm        jmp    _Tcab;
+_Tcab:
 	__asm        mov    eax, [ebp-0x120];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x124], eax;
-	__asm        jmp    near ptr 0x00463241;
-
+	__asm        jmp    _Tcbf;
+_Tcbf:
 	__asm        cmp    dword ptr [ebp-0x124], 0;
 	__asm        je     _Tce3;
 
@@ -2808,8 +2824,8 @@ _Tc18:
 	__asm        call   CopterGameMode::CopterGameMode;
 	__asm        jmp    _Tce3;
 _Tce3:
-	__asm        jmp    near ptr 0x0046326A;
-
+	__asm        jmp    _Tce8;
+_Tce8:
 	__asm        mov    eax, [ebp-0x128];
 	__asm        mov    ecx, [ebp-0x120];
 	__asm        mov    [ecx], eax;
@@ -2828,12 +2844,13 @@ _Tce3:
 	__asm        inc    dword ptr [eax+0x433C];
 	__asm        mov    eax, [ebp-0x120];
 	__asm        mov    [ebp-0x118], eax;
-	__asm        jmp    near ptr 0x004632C7;
-
-	__asm        jmp    near ptr 0x004632CC;
-
-	__asm        jmp    near ptr 0x004632D1;
+	__asm        jmp    _Td45;
+_Td45:
+	__asm        jmp    _Td4a;
+_Td4a:
+	__asm        jmp    _Td4f;
 // LINE 625:
+_Td4f:
 	this-><CGameApp+0x1684:4> = this;
 // LINE 626:
 	this-><CGameApp+0x1688:4> = this-><CGameApp+0x38:4>;
@@ -2873,18 +2890,18 @@ _Tda7:
 	__asm        mov    [ebp-0x138], eax;
 	__asm        mov    eax, [ebp-0x138];
 	__asm        mov    [ebp-0x130], eax;
-	__asm        jmp    near ptr 0x0046338F;
-
-	__asm        jmp    near ptr 0x00463394;
-
+	__asm        jmp    _Te0d;
+_Te0d:
+	__asm        jmp    _Te12;
+_Te12:
 	__asm        mov    eax, [ebp-0x130];
 	__asm        mov    [ebp-0x140], eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x4338;
 	__asm        call   list<CopterGameMode>::get_node;
 	__asm        mov    [ebp-0x13C], eax;
-	__asm        jmp    near ptr 0x004633BC;
-
+	__asm        jmp    _Te3a;
+_Te3a:
 	__asm        mov    eax, [ebp-0x144];
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x13C];
@@ -2910,12 +2927,13 @@ _Tda7:
 	__asm        inc    dword ptr [eax+0x433C];
 	__asm        mov    eax, [ebp-0x13C];
 	__asm        mov    [ebp-0x134], eax;
-	__asm        jmp    near ptr 0x00463432;
-
-	__asm        jmp    near ptr 0x00463437;
-
-	__asm        jmp    near ptr 0x0046343C;
+	__asm        jmp    _Teb0;
+_Teb0:
+	__asm        jmp    _Teb5;
+_Teb5:
+	__asm        jmp    _Teba;
 // LINE 635:
+_Teba:
 	this-><CGameApp+0x2144:4> = this;
 // LINE 636:
 	this-><CGameApp+0x2148:4> = this-><CGameApp+0x38:4>;
@@ -2955,18 +2973,18 @@ _Tf12:
 	__asm        mov    [ebp-0x150], eax;
 	__asm        mov    eax, [ebp-0x150];
 	__asm        mov    [ebp-0x148], eax;
-	__asm        jmp    near ptr 0x004634FA;
-
-	__asm        jmp    near ptr 0x004634FF;
-
+	__asm        jmp    _Tf78;
+_Tf78:
+	__asm        jmp    _Tf7d;
+_Tf7d:
 	__asm        mov    eax, [ebp-0x148];
 	__asm        mov    [ebp-0x158], eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x4338;
 	__asm        call   list<CopterGameMode>::get_node;
 	__asm        mov    [ebp-0x154], eax;
-	__asm        jmp    near ptr 0x00463527;
-
+	__asm        jmp    _Tfa5;
+_Tfa5:
 	__asm        mov    eax, [ebp-0x15C];
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x154];
@@ -2992,12 +3010,13 @@ _Tf12:
 	__asm        inc    dword ptr [eax+0x433C];
 	__asm        mov    eax, [ebp-0x154];
 	__asm        mov    [ebp-0x14C], eax;
-	__asm        jmp    near ptr 0x0046359D;
-
-	__asm        jmp    near ptr 0x004635A2;
-
-	__asm        jmp    near ptr 0x004635A7;
+	__asm        jmp    _T101b;
+_T101b:
+	__asm        jmp    _T1020;
+_T1020:
+	__asm        jmp    _T1025;
 // LINE 645:
+_T1025:
 	this-><CGameApp+0x2c04:4> = this;
 // LINE 646:
 	this-><CGameApp+0x2c08:4> = this-><CGameApp+0x38:4>;
@@ -3031,22 +3050,23 @@ int  CGameApp::ExitMode(int32_t nMode) {
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x00463635;
-
-	__asm        jmp    near ptr 0x0046363A;
-
+	__asm        jmp    _T2d;
+_T2d:
+	__asm        jmp    _T32;
+_T32:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x00463648;
-
+	__asm        jmp    _T40;
+_T40:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x4338;
 	__asm        call   list<CopterGameMode>::erase;
-	__asm        jmp    near ptr 0x0046365F;
+	__asm        jmp    _T57;
 // LINE 663:
+_T57:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T5ea;
 // LINE 665:
@@ -3060,15 +3080,15 @@ _T66:
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x14], eax;
-	__asm        jmp    near ptr 0x0046368F;
-
-	__asm        jmp    near ptr 0x00463694;
-
+	__asm        jmp    _T87;
+_T87:
+	__asm        jmp    _T8c;
+_T8c:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x14], eax;
-	__asm        jmp    near ptr 0x004636A2;
-
+	__asm        jmp    _T9a;
+_T9a:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        mov    eax, [ebp-0x1C];
@@ -3081,23 +3101,24 @@ _T66:
 	__asm        mov    ecx, [ebp-0x1C];
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x004636C8;
-
-	__asm        jmp    near ptr 0x004636CD;
-
+	__asm        jmp    _Tc0;
+_Tc0:
+	__asm        jmp    _Tc5;
+_Tc5:
 	__asm        mov    eax, list<CopterGameMode>::free_list;
 	__asm        mov    ecx, [ebp-0x1C];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    list<CopterGameMode>::free_list, eax;
-	__asm        jmp    near ptr 0x004636E4;
-
+	__asm        jmp    _Tdc;
+_Tdc:
 	__asm        mov    eax, this;
 	__asm        dec    dword ptr [eax+0x433C];
-	__asm        jmp    near ptr 0x004636F2;
-
-	__asm        jmp    near ptr 0x004636F7;
+	__asm        jmp    _Tea;
+_Tea:
+	__asm        jmp    _Tef;
 // LINE 667:
+_Tef:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T5ea;
 // LINE 669:
@@ -3142,22 +3163,23 @@ _T152:
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    [ebp-0x20], eax;
-	__asm        jmp    near ptr 0x00463784;
-
-	__asm        jmp    near ptr 0x00463789;
-
+	__asm        jmp    _T17c;
+_T17c:
+	__asm        jmp    _T181;
+_T181:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x20], eax;
-	__asm        jmp    near ptr 0x00463797;
-
+	__asm        jmp    _T18f;
+_T18f:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x4338;
 	__asm        call   list<CopterGameMode>::erase;
-	__asm        jmp    near ptr 0x004637AE;
+	__asm        jmp    _T1a6;
 // LINE 681:
+_T1a6:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T5ea;
 // LINE 683:
@@ -3186,15 +3208,15 @@ _T1b5:
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    [ebp-0x28], eax;
-	__asm        jmp    near ptr 0x00463804;
-
-	__asm        jmp    near ptr 0x00463809;
-
+	__asm        jmp    _T1fc;
+_T1fc:
+	__asm        jmp    _T201;
+_T201:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x28], eax;
-	__asm        jmp    near ptr 0x00463817;
-
+	__asm        jmp    _T20f;
+_T20f:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x30], eax;
 	__asm        mov    eax, [ebp-0x30];
@@ -3207,23 +3229,24 @@ _T1b5:
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x0046383D;
-
-	__asm        jmp    near ptr 0x00463842;
-
+	__asm        jmp    _T235;
+_T235:
+	__asm        jmp    _T23a;
+_T23a:
 	__asm        mov    eax, list<CopterGameMode>::free_list;
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    list<CopterGameMode>::free_list, eax;
-	__asm        jmp    near ptr 0x00463859;
-
+	__asm        jmp    _T251;
+_T251:
 	__asm        mov    eax, this;
 	__asm        dec    dword ptr [eax+0x433C];
-	__asm        jmp    near ptr 0x00463867;
-
-	__asm        jmp    near ptr 0x0046386C;
+	__asm        jmp    _T25f;
+_T25f:
+	__asm        jmp    _T264;
 // LINE 693:
+_T264:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T5ea;
 // LINE 695:
@@ -3249,22 +3272,23 @@ _T273:
 	__asm        mov    [ebp-0x38], eax;
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    [ebp-0x34], eax;
-	__asm        jmp    near ptr 0x004638BA;
-
-	__asm        jmp    near ptr 0x004638BF;
-
+	__asm        jmp    _T2b2;
+_T2b2:
+	__asm        jmp    _T2b7;
+_T2b7:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x34], eax;
-	__asm        jmp    near ptr 0x004638CD;
-
+	__asm        jmp    _T2c5;
+_T2c5:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x4338;
 	__asm        call   list<CopterGameMode>::erase;
-	__asm        jmp    near ptr 0x004638E4;
+	__asm        jmp    _T2dc;
 // LINE 700:
+_T2dc:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T5ea;
 // LINE 702:
@@ -3275,8 +3299,8 @@ _T2eb:
 // LINE 706:
 	__asm        call   S3CityDeInit;
 // LINE 707:
-	__asm        jmp    near ptr 0x00463907;
-
+	__asm        jmp    _T2ff;
+_T2ff:
 	__asm        cmp    dword ptr ds:[0x60449C], 0;
 	__asm        je     _T318;
 // LINE 708:
@@ -3304,15 +3328,15 @@ _T318:
 	__asm        mov    [ebp-0x40], eax;
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    [ebp-0x3C], eax;
-	__asm        jmp    near ptr 0x0046395D;
-
-	__asm        jmp    near ptr 0x00463962;
-
+	__asm        jmp    _T355;
+_T355:
+	__asm        jmp    _T35a;
+_T35a:
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x3C], eax;
-	__asm        jmp    near ptr 0x00463970;
-
+	__asm        jmp    _T368;
+_T368:
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    [ebp-0x44], eax;
 	__asm        mov    eax, [ebp-0x44];
@@ -3325,23 +3349,24 @@ _T318:
 	__asm        mov    ecx, [ebp-0x44];
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x00463996;
-
-	__asm        jmp    near ptr 0x0046399B;
-
+	__asm        jmp    _T38e;
+_T38e:
+	__asm        jmp    _T393;
+_T393:
 	__asm        mov    eax, list<CopterGameMode>::free_list;
 	__asm        mov    ecx, [ebp-0x44];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    list<CopterGameMode>::free_list, eax;
-	__asm        jmp    near ptr 0x004639B2;
-
+	__asm        jmp    _T3aa;
+_T3aa:
 	__asm        mov    eax, this;
 	__asm        dec    dword ptr [eax+0x433C];
-	__asm        jmp    near ptr 0x004639C0;
-
-	__asm        jmp    near ptr 0x004639C5;
+	__asm        jmp    _T3b8;
+_T3b8:
+	__asm        jmp    _T3bd;
 // LINE 713:
+_T3bd:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T5ea;
 // LINE 715:
@@ -3359,22 +3384,23 @@ _T3cc:
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    [ebp-0x48], eax;
-	__asm        jmp    near ptr 0x00463A03;
-
-	__asm        jmp    near ptr 0x00463A08;
-
+	__asm        jmp    _T3fb;
+_T3fb:
+	__asm        jmp    _T400;
+_T400:
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x48], eax;
-	__asm        jmp    near ptr 0x00463A16;
-
+	__asm        jmp    _T40e;
+_T40e:
 	__asm        mov    eax, [ebp-0x48];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x4338;
 	__asm        call   list<CopterGameMode>::erase;
-	__asm        jmp    near ptr 0x00463A2D;
+	__asm        jmp    _T425;
 // LINE 719:
+_T425:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T5ea;
 // LINE 721:
@@ -3392,15 +3418,15 @@ _T434:
 	__asm        mov    [ebp-0x54], eax;
 	__asm        mov    eax, [ebp-0x54];
 	__asm        mov    [ebp-0x50], eax;
-	__asm        jmp    near ptr 0x00463A6B;
-
-	__asm        jmp    near ptr 0x00463A70;
-
+	__asm        jmp    _T463;
+_T463:
+	__asm        jmp    _T468;
+_T468:
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x50], eax;
-	__asm        jmp    near ptr 0x00463A7E;
-
+	__asm        jmp    _T476;
+_T476:
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    [ebp-0x58], eax;
 	__asm        mov    eax, [ebp-0x58];
@@ -3413,23 +3439,24 @@ _T434:
 	__asm        mov    ecx, [ebp-0x58];
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x00463AA4;
-
-	__asm        jmp    near ptr 0x00463AA9;
-
+	__asm        jmp    _T49c;
+_T49c:
+	__asm        jmp    _T4a1;
+_T4a1:
 	__asm        mov    eax, list<CopterGameMode>::free_list;
 	__asm        mov    ecx, [ebp-0x58];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    list<CopterGameMode>::free_list, eax;
-	__asm        jmp    near ptr 0x00463AC0;
-
+	__asm        jmp    _T4b8;
+_T4b8:
 	__asm        mov    eax, this;
 	__asm        dec    dword ptr [eax+0x433C];
-	__asm        jmp    near ptr 0x00463ACE;
-
-	__asm        jmp    near ptr 0x00463AD3;
+	__asm        jmp    _T4c6;
+_T4c6:
+	__asm        jmp    _T4cb;
 // LINE 725:
+_T4cb:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T5ea;
 // LINE 727:
@@ -3447,22 +3474,23 @@ _T4da:
 	__asm        mov    [ebp-0x60], eax;
 	__asm        mov    eax, [ebp-0x60];
 	__asm        mov    [ebp-0x5C], eax;
-	__asm        jmp    near ptr 0x00463B11;
-
-	__asm        jmp    near ptr 0x00463B16;
-
+	__asm        jmp    _T509;
+_T509:
+	__asm        jmp    _T50e;
+_T50e:
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x5C], eax;
-	__asm        jmp    near ptr 0x00463B24;
-
+	__asm        jmp    _T51c;
+_T51c:
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x4338;
 	__asm        call   list<CopterGameMode>::erase;
-	__asm        jmp    near ptr 0x00463B3B;
+	__asm        jmp    _T533;
 // LINE 731:
+_T533:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T5ea;
 // LINE 733:
@@ -3480,15 +3508,15 @@ _T542:
 	__asm        mov    [ebp-0x68], eax;
 	__asm        mov    eax, [ebp-0x68];
 	__asm        mov    [ebp-0x64], eax;
-	__asm        jmp    near ptr 0x00463B79;
-
-	__asm        jmp    near ptr 0x00463B7E;
-
+	__asm        jmp    _T571;
+_T571:
+	__asm        jmp    _T576;
+_T576:
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x64], eax;
-	__asm        jmp    near ptr 0x00463B8C;
-
+	__asm        jmp    _T584;
+_T584:
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        mov    eax, [ebp-0x6C];
@@ -3501,23 +3529,24 @@ _T542:
 	__asm        mov    ecx, [ebp-0x6C];
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x00463BB2;
-
-	__asm        jmp    near ptr 0x00463BB7;
-
+	__asm        jmp    _T5aa;
+_T5aa:
+	__asm        jmp    _T5af;
+_T5af:
 	__asm        mov    eax, list<CopterGameMode>::free_list;
 	__asm        mov    ecx, [ebp-0x6C];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        mov    list<CopterGameMode>::free_list, eax;
-	__asm        jmp    near ptr 0x00463BCE;
-
+	__asm        jmp    _T5c6;
+_T5c6:
 	__asm        mov    eax, this;
 	__asm        dec    dword ptr [eax+0x433C];
-	__asm        jmp    near ptr 0x00463BDC;
-
-	__asm        jmp    near ptr 0x00463BE1;
+	__asm        jmp    _T5d4;
+_T5d4:
+	__asm        jmp    _T5d9;
 // LINE 737:
+_T5d9:
 	__asm        mov    eax, 1;
 	__asm        jmp    _T5ea;
 // LINE 739:
@@ -3552,8 +3581,8 @@ void  CGameApp::DestroyAllModes() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x00463C4A;
-
+	__asm        jmp    _T51;
+_T51:
 	__asm        jmp    _T56;
 // LINE 755:
 _T56:
@@ -3566,8 +3595,8 @@ _T63:
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x00463C75;
-
+	__asm        jmp    _T7c;
+_T7c:
 	__asm        jmp    _T81;
 // LINE 759:
 _T81:
@@ -3576,10 +3605,10 @@ _T81:
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x14], eax;
-	__asm        jmp    near ptr 0x00463C91;
-
-	__asm        jmp    near ptr 0x00463C96;
-
+	__asm        jmp    _T98;
+_T98:
+	__asm        jmp    _T9d;
+_T9d:
 	__asm        mov    eax, i.node;
 	__asm        cmp    [ebp-0x14], eax;
 	__asm        jne    _Tb3;
@@ -3603,8 +3632,8 @@ _Tcc:
 	__asm        je     _T1c8;
 // LINE 760:
 _Tdb:
-	__asm        jmp    near ptr 0x00463CD9;
-
+	__asm        jmp    _Te0;
+_Te0:
 	nCurrentMode = i.node->data.nModeID;
 // LINE 761:
 	__asm        mov    eax, nCurrentMode;
@@ -3615,8 +3644,9 @@ _Tf4:
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x58;
 	__asm        call   GameModeMainMenuData::DestroyAllSurfaces;
-	__asm        jmp    near ptr 0x00463CFD;
+	__asm        jmp    _T104;
 // LINE 764:
+_T104:
 	__asm        jmp    _T1a5;
 // LINE 766:
 _T109:
@@ -3678,16 +3708,18 @@ _T1a5:
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x00463DB1;
-
+	__asm        jmp    _T1b8;
+_T1b8:
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    [ebp-0x18], eax;
-	__asm        jmp    near ptr 0x00463DBC;
+	__asm        jmp    _T1c3;
 // LINE 782:
+_T1c3:
 	__asm        jmp    _T81;
 // LINE 783:
 _T1c8:
-	__asm        jmp    near ptr 0x00463DC6;
+	__asm        jmp    _T1cd;
+_T1cd:
 }
 
 // FUNCTION: COPTER_D 0x00463dcb
@@ -3751,19 +3783,19 @@ _Taf:
 	__asm        mov    [ebp-0xC], eax;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x00463E9E;
-
-	__asm        jmp    near ptr 0x00463EA3;
-
+	__asm        jmp    _Td3;
+_Td3:
+	__asm        jmp    _Td8;
+_Td8:
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x00463EB1;
-
-	__asm        jmp    near ptr 0x00463EB6;
-
-	__asm        jmp    near ptr 0x00463EBB;
-
+	__asm        jmp    _Te6;
+_Te6:
+	__asm        jmp    _Teb;
+_Teb:
+	__asm        jmp    _Tf0;
+_Tf0:
 	__asm        mov    eax, [ebp-8];
 	__asm        cmp    dword ptr [eax+8], 4;
 	__asm        jl     _T105;
@@ -3800,19 +3832,19 @@ _T142:
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    near ptr 0x00463F24;
-
-	__asm        jmp    near ptr 0x00463F29;
-
+	__asm        jmp    _T159;
+_T159:
+	__asm        jmp    _T15e;
+_T15e:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    near ptr 0x00463F37;
-
-	__asm        jmp    near ptr 0x00463F3C;
-
-	__asm        jmp    near ptr 0x00463F41;
-
+	__asm        jmp    _T16c;
+_T16c:
+	__asm        jmp    _T171;
+_T171:
+	__asm        jmp    _T176;
+_T176:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        cmp    dword ptr [eax+8], 7;
 	__asm        jne    _T23a;
@@ -3889,19 +3921,19 @@ _T23a:
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x18], eax;
-	__asm        jmp    near ptr 0x0046401C;
-
-	__asm        jmp    near ptr 0x00464021;
-
+	__asm        jmp    _T251;
+_T251:
+	__asm        jmp    _T256;
+_T256:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x18], eax;
-	__asm        jmp    near ptr 0x0046402F;
-
-	__asm        jmp    near ptr 0x00464034;
-
-	__asm        jmp    near ptr 0x00464039;
-
+	__asm        jmp    _T264;
+_T264:
+	__asm        jmp    _T269;
+_T269:
+	__asm        jmp    _T26e;
+_T26e:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        cmp    dword ptr [eax+8], 8;
 	__asm        jne    _T2a0;
@@ -3925,19 +3957,19 @@ _T2a0:
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    [ebp-0x20], eax;
-	__asm        jmp    near ptr 0x00464082;
-
-	__asm        jmp    near ptr 0x00464087;
-
+	__asm        jmp    _T2b7;
+_T2b7:
+	__asm        jmp    _T2bc;
+_T2bc:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x20], eax;
-	__asm        jmp    near ptr 0x00464095;
-
-	__asm        jmp    near ptr 0x0046409A;
-
-	__asm        jmp    near ptr 0x0046409F;
-
+	__asm        jmp    _T2ca;
+_T2ca:
+	__asm        jmp    _T2cf;
+_T2cf:
+	__asm        jmp    _T2d4;
+_T2d4:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        cmp    dword ptr [eax+8], 9;
 	__asm        jne    _T306;
@@ -3961,19 +3993,19 @@ _T306:
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    [ebp-0x28], eax;
-	__asm        jmp    near ptr 0x004640E8;
-
-	__asm        jmp    near ptr 0x004640ED;
-
+	__asm        jmp    _T31d;
+_T31d:
+	__asm        jmp    _T322;
+_T322:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x28], eax;
-	__asm        jmp    near ptr 0x004640FB;
-
-	__asm        jmp    near ptr 0x00464100;
-
-	__asm        jmp    near ptr 0x00464105;
-
+	__asm        jmp    _T330;
+_T330:
+	__asm        jmp    _T335;
+_T335:
+	__asm        jmp    _T33a;
+_T33a:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        cmp    dword ptr [eax+8], 0xB;
 	__asm        jne    _T371;
@@ -3999,19 +4031,19 @@ _T371:
 	__asm        mov    [ebp-0x34], eax;
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x30], eax;
-	__asm        jmp    near ptr 0x00464153;
-
-	__asm        jmp    near ptr 0x00464158;
-
+	__asm        jmp    _T388;
+_T388:
+	__asm        jmp    _T38d;
+_T38d:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x30], eax;
-	__asm        jmp    near ptr 0x00464166;
-
-	__asm        jmp    near ptr 0x0046416B;
-
-	__asm        jmp    near ptr 0x00464170;
-
+	__asm        jmp    _T39b;
+_T39b:
+	__asm        jmp    _T3a0;
+_T3a0:
+	__asm        jmp    _T3a5;
+_T3a5:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        cmp    dword ptr [eax+8], 6;
 	__asm        jne    _T676;
@@ -4147,8 +4179,9 @@ _T51f:
 
 	this-><CGameApp+0x4308:4> = 0x0;
 _T54f:
-	__asm        jmp    near ptr 0x0046431F;
+	__asm        jmp    _T554;
 // LINE 915:
+_T554:
 	__asm        jmp    _T67b;
 // LINE 917:
 	__asm        jmp    _T676;
@@ -4302,19 +4335,19 @@ _T76:
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x004644DA;
-
-	__asm        jmp    near ptr 0x004644DF;
-
+	__asm        jmp    _T8d;
+_T8d:
+	__asm        jmp    _T92;
+_T92:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x004644ED;
-
-	__asm        jmp    near ptr 0x004644F2;
-
-	__asm        jmp    near ptr 0x004644F7;
-
+	__asm        jmp    _Ta0;
+_Ta0:
+	__asm        jmp    _Ta5;
+_Ta5:
+	__asm        jmp    _Taa;
+_Taa:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        cmp    dword ptr [eax+8], 3;
 	__asm        jne    _Tf0;
@@ -4346,19 +4379,19 @@ _Tf0:
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x14], eax;
-	__asm        jmp    near ptr 0x00464554;
-
-	__asm        jmp    near ptr 0x00464559;
-
+	__asm        jmp    _T107;
+_T107:
+	__asm        jmp    _T10c;
+_T10c:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x14], eax;
-	__asm        jmp    near ptr 0x00464567;
-
-	__asm        jmp    near ptr 0x0046456C;
-
-	__asm        jmp    near ptr 0x00464571;
-
+	__asm        jmp    _T11a;
+_T11a:
+	__asm        jmp    _T11f;
+_T11f:
+	__asm        jmp    _T124;
+_T124:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        cmp    dword ptr [eax+8], 5;
 	__asm        jne    _T16f;
@@ -4392,19 +4425,19 @@ _T16f:
 	__asm        mov    [ebp-0x20], eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x1C], eax;
-	__asm        jmp    near ptr 0x004645D3;
-
-	__asm        jmp    near ptr 0x004645D8;
-
+	__asm        jmp    _T186;
+_T186:
+	__asm        jmp    _T18b;
+_T18b:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x1C], eax;
-	__asm        jmp    near ptr 0x004645E6;
-
-	__asm        jmp    near ptr 0x004645EB;
-
-	__asm        jmp    near ptr 0x004645F0;
-
+	__asm        jmp    _T199;
+_T199:
+	__asm        jmp    _T19e;
+_T19e:
+	__asm        jmp    _T1a3;
+_T1a3:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        cmp    dword ptr [eax+8], 6;
 	__asm        jne    _T1fb;
@@ -4443,19 +4476,19 @@ _T1fb:
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x24], eax;
-	__asm        jmp    near ptr 0x0046465F;
-
-	__asm        jmp    near ptr 0x00464664;
-
+	__asm        jmp    _T212;
+_T212:
+	__asm        jmp    _T217;
+_T217:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x24], eax;
-	__asm        jmp    near ptr 0x00464672;
-
-	__asm        jmp    near ptr 0x00464677;
-
-	__asm        jmp    near ptr 0x0046467C;
-
+	__asm        jmp    _T225;
+_T225:
+	__asm        jmp    _T22a;
+_T22a:
+	__asm        jmp    _T22f;
+_T22f:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        cmp    dword ptr [eax+8], 7;
 	__asm        jne    _T287;
@@ -4494,19 +4527,19 @@ _T287:
 	__asm        mov    [ebp-0x30], eax;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x2C], eax;
-	__asm        jmp    near ptr 0x004646EB;
-
-	__asm        jmp    near ptr 0x004646F0;
-
+	__asm        jmp    _T29e;
+_T29e:
+	__asm        jmp    _T2a3;
+_T2a3:
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x2C], eax;
-	__asm        jmp    near ptr 0x004646FE;
-
-	__asm        jmp    near ptr 0x00464703;
-
-	__asm        jmp    near ptr 0x00464708;
-
+	__asm        jmp    _T2b1;
+_T2b1:
+	__asm        jmp    _T2b6;
+_T2b6:
+	__asm        jmp    _T2bb;
+_T2bb:
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        cmp    dword ptr [eax+8], 8;
 	__asm        jne    _T313;
@@ -4545,19 +4578,19 @@ _T313:
 	__asm        mov    [ebp-0x38], eax;
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    [ebp-0x34], eax;
-	__asm        jmp    near ptr 0x00464777;
-
-	__asm        jmp    near ptr 0x0046477C;
-
+	__asm        jmp    _T32a;
+_T32a:
+	__asm        jmp    _T32f;
+_T32f:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x34], eax;
-	__asm        jmp    near ptr 0x0046478A;
-
-	__asm        jmp    near ptr 0x0046478F;
-
-	__asm        jmp    near ptr 0x00464794;
-
+	__asm        jmp    _T33d;
+_T33d:
+	__asm        jmp    _T342;
+_T342:
+	__asm        jmp    _T347;
+_T347:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        cmp    dword ptr [eax+8], 9;
 	__asm        jne    _T39f;
@@ -4596,19 +4629,19 @@ _T39f:
 	__asm        mov    [ebp-0x40], eax;
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    [ebp-0x3C], eax;
-	__asm        jmp    near ptr 0x00464803;
-
-	__asm        jmp    near ptr 0x00464808;
-
+	__asm        jmp    _T3b6;
+_T3b6:
+	__asm        jmp    _T3bb;
+_T3bb:
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x3C], eax;
-	__asm        jmp    near ptr 0x00464816;
-
-	__asm        jmp    near ptr 0x0046481B;
-
-	__asm        jmp    near ptr 0x00464820;
-
+	__asm        jmp    _T3c9;
+_T3c9:
+	__asm        jmp    _T3ce;
+_T3ce:
+	__asm        jmp    _T3d3;
+_T3d3:
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        cmp    dword ptr [eax+8], 0xB;
 	__asm        jne    _T426;
@@ -4667,19 +4700,19 @@ _T30:
 	__asm        mov    [ebp-8], eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-4], eax;
-	__asm        jmp    near ptr 0x004648C6;
-
-	__asm        jmp    near ptr 0x004648CB;
-
+	__asm        jmp    _T47;
+_T47:
+	__asm        jmp    _T4c;
+_T4c:
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-4], eax;
-	__asm        jmp    near ptr 0x004648D9;
-
-	__asm        jmp    near ptr 0x004648DE;
-
-	__asm        jmp    near ptr 0x004648E3;
-
+	__asm        jmp    _T5a;
+_T5a:
+	__asm        jmp    _T5f;
+_T5f:
+	__asm        jmp    _T64;
+_T64:
 	__asm        mov    eax, [ebp-4];
 	__asm        cmp    dword ptr [eax+8], 6;
 	__asm        jne    _T93;
@@ -4701,19 +4734,19 @@ _T93:
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x00464929;
-
-	__asm        jmp    near ptr 0x0046492E;
-
+	__asm        jmp    _Taa;
+_Taa:
+	__asm        jmp    _Taf;
+_Taf:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x0046493C;
-
-	__asm        jmp    near ptr 0x00464941;
-
-	__asm        jmp    near ptr 0x00464946;
-
+	__asm        jmp    _Tbd;
+_Tbd:
+	__asm        jmp    _Tc2;
+_Tc2:
+	__asm        jmp    _Tc7;
+_Tc7:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        cmp    dword ptr [eax+8], 7;
 	__asm        jne    _Tf6;
@@ -4735,19 +4768,19 @@ _Tf6:
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x14], eax;
-	__asm        jmp    near ptr 0x0046498C;
-
-	__asm        jmp    near ptr 0x00464991;
-
+	__asm        jmp    _T10d;
+_T10d:
+	__asm        jmp    _T112;
+_T112:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x14], eax;
-	__asm        jmp    near ptr 0x0046499F;
-
-	__asm        jmp    near ptr 0x004649A4;
-
-	__asm        jmp    near ptr 0x004649A9;
-
+	__asm        jmp    _T120;
+_T120:
+	__asm        jmp    _T125;
+_T125:
+	__asm        jmp    _T12a;
+_T12a:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        cmp    dword ptr [eax+8], 8;
 	__asm        jne    _T159;
@@ -4769,19 +4802,19 @@ _T159:
 	__asm        mov    [ebp-0x20], eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x1C], eax;
-	__asm        jmp    near ptr 0x004649EF;
-
-	__asm        jmp    near ptr 0x004649F4;
-
+	__asm        jmp    _T170;
+_T170:
+	__asm        jmp    _T175;
+_T175:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x1C], eax;
-	__asm        jmp    near ptr 0x00464A02;
-
-	__asm        jmp    near ptr 0x00464A07;
-
-	__asm        jmp    near ptr 0x00464A0C;
-
+	__asm        jmp    _T183;
+_T183:
+	__asm        jmp    _T188;
+_T188:
+	__asm        jmp    _T18d;
+_T18d:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        cmp    dword ptr [eax+8], 9;
 	__asm        jne    _T1bc;
@@ -4803,19 +4836,19 @@ _T1bc:
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x24], eax;
-	__asm        jmp    near ptr 0x00464A52;
-
-	__asm        jmp    near ptr 0x00464A57;
-
+	__asm        jmp    _T1d3;
+_T1d3:
+	__asm        jmp    _T1d8;
+_T1d8:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x24], eax;
-	__asm        jmp    near ptr 0x00464A65;
-
-	__asm        jmp    near ptr 0x00464A6A;
-
-	__asm        jmp    near ptr 0x00464A6F;
-
+	__asm        jmp    _T1e6;
+_T1e6:
+	__asm        jmp    _T1eb;
+_T1eb:
+	__asm        jmp    _T1f0;
+_T1f0:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        cmp    dword ptr [eax+8], 0xB;
 	__asm        jne    _T21a;
@@ -4846,7 +4879,8 @@ void  CGameApp::DoCharacter(long lCharacter) {
 	__asm        add    ecx, 0x3C;
 	__asm        call   dword ptr [eax+8];
 // LINE 1073:
-	__asm        jmp    near ptr 0x00464AC9;
+	__asm        jmp    _T24;
+_T24:
 }
 
 // FUNCTION: COPTER_D 0x00464ad0
@@ -4864,7 +4898,8 @@ void  CGameApp::DoCursorDown(int32_t nCursorX, int32_t nCursorY, int32_t nButton
 	__asm        add    ecx, 0x3C;
 	__asm        call   dword ptr [eax+0x14];
 // LINE 1081:
-	__asm        jmp    near ptr 0x00464AFC;
+	__asm        jmp    _T2c;
+_T2c:
 }
 
 // FUNCTION: COPTER_D 0x00464b03
@@ -4882,7 +4917,8 @@ void  CGameApp::DoCursorUp(int32_t nCursorX, int32_t nCursorY, int32_t nButton) 
 	__asm        add    ecx, 0x3C;
 	__asm        call   dword ptr [eax+0x18];
 // LINE 1090:
-	__asm        jmp    near ptr 0x00464B2F;
+	__asm        jmp    _T2c;
+_T2c:
 }
 
 // FUNCTION: COPTER_D 0x00464b36
@@ -4898,7 +4934,8 @@ void  CGameApp::DoCursorMove(int32_t nCursorX, int32_t nCursorY) {
 	__asm        add    ecx, 0x3C;
 	__asm        call   dword ptr [eax+0x1C];
 // LINE 1099:
-	__asm        jmp    near ptr 0x00464B5E;
+	__asm        jmp    _T28;
+_T28:
 }
 
 // FUNCTION: COPTER_D 0x00464b65
@@ -4909,19 +4946,19 @@ void  CGameApp::ClearCommands() {
 	__asm        mov    [ebp-8], eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-4], eax;
-	__asm        jmp    near ptr 0x00464B88;
-
-	__asm        jmp    near ptr 0x00464B8D;
-
+	__asm        jmp    _T23;
+_T23:
+	__asm        jmp    _T28;
+_T28:
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-4], eax;
-	__asm        jmp    near ptr 0x00464B9B;
-
-	__asm        jmp    near ptr 0x00464BA0;
-
-	__asm        jmp    near ptr 0x00464BA5;
-
+	__asm        jmp    _T36;
+_T36:
+	__asm        jmp    _T3b;
+_T3b:
+	__asm        jmp    _T40;
+_T40:
 	__asm        mov    eax, [ebp-4];
 	__asm        cmp    dword ptr [eax+8], 6;
 	__asm        jne    _T60;
@@ -4937,19 +4974,19 @@ _T60:
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x00464BDC;
-
-	__asm        jmp    near ptr 0x00464BE1;
-
+	__asm        jmp    _T77;
+_T77:
+	__asm        jmp    _T7c;
+_T7c:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x00464BEF;
-
-	__asm        jmp    near ptr 0x00464BF4;
-
-	__asm        jmp    near ptr 0x00464BF9;
-
+	__asm        jmp    _T8a;
+_T8a:
+	__asm        jmp    _T8f;
+_T8f:
+	__asm        jmp    _T94;
+_T94:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        cmp    dword ptr [eax+8], 7;
 	__asm        jne    _Tb4;
@@ -4965,19 +5002,19 @@ _Tb4:
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x14], eax;
-	__asm        jmp    near ptr 0x00464C30;
-
-	__asm        jmp    near ptr 0x00464C35;
-
+	__asm        jmp    _Tcb;
+_Tcb:
+	__asm        jmp    _Td0;
+_Td0:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x14], eax;
-	__asm        jmp    near ptr 0x00464C43;
-
-	__asm        jmp    near ptr 0x00464C48;
-
-	__asm        jmp    near ptr 0x00464C4D;
-
+	__asm        jmp    _Tde;
+_Tde:
+	__asm        jmp    _Te3;
+_Te3:
+	__asm        jmp    _Te8;
+_Te8:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        cmp    dword ptr [eax+8], 8;
 	__asm        jne    _T108;
@@ -4993,19 +5030,19 @@ _T108:
 	__asm        mov    [ebp-0x20], eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x1C], eax;
-	__asm        jmp    near ptr 0x00464C84;
-
-	__asm        jmp    near ptr 0x00464C89;
-
+	__asm        jmp    _T11f;
+_T11f:
+	__asm        jmp    _T124;
+_T124:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x1C], eax;
-	__asm        jmp    near ptr 0x00464C97;
-
-	__asm        jmp    near ptr 0x00464C9C;
-
-	__asm        jmp    near ptr 0x00464CA1;
-
+	__asm        jmp    _T132;
+_T132:
+	__asm        jmp    _T137;
+_T137:
+	__asm        jmp    _T13c;
+_T13c:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        cmp    dword ptr [eax+8], 9;
 	__asm        jne    _T15c;
@@ -5021,19 +5058,19 @@ _T15c:
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x24], eax;
-	__asm        jmp    near ptr 0x00464CD8;
-
-	__asm        jmp    near ptr 0x00464CDD;
-
+	__asm        jmp    _T173;
+_T173:
+	__asm        jmp    _T178;
+_T178:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x24], eax;
-	__asm        jmp    near ptr 0x00464CEB;
-
-	__asm        jmp    near ptr 0x00464CF0;
-
-	__asm        jmp    near ptr 0x00464CF5;
-
+	__asm        jmp    _T186;
+_T186:
+	__asm        jmp    _T18b;
+_T18b:
+	__asm        jmp    _T190;
+_T190:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        cmp    dword ptr [eax+8], 0xB;
 	__asm        jne    _T1ab;
@@ -5043,7 +5080,8 @@ _T15c:
 	__asm        call   CommandSystem::ClearAllCommands;
 // LINE 1120:
 _T1ab:
-	__asm        jmp    near ptr 0x00464D15;
+	__asm        jmp    _T1b0;
+_T1b0:
 }
 
 // FUNCTION: COPTER_D 0x00464d1a
@@ -5063,19 +5101,19 @@ _T1e:
 	__asm        mov    [ebp-8], eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-4], eax;
-	__asm        jmp    near ptr 0x00464D59;
-
-	__asm        jmp    near ptr 0x00464D5E;
-
+	__asm        jmp    _T3f;
+_T3f:
+	__asm        jmp    _T44;
+_T44:
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-4], eax;
-	__asm        jmp    near ptr 0x00464D6C;
-
-	__asm        jmp    near ptr 0x00464D71;
-
-	__asm        jmp    near ptr 0x00464D76;
-
+	__asm        jmp    _T52;
+_T52:
+	__asm        jmp    _T57;
+_T57:
+	__asm        jmp    _T5c;
+_T5c:
 	__asm        mov    eax, [ebp-4];
 	__asm        cmp    dword ptr [eax+8], 6;
 	__asm        jl     _T82;
@@ -5148,19 +5186,19 @@ _T27:
 	__asm        mov    [ebp-8], eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-4], eax;
-	__asm        jmp    near ptr 0x00464E40;
-
-	__asm        jmp    near ptr 0x00464E45;
-
+	__asm        jmp    _T3e;
+_T3e:
+	__asm        jmp    _T43;
+_T43:
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-4], eax;
-	__asm        jmp    near ptr 0x00464E53;
-
-	__asm        jmp    near ptr 0x00464E58;
-
-	__asm        jmp    near ptr 0x00464E5D;
-
+	__asm        jmp    _T51;
+_T51:
+	__asm        jmp    _T56;
+_T56:
+	__asm        jmp    _T5b;
+_T5b:
 	__asm        mov    eax, [ebp-4];
 	__asm        cmp    dword ptr [eax+8], 6;
 	__asm        je     _T6f;
@@ -5202,19 +5240,19 @@ int  CGameApp::GraduateUserToNextCareerLevel() {
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    near ptr 0x00464ED5;
-
-	__asm        jmp    near ptr 0x00464EDA;
-
+	__asm        jmp    _T23;
+_T23:
+	__asm        jmp    _T28;
+_T28:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    near ptr 0x00464EE8;
-
-	__asm        jmp    near ptr 0x00464EED;
-
-	__asm        jmp    near ptr 0x00464EF2;
-
+	__asm        jmp    _T36;
+_T36:
+	__asm        jmp    _T3b;
+_T3b:
+	__asm        jmp    _T40;
+_T40:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        cmp    dword ptr [eax+8], 6;
 	__asm        je     _T54;
@@ -5236,10 +5274,10 @@ _T74:
 	__asm        mov    gGraduationState.nGraduationState, 0;
 	__asm        mov    gGraduationState.timerGraduationState.lTotalElapsedTime, 0;
 	__asm        mov    gGraduationState.timerGraduationState.lStartTime, 0;
-	__asm        jmp    near ptr 0x00464F49;
-
-	__asm        jmp    near ptr 0x00464F4E;
-
+	__asm        jmp    _T97;
+_T97:
+	__asm        jmp    _T9c;
+_T9c:
 	__asm        cmp    gGraduationState.timerGraduationState.lStartTime, 0;
 	__asm        je     _Tae;
 
@@ -5277,12 +5315,13 @@ _Tff:
 _T118:
 	__asm        jmp    _T11d;
 _T11d:
-	__asm        jmp    near ptr 0x00464FD4;
-
-	__asm        jmp    near ptr 0x00464FD9;
-
-	__asm        jmp    near ptr 0x00464FDE;
+	__asm        jmp    _T122;
+_T122:
+	__asm        jmp    _T127;
+_T127:
+	__asm        jmp    _T12c;
 // LINE 1193:
+_T12c:
 	__asm        push   6;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -5313,19 +5352,19 @@ int  CGameApp::GraduateUserFromAllCareerLevels() {
 	__asm        mov    [ebp-8], eax;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    [ebp-4], eax;
-	__asm        jmp    near ptr 0x00465041;
-
-	__asm        jmp    near ptr 0x00465046;
-
+	__asm        jmp    _T23;
+_T23:
+	__asm        jmp    _T28;
+_T28:
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-4], eax;
-	__asm        jmp    near ptr 0x00465054;
-
-	__asm        jmp    near ptr 0x00465059;
-
-	__asm        jmp    near ptr 0x0046505E;
-
+	__asm        jmp    _T36;
+_T36:
+	__asm        jmp    _T3b;
+_T3b:
+	__asm        jmp    _T40;
+_T40:
 	__asm        mov    eax, [ebp-4];
 	__asm        cmp    dword ptr [eax+8], 6;
 	__asm        je     _T54;
@@ -5470,8 +5509,8 @@ _T141:
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-0x1BC];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x0046524A;
-
+	__asm        jmp    _T1c9;
+_T1c9:
 	__asm        mov    eax, [ebp-0x1BC];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, [ebp-0x1BC];
@@ -5501,8 +5540,8 @@ _T141:
 	__asm        push   eax;
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x004652C5;
-
+	__asm        jmp    _T244;
+_T244:
 	__asm        jmp    _T255;
 _T249:
 	__asm        mov    eax, [ebp-0x1BC];
@@ -5510,8 +5549,8 @@ _T249:
 _T255:
 	__asm        mov    eax, [ebp-0x1BC];
 	__asm        mov    dword ptr [eax+0xC], 1;
-	__asm        jmp    near ptr 0x004652E8;
-
+	__asm        jmp    _T267;
+_T267:
 	__asm        mov    eax, [ebp-0x1BC];
 	__asm        mov    [ebp-0x194], eax;
 	__asm        jmp    _T282;
@@ -5519,8 +5558,8 @@ _T278:
 	__asm        mov    dword ptr [ebp-0x194], 0;
 _T282:
 	__asm        mov    dword ptr [ebp-0x198], 0;
-	__asm        jmp    near ptr 0x00465312;
-
+	__asm        jmp    _T291;
+_T291:
 	__asm        lea    eax, [ebp-0x198];
 	__asm        mov    [ebp-0x1A0], eax;
 	__asm        push   0;
@@ -5568,20 +5607,20 @@ _T2c6:
 	__asm        mov    eax, [ebp-0x1AC];
 	__asm        mov    dword ptr [eax], 0;
 _T36a:
-	__asm        jmp    near ptr 0x004653F0;
-
-	__asm        jmp    near ptr 0x004653F5;
-
+	__asm        jmp    _T36f;
+_T36f:
+	__asm        jmp    _T374;
+_T374:
 	__asm        mov    eax, [ebp-0x1AC];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x00465409;
-
+	__asm        jmp    _T388;
+_T388:
 	__asm        jmp    _T38d;
 _T38d:
-	__asm        jmp    near ptr 0x00465413;
-
+	__asm        jmp    _T392;
+_T392:
 	__asm        cmp    dword ptr [ebp-0x198], 0;
 	__asm        je     _T3c6;
 
@@ -5594,8 +5633,8 @@ _T38d:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T3c6:
-	__asm        jmp    near ptr 0x0046544C;
-
+	__asm        jmp    _T3cb;
+_T3cb:
 	__asm        jmp    _T3d0;
 // LINE 1232:
 _T3d0:
@@ -5621,7 +5660,8 @@ _T3d0:
 	__asm        mov    ecx, tempNotificationSound;
 	__asm        call   dword ptr [eax+8];
 // LINE 1235:
-	__asm        jmp    near ptr 0x0046549F;
+	__asm        jmp    _T41e;
+_T41e:
 }
 
 // FUNCTION: COPTER_D 0x004654a4
@@ -5635,19 +5675,19 @@ int  CGameApp::DoMessage(/*unpacked*/ class GraphicWindow *gwSource, long lWindo
 	__asm        mov    [ebp-0x30], eax;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x2C], eax;
-	__asm        jmp    near ptr 0x004654C7;
-
-	__asm        jmp    near ptr 0x004654CC;
-
+	__asm        jmp    _T23;
+_T23:
+	__asm        jmp    _T28;
+_T28:
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x2C], eax;
-	__asm        jmp    near ptr 0x004654DA;
-
-	__asm        jmp    near ptr 0x004654DF;
-
-	__asm        jmp    near ptr 0x004654E4;
-
+	__asm        jmp    _T36;
+_T36:
+	__asm        jmp    _T3b;
+_T3b:
+	__asm        jmp    _T40;
+_T40:
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    eax, [eax+8];
 	__asm        mov    nCurrentGameMode, eax;
@@ -5736,8 +5776,8 @@ _Teb:
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    dword ptr [eax+0xC], 1;
-	__asm        jmp    near ptr 0x004655F6;
-
+	__asm        jmp    _T152;
+_T152:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    sCheatCodeString.reference, eax;
 	__asm        jmp    _T164;
@@ -5745,8 +5785,9 @@ _T15d:
 	sCheatCodeString.reference = 0x0;
 _T164:
 	__asm        mov    sCheatCodeString.c_str_ptr, 0;
-	__asm        jmp    near ptr 0x00465614;
+	__asm        jmp    _T170;
 // LINE 1262:
+_T170:
 	__asm        lea    eax, sCheatCodeString.c_str_ptr;
 	__asm        push   eax;
 	__asm        mov    eax, gwSource;
@@ -5791,20 +5832,20 @@ _T164:
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    dword ptr [eax], 0;
 _T1f7:
-	__asm        jmp    near ptr 0x004656A0;
-
-	__asm        jmp    near ptr 0x004656A5;
-
+	__asm        jmp    _T1fc;
+_T1fc:
+	__asm        jmp    _T201;
+_T201:
 	__asm        mov    eax, [ebp-0x40];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004656B6;
-
+	__asm        jmp    _T212;
+_T212:
 	__asm        jmp    _T217;
 _T217:
-	__asm        jmp    near ptr 0x004656C0;
-
+	__asm        jmp    _T21c;
+_T21c:
 	__asm        cmp    sCheatCodeString.c_str_ptr, 0;
 	__asm        je     _T23e;
 
@@ -5817,8 +5858,8 @@ _T217:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T23e:
-	__asm        jmp    near ptr 0x004656E7;
-
+	__asm        jmp    _T243;
+_T243:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        jmp    _Ta30;
 // LINE 1266:
@@ -5906,8 +5947,9 @@ _T32a:
 	__asm        mov    eax, gwSource;
 	__asm        mov    eax, [eax+0x74];
 	__asm        mov    lCurrentCitySelection, eax;
-	__asm        jmp    near ptr 0x004657DC;
+	__asm        jmp    _T338;
 // LINE 1283:
+_T338:
 	__asm        mov    eax, gwSource;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, gwSource;
@@ -6537,19 +6579,19 @@ int  CGameApp::DoMainMenuMessage(/*unpacked*/ class GraphicWindow *gwSource, lon
 	__asm        mov    [ebp-0x630], eax;
 	__asm        mov    eax, [ebp-0x630];
 	__asm        mov    [ebp-0x62C], eax;
-	__asm        jmp    near ptr 0x00465F10;
-
-	__asm        jmp    near ptr 0x00465F15;
-
+	__asm        jmp    _T35;
+_T35:
+	__asm        jmp    _T3a;
+_T3a:
 	__asm        mov    eax, [ebp-0x62C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x62C], eax;
-	__asm        jmp    near ptr 0x00465F29;
-
-	__asm        jmp    near ptr 0x00465F2E;
-
-	__asm        jmp    near ptr 0x00465F33;
-
+	__asm        jmp    _T4e;
+_T4e:
+	__asm        jmp    _T53;
+_T53:
+	__asm        jmp    _T58;
+_T58:
 	__asm        mov    eax, [ebp-0x62C];
 	__asm        mov    eax, [eax+8];
 	__asm        mov    nCurrentGameMode, eax;
@@ -6868,19 +6910,19 @@ int  CGameApp::DoPlayMenuMessage(/*unpacked*/ class GraphicWindow *gwSource, lon
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    near ptr 0x0046631D;
-
-	__asm        jmp    near ptr 0x00466322;
-
+	__asm        jmp    _T23;
+_T23:
+	__asm        jmp    _T28;
+_T28:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    near ptr 0x00466330;
-
-	__asm        jmp    near ptr 0x00466335;
-
-	__asm        jmp    near ptr 0x0046633A;
-
+	__asm        jmp    _T36;
+_T36:
+	__asm        jmp    _T3b;
+_T3b:
+	__asm        jmp    _T40;
+_T40:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    eax, [eax+8];
 	__asm        mov    nCurrentGameMode, eax;
@@ -6914,8 +6956,9 @@ _T79:
 // LINE 1588:
 	__asm        mov    eax, gwSource;
 	__asm        mov    dword ptr [eax+0x54], 0;
-	__asm        jmp    near ptr 0x004663A1;
+	__asm        jmp    _Ta7;
 // LINE 1589:
+_Ta7:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::CreateCitySettingsWindow;
 // LINE 1590:
@@ -6928,8 +6971,9 @@ _Tb9:
 // LINE 1593:
 	__asm        mov    eax, gwSource;
 	__asm        mov    dword ptr [eax+0x54], 0;
-	__asm        jmp    near ptr 0x004663CC;
+	__asm        jmp    _Td2;
 // LINE 1594:
+_Td2:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::CreateRenderSettingsWindow;
 // LINE 1595:
@@ -6943,8 +6987,9 @@ _Te9:
 // LINE 1598:
 	__asm        mov    eax, gwSource;
 	__asm        mov    dword ptr [eax+0x54], 0;
-	__asm        jmp    near ptr 0x004663FC;
+	__asm        jmp    _T102;
 // LINE 1599:
+_T102:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::CreateSoundSettingsWindow;
 // LINE 1600:
@@ -6958,8 +7003,9 @@ _T119:
 // LINE 1603:
 	__asm        mov    eax, gwSource;
 	__asm        mov    dword ptr [eax+0x54], 0;
-	__asm        jmp    near ptr 0x0046642C;
+	__asm        jmp    _T132;
 // LINE 1604:
+_T132:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::CreateUserInputWindow;
 // LINE 1605:
@@ -7148,8 +7194,8 @@ int  CGameApp::StartVideoForCitySelection(long lCurrentCitySelection) {
 
 	__asm        mov    byte ptr [ebp-0x318], 0;
 _Tae:
-	__asm        jmp    near ptr 0x00466660;
-
+	__asm        jmp    _Tb3;
+_Tb3:
 	__asm        push   0;
 	__asm        lea    ecx, [ebp-0x31C];
 	__asm        call   PFile::FileExists;
@@ -7182,8 +7228,8 @@ _T114:
 	__asm        call   _close;
 	__asm        add    esp, 4;
 _T130:
-	__asm        jmp    near ptr 0x004666E2;
-
+	__asm        jmp    _T135;
+_T135:
 	__asm        mov    eax, [ebp-0x20C];
 	__asm        mov    [ebp-0x324], eax;
 	__asm        cmp    dword ptr [ebp-0x324], 0;
@@ -7222,10 +7268,10 @@ _T1a1:
 // LINE 1675:
 	this-><CGameApp+0x88:4> = 0x1;
 // LINE 1678:
-	__asm        jmp    near ptr 0x0046678E;
-
-	__asm        jmp    near ptr 0x00466793;
-
+	__asm        jmp    _T1e1;
+_T1e1:
+	__asm        jmp    _T1e6;
+_T1e6:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x34];
 	__asm        mov    eax, [eax+8];
@@ -7240,10 +7286,10 @@ _T1a1:
 // LINE 1679:
 	this-><CGameApp+0x8c:4> = 0x0;
 // LINE 1680:
-	__asm        jmp    near ptr 0x004667E1;
-
-	__asm        jmp    near ptr 0x004667E6;
-
+	__asm        jmp    _T234;
+_T234:
+	__asm        jmp    _T239;
+_T239:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x34];
 	__asm        mov    eax, [eax+0xC];
@@ -7271,10 +7317,11 @@ _T1a1:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x94], eax;
-	__asm        jmp    near ptr 0x00466854;
+	__asm        jmp    _T2a7;
 // LINE 1682:
-	__asm        jmp    near ptr 0x00466859;
-
+_T2a7:
+	__asm        jmp    _T2ac;
+_T2ac:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x84];
 	__asm        mov    eax, [eax+0x14C];
@@ -7300,10 +7347,10 @@ void  CGameApp::ComposeCareerCityVideoFrame() {
 	/*bp-0x4*/   unsigned long nErrorCode;
 
 // LINE 1703:
-	__asm        jmp    near ptr 0x004668BE;
-
-	__asm        jmp    near ptr 0x004668C3;
-
+	__asm        jmp    _T11;
+_T11:
+	__asm        jmp    _T16;
+_T16:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x84];
 	__asm        mov    eax, [eax+0x14C];
@@ -7354,7 +7401,8 @@ void  CGameApp::ComposeCareerCityVideoFrame() {
 	__asm        call   dword ptr [eax+0x68];
 // LINE 1708:
 _Tb1:
-	__asm        jmp    near ptr 0x00466963;
+	__asm        jmp    _Tb6;
+_Tb6:
 }
 
 // FUNCTION: COPTER_D 0x00466968
@@ -7385,8 +7433,8 @@ int  CGameApp::StartVideoForMainMenu() {
 
 	__asm        mov    byte ptr [ebp-0x214], 0;
 _T75:
-	__asm        jmp    near ptr 0x004669E2;
-
+	__asm        jmp    _T7a;
+_T7a:
 	__asm        push   0;
 	__asm        lea    ecx, [ebp-0x218];
 	__asm        call   PFile::FileExists;
@@ -7419,8 +7467,8 @@ _Tdb:
 	__asm        call   _close;
 	__asm        add    esp, 4;
 _Tf7:
-	__asm        jmp    near ptr 0x00466A64;
-
+	__asm        jmp    _Tfc;
+_Tfc:
 	__asm        mov    eax, [ebp-0x108];
 	__asm        mov    [ebp-0x220], eax;
 	__asm        cmp    dword ptr [ebp-0x220], 0;
@@ -7506,7 +7554,8 @@ _T4e:
 	this-><CGameApp+0x6c:4> = 0x0;
 // LINE 1743:
 _T58:
-	__asm        jmp    near ptr 0x00466B8F;
+	__asm        jmp    _T5d;
+_T5d:
 }
 
 // FUNCTION: COPTER_D 0x00466b94
@@ -7518,10 +7567,10 @@ void  CGameApp::ComposeMainMenuVideoFrame() {
 	__asm        cmp    dword ptr [eax+0x6C], 0;
 	__asm        je     _T7c;
 // LINE 1756:
-	__asm        jmp    near ptr 0x00466BB2;
-
-	__asm        jmp    near ptr 0x00466BB7;
-
+	__asm        jmp    _T1e;
+_T1e:
+	__asm        jmp    _T23;
+_T23:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x6C];
 	__asm        mov    eax, [eax+0x14C];
@@ -7553,7 +7602,8 @@ void  CGameApp::ComposeMainMenuVideoFrame() {
 	__asm        call   CGameApp::EndVideoForMainMenu;
 // LINE 1761:
 _T7c:
-	__asm        jmp    near ptr 0x00466C15;
+	__asm        jmp    _T81;
+_T81:
 }
 
 

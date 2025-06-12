@@ -178,13 +178,15 @@ void S3RoadGraphInit() {
 	__asm        mov    ecx, 0x5C3828;
 	__asm        call   RoadGraph::Init;
 // LINE 70:
-	__asm        jmp    near ptr 0x0053BD55;
+	__asm        jmp    _T15;
+_T15:
 }
 
 // FUNCTION: COPTER_D 0x0053bd5a
 void S3RoadGraphDestroy() {
 // LINE 76:
-	__asm        jmp    near ptr 0x0053BD65;
+	__asm        jmp    _T0b;
+_T0b:
 }
 
 // FUNCTION: COPTER_D 0x0053bd6a
@@ -713,7 +715,8 @@ _T5b8:
 	__asm        jmp    _T52d;
 // LINE 191:
 _T5bd:
-	__asm        jmp    near ptr 0x0053C32C;
+	__asm        jmp    _T5c2;
+_T5c2:
 }
 
 // FUNCTION: COPTER_D 0x0053c331
@@ -1337,7 +1340,8 @@ _T2a3:
 	__asm        mov    eax, pGoal;
 	__asm        mov    [eax+0x1E], ecx;
 // LINE 413:
-	__asm        jmp    near ptr 0x0053C991;
+	__asm        jmp    _T2f3;
+_T2f3:
 }
 
 // FUNCTION: COPTER_D 0x0053c998
@@ -2778,7 +2782,8 @@ _T4c6:
 	__asm        jmp    _T18;
 // LINE 758:
 _T4cb:
-	__asm        jmp    near ptr 0x0053D8D0;
+	__asm        jmp    _T4d0;
+_T4d0:
 }
 
 // FUNCTION: COPTER_D 0x0053d8d5
@@ -3645,7 +3650,8 @@ _T894:
 	__asm        call   RoadGraph::FindNumRoadElements;
 // LINE 876:
 _T927:
-	__asm        jmp    near ptr 0x0053E2FE;
+	__asm        jmp    _T92c;
+_T92c:
 }
 
 // FUNCTION: COPTER_D 0x0053e305
@@ -6412,7 +6418,8 @@ _T157f:
 	__asm        jmp    _T151e;
 // LINE 1192:
 _T15ab:
-	__asm        jmp    near ptr 0x00540486;
+	__asm        jmp    _T15b0;
+_T15b0:
 }
 
 // FUNCTION: COPTER_D 0x0054048d
@@ -6570,7 +6577,8 @@ _T165:
 	__asm        call   RoadGraph::MakeRoad;
 // LINE 1236:
 _T19d:
-	__asm        jmp    near ptr 0x0054062F;
+	__asm        jmp    _T1a2;
+_T1a2:
 }
 
 // FUNCTION: COPTER_D 0x00540636
@@ -7708,7 +7716,8 @@ _T124:
 	__asm        mov    eax, goal;
 	__asm        mov    [eax+0x1A], ecx;
 // LINE 1440:
-	__asm        jmp    near ptr 0x005412CA;
+	__asm        jmp    _T19a;
+_T19a:
 }
 
 // FUNCTION: COPTER_D 0x005412d1
@@ -7751,8 +7760,9 @@ _T5f:
 _T7e:
 	__asm        mov    eax, [ebp-4];
 _T81:
-	__asm        jmp    near ptr 0x00541357;
+	__asm        jmp    _T86;
 // LINE 1448:
+_T86:
 }
 
 

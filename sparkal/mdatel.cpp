@@ -399,21 +399,23 @@ _T28:
 	__asm        push   eax;
 	__asm        call   ends;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x0041FB37;
+	__asm        jmp    _T67;
 // LINE 36:
+_T67:
 	this->nLanguage = nTempOriginalLanguage;
 // LINE 37:
 	__asm        mov    eax, szTime;
 	__asm        mov    [ebp-0x60], eax;
-	__asm        jmp    near ptr 0x0041FB4B;
-
+	__asm        jmp    _T7b;
+_T7b:
 	__asm        lea    ecx, strtemp<ostrstream+0x08>;
 	__asm        call   ostrstream::~ostrstream;
 	__asm        lea    ecx, strtemp<ostrstream+0x08>;
 	__asm        call   ios::~ios;
 	__asm        mov    eax, [ebp-0x60];
-	__asm        jmp    near ptr 0x0041FB63;
+	__asm        jmp    _T93;
 // LINE 38:
+_T93:
 }
 
 // FUNCTION: COPTER_D 0x0041fb6a
@@ -623,15 +625,16 @@ _T29f:
 // LINE 105:
 	__asm        mov    eax, s;
 	__asm        mov    [ebp-0x118], eax;
-	__asm        jmp    near ptr 0x0041FE31;
-
+	__asm        jmp    _T2c7;
+_T2c7:
 	__asm        lea    ecx, out<ostrstream+0x08>;
 	__asm        call   ostrstream::~ostrstream;
 	__asm        lea    ecx, out<ostrstream+0x08>;
 	__asm        call   ios::~ios;
 	__asm        mov    eax, [ebp-0x118];
-	__asm        jmp    near ptr 0x0041FE52;
+	__asm        jmp    _T2e8;
 // LINE 106:
+_T2e8:
 }
 
 // FUNCTION: COPTER_D 0x0041fe57
@@ -644,8 +647,8 @@ void MDateLocalized::MDateLocalized() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F3D0;
 // LINE 122:
-	__asm        jmp    near ptr 0x0041FE83;
-
+	__asm        jmp    _T2c;
+_T2c:
 	__asm        mov    eax, this;
 }
 
@@ -663,8 +666,8 @@ void MDateLocalized::MDateLocalized(uint32_t day, uint32_t year) {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F3D0;
 // LINE 130:
-	__asm        jmp    near ptr 0x0041FEBF;
-
+	__asm        jmp    _T34;
+_T34:
 	__asm        mov    eax, this;
 }
 
@@ -699,8 +702,8 @@ void MDateLocalized::MDateLocalized(uint32_t day, char * monthName, uint32_t yea
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
 // LINE 139:
-	__asm        jmp    near ptr 0x0041FF26;
-
+	__asm        jmp    _T5d;
+_T5d:
 	__asm        mov    eax, this;
 }
 
@@ -720,8 +723,8 @@ void MDateLocalized::MDateLocalized(uint32_t day, uint32_t month, uint32_t year)
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F3D0;
 // LINE 147:
-	__asm        jmp    near ptr 0x0041FF68;
-
+	__asm        jmp    _T38;
+_T38:
 	__asm        mov    eax, this;
 }
 
@@ -734,15 +737,15 @@ void MDateLocalized::MDateLocalized(/*unpacked*/ class istream& s) {
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   MDate::ParseFrom;
-	__asm        jmp    near ptr 0x0041FF98;
-
+	__asm        jmp    _T26;
+_T26:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0xC], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F3D0;
 // LINE 155:
-	__asm        jmp    near ptr 0x0041FFB0;
-
+	__asm        jmp    _T3e;
+_T3e:
 	__asm        mov    eax, this;
 }
 
@@ -758,8 +761,8 @@ void MDateLocalized::MDateLocalized(const /*unpacked*/ class MTime& time) {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F3D0;
 // LINE 163:
-	__asm        jmp    near ptr 0x0041FFEA;
-
+	__asm        jmp    _T30;
+_T30:
 	__asm        mov    eax, this;
 }
 
@@ -787,8 +790,9 @@ _T31:
 	__asm        push   eax;
 	__asm        call   MDateLocalized::DayNameLocalized;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x00420043;
+	__asm        jmp    _T4f;
 // LINE 177:
+_T4f:
 }
 
 // FUNCTION: COPTER_D 0x0042004a
@@ -815,8 +819,9 @@ _T31:
 	__asm        push   eax;
 	__asm        call   MDateLocalized::MonthNameLocalized;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x00420099;
+	__asm        jmp    _T4f;
 // LINE 190:
+_T4f:
 }
 
 // FUNCTION: COPTER_D 0x004200a0
@@ -860,21 +865,23 @@ _T3a:
 	__asm        push   eax;
 	__asm        call   ends;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x00420119;
+	__asm        jmp    _T79;
 // LINE 210:
+_T79:
 	this->nLanguage = nTempOriginalLanguage;
 // LINE 211:
 	__asm        mov    eax, szDate;
 	__asm        mov    [ebp-0x60], eax;
-	__asm        jmp    near ptr 0x0042012D;
-
+	__asm        jmp    _T8d;
+_T8d:
 	__asm        lea    ecx, strtemp<ostrstream+0x08>;
 	__asm        call   ostrstream::~ostrstream;
 	__asm        lea    ecx, strtemp<ostrstream+0x08>;
 	__asm        call   ios::~ios;
 	__asm        mov    eax, [ebp-0x60];
-	__asm        jmp    near ptr 0x00420145;
+	__asm        jmp    _Ta5;
 // LINE 212:
+_Ta5:
 }
 
 // FUNCTION: COPTER_D 0x0042014c
@@ -1060,8 +1067,9 @@ _T85:
 // LINE 292:
 _T8a:
 	__asm        mov    eax, szDayName;
-	__asm        jmp    near ptr 0x00420337;
+	__asm        jmp    _T92;
 // LINE 293:
+_T92:
 }
 
 // FUNCTION: COPTER_D 0x0042033c
@@ -1115,8 +1123,9 @@ _T85:
 // LINE 312:
 _T8a:
 	__asm        mov    eax, szMonthName;
-	__asm        jmp    near ptr 0x004203CE;
+	__asm        jmp    _T92;
 // LINE 313:
+_T92:
 }
 
 // FUNCTION: COPTER_D 0x004203d3
@@ -1280,8 +1289,9 @@ _T1e0:
 	__asm        call   ostream::operator<<;
 // LINE 404:
 	__asm        mov    eax, s;
-	__asm        jmp    near ptr 0x004205C7;
+	__asm        jmp    _T1f4;
 // LINE 405:
+_T1f4:
 }
 
 

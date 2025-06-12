@@ -3,7 +3,8 @@
 unsigned short  Language::IsSingleExit(/*unpacked*/ struct Behavior::Node *node) {
 
 	__asm        xor    ax, ax;
-	__asm        jmp    near ptr 0x00560BC4;
+	__asm        jmp    _T14;
+_T14:
 }
 
 // Function in module: Ylingo.obj
@@ -11,6 +12,7 @@ unsigned short  Language::IsSingleExit(/*unpacked*/ struct Behavior::Node *node)
 void (__cdecl *  Language::GetSwizzler() {
 
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00560BE3;
+	__asm        jmp    _T13;
+_T13:
 }
 

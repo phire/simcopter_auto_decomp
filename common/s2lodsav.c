@@ -422,8 +422,9 @@ static long stol(char * tag) {
 	__asm        push   eax;
 	__asm        call   swizzle_long;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004C4A26;
+	__asm        jmp    _T4e;
 // LINE 257:
+_T4e:
 }
 
 // FUNCTION: COPTER_D 0x004c4a2b
@@ -4966,8 +4967,9 @@ _Te6c:
 	__asm        push   eax;
 	__asm        call   S2CityGameWriteCompressed;
 	__asm        add    esp, 0x10;
-	__asm        jmp    near ptr 0x004C81C4;
+	__asm        jmp    _Te96;
 // LINE 1480:
+_Te96:
 }
 
 // FUNCTION: COPTER_D 0x004c81c9
@@ -5116,8 +5118,9 @@ short swizzle_short(short svalue) {
 	byteptr[0] = cval;
 // LINE 1591:
 	__asm        mov    ax, svalue;
-	__asm        jmp    near ptr 0x004C834B;
+	__asm        jmp    _T34;
 // LINE 1592:
+_T34:
 }
 
 // FUNCTION: COPTER_D 0x004c8350
@@ -5135,8 +5138,9 @@ long swap_long(long lvalue) {
 	shortptr[0] = sval;
 // LINE 1617:
 	__asm        mov    eax, lvalue;
-	__asm        jmp    near ptr 0x004C8389;
+	__asm        jmp    _T39;
 // LINE 1618:
+_T39:
 }
 
 // FUNCTION: COPTER_D 0x004c838e
@@ -5160,8 +5164,9 @@ long swizzle_long(long lvalue) {
 	byteptr[1] = cval;
 // LINE 1647:
 	__asm        mov    eax, lvalue;
-	__asm        jmp    near ptr 0x004C83DF;
+	__asm        jmp    _T51;
 // LINE 1648:
+_T51:
 }
 
 // FUNCTION: COPTER_D 0x004c83e4

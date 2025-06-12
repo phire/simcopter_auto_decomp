@@ -468,8 +468,9 @@ int32_t WaveCloseReadFile(void * __ptr32 *phmmio) {
 // LINE 257:
 _T29:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0048EF9F;
+	__asm        jmp    _T30;
 // LINE 258:
+_T30:
 }
 
 // FUNCTION: COPTER_D 0x0048efa4

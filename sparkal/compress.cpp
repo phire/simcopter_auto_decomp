@@ -375,8 +375,8 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 	__asm        mov    [ebp-0xDC], eax;
 	__asm        mov    eax, [ebp-0xE0];
 	__asm        mov    dword ptr [eax+0x30], 5;
-	__asm        jmp    near ptr 0x004AA888;
-
+	__asm        jmp    _T88;
+_T88:
 	__asm        mov    eax, NameOut.ios;
 	__asm        mov    eax, [eax+4];
 	__asm        lea    eax, [ebp+eax-0x58];
@@ -387,8 +387,8 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 	__asm        mov    [ebp-0xE4], al;
 	__asm        mov    eax, [ebp-0xE8];
 	__asm        mov    byte ptr [eax+0x2C], 0x30;
-	__asm        jmp    near ptr 0x004AA8B6;
-
+	__asm        jmp    _Tb6;
+_Tb6:
 	__asm        mov    eax, NameOut.ios;
 	__asm        mov    eax, [eax+4];
 	__asm        lea    eax, [ebp+eax-0x58];
@@ -399,8 +399,8 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 	__asm        mov    [ebp-0xEC], eax;
 	__asm        mov    eax, [ebp-0xF0];
 	__asm        mov    dword ptr [eax+0x24], 0x14;
-	__asm        jmp    near ptr 0x004AA8E7;
-
+	__asm        jmp    _Te7;
+_Te7:
 	__asm        push   0x59A9DC;
 	__asm        mov    eax, ResourceID;
 	__asm        push   eax;
@@ -410,8 +410,8 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0xD8], eax;
 // LINE 56:
-	__asm        jmp    near ptr 0x004AA90A;
-
+	__asm        jmp    _T10a;
+_T10a:
 	__asm        push   0;
 	__asm        mov    ecx, [ebp-0xD8];
 	__asm        call   ostream::operator<<;
@@ -430,10 +430,10 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 	__asm        lea    ecx, InputFile.ios;
 	__asm        call   ifstream::ifstream;
 // LINE 66:
-	__asm        jmp    near ptr 0x004AA94B;
-
-	__asm        jmp    near ptr 0x004AA950;
-
+	__asm        jmp    _T14b;
+_T14b:
+	__asm        jmp    _T150;
+_T150:
 	__asm        mov    eax, InputFile.ios;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [ebp+eax-0xC0];
@@ -458,8 +458,8 @@ _T186:
 	__asm        lea    ecx, InputFile.ios;
 	__asm        call   istream::read;
 // LINE 71:
-	__asm        jmp    near ptr 0x004AA99F;
-
+	__asm        jmp    _T19f;
+_T19f:
 	__asm        mov    eax, ImageByteCount;
 	__asm        mov    [ebp-0x108], eax;
 // LINE 76:
@@ -491,8 +491,9 @@ _T1ef:
 
 	__asm        mov    word ptr [ebp-0x104], 0xFFFF;
 _T21e:
-	__asm        jmp    near ptr 0x004AAA23;
+	__asm        jmp    _T223;
 // LINE 77:
+_T223:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax], 0;
 	__asm        je     _T375;
@@ -528,8 +529,9 @@ _T286:
 
 	__asm        mov    word ptr [ebp-0xFC], 0xFFFF;
 _T2af:
-	__asm        jmp    near ptr 0x004AAAB4;
+	__asm        jmp    _T2b4;
 // LINE 81:
+_T2b4:
 	__asm        cmp    pCompressedImage, 0;
 	__asm        je     _T375;
 // LINE 83:
@@ -540,8 +542,8 @@ _T2af:
 	__asm        lea    ecx, InputFile.ios;
 	__asm        call   istream::read;
 // LINE 84:
-	__asm        jmp    near ptr 0x004AAADF;
-
+	__asm        jmp    _T2df;
+_T2df:
 	__asm        mov    eax, ImageByteCount;
 	__asm        cmp    InputFile.x_gcount, eax;
 	__asm        je     _T30a;
@@ -585,20 +587,20 @@ _T363:
 // Block end:
 // Block end:
 _T375:
-	__asm        jmp    near ptr 0x004AAB7A;
-
+	__asm        jmp    _T37a;
+_T37a:
 	__asm        lea    ecx, InputFile<ifstream+0x0c>;
 	__asm        call   ifstream::~ifstream;
 	__asm        lea    ecx, InputFile<ifstream+0x0c>;
 	__asm        call   ios::~ios;
-	__asm        jmp    near ptr 0x004AAB95;
-
+	__asm        jmp    _T395;
+_T395:
 	__asm        lea    ecx, NameOut<ostrstream+0x08>;
 	__asm        call   ostrstream::~ostrstream;
 	__asm        lea    ecx, NameOut<ostrstream+0x08>;
 	__asm        call   ios::~ios;
-	__asm        jmp    near ptr 0x004AABAA;
-
+	__asm        jmp    _T3aa;
+_T3aa:
 	__asm        mov    eax, this;
 }
 
@@ -610,8 +612,8 @@ void CRLECompressedImage::CRLECompressedImage(const /*packed*/ class CFlatImage 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
 // LINE 104:
-	__asm        jmp    near ptr 0x004AABDB;
-
+	__asm        jmp    _T24;
+_T24:
 	__asm        mov    eax, this;
 }
 
@@ -658,7 +660,8 @@ _T7c:
 	__asm        jmp    _T8b;
 // LINE 115:
 _T8b:
-	__asm        jmp    near ptr 0x004AAC75;
+	__asm        jmp    _T90;
+_T90:
 }
 
 // FUNCTION: COPTER_D 0x004aac7a
@@ -704,8 +707,9 @@ _T6a:
 
 	__asm        mov    word ptr [ebp-4], 0xFFFF;
 _T8d:
-	__asm        jmp    near ptr 0x004AAD0C;
+	__asm        jmp    _T92;
 // LINE 125:
+_T92:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     _Ta5;
@@ -721,8 +725,9 @@ _Taa:
 _Tb0:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
-	__asm        jmp    near ptr 0x004AAD35;
+	__asm        jmp    _Tbb;
 // LINE 132:
+_Tbb:
 }
 
 // FUNCTION: COPTER_D 0x004aad3a
@@ -770,8 +775,8 @@ _T8c:
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3654];
-	__asm        jmp    near ptr 0x004AADD5;
-
+	__asm        jmp    _T9b;
+_T9b:
 	__asm        movsx  eax, word ptr [ebp-4];
 	__asm        test   eax, eax;
 	__asm        jne    _Tad;
@@ -787,8 +792,9 @@ _Tb2:
 _Tb8:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
-	__asm        jmp    near ptr 0x004AADFD;
+	__asm        jmp    _Tc3;
 // LINE 147:
+_Tc3:
 }
 
 // FUNCTION: COPTER_D 0x004aae02
@@ -963,8 +969,8 @@ _T1ae:
 // LINE 204:
 // Block start:
 	/*bp-0x28*/  unsigned char * pBits;
-	__asm        jmp    near ptr 0x004AAFCD;
-
+	__asm        jmp    _T1cb;
+_T1cb:
 	pBits = pDest->mpBits;
 // LINE 205:
 	__asm        cmp    pBits, 0;
@@ -975,8 +981,9 @@ _T1ae:
 	__asm        mov    eax, pDest;
 	__asm        mov    eax, [eax+0x14];
 	__asm        mov    DestStride, eax;
-	__asm        jmp    near ptr 0x004AAFEE;
+	__asm        jmp    _T1ec;
 // LINE 209:
+_T1ec:
 	__asm        mov    eax, Top;
 	__asm        imul   eax, DestStride;
 	__asm        add    eax, Left;
@@ -1027,14 +1034,16 @@ _T22f:
 // Block end:
 _T253:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004AB05C;
+	__asm        jmp    _T25a;
 // LINE 224:
+_T25a:
 }
 
 // FUNCTION: COPTER_D 0x004ab063
 static void ConvertCompressedByteOrdering(/*packed*/ struct RLEHeader *pCompressedImage) {
 // LINE 312:
-	__asm        jmp    near ptr 0x004AB06E;
+	__asm        jmp    _T0b;
+_T0b:
 }
 
 // FUNCTION: COPTER_D 0x004ab073
@@ -1209,7 +1218,8 @@ _T175:
 	__asm        jmp    _T27;
 // LINE 399:
 _T17a:
-	__asm        jmp    near ptr 0x004AB1F2;
+	__asm        jmp    _T17f;
+_T17f:
 }
 
 // FUNCTION: COPTER_D 0x004ab1f7
@@ -1553,7 +1563,8 @@ _T323:
 	__asm        jmp    _T31;
 // LINE 580:
 _T328:
-	__asm        jmp    near ptr 0x004AB524;
+	__asm        jmp    _T32d;
+_T32d:
 }
 
 

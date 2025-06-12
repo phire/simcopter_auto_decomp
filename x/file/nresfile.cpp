@@ -174,10 +174,11 @@ public:
 _T2e:
 	i.fCur = 0x0;
 _T35:
-	__asm        jmp    near ptr 0x00499F2A;
-
-	__asm        jmp    near ptr 0x00499F2F;
+	__asm        jmp    _T3a;
+_T3a:
+	__asm        jmp    _T3f;
 // LINE 14:
+_T3f:
 	__asm        jmp    _T5c;
 _T44:
 	__asm        cmp    i.fCur, 0;
@@ -219,8 +220,8 @@ _Tac:
 	__asm        mov    dword ptr [ebp-0x14], 0;
 	__asm        jmp    _Tb8;
 _Tb8:
-	__asm        jmp    near ptr 0x00499FAD;
-
+	__asm        jmp    _Tbd;
+_Tbd:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    ecx, type;
 	__asm        cmp    [eax+0xC], ecx;
@@ -339,8 +340,8 @@ _T17f:
 	__asm        mov    edx, [ebp-0x20];
 	__asm        lea    edx, [edx+edx*2];
 	__asm        mov    [ecx+edx*4], eax;
-	__asm        jmp    near ptr 0x0049A0F8;
-
+	__asm        jmp    _T208;
+_T208:
 	__asm        jmp    _T234;
 _T20d:
 	__asm        mov    eax, [ebp-0x10];
@@ -356,10 +357,10 @@ _T20d:
 _T234:
 	__asm        jmp    _T17c;
 _T239:
-	__asm        jmp    near ptr 0x0049A12E;
-
-	__asm        jmp    near ptr 0x0049A133;
-
+	__asm        jmp    _T23e;
+_T23e:
+	__asm        jmp    _T243;
+_T243:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    loader, eax;
 	__asm        jmp    _T255;
@@ -445,10 +446,11 @@ void NResFile::~NResFile() {
 _T37:
 	i.fCur = 0x0;
 _T3e:
-	__asm        jmp    near ptr 0x0049A238;
-
-	__asm        jmp    near ptr 0x0049A23D;
+	__asm        jmp    _T43;
+_T43:
+	__asm        jmp    _T48;
 // LINE 32:
+_T48:
 	__asm        jmp    _T65;
 _T4d:
 	__asm        cmp    i.fCur, 0;
@@ -495,8 +497,8 @@ _Tc1:
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     _T148;
 
-	__asm        jmp    near ptr 0x0049A2CB;
-
+	__asm        jmp    _Td6;
+_Td6:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax];
 	__asm        dec    eax;
@@ -528,14 +530,14 @@ _T112:
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x0049A327;
-
+	__asm        jmp    _T132;
+_T132:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x0049A338;
-
+	__asm        jmp    _T143;
+_T143:
 	__asm        jmp    _T148;
 // LINE 34:
 _T148:
@@ -592,8 +594,8 @@ _T1d5:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T200:
-	__asm        jmp    near ptr 0x0049A3FA;
-
+	__asm        jmp    _T205;
+_T205:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x11E];
 	__asm        test   eax, eax;
@@ -606,10 +608,10 @@ _T200:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T230:
-	__asm        jmp    near ptr 0x0049A42A;
-
-	__asm        jmp    near ptr 0x0049A42F;
-
+	__asm        jmp    _T235;
+_T235:
+	__asm        jmp    _T23a;
+_T23a:
 	__asm        mov    ecx, this;
 	__asm        call   FlatResFile::~FlatResFile;
 }

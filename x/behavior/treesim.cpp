@@ -301,8 +301,8 @@ _T51:
 	__asm        mov    ecx, this;
 	__asm        call   TreeSim::Reset;
 // LINE 17:
-	__asm        jmp    near ptr 0x0055CB9B;
-
+	__asm        jmp    _T8b;
+_T8b:
 	__asm        mov    eax, this;
 }
 
@@ -343,8 +343,8 @@ _T51:
 // LINE 28:
 	this->fStackSize = 0x0;
 // LINE 29:
-	__asm        jmp    near ptr 0x0055CC20;
-
+	__asm        jmp    _T7b;
+_T7b:
 	__asm        mov    eax, this;
 }
 
@@ -359,7 +359,8 @@ void TreeSim::~TreeSim() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 37:
-	__asm        jmp    near ptr 0x0055CC53;
+	__asm        jmp    _T29;
+_T29:
 }
 
 // FUNCTION: COPTER_D 0x0055cc58
@@ -403,7 +404,8 @@ _T41:
 	__asm        mov    eax, bottom;
 	__asm        mov    word ptr [eax+4], 0;
 // LINE 54:
-	__asm        jmp    near ptr 0x0055CCE8;
+	__asm        jmp    _T90;
+_T90:
 }
 
 // FUNCTION: COPTER_D 0x0055ccef
@@ -412,15 +414,15 @@ _T41:
 	/*bp-0x8*/   short stackSize;
 
 // LINE 63:
-	__asm        jmp    near ptr 0x0055CD00;
-
+	__asm        jmp    _T11;
+_T11:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        sub    eax, 2;
 	__asm        mov    stackSize, ax;
 // LINE 64:
-	__asm        jmp    near ptr 0x0055CD13;
-
+	__asm        jmp    _T24;
+_T24:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        lea    eax, [eax*4-4];
@@ -1020,7 +1022,8 @@ _T69:
 // LINE 246:
 	nodeNum[0] = elem->nodeNum;
 // LINE 247:
-	__asm        jmp    near ptr 0x0055D39E;
+	__asm        jmp    _Ta1;
+_Ta1:
 }
 
 // FUNCTION: COPTER_D 0x0055d3a5
@@ -1036,8 +1039,9 @@ enum TreeSim::ReturnCode ExtSim::TryElement(/*unpacked*/ struct TreeSim::StackEl
 	__asm        mov    edx, [ecx];
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   dword ptr [edx];
-	__asm        jmp    near ptr 0x0055D3CE;
+	__asm        jmp    _T29;
 // LINE 257:
+_T29:
 }
 
 // FUNCTION: COPTER_D 0x0055d3d5
@@ -1052,7 +1056,8 @@ void ExtSim::Error(short errNum) {
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   dword ptr [edx+4];
 // LINE 264:
-	__asm        jmp    near ptr 0x0055D3FB;
+	__asm        jmp    _T26;
+_T26:
 }
 
 // FUNCTION: COPTER_D 0x0055d402
@@ -1090,8 +1095,9 @@ unsigned short ExtSim::Simulate(long ticks, unsigned short bOnceOnly) {
 	this->fExt->fMaxStackSize = savemaxstacksize;
 // LINE 286:
 	__asm        mov    ax, ret;
-	__asm        jmp    near ptr 0x0055D4AC;
+	__asm        jmp    _Taa;
 // LINE 287:
+_Taa:
 }
 
 

@@ -12,8 +12,8 @@ void FlatResFile::FlatResFile() {
 	__asm        mov    dword ptr [eax+0x114], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x110], 0;
-	__asm        jmp    near ptr 0x0055E6B8;
-
+	__asm        jmp    _T58;
+_T58:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, this;
 	__asm        jmp    _T7a;

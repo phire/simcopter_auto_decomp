@@ -25,8 +25,8 @@ void MTimer::MTimer(enum MTimer::TimerResolution nNewTimerResolution) {
 	__asm        jmp    _T5c;
 // LINE 65:
 _T5c:
-	__asm        jmp    near ptr 0x00439C31;
-
+	__asm        jmp    _T61;
+_T61:
 	__asm        mov    eax, this;
 }
 
@@ -67,6 +67,7 @@ _T59:
 	__asm        jmp    _T72;
 // LINE 96:
 _T72:
-	__asm        jmp    near ptr 0x00439CB7;
+	__asm        jmp    _T77;
+_T77:
 }
 

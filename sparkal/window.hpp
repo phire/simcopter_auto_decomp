@@ -3,7 +3,8 @@
 unsigned long CSparkalWindow::Sleep() {
 
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00468033;
+	__asm        jmp    _T13;
+_T13:
 }
 
 // Function in module: gamewin.obj
@@ -11,6 +12,7 @@ unsigned long CSparkalWindow::Sleep() {
 unsigned long CSparkalWindow::WakeUp() {
 
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00468053;
+	__asm        jmp    _T13;
+_T13:
 }
 

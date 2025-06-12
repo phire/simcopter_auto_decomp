@@ -1060,7 +1060,8 @@ _Tde1:
 	__asm        jmp    _Tb5c;
 // LINE 274:
 _Tde6:
-	__asm        jmp    near ptr 0x0053925B;
+	__asm        jmp    _Tdeb;
+_Tdeb:
 }
 
 // FUNCTION: COPTER_D 0x00539260

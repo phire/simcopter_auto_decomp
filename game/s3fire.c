@@ -624,8 +624,9 @@ _T85:
 	__asm        mov    eax, [eax];
 	__asm        movsx  eax, word ptr [eax];
 	__asm        test   al, 0x20;
-	__asm        jne    near ptr 0x00524B7A;
+	__asm        jne    _T9b;
 // LINE 355:
+_T9b:
 	__asm        mov    eax, fd;
 	__asm        mov    eax, [eax+0x98];
 	__asm        mov    eax, [eax];
@@ -3639,8 +3640,9 @@ _T51b:
 long S3FireGetCount() {
 // LINE 1381:
 	__asm        mov    eax, S_fire_count;
-	__asm        jmp    near ptr 0x00526B91;
+	__asm        jmp    _T10;
 // LINE 1382:
+_T10:
 }
 
 // FUNCTION: COPTER_D 0x00526b96

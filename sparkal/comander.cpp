@@ -63,8 +63,8 @@ void ICommander::ICommander() {
 // LINE 15:
 	this->mpWindow = 0x0;
 // LINE 16:
-	__asm        jmp    near ptr 0x0049AD54;
-
+	__asm        jmp    _T24;
+_T24:
 	__asm        mov    eax, this;
 }
 
@@ -73,7 +73,8 @@ void ICommander::~ICommander() {
 
 	this-><vftable> = 0x5912a8;
 // LINE 25:
-	__asm        jmp    near ptr 0x0049AD76;
+	__asm        jmp    _T1a;
+_T1a:
 }
 
 // FUNCTION: COPTER_D 0x0049ad7b
@@ -97,8 +98,9 @@ _T30:
 // LINE 36:
 _T39:
 	__asm        mov    eax, ReturnWindow;
-	__asm        jmp    near ptr 0x0049ADBC;
+	__asm        jmp    _T41;
 // LINE 37:
+_T41:
 }
 
 // FUNCTION: COPTER_D 0x0049adc3
@@ -109,8 +111,8 @@ void CDefaultCommander::CDefaultCommander() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5912D0;
 // LINE 45:
-	__asm        jmp    near ptr 0x0049ADE5;
-
+	__asm        jmp    _T22;
+_T22:
 	__asm        mov    eax, this;
 }
 
@@ -119,8 +121,8 @@ void CDefaultCommander::~CDefaultCommander() {
 
 	this-><CDefaultCommander+0x00> = 0x5912d0;
 // LINE 49:
-	__asm        jmp    near ptr 0x0049AE07;
-
+	__asm        jmp    _T1a;
+_T1a:
 	__asm        mov    ecx, this;
 	__asm        call   ICommander::~ICommander;
 }
@@ -129,40 +131,45 @@ void CDefaultCommander::~CDefaultCommander() {
 unsigned long CDefaultCommander::Idle() {
 // LINE 56:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0049AE27;
+	__asm        jmp    _T13;
 // LINE 57:
+_T13:
 }
 
 // FUNCTION: COPTER_D 0x0049ae2c
 unsigned long CDefaultCommander::OnCharacter(char Character, int32_t RepeatCount) {
 // LINE 61:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0049AE3F;
+	__asm        jmp    _T13;
 // LINE 62:
+_T13:
 }
 
 // FUNCTION: COPTER_D 0x0049ae46
 unsigned long CDefaultCommander::OnMouseDown(int32_t x, int32_t y) {
 // LINE 66:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0049AE59;
+	__asm        jmp    _T13;
 // LINE 67:
+_T13:
 }
 
 // FUNCTION: COPTER_D 0x0049ae60
 unsigned long CDefaultCommander::OnMouseUp(int32_t x, int32_t y) {
 // LINE 71:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0049AE73;
+	__asm        jmp    _T13;
 // LINE 72:
+_T13:
 }
 
 // FUNCTION: COPTER_D 0x0049ae7a
 unsigned long CDefaultCommander::OnMouseMove(int32_t x, int32_t y) {
 // LINE 76:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0049AE8D;
+	__asm        jmp    _T13;
 // LINE 77:
+_T13:
 }
 
 // FUNCTION: COPTER_D 0x0049ae94
@@ -189,16 +196,18 @@ _T37:
 	__asm        mov    edx, [ecx];
 	__asm        mov    ecx, [eax+4];
 	__asm        call   dword ptr [edx+0xC];
-	__asm        jmp    near ptr 0x0049AEE3;
+	__asm        jmp    _T4f;
 // LINE 83:
+_T4f:
 }
 
 // FUNCTION: COPTER_D 0x0049aee8
 unsigned long CDefaultCommander::OnWindowDeactivate() {
 // LINE 87:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0049AEFB;
+	__asm        jmp    _T13;
 // LINE 88:
+_T13:
 }
 
 

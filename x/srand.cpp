@@ -20,14 +20,16 @@ void SetRRandSeed(unsigned long n) {
 
 	__asm        mov    eax, n;
 	__asm        mov    rrandSeed<__unnamed+0x00:4>, eax;
-	__asm        jmp    near ptr 0x0055D513;
+	__asm        jmp    _T13;
+_T13:
 }
 
 // FUNCTION: COPTER_D 0x0055d518
 unsigned long GetSRandSeed() {
 
 	__asm        mov    eax, srandSeed;
-	__asm        jmp    near ptr 0x0055D528;
+	__asm        jmp    _T10;
+_T10:
 }
 
 // FUNCTION: COPTER_D 0x0055d52d
@@ -35,7 +37,8 @@ void SetSRandSeed(unsigned long theSeed) {
 
 	__asm        mov    eax, theSeed;
 	__asm        mov    srandSeed, eax;
-	__asm        jmp    near ptr 0x0055D540;
+	__asm        jmp    _T13;
+_T13:
 }
 
 // FUNCTION: COPTER_D 0x0055d545
@@ -151,8 +154,9 @@ unsigned short RRand(unsigned short lim) {
 	__asm        cdq;
 	__asm        idiv   ecx;
 	__asm        mov    ax, dx;
-	__asm        jmp    near ptr 0x0055D69E;
+	__asm        jmp    _T159;
 // LINE 97:
+_T159:
 }
 
 // FUNCTION: COPTER_D 0x0055d6a3
@@ -192,8 +196,9 @@ _T39:
 // LINE 115:
 _T66:
 	__asm        mov    ax, temp;
-	__asm        jmp    near ptr 0x0055D712;
+	__asm        jmp    _T6f;
 // LINE 116:
+_T6f:
 }
 
 // FUNCTION: COPTER_D 0x0055d717
@@ -210,7 +215,8 @@ unsigned short SRand(unsigned short lim) {
 	__asm        cdq;
 	__asm        idiv   ecx;
 	__asm        mov    ax, dx;
-	__asm        jmp    near ptr 0x0055D745;
+	__asm        jmp    _T2e;
+_T2e:
 }
 
 // FUNCTION: COPTER_D 0x0055d74a
@@ -219,7 +225,8 @@ unsigned short SRand2() {
 	__asm        call   GetNextRandomNumber;
 	__asm        movzx  eax, ax;
 	__asm        and    eax, 1;
-	__asm        jmp    near ptr 0x0055D760;
+	__asm        jmp    _T16;
+_T16:
 }
 
 // FUNCTION: COPTER_D 0x0055d765
@@ -228,7 +235,8 @@ unsigned short SRand4() {
 	__asm        call   GetNextRandomNumber;
 	__asm        movzx  eax, ax;
 	__asm        and    eax, 3;
-	__asm        jmp    near ptr 0x0055D77B;
+	__asm        jmp    _T16;
+_T16:
 }
 
 // FUNCTION: COPTER_D 0x0055d780
@@ -237,7 +245,8 @@ unsigned short SRand8() {
 	__asm        call   GetNextRandomNumber;
 	__asm        movzx  eax, ax;
 	__asm        and    eax, 7;
-	__asm        jmp    near ptr 0x0055D796;
+	__asm        jmp    _T16;
+_T16:
 }
 
 // FUNCTION: COPTER_D 0x0055d79b
@@ -246,7 +255,8 @@ unsigned short SRand16() {
 	__asm        call   GetNextRandomNumber;
 	__asm        movzx  eax, ax;
 	__asm        and    eax, 0xF;
-	__asm        jmp    near ptr 0x0055D7B1;
+	__asm        jmp    _T16;
+_T16:
 }
 
 // FUNCTION: COPTER_D 0x0055d7b6
@@ -255,7 +265,8 @@ unsigned short SRand32() {
 	__asm        call   GetNextRandomNumber;
 	__asm        movzx  eax, ax;
 	__asm        and    eax, 0x1F;
-	__asm        jmp    near ptr 0x0055D7CC;
+	__asm        jmp    _T16;
+_T16:
 }
 
 // FUNCTION: COPTER_D 0x0055d7d1
@@ -264,7 +275,8 @@ unsigned short SRand64() {
 	__asm        call   GetNextRandomNumber;
 	__asm        movzx  eax, ax;
 	__asm        and    eax, 0x3F;
-	__asm        jmp    near ptr 0x0055D7E7;
+	__asm        jmp    _T16;
+_T16:
 }
 
 // FUNCTION: COPTER_D 0x0055d7ec
@@ -273,7 +285,8 @@ unsigned short SRand128() {
 	__asm        call   GetNextRandomNumber;
 	__asm        movzx  eax, ax;
 	__asm        and    eax, 0x7F;
-	__asm        jmp    near ptr 0x0055D802;
+	__asm        jmp    _T16;
+_T16:
 }
 
 // FUNCTION: COPTER_D 0x0055d807
@@ -282,7 +295,8 @@ unsigned short SRand256() {
 	__asm        call   GetNextRandomNumber;
 	__asm        movzx  eax, ax;
 	__asm        and    eax, 0xFF;
-	__asm        jmp    near ptr 0x0055D81F;
+	__asm        jmp    _T18;
+_T18:
 }
 
 // FUNCTION: COPTER_D 0x0055d824
@@ -396,8 +410,9 @@ _T41:
 // LINE 171:
 _T5b:
 	__asm        mov    ax, x;
-	__asm        jmp    near ptr 0x0055D944;
+	__asm        jmp    _T64;
 // LINE 172:
+_T64:
 }
 
 

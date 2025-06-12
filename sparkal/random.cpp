@@ -44,7 +44,8 @@ protected:
 static void $E2() {
 
 	__asm        call   $E1;
-	__asm        jmp    near ptr 0x00490FA0;
+	__asm        jmp    _T10;
+_T10:
 }
 
 // STATIC INITIALIZER:
@@ -57,9 +58,10 @@ static void $E1() {
 	__asm        push   eax;
 	__asm        mov    ecx, 0x604B18;
 	__asm        call   Random::seed;
-	__asm        jmp    near ptr 0x00490FC9;
-
-	__asm        jmp    near ptr 0x00490FCE;
+	__asm        jmp    _T24;
+_T24:
+	__asm        jmp    _T29;
+_T29:
 }
 
 // FUNCTION: COPTER_D 0x00490fd3
@@ -69,8 +71,9 @@ unsigned long __long_random(unsigned long limit) {
 	__asm        push   eax;
 	__asm        mov    ecx, 0x604B18;
 	__asm        call   Random::operator();
-	__asm        jmp    near ptr 0x00490FEC;
+	__asm        jmp    _T19;
 // LINE 28:
+_T19:
 }
 
 // FUNCTION: COPTER_D 0x00490ff1
@@ -159,7 +162,8 @@ _Td3:
 // LINE 48:
 	this->index2 = 0x1f;
 // LINE 49:
-	__asm        jmp    near ptr 0x004910E3;
+	__asm        jmp    _Tf2;
+_Tf2:
 }
 
 // FUNCTION: COPTER_D 0x004910ea
@@ -201,8 +205,9 @@ unsigned long Random::operator()(unsigned long limit) {
 	__asm        sub    edx, edx;
 	__asm        div    limit;
 	__asm        mov    eax, edx;
-	__asm        jmp    near ptr 0x0049116B;
+	__asm        jmp    _T81;
 // LINE 63:
+_T81:
 }
 
 

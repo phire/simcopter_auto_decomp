@@ -282,8 +282,8 @@ void Behavior::Behavior(/*unpacked*/ class Language *lang, /*unpacked*/ class NR
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x10], eax;
 // LINE 30:
-	__asm        jmp    near ptr 0x00560324;
-
+	__asm        jmp    _T94;
+_T94:
 	__asm        mov    eax, this;
 }
 
@@ -292,7 +292,8 @@ void Behavior::~Behavior() {
 
 	this-><vftable> = 0x5936d8;
 // LINE 34:
-	__asm        jmp    near ptr 0x00560348;
+	__asm        jmp    _T1a;
+_T1a:
 }
 
 // FUNCTION: COPTER_D 0x0056034d
@@ -300,8 +301,9 @@ void Behavior::~Behavior() {
 // LINE 39:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
-	__asm        jmp    near ptr 0x00560364;
+	__asm        jmp    _T17;
 // LINE 40:
+_T17:
 }
 
 // FUNCTION: COPTER_D 0x00560369
@@ -309,8 +311,9 @@ void Behavior::~Behavior() {
 // LINE 44:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
-	__asm        jmp    near ptr 0x00560380;
+	__asm        jmp    _T17;
 // LINE 45:
+_T17:
 }
 
 // FUNCTION: COPTER_D 0x00560385
@@ -360,7 +363,8 @@ _T24:
 	__asm        jmp    _T20;
 // LINE 54:
 _T7b:
-	__asm        jmp    near ptr 0x00560405;
+	__asm        jmp    _T80;
+_T80:
 }
 
 // FUNCTION: COPTER_D 0x0056040a
@@ -504,14 +508,16 @@ _T188:
 	__asm        lea    eax, [eax+eax*2];
 	__asm        mov    ecx, tree;
 	__asm        lea    eax, [ecx+eax*4+2];
-	__asm        jmp    near ptr 0x005605A5;
+	__asm        jmp    _T19b;
 // LINE 85:
+_T19b:
 }
 
 // FUNCTION: COPTER_D 0x005605ac
 void Behavior::GetNodeText(/*unpacked*/ struct Behavior::Node *node, unsigned char * str) {
 // LINE 128:
-	__asm        jmp    near ptr 0x005605BD;
+	__asm        jmp    _T11;
+_T11:
 }
 
 // FUNCTION: COPTER_D 0x005605c4
@@ -534,8 +540,9 @@ void Behavior::GetNodeText(short treeID, short nodeNum, unsigned char * TheStr) 
 	__asm        mov    [ecx+4], edx;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
-	__asm        jmp    near ptr 0x005605FA;
+	__asm        jmp    _T36;
 // LINE 135:
+_T36:
 	__asm        mov    eax, TheStr;
 	__asm        push   eax;
 	__asm        lea    eax, node.treeID;
@@ -543,7 +550,8 @@ void Behavior::GetNodeText(short treeID, short nodeNum, unsigned char * TheStr) 
 	__asm        mov    ecx, this;
 	__asm        call   Behavior::GetNodeText;
 // LINE 136:
-	__asm        jmp    near ptr 0x0056060F;
+	__asm        jmp    _T4b;
+_T4b:
 }
 
 // FUNCTION: COPTER_D 0x00560616
@@ -555,8 +563,9 @@ short Behavior::CountPrimitives() {
 	__asm        mov    edx, [ecx];
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   dword ptr [edx+8];
-	__asm        jmp    near ptr 0x00560638;
+	__asm        jmp    _T22;
 // LINE 141:
+_T22:
 }
 
 // FUNCTION: COPTER_D 0x0056063d
@@ -713,8 +722,9 @@ _T4c:
 // LINE 205:
 _T70:
 	__asm        mov    ax, baseID;
-	__asm        jmp    near ptr 0x005607F6;
+	__asm        jmp    _T79;
 // LINE 206:
+_T79:
 }
 
 // FUNCTION: COPTER_D 0x005607fb
@@ -763,8 +773,9 @@ _T4c:
 // LINE 224:
 _T70:
 	__asm        mov    ax, maxID;
-	__asm        jmp    near ptr 0x00560874;
+	__asm        jmp    _T79;
 // LINE 225:
+_T79:
 }
 
 // FUNCTION: COPTER_D 0x00560879
@@ -885,7 +896,8 @@ _T7a:
 	__asm        call   ConcatCPStr;
 	__asm        add    esp, 0xC;
 // LINE 260:
-	__asm        jmp    near ptr 0x005609C4;
+	__asm        jmp    _Ta0;
+_Ta0:
 }
 
 

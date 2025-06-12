@@ -1660,8 +1660,9 @@ _T1ae:
 	__asm        mov    eax, gGameApp;
 	__asm        mov    eax, [eax+0x4344];
 	__asm        mov    fps, eax;
-	__asm        jmp    near ptr 0x00555291;
+	__asm        jmp    _T1e5;
 // LINE 113:
+_T1e5:
 	__asm        fld    fps;
 	__asm        fcomp  qword ptr ds:[0x593600];
 	__asm        fnstsw ax;
@@ -1682,10 +1683,10 @@ _T1ae:
 _T218:
 	person->fData[30] = tree;
 // LINE 120:
-	__asm        jmp    near ptr 0x005552D7;
-
-	__asm        jmp    near ptr 0x005552DC;
-
+	__asm        jmp    _T22b;
+_T22b:
+	__asm        jmp    _T230;
+_T230:
 	__asm        mov    eax, person;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        lea    eax, [eax*4-4];
@@ -1697,10 +1698,10 @@ _T218:
 	__asm        cmp    eax, ecx;
 	__asm        je     _T2ae;
 
-	__asm        jmp    near ptr 0x00555308;
-
-	__asm        jmp    near ptr 0x0055530D;
-
+	__asm        jmp    _T25c;
+_T25c:
+	__asm        jmp    _T261;
+_T261:
 	__asm        mov    eax, person;
 	__asm        movsx  eax, word ptr [eax+0xA];
 	__asm        dec    eax;
@@ -1992,8 +1993,9 @@ _T2db:
 // LINE 249:
 _T2e8:
 	__asm        mov    eax, founddyobj;
-	__asm        jmp    near ptr 0x00555659;
+	__asm        jmp    _T2f0;
 // LINE 250:
+_T2f0:
 }
 
 // FUNCTION: COPTER_D 0x0055565e
@@ -2194,8 +2196,9 @@ _T55:
 signed char cYObject::GetRoadDir(/*unpacked*/ struct Point3d location) {
 // LINE 345:
 	__asm        mov    al, 3;
-	__asm        jmp    near ptr 0x00555880;
+	__asm        jmp    _T0d;
 // LINE 346:
+_T0d:
 }
 
 // FUNCTION: COPTER_D 0x00555885
@@ -2567,8 +2570,8 @@ _T1ec:
 	__asm        jmp    _Ta09;
 // LINE 442:
 _T1f4:
-	__asm        jmp    near ptr 0x00555C59;
-
+	__asm        jmp    _T1f9;
+_T1f9:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        lea    eax, [eax*4-4];
@@ -3033,8 +3036,8 @@ _T797:
 	__asm        mov    [ebp-0x98], eax;
 	__asm        jmp    _T771;
 _T7aa:
-	__asm        jmp    near ptr 0x0055620F;
-
+	__asm        jmp    _T7af;
+_T7af:
 	__asm        mov    eax, newloctype;
 	__asm        movsx  eax, cYObject::sLocInfo[0].maxNormalLoiterers[eax*8];
 	__asm        movsx  ecx, word ptr [ebp-0x9C];
@@ -3158,8 +3161,8 @@ _T964:
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::Unlink;
 // LINE 589:
-	__asm        jmp    near ptr 0x005563E3;
-
+	__asm        jmp    _T983;
+_T983:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax+0x20];
@@ -3179,8 +3182,8 @@ _T9b3:
 	__asm        mov    al, ncelly;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x89], al;
-	__asm        jmp    near ptr 0x00556436;
-
+	__asm        jmp    _T9d6;
+_T9d6:
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::Link;
 	__asm        jmp    _T9e6;
@@ -3244,8 +3247,8 @@ _T60:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T92:
-	__asm        jmp    near ptr 0x00556507;
-
+	__asm        jmp    _T97;
+_T97:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xA0];
 	__asm        mov    ecx, [ebp-8];
@@ -3291,8 +3294,8 @@ _Tf5:
 	__asm        call   S3PUtilsGetAlt;
 	__asm        add    esp, 0xC;
 	__asm        mov    [ebp-4], eax;
-	__asm        jmp    near ptr 0x0055658A;
-
+	__asm        jmp    _T11a;
+_T11a:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        sub    eax, [ebp-4];
@@ -3403,8 +3406,9 @@ _Tf0:
 	__asm        mov    [ebp-4], edx;
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    edx, [ebp-4];
-	__asm        jmp    near ptr 0x005566D5;
+	__asm        jmp    _T26;
 // LINE 658:
+_T26:
 }
 
 // FUNCTION: COPTER_D 0x005566da
@@ -3529,8 +3533,9 @@ _T144:
 // LINE 678:
 	__asm        mov    eax, cent.x;
 	__asm        mov    edx, cent.y;
-	__asm        jmp    near ptr 0x00556843;
+	__asm        jmp    _T169;
 // LINE 679:
+_T169:
 }
 
 // FUNCTION: COPTER_D 0x00556848
@@ -3920,7 +3925,8 @@ _T44b:
 _T45b:
 	counted[0] = numcounted;
 // LINE 739:
-	__asm        jmp    near ptr 0x00556CB2;
+	__asm        jmp    _T46a;
+_T46a:
 }
 
 // FUNCTION: COPTER_D 0x00556cb9
@@ -4265,8 +4271,8 @@ _T1db:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T20a:
-	__asm        jmp    near ptr 0x005570CF;
-
+	__asm        jmp    _T20f;
+_T20f:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x3C];
 	__asm        mov    ecx, dyn;
@@ -4287,8 +4293,9 @@ _T20a:
 	__asm        mov    [ebp-0x24], ax;
 	__asm        mov    ax, [ebp-0x24];
 	__asm        mov    dist, ax;
-	__asm        jmp    near ptr 0x0055710F;
+	__asm        jmp    _T24f;
 // LINE 791:
+_T24f:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(dist);
 	__asm        and    eax, 0xFFFF;
 	__asm        mov    ecx, reinterpret_cast<uint32_t>(closestdist);
@@ -4317,8 +4324,9 @@ _T281:
 // LINE 799:
 _T29f:
 	__asm        mov    eax, closestobj;
-	__asm        jmp    near ptr 0x00557167;
+	__asm        jmp    _T2a7;
 // LINE 800:
+_T2a7:
 }
 
 // FUNCTION: COPTER_D 0x0055716e
@@ -4363,7 +4371,8 @@ _T55:
 _T77:
 	this->fData[15] = 0x1;
 // LINE 817:
-	__asm        jmp    near ptr 0x005571F6;
+	__asm        jmp    _T88;
+_T88:
 }
 
 // FUNCTION: COPTER_D 0x005571fb
@@ -4505,8 +4514,8 @@ _T14c:
 	__asm        add    esp, 0x10;
 // LINE 840:
 _T50:
-	__asm        jmp    near ptr 0x005573A1;
-
+	__asm        jmp    _T55;
+_T55:
 	__asm        mov    eax, obj;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x24;
@@ -4607,8 +4616,8 @@ _Tc7:
 	__asm        jmp    _T1e;
 // LINE 854:
 _Tde:
-	__asm        jmp    near ptr 0x005574D8;
-
+	__asm        jmp    _Te3;
+_Te3:
 	__asm        mov    eax, obj;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x24;
@@ -4634,8 +4643,9 @@ _T124:
 // LINE 860:
 _T129:
 	__asm        mov    eax, found;
-	__asm        jmp    near ptr 0x00557526;
+	__asm        jmp    _T131;
 // LINE 861:
+_T131:
 }
 
 // FUNCTION: COPTER_D 0x0055752b
@@ -4658,8 +4668,9 @@ _T2f:
 // LINE 881:
 _T36:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x00557569;
+	__asm        jmp    _T3e;
 // LINE 882:
+_T3e:
 }
 
 // FUNCTION: COPTER_D 0x00557570
@@ -4697,8 +4708,9 @@ enum TreeSim::ReturnCode cYObject::iPutMyCarInStack(/*unpacked*/ struct TreeSim:
 // Block end:
 _T5d:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x005575D5;
+	__asm        jmp    _T65;
 // LINE 896:
+_T65:
 }
 
 // FUNCTION: COPTER_D 0x005575dc
@@ -4730,10 +4742,10 @@ _T40:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T5c:
-	__asm        jmp    near ptr 0x0055763D;
-
-	__asm        jmp    near ptr 0x00557642;
-
+	__asm        jmp    _T61;
+_T61:
+	__asm        jmp    _T66;
+_T66:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        lea    eax, [eax*4-4];
@@ -4765,8 +4777,8 @@ _Tb4:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _Td0:
-	__asm        jmp    near ptr 0x005576B1;
-
+	__asm        jmp    _Td5;
+_Td5:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        lea    eax, [eax*4-4];
@@ -4777,8 +4789,8 @@ _Td0:
 	__asm        lea    eax, [eax+ecx*2];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    near ptr 0x005576DA;
-
+	__asm        jmp    _Tfe;
+_Tfe:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        dec    word ptr [eax];
 // LINE 905:
@@ -4786,8 +4798,9 @@ _Td0:
 // LINE 907:
 _T10b:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x005576EF;
+	__asm        jmp    _T113;
 // LINE 908:
+_T113:
 }
 
 // FUNCTION: COPTER_D 0x005576f6
@@ -4843,13 +4856,15 @@ _T75:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _Tbc:
-	__asm        jmp    near ptr 0x005577B7;
+	__asm        jmp    _Tc1;
 // LINE 915:
+_Tc1:
 	result = 0x1;
 // LINE 916:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x005577C6;
+	__asm        jmp    _Td0;
 // LINE 917:
+_Td0:
 }
 
 // FUNCTION: COPTER_D 0x005577cd
@@ -4870,8 +4885,9 @@ enum TreeSim::ReturnCode cYObject::iAttr(/*unpacked*/ struct TreeSim::StackElem 
 	__asm        mov    result, eax;
 // LINE 923:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x00557800;
+	__asm        jmp    _T33;
 // LINE 924:
+_T33:
 }
 
 // FUNCTION: COPTER_D 0x00557807
@@ -4921,10 +4937,10 @@ _T6b:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T87:
-	__asm        jmp    near ptr 0x00557893;
-
-	__asm        jmp    near ptr 0x00557898;
-
+	__asm        jmp    _T8c;
+_T8c:
+	__asm        jmp    _T91;
+_T91:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        lea    eax, [eax*4-4];
@@ -4982,8 +4998,9 @@ _T11e:
 	__asm        call   cYObject::DynEffects;
 // LINE 962:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x00557941;
+	__asm        jmp    _T13a;
 // LINE 963:
+_T13a:
 }
 
 // FUNCTION: COPTER_D 0x00557948
@@ -5038,10 +5055,10 @@ _T7f:
 _T9c:
 	__asm        mov    dword ptr [ebp-0x14], 0;
 _Ta3:
-	__asm        jmp    near ptr 0x005579F0;
-
-	__asm        jmp    near ptr 0x005579F5;
-
+	__asm        jmp    _Ta8;
+_Ta8:
+	__asm        jmp    _Tad;
+_Tad:
 	__asm        jmp    _Tca;
 _Tb2:
 	__asm        cmp    dword ptr [ebp-0x14], 0;
@@ -5084,8 +5101,8 @@ _T11a:
 	__asm        mov    dword ptr [ebp-0x20], 0;
 	__asm        jmp    _T126;
 _T126:
-	__asm        jmp    near ptr 0x00557A73;
-
+	__asm        jmp    _T12b;
+_T12b:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    eax, [eax+0x1C];
 	__asm        mov    cl, [ebp-0x10];
@@ -5133,13 +5150,15 @@ _T18a:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T1c2:
-	__asm        jmp    near ptr 0x00557B0F;
+	__asm        jmp    _T1c7;
 // LINE 970:
+_T1c7:
 	result = 0x1;
 // LINE 972:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x00557B1E;
+	__asm        jmp    _T1d6;
 // LINE 973:
+_T1d6:
 }
 
 // FUNCTION: COPTER_D 0x00557b25
@@ -5200,8 +5219,8 @@ _T89:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _Ta5:
-	__asm        jmp    near ptr 0x00557BCF;
-
+	__asm        jmp    _Taa;
+_Taa:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        lea    eax, [eax*4-4];
@@ -5212,8 +5231,8 @@ _Ta5:
 	__asm        lea    eax, [eax+ecx*2];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x18], eax;
-	__asm        jmp    near ptr 0x00557BF8;
-
+	__asm        jmp    _Td3;
+_Td3:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(range);
 	__asm        push   eax;
 	__asm        call   SRand;
@@ -5224,8 +5243,9 @@ _Ta5:
 	result = 0x1;
 // LINE 985:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x00557C19;
+	__asm        jmp    _Tf4;
 // LINE 986:
+_Tf4:
 }
 
 // FUNCTION: COPTER_D 0x00557c20
@@ -5274,10 +5294,10 @@ _T6d:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T89:
-	__asm        jmp    near ptr 0x00557CAE;
-
-	__asm        jmp    near ptr 0x00557CB3;
-
+	__asm        jmp    _T8e;
+_T8e:
+	__asm        jmp    _T93;
+_T93:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        lea    eax, [eax*4-4];
@@ -5313,8 +5333,8 @@ _Te8:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T104:
-	__asm        jmp    near ptr 0x00557D29;
-
+	__asm        jmp    _T109;
+_T109:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        lea    eax, [eax*4-4];
@@ -5325,8 +5345,8 @@ _T104:
 	__asm        lea    eax, [eax+ecx*2];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x2C], eax;
-	__asm        jmp    near ptr 0x00557D52;
-
+	__asm        jmp    _T132;
+_T132:
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        dec    word ptr [eax];
 // LINE 1002:
@@ -5334,8 +5354,8 @@ _T104:
 	__asm        mov    eax, [eax+4];
 	__asm        mov    goal, eax;
 // LINE 1003:
-	__asm        jmp    near ptr 0x00557D66;
-
+	__asm        jmp    _T146;
+_T146:
 	__asm        mov    eax, goal;
 	__asm        mov    eax, [eax+0x20];
 	__asm        push   eax;
@@ -5427,8 +5447,8 @@ _T104:
 	__asm        add    eax, 0x20000000;
 	__asm        sar    eax, 0x16;
 	__asm        mov    [ebp-0x34], al;
-	__asm        jmp    near ptr 0x00557E7B;
-
+	__asm        jmp    _T25b;
+_T25b:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax+0x20];
@@ -5448,12 +5468,13 @@ _T288:
 	__asm        mov    al, [ebp-0x30];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x89], al;
-	__asm        jmp    near ptr 0x00557EC5;
-
+	__asm        jmp    _T2a5;
+_T2a5:
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::Link;
-	__asm        jmp    near ptr 0x00557ED2;
+	__asm        jmp    _T2b2;
 // LINE 1013:
+_T2b2:
 	__asm        mov    eax, elem;
 	__asm        mov    dword ptr [eax+4], 0;
 // LINE 1014:
@@ -5495,8 +5516,9 @@ _T2fd:
 	__asm        call   cYObject::DynEffects;
 // LINE 1029:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x00557F39;
+	__asm        jmp    _T319;
 // LINE 1030:
+_T319:
 }
 
 // FUNCTION: COPTER_D 0x00557f40
@@ -5524,8 +5546,9 @@ enum TreeSim::ReturnCode cYObject::iUpdateMyMission(/*unpacked*/ struct TreeSim:
 	result = 0x1;
 // LINE 1039:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x00557F89;
+	__asm        jmp    _T49;
 // LINE 1040:
+_T49:
 }
 
 // FUNCTION: COPTER_D 0x00557f90
@@ -5580,8 +5603,8 @@ _T59:
 	__asm        sar    eax, 0x10;
 	__asm        mov    copterheight, ax;
 // LINE 1060:
-	__asm        jmp    near ptr 0x00558023;
-
+	__asm        jmp    _T93;
+_T93:
 	__asm        movsx  eax, copterheight;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -5667,8 +5690,8 @@ _T147:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T179:
-	__asm        jmp    near ptr 0x0055810E;
-
+	__asm        jmp    _T17e;
+_T17e:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xA0];
 	__asm        mov    ecx, [ebp-0x28];
@@ -5737,8 +5760,8 @@ _T215:
 	__asm        sar    eax, 0x10;
 	__asm        mov    copterheight, ax;
 // LINE 1092:
-	__asm        jmp    near ptr 0x005581DE;
-
+	__asm        jmp    _T24e;
+_T24e:
 	__asm        movsx  eax, copterheight;
 	__asm        cdq;
 	__asm        xor    eax, edx;
@@ -5788,8 +5811,9 @@ _T2a8:
 // LINE 1105:
 _T2d0:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x00558268;
+	__asm        jmp    _T2d8;
 // LINE 1106:
+_T2d8:
 }
 
 // FUNCTION: COPTER_D 0x0055826f
@@ -6241,12 +6265,12 @@ _T483:
 	__asm        mov    destloc.y, eax;
 // LINE 1232:
 _T4b9:
-	__asm        jmp    near ptr 0x0055872D;
-
-	__asm        jmp    near ptr 0x00558732;
-
-	__asm        jmp    near ptr 0x00558737;
-
+	__asm        jmp    _T4be;
+_T4be:
+	__asm        jmp    _T4c3;
+_T4c3:
+	__asm        jmp    _T4c8;
+_T4c8:
 	__asm        mov    eax, destloc.y;
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
@@ -6299,8 +6323,9 @@ _T543:
 // Block end:
 _T54a:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x005587C1;
+	__asm        jmp    _T552;
 // LINE 1242:
+_T552:
 }
 
 // FUNCTION: COPTER_D 0x005587c8
@@ -6316,8 +6341,9 @@ enum TreeSim::ReturnCode cYObject::iSelfDecommission(/*unpacked*/ struct TreeSim
 	result = 0x3;
 // LINE 1250:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x005587F2;
+	__asm        jmp    _T2a;
 // LINE 1251:
+_T2a:
 }
 
 // FUNCTION: COPTER_D 0x005587f9
@@ -6372,8 +6398,8 @@ _T89:
 	__asm        lea    eax, [eax+0x30000];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x40], eax;
-	__asm        jmp    near ptr 0x005588B0;
-
+	__asm        jmp    _Tb7;
+_Tb7:
 	__asm        jmp    _Td8;
 
 	__asm        jmp    _Tcb;
@@ -6395,8 +6421,9 @@ _Te4:
 // LINE 1261:
 _Teb:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x005588EC;
+	__asm        jmp    _Tf3;
 // LINE 1262:
+_Tf3:
 }
 
 // FUNCTION: COPTER_D 0x005588f3
@@ -6421,8 +6448,8 @@ _T3c:
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-8], eax;
 // LINE 1268:
-	__asm        jmp    near ptr 0x0055893D;
-
+	__asm        jmp    _T4a;
+_T4a:
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax+0x20];
 	__asm        push   eax;
@@ -6446,8 +6473,9 @@ _T3c:
 	result = 0x1;
 // LINE 1271:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x00558983;
+	__asm        jmp    _T90;
 // LINE 1272:
+_T90:
 }
 
 // FUNCTION: COPTER_D 0x0055898a
@@ -6487,8 +6515,9 @@ _T62:
 // LINE 1284:
 _T69:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x005589FB;
+	__asm        jmp    _T71;
 // LINE 1285:
+_T71:
 }
 
 // FUNCTION: COPTER_D 0x00558a02
@@ -6548,8 +6577,9 @@ _Ta3:
 // LINE 1296:
 _Taa:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x00558AB4;
+	__asm        jmp    _Tb2;
 // LINE 1297:
+_Tb2:
 }
 
 // FUNCTION: COPTER_D 0x00558abb
@@ -6574,8 +6604,9 @@ _T32:
 // LINE 1307:
 _T39:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x00558AFC;
+	__asm        jmp    _T41;
 // LINE 1308:
+_T41:
 }
 
 // FUNCTION: COPTER_D 0x00558b03
@@ -6625,8 +6656,8 @@ _T72:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T8e:
-	__asm        jmp    near ptr 0x00558B96;
-
+	__asm        jmp    _T93;
+_T93:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        lea    eax, [eax*4-4];
@@ -6637,8 +6668,8 @@ _T8e:
 	__asm        lea    eax, [eax+ecx*2];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x18], eax;
-	__asm        jmp    near ptr 0x00558BBF;
-
+	__asm        jmp    _Tbc;
+_Tbc:
 	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0x140];
 	__asm        mov    ecx, [ebp-0x18];
@@ -6659,8 +6690,8 @@ _Te7:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T103:
-	__asm        jmp    near ptr 0x00558C0B;
-
+	__asm        jmp    _T108;
+_T108:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        lea    eax, [eax*4-4];
@@ -6671,13 +6702,13 @@ _T103:
 	__asm        lea    eax, [eax+ecx*2];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x1C], eax;
-	__asm        jmp    near ptr 0x00558C34;
-
+	__asm        jmp    _T131;
+_T131:
 	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xA4];
 	__asm        mov    [ebp-0x20], eax;
-	__asm        jmp    near ptr 0x00558C47;
-
+	__asm        jmp    _T144;
+_T144:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    eax, [eax+0x20];
 	__asm        push   eax;
@@ -6707,8 +6738,9 @@ _T183:
 // LINE 1324:
 _T18a:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x00558C95;
+	__asm        jmp    _T192;
 // LINE 1325:
+_T192:
 }
 
 // FUNCTION: COPTER_D 0x00558c9c
@@ -6751,13 +6783,15 @@ _T78:
 
 	this->fData[8] = 0x0;
 _T96:
-	__asm        jmp    near ptr 0x00558D37;
+	__asm        jmp    _T9b;
 // LINE 1332:
+_T9b:
 	result = 0x1;
 // LINE 1334:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x00558D46;
+	__asm        jmp    _Taa;
 // LINE 1335:
+_Taa:
 }
 
 // FUNCTION: COPTER_D 0x00558d4d
@@ -6809,10 +6843,10 @@ _T6d:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T89:
-	__asm        jmp    near ptr 0x00558DDB;
-
-	__asm        jmp    near ptr 0x00558DE0;
-
+	__asm        jmp    _T8e;
+_T8e:
+	__asm        jmp    _T93;
+_T93:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        lea    eax, [eax*4-4];
@@ -6849,8 +6883,8 @@ _Te9:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T105:
-	__asm        jmp    near ptr 0x00558E57;
-
+	__asm        jmp    _T10a;
+_T10a:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        lea    eax, [eax*4-4];
@@ -6861,8 +6895,8 @@ _T105:
 	__asm        lea    eax, [eax+ecx*2];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x24], eax;
-	__asm        jmp    near ptr 0x00558E80;
-
+	__asm        jmp    _T133;
+_T133:
 	__asm        mov    ax, dirtoconc;
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        mov    [ecx], ax;
@@ -6882,8 +6916,8 @@ _T157:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T173:
-	__asm        jmp    near ptr 0x00558EC5;
-
+	__asm        jmp    _T178;
+_T178:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        lea    eax, [eax*4-4];
@@ -6894,8 +6928,8 @@ _T173:
 	__asm        lea    eax, [eax+ecx*2];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x28], eax;
-	__asm        jmp    near ptr 0x00558EEE;
-
+	__asm        jmp    _T1a1;
+_T1a1:
 	__asm        mov    ax, actualriotval;
 	__asm        mov    ecx, [ebp-0x28];
 	__asm        mov    [ecx], ax;
@@ -6915,8 +6949,8 @@ _T1c5:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T1e1:
-	__asm        jmp    near ptr 0x00558F33;
-
+	__asm        jmp    _T1e6;
+_T1e6:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        lea    eax, [eax*4-4];
@@ -6927,8 +6961,8 @@ _T1e1:
 	__asm        lea    eax, [eax+ecx*2];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x2C], eax;
-	__asm        jmp    near ptr 0x00558F5C;
-
+	__asm        jmp    _T20f;
+_T20f:
 	__asm        mov    ax, numcounted;
 	__asm        mov    ecx, [ebp-0x2C];
 	__asm        mov    [ecx], ax;
@@ -6936,8 +6970,9 @@ _T1e1:
 	result = 0x1;
 // LINE 1350:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x00558F75;
+	__asm        jmp    _T228;
 // LINE 1351:
+_T228:
 }
 
 // FUNCTION: COPTER_D 0x00558f7c
@@ -7028,8 +7063,9 @@ _T110:
 // LINE 1363:
 _T117:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x0055909B;
+	__asm        jmp    _T11f;
 // LINE 1364:
+_T11f:
 }
 
 // FUNCTION: COPTER_D 0x005590a2
@@ -7042,10 +7078,10 @@ enum TreeSim::ReturnCode cYObject::iGosubToInitbhav(/*unpacked*/ struct TreeSim:
 // LINE 1370:
 	id = this->fData[29];
 // LINE 1371:
-	__asm        jmp    near ptr 0x005590C8;
-
-	__asm        jmp    near ptr 0x005590CD;
-
+	__asm        jmp    _T26;
+_T26:
+	__asm        jmp    _T2b;
+_T2b:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        lea    eax, [eax*4-4];
@@ -7057,10 +7093,10 @@ enum TreeSim::ReturnCode cYObject::iGosubToInitbhav(/*unpacked*/ struct TreeSim:
 	__asm        cmp    eax, ecx;
 	__asm        je     _Tb4;
 
-	__asm        jmp    near ptr 0x005590F9;
-
-	__asm        jmp    near ptr 0x005590FE;
-
+	__asm        jmp    _T57;
+_T57:
+	__asm        jmp    _T5c;
+_T5c:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xA];
 	__asm        dec    eax;
@@ -7107,8 +7143,9 @@ _Te2:
 	result = 0x1;
 // LINE 1376:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x00559193;
+	__asm        jmp    _Tf1;
 // LINE 1377:
+_Tf1:
 }
 
 // FUNCTION: COPTER_D 0x0055919a
@@ -7133,13 +7170,15 @@ enum TreeSim::ReturnCode cYObject::iAdjustRadiusForRiotVal(/*unpacked*/ struct T
 _T43:
 	this->fDyn.radius = 0x50000;
 _T4d:
-	__asm        jmp    near ptr 0x005591EC;
+	__asm        jmp    _T52;
 // LINE 1383:
+_T52:
 	result = 0x1;
 // LINE 1385:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x005591FB;
+	__asm        jmp    _T61;
 // LINE 1386:
+_T61:
 }
 
 // FUNCTION: COPTER_D 0x00559202
@@ -7166,8 +7205,8 @@ enum TreeSim::ReturnCode cYObject::iJoinRiot(/*unpacked*/ struct TreeSim::StackE
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T5d:
-	__asm        jmp    near ptr 0x00559264;
-
+	__asm        jmp    _T62;
+_T62:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax+0x20];
@@ -7268,23 +7307,23 @@ _T1e0:
 	__asm        mov    ax, [ebp-0x84];
 	__asm        mov    [ebp-0x80], ax;
 _T1eb:
-	__asm        jmp    near ptr 0x005593F2;
-
+	__asm        jmp    _T1f0;
+_T1f0:
 	__asm        movsx  eax, word ptr [ebp-0x80];
 	__asm        push   eax;
 	__asm        call   S3DSStopPlay;
 	__asm        add    esp, 4;
 _T1fd:
-	__asm        jmp    near ptr 0x00559404;
-
+	__asm        jmp    _T202;
+_T202:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        mov    cYObject::sSoundChannels[eax*2], 0;
 	__asm        mov    eax, this;
 	__asm        mov    word ptr [eax+0x102], 0xFFFF;
 _T228:
-	__asm        jmp    near ptr 0x0055942F;
-
+	__asm        jmp    _T22d;
+_T22d:
 	__asm        mov    eax, this;
 	__asm        mov    word ptr [eax+0xD2], 0;
 	__asm        mov    eax, this;
@@ -7306,8 +7345,8 @@ _T287:
 	__asm        dec    eax;
 	__asm        mov    cYObject::sNumMissionAwake, ax;
 _T295:
-	__asm        jmp    near ptr 0x0055949C;
-
+	__asm        jmp    _T29a;
+_T29a:
 	__asm        movsx  eax, cYObject::sNumMissionAwake;
 	__asm        test   eax, eax;
 	__asm        jl     _T2b8;
@@ -7325,8 +7364,9 @@ _T2b8:
 _T2d4:
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::Unlink;
-	__asm        jmp    near ptr 0x005594E6;
+	__asm        jmp    _T2e4;
 // LINE 1392:
+_T2e4:
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::JoinRiot;
 	__asm        cmp    eax, 0xFFFFFFFF;
@@ -7367,8 +7407,8 @@ _T351:
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   TreeSim::Reset;
-	__asm        jmp    near ptr 0x0055957E;
-
+	__asm        jmp    _T37c;
+_T37c:
 	__asm        mov    eax, this;
 	__asm        mov    word ptr [eax+0xD2], 1;
 	__asm        mov    eax, this;
@@ -7388,8 +7428,8 @@ _T3c7:
 	__asm        inc    eax;
 	__asm        mov    cYObject::sNumMissionAwake, ax;
 _T3d5:
-	__asm        jmp    near ptr 0x005595DC;
-
+	__asm        jmp    _T3da;
+_T3da:
 	__asm        movsx  eax, cYObject::sNumAmbientAwake;
 	__asm        movsx  ecx, cYObject::sNumMissionAwake;
 	__asm        add    eax, ecx;
@@ -7461,8 +7501,8 @@ _T4c4:
 _T4e0:
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::Link;
-	__asm        jmp    near ptr 0x005596F2;
-
+	__asm        jmp    _T4f0;
+_T4f0:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax+0x20];
@@ -7501,13 +7541,15 @@ _T520:
 	__asm        push   eax;
 	__asm        call   0x004D8781;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x00559773;
-
-	__asm        jmp    near ptr 0x00559778;
+	__asm        jmp    _T571;
+_T571:
+	__asm        jmp    _T576;
 // LINE 1401:
+_T576:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x00559780;
+	__asm        jmp    _T57e;
 // LINE 1402:
+_T57e:
 }
 
 // FUNCTION: COPTER_D 0x00559787
@@ -7540,10 +7582,10 @@ _T40:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T5c:
-	__asm        jmp    near ptr 0x005597E8;
-
-	__asm        jmp    near ptr 0x005597ED;
-
+	__asm        jmp    _T61;
+_T61:
+	__asm        jmp    _T66;
+_T66:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        lea    eax, [eax*4-4];
@@ -7597,8 +7639,9 @@ _T106:
 	result = 0x1;
 // LINE 1416:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x005598B3;
+	__asm        jmp    _T12c;
 // LINE 1417:
+_T12c:
 }
 
 // FUNCTION: COPTER_D 0x005598ba
@@ -7653,8 +7696,9 @@ _T68:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _Tb0:
-	__asm        jmp    near ptr 0x0055996F;
+	__asm        jmp    _Tb5;
 // LINE 1423:
+_Tb5:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cl, [eax+0x88];
@@ -7792,13 +7836,15 @@ _T214:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T25c:
-	__asm        jmp    near ptr 0x00559B1B;
+	__asm        jmp    _T261;
 // LINE 1439:
+_T261:
 	result = 0x1;
 // LINE 1441:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x00559B2A;
+	__asm        jmp    _T270;
 // LINE 1442:
+_T270:
 }
 
 // FUNCTION: COPTER_D 0x00559b31
@@ -7823,8 +7869,8 @@ _T3c:
 	__asm        mov    eax, [eax+4];
 	__asm        mov    [ebp-8], eax;
 // LINE 1448:
-	__asm        jmp    near ptr 0x00559B7B;
-
+	__asm        jmp    _T4a;
+_T4a:
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax+0x20];
 	__asm        push   eax;
@@ -7848,8 +7894,9 @@ _T3c:
 	result = 0x1;
 // LINE 1451:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x00559BC1;
+	__asm        jmp    _T90;
 // LINE 1452:
+_T90:
 }
 
 // FUNCTION: COPTER_D 0x00559bc8
@@ -7874,8 +7921,8 @@ _T3f:
 	__asm        mov    eax, [eax+0x140];
 	__asm        mov    [ebp-8], eax;
 // LINE 1458:
-	__asm        jmp    near ptr 0x00559C18;
-
+	__asm        jmp    _T50;
+_T50:
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax+0x20];
 	__asm        push   eax;
@@ -7899,8 +7946,9 @@ _T3f:
 	result = 0x1;
 // LINE 1461:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x00559C5E;
+	__asm        jmp    _T96;
 // LINE 1462:
+_T96:
 }
 
 // FUNCTION: COPTER_D 0x00559c65
@@ -7925,8 +7973,8 @@ _T3f:
 	__asm        mov    eax, [eax+0x140];
 	__asm        mov    [ebp-8], eax;
 // LINE 1468:
-	__asm        jmp    near ptr 0x00559CB5;
-
+	__asm        jmp    _T50;
+_T50:
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    eax, [eax+0x20];
 	__asm        push   eax;
@@ -7950,8 +7998,9 @@ _T3f:
 	result = 0x1;
 // LINE 1471:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x00559CFB;
+	__asm        jmp    _T96;
 // LINE 1472:
+_T96:
 }
 
 // FUNCTION: COPTER_D 0x00559d02
@@ -7992,8 +8041,9 @@ _T54:
 	__asm        call   cYObject::GetLocType;
 	__asm        add    esp, 8;
 	__asm        mov    loctype, eax;
-	__asm        jmp    near ptr 0x00559D7E;
+	__asm        jmp    _T7c;
 // LINE 1486:
+_T7c:
 	__asm        cmp    loctype, 7;
 	__asm        je     _Tc4;
 
@@ -8031,10 +8081,10 @@ _Tde:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _Tfa:
-	__asm        jmp    near ptr 0x00559E01;
-
-	__asm        jmp    near ptr 0x00559E06;
-
+	__asm        jmp    _Tff;
+_Tff:
+	__asm        jmp    _T104;
+_T104:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        lea    eax, [eax*4-4];
@@ -8071,8 +8121,8 @@ _T159:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T175:
-	__asm        jmp    near ptr 0x00559E7C;
-
+	__asm        jmp    _T17a;
+_T17a:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        lea    eax, [eax*4-4];
@@ -8083,8 +8133,8 @@ _T175:
 	__asm        lea    eax, [eax+ecx*2];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x2C], eax;
-	__asm        jmp    near ptr 0x00559EA5;
-
+	__asm        jmp    _T1a3;
+_T1a3:
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        dec    word ptr [eax];
 // LINE 1499:
@@ -8129,8 +8179,9 @@ _T1f9:
 // Block end:
 _T20d:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x00559F17;
+	__asm        jmp    _T215;
 // LINE 1527:
+_T215:
 }
 
 // FUNCTION: COPTER_D 0x00559f1e
@@ -8158,8 +8209,9 @@ enum TreeSim::ReturnCode cYObject::iGenerateMedevacAndSetSelfAsVictim(/*unpacked
 	result = 0x3;
 // LINE 1539:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x00559F6D;
+	__asm        jmp    _T4f;
 // LINE 1540:
+_T4f:
 }
 
 // FUNCTION: COPTER_D 0x00559f74
@@ -8201,8 +8253,8 @@ enum TreeSim::ReturnCode cYObject::iTurnToNearbyFire(/*unpacked*/ struct TreeSim
 	__asm        shl    ecx, 0xA;
 	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    [ebp-0x20], eax;
-	__asm        jmp    near ptr 0x00559FEA;
-
+	__asm        jmp    _T76;
+_T76:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        movsx  eax, word ptr [eax+6];
 	__asm        shl    eax, 0x10;
@@ -8240,8 +8292,8 @@ _Tcf:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _Teb:
-	__asm        jmp    near ptr 0x0055A064;
-
+	__asm        jmp    _Tf0;
+_Tf0:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        lea    eax, [eax*4-4];
@@ -8252,8 +8304,8 @@ _Teb:
 	__asm        lea    eax, [eax+ecx*2];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x18], eax;
-	__asm        jmp    near ptr 0x0055A08D;
-
+	__asm        jmp    _T119;
+_T119:
 	__asm        movsx  eax, firecellx;
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
@@ -8265,8 +8317,9 @@ _Teb:
 	__asm        sub    eax, edx;
 	__asm        mov    ecx, [ebp-0x18];
 	__asm        mov    [ecx], ax;
-	__asm        jmp    near ptr 0x0055A0B1;
+	__asm        jmp    _T13d;
 // LINE 1550:
+_T13d:
 	__asm        movsx  eax, param.ydistloc;
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jle    _T157;
@@ -8282,8 +8335,8 @@ _T157:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T173:
-	__asm        jmp    near ptr 0x0055A0EC;
-
+	__asm        jmp    _T178;
+_T178:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        lea    eax, [eax*4-4];
@@ -8294,8 +8347,8 @@ _T173:
 	__asm        lea    eax, [eax+ecx*2];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x1C], eax;
-	__asm        jmp    near ptr 0x0055A115;
-
+	__asm        jmp    _T1a1;
+_T1a1:
 	__asm        movsx  eax, firecelly;
 	__asm        mov    ecx, this;
 	__asm        xor    edx, edx;
@@ -8307,8 +8360,9 @@ _T173:
 	__asm        sub    eax, edx;
 	__asm        mov    ecx, [ebp-0x1C];
 	__asm        mov    [ecx], ax;
-	__asm        jmp    near ptr 0x0055A139;
+	__asm        jmp    _T1c5;
 // LINE 1551:
+_T1c5:
 	result = 0x1;
 // LINE 1553:
 	__asm        jmp    _T1d8;
@@ -8318,8 +8372,9 @@ _T1d1:
 // LINE 1556:
 _T1d8:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x0055A154;
+	__asm        jmp    _T1e0;
 // LINE 1557:
+_T1e0:
 }
 
 // FUNCTION: COPTER_D 0x0055a15b
@@ -8347,8 +8402,9 @@ enum TreeSim::ReturnCode cYObject::iDie(/*unpacked*/ struct TreeSim::StackElem *
 	result = 0x3;
 // LINE 1567:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x0055A1AA;
+	__asm        jmp    _T4f;
 // LINE 1568:
+_T4f:
 }
 
 // FUNCTION: COPTER_D 0x0055a1b1
@@ -8360,8 +8416,9 @@ enum TreeSim::ReturnCode cYObject::iWalkToStackObject(/*unpacked*/ struct TreeSi
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::iWalkToAndGrabOntoStackObject;
-	__asm        jmp    near ptr 0x0055A1D2;
+	__asm        jmp    _T21;
 // LINE 1573:
+_T21:
 }
 
 // FUNCTION: COPTER_D 0x0055a1d9
@@ -8397,10 +8454,10 @@ enum TreeSim::ReturnCode cYObject::iPutObjIntoTreeNum(/*unpacked*/ struct TreeSi
 _T54:
 	treenum = nparam-><YObjLang::Param+0x00:2>;
 // LINE 1582:
-	__asm        jmp    near ptr 0x0055A23C;
-
-	__asm        jmp    near ptr 0x0055A241;
-
+	__asm        jmp    _T63;
+_T63:
+	__asm        jmp    _T68;
+_T68:
 	__asm        mov    eax, obj;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        lea    eax, [eax*4-4];
@@ -8412,10 +8469,10 @@ _T54:
 	__asm        cmp    eax, ecx;
 	__asm        je     _Te6;
 
-	__asm        jmp    near ptr 0x0055A26D;
-
-	__asm        jmp    near ptr 0x0055A272;
-
+	__asm        jmp    _T94;
+_T94:
+	__asm        jmp    _T99;
+_T99:
 	__asm        mov    eax, obj;
 	__asm        movsx  eax, word ptr [eax+0xA];
 	__asm        dec    eax;
@@ -8447,8 +8504,9 @@ _Teb:
 	result = 0x1;
 // LINE 1585:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x0055A2D3;
+	__asm        jmp    _Tfa;
 // LINE 1586:
+_Tfa:
 }
 
 // FUNCTION: COPTER_D 0x0055a2da
@@ -8470,8 +8528,8 @@ enum TreeSim::ReturnCode cYObject::iVisitOz(/*unpacked*/ struct TreeSim::StackEl
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T41:
-	__asm        jmp    near ptr 0x0055A320;
-
+	__asm        jmp    _T46;
+_T46:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax+0x20];
@@ -8572,23 +8630,23 @@ _T1a3:
 	__asm        mov    ax, [ebp-0x10];
 	__asm        mov    [ebp-0xC], ax;
 _T1ab:
-	__asm        jmp    near ptr 0x0055A48A;
-
+	__asm        jmp    _T1b0;
+_T1b0:
 	__asm        movsx  eax, word ptr [ebp-0xC];
 	__asm        push   eax;
 	__asm        call   S3DSStopPlay;
 	__asm        add    esp, 4;
 _T1bd:
-	__asm        jmp    near ptr 0x0055A49C;
-
+	__asm        jmp    _T1c2;
+_T1c2:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        mov    cYObject::sSoundChannels[eax*2], 0;
 	__asm        mov    eax, this;
 	__asm        mov    word ptr [eax+0x102], 0xFFFF;
 _T1e2:
-	__asm        jmp    near ptr 0x0055A4C1;
-
+	__asm        jmp    _T1e7;
+_T1e7:
 	__asm        mov    eax, this;
 	__asm        mov    word ptr [eax+0xD2], 0;
 	__asm        mov    eax, this;
@@ -8610,8 +8668,8 @@ _T235:
 	__asm        dec    eax;
 	__asm        mov    cYObject::sNumMissionAwake, ax;
 _T243:
-	__asm        jmp    near ptr 0x0055A522;
-
+	__asm        jmp    _T248;
+_T248:
 	__asm        movsx  eax, cYObject::sNumMissionAwake;
 	__asm        test   eax, eax;
 	__asm        jl     _T266;
@@ -8629,13 +8687,15 @@ _T266:
 _T282:
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::Unlink;
-	__asm        jmp    near ptr 0x0055A569;
+	__asm        jmp    _T28f;
 // LINE 1592:
+_T28f:
 	result = 0x2;
 // LINE 1594:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x0055A578;
+	__asm        jmp    _T29e;
 // LINE 1595:
+_T29e:
 }
 
 // FUNCTION: COPTER_D 0x0055a57f
@@ -8674,8 +8734,8 @@ _T44:
 	__asm        add    esp, 0x10;
 // LINE 1603:
 _T73:
-	__asm        jmp    near ptr 0x0055A5F7;
-
+	__asm        jmp    _T78;
+_T78:
 	__asm        mov    eax, obj;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x24;
@@ -8695,8 +8755,9 @@ _Ta9:
 	result = 0x1;
 // LINE 1607:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x0055A643;
+	__asm        jmp    _Tc4;
 // LINE 1608:
+_Tc4:
 }
 
 // FUNCTION: COPTER_D 0x0055a64a
@@ -8716,8 +8777,9 @@ enum TreeSim::ReturnCode cYObject::iMakeMyMedevacVictimInvisible(/*unpacked*/ st
 	result = 0x1;
 // LINE 1617:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x0055A688;
+	__asm        jmp    _T3e;
 // LINE 1618:
+_T3e:
 }
 
 // FUNCTION: COPTER_D 0x0055a68f
@@ -8780,8 +8842,8 @@ _T74:
 	__asm        add    eax, 0x20000000;
 	__asm        sar    eax, 0x16;
 	__asm        mov    [ebp-0x10], al;
-	__asm        jmp    near ptr 0x0055A74E;
-
+	__asm        jmp    _Tbf;
+_Tbf:
 	__asm        mov    eax, obj;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax+0x20];
@@ -8801,12 +8863,13 @@ _Tec:
 	__asm        mov    al, [ebp-0xC];
 	__asm        mov    ecx, obj;
 	__asm        mov    [ecx+0x89], al;
-	__asm        jmp    near ptr 0x0055A798;
-
+	__asm        jmp    _T109;
+_T109:
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::Link;
-	__asm        jmp    near ptr 0x0055A7A5;
+	__asm        jmp    _T116;
 // LINE 1627:
+_T116:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x24;
 	__asm        push   eax;
@@ -8816,8 +8879,9 @@ _Tec:
 	result = 0x1;
 // LINE 1630:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x0055A7C3;
+	__asm        jmp    _T134;
 // LINE 1631:
+_T134:
 }
 
 // FUNCTION: COPTER_D 0x0055a7ca
@@ -8870,8 +8934,8 @@ _T74:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _Ta2:
-	__asm        jmp    near ptr 0x0055A871;
-
+	__asm        jmp    _Ta7;
+_Ta7:
 	__asm        mov    eax, obj;
 	__asm        xor    ecx, ecx;
 	__asm        mov    cx, [eax+0x20];
@@ -8972,23 +9036,23 @@ _T204:
 	__asm        mov    ax, [ebp-0x14];
 	__asm        mov    [ebp-0x10], ax;
 _T20c:
-	__asm        jmp    near ptr 0x0055A9DB;
-
+	__asm        jmp    _T211;
+_T211:
 	__asm        movsx  eax, word ptr [ebp-0x10];
 	__asm        push   eax;
 	__asm        call   S3DSStopPlay;
 	__asm        add    esp, 4;
 _T21e:
-	__asm        jmp    near ptr 0x0055A9ED;
-
+	__asm        jmp    _T223;
+_T223:
 	__asm        mov    eax, obj;
 	__asm        movsx  eax, word ptr [eax+0x102];
 	__asm        mov    cYObject::sSoundChannels[eax*2], 0;
 	__asm        mov    eax, obj;
 	__asm        mov    word ptr [eax+0x102], 0xFFFF;
 _T243:
-	__asm        jmp    near ptr 0x0055AA12;
-
+	__asm        jmp    _T248;
+_T248:
 	__asm        mov    eax, obj;
 	__asm        mov    word ptr [eax+0xD2], 0;
 	__asm        mov    eax, obj;
@@ -9010,8 +9074,8 @@ _T296:
 	__asm        dec    eax;
 	__asm        mov    cYObject::sNumMissionAwake, ax;
 _T2a4:
-	__asm        jmp    near ptr 0x0055AA73;
-
+	__asm        jmp    _T2a9;
+_T2a9:
 	__asm        movsx  eax, cYObject::sNumMissionAwake;
 	__asm        test   eax, eax;
 	__asm        jl     _T2c7;
@@ -9029,13 +9093,15 @@ _T2c7:
 _T2e3:
 	__asm        mov    ecx, obj;
 	__asm        call   cYObject::Unlink;
-	__asm        jmp    near ptr 0x0055AABA;
+	__asm        jmp    _T2f0;
 // LINE 1640:
+_T2f0:
 	result = 0x1;
 // LINE 1642:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x0055AAC9;
+	__asm        jmp    _T2ff;
 // LINE 1643:
+_T2ff:
 }
 
 // FUNCTION: COPTER_D 0x0055aad0
@@ -9077,8 +9143,8 @@ _T42:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T86:
-	__asm        jmp    near ptr 0x0055AB5B;
-
+	__asm        jmp    _T8b;
+_T8b:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x24;
@@ -9102,8 +9168,8 @@ _Tbc:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _Te2:
-	__asm        jmp    near ptr 0x0055ABB7;
-
+	__asm        jmp    _Te7;
+_Te7:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    eax, [eax+0x3C];
 	__asm        mov    ecx, [ebp-0x1C];
@@ -9122,8 +9188,8 @@ _Te2:
 	__asm        xor    eax, edx;
 	__asm        sub    eax, edx;
 	__asm        mov    [ebp-0x14], ax;
-	__asm        jmp    near ptr 0x0055ABEF;
-
+	__asm        jmp    _T11f;
+_T11f:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x1E;
@@ -9202,8 +9268,9 @@ _T213:
 // LINE 1656:
 _T21a:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x0055ACF2;
+	__asm        jmp    _T222;
 // LINE 1657:
+_T222:
 }
 
 // FUNCTION: COPTER_D 0x0055acf9
@@ -9214,8 +9281,8 @@ enum TreeSim::ReturnCode cYObject::iTakeAnyMedVicOffStackObject(/*unpacked*/ str
 // LINE 1661:
 	result = 0xffffffff;
 // LINE 1662:
-	__asm        jmp    near ptr 0x0055AD11;
-
+	__asm        jmp    _T18;
+_T18:
 	__asm        push   0;
 	__asm        push   6;
 	__asm        call   cYObject::GetFirst;
@@ -9238,8 +9305,8 @@ enum TreeSim::ReturnCode cYObject::iTakeAnyMedVicOffStackObject(/*unpacked*/ str
 	__asm        add    esp, 0x10;
 // LINE 1665:
 _T5f:
-	__asm        jmp    near ptr 0x0055AD5D;
-
+	__asm        jmp    _T64;
+_T64:
 	__asm        mov    eax, obj;
 	__asm        cmp    dword ptr [eax+0x130], 0;
 	__asm        jne    _T90;
@@ -9283,8 +9350,9 @@ _Te1:
 // LINE 1674:
 _Te8:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x0055ADE9;
+	__asm        jmp    _Tf0;
 // LINE 1675:
+_Tf0:
 }
 
 // FUNCTION: COPTER_D 0x0055adf0
@@ -9326,8 +9394,8 @@ _T58:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T87:
-	__asm        jmp    near ptr 0x0055AE7C;
-
+	__asm        jmp    _T8c;
+_T8c:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x3C];
 	__asm        mov    ecx, [ebp-0xC];
@@ -9346,8 +9414,8 @@ _T87:
 	__asm        xor    eax, edx;
 	__asm        sub    eax, edx;
 	__asm        mov    [ebp-8], ax;
-	__asm        jmp    near ptr 0x0055AEB4;
-
+	__asm        jmp    _Tc4;
+_Tc4:
 	__asm        mov    eax, [ebp-8];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x1E;
@@ -9388,8 +9456,9 @@ _T133:
 // LINE 1688:
 _T13a:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x0055AF32;
+	__asm        jmp    _T142;
 // LINE 1689:
+_T142:
 }
 
 // FUNCTION: COPTER_D 0x0055af39
@@ -9453,8 +9522,9 @@ _Ta3:
 	result = 0x1;
 // LINE 1701:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x0055AFFC;
+	__asm        jmp    _Tc3;
 // LINE 1702:
+_Tc3:
 }
 
 // FUNCTION: COPTER_D 0x0055b003
@@ -9504,8 +9574,8 @@ _T81:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T9d:
-	__asm        jmp    near ptr 0x0055B0A5;
-
+	__asm        jmp    _Ta2;
+_Ta2:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        lea    eax, [eax*4-4];
@@ -9516,8 +9586,8 @@ _T9d:
 	__asm        lea    eax, [eax+ecx*2];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    near ptr 0x0055B0CE;
-
+	__asm        jmp    _Tcb;
+_Tcb:
 	__asm        mov    eax, G_uheli;
 	__asm        add    eax, 0x1C4;
 	__asm        push   eax;
@@ -9549,8 +9619,8 @@ _T115:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T131:
-	__asm        jmp    near ptr 0x0055B139;
-
+	__asm        jmp    _T136;
+_T136:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        lea    eax, [eax*4-4];
@@ -9561,8 +9631,8 @@ _T131:
 	__asm        lea    eax, [eax+ecx*2];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x14], eax;
-	__asm        jmp    near ptr 0x0055B162;
-
+	__asm        jmp    _T15f;
+_T15f:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    word ptr [eax], 0x1721;
 // LINE 1714:
@@ -9580,8 +9650,9 @@ _T188:
 	result = 0x1;
 // LINE 1718:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x0055B19A;
+	__asm        jmp    _T197;
 // LINE 1719:
+_T197:
 }
 
 // FUNCTION: COPTER_D 0x0055b1a1
@@ -9613,8 +9684,9 @@ _T40:
 // LINE 1732:
 _T47:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x0055B1F0;
+	__asm        jmp    _T4f;
 // LINE 1733:
+_T4f:
 }
 
 // FUNCTION: COPTER_D 0x0055b1f7
@@ -9678,8 +9750,9 @@ _Ta3:
 	result = 0x1;
 // LINE 1745:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x0055B2BA;
+	__asm        jmp    _Tc3;
 // LINE 1746:
+_Tc3:
 }
 
 // FUNCTION: COPTER_D 0x0055b2c1
@@ -9702,8 +9775,8 @@ enum TreeSim::ReturnCode cYObject::iCloseToHeli(/*unpacked*/ struct TreeSim::Sta
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T47:
-	__asm        jmp    near ptr 0x0055B30D;
-
+	__asm        jmp    _T4c;
+_T4c:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x3C];
 	__asm        mov    ecx, [ebp-0xC];
@@ -9722,8 +9795,8 @@ _T47:
 	__asm        xor    eax, edx;
 	__asm        sub    eax, edx;
 	__asm        mov    [ebp-8], ax;
-	__asm        jmp    near ptr 0x0055B345;
-
+	__asm        jmp    _T84;
+_T84:
 	__asm        mov    eax, [ebp-8];
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 0x1E;
@@ -9753,8 +9826,9 @@ _Tbd:
 // LINE 1758:
 _Td5:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x0055B39E;
+	__asm        jmp    _Tdd;
 // LINE 1759:
+_Tdd:
 }
 
 // FUNCTION: COPTER_D 0x0055b3a5
@@ -9791,8 +9865,9 @@ enum TreeSim::ReturnCode cYObject::iSetMyExpression(/*unpacked*/ struct TreeSim:
 	result = 0x1;
 // LINE 1771:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x0055B410;
+	__asm        jmp    _T6b;
 // LINE 1772:
+_T6b:
 }
 
 // FUNCTION: COPTER_D 0x0055b417
@@ -9873,8 +9948,8 @@ _Tc4:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _Te0:
-	__asm        jmp    near ptr 0x0055B4FC;
-
+	__asm        jmp    _Te5;
+_Te5:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        lea    eax, [eax*4-4];
@@ -9885,8 +9960,8 @@ _Te0:
 	__asm        lea    eax, [eax+ecx*2];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x1C], eax;
-	__asm        jmp    near ptr 0x0055B525;
-
+	__asm        jmp    _T10e;
+_T10e:
 	__asm        fld    res;
 	__asm        call   0x0056EBE8;
 	__asm        mov    ecx, [ebp-0x1C];
@@ -9895,8 +9970,9 @@ _Te0:
 	result = 0x1;
 // LINE 1788:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x0055B542;
+	__asm        jmp    _T12b;
 // LINE 1789:
+_T12b:
 }
 
 // FUNCTION: COPTER_D 0x0055b549
@@ -9936,8 +10012,9 @@ _T6b:
 // LINE 1801:
 _T72:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x0055B5C3;
+	__asm        jmp    _T7a;
 // LINE 1802:
+_T7a:
 }
 
 // FUNCTION: COPTER_D 0x0055b5ca
@@ -9974,8 +10051,9 @@ _T51:
 // LINE 1826:
 _T58:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x0055B62A;
+	__asm        jmp    _T60;
 // LINE 1827:
+_T60:
 }
 
 // FUNCTION: COPTER_D 0x0055b631
@@ -9985,16 +10063,16 @@ enum TreeSim::ReturnCode cYObject::iGetOnHeliIfHarnessRaised(/*unpacked*/ struct
 // LINE 1831:
 	result = 0xffffffff;
 // LINE 1832:
-	__asm        jmp    near ptr 0x0055B649;
-
+	__asm        jmp    _T18;
+_T18:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, G_uheli;
 	__asm        mov    ecx, [ecx+0xBC];
 	__asm        cmp    [eax+0x130], ecx;
 	__asm        je     _T7b;
 // LINE 1833:
-	__asm        jmp    near ptr 0x0055B669;
-
+	__asm        jmp    _T38;
+_T38:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, G_uheli;
 	__asm        mov    ecx, [ecx+0xA4];
@@ -10053,8 +10131,9 @@ _Tf2:
 // LINE 1847:
 _Tf9:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x0055B732;
+	__asm        jmp    _T101;
 // LINE 1848:
+_T101:
 }
 
 // FUNCTION: COPTER_D 0x0055b739
@@ -10079,8 +10158,9 @@ _T3a:
 // LINE 1858:
 _T41:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x0055B782;
+	__asm        jmp    _T49;
 // LINE 1859:
+_T49:
 }
 
 // FUNCTION: COPTER_D 0x0055b789
@@ -10092,8 +10172,9 @@ enum TreeSim::ReturnCode cYObject::iThrowFieryProjectile(/*unpacked*/ struct Tre
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::iThrowProjectile;
-	__asm        jmp    near ptr 0x0055B7AA;
+	__asm        jmp    _T21;
 // LINE 1864:
+_T21:
 }
 
 // FUNCTION: COPTER_D 0x0055b7b1
@@ -10143,8 +10224,9 @@ _T86:
 	result = 0x1;
 // LINE 1875:
 	__asm        mov    eax, result;
-	__asm        jmp    near ptr 0x0055B846;
+	__asm        jmp    _T95;
 // LINE 1876:
+_T95:
 }
 
 // FUNCTION: COPTER_D 0x0055b84d
@@ -10209,8 +10291,9 @@ _T75:
 // LINE 1888:
 _Tc4:
 	__asm        mov    eax, res;
-	__asm        jmp    near ptr 0x0055B919;
+	__asm        jmp    _Tcc;
 // LINE 1889:
+_Tcc:
 }
 
 // FUNCTION: COPTER_D 0x0055b920
@@ -10405,7 +10488,8 @@ _T228:
 	__asm        call   S3MissionUpdate;
 	__asm        add    esp, 4;
 // LINE 1964:
-	__asm        jmp    near ptr 0x0055BB59;
+	__asm        jmp    _T239;
+_T239:
 }
 
 // FUNCTION: COPTER_D 0x0055bb60
@@ -10863,7 +10947,8 @@ void cYObject::HandleOverflow() {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 2105:
-	__asm        jmp    near ptr 0x0055C01C;
+	__asm        jmp    _T2d;
+_T2d:
 }
 
 // FUNCTION: COPTER_D 0x0055c021
@@ -10997,8 +11082,8 @@ _T158:
 	__asm        jmp    tree_error;
 // LINE 2152:
 _T17c:
-	__asm        jmp    near ptr 0x0055C1A2;
-
+	__asm        jmp    _T181;
+_T181:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        lea    eax, [eax*4-4];

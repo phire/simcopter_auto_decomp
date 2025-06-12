@@ -679,8 +679,9 @@ _Ta0:
 long GetRenderBackPlaneValue() {
 // LINE 349:
 	__asm        mov    eax, G_ViewSize;
-	__asm        jmp    near ptr 0x004EEEC7;
+	__asm        jmp    _T10;
 // LINE 350:
+_T10:
 }
 
 // FUNCTION: COPTER_D 0x004eeecc
@@ -705,8 +706,9 @@ long ConvertGUIBackPlaneValueToRender(long lValue) {
 	lValue += 0xd;
 // LINE 368:
 	__asm        mov    eax, lValue;
-	__asm        jmp    near ptr 0x004EEF04;
+	__asm        jmp    _T38;
 // LINE 369:
+_T38:
 }
 
 // FUNCTION: COPTER_D 0x004eef09
@@ -736,8 +738,9 @@ long ConvertRenderBackPlaneValueToGUI(long lValue) {
 	__asm        mov    lValue, eax;
 // LINE 387:
 	__asm        mov    eax, lValue;
-	__asm        jmp    near ptr 0x004EEF4A;
+	__asm        jmp    _T41;
 // LINE 388:
+_T41:
 }
 
 // FUNCTION: COPTER_D 0x004eef4f
@@ -745,16 +748,18 @@ int32_t S3ViewerRotDelta() {
 // LINE 401:
 	__asm        mov    eax, 0x10000;
 	__asm        sub    eax, S_rotdelta;
-	__asm        jmp    near ptr 0x004EEF65;
+	__asm        jmp    _T16;
 // LINE 402:
+_T16:
 }
 
 // FUNCTION: COPTER_D 0x004eef6a
 int32_t S3ViewerPosDelta() {
 // LINE 412:
 	__asm        mov    eax, S_posdelta;
-	__asm        jmp    near ptr 0x004EEF7A;
+	__asm        jmp    _T10;
 // LINE 413:
+_T10:
 }
 
 // FUNCTION: COPTER_D 0x004eef7f

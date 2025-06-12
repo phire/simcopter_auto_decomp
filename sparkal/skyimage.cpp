@@ -297,8 +297,8 @@ void SkyImage::SkyImage(int32_t nNewSkyType, int32_t nNewBitmapWidth, int32_t nN
 	__asm        mov    ecx, this;
 	__asm        call   SkyImage::LoadImageA;
 // LINE 52:
-	__asm        jmp    near ptr 0x004954C4;
-
+	__asm        jmp    _Tc4;
+_Tc4:
 	__asm        mov    eax, this;
 }
 
@@ -316,7 +316,8 @@ void SkyImage::SwitchToSkyType(enum SkyImage::SkyType nNewSkyType) {
 	__asm        call   SkyImage::LoadImageA;
 // LINE 64:
 _T32:
-	__asm        jmp    near ptr 0x00495505;
+	__asm        jmp    _T37;
+_T37:
 }
 
 // FUNCTION: COPTER_D 0x0049550c
@@ -347,7 +348,8 @@ _T38:
 	__asm        call   SkyImage::SwitchToSkyType;
 // LINE 75:
 _T5f:
-	__asm        jmp    near ptr 0x00495570;
+	__asm        jmp    _T64;
+_T64:
 }
 
 // FUNCTION: COPTER_D 0x00495575
@@ -423,8 +425,8 @@ _T8c:
 	__asm        test   eax, eax;
 	__asm        je     _T16c;
 // LINE 118:
-	__asm        jmp    near ptr 0x00495647;
-
+	__asm        jmp    _Td2;
+_Td2:
 	pDestinationImage = this->mpBits;
 // LINE 119:
 	__asm        mov    i, 0;
@@ -447,8 +449,8 @@ _Tf6:
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 121:
-	__asm        jmp    near ptr 0x004956A8;
-
+	__asm        jmp    _T133;
+_T133:
 	pDestinationImage += this->mStride;
 // LINE 122:
 	pSourceImage += this->nBitmapWidth;
@@ -643,10 +645,12 @@ unsigned long SkyImage::Compose(/*packed*/ class CBackBuffer *pDestImage, int32_
 	/*bp-0x38*/  long len2;
 
 // LINE 218:
-	__asm        jmp    near ptr 0x004958F8;
+	__asm        jmp    _T11;
 // LINE 219:
-	__asm        jmp    near ptr 0x004958FD;
+_T11:
+	__asm        jmp    _T16;
 // LINE 224:
+_T16:
 	__asm        mov    eax, ViewState.world_pos.y;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x144];

@@ -80,8 +80,9 @@ struct Point3d{ // not packed(0xc bytes) TI: 0x348f
 int32_t Check_Pointer(char * ptr, short numchars, char * text) {
 // LINE 119:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00563EB0;
+	__asm        jmp    _T10;
 // LINE 120:
+_T10:
 }
 
 // FUNCTION: COPTER_D 0x00563eb5
@@ -997,8 +998,9 @@ _T24c:
 long ComputeViewToFigureOffset(/*unpacked*/ struct Point3D view, int32_t index) {
 // LINE 516:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x005649CE;
+	__asm        jmp    _T0d;
 // LINE 517:
+_T0d:
 }
 
 // FUNCTION: COPTER_D 0x005649d3
@@ -1232,8 +1234,9 @@ _T2f:
 	__asm        mov    ecx, faceCenter;
 	__asm        mov    [ecx], eax;
 // LINE 594:
-	__asm        jmp    near ptr 0x00564C0B;
+	__asm        jmp    _T53;
 // LINE 595:
+_T53:
 }
 
 // FUNCTION: COPTER_D 0x00564c10
@@ -1352,8 +1355,9 @@ _T14b:
 	__asm        add    esp, 0x10;
 // LINE 630:
 _T173:
-	__asm        jmp    near ptr 0x00564D88;
+	__asm        jmp    _T178;
 // LINE 631:
+_T178:
 }
 
 // FUNCTION: COPTER_D 0x00564d8d

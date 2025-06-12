@@ -733,7 +733,8 @@ _Ta7:
 	gFireStations = 0x0;
 // LINE 31:
 _Tb1:
-	__asm        jmp    near ptr 0x00539CB6;
+	__asm        jmp    _Tb6;
+_Tb6:
 }
 
 // FUNCTION: COPTER_D 0x00539cbb
@@ -746,14 +747,14 @@ void S3StationReset() {
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     _T3c;
 
-	__asm        jmp    near ptr 0x00539CE1;
-
+	__asm        jmp    _T26;
+_T26:
 	__asm        mov    eax, [ebp-4];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x00539CF2;
-
+	__asm        jmp    _T37;
+_T37:
 	__asm        jmp    _T3c;
 // LINE 41:
 _T3c:
@@ -764,14 +765,14 @@ _T3c:
 	__asm        cmp    dword ptr [ebp-0xC], 0;
 	__asm        je     _T6f;
 
-	__asm        jmp    near ptr 0x00539D14;
-
+	__asm        jmp    _T59;
+_T59:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x00539D25;
-
+	__asm        jmp    _T6a;
+_T6a:
 	__asm        jmp    _T6f;
 // LINE 42:
 _T6f:
@@ -782,18 +783,19 @@ _T6f:
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     _Ta2;
 
-	__asm        jmp    near ptr 0x00539D47;
-
+	__asm        jmp    _T8c;
+_T8c:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x00539D58;
-
+	__asm        jmp    _T9d;
+_T9d:
 	__asm        jmp    _Ta2;
 // LINE 43:
 _Ta2:
-	__asm        jmp    near ptr 0x00539D62;
+	__asm        jmp    _Ta7;
+_Ta7:
 }
 
 // FUNCTION: COPTER_D 0x00539d67
@@ -805,8 +807,9 @@ short S3GetNearestStation(/*packed*/ class Station *station, /*packed*/ struct _
 	__asm        push   eax;
 	__asm        mov    ecx, station;
 	__asm        call   Station::GetNearestStation;
-	__asm        jmp    near ptr 0x00539D82;
+	__asm        jmp    _T1b;
 // LINE 50:
+_T1b:
 }
 
 // FUNCTION: COPTER_D 0x00539d87
@@ -816,8 +819,9 @@ short S3GetNextNearest(/*packed*/ class Station *station, /*packed*/ struct _Gri
 	__asm        push   eax;
 	__asm        mov    ecx, station;
 	__asm        call   Station::GetNextNearest;
-	__asm        jmp    near ptr 0x00539D9E;
+	__asm        jmp    _T17;
 // LINE 58:
+_T17:
 }
 
 // FUNCTION: COPTER_D 0x00539da3
@@ -1110,8 +1114,8 @@ _Tc3:
 	__asm        je     _Te1;
 // LINE 114:
 	__asm        mov    dword ptr [ebp-0x14], 1;
-	__asm        jmp    near ptr 0x0053A0F7;
-
+	__asm        jmp    _Td9;
+_Td9:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        jmp    _T1d6;
 // LINE 116:
@@ -1181,8 +1185,8 @@ _T19f:
 	__asm        je     _T1bd;
 // LINE 119:
 	__asm        mov    dword ptr [ebp-0x18], 1;
-	__asm        jmp    near ptr 0x0053A1D3;
-
+	__asm        jmp    _T1b5;
+_T1b5:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        jmp    _T1d6;
 // LINE 120:
@@ -1191,8 +1195,8 @@ _T1bd:
 // LINE 122:
 _T1c2:
 	__asm        mov    dword ptr [ebp-0x1C], 0;
-	__asm        jmp    near ptr 0x0053A1EC;
-
+	__asm        jmp    _T1ce;
+_T1ce:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        jmp    _T1d6;
 // LINE 123:
@@ -1336,7 +1340,8 @@ _T14c:
 	__asm        jmp    _T22;
 // LINE 166:
 _T151:
-	__asm        jmp    near ptr 0x0053A351;
+	__asm        jmp    _T156;
+_T156:
 }
 
 // FUNCTION: COPTER_D 0x0053a358
@@ -1360,8 +1365,8 @@ _T25:
 // LINE 184:
 // Block start:
 	/*bp-0x24*/  /*packed*/ struct Point3d DyObjLoc; // 0xc bytes
-	__asm        jmp    near ptr 0x0053A38E;
-
+	__asm        jmp    _T36;
+_T36:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, vehicleList;
 	__asm        mov    eax, [ecx+eax*4];
@@ -1472,7 +1477,8 @@ _T11f:
 	__asm        jmp    _T22;
 // LINE 218:
 _T13c:
-	__asm        jmp    near ptr 0x0053A499;
+	__asm        jmp    _T141;
+_T141:
 }
 
 // FUNCTION: COPTER_D 0x0053a4a0
@@ -1523,8 +1529,8 @@ _T77:
 	__asm        cmp    i, eax;
 	__asm        jge    _Tb3;
 // LINE 239:
-	__asm        jmp    near ptr 0x0053A528;
-
+	__asm        jmp    _T88;
+_T88:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, vehicleList;
 	__asm        mov    eax, [ecx+eax*4];
@@ -1632,7 +1638,8 @@ _T34:
 	__asm        jmp    _T34;
 // LINE 268:
 _Tc5:
-	__asm        jmp    near ptr 0x0053A630;
+	__asm        jmp    _Tca;
+_Tca:
 }
 
 // FUNCTION: COPTER_D 0x0053a637
@@ -1770,7 +1777,8 @@ _T13e:
 	__asm        mov    [edx], eax;
 	__asm        mov    [edx+4], ecx;
 // LINE 311:
-	__asm        jmp    near ptr 0x0053A791;
+	__asm        jmp    _T15a;
+_T15a:
 }
 
 // FUNCTION: COPTER_D 0x0053a798
@@ -1872,7 +1880,8 @@ _T3f:
 	__asm        jmp    _T3f;
 // LINE 334:
 _Tfc:
-	__asm        jmp    near ptr 0x0053A899;
+	__asm        jmp    _T101;
+_T101:
 }
 
 // FUNCTION: COPTER_D 0x0053a8a0
@@ -2038,7 +2047,8 @@ _T18f:
 	__asm        mov    ax, [eax+8];
 	__asm        mov    [ecx+8], ax;
 // LINE 377:
-	__asm        jmp    near ptr 0x0053AA58;
+	__asm        jmp    _T1b8;
+_T1b8:
 }
 
 // FUNCTION: COPTER_D 0x0053aa5f
@@ -2150,7 +2160,8 @@ _T46:
 	__asm        mov    ecx, [ecx];
 	__asm        dec    dword ptr [eax+ecx+0x5C];
 // LINE 426:
-	__asm        jmp    near ptr 0x0053AB8C;
+	__asm        jmp    _T5d;
+_T5d:
 }
 
 // FUNCTION: COPTER_D 0x0053ab93
@@ -2190,8 +2201,8 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-0x284];
 	__asm        mov    dword ptr [eax+0xC], 1;
-	__asm        jmp    near ptr 0x0053ABFF;
-
+	__asm        jmp    _T6c;
+_T6c:
 	__asm        mov    eax, [ebp-0x284];
 	__asm        mov    errorMsgSoundFullPath.reference, eax;
 	__asm        jmp    _T87;
@@ -2199,8 +2210,9 @@ _T7d:
 	errorMsgSoundFullPath.reference = 0x0;
 _T87:
 	__asm        mov    errorMsgSoundFullPath.c_str_ptr, 0;
-	__asm        jmp    near ptr 0x0053AC29;
+	__asm        jmp    _T96;
 // LINE 434:
+_T96:
 	__asm        xor    eax, eax;
 	__asm        mov    al, ?$S35@?1??DispatchNearestAvailableVehicle@Station@@QAEHJJW4EmergencyType@@W4EmergencyLevel@@PAPAVEmergencyVehicleClass@@H@Z@4EA;
 	__asm        test   al, 1;
@@ -2249,8 +2261,8 @@ _Tca:
 	__asm        lea    eax, [ecx-1];
 	__asm        mov    ecx, [ebp-0x278];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x0053ACD1;
-
+	__asm        jmp    _T13e;
+_T13e:
 	__asm        mov    eax, [ebp-0x278];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, [ebp-0x278];
@@ -2281,8 +2293,8 @@ _Tca:
 	__asm        mov    ecx, eax;
 	__asm        and    ecx, 3;
 	__asm        rep movsb;
-	__asm        jmp    near ptr 0x0053AD4E;
-
+	__asm        jmp    _T1bb;
+_T1bb:
 	__asm        jmp    _T1cc;
 _T1c0:
 	__asm        mov    eax, [ebp-0x278];
@@ -2290,8 +2302,8 @@ _T1c0:
 _T1cc:
 	__asm        mov    eax, [ebp-0x278];
 	__asm        mov    dword ptr [eax+0xC], 1;
-	__asm        jmp    near ptr 0x0053AD71;
-
+	__asm        jmp    _T1de;
+_T1de:
 	__asm        mov    eax, [ebp-0x278];
 	__asm        mov    [ebp-0x118], eax;
 	__asm        jmp    _T1f9;
@@ -2299,8 +2311,8 @@ _T1ef:
 	__asm        mov    dword ptr [ebp-0x118], 0;
 _T1f9:
 	__asm        mov    dword ptr [ebp-0x11C], 0;
-	__asm        jmp    near ptr 0x0053AD9B;
-
+	__asm        jmp    _T208;
+_T208:
 	__asm        lea    eax, errorMsgSoundFullPath.c_str_ptr;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x11C];
@@ -2309,8 +2321,8 @@ _T1f9:
 	__asm        push   2;
 	__asm        mov    ecx, 0x604C00;
 	__asm        call   FileServices::GetPathForFileString;
-	__asm        jmp    near ptr 0x0053ADBC;
-
+	__asm        jmp    _T229;
+_T229:
 	__asm        mov    eax, [ebp-0x118];
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        mov    eax, [ebp-0x118];
@@ -2326,18 +2338,18 @@ _T1f9:
 
 	__asm        mov    ecx, [ebp-0x260];
 	__asm        call   basic_string_ref<char>::delete_ptr;
-	__asm        jmp    near ptr 0x0053AE0A;
-
+	__asm        jmp    _T277;
+_T277:
 	__asm        mov    eax, [ebp-0x260];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x0053AE1E;
-
+	__asm        jmp    _T28b;
+_T28b:
 	__asm        jmp    _T290;
 _T290:
-	__asm        jmp    near ptr 0x0053AE28;
-
+	__asm        jmp    _T295;
+_T295:
 	__asm        cmp    dword ptr [ebp-0x11C], 0;
 	__asm        je     _T2c9;
 
@@ -2350,8 +2362,9 @@ _T290:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T2c9:
-	__asm        jmp    near ptr 0x0053AE61;
+	__asm        jmp    _T2ce;
 // LINE 460:
+_T2ce:
 	__asm        push   2;
 	__asm        lea    eax, errorMsgSoundFullPath.c_str_ptr;
 	__asm        push   eax;
@@ -2384,18 +2397,18 @@ _T2c9:
 
 	__asm        mov    ecx, [ebp-0x270];
 	__asm        call   basic_string_ref<char>::delete_ptr;
-	__asm        jmp    near ptr 0x0053AEEA;
-
+	__asm        jmp    _T357;
+_T357:
 	__asm        mov    eax, [ebp-0x270];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x0053AEFE;
-
+	__asm        jmp    _T36b;
+_T36b:
 	__asm        jmp    _T370;
 _T370:
-	__asm        jmp    near ptr 0x0053AF08;
-
+	__asm        jmp    _T375;
+_T375:
 	__asm        cmp    errorMsgSoundFullPath.c_str_ptr, 0;
 	__asm        je     _T3a9;
 
@@ -2408,8 +2421,8 @@ _T370:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T3a9:
-	__asm        jmp    near ptr 0x0053AF41;
-
+	__asm        jmp    _T3ae;
+_T3ae:
 	__asm        mov    eax, [ebp-0x120];
 	__asm        jmp    _Te01;
 // LINE 467:
@@ -2436,8 +2449,8 @@ _T3b9:
 	__asm        lea    eax, [ecx-1];
 	__asm        mov    ecx, [ebp-0x24C];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x0053AFA4;
-
+	__asm        jmp    _T411;
+_T411:
 	__asm        mov    eax, [ebp-0x24C];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, [ebp-0x24C];
@@ -2468,8 +2481,8 @@ _T3b9:
 	__asm        mov    ecx, eax;
 	__asm        and    ecx, 3;
 	__asm        rep movsb;
-	__asm        jmp    near ptr 0x0053B021;
-
+	__asm        jmp    _T48e;
+_T48e:
 	__asm        jmp    _T49f;
 _T493:
 	__asm        mov    eax, [ebp-0x24C];
@@ -2477,8 +2490,8 @@ _T493:
 _T49f:
 	__asm        mov    eax, [ebp-0x24C];
 	__asm        mov    dword ptr [eax+0xC], 1;
-	__asm        jmp    near ptr 0x0053B044;
-
+	__asm        jmp    _T4b1;
+_T4b1:
 	__asm        mov    eax, [ebp-0x24C];
 	__asm        mov    [ebp-0x124], eax;
 	__asm        jmp    _T4cc;
@@ -2486,8 +2499,8 @@ _T4c2:
 	__asm        mov    dword ptr [ebp-0x124], 0;
 _T4cc:
 	__asm        mov    dword ptr [ebp-0x128], 0;
-	__asm        jmp    near ptr 0x0053B06E;
-
+	__asm        jmp    _T4db;
+_T4db:
 	__asm        lea    eax, errorMsgSoundFullPath.c_str_ptr;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x128];
@@ -2496,8 +2509,8 @@ _T4cc:
 	__asm        push   2;
 	__asm        mov    ecx, 0x604C00;
 	__asm        call   FileServices::GetPathForFileString;
-	__asm        jmp    near ptr 0x0053B08F;
-
+	__asm        jmp    _T4fc;
+_T4fc:
 	__asm        mov    eax, [ebp-0x124];
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        mov    eax, [ebp-0x124];
@@ -2513,18 +2526,18 @@ _T4cc:
 
 	__asm        mov    ecx, [ebp-0x234];
 	__asm        call   basic_string_ref<char>::delete_ptr;
-	__asm        jmp    near ptr 0x0053B0DD;
-
+	__asm        jmp    _T54a;
+_T54a:
 	__asm        mov    eax, [ebp-0x234];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x0053B0F1;
-
+	__asm        jmp    _T55e;
+_T55e:
 	__asm        jmp    _T563;
 _T563:
-	__asm        jmp    near ptr 0x0053B0FB;
-
+	__asm        jmp    _T568;
+_T568:
 	__asm        cmp    dword ptr [ebp-0x128], 0;
 	__asm        je     _T59c;
 
@@ -2537,8 +2550,9 @@ _T563:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T59c:
-	__asm        jmp    near ptr 0x0053B134;
+	__asm        jmp    _T5a1;
 // LINE 470:
+_T5a1:
 	__asm        push   2;
 	__asm        lea    eax, errorMsgSoundFullPath.c_str_ptr;
 	__asm        push   eax;
@@ -2571,18 +2585,18 @@ _T59c:
 
 	__asm        mov    ecx, [ebp-0x244];
 	__asm        call   basic_string_ref<char>::delete_ptr;
-	__asm        jmp    near ptr 0x0053B1BD;
-
+	__asm        jmp    _T62a;
+_T62a:
 	__asm        mov    eax, [ebp-0x244];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x0053B1D1;
-
+	__asm        jmp    _T63e;
+_T63e:
 	__asm        jmp    _T643;
 _T643:
-	__asm        jmp    near ptr 0x0053B1DB;
-
+	__asm        jmp    _T648;
+_T648:
 	__asm        cmp    errorMsgSoundFullPath.c_str_ptr, 0;
 	__asm        je     _T67c;
 
@@ -2595,8 +2609,8 @@ _T643:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T67c:
-	__asm        jmp    near ptr 0x0053B214;
-
+	__asm        jmp    _T681;
+_T681:
 	__asm        mov    eax, [ebp-0x12C];
 	__asm        jmp    _Te01;
 // LINE 479:
@@ -2950,8 +2964,8 @@ _Ta84:
 	__asm        lea    eax, [ecx-1];
 	__asm        mov    ecx, [ebp-0x220];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x0053B65F;
-
+	__asm        jmp    _Tacc;
+_Tacc:
 	__asm        mov    eax, [ebp-0x220];
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, [ebp-0x220];
@@ -2982,8 +2996,8 @@ _Ta84:
 	__asm        mov    ecx, eax;
 	__asm        and    ecx, 3;
 	__asm        rep movsb;
-	__asm        jmp    near ptr 0x0053B6DC;
-
+	__asm        jmp    _Tb49;
+_Tb49:
 	__asm        jmp    _Tb5a;
 _Tb4e:
 	__asm        mov    eax, [ebp-0x220];
@@ -2991,8 +3005,8 @@ _Tb4e:
 _Tb5a:
 	__asm        mov    eax, [ebp-0x220];
 	__asm        mov    dword ptr [eax+0xC], 1;
-	__asm        jmp    near ptr 0x0053B6FF;
-
+	__asm        jmp    _Tb6c;
+_Tb6c:
 	__asm        mov    eax, [ebp-0x220];
 	__asm        mov    [ebp-0x1E0], eax;
 	__asm        jmp    _Tb87;
@@ -3000,8 +3014,8 @@ _Tb7d:
 	__asm        mov    dword ptr [ebp-0x1E0], 0;
 _Tb87:
 	__asm        mov    dword ptr [ebp-0x1E4], 0;
-	__asm        jmp    near ptr 0x0053B729;
-
+	__asm        jmp    _Tb96;
+_Tb96:
 	__asm        lea    eax, errorMsgSoundFullPath.c_str_ptr;
 	__asm        push   eax;
 	__asm        lea    eax, [ebp-0x1E4];
@@ -3010,8 +3024,8 @@ _Tb87:
 	__asm        push   2;
 	__asm        mov    ecx, 0x604C00;
 	__asm        call   FileServices::GetPathForFileString;
-	__asm        jmp    near ptr 0x0053B74A;
-
+	__asm        jmp    _Tbb7;
+_Tbb7:
 	__asm        mov    eax, [ebp-0x1E0];
 	__asm        dec    dword ptr [eax+0xC];
 	__asm        mov    eax, [ebp-0x1E0];
@@ -3027,18 +3041,18 @@ _Tb87:
 
 	__asm        mov    ecx, [ebp-0x1F8];
 	__asm        call   basic_string_ref<char>::delete_ptr;
-	__asm        jmp    near ptr 0x0053B798;
-
+	__asm        jmp    _Tc05;
+_Tc05:
 	__asm        mov    eax, [ebp-0x1F8];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x0053B7AC;
-
+	__asm        jmp    _Tc19;
+_Tc19:
 	__asm        jmp    _Tc1e;
 _Tc1e:
-	__asm        jmp    near ptr 0x0053B7B6;
-
+	__asm        jmp    _Tc23;
+_Tc23:
 	__asm        cmp    dword ptr [ebp-0x1E4], 0;
 	__asm        je     _Tc57;
 
@@ -3051,8 +3065,9 @@ _Tc1e:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _Tc57:
-	__asm        jmp    near ptr 0x0053B7EF;
+	__asm        jmp    _Tc5c;
 // LINE 577:
+_Tc5c:
 	__asm        push   2;
 	__asm        lea    eax, errorMsgSoundFullPath.c_str_ptr;
 	__asm        push   eax;
@@ -3085,18 +3100,18 @@ _Tc57:
 
 	__asm        mov    ecx, [ebp-0x208];
 	__asm        call   basic_string_ref<char>::delete_ptr;
-	__asm        jmp    near ptr 0x0053B878;
-
+	__asm        jmp    _Tce5;
+_Tce5:
 	__asm        mov    eax, [ebp-0x208];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x0053B88C;
-
+	__asm        jmp    _Tcf9;
+_Tcf9:
 	__asm        jmp    _Tcfe;
 _Tcfe:
-	__asm        jmp    near ptr 0x0053B896;
-
+	__asm        jmp    _Td03;
+_Td03:
 	__asm        cmp    errorMsgSoundFullPath.c_str_ptr, 0;
 	__asm        je     _Td37;
 
@@ -3109,8 +3124,8 @@ _Tcfe:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _Td37:
-	__asm        jmp    near ptr 0x0053B8CF;
-
+	__asm        jmp    _Td3c;
+_Td3c:
 	__asm        mov    eax, [ebp-0x1E8];
 	__asm        jmp    _Te01;
 // LINE 584:
@@ -3131,18 +3146,18 @@ _Td47:
 
 	__asm        mov    ecx, [ebp-0x218];
 	__asm        call   basic_string_ref<char>::delete_ptr;
-	__asm        jmp    near ptr 0x0053B932;
-
+	__asm        jmp    _Td9f;
+_Td9f:
 	__asm        mov    eax, [ebp-0x218];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x0053B946;
-
+	__asm        jmp    _Tdb3;
+_Tdb3:
 	__asm        jmp    _Tdb8;
 _Tdb8:
-	__asm        jmp    near ptr 0x0053B950;
-
+	__asm        jmp    _Tdbd;
+_Tdbd:
 	__asm        cmp    errorMsgSoundFullPath.c_str_ptr, 0;
 	__asm        je     _Tdf1;
 
@@ -3155,8 +3170,8 @@ _Tdb8:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _Tdf1:
-	__asm        jmp    near ptr 0x0053B989;
-
+	__asm        jmp    _Tdf6;
+_Tdf6:
 	__asm        mov    eax, [ebp-0x1EC];
 	__asm        jmp    _Te01;
 // LINE 585:
@@ -3169,7 +3184,8 @@ static void $E36() {
 
 	__asm        mov    ecx, 0x6351D0;
 	__asm        call   DigitalSound::~DigitalSound;
-	__asm        jmp    near ptr 0x0053B9B0;
+	__asm        jmp    _T15;
+_T15:
 }
 
 // FUNCTION: COPTER_D 0x0053b9b5
@@ -3490,8 +3506,8 @@ _T355:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x10], eax;
 // LINE 694:
-	__asm        jmp    near ptr 0x0053BD2F;
-
+	__asm        jmp    _T37a;
+_T37a:
 	__asm        mov    eax, this;
 }
 

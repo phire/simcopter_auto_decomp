@@ -76,7 +76,8 @@ _Tac:
 	__asm        call   abort;
 // LINE 70:
 _Tb1:
-	__asm        jmp    near ptr 0x00554FE6;
+	__asm        jmp    _Tb6;
+_Tb6:
 }
 
 

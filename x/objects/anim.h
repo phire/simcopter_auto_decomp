@@ -9,7 +9,8 @@ void cCopterAnim::Destroy() {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 225:
-	__asm        jmp    near ptr 0x0055F5DD;
+	__asm        jmp    _T2d;
+_T2d:
 }
 
 // Function in module: Bodydefs.obj
@@ -23,9 +24,11 @@ void cCopterAnim::WriteToDisk() {
 	__asm        mov    ecx, [eax+0x28];
 	__asm        call   dword ptr [edx];
 // LINE 229:
-	__asm        jmp    near ptr 0x0055F611;
+	__asm        jmp    _T21;
 // LINE 230:
-	__asm        jmp    near ptr 0x0055F616;
+_T21:
+	__asm        jmp    _T26;
+_T26:
 }
 
 // Function in module: Bodydefs.obj
@@ -39,7 +42,8 @@ unsigned short cCopterAnim::IsDirty() {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        xor    ax, ax;
-	__asm        jmp    near ptr 0x0055F650;
+	__asm        jmp    _T30;
+_T30:
 }
 
 // Function in module: Bodydefs.obj
@@ -53,7 +57,8 @@ unsigned long cCopterAnim::GetBodyType() {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0055F68F;
+	__asm        jmp    _T2f;
+_T2f:
 }
 
 // Function in module: Bodydefs.obj
@@ -61,7 +66,8 @@ unsigned long cCopterAnim::GetBodyType() {
 /*unpacked*/ class cBList<cBBase>* cCopterAnim::GetList() {
 
 	__asm        mov    eax, cCopterAnim::fsList;
-	__asm        jmp    near ptr 0x0055F6B6;
+	__asm        jmp    _T16;
+_T16:
 }
 
 // Function in module: Bodydefs.obj
@@ -110,15 +116,16 @@ _T7e:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T9a:
-	__asm        jmp    near ptr 0x0055F75F;
-
+	__asm        jmp    _T9f;
+_T9f:
 	__asm        movsx  eax, framenum;
 	__asm        mov    ecx, [ebp-4];
 	__asm        mov    ecx, [ecx+4];
 	__asm        mov    eax, [ecx+eax*4];
 	__asm        movsx  ecx, partnum;
 	__asm        lea    eax, [eax+ecx*8];
-	__asm        jmp    near ptr 0x0055F778;
+	__asm        jmp    _Tb8;
+_Tb8:
 }
 
 // Function in module: Bodydefs.obj
@@ -164,12 +171,13 @@ _T74:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T90:
-	__asm        jmp    near ptr 0x0055F815;
-
+	__asm        jmp    _T95;
+_T95:
 	__asm        movsx  eax, framenum;
 	__asm        mov    ecx, [ebp-4];
 	__asm        mov    ecx, [ecx+4];
 	__asm        mov    eax, [ecx+eax*4];
-	__asm        jmp    near ptr 0x0055F827;
+	__asm        jmp    _Ta7;
+_Ta7:
 }
 

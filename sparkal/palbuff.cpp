@@ -225,8 +225,8 @@ _T50:
 	__asm        add    dword ptr [ebp-0x54], 4;
 	__asm        jmp    _T50;
 _T6a:
-	__asm        jmp    near ptr 0x004472AF;
-
+	__asm        jmp    _T6f;
+_T6f:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x134], eax;
@@ -273,8 +273,8 @@ _Tdf:
 	__asm        mov    ecx, this;
 	__asm        call   PaletteBuffer::DrawPalette;
 // LINE 42:
-	__asm        jmp    near ptr 0x00447338;
-
+	__asm        jmp    _Tf8;
+_Tf8:
 	__asm        mov    eax, this;
 }
 
@@ -310,8 +310,8 @@ _T50:
 	__asm        add    dword ptr [ebp-0x54], 4;
 	__asm        jmp    _T50;
 _T6a:
-	__asm        jmp    near ptr 0x004473AF;
-
+	__asm        jmp    _T6f;
+_T6f:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x134], eax;
@@ -365,8 +365,8 @@ _Tf3:
 	__asm        mov    ecx, this;
 	__asm        call   PaletteBuffer::DrawPalette;
 // LINE 61:
-	__asm        jmp    near ptr 0x0044744C;
-
+	__asm        jmp    _T10c;
+_T10c:
 	__asm        mov    eax, this;
 }
 
@@ -390,8 +390,8 @@ void PaletteBuffer::~PaletteBuffer() {
 	__asm        add    esp, 4;
 // LINE 72:
 _T43:
-	__asm        jmp    near ptr 0x0044749E;
-
+	__asm        jmp    _T48;
+_T48:
 	__asm        mov    ecx, this;
 	__asm        call   CBackBuffer::~CBackBuffer;
 }
@@ -421,8 +421,9 @@ _T1b:
 // LINE 84:
 _T45:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004474FA;
+	__asm        jmp    _T4f;
 // LINE 85:
+_T4f:
 }
 
 // FUNCTION: COPTER_D 0x00447501
@@ -513,8 +514,9 @@ void PaletteBuffer::DrawPalette() {
 	/*bp-0x114*/ char szDescriptionString[256]; // 0x100 bytes
 
 // LINE 127:
-	__asm        jmp    near ptr 0x004475F9;
+	__asm        jmp    _T17;
 // LINE 131:
+_T17:
 	rectFill.left = 0x0;
 // LINE 132:
 	rectFill.top = 0x0;
@@ -625,7 +627,8 @@ _T66:
 	__asm        jmp    _T63;
 // LINE 152:
 _T15f:
-	__asm        jmp    near ptr 0x00447746;
+	__asm        jmp    _T164;
+_T164:
 }
 
 // FUNCTION: COPTER_D 0x0044774b
@@ -647,8 +650,9 @@ unsigned long PaletteBuffer::Compose(/*packed*/ class IFlatImage *pDestImage, lo
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   CBackBuffer::Compose;
-	__asm        jmp    near ptr 0x00447782;
+	__asm        jmp    _T37;
 // LINE 163:
+_T37:
 }
 
 

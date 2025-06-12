@@ -86,8 +86,9 @@ int32_t Magnitude(/*packed*/ struct Point3d *V) {
 	__asm        call   0x0056EC1A;
 	__asm        fmul   qword ptr ds:[0x5934E8];
 	__asm        call   0x0056EBE8;
-	__asm        jmp    near ptr 0x00542FEF;
+	__asm        jmp    _T6f;
 // LINE 38:
+_T6f:
 }
 
 // FUNCTION: COPTER_D 0x00542ff4
@@ -141,8 +142,9 @@ int32_t Distance(/*packed*/ struct Point3d *p1, /*packed*/ struct Point3d *p2) {
 	__asm        call   0x0056EC1A;
 	__asm        fmul   qword ptr ds:[0x5934E8];
 	__asm        call   0x0056EBE8;
-	__asm        jmp    near ptr 0x00543089;
+	__asm        jmp    _T95;
 // LINE 59:
+_T95:
 }
 
 // FUNCTION: COPTER_D 0x0054308e
@@ -228,8 +230,9 @@ _Tdd:
 	__asm        fld    r;
 	__asm        fmul   qword ptr ds:[0x5934E8];
 	__asm        call   0x0056EBE8;
-	__asm        jmp    near ptr 0x0054317E;
+	__asm        jmp    _Tf0;
 // LINE 88:
+_Tf0:
 }
 
 // FUNCTION: COPTER_D 0x00543183
@@ -333,8 +336,9 @@ int32_t SideOfPlane(/*packed*/ struct Point3d *V, /*packed*/ struct Point3d *p, 
 	__asm        mov    s, ebx;
 // LINE 143:
 	__asm        mov    eax, s;
-	__asm        jmp    near ptr 0x0054328D;
+	__asm        jmp    _T8f;
 // LINE 145:
+_T8f:
 }
 
 // FUNCTION: COPTER_D 0x00543292
@@ -396,8 +400,9 @@ int32_t SameSigns(int32_t s1, int32_t s2) {
 	__asm        cmp    s2, 0;
 	__asm        setge  al;
 	__asm        xor    eax, s1;
-	__asm        jmp    near ptr 0x00543323;
+	__asm        jmp    _T17;
 // LINE 187:
+_T17:
 }
 
 // FUNCTION: COPTER_D 0x00543328
@@ -659,8 +664,9 @@ _T5a:
 // LINE 313:
 _T62:
 	__asm        mov    eax, nv;
-	__asm        jmp    near ptr 0x0054359F;
+	__asm        jmp    _T6a;
 // LINE 314:
+_T6a:
 }
 
 // FUNCTION: COPTER_D 0x005435a4
@@ -750,8 +756,9 @@ _T35:
 _T4f:
 	__asm        mov    eax, a;
 _T52:
-	__asm        jmp    near ptr 0x00543680;
+	__asm        jmp    _T57;
 // LINE 362:
+_T57:
 }
 
 

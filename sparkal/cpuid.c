@@ -58,8 +58,9 @@ unsigned short wincpuidsupport() {
 // LINE 83:
 support:
 	__asm        mov    ax, reinterpret_cast<uint16_t>(cpuid_support);
-	__asm        jmp    near ptr 0x0047B675;
+	__asm        jmp    _T35;
 // LINE 85:
+_T35:
 }
 
 // FUNCTION: COPTER_D 0x0047b67a
@@ -126,8 +127,9 @@ end:
 // LINE 137:
 _Tb1:
 	__asm        mov    ax, cpuid;
-	__asm        jmp    near ptr 0x0047B734;
+	__asm        jmp    _Tba;
 // LINE 139:
+_Tba:
 }
 
 // FUNCTION: COPTER_D 0x0047b739
@@ -229,8 +231,9 @@ _Tc6:
 // LINE 213:
 _Tde:
 	__asm        mov    ax, cpuidext;
-	__asm        jmp    near ptr 0x0047B820;
+	__asm        jmp    _Te7;
 // LINE 215:
+_Te7:
 }
 
 // FUNCTION: COPTER_D 0x0047b825
@@ -318,8 +321,9 @@ end_cpuff:
 // LINE 297:
 _Tba:
 	__asm        mov    eax, cpuff;
-	__asm        jmp    near ptr 0x0047B8E7;
+	__asm        jmp    _Tc2;
 // LINE 299:
+_Tc2:
 }
 
 // FUNCTION: COPTER_D 0x0047b8ec
@@ -347,8 +351,9 @@ _Tba:
 _T31:
 	__asm        mov    eax, timestamp.High;
 	__asm        mov    edx, timestamp.Low;
-	__asm        jmp    near ptr 0x0047B928;
+	__asm        jmp    _T3c;
 // LINE 343:
+_T3c:
 }
 
 // FUNCTION: COPTER_D 0x0047b92d
@@ -359,8 +364,9 @@ unsigned short getdllversion() {
 	Version = 0x100;
 // LINE 362:
 	__asm        mov    ax, Version;
-	__asm        jmp    near ptr 0x0047B945;
+	__asm        jmp    _T18;
 // LINE 364:
+_T18:
 }
 
 // FUNCTION: COPTER_D 0x0047b94a
@@ -403,8 +409,9 @@ clone:
 	__asm        mov    cpu_type, ax;
 // LINE 405:
 	__asm        mov    ax, cpu_type;
-	__asm        jmp    near ptr 0x0047B994;
+	__asm        jmp    _T4a;
 // LINE 407:
+_T4a:
 }
 
 // FUNCTION: COPTER_D 0x0047b999
@@ -448,8 +455,9 @@ end_8086:
 	__asm        mov    ax, cpu_type;
 // LINE 448:
 	__asm        mov    ax, cpu_type;
-	__asm        jmp    near ptr 0x0047B9E6;
+	__asm        jmp    _T4d;
 // LINE 450:
+_T4d:
 }
 
 // FUNCTION: COPTER_D 0x0047b9eb
@@ -491,8 +499,9 @@ end_80286:
 	__asm        mov    ax, cpu_type;
 // LINE 494:
 	__asm        mov    ax, cpu_type;
-	__asm        jmp    near ptr 0x0047BA35;
+	__asm        jmp    _T4a;
 // LINE 496:
+_T4a:
 }
 
 // FUNCTION: COPTER_D 0x0047ba3a
@@ -542,8 +551,9 @@ end_80386:
 	__asm        and    eax, 0xFFFF;
 // LINE 544:
 	__asm        mov    ax, cpu_type;
-	__asm        jmp    near ptr 0x0047BA88;
+	__asm        jmp    _T4e;
 // LINE 546:
+_T4e:
 }
 
 // FUNCTION: COPTER_D 0x0047ba8d
@@ -647,8 +657,9 @@ end_IDProc:
 	__asm        mov    ax, cpu_type;
 // LINE 614:
 	__asm        mov    ax, cpu_type;
-	__asm        jmp    near ptr 0x0047BB63;
+	__asm        jmp    _Td6;
 // LINE 616:
+_Td6:
 }
 
 

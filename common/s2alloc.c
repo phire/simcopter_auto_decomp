@@ -83,8 +83,9 @@ _T4c:
 // LINE 279:
 _T90:
 	__asm        mov    eax, old;
-	__asm        jmp    near ptr 0x004CB348;
+	__asm        jmp    _T98;
 // LINE 280:
+_T98:
 }
 
 // FUNCTION: COPTER_D 0x004cb34d
@@ -145,8 +146,9 @@ _T59:
 // LINE 253:
 _Ta7:
 	__asm        mov    eax, hdr;
-	__asm        jmp    near ptr 0x004CB3FC;
+	__asm        jmp    _Taf;
 // LINE 254:
+_Taf:
 }
 
 // FUNCTION: COPTER_D 0x004cb401
@@ -296,8 +298,9 @@ _Te9:
 	G_alloc_used += size;
 // LINE 383:
 	__asm        mov    eax, ptr;
-	__asm        jmp    near ptr 0x004CB5A6;
+	__asm        jmp    _Tfa;
 // LINE 384:
+_Tfa:
 }
 
 // FUNCTION: COPTER_D 0x004cb5ab
@@ -311,8 +314,9 @@ char * S2AllocMem1(int32_t index, char * name, int32_t size, unsigned short prot
 	__asm        push   eax;
 	__asm        call   S2AllocMem;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x004CB5CA;
+	__asm        jmp    _T1f;
 // LINE 400:
+_T1f:
 }
 
 // FUNCTION: COPTER_D 0x004cb5cf
@@ -329,8 +333,9 @@ char * S2AllocMem(int32_t index, char * name, int32_t size) {
 	__asm        mov    ptr, eax;
 // LINE 423:
 	__asm        mov    eax, ptr;
-	__asm        jmp    near ptr 0x004CB5F3;
+	__asm        jmp    _T24;
 // LINE 424:
+_T24:
 }
 
 // FUNCTION: COPTER_D 0x004cb5f8
@@ -347,8 +352,9 @@ char * S2AllocMem(int32_t index, char * name, int32_t size) {
 	__asm        mov    root[0][ecx*4], eax;
 // LINE 442:
 	__asm        mov    eax, old;
-	__asm        jmp    near ptr 0x004CB623;
+	__asm        jmp    _T2b;
 // LINE 443:
+_T2b:
 }
 
 // FUNCTION: COPTER_D 0x004cb628
@@ -490,8 +496,9 @@ _Tdd:
 void * __ptr32 S2AllocAligned() {
 // LINE 591:
 	__asm        call   DOSAllocAlignedHack;
-	__asm        jmp    near ptr 0x004CB7B5;
+	__asm        jmp    _T10;
 // LINE 592:
+_T10:
 }
 
 // FUNCTION: COPTER_D 0x004cb7ba

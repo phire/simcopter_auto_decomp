@@ -1248,8 +1248,9 @@ _T2d7:
 	__asm        jmp    _T22b;
 // LINE 510:
 _T347:
-	__asm        jmp    near ptr 0x005245E9;
+	__asm        jmp    _T34c;
 // LINE 511:
+_T34c:
 }
 
 

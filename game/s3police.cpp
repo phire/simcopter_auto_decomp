@@ -572,8 +572,9 @@ int32_t CreatePoliceCarInstance(int32_t instanceID) {
 _T24:
 	__asm        xor    eax, eax;
 _T26:
-	__asm        jmp    near ptr 0x00536E2B;
+	__asm        jmp    _T2b;
 // LINE 91:
+_T2b:
 }
 
 // FUNCTION: COPTER_D 0x00536e30
@@ -588,8 +589,8 @@ void PoliceCarClass::PoliceCarClass() {
 // LINE 97:
 	this->foundRoad = 0x0;
 // LINE 98:
-	__asm        jmp    near ptr 0x00536E69;
-
+	__asm        jmp    _T39;
+_T39:
 	__asm        mov    eax, this;
 }
 
@@ -598,8 +599,8 @@ void PoliceCarClass::~PoliceCarClass() {
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593310;
-	__asm        jmp    near ptr 0x00536E8B;
-
+	__asm        jmp    _T1a;
+_T1a:
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::~EmergencyVehicleClass;
 }
@@ -788,8 +789,9 @@ unsigned char PoliceCarClass::Dispatch(enum EmergencyType responseType, enum Eme
 	__asm        push   eax;
 	__asm        mov    ecx, gPoliceStations;
 	__asm        call   Station::DispatchNearestAvailableVehicle;
-	__asm        jmp    near ptr 0x005370AE;
+	__asm        jmp    _T2d;
 // LINE 218:
+_T2d:
 }
 
 // FUNCTION: COPTER_D 0x005370b3
@@ -1158,8 +1160,8 @@ _T41d:
 _T491:
 	__asm        jmp    _T496;
 _T496:
-	__asm        jmp    near ptr 0x0053754E;
-
+	__asm        jmp    _T49b;
+_T49b:
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    cptr, eax;
 // LINE 382:
@@ -1965,8 +1967,8 @@ _Te4:
 	reinterpret_cast<uint16_t>(this->emergencyLocation.x) = reinterpret_cast<uint16_t>(loc.x);
 // LINE 656:
 	__asm        mov    dword ptr [ebp-0x18], 1;
-	__asm        jmp    near ptr 0x00537F37;
-
+	__asm        jmp    _T108;
+_T108:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        jmp    _T138;
 // LINE 659:
@@ -1979,8 +1981,8 @@ _T110:
 	__asm        jne    _T49;
 // LINE 661:
 	__asm        mov    dword ptr [ebp-0x1C], 0;
-	__asm        jmp    near ptr 0x00537F5F;
-
+	__asm        jmp    _T130;
+_T130:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        jmp    _T138;
 // LINE 662:
@@ -2020,8 +2022,9 @@ _T48:
 // LINE 681:
 _T61:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x00537FD4;
+	__asm        jmp    _T68;
 // LINE 682:
+_T68:
 }
 
 // FUNCTION: COPTER_D 0x00537fd9
@@ -2064,8 +2067,8 @@ _T16:
 _T6f:
 	__asm        jmp    _T74;
 _T74:
-	__asm        jmp    near ptr 0x00538052;
-
+	__asm        jmp    _T79;
+_T79:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    cptr, eax;
 // LINE 697:
@@ -2089,8 +2092,8 @@ _T88:
 // LINE 705:
 	__asm        mov    eax, dyptr;
 	__asm        mov    [ebp-0x1C], eax;
-	__asm        jmp    near ptr 0x00538099;
-
+	__asm        jmp    _Tc0;
+_Tc0:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        jmp    _T13f;
 // LINE 707:
@@ -2110,8 +2113,8 @@ _Tcd:
 // LINE 709:
 	__asm        mov    eax, dyptr;
 	__asm        mov    [ebp-0x20], eax;
-	__asm        jmp    near ptr 0x005380DB;
-
+	__asm        jmp    _T102;
+_T102:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        jmp    _T13f;
 // LINE 712:
@@ -2129,8 +2132,8 @@ _T117:
 	__asm        jne    _T16;
 // LINE 717:
 	__asm        mov    dword ptr [ebp-0x24], 0;
-	__asm        jmp    near ptr 0x00538110;
-
+	__asm        jmp    _T137;
+_T137:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        jmp    _T13f;
 // LINE 718:
@@ -2188,7 +2191,8 @@ _Tf7:
 	__asm        mov    ecx, this;
 	__asm        call   EmergencyVehicleClass::SetSaveData;
 // LINE 749:
-	__asm        jmp    near ptr 0x00538227;
+	__asm        jmp    _T108;
+_T108:
 }
 
 // FUNCTION: COPTER_D 0x0053822e

@@ -134,8 +134,8 @@ void StringSet::StringSet(/*unpacked*/ class ResFile *file, short resID) {
 	__asm        mov    ecx, this;
 	__asm        call   StringSet::LoadStrings;
 // LINE 16:
-	__asm        jmp    near ptr 0x00565A65;
-
+	__asm        jmp    _T25;
+_T25:
 	__asm        mov    eax, this;
 }
 
@@ -164,8 +164,8 @@ void StringSet::StringSet(/*unpacked*/ class ResFile *file, short resID, short n
 	__asm        add    esp, 0x10;
 // LINE 28:
 _T4e:
-	__asm        jmp    near ptr 0x00565AC2;
-
+	__asm        jmp    _T53;
+_T53:
 	__asm        mov    eax, this;
 }
 
@@ -235,7 +235,8 @@ _Tb4:
 	this->fNumStrings = 0x0;
 // LINE 48:
 _Tc8:
-	__asm        jmp    near ptr 0x00565B99;
+	__asm        jmp    _Tcd;
+_Tcd:
 }
 
 // FUNCTION: COPTER_D 0x00565ba0
@@ -246,7 +247,8 @@ void StringSet::Swizzle(void * __ptr32 data, long size) {
 	__asm        call   Swizzle2;
 	__asm        add    esp, 4;
 // LINE 54:
-	__asm        jmp    near ptr 0x00565BB7;
+	__asm        jmp    _T17;
+_T17:
 }
 
 // FUNCTION: COPTER_D 0x00565bbc
@@ -270,7 +272,8 @@ void StringSet::~StringSet() {
 	__asm        call   FlatResFile::Release;
 // LINE 62:
 _T39:
-	__asm        jmp    near ptr 0x00565BFA;
+	__asm        jmp    _T3e;
+_T3e:
 }
 
 // FUNCTION: COPTER_D 0x00565bff

@@ -12,7 +12,8 @@ void  CGameApp::EnableSoundTrack() {
 	__asm        mov    ecx, 0x604480;
 	__asm        call   Radio::SetOn;
 // LINE 28:
-	__asm        jmp    near ptr 0x00471E5D;
+	__asm        jmp    _T1d;
+_T1d:
 }
 
 // FUNCTION: COPTER_D 0x00471e62
@@ -22,14 +23,15 @@ void  CGameApp::DisableSoundTrack() {
 	__asm        mov    ecx, 0x604480;
 	__asm        call   Radio::SetOn;
 // LINE 40:
-	__asm        jmp    near ptr 0x00471E7F;
+	__asm        jmp    _T1d;
+_T1d:
 }
 
 // FUNCTION: COPTER_D 0x00471e84
 void  CGameApp::ToggleMusicSoundTrack() {
 // LINE 48:
-	__asm        jmp    near ptr 0x00471E95;
-
+	__asm        jmp    _T11;
+_T11:
 	__asm        cmp    dword ptr ds:[0x60449C], 0;
 	__asm        je     _T65;
 // LINE 49:
@@ -39,8 +41,8 @@ void  CGameApp::ToggleMusicSoundTrack() {
 
 	__asm        jmp    _T5b;
 _T3a:
-	__asm        jmp    near ptr 0x00471EC3;
-
+	__asm        jmp    _T3f;
+_T3f:
 	__asm        cmp    dword ptr ds:[0x60449C], 0;
 	__asm        je     _T5b;
 
@@ -49,8 +51,9 @@ _T3a:
 	__asm        mov    eax, gCopterRadio<Radio+0x00:4>;
 	__asm        call   dword ptr [eax+0x1C];
 _T5b:
-	__asm        jmp    near ptr 0x00471EE4;
+	__asm        jmp    _T60;
 // LINE 50:
+_T60:
 	__asm        jmp    _Tb3;
 // LINE 51:
 _T65:
@@ -60,8 +63,8 @@ _T65:
 
 	__asm        jmp    _Ta2;
 _T81:
-	__asm        jmp    near ptr 0x00471F0A;
-
+	__asm        jmp    _T86;
+_T86:
 	__asm        cmp    dword ptr ds:[0x60449C], 0;
 	__asm        je     _Ta2;
 
@@ -70,14 +73,16 @@ _T81:
 	__asm        mov    eax, gCopterRadio<Radio+0x00:4>;
 	__asm        call   dword ptr [eax+0x1C];
 _Ta2:
-	__asm        jmp    near ptr 0x00471F2B;
+	__asm        jmp    _Ta7;
 // LINE 52:
+_Ta7:
 	__asm        push   1;
 	__asm        mov    ecx, 0x604480;
 	__asm        call   Radio::SetOn;
 // LINE 54:
 _Tb3:
-	__asm        jmp    near ptr 0x00471F3C;
+	__asm        jmp    _Tb8;
+_Tb8:
 }
 
 // FUNCTION: COPTER_D 0x00471f41
@@ -86,6 +91,7 @@ void  CGameApp::PlayNextSoundTrackIfNeeded() {
 	__asm        mov    ecx, 0x604480;
 	__asm        call   Radio::DoState;
 // LINE 63:
-	__asm        jmp    near ptr 0x00471F5C;
+	__asm        jmp    _T1b;
+_T1b:
 }
 

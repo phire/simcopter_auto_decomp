@@ -482,8 +482,9 @@ _T205:
 int32_t TWKDOSRead(char * pszTWKFile) {
 // LINE 265:
 	__asm        mov    eax, g_nNextTWKErrorSlot;
-	__asm        jmp    near ptr 0x004CA069;
+	__asm        jmp    _T10;
 // LINE 352:
+_T10:
 }
 
 // FUNCTION: COPTER_D 0x004ca06e

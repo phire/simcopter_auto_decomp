@@ -474,12 +474,12 @@ void YObjLang::YObjLang(unsigned char * fileName) {
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593700;
-	__asm        jmp    near ptr 0x005609EA;
-
+	__asm        jmp    _T1a;
+_T1a:
 	this-><YObjLang+0x00> = 0x5936e8;
 // LINE 48:
-	__asm        jmp    near ptr 0x005609F8;
-
+	__asm        jmp    _T28;
+_T28:
 	__asm        mov    eax, this;
 }
 
@@ -557,7 +557,8 @@ _T8f:
 	__asm        jmp    _T4c;
 // LINE 72:
 _Tb2:
-	__asm        jmp    near ptr 0x00560AB9;
+	__asm        jmp    _Tb7;
+_Tb7:
 }
 
 // FUNCTION: COPTER_D 0x00560abe
@@ -575,7 +576,8 @@ void YObjLang::SwizzleTree(void * __ptr32 treevoid, long size) {
 	__asm        call   Behavior::StdTreeSwizzle;
 	__asm        add    esp, 0xC;
 // LINE 79:
-	__asm        jmp    near ptr 0x00560AE7;
+	__asm        jmp    _T29;
+_T29:
 }
 
 // FUNCTION: COPTER_D 0x00560aec
@@ -583,12 +585,12 @@ void YObjLang::YObjLang(/*unpacked*/ class YObjLang& otherLanguage) {
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593700;
-	__asm        jmp    near ptr 0x00560B06;
-
+	__asm        jmp    _T1a;
+_T1a:
 	this-><YObjLang+0x00> = 0x5936e8;
 // LINE 88:
-	__asm        jmp    near ptr 0x00560B14;
-
+	__asm        jmp    _T28;
+_T28:
 	__asm        mov    eax, this;
 }
 
@@ -597,35 +599,40 @@ void YObjLang::~YObjLang() {
 
 	this-><YObjLang+0x00> = 0x5936e8;
 // LINE 95:
-	__asm        jmp    near ptr 0x00560B38;
+	__asm        jmp    _T1a;
+_T1a:
 }
 
 // FUNCTION: COPTER_D 0x00560b3d
 short YObjLang::CountPrimitives() {
 // LINE 103:
 	__asm        mov    ax, 0x40;
-	__asm        jmp    near ptr 0x00560B52;
+	__asm        jmp    _T15;
 // LINE 105:
+_T15:
 }
 
 // FUNCTION: COPTER_D 0x00560b57
 void YObjLang::GetPrimName(short primCode, unsigned char * str) {
 // LINE 112:
-	__asm        jmp    near ptr 0x00560B68;
+	__asm        jmp    _T11;
+_T11:
 }
 
 // FUNCTION: COPTER_D 0x00560b6f
 unsigned short YObjLang::IsSingleExit(/*unpacked*/ struct Behavior::Node *node) {
 // LINE 129:
 	__asm        xor    ax, ax;
-	__asm        jmp    near ptr 0x00560B83;
+	__asm        jmp    _T14;
 // LINE 130:
+_T14:
 }
 
 // FUNCTION: COPTER_D 0x00560b8a
 void YObjLang::GetNodeText(/*unpacked*/ class Behavior *bhav, /*unpacked*/ struct Behavior::Node *node, unsigned char * str) {
 // LINE 478:
-	__asm        jmp    near ptr 0x00560B9B;
+	__asm        jmp    _T11;
+_T11:
 }
 
 

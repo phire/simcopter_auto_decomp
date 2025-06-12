@@ -83,7 +83,8 @@ static void $E48() {
 
 	__asm        call   $E45;
 	__asm        call   $E47;
-	__asm        jmp    near ptr 0x00428E95;
+	__asm        jmp    _T15;
+_T15:
 }
 
 // STATIC INITIALIZER:
@@ -106,12 +107,13 @@ static void $E45() {
 	__asm        mov    gGraduationState.timerGraduationState.lFrequency, eax;
 	__asm        jmp    _T5b;
 _T5b:
-	__asm        jmp    near ptr 0x00428EFA;
-
+	__asm        jmp    _T60;
+_T60:
 	__asm        mov    gGraduationState.nGraduationState, 0;
-	__asm        jmp    near ptr 0x00428F09;
-
-	__asm        jmp    near ptr 0x00428F0E;
+	__asm        jmp    _T6f;
+_T6f:
+	__asm        jmp    _T74;
+_T74:
 }
 
 // STATIC INITIALIZER:
@@ -121,18 +123,20 @@ static void $E47() {
 	__asm        push   0x428F30;
 	__asm        call   atexit;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x00428F2B;
+	__asm        jmp    _T18;
+_T18:
 }
 
 // STATIC INITIALIZER:
 // SYNTHETIC: COPTER_D 0x00428f30
 static void $E46() {
 
-	__asm        jmp    near ptr 0x00428F3B;
-
-	__asm        jmp    near ptr 0x00428F40;
-
-	__asm        jmp    near ptr 0x00428F45;
+	__asm        jmp    _T0b;
+_T0b:
+	__asm        jmp    _T10;
+_T10:
+	__asm        jmp    _T15;
+_T15:
 }
 
 // FUNCTION: COPTER_D 0x00428f4a
@@ -168,7 +172,8 @@ _T23:
 	__asm        mov    ecx, 0x16;
 	__asm        rep movsd;
 // LINE 96:
-	__asm        jmp    near ptr 0x00428FB0;
+	__asm        jmp    _T38;
+_T38:
 }
 
 // FUNCTION: COPTER_D 0x00428fb5
@@ -176,8 +181,9 @@ long GetUserMoney() {
 // LINE 102:
 	__asm        call   GetCurrentUserPersonalInfo;
 	__asm        mov    eax, [eax+0x40];
-	__asm        jmp    near ptr 0x00428FC8;
+	__asm        jmp    _T13;
 // LINE 103:
+_T13:
 }
 
 // FUNCTION: COPTER_D 0x00428fcd
@@ -189,7 +195,8 @@ void SetUserMoney(long lNewMoney) {
 	__asm        mov    ecx, [ebp-4];
 	__asm        mov    [ecx+0x40], eax;
 // LINE 110:
-	__asm        jmp    near ptr 0x00428FEC;
+	__asm        jmp    _T1f;
+_T1f:
 }
 
 // FUNCTION: COPTER_D 0x00428ff1
@@ -201,7 +208,8 @@ void ChangeUserMoney(long lNewMoneyDelta) {
 	__asm        mov    ecx, [ebp-4];
 	__asm        add    [ecx+0x40], eax;
 // LINE 117:
-	__asm        jmp    near ptr 0x00429010;
+	__asm        jmp    _T1f;
+_T1f:
 }
 
 // FUNCTION: COPTER_D 0x00429015
@@ -209,8 +217,9 @@ long GetUserPoints() {
 // LINE 125:
 	__asm        call   GetCurrentUserPersonalInfo;
 	__asm        mov    eax, [eax+0x50];
-	__asm        jmp    near ptr 0x00429028;
+	__asm        jmp    _T13;
 // LINE 126:
+_T13:
 }
 
 // FUNCTION: COPTER_D 0x0042902d
@@ -222,7 +231,8 @@ void SetUserPoints(long lNewPoints) {
 	__asm        mov    ecx, [ebp-4];
 	__asm        mov    [ecx+0x50], eax;
 // LINE 133:
-	__asm        jmp    near ptr 0x0042904C;
+	__asm        jmp    _T1f;
+_T1f:
 }
 
 // FUNCTION: COPTER_D 0x00429051
@@ -234,7 +244,8 @@ void ChangeUserPoints(long lNewPointsDelta) {
 	__asm        mov    ecx, [ebp-4];
 	__asm        add    [ecx+0x50], eax;
 // LINE 140:
-	__asm        jmp    near ptr 0x00429070;
+	__asm        jmp    _T1f;
+_T1f:
 }
 
 // FUNCTION: COPTER_D 0x00429075
@@ -268,15 +279,17 @@ void SetCurrentCitySettings(/*packed*/ struct tagCitySettings *newCitySettings) 
 	__asm        mov    ecx, 9;
 	__asm        rep movsd;
 // LINE 159:
-	__asm        jmp    near ptr 0x004290CE;
+	__asm        jmp    _T23;
+_T23:
 }
 
 // FUNCTION: COPTER_D 0x004290d3
 char * GetCurrentCityPath() {
 // LINE 167:
 	__asm        mov    eax, 0x5C2918;
-	__asm        jmp    near ptr 0x004290E3;
+	__asm        jmp    _T10;
 // LINE 168:
+_T10:
 }
 
 // FUNCTION: COPTER_D 0x004290e8
@@ -288,7 +301,8 @@ void SetCurrentCityPath(char * szNewCurrentCityPath) {
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 179:
-	__asm        jmp    near ptr 0x00429104;
+	__asm        jmp    _T1c;
+_T1c:
 }
 
 // FUNCTION: COPTER_D 0x00429109
@@ -305,7 +319,8 @@ _T22:
 	gCurrentCareerCityInfo.bUserHasSavedGame = 0x1;
 // LINE 190:
 _T2c:
-	__asm        jmp    near ptr 0x0042913A;
+	__asm        jmp    _T31;
+_T31:
 }
 
 // FUNCTION: COPTER_D 0x0042913f
@@ -371,7 +386,8 @@ _T58:
 	__asm        add    esp, 8;
 // LINE 223:
 _T74:
-	__asm        jmp    near ptr 0x004291E9;
+	__asm        jmp    _T79;
+_T79:
 }
 
 // FUNCTION: COPTER_D 0x004291ee
@@ -427,7 +443,8 @@ void InitializeAllUserInfo() {
 // LINE 258:
 	gCurrentCityType = 0x0;
 // LINE 259:
-	__asm        jmp    near ptr 0x004292E7;
+	__asm        jmp    _Tf9;
+_Tf9:
 }
 
 // FUNCTION: COPTER_D 0x004292ec
@@ -502,7 +519,8 @@ _T1f:
 	__asm        jmp    _T1c;
 // LINE 286:
 _Ta5:
-	__asm        jmp    near ptr 0x00429396;
+	__asm        jmp    _Taa;
+_Taa:
 }
 
 // FUNCTION: COPTER_D 0x0042939b
@@ -574,10 +592,10 @@ _T27:
 	__asm        mov    gGraduationState.nGraduationState, 0;
 	__asm        mov    gGraduationState.timerGraduationState.lTotalElapsedTime, 0;
 	__asm        mov    gGraduationState.timerGraduationState.lStartTime, 0;
-	__asm        jmp    near ptr 0x004294AF;
-
-	__asm        jmp    near ptr 0x004294B4;
-
+	__asm        jmp    _T114;
+_T114:
+	__asm        jmp    _T119;
+_T119:
 	__asm        cmp    gGraduationState.timerGraduationState.lStartTime, 0;
 	__asm        je     _T12b;
 
@@ -615,12 +633,13 @@ _T188:
 _T1a1:
 	__asm        jmp    _T1a6;
 _T1a6:
-	__asm        jmp    near ptr 0x00429546;
-
-	__asm        jmp    near ptr 0x0042954B;
-
-	__asm        jmp    near ptr 0x00429550;
+	__asm        jmp    _T1ab;
+_T1ab:
+	__asm        jmp    _T1b0;
+_T1b0:
+	__asm        jmp    _T1b5;
 // LINE 327:
+_T1b5:
 	gCurrentCareerCityInfo.userPersonalInfo.lMoney = 0xfa0;
 // LINE 328:
 	gCurrentUserCityInfo.userPersonalInfo.lHelicopters = 0x10;
@@ -629,7 +648,8 @@ _T1a6:
 // LINE 330:
 	gCurrentCareerCityInfo.userPersonalInfo.lTeargasCount = 0xa;
 // LINE 332:
-	__asm        jmp    near ptr 0x0042957D;
+	__asm        jmp    _T1e2;
+_T1e2:
 }
 
 // FUNCTION: COPTER_D 0x00429582
@@ -704,10 +724,10 @@ _Tdf:
 	__asm        mov    gGraduationState.nGraduationState, 0;
 	__asm        mov    gGraduationState.timerGraduationState.lTotalElapsedTime, 0;
 	__asm        mov    gGraduationState.timerGraduationState.lStartTime, 0;
-	__asm        jmp    near ptr 0x00429699;
-
-	__asm        jmp    near ptr 0x0042969E;
-
+	__asm        jmp    _T117;
+_T117:
+	__asm        jmp    _T11c;
+_T11c:
 	__asm        cmp    gGraduationState.timerGraduationState.lStartTime, 0;
 	__asm        je     _T12e;
 
@@ -745,12 +765,13 @@ _T17f:
 _T198:
 	__asm        jmp    _T19d;
 _T19d:
-	__asm        jmp    near ptr 0x00429724;
-
-	__asm        jmp    near ptr 0x00429729;
-
-	__asm        jmp    near ptr 0x0042972E;
+	__asm        jmp    _T1a2;
+_T1a2:
+	__asm        jmp    _T1a7;
+_T1a7:
+	__asm        jmp    _T1ac;
 // LINE 372:
+_T1ac:
 	gCurrentUserCityInfo.userPersonalInfo.lMoney = 0xfa0;
 // LINE 373:
 	gCurrentUserCityInfo.userPersonalInfo.lHelicopters = 0x10;
@@ -759,7 +780,8 @@ _T19d:
 // LINE 375:
 	gCurrentUserCityInfo.userPersonalInfo.lTeargasCount = 0xa;
 // LINE 377:
-	__asm        jmp    near ptr 0x0042975B;
+	__asm        jmp    _T1d9;
+_T1d9:
 }
 
 // FUNCTION: COPTER_D 0x00429760
@@ -815,10 +837,10 @@ void MoveToNextCareerCity(long lNewCareerCityIndex) {
 	__asm        mov    gGraduationState.nGraduationState, 0;
 	__asm        mov    gGraduationState.timerGraduationState.lTotalElapsedTime, 0;
 	__asm        mov    gGraduationState.timerGraduationState.lStartTime, 0;
-	__asm        jmp    near ptr 0x00429822;
-
-	__asm        jmp    near ptr 0x00429827;
-
+	__asm        jmp    _Tc2;
+_Tc2:
+	__asm        jmp    _Tc7;
+_Tc7:
 	__asm        cmp    gGraduationState.timerGraduationState.lStartTime, 0;
 	__asm        je     _Td9;
 
@@ -856,17 +878,19 @@ _T136:
 _T14f:
 	__asm        jmp    _T154;
 _T154:
-	__asm        jmp    near ptr 0x004298B9;
-
-	__asm        jmp    near ptr 0x004298BE;
-
-	__asm        jmp    near ptr 0x004298C3;
+	__asm        jmp    _T159;
+_T159:
+	__asm        jmp    _T15e;
+_T15e:
+	__asm        jmp    _T163;
 // LINE 407:
+_T163:
 	__asm        push   0;
 	__asm        call   SetUserPoints;
 	__asm        add    esp, 4;
 // LINE 408:
-	__asm        jmp    near ptr 0x004298D2;
+	__asm        jmp    _T172;
+_T172:
 }
 
 // FUNCTION: COPTER_D 0x004298d7
@@ -1502,7 +1526,8 @@ _Tb58:
 	__asm        jmp    _Tb55;
 // LINE 755:
 _Tc0a:
-	__asm        jmp    near ptr 0x0042A4E6;
+	__asm        jmp    _Tc0f;
+_Tc0f:
 }
 
 

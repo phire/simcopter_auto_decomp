@@ -176,8 +176,8 @@ _T7e:
 	__asm        jmp    _T7b;
 // LINE 67:
 _T9b:
-	__asm        jmp    near ptr 0x00480730;
-
+	__asm        jmp    _Ta0;
+_Ta0:
 	__asm        mov    eax, this;
 }
 
@@ -321,13 +321,15 @@ _T1a7:
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3810];
 	__asm        mov    ScreenWidth, eax;
-	__asm        jmp    near ptr 0x00480919;
+	__asm        jmp    _T1e1;
 // LINE 129:
+_T1e1:
 	__asm        push   1;
 	__asm        call   dword ptr ds:[0x6C3810];
 	__asm        mov    ScreenHeight, eax;
-	__asm        jmp    near ptr 0x00480929;
+	__asm        jmp    _T1f1;
 // LINE 131:
+_T1f1:
 	__asm        cmp    Width, 0;
 	__asm        jne    _T206;
 // LINE 132:
@@ -604,8 +606,9 @@ _T4b3:
 	__asm        mov    eax, [ebp-0x470];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C380C];
-	__asm        jmp    near ptr 0x00480C2B;
+	__asm        jmp    _T4f3;
 // LINE 224:
+_T4f3:
 	__asm        push   1;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
@@ -676,8 +679,8 @@ _T5a3:
 // LINE 241:
 // Block end:
 _T5b7:
-	__asm        jmp    near ptr 0x00480CF4;
-
+	__asm        jmp    _T5bc;
+_T5bc:
 	__asm        mov    eax, this;
 }
 
@@ -701,8 +704,9 @@ void CSparkalWindow::~CSparkalWindow() {
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C380C];
-	__asm        jmp    near ptr 0x00480D3F;
+	__asm        jmp    _T3e;
 // LINE 255:
+_T3e:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
 	__asm        push   eax;
@@ -752,7 +756,8 @@ _Ta5:
 	__asm        call   dword ptr ds:[0x6C358C];
 // LINE 269:
 _Tbf:
-	__asm        jmp    near ptr 0x00480DC5;
+	__asm        jmp    _Tc4;
+_Tc4:
 }
 
 // FUNCTION: COPTER_D 0x00480dca
@@ -816,8 +821,9 @@ _T81:
 // LINE 292:
 _T9b:
 	__asm        mov    eax, Error;
-	__asm        jmp    near ptr 0x00480E6D;
+	__asm        jmp    _Ta3;
 // LINE 293:
+_Ta3:
 }
 
 // FUNCTION: COPTER_D 0x00480e74
@@ -884,8 +890,9 @@ _Ta8:
 // LINE 329:
 _Taf:
 	__asm        mov    eax, ReturnCode;
-	__asm        jmp    near ptr 0x00480F2B;
+	__asm        jmp    _Tb7;
 // LINE 330:
+_Tb7:
 }
 
 // FUNCTION: COPTER_D 0x00480f32
@@ -912,22 +919,25 @@ unsigned long CSparkalWindow::SetCursorFromIndex(int32_t nIndex) {
 // LINE 344:
 _T3f:
 	__asm        mov    eax, ReturnCode;
-	__asm        jmp    near ptr 0x00480F79;
+	__asm        jmp    _T47;
 // LINE 345:
+_T47:
 }
 
 // FUNCTION: COPTER_D 0x00480f80
 unsigned long CSparkalWindow::LoadGameCursors() {
 // LINE 353:
 	__asm        mov    eax, 0x80000007;
-	__asm        jmp    near ptr 0x00480F96;
+	__asm        jmp    _T16;
 // LINE 354:
+_T16:
 }
 
 // FUNCTION: COPTER_D 0x00480f9b
 void CSparkalWindow::FreeGameCursors() {
 // LINE 362:
-	__asm        jmp    near ptr 0x00480FAC;
+	__asm        jmp    _T11;
+_T11:
 }
 
 // FUNCTION: COPTER_D 0x00480fb1
@@ -1138,8 +1148,9 @@ _T183:
 // LINE 451:
 _T1fc:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004811B4;
+	__asm        jmp    _T203;
 // LINE 452:
+_T203:
 }
 
 // FUNCTION: COPTER_D 0x004811bb
@@ -1202,8 +1213,9 @@ _T3a:
 // LINE 473:
 _T9c:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0048125E;
+	__asm        jmp    _Ta3;
 // LINE 474:
+_Ta3:
 }
 
 // FUNCTION: COPTER_D 0x00481265
@@ -1263,7 +1275,8 @@ _T97:
 	__asm        call   dword ptr ds:[0x6C35AC];
 // LINE 496:
 _Tba:
-	__asm        jmp    near ptr 0x00481324;
+	__asm        jmp    _Tbf;
+_Tbf:
 }
 
 // FUNCTION: COPTER_D 0x0048132b
@@ -1454,8 +1467,9 @@ _T295:
 // Block end:
 _T2a2:
 	__asm        mov    eax, IsID;
-	__asm        jmp    near ptr 0x004815D8;
+	__asm        jmp    _T2ad;
 // LINE 571:
+_T2ad:
 }
 
 // FUNCTION: COPTER_D 0x004815dd
@@ -1463,8 +1477,8 @@ long SparkalWindowProc(void * __ptr32 Window, uint32_t Message, uint32_t wParam,
 	/*bp-0x4*/   /*packed*/ class CSparkalWindow *pWindow;
 
 // LINE 585:
-	__asm        jmp    near ptr 0x004815EB;
-
+	__asm        jmp    _T0e;
+_T0e:
 	__asm        push   0;
 	__asm        mov    eax, Window;
 	__asm        push   eax;
@@ -1574,19 +1588,20 @@ _T92:
 	__asm        cmp    wParam, 0;
 	__asm        je     _Tba;
 // LINE 627:
-	__asm        jmp    near ptr 0x004816E8;
-
+	__asm        jmp    _Ta1;
+_Ta1:
 	__asm        mov    eax, _gSparkalApp;
 	__asm        mov    [ebp-0x54], eax;
 	__asm        mov    eax, [ebp-0x54];
 	__asm        or     dword ptr [eax+0xC], 2;
-	__asm        jmp    near ptr 0x004816FC;
+	__asm        jmp    _Tb5;
 // LINE 628:
+_Tb5:
 	__asm        jmp    _Td3;
 // LINE 629:
 _Tba:
-	__asm        jmp    near ptr 0x00481706;
-
+	__asm        jmp    _Tbf;
+_Tbf:
 	__asm        mov    eax, _gSparkalApp;
 	__asm        mov    [ebp-0x60], eax;
 	__asm        mov    eax, [ebp-0x60];
@@ -1638,8 +1653,9 @@ _T12f:
 	__asm        mov    [ebp-0x64], eax;
 	__asm        mov    eax, [ebp-0x64];
 	__asm        and    dword ptr [eax+0xC], 0xFFFFFFFE;
-	__asm        jmp    near ptr 0x0048178A;
+	__asm        jmp    _T143;
 // LINE 643:
+_T143:
 	this->mWindow = 0x0;
 // LINE 644:
 	__asm        jmp    _T468;
@@ -1697,14 +1713,15 @@ _T1c8:
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38A0];
 // LINE 664:
-	__asm        jmp    near ptr 0x0048181E;
-
+	__asm        jmp    _T1d7;
+_T1d7:
 	__asm        mov    eax, _gSparkalApp;
 	__asm        mov    [ebp-0x58], eax;
 	__asm        mov    eax, [ebp-0x58];
 	__asm        or     dword ptr [eax+0xC], 4;
-	__asm        jmp    near ptr 0x00481832;
+	__asm        jmp    _T1eb;
 // LINE 665:
+_T1eb:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0;
 	__asm        je     _T221;
@@ -1732,14 +1749,15 @@ _T226:
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38A0];
 // LINE 671:
-	__asm        jmp    near ptr 0x0048187C;
-
+	__asm        jmp    _T235;
+_T235:
 	__asm        mov    eax, _gSparkalApp;
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        or     dword ptr [eax+0xC], 8;
-	__asm        jmp    near ptr 0x00481890;
+	__asm        jmp    _T249;
 // LINE 672:
+_T249:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0;
 	__asm        je     _T27f;
@@ -1765,14 +1783,15 @@ _T27f:
 _T284:
 	__asm        call   dword ptr ds:[0x6C38A8];
 // LINE 678:
-	__asm        jmp    near ptr 0x004818D6;
-
+	__asm        jmp    _T28f;
+_T28f:
 	__asm        mov    eax, _gSparkalApp;
 	__asm        mov    [ebp-0x68], eax;
 	__asm        mov    eax, [ebp-0x68];
 	__asm        and    dword ptr [eax+0xC], 0xFFFFFFFB;
-	__asm        jmp    near ptr 0x004818EA;
+	__asm        jmp    _T2a3;
 // LINE 679:
+_T2a3:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0;
 	__asm        je     _T2d9;
@@ -1798,14 +1817,15 @@ _T2d9:
 _T2de:
 	__asm        call   dword ptr ds:[0x6C38A8];
 // LINE 685:
-	__asm        jmp    near ptr 0x00481930;
-
+	__asm        jmp    _T2e9;
+_T2e9:
 	__asm        mov    eax, _gSparkalApp;
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        and    dword ptr [eax+0xC], 0xFFFFFFF7;
-	__asm        jmp    near ptr 0x00481944;
+	__asm        jmp    _T2fd;
 // LINE 686:
+_T2fd:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0;
 	__asm        je     _T333;

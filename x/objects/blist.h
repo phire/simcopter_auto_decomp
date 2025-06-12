@@ -7,8 +7,8 @@ cBList<class cCopterAnim>::cBList<class cCopterAnim>(void) cBList<cCopterAnim>::
 	__asm        mov    dword ptr [eax+4], 0;
 	__asm        mov    eax, this;
 	__asm        mov    word ptr [eax+8], 0;
-	__asm        jmp    near ptr 0x0055E869;
-
+	__asm        jmp    _T39;
+_T39:
 	__asm        mov    dword ptr [ebp-4], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x593654;
@@ -17,8 +17,8 @@ cBList<class cCopterAnim>::cBList<class cCopterAnim>(void) cBList<cCopterAnim>::
 // LINE 40:
 	this-><cBList<cCopterAnim>+0x10:4> = 0x0;
 // LINE 41:
-	__asm        jmp    near ptr 0x0055E892;
-
+	__asm        jmp    _T62;
+_T62:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, this;
 	__asm        jmp    _T87;
@@ -72,8 +72,8 @@ _T61:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T8a:
-	__asm        jmp    near ptr 0x0055EA3F;
-
+	__asm        jmp    _T8f;
+_T8f:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        test   eax, eax;
@@ -87,8 +87,8 @@ _T8a:
 	__asm        add    esp, 0x10;
 // LINE 46:
 _Tb7:
-	__asm        jmp    near ptr 0x0055EA6C;
-
+	__asm        jmp    _Tbc;
+_Tbc:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        call   _L44659;
 	__asm        jmp    _Tff;
@@ -118,8 +118,8 @@ _Tff:
 // FUNCTION: COPTER_D 0x0055eac0
 void cBList<class cCopterAnim>::Add(class cCopterAnim *) cBList<cCopterAnim>::Add(/*unpacked*/ class cCopterAnim *thing) {
 // LINE 119:
-	__asm        jmp    near ptr 0x0055EAD1;
-
+	__asm        jmp    _T11;
+_T11:
 	__asm        mov    eax, thing;
 	__asm        mov    eax, [eax+0x1C];
 	__asm        mov    [ebp-0x30], eax;
@@ -159,10 +159,10 @@ _T6d:
 _T8a:
 	__asm        mov    dword ptr [ebp-0x14], 0;
 _T91:
-	__asm        jmp    near ptr 0x0055EB56;
-
-	__asm        jmp    near ptr 0x0055EB5B;
-
+	__asm        jmp    _T96;
+_T96:
+	__asm        jmp    _T9b;
+_T9b:
 	__asm        jmp    _Tb8;
 _Ta0:
 	__asm        cmp    dword ptr [ebp-0x14], 0;
@@ -205,8 +205,8 @@ _T108:
 	__asm        mov    dword ptr [ebp-0x20], 0;
 	__asm        jmp    _T114;
 _T114:
-	__asm        jmp    near ptr 0x0055EBD9;
-
+	__asm        jmp    _T119;
+_T119:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    eax, [eax+0x1C];
 	__asm        mov    cl, [ebp-0x10];
@@ -303,7 +303,8 @@ _T1fa:
 	__asm        jmp    _T230;
 // LINE 121:
 _T230:
-	__asm        jmp    near ptr 0x0055ECF5;
+	__asm        jmp    _T235;
+_T235:
 }
 
 // Function in module: Bodydefs.obj
@@ -372,10 +373,11 @@ _Tca:
 	__asm        push   eax;
 	__asm        call   _cArray::LoadAllArrays;
 	__asm        add    esp, 0x10;
-	__asm        jmp    near ptr 0x0055EDF3;
-
-	__asm        jmp    near ptr 0x0055EDF8;
+	__asm        jmp    _Tf3;
+_Tf3:
+	__asm        jmp    _Tf8;
 // LINE 189:
+_Tf8:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x10];
 	__asm        push   eax;
@@ -430,13 +432,13 @@ _T17d:
 	__asm        mov    [ebp-0x30], eax;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    dword ptr [eax], 0x593688;
-	__asm        jmp    near ptr 0x0055EEB8;
-
+	__asm        jmp    _T1b8;
+_T1b8:
 	__asm        mov    byte ptr [ebp-4], 1;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    dword ptr [eax], 0x593658;
-	__asm        jmp    near ptr 0x0055EECA;
-
+	__asm        jmp    _T1ca;
+_T1ca:
 	__asm        mov    byte ptr [ebp-4], 0;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x2C], eax;
@@ -647,8 +649,8 @@ _T41f:
 	__asm        mov    eax, [ebp-0x144];
 	__asm        mov    ecx, [ebp-0x140];
 	__asm        call   dword ptr [eax];
-	__asm        jmp    near ptr 0x0055F180;
-
+	__asm        jmp    _T480;
+_T480:
 	__asm        jmp    _T492;
 _L45274:
 	__asm        mov    eax, [ebp-0x28];
@@ -718,8 +720,8 @@ _T61:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T8a:
-	__asm        jmp    near ptr 0x0055FE5F;
-
+	__asm        jmp    _T8f;
+_T8f:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+8];
 	__asm        test   eax, eax;
@@ -733,8 +735,8 @@ _T8a:
 	__asm        add    esp, 0x10;
 // LINE 46:
 _Tb7:
-	__asm        jmp    near ptr 0x0055FE8C;
-
+	__asm        jmp    _Tbc;
+_Tbc:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        call   _L45612;
 	__asm        jmp    _Tff;
@@ -764,8 +766,8 @@ _Tff:
 // FUNCTION: COPTER_D 0x0055fee0
 void cBList<cCopterBody>::Add(/*unpacked*/ class cCopterBody *thing) {
 // LINE 119:
-	__asm        jmp    near ptr 0x0055FEF1;
-
+	__asm        jmp    _T11;
+_T11:
 	__asm        mov    eax, thing;
 	__asm        mov    eax, [eax+0x1C];
 	__asm        mov    [ebp-0x30], eax;
@@ -805,10 +807,10 @@ _T6d:
 _T8a:
 	__asm        mov    dword ptr [ebp-0x14], 0;
 _T91:
-	__asm        jmp    near ptr 0x0055FF76;
-
-	__asm        jmp    near ptr 0x0055FF7B;
-
+	__asm        jmp    _T96;
+_T96:
+	__asm        jmp    _T9b;
+_T9b:
 	__asm        jmp    _Tb8;
 _Ta0:
 	__asm        cmp    dword ptr [ebp-0x14], 0;
@@ -851,8 +853,8 @@ _T108:
 	__asm        mov    dword ptr [ebp-0x20], 0;
 	__asm        jmp    _T114;
 _T114:
-	__asm        jmp    near ptr 0x0055FFF9;
-
+	__asm        jmp    _T119;
+_T119:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    eax, [eax+0x1C];
 	__asm        mov    cl, [ebp-0x10];
@@ -949,6 +951,7 @@ _T1fa:
 	__asm        jmp    _T230;
 // LINE 121:
 _T230:
-	__asm        jmp    near ptr 0x00560115;
+	__asm        jmp    _T235;
+_T235:
 }
 

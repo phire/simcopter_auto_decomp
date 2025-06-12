@@ -33,15 +33,16 @@ struct tagPOINT{ // packed(0x8 bytes) TI: 0x1131
 // FUNCTION: COPTER_D 0x004747f0
 void Cursor::Cursor() {
 // LINE 20:
-	__asm        jmp    near ptr 0x00474801;
-
+	__asm        jmp    _T11;
+_T11:
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x00474809
 void Cursor::~Cursor() {
 // LINE 23:
-	__asm        jmp    near ptr 0x0047481A;
+	__asm        jmp    _T11;
+_T11:
 }
 
 // FUNCTION: COPTER_D 0x0047481f
@@ -151,7 +152,8 @@ int32_t Cursor::WhereIsCursor(unsigned long * nXPosition, unsigned long * nYPosi
 	nYPosition[0] = ptCursor.y;
 // LINE 102:
 	__asm        mov    eax, nReturnValue;
-	__asm        jmp    near ptr 0x0047494F;
+	__asm        jmp    _T2e;
 // LINE 104:
+_T2e:
 }
 

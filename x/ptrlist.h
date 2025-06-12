@@ -78,7 +78,8 @@ void PtrList<cCopterAnim>::Iter::Reset() {
 _T2a:
 	this->fCur = 0x0;
 _T34:
-	__asm        jmp    near ptr 0x0055E829;
+	__asm        jmp    _T39;
+_T39:
 }
 
 // Function in module: Bodydefs.obj
@@ -134,8 +135,9 @@ _T79:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _Ta1:
-	__asm        jmp    near ptr 0x0055E976;
+	__asm        jmp    _Ta6;
 // LINE 23:
+_Ta6:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+4];
 	__asm        test   eax, eax;
@@ -149,7 +151,8 @@ _Ta1:
 	__asm        add    esp, 0x10;
 // LINE 24:
 _Tce:
-	__asm        jmp    near ptr 0x0055E9A3;
+	__asm        jmp    _Td3;
+_Td3:
 }
 
 // Function in module: Bodydefs.obj
@@ -205,8 +208,9 @@ _T79:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _Ta1:
-	__asm        jmp    near ptr 0x0055FD56;
+	__asm        jmp    _Ta6;
 // LINE 23:
+_Ta6:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+4];
 	__asm        test   eax, eax;
@@ -220,7 +224,8 @@ _Ta1:
 	__asm        add    esp, 0x10;
 // LINE 24:
 _Tce:
-	__asm        jmp    near ptr 0x0055FD83;
+	__asm        jmp    _Td3;
+_Td3:
 }
 
 // Function in module: Bodydefs.obj
@@ -240,7 +245,8 @@ void PtrList<cCopterBody>::Iter::Reset() {
 _T2a:
 	this->fCur = 0x0;
 _T34:
-	__asm        jmp    near ptr 0x0055FDC9;
+	__asm        jmp    _T39;
+_T39:
 }
 
 // Function in module: Yobject.obj
@@ -296,8 +302,9 @@ _T79:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _Ta1:
-	__asm        jmp    near ptr 0x00551E86;
+	__asm        jmp    _Ta6;
 // LINE 23:
+_Ta6:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+4];
 	__asm        test   eax, eax;
@@ -311,6 +318,7 @@ _Ta1:
 	__asm        add    esp, 0x10;
 // LINE 24:
 _Tce:
-	__asm        jmp    near ptr 0x00551EB3;
+	__asm        jmp    _Td3;
+_Td3:
 }
 

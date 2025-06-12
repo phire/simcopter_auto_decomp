@@ -711,7 +711,8 @@ static void $E48() {
 
 	__asm        call   $E44;
 	__asm        call   $E47;
-	__asm        jmp    near ptr 0x004A0A15;
+	__asm        jmp    _T15;
+_T15:
 }
 
 // STATIC INITIALIZER:
@@ -754,16 +755,16 @@ _T45:
 	__asm        push   eax;
 	__asm        call   endl;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A0AB4;
-
+	__asm        jmp    _T9a;
+_T9a:
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 _Ta4:
-	__asm        jmp    near ptr 0x004A0AC3;
-
-	__asm        jmp    near ptr 0x004A0AC8;
-
+	__asm        jmp    _Ta9;
+_Ta9:
+	__asm        jmp    _Tae;
+_Tae:
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    dword ptr [ebp-0x14], 0x155;
@@ -785,12 +786,12 @@ _Te9:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x24], eax;
 _Tef:
-	__asm        jmp    near ptr 0x004A0B0E;
-
-	__asm        jmp    near ptr 0x004A0B13;
-
-	__asm        jmp    near ptr 0x004A0B18;
-
+	__asm        jmp    _Tf4;
+_Tf4:
+	__asm        jmp    _Tf9;
+_Tf9:
+	__asm        jmp    _Tfe;
+_Tfe:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x4C], eax;
@@ -815,16 +816,16 @@ _Tef:
 	__asm        push   eax;
 	__asm        call   endl;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A0B6C;
-
+	__asm        jmp    _T152;
+_T152:
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 _T15c:
-	__asm        jmp    near ptr 0x004A0B7B;
-
-	__asm        jmp    near ptr 0x004A0B80;
-
+	__asm        jmp    _T161;
+_T161:
+	__asm        jmp    _T166;
+_T166:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx+4], eax;
@@ -855,20 +856,20 @@ _T1c3:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x38], eax;
 _T1c9:
-	__asm        jmp    near ptr 0x004A0BE8;
-
-	__asm        jmp    near ptr 0x004A0BED;
-
-	__asm        jmp    near ptr 0x004A0BF2;
-
+	__asm        jmp    _T1ce;
+_T1ce:
+	__asm        jmp    _T1d3;
+_T1d3:
+	__asm        jmp    _T1d8;
+_T1d8:
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    eax, [eax];
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
 	__asm        add    eax, list<GraphicWindow *>::next_avail;
 	__asm        mov    list<GraphicWindow *>::last, eax;
-	__asm        jmp    near ptr 0x004A0C0D;
-
+	__asm        jmp    _T1f3;
+_T1f3:
 	__asm        mov    eax, list<GraphicWindow *>::next_avail;
 	__asm        mov    [ebp-8], eax;
 	__asm        add    list<GraphicWindow *>::next_avail, 0xC;
@@ -882,8 +883,8 @@ _T20d:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-0x50], eax;
 _T222:
-	__asm        jmp    near ptr 0x004A0C41;
-
+	__asm        jmp    _T227;
+_T227:
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    GraphicWindow::listModalWindows.node, eax;
 	__asm        mov    eax, GraphicWindow::listModalWindows.node;
@@ -892,9 +893,10 @@ _T222:
 	__asm        mov    eax, GraphicWindow::listModalWindows.node;
 	__asm        mov    ecx, GraphicWindow::listModalWindows.node;
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x004A0C69;
-
-	__asm        jmp    near ptr 0x004A0C6E;
+	__asm        jmp    _T24f;
+_T24f:
+	__asm        jmp    _T254;
+_T254:
 }
 
 // STATIC INITIALIZER:
@@ -904,7 +906,8 @@ static void $E47() {
 	__asm        push   0x4A0C90;
 	__asm        call   atexit;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A0C8B;
+	__asm        jmp    _T18;
+_T18:
 }
 
 // STATIC INITIALIZER:
@@ -924,19 +927,19 @@ static void $E45() {
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-4], eax;
-	__asm        jmp    near ptr 0x004A0CC9;
-
-	__asm        jmp    near ptr 0x004A0CCE;
-
+	__asm        jmp    _T39;
+_T39:
+	__asm        jmp    _T3e;
+_T3e:
 	__asm        mov    eax, GraphicWindow::listModalWindows.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x004A0CE3;
-
-	__asm        jmp    near ptr 0x004A0CE8;
-
+	__asm        jmp    _T53;
+_T53:
+	__asm        jmp    _T58;
+_T58:
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        mov    eax, [ebp-8];
@@ -969,12 +972,12 @@ _Ta2:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x30], eax;
-	__asm        jmp    near ptr 0x004A0D45;
-
+	__asm        jmp    _Tb5;
+_Tb5:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x18], eax;
-	__asm        jmp    near ptr 0x004A0D50;
-
+	__asm        jmp    _Tc0;
+_Tc0:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    eax, [ebp-0x28];
@@ -987,24 +990,24 @@ _Ta2:
 	__asm        mov    ecx, [ebp-0x28];
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x004A0D76;
-
-	__asm        jmp    near ptr 0x004A0D7B;
-
+	__asm        jmp    _Te6;
+_Te6:
+	__asm        jmp    _Teb;
+_Teb:
 	__asm        mov    eax, list<GraphicWindow *>::free_list;
 	__asm        mov    ecx, [ebp-0x28];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    list<GraphicWindow *>::free_list, eax;
-	__asm        jmp    near ptr 0x004A0D92;
-
+	__asm        jmp    _T102;
+_T102:
 	__asm        dec    GraphicWindow::listModalWindows.length;
-	__asm        jmp    near ptr 0x004A0D9D;
-
+	__asm        jmp    _T10d;
+_T10d:
 	__asm        jmp    _T64;
 _T112:
-	__asm        jmp    near ptr 0x004A0DA7;
-
+	__asm        jmp    _T117;
+_T117:
 	__asm        mov    eax, GraphicWindow::listModalWindows.node;
 	__asm        mov    [ebp-0xC], eax;
 	__asm        mov    eax, list<GraphicWindow *>::free_list;
@@ -1012,8 +1015,8 @@ _T112:
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    list<GraphicWindow *>::free_list, eax;
-	__asm        jmp    near ptr 0x004A0DC6;
-
+	__asm        jmp    _T136;
+_T136:
 	__asm        dec    list<GraphicWindow *>::number_of_lists;
 	__asm        jne    _T1c0;
 _T142:
@@ -1032,18 +1035,18 @@ _T142:
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A0E0D;
-
-	__asm        jmp    near ptr 0x004A0E12;
-
+	__asm        jmp    _T17d;
+_T17d:
+	__asm        jmp    _T182;
+_T182:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A0E23;
-
-	__asm        jmp    near ptr 0x004A0E28;
-
+	__asm        jmp    _T193;
+_T193:
+	__asm        jmp    _T198;
+_T198:
 	__asm        jmp    _T142;
 _T19d:
 	__asm        mov    list<GraphicWindow *>::free_list, 0;
@@ -1053,7 +1056,8 @@ _T19d:
 _T1c0:
 	__asm        jmp    _T1c5;
 _T1c5:
-	__asm        jmp    near ptr 0x004A0E5A;
+	__asm        jmp    _T1ca;
+_T1ca:
 }
 
 // STATIC INITIALIZER:
@@ -1062,7 +1066,8 @@ static void $E53() {
 
 	__asm        call   $E50;
 	__asm        call   $E52;
-	__asm        jmp    near ptr 0x004A0E74;
+	__asm        jmp    _T15;
+_T15:
 }
 
 // STATIC INITIALIZER:
@@ -1105,16 +1110,16 @@ _T45:
 	__asm        push   eax;
 	__asm        call   endl;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A0F13;
-
+	__asm        jmp    _T9a;
+_T9a:
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 _Ta4:
-	__asm        jmp    near ptr 0x004A0F22;
-
-	__asm        jmp    near ptr 0x004A0F27;
-
+	__asm        jmp    _Ta9;
+_Ta9:
+	__asm        jmp    _Tae;
+_Tae:
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    dword ptr [ebp-0x14], 0x155;
@@ -1136,12 +1141,12 @@ _Te9:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x24], eax;
 _Tef:
-	__asm        jmp    near ptr 0x004A0F6D;
-
-	__asm        jmp    near ptr 0x004A0F72;
-
-	__asm        jmp    near ptr 0x004A0F77;
-
+	__asm        jmp    _Tf4;
+_Tf4:
+	__asm        jmp    _Tf9;
+_Tf9:
+	__asm        jmp    _Tfe;
+_Tfe:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x4C], eax;
@@ -1166,16 +1171,16 @@ _Tef:
 	__asm        push   eax;
 	__asm        call   endl;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A0FCB;
-
+	__asm        jmp    _T152;
+_T152:
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 _T15c:
-	__asm        jmp    near ptr 0x004A0FDA;
-
-	__asm        jmp    near ptr 0x004A0FDF;
-
+	__asm        jmp    _T161;
+_T161:
+	__asm        jmp    _T166;
+_T166:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx+4], eax;
@@ -1206,20 +1211,20 @@ _T1c3:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x38], eax;
 _T1c9:
-	__asm        jmp    near ptr 0x004A1047;
-
-	__asm        jmp    near ptr 0x004A104C;
-
-	__asm        jmp    near ptr 0x004A1051;
-
+	__asm        jmp    _T1ce;
+_T1ce:
+	__asm        jmp    _T1d3;
+_T1d3:
+	__asm        jmp    _T1d8;
+_T1d8:
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    eax, [eax];
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
 	__asm        add    eax, list<GraphicWindow *>::next_avail;
 	__asm        mov    list<GraphicWindow *>::last, eax;
-	__asm        jmp    near ptr 0x004A106C;
-
+	__asm        jmp    _T1f3;
+_T1f3:
 	__asm        mov    eax, list<GraphicWindow *>::next_avail;
 	__asm        mov    [ebp-8], eax;
 	__asm        add    list<GraphicWindow *>::next_avail, 0xC;
@@ -1233,8 +1238,8 @@ _T20d:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-0x50], eax;
 _T222:
-	__asm        jmp    near ptr 0x004A10A0;
-
+	__asm        jmp    _T227;
+_T227:
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    GraphicWindow::listFocusWindows.node, eax;
 	__asm        mov    eax, GraphicWindow::listFocusWindows.node;
@@ -1243,9 +1248,10 @@ _T222:
 	__asm        mov    eax, GraphicWindow::listFocusWindows.node;
 	__asm        mov    ecx, GraphicWindow::listFocusWindows.node;
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x004A10C8;
-
-	__asm        jmp    near ptr 0x004A10CD;
+	__asm        jmp    _T24f;
+_T24f:
+	__asm        jmp    _T254;
+_T254:
 }
 
 // STATIC INITIALIZER:
@@ -1255,7 +1261,8 @@ static void $E52() {
 	__asm        push   0x4A10EF;
 	__asm        call   atexit;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A10EA;
+	__asm        jmp    _T18;
+_T18:
 }
 
 // STATIC INITIALIZER:
@@ -1275,19 +1282,19 @@ static void $E51() {
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-4], eax;
-	__asm        jmp    near ptr 0x004A1128;
-
-	__asm        jmp    near ptr 0x004A112D;
-
+	__asm        jmp    _T39;
+_T39:
+	__asm        jmp    _T3e;
+_T3e:
 	__asm        mov    eax, GraphicWindow::listFocusWindows.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x004A1142;
-
-	__asm        jmp    near ptr 0x004A1147;
-
+	__asm        jmp    _T53;
+_T53:
+	__asm        jmp    _T58;
+_T58:
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        mov    eax, [ebp-8];
@@ -1320,12 +1327,12 @@ _Ta2:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x30], eax;
-	__asm        jmp    near ptr 0x004A11A4;
-
+	__asm        jmp    _Tb5;
+_Tb5:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x18], eax;
-	__asm        jmp    near ptr 0x004A11AF;
-
+	__asm        jmp    _Tc0;
+_Tc0:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    eax, [ebp-0x28];
@@ -1338,24 +1345,24 @@ _Ta2:
 	__asm        mov    ecx, [ebp-0x28];
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x004A11D5;
-
-	__asm        jmp    near ptr 0x004A11DA;
-
+	__asm        jmp    _Te6;
+_Te6:
+	__asm        jmp    _Teb;
+_Teb:
 	__asm        mov    eax, list<GraphicWindow *>::free_list;
 	__asm        mov    ecx, [ebp-0x28];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    list<GraphicWindow *>::free_list, eax;
-	__asm        jmp    near ptr 0x004A11F1;
-
+	__asm        jmp    _T102;
+_T102:
 	__asm        dec    GraphicWindow::listFocusWindows.length;
-	__asm        jmp    near ptr 0x004A11FC;
-
+	__asm        jmp    _T10d;
+_T10d:
 	__asm        jmp    _T64;
 _T112:
-	__asm        jmp    near ptr 0x004A1206;
-
+	__asm        jmp    _T117;
+_T117:
 	__asm        mov    eax, GraphicWindow::listFocusWindows.node;
 	__asm        mov    [ebp-0xC], eax;
 	__asm        mov    eax, list<GraphicWindow *>::free_list;
@@ -1363,8 +1370,8 @@ _T112:
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    list<GraphicWindow *>::free_list, eax;
-	__asm        jmp    near ptr 0x004A1225;
-
+	__asm        jmp    _T136;
+_T136:
 	__asm        dec    list<GraphicWindow *>::number_of_lists;
 	__asm        jne    _T1c0;
 _T142:
@@ -1383,18 +1390,18 @@ _T142:
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A126C;
-
-	__asm        jmp    near ptr 0x004A1271;
-
+	__asm        jmp    _T17d;
+_T17d:
+	__asm        jmp    _T182;
+_T182:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A1282;
-
-	__asm        jmp    near ptr 0x004A1287;
-
+	__asm        jmp    _T193;
+_T193:
+	__asm        jmp    _T198;
+_T198:
 	__asm        jmp    _T142;
 _T19d:
 	__asm        mov    list<GraphicWindow *>::free_list, 0;
@@ -1404,7 +1411,8 @@ _T19d:
 _T1c0:
 	__asm        jmp    _T1c5;
 _T1c5:
-	__asm        jmp    near ptr 0x004A12B9;
+	__asm        jmp    _T1ca;
+_T1ca:
 }
 
 // STATIC INITIALIZER:
@@ -1413,7 +1421,8 @@ static void $E58() {
 
 	__asm        call   $E55;
 	__asm        call   $E57;
-	__asm        jmp    near ptr 0x004A12D3;
+	__asm        jmp    _T15;
+_T15:
 }
 
 // STATIC INITIALIZER:
@@ -1456,16 +1465,16 @@ _T45:
 	__asm        push   eax;
 	__asm        call   endl;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A1372;
-
+	__asm        jmp    _T9a;
+_T9a:
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 _Ta4:
-	__asm        jmp    near ptr 0x004A1381;
-
-	__asm        jmp    near ptr 0x004A1386;
-
+	__asm        jmp    _Ta9;
+_Ta9:
+	__asm        jmp    _Tae;
+_Tae:
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    dword ptr [ebp-0x14], 0x155;
@@ -1487,12 +1496,12 @@ _Te9:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x24], eax;
 _Tef:
-	__asm        jmp    near ptr 0x004A13CC;
-
-	__asm        jmp    near ptr 0x004A13D1;
-
-	__asm        jmp    near ptr 0x004A13D6;
-
+	__asm        jmp    _Tf4;
+_Tf4:
+	__asm        jmp    _Tf9;
+_Tf9:
+	__asm        jmp    _Tfe;
+_Tfe:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x4C], eax;
@@ -1517,16 +1526,16 @@ _Tef:
 	__asm        push   eax;
 	__asm        call   endl;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A142A;
-
+	__asm        jmp    _T152;
+_T152:
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 _T15c:
-	__asm        jmp    near ptr 0x004A1439;
-
-	__asm        jmp    near ptr 0x004A143E;
-
+	__asm        jmp    _T161;
+_T161:
+	__asm        jmp    _T166;
+_T166:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx+4], eax;
@@ -1557,20 +1566,20 @@ _T1c3:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x38], eax;
 _T1c9:
-	__asm        jmp    near ptr 0x004A14A6;
-
-	__asm        jmp    near ptr 0x004A14AB;
-
-	__asm        jmp    near ptr 0x004A14B0;
-
+	__asm        jmp    _T1ce;
+_T1ce:
+	__asm        jmp    _T1d3;
+_T1d3:
+	__asm        jmp    _T1d8;
+_T1d8:
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    eax, [eax];
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
 	__asm        add    eax, list<GraphicWindow *>::next_avail;
 	__asm        mov    list<GraphicWindow *>::last, eax;
-	__asm        jmp    near ptr 0x004A14CB;
-
+	__asm        jmp    _T1f3;
+_T1f3:
 	__asm        mov    eax, list<GraphicWindow *>::next_avail;
 	__asm        mov    [ebp-8], eax;
 	__asm        add    list<GraphicWindow *>::next_avail, 0xC;
@@ -1584,8 +1593,8 @@ _T20d:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-0x50], eax;
 _T222:
-	__asm        jmp    near ptr 0x004A14FF;
-
+	__asm        jmp    _T227;
+_T227:
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    GraphicWindow::listValidWindows.node, eax;
 	__asm        mov    eax, GraphicWindow::listValidWindows.node;
@@ -1594,9 +1603,10 @@ _T222:
 	__asm        mov    eax, GraphicWindow::listValidWindows.node;
 	__asm        mov    ecx, GraphicWindow::listValidWindows.node;
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x004A1527;
-
-	__asm        jmp    near ptr 0x004A152C;
+	__asm        jmp    _T24f;
+_T24f:
+	__asm        jmp    _T254;
+_T254:
 }
 
 // STATIC INITIALIZER:
@@ -1606,7 +1616,8 @@ static void $E57() {
 	__asm        push   0x4A154E;
 	__asm        call   atexit;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A1549;
+	__asm        jmp    _T18;
+_T18:
 }
 
 // STATIC INITIALIZER:
@@ -1626,19 +1637,19 @@ static void $E56() {
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-4], eax;
-	__asm        jmp    near ptr 0x004A1587;
-
-	__asm        jmp    near ptr 0x004A158C;
-
+	__asm        jmp    _T39;
+_T39:
+	__asm        jmp    _T3e;
+_T3e:
 	__asm        mov    eax, GraphicWindow::listValidWindows.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x004A15A1;
-
-	__asm        jmp    near ptr 0x004A15A6;
-
+	__asm        jmp    _T53;
+_T53:
+	__asm        jmp    _T58;
+_T58:
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        mov    eax, [ebp-8];
@@ -1671,12 +1682,12 @@ _Ta2:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x30], eax;
-	__asm        jmp    near ptr 0x004A1603;
-
+	__asm        jmp    _Tb5;
+_Tb5:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x18], eax;
-	__asm        jmp    near ptr 0x004A160E;
-
+	__asm        jmp    _Tc0;
+_Tc0:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    eax, [ebp-0x28];
@@ -1689,24 +1700,24 @@ _Ta2:
 	__asm        mov    ecx, [ebp-0x28];
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x004A1634;
-
-	__asm        jmp    near ptr 0x004A1639;
-
+	__asm        jmp    _Te6;
+_Te6:
+	__asm        jmp    _Teb;
+_Teb:
 	__asm        mov    eax, list<GraphicWindow *>::free_list;
 	__asm        mov    ecx, [ebp-0x28];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    list<GraphicWindow *>::free_list, eax;
-	__asm        jmp    near ptr 0x004A1650;
-
+	__asm        jmp    _T102;
+_T102:
 	__asm        dec    GraphicWindow::listValidWindows.length;
-	__asm        jmp    near ptr 0x004A165B;
-
+	__asm        jmp    _T10d;
+_T10d:
 	__asm        jmp    _T64;
 _T112:
-	__asm        jmp    near ptr 0x004A1665;
-
+	__asm        jmp    _T117;
+_T117:
 	__asm        mov    eax, GraphicWindow::listValidWindows.node;
 	__asm        mov    [ebp-0xC], eax;
 	__asm        mov    eax, list<GraphicWindow *>::free_list;
@@ -1714,8 +1725,8 @@ _T112:
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    list<GraphicWindow *>::free_list, eax;
-	__asm        jmp    near ptr 0x004A1684;
-
+	__asm        jmp    _T136;
+_T136:
 	__asm        dec    list<GraphicWindow *>::number_of_lists;
 	__asm        jne    _T1c0;
 _T142:
@@ -1734,18 +1745,18 @@ _T142:
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A16CB;
-
-	__asm        jmp    near ptr 0x004A16D0;
-
+	__asm        jmp    _T17d;
+_T17d:
+	__asm        jmp    _T182;
+_T182:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A16E1;
-
-	__asm        jmp    near ptr 0x004A16E6;
-
+	__asm        jmp    _T193;
+_T193:
+	__asm        jmp    _T198;
+_T198:
 	__asm        jmp    _T142;
 _T19d:
 	__asm        mov    list<GraphicWindow *>::free_list, 0;
@@ -1755,7 +1766,8 @@ _T19d:
 _T1c0:
 	__asm        jmp    _T1c5;
 _T1c5:
-	__asm        jmp    near ptr 0x004A1718;
+	__asm        jmp    _T1ca;
+_T1ca:
 }
 
 // STATIC INITIALIZER:
@@ -1763,7 +1775,8 @@ _T1c5:
 static void $E61() {
 
 	__asm        call   $E60;
-	__asm        jmp    near ptr 0x004A172D;
+	__asm        jmp    _T10;
+_T10:
 }
 
 // STATIC INITIALIZER:
@@ -1772,7 +1785,8 @@ static void $E60() {
 
 	__asm        mov    ecx, 0x606968;
 	__asm        call   GraphicWindowColorConstants::GraphicWindowColorConstants;
-	__asm        jmp    near ptr 0x004A1747;
+	__asm        jmp    _T15;
+_T15:
 }
 
 // FUNCTION: COPTER_D 0x004a174c
@@ -1796,8 +1810,8 @@ void GraphicWindowColorConstants::GraphicWindowColorConstants() {
 // LINE 44:
 	this->nPaletteIndexTransparent = 0xffffffff;
 // LINE 48:
-	__asm        jmp    near ptr 0x004A17B6;
-
+	__asm        jmp    _T6a;
+_T6a:
 	__asm        mov    eax, this;
 }
 
@@ -1805,8 +1819,9 @@ void GraphicWindowColorConstants::GraphicWindowColorConstants() {
 int32_t GraphicWindowOwner::DoMessage(/*unpacked*/ class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 // LINE 62:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004A17D1;
+	__asm        jmp    _T13;
 // LINE 63:
+_T13:
 }
 
 // FUNCTION: COPTER_D 0x004a17d8
@@ -1854,16 +1869,16 @@ _T5b:
 	__asm        push   eax;
 	__asm        call   endl;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A1888;
-
+	__asm        jmp    _Tb0;
+_Tb0:
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 _Tba:
-	__asm        jmp    near ptr 0x004A1897;
-
-	__asm        jmp    near ptr 0x004A189C;
-
+	__asm        jmp    _Tbf;
+_Tbf:
+	__asm        jmp    _Tc4;
+_Tc4:
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    dword ptr [ebp-0x14], 0x155;
@@ -1885,12 +1900,12 @@ _Tff:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x24], eax;
 _T105:
-	__asm        jmp    near ptr 0x004A18E2;
-
-	__asm        jmp    near ptr 0x004A18E7;
-
-	__asm        jmp    near ptr 0x004A18EC;
-
+	__asm        jmp    _T10a;
+_T10a:
+	__asm        jmp    _T10f;
+_T10f:
+	__asm        jmp    _T114;
+_T114:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x4C], eax;
@@ -1915,16 +1930,16 @@ _T105:
 	__asm        push   eax;
 	__asm        call   endl;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A1940;
-
+	__asm        jmp    _T168;
+_T168:
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 _T172:
-	__asm        jmp    near ptr 0x004A194F;
-
-	__asm        jmp    near ptr 0x004A1954;
-
+	__asm        jmp    _T177;
+_T177:
+	__asm        jmp    _T17c;
+_T17c:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx+4], eax;
@@ -1955,20 +1970,20 @@ _T1d9:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x38], eax;
 _T1df:
-	__asm        jmp    near ptr 0x004A19BC;
-
-	__asm        jmp    near ptr 0x004A19C1;
-
-	__asm        jmp    near ptr 0x004A19C6;
-
+	__asm        jmp    _T1e4;
+_T1e4:
+	__asm        jmp    _T1e9;
+_T1e9:
+	__asm        jmp    _T1ee;
+_T1ee:
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    eax, [eax];
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
 	__asm        add    eax, list<GraphicWindow *>::next_avail;
 	__asm        mov    list<GraphicWindow *>::last, eax;
-	__asm        jmp    near ptr 0x004A19E1;
-
+	__asm        jmp    _T209;
+_T209:
 	__asm        mov    eax, list<GraphicWindow *>::next_avail;
 	__asm        mov    [ebp-8], eax;
 	__asm        add    list<GraphicWindow *>::next_avail, 0xC;
@@ -1982,8 +1997,8 @@ _T223:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-0x50], eax;
 _T238:
-	__asm        jmp    near ptr 0x004A1A15;
-
+	__asm        jmp    _T23d;
+_T23d:
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], eax;
@@ -1997,14 +2012,14 @@ _T238:
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0xC];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x004A1A40;
-
+	__asm        jmp    _T268;
+_T268:
 	this-><vftable> = 0x591648;
 // LINE 78:
 	GraphicWindow::windowManager = this;
 // LINE 79:
-	__asm        jmp    near ptr 0x004A1A56;
-
+	__asm        jmp    _T27e;
+_T27e:
 	__asm        mov    eax, this;
 }
 
@@ -2013,27 +2028,27 @@ void GraphicWindowManager::~GraphicWindowManager() {
 
 	this-><vftable> = 0x591648;
 // LINE 87:
-	__asm        jmp    near ptr 0x004A1A7A;
-
+	__asm        jmp    _T1a;
+_T1a:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-4], eax;
-	__asm        jmp    near ptr 0x004A1A8E;
-
-	__asm        jmp    near ptr 0x004A1A93;
-
+	__asm        jmp    _T2e;
+_T2e:
+	__asm        jmp    _T33;
+_T33:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x004A1AA9;
-
-	__asm        jmp    near ptr 0x004A1AAE;
-
+	__asm        jmp    _T49;
+_T49:
+	__asm        jmp    _T4e;
+_T4e:
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        mov    eax, [ebp-8];
@@ -2066,12 +2081,12 @@ _T98:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x30], eax;
-	__asm        jmp    near ptr 0x004A1B0B;
-
+	__asm        jmp    _Tab;
+_Tab:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x18], eax;
-	__asm        jmp    near ptr 0x004A1B16;
-
+	__asm        jmp    _Tb6;
+_Tb6:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    eax, [ebp-0x28];
@@ -2084,25 +2099,25 @@ _T98:
 	__asm        mov    ecx, [ebp-0x28];
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x004A1B3C;
-
-	__asm        jmp    near ptr 0x004A1B41;
-
+	__asm        jmp    _Tdc;
+_Tdc:
+	__asm        jmp    _Te1;
+_Te1:
 	__asm        mov    eax, list<GraphicWindow *>::free_list;
 	__asm        mov    ecx, [ebp-0x28];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    list<GraphicWindow *>::free_list, eax;
-	__asm        jmp    near ptr 0x004A1B58;
-
+	__asm        jmp    _Tf8;
+_Tf8:
 	__asm        mov    eax, this;
 	__asm        dec    dword ptr [eax+0x10];
-	__asm        jmp    near ptr 0x004A1B63;
-
+	__asm        jmp    _T103;
+_T103:
 	__asm        jmp    _T5a;
 _T108:
-	__asm        jmp    near ptr 0x004A1B6D;
-
+	__asm        jmp    _T10d;
+_T10d:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0xC], eax;
@@ -2111,8 +2126,8 @@ _T108:
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    list<GraphicWindow *>::free_list, eax;
-	__asm        jmp    near ptr 0x004A1B8D;
-
+	__asm        jmp    _T12d;
+_T12d:
 	__asm        dec    list<GraphicWindow *>::number_of_lists;
 	__asm        jne    _T1b7;
 _T139:
@@ -2131,18 +2146,18 @@ _T139:
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A1BD4;
-
-	__asm        jmp    near ptr 0x004A1BD9;
-
+	__asm        jmp    _T174;
+_T174:
+	__asm        jmp    _T179;
+_T179:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A1BEA;
-
-	__asm        jmp    near ptr 0x004A1BEF;
-
+	__asm        jmp    _T18a;
+_T18a:
+	__asm        jmp    _T18f;
+_T18f:
 	__asm        jmp    _T139;
 _T194:
 	__asm        mov    list<GraphicWindow *>::free_list, 0;
@@ -2150,7 +2165,8 @@ _T194:
 	__asm        mov    list<GraphicWindow *>::last, 0;
 	__asm        jmp    _T1b7;
 _T1b7:
-	__asm        jmp    near ptr 0x004A1C1C;
+	__asm        jmp    _T1bc;
+_T1bc:
 }
 
 // FUNCTION: COPTER_D 0x004a1c21
@@ -2158,7 +2174,8 @@ void GraphicWindowManager::SetNewBaseWindow(/*unpacked*/ class GraphicWindow *ne
 // LINE 98:
 	this->baseWindow = newBaseWindow;
 // LINE 99:
-	__asm        jmp    near ptr 0x004A1C3B;
+	__asm        jmp    _T1a;
+_T1a:
 }
 
 // FUNCTION: COPTER_D 0x004a1c42
@@ -2182,10 +2199,10 @@ int32_t GraphicWindowManager::DeleteWindow(/*unpacked*/ class GraphicWindow *win
 	__asm        mov    [ebp-0xC], eax;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-4], eax;
-	__asm        jmp    near ptr 0x004A1C86;
-
-	__asm        jmp    near ptr 0x004A1C8B;
-
+	__asm        jmp    _T44;
+_T44:
+	__asm        jmp    _T49;
+_T49:
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x68], eax;
 	__asm        mov    eax, list<GraphicWindow *>::free_list;
@@ -2222,16 +2239,16 @@ _T7b:
 	__asm        push   eax;
 	__asm        call   endl;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A1D12;
-
+	__asm        jmp    _Td0;
+_Td0:
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 _Tda:
-	__asm        jmp    near ptr 0x004A1D21;
-
-	__asm        jmp    near ptr 0x004A1D26;
-
+	__asm        jmp    _Tdf;
+_Tdf:
+	__asm        jmp    _Te4;
+_Te4:
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    dword ptr [ebp-0x28], 0x155;
@@ -2253,12 +2270,12 @@ _T11f:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x38], eax;
 _T125:
-	__asm        jmp    near ptr 0x004A1D6C;
-
-	__asm        jmp    near ptr 0x004A1D71;
-
-	__asm        jmp    near ptr 0x004A1D76;
-
+	__asm        jmp    _T12a;
+_T12a:
+	__asm        jmp    _T12f;
+_T12f:
+	__asm        jmp    _T134;
+_T134:
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x60], eax;
@@ -2283,16 +2300,16 @@ _T125:
 	__asm        push   eax;
 	__asm        call   endl;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A1DCA;
-
+	__asm        jmp    _T188;
+_T188:
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 _T192:
-	__asm        jmp    near ptr 0x004A1DD9;
-
-	__asm        jmp    near ptr 0x004A1DDE;
-
+	__asm        jmp    _T197;
+_T197:
+	__asm        jmp    _T19c;
+_T19c:
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        mov    [ecx+4], eax;
@@ -2323,20 +2340,20 @@ _T1f9:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x4C], eax;
 _T1ff:
-	__asm        jmp    near ptr 0x004A1E46;
-
-	__asm        jmp    near ptr 0x004A1E4B;
-
-	__asm        jmp    near ptr 0x004A1E50;
-
+	__asm        jmp    _T204;
+_T204:
+	__asm        jmp    _T209;
+_T209:
+	__asm        jmp    _T20e;
+_T20e:
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    eax, [eax];
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
 	__asm        add    eax, list<GraphicWindow *>::next_avail;
 	__asm        mov    list<GraphicWindow *>::last, eax;
-	__asm        jmp    near ptr 0x004A1E6B;
-
+	__asm        jmp    _T229;
+_T229:
 	__asm        mov    eax, list<GraphicWindow *>::next_avail;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        add    list<GraphicWindow *>::next_avail, 0xC;
@@ -2350,17 +2367,17 @@ _T243:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x64], eax;
 _T258:
-	__asm        jmp    near ptr 0x004A1E9F;
-
+	__asm        jmp    _T25d;
+_T25d:
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    near ptr 0x004A1EAA;
-
+	__asm        jmp    _T268;
+_T268:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x14], eax;
-	__asm        jmp    near ptr 0x004A1EB8;
-
+	__asm        jmp    _T276;
+_T276:
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     _T28d;
 
@@ -2369,8 +2386,8 @@ _T258:
 	__asm        mov    [ecx], eax;
 	__asm        jmp    _T28d;
 _T28d:
-	__asm        jmp    near ptr 0x004A1ED4;
-
+	__asm        jmp    _T292;
+_T292:
 	__asm        mov    eax, [ebp-0x68];
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx], eax;
@@ -2389,10 +2406,10 @@ _T28d:
 	__asm        add    dword ptr [eax+0x10], 1;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x004A1F0E;
-
-	__asm        jmp    near ptr 0x004A1F13;
-
+	__asm        jmp    _T2cc;
+_T2cc:
+	__asm        jmp    _T2d1;
+_T2d1:
 	__asm        jmp    _T2d6;
 // LINE 123:
 _T2d6:
@@ -2503,10 +2520,11 @@ _T20:
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    tempGraphicWindowPtrListIterator.node, eax;
-	__asm        jmp    near ptr 0x004A202E;
-
-	__asm        jmp    near ptr 0x004A2033;
+	__asm        jmp    _T3c;
+_T3c:
+	__asm        jmp    _T41;
 // LINE 170:
+_T41:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jg     _T1cf;
@@ -2517,10 +2535,10 @@ _T4e:
 	__asm        mov    [ebp-0x20], eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x004A2054;
-
-	__asm        jmp    near ptr 0x004A2059;
-
+	__asm        jmp    _T62;
+_T62:
+	__asm        jmp    _T67;
+_T67:
 	__asm        mov    eax, [ebp-8];
 	__asm        cmp    tempGraphicWindowPtrListIterator.node, eax;
 	__asm        jne    _T7d;
@@ -2544,8 +2562,8 @@ _T96:
 	__asm        je     _Tdc;
 // LINE 172:
 _Ta5:
-	__asm        jmp    near ptr 0x004A209C;
-
+	__asm        jmp    _Taa;
+_Taa:
 	__asm        mov    eax, tempGraphicWindowPtrListIterator.node;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -2557,12 +2575,13 @@ _Ta5:
 	__asm        mov    eax, tempGraphicWindowPtrListIterator.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    tempGraphicWindowPtrListIterator.node, eax;
-	__asm        jmp    near ptr 0x004A20BE;
-
+	__asm        jmp    _Tcc;
+_Tcc:
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x004A20C9;
+	__asm        jmp    _Td7;
 // LINE 174:
+_Td7:
 	__asm        jmp    _T4e;
 // LINE 175:
 _Tdc:
@@ -2571,20 +2590,20 @@ _Tdc:
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    near ptr 0x004A20E2;
-
-	__asm        jmp    near ptr 0x004A20E7;
-
+	__asm        jmp    _Tf0;
+_Tf0:
+	__asm        jmp    _Tf5;
+_Tf5:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x14], eax;
-	__asm        jmp    near ptr 0x004A20FD;
-
-	__asm        jmp    near ptr 0x004A2102;
-
+	__asm        jmp    _T10b;
+_T10b:
+	__asm        jmp    _T110;
+_T110:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-0x44], eax;
 	__asm        mov    eax, [ebp-0x14];
@@ -2617,12 +2636,12 @@ _T15a:
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x48], eax;
-	__asm        jmp    near ptr 0x004A215F;
-
+	__asm        jmp    _T16d;
+_T16d:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x30], eax;
-	__asm        jmp    near ptr 0x004A216A;
-
+	__asm        jmp    _T178;
+_T178:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x40], eax;
 	__asm        mov    eax, [ebp-0x40];
@@ -2635,21 +2654,21 @@ _T15a:
 	__asm        mov    ecx, [ebp-0x40];
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x004A2190;
-
-	__asm        jmp    near ptr 0x004A2195;
-
+	__asm        jmp    _T19e;
+_T19e:
+	__asm        jmp    _T1a3;
+_T1a3:
 	__asm        mov    eax, list<GraphicWindow *>::free_list;
 	__asm        mov    ecx, [ebp-0x40];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    list<GraphicWindow *>::free_list, eax;
-	__asm        jmp    near ptr 0x004A21AC;
-
+	__asm        jmp    _T1ba;
+_T1ba:
 	__asm        mov    eax, this;
 	__asm        dec    dword ptr [eax+0x10];
-	__asm        jmp    near ptr 0x004A21B7;
-
+	__asm        jmp    _T1c5;
+_T1c5:
 	__asm        jmp    _T11c;
 _T1ca:
 	__asm        jmp    _T1cf;
@@ -2675,8 +2694,8 @@ int32_t GraphicWindowManager::IsWindowOrParentInDeletionList(/*unpacked*/ class 
 	__asm        mov    [ebp-0x20], eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    tempGraphicWindowPtrListIterator.node, eax;
-	__asm        jmp    near ptr 0x004A21F8;
-
+	__asm        jmp    _T22;
+_T22:
 	__asm        jmp    _T27;
 // LINE 195:
 _T27:
@@ -2685,10 +2704,10 @@ _T27:
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x004A2211;
-
-	__asm        jmp    near ptr 0x004A2216;
-
+	__asm        jmp    _T3b;
+_T3b:
+	__asm        jmp    _T40;
+_T40:
 	__asm        mov    eax, tempGraphicWindowPtrListIterator.node;
 	__asm        cmp    [ebp-0xC], eax;
 	__asm        jne    _T56;
@@ -2718,8 +2737,8 @@ _T84:
 	__asm        cmp    currentGraphicWindowToCheck, 0;
 	__asm        je     _Tba;
 // LINE 198:
-	__asm        jmp    near ptr 0x004A2269;
-
+	__asm        jmp    _T93;
+_T93:
 	__asm        mov    eax, tempGraphicWindowPtrListIterator.node;
 	__asm        mov    ecx, currentGraphicWindowToCheck;
 	__asm        cmp    [eax+8], ecx;
@@ -2739,12 +2758,13 @@ _Tba:
 	__asm        mov    eax, tempGraphicWindowPtrListIterator.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    tempGraphicWindowPtrListIterator.node, eax;
-	__asm        jmp    near ptr 0x004A22A3;
-
+	__asm        jmp    _Tcd;
+_Tcd:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    near ptr 0x004A22AE;
+	__asm        jmp    _Td8;
 // LINE 204:
+_Td8:
 	__asm        jmp    _T27;
 // LINE 205:
 _Tdd:
@@ -2766,10 +2786,11 @@ long GraphicWindowManager::DoKeyDown(long lKey, char chModifiers) {
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    iterator.node, eax;
-	__asm        jmp    near ptr 0x004A22E2;
-
-	__asm        jmp    near ptr 0x004A22E7;
+	__asm        jmp    _T21;
+_T21:
+	__asm        jmp    _T26;
 // LINE 220:
+_T26:
 	nReturnValue = 0x0;
 // LINE 222:
 	this->nBusyIteratingCount++;
@@ -2779,10 +2800,10 @@ _T33:
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    near ptr 0x004A2307;
-
-	__asm        jmp    near ptr 0x004A230C;
-
+	__asm        jmp    _T46;
+_T46:
+	__asm        jmp    _T4b;
+_T4b:
 	__asm        mov    eax, iterator.node;
 	__asm        cmp    [ebp-0x10], eax;
 	__asm        jne    _T61;
@@ -2806,8 +2827,8 @@ _T7a:
 	__asm        je     _Te5;
 // LINE 224:
 _T89:
-	__asm        jmp    near ptr 0x004A234F;
-
+	__asm        jmp    _T8e;
+_T8e:
 	windowCurrent = iterator.node->data;
 // LINE 225:
 	__asm        mov    eax, windowCurrent;
@@ -2832,12 +2853,13 @@ _Tc2:
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    iterator.node, eax;
-	__asm        jmp    near ptr 0x004A2396;
-
+	__asm        jmp    _Td5;
+_Td5:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x14], eax;
-	__asm        jmp    near ptr 0x004A23A1;
+	__asm        jmp    _Te0;
 // LINE 230:
+_Te0:
 	__asm        jmp    _T33;
 // LINE 231:
 _Te5:
@@ -2854,8 +2876,9 @@ _Te5:
 // LINE 237:
 _T10a:
 	__asm        mov    eax, nReturnValue;
-	__asm        jmp    near ptr 0x004A23D3;
+	__asm        jmp    _T112;
 // LINE 238:
+_T112:
 }
 
 // FUNCTION: COPTER_D 0x004a23da
@@ -2870,10 +2893,11 @@ long GraphicWindowManager::DoKeyUp(long lKey, char chModifiers) {
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    iterator.node, eax;
-	__asm        jmp    near ptr 0x004A23FB;
-
-	__asm        jmp    near ptr 0x004A2400;
+	__asm        jmp    _T21;
+_T21:
+	__asm        jmp    _T26;
 // LINE 252:
+_T26:
 	nReturnValue = 0x0;
 // LINE 254:
 	this->nBusyIteratingCount++;
@@ -2883,10 +2907,10 @@ _T33:
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    near ptr 0x004A2420;
-
-	__asm        jmp    near ptr 0x004A2425;
-
+	__asm        jmp    _T46;
+_T46:
+	__asm        jmp    _T4b;
+_T4b:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        cmp    iterator.node, eax;
 	__asm        jne    _T61;
@@ -2910,8 +2934,8 @@ _T7a:
 	__asm        je     _Te5;
 // LINE 256:
 _T89:
-	__asm        jmp    near ptr 0x004A2468;
-
+	__asm        jmp    _T8e;
+_T8e:
 	windowCurrent = iterator.node->data;
 // LINE 257:
 	__asm        mov    eax, windowCurrent;
@@ -2936,12 +2960,13 @@ _Tc2:
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    iterator.node, eax;
-	__asm        jmp    near ptr 0x004A24AF;
-
+	__asm        jmp    _Td5;
+_Td5:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x14], eax;
-	__asm        jmp    near ptr 0x004A24BA;
+	__asm        jmp    _Te0;
 // LINE 262:
+_Te0:
 	__asm        jmp    _T33;
 // LINE 263:
 _Te5:
@@ -2958,8 +2983,9 @@ _Te5:
 // LINE 269:
 _T10a:
 	__asm        mov    eax, nReturnValue;
-	__asm        jmp    near ptr 0x004A24EC;
+	__asm        jmp    _T112;
 // LINE 270:
+_T112:
 }
 
 // FUNCTION: COPTER_D 0x004a24f3
@@ -2974,10 +3000,11 @@ long GraphicWindowManager::DoCharacter(long lCharacter) {
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    iterator.node, eax;
-	__asm        jmp    near ptr 0x004A2514;
-
-	__asm        jmp    near ptr 0x004A2519;
+	__asm        jmp    _T21;
+_T21:
+	__asm        jmp    _T26;
 // LINE 279:
+_T26:
 	nReturnValue = 0x0;
 // LINE 281:
 	this->nBusyIteratingCount++;
@@ -2987,10 +3014,10 @@ _T33:
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    near ptr 0x004A2539;
-
-	__asm        jmp    near ptr 0x004A253E;
-
+	__asm        jmp    _T46;
+_T46:
+	__asm        jmp    _T4b;
+_T4b:
 	__asm        mov    eax, iterator.node;
 	__asm        cmp    [ebp-0x10], eax;
 	__asm        jne    _T61;
@@ -3014,8 +3041,8 @@ _T7a:
 	__asm        je     _Te1;
 // LINE 283:
 _T89:
-	__asm        jmp    near ptr 0x004A2581;
-
+	__asm        jmp    _T8e;
+_T8e:
 	windowCurrent = iterator.node->data;
 // LINE 284:
 	__asm        mov    eax, windowCurrent;
@@ -3038,12 +3065,13 @@ _Tbe:
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    iterator.node, eax;
-	__asm        jmp    near ptr 0x004A25C4;
-
+	__asm        jmp    _Td1;
+_Td1:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x14], eax;
-	__asm        jmp    near ptr 0x004A25CF;
+	__asm        jmp    _Tdc;
 // LINE 289:
+_Tdc:
 	__asm        jmp    _T33;
 // LINE 290:
 _Te1:
@@ -3060,8 +3088,9 @@ _Te1:
 // LINE 296:
 _T106:
 	__asm        mov    eax, nReturnValue;
-	__asm        jmp    near ptr 0x004A2601;
+	__asm        jmp    _T10e;
 // LINE 297:
+_T10e:
 }
 
 // FUNCTION: COPTER_D 0x004a2608
@@ -3205,8 +3234,8 @@ _T77:
 // FUNCTION: COPTER_D 0x004a278e
 int32_t GraphicWindowManager::SendCursorMessageToChildWindow(/*unpacked*/ class GraphicWindow *childWindow, int32_t nMessage, long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 361:
-	__asm        jmp    near ptr 0x004A279F;
-
+	__asm        jmp    _T11;
+_T11:
 	__asm        mov    eax, childWindow;
 	__asm        cmp    dword ptr [eax+0x34], 0;
 	__asm        je     _T196;
@@ -3218,8 +3247,8 @@ int32_t GraphicWindowManager::SendCursorMessageToChildWindow(/*unpacked*/ class 
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    iterator.node, eax;
-	__asm        jmp    near ptr 0x004A27C0;
-
+	__asm        jmp    _T32;
+_T32:
 	__asm        jmp    _T37;
 // LINE 365:
 _T37:
@@ -3228,29 +3257,30 @@ _T37:
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    iterator.node, eax;
-	__asm        jmp    near ptr 0x004A27D9;
-
+	__asm        jmp    _T4b;
+_T4b:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x004A27E4;
+	__asm        jmp    _T56;
 // LINE 367:
-	__asm        jmp    near ptr 0x004A27E9;
-
+_T56:
+	__asm        jmp    _T5b;
+_T5b:
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax+8];
 	__asm        cmp    dword ptr [eax+0x54], 0;
 	__asm        je     _T13d;
 
-	__asm        jmp    near ptr 0x004A27FE;
-
-	__asm        jmp    near ptr 0x004A2803;
-
+	__asm        jmp    _T70;
+_T70:
+	__asm        jmp    _T75;
+_T75:
 	__asm        mov    eax, nCursorX;
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    eax, nCursorY;
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x004A2814;
-
+	__asm        jmp    _T86;
+_T86:
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, [ebp-0x10];
@@ -3285,8 +3315,8 @@ _Td8:
 	__asm        je     _T13d;
 // LINE 369:
 _Te7:
-	__asm        jmp    near ptr 0x004A287A;
-
+	__asm        jmp    _Tec;
+_Tec:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, iterator.node;
 	__asm        mov    ecx, [ecx+8];
@@ -3294,8 +3324,8 @@ _Te7:
 	__asm        neg    eax;
 	__asm        sub    nCursorX, eax;
 // LINE 370:
-	__asm        jmp    near ptr 0x004A288F;
-
+	__asm        jmp    _T101;
+_T101:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, iterator.node;
 	__asm        mov    ecx, [ecx+8];
@@ -3303,8 +3333,8 @@ _Te7:
 	__asm        neg    eax;
 	__asm        sub    nCursorY, eax;
 // LINE 373:
-	__asm        jmp    near ptr 0x004A28A4;
-
+	__asm        jmp    _T116;
+_T116:
 	__asm        mov    eax, nButton;
 	__asm        push   eax;
 	__asm        mov    eax, nCursorY;
@@ -3329,10 +3359,10 @@ _T13d:
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x14], eax;
-	__asm        jmp    near ptr 0x004A28E1;
-
-	__asm        jmp    near ptr 0x004A28E6;
-
+	__asm        jmp    _T153;
+_T153:
+	__asm        jmp    _T158;
+_T158:
 	__asm        mov    eax, iterator.node;
 	__asm        cmp    [ebp-0x14], eax;
 	__asm        jne    _T16e;
@@ -3448,8 +3478,9 @@ int32_t GraphicWindowManager::ComposeAllWindows() {
 // LINE 406:
 _T41:
 	__asm        mov    eax, nReturnValue;
-	__asm        jmp    near ptr 0x004A2A16;
+	__asm        jmp    _T49;
 // LINE 407:
+_T49:
 }
 
 // FUNCTION: COPTER_D 0x004a2a1b
@@ -3459,8 +3490,9 @@ int32_t GraphicWindowManager::IsWindowValid(/*unpacked*/ class GraphicWindow *wi
 	__asm        push   eax;
 	__asm        call   GraphicWindow::FindWindowA;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A2A38;
+	__asm        jmp    _T1d;
 // LINE 416:
+_T1d:
 }
 
 // FUNCTION: COPTER_D 0x004a2a3f
@@ -3468,8 +3500,8 @@ int32_t GraphicWindowManager::IsWindowValid(/*unpacked*/ class GraphicWindow *wi
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590F2C;
-	__asm        jmp    near ptr 0x004A2A59;
-
+	__asm        jmp    _T1a;
+_T1a:
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
@@ -3487,8 +3519,8 @@ int32_t GraphicWindowManager::IsWindowValid(/*unpacked*/ class GraphicWindow *wi
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    dword ptr [eax+0xC], 1;
-	__asm        jmp    near ptr 0x004A2A9E;
-
+	__asm        jmp    _T5f;
+_T5f:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], eax;
@@ -3498,10 +3530,10 @@ _T6d:
 _T77:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
-	__asm        jmp    near ptr 0x004A2AC5;
-
-	__asm        jmp    near ptr 0x004A2ACA;
-
+	__asm        jmp    _T86;
+_T86:
+	__asm        jmp    _T8b;
+_T8b:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x10], 0;
 	__asm        mov    eax, this;
@@ -3510,10 +3542,10 @@ _T77:
 	__asm        mov    dword ptr [eax+0x18], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x1C], 0;
-	__asm        jmp    near ptr 0x004A2AF7;
-
-	__asm        jmp    near ptr 0x004A2AFC;
-
+	__asm        jmp    _Tb8;
+_Tb8:
+	__asm        jmp    _Tbd;
+_Tbd:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x20], 0;
 	__asm        mov    eax, this;
@@ -3522,8 +3554,8 @@ _T77:
 	__asm        mov    dword ptr [eax+0x28], 0;
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x2C], 0;
-	__asm        jmp    near ptr 0x004A2B29;
-
+	__asm        jmp    _Tea;
+_Tea:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x34], 0;
 	__asm        inc    list<GraphicWindow *>::number_of_lists;
@@ -3561,16 +3593,16 @@ _T126:
 	__asm        push   eax;
 	__asm        call   endl;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A2BBA;
-
+	__asm        jmp    _T17b;
+_T17b:
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 _T185:
-	__asm        jmp    near ptr 0x004A2BC9;
-
-	__asm        jmp    near ptr 0x004A2BCE;
-
+	__asm        jmp    _T18a;
+_T18a:
+	__asm        jmp    _T18f;
+_T18f:
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        mov    dword ptr [ebp-0x3C], 0x155;
@@ -3592,12 +3624,12 @@ _T1ca:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x4C], eax;
 _T1d0:
-	__asm        jmp    near ptr 0x004A2C14;
-
-	__asm        jmp    near ptr 0x004A2C19;
-
-	__asm        jmp    near ptr 0x004A2C1E;
-
+	__asm        jmp    _T1d5;
+_T1d5:
+	__asm        jmp    _T1da;
+_T1da:
+	__asm        jmp    _T1df;
+_T1df:
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x74], eax;
@@ -3622,16 +3654,16 @@ _T1d0:
 	__asm        push   eax;
 	__asm        call   endl;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A2C72;
-
+	__asm        jmp    _T233;
+_T233:
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 _T23d:
-	__asm        jmp    near ptr 0x004A2C81;
-
-	__asm        jmp    near ptr 0x004A2C86;
-
+	__asm        jmp    _T242;
+_T242:
+	__asm        jmp    _T247;
+_T247:
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        mov    ecx, [ebp-0x38];
 	__asm        mov    [ecx+4], eax;
@@ -3662,20 +3694,20 @@ _T2a4:
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    [ebp-0x60], eax;
 _T2aa:
-	__asm        jmp    near ptr 0x004A2CEE;
-
-	__asm        jmp    near ptr 0x004A2CF3;
-
-	__asm        jmp    near ptr 0x004A2CF8;
-
+	__asm        jmp    _T2af;
+_T2af:
+	__asm        jmp    _T2b4;
+_T2b4:
+	__asm        jmp    _T2b9;
+_T2b9:
 	__asm        mov    eax, [ebp-0x60];
 	__asm        mov    eax, [eax];
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
 	__asm        add    eax, list<GraphicWindow *>::next_avail;
 	__asm        mov    list<GraphicWindow *>::last, eax;
-	__asm        jmp    near ptr 0x004A2D13;
-
+	__asm        jmp    _T2d4;
+_T2d4:
 	__asm        mov    eax, list<GraphicWindow *>::next_avail;
 	__asm        mov    [ebp-0x30], eax;
 	__asm        add    list<GraphicWindow *>::next_avail, 0xC;
@@ -3689,8 +3721,8 @@ _T2ee:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x78], eax;
 _T303:
-	__asm        jmp    near ptr 0x004A2D47;
-
+	__asm        jmp    _T308;
+_T308:
 	__asm        mov    eax, [ebp-0x78];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x30], eax;
@@ -3704,8 +3736,8 @@ _T303:
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x30];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x004A2D72;
-
+	__asm        jmp    _T333;
+_T333:
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
@@ -3723,8 +3755,8 @@ _T303:
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    dword ptr [eax+0xC], 1;
-	__asm        jmp    near ptr 0x004A2DB7;
-
+	__asm        jmp    _T378;
+_T378:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x60], eax;
@@ -3734,8 +3766,8 @@ _T386:
 _T390:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x5C], 0;
-	__asm        jmp    near ptr 0x004A2DDE;
-
+	__asm        jmp    _T39f;
+_T39f:
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
@@ -3753,8 +3785,8 @@ _T390:
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    dword ptr [eax+0xC], 1;
-	__asm        jmp    near ptr 0x004A2E23;
-
+	__asm        jmp    _T3e4;
+_T3e4:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x68], eax;
@@ -3764,10 +3796,10 @@ _T3f2:
 _T3fc:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x64], 0;
-	__asm        jmp    near ptr 0x004A2E4A;
-
-	__asm        jmp    near ptr 0x004A2E4F;
-
+	__asm        jmp    _T40b;
+_T40b:
+	__asm        jmp    _T410;
+_T410:
 	this-><GraphicWindow+0x00:4> = 0x591680;
 // LINE 445:
 	__asm        mov    eax, this;
@@ -3778,17 +3810,17 @@ _T3fc:
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x004A2E77;
-
-	__asm        jmp    near ptr 0x004A2E7C;
-
+	__asm        jmp    _T438;
+_T438:
+	__asm        jmp    _T43d;
+_T43d:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        mov    ecx, 0x6069A0;
 	__asm        call   list<GraphicWindow *>::get_node;
 	__asm        mov    [ebp-0x18], eax;
-	__asm        jmp    near ptr 0x004A2E94;
-
+	__asm        jmp    _T455;
+_T455:
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x18];
@@ -3813,12 +3845,13 @@ _T3fc:
 	__asm        add    GraphicWindow::listValidWindows.length, 1;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    near ptr 0x004A2EE1;
-
-	__asm        jmp    near ptr 0x004A2EE6;
-
-	__asm        jmp    near ptr 0x004A2EEB;
+	__asm        jmp    _T4a2;
+_T4a2:
+	__asm        jmp    _T4a7;
+_T4a7:
+	__asm        jmp    _T4ac;
 // LINE 446:
+_T4ac:
 	this-><GraphicWindow+0x3c:4> = 0x0;
 // LINE 447:
 	this-><GraphicWindow+0x40:4> = 0x0;
@@ -3839,8 +3872,8 @@ _T3fc:
 // LINE 455:
 	this-><GraphicWindow+0x58:4> = 0xffffffff;
 // LINE 456:
-	__asm        jmp    near ptr 0x004A2F54;
-
+	__asm        jmp    _T515;
+_T515:
 	__asm        mov    eax, this;
 }
 
@@ -3849,8 +3882,8 @@ _T3fc:
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590F2C;
-	__asm        jmp    near ptr 0x004A2F79;
-
+	__asm        jmp    _T1d;
+_T1d:
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
@@ -3868,8 +3901,8 @@ _T3fc:
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    dword ptr [eax+0xC], 1;
-	__asm        jmp    near ptr 0x004A2FBE;
-
+	__asm        jmp    _T62;
+_T62:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], eax;
@@ -3879,16 +3912,16 @@ _T70:
 _T7a:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
-	__asm        jmp    near ptr 0x004A2FE5;
-
-	__asm        jmp    near ptr 0x004A2FEA;
-
-	__asm        jmp    near ptr 0x004A2FEF;
-
-	__asm        jmp    near ptr 0x004A2FF4;
-
-	__asm        jmp    near ptr 0x004A2FF9;
-
+	__asm        jmp    _T89;
+_T89:
+	__asm        jmp    _T8e;
+_T8e:
+	__asm        jmp    _T93;
+_T93:
+	__asm        jmp    _T98;
+_T98:
+	__asm        jmp    _T9d;
+_T9d:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x34], 0;
 	__asm        inc    list<GraphicWindow *>::number_of_lists;
@@ -3926,16 +3959,16 @@ _Td9:
 	__asm        push   eax;
 	__asm        call   endl;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A308A;
-
+	__asm        jmp    _T12e;
+_T12e:
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 _T138:
-	__asm        jmp    near ptr 0x004A3099;
-
-	__asm        jmp    near ptr 0x004A309E;
-
+	__asm        jmp    _T13d;
+_T13d:
+	__asm        jmp    _T142;
+_T142:
 	__asm        mov    eax, [ebp-0x68];
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        mov    dword ptr [ebp-0x40], 0x155;
@@ -3957,12 +3990,12 @@ _T17d:
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    [ebp-0x50], eax;
 _T183:
-	__asm        jmp    near ptr 0x004A30E4;
-
-	__asm        jmp    near ptr 0x004A30E9;
-
-	__asm        jmp    near ptr 0x004A30EE;
-
+	__asm        jmp    _T188;
+_T188:
+	__asm        jmp    _T18d;
+_T18d:
+	__asm        jmp    _T192;
+_T192:
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x78], eax;
@@ -3987,16 +4020,16 @@ _T183:
 	__asm        push   eax;
 	__asm        call   endl;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A3142;
-
+	__asm        jmp    _T1e6;
+_T1e6:
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 _T1f0:
-	__asm        jmp    near ptr 0x004A3151;
-
-	__asm        jmp    near ptr 0x004A3156;
-
+	__asm        jmp    _T1f5;
+_T1f5:
+	__asm        jmp    _T1fa;
+_T1fa:
 	__asm        mov    eax, [ebp-0x70];
 	__asm        mov    ecx, [ebp-0x3C];
 	__asm        mov    [ecx+4], eax;
@@ -4027,20 +4060,20 @@ _T257:
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        mov    [ebp-0x64], eax;
 _T25d:
-	__asm        jmp    near ptr 0x004A31BE;
-
-	__asm        jmp    near ptr 0x004A31C3;
-
-	__asm        jmp    near ptr 0x004A31C8;
-
+	__asm        jmp    _T262;
+_T262:
+	__asm        jmp    _T267;
+_T267:
+	__asm        jmp    _T26c;
+_T26c:
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    eax, [eax];
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
 	__asm        add    eax, list<GraphicWindow *>::next_avail;
 	__asm        mov    list<GraphicWindow *>::last, eax;
-	__asm        jmp    near ptr 0x004A31E3;
-
+	__asm        jmp    _T287;
+_T287:
 	__asm        mov    eax, list<GraphicWindow *>::next_avail;
 	__asm        mov    [ebp-0x34], eax;
 	__asm        add    list<GraphicWindow *>::next_avail, 0xC;
@@ -4054,8 +4087,8 @@ _T2a1:
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    [ebp-0x7C], eax;
 _T2b6:
-	__asm        jmp    near ptr 0x004A3217;
-
+	__asm        jmp    _T2bb;
+_T2bb:
 	__asm        mov    eax, [ebp-0x7C];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x30], eax;
@@ -4069,8 +4102,8 @@ _T2b6:
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x30];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x004A3242;
-
+	__asm        jmp    _T2e6;
+_T2e6:
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
@@ -4088,8 +4121,8 @@ _T2b6:
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    dword ptr [eax+0xC], 1;
-	__asm        jmp    near ptr 0x004A3287;
-
+	__asm        jmp    _T32b;
+_T32b:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x60], eax;
@@ -4099,8 +4132,8 @@ _T339:
 _T343:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x5C], 0;
-	__asm        jmp    near ptr 0x004A32AE;
-
+	__asm        jmp    _T352;
+_T352:
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
@@ -4118,8 +4151,8 @@ _T343:
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    dword ptr [eax+0xC], 1;
-	__asm        jmp    near ptr 0x004A32F3;
-
+	__asm        jmp    _T397;
+_T397:
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x68], eax;
@@ -4129,10 +4162,10 @@ _T3a5:
 _T3af:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x64], 0;
-	__asm        jmp    near ptr 0x004A331A;
-
-	__asm        jmp    near ptr 0x004A331F;
-
+	__asm        jmp    _T3be;
+_T3be:
+	__asm        jmp    _T3c3;
+_T3c3:
 	this-><GraphicWindow+0x00:4> = 0x591680;
 // LINE 465:
 	__asm        mov    eax, this;
@@ -4143,22 +4176,22 @@ _T3af:
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x004A3347;
-
-	__asm        jmp    near ptr 0x004A334C;
-
+	__asm        jmp    _T3eb;
+_T3eb:
+	__asm        jmp    _T3f0;
+_T3f0:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-0x20], eax;
 	__asm        mov    ecx, 0x6069A0;
 	__asm        call   list<GraphicWindow *>::get_node;
 	__asm        mov    [ebp-0x18], eax;
-	__asm        jmp    near ptr 0x004A3364;
-
+	__asm        jmp    _T408;
+_T408:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x1C], eax;
-	__asm        jmp    near ptr 0x004A3372;
-
+	__asm        jmp    _T416;
+_T416:
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     _T42f;
 
@@ -4168,8 +4201,8 @@ _T3af:
 	__asm        mov    [ecx], eax;
 	__asm        jmp    _T42f;
 _T42f:
-	__asm        jmp    near ptr 0x004A3390;
-
+	__asm        jmp    _T434;
+_T434:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    ecx, [ebp-0x18];
 	__asm        mov    [ecx], eax;
@@ -4187,19 +4220,20 @@ _T42f:
 	__asm        inc    GraphicWindow::listValidWindows.length;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    near ptr 0x004A33C9;
-
-	__asm        jmp    near ptr 0x004A33CE;
-
-	__asm        jmp    near ptr 0x004A33D3;
+	__asm        jmp    _T46d;
+_T46d:
+	__asm        jmp    _T472;
+_T472:
+	__asm        jmp    _T477;
 // LINE 466:
+_T477:
 	__asm        mov    eax, copyGraphicWindow;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::operator=;
 // LINE 467:
-	__asm        jmp    near ptr 0x004A33E4;
-
+	__asm        jmp    _T488;
+_T488:
 	__asm        mov    eax, this;
 }
 
@@ -4208,8 +4242,8 @@ _T42f:
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590F2C;
-	__asm        jmp    near ptr 0x004A340B;
-
+	__asm        jmp    _T1d;
+_T1d:
 	__asm        mov    eax, lNewID;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
@@ -4230,8 +4264,8 @@ _T42f:
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    dword ptr [eax+0xC], 1;
-	__asm        jmp    near ptr 0x004A3459;
-
+	__asm        jmp    _T6b;
+_T6b:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], eax;
@@ -4241,8 +4275,8 @@ _T79:
 _T83:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
-	__asm        jmp    near ptr 0x004A3480;
-
+	__asm        jmp    _T92;
+_T92:
 	__asm        mov    eax, rectNewWindow;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x10;
@@ -4302,16 +4336,16 @@ _T10c:
 	__asm        push   eax;
 	__asm        call   endl;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A354F;
-
+	__asm        jmp    _T161;
+_T161:
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 _T16b:
-	__asm        jmp    near ptr 0x004A355E;
-
-	__asm        jmp    near ptr 0x004A3563;
-
+	__asm        jmp    _T170;
+_T170:
+	__asm        jmp    _T175;
+_T175:
 	__asm        mov    eax, [ebp-0x68];
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        mov    dword ptr [ebp-0x40], 0x155;
@@ -4333,12 +4367,12 @@ _T1b0:
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    [ebp-0x50], eax;
 _T1b6:
-	__asm        jmp    near ptr 0x004A35A9;
-
-	__asm        jmp    near ptr 0x004A35AE;
-
-	__asm        jmp    near ptr 0x004A35B3;
-
+	__asm        jmp    _T1bb;
+_T1bb:
+	__asm        jmp    _T1c0;
+_T1c0:
+	__asm        jmp    _T1c5;
+_T1c5:
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x78], eax;
@@ -4363,16 +4397,16 @@ _T1b6:
 	__asm        push   eax;
 	__asm        call   endl;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A3607;
-
+	__asm        jmp    _T219;
+_T219:
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 _T223:
-	__asm        jmp    near ptr 0x004A3616;
-
-	__asm        jmp    near ptr 0x004A361B;
-
+	__asm        jmp    _T228;
+_T228:
+	__asm        jmp    _T22d;
+_T22d:
 	__asm        mov    eax, [ebp-0x70];
 	__asm        mov    ecx, [ebp-0x3C];
 	__asm        mov    [ecx+4], eax;
@@ -4403,20 +4437,20 @@ _T28a:
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        mov    [ebp-0x64], eax;
 _T290:
-	__asm        jmp    near ptr 0x004A3683;
-
-	__asm        jmp    near ptr 0x004A3688;
-
-	__asm        jmp    near ptr 0x004A368D;
-
+	__asm        jmp    _T295;
+_T295:
+	__asm        jmp    _T29a;
+_T29a:
+	__asm        jmp    _T29f;
+_T29f:
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    eax, [eax];
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
 	__asm        add    eax, list<GraphicWindow *>::next_avail;
 	__asm        mov    list<GraphicWindow *>::last, eax;
-	__asm        jmp    near ptr 0x004A36A8;
-
+	__asm        jmp    _T2ba;
+_T2ba:
 	__asm        mov    eax, list<GraphicWindow *>::next_avail;
 	__asm        mov    [ebp-0x34], eax;
 	__asm        add    list<GraphicWindow *>::next_avail, 0xC;
@@ -4430,8 +4464,8 @@ _T2d4:
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    [ebp-0x7C], eax;
 _T2e9:
-	__asm        jmp    near ptr 0x004A36DC;
-
+	__asm        jmp    _T2ee;
+_T2ee:
 	__asm        mov    eax, [ebp-0x7C];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x30], eax;
@@ -4445,8 +4479,8 @@ _T2e9:
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x30];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x004A3707;
-
+	__asm        jmp    _T319;
+_T319:
 	__asm        mov    eax, myNewOwner;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x38], eax;
@@ -4470,8 +4504,8 @@ _T2e9:
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    dword ptr [eax+0xC], 1;
-	__asm        jmp    near ptr 0x004A375E;
-
+	__asm        jmp    _T370;
+_T370:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x60], eax;
@@ -4481,8 +4515,8 @@ _T37e:
 _T388:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x5C], 0;
-	__asm        jmp    near ptr 0x004A3785;
-
+	__asm        jmp    _T397;
+_T397:
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
@@ -4500,8 +4534,8 @@ _T388:
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    dword ptr [eax+0xC], 1;
-	__asm        jmp    near ptr 0x004A37CA;
-
+	__asm        jmp    _T3dc;
+_T3dc:
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x68], eax;
@@ -4511,10 +4545,10 @@ _T3ea:
 _T3f4:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x64], 0;
-	__asm        jmp    near ptr 0x004A37F1;
-
-	__asm        jmp    near ptr 0x004A37F6;
-
+	__asm        jmp    _T403;
+_T403:
+	__asm        jmp    _T408;
+_T408:
 	this-><GraphicWindow+0x00:4> = 0x591680;
 // LINE 481:
 	__asm        mov    eax, this;
@@ -4525,22 +4559,22 @@ _T3f4:
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x004A381E;
-
-	__asm        jmp    near ptr 0x004A3823;
-
+	__asm        jmp    _T430;
+_T430:
+	__asm        jmp    _T435;
+_T435:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-0x20], eax;
 	__asm        mov    ecx, 0x6069A0;
 	__asm        call   list<GraphicWindow *>::get_node;
 	__asm        mov    [ebp-0x18], eax;
-	__asm        jmp    near ptr 0x004A383B;
-
+	__asm        jmp    _T44d;
+_T44d:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x1C], eax;
-	__asm        jmp    near ptr 0x004A3849;
-
+	__asm        jmp    _T45b;
+_T45b:
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     _T474;
 
@@ -4550,8 +4584,8 @@ _T3f4:
 	__asm        mov    [ecx], eax;
 	__asm        jmp    _T474;
 _T474:
-	__asm        jmp    near ptr 0x004A3867;
-
+	__asm        jmp    _T479;
+_T479:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    ecx, [ebp-0x18];
 	__asm        mov    [ecx], eax;
@@ -4569,12 +4603,13 @@ _T474:
 	__asm        inc    GraphicWindow::listValidWindows.length;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    near ptr 0x004A38A0;
-
-	__asm        jmp    near ptr 0x004A38A5;
-
-	__asm        jmp    near ptr 0x004A38AA;
+	__asm        jmp    _T4b2;
+_T4b2:
+	__asm        jmp    _T4b7;
+_T4b7:
+	__asm        jmp    _T4bc;
 // LINE 482:
+_T4bc:
 	this-><GraphicWindow+0x40:4> = 0x0;
 // LINE 483:
 	this-><GraphicWindow+0x44:4> = 0x0;
@@ -4611,8 +4646,8 @@ _T538:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::SetImageToDrawOnto;
 // LINE 493:
-	__asm        jmp    near ptr 0x004A3933;
-
+	__asm        jmp    _T545;
+_T545:
 	__asm        mov    eax, this;
 }
 
@@ -4621,8 +4656,8 @@ _T538:
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590F2C;
-	__asm        jmp    near ptr 0x004A3960;
-
+	__asm        jmp    _T23;
+_T23:
 	__asm        mov    eax, lNewID;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
@@ -4643,8 +4678,8 @@ _T538:
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    dword ptr [eax+0xC], 1;
-	__asm        jmp    near ptr 0x004A39B1;
-
+	__asm        jmp    _T74;
+_T74:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], eax;
@@ -4654,8 +4689,8 @@ _T85:
 _T92:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+8], 0;
-	__asm        jmp    near ptr 0x004A39E1;
-
+	__asm        jmp    _Ta4;
+_Ta4:
 	__asm        mov    eax, rectNewWindow;
 	__asm        mov    ecx, this;
 	__asm        add    ecx, 0x10;
@@ -4715,16 +4750,16 @@ _T12a:
 	__asm        push   eax;
 	__asm        call   endl;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A3ABC;
-
+	__asm        jmp    _T17f;
+_T17f:
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 _T189:
-	__asm        jmp    near ptr 0x004A3ACB;
-
-	__asm        jmp    near ptr 0x004A3AD0;
-
+	__asm        jmp    _T18e;
+_T18e:
+	__asm        jmp    _T193;
+_T193:
 	__asm        mov    eax, [ebp-0x78];
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        mov    dword ptr [ebp-0x50], 0x155;
@@ -4746,12 +4781,12 @@ _T1ce:
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    [ebp-0x60], eax;
 _T1d4:
-	__asm        jmp    near ptr 0x004A3B16;
-
-	__asm        jmp    near ptr 0x004A3B1B;
-
-	__asm        jmp    near ptr 0x004A3B20;
-
+	__asm        jmp    _T1d9;
+_T1d9:
+	__asm        jmp    _T1de;
+_T1de:
+	__asm        jmp    _T1e3;
+_T1e3:
 	__asm        mov    eax, [ebp-0x60];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x88], eax;
@@ -4776,16 +4811,16 @@ _T1d4:
 	__asm        push   eax;
 	__asm        call   endl;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A3B80;
-
+	__asm        jmp    _T243;
+_T243:
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 _T24d:
-	__asm        jmp    near ptr 0x004A3B8F;
-
-	__asm        jmp    near ptr 0x004A3B94;
-
+	__asm        jmp    _T252;
+_T252:
+	__asm        jmp    _T257;
+_T257:
 	__asm        mov    eax, [ebp-0x80];
 	__asm        mov    ecx, [ebp-0x4C];
 	__asm        mov    [ecx+4], eax;
@@ -4816,20 +4851,20 @@ _T2b4:
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        mov    [ebp-0x74], eax;
 _T2ba:
-	__asm        jmp    near ptr 0x004A3BFC;
-
-	__asm        jmp    near ptr 0x004A3C01;
-
-	__asm        jmp    near ptr 0x004A3C06;
-
+	__asm        jmp    _T2bf;
+_T2bf:
+	__asm        jmp    _T2c4;
+_T2c4:
+	__asm        jmp    _T2c9;
+_T2c9:
 	__asm        mov    eax, [ebp-0x74];
 	__asm        mov    eax, [eax];
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
 	__asm        add    eax, list<GraphicWindow *>::next_avail;
 	__asm        mov    list<GraphicWindow *>::last, eax;
-	__asm        jmp    near ptr 0x004A3C21;
-
+	__asm        jmp    _T2e4;
+_T2e4:
 	__asm        mov    eax, list<GraphicWindow *>::next_avail;
 	__asm        mov    [ebp-0x44], eax;
 	__asm        add    list<GraphicWindow *>::next_avail, 0xC;
@@ -4843,8 +4878,8 @@ _T301:
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    [ebp-0x8C], eax;
 _T319:
-	__asm        jmp    near ptr 0x004A3C5B;
-
+	__asm        jmp    _T31e;
+_T31e:
 	__asm        mov    eax, [ebp-0x8C];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x30], eax;
@@ -4858,8 +4893,8 @@ _T319:
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x30];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x004A3C98;
-
+	__asm        jmp    _T35b;
+_T35b:
 	__asm        mov    eax, myNewOwner;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x38], eax;
@@ -4886,8 +4921,8 @@ _T319:
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    dword ptr [eax+0xC], 1;
-	__asm        jmp    near ptr 0x004A3D01;
-
+	__asm        jmp    _T3c4;
+_T3c4:
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x60], eax;
@@ -4897,8 +4932,8 @@ _T3d5:
 _T3e2:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x5C], 0;
-	__asm        jmp    near ptr 0x004A3D31;
-
+	__asm        jmp    _T3f4;
+_T3f4:
 	__asm        push   0x10;
 	__asm        call   operator new;
 	__asm        add    esp, 4;
@@ -4916,8 +4951,8 @@ _T3e2:
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    dword ptr [eax+0xC], 1;
-	__asm        jmp    near ptr 0x004A3D76;
-
+	__asm        jmp    _T439;
+_T439:
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x68], eax;
@@ -4927,10 +4962,10 @@ _T44a:
 _T457:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x64], 0;
-	__asm        jmp    near ptr 0x004A3DA6;
-
-	__asm        jmp    near ptr 0x004A3DAB;
-
+	__asm        jmp    _T469;
+_T469:
+	__asm        jmp    _T46e;
+_T46e:
 	this-><GraphicWindow+0x00:4> = 0x591680;
 // LINE 514:
 	__asm        mov    eax, this;
@@ -4941,17 +4976,17 @@ _T457:
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x20], eax;
-	__asm        jmp    near ptr 0x004A3DD9;
-
-	__asm        jmp    near ptr 0x004A3DDE;
-
+	__asm        jmp    _T49c;
+_T49c:
+	__asm        jmp    _T4a1;
+_T4a1:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x30], eax;
 	__asm        mov    ecx, 0x6069A0;
 	__asm        call   list<GraphicWindow *>::get_node;
 	__asm        mov    [ebp-0x2C], eax;
-	__asm        jmp    near ptr 0x004A3DF6;
-
+	__asm        jmp    _T4b9;
+_T4b9:
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x2C];
@@ -4976,14 +5011,15 @@ _T457:
 	__asm        add    GraphicWindow::listValidWindows.length, 1;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    [ebp-0x24], eax;
-	__asm        jmp    near ptr 0x004A3E43;
-
-	__asm        jmp    near ptr 0x004A3E48;
-
-	__asm        jmp    near ptr 0x004A3E4D;
+	__asm        jmp    _T506;
+_T506:
+	__asm        jmp    _T50b;
+_T50b:
+	__asm        jmp    _T510;
 // LINE 515:
-	__asm        jmp    near ptr 0x004A3E52;
-
+_T510:
+	__asm        jmp    _T515;
+_T515:
 	__asm        mov    eax, szImageFileName;
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -5000,15 +5036,15 @@ _T457:
 	__asm        push   eax;
 	__asm        call   endl;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A3E8E;
-
+	__asm        jmp    _T551;
+_T551:
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    _T560;
 _T560:
-	__asm        jmp    near ptr 0x004A3EA2;
-
+	__asm        jmp    _T565;
+_T565:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        cmp    dword ptr [eax+0xC], 1;
@@ -5017,8 +5053,8 @@ _T560:
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     _T5f1;
 
-	__asm        jmp    near ptr 0x004A3EC4;
-
+	__asm        jmp    _T587;
+_T587:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    ecx, [ebp-0x1C];
@@ -5054,8 +5090,8 @@ _T5f1:
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     _T627;
 
-	__asm        jmp    near ptr 0x004A3F3D;
-
+	__asm        jmp    _T600;
+_T600:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    eax, [eax];
@@ -5074,10 +5110,11 @@ _T627:
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x60];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x004A3F78;
-
-	__asm        jmp    near ptr 0x004A3F7D;
+	__asm        jmp    _T63b;
+_T63b:
+	__asm        jmp    _T640;
 // LINE 516:
+_T640:
 	this-><GraphicWindow+0x40:4> = 0x0;
 // LINE 517:
 	this-><GraphicWindow+0x44:4> = 0x0;
@@ -5119,8 +5156,8 @@ _T6d3:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::SetImageToDrawOnto;
 // LINE 528:
-	__asm        jmp    near ptr 0x004A4038;
-
+	__asm        jmp    _T6fb;
+_T6fb:
 	__asm        mov    eax, this;
 }
 
@@ -5138,16 +5175,16 @@ _T6d3:
 	__asm        mov    [ebp-0x90], eax;
 	__asm        mov    eax, [ebp-0x90];
 	__asm        mov    [ebp-0x7C], eax;
-	__asm        jmp    near ptr 0x004A408D;
-
-	__asm        jmp    near ptr 0x004A4092;
-
+	__asm        jmp    _T48;
+_T48:
+	__asm        jmp    _T4d;
+_T4d:
 	__asm        mov    eax, GraphicWindow::listValidWindows.node;
 	__asm        mov    [ebp-0x8C], eax;
 	__asm        mov    eax, [ebp-0x8C];
 	__asm        mov    [ebp-0x78], eax;
-	__asm        jmp    near ptr 0x004A40AB;
-
+	__asm        jmp    _T66;
+_T66:
 	__asm        jmp    _T6b;
 _T6b:
 	__asm        mov    eax, [ebp-0x7C];
@@ -5177,10 +5214,10 @@ _Taf:
 	__asm        mov    eax, [ebp-0x80];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x80], eax;
-	__asm        jmp    near ptr 0x004A4107;
-
-	__asm        jmp    near ptr 0x004A410C;
-
+	__asm        jmp    _Tc2;
+_Tc2:
+	__asm        jmp    _Tc7;
+_Tc7:
 	__asm        mov    eax, [ebp-0x7C];
 	__asm        mov    ecx, [ebp-8];
 	__asm        mov    ecx, [ecx];
@@ -5196,8 +5233,9 @@ _Te6:
 	__asm        mov    [ebp-0x7C], eax;
 	__asm        jmp    _T6b;
 _Tf1:
-	__asm        jmp    near ptr 0x004A413B;
+	__asm        jmp    _Tf6;
 // LINE 539:
+_Tf6:
 	__asm        mov    eax, GraphicWindow::windowCursorCapture;
 	__asm        cmp    this, eax;
 	__asm        jne    _T10c;
@@ -5234,8 +5272,8 @@ _T132:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::DestroyImage;
 // LINE 554:
-	__asm        jmp    near ptr 0x004A41B0;
-
+	__asm        jmp    _T16b;
+_T16b:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x68];
 	__asm        dec    dword ptr [eax+0xC];
@@ -5270,20 +5308,20 @@ _T132:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    dword ptr [eax], 0;
 _T1e0:
-	__asm        jmp    near ptr 0x004A422A;
-
-	__asm        jmp    near ptr 0x004A422F;
-
+	__asm        jmp    _T1e5;
+_T1e5:
+	__asm        jmp    _T1ea;
+_T1ea:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A4240;
-
+	__asm        jmp    _T1fb;
+_T1fb:
 	__asm        jmp    _T200;
 _T200:
-	__asm        jmp    near ptr 0x004A424A;
-
+	__asm        jmp    _T205;
+_T205:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x64], 0;
 	__asm        je     _T233;
@@ -5298,8 +5336,8 @@ _T200:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T233:
-	__asm        jmp    near ptr 0x004A427D;
-
+	__asm        jmp    _T238;
+_T238:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        dec    dword ptr [eax+0xC];
@@ -5334,20 +5372,20 @@ _T233:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    dword ptr [eax], 0;
 _T2ad:
-	__asm        jmp    near ptr 0x004A42F7;
-
-	__asm        jmp    near ptr 0x004A42FC;
-
+	__asm        jmp    _T2b2;
+_T2b2:
+	__asm        jmp    _T2b7;
+_T2b7:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A430D;
-
+	__asm        jmp    _T2c8;
+_T2c8:
 	__asm        jmp    _T2cd;
 _T2cd:
-	__asm        jmp    near ptr 0x004A4317;
-
+	__asm        jmp    _T2d2;
+_T2d2:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x5C], 0;
 	__asm        je     _T300;
@@ -5362,27 +5400,27 @@ _T2cd:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T300:
-	__asm        jmp    near ptr 0x004A434A;
-
+	__asm        jmp    _T305;
+_T305:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x30];
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        mov    [ebp-0x50], eax;
-	__asm        jmp    near ptr 0x004A4361;
-
-	__asm        jmp    near ptr 0x004A4366;
-
+	__asm        jmp    _T31c;
+_T31c:
+	__asm        jmp    _T321;
+_T321:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x30];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x60], eax;
 	__asm        mov    eax, [ebp-0x60];
 	__asm        mov    [ebp-0x54], eax;
-	__asm        jmp    near ptr 0x004A437F;
-
-	__asm        jmp    near ptr 0x004A4384;
-
+	__asm        jmp    _T33a;
+_T33a:
+	__asm        jmp    _T33f;
+_T33f:
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    [ebp-0x70], eax;
 	__asm        mov    eax, [ebp-0x54];
@@ -5422,8 +5460,8 @@ _T389:
 	__asm        call   list<GraphicWindow *>::erase;
 	__asm        jmp    _T34b;
 _T3ad:
-	__asm        jmp    near ptr 0x004A43F7;
-
+	__asm        jmp    _T3b2;
+_T3b2:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x30];
 	__asm        mov    [ebp-0x58], eax;
@@ -5432,8 +5470,8 @@ _T3ad:
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    list<GraphicWindow *>::free_list, eax;
-	__asm        jmp    near ptr 0x004A441A;
-
+	__asm        jmp    _T3d5;
+_T3d5:
 	__asm        dec    list<GraphicWindow *>::number_of_lists;
 	__asm        jne    _T3ef;
 
@@ -5441,8 +5479,8 @@ _T3ad:
 	__asm        add    ecx, 0x30;
 	__asm        call   list<GraphicWindow *>::deallocate_buffers;
 _T3ef:
-	__asm        jmp    near ptr 0x004A4439;
-
+	__asm        jmp    _T3f4;
+_T3f4:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xC];
 	__asm        dec    dword ptr [eax+0xC];
@@ -5461,18 +5499,18 @@ _T3ef:
 
 	__asm        mov    ecx, [ebp-0x48];
 	__asm        call   basic_string_ref<char>::delete_ptr;
-	__asm        jmp    near ptr 0x004A4481;
-
+	__asm        jmp    _T43c;
+_T43c:
 	__asm        mov    eax, [ebp-0x48];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A4492;
-
+	__asm        jmp    _T44d;
+_T44d:
 	__asm        jmp    _T452;
 _T452:
-	__asm        jmp    near ptr 0x004A449C;
-
+	__asm        jmp    _T457;
+_T457:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     _T485;
@@ -5487,15 +5525,17 @@ _T452:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T485:
-	__asm        jmp    near ptr 0x004A44CF;
+	__asm        jmp    _T48a;
+_T48a:
 }
 
 // FUNCTION: COPTER_D 0x004a44d4
 int  GraphicWindow::Initialize() {
 // LINE 561:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004A44EA;
+	__asm        jmp    _T16;
 // LINE 562:
+_T16:
 }
 
 // FUNCTION: COPTER_D 0x004a44ef
@@ -5552,10 +5592,10 @@ _T20:
 	__asm        mov    [ebp-0x74], eax;
 	__asm        mov    eax, [ebp-0x74];
 	__asm        mov    [ebp-0x30], eax;
-	__asm        jmp    near ptr 0x004A458A;
-
-	__asm        jmp    near ptr 0x004A458F;
-
+	__asm        jmp    _T9b;
+_T9b:
+	__asm        jmp    _Ta0;
+_Ta0:
 	__asm        lea    eax, [ebp-0x28];
 	__asm        push   eax;
 	__asm        mov    ecx, copyGraphicWindow;
@@ -5566,8 +5606,8 @@ _T20:
 	__asm        mov    [ebp-0x78], eax;
 	__asm        mov    eax, [ebp-0x78];
 	__asm        mov    [ebp-0x34], eax;
-	__asm        jmp    near ptr 0x004A45B2;
-
+	__asm        jmp    _Tc3;
+_Tc3:
 	__asm        jmp    _Tc8;
 _Tc8:
 	__asm        mov    eax, [ebp-0x2C];
@@ -5624,21 +5664,21 @@ _T144:
 	__asm        mov    eax, [eax];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x40], eax;
-	__asm        jmp    near ptr 0x004A4654;
-
+	__asm        jmp    _T165;
+_T165:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x5C], eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x28], eax;
-	__asm        jmp    near ptr 0x004A4667;
-
+	__asm        jmp    _T178;
+_T178:
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        mov    [ebp-0x3C], eax;
-	__asm        jmp    near ptr 0x004A4672;
-
-	__asm        jmp    near ptr 0x004A4677;
-
+	__asm        jmp    _T183;
+_T183:
+	__asm        jmp    _T188;
+_T188:
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, [ebp-0x40];
@@ -5697,8 +5737,8 @@ _T207:
 	__asm        call   list<GraphicWindow *>::erase;
 	__asm        jmp    _T1c9;
 _T228:
-	__asm        jmp    near ptr 0x004A471C;
-
+	__asm        jmp    _T22d;
+_T22d:
 	__asm        jmp    _T249;
 _T232:
 	__asm        mov    eax, [ebp-0x34];
@@ -5711,8 +5751,9 @@ _T232:
 	__asm        add    ecx, 0x30;
 	__asm        call   list<GraphicWindow *>::insert;
 _T249:
-	__asm        jmp    near ptr 0x004A473D;
+	__asm        jmp    _T24e;
 // LINE 611:
+_T24e:
 	this-><GraphicWindow+0x3c:4> = copyGraphicWindow.<GraphicWindow+0x3c:4>;
 // LINE 612:
 	this-><GraphicWindow+0x40:4> = copyGraphicWindow.<GraphicWindow+0x40:4>;
@@ -5766,20 +5807,20 @@ _T249:
 
 	__asm        mov    ecx, [ebp-8];
 	__asm        call   basic_string_ref<char>::delete_ptr;
-	__asm        jmp    near ptr 0x004A481A;
-
+	__asm        jmp    _T32b;
+_T32b:
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A482B;
-
+	__asm        jmp    _T33c;
+_T33c:
 	__asm        jmp    _T341;
 _T341:
-	__asm        jmp    near ptr 0x004A4835;
-
-	__asm        jmp    near ptr 0x004A483A;
-
+	__asm        jmp    _T346;
+_T346:
+	__asm        jmp    _T34b;
+_T34b:
 	__asm        mov    eax, copyGraphicWindow;
 	__asm        mov    eax, [eax+0x68];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
@@ -5801,8 +5842,8 @@ _T375:
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     _T3b7;
 
-	__asm        jmp    near ptr 0x004A4880;
-
+	__asm        jmp    _T391;
+_T391:
 	__asm        mov    eax, copyGraphicWindow;
 	__asm        mov    eax, [eax+0x68];
 	__asm        mov    eax, [eax+4];
@@ -5819,8 +5860,9 @@ _T375:
 _T3b7:
 	this-><GraphicWindow+0x68:4> = 0x0;
 _T3c1:
-	__asm        jmp    near ptr 0x004A48B5;
+	__asm        jmp    _T3c6;
 // LINE 623:
+_T3c6:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x5C;
 	__asm        mov    ecx, copyGraphicWindow;
@@ -5846,20 +5888,20 @@ _T3c1:
 
 	__asm        mov    ecx, [ebp-0x14];
 	__asm        call   basic_string_ref<char>::delete_ptr;
-	__asm        jmp    near ptr 0x004A4908;
-
+	__asm        jmp    _T419;
+_T419:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A4919;
-
+	__asm        jmp    _T42a;
+_T42a:
 	__asm        jmp    _T42f;
 _T42f:
-	__asm        jmp    near ptr 0x004A4923;
-
-	__asm        jmp    near ptr 0x004A4928;
-
+	__asm        jmp    _T434;
+_T434:
+	__asm        jmp    _T439;
+_T439:
 	__asm        mov    eax, copyGraphicWindow;
 	__asm        mov    eax, [eax+0x60];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
@@ -5881,8 +5923,8 @@ _T463:
 	__asm        cmp    dword ptr [ebp-0x10], 0;
 	__asm        je     _T4a5;
 
-	__asm        jmp    near ptr 0x004A496E;
-
+	__asm        jmp    _T47f;
+_T47f:
 	__asm        mov    eax, copyGraphicWindow;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    eax, [eax+4];
@@ -5899,8 +5941,9 @@ _T463:
 _T4a5:
 	this-><GraphicWindow+0x60:4> = 0x0;
 _T4af:
-	__asm        jmp    near ptr 0x004A49A3;
+	__asm        jmp    _T4b4;
 // LINE 624:
+_T4b4:
 	__asm        mov    eax, this;
 	__asm        add    eax, 8;
 	__asm        mov    ecx, copyGraphicWindow;
@@ -5926,20 +5969,20 @@ _T4af:
 
 	__asm        mov    ecx, [ebp-0x20];
 	__asm        call   basic_string_ref<char>::delete_ptr;
-	__asm        jmp    near ptr 0x004A49F6;
-
+	__asm        jmp    _T507;
+_T507:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A4A07;
-
+	__asm        jmp    _T518;
+_T518:
 	__asm        jmp    _T51d;
 _T51d:
-	__asm        jmp    near ptr 0x004A4A11;
-
-	__asm        jmp    near ptr 0x004A4A16;
-
+	__asm        jmp    _T522;
+_T522:
+	__asm        jmp    _T527;
+_T527:
 	__asm        mov    eax, copyGraphicWindow;
 	__asm        mov    eax, [eax+0xC];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
@@ -5961,8 +6004,8 @@ _T551:
 	__asm        cmp    dword ptr [ebp-0x1C], 0;
 	__asm        je     _T593;
 
-	__asm        jmp    near ptr 0x004A4A5C;
-
+	__asm        jmp    _T56d;
+_T56d:
 	__asm        mov    eax, copyGraphicWindow;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    eax, [eax+4];
@@ -5979,8 +6022,9 @@ _T551:
 _T593:
 	this-><GraphicWindow+0x0c:4> = 0x0;
 _T59d:
-	__asm        jmp    near ptr 0x004A4A91;
+	__asm        jmp    _T5a2;
 // LINE 625:
+_T5a2:
 	__asm        mov    eax, this;
 	__asm        jmp    _T5aa;
 // LINE 626:
@@ -5994,8 +6038,8 @@ int  GraphicWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 	__asm        cmp    dword ptr [eax+0x40], 0;
 	__asm        jne    _T2e;
 
-	__asm        jmp    near ptr 0x004A4ABE;
-
+	__asm        jmp    _T1e;
+_T1e:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -6032,8 +6076,8 @@ _T38:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T88:
-	__asm        jmp    near ptr 0x004A4B2D;
-
+	__asm        jmp    _T8d;
+_T8d:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x68];
 	__asm        mov    eax, [eax+4];
@@ -6043,17 +6087,17 @@ _T88:
 	__asm        add    esp, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x64], eax;
-	__asm        jmp    near ptr 0x004A4B4B;
-
+	__asm        jmp    _Tab;
+_Tab:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x68];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     _T124;
 
-	__asm        jmp    near ptr 0x004A4B60;
-
-	__asm        jmp    near ptr 0x004A4B65;
-
+	__asm        jmp    _Tc0;
+_Tc0:
+	__asm        jmp    _Tc5;
+_Tc5:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x68];
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -6087,15 +6131,15 @@ _Tf6:
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T124;
 _T124:
-	__asm        jmp    near ptr 0x004A4BC9;
-
+	__asm        jmp    _T129;
+_T129:
 	__asm        mov    byte ptr [ebp-0xC], 0;
-	__asm        jmp    near ptr 0x004A4BD2;
-
+	__asm        jmp    _T132;
+_T132:
 	__asm        lea    eax, [ebp-0xC];
 	__asm        mov    [ebp-0x14], eax;
-	__asm        jmp    near ptr 0x004A4BDD;
-
+	__asm        jmp    _T13d;
+_T13d:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x68];
 	__asm        mov    eax, [eax+4];
@@ -6106,10 +6150,10 @@ _T124:
 	__asm        mov    al, [eax];
 	__asm        mov    ecx, [ebp-0x18];
 	__asm        mov    [ecx], al;
-	__asm        jmp    near ptr 0x004A4BFE;
-
-	__asm        jmp    near ptr 0x004A4C03;
-
+	__asm        jmp    _T15e;
+_T15e:
+	__asm        jmp    _T163;
+_T163:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x64];
 	__asm        push   eax;
@@ -6129,8 +6173,8 @@ _T187:
 	__asm        cmp    dword ptr [eax+0x40], 0;
 	__asm        je     _T1f9;
 // LINE 648:
-	__asm        jmp    near ptr 0x004A4C43;
-
+	__asm        jmp    _T1a3;
+_T1a3:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        mov    eax, [eax+8];
@@ -6139,8 +6183,8 @@ _T187:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x18], eax;
 // LINE 649:
-	__asm        jmp    near ptr 0x004A4C5D;
-
+	__asm        jmp    _T1bd;
+_T1bd:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        mov    eax, [eax+0xC];
@@ -6197,15 +6241,16 @@ void  GraphicWindow::DestroyImage() {
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A4D03;
-
+	__asm        jmp    _T58;
+_T58:
 	__asm        jmp    _T5d;
 // LINE 666:
 _T5d:
 	this-><GraphicWindow+0x40:4> = 0x0;
 // LINE 668:
 _T67:
-	__asm        jmp    near ptr 0x004A4D17;
+	__asm        jmp    _T6c;
+_T6c:
 }
 
 // FUNCTION: COPTER_D 0x004a4d1c
@@ -6241,7 +6286,8 @@ _T41:
 	__asm        call   dword ptr [edx+8];
 // LINE 682:
 _T56:
-	__asm        jmp    near ptr 0x004A4D77;
+	__asm        jmp    _T5b;
+_T5b:
 }
 
 // FUNCTION: COPTER_D 0x004a4d7e
@@ -6267,8 +6313,9 @@ void  GraphicWindow::MoveWindow(int32_t nXPosition, int32_t nYPosition) {
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, this;
 	__asm        add    [ecx+0x1C], eax;
-	__asm        jmp    near ptr 0x004A4DCB;
+	__asm        jmp    _T4d;
 // LINE 692:
+_T4d:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
@@ -6281,7 +6328,8 @@ void  GraphicWindow::MoveWindow(int32_t nXPosition, int32_t nYPosition) {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 694:
-	__asm        jmp    near ptr 0x004A4DEA;
+	__asm        jmp    _T6c;
+_T6c:
 }
 
 // FUNCTION: COPTER_D 0x004a4df1
@@ -6319,16 +6367,17 @@ _T3e:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 708:
-	__asm        jmp    near ptr 0x004A4E4E;
+	__asm        jmp    _T5d;
+_T5d:
 }
 
 // FUNCTION: COPTER_D 0x004a4e55
 void  GraphicWindow::CenterWindow(/*unpacked*/ class GraphicWindow *windowToCenterOn) {
 // LINE 716:
-	__asm        jmp    near ptr 0x004A4E66;
-
-	__asm        jmp    near ptr 0x004A4E6B;
-
+	__asm        jmp    _T11;
+_T11:
+	__asm        jmp    _T16;
+_T16:
 	__asm        mov    eax, windowToCenterOn;
 	__asm        mov    eax, [eax+0x1C];
 	__asm        mov    ecx, windowToCenterOn;
@@ -6350,7 +6399,8 @@ void  GraphicWindow::CenterWindow(/*unpacked*/ class GraphicWindow *windowToCent
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x3C];
 // LINE 717:
-	__asm        jmp    near ptr 0x004A4EA1;
+	__asm        jmp    _T4c;
+_T4c:
 }
 
 // FUNCTION: COPTER_D 0x004a4ea8
@@ -6362,8 +6412,8 @@ void  GraphicWindow::CenterWindow(int32_t nXPosition, int32_t nYPosition) {
 	__asm        cmp    nXPosition, 0xFFFFFFFF;
 	__asm        je     _T5a;
 // LINE 734:
-	__asm        jmp    near ptr 0x004A4EC3;
-
+	__asm        jmp    _T1b;
+_T1b:
 	__asm        mov    ecx, nXPosition;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x18];
@@ -6394,8 +6444,8 @@ _T5a:
 	__asm        cmp    nYPosition, 0xFFFFFFFF;
 	__asm        je     _Ta8;
 // LINE 739:
-	__asm        jmp    near ptr 0x004A4F11;
-
+	__asm        jmp    _T69;
+_T69:
 	__asm        mov    ecx, nYPosition;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1C];
@@ -6423,7 +6473,8 @@ _T5a:
 	__asm        call   dword ptr [eax+0x34];
 // LINE 743:
 _Ta8:
-	__asm        jmp    near ptr 0x004A4F55;
+	__asm        jmp    _Tad;
+_Tad:
 }
 
 // FUNCTION: COPTER_D 0x004a4f5c
@@ -6457,8 +6508,9 @@ int  GraphicWindow::FitRectToWindow(/*packed*/ class MRect& rectToFit) {
 	__asm        add    rectTempCurrentWindow.top, eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        add    rectTempCurrentWindow.bottom, eax;
-	__asm        jmp    near ptr 0x004A4FB4;
+	__asm        jmp    _T58;
 // LINE 760:
+_T58:
 	__asm        mov    eax, rectToFit;
 	__asm        mov    ecx, rectTempCurrentWindow.left;
 	__asm        cmp    [eax], ecx;
@@ -6539,10 +6591,10 @@ _Tec:
 	__asm        add    [ecx+0xC], eax;
 // LINE 777:
 _T11f:
-	__asm        jmp    near ptr 0x004A5080;
-
-	__asm        jmp    near ptr 0x004A5085;
-
+	__asm        jmp    _T124;
+_T124:
+	__asm        jmp    _T129;
+_T129:
 	__asm        mov    eax, rectTempCurrentWindow.right;
 	__asm        sub    eax, rectTempCurrentWindow.left;
 	__asm        mov    ecx, rectToFit;
@@ -6553,10 +6605,10 @@ _T11f:
 	__asm        cmp    eax, ecx;
 	__asm        jl     _T176;
 
-	__asm        jmp    near ptr 0x004A50A6;
-
-	__asm        jmp    near ptr 0x004A50AB;
-
+	__asm        jmp    _T14a;
+_T14a:
+	__asm        jmp    _T14f;
+_T14f:
 	__asm        mov    eax, rectTempCurrentWindow.bottom;
 	__asm        sub    eax, rectTempCurrentWindow.top;
 	__asm        mov    ecx, rectToFit;
@@ -6572,8 +6624,9 @@ _T11f:
 _T176:
 	__asm        xor    eax, eax;
 _T178:
-	__asm        jmp    near ptr 0x004A50D9;
+	__asm        jmp    _T17d;
 // LINE 778:
+_T17d:
 }
 
 // FUNCTION: COPTER_D 0x004a50e0
@@ -6596,8 +6649,8 @@ void  GraphicWindow::SetChanged(int32_t bChanged, int32_t bRecursive) {
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A5122;
-
+	__asm        jmp    _T42;
+_T42:
 	__asm        jmp    _T47;
 // LINE 791:
 _T47:
@@ -6606,10 +6659,10 @@ _T47:
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x004A513B;
-
-	__asm        jmp    near ptr 0x004A5140;
-
+	__asm        jmp    _T5b;
+_T5b:
+	__asm        jmp    _T60;
+_T60:
 	__asm        mov    eax, i.node;
 	__asm        cmp    [ebp-8], eax;
 	__asm        jne    _T76;
@@ -6633,8 +6686,8 @@ _T8f:
 	__asm        je     _Te4;
 // LINE 792:
 _T9e:
-	__asm        jmp    near ptr 0x004A5183;
-
+	__asm        jmp    _Ta3;
+_Ta3:
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x10], eax;
@@ -6652,17 +6705,19 @@ _T9e:
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A51B4;
-
+	__asm        jmp    _Td4;
+_Td4:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x004A51BF;
+	__asm        jmp    _Tdf;
 // LINE 794:
+_Tdf:
 	__asm        jmp    _T47;
 // LINE 797:
 // Block end:
 _Te4:
-	__asm        jmp    near ptr 0x004A51C9;
+	__asm        jmp    _Te9;
+_Te9:
 }
 
 // FUNCTION: COPTER_D 0x004a51d0
@@ -6707,22 +6762,22 @@ void  GraphicWindow::SetWindowTitle(/*packed*/ class basic_string<char>& sNewWin
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    dword ptr [eax], 0;
 _T87:
-	__asm        jmp    near ptr 0x004A525C;
-
-	__asm        jmp    near ptr 0x004A5261;
-
+	__asm        jmp    _T8c;
+_T8c:
+	__asm        jmp    _T91;
+_T91:
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A5272;
-
+	__asm        jmp    _Ta2;
+_Ta2:
 	__asm        jmp    _Ta7;
 _Ta7:
-	__asm        jmp    near ptr 0x004A527C;
-
-	__asm        jmp    near ptr 0x004A5281;
-
+	__asm        jmp    _Tac;
+_Tac:
+	__asm        jmp    _Tb1;
+_Tb1:
 	__asm        mov    eax, sNewWindowTitle;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
@@ -6744,8 +6799,8 @@ _Tdb:
 	__asm        cmp    dword ptr [ebp-4], 0;
 	__asm        je     _T1c4;
 
-	__asm        jmp    near ptr 0x004A52C7;
-
+	__asm        jmp    _Tf7;
+_Tf7:
 	__asm        mov    eax, sNewWindowTitle;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -6768,8 +6823,8 @@ _Tdb:
 	__asm        add    esp, 4;
 	__asm        mov    ecx, [ebp-4];
 	__asm        mov    [ecx], eax;
-	__asm        jmp    near ptr 0x004A530E;
-
+	__asm        jmp    _T13e;
+_T13e:
 	__asm        mov    eax, sNewWindowTitle;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -6800,8 +6855,8 @@ _T16f:
 	__asm        push   eax;
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x004A5369;
-
+	__asm        jmp    _T199;
+_T199:
 	__asm        jmp    _T1a7;
 _T19e:
 	__asm        mov    eax, [ebp-4];
@@ -6809,8 +6864,8 @@ _T19e:
 _T1a7:
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    dword ptr [eax+0xC], 1;
-	__asm        jmp    near ptr 0x004A5386;
-
+	__asm        jmp    _T1b6;
+_T1b6:
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], eax;
@@ -6818,8 +6873,9 @@ _T1a7:
 _T1c4:
 	this-><GraphicWindow+0x0c:4> = 0x0;
 _T1ce:
-	__asm        jmp    near ptr 0x004A53A3;
+	__asm        jmp    _T1d3;
 // LINE 810:
+_T1d3:
 	__asm        push   1;
 	__asm        push   1;
 	__asm        mov    eax, this;
@@ -6827,7 +6883,8 @@ _T1ce:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 811:
-	__asm        jmp    near ptr 0x004A53B7;
+	__asm        jmp    _T1e7;
+_T1e7:
 }
 
 // FUNCTION: COPTER_D 0x004a53be
@@ -6838,10 +6895,10 @@ int  GraphicWindow::AddChild(/*unpacked*/ class GraphicWindow *windowNewChild) {
 	__asm        mov    [ebp-0xC], eax;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-4], eax;
-	__asm        jmp    near ptr 0x004A53DE;
-
-	__asm        jmp    near ptr 0x004A53E3;
-
+	__asm        jmp    _T20;
+_T20:
+	__asm        jmp    _T25;
+_T25:
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x68], eax;
 	__asm        mov    eax, list<GraphicWindow *>::free_list;
@@ -6878,16 +6935,16 @@ _T57:
 	__asm        push   eax;
 	__asm        call   endl;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A546A;
-
+	__asm        jmp    _Tac;
+_Tac:
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 _Tb6:
-	__asm        jmp    near ptr 0x004A5479;
-
-	__asm        jmp    near ptr 0x004A547E;
-
+	__asm        jmp    _Tbb;
+_Tbb:
+	__asm        jmp    _Tc0;
+_Tc0:
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    dword ptr [ebp-0x28], 0x155;
@@ -6909,12 +6966,12 @@ _Tfb:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x38], eax;
 _T101:
-	__asm        jmp    near ptr 0x004A54C4;
-
-	__asm        jmp    near ptr 0x004A54C9;
-
-	__asm        jmp    near ptr 0x004A54CE;
-
+	__asm        jmp    _T106;
+_T106:
+	__asm        jmp    _T10b;
+_T10b:
+	__asm        jmp    _T110;
+_T110:
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x60], eax;
@@ -6939,16 +6996,16 @@ _T101:
 	__asm        push   eax;
 	__asm        call   endl;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A5522;
-
+	__asm        jmp    _T164;
+_T164:
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 _T16e:
-	__asm        jmp    near ptr 0x004A5531;
-
-	__asm        jmp    near ptr 0x004A5536;
-
+	__asm        jmp    _T173;
+_T173:
+	__asm        jmp    _T178;
+_T178:
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        mov    [ecx+4], eax;
@@ -6979,20 +7036,20 @@ _T1d5:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x4C], eax;
 _T1db:
-	__asm        jmp    near ptr 0x004A559E;
-
-	__asm        jmp    near ptr 0x004A55A3;
-
-	__asm        jmp    near ptr 0x004A55A8;
-
+	__asm        jmp    _T1e0;
+_T1e0:
+	__asm        jmp    _T1e5;
+_T1e5:
+	__asm        jmp    _T1ea;
+_T1ea:
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    eax, [eax];
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
 	__asm        add    eax, list<GraphicWindow *>::next_avail;
 	__asm        mov    list<GraphicWindow *>::last, eax;
-	__asm        jmp    near ptr 0x004A55C3;
-
+	__asm        jmp    _T205;
+_T205:
 	__asm        mov    eax, list<GraphicWindow *>::next_avail;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        add    list<GraphicWindow *>::next_avail, 0xC;
@@ -7006,17 +7063,17 @@ _T21f:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x64], eax;
 _T234:
-	__asm        jmp    near ptr 0x004A55F7;
-
+	__asm        jmp    _T239;
+_T239:
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    near ptr 0x004A5602;
-
+	__asm        jmp    _T244;
+_T244:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x14], eax;
-	__asm        jmp    near ptr 0x004A5610;
-
+	__asm        jmp    _T252;
+_T252:
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     _T269;
 
@@ -7025,8 +7082,8 @@ _T234:
 	__asm        mov    [ecx], eax;
 	__asm        jmp    _T269;
 _T269:
-	__asm        jmp    near ptr 0x004A562C;
-
+	__asm        jmp    _T26e;
+_T26e:
 	__asm        mov    eax, [ebp-0x68];
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx], eax;
@@ -7045,12 +7102,13 @@ _T269:
 	__asm        inc    dword ptr [eax+0x34];
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x004A5665;
-
-	__asm        jmp    near ptr 0x004A566A;
-
-	__asm        jmp    near ptr 0x004A566F;
+	__asm        jmp    _T2a7;
+_T2a7:
+	__asm        jmp    _T2ac;
+_T2ac:
+	__asm        jmp    _T2b1;
 // LINE 819:
+_T2b1:
 	__asm        mov    eax, windowNewChild;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, windowNewChild;
@@ -7064,8 +7122,9 @@ _T269:
 	__asm        call   dword ptr [eax+0x30];
 // LINE 821:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004A5693;
+	__asm        jmp    _T2d5;
 // LINE 822:
+_T2d5:
 }
 
 // FUNCTION: COPTER_D 0x004a569a
@@ -7080,10 +7139,11 @@ int  GraphicWindow::DeleteChild(/*unpacked*/ class GraphicWindow *windowChild) {
 	__asm        mov    [ebp-0x30], eax;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A56BC;
-
-	__asm        jmp    near ptr 0x004A56C1;
+	__asm        jmp    _T22;
+_T22:
+	__asm        jmp    _T27;
 // LINE 832:
+_T27:
 	nReturnValue = 0x0;
 // LINE 835:
 _T2e:
@@ -7092,10 +7152,10 @@ _T2e:
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x004A56DC;
-
-	__asm        jmp    near ptr 0x004A56E1;
-
+	__asm        jmp    _T42;
+_T42:
+	__asm        jmp    _T47;
+_T47:
 	__asm        mov    eax, i.node;
 	__asm        cmp    [ebp-0xC], eax;
 	__asm        jne    _T5d;
@@ -7119,8 +7179,8 @@ _T76:
 	__asm        je     _T18e;
 // LINE 836:
 _T85:
-	__asm        jmp    near ptr 0x004A5724;
-
+	__asm        jmp    _T8a;
+_T8a:
 	__asm        mov    eax, i.node;
 	__asm        mov    ecx, windowChild;
 	__asm        cmp    [eax+8], ecx;
@@ -7131,12 +7191,12 @@ _T85:
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A5746;
-
+	__asm        jmp    _Tac;
+_Tac:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    near ptr 0x004A5751;
-
+	__asm        jmp    _Tb7;
+_Tb7:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        mov    eax, [ebp-0x38];
@@ -7149,21 +7209,22 @@ _T85:
 	__asm        mov    ecx, [ebp-0x38];
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x004A5777;
-
-	__asm        jmp    near ptr 0x004A577C;
-
+	__asm        jmp    _Tdd;
+_Tdd:
+	__asm        jmp    _Te2;
+_Te2:
 	__asm        mov    eax, list<GraphicWindow *>::free_list;
 	__asm        mov    ecx, [ebp-0x38];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    list<GraphicWindow *>::free_list, eax;
-	__asm        jmp    near ptr 0x004A5793;
-
+	__asm        jmp    _Tf9;
+_Tf9:
 	__asm        mov    eax, this;
 	__asm        dec    dword ptr [eax+0x34];
-	__asm        jmp    near ptr 0x004A579E;
+	__asm        jmp    _T104;
 // LINE 841:
+_T104:
 	__asm        mov    eax, windowChild;
 	__asm        push   eax;
 	__asm        mov    eax, GraphicWindow::windowManager;
@@ -7207,8 +7268,8 @@ _T16b:
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A5818;
-
+	__asm        jmp    _T17e;
+_T17e:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    _T189;
@@ -7218,8 +7279,9 @@ _T189:
 // LINE 852:
 _T18e:
 	__asm        mov    eax, nReturnValue;
-	__asm        jmp    near ptr 0x004A5830;
+	__asm        jmp    _T196;
 // LINE 853:
+_T196:
 }
 
 // FUNCTION: COPTER_D 0x004a5837
@@ -7234,10 +7296,11 @@ class GraphicWindow *  GraphicWindow::DeleteChild(long lChildID) {
 	__asm        mov    [ebp-0x30], eax;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A5859;
-
-	__asm        jmp    near ptr 0x004A585E;
+	__asm        jmp    _T22;
+_T22:
+	__asm        jmp    _T27;
 // LINE 863:
+_T27:
 	windowFound = 0x0;
 // LINE 865:
 	__asm        mov    eax, GraphicWindow::windowManager;
@@ -7251,10 +7314,10 @@ _T3e:
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x004A5889;
-
-	__asm        jmp    near ptr 0x004A588E;
-
+	__asm        jmp    _T52;
+_T52:
+	__asm        jmp    _T57;
+_T57:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        cmp    i.node, eax;
 	__asm        jne    _T6d;
@@ -7278,16 +7341,16 @@ _T86:
 	__asm        je     _T1a8;
 // LINE 867:
 _T95:
-	__asm        jmp    near ptr 0x004A58D1;
-
+	__asm        jmp    _T9a;
+_T9a:
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, lChildID;
 	__asm        cmp    [eax+4], ecx;
 	__asm        jne    _T185;
 // LINE 871:
-	__asm        jmp    near ptr 0x004A58E8;
-
+	__asm        jmp    _Tb1;
+_Tb1:
 	windowFound = i.node->data;
 // LINE 872:
 	__asm        mov    eax, i.node;
@@ -7295,12 +7358,12 @@ _T95:
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A5904;
-
+	__asm        jmp    _Tcd;
+_Tcd:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    near ptr 0x004A590F;
-
+	__asm        jmp    _Td8;
+_Td8:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-0x38], eax;
 	__asm        mov    eax, [ebp-0x38];
@@ -7313,21 +7376,22 @@ _T95:
 	__asm        mov    ecx, [ebp-0x38];
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x004A5935;
-
-	__asm        jmp    near ptr 0x004A593A;
-
+	__asm        jmp    _Tfe;
+_Tfe:
+	__asm        jmp    _T103;
+_T103:
 	__asm        mov    eax, list<GraphicWindow *>::free_list;
 	__asm        mov    ecx, [ebp-0x38];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    list<GraphicWindow *>::free_list, eax;
-	__asm        jmp    near ptr 0x004A5951;
-
+	__asm        jmp    _T11a;
+_T11a:
 	__asm        mov    eax, this;
 	__asm        dec    dword ptr [eax+0x34];
-	__asm        jmp    near ptr 0x004A595C;
+	__asm        jmp    _T125;
 // LINE 873:
+_T125:
 	__asm        mov    eax, windowFound;
 	__asm        push   eax;
 	__asm        mov    eax, GraphicWindow::windowManager;
@@ -7369,8 +7433,8 @@ _T185:
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A59CF;
-
+	__asm        jmp    _T198;
+_T198:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        jmp    _T1a3;
@@ -7391,8 +7455,9 @@ _T1a8:
 // LINE 883:
 _T1cb:
 	__asm        mov    eax, windowFound;
-	__asm        jmp    near ptr 0x004A5A0A;
+	__asm        jmp    _T1d3;
 // LINE 884:
+_T1d3:
 }
 
 // FUNCTION: COPTER_D 0x004a5a11
@@ -7407,10 +7472,11 @@ int  GraphicWindow::RemoveChild(/*unpacked*/ class GraphicWindow *windowNewChild
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A5A33;
-
-	__asm        jmp    near ptr 0x004A5A38;
+	__asm        jmp    _T22;
+_T22:
+	__asm        jmp    _T27;
 // LINE 894:
+_T27:
 	nReturnValue = 0x0;
 // LINE 896:
 _T2e:
@@ -7419,10 +7485,10 @@ _T2e:
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x004A5A53;
-
-	__asm        jmp    near ptr 0x004A5A58;
-
+	__asm        jmp    _T42;
+_T42:
+	__asm        jmp    _T47;
+_T47:
 	__asm        mov    eax, i.node;
 	__asm        cmp    [ebp-0xC], eax;
 	__asm        jne    _T5d;
@@ -7446,8 +7512,8 @@ _T76:
 	__asm        je     _T138;
 // LINE 897:
 _T85:
-	__asm        jmp    near ptr 0x004A5A9B;
-
+	__asm        jmp    _T8a;
+_T8a:
 	__asm        mov    eax, i.node;
 	__asm        mov    ecx, windowNewChild;
 	__asm        cmp    [eax+8], ecx;
@@ -7458,12 +7524,12 @@ _T85:
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A5ABD;
-
+	__asm        jmp    _Tac;
+_Tac:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    near ptr 0x004A5AC8;
-
+	__asm        jmp    _Tb7;
+_Tb7:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-0x30], eax;
 	__asm        mov    eax, [ebp-0x30];
@@ -7476,21 +7542,22 @@ _T85:
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x004A5AEE;
-
-	__asm        jmp    near ptr 0x004A5AF3;
-
+	__asm        jmp    _Tdd;
+_Tdd:
+	__asm        jmp    _Te2;
+_Te2:
 	__asm        mov    eax, list<GraphicWindow *>::free_list;
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    list<GraphicWindow *>::free_list, eax;
-	__asm        jmp    near ptr 0x004A5B0A;
-
+	__asm        jmp    _Tf9;
+_Tf9:
 	__asm        mov    eax, this;
 	__asm        dec    dword ptr [eax+0x34];
-	__asm        jmp    near ptr 0x004A5B15;
+	__asm        jmp    _T104;
 // LINE 899:
+_T104:
 	nReturnValue = 0x1;
 // LINE 900:
 	__asm        jmp    _T138;
@@ -7503,8 +7570,8 @@ _T115:
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A5B39;
-
+	__asm        jmp    _T128;
+_T128:
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    [ebp-0x14], eax;
 	__asm        jmp    _T133;
@@ -7514,8 +7581,9 @@ _T133:
 // LINE 905:
 _T138:
 	__asm        mov    eax, nReturnValue;
-	__asm        jmp    near ptr 0x004A5B51;
+	__asm        jmp    _T140;
 // LINE 906:
+_T140:
 }
 
 // FUNCTION: COPTER_D 0x004a5b58
@@ -7530,10 +7598,11 @@ void  GraphicWindow::DeleteAllChildren() {
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A5B7A;
-
-	__asm        jmp    near ptr 0x004A5B7F;
+	__asm        jmp    _T22;
+_T22:
+	__asm        jmp    _T27;
 // LINE 917:
+_T27:
 	__asm        mov    eax, GraphicWindow::windowManager;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, GraphicWindow::windowManager;
@@ -7545,10 +7614,10 @@ _T37:
 	__asm        mov    [ebp-0x20], eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x004A5BA3;
-
-	__asm        jmp    near ptr 0x004A5BA8;
-
+	__asm        jmp    _T4b;
+_T4b:
+	__asm        jmp    _T50;
+_T50:
 	__asm        mov    eax, i.node;
 	__asm        cmp    [ebp-0xC], eax;
 	__asm        jne    _T66;
@@ -7572,8 +7641,8 @@ _T7f:
 	__asm        je     _T153;
 // LINE 922:
 _T8e:
-	__asm        jmp    near ptr 0x004A5BEB;
-
+	__asm        jmp    _T93;
+_T93:
 	windowToDelete = i.node->data;
 // LINE 923:
 	__asm        mov    eax, i.node;
@@ -7581,12 +7650,12 @@ _T8e:
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A5C07;
-
+	__asm        jmp    _Taf;
+_Taf:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    near ptr 0x004A5C12;
-
+	__asm        jmp    _Tba;
+_Tba:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-0x30], eax;
 	__asm        mov    eax, [ebp-0x30];
@@ -7599,21 +7668,22 @@ _T8e:
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x004A5C38;
-
-	__asm        jmp    near ptr 0x004A5C3D;
-
+	__asm        jmp    _Te0;
+_Te0:
+	__asm        jmp    _Te5;
+_Te5:
 	__asm        mov    eax, list<GraphicWindow *>::free_list;
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    list<GraphicWindow *>::free_list, eax;
-	__asm        jmp    near ptr 0x004A5C54;
-
+	__asm        jmp    _Tfc;
+_Tfc:
 	__asm        mov    eax, this;
 	__asm        dec    dword ptr [eax+0x34];
-	__asm        jmp    near ptr 0x004A5C5F;
+	__asm        jmp    _T107;
 // LINE 924:
+_T107:
 	__asm        mov    eax, windowToDelete;
 	__asm        push   eax;
 	__asm        mov    eax, GraphicWindow::windowManager;
@@ -7652,7 +7722,8 @@ _T153:
 	__asm        call   GraphicWindowManager::DeleteAllWindowsInDeletionList;
 // LINE 929:
 _T176:
-	__asm        jmp    near ptr 0x004A5CD3;
+	__asm        jmp    _T17b;
+_T17b:
 }
 
 // FUNCTION: COPTER_D 0x004a5cd8
@@ -7666,8 +7737,8 @@ void  GraphicWindow::RemoveAllChildren() {
 	__asm        mov    [ebp-0x20], eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A5CFA;
-
+	__asm        jmp    _T22;
+_T22:
 	__asm        jmp    _T27;
 // LINE 938:
 _T27:
@@ -7676,10 +7747,10 @@ _T27:
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x004A5D13;
-
-	__asm        jmp    near ptr 0x004A5D18;
-
+	__asm        jmp    _T3b;
+_T3b:
+	__asm        jmp    _T40;
+_T40:
 	__asm        mov    eax, i.node;
 	__asm        cmp    [ebp-8], eax;
 	__asm        jne    _T56;
@@ -7708,12 +7779,12 @@ _T7e:
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A5D69;
-
+	__asm        jmp    _T91;
+_T91:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x004A5D74;
-
+	__asm        jmp    _T9c;
+_T9c:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    eax, [ebp-0x24];
@@ -7726,25 +7797,26 @@ _T7e:
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x004A5D9A;
-
-	__asm        jmp    near ptr 0x004A5D9F;
-
+	__asm        jmp    _Tc2;
+_Tc2:
+	__asm        jmp    _Tc7;
+_Tc7:
 	__asm        mov    eax, list<GraphicWindow *>::free_list;
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    list<GraphicWindow *>::free_list, eax;
-	__asm        jmp    near ptr 0x004A5DB6;
-
+	__asm        jmp    _Tde;
+_Tde:
 	__asm        mov    eax, this;
 	__asm        add    dword ptr [eax+0x34], 0xFFFFFFFF;
-	__asm        jmp    near ptr 0x004A5DC2;
-
+	__asm        jmp    _Tea;
+_Tea:
 	__asm        jmp    _T27;
 // LINE 940:
 _Tef:
-	__asm        jmp    near ptr 0x004A5DCC;
+	__asm        jmp    _Tf4;
+_Tf4:
 }
 
 // FUNCTION: COPTER_D 0x004a5dd1
@@ -7758,8 +7830,8 @@ class GraphicWindow *  GraphicWindow::FindChild(long lChildID) {
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A5DF3;
-
+	__asm        jmp    _T22;
+_T22:
 	__asm        jmp    _T27;
 // LINE 953:
 _T27:
@@ -7768,10 +7840,10 @@ _T27:
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x004A5E0C;
-
-	__asm        jmp    near ptr 0x004A5E11;
-
+	__asm        jmp    _T3b;
+_T3b:
+	__asm        jmp    _T40;
+_T40:
 	__asm        mov    eax, i.node;
 	__asm        cmp    [ebp-8], eax;
 	__asm        jne    _T56;
@@ -7795,16 +7867,16 @@ _T6f:
 	__asm        je     _Tc8;
 // LINE 954:
 _T7e:
-	__asm        jmp    near ptr 0x004A5E54;
-
+	__asm        jmp    _T83;
+_T83:
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, lChildID;
 	__asm        cmp    [eax+4], ecx;
 	__asm        jne    _Ta5;
 // LINE 955:
-	__asm        jmp    near ptr 0x004A5E6B;
-
+	__asm        jmp    _T9a;
+_T9a:
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax+8];
 	__asm        jmp    _Tcf;
@@ -7815,12 +7887,13 @@ _Ta5:
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A5E89;
-
+	__asm        jmp    _Tb8;
+_Tb8:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x004A5E94;
+	__asm        jmp    _Tc3;
 // LINE 957:
+_Tc3:
 	__asm        jmp    _T27;
 // LINE 958:
 _Tc8:
@@ -7840,8 +7913,8 @@ class GraphicWindow *  GraphicWindow::FindWindowA(long lID) {
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A5EC5;
-
+	__asm        jmp    _T1e;
+_T1e:
 	__asm        jmp    _T23;
 // LINE 971:
 _T23:
@@ -7849,10 +7922,10 @@ _T23:
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x004A5EDD;
-
-	__asm        jmp    near ptr 0x004A5EE2;
-
+	__asm        jmp    _T36;
+_T36:
+	__asm        jmp    _T3b;
+_T3b:
 	__asm        mov    eax, i.node;
 	__asm        cmp    [ebp-8], eax;
 	__asm        jne    _T51;
@@ -7876,16 +7949,16 @@ _T6a:
 	__asm        je     _Tc3;
 // LINE 972:
 _T79:
-	__asm        jmp    near ptr 0x004A5F25;
-
+	__asm        jmp    _T7e;
+_T7e:
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, lID;
 	__asm        cmp    [eax+4], ecx;
 	__asm        jne    _Ta0;
 // LINE 973:
-	__asm        jmp    near ptr 0x004A5F3C;
-
+	__asm        jmp    _T95;
+_T95:
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax+8];
 	__asm        jmp    _Tca;
@@ -7896,12 +7969,13 @@ _Ta0:
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A5F5A;
-
+	__asm        jmp    _Tb3;
+_Tb3:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x004A5F65;
+	__asm        jmp    _Tbe;
 // LINE 975:
+_Tbe:
 	__asm        jmp    _T23;
 // LINE 976:
 _Tc3:
@@ -7921,8 +7995,8 @@ int  GraphicWindow::FindWindowA(/*unpacked*/ class GraphicWindow *windowToFind) 
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A5F94;
-
+	__asm        jmp    _T1e;
+_T1e:
 	__asm        jmp    _T23;
 // LINE 986:
 _T23:
@@ -7930,10 +8004,10 @@ _T23:
 	__asm        mov    [ebp-0x10], eax;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x004A5FAC;
-
-	__asm        jmp    near ptr 0x004A5FB1;
-
+	__asm        jmp    _T36;
+_T36:
+	__asm        jmp    _T3b;
+_T3b:
 	__asm        mov    eax, [ebp-8];
 	__asm        cmp    i.node, eax;
 	__asm        jne    _T51;
@@ -7957,8 +8031,8 @@ _T6a:
 	__asm        je     _Tba;
 // LINE 987:
 _T79:
-	__asm        jmp    near ptr 0x004A5FF4;
-
+	__asm        jmp    _T7e;
+_T7e:
 	__asm        mov    eax, i.node;
 	__asm        mov    ecx, windowToFind;
 	__asm        cmp    [eax+8], ecx;
@@ -7973,12 +8047,13 @@ _T97:
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A6020;
-
+	__asm        jmp    _Taa;
+_Taa:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x004A602B;
+	__asm        jmp    _Tb5;
 // LINE 990:
+_Tb5:
 	__asm        jmp    _T23;
 // LINE 991:
 _Tba:
@@ -7999,8 +8074,9 @@ int  GraphicWindow::DeleteSelf() {
 	__asm        call   dword ptr [eax+4];
 // LINE 1001:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004A6066;
+	__asm        jmp    _T2a;
 // LINE 1002:
+_T2a:
 }
 
 // FUNCTION: COPTER_D 0x004a606b
@@ -8020,7 +8096,8 @@ void  GraphicWindow::RemoveSelf() {
 	__asm        call   dword ptr [edx+0x60];
 // LINE 1013:
 _T2e:
-	__asm        jmp    near ptr 0x004A609E;
+	__asm        jmp    _T33;
+_T33:
 }
 
 // FUNCTION: COPTER_D 0x004a60a3
@@ -8063,10 +8140,10 @@ _T61:
 	__asm        cmp    dword ptr [eax+0x40], 0;
 	__asm        je     _Tb6;
 // LINE 1039:
-	__asm        jmp    near ptr 0x004A6116;
-
-	__asm        jmp    near ptr 0x004A611B;
-
+	__asm        jmp    _T73;
+_T73:
+	__asm        jmp    _T78;
+_T78:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
 	__asm        mov    eax, [eax+0xC];
@@ -8104,8 +8181,9 @@ _Tc0:
 int  GraphicWindow::DrawSelf() {
 // LINE 1060:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004A617B;
+	__asm        jmp    _T13;
 // LINE 1061:
+_T13:
 }
 
 // FUNCTION: COPTER_D 0x004a6180
@@ -8127,8 +8205,8 @@ _T1e:
 	__asm        mov    [ebp-0x20], eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A61B4;
-
+	__asm        jmp    _T34;
+_T34:
 	__asm        jmp    _T39;
 // LINE 1082:
 _T39:
@@ -8137,10 +8215,10 @@ _T39:
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x004A61CD;
-
-	__asm        jmp    near ptr 0x004A61D2;
-
+	__asm        jmp    _T4d;
+_T4d:
+	__asm        jmp    _T52;
+_T52:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        cmp    i.node, eax;
 	__asm        jne    _T68;
@@ -8164,8 +8242,8 @@ _T81:
 	__asm        je     _Tcc;
 // LINE 1088:
 _T90:
-	__asm        jmp    near ptr 0x004A6215;
-
+	__asm        jmp    _T95;
+_T95:
 	gwCurrentChild = i.node->data;
 // LINE 1089:
 	__asm        mov    eax, i.node;
@@ -8173,12 +8251,13 @@ _T90:
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A6231;
-
+	__asm        jmp    _Tb1;
+_Tb1:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    near ptr 0x004A623C;
+	__asm        jmp    _Tbc;
 // LINE 1090:
+_Tbc:
 	__asm        mov    eax, gwCurrentChild;
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, gwCurrentChild;
@@ -8197,8 +8276,8 @@ void  GraphicWindow::InvalidateAllOverlaps(/*packed*/ class list<GraphicWindow *
 	/*bp-0x8*/   /*unpacked*/ class GraphicWindow *windowNextChild;
 
 // LINE 1117:
-	__asm        jmp    near ptr 0x004A6267;
-
+	__asm        jmp    _T11;
+_T11:
 	windowCurrentChild = windowChildListItem.node->data;
 // LINE 1119:
 	windowNextChild += 0x74;
@@ -8209,10 +8288,10 @@ _T1e:
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x004A6288;
-
-	__asm        jmp    near ptr 0x004A628D;
-
+	__asm        jmp    _T32;
+_T32:
+	__asm        jmp    _T37;
+_T37:
 	__asm        mov    eax, windowChildListItem.node;
 	__asm        cmp    [ebp-0xC], eax;
 	__asm        jne    _T4d;
@@ -8236,16 +8315,16 @@ _T66:
 	__asm        je     _T137;
 // LINE 1121:
 _T75:
-	__asm        jmp    near ptr 0x004A62D0;
-
+	__asm        jmp    _T7a;
+_T7a:
 	windowNextChild = windowChildListItem.node->data;
 // LINE 1122:
 	__asm        mov    eax, windowNextChild;
 	__asm        cmp    dword ptr [eax+0x4C], 0;
 	__asm        jne    _T114;
 // LINE 1123:
-	__asm        jmp    near ptr 0x004A62EB;
-
+	__asm        jmp    _T95;
+_T95:
 	__asm        mov    eax, windowNextChild;
 	__asm        mov    ecx, windowCurrentChild;
 	__asm        mov    ecx, [ecx+0x10];
@@ -8300,16 +8379,18 @@ _T114:
 	__asm        mov    eax, windowChildListItem.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    windowChildListItem.node, eax;
-	__asm        jmp    near ptr 0x004A637D;
-
+	__asm        jmp    _T127;
+_T127:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    near ptr 0x004A6388;
+	__asm        jmp    _T132;
 // LINE 1129:
+_T132:
 	__asm        jmp    _T1e;
 // LINE 1130:
 _T137:
-	__asm        jmp    near ptr 0x004A6392;
+	__asm        jmp    _T13c;
+_T13c:
 }
 
 // FUNCTION: COPTER_D 0x004a6399
@@ -8323,8 +8404,8 @@ void  GraphicWindow::InvalidateAllChildren(int32_t bRecursive) {
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A63BB;
-
+	__asm        jmp    _T22;
+_T22:
 	__asm        jmp    _T27;
 // LINE 1138:
 _T27:
@@ -8333,10 +8414,10 @@ _T27:
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x004A63D4;
-
-	__asm        jmp    near ptr 0x004A63D9;
-
+	__asm        jmp    _T3b;
+_T3b:
+	__asm        jmp    _T40;
+_T40:
 	__asm        mov    eax, i.node;
 	__asm        cmp    [ebp-8], eax;
 	__asm        jne    _T56;
@@ -8360,8 +8441,8 @@ _T6f:
 	__asm        je     _Tc6;
 // LINE 1139:
 _T7e:
-	__asm        jmp    near ptr 0x004A641C;
-
+	__asm        jmp    _T83;
+_T83:
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x10], eax;
@@ -8380,16 +8461,18 @@ _T7e:
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A644F;
-
+	__asm        jmp    _Tb6;
+_Tb6:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x004A645A;
+	__asm        jmp    _Tc1;
 // LINE 1141:
+_Tc1:
 	__asm        jmp    _T27;
 // LINE 1142:
 _Tc6:
-	__asm        jmp    near ptr 0x004A6464;
+	__asm        jmp    _Tcb;
+_Tcb:
 }
 
 // FUNCTION: COPTER_D 0x004a646b
@@ -8397,8 +8480,8 @@ int  GraphicWindow::DoesWindowNeedUpdating() {
 	/*bp-0x4*/   /*packed*/ class list<GraphicWindow *>::iterator i;
 
 // LINE 1163:
-	__asm        jmp    near ptr 0x004A647C;
-
+	__asm        jmp    _T11;
+_T11:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x48], 0;
 	__asm        je     _T28;
@@ -8413,8 +8496,8 @@ _T28:
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A64A9;
-
+	__asm        jmp    _T3e;
+_T3e:
 	__asm        jmp    _T43;
 // LINE 1169:
 _T43:
@@ -8423,10 +8506,10 @@ _T43:
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x004A64C2;
-
-	__asm        jmp    near ptr 0x004A64C7;
-
+	__asm        jmp    _T57;
+_T57:
+	__asm        jmp    _T5c;
+_T5c:
 	__asm        mov    eax, [ebp-8];
 	__asm        cmp    i.node, eax;
 	__asm        jne    _T72;
@@ -8450,8 +8533,8 @@ _T8b:
 	__asm        je     _Tf1;
 // LINE 1170:
 _T9a:
-	__asm        jmp    near ptr 0x004A650A;
-
+	__asm        jmp    _T9f;
+_T9f:
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x10], eax;
@@ -8473,12 +8556,13 @@ _Tce:
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A654C;
-
+	__asm        jmp    _Te1;
+_Te1:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x004A6557;
+	__asm        jmp    _Tec;
 // LINE 1173:
+_Tec:
 	__asm        jmp    _T43;
 // LINE 1174:
 _Tf1:
@@ -8492,48 +8576,54 @@ _Tf8:
 long  GraphicWindow::DoCharacter(long lCharacter) {
 // LINE 1187:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004A657B;
+	__asm        jmp    _T13;
 // LINE 1188:
+_T13:
 }
 
 // FUNCTION: COPTER_D 0x004a6582
 long  GraphicWindow::DoKeyDown(long lKey, char chModifiers) {
 // LINE 1200:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004A6595;
+	__asm        jmp    _T13;
 // LINE 1201:
+_T13:
 }
 
 // FUNCTION: COPTER_D 0x004a659c
 long  GraphicWindow::DoKeyUp(long lKey, char chModifiers) {
 // LINE 1214:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004A65AF;
+	__asm        jmp    _T13;
 // LINE 1215:
+_T13:
 }
 
 // FUNCTION: COPTER_D 0x004a65b6
 long  GraphicWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 1231:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004A65C9;
+	__asm        jmp    _T13;
 // LINE 1232:
+_T13:
 }
 
 // FUNCTION: COPTER_D 0x004a65d0
 long  GraphicWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 1244:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004A65E6;
+	__asm        jmp    _T16;
 // LINE 1245:
+_T16:
 }
 
 // FUNCTION: COPTER_D 0x004a65ed
 long  GraphicWindow::DoCursorMove(long nCursorX, long nCursorY) {
 // LINE 1257:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004A6600;
+	__asm        jmp    _T13;
 // LINE 1258:
+_T13:
 }
 
 // FUNCTION: COPTER_D 0x004a6607
@@ -8594,7 +8684,8 @@ _T12:
 	__asm        jmp    _T12;
 // LINE 1307:
 _T43:
-	__asm        jmp    near ptr 0x004A66C5;
+	__asm        jmp    _T48;
+_T48:
 }
 
 // FUNCTION: COPTER_D 0x004a66cc
@@ -8628,7 +8719,8 @@ void  GraphicWindow::ScreenToWindowCoordinates(long& nXPosition, long& nYPositio
 	__asm        mov    ecx, nYPosition;
 	__asm        sub    [ecx], eax;
 // LINE 1327:
-	__asm        jmp    near ptr 0x004A6719;
+	__asm        jmp    _T4d;
+_T4d:
 }
 
 // FUNCTION: COPTER_D 0x004a6720
@@ -8636,8 +8728,9 @@ class CBackBuffer *  GraphicWindow::GetImage() {
 // LINE 1341:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x40];
-	__asm        jmp    near ptr 0x004A6737;
+	__asm        jmp    _T17;
 // LINE 1342:
+_T17:
 }
 
 // FUNCTION: COPTER_D 0x004a673c
@@ -8659,8 +8752,8 @@ void  GraphicWindow::GetImagePath() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T4c:
-	__asm        jmp    near ptr 0x004A678D;
-
+	__asm        jmp    _T51;
+_T51:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    eax, [eax+4];
@@ -8670,17 +8763,17 @@ _T4c:
 	__asm        add    esp, 4;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x5C], eax;
-	__asm        jmp    near ptr 0x004A67B1;
-
+	__asm        jmp    _T75;
+_T75:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     _T112;
 
-	__asm        jmp    near ptr 0x004A67C9;
-
-	__asm        jmp    near ptr 0x004A67CE;
-
+	__asm        jmp    _T8d;
+_T8d:
+	__asm        jmp    _T92;
+_T92:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -8714,15 +8807,15 @@ _Tcf:
 	__asm        add    esp, 0xC;
 	__asm        jmp    _T112;
 _T112:
-	__asm        jmp    near ptr 0x004A6853;
-
+	__asm        jmp    _T117;
+_T117:
 	__asm        mov    byte ptr [ebp-0x140], 0;
-	__asm        jmp    near ptr 0x004A685F;
-
+	__asm        jmp    _T123;
+_T123:
 	__asm        lea    eax, [ebp-0x140];
 	__asm        mov    [ebp-0x148], eax;
-	__asm        jmp    near ptr 0x004A6870;
-
+	__asm        jmp    _T134;
+_T134:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x60];
 	__asm        mov    eax, [eax+4];
@@ -8733,10 +8826,10 @@ _T112:
 	__asm        mov    al, [eax];
 	__asm        mov    ecx, [ebp-0x14C];
 	__asm        mov    [ecx], al;
-	__asm        jmp    near ptr 0x004A68A0;
-
-	__asm        jmp    near ptr 0x004A68A5;
-
+	__asm        jmp    _T164;
+_T164:
+	__asm        jmp    _T169;
+_T169:
 	__asm        lea    eax, szFullImagePath[0];
 	__asm        push   eax;
 	__asm        mov    eax, this;
@@ -8747,8 +8840,8 @@ _T112:
 	__asm        call   GetPathForFile;
 	__asm        add    esp, 0x10;
 // LINE 1357:
-	__asm        jmp    near ptr 0x004A68C7;
-
+	__asm        jmp    _T18b;
+_T18b:
 	__asm        lea    eax, szFullImagePath[0];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -8765,15 +8858,15 @@ _T112:
 	__asm        push   eax;
 	__asm        call   endl;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A6912;
-
+	__asm        jmp    _T1d6;
+_T1d6:
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    _T1e5;
 _T1e5:
-	__asm        jmp    near ptr 0x004A6926;
-
+	__asm        jmp    _T1ea;
+_T1ea:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x68];
 	__asm        cmp    dword ptr [eax+0xC], 1;
@@ -8782,8 +8875,8 @@ _T1e5:
 	__asm        cmp    dword ptr [ebp-0x138], 0;
 	__asm        je     _T426;
 
-	__asm        jmp    near ptr 0x004A694B;
-
+	__asm        jmp    _T20f;
+_T20f:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x68];
 	__asm        mov    ecx, [ebp-0x138];
@@ -8808,8 +8901,8 @@ _T227:
 	__asm        push   eax;
 	__asm        call   endl;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A69B6;
-
+	__asm        jmp    _T27a;
+_T27a:
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
@@ -8847,8 +8940,8 @@ _T289:
 	__asm        push   eax;
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x004A6A4F;
-
+	__asm        jmp    _T313;
+_T313:
 	__asm        jmp    _T324;
 _T318:
 	__asm        mov    eax, [ebp-0x110];
@@ -8856,8 +8949,8 @@ _T318:
 _T324:
 	__asm        mov    eax, [ebp-0x110];
 	__asm        mov    dword ptr [eax+0xC], 1;
-	__asm        jmp    near ptr 0x004A6A72;
-
+	__asm        jmp    _T336;
+_T336:
 	__asm        mov    eax, [ebp-0x110];
 	__asm        mov    [ebp-0x10C], eax;
 	__asm        jmp    _T351;
@@ -8898,20 +8991,20 @@ _T351:
 	__asm        mov    eax, [ebp-0x11C];
 	__asm        mov    dword ptr [eax], 0;
 _T3ea:
-	__asm        jmp    near ptr 0x004A6B2B;
-
-	__asm        jmp    near ptr 0x004A6B30;
-
+	__asm        jmp    _T3ef;
+_T3ef:
+	__asm        jmp    _T3f4;
+_T3f4:
 	__asm        mov    eax, [ebp-0x11C];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A6B44;
-
+	__asm        jmp    _T408;
+_T408:
 	__asm        jmp    _T40d;
 _T40d:
-	__asm        jmp    near ptr 0x004A6B4E;
-
+	__asm        jmp    _T412;
+_T412:
 	__asm        mov    eax, [ebp-0x10C];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x68], eax;
@@ -8920,8 +9013,8 @@ _T426:
 	__asm        cmp    dword ptr [ebp-0x138], 0;
 	__asm        je     _T46b;
 
-	__asm        jmp    near ptr 0x004A6B74;
-
+	__asm        jmp    _T438;
+_T438:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x68];
 	__asm        mov    eax, [eax];
@@ -8940,11 +9033,13 @@ _T46b:
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0x68];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x004A6BBE;
-
-	__asm        jmp    near ptr 0x004A6BC3;
+	__asm        jmp    _T482;
+_T482:
+	__asm        jmp    _T487;
 // LINE 1358:
-	__asm        jmp    near ptr 0x004A6BC8;
+_T487:
+	__asm        jmp    _T48c;
+_T48c:
 }
 
 // FUNCTION: COPTER_D 0x004a6bcd
@@ -9019,14 +9114,14 @@ _Tb3:
 	__asm        mov    eax, gwCurrentParent;
 	__asm        mov    eax, [eax+0x10];
 	__asm        mov    [ebp-0x2C], eax;
-	__asm        jmp    near ptr 0x004A6C97;
-
+	__asm        jmp    _Tca;
+_Tca:
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    [ebp-0x20], eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x1C], eax;
-	__asm        jmp    near ptr 0x004A6CA8;
-
+	__asm        jmp    _Tdb;
+_Tdb:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    ecx, [ebp-0x1C];
 	__asm        mov    [ebp-0x34], eax;
@@ -9039,10 +9134,11 @@ _Tb3:
 	__asm        add    rectNewPosition.top, eax;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        add    rectNewPosition.bottom, eax;
-	__asm        jmp    near ptr 0x004A6CD1;
-
-	__asm        jmp    near ptr 0x004A6CD6;
+	__asm        jmp    _T104;
+_T104:
+	__asm        jmp    _T109;
 // LINE 1382:
+_T109:
 	gwCurrentParent = gwCurrentParent-><GraphicWindow+0x3c:4>;
 // LINE 1383:
 	__asm        jmp    _T5c;
@@ -9070,8 +9166,8 @@ void  GraphicWindow::SetAllImagesToDrawOnto() {
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A6D1D;
-
+	__asm        jmp    _T2d;
+_T2d:
 	__asm        jmp    _T32;
 // LINE 1406:
 _T32:
@@ -9080,10 +9176,10 @@ _T32:
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x004A6D36;
-
-	__asm        jmp    near ptr 0x004A6D3B;
-
+	__asm        jmp    _T46;
+_T46:
+	__asm        jmp    _T4b;
+_T4b:
 	__asm        mov    eax, i.node;
 	__asm        cmp    [ebp-8], eax;
 	__asm        jne    _T61;
@@ -9107,8 +9203,8 @@ _T7a:
 	__asm        je     _Tcb;
 // LINE 1407:
 _T89:
-	__asm        jmp    near ptr 0x004A6D7E;
-
+	__asm        jmp    _T8e;
+_T8e:
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x10], eax;
@@ -9124,16 +9220,18 @@ _T89:
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A6DAB;
-
+	__asm        jmp    _Tbb;
+_Tbb:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x004A6DB6;
+	__asm        jmp    _Tc6;
 // LINE 1409:
+_Tc6:
 	__asm        jmp    _T32;
 // LINE 1410:
 _Tcb:
-	__asm        jmp    near ptr 0x004A6DC0;
+	__asm        jmp    _Td0;
+_Td0:
 }
 
 // FUNCTION: COPTER_D 0x004a6dc5
@@ -9158,8 +9256,8 @@ void  GraphicWindow::CreateAllImages() {
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A6DFF;
-
+	__asm        jmp    _T3a;
+_T3a:
 	__asm        jmp    _T3f;
 // LINE 1426:
 _T3f:
@@ -9168,10 +9266,10 @@ _T3f:
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x004A6E18;
-
-	__asm        jmp    near ptr 0x004A6E1D;
-
+	__asm        jmp    _T53;
+_T53:
+	__asm        jmp    _T58;
+_T58:
 	__asm        mov    eax, [ebp-8];
 	__asm        cmp    i.node, eax;
 	__asm        jne    _T6e;
@@ -9195,8 +9293,8 @@ _T87:
 	__asm        je     _Td8;
 // LINE 1427:
 _T96:
-	__asm        jmp    near ptr 0x004A6E60;
-
+	__asm        jmp    _T9b;
+_T9b:
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x10], eax;
@@ -9212,16 +9310,18 @@ _T96:
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A6E8D;
-
+	__asm        jmp    _Tc8;
+_Tc8:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x004A6E98;
+	__asm        jmp    _Td3;
 // LINE 1429:
+_Td3:
 	__asm        jmp    _T3f;
 // LINE 1430:
 _Td8:
-	__asm        jmp    near ptr 0x004A6EA2;
+	__asm        jmp    _Tdd;
+_Tdd:
 }
 
 // FUNCTION: COPTER_D 0x004a6ea7
@@ -9240,8 +9340,8 @@ void  GraphicWindow::DestroyAllImages() {
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A6ED4;
-
+	__asm        jmp    _T2d;
+_T2d:
 	__asm        jmp    _T32;
 // LINE 1445:
 _T32:
@@ -9250,10 +9350,10 @@ _T32:
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x004A6EED;
-
-	__asm        jmp    near ptr 0x004A6EF2;
-
+	__asm        jmp    _T46;
+_T46:
+	__asm        jmp    _T4b;
+_T4b:
 	__asm        mov    eax, [ebp-8];
 	__asm        cmp    i.node, eax;
 	__asm        jne    _T61;
@@ -9277,8 +9377,8 @@ _T7a:
 	__asm        je     _Tcb;
 // LINE 1446:
 _T89:
-	__asm        jmp    near ptr 0x004A6F35;
-
+	__asm        jmp    _T8e;
+_T8e:
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x10], eax;
@@ -9294,16 +9394,18 @@ _T89:
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A6F62;
-
+	__asm        jmp    _Tbb;
+_Tbb:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x004A6F6D;
+	__asm        jmp    _Tc6;
 // LINE 1448:
+_Tc6:
 	__asm        jmp    _T32;
 // LINE 1449:
 _Tcb:
-	__asm        jmp    near ptr 0x004A6F77;
+	__asm        jmp    _Td0;
+_Td0:
 }
 
 // FUNCTION: COPTER_D 0x004a6f7c
@@ -9404,7 +9506,8 @@ _T2f:
 	__asm        mov    ecx, [eax+0x44];
 	__asm        call   dword ptr [edx+0x40];
 // LINE 1468:
-	__asm        jmp    near ptr 0x004A706E;
+	__asm        jmp    _Tf2;
+_Tf2:
 }
 
 // FUNCTION: COPTER_D 0x004a7075
@@ -9420,10 +9523,10 @@ int  GraphicWindow::MakeModal(/*unpacked*/ class GraphicWindow *windowModal) {
 	__asm        mov    [ebp-0xC], eax;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-4], eax;
-	__asm        jmp    near ptr 0x004A709F;
-
-	__asm        jmp    near ptr 0x004A70A4;
-
+	__asm        jmp    _T2a;
+_T2a:
+	__asm        jmp    _T2f;
+_T2f:
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x68], eax;
 	__asm        mov    eax, list<GraphicWindow *>::free_list;
@@ -9460,16 +9563,16 @@ _T61:
 	__asm        push   eax;
 	__asm        call   endl;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A712B;
-
+	__asm        jmp    _Tb6;
+_Tb6:
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 _Tc0:
-	__asm        jmp    near ptr 0x004A713A;
-
-	__asm        jmp    near ptr 0x004A713F;
-
+	__asm        jmp    _Tc5;
+_Tc5:
+	__asm        jmp    _Tca;
+_Tca:
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    dword ptr [ebp-0x28], 0x155;
@@ -9491,12 +9594,12 @@ _T105:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x38], eax;
 _T10b:
-	__asm        jmp    near ptr 0x004A7185;
-
-	__asm        jmp    near ptr 0x004A718A;
-
-	__asm        jmp    near ptr 0x004A718F;
-
+	__asm        jmp    _T110;
+_T110:
+	__asm        jmp    _T115;
+_T115:
+	__asm        jmp    _T11a;
+_T11a:
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x60], eax;
@@ -9521,16 +9624,16 @@ _T10b:
 	__asm        push   eax;
 	__asm        call   endl;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A71E3;
-
+	__asm        jmp    _T16e;
+_T16e:
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 _T178:
-	__asm        jmp    near ptr 0x004A71F2;
-
-	__asm        jmp    near ptr 0x004A71F7;
-
+	__asm        jmp    _T17d;
+_T17d:
+	__asm        jmp    _T182;
+_T182:
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        mov    [ecx+4], eax;
@@ -9561,20 +9664,20 @@ _T1df:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x4C], eax;
 _T1e5:
-	__asm        jmp    near ptr 0x004A725F;
-
-	__asm        jmp    near ptr 0x004A7264;
-
-	__asm        jmp    near ptr 0x004A7269;
-
+	__asm        jmp    _T1ea;
+_T1ea:
+	__asm        jmp    _T1ef;
+_T1ef:
+	__asm        jmp    _T1f4;
+_T1f4:
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    eax, [eax];
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
 	__asm        add    eax, list<GraphicWindow *>::next_avail;
 	__asm        mov    list<GraphicWindow *>::last, eax;
-	__asm        jmp    near ptr 0x004A7284;
-
+	__asm        jmp    _T20f;
+_T20f:
 	__asm        mov    eax, list<GraphicWindow *>::next_avail;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        add    list<GraphicWindow *>::next_avail, 0xC;
@@ -9588,17 +9691,17 @@ _T229:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x64], eax;
 _T23e:
-	__asm        jmp    near ptr 0x004A72B8;
-
+	__asm        jmp    _T243;
+_T243:
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    near ptr 0x004A72C3;
-
+	__asm        jmp    _T24e;
+_T24e:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x14], eax;
-	__asm        jmp    near ptr 0x004A72D1;
-
+	__asm        jmp    _T25c;
+_T25c:
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     _T273;
 
@@ -9607,8 +9710,8 @@ _T23e:
 	__asm        mov    [ecx], eax;
 	__asm        jmp    _T273;
 _T273:
-	__asm        jmp    near ptr 0x004A72ED;
-
+	__asm        jmp    _T278;
+_T278:
 	__asm        mov    eax, [ebp-0x68];
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx], eax;
@@ -9626,15 +9729,17 @@ _T273:
 	__asm        add    GraphicWindow::listModalWindows.length, 1;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x004A7327;
-
-	__asm        jmp    near ptr 0x004A732C;
-
-	__asm        jmp    near ptr 0x004A7331;
+	__asm        jmp    _T2b2;
+_T2b2:
+	__asm        jmp    _T2b7;
+_T2b7:
+	__asm        jmp    _T2bc;
 // LINE 1487:
+_T2bc:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004A733B;
+	__asm        jmp    _T2c6;
 // LINE 1488:
+_T2c6:
 }
 
 // FUNCTION: COPTER_D 0x004a7340
@@ -9647,8 +9752,8 @@ int  GraphicWindow::RemoveModal(/*unpacked*/ class GraphicWindow *windowModal) {
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A735E;
-
+	__asm        jmp    _T1e;
+_T1e:
 	__asm        jmp    _T23;
 // LINE 1501:
 _T23:
@@ -9656,10 +9761,10 @@ _T23:
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x004A7376;
-
-	__asm        jmp    near ptr 0x004A737B;
-
+	__asm        jmp    _T36;
+_T36:
+	__asm        jmp    _T3b;
+_T3b:
 	__asm        mov    eax, i.node;
 	__asm        cmp    [ebp-8], eax;
 	__asm        jne    _T51;
@@ -9683,8 +9788,8 @@ _T6a:
 	__asm        je     _T121;
 // LINE 1502:
 _T79:
-	__asm        jmp    near ptr 0x004A73BE;
-
+	__asm        jmp    _T7e;
+_T7e:
 	__asm        mov    eax, i.node;
 	__asm        mov    ecx, windowModal;
 	__asm        cmp    [eax+8], ecx;
@@ -9695,12 +9800,12 @@ _T79:
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A73E0;
-
+	__asm        jmp    _Ta0;
+_Ta0:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x004A73EB;
-
+	__asm        jmp    _Tab;
+_Tab:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        mov    eax, [ebp-0x2C];
@@ -9713,20 +9818,21 @@ _T79:
 	__asm        mov    ecx, [ebp-0x2C];
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x004A7411;
-
-	__asm        jmp    near ptr 0x004A7416;
-
+	__asm        jmp    _Td1;
+_Td1:
+	__asm        jmp    _Td6;
+_Td6:
 	__asm        mov    eax, list<GraphicWindow *>::free_list;
 	__asm        mov    ecx, [ebp-0x2C];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    list<GraphicWindow *>::free_list, eax;
-	__asm        jmp    near ptr 0x004A742D;
-
+	__asm        jmp    _Ted;
+_Ted:
 	__asm        add    GraphicWindow::listModalWindows.length, 0xFFFFFFFF;
-	__asm        jmp    near ptr 0x004A7439;
+	__asm        jmp    _Tf9;
 // LINE 1504:
+_Tf9:
 	__asm        jmp    _T11c;
 // LINE 1505:
 _Tfe:
@@ -9735,8 +9841,8 @@ _Tfe:
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A7451;
-
+	__asm        jmp    _T111;
+_T111:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    _T11c;
@@ -9746,8 +9852,9 @@ _T11c:
 // LINE 1507:
 _T121:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004A746B;
+	__asm        jmp    _T12b;
 // LINE 1508:
+_T12b:
 }
 
 // FUNCTION: COPTER_D 0x004a7470
@@ -9763,10 +9870,10 @@ int  GraphicWindow::MakeFocus(/*unpacked*/ class GraphicWindow *windowFocus) {
 	__asm        mov    [ebp-0xC], eax;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-4], eax;
-	__asm        jmp    near ptr 0x004A749A;
-
-	__asm        jmp    near ptr 0x004A749F;
-
+	__asm        jmp    _T2a;
+_T2a:
+	__asm        jmp    _T2f;
+_T2f:
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    [ebp-0x68], eax;
 	__asm        mov    eax, list<GraphicWindow *>::free_list;
@@ -9803,16 +9910,16 @@ _T61:
 	__asm        push   eax;
 	__asm        call   endl;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A7526;
-
+	__asm        jmp    _Tb6;
+_Tb6:
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 _Tc0:
-	__asm        jmp    near ptr 0x004A7535;
-
-	__asm        jmp    near ptr 0x004A753A;
-
+	__asm        jmp    _Tc5;
+_Tc5:
+	__asm        jmp    _Tca;
+_Tca:
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    dword ptr [ebp-0x28], 0x155;
@@ -9834,12 +9941,12 @@ _T105:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x38], eax;
 _T10b:
-	__asm        jmp    near ptr 0x004A7580;
-
-	__asm        jmp    near ptr 0x004A7585;
-
-	__asm        jmp    near ptr 0x004A758A;
-
+	__asm        jmp    _T110;
+_T110:
+	__asm        jmp    _T115;
+_T115:
+	__asm        jmp    _T11a;
+_T11a:
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x60], eax;
@@ -9864,16 +9971,16 @@ _T10b:
 	__asm        push   eax;
 	__asm        call   endl;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004A75DE;
-
+	__asm        jmp    _T16e;
+_T16e:
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 _T178:
-	__asm        jmp    near ptr 0x004A75ED;
-
-	__asm        jmp    near ptr 0x004A75F2;
-
+	__asm        jmp    _T17d;
+_T17d:
+	__asm        jmp    _T182;
+_T182:
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    ecx, [ebp-0x24];
 	__asm        mov    [ecx+4], eax;
@@ -9904,20 +10011,20 @@ _T1df:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x4C], eax;
 _T1e5:
-	__asm        jmp    near ptr 0x004A765A;
-
-	__asm        jmp    near ptr 0x004A765F;
-
-	__asm        jmp    near ptr 0x004A7664;
-
+	__asm        jmp    _T1ea;
+_T1ea:
+	__asm        jmp    _T1ef;
+_T1ef:
+	__asm        jmp    _T1f4;
+_T1f4:
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    eax, [eax];
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
 	__asm        add    eax, list<GraphicWindow *>::next_avail;
 	__asm        mov    list<GraphicWindow *>::last, eax;
-	__asm        jmp    near ptr 0x004A767F;
-
+	__asm        jmp    _T20f;
+_T20f:
 	__asm        mov    eax, list<GraphicWindow *>::next_avail;
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        add    list<GraphicWindow *>::next_avail, 0xC;
@@ -9931,17 +10038,17 @@ _T229:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x64], eax;
 _T23e:
-	__asm        jmp    near ptr 0x004A76B3;
-
+	__asm        jmp    _T243;
+_T243:
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    near ptr 0x004A76BE;
-
+	__asm        jmp    _T24e;
+_T24e:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x14], eax;
-	__asm        jmp    near ptr 0x004A76CC;
-
+	__asm        jmp    _T25c;
+_T25c:
 	__asm        cmp    dword ptr [ebp-0x14], 0;
 	__asm        je     _T273;
 
@@ -9950,8 +10057,8 @@ _T23e:
 	__asm        mov    [ecx], eax;
 	__asm        jmp    _T273;
 _T273:
-	__asm        jmp    near ptr 0x004A76E8;
-
+	__asm        jmp    _T278;
+_T278:
 	__asm        mov    eax, [ebp-0x68];
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx], eax;
@@ -9969,15 +10076,17 @@ _T273:
 	__asm        add    GraphicWindow::listFocusWindows.length, 1;
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x004A7722;
-
-	__asm        jmp    near ptr 0x004A7727;
-
-	__asm        jmp    near ptr 0x004A772C;
+	__asm        jmp    _T2b2;
+_T2b2:
+	__asm        jmp    _T2b7;
+_T2b7:
+	__asm        jmp    _T2bc;
 // LINE 1533:
+_T2bc:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004A7736;
+	__asm        jmp    _T2c6;
 // LINE 1534:
+_T2c6:
 }
 
 // FUNCTION: COPTER_D 0x004a773b
@@ -9990,8 +10099,8 @@ int  GraphicWindow::RemoveFocus(/*unpacked*/ class GraphicWindow *windowFocus) {
 	__asm        mov    [ebp-0x24], eax;
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A7759;
-
+	__asm        jmp    _T1e;
+_T1e:
 	__asm        jmp    _T23;
 // LINE 1546:
 _T23:
@@ -9999,10 +10108,10 @@ _T23:
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x004A7771;
-
-	__asm        jmp    near ptr 0x004A7776;
-
+	__asm        jmp    _T36;
+_T36:
+	__asm        jmp    _T3b;
+_T3b:
 	__asm        mov    eax, [ebp-8];
 	__asm        cmp    i.node, eax;
 	__asm        jne    _T51;
@@ -10026,8 +10135,8 @@ _T6a:
 	__asm        je     _T121;
 // LINE 1547:
 _T79:
-	__asm        jmp    near ptr 0x004A77B9;
-
+	__asm        jmp    _T7e;
+_T7e:
 	__asm        mov    eax, i.node;
 	__asm        mov    ecx, windowFocus;
 	__asm        cmp    [eax+8], ecx;
@@ -10038,12 +10147,12 @@ _T79:
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A77DB;
-
+	__asm        jmp    _Ta0;
+_Ta0:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x004A77E6;
-
+	__asm        jmp    _Tab;
+_Tab:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-0x2C], eax;
 	__asm        mov    eax, [ebp-0x2C];
@@ -10056,20 +10165,21 @@ _T79:
 	__asm        mov    ecx, [ebp-0x2C];
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x004A780C;
-
-	__asm        jmp    near ptr 0x004A7811;
-
+	__asm        jmp    _Td1;
+_Td1:
+	__asm        jmp    _Td6;
+_Td6:
 	__asm        mov    eax, list<GraphicWindow *>::free_list;
 	__asm        mov    ecx, [ebp-0x2C];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    list<GraphicWindow *>::free_list, eax;
-	__asm        jmp    near ptr 0x004A7828;
-
+	__asm        jmp    _Ted;
+_Ted:
 	__asm        add    GraphicWindow::listFocusWindows.length, 0xFFFFFFFF;
-	__asm        jmp    near ptr 0x004A7834;
+	__asm        jmp    _Tf9;
 // LINE 1549:
+_Tf9:
 	__asm        jmp    _T11c;
 // LINE 1550:
 _Tfe:
@@ -10078,8 +10188,8 @@ _Tfe:
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A784C;
-
+	__asm        jmp    _T111;
+_T111:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x10], eax;
 	__asm        jmp    _T11c;
@@ -10089,8 +10199,9 @@ _T11c:
 // LINE 1552:
 _T121:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004A7866;
+	__asm        jmp    _T12b;
 // LINE 1553:
+_T12b:
 }
 
 // FUNCTION: COPTER_D 0x004a786b
@@ -10100,8 +10211,8 @@ int  GraphicWindow::CanWeRespondToMessage() {
 	/*bp-0xc*/   /*unpacked*/ class GraphicWindow *gwModal;
 
 // LINE 1572:
-	__asm        jmp    near ptr 0x004A787C;
-
+	__asm        jmp    _T11;
+_T11:
 	nModalWindowCount = GraphicWindow::listModalWindows.length;
 // LINE 1573:
 	__asm        cmp    nModalWindowCount, 0;
@@ -10112,14 +10223,14 @@ int  GraphicWindow::CanWeRespondToMessage() {
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    near ptr 0x004A78A3;
-
-	__asm        jmp    near ptr 0x004A78A8;
-
-	__asm        jmp    near ptr 0x004A78AD;
-
-	__asm        jmp    near ptr 0x004A78B2;
-
+	__asm        jmp    _T38;
+_T38:
+	__asm        jmp    _T3d;
+_T3d:
+	__asm        jmp    _T42;
+_T42:
+	__asm        jmp    _T47;
+_T47:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    eax, [eax+8];
 	__asm        mov    gwModal, eax;
@@ -10169,8 +10280,8 @@ void ScreenWindow::ScreenWindow() {
 // LINE 1601:
 	this-><ScreenWindow+0x50> = 0x0;
 // LINE 1602:
-	__asm        jmp    near ptr 0x004A7945;
-
+	__asm        jmp    _T36;
+_T36:
 	__asm        mov    eax, this;
 }
 
@@ -10186,8 +10297,8 @@ void ScreenWindow::ScreenWindow(const /*packed*/ class ScreenWindow& copyScreenW
 // LINE 1612:
 	this->bufferParent = copyScreenWindow.bufferParent;
 // LINE 1613:
-	__asm        jmp    near ptr 0x004A797F;
-
+	__asm        jmp    _T32;
+_T32:
 	__asm        mov    eax, this;
 }
 
@@ -10216,8 +10327,8 @@ void ScreenWindow::ScreenWindow(/*packed*/ class MRect& rectNewWindow, int32_t n
 // LINE 1628:
 	this-><ScreenWindow+0x44> = 0x0;
 // LINE 1629:
-	__asm        jmp    near ptr 0x004A79E3;
-
+	__asm        jmp    _T5a;
+_T5a:
 	__asm        mov    eax, this;
 }
 
@@ -10228,8 +10339,8 @@ void ScreenWindow::~ScreenWindow() {
 // LINE 1637:
 	this-><ScreenWindow+0x40> = 0x0;
 // LINE 1638:
-	__asm        jmp    near ptr 0x004A7A11;
-
+	__asm        jmp    _T24;
+_T24:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::~GraphicWindow;
 }
@@ -10245,8 +10356,9 @@ void ScreenWindow::~ScreenWindow() {
 	this->bufferParent = copyScreenWindow.bufferParent;
 // LINE 1649:
 	__asm        mov    eax, this;
-	__asm        jmp    near ptr 0x004A7A4A;
+	__asm        jmp    _T2c;
 // LINE 1650:
+_T2c:
 }
 
 // FUNCTION: COPTER_D 0x004a7a51
@@ -10269,8 +10381,8 @@ _T20:
 	__asm        mov    [ebp-0x20], eax;
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A7A87;
-
+	__asm        jmp    _T36;
+_T36:
 	__asm        jmp    _T3b;
 // LINE 1669:
 _T3b:
@@ -10279,10 +10391,10 @@ _T3b:
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x004A7AA0;
-
-	__asm        jmp    near ptr 0x004A7AA5;
-
+	__asm        jmp    _T4f;
+_T4f:
+	__asm        jmp    _T54;
+_T54:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        cmp    i.node, eax;
 	__asm        jne    _T6a;
@@ -10306,8 +10418,8 @@ _T83:
 	__asm        je     _Td8;
 // LINE 1670:
 _T92:
-	__asm        jmp    near ptr 0x004A7AE8;
-
+	__asm        jmp    _T97;
+_T97:
 	gwCurrentChild = i.node->data;
 // LINE 1671:
 	__asm        mov    eax, i.node;
@@ -10315,12 +10427,13 @@ _T92:
 	__asm        mov    eax, i.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    i.node, eax;
-	__asm        jmp    near ptr 0x004A7B04;
-
+	__asm        jmp    _Tb3;
+_Tb3:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    near ptr 0x004A7B0F;
+	__asm        jmp    _Tbe;
 // LINE 1672:
+_Tbe:
 	gwCurrentChild-><GraphicWindow+0x48:4> = 0x1;
 // LINE 1673:
 	__asm        mov    eax, gwCurrentChild;
@@ -10341,8 +10454,9 @@ _Te2:
 int32_t ScreenWindow::DrawSelf() {
 // LINE 1695:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004A7B4E;
+	__asm        jmp    _T16;
 // LINE 1696:
+_T16:
 }
 
 

@@ -477,7 +477,8 @@ private:
 static void $E14() {
 
 	__asm        call   $E13;
-	__asm        jmp    near ptr 0x0043C720;
+	__asm        jmp    _T10;
+_T10:
 }
 
 // STATIC INITIALIZER:
@@ -485,9 +486,10 @@ static void $E14() {
 static void $E13() {
 
 	__asm        call   _tzset;
-	__asm        jmp    near ptr 0x0043C735;
-
-	__asm        jmp    near ptr 0x0043C73A;
+	__asm        jmp    _T10;
+_T10:
+	__asm        jmp    _T15;
+_T15:
 }
 
 // FUNCTION: COPTER_D 0x0043c73f
@@ -521,8 +523,8 @@ _T5b:
 	this->Julnum = 0x0;
 // LINE 57:
 _T65:
-	__asm        jmp    near ptr 0x0043C7A9;
-
+	__asm        jmp    _T6a;
+_T6a:
 	__asm        mov    eax, this;
 }
 
@@ -531,7 +533,8 @@ _T65:
 static void $E17() {
 
 	__asm        call   $E16;
-	__asm        jmp    near ptr 0x0043C7C3;
+	__asm        jmp    _T10;
+_T10:
 }
 
 // STATIC INITIALIZER:
@@ -542,7 +545,8 @@ static void $E16() {
 	__asm        push   0;
 	__asm        mov    ecx, 0x5C3608;
 	__asm        call   MDate::MDate;
-	__asm        jmp    near ptr 0x0043C7E1;
+	__asm        jmp    _T19;
+_T19:
 }
 
 // STATIC INITIALIZER:
@@ -550,7 +554,8 @@ static void $E16() {
 static void $E20() {
 
 	__asm        call   $E19;
-	__asm        jmp    near ptr 0x0043C7F6;
+	__asm        jmp    _T10;
+_T10:
 }
 
 // STATIC INITIALIZER:
@@ -561,7 +566,8 @@ static void $E19() {
 	__asm        push   0xC22D;
 	__asm        mov    ecx, 0x5C3618;
 	__asm        call   MDate::MDate;
-	__asm        jmp    near ptr 0x0043C817;
+	__asm        jmp    _T1c;
+_T1c:
 }
 
 // FUNCTION: COPTER_D 0x0043c81c
@@ -586,15 +592,16 @@ _T39:
 
 	__asm        mov    eax, [ebp-4];
 _T41:
-	__asm        jmp    near ptr 0x0043C862;
+	__asm        jmp    _T46;
 // LINE 78:
+_T46:
 }
 
 // FUNCTION: COPTER_D 0x0043c867
 class MTime  MTime::BuildLocal(const /*packed*/ class MDate& date, uint32_t h) {
 // LINE 90:
-	__asm        jmp    near ptr 0x0043C875;
-
+	__asm        jmp    _T0e;
+_T0e:
 	__asm        mov    eax, date;
 	__asm        mov    eax, [eax+4];
 	__asm        sub    eax, MTime::RefDate.Julnum;
@@ -616,11 +623,12 @@ class MTime  MTime::BuildLocal(const /*packed*/ class MDate& date, uint32_t h) {
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, reinterpret_cast<uint32_t>(__$ReturnUdt);
 	__asm        mov    [ecx], eax;
-	__asm        jmp    near ptr 0x0043C8C1;
-
+	__asm        jmp    _T5a;
+_T5a:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
-	__asm        jmp    near ptr 0x0043C8C9;
+	__asm        jmp    _T62;
 // LINE 91:
+_T62:
 }
 
 // FUNCTION: COPTER_D 0x0043c8ce
@@ -636,8 +644,9 @@ unsigned long  MTime::LocalSecs() {
 	__asm        mov    dword ptr [ebp-4], 0;
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    local_time<MTime+0x00:4>, eax;
-	__asm        jmp    near ptr 0x0043C8FA;
+	__asm        jmp    _T2c;
 // LINE 103:
+_T2c:
 	__asm        lea    ecx, local_time<MTime+0x00:None>;
 	__asm        call   MTime::IsDST;
 	__asm        test   eax, eax;
@@ -647,8 +656,9 @@ unsigned long  MTime::LocalSecs() {
 // LINE 105:
 _T43:
 	__asm        mov    eax, local_time<MTime+0x00:4>;
-	__asm        jmp    near ptr 0x0043C919;
+	__asm        jmp    _T4b;
 // LINE 106:
+_T4b:
 }
 
 // FUNCTION: COPTER_D 0x0043c91e
@@ -681,10 +691,10 @@ class MTime  MTime::BeginDST(uint32_t year) {
 	__asm        mov    dword ptr [ebp-0x30], 0x58F3E8;
 	__asm        mov    eax, [ebp-0x58];
 	__asm        mov    [ebp-0x2C], eax;
-	__asm        jmp    near ptr 0x0043C973;
-
-	__asm        jmp    near ptr 0x0043C978;
-
+	__asm        jmp    _T55;
+_T55:
+	__asm        jmp    _T5a;
+_T5a:
 	__asm        push   2;
 	__asm        lea    eax, [ebp-0x30];
 	__asm        push   eax;
@@ -781,8 +791,9 @@ class MTime  MTime::EndDST(uint32_t year) {
 	__asm        call   MTime::BuildLocal;
 	__asm        add    esp, 0xC;
 	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
-	__asm        jmp    near ptr 0x0043CA74;
+	__asm        jmp    _T3e;
 // LINE 150:
+_T3e:
 }
 
 // FUNCTION: COPTER_D 0x0043ca79
@@ -837,8 +848,8 @@ class MTime  MTime::EndDST(uint32_t year) {
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 // LINE 178:
-	__asm        jmp    near ptr 0x0043CAFA;
-
+	__asm        jmp    _T81;
+_T81:
 	__asm        mov    eax, this;
 }
 
@@ -862,8 +873,8 @@ class MTime  MTime::EndDST(uint32_t year) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx], eax;
 // LINE 192:
-	__asm        jmp    near ptr 0x0043CB41;
-
+	__asm        jmp    _T3f;
+_T3f:
 	__asm        mov    eax, this;
 }
 
@@ -886,8 +897,8 @@ _T2d:
 	__asm        je     _Tf8;
 // LINE 216:
 _T3c:
-	__asm        jmp    near ptr 0x0043CB8C;
-
+	__asm        jmp    _T41;
+_T41:
 	__asm        mov    eax, date;
 	__asm        mov    eax, [eax+4];
 	__asm        sub    eax, MTime::RefDate.Julnum;
@@ -952,8 +963,8 @@ _Tf8:
 	this-><MTime+0x00:4> = 0x0;
 // LINE 233:
 _T101:
-	__asm        jmp    near ptr 0x0043CC51;
-
+	__asm        jmp    _T106;
+_T106:
 	__asm        mov    eax, this;
 }
 
@@ -967,8 +978,9 @@ int  MTime::SetShouldPrinMDate(int32_t bNewPrinMDate) {
 	this-><MTime+0x04:4> = bNewPrinMDate;
 // LINE 244:
 	__asm        mov    eax, bPreviousPrinMDate;
-	__asm        jmp    near ptr 0x0043CC81;
+	__asm        jmp    _T26;
 // LINE 245:
+_T26:
 }
 
 // FUNCTION: COPTER_D 0x0043cc88
@@ -996,8 +1008,9 @@ _T2a:
 _T3e:
 	__asm        mov    eax, 0xFFFFFFFF;
 _T43:
-	__asm        jmp    near ptr 0x0043CCD0;
+	__asm        jmp    _T48;
 // LINE 256:
+_T48:
 }
 
 // FUNCTION: COPTER_D 0x0043ccd7
@@ -1005,8 +1018,9 @@ unsigned int  MTime::Hash() {
 // LINE 265:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
-	__asm        jmp    near ptr 0x0043CCED;
+	__asm        jmp    _T16;
 // LINE 266:
+_T16:
 }
 
 // FUNCTION: COPTER_D 0x0043ccf2
@@ -1021,8 +1035,9 @@ unsigned int  MTime::Hour() {
 	__asm        mov    eax, edx;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
-	__asm        jmp    near ptr 0x0043CD1F;
+	__asm        jmp    _T2d;
 // LINE 279:
+_T2d:
 }
 
 // FUNCTION: COPTER_D 0x0043cd24
@@ -1037,8 +1052,9 @@ unsigned int  MTime::HourGMT() {
 	__asm        mov    eax, edx;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
-	__asm        jmp    near ptr 0x0043CD4E;
+	__asm        jmp    _T2a;
 // LINE 292:
+_T2a:
 }
 
 // FUNCTION: COPTER_D 0x0043cd53
@@ -1226,8 +1242,9 @@ unsigned int  MTime::Minute() {
 	__asm        mov    eax, edx;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
-	__asm        jmp    near ptr 0x0043CF44;
+	__asm        jmp    _T38;
 // LINE 359:
+_T38:
 }
 
 // FUNCTION: COPTER_D 0x0043cf49
@@ -1246,8 +1263,9 @@ unsigned int  MTime::MinuteGMT() {
 	__asm        mov    eax, edx;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
-	__asm        jmp    near ptr 0x0043CF7E;
+	__asm        jmp    _T35;
 // LINE 372:
+_T35:
 }
 
 // FUNCTION: COPTER_D 0x0043cf83
@@ -1267,8 +1285,9 @@ unsigned int  MTime::Second() {
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
 	__asm        mov    eax, edx;
-	__asm        jmp    near ptr 0x0043CFBA;
+	__asm        jmp    _T37;
 // LINE 384:
+_T37:
 }
 
 // FUNCTION: COPTER_D 0x0043cfbf
@@ -1295,19 +1314,21 @@ char *  MTime::PrintString(char * szTime) {
 	__asm        push   eax;
 	__asm        call   ends;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x0043D001;
+	__asm        jmp    _T42;
 // LINE 399:
+_T42:
 	__asm        mov    eax, szTime;
 	__asm        mov    [ebp-0x5C], eax;
-	__asm        jmp    near ptr 0x0043D00C;
-
+	__asm        jmp    _T4d;
+_T4d:
 	__asm        lea    ecx, strtemp<ostrstream+0x08>;
 	__asm        call   ostrstream::~ostrstream;
 	__asm        lea    ecx, strtemp<ostrstream+0x08>;
 	__asm        call   ios::~ios;
 	__asm        mov    eax, [ebp-0x5C];
-	__asm        jmp    near ptr 0x0043D024;
+	__asm        jmp    _T65;
 // LINE 400:
+_T65:
 }
 
 // FUNCTION: COPTER_D 0x0043d02b
@@ -1363,20 +1384,20 @@ _T94:
 	__asm        lea    ecx, out.ios;
 	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0xE4], eax;
-	__asm        jmp    near ptr 0x0043D0DC;
-
+	__asm        jmp    _Tb1;
+_Tb1:
 	__asm        mov    dword ptr [ebp-0xD8], 0x43D390;
 	__asm        mov    dword ptr [ebp-0xD4], 0x30;
-	__asm        jmp    near ptr 0x0043D0F5;
-
-	__asm        jmp    near ptr 0x0043D0FA;
-
+	__asm        jmp    _Tca;
+_Tca:
+	__asm        jmp    _Tcf;
+_Tcf:
 	__asm        mov    dword ptr [ebp-0xD0], 0x43D3C0;
 	__asm        mov    dword ptr [ebp-0xCC], 2;
-	__asm        jmp    near ptr 0x0043D113;
-
-	__asm        jmp    near ptr 0x0043D118;
-
+	__asm        jmp    _Te8;
+_Te8:
+	__asm        jmp    _Ted;
+_Ted:
 	__asm        push   0x3A;
 	__asm        mov    ecx, [ebp-0xE4];
 	__asm        call   ostream::operator<<;
@@ -1399,8 +1420,8 @@ _T133:
 	__asm        push   eax;
 	__asm        call   dword ptr [ebp-0xD8];
 	__asm        add    esp, 8;
-	__asm        jmp    near ptr 0x0043D17A;
-
+	__asm        jmp    _T14f;
+_T14f:
 	__asm        cmp    dword ptr [ebp-0xF0], 0;
 	__asm        jne    _T16b;
 
@@ -1419,22 +1440,22 @@ _T182:
 	__asm        push   eax;
 	__asm        call   dword ptr [ebp-0xD0];
 	__asm        add    esp, 8;
-	__asm        jmp    near ptr 0x0043D1C9;
-
+	__asm        jmp    _T19e;
+_T19e:
 	__asm        mov    ecx, t;
 	__asm        call   MTime::Minute;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0xF0];
 	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0xF8], eax;
-	__asm        jmp    near ptr 0x0043D1E8;
-
+	__asm        jmp    _T1bd;
+_T1bd:
 	__asm        mov    dword ptr [ebp-0xC8], 0x43D3C0;
 	__asm        mov    dword ptr [ebp-0xC4], 2;
-	__asm        jmp    near ptr 0x0043D201;
-
-	__asm        jmp    near ptr 0x0043D206;
-
+	__asm        jmp    _T1d6;
+_T1d6:
+	__asm        jmp    _T1db;
+_T1db:
 	__asm        push   0x3A;
 	__asm        mov    ecx, [ebp-0xF8];
 	__asm        call   ostream::operator<<;
@@ -1457,22 +1478,22 @@ _T221:
 	__asm        push   eax;
 	__asm        call   dword ptr [ebp-0xC8];
 	__asm        add    esp, 8;
-	__asm        jmp    near ptr 0x0043D268;
-
+	__asm        jmp    _T23d;
+_T23d:
 	__asm        mov    ecx, t;
 	__asm        call   MTime::Second;
 	__asm        push   eax;
 	__asm        mov    ecx, [ebp-0x100];
 	__asm        call   ostream::operator<<;
 	__asm        mov    [ebp-0x104], eax;
-	__asm        jmp    near ptr 0x0043D287;
-
+	__asm        jmp    _T25c;
+_T25c:
 	__asm        mov    dword ptr [ebp-0xC0], 0x43D390;
 	__asm        mov    dword ptr [ebp-0xBC], 0x20;
-	__asm        jmp    near ptr 0x0043D2A0;
-
-	__asm        jmp    near ptr 0x0043D2A5;
-
+	__asm        jmp    _T275;
+_T275:
+	__asm        jmp    _T27a;
+_T27a:
 	__asm        push   0x20;
 	__asm        mov    ecx, [ebp-0x104];
 	__asm        call   ostream::operator<<;
@@ -1495,8 +1516,8 @@ _T2c0:
 	__asm        push   eax;
 	__asm        call   dword ptr [ebp-0xC0];
 	__asm        add    esp, 8;
-	__asm        jmp    near ptr 0x0043D307;
-
+	__asm        jmp    _T2dc;
+_T2dc:
 	__asm        mov    eax, 0x59857C;
 	__asm        mov    ecx, 0x598578;
 	__asm        xor    edx, edx;
@@ -1515,8 +1536,9 @@ _T2c0:
 	__asm        push   eax;
 	__asm        call   ends;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x0043D34A;
+	__asm        jmp    _T31f;
 // LINE 429:
+_T31f:
 	__asm        lea    eax, buf[0];
 	__asm        push   eax;
 	__asm        mov    ecx, s;
@@ -1524,15 +1546,16 @@ _T2c0:
 // LINE 430:
 	__asm        mov    eax, s;
 	__asm        mov    [ebp-0xDC], eax;
-	__asm        jmp    near ptr 0x0043D364;
-
+	__asm        jmp    _T339;
+_T339:
 	__asm        lea    ecx, out<ostrstream+0x08>;
 	__asm        call   ostrstream::~ostrstream;
 	__asm        lea    ecx, out<ostrstream+0x08>;
 	__asm        call   ios::~ios;
 	__asm        mov    eax, [ebp-0xDC];
-	__asm        jmp    near ptr 0x0043D385;
+	__asm        jmp    _T35a;
 // LINE 431:
+_T35a:
 }
 
 

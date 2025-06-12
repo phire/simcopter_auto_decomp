@@ -1430,8 +1430,9 @@ _T23:
 /*packed*/ struct _CHASE_INFO* S3CameraGetChaseInfo() {
 // LINE 795:
 	__asm        mov    eax, 0x6BF160;
-	__asm        jmp    near ptr 0x004F9A86;
+	__asm        jmp    _T10;
 // LINE 796:
+_T10:
 }
 
 // FUNCTION: COPTER_D 0x004f9a8b
@@ -1546,8 +1547,9 @@ _Tf2:
 // LINE 853:
 _Tff:
 	__asm        mov    eax, maxobjy;
-	__asm        jmp    near ptr 0x004F9BAC;
+	__asm        jmp    _T107;
 // LINE 854:
+_T107:
 }
 
 

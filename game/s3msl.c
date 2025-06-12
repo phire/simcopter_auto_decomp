@@ -4840,8 +4840,9 @@ _T21ca:
 	__asm        jmp    _T1ea4;
 // LINE 1776:
 _T2202:
-	__asm        jmp    near ptr 0x00522091;
+	__asm        jmp    _T2207;
 // LINE 1777:
+_T2207:
 }
 
 // FUNCTION: COPTER_D 0x00522096

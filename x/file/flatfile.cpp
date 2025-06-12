@@ -87,8 +87,8 @@ void FlatFile::FlatFile() {
 	__asm        mov    ecx, this;
 	__asm        call   FlatFile::Link;
 // LINE 23:
-	__asm        jmp    near ptr 0x0055C2B3;
-
+	__asm        jmp    _T43;
+_T43:
 	__asm        mov    eax, this;
 }
 
@@ -108,7 +108,8 @@ _T2d:
 	__asm        mov    ecx, this;
 	__asm        call   FlatFile::Unlink;
 // LINE 33:
-	__asm        jmp    near ptr 0x0055C2F5;
+	__asm        jmp    _T3a;
+_T3a:
 }
 
 // FUNCTION: COPTER_D 0x0055c2fa
@@ -178,8 +179,9 @@ long FlatFile::Open(char * name) {
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+4];
-	__asm        jmp    near ptr 0x0055C3C0;
+	__asm        jmp    _T56;
 // LINE 57:
+_T56:
 }
 
 // FUNCTION: COPTER_D 0x0055c3c7
@@ -280,9 +282,10 @@ _T121:
 	__asm        mov    eax, FlatFile::sLastFileID;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x108], eax;
-	__asm        jmp    near ptr 0x0055C504;
+	__asm        jmp    _T13d;
 // LINE 87:
 // Block end:
+_T13d:
 	__asm        jmp    _T16c;
 // LINE 92:
 _T142:
@@ -334,7 +337,8 @@ void FlatFile::OpenFromOtherFile(/*unpacked*/ class FlatFile *other) {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+4];
 // LINE 114:
-	__asm        jmp    near ptr 0x0055C5C4;
+	__asm        jmp    _T3e;
+_T3e:
 }
 
 // FUNCTION: COPTER_D 0x0055c5cb
@@ -400,8 +404,9 @@ _Ta0:
 // LINE 151:
 _Tc4:
 	__asm        mov    eax, err;
-	__asm        jmp    near ptr 0x0055C697;
+	__asm        jmp    _Tcc;
 // LINE 152:
+_Tcc:
 }
 
 // FUNCTION: COPTER_D 0x0055c69c
@@ -543,8 +548,8 @@ unsigned short FlatFile::SameFile(/*unpacked*/ class FlatFile *other) {
 	__asm        cmp    dword ptr [eax+0x108], 0;
 	__asm        je     _T57;
 
-	__asm        jmp    near ptr 0x0055C835;
-
+	__asm        jmp    _T21;
+_T21:
 	__asm        mov    eax, other;
 	__asm        cmp    dword ptr [eax+0x108], 0;
 	__asm        je     _T57;
@@ -593,8 +598,9 @@ long FlatFile::Read4(long * val) {
 // LINE 247:
 _T3c:
 	__asm        mov    eax, err;
-	__asm        jmp    near ptr 0x0055C8BE;
+	__asm        jmp    _T44;
 // LINE 248:
+_T44:
 }
 
 // FUNCTION: COPTER_D 0x0055c8c5
@@ -623,8 +629,9 @@ long FlatFile::Read2(short * val) {
 // LINE 255:
 _T3c:
 	__asm        mov    eax, err;
-	__asm        jmp    near ptr 0x0055C909;
+	__asm        jmp    _T44;
 // LINE 256:
+_T44:
 }
 
 // FUNCTION: COPTER_D 0x0055c910
@@ -644,8 +651,9 @@ long FlatFile::Read1(signed char * val) {
 	__asm        mov    err, eax;
 // LINE 262:
 	__asm        mov    eax, err;
-	__asm        jmp    near ptr 0x0055C93E;
+	__asm        jmp    _T2e;
 // LINE 263:
+_T2e:
 }
 
 // FUNCTION: COPTER_D 0x0055c945
@@ -655,7 +663,8 @@ void FlatFile::Link() {
 // LINE 267:
 	FlatFile::sList = this;
 // LINE 268:
-	__asm        jmp    near ptr 0x0055C969;
+	__asm        jmp    _T24;
+_T24:
 }
 
 // FUNCTION: COPTER_D 0x0055c96e
@@ -754,8 +763,9 @@ long FlatFile::GetFileName(unsigned char * name) {
 	__asm        add    esp, 0xC;
 // LINE 297:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0055CA78;
+	__asm        jmp    _T30;
 // LINE 298:
+_T30:
 }
 
 // FUNCTION: COPTER_D 0x0055ca7f
@@ -781,8 +791,9 @@ _T25:
 // LINE 308:
 _T38:
 	__asm        mov    ax, total;
-	__asm        jmp    near ptr 0x0055CAC0;
+	__asm        jmp    _T41;
 // LINE 309:
+_T41:
 }
 
 

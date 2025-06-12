@@ -110,7 +110,8 @@ void GlobalToLocal(/*unpacked*/ struct Point *pt) {
 	__asm        mov    ecx, pt;
 	__asm        mov    [ecx], ax;
 // LINE 15:
-	__asm        jmp    near ptr 0x00566A54;
+	__asm        jmp    _T44;
+_T44:
 }
 
 // FUNCTION: COPTER_D 0x00566a59
@@ -140,7 +141,8 @@ void LocalToGlobal(/*unpacked*/ struct Point *pt) {
 	__asm        mov    ecx, pt;
 	__asm        mov    [ecx], ax;
 // LINE 24:
-	__asm        jmp    near ptr 0x00566A9D;
+	__asm        jmp    _T44;
+_T44:
 }
 
 // FUNCTION: COPTER_D 0x00566aa2
@@ -153,8 +155,9 @@ long TickCount() {
 	__asm        mov    ecx, 0x3E8;
 	__asm        sub    edx, edx;
 	__asm        div    ecx;
-	__asm        jmp    near ptr 0x00566AC5;
+	__asm        jmp    _T23;
 // LINE 33:
+_T23:
 }
 
 // FUNCTION: COPTER_D 0x00566aca
@@ -212,7 +215,8 @@ void PtoCstr(unsigned char * pstr) {
 	__asm        mov    ecx, pstr;
 	__asm        mov    byte ptr [eax+ecx], 0;
 // LINE 48:
-	__asm        jmp    near ptr 0x00566B4D;
+	__asm        jmp    _T3a;
+_T3a:
 }
 
 // FUNCTION: COPTER_D 0x00566b52
@@ -245,7 +249,8 @@ _T2e:
 // LINE 56:
 	cstr[0] = reinterpret_cast<uint8_t>(len);
 // LINE 57:
-	__asm        jmp    near ptr 0x00566BA3;
+	__asm        jmp    _T51;
+_T51:
 }
 
 // FUNCTION: COPTER_D 0x00566ba8
@@ -279,7 +284,8 @@ void OffsetRect(/*unpacked*/ struct Rect *rect, short hoff, short voff) {
 	__asm        mov    ecx, rect;
 	__asm        mov    [ecx+6], ax;
 // LINE 65:
-	__asm        jmp    near ptr 0x00566C01;
+	__asm        jmp    _T59;
+_T59:
 }
 
 // FUNCTION: COPTER_D 0x00566c06
@@ -339,8 +345,9 @@ unsigned short SectRect(/*unpacked*/ struct Rect *rect1, /*unpacked*/ struct Rec
 	__asm        mov    [edx+6], cx;
 // LINE 80:
 	__asm        mov    ax, sect;
-	__asm        jmp    near ptr 0x00566CA3;
+	__asm        jmp    _T9d;
 // LINE 81:
+_T9d:
 }
 
 // FUNCTION: COPTER_D 0x00566ca8
@@ -352,7 +359,8 @@ void SetPortDC(void * __ptr32 dc) {
 // LINE 106:
 	gPort.window = 0x0;
 // LINE 107:
-	__asm        jmp    near ptr 0x00566CCA;
+	__asm        jmp    _T22;
+_T22:
 }
 
 // FUNCTION: COPTER_D 0x00566ccf
@@ -383,7 +391,8 @@ _T4b:
 // LINE 91:
 	gPort.dc = 0x0;
 // LINE 92:
-	__asm        jmp    near ptr 0x00566D33;
+	__asm        jmp    _T64;
+_T64:
 }
 
 // FUNCTION: COPTER_D 0x00566d38
@@ -398,7 +407,8 @@ void SetPort(void * __ptr32 newHWND) {
 	__asm        call   dword ptr ds:[0x6C3850];
 	__asm        mov    gPort.dc, eax;
 // LINE 115:
-	__asm        jmp    near ptr 0x00566D61;
+	__asm        jmp    _T29;
+_T29:
 }
 
 // FUNCTION: COPTER_D 0x00566d66
@@ -423,7 +433,8 @@ _T26:
 	__asm        mov    gPort.dc, ecx;
 // LINE 126:
 _T37:
-	__asm        jmp    near ptr 0x00566DA2;
+	__asm        jmp    _T3c;
+_T3c:
 }
 
 // FUNCTION: COPTER_D 0x00566da7
@@ -435,7 +446,8 @@ void GetPort(/*unpacked*/ struct GrafPtr *pPort) {
 	__asm        mov    [edx], eax;
 	__asm        mov    [edx+4], ecx;
 // LINE 132:
-	__asm        jmp    near ptr 0x00566DC5;
+	__asm        jmp    _T1e;
+_T1e:
 }
 
 // FUNCTION: COPTER_D 0x00566dca
@@ -491,7 +503,8 @@ _T32:
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C358C];
 // LINE 143:
-	__asm        jmp    near ptr 0x00566E62;
+	__asm        jmp    _T98;
+_T98:
 }
 
 // FUNCTION: COPTER_D 0x00566e67
@@ -517,7 +530,8 @@ void EraseRect(/*unpacked*/ struct Rect *r) {
 	__asm        call   EraseRect;
 	__asm        add    esp, 4;
 // LINE 150:
-	__asm        jmp    near ptr 0x00566EA8;
+	__asm        jmp    _T41;
+_T41:
 }
 
 // FUNCTION: COPTER_D 0x00566ead
@@ -570,7 +584,8 @@ _T32:
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C358C];
 // LINE 161:
-	__asm        jmp    near ptr 0x00566F3D;
+	__asm        jmp    _T90;
+_T90:
 }
 
 // FUNCTION: COPTER_D 0x00566f42
@@ -584,7 +599,8 @@ void SetRect(/*unpacked*/ struct Rect *rect, short left, short top, short right,
 // LINE 168:
 	rect->bottom = bottom;
 // LINE 169:
-	__asm        jmp    near ptr 0x00566F78;
+	__asm        jmp    _T36;
+_T36:
 }
 
 // FUNCTION: COPTER_D 0x00566f7d
@@ -650,7 +666,8 @@ _Tce:
 	result->bottom = rect2->bottom;
 // LINE 192:
 _Tdc:
-	__asm        jmp    near ptr 0x0056705E;
+	__asm        jmp    _Te1;
+_Te1:
 }
 
 // FUNCTION: COPTER_D 0x00567063
@@ -713,7 +730,8 @@ void InsetRect(/*unpacked*/ struct Rect *r, short hdelta, short vdelta) {
 	__asm        mov    ecx, r;
 	__asm        mov    [ecx+6], ax;
 // LINE 207:
-	__asm        jmp    near ptr 0x00567102;
+	__asm        jmp    _T59;
+_T59:
 }
 
 // FUNCTION: COPTER_D 0x00567107
@@ -790,7 +808,8 @@ void GetBackColor(unsigned long * color) {
 	__asm        mov    ecx, color;
 	__asm        mov    [ecx], eax;
 // LINE 224:
-	__asm        jmp    near ptr 0x005671D6;
+	__asm        jmp    _T1c;
+_T1c:
 }
 
 // FUNCTION: COPTER_D 0x005671db
@@ -803,7 +822,8 @@ void RGBBackColor(unsigned long * color) {
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3544];
 // LINE 229:
-	__asm        jmp    near ptr 0x005671F8;
+	__asm        jmp    _T1d;
+_T1d:
 }
 
 

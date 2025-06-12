@@ -819,8 +819,9 @@ _T944:
 	__asm        push   0;
 	__asm        call   VRAppCityInit;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004EB5C5;
+	__asm        jmp    _T985;
 // LINE 530:
+_T985:
 }
 
 // FUNCTION: COPTER_D 0x004eb5ca
@@ -1045,8 +1046,9 @@ _T299:
 // LINE 692:
 _T29e:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004EB872;
+	__asm        jmp    _T2a8;
 // LINE 693:
+_T2a8:
 }
 
 // FUNCTION: COPTER_D 0x004eb877
@@ -1104,8 +1106,9 @@ _T75:
 	__asm        add    esp, 4;
 // LINE 725:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004EB904;
+	__asm        jmp    _T8d;
 // LINE 726:
+_T8d:
 }
 
 // FUNCTION: COPTER_D 0x004eb909
@@ -1152,8 +1155,9 @@ int32_t VRAppGameSave(void * __ptr32 miffWriter) {
 	__asm        add    esp, 4;
 // LINE 751:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004EB979;
+	__asm        jmp    _T70;
 // LINE 752:
+_T70:
 }
 
 // FUNCTION: COPTER_D 0x004eb97e
@@ -1282,8 +1286,9 @@ _Tde:
 // LINE 884:
 	__asm        call   S3CityGrid;
 // LINE 905:
-	__asm        jmp    near ptr 0x004EBADC;
+	__asm        jmp    _T132;
 // LINE 906:
+_T132:
 }
 
 // FUNCTION: COPTER_D 0x004ebae1

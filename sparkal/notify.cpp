@@ -37,8 +37,8 @@ void NotificationItem::NotificationItem() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
 // LINE 10:
-	__asm        jmp    near ptr 0x0043E184;
-
+	__asm        jmp    _T24;
+_T24:
 	__asm        mov    eax, this;
 }
 
@@ -50,8 +50,8 @@ void NotificationItem::NotificationItem(const /*packed*/ class NotificationItem&
 	__asm        mov    ecx, this;
 	__asm        call   NotificationItem::operator=;
 // LINE 14:
-	__asm        jmp    near ptr 0x0043E1A9;
-
+	__asm        jmp    _T1d;
+_T1d:
 	__asm        mov    eax, this;
 }
 
@@ -65,8 +65,8 @@ void NotificationItem::NotificationItem(long lNewPreferenceType, /*packed*/ clas
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+4], eax;
 // LINE 20:
-	__asm        jmp    near ptr 0x0043E1D5;
-
+	__asm        jmp    _T22;
+_T22:
 	__asm        mov    eax, this;
 }
 
@@ -78,8 +78,9 @@ void NotificationItem::NotificationItem(long lNewPreferenceType, /*packed*/ clas
 	this->myNotificationSink = P2.myNotificationSink;
 // LINE 25:
 	__asm        mov    eax, this;
-	__asm        jmp    near ptr 0x0043E209;
+	__asm        jmp    _T2a;
 // LINE 26:
+_T2a:
 }
 
 // FUNCTION: COPTER_D 0x0043e210
@@ -102,7 +103,8 @@ int32_t operator==(const /*packed*/ class NotificationItem& P1, const /*packed*/
 _T32:
 	__asm        xor    eax, eax;
 _T34:
-	__asm        jmp    near ptr 0x0043E249;
+	__asm        jmp    _T39;
 // LINE 32:
+_T39:
 }
 

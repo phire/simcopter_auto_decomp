@@ -2,10 +2,10 @@
 // FUNCTION: COPTER_D 0x0047b5e0
 void MPoint::MPoint() {
 
-	__asm        jmp    near ptr 0x0047B5F1;
-
-	__asm        jmp    near ptr 0x0047B5F6;
-
+	__asm        jmp    _T11;
+_T11:
+	__asm        jmp    _T16;
+_T16:
 	__asm        mov    eax, this;
 }
 
@@ -41,17 +41,18 @@ _T39:
 	this->bottom = nTemp;
 // LINE 602:
 _T69:
-	__asm        jmp    near ptr 0x0044FCCE;
+	__asm        jmp    _T6e;
+_T6e:
 }
 
 // Function in module: Inputwin.obj
 // FUNCTION: COPTER_D 0x0040dc80
 void MRect::MRect() {
 
-	__asm        jmp    near ptr 0x0040DC91;
-
-	__asm        jmp    near ptr 0x0040DC96;
-
+	__asm        jmp    _T11;
+_T11:
+	__asm        jmp    _T16;
+_T16:
 	__asm        mov    eax, this;
 }
 

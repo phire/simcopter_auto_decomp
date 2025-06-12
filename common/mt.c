@@ -103,8 +103,9 @@ int32_t MTMagnitude(/*packed*/ struct Point3d *V) {
 	__asm        add    esp, 8;
 	__asm        fmul   qword ptr ds:[0x5923E8];
 	__asm        call   0x0056EBE8;
-	__asm        jmp    near ptr 0x004CA13B;
+	__asm        jmp    _T7b;
 // LINE 48:
+_T7b:
 }
 
 // FUNCTION: COPTER_D 0x004ca140
@@ -161,8 +162,9 @@ int32_t MTDistance(/*packed*/ struct Point3d *p1, /*packed*/ struct Point3d *p2)
 	__asm        add    esp, 8;
 	__asm        fmul   qword ptr ds:[0x5923E8];
 	__asm        call   0x0056EBE8;
-	__asm        jmp    near ptr 0x004CA1DE;
+	__asm        jmp    _T9e;
 // LINE 70:
+_T9e:
 }
 
 // FUNCTION: COPTER_D 0x004ca1e3
@@ -251,8 +253,9 @@ _Te6:
 	__asm        fld    r;
 	__asm        fmul   qword ptr ds:[0x5923E8];
 	__asm        call   0x0056EBE8;
-	__asm        jmp    near ptr 0x004CA2DC;
+	__asm        jmp    _Tf9;
 // LINE 100:
+_Tf9:
 }
 
 // FUNCTION: COPTER_D 0x004ca2e1
@@ -356,8 +359,9 @@ int32_t MTSideOfPlane(/*packed*/ struct Point3d *V, /*packed*/ struct Point3d *p
 	__asm        mov    s, ebx;
 // LINE 157:
 	__asm        mov    eax, s;
-	__asm        jmp    near ptr 0x004CA3EB;
+	__asm        jmp    _T8f;
 // LINE 159:
+_T8f:
 }
 
 // FUNCTION: COPTER_D 0x004ca3f0
@@ -419,8 +423,9 @@ int32_t MTSameSigns(int32_t s1, int32_t s2) {
 	__asm        cmp    s2, 0;
 	__asm        setge  al;
 	__asm        xor    eax, s1;
-	__asm        jmp    near ptr 0x004CA481;
+	__asm        jmp    _T17;
 // LINE 203:
+_T17:
 }
 
 // FUNCTION: COPTER_D 0x004ca486
@@ -691,8 +696,9 @@ _T5e:
 // LINE 337:
 _T66:
 	__asm        mov    eax, nv;
-	__asm        jmp    near ptr 0x004CA71C;
+	__asm        jmp    _T6e;
 // LINE 338:
+_T6e:
 }
 
 // FUNCTION: COPTER_D 0x004ca721
@@ -786,8 +792,9 @@ _T35:
 _T4f:
 	__asm        mov    eax, a;
 _T52:
-	__asm        jmp    near ptr 0x004CA80B;
+	__asm        jmp    _T57;
 // LINE 388:
+_T57:
 }
 
 // FUNCTION: COPTER_D 0x004ca810
@@ -1823,8 +1830,9 @@ _T53:
 // LINE 732:
 _T5e:
 	__asm        mov    eax, dist;
-	__asm        jmp    near ptr 0x004CB2A2;
+	__asm        jmp    _T66;
 // LINE 733:
+_T66:
 }
 
 

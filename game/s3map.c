@@ -3227,16 +3227,18 @@ _T8f:
 // LINE 1305:
 _T94:
 	__asm        mov    eax, car_id;
-	__asm        jmp    near ptr 0x00500986;
+	__asm        jmp    _T9c;
 // LINE 1306:
+_T9c:
 }
 
 // FUNCTION: COPTER_D 0x0050098b
 int32_t S3MapCursorUp(long posx, long posy) {
 // LINE 1314:
 	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    near ptr 0x0050099B;
+	__asm        jmp    _T10;
 // LINE 1315:
+_T10:
 }
 
 // FUNCTION: COPTER_D 0x005009a0

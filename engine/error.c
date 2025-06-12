@@ -11,8 +11,9 @@
 int32_t VRGetError() {
 // LINE 30:
 	__asm        mov    eax, GlobalError;
-	__asm        jmp    near ptr 0x004D8460;
+	__asm        jmp    _T10;
 // LINE 32:
+_T10:
 }
 
 

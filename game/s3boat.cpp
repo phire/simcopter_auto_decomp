@@ -501,7 +501,8 @@ static void $E7() {
 
 	__asm        call   $E3;
 	__asm        call   $E6;
-	__asm        jmp    near ptr 0x00527485;
+	__asm        jmp    _T15;
+_T15:
 }
 
 // STATIC INITIALIZER:
@@ -509,9 +510,10 @@ static void $E7() {
 static void $E3() {
 
 	__asm        mov    BoatClass::lsBoat<vftable>, 0x593200;
-	__asm        jmp    near ptr 0x0052749F;
-
-	__asm        jmp    near ptr 0x005274A4;
+	__asm        jmp    _T15;
+_T15:
+	__asm        jmp    _T1a;
+_T1a:
 }
 
 // STATIC INITIALIZER:
@@ -521,7 +523,8 @@ static void $E6() {
 	__asm        push   0x5274C6;
 	__asm        call   atexit;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x005274C1;
+	__asm        jmp    _T18;
+_T18:
 }
 
 // STATIC INITIALIZER:
@@ -540,7 +543,8 @@ static void $E4() {
 	__asm        mov    ecx, 0x62B5F0;
 	__asm        call   BoatClass::~BoatClass;
 _T2d:
-	__asm        jmp    near ptr 0x005274F8;
+	__asm        jmp    _T32;
+_T32:
 }
 
 // FUNCTION: COPTER_D 0x005274fd
@@ -626,8 +630,8 @@ _T10f:
 // LINE 193:
 	this->currentLocation.y = mapy;
 // LINE 194:
-	__asm        jmp    near ptr 0x00527623;
-
+	__asm        jmp    _T126;
+_T126:
 	__asm        mov    eax, this;
 }
 
@@ -636,15 +640,15 @@ void BoatClass::~BoatClass() {
 
 	this-><vftable> = 0x593200;
 // LINE 218:
-	__asm        jmp    near ptr 0x00527647;
-
+	__asm        jmp    _T1a;
+_T1a:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+4];
 	__asm        test   eax, eax;
 	__asm        je     _T4c;
 // LINE 220:
-	__asm        jmp    near ptr 0x0052765B;
-
+	__asm        jmp    _T2e;
+_T2e:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+5];
 	__asm        test   eax, eax;
@@ -659,7 +663,8 @@ void BoatClass::~BoatClass() {
 _T4c:
 	this->flags[0] = 0x0;
 // LINE 235:
-	__asm        jmp    near ptr 0x00527685;
+	__asm        jmp    _T58;
+_T58:
 }
 
 // FUNCTION: COPTER_D 0x0052768a
@@ -688,8 +693,9 @@ _T26:
 	__asm        push   0xFFFFFFFF;
 	__asm        call   BoatClass::CreateInstance;
 	__asm        add    esp, 0xC;
-	__asm        jmp    near ptr 0x005276D0;
+	__asm        jmp    _T1b;
 // LINE 319:
+_T1b:
 }
 
 // FUNCTION: COPTER_D 0x005276d5
@@ -768,8 +774,9 @@ int32_t BoatClass::Initialize(int32_t instanceID) {
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   BoatClass::InitializeInstance;
-	__asm        jmp    near ptr 0x005277A4;
+	__asm        jmp    _T2b;
 // LINE 445:
+_T2b:
 }
 
 // FUNCTION: COPTER_D 0x005277ab
@@ -792,7 +799,8 @@ _T18:
 	__asm        jmp    _T15;
 // LINE 494:
 _T36:
-	__asm        jmp    near ptr 0x005277E6;
+	__asm        jmp    _T3b;
+_T3b:
 }
 
 // FUNCTION: COPTER_D 0x005277eb
@@ -815,14 +823,15 @@ _T18:
 	__asm        jmp    _T15;
 // LINE 542:
 _T36:
-	__asm        jmp    near ptr 0x00527826;
+	__asm        jmp    _T3b;
+_T3b:
 }
 
 // FUNCTION: COPTER_D 0x0052782b
 void BoatClass::Itterate() {
 // LINE 565:
-	__asm        jmp    near ptr 0x0052783C;
-
+	__asm        jmp    _T11;
+_T11:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+4];
 	__asm        test   eax, eax;
@@ -830,8 +839,8 @@ void BoatClass::Itterate() {
 // LINE 568:
 	this->beamTimer += LoopTime;
 // LINE 569:
-	__asm        jmp    near ptr 0x0052785B;
-
+	__asm        jmp    _T30;
+_T30:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+5];
 	__asm        test   eax, eax;
@@ -853,8 +862,8 @@ void BoatClass::Itterate() {
 	__asm        call   dword ptr [eax+0x14];
 // LINE 575:
 _T6c:
-	__asm        jmp    near ptr 0x0052789C;
-
+	__asm        jmp    _T71;
+_T71:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+5];
 	__asm        test   eax, eax;
@@ -867,8 +876,8 @@ _T6c:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+4];
 // LINE 585:
-	__asm        jmp    near ptr 0x005278BB;
-
+	__asm        jmp    _T90;
+_T90:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+5];
 	__asm        test   eax, eax;
@@ -904,8 +913,8 @@ _Te5:
 	__asm        jmp    _T11f;
 // LINE 605:
 _Tea:
-	__asm        jmp    near ptr 0x0052791A;
-
+	__asm        jmp    _Tef;
+_Tef:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+4];
 	__asm        test   eax, eax;
@@ -921,7 +930,8 @@ _T11a:
 	__asm        jmp    _T11f;
 // LINE 607:
 _T11f:
-	__asm        jmp    near ptr 0x0052794F;
+	__asm        jmp    _T124;
+_T124:
 }
 
 // FUNCTION: COPTER_D 0x00527954
@@ -958,7 +968,8 @@ void BoatClass::Reset() {
 // LINE 644:
 	this->nextLocation.y = 0xffffffff;
 // LINE 645:
-	__asm        jmp    near ptr 0x005279EA;
+	__asm        jmp    _T96;
+_T96:
 }
 
 // FUNCTION: COPTER_D 0x005279ef
@@ -1028,8 +1039,8 @@ _T39:
 _Td7:
 	__asm        jmp    _Tdc;
 _Tdc:
-	__asm        jmp    near ptr 0x00527AD0;
-
+	__asm        jmp    _Te1;
+_Te1:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    cptr, eax;
 // LINE 709:
@@ -1221,7 +1232,8 @@ void BoatClass::AdjustSpeed() {
 	this->speed = 0x1;
 // LINE 867:
 _T2f:
-	__asm        jmp    near ptr 0x00527CAE;
+	__asm        jmp    _T34;
+_T34:
 }
 
 // FUNCTION: COPTER_D 0x00527cb3
@@ -1287,8 +1299,9 @@ enum BoatClass::StoppedReasons BoatClass::IsWaterPathClear() {
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   BoatClass::CheckWaterDynamicObjectsAt;
-	__asm        jmp    near ptr 0x00527D71;
+	__asm        jmp    _Tbe;
 // LINE 901:
+_Tbe:
 }
 
 // FUNCTION: COPTER_D 0x00527d76
@@ -1315,8 +1328,9 @@ enum BoatClass::StoppedReasons BoatClass::CheckWaterDynamicObjectsAt(const /*pac
 	__asm        shl    ecx, 8;
 	__asm        movzx  ax, G_texmap[0][eax+ecx];
 	__asm        mov    cellType, ax;
-	__asm        jmp    near ptr 0x00527DBE;
+	__asm        jmp    _T48;
 // LINE 924:
+_T48:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x37];
 	__asm        and    eax, 0xFF;
@@ -1338,8 +1352,8 @@ enum BoatClass::StoppedReasons BoatClass::CheckWaterDynamicObjectsAt(const /*pac
 _T92:
 	__asm        jmp    _T97;
 _T97:
-	__asm        jmp    near ptr 0x00527E12;
-
+	__asm        jmp    _T9c;
+_T9c:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    currentCell, eax;
 // LINE 927:
@@ -1419,8 +1433,8 @@ _T101:
 	__asm        cmp    combinedradius, eax;
 	__asm        jl     _T19d;
 // LINE 967:
-	__asm        jmp    near ptr 0x00527EEB;
-
+	__asm        jmp    _T175;
+_T175:
 	__asm        mov    eax, currentObject;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 8;
@@ -1478,8 +1492,8 @@ _T1d5:
 _T21f:
 	__asm        jmp    _T224;
 _T224:
-	__asm        jmp    near ptr 0x00527F9F;
-
+	__asm        jmp    _T229;
+_T229:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    currentCell, eax;
 // LINE 995:
@@ -1559,8 +1573,8 @@ _T28e:
 	__asm        cmp    combinedradius, eax;
 	__asm        jl     _T32a;
 // LINE 1033:
-	__asm        jmp    near ptr 0x00528078;
-
+	__asm        jmp    _T302;
+_T302:
 	__asm        mov    eax, currentObject;
 	__asm        movsx  eax, word ptr [eax+0xC];
 	__asm        test   al, 8;
@@ -1715,8 +1729,9 @@ void BoatClass::SetBoatDirection(unsigned short tileType) {
 	__asm        shl    ecx, 8;
 	__asm        movzx  ax, G_texmap[0][eax+ecx];
 	__asm        mov    tile, ax;
-	__asm        jmp    near ptr 0x00528224;
+	__asm        jmp    _T7c;
 // LINE 1151:
+_T7c:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(tile);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 5;
@@ -1752,8 +1767,9 @@ _Tc5:
 	__asm        shl    ecx, 8;
 	__asm        movzx  ax, G_texmap[0][eax+ecx];
 	__asm        mov    tile, ax;
-	__asm        jmp    near ptr 0x0052829A;
+	__asm        jmp    _Tf2;
 // LINE 1157:
+_Tf2:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(tile);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 5;
@@ -1789,8 +1805,9 @@ _T13b:
 	__asm        and    ecx, 0xFF;
 	__asm        movzx  ax, G_texmap[0][eax+ecx];
 	__asm        mov    tile, ax;
-	__asm        jmp    near ptr 0x00528310;
+	__asm        jmp    _T168;
 // LINE 1163:
+_T168:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(tile);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 5;
@@ -1826,8 +1843,9 @@ _T1b1:
 	__asm        and    ecx, 0xFF;
 	__asm        movzx  ax, G_texmap[0][eax+ecx];
 	__asm        mov    tile, ax;
-	__asm        jmp    near ptr 0x00528386;
+	__asm        jmp    _T1de;
 // LINE 1169:
+_T1de:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(tile);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 5;
@@ -1920,7 +1938,8 @@ void BoatClass::SlowDown() {
 // LINE 1215:
 	this->speed -= 0x20000;
 // LINE 1216:
-	__asm        jmp    near ptr 0x00528495;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // FUNCTION: COPTER_D 0x0052849a
@@ -1928,7 +1947,8 @@ void BoatClass::Stop() {
 // LINE 1236:
 	this->speed = 0x0;
 // LINE 1237:
-	__asm        jmp    near ptr 0x005284B5;
+	__asm        jmp    _T1b;
+_T1b:
 }
 
 // FUNCTION: COPTER_D 0x005284ba
@@ -1991,8 +2011,8 @@ _T3c:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x9B], eax;
 // LINE 1275:
-	__asm        jmp    near ptr 0x00528567;
-
+	__asm        jmp    _Tad;
+_Tad:
 	__asm        mov    eax, 0x20000000;
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x9F];
@@ -2045,7 +2065,8 @@ _T15d:
 	this->flags[3] = 0x0;
 // LINE 1285:
 _T164:
-	__asm        jmp    near ptr 0x00528623;
+	__asm        jmp    _T169;
+_T169:
 }
 
 // FUNCTION: COPTER_D 0x00528628
@@ -2097,8 +2118,8 @@ int32_t BoatClass::AmIInANewCell() {
 	__asm        je     _Tde;
 // LINE 1346:
 _T5e:
-	__asm        jmp    near ptr 0x005286BF;
-
+	__asm        jmp    _T63;
+_T63:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x3F];
 	__asm        and    eax, 0xFF;
@@ -2169,8 +2190,8 @@ void BoatClass::UnlinkFromCell(const /*packed*/ struct Point2d& point) {
 _T55:
 	__asm        jmp    _T5a;
 _T5a:
-	__asm        jmp    near ptr 0x005287A5;
-
+	__asm        jmp    _T5f;
+_T5f:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    cellPointer, eax;
 // LINE 1375:
@@ -2262,8 +2283,8 @@ void BoatClass::LinkToCell(const /*packed*/ struct Point2d& point) {
 _T55:
 	__asm        jmp    _T5a;
 _T5a:
-	__asm        jmp    near ptr 0x005288BB;
-
+	__asm        jmp    _T5f;
+_T5f:
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    cellPointer, eax;
 // LINE 1423:
@@ -2290,7 +2311,8 @@ _T98:
 	__asm        mov    ecx, cellPointer;
 	__asm        mov    [ecx+0x10], eax;
 // LINE 1427:
-	__asm        jmp    near ptr 0x00528911;
+	__asm        jmp    _Tb5;
+_Tb5:
 }
 
 // FUNCTION: COPTER_D 0x00528918
@@ -2360,8 +2382,8 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const /*packed*/ 
 _Tb6:
 	__asm        jmp    _Tbb;
 _Tbb:
-	__asm        jmp    near ptr 0x005289D8;
-
+	__asm        jmp    _Tc0;
+_Tc0:
 	__asm        mov    eax, [ebp-0x2C];
 	__asm        mov    ncptr, eax;
 // LINE 1475:
@@ -2386,8 +2408,8 @@ _Tbb:
 _T110:
 	__asm        jmp    _T115;
 _T115:
-	__asm        jmp    near ptr 0x00528A32;
-
+	__asm        jmp    _T11a;
+_T11a:
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    ecptr, eax;
 // LINE 1476:
@@ -2412,8 +2434,8 @@ _T115:
 _T16a:
 	__asm        jmp    _T16f;
 _T16f:
-	__asm        jmp    near ptr 0x00528A8C;
-
+	__asm        jmp    _T174;
+_T174:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    wcptr, eax;
 // LINE 1477:
@@ -2438,8 +2460,8 @@ _T16f:
 _T1c4:
 	__asm        jmp    _T1c9;
 _T1c9:
-	__asm        jmp    near ptr 0x00528AE6;
-
+	__asm        jmp    _T1ce;
+_T1ce:
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    scptr, eax;
 // LINE 1480:
@@ -2452,8 +2474,9 @@ _T1c9:
 	__asm        shl    ecx, 8;
 	__asm        movzx  ax, G_texmap[0][eax+ecx];
 	__asm        mov    currentTile, ax;
-	__asm        jmp    near ptr 0x00528B17;
+	__asm        jmp    _T1ff;
 // LINE 1482:
+_T1ff:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x5F];
 	__asm        and    eax, 0xFF;
@@ -2463,8 +2486,9 @@ _T1c9:
 	__asm        shl    ecx, 8;
 	__asm        movzx  ax, G_texmap[0][eax+ecx];
 	__asm        mov    northTile, ax;
-	__asm        jmp    near ptr 0x00528B43;
+	__asm        jmp    _T22b;
 // LINE 1483:
+_T22b:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x67];
 	__asm        and    eax, 0xFF;
@@ -2474,8 +2498,9 @@ _T1c9:
 	__asm        shl    ecx, 8;
 	__asm        movzx  ax, G_texmap[0][eax+ecx];
 	__asm        mov    southTile, ax;
-	__asm        jmp    near ptr 0x00528B6F;
+	__asm        jmp    _T257;
 // LINE 1484:
+_T257:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x6F];
 	__asm        and    eax, 0xFF;
@@ -2485,8 +2510,9 @@ _T1c9:
 	__asm        shl    ecx, 8;
 	__asm        movzx  ax, G_texmap[0][eax+ecx];
 	__asm        mov    eastTile, ax;
-	__asm        jmp    near ptr 0x00528B9B;
+	__asm        jmp    _T283;
 // LINE 1485:
+_T283:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x77];
 	__asm        and    eax, 0xFF;
@@ -2496,12 +2522,13 @@ _T1c9:
 	__asm        shl    ecx, 8;
 	__asm        movzx  ax, G_texmap[0][eax+ecx];
 	__asm        mov    westTile, ax;
-	__asm        jmp    near ptr 0x00528BC7;
+	__asm        jmp    _T2af;
 // LINE 1491:
+_T2af:
 	intersection = 0x0;
 // LINE 1495:
-	__asm        jmp    near ptr 0x00528BD3;
-
+	__asm        jmp    _T2bb;
+_T2bb:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF];
 	__asm        and    eax, 0x10;
@@ -2511,8 +2538,8 @@ _T1c9:
 	__asm        or     eax, ecx;
 	__asm        je     _T34f;
 
-	__asm        jmp    near ptr 0x00528BF2;
-
+	__asm        jmp    _T2da;
+_T2da:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF];
 	__asm        and    eax, 4;
@@ -2558,8 +2585,8 @@ _T31f:
 _T34a:
 	__asm        jmp    _T7be;
 _T34f:
-	__asm        jmp    near ptr 0x00528C6C;
-
+	__asm        jmp    _T354;
+_T354:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF];
 	__asm        and    eax, 0x10;
@@ -2569,8 +2596,8 @@ _T34f:
 	__asm        or     eax, ecx;
 	__asm        je     _T3eb;
 
-	__asm        jmp    near ptr 0x00528C8B;
-
+	__asm        jmp    _T373;
+_T373:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF];
 	__asm        and    eax, 8;
@@ -2616,8 +2643,8 @@ _T3bb:
 _T3e6:
 	__asm        jmp    _T7be;
 _T3eb:
-	__asm        jmp    near ptr 0x00528D08;
-
+	__asm        jmp    _T3f0;
+_T3f0:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF];
 	__asm        and    eax, 2;
@@ -2627,8 +2654,8 @@ _T3eb:
 	__asm        or     eax, ecx;
 	__asm        je     _T484;
 
-	__asm        jmp    near ptr 0x00528D27;
-
+	__asm        jmp    _T40f;
+_T40f:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF];
 	__asm        and    eax, 4;
@@ -2674,8 +2701,8 @@ _T454:
 _T47f:
 	__asm        jmp    _T7be;
 _T484:
-	__asm        jmp    near ptr 0x00528DA1;
-
+	__asm        jmp    _T489;
+_T489:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF];
 	__asm        and    eax, 2;
@@ -2685,8 +2712,8 @@ _T484:
 	__asm        or     eax, ecx;
 	__asm        je     _T520;
 
-	__asm        jmp    near ptr 0x00528DC0;
-
+	__asm        jmp    _T4a8;
+_T4a8:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF];
 	__asm        and    eax, 8;
@@ -2732,8 +2759,8 @@ _T4f0:
 _T51b:
 	__asm        jmp    _T7be;
 _T520:
-	__asm        jmp    near ptr 0x00528E3D;
-
+	__asm        jmp    _T525;
+_T525:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF];
 	__asm        and    eax, 0x10;
@@ -2796,8 +2823,8 @@ _T595:
 _T5c0:
 	__asm        jmp    _T7be;
 _T5c5:
-	__asm        jmp    near ptr 0x00528EE2;
-
+	__asm        jmp    _T5ca;
+_T5ca:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF];
 	__asm        and    eax, 2;
@@ -2860,8 +2887,8 @@ _T63a:
 _T665:
 	__asm        jmp    _T7be;
 _T66a:
-	__asm        jmp    near ptr 0x00528F87;
-
+	__asm        jmp    _T66f;
+_T66f:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF];
 	__asm        and    eax, 4;
@@ -2924,8 +2951,8 @@ _T6df:
 _T70a:
 	__asm        jmp    _T7be;
 _T70f:
-	__asm        jmp    near ptr 0x0052902C;
-
+	__asm        jmp    _T714;
+_T714:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF];
 	__asm        and    eax, 8;
@@ -3090,8 +3117,9 @@ _T132:
 	__asm        jmp    _T13e;
 _T13e:
 	__asm        mov    eax, [ebp-0xC];
-	__asm        jmp    near ptr 0x0052922B;
+	__asm        jmp    _T146;
 // LINE 1655:
+_T146:
 }
 
 // FUNCTION: COPTER_D 0x00529232
@@ -3260,14 +3288,15 @@ _T181:
 //   _Tc9
 // LINE 1765:
 _T1b5:
-	__asm        jmp    near ptr 0x005293EC;
+	__asm        jmp    _T1ba;
+_T1ba:
 }
 
 // FUNCTION: COPTER_D 0x005293f3
 enum BoatClass::StoppedReasons BoatClass::WhyAmIStopped() {
 // LINE 1788:
-	__asm        jmp    near ptr 0x00529404;
-
+	__asm        jmp    _T11;
+_T11:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x37];
 	__asm        and    eax, 0xFF;
@@ -3350,8 +3379,8 @@ void BoatClass::AdjustCurrentPosition() {
 	__asm        mov    [ecx+4], edx;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
-	__asm        jmp    near ptr 0x00529507;
-
+	__asm        jmp    _T79;
+_T79:
 	__asm        lea    eax, [ebp-0x18];
 	__asm        lea    ecx, [ebp-0xC];
 	__asm        mov    edx, [eax];
@@ -3370,7 +3399,8 @@ void BoatClass::AdjustCurrentPosition() {
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 1833:
-	__asm        jmp    near ptr 0x0052953E;
+	__asm        jmp    _Tb0;
+_Tb0:
 }
 
 // FUNCTION: COPTER_D 0x00529543
@@ -3413,8 +3443,8 @@ void BoatClass::AdjustNextPosition() {
 	__asm        mov    [ecx+4], edx;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
-	__asm        jmp    near ptr 0x005295BC;
-
+	__asm        jmp    _T79;
+_T79:
 	__asm        lea    eax, [ebp-0x24];
 	__asm        lea    ecx, [ebp-0x18];
 	__asm        mov    edx, [eax];
@@ -3469,7 +3499,8 @@ void BoatClass::AdjustNextPosition() {
 	__asm        add    esp, 8;
 // LINE 1873:
 _T112:
-	__asm        jmp    near ptr 0x0052965A;
+	__asm        jmp    _T117;
+_T117:
 }
 
 // FUNCTION: COPTER_D 0x0052965f
@@ -3477,8 +3508,8 @@ void BoatClass::GoStraight() {
 // LINE 1895:
 	this->flags[2] = 0x0;
 // LINE 1899:
-	__asm        jmp    near ptr 0x00529677;
-
+	__asm        jmp    _T18;
+_T18:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF];
 	__asm        and    eax, 0x10;
@@ -3499,8 +3530,8 @@ void BoatClass::GoStraight() {
 // LINE 1904:
 	__asm        jmp    _T11f;
 _T4d:
-	__asm        jmp    near ptr 0x005296B1;
-
+	__asm        jmp    _T52;
+_T52:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF];
 	__asm        and    eax, 0x20;
@@ -3521,8 +3552,8 @@ _T4d:
 // LINE 1909:
 	__asm        jmp    _T11f;
 _T87:
-	__asm        jmp    near ptr 0x005296EB;
-
+	__asm        jmp    _T8c;
+_T8c:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF];
 	__asm        and    eax, 0x40;
@@ -3543,8 +3574,8 @@ _T87:
 // LINE 1914:
 	__asm        jmp    _T11f;
 _Tc1:
-	__asm        jmp    near ptr 0x00529725;
-
+	__asm        jmp    _Tc6;
+_Tc6:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF];
 	__asm        and    eax, 8;
@@ -3576,7 +3607,8 @@ _Tfe:
 	__asm        jmp    _T11f;
 // LINE 1923:
 _T11f:
-	__asm        jmp    near ptr 0x00529783;
+	__asm        jmp    _T124;
+_T124:
 }
 
 // FUNCTION: COPTER_D 0x00529788
@@ -3584,8 +3616,8 @@ void BoatClass::TurnLeft() {
 // LINE 1945:
 	this->flags[2] = 0x1;
 // LINE 1949:
-	__asm        jmp    near ptr 0x005297A0;
-
+	__asm        jmp    _T18;
+_T18:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF];
 	__asm        and    eax, 0x10;
@@ -3606,8 +3638,8 @@ void BoatClass::TurnLeft() {
 // LINE 1954:
 	__asm        jmp    _T11f;
 _T4d:
-	__asm        jmp    near ptr 0x005297DA;
-
+	__asm        jmp    _T52;
+_T52:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF];
 	__asm        and    eax, 2;
@@ -3628,8 +3660,8 @@ _T4d:
 // LINE 1959:
 	__asm        jmp    _T11f;
 _T87:
-	__asm        jmp    near ptr 0x00529814;
-
+	__asm        jmp    _T8c;
+_T8c:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF];
 	__asm        and    eax, 4;
@@ -3650,8 +3682,8 @@ _T87:
 // LINE 1964:
 	__asm        jmp    _T11f;
 _Tc1:
-	__asm        jmp    near ptr 0x0052984E;
-
+	__asm        jmp    _Tc6;
+_Tc6:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF];
 	__asm        and    eax, 8;
@@ -3683,7 +3715,8 @@ _Tfe:
 	__asm        jmp    _T11f;
 // LINE 1974:
 _T11f:
-	__asm        jmp    near ptr 0x005298AC;
+	__asm        jmp    _T124;
+_T124:
 }
 
 // FUNCTION: COPTER_D 0x005298b1
@@ -3691,8 +3724,8 @@ void BoatClass::TurnRight() {
 // LINE 1996:
 	this->flags[2] = 0x1;
 // LINE 2000:
-	__asm        jmp    near ptr 0x005298C9;
-
+	__asm        jmp    _T18;
+_T18:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF];
 	__asm        and    eax, 0x10;
@@ -3713,8 +3746,8 @@ void BoatClass::TurnRight() {
 // LINE 2006:
 	__asm        jmp    _T11f;
 _T4d:
-	__asm        jmp    near ptr 0x00529903;
-
+	__asm        jmp    _T52;
+_T52:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF];
 	__asm        and    eax, 2;
@@ -3735,8 +3768,8 @@ _T4d:
 // LINE 2012:
 	__asm        jmp    _T11f;
 _T87:
-	__asm        jmp    near ptr 0x0052993D;
-
+	__asm        jmp    _T8c;
+_T8c:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF];
 	__asm        and    eax, 4;
@@ -3757,8 +3790,8 @@ _T87:
 // LINE 2018:
 	__asm        jmp    _T11f;
 _Tc1:
-	__asm        jmp    near ptr 0x00529977;
-
+	__asm        jmp    _Tc6;
+_Tc6:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF];
 	__asm        and    eax, 8;
@@ -3790,16 +3823,17 @@ _Tfe:
 	__asm        jmp    _T11f;
 // LINE 2029:
 _T11f:
-	__asm        jmp    near ptr 0x005299D5;
+	__asm        jmp    _T124;
+_T124:
 }
 
 // FUNCTION: COPTER_D 0x005299da
 void BoatClass::MakeUturn() {
 // LINE 2051:
-	__asm        jmp    near ptr 0x005299EB;
-
-	__asm        jmp    near ptr 0x005299F0;
-
+	__asm        jmp    _T11;
+_T11:
+	__asm        jmp    _T16;
+_T16:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x37];
 	__asm        and    eax, 0xFF;
@@ -3818,15 +3852,17 @@ void BoatClass::MakeUturn() {
 	__asm        mov    ecx, this;
 	__asm        call   BoatClass::AdjustNextPosition;
 // LINE 2136:
-	__asm        jmp    near ptr 0x00529A31;
+	__asm        jmp    _T57;
+_T57:
 }
 
 // FUNCTION: COPTER_D 0x00529a36
 int32_t BoatClass::FinishedUturn() {
 // LINE 2158:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00529A4C;
+	__asm        jmp    _T16;
 // LINE 2170:
+_T16:
 }
 
 // FUNCTION: COPTER_D 0x00529a51
@@ -4093,8 +4129,9 @@ _T287:
 	__asm        shl    ecx, 8;
 	__asm        movzx  ax, G_texmap[0][eax+ecx];
 	__asm        mov    tile, ax;
-	__asm        jmp    near ptr 0x00529D0A;
+	__asm        jmp    _T2b9;
 // LINE 2295:
+_T2b9:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(tile);
 	__asm        and    eax, 0xFFFF;
 	__asm        cmp    eax, 5;
@@ -4149,8 +4186,8 @@ _T312:
 _T362:
 	__asm        jmp    _T367;
 _T367:
-	__asm        jmp    near ptr 0x00529DBD;
-
+	__asm        jmp    _T36c;
+_T36c:
 	__asm        mov    eax, [ebp-0x54];
 	__asm        mov    cptr, eax;
 // LINE 2300:
@@ -4220,20 +4257,21 @@ _T3fa:
 	__asm        mov    eax, beampoint.y;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x37], eax;
-	__asm        jmp    near ptr 0x00529E7D;
+	__asm        jmp    _T42c;
 // LINE 2339:
-	__asm        jmp    near ptr 0x00529E82;
-
+_T42c:
+	__asm        jmp    _T431;
+_T431:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x33;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   BoatClass::LinkToCell;
 // LINE 2343:
-	__asm        jmp    near ptr 0x00529E96;
-
-	__asm        jmp    near ptr 0x00529E9B;
-
+	__asm        jmp    _T445;
+_T445:
+	__asm        jmp    _T44a;
+_T44a:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x37];
 	__asm        and    eax, 0xFF;
@@ -4261,15 +4299,15 @@ _T490:
 // FUNCTION: COPTER_D 0x00529ee6
 void BoatClass::UnPlaceBoat() {
 // LINE 2370:
-	__asm        jmp    near ptr 0x00529EF7;
-
+	__asm        jmp    _T11;
+_T11:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+5];
 	__asm        test   eax, eax;
 	__asm        je     _T3b;
 // LINE 2372:
-	__asm        jmp    near ptr 0x00529F0B;
-
+	__asm        jmp    _T25;
+_T25:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x33;
 	__asm        push   eax;
@@ -4279,7 +4317,8 @@ void BoatClass::UnPlaceBoat() {
 	this->flags[1] = 0x0;
 // LINE 2375:
 _T3b:
-	__asm        jmp    near ptr 0x00529F26;
+	__asm        jmp    _T40;
+_T40:
 }
 
 // FUNCTION: COPTER_D 0x00529f2b
@@ -4396,14 +4435,15 @@ _T103:
 	__asm        shl    ecx, 8;
 	__asm        movzx  ax, G_texmap[0][eax+ecx];
 	__asm        mov    tile, ax;
-	__asm        jmp    near ptr 0x0052A060;
+	__asm        jmp    _T135;
 // LINE 2455:
+_T135:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x7B], 0x163;
 	__asm        jne    _T6ad;
 // LINE 2465:
-	__asm        jmp    near ptr 0x0052A078;
-
+	__asm        jmp    _T14d;
+_T14d:
 	__asm        mov    eax, y;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -4448,8 +4488,8 @@ _T1ca:
 	__asm        cmp    dword ptr [ebp-0x44], 0;
 	__asm        je     _T6a8;
 _T1d4:
-	__asm        jmp    near ptr 0x0052A104;
-
+	__asm        jmp    _T1d9;
+_T1d9:
 	__asm        mov    eax, y;
 	__asm        dec    eax;
 	__asm        and    eax, 0xFF;
@@ -4492,8 +4532,8 @@ _T254:
 	__asm        cmp    dword ptr [ebp-0x4C], 0;
 	__asm        je     _T6a8;
 _T25e:
-	__asm        jmp    near ptr 0x0052A18E;
-
+	__asm        jmp    _T263;
+_T263:
 	__asm        mov    eax, x;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -4538,8 +4578,8 @@ _T2e0:
 	__asm        cmp    dword ptr [ebp-0x54], 0;
 	__asm        je     _T6a8;
 _T2ea:
-	__asm        jmp    near ptr 0x0052A21A;
-
+	__asm        jmp    _T2ef;
+_T2ef:
 	__asm        mov    eax, y;
 	__asm        and    eax, 0xFF;
 	__asm        mov    ecx, x;
@@ -4582,8 +4622,8 @@ _T36a:
 	__asm        cmp    dword ptr [ebp-0x5C], 0;
 	__asm        je     _T6a8;
 _T374:
-	__asm        jmp    near ptr 0x0052A2A4;
-
+	__asm        jmp    _T379;
+_T379:
 	__asm        mov    eax, y;
 	__asm        and    eax, 0xFF;
 	__asm        mov    ecx, x;
@@ -4624,8 +4664,8 @@ _T3f2:
 	__asm        cmp    dword ptr [ebp-0x64], 0;
 	__asm        je     _T6a8;
 _T3fc:
-	__asm        jmp    near ptr 0x0052A32C;
-
+	__asm        jmp    _T401;
+_T401:
 	__asm        mov    eax, x;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -4668,8 +4708,8 @@ _T47c:
 	__asm        cmp    dword ptr [ebp-0x6C], 0;
 	__asm        je     _T6a8;
 _T486:
-	__asm        jmp    near ptr 0x0052A3B6;
-
+	__asm        jmp    _T48b;
+_T48b:
 	__asm        mov    eax, y;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -4714,8 +4754,8 @@ _T508:
 	__asm        cmp    dword ptr [ebp-0x74], 0;
 	__asm        je     _T6a8;
 _T512:
-	__asm        jmp    near ptr 0x0052A442;
-
+	__asm        jmp    _T517;
+_T517:
 	__asm        mov    eax, y;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -4758,8 +4798,8 @@ _T592:
 	__asm        cmp    dword ptr [ebp-0x7C], 0;
 	__asm        je     _T6a8;
 _T59c:
-	__asm        jmp    near ptr 0x0052A4CC;
-
+	__asm        jmp    _T5a1;
+_T5a1:
 	__asm        mov    eax, y;
 	__asm        inc    eax;
 	__asm        and    eax, 0xFF;
@@ -4828,8 +4868,8 @@ _T62b:
 _T681:
 	__asm        jmp    _T686;
 _T686:
-	__asm        jmp    near ptr 0x0052A5B6;
-
+	__asm        jmp    _T68b;
+_T68b:
 	__asm        mov    eax, [ebp-0x90];
 	__asm        mov    cptr, eax;
 // LINE 2470:
@@ -4896,8 +4936,8 @@ _T70c:
 _T762:
 	__asm        jmp    _T767;
 _T767:
-	__asm        jmp    near ptr 0x0052A697;
-
+	__asm        jmp    _T76c;
+_T76c:
 	__asm        mov    eax, [ebp-0x94];
 	__asm        mov    cptr, eax;
 // LINE 2481:
@@ -4956,15 +4996,15 @@ _T7f5:
 // LINE 2510:
 	this->speed = 0x0;
 // LINE 2513:
-	__asm        jmp    near ptr 0x0052A73F;
-
+	__asm        jmp    _T814;
+_T814:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, byte ptr [eax+5];
 	__asm        test   eax, eax;
 	__asm        je     _T845;
 // LINE 2515:
-	__asm        jmp    near ptr 0x0052A756;
-
+	__asm        jmp    _T82b;
+_T82b:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x33;
 	__asm        push   eax;
@@ -4983,20 +5023,21 @@ _T84f:
 	__asm        mov    eax, beampoint.y;
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x37], eax;
-	__asm        jmp    near ptr 0x0052A797;
+	__asm        jmp    _T86c;
 // LINE 2526:
-	__asm        jmp    near ptr 0x0052A79C;
-
+_T86c:
+	__asm        jmp    _T871;
+_T871:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x33;
 	__asm        push   eax;
 	__asm        mov    ecx, this;
 	__asm        call   BoatClass::LinkToCell;
 // LINE 2530:
-	__asm        jmp    near ptr 0x0052A7B6;
-
-	__asm        jmp    near ptr 0x0052A7BB;
-
+	__asm        jmp    _T88b;
+_T88b:
+	__asm        jmp    _T890;
+_T890:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x33];
 	__asm        and    eax, 0xFF;
@@ -5233,8 +5274,8 @@ _T261:
 	__asm        mov    ecx, this;
 	__asm        call   BoatClass::LinkToCell;
 // LINE 2924:
-	__asm        jmp    near ptr 0x0052AAA5;
-
+	__asm        jmp    _T289;
+_T289:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x33];
 	__asm        and    eax, 0xFF;
@@ -5293,8 +5334,9 @@ int32_t CreateBoatInstance(int32_t instanceID) {
 _T24:
 	__asm        xor    eax, eax;
 _T26:
-	__asm        jmp    near ptr 0x0052AB4F;
+	__asm        jmp    _T2b;
 // LINE 3002:
+_T2b:
 }
 
 // FUNCTION: COPTER_D 0x0052ab54
@@ -5302,7 +5344,8 @@ void ItterateAllBoats() {
 // LINE 3024:
 	__asm        call   BoatClass::ItterateAll;
 // LINE 3025:
-	__asm        jmp    near ptr 0x0052AB64;
+	__asm        jmp    _T10;
+_T10:
 }
 
 // FUNCTION: COPTER_D 0x0052ab69
@@ -5310,7 +5353,8 @@ void ResetAllBoats() {
 // LINE 3047:
 	__asm        call   BoatClass::ResetAll;
 // LINE 3048:
-	__asm        jmp    near ptr 0x0052AB79;
+	__asm        jmp    _T10;
+_T10:
 }
 
 // FUNCTION: COPTER_D 0x0052ab7e
@@ -5326,8 +5370,8 @@ void ResetAllBoats() {
 // LINE 3066:
 	capboat = boats[0];
 // LINE 3068:
-	__asm        jmp    near ptr 0x0052AB94;
-
+	__asm        jmp    _T16;
+_T16:
 	__asm        mov    eax, capboat;
 	__asm        movsx  eax, byte ptr [eax+5];
 	__asm        cmp    eax, 1;
@@ -5469,8 +5513,8 @@ _T178:
 // LINE 3129:
 	capboat = boats[0];
 // LINE 3131:
-	__asm        jmp    near ptr 0x0052AD11;
-
+	__asm        jmp    _T16;
+_T16:
 	__asm        mov    eax, capboat;
 	__asm        movsx  eax, byte ptr [eax+5];
 	__asm        test   eax, eax;
@@ -5496,16 +5540,18 @@ _T37:
 	__asm        push   eax;
 	__asm        call   BoatClass::StartCapsizedBoat;
 	__asm        add    esp, 8;
-	__asm        jmp    near ptr 0x0052AD52;
+	__asm        jmp    _T1b;
 // LINE 3149:
+_T1b:
 }
 
 // FUNCTION: COPTER_D 0x0052ad57
 /*packed*/ struct _DYOBJ_INST* GetCapsizedBoat() {
 // LINE 3162:
 	__asm        call   BoatClass::GetCapsizedBoat;
-	__asm        jmp    near ptr 0x0052AD67;
+	__asm        jmp    _T10;
 // LINE 3163:
+_T10:
 }
 
 // FUNCTION: COPTER_D 0x0052ad6c
@@ -5515,8 +5561,9 @@ int32_t S3BoatMIFFLoad(void * __ptr32 miffReader) {
 	__asm        push   eax;
 	__asm        call   BoatClass::MIFFLoad;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x0052AD83;
+	__asm        jmp    _T17;
 // LINE 3176:
+_T17:
 }
 
 // FUNCTION: COPTER_D 0x0052ad88
@@ -5526,8 +5573,9 @@ int32_t S3BoatMIFFSave(void * __ptr32 miffWriter) {
 	__asm        push   eax;
 	__asm        call   BoatClass::MIFFSave;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x0052AD9F;
+	__asm        jmp    _T17;
 // LINE 3189:
+_T17:
 }
 
 // FUNCTION: COPTER_D 0x0052ada4
@@ -5689,8 +5737,8 @@ _T47:
 	__asm        mov    al, [eax+6];
 	__asm        mov    [ecx+6], al;
 // LINE 3238:
-	__asm        jmp    near ptr 0x0052AF9F;
-
+	__asm        jmp    _T1fb;
+_T1fb:
 	__asm        mov    eax, b;
 	__asm        movsx  eax, byte ptr [eax+5];
 	__asm        test   eax, eax;

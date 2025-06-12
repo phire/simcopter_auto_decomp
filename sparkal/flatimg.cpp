@@ -103,8 +103,8 @@ void IFlatImage::IFlatImage() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591050;
 // LINE 27:
-	__asm        jmp    near ptr 0x0048F16C;
-
+	__asm        jmp    _T4c;
+_T4c:
 	__asm        mov    eax, this;
 }
 
@@ -174,24 +174,26 @@ _T97:
 _T9c:
 	ReturnCode = 0x0;
 // LINE 51:
-	__asm        jmp    near ptr 0x0048F21C;
-
+	__asm        jmp    _Ta8;
+_Ta8:
 	pSourceBits = this->mpBits;
 // LINE 52:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
 	__asm        mov    SourceStride, eax;
-	__asm        jmp    near ptr 0x0048F233;
+	__asm        jmp    _Tbf;
 // LINE 54:
-	__asm        jmp    near ptr 0x0048F238;
-
+_Tbf:
+	__asm        jmp    _Tc4;
+_Tc4:
 	pDestBits = pDest->mpBits;
 // LINE 55:
 	__asm        mov    eax, pDest;
 	__asm        mov    eax, [eax+0x14];
 	__asm        mov    DestStride, eax;
-	__asm        jmp    near ptr 0x0048F24F;
+	__asm        jmp    _Tdb;
 // LINE 57:
+_Tdb:
 	__asm        mov    eax, SourceTop;
 	__asm        imul   eax, SourceStride;
 	__asm        add    eax, SourceLeft;
@@ -287,8 +289,9 @@ _T195:
 	__asm        call   dword ptr [eax+4];
 // LINE 101:
 	__asm        mov    eax, ReturnCode;
-	__asm        jmp    near ptr 0x0048F327;
+	__asm        jmp    _T1b3;
 // LINE 102:
+_T1b3:
 }
 
 // FUNCTION: COPTER_D 0x0048f32e
@@ -349,8 +352,9 @@ unsigned long IFlatImage::StretchCompose(/*packed*/ class IFlatImage *pDestImage
 	__asm        mov    eax, [eax];
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x10];
-	__asm        jmp    near ptr 0x0048F3AA;
+	__asm        jmp    _T7c;
 // LINE 127:
+_T7c:
 }
 
 // FUNCTION: COPTER_D 0x0048f3b1
@@ -455,15 +459,16 @@ _Te3:
 	__asm        mov    Height, eax;
 // LINE 170:
 _Tfc:
-	__asm        jmp    near ptr 0x0048F4B2;
-
+	__asm        jmp    _T101;
+_T101:
 	pDestBits = pDest->mpBits;
 // LINE 171:
 	__asm        mov    eax, pDest;
 	__asm        mov    eax, [eax+0x14];
 	__asm        mov    DestStride, eax;
-	__asm        jmp    near ptr 0x0048F4C9;
+	__asm        jmp    _T118;
 // LINE 173:
+_T118:
 	__asm        cmp    Width, 0;
 	__asm        je     _T195;
 
@@ -519,8 +524,9 @@ _T195:
 	__asm        call   dword ptr [eax+4];
 // LINE 187:
 	__asm        mov    eax, Error;
-	__asm        jmp    near ptr 0x0048F564;
+	__asm        jmp    _T1b3;
 // LINE 188:
+_T1b3:
 }
 
 // FUNCTION: COPTER_D 0x0048f56b
@@ -636,8 +642,9 @@ _T11a:
 	__asm        call   dword ptr [eax+4];
 // LINE 238:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0048F697;
+	__asm        jmp    _T12c;
 // LINE 239:
+_T12c:
 }
 
 // FUNCTION: COPTER_D 0x0048f69e
@@ -695,8 +702,9 @@ _T98:
 
 	__asm        mov    word ptr [ebp-0x14], 0xFFFF;
 _Tbd:
-	__asm        jmp    near ptr 0x0048F760;
+	__asm        jmp    _Tc2;
 // LINE 261:
+_Tc2:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x18], 0;
 	__asm        je     _T1c0;
@@ -733,8 +741,9 @@ _T115:
 
 	__asm        mov    word ptr [ebp-0xC], 0xFFFF;
 _T138:
-	__asm        jmp    near ptr 0x0048F7DB;
+	__asm        jmp    _T13d;
 // LINE 264:
+_T13d:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0;
 	__asm        je     _T1c0;
@@ -772,13 +781,14 @@ _T1a7:
 	__asm        mov    eax, [ebp-8];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3654];
-	__asm        jmp    near ptr 0x0048F854;
+	__asm        jmp    _T1b6;
 // LINE 268:
+_T1b6:
 	this-><CFlatImage+0x10> = 0x0;
 // LINE 271:
 _T1c0:
-	__asm        jmp    near ptr 0x0048F863;
-
+	__asm        jmp    _T1c5;
+_T1c5:
 	__asm        mov    eax, this;
 }
 
@@ -841,8 +851,8 @@ _Ta2:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], eax;
 // LINE 285:
-	__asm        jmp    near ptr 0x0048F92C;
-
+	__asm        jmp    _Tbf;
+_Tbf:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, pImage;
 	__asm        mov    ecx, [ecx+8];
@@ -859,8 +869,8 @@ _Ted:
 	__asm        jmp    _Tf2;
 // LINE 286:
 _Tf2:
-	__asm        jmp    near ptr 0x0048F964;
-
+	__asm        jmp    _Tf7;
+_Tf7:
 	__asm        mov    eax, pImage;
 	__asm        mov    ecx, this;
 	__asm        mov    ecx, [ecx+0xC];
@@ -918,8 +928,9 @@ _T189:
 
 	__asm        mov    word ptr [ebp-0x30], 0xFFFF;
 _T1ae:
-	__asm        jmp    near ptr 0x0048FA20;
+	__asm        jmp    _T1b3;
 // LINE 291:
+_T1b3:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x18], 0;
 	__asm        je     _T370;
@@ -956,8 +967,9 @@ _T206:
 
 	__asm        mov    word ptr [ebp-0x28], 0xFFFF;
 _T229:
-	__asm        jmp    near ptr 0x0048FA9B;
+	__asm        jmp    _T22e;
 // LINE 294:
+_T22e:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10], 0;
 	__asm        je     _T31d;
@@ -966,19 +978,20 @@ _T229:
 	/*bp-0x4*/   unsigned char * pBits;
 	/*bp-0x8*/   long SrcStride;
 	/*bp-0xc*/   unsigned char * pSource;
-	__asm        jmp    near ptr 0x0048FAAD;
-
+	__asm        jmp    _T240;
+_T240:
 	pBits = this-><CFlatImage+0x10>;
 // LINE 297:
-	__asm        jmp    near ptr 0x0048FABB;
-
+	__asm        jmp    _T24e;
+_T24e:
 	pSource = pImage->mpBits;
 // LINE 298:
 	__asm        mov    eax, pImage;
 	__asm        mov    eax, [eax+0x14];
 	__asm        mov    SrcStride, eax;
-	__asm        jmp    near ptr 0x0048FAD2;
+	__asm        jmp    _T265;
 // LINE 301:
+_T265:
 	__asm        cmp    pBits, 0;
 	__asm        je     _T2cf;
 
@@ -1040,9 +1053,10 @@ _T309:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3654];
-	__asm        jmp    near ptr 0x0048FB85;
+	__asm        jmp    _T318;
 // LINE 318:
 // Block end:
+_T318:
 	__asm        jmp    _T370;
 // LINE 319:
 _T31d:
@@ -1066,8 +1080,9 @@ _T357:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3650];
-	__asm        jmp    near ptr 0x0048FBD3;
+	__asm        jmp    _T366;
 // LINE 321:
+_T366:
 	this->mBitsHandle = 0x0;
 // LINE 325:
 _T370:
@@ -1087,8 +1102,8 @@ _T393:
 // LINE 329:
 	this-><CFlatImage+0x14> = 0x0;
 // LINE 330:
-	__asm        jmp    near ptr 0x0048FC19;
-
+	__asm        jmp    _T3ac;
+_T3ac:
 	__asm        mov    eax, this;
 }
 
@@ -1137,7 +1152,8 @@ _T8a:
 	__asm        jmp    _T99;
 // LINE 340:
 _T99:
-	__asm        jmp    near ptr 0x0048FCC1;
+	__asm        jmp    _T9e;
+_T9e:
 }
 
 // FUNCTION: COPTER_D 0x0048fcc6
@@ -1179,8 +1195,9 @@ _T5f:
 
 	__asm        mov    word ptr [ebp-4], 0xFFFF;
 _T82:
-	__asm        jmp    near ptr 0x0048FD4D;
+	__asm        jmp    _T87;
 // LINE 351:
+_T87:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
 	__asm        add    eax, 3;
@@ -1200,8 +1217,9 @@ _T99:
 _Tb2:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
-	__asm        jmp    near ptr 0x0048FD83;
+	__asm        jmp    _Tbd;
 // LINE 361:
+_Tbd:
 }
 
 // FUNCTION: COPTER_D 0x0048fd88
@@ -1276,8 +1294,9 @@ _Tdc:
 _Teb:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];
-	__asm        jmp    near ptr 0x0048FE7E;
+	__asm        jmp    _Tf6;
 // LINE 381:
+_Tf6:
 }
 
 

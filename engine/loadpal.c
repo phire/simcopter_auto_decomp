@@ -76,7 +76,8 @@ char * VRGetPalFromResource(/*packed*/ struct VRResource *res) {
 // LINE 114:
 	__asm        mov    eax, cmp;
 	__asm        add    eax, 0x10;
-	__asm        jmp    near ptr 0x004D2171;
+	__asm        jmp    _T1a;
 // LINE 116:
+_T1a:
 }
 

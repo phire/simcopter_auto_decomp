@@ -267,18 +267,18 @@ void GameWindow::GameWindow(unsigned long Width, unsigned long Height, unsigned 
 
 	__asm        mov    ecx, this;
 	__asm        call   CSparkalWindow::CSparkalWindow;
-	__asm        jmp    near ptr 0x00466F89;
-
-	__asm        jmp    near ptr 0x00466F8E;
-
-	__asm        jmp    near ptr 0x00466F93;
-
-	__asm        jmp    near ptr 0x00466F98;
-
-	__asm        jmp    near ptr 0x00466F9D;
-
-	__asm        jmp    near ptr 0x00466FA2;
-
+	__asm        jmp    _T19;
+_T19:
+	__asm        jmp    _T1e;
+_T1e:
+	__asm        jmp    _T23;
+_T23:
+	__asm        jmp    _T28;
+_T28:
+	__asm        jmp    _T2d;
+_T2d:
+	__asm        jmp    _T32;
+_T32:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x98], 0;
 	__asm        mov    eax, this;
@@ -376,8 +376,8 @@ _T14c:
 	__asm        mov    ecx, this;
 	__asm        call   GameWindow::MakePalette;
 // LINE 70:
-	__asm        jmp    near ptr 0x004670D5;
-
+	__asm        jmp    _T165;
+_T165:
 	__asm        mov    eax, this;
 }
 
@@ -483,10 +483,10 @@ _Tbf:
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ecx+0xC], eax;
 // LINE 130:
-	__asm        jmp    near ptr 0x00467216;
-
-	__asm        jmp    near ptr 0x0046721B;
-
+	__asm        jmp    _T137;
+_T137:
+	__asm        jmp    _T13c;
+_T13c:
 	__asm        push   0;
 	__asm        mov    eax, _ghWindowsInstance;
 	__asm        push   eax;
@@ -567,8 +567,8 @@ void GameWindow::~GameWindow() {
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 // LINE 151:
-	__asm        jmp    near ptr 0x00467303;
-
+	__asm        jmp    _T38;
+_T38:
 	__asm        mov    ecx, this;
 	__asm        call   CSparkalWindow::~CSparkalWindow;
 }
@@ -582,8 +582,9 @@ int32_t GameWindow::Initialize() {
 	__asm        call   dword ptr [eax+0x14];
 // LINE 160:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00467331;
+	__asm        jmp    _T21;
 // LINE 161:
+_T21:
 }
 
 // FUNCTION: COPTER_D 0x00467336
@@ -618,8 +619,9 @@ _T37:
 // LINE 176:
 _T4e:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0046738B;
+	__asm        jmp    _T55;
 // LINE 177:
+_T55:
 }
 
 // FUNCTION: COPTER_D 0x00467390
@@ -654,8 +656,9 @@ _T37:
 // LINE 189:
 _T4e:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004673E5;
+	__asm        jmp    _T55;
 // LINE 190:
+_T55:
 }
 
 // FUNCTION: COPTER_D 0x004673ea
@@ -917,7 +920,8 @@ void GameWindow::UpdatePalette(long start, long count, /*packed*/ struct Sparkal
 	__asm        mov    ecx, [eax+0x14];
 	__asm        call   CBackBuffer::UpdatePalette;
 // LINE 289:
-	__asm        jmp    near ptr 0x004676C9;
+	__asm        jmp    _T28;
+_T28:
 }
 
 // FUNCTION: COPTER_D 0x004676d0
@@ -984,15 +988,17 @@ void GameWindow::ProcessWindowMove() {
 	__asm        call   dword ptr [edx+0x80];
 // LINE 326:
 _Td4:
-	__asm        jmp    near ptr 0x004677A9;
+	__asm        jmp    _Td9;
+_Td9:
 }
 
 // FUNCTION: COPTER_D 0x004677ae
 int32_t GameWindow::PrepareForSwitchToWindowedMode() {
 // LINE 335:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004677C4;
+	__asm        jmp    _T16;
 // LINE 340:
+_T16:
 }
 
 // FUNCTION: COPTER_D 0x004677c9
@@ -1085,10 +1091,10 @@ int32_t GameWindow::CompleteSwitchToWindowedMode() {
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ecx+0xC], eax;
 // LINE 373:
-	__asm        jmp    near ptr 0x004678C5;
-
-	__asm        jmp    near ptr 0x004678CA;
-
+	__asm        jmp    _Tfc;
+_Tfc:
+	__asm        jmp    _T101;
+_T101:
 	__asm        push   0x14;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x84];
@@ -1113,16 +1119,18 @@ int32_t GameWindow::CompleteSwitchToWindowedMode() {
 	__asm        call   dword ptr ds:[0x6C37E8];
 // LINE 380:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00467913;
+	__asm        jmp    _T14a;
 // LINE 382:
+_T14a:
 }
 
 // FUNCTION: COPTER_D 0x00467918
 int32_t GameWindow::PrepareForSwitchToFullScreenMode() {
 // LINE 392:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x0046792E;
+	__asm        jmp    _T16;
 // LINE 394:
+_T16:
 }
 
 // FUNCTION: COPTER_D 0x00467933
@@ -1159,8 +1167,9 @@ int32_t GameWindow::CompleteSwitchToFullScreenMode() {
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x84], eax;
-	__asm        jmp    near ptr 0x004679A6;
+	__asm        jmp    _T73;
 // LINE 415:
+_T73:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x78;
 	__asm        mov    ecx, this;
@@ -1222,8 +1231,9 @@ int32_t GameWindow::CompleteSwitchToFullScreenMode() {
 	__asm        call   dword ptr ds:[0x6C37E8];
 // LINE 431:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x00467A43;
+	__asm        jmp    _T110;
 // LINE 433:
+_T110:
 }
 
 // FUNCTION: COPTER_D 0x00467a48
@@ -1237,23 +1247,25 @@ void GameWindow::CenterWindow() {
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3810];
 	__asm        mov    nScreenWidth, eax;
-	__asm        jmp    near ptr 0x00467A64;
+	__asm        jmp    _T1c;
 // LINE 444:
+_T1c:
 	__asm        push   1;
 	__asm        call   dword ptr ds:[0x6C3810];
 	__asm        mov    nScreenHeight, eax;
-	__asm        jmp    near ptr 0x00467A74;
+	__asm        jmp    _T2c;
 // LINE 445:
-	__asm        jmp    near ptr 0x00467A79;
-
+_T2c:
+	__asm        jmp    _T31;
+_T31:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x80];
 	__asm        mov    ecx, this;
 	__asm        sub    eax, [ecx+0x78];
 	__asm        mov    nWindowWidth, eax;
 // LINE 446:
-	__asm        jmp    near ptr 0x00467A90;
-
+	__asm        jmp    _T48;
+_T48:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x84];
 	__asm        mov    ecx, this;
@@ -1292,7 +1304,8 @@ void GameWindow::CenterWindow() {
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C3828];
 // LINE 455:
-	__asm        jmp    near ptr 0x00467AF4;
+	__asm        jmp    _Tac;
+_Tac:
 }
 
 // FUNCTION: COPTER_D 0x00467af9
@@ -1306,23 +1319,25 @@ void GameWindow::PlaceWindowRect(/*packed*/ class MRect *rectWindowToPlace) {
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3810];
 	__asm        mov    nScreenWidth, eax;
-	__asm        jmp    near ptr 0x00467B15;
+	__asm        jmp    _T1c;
 // LINE 472:
+_T1c:
 	__asm        push   1;
 	__asm        call   dword ptr ds:[0x6C3810];
 	__asm        mov    nScreenHeight, eax;
-	__asm        jmp    near ptr 0x00467B25;
+	__asm        jmp    _T2c;
 // LINE 473:
-	__asm        jmp    near ptr 0x00467B2A;
-
+_T2c:
+	__asm        jmp    _T31;
+_T31:
 	__asm        mov    eax, rectWindowToPlace;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, rectWindowToPlace;
 	__asm        sub    eax, [ecx];
 	__asm        mov    nWindowWidth, eax;
 // LINE 474:
-	__asm        jmp    near ptr 0x00467B3D;
-
+	__asm        jmp    _T44;
+_T44:
 	__asm        mov    eax, rectWindowToPlace;
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    ecx, rectWindowToPlace;
@@ -1357,7 +1372,8 @@ void GameWindow::PlaceWindowRect(/*packed*/ class MRect *rectWindowToPlace) {
 	__asm        mov    ecx, rectWindowToPlace;
 	__asm        mov    [ecx+0xC], eax;
 // LINE 482:
-	__asm        jmp    near ptr 0x00467B95;
+	__asm        jmp    _T9c;
+_T9c:
 }
 
 // FUNCTION: COPTER_D 0x00467b9c
@@ -1417,8 +1433,8 @@ _T75:
 	__asm        sub    eax, [ecx+0x68];
 	__asm        mov    ecx, lpMinMaxInfo;
 	__asm        mov    [ecx+0x20], eax;
-	__asm        jmp    near ptr 0x00467C2E;
-
+	__asm        jmp    _T92;
+_T92:
 	__asm        mov    eax, lpMinMaxInfo;
 	__asm        mov    eax, [eax+0x20];
 	__asm        mov    ecx, lpMinMaxInfo;
@@ -1434,8 +1450,8 @@ _T75:
 	__asm        sub    eax, [ecx+0x6C];
 	__asm        mov    ecx, lpMinMaxInfo;
 	__asm        mov    [ecx+0x24], eax;
-	__asm        jmp    near ptr 0x00467C5D;
-
+	__asm        jmp    _Tc1;
+_Tc1:
 	__asm        mov    eax, lpMinMaxInfo;
 	__asm        mov    eax, [eax+0x24];
 	__asm        mov    ecx, lpMinMaxInfo;

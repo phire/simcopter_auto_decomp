@@ -146,7 +146,8 @@ struct joyinfoex_tag{ // packed(0x34 bytes) TI: 0x2204
 static void $E2() {
 
 	__asm        call   $E1;
-	__asm        jmp    near ptr 0x0049A490;
+	__asm        jmp    _T10;
+_T10:
 }
 
 // STATIC INITIALIZER:
@@ -155,7 +156,8 @@ static void $E1() {
 
 	__asm        mov    ecx, 0x604C78;
 	__asm        call   JoystickManager::JoystickManager;
-	__asm        jmp    near ptr 0x0049A4AA;
+	__asm        jmp    _T15;
+_T15:
 }
 
 // FUNCTION: COPTER_D 0x0049a4af
@@ -190,8 +192,8 @@ _T43:
 	__asm        jmp    _T40;
 // LINE 38:
 _T6b:
-	__asm        jmp    near ptr 0x0049A51F;
-
+	__asm        jmp    _T70;
+_T70:
 	__asm        mov    eax, this;
 }
 
@@ -288,8 +290,9 @@ _Tee:
 _Tf3:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
-	__asm        jmp    near ptr 0x0049A624;
+	__asm        jmp    _Tfd;
 // LINE 83:
+_Tfd:
 }
 
 // FUNCTION: COPTER_D 0x0049a629
@@ -436,8 +439,9 @@ int32_t JoystickManager::Normalize(int32_t nPosition) {
 	__asm        mov    nPosition, ecx;
 // LINE 167:
 	__asm        mov    eax, nPosition;
-	__asm        jmp    near ptr 0x0049A7B4;
+	__asm        jmp    _T3b;
 // LINE 168:
+_T3b:
 }
 
 // FUNCTION: COPTER_D 0x0049a7bb
@@ -609,8 +613,8 @@ _T10c:
 // LINE 265:
 	joyInfoExToUse->dwFlags = dwFlagToUse;
 // LINE 266:
-	__asm        jmp    near ptr 0x0049A963;
-
+	__asm        jmp    _T12d;
+_T12d:
 	__asm        mov    eax, joyInfoExToUse;
 	__asm        push   eax;
 	__asm        mov    eax, nJoystick;
@@ -701,8 +705,8 @@ _T55:
 // LINE 313:
 	joyInfoExToUse->dwFlags = 0x80;
 // LINE 314:
-	__asm        jmp    near ptr 0x0049AA54;
-
+	__asm        jmp    _T77;
+_T77:
 	__asm        mov    eax, joyInfoExToUse;
 	__asm        push   eax;
 	__asm        mov    eax, nJoystick;
@@ -754,8 +758,8 @@ _T1d:
 	__asm        mov    ecx, this;
 	__asm        mov    dword ptr [ecx+eax*4+0x19A8], 0xFF;
 // LINE 345:
-	__asm        jmp    near ptr 0x0049AAED;
-
+	__asm        jmp    _T54;
+_T54:
 	__asm        mov    eax, nJoystick;
 	__asm        mov    ecx, eax;
 	__asm        lea    eax, [eax+eax*2];
@@ -823,8 +827,8 @@ _T4b:
 // LINE 391:
 	joyInfoExToUse->dwFlags = 0x40;
 // LINE 392:
-	__asm        jmp    near ptr 0x0049ABA7;
-
+	__asm        jmp    _T6d;
+_T6d:
 	__asm        mov    eax, joyInfoExToUse;
 	__asm        push   eax;
 	__asm        mov    eax, nJoystick;
@@ -883,8 +887,8 @@ int32_t JoystickManager::GetWindowsThreshold(int32_t nJoystick, long * lThreshol
 	__asm        jmp    _T55;
 // LINE 455:
 _T1d:
-	__asm        jmp    near ptr 0x0049AC42;
-
+	__asm        jmp    _T22;
+_T22:
 	__asm        mov    eax, lThreshold;
 	__asm        push   eax;
 	__asm        mov    eax, nJoystick;
@@ -919,8 +923,8 @@ int32_t JoystickManager::SetWindowsThreshold(int32_t nJoystick, long lThreshold)
 	__asm        jmp    _T55;
 // LINE 479:
 _T1d:
-	__asm        jmp    near ptr 0x0049AC9E;
-
+	__asm        jmp    _T22;
+_T22:
 	__asm        mov    eax, lThreshold;
 	__asm        push   eax;
 	__asm        mov    eax, nJoystick;
@@ -963,7 +967,8 @@ void JoystickManager::SetNormalizedMinMax(long lNewMin, long lNewMax) {
 	__asm        mov    eax, this;
 	__asm        mov    [eax+0x5C], ecx;
 // LINE 503:
-	__asm        jmp    near ptr 0x0049AD1B;
+	__asm        jmp    _T43;
+_T43:
 }
 
 

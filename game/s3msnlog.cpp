@@ -687,7 +687,8 @@ static void $E57() {
 
 	__asm        call   $E54;
 	__asm        call   $E56;
-	__asm        jmp    near ptr 0x004EBBD5;
+	__asm        jmp    _T15;
+_T15:
 }
 
 // STATIC INITIALIZER:
@@ -696,7 +697,8 @@ static void $E54() {
 
 	__asm        mov    ecx, 0x606E78;
 	__asm        call   LogManager::LogManager;
-	__asm        jmp    near ptr 0x004EBBEF;
+	__asm        jmp    _T15;
+_T15:
 }
 
 // STATIC INITIALIZER:
@@ -706,7 +708,8 @@ static void $E56() {
 	__asm        push   0x4EBC11;
 	__asm        call   atexit;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004EBC0C;
+	__asm        jmp    _T18;
+_T18:
 }
 
 // STATIC INITIALIZER:
@@ -715,7 +718,8 @@ static void $E55() {
 
 	__asm        mov    ecx, 0x606E78;
 	__asm        call   LogManager::~LogManager;
-	__asm        jmp    near ptr 0x004EBC26;
+	__asm        jmp    _T15;
+_T15:
 }
 
 // FUNCTION: COPTER_D 0x004ebc2b
@@ -729,7 +733,8 @@ void S3AddLogEntry(/*packed*/ struct tagLogBase *logData, int32_t bShowUserMessa
 	__asm        mov    ecx, 0x606E78;
 	__asm        call   LogManager::AddLogEntry;
 // LINE 38:
-	__asm        jmp    near ptr 0x004EBC4A;
+	__asm        jmp    _T1f;
+_T1f:
 }
 
 // FUNCTION: COPTER_D 0x004ebc4f
@@ -784,16 +789,16 @@ _T73:
 	__asm        push   eax;
 	__asm        call   endl;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004EBD17;
-
+	__asm        jmp    _Tc8;
+_Tc8:
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 _Td2:
-	__asm        jmp    near ptr 0x004EBD26;
-
-	__asm        jmp    near ptr 0x004EBD2B;
-
+	__asm        jmp    _Td7;
+_Td7:
+	__asm        jmp    _Tdc;
+_Tdc:
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    [ebp-0x14], eax;
 	__asm        mov    dword ptr [ebp-0x18], 0x155;
@@ -815,12 +820,12 @@ _T117:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x28], eax;
 _T11d:
-	__asm        jmp    near ptr 0x004EBD71;
-
-	__asm        jmp    near ptr 0x004EBD76;
-
-	__asm        jmp    near ptr 0x004EBD7B;
-
+	__asm        jmp    _T122;
+_T122:
+	__asm        jmp    _T127;
+_T127:
+	__asm        jmp    _T12c;
+_T12c:
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x50], eax;
@@ -845,16 +850,16 @@ _T11d:
 	__asm        push   eax;
 	__asm        call   endl;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004EBDCF;
-
+	__asm        jmp    _T180;
+_T180:
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 _T18a:
-	__asm        jmp    near ptr 0x004EBDDE;
-
-	__asm        jmp    near ptr 0x004EBDE3;
-
+	__asm        jmp    _T18f;
+_T18f:
+	__asm        jmp    _T194;
+_T194:
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    ecx, [ebp-0x14];
 	__asm        mov    [ecx+4], eax;
@@ -885,20 +890,20 @@ _T1f1:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        mov    [ebp-0x3C], eax;
 _T1f7:
-	__asm        jmp    near ptr 0x004EBE4B;
-
-	__asm        jmp    near ptr 0x004EBE50;
-
-	__asm        jmp    near ptr 0x004EBE55;
-
+	__asm        jmp    _T1fc;
+_T1fc:
+	__asm        jmp    _T201;
+_T201:
+	__asm        jmp    _T206;
+_T206:
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    eax, [eax];
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
 	__asm        add    eax, list<tagLogBase *>::next_avail;
 	__asm        mov    list<tagLogBase *>::last, eax;
-	__asm        jmp    near ptr 0x004EBE70;
-
+	__asm        jmp    _T221;
+_T221:
 	__asm        mov    eax, list<tagLogBase *>::next_avail;
 	__asm        mov    [ebp-0xC], eax;
 	__asm        add    list<tagLogBase *>::next_avail, 0xC;
@@ -912,8 +917,8 @@ _T23b:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    [ebp-0x54], eax;
 _T250:
-	__asm        jmp    near ptr 0x004EBEA4;
-
+	__asm        jmp    _T255;
+_T255:
 	__asm        mov    eax, [ebp-0x54];
 	__asm        mov    ecx, [ebp-4];
 	__asm        mov    [ecx], eax;
@@ -927,8 +932,8 @@ _T250:
 	__asm        mov    ecx, [ebp-4];
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x004EBECA;
-
+	__asm        jmp    _T27b;
+_T27b:
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx], eax;
@@ -937,8 +942,8 @@ _T288:
 	this->myLogBasePtrList = 0x0;
 // LINE 48:
 _T291:
-	__asm        jmp    near ptr 0x004EBEE5;
-
+	__asm        jmp    _T296;
+_T296:
 	__asm        mov    eax, this;
 }
 
@@ -965,20 +970,20 @@ void LogManager::~LogManager() {
 	__asm        mov    [ebp-0x18], eax;
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x004EBF38;
-
-	__asm        jmp    near ptr 0x004EBF3D;
-
+	__asm        jmp    _T4b;
+_T4b:
+	__asm        jmp    _T50;
+_T50:
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x1C], eax;
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    [ebp-0x10], eax;
-	__asm        jmp    near ptr 0x004EBF52;
-
-	__asm        jmp    near ptr 0x004EBF57;
-
+	__asm        jmp    _T65;
+_T65:
+	__asm        jmp    _T6a;
+_T6a:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    [ebp-0x34], eax;
 	__asm        mov    eax, [ebp-0x10];
@@ -1011,12 +1016,12 @@ _Tb4:
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x38], eax;
-	__asm        jmp    near ptr 0x004EBFB4;
-
+	__asm        jmp    _Tc7;
+_Tc7:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    [ebp-0x20], eax;
-	__asm        jmp    near ptr 0x004EBFBF;
-
+	__asm        jmp    _Td2;
+_Td2:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    [ebp-0x30], eax;
 	__asm        mov    eax, [ebp-0x30];
@@ -1029,25 +1034,25 @@ _Tb4:
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x004EBFE5;
-
-	__asm        jmp    near ptr 0x004EBFEA;
-
+	__asm        jmp    _Tf8;
+_Tf8:
+	__asm        jmp    _Tfd;
+_Tfd:
 	__asm        mov    eax, list<tagLogBase *>::free_list;
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    list<tagLogBase *>::free_list, eax;
-	__asm        jmp    near ptr 0x004EC001;
-
+	__asm        jmp    _T114;
+_T114:
 	__asm        mov    eax, [ebp-4];
 	__asm        dec    dword ptr [eax+4];
-	__asm        jmp    near ptr 0x004EC00C;
-
+	__asm        jmp    _T11f;
+_T11f:
 	__asm        jmp    _T76;
 _T124:
-	__asm        jmp    near ptr 0x004EC016;
-
+	__asm        jmp    _T129;
+_T129:
 	__asm        mov    eax, [ebp-4];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x14], eax;
@@ -1056,8 +1061,8 @@ _T124:
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    list<tagLogBase *>::free_list, eax;
-	__asm        jmp    near ptr 0x004EC035;
-
+	__asm        jmp    _T148;
+_T148:
 	__asm        dec    list<tagLogBase *>::number_of_lists;
 	__asm        jne    _T1d2;
 _T154:
@@ -1076,18 +1081,18 @@ _T154:
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004EC07C;
-
-	__asm        jmp    near ptr 0x004EC081;
-
+	__asm        jmp    _T18f;
+_T18f:
+	__asm        jmp    _T194;
+_T194:
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004EC092;
-
-	__asm        jmp    near ptr 0x004EC097;
-
+	__asm        jmp    _T1a5;
+_T1a5:
+	__asm        jmp    _T1aa;
+_T1aa:
 	__asm        jmp    _T154;
 _T1af:
 	__asm        mov    list<tagLogBase *>::free_list, 0;
@@ -1095,21 +1100,22 @@ _T1af:
 	__asm        mov    list<tagLogBase *>::last, 0;
 	__asm        jmp    _T1d2;
 _T1d2:
-	__asm        jmp    near ptr 0x004EC0C4;
-
+	__asm        jmp    _T1d7;
+_T1d7:
 	__asm        mov    eax, [ebp-4];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004EC0D5;
-
+	__asm        jmp    _T1e8;
+_T1e8:
 	__asm        jmp    _T1ed;
 // LINE 57:
 _T1ed:
 	this->myLogBasePtrList = 0x0;
 // LINE 59:
 _T1f6:
-	__asm        jmp    near ptr 0x004EC0E8;
+	__asm        jmp    _T1fb;
+_T1fb:
 }
 
 // FUNCTION: COPTER_D 0x004ec0ed
@@ -1140,8 +1146,9 @@ int32_t LogManager::ReadLogFromFile(char * szFilePath) {
 	__asm        lea    ecx, tempMIFF<MIFF+0x00>;
 	__asm        call   MIFF::~MIFF;
 	__asm        mov    eax, [ebp-0x150];
-	__asm        jmp    near ptr 0x004EC15E;
+	__asm        jmp    _T71;
 // LINE 74:
+_T71:
 }
 
 // FUNCTION: COPTER_D 0x004ec165
@@ -1172,8 +1179,9 @@ int32_t LogManager::WriteLogToFile(char * szFilePath) {
 	__asm        lea    ecx, tempMIFF<MIFF+0x00>;
 	__asm        call   MIFF::~MIFF;
 	__asm        mov    eax, [ebp-0x150];
-	__asm        jmp    near ptr 0x004EC1D6;
+	__asm        jmp    _T71;
 // LINE 89:
+_T71:
 }
 
 // FUNCTION: COPTER_D 0x004ec1dd
@@ -1241,8 +1249,9 @@ _T85:
 // LINE 115:
 _T96:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004EC27D;
+	__asm        jmp    _Ta0;
 // LINE 116:
+_Ta0:
 }
 
 // FUNCTION: COPTER_D 0x004ec284
@@ -1260,8 +1269,8 @@ int32_t LogManager::WriteToMIFF(/*packed*/ class MIFF *miffWriter) {
 	__asm        mov    [ebp-0x158], eax;
 	__asm        mov    eax, [ebp-0x158];
 	__asm        mov    iterator.node, eax;
-	__asm        jmp    near ptr 0x004EC2C2;
-
+	__asm        jmp    _T3e;
+_T3e:
 	__asm        jmp    _T43;
 // LINE 23:
 _T43:
@@ -1274,10 +1283,10 @@ _T43:
 	__asm        mov    [ebp-0x148], eax;
 	__asm        mov    eax, [ebp-0x148];
 	__asm        mov    [ebp-0x128], eax;
-	__asm        jmp    near ptr 0x004EC2F4;
-
-	__asm        jmp    near ptr 0x004EC2F9;
-
+	__asm        jmp    _T70;
+_T70:
+	__asm        jmp    _T75;
+_T75:
 	__asm        mov    eax, [ebp-0x128];
 	__asm        cmp    iterator.node, eax;
 	__asm        jne    _T8e;
@@ -1301,8 +1310,8 @@ _Taa:
 	__asm        je     _T1e3;
 // LINE 126:
 _Tbc:
-	__asm        jmp    near ptr 0x004EC345;
-
+	__asm        jmp    _Tc1;
+_Tc1:
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax+8];
 	__asm        cmp    dword ptr [eax], 1;
@@ -1313,8 +1322,8 @@ _Tbc:
 	/*bp-0x11c*/ /*packed*/ struct tagLogString *tempLogStringSource;
 	/*bp-0x120*/ /*packed*/ struct tagLogString *tempLogStringDestination;
 	/*bp-0x124*/ long lStringLength;
-	__asm        jmp    near ptr 0x004EC359;
-
+	__asm        jmp    _Td5;
+_Td5:
 	tempLogStringSource = iterator.node->data;
 // LINE 131:
 	tempLogStringDestination = chStringBuffer[0];
@@ -1367,10 +1376,10 @@ _T13a:
 	__asm        jmp    _T1b7;
 // LINE 144:
 _T183:
-	__asm        jmp    near ptr 0x004EC40C;
-
-	__asm        jmp    near ptr 0x004EC411;
-
+	__asm        jmp    _T188;
+_T188:
+	__asm        jmp    _T18d;
+_T18d:
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax+8];
 	__asm        push   eax;
@@ -1392,12 +1401,13 @@ _T1b7:
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    iterator.node, eax;
-	__asm        jmp    near ptr 0x004EC451;
-
+	__asm        jmp    _T1cd;
+_T1cd:
 	__asm        mov    eax, [ebp-0x180];
 	__asm        mov    [ebp-0x12C], eax;
-	__asm        jmp    near ptr 0x004EC462;
+	__asm        jmp    _T1de;
 // LINE 147:
+_T1de:
 	__asm        jmp    _T43;
 _T1e3:
 	__asm        mov    eax, this;
@@ -1409,10 +1419,10 @@ _T1e3:
 	__asm        mov    [ebp-0x138], eax;
 	__asm        mov    eax, [ebp-0x138];
 	__asm        mov    [ebp-0x130], eax;
-	__asm        jmp    near ptr 0x004EC494;
-
-	__asm        jmp    near ptr 0x004EC499;
-
+	__asm        jmp    _T210;
+_T210:
+	__asm        jmp    _T215;
+_T215:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x144], eax;
@@ -1422,10 +1432,10 @@ _T1e3:
 	__asm        mov    [ebp-0x140], eax;
 	__asm        mov    eax, [ebp-0x140];
 	__asm        mov    [ebp-0x134], eax;
-	__asm        jmp    near ptr 0x004EC4C8;
-
-	__asm        jmp    near ptr 0x004EC4CD;
-
+	__asm        jmp    _T244;
+_T244:
+	__asm        jmp    _T249;
+_T249:
 	__asm        mov    eax, [ebp-0x130];
 	__asm        mov    [ebp-0x174], eax;
 	__asm        mov    eax, [ebp-0x134];
@@ -1461,12 +1471,12 @@ _T2b9:
 	__asm        mov    eax, [ebp-0x178];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x178], eax;
-	__asm        jmp    near ptr 0x004EC55C;
-
+	__asm        jmp    _T2d8;
+_T2d8:
 	__asm        mov    eax, [ebp-0x164];
 	__asm        mov    [ebp-0x160], eax;
-	__asm        jmp    near ptr 0x004EC56D;
-
+	__asm        jmp    _T2e9;
+_T2e9:
 	__asm        mov    eax, [ebp-0x160];
 	__asm        mov    [ebp-0x170], eax;
 	__asm        mov    eax, [ebp-0x170];
@@ -1479,28 +1489,30 @@ _T2b9:
 	__asm        mov    ecx, [ebp-0x170];
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x004EC5A5;
-
-	__asm        jmp    near ptr 0x004EC5AA;
-
+	__asm        jmp    _T321;
+_T321:
+	__asm        jmp    _T326;
+_T326:
 	__asm        mov    eax, list<tagLogBase *>::free_list;
 	__asm        mov    ecx, [ebp-0x170];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x170];
 	__asm        mov    list<tagLogBase *>::free_list, eax;
-	__asm        jmp    near ptr 0x004EC5C7;
-
+	__asm        jmp    _T343;
+_T343:
 	__asm        mov    eax, [ebp-0x17C];
 	__asm        dec    dword ptr [eax+4];
-	__asm        jmp    near ptr 0x004EC5D5;
-
+	__asm        jmp    _T351;
+_T351:
 	__asm        jmp    _T26f;
 _T356:
-	__asm        jmp    near ptr 0x004EC5DF;
+	__asm        jmp    _T35b;
 // LINE 149:
+_T35b:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004EC5E9;
+	__asm        jmp    _T365;
 // LINE 150:
+_T365:
 }
 
 // FUNCTION: COPTER_D 0x004ec5f0
@@ -1603,8 +1615,9 @@ _T7d:
 // LINE 199:
 _Ta1:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004EC706;
+	__asm        jmp    _Tab;
 // LINE 200:
+_Tab:
 }
 
 // FUNCTION: COPTER_D 0x004ec70d
@@ -1623,15 +1636,16 @@ int32_t LogManager::ValidateLogEntry(/*packed*/ struct tagLogBase *logData) {
 _T2e:
 	__asm        xor    eax, eax;
 _T30:
-	__asm        jmp    near ptr 0x004EC742;
+	__asm        jmp    _T35;
 // LINE 209:
+_T35:
 }
 
 // FUNCTION: COPTER_D 0x004ec749
 int32_t LogManager::AddLogEntry(/*packed*/ struct tagLogBase *logData, int32_t bShowUserMessage, int32_t bSetTime) {
 // LINE 220:
-	__asm        jmp    near ptr 0x004EC760;
-
+	__asm        jmp    _T17;
+_T17:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        cmp    dword ptr [eax+4], 0x1F4;
@@ -1717,17 +1731,17 @@ _T5e:
 	__asm        mov    [ebp-0x4C], eax;
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    [ebp-0x44], eax;
-	__asm        jmp    near ptr 0x004EC84B;
-
-	__asm        jmp    near ptr 0x004EC850;
-
+	__asm        jmp    _T102;
+_T102:
+	__asm        jmp    _T107;
+_T107:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x54], eax;
 	__asm        mov    ecx, [ebp-0x58];
 	__asm        call   list<tagLogBase *>::get_node;
 	__asm        mov    [ebp-0x50], eax;
-	__asm        jmp    near ptr 0x004EC866;
-
+	__asm        jmp    _T11d;
+_T11d:
 	__asm        mov    eax, [ebp-0x34];
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x50];
@@ -1753,13 +1767,14 @@ _T5e:
 	__asm        add    dword ptr [eax+4], 1;
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    [ebp-0x48], eax;
-	__asm        jmp    near ptr 0x004EC8B3;
-
-	__asm        jmp    near ptr 0x004EC8B8;
-
-	__asm        jmp    near ptr 0x004EC8BD;
+	__asm        jmp    _T16a;
+_T16a:
+	__asm        jmp    _T16f;
+_T16f:
+	__asm        jmp    _T174;
 // LINE 235:
 // Block end:
+_T174:
 	__asm        jmp    _T41f;
 _T179:
 	__asm        mov    eax, logData;
@@ -1794,17 +1809,17 @@ _T179:
 	__asm        mov    [ebp-0x64], eax;
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    [ebp-0x5C], eax;
-	__asm        jmp    near ptr 0x004EC91E;
-
-	__asm        jmp    near ptr 0x004EC923;
-
+	__asm        jmp    _T1d5;
+_T1d5:
+	__asm        jmp    _T1da;
+_T1da:
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        mov    ecx, [ebp-0x70];
 	__asm        call   list<tagLogBase *>::get_node;
 	__asm        mov    [ebp-0x68], eax;
-	__asm        jmp    near ptr 0x004EC939;
-
+	__asm        jmp    _T1f0;
+_T1f0:
 	__asm        mov    eax, [ebp-0x38];
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x68];
@@ -1830,13 +1845,14 @@ _T179:
 	__asm        add    dword ptr [eax+4], 1;
 	__asm        mov    eax, [ebp-0x68];
 	__asm        mov    [ebp-0x60], eax;
-	__asm        jmp    near ptr 0x004EC986;
-
-	__asm        jmp    near ptr 0x004EC98B;
-
-	__asm        jmp    near ptr 0x004EC990;
+	__asm        jmp    _T23d;
+_T23d:
+	__asm        jmp    _T242;
+_T242:
+	__asm        jmp    _T247;
 // LINE 240:
 // Block end:
+_T247:
 	__asm        jmp    _T41f;
 _T24c:
 	__asm        mov    eax, logData;
@@ -1867,17 +1883,17 @@ _T24c:
 	__asm        mov    [ebp-0x7C], eax;
 	__asm        mov    eax, [ebp-0x7C];
 	__asm        mov    [ebp-0x74], eax;
-	__asm        jmp    near ptr 0x004EC9EB;
-
-	__asm        jmp    near ptr 0x004EC9F0;
-
+	__asm        jmp    _T2a2;
+_T2a2:
+	__asm        jmp    _T2a7;
+_T2a7:
 	__asm        mov    eax, [ebp-0x74];
 	__asm        mov    [ebp-0x84], eax;
 	__asm        mov    ecx, [ebp-0x88];
 	__asm        call   list<tagLogBase *>::get_node;
 	__asm        mov    [ebp-0x80], eax;
-	__asm        jmp    near ptr 0x004ECA0C;
-
+	__asm        jmp    _T2c3;
+_T2c3:
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x80];
@@ -1903,13 +1919,14 @@ _T24c:
 	__asm        add    dword ptr [eax+4], 1;
 	__asm        mov    eax, [ebp-0x80];
 	__asm        mov    [ebp-0x78], eax;
-	__asm        jmp    near ptr 0x004ECA68;
-
-	__asm        jmp    near ptr 0x004ECA6D;
-
-	__asm        jmp    near ptr 0x004ECA72;
+	__asm        jmp    _T31f;
+_T31f:
+	__asm        jmp    _T324;
+_T324:
+	__asm        jmp    _T329;
 // LINE 245:
 // Block end:
+_T329:
 	__asm        jmp    _T41f;
 // LINE 246:
 // Block start:
@@ -1937,17 +1954,17 @@ _T32e:
 	__asm        mov    [ebp-0x94], eax;
 	__asm        mov    eax, [ebp-0x94];
 	__asm        mov    [ebp-0x8C], eax;
-	__asm        jmp    near ptr 0x004ECAC7;
-
-	__asm        jmp    near ptr 0x004ECACC;
-
+	__asm        jmp    _T37e;
+_T37e:
+	__asm        jmp    _T383;
+_T383:
 	__asm        mov    eax, [ebp-0x8C];
 	__asm        mov    [ebp-0x9C], eax;
 	__asm        mov    ecx, [ebp-0xA0];
 	__asm        call   list<tagLogBase *>::get_node;
 	__asm        mov    [ebp-0x98], eax;
-	__asm        jmp    near ptr 0x004ECAEE;
-
+	__asm        jmp    _T3a5;
+_T3a5:
 	__asm        lea    eax, newLogBase;
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x98];
@@ -1973,10 +1990,10 @@ _T32e:
 	__asm        inc    dword ptr [eax+4];
 	__asm        mov    eax, [ebp-0x98];
 	__asm        mov    [ebp-0x90], eax;
-	__asm        jmp    near ptr 0x004ECB5E;
-
-	__asm        jmp    near ptr 0x004ECB63;
-
+	__asm        jmp    _T415;
+_T415:
+	__asm        jmp    _T41a;
+_T41a:
 	__asm        jmp    _T41f;
 // LINE 251:
 // Block end:
@@ -2007,8 +2024,8 @@ _T41f:
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-0xA4];
 	__asm        mov    dword ptr [eax+0xC], 1;
-	__asm        jmp    near ptr 0x004ECBDC;
-
+	__asm        jmp    _T493;
+_T493:
 	__asm        mov    eax, [ebp-0xA4];
 	__asm        mov    sCurrentText.reference, eax;
 	__asm        jmp    _T4a8;
@@ -2016,8 +2033,9 @@ _T4a1:
 	sCurrentText.reference = 0x0;
 _T4a8:
 	__asm        mov    sCurrentText.c_str_ptr, 0;
-	__asm        jmp    near ptr 0x004ECBFD;
+	__asm        jmp    _T4b4;
 // LINE 253:
+_T4b4:
 	__asm        push   0;
 	__asm        lea    eax, sCurrentText.c_str_ptr;
 	__asm        push   eax;
@@ -2050,18 +2068,18 @@ _T4a8:
 
 	__asm        mov    ecx, [ebp-0xB0];
 	__asm        call   basic_string_ref<char>::delete_ptr;
-	__asm        jmp    near ptr 0x004ECC6F;
-
+	__asm        jmp    _T526;
+_T526:
 	__asm        mov    eax, [ebp-0xB0];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004ECC83;
-
+	__asm        jmp    _T53a;
+_T53a:
 	__asm        jmp    _T53f;
 _T53f:
-	__asm        jmp    near ptr 0x004ECC8D;
-
+	__asm        jmp    _T544;
+_T544:
 	__asm        cmp    sCurrentText.c_str_ptr, 0;
 	__asm        je     _T572;
 
@@ -2079,8 +2097,9 @@ _T572:
 // Block end:
 _T577:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004ECCCA;
+	__asm        jmp    _T581;
 // LINE 258:
+_T581:
 }
 
 // FUNCTION: COPTER_D 0x004eccd1
@@ -2116,8 +2135,8 @@ _T68:
 	__asm        cmp    list<tagLogBase *>::last, eax;
 	__asm        jne    _T1ed;
 
-	__asm        jmp    near ptr 0x004ECD4F;
-
+	__asm        jmp    _T7e;
+_T7e:
 	__asm        push   0;
 	__asm        push   1;
 	__asm        call   allocate;
@@ -2142,17 +2161,17 @@ _Te0:
 	__asm        mov    eax, [ebp-0x8C];
 	__asm        mov    [ebp-0x94], eax;
 _Tec:
-	__asm        jmp    near ptr 0x004ECDC2;
-
-	__asm        jmp    near ptr 0x004ECDC7;
-
-	__asm        jmp    near ptr 0x004ECDCC;
-
+	__asm        jmp    _Tf1;
+_Tf1:
+	__asm        jmp    _Tf6;
+_Tf6:
+	__asm        jmp    _Tfb;
+_Tfb:
 	__asm        mov    eax, [ebp-0x94];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0xAC], eax;
-	__asm        jmp    near ptr 0x004ECDDF;
-
+	__asm        jmp    _T10e;
+_T10e:
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0xAC];
 	__asm        push   eax;
@@ -2187,20 +2206,20 @@ _T197:
 	__asm        mov    eax, [ebp-0xA0];
 	__asm        mov    [ebp-0xA8], eax;
 _T1a3:
-	__asm        jmp    near ptr 0x004ECE79;
-
-	__asm        jmp    near ptr 0x004ECE7E;
-
-	__asm        jmp    near ptr 0x004ECE83;
-
+	__asm        jmp    _T1a8;
+_T1a8:
+	__asm        jmp    _T1ad;
+_T1ad:
+	__asm        jmp    _T1b2;
+_T1b2:
 	__asm        mov    eax, [ebp-0xA8];
 	__asm        mov    eax, [eax];
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
 	__asm        add    eax, list<tagLogBase *>::next_avail;
 	__asm        mov    list<tagLogBase *>::last, eax;
-	__asm        jmp    near ptr 0x004ECEA1;
-
+	__asm        jmp    _T1d0;
+_T1d0:
 	__asm        mov    eax, list<tagLogBase *>::next_avail;
 	__asm        mov    [ebp-0x78], eax;
 	__asm        add    list<tagLogBase *>::next_avail, 0xC;
@@ -2214,8 +2233,8 @@ _T1ed:
 	__asm        mov    eax, [ebp-0x7C];
 	__asm        mov    [ebp-0xB0], eax;
 _T205:
-	__asm        jmp    near ptr 0x004ECEDB;
-
+	__asm        jmp    _T20a;
+_T20a:
 	__asm        mov    eax, [ebp-0xB0];
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx], eax;
@@ -2229,8 +2248,8 @@ _T205:
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x004ECF04;
-
+	__asm        jmp    _T233;
+_T233:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    newLogBasePtrList, eax;
 	__asm        jmp    _T245;
@@ -2238,10 +2257,12 @@ _T23e:
 	newLogBasePtrList = 0x0;
 // LINE 267:
 _T245:
-	__asm        jmp    near ptr 0x004ECF1B;
+	__asm        jmp    _T24a;
 // LINE 268:
-	__asm        jmp    near ptr 0x004ECF20;
+_T24a:
+	__asm        jmp    _T24f;
 // LINE 270:
+_T24f:
 	__asm        jmp    _T254;
 _T254:
 	__asm        mov    eax, this;
@@ -2259,10 +2280,10 @@ _T254:
 	__asm        mov    [ebp-0x38], eax;
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    [ebp-0x14], eax;
-	__asm        jmp    near ptr 0x004ECF57;
-
-	__asm        jmp    near ptr 0x004ECF5C;
-
+	__asm        jmp    _T286;
+_T286:
+	__asm        jmp    _T28b;
+_T28b:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    iterator.node, eax;
 // LINE 272:
@@ -2278,10 +2299,10 @@ _T297:
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x18], eax;
-	__asm        jmp    near ptr 0x004ECF86;
-
-	__asm        jmp    near ptr 0x004ECF8B;
-
+	__asm        jmp    _T2b5;
+_T2b5:
+	__asm        jmp    _T2ba;
+_T2ba:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        cmp    iterator.node, eax;
 	__asm        jne    _T2d0;
@@ -2305,10 +2326,10 @@ _T2e9:
 	__asm        je     _T343;
 // LINE 274:
 _T2f8:
-	__asm        jmp    near ptr 0x004ECFCE;
-
-	__asm        jmp    near ptr 0x004ECFD3;
-
+	__asm        jmp    _T2fd;
+_T2fd:
+	__asm        jmp    _T302;
+_T302:
 	__asm        mov    eax, currentLowest.node;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, iterator.node;
@@ -2325,17 +2346,18 @@ _T320:
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    iterator.node, eax;
-	__asm        jmp    near ptr 0x004ED004;
-
+	__asm        jmp    _T333;
+_T333:
 	__asm        mov    eax, [ebp-0x70];
 	__asm        mov    [ebp-0x1C], eax;
-	__asm        jmp    near ptr 0x004ED00F;
+	__asm        jmp    _T33e;
 // LINE 277:
+_T33e:
 	__asm        jmp    _T297;
 // LINE 278:
 _T343:
-	__asm        jmp    near ptr 0x004ED019;
-
+	__asm        jmp    _T348;
+_T348:
 	__asm        mov    eax, currentLowest.node;
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x58], eax;
@@ -2344,22 +2366,22 @@ _T343:
 	__asm        mov    [ebp-0x48], eax;
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    [ebp-0x40], eax;
-	__asm        jmp    near ptr 0x004ED035;
-
-	__asm        jmp    near ptr 0x004ED03A;
-
+	__asm        jmp    _T364;
+_T364:
+	__asm        jmp    _T369;
+_T369:
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    [ebp-0x54], eax;
 	__asm        mov    ecx, newLogBasePtrList;
 	__asm        call   list<tagLogBase *>::get_node;
 	__asm        mov    [ebp-0x4C], eax;
-	__asm        jmp    near ptr 0x004ED050;
-
+	__asm        jmp    _T37f;
+_T37f:
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x50], eax;
-	__asm        jmp    near ptr 0x004ED05E;
-
+	__asm        jmp    _T38d;
+_T38d:
 	__asm        cmp    dword ptr [ebp-0x50], 0;
 	__asm        je     _T3a6;
 
@@ -2369,8 +2391,8 @@ _T343:
 	__asm        mov    [ecx], eax;
 	__asm        jmp    _T3a6;
 _T3a6:
-	__asm        jmp    near ptr 0x004ED07C;
-
+	__asm        jmp    _T3ab;
+_T3ab:
 	__asm        mov    eax, [ebp-0x54];
 	__asm        mov    ecx, [ebp-0x4C];
 	__asm        mov    [ecx], eax;
@@ -2389,12 +2411,12 @@ _T3a6:
 	__asm        add    dword ptr [eax+4], 1;
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    [ebp-0x44], eax;
-	__asm        jmp    near ptr 0x004ED0B6;
-
-	__asm        jmp    near ptr 0x004ED0BB;
-
-	__asm        jmp    near ptr 0x004ED0C0;
-
+	__asm        jmp    _T3e5;
+_T3e5:
+	__asm        jmp    _T3ea;
+_T3ea:
+	__asm        jmp    _T3ef;
+_T3ef:
 	__asm        mov    eax, currentLowest.node;
 	__asm        mov    [ebp-0xB4], eax;
 	__asm        mov    eax, this;
@@ -2411,21 +2433,22 @@ _T3a6:
 	__asm        mov    ecx, [ebp-0xB4];
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x004ED103;
-
-	__asm        jmp    near ptr 0x004ED108;
-
+	__asm        jmp    _T432;
+_T432:
+	__asm        jmp    _T437;
+_T437:
 	__asm        mov    eax, list<tagLogBase *>::free_list;
 	__asm        mov    ecx, [ebp-0xB4];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0xB4];
 	__asm        mov    list<tagLogBase *>::free_list, eax;
-	__asm        jmp    near ptr 0x004ED125;
-
+	__asm        jmp    _T454;
+_T454:
 	__asm        mov    eax, [ebp-0xB8];
 	__asm        dec    dword ptr [eax+4];
-	__asm        jmp    near ptr 0x004ED133;
+	__asm        jmp    _T462;
 // LINE 280:
+_T462:
 	__asm        jmp    _T254;
 // LINE 281:
 _T467:
@@ -2442,20 +2465,20 @@ _T467:
 	__asm        mov    [ebp-0x68], eax;
 	__asm        mov    eax, [ebp-0x68];
 	__asm        mov    [ebp-0x5C], eax;
-	__asm        jmp    near ptr 0x004ED166;
-
-	__asm        jmp    near ptr 0x004ED16B;
-
+	__asm        jmp    _T495;
+_T495:
+	__asm        jmp    _T49a;
+_T49a:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    eax, [eax];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        mov    [ebp-0x60], eax;
-	__asm        jmp    near ptr 0x004ED180;
-
-	__asm        jmp    near ptr 0x004ED185;
-
+	__asm        jmp    _T4af;
+_T4af:
+	__asm        jmp    _T4b4;
+_T4b4:
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x60];
@@ -2470,30 +2493,31 @@ _T467:
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    list<tagLogBase *>::free_list, eax;
-	__asm        jmp    near ptr 0x004ED1B4;
-
+	__asm        jmp    _T4e3;
+_T4e3:
 	__asm        dec    list<tagLogBase *>::number_of_lists;
 	__asm        jne    _T4f7;
 
 	__asm        mov    ecx, [ebp-0x20];
 	__asm        call   list<tagLogBase *>::deallocate_buffers;
 _T4f7:
-	__asm        jmp    near ptr 0x004ED1CD;
-
+	__asm        jmp    _T4fc;
+_T4fc:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004ED1DE;
-
+	__asm        jmp    _T50d;
+_T50d:
 	__asm        jmp    _T512;
 // LINE 282:
 _T512:
 	this->myLogBasePtrList = newLogBasePtrList;
 // LINE 283:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004ED1F8;
+	__asm        jmp    _T527;
 // LINE 284:
+_T527:
 }
 
 // FUNCTION: COPTER_D 0x004ed1fd
@@ -2529,8 +2553,8 @@ _T68:
 	__asm        cmp    list<tagLogBase *>::last, eax;
 	__asm        jne    _T1ed;
 
-	__asm        jmp    near ptr 0x004ED27B;
-
+	__asm        jmp    _T7e;
+_T7e:
 	__asm        push   0;
 	__asm        push   1;
 	__asm        call   allocate;
@@ -2555,17 +2579,17 @@ _Te0:
 	__asm        mov    eax, [ebp-0x8C];
 	__asm        mov    [ebp-0x94], eax;
 _Tec:
-	__asm        jmp    near ptr 0x004ED2EE;
-
-	__asm        jmp    near ptr 0x004ED2F3;
-
-	__asm        jmp    near ptr 0x004ED2F8;
-
+	__asm        jmp    _Tf1;
+_Tf1:
+	__asm        jmp    _Tf6;
+_Tf6:
+	__asm        jmp    _Tfb;
+_Tfb:
 	__asm        mov    eax, [ebp-0x94];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0xAC], eax;
-	__asm        jmp    near ptr 0x004ED30B;
-
+	__asm        jmp    _T10e;
+_T10e:
 	__asm        push   0;
 	__asm        mov    eax, [ebp-0xAC];
 	__asm        push   eax;
@@ -2600,20 +2624,20 @@ _T197:
 	__asm        mov    eax, [ebp-0xA0];
 	__asm        mov    [ebp-0xA8], eax;
 _T1a3:
-	__asm        jmp    near ptr 0x004ED3A5;
-
-	__asm        jmp    near ptr 0x004ED3AA;
-
-	__asm        jmp    near ptr 0x004ED3AF;
-
+	__asm        jmp    _T1a8;
+_T1a8:
+	__asm        jmp    _T1ad;
+_T1ad:
+	__asm        jmp    _T1b2;
+_T1b2:
 	__asm        mov    eax, [ebp-0xA8];
 	__asm        mov    eax, [eax];
 	__asm        lea    eax, [eax+eax*2];
 	__asm        shl    eax, 2;
 	__asm        add    eax, list<tagLogBase *>::next_avail;
 	__asm        mov    list<tagLogBase *>::last, eax;
-	__asm        jmp    near ptr 0x004ED3CD;
-
+	__asm        jmp    _T1d0;
+_T1d0:
 	__asm        mov    eax, list<tagLogBase *>::next_avail;
 	__asm        mov    [ebp-0x78], eax;
 	__asm        add    list<tagLogBase *>::next_avail, 0xC;
@@ -2627,8 +2651,8 @@ _T1ed:
 	__asm        mov    eax, [ebp-0x7C];
 	__asm        mov    [ebp-0xB0], eax;
 _T205:
-	__asm        jmp    near ptr 0x004ED407;
-
+	__asm        jmp    _T20a;
+_T20a:
 	__asm        mov    eax, [ebp-0xB0];
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    [ecx], eax;
@@ -2642,8 +2666,8 @@ _T205:
 	__asm        mov    ecx, [ebp-0x10];
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x004ED430;
-
+	__asm        jmp    _T233;
+_T233:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    newLogBasePtrList, eax;
 	__asm        jmp    _T245;
@@ -2651,10 +2675,12 @@ _T23e:
 	newLogBasePtrList = 0x0;
 // LINE 293:
 _T245:
-	__asm        jmp    near ptr 0x004ED447;
+	__asm        jmp    _T24a;
 // LINE 294:
-	__asm        jmp    near ptr 0x004ED44C;
+_T24a:
+	__asm        jmp    _T24f;
 // LINE 296:
+_T24f:
 	__asm        jmp    _T254;
 _T254:
 	__asm        mov    eax, this;
@@ -2672,10 +2698,10 @@ _T254:
 	__asm        mov    [ebp-0x38], eax;
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    [ebp-0x14], eax;
-	__asm        jmp    near ptr 0x004ED483;
-
-	__asm        jmp    near ptr 0x004ED488;
-
+	__asm        jmp    _T286;
+_T286:
+	__asm        jmp    _T28b;
+_T28b:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    iterator.node, eax;
 // LINE 298:
@@ -2691,10 +2717,10 @@ _T297:
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x18], eax;
-	__asm        jmp    near ptr 0x004ED4B2;
-
-	__asm        jmp    near ptr 0x004ED4B7;
-
+	__asm        jmp    _T2b5;
+_T2b5:
+	__asm        jmp    _T2ba;
+_T2ba:
 	__asm        mov    eax, iterator.node;
 	__asm        cmp    [ebp-0x18], eax;
 	__asm        jne    _T2d0;
@@ -2718,10 +2744,10 @@ _T2e9:
 	__asm        je     _T343;
 // LINE 300:
 _T2f8:
-	__asm        jmp    near ptr 0x004ED4FA;
-
-	__asm        jmp    near ptr 0x004ED4FF;
-
+	__asm        jmp    _T2fd;
+_T2fd:
+	__asm        jmp    _T302;
+_T302:
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    ecx, currentLowest.node;
@@ -2738,17 +2764,18 @@ _T320:
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    iterator.node, eax;
-	__asm        jmp    near ptr 0x004ED530;
-
+	__asm        jmp    _T333;
+_T333:
 	__asm        mov    eax, [ebp-0x70];
 	__asm        mov    [ebp-0x1C], eax;
-	__asm        jmp    near ptr 0x004ED53B;
+	__asm        jmp    _T33e;
 // LINE 303:
+_T33e:
 	__asm        jmp    _T297;
 // LINE 304:
 _T343:
-	__asm        jmp    near ptr 0x004ED545;
-
+	__asm        jmp    _T348;
+_T348:
 	__asm        mov    eax, currentLowest.node;
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x58], eax;
@@ -2757,22 +2784,22 @@ _T343:
 	__asm        mov    [ebp-0x48], eax;
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    [ebp-0x40], eax;
-	__asm        jmp    near ptr 0x004ED561;
-
-	__asm        jmp    near ptr 0x004ED566;
-
+	__asm        jmp    _T364;
+_T364:
+	__asm        jmp    _T369;
+_T369:
 	__asm        mov    eax, [ebp-0x40];
 	__asm        mov    [ebp-0x54], eax;
 	__asm        mov    ecx, newLogBasePtrList;
 	__asm        call   list<tagLogBase *>::get_node;
 	__asm        mov    [ebp-0x4C], eax;
-	__asm        jmp    near ptr 0x004ED57C;
-
+	__asm        jmp    _T37f;
+_T37f:
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        add    eax, 8;
 	__asm        mov    [ebp-0x50], eax;
-	__asm        jmp    near ptr 0x004ED58A;
-
+	__asm        jmp    _T38d;
+_T38d:
 	__asm        cmp    dword ptr [ebp-0x50], 0;
 	__asm        je     _T3a6;
 
@@ -2782,8 +2809,8 @@ _T343:
 	__asm        mov    [ecx], eax;
 	__asm        jmp    _T3a6;
 _T3a6:
-	__asm        jmp    near ptr 0x004ED5A8;
-
+	__asm        jmp    _T3ab;
+_T3ab:
 	__asm        mov    eax, [ebp-0x54];
 	__asm        mov    ecx, [ebp-0x4C];
 	__asm        mov    [ecx], eax;
@@ -2802,12 +2829,12 @@ _T3a6:
 	__asm        add    dword ptr [eax+4], 1;
 	__asm        mov    eax, [ebp-0x4C];
 	__asm        mov    [ebp-0x44], eax;
-	__asm        jmp    near ptr 0x004ED5E2;
-
-	__asm        jmp    near ptr 0x004ED5E7;
-
-	__asm        jmp    near ptr 0x004ED5EC;
-
+	__asm        jmp    _T3e5;
+_T3e5:
+	__asm        jmp    _T3ea;
+_T3ea:
+	__asm        jmp    _T3ef;
+_T3ef:
 	__asm        mov    eax, currentLowest.node;
 	__asm        mov    [ebp-0xB4], eax;
 	__asm        mov    eax, this;
@@ -2824,21 +2851,22 @@ _T3a6:
 	__asm        mov    ecx, [ebp-0xB4];
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x004ED62F;
-
-	__asm        jmp    near ptr 0x004ED634;
-
+	__asm        jmp    _T432;
+_T432:
+	__asm        jmp    _T437;
+_T437:
 	__asm        mov    eax, list<tagLogBase *>::free_list;
 	__asm        mov    ecx, [ebp-0xB4];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0xB4];
 	__asm        mov    list<tagLogBase *>::free_list, eax;
-	__asm        jmp    near ptr 0x004ED651;
-
+	__asm        jmp    _T454;
+_T454:
 	__asm        mov    eax, [ebp-0xB8];
 	__asm        dec    dword ptr [eax+4];
-	__asm        jmp    near ptr 0x004ED65F;
+	__asm        jmp    _T462;
 // LINE 306:
+_T462:
 	__asm        jmp    _T254;
 // LINE 307:
 _T467:
@@ -2855,20 +2883,20 @@ _T467:
 	__asm        mov    [ebp-0x68], eax;
 	__asm        mov    eax, [ebp-0x68];
 	__asm        mov    [ebp-0x5C], eax;
-	__asm        jmp    near ptr 0x004ED692;
-
-	__asm        jmp    near ptr 0x004ED697;
-
+	__asm        jmp    _T495;
+_T495:
+	__asm        jmp    _T49a;
+_T49a:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    eax, [eax];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x6C], eax;
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        mov    [ebp-0x60], eax;
-	__asm        jmp    near ptr 0x004ED6AC;
-
-	__asm        jmp    near ptr 0x004ED6B1;
-
+	__asm        jmp    _T4af;
+_T4af:
+	__asm        jmp    _T4b4;
+_T4b4:
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        push   eax;
 	__asm        mov    eax, [ebp-0x60];
@@ -2883,30 +2911,31 @@ _T467:
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    list<tagLogBase *>::free_list, eax;
-	__asm        jmp    near ptr 0x004ED6E0;
-
+	__asm        jmp    _T4e3;
+_T4e3:
 	__asm        dec    list<tagLogBase *>::number_of_lists;
 	__asm        jne    _T4f7;
 
 	__asm        mov    ecx, [ebp-0x20];
 	__asm        call   list<tagLogBase *>::deallocate_buffers;
 _T4f7:
-	__asm        jmp    near ptr 0x004ED6F9;
-
+	__asm        jmp    _T4fc;
+_T4fc:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004ED70A;
-
+	__asm        jmp    _T50d;
+_T50d:
 	__asm        jmp    _T512;
 // LINE 308:
 _T512:
 	this->myLogBasePtrList = newLogBasePtrList;
 // LINE 309:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004ED724;
+	__asm        jmp    _T527;
 // LINE 310:
+_T527:
 }
 
 // FUNCTION: COPTER_D 0x004ed729
@@ -2924,8 +2953,8 @@ int32_t LogManager::PurgeAllEntries() {
 	__asm        mov    [ebp-0x48], eax;
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    iterator.node, eax;
-	__asm        jmp    near ptr 0x004ED752;
-
+	__asm        jmp    _T29;
+_T29:
 	__asm        jmp    _T2e;
 // LINE 23:
 _T2e:
@@ -2938,10 +2967,10 @@ _T2e:
 	__asm        mov    [ebp-0x38], eax;
 	__asm        mov    eax, [ebp-0x38];
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x004ED772;
-
-	__asm        jmp    near ptr 0x004ED777;
-
+	__asm        jmp    _T49;
+_T49:
+	__asm        jmp    _T4e;
+_T4e:
 	__asm        mov    eax, iterator.node;
 	__asm        cmp    [ebp-8], eax;
 	__asm        jne    _T64;
@@ -2965,15 +2994,15 @@ _T7d:
 	__asm        je     _T106;
 // LINE 325:
 _T8c:
-	__asm        jmp    near ptr 0x004ED7BA;
-
+	__asm        jmp    _T91;
+_T91:
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax+8];
 	__asm        cmp    dword ptr [eax], 1;
 	__asm        jne    _Tc3;
 // LINE 326:
-	__asm        jmp    near ptr 0x004ED7CE;
-
+	__asm        jmp    _Ta5;
+_Ta5:
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    eax, [eax+0xC];
@@ -2986,8 +3015,8 @@ _T8c:
 	__asm        add    esp, 4;
 // LINE 327:
 _Tc3:
-	__asm        jmp    near ptr 0x004ED7F1;
-
+	__asm        jmp    _Tc8;
+_Tc8:
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x10], eax;
@@ -3003,12 +3032,13 @@ _Tc3:
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    iterator.node, eax;
-	__asm        jmp    near ptr 0x004ED81F;
-
+	__asm        jmp    _Tf6;
+_Tf6:
 	__asm        mov    eax, [ebp-0x70];
 	__asm        mov    [ebp-0x14], eax;
-	__asm        jmp    near ptr 0x004ED82A;
+	__asm        jmp    _T101;
 // LINE 329:
+_T101:
 	__asm        jmp    _T2e;
 _T106:
 	__asm        mov    eax, this;
@@ -3020,10 +3050,10 @@ _T106:
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x18], eax;
-	__asm        jmp    near ptr 0x004ED84A;
-
-	__asm        jmp    near ptr 0x004ED84F;
-
+	__asm        jmp    _T121;
+_T121:
+	__asm        jmp    _T126;
+_T126:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x34], eax;
@@ -3033,10 +3063,10 @@ _T106:
 	__asm        mov    [ebp-0x30], eax;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0x1C], eax;
-	__asm        jmp    near ptr 0x004ED86C;
-
-	__asm        jmp    near ptr 0x004ED871;
-
+	__asm        jmp    _T143;
+_T143:
+	__asm        jmp    _T148;
+_T148:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    [ebp-0x64], eax;
 	__asm        mov    eax, [ebp-0x1C];
@@ -3072,12 +3102,12 @@ _T19a:
 	__asm        mov    eax, [ebp-0x68];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x68], eax;
-	__asm        jmp    near ptr 0x004ED8D6;
-
+	__asm        jmp    _T1ad;
+_T1ad:
 	__asm        mov    eax, [ebp-0x54];
 	__asm        mov    [ebp-0x50], eax;
-	__asm        jmp    near ptr 0x004ED8E1;
-
+	__asm        jmp    _T1b8;
+_T1b8:
 	__asm        mov    eax, [ebp-0x50];
 	__asm        mov    [ebp-0x60], eax;
 	__asm        mov    eax, [ebp-0x60];
@@ -3090,28 +3120,30 @@ _T19a:
 	__asm        mov    ecx, [ebp-0x60];
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x004ED907;
-
-	__asm        jmp    near ptr 0x004ED90C;
-
+	__asm        jmp    _T1de;
+_T1de:
+	__asm        jmp    _T1e3;
+_T1e3:
 	__asm        mov    eax, list<tagLogBase *>::free_list;
 	__asm        mov    ecx, [ebp-0x60];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x60];
 	__asm        mov    list<tagLogBase *>::free_list, eax;
-	__asm        jmp    near ptr 0x004ED923;
-
+	__asm        jmp    _T1fa;
+_T1fa:
 	__asm        mov    eax, [ebp-0x6C];
 	__asm        dec    dword ptr [eax+4];
-	__asm        jmp    near ptr 0x004ED92E;
-
+	__asm        jmp    _T205;
+_T205:
 	__asm        jmp    _T15c;
 _T20a:
-	__asm        jmp    near ptr 0x004ED938;
+	__asm        jmp    _T20f;
 // LINE 331:
+_T20f:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004ED942;
+	__asm        jmp    _T219;
 // LINE 332:
+_T219:
 }
 
 // FUNCTION: COPTER_D 0x004ed947
@@ -3130,10 +3162,11 @@ int32_t LogManager::PurgeNEntries(long lEntryCountToPurge) {
 	__asm        mov    [ebp-0x3C], eax;
 	__asm        mov    eax, [ebp-0x3C];
 	__asm        mov    iterator.node, eax;
-	__asm        jmp    near ptr 0x004ED970;
-
-	__asm        jmp    near ptr 0x004ED975;
+	__asm        jmp    _T29;
+_T29:
+	__asm        jmp    _T2e;
 // LINE 347:
+_T2e:
 	__asm        mov    i, 0;
 	__asm        jmp    _T3d;
 _T3a:
@@ -3152,10 +3185,10 @@ _T3d:
 	__asm        mov    [ebp-0x30], eax;
 	__asm        mov    eax, [ebp-0x30];
 	__asm        mov    [ebp-0xC], eax;
-	__asm        jmp    near ptr 0x004ED9AB;
-
-	__asm        jmp    near ptr 0x004ED9B0;
-
+	__asm        jmp    _T64;
+_T64:
+	__asm        jmp    _T69;
+_T69:
 	__asm        mov    eax, iterator.node;
 	__asm        cmp    [ebp-0xC], eax;
 	__asm        jne    _T7a;
@@ -3173,15 +3206,15 @@ _T8e:
 	__asm        jmp    _T10d;
 // LINE 350:
 _T93:
-	__asm        jmp    near ptr 0x004ED9DF;
-
+	__asm        jmp    _T98;
+_T98:
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax+8];
 	__asm        cmp    dword ptr [eax], 1;
 	__asm        jne    _Tca;
 // LINE 351:
-	__asm        jmp    near ptr 0x004ED9F3;
-
+	__asm        jmp    _Tac;
+_Tac:
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    eax, [eax+0xC];
@@ -3194,8 +3227,8 @@ _T93:
 	__asm        add    esp, 4;
 // LINE 352:
 _Tca:
-	__asm        jmp    near ptr 0x004EDA16;
-
+	__asm        jmp    _Tcf;
+_Tcf:
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ebp-0x14], eax;
@@ -3211,12 +3244,13 @@ _Tca:
 	__asm        mov    eax, iterator.node;
 	__asm        mov    eax, [eax];
 	__asm        mov    iterator.node, eax;
-	__asm        jmp    near ptr 0x004EDA44;
-
+	__asm        jmp    _Tfd;
+_Tfd:
 	__asm        mov    eax, [ebp-0x64];
 	__asm        mov    [ebp-0x18], eax;
-	__asm        jmp    near ptr 0x004EDA4F;
+	__asm        jmp    _T108;
 // LINE 354:
+_T108:
 	__asm        jmp    _T3a;
 _T10d:
 	__asm        mov    eax, this;
@@ -3229,10 +3263,10 @@ _T10d:
 	__asm        mov    [ebp-0x28], eax;
 	__asm        mov    eax, [ebp-0x28];
 	__asm        mov    [ebp-0x1C], eax;
-	__asm        jmp    near ptr 0x004EDA71;
-
-	__asm        jmp    near ptr 0x004EDA76;
-
+	__asm        jmp    _T12a;
+_T12a:
+	__asm        jmp    _T12f;
+_T12f:
 	__asm        mov    eax, iterator.node;
 	__asm        mov    [ebp-0x58], eax;
 	__asm        mov    eax, [ebp-0x1C];
@@ -3268,12 +3302,12 @@ _T181:
 	__asm        mov    eax, [ebp-0x5C];
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x5C], eax;
-	__asm        jmp    near ptr 0x004EDADB;
-
+	__asm        jmp    _T194;
+_T194:
 	__asm        mov    eax, [ebp-0x48];
 	__asm        mov    [ebp-0x44], eax;
-	__asm        jmp    near ptr 0x004EDAE6;
-
+	__asm        jmp    _T19f;
+_T19f:
 	__asm        mov    eax, [ebp-0x44];
 	__asm        mov    [ebp-0x54], eax;
 	__asm        mov    eax, [ebp-0x54];
@@ -3286,28 +3320,30 @@ _T181:
 	__asm        mov    ecx, [ebp-0x54];
 	__asm        mov    ecx, [ecx];
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x004EDB0C;
-
-	__asm        jmp    near ptr 0x004EDB11;
-
+	__asm        jmp    _T1c5;
+_T1c5:
+	__asm        jmp    _T1ca;
+_T1ca:
 	__asm        mov    eax, list<tagLogBase *>::free_list;
 	__asm        mov    ecx, [ebp-0x54];
 	__asm        mov    [ecx], eax;
 	__asm        mov    eax, [ebp-0x54];
 	__asm        mov    list<tagLogBase *>::free_list, eax;
-	__asm        jmp    near ptr 0x004EDB28;
-
+	__asm        jmp    _T1e1;
+_T1e1:
 	__asm        mov    eax, [ebp-0x60];
 	__asm        dec    dword ptr [eax+4];
-	__asm        jmp    near ptr 0x004EDB33;
-
+	__asm        jmp    _T1ec;
+_T1ec:
 	__asm        jmp    _T143;
 _T1f1:
-	__asm        jmp    near ptr 0x004EDB3D;
+	__asm        jmp    _T1f6;
 // LINE 356:
+_T1f6:
 	__asm        mov    eax, 1;
-	__asm        jmp    near ptr 0x004EDB47;
+	__asm        jmp    _T200;
 // LINE 357:
+_T200:
 }
 
 // FUNCTION: COPTER_D 0x004edb4e
@@ -3352,12 +3388,13 @@ void LogManager::MakeStringFromLogData(/*packed*/ struct tagLogBase *logData, /*
 	__asm        mov    tempTime<MTimeLocalized+0x08>, 0;
 	__asm        mov    eax, [ebp-0x268];
 	__asm        mov    tempTime<MTimeLocalized+0x04>, eax;
-	__asm        jmp    near ptr 0x004EDBD8;
-
+	__asm        jmp    _T8a;
+_T8a:
 	__asm        mov    tempTime.nLanguage, 0;
 	__asm        mov    tempTime<vftable>, 0x592680;
-	__asm        jmp    near ptr 0x004EDBF1;
+	__asm        jmp    _Ta3;
 // LINE 372:
+_Ta3:
 	__asm        cmp    bPrintTime, 0;
 	__asm        je     _T393;
 // LINE 373:
@@ -3367,8 +3404,8 @@ void LogManager::MakeStringFromLogData(/*packed*/ struct tagLogBase *logData, /*
 	__asm        lea    ecx, tempTime<vftable>;
 	__asm        call   MTimeLocalized::PrintStringLocalized;
 // LINE 374:
-	__asm        jmp    near ptr 0x004EDC14;
-
+	__asm        jmp    _Tc6;
+_Tc6:
 	__asm        lea    edi, szTime[0];
 	__asm        mov    ecx, 0xFFFFFFFF;
 	__asm        sub    eax, eax;
@@ -3380,12 +3417,12 @@ void LogManager::MakeStringFromLogData(/*packed*/ struct tagLogBase *logData, /*
 	__asm        push   eax;
 	__asm        mov    ecx, sCurrentText;
 	__asm        call   basic_string<char>::assign_str;
-	__asm        jmp    near ptr 0x004EDC3D;
-
+	__asm        jmp    _Tef;
+_Tef:
 	__asm        mov    byte ptr [ebp-0x2A4], 0x20;
 // LINE 375:
-	__asm        jmp    near ptr 0x004EDC49;
-
+	__asm        jmp    _Tfb;
+_Tfb:
 	__asm        mov    eax, sCurrentText;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0xFFFFFFFE;
@@ -3399,24 +3436,24 @@ void LogManager::MakeStringFromLogData(/*packed*/ struct tagLogBase *logData, /*
 	__asm        push   eax;
 	__asm        call   endl;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004EDC82;
-
+	__asm        jmp    _T134;
+_T134:
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    _T143;
 _T143:
-	__asm        jmp    near ptr 0x004EDC96;
-
+	__asm        jmp    _T148;
+_T148:
 	__asm        mov    eax, sCurrentText;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        jne    _T17a;
 
-	__asm        jmp    near ptr 0x004EDCAB;
-
-	__asm        jmp    near ptr 0x004EDCB0;
-
+	__asm        jmp    _T15d;
+_T15d:
+	__asm        jmp    _T162;
+_T162:
 	__asm        mov    eax, sCurrentText;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    ecx, sCurrentText;
@@ -3432,12 +3469,12 @@ _T17a:
 	__asm        cmp    dword ptr [ebp-0x27C], 0;
 	__asm        je     _T2ca;
 
-	__asm        jmp    near ptr 0x004EDCEA;
-
-	__asm        jmp    near ptr 0x004EDCEF;
-
-	__asm        jmp    near ptr 0x004EDCF4;
-
+	__asm        jmp    _T19c;
+_T19c:
+	__asm        jmp    _T1a1;
+_T1a1:
+	__asm        jmp    _T1a6;
+_T1a6:
 	__asm        mov    eax, sCurrentText;
 	__asm        mov    eax, [eax+4];
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -3508,8 +3545,8 @@ _T29b:
 _T2a7:
 	__asm        mov    eax, [ebp-0x27C];
 	__asm        mov    dword ptr [eax+0xC], 1;
-	__asm        jmp    near ptr 0x004EDE07;
-
+	__asm        jmp    _T2b9;
+_T2b9:
 	__asm        mov    eax, [ebp-0x27C];
 	__asm        mov    [ebp-0x278], eax;
 	__asm        jmp    _T2d4;
@@ -3534,26 +3571,26 @@ _T2d4:
 
 	__asm        mov    ecx, [ebp-0x28C];
 	__asm        call   basic_string_ref<char>::delete_ptr;
-	__asm        jmp    near ptr 0x004EDE70;
-
+	__asm        jmp    _T322;
+_T322:
 	__asm        mov    eax, [ebp-0x28C];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004EDE84;
-
+	__asm        jmp    _T336;
+_T336:
 	__asm        jmp    _T33b;
 _T33b:
-	__asm        jmp    near ptr 0x004EDE8E;
-
+	__asm        jmp    _T340;
+_T340:
 	__asm        mov    eax, [ebp-0x278];
 	__asm        mov    ecx, sCurrentText;
 	__asm        mov    [ecx+4], eax;
 _T34c:
-	__asm        jmp    near ptr 0x004EDE9F;
-
-	__asm        jmp    near ptr 0x004EDEA4;
-
+	__asm        jmp    _T351;
+_T351:
+	__asm        jmp    _T356;
+_T356:
 	__asm        mov    eax, sCurrentText;
 	__asm        mov    eax, [eax+4];
 	__asm        mov    eax, [eax+4];
@@ -3564,13 +3601,14 @@ _T34c:
 	__asm        mov    al, [ebp-0x2A4];
 	__asm        mov    ecx, [ebp-0x280];
 	__asm        mov    [ecx], al;
-	__asm        jmp    near ptr 0x004EDECE;
-
+	__asm        jmp    _T380;
+_T380:
 	__asm        mov    eax, sCurrentText;
 	__asm        mov    eax, [eax+4];
 	__asm        inc    dword ptr [eax+4];
-	__asm        jmp    near ptr 0x004EDEDC;
+	__asm        jmp    _T38e;
 // LINE 377:
+_T38e:
 	__asm        jmp    _T39f;
 // LINE 378:
 _T393:
@@ -3592,8 +3630,8 @@ _T39f:
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0x264], eax;
 // LINE 382:
-	__asm        jmp    near ptr 0x004EDF16;
-
+	__asm        jmp    _T3c8;
+_T3c8:
 	__asm        mov    edi, [ebp-0x264];
 	__asm        mov    ecx, 0xFFFFFFFF;
 	__asm        sub    eax, eax;
@@ -3605,8 +3643,9 @@ _T39f:
 	__asm        push   eax;
 	__asm        mov    ecx, sCurrentText;
 	__asm        call   basic_string<char>::append_str;
-	__asm        jmp    near ptr 0x004EDF3F;
+	__asm        jmp    _T3f1;
 // LINE 383:
+_T3f1:
 	__asm        jmp    _T711;
 // LINE 385:
 // Block end:
@@ -3849,8 +3888,8 @@ _T6bb:
 	__asm        add    esp, 0x10;
 // LINE 406:
 _T6de:
-	__asm        jmp    near ptr 0x004EE231;
-
+	__asm        jmp    _T6e3;
+_T6e3:
 	__asm        lea    edi, szBuffer[0];
 	__asm        mov    ecx, 0xFFFFFFFF;
 	__asm        sub    eax, eax;
@@ -3862,8 +3901,9 @@ _T6de:
 	__asm        push   eax;
 	__asm        mov    ecx, sCurrentText;
 	__asm        call   basic_string<char>::append_str;
-	__asm        jmp    near ptr 0x004EE25A;
+	__asm        jmp    _T70c;
 // LINE 407:
+_T70c:
 	__asm        jmp    _T711;
 _T711:
 }
@@ -3874,8 +3914,9 @@ long LogManager::GetStringIDFromLogEvent(const /*packed*/ struct tagLogMissionEv
 	__asm        mov    eax, lME;
 	__asm        mov    eax, [eax];
 	__asm        add    eax, 0x214;
-	__asm        jmp    near ptr 0x004EE279;
+	__asm        jmp    _T15;
 // LINE 434:
+_T15:
 }
 
 

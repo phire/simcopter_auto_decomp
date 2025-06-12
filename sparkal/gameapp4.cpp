@@ -251,8 +251,8 @@ unsigned long  CGameApp::FinishGame() {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x54];
 // LINE 57:
-	__asm        jmp    near ptr 0x004BBA6C;
-
+	__asm        jmp    _T3c;
+_T3c:
 	__asm        push   8;
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x50];
@@ -270,8 +270,8 @@ unsigned long  CGameApp::FinishGame() {
 // LINE 59:
 	__asm        mov    eax, hResult;
 	__asm        mov    [ebp-8], eax;
-	__asm        jmp    near ptr 0x004BBAA0;
-
+	__asm        jmp    _T70;
+_T70:
 	__asm        push   0x59AC54;
 	__asm        lea    ecx, [ebp-8];
 	__asm        call   DirectDrawError::DisplayError;
@@ -311,8 +311,9 @@ _Ta7:
 	__asm        call   DDDisable;
 // LINE 73:
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x004BBB12;
+	__asm        jmp    _Te2;
 // LINE 74:
+_Te2:
 }
 
 // FUNCTION: COPTER_D 0x004bbb17
@@ -341,12 +342,14 @@ int  CGameApp::BackgroundVRAppInit() {
 	__asm        push   eax;
 	__asm        lea    ecx, tempRandom.table[0];
 	__asm        call   Random::seed;
-	__asm        jmp    near ptr 0x004BBB4F;
+	__asm        jmp    _T38;
 // LINE 98:
-	__asm        jmp    near ptr 0x004BBB54;
-
-	__asm        jmp    near ptr 0x004BBB59;
+_T38:
+	__asm        jmp    _T3d;
+_T3d:
+	__asm        jmp    _T42;
 // LINE 99:
+_T42:
 	__asm        lea    ecx, tempHourglassVideoBuffer<SmackerBackBuffer+0x00:None>;
 	__asm        call   SmackerBackBuffer::SmackerBackBuffer;
 // LINE 102:
@@ -371,8 +374,8 @@ int  CGameApp::BackgroundVRAppInit() {
 	__asm        mov    dword ptr [eax], 0;
 	__asm        mov    eax, [ebp-0x4D0];
 	__asm        mov    dword ptr [eax+0xC], 1;
-	__asm        jmp    near ptr 0x004BBBD2;
-
+	__asm        jmp    _Tbb;
+_Tbb:
 	__asm        mov    eax, [ebp-0x4D0];
 	__asm        mov    sCurrentInitializer.reference, eax;
 	__asm        jmp    _Td6;
@@ -380,16 +383,17 @@ _Tcc:
 	sCurrentInitializer.reference = 0x0;
 _Td6:
 	__asm        mov    sCurrentInitializer.c_str_ptr, 0;
-	__asm        jmp    near ptr 0x004BBBFC;
+	__asm        jmp    _Te5;
 // LINE 107:
-	__asm        jmp    near ptr 0x004BBC01;
-
-	__asm        jmp    near ptr 0x004BBC06;
-
-	__asm        jmp    near ptr 0x004BBC0B;
-
-	__asm        jmp    near ptr 0x004BBC10;
-
+_Te5:
+	__asm        jmp    _Tea;
+_Tea:
+	__asm        jmp    _Tef;
+_Tef:
+	__asm        jmp    _Tf4;
+_Tf4:
+	__asm        jmp    _Tf9;
+_Tf9:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x34];
 	__asm        mov    eax, [eax+0xC];
@@ -416,8 +420,8 @@ _Td6:
 	__asm        sar    eax, 1;
 	__asm        sub    eax, 0x64;
 	__asm        mov    [ebp-0x510], eax;
-	__asm        jmp    near ptr 0x004BBC75;
-
+	__asm        jmp    _T15e;
+_T15e:
 	__asm        mov    eax, [ebp-0x510];
 	__asm        mov    rectText.left, eax;
 	__asm        mov    eax, [ebp-0x50C];
@@ -426,8 +430,9 @@ _Td6:
 	__asm        mov    rectText.right, eax;
 	__asm        mov    eax, [ebp-0x504];
 	__asm        mov    rectText.bottom, eax;
-	__asm        jmp    near ptr 0x004BBCAA;
+	__asm        jmp    _T193;
 // LINE 110:
+_T193:
 	__asm        lea    eax, szVideoPath[0];
 	__asm        push   eax;
 	__asm        mov    eax, SZ_HOURGLASS_VIDEO_FILE_NAME;
@@ -449,18 +454,18 @@ _Td6:
 	__asm        lea    ecx, tempHourglassVideoBuffer<SmackerBackBuffer+0x00:None>;
 	__asm        call   SmackerBackBuffer::Open;
 // LINE 114:
-	__asm        jmp    near ptr 0x004BBCF8;
-
+	__asm        jmp    _T1e1;
+_T1e1:
 	__asm        mov    eax, [ebp-0x134];
 	__asm        mov    nWidth, eax;
 // LINE 115:
-	__asm        jmp    near ptr 0x004BBD09;
-
+	__asm        jmp    _T1f2;
+_T1f2:
 	__asm        mov    eax, [ebp-0x130];
 	__asm        mov    nHeight, eax;
 // LINE 116:
-	__asm        jmp    near ptr 0x004BBD1A;
-
+	__asm        jmp    _T203;
+_T203:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x34];
 	__asm        mov    eax, [eax+8];
@@ -475,8 +480,8 @@ _Td6:
 	__asm        sub    ecx, eax;
 	__asm        mov    nXPosition, ecx;
 // LINE 117:
-	__asm        jmp    near ptr 0x004BBD47;
-
+	__asm        jmp    _T230;
+_T230:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x34];
 	__asm        mov    eax, [eax+0xC];
@@ -506,8 +511,8 @@ _Td6:
 	__asm        mov    byte ptr [ebp-0x4B8], 0;
 	__asm        mov    byte ptr [ebp-0x4B7], 0;
 	__asm        mov    byte ptr [ebp-0x4B6], 0;
-	__asm        jmp    near ptr 0x004BBDB9;
-
+	__asm        jmp    _T2a2;
+_T2a2:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x34];
 	__asm        mov    [ebp-0x4C8], eax;
@@ -579,8 +584,8 @@ _T2c5:
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C38B4];
 	__asm        mov    [ebp-0x1514], eax;
-	__asm        jmp    near ptr 0x004BBECD;
-
+	__asm        jmp    _T3b6;
+_T3b6:
 	__asm        lea    eax, [ebp-0x1510];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -590,10 +595,10 @@ _T2c5:
 	__asm        push   eax;
 	__asm        lea    ecx, sCurrentInitializer.c_str_ptr;
 	__asm        call   basic_string<char>::assign_str;
-	__asm        jmp    near ptr 0x004BBEF4;
-
-	__asm        jmp    near ptr 0x004BBEF9;
-
+	__asm        jmp    _T3dd;
+_T3dd:
+	__asm        jmp    _T3e2;
+_T3e2:
 	__asm        push   0x597200;
 	__asm        call   strlen;
 	__asm        add    esp, 4;
@@ -601,12 +606,12 @@ _T2c5:
 	__asm        push   0x597200;
 	__asm        lea    ecx, sCurrentInitializer.c_str_ptr;
 	__asm        call   basic_string<char>::append_str;
-	__asm        jmp    near ptr 0x004BBF1C;
-
+	__asm        jmp    _T405;
+_T405:
 	__asm        jmp    _T5cd;
 _T40a:
-	__asm        jmp    near ptr 0x004BBF26;
-
+	__asm        jmp    _T40f;
+_T40f:
 	__asm        lea    eax, [ebp-0x1510];
 	__asm        push   eax;
 	__asm        call   strlen;
@@ -623,15 +628,15 @@ _T40a:
 	__asm        push   eax;
 	__asm        call   endl;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004BBF71;
-
+	__asm        jmp    _T45a;
+_T45a:
 	__asm        push   1;
 	__asm        call   exit;
 	__asm        add    esp, 4;
 	__asm        jmp    _T469;
 _T469:
-	__asm        jmp    near ptr 0x004BBF85;
-
+	__asm        jmp    _T46e;
+_T46e:
 	__asm        mov    eax, sCurrentInitializer.reference;
 	__asm        cmp    dword ptr [eax+0xC], 1;
 	__asm        ja     _T4a5;
@@ -639,8 +644,8 @@ _T469:
 	__asm        cmp    dword ptr [ebp-0x1530], 0;
 	__asm        je     _T56d;
 
-	__asm        jmp    near ptr 0x004BBFA7;
-
+	__asm        jmp    _T490;
+_T490:
 	__asm        mov    eax, sCurrentInitializer.reference;
 	__asm        mov    ecx, [ebp-0x1530];
 	__asm        cmp    [eax+8], ecx;
@@ -679,18 +684,18 @@ _T4f0:
 
 	__asm        mov    ecx, [ebp-0x1528];
 	__asm        call   basic_string_ref<char>::delete_ptr;
-	__asm        jmp    near ptr 0x004BC055;
-
+	__asm        jmp    _T53e;
+_T53e:
 	__asm        mov    eax, [ebp-0x1528];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004BC069;
-
+	__asm        jmp    _T552;
+_T552:
 	__asm        jmp    _T557;
 _T557:
-	__asm        jmp    near ptr 0x004BC073;
-
+	__asm        jmp    _T55c;
+_T55c:
 	__asm        mov    eax, [ebp-0x1518];
 	__asm        mov    sCurrentInitializer.reference, eax;
 	__asm        jmp    _T5af;
@@ -698,8 +703,8 @@ _T56d:
 	__asm        cmp    dword ptr [ebp-0x1530], 0;
 	__asm        je     _T5af;
 
-	__asm        jmp    near ptr 0x004BC096;
-
+	__asm        jmp    _T57f;
+_T57f:
 	__asm        mov    eax, sCurrentInitializer.reference;
 	__asm        mov    eax, [eax];
 	__asm        mov    [ebp-0x1520], eax;
@@ -716,10 +721,10 @@ _T5af:
 	__asm        mov    eax, [ebp-0x1530];
 	__asm        mov    ecx, sCurrentInitializer.reference;
 	__asm        mov    [ecx+4], eax;
-	__asm        jmp    near ptr 0x004BC0DA;
-
-	__asm        jmp    near ptr 0x004BC0DF;
-
+	__asm        jmp    _T5c3;
+_T5c3:
+	__asm        jmp    _T5c8;
+_T5c8:
 	__asm        jmp    _T5cd;
 // LINE 135:
 _T5cd:
@@ -733,10 +738,10 @@ _T5cd:
 	__asm        mov    ecx, [eax+0x34];
 	__asm        call   dword ptr [edx+0x18];
 // LINE 137:
-	__asm        jmp    near ptr 0x004BC109;
-
-	__asm        jmp    near ptr 0x004BC10E;
-
+	__asm        jmp    _T5f2;
+_T5f2:
+	__asm        jmp    _T5f7;
+_T5f7:
 	__asm        mov    eax, sCurrentInitializer.reference;
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     _T61f;
@@ -819,20 +824,20 @@ _T685:
 	__asm        mov    eax, [ebp-0x4DC];
 	__asm        mov    dword ptr [eax], 0;
 _T737:
-	__asm        jmp    near ptr 0x004BC253;
-
-	__asm        jmp    near ptr 0x004BC258;
-
+	__asm        jmp    _T73c;
+_T73c:
+	__asm        jmp    _T741;
+_T741:
 	__asm        mov    eax, [ebp-0x4DC];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004BC26C;
-
+	__asm        jmp    _T755;
+_T755:
 	__asm        jmp    _T75a;
 _T75a:
-	__asm        jmp    near ptr 0x004BC276;
-
+	__asm        jmp    _T75f;
+_T75f:
 	__asm        cmp    sCurrentInitializer.c_str_ptr, 0;
 	__asm        je     _T793;
 
@@ -845,8 +850,8 @@ _T75a:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T793:
-	__asm        jmp    near ptr 0x004BC2AF;
-
+	__asm        jmp    _T798;
+_T798:
 	__asm        lea    ecx, tempHourglassVideoBuffer<SmackerBackBuffer+0x00:None>;
 	__asm        call   SmackerBackBuffer::~SmackerBackBuffer;
 	__asm        mov    eax, [ebp-0x4BC];
@@ -885,20 +890,20 @@ _T7ae:
 	__asm        mov    eax, [ebp-0x4F4];
 	__asm        mov    dword ptr [eax], 0;
 _T848:
-	__asm        jmp    near ptr 0x004BC364;
-
-	__asm        jmp    near ptr 0x004BC369;
-
+	__asm        jmp    _T84d;
+_T84d:
+	__asm        jmp    _T852;
+_T852:
 	__asm        mov    eax, [ebp-0x4F4];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
-	__asm        jmp    near ptr 0x004BC37D;
-
+	__asm        jmp    _T866;
+_T866:
 	__asm        jmp    _T86b;
 _T86b:
-	__asm        jmp    near ptr 0x004BC387;
-
+	__asm        jmp    _T870;
+_T870:
 	__asm        cmp    sCurrentInitializer.c_str_ptr, 0;
 	__asm        je     _T8a4;
 
@@ -911,8 +916,8 @@ _T86b:
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 _T8a4:
-	__asm        jmp    near ptr 0x004BC3C0;
-
+	__asm        jmp    _T8a9;
+_T8a9:
 	__asm        lea    ecx, tempHourglassVideoBuffer<SmackerBackBuffer+0x00:None>;
 	__asm        call   SmackerBackBuffer::~SmackerBackBuffer;
 	__asm        mov    eax, [ebp-0x4C0];

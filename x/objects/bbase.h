@@ -23,7 +23,8 @@ _T38:
 	__asm        call   Swizzle4;
 	__asm        add    esp, 4;
 // LINE 231:
-	__asm        jmp    near ptr 0x0055E739;
+	__asm        jmp    _T49;
+_T49:
 }
 
 // Function in module: Bodydefs.obj
@@ -37,7 +38,8 @@ unsigned long cBBase::GetBodyType() {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0055F20C;
+	__asm        jmp    _T2c;
+_T2c:
 }
 
 // Function in module: Bodydefs.obj
@@ -51,7 +53,8 @@ unsigned long cBBase::GetBodyType() {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 	__asm        xor    eax, eax;
-	__asm        jmp    near ptr 0x0055F24C;
+	__asm        jmp    _T2c;
+_T2c:
 }
 
 // Function in module: Bodydefs.obj
@@ -59,7 +62,8 @@ unsigned long cBBase::GetBodyType() {
 unsigned short cBBase::CanDestroy() {
 
 	__asm        mov    ax, 1;
-	__asm        jmp    near ptr 0x0055F275;
+	__asm        jmp    _T15;
+_T15:
 }
 
 // Function in module: Bodydefs.obj
@@ -72,7 +76,8 @@ void cBBase::InstallArrayPointers(unsigned short fromdisk) {
 	__asm        push   0x5BE258;
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
-	__asm        jmp    near ptr 0x0055F2AA;
+	__asm        jmp    _T2a;
+_T2a:
 }
 
 // Function in module: Bodydefs.obj
@@ -98,7 +103,8 @@ void cBBase::~cBBase() {
 	__asm        add    esp, 4;
 // LINE 53:
 _T40:
-	__asm        jmp    near ptr 0x0055F305;
+	__asm        jmp    _T45;
+_T45:
 }
 
 // Function in module: Bodydefs.obj
@@ -169,8 +175,9 @@ _Ta4:
 	__asm        mov    eax, [eax+0xC];
 	__asm        mov    [ebp-0x14], eax;
 // LINE 63:
-	__asm        jmp    near ptr 0x0055F3CA;
+	__asm        jmp    _Tba;
 // LINE 64:
+_Tba:
 	__asm        test   reinterpret_cast<uint32_t>(fileOpened), 0xFFFF;
 	__asm        je     _Te9;
 // LINE 65:
@@ -262,8 +269,9 @@ _T192:
 	__asm        call   dword ptr [eax+0x10];
 	__asm        jmp    _T1ba;
 _T1ba:
-	__asm        jmp    near ptr 0x0055F4CF;
+	__asm        jmp    _T1bf;
 // LINE 68:
+_T1bf:
 	__asm        jmp    _T1c4;
 _T1c4:
 }
@@ -274,7 +282,8 @@ void cBBase::Dirty() {
 // LINE 76:
 	this->fDataChanged = 0x1;
 // LINE 77:
-	__asm        jmp    near ptr 0x0055F4FA;
+	__asm        jmp    _T1a;
+_T1a:
 }
 
 // Function in module: Bodydefs.obj
@@ -283,14 +292,16 @@ unsigned short cBBase::IsDirty() {
 // LINE 80:
 	__asm        mov    eax, this;
 	__asm        mov    ax, [eax+0x22];
-	__asm        jmp    near ptr 0x0055F518;
+	__asm        jmp    _T18;
 // LINE 81:
+_T18:
 }
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f520
 void cBBase::WriteToDisk() {
 // LINE 113:
-	__asm        jmp    near ptr 0x0055F531;
+	__asm        jmp    _T11;
+_T11:
 }
 

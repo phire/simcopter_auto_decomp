@@ -55,8 +55,8 @@ void ResourceRCData::ResourceRCData() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F648;
 // LINE 27:
-	__asm        jmp    near ptr 0x00447806;
-
+	__asm        jmp    _T56;
+_T56:
 	__asm        mov    eax, this;
 }
 
@@ -86,8 +86,8 @@ void ResourceRCData::ResourceRCData(int32_t nTheResource, int32_t bLoadNow) {
 	__asm        call   ResourceRCData::ReadResource;
 // LINE 47:
 _T63:
-	__asm        jmp    near ptr 0x00447876;
-
+	__asm        jmp    _T68;
+_T68:
 	__asm        mov    eax, this;
 }
 
@@ -136,8 +136,8 @@ void ResourceRCData::ResourceRCData(/*packed*/ class ResourceRCData& resData) {
 // LINE 65:
 // Block end:
 _T8d:
-	__asm        jmp    near ptr 0x00447912;
-
+	__asm        jmp    _T92;
+_T92:
 	__asm        mov    eax, this;
 }
 
@@ -149,7 +149,8 @@ void ResourceRCData::~ResourceRCData() {
 	__asm        mov    ecx, this;
 	__asm        call   ResourceRCData::Reset;
 // LINE 74:
-	__asm        jmp    near ptr 0x0044793E;
+	__asm        jmp    _T22;
+_T22:
 }
 
 // FUNCTION: COPTER_D 0x00447943
@@ -247,7 +248,8 @@ _T26:
 _T76:
 	this->chData = 0x0;
 // LINE 116:
-	__asm        jmp    near ptr 0x00447A6F;
+	__asm        jmp    _T85;
+_T85:
 }
 
 // FUNCTION: COPTER_D 0x00447a74
@@ -328,8 +330,9 @@ char * ResourceRCData::DataReference() {
 // LINE 162:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
-	__asm        jmp    near ptr 0x00447B51;
+	__asm        jmp    _T17;
 // LINE 163:
+_T17:
 }
 
 

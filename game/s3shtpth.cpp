@@ -800,7 +800,8 @@ _T39:
 	__asm        jmp    _T39;
 // LINE 271:
 _Te2:
-	__asm        jmp    near ptr 0x00543DC4;
+	__asm        jmp    _Te7;
+_Te7:
 }
 
 // FUNCTION: COPTER_D 0x00543dcb
@@ -966,7 +967,8 @@ _T176:
 	__asm        mov    al, [eax+8];
 	__asm        mov    [ecx+8], al;
 // LINE 314:
-	__asm        jmp    near ptr 0x00543F66;
+	__asm        jmp    _T19b;
+_T19b:
 }
 
 
