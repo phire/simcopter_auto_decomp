@@ -4245,10 +4245,8 @@ _T33a0:
 // LINE 999:
 	__asm        shl    G_terr_maxalt, 0x10;
 // LINE 1001:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T33b6;
+	return 0x0;
 // LINE 1002:
-_T33b6:
 }
 
 // FUNCTION: COPTER_D 0x0051723c
@@ -6539,10 +6537,8 @@ _T39a:
 // FUNCTION: COPTER_D 0x00518e64
 unsigned char S3TerrGetShadeIndex(long x, long y) {
 // LINE 1804:
-	__asm        xor    al, al;
-	__asm        jmp    _T0d;
+	return 0x0;
 // LINE 1805:
-_T0d:
 }
 
 // FUNCTION: COPTER_D 0x00518e76

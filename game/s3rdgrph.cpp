@@ -2138,8 +2138,7 @@ _Ta1:
 	__asm        jmp    _Ta6;
 // LINE 605:
 _Ta6:
-	__asm        mov    al, 0xFF;
-	__asm        jmp    _Tad;
+	return 0xff;
 // LINE 606:
 _Tad:
 }

@@ -418,8 +418,7 @@ _T12b:
 	__asm        test   eax, eax;
 	__asm        je     _T178;
 // LINE 550:
-	__asm        mov    ax, 2;
-	__asm        jmp    _T315;
+	return 0x2;
 // LINE 552:
 _T178:
 	__asm        jmp    _T1df;
@@ -439,8 +438,7 @@ _T17d:
 	__asm        test   eax, eax;
 	__asm        je     _T1b0;
 // LINE 554:
-	__asm        mov    ax, 2;
-	__asm        jmp    _T315;
+	return 0x2;
 // LINE 556:
 _T1b0:
 	__asm        mov    eax, state;
@@ -457,8 +455,7 @@ _T1b0:
 	__asm        test   eax, eax;
 	__asm        je     _T1df;
 // LINE 557:
-	__asm        mov    ax, 2;
-	__asm        jmp    _T315;
+	return 0x2;
 // LINE 560:
 _T1df:
 	last_match_length = forest->match_length;
@@ -580,10 +577,8 @@ _T2f3:
 	__asm        call   EncodeEnd;
 	__asm        add    esp, 8;
 // LINE 588:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T315;
+	return 0x0;
 // LINE 589:
-_T315:
 }
 
 // FUNCTION: COPTER_D 0x004cf607
@@ -1134,8 +1129,7 @@ _T6e:
 	__asm        test   eax, eax;
 	__asm        je     _Ta4;
 
-	__asm        mov    ax, 2;
-	__asm        jmp    _T16b;
+	return 0x2;
 // LINE 368:
 _Ta4:
 	__asm        jmp    _T138;
@@ -1155,8 +1149,7 @@ _Ta9:
 	__asm        test   eax, eax;
 	__asm        je     _Tde;
 
-	__asm        mov    ax, 2;
-	__asm        jmp    _T16b;
+	return 0x2;
 // LINE 370:
 _Tde:
 	model->low -= 0x10000;
@@ -1198,10 +1191,8 @@ _T153:
 	__asm        call   UpdateModel;
 	__asm        add    esp, 8;
 // LINE 382:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T16b;
+	return 0x0;
 // LINE 383:
-_T16b:
 }
 
 // FUNCTION: COPTER_D 0x004cfde2
@@ -1333,8 +1324,7 @@ static short Output(long bit, /*packed*/ struct tACompModel *model, /*packed*/ s
 	__asm        test   eax, eax;
 	__asm        je     _T2a;
 
-	__asm        mov    ax, 2;
-	__asm        jmp    _T78;
+	return 0x2;
 // LINE 348:
 _T2a:
 	__asm        jmp    _T35;
@@ -1357,17 +1347,14 @@ _T35:
 	__asm        test   eax, eax;
 	__asm        je     _T6b;
 
-	__asm        mov    ax, 2;
-	__asm        jmp    _T78;
+	return 0x2;
 // LINE 350:
 _T6b:
 	__asm        jmp    _T2f;
 // LINE 352:
 _T70:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T78;
+	return 0x0;
 // LINE 353:
-_T78:
 }
 
 // FUNCTION: COPTER_D 0x004cffb8
@@ -1404,8 +1391,7 @@ _T1e:
 	__asm        cmp    eax, 1;
 	__asm        je     _T63;
 // LINE 134:
-	__asm        mov    ax, 2;
-	__asm        jmp    _T84;
+	return 0x2;
 // LINE 136:
 _T63:
 	dest->putBuffer = 0x0;
@@ -1415,10 +1401,8 @@ _T63:
 	dest->codesize++;
 // LINE 141:
 _T7c:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T84;
+	return 0x0;
 // LINE 142:
-_T84:
 }
 
 // FUNCTION: COPTER_D 0x004d0041
@@ -1471,8 +1455,7 @@ _T61:
 	__asm        test   eax, eax;
 	__asm        je     _T97;
 
-	__asm        mov    ax, 2;
-	__asm        jmp    _T14e;
+	return 0x2;
 // LINE 395:
 _T97:
 	__asm        jmp    _T12b;
@@ -1492,8 +1475,7 @@ _T9c:
 	__asm        test   eax, eax;
 	__asm        je     _Td1;
 
-	__asm        mov    ax, 2;
-	__asm        jmp    _T14e;
+	return 0x2;
 // LINE 397:
 _Td1:
 	model->low -= 0x10000;
@@ -1528,10 +1510,8 @@ _T12b:
 	__asm        jmp    _T61;
 // LINE 408:
 _T146:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T14e;
+	return 0x0;
 // LINE 409:
-_T14e:
 }
 
 // FUNCTION: COPTER_D 0x004d0194
@@ -1572,8 +1552,7 @@ _T46:
 	__asm        test   eax, eax;
 	__asm        je     _T6c;
 
-	__asm        mov    ax, 2;
-	__asm        jmp    _T7d;
+	return 0x2;
 // LINE 419:
 _T6c:
 	__asm        mov    eax, dest;
@@ -1774,16 +1753,14 @@ static short Decode(/*packed*/ struct tACompModel *model, /*packed*/ struct tLZS
 	__asm        cmp    eax, 4;
 	__asm        jae    _T34;
 // LINE 598:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T1cd;
+	return 0x1;
 // LINE 600:
 _T34:
 	__asm        mov    eax, state;
 	__asm        cmp    dword ptr [eax+0x10], 0;
 	__asm        jne    _T49;
 
-	__asm        xor    ax, ax;
-	__asm        jmp    _T1cd;
+	return 0x0;
 // LINE 601:
 _T49:
 	__asm        mov    eax, state;
@@ -1846,8 +1823,7 @@ _T9e:
 	__asm        test   eax, eax;
 	__asm        jne    _Tfb;
 // LINE 610:
-	__asm        mov    ax, 2;
-	__asm        jmp    _T1cd;
+	return 0x2;
 // LINE 612:
 _Tfb:
 	__asm        mov    al, reinterpret_cast<uint8_t>(c);
@@ -1910,8 +1886,7 @@ _T152:
 	__asm        test   eax, eax;
 	__asm        jne    _T1a2;
 // LINE 622:
-	__asm        mov    ax, 2;
-	__asm        jmp    _T1cd;
+	return 0x2;
 // LINE 624:
 _T1a2:
 	__asm        mov    al, reinterpret_cast<uint8_t>(c);
@@ -1930,10 +1905,8 @@ _T1c0:
 	__asm        jmp    _T9e;
 // LINE 631:
 _T1c5:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T1cd;
+	return 0x0;
 // LINE 632:
-_T1cd:
 }
 
 // FUNCTION: COPTER_D 0x004d05b8

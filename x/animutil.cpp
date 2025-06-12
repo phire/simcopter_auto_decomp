@@ -204,8 +204,7 @@ unsigned short PutInPerspective(/*unpacked*/ struct DXZY *xzy, short cH) {
 	__asm        test   ah, 1;
 	__asm        je     _T25;
 // LINE 60:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T6c;
+	return 0x0;
 // LINE 61:
 _T25:
 	__asm        mov    eax, xzy;
@@ -228,10 +227,8 @@ _T25:
 	__asm        mov    eax, xzy;
 	__asm        fstp   dword ptr [eax+4];
 // LINE 63:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T6c;
+	return 0x1;
 // LINE 64:
-_T6c:
 }
 
 // FUNCTION: COPTER_D 0x00562766
@@ -266,8 +263,7 @@ unsigned short PutInPerspective(/*unpacked*/ struct XZY *xzy, short cH) {
 	__asm        test   eax, eax;
 	__asm        jne    _T62;
 // LINE 70:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T97;
+	return 0x0;
 // LINE 71:
 _T62:
 	__asm        fld    dxzy.x;
@@ -283,10 +279,8 @@ _T62:
 	__asm        mov    ecx, xzy;
 	__asm        mov    [ecx+4], ax;
 // LINE 72:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T97;
+	return 0x1;
 // LINE 73:
-_T97:
 }
 
 // FUNCTION: COPTER_D 0x00562802
@@ -1280,10 +1274,8 @@ void Score(/*unpacked*/ struct Point centerPt, /*unpacked*/ struct Point leftOff
 // FUNCTION: COPTER_D 0x005631f0
 unsigned short DrawGrid(float phiOff, float psiOff, short cntrh, short cntrv, unsigned short persp, float scale, short thickness, unsigned long edgecolor, unsigned long hatchcolor, enum UseDrawGrid how, short pth, short ptv, short ptdepth) {
 // LINE 498:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T0f;
+	return 0x1;
 // LINE 499:
-_T0f:
 }
 
 // FUNCTION: COPTER_D 0x00563204
@@ -2526,10 +2518,8 @@ unsigned short IsPixelFilled(void * __ptr32 h, short x, short y) {
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 1819:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T2a;
+	return 0x0;
 // LINE 1820:
-_T2a:
 }
 
 

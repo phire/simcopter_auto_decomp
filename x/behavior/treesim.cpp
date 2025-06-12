@@ -601,8 +601,7 @@ _Tba:
 // LINE 100:
 	this->fStackSize++;
 // LINE 101:
-	__asm        mov    ax, 1;
-	__asm        jmp    _Tf9;
+	return 0x1;
 // LINE 104:
 // Block end:
 _Te1:
@@ -612,10 +611,8 @@ _Te1:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+4];
 // LINE 105:
-	__asm        xor    ax, ax;
-	__asm        jmp    _Tf9;
+	return 0x0;
 // LINE 106:
-_Tf9:
 }
 
 // FUNCTION: COPTER_D 0x0055cf37

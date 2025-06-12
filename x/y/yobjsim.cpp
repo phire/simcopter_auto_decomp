@@ -1447,8 +1447,7 @@ unsigned short cYObject::InBoundingRect(/*unpacked*/ struct Point3d queryloc, in
 	__asm        cmp    eax, ecx;
 	__asm        jle    _T22;
 // LINE 61:
-	__asm        xor    ax, ax;
-	__asm        jmp    _Tb7;
+	return 0x0;
 // LINE 62:
 _T22:
 	__asm        mov    eax, objLoc.x;
@@ -1458,8 +1457,7 @@ _T22:
 	__asm        cmp    eax, ecx;
 	__asm        jge    _T3e;
 // LINE 63:
-	__asm        xor    ax, ax;
-	__asm        jmp    _Tb7;
+	return 0x0;
 // LINE 64:
 _T3e:
 	__asm        mov    eax, objLoc.y;
@@ -1469,8 +1467,7 @@ _T3e:
 	__asm        cmp    eax, ecx;
 	__asm        jle    _T5a;
 // LINE 65:
-	__asm        xor    ax, ax;
-	__asm        jmp    _Tb7;
+	return 0x0;
 // LINE 66:
 _T5a:
 	__asm        mov    eax, queryloc.y;
@@ -1480,8 +1477,7 @@ _T5a:
 	__asm        cmp    eax, ecx;
 	__asm        jle    _T76;
 // LINE 67:
-	__asm        xor    ax, ax;
-	__asm        jmp    _Tb7;
+	return 0x0;
 // LINE 68:
 _T76:
 	__asm        mov    eax, objLoc.z;
@@ -1491,8 +1487,7 @@ _T76:
 	__asm        cmp    eax, ecx;
 	__asm        jle    _T92;
 // LINE 69:
-	__asm        xor    ax, ax;
-	__asm        jmp    _Tb7;
+	return 0x0;
 // LINE 70:
 _T92:
 	__asm        mov    eax, objLoc.z;
@@ -1502,14 +1497,11 @@ _T92:
 	__asm        cmp    eax, ecx;
 	__asm        jge    _Tae;
 // LINE 71:
-	__asm        xor    ax, ax;
-	__asm        jmp    _Tb7;
+	return 0x0;
 // LINE 72:
 _Tae:
-	__asm        mov    ax, 1;
-	__asm        jmp    _Tb7;
+	return 0x1;
 // LINE 73:
-_Tb7:
 }
 
 // FUNCTION: COPTER_D 0x005550ac
@@ -2173,8 +2165,7 @@ unsigned short cYObject::IsWater(short cellx, short celly) {
 	__asm        cmp    j, 0xF;
 	__asm        jge    _T4d;
 // LINE 332:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T55;
+	return 0x1;
 // LINE 333:
 	__asm        jmp    _T55;
 // LINE 334:
@@ -2188,10 +2179,8 @@ _T55:
 // FUNCTION: COPTER_D 0x00555873
 signed char cYObject::GetRoadDir(/*unpacked*/ struct Point3d location) {
 // LINE 345:
-	__asm        mov    al, 3;
-	__asm        jmp    _T0d;
+	return 0x3;
 // LINE 346:
-_T0d:
 }
 
 // FUNCTION: COPTER_D 0x00555885
@@ -3209,8 +3198,7 @@ unsigned short cYObject::CanJumpOffHere() {
 	__asm        test   eax, eax;
 	__asm        jne    _T60;
 // LINE 607:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T143;
+	return 0x0;
 // LINE 608:
 _T60:
 	__asm        mov    eax, this;
@@ -3257,8 +3245,7 @@ _Te0:
 	__asm        jne    _Tf5;
 // LINE 609:
 _Ted:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T143;
+	return 0x0;
 // LINE 610:
 _Tf5:
 	__asm        mov    eax, this;
@@ -3283,14 +3270,11 @@ _T11a:
 	__asm        cmp    eax, 5;
 	__asm        jle    _T13a;
 // LINE 611:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T143;
+	return 0x0;
 // LINE 628:
 _T13a:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T143;
+	return 0x1;
 // LINE 630:
-_T143:
 }
 
 // FUNCTION: COPTER_D 0x005565b8
@@ -3310,8 +3294,7 @@ unsigned short cYObject::IsWalkable(short cellx, short celly, enum cYObject::Loc
 	__asm        test   eax, eax;
 	__asm        je     _T49;
 // LINE 635:
-	__asm        mov    ax, 1;
-	__asm        jmp    _Tf0;
+	return 0x1;
 // LINE 636:
 _T49:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(celly);
@@ -3324,8 +3307,7 @@ _T49:
 	__asm        test   eax, eax;
 	__asm        je     _T6c;
 // LINE 637:
-	__asm        xor    ax, ax;
-	__asm        jmp    _Tf0;
+	return 0x0;
 // LINE 638:
 _T6c:
 	__asm        mov    eax, this;
@@ -3336,22 +3318,19 @@ _T6c:
 	__asm        cmp    loctype, 0xFFFFFFFF;
 	__asm        jne    _T93;
 // LINE 640:
-	__asm        xor    ax, ax;
-	__asm        jmp    _Tf0;
+	return 0x0;
 // LINE 641:
 _T93:
 	__asm        cmp    loctype, 0;
 	__asm        jne    _Ta5;
 // LINE 642:
-	__asm        xor    ax, ax;
-	__asm        jmp    _Tf0;
+	return 0x0;
 // LINE 643:
 _Ta5:
 	__asm        cmp    loctype, 1;
 	__asm        jne    _Tb7;
 // LINE 644:
-	__asm        xor    ax, ax;
-	__asm        jmp    _Tf0;
+	return 0x0;
 // LINE 647:
 _Tb7:
 	__asm        movsx  eax, celly;
@@ -3364,14 +3343,11 @@ _Tb7:
 	__asm        test   al, 0x20;
 	__asm        je     _Te7;
 // LINE 648:
-	__asm        xor    ax, ax;
-	__asm        jmp    _Tf0;
+	return 0x0;
 // LINE 650:
 _Te7:
-	__asm        mov    ax, 1;
-	__asm        jmp    _Tf0;
+	return 0x1;
 // LINE 651:
-_Tf0:
 }
 
 // FUNCTION: COPTER_D 0x005566af
@@ -4059,8 +4035,7 @@ _T1b4:
 // LINE 764:
 	firecelly[0] = celly;
 // LINE 765:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T200;
+	return 0x1;
 // LINE 767:
 _T1df:
 	__asm        mov    eax, cptr;
@@ -4075,10 +4050,8 @@ _T1f3:
 	__asm        jmp    _Tff;
 // LINE 770:
 _T1f8:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T200;
+	return 0x0;
 // LINE 771:
-_T200:
 }
 
 // FUNCTION: COPTER_D 0x00556ec0

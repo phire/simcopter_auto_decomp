@@ -178,8 +178,7 @@ short StringWidth(unsigned char * str) {
 	__asm        test   eax, eax;
 	__asm        jne    _T3b;
 // LINE 38:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T44;
+	return 0x0;
 // LINE 39:
 	__asm        jmp    _T44;
 // LINE 40:
@@ -664,8 +663,7 @@ unsigned short EqualRect(/*unpacked*/ struct Rect *rect1, /*unpacked*/ struct Re
 	__asm        cmp    [eax], ecx;
 	__asm        je     _T1e;
 
-	__asm        xor    ax, ax;
-	__asm        jmp    _T41;
+	return 0x0;
 // LINE 197:
 _T1e:
 	__asm        mov    eax, rect2;
@@ -674,14 +672,11 @@ _T1e:
 	__asm        cmp    [eax+4], ecx;
 	__asm        je     _T38;
 
-	__asm        xor    ax, ax;
-	__asm        jmp    _T41;
+	return 0x0;
 // LINE 198:
 _T38:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T41;
+	return 0x1;
 // LINE 199:
-_T41:
 }
 
 // FUNCTION: COPTER_D 0x005670a9
@@ -745,8 +740,7 @@ unsigned short PtInRect(/*unpacked*/ struct Point p, /*unpacked*/ struct Rect *r
 	__asm        cmp    eax, ecx;
 	__asm        jg     _T5e;
 _T51:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T67;
+	return 0x0;
 // LINE 212:
 	__asm        jmp    _T67;
 _T5e:
@@ -773,14 +767,11 @@ unsigned short EmptyRect(/*unpacked*/ struct Rect *r) {
 	__asm        cmp    eax, ecx;
 	__asm        jl     _T3a;
 _T31:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T42;
+	return 0x1;
 // LINE 218:
 _T3a:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T42;
+	return 0x0;
 // LINE 219:
-_T42:
 }
 
 // FUNCTION: COPTER_D 0x005671ba

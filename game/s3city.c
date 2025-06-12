@@ -124,8 +124,7 @@ short S3CityInit() {
 	__asm        test   eax, eax;
 	__asm        je     _T32;
 // LINE 213:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T401;
+	return 0x1;
 // LINE 214:
 _T32:
 	S_S2CityAlloc_Count++;
@@ -165,8 +164,7 @@ _T72:
 	__asm        test   eax, eax;
 	__asm        jne    _Tad;
 // LINE 223:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T401;
+	return 0x1;
 // LINE 227:
 _Tad:
 	__asm        call   S3TerrainInitMap;
@@ -182,8 +180,7 @@ _Tad:
 	__asm        test   eax, eax;
 	__asm        je     _Te9;
 // LINE 235:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T401;
+	return 0x1;
 // LINE 238:
 _Te9:
 	__asm        mov    i, 0;
@@ -393,10 +390,8 @@ _T3e8:
 	__asm        call   S3AddLogEntry;
 	__asm        add    esp, 8;
 // LINE 321:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T401;
+	return 0x0;
 // LINE 322:
-_T401:
 }
 
 // FUNCTION: COPTER_D 0x0050a406
@@ -7110,10 +7105,8 @@ _T495d:
 	__asm        jmp    _T48fd;
 // LINE 2430:
 _T4962:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T496a;
+	return 0x0;
 // LINE 2431:
-_T496a:
 }
 
 // FUNCTION: COPTER_D 0x0050ef4e

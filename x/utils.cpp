@@ -189,8 +189,7 @@ _T116:
 	__asm        cmp    ecx, eax;
 	__asm        jle    _T132;
 
-	__asm        xor    ax, ax;
-	__asm        jmp    _T1c5;
+	return 0x0;
 // LINE 88:
 _T132:
 	num[0] = 0x0;
@@ -248,10 +247,8 @@ _T1a3:
 	__asm        mov    [ecx], eax;
 // LINE 95:
 _T1bc:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T1c5;
+	return 0x1;
 // LINE 96:
-_T1c5:
 }
 
 // FUNCTION: COPTER_D 0x00565e80
@@ -466,8 +463,7 @@ _T87:
 	__asm        jmp    _Td3;
 // LINE 167:
 _Tcb:
-	__asm        xor    ax, ax;
-	__asm        jmp    _Tfc;
+	return 0x0;
 // LINE 168:
 _Td3:
 	__asm        xor    eax, eax;
@@ -484,10 +480,8 @@ _Td3:
 _Teb:
 	num[0] = result;
 // LINE 172:
-	__asm        mov    ax, 1;
-	__asm        jmp    _Tfc;
+	return 0x1;
 // LINE 173:
-_Tfc:
 }
 
 // FUNCTION: COPTER_D 0x005660be

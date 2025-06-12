@@ -241,8 +241,7 @@ short S2CityGetCityNameFromFile(char * filePath, char * cityName) {
 	__asm        cmp    filNum, 0;
 	__asm        jne    _T35;
 // LINE 188:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T1b5;
+	return 0x0;
 // LINE 190:
 _T35:
 	__asm        lea    eax, length;
@@ -260,8 +259,7 @@ _T35:
 	__asm        call   fclose;
 	__asm        add    esp, 4;
 // LINE 192:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T1b5;
+	return 0x0;
 // LINE 195:
 _T64:
 	done = 0x0;
@@ -384,8 +382,7 @@ _T171:
 	__asm        jne    _T1a0;
 // LINE 228:
 _T198:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T1b5;
+	return 0x0;
 // LINE 229:
 _T1a0:
 	__asm        mov    eax, cityName;
@@ -393,10 +390,8 @@ _T1a0:
 	__asm        call   PStringToCString;
 	__asm        add    esp, 4;
 // LINE 230:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T1b5;
+	return 0x1;
 // LINE 231:
-_T1b5:
 }
 
 // FUNCTION: COPTER_D 0x004c49d8
@@ -1197,8 +1192,7 @@ _T889:
 	__asm        call   fclose;
 	__asm        add    esp, 4;
 // LINE 454:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T8b8;
+	return 0x1;
 // LINE 457:
 badread:
 	__asm        mov    eax, filNum;
@@ -1206,8 +1200,7 @@ badread:
 	__asm        call   fclose;
 	__asm        add    esp, 4;
 // LINE 458:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T8b8;
+	return 0x0;
 // LINE 459:
 _T8b8:
 }
@@ -1448,8 +1441,7 @@ static unsigned short S2CityReadHeader(/*packed*/ struct _iobuf *filNum, long * 
 	__asm        test   eax, eax;
 	__asm        jne    _T2d;
 // LINE 592:
-	__asm        xor    ax, ax;
-	__asm        jmp    _Teb;
+	return 0x0;
 // LINE 593:
 _T2d:
 	__asm        mov    eax, data;
@@ -1464,8 +1456,7 @@ _T2d:
 	__asm        cmp    eax, data;
 	__asm        je     _T5a;
 // LINE 597:
-	__asm        xor    ax, ax;
-	__asm        jmp    _Teb;
+	return 0x0;
 // LINE 602:
 _T5a:
 	__asm        mov    eax, filNum;
@@ -1479,8 +1470,7 @@ _T5a:
 	__asm        test   eax, eax;
 	__asm        jne    _T7e;
 // LINE 603:
-	__asm        xor    ax, ax;
-	__asm        jmp    _Teb;
+	return 0x0;
 // LINE 604:
 _T7e:
 	__asm        mov    eax, length;
@@ -1502,8 +1492,7 @@ _T7e:
 	__asm        test   eax, eax;
 	__asm        jne    _Tb5;
 // LINE 608:
-	__asm        xor    ax, ax;
-	__asm        jmp    _Teb;
+	return 0x0;
 // LINE 609:
 _Tb5:
 	__asm        mov    eax, data;
@@ -1518,14 +1507,11 @@ _Tb5:
 	__asm        cmp    eax, data;
 	__asm        je     _Te2;
 // LINE 612:
-	__asm        xor    ax, ax;
-	__asm        jmp    _Teb;
+	return 0x0;
 // LINE 613:
 _Te2:
-	__asm        mov    ax, 1;
-	__asm        jmp    _Teb;
+	return 0x1;
 // LINE 614:
-_Teb:
 }
 
 // FUNCTION: COPTER_D 0x004c56e2
@@ -1549,8 +1535,7 @@ static unsigned short S2CityMiscRead(/*packed*/ struct _iobuf *filNum, long size
 	__asm        test   eax, eax;
 	__asm        jne    _T37;
 // LINE 634:
-	__asm        xor    ax, ax;
-	__asm        jmp    _Tef8;
+	return 0x0;
 // LINE 637:
 _T37:
 	__asm        mov    eax, size;
@@ -1564,8 +1549,7 @@ _T37:
 	__asm        cmp    dword ptr [ecx], 0x122;
 	__asm        je     _T63;
 // LINE 640:
-	__asm        xor    ax, ax;
-	__asm        jmp    _Tef8;
+	return 0x0;
 // LINE 644:
 _T63:
 	ix = 0x1;
@@ -2612,10 +2596,8 @@ _Tb3c:
 	__asm        mov    TotalRate, eax;
 	__asm        inc    ix;
 // LINE 845:
-	__asm        mov    ax, 1;
-	__asm        jmp    _Tef8;
+	return 0x1;
 // LINE 846:
-_Tef8:
 }
 
 // FUNCTION: COPTER_D 0x004c65df
@@ -2633,14 +2615,11 @@ static unsigned short S2CityGameReadUncompressed(/*packed*/ struct _iobuf *filNu
 	__asm        test   eax, eax;
 	__asm        jne    _T2c;
 // LINE 864:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T35;
+	return 0x0;
 // LINE 865:
 _T2c:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T35;
+	return 0x1;
 // LINE 866:
-_T35:
 }
 
 // FUNCTION: COPTER_D 0x004c6619
@@ -2660,8 +2639,7 @@ static unsigned short S2CityBucketGameRead(/*packed*/ struct _iobuf *filNum, lon
 	__asm        cmp    temp, 0;
 	__asm        jne    _T35;
 // LINE 888:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T86;
+	return 0x0;
 // LINE 890:
 _T35:
 	count = size;
@@ -2683,8 +2661,7 @@ _T35:
 	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
 // LINE 893:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T86;
+	return 0x0;
 // LINE 896:
 _T6f:
 	__asm        mov    eax, ScratchPoolIndex;
@@ -2692,10 +2669,8 @@ _T6f:
 	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
 // LINE 897:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T86;
+	return 0x1;
 // LINE 898:
-_T86:
 }
 
 // FUNCTION: COPTER_D 0x004c66a4
@@ -2719,8 +2694,7 @@ static unsigned short S2CityGameReadCompressed(/*packed*/ struct _iobuf *filNum,
 	__asm        cmp    temp, 0;
 	__asm        jne    _T35;
 // LINE 921:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T165;
+	return 0x0;
 // LINE 923:
 _T35:
 	count = size;
@@ -2742,8 +2716,7 @@ _T35:
 	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
 // LINE 926:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T165;
+	return 0x0;
 // LINE 930:
 _T6f:
 	__asm        mov    tp, 0;
@@ -2833,14 +2806,11 @@ _T13a:
 	__asm        cmp    size, ecx;
 	__asm        je     _T15c;
 // LINE 950:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T165;
+	return 0x0;
 // LINE 952:
 _T15c:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T165;
+	return 0x1;
 // LINE 953:
-_T165:
 }
 
 // FUNCTION: COPTER_D 0x004c680e
@@ -2858,8 +2828,7 @@ short S2CitySave(char * filePath) {
 	__asm        cmp    filNum, 0;
 	__asm        jne    _T2f;
 // LINE 981:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T4eb;
+	return 0x0;
 // LINE 983:
 _T2f:
 	__asm        push   0;
@@ -3271,8 +3240,7 @@ _T4b0:
 	__asm        call   fclose;
 	__asm        add    esp, 4;
 // LINE 1048:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T4eb;
+	return 0x1;
 // LINE 1051:
 badwrite:
 	__asm        mov    eax, filNum;
@@ -3280,10 +3248,8 @@ badwrite:
 	__asm        call   fclose;
 	__asm        add    esp, 4;
 // LINE 1052:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T4eb;
+	return 0x0;
 // LINE 1053:
-_T4eb:
 }
 
 // FUNCTION: COPTER_D 0x004c6cfe
@@ -3312,8 +3278,7 @@ static unsigned short S2CityWriteName(/*packed*/ struct _iobuf *filNum, long hea
 	__asm        test   eax, eax;
 	__asm        jne    _T45;
 // LINE 1078:
-	__asm        xor    ax, ax;
-	__asm        jmp    _Td2;
+	return 0x0;
 // LINE 1080:
 _T45:
 	count = 0x4;
@@ -3338,8 +3303,7 @@ _T45:
 	__asm        test   eax, eax;
 	__asm        jne    _T88;
 // LINE 1084:
-	__asm        xor    ax, ax;
-	__asm        jmp    _Td2;
+	return 0x0;
 // LINE 1086:
 _T88:
 	__asm        mov    eax, size;
@@ -3360,18 +3324,15 @@ _T88:
 	__asm        test   eax, eax;
 	__asm        jne    _Tbd;
 // LINE 1090:
-	__asm        xor    ax, ax;
-	__asm        jmp    _Td2;
+	return 0x0;
 // LINE 1092:
 _Tbd:
 	__asm        mov    eax, size;
 	__asm        add    eax, 8;
 	__asm        add    WriteLength, eax;
 // LINE 1093:
-	__asm        mov    ax, 1;
-	__asm        jmp    _Td2;
+	return 0x1;
 // LINE 1094:
-_Td2:
 }
 
 // FUNCTION: COPTER_D 0x004c6dd5
@@ -3400,8 +3361,7 @@ static unsigned short S2CityGameWriteUncompressed(/*packed*/ struct _iobuf *filN
 	__asm        test   eax, eax;
 	__asm        jne    _T45;
 // LINE 1117:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T101;
+	return 0x0;
 // LINE 1119:
 _T45:
 	count = 0x4;
@@ -3426,8 +3386,7 @@ _T45:
 	__asm        test   eax, eax;
 	__asm        jne    _T87;
 // LINE 1123:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T101;
+	return 0x0;
 // LINE 1125:
 _T87:
 	__asm        mov    eax, size;
@@ -3462,8 +3421,7 @@ _T87:
 	__asm        call   swizzle_shorts;
 	__asm        add    esp, 8;
 // LINE 1131:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T101;
+	return 0x0;
 // LINE 1134:
 _Tdc:
 	__asm        mov    eax, size;
@@ -3477,10 +3435,8 @@ _Tdc:
 	__asm        add    ecx, 8;
 	__asm        add    WriteLength, ecx;
 // LINE 1137:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T101;
+	return 0x1;
 // LINE 1138:
-_T101:
 }
 
 // FUNCTION: COPTER_D 0x004c6edb
@@ -3498,8 +3454,7 @@ static unsigned short S2CityWriteHeader(/*packed*/ struct _iobuf *filNum, long l
 	__asm        test   eax, eax;
 	__asm        je     _T29;
 // LINE 1160:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T106;
+	return 0x0;
 // LINE 1162:
 _T29:
 	count = 0x4;
@@ -3527,8 +3482,7 @@ _T29:
 	__asm        test   eax, eax;
 	__asm        jne    _T75;
 // LINE 1167:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T106;
+	return 0x0;
 // LINE 1169:
 _T75:
 	count = 0x4;
@@ -3551,8 +3505,7 @@ _T75:
 	__asm        test   eax, eax;
 	__asm        jne    _Tb1;
 // LINE 1172:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T106;
+	return 0x0;
 // LINE 1174:
 _Tb1:
 	count = 0x4;
@@ -3580,14 +3533,11 @@ _Tb1:
 	__asm        test   eax, eax;
 	__asm        jne    _Tfd;
 // LINE 1178:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T106;
+	return 0x0;
 // LINE 1180:
 _Tfd:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T106;
+	return 0x1;
 // LINE 1181:
-_T106:
 }
 
 // FUNCTION: COPTER_D 0x004c6fe6
@@ -3614,8 +3564,7 @@ static unsigned short S2CityGameWriteCompressed(/*packed*/ struct _iobuf *filNum
 	__asm        cmp    temp, 0;
 	__asm        jne    _T3e;
 // LINE 1203:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T343;
+	return 0x0;
 // LINE 1205:
 _T3e:
 	__asm        push   0x59B1BC;
@@ -3902,8 +3851,7 @@ _T316:
 	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
 // LINE 1279:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T343;
+	return 0x1;
 // LINE 1282:
 BadCompWrite:
 	__asm        mov    eax, ScratchPoolIndex;
@@ -3911,10 +3859,8 @@ BadCompWrite:
 	__asm        call   S2AllocReset;
 	__asm        add    esp, 4;
 // LINE 1283:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T343;
+	return 0x0;
 // LINE 1284:
-_T343:
 }
 
 // FUNCTION: COPTER_D 0x004c732e
@@ -6178,8 +6124,7 @@ _Tdc6:
 	__asm        jmp    alloc_failure;
 // LINE 1947:
 _Tdf5:
-	__asm        xor    ax, ax;
-	__asm        jmp    _Te14;
+	return 0x0;
 // LINE 1950:
 alloc_failure:
 	__asm        mov    eax, G_citymempool;
@@ -6187,10 +6132,8 @@ alloc_failure:
 	__asm        call   S2AllocFreePool;
 	__asm        add    esp, 4;
 // LINE 1952:
-	__asm        mov    ax, 1;
-	__asm        jmp    _Te14;
+	return 0x1;
 // LINE 1953:
-_Te14:
 }
 
 // FUNCTION: COPTER_D 0x004c920e
@@ -6359,8 +6302,7 @@ short check_root(char * pathname) {
 	__asm        test   ecx, ecx;
 	__asm        jne    _T31;
 // LINE 2073:
-	__asm        mov    ax, 0xFFFF;
-	__asm        jmp    _T10f;
+	return 0xffff;
 // LINE 2075:
 _T31:
 	__asm        lea    eax, pathonly[0];
@@ -6377,8 +6319,7 @@ _T31:
 	__asm        test   eax, eax;
 	__asm        jne    _T64;
 // LINE 2079:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T10f;
+	return 0x1;
 // LINE 2081:
 _T64:
 	__asm        movsx  eax, len;
@@ -6437,14 +6378,11 @@ _Tf2:
 	__asm        test   eax, eax;
 	__asm        je     _T106;
 // LINE 2101:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T10f;
+	return 0x0;
 // LINE 2103:
 _T106:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T10f;
+	return 0x1;
 // LINE 2104:
-_T10f:
 }
 
 // FUNCTION: COPTER_D 0x004c9495
@@ -6859,8 +6797,7 @@ short check_file_exist(char * filename) {
 	__asm        cmp    fileNum, 0;
 	__asm        jne    _T2f;
 // LINE 2323:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T44;
+	return 0x0;
 // LINE 2324:
 _T2f:
 	__asm        mov    eax, fileNum;
@@ -6868,10 +6805,8 @@ _T2f:
 	__asm        call   fclose;
 	__asm        add    esp, 4;
 // LINE 2325:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T44;
+	return 0x1;
 // LINE 2326:
-_T44:
 }
 
 // FUNCTION: COPTER_D 0x004c987e

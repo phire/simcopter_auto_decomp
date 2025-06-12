@@ -3475,8 +3475,7 @@ _T1b9:
 	__asm        jmp    _T1db;
 // LINE 178:
 _T1db:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T1f1;
+	return 0x1;
 // LINE 180:
 	__asm        jmp    _T1f1;
 // LINE 181:
@@ -4160,17 +4159,14 @@ _T367:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 295:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T393;
+	return 0x1;
 // LINE 296:
 // Block end:
 	__asm        jmp    _T7a;
 // LINE 297:
 _T38b:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T393;
+	return 0x0;
 // LINE 298:
-_T393:
 }
 
 // FUNCTION: COPTER_D 0x00544f78
@@ -4240,8 +4236,7 @@ _T88:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 309:
-	__asm        mov    ax, 1;
-	__asm        jmp    _Tca;
+	return 0x1;
 // LINE 311:
 	__asm        jmp    _Tca;
 // LINE 312:
@@ -10428,8 +10423,7 @@ _T23f:
 	cYObject::sBeamed = 0xc;
 // LINE 1394:
 _T2af:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T322;
+	return 0x1;
 // LINE 1396:
 _T2b8:
 	x += xdir;
@@ -10453,8 +10447,7 @@ _T2c9:
 	cYObject::sBeamed = 0x0;
 // LINE 1405:
 _T2f9:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T322;
+	return 0x0;
 // LINE 1407:
 _T301:
 	__asm        jmp    _T187;
@@ -10466,7 +10459,6 @@ _T301:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 1409:
-_T322:
 }
 
 // FUNCTION: COPTER_D 0x00549f04
@@ -13369,8 +13361,7 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 	__asm        cmp    [eax+0x130], ecx;
 	__asm        je     _T3d;
 // LINE 1900:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T48d;
+	return 0x1;
 // LINE 1903:
 _T3d:
 	__asm        mov    eax, this;
@@ -13441,15 +13432,13 @@ _Tf0:
 	__asm        mov    ecx, theSound;
 	__asm        call   dword ptr [eax+0x64];
 // LINE 1910:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T48d;
+	return 0x1;
 // LINE 1912:
 // Block end:
 	__asm        jmp    _T132;
 // LINE 1913:
 _T129:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T48d;
+	return 0x1;
 // LINE 1915:
 _T132:
 	__asm        mov    eax, soundnum;
@@ -13464,8 +13453,7 @@ _T132:
 	__asm        test   reinterpret_cast<uint32_t>(playforsure), 0xFFFF;
 	__asm        jne    _T168;
 // LINE 1918:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T48d;
+	return 0x1;
 // LINE 1919:
 _T168:
 	__asm        mov    word ptr [ebp-0x2C], 0;
@@ -13531,8 +13519,7 @@ _T20a:
 	__asm        jmp    _T3c7;
 // LINE 1934:
 _T236:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T48d;
+	return 0x1;
 // LINE 1935:
 	__asm        jmp    _T42e;
 // LINE 1937:
@@ -13741,10 +13728,8 @@ _T446:
 	__asm        call   S3SoundAdjFreq;
 	__asm        add    esp, 8;
 // LINE 2022:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T48d;
+	return 0x1;
 // LINE 2023:
-_T48d:
 }
 
 // FUNCTION: COPTER_D 0x0054c671
@@ -14252,8 +14237,7 @@ unsigned short cYObject::AddToHeli() {
 	__asm        test   eax, eax;
 	__asm        jne    _T5b;
 // LINE 2150:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T87;
+	return 0x0;
 // LINE 2151:
 _T5b:
 	__asm        lea    eax, tempPassengerInfo.lPassengerFace;
@@ -14266,10 +14250,8 @@ _T5b:
 // LINE 2152:
 	this->fData[9] = 0x0;
 // LINE 2153:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T87;
+	return 0x1;
 // LINE 2155:
-_T87:
 }
 
 // FUNCTION: COPTER_D 0x0054cd49
@@ -14967,14 +14949,11 @@ _T55a:
 	__asm        je     _T570;
 // LINE 2234:
 _T567:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T578;
+	return 0x1;
 // LINE 2235:
 _T570:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T578;
+	return 0x0;
 // LINE 2236:
-_T578:
 }
 
 // FUNCTION: COPTER_D 0x0054d662
@@ -15104,8 +15083,7 @@ _T16d:
 	__asm        jne    _T182;
 // LINE 2252:
 _T17a:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T48a;
+	return 0x0;
 // LINE 2254:
 _T182:
 	__asm        mov    eax, loctype;
@@ -15123,8 +15101,7 @@ _T182:
 	__asm        test   eax, eax;
 	__asm        jne    _T1b7;
 // LINE 2255:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T48a;
+	return 0x0;
 // LINE 2256:
 _T1b7:
 	__asm        mov    eax, loctype;
@@ -15193,8 +15170,7 @@ _T225:
 	__asm        test   eax, eax;
 	__asm        jne    _T27b;
 // LINE 2260:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T48a;
+	return 0x0;
 // LINE 2263:
 // Block end:
 _T27b:
@@ -15349,10 +15325,8 @@ _T455:
 	__asm        add    esp, 0x10;
 // LINE 2273:
 _T481:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T48a;
+	return 0x1;
 // LINE 2274:
-_T48a:
 }
 
 // FUNCTION: COPTER_D 0x0054daf3

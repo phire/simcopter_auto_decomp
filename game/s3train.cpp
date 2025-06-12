@@ -9156,10 +9156,8 @@ _T440:
 // FUNCTION: COPTER_D 0x005342db
 short GetMaximumNumberOfTrains() {
 // LINE 4603:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T0f;
+	return 0x1;
 // LINE 4604:
-_T0f:
 }
 
 // FUNCTION: COPTER_D 0x005342ef

@@ -4574,10 +4574,8 @@ _T1d:
 // FUNCTION: COPTER_D 0x00504578
 short GetMaximumNumberOfAutomobiles() {
 // LINE 2001:
-	__asm        mov    ax, 0x32;
-	__asm        jmp    _T0f;
+	return 0x32;
 // LINE 2002:
-_T0f:
 }
 
 // FUNCTION: COPTER_D 0x0050458c

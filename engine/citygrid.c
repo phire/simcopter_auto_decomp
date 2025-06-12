@@ -73,8 +73,7 @@ short VRInitGridObj(long ViewSize) {
 	__asm        cmp    S_gridmempool, 0;
 	__asm        jge    _T38;
 // LINE 138:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T692;
+	return 0x1;
 // LINE 143:
 _T38:
 	__asm        jmp    _T40;
@@ -93,8 +92,7 @@ _T51:
 // LINE 155:
 	ViewSize = 0x3d;
 // LINE 156:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T692;
+	return 0x0;
 // LINE 158:
 _T6a:
 	__asm        mov    eax, ViewSize;
@@ -579,10 +577,8 @@ _T644:
 	b_FirstTime = 0x0;
 // LINE 357:
 _T68a:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T692;
+	return 0x0;
 // LINE 358:
-_T692:
 }
 
 // FUNCTION: COPTER_D 0x004d71d7

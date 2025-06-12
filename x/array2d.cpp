@@ -371,14 +371,11 @@ _T30:
 	__asm        add    esp, 0x10;
 // LINE 21:
 _T5c:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T6d;
+	return 0x1;
 // LINE 23:
 _T65:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T6d;
+	return 0x0;
 // LINE 24:
-_T6d:
 }
 
 // FUNCTION: COPTER_D 0x00567552
@@ -2026,8 +2023,7 @@ unsigned short _cArray::SetSize(long newxSize, long newySize) {
 	__asm        cmp    [eax+0x14], ecx;
 	__asm        jne    _T33;
 
-	__asm        mov    ax, 1;
-	__asm        jmp    _T14c;
+	return 0x1;
 // LINE 496:
 _T33:
 	__asm        mov    eax, this;
@@ -2120,10 +2116,8 @@ _T12e:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xC], eax;
 // LINE 511:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T14c;
+	return 0x1;
 // LINE 512:
-_T14c:
 }
 
 // FUNCTION: COPTER_D 0x005689cc
@@ -2700,8 +2694,7 @@ _T72:
 	__asm        jmp    _T1f;
 // LINE 671:
 _T77:
-	__asm        mov    ax, 0xFFFF;
-	__asm        jmp    _T80;
+	return 0xffff;
 // LINE 672:
 _T80:
 }

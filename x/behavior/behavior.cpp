@@ -772,8 +772,7 @@ short Behavior::GetTreeClass(short treeID) {
 	__asm        cmp    eax, 0xFF;
 	__asm        jg     _T29;
 // LINE 229:
-	__asm        xor    ax, ax;
-	__asm        jmp    _Ta6;
+	return 0x0;
 // LINE 230:
 _T29:
 	__asm        movsx  eax, treeID;
@@ -784,8 +783,7 @@ _T29:
 	__asm        cmp    eax, 0xFFF;
 	__asm        jg     _T50;
 // LINE 231:
-	__asm        mov    ax, 1;
-	__asm        jmp    _Ta6;
+	return 0x1;
 // LINE 232:
 _T50:
 	__asm        movsx  eax, treeID;
@@ -796,8 +794,7 @@ _T50:
 	__asm        cmp    eax, 0x7530;
 	__asm        jg     _T77;
 // LINE 233:
-	__asm        mov    ax, 3;
-	__asm        jmp    _Ta6;
+	return 0x3;
 // LINE 234:
 _T77:
 	__asm        movsx  eax, treeID;
@@ -808,14 +805,11 @@ _T77:
 	__asm        cmp    eax, 0x1FFF;
 	__asm        jg     _T9e;
 // LINE 235:
-	__asm        mov    ax, 2;
-	__asm        jmp    _Ta6;
+	return 0x2;
 // LINE 236:
 _T9e:
-	__asm        xor    ax, ax;
-	__asm        jmp    _Ta6;
+	return 0x0;
 // LINE 237:
-_Ta6:
 }
 
 // FUNCTION: COPTER_D 0x00560924

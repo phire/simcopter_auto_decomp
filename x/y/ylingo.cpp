@@ -603,10 +603,8 @@ void YObjLang::~YObjLang() {
 // FUNCTION: COPTER_D 0x00560b3d
 short YObjLang::CountPrimitives() {
 // LINE 103:
-	__asm        mov    ax, 0x40;
-	__asm        jmp    _T15;
+	return 0x40;
 // LINE 105:
-_T15:
 }
 
 // FUNCTION: COPTER_D 0x00560b57
@@ -618,10 +616,8 @@ void YObjLang::GetPrimName(short primCode, unsigned char * str) {
 // FUNCTION: COPTER_D 0x00560b6f
 unsigned short YObjLang::IsSingleExit(/*unpacked*/ struct Behavior::Node *node) {
 // LINE 129:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T14;
+	return 0x0;
 // LINE 130:
-_T14:
 }
 
 // FUNCTION: COPTER_D 0x00560b8a

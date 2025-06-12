@@ -693,8 +693,7 @@ _T3b:
 	__asm        cmp    dword ptr [eax+0x114], 0;
 	__asm        je     _T53;
 
-	__asm        xor    ax, ax;
-	__asm        jmp    _T6a;
+	return 0x0;
 // LINE 289:
 _T53:
 	__asm        jmp    _T58;
@@ -763,8 +762,7 @@ _T3b:
 	__asm        cmp    dword ptr [eax+0x114], 0;
 	__asm        je     _T53;
 
-	__asm        xor    ax, ax;
-	__asm        jmp    _T6a;
+	return 0x0;
 // LINE 328:
 _T53:
 	__asm        mov    eax, type;
@@ -2222,8 +2220,7 @@ _T4c:
 	__asm        jmp    _T6d;
 // LINE 907:
 _T65:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T6d;
+	return 0x0;
 // LINE 908:
 _T6d:
 }

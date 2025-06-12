@@ -512,8 +512,7 @@ unsigned short FlatFile::ValidFile() {
 	__asm        cmp    dword ptr [eax+0x108], 0;
 	__asm        jne    _T29;
 
-	__asm        xor    ax, ax;
-	__asm        jmp    _T32;
+	return 0x0;
 // LINE 222:
 	__asm        jmp    _T32;
 _T29:
@@ -542,8 +541,7 @@ _T21:
 	__asm        cmp    [eax+0x108], ecx;
 	__asm        jne    _T57;
 // LINE 236:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T5f;
+	return 0x1;
 // LINE 237:
 	__asm        jmp    _T5f;
 // LINE 238:
@@ -705,8 +703,7 @@ _T14:
 	__asm        test   eax, eax;
 	__asm        je     _T49;
 // LINE 288:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T60;
+	return 0x0;
 // LINE 289:
 _T49:
 	srch = srch->fNext;
@@ -714,10 +711,8 @@ _T49:
 	__asm        jmp    _T14;
 // LINE 291:
 _T57:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T60;
+	return 0x1;
 // LINE 292:
-_T60:
 }
 
 // FUNCTION: COPTER_D 0x0055ca48
