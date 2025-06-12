@@ -409,7 +409,13 @@ _T1b:
 	__asm        cmp    i, 0x100;
 	__asm        jge    _T45;
 // LINE 82:
-	*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&this->paletteColors->Blue) + ScaleExpr(i, 4)) = *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&pColors->Blue) + ScaleExpr(i, 4));
+	__asm        mov    eax, i;
+	__asm        mov    ecx, pColors;
+	__asm        mov    eax, [ecx+eax*4];
+	__asm        mov    ecx, this;
+	__asm        mov    ecx, [ecx+0x134];
+	__asm        mov    edx, i;
+	__asm        mov    [ecx+edx*4], eax;
 // LINE 83:
 	__asm        jmp    _T18;
 // LINE 84:

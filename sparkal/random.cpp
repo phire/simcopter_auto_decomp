@@ -103,13 +103,19 @@ _T2e:
 	__asm        div    ecx;
 	__asm        mov    ii, edx;
 // LINE 39:
-	this->table[ii] = k;
+	__asm        mov    eax, k;
+	__asm        mov    ecx, ii;
+	__asm        mov    edx, this;
+	__asm        mov    [edx+ecx*4], eax;
 // LINE 40:
 	__asm        mov    eax, j;
 	__asm        sub    eax, k;
 	__asm        mov    k, eax;
 // LINE 41:
-	j = this->table[ii];
+	__asm        mov    eax, ii;
+	__asm        mov    ecx, this;
+	__asm        mov    eax, [ecx+eax*4];
+	__asm        mov    j, eax;
 // LINE 42:
 // Block end:
 	__asm        jmp    _T2b;

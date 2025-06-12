@@ -2442,7 +2442,10 @@ _T1205:
 	__asm        lea    ecx, memstrm<cGZXParamBitstream<t_alloc,t_free>+0x00>;
 	__asm        call   cGZXParamBitstream<t_alloc,t_free>::Read;
 // LINE 455:
-	MicroRecord->type = SCXMicroRecord.type;
+	__asm        mov    al, SCXMicroRecord.type;
+	__asm        mov    ecx, loop;
+	__asm        mov    edx, MicroRecord;
+	__asm        mov    [edx+ecx*8], al;
 // LINE 456:
 	__asm        mov    al, SCXMicroRecord.stat0;
 	__asm        mov    ecx, loop;

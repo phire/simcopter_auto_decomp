@@ -618,7 +618,9 @@ _T1b:
 	__asm        cmp    i, 0x64;
 	__asm        jge    _T3f;
 // LINE 47:
-	this->keyboardCommands[i].bCommandIsSet = 0x0;
+	__asm        mov    eax, i;
+	__asm        mov    ecx, this;
+	__asm        mov    byte ptr [ecx+eax*2], 0;
 // LINE 48:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, this;

@@ -1427,7 +1427,10 @@ _T120:
 	__asm        cmp    j, 0xF6;
 	__asm        jge    _T1ad;
 // LINE 407:
-	paletteArray->palEntries[j].peRed = colorStart.Red;
+	__asm        mov    al, colorStart.Red;
+	__asm        mov    ecx, j;
+	__asm        mov    edx, paletteArray;
+	__asm        mov    [edx+ecx*4], al;
 // LINE 408:
 	__asm        mov    al, colorStart.Green;
 	__asm        mov    ecx, j;

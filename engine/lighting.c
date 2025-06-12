@@ -1021,7 +1021,11 @@ _T45:
 // LINE 580:
 	stvert = i;
 // LINE 581:
-	minu = fh->Barrys->x;
+	__asm        mov    eax, fh;
+	__asm        mov    eax, [eax+0x28];
+	__asm        mov    ecx, i;
+	__asm        mov    eax, [eax+ecx*8];
+	__asm        mov    minu, eax;
 // LINE 582:
 	__asm        mov    eax, fh;
 	__asm        mov    eax, [eax+0x28];

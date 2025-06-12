@@ -3276,7 +3276,11 @@ _T26e:
 
 	__asm        jmp    near ptr 0x004BB375;
 
-	nMinX = this->pointArray.start->x;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+8];
+	__asm        mov    ecx, i;
+	__asm        mov    eax, [eax+ecx*8];
+	__asm        mov    nMinX, eax;
 // LINE 245:
 _T2b2:
 	__asm        jmp    near ptr 0x004BB389;
@@ -3294,7 +3298,11 @@ _T2b2:
 
 	__asm        jmp    near ptr 0x004BB3AD;
 
-	nMaxX = this->pointArray.start->x;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+8];
+	__asm        mov    ecx, i;
+	__asm        mov    eax, [eax+ecx*8];
+	__asm        mov    nMaxX, eax;
 // LINE 248:
 _T2ea:
 	__asm        jmp    near ptr 0x004BB3C1;
