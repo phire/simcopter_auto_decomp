@@ -4125,6 +4125,7 @@ _T230:
 //   _T10f
 //   _T187
 // Switch table
+//  [0, 1, 7, 2, 7, 7, 7, 3, 7, 7, 4, 5, 7, 6]
 _T294:
 	__asm        cmp    dword ptr [ebp-0xC], 0x1009;
 	__asm        jg     _T2d3;

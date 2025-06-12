@@ -7667,6 +7667,7 @@ _T490:
 //   _T151
 //   _T4ed
 // Switch table
+//  [0, 1, 4, 4, 4, 4, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3]
 // LINE 832:
 _T4ed:
 	__asm        jmp    _T4f2;
@@ -13701,6 +13702,7 @@ _T346:
 //   _T322
 //   _T33a
 // Switch table
+//  [0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1]
 // LINE 2003:
 _T37d:
 	loop = 0x1;
@@ -18091,10 +18093,11 @@ _Tb2:
 //   _T8b
 //   _Ted
 // Switch table
+//  [0, 3, 3, 3, 1, 1, 3, 2, 2, 2, 2]
 // LINE 2596:
 _Ted:
 	__asm        cmp    type, 0;
-	__asm        jne    near ptr 0x0054FF78;
+	__asm        jne    _T136;
 // LINE 2597:
 	this->fMissionID = 0xffffffff;
 // LINE 2598:
@@ -18108,6 +18111,7 @@ _Ted:
 // LINE 2603:
 	__asm        jmp    _T14e;
 // LINE 2604:
+_T136:
 	this->fData[20] = 0x0;
 // LINE 2605:
 	this->fData[21] = 0x1;

@@ -1927,6 +1927,7 @@ _T28b:
 //   _T27b
 //   _T2c6
 // Switch table
+//  [0, 1, 4, 2, 4, 4, 4, 3]
 // LINE 1196:
 _T2c6:
 	__asm        jmp    _T2cb;

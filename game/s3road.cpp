@@ -1756,6 +1756,7 @@ _T401:
 //   _T3dc
 //   _T3f5
 // Switch table
+//  [0, 1, 4, 2, 4, 4, 4, 3]
 // LINE 547:
 _T43c:
 	__asm        xor    eax, eax;

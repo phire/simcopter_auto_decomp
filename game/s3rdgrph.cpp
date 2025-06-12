@@ -3173,6 +3173,7 @@ _T361:
 //   _T253
 //   _T25f
 // Switch table
+//  [0, 0, 0, 3, 3, 3, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2]
 _T3a9:
 	__asm        mov    eax, pEdge;
 	__asm        xor    ecx, ecx;
@@ -3401,6 +3402,7 @@ _T649:
 //   _T53b
 //   _T547
 // Switch table
+//  [0, 0, 0, 3, 3, 3, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2]
 _T691:
 	__asm        mov    eax, pEdge;
 	__asm        xor    ecx, ecx;
@@ -4041,6 +4043,7 @@ _T427:
 //   _T319
 //   _T325
 // Switch table
+//  [0, 0, 0, 3, 3, 3, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2]
 _T46f:
 	__asm        mov    eax, pEdge;
 	__asm        xor    ecx, ecx;
@@ -4908,6 +4911,7 @@ _T24f:
 //   _T141
 //   _T14d
 // Switch table
+//  [0, 0, 0, 3, 3, 3, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2]
 _T297:
 	__asm        mov    eax, [ebp-8];
 	__asm        mov    ecx, x;
@@ -5116,6 +5120,7 @@ _T4f2:
 //   _T3e4
 //   _T3f0
 // Switch table
+//  [0, 0, 0, 3, 3, 3, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2]
 _T53a:
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    ecx, x;
@@ -5323,6 +5328,7 @@ _T794:
 //   _T686
 //   _T692
 // Switch table
+//  [0, 0, 0, 3, 3, 3, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2]
 _T7dc:
 	__asm        mov    eax, [ebp-0x10];
 	__asm        mov    ecx, x;
@@ -5530,6 +5536,7 @@ _Ta37:
 //   _T929
 //   _T935
 // Switch table
+//  [0, 0, 0, 3, 3, 3, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2]
 _Ta7f:
 	__asm        mov    eax, [ebp-0x14];
 	__asm        mov    ecx, x;
@@ -5738,6 +5745,7 @@ _Tcd5:
 //   _Tbc7
 //   _Tbd3
 // Switch table
+//  [0, 0, 0, 3, 3, 3, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2]
 _Td1d:
 	__asm        mov    eax, [ebp-0x18];
 	__asm        mov    ecx, x;
@@ -5946,6 +5954,7 @@ _Tf72:
 //   _Te64
 //   _Te70
 // Switch table
+//  [0, 0, 0, 3, 3, 3, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2]
 _Tfba:
 	__asm        mov    eax, [ebp-0x1C];
 	__asm        mov    ecx, x;
@@ -6153,6 +6162,7 @@ _T1210:
 //   _T1102
 //   _T110e
 // Switch table
+//  [0, 0, 0, 3, 3, 3, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2]
 _T1258:
 	__asm        mov    eax, [ebp-0x20];
 	__asm        mov    ecx, x;
@@ -6360,6 +6370,7 @@ _T14af:
 //   _T13a1
 //   _T13ad
 // Switch table
+//  [0, 0, 0, 3, 3, 3, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2]
 _T14f7:
 	__asm        mov    eax, [ebp-0x24];
 	__asm        mov    ecx, x;
