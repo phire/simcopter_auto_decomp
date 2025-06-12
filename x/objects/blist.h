@@ -90,7 +90,7 @@ _Tb7:
 	__asm        jmp    near ptr 0x0055EA6C;
 
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
-	__asm        call   0x0055EA7D;
+	__asm        call   _L44659;
 	__asm        jmp    _Tff;
 _L44659:
 	__asm        cmp    this, 0;
@@ -736,7 +736,7 @@ _Tb7:
 	__asm        jmp    near ptr 0x0055FE8C;
 
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
-	__asm        call   0x0055FE9D;
+	__asm        call   _L45612;
 	__asm        jmp    _Tff;
 _L45612:
 	__asm        cmp    this, 0;

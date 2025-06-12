@@ -671,7 +671,7 @@ _T4c:
 	__asm        jmp    near ptr 0x0055306C;
 
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
-	__asm        call   0x0055307D;
+	__asm        call   _L27084;
 	__asm        jmp    _T75;
 _L27084:
 	__asm        mov    ecx, this;
@@ -1485,7 +1485,7 @@ void FlatResFile::GetString(unsigned char * str, short resID, short index) {
 // Block end:
 _T92:
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
-	__asm        call   0x00553A61;
+	__asm        call   _L27094;
 	__asm        jmp    _Tb6;
 _L27094:
 	__asm        lea    ecx, tempStrs.fResFile;

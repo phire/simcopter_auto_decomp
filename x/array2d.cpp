@@ -1993,7 +1993,7 @@ _T186:
 _T18b:
 	__asm        mov    word ptr [ebp-0x70], 1;
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
-	__asm        call   0x00568855;
+	__asm        call   _L27257;
 	__asm        mov    ax, [ebp-0x70];
 	__asm        jmp    _T1b9;
 // LINE 490:

@@ -3089,7 +3089,7 @@ static void $E78() {
 	__asm        jmp    near ptr 0x00544229;
 
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
-	__asm        call   0x0054423A;
+	__asm        call   _L55035;
 	__asm        jmp    _T60;
 _L55035:
 	__asm        mov    ecx, 0x635590;
@@ -20014,9 +20014,9 @@ _Tc1:
 	__asm        jmp    near ptr 0x00551973;
 
 	__asm        mov    byte ptr [ebp-4], 0;
-	__asm        call   0x0055198D;
+	__asm        call   _L56643;
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
-	__asm        call   0x005519B5;
+	__asm        call   _L56642;
 	__asm        jmp    _T11b;
 _L56643:
 	__asm        cmp    this, 0;
@@ -20428,7 +20428,7 @@ _T58:
 	__asm        jmp    near ptr 0x00551F6D;
 
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
-	__asm        call   0x00551F7E;
+	__asm        call   _L55562;
 	__asm        jmp    _T51;
 _L55562:
 	__asm        mov    ecx, this;
