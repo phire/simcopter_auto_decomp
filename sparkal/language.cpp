@@ -1395,8 +1395,7 @@ int32_t LanguageManager::GetFullStringID(int32_t nStringID, int32_t nLanguage) {
 	__asm        jl     _T21;
 // LINE 157:
 _T1a:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4b;
+	return 0x0;
 // LINE 158:
 _T21:
 	__asm        cmp    nLanguage, 0;
@@ -3870,16 +3869,13 @@ int32_t LanguageManager::GetCurrentSystemLocale() {
 	__asm        jmp    _T196;
 // LINE 558:
 _T29:
-	__asm        mov    eax, 8;
-	__asm        jmp    _T2ff;
+	return 0x8;
 // LINE 559:
 _T33:
-	__asm        mov    eax, 7;
-	__asm        jmp    _T2ff;
+	return 0x7;
 // LINE 560:
 _T3d:
-	__asm        mov    eax, 3;
-	__asm        jmp    _T2ff;
+	return 0x3;
 // LINE 561:
 _T47:
 	return 0x1;
@@ -3897,44 +3893,34 @@ _T6f:
 	return 0x2;
 // LINE 566:
 _T79:
-	__asm        mov    eax, 2;
-	__asm        jmp    _T2ff;
+	return 0x2;
 // LINE 567:
 _T83:
-	__asm        mov    eax, 0x15;
-	__asm        jmp    _T2ff;
+	return 0x15;
 // LINE 568:
 _T8d:
-	__asm        mov    eax, 3;
-	__asm        jmp    _T2ff;
+	return 0x3;
 // LINE 569:
 _T97:
-	__asm        mov    eax, 3;
-	__asm        jmp    _T2ff;
+	return 0x3;
 // LINE 570:
 _Ta1:
-	__asm        mov    eax, 3;
-	__asm        jmp    _T2ff;
+	return 0x3;
 // LINE 571:
 _Tab:
-	__asm        mov    eax, 3;
-	__asm        jmp    _T2ff;
+	return 0x3;
 // LINE 572:
 _Tb5:
-	__asm        mov    eax, 4;
-	__asm        jmp    _T2ff;
+	return 0x4;
 // LINE 573:
 _Tbf:
-	__asm        mov    eax, 4;
-	__asm        jmp    _T2ff;
+	return 0x4;
 // LINE 574:
 _Tc9:
-	__asm        mov    eax, 4;
-	__asm        jmp    _T2ff;
+	return 0x4;
 // LINE 575:
 _Td3:
-	__asm        mov    eax, 0x17;
-	__asm        jmp    _T2ff;
+	return 0x17;
 // LINE 576:
 _Tdd:
 	return 0x5;
@@ -3949,44 +3935,34 @@ _Tfb:
 	return 0x14;
 // LINE 580:
 _T105:
-	__asm        mov    eax, 0xA;
-	__asm        jmp    _T2ff;
+	return 0xa;
 // LINE 581:
 _T10f:
-	__asm        mov    eax, 0xA;
-	__asm        jmp    _T2ff;
+	return 0xa;
 // LINE 582:
 _T119:
-	__asm        mov    eax, 0xB;
-	__asm        jmp    _T2ff;
+	return 0xb;
 // LINE 583:
 _T123:
-	__asm        mov    eax, 6;
-	__asm        jmp    _T2ff;
+	return 0x6;
 // LINE 584:
 _T12d:
-	__asm        mov    eax, 6;
-	__asm        jmp    _T2ff;
+	return 0x6;
 // LINE 585:
 _T137:
-	__asm        mov    eax, 6;
-	__asm        jmp    _T2ff;
+	return 0x6;
 // LINE 586:
 _T141:
-	__asm        mov    eax, 0x1D;
-	__asm        jmp    _T2ff;
+	return 0x1d;
 // LINE 587:
 _T14b:
-	__asm        mov    eax, 9;
-	__asm        jmp    _T2ff;
+	return 0x9;
 // LINE 588:
 _T155:
-	__asm        mov    eax, 0x12;
-	__asm        jmp    _T2ff;
+	return 0x12;
 // LINE 589:
 _T15f:
-	__asm        mov    eax, 0x1A;
-	__asm        jmp    _T2ff;
+	return 0x1a;
 // LINE 590:
 _T169:
 	return 0x16;

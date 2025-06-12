@@ -398,8 +398,7 @@ _T26:
 	__asm        je     _T3c;
 // LINE 114:
 _T35:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tec;
+	return 0x0;
 // LINE 117:
 _T3c:
 	__asm        cmp    name, 0;
@@ -429,8 +428,7 @@ _T73:
 	__asm        test   eax, eax;
 	__asm        jne    _T89;
 // LINE 124:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tec;
+	return 0x0;
 // LINE 125:
 _T89:
 	__asm        mov    eax, this;
@@ -441,8 +439,7 @@ _T89:
 	__asm        test   eax, eax;
 	__asm        je     _Ta7;
 // LINE 126:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tec;
+	return 0x0;
 // LINE 127:
 _Ta7:
 	__asm        mov    eax, nAccessMode;

@@ -2985,8 +2985,7 @@ _T2b2:
 	__asm        add    esp, 8;
 // LINE 234:
 _T2d7:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T212b;
+	return 0x1;
 // LINE 236:
 	__asm        jmp    _T212b;
 _T2e6:
@@ -3200,8 +3199,7 @@ _T574:
 	__asm        add    esp, 8;
 // LINE 249:
 _T599:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T212b;
+	return 0x1;
 // LINE 251:
 	__asm        jmp    _T212b;
 _T5a8:
@@ -3415,8 +3413,7 @@ _T836:
 	__asm        add    esp, 8;
 // LINE 264:
 _T85b:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T212b;
+	return 0x1;
 // LINE 266:
 	__asm        jmp    _T212b;
 _T86a:
@@ -3630,8 +3627,7 @@ _Taf8:
 	__asm        add    esp, 8;
 // LINE 279:
 _Tb1d:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T212b;
+	return 0x1;
 // LINE 281:
 	__asm        jmp    _T212b;
 _Tb2c:
@@ -3845,8 +3841,7 @@ _Tdba:
 	__asm        add    esp, 8;
 // LINE 294:
 _Tddf:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T212b;
+	return 0x1;
 // LINE 296:
 	__asm        jmp    _T212b;
 _Tdee:
@@ -4060,8 +4055,7 @@ _T107c:
 	__asm        add    esp, 8;
 // LINE 309:
 _T10a1:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T212b;
+	return 0x1;
 // LINE 311:
 	__asm        jmp    _T212b;
 _T10b0:
@@ -4275,8 +4269,7 @@ _T133e:
 	__asm        add    esp, 8;
 // LINE 324:
 _T1363:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T212b;
+	return 0x1;
 // LINE 326:
 	__asm        jmp    _T212b;
 _T1372:
@@ -4490,8 +4483,7 @@ _T1624:
 	__asm        add    esp, 8;
 // LINE 339:
 _T1649:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T212b;
+	return 0x1;
 // LINE 341:
 	__asm        jmp    _T212b;
 _T1658:
@@ -4705,8 +4697,7 @@ _T190a:
 	__asm        add    esp, 8;
 // LINE 354:
 _T192f:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T212b;
+	return 0x1;
 // LINE 356:
 	__asm        jmp    _T212b;
 _T193e:
@@ -5250,8 +5241,7 @@ _T206e:
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 376:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T212b;
+	return 0x1;
 // LINE 378:
 	__asm        jmp    _T212b;
 // LINE 379:
@@ -5299,8 +5289,7 @@ _T2105:
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 381:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T212b;
+	return 0x1;
 // LINE 383:
 _T212b:
 }

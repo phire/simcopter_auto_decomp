@@ -3480,8 +3480,7 @@ _T1db:
 	__asm        jmp    _T1f1;
 // LINE 181:
 _T1e9:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T1f1;
+	return 0x0;
 // LINE 182:
 _T1f1:
 }
@@ -4241,8 +4240,7 @@ _T88:
 	__asm        jmp    _Tca;
 // LINE 312:
 _Tc2:
-	__asm        xor    ax, ax;
-	__asm        jmp    _Tca;
+	return 0x0;
 // LINE 313:
 _Tca:
 }
@@ -5892,8 +5890,7 @@ int32_t IsThisABadGuy(/*unpacked*/ struct _DYOBJ_INST *guy) {
 	__asm        jmp    _T45;
 // LINE 502:
 _T3e:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T45;
+	return 0x0;
 // LINE 503:
 _T45:
 }
@@ -10507,14 +10504,12 @@ _T85:
 	__asm        jle    _Tc1;
 // LINE 1421:
 _Tb3:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T2ca;
+	return 0x1;
 // LINE 1422:
 	__asm        jmp    _Tc9;
 // LINE 1423:
 _Tc1:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T2ca;
+	return 0x0;
 // LINE 1425:
 _Tc9:
 	__asm        jmp    _T2ca;
@@ -10693,14 +10688,12 @@ _T28a:
 	__asm        cmp    eax, ecx;
 	__asm        jge    _T2c2;
 // LINE 1455:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T2ca;
+	return 0x1;
 // LINE 1456:
 	__asm        jmp    _T2ca;
 // LINE 1457:
 _T2c2:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T2ca;
+	return 0x0;
 // LINE 1459:
 // Block end:
 _T2ca:
@@ -20372,8 +20365,7 @@ _T122:
 	__asm        mov    alt, eax;
 // LINE 3187:
 _T132:
-	__asm        mov    eax, alt;
-	__asm        jmp    _T13a;
+	return alt;
 // LINE 3188:
 _T13a:
 }

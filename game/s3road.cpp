@@ -1440,8 +1440,7 @@ _Tb9:
 	__asm        cmp    dword ptr [ebp-0x28], 0;
 	__asm        jne    _Tca;
 _Tc3:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T5a4;
+	return 0x0;
 // LINE 501:
 _Tca:
 	__asm        mov    ax, fromTile;
@@ -1660,8 +1659,7 @@ _T30f:
 	__asm        jmp    _T2ae;
 // LINE 529:
 _T33b:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T5a4;
+	return 0x0;
 // LINE 536:
 _T342:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(fromTile);
@@ -1701,8 +1699,7 @@ _T3aa:
 	__asm        test   reinterpret_cast<uint8_t>(TestDir), 2;
 	__asm        je     _T3be;
 
-	__asm        mov    eax, 1;
-	__asm        jmp    _T5a4;
+	return 0x1;
 _T3be:
 	__asm        jmp    _T43c;
 // LINE 542:
@@ -1710,8 +1707,7 @@ _T3c3:
 	__asm        test   reinterpret_cast<uint8_t>(TestDir), 4;
 	__asm        je     _T3d7;
 
-	__asm        mov    eax, 1;
-	__asm        jmp    _T5a4;
+	return 0x1;
 _T3d7:
 	__asm        jmp    _T43c;
 // LINE 543:
@@ -1719,14 +1715,12 @@ _T3dc:
 	__asm        test   reinterpret_cast<uint8_t>(TestDir), 8;
 	__asm        je     _T3f0;
 
-	__asm        mov    eax, 1;
-	__asm        jmp    _T5a4;
+	return 0x1;
 _T3f0:
 	__asm        jmp    _T43c;
 // LINE 544:
 _T3f5:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T5a4;
+	return 0x0;
 // LINE 545:
 	__asm        jmp    _T43c;
 _T401:
@@ -1748,8 +1742,7 @@ _T401:
 //  [0, 1, 4, 2, 4, 4, 4, 3]
 // LINE 547:
 _T43c:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T5a4;
+	return 0x0;
 // LINE 552:
 _T443:
 	__asm        mov    dword ptr [ebp-0x1C], 0x5B57E8;
@@ -1819,8 +1812,7 @@ _T4fd:
 	__asm        test   reinterpret_cast<uint8_t>(toConnections), 4;
 	__asm        je     _T525;
 // LINE 557:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T5a4;
+	return 0x1;
 // LINE 558:
 _T525:
 	__asm        test   reinterpret_cast<uint8_t>(TestDir), 4;
@@ -1832,8 +1824,7 @@ _T525:
 	__asm        test   reinterpret_cast<uint8_t>(toConnections), 1;
 	__asm        je     _T54d;
 // LINE 559:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T5a4;
+	return 0x1;
 // LINE 560:
 _T54d:
 	__asm        test   reinterpret_cast<uint8_t>(TestDir), 8;
@@ -1845,8 +1836,7 @@ _T54d:
 	__asm        test   reinterpret_cast<uint8_t>(toConnections), 2;
 	__asm        je     _T575;
 // LINE 561:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T5a4;
+	return 0x1;
 // LINE 562:
 _T575:
 	__asm        test   reinterpret_cast<uint8_t>(TestDir), 2;
@@ -1858,12 +1848,10 @@ _T575:
 	__asm        test   reinterpret_cast<uint8_t>(toConnections), 8;
 	__asm        je     _T59d;
 // LINE 563:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T5a4;
+	return 0x1;
 // LINE 565:
 _T59d:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T5a4;
+	return 0x0;
 // LINE 566:
 _T5a4:
 }

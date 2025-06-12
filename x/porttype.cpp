@@ -183,8 +183,7 @@ short StringWidth(unsigned char * str) {
 	__asm        jmp    _T44;
 // LINE 40:
 _T3b:
-	__asm        mov    ax, reinterpret_cast<uint16_t>(textSize.cx);
-	__asm        jmp    _T44;
+	return reinterpret_cast<uint16_t>(textSize.cx);
 // LINE 41:
 _T44:
 }
@@ -742,8 +741,7 @@ _T51:
 // LINE 212:
 	__asm        jmp    _T67;
 _T5e:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T67;
+	return 0x1;
 // LINE 213:
 _T67:
 }

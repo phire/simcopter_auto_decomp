@@ -1016,8 +1016,7 @@ long SoundManager::PlaySoundA(int32_t nIndex, long bPlayLooping, int32_t nDuplic
 	__asm        jmp    _T4a;
 // LINE 366:
 _T43:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4a;
+	return 0x0;
 // LINE 367:
 _T4a:
 }
@@ -1409,8 +1408,7 @@ int32_t operator==(const /*packed*/ class Sound& compareSound1, const /*packed*/
 	__asm        cmp    [eax+0xC], ecx;
 	__asm        je     _T22;
 // LINE 486:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T23a;
+	return 0x0;
 // LINE 487:
 _T22:
 	__asm        mov    eax, compareSound1;
@@ -1599,8 +1597,7 @@ _T22b:
 	__asm        jmp    _T23a;
 // LINE 491:
 _T230:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T23a;
+	return 0x1;
 // LINE 492:
 _T23a:
 }
@@ -2321,8 +2318,7 @@ int32_t DigitalSound::Load() {
 	__asm        cmp    dword ptr [eax+0x20], 0;
 	__asm        je     _T23;
 // LINE 704:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T69;
+	return 0x1;
 // LINE 705:
 _T23:
 	__asm        mov    eax, this;
@@ -2348,8 +2344,7 @@ _T45:
 	__asm        jmp    _T69;
 // LINE 709:
 _T62:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T69;
+	return 0x0;
 // LINE 710:
 _T69:
 }
@@ -3496,8 +3491,7 @@ _T248:
 	return 0x1;
 // LINE 1338:
 _T252:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T298;
+	return 0x0;
 // LINE 1342:
 _T259:
 	__asm        mov    eax, this;
@@ -5531,8 +5525,7 @@ _T57:
 	__asm        cmp    dword ptr [eax+0x1C], 0;
 	__asm        je     _T6e;
 // LINE 2082:
-	__asm        mov    eax, 0x7FFFFFFF;
-	__asm        jmp    _Tb7;
+	return 0x7fffffff;
 // LINE 2092:
 _T6e:
 	__asm        lea    eax, dwWrite;

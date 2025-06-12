@@ -3293,7 +3293,7 @@ void S3MapBlitIcon(long icon_id, long x, long y) {
 	__asm        cmp    icon_id, 0xFFFFFFFF;
 	__asm        jne    _T18;
 // LINE 1390:
-	__asm        jmp    _T14e;
+	return;
 // LINE 1393:
 _T18:
 	__asm        mov    eax, x;
@@ -3794,7 +3794,7 @@ _T18:
 	__asm        lea    eax, [eax+eax*4];
 	__asm        and    S_carinfo[0].flags[eax*8], 0xFFFFFFFE;
 // LINE 1606:
-	__asm        jmp    _T50;
+	return;
 // LINE 1608:
 _T4b:
 	__asm        jmp    _T15;
@@ -4008,7 +4008,7 @@ void S3MapBlitDIcon(long icon_id, long x, long y) {
 	__asm        cmp    icon_id, 0xFFFFFFFF;
 	__asm        jne    _T18;
 // LINE 1702:
-	__asm        jmp    _Td0;
+	return;
 // LINE 1707:
 _T18:
 	mapx = x;

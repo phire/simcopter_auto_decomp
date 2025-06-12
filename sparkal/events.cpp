@@ -80,8 +80,7 @@ _T21:
 	__asm        cmp    lReturnValue, 0;
 	__asm        je     _T33;
 // LINE 59:
-	__asm        mov    eax, lReturnValue;
-	__asm        jmp    _T4d;
+	return lReturnValue;
 // LINE 60:
 _T33:
 	__asm        jmp    _T38;

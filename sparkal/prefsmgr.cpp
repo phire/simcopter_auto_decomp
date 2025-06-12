@@ -1796,8 +1796,7 @@ _Td0:
 	__asm        jmp    _T37;
 // LINE 361:
 _Td5:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tdc;
+	return 0x0;
 // LINE 362:
 _Tdc:
 }

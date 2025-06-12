@@ -1679,8 +1679,7 @@ _Td2:
 	__asm        jmp    _Te8;
 // LINE 1321:
 _Te1:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Te8;
+	return 0x0;
 // LINE 1323:
 _Te8:
 }
@@ -2672,8 +2671,7 @@ int32_t PlaneClass::HaveIReachedNextLoc() {
 	__asm        jmp    _T2f;
 // LINE 1771:
 _T28:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T2f;
+	return 0x0;
 // LINE 1773:
 _T2f:
 }

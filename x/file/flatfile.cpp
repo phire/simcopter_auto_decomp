@@ -435,8 +435,7 @@ _T29:
 // LINE 174:
 	__asm        jmp    _T6e;
 _T67:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T6e;
+	return 0x0;
 // LINE 176:
 _T6e:
 }
@@ -516,8 +515,7 @@ unsigned short FlatFile::ValidFile() {
 // LINE 222:
 	__asm        jmp    _T32;
 _T29:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T32;
+	return 0x1;
 // LINE 223:
 _T32:
 }
@@ -546,8 +544,7 @@ _T21:
 	__asm        jmp    _T5f;
 // LINE 238:
 _T57:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T5f;
+	return 0x0;
 // LINE 239:
 _T5f:
 }

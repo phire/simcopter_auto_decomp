@@ -716,8 +716,7 @@ int32_t Apply_Friction1D(int32_t F, int32_t M, int32_t V, int32_t t) {
 	__asm        jmp    _T80;
 // LINE 343:
 _T79:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T80;
+	return 0x0;
 // LINE 344:
 _T80:
 }

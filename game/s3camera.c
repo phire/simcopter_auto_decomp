@@ -463,7 +463,7 @@ _T3b:
 // LINE 290:
 	P->z += 0x40000000;
 // LINE 291:
-	__asm        jmp    _T74;
+	return;
 _T5a:
 	__asm        mov    eax, P;
 	__asm        cmp    dword ptr [eax+8], 0x30000000;
@@ -1349,7 +1349,7 @@ _T5c:
 	__asm        lea    eax, [eax+eax*2];
 	__asm        add    S_chase[0].dist[eax*4], 0x40000;
 // LINE 752:
-	__asm        jmp    _T137;
+	return;
 // LINE 754:
 _T74:
 	__asm        mov    eax, S_curr_chase;
@@ -1373,23 +1373,23 @@ _T8c:
 	__asm        mov    S_chase[0].height[eax*4], 0;
 // LINE 761:
 _Tc8:
-	__asm        jmp    _T137;
+	return;
 // LINE 763:
 _Tcd:
 	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        sub    S_chase[0].focus[eax*4], 0x40000;
 // LINE 764:
-	__asm        jmp    _T137;
+	return;
 // LINE 766:
 _Te5:
 	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
 	__asm        add    S_chase[0].focus[eax*4], 0x40000;
 // LINE 767:
-	__asm        jmp    _T137;
+	return;
 // LINE 770:
-	__asm        jmp    _T137;
+	return;
 // LINE 771:
 	return;
 _T107:

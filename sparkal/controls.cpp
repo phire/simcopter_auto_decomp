@@ -10603,8 +10603,7 @@ long ScrollBarWindow::GetCurrentLine() {
 	__asm        cmp    dword ptr [eax+0xB4], 1;
 	__asm        jne    _T32;
 // LINE 1896:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T57;
+	return 0x0;
 // LINE 1897:
 _T32:
 	__asm        mov    eax, this;
@@ -12329,8 +12328,7 @@ int32_t ListBoxWindow::RemoveString(/*packed*/ class basic_string<char>& sToRemo
 	__asm        jmp    _T4d;
 // LINE 2346:
 _T46:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4d;
+	return 0x0;
 // LINE 2347:
 _T4d:
 }
@@ -16017,8 +16015,7 @@ _T9c:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x6C];
 // LINE 3110:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Tca;
+	return 0x1;
 // LINE 3112:
 _Tb1:
 	__asm        mov    eax, nButton;

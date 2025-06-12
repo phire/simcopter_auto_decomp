@@ -2059,8 +2059,7 @@ short Station::GetNearestStation(/*packed*/ struct _GridCoordinates gc, /*packed
 	__asm        mov    edx, result;
 	__asm        mov    [edx], cx;
 // LINE 392:
-	__asm        mov    ax, reinterpret_cast<uint16_t>(removedStruct.cost);
-	__asm        jmp    _T67;
+	return reinterpret_cast<uint16_t>(removedStruct.cost);
 // LINE 394:
 // Block end:
 	__asm        jmp    _T67;
@@ -2068,8 +2067,7 @@ short Station::GetNearestStation(/*packed*/ struct _GridCoordinates gc, /*packed
 _T58:
 	result = 0x0;
 // LINE 397:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T67;
+	return 0x0;
 // LINE 399:
 _T67:
 }
@@ -2105,8 +2103,7 @@ short Station::GetNextNearest(/*packed*/ struct _GridCoordinates *result) {
 _T4c:
 	result = 0x0;
 // LINE 415:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T5b;
+	return 0x0;
 // LINE 417:
 _T5b:
 }

@@ -367,8 +367,7 @@ int32_t SmackerBuffer::SetPalette() {
 	__asm        jmp    _T37;
 // LINE 117:
 _T30:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T37;
+	return 0x0;
 // LINE 118:
 _T37:
 }

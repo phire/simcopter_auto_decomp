@@ -327,8 +327,7 @@ unsigned short SGIRand(unsigned short limit) {
 	__asm        jmp    _T59;
 // LINE 140:
 _T50:
-	__asm        mov    ax, x;
-	__asm        jmp    _T59;
+	return x;
 // LINE 141:
 _T59:
 }
@@ -363,8 +362,7 @@ unsigned short SGRand(unsigned short limit) {
 	__asm        jmp    _T59;
 // LINE 155:
 _T50:
-	__asm        mov    ax, x;
-	__asm        jmp    _T59;
+	return x;
 // LINE 156:
 _T59:
 }

@@ -327,8 +327,7 @@ _T9d:
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    _Td7;
 
-	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _T1d7;
+	return 0xffffffff;
 // LINE 144:
 _Td7:
 	__asm        mov    eax, fp;
@@ -343,8 +342,7 @@ _Td7:
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    _T106;
 
-	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _T1d7;
+	return 0xffffffff;
 // LINE 145:
 _T106:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(t);
@@ -378,8 +376,7 @@ _T131:
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    _T16e;
 
-	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _T1d7;
+	return 0xffffffff;
 // LINE 151:
 _T16e:
 	j++;
@@ -400,8 +397,7 @@ _T172:
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    _T1ad;
 
-	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _T1d7;
+	return 0xffffffff;
 // LINE 154:
 _T1ad:
 	j++;

@@ -11,38 +11,31 @@ _T19:
 	return 0x8;
 // LINE 798:
 _T23:
-	__asm        mov    eax, 0xA;
-	__asm        jmp    _T1c2;
+	return 0xa;
 // LINE 808:
 _T2d:
-	__asm        mov    eax, 8;
-	__asm        jmp    _T1c2;
+	return 0x8;
 // LINE 818:
 _T37:
 	return 0x4;
 // LINE 832:
 _T41:
-	__asm        mov    eax, 8;
-	__asm        jmp    _T1c2;
+	return 0x8;
 // LINE 840:
 _T4b:
-	__asm        mov    eax, 8;
-	__asm        jmp    _T1c2;
+	return 0x8;
 // LINE 850:
 _T55:
-	__asm        mov    eax, 0xA;
-	__asm        jmp    _T1c2;
+	return 0xa;
 // LINE 860:
 _T5f:
 	return 0x8;
 // LINE 863:
 _T69:
-	__asm        mov    eax, 0xA;
-	__asm        jmp    _T1c2;
+	return 0xa;
 // LINE 869:
 _T73:
-	__asm        mov    eax, 4;
-	__asm        jmp    _T1c2;
+	return 0x4;
 // LINE 873:
 _T7d:
 	return 0x0;

@@ -360,8 +360,7 @@ unsigned long  CGameApp::SetUpLoadGame(char * szLoadGamePath, long lFileType) {
 	__asm        test   eax, eax;
 	__asm        jne    _T3e;
 // LINE 89:
-	__asm        mov    eax, 0x80000000;
-	__asm        jmp    _Ta7;
+	return 0x80000000;
 // LINE 90:
 _T3e:
 	__asm        mov    eax, szLoadGamePath;
@@ -396,12 +395,10 @@ _T80:
 	__asm        call   SetUpNewUserCity;
 	__asm        add    esp, 4;
 // LINE 98:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Ta7;
+	return 0x0;
 // LINE 101:
 _T9d:
-	__asm        mov    eax, 0x80000000;
-	__asm        jmp    _Ta7;
+	return 0x80000000;
 // LINE 102:
 _Ta7:
 }

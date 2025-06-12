@@ -3931,8 +3931,7 @@ _Tee:
 	__asm        jmp    _Ta2;
 // LINE 359:
 _T10d:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T114;
+	return 0x0;
 // LINE 360:
 _T114:
 }

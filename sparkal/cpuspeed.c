@@ -577,8 +577,7 @@ _T138:
 	__asm        jmp    _Tf9;
 // LINE 454:
 _T140:
-	__asm        mov    eax, freq;
-	__asm        jmp    _T296;
+	return freq;
 // LINE 458:
 	__asm        jmp    _T296;
 _T14d:
@@ -618,8 +617,7 @@ _T1a3:
 	__asm        jmp    _T164;
 // LINE 472:
 _T1ab:
-	__asm        mov    eax, freq;
-	__asm        jmp    _T296;
+	return freq;
 // LINE 476:
 	__asm        jmp    _T296;
 _T1b8:
@@ -659,8 +657,7 @@ _T20e:
 	__asm        jmp    _T1cf;
 // LINE 490:
 _T216:
-	__asm        mov    eax, freq;
-	__asm        jmp    _T296;
+	return freq;
 // LINE 494:
 	__asm        jmp    _T296;
 _T223:
@@ -700,14 +697,12 @@ _T279:
 	__asm        jmp    _T23a;
 // LINE 508:
 _T281:
-	__asm        mov    eax, freq;
-	__asm        jmp    _T296;
+	return freq;
 // LINE 512:
 	__asm        jmp    _T296;
 // LINE 513:
 _T28e:
-	__asm        mov    eax, freq;
-	__asm        jmp    _T296;
+	return freq;
 // LINE 515:
 _T296:
 }

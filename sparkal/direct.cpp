@@ -2634,8 +2634,7 @@ _T4d2:
 // LINE 177:
 // Block end:
 _T4d7:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T4de;
+	return 0x0;
 // LINE 178:
 _T4de:
 }
@@ -5762,8 +5761,7 @@ _T89:
 	__asm        jmp    _T40;
 // LINE 504:
 _T8e:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T95;
+	return 0x0;
 // LINE 505:
 _T95:
 }

@@ -2533,8 +2533,7 @@ unsigned long CBackBuffer::StretchCompose(/*packed*/ class IFlatImage *pDestImag
 	__asm        cmp    pOurSurface, 0;
 	__asm        jne    _T2e;
 // LINE 874:
-	__asm        mov    eax, 0x65;
-	__asm        jmp    _T8a;
+	return 0x65;
 // LINE 878:
 _T2e:
 	__asm        mov    eax, pDestImage;

@@ -514,8 +514,7 @@ _T31:
 	__asm        cmp    filNum, 0;
 	__asm        jne    _T6b;
 // LINE 311:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T8b8;
+	return 0x0;
 // LINE 313:
 _T6b:
 	__asm        lea    eax, length;

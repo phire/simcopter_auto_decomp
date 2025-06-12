@@ -1365,8 +1365,7 @@ long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, ui
 // LINE 498:
 	__asm        call   TWKUpdate;
 // LINE 499:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T477;
+	return 0x0;
 // LINE 502:
 _T31:
 	__asm        mov    eax, Message;
@@ -1381,8 +1380,7 @@ _T3c:
 	__asm        mov    ecx, [eax+0x10];
 	__asm        call   dword ptr [edx+0x4C];
 // LINE 505:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T477;
+	return 0x0;
 // LINE 508:
 _T54:
 	this->mWindow = 0x0;
@@ -1395,8 +1393,7 @@ _T63:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x40];
 // LINE 514:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T477;
+	return 0x0;
 // LINE 517:
 _T75:
 	lpMinMaxInfo = lParam;
@@ -1482,8 +1479,7 @@ _T143:
 	__asm        mov    ecx, [eax+0x10];
 	__asm        call   dword ptr [edx+0x2C];
 // LINE 544:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T477;
+	return 0x0;
 // LINE 547:
 _T15f:
 	__asm        mov    eax, wParam;
@@ -1521,8 +1517,7 @@ _T19b:
 	__asm        call   dword ptr [edx+0x2C];
 // LINE 563:
 _T1b0:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T477;
+	return 0x0;
 // LINE 566:
 _T1b7:
 	__asm        cmp    wParam, 0x73;
@@ -1538,8 +1533,7 @@ _T1b7:
 	__asm        call   dword ptr [edx+0x34];
 // LINE 568:
 _T1d6:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T477;
+	return 0x0;
 // LINE 571:
 _T1dd:
 	__asm        mov    eax, Window;
@@ -1633,8 +1627,7 @@ _T2ab:
 	__asm        mov    ecx, [eax+0x10];
 	__asm        call   dword ptr [edx+0x48];
 // LINE 590:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T477;
+	return 0x0;
 // LINE 593:
 _T2db:
 	__asm        mov    eax, lParam;
@@ -1673,8 +1666,7 @@ _T31b:
 	__asm        call   dword ptr [edx+0x7C];
 // LINE 608:
 _T339:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T477;
+	return 0x0;
 // LINE 609:
 	__asm        jmp    _T459;
 _T345:

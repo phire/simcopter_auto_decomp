@@ -788,8 +788,7 @@ _T3b:
 	__asm        cmp    dword ptr [eax+0x114], 0;
 	__asm        je     _T52;
 
-	__asm        xor    eax, eax;
-	__asm        jmp    _T10b;
+	return 0x0;
 // LINE 339:
 _T52:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(id);
@@ -884,8 +883,7 @@ _T3b:
 	__asm        cmp    dword ptr [eax+0x114], 0;
 	__asm        je     _T52;
 
-	__asm        xor    eax, eax;
-	__asm        jmp    _T12e;
+	return 0x0;
 // LINE 366:
 _T52:
 	__asm        mov    eax, name;
@@ -1089,7 +1087,7 @@ _T41:
 	__asm        cmp    dword ptr [eax+0x114], 0;
 	__asm        je     _T56;
 
-	__asm        jmp    _Ta2;
+	return;
 // LINE 424:
 _T56:
 	__asm        mov    eax, res;
@@ -1115,7 +1113,7 @@ _T87:
 	__asm        mov    ecx, [eax+0x110];
 	__asm        call   ResMap::GetName;
 // LINE 429:
-	__asm        jmp    _Ta2;
+	return;
 _Ta2:
 }
 
@@ -1184,8 +1182,7 @@ _T3b:
 	__asm        cmp    dword ptr [eax+0x114], 0;
 	__asm        je     _T52;
 
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tdf;
+	return 0x0;
 // LINE 452:
 _T52:
 	__asm        mov    eax, res;
@@ -1393,7 +1390,7 @@ _T81:
 	__asm        call   Memory::HSetState;
 	__asm        add    esp, 8;
 // LINE 534:
-	__asm        jmp    _Te6;
+	return;
 // LINE 537:
 _Tc9:
 	__asm        push   1;
@@ -1683,8 +1680,7 @@ _T42:
 // LINE 759:
 	fromFile->fMap = srch;
 // LINE 760:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T162;
+	return 0x0;
 // LINE 763:
 _T71:
 	__asm        jmp    _T2b;

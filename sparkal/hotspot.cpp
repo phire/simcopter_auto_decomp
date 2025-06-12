@@ -2753,8 +2753,7 @@ _Tc3:
 	__asm        jmp    _Tec;
 // LINE 139:
 _Te5:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tec;
+	return 0x0;
 // LINE 140:
 _Tec:
 }

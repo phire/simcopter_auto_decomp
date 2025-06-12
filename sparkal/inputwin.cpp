@@ -11058,8 +11058,7 @@ int32_t UserInputWindow::DoKeyboardWindowMessage(long lMessage, void * __ptr32 p
 	__asm        mov    ecx, this;
 	__asm        call   UserInputWindow::DisplayError;
 // LINE 1391:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T4be;
+	return 0x1;
 // LINE 1393:
 	__asm        jmp    _T439;
 _T61:
@@ -11351,8 +11350,7 @@ _T418:
 	__asm        mov    ecx, this;
 	__asm        call   UserInputWindow::DisplayError;
 // LINE 1416:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T4be;
+	return 0x1;
 // LINE 1419:
 _T439:
 	__asm        jmp    _T4b7;

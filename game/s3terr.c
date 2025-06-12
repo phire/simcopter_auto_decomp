@@ -70,8 +70,7 @@ short GetAltitude(int32_t x, int32_t y) {
 	__asm        jge    _T25;
 // LINE 97:
 _T1d:
-	__asm        xor    ax, ax;
-	__asm        jmp    _Tc0;
+	return 0x0;
 // LINE 98:
 _T25:
 	__asm        cmp    x, 0x80;
@@ -81,8 +80,7 @@ _T25:
 	__asm        jl     _T47;
 // LINE 99:
 _T3f:
-	__asm        xor    ax, ax;
-	__asm        jmp    _Tc0;
+	return 0x0;
 // LINE 100:
 _T47:
 	__asm        mov    eax, x;

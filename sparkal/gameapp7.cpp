@@ -3980,8 +3980,7 @@ _T279:
 	__asm        jmp    _T28b;
 // LINE 515:
 _T284:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T28b;
+	return 0x0;
 // LINE 516:
 _T28b:
 }

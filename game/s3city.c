@@ -7166,7 +7166,7 @@ void S3CityGrid() {
 	__asm        call   S3CitySpiralScan;
 	__asm        add    esp, 0xC;
 // LINE 2469:
-	__asm        jmp    _T72b;
+	return;
 // LINE 2473:
 _Tb2:
 	__asm        cmp    view_changed, 1;
@@ -7665,7 +7665,7 @@ _T719:
 	__asm        cmp    S_fovlast, 0;
 	__asm        jne    _T72b;
 // LINE 2894:
-	__asm        jmp    _T72b;
+	return;
 // LINE 2896:
 _T72b:
 }

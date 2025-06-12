@@ -6,8 +6,7 @@
 	__asm        cmp    eax, 0x7D00;
 	__asm        jne    _T1f;
 
-	__asm        mov    eax, gAvatar;
-	__asm        jmp    _T92;
+	return gAvatar;
 // LINE 515:
 _T1f:
 	__asm        movsx  eax, id;
@@ -241,8 +240,7 @@ _T1bf:
 	__asm        jmp    _T1d3;
 // LINE 1036:
 _T1cc:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T1d3;
+	return 0x0;
 // LINE 1038:
 _T1d3:
 }

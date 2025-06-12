@@ -3676,8 +3676,7 @@ _T62:
 	__asm        jmp    _T8e;
 // LINE 1034:
 _T86:
-	__asm        mov    eax, lReturnValue;
-	__asm        jmp    _T8e;
+	return lReturnValue;
 // LINE 1035:
 _T8e:
 }

@@ -1059,8 +1059,7 @@ _T68:
 	__asm        cmp    obj, 0;
 	__asm        jne    _T79;
 // LINE 804:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T6ba;
+	return 0x0;
 // LINE 807:
 _T79:
 	altydown = 0x75300000;
@@ -1586,8 +1585,7 @@ _T656:
 	__asm        cmp    check_for_overhang, 0;
 	__asm        jne    _T668;
 // LINE 1048:
-	__asm        mov    eax, altyupbelow;
-	__asm        jmp    _T6ba;
+	return altyupbelow;
 // LINE 1053:
 _T668:
 	__asm        cmp    overhang, 1;
@@ -1597,14 +1595,12 @@ _T668:
 	__asm        cmp    altydown, eax;
 	__asm        jle    _T68b;
 // LINE 1056:
-	__asm        mov    eax, altyupabove;
-	__asm        jmp    _T6ba;
+	return altyupabove;
 // LINE 1057:
 	__asm        jmp    _T693;
 // LINE 1058:
 _T68b:
-	__asm        mov    eax, altyupbelow;
-	__asm        jmp    _T6ba;
+	return altyupbelow;
 // LINE 1060:
 _T693:
 	__asm        jmp    _T6ba;
@@ -1613,14 +1609,12 @@ _T698:
 	__asm        cmp    altyupabove, 0x75300000;
 	__asm        je     _T6b2;
 // LINE 1063:
-	__asm        mov    eax, altyupabove;
-	__asm        jmp    _T6ba;
+	return altyupabove;
 // LINE 1064:
 	__asm        jmp    _T6ba;
 // LINE 1065:
 _T6b2:
-	__asm        mov    eax, altyupbelow;
-	__asm        jmp    _T6ba;
+	return altyupbelow;
 // LINE 1067:
 _T6ba:
 }
@@ -2259,8 +2253,7 @@ _T6df:
 	__asm        cmp    check_for_overhang, 0;
 	__asm        jne    _T6f1;
 // LINE 1390:
-	__asm        mov    eax, altyupbelow;
-	__asm        jmp    _T743;
+	return altyupbelow;
 // LINE 1395:
 _T6f1:
 	__asm        cmp    overhang, 1;
@@ -2270,8 +2263,7 @@ _T6f1:
 	__asm        cmp    altydown, eax;
 	__asm        jle    _T714;
 // LINE 1398:
-	__asm        mov    eax, altyupabove;
-	__asm        jmp    _T743;
+	return altyupabove;
 // LINE 1399:
 	__asm        jmp    _T71c;
 // LINE 1400:
@@ -2290,8 +2282,7 @@ _T721:
 	__asm        jmp    _T743;
 // LINE 1407:
 _T73b:
-	__asm        mov    eax, altyupbelow;
-	__asm        jmp    _T743;
+	return altyupbelow;
 // LINE 1409:
 _T743:
 }
@@ -3022,8 +3013,7 @@ _T2a:
 // LINE 1831:
 	__asm        jmp    _Tf2;
 _Teb:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tf2;
+	return 0x0;
 // LINE 1833:
 _Tf2:
 }

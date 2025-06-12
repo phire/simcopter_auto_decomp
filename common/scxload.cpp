@@ -465,8 +465,7 @@ _T53:
 	__asm        jmp    _T79;
 // LINE 111:
 _T72:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T79;
+	return 0x0;
 // LINE 112:
 _T79:
 }
@@ -510,8 +509,7 @@ _T53:
 	__asm        jmp    _T79;
 // LINE 118:
 _T72:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T79;
+	return 0x0;
 // LINE 119:
 _T79:
 }
@@ -608,8 +606,7 @@ long cLZAPFileBitStream::Size() {
 	__asm        jmp    _T30;
 // LINE 143:
 _T29:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T30;
+	return 0x0;
 // LINE 144:
 _T30:
 }

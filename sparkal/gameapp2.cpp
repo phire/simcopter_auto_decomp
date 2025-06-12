@@ -5846,8 +5846,7 @@ _T250:
 	__asm        sub    ecx, 0x14;
 	__asm        call   dword ptr [eax+0x68];
 // LINE 1270:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Ta30;
+	return 0x0;
 // LINE 1272:
 	__asm        jmp    _Ta29;
 _T294:
@@ -5976,8 +5975,7 @@ _T3a4:
 // LINE 1304:
 // Block end:
 _T3dd:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Ta30;
+	return 0x1;
 // LINE 1306:
 	__asm        jmp    _Ta29;
 _T3ec:
@@ -6028,8 +6026,7 @@ _T46d:
 	this-><CGameApp+0x04:4> = 0x0;
 // LINE 1324:
 _T477:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Ta30;
+	return 0x1;
 // LINE 1326:
 	__asm        jmp    _Ta29;
 _T486:
@@ -6068,8 +6065,7 @@ _T4ad:
 	__asm        jmp    _T4f4;
 // LINE 1331:
 _T4f4:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Ta30;
+	return 0x1;
 // LINE 1334:
 	__asm        jmp    _Ta29;
 _T503:
@@ -6108,8 +6104,7 @@ _T52a:
 	__asm        jmp    _T571;
 // LINE 1339:
 _T571:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Ta30;
+	return 0x1;
 // LINE 1342:
 	__asm        jmp    _Ta29;
 _T580:
@@ -6148,8 +6143,7 @@ _T5a7:
 	__asm        jmp    _T5ee;
 // LINE 1347:
 _T5ee:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Ta30;
+	return 0x1;
 // LINE 1350:
 	__asm        jmp    _Ta29;
 _T5fd:
@@ -6188,8 +6182,7 @@ _T624:
 	__asm        jmp    _T66b;
 // LINE 1355:
 _T66b:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Ta30;
+	return 0x1;
 // LINE 1357:
 	__asm        jmp    _Ta29;
 _T67a:
@@ -6216,8 +6209,7 @@ _T6a1:
 	__asm        call   CGameApp::DestroyCheckupWindow;
 // LINE 1360:
 _T6c0:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Ta30;
+	return 0x1;
 // LINE 1362:
 	__asm        jmp    _Ta29;
 _T6cf:
@@ -6418,8 +6410,7 @@ _T8a4:
 // LINE 1414:
 	this-><CGameApp+0x14:4> = 0x0;
 // LINE 1415:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Ta30;
+	return 0x0;
 // LINE 1417:
 _T91f:
 	__asm        cmp    nResult, 0;
@@ -6456,8 +6447,7 @@ _T94c:
 // LINE 1426:
 	this-><CGameApp+0x14:4> = 0x0;
 // LINE 1427:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Ta30;
+	return 0x0;
 // LINE 1429:
 	__asm        jmp    _T9b1;
 // LINE 1430:
@@ -6469,8 +6459,7 @@ _T993:
 	__asm        sub    ecx, 0x14;
 	__asm        call   CGameApp::CreateMessageBox;
 // LINE 1431:
-	__asm        mov    eax, 1;
-	__asm        jmp    _Ta30;
+	return 0x1;
 // LINE 1441:
 _T9b1:
 	__asm        mov    eax, this;
@@ -6515,8 +6504,7 @@ _T9e3:
 	__asm        call   dword ptr [eax+0x68];
 // LINE 1452:
 _Ta29:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Ta30;
+	return 0x0;
 // LINE 1453:
 _Ta30:
 }

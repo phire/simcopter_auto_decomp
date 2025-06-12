@@ -909,7 +909,7 @@ _T37:
 	__asm        cmp    ctr, 0;
 	__asm        je     _T46;
 
-	__asm        jmp    _T1dd;
+	return;
 // LINE 866:
 _T46:
 	__asm        jmp    _Teb;
@@ -918,7 +918,7 @@ _T4b:
 	__asm        cmp    ctr, 1;
 	__asm        je     _T5a;
 
-	__asm        jmp    _T1dd;
+	return;
 // LINE 869:
 _T5a:
 	__asm        jmp    _Teb;
@@ -945,7 +945,7 @@ _T87:
 	__asm        cmp    ctr, 4;
 	__asm        je     _T96;
 
-	__asm        jmp    _T1dd;
+	return;
 // LINE 878:
 _T96:
 	__asm        jmp    _Teb;
@@ -954,7 +954,7 @@ _T9b:
 	__asm        cmp    ctr, 5;
 	__asm        je     _Taa;
 
-	__asm        jmp    _T1dd;
+	return;
 // LINE 881:
 _Taa:
 	__asm        jmp    _Teb;
@@ -1024,7 +1024,7 @@ _T131:
 // LINE 918:
 	__asm        jmp    _T16b;
 
-	__asm        jmp    _T1dd;
+	return;
 // LINE 920:
 _T16b:
 	ptr[0] = reinterpret_cast<uint8_t>(blit->user1);
@@ -1036,7 +1036,7 @@ _T16b:
 // LINE 924:
 	__asm        jmp    _T18d;
 
-	__asm        jmp    _T1dd;
+	return;
 // LINE 925:
 _T18d:
 	__asm        mov    eax, blit;
@@ -1062,7 +1062,7 @@ _T19c:
 // LINE 935:
 	__asm        jmp    _T1ce;
 
-	__asm        jmp    _T1dd;
+	return;
 // LINE 936:
 _T1ce:
 	__asm        mov    eax, blit;
@@ -1160,7 +1160,7 @@ _T64:
 	__asm        cmp    z, 0;
 	__asm        jg     _Tba;
 // LINE 1007:
-	__asm        jmp    _T3dd0;
+	return;
 // LINE 1009:
 _Tba:
 	__asm        push   0x5900000;
@@ -1335,7 +1335,7 @@ _T214:
 // LINE 1055:
 	__asm        jmp    _T29c;
 // LINE 1057:
-	__asm        jmp    _T3dd0;
+	return;
 // LINE 1058:
 	__asm        jmp    _T29c;
 _T258:
@@ -1526,7 +1526,7 @@ _T430:
 	__asm        cmp    plotx, 0;
 	__asm        jge    _T48d;
 
-	__asm        jmp    _T3dd0;
+	return;
 // LINE 1242:
 _T48d:
 	__asm        cmp    ploty, 0;
@@ -1540,7 +1540,7 @@ _T49c:
 	__asm        cmp    eax, plotx;
 	__asm        jge    _T4b0;
 
-	__asm        jmp    _T3dd0;
+	return;
 // LINE 1244:
 _T4b0:
 	__asm        mov    eax, winheight;
@@ -4456,7 +4456,7 @@ _T22d6:
 	__asm        jmp    _T42d;
 // LINE 2419:
 _T22db:
-	__asm        jmp    _T3dd0;
+	return;
 // LINE 2421:
 _T22e0:
 	__asm        mov    i, 0;
@@ -4503,7 +4503,7 @@ _T234c:
 	__asm        cmp    ploty, 0;
 	__asm        jge    _T235b;
 
-	__asm        jmp    _T3dd0;
+	return;
 // LINE 2432:
 _T235b:
 	__asm        mov    eax, winwidth;

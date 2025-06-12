@@ -752,8 +752,7 @@ _T1d:
 	__asm        jmp    _T8e;
 // LINE 368:
 _T87:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T8e;
+	return 0x0;
 // LINE 369:
 _T8e:
 }

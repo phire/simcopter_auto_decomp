@@ -3417,8 +3417,7 @@ _T20c:
 	__asm        jmp    _T238;
 // LINE 386:
 _T231:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T238;
+	return 0x0;
 // LINE 387:
 _T238:
 }

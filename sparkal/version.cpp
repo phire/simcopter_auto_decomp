@@ -379,8 +379,7 @@ long Version::GetApplicationVersion(int32_t nVersionComponent) {
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        jne    _T20;
 // LINE 194:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tdd;
+	return 0x0;
 // LINE 195:
 _T20:
 	__asm        lea    eax, vSize;
@@ -397,8 +396,7 @@ _T20:
 	__asm        cmp    nReturnValue, 0;
 	__asm        jne    _T50;
 // LINE 197:
-	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _Tdd;
+	return 0xffffffff;
 // LINE 198:
 _T50:
 	__asm        cmp    nVersionComponent, 0;
@@ -446,8 +444,7 @@ _Tb9:
 	__asm        jmp    _Tdd;
 // LINE 206:
 _Td3:
-	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _Tdd;
+	return 0xffffffff;
 // LINE 208:
 _Tdd:
 }
@@ -546,8 +543,7 @@ _T2b:
 	__asm        jmp    _T49;
 // LINE 313:
 _T3f:
-	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _T49;
+	return 0xffffffff;
 // LINE 316:
 _T49:
 }

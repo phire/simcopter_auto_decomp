@@ -1532,8 +1532,7 @@ static short EncodeEnd(/*packed*/ struct tACompModel *model, /*packed*/ struct t
 	__asm        test   eax, eax;
 	__asm        je     _T41;
 
-	__asm        mov    ax, 2;
-	__asm        jmp    _T7d;
+	return 0x2;
 // LINE 416:
 _T41:
 	__asm        jmp    _T6c;

@@ -264,8 +264,7 @@ int32_t SoundChangeNotificationSink::Initialize() {
 	__asm        jmp    _T3e;
 // LINE 60:
 _T37:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T3e;
+	return 0x0;
 // LINE 61:
 _T3e:
 }
@@ -5627,8 +5626,7 @@ int32_t S3SoundIsPlaying(int32_t nSoundIndex) {
 	__asm        jmp    _T3c;
 // LINE 640:
 _T35:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T3c;
+	return 0x0;
 // LINE 641:
 _T3c:
 }

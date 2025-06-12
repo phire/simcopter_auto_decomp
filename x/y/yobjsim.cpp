@@ -2170,8 +2170,7 @@ unsigned short cYObject::IsWater(short cellx, short celly) {
 	__asm        jmp    _T55;
 // LINE 334:
 _T4d:
-	__asm        xor    ax, ax;
-	__asm        jmp    _T55;
+	return 0x0;
 // LINE 335:
 _T55:
 }
@@ -2302,8 +2301,7 @@ enum cYObject::MoveErrorCode cYObject::TryVectorMove(/*unpacked*/ struct Point3d
 	__asm        cmp    fwdspeed, 0;
 	__asm        jne    _T20;
 
-	__asm        mov    eax, 7;
-	__asm        jmp    _Ta7;
+	return 0x7;
 // LINE 384:
 _T20:
 	__asm        mov    eax, this;

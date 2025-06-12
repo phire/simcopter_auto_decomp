@@ -1217,8 +1217,7 @@ _T45:
 	__asm        jmp    _T15;
 // LINE 627:
 _T4a:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T51;
+	return 0x0;
 // LINE 628:
 _T51:
 }
@@ -1515,7 +1514,7 @@ _T2f5:
 _T329:
 	S_fire_count--;
 // LINE 769:
-	__asm        jmp    _T3f3;
+	return;
 // LINE 774:
 _T334:
 	return;
@@ -2947,8 +2946,7 @@ _Tef:
 	__asm        sub    eax, edx;
 	__asm        je     _T14b;
 // LINE 1095:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T155;
+	return 0x0;
 // LINE 1096:
 	__asm        jmp    _T155;
 // LINE 1097:
@@ -2995,8 +2993,7 @@ int32_t S3FireTruckDouseDyObj(/*packed*/ struct _DYOBJ_INST *dyobj, int32_t dist
 	__asm        test   ah, 0x10;
 	__asm        jne    _T65;
 // LINE 1126:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T159;
+	return 0x1;
 // LINE 1128:
 _T65:
 	__asm        call   rand;
@@ -3074,14 +3071,12 @@ _Tf3:
 	__asm        sub    eax, edx;
 	__asm        je     _T14f;
 // LINE 1161:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T159;
+	return 0x0;
 // LINE 1162:
 	__asm        jmp    _T159;
 // LINE 1163:
 _T14f:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T159;
+	return 0x1;
 // LINE 1164:
 _T159:
 }
@@ -3367,7 +3362,7 @@ _T227:
 	__asm        call   S3ExplosionSmokeStart;
 	__asm        add    esp, 0xC;
 // LINE 1290:
-	__asm        jmp    _T51b;
+	return;
 // LINE 1297:
 _T246:
 	__asm        push   0;

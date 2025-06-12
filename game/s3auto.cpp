@@ -944,8 +944,7 @@ _T158:
 	__asm        cmp    minDist, 0x7D00;
 	__asm        jne    _T171;
 // LINE 190:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T316;
+	return 0x0;
 // LINE 191:
 	__asm        jmp    _T183;
 // LINE 192:
@@ -1002,8 +1001,7 @@ _T206:
 	__asm        cmp    minDist, 0x7D00;
 	__asm        jne    _T21f;
 // LINE 211:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T316;
+	return 0x0;
 // LINE 212:
 	__asm        jmp    _T231;
 // LINE 213:
@@ -1060,8 +1058,7 @@ _T2b4:
 	__asm        cmp    minDist, 0x7D00;
 	__asm        jne    _T2cd;
 // LINE 232:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T316;
+	return 0x0;
 // LINE 233:
 	__asm        jmp    _T2df;
 // LINE 234:
@@ -1072,8 +1069,7 @@ _T2cd:
 	__asm        jmp    _T316;
 // LINE 237:
 _T2df:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T316;
+	return 0x0;
 // LINE 238:
 	__asm        jmp    _T30f;
 _T2eb:
@@ -1089,8 +1085,7 @@ _T2eb:
 //   _T231
 // LINE 240:
 _T30f:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T316;
+	return 0x0;
 // LINE 241:
 _T316:
 }
@@ -1346,8 +1341,7 @@ _T36:
 	__asm        cmp    curAutos, eax;
 	__asm        jg     _T4c;
 // LINE 454:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T5b;
+	return 0x0;
 // LINE 456:
 _T4c:
 	__asm        mov    eax, index;
@@ -7095,8 +7089,7 @@ _Tab:
 	__asm        jmp    _Tdb;
 // LINE 3012:
 _Td4:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Tdb;
+	return 0x0;
 // LINE 3014:
 _Tdb:
 }

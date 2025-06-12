@@ -810,7 +810,7 @@ void VRDyObjSetShading(int32_t obj, int32_t *tmat[4][4]) {
 	__asm        test   byte ptr [eax+1], 1;
 	__asm        jne    _T21;
 // LINE 490:
-	__asm        jmp    _T1b1;
+	return;
 // LINE 493:
 _T21:
 	__asm        mov    eax, tmat;

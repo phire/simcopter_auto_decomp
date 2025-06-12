@@ -6050,8 +6050,7 @@ int32_t S3MissileGroundHit(/*packed*/ struct Point3d *sp, /*packed*/ struct Poin
 	__asm        cmp    eax, alt;
 	__asm        jg     _T41;
 // LINE 2264:
-	__asm        mov    eax, 0x64;
-	__asm        jmp    _Tf2;
+	return 0x64;
 // LINE 2268:
 _T41:
 	__asm        mov    eax, sp;
@@ -6060,8 +6059,7 @@ _T41:
 	__asm        cmp    eax, 0x640000;
 	__asm        jle    _T5f;
 // LINE 2269:
-	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _Tf2;
+	return 0xffffffff;
 // LINE 2273:
 _T5f:
 	__asm        mov    eax, dist;
@@ -6299,8 +6297,7 @@ _T8d:
 	__asm        test   ah, 1;
 	__asm        je     _T254;
 // LINE 2561:
-	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _T30a;
+	return 0xffffffff;
 // LINE 2564:
 _T254:
 	__asm        fld    s_to_t.y;

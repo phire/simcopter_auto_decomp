@@ -2311,8 +2311,7 @@ int32_t cCopterBodyCompareDrawOrder(void * __ptr32 p1, void * __ptr32 p2) {
 	__asm        jmp    _T39;
 // LINE 2328:
 _T2f:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T39;
+	return 0x1;
 // LINE 2329:
 _T39:
 }

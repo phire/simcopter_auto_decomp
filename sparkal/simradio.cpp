@@ -7473,8 +7473,7 @@ _T9c:
 	__asm        jmp    _T3e;
 // LINE 853:
 _Ta1:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Ta8;
+	return 0x0;
 // LINE 854:
 _Ta8:
 }
@@ -7567,8 +7566,7 @@ int  Radio::DoState() {
 	__asm        cmp    dword ptr [eax+0x1C], 0;
 	__asm        jne    _T20;
 // LINE 886:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T5a;
+	return 0x0;
 // LINE 887:
 _T20:
 	__asm        jmp    _T25;

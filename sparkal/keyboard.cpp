@@ -181,8 +181,7 @@ int32_t Keyboard::IsKeyDown(unsigned char chKey, unsigned char chModifiers) {
 	__asm        test   eax, eax;
 	__asm        jne    _T27;
 // LINE 53:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T54;
+	return 0x0;
 // LINE 57:
 _T27:
 	__asm        mov    ecx, this;
@@ -616,12 +615,10 @@ _T2e6:
 	__asm        cmp    eax, 0x20;
 	__asm        jne    _T2fb;
 // LINE 221:
-	__asm        mov    al, 0x20;
-	__asm        jmp    _T302;
+	return 0x20;
 // LINE 225:
 _T2fb:
-	__asm        xor    al, al;
-	__asm        jmp    _T302;
+	return 0x0;
 // LINE 226:
 _T302:
 }

@@ -670,8 +670,7 @@ _T4c:
 	__asm        cmp    index, 3;
 	__asm        jl     _T17;
 // LINE 256:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T26;
+	return 0x0;
 // LINE 258:
 _T17:
 	__asm        mov    eax, index;
@@ -1663,8 +1662,7 @@ _Td2:
 	__asm        jmp    _Te8;
 // LINE 1118:
 _Te1:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Te8;
+	return 0x0;
 // LINE 1120:
 _Te8:
 }
@@ -2056,8 +2054,7 @@ int32_t BoatClass::HaveIReachedNextLoc() {
 	__asm        jmp    _T2f;
 // LINE 1312:
 _T28:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T2f;
+	return 0x0;
 // LINE 1314:
 _T2f:
 }
@@ -5353,8 +5350,7 @@ _T2d:
 	__asm        test   eax, eax;
 	__asm        jne    _T7d;
 // LINE 3075:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T178;
+	return 0x0;
 // LINE 3077:
 _T7d:
 	capboat->missionId = mission_id;

@@ -1056,8 +1056,7 @@ int  MTime::IsDST() {
 	__asm        cmp    _daylight, 0;
 	__asm        jne    _T20;
 // LINE 306:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Td2;
+	return 0x0;
 // LINE 308:
 _T20:
 	__asm        mov    eax, this;

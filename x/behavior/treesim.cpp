@@ -845,8 +845,7 @@ _T263:
 	__asm        jmp    _T285;
 // LINE 188:
 tree_error:
-	__asm        mov    ax, 1;
-	__asm        jmp    _T285;
+	return 0x1;
 // LINE 190:
 _T271:
 	__asm        jmp    tree_error;

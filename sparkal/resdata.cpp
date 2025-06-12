@@ -264,8 +264,7 @@ unsigned long ResourceRCData::DataSize() {
 	__asm        jmp    _T39;
 // LINE 135:
 _T32:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T39;
+	return 0x0;
 // LINE 136:
 _T39:
 }

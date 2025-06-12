@@ -618,8 +618,7 @@ _T1a:
 	__asm        test   eax, eax;
 	__asm        jne    _T3d;
 // LINE 238:
-	__asm        xor    eax, eax;
-	__asm        jmp    _Td4;
+	return 0x0;
 // LINE 240:
 _T3d:
 	__asm        cmp    m, 2;
@@ -751,8 +750,7 @@ int32_t MDate::CompareTo(const /*packed*/ class MDate& d) {
 	__asm        cmp    [eax+4], ecx;
 	__asm        jae    _T2d;
 // LINE 294:
-	__asm        mov    eax, 0xFFFFFFFF;
-	__asm        jmp    _T55;
+	return 0xffffffff;
 // LINE 295:
 	__asm        jmp    _T55;
 _T2d:
@@ -762,14 +760,12 @@ _T2d:
 	__asm        cmp    [eax+4], ecx;
 	__asm        jbe    _T4e;
 // LINE 296:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T55;
+	return 0x1;
 // LINE 297:
 	__asm        jmp    _T55;
 // LINE 298:
 _T4e:
-	__asm        xor    eax, eax;
-	__asm        jmp    _T55;
+	return 0x0;
 // LINE 299:
 _T55:
 }
