@@ -28,6 +28,7 @@ _L44596:
 	__asm        call   PtrList<cCopterAnim>::~PtrList<cCopterAnim>;
 	__asm        ret;
 _L44595:
+// No fallthrough
 	__asm        mov    eax, 0x596030;
 	__asm        jmp    near ptr 0x0056F590;
 __RETURN:
@@ -107,6 +108,7 @@ _Tec:
 	__asm        call   PtrList<cCopterAnim>::~PtrList<cCopterAnim>;
 	__asm        ret;
 _L44658:
+// No fallthrough
 	__asm        mov    eax, 0x596058;
 	__asm        jmp    near ptr 0x0056F590;
 __RETURN:
@@ -447,6 +449,7 @@ _L45278:
 	__asm        mov    ecx, [ebp-0x30];
 	__asm        call   cBBase::~cBBase;
 	__asm        ret;
+// No fallthrough
 _T1e2:
 	__asm        jmp    _T1ee;
 _T1e7:
@@ -659,6 +662,7 @@ _L45274:
 	__asm        add    esp, 4;
 	__asm        ret;
 // LINE 196:
+// No fallthrough
 _T492:
 	__asm        jmp    _T11f;
 // LINE 197:
@@ -755,6 +759,7 @@ _Tec:
 	__asm        call   PtrList<cCopterBody>::~PtrList<cCopterBody>;
 	__asm        ret;
 _L45611:
+// No fallthrough
 	__asm        mov    eax, 0x596110;
 	__asm        jmp    near ptr 0x0056F590;
 __RETURN:

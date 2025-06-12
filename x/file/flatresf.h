@@ -22,6 +22,7 @@ _L39766:
 	__asm        call   FlatFile::~FlatFile;
 	__asm        ret;
 _L39765:
+// No fallthrough
 	__asm        mov    eax, 0x596008;
 	__asm        jmp    near ptr 0x0056F590;
 __RETURN:

@@ -1797,6 +1797,7 @@ _L31451:
 	__asm        mov    ecx, [ebp-0x50];
 	__asm        call   _cArray::~_cArray;
 	__asm        ret;
+// No fallthrough
 _T239:
 	__asm        jmp    _T245;
 _T23e:
@@ -1831,6 +1832,7 @@ _L31439:
 	__asm        add    esp, 4;
 	__asm        ret;
 // LINE 2293:
+// No fallthrough
 _T2a2:
 	numRealAnims = 0x0;
 // LINE 2294:
@@ -1971,6 +1973,7 @@ _L31498:
 	__asm        mov    ecx, [ebp-0x8C];
 	__asm        call   _cArray::~_cArray;
 	__asm        ret;
+// No fallthrough
 _T4a3:
 	__asm        jmp    _T4af;
 _T4a8:
@@ -2005,6 +2008,7 @@ _L31486:
 	__asm        add    esp, 4;
 	__asm        ret;
 // LINE 2296:
+// No fallthrough
 _T50f:
 	__asm        push   1;
 	__asm        mov    ecx, this;

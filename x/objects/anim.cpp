@@ -260,6 +260,7 @@ _L31083:
 	__asm        mov    ecx, [ebp-0x4C];
 	__asm        call   _cArray::~_cArray;
 	__asm        ret;
+// No fallthrough
 _T253:
 	__asm        jmp    _T25f;
 _T258:
@@ -294,6 +295,7 @@ _L31071:
 	__asm        add    esp, 4;
 	__asm        ret;
 // LINE 47:
+// No fallthrough
 _T2b6:
 	return;
 _L31070:

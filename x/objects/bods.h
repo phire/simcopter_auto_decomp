@@ -34,6 +34,7 @@ _L45526:
 	__asm        mov    ecx, [ebp-0x1C];
 	__asm        call   cBBase::~cBBase;
 	__asm        ret;
+// No fallthrough
 _T86:
 	__asm        jmp    _T92;
 _T8b:
@@ -249,6 +250,7 @@ _L45522:
 	__asm        add    esp, 4;
 	__asm        ret;
 _L45521:
+// No fallthrough
 	__asm        mov    eax, 0x5960E0;
 	__asm        jmp    near ptr 0x0056F590;
 

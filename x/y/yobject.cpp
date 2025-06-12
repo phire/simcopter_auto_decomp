@@ -2941,6 +2941,7 @@ _L55004:
 	__asm        mov    ecx, 0x636BB8;
 	__asm        call   FlatFile::~FlatFile;
 	__asm        ret;
+// No fallthrough
 _T70:
 	__asm        mov    dword ptr [ebp-4], 1;
 	__asm        mov    cYObject::sFile<NResFile+0x00>, 0x593518;
@@ -2953,6 +2954,7 @@ _L55002:
 	__asm        mov    ecx, 0x636BB8;
 	__asm        call   FlatResFile::~FlatResFile;
 	__asm        ret;
+// No fallthrough
 _Ta4:
 	__asm        mov    dword ptr [ebp-4], 2;
 	__asm        mov    cYObject::sFile.fLoaders.fFirst, 0;
@@ -2970,9 +2972,11 @@ _L54999:
 	__asm        call   PtrList<StdResLoader>::~PtrList<StdResLoader>;
 	__asm        ret;
 _L54998:
+// No fallthrough
 	__asm        mov    ecx, 0x636BB8;
 	__asm        call   ResFile::~ResFile;
 	__asm        ret;
+// No fallthrough
 _Tf9:
 	return;
 _L54996:
@@ -3043,6 +3047,7 @@ _L55025:
 	__asm        mov    ecx, 0x635590;
 	__asm        call   FlatFile::~FlatFile;
 	__asm        ret;
+// No fallthrough
 _T70:
 	__asm        mov    dword ptr [ebp-4], 1;
 	__asm        mov    cYObject::sErrorFile<ResFile+0x00>, 0x593518;
@@ -3054,6 +3059,7 @@ _L55023:
 	__asm        mov    ecx, 0x635590;
 	__asm        call   FlatResFile::~FlatResFile;
 	__asm        ret;
+// No fallthrough
 _T9d:
 	return;
 _L55021:
@@ -3099,6 +3105,7 @@ _L55035:
 	__asm        mov    ecx, 0x635590;
 	__asm        call   FlatResFile::~FlatResFile;
 	__asm        ret;
+// No fallthrough
 _T60:
 	return;
 _L55033:
@@ -10131,12 +10138,14 @@ _L55489:
 	__asm        add    esp, 4;
 	__asm        ret;
 _L55486:
+// No fallthrough
 	__asm        mov    eax, [ebp-0x18];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        ret;
 _L55485:
+// No fallthrough
 	__asm        mov    eax, 0x595DD0;
 	__asm        jmp    near ptr 0x0056F590;
 
@@ -18836,6 +18845,7 @@ _L56436:
 	__asm        mov    ecx, [ebp-0x34];
 	__asm        call   cYObject::~cYObject;
 	__asm        ret;
+// No fallthrough
 _Td6:
 	__asm        jmp    _Te2;
 _Tdb:
@@ -18859,6 +18869,7 @@ _L56432:
 	__asm        add    esp, 4;
 	__asm        ret;
 _L56431:
+// No fallthrough
 	__asm        mov    eax, 0x595E00;
 	__asm        jmp    near ptr 0x0056F590;
 
@@ -18976,6 +18987,7 @@ _L56449:
 	__asm        add    esp, 4;
 	__asm        ret;
 _L56448:
+// No fallthrough
 	__asm        mov    eax, 0x595E30;
 	__asm        jmp    near ptr 0x0056F590;
 
@@ -19273,10 +19285,12 @@ _L56469:
 	__asm        call   YObjLang::~YObjLang;
 	__asm        ret;
 _L56468:
+// No fallthrough
 	__asm        mov    ecx, this;
 	__asm        call   TreeSim::~TreeSim;
 	__asm        ret;
 _L56467:
+// No fallthrough
 	__asm        mov    eax, 0x595E58;
 	__asm        jmp    near ptr 0x0056F590;
 __RETURN:
@@ -20034,10 +20048,12 @@ _Tff:
 	__asm        call   YObjLang::~YObjLang;
 	__asm        ret;
 _L56642:
+// No fallthrough
 	__asm        mov    ecx, this;
 	__asm        call   TreeSim::~TreeSim;
 	__asm        ret;
 _L56641:
+// No fallthrough
 	__asm        mov    eax, 0x595E88;
 	__asm        jmp    near ptr 0x0056F590;
 __RETURN:
@@ -20436,6 +20452,7 @@ _L55562:
 	__asm        call   FlatResFile::~FlatResFile;
 	__asm        ret;
 _L55561:
+// No fallthrough
 	__asm        mov    eax, 0x595EE0;
 	__asm        jmp    near ptr 0x0056F590;
 __RETURN:

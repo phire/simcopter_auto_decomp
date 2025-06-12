@@ -949,6 +949,7 @@ _L48858:
 // LINE 174:
 _L44245:
 _L44245:
+// No fallthrough
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    eax, tempVRAppInitThreadStruct;
 	__asm        mov    dword ptr [eax+4], 0x64;

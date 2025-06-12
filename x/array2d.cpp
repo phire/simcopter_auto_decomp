@@ -1993,6 +1993,7 @@ _L27257:
 	__asm        call   _cArray::~_cArray;
 	__asm        ret;
 _L27256:
+// No fallthrough
 	__asm        mov    eax, 0x5961E0;
 	__asm        jmp    near ptr 0x0056F590;
 __RETURN:
@@ -2899,6 +2900,7 @@ _L27272:
 	__asm        add    esp, 4;
 	__asm        ret;
 _L27271:
+// No fallthrough
 	__asm        mov    eax, 0x596208;
 	__asm        jmp    near ptr 0x0056F590;
 

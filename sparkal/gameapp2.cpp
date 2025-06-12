@@ -1321,6 +1321,7 @@ _T47c:
 // LINE 363:
 _L56471:
 _L56471:
+// No fallthrough
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 // LINE 364:
 	__asm        jmp    _T4fe;

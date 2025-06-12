@@ -675,6 +675,7 @@ _L39430:
 	__asm        add    ecx, 4;
 	__asm        call   PtrList<cCopterBody>::~PtrList<cCopterBody>;
 	__asm        ret;
+// No fallthrough
 _Tf0:
 	__asm        jmp    _Tff;
 _Tf5:
@@ -712,6 +713,7 @@ _L39423:
 	__asm        mov    ecx, [ebp-0x22C];
 	__asm        call   FlatFile::~FlatFile;
 	__asm        ret;
+// No fallthrough
 _T1a6:
 	__asm        mov    byte ptr [ebp-4], 4;
 	__asm        mov    eax, [ebp-0x22C];
@@ -726,6 +728,7 @@ _L39421:
 	__asm        mov    ecx, [ebp-0x22C];
 	__asm        call   FlatResFile::~FlatResFile;
 	__asm        ret;
+// No fallthrough
 _T1dc:
 	__asm        jmp    _T1eb;
 _T1e1:
@@ -804,11 +807,13 @@ _L39417:
 	__asm        add    esp, 4;
 	__asm        ret;
 _L39414:
+// No fallthrough
 	__asm        mov    eax, [ebp-0x218];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        ret;
+// No fallthrough
 _T310:
 	__asm        mov    eax, cCopterBody::fsList;
 	__asm        mov    [ebp-0x268], eax;
@@ -977,6 +982,7 @@ _L39460:
 	__asm        mov    ecx, [ebp-0x24C];
 	__asm        call   FlatResFile::~FlatResFile;
 	__asm        ret;
+// No fallthrough
 _T5bd:
 	__asm        jmp    _T5cc;
 _T5c2:
@@ -1055,12 +1061,14 @@ _L39456:
 	__asm        add    esp, 4;
 	__asm        ret;
 _L39453:
+// No fallthrough
 	__asm        mov    eax, [ebp-0x23C];
 	__asm        push   eax;
 	__asm        call   operator delete;
 	__asm        add    esp, 4;
 	__asm        ret;
 // LINE 206:
+// No fallthrough
 _T6f1:
 	__asm        mov    ecx, cCopterAnim::fsList;
 	__asm        call   cBList<cCopterAnim>::LoadAll;

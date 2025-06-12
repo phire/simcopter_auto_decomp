@@ -1347,6 +1347,7 @@ _T1a5:
 // LINE 571:
 _L37298:
 _L37298:
+// No fallthrough
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        mov    lpPalette, 0;
 // LINE 573:
@@ -1394,6 +1395,7 @@ _T244:
 // LINE 592:
 _L37305:
 _L37305:
+// No fallthrough
 	__asm        mov    dword ptr [ebp-4], 0xFFFFFFFF;
 	__asm        jmp    _T266;
 _T266:

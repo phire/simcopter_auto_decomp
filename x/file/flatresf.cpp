@@ -667,6 +667,7 @@ _L27084:
 	__asm        call   FlatFile::~FlatFile;
 	__asm        ret;
 _L27083:
+// No fallthrough
 	__asm        mov    eax, 0x595F30;
 	__asm        jmp    near ptr 0x0056F590;
 __RETURN:
@@ -1466,6 +1467,7 @@ _L27094:
 	__asm        call   StringSet::~StringSet;
 	__asm        ret;
 _L27093:
+// No fallthrough
 	__asm        mov    eax, 0x595F58;
 	__asm        jmp    near ptr 0x0056F590;
 __RETURN:
@@ -1763,6 +1765,7 @@ _L27102:
 	__asm        add    esp, 4;
 	__asm        ret;
 _L27101:
+// No fallthrough
 	__asm        mov    eax, 0x595F80;
 	__asm        jmp    near ptr 0x0056F590;
 __RETURN:
