@@ -832,15 +832,9 @@ _T240:
 	__asm        test   reinterpret_cast<uint32_t>(done), 0xFFFF;
 	__asm        je     _T23;
 // LINE 179:
-	__asm        cmp    result, 2;
-	__asm        jne    _T260;
-
-	__asm        mov    ax, 1;
-	__asm        jmp    _T263;
 _T260:
-	__asm        xor    ax, ax;
 _T263:
-	__asm        jmp    __RETURN;
+	return (result != 0x2);
 // LINE 188:
 tree_error:
 	return 0x1;
@@ -853,7 +847,6 @@ _T27b:
 	__asm        jmp    tree_error;
 _T280:
 	__asm        jmp    tree_error;
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0055d1c3

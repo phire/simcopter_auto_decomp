@@ -711,17 +711,10 @@ unsigned short Memory::HIsLocked(void * __ptr32 h) {
 	__asm        add    esp, 4;
 	__asm        mov    state, eax;
 // LINE 456:
-	__asm        test   reinterpret_cast<uint8_t>(state), 0x80;
-	__asm        je     _T2b;
-
-	__asm        mov    ax, 1;
-	__asm        jmp    _T2e;
 _T2b:
-	__asm        xor    ax, ax;
 _T2e:
-	__asm        jmp    __RETURN;
+	return ((reinterpret_cast<uint8_t>(state) & 0x80) == 0x0);
 // LINE 457:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00554de7
