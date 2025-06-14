@@ -20252,10 +20252,8 @@ _Tf2:
 	dir = 0x5;
 // LINE 3148:
 _Tf8:
-	__asm        movsx  eax, dir;
-	__asm        jmp    __RETURN;
+	return reinterpret_cast<int16_t>(dir);
 // LINE 3149:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00551bf7

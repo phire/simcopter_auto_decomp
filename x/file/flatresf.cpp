@@ -1864,8 +1864,10 @@ _T24:
 	__asm        jmp    _T1c;
 // LINE 806:
 _T37:
-	return total;
+	__asm        mov    ax, total;
+	__asm        jmp    __RETURN;
 // LINE 807:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00553edb
@@ -2211,7 +2213,8 @@ _T4c:
 	__asm        jmp    __RETURN;
 // LINE 907:
 _T65:
-	return 0x0;
+	__asm        xor    ax, ax;
+	__asm        jmp    __RETURN;
 // LINE 908:
 __RETURN:
 }

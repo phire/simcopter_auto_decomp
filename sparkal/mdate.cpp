@@ -1012,8 +1012,10 @@ _T2f:
 	__asm        mov    dword ptr [eax], 0x58F3E8;
 	__asm        jmp    _T5b;
 _T5b:
-	return reinterpret_cast<uint32_t>(__$ReturnUdt);
+	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
+	__asm        jmp    __RETURN;
 // LINE 398:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004bcc37
@@ -1046,8 +1048,10 @@ _T2f:
 	__asm        mov    dword ptr [eax], 0x58F3E8;
 	__asm        jmp    _T5b;
 _T5b:
-	return reinterpret_cast<uint32_t>(__$ReturnUdt);
+	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
+	__asm        jmp    __RETURN;
 // LINE 408:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004bcca1
@@ -1132,8 +1136,10 @@ _T4a:
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    _T6b;
 _T6b:
-	return reinterpret_cast<uint32_t>(__$ReturnUdt);
+	__asm        mov    eax, reinterpret_cast<uint32_t>(__$ReturnUdt);
+	__asm        jmp    __RETURN;
 // LINE 464:
+__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004bcd7c

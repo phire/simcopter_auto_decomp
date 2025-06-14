@@ -143,14 +143,11 @@ _T10:
 	__asm        cmp    gCurrentCityType, 1;
 	__asm        jne    _T1e;
 // LINE 85:
-	__asm        lea    eax, gCurrentUserCityInfo.userPersonalInfo.szUserName[0];
-	__asm        jmp    __RETURN;
+	return &gCurrentUserCityInfo.userPersonalInfo.szUserName[0];
 // LINE 86:
 _T1e:
-	__asm        lea    eax, gCurrentCareerCityInfo.userPersonalInfo.szUserName[0];
-	__asm        jmp    __RETURN;
+	return &gCurrentCareerCityInfo.userPersonalInfo.szUserName[0];
 // LINE 87:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00428f78
