@@ -20436,7 +20436,7 @@ _T58:
 
 // Contribution: 1:00150f40-00150f9e Module: 200, 16 byte alignment, code, (comdat), execute, read, 
 // FUNCTION: COPTER_D 0x00551f40
- ResFile::~ResFile() {
+void ResFile::~ResFile() {
 	// Function registers exception cleanup function at 0x00551f87
 
 	__asm        mov    dword ptr [ebp-4], 0;

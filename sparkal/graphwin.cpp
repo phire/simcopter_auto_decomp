@@ -3464,7 +3464,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a2a3f
- GraphicWindow::GraphicWindow() {
+void GraphicWindow::GraphicWindow() {
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590F2C;
@@ -3846,7 +3846,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a2f5c
- GraphicWindow::GraphicWindow(const /*unpacked*/ class GraphicWindow& copyGraphicWindow) {
+void GraphicWindow::GraphicWindow(const /*unpacked*/ class GraphicWindow& copyGraphicWindow) {
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590F2C;
@@ -4206,7 +4206,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a33ee
- GraphicWindow::GraphicWindow(/*packed*/ class MRect& rectNewWindow, long lNewID, /*unpacked*/ class GraphicWindow *windowNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
+void GraphicWindow::GraphicWindow(/*packed*/ class MRect& rectNewWindow, long lNewID, /*unpacked*/ class GraphicWindow *windowNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList) {
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590F2C;
@@ -4620,7 +4620,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a393d
- GraphicWindow::GraphicWindow(char * szImageFileName, /*packed*/ class MRect& rectNewWindow, long lNewID, /*unpacked*/ class GraphicWindow *windowNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList, int32_t nNewTransparentIndex) {
+void GraphicWindow::GraphicWindow(char * szImageFileName, /*packed*/ class MRect& rectNewWindow, long lNewID, /*unpacked*/ class GraphicWindow *windowNewParent, /*packed*/ class GraphicWindowOwner *myNewOwner, int32_t bAddToParentList, int32_t nNewTransparentIndex) {
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590F2C;
@@ -5130,7 +5130,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a4045
- GraphicWindow::~GraphicWindow() {
+void GraphicWindow::~GraphicWindow() {
 
 	this-><GraphicWindow+0x00:4> = 0x591680;
 // LINE 538:
@@ -5498,14 +5498,14 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a44d4
-int  GraphicWindow::Initialize() {
+int GraphicWindow::Initialize() {
 // LINE 561:
 	return 0x1;
 // LINE 562:
 }
 
 // FUNCTION: COPTER_D 0x004a44ef
-class GraphicWindow &  GraphicWindow::operator=(const /*unpacked*/ class GraphicWindow& copyGraphicWindow) {
+class GraphicWindow & GraphicWindow::operator=(const /*unpacked*/ class GraphicWindow& copyGraphicWindow) {
 // LINE 605:
 	__asm        mov    eax, copyGraphicWindow;
 	__asm        cmp    this, eax;
@@ -5995,7 +5995,7 @@ _T5a2:
 }
 
 // FUNCTION: COPTER_D 0x004a4aa0
-int  GraphicWindow::CreateImage(int32_t bResizeWindowToFitImage) {
+int GraphicWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 // LINE 642:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x40], 0;
@@ -6176,7 +6176,7 @@ _T1f9:
 }
 
 // FUNCTION: COPTER_D 0x004a4cab
-void  GraphicWindow::DestroyImage() {
+void GraphicWindow::DestroyImage() {
 // LINE 664:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x40], 0;
@@ -6213,7 +6213,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a4d1c
-void  GraphicWindow::SetTransparentColor(int32_t nPaletteIndex) {
+void GraphicWindow::SetTransparentColor(int32_t nPaletteIndex) {
 // LINE 677:
 	this-><GraphicWindow+0x58:4> = nPaletteIndex;
 // LINE 678:
@@ -6250,7 +6250,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a4d7e
-void  GraphicWindow::MoveWindow(int32_t nXPosition, int32_t nYPosition) {
+void GraphicWindow::MoveWindow(int32_t nXPosition, int32_t nYPosition) {
 // LINE 691:
 	__asm        mov    eax, nXPosition;
 	__asm        mov    ecx, this;
@@ -6292,7 +6292,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a4df1
-void  GraphicWindow::SetWidthAndHeight(int32_t nNewWidth, int32_t nNewHeight) {
+void GraphicWindow::SetWidthAndHeight(int32_t nNewWidth, int32_t nNewHeight) {
 // LINE 702:
 	__asm        cmp    nNewWidth, 0xFFFFFFFF;
 	__asm        je     _T25;
@@ -6331,7 +6331,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a4e55
-void  GraphicWindow::CenterWindow(/*unpacked*/ class GraphicWindow *windowToCenterOn) {
+void GraphicWindow::CenterWindow(/*unpacked*/ class GraphicWindow *windowToCenterOn) {
 // LINE 716:
 	__asm        jmp    _T11;
 _T11:
@@ -6363,7 +6363,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a4ea8
-void  GraphicWindow::CenterWindow(int32_t nXPosition, int32_t nYPosition) {
+void GraphicWindow::CenterWindow(int32_t nXPosition, int32_t nYPosition) {
 	/*bp-0x4*/   int32_t nNewYPosition;
 	/*bp-0x8*/   int32_t nNewXPosition;
 
@@ -6437,7 +6437,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a4f5c
-int  GraphicWindow::FitRectToWindow(/*packed*/ class MRect& rectToFit) {
+int GraphicWindow::FitRectToWindow(/*packed*/ class MRect& rectToFit) {
 	/*bp-0x10*/  /*packed*/ class MRect rectTempCurrentWindow; // 0x10 bytes
 
 // LINE 756:
@@ -6589,7 +6589,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a50e0
-void  GraphicWindow::SetChanged(int32_t bChanged, int32_t bRecursive) {
+void GraphicWindow::SetChanged(int32_t bChanged, int32_t bRecursive) {
 // LINE 787:
 	this-><GraphicWindow+0x48:4> = bChanged;
 // LINE 788:
@@ -6680,7 +6680,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a51d0
-void  GraphicWindow::SetWindowTitle(/*packed*/ class basic_string<char>& sNewWindowTitle) {
+void GraphicWindow::SetWindowTitle(/*packed*/ class basic_string<char>& sNewWindowTitle) {
 // LINE 809:
 	__asm        mov    eax, this;
 	__asm        add    eax, 8;
@@ -6847,7 +6847,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a53be
-int  GraphicWindow::AddChild(/*unpacked*/ class GraphicWindow *windowNewChild) {
+int GraphicWindow::AddChild(/*unpacked*/ class GraphicWindow *windowNewChild) {
 // LINE 818:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x30];
@@ -7085,7 +7085,7 @@ _T2b1:
 }
 
 // FUNCTION: COPTER_D 0x004a569a
-int  GraphicWindow::DeleteChild(/*unpacked*/ class GraphicWindow *windowChild) {
+int GraphicWindow::DeleteChild(/*unpacked*/ class GraphicWindow *windowChild) {
 	/*bp-0x4*/   /*packed*/ class list<GraphicWindow *>::iterator i;
 	/*bp-0x8*/   int32_t nReturnValue;
 
@@ -7240,7 +7240,7 @@ _T18e:
 }
 
 // FUNCTION: COPTER_D 0x004a5837
-class GraphicWindow *  GraphicWindow::DeleteChild(long lChildID) {
+class GraphicWindow * GraphicWindow::DeleteChild(long lChildID) {
 	/*bp-0x4*/   /*unpacked*/ class GraphicWindow *windowFound;
 	/*bp-0x8*/   /*packed*/ class list<GraphicWindow *>::iterator i;
 
@@ -7414,7 +7414,7 @@ _T1cb:
 }
 
 // FUNCTION: COPTER_D 0x004a5a11
-int  GraphicWindow::RemoveChild(/*unpacked*/ class GraphicWindow *windowNewChild) {
+int GraphicWindow::RemoveChild(/*unpacked*/ class GraphicWindow *windowNewChild) {
 	/*bp-0x4*/   /*packed*/ class list<GraphicWindow *>::iterator i;
 	/*bp-0x8*/   int32_t nReturnValue;
 
@@ -7538,7 +7538,7 @@ _T138:
 }
 
 // FUNCTION: COPTER_D 0x004a5b58
-void  GraphicWindow::DeleteAllChildren() {
+void GraphicWindow::DeleteAllChildren() {
 	/*bp-0x4*/   /*unpacked*/ class GraphicWindow *windowToDelete;
 	/*bp-0x8*/   /*packed*/ class list<GraphicWindow *>::iterator i;
 
@@ -7678,7 +7678,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a5cd8
-void  GraphicWindow::RemoveAllChildren() {
+void GraphicWindow::RemoveAllChildren() {
 	/*bp-0x4*/   /*packed*/ class list<GraphicWindow *>::iterator i;
 
 // LINE 936:
@@ -7771,7 +7771,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a5dd1
-class GraphicWindow *  GraphicWindow::FindChild(long lChildID) {
+class GraphicWindow * GraphicWindow::FindChild(long lChildID) {
 	/*bp-0x4*/   /*packed*/ class list<GraphicWindow *>::iterator i;
 
 // LINE 951:
@@ -7851,7 +7851,7 @@ _Tc8:
 }
 
 // FUNCTION: COPTER_D 0x004a5ea7
-class GraphicWindow *  GraphicWindow::FindWindowA(long lID) {
+class GraphicWindow * GraphicWindow::FindWindowA(long lID) {
 	/*bp-0x4*/   /*packed*/ class list<GraphicWindow *>::iterator i;
 
 // LINE 969:
@@ -7929,7 +7929,7 @@ _Tc3:
 }
 
 // FUNCTION: COPTER_D 0x004a5f76
-int  GraphicWindow::FindWindowA(/*unpacked*/ class GraphicWindow *windowToFind) {
+int GraphicWindow::FindWindowA(/*unpacked*/ class GraphicWindow *windowToFind) {
 	/*bp-0x4*/   /*packed*/ class list<GraphicWindow *>::iterator i;
 
 // LINE 984:
@@ -8004,7 +8004,7 @@ _Tba:
 }
 
 // FUNCTION: COPTER_D 0x004a603c
-int  GraphicWindow::DeleteSelf() {
+int GraphicWindow::DeleteSelf() {
 // LINE 1000:
 	__asm        mov    eax, this;
 	__asm        push   eax;
@@ -8018,7 +8018,7 @@ int  GraphicWindow::DeleteSelf() {
 }
 
 // FUNCTION: COPTER_D 0x004a606b
-void  GraphicWindow::RemoveSelf() {
+void GraphicWindow::RemoveSelf() {
 // LINE 1011:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x3C], 0;
@@ -8039,7 +8039,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a60a3
-int  GraphicWindow::ComposeSelf() {
+int GraphicWindow::ComposeSelf() {
 // LINE 1028:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x54], 0;
@@ -8113,14 +8113,14 @@ _Tb6:
 }
 
 // FUNCTION: COPTER_D 0x004a6168
-int  GraphicWindow::DrawSelf() {
+int GraphicWindow::DrawSelf() {
 // LINE 1060:
 	return 0x0;
 // LINE 1061:
 }
 
 // FUNCTION: COPTER_D 0x004a6180
-void  GraphicWindow::DrawChildren() {
+void GraphicWindow::DrawChildren() {
 	/*bp-0x4*/   /*unpacked*/ class GraphicWindow *gwCurrentChild;
 	/*bp-0x8*/   /*packed*/ class list<GraphicWindow *>::iterator i;
 
@@ -8204,7 +8204,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a6256
-void  GraphicWindow::InvalidateAllOverlaps(/*packed*/ class list<GraphicWindow *>::iterator windowChildListItem) {
+void GraphicWindow::InvalidateAllOverlaps(/*packed*/ class list<GraphicWindow *>::iterator windowChildListItem) {
 	/*bp-0x4*/   /*unpacked*/ class GraphicWindow *windowCurrentChild;
 	/*bp-0x8*/   /*unpacked*/ class GraphicWindow *windowNextChild;
 
@@ -8327,7 +8327,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a6399
-void  GraphicWindow::InvalidateAllChildren(int32_t bRecursive) {
+void GraphicWindow::InvalidateAllChildren(int32_t bRecursive) {
 	/*bp-0x4*/   /*packed*/ class list<GraphicWindow *>::iterator i;
 
 // LINE 1137:
@@ -8409,7 +8409,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a646b
-int  GraphicWindow::DoesWindowNeedUpdating() {
+int GraphicWindow::DoesWindowNeedUpdating() {
 	/*bp-0x4*/   /*packed*/ class list<GraphicWindow *>::iterator i;
 
 // LINE 1163:
@@ -8502,49 +8502,49 @@ _Tf1:
 }
 
 // FUNCTION: COPTER_D 0x004a6568
-long  GraphicWindow::DoCharacter(long lCharacter) {
+long GraphicWindow::DoCharacter(long lCharacter) {
 // LINE 1187:
 	return 0x0;
 // LINE 1188:
 }
 
 // FUNCTION: COPTER_D 0x004a6582
-long  GraphicWindow::DoKeyDown(long lKey, char chModifiers) {
+long GraphicWindow::DoKeyDown(long lKey, char chModifiers) {
 // LINE 1200:
 	return 0x0;
 // LINE 1201:
 }
 
 // FUNCTION: COPTER_D 0x004a659c
-long  GraphicWindow::DoKeyUp(long lKey, char chModifiers) {
+long GraphicWindow::DoKeyUp(long lKey, char chModifiers) {
 // LINE 1214:
 	return 0x0;
 // LINE 1215:
 }
 
 // FUNCTION: COPTER_D 0x004a65b6
-long  GraphicWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
+long GraphicWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 1231:
 	return 0x0;
 // LINE 1232:
 }
 
 // FUNCTION: COPTER_D 0x004a65d0
-long  GraphicWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton) {
+long GraphicWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 1244:
 	return 0x1;
 // LINE 1245:
 }
 
 // FUNCTION: COPTER_D 0x004a65ed
-long  GraphicWindow::DoCursorMove(long nCursorX, long nCursorY) {
+long GraphicWindow::DoCursorMove(long nCursorX, long nCursorY) {
 // LINE 1257:
 	return 0x0;
 // LINE 1258:
 }
 
 // FUNCTION: COPTER_D 0x004a6607
-int  GraphicWindow::CaptureCursorStart(/*unpacked*/ class GraphicWindow *windowCapture) {
+int GraphicWindow::CaptureCursorStart(/*unpacked*/ class GraphicWindow *windowCapture) {
 // LINE 1270:
 	__asm        cmp    GraphicWindow::windowCursorCapture, 0;
 	__asm        je     _T20;
@@ -8559,7 +8559,7 @@ _T20:
 }
 
 // FUNCTION: COPTER_D 0x004a6640
-int  GraphicWindow::CaptureCursorEnd(/*unpacked*/ class GraphicWindow *windowCapture) {
+int GraphicWindow::CaptureCursorEnd(/*unpacked*/ class GraphicWindow *windowCapture) {
 // LINE 1282:
 	__asm        mov    eax, windowCapture;
 	__asm        cmp    GraphicWindow::windowCursorCapture, eax;
@@ -8575,7 +8575,7 @@ _T22:
 }
 
 // FUNCTION: COPTER_D 0x004a667d
-void  GraphicWindow::WindowToScreenCoordinates(long& nXPosition, long& nYPosition) {
+void GraphicWindow::WindowToScreenCoordinates(long& nXPosition, long& nYPosition) {
 	/*bp-0x4*/   /*unpacked*/ class GraphicWindow *currentWindow;
 
 // LINE 1299:
@@ -8600,7 +8600,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a66cc
-void  GraphicWindow::ScreenToWindowCoordinates(long& nXPosition, long& nYPosition) {
+void GraphicWindow::ScreenToWindowCoordinates(long& nXPosition, long& nYPosition) {
 	/*bp-0x4*/   long nXFactor;
 	/*bp-0x8*/   long nYFactor;
 
@@ -8635,14 +8635,14 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a6720
-class CBackBuffer *  GraphicWindow::GetImage() {
+class CBackBuffer * GraphicWindow::GetImage() {
 // LINE 1341:
 	return this-><GraphicWindow+0x40:4>;
 // LINE 1342:
 }
 
 // FUNCTION: COPTER_D 0x004a673c
-void  GraphicWindow::GetImagePath() {
+void GraphicWindow::GetImagePath() {
 	/*bp-0x108*/ char szFullImagePath[261]; // 0x105 bytes
 
 // LINE 1356:
@@ -8951,7 +8951,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a6bcd
-int  GraphicWindow::SetImageToDrawOnto() {
+int GraphicWindow::SetImageToDrawOnto() {
 	/*bp-0x4*/   /*unpacked*/ class CBackBuffer *imageCurrentParent;
 	/*bp-0x8*/   /*unpacked*/ class GraphicWindow *gwCurrentParent;
 	/*bp-0x18*/  /*packed*/ class MRect rectNewPosition; // 0x10 bytes
@@ -9056,7 +9056,7 @@ _T117:
 }
 
 // FUNCTION: COPTER_D 0x004a6cf0
-void  GraphicWindow::SetAllImagesToDrawOnto() {
+void GraphicWindow::SetAllImagesToDrawOnto() {
 	/*bp-0x4*/   /*packed*/ class list<GraphicWindow *>::iterator i;
 
 // LINE 1403:
@@ -9140,7 +9140,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a6dc5
-void  GraphicWindow::CreateAllImages() {
+void GraphicWindow::CreateAllImages() {
 	/*bp-0x4*/   /*packed*/ class list<GraphicWindow *>::iterator i;
 
 // LINE 1422:
@@ -9230,7 +9230,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a6ea7
-void  GraphicWindow::DestroyAllImages() {
+void GraphicWindow::DestroyAllImages() {
 	/*bp-0x4*/   /*packed*/ class list<GraphicWindow *>::iterator i;
 
 // LINE 1442:
@@ -9314,7 +9314,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a6f7c
-void  GraphicWindow::DrawBorder(/*packed*/ struct SparkalColor *colorBorder) {
+void GraphicWindow::DrawBorder(/*packed*/ struct SparkalColor *colorBorder) {
 // LINE 1456:
 	__asm        cmp    colorBorder, 0;
 	__asm        je     _T2f;
@@ -9416,7 +9416,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a7075
-int  GraphicWindow::MakeModal(/*unpacked*/ class GraphicWindow *windowModal) {
+int GraphicWindow::MakeModal(/*unpacked*/ class GraphicWindow *windowModal) {
 // LINE 1485:
 	__asm        mov    eax, windowModal;
 	__asm        push   eax;
@@ -9646,7 +9646,7 @@ _T2bc:
 }
 
 // FUNCTION: COPTER_D 0x004a7340
-int  GraphicWindow::RemoveModal(/*unpacked*/ class GraphicWindow *windowModal) {
+int GraphicWindow::RemoveModal(/*unpacked*/ class GraphicWindow *windowModal) {
 	/*bp-0x4*/   /*packed*/ class list<GraphicWindow *>::iterator i;
 
 // LINE 1500:
@@ -9759,7 +9759,7 @@ _T121:
 }
 
 // FUNCTION: COPTER_D 0x004a7470
-int  GraphicWindow::MakeFocus(/*unpacked*/ class GraphicWindow *windowFocus) {
+int GraphicWindow::MakeFocus(/*unpacked*/ class GraphicWindow *windowFocus) {
 // LINE 1531:
 	__asm        mov    eax, windowFocus;
 	__asm        push   eax;
@@ -9989,7 +9989,7 @@ _T2bc:
 }
 
 // FUNCTION: COPTER_D 0x004a773b
-int  GraphicWindow::RemoveFocus(/*unpacked*/ class GraphicWindow *windowFocus) {
+int GraphicWindow::RemoveFocus(/*unpacked*/ class GraphicWindow *windowFocus) {
 	/*bp-0x4*/   /*packed*/ class list<GraphicWindow *>::iterator i;
 
 // LINE 1545:
@@ -10102,7 +10102,7 @@ _T121:
 }
 
 // FUNCTION: COPTER_D 0x004a786b
-int  GraphicWindow::CanWeRespondToMessage() {
+int GraphicWindow::CanWeRespondToMessage() {
 	/*bp-0x4*/   int32_t nModalWindowCount;
 	/*bp-0x8*/   /*unpacked*/ class GraphicWindow *gwCurrentTest;
 	/*bp-0xc*/   /*unpacked*/ class GraphicWindow *gwModal;

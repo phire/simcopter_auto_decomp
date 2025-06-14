@@ -6,7 +6,7 @@
 
 // Contribution: 1:00070e40-00070f60 Module: 37, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00471e40
-void  CGameApp::EnableSoundTrack() {
+void CGameApp::EnableSoundTrack() {
 // LINE 27:
 	__asm        push   1;
 	__asm        mov    ecx, 0x604480;
@@ -17,7 +17,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00471e62
-void  CGameApp::DisableSoundTrack() {
+void CGameApp::DisableSoundTrack() {
 // LINE 39:
 	__asm        push   0;
 	__asm        mov    ecx, 0x604480;
@@ -28,7 +28,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00471e84
-void  CGameApp::ToggleMusicSoundTrack() {
+void CGameApp::ToggleMusicSoundTrack() {
 // LINE 48:
 	__asm        jmp    _T11;
 _T11:
@@ -86,7 +86,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00471f41
-void  CGameApp::PlayNextSoundTrackIfNeeded() {
+void CGameApp::PlayNextSoundTrackIfNeeded() {
 // LINE 62:
 	__asm        mov    ecx, 0x604480;
 	__asm        call   Radio::DoState;

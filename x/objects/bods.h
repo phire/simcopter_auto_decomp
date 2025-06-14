@@ -1,6 +1,6 @@
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f920
-class cBBase *  cCopterBody::MakeNew(void * __ptr32 h) {
+class cBBase * cCopterBody::MakeNew(void * __ptr32 h) {
 	/*bp-0x10*/  /*unpacked*/ class cCopterBody *thing;
 
 	// Function registers exception cleanup function at 0x0055fc56
@@ -260,7 +260,7 @@ _L45521:
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055fc70
-void  cCopterBody::WriteToDisk() {
+void cCopterBody::WriteToDisk() {
 // LINE 139:
 	__asm        jmp    __RETURN;
 __RETURN:
@@ -268,7 +268,7 @@ __RETURN:
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055fc90
-class cBList<class cBBase> *  cCopterBody::GetList() {
+class cBList<class cBBase> * cCopterBody::GetList() {
 
 	__asm        mov    eax, cCopterBody::fsList;
 	__asm        jmp    __RETURN;

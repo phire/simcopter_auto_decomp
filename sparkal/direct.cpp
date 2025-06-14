@@ -2640,7 +2640,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004832a3
- Directory::Directory(/*packed*/ class basic_string<char>& sNewDirectoryPath, int32_t bReadNow, int32_t bNewAllowParentDirectoryAsEntry, int32_t bNewAllowCurrentDirectoryAsEntry) {
+void Directory::Directory(/*packed*/ class basic_string<char>& sNewDirectoryPath, int32_t bReadNow, int32_t bNewAllowParentDirectoryAsEntry, int32_t bNewAllowCurrentDirectoryAsEntry) {
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+4], 0;
@@ -3057,14 +3057,14 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004837af
-int  Directory::IsDirectoryRoot() {
+int Directory::IsDirectoryRoot() {
 // LINE 209:
 	return 0x0;
 // LINE 210:
 }
 
 // FUNCTION: COPTER_D 0x004837c7
-int  Directory::ReadDirectoryEntries() {
+int Directory::ReadDirectoryEntries() {
 	/*bp-0x140*/ /*packed*/ struct _WIN32_FIND_DATAA findData; // 0x13e bytes
 	/*bp-0x150*/ /*packed*/ class DirectoryEntry directoryEntryCurrent; // 0x10 bytes
 	/*bp-0x154*/ void * __ptr32 hFind;
@@ -4218,7 +4218,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0048494d
-int  Directory::ReadDirectorySpecificEntriesIntoStringList(/*packed*/ class list<basic_string<char>>& sDirectoryEntries, long lFilter) {
+int Directory::ReadDirectorySpecificEntriesIntoStringList(/*packed*/ class list<basic_string<char>>& sDirectoryEntries, long lFilter) {
 	/*bp-0x140*/ /*packed*/ struct _WIN32_FIND_DATAA findData; // 0x13e bytes
 	/*bp-0x150*/ /*packed*/ class DirectoryEntry directoryEntryCurrent; // 0x10 bytes
 	/*bp-0x154*/ void * __ptr32 hFind;
@@ -5129,7 +5129,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00485735
-int  Directory::DoesAnyEntryExistThatMatchesPattern(const /*packed*/ class basic_string<char>& sPathPattern) {
+int Directory::DoesAnyEntryExistThatMatchesPattern(const /*packed*/ class basic_string<char>& sPathPattern) {
 	/*bp-0x140*/ /*packed*/ struct _WIN32_FIND_DATAA findData; // 0x13e bytes
 	/*bp-0x150*/ /*packed*/ class DirectoryEntry directoryEntryCurrent; // 0x10 bytes
 	/*bp-0x154*/ void * __ptr32 hFind;
@@ -5314,7 +5314,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004859c2
-int  Directory::DoesDirectoryListContainEntry(const /*packed*/ class basic_string<char>& sEntry) {
+int Directory::DoesDirectoryListContainEntry(const /*packed*/ class basic_string<char>& sEntry) {
 	/*bp-0x4*/   /*packed*/ class list<DirectoryEntry>::iterator tempDirectoryEntryListIterator;
 
 // LINE 448:
@@ -5452,7 +5452,7 @@ _T166:
 }
 
 // FUNCTION: COPTER_D 0x00485b36
-int  Directory::ChangeDirectory(/*packed*/ class basic_string<char>& sNewDirectory, int32_t bReadNow) {
+int Directory::ChangeDirectory(/*packed*/ class basic_string<char>& sNewDirectory, int32_t bReadNow) {
 // LINE 474:
 	__asm        mov    eax, this;
 	__asm        add    eax, 8;
@@ -5622,7 +5622,7 @@ _T1ed:
 }
 
 // FUNCTION: COPTER_D 0x00485d34
-int  Directory::CreateNewEntry(/*packed*/ class basic_string<char>& sName, long lType) {
+int Directory::CreateNewEntry(/*packed*/ class basic_string<char>& sName, long lType) {
 	/*bp-0x10*/  /*packed*/ class DirectoryEntry tempDirectoryEntry; // 0x10 bytes
 
 // LINE 487:
@@ -5706,7 +5706,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00485e22
-class DirectoryEntry *  Directory::GetNthEntry(int32_t nIndex) {
+class DirectoryEntry * Directory::GetNthEntry(int32_t nIndex) {
 	/*bp-0x4*/   int32_t iEnd;
 	/*bp-0x8*/   int32_t i;
 	/*bp-0xc*/   /*packed*/ class list<DirectoryEntry>::iterator iterator;
@@ -5767,7 +5767,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00485ebe
-void  Directory::SetNewDirectoryEntryFilter(/*packed*/ class basic_string<char>& sNewDirectoryEntryFilter, int32_t bRereadEntries) {
+void Directory::SetNewDirectoryEntryFilter(/*packed*/ class basic_string<char>& sNewDirectoryEntryFilter, int32_t bRereadEntries) {
 // LINE 512:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x10;
@@ -6141,7 +6141,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0048631c
-void  Directory::MakeSurePathEndsWithSeparator() {
+void Directory::MakeSurePathEndsWithSeparator() {
 	/*bp-0x4*/   char chLastCharacter;
 	/*bp-0x8*/   uint32_t nDirectoryPathLength;
 
@@ -6555,7 +6555,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004867d2
-void  Directory::SplitDirectoryPath(const /*packed*/ class basic_string<char>& sPath, /*packed*/ class basic_string<char>& sFirstPart, /*packed*/ class basic_string<char>& sLastPart) {
+void Directory::SplitDirectoryPath(const /*packed*/ class basic_string<char>& sPath, /*packed*/ class basic_string<char>& sFirstPart, /*packed*/ class basic_string<char>& sLastPart) {
 	/*bp-0x4*/   uint32_t nPosition;
 	/*bp-0x8*/   uint32_t nDirectoryPathLength;
 

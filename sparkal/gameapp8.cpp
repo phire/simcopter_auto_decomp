@@ -298,7 +298,7 @@ private:
 
 // Contribution: 1:00026550-00027c67 Module: 68, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00427550
-unsigned long  CGameApp::GetLoadFileType(char * szFilePath, long& lFileType) {
+unsigned long CGameApp::GetLoadFileType(char * szFilePath, long& lFileType) {
 // LINE 63:
 	__asm        mov    eax, szFilePath;
 	__asm        push   eax;
@@ -346,7 +346,7 @@ _T82:
 }
 
 // FUNCTION: COPTER_D 0x004275e3
-unsigned long  CGameApp::SetUpLoadGame(char * szLoadGamePath, long lFileType) {
+unsigned long CGameApp::SetUpLoadGame(char * szLoadGamePath, long lFileType) {
 // LINE 86:
 	this-><CGameApp+0x20:4> = 0x0;
 // LINE 87:
@@ -404,7 +404,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00427691
-unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
+unsigned long CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 	/*bp-0x4*/   long lPresentRecordType;
 	/*bp-0x104*/ char szSplitPathExtension[256]; // 0x100 bytes
 	/*bp-0x108*/ char szSplitPathDrive[3];
@@ -763,7 +763,7 @@ _T555:
 }
 
 // FUNCTION: COPTER_D 0x00427bf4
-unsigned long  CGameApp::SaveUserOrCareerGame(char * szGamePath, char * szCityPath) {
+unsigned long CGameApp::SaveUserOrCareerGame(char * szGamePath, char * szCityPath) {
 	/*bp-0x100*/ char szSplitPathExtension[256]; // 0x100 bytes
 	/*bp-0x104*/ char szSplitPathDrive[3];
 	/*bp-0x108*/ long lFileType;
@@ -1015,7 +1015,7 @@ _T31e:
 }
 
 // FUNCTION: COPTER_D 0x00427f98
-unsigned long  CGameApp::DoSaveGameAs() {
+unsigned long CGameApp::DoSaveGameAs() {
 	/*bp-0x100*/ char szSplitPathExtension[256]; // 0x100 bytes
 	/*bp-0x104*/ int32_t nFullStringID;
 	/*bp-0x108*/ char szSplitPathDrive[3];
@@ -1766,7 +1766,7 @@ _Tacc:
 }
 
 // FUNCTION: COPTER_D 0x00428a74
-long  CGameApp::ValidateCopterSaveGameFile(char * szGamePath) {
+long CGameApp::ValidateCopterSaveGameFile(char * szGamePath) {
 	/*bp-0x4*/   long lFileType;
 	/*bp-0x14c*/ /*packed*/ class MIFF myMIFF; // 0x148 bytes
 
@@ -1876,7 +1876,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00428c38
-int  CGameApp::DisplayFileOpenError(unsigned long nResult) {
+int CGameApp::DisplayFileOpenError(unsigned long nResult) {
 // LINE 463:
 	__asm        push   1;
 	__asm        mov    eax, nResult;

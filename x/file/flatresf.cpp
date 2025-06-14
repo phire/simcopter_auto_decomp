@@ -1476,7 +1476,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00553a84
- ResMap::ResMap(short refNum, short numTypes, void * __ptr32 resMap, unsigned char * resMapPtr, long dataLoc) {
+void ResMap::ResMap(short refNum, short numTypes, void * __ptr32 resMap, unsigned char * resMapPtr, long dataLoc) {
 	/*bp-0x4*/   unsigned char * mapStart;
 	/*bp-0x8*/   short resCnt;
 	/*bp-0xc*/   /*unpacked*/ struct ResMap::Entry *resList;
@@ -1574,7 +1574,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00553ba0
- ResMap::~ResMap() {
+void ResMap::~ResMap() {
 	/*bp-0x4*/   unsigned char hState;
 	/*bp-0x8*/   /*unpacked*/ struct ResMap::Entry *last;
 	/*bp-0xc*/   /*unpacked*/ struct ResMap::Entry *srch;
@@ -1652,7 +1652,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00553c5b
-long  ResMap::Get(/*unpacked*/ class FlatResFile *fromFile) {
+long ResMap::Get(/*unpacked*/ class FlatResFile *fromFile) {
 	/*bp-0x10*/  unsigned char * resPtr;
 	/*bp-0x14*/  void * __ptr32 newMap;
 	/*bp-0x18*/  long dataLoc;
@@ -1774,7 +1774,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00553dcc
-void  ResMap::Release() {
+void ResMap::Release() {
 // LINE 786:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1C], 0;
@@ -1844,7 +1844,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00553e96
-short  ResMap::CheckForLeaks() {
+short ResMap::CheckForLeaks() {
 	/*bp-0x4*/   short total;
 	/*bp-0x8*/   /*unpacked*/ class ResMap *srch;
 
@@ -1871,7 +1871,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00553edb
-void  ResMap::LoadEntry(/*unpacked*/ struct ResMap::Entry *entry, /*unpacked*/ class FlatResFile *file, unsigned short unpurge) {
+void ResMap::LoadEntry(/*unpacked*/ struct ResMap::Entry *entry, /*unpacked*/ class FlatResFile *file, unsigned short unpurge) {
 	/*bp-0x4*/   long size;
 	/*bp-0x8*/   long err;
 	/*bp-0xc*/   unsigned char oldHandState;
@@ -2143,7 +2143,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x005541a4
-unsigned long  ResMap::GetIndType(short index) {
+unsigned long ResMap::GetIndType(short index) {
 	/*bp-0x4*/   unsigned long type;
 
 // LINE 883:
@@ -2174,7 +2174,7 @@ _T33:
 }
 
 // FUNCTION: COPTER_D 0x005541fe
-short  ResMap::Count(unsigned long type) {
+short ResMap::Count(unsigned long type) {
 	/*bp-0x4*/   short cnt;
 	/*bp-0x8*/   /*unpacked*/ struct ResMap::TypeHead *typeList;
 
@@ -2220,7 +2220,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00554272
-unsigned long  ResMap::FindType(/*unpacked*/ struct ResMap::Entry *entry) {
+unsigned long ResMap::FindType(/*unpacked*/ struct ResMap::Entry *entry) {
 	/*bp-0x4*/   short numEntries;
 	/*bp-0x8*/   short cnt;
 	/*bp-0xc*/   unsigned long type;
@@ -2279,7 +2279,7 @@ _T8b:
 }
 
 // FUNCTION: COPTER_D 0x0055430b
-struct ResMap::Entry *  ResMap::FindEntry(void * __ptr32 res) {
+struct ResMap::Entry * ResMap::FindEntry(void * __ptr32 res) {
 	/*bp-0x4*/   /*unpacked*/ struct ResMap::Entry *last;
 	/*bp-0x8*/   /*unpacked*/ struct ResMap::Entry *srch;
 	/*bp-0xc*/   /*unpacked*/ struct ResMap::Entry *found;
@@ -2324,7 +2324,7 @@ _T60:
 }
 
 // FUNCTION: COPTER_D 0x0055437a
-struct ResMap::Entry *  ResMap::FindEntry(unsigned long type, short id) {
+struct ResMap::Entry * ResMap::FindEntry(unsigned long type, short id) {
 	/*bp-0x4*/   short cnt;
 	/*bp-0x8*/   /*unpacked*/ struct ResMap::TypeHead *typeList;
 	/*bp-0xc*/   /*unpacked*/ struct ResMap::Entry *found;
@@ -2403,7 +2403,7 @@ _Tb4:
 }
 
 // FUNCTION: COPTER_D 0x0055443d
-struct ResMap::Entry *  ResMap::FindEntry(unsigned long type, unsigned char * name) {
+struct ResMap::Entry * ResMap::FindEntry(unsigned long type, unsigned char * name) {
 	/*bp-0x4*/   short cnt;
 	/*bp-0x8*/   /*unpacked*/ struct ResMap::TypeHead *typeList;
 	/*bp-0xc*/   /*unpacked*/ struct ResMap::Entry *found;
@@ -2502,7 +2502,7 @@ _Tea:
 }
 
 // FUNCTION: COPTER_D 0x00554536
-struct ResMap::Entry *  ResMap::FindIndEntry(unsigned long type, short index) {
+struct ResMap::Entry * ResMap::FindIndEntry(unsigned long type, short index) {
 	/*bp-0x4*/   short cnt;
 	/*bp-0x8*/   /*unpacked*/ struct ResMap::TypeHead *typeList;
 	/*bp-0xc*/   /*unpacked*/ struct ResMap::Entry *found;
@@ -2574,7 +2574,7 @@ _Tac:
 }
 
 // FUNCTION: COPTER_D 0x005545f1
-void  ResMap::GetName(/*unpacked*/ struct ResMap::Entry *entry, unsigned char * name) {
+void ResMap::GetName(/*unpacked*/ struct ResMap::Entry *entry, unsigned char * name) {
 	/*bp-0x4*/   unsigned char * namePtr;
 
 // LINE 1033:
@@ -2613,7 +2613,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00554651
-void  ResMap::SwapTypeHead(/*unpacked*/ struct ResMap::TypeHead *typeHead) {
+void ResMap::SwapTypeHead(/*unpacked*/ struct ResMap::TypeHead *typeHead) {
 // LINE 1058:
 	__asm        mov    eax, typeHead;
 	__asm        push   eax;
@@ -2637,7 +2637,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0055468b
-void  ResMap::SwapResEntry(/*unpacked*/ struct ResMap::Entry *resEntry) {
+void ResMap::SwapResEntry(/*unpacked*/ struct ResMap::Entry *resEntry) {
 	/*bp-0x4*/   unsigned char midWord;
 	/*bp-0x8*/   unsigned char loWord;
 	/*bp-0xc*/   unsigned char * bptr;

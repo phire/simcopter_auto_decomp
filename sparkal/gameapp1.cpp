@@ -1099,7 +1099,7 @@ void RenderPreferences::RenderPreferences() {
 }
 
 // FUNCTION: COPTER_D 0x00487bb7
- CGameApp::CGameApp() {
+void CGameApp::CGameApp() {
 
 	__asm        mov    ecx, this;
 	__asm        call   CSparkalApp::CSparkalApp;
@@ -1368,7 +1368,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00487f72
- CGameApp::~CGameApp() {
+void CGameApp::~CGameApp() {
 
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x590F38;
@@ -1822,7 +1822,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004885ed
-void  CGameApp::InitializeMemberVariables() {
+void CGameApp::InitializeMemberVariables() {
 // LINE 204:
 	this-><CGameApp+0x1c:4> = 0x0;
 // LINE 205:
@@ -1924,7 +1924,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004887b7
-unsigned long  CGameApp::PrepareGame() {
+unsigned long CGameApp::PrepareGame() {
 	/*bp-0x8*/   /*packed*/ class basic_string<char> sApplicationTitle; // 0x8 bytes
 	/*bp-0xc*/   int32_t nFullStringID;
 	/*bp-0x110*/ char szButtonWindowSoundFilePath[260]; // 0x104 bytes
@@ -2980,7 +2980,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004896d1
-class CSparkalWindow *  CGameApp::NewWindow(unsigned long Width, unsigned long Height, unsigned long Style, const /*packed*/ struct SparkalColor *pColors, char * Caption) {
+class CSparkalWindow * CGameApp::NewWindow(unsigned long Width, unsigned long Height, unsigned long Style, const /*packed*/ struct SparkalColor *pColors, char * Caption) {
 // LINE 374:
 	__asm        push   0x9C;
 	__asm        call   operator new;
@@ -3011,7 +3011,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00489726
-unsigned long  CGameApp::Initialize() {
+unsigned long CGameApp::Initialize() {
 	/*bp-0x4*/   int32_t i;
 
 // LINE 389:
@@ -3353,7 +3353,7 @@ _T511:
 }
 
 // FUNCTION: COPTER_D 0x00489c43
-void  CGameApp::ParseCommandLine() {
+void CGameApp::ParseCommandLine() {
 	/*bp-0x80*/  char szCommandValue[128]; // 0x80 bytes
 	/*bp-0x84*/  int32_t nLanguage;
 	/*bp-0x88*/  long lValue;
@@ -3572,7 +3572,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00489f3d
-int  CGameApp::IsSwitchPresent(char chSwitchToCheck, char * szResult) {
+int CGameApp::IsSwitchPresent(char chSwitchToCheck, char * szResult) {
 	/*bp-0x4*/   char chLowerToCheck;
 	/*bp-0x8*/   short i;
 	/*bp-0xc*/   short j;
@@ -3749,7 +3749,7 @@ _T212:
 }
 
 // FUNCTION: COPTER_D 0x0048a15d
-int  CGameApp::SetCurrentLanguageUse(int32_t nLanguageID) {
+int CGameApp::SetCurrentLanguageUse(int32_t nLanguageID) {
 // LINE 651:
 	__asm        mov    eax, nLanguageID;
 	__asm        push   eax;
@@ -3761,7 +3761,7 @@ int  CGameApp::SetCurrentLanguageUse(int32_t nLanguageID) {
 }
 
 // FUNCTION: COPTER_D 0x0048a186
-void  CGameApp::DisplayDebugSystemInformation() {
+void CGameApp::DisplayDebugSystemInformation() {
 	/*bp-0x20*/  /*packed*/ struct _MEMORYSTATUS tempMemoryStatus; // 0x20 bytes
 	/*bp-0x2c*/  /*packed*/ class Version tempVersion; // 0xc bytes
 	/*bp-0x12c*/ char szFormattedVersionInformation[256]; // 0x100 bytes
@@ -3921,7 +3921,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0048a370
-void  CGameApp::SetSystemPriorityLevel(long lLevel) {
+void CGameApp::SetSystemPriorityLevel(long lLevel) {
 	/*bp-0x4*/   void * __ptr32 hThread;
 	/*bp-0x8*/   int32_t bReturnValue;
 
@@ -3967,7 +3967,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0048a409
-void  CGameApp::InitializeCommandSystem() {
+void CGameApp::InitializeCommandSystem() {
 	/*bp-0x18*/  /*packed*/ struct Shortcut tempShortcut; // 0x18 bytes
 
 // LINE 751:
@@ -4355,7 +4355,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0048a943
-void  CGameApp::InitializeJoysticks() {
+void CGameApp::InitializeJoysticks() {
 // LINE 793:
 	__asm        mov    ecx, 0x604C78;
 	__asm        call   JoystickManager::Initialize;
@@ -4374,7 +4374,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0048a980
-int  CGameApp::HaveAnyJoysticksChangedSinceLastPlay() {
+int CGameApp::HaveAnyJoysticksChangedSinceLastPlay() {
 	/*bp-0x4*/   char * chPrefData;
 	/*bp-0x8*/   char * chLastJoystickName;
 	/*bp-0xc*/   int32_t iEnd;

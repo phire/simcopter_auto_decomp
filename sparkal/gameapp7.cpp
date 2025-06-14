@@ -713,7 +713,7 @@ void SoundCompletionUnloadFunction(long lSoundPointer) {
 }
 
 // FUNCTION: COPTER_D 0x0043e2a5
-void  CGameApp::ShowVersion() {
+void CGameApp::ShowVersion() {
 	/*bp-0x8*/   /*packed*/ class basic_string<char> sMessage; // 0x8 bytes
 	/*bp-0x28*/  /*packed*/ struct _MEMORYSTATUS tempMemoryStatus; // 0x20 bytes
 	/*bp-0x2c*/  int32_t nFullStringID;
@@ -1563,7 +1563,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0043eda6
-int  CGameApp::CreateMessageBox(long lID, /*packed*/ class basic_string<char>& sMessage, long lType) {
+int CGameApp::CreateMessageBox(long lID, /*packed*/ class basic_string<char>& sMessage, long lType) {
 	/*bp-0x4*/   /*packed*/ class MessageBoxWindow *tempMessageBoxWindow;
 	/*bp-0x8*/   /*packed*/ struct SparkalColor colorMessageFont;
 	/*bp-0xc*/   char * szAnimationFileNameToUse;
@@ -1988,7 +1988,7 @@ _T504:
 }
 
 // FUNCTION: COPTER_D 0x0043f2b9
-int  CGameApp::CreateMessageBox(long lID, int32_t nStringID, long lType) {
+int CGameApp::CreateMessageBox(long lID, int32_t nStringID, long lType) {
 	/*bp-0x8*/   /*packed*/ class basic_string<char> sMessage; // 0x8 bytes
 	/*bp-0xc*/   int32_t nFullStringID;
 
@@ -2438,7 +2438,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0043f8cc
-void  CGameApp::DestroyMessageBox() {
+void CGameApp::DestroyMessageBox() {
 // LINE 298:
 	this-><CGameApp+0xa4:4>--;
 // LINE 299:
@@ -2454,7 +2454,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0043f908
-int  CGameApp::CreateCheatCodeEntryMessageBox() {
+int CGameApp::CreateCheatCodeEntryMessageBox() {
 	/*bp-0x4*/   /*packed*/ struct SparkalColor colorMessageFont;
 	/*bp-0x8*/   /*packed*/ struct SparkalColor colorButtonFontHighlighted;
 	/*bp-0xc*/   /*packed*/ class MessageBoxWindowEdit *tempMessageBoxWindowEdit;
@@ -2687,7 +2687,7 @@ _T29b:
 }
 
 // FUNCTION: COPTER_D 0x0043fbaf
-void  CGameApp::DestroyCheatCodeEntryMessageBox() {
+void CGameApp::DestroyCheatCodeEntryMessageBox() {
 // LINE 340:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::DestroyMessageBox;
@@ -2697,7 +2697,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0043fbcd
-int  CGameApp::DoCheatCode(/*packed*/ class basic_string<char>& sCheatCodeString) {
+int CGameApp::DoCheatCode(/*packed*/ class basic_string<char>& sCheatCodeString) {
 	/*bp-0x4*/   uint32_t nTextPosition;
 	/*bp-0x8*/   char * szCheatOff;
 	/*bp-0xc*/   char * szCheatSoundFileName;
@@ -3815,7 +3815,7 @@ _Tf4f:
 }
 
 // FUNCTION: COPTER_D 0x00440b3f
-int  CGameApp::CheckCommandLineForCheatCodes() {
+int CGameApp::CheckCommandLineForCheatCodes() {
 	/*bp-0x80*/  char szCommandValue[128]; // 0x80 bytes
 	/*bp-0x84*/  int32_t i;
 
@@ -3986,7 +3986,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00440dcf
-void  CGameApp::CreateDebugBuffer() {
+void CGameApp::CreateDebugBuffer() {
 	/*bp-0x40*/  char szTypeFaceName[64]; // 0x40 bytes
 	/*bp-0x44*/  /*packed*/ struct SparkalColor colorDebugText;
 
@@ -4084,7 +4084,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00440ed6
-void  CGameApp::DestroyDebugBuffer() {
+void CGameApp::DestroyDebugBuffer() {
 // LINE 544:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x54], 0;
@@ -4117,7 +4117,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00440f3a
-void  CGameApp::CreatePaletteBuffer() {
+void CGameApp::CreatePaletteBuffer() {
 // LINE 555:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x42BC], 0;
@@ -4144,7 +4144,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00440f9d
-void  CGameApp::TogglePaletteBufferDisplay() {
+void CGameApp::TogglePaletteBufferDisplay() {
 // LINE 566:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x430C], 0;
@@ -4171,7 +4171,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00440ffa
-void  CGameApp::ToggleDebugWindowDisplay() {
+void CGameApp::ToggleDebugWindowDisplay() {
 // LINE 582:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x4310], 0;
@@ -4204,7 +4204,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0044106f
-void  CGameApp::CreatePlayMenu() {
+void CGameApp::CreatePlayMenu() {
 	/*bp-0x4*/   /*packed*/ class UserMenuWindow *myUserMenuWindow;
 	/*bp-0x58*/  /*packed*/ struct UserMenuWindowDescription tempUMWD; // 0x54 bytes
 
@@ -4459,7 +4459,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004413e5
-void  CGameApp::CreateUserInputWindow() {
+void CGameApp::CreateUserInputWindow() {
 	/*bp-0x4*/   int32_t nCurrentGameMode;
 	/*bp-0x8*/   /*packed*/ class UserInputWindow *myUserInputWindow;
 
@@ -4560,7 +4560,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0044150b
-void  CGameApp::DestroyUserInputWindow(/*packed*/ class UserInputWindow *windowToDestroy, int32_t bUseData) {
+void CGameApp::DestroyUserInputWindow(/*packed*/ class UserInputWindow *windowToDestroy, int32_t bUseData) {
 	/*bp-0x4*/   int32_t nCurrentGameMode;
 
 // LINE 650:
@@ -4625,7 +4625,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004415c7
-void  CGameApp::CreateRenderSettingsWindow() {
+void CGameApp::CreateRenderSettingsWindow() {
 	/*bp-0x4*/   int32_t nCurrentGameMode;
 	/*bp-0x8*/   /*packed*/ class RenderSettingsWindow *myRenderSettingsWindow;
 
@@ -4738,7 +4738,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00441715
-void  CGameApp::DestroyRenderSettingsWindow(/*packed*/ class RenderSettingsWindow *windowToDestroy, int32_t bUseData) {
+void CGameApp::DestroyRenderSettingsWindow(/*packed*/ class RenderSettingsWindow *windowToDestroy, int32_t bUseData) {
 	/*bp-0x4*/   long lFogCloseness;
 	/*bp-0x8*/   long bShowBuildingTextures;
 	/*bp-0xc*/   long bShowSkyAndClouds;
@@ -4823,7 +4823,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004417fe
-void  CGameApp::CreateSoundSettingsWindow() {
+void CGameApp::CreateSoundSettingsWindow() {
 	/*bp-0x10*/  /*packed*/ struct SoundPreferences tempSoundPreferences; // 0x10 bytes
 	/*bp-0x14*/  char * chPrefData;
 	/*bp-0x18*/  int32_t nCurrentGameMode;
@@ -4978,7 +4978,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004419b8
-void  CGameApp::DestroySoundSettingsWindow(/*packed*/ class SoundSettingsWindow *windowToDestroy, int32_t bUseData) {
+void CGameApp::DestroySoundSettingsWindow(/*packed*/ class SoundSettingsWindow *windowToDestroy, int32_t bUseData) {
 	/*bp-0x10*/  /*packed*/ struct SoundPreferences tempSoundPreferences; // 0x10 bytes
 	/*bp-0x14*/  int32_t nCurrentGameMode;
 	/*bp-0x30*/  /*packed*/ struct RadioPreferences tempRadioPreferences; // 0x1c bytes
@@ -5060,7 +5060,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00441a89
-void  CGameApp::CreateCitySettingsWindow() {
+void CGameApp::CreateCitySettingsWindow() {
 	/*bp-0x4*/   /*packed*/ class CitySettingsWindow *myCitySettingsWindow;
 
 // LINE 808:
@@ -5131,7 +5131,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00441b5f
-void  CGameApp::DestroyCitySettingsWindow(/*packed*/ class CitySettingsWindow *windowToDestroy, int32_t bUseData) {
+void CGameApp::DestroyCitySettingsWindow(/*packed*/ class CitySettingsWindow *windowToDestroy, int32_t bUseData) {
 // LINE 825:
 	this-><CGameApp+0xa4:4>--;
 // LINE 826:
@@ -5163,7 +5163,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00441bc0
-void  CGameApp::CreateControlDisplayWindow() {
+void CGameApp::CreateControlDisplayWindow() {
 	/*bp-0x4*/   /*packed*/ class ControlDisplayWindow *tempControlDisplayWindow;
 
 // LINE 838:
@@ -5237,7 +5237,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00441c9f
-void  CGameApp::DestroyControlDisplayWindow() {
+void CGameApp::DestroyControlDisplayWindow() {
 // LINE 851:
 	this-><CGameApp+0xa4:4>--;
 // LINE 852:
@@ -5246,7 +5246,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00441cbe
-void  CGameApp::CreateCheckupWindow() {
+void CGameApp::CreateCheckupWindow() {
 	/*bp-0x4*/   /*packed*/ class CheckupWindow *tempCheckupWindow;
 
 // LINE 859:
@@ -5312,7 +5312,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00441d86
-void  CGameApp::DestroyCheckupWindow(/*packed*/ class CheckupWindow *windowToDestroy, int32_t bUseData) {
+void CGameApp::DestroyCheckupWindow(/*packed*/ class CheckupWindow *windowToDestroy, int32_t bUseData) {
 	/*bp-0xc*/   long lSettings[3]; // 0xc bytes
 
 // LINE 873:

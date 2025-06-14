@@ -110,7 +110,7 @@ struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 
 // Contribution: 1:000314e0-00032110 Module: 60, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004324e0
-int  CGameApp::CanWeSwitchToWindowedMode() {
+int CGameApp::CanWeSwitchToWindowedMode() {
 // LINE 31:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x42EC], 0x280;
@@ -135,14 +135,14 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00432538
-int  CGameApp::CanWeSwitchToFullScreenMode() {
+int CGameApp::CanWeSwitchToFullScreenMode() {
 // LINE 41:
 	return 0x1;
 // LINE 45:
 }
 
 // FUNCTION: COPTER_D 0x00432553
-int  CGameApp::SwitchToWindowedMode() {
+int CGameApp::SwitchToWindowedMode() {
 	/*bp-0x4*/   long hResult;
 
 // LINE 58:
@@ -280,7 +280,7 @@ _Tf8:
 }
 
 // FUNCTION: COPTER_D 0x004326cb
-int  CGameApp::SwitchToFullScreenMode() {
+int CGameApp::SwitchToFullScreenMode() {
 	/*bp-0x4*/   long hResult;
 
 // LINE 113:
@@ -418,7 +418,7 @@ _Tf8:
 }
 
 // FUNCTION: COPTER_D 0x00432843
-int  CGameApp::ConvertMonitorToWindowedMode() {
+int CGameApp::ConvertMonitorToWindowedMode() {
 	/*bp-0x4*/   long hResult;
 
 // LINE 168:
@@ -434,7 +434,7 @@ int  CGameApp::ConvertMonitorToWindowedMode() {
 }
 
 // FUNCTION: COPTER_D 0x00432871
-int  CGameApp::ConvertMonitorToFullScreenMode() {
+int CGameApp::ConvertMonitorToFullScreenMode() {
 	/*bp-0x4*/   long hResult;
 
 // LINE 185:
@@ -459,7 +459,7 @@ int  CGameApp::ConvertMonitorToFullScreenMode() {
 }
 
 // FUNCTION: COPTER_D 0x004328bd
-int  CGameApp::ToggleScreenMode() {
+int CGameApp::ToggleScreenMode() {
 // LINE 199:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x30], 0;
@@ -484,7 +484,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00432900
-int  CGameApp::CreateDisplaySurfaces() {
+int CGameApp::CreateDisplaySurfaces() {
 	/*bp-0x4*/   long nWindowHeight;
 	/*bp-0x8*/   long nWindowWidth;
 	/*bp-0x18*/  /*packed*/ class MRect rectScreenWindow; // 0x10 bytes
@@ -647,7 +647,7 @@ _T1c2:
 }
 
 // FUNCTION: COPTER_D 0x00432aee
-int  CGameApp::DestroyDisplaySurfaces() {
+int CGameApp::DestroyDisplaySurfaces() {
 // LINE 247:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::DestroyDebugBuffer;
@@ -721,7 +721,7 @@ _Tcf:
 }
 
 // FUNCTION: COPTER_D 0x00432bcc
-int  CGameApp::CreateModeSurfaces() {
+int CGameApp::CreateModeSurfaces() {
 	/*bp-0x4*/   /*packed*/ class list<CopterGameMode>::iterator i;
 	/*bp-0x8*/   int32_t nCurrentMode;
 
@@ -823,7 +823,7 @@ _T107:
 }
 
 // FUNCTION: COPTER_D 0x00432ce2
-int  CGameApp::DestroyModeSurfaces() {
+int CGameApp::DestroyModeSurfaces() {
 	/*bp-0x4*/   /*packed*/ class list<CopterGameMode>::iterator i;
 	/*bp-0x8*/   int32_t nCurrentMode;
 
@@ -943,7 +943,7 @@ _T146:
 }
 
 // FUNCTION: COPTER_D 0x00432e37
-void  CGameApp::PaletteInitialize() {
+void CGameApp::PaletteInitialize() {
 // LINE 360:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
@@ -1173,7 +1173,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004330ea
-void  CGameApp::PaletteUninitialize() {
+void CGameApp::PaletteUninitialize() {
 // LINE 398:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;

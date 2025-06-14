@@ -5470,7 +5470,7 @@ long RadioButtonWindow::DoCursorMove(long __formal, long __formal) {
 }
 
 // FUNCTION: COPTER_D 0x004b0083
- ButtonGroup::ButtonGroup() {
+void ButtonGroup::ButtonGroup() {
 
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::GraphicWindow;
@@ -5669,7 +5669,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004b030d
- ButtonGroup::ButtonGroup(long lNewID, /*unpacked*/ class GraphicWindow *windowNewParent, /*unpacked*/ class GraphicWindow *gwMyNewOwner, int32_t bAddToParentList) {
+void ButtonGroup::ButtonGroup(long lNewID, /*unpacked*/ class GraphicWindow *windowNewParent, /*unpacked*/ class GraphicWindow *gwMyNewOwner, int32_t bAddToParentList) {
 
 	__asm        jmp    _T11;
 _T11:
@@ -5891,7 +5891,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004b05e2
-void  ButtonGroup::AddButton(/*packed*/ class RadioButtonWindow *buttonNew) {
+void ButtonGroup::AddButton(/*packed*/ class RadioButtonWindow *buttonNew) {
 // LINE 879:
 	__asm        mov    eax, buttonNew;
 	__asm        push   eax;
@@ -6124,7 +6124,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004b08b4
-void  ButtonGroup::RemoveButton(/*packed*/ class RadioButtonWindow *buttonToRemove) {
+void ButtonGroup::RemoveButton(/*packed*/ class RadioButtonWindow *buttonToRemove) {
 	/*bp-0x4*/   /*packed*/ class list<RadioButtonWindow *>::iterator iterator;
 
 // LINE 893:
@@ -6242,7 +6242,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004b09ed
-void  ButtonGroup::SetSelection(/*packed*/ class RadioButtonWindow *buttonToSelect) {
+void ButtonGroup::SetSelection(/*packed*/ class RadioButtonWindow *buttonToSelect) {
 	/*bp-0x4*/   /*packed*/ class list<RadioButtonWindow *>::iterator iterator;
 
 // LINE 920:
@@ -6378,7 +6378,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004b0b5b
-void  ButtonGroup::SetSelection(long lIDOfButtonToSelect) {
+void ButtonGroup::SetSelection(long lIDOfButtonToSelect) {
 	/*bp-0x4*/   /*packed*/ class list<RadioButtonWindow *>::iterator iterator;
 
 // LINE 950:
@@ -6518,7 +6518,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004b0cd4
-void  ButtonGroup::SetSelectionIndex(int32_t nIndexOfButtonToSelect) {
+void ButtonGroup::SetSelectionIndex(int32_t nIndexOfButtonToSelect) {
 	/*bp-0x4*/   int32_t i;
 	/*bp-0x8*/   /*packed*/ class list<RadioButtonWindow *>::iterator iterator;
 
@@ -6659,7 +6659,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004b0e4d
-int  ButtonGroup::GetSelection(/*packed*/ class RadioButtonWindow*& radioButtonWindow) {
+int ButtonGroup::GetSelection(/*packed*/ class RadioButtonWindow*& radioButtonWindow) {
 	/*bp-0x4*/   /*packed*/ class list<RadioButtonWindow *>::iterator iterator;
 
 // LINE 1012:
@@ -6747,7 +6747,7 @@ _Te6:
 }
 
 // FUNCTION: COPTER_D 0x004b0f41
-int  ButtonGroup::GetSelection(long& lCurrentSelection) {
+int ButtonGroup::GetSelection(long& lCurrentSelection) {
 	/*bp-0x4*/   /*packed*/ class RadioButtonWindow *tempRadioButtonWindow;
 
 // LINE 1035:
@@ -6766,7 +6766,7 @@ _T2a:
 }
 
 // FUNCTION: COPTER_D 0x004b0f79
-int  ButtonGroup::GetSelectionIndex() {
+int ButtonGroup::GetSelectionIndex() {
 	/*bp-0x4*/   int32_t i;
 	/*bp-0x8*/   /*packed*/ class list<RadioButtonWindow *>::iterator iterator;
 
@@ -6856,7 +6856,7 @@ _Tdf:
 }
 
 // FUNCTION: COPTER_D 0x004b1067
-int  ButtonGroup::IsButtonInGroup(/*packed*/ class RadioButtonWindow *buttonToFind) {
+int ButtonGroup::IsButtonInGroup(/*packed*/ class RadioButtonWindow *buttonToFind) {
 	/*bp-0x4*/   /*packed*/ class list<RadioButtonWindow *>::iterator i;
 
 // LINE 1069:

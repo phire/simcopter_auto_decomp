@@ -230,7 +230,7 @@ struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 
 // Contribution: 1:000baa30-000bb457 Module: 3, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004bba30
-unsigned long  CGameApp::FinishGame() {
+unsigned long CGameApp::FinishGame() {
 // LINE 50:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::PaletteUninitialize;
@@ -315,7 +315,7 @@ _Ta7:
 }
 
 // FUNCTION: COPTER_D 0x004bbb17
-int  CGameApp::BackgroundVRAppInit() {
+int CGameApp::BackgroundVRAppInit() {
 	/*bp-0x27c*/ /*unpacked*/ class SmackerBackBuffer tempHourglassVideoBuffer;
 	/*bp-0x280*/ unsigned long lFullStringIndex;
 	/*bp-0x288*/ /*packed*/ class basic_string<char> sCurrentInitializer; // 0x8 bytes

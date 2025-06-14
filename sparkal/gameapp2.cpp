@@ -463,7 +463,7 @@ _T3a:
 }
 
 // FUNCTION: COPTER_D 0x00461208
-void  CGameApp::GetPreferences() {
+void CGameApp::GetPreferences() {
 	/*bp-0x104*/ char szPath[260]; // 0x104 bytes
 	/*bp-0x108*/ char * chPrefData;
 
@@ -589,7 +589,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004613cb
-void  CGameApp::GetSoundPreferences() {
+void CGameApp::GetSoundPreferences() {
 	/*bp-0x10*/  /*packed*/ struct SoundPreferences tempSoundPreferences; // 0x10 bytes
 	/*bp-0x14*/  char * chPrefData;
 
@@ -662,7 +662,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00461494
-void  CGameApp::SetSoundPreferences(/*packed*/ struct SoundPreferences& newSoundPreferences) {
+void CGameApp::SetSoundPreferences(/*packed*/ struct SoundPreferences& newSoundPreferences) {
 // LINE 173:
 	glMasterVolume = newSoundPreferences.lMasterVolume;
 // LINE 175:
@@ -684,7 +684,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004614de
-void  CGameApp::SavePreferences() {
+void CGameApp::SavePreferences() {
 	/*bp-0x40*/  char szJoystickName[64]; // 0x40 bytes
 	/*bp-0x44*/  int32_t i;
 	/*bp-0x48*/  long lCurrentJoystickCount;
@@ -797,7 +797,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00461629
-unsigned long  CGameApp::TickGame() {
+unsigned long CGameApp::TickGame() {
 	/*bp-0x4*/   long lElapsedMilliSeconds;
 	// StaticLocal: 0x00599294
 	static long lFramesSinceLastSecond = 0;
@@ -994,7 +994,7 @@ _T26e:
 }
 
 // FUNCTION: COPTER_D 0x004618a3
-void  CGameApp::ComposeFrame() {
+void CGameApp::ComposeFrame() {
 	/*bp-0x14*/  int32_t nCurrentMode;
 
 	// Function registers exception cleanup function at 0x00461ea1
@@ -1427,7 +1427,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00461eb9
-void  CGameApp::ComposePlayFrame() {
+void CGameApp::ComposePlayFrame() {
 	// StaticLocal: 0x005992a0
 	static long lFrameCount = 17;
 	;
@@ -1920,7 +1920,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004624de
-void  CGameApp::DoRecurringTasks(long lMilliSecondsSinceLastCall) {
+void CGameApp::DoRecurringTasks(long lMilliSecondsSinceLastCall) {
 	/*bp-0x4*/   int32_t i;
 
 // LINE 487:
@@ -1976,7 +1976,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00462582
-int  CGameApp::EnterMode(int32_t nMode) {
+int CGameApp::EnterMode(int32_t nMode) {
 // LINE 503:
 	__asm        cmp    nMode, 0;
 	__asm        jne    _Tfe;
@@ -3022,7 +3022,7 @@ _T1078:
 }
 
 // FUNCTION: COPTER_D 0x00463608
-int  CGameApp::ExitMode(int32_t nMode) {
+int CGameApp::ExitMode(int32_t nMode) {
 // LINE 661:
 	__asm        cmp    nMode, 0;
 	__asm        jne    _T66;
@@ -3528,7 +3528,7 @@ _T5e3:
 }
 
 // FUNCTION: COPTER_D 0x00463bf9
-void  CGameApp::DestroyAllModes() {
+void CGameApp::DestroyAllModes() {
 	/*bp-0x4*/   /*packed*/ class list<CopterGameMode>::iterator i;
 	/*bp-0x8*/   int32_t nCurrentMode;
 
@@ -3693,7 +3693,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00463dcb
-void  CGameApp::ProcessCommand(int32_t nCommand) {
+void CGameApp::ProcessCommand(int32_t nCommand) {
 // LINE 791:
 	__asm        cmp    nCommand, 0x37;
 	__asm        jne    _T2b;
@@ -4253,7 +4253,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0046444d
-void  CGameApp::DoKeyDown(long lKey, char chModifiers) {
+void CGameApp::DoKeyDown(long lKey, char chModifiers) {
 	/*bp-0x4*/   int32_t nCommand;
 	/*bp-0x8*/   int32_t bPushCommand;
 
@@ -4648,7 +4648,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0046487f
-void  CGameApp::DoKeyUp(long lKey, char chModifiers) {
+void CGameApp::DoKeyUp(long lKey, char chModifiers) {
 // LINE 1050:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(chModifiers);
 	__asm        push   eax;
@@ -4839,7 +4839,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00464aa5
-void  CGameApp::DoCharacter(long lCharacter) {
+void CGameApp::DoCharacter(long lCharacter) {
 // LINE 1072:
 	__asm        mov    eax, lCharacter;
 	__asm        push   eax;
@@ -4854,7 +4854,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00464ad0
-void  CGameApp::DoCursorDown(int32_t nCursorX, int32_t nCursorY, int32_t nButton) {
+void CGameApp::DoCursorDown(int32_t nCursorX, int32_t nCursorY, int32_t nButton) {
 // LINE 1080:
 	__asm        mov    eax, nButton;
 	__asm        push   eax;
@@ -4873,7 +4873,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00464b03
-void  CGameApp::DoCursorUp(int32_t nCursorX, int32_t nCursorY, int32_t nButton) {
+void CGameApp::DoCursorUp(int32_t nCursorX, int32_t nCursorY, int32_t nButton) {
 // LINE 1089:
 	__asm        mov    eax, nButton;
 	__asm        push   eax;
@@ -4892,7 +4892,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00464b36
-void  CGameApp::DoCursorMove(int32_t nCursorX, int32_t nCursorY) {
+void CGameApp::DoCursorMove(int32_t nCursorX, int32_t nCursorY) {
 // LINE 1098:
 	__asm        mov    eax, nCursorY;
 	__asm        push   eax;
@@ -4909,7 +4909,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00464b65
-void  CGameApp::ClearCommands() {
+void CGameApp::ClearCommands() {
 // LINE 1110:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
@@ -5055,7 +5055,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00464d1a
-void  CGameApp::ProcessSystemCloseRequest() {
+void CGameApp::ProcessSystemCloseRequest() {
 // LINE 1129:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x18], 0;
@@ -5109,7 +5109,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00464db3
-int  CGameApp::CheckForWarpToCareerLevel() {
+int CGameApp::CheckForWarpToCareerLevel() {
 	/*bp-0x4*/   int32_t nNewLevel;
 
 // LINE 1147:
@@ -5137,7 +5137,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00464e02
-int  CGameApp::WarpToCareerLevel(int32_t nNewLevel) {
+int CGameApp::WarpToCareerLevel(int32_t nNewLevel) {
 // LINE 1164:
 	__asm        cmp    nNewLevel, 0;
 	__asm        jl     _T20;
@@ -5198,7 +5198,7 @@ _T6f:
 }
 
 // FUNCTION: COPTER_D 0x00464eb2
-int  CGameApp::GraduateUserToNextCareerLevel() {
+int CGameApp::GraduateUserToNextCareerLevel() {
 // LINE 1182:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
@@ -5308,7 +5308,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0046501e
-int  CGameApp::GraduateUserFromAllCareerLevels() {
+int CGameApp::GraduateUserFromAllCareerLevels() {
 // LINE 1207:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x4338];
@@ -5340,7 +5340,7 @@ _T54:
 }
 
 // FUNCTION: COPTER_D 0x00465081
-void  CGameApp::NotifyUserOfGraduation() {
+void CGameApp::NotifyUserOfGraduation() {
 	/*bp-0x4*/   int32_t nFullStringID;
 	/*bp-0x108*/ char szFullPath[260]; // 0x104 bytes
 	/*bp-0x188*/ char szString[128]; // 0x80 bytes
@@ -5625,7 +5625,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004654a4
-int  CGameApp::DoMessage(/*unpacked*/ class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
+int CGameApp::DoMessage(/*unpacked*/ class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 	/*bp-0x4*/   int32_t nCurrentGameMode;
 	/*bp-0x8*/   unsigned long nResult;
 
@@ -6511,7 +6511,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00465edb
-int  CGameApp::DoMainMenuMessage(/*unpacked*/ class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
+int CGameApp::DoMainMenuMessage(/*unpacked*/ class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 	/*bp-0x100*/ char szSplitPathExtension[256]; // 0x100 bytes
 	/*bp-0x104*/ char szSplitPathDrive[3];
 	/*bp-0x204*/ char szSplitPathFullDirectory[256]; // 0x100 bytes
@@ -6838,7 +6838,7 @@ _T40e:
 }
 
 // FUNCTION: COPTER_D 0x004662fa
-int  CGameApp::DoPlayMenuMessage(/*unpacked*/ class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
+int CGameApp::DoPlayMenuMessage(/*unpacked*/ class GraphicWindow *gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 	/*bp-0x4*/   int32_t nCurrentGameMode;
 	/*bp-0x8*/   unsigned long nResult;
 
@@ -7073,7 +7073,7 @@ _T2a5:
 }
 
 // FUNCTION: COPTER_D 0x004665ad
-int  CGameApp::StartVideoForCitySelection(long lCurrentCitySelection) {
+int CGameApp::StartVideoForCitySelection(long lCurrentCitySelection) {
 	/*bp-0x4*/   float fScaleFactor;
 	/*bp-0x108*/ char szFullCityVideoFilePath[260]; // 0x104 bytes
 	/*bp-0x208*/ char szFullCityVideoFileName[256]; // 0x100 bytes
@@ -7266,7 +7266,7 @@ _T2ac:
 }
 
 // FUNCTION: COPTER_D 0x004668ad
-void  CGameApp::ComposeCareerCityVideoFrame() {
+void CGameApp::ComposeCareerCityVideoFrame() {
 	/*bp-0x4*/   unsigned long nErrorCode;
 
 // LINE 1703:
@@ -7329,7 +7329,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00466968
-int  CGameApp::StartVideoForMainMenu() {
+int CGameApp::StartVideoForMainMenu() {
 	/*bp-0x104*/ char szMainMenuVideoPath[260]; // 0x104 bytes
 
 // LINE 1717:
@@ -7445,7 +7445,7 @@ _T16f:
 }
 
 // FUNCTION: COPTER_D 0x00466b32
-void  CGameApp::EndVideoForMainMenu() {
+void CGameApp::EndVideoForMainMenu() {
 // LINE 1738:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x6C], 0;
@@ -7479,7 +7479,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00466b94
-void  CGameApp::ComposeMainMenuVideoFrame() {
+void CGameApp::ComposeMainMenuVideoFrame() {
 	/*bp-0x4*/   unsigned long nErrorCode;
 
 // LINE 1752:

@@ -247,7 +247,7 @@ public:
 
 // Contribution: 1:0015fbf0-001614f4 Module: 189, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00560bf0
-class cCopterAnim *  cCopterBody::GetPrivateAnim(unsigned long animName) {
+class cCopterAnim * cCopterBody::GetPrivateAnim(unsigned long animName) {
 	/*bp-0x4*/   short count;
 
 // LINE 1943:
@@ -466,7 +466,7 @@ _T27a:
 }
 
 // FUNCTION: COPTER_D 0x00560e78
-void  cCopterBody::ActivateAllPartPointers(unsigned short activated) {
+void cCopterBody::ActivateAllPartPointers(unsigned short activated) {
 	/*bp-0x4*/   short count;
 
 // LINE 2062:
@@ -602,7 +602,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00561005
-class cCopterBody *  cCopterBody::GetCopterBody(unsigned char * name) {
+class cCopterBody * cCopterBody::GetCopterBody(unsigned char * name) {
 
 	__asm        mov    eax, name;
 	__asm        push   eax;
@@ -736,7 +736,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00561190
-struct cCopterBody::Part *  cCopterBody::GetPartByName(unsigned long partname) {
+struct cCopterBody::Part * cCopterBody::GetPartByName(unsigned long partname) {
 	/*bp-0x4*/   short count;
 	/*bp-0x8*/   /*unpacked*/ struct cCopterBody::Part *part;
 
@@ -816,7 +816,7 @@ _Te3:
 }
 
 // FUNCTION: COPTER_D 0x00561281
-void  cCopterBody::DrawSwitch(float phiOff, float psiOff, /*unpacked*/ struct cCopterBody::Part *part, short screenx, short screeny, float scale, short colorIndexShift) {
+void cCopterBody::DrawSwitch(float phiOff, float psiOff, /*unpacked*/ struct cCopterBody::Part *part, short screenx, short screeny, float scale, short colorIndexShift) {
 	/*bp-0xc*/   /*unpacked*/ struct Point3d sPt; // 0xc bytes
 	/*bp-0x10*/  short color;
 	/*bp-0x1c*/  /*unpacked*/ struct Point3d ePt; // 0xc bytes
@@ -1152,7 +1152,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00561611
-void  cCopterBody::Draw(float xOff, float yOff, /*unpacked*/ class cCopterAnim *privanim, short framenum, short screenx, short screeny, float scale, short nearMedFar, short colorIndexShift) {
+void cCopterBody::Draw(float xOff, float yOff, /*unpacked*/ class cCopterAnim *privanim, short framenum, short screenx, short screeny, float scale, short nearMedFar, short colorIndexShift) {
 	/*bp-0x4*/   float sinX;
 	/*bp-0x8*/   float sinY;
 	/*bp-0xc*/   short count;
@@ -1634,7 +1634,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00561b74
-void  cCopterBody::InstallArrayPointers(unsigned short expectondisk) {
+void cCopterBody::InstallArrayPointers(unsigned short expectondisk) {
 	/*bp-0x1c*/  unsigned char tmp[16]; // 0x10 bytes
 	/*bp-0x20*/  short numRealAnims;
 
@@ -2024,7 +2024,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x005620af
-void  cCopterBody::DestroyAll() {
+void cCopterBody::DestroyAll() {
 	/*bp-0x4*/   short count;
 	/*bp-0x8*/   void * __ptr32 h;
 

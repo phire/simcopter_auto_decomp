@@ -148,7 +148,7 @@ protected:
 
 // Contribution: 1:00094b40-000953a2 Module: 19, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00495b40
-void  CGameApp::GetFullRenderingWindowSize(int32_t * nWidth, int32_t * nHeight) {
+void CGameApp::GetFullRenderingWindowSize(int32_t * nWidth, int32_t * nHeight) {
 // LINE 68:
 	__asm        cmp    gameResolution, 0;
 	__asm        jne    _T30;
@@ -190,7 +190,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00495be3
-int  CGameApp::S3PreRender() {
+int CGameApp::S3PreRender() {
 	/*bp-0x10*/  /*packed*/ struct SparkalRect rectFill; // 0x10 bytes
 
 // LINE 93:
@@ -434,7 +434,7 @@ _T305:
 }
 
 // FUNCTION: COPTER_D 0x00495ef7
-void  CGameApp::S3PostRender() {
+void CGameApp::S3PostRender() {
 // LINE 198:
 	__asm        cmp    G_video_mode, 0x20;
 	__asm        jne    _T94;
@@ -508,7 +508,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00495fc4
-void  CGameApp::DrawCrosshairs(/*packed*/ class CBackBuffer *bufferToDrawTo) {
+void CGameApp::DrawCrosshairs(/*packed*/ class CBackBuffer *bufferToDrawTo) {
 	/*bp-0x4*/   char * pBufferCurrentPosition;
 	/*bp-0x8*/   int32_t nSurfaceStride;
 	/*bp-0xc*/   int32_t i;
@@ -605,7 +605,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004960c5
-void  CGameApp::S3ShowInfo() {
+void CGameApp::S3ShowInfo() {
 	/*bp-0x4*/   long nTextLeft;
 	/*bp-0x104*/ char szBuffer1[256]; // 0x100 bytes
 	/*bp-0x108*/ long nTextTop;
