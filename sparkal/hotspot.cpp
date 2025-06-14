@@ -3138,45 +3138,25 @@ _Tdd:
 _T14c:
 	__asm        jmp    _T151;
 _T151:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    eax, [eax];
-	__asm        sub    eax, nRadiusOfCircle;
-	__asm        mov    ecx, rectBounds;
-	__asm        mov    [ecx], eax;
+	rectBounds.left = (this->pointArray.start->x - nRadiusOfCircle);
 // LINE 227:
 	__asm        jmp    _T166;
 _T166:
 	__asm        jmp    _T16b;
 _T16b:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    eax, [eax+4];
-	__asm        sub    eax, nRadiusOfCircle;
-	__asm        mov    ecx, rectBounds;
-	__asm        mov    [ecx+4], eax;
+	rectBounds.top = (this->pointArray.start->y - nRadiusOfCircle);
 // LINE 228:
 	__asm        jmp    _T182;
 _T182:
 	__asm        jmp    _T187;
 _T187:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    eax, [eax];
-	__asm        add    eax, nRadiusOfCircle;
-	__asm        mov    ecx, rectBounds;
-	__asm        mov    [ecx+8], eax;
+	rectBounds.right = (this->pointArray.start->x + nRadiusOfCircle);
 // LINE 229:
 	__asm        jmp    _T19d;
 _T19d:
 	__asm        jmp    _T1a2;
 _T1a2:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    eax, [eax+4];
-	__asm        add    eax, nRadiusOfCircle;
-	__asm        mov    ecx, rectBounds;
-	__asm        mov    [ecx+0xC], eax;
+	rectBounds.bottom = (this->pointArray.start->y + nRadiusOfCircle);
 // LINE 230:
 	return;
 // LINE 233:

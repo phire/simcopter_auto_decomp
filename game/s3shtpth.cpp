@@ -355,12 +355,7 @@ _T1f8:
 	__asm        jmp    _T1f5;
 // LINE 115:
 _T223:
-	__asm        mov    eax, i;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        add    eax, eax;
-	__asm        add    eax, pRGV;
-	__asm        add    eax, 4;
-	__asm        mov    pEdge, eax;
+	pEdge = (((BinaryOp(add, i, BinaryOp(mul, i, Const(4))) + BinaryOp(add, i, BinaryOp(mul, i, Const(4)))) + pRGV) + 0x4);
 // LINE 116:
 	__asm        mov    eax, pEdge;
 	__asm        xor    ecx, ecx;
@@ -635,12 +630,7 @@ _T247:
 	__asm        jmp    _T244;
 // LINE 226:
 _T272:
-	__asm        mov    eax, i;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        add    eax, eax;
-	__asm        add    eax, pRGV;
-	__asm        add    eax, 4;
-	__asm        mov    pEdge, eax;
+	pEdge = (((BinaryOp(add, i, BinaryOp(mul, i, Const(4))) + BinaryOp(add, i, BinaryOp(mul, i, Const(4)))) + pRGV) + 0x4);
 // LINE 227:
 	__asm        mov    eax, pEdge;
 	__asm        xor    ecx, ecx;
@@ -860,9 +850,7 @@ _T83:
 	__asm        cmp    eax, parent;
 	__asm        jl     _T176;
 // LINE 293:
-	__asm        mov    eax, parent;
-	__asm        add    eax, parent;
-	__asm        mov    child, eax;
+	child = (parent + parent);
 // LINE 296:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, child;

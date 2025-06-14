@@ -110,9 +110,7 @@ _T2e:
 	__asm        mov    edx, this;
 	__asm        mov    [edx+ecx*4], eax;
 // LINE 40:
-	__asm        mov    eax, j;
-	__asm        sub    eax, k;
-	__asm        mov    k, eax;
+	k = (j - k);
 // LINE 41:
 	__asm        mov    eax, ii;
 	__asm        mov    ecx, this;

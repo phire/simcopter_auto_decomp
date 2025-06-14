@@ -49,10 +49,7 @@ _T8a:
 	return;
 // LINE 53:
 _T8f:
-	__asm        mov    eax, srch;
-	__asm        mov    eax, [eax];
-	__asm        add    eax, 4;
-	__asm        mov    srch, eax;
+	srch = (srch-> + 0x4);
 // LINE 54:
 	__asm        jmp    _T12;
 // LINE 55:

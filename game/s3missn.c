@@ -741,14 +741,7 @@ _T18:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    __RETURN;
 // LINE 440:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
-	__asm        add    eax, 0x38;
-	__asm        mov    md, eax;
+	md = (BinaryOp(add, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, i, Const(2))), Const(4))), Const(4))), Const(4)), Const(6320824)) + 0x38);
 // LINE 442:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x4C], 1;
@@ -1173,14 +1166,7 @@ _T1f:
 	__asm        test   reinterpret_cast<uint8_t>(S_mstatics.missions[0].flags)[eax*4], 1;
 	__asm        jne    _T65;
 // LINE 667:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
-	__asm        add    eax, 0x38;
-	__asm        mov    md, eax;
+	md = (BinaryOp(add, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, i, Const(2))), Const(4))), Const(4))), Const(4)), Const(6320824)) + 0x38);
 // LINE 668:
 	__asm        jmp    _T6a;
 // LINE 670:
@@ -2453,20 +2439,10 @@ __RETURN:
 	return 0x0;
 // LINE 1080:
 _T29:
-	__asm        mov    eax, mission_id;
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
-	__asm        add    eax, 0x38;
-	__asm        mov    md, eax;
+	md = (BinaryOp(add, BinaryOp(mul, BinaryOp(add, mission_id, BinaryOp(mul, BinaryOp(add, mission_id, BinaryOp(mul, BinaryOp(add, mission_id, BinaryOp(mul, mission_id, Const(2))), Const(4))), Const(4))), Const(4)), Const(6320824)) + 0x38);
 // LINE 1088:
-	__asm        mov    eax, md;
-	__asm        add    eax, 0x28;
-	__asm        jmp    __RETURN;
+	return (md + 0x28);
 // LINE 1089:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004fbbca
@@ -2487,14 +2463,7 @@ __RETURN:
 	return 0x0;
 // LINE 1107:
 _T29:
-	__asm        mov    eax, mission_id;
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
-	__asm        add    eax, 0x38;
-	__asm        mov    md, eax;
+	md = (BinaryOp(add, BinaryOp(mul, BinaryOp(add, mission_id, BinaryOp(mul, BinaryOp(add, mission_id, BinaryOp(mul, BinaryOp(add, mission_id, BinaryOp(mul, mission_id, Const(2))), Const(4))), Const(4))), Const(4)), Const(6320824)) + 0x38);
 // LINE 1115:
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+0x30], 0xFFFFFFFF;
@@ -2503,11 +2472,8 @@ _T29:
 	return 0x0;
 // LINE 1118:
 _T58:
-	__asm        mov    eax, md;
-	__asm        add    eax, 0x30;
-	__asm        jmp    __RETURN;
+	return (md + 0x30);
 // LINE 1119:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004fbc32
@@ -2528,14 +2494,7 @@ __RETURN:
 	return 0x0;
 // LINE 1138:
 _T29:
-	__asm        mov    eax, mission_id;
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
-	__asm        add    eax, 0x38;
-	__asm        mov    md, eax;
+	md = (BinaryOp(add, BinaryOp(mul, BinaryOp(add, mission_id, BinaryOp(mul, BinaryOp(add, mission_id, BinaryOp(mul, BinaryOp(add, mission_id, BinaryOp(mul, mission_id, Const(2))), Const(4))), Const(4))), Const(4)), Const(6320824)) + 0x38);
 // LINE 1146:
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+0x38], 0xFFFFFFFF;
@@ -2544,11 +2503,8 @@ _T29:
 	return 0x0;
 // LINE 1149:
 _T58:
-	__asm        mov    eax, md;
-	__asm        add    eax, 0x38;
-	__asm        jmp    __RETURN;
+	return (md + 0x38);
 // LINE 1150:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004fbc9a
@@ -2560,11 +2516,8 @@ __RETURN:
 	return 0x0;
 // LINE 1165:
 _T1a:
-	__asm        mov    eax, S_mstatics.curr_mission;
-	__asm        add    eax, 0x28;
-	__asm        jmp    __RETURN;
+	return (S_mstatics.curr_mission + 0x28);
 // LINE 1166:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004fbcc6
@@ -2583,11 +2536,8 @@ _T1a:
 	return 0x0;
 // LINE 1185:
 _T30:
-	__asm        mov    eax, S_mstatics.curr_mission;
-	__asm        add    eax, 0x30;
-	__asm        jmp    __RETURN;
+	return (S_mstatics.curr_mission + 0x30);
 // LINE 1186:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004fbd08
@@ -2606,11 +2556,8 @@ _T1a:
 	return 0x0;
 // LINE 1205:
 _T30:
-	__asm        mov    eax, S_mstatics.curr_mission;
-	__asm        add    eax, 0x38;
-	__asm        jmp    __RETURN;
+	return (S_mstatics.curr_mission + 0x38);
 // LINE 1206:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004fbd4a
@@ -2632,14 +2579,7 @@ void S3MissionUpdate(/*packed*/ struct _MISSION_PARMS *mp) {
 	return;
 // LINE 1226:
 _T28:
-	__asm        mov    eax, mission_id;
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
-	__asm        add    eax, 0x38;
-	__asm        mov    md, eax;
+	md = (BinaryOp(add, BinaryOp(mul, BinaryOp(add, mission_id, BinaryOp(mul, BinaryOp(add, mission_id, BinaryOp(mul, BinaryOp(add, mission_id, BinaryOp(mul, mission_id, Const(2))), Const(4))), Const(4))), Const(4)), Const(6320824)) + 0x38);
 // LINE 1229:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x4C], 1;
@@ -2999,25 +2939,14 @@ void S3MissionEnd(long mission_id) {
 	/*bp-0x8*/   /*packed*/ struct MISSION_DATA *md;
 
 // LINE 1400:
-	__asm        mov    eax, mission_id;
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
-	__asm        add    eax, 0x38;
-	__asm        mov    md, eax;
+	md = (BinaryOp(add, BinaryOp(mul, BinaryOp(add, mission_id, BinaryOp(mul, BinaryOp(add, mission_id, BinaryOp(mul, BinaryOp(add, mission_id, BinaryOp(mul, mission_id, Const(2))), Const(4))), Const(4))), Const(4)), Const(6320824)) + 0x38);
 // LINE 1402:
 	__asm        mov    eax, md;
 	__asm        push   eax;
 	__asm        call   S3MissionScoreEnd;
 	__asm        add    esp, 4;
 // LINE 1405:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x4C];
-	__asm        and    eax, 0xFFFFFFFE;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x4C], eax;
+	md->flags = (md->flags & -0x2);
 // LINE 1407:
 	S_mstatics.num_active_missions--;
 // LINE 1410:
@@ -3035,14 +2964,7 @@ _T6d:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    __RETURN;
 // LINE 1415:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
-	__asm        add    eax, 0x38;
-	__asm        mov    md, eax;
+	md = (BinaryOp(add, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, i, Const(2))), Const(4))), Const(4))), Const(4)), Const(6320824)) + 0x38);
 // LINE 1416:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x4C], 1;
@@ -3658,14 +3580,7 @@ _T45:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    _T96;
 // LINE 1608:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
-	__asm        add    eax, 0x38;
-	__asm        mov    md, eax;
+	md = (BinaryOp(add, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, i, Const(2))), Const(4))), Const(4))), Const(4)), Const(6320824)) + 0x38);
 // LINE 1609:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x4C], 1;
@@ -3698,14 +3613,7 @@ _Ta5:
 	__asm        cmp    eax, i;
 	__asm        jle    __RETURN;
 // LINE 1618:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
-	__asm        add    eax, 0x38;
-	__asm        mov    md, eax;
+	md = (BinaryOp(add, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, i, Const(2))), Const(4))), Const(4))), Const(4)), Const(6320824)) + 0x38);
 // LINE 1619:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x4C], 1;
@@ -3755,14 +3663,7 @@ _T45:
 	__asm        cmp    i, 0;
 	__asm        jl     _T96;
 // LINE 1643:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
-	__asm        add    eax, 0x38;
-	__asm        mov    md, eax;
+	md = (BinaryOp(add, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, i, Const(2))), Const(4))), Const(4))), Const(4)), Const(6320824)) + 0x38);
 // LINE 1644:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x4C], 1;
@@ -3795,14 +3696,7 @@ _Ta5:
 	__asm        cmp    eax, i;
 	__asm        jge    __RETURN;
 // LINE 1653:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
-	__asm        add    eax, 0x38;
-	__asm        mov    md, eax;
+	md = (BinaryOp(add, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, i, Const(2))), Const(4))), Const(4))), Const(4)), Const(6320824)) + 0x38);
 // LINE 1654:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x4C], 1;
@@ -3840,14 +3734,7 @@ int32_t S3MissionIsType(long key, long mission_type) {
 	return 0x0;
 // LINE 1679:
 _T29:
-	__asm        mov    eax, mission_id;
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
-	__asm        add    eax, 0x38;
-	__asm        mov    md, eax;
+	md = (BinaryOp(add, BinaryOp(mul, BinaryOp(add, mission_id, BinaryOp(mul, BinaryOp(add, mission_id, BinaryOp(mul, BinaryOp(add, mission_id, BinaryOp(mul, mission_id, Const(2))), Const(4))), Const(4))), Const(4)), Const(6320824)) + 0x38);
 // LINE 1682:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x4C], 1;
@@ -3942,14 +3829,7 @@ void S3MissionCancel(long mission_id) {
 	/*bp-0x4*/   /*packed*/ struct MISSION_DATA *md;
 
 // LINE 1844:
-	__asm        mov    eax, mission_id;
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
-	__asm        add    eax, 0x38;
-	__asm        mov    md, eax;
+	md = (BinaryOp(add, BinaryOp(mul, BinaryOp(add, mission_id, BinaryOp(mul, BinaryOp(add, mission_id, BinaryOp(mul, BinaryOp(add, mission_id, BinaryOp(mul, mission_id, Const(2))), Const(4))), Const(4))), Const(4)), Const(6320824)) + 0x38);
 // LINE 1847:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x4C], 1;
@@ -3970,20 +3850,12 @@ _T44:
 	__asm        call   AutoMissionCancel;
 	__asm        add    esp, 4;
 // LINE 1855:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x4C];
-	__asm        and    eax, 0xFFFFFFFE;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x4C], eax;
+	md->flags = (md->flags & -0x2);
 // LINE 1856:
 	__asm        jmp    _T92;
 // LINE 1858:
 _T67:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x4C];
-	__asm        and    eax, 0xFFFFFFFE;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x4C], eax;
+	md->flags = (md->flags & -0x2);
 // LINE 1859:
 	__asm        jmp    _T92;
 // LINE 1860:
@@ -4046,14 +3918,7 @@ _T18:
 	__asm        test   reinterpret_cast<uint8_t>(S_mstatics.missions[0].flags)[eax*4], 1;
 	__asm        jne    _T5e;
 // LINE 1902:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
-	__asm        add    eax, 0x38;
-	__asm        mov    md, eax;
+	md = (BinaryOp(add, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, i, Const(2))), Const(4))), Const(4))), Const(4)), Const(6320824)) + 0x38);
 // LINE 1903:
 	__asm        jmp    _T63;
 // LINE 1905:
@@ -4395,15 +4260,7 @@ _T52:
 	__asm        cmp    dword ptr [eax], 0xFFFFFFFF;
 	__asm        je     _T9c;
 // LINE 2031:
-	__asm        mov    eax, mission_id;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
-	__asm        add    eax, 0x38;
-	__asm        mov    md, eax;
+	md = (BinaryOp(add, BinaryOp(mul, BinaryOp(add, mission_id[0], BinaryOp(mul, BinaryOp(add, mission_id[0], BinaryOp(mul, BinaryOp(add, mission_id[0], BinaryOp(mul, mission_id[0], Const(2))), Const(4))), Const(4))), Const(4)), Const(6320824)) + 0x38);
 // LINE 2033:
 	__asm        mov    eax, md;
 	__asm        cmp    dword ptr [eax+0x54], 2;
@@ -5183,10 +5040,7 @@ _T2b0:
 	__asm        cmp    [eax+0x40], ecx;
 	__asm        jle    _T325;
 // LINE 2306:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x40];
-	__asm        sub    eax, S_mission_riot_time;
-	__asm        mov    timetmp, eax;
+	timetmp = (md->timer - S_mission_riot_time);
 // LINE 2309:
 	__asm        mov    ecx, 0x3C;
 	__asm        mov    eax, timetmp;
@@ -5376,14 +5230,7 @@ _T2c:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    _T7f;
 // LINE 2446:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
-	__asm        add    eax, 0x38;
-	__asm        mov    md, eax;
+	md = (BinaryOp(add, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, i, Const(2))), Const(4))), Const(4))), Const(4)), Const(6320824)) + 0x38);
 // LINE 2448:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x4C], 1;
@@ -5464,14 +5311,7 @@ _T52:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    _Ta3;
 // LINE 2503:
-	__asm        mov    eax, i;
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, S_mstatics.crime_ctr[eax*4];
-	__asm        add    eax, 0x38;
-	__asm        mov    md, eax;
+	md = (BinaryOp(add, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, i, Const(2))), Const(4))), Const(4))), Const(4)), Const(6320824)) + 0x38);
 // LINE 2504:
 	__asm        mov    eax, md;
 	__asm        test   byte ptr [eax+0x4C], 1;

@@ -1770,9 +1770,7 @@ _Tb1:
 // LINE 359:
 	__asm        jmp    _Tc5;
 _Tc5:
-	__asm        mov    eax, i.node;
-	__asm        add    eax, 8;
-	__asm        jmp    __RETURN;
+	return (i.node + 0x8);
 // LINE 360:
 _Td0:
 	__asm        jmp    _T37;
@@ -1780,7 +1778,6 @@ _Td0:
 _Td5:
 	return 0x0;
 // LINE 362:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0047cbc3

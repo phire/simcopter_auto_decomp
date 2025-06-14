@@ -1691,10 +1691,7 @@ int32_t AutomobileClass::PlacePerson(int32_t personType, int32_t personAction) {
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 750:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        add    eax, 0x400000;
-	__asm        mov    maxRadius, eax;
+	maxRadius = (this->autoDynomitor.radius + 0x400000);
 // LINE 756:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1C];
@@ -2403,11 +2400,7 @@ _T776:
 	__asm        cmp    [eax+0x86], ecx;
 	__asm        jg     _T7c0;
 // LINE 1011:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xEA];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x86];
-	__asm        add    itterationDist, eax;
+	itterationDist += (this->currDist - this->goal.distance);
 // LINE 1012:
 	this->currDist = 0x0;
 // LINE 1014:
@@ -2462,9 +2455,7 @@ _T53:
 // LINE 1059:
 // Block start:
 	/*bp-0x8*/   /*packed*/ struct _DYOBJ_INST **dyptrptr;
-	__asm        mov    eax, pCell;
-	__asm        add    eax, 0x10;
-	__asm        mov    dyptrptr, eax;
+	dyptrptr = (pCell + 0x10);
 // LINE 1061:
 _T66:
 	__asm        mov    eax, dyptrptr;
@@ -2541,10 +2532,7 @@ _T53:
 	/*bp-0xc*/   int32_t z;
 	this->autoDynomitor.next = pCell->dyptr;
 // LINE 1092:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0xC;
-	__asm        mov    ecx, pCell;
-	__asm        mov    [ecx+0x10], eax;
+	pCell->dyptr = (this + 0xc);
 // LINE 1096:
 	__asm        mov    eax, pCell;
 	__asm        movsx  eax, word ptr [eax+2];
@@ -3461,10 +3449,7 @@ _T68a:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+8];
 // LINE 1509:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0xA2;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xF2], eax;
+	this->pDirVector = (this + 0xa2);
 // LINE 1510:
 	__asm        mov    dword ptr [ebp-0xBC], 1;
 	__asm        jmp    _T6e9;
@@ -6055,12 +6040,7 @@ _Tbb:
 	__asm        mov    [ecx+0x86], eax;
 // LINE 2544:
 _Tf5:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x86];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0xEA];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xEA], eax;
+	this->currDist = (this->goal.distance - this->currDist);
 // LINE 2545:
 	return;
 }
@@ -7063,18 +7043,12 @@ _T84:
 	__asm        cmp    ydiff, eax;
 	__asm        jge    _Ta0;
 // LINE 2998:
-	__asm        mov    eax, xdiff;
-	__asm        add    eax, eax;
-	__asm        add    eax, ydiff;
-	__asm        mov    dist, eax;
+	dist = ((xdiff + xdiff) + ydiff);
 // LINE 3000:
 	__asm        jmp    _Tab;
 // LINE 3002:
 _Ta0:
-	__asm        mov    eax, ydiff;
-	__asm        add    eax, eax;
-	__asm        add    eax, xdiff;
-	__asm        mov    dist, eax;
+	dist = ((ydiff + ydiff) + xdiff);
 // LINE 3006:
 _Tab:
 	__asm        mov    eax, G_ViewSize;
@@ -9540,23 +9514,11 @@ _T7dc:
 _T7fb:
 	nextFineLocation.y += 0x1f0000;
 // LINE 4002:
-	__asm        mov    eax, nextFineLocation.x;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x24];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xA2], eax;
+	this->directionVector.x = (nextFineLocation.x - this->autoDynomitor.loc.x);
 // LINE 4003:
-	__asm        mov    eax, nextFineLocation.y;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x28];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xA6], eax;
+	this->directionVector.y = (nextFineLocation.y - this->autoDynomitor.loc.y);
 // LINE 4004:
-	__asm        mov    eax, nextFineLocation.z;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x2C];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xAA], eax;
+	this->directionVector.z = (nextFineLocation.z - this->autoDynomitor.loc.z);
 // LINE 4005:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0xA2;
@@ -11121,10 +11083,7 @@ _T1d:
 	__asm        mov    ecx, 0x10;
 	__asm        rep movsd;
 // LINE 4711:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0xA2;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xF2], eax;
+	this->pDirVector = (this + 0xa2);
 // LINE 4714:
 	__asm        mov    eax, sd;
 	__asm        xor    ecx, ecx;
@@ -11712,13 +11671,9 @@ _T80:
 // LINE 4949:
 	color = finfo.Bitmap;
 // LINE 4950:
-	__asm        mov    eax, color;
-	__asm        and    eax, 0xFFFFFFF0;
-	__asm        mov    base, eax;
+	base = (color & -0x10);
 // LINE 4951:
-	__asm        mov    eax, color;
-	__asm        and    eax, 0xF;
-	__asm        mov    index, eax;
+	index = (color & 0xf);
 // LINE 4955:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+4];

@@ -996,20 +996,11 @@ _T83:
 	return;
 // LINE 767:
 _T88:
-	__asm        mov    eax, ViewState.world_pos.x;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x70];
-	__asm        mov    vec.x, eax;
+	vec.x = (ViewState.world_pos.x - this->dyObj.loc.x);
 // LINE 768:
-	__asm        mov    eax, ViewState.world_pos.y;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x74];
-	__asm        mov    vec.y, eax;
+	vec.y = (ViewState.world_pos.y - this->dyObj.loc.y);
 // LINE 769:
-	__asm        mov    eax, ViewState.world_pos.z;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x78];
-	__asm        mov    vec.z, eax;
+	vec.z = (ViewState.world_pos.z - this->dyObj.loc.z);
 // LINE 770:
 	__asm        lea    eax, vec.x;
 	__asm        push   eax;
@@ -1144,20 +1135,11 @@ _T204:
 	return;
 // LINE 826:
 _T209:
-	__asm        mov    eax, ViewState.world_pos.x;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x70];
-	__asm        mov    vec.x, eax;
+	vec.x = (ViewState.world_pos.x - this->dyObj.loc.x);
 // LINE 827:
-	__asm        mov    eax, ViewState.world_pos.y;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x74];
-	__asm        mov    vec.y, eax;
+	vec.y = (ViewState.world_pos.y - this->dyObj.loc.y);
 // LINE 828:
-	__asm        mov    eax, ViewState.world_pos.z;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x78];
-	__asm        mov    vec.z, eax;
+	vec.z = (ViewState.world_pos.z - this->dyObj.loc.z);
 // LINE 829:
 	__asm        lea    eax, vec.x;
 	__asm        push   eax;
@@ -1441,18 +1423,12 @@ _T5d:
 	__asm        cmp    deltaY, eax;
 	__asm        jge    _Tac;
 // LINE 1201:
-	__asm        mov    eax, deltaX;
-	__asm        add    eax, eax;
-	__asm        add    eax, deltaY;
-	__asm        mov    dist, eax;
+	dist = ((deltaX + deltaX) + deltaY);
 // LINE 1202:
 	__asm        jmp    _Tb7;
 // LINE 1203:
 _Tac:
-	__asm        mov    eax, deltaY;
-	__asm        add    eax, eax;
-	__asm        add    eax, deltaX;
-	__asm        mov    dist, eax;
+	dist = ((deltaY + deltaY) + deltaX);
 // LINE 1206:
 _Tb7:
 	__asm        cmp    dist, 0x14;
@@ -1602,15 +1578,9 @@ int32_t PlaneClass::IsPlaneOutOfCameraRange() {
 	/*bp-0x8*/   int32_t deltaY;
 
 // LINE 1281:
-	__asm        mov    eax, CameraCell.x;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x20];
-	__asm        mov    deltaX, eax;
+	deltaX = (CameraCell.x - this->currentLocation.x);
 // LINE 1282:
-	__asm        mov    eax, CameraCell.y;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x24];
-	__asm        mov    deltaY, eax;
+	deltaY = (CameraCell.y - this->currentLocation.y);
 // LINE 1287:
 _T28:
 	__asm        cmp    deltaX, 0x80;
@@ -2762,9 +2732,7 @@ _T90:
 // LINE 1836:
 // Block start:
 	/*bp-0x8*/   /*packed*/ struct _DYOBJ_INST **dyptrptr;
-	__asm        mov    eax, cellPointer;
-	__asm        add    eax, 0x10;
-	__asm        mov    dyptrptr, eax;
+	dyptrptr = (cellPointer + 0x10);
 // LINE 1838:
 _Ta3:
 	__asm        mov    eax, dyptrptr;
@@ -2854,10 +2822,7 @@ _T93:
 _T98:
 	this->dyObj.next = cellPointer->dyptr;
 // LINE 1883:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x58;
-	__asm        mov    ecx, cellPointer;
-	__asm        mov    [ecx+0x10], eax;
+	cellPointer->dyptr = (this + 0x58);
 // LINE 1884:
 	return;
 }
@@ -2939,10 +2904,7 @@ _T91:
 	__asm        jmp    _Tfa;
 // LINE 1920:
 _Tec:
-	__asm        mov    eax, alt;
-	__asm        add    eax, 0x1E0000;
-	__asm        mov    ecx, this;
-	__asm        add    [ecx+0x74], eax;
+	this->dyObj.loc.y += (alt + 0x1e0000);
 // LINE 1923:
 _Tfa:
 	return;

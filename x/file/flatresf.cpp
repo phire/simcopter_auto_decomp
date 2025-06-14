@@ -1529,16 +1529,9 @@ _T6f:
 	__asm        jmp    _T67;
 // LINE 697:
 _Ta5:
-	__asm        mov    eax, typeList;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0xC];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x10], eax;
+	this-><ResMap+0x10:4> = (typeList - this-><ResMap+0x0c:4>);
 // LINE 700:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10];
-	__asm        add    eax, mapStart;
-	__asm        mov    resList, eax;
+	resList = (this-><ResMap+0x10:4> + mapStart);
 // LINE 701:
 	__asm        mov    resCnt, 0;
 	__asm        jmp    _Td3;
@@ -1562,11 +1555,7 @@ _Td3:
 	__asm        jmp    _Tcb;
 // LINE 721:
 _Tfe:
-	__asm        mov    eax, resList;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0xC];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x14], eax;
+	this-><ResMap+0x14:4> = (resList - this-><ResMap+0x0c:4>);
 // LINE 722:
 	return;
 
@@ -1580,17 +1569,9 @@ void ResMap::~ResMap() {
 	/*bp-0xc*/   /*unpacked*/ struct ResMap::Entry *srch;
 
 // LINE 729:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0xC];
-	__asm        mov    srch, eax;
+	srch = (this-><ResMap+0x10:4> + this-><ResMap+0x0c:4>);
 // LINE 730:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0xC];
-	__asm        mov    last, eax;
+	last = (this-><ResMap+0x14:4> + this-><ResMap+0x0c:4>);
 // LINE 732:
 _T2a:
 	__asm        mov    eax, srch;
@@ -2281,17 +2262,9 @@ struct ResMap::Entry * ResMap::FindEntry(void * __ptr32 res) {
 // LINE 935:
 	found = 0x0;
 // LINE 936:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0xC];
-	__asm        mov    srch, eax;
+	srch = (this-><ResMap+0x10:4> + this-><ResMap+0x0c:4>);
 // LINE 937:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0xC];
-	__asm        mov    last, eax;
+	last = (this-><ResMap+0x14:4> + this-><ResMap+0x0c:4>);
 // LINE 938:
 _T31:
 	__asm        mov    eax, srch;
@@ -2443,11 +2416,7 @@ _T53:
 	__asm        sub    eax, 2;
 	__asm        mov    entryList, eax;
 // LINE 990:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0xC];
-	__asm        mov    namePtr, eax;
+	namePtr = (this-><ResMap+0x14:4> + this-><ResMap+0x0c:4>);
 // LINE 991:
 	__asm        mov    eax, typeList;
 	__asm        movsx  eax, word ptr [eax+4];
@@ -2574,11 +2543,7 @@ void ResMap::GetName(/*unpacked*/ struct ResMap::Entry *entry, unsigned char * n
 // LINE 1033:
 	name[0] = 0x0;
 // LINE 1035:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0xC];
-	__asm        mov    namePtr, eax;
+	namePtr = (this-><ResMap+0x14:4> + this-><ResMap+0x0c:4>);
 // LINE 1037:
 	__asm        mov    eax, entry;
 	__asm        movsx  eax, word ptr [eax+2];

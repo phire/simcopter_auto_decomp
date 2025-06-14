@@ -758,19 +758,10 @@ __RETURN:
 // FUNCTION: COPTER_D 0x00535b46
 int32_t AmbulanceClass::IsThisAHospital(unsigned short tileType) {
 // LINE 258:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(tileType);
-	__asm        and    eax, 0xFFFF;
-	__asm        cmp    eax, 0xD1;
-	__asm        jne    _T23;
-
-	__asm        mov    eax, 1;
-	__asm        jmp    _T25;
 _T23:
-	__asm        xor    eax, eax;
 _T25:
-	__asm        jmp    __RETURN;
+	return ((reinterpret_cast<uint32_t>(tileType) & 0xffff) != 0xd1);
 // LINE 259:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00535b75
@@ -998,20 +989,11 @@ _T1ff:
 	__asm        jmp    _T263;
 // LINE 355:
 _T204:
-	__asm        mov    eax, ViewState.world_pos.x;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x24];
-	__asm        mov    vec.x, eax;
+	vec.x = (ViewState.world_pos.x - this->autoDynomitor.loc.x);
 // LINE 356:
-	__asm        mov    eax, ViewState.world_pos.y;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x28];
-	__asm        mov    vec.y, eax;
+	vec.y = (ViewState.world_pos.y - this->autoDynomitor.loc.y);
 // LINE 357:
-	__asm        mov    eax, ViewState.world_pos.z;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x2C];
-	__asm        mov    vec.z, eax;
+	vec.z = (ViewState.world_pos.z - this->autoDynomitor.loc.z);
 // LINE 358:
 	__asm        lea    eax, vec.x;
 	__asm        push   eax;

@@ -320,13 +320,9 @@ _T1a5:
 // LINE 145:
 	rectFill.top = qwindow.WindowY;
 // LINE 146:
-	__asm        mov    eax, qwindow.WindowWide;
-	__asm        add    eax, qwindow.WindowX;
-	__asm        mov    rectFill.right, eax;
+	rectFill.right = (qwindow.WindowWide + qwindow.WindowX);
 // LINE 147:
-	__asm        mov    eax, qwindow.WindowY;
-	__asm        add    eax, qwindow.WindowHigh;
-	__asm        mov    rectFill.bottom, eax;
+	rectFill.bottom = (qwindow.WindowY + qwindow.WindowHigh);
 // LINE 150:
 	__asm        lea    eax, rectFill.left;
 	__asm        push   eax;
@@ -377,13 +373,9 @@ _T267:
 // LINE 163:
 	rectFill.top = swindow.WindowY;
 // LINE 164:
-	__asm        mov    eax, swindow.WindowWide;
-	__asm        add    eax, swindow.WindowX;
-	__asm        mov    rectFill.right, eax;
+	rectFill.right = (swindow.WindowWide + swindow.WindowX);
 // LINE 165:
-	__asm        mov    eax, swindow.WindowY;
-	__asm        add    eax, swindow.WindowHigh;
-	__asm        mov    rectFill.bottom, eax;
+	rectFill.bottom = (swindow.WindowY + swindow.WindowHigh);
 // LINE 169:
 	__asm        lea    eax, rectFill.left;
 	__asm        push   eax;

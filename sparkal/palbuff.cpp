@@ -553,13 +553,9 @@ _T66:
 	__asm        add    eax, eax;
 	__asm        mov    rectFill.top, eax;
 // LINE 141:
-	__asm        mov    eax, rectFill.left;
-	__asm        add    eax, 0xA;
-	__asm        mov    rectFill.right, eax;
+	rectFill.right = (rectFill.left + 0xa);
 // LINE 142:
-	__asm        mov    eax, rectFill.top;
-	__asm        add    eax, 0xA;
-	__asm        mov    rectFill.bottom, eax;
+	rectFill.bottom = (rectFill.top + 0xa);
 // LINE 143:
 	__asm        lea    eax, rectFill.left;
 	__asm        push   eax;
@@ -570,9 +566,7 @@ _T66:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x44];
 // LINE 145:
-	__asm        mov    eax, rectFill.left;
-	__asm        add    eax, 0x5A;
-	__asm        mov    rectFill.right, eax;
+	rectFill.right = (rectFill.left + 0x5a);
 // LINE 146:
 	rectFill.left += 0xb;
 // LINE 148:

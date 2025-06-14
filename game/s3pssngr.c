@@ -145,13 +145,8 @@ __RETURN:
 // FUNCTION: COPTER_D 0x004f9cfa
 int32_t HeliPassengerCanAdd(/*packed*/ struct tagHeliPassengerData *heliPassengerData, /*packed*/ struct tagPassengerInfo *passenger) {
 // LINE 95:
-	__asm        mov    eax, heliPassengerData;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, heliPassengerData;
-	__asm        sub    eax, [ecx+8];
-	__asm        jmp    __RETURN;
+	return (heliPassengerData->lSeatsTotal - heliPassengerData->lSeatsUsed);
 // LINE 96:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004f9d16
@@ -373,13 +368,8 @@ _Tb8:
 // FUNCTION: COPTER_D 0x004f9f6e
 long HeliPassengerCountFreeSeats(/*packed*/ struct tagHeliPassengerData *heliPassengerData) {
 // LINE 204:
-	__asm        mov    eax, heliPassengerData;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, heliPassengerData;
-	__asm        sub    eax, [ecx+8];
-	__asm        jmp    __RETURN;
+	return (heliPassengerData->lSeatsTotal - heliPassengerData->lSeatsUsed);
 // LINE 205:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004f9f8a

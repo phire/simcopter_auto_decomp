@@ -3339,11 +3339,7 @@ _T8da:
 // LINE 433:
 	__asm        jmp    _T906;
 _T906:
-	__asm        mov    eax, sCheatCodeString;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    eax, [eax+4];
-	__asm        sub    eax, nTextPosition;
-	__asm        mov    nCharsToCopy, eax;
+	nCharsToCopy = (sCheatCodeString.reference-><basic_string_ref<char>+0x04:4> - nTextPosition);
 // LINE 434:
 	__asm        cmp    nCharsToCopy, 0;
 	__asm        jl     _T9cf;
@@ -3539,11 +3535,7 @@ _Tb8a:
 // LINE 456:
 	__asm        jmp    _Tbb0;
 _Tbb0:
-	__asm        mov    eax, sCheatCodeString;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    eax, [eax+4];
-	__asm        sub    eax, nTextPosition;
-	__asm        mov    nCharsToCopy, eax;
+	nCharsToCopy = (sCheatCodeString.reference-><basic_string_ref<char>+0x04:4> - nTextPosition);
 // LINE 457:
 	__asm        cmp    nCharsToCopy, 0;
 	__asm        jl     _Tc80;

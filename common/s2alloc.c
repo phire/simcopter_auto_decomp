@@ -128,10 +128,7 @@ _T59:
 // LINE 248:
 	hdr->next = 0x0;
 // LINE 249:
-	__asm        mov    eax, size;
-	__asm        add    eax, block;
-	__asm        mov    ecx, hdr;
-	__asm        mov    [ecx+0xC], eax;
+	hdr->end = (size + block);
 // LINE 251:
 	__asm        mov    eax, size;
 	__asm        add    eax, 0x10;
@@ -216,10 +213,7 @@ char * S2Alloc(int32_t index, int32_t size) {
 	__asm        mov    eax, [eax+4];
 	__asm        mov    hdr, eax;
 // LINE 340:
-	__asm        mov    eax, size;
-	__asm        add    eax, 3;
-	__asm        and    eax, 0xFFFFFFFC;
-	__asm        mov    size, eax;
+	size = ((size + 0x3) & -0x4);
 // LINE 342:
 	ptr = hdr->free;
 // LINE 343:
@@ -428,11 +422,7 @@ _T2e:
 	__asm        neg    eax;
 	__asm        sub    G_alloc_curr, eax;
 // LINE 502:
-	__asm        mov    eax, hdr;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    ecx, hdr;
-	__asm        sub    eax, [ecx+4];
-	__asm        add    G_alloc_free, eax;
+	G_alloc_free += (hdr->end - hdr->block);
 // LINE 503:
 	G_alloc_curr -= 0x10;
 // LINE 504:
@@ -503,9 +493,7 @@ _T2a:
 	__asm        test   retaddr, 0xFFFF;
 	__asm        je     _T49;
 // LINE 763:
-	__asm        mov    eax, retaddr;
-	__asm        and    eax, 0xFFFF0000;
-	__asm        mov    retaddr, eax;
+	retaddr = (retaddr & 0xffff0000);
 // LINE 764:
 	retaddr += 0x10000;
 // LINE 767:

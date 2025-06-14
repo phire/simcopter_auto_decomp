@@ -1673,9 +1673,7 @@ _T45:
 _T4c:
 	this->bFileEndWritten = 0x0;
 // LINE 681:
-	__asm        mov    eax, lSizeOfMIFFRecordData;
-	__asm        add    eax, 8;
-	__asm        mov    lAmountOfDataToWrite, eax;
+	lAmountOfDataToWrite = (lSizeOfMIFFRecordData + 0x8);
 // LINE 682:
 	miffRecordToWrite->lRecordLength = lAmountOfDataToWrite;
 // LINE 685:
@@ -1712,9 +1710,7 @@ long MIFF::WriteDataRecord(long lRecordType, char * ptrData, long lDataLength) {
 	/*bp-0x8*/   long lReturnValue;
 
 // LINE 704:
-	__asm        mov    eax, lDataLength;
-	__asm        add    eax, 8;
-	__asm        mov    lRecordLength, eax;
+	lRecordLength = (lDataLength + 0x8);
 // LINE 707:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;

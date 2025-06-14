@@ -2135,17 +2135,11 @@ _T53:
 // LINE 1023:
 	__asm        jmp    _T64;
 _T64:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        add    eax, DestLeft;
-	__asm        mov    rectFill.right, eax;
+	rectFill.right = (this->bLoopVideo + DestLeft);
 // LINE 1024:
 	__asm        jmp    _T75;
 _T75:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        add    eax, DestTop;
-	__asm        mov    rectFill.bottom, eax;
+	rectFill.bottom = (this->bLoopVideo + DestTop);
 // LINE 1025:
 	__asm        lea    eax, rectFill.left;
 	__asm        push   eax;
@@ -2883,29 +2877,17 @@ _T98:
 	__asm        test   eax, eax;
 	__asm        je     _T210;
 // LINE 1250:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x38];
-	__asm        mov    eax, [eax+0x374];
-	__asm        add    eax, DestLeft;
-	__asm        mov    nLastRectx, eax;
+	nLastRectx = (this->smk->LastRectx + DestLeft);
 // LINE 1251:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x38];
-	__asm        mov    eax, [eax+0x378];
-	__asm        add    eax, DestTop;
-	__asm        mov    nLastRecty, eax;
+	nLastRecty = (this->smk->LastRecty + DestTop);
 // LINE 1252:
 	nLastRectw = this->smk->LastRectw;
 // LINE 1253:
 	nLastRecth = this->smk->LastRecth;
 // LINE 1254:
-	__asm        mov    eax, nLastRectw;
-	__asm        add    eax, nLastRectx;
-	__asm        mov    nLastRectx2, eax;
+	nLastRectx2 = (nLastRectw + nLastRectx);
 // LINE 1255:
-	__asm        mov    eax, nLastRecth;
-	__asm        add    eax, nLastRecty;
-	__asm        mov    nLastRecty2, eax;
+	nLastRecty2 = (nLastRecth + nLastRecty);
 // LINE 1259:
 	__asm        mov    eax, nLastRectx;
 	__asm        cmp    SrcLeft, eax;
@@ -2936,9 +2918,7 @@ _T135:
 	__asm        jmp    _T160;
 // LINE 1269:
 _T157:
-	__asm        mov    eax, SrcRight;
-	__asm        sub    eax, nLastRectx;
-	__asm        mov    nLastRectw, eax;
+	nLastRectw = (SrcRight - nLastRectx);
 // LINE 1271:
 _T160:
 	__asm        mov    eax, nLastRecty;
@@ -2970,9 +2950,7 @@ _T188:
 	__asm        jmp    _T1b3;
 // LINE 1281:
 _T1aa:
-	__asm        mov    eax, SrcBottom;
-	__asm        sub    eax, nLastRecty;
-	__asm        mov    nLastRecth, eax;
+	nLastRecth = (SrcBottom - nLastRecty);
 // LINE 1286:
 _T1b3:
 	__asm        mov    eax, nLastRecty;

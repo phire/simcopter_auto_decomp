@@ -1317,10 +1317,7 @@ _T239:
 // LINE 346:
 	biData = this->mpBits;
 // LINE 347:
-	__asm        mov    eax, biHeader.biWidth;
-	__asm        add    eax, 3;
-	__asm        and    eax, 0xFFFFFFFC;
-	__asm        mov    biHeader.biWidth, eax;
+	biHeader.biWidth = ((biHeader.biWidth + 0x3) & -0x4);
 // LINE 348:
 	__asm        mov    eax, biHeader.biHeight;
 	__asm        dec    eax;
@@ -2235,15 +2232,9 @@ _Ta2:
 // LINE 705:
 	destRect.top = DestTop;
 // LINE 706:
-	__asm        mov    eax, SrcRight;
-	__asm        sub    eax, SrcLeft;
-	__asm        add    eax, DestLeft;
-	__asm        mov    destRect.right, eax;
+	destRect.right = ((SrcRight - SrcLeft) + DestLeft);
 // LINE 707:
-	__asm        mov    eax, SrcBottom;
-	__asm        sub    eax, SrcTop;
-	__asm        add    eax, DestTop;
-	__asm        mov    destRect.bottom, eax;
+	destRect.bottom = ((SrcBottom - SrcTop) + DestTop);
 // LINE 710:
 	__asm        jmp    _Tf7;
 _Tf7:
@@ -3061,9 +3052,7 @@ _Tec:
 	__asm        jmp    _Tfa;
 // LINE 1200:
 _Tf1:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x1C;
-	__asm        mov    rectToUse, eax;
+	rectToUse = (this + 0x1c);
 // LINE 1206:
 _Tfa:
 	__asm        mov    eax, this;
@@ -3660,19 +3649,11 @@ _T146:
 	__asm        inc    eax;
 	__asm        mov    numpixels, eax;
 // LINE 1514:
-	__asm        mov    eax, deltay;
-	__asm        add    eax, eax;
-	__asm        sub    eax, deltax;
-	__asm        mov    d, eax;
+	d = ((deltay + deltay) - deltax);
 // LINE 1515:
-	__asm        mov    eax, deltay;
-	__asm        add    eax, eax;
-	__asm        mov    dinc1, eax;
+	dinc1 = (deltay + deltay);
 // LINE 1516:
-	__asm        mov    eax, deltay;
-	__asm        sub    eax, deltax;
-	__asm        add    eax, eax;
-	__asm        mov    dinc2, eax;
+	dinc2 = ((deltay - deltax) + (deltay - deltax));
 // LINE 1517:
 	xinc1 = 0x1;
 // LINE 1518:
@@ -3685,19 +3666,11 @@ _T1ae:
 	__asm        inc    eax;
 	__asm        mov    numpixels, eax;
 // LINE 1523:
-	__asm        mov    eax, deltax;
-	__asm        add    eax, eax;
-	__asm        sub    eax, deltay;
-	__asm        mov    d, eax;
+	d = ((deltax + deltax) - deltay);
 // LINE 1524:
-	__asm        mov    eax, deltax;
-	__asm        add    eax, eax;
-	__asm        mov    dinc1, eax;
+	dinc1 = (deltax + deltax);
 // LINE 1525:
-	__asm        mov    eax, deltax;
-	__asm        sub    eax, deltay;
-	__asm        add    eax, eax;
-	__asm        mov    dinc2, eax;
+	dinc2 = ((deltax - deltay) + (deltax - deltay));
 // LINE 1526:
 	xinc1 = 0x0;
 // LINE 1527:
@@ -4300,19 +4273,11 @@ _T4b1:
 	__asm        inc    eax;
 	__asm        mov    numpixels, eax;
 // LINE 1687:
-	__asm        mov    eax, deltay;
-	__asm        add    eax, eax;
-	__asm        sub    eax, deltax;
-	__asm        mov    d, eax;
+	d = ((deltay + deltay) - deltax);
 // LINE 1688:
-	__asm        mov    eax, deltay;
-	__asm        add    eax, eax;
-	__asm        mov    dinc1, eax;
+	dinc1 = (deltay + deltay);
 // LINE 1689:
-	__asm        mov    eax, deltay;
-	__asm        sub    eax, deltax;
-	__asm        add    eax, eax;
-	__asm        mov    dinc2, eax;
+	dinc2 = ((deltay - deltax) + (deltay - deltax));
 // LINE 1690:
 	xinc1 = 0x1;
 // LINE 1691:
@@ -4325,19 +4290,11 @@ _T519:
 	__asm        inc    eax;
 	__asm        mov    numpixels, eax;
 // LINE 1696:
-	__asm        mov    eax, deltax;
-	__asm        add    eax, eax;
-	__asm        sub    eax, deltay;
-	__asm        mov    d, eax;
+	d = ((deltax + deltax) - deltay);
 // LINE 1697:
-	__asm        mov    eax, deltax;
-	__asm        add    eax, eax;
-	__asm        mov    dinc1, eax;
+	dinc1 = (deltax + deltax);
 // LINE 1698:
-	__asm        mov    eax, deltax;
-	__asm        sub    eax, deltay;
-	__asm        add    eax, eax;
-	__asm        mov    dinc2, eax;
+	dinc2 = ((deltax - deltay) + (deltax - deltay));
 // LINE 1699:
 	xinc1 = 0x0;
 // LINE 1700:
@@ -4440,13 +4397,9 @@ _T62d:
 	__asm        dec    eax;
 	__asm        mov    minSafeY, eax;
 // LINE 1763:
-	__asm        mov    eax, bufferWidth;
-	__asm        sub    eax, nThickness;
-	__asm        mov    maxSafeX, eax;
+	maxSafeX = (bufferWidth - nThickness);
 // LINE 1764:
-	__asm        mov    eax, bufferHeight;
-	__asm        sub    eax, nThickness;
-	__asm        mov    maxSafeY, eax;
+	maxSafeY = (bufferHeight - nThickness);
 // LINE 1768:
 _T64d:
 	__asm        cmp    numpixels, 0;

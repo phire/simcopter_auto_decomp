@@ -644,17 +644,11 @@ _T9b:
 	__asm        shl    eax, 0x10;
 	__asm        mov    floc.z, eax;
 // LINE 358:
-	__asm        mov    eax, ViewState.world_pos.x;
-	__asm        sub    eax, floc.x;
-	__asm        mov    loc.x, eax;
+	loc.x = (ViewState.world_pos.x - floc.x);
 // LINE 359:
-	__asm        mov    eax, ViewState.world_pos.y;
-	__asm        sub    eax, floc.y;
-	__asm        mov    loc.y, eax;
+	loc.y = (ViewState.world_pos.y - floc.y);
 // LINE 360:
-	__asm        mov    eax, ViewState.world_pos.z;
-	__asm        sub    eax, floc.z;
-	__asm        mov    loc.z, eax;
+	loc.z = (ViewState.world_pos.z - floc.z);
 // LINE 361:
 	__asm        mov    eax, fd;
 	__asm        add    eax, 0x8C;
@@ -852,20 +846,11 @@ _T2a7:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 447:
-	__asm        mov    eax, floc.x;
-	__asm        add    eax, loc.x;
-	__asm        mov    ecx, fd;
-	__asm        mov    [ecx+0x3C], eax;
+	fd->dyfire.loc.x = (floc.x + loc.x);
 // LINE 448:
-	__asm        mov    eax, floc.y;
-	__asm        add    eax, loc.y;
-	__asm        mov    ecx, fd;
-	__asm        mov    [ecx+0x40], eax;
+	fd->dyfire.loc.y = (floc.y + loc.y);
 // LINE 449:
-	__asm        mov    eax, floc.z;
-	__asm        add    eax, loc.z;
-	__asm        mov    ecx, fd;
-	__asm        mov    [ecx+0x44], eax;
+	fd->dyfire.loc.z = (floc.z + loc.z);
 // LINE 451:
 	__asm        jmp    _T508;
 // LINE 453:
@@ -880,9 +865,7 @@ _T350:
 	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 455:
-	__asm        mov    eax, cptr;
-	__asm        add    eax, 0xC;
-	__asm        mov    stptrptr, eax;
+	stptrptr = (cptr + 0xc);
 // LINE 456:
 _T383:
 	__asm        mov    eax, stptrptr;
@@ -905,11 +888,7 @@ _T3b2:
 	__asm        jmp    _T383;
 // LINE 466:
 _T3bf:
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax];
-	__asm        and    eax, 0xFFFFFFFE;
-	__asm        mov    ecx, fd;
-	__asm        mov    [ecx], eax;
+	fd->flags = (fd->flags & -0x2);
 // LINE 469:
 	fd->cfd->fire_count--;
 // LINE 470:
@@ -1389,9 +1368,7 @@ _T193:
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        jge    _T334;
 // LINE 715:
-	__asm        mov    eax, cptr;
-	__asm        add    eax, 0xC;
-	__asm        mov    stptrptr, eax;
+	stptrptr = (cptr + 0xc);
 // LINE 716:
 _T1b6:
 	__asm        mov    eax, stptrptr;
@@ -1414,11 +1391,7 @@ _T1e5:
 	__asm        jmp    _T1b6;
 // LINE 726:
 _T1f2:
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax];
-	__asm        and    eax, 0xFFFFFFFE;
-	__asm        mov    ecx, fd;
-	__asm        mov    [ecx], eax;
+	fd->flags = (fd->flags & -0x2);
 // LINE 729:
 	fd->cfd->fire_count--;
 // LINE 731:
@@ -2805,14 +2778,7 @@ _Tb2:
 	__asm        jmp    next_obj;
 // LINE 999:
 _Tb7:
-	__asm        mov    eax, loc;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, fd;
-	__asm        mov    ecx, [ecx+0x14];
-	__asm        mov    edx, fd;
-	__asm        add    ecx, [edx+8];
-	__asm        sub    eax, ecx;
-	__asm        mov    height, eax;
+	height = (loc->y - (fd->loc.y + fd->douse_points));
 // LINE 1001:
 	__asm        cmp    height, 0;
 	__asm        jne    _Tdf;

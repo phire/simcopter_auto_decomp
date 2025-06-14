@@ -310,10 +310,7 @@ _T8c:
 	__asm        mov    ecx, str;
 	__asm        mov    byte ptr [eax+ecx], 0x30;
 // LINE 125:
-	__asm        mov    eax, tenPower;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        add    eax, eax;
-	__asm        mov    tenPower, eax;
+	tenPower = (BinaryOp(add, tenPower, BinaryOp(mul, tenPower, Const(4))) + BinaryOp(add, tenPower, BinaryOp(mul, tenPower, Const(4))));
 // LINE 126:
 	__asm        jmp    _T56;
 // LINE 129:

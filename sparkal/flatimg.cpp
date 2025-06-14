@@ -308,25 +308,17 @@ unsigned long IFlatImage::StretchCompose(/*packed*/ class IFlatImage *pDestImage
 // LINE 115:
 	SrcTop = srcRect.top;
 // LINE 116:
-	__asm        mov    eax, srcRect.right;
-	__asm        sub    eax, srcRect.left;
-	__asm        mov    SrcWidth, eax;
+	SrcWidth = (srcRect.right - srcRect.left);
 // LINE 117:
-	__asm        mov    eax, srcRect.bottom;
-	__asm        sub    eax, srcRect.top;
-	__asm        mov    SrcHeight, eax;
+	SrcHeight = (srcRect.bottom - srcRect.top);
 // LINE 119:
 	DestLeft = destRect.left;
 // LINE 120:
 	DestTop = destRect.top;
 // LINE 121:
-	__asm        mov    eax, destRect.right;
-	__asm        sub    eax, destRect.left;
-	__asm        mov    DestWidth, eax;
+	DestWidth = (destRect.right - destRect.left);
 // LINE 122:
-	__asm        mov    eax, destRect.bottom;
-	__asm        sub    eax, destRect.top;
-	__asm        mov    DestHeight, eax;
+	DestHeight = (destRect.bottom - destRect.top);
 // LINE 126:
 	__asm        mov    eax, DestHeight;
 	__asm        push   eax;
@@ -421,9 +413,7 @@ _Ta0:
 	__asm        cmp    ClipLeft, eax;
 	__asm        jle    _Tca;
 // LINE 157:
-	__asm        mov    eax, ClipLeft;
-	__asm        sub    eax, DestLeft;
-	__asm        add    pSource, eax;
+	pSource += (ClipLeft - DestLeft);
 // LINE 158:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, ClipLeft;
@@ -600,13 +590,9 @@ _Ta9:
 	__asm        add    eax, Left;
 	__asm        mov    pBits, eax;
 // LINE 227:
-	__asm        mov    eax, Bottom;
-	__asm        sub    eax, Top;
-	__asm        mov    Height, eax;
+	Height = (Bottom - Top);
 // LINE 228:
-	__asm        mov    eax, Right;
-	__asm        sub    eax, Left;
-	__asm        mov    Width, eax;
+	Width = (Right - Left);
 // LINE 230:
 	__asm        cmp    Width, 0;
 	__asm        je     _T11a;
@@ -835,15 +821,9 @@ _T9d:
 	__asm        jmp    _Ta2;
 // LINE 283:
 _Ta2:
-	__asm        mov    eax, SrcRight;
-	__asm        sub    eax, SrcLeft;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+8], eax;
+	this-><CFlatImage+0x08> = (SrcRight - SrcLeft);
 // LINE 284:
-	__asm        mov    eax, SrcBottom;
-	__asm        sub    eax, SrcTop;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], eax;
+	this-><CFlatImage+0x0c> = (SrcBottom - SrcTop);
 // LINE 285:
 	__asm        jmp    _Tbf;
 _Tbf:
@@ -1191,12 +1171,7 @@ _T82:
 	__asm        jmp    _T87;
 // LINE 351:
 _T87:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        add    eax, 3;
-	__asm        and    eax, 0xFFFFFFFC;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x14], eax;
+	this-><CFlatImage+0x14> = ((this-><CFlatImage+0x08> + 0x3) & -0x4);
 // LINE 354:
 _T99:
 	__asm        mov    eax, this;

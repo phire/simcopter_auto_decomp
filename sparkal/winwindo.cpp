@@ -338,9 +338,7 @@ _T1f1:
 	__asm        jmp    _T20f;
 // LINE 134:
 _T206:
-	__asm        mov    eax, WindowRect.right;
-	__asm        sub    eax, WindowRect.left;
-	__asm        mov    Width, eax;
+	Width = (WindowRect.right - WindowRect.left);
 // LINE 135:
 _T20f:
 	__asm        cmp    Height, 0;
@@ -351,9 +349,7 @@ _T20f:
 	__asm        jmp    _T22d;
 // LINE 138:
 _T224:
-	__asm        mov    eax, WindowRect.bottom;
-	__asm        sub    eax, WindowRect.top;
-	__asm        mov    Height, eax;
+	Height = (WindowRect.bottom - WindowRect.top);
 // LINE 141:
 _T22d:
 	__asm        mov    eax, Width;
@@ -426,15 +422,9 @@ _T251:
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C382C];
 // LINE 157:
-	__asm        mov    eax, WindowRect.right;
-	__asm        sub    eax, WindowRect.left;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+8], eax;
+	this->mWidth = (WindowRect.right - WindowRect.left);
 // LINE 158:
-	__asm        mov    eax, WindowRect.bottom;
-	__asm        sub    eax, WindowRect.top;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->mHeight = (WindowRect.bottom - WindowRect.top);
 // LINE 165:
 	__asm        mov    LogPalette.Version, 0x300;
 	__asm        mov    LogPalette.NumberOfEntries, 0x100;
@@ -795,15 +785,9 @@ _T41:
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C382C];
 // LINE 284:
-	__asm        mov    eax, r.right;
-	__asm        sub    eax, r.left;
-	__asm        mov    ecx, pWidth;
-	__asm        mov    [ecx], eax;
+	pWidth[0] = (r.right - r.left);
 // LINE 285:
-	__asm        mov    eax, r.bottom;
-	__asm        sub    eax, r.top;
-	__asm        mov    ecx, pHeight;
-	__asm        mov    [ecx], eax;
+	pHeight[0] = (r.bottom - r.top);
 // LINE 287:
 // Block end:
 	__asm        jmp    _T9b;
@@ -990,9 +974,7 @@ _T3a:
 	__asm        jmp    _T99;
 // LINE 392:
 _T90:
-	__asm        mov    eax, Left;
-	__asm        sub    eax, 2;
-	__asm        mov    TextRect.left, eax;
+	TextRect.left = (Left - 0x2);
 // LINE 394:
 _T99:
 	__asm        test   reinterpret_cast<uint8_t>(Style), 2;
@@ -1010,20 +992,12 @@ _T99:
 	__asm        jmp    _Tc5;
 // LINE 397:
 _Tbc:
-	__asm        mov    eax, Top;
-	__asm        sub    eax, 2;
-	__asm        mov    TextRect.top, eax;
+	TextRect.top = (Top - 0x2);
 // LINE 399:
 _Tc5:
-	__asm        mov    eax, TextSize.cx;
-	__asm        add    eax, TextRect.left;
-	__asm        add    eax, 2;
-	__asm        mov    TextRect.right, eax;
+	TextRect.right = ((TextSize.cx + TextRect.left) + 0x2);
 // LINE 400:
-	__asm        mov    eax, TextRect.top;
-	__asm        add    eax, TextSize.cy;
-	__asm        add    eax, 2;
-	__asm        mov    TextRect.bottom, eax;
+	TextRect.bottom = ((TextRect.top + TextSize.cy) + 0x2);
 // LINE 404:
 	__asm        lea    eax, ClientHeight;
 	__asm        push   eax;
@@ -1042,18 +1016,13 @@ _Tc5:
 	__asm        dec    eax;
 	__asm        mov    TextRect.right, eax;
 // LINE 410:
-	__asm        mov    eax, TextRect.right;
-	__asm        sub    eax, TextSize.cx;
-	__asm        sub    eax, 4;
-	__asm        mov    TextRect.left, eax;
+	TextRect.left = ((TextRect.right - TextSize.cx) - 0x4);
 // LINE 412:
 _T10f:
 	__asm        cmp    TextRect.left, 0;
 	__asm        jge    _T129;
 // LINE 414:
-	__asm        mov    eax, TextSize.cx;
-	__asm        add    eax, 4;
-	__asm        mov    TextRect.right, eax;
+	TextRect.right = (TextSize.cx + 0x4);
 // LINE 415:
 	TextRect.left = 0x0;
 // LINE 417:
@@ -1061,9 +1030,7 @@ _T129:
 	__asm        cmp    TextRect.top, 0;
 	__asm        jge    _T143;
 // LINE 419:
-	__asm        mov    eax, TextSize.cy;
-	__asm        add    eax, 4;
-	__asm        mov    TextRect.bottom, eax;
+	TextRect.bottom = (TextSize.cy + 0x4);
 // LINE 420:
 	TextRect.top = 0x0;
 // LINE 422:
@@ -1076,10 +1043,7 @@ _T143:
 	__asm        dec    eax;
 	__asm        mov    TextRect.bottom, eax;
 // LINE 425:
-	__asm        mov    eax, TextRect.bottom;
-	__asm        sub    eax, TextSize.cy;
-	__asm        sub    eax, 4;
-	__asm        mov    TextRect.top, eax;
+	TextRect.top = ((TextRect.bottom - TextSize.cy) - 0x4);
 // LINE 430:
 _T162:
 	__asm        test   reinterpret_cast<uint8_t>(Style), 4;

@@ -341,10 +341,7 @@ void MDate::MDate(uint32_t day, uint32_t year) {
 	__asm        jmp    _T58;
 // LINE 98:
 _T4a:
-	__asm        mov    eax, day;
-	__asm        add    eax, 0x24DB1A;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->Julnum = (day + 0x24db1a);
 // LINE 99:
 _T58:
 	return;
@@ -863,10 +860,7 @@ void MDate::Mdy(uint32_t& m, uint32_t& D, uint32_t& y) {
 	/*bp-0x8*/   unsigned long j;
 
 // LINE 370:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        sub    eax, 0x1A431F;
-	__asm        mov    j, eax;
+	j = (this->Julnum - 0x1a431f);
 // LINE 371:
 	__asm        mov    eax, j;
 	__asm        mov    ecx, 0x23AB1;
@@ -928,17 +922,7 @@ void MDate::Mdy(uint32_t& m, uint32_t& D, uint32_t& y) {
 	__asm        mov    ecx, m;
 	__asm        mov    [ecx], eax;
 // LINE 378:
-	__asm        mov    eax, d;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        sub    eax, 3;
-	__asm        mov    ecx, m;
-	__asm        mov    ecx, [ecx];
-	__asm        mov    edx, ecx;
-	__asm        lea    ecx, [ecx+ecx*8];
-	__asm        lea    ecx, [edx+ecx*2];
-	__asm        lea    ecx, [edx+ecx*8];
-	__asm        sub    eax, ecx;
-	__asm        mov    d, eax;
+	d = ((BinaryOp(add, d, BinaryOp(mul, d, Const(4))) - 0x3) - BinaryOp(add, m., BinaryOp(mul, BinaryOp(add, m., BinaryOp(mul, BinaryOp(add, m., BinaryOp(mul, m., Const(8))), Const(2))), Const(8))));
 // LINE 379:
 	__asm        mov    eax, d;
 	__asm        mov    ecx, 5;
@@ -1103,9 +1087,7 @@ __RETURN:
 	__asm        cmp    thisDayOfWeek, eax;
 	__asm        jae    _T40;
 // LINE 459:
-	__asm        mov    eax, 7;
-	__asm        sub    eax, desiredDayOfWeek;
-	__asm        add    thisDayOfWeek, eax;
+	thisDayOfWeek += (0x7 - desiredDayOfWeek);
 // LINE 460:
 	__asm        jmp    _T4a;
 // LINE 461:

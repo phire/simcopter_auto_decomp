@@ -1571,10 +1571,7 @@ int32_t LogManager::ReadCurrentRecordFromMIFF(/*packed*/ class MIFF *miffReader)
 // LINE 189:
 	tempLogString = chStringBuffer[0];
 // LINE 190:
-	__asm        mov    eax, tempLogString;
-	__asm        add    eax, 0x10;
-	__asm        mov    ecx, tempLogString;
-	__asm        mov    [ecx+0xC], eax;
+	tempLogString->szLogString = (tempLogString + 0x10);
 // LINE 191:
 	__asm        push   0;
 	__asm        push   0;
@@ -3887,12 +3884,8 @@ _T70c:
 // FUNCTION: COPTER_D 0x004ee264
 long LogManager::GetStringIDFromLogEvent(const /*packed*/ struct tagLogMissionEvent *lME) {
 // LINE 416:
-	__asm        mov    eax, lME;
-	__asm        mov    eax, [eax];
-	__asm        add    eax, 0x214;
-	__asm        jmp    __RETURN;
+	return (lME->nType + 0x214);
 // LINE 434:
-__RETURN:
 }
 
 

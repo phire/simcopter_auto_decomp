@@ -1680,9 +1680,7 @@ _T71:
 	__asm        cmp    eax, parent;
 	__asm        jl     _T13e;
 // LINE 290:
-	__asm        mov    eax, parent;
-	__asm        add    eax, parent;
-	__asm        mov    child, eax;
+	child = (parent + parent);
 // LINE 293:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, child;
@@ -1928,9 +1926,7 @@ _T8e:
 	__asm        cmp    eax, parent;
 	__asm        jl     _T18f;
 // LINE 356:
-	__asm        mov    eax, parent;
-	__asm        add    eax, parent;
-	__asm        mov    child, eax;
+	child = (parent + parent);
 // LINE 359:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, child;

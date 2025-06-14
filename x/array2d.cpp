@@ -1131,11 +1131,7 @@ _T2b:
 	__asm        add    esp, 0x10;
 // LINE 337:
 _T71:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0xC];
-	__asm        mov    end, eax;
+	end = (this->fDataHandleSize + this->fDataPtr);
 // LINE 340:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x14];
@@ -2116,11 +2112,7 @@ void _cArray::SetXPointers() {
 	/*bp-0x4*/   short count;
 
 // LINE 517:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        add    eax, 8;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->fData = (this->fDataPtr + 0x8);
 // LINE 519:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14], 0;

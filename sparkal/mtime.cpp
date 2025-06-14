@@ -981,11 +981,7 @@ int32_t MTime::CompareTo(const /*unpacked*/ class MTime& t) {
 	/*bp-0x4*/   unsigned long diff;
 
 // LINE 254:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, t;
-	__asm        sub    eax, [ecx];
-	__asm        mov    diff, eax;
+	diff = (this-><MTime+0x00:4> - t.<MTime+0x00:4>);
 // LINE 255:
 	__asm        cmp    diff, 0;
 	__asm        jne    _T2a;

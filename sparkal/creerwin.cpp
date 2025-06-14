@@ -1275,10 +1275,7 @@ _T99b:
 // LINE 143:
 // Block end:
 _T9df:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xA8];
-	__asm        add    eax, 0xF0;
-	__asm        mov    lCityNameString, eax;
+	lCityNameString = (this->lCities[0] + 0xf0);
 // LINE 144:
 	__asm        push   0;
 	__asm        mov    eax, lCityNameString;

@@ -626,9 +626,7 @@ static void InsertNode(long r, /*packed*/ struct tLZSSBinaryForest *forest) {
 // LINE 221:
 	cmp = 0x1;
 // LINE 222:
-	__asm        mov    eax, r;
-	__asm        add    eax, forest;
-	__asm        mov    key, eax;
+	key = (r + forest);
 // LINE 223:
 	__asm        mov    eax, key;
 	__asm        xor    ecx, ecx;
@@ -742,11 +740,7 @@ _T15d:
 	__asm        cmp    [eax+0x103F], ecx;
 	__asm        jge    _T1b3;
 // LINE 247:
-	__asm        mov    eax, r;
-	__asm        sub    eax, p;
-	__asm        and    eax, 0xFFF;
-	__asm        mov    ecx, forest;
-	__asm        mov    [ecx+0x103B], eax;
+	forest->match_position = ((r - p) & 0xfff);
 // LINE 248:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, forest;
@@ -1082,11 +1076,7 @@ static short EncodeChar(long ch, /*packed*/ struct tACompModel *model, /*packed*
 	__asm        mov    eax, [ecx+eax*4+0x10];
 	__asm        mov    sym, eax;
 // LINE 361:
-	__asm        mov    eax, model;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, model;
-	__asm        sub    eax, [ecx];
-	__asm        mov    range, eax;
+	range = (model->high - model->low);
 // LINE 362:
 	__asm        mov    eax, sym;
 	__asm        mov    ecx, model;
@@ -1408,11 +1398,7 @@ static short EncodePosition(long position, /*packed*/ struct tACompModel *model,
 	/*bp-0x4*/   unsigned long range;
 
 // LINE 389:
-	__asm        mov    eax, model;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, model;
-	__asm        sub    eax, [ecx];
-	__asm        mov    range, eax;
+	range = (model->high - model->low);
 // LINE 390:
 	__asm        mov    eax, position;
 	__asm        mov    ecx, model;
@@ -1843,9 +1829,7 @@ _T119:
 	__asm        and    ebx, 0xFFF;
 	__asm        mov    i, ebx;
 // LINE 617:
-	__asm        mov    eax, c;
-	__asm        sub    eax, 0xFD;
-	__asm        mov    j, eax;
+	j = (c - 0xfd);
 // LINE 618:
 	__asm        mov    k, 0;
 	__asm        jmp    _T152;
@@ -1978,20 +1962,10 @@ _T6f:
 	source->getMask = 0x80;
 // LINE 187:
 _T79:
-	__asm        mov    eax, source;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, source;
-	__asm        test   [ecx+0xC], eax;
-	__asm        je     _T95;
-
-	__asm        mov    eax, 1;
-	__asm        jmp    _T97;
 _T95:
-	__asm        xor    eax, eax;
 _T97:
-	__asm        jmp    __RETURN;
+	return ((source->getMask & source->getBuffer) == 0x0);
 // LINE 188:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004d06a5
@@ -2001,11 +1975,7 @@ static long DecodeChar(/*packed*/ struct tACompModel *model, /*packed*/ struct t
 	/*bp-0xc*/   long ch;
 
 // LINE 467:
-	__asm        mov    eax, model;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, model;
-	__asm        sub    eax, [ecx];
-	__asm        mov    range, eax;
+	range = (model->high - model->low);
 // LINE 470:
 	__asm        mov    eax, model;
 	__asm        push   eax;
@@ -2166,11 +2136,7 @@ static long DecodePosition(/*packed*/ struct tACompModel *model, /*packed*/ stru
 	/*bp-0x8*/   unsigned long range;
 
 // LINE 498:
-	__asm        mov    eax, model;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, model;
-	__asm        sub    eax, [ecx];
-	__asm        mov    range, eax;
+	range = (model->high - model->low);
 // LINE 501:
 	__asm        mov    eax, model;
 	__asm        push   eax;

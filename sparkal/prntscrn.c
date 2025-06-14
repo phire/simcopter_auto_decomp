@@ -410,11 +410,8 @@ _T1b1:
 	__asm        cmp    eax, ecx;
 	__asm        jl     _T1b;
 // LINE 157:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(n);
-	__asm        and    eax, 0xFFFF;
-	__asm        jmp    __RETURN;
+	return (reinterpret_cast<uint32_t>(n) & 0xffff);
 // LINE 158:
-__RETURN:
 }
 
 

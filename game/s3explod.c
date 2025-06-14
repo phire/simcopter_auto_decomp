@@ -1048,10 +1048,7 @@ _Tff:
 	__asm        cmp    dword ptr [eax+0x18], 9;
 	__asm        jl     _T17e;
 // LINE 443:
-	__asm        mov    eax, ed;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        add    eax, 0x10;
-	__asm        mov    dyptrptr, eax;
+	dyptrptr = (ed->cptr + 0x10);
 // LINE 444:
 _T11e:
 	__asm        mov    eax, dyptrptr;
@@ -1074,11 +1071,7 @@ _T153:
 	__asm        jmp    _T11e;
 // LINE 454:
 _T160:
-	__asm        mov    eax, ed;
-	__asm        mov    eax, [eax];
-	__asm        and    eax, 0xFFFFFFFE;
-	__asm        mov    ecx, ed;
-	__asm        mov    [ecx], eax;
+	ed->flags = (ed->flags & -0x2);
 // LINE 455:
 	S_num_expls--;
 // LINE 456:
@@ -1167,10 +1160,7 @@ _T25a:
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        jg     _T2d7;
 // LINE 484:
-	__asm        mov    eax, sd;
-	__asm        mov    eax, [eax+0xC];
-	__asm        add    eax, 0x10;
-	__asm        mov    dyptrptr, eax;
+	dyptrptr = (sd->cptr + 0x10);
 // LINE 485:
 _T283:
 	__asm        mov    eax, dyptrptr;
@@ -1193,11 +1183,7 @@ _T2b2:
 	__asm        jmp    _T283;
 // LINE 495:
 _T2bf:
-	__asm        mov    eax, sd;
-	__asm        mov    eax, [eax];
-	__asm        and    eax, 0xFFFFFFFE;
-	__asm        mov    ecx, sd;
-	__asm        mov    [ecx], eax;
+	sd->flags = (sd->flags & -0x2);
 // LINE 496:
 	S_num_smoke--;
 // LINE 497:

@@ -4497,13 +4497,9 @@ _Tb44:
 	__asm        neg    eax;
 	__asm        mov    ptSpotLightPositionLocalCoordinates.y, eax;
 // LINE 744:
-	__asm        mov    eax, 0xA;
-	__asm        sub    eax, ptSpotLightPositionLocalCoordinates.x;
-	__asm        mov    ptSpotLightBackPositionCoordinates.x, eax;
+	ptSpotLightBackPositionCoordinates.x = (0xa - ptSpotLightPositionLocalCoordinates.x);
 // LINE 745:
-	__asm        mov    eax, 0xE;
-	__asm        sub    eax, ptSpotLightPositionLocalCoordinates.y;
-	__asm        mov    ptSpotLightBackPositionCoordinates.y, eax;
+	ptSpotLightBackPositionCoordinates.y = (0xe - ptSpotLightPositionLocalCoordinates.y);
 // LINE 746:
 	ptSpotLightPositionLocalCoordinates.x += 0xe1;
 // LINE 747:
@@ -5885,9 +5881,7 @@ _T27f:
 	__asm        jmp    _T284;
 // LINE 1035:
 _T284:
-	__asm        mov    eax, G_uheli;
-	__asm        add    eax, 0x1C4;
-	__asm        mov    tempHeliPassengerData, eax;
+	tempHeliPassengerData = (G_uheli + 0x1c4);
 // LINE 1036:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x94];
@@ -6036,9 +6030,7 @@ void PassengerWindow::DrawPassengers() {
 	/*bp-0x6c*/  /*packed*/ class MRect rectDestination; // 0x10 bytes
 
 // LINE 1064:
-	__asm        mov    eax, G_uheli;
-	__asm        add    eax, 0x1C4;
-	__asm        mov    tempHeliPassengerData, eax;
+	tempHeliPassengerData = (G_uheli + 0x1c4);
 // LINE 1067:
 	__asm        jmp    _T1e;
 _T1e:
@@ -6142,11 +6134,7 @@ _T11d:
 	__asm        cmp    eax, [ecx+0x2C];
 	__asm        jle    _T141;
 // LINE 1085:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        sub    eax, rectDestination.top;
-	__asm        add    eax, rectSource.top;
-	__asm        mov    rectSource.bottom, eax;
+	rectSource.bottom = ((this-><PassengerWindow+0x1c> - rectDestination.top) + rectSource.top);
 // LINE 1086:
 _T141:
 	__asm        mov    eax, i;
@@ -6253,11 +6241,7 @@ _T243:
 	__asm        cmp    eax, [ecx+0x2C];
 	__asm        jle    _T267;
 // LINE 1103:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        sub    eax, rectDestination.top;
-	__asm        add    eax, rectSource.top;
-	__asm        mov    rectSource.bottom, eax;
+	rectSource.bottom = ((this-><PassengerWindow+0x1c> - rectDestination.top) + rectSource.top);
 // LINE 1105:
 _T267:
 	__asm        mov    eax, rectSource.bottom;
@@ -6306,17 +6290,9 @@ void PassengerWindow::GetRectOfPassengerGraphic(int32_t face, int32_t nPassenger
 	__asm        mov    ecx, rectPosition;
 	__asm        mov    [ecx+4], eax;
 // LINE 1131:
-	__asm        mov    eax, rectPosition;
-	__asm        mov    eax, [eax];
-	__asm        add    eax, 0x1B;
-	__asm        mov    ecx, rectPosition;
-	__asm        mov    [ecx+8], eax;
+	rectPosition.right = (rectPosition.left + 0x1b);
 // LINE 1132:
-	__asm        mov    eax, rectPosition;
-	__asm        mov    eax, [eax+4];
-	__asm        add    eax, 0x21;
-	__asm        mov    ecx, rectPosition;
-	__asm        mov    [ecx+0xC], eax;
+	rectPosition.bottom = (rectPosition.top + 0x21);
 // LINE 1133:
 	return;
 }
@@ -6735,9 +6711,7 @@ _T11:
 	__asm        jmp    _T16;
 // LINE 1253:
 _T16:
-	__asm        mov    eax, G_uheli;
-	__asm        add    eax, 0x1C4;
-	__asm        mov    tempHeliPassengerData, eax;
+	tempHeliPassengerData = (G_uheli + 0x1c4);
 // LINE 1255:
 	__asm        mov    i, 0;
 	__asm        jmp    _T32;
@@ -6783,13 +6757,9 @@ _T58:
 	__asm        add    ecx, 6;
 	__asm        mov    rectCurrent.top, ecx;
 // LINE 1261:
-	__asm        mov    eax, rectCurrent.left;
-	__asm        add    eax, 0x1B;
-	__asm        mov    rectCurrent.right, eax;
+	rectCurrent.right = (rectCurrent.left + 0x1b);
 // LINE 1262:
-	__asm        mov    eax, rectCurrent.top;
-	__asm        add    eax, 0x21;
-	__asm        mov    rectCurrent.bottom, eax;
+	rectCurrent.bottom = (rectCurrent.top + 0x21);
 // LINE 1263:
 	__asm        mov    eax, nCursorX;
 	__asm        cmp    rectCurrent.left, eax;

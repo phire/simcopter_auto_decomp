@@ -717,20 +717,11 @@ int32_t MFont::CreateFontA() {
 	/*bp-0x10*/  unsigned long dwItalic;
 
 // LINE 128:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        and    eax, 2;
-	__asm        mov    dwItalic, eax;
+	dwItalic = (this->lAttributes & 0x2);
 // LINE 129:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        and    eax, 4;
-	__asm        mov    dwUnderline, eax;
+	dwUnderline = (this->lAttributes & 0x4);
 // LINE 130:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        and    eax, 8;
-	__asm        mov    dwStrikeOut, eax;
+	dwStrikeOut = (this->lAttributes & 0x8);
 // LINE 132:
 	__asm        jmp    _T35;
 _T35:

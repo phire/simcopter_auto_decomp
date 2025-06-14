@@ -2875,11 +2875,7 @@ void HangarWindow::ScrollHangarView(long lDistance) {
 // LINE 314:
 	__asm        jmp    _T11;
 _T11:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x18];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x10];
-	__asm        mov    lHangarWindowWidth, eax;
+	lHangarWindowWidth = (this-><HangarWindow+0x18> - this-><HangarWindow+0x10>);
 // LINE 315:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x11E];
@@ -2904,10 +2900,7 @@ _T62:
 	__asm        cmp    eax, [ecx+0x12A];
 	__asm        jge    _T86;
 // LINE 321:
-	__asm        mov    eax, lHangarGraphicWidth;
-	__asm        sub    eax, lHangarWindowWidth;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x12A], eax;
+	this->lWindowPositionInHangar = (lHangarGraphicWidth - lHangarWindowWidth);
 // LINE 322:
 _T86:
 	__asm        push   1;

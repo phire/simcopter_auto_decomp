@@ -3354,9 +3354,7 @@ void CDebugWindow::RecalcScrollRange() {
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C382C];
 // LINE 271:
-	__asm        mov    eax, winRect.bottom;
-	__asm        sub    eax, editRect.bottom;
-	__asm        mov    pane_height, eax;
+	pane_height = (winRect.bottom - editRect.bottom);
 // LINE 273:
 	__asm        mov    eax, pane_height;
 	__asm        cdq;
@@ -3365,10 +3363,7 @@ void CDebugWindow::RecalcScrollRange() {
 // LINE 275:
 	__asm        jmp    _T75;
 _T75:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x20];
-	__asm        sub    eax, pane_lines;
-	__asm        mov    range, eax;
+	range = (this->m_strings.length - pane_lines);
 // LINE 276:
 	__asm        cmp    range, 0;
 	__asm        jge    _T92;

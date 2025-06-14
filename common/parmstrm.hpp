@@ -1899,10 +1899,7 @@ _T3c:
 	__asm        jmp    _T1f;
 // LINE 358:
 _T54:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x12];
-	__asm        add    eax, retVal;
-	__asm        mov    retVal, eax;
+	retVal = (this->maxPos + retVal);
 // LINE 360:
 	return retVal;
 // LINE 361:

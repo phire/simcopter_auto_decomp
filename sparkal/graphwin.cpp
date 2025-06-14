@@ -6293,21 +6293,13 @@ void GraphicWindow::SetWidthAndHeight(int32_t nNewWidth, int32_t nNewHeight) {
 	__asm        cmp    nNewWidth, 0xFFFFFFFF;
 	__asm        je     _T25;
 // LINE 703:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10];
-	__asm        add    eax, nNewWidth;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x18], eax;
+	this-><GraphicWindow+0x18:4> = (this-><GraphicWindow+0x10:4> + nNewWidth);
 // LINE 704:
 _T25:
 	__asm        cmp    nNewHeight, 0xFFFFFFFF;
 	__asm        je     _T3e;
 // LINE 705:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        add    eax, nNewHeight;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x1C], eax;
+	this-><GraphicWindow+0x1c:4> = (this-><GraphicWindow+0x14:4> + nNewHeight);
 // LINE 706:
 _T3e:
 	__asm        mov    eax, this;
@@ -6468,19 +6460,9 @@ _T58:
 	__asm        cmp    [eax], ecx;
 	__asm        jge    _T87;
 // LINE 761:
-	__asm        mov    eax, rectTempCurrentWindow.left;
-	__asm        mov    ecx, rectToFit;
-	__asm        sub    eax, [ecx];
-	__asm        add    eax, 5;
-	__asm        mov    ecx, rectToFit;
-	__asm        add    [ecx], eax;
+	rectToFit.left += ((rectTempCurrentWindow.left - rectToFit.left) + 0x5);
 // LINE 762:
-	__asm        mov    eax, rectTempCurrentWindow.left;
-	__asm        mov    ecx, rectToFit;
-	__asm        sub    eax, [ecx];
-	__asm        add    eax, 5;
-	__asm        mov    ecx, rectToFit;
-	__asm        add    [ecx+8], eax;
+	rectToFit.right += ((rectTempCurrentWindow.left - rectToFit.left) + 0x5);
 // LINE 764:
 _T87:
 	__asm        mov    eax, rectToFit;
@@ -6488,19 +6470,9 @@ _T87:
 	__asm        cmp    [eax+4], ecx;
 	__asm        jge    _Tba;
 // LINE 765:
-	__asm        mov    eax, rectTempCurrentWindow.top;
-	__asm        mov    ecx, rectToFit;
-	__asm        sub    eax, [ecx+4];
-	__asm        add    eax, 5;
-	__asm        mov    ecx, rectToFit;
-	__asm        add    [ecx+4], eax;
+	rectToFit.top += ((rectTempCurrentWindow.top - rectToFit.top) + 0x5);
 // LINE 766:
-	__asm        mov    eax, rectTempCurrentWindow.top;
-	__asm        mov    ecx, rectToFit;
-	__asm        sub    eax, [ecx+4];
-	__asm        add    eax, 5;
-	__asm        mov    ecx, rectToFit;
-	__asm        add    [ecx+0xC], eax;
+	rectToFit.bottom += ((rectTempCurrentWindow.top - rectToFit.top) + 0x5);
 // LINE 768:
 _Tba:
 	__asm        mov    eax, rectToFit;
@@ -6508,19 +6480,9 @@ _Tba:
 	__asm        cmp    [eax+8], ecx;
 	__asm        jle    _Tec;
 // LINE 769:
-	__asm        mov    eax, rectTempCurrentWindow.right;
-	__asm        mov    ecx, rectToFit;
-	__asm        sub    eax, [ecx+8];
-	__asm        sub    eax, 5;
-	__asm        mov    ecx, rectToFit;
-	__asm        add    [ecx], eax;
+	rectToFit.left += ((rectTempCurrentWindow.right - rectToFit.right) - 0x5);
 // LINE 770:
-	__asm        mov    eax, rectTempCurrentWindow.right;
-	__asm        mov    ecx, rectToFit;
-	__asm        sub    eax, [ecx+8];
-	__asm        sub    eax, 5;
-	__asm        mov    ecx, rectToFit;
-	__asm        add    [ecx+8], eax;
+	rectToFit.right += ((rectTempCurrentWindow.right - rectToFit.right) - 0x5);
 // LINE 772:
 _Tec:
 	__asm        mov    eax, rectToFit;
@@ -6528,19 +6490,9 @@ _Tec:
 	__asm        cmp    [eax+0xC], ecx;
 	__asm        jle    _T11f;
 // LINE 773:
-	__asm        mov    eax, rectTempCurrentWindow.bottom;
-	__asm        mov    ecx, rectToFit;
-	__asm        sub    eax, [ecx+0xC];
-	__asm        sub    eax, 5;
-	__asm        mov    ecx, rectToFit;
-	__asm        add    [ecx+4], eax;
+	rectToFit.top += ((rectTempCurrentWindow.bottom - rectToFit.bottom) - 0x5);
 // LINE 774:
-	__asm        mov    eax, rectTempCurrentWindow.bottom;
-	__asm        mov    ecx, rectToFit;
-	__asm        sub    eax, [ecx+0xC];
-	__asm        sub    eax, 5;
-	__asm        mov    ecx, rectToFit;
-	__asm        add    [ecx+0xC], eax;
+	rectToFit.bottom += ((rectTempCurrentWindow.bottom - rectToFit.bottom) - 0x5);
 // LINE 777:
 _T11f:
 	__asm        jmp    _T124;

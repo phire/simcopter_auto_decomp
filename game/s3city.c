@@ -230,9 +230,7 @@ _Tfe:
 	__asm        jmp    _Tf8;
 // LINE 253:
 _T1be:
-	__asm        mov    eax, GridFaceSize;
-	__asm        add    eax, eax;
-	__asm        mov    S_XposZpos[0], eax;
+	S_XposZpos[0] = (GridFaceSize + GridFaceSize);
 // LINE 254:
 	S_XposZpos[1] = 0x0;
 // LINE 255:
@@ -240,21 +238,13 @@ _T1be:
 	__asm        shl    eax, 2;
 	__asm        mov    S_XposZpos[2], eax;
 // LINE 256:
-	__asm        mov    eax, GridFaceSize;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        add    eax, eax;
-	__asm        mov    S_XposZpos[3], eax;
+	S_XposZpos[3] = (BinaryOp(add, GridFaceSize, BinaryOp(mul, GridFaceSize, Const(2))) + BinaryOp(add, GridFaceSize, BinaryOp(mul, GridFaceSize, Const(2))));
 // LINE 258:
 	S_XnegZpos[0] = 0x0;
 // LINE 259:
-	__asm        mov    eax, GridFaceSize;
-	__asm        add    eax, eax;
-	__asm        mov    S_XnegZpos[1], eax;
+	S_XnegZpos[1] = (GridFaceSize + GridFaceSize);
 // LINE 260:
-	__asm        mov    eax, GridFaceSize;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        add    eax, eax;
-	__asm        mov    S_XnegZpos[2], eax;
+	S_XnegZpos[2] = (BinaryOp(add, GridFaceSize, BinaryOp(mul, GridFaceSize, Const(2))) + BinaryOp(add, GridFaceSize, BinaryOp(mul, GridFaceSize, Const(2))));
 // LINE 261:
 	__asm        mov    eax, GridFaceSize;
 	__asm        shl    eax, 2;
@@ -264,21 +254,13 @@ _T1be:
 	__asm        shl    eax, 2;
 	__asm        mov    S_XposZneg[0], eax;
 // LINE 264:
-	__asm        mov    eax, GridFaceSize;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        add    eax, eax;
-	__asm        mov    S_XposZneg[1], eax;
+	S_XposZneg[1] = (BinaryOp(add, GridFaceSize, BinaryOp(mul, GridFaceSize, Const(2))) + BinaryOp(add, GridFaceSize, BinaryOp(mul, GridFaceSize, Const(2))));
 // LINE 265:
-	__asm        mov    eax, GridFaceSize;
-	__asm        add    eax, eax;
-	__asm        mov    S_XposZneg[2], eax;
+	S_XposZneg[2] = (GridFaceSize + GridFaceSize);
 // LINE 266:
 	S_XposZneg[3] = 0x0;
 // LINE 268:
-	__asm        mov    eax, GridFaceSize;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        add    eax, eax;
-	__asm        mov    S_XnegZneg[0], eax;
+	S_XnegZneg[0] = (BinaryOp(add, GridFaceSize, BinaryOp(mul, GridFaceSize, Const(2))) + BinaryOp(add, GridFaceSize, BinaryOp(mul, GridFaceSize, Const(2))));
 // LINE 269:
 	__asm        mov    eax, GridFaceSize;
 	__asm        shl    eax, 2;
@@ -286,9 +268,7 @@ _T1be:
 // LINE 270:
 	S_XnegZneg[2] = 0x0;
 // LINE 271:
-	__asm        mov    eax, GridFaceSize;
-	__asm        add    eax, eax;
-	__asm        mov    S_XnegZneg[3], eax;
+	S_XnegZneg[3] = (GridFaceSize + GridFaceSize);
 // LINE 274:
 	S_local_lstart.x = 0xffc00000;
 // LINE 275:
@@ -522,9 +502,7 @@ _Te0:
 	__asm        call   0x004D682B;
 	__asm        add    esp, 4;
 // LINE 393:
-	__asm        mov    eax, i;
-	__asm        and    eax, 0xFF;
-	__asm        mov    G_ClearColor, eax;
+	G_ClearColor = (i & 0xff);
 // LINE 410:
 	G_fogbase = bhdr;
 // LINE 411:
@@ -536,18 +514,11 @@ _Te0:
 // LINE 412:
 	G_fog = G_fogbase;
 // LINE 414:
-	__asm        mov    eax, farZ;
-	__asm        sub    eax, fogpct;
-	__asm        mov    G_fogZ1, eax;
+	G_fogZ1 = (farZ - fogpct);
 // LINE 415:
-	__asm        mov    eax, farZ;
-	__asm        add    eax, 0x10000;
-	__asm        sub    eax, G_fogZ1;
-	__asm        mov    G_deltafogZ, eax;
+	G_deltafogZ = ((farZ + 0x10000) - G_fogZ1);
 // LINE 416:
-	__asm        mov    eax, G_fogZ1;
-	__asm        sub    eax, fogpct;
-	__asm        mov    G_plotglob, eax;
+	G_plotglob = (G_fogZ1 - fogpct);
 // LINE 417:
 	__asm        cmp    G_plotglob, 0x2580000;
 	__asm        jge    __RETURN;
@@ -7804,10 +7775,7 @@ _T13c:
 	__asm        jmp    _Te5;
 // LINE 2991:
 _T141:
-	__asm        mov    eax, curr_cell;
-	__asm        sub    eax, 8;
-	__asm        mov    ecx, cell_last;
-	__asm        mov    [ecx], eax;
+	cell_last-> = (curr_cell - 0x8);
 // LINE 2992:
 	return;
 // LINE 2995:
@@ -7917,10 +7885,7 @@ _T275:
 	__asm        jmp    _T21c;
 // LINE 3039:
 _T27a:
-	__asm        mov    eax, curr_cell;
-	__asm        sub    eax, 8;
-	__asm        mov    ecx, cell_last;
-	__asm        mov    [ecx], eax;
+	cell_last-> = (curr_cell - 0x8);
 // LINE 3040:
 	return;
 // LINE 3046:
@@ -8331,10 +8296,7 @@ _T79f:
 	__asm        jmp    _T501;
 // LINE 3190:
 _T7a4:
-	__asm        mov    eax, curr_cell;
-	__asm        sub    eax, 8;
-	__asm        mov    ecx, cell_last;
-	__asm        mov    [ecx], eax;
+	cell_last-> = (curr_cell - 0x8);
 // LINE 3191:
 }
 
@@ -8743,9 +8705,7 @@ _T48d:
 	__asm        jmp    _Ta7;
 // LINE 3352:
 _T492:
-	__asm        mov    eax, fovcell;
-	__asm        sub    eax, 8;
-	__asm        mov    S_fovlast, eax;
+	S_fovlast = (fovcell - 0x8);
 // LINE 3353:
 }
 
@@ -9154,9 +9114,7 @@ _T48d:
 	__asm        jmp    _Ta5;
 // LINE 3494:
 _T492:
-	__asm        mov    eax, fovcell;
-	__asm        sub    eax, 8;
-	__asm        mov    S_fovlast, eax;
+	S_fovlast = (fovcell - 0x8);
 // LINE 3495:
 }
 
@@ -9518,11 +9476,7 @@ _T388:
 _T41c:
 	curr_fovcell-> = fovcell;
 // LINE 3627:
-	__asm        movsx  eax, reinterpret_cast<uint16_t>(x_dir);
-	__asm        movsx  ecx, reinterpret_cast<uint16_t>(cellpos);
-	__asm        add    eax, ecx;
-	__asm        mov    ecx, edge;
-	__asm        mov    [ecx], eax;
+	edge->x = (reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(x_dir)) + reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(cellpos)));
 // LINE 3628:
 _T433:
 	__asm        mov    eax, edge;
@@ -9894,11 +9848,7 @@ _T36a:
 _T3fe:
 	curr_fovcell-> = fovcell;
 // LINE 3735:
-	__asm        movsx  eax, reinterpret_cast<uint16_t>(y_dir);
-	__asm        movsx  ecx, reinterpret_cast<uint16_t>(cellpos);
-	__asm        add    eax, ecx;
-	__asm        mov    ecx, edge;
-	__asm        mov    [ecx+4], eax;
+	edge->y = (reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(y_dir)) + reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(cellpos)));
 // LINE 3736:
 _T416:
 	__asm        mov    eax, edge;
@@ -9960,15 +9910,9 @@ _T59:
 	__asm        cmp    S_fovlast, eax;
 	__asm        jb     _T3c3;
 // LINE 3781:
-	__asm        mov    eax, cellptr;
-	__asm        mov    eax, [eax];
-	__asm        sub    eax, G_grid_ulc.x;
-	__asm        mov    gx, eax;
+	gx = (cellptr->x - G_grid_ulc.x);
 // LINE 3782:
-	__asm        mov    eax, cellptr;
-	__asm        mov    eax, [eax+4];
-	__asm        sub    eax, G_grid_ulc.y;
-	__asm        mov    gy, eax;
+	gy = (cellptr->y - G_grid_ulc.y);
 // LINE 3785:
 	__asm        cmp    gx, 0;
 	__asm        jl     _Tb5;
@@ -10084,10 +10028,7 @@ _T1a0:
 // LINE 3826:
 	sface += 0x4;
 // LINE 3827:
-	__asm        mov    eax, GridFaceSize;
-	__asm        add    eax, coffset;
-	__asm        mov    ecx, sface;
-	__asm        mov    [ecx], eax;
+	sface[0] = (GridFaceSize + coffset);
 // LINE 3828:
 	__asm        mov    eax, deltac;
 	__asm        add    eax, texid;
@@ -11637,13 +11578,9 @@ _T14d:
 	gsize = G_last_grid_size;
 // LINE 4405:
 _T162:
-	__asm        mov    eax, S_curr_pos.x;
-	__asm        sub    eax, S_last_pos.x;
-	__asm        mov    xdiff, eax;
+	xdiff = (S_curr_pos.x - S_last_pos.x);
 // LINE 4406:
-	__asm        mov    eax, S_curr_pos.y;
-	__asm        sub    eax, S_last_pos.y;
-	__asm        mov    ydiff, eax;
+	ydiff = (S_curr_pos.y - S_last_pos.y);
 // LINE 4412:
 	__asm        cmp    G_water_anim, 1;
 	__asm        jne    _T195;
@@ -12093,9 +12030,7 @@ _T233:
 	__asm        jmp    _T211;
 // LINE 4843:
 _T240:
-	__asm        mov    eax, maxobjy;
-	__asm        sub    eax, pos.y;
-	__asm        mov    oradius, eax;
+	oradius = (maxobjy - pos.y);
 // LINE 4848:
 	__asm        mov    eax, cptr;
 	__asm        push   eax;
@@ -13153,9 +13088,7 @@ _T65e:
 _T76c:
 	px = x;
 // LINE 5245:
-	__asm        mov    eax, y;
-	__asm        add    eax, 2;
-	__asm        mov    py, eax;
+	py = (y + 0x2);
 // LINE 5246:
 	__asm        push   0x18;
 	__asm        mov    eax, G_citymempool;
@@ -13228,9 +13161,7 @@ _T76c:
 	__asm        mov    byte ptr [eax+ecx], 0xDE;
 // LINE 5272:
 _T87c:
-	__asm        mov    eax, x;
-	__asm        add    eax, 3;
-	__asm        mov    px, eax;
+	px = (x + 0x3);
 // LINE 5273:
 	__asm        mov    eax, y;
 	__asm        inc    eax;
@@ -13307,13 +13238,9 @@ _T87c:
 	__asm        mov    byte ptr [eax+ecx], 0xDE;
 // LINE 5300:
 _T98d:
-	__asm        mov    eax, x;
-	__asm        add    eax, 3;
-	__asm        mov    px, eax;
+	px = (x + 0x3);
 // LINE 5301:
-	__asm        mov    eax, y;
-	__asm        add    eax, 2;
-	__asm        mov    py, eax;
+	py = (y + 0x2);
 // LINE 5302:
 	__asm        push   0x18;
 	__asm        mov    eax, G_citymempool;

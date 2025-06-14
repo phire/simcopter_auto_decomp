@@ -2580,11 +2580,7 @@ int32_t TextWindow::ResizeWindowForExactLineHeights() {
 // LINE 257:
 	__asm        jmp    _T3e;
 _T3e:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x14];
-	__asm        mov    lOriginalHeight, eax;
+	lOriginalHeight = (this-><TextWindow+0x1c> - this-><TextWindow+0x14>);
 // LINE 258:
 	__asm        mov    eax, lOriginalHeight;
 	__asm        cdq;
@@ -3136,10 +3132,7 @@ _T8e:
 	__asm        jmp    _Ta8;
 // LINE 362:
 _Ta8:
-	__asm        mov    eax, nWindowHeight;
-	__asm        sub    eax, 0xC;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x7C], eax;
+	this->nButtonTextHeight = (nWindowHeight - 0xc);
 // LINE 364:
 	__asm        jmp    _Tbc;
 _Tbc:
@@ -3312,9 +3305,7 @@ _T2a3:
 // LINE 379:
 	rectCurrent.left = nWindowWidth;
 // LINE 380:
-	__asm        mov    eax, rectCurrent.left;
-	__asm        add    eax, nWindowWidth;
-	__asm        mov    rectCurrent.right, eax;
+	rectCurrent.right = (rectCurrent.left + nWindowWidth);
 // LINE 383:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -3429,13 +3420,9 @@ _T440:
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+0x4C];
 // LINE 386:
-	__asm        mov    eax, nWindowWidth;
-	__asm        add    eax, eax;
-	__asm        mov    rectCurrent.left, eax;
+	rectCurrent.left = (nWindowWidth + nWindowWidth);
 // LINE 387:
-	__asm        mov    eax, rectCurrent.left;
-	__asm        add    eax, nWindowWidth;
-	__asm        mov    rectCurrent.right, eax;
+	rectCurrent.right = (rectCurrent.left + nWindowWidth);
 // LINE 388:
 	rectCurrent.left += this->sizeTextOffset.cx;
 // LINE 389:
@@ -8264,17 +8251,9 @@ _T1da:
 	__asm        cmp    dword ptr [eax+0x74], 0;
 	__asm        jne    _T25e;
 // LINE 1275:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x94];
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0x20];
-	__asm        mov    lXPosition, eax;
+	lXPosition = (this->rectThumbImage.left + this-><SliderWindow+0x20>);
 // LINE 1276:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x98];
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0x24];
-	__asm        mov    lYPosition, eax;
+	lYPosition = (this->rectThumbImage.top + this-><SliderWindow+0x24>);
 // LINE 1277:
 	__asm        mov    eax, lThumbHeight;
 	__asm        push   eax;
@@ -8299,17 +8278,9 @@ _T1da:
 	__asm        jmp    _T2ae;
 // LINE 1280:
 _T25e:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x94];
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0x20];
-	__asm        mov    lXPosition, eax;
+	lXPosition = (this->rectThumbImage.left + this-><SliderWindow+0x20>);
 // LINE 1281:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x98];
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0x24];
-	__asm        mov    lYPosition, eax;
+	lYPosition = (this->rectThumbImage.top + this-><SliderWindow+0x24>);
 // LINE 1282:
 	__asm        mov    eax, lThumbHeight;
 	__asm        push   eax;
@@ -8474,17 +8445,9 @@ int32_t SliderWindow::ConvertCursorPositionToValue(long& lNewValue, long nCursor
 	/*bp-0xc*/   long lPosition;
 
 // LINE 1351:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x8C];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x84];
-	__asm        mov    lPositionScale, eax;
+	lPositionScale = (this->lMaximumThumbPosition - this->lMinimumThumbPosition);
 // LINE 1352:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x7C];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x78];
-	__asm        mov    lValueScale, eax;
+	lValueScale = (this->lSliderMaximumValue - this->lSliderMinimumValue);
 // LINE 1354:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x74], 0;
@@ -8513,13 +8476,7 @@ _T66:
 // LINE 1359:
 	__asm        jmp    _T89;
 _T89:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x18];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x10];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x90];
-	__asm        mov    lPosition, eax;
+	lPosition = ((this-><SliderWindow+0x18> - this-><SliderWindow+0x10>) - this->lThumbLimitIndentation);
 // LINE 1361:
 _Ta1:
 	__asm        jmp    _T10a;
@@ -8548,13 +8505,7 @@ _Tcf:
 // LINE 1366:
 	__asm        jmp    _Tf2;
 _Tf2:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x14];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x90];
-	__asm        mov    lPosition, eax;
+	lPosition = ((this-><SliderWindow+0x1c> - this-><SliderWindow+0x14>) - this->lThumbLimitIndentation);
 // LINE 1368:
 _T10a:
 	__asm        mov    eax, lPosition;
@@ -8633,11 +8584,7 @@ void SliderWindow::CalculateThumbPosition() {
 	/*bp-0x8*/   long lPositionScale;
 
 // LINE 1406:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x7C];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x78];
-	__asm        mov    lValueScale, eax;
+	lValueScale = (this->lSliderMaximumValue - this->lSliderMinimumValue);
 // LINE 1407:
 	__asm        cmp    lValueScale, 0;
 	__asm        jne    _T3c;
@@ -8647,11 +8594,7 @@ void SliderWindow::CalculateThumbPosition() {
 	__asm        jmp    _T83;
 // LINE 1411:
 _T3c:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x8C];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x84];
-	__asm        mov    lPositionScale, eax;
+	lPositionScale = (this->lMaximumThumbPosition - this->lMinimumThumbPosition);
 // LINE 1412:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x80];
@@ -9812,10 +9755,7 @@ _T2a1:
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1668:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x28];
-	__asm        sub    eax, lThumbWidth;
-	__asm        mov    lPageDownButtonStartPosition, eax;
+	lPageDownButtonStartPosition = (this-><ScrollBarWindow+0x28> - lThumbWidth);
 // LINE 1670:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x20];
@@ -9937,10 +9877,7 @@ _T3f9:
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1692:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        sub    eax, lThumbHeight;
-	__asm        mov    lPageDownButtonStartPosition, eax;
+	lPageDownButtonStartPosition = (this-><ScrollBarWindow+0x2c> - lThumbHeight);
 // LINE 1694:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x24];
@@ -10551,12 +10488,7 @@ _T25:
 	__asm        cmp    lNewLineCount, 0;
 	__asm        jne    _T49;
 // LINE 1877:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x7C];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x78];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xB4], eax;
+	this->lLineCount = (this->lSliderMaximumValue - this->lSliderMinimumValue);
 // LINE 1878:
 	__asm        jmp    _T55;
 // LINE 1879:
@@ -10588,11 +10520,7 @@ long ScrollBarWindow::GetCurrentLine() {
 	/*bp-0x4*/   long lValueRange;
 
 // LINE 1893:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x7C];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x78];
-	__asm        mov    lValueRange, eax;
+	lValueRange = (this->lSliderMaximumValue - this->lSliderMinimumValue);
 // LINE 1895:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB4], 1;
@@ -10621,11 +10549,7 @@ long ScrollBarWindow::GetValueOfGivenLine(long lLine) {
 	/*bp-0x4*/   long lValueRange;
 
 // LINE 1906:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x7C];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x78];
-	__asm        mov    lValueRange, eax;
+	lValueRange = (this->lSliderMaximumValue - this->lSliderMinimumValue);
 // LINE 1908:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB4], 1;
@@ -10653,11 +10577,7 @@ long ScrollBarWindow::GetCurrentPage() {
 	/*bp-0x4*/   long lValueRange;
 
 // LINE 1920:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x7C];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x78];
-	__asm        mov    lValueRange, eax;
+	lValueRange = (this->lSliderMaximumValue - this->lSliderMinimumValue);
 // LINE 1922:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB8], 1;
@@ -10686,11 +10606,7 @@ long ScrollBarWindow::GetValueOfGivenPage(long lPage) {
 	/*bp-0x4*/   long lValueRange;
 
 // LINE 1933:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x7C];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x78];
-	__asm        mov    lValueRange, eax;
+	lValueRange = (this->lSliderMaximumValue - this->lSliderMinimumValue);
 // LINE 1935:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xB8], 1;
@@ -11611,11 +11527,7 @@ int32_t ListBoxWindow::ResizeWindowForExactLineHeights() {
 // LINE 2193:
 	__asm        jmp    _T11;
 _T11:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x14];
-	__asm        mov    lOriginalHeight, eax;
+	lOriginalHeight = (this-><ListBoxWindow+0x1c> - this-><ListBoxWindow+0x14>);
 // LINE 2194:
 	__asm        mov    ecx, this;
 	__asm        mov    eax, lOriginalHeight;
@@ -11786,11 +11698,7 @@ _T9c:
 	__asm        test   eax, eax;
 	__asm        je     _T192;
 // LINE 2271:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xAC];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0xB4];
-	__asm        mov    lRelativeCurrentSelection, eax;
+	lRelativeCurrentSelection = (this->lCurrentSelection - this->lFirstVisibleLine);
 // LINE 2272:
 	rectHighlighted.left = this-><ListBoxWindow+0x20>;
 // LINE 2273:
@@ -11803,10 +11711,7 @@ _T9c:
 	__asm        add    eax, [ecx+0x24];
 	__asm        mov    rectHighlighted.top, eax;
 // LINE 2275:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xB8];
-	__asm        add    eax, rectHighlighted.top;
-	__asm        mov    rectHighlighted.bottom, eax;
+	rectHighlighted.bottom = (this->lLineHeight + rectHighlighted.top);
 // LINE 2276:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, rectHighlighted.bottom;
@@ -11833,10 +11738,7 @@ _T157:
 	__asm        call   dword ptr [edx+0x44];
 // LINE 2283:
 _T192:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x20];
-	__asm        add    eax, 5;
-	__asm        mov    rectCurrentText.left, eax;
+	rectCurrentText.left = (this-><ListBoxWindow+0x20> + 0x5);
 // LINE 2284:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x28];
@@ -11964,10 +11866,7 @@ _T2d2:
 	__asm        add    eax, [ecx+0x24];
 	__asm        mov    rectCurrentText.top, eax;
 // LINE 2299:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xB8];
-	__asm        add    eax, rectCurrentText.top;
-	__asm        mov    rectCurrentText.bottom, eax;
+	rectCurrentText.bottom = (this->lLineHeight + rectCurrentText.top);
 // LINE 2300:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, rectCurrentText.bottom;
@@ -12128,10 +12027,7 @@ _T524:
 	__asm        add    eax, [ecx+0x24];
 	__asm        mov    rectCurrentText.top, eax;
 // LINE 2310:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xB8];
-	__asm        add    eax, rectCurrentText.top;
-	__asm        mov    rectCurrentText.bottom, eax;
+	rectCurrentText.bottom = (this->lLineHeight + rectCurrentText.top);
 // LINE 2311:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, rectCurrentText.bottom;
@@ -13339,10 +13235,7 @@ _T58:
 // LINE 2477:
 	__asm        jmp    _T75;
 _T75:
-	__asm        mov    eax, tempStringListIterator.node;
-	__asm        add    eax, 8;
-	__asm        mov    ecx, sFound;
-	__asm        mov    [ecx], eax;
+	sFound. = (tempStringListIterator.node + 0x8);
 // LINE 2478:
 	return 0x1;
 // LINE 2480:
@@ -14476,10 +14369,7 @@ long ListBoxWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nBu
 	__asm        idiv   dword ptr [ecx+0xB8];
 	__asm        mov    lRelativeSelectionIndex, eax;
 // LINE 2663:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xB4];
-	__asm        add    eax, lRelativeSelectionIndex;
-	__asm        mov    lAbsoluteSelectionIndex, eax;
+	lAbsoluteSelectionIndex = (this->lFirstVisibleLine + lRelativeSelectionIndex);
 // LINE 2665:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, lAbsoluteSelectionIndex;
@@ -14984,10 +14874,7 @@ int32_t ListBoxWindow::ScrollPageDown() {
 	__asm        cmp    eax, [ecx+0xB4];
 	__asm        jge    _T85;
 // LINE 2889:
-	__asm        mov    eax, lCurrentLineCount;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0xB0];
-	__asm        mov    lNewFirstVisibleLine, eax;
+	lNewFirstVisibleLine = (lCurrentLineCount - this->lVisibleLines);
 // LINE 2890:
 _T85:
 	__asm        mov    eax, lNewFirstVisibleLine;
@@ -15576,23 +15463,13 @@ _T35:
 // LINE 2981:
 	__asm        jmp    _T41;
 _T41:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x18];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x10];
-	__asm        mov    rectScrollBar.right, eax;
+	rectScrollBar.right = (this-><ListBoxWindow+0x18> - this-><ListBoxWindow+0x10>);
 // LINE 2982:
-	__asm        mov    eax, rectScrollBar.right;
-	__asm        sub    eax, 0x10;
-	__asm        mov    rectScrollBar.left, eax;
+	rectScrollBar.left = (rectScrollBar.right - 0x10);
 // LINE 2983:
 	__asm        jmp    _T5e;
 _T5e:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x14];
-	__asm        mov    rectScrollBar.bottom, eax;
+	rectScrollBar.bottom = (this-><ListBoxWindow+0x1c> - this-><ListBoxWindow+0x14>);
 // LINE 2986:
 	__asm        push   0xD4;
 	__asm        call   operator new;
@@ -15758,18 +15635,7 @@ void ListBoxWindow::SetScrollBarSizes() {
 _T21:
 	__asm        jmp    _T26;
 _T26:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x18];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x10];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0xC0];
-	__asm        mov    ecx, [ecx+0x18];
-	__asm        mov    edx, this;
-	__asm        mov    edx, [edx+0xC0];
-	__asm        sub    ecx, [edx+0x10];
-	__asm        sub    eax, ecx;
-	__asm        mov    nScrollBarXPosition, eax;
+	nScrollBarXPosition = ((this-><ListBoxWindow+0x18> - this-><ListBoxWindow+0x10>) - (this->myVerticalScrollBarWindow-><ScrollBarWindow+0x18> - this->myVerticalScrollBarWindow-><ScrollBarWindow+0x10>));
 // LINE 3037:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x6C], 0;
@@ -16344,10 +16210,7 @@ _T227:
 	__asm        jmp    _T78;
 // LINE 3186:
 _T22c:
-	__asm        mov    eax, rectNewWindow.left;
-	__asm        add    eax, lCurrentLongestLineWidth;
-	__asm        add    eax, 0xA;
-	__asm        mov    rectNewWindow.right, eax;
+	rectNewWindow.right = ((rectNewWindow.left + lCurrentLongestLineWidth) + 0xa);
 // LINE 3187:
 	__asm        jmp    _T23d;
 _T23d:

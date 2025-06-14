@@ -367,11 +367,7 @@ void MTCreateVelocity(/*packed*/ struct Point3d *p1, /*packed*/ struct Point3d *
 	/*bp-0x4*/   int32_t i;
 
 // LINE 178:
-	__asm        mov    eax, p2;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, p1;
-	__asm        sub    eax, [ecx];
-	__asm        mov    i, eax;
+	i = (p2->x - p1->x);
 // LINE 179:
 	__asm        mov    eax, t;
 	__asm        push   eax;
@@ -382,11 +378,7 @@ void MTCreateVelocity(/*packed*/ struct Point3d *p1, /*packed*/ struct Point3d *
 	__asm        mov    ecx, V;
 	__asm        mov    [ecx], eax;
 // LINE 180:
-	__asm        mov    eax, p2;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, p1;
-	__asm        sub    eax, [ecx+4];
-	__asm        mov    i, eax;
+	i = (p2->y - p1->y);
 // LINE 181:
 	__asm        mov    eax, t;
 	__asm        push   eax;
@@ -397,11 +389,7 @@ void MTCreateVelocity(/*packed*/ struct Point3d *p1, /*packed*/ struct Point3d *
 	__asm        mov    ecx, V;
 	__asm        mov    [ecx+4], eax;
 // LINE 182:
-	__asm        mov    eax, p2;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, p1;
-	__asm        sub    eax, [ecx+8];
-	__asm        mov    i, eax;
+	i = (p2->z - p1->z);
 // LINE 183:
 	__asm        mov    eax, t;
 	__asm        push   eax;
@@ -775,18 +763,10 @@ _T1c:
 	__asm        jmp    _T1c;
 // LINE 387:
 _T35:
-	__asm        cmp    a, 0x7080000;
-	__asm        jl     _T4f;
-
-	__asm        mov    eax, a;
-	__asm        sub    eax, 0xE100000;
-	__asm        jmp    _T52;
 _T4f:
-	__asm        mov    eax, a;
 _T52:
-	__asm        jmp    __RETURN;
+	return (a < 0x7080000) ? (a - 0xe100000) : a;
 // LINE 388:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004ca810
@@ -814,9 +794,7 @@ void MTArbRotMat(int32_t *mat[4], int32_t Angle, /*packed*/ struct Point3d *V) {
 	__asm        call   0x004D19FC;
 	__asm        add    esp, 0xC;
 // LINE 410:
-	__asm        mov    eax, 0x10000;
-	__asm        sub    eax, Cos;
-	__asm        mov    OneMinCos, eax;
+	OneMinCos = (0x10000 - Cos);
 // LINE 417:
 	__asm        mov    eax, OneMinCos;
 	__asm        push   eax;
@@ -935,50 +913,23 @@ void MTArbRotMat(int32_t *mat[4], int32_t Angle, /*packed*/ struct Point3d *V) {
 	__asm        add    esp, 8;
 	__asm        mov    VzSin, eax;
 // LINE 431:
-	__asm        mov    eax, VxxCos;
-	__asm        add    eax, Cos;
-	__asm        mov    ecx, mat;
-	__asm        mov    [ecx], eax;
+	mat[0] = (VxxCos + Cos);
 // LINE 432:
-	__asm        mov    eax, VzSin;
-	__asm        add    eax, VxyCos;
-	__asm        mov    ecx, mat;
-	__asm        mov    [ecx+0x10], eax;
+	mat[4] = (VzSin + VxyCos);
 // LINE 433:
-	__asm        mov    eax, VxzCos;
-	__asm        sub    eax, VySin;
-	__asm        mov    ecx, mat;
-	__asm        mov    [ecx+0x20], eax;
+	mat[8] = (VxzCos - VySin);
 // LINE 434:
-	__asm        mov    eax, VxyCos;
-	__asm        sub    eax, VzSin;
-	__asm        mov    ecx, mat;
-	__asm        mov    [ecx+4], eax;
+	mat[1] = (VxyCos - VzSin);
 // LINE 435:
-	__asm        mov    eax, VyyCos;
-	__asm        add    eax, Cos;
-	__asm        mov    ecx, mat;
-	__asm        mov    [ecx+0x14], eax;
+	mat[5] = (VyyCos + Cos);
 // LINE 436:
-	__asm        mov    eax, VxSin;
-	__asm        add    eax, VyzCos;
-	__asm        mov    ecx, mat;
-	__asm        mov    [ecx+0x24], eax;
+	mat[9] = (VxSin + VyzCos);
 // LINE 437:
-	__asm        mov    eax, VySin;
-	__asm        add    eax, VxzCos;
-	__asm        mov    ecx, mat;
-	__asm        mov    [ecx+8], eax;
+	mat[2] = (VySin + VxzCos);
 // LINE 438:
-	__asm        mov    eax, VyzCos;
-	__asm        sub    eax, VxSin;
-	__asm        mov    ecx, mat;
-	__asm        mov    [ecx+0x18], eax;
+	mat[6] = (VyzCos - VxSin);
 // LINE 439:
-	__asm        mov    eax, VzzCos;
-	__asm        add    eax, Cos;
-	__asm        mov    ecx, mat;
-	__asm        mov    [ecx+0x28], eax;
+	mat[10] = (VzzCos + Cos);
 // LINE 445:
 	__asm        mov    eax, mat;
 	__asm        mov    dword ptr [eax+0x38], 0;
@@ -1807,18 +1758,12 @@ int32_t MTCheapDist2D(/*packed*/ struct Point2d *p1, /*packed*/ struct Point2d *
 	__asm        cmp    xdiff, eax;
 	__asm        jle    _T53;
 // LINE 725:
-	__asm        mov    eax, xdiff;
-	__asm        add    eax, eax;
-	__asm        add    eax, ydiff;
-	__asm        mov    dist, eax;
+	dist = ((xdiff + xdiff) + ydiff);
 // LINE 727:
 	__asm        jmp    _T5e;
 // LINE 729:
 _T53:
-	__asm        mov    eax, ydiff;
-	__asm        add    eax, eax;
-	__asm        add    eax, xdiff;
-	__asm        mov    dist, eax;
+	dist = ((ydiff + ydiff) + xdiff);
 // LINE 732:
 _T5e:
 	return dist;

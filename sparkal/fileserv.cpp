@@ -2847,11 +2847,7 @@ _Te1:
 // LINE 225:
 	__asm        jmp    _T106;
 _T106:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x28];
-	__asm        mov    eax, [eax+4];
-	__asm        add    eax, lTotalStringLength;
-	__asm        mov    lTotalStringLength, eax;
+	lTotalStringLength = (this->sDirs[2].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 226:
 	__asm        mov    eax, szFile;
 	__asm        push   eax;
@@ -2970,11 +2966,7 @@ _T28d:
 // LINE 231:
 	__asm        jmp    _T2b2;
 _T2b2:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x28];
-	__asm        mov    eax, [eax+4];
-	__asm        add    eax, lTotalStringLength;
-	__asm        mov    lTotalStringLength, eax;
+	lTotalStringLength = (this->sDirs[2].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 232:
 	__asm        mov    eax, szFile;
 	__asm        push   eax;
@@ -3061,11 +3053,7 @@ _T3a3:
 // LINE 240:
 	__asm        jmp    _T3c8;
 _T3c8:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x68];
-	__asm        mov    eax, [eax+4];
-	__asm        add    eax, lTotalStringLength;
-	__asm        mov    lTotalStringLength, eax;
+	lTotalStringLength = (this->sDirs[10].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 241:
 	__asm        mov    eax, szFile;
 	__asm        push   eax;
@@ -3184,11 +3172,7 @@ _T54f:
 // LINE 246:
 	__asm        jmp    _T574;
 _T574:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x68];
-	__asm        mov    eax, [eax+4];
-	__asm        add    eax, lTotalStringLength;
-	__asm        mov    lTotalStringLength, eax;
+	lTotalStringLength = (this->sDirs[10].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 247:
 	__asm        mov    eax, szFile;
 	__asm        push   eax;
@@ -3275,11 +3259,7 @@ _T665:
 // LINE 255:
 	__asm        jmp    _T68a;
 _T68a:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x38];
-	__asm        mov    eax, [eax+4];
-	__asm        add    eax, lTotalStringLength;
-	__asm        mov    lTotalStringLength, eax;
+	lTotalStringLength = (this->sDirs[4].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 256:
 	__asm        mov    eax, szFile;
 	__asm        push   eax;
@@ -3398,11 +3378,7 @@ _T811:
 // LINE 261:
 	__asm        jmp    _T836;
 _T836:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x38];
-	__asm        mov    eax, [eax+4];
-	__asm        add    eax, lTotalStringLength;
-	__asm        mov    lTotalStringLength, eax;
+	lTotalStringLength = (this->sDirs[4].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 262:
 	__asm        mov    eax, szFile;
 	__asm        push   eax;
@@ -3489,11 +3465,7 @@ _T927:
 // LINE 270:
 	__asm        jmp    _T94c;
 _T94c:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x40];
-	__asm        mov    eax, [eax+4];
-	__asm        add    eax, lTotalStringLength;
-	__asm        mov    lTotalStringLength, eax;
+	lTotalStringLength = (this->sDirs[5].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 271:
 	__asm        mov    eax, szFile;
 	__asm        push   eax;
@@ -3612,11 +3584,7 @@ _Tad3:
 // LINE 276:
 	__asm        jmp    _Taf8;
 _Taf8:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x40];
-	__asm        mov    eax, [eax+4];
-	__asm        add    eax, lTotalStringLength;
-	__asm        mov    lTotalStringLength, eax;
+	lTotalStringLength = (this->sDirs[5].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 277:
 	__asm        mov    eax, szFile;
 	__asm        push   eax;
@@ -3703,11 +3671,7 @@ _Tbe9:
 // LINE 285:
 	__asm        jmp    _Tc0e;
 _Tc0e:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x48];
-	__asm        mov    eax, [eax+4];
-	__asm        add    eax, lTotalStringLength;
-	__asm        mov    lTotalStringLength, eax;
+	lTotalStringLength = (this->sDirs[6].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 286:
 	__asm        mov    eax, szFile;
 	__asm        push   eax;
@@ -3826,11 +3790,7 @@ _Td95:
 // LINE 291:
 	__asm        jmp    _Tdba;
 _Tdba:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x48];
-	__asm        mov    eax, [eax+4];
-	__asm        add    eax, lTotalStringLength;
-	__asm        mov    lTotalStringLength, eax;
+	lTotalStringLength = (this->sDirs[6].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 292:
 	__asm        mov    eax, szFile;
 	__asm        push   eax;
@@ -3917,11 +3877,7 @@ _Teab:
 // LINE 300:
 	__asm        jmp    _Ted0;
 _Ted0:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x50];
-	__asm        mov    eax, [eax+4];
-	__asm        add    eax, lTotalStringLength;
-	__asm        mov    lTotalStringLength, eax;
+	lTotalStringLength = (this->sDirs[7].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 301:
 	__asm        mov    eax, szFile;
 	__asm        push   eax;
@@ -4040,11 +3996,7 @@ _T1057:
 // LINE 306:
 	__asm        jmp    _T107c;
 _T107c:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x50];
-	__asm        mov    eax, [eax+4];
-	__asm        add    eax, lTotalStringLength;
-	__asm        mov    lTotalStringLength, eax;
+	lTotalStringLength = (this->sDirs[7].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 307:
 	__asm        mov    eax, szFile;
 	__asm        push   eax;
@@ -4131,11 +4083,7 @@ _T116d:
 // LINE 315:
 	__asm        jmp    _T1192;
 _T1192:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x58];
-	__asm        mov    eax, [eax+4];
-	__asm        add    eax, lTotalStringLength;
-	__asm        mov    lTotalStringLength, eax;
+	lTotalStringLength = (this->sDirs[8].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 316:
 	__asm        mov    eax, szFile;
 	__asm        push   eax;
@@ -4254,11 +4202,7 @@ _T1319:
 // LINE 321:
 	__asm        jmp    _T133e;
 _T133e:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x58];
-	__asm        mov    eax, [eax+4];
-	__asm        add    eax, lTotalStringLength;
-	__asm        mov    lTotalStringLength, eax;
+	lTotalStringLength = (this->sDirs[8].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 322:
 	__asm        mov    eax, szFile;
 	__asm        push   eax;
@@ -4345,11 +4289,7 @@ _T143e:
 // LINE 330:
 	__asm        jmp    _T1466;
 _T1466:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x20];
-	__asm        mov    eax, [eax+4];
-	__asm        add    eax, lTotalStringLength;
-	__asm        mov    lTotalStringLength, eax;
+	lTotalStringLength = (this->sDirs[1].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 331:
 	__asm        mov    eax, szFile;
 	__asm        push   eax;
@@ -4468,11 +4408,7 @@ _T15fc:
 // LINE 336:
 	__asm        jmp    _T1624;
 _T1624:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x20];
-	__asm        mov    eax, [eax+4];
-	__asm        add    eax, lTotalStringLength;
-	__asm        mov    lTotalStringLength, eax;
+	lTotalStringLength = (this->sDirs[1].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 337:
 	__asm        mov    eax, szFile;
 	__asm        push   eax;
@@ -4559,11 +4495,7 @@ _T1724:
 // LINE 345:
 	__asm        jmp    _T174c;
 _T174c:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x70];
-	__asm        mov    eax, [eax+4];
-	__asm        add    eax, lTotalStringLength;
-	__asm        mov    lTotalStringLength, eax;
+	lTotalStringLength = (this->sDirs[11].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 346:
 	__asm        mov    eax, szFile;
 	__asm        push   eax;
@@ -4682,11 +4614,7 @@ _T18e2:
 // LINE 351:
 	__asm        jmp    _T190a;
 _T190a:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x70];
-	__asm        mov    eax, [eax+4];
-	__asm        add    eax, lTotalStringLength;
-	__asm        mov    lTotalStringLength, eax;
+	lTotalStringLength = (this->sDirs[11].reference-><basic_string_ref<char>+0x04:4> + lTotalStringLength);
 // LINE 352:
 	__asm        mov    eax, szFile;
 	__asm        push   eax;

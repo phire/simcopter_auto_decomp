@@ -411,17 +411,11 @@ _T1b8:
 	__asm        call   MTCreateDOF4x4;
 	__asm        add    esp, 8;
 // LINE 251:
-	__asm        mov    eax, ViewState.world_pos.x;
-	__asm        sub    eax, S_last_viewpos.x;
-	__asm        mov    vec.x, eax;
+	vec.x = (ViewState.world_pos.x - S_last_viewpos.x);
 // LINE 252:
-	__asm        mov    eax, ViewState.world_pos.y;
-	__asm        sub    eax, S_last_viewpos.y;
-	__asm        mov    vec.y, eax;
+	vec.y = (ViewState.world_pos.y - S_last_viewpos.y);
 // LINE 253:
-	__asm        mov    eax, ViewState.world_pos.z;
-	__asm        sub    eax, S_last_viewpos.z;
-	__asm        mov    vec.z, eax;
+	vec.z = (ViewState.world_pos.z - S_last_viewpos.z);
 // LINE 254:
 	__asm        lea    eax, vec.x;
 	__asm        push   eax;
@@ -740,11 +734,8 @@ long ConvertRenderBackPlaneValueToGUI(long lValue) {
 // FUNCTION: COPTER_D 0x004eef4f
 int32_t S3ViewerRotDelta() {
 // LINE 401:
-	__asm        mov    eax, 0x10000;
-	__asm        sub    eax, S_rotdelta;
-	__asm        jmp    __RETURN;
+	return (0x10000 - S_rotdelta);
 // LINE 402:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004eef6a

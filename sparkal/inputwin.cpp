@@ -2813,18 +2813,12 @@ int32_t KeyboardWindow::Initialize() {
 	__asm        cmp    dword ptr [eax+0xA4], 0;
 	__asm        je     _Tc7;
 // LINE 98:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x7C;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x8C], eax;
+	this->myCurrentlyUsedNumLockHotSpotList = (this + 0x7c);
 // LINE 99:
 	__asm        jmp    _Td8;
 // LINE 100:
 _Tc7:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x84;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x8C], eax;
+	this->myCurrentlyUsedNumLockHotSpotList = (this + 0x84);
 // LINE 101:
 _Td8:
 	__asm        mov    eax, this;
@@ -4428,18 +4422,12 @@ _T43:
 	__asm        cmp    dword ptr [eax+0xA4], 0;
 	__asm        je     _T8c;
 // LINE 297:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x7C;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x8C], eax;
+	this->myCurrentlyUsedNumLockHotSpotList = (this + 0x7c);
 // LINE 298:
 	__asm        jmp    _T9d;
 // LINE 299:
 _T8c:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x84;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x8C], eax;
+	this->myCurrentlyUsedNumLockHotSpotList = (this + 0x84);
 // LINE 300:
 _T9d:
 	__asm        push   0x14;
@@ -7027,9 +7015,7 @@ _T11:
 	__asm        imul   eax, nImageWidth;
 	__asm        mov    x1, eax;
 // LINE 794:
-	__asm        mov    eax, x1;
-	__asm        add    eax, nImageWidth;
-	__asm        mov    x2, eax;
+	x2 = (x1 + nImageWidth);
 // LINE 798:
 	__asm        jmp    _T5a;
 _T5a:
@@ -7106,9 +7092,7 @@ _T29:
 	__asm        imul   eax, nImageWidth;
 	__asm        mov    x1, eax;
 // LINE 820:
-	__asm        mov    eax, nImageWidth;
-	__asm        add    eax, x1;
-	__asm        mov    x2, eax;
+	x2 = (nImageWidth + x1);
 // LINE 824:
 	__asm        jmp    _T71;
 _T71:
@@ -7254,9 +7238,7 @@ _Te5:
 	__asm        imul   eax, nImageWidth;
 	__asm        mov    x1, eax;
 // LINE 855:
-	__asm        mov    eax, nImageWidth;
-	__asm        add    eax, x1;
-	__asm        mov    x2, eax;
+	x2 = (nImageWidth + x1);
 // LINE 859:
 	__asm        jmp    _T125;
 _T125:
@@ -15696,9 +15678,7 @@ _T3b2:
 _T3c1:
 	__asm        jmp    _T3c6;
 _T3c6:
-	__asm        mov    eax, shortcutIterator.node;
-	__asm        add    eax, 8;
-	__asm        mov    tempShortcut, eax;
+	tempShortcut = (shortcutIterator.node + 0x8);
 // LINE 2022:
 	__asm        jmp    _T3d4;
 _T3d4:

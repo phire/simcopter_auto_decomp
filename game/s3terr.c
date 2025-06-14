@@ -5162,10 +5162,7 @@ _T5a:
 	__asm        mov    delta, eax;
 // LINE 1117:
 _T62:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(hght);
-	__asm        and    eax, 0xFFFF;
-	__asm        add    eax, delta;
-	__asm        mov    new_height, eax;
+	new_height = ((reinterpret_cast<uint32_t>(hght) & 0xffff) + delta);
 // LINE 1119:
 	__asm        mov    eax, G_terr_minalt;
 	__asm        cmp    new_height, eax;
@@ -5188,17 +5185,11 @@ void S3TerrSetGridObj() {
 	/*bp-0x14*/  long y;
 
 // LINE 1144:
-	__asm        mov    eax, G_grid_ulc.x;
-	__asm        and    eax, 0xFF;
-	__asm        mov    ulp.x, eax;
+	ulp.x = (G_grid_ulc.x & 0xff);
 // LINE 1145:
-	__asm        mov    eax, G_grid_ulc.y;
-	__asm        and    eax, 0xFF;
-	__asm        mov    ulp.y, eax;
+	ulp.y = (G_grid_ulc.y & 0xff);
 // LINE 1148:
-	__asm        mov    eax, GridVerts;
-	__asm        add    eax, 4;
-	__asm        mov    yptr, eax;
+	yptr = (GridVerts + 0x4);
 // LINE 1150:
 	__asm        mov    eax, ulp.y;
 	__asm        mov    y, eax;
@@ -5285,15 +5276,9 @@ void S3TerrainMorph() {
 	__asm        cmp    G_morphno, 0xA;
 	__asm        jne    _T232;
 // LINE 1202:
-	__asm        mov    eax, G_morphcell.x;
-	__asm        and    eax, 0xFF;
-	__asm        add    eax, eax;
-	__asm        mov    ulp.x, eax;
+	ulp.x = ((G_morphcell.x & 0xff) + (G_morphcell.x & 0xff));
 // LINE 1203:
-	__asm        mov    eax, G_morphcell.y;
-	__asm        and    eax, 0xFF;
-	__asm        add    eax, eax;
-	__asm        mov    ulp.y, eax;
+	ulp.y = ((G_morphcell.y & 0xff) + (G_morphcell.y & 0xff));
 // LINE 1204:
 	__asm        mov    eax, ulp.y;
 	__asm        and    eax, G_tmask;
@@ -5530,13 +5515,9 @@ _T356:
 	S_texlast++;
 // LINE 1249:
 _T38c:
-	__asm        mov    eax, G_morphcell.x;
-	__asm        sub    eax, G_grid_ulc.x;
-	__asm        mov    mcell.x, eax;
+	mcell.x = (G_morphcell.x - G_grid_ulc.x);
 // LINE 1250:
-	__asm        mov    eax, G_morphcell.y;
-	__asm        sub    eax, G_grid_ulc.y;
-	__asm        mov    mcell.y, eax;
+	mcell.y = (G_morphcell.y - G_grid_ulc.y);
 // LINE 1255:
 	__asm        cmp    mcell.x, 0;
 	__asm        jl     _T3d8;
@@ -5846,13 +5827,9 @@ _T30:
 	__asm        cmp    end, eax;
 	__asm        jle    _T38c;
 // LINE 1550:
-	__asm        mov    eax, citysize;
-	__asm        add    eax, i;
-	__asm        mov    x, eax;
+	x = (citysize + i);
 // LINE 1551:
-	__asm        mov    eax, citysize;
-	__asm        add    eax, i;
-	__asm        mov    z, eax;
+	z = (citysize + i);
 // LINE 1553:
 	__asm        jmp    _T56;
 _T53:
@@ -5926,54 +5903,42 @@ _T56:
 	__asm        cmp    eax, alt;
 	__asm        jge    _T138;
 
-	__asm        mov    eax, alt1;
-	__asm        add    eax, 0x20;
-	__asm        mov    alt, eax;
+	alt = (alt1 + 0x20);
 _T138:
 	__asm        mov    eax, alt1;
 	__asm        sub    eax, 0x20;
 	__asm        cmp    eax, alt;
 	__asm        jle    _T150;
 
-	__asm        mov    eax, alt1;
-	__asm        sub    eax, 0x20;
-	__asm        mov    alt, eax;
+	alt = (alt1 - 0x20);
 _T150:
 	__asm        mov    eax, alt3;
 	__asm        add    eax, 0x20;
 	__asm        cmp    eax, alt;
 	__asm        jge    _T168;
 
-	__asm        mov    eax, alt3;
-	__asm        add    eax, 0x20;
-	__asm        mov    alt, eax;
+	alt = (alt3 + 0x20);
 _T168:
 	__asm        mov    eax, alt3;
 	__asm        sub    eax, 0x20;
 	__asm        cmp    eax, alt;
 	__asm        jle    _T180;
 
-	__asm        mov    eax, alt3;
-	__asm        sub    eax, 0x20;
-	__asm        mov    alt, eax;
+	alt = (alt3 - 0x20);
 _T180:
 	__asm        mov    eax, alt2;
 	__asm        add    eax, 0x20;
 	__asm        cmp    eax, alt;
 	__asm        jge    _T198;
 
-	__asm        mov    eax, alt2;
-	__asm        add    eax, 0x20;
-	__asm        mov    alt, eax;
+	alt = (alt2 + 0x20);
 _T198:
 	__asm        mov    eax, alt2;
 	__asm        sub    eax, 0x20;
 	__asm        cmp    eax, alt;
 	__asm        jle    _T1b0;
 
-	__asm        mov    eax, alt2;
-	__asm        sub    eax, 0x20;
-	__asm        mov    alt, eax;
+	alt = (alt2 - 0x20);
 _T1b0:
 	__asm        mov    eax, alt;
 	__asm        mov    edx, G_tmask;
@@ -5990,13 +5955,9 @@ _T1b0:
 	__asm        jmp    _T53;
 // LINE 1563:
 _T1e1:
-	__asm        mov    eax, citysize;
-	__asm        add    eax, i;
-	__asm        mov    x, eax;
+	x = (citysize + i);
 // LINE 1564:
-	__asm        mov    eax, citysize;
-	__asm        add    eax, i;
-	__asm        mov    z, eax;
+	z = (citysize + i);
 // LINE 1566:
 	__asm        jmp    _T1fb;
 _T1f8:
@@ -6070,54 +6031,42 @@ _T1fb:
 	__asm        cmp    eax, alt;
 	__asm        jge    _T2de;
 
-	__asm        mov    eax, alt1;
-	__asm        add    eax, 0x20;
-	__asm        mov    alt, eax;
+	alt = (alt1 + 0x20);
 _T2de:
 	__asm        mov    eax, alt1;
 	__asm        sub    eax, 0x20;
 	__asm        cmp    eax, alt;
 	__asm        jle    _T2f6;
 
-	__asm        mov    eax, alt1;
-	__asm        sub    eax, 0x20;
-	__asm        mov    alt, eax;
+	alt = (alt1 - 0x20);
 _T2f6:
 	__asm        mov    eax, alt3;
 	__asm        add    eax, 0x20;
 	__asm        cmp    eax, alt;
 	__asm        jge    _T30e;
 
-	__asm        mov    eax, alt3;
-	__asm        add    eax, 0x20;
-	__asm        mov    alt, eax;
+	alt = (alt3 + 0x20);
 _T30e:
 	__asm        mov    eax, alt3;
 	__asm        sub    eax, 0x20;
 	__asm        cmp    eax, alt;
 	__asm        jle    _T326;
 
-	__asm        mov    eax, alt3;
-	__asm        sub    eax, 0x20;
-	__asm        mov    alt, eax;
+	alt = (alt3 - 0x20);
 _T326:
 	__asm        mov    eax, alt2;
 	__asm        add    eax, 0x20;
 	__asm        cmp    eax, alt;
 	__asm        jge    _T33e;
 
-	__asm        mov    eax, alt2;
-	__asm        add    eax, 0x20;
-	__asm        mov    alt, eax;
+	alt = (alt2 + 0x20);
 _T33e:
 	__asm        mov    eax, alt2;
 	__asm        sub    eax, 0x20;
 	__asm        cmp    eax, alt;
 	__asm        jle    _T356;
 
-	__asm        mov    eax, alt2;
-	__asm        sub    eax, 0x20;
-	__asm        mov    alt, eax;
+	alt = (alt2 - 0x20);
 _T356:
 	__asm        mov    eax, alt;
 	__asm        mov    edx, G_tmask;
@@ -6491,9 +6440,7 @@ _T35a:
 	__asm        add    ecx, eax;
 	__asm        mov    sidealt, ecx;
 // LINE 1715:
-	__asm        mov    eax, sidez;
-	__asm        sub    eax, hypz;
-	__asm        mov    zdist, eax;
+	zdist = (sidez - hypz);
 // LINE 1718:
 	__asm        cmp    zdist, 0x64;
 	__asm        jge    _T39a;

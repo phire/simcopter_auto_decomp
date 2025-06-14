@@ -4097,9 +4097,7 @@ int32_t EnumFontFamilyProcecure(/*packed*/ struct tagENUMLOGFONTA *lpelf, /*pack
 // LINE 627:
 	tempTypefaceTestStruct = lParam;
 // LINE 628:
-	__asm        mov    eax, lpelf;
-	__asm        add    eax, 0x1C;
-	__asm        mov    szEnumeratedFaceName, eax;
+	szEnumeratedFaceName = (lpelf + 0x1c);
 // LINE 630:
 	__asm        mov    eax, tempTypefaceTestStruct;
 	__asm        mov    eax, [eax];

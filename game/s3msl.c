@@ -988,9 +988,7 @@ _T23b:
 	S_tracer = 0x10;
 // LINE 508:
 _T260:
-	__asm        mov    eax, finfo.Attribute;
-	__asm        and    eax, 0x7FFFFFFF;
-	__asm        mov    finfo.Attribute, eax;
+	finfo.Attribute = (finfo.Attribute & 0x7fffffff);
 // LINE 509:
 	__asm        lea    eax, finfo.Face;
 	__asm        push   eax;
@@ -1096,9 +1094,7 @@ _T36e:
 // LINE 548:
 	finfo.Bitmap = 0x3;
 // LINE 549:
-	__asm        mov    eax, finfo.Attribute;
-	__asm        and    eax, 0x7FFFFFFF;
-	__asm        mov    finfo.Attribute, eax;
+	finfo.Attribute = (finfo.Attribute & 0x7fffffff);
 // LINE 550:
 	__asm        lea    eax, finfo.Face;
 	__asm        push   eax;
@@ -1190,9 +1186,7 @@ _T484:
 // LINE 581:
 	finfo.Bitmap = 0x0;
 // LINE 582:
-	__asm        mov    eax, finfo.Attribute;
-	__asm        and    eax, 0x7FFFFFFF;
-	__asm        mov    finfo.Attribute, eax;
+	finfo.Attribute = (finfo.Attribute & 0x7fffffff);
 // LINE 583:
 	__asm        lea    eax, finfo.Face;
 	__asm        push   eax;
@@ -1284,9 +1278,7 @@ _T59a:
 // LINE 614:
 	finfo.Bitmap = 0x3;
 // LINE 615:
-	__asm        mov    eax, finfo.Attribute;
-	__asm        and    eax, 0x7FFFFFFF;
-	__asm        mov    finfo.Attribute, eax;
+	finfo.Attribute = (finfo.Attribute & 0x7fffffff);
 // LINE 616:
 	__asm        lea    eax, finfo.Face;
 	__asm        push   eax;
@@ -1378,9 +1370,7 @@ _T6b0:
 // LINE 647:
 	finfo.Bitmap = 0x5;
 // LINE 648:
-	__asm        mov    eax, finfo.Attribute;
-	__asm        and    eax, 0x7FFFFFFF;
-	__asm        mov    finfo.Attribute, eax;
+	finfo.Attribute = (finfo.Attribute & 0x7fffffff);
 // LINE 649:
 	__asm        cmp    scale, 0;
 	__asm        jne    _T6ff;
@@ -1404,9 +1394,7 @@ _T6ff:
 	__asm        jmp    _T72e;
 // LINE 658:
 _T723:
-	__asm        mov    eax, finfo.Attribute;
-	__asm        and    eax, 0x7FFFFFFF;
-	__asm        mov    finfo.Attribute, eax;
+	finfo.Attribute = (finfo.Attribute & 0x7fffffff);
 // LINE 660:
 _T72e:
 	__asm        jmp    _T762;
@@ -1424,9 +1412,7 @@ _T733:
 	__asm        jmp    _T762;
 // LINE 665:
 _T757:
-	__asm        mov    eax, finfo.Attribute;
-	__asm        and    eax, 0x7FFFFFFF;
-	__asm        mov    finfo.Attribute, eax;
+	finfo.Attribute = (finfo.Attribute & 0x7fffffff);
 // LINE 667:
 _T762:
 	__asm        lea    eax, finfo.Face;
@@ -2000,23 +1986,11 @@ _Te94:
 	__asm        cmp    msl_type, 7;
 	__asm        je     _Tee5;
 // LINE 883:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x10];
-	__asm        lea    eax, [eax+eax*4];
-	__asm        add    eax, eax;
-	__asm        add    sloc.x, eax;
+	sloc.x += (BinaryOp(add, md->vector.x, BinaryOp(mul, md->vector.x, Const(4))) + BinaryOp(add, md->vector.x, BinaryOp(mul, md->vector.x, Const(4))));
 // LINE 884:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x14];
-	__asm        lea    eax, [eax+eax*4];
-	__asm        add    eax, eax;
-	__asm        add    sloc.y, eax;
+	sloc.y += (BinaryOp(add, md->vector.y, BinaryOp(mul, md->vector.y, Const(4))) + BinaryOp(add, md->vector.y, BinaryOp(mul, md->vector.y, Const(4))));
 // LINE 885:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x18];
-	__asm        lea    eax, [eax+eax*4];
-	__asm        add    eax, eax;
-	__asm        add    sloc.z, eax;
+	sloc.z += (BinaryOp(add, md->vector.z, BinaryOp(mul, md->vector.z, Const(4))) + BinaryOp(add, md->vector.z, BinaryOp(mul, md->vector.z, Const(4))));
 // LINE 886:
 	__asm        mov    eax, smoke_size;
 	__asm        push   eax;
@@ -2373,9 +2347,7 @@ _T324:
 	__asm        add    esp, 0x14;
 // LINE 1020:
 _T383:
-	__asm        mov    eax, cptr;
-	__asm        add    eax, 0x10;
-	__asm        mov    dyptrptr, eax;
+	dyptrptr = (cptr + 0x10);
 // LINE 1021:
 _T38c:
 	__asm        mov    eax, dyptrptr;
@@ -2418,11 +2390,7 @@ _T3ce:
 	__asm        add    esp, 4;
 // LINE 1044:
 _T411:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax];
-	__asm        and    eax, 0xFFFFFFFE;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx], eax;
+	md->flags = (md->flags & -0x2);
 // LINE 1045:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x28];
@@ -2754,9 +2722,7 @@ _T83a:
 	__asm        cmp    cptr, eax;
 	__asm        je     _T8b1;
 // LINE 1139:
-	__asm        mov    eax, lcptr;
-	__asm        add    eax, 0x10;
-	__asm        mov    dyptrptr, eax;
+	dyptrptr = (lcptr + 0x10);
 // LINE 1140:
 _T84f:
 	__asm        mov    eax, dyptrptr;
@@ -2879,9 +2845,7 @@ debris_unlink_next:
 	__asm        add    esp, 4;
 // LINE 1181:
 _T9d6:
-	__asm        mov    eax, lcptr;
-	__asm        add    eax, 0x10;
-	__asm        mov    dyptrptr, eax;
+	dyptrptr = (lcptr + 0x10);
 // LINE 1182:
 _T9df:
 	__asm        mov    eax, dyptrptr;
@@ -2952,9 +2916,7 @@ _Ta73:
 	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 1208:
-	__asm        mov    eax, cptr;
-	__asm        add    eax, 0x10;
-	__asm        mov    dyptrptr, eax;
+	dyptrptr = (cptr + 0x10);
 // LINE 1209:
 _Tad9:
 	__asm        mov    eax, dyptrptr;
@@ -2979,11 +2941,7 @@ _Tb0e:
 _Tb1b:
 	S_num_active_teargas--;
 // LINE 1220:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax];
-	__asm        and    eax, 0xFFFFFFFE;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx], eax;
+	md->flags = (md->flags & -0x2);
 // LINE 1222:
 	__asm        jmp    _Ta3c;
 // LINE 1224:
@@ -3342,9 +3300,7 @@ _Tf9b:
 	__asm        cmp    cptr, eax;
 	__asm        je     _T1012;
 // LINE 1326:
-	__asm        mov    eax, lcptr;
-	__asm        add    eax, 0x10;
-	__asm        mov    dyptrptr, eax;
+	dyptrptr = (lcptr + 0x10);
 // LINE 1327:
 _Tfb0:
 	__asm        mov    eax, dyptrptr;
@@ -3439,9 +3395,7 @@ _T1039:
 teargas_unlink_next:
 	S_num_active_teargas--;
 // LINE 1354:
-	__asm        mov    eax, lcptr;
-	__asm        add    eax, 0x10;
-	__asm        mov    dyptrptr, eax;
+	dyptrptr = (lcptr + 0x10);
 // LINE 1355:
 _T10da:
 	__asm        mov    eax, dyptrptr;
@@ -3508,9 +3462,7 @@ _T116e:
 	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 1379:
-	__asm        mov    eax, cptr;
-	__asm        add    eax, 0x10;
-	__asm        mov    dyptrptr, eax;
+	dyptrptr = (cptr + 0x10);
 // LINE 1380:
 _T11c4:
 	__asm        mov    eax, dyptrptr;
@@ -3535,11 +3487,7 @@ _T11f9:
 _T1206:
 	S_num_active_missiles--;
 // LINE 1391:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax];
-	__asm        and    eax, 0xFFFFFFFE;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx], eax;
+	md->flags = (md->flags & -0x2);
 // LINE 1393:
 	__asm        jmp    _T1137;
 // LINE 1397:
@@ -3681,9 +3629,7 @@ _T13bd:
 	__asm        cmp    cptr, eax;
 	__asm        je     _T1434;
 // LINE 1435:
-	__asm        mov    eax, lcptr;
-	__asm        add    eax, 0x10;
-	__asm        mov    dyptrptr, eax;
+	dyptrptr = (lcptr + 0x10);
 // LINE 1436:
 _T13d2:
 	__asm        mov    eax, dyptrptr;
@@ -3762,9 +3708,7 @@ _T1434:
 missile_unlink_next:
 	S_num_active_missiles--;
 // LINE 1464:
-	__asm        mov    eax, lcptr;
-	__asm        add    eax, 0x10;
-	__asm        mov    dyptrptr, eax;
+	dyptrptr = (lcptr + 0x10);
 // LINE 1465:
 _T14d5:
 	__asm        mov    eax, dyptrptr;
@@ -3831,9 +3775,7 @@ _T1569:
 	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 1488:
-	__asm        mov    eax, cptr;
-	__asm        add    eax, 0x10;
-	__asm        mov    dyptrptr, eax;
+	dyptrptr = (cptr + 0x10);
 // LINE 1489:
 _T15bf:
 	__asm        mov    eax, dyptrptr;
@@ -3858,11 +3800,7 @@ _T15f4:
 _T1601:
 	S_num_active_lasers--;
 // LINE 1500:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax];
-	__asm        and    eax, 0xFFFFFFFE;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx], eax;
+	md->flags = (md->flags & -0x2);
 // LINE 1502:
 	__asm        jmp    _T1532;
 // LINE 1506:
@@ -3983,9 +3921,7 @@ _T1776:
 	__asm        cmp    cptr, eax;
 	__asm        je     _T17ed;
 // LINE 1534:
-	__asm        mov    eax, lcptr;
-	__asm        add    eax, 0x10;
-	__asm        mov    dyptrptr, eax;
+	dyptrptr = (lcptr + 0x10);
 // LINE 1535:
 _T178b:
 	__asm        mov    eax, dyptrptr;
@@ -4064,9 +4000,7 @@ _T17ed:
 laser_unlink_next:
 	S_num_active_lasers--;
 // LINE 1563:
-	__asm        mov    eax, lcptr;
-	__asm        add    eax, 0x10;
-	__asm        mov    dyptrptr, eax;
+	dyptrptr = (lcptr + 0x10);
 // LINE 1564:
 _T188e:
 	__asm        mov    eax, dyptrptr;
@@ -4133,9 +4067,7 @@ _T1922:
 	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 1587:
-	__asm        mov    eax, cptr;
-	__asm        add    eax, 0x10;
-	__asm        mov    dyptrptr, eax;
+	dyptrptr = (cptr + 0x10);
 // LINE 1588:
 _T1978:
 	__asm        mov    eax, dyptrptr;
@@ -4160,11 +4092,7 @@ _T19ad:
 _T19ba:
 	S_num_active_bullets--;
 // LINE 1599:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax];
-	__asm        and    eax, 0xFFFFFFFE;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx], eax;
+	md->flags = (md->flags & -0x2);
 // LINE 1601:
 	__asm        jmp    _T18eb;
 // LINE 1605:
@@ -4440,9 +4368,7 @@ _T1d2f:
 	__asm        cmp    cptr, eax;
 	__asm        je     _T1da6;
 // LINE 1672:
-	__asm        mov    eax, lcptr;
-	__asm        add    eax, 0x10;
-	__asm        mov    dyptrptr, eax;
+	dyptrptr = (lcptr + 0x10);
 // LINE 1673:
 _T1d44:
 	__asm        mov    eax, dyptrptr;
@@ -4521,9 +4447,7 @@ _T1da6:
 bullet_unlink_next:
 	S_num_active_bullets--;
 // LINE 1699:
-	__asm        mov    eax, lcptr;
-	__asm        add    eax, 0x10;
-	__asm        mov    dyptrptr, eax;
+	dyptrptr = (lcptr + 0x10);
 // LINE 1700:
 _T1e47:
 	__asm        mov    eax, dyptrptr;
@@ -4582,11 +4506,7 @@ _T1edb:
 // LINE 1722:
 	S_num_active_traj--;
 // LINE 1723:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax];
-	__asm        and    eax, 0xFFFFFFFE;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx], eax;
+	md->flags = (md->flags & -0x2);
 // LINE 1724:
 	__asm        jmp    _T1ea4;
 // LINE 1728:
@@ -5200,11 +5120,7 @@ _T3d8:
 	__asm        test   byte ptr [eax], 6;
 	__asm        je     _T41b;
 // LINE 1974:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax];
-	__asm        and    eax, 0xFFFFFFFE;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx], eax;
+	md->flags = (md->flags & -0x2);
 // LINE 1975:
 	return 0x1;
 // LINE 1981:
@@ -5496,11 +5412,7 @@ _T72f:
 	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2071:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax];
-	__asm        and    eax, 0xFFFFFFFE;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx], eax;
+	md->flags = (md->flags & -0x2);
 // LINE 2074:
 	__asm        call   rand;
 	__asm        mov    ecx, cptr;
@@ -5685,11 +5597,7 @@ _T932:
 	__asm        add    esp, 0xC;
 // LINE 2122:
 _T96c:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax];
-	__asm        and    eax, 0xFFFFFFFE;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx], eax;
+	md->flags = (md->flags & -0x2);
 // LINE 2145:
 _T979:
 	return 0x1;
@@ -5826,11 +5734,7 @@ _Tad6:
 	__asm        add    esp, 0xC;
 // LINE 2179:
 _Tb13:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax];
-	__asm        and    eax, 0xFFFFFFFE;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx], eax;
+	md->flags = (md->flags & -0x2);
 // LINE 2181:
 	__asm        jmp    _Td10;
 _Tb25:
@@ -5928,11 +5832,7 @@ _Tbff:
 	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2212:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax];
-	__asm        and    eax, 0xFFFFFFFE;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx], eax;
+	md->flags = (md->flags & -0x2);
 // LINE 2214:
 	__asm        jmp    _Td10;
 _Tc4b:
@@ -5981,11 +5881,7 @@ _Tc90:
 	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2224:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax];
-	__asm        and    eax, 0xFFFFFFFE;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx], eax;
+	md->flags = (md->flags & -0x2);
 // LINE 2226:
 	__asm        jmp    _Td10;
 // LINE 2228:
@@ -6012,11 +5908,7 @@ _Tcc9:
 	__asm        call   S3DSPlay;
 	__asm        add    esp, 0xC;
 // LINE 2232:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax];
-	__asm        and    eax, 0xFFFFFFFE;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx], eax;
+	md->flags = (md->flags & -0x2);
 // LINE 2235:
 _Td10:
 	return 0x1;
@@ -6510,9 +6402,7 @@ _T53:
 	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    cptr, eax;
 // LINE 2710:
-	__asm        mov    eax, cptr;
-	__asm        add    eax, 0x10;
-	__asm        mov    dyptrptr, eax;
+	dyptrptr = (cptr + 0x10);
 // LINE 2711:
 _T80:
 	__asm        mov    eax, dyptrptr;
@@ -6550,11 +6440,7 @@ _Tbc:
 	__asm        call   S3MissionUpdate;
 	__asm        add    esp, 4;
 // LINE 2730:
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax];
-	__asm        and    eax, 0xFFFFFFFE;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx], eax;
+	md->flags = (md->flags & -0x2);
 // LINE 2731:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x28];

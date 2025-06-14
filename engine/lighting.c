@@ -444,10 +444,7 @@ _T55:
 	__asm        sar    eax, 0x10;
 	__asm        mov    hiword, eax;
 // LINE 289:
-	__asm        mov    eax, fh;
-	__asm        mov    eax, [eax+0x24];
-	__asm        and    eax, 0xFFFF;
-	__asm        mov    loword, eax;
+	loword = (fh->Bitmap & 0xffff);
 // LINE 291:
 	__asm        cmp    hiword, 0;
 	__asm        je     _T9e;
@@ -487,9 +484,7 @@ int32_t VRGetTexColor(int32_t bitmap) {
 	__asm        sar    eax, 0x10;
 	__asm        mov    hiword, eax;
 // LINE 323:
-	__asm        mov    eax, bitmap;
-	__asm        and    eax, 0xFFFF;
-	__asm        mov    loword, eax;
+	loword = (bitmap & 0xffff);
 // LINE 325:
 	__asm        cmp    hiword, 0;
 	__asm        je     _T49;
@@ -744,10 +739,7 @@ _T1a4:
 // LINE 442:
 	__asm        sar    level, 0x10;
 // LINE 443:
-	__asm        mov    eax, cptr;
-	__asm        mov    eax, [eax];
-	__asm        add    eax, level;
-	__asm        mov    color, eax;
+	color = (cptr->base + level);
 // LINE 449:
 _T1cc:
 	__asm        cmp    color, 0xEA;
@@ -756,11 +748,7 @@ _T1cc:
 	__asm        cmp    color, 0xF5;
 	__asm        jg     _T1f9;
 // LINE 451:
-	__asm        mov    eax, 0xF5;
-	__asm        mov    ecx, color;
-	__asm        sub    ecx, 0xEA;
-	__asm        sub    eax, ecx;
-	__asm        mov    color, eax;
+	color = (0xf5 - (color - 0xea));
 // LINE 454:
 _T1f9:
 	fh->Attrib2 = color;
@@ -932,10 +920,7 @@ _T143:
 // LINE 528:
 	__asm        sar    level, 0x10;
 // LINE 529:
-	__asm        mov    eax, cptr;
-	__asm        mov    eax, [eax];
-	__asm        add    eax, level;
-	__asm        mov    color, eax;
+	color = (cptr->base + level);
 // LINE 531:
 _T16b:
 	fh->Attrib2 = color;
@@ -1283,10 +1268,7 @@ _T1a4:
 // LINE 672:
 	__asm        sar    level, 0x10;
 // LINE 673:
-	__asm        mov    eax, cptr;
-	__asm        mov    eax, [eax];
-	__asm        add    eax, level;
-	__asm        mov    color, eax;
+	color = (cptr->base + level);
 // LINE 677:
 _T1cc:
 	__asm        mov    eax, color;

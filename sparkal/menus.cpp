@@ -1389,18 +1389,11 @@ _T24c:
 // LINE 101:
 	__asm        jmp    _T29c;
 _T29c:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x18];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x10];
-	__asm        mov    rectTextWindow.right, eax;
+	rectTextWindow.right = (this-><UserMenuWindow+0x18> - this-><UserMenuWindow+0x10>);
 // LINE 102:
 	rectTextWindow.top = this->myUserMenuWindowDescription.ptTitlePosition.y;
 // LINE 103:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC4];
-	__asm        add    eax, rectTextWindow.top;
-	__asm        mov    rectTextWindow.bottom, eax;
+	rectTextWindow.bottom = (this->myUserMenuWindowDescription.nSizeTitleFont + rectTextWindow.top);
 // LINE 105:
 	__asm        jmp    _T33c;
 // LINE 106:
@@ -1409,18 +1402,11 @@ _T2e3:
 // LINE 107:
 	__asm        jmp    _T2fa;
 _T2fa:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x18];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x10];
-	__asm        mov    rectTextWindow.right, eax;
+	rectTextWindow.right = (this-><UserMenuWindow+0x18> - this-><UserMenuWindow+0x10>);
 // LINE 108:
 	rectTextWindow.top = this->myUserMenuWindowDescription.ptTitlePosition.y;
 // LINE 109:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC4];
-	__asm        add    eax, rectTextWindow.top;
-	__asm        mov    rectTextWindow.bottom, eax;
+	rectTextWindow.bottom = (this->myUserMenuWindowDescription.nSizeTitleFont + rectTextWindow.top);
 // LINE 112:
 _T33c:
 	__asm        push   0xA4;
@@ -1493,12 +1479,7 @@ _T429:
 // LINE 126:
 	__asm        jmp    _T458;
 _T458:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x18];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x10];
-	__asm        sub    eax, rectTextWindow.left;
-	__asm        mov    rectTextWindow.right, eax;
+	rectTextWindow.right = ((this-><UserMenuWindow+0x18> - this-><UserMenuWindow+0x10>) - rectTextWindow.left);
 // LINE 128:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xB0];
@@ -1509,12 +1490,7 @@ _T458:
 // LINE 129:
 	__asm        jmp    _T4a0;
 _T4a0:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x14];
-	__asm        sub    eax, rectTextWindow.top;
-	__asm        mov    rectTextWindow.bottom, eax;
+	rectTextWindow.bottom = ((this-><UserMenuWindow+0x1c> - this-><UserMenuWindow+0x14>) - rectTextWindow.top);
 // LINE 138:
 	__asm        push   0xA4;
 	__asm        call   operator new;
@@ -2574,11 +2550,7 @@ _T18b:
 // LINE 309:
 // Block start:
 	/*bp-0x4*/   long lValue;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x98];
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0xD4];
-	__asm        mov    lValue, eax;
+	lValue = (this->myUserMenuWindowDescription.lSelectionBase + this->nCurrentSelection);
 // LINE 310:
 	__asm        lea    eax, lValue;
 	__asm        push   eax;
@@ -2689,10 +2661,7 @@ int32_t UserMenuWindow::ExecuteSelection(int32_t nIndex) {
 	/*bp-0x4*/   long lValue;
 
 // LINE 360:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x98];
-	__asm        add    eax, nIndex;
-	__asm        mov    lValue, eax;
+	lValue = (this->myUserMenuWindowDescription.lSelectionBase + nIndex);
 // LINE 362:
 	__asm        lea    eax, lValue;
 	__asm        push   eax;

@@ -1217,20 +1217,11 @@ _T63:
 	return;
 // LINE 793:
 _T68:
-	__asm        mov    eax, ViewState.world_pos.x;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0xB9];
-	__asm        mov    vec.x, eax;
+	vec.x = (ViewState.world_pos.x - this->dyObj1.loc.x);
 // LINE 794:
-	__asm        mov    eax, ViewState.world_pos.y;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0xBD];
-	__asm        mov    vec.y, eax;
+	vec.y = (ViewState.world_pos.y - this->dyObj1.loc.y);
 // LINE 795:
-	__asm        mov    eax, ViewState.world_pos.z;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0xC1];
-	__asm        mov    vec.z, eax;
+	vec.z = (ViewState.world_pos.z - this->dyObj1.loc.z);
 // LINE 796:
 	__asm        lea    eax, vec.x;
 	__asm        push   eax;
@@ -1567,18 +1558,12 @@ void TrainClass::SetCrashWhenReady() {
 	__asm        cmp    deltaY, eax;
 	__asm        jge    _T4e;
 // LINE 1051:
-	__asm        mov    eax, deltaX;
-	__asm        add    eax, eax;
-	__asm        add    eax, deltaY;
-	__asm        mov    dist, eax;
+	dist = ((deltaX + deltaX) + deltaY);
 // LINE 1052:
 	__asm        jmp    _T59;
 // LINE 1053:
 _T4e:
-	__asm        mov    eax, deltaY;
-	__asm        add    eax, eax;
-	__asm        add    eax, deltaX;
-	__asm        mov    dist, eax;
+	dist = ((deltaY + deltaY) + deltaX);
 // LINE 1056:
 _T59:
 	__asm        cmp    dist, 0x14;
@@ -2920,15 +2905,9 @@ int32_t TrainClass::IsTrainOutOfCameraRange() {
 	/*bp-0x8*/   int32_t deltaY;
 
 // LINE 1661:
-	__asm        mov    eax, CameraCell.x;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x35];
-	__asm        mov    deltaX, eax;
+	deltaX = (CameraCell.x - this->currentLocation1.x);
 // LINE 1662:
-	__asm        mov    eax, CameraCell.y;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x39];
-	__asm        mov    deltaY, eax;
+	deltaY = (CameraCell.y - this->currentLocation1.y);
 // LINE 1667:
 _T28:
 	__asm        cmp    deltaX, 0x80;
@@ -5036,9 +5015,7 @@ _T90:
 // LINE 2823:
 // Block start:
 	/*bp-0x8*/   /*packed*/ struct _DYOBJ_INST **dyptrptr;
-	__asm        mov    eax, cellPointer;
-	__asm        add    eax, 0x10;
-	__asm        mov    dyptrptr, eax;
+	dyptrptr = (cellPointer + 0x10);
 // LINE 2825:
 _Ta3:
 	__asm        mov    eax, dyptrptr;
@@ -6642,23 +6619,11 @@ void TrainClass::AdjustTrailingCars() {
 	__asm        sub    ebx, eax;
 	__asm        mov    loc.z, ebx;
 // LINE 3339:
-	__asm        mov    eax, loc.x;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x1D1];
-	__asm        sub    eax, [ecx+0x18];
-	__asm        mov    vec.x, eax;
+	vec.x = (loc.x - this->midcar->loc.x);
 // LINE 3340:
-	__asm        mov    eax, loc.y;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x1D1];
-	__asm        sub    eax, [ecx+0x1C];
-	__asm        mov    vec.y, eax;
+	vec.y = (loc.y - this->midcar->loc.y);
 // LINE 3341:
-	__asm        mov    eax, loc.z;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x1D1];
-	__asm        sub    eax, [ecx+0x20];
-	__asm        mov    vec.z, eax;
+	vec.z = (loc.z - this->midcar->loc.z);
 // LINE 3344:
 	__asm        lea    eax, vec.x;
 	__asm        push   eax;
@@ -6758,23 +6723,11 @@ void TrainClass::AdjustTrailingCars() {
 	__asm        sub    ebx, eax;
 	__asm        mov    loc.z, ebx;
 // LINE 3362:
-	__asm        mov    eax, loc.x;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x1D5];
-	__asm        sub    eax, [ecx+0x18];
-	__asm        mov    vec.x, eax;
+	vec.x = (loc.x - this->endcar->loc.x);
 // LINE 3363:
-	__asm        mov    eax, loc.y;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x1D5];
-	__asm        sub    eax, [ecx+0x1C];
-	__asm        mov    vec.y, eax;
+	vec.y = (loc.y - this->endcar->loc.y);
 // LINE 3364:
-	__asm        mov    eax, loc.z;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x1D5];
-	__asm        sub    eax, [ecx+0x20];
-	__asm        mov    vec.z, eax;
+	vec.z = (loc.z - this->endcar->loc.z);
 // LINE 3367:
 	__asm        lea    eax, vec.x;
 	__asm        push   eax;
@@ -7215,17 +7168,9 @@ _T1a3:
 	__asm        shl    eax, 0x10;
 	__asm        mov    nextFineLocation.z, eax;
 // LINE 3490:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x55];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x35];
-	__asm        mov    xdiff, eax;
+	xdiff = (this->nextLocation.x - this->currentLocation1.x);
 // LINE 3491:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x59];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x39];
-	__asm        mov    ydiff, eax;
+	ydiff = (this->nextLocation.y - this->currentLocation1.y);
 // LINE 3493:
 	__asm        cmp    xdiff, 0;
 	__asm        jge    _T27d;
@@ -7537,26 +7482,11 @@ _T54b:
 	__asm        jmp    _T56a;
 // LINE 3624:
 _T56a:
-	__asm        mov    eax, nextFineLocation.x;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x1CD];
-	__asm        sub    eax, [ecx+0x18];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x15], eax;
+	this->directionVector.x = (nextFineLocation.x - this->leadcar->loc.x);
 // LINE 3625:
-	__asm        mov    eax, nextFineLocation.y;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x1CD];
-	__asm        sub    eax, [ecx+0x1C];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x19], eax;
+	this->directionVector.y = (nextFineLocation.y - this->leadcar->loc.y);
 // LINE 3626:
-	__asm        mov    eax, nextFineLocation.z;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x1CD];
-	__asm        sub    eax, [ecx+0x20];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x1D], eax;
+	this->directionVector.z = (nextFineLocation.z - this->leadcar->loc.z);
 // LINE 3627:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x15;
@@ -8995,20 +8925,11 @@ _T152:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x17D], eax;
 // LINE 4507:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0xA1;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x1CD], eax;
+	this->leadcar = (this + 0xa1);
 // LINE 4508:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x105;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x1D1], eax;
+	this->midcar = (this + 0x105);
 // LINE 4509:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x169;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x1D5], eax;
+	this->endcar = (this + 0x169);
 // LINE 4512:
 	this->dyObj1.next = 0x0;
 // LINE 4513:

@@ -1092,20 +1092,11 @@ _T3bc:
 	__asm        mov    [ecx+0x31E], eax;
 // LINE 369:
 _T3cd:
-	__asm        mov    eax, ViewState.world_pos.x;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x24];
-	__asm        mov    vec.x, eax;
+	vec.x = (ViewState.world_pos.x - this->autoDynomitor.loc.x);
 // LINE 370:
-	__asm        mov    eax, ViewState.world_pos.y;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x28];
-	__asm        mov    vec.y, eax;
+	vec.y = (ViewState.world_pos.y - this->autoDynomitor.loc.y);
 // LINE 371:
-	__asm        mov    eax, ViewState.world_pos.z;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x2C];
-	__asm        mov    vec.z, eax;
+	vec.z = (ViewState.world_pos.z - this->autoDynomitor.loc.z);
 // LINE 372:
 	__asm        lea    eax, vec.x;
 	__asm        push   eax;
@@ -1334,20 +1325,11 @@ _T6bd:
 	__asm        jmp    _T72a;
 // LINE 453:
 _T6ca:
-	__asm        mov    eax, ViewState.world_pos.x;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x24];
-	__asm        mov    vec.x, eax;
+	vec.x = (ViewState.world_pos.x - this->autoDynomitor.loc.x);
 // LINE 454:
-	__asm        mov    eax, ViewState.world_pos.y;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x28];
-	__asm        mov    vec.y, eax;
+	vec.y = (ViewState.world_pos.y - this->autoDynomitor.loc.y);
 // LINE 455:
-	__asm        mov    eax, ViewState.world_pos.z;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x2C];
-	__asm        mov    vec.z, eax;
+	vec.z = (ViewState.world_pos.z - this->autoDynomitor.loc.z);
 // LINE 456:
 	__asm        lea    eax, vec.x;
 	__asm        push   eax;
@@ -1482,20 +1464,11 @@ _T859:
 	__asm        test   al, 0x10;
 	__asm        je     _T903;
 // LINE 514:
-	__asm        mov    eax, ViewState.world_pos.x;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x24];
-	__asm        mov    vec.x, eax;
+	vec.x = (ViewState.world_pos.x - this->autoDynomitor.loc.x);
 // LINE 515:
-	__asm        mov    eax, ViewState.world_pos.y;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x28];
-	__asm        mov    vec.y, eax;
+	vec.y = (ViewState.world_pos.y - this->autoDynomitor.loc.y);
 // LINE 516:
-	__asm        mov    eax, ViewState.world_pos.z;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x2C];
-	__asm        mov    vec.z, eax;
+	vec.z = (ViewState.world_pos.z - this->autoDynomitor.loc.z);
 // LINE 517:
 	__asm        lea    eax, vec.x;
 	__asm        push   eax;

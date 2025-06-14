@@ -401,9 +401,7 @@ _T131:
 	__asm        mov    edx, bhdr;
 	__asm        mov    [edx+ecx*8+0xC], eax;
 // LINE 349:
-	__asm        mov    eax, colmask;
-	__asm        and    eax, i;
-	__asm        mov    col, eax;
+	col = (colmask & i);
 // LINE 350:
 	__asm        mov    eax, i;
 	__asm        mov    cl, reinterpret_cast<uint8_t>(rowshift);

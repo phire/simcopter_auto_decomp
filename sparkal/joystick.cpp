@@ -515,54 +515,42 @@ _T4b:
 _T56:
 	dwFlagToUse = 0x1;
 // LINE 238:
-	__asm        mov    eax, joyInfoExToUse;
-	__asm        add    eax, 8;
-	__asm        mov    dwResultToUse, eax;
+	dwResultToUse = (joyInfoExToUse + 0x8);
 // LINE 239:
 	__asm        jmp    _T10c;
 // LINE 241:
 _T6b:
 	dwFlagToUse = 0x2;
 // LINE 242:
-	__asm        mov    eax, joyInfoExToUse;
-	__asm        add    eax, 0xC;
-	__asm        mov    dwResultToUse, eax;
+	dwResultToUse = (joyInfoExToUse + 0xc);
 // LINE 243:
 	__asm        jmp    _T10c;
 // LINE 245:
 _T80:
 	dwFlagToUse = 0x4;
 // LINE 246:
-	__asm        mov    eax, joyInfoExToUse;
-	__asm        add    eax, 0x10;
-	__asm        mov    dwResultToUse, eax;
+	dwResultToUse = (joyInfoExToUse + 0x10);
 // LINE 247:
 	__asm        jmp    _T10c;
 // LINE 249:
 _T95:
 	dwFlagToUse = 0x8;
 // LINE 250:
-	__asm        mov    eax, joyInfoExToUse;
-	__asm        add    eax, 0x14;
-	__asm        mov    dwResultToUse, eax;
+	dwResultToUse = (joyInfoExToUse + 0x14);
 // LINE 251:
 	__asm        jmp    _T10c;
 // LINE 253:
 _Taa:
 	dwFlagToUse = 0x10;
 // LINE 254:
-	__asm        mov    eax, joyInfoExToUse;
-	__asm        add    eax, 0x18;
-	__asm        mov    dwResultToUse, eax;
+	dwResultToUse = (joyInfoExToUse + 0x18);
 // LINE 255:
 	__asm        jmp    _T10c;
 // LINE 257:
 _Tbf:
 	dwFlagToUse = 0x20;
 // LINE 258:
-	__asm        mov    eax, joyInfoExToUse;
-	__asm        add    eax, 0x1C;
-	__asm        mov    dwResultToUse, eax;
+	dwResultToUse = (joyInfoExToUse + 0x1c);
 // LINE 259:
 	__asm        jmp    _T10c;
 // LINE 261:

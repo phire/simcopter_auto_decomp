@@ -427,13 +427,9 @@ _T311:
 	__asm        mov    eax, g_sqrtTable[eax*4];
 	__asm        mov    xOffset, eax;
 // LINE 240:
-	__asm        mov    eax, centerPt.x;
-	__asm        sub    eax, xOffset;
-	__asm        mov    startX, eax;
+	startX = (centerPt.x - xOffset);
 // LINE 241:
-	__asm        mov    eax, centerPt.x;
-	__asm        add    eax, xOffset;
-	__asm        mov    endX, eax;
+	endX = (centerPt.x + xOffset);
 // LINE 242:
 	__asm        mov    eax, radius;
 	__asm        sub    eax, i;
@@ -453,11 +449,7 @@ _T311:
 	__asm        call   DrawHorzLine;
 	__asm        add    esp, 0x10;
 // LINE 245:
-	__asm        mov    eax, centerPt.y;
-	__asm        mov    ecx, radius;
-	__asm        sub    ecx, i;
-	__asm        sub    eax, ecx;
-	__asm        mov    lineY, eax;
+	lineY = (centerPt.y - (radius - i));
 // LINE 246:
 	__asm        mov    eax, diameter;
 	__asm        sub    eax, i;
@@ -569,18 +561,11 @@ _T519:
 	__asm        mov    eax, g_sqrtTable[eax*4];
 	__asm        mov    xOffset, eax;
 // LINE 274:
-	__asm        mov    eax, centerPt.x;
-	__asm        sub    eax, xOffset;
-	__asm        mov    startX, eax;
+	startX = (centerPt.x - xOffset);
 // LINE 275:
-	__asm        mov    eax, centerPt.x;
-	__asm        add    eax, xOffset;
-	__asm        mov    endX, eax;
+	endX = (centerPt.x + xOffset);
 // LINE 276:
-	__asm        mov    eax, radius;
-	__asm        sub    eax, i;
-	__asm        add    eax, centerPt.y;
-	__asm        mov    lineY, eax;
+	lineY = ((radius - i) + centerPt.y);
 // LINE 278:
 	__asm        mov    eax, diameter;
 	__asm        cmp    i, eax;
@@ -632,18 +617,11 @@ _T5f5:
 	__asm        mov    eax, g_sqrtTable[eax*4];
 	__asm        mov    xOffset, eax;
 // LINE 297:
-	__asm        mov    eax, centerPt.x;
-	__asm        sub    eax, xOffset;
-	__asm        mov    startX, eax;
+	startX = (centerPt.x - xOffset);
 // LINE 298:
-	__asm        mov    eax, centerPt.x;
-	__asm        add    eax, xOffset;
-	__asm        mov    endX, eax;
+	endX = (centerPt.x + xOffset);
 // LINE 299:
-	__asm        mov    eax, radius;
-	__asm        sub    eax, i;
-	__asm        add    eax, centerPt.y;
-	__asm        mov    lineY, eax;
+	lineY = ((radius - i) + centerPt.y);
 // LINE 301:
 	__asm        xor    eax, eax;
 	__asm        mov    al, color;
@@ -688,13 +666,9 @@ _T6a1:
 	__asm        mov    eax, g_sqrtTable[eax*4];
 	__asm        mov    xOffset, eax;
 // LINE 315:
-	__asm        mov    eax, centerPt.x;
-	__asm        sub    eax, xOffset;
-	__asm        mov    startX, eax;
+	startX = (centerPt.x - xOffset);
 // LINE 316:
-	__asm        mov    eax, centerPt.x;
-	__asm        add    eax, xOffset;
-	__asm        mov    endX, eax;
+	endX = (centerPt.x + xOffset);
 // LINE 317:
 	__asm        mov    eax, radius;
 	__asm        sub    eax, i;
@@ -713,11 +687,7 @@ _T6a1:
 	__asm        call   DrawHorzLine;
 	__asm        add    esp, 0x10;
 // LINE 320:
-	__asm        mov    eax, centerPt.y;
-	__asm        mov    ecx, radius;
-	__asm        sub    ecx, i;
-	__asm        sub    eax, ecx;
-	__asm        mov    lineY, eax;
+	lineY = (centerPt.y - (radius - i));
 // LINE 321:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(color);
 	__asm        push   eax;
@@ -873,17 +843,11 @@ _T10d:
 	__asm        mov    eax, g_sqrtTable[eax*4];
 	__asm        mov    offset.x, eax;
 // LINE 463:
-	__asm        mov    eax, centerPt.x;
-	__asm        sub    eax, offset.x;
-	__asm        mov    startX, eax;
+	startX = (centerPt.x - offset.x);
 // LINE 464:
-	__asm        mov    eax, centerPt.x;
-	__asm        add    eax, offset.x;
-	__asm        mov    endX, eax;
+	endX = (centerPt.x + offset.x);
 // LINE 465:
-	__asm        mov    eax, vertRad;
-	__asm        sub    eax, i;
-	__asm        mov    offset.y, eax;
+	offset.y = (vertRad - i);
 // LINE 466:
 	__asm        mov    eax, offset.y;
 	__asm        mov    [ebp-0x74], eax;
@@ -892,9 +856,7 @@ _T10d:
 	__asm        call   0x0056EBE8;
 	__asm        mov    yScanLine, eax;
 // LINE 467:
-	__asm        mov    eax, centerPt.y;
-	__asm        add    eax, offset.y;
-	__asm        mov    yLine, eax;
+	yLine = (centerPt.y + offset.y);
 // LINE 469:
 	__asm        mov    eax, faceCenter.y;
 	__asm        sub    eax, yScanLine;
@@ -925,9 +887,7 @@ _T10d:
 	__asm        call   DrawLineOnFace;
 	__asm        add    esp, 0x28;
 // LINE 473:
-	__asm        mov    eax, centerPt.y;
-	__asm        sub    eax, offset.y;
-	__asm        mov    yLine, eax;
+	yLine = (centerPt.y - offset.y);
 // LINE 474:
 	__asm        mov    eax, faceCenter.y;
 	__asm        add    eax, yScanLine;
@@ -1016,13 +976,9 @@ void DrawLineOnFace(long startX, long endX, long yLine, /*unpacked*/ struct Poin
 	__asm        call   0x0056EBE8;
 	__asm        mov    scaledOffset.x, eax;
 // LINE 537:
-	__asm        mov    eax, faceCenter.x;
-	__asm        sub    eax, scaledOffset.x;
-	__asm        mov    loBitmapLimit, eax;
+	loBitmapLimit = (faceCenter.x - scaledOffset.x);
 // LINE 538:
-	__asm        mov    eax, faceCenter.x;
-	__asm        add    eax, scaledOffset.x;
-	__asm        mov    hiBitmapLimit, eax;
+	hiBitmapLimit = (faceCenter.x + scaledOffset.x);
 // LINE 541:
 	__asm        cmp    loBitmapLimit, 0;
 	__asm        jl     _T83;
@@ -1032,11 +988,7 @@ void DrawLineOnFace(long startX, long endX, long yLine, /*unpacked*/ struct Poin
 	__asm        cmp    [eax], ecx;
 	__asm        jle    _T83;
 // LINE 543:
-	__asm        mov    eax, faceCenter.x;
-	__asm        sub    eax, scaledOffset.x;
-	__asm        mov    ecx, pixLine;
-	__asm        add    eax, [ecx+0x10];
-	__asm        mov    ptr, eax;
+	ptr = ((faceCenter.x - scaledOffset.x) + pixLine->ptr);
 // LINE 544:
 	__asm        mov    eax, pixLine;
 	__asm        mov    ecx, [eax+0xC];
@@ -1072,13 +1024,7 @@ _Ta5:
 	__asm        cmp    loBitmapLimit, 0;
 	__asm        jge    _T14b;
 // LINE 552:
-	__asm        mov    eax, faceCenter.x;
-	__asm        sub    eax, scaledOffset.x;
-	__asm        mov    ecx, pixLine;
-	__asm        add    eax, [ecx];
-	__asm        mov    ecx, pixLine;
-	__asm        add    eax, [ecx+0x10];
-	__asm        mov    ptr, eax;
+	ptr = (((faceCenter.x - scaledOffset.x) + pixLine->width) + pixLine->ptr);
 // LINE 553:
 	begin = startX;
 // LINE 555:
@@ -1136,11 +1082,7 @@ _Ta5:
 	return;
 // LINE 565:
 _T14b:
-	__asm        mov    eax, faceCenter.x;
-	__asm        sub    eax, scaledOffset.x;
-	__asm        mov    ecx, pixLine;
-	__asm        add    eax, [ecx+0x10];
-	__asm        mov    ptr, eax;
+	ptr = ((faceCenter.x - scaledOffset.x) + pixLine->ptr);
 // LINE 566:
 	begin = startX;
 // LINE 567:
@@ -1505,13 +1447,9 @@ _T166:
 	return;
 // LINE 695:
 _T16b:
-	__asm        mov    eax, endPt.x;
-	__asm        sub    eax, startPt.x;
-	__asm        mov    dx, eax;
+	dx = (endPt.x - startPt.x);
 // LINE 696:
-	__asm        mov    eax, endPt.y;
-	__asm        sub    eax, startPt.y;
-	__asm        mov    dy, eax;
+	dy = (endPt.y - startPt.y);
 // LINE 699:
 	__asm        cmp    dx, 0;
 	__asm        jl     _T193;
@@ -1590,9 +1528,7 @@ _T224:
 	__asm        idiv   segLen;
 	__asm        mov    startWidth, eax;
 // LINE 735:
-	__asm        mov    eax, width;
-	__asm        sub    eax, startWidth;
-	__asm        mov    endWidth, eax;
+	endWidth = (width - startWidth);
 // LINE 736:
 	__asm        mov    eax, startWidth;
 	__asm        imul   eax, Pbufwidth;
@@ -1700,21 +1636,15 @@ _T338:
 	__asm        idiv   segLen;
 	__asm        mov    startWidth, eax;
 // LINE 776:
-	__asm        mov    eax, width;
-	__asm        sub    eax, startWidth;
-	__asm        mov    endWidth, eax;
+	endWidth = (width - startWidth);
 // LINE 777:
-	__asm        mov    eax, endWidth;
-	__asm        sub    eax, startWidth;
-	__asm        mov    tapWidth, eax;
+	tapWidth = (endWidth - startWidth);
 // LINE 778:
 	writeBufferTmp += startWidth;
 // LINE 780:
 	cInc = startWidth;
 // LINE 786:
-	__asm        mov    eax, tapWidth;
-	__asm        and    eax, 3;
-	__asm        mov    oneByteWrites, eax;
+	oneByteWrites = (tapWidth & 0x3);
 // LINE 787:
 	__asm        mov    eax, tapWidth;
 	__asm        sar    eax, 2;
@@ -1962,13 +1892,9 @@ _T13d:
 	return;
 // LINE 871:
 _T142:
-	__asm        mov    eax, endPt.x;
-	__asm        sub    eax, startPt.x;
-	__asm        mov    dx, eax;
+	dx = (endPt.x - startPt.x);
 // LINE 872:
-	__asm        mov    eax, endPt.y;
-	__asm        sub    eax, startPt.y;
-	__asm        mov    dy, eax;
+	dy = (endPt.y - startPt.y);
 // LINE 875:
 	__asm        cmp    dx, 0;
 	__asm        jl     _T16a;
@@ -2106,9 +2032,7 @@ _T2a5:
 // LINE 923:
 	cInc = 0x0;
 // LINE 929:
-	__asm        mov    eax, width;
-	__asm        and    eax, 3;
-	__asm        mov    oneByteWrites, eax;
+	oneByteWrites = (width & 0x3);
 // LINE 930:
 	__asm        mov    eax, width;
 	__asm        sar    eax, 2;
@@ -2314,9 +2238,7 @@ _Ta6:
 	__asm        inc    eax;
 	__asm        mov    dx, eax;
 // LINE 1015:
-	__asm        mov    eax, dx;
-	__asm        and    eax, 3;
-	__asm        mov    oneByteWrites, eax;
+	oneByteWrites = (dx & 0x3);
 // LINE 1016:
 	__asm        mov    eax, dx;
 	__asm        sar    eax, 2;
@@ -2532,9 +2454,7 @@ _T65:
 	__asm        add    eax, ecx;
 	__asm        mov    fourByteColor, eax;
 // LINE 1097:
-	__asm        mov    eax, dx;
-	__asm        and    eax, 3;
-	__asm        mov    oneByteWrites, eax;
+	oneByteWrites = (dx & 0x3);
 // LINE 1098:
 	__asm        mov    eax, dx;
 	__asm        sar    eax, 2;

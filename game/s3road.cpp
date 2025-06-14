@@ -1502,44 +1502,28 @@ _T172:
 	__asm        jmp    _T1df;
 // LINE 505:
 _T182:
-	__asm        mov    eax, TestDir;
-	__asm        and    eax, 2;
-	__asm        jmp    __RETURN;
+	return (TestDir & 0x2);
 // LINE 506:
 _T18d:
-	__asm        mov    eax, TestDir;
-	__asm        and    eax, 8;
-	__asm        jmp    __RETURN;
+	return (TestDir & 0x8);
 // LINE 507:
 _T198:
-	__asm        mov    eax, TestDir;
-	__asm        and    eax, 1;
-	__asm        jmp    __RETURN;
+	return (TestDir & 0x1);
 // LINE 508:
 _T1a3:
-	__asm        mov    eax, TestDir;
-	__asm        and    eax, 1;
-	__asm        jmp    __RETURN;
+	return (TestDir & 0x1);
 // LINE 509:
 _T1ae:
-	__asm        mov    eax, TestDir;
-	__asm        and    eax, 8;
-	__asm        jmp    __RETURN;
+	return (TestDir & 0x8);
 // LINE 510:
 _T1b9:
-	__asm        mov    eax, TestDir;
-	__asm        and    eax, 2;
-	__asm        jmp    __RETURN;
+	return (TestDir & 0x2);
 // LINE 511:
 _T1c4:
-	__asm        mov    eax, TestDir;
-	__asm        and    eax, 4;
-	__asm        jmp    __RETURN;
+	return (TestDir & 0x4);
 // LINE 512:
 _T1cf:
-	__asm        mov    eax, TestDir;
-	__asm        and    eax, 4;
-	__asm        jmp    __RETURN;
+	return (TestDir & 0x4);
 // LINE 513:
 	__asm        jmp    _T246;
 _T1df:
@@ -1578,44 +1562,28 @@ _T246:
 	__asm        jmp    _T2d4;
 // LINE 518:
 _T256:
-	__asm        mov    eax, TestDir;
-	__asm        and    eax, 4;
-	__asm        jmp    __RETURN;
+	return (TestDir & 0x4);
 // LINE 519:
 _T261:
-	__asm        mov    eax, TestDir;
-	__asm        and    eax, 1;
-	__asm        jmp    __RETURN;
+	return (TestDir & 0x1);
 // LINE 520:
 _T26c:
-	__asm        mov    eax, TestDir;
-	__asm        and    eax, 2;
-	__asm        jmp    __RETURN;
+	return (TestDir & 0x2);
 // LINE 521:
 _T277:
-	__asm        mov    eax, TestDir;
-	__asm        and    eax, 2;
-	__asm        jmp    __RETURN;
+	return (TestDir & 0x2);
 // LINE 522:
 _T282:
-	__asm        mov    eax, TestDir;
-	__asm        and    eax, 1;
-	__asm        jmp    __RETURN;
+	return (TestDir & 0x1);
 // LINE 523:
 _T28d:
-	__asm        mov    eax, TestDir;
-	__asm        and    eax, 4;
-	__asm        jmp    __RETURN;
+	return (TestDir & 0x4);
 // LINE 524:
 _T298:
-	__asm        mov    eax, TestDir;
-	__asm        and    eax, 8;
-	__asm        jmp    __RETURN;
+	return (TestDir & 0x8);
 // LINE 525:
 _T2a3:
-	__asm        mov    eax, TestDir;
-	__asm        and    eax, 8;
-	__asm        jmp    __RETURN;
+	return (TestDir & 0x8);
 // LINE 526:
 _T2ae:
 	__asm        push   0x20E;
@@ -1853,7 +1821,6 @@ _T575:
 _T59d:
 	return 0x0;
 // LINE 566:
-__RETURN:
 }
 
 

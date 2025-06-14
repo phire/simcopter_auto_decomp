@@ -132,9 +132,7 @@ _T64:
 	__asm        call   0x004D682B;
 	__asm        add    esp, 4;
 // LINE 199:
-	__asm        mov    eax, i;
-	__asm        and    eax, 0xFF;
-	__asm        mov    G_ClearColor, eax;
+	G_ClearColor = (i & 0xff);
 // LINE 243:
 	__asm        push   0x598EE0;
 	__asm        call   0x004D6A69;
@@ -652,9 +650,7 @@ _T75f:
 	__asm        jmp    _T730;
 // LINE 445:
 _T764:
-	__asm        mov    eax, instanceID;
-	__asm        add    eax, 5;
-	__asm        mov    totalVehicles, eax;
+	totalVehicles = (instanceID + 0x5);
 // LINE 446:
 	__asm        jmp    _T77e;
 _T778:
@@ -677,9 +673,7 @@ _T7ac:
 	__asm        jmp    _T778;
 // LINE 452:
 _T7b1:
-	__asm        mov    eax, instanceID;
-	__asm        add    eax, 5;
-	__asm        mov    totalVehicles, eax;
+	totalVehicles = (instanceID + 0x5);
 // LINE 453:
 	__asm        jmp    _T7cb;
 _T7c5:
@@ -702,9 +696,7 @@ _T7f9:
 	__asm        jmp    _T7c5;
 // LINE 459:
 _T7fe:
-	__asm        mov    eax, instanceID;
-	__asm        add    eax, 5;
-	__asm        mov    totalVehicles, eax;
+	totalVehicles = (instanceID + 0x5);
 // LINE 460:
 	__asm        jmp    _T818;
 _T812:
@@ -729,9 +721,7 @@ _T846:
 _T84b:
 	__asm        or     G_InitializationProgress, 0x200;
 // LINE 468:
-	__asm        mov    eax, instanceID;
-	__asm        add    eax, 5;
-	__asm        mov    totalVehicles, eax;
+	totalVehicles = (instanceID + 0x5);
 // LINE 469:
 	__asm        jmp    _T86f;
 _T869:

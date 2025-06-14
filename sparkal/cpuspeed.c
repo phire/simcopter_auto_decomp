@@ -226,13 +226,9 @@ _T1cb:
 // LINE 234:
 	__asm        mov    stamp1, eax;
 // LINE 237:
-	__asm        mov    eax, stamp1;
-	__asm        sub    eax, stamp0;
-	__asm        mov    cycles, eax;
+	cycles = (stamp1 - stamp0);
 // LINE 243:
-	__asm        mov    eax, t1<_LARGE_INTEGER+0x00:4>;
-	__asm        sub    eax, t0<_LARGE_INTEGER+0x00:4>;
-	__asm        mov    ticks, eax;
+	ticks = (t1<_LARGE_INTEGER+0x00:4> - t0<_LARGE_INTEGER+0x00:4>);
 // LINE 257:
 	__asm        mov    eax, ticks;
 	__asm        mov    ecx, eax;
@@ -281,10 +277,7 @@ _T22c:
 	freq++;
 // LINE 276:
 _T250:
-	__asm        mov    eax, freq2;
-	__asm        add    eax, freq3;
-	__asm        add    eax, freq;
-	__asm        mov    total, eax;
+	total = ((freq2 + freq3) + freq);
 // LINE 285:
 	__asm        cmp    tries, 3;
 	__asm        jl     _T157;
@@ -384,9 +377,7 @@ loop1:
 	__asm        push   eax;
 	__asm        call   dword ptr ds:[0x6C365C];
 // LINE 352:
-	__asm        mov    eax, t1<_LARGE_INTEGER+0x00:4>;
-	__asm        sub    eax, t0<_LARGE_INTEGER+0x00:4>;
-	__asm        mov    current, eax;
+	current = (t1<_LARGE_INTEGER+0x00:4> - t0<_LARGE_INTEGER+0x00:4>);
 // LINE 357:
 	__asm        mov    eax, current;
 	__asm        cmp    lowest, eax;

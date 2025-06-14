@@ -3235,11 +3235,7 @@ _Ta1:
 // LINE 153:
 	ambientawake[0] = reinterpret_cast<int16_t>(cYObject::sNumAmbientAwake);
 // LINE 154:
-	__asm        mov    eax, 0xC;
-	__asm        movsx  ecx, cYObject::sBeamed;
-	__asm        sub    eax, ecx;
-	__asm        mov    ecx, failedtobeam;
-	__asm        mov    [ecx], eax;
+	failedtobeam[0] = (0xc - reinterpret_cast<int16_t>(cYObject::sBeamed));
 // LINE 155:
 	numbeamed[0] = reinterpret_cast<int16_t>(cYObject::sDebugNumBeamed);
 // LINE 156:
@@ -4046,10 +4042,7 @@ _T1ce:
 	__asm        add    esp, 0xC;
 	__asm        mov    groundheight, eax;
 // LINE 282:
-	__asm        mov    eax, groundheight;
-	__asm        add    eax, objheight;
-	__asm        add    eax, 0x30000;
-	__asm        mov    newloc.y, eax;
+	newloc.y = ((groundheight + objheight) + 0x30000);
 // LINE 284:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x30];
@@ -5952,11 +5945,8 @@ _T2f:
 	__asm        add    esp, 0x10;
 // LINE 520:
 _T2f:
-	__asm        mov    eax, gAvatar;
-	__asm        add    eax, 0x24;
-	__asm        jmp    __RETURN;
+	return (gAvatar + 0x24);
 // LINE 521:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00546541
@@ -5973,11 +5963,8 @@ __RETURN:
 	__asm        add    esp, 0x10;
 // LINE 526:
 _T2f:
-	__asm        mov    eax, gAvatar;
-	__asm        add    eax, 0x168;
-	__asm        jmp    __RETURN;
+	return (gAvatar + 0x168);
 // LINE 527:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00546584
@@ -10636,15 +10623,9 @@ _T1d4:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 1443:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x3C];
-	__asm        sub    eax, ViewState.world_pos.x;
-	__asm        mov    xtoview, eax;
+	xtoview = (this->fDyn.loc.x - ViewState.world_pos.x);
 // LINE 1444:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x44];
-	__asm        sub    eax, ViewState.world_pos.x;
-	__asm        mov    ztoview, eax;
+	ztoview = (this->fDyn.loc.z - ViewState.world_pos.x);
 // LINE 1445:
 	behindView = 0x0;
 // LINE 1447:
@@ -18713,10 +18694,7 @@ _T103:
 // LINE 2787:
 	this->fDyn.next = ncptr->dyptr;
 // LINE 2788:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x24;
-	__asm        mov    ecx, ncptr;
-	__asm        mov    [ecx+0x10], eax;
+	ncptr->dyptr = (this + 0x24);
 // LINE 2790:
 	this->fbLinked = 0x1;
 // LINE 2791:
@@ -18755,9 +18733,7 @@ _T3e:
 	__asm        mov    eax, G_omap[0][0][edx+ecx*4];
 	__asm        mov    cptr, eax;
 // LINE 2800:
-	__asm        mov    eax, cptr;
-	__asm        add    eax, 0x10;
-	__asm        mov    dyptrptr, eax;
+	dyptrptr = (cptr + 0x10);
 // LINE 2801:
 _T6a:
 	__asm        mov    eax, dyptrptr;
@@ -19992,10 +19968,7 @@ void cYObject::~cYObject() {
 	__asm        mov    srch, 0x5B8684;
 	__asm        jmp    _T5e;
 _T51:
-	__asm        mov    eax, srch;
-	__asm        mov    eax, [eax];
-	__asm        add    eax, 0xB8;
-	__asm        mov    srch, eax;
+	srch = (srch-> + 0xb8);
 _T5e:
 	__asm        mov    eax, srch;
 	__asm        cmp    dword ptr [eax], 0;
@@ -20160,13 +20133,9 @@ int32_t S3PUtilsGetDir(int32_t orgx, int32_t orgy, int32_t destx, int32_t desty)
 	/*bp-0x14*/  int32_t deltay;
 
 // LINE 3119:
-	__asm        mov    eax, destx;
-	__asm        sub    eax, orgx;
-	__asm        mov    deltax, eax;
+	deltax = (destx - orgx);
 // LINE 3120:
-	__asm        mov    eax, desty;
-	__asm        sub    eax, orgy;
-	__asm        mov    deltay, eax;
+	deltay = (desty - orgy);
 // LINE 3122:
 	__asm        cmp    deltax, 0;
 	__asm        jge    _T32;

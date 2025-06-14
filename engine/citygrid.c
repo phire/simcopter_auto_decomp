@@ -99,9 +99,7 @@ _T6a:
 	__asm        inc    eax;
 	__asm        mov    G_VertDim, eax;
 // LINE 159:
-	__asm        mov    eax, ViewSize;
-	__asm        add    eax, eax;
-	__asm        mov    G_FaceDim, eax;
+	G_FaceDim = (ViewSize + ViewSize);
 // LINE 160:
 	vert_inc = 0x400000;
 // LINE 166:
@@ -155,9 +153,7 @@ _T6a:
 	__asm        add    esp, 0x10;
 	__asm        mov    GridProject, eax;
 // LINE 204:
-	__asm        mov    eax, goff;
-	__asm        add    eax, GridProject;
-	__asm        mov    GridProjectEnd, eax;
+	GridProjectEnd = (goff + GridProject);
 // LINE 206:
 	__asm        push   0;
 	__asm        mov    eax, GridNVerts;
@@ -235,9 +231,7 @@ _T6a:
 	__asm        add    esp, 0x10;
 	__asm        mov    IsRotated, eax;
 // LINE 216:
-	__asm        mov    eax, GridNVerts;
-	__asm        add    eax, IsRotated;
-	__asm        mov    IsRotatedEnd, eax;
+	IsRotatedEnd = (GridNVerts + IsRotated);
 // LINE 218:
 	__asm        push   0;
 	__asm        mov    eax, G_ViewSize;
@@ -309,9 +303,7 @@ _T31d:
 	__asm        mov    edx, x;
 	__asm        mov    GridCellOffsets[0][ecx+edx*4], eax;
 // LINE 231:
-	__asm        mov    eax, GridFaceSize;
-	__asm        add    eax, eax;
-	__asm        add    goff, eax;
+	goff += (GridFaceSize + GridFaceSize);
 // LINE 232:
 	__asm        jmp    _T31a;
 // LINE 233:
@@ -331,23 +323,16 @@ _T35d:
 	__asm        inc    eax;
 	__asm        mov    CVerts[1][1], eax;
 // LINE 245:
-	__asm        mov    eax, G_VertDim;
-	__asm        add    eax, 2;
-	__asm        mov    CVerts[1][2], eax;
+	CVerts[1][2] = (G_VertDim + 0x2);
 // LINE 246:
-	__asm        mov    eax, G_VertDim;
-	__asm        add    eax, eax;
-	__asm        mov    CVerts[2][0], eax;
+	CVerts[2][0] = (G_VertDim + G_VertDim);
 // LINE 247:
 	__asm        mov    eax, G_VertDim;
 	__asm        add    eax, eax;
 	__asm        inc    eax;
 	__asm        mov    CVerts[2][1], eax;
 // LINE 248:
-	__asm        mov    eax, G_VertDim;
-	__asm        add    eax, eax;
-	__asm        add    eax, 2;
-	__asm        mov    CVerts[2][2], eax;
+	CVerts[2][2] = ((G_VertDim + G_VertDim) + 0x2);
 // LINE 255:
 	__asm        push   0x400000;
 	__asm        mov    eax, G_ViewSize;
@@ -449,13 +434,9 @@ _T4e2:
 // LINE 305:
 	gf = dataptr;
 // LINE 306:
-	__asm        mov    eax, dataptr;
-	__asm        add    eax, 0x18;
-	__asm        mov    iptr, eax;
+	iptr = (dataptr + 0x18);
 // LINE 308:
-	__asm        mov    eax, dataptr;
-	__asm        add    eax, 0x24;
-	__asm        mov    mapv, eax;
+	mapv = (dataptr + 0x24);
 // LINE 309:
 	dataptr += GridFaceSize;
 // LINE 311:
@@ -480,10 +461,7 @@ _T52d:
 	__asm        mov    [ecx], eax;
 	__asm        add    iptr, 4;
 // LINE 319:
-	__asm        mov    eax, CVerts[1][0];
-	__asm        add    eax, ul;
-	__asm        mov    ecx, iptr;
-	__asm        mov    [ecx], eax;
+	iptr[0] = (CVerts[1][0] + ul);
 // LINE 320:
 	mapv->x = 0x8000;
 // LINE 321:
@@ -516,10 +494,7 @@ _T5a2:
 	__asm        mov    [ecx], eax;
 	__asm        add    iptr, 4;
 // LINE 332:
-	__asm        mov    eax, CVerts[1][0];
-	__asm        add    eax, ul;
-	__asm        mov    ecx, iptr;
-	__asm        mov    [ecx], eax;
+	iptr[0] = (CVerts[1][0] + ul);
 // LINE 333:
 	mapv->x = 0x1f8000;
 // LINE 334:
@@ -608,9 +583,7 @@ void InitGridPool() {
 	__asm        inc    eax;
 	__asm        mov    G_VertDim, eax;
 // LINE 378:
-	__asm        mov    eax, G_ViewSize;
-	__asm        add    eax, eax;
-	__asm        mov    G_FaceDim, eax;
+	G_FaceDim = (G_ViewSize + G_ViewSize);
 // LINE 383:
 	__asm        mov    eax, G_VertDim;
 	__asm        imul   eax, G_VertDim;

@@ -271,10 +271,7 @@ void SkyImage::SkyImage(int32_t nNewSkyType, int32_t nNewBitmapWidth, int32_t nN
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x140], eax;
 // LINE 42:
-	__asm        mov    eax, G_terr_maxalt;
-	__asm        add    eax, 0xC80000;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x144], eax;
+	this->fpMinimumAltitude = (G_terr_maxalt + 0xc80000);
 // LINE 46:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x138];
@@ -645,10 +642,7 @@ _T11:
 	__asm        jmp    _T16;
 // LINE 224:
 _T16:
-	__asm        mov    eax, ViewState.world_pos.y;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x144];
-	__asm        mov    altdiff, eax;
+	altdiff = (ViewState.world_pos.y - this->fpMinimumAltitude);
 // LINE 226:
 	pitch = cameraPitch;
 // LINE 227:
@@ -723,15 +717,9 @@ _Tf3:
 	__asm        cmp    eax, [ecx+0x134];
 	__asm        jle    _T128;
 // LINE 250:
-	__asm        mov    eax, start_col;
-	__asm        add    eax, nDestinationWidth;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x134];
-	__asm        mov    len2, eax;
+	len2 = ((start_col + nDestinationWidth) - this->nBitmapWidth);
 // LINE 251:
-	__asm        mov    eax, nDestinationWidth;
-	__asm        sub    eax, len2;
-	__asm        mov    len1, eax;
+	len1 = (nDestinationWidth - len2);
 // LINE 253:
 	__asm        jmp    _T135;
 // LINE 254:
@@ -747,9 +735,7 @@ _T135:
 // LINE 265:
 	rectSource.left = start_col;
 // LINE 266:
-	__asm        mov    eax, len1;
-	__asm        add    eax, start_col;
-	__asm        mov    rectSource.right, eax;
+	rectSource.right = (len1 + start_col);
 // LINE 268:
 	__asm        cmp    G_video_mode, 0x10;
 	__asm        jne    _T1e1;
@@ -758,14 +744,9 @@ _T135:
 // LINE 271:
 	rectDestination.left = 0x0;
 // LINE 272:
-	__asm        mov    eax, len1;
-	__asm        add    eax, eax;
-	__asm        mov    rectDestination.right, eax;
+	rectDestination.right = (len1 + len1);
 // LINE 273:
-	__asm        mov    eax, rectSource.bottom;
-	__asm        sub    eax, rectSource.top;
-	__asm        add    eax, eax;
-	__asm        mov    rectDestination.bottom, eax;
+	rectDestination.bottom = ((rectSource.bottom - rectSource.top) + (rectSource.bottom - rectSource.top));
 // LINE 274:
 	__asm        lea    eax, rectSource.left;
 	__asm        push   eax;
@@ -785,14 +766,9 @@ _T135:
 // LINE 279:
 	rectSource.right = len2;
 // LINE 280:
-	__asm        mov    eax, len1;
-	__asm        add    eax, eax;
-	__asm        mov    rectDestination.left, eax;
+	rectDestination.left = (len1 + len1);
 // LINE 281:
-	__asm        mov    eax, len2;
-	__asm        add    eax, eax;
-	__asm        add    eax, rectDestination.left;
-	__asm        mov    rectDestination.right, eax;
+	rectDestination.right = ((len2 + len2) + rectDestination.left);
 // LINE 282:
 	__asm        lea    eax, rectSource.left;
 	__asm        push   eax;

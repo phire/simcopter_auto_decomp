@@ -484,9 +484,7 @@ long PFile::FileExists(char * name) {
 	__asm        jmp    _T39;
 // LINE 145:
 _T2a:
-	__asm        mov    eax, this;
-	__asm        add    eax, 4;
-	__asm        mov    szFilePathToUse, eax;
+	szFilePathToUse = (this + 0x4);
 // LINE 148:
 _T39:
 	__asm        push   0x4000;
@@ -617,9 +615,7 @@ _Tca:
 	__asm        cmp    eax, lFileLength;
 	__asm        jle    _Tf7;
 // LINE 197:
-	__asm        mov    eax, lFileLength;
-	__asm        sub    eax, lCurrentBlockStartPosition;
-	__asm        mov    lUsedBlockSize, eax;
+	lUsedBlockSize = (lFileLength - lCurrentBlockStartPosition);
 // LINE 198:
 _Tf7:
 	__asm        jmp    _Tfc;

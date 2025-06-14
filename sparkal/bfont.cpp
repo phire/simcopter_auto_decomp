@@ -2993,9 +2993,7 @@ long BitmappedFont::GetStringWidth(char * chText, const unsigned long nStringLen
 // LINE 229:
 	lWidth = 0x0;
 // LINE 230:
-	__asm        mov    eax, nStringLength;
-	__asm        add    eax, chText;
-	__asm        mov    chEnd, eax;
+	chEnd = (nStringLength + chText);
 // LINE 232:
 _T1c:
 	__asm        mov    eax, chText;
@@ -3202,9 +3200,7 @@ long BitmappedFont::CalculateNumberOfLines(char * chText, const unsigned long nS
 	/*bp-0xc*/   long lLineCount;
 
 // LINE 280:
-	__asm        mov    eax, nStringLength;
-	__asm        add    eax, chText;
-	__asm        mov    chTextEnd, eax;
+	chTextEnd = (nStringLength + chText);
 // LINE 281:
 	lLineCount = 0x0;
 // LINE 283:
@@ -3441,9 +3437,7 @@ void BitmappedFont::DrawTextLine(/*packed*/ class CBackBuffer *destination, long
 	/*bp-0x4*/   char * chEnd;
 
 // LINE 393:
-	__asm        mov    eax, nStringLength;
-	__asm        add    eax, chText;
-	__asm        mov    chEnd, eax;
+	chEnd = (nStringLength + chText);
 // LINE 395:
 _T15:
 	__asm        mov    eax, chText;
@@ -3629,9 +3623,7 @@ void BitmappedFont::DrawTextLineNoClip(/*packed*/ class CBackBuffer *destination
 	/*bp-0x4*/   char * chEnd;
 
 // LINE 410:
-	__asm        mov    eax, nStringLength;
-	__asm        add    eax, chText;
-	__asm        mov    chEnd, eax;
+	chEnd = (nStringLength + chText);
 // LINE 412:
 _T15:
 	__asm        mov    eax, chText;

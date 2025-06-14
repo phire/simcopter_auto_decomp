@@ -2448,10 +2448,7 @@ _T4d:
 	__asm        add    esp, 0xC;
 	__asm        mov    groundheight, eax;
 // LINE 421:
-	__asm        mov    eax, groundheight;
-	__asm        add    eax, masterheight;
-	__asm        add    eax, 0x30000;
-	__asm        mov    newloc.y, eax;
+	newloc.y = ((groundheight + masterheight) + 0x30000);
 // LINE 423:
 // Block end:
 	__asm        jmp    _T116;
@@ -2469,10 +2466,7 @@ _Tfa:
 	__asm        mov    newloc.y, eax;
 // LINE 426:
 _T116:
-	__asm        mov    eax, newloc.y;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x40];
-	__asm        mov    dy, eax;
+	dy = (newloc.y - this->fDyn.loc.y);
 // LINE 427:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD4];
@@ -4206,9 +4200,7 @@ _T1b7:
 	__asm        jmp    _T2b;
 // LINE 789:
 _T1db:
-	__asm        mov    eax, obj;
-	__asm        add    eax, 0x24;
-	__asm        mov    dyn, eax;
+	dyn = (obj + 0x24);
 // LINE 790:
 	__asm        cmp    dyn, 0;
 	__asm        jne    _T20a;
@@ -5878,9 +5870,7 @@ _T182:
 	__asm        cmp    obj, 0;
 	__asm        je     _T1ad;
 // LINE 1149:
-	__asm        mov    eax, obj;
-	__asm        add    eax, 0x24;
-	__asm        mov    destobj, eax;
+	destobj = (obj + 0x24);
 // LINE 1150:
 	__asm        jmp    _T1b4;
 // LINE 1151:
@@ -5905,9 +5895,7 @@ _T1df:
 // LINE 1157:
 // Block end:
 _T1e4:
-	__asm        mov    eax, gAvatar;
-	__asm        add    eax, 0x24;
-	__asm        mov    destobj, eax;
+	destobj = (gAvatar + 0x24);
 // LINE 1158:
 	result = 0x1;
 // LINE 1159:
@@ -5927,9 +5915,7 @@ _T1fb:
 	__asm        cmp    obj, 0;
 	__asm        je     _T226;
 // LINE 1164:
-	__asm        mov    eax, obj;
-	__asm        add    eax, 0x24;
-	__asm        mov    destobj, eax;
+	destobj = (obj + 0x24);
 // LINE 1165:
 	__asm        jmp    _T22d;
 // LINE 1166:
@@ -5967,9 +5953,7 @@ _T25d:
 	__asm        cmp    obj, 0;
 	__asm        je     _T288;
 // LINE 1174:
-	__asm        mov    eax, obj;
-	__asm        add    eax, 0x24;
-	__asm        mov    destobj, eax;
+	destobj = (obj + 0x24);
 // LINE 1175:
 	__asm        jmp    _T28f;
 // LINE 1176:
@@ -6115,9 +6099,7 @@ _T3db:
 	__asm        cmp    obj, 0;
 	__asm        je     _T406;
 // LINE 1217:
-	__asm        mov    eax, obj;
-	__asm        add    eax, 0x24;
-	__asm        mov    destobj, eax;
+	destobj = (obj + 0x24);
 // LINE 1218:
 	__asm        jmp    _T40d;
 // LINE 1219:

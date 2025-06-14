@@ -102,20 +102,11 @@ void S3CameraMove(/*packed*/ struct Point3d *P) {
 	__asm        call   0x004D2094;
 	__asm        add    esp, 0xC;
 // LINE 131:
-	__asm        mov    eax, u_dyobj;
-	__asm        mov    eax, [eax+0x18];
-	__asm        add    eax, viewerPos.x;
-	__asm        mov    Viewer.pos.x, eax;
+	Viewer.pos.x = (u_dyobj->loc.x + viewerPos.x);
 // LINE 132:
-	__asm        mov    eax, u_dyobj;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        add    eax, viewerPos.y;
-	__asm        mov    Viewer.pos.y, eax;
+	Viewer.pos.y = (u_dyobj->loc.y + viewerPos.y);
 // LINE 133:
-	__asm        mov    eax, u_dyobj;
-	__asm        mov    eax, [eax+0x20];
-	__asm        add    eax, viewerPos.z;
-	__asm        mov    Viewer.pos.z, eax;
+	Viewer.pos.z = (u_dyobj->loc.z + viewerPos.z);
 // LINE 136:
 	__asm        mov    eax, 0x6C12A0;
 	__asm        add    eax, 0x78;
@@ -140,9 +131,7 @@ _T9c:
 	__asm        add    eax, 0xA0000;
 	__asm        add    alt, eax;
 // LINE 141:
-	__asm        mov    eax, alt;
-	__asm        sub    eax, Viewer.pos.y;
-	__asm        mov    altdiff, eax;
+	altdiff = (alt - Viewer.pos.y);
 // LINE 142:
 	__asm        cmp    altdiff, 0;
 	__asm        jge    _Td7;
@@ -175,23 +164,11 @@ _Tfe:
 	__asm        call   0x004D2094;
 	__asm        add    esp, 0xC;
 // LINE 152:
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        mov    eax, [eax+0x18];
-	__asm        add    eax, viewerPos.x;
-	__asm        mov    Viewer.pos.x, eax;
+	Viewer.pos.x = (G_uheli->dyheli->loc.x + viewerPos.x);
 // LINE 153:
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        mov    eax, [eax+0x1C];
-	__asm        add    eax, viewerPos.y;
-	__asm        mov    Viewer.pos.y, eax;
+	Viewer.pos.y = (G_uheli->dyheli->loc.y + viewerPos.y);
 // LINE 154:
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        mov    eax, [eax+0x20];
-	__asm        add    eax, viewerPos.z;
-	__asm        mov    Viewer.pos.z, eax;
+	Viewer.pos.z = (G_uheli->dyheli->loc.z + viewerPos.z);
 // LINE 156:
 	__asm        jmp    _T238;
 _T172:
@@ -214,23 +191,11 @@ _T172:
 	__asm        call   0x004D2094;
 	__asm        add    esp, 0xC;
 // LINE 162:
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        mov    eax, [eax+0x18];
-	__asm        add    eax, viewerPos.x;
-	__asm        mov    Viewer.pos.x, eax;
+	Viewer.pos.x = (G_uheli->dyheli->loc.x + viewerPos.x);
 // LINE 163:
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        mov    eax, [eax+0x1C];
-	__asm        add    eax, viewerPos.y;
-	__asm        mov    Viewer.pos.y, eax;
+	Viewer.pos.y = (G_uheli->dyheli->loc.y + viewerPos.y);
 // LINE 164:
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        mov    eax, [eax+0x20];
-	__asm        add    eax, viewerPos.z;
-	__asm        mov    Viewer.pos.z, eax;
+	Viewer.pos.z = (G_uheli->dyheli->loc.z + viewerPos.z);
 // LINE 166:
 	__asm        jmp    _T238;
 // LINE 169:
@@ -253,23 +218,11 @@ _T238:
 	return;
 // LINE 177:
 _T23d:
-	__asm        mov    eax, ViewState.world_pos.x;
-	__asm        mov    ecx, G_uheli;
-	__asm        mov    ecx, [ecx+0xA4];
-	__asm        sub    eax, [ecx+0x18];
-	__asm        mov    viewerPos.x, eax;
+	viewerPos.x = (ViewState.world_pos.x - G_uheli->dyheli->loc.x);
 // LINE 178:
-	__asm        mov    eax, ViewState.world_pos.y;
-	__asm        mov    ecx, G_uheli;
-	__asm        mov    ecx, [ecx+0xA4];
-	__asm        sub    eax, [ecx+0x1C];
-	__asm        mov    viewerPos.y, eax;
+	viewerPos.y = (ViewState.world_pos.y - G_uheli->dyheli->loc.y);
 // LINE 179:
-	__asm        mov    eax, ViewState.world_pos.z;
-	__asm        mov    ecx, G_uheli;
-	__asm        mov    ecx, [ecx+0xA4];
-	__asm        sub    eax, [ecx+0x20];
-	__asm        mov    viewerPos.z, eax;
+	viewerPos.z = (ViewState.world_pos.z - G_uheli->dyheli->loc.z);
 // LINE 181:
 	__asm        cmp    viewerPos.x, 0x20000000;
 	__asm        jle    _T296;
@@ -301,20 +254,11 @@ _T2d2:
 // LINE 193:
 	viewerPos.z += G_uheli->dyheli->loc.z;
 // LINE 195:
-	__asm        mov    eax, P;
-	__asm        mov    eax, [eax];
-	__asm        sub    eax, viewerPos.x;
-	__asm        mov    CameraVector.x, eax;
+	CameraVector.x = (P->x - viewerPos.x);
 // LINE 196:
-	__asm        mov    eax, P;
-	__asm        mov    eax, [eax+4];
-	__asm        sub    eax, viewerPos.y;
-	__asm        mov    CameraVector.y, eax;
+	CameraVector.y = (P->y - viewerPos.y);
 // LINE 197:
-	__asm        mov    eax, P;
-	__asm        mov    eax, [eax+8];
-	__asm        sub    eax, viewerPos.z;
-	__asm        mov    CameraVector.z, eax;
+	CameraVector.z = (P->z - viewerPos.z);
 // LINE 218:
 	__asm        mov    eax, P;
 	__asm        mov    ecx, 0x6C12A0;
@@ -335,9 +279,7 @@ _T2d2:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 237:
-	__asm        mov    eax, CameraVector.y;
-	__asm        add    eax, viewerPos.y;
-	__asm        mov    Viewer.pos.y, eax;
+	Viewer.pos.y = (CameraVector.y + viewerPos.y);
 // LINE 240:
 	CameraVector.y = 0x0;
 // LINE 243:
@@ -370,9 +312,7 @@ _T3a8:
 	__asm        mov    Velocity, eax;
 // LINE 254:
 _T3b4:
-	__asm        mov    eax, Velocity;
-	__asm        and    eax, 0xFFFFFA00;
-	__asm        mov    Velocity, eax;
+	Velocity = (Velocity & 0xfffffa00);
 // LINE 255:
 	Viewer.p.Vmag = Velocity;
 // LINE 257:
@@ -392,13 +332,9 @@ _T3b4:
 	__asm        add    esp, 8;
 	__asm        mov    CameraDelta.z, eax;
 // LINE 260:
-	__asm        mov    eax, viewerPos.x;
-	__asm        add    eax, CameraDelta.x;
-	__asm        mov    Viewer.pos.x, eax;
+	Viewer.pos.x = (viewerPos.x + CameraDelta.x);
 // LINE 261:
-	__asm        mov    eax, CameraDelta.z;
-	__asm        add    eax, viewerPos.z;
-	__asm        mov    Viewer.pos.z, eax;
+	Viewer.pos.z = (CameraDelta.z + viewerPos.z);
 // LINE 264:
 	__asm        mov    eax, 0x6C12A0;
 	__asm        add    eax, 0x78;
@@ -417,9 +353,7 @@ _T3b4:
 	__asm        add    eax, 0xA0000;
 	__asm        add    alt, eax;
 // LINE 271:
-	__asm        mov    eax, alt;
-	__asm        sub    eax, Viewer.pos.y;
-	__asm        mov    altdiff, eax;
+	altdiff = (alt - Viewer.pos.y);
 // LINE 272:
 	__asm        cmp    altdiff, 0;
 	__asm        jge    _T452;
@@ -668,9 +602,7 @@ _T21a:
 	__asm        add    CameraIdeal.y, eax;
 // LINE 395:
 _T24a:
-	__asm        mov    eax, CameraIdeal.y;
-	__asm        and    eax, 0xFFFFFF00;
-	__asm        mov    CameraIdeal.y, eax;
+	CameraIdeal.y = (CameraIdeal.y & 0xffffff00);
 // LINE 398:
 }
 
@@ -1176,20 +1108,11 @@ void S3CameraRotate() {
 	__asm        call   GetAvatarDYOBJ;
 	__asm        mov    dyobj, eax;
 // LINE 613:
-	__asm        mov    eax, dyobj;
-	__asm        mov    eax, [eax+0x18];
-	__asm        sub    eax, Viewer.pos.x;
-	__asm        mov    cameraDelta.x, eax;
+	cameraDelta.x = (dyobj->loc.x - Viewer.pos.x);
 // LINE 614:
-	__asm        mov    eax, dyobj;
-	__asm        mov    eax, [eax+0x20];
-	__asm        sub    eax, Viewer.pos.z;
-	__asm        mov    cameraDelta.z, eax;
+	cameraDelta.z = (dyobj->loc.z - Viewer.pos.z);
 // LINE 615:
-	__asm        mov    eax, dyobj;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        sub    eax, Viewer.pos.y;
-	__asm        mov    cameraDelta.y, eax;
+	cameraDelta.y = (dyobj->loc.y - Viewer.pos.y);
 // LINE 634:
 	__asm        lea    eax, cameraDelta.x;
 	__asm        push   eax;
@@ -1212,21 +1135,11 @@ _T83:
 	alt = G_camera_targ2objy;
 // LINE 640:
 _T8b:
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        mov    eax, [eax+0x18];
-	__asm        sub    eax, Viewer.pos.x;
-	__asm        mov    cameraDelta.x, eax;
+	cameraDelta.x = (G_uheli->dyheli->loc.x - Viewer.pos.x);
 // LINE 641:
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        mov    eax, [eax+0x20];
-	__asm        sub    eax, Viewer.pos.z;
-	__asm        mov    cameraDelta.z, eax;
+	cameraDelta.z = (G_uheli->dyheli->loc.z - Viewer.pos.z);
 // LINE 642:
-	__asm        mov    eax, alt;
-	__asm        sub    eax, Viewer.pos.y;
-	__asm        mov    cameraDelta.y, eax;
+	cameraDelta.y = (alt - Viewer.pos.y);
 // LINE 654:
 	__asm        lea    eax, cameraDelta.x;
 	__asm        push   eax;
@@ -1256,10 +1169,7 @@ _Td6:
 	return;
 // LINE 676:
 _T114:
-	__asm        mov    eax, 0x11;
-	__asm        mov    ecx, G_uheli;
-	__asm        sub    eax, [ecx+0x1AC];
-	__asm        mov    temp, eax;
+	temp = (0x11 - G_uheli->rinfo.bucketdown);
 // LINE 677:
 	__asm        cmp    temp, 0;
 	__asm        jge    _T139;
@@ -1267,11 +1177,7 @@ _T114:
 	temp = 0x0;
 // LINE 678:
 _T139:
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        mov    eax, [eax+0x18];
-	__asm        sub    eax, Viewer.pos.x;
-	__asm        mov    cameraDelta.x, eax;
+	cameraDelta.x = (G_uheli->dyheli->loc.x - Viewer.pos.x);
 // LINE 679:
 	__asm        mov    eax, S_curr_chase;
 	__asm        lea    eax, [eax+eax*2];
@@ -1285,11 +1191,7 @@ _T139:
 	__asm        sub    eax, Viewer.pos.y;
 	__asm        mov    cameraDelta.y, eax;
 // LINE 680:
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        mov    eax, [eax+0x20];
-	__asm        sub    eax, Viewer.pos.z;
-	__asm        mov    cameraDelta.z, eax;
+	cameraDelta.z = (G_uheli->dyheli->loc.z - Viewer.pos.z);
 // LINE 693:
 	__asm        lea    eax, cameraDelta.x;
 	__asm        push   eax;

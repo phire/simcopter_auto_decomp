@@ -1585,15 +1585,9 @@ int32_t BoatClass::IsBoatOutOfCameraRange() {
 	/*bp-0x8*/   int32_t deltaY;
 
 // LINE 1078:
-	__asm        mov    eax, CameraCell.x;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x33];
-	__asm        mov    deltaX, eax;
+	deltaX = (CameraCell.x - this->currentLocation.x);
 // LINE 1079:
-	__asm        mov    eax, CameraCell.y;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x37];
-	__asm        mov    deltaY, eax;
+	deltaY = (CameraCell.y - this->currentLocation.y);
 // LINE 1084:
 _T28:
 	__asm        cmp    deltaX, 0x80;
@@ -2181,9 +2175,7 @@ _T90:
 // LINE 1379:
 // Block start:
 	/*bp-0x8*/   /*packed*/ struct _DYOBJ_INST **dyptrptr;
-	__asm        mov    eax, cellPointer;
-	__asm        add    eax, 0x10;
-	__asm        mov    dyptrptr, eax;
+	dyptrptr = (cellPointer + 0x10);
 // LINE 1381:
 _Ta3:
 	__asm        mov    eax, dyptrptr;
@@ -2273,10 +2265,7 @@ _T93:
 _T98:
 	this->dyObj.next = cellPointer->dyptr;
 // LINE 1426:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x7F;
-	__asm        mov    ecx, cellPointer;
-	__asm        mov    [ecx+0x10], eax;
+	cellPointer->dyptr = (this + 0x7f);
 // LINE 1427:
 	return;
 }
@@ -3420,19 +3409,11 @@ _T79:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 1861:
-	__asm        mov    eax, nextFineLocation.x;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x97];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x13], eax;
+	this->directionVector.x = (nextFineLocation.x - this->dyObj.loc.x);
 // LINE 1862:
 	this->directionVector.y = 0x0;
 // LINE 1863:
-	__asm        mov    eax, nextFineLocation.z;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x9F];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x1B], eax;
+	this->directionVector.z = (nextFineLocation.z - this->dyObj.loc.z);
 // LINE 1864:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x13;
@@ -5435,11 +5416,8 @@ _T11f:
 	__asm        call   S3MissionUpdate;
 	__asm        add    esp, 4;
 // LINE 3115:
-	__asm        mov    eax, capboat;
-	__asm        add    eax, 0x7F;
-	__asm        jmp    __RETURN;
+	return (capboat + 0x7f);
 // LINE 3116:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052acfb
@@ -5459,11 +5437,8 @@ _T16:
 	return 0x0;
 // LINE 3134:
 _T2c:
-	__asm        mov    eax, capboat;
-	__asm        add    eax, 0x7F;
-	__asm        jmp    __RETURN;
+	return (capboat + 0x7f);
 // LINE 3135:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052ad37

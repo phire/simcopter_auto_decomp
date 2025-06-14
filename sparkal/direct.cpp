@@ -5747,9 +5747,7 @@ _T61:
 // LINE 502:
 	__asm        jmp    _T7e;
 _T7e:
-	__asm        mov    eax, iterator.node;
-	__asm        add    eax, 8;
-	__asm        jmp    __RETURN;
+	return (iterator.node + 0x8);
 // LINE 503:
 _T89:
 	__asm        jmp    _T40;
@@ -5757,7 +5755,6 @@ _T89:
 _T8e:
 	return 0x0;
 // LINE 505:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00485ebe

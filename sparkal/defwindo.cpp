@@ -199,9 +199,7 @@ unsigned long CSparkalWindow::SwapBuffer(long Left, long Top, long Right, long B
 // LINE 93:
 	ChunkHeight = Step;
 // LINE 94:
-	__asm        mov    eax, Bottom;
-	__asm        sub    eax, ChunkHeight;
-	__asm        mov    DestTop, eax;
+	DestTop = (Bottom - ChunkHeight);
 // LINE 97:
 	__asm        mov    eax, DestTop;
 	__asm        push   eax;

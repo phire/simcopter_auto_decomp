@@ -103,13 +103,7 @@ unsigned short RRand(unsigned short lim) {
 	__asm        imul   eax, ecx;
 	__asm        mov    myRandom4, eax;
 // LINE 77:
-	__asm        mov    eax, myRandom4;
-	__asm        and    eax, 0xFFFF;
-	__asm        mov    ecx, myRandom2;
-	__asm        and    ecx, 0xFFFF;
-	__asm        add    eax, ecx;
-	__asm        and    eax, 0xFFFF;
-	__asm        mov    myRandom2, eax;
+	myRandom2 = (((myRandom4 & 0xffff) + (myRandom2 & 0xffff)) & 0xffff);
 // LINE 79:
 	__asm        mov    eax, myRandom2;
 	__asm        and    eax, 0xFFFF;

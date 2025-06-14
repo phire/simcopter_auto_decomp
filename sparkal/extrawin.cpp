@@ -3539,19 +3539,9 @@ void AnimationWindow::AnimationWindow(char * szImageFileName, /*packed*/ class M
 	__asm        call   dword ptr [edx+8];
 // LINE 331:
 _Tf5:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0x98];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x18], eax;
+	this-><AnimationWindow+0x18> = (this-><AnimationWindow+0x10> + this->lWidthOfSingleFrame);
 // LINE 332:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x20];
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0x98];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x28], eax;
+	this-><AnimationWindow+0x28> = (this-><AnimationWindow+0x20> + this->lWidthOfSingleFrame);
 // LINE 333:
 	return;
 
@@ -3584,10 +3574,7 @@ _T2d:
 	__asm        imul   eax, [ecx+0x98];
 	__asm        mov    lSourceLeft, eax;
 // LINE 351:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x98];
-	__asm        add    eax, lSourceLeft;
-	__asm        mov    lSourceRight, eax;
+	lSourceRight = (this->lWidthOfSingleFrame + lSourceLeft);
 // LINE 353:
 	__asm        jmp    _T57;
 _T57:
@@ -3623,11 +3610,7 @@ _T57:
 	__asm        call   GetMillisecondTimeLong;
 	__asm        mov    lMillisecondsCurrent, eax;
 // LINE 358:
-	__asm        mov    eax, lMillisecondsCurrent;
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x80];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x84], eax;
+	this->lMillisecondsSinceLastFrame = (lMillisecondsCurrent - this->lMillisecondsOfLastFrame);
 // LINE 359:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x74], 0;
@@ -12776,10 +12759,7 @@ _T49c:
 	__asm        mov    ecx, [eax+0xCC];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 1645:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x20];
-	__asm        add    eax, 0xA;
-	__asm        mov    rectCurrentText.left, eax;
+	rectCurrentText.left = (this-><PopupMenuExtra+0x20> + 0xa);
 // LINE 1646:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x28];
@@ -12907,10 +12887,7 @@ _T670:
 	__asm        add    eax, [ecx+0x24];
 	__asm        mov    rectCurrentText.top, eax;
 // LINE 1661:
-	__asm        mov    eax, rectCurrentText.top;
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0xB8];
-	__asm        mov    rectCurrentText.bottom, eax;
+	rectCurrentText.bottom = (rectCurrentText.top + this->lLineHeight);
 // LINE 1662:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, rectCurrentText.bottom;
@@ -13071,10 +13048,7 @@ _T8ce:
 	__asm        add    eax, [ecx+0x24];
 	__asm        mov    rectCurrentText.top, eax;
 // LINE 1672:
-	__asm        mov    eax, rectCurrentText.top;
-	__asm        mov    ecx, this;
-	__asm        add    eax, [ecx+0xB8];
-	__asm        mov    rectCurrentText.bottom, eax;
+	rectCurrentText.bottom = (rectCurrentText.top + this->lLineHeight);
 // LINE 1673:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, rectCurrentText.bottom;
@@ -13590,11 +13564,7 @@ _T55:
 // LINE 1751:
 	__asm        jmp    _T71;
 _T71:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x18];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x10];
-	__asm        mov    lCurrentWidth, eax;
+	lCurrentWidth = (this-><PopupMenuExtra+0x18> - this-><PopupMenuExtra+0x10>);
 // LINE 1752:
 	__asm        mov    eax, lTileWidth;
 	__asm        dec    eax;
@@ -20480,10 +20450,7 @@ _T1a9:
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+0x44];
 // LINE 2647:
-	__asm        mov    eax, lSliderValues[1];
-	__asm        add    eax, lSliderValues[2];
-	__asm        add    eax, lSliderValues[0];
-	__asm        mov    lCurrentValue, eax;
+	lCurrentValue = ((lSliderValues[1] + lSliderValues[2]) + lSliderValues[0]);
 // LINE 2648:
 	__asm        mov    eax, lCurrentValue;
 	__asm        push   eax;

@@ -450,9 +450,7 @@ int32_t LoadObjtType(int32_t barrymempool) {
 // LINE 299:
 	ObjectPtr = ObjData;
 // LINE 300:
-	__asm        mov    eax, ObjectPtr;
-	__asm        add    eax, 0x90;
-	__asm        mov    dataptr, eax;
+	dataptr = (ObjectPtr + 0x90);
 // LINE 301:
 	__asm        mov    eax, ObjectPtr;
 	__asm        push   eax;
@@ -608,13 +606,9 @@ _T214:
 	__asm        mov    ecx, faceptr;
 	__asm        mov    [ecx+0x10], eax;
 // LINE 517:
-	__asm        movsx  eax, filefacehdr.TextureId;
-	__asm        and    eax, 0xFF00;
-	__asm        mov    hibyte, eax;
+	hibyte = (reinterpret_cast<int16_t>(filefacehdr.TextureId) & 0xff00);
 // LINE 518:
-	__asm        movsx  eax, filefacehdr.TextureId;
-	__asm        and    eax, 0xFF;
-	__asm        mov    lobyte, eax;
+	lobyte = (reinterpret_cast<int16_t>(filefacehdr.TextureId) & 0xff);
 // LINE 519:
 	__asm        mov    eax, hibyte;
 	__asm        shl    eax, 8;
@@ -1562,17 +1556,9 @@ _T619:
 	__asm        cmp    collisvec, 0;
 	__asm        je     _T649;
 // LINE 1034:
-	__asm        mov    eax, vert;
-	__asm        mov    eax, [eax];
-	__asm        sub    eax, x;
-	__asm        mov    ecx, collisvec;
-	__asm        mov    [ecx], eax;
+	collisvec->x = (vert->x - x);
 // LINE 1035:
-	__asm        mov    eax, vert;
-	__asm        mov    eax, [eax+8];
-	__asm        sub    eax, z;
-	__asm        mov    ecx, collisvec;
-	__asm        mov    [ecx+8], eax;
+	collisvec->z = (vert->z - z);
 // LINE 1036:
 	collisvec->y = 0x0;
 // LINE 1042:
@@ -2230,17 +2216,9 @@ _T6a2:
 	__asm        cmp    collisvec, 0;
 	__asm        je     _T6d2;
 // LINE 1376:
-	__asm        mov    eax, vert;
-	__asm        mov    eax, [eax];
-	__asm        sub    eax, x;
-	__asm        mov    ecx, collisvec;
-	__asm        mov    [ecx], eax;
+	collisvec->x = (vert->x - x);
 // LINE 1377:
-	__asm        mov    eax, vert;
-	__asm        mov    eax, [eax+8];
-	__asm        sub    eax, z;
-	__asm        mov    ecx, collisvec;
-	__asm        mov    [ecx+8], eax;
+	collisvec->z = (vert->z - z);
 // LINE 1378:
 	collisvec->y = 0x0;
 // LINE 1384:
@@ -2900,17 +2878,9 @@ _T2a:
 	__asm        add    eax, [ecx+8];
 	__asm        mov    vert2, eax;
 // LINE 1770:
-	__asm        mov    eax, vert2;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, vert1;
-	__asm        sub    eax, [ecx];
-	__asm        mov    xdiff, eax;
+	xdiff = (vert2->x - vert1->x);
 // LINE 1771:
-	__asm        mov    eax, vert2;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, vert1;
-	__asm        sub    eax, [ecx+4];
-	__asm        mov    ydiff, eax;
+	ydiff = (vert2->y - vert1->y);
 // LINE 1775:
 	vert1->x = x;
 // LINE 1776:
@@ -2918,15 +2888,9 @@ _T2a:
 // LINE 1777:
 	vert1->z = z;
 // LINE 1779:
-	__asm        mov    eax, x;
-	__asm        add    eax, xdiff;
-	__asm        mov    ecx, vert2;
-	__asm        mov    [ecx], eax;
+	vert2->x = (x + xdiff);
 // LINE 1780:
-	__asm        mov    eax, y;
-	__asm        add    eax, ydiff;
-	__asm        mov    ecx, vert2;
-	__asm        mov    [ecx+4], eax;
+	vert2->y = (y + ydiff);
 // LINE 1781:
 	vert2->z = z;
 // LINE 1783:
@@ -3050,23 +3014,11 @@ _T43:
 	__asm        cmp    [eax+4], ecx;
 	__asm        jle    _T8a;
 // LINE 1852:
-	__asm        mov    eax, s;
-	__asm        mov    eax, [eax];
-	__asm        sub    eax, c.x;
-	__asm        mov    ecx, d;
-	__asm        mov    [ecx], eax;
+	d->x = (s->x - c.x);
 // LINE 1853:
-	__asm        mov    eax, s;
-	__asm        mov    eax, [eax+4];
-	__asm        sub    eax, c.y;
-	__asm        mov    ecx, d;
-	__asm        mov    [ecx+4], eax;
+	d->y = (s->y - c.y);
 // LINE 1854:
-	__asm        mov    eax, s;
-	__asm        mov    eax, [eax+8];
-	__asm        sub    eax, c.z;
-	__asm        mov    ecx, d;
-	__asm        mov    [ecx+8], eax;
+	d->z = (s->z - c.z);
 // LINE 1855:
 	d += 0xc;
 // LINE 1856:
@@ -3184,9 +3136,7 @@ _Td3:
 	__asm        sar    eax, 0x10;
 	__asm        mov    hiword, eax;
 // LINE 1897:
-	__asm        mov    eax, k;
-	__asm        and    eax, 0xFFFF;
-	__asm        mov    loword, eax;
+	loword = (k & 0xffff);
 // LINE 1901:
 	__asm        cmp    hiword, 0;
 	__asm        je     _T143;
@@ -3330,29 +3280,13 @@ _T75:
 _T3b:
 	mp->ObjCount = 0x0;
 // LINE 1983:
-	__asm        mov    eax, mp;
-	__asm        add    eax, 0x30;
-	__asm        and    eax, 0xFFFFFFF0;
-	__asm        mov    ecx, mp;
-	__asm        mov    [ecx+8], eax;
+	mp->Reset_Xf = ((mp + 0x30) & -0x10);
 // LINE 1984:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+8];
-	__asm        add    eax, xf;
-	__asm        add    eax, 0x10;
-	__asm        and    eax, 0xFFFFFFF0;
-	__asm        mov    ecx, mp;
-	__asm        mov    [ecx+0xC], eax;
+	mp->Reset_2d = (((mp->Reset_Xf + xf) + 0x10) & -0x10);
 // LINE 1985:
 	mp->End_Xf = mp->Reset_2d;
 // LINE 1986:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+0xC];
-	__asm        add    eax, d2;
-	__asm        add    eax, 0x10;
-	__asm        and    eax, 0xFFFFFFF0;
-	__asm        mov    ecx, mp;
-	__asm        mov    [ecx+0x1C], eax;
+	mp->End_2d = (((mp->Reset_2d + d2) + 0x10) & -0x10);
 // LINE 1988:
 	__asm        mov    eax, d2;
 	__asm        add    eax, xf;
@@ -3365,10 +3299,7 @@ _T3b:
 	G_alloc_max = G_alloc_curr;
 // LINE 1989:
 _Tb5:
-	__asm        mov    eax, d2;
-	__asm        add    eax, xf;
-	__asm        add    eax, 0xA0;
-	__asm        add    G_alloc_used, eax;
+	G_alloc_used += ((d2 + xf) + 0xa0);
 // LINE 1992:
 	__asm        mov    eax, mp;
 	__asm        push   eax;
@@ -4185,12 +4116,8 @@ int32_t VRGetObjDupMemReq(int32_t obj) {
 	__asm        shl    eax, 2;
 	__asm        mov    size3, eax;
 // LINE 2440:
-	__asm        mov    eax, size3;
-	__asm        add    eax, size2;
-	__asm        add    eax, size1;
-	__asm        jmp    __RETURN;
+	return ((size3 + size2) + size1);
 // LINE 2441:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004d4dbf
@@ -4351,23 +4278,11 @@ int32_t VRStObjPolyHit(/*packed*/ struct Point3d *sloc, /*packed*/ struct Point3
 // LINE 2529:
 	oh = tobj;
 // LINE 2540:
-	__asm        mov    eax, sloc;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, tloc;
-	__asm        sub    eax, [ecx];
-	__asm        mov    loc.x, eax;
+	loc.x = (sloc->x - tloc->x);
 // LINE 2541:
-	__asm        mov    eax, sloc;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, tloc;
-	__asm        sub    eax, [ecx+4];
-	__asm        mov    loc.y, eax;
+	loc.y = (sloc->y - tloc->y);
 // LINE 2542:
-	__asm        mov    eax, sloc;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, tloc;
-	__asm        sub    eax, [ecx+8];
-	__asm        mov    loc.z, eax;
+	loc.z = (sloc->z - tloc->z);
 // LINE 2546:
 	fh = oh->FacePtr;
 // LINE 2547:

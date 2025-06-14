@@ -5414,20 +5414,11 @@ int32_t S3DSPlay(int32_t nSoundIndex, /*packed*/ struct Point3d *loc, int32_t nF
 	__asm        mov    eax, gSoundManager.sound[0][eax*4];
 	__asm        mov    theSound, eax;
 // LINE 503:
-	__asm        mov    eax, loc;
-	__asm        mov    eax, [eax];
-	__asm        sub    eax, ViewState.world_pos.x;
-	__asm        mov    viewvect.x, eax;
+	viewvect.x = (loc->x - ViewState.world_pos.x);
 // LINE 504:
-	__asm        mov    eax, loc;
-	__asm        mov    eax, [eax+4];
-	__asm        sub    eax, ViewState.world_pos.y;
-	__asm        mov    viewvect.y, eax;
+	viewvect.y = (loc->y - ViewState.world_pos.y);
 // LINE 505:
-	__asm        mov    eax, loc;
-	__asm        mov    eax, [eax+8];
-	__asm        sub    eax, ViewState.world_pos.z;
-	__asm        mov    viewvect.z, eax;
+	viewvect.z = (loc->z - ViewState.world_pos.z);
 // LINE 506:
 	__asm        lea    eax, viewvect.x;
 	__asm        push   eax;
@@ -5651,20 +5642,11 @@ void S3SoundSetPosition(int32_t nSoundIndex, /*packed*/ struct Point3d *loc) {
 	return;
 // LINE 691:
 _T25:
-	__asm        mov    eax, loc;
-	__asm        mov    eax, [eax];
-	__asm        sub    eax, Viewer.pos.x;
-	__asm        mov    positionTemp.x, eax;
+	positionTemp.x = (loc->x - Viewer.pos.x);
 // LINE 692:
-	__asm        mov    eax, loc;
-	__asm        mov    eax, [eax+4];
-	__asm        sub    eax, Viewer.pos.y;
-	__asm        mov    positionTemp.y, eax;
+	positionTemp.y = (loc->y - Viewer.pos.y);
 // LINE 693:
-	__asm        mov    eax, loc;
-	__asm        mov    eax, [eax+8];
-	__asm        sub    eax, Viewer.pos.z;
-	__asm        mov    positionTemp.z, eax;
+	positionTemp.z = (loc->z - Viewer.pos.z);
 // LINE 694:
 	__asm        mov    eax, 0x6C12A0;
 	__asm        add    eax, 0x38;

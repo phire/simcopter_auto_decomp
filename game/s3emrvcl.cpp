@@ -1843,9 +1843,7 @@ _T84:
 // LINE 950:
 // Block start:
 	/*bp-0x8*/   /*packed*/ struct _DYOBJ_INST **dyptrptr;
-	__asm        mov    eax, cellPointer;
-	__asm        add    eax, 0x10;
-	__asm        mov    dyptrptr, eax;
+	dyptrptr = (cellPointer + 0x10);
 // LINE 952:
 _T97:
 	__asm        mov    eax, dyptrptr;
@@ -1933,10 +1931,7 @@ _T84:
 // LINE 991:
 	this->dispatchIcon.next = cellPointer->dyptr;
 // LINE 992:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x126;
-	__asm        mov    ecx, cellPointer;
-	__asm        mov    [ecx+0x10], eax;
+	cellPointer->dyptr = (this + 0x126);
 // LINE 994:
 	__asm        jmp    _Tb5;
 // LINE 996:

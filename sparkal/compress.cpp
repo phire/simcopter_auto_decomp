@@ -858,10 +858,7 @@ _T65:
 	__asm        add    eax, Top;
 	__asm        mov    Bottom, eax;
 // LINE 169:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        add    eax, 8;
-	__asm        mov    pCompressedBits, eax;
+	pCompressedBits = (this->mpLockedImage + 0x8);
 // LINE 171:
 	__asm        mov    eax, pCompressedBits;
 	__asm        mov    al, [eax];

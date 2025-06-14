@@ -659,10 +659,7 @@ _T13:
 	return;
 // LINE 278:
 _T3f:
-	__asm        mov    eax, srch;
-	__asm        mov    eax, [eax];
-	__asm        add    eax, 4;
-	__asm        mov    srch, eax;
+	srch = (srch-> + 0x4);
 // LINE 279:
 	__asm        jmp    _T13;
 // LINE 280:

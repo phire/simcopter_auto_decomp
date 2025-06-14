@@ -1449,9 +1449,7 @@ void CGameApp::ComposePlayFrame() {
 	__asm        call   dword ptr ds:[0x6C3614];
 	__asm        mov    lThisLoopTickCount, eax;
 // LINE 411:
-	__asm        mov    eax, lThisLoopTickCount;
-	__asm        sub    eax, lLastLoopTickCount;
-	__asm        mov    LoopTime, eax;
+	LoopTime = (lThisLoopTickCount - lLastLoopTickCount);
 // LINE 412:
 	__asm        shl    LoopTime, 0x10;
 // LINE 413:

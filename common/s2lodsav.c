@@ -196,9 +196,7 @@ _T130:
 	__asm        jmp    exit;
 // LINE 152:
 _T156:
-	__asm        mov    eax, lChunkDataSize;
-	__asm        add    eax, 8;
-	__asm        add    lBytesReadSoFar, eax;
+	lBytesReadSoFar += (lChunkDataSize + 0x8);
 // LINE 153:
 	__asm        mov    eax, lBytesReadSoFar;
 	__asm        cmp    lCityDataChunkLength, eax;
@@ -354,9 +352,7 @@ _T132:
 	__asm        jmp    _T171;
 // LINE 221:
 _T151:
-	__asm        mov    eax, size;
-	__asm        add    eax, 8;
-	__asm        add    sofar, eax;
+	sofar += (size + 0x8);
 // LINE 222:
 	__asm        mov    eax, sofar;
 	__asm        cmp    length, eax;
@@ -1117,9 +1113,7 @@ _T7a7:
 	__asm        jmp    badread;
 // LINE 428:
 _T7ca:
-	__asm        mov    eax, size;
-	__asm        add    eax, 8;
-	__asm        add    sofar, eax;
+	sofar += (size + 0x8);
 // LINE 429:
 	__asm        mov    eax, length;
 	__asm        cmp    sofar, eax;
@@ -2745,9 +2739,7 @@ _T88:
 	__asm        test   al, 0x80;
 	__asm        je     _Tff;
 // LINE 936:
-	__asm        movsx  eax, b;
-	__asm        and    eax, 0x7F;
-	__asm        mov    ix, eax;
+	ix = (reinterpret_cast<int16_t>(b) & 0x7f);
 // LINE 937:
 	__asm        mov    eax, tp;
 	__asm        mov    ecx, temp;
@@ -3326,9 +3318,7 @@ _T88:
 	return 0x0;
 // LINE 1092:
 _Tbd:
-	__asm        mov    eax, size;
-	__asm        add    eax, 8;
-	__asm        add    WriteLength, eax;
+	WriteLength += (size + 0x8);
 // LINE 1093:
 	return 0x1;
 // LINE 1094:
@@ -3430,9 +3420,7 @@ _Tdc:
 	__asm        call   swizzle_shorts;
 	__asm        add    esp, 8;
 // LINE 1136:
-	__asm        mov    ecx, size;
-	__asm        add    ecx, 8;
-	__asm        add    WriteLength, ecx;
+	WriteLength += (size + 0x8);
 // LINE 1137:
 	return 0x1;
 // LINE 1138:
@@ -3774,9 +3762,7 @@ _T240:
 	__asm        add    esp, 8;
 // LINE 1257:
 _T266:
-	__asm        mov    eax, tp;
-	__asm        add    eax, 8;
-	__asm        add    WriteLength, eax;
+	WriteLength += (tp + 0x8);
 // LINE 1259:
 	count = 0x4;
 // LINE 1260:

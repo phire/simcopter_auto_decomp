@@ -699,9 +699,7 @@ _Td5:
 	__asm        jne    _Tf0;
 // LINE 136:
 _Te7:
-	__asm        mov    eax, node;
-	__asm        add    eax, 4;
-	__asm        mov    stackPass, eax;
+	stackPass = (node + 0x4);
 // LINE 138:
 _Tf0:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(treeID);

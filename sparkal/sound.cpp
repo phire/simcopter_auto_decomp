@@ -2729,9 +2729,7 @@ _T87:
 // LINE 902:
 	dsBufferDescription.dwReserved = 0x0;
 // LINE 903:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x40;
-	__asm        mov    dsBufferDescription.lpwfxFormat, eax;
+	dsBufferDescription.lpwfxFormat = (this + 0x40);
 // LINE 905:
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -4051,14 +4049,7 @@ _T2a6:
 	__asm        mov    ecx, [ecx+0x72];
 	__asm        mov    [ecx+0x30], eax;
 // LINE 1547:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    eax, [eax+0x30];
-	__asm        lea    eax, [eax+eax*2];
-	__asm        add    eax, eax;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x72];
-	__asm        mov    [ecx+0x2C], eax;
+	this->lpStreamBufferInfo->dwBufferSize = (BinaryOp(add, this->lpStreamBufferInfo->dwBufferSegSize, BinaryOp(mul, this->lpStreamBufferInfo->dwBufferSegSize, Const(2))) + BinaryOp(add, this->lpStreamBufferInfo->dwBufferSegSize, BinaryOp(mul, this->lpStreamBufferInfo->dwBufferSegSize, Const(2))));
 // LINE 1550:
 	__asm        push   0x14;
 	__asm        push   0;
@@ -4073,9 +4064,7 @@ _T2a6:
 // LINE 1553:
 	dsBufferDescription.dwBufferBytes = this->lpStreamBufferInfo->dwBufferSize;
 // LINE 1556:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x40;
-	__asm        mov    dsBufferDescription.lpwfxFormat, eax;
+	dsBufferDescription.lpwfxFormat = (this + 0x40);
 // LINE 1557:
 	__asm        push   0;
 	__asm        mov    eax, this;
@@ -4808,27 +4797,12 @@ _Td1:
 	__asm        cmp    [eax+0x38], ecx;
 	__asm        jbe    _T106;
 // LINE 1843:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    eax, [eax+0x2C];
-	__asm        add    eax, dwPlay;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x72];
-	__asm        sub    eax, [ecx+0x38];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x72];
-	__asm        add    [ecx+0x3C], eax;
+	this->lpStreamBufferInfo->dwProgress += ((this->lpStreamBufferInfo->dwBufferSize + dwPlay) - this->lpStreamBufferInfo->dwPlayLast);
 // LINE 1845:
 	__asm        jmp    _T11b;
 // LINE 1847:
 _T106:
-	__asm        mov    eax, dwPlay;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x72];
-	__asm        sub    eax, [ecx+0x38];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x72];
-	__asm        add    [ecx+0x3C], eax;
+	this->lpStreamBufferInfo->dwProgress += (dwPlay - this->lpStreamBufferInfo->dwPlayLast);
 // LINE 1849:
 _T11b:
 	this->lpStreamBufferInfo->dwPlayLast = dwPlay;

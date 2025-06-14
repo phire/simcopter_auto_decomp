@@ -1234,19 +1234,11 @@ _T1c:
 _T2c:
 	__asm        jmp    _T31;
 _T31:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x80];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x78];
-	__asm        mov    nWindowWidth, eax;
+	nWindowWidth = (this->rectWindow.right - this->rectWindow.left);
 // LINE 446:
 	__asm        jmp    _T48;
 _T48:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x84];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x7C];
-	__asm        mov    nWindowHeight, eax;
+	nWindowHeight = (this->rectWindow.bottom - this->rectWindow.top);
 // LINE 449:
 	__asm        mov    eax, nScreenWidth;
 	__asm        shr    eax, 1;
@@ -1305,19 +1297,11 @@ _T1c:
 _T2c:
 	__asm        jmp    _T31;
 _T31:
-	__asm        mov    eax, rectWindowToPlace;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, rectWindowToPlace;
-	__asm        sub    eax, [ecx];
-	__asm        mov    nWindowWidth, eax;
+	nWindowWidth = (rectWindowToPlace->right - rectWindowToPlace->left);
 // LINE 474:
 	__asm        jmp    _T44;
 _T44:
-	__asm        mov    eax, rectWindowToPlace;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    ecx, rectWindowToPlace;
-	__asm        sub    eax, [ecx+4];
-	__asm        mov    nWindowHeight, eax;
+	nWindowHeight = (rectWindowToPlace->bottom - rectWindowToPlace->top);
 // LINE 477:
 	__asm        mov    eax, nScreenWidth;
 	__asm        shr    eax, 1;
@@ -1335,17 +1319,9 @@ _T44:
 	__asm        mov    ecx, rectWindowToPlace;
 	__asm        mov    [ecx+4], eax;
 // LINE 479:
-	__asm        mov    eax, rectWindowToPlace;
-	__asm        mov    eax, [eax];
-	__asm        add    eax, nWindowWidth;
-	__asm        mov    ecx, rectWindowToPlace;
-	__asm        mov    [ecx+8], eax;
+	rectWindowToPlace->right = (rectWindowToPlace->left + nWindowWidth);
 // LINE 480:
-	__asm        mov    eax, rectWindowToPlace;
-	__asm        mov    eax, [eax+4];
-	__asm        add    eax, nWindowHeight;
-	__asm        mov    ecx, rectWindowToPlace;
-	__asm        mov    [ecx+0xC], eax;
+	rectWindowToPlace->bottom = (rectWindowToPlace->top + nWindowHeight);
 // LINE 482:
 	return;
 }

@@ -44,10 +44,7 @@ void SpiralScan::SpiralScan(int32_t radius) {
 // LINE 12:
 	this->currDia = 0x1;
 // LINE 13:
-	__asm        mov    eax, radius;
-	__asm        add    eax, eax;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], eax;
+	this->maxDia = (radius + radius);
 // LINE 14:
 	return;
 

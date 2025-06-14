@@ -726,13 +726,7 @@ void RoadGraph::GetNextGoal(/*packed*/ struct Goal *pGoal) {
 // LINE 199:
 	pRGV = pGoal->pRGV;
 // LINE 200:
-	__asm        mov    eax, pGoal;
-	__asm        mov    eax, [eax+0xE];
-	__asm        lea    eax, [eax+eax*4];
-	__asm        add    eax, eax;
-	__asm        add    eax, pRGV;
-	__asm        add    eax, 4;
-	__asm        mov    pEdge, eax;
+	pEdge = (((BinaryOp(add, pGoal->edgeIndex, BinaryOp(mul, pGoal->edgeIndex, Const(4))) + BinaryOp(add, pGoal->edgeIndex, BinaryOp(mul, pGoal->edgeIndex, Const(4)))) + pRGV) + 0x4);
 // LINE 205:
 	__asm        mov    eax, pEdge;
 	__asm        xor    ecx, ecx;
@@ -745,12 +739,7 @@ void RoadGraph::GetNextGoal(/*packed*/ struct Goal *pGoal) {
 	__asm        jmp    IntersectionKludge;
 // LINE 210:
 _T43:
-	__asm        mov    eax, pGoal;
-	__asm        mov    eax, [eax+4];
-	__asm        add    eax, eax;
-	__asm        mov    ecx, pEdge;
-	__asm        add    eax, [ecx+6];
-	__asm        mov    pRoad, eax;
+	pRoad = ((pGoal->elementIndex + pGoal->elementIndex) + pEdge->roadArray);
 // LINE 213:
 	__asm        mov    eax, pRoad;
 	__asm        xor    ecx, ecx;
@@ -1116,13 +1105,7 @@ _T92:
 	__asm        cmp    validTurn, 0;
 	__asm        je     _T44;
 // LINE 361:
-	__asm        mov    eax, pGoal;
-	__asm        mov    eax, [eax+0xE];
-	__asm        lea    eax, [eax+eax*4];
-	__asm        add    eax, eax;
-	__asm        add    eax, pRGV;
-	__asm        add    eax, 4;
-	__asm        mov    pEdge, eax;
+	pEdge = (((BinaryOp(add, pGoal->edgeIndex, BinaryOp(mul, pGoal->edgeIndex, Const(4))) + BinaryOp(add, pGoal->edgeIndex, BinaryOp(mul, pGoal->edgeIndex, Const(4)))) + pRGV) + 0x4);
 // LINE 363:
 	__asm        mov    eax, pEdge;
 	__asm        xor    ecx, ecx;
@@ -1178,12 +1161,7 @@ _T13a:
 	__asm        mov    eax, pGoal;
 	__asm        mov    [eax+4], edx;
 // LINE 378:
-	__asm        mov    eax, pGoal;
-	__asm        mov    eax, [eax+4];
-	__asm        add    eax, eax;
-	__asm        mov    ecx, pEdge;
-	__asm        add    eax, [ecx+6];
-	__asm        mov    pRoad, eax;
+	pRoad = ((pGoal->elementIndex + pGoal->elementIndex) + pEdge->roadArray);
 // LINE 382:
 	__asm        mov    i, 0;
 	__asm        jmp    _T174;
@@ -1984,19 +1962,9 @@ void RoadGraph::SamePlaceOtherDirection(/*packed*/ struct Goal *pGoal) {
 	__asm        test   eax, eax;
 	__asm        je     _T62;
 // LINE 560:
-	__asm        mov    eax, pGoal;
-	__asm        mov    eax, [eax+0x12];
-	__asm        sub    eax, 2;
-	__asm        and    eax, 3;
-	__asm        mov    ecx, pGoal;
-	__asm        mov    [ecx+0x12], eax;
+	pGoal->direction = ((pGoal->direction - 0x2) & 0x3);
 // LINE 561:
-	__asm        mov    eax, pGoal;
-	__asm        mov    eax, [eax+0xE];
-	__asm        sub    eax, 2;
-	__asm        and    eax, 3;
-	__asm        mov    ecx, pGoal;
-	__asm        mov    [ecx+0xE], eax;
+	pGoal->edgeIndex = ((pGoal->edgeIndex - 0x2) & 0x3);
 // LINE 562:
 	return;
 // LINE 567:
@@ -2051,12 +2019,7 @@ _Tce:
 	__asm        cmp    dword ptr [eax+0xE], 0xFFFFFFFE;
 	__asm        jne    _T105;
 // LINE 582:
-	__asm        mov    eax, pGoal;
-	__asm        mov    eax, [eax+0x12];
-	__asm        sub    eax, 2;
-	__asm        and    eax, 3;
-	__asm        mov    ecx, pGoal;
-	__asm        mov    [ecx+0x12], eax;
+	pGoal->direction = ((pGoal->direction - 0x2) & 0x3);
 // LINE 583:
 	pGoal->edgeIndex = pGoal->direction;
 // LINE 586:
@@ -3026,9 +2989,7 @@ _T1b2:
 	__asm        test   eax, eax;
 	__asm        je     _T40c;
 // LINE 837:
-	__asm        mov    eax, pRGV;
-	__asm        add    eax, 4;
-	__asm        mov    pEdge, eax;
+	pEdge = (pRGV + 0x4);
 // LINE 838:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(fromTile);
 	__asm        and    eax, 0xFFFF;
@@ -3255,9 +3216,7 @@ _T49a:
 	__asm        test   eax, eax;
 	__asm        je     _T6f4;
 // LINE 848:
-	__asm        mov    eax, pRGV;
-	__asm        add    eax, 0xE;
-	__asm        mov    pEdge, eax;
+	pEdge = (pRGV + 0xe);
 // LINE 849:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(fromTile);
 	__asm        and    eax, 0xFFFF;
@@ -3484,9 +3443,7 @@ _T782:
 	__asm        test   eax, eax;
 	__asm        je     _T815;
 // LINE 859:
-	__asm        mov    eax, pRGV;
-	__asm        add    eax, 0x18;
-	__asm        mov    pEdge, eax;
+	pEdge = (pRGV + 0x18);
 // LINE 860:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(fromTile);
 	__asm        push   eax;
@@ -3585,9 +3542,7 @@ _T894:
 	__asm        test   eax, eax;
 	__asm        je     _T927;
 // LINE 870:
-	__asm        mov    eax, pRGV;
-	__asm        add    eax, 0x22;
-	__asm        mov    pEdge, eax;
+	pEdge = (pRGV + 0x22);
 // LINE 871:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(fromTile);
 	__asm        push   eax;
@@ -3845,10 +3800,7 @@ _T1cb:
 	__asm        mov    [ecx], al;
 // LINE 962:
 _T1fe:
-	__asm        mov    eax, returnDir;
-	__asm        sub    eax, 2;
-	__asm        and    eax, 3;
-	__asm        mov    currentDir, eax;
+	currentDir = ((returnDir - 0x2) & 0x3);
 // LINE 963:
 	pEdge->numElementsToPath++;
 // LINE 965:
@@ -6610,12 +6562,7 @@ _T5e:
 // LINE 1271:
 	startLoc.y = y;
 // LINE 1275:
-	__asm        mov    eax, currentDir;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        add    eax, eax;
-	__asm        add    eax, pRGV;
-	__asm        add    eax, 4;
-	__asm        mov    pEdge, eax;
+	pEdge = (((BinaryOp(add, currentDir, BinaryOp(mul, currentDir, Const(4))) + BinaryOp(add, currentDir, BinaryOp(mul, currentDir, Const(4)))) + pRGV) + 0x4);
 // LINE 1276:
 	__asm        mov    eax, pEdge;
 	__asm        xor    ecx, ecx;
@@ -6920,10 +6867,7 @@ _T3ea:
 	__asm        jmp    _T357;
 // LINE 1319:
 _T3ef:
-	__asm        mov    eax, returnDir;
-	__asm        sub    eax, 2;
-	__asm        and    eax, 3;
-	__asm        mov    currentDir, eax;
+	currentDir = ((returnDir - 0x2) & 0x3);
 // LINE 1325:
 _T3fb:
 	__asm        mov    eax, pEdge;
@@ -7232,10 +7176,7 @@ _T75d:
 //   _T750
 // LINE 1359:
 _T781:
-	__asm        mov    eax, returnDir;
-	__asm        sub    eax, 2;
-	__asm        and    eax, 3;
-	__asm        mov    returnDir, eax;
+	returnDir = ((returnDir - 0x2) & 0x3);
 // LINE 1362:
 _T78d:
 	fStart = 0x0;

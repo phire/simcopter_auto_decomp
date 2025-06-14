@@ -451,41 +451,23 @@ _T1f:
 	__asm        add    eax, 0x5C2B18;
 	__asm        mov    currentCareerCityInfo, eax;
 // LINE 275:
-	__asm        mov    eax, currentCareerCityInfo;
-	__asm        add    eax, 4;
-	__asm        mov    pvals[0], eax;
+	pvals[0] = (currentCareerCityInfo + 0x4);
 // LINE 276:
-	__asm        mov    eax, currentCareerCityInfo;
-	__asm        add    eax, 8;
-	__asm        mov    pvals[1], eax;
+	pvals[1] = (currentCareerCityInfo + 0x8);
 // LINE 277:
-	__asm        mov    eax, currentCareerCityInfo;
-	__asm        add    eax, 0xC;
-	__asm        mov    pvals[2], eax;
+	pvals[2] = (currentCareerCityInfo + 0xc);
 // LINE 278:
-	__asm        mov    eax, currentCareerCityInfo;
-	__asm        add    eax, 0x10;
-	__asm        mov    pvals[3], eax;
+	pvals[3] = (currentCareerCityInfo + 0x10);
 // LINE 279:
-	__asm        mov    eax, currentCareerCityInfo;
-	__asm        add    eax, 0x14;
-	__asm        mov    pvals[4], eax;
+	pvals[4] = (currentCareerCityInfo + 0x14);
 // LINE 280:
-	__asm        mov    eax, currentCareerCityInfo;
-	__asm        add    eax, 0x18;
-	__asm        mov    pvals[5], eax;
+	pvals[5] = (currentCareerCityInfo + 0x18);
 // LINE 281:
-	__asm        mov    eax, currentCareerCityInfo;
-	__asm        add    eax, 0x1C;
-	__asm        mov    pvals[6], eax;
+	pvals[6] = (currentCareerCityInfo + 0x1c);
 // LINE 282:
-	__asm        mov    eax, currentCareerCityInfo;
-	__asm        add    eax, 0x20;
-	__asm        mov    pvals[7], eax;
+	pvals[7] = (currentCareerCityInfo + 0x20);
 // LINE 283:
-	__asm        mov    eax, currentCareerCityInfo;
-	__asm        add    eax, 0x24;
-	__asm        mov    pvals[8], eax;
+	pvals[8] = (currentCareerCityInfo + 0x24);
 // LINE 284:
 	__asm        mov    eax, currentCareerCityInfo;
 	__asm        mov    eax, [eax+0x44];

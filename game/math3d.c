@@ -344,11 +344,7 @@ void CreateVelocity(/*packed*/ struct Point3d *p1, /*packed*/ struct Point3d *p2
 	/*bp-0x4*/   int32_t i;
 
 // LINE 163:
-	__asm        mov    eax, p2;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, p1;
-	__asm        sub    eax, [ecx];
-	__asm        mov    i, eax;
+	i = (p2->x - p1->x);
 // LINE 164:
 	__asm        mov    eax, t;
 	__asm        push   eax;
@@ -359,11 +355,7 @@ void CreateVelocity(/*packed*/ struct Point3d *p1, /*packed*/ struct Point3d *p2
 	__asm        mov    ecx, V;
 	__asm        mov    [ecx], eax;
 // LINE 165:
-	__asm        mov    eax, p2;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, p1;
-	__asm        sub    eax, [ecx+4];
-	__asm        mov    i, eax;
+	i = (p2->y - p1->y);
 // LINE 166:
 	__asm        mov    eax, t;
 	__asm        push   eax;
@@ -374,11 +366,7 @@ void CreateVelocity(/*packed*/ struct Point3d *p1, /*packed*/ struct Point3d *p2
 	__asm        mov    ecx, V;
 	__asm        mov    [ecx+4], eax;
 // LINE 167:
-	__asm        mov    eax, p2;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, p1;
-	__asm        sub    eax, [ecx+8];
-	__asm        mov    i, eax;
+	i = (p2->z - p1->z);
 // LINE 168:
 	__asm        mov    eax, t;
 	__asm        push   eax;
@@ -739,18 +727,10 @@ _T1c:
 	__asm        jmp    _T1c;
 // LINE 361:
 _T35:
-	__asm        cmp    a, 0x7080000;
-	__asm        jl     _T4f;
-
-	__asm        mov    eax, a;
-	__asm        sub    eax, 0xE100000;
-	__asm        jmp    _T52;
 _T4f:
-	__asm        mov    eax, a;
 _T52:
-	__asm        jmp    __RETURN;
+	return (a < 0x7080000) ? (a - 0xe100000) : a;
 // LINE 362:
-__RETURN:
 }
 
 

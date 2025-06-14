@@ -1513,17 +1513,9 @@ _T61:
 // LINE 666:
 	rectFillTemp.top = 0x0;
 // LINE 667:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x24];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x1C];
-	__asm        mov    rectFillTemp.right, eax;
+	rectFillTemp.right = (this-><ScreenBuffer+0x24> - this-><ScreenBuffer+0x1c>);
 // LINE 668:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x28];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x20];
-	__asm        mov    rectFillTemp.bottom, eax;
+	rectFillTemp.bottom = (this-><ScreenBuffer+0x28> - this-><ScreenBuffer+0x20>);
 // LINE 670:
 _T8d:
 	__asm        mov    eax, this;
