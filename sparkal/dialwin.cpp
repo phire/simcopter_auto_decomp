@@ -4766,21 +4766,11 @@ _T3b:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xA4], 0;
 	__asm        jne    _T65;
-
-	__asm        mov    eax, G_uheli;
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x98];
-	__asm        cmp    [eax+0xD0], ecx;
-	__asm        je     _T6f;
 _T65:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T71;
 _T6f:
-	__asm        xor    eax, eax;
 _T71:
-	__asm        jmp    __RETURN;
+	return (G_uheli->damage == this->nCurrentDamage);
 // LINE 799:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0044ba5b

@@ -16627,18 +16627,11 @@ _T13a:
 _T14c:
 	this->bCaretTimerExpired = 0x0;
 _T159:
-	__asm        mov    eax, this;
-	__asm        cmp    dword ptr [eax+0xBC], 0;
-	__asm        je     _T173;
 _T169:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T175;
 _T173:
-	__asm        xor    eax, eax;
 _T175:
-	__asm        jmp    __RETURN;
+	return (this->bCaretTimerExpired == 0x0);
 // LINE 2142:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0045cf0b
@@ -18101,18 +18094,11 @@ _T13a:
 _T14c:
 	this->bScrollTimerExpired = 0x0;
 _T159:
-	__asm        mov    eax, this;
-	__asm        cmp    dword ptr [eax+0xC8], 0;
-	__asm        je     _T173;
 _T169:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T175;
 _T173:
-	__asm        xor    eax, eax;
 _T175:
-	__asm        jmp    __RETURN;
+	return (this->bScrollTimerExpired == 0x0);
 // LINE 2359:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0045e0dc

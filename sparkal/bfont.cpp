@@ -4380,53 +4380,29 @@ int32_t BitmappedFont::IsCharBreakingChar(const char chText) {
 	__asm        movsx  eax, chText;
 	__asm        cmp    eax, 0x20;
 	__asm        je     _T26;
-
-	__asm        movsx  eax, chText;
-	__asm        cmp    eax, 0x2D;
-	__asm        jne    _T30;
 _T26:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T32;
 _T30:
-	__asm        xor    eax, eax;
 _T32:
-	__asm        jmp    __RETURN;
+	return (reinterpret_cast<int16_t>(chText) != 0x2d);
 // LINE 615:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0046af61
 int32_t BitmappedFont::IsCharReturnChar(const char chText) {
 // LINE 626:
-	__asm        movsx  eax, chText;
-	__asm        cmp    eax, 0xA;
-	__asm        jne    _T23;
-
-	__asm        mov    eax, 1;
-	__asm        jmp    _T25;
 _T23:
-	__asm        xor    eax, eax;
 _T25:
-	__asm        jmp    __RETURN;
+	return (reinterpret_cast<int16_t>(chText) != 0xa);
 // LINE 627:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0046af92
 int32_t BitmappedFont::IsCharWhitespace(const char chText) {
 // LINE 635:
-	__asm        movsx  eax, chText;
-	__asm        cmp    eax, 0x20;
-	__asm        jne    _T23;
-
-	__asm        mov    eax, 1;
-	__asm        jmp    _T25;
 _T23:
-	__asm        xor    eax, eax;
 _T25:
-	__asm        jmp    __RETURN;
+	return (reinterpret_cast<int16_t>(chText) != 0x20);
 // LINE 636:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0046afc3

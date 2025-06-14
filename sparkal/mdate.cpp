@@ -546,18 +546,10 @@ _T47:
 	d++;
 // LINE 187:
 _T76:
-	__asm        mov    eax, day;
-	__asm        cmp    d, eax;
-	__asm        jb     _T8c;
-
-	__asm        mov    eax, 1;
-	__asm        jmp    _T8e;
 _T8c:
-	__asm        xor    eax, eax;
 _T8e:
-	__asm        jmp    __RETURN;
+	return (d < day);
 // LINE 188:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004bc76f

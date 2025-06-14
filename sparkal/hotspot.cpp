@@ -2862,18 +2862,10 @@ _Td5:
 	__asm        add    eax, ecx;
 	__asm        mov    nDistanceToPosition, eax;
 // LINE 167:
-	__asm        mov    eax, nRadiusOfCircle;
-	__asm        cmp    nDistanceToPosition, eax;
-	__asm        jg     _T124;
-
-	__asm        mov    eax, 1;
-	__asm        jmp    _T126;
 _T124:
-	__asm        xor    eax, eax;
 _T126:
-	__asm        jmp    __RETURN;
+	return (nDistanceToPosition > nRadiusOfCircle);
 // LINE 168:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004baf2a

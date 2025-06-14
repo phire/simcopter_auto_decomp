@@ -7668,18 +7668,10 @@ _T47:
 	__asm        mov    lCurrentValue, eax;
 // LINE 771:
 _T65:
-	__asm        mov    eax, lCurrentValue;
-	__asm        cmp    lCurrentFunds, eax;
-	__asm        jl     _T7b;
-
-	__asm        mov    eax, 1;
-	__asm        jmp    _T7d;
 _T7b:
-	__asm        xor    eax, eax;
 _T7d:
-	__asm        jmp    __RETURN;
+	return (lCurrentFunds < lCurrentValue);
 // LINE 772:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0047b353

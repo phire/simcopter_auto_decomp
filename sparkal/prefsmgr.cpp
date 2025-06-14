@@ -486,18 +486,10 @@ _T92:
 // FUNCTION: COPTER_D 0x0047bd26
 int32_t operator==(const /*packed*/ class PreferenceItem& P1, const /*packed*/ class PreferenceItem& P2) {
 // LINE 86:
-	__asm        mov    eax, P1;
-	__asm        cmp    P2, eax;
-	__asm        jne    _T1c;
-
-	__asm        mov    eax, 1;
-	__asm        jmp    _T1e;
 _T1c:
-	__asm        xor    eax, eax;
 _T1e:
-	__asm        jmp    __RETURN;
+	return (P2 != P1);
 // LINE 87:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0047bd4e
@@ -517,20 +509,10 @@ _T22:
 // FUNCTION: COPTER_D 0x0047bd7e
 int32_t operator<(const /*packed*/ class PreferenceItem& P1, const /*packed*/ class PreferenceItem& P2) {
 // LINE 120:
-	__asm        mov    eax, P1;
-	__asm        mov    ecx, P2;
-	__asm        mov    ecx, [ecx];
-	__asm        cmp    [eax], ecx;
-	__asm        jge    _T20;
-
-	__asm        mov    eax, 1;
-	__asm        jmp    _T22;
 _T20:
-	__asm        xor    eax, eax;
 _T22:
-	__asm        jmp    __RETURN;
+	return (P1.lPreferenceType >= P2.lPreferenceType);
 // LINE 121:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0047bdaa

@@ -489,20 +489,10 @@ void CopterGameMode::CopterGameMode(const /*packed*/ class CopterGameMode& newGa
 // FUNCTION: COPTER_D 0x004bd701
 int32_t operator==(const /*packed*/ class CopterGameMode& gameMode1, const /*packed*/ class CopterGameMode& gameMode2) {
 // LINE 70:
-	__asm        mov    eax, gameMode1;
-	__asm        mov    ecx, gameMode2;
-	__asm        mov    ecx, [ecx];
-	__asm        cmp    [eax], ecx;
-	__asm        jne    _T20;
-
-	__asm        mov    eax, 1;
-	__asm        jmp    _T22;
 _T20:
-	__asm        xor    eax, eax;
 _T22:
-	__asm        jmp    __RETURN;
+	return (gameMode1.nModeID != gameMode2.nModeID);
 // LINE 71:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004bd72d

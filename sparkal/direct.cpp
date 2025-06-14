@@ -2622,15 +2622,9 @@ _T4a8:
 	__asm        call   dword ptr ds:[0x6C3610];
 // LINE 172:
 _T4bc:
-	__asm        cmp    hFile, 0xFFFFFFFF;
-	__asm        je     _T4d0;
-
-	__asm        mov    eax, 1;
-	__asm        jmp    _T4d2;
 _T4d0:
-	__asm        xor    eax, eax;
 _T4d2:
-	__asm        jmp    __RETURN;
+	return (hFile == -0x1);
 // LINE 177:
 // Block end:
 _T4d7:

@@ -2053,18 +2053,11 @@ int32_t LanguageManager::DoesLanguageUseLatinCharacters(int32_t nLanguage) {
 
 	__asm        cmp    nLanguage, 0x24;
 	__asm        je     _Tf6;
-
-	__asm        cmp    nLanguage, 0x25;
-	__asm        jne    _T100;
 _Tf6:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T102;
 _T100:
-	__asm        xor    eax, eax;
 _T102:
-	__asm        jmp    __RETURN;
+	return (nLanguage != 0x25);
 // LINE 300:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0042ba26

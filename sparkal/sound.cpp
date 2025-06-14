@@ -1383,20 +1383,10 @@ _T214:
 // FUNCTION: COPTER_D 0x0042eafa
 int32_t operator<(const /*packed*/ class Sound& compareSound1, const /*packed*/ class Sound& compareSound2) {
 // LINE 468:
-	__asm        mov    eax, compareSound2;
-	__asm        mov    ecx, compareSound1;
-	__asm        mov    ecx, [ecx+0xC];
-	__asm        cmp    [eax+0xC], ecx;
-	__asm        jle    _T22;
-
-	__asm        mov    eax, 1;
-	__asm        jmp    _T24;
 _T22:
-	__asm        xor    eax, eax;
 _T24:
-	__asm        jmp    __RETURN;
+	return (compareSound2.lID <= compareSound1.lID);
 // LINE 469:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0042eb28
@@ -1583,18 +1573,9 @@ _T200:
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jne    _T230;
 // LINE 490:
-	__asm        mov    eax, compareSound1;
-	__asm        mov    ecx, compareSound2;
-	__asm        mov    ecx, [ecx+0x10];
-	__asm        cmp    [eax+0x10], ecx;
-	__asm        jne    _T229;
-
-	__asm        mov    eax, 1;
-	__asm        jmp    _T22b;
 _T229:
-	__asm        xor    eax, eax;
 _T22b:
-	__asm        jmp    __RETURN;
+	return (compareSound1.lResID != compareSound2.lResID);
 // LINE 491:
 _T230:
 	return 0x1;

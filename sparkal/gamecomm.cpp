@@ -4517,18 +4517,11 @@ int32_t IsKeyReserved(long lKey) {
 
 	__asm        cmp    lKey, 0x11;
 	__asm        je     _T3b;
-
-	__asm        cmp    lKey, 0x12;
-	__asm        jne    _T45;
 _T3b:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T47;
 _T45:
-	__asm        xor    eax, eax;
 _T47:
-	__asm        jmp    __RETURN;
+	return (lKey != 0x12);
 // LINE 1019:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0048e64b
