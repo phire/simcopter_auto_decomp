@@ -262,8 +262,7 @@ _L45521:
 // FUNCTION: COPTER_D 0x0055fc70
 void cCopterBody::WriteToDisk() {
 // LINE 139:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 // Function in module: Bodydefs.obj

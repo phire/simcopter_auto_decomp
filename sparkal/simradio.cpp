@@ -6830,8 +6830,8 @@ _T2f:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F560;
 // LINE 604:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
+
 	__asm        mov    eax, this;
 }
 
@@ -6885,12 +6885,11 @@ _T74:
 _T8e:
 	__asm        jmp    _T93;
 _T93:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 // FUNCTION: COPTER_D 0x00437c57
-int Radio::Initialize() {
+int32_t Radio::Initialize() {
 // LINE 620:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -6907,7 +6906,7 @@ int Radio::Initialize() {
 }
 
 // FUNCTION: COPTER_D 0x00437c88
-int Radio::DeInitialize() {
+int32_t Radio::DeInitialize() {
 // LINE 631:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -6957,8 +6956,7 @@ void Radio::SetPreferences(/*packed*/ struct RadioPreferences& newRadioPreferenc
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x34];
 // LINE 653:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 // FUNCTION: COPTER_D 0x00437d4c
@@ -6978,12 +6976,11 @@ void Radio::GetPreferences(/*packed*/ struct RadioPreferences& currentRadioPrefe
 // LINE 667:
 	currentRadioPreferences.bOptionPlayEnglishIfDefaultLanguageNotFound = this-><Radio+0x30:4>;
 // LINE 668:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 // FUNCTION: COPTER_D 0x00437db7
-int Radio::GetPreferences() {
+int32_t Radio::GetPreferences() {
 	/*bp-0x4*/   char * chPrefData;
 	/*bp-0x20*/  /*packed*/ struct RadioPreferences tempRadioPreferences; // 0x1c bytes
 
@@ -7042,7 +7039,7 @@ _Ta1:
 }
 
 // FUNCTION: COPTER_D 0x00437e67
-int Radio::SavePreferences() {
+int32_t Radio::SavePreferences() {
 	/*bp-0x1c*/  /*packed*/ struct RadioPreferences tempRadioPreferences; // 0x1c bytes
 
 // LINE 706:
@@ -7078,7 +7075,7 @@ _T74:
 }
 
 // FUNCTION: COPTER_D 0x00437ee7
-int Radio::SetOn(int32_t bNewOn) {
+int32_t Radio::SetOn(int32_t bNewOn) {
 // LINE 732:
 	__asm        cmp    bNewOn, 0;
 	__asm        je     _Te7;
@@ -7227,8 +7224,7 @@ _T4c:
 	__asm        call   dword ptr [eax+0x24];
 // LINE 774:
 _T8f:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 // FUNCTION: COPTER_D 0x004380a0
@@ -7254,12 +7250,11 @@ _T3c:
 	this-><Radio+0x30:4> = bNewOption;
 // LINE 787:
 _T4f:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 // FUNCTION: COPTER_D 0x004380fb
-int Radio::GetOption(enum RadioOption nRadioOption) {
+int32_t Radio::GetOption(enum RadioOption nRadioOption) {
 // LINE 794:
 	__asm        cmp    nRadioOption, 0;
 	__asm        jne    _T26;
@@ -7286,7 +7281,7 @@ _T55:
 }
 
 // FUNCTION: COPTER_D 0x0043815e
-int Radio::SetVolume(long lNewVolume) {
+int32_t Radio::SetVolume(long lNewVolume) {
 // LINE 812:
 	__asm        cmp    lNewVolume, 0;
 	__asm        jge    _T1d;
@@ -7321,7 +7316,7 @@ _T5d:
 }
 
 // FUNCTION: COPTER_D 0x004381cc
-int Radio::SetStation(int32_t nStationIndex) {
+int32_t Radio::SetStation(int32_t nStationIndex) {
 // LINE 827:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, nStationIndex;
@@ -7412,7 +7407,7 @@ _Tdc:
 }
 
 // FUNCTION: COPTER_D 0x004382ca
-int Radio::SetStation(enum RadioStationType radioStationType) {
+int32_t Radio::SetStation(enum RadioStationType radioStationType) {
 	/*bp-0x4*/   int32_t iEnd;
 	/*bp-0x8*/   int32_t i;
 
@@ -7479,7 +7474,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00438379
-int Radio::IsStationTypeAvailable(enum RadioStationType radioStationType) {
+int32_t Radio::IsStationTypeAvailable(enum RadioStationType radioStationType) {
 	/*bp-0x4*/   int32_t iEnd;
 	/*bp-0x8*/   int32_t i;
 
@@ -7539,7 +7534,7 @@ _T97:
 }
 
 // FUNCTION: COPTER_D 0x0043841e
-int Radio::GetStationCount() {
+int32_t Radio::GetStationCount() {
 // LINE 876:
 	__asm        jmp    _T11;
 _T11:
@@ -7560,7 +7555,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00438457
-int Radio::DoState() {
+int32_t Radio::DoState() {
 // LINE 885:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x1C], 0;
@@ -7594,7 +7589,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004384b6
-int Radio::StationDirectoryNameIsValid(/*packed*/ class basic_string<char>& sStationDirectory) {
+int32_t Radio::StationDirectoryNameIsValid(/*packed*/ class basic_string<char>& sStationDirectory) {
 	/*bp-0x4*/   int32_t i;
 
 // LINE 898:
@@ -7754,7 +7749,7 @@ _T1b9:
 }
 
 // FUNCTION: COPTER_D 0x0043867d
-int Radio::SetupStations() {
+int32_t Radio::SetupStations() {
 	/*bp-0x4*/   /*packed*/ class list<basic_string<char>>::iterator radioStationStringListIterator;
 	/*bp-0xc*/   /*packed*/ class basic_string<char> sRadioDirectory; // 0x8 bytes
 	/*bp-0xa4*/  /*packed*/ class RadioStation tempRadioStation; // 0x98 bytes
@@ -8896,7 +8891,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00439663
-int Radio::DoesAtLeastOneSoundEntryExistForTheGivenDirectory(const /*packed*/ class basic_string<char>& sDirectory) {
+int32_t Radio::DoesAtLeastOneSoundEntryExistForTheGivenDirectory(const /*packed*/ class basic_string<char>& sDirectory) {
 
 	__asm        mov    eax, SZ_SOUND_FILE_FILTER;
 	__asm        mov    [ebp-0x6C], eax;

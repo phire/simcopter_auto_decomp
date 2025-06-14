@@ -1362,8 +1362,8 @@ _T389:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::EnterMode;
 // LINE 124:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
+
 	__asm        mov    eax, this;
 }
 
@@ -1919,8 +1919,7 @@ _T19f:
 	__asm        mov    [ecx+8], eax;
 // LINE 250:
 _T1c0:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 // FUNCTION: COPTER_D 0x004887b7
@@ -3567,12 +3566,11 @@ _T2e5:
 	G_max_emptycel_size = lValue;
 // LINE 573:
 _T2f0:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 // FUNCTION: COPTER_D 0x00489f3d
-int CGameApp::IsSwitchPresent(char chSwitchToCheck, char * szResult) {
+int32_t CGameApp::IsSwitchPresent(char chSwitchToCheck, char * szResult) {
 	/*bp-0x4*/   char chLowerToCheck;
 	/*bp-0x8*/   short i;
 	/*bp-0xc*/   short j;
@@ -3749,7 +3747,7 @@ _T212:
 }
 
 // FUNCTION: COPTER_D 0x0048a15d
-int CGameApp::SetCurrentLanguageUse(int32_t nLanguageID) {
+int32_t CGameApp::SetCurrentLanguageUse(int32_t nLanguageID) {
 // LINE 651:
 	__asm        mov    eax, nLanguageID;
 	__asm        push   eax;
@@ -3962,8 +3960,7 @@ _T6d:
 	__asm        call   dword ptr ds:[0x6C35F8];
 	__asm        mov    bReturnValue, eax;
 // LINE 740:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 // FUNCTION: COPTER_D 0x0048a409
@@ -4350,8 +4347,7 @@ _T51f:
 	__asm        add    ecx, 0x36BC;
 	__asm        call   CommandSystem::SetUpCommandArraysFromShortcuts;
 // LINE 785:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 // FUNCTION: COPTER_D 0x0048a943
@@ -4369,12 +4365,11 @@ void CGameApp::InitializeJoysticks() {
 	__asm        jmp    _T33;
 // LINE 796:
 _T33:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 // FUNCTION: COPTER_D 0x0048a980
-int CGameApp::HaveAnyJoysticksChangedSinceLastPlay() {
+int32_t CGameApp::HaveAnyJoysticksChangedSinceLastPlay() {
 	/*bp-0x4*/   char * chPrefData;
 	/*bp-0x8*/   char * chLastJoystickName;
 	/*bp-0xc*/   int32_t iEnd;

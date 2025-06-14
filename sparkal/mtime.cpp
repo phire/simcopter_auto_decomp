@@ -570,7 +570,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0043c81c
-int MTime::AssertMDate(const /*packed*/ class MDate& date) {
+int32_t MTime::AssertMDate(const /*packed*/ class MDate& date) {
 // LINE 77:
 	__asm        mov    eax, date;
 	__asm        mov    ecx, MTime::RefDate.Julnum;
@@ -843,8 +843,8 @@ void MTime::MTime() {
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 // LINE 178:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
+
 	__asm        mov    eax, this;
 }
 
@@ -868,8 +868,8 @@ void MTime::MTime(uint32_t h, uint32_t m, uint32_t s) {
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx], eax;
 // LINE 192:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
+
 	__asm        mov    eax, this;
 }
 
@@ -958,13 +958,13 @@ _Tf8:
 	this-><MTime+0x00:4> = 0x0;
 // LINE 233:
 _T101:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x0043cc5b
-int MTime::SetShouldPrinMDate(int32_t bNewPrinMDate) {
+int32_t MTime::SetShouldPrinMDate(int32_t bNewPrinMDate) {
 	/*bp-0x4*/   int32_t bPreviousPrinMDate;
 
 // LINE 242:
@@ -977,7 +977,7 @@ int MTime::SetShouldPrinMDate(int32_t bNewPrinMDate) {
 }
 
 // FUNCTION: COPTER_D 0x0043cc88
-int MTime::CompareTo(const /*unpacked*/ class MTime& t) {
+int32_t MTime::CompareTo(const /*unpacked*/ class MTime& t) {
 	/*bp-0x4*/   unsigned long diff;
 
 // LINE 254:
@@ -1007,14 +1007,14 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0043ccd7
-unsigned int MTime::Hash() {
+uint32_t MTime::Hash() {
 // LINE 265:
 	return this-><MTime+0x00:4>;
 // LINE 266:
 }
 
 // FUNCTION: COPTER_D 0x0043ccf2
-unsigned int MTime::Hour() {
+uint32_t MTime::Hour() {
 // LINE 278:
 	__asm        mov    ecx, this;
 	__asm        call   MTime::LocalSecs;
@@ -1031,7 +1031,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0043cd24
-unsigned int MTime::HourGMT() {
+uint32_t MTime::HourGMT() {
 // LINE 291:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, 0x15180;
@@ -1048,7 +1048,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0043cd53
-int MTime::IsDST() {
+int32_t MTime::IsDST() {
 	/*bp-0x4*/   uint32_t year;
 	/*bp-0x8*/   uint32_t daycount;
 
@@ -1216,7 +1216,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0043cf0c
-unsigned int MTime::Minute() {
+uint32_t MTime::Minute() {
 // LINE 358:
 	__asm        mov    ecx, this;
 	__asm        call   MTime::LocalSecs;
@@ -1237,7 +1237,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0043cf49
-unsigned int MTime::MinuteGMT() {
+uint32_t MTime::MinuteGMT() {
 // LINE 371:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, 0x15180;
@@ -1258,7 +1258,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0043cf83
-unsigned int MTime::Second() {
+uint32_t MTime::Second() {
 // LINE 383:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, 0x15180;

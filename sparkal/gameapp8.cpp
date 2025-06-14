@@ -1876,7 +1876,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00428c38
-int CGameApp::DisplayFileOpenError(unsigned long nResult) {
+int32_t CGameApp::DisplayFileOpenError(unsigned long nResult) {
 // LINE 463:
 	__asm        push   1;
 	__asm        mov    eax, nResult;

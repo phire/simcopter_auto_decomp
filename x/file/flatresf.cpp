@@ -1568,8 +1568,8 @@ _Tfe:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x14], eax;
 // LINE 722:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
+
 	__asm        mov    eax, this;
 }
 
@@ -1647,8 +1647,7 @@ _T93:
 	__asm        call   Memory::HFree;
 	__asm        add    esp, 4;
 // LINE 747:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 // FUNCTION: COPTER_D 0x00553c5b
@@ -1839,8 +1838,7 @@ _Tbb:
 // LINE 796:
 // Block end:
 _Tc0:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 // FUNCTION: COPTER_D 0x00553e96
@@ -1864,10 +1862,8 @@ _T24:
 	__asm        jmp    _T1c;
 // LINE 806:
 _T37:
-	__asm        mov    ax, total;
-	__asm        jmp    __RETURN;
+	return total;
 // LINE 807:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00553edb
@@ -1962,7 +1958,7 @@ _Ted:
 	__asm        test   reinterpret_cast<uint32_t>(unpurge), 0xFFFF;
 	__asm        jne    _T10c;
 
-	__asm        jmp    __RETURN;
+	return;
 // LINE 839:
 _T10c:
 	__asm        mov    eax, entry;
@@ -2124,7 +2120,7 @@ done:
 _T28e:
 	file->fError = err;
 // LINE 878:
-	__asm        jmp    __RETURN;
+	return;
 _T29f:
 	__asm        jmp    done;
 _T2a4:
@@ -2139,7 +2135,6 @@ _T2b8:
 	__asm        jmp    done;
 _T2bd:
 	__asm        jmp    done;
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x005541a4
@@ -2213,8 +2208,7 @@ _T4c:
 	__asm        jmp    __RETURN;
 // LINE 907:
 _T65:
-	__asm        xor    ax, ax;
-	__asm        jmp    __RETURN;
+	return 0x0;
 // LINE 908:
 __RETURN:
 }
@@ -2608,8 +2602,7 @@ void ResMap::GetName(/*unpacked*/ struct ResMap::Entry *entry, unsigned char * n
 	__asm        add    esp, 0xC;
 // LINE 1042:
 _T54:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 // FUNCTION: COPTER_D 0x00554651
@@ -2632,8 +2625,7 @@ void ResMap::SwapTypeHead(/*unpacked*/ struct ResMap::TypeHead *typeHead) {
 	__asm        call   Swizzle2;
 	__asm        add    esp, 4;
 // LINE 1062:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 // FUNCTION: COPTER_D 0x0055468b
@@ -2694,8 +2686,7 @@ void ResMap::SwapResEntry(/*unpacked*/ struct ResMap::Entry *resEntry) {
 	__asm        mov    ecx, resEntry;
 	__asm        mov    [ecx+4], eax;
 // LINE 1100:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 

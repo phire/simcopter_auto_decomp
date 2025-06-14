@@ -28,8 +28,7 @@ void GraphicWindow::SetParent(/*unpacked*/ class GraphicWindow *windowNewParent)
 // LINE 324:
 	this-><GraphicWindow+0x3c:4> = windowNewParent;
 // LINE 325:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 // Function in module: Inputwin.obj
@@ -38,8 +37,7 @@ void GraphicWindow::SetBorderDrawing(int32_t bNewDrawBorder) {
 // LINE 328:
 	this-><GraphicWindow+0x6c:4> = bNewDrawBorder;
 // LINE 329:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 // Function in module: Inputwin.obj
@@ -75,13 +73,12 @@ void GraphicWindow::SetWindowPosition(/*packed*/ class MPoint& ptNewPosition) {
 	__asm        jmp    _T5b;
 // LINE 337:
 _T5b:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 // Function in module: Inputwin.obj
 // FUNCTION: COPTER_D 0x0040d8b0
-int GraphicWindow::IsPointInWindow(long nXPosition, long nYPosition) {
+int32_t GraphicWindow::IsPointInWindow(long nXPosition, long nYPosition) {
 // LINE 364:
 	__asm        cmp    nXPosition, 0;
 	__asm        jle    _T5e;

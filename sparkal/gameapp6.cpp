@@ -12,8 +12,7 @@ void CGameApp::EnableSoundTrack() {
 	__asm        mov    ecx, 0x604480;
 	__asm        call   Radio::SetOn;
 // LINE 28:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 // FUNCTION: COPTER_D 0x00471e62
@@ -23,8 +22,7 @@ void CGameApp::DisableSoundTrack() {
 	__asm        mov    ecx, 0x604480;
 	__asm        call   Radio::SetOn;
 // LINE 40:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 // FUNCTION: COPTER_D 0x00471e84
@@ -81,8 +79,7 @@ _Ta7:
 	__asm        call   Radio::SetOn;
 // LINE 54:
 _Tb3:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 // FUNCTION: COPTER_D 0x00471f41
@@ -91,7 +88,6 @@ void CGameApp::PlayNextSoundTrackIfNeeded() {
 	__asm        mov    ecx, 0x604480;
 	__asm        call   Radio::DoState;
 // LINE 63:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 

@@ -3051,20 +3051,20 @@ _T4d1:
 	__asm        call   Directory::ReadDirectoryEntries;
 // LINE 202:
 _T4fd:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
+
 	__asm        mov    eax, this;
 }
 
 // FUNCTION: COPTER_D 0x004837af
-int Directory::IsDirectoryRoot() {
+int32_t Directory::IsDirectoryRoot() {
 // LINE 209:
 	return 0x0;
 // LINE 210:
 }
 
 // FUNCTION: COPTER_D 0x004837c7
-int Directory::ReadDirectoryEntries() {
+int32_t Directory::ReadDirectoryEntries() {
 	/*bp-0x140*/ /*packed*/ struct _WIN32_FIND_DATAA findData; // 0x13e bytes
 	/*bp-0x150*/ /*packed*/ class DirectoryEntry directoryEntryCurrent; // 0x10 bytes
 	/*bp-0x154*/ void * __ptr32 hFind;
@@ -4218,7 +4218,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0048494d
-int Directory::ReadDirectorySpecificEntriesIntoStringList(/*packed*/ class list<basic_string<char>>& sDirectoryEntries, long lFilter) {
+int32_t Directory::ReadDirectorySpecificEntriesIntoStringList(/*packed*/ class list<basic_string<char>>& sDirectoryEntries, long lFilter) {
 	/*bp-0x140*/ /*packed*/ struct _WIN32_FIND_DATAA findData; // 0x13e bytes
 	/*bp-0x150*/ /*packed*/ class DirectoryEntry directoryEntryCurrent; // 0x10 bytes
 	/*bp-0x154*/ void * __ptr32 hFind;
@@ -5129,7 +5129,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00485735
-int Directory::DoesAnyEntryExistThatMatchesPattern(const /*packed*/ class basic_string<char>& sPathPattern) {
+int32_t Directory::DoesAnyEntryExistThatMatchesPattern(const /*packed*/ class basic_string<char>& sPathPattern) {
 	/*bp-0x140*/ /*packed*/ struct _WIN32_FIND_DATAA findData; // 0x13e bytes
 	/*bp-0x150*/ /*packed*/ class DirectoryEntry directoryEntryCurrent; // 0x10 bytes
 	/*bp-0x154*/ void * __ptr32 hFind;
@@ -5314,7 +5314,7 @@ __RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004859c2
-int Directory::DoesDirectoryListContainEntry(const /*packed*/ class basic_string<char>& sEntry) {
+int32_t Directory::DoesDirectoryListContainEntry(const /*packed*/ class basic_string<char>& sEntry) {
 	/*bp-0x4*/   /*packed*/ class list<DirectoryEntry>::iterator tempDirectoryEntryListIterator;
 
 // LINE 448:
@@ -5452,7 +5452,7 @@ _T166:
 }
 
 // FUNCTION: COPTER_D 0x00485b36
-int Directory::ChangeDirectory(/*packed*/ class basic_string<char>& sNewDirectory, int32_t bReadNow) {
+int32_t Directory::ChangeDirectory(/*packed*/ class basic_string<char>& sNewDirectory, int32_t bReadNow) {
 // LINE 474:
 	__asm        mov    eax, this;
 	__asm        add    eax, 8;
@@ -5622,7 +5622,7 @@ _T1ed:
 }
 
 // FUNCTION: COPTER_D 0x00485d34
-int Directory::CreateNewEntry(/*packed*/ class basic_string<char>& sName, long lType) {
+int32_t Directory::CreateNewEntry(/*packed*/ class basic_string<char>& sName, long lType) {
 	/*bp-0x10*/  /*packed*/ class DirectoryEntry tempDirectoryEntry; // 0x10 bytes
 
 // LINE 487:
@@ -6136,8 +6136,7 @@ _T440:
 	__asm        call   Directory::ReadDirectoryEntries;
 // LINE 517:
 _T452:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 // FUNCTION: COPTER_D 0x0048631c
@@ -6156,7 +6155,7 @@ _T1d:
 	__asm        cmp    nDirectoryPathLength, 0;
 	__asm        ja     _T2c;
 // LINE 529:
-	__asm        jmp    __RETURN;
+	return;
 // LINE 530:
 _T2c:
 	__asm        jmp    _T31;
@@ -6550,8 +6549,7 @@ _T49e:
 	__asm        jmp    _T4ac;
 // LINE 533:
 _T4ac:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 // FUNCTION: COPTER_D 0x004867d2
@@ -6570,7 +6568,7 @@ _T1a:
 	__asm        cmp    nDirectoryPathLength, 0;
 	__asm        ja     _T29;
 // LINE 550:
-	__asm        jmp    __RETURN;
+	return;
 // LINE 553:
 _T29:
 	__asm        jmp    _T2e;
@@ -6853,7 +6851,7 @@ _T343:
 	__asm        jmp    _T348;
 // LINE 557:
 _T348:
-	__asm        jmp    __RETURN;
+	return;
 // LINE 561:
 _T34d:
 	__asm        jmp    _T352;
@@ -6999,7 +6997,7 @@ _T4c9:
 	__asm        mov    ecx, sLastPart;
 	__asm        call   basic_string<char>::assign;
 // LINE 565:
-	__asm        jmp    __RETURN;
+	return;
 // LINE 570:
 _T4e1:
 	__asm        mov    eax, SZ_DIR_SEPARATOR_1;
@@ -7095,8 +7093,7 @@ _T5ea:
 	__asm        jmp    _T5ef;
 // LINE 572:
 _T5ef:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 

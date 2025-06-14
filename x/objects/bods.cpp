@@ -597,8 +597,7 @@ _T17c:
 	__asm        jmp    _T3d;
 // LINE 2081:
 _T181:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 // FUNCTION: COPTER_D 0x00561005
@@ -1147,8 +1146,7 @@ _T350:
 //   _T21e
 // LINE 2176:
 _T384:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 // FUNCTION: COPTER_D 0x00561611
@@ -1173,7 +1171,7 @@ _T17:
 	__asm        test   eax, eax;
 	__asm        jne    _T2e;
 
-	__asm        jmp    __RETURN;
+	return;
 // LINE 2182:
 _T2e:
 	__asm        jmp    _T33;
@@ -1184,7 +1182,7 @@ _T33:
 	__asm        test   eax, eax;
 	__asm        jne    _T4d;
 
-	__asm        jmp    __RETURN;
+	return;
 // LINE 2184:
 _T4d:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(framenum);
@@ -1629,8 +1627,7 @@ _T552:
 	__asm        jmp    _T4d3;
 // LINE 2282:
 _T557:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 // FUNCTION: COPTER_D 0x00561b74
@@ -2014,11 +2011,11 @@ _T50f:
 	__asm        mov    ecx, this;
 	__asm        call   cCopterBody::ActivateAllPartPointers;
 // LINE 2297:
-	__asm        jmp    __RETURN;
+	return;
 _L31438:
 	__asm        mov    eax, 0x596170;
 	__asm        jmp    near ptr 0x0056F590;
-__RETURN:
+
 	__asm        mov    eax, [ebp-0xC];
 	__asm        mov    fs:[0], eax;
 }
@@ -2294,8 +2291,7 @@ _T2fe:
 	__asm        mov    ecx, [eax+0xC];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 2321:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 // FUNCTION: COPTER_D 0x005623cd

@@ -5663,8 +5663,8 @@ _T25d:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x591E20;
 // LINE 857:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
+
 	__asm        mov    eax, this;
 }
 
@@ -5885,8 +5885,8 @@ _T297:
 	__asm        jmp    _T2c6;
 // LINE 870:
 _T2c6:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
+
 	__asm        mov    eax, this;
 }
 
@@ -6119,8 +6119,7 @@ _T2c1:
 	__asm        jmp    _T2c6;
 // LINE 881:
 _T2c6:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 // FUNCTION: COPTER_D 0x004b08b4
@@ -6143,7 +6142,7 @@ _T27:
 	__asm        cmp    dword ptr [eax+0x7C], 0;
 	__asm        je     _T39;
 // LINE 896:
-	__asm        jmp    __RETURN;
+	return;
 // LINE 897:
 _T39:
 	this-><ButtonGroup+0x7c:4> = 0x1;
@@ -6217,7 +6216,7 @@ _Tf0:
 	__asm        jmp    _Tfb;
 // LINE 902:
 _Tfb:
-	__asm        jmp    __RETURN;
+	return;
 // LINE 904:
 _T100:
 	__asm        mov    eax, iterator.node;
@@ -6237,8 +6236,7 @@ _T11e:
 _T123:
 	this-><ButtonGroup+0x7c:4> = 0x0;
 // LINE 907:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 // FUNCTION: COPTER_D 0x004b09ed
@@ -6261,7 +6259,7 @@ _T27:
 	__asm        cmp    dword ptr [eax+0x80], 0;
 	__asm        je     _T3c;
 // LINE 923:
-	__asm        jmp    __RETURN;
+	return;
 // LINE 924:
 _T3c:
 	this-><ButtonGroup+0x80:4> = 0x1;
@@ -6373,8 +6371,7 @@ _T124:
 _T155:
 	this-><ButtonGroup+0x80:4> = 0x0;
 // LINE 937:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 // FUNCTION: COPTER_D 0x004b0b5b
@@ -6397,7 +6394,7 @@ _T27:
 	__asm        cmp    dword ptr [eax+0x80], 0;
 	__asm        je     _T3c;
 // LINE 953:
-	__asm        jmp    __RETURN;
+	return;
 // LINE 954:
 _T3c:
 	this-><ButtonGroup+0x80:4> = 0x1;
@@ -6513,8 +6510,7 @@ _T139:
 _T160:
 	this-><ButtonGroup+0x80:4> = 0x0;
 // LINE 968:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 // FUNCTION: COPTER_D 0x004b0cd4
@@ -6540,7 +6536,7 @@ _T27:
 	__asm        cmp    dword ptr [eax+0x80], 0;
 	__asm        je     _T43;
 // LINE 985:
-	__asm        jmp    __RETURN;
+	return;
 // LINE 986:
 _T43:
 	this-><ButtonGroup+0x80:4> = 0x1;
@@ -6654,12 +6650,11 @@ _T139:
 _T160:
 	this-><ButtonGroup+0x80:4> = 0x0;
 // LINE 1001:
-	__asm        jmp    __RETURN;
-__RETURN:
+	return;
 }
 
 // FUNCTION: COPTER_D 0x004b0e4d
-int ButtonGroup::GetSelection(/*packed*/ class RadioButtonWindow*& radioButtonWindow) {
+int32_t ButtonGroup::GetSelection(/*packed*/ class RadioButtonWindow*& radioButtonWindow) {
 	/*bp-0x4*/   /*packed*/ class list<RadioButtonWindow *>::iterator iterator;
 
 // LINE 1012:
@@ -6747,7 +6742,7 @@ _Te6:
 }
 
 // FUNCTION: COPTER_D 0x004b0f41
-int ButtonGroup::GetSelection(long& lCurrentSelection) {
+int32_t ButtonGroup::GetSelection(long& lCurrentSelection) {
 	/*bp-0x4*/   /*packed*/ class RadioButtonWindow *tempRadioButtonWindow;
 
 // LINE 1035:
@@ -6766,7 +6761,7 @@ _T2a:
 }
 
 // FUNCTION: COPTER_D 0x004b0f79
-int ButtonGroup::GetSelectionIndex() {
+int32_t ButtonGroup::GetSelectionIndex() {
 	/*bp-0x4*/   int32_t i;
 	/*bp-0x8*/   /*packed*/ class list<RadioButtonWindow *>::iterator iterator;
 
@@ -6856,7 +6851,7 @@ _Tdf:
 }
 
 // FUNCTION: COPTER_D 0x004b1067
-int ButtonGroup::IsButtonInGroup(/*packed*/ class RadioButtonWindow *buttonToFind) {
+int32_t ButtonGroup::IsButtonInGroup(/*packed*/ class RadioButtonWindow *buttonToFind) {
 	/*bp-0x4*/   /*packed*/ class list<RadioButtonWindow *>::iterator i;
 
 // LINE 1069:
