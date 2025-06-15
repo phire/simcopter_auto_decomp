@@ -30,8 +30,6 @@ struct list<PreferenceItem>::list_node{ // packed(0x14 bytes) TI: 0x2650
 	/*+0x8*/   /*packed*/ class PreferenceItem data; // 0xc bytes
 };
 
-// Type: void;
-
 // Type: /*packed*/ class PreferenceItem (forward reference);
 class PreferenceItem{ // packed(0xc bytes) TI: 0x2577
 public:
@@ -46,9 +44,9 @@ public:
 	/*+0x8*/   char * chPreferenceData;
 };
 
-// Type: int32_t;
+// Type: void;
 
-// Type: long;
+// Type: int32_t;
 
 // Type: /*packed*/ class PreferenceManager (forward reference);
 // VTABLE: COPTER_D 0x00590db0
@@ -79,6 +77,8 @@ public:
 	virtual long SetPref(long, char *, long); // vtable+0x2c
 	virtual long RemovePref(long); // vtable+0x30
 };
+
+// Type: long;
 
 // Type: char *;
 

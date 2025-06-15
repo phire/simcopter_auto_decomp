@@ -31,8 +31,6 @@ struct IDirectSound : public IUnknown
 	virtual long Initialize(/*unpacked*/ struct _GUID*); // vtable+0x28
 };
 
-// Type: void;
-
 // Type: /*packed*/ class SoundSystem (forward reference);
 // VTABLE: COPTER_D 0x0058f440
 class SoundSystem{ // packed(0x74 bytes) TI: 0x1a78
@@ -54,6 +52,8 @@ protected:
 	/*+0x10*/  /*packed*/ struct IDirectSound *lpDirectSound;
 	/*+0x14*/  /*packed*/ struct _DSCAPS dsCapabilities; // 0x60 bytes
 };
+
+// Type: void;
 
 // Type: void * __ptr32;
 

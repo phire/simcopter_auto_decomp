@@ -4,8 +4,6 @@
 
 // Type: char *;
 
-// Type: void;
-
 // Type: /*packed*/ class MFont (forward reference);
 // VTABLE: COPTER_D 0x00591640
 class MFont{ // packed(0x1c bytes) TI: 0x1a6c
@@ -33,6 +31,8 @@ public:
 protected:
 	/*+0x18*/  void * __ptr32 hFont;
 };
+
+// Type: void;
 
 // Type: unsigned long;
 

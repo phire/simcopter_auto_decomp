@@ -4,32 +4,6 @@
 
 // Type: char *;
 
-// Type: int32_t;
-
-// Type: /*unpacked*/ class GraphicWindow (forward reference);
-// GraphicWindow Class implementation not found
-
-// Type: /*packed*/ class GraphicWindowOwner (forward reference);
-// VTABLE: COPTER_D 0x00590f2c
-class GraphicWindowOwner{ // packed(0x4 bytes) TI: 0x1647
-public:
-	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
-};
-
-// Type: /*packed*/ class Random;
-class Random{ // packed(0xe4 bytes) TI: 0x20ab
-public:
-	void Random(unsigned long);
-	unsigned long operator()(unsigned long);
-	void seed(unsigned long);
-protected:
-	/*+0x0*/   unsigned long table[55]; // 0xdc bytes
-	/*+0xdc*/  uint32_t index1;
-	/*+0xe0*/  uint32_t index2;
-};
-
-// Type: void;
-
 // Type: /*packed*/ class CatalogWindow (forward reference);
 // VTABLE: COPTER_D 0x00590ce8
 class CatalogWindow : public GraphicWindow
@@ -104,6 +78,32 @@ protected:
 	/*+0x2a6*/ /*packed*/ class basic_string<char> sEquipmentAddress1; // 0x8 bytes
 	/*+0x2ae*/ /*packed*/ class basic_string<char> sEquipmentAddress2; // 0x8 bytes
 };
+
+// Type: int32_t;
+
+// Type: /*unpacked*/ class GraphicWindow (forward reference);
+// GraphicWindow Class implementation not found
+
+// Type: /*packed*/ class GraphicWindowOwner (forward reference);
+// VTABLE: COPTER_D 0x00590f2c
+class GraphicWindowOwner{ // packed(0x4 bytes) TI: 0x1647
+public:
+	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
+};
+
+// Type: /*packed*/ class Random;
+class Random{ // packed(0xe4 bytes) TI: 0x20ab
+public:
+	void Random(unsigned long);
+	unsigned long operator()(unsigned long);
+	void seed(unsigned long);
+protected:
+	/*+0x0*/   unsigned long table[55]; // 0xdc bytes
+	/*+0xdc*/  uint32_t index1;
+	/*+0xe0*/  uint32_t index2;
+};
+
+// Type: void;
 
 // Type: /*packed*/ class basic_string<char>;
 class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380

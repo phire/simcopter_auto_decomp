@@ -84,9 +84,6 @@ protected:
 
 // Type: void;
 
-// Type: /*unpacked*/ class MTime (forward reference);
-// MTime Class implementation not found
-
 // Type: /*packed*/ class MDate (forward reference);
 // VTABLE: COPTER_D 0x0058f3e8
 class MDate{ // packed(0xc bytes) TI: 0x284c
@@ -164,6 +161,9 @@ protected:
 	/*+0x4*/   unsigned long Julnum;
 	/*+0x8*/   enum MDate::HowToPrint PrintOption;
 };
+
+// Type: /*unpacked*/ class MTime (forward reference);
+// MTime Class implementation not found
 
 // Type: uint32_t;
 

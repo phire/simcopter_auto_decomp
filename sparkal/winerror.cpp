@@ -6,9 +6,9 @@
 
 // Type: unsigned char;
 
-// Type: char;
-
 // Type: void;
+
+// Type: char;
 
 
 

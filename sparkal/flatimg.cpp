@@ -4,8 +4,6 @@
 
 // Type: unsigned long;
 
-// Type: void;
-
 // Type: /*packed*/ class IFlatImage (forward reference);
 // VTABLE: COPTER_D 0x00591050
 class IFlatImage{ // packed(0x18 bytes) TI: 0x13a1
@@ -36,6 +34,8 @@ protected:
 	/*+0x14*/  long mStride;
 };
 
+// Type: void;
+
 // Type: long;
 
 // Type: unsigned char *;
@@ -62,8 +62,6 @@ struct SparkalRect{ // packed(0x10 bytes) TI: 0x155f
 
 // Type: int32_t;
 
-// Type: unsigned char;
-
 // Type: /*packed*/ class CFlatImage (forward reference);
 // VTABLE: COPTER_D 0x00591070
 class CFlatImage : public IFlatImage
@@ -78,6 +76,8 @@ public:
 protected:
 	/*+0x18*/  void * __ptr32 mBitsHandle;
 };
+
+// Type: unsigned char;
 
 // Type: uint32_t;
 

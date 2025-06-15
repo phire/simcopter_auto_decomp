@@ -5,20 +5,6 @@
 // Type: /*unpacked*/ class ResMap (forward reference);
 // ResMap Class implementation not found
 
-// Type: void * __ptr32;
-
-// Type: short *;
-
-// Type: long *;
-
-// Type: unsigned char *;
-
-// Type: long;
-
-// Type: unsigned char;
-
-// Type: void;
-
 // Type: /*unpacked*/ class FlatResFile (forward reference);
 // VTABLE: COPTER_D 0x00593508
 class FlatResFile : public FlatFile
@@ -59,6 +45,20 @@ public:
 	// calltype: NearC
 	static short CheckForLeaks();
 };
+
+// Type: void * __ptr32;
+
+// Type: short *;
+
+// Type: long *;
+
+// Type: unsigned char *;
+
+// Type: long;
+
+// Type: void;
+
+// Type: unsigned char;
 
 // Type: char *;
 

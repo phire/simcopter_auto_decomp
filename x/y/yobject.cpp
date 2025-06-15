@@ -1591,6 +1591,47 @@ struct _STOBJ_INST{ // not packed(0x10 bytes) TI: 0x365f
 	/*+0xc*/   long user2;
 };
 
+// Type: /*unpacked*/ class FlatResFile (forward reference);
+// VTABLE: COPTER_D 0x00593508
+class FlatResFile : public FlatFile
+{ // not packed(0x11c bytes) TI: 0x330e
+protected:
+	/*+0x110*/ /*unpacked*/ class ResMap *fMap;
+	/*+0x114*/ long fError;
+	/*+0x118*/ short _alignPad; // 0x2 bytes
+public:
+	void FlatResFile();
+	virtual void ~FlatResFile() /* override */;
+	void LoadResMap(void * __ptr32*, short *, long *);
+	unsigned short FileEquals(/*unpacked*/ class FlatResFile*);
+	virtual long Open(unsigned char *) /* override */;
+	virtual long Open(char *) /* override */;
+	long OpenFromName();
+	virtual long Close() /* override */;
+	short CountTypes();
+	unsigned long GetIndType(short);
+	short Count(unsigned long);
+	void * __ptr32 GetByID(unsigned long, short, void (*)(void * __ptr32, long));
+	void * __ptr32 GetByName(unsigned long, unsigned char *, void (*)(void * __ptr32, long));
+	void * __ptr32 GetByIndex(unsigned long, short, void (*)(void * __ptr32, long));
+	void GetName(void * __ptr32, unsigned char *);
+	void GetID(void * __ptr32, short *);
+	unsigned long GetResType(void * __ptr32);
+	void Release(void * __ptr32);
+	void Detach(void * __ptr32);
+	void Load(void * __ptr32);
+	long GetError();
+	void Add(void * __ptr32, unsigned long, short, unsigned char *);
+	void ExclusiveAdd(void * __ptr32, unsigned long, short, unsigned char *);
+	void FindUniqueName(unsigned long, unsigned char *);
+	short FindUniqueID(unsigned long);
+	void Write(void * __ptr32);
+	void Remove(void * __ptr32);
+	void GetString(unsigned char *, short, short);
+	// calltype: NearC
+	static short CheckForLeaks();
+};
+
 // Type: uint32_t;
 
 // Type: /*unpacked*/ class PtrList<StdResLoader> (forward reference);
@@ -1623,6 +1664,14 @@ public:
 	void Add(/*unpacked*/ class StdResLoader*);
 	/*unpacked*/ class StdResLoader* GetByIndex(long);
 	/*unpacked*/ class StdResLoader* GetByOrder(long);
+};
+
+// Type: /*unpacked*/ class ResFile (forward reference);
+// VTABLE: COPTER_D 0x00593518
+class ResFile : public FlatResFile
+{ // not packed(0x11c bytes) TI: 0x3334
+public:
+	long OpenFromOtherFile(/*unpacked*/ class ResFile*);
 };
 
 // Type: void (void * __ptr32, long);
@@ -2088,6 +2137,47 @@ public:
 
 // Type: /*unpacked*/ class Language (forward reference);
 // Language Class implementation not found
+
+// Type: /*unpacked*/ class FlatResFile;
+// VTABLE: COPTER_D 0x00593508
+class FlatResFile : public FlatFile
+{ // not packed(0x11c bytes) TI: 0x330e
+protected:
+	/*+0x110*/ /*unpacked*/ class ResMap *fMap;
+	/*+0x114*/ long fError;
+	/*+0x118*/ short _alignPad; // 0x2 bytes
+public:
+	void FlatResFile();
+	virtual void ~FlatResFile() /* override */;
+	void LoadResMap(void * __ptr32*, short *, long *);
+	unsigned short FileEquals(/*unpacked*/ class FlatResFile*);
+	virtual long Open(unsigned char *) /* override */;
+	virtual long Open(char *) /* override */;
+	long OpenFromName();
+	virtual long Close() /* override */;
+	short CountTypes();
+	unsigned long GetIndType(short);
+	short Count(unsigned long);
+	void * __ptr32 GetByID(unsigned long, short, void (*)(void * __ptr32, long));
+	void * __ptr32 GetByName(unsigned long, unsigned char *, void (*)(void * __ptr32, long));
+	void * __ptr32 GetByIndex(unsigned long, short, void (*)(void * __ptr32, long));
+	void GetName(void * __ptr32, unsigned char *);
+	void GetID(void * __ptr32, short *);
+	unsigned long GetResType(void * __ptr32);
+	void Release(void * __ptr32);
+	void Detach(void * __ptr32);
+	void Load(void * __ptr32);
+	long GetError();
+	void Add(void * __ptr32, unsigned long, short, unsigned char *);
+	void ExclusiveAdd(void * __ptr32, unsigned long, short, unsigned char *);
+	void FindUniqueName(unsigned long, unsigned char *);
+	short FindUniqueID(unsigned long);
+	void Write(void * __ptr32);
+	void Remove(void * __ptr32);
+	void GetString(unsigned char *, short, short);
+	// calltype: NearC
+	static short CheckForLeaks();
+};
 
 // Type: /*unpacked*/ class cYObject;
 // VTABLE: COPTER_D 0x005935e0
@@ -2739,47 +2829,6 @@ public:
 	// calltype: NearC
 	static enum TreeSim::ReturnCode sDoIHaveAMaster(/*unpacked*/ class cYObject*, /*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
 	enum TreeSim::ReturnCode iDoIHaveAMaster(/*unpacked*/ struct TreeSim::StackElem*, /*unpacked*/ struct Behavior::Node*);
-};
-
-// Type: /*unpacked*/ class FlatResFile;
-// VTABLE: COPTER_D 0x00593508
-class FlatResFile : public FlatFile
-{ // not packed(0x11c bytes) TI: 0x330e
-protected:
-	/*+0x110*/ /*unpacked*/ class ResMap *fMap;
-	/*+0x114*/ long fError;
-	/*+0x118*/ short _alignPad; // 0x2 bytes
-public:
-	void FlatResFile();
-	virtual void ~FlatResFile() /* override */;
-	void LoadResMap(void * __ptr32*, short *, long *);
-	unsigned short FileEquals(/*unpacked*/ class FlatResFile*);
-	virtual long Open(unsigned char *) /* override */;
-	virtual long Open(char *) /* override */;
-	long OpenFromName();
-	virtual long Close() /* override */;
-	short CountTypes();
-	unsigned long GetIndType(short);
-	short Count(unsigned long);
-	void * __ptr32 GetByID(unsigned long, short, void (*)(void * __ptr32, long));
-	void * __ptr32 GetByName(unsigned long, unsigned char *, void (*)(void * __ptr32, long));
-	void * __ptr32 GetByIndex(unsigned long, short, void (*)(void * __ptr32, long));
-	void GetName(void * __ptr32, unsigned char *);
-	void GetID(void * __ptr32, short *);
-	unsigned long GetResType(void * __ptr32);
-	void Release(void * __ptr32);
-	void Detach(void * __ptr32);
-	void Load(void * __ptr32);
-	long GetError();
-	void Add(void * __ptr32, unsigned long, short, unsigned char *);
-	void ExclusiveAdd(void * __ptr32, unsigned long, short, unsigned char *);
-	void FindUniqueName(unsigned long, unsigned char *);
-	short FindUniqueID(unsigned long);
-	void Write(void * __ptr32);
-	void Remove(void * __ptr32);
-	void GetString(unsigned char *, short, short);
-	// calltype: NearC
-	static short CheckForLeaks();
 };
 
 // Type: /*unpacked*/ class Sound;

@@ -19,8 +19,6 @@ struct list<basic_string<char>>::list_node{ // packed(0x10 bytes) TI: 0x1cd7
 
 // Type: char *;
 
-// Type: void;
-
 // Type: /*packed*/ class RadioStation (forward reference);
 // VTABLE: COPTER_D 0x0058f518
 class RadioStation{ // packed(0x98 bytes) TI: 0x11a5
@@ -65,6 +63,8 @@ protected:
 	/*+0x8c*/  /*packed*/ class list<basic_string<char>> jingleSelectionList; // 0x8 bytes
 	/*+0x94*/  /*packed*/ class list<basic_string<char>>::iterator jingleSelectionListIterator;
 };
+
+// Type: void;
 
 // Type: int32_t;
 
@@ -523,6 +523,9 @@ public:
 	/*+0xc*/   long lType;
 };
 
+// Type: /*unpacked*/ class Radio (forward reference);
+// Radio Class implementation not found
+
 // Type: /*packed*/ struct RadioPreferences (forward reference);
 struct RadioPreferences{ // packed(0x1c bytes) TI: 0x2a39
 	/*+0x0*/   long lVolume;
@@ -721,13 +724,6 @@ protected:
 	/*+0x94*/  /*packed*/ class list<basic_string<char>>::iterator jingleSelectionListIterator;
 };
 
-// Type: enum MTimer::TimerResolution;
-enum TimerResolution {
-	nTimerResolutionMicroseconds = 0,
-	nTimerResolutionMilliseconds = 1,
-	nTimerResolutionSeconds = 2,
-};
-
 // Type: /*packed*/ class MTimer (forward reference);
 class MTimer{ // packed(0x10 bytes) TI: 0x1968
 	enum TimerResolution {
@@ -753,6 +749,13 @@ protected:
 	/*+0x8*/   unsigned long lTotalElapsedTime;
 	unsigned long GetWindowsTimerFrequency();
 	/*+0xc*/   unsigned long lFrequency;
+};
+
+// Type: enum MTimer::TimerResolution;
+enum TimerResolution {
+	nTimerResolutionMicroseconds = 0,
+	nTimerResolutionMilliseconds = 1,
+	nTimerResolutionSeconds = 2,
 };
 
 // Type: /*packed*/ class vector<int> (forward reference);

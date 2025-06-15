@@ -71,6 +71,9 @@ public:
 	void LoadAll();
 };
 
+// Type: /*unpacked*/ class cCopterBody (forward reference);
+// cCopterBody Class implementation not found
+
 // Type: unsigned long;
 
 // Type: /*unpacked*/ struct AnimLookup (forward reference);

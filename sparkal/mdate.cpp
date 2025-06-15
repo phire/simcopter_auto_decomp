@@ -8,23 +8,6 @@
 
 // Type: char *;
 
-// Type: /*packed*/ struct tm (forward reference);
-struct tm{ // packed(0x24 bytes) TI: 0x2033
-	/*+0x0*/   int32_t tm_sec;
-	/*+0x4*/   int32_t tm_min;
-	/*+0x8*/   int32_t tm_hour;
-	/*+0xc*/   int32_t tm_mday;
-	/*+0x10*/  int32_t tm_mon;
-	/*+0x14*/  int32_t tm_year;
-	/*+0x18*/  int32_t tm_wday;
-	/*+0x1c*/  int32_t tm_yday;
-	/*+0x20*/  int32_t tm_isdst;
-};
-
-// Type: long;
-
-// Type: void;
-
 // Type: /*packed*/ class MDate (forward reference);
 // VTABLE: COPTER_D 0x0058f3e8
 class MDate{ // packed(0xc bytes) TI: 0x284c
@@ -102,6 +85,23 @@ protected:
 	/*+0x4*/   unsigned long Julnum;
 	/*+0x8*/   enum MDate::HowToPrint PrintOption;
 };
+
+// Type: /*packed*/ struct tm (forward reference);
+struct tm{ // packed(0x24 bytes) TI: 0x2033
+	/*+0x0*/   int32_t tm_sec;
+	/*+0x4*/   int32_t tm_min;
+	/*+0x8*/   int32_t tm_hour;
+	/*+0xc*/   int32_t tm_mday;
+	/*+0x10*/  int32_t tm_mon;
+	/*+0x14*/  int32_t tm_year;
+	/*+0x18*/  int32_t tm_wday;
+	/*+0x1c*/  int32_t tm_yday;
+	/*+0x20*/  int32_t tm_isdst;
+};
+
+// Type: long;
+
+// Type: void;
 
 // Type: enum MDate::HowToPrint;
 enum HowToPrint {

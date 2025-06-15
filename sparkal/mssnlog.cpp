@@ -4,20 +4,6 @@
 
 // Type: char *;
 
-// Type: int32_t;
-
-// Type: /*unpacked*/ class GraphicWindow (forward reference);
-// GraphicWindow Class implementation not found
-
-// Type: /*packed*/ class GraphicWindowOwner (forward reference);
-// VTABLE: COPTER_D 0x00590f2c
-class GraphicWindowOwner{ // packed(0x4 bytes) TI: 0x1647
-public:
-	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
-};
-
-// Type: void;
-
 // Type: /*packed*/ class MissionLogWindow (forward reference);
 // VTABLE: COPTER_D 0x00590708
 class MissionLogWindow : public GraphicWindow
@@ -43,6 +29,20 @@ protected:
 	/*+0x78*/  /*unpacked*/ class CBackBuffer *myBackgroundBuffer;
 	/*+0x7c*/  enum MissionLogWindow::MissionLogWindowSortType nCurrentSort;
 };
+
+// Type: int32_t;
+
+// Type: /*unpacked*/ class GraphicWindow (forward reference);
+// GraphicWindow Class implementation not found
+
+// Type: /*packed*/ class GraphicWindowOwner (forward reference);
+// VTABLE: COPTER_D 0x00590f2c
+class GraphicWindowOwner{ // packed(0x4 bytes) TI: 0x1647
+public:
+	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
+};
+
+// Type: void;
 
 // Type: /*packed*/ class ButtonWindow (forward reference);
 // VTABLE: COPTER_D 0x00591b78

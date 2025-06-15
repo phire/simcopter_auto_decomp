@@ -10,8 +10,6 @@
 
 // Type: int32_t;
 
-// Type: void;
-
 // Type: /*packed*/ class MIFF (forward reference);
 // VTABLE: COPTER_D 0x00591950
 class MIFF : public PFile
@@ -56,6 +54,8 @@ public:
 	/*+0x128*/ long bFileAppearsCorrupt;
 	/*+0x12c*/ /*packed*/ struct MIFFHeader myMIFFHeader; // 0x1c bytes
 };
+
+// Type: void;
 
 // Type: /*packed*/ struct MIFFRecord (forward reference);
 struct MIFFRecord{ // packed(0xc bytes) TI: 0x148f

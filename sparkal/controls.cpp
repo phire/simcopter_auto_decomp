@@ -19,8 +19,6 @@ struct list<RadioButtonWindow *>::list_node{ // packed(0xc bytes) TI: 0x1636
 
 // Type: uint32_t;
 
-// Type: void;
-
 // Type: /*packed*/ class BoxWindow (forward reference);
 // VTABLE: COPTER_D 0x005919c0
 class BoxWindow : public GraphicWindow
@@ -37,6 +35,8 @@ protected:
 	/*+0x7c*/  /*packed*/ struct SparkalColor colorOutline;
 	/*+0x80*/  int32_t nPaletteIndexFill;
 };
+
+// Type: void;
 
 // Type: /*packed*/ class MRect (forward reference);
 class MRect : public SparkalRect
@@ -412,9 +412,6 @@ public:
 	virtual long DoCursorMove(long, long) /* override */;
 };
 
-// Type: /*unpacked*/ class ButtonGroup (forward reference);
-// ButtonGroup Class implementation not found
-
 // Type: /*packed*/ class RadioButtonWindow (forward reference);
 // VTABLE: COPTER_D 0x00591d38
 class RadioButtonWindow : public ButtonWindow
@@ -435,6 +432,9 @@ public:
 protected:
 	/*+0x94*/  /*unpacked*/ class ButtonGroup *myRadioButtonGroup;
 };
+
+// Type: /*unpacked*/ class ButtonGroup (forward reference);
+// ButtonGroup Class implementation not found
 
 // Type: /*packed*/ class list<RadioButtonWindow *>::iterator;
 class list<RadioButtonWindow *>::iterator : public bidirectional_iterator<RadioButtonWindow *,int>

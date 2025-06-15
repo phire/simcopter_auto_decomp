@@ -5,12 +5,6 @@
 // Type: /*unpacked*/ class cBList<cCopterAnim> (forward reference);
 // cBList<cCopterAnim> Class implementation not found
 
-// Type: unsigned short;
-
-// Type: unsigned char;
-
-// Type: void;
-
 // Type: /*unpacked*/ class cCopterAnim (forward reference);
 // VTABLE: COPTER_D 0x00593658
 class cCopterAnim : public cBBase
@@ -39,6 +33,12 @@ public:
 	// calltype: NearC
 	static void DestroyAll();
 };
+
+// Type: unsigned short;
+
+// Type: unsigned char;
+
+// Type: void;
 
 // Type: /*unpacked*/ class cBBase;
 // VTABLE: COPTER_D 0x00593688

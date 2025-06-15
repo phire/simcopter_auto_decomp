@@ -17,8 +17,6 @@ struct list<SoundQueueItem *>::list_node{ // packed(0xc bytes) TI: 0x25ec
 
 // Type: uint32_t;
 
-// Type: void;
-
 // Type: /*packed*/ struct SoundQueueItem (forward reference);
 struct SoundQueueItem{ // packed(0x18 bytes) TI: 0x24b1
 	void SoundQueueItem(/*packed*/ class Sound*, char *, long, int32_t);
@@ -32,6 +30,8 @@ struct SoundQueueItem{ // packed(0x18 bytes) TI: 0x24b1
 	/*+0x10*/  long lTimeToWaitBeforePlaying;
 	/*+0x14*/  int32_t bDeleteSoundWhenFinished;
 };
+
+// Type: void;
 
 // Type: /*packed*/ class Sound (forward reference);
 // VTABLE: COPTER_D 0x0058f458

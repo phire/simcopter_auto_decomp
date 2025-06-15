@@ -387,6 +387,34 @@ struct class_debugger<CDebugWindow,CDebugWindowhelp_text> : public debug_command
 	virtual void execute(char *) /* override */;
 };
 
+// Type: /*packed*/ class deque<basic_string<char>>::iterator (forward reference);
+class deque<basic_string<char>>::iterator : public random_access_iterator<basic_string<char>,int>
+{ // packed(0x10 bytes) TI: 0x43a2
+protected:
+	/*+0x0*/   /*packed*/ class basic_string<char> *current;
+	/*+0x4*/   /*packed*/ class basic_string<char> *first;
+	/*+0x8*/   /*packed*/ class basic_string<char> *last;
+	/*+0xc*/   /*packed*/ class basic_string<char> **node;
+public:
+	void iterator();
+protected:
+	void iterator(/*packed*/ class basic_string<char>*, /*packed*/ class basic_string<char>**);
+public:
+	/*packed*/ class basic_string<char>& operator*();
+	/*packed*/ class deque<basic_string<char>>::iterator operator-(int32_t);
+	int32_t operator-(const /*packed*/ class deque<basic_string<char>>::iterator&);
+	/*packed*/ class deque<basic_string<char>>::iterator operator++(int32_t);
+	/*packed*/ class deque<basic_string<char>>::iterator& operator++();
+	/*packed*/ class deque<basic_string<char>>::iterator operator--(int32_t);
+	/*packed*/ class deque<basic_string<char>>::iterator& operator--();
+	/*packed*/ class deque<basic_string<char>>::iterator& operator+=(int32_t);
+	/*packed*/ class deque<basic_string<char>>::iterator& operator-=(int32_t);
+	/*packed*/ class deque<basic_string<char>>::iterator operator+(int32_t);
+	/*packed*/ class basic_string<char>& operator[](int32_t);
+	int32_t operator==(const /*packed*/ class deque<basic_string<char>>::iterator&);
+	int32_t operator<(const /*packed*/ class deque<basic_string<char>>::iterator&);
+};
+
 // Type: /*packed*/ class basic_string<char> (forward reference);
 class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
@@ -490,34 +518,6 @@ public:
 	int32_t compare(char *, uint32_t);
 	int32_t compare(char *, uint32_t, uint32_t);
 	int32_t compare(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
-};
-
-// Type: /*packed*/ class deque<basic_string<char>>::iterator (forward reference);
-class deque<basic_string<char>>::iterator : public random_access_iterator<basic_string<char>,int>
-{ // packed(0x10 bytes) TI: 0x43a2
-protected:
-	/*+0x0*/   /*packed*/ class basic_string<char> *current;
-	/*+0x4*/   /*packed*/ class basic_string<char> *first;
-	/*+0x8*/   /*packed*/ class basic_string<char> *last;
-	/*+0xc*/   /*packed*/ class basic_string<char> **node;
-public:
-	void iterator();
-protected:
-	void iterator(/*packed*/ class basic_string<char>*, /*packed*/ class basic_string<char>**);
-public:
-	/*packed*/ class basic_string<char>& operator*();
-	/*packed*/ class deque<basic_string<char>>::iterator operator-(int32_t);
-	int32_t operator-(const /*packed*/ class deque<basic_string<char>>::iterator&);
-	/*packed*/ class deque<basic_string<char>>::iterator operator++(int32_t);
-	/*packed*/ class deque<basic_string<char>>::iterator& operator++();
-	/*packed*/ class deque<basic_string<char>>::iterator operator--(int32_t);
-	/*packed*/ class deque<basic_string<char>>::iterator& operator--();
-	/*packed*/ class deque<basic_string<char>>::iterator& operator+=(int32_t);
-	/*packed*/ class deque<basic_string<char>>::iterator& operator-=(int32_t);
-	/*packed*/ class deque<basic_string<char>>::iterator operator+(int32_t);
-	/*packed*/ class basic_string<char>& operator[](int32_t);
-	int32_t operator==(const /*packed*/ class deque<basic_string<char>>::iterator&);
-	int32_t operator<(const /*packed*/ class deque<basic_string<char>>::iterator&);
 };
 
 // Type: /*packed*/ class deque<basic_string<char>> (forward reference);

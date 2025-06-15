@@ -4,10 +4,6 @@
 
 // Type: char;
 
-// Type: int32_t;
-
-// Type: void;
-
 // Type: /*packed*/ class CSparkalWindow (forward reference);
 // VTABLE: COPTER_D 0x00590ef8
 class CSparkalWindow{ // packed(0x68 bytes) TI: 0x20d9
@@ -50,6 +46,10 @@ protected:
 	/*+0x24*/  void * __ptr32 mhCustomCursor;
 	/*+0x28*/  void * __ptr32 mCursors[16]; // 0x40 bytes
 };
+
+// Type: int32_t;
+
+// Type: void;
 
 // Type: unsigned long;
 

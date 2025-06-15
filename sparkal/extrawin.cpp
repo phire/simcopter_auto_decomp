@@ -18,6 +18,32 @@ struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 
 // Type: void;
 
+// Type: /*packed*/ class MessageBoxWindow (forward reference);
+// VTABLE: COPTER_D 0x0058fa80
+class MessageBoxWindow : public GraphicWindow
+{ // packed(0xa4 bytes) TI: 0x2a45
+public:
+	void MessageBoxWindow(/*packed*/ class MPoint&, unsigned long, /*packed*/ class basic_string<char>&, int32_t, /*unpacked*/ class GraphicWindow*, /*packed*/ class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *);
+	void MessageBoxWindow(/*packed*/ class MPoint&, unsigned long, unsigned long, int32_t, /*unpacked*/ class GraphicWindow*, /*packed*/ class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *);
+	virtual int32_t Initialize() /* override */;
+	virtual long DoKeyDown(long, char) /* override */;
+	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32) /* override */;
+	virtual void SetTextColor(const /*packed*/ struct SparkalColor&); // vtable+0xc4
+	virtual void SetButtonTextColor(const /*packed*/ struct SparkalColor*, const /*packed*/ struct SparkalColor*); // vtable+0xc8
+protected:
+	virtual int32_t ConvertTypeToStringID(long); // vtable+0xcc
+	virtual void DrawTextOntoBox(); // vtable+0xd0
+	/*+0x74*/  long lMessageID;
+	/*+0x78*/  /*packed*/ class basic_string<char> sMessage; // 0x8 bytes
+	/*+0x80*/  /*packed*/ class basic_string<char> sButtonImageFileName; // 0x8 bytes
+	/*+0x88*/  /*packed*/ class basic_string<char> sAnimationImageFileName; // 0x8 bytes
+	/*+0x90*/  long lType;
+	/*+0x94*/  int32_t bSelfDeleting;
+	/*+0x98*/  /*packed*/ struct SparkalColor colorFont;
+	/*+0x9c*/  /*packed*/ struct SparkalColor colorButtonFont;
+	/*+0xa0*/  /*packed*/ struct SparkalColor colorButtonFontHighlighted;
+};
+
 // Type: /*packed*/ class MPoint (forward reference);
 class MPoint : public SparkalPoint
 { // packed(0x8 bytes) TI: 0x159a
@@ -57,32 +83,6 @@ public:
 class GraphicWindowOwner{ // packed(0x4 bytes) TI: 0x1647
 public:
 	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
-};
-
-// Type: /*packed*/ class MessageBoxWindow (forward reference);
-// VTABLE: COPTER_D 0x0058fa80
-class MessageBoxWindow : public GraphicWindow
-{ // packed(0xa4 bytes) TI: 0x2a45
-public:
-	void MessageBoxWindow(/*packed*/ class MPoint&, unsigned long, /*packed*/ class basic_string<char>&, int32_t, /*unpacked*/ class GraphicWindow*, /*packed*/ class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *);
-	void MessageBoxWindow(/*packed*/ class MPoint&, unsigned long, unsigned long, int32_t, /*unpacked*/ class GraphicWindow*, /*packed*/ class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *);
-	virtual int32_t Initialize() /* override */;
-	virtual long DoKeyDown(long, char) /* override */;
-	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32) /* override */;
-	virtual void SetTextColor(const /*packed*/ struct SparkalColor&); // vtable+0xc4
-	virtual void SetButtonTextColor(const /*packed*/ struct SparkalColor*, const /*packed*/ struct SparkalColor*); // vtable+0xc8
-protected:
-	virtual int32_t ConvertTypeToStringID(long); // vtable+0xcc
-	virtual void DrawTextOntoBox(); // vtable+0xd0
-	/*+0x74*/  long lMessageID;
-	/*+0x78*/  /*packed*/ class basic_string<char> sMessage; // 0x8 bytes
-	/*+0x80*/  /*packed*/ class basic_string<char> sButtonImageFileName; // 0x8 bytes
-	/*+0x88*/  /*packed*/ class basic_string<char> sAnimationImageFileName; // 0x8 bytes
-	/*+0x90*/  long lType;
-	/*+0x94*/  int32_t bSelfDeleting;
-	/*+0x98*/  /*packed*/ struct SparkalColor colorFont;
-	/*+0x9c*/  /*packed*/ struct SparkalColor colorButtonFont;
-	/*+0xa0*/  /*packed*/ struct SparkalColor colorButtonFontHighlighted;
 };
 
 // Type: /*packed*/ class basic_string<char> (forward reference);

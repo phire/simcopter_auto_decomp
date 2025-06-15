@@ -4,20 +4,6 @@
 
 // Type: char *;
 
-// Type: int32_t;
-
-// Type: /*unpacked*/ class GraphicWindow (forward reference);
-// GraphicWindow Class implementation not found
-
-// Type: /*packed*/ class GraphicWindowOwner (forward reference);
-// VTABLE: COPTER_D 0x00590f2c
-class GraphicWindowOwner{ // packed(0x4 bytes) TI: 0x1647
-public:
-	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
-};
-
-// Type: void;
-
 // Type: /*packed*/ class InventoryWindow (forward reference);
 // VTABLE: COPTER_D 0x00591888
 class InventoryWindow : public GraphicWindow
@@ -57,6 +43,20 @@ protected:
 	/*+0x1aa*/ /*packed*/ class MFont myTitleFont; // 0x1c bytes
 	/*+0x1c6*/ /*packed*/ class MFont myAddressFont; // 0x1c bytes
 };
+
+// Type: int32_t;
+
+// Type: /*unpacked*/ class GraphicWindow (forward reference);
+// GraphicWindow Class implementation not found
+
+// Type: /*packed*/ class GraphicWindowOwner (forward reference);
+// VTABLE: COPTER_D 0x00590f2c
+class GraphicWindowOwner{ // packed(0x4 bytes) TI: 0x1647
+public:
+	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
+};
+
+// Type: void;
 
 // Type: /*packed*/ struct SparkalColor (forward reference);
 struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee

@@ -4,6 +4,29 @@
 
 // Type: unsigned short *;
 
+// Type: /*packed*/ class CRLECompressedImage (forward reference);
+class CRLECompressedImage{ // packed(0xc bytes) TI: 0x2b8a
+public:
+	static unsigned short * RLEGraphicsPool;
+	// calltype: NearC
+	static void * __ptr32 operator new(uint32_t);
+	// calltype: NearC
+	static void operator delete(void * __ptr32);
+	void CRLECompressedImage(const /*packed*/ class CFlatImage*, long, long, long, long, int32_t);
+	void CRLECompressedImage(long);
+	void ~CRLECompressedImage();
+	unsigned long Lock();
+	unsigned long Unlock();
+	long GetHeight();
+	long GetWidth();
+	unsigned long Compose(/*unpacked*/ class IFlatImage*, long, long, long, long, long, long);
+	unsigned long Compose(/*unpacked*/ class IFlatImage*, long, long);
+protected:
+	/*+0x0*/   void * __ptr32 mhRLEImage;
+	/*+0x4*/   /*packed*/ struct RLEHeader *mpLockedImage;
+	/*+0x8*/   unsigned long mLockCount;
+};
+
 // Type: long;
 
 // Type: int32_t;
@@ -44,6 +67,8 @@ public:
 	char * str();
 };
 
+// Type: void;
+
 // Type: unsigned long;
 
 // Type: /*packed*/ struct RLEHeader (forward reference);
@@ -52,31 +77,6 @@ struct RLEHeader{ // packed(0x8 bytes) TI: 0x218b
 	/*+0x2*/   short Height; // 0x2 bytes
 	/*+0x4*/   short XOffset; // 0x2 bytes
 	/*+0x6*/   short YOffset; // 0x2 bytes
-};
-
-// Type: void;
-
-// Type: /*packed*/ class CRLECompressedImage (forward reference);
-class CRLECompressedImage{ // packed(0xc bytes) TI: 0x2b8a
-public:
-	static unsigned short * RLEGraphicsPool;
-	// calltype: NearC
-	static void * __ptr32 operator new(uint32_t);
-	// calltype: NearC
-	static void operator delete(void * __ptr32);
-	void CRLECompressedImage(const /*packed*/ class CFlatImage*, long, long, long, long, int32_t);
-	void CRLECompressedImage(long);
-	void ~CRLECompressedImage();
-	unsigned long Lock();
-	unsigned long Unlock();
-	long GetHeight();
-	long GetWidth();
-	unsigned long Compose(/*unpacked*/ class IFlatImage*, long, long, long, long, long, long);
-	unsigned long Compose(/*unpacked*/ class IFlatImage*, long, long);
-protected:
-	/*+0x0*/   void * __ptr32 mhRLEImage;
-	/*+0x4*/   /*packed*/ struct RLEHeader *mpLockedImage;
-	/*+0x8*/   unsigned long mLockCount;
 };
 
 // Type: /*packed*/ class CFlatImage (forward reference);

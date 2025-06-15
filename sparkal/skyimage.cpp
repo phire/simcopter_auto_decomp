@@ -4,10 +4,6 @@
 
 // Type: char *;
 
-// Type: int32_t;
-
-// Type: void;
-
 // Type: /*packed*/ class SkyImage (forward reference);
 // VTABLE: COPTER_D 0x00591090
 class SkyImage : public CBackBuffer
@@ -32,6 +28,10 @@ protected:
 	/*+0x148*/ int32_t fpAltitudePixelRatio;
 	/*+0x14c*/ int32_t fpPitchPixelRatio;
 };
+
+// Type: int32_t;
+
+// Type: void;
 
 // Type: enum SkyImage::SkyType;
 enum SkyType {

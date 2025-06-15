@@ -4,8 +4,6 @@
 
 // Type: char *;
 
-// Type: void;
-
 // Type: /*packed*/ class DirectoryEntry (forward reference);
 class DirectoryEntry{ // packed(0x10 bytes) TI: 0x239f
 public:
@@ -25,6 +23,8 @@ public:
 	/*+0x4*/   /*packed*/ class basic_string<char> sName; // 0x8 bytes
 	/*+0xc*/   long lType;
 };
+
+// Type: void;
 
 // Type: /*unpacked*/ class Directory (forward reference);
 // Directory Class implementation not found

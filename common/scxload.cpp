@@ -4,8 +4,6 @@
 
 // Type: unsigned char *;
 
-// Type: void;
-
 // Type: /*packed*/ class cLZAPFileBitStream (forward reference);
 // VTABLE: COPTER_D 0x00592418
 class cLZAPFileBitStream : public cGZXBitstream
@@ -26,6 +24,8 @@ private:
 	/*+0x4*/   /*packed*/ class PFile *m_file;
 	/*+0x8*/   unsigned long m_mark;
 };
+
+// Type: void;
 
 // Type: char *;
 
@@ -214,8 +214,6 @@ public:
 	void erase(/*packed*/ struct tGZXBitstreamNode*);
 };
 
-// Type: uint32_t;
-
 // Type: /*packed*/ class cGZXParamBitstream<t_alloc,t_free> (forward reference);
 class cGZXParamBitstream<t_alloc,t_free> : public cGZXBitstream
 { // packed(0x3c bytes) TI: 0x2d3d
@@ -278,6 +276,8 @@ public:
 	virtual long Size() /* override */;
 	/*+0x38*/  /*packed*/ class CPropertyType<long> PageSize;
 };
+
+// Type: uint32_t;
 
 // Type: /*packed*/ struct tGZXBitstreamNode (forward reference);
 struct tGZXBitstreamNode{ // packed(0x8 bytes) TI: 0x2d18

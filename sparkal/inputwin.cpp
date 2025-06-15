@@ -87,6 +87,45 @@ struct list<KeyColors>::list_node{ // packed(0x10 bytes) TI: 0x29de
 
 // Type: void;
 
+// Type: /*packed*/ class KeyboardWindow (forward reference);
+// VTABLE: COPTER_D 0x0058f058
+class KeyboardWindow : public GraphicWindow
+{ // packed(0xb0 bytes) TI: 0x2c31
+public:
+	void KeyboardWindow(/*packed*/ class MRect&, int32_t, /*unpacked*/ class GraphicWindow*, /*packed*/ class GraphicWindowOwner*, int32_t);
+	virtual void ~KeyboardWindow() /* override */;
+	virtual int32_t Initialize() /* override */;
+	virtual int32_t CreateImage(int32_t) /* override */;
+	virtual void DestroyImage() /* override */;
+	virtual int32_t ComposeSelf() /* override */;
+	virtual int32_t DoesWindowNeedUpdating() /* override */;
+	virtual int32_t DoesKeyExistOnKeyboard(long); // vtable+0xc4
+	virtual long DoKeyDown(long, char) /* override */;
+	virtual long DoKeyUp(long, char) /* override */;
+	virtual long DoCursorDown(long, long, unsigned long) /* override */;
+	virtual long DoCursorUp(long, long, unsigned long) /* override */;
+	virtual long DoCursorMove(long, long) /* override */;
+	/*+0x74*/  /*packed*/ class list<HotSpot> myHotSpotList; // 0x8 bytes
+	/*+0x7c*/  /*packed*/ class list<HotSpot> myNumLockOnHotSpotList; // 0x8 bytes
+	/*+0x84*/  /*packed*/ class list<HotSpot> myNumLockOffHotSpotList; // 0x8 bytes
+	/*+0x8c*/  /*packed*/ class list<HotSpot> *myCurrentlyUsedNumLockHotSpotList;
+	/*+0x90*/  /*packed*/ class list<KeyColors> myKeyColorsList; // 0x8 bytes
+protected:
+	virtual void DrawKeyColorsOnKeyboard(); // vtable+0xc8
+	virtual void DrawCharactersOnKeyboard(); // vtable+0xcc
+	virtual void DrawLightsOnKeyboard(); // vtable+0xd0
+	virtual int32_t DoesKeyRequireTextDraw(long); // vtable+0xd4
+	virtual int32_t DoesPositionHitKey(long, long, long&); // vtable+0xd8
+	virtual int32_t ConvertKeyToString(int32_t, long, /*packed*/ class basic_string<char>&); // vtable+0xdc
+	virtual int32_t GetRectOfNonTextImage(long, /*packed*/ class MRect&); // vtable+0xe0
+	/*+0x98*/  /*unpacked*/ class CBackBuffer *myKeyLightImage;
+	/*+0x9c*/  /*unpacked*/ class CBackBuffer *myNonTextKeyImage;
+	/*+0xa0*/  /*packed*/ class MFont *mFontToUse;
+	/*+0xa4*/  int32_t bNumLockLastSetting;
+	/*+0xa8*/  int32_t bCapsLockLastSetting;
+	/*+0xac*/  int32_t bScrollLockLastSetting;
+};
+
 // Type: /*packed*/ class MRect (forward reference);
 class MRect : public SparkalRect
 { // packed(0x10 bytes) TI: 0x1067
@@ -165,45 +204,6 @@ public:
 class GraphicWindowOwner{ // packed(0x4 bytes) TI: 0x1647
 public:
 	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
-};
-
-// Type: /*packed*/ class KeyboardWindow (forward reference);
-// VTABLE: COPTER_D 0x0058f058
-class KeyboardWindow : public GraphicWindow
-{ // packed(0xb0 bytes) TI: 0x2c31
-public:
-	void KeyboardWindow(/*packed*/ class MRect&, int32_t, /*unpacked*/ class GraphicWindow*, /*packed*/ class GraphicWindowOwner*, int32_t);
-	virtual void ~KeyboardWindow() /* override */;
-	virtual int32_t Initialize() /* override */;
-	virtual int32_t CreateImage(int32_t) /* override */;
-	virtual void DestroyImage() /* override */;
-	virtual int32_t ComposeSelf() /* override */;
-	virtual int32_t DoesWindowNeedUpdating() /* override */;
-	virtual int32_t DoesKeyExistOnKeyboard(long); // vtable+0xc4
-	virtual long DoKeyDown(long, char) /* override */;
-	virtual long DoKeyUp(long, char) /* override */;
-	virtual long DoCursorDown(long, long, unsigned long) /* override */;
-	virtual long DoCursorUp(long, long, unsigned long) /* override */;
-	virtual long DoCursorMove(long, long) /* override */;
-	/*+0x74*/  /*packed*/ class list<HotSpot> myHotSpotList; // 0x8 bytes
-	/*+0x7c*/  /*packed*/ class list<HotSpot> myNumLockOnHotSpotList; // 0x8 bytes
-	/*+0x84*/  /*packed*/ class list<HotSpot> myNumLockOffHotSpotList; // 0x8 bytes
-	/*+0x8c*/  /*packed*/ class list<HotSpot> *myCurrentlyUsedNumLockHotSpotList;
-	/*+0x90*/  /*packed*/ class list<KeyColors> myKeyColorsList; // 0x8 bytes
-protected:
-	virtual void DrawKeyColorsOnKeyboard(); // vtable+0xc8
-	virtual void DrawCharactersOnKeyboard(); // vtable+0xcc
-	virtual void DrawLightsOnKeyboard(); // vtable+0xd0
-	virtual int32_t DoesKeyRequireTextDraw(long); // vtable+0xd4
-	virtual int32_t DoesPositionHitKey(long, long, long&); // vtable+0xd8
-	virtual int32_t ConvertKeyToString(int32_t, long, /*packed*/ class basic_string<char>&); // vtable+0xdc
-	virtual int32_t GetRectOfNonTextImage(long, /*packed*/ class MRect&); // vtable+0xe0
-	/*+0x98*/  /*unpacked*/ class CBackBuffer *myKeyLightImage;
-	/*+0x9c*/  /*unpacked*/ class CBackBuffer *myNonTextKeyImage;
-	/*+0xa0*/  /*packed*/ class MFont *mFontToUse;
-	/*+0xa4*/  int32_t bNumLockLastSetting;
-	/*+0xa8*/  int32_t bCapsLockLastSetting;
-	/*+0xac*/  int32_t bScrollLockLastSetting;
 };
 
 // Type: /*packed*/ class basic_string<char>;

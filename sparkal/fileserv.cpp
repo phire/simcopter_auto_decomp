@@ -38,6 +38,34 @@ public:
 
 // Type: char *;
 
+// Type: /*packed*/ class FileServices (forward reference);
+class FileServices{ // packed(0x74 bytes) TI: 0x1f25
+public:
+	void FileServices();
+	int32_t Initialize();
+	int32_t IsFileAvailable(char *);
+	int32_t GetPathForFile(int32_t, int32_t, char *, char *);
+	int32_t GetPathForFileString(int32_t, int32_t, /*packed*/ class basic_string<char>&, /*packed*/ class basic_string<char>&);
+	void FindLocalPath();
+	int32_t FindRemotePath();
+	int32_t ValidateRemotePath();
+	void RefreshLocalPathCache();
+	void RefreshLocalPathCache(/*packed*/ class basic_string<char>&);
+	int32_t CopyFileFromRemoteToLocal(char *);
+	int32_t IsFileAvailableLocally(char *);
+	int32_t IsFileAvailableRemotely(char *);
+	enum AppBaseType {
+		nAppBaseTypeUnknown = 0,
+		nAppBaseTypeLocal = 1,
+		nAppBaseTypeRemote = 2,
+	};
+public:
+	/*+0x0*/   enum FileServices::AppBaseType myAppBaseType;
+	/*+0x4*/   /*packed*/ class basic_string<char> sLocalDirectoryBase; // 0x8 bytes
+	/*+0xc*/   /*packed*/ class basic_string<char> sRemoteDirectoryBase; // 0x8 bytes
+	/*+0x14*/  /*packed*/ class basic_string<char> sDirs[12]; // 0x60 bytes
+};
+
 // Type: /*packed*/ class basic_string<char>;
 class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
 	using reference_class = /*unpacked*/ class basic_string_ref<char>;
@@ -141,34 +169,6 @@ public:
 	int32_t compare(char *, uint32_t);
 	int32_t compare(char *, uint32_t, uint32_t);
 	int32_t compare(const /*packed*/ class basic_string<char>&, uint32_t, uint32_t);
-};
-
-// Type: /*packed*/ class FileServices (forward reference);
-class FileServices{ // packed(0x74 bytes) TI: 0x1f25
-public:
-	void FileServices();
-	int32_t Initialize();
-	int32_t IsFileAvailable(char *);
-	int32_t GetPathForFile(int32_t, int32_t, char *, char *);
-	int32_t GetPathForFileString(int32_t, int32_t, /*packed*/ class basic_string<char>&, /*packed*/ class basic_string<char>&);
-	void FindLocalPath();
-	int32_t FindRemotePath();
-	int32_t ValidateRemotePath();
-	void RefreshLocalPathCache();
-	void RefreshLocalPathCache(/*packed*/ class basic_string<char>&);
-	int32_t CopyFileFromRemoteToLocal(char *);
-	int32_t IsFileAvailableLocally(char *);
-	int32_t IsFileAvailableRemotely(char *);
-	enum AppBaseType {
-		nAppBaseTypeUnknown = 0,
-		nAppBaseTypeLocal = 1,
-		nAppBaseTypeRemote = 2,
-	};
-public:
-	/*+0x0*/   enum FileServices::AppBaseType myAppBaseType;
-	/*+0x4*/   /*packed*/ class basic_string<char> sLocalDirectoryBase; // 0x8 bytes
-	/*+0xc*/   /*packed*/ class basic_string<char> sRemoteDirectoryBase; // 0x8 bytes
-	/*+0x14*/  /*packed*/ class basic_string<char> sDirs[12]; // 0x60 bytes
 };
 
 // Type: long;

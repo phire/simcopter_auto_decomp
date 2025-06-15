@@ -4,20 +4,6 @@
 
 // Type: char *;
 
-// Type: int32_t;
-
-// Type: /*unpacked*/ class GraphicWindow (forward reference);
-// GraphicWindow Class implementation not found
-
-// Type: /*packed*/ class GraphicWindowOwner (forward reference);
-// VTABLE: COPTER_D 0x00590f2c
-class GraphicWindowOwner{ // packed(0x4 bytes) TI: 0x1647
-public:
-	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
-};
-
-// Type: void;
-
 // Type: /*packed*/ class HangarWindow (forward reference);
 // VTABLE: COPTER_D 0x00590c20
 class HangarWindow : public GraphicWindow
@@ -67,6 +53,20 @@ protected:
 	/*+0x122*/ /*packed*/ class MPoint ptSavedCursorPosition; // 0x8 bytes
 	/*+0x12a*/ long lWindowPositionInHangar;
 };
+
+// Type: int32_t;
+
+// Type: /*unpacked*/ class GraphicWindow (forward reference);
+// GraphicWindow Class implementation not found
+
+// Type: /*packed*/ class GraphicWindowOwner (forward reference);
+// VTABLE: COPTER_D 0x00590f2c
+class GraphicWindowOwner{ // packed(0x4 bytes) TI: 0x1647
+public:
+	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
+};
+
+// Type: void;
 
 // Type: /*packed*/ class ButtonWindow (forward reference);
 // VTABLE: COPTER_D 0x00591b78

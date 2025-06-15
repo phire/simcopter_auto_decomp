@@ -20,10 +20,6 @@ protected:
 
 // Type: unsigned long;
 
-// Type: uint32_t;
-
-// Type: int32_t;
-
 // Type: /*packed*/ class Random (forward reference);
 class Random{ // packed(0xe4 bytes) TI: 0x20ab
 public:
@@ -35,6 +31,10 @@ protected:
 	/*+0xdc*/  uint32_t index1;
 	/*+0xe0*/  uint32_t index2;
 };
+
+// Type: uint32_t;
+
+// Type: int32_t;
 
 
 

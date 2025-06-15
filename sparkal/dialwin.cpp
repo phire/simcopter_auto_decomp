@@ -4,6 +4,35 @@
 
 // Type: char *;
 
+// Type: /*packed*/ class RadioCompassWindow (forward reference);
+// VTABLE: COPTER_D 0x0058f650
+class RadioCompassWindow : public GraphicWindow
+{ // packed(0xb4 bytes) TI: 0x2a7c
+public:
+	void RadioCompassWindow(/*packed*/ class MRect&, long, /*unpacked*/ class GraphicWindow*, /*unpacked*/ class Radio*, /*packed*/ class GraphicWindowOwner*, int32_t);
+	virtual void ~RadioCompassWindow() /* override */;
+	virtual int32_t Initialize() /* override */;
+	virtual void InitializeCachedSettings(); // vtable+0xc4
+	virtual int32_t CreateImage(int32_t) /* override */;
+	virtual void DestroyImage() /* override */;
+	virtual int32_t ComposeSelf() /* override */;
+	virtual long DoCursorDown(long, long, unsigned long) /* override */;
+	int32_t GetCurrentCompassPosition();
+	void SetNewRadioStation(int32_t);
+	void SetNewRadioStationVolume(long);
+	void CheckForRadioChange();
+protected:
+	/*+0x74*/  long lFrameCount;
+	/*+0x78*/  /*unpacked*/ class Radio *myRadio;
+	/*+0x7c*/  int32_t nRadioStationIndex;
+	/*+0x80*/  long lRadioStationVolume;
+	/*+0x84*/  /*unpacked*/ class CBackBuffer *myCompassImage;
+	/*+0x88*/  /*packed*/ class basic_string<char> sCompassFile; // 0x8 bytes
+	/*+0x90*/  int32_t nLastCompassPosition;
+	/*+0x94*/  /*packed*/ class MRect rectRadioStations; // 0x10 bytes
+	/*+0xa4*/  /*packed*/ class MRect rectRadioStationVolume; // 0x10 bytes
+};
+
 // Type: /*packed*/ class MRect (forward reference);
 class MRect : public SparkalRect
 { // packed(0x10 bytes) TI: 0x1067
@@ -90,35 +119,6 @@ public:
 // Type: int32_t;
 
 // Type: void;
-
-// Type: /*packed*/ class RadioCompassWindow (forward reference);
-// VTABLE: COPTER_D 0x0058f650
-class RadioCompassWindow : public GraphicWindow
-{ // packed(0xb4 bytes) TI: 0x2a7c
-public:
-	void RadioCompassWindow(/*packed*/ class MRect&, long, /*unpacked*/ class GraphicWindow*, /*unpacked*/ class Radio*, /*packed*/ class GraphicWindowOwner*, int32_t);
-	virtual void ~RadioCompassWindow() /* override */;
-	virtual int32_t Initialize() /* override */;
-	virtual void InitializeCachedSettings(); // vtable+0xc4
-	virtual int32_t CreateImage(int32_t) /* override */;
-	virtual void DestroyImage() /* override */;
-	virtual int32_t ComposeSelf() /* override */;
-	virtual long DoCursorDown(long, long, unsigned long) /* override */;
-	int32_t GetCurrentCompassPosition();
-	void SetNewRadioStation(int32_t);
-	void SetNewRadioStationVolume(long);
-	void CheckForRadioChange();
-protected:
-	/*+0x74*/  long lFrameCount;
-	/*+0x78*/  /*unpacked*/ class Radio *myRadio;
-	/*+0x7c*/  int32_t nRadioStationIndex;
-	/*+0x80*/  long lRadioStationVolume;
-	/*+0x84*/  /*unpacked*/ class CBackBuffer *myCompassImage;
-	/*+0x88*/  /*packed*/ class basic_string<char> sCompassFile; // 0x8 bytes
-	/*+0x90*/  int32_t nLastCompassPosition;
-	/*+0x94*/  /*packed*/ class MRect rectRadioStations; // 0x10 bytes
-	/*+0xa4*/  /*packed*/ class MRect rectRadioStationVolume; // 0x10 bytes
-};
 
 // Type: /*packed*/ class basic_string<char>;
 class basic_string<char>{ // packed(0x8 bytes) TI: 0x1380
@@ -227,31 +227,6 @@ public:
 
 // Type: unsigned long;
 
-// Type: /*packed*/ struct CommandSystem (forward reference);
-struct CommandSystem{ // packed(0xaa8 bytes) TI: 0x12e4
-	/*+0x0*/   /*packed*/ struct Command keyboardCommands[100]; // 0xc8 bytes
-	/*+0xc8*/  /*packed*/ class CharList keyboardCommandList; // 0x10 bytes
-	/*+0xd8*/  /*packed*/ class list<Shortcut> commandShortcuts; // 0x8 bytes
-	/*+0xe0*/  unsigned char chCommandKeyboardArray[2048]; // 0x800 bytes
-	/*+0x8e0*/ unsigned char chCommandJoystickArray[4][14]; // 0x38 bytes
-	/*+0x918*/ long joystickCommands[100]; // 0x190 bytes
-	void CommandSystem();
-	void Initialize();
-	void ClearAllCommands();
-	void ClearAllCommandsDevice(long);
-	void TurnOnCommand(int32_t);
-	void TurnOffCommand(int32_t);
-	void TurnOnCommandDevice(int32_t, long);
-	void TurnOffCommandDevice(int32_t, long);
-	int32_t IsCommandSet(int32_t);
-	int32_t IsCommandPush(int32_t);
-	void SetUpCommandArraysFromShortcuts();
-	// calltype: NearC
-	static int32_t GetKeystateIndexForChar(long, char);
-	long GetJoystickCommandValue(int32_t);
-	void PollJoysticksForCommands();
-};
-
 // Type: /*packed*/ class DialWindow (forward reference);
 // VTABLE: COPTER_D 0x0058f738
 class DialWindow : public GraphicWindow
@@ -296,6 +271,31 @@ protected:
 	/*+0x194*/ /*packed*/ class MRect rectSpotlightControl; // 0x10 bytes
 	/*+0x1a4*/ /*packed*/ class MRect rectSpotlightControlSet[4]; // 0x40 bytes
 	/*+0x1e4*/ long lSpotlightControlCurrent;
+};
+
+// Type: /*packed*/ struct CommandSystem (forward reference);
+struct CommandSystem{ // packed(0xaa8 bytes) TI: 0x12e4
+	/*+0x0*/   /*packed*/ struct Command keyboardCommands[100]; // 0xc8 bytes
+	/*+0xc8*/  /*packed*/ class CharList keyboardCommandList; // 0x10 bytes
+	/*+0xd8*/  /*packed*/ class list<Shortcut> commandShortcuts; // 0x8 bytes
+	/*+0xe0*/  unsigned char chCommandKeyboardArray[2048]; // 0x800 bytes
+	/*+0x8e0*/ unsigned char chCommandJoystickArray[4][14]; // 0x38 bytes
+	/*+0x918*/ long joystickCommands[100]; // 0x190 bytes
+	void CommandSystem();
+	void Initialize();
+	void ClearAllCommands();
+	void ClearAllCommandsDevice(long);
+	void TurnOnCommand(int32_t);
+	void TurnOffCommand(int32_t);
+	void TurnOnCommandDevice(int32_t, long);
+	void TurnOffCommandDevice(int32_t, long);
+	int32_t IsCommandSet(int32_t);
+	int32_t IsCommandPush(int32_t);
+	void SetUpCommandArraysFromShortcuts();
+	// calltype: NearC
+	static int32_t GetKeystateIndexForChar(long, char);
+	long GetJoystickCommandValue(int32_t);
+	void PollJoysticksForCommands();
 };
 
 // Type: char;

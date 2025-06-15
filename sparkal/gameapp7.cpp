@@ -8,6 +8,9 @@
 
 // Type: void;
 
+// Type: /*unpacked*/ class CGameApp (forward reference);
+// CGameApp Class implementation not found
+
 // Type: char;
 
 // Type: /*packed*/ class Version;

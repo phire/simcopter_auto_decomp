@@ -24,6 +24,9 @@ struct list<CopterGameMode>::list_node{ // packed(0xc bytes) TI: 0x1a1c
 
 // Type: int32_t;
 
+// Type: /*unpacked*/ class CGameApp (forward reference);
+// CGameApp Class implementation not found
+
 // Type: char;
 
 // Type: /*packed*/ struct SoundPreferences;
@@ -232,6 +235,76 @@ public:
 };
 
 // Type: float;
+
+// Type: /*packed*/ class PFile (forward reference);
+// VTABLE: COPTER_D 0x00590468
+class PFile{ // packed(0x110 bytes) TI: 0x453c
+	enum /* __unnamed */ {
+		FileNull = -1,
+	};
+	enum SeekTypes {
+		N_SEEK_FROM_FILE_START = 0,
+		N_SEEK_FROM_FILE_CURRENT = 1,
+		N_SEEK_FROM_FILE_END = 2,
+	};
+	enum AccessTypes {
+		ReadOnly = 0,
+		ReadWrite = 2,
+		WriteOnly = 1,
+		Create = 768,
+		CreateExcl = 1280,
+		Append = 8,
+		Binary = 32768,
+		Compat = 0,
+		DenyNone = 64,
+		DenyRead = 48,
+		DenyWrite = 32,
+		DenyRdWr = 16,
+		NoInherit = 128,
+	};
+	enum PermissionTypes {
+		PermRead = 256,
+		PermWrite = 128,
+		PermRdWr = 384,
+	};
+	enum seek_dir {
+		beg = 0,
+		cur = 1,
+		end = 2,
+	};
+public:
+	void PFile(char *);
+	void PFile(const /*packed*/ class PFile&);
+	void PFile(int32_t);
+	void PFile();
+	virtual void ~PFile(); // vtable+0x0
+	int32_t Open(char *, unsigned short, unsigned short, int32_t);
+	int32_t Close();
+	int32_t GetHandle();
+	long Position();
+	void Length(long);
+	long Length();
+	long Seek(long, int32_t);
+	long SeekToBegin();
+	long SeekToEnd();
+	int32_t IsOpen();
+	int32_t Read(void * __ptr32, int32_t);
+	int32_t Write(void * __ptr32, int32_t);
+	void Flush();
+	// calltype: NearC
+	static void Remove(char *);
+	// calltype: NearC
+	static void Rename(char *, char *);
+	// calltype: NearC
+	static unsigned long Checksum(char *);
+	long SetPath(char *);
+	long FileCreate(char *, int32_t);
+	long FileExists(char *);
+	/*+0x4*/   char szFilePath[260]; // 0x104 bytes
+	/*+0x108*/ int32_t Handle;
+private:
+	/*+0x10c*/ int32_t ShouldClose;
+};
 
 // Type: uint32_t;
 

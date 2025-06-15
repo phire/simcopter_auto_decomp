@@ -145,12 +145,6 @@ public:
 	static void SwizzleBBaseHeader(void * __ptr32, long);
 };
 
-// Type: /*unpacked*/ struct PtrList<cBBase>::PtrNode (forward reference);
-struct PtrList<cBBase>::PtrNode{ // not packed(0x8 bytes) TI: 0x33ae
-	/*+0x0*/   /*unpacked*/ class cBBase *data;
-	/*+0x4*/   /*unpacked*/ struct PtrList<cBBase>::PtrNode *next;
-};
-
 // Type: /*unpacked*/ class PtrList<cBBase> (forward reference);
 class PtrList<cBBase>{ // not packed(0x8 bytes) TI: 0x33ac
 	class PtrList<cBBase>::Iter{ // not packed(0x8 bytes) TI: 0x33b6
@@ -183,6 +177,12 @@ public:
 	/*unpacked*/ class cBBase* GetByOrder(long);
 };
 
+// Type: /*unpacked*/ struct PtrList<cBBase>::PtrNode (forward reference);
+struct PtrList<cBBase>::PtrNode{ // not packed(0x8 bytes) TI: 0x33ae
+	/*+0x0*/   /*unpacked*/ class cBBase *data;
+	/*+0x4*/   /*unpacked*/ struct PtrList<cBBase>::PtrNode *next;
+};
+
 // Type: /*unpacked*/ class PtrList<cCopterAnim>::Iter (forward reference);
 class PtrList<cCopterAnim>::Iter{ // not packed(0x8 bytes) TI: 0x341b
 private:
@@ -195,6 +195,9 @@ public:
 	void Reset();
 	/*unpacked*/ class cCopterAnim* First();
 };
+
+// Type: /*unpacked*/ class cBList<cCopterAnim> (forward reference);
+// cBList<cCopterAnim> Class implementation not found
 
 // Type: /*unpacked*/ class PtrList<cCopterAnim> (forward reference);
 class PtrList<cCopterAnim>{ // not packed(0x8 bytes) TI: 0x3411

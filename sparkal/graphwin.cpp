@@ -202,18 +202,18 @@ struct GraphicWindowColorConstants{ // packed(0x24 bytes) TI: 0x10f2
 	void GraphicWindowColorConstants();
 };
 
-// Type: long;
-
-// Type: void * __ptr32;
-
-// Type: int32_t;
-
 // Type: /*packed*/ class GraphicWindowOwner (forward reference);
 // VTABLE: COPTER_D 0x00590f2c
 class GraphicWindowOwner{ // packed(0x4 bytes) TI: 0x1647
 public:
 	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
 };
+
+// Type: long;
+
+// Type: void * __ptr32;
+
+// Type: int32_t;
 
 // Type: /*packed*/ class list<GraphicWindow *>::iterator;
 class list<GraphicWindow *>::iterator : public bidirectional_iterator<GraphicWindow *,int>

@@ -163,9 +163,6 @@ public:
 	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
 };
 
-// Type: /*unpacked*/ class ButtonGroup (forward reference);
-// ButtonGroup Class implementation not found
-
 // Type: /*packed*/ class SoundRadioButtonWindow (forward reference);
 // VTABLE: COPTER_D 0x00590950
 class SoundRadioButtonWindow : public RadioButtonWindow
@@ -180,6 +177,9 @@ protected:
 	static /*packed*/ class DigitalSound radioButtonSound;
 	static long lRadioSoundReferenceCount;
 };
+
+// Type: /*unpacked*/ class ButtonGroup (forward reference);
+// ButtonGroup Class implementation not found
 
 // Type: /*packed*/ class SoundCheckBoxWindow (forward reference);
 // VTABLE: COPTER_D 0x00590a38

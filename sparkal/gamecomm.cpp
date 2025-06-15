@@ -4,8 +4,6 @@
 
 // Type: char *;
 
-// Type: void;
-
 // Type: /*packed*/ struct CommandSystem (forward reference);
 struct CommandSystem{ // packed(0xaa8 bytes) TI: 0x12e4
 	/*+0x0*/   /*packed*/ struct Command keyboardCommands[100]; // 0xc8 bytes
@@ -30,6 +28,8 @@ struct CommandSystem{ // packed(0xaa8 bytes) TI: 0x12e4
 	long GetJoystickCommandValue(int32_t);
 	void PollJoysticksForCommands();
 };
+
+// Type: void;
 
 // Type: int32_t;
 

@@ -18,6 +18,49 @@ struct SparkalColor{ // packed(0x4 bytes) TI: 0x12ee
 
 // Type: void;
 
+// Type: /*packed*/ class CareerWindow (forward reference);
+// VTABLE: COPTER_D 0x00590ef4
+class CareerWindow : public GraphicWindow
+{ // packed(0x840 bytes) TI: 0x47a5
+public:
+	void CareerWindow(/*packed*/ class MRect&, int32_t, void * __ptr32, long *, /*unpacked*/ class GraphicWindow*, /*packed*/ class GraphicWindowOwner*, int32_t, int32_t);
+	virtual void ~CareerWindow() /* override */;
+	virtual int32_t Initialize() /* override */;
+	virtual int32_t DrawSelf() /* override */;
+	virtual int32_t CreateImage(int32_t) /* override */;
+	virtual void DestroyImage() /* override */;
+	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32) /* override */;
+	virtual long DoKeyDown(long, char) /* override */;
+	virtual long DoCursorDown(long, long, unsigned long) /* override */;
+	virtual long DoCursorMove(long, long) /* override */;
+	long SetCurrentCitySelection(long);
+	long GetCurrentCitySelection();
+	class CareerWindow::CitySelectionFrame{ // packed(0x50 bytes) TI: 0x12ad
+	public:
+		void CitySelectionFrame(int32_t, int32_t, int32_t);
+		virtual void ~CitySelectionFrame(); // vtable+0x0
+		void FillDestinationPoints(/*packed*/ class MPoint*);
+		void FillSourceRects(/*packed*/ class MRect*);
+		/*+0x4*/   int32_t bLeft;
+		/*+0x8*/   int32_t bTop;
+		/*+0xc*/   int32_t bSelected;
+		/*+0x10*/  /*packed*/ class MRect rectFrame[4]; // 0x40 bytes
+	};
+protected:
+	void DrawCitySelection();
+	void GetCoordinatesForCitySelections(/*packed*/ class MPoint[4]*, /*packed*/ class MRect[4]*);
+	/*+0x74*/  long lCurrentCitySelection;
+	/*+0x78*/  /*packed*/ class MRect rectCities[3]; // 0x30 bytes
+	/*+0xa8*/  long lCities[3]; // 0xc bytes
+	/*+0xb4*/  int32_t nCityCount;
+	/*+0xb8*/  int32_t bAllowCancel;
+	/*+0xbc*/  /*packed*/ class SmackerBackBuffer mySmackerBackBuffers[3]; // 0x774 bytes
+	/*+0x830*/ void * __ptr32 myPlatformWindow;
+	/*+0x834*/ /*unpacked*/ class TextWindow *cityNameTextWindow;
+	/*+0x838*/ /*unpacked*/ class TextWindow *cityLevelTextWindow;
+	/*+0x83c*/ /*unpacked*/ class CBackBuffer *mySelectionImage;
+};
+
 // Type: /*packed*/ class MRect (forward reference);
 class MRect : public SparkalRect
 { // packed(0x10 bytes) TI: 0x1067
@@ -100,49 +143,6 @@ public:
 class GraphicWindowOwner{ // packed(0x4 bytes) TI: 0x1647
 public:
 	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32); // vtable+0x0
-};
-
-// Type: /*packed*/ class CareerWindow (forward reference);
-// VTABLE: COPTER_D 0x00590ef4
-class CareerWindow : public GraphicWindow
-{ // packed(0x840 bytes) TI: 0x47a5
-public:
-	void CareerWindow(/*packed*/ class MRect&, int32_t, void * __ptr32, long *, /*unpacked*/ class GraphicWindow*, /*packed*/ class GraphicWindowOwner*, int32_t, int32_t);
-	virtual void ~CareerWindow() /* override */;
-	virtual int32_t Initialize() /* override */;
-	virtual int32_t DrawSelf() /* override */;
-	virtual int32_t CreateImage(int32_t) /* override */;
-	virtual void DestroyImage() /* override */;
-	virtual int32_t DoMessage(/*unpacked*/ class GraphicWindow*, long, long, void * __ptr32) /* override */;
-	virtual long DoKeyDown(long, char) /* override */;
-	virtual long DoCursorDown(long, long, unsigned long) /* override */;
-	virtual long DoCursorMove(long, long) /* override */;
-	long SetCurrentCitySelection(long);
-	long GetCurrentCitySelection();
-	class CareerWindow::CitySelectionFrame{ // packed(0x50 bytes) TI: 0x12ad
-	public:
-		void CitySelectionFrame(int32_t, int32_t, int32_t);
-		virtual void ~CitySelectionFrame(); // vtable+0x0
-		void FillDestinationPoints(/*packed*/ class MPoint*);
-		void FillSourceRects(/*packed*/ class MRect*);
-		/*+0x4*/   int32_t bLeft;
-		/*+0x8*/   int32_t bTop;
-		/*+0xc*/   int32_t bSelected;
-		/*+0x10*/  /*packed*/ class MRect rectFrame[4]; // 0x40 bytes
-	};
-protected:
-	void DrawCitySelection();
-	void GetCoordinatesForCitySelections(/*packed*/ class MPoint[4]*, /*packed*/ class MRect[4]*);
-	/*+0x74*/  long lCurrentCitySelection;
-	/*+0x78*/  /*packed*/ class MRect rectCities[3]; // 0x30 bytes
-	/*+0xa8*/  long lCities[3]; // 0xc bytes
-	/*+0xb4*/  int32_t nCityCount;
-	/*+0xb8*/  int32_t bAllowCancel;
-	/*+0xbc*/  /*packed*/ class SmackerBackBuffer mySmackerBackBuffers[3]; // 0x774 bytes
-	/*+0x830*/ void * __ptr32 myPlatformWindow;
-	/*+0x834*/ /*unpacked*/ class TextWindow *cityNameTextWindow;
-	/*+0x838*/ /*unpacked*/ class TextWindow *cityLevelTextWindow;
-	/*+0x83c*/ /*unpacked*/ class CBackBuffer *mySelectionImage;
 };
 
 // Type: char;

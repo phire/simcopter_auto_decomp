@@ -20,14 +20,6 @@ enum DirectionTypes {
 	NORTH_WEST = 9,
 };
 
-// Type: /*packed*/ struct _GridCoordinates;
-struct _GridCoordinates{ // packed(0x2 bytes) TI: 0x143c
-	/*+0x0*/   unsigned char x; // 0x1 bytes
-	/*+0x1*/   unsigned char y; // 0x1 bytes
-};
-
-// Type: int32_t;
-
 // Type: /*packed*/ class ShortestPath (forward reference);
 class ShortestPath{ // packed(0x8 bytes) TI: 0x2aae
 private:
@@ -42,6 +34,14 @@ private:
 	void PriorityHeapRemove(/*packed*/ struct _FringeHeapNode*);
 	int32_t FindDistanceFromDestination(/*packed*/ struct _GridCoordinates, /*packed*/ struct _GridCoordinates);
 };
+
+// Type: /*packed*/ struct _GridCoordinates;
+struct _GridCoordinates{ // packed(0x2 bytes) TI: 0x143c
+	/*+0x0*/   unsigned char x; // 0x1 bytes
+	/*+0x1*/   unsigned char y; // 0x1 bytes
+};
+
+// Type: int32_t;
 
 // Type: /*packed*/ struct _RGIndex;
 struct _RGIndex{ // packed(0x2 bytes) TI: 0x2ab2

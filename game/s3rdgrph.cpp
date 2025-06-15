@@ -32,34 +32,6 @@ enum DirIndex2 {
 
 // Type: void;
 
-// Type: unsigned char;
-
-// Type: int32_t;
-
-// Type: /*packed*/ struct RGVertex (forward reference);
-struct RGVertex{ // packed(0x33 bytes) TI: 0x1776
-	/*+0x0*/   unsigned char x; // 0x1 bytes
-	/*+0x1*/   unsigned char y; // 0x1 bytes
-	/*+0x2*/   LfBitfield @ 0x11f58:
-	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x4
-	[90m   LB.[95mTI[m = 0x1771
-	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x0
-	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
-	 turnFlags;
-	/*+0x2*/   LfBitfield @ 0x11f60:
-	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x4
-	[90m   LB.[95mTI[m = 0x1772
-	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x4
-	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
-	 deadEndFlags;
-	/*+0x3*/   unsigned char fElevated; // 0x1 bytes
-	/*+0x4*/   /*packed*/ struct Edge edge[4]; // 0x28 bytes
-	/*+0x2c*/  unsigned char yindexPrev; // 0x1 bytes
-	/*+0x2d*/  unsigned char xPrev; // 0x1 bytes
-	/*+0x2e*/  unsigned char edgeIndexPrev; // 0x1 bytes
-	/*+0x2f*/  int32_t STVisited;
-};
-
 // Type: /*packed*/ class RoadGraph (forward reference);
 class RoadGraph{ // packed(0x280 bytes) TI: 0x485e
 public:
@@ -88,6 +60,34 @@ private:
 	int32_t FindIntersection(/*packed*/ struct Goal&, unsigned char, unsigned char, /*packed*/ struct _GridCoordinates, /*packed*/ struct _GridCoordinates, enum DirectionTypes);
 	void ConnectHiwayRamp(int32_t, int32_t, unsigned short);
 	int32_t SetElevation(unsigned short);
+};
+
+// Type: unsigned char;
+
+// Type: int32_t;
+
+// Type: /*packed*/ struct RGVertex (forward reference);
+struct RGVertex{ // packed(0x33 bytes) TI: 0x1776
+	/*+0x0*/   unsigned char x; // 0x1 bytes
+	/*+0x1*/   unsigned char y; // 0x1 bytes
+	/*+0x2*/   LfBitfield @ 0x11f58:
+	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x4
+	[90m   LB.[95mTI[m = 0x1771
+	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x0
+	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
+	 turnFlags;
+	/*+0x2*/   LfBitfield @ 0x11f60:
+	[90m   LB.[32m[  0.  1][m [95mlength[m = 0x4
+	[90m   LB.[95mTI[m = 0x1772
+	[90m   LB.[32m[  1.  1][m [95mposition[m = 0x4
+	[90m   LB.[32m[  2.  2][m [95mtype[m = 0x206
+	 deadEndFlags;
+	/*+0x3*/   unsigned char fElevated; // 0x1 bytes
+	/*+0x4*/   /*packed*/ struct Edge edge[4]; // 0x28 bytes
+	/*+0x2c*/  unsigned char yindexPrev; // 0x1 bytes
+	/*+0x2d*/  unsigned char xPrev; // 0x1 bytes
+	/*+0x2e*/  unsigned char edgeIndexPrev; // 0x1 bytes
+	/*+0x2f*/  int32_t STVisited;
 };
 
 // Type: /*packed*/ struct Goal (forward reference);

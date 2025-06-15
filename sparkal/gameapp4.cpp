@@ -4,6 +4,9 @@
 
 // Type: char *;
 
+// Type: /*unpacked*/ class CGameApp (forward reference);
+// CGameApp Class implementation not found
+
 // Type: long;
 
 // Type: /*packed*/ class MRect;

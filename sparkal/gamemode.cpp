@@ -4,8 +4,6 @@
 
 // Type: char *;
 
-// Type: void;
-
 // Type: /*packed*/ class CopterGameMode (forward reference);
 class CopterGameMode{ // packed(0x4 bytes) TI: 0x170f
 public:
@@ -15,6 +13,8 @@ public:
 	void CopterGameMode();
 	/*packed*/ class CopterGameMode& operator=(const /*packed*/ class CopterGameMode&);
 };
+
+// Type: void;
 
 // Type: int32_t;
 

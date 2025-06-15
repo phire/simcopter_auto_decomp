@@ -390,24 +390,6 @@ struct Shortcut{ // packed(0x18 bytes) TI: 0x1083
 	/*+0x14*/  long lIgnoreModifiers;
 };
 
-// Type: /*packed*/ class list<Shortcut>::iterator (forward reference);
-class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
-{ // packed(0x4 bytes) TI: 0x1081
-protected:
-	/*+0x0*/   /*packed*/ struct list<Shortcut>::list_node *node;
-public:
-	void iterator();
-protected:
-	void iterator(/*packed*/ struct list<Shortcut>::list_node*);
-public:
-	int32_t operator==(const /*packed*/ class list<Shortcut>::iterator&);
-	/*packed*/ struct Shortcut& operator*();
-	/*packed*/ class list<Shortcut>::iterator operator++(int32_t);
-	/*packed*/ class list<Shortcut>::iterator& operator++();
-	/*packed*/ class list<Shortcut>::iterator operator--(int32_t);
-	/*packed*/ class list<Shortcut>::iterator& operator--();
-};
-
 // Type: /*packed*/ class list<Shortcut> (forward reference);
 class list<Shortcut>{ // packed(0x8 bytes) TI: 0x1b79
 	using void_pointer = void * __ptr32;
@@ -530,6 +512,24 @@ public:
 	void sort();
 };
 
+// Type: /*packed*/ class list<Shortcut>::iterator (forward reference);
+class list<Shortcut>::iterator : public bidirectional_iterator<Shortcut,int>
+{ // packed(0x4 bytes) TI: 0x1081
+protected:
+	/*+0x0*/   /*packed*/ struct list<Shortcut>::list_node *node;
+public:
+	void iterator();
+protected:
+	void iterator(/*packed*/ struct list<Shortcut>::list_node*);
+public:
+	int32_t operator==(const /*packed*/ class list<Shortcut>::iterator&);
+	/*packed*/ struct Shortcut& operator*();
+	/*packed*/ class list<Shortcut>::iterator operator++(int32_t);
+	/*packed*/ class list<Shortcut>::iterator& operator++();
+	/*packed*/ class list<Shortcut>::iterator operator--(int32_t);
+	/*packed*/ class list<Shortcut>::iterator& operator--();
+};
+
 // Type: /*packed*/ struct list<Shortcut>::list_node (forward reference);
 struct list<Shortcut>::list_node{ // packed(0x20 bytes) TI: 0x1b8e
 	/*+0x0*/   void * __ptr32 next;
@@ -553,12 +553,6 @@ public:
 	/*packed*/ class list<Shortcut>::iterator& operator++();
 	/*packed*/ class list<Shortcut>::iterator operator--(int32_t);
 	/*packed*/ class list<Shortcut>::iterator& operator--();
-};
-
-// Type: /*packed*/ struct list<CopterGameMode>::list_node_buffer (forward reference);
-struct list<CopterGameMode>::list_node_buffer{ // packed(0x8 bytes) TI: 0x1a1a
-	/*+0x0*/   void * __ptr32 next_buffer;
-	/*+0x4*/   /*packed*/ struct list<CopterGameMode>::list_node *buffer;
 };
 
 // Type: /*packed*/ class list<CopterGameMode> (forward reference);
@@ -681,6 +675,12 @@ public:
 	void merge(/*packed*/ class list<CopterGameMode>&);
 	void reverse();
 	void sort();
+};
+
+// Type: /*packed*/ struct list<CopterGameMode>::list_node_buffer (forward reference);
+struct list<CopterGameMode>::list_node_buffer{ // packed(0x8 bytes) TI: 0x1a1a
+	/*+0x0*/   void * __ptr32 next_buffer;
+	/*+0x4*/   /*packed*/ struct list<CopterGameMode>::list_node *buffer;
 };
 
 // Type: /*packed*/ class list<CopterGameMode>::iterator;

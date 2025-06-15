@@ -4,8 +4,6 @@
 
 // Type: char *;
 
-// Type: void;
-
 // Type: /*packed*/ class UserMenuWindow (forward reference);
 // VTABLE: COPTER_D 0x005912f8
 class UserMenuWindow : public GraphicWindow
@@ -35,6 +33,8 @@ protected:
 	/*+0xd4*/  int32_t nCurrentSelection;
 	/*+0xd8*/  /*packed*/ class DigitalSound soundSelectionChange; // 0x7a bytes
 };
+
+// Type: void;
 
 // Type: /*packed*/ struct UserMenuWindowDescription (forward reference);
 struct UserMenuWindowDescription{ // packed(0x54 bytes) TI: 0x101b

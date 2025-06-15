@@ -45,8 +45,6 @@ protected:
 
 // Type: void;
 
-// Type: int32_t;
-
 // Type: /*packed*/ class JoystickManager (forward reference);
 class JoystickManager{ // packed(0x1ce4 bytes) TI: 0x2218
 public:
@@ -83,6 +81,8 @@ protected:
 	/*+0x64*/  /*packed*/ struct tagJOYCAPSA joystickCaps[16]; // 0x1940 bytes
 	/*+0x19a4*/ /*packed*/ struct joyinfoex_tag joystickInfoCache[16]; // 0x340 bytes
 };
+
+// Type: int32_t;
 
 // Type: /*packed*/ struct joyinfo_tag;
 struct joyinfo_tag{ // packed(0x10 bytes) TI: 0x21fd

@@ -19,6 +19,9 @@ struct list<DirectoryEntry>::list_node{ // packed(0x18 bytes) TI: 0x2392
 
 // Type: char *;
 
+// Type: /*unpacked*/ class CGameApp (forward reference);
+// CGameApp Class implementation not found
+
 // Type: long;
 
 // Type: char;
@@ -99,8 +102,6 @@ public:
 	/*+0x128*/ long bFileAppearsCorrupt;
 	/*+0x12c*/ /*packed*/ struct MIFFHeader myMIFFHeader; // 0x1c bytes
 };
-
-// Type: void;
 
 // Type: /*packed*/ class list<DirectoryEntry> (forward reference);
 class list<DirectoryEntry>{ // packed(0x8 bytes) TI: 0x236c
@@ -223,6 +224,8 @@ public:
 	void reverse();
 	void sort();
 };
+
+// Type: void;
 
 // Type: /*packed*/ class PFile;
 // VTABLE: COPTER_D 0x00590468

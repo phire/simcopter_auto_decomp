@@ -27,8 +27,6 @@ public:
 
 // Type: void;
 
-// Type: int32_t;
-
 // Type: /*packed*/ class SoundChangeNotificationSink (forward reference);
 // VTABLE: COPTER_D 0x0058f5c0
 class SoundChangeNotificationSink : public NotificationSink
@@ -38,6 +36,8 @@ public:
 	virtual void DoNotificationChange(long, /*packed*/ class PreferenceManager*) /* override */;
 	void SoundChangeNotificationSink(); // synthetic
 };
+
+// Type: int32_t;
 
 // Type: /*packed*/ class PreferenceManager (forward reference);
 // VTABLE: COPTER_D 0x00590db0
