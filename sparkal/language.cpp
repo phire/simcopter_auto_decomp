@@ -1450,12 +1450,7 @@ _T67:
 	__asm        jmp    _T73;
 // LINE 180:
 _T73:
-	__asm        mov    eax, nLanguageToSwitchTo;
-	__asm        push   eax;
-	__asm        push   1;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(nLanguageToSwitchTo, 0x1);
 // LINE 181:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x102C];
@@ -2063,15 +2058,8 @@ _T102:
 // FUNCTION: COPTER_D 0x0042ba26
 int32_t LanguageManager::GetLanguageDirectoryName(/*packed*/ class basic_string<char>& sLanguage, int32_t nLanguage) {
 // LINE 314:
-	__asm        mov    eax, nLanguage;
-	__asm        push   eax;
-	__asm        mov    eax, sLanguage;
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetLanguageEnglishName;
-	__asm        add    esp, 8;
-	__asm        jmp    __RETURN;
+	return LanguageManager::GetLanguageEnglishName(nLanguage, sLanguage);
 // LINE 315:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0042ba46
@@ -2085,12 +2073,7 @@ int32_t LanguageManager::GetLanguageEnglishName(/*packed*/ class basic_string<ch
 	nLanguage = gDefaultLanguage;
 // LINE 331:
 _T22:
-	__asm        mov    eax, nLanguage;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(nLanguage, 0x0);
 // LINE 332:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x1034];
@@ -2600,12 +2583,7 @@ int32_t LanguageManager::GetLanguageLocalName(/*packed*/ class basic_string<char
 	nLanguage = gDefaultLanguage;
 // LINE 353:
 _T22:
-	__asm        mov    eax, nLanguage;
-	__asm        push   eax;
-	__asm        push   1;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(nLanguage, 0x1);
 // LINE 354:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x1034];
@@ -3115,12 +3093,7 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(/*packed*/ class basic_st
 	nLanguage = gDefaultLanguage;
 // LINE 375:
 _T22:
-	__asm        mov    eax, nLanguage;
-	__asm        push   eax;
-	__asm        push   2;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(nLanguage, 0x2);
 // LINE 376:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x1034];
@@ -3706,11 +3679,7 @@ int32_t LanguageManager::LoadLanguageSystemFonts(int32_t nLanguage) {
 	return 0x1;
 // LINE 462:
 _T2a:
-	__asm        mov    eax, nLanguage;
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetLanguageIDAlias;
-	__asm        add    esp, 4;
-	__asm        mov    nLanguage, eax;
+	nLanguage = LanguageManager::GetLanguageIDAlias(nLanguage);
 // LINE 464:
 	__asm        cmp    nLanguage, 0x10;
 	__asm        jne    _Ta8;
@@ -3769,11 +3738,7 @@ int32_t LanguageManager::UnloadLanguageSystemFonts(int32_t nLanguage) {
 	return 0x1;
 // LINE 495:
 _T2a:
-	__asm        mov    eax, nLanguage;
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetLanguageIDAlias;
-	__asm        add    esp, 4;
-	__asm        mov    nLanguage, eax;
+	nLanguage = LanguageManager::GetLanguageIDAlias(nLanguage);
 // LINE 497:
 	__asm        cmp    nLanguage, 0x10;
 	__asm        jne    _T89;

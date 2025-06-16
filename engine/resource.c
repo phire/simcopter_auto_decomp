@@ -159,8 +159,7 @@ _Tbd:
 	return 0x0;
 // LINE 159:
 _Te3:
-	__asm        call   LoadPalette;
-	__asm        mov    res, eax;
+	res = LoadPalette();
 // LINE 160:
 	__asm        cmp    res, 0;
 	__asm        jne    _Tfc;
@@ -208,11 +207,7 @@ _T151:
 	return 0x0;
 // LINE 178:
 _T177:
-	__asm        mov    eax, name;
-	__asm        push   eax;
-	__asm        call   LoadImages;
-	__asm        add    esp, 4;
-	__asm        mov    res, eax;
+	res = LoadImages(name);
 // LINE 179:
 	__asm        cmp    res, 0;
 	__asm        jne    _T197;
@@ -673,17 +668,7 @@ _Tf9:
 	return 0x0;
 // LINE 438:
 _T117:
-	__asm        mov    eax, GEOM_hdr.GroupCount;
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*2];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        push   eax;
-	__asm        mov    eax, ResFileMemPool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    GEOM_GPdir, eax;
+	GEOM_GPdir = S2Alloc(BinaryOp(add, GEOM_hdr.GroupCount, BinaryOp(mul, BinaryOp(add, GEOM_hdr.GroupCount, BinaryOp(mul, BinaryOp(add, GEOM_hdr.GroupCount, BinaryOp(mul, GEOM_hdr.GroupCount, Const(2))), Const(4))), Const(4))), ResFileMemPool);
 // LINE 440:
 	__asm        mov    eax, GEOM_hdr.IdCount;
 	__asm        shl    eax, 2;
@@ -870,16 +855,7 @@ _Tec:
 	return 0x0;
 // LINE 694:
 _T10a:
-	__asm        mov    eax, CMAP_hdr.PaletteCount;
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        lea    eax, [ecx+eax*4];
-	__asm        push   eax;
-	__asm        mov    eax, ResFileMemPool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    CMAP_directory, eax;
+	CMAP_directory = S2Alloc(BinaryOp(add, CMAP_hdr.PaletteCount, BinaryOp(mul, BinaryOp(add, CMAP_hdr.PaletteCount, BinaryOp(mul, CMAP_hdr.PaletteCount, Const(4))), Const(4))), ResFileMemPool);
 // LINE 695:
 	__asm        cmp    CMAP_directory, 0;
 	__asm        jne    _T149;

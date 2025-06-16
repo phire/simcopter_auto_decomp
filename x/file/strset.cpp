@@ -201,13 +201,7 @@ _T3a:
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     _Tb4;
 // LINE 37:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   Memory::Stash;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], eax;
+	this->fStringPtr = Memory::Stash(this->fStringHandle);
 // LINE 39:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xC], 0;

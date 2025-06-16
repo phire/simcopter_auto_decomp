@@ -431,10 +431,7 @@ int32_t PaletteBuffer::SetPalette() {
 	/*bp-0xc*/   long hResult;
 
 // LINE 100:
-	__asm        push   0x400;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    paletteEntries, eax;
+	paletteEntries = operator new(0x400);
 // LINE 101:
 	__asm        cmp    paletteEntries, 0;
 	__asm        jne    _T2d;

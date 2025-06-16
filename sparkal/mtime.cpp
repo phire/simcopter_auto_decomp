@@ -805,11 +805,7 @@ void MTime::MTime() {
 	__asm        call   time;
 	__asm        add    esp, 4;
 // LINE 166:
-	__asm        lea    eax, ltime;
-	__asm        push   eax;
-	__asm        call   localtime;
-	__asm        add    esp, 4;
-	__asm        mov    t, eax;
+	t = localtime(ltime);
 // LINE 172:
 	__asm        mov    eax, t;
 	__asm        mov    eax, [eax+0x14];

@@ -2046,24 +2046,7 @@ _T82:
 // LINE 292:
 	flags = 0x200;
 // LINE 301:
-	__asm        push   0;
-	__asm        push   0;
-	__asm        mov    eax, radius;
-	__asm        push   eax;
-	__asm        lea    eax, flags;
-	__asm        push   eax;
-	__asm        mov    eax, normz;
-	__asm        push   eax;
-	__asm        mov    eax, normy;
-	__asm        push   eax;
-	__asm        mov    eax, normx;
-	__asm        push   eax;
-	__asm        mov    eax, stobj;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        call   VRGetObjAlt;
-	__asm        add    esp, 0x20;
-	__asm        mov    objy, eax;
+	objy = VRGetObjAlt(0x0, 0x0, radius, flags, normz, normy, normx, stobj->mesh);
 // LINE 304:
 	__asm        cmp    objy, 0;
 	__asm        jle    _Tcf;
@@ -2423,30 +2406,9 @@ _T4d:
 	__asm        sub    eax, [ecx+0x20];
 	__asm        mov    offset.z, eax;
 // LINE 419:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x34];
-	__asm        push   eax;
-	__asm        lea    eax, offset.x;
-	__asm        push   eax;
-	__asm        mov    eax, master;
-	__asm        add    eax, 0x24;
-	__asm        push   eax;
-	__asm        mov    eax, master;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   VRGetDyObjAlt;
-	__asm        add    esp, 0x10;
-	__asm        mov    masterheight, eax;
+	masterheight = VRGetDyObjAlt(this->fDyn.radius, offset.x, (master + 0x24), master->mesh);
 // LINE 420:
-	__asm        mov    eax, newloc.z;
-	__asm        push   eax;
-	__asm        mov    eax, newloc.y;
-	__asm        push   eax;
-	__asm        mov    eax, newloc.x;
-	__asm        push   eax;
-	__asm        call   S3PUtilsGetAlt;
-	__asm        add    esp, 0xC;
-	__asm        mov    groundheight, eax;
+	groundheight = S3PUtilsGetAlt(newloc.z, newloc.y, newloc.x);
 // LINE 421:
 	newloc.y = ((groundheight + masterheight) + 0x30000);
 // LINE 423:
@@ -2454,16 +2416,7 @@ _T4d:
 	__asm        jmp    _T116;
 // LINE 424:
 _Tfa:
-	__asm        mov    eax, newloc.z;
-	__asm        push   eax;
-	__asm        mov    eax, newloc.y;
-	__asm        push   eax;
-	__asm        mov    eax, newloc.x;
-	__asm        push   eax;
-	__asm        call   S3PUtilsGetAlt;
-	__asm        add    esp, 0xC;
-	__asm        add    eax, 0x30000;
-	__asm        mov    newloc.y, eax;
+	newloc.y = (S3PUtilsGetAlt(newloc.z, newloc.y, newloc.x) + 0x30000);
 // LINE 426:
 _T116:
 	dy = (newloc.y - this->fDyn.loc.y);
@@ -2902,17 +2855,7 @@ _T5fa:
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     _T662;
 // LINE 534:
-	__asm        mov    eax, newloc.z;
-	__asm        push   eax;
-	__asm        mov    eax, newloc.y;
-	__asm        push   eax;
-	__asm        mov    eax, newloc.x;
-	__asm        push   eax;
-	__asm        call   cYObject::GetRoadDir;
-	__asm        add    esp, 0xC;
-	__asm        mov    ecx, moveinfo;
-	__asm        mov    ecx, [ecx+4];
-	__asm        mov    [ecx], al;
+	moveinfo->roadDir[0] = cYObject::GetRoadDir(newloc.z, newloc.y, newloc.x);
 // LINE 547:
 _T662:
 	failnonneutral = 0x0;
@@ -5499,12 +5442,7 @@ _T54:
 	/*bp-0x10*/  short copterheight;
 	/*bp-0x14*/  /*unpacked*/ struct _HELI_DATA *hd;
 _T59:
-	__asm        mov    eax, G_uheli;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        push   eax;
-	__asm        call   S3HeliGetDataByDyObj;
-	__asm        add    esp, 4;
-	__asm        mov    hd, eax;
+	hd = S3HeliGetDataByDyObj(G_uheli->dyheli);
 // LINE 1058:
 	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0xA4];
@@ -5553,18 +5491,7 @@ _Tc0:
 	__asm        add    esp, 0x10;
 // LINE 1069:
 _Tf2:
-	__asm        mov    eax, obj;
-	__asm        mov    eax, [eax+0x20];
-	__asm        push   eax;
-	__asm        mov    eax, obj;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        push   eax;
-	__asm        mov    eax, obj;
-	__asm        mov    eax, [eax+0x18];
-	__asm        push   eax;
-	__asm        call   S3PUtilsGetAlt;
-	__asm        add    esp, 0xC;
-	__asm        mov    y, eax;
+	y = S3PUtilsGetAlt(obj->loc.z, obj->loc.y, obj->loc.x);
 // LINE 1070:
 	__asm        mov    eax, obj;
 	__asm        mov    eax, [eax+0x1C];
@@ -9122,11 +9049,7 @@ enum TreeSim::ReturnCode cYObject::iTakeAnyMedVicOffStackObject(/*unpacked*/ str
 // LINE 1662:
 	__asm        jmp    _T18;
 _T18:
-	__asm        push   0;
-	__asm        push   6;
-	__asm        call   cYObject::GetFirst;
-	__asm        add    esp, 8;
-	__asm        mov    obj, eax;
+	obj = cYObject::GetFirst(0x0, 0x6);
 // LINE 1663:
 	__asm        cmp    obj, 0;
 	__asm        je     _Te1;

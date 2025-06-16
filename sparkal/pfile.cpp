@@ -263,19 +263,7 @@ _Tdd:
 	__asm        mov    access, ax;
 // LINE 64:
 _Tf6:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(access);
-	__asm        and    eax, 0xF0;
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(access);
-	__asm        and    eax, 0xFE0F;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 4;
-	__asm        push   eax;
-	__asm        call   _sopen;
-	__asm        add    esp, 0xC;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x108], eax;
+	this->Handle = _sopen((reinterpret_cast<uint32_t>(access) & 0xf0), (reinterpret_cast<uint32_t>(access) & 0xfe0f), (this + 0x4));
 // LINE 66:
 _T120:
 	__asm        mov    eax, this;
@@ -358,12 +346,7 @@ _T35:
 	__asm        test   eax, eax;
 	__asm        je     _T75;
 // LINE 96:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x108];
-	__asm        push   eax;
-	__asm        call   _filelength;
-	__asm        add    esp, 4;
-	__asm        mov    lFileLength, eax;
+	lFileLength = _filelength(this->Handle);
 // LINE 97:
 	__asm        mov    ecx, this;
 	__asm        call   PFile::Close;
@@ -371,14 +354,8 @@ _T35:
 	return lFileLength;
 // LINE 101:
 _T75:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x108];
-	__asm        push   eax;
-	__asm        call   _filelength;
-	__asm        add    esp, 4;
-	__asm        jmp    __RETURN;
+	return _filelength(this->Handle);
 // LINE 102:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a05f3
@@ -442,15 +419,7 @@ _T89:
 	return 0x0;
 // LINE 127:
 _Ta7:
-	__asm        mov    eax, nAccessMode;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 4;
-	__asm        push   eax;
-	__asm        call   _creat;
-	__asm        add    esp, 8;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x108], eax;
+	this->Handle = _creat(nAccessMode, (this + 0x4));
 // LINE 129:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
@@ -588,10 +557,7 @@ _T6a:
 	__asm        call   PFile::Length;
 	__asm        mov    lFileLength, eax;
 // LINE 186:
-	__asm        push   0x7D00;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    chBuffer, eax;
+	chBuffer = operator new(0x7d00);
 // LINE 187:
 	__asm        cmp    chBuffer, 0;
 	__asm        je     _T17b;
@@ -620,15 +586,7 @@ _Tca:
 _Tf7:
 	__asm        jmp    _Tfc;
 _Tfc:
-	__asm        mov    eax, lUsedBlockSize;
-	__asm        push   eax;
-	__asm        mov    eax, chBuffer;
-	__asm        push   eax;
-	__asm        mov    eax, tempPFile.Handle;
-	__asm        push   eax;
-	__asm        call   _read;
-	__asm        add    esp, 0xC;
-	__asm        mov    lUsedBlockSize, eax;
+	lUsedBlockSize = _read(lUsedBlockSize, chBuffer, tempPFile.Handle);
 // LINE 199:
 	__asm        mov    lIndex, 0;
 	__asm        jmp    _T128;

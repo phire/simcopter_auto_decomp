@@ -683,15 +683,8 @@ __RETURN:
 // FUNCTION: COPTER_D 0x005276b5
 /*packed*/ class BoatClass* BoatClass::CreateInstance(int32_t instanceID) {
 // LINE 282:
-	__asm        mov    eax, instanceID;
-	__asm        push   eax;
-	__asm        push   0xFFFFFFFF;
-	__asm        push   0xFFFFFFFF;
-	__asm        call   BoatClass::CreateInstance;
-	__asm        add    esp, 0xC;
-	__asm        jmp    __RETURN;
+	return BoatClass::CreateInstance(instanceID, -0x1, -0x1);
 // LINE 319:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x005276d5
@@ -983,17 +976,7 @@ _T39:
 	__asm        cmp    dword ptr [eax+0x7B], 0x163;
 	__asm        jne    _T146;
 // LINE 700:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x9F];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x97];
-	__asm        push   eax;
-	__asm        call   S3TerrPrecisionAlt;
-	__asm        add    esp, 0xC;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x9B], eax;
+	this->dyObj.loc.y = S3TerrPrecisionAlt(0x0, this->dyObj.loc.z, this->dyObj.loc.x);
 // LINE 703:
 	__asm        xor    eax, eax;
 	__asm        sub    eax, LoopTime;
@@ -1967,17 +1950,7 @@ _T3c:
 	__asm        mov    ecx, this;
 	__asm        add    [ecx+0x9F], eax;
 // LINE 1272:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x9F];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x97];
-	__asm        push   eax;
-	__asm        call   S3TerrPrecisionAlt;
-	__asm        add    esp, 0xC;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x9B], eax;
+	this->dyObj.loc.y = S3TerrPrecisionAlt(0x0, this->dyObj.loc.z, this->dyObj.loc.x);
 // LINE 1275:
 	__asm        jmp    _Tad;
 _Tad:
@@ -3415,13 +3388,7 @@ _T79:
 // LINE 1863:
 	this->directionVector.z = (nextFineLocation.z - this->dyObj.loc.z);
 // LINE 1864:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x13;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x1F], eax;
+	this->remainingDist = MTNormalize((this + 0x13));
 // LINE 1869:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x8B];
@@ -5128,12 +5095,7 @@ _T155:
 // LINE 2891:
 	this->dyObj.radius = objectInfo.Radius;
 // LINE 2892:
-	__asm        mov    eax, object;
-	__asm        push   eax;
-	__asm        call   VRObjGetHeight;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x93], eax;
+	this->dyObj.height = VRObjGetHeight(object);
 // LINE 2895:
 	this->flags[2] = 0x0;
 // LINE 2896:
@@ -5244,21 +5206,10 @@ _T2e3:
 // FUNCTION: COPTER_D 0x0052ab24
 int32_t CreateBoatInstance(int32_t instanceID) {
 // LINE 3001:
-	__asm        mov    eax, instanceID;
-	__asm        push   eax;
-	__asm        call   BoatClass::CreateInstance;
-	__asm        add    esp, 4;
-	__asm        test   eax, eax;
-	__asm        je     _T24;
-
-	__asm        mov    eax, 1;
-	__asm        jmp    _T26;
 _T24:
-	__asm        xor    eax, eax;
 _T26:
-	__asm        jmp    __RETURN;
+	return (BoatClass::CreateInstance(instanceID) == 0x0);
 // LINE 3002:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052ab54
@@ -5444,48 +5395,29 @@ _T2c:
 // FUNCTION: COPTER_D 0x0052ad37
 /*packed*/ struct _DYOBJ_INST* StartCapsizedBoat(long mission_id, int32_t timetolive) {
 // LINE 3148:
-	__asm        mov    eax, timetolive;
-	__asm        push   eax;
-	__asm        mov    eax, mission_id;
-	__asm        push   eax;
-	__asm        call   BoatClass::StartCapsizedBoat;
-	__asm        add    esp, 8;
-	__asm        jmp    __RETURN;
+	return BoatClass::StartCapsizedBoat(timetolive, mission_id);
 // LINE 3149:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052ad57
 /*packed*/ struct _DYOBJ_INST* GetCapsizedBoat() {
 // LINE 3162:
-	__asm        call   BoatClass::GetCapsizedBoat;
-	__asm        jmp    __RETURN;
+	return BoatClass::GetCapsizedBoat();
 // LINE 3163:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052ad6c
 int32_t S3BoatMIFFLoad(void * __ptr32 miffReader) {
 // LINE 3175:
-	__asm        mov    eax, miffReader;
-	__asm        push   eax;
-	__asm        call   BoatClass::MIFFLoad;
-	__asm        add    esp, 4;
-	__asm        jmp    __RETURN;
+	return BoatClass::MIFFLoad(miffReader);
 // LINE 3176:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052ad88
 int32_t S3BoatMIFFSave(void * __ptr32 miffWriter) {
 // LINE 3188:
-	__asm        mov    eax, miffWriter;
-	__asm        push   eax;
-	__asm        call   BoatClass::MIFFSave;
-	__asm        add    esp, 4;
-	__asm        jmp    __RETURN;
+	return BoatClass::MIFFSave(miffWriter);
 // LINE 3189:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052ada4
@@ -5495,14 +5427,7 @@ int32_t BoatClass::MIFFLoad(void * __ptr32 miffReader) {
 	/*bp-0xc*/   int32_t i;
 
 // LINE 3207:
-	__asm        push   0xE3;
-	__asm        push   0x62B5F0;
-	__asm        push   0x424F4154;
-	__asm        mov    eax, miffReader;
-	__asm        push   eax;
-	__asm        call   ReadFirstMIFFChunk;
-	__asm        add    esp, 0x10;
-	__asm        mov    ret, eax;
+	ret = ReadFirstMIFFChunk(0xe3, 0x62b5f0, 0x424f4154, miffReader);
 // LINE 3208:
 	__asm        cmp    ret, 0;
 	__asm        jne    _T38;
@@ -5660,14 +5585,7 @@ _T1fb:
 	__asm        call   BoatClass::LinkToCell;
 // LINE 3247:
 _T219:
-	__asm        push   0xE3;
-	__asm        push   0x62B5F0;
-	__asm        push   0x424F4154;
-	__asm        mov    eax, miffReader;
-	__asm        push   eax;
-	__asm        call   ReadNextMIFFChunk;
-	__asm        add    esp, 0x10;
-	__asm        mov    ret, eax;
+	ret = ReadNextMIFFChunk(0xe3, 0x62b5f0, 0x424f4154, miffReader);
 // LINE 3249:
 	__asm        cmp    ret, 0;
 	__asm        jne    _T252;

@@ -197,11 +197,7 @@ long FlatFile::Open(unsigned char * name) {
 _T32:
 	err = 0x0;
 // LINE 65:
-	__asm        mov    eax, name;
-	__asm        push   eax;
-	__asm        call   FlatFile::FindByName;
-	__asm        add    esp, 4;
-	__asm        mov    same, eax;
+	same = FlatFile::FindByName(name);
 // LINE 67:
 	__asm        cmp    same, 0;
 	__asm        jne    _T142;
@@ -254,13 +250,7 @@ _Tad:
 	__asm        call   PtoCstr;
 	__asm        add    esp, 4;
 // LINE 82:
-	__asm        push   0x5BDE14;
-	__asm        lea    eax, cstrbuff[0];
-	__asm        push   eax;
-	__asm        call   fopen;
-	__asm        add    esp, 8;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x10C], eax;
+	this->fFile = fopen(0x5bde14, cstrbuff[0]);
 // LINE 83:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10C], 0;
@@ -413,18 +403,7 @@ long FlatFile::ReadBlock(void * __ptr32 buffer, long * blockSize) {
 	return 0xffffffcf;
 // LINE 172:
 _T29:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10C];
-	__asm        push   eax;
-	__asm        mov    eax, blockSize;
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        push   1;
-	__asm        mov    eax, buffer;
-	__asm        push   eax;
-	__asm        call   fread;
-	__asm        add    esp, 0x10;
-	__asm        mov    actualSize, eax;
+	actualSize = fread(this->fFile, blockSize[0], 0x1, buffer);
 // LINE 173:
 	__asm        mov    eax, blockSize;
 	__asm        mov    ecx, actualSize;

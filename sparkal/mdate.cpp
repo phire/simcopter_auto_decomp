@@ -283,16 +283,9 @@ void MDate::MDate() {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F3E8;
 // LINE 76:
-	__asm        push   0;
-	__asm        call   time;
-	__asm        add    esp, 4;
-	__asm        mov    clk, eax;
+	clk = time(0x0);
 // LINE 77:
-	__asm        lea    eax, clk;
-	__asm        push   eax;
-	__asm        call   localtime;
-	__asm        add    esp, 4;
-	__asm        mov    now, eax;
+	now = localtime(clk);
 // LINE 78:
 	__asm        mov    eax, now;
 	__asm        mov    eax, [eax+0x14];
@@ -357,19 +350,7 @@ void MDate::MDate(uint32_t day, char * monthName, uint32_t year) {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F3E8;
 // LINE 113:
-	__asm        mov    eax, year;
-	__asm        push   eax;
-	__asm        mov    eax, day;
-	__asm        push   eax;
-	__asm        mov    eax, monthName;
-	__asm        push   eax;
-	__asm        call   MDate::IndexOfMonth;
-	__asm        add    esp, 4;
-	__asm        push   eax;
-	__asm        call   MDate::Jday;
-	__asm        add    esp, 0xC;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->Julnum = MDate::Jday(year, day, monthName, MDate::IndexOfMonth(year, day, monthName));
 // LINE 114:
 	return;
 
@@ -384,16 +365,7 @@ void MDate::MDate(uint32_t day, uint32_t month, uint32_t year) {
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F3E8;
 // LINE 128:
-	__asm        mov    eax, year;
-	__asm        push   eax;
-	__asm        mov    eax, day;
-	__asm        push   eax;
-	__asm        mov    eax, month;
-	__asm        push   eax;
-	__asm        call   MDate::Jday;
-	__asm        add    esp, 0xC;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->Julnum = MDate::Jday(year, day, month);
 // LINE 129:
 	return;
 
@@ -552,21 +524,10 @@ _T8e:
 // FUNCTION: COPTER_D 0x004bc76f
 uint32_t MDate::DaysInYear(uint32_t year) {
 // LINE 201:
-	__asm        mov    eax, year;
-	__asm        push   eax;
-	__asm        call   MDate::LeapYear;
-	__asm        add    esp, 4;
-	__asm        test   eax, eax;
-	__asm        je     _T24;
-
-	__asm        mov    eax, 0x16E;
-	__asm        jmp    _T29;
 _T24:
-	__asm        mov    eax, 0x16D;
 _T29:
-	__asm        jmp    __RETURN;
+	return (MDate::LeapYear(year) == 0x0) ? 0x16e : 0x16d;
 // LINE 202:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004bc7a2
@@ -1311,14 +1272,7 @@ _T108:
 	__asm        jmp    _T10d;
 // LINE 589:
 _T10d:
-	__asm        mov    eax, s;
-	__asm        push   eax;
-	__asm        call   ParseMonth;
-	__asm        add    esp, 4;
-	__asm        push   eax;
-	__asm        call   MDate::IndexOfMonth;
-	__asm        add    esp, 4;
-	__asm        mov    m, eax;
+	m = MDate::IndexOfMonth(ParseMonth(s));
 // LINE 590:
 	__asm        mov    eax, s;
 	__asm        push   eax;
@@ -1400,14 +1354,7 @@ _T1f3:
 	__asm        jmp    _T1f8;
 // LINE 599:
 _T1f8:
-	__asm        mov    eax, s;
-	__asm        push   eax;
-	__asm        call   ParseMonth;
-	__asm        add    esp, 4;
-	__asm        push   eax;
-	__asm        call   MDate::IndexOfMonth;
-	__asm        add    esp, 4;
-	__asm        mov    m, eax;
+	m = MDate::IndexOfMonth(ParseMonth(s));
 // LINE 602:
 _T210:
 	__asm        mov    eax, s;

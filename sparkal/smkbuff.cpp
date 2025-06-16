@@ -1227,12 +1227,7 @@ _T78:
 	__asm        imul   eax, [ecx+0x20];
 	__asm        add    nSizeOfHeader, eax;
 // LINE 549:
-	__asm        mov    eax, nSizeOfHeader;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x154], eax;
+	this->chVRBmpHeader = operator new(nSizeOfHeader);
 // LINE 550:
 	this->bmpHeader = this->chVRBmpHeader;
 // LINE 551:
@@ -1628,17 +1623,7 @@ int32_t VRBmpSmackerBuffer::DrawDefaultVRBmp() {
 	__asm        cmp    dword ptr [eax+0x148], 0;
 	__asm        jne    _T8a;
 // LINE 733:
-	__asm        push   0x59A208;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x144];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x140];
-	__asm        push   eax;
-	__asm        call   VRLoadResource;
-	__asm        add    esp, 0xC;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x148], eax;
+	this->vrOriginalResource = VRLoadResource(0x59a208, this->nVRBmpFlags, this->szVRBmpName);
 // LINE 734:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x148], 0;
@@ -1647,14 +1632,7 @@ int32_t VRBmpSmackerBuffer::DrawDefaultVRBmp() {
 	return 0x0;
 // LINE 736:
 _T6d:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x148];
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x14C], eax;
+	this->bmpOriginalHeader = VRInt2BmpHdr(0x0, this->vrOriginalResource);
 // LINE 745:
 _T8a:
 	__asm        mov    eax, this;

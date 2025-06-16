@@ -576,15 +576,8 @@ __RETURN:
 // FUNCTION: COPTER_D 0x0052b29e
 /*packed*/ class PlaneClass* PlaneClass::CreateInstance(int32_t instanceID) {
 // LINE 290:
-	__asm        mov    eax, instanceID;
-	__asm        push   eax;
-	__asm        push   0xFFFFFFFF;
-	__asm        push   0xFFFFFFFF;
-	__asm        call   PlaneClass::CreateInstance;
-	__asm        add    esp, 0xC;
-	__asm        jmp    __RETURN;
+	return PlaneClass::CreateInstance(instanceID, -0x1, -0x1);
 // LINE 328:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052b2be
@@ -1002,11 +995,7 @@ _T88:
 // LINE 769:
 	vec.z = (ViewState.world_pos.z - this->dyObj.loc.z);
 // LINE 770:
-	__asm        lea    eax, vec.x;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
-	__asm        mov    dist, eax;
+	dist = MTNormalize(vec.x);
 // LINE 772:
 	__asm        cmp    dist, 0x7800000;
 	__asm        jge    _T194;
@@ -1141,11 +1130,7 @@ _T209:
 // LINE 828:
 	vec.z = (ViewState.world_pos.z - this->dyObj.loc.z);
 // LINE 829:
-	__asm        lea    eax, vec.x;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
-	__asm        mov    dist, eax;
+	dist = MTNormalize(vec.x);
 // LINE 831:
 	__asm        cmp    dist, 0x7800000;
 	__asm        jge    _T2ac;
@@ -1515,13 +1500,7 @@ _T166:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x10], eax;
 // LINE 1234:
-	__asm        mov    eax, this;
-	__asm        add    eax, 8;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x14], eax;
+	this->remainingDist = MTNormalize((this + 0x8));
 // LINE 1236:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0x64];
@@ -2016,43 +1995,12 @@ _T64:
 // LINE 1508:
 	oloc.z += center.z;
 // LINE 1514:
-	__asm        mov    eax, oinfo.Radius;
-	__asm        push   eax;
-	__asm        lea    eax, oloc.x;
-	__asm        push   eax;
-	__asm        mov    eax, dist;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 8;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x70;
-	__asm        push   eax;
-	__asm        call   S3MissileSphereHit;
-	__asm        add    esp, 0x14;
-	__asm        mov    newdist, eax;
+	newdist = S3MissileSphereHit(oinfo.Radius, oloc.x, dist, (this + 0x8), (this + 0x70));
 // LINE 1518:
 	__asm        cmp    newdist, 0;
 	__asm        jle    _T147;
 // LINE 1525:
-	__asm        lea    eax, norm;
-	__asm        push   eax;
-	__asm        mov    eax, stobj;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        lea    eax, cloc.x;
-	__asm        push   eax;
-	__asm        mov    eax, dist;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 8;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x70;
-	__asm        push   eax;
-	__asm        call   VRStObjPolyHit;
-	__asm        add    esp, 0x18;
-	__asm        mov    newdist, eax;
+	newdist = VRStObjPolyHit(norm, stobj->mesh, cloc.x, dist, (this + 0x8), (this + 0x70));
 // LINE 1528:
 _T147:
 	__asm        cmp    newdist, 0;
@@ -2165,25 +2113,12 @@ _T147:
 	__asm        test   eax, eax;
 	__asm        jne    _T2cb;
 // LINE 1556:
-	__asm        push   1;
-	__asm        mov    eax, celloc.y;
-	__asm        push   eax;
-	__asm        mov    eax, celloc.x;
-	__asm        push   eax;
-	__asm        call   S3MissionStart;
-	__asm        add    esp, 0xC;
-	__asm        mov    new_mission_id, eax;
+	new_mission_id = S3MissionStart(0x1, celloc.y, celloc.x);
 // LINE 1558:
 	__asm        jmp    _T2e4;
 // LINE 1560:
 _T2cb:
-	__asm        lea    eax, celloc.x;
-	__asm        push   eax;
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        call   S3FireAddToNearest;
-	__asm        add    esp, 8;
-	__asm        mov    new_mission_id, eax;
+	new_mission_id = S3FireAddToNearest(celloc.x, cptr);
 // LINE 1564:
 _T2e4:
 	__asm        cmp    new_mission_id, 0xFFFFFFFF;
@@ -2418,19 +2353,7 @@ _T5d6:
 	__asm        jmp    _T64;
 // LINE 1647:
 _T5e3:
-	__asm        lea    eax, cloc.x;
-	__asm        push   eax;
-	__asm        mov    eax, dist;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 8;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x70;
-	__asm        push   eax;
-	__asm        call   S3MissileGroundHit;
-	__asm        add    esp, 0x10;
-	__asm        mov    newdist, eax;
+	newdist = S3MissileGroundHit(cloc.x, dist, (this + 0x8), (this + 0x70));
 // LINE 1648:
 	__asm        cmp    newdist, 0;
 	__asm        jle    _T878;
@@ -2890,11 +2813,7 @@ _T91:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x78], eax;
 // LINE 1916:
-	__asm        mov    eax, cellPointer;
-	__asm        push   eax;
-	__asm        call   S3HeliHighestBuildAlt;
-	__asm        add    esp, 4;
-	__asm        mov    alt, eax;
+	alt = S3HeliHighestBuildAlt(cellPointer);
 // LINE 1917:
 	__asm        cmp    alt, 0x15E0000;
 	__asm        jge    _Tec;
@@ -3146,11 +3065,7 @@ _T142:
 	__asm        mov    eax, [ebp-0x68];
 	__asm        mov    cellPointer, eax;
 // LINE 2016:
-	__asm        mov    eax, cellPointer;
-	__asm        push   eax;
-	__asm        call   S3HeliHighestBuildAlt;
-	__asm        add    esp, 4;
-	__asm        mov    alt, eax;
+	alt = S3HeliHighestBuildAlt(cellPointer);
 // LINE 2017:
 	__asm        cmp    alt, 0x15E0000;
 	__asm        jge    _T16b;
@@ -3760,13 +3675,8 @@ void CreatePlaneInstance(int32_t instanceID) {
 // FUNCTION: COPTER_D 0x0052d6d9
 int32_t S3PlaneCrashWhenReady(long mission_id) {
 // LINE 2574:
-	__asm        mov    eax, mission_id;
-	__asm        push   eax;
-	__asm        call   PlaneClass::FindPlaneToCrash;
-	__asm        add    esp, 4;
-	__asm        jmp    __RETURN;
+	return PlaneClass::FindPlaneToCrash(mission_id);
 // LINE 2575:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052d6f5
@@ -4135,25 +4045,15 @@ _T95:
 // FUNCTION: COPTER_D 0x0052dadb
 int32_t S3PlaneMIFFLoad(void * __ptr32 miffReader) {
 // LINE 2773:
-	__asm        mov    eax, miffReader;
-	__asm        push   eax;
-	__asm        call   PlaneClass::MIFFLoad;
-	__asm        add    esp, 4;
-	__asm        jmp    __RETURN;
+	return PlaneClass::MIFFLoad(miffReader);
 // LINE 2774:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052daf7
 int32_t S3PlaneMIFFSave(void * __ptr32 miffWriter) {
 // LINE 2786:
-	__asm        mov    eax, miffWriter;
-	__asm        push   eax;
-	__asm        call   PlaneClass::MIFFSave;
-	__asm        add    esp, 4;
-	__asm        jmp    __RETURN;
+	return PlaneClass::MIFFSave(miffWriter);
 // LINE 2787:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052db13
@@ -4163,14 +4063,7 @@ int32_t PlaneClass::MIFFLoad(void * __ptr32 miffReader) {
 	/*bp-0xc*/   int32_t i;
 
 // LINE 2805:
-	__asm        push   0xBC;
-	__asm        push   0x62B6E8;
-	__asm        push   0x504C414E;
-	__asm        mov    eax, miffReader;
-	__asm        push   eax;
-	__asm        call   ReadFirstMIFFChunk;
-	__asm        add    esp, 0x10;
-	__asm        mov    ret, eax;
+	ret = ReadFirstMIFFChunk(0xbc, 0x62b6e8, 0x504c414e, miffReader);
 // LINE 2806:
 	__asm        cmp    ret, 0;
 	__asm        jne    _T38;
@@ -4281,14 +4174,7 @@ _T174:
 	__asm        call   PlaneClass::LinkToCell;
 // LINE 2840:
 _T192:
-	__asm        push   0xBC;
-	__asm        push   0x62B6E8;
-	__asm        push   0x504C414E;
-	__asm        mov    eax, miffReader;
-	__asm        push   eax;
-	__asm        call   ReadNextMIFFChunk;
-	__asm        add    esp, 0x10;
-	__asm        mov    ret, eax;
+	ret = ReadNextMIFFChunk(0xbc, 0x62b6e8, 0x504c414e, miffReader);
 // LINE 2842:
 	__asm        cmp    ret, 0;
 	__asm        jne    _T1cb;

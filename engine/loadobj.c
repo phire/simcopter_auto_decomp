@@ -888,9 +888,7 @@ _T5bf:
 _T602:
 	BSPIndex = 0x0;
 // LINE 688:
-	__asm        call   ReadTree;
-	__asm        mov    ecx, ObjectPtr;
-	__asm        mov    [ecx+0x34], eax;
+	ObjectPtr->bsptree = ReadTree();
 // LINE 689:
 	__asm        movsx  eax, treehdr.NNodes;
 	__asm        mov    ecx, eax;
@@ -970,25 +968,8 @@ int32_t VRGetDyObjAlt(int32_t obj, int32_t *dymat[4][4], /*packed*/ struct Point
 	__asm        call   0x004D2094;
 	__asm        add    esp, 0xC;
 // LINE 743:
-	__asm        push   0;
-	__asm        push   0;
-	__asm        mov    eax, dim;
-	__asm        push   eax;
-	__asm        lea    eax, flags;
-	__asm        push   eax;
-	__asm        mov    eax, tloc.z;
-	__asm        push   eax;
-	__asm        mov    eax, tloc.y;
-	__asm        push   eax;
-	__asm        mov    eax, tloc.x;
-	__asm        push   eax;
-	__asm        mov    eax, obj;
-	__asm        push   eax;
-	__asm        call   VRGetObjAlt;
-	__asm        add    esp, 0x20;
-	__asm        jmp    __RETURN;
+	return VRGetObjAlt(0x0, 0x0, dim, flags, tloc.z, tloc.y, tloc.x, obj);
 // LINE 744:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004d2b28

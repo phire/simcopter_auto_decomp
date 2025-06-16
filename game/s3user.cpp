@@ -260,8 +260,7 @@ void SetCurrentCitySettings(/*packed*/ struct tagCitySettings *newCitySettings) 
 	/*bp-0x4*/   /*packed*/ struct tagCitySettings *tempCitySettings;
 
 // LINE 157:
-	__asm        call   GetCurrentCitySettings;
-	__asm        mov    tempCitySettings, eax;
+	tempCitySettings = GetCurrentCitySettings();
 // LINE 158:
 	__asm        mov    edi, tempCitySettings;
 	__asm        mov    esi, newCitySettings;

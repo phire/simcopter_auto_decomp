@@ -5404,11 +5404,7 @@ void CGameApp::NotifyUserOfGraduation() {
 
 	__asm        mov    dword ptr [ebp-0x19C], 0;
 // LINE 1222:
-	__asm        push   0;
-	__asm        push   0x226;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x226);
 // LINE 1223:
 	__asm        push   0xFFF;
 	__asm        lea    eax, szString[0];
@@ -5449,11 +5445,7 @@ _Ta6:
 	__asm        mov    ecx, 0x604530;
 	__asm        call   MessageDisplayManager::AddNewMessage;
 // LINE 1225:
-	__asm        push   0;
-	__asm        push   0x227;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x227);
 // LINE 1226:
 	__asm        push   0xFFF;
 	__asm        lea    eax, szString[0];
@@ -6729,31 +6721,11 @@ _T1f1:
 	__asm        call   dword ptr [eax+0x1C];
 	__asm        mov    chPrefData, eax;
 // LINE 1522:
-	__asm        push   0;
-	__asm        mov    eax, nFullTitleID;
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullTitleID, eax;
+	nFullTitleID = LanguageManager::GetFullStringID(0x0, nFullTitleID);
 // LINE 1523:
-	__asm        push   0;
-	__asm        mov    eax, nFullFilterID;
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullFilterID, eax;
+	nFullFilterID = LanguageManager::GetFullStringID(0x0, nFullFilterID);
 // LINE 1524:
-	__asm        mov    eax, chPrefData;
-	__asm        push   eax;
-	__asm        mov    eax, nFullFilterID;
-	__asm        push   eax;
-	__asm        mov    eax, nFullTitleID;
-	__asm        push   eax;
-	__asm        lea    eax, szFileLoadPath[0];
-	__asm        push   eax;
-	__asm        call   GetLoadFilePath;
-	__asm        add    esp, 0x10;
-	__asm        mov    nResult, eax;
+	nResult = GetLoadFilePath(chPrefData, nFullFilterID, nFullTitleID, szFileLoadPath[0]);
 // LINE 1525:
 	__asm        cmp    nResult, 0;
 	__asm        je     _T278;

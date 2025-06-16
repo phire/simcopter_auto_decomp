@@ -939,16 +939,7 @@ long MIFF::ReadRecordHeader() {
 _T2e:
 	__asm        jmp    _T33;
 _T33:
-	__asm        push   4;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x118;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x108];
-	__asm        push   eax;
-	__asm        call   _read;
-	__asm        add    esp, 0xC;
-	__asm        mov    lBytesRead, eax;
+	lBytesRead = _read(0x4, (this + 0x118), this->Handle);
 // LINE 316:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x118], 0;
@@ -1619,16 +1610,7 @@ _T4c:
 _Tcc:
 	__asm        jmp    _Td1;
 _Td1:
-	__asm        push   0x1C;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x12C;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x108];
-	__asm        push   eax;
-	__asm        call   _write;
-	__asm        add    esp, 0xC;
-	__asm        mov    lReturnValue, eax;
+	lReturnValue = _write(0x1c, (this + 0x12c), this->Handle);
 // LINE 659:
 	__asm        cmp    lReturnValue, 0xFFFFFFFF;
 	__asm        je     _T105;
@@ -1679,16 +1661,7 @@ _T4c:
 // LINE 685:
 	__asm        jmp    _T70;
 _T70:
-	__asm        mov    eax, lAmountOfDataToWrite;
-	__asm        push   eax;
-	__asm        mov    eax, miffRecordToWrite;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x108];
-	__asm        push   eax;
-	__asm        call   _write;
-	__asm        add    esp, 0xC;
-	__asm        mov    lReturnValue, eax;
+	lReturnValue = _write(lAmountOfDataToWrite, miffRecordToWrite, this->Handle);
 // LINE 690:
 	__asm        cmp    lReturnValue, 0xFFFFFFFF;
 	__asm        je     _Ta1;
@@ -1759,16 +1732,7 @@ _T7f:
 _T9c:
 	__asm        jmp    _Ta1;
 _Ta1:
-	__asm        mov    eax, lDataLength;
-	__asm        push   eax;
-	__asm        mov    eax, ptrData;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x108];
-	__asm        push   eax;
-	__asm        call   _write;
-	__asm        add    esp, 0xC;
-	__asm        mov    lReturnValue, eax;
+	lReturnValue = _write(lDataLength, ptrData, this->Handle);
 // LINE 721:
 	__asm        cmp    lReturnValue, 0xFFFFFFFF;
 	__asm        je     _Td2;

@@ -73,11 +73,7 @@ void S3PrintScreen() {
 	/*bp-0x108*/ char * chPalette;
 
 // LINE 56:
-	__asm        mov    eax, G_respal;
-	__asm        push   eax;
-	__asm        call   VRGetPalFromResource;
-	__asm        add    esp, 4;
-	__asm        mov    chPalette, eax;
+	chPalette = VRGetPalFromResource(G_respal);
 // LINE 57:
 	__asm        mov    ax, S_ctr;
 	__asm        mov    [ebp-0x10C], ax;
@@ -155,12 +151,7 @@ _T4b:
 	__asm        mov    eax, xdim;
 	__asm        mov    pcx.bytes_per_line, ax;
 // LINE 99:
-	__asm        push   0x599444;
-	__asm        mov    eax, fname;
-	__asm        push   eax;
-	__asm        call   fopen;
-	__asm        add    esp, 8;
-	__asm        mov    hFileOut, eax;
+	hFileOut = fopen(0x599444, fname);
 // LINE 100:
 	__asm        cmp    hFileOut, 0;
 	__asm        je     __RETURN;

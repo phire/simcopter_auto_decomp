@@ -86,11 +86,7 @@ _T2e:
 	__asm        call   fseek;
 	__asm        add    esp, 0xC;
 // LINE 120:
-	__asm        mov    eax, filNum;
-	__asm        push   eax;
-	__asm        call   ftell;
-	__asm        add    esp, 4;
-	__asm        mov    lFileLength, eax;
+	lFileLength = ftell(filNum);
 // LINE 121:
 	__asm        push   0;
 	__asm        push   0;
@@ -135,11 +131,7 @@ _T92:
 	__asm        jmp    exit;
 // LINE 136:
 _Tba:
-	__asm        mov    eax, lChunkType;
-	__asm        push   eax;
-	__asm        call   swizzle_long;
-	__asm        add    esp, 4;
-	__asm        mov    lChunkType, eax;
+	lChunkType = swizzle_long(lChunkType);
 // LINE 138:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
@@ -157,11 +149,7 @@ _Tba:
 	__asm        jmp    exit;
 // LINE 142:
 _Tf1:
-	__asm        mov    eax, lChunkDataSize;
-	__asm        push   eax;
-	__asm        call   swizzle_long;
-	__asm        add    esp, 4;
-	__asm        mov    lChunkDataSize, eax;
+	lChunkDataSize = swizzle_long(lChunkDataSize);
 // LINE 143:
 	__asm        cmp    lChunkDataSize, 0;
 	__asm        jl     _T124;
@@ -285,11 +273,7 @@ _T71:
 	__asm        jmp    _T171;
 // LINE 203:
 _Ta8:
-	__asm        mov    eax, dp;
-	__asm        push   eax;
-	__asm        call   swizzle_long;
-	__asm        add    esp, 4;
-	__asm        mov    dp, eax;
+	dp = swizzle_long(dp);
 // LINE 206:
 	count = 0x4;
 // LINE 207:
@@ -308,11 +292,7 @@ _Ta8:
 	__asm        jmp    _T171;
 // LINE 210:
 _Te1:
-	__asm        mov    eax, size;
-	__asm        push   eax;
-	__asm        call   swizzle_long;
-	__asm        add    esp, 4;
-	__asm        mov    size, eax;
+	size = swizzle_long(size);
 // LINE 212:
 	__asm        push   0x59AFF8;
 	__asm        call   stol;
@@ -406,13 +386,8 @@ static long stol(char * tag) {
 // LINE 254:
 	s[3] = tag[3];
 // LINE 256:
-	__asm        mov    eax, buildval;
-	__asm        push   eax;
-	__asm        call   swizzle_long;
-	__asm        add    esp, 4;
-	__asm        jmp    __RETURN;
+	return swizzle_long(buildval);
 // LINE 257:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004c4a2b
@@ -421,12 +396,7 @@ long ValidateSCXSaveGameFile(char * szFilePath) {
 	/*bp-0xc*/   /*packed*/ struct _iobuf *fp;
 
 // LINE 273:
-	__asm        push   0x59B000;
-	__asm        mov    eax, szFilePath;
-	__asm        push   eax;
-	__asm        call   fopen;
-	__asm        add    esp, 8;
-	__asm        mov    fp, eax;
+	fp = fopen(0x59b000, szFilePath);
 // LINE 275:
 	__asm        push   0x59B004;
 	__asm        lea    eax, buf[0];
@@ -552,11 +522,7 @@ _Tb6:
 	__asm        jmp    badread;
 // LINE 324:
 _Ted:
-	__asm        mov    eax, dp;
-	__asm        push   eax;
-	__asm        call   swizzle_long;
-	__asm        add    esp, 4;
-	__asm        mov    dp, eax;
+	dp = swizzle_long(dp);
 // LINE 327:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
@@ -572,11 +538,7 @@ _Ted:
 	__asm        jmp    badread;
 // LINE 329:
 _T126:
-	__asm        mov    eax, size;
-	__asm        push   eax;
-	__asm        call   swizzle_long;
-	__asm        add    esp, 4;
-	__asm        mov    size, eax;
+	size = swizzle_long(size);
 // LINE 331:
 	__asm        push   0x59B014;
 	__asm        call   stol;
@@ -1437,11 +1399,7 @@ static unsigned short S2CityReadHeader(/*packed*/ struct _iobuf *filNum, long * 
 	return 0x0;
 // LINE 593:
 _T2d:
-	__asm        mov    eax, data;
-	__asm        push   eax;
-	__asm        call   swizzle_long;
-	__asm        add    esp, 4;
-	__asm        mov    data, eax;
+	data = swizzle_long(data);
 // LINE 596:
 	__asm        push   0x59B0BC;
 	__asm        call   stol;
@@ -1466,13 +1424,7 @@ _T5a:
 	return 0x0;
 // LINE 604:
 _T7e:
-	__asm        mov    eax, length;
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        call   swizzle_long;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, length;
-	__asm        mov    [ecx], eax;
+	length[0] = swizzle_long(length[0]);
 // LINE 607:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
@@ -1488,11 +1440,7 @@ _T7e:
 	return 0x0;
 // LINE 609:
 _Tb5:
-	__asm        mov    eax, data;
-	__asm        push   eax;
-	__asm        call   swizzle_long;
-	__asm        add    esp, 4;
-	__asm        mov    data, eax;
+	data = swizzle_long(data);
 // LINE 611:
 	__asm        push   0x59B0C4;
 	__asm        call   stol;
@@ -3251,11 +3199,7 @@ static unsigned short S2CityWriteName(/*packed*/ struct _iobuf *filNum, long hea
 // LINE 1075:
 	count = 0x4;
 // LINE 1076:
-	__asm        mov    eax, head;
-	__asm        push   eax;
-	__asm        call   swizzle_long;
-	__asm        add    esp, 4;
-	__asm        mov    head, eax;
+	head = swizzle_long(head);
 // LINE 1077:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
@@ -3276,11 +3220,7 @@ _T45:
 // LINE 1081:
 	size = 0x20;
 // LINE 1082:
-	__asm        mov    eax, size;
-	__asm        push   eax;
-	__asm        call   swizzle_long;
-	__asm        add    esp, 4;
-	__asm        mov    size, eax;
+	size = swizzle_long(size);
 // LINE 1083:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
@@ -3297,11 +3237,7 @@ _T45:
 	return 0x0;
 // LINE 1086:
 _T88:
-	__asm        mov    eax, size;
-	__asm        push   eax;
-	__asm        call   swizzle_long;
-	__asm        add    esp, 4;
-	__asm        mov    size, eax;
+	size = swizzle_long(size);
 // LINE 1089:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
@@ -3332,11 +3268,7 @@ static unsigned short S2CityGameWriteUncompressed(/*packed*/ struct _iobuf *filN
 // LINE 1114:
 	count = 0x4;
 // LINE 1115:
-	__asm        mov    eax, head;
-	__asm        push   eax;
-	__asm        call   swizzle_long;
-	__asm        add    esp, 4;
-	__asm        mov    head, eax;
+	head = swizzle_long(head);
 // LINE 1116:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
@@ -3357,11 +3289,7 @@ _T45:
 // LINE 1120:
 	size = dataSize;
 // LINE 1121:
-	__asm        mov    eax, size;
-	__asm        push   eax;
-	__asm        call   swizzle_long;
-	__asm        add    esp, 4;
-	__asm        mov    size, eax;
+	size = swizzle_long(size);
 // LINE 1122:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
@@ -3378,11 +3306,7 @@ _T45:
 	return 0x0;
 // LINE 1125:
 _T87:
-	__asm        mov    eax, size;
-	__asm        push   eax;
-	__asm        call   swizzle_long;
-	__asm        add    esp, 4;
-	__asm        mov    size, eax;
+	size = swizzle_long(size);
 // LINE 1126:
 	__asm        mov    eax, size;
 	__asm        push   eax;
@@ -3446,16 +3370,9 @@ static unsigned short S2CityWriteHeader(/*packed*/ struct _iobuf *filNum, long l
 _T29:
 	count = 0x4;
 // LINE 1163:
-	__asm        push   0x59B1A0;
-	__asm        call   stol;
-	__asm        add    esp, 4;
-	__asm        mov    data, eax;
+	data = stol(0x59b1a0);
 // LINE 1164:
-	__asm        mov    eax, data;
-	__asm        push   eax;
-	__asm        call   swizzle_long;
-	__asm        add    esp, 4;
-	__asm        mov    data, eax;
+	data = swizzle_long(data);
 // LINE 1166:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
@@ -3474,11 +3391,7 @@ _T29:
 _T75:
 	count = 0x4;
 // LINE 1170:
-	__asm        mov    eax, length;
-	__asm        push   eax;
-	__asm        call   swizzle_long;
-	__asm        add    esp, 4;
-	__asm        mov    length, eax;
+	length = swizzle_long(length);
 // LINE 1171:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
@@ -3497,16 +3410,9 @@ _T75:
 _Tb1:
 	count = 0x4;
 // LINE 1175:
-	__asm        push   0x59B1A8;
-	__asm        call   stol;
-	__asm        add    esp, 4;
-	__asm        mov    data, eax;
+	data = stol(0x59b1a8);
 // LINE 1176:
-	__asm        mov    eax, data;
-	__asm        push   eax;
-	__asm        call   swizzle_long;
-	__asm        add    esp, 4;
-	__asm        mov    data, eax;
+	data = swizzle_long(data);
 // LINE 1177:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
@@ -3766,11 +3672,7 @@ _T266:
 // LINE 1259:
 	count = 0x4;
 // LINE 1260:
-	__asm        mov    eax, head;
-	__asm        push   eax;
-	__asm        call   swizzle_long;
-	__asm        add    esp, 4;
-	__asm        mov    head, eax;
+	head = swizzle_long(head);
 // LINE 1262:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
@@ -3789,11 +3691,7 @@ _T266:
 _T2ab:
 	count = 0x4;
 // LINE 1267:
-	__asm        mov    eax, tp;
-	__asm        push   eax;
-	__asm        call   swizzle_long;
-	__asm        add    esp, 4;
-	__asm        mov    tp, eax;
+	tp = swizzle_long(tp);
 // LINE 1268:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
@@ -3810,11 +3708,7 @@ _T2ab:
 	__asm        jmp    BadCompWrite;
 // LINE 1272:
 _T2e4:
-	__asm        mov    eax, tp;
-	__asm        push   eax;
-	__asm        call   swizzle_long;
-	__asm        add    esp, 4;
-	__asm        mov    tp, eax;
+	tp = swizzle_long(tp);
 // LINE 1274:
 	__asm        mov    eax, filNum;
 	__asm        push   eax;
@@ -4881,20 +4775,8 @@ _Te47:
 	__asm        jmp    _Te43;
 // LINE 1479:
 _Te6c:
-	__asm        push   0x12C0;
-	__asm        mov    eax, MiscInfo;
-	__asm        push   eax;
-	__asm        push   0x59B1E4;
-	__asm        call   stol;
-	__asm        add    esp, 4;
-	__asm        push   eax;
-	__asm        mov    eax, filNum;
-	__asm        push   eax;
-	__asm        call   S2CityGameWriteCompressed;
-	__asm        add    esp, 0x10;
-	__asm        jmp    __RETURN;
+	return S2CityGameWriteCompressed(0x12c0, MiscInfo, 0x59b1e4, stol(0x12c0, MiscInfo, 0x59b1e4), filNum);
 // LINE 1480:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004c81c9
@@ -4924,13 +4806,7 @@ _T2d:
 // LINE 1505:
 	lval = lptr[i];
 // LINE 1506:
-	__asm        mov    eax, lval;
-	__asm        push   eax;
-	__asm        call   swizzle_long;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, i;
-	__asm        mov    edx, lptr;
-	__asm        mov    [edx+ecx*4], eax;
+	lptr[i] = swizzle_long(lval);
 // LINE 1507:
 	__asm        jmp    _T2a;
 // LINE 1509:
@@ -5015,13 +4891,7 @@ _T2a:
 // LINE 1563:
 	sval = sptr[i];
 // LINE 1564:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(sval);
-	__asm        push   eax;
-	__asm        call   swizzle_short;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, i;
-	__asm        mov    edx, sptr;
-	__asm        mov    [edx+ecx*2], ax;
+	sptr[i] = swizzle_short(reinterpret_cast<uint32_t>(sval));
 // LINE 1565:
 	__asm        jmp    _T27;
 // LINE 1567:
@@ -5272,11 +5142,7 @@ short S2CityAlloc() {
 // LINE 1801:
 	poolsize += 0x40;
 // LINE 1805:
-	__asm        mov    eax, poolsize;
-	__asm        push   eax;
-	__asm        call   S2AllocPool;
-	__asm        add    esp, 4;
-	__asm        mov    G_citymempool, eax;
+	G_citymempool = S2AllocPool(poolsize);
 // LINE 1811:
 	__asm        push   0xD00;
 	__asm        push   0x59B1EC;
@@ -6770,12 +6636,7 @@ short check_file_exist(char * filename) {
 	/*bp-0x4*/   /*packed*/ struct _iobuf *fileNum;
 
 // LINE 2321:
-	__asm        push   0x59B3A4;
-	__asm        mov    eax, filename;
-	__asm        push   eax;
-	__asm        call   fopen;
-	__asm        add    esp, 8;
-	__asm        mov    fileNum, eax;
+	fileNum = fopen(0x59b3a4, filename);
 // LINE 2322:
 	__asm        cmp    fileNum, 0;
 	__asm        jne    _T2f;

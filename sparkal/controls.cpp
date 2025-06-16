@@ -1511,13 +1511,7 @@ void TextWindow::LoadStrings() {
 	/*bp-0x4*/   int32_t nFullStringID;
 
 // LINE 152:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x80];
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, this->nWindowTitleTextID);
 // LINE 153:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x1004];
@@ -12589,12 +12583,7 @@ _T6d:
 	__asm        jmp    _T79;
 // LINE 2434:
 _T79:
-	__asm        push   0;
-	__asm        mov    eax, lResourceIndex;
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, lResourceIndex);
 // LINE 2435:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x102C];

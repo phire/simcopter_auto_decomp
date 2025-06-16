@@ -1261,12 +1261,7 @@ _T195:
 _T1b8:
 	__asm        jmp    _T1bd;
 _T1bd:
-	__asm        mov    eax, fileImage;
-	__asm        mov    eax, [eax+0x108];
-	__asm        push   eax;
-	__asm        call   _tell;
-	__asm        add    esp, 4;
-	__asm        mov    nPosition, eax;
+	nPosition = _tell(fileImage->Handle);
 // LINE 330:
 	__asm        mov    ecx, fileImage;
 	__asm        call   PFile::Length;
@@ -1299,12 +1294,7 @@ _T1fd:
 _T234:
 	__asm        jmp    _T239;
 _T239:
-	__asm        mov    eax, fileImage;
-	__asm        mov    eax, [eax+0x108];
-	__asm        push   eax;
-	__asm        call   _tell;
-	__asm        add    esp, 4;
-	__asm        mov    nPosition, eax;
+	nPosition = _tell(fileImage->Handle);
 // LINE 340:
 	__asm        mov    ecx, fileImage;
 	__asm        call   PFile::Length;
@@ -1331,12 +1321,7 @@ _T239:
 // LINE 351:
 	__asm        jmp    _T2ab;
 _T2ab:
-	__asm        mov    eax, fileImage;
-	__asm        mov    eax, [eax+0x108];
-	__asm        push   eax;
-	__asm        call   _tell;
-	__asm        add    esp, 4;
-	__asm        mov    nPosition, eax;
+	nPosition = _tell(fileImage->Handle);
 // LINE 352:
 	__asm        mov    i, 0;
 	__asm        jmp    _T2cf;
@@ -1370,12 +1355,7 @@ _T310:
 // LINE 355:
 	__asm        jmp    _T320;
 _T320:
-	__asm        mov    eax, fileImage;
-	__asm        mov    eax, [eax+0x108];
-	__asm        push   eax;
-	__asm        call   _tell;
-	__asm        add    esp, 4;
-	__asm        mov    nPosition, eax;
+	nPosition = _tell(fileImage->Handle);
 // LINE 356:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, this;
@@ -1403,12 +1383,7 @@ _T34a:
 _T37b:
 	__asm        jmp    _T380;
 _T380:
-	__asm        mov    eax, fileImage;
-	__asm        mov    eax, [eax+0x108];
-	__asm        push   eax;
-	__asm        call   _tell;
-	__asm        add    esp, 4;
-	__asm        mov    nPosition, eax;
+	nPosition = _tell(fileImage->Handle);
 // LINE 363:
 	__asm        mov    ecx, fileImage;
 	__asm        call   PFile::Close;
@@ -3627,19 +3602,9 @@ _T141:
 	/*bp-0x48*/  int32_t yinc2;
 	/*bp-0x4c*/  int32_t dinc2;
 _T146:
-	__asm        mov    eax, nEndX;
-	__asm        sub    eax, nStartX;
-	__asm        push   eax;
-	__asm        call   abs;
-	__asm        add    esp, 4;
-	__asm        mov    deltax, eax;
+	deltax = abs((nEndX - nStartX));
 // LINE 1509:
-	__asm        mov    eax, nEndY;
-	__asm        sub    eax, nStartY;
-	__asm        push   eax;
-	__asm        call   abs;
-	__asm        add    esp, 4;
-	__asm        mov    deltay, eax;
+	deltay = abs((nEndY - nStartY));
 // LINE 1511:
 	__asm        mov    eax, deltax;
 	__asm        cmp    deltay, eax;
@@ -4251,19 +4216,9 @@ _T4ac:
 	/*bp-0x48*/  int32_t yinc2;
 	/*bp-0x4c*/  int32_t dinc2;
 _T4b1:
-	__asm        mov    eax, nEndX;
-	__asm        sub    eax, nStartX;
-	__asm        push   eax;
-	__asm        call   abs;
-	__asm        add    esp, 4;
-	__asm        mov    deltax, eax;
+	deltax = abs((nEndX - nStartX));
 // LINE 1682:
-	__asm        mov    eax, nEndY;
-	__asm        sub    eax, nStartY;
-	__asm        push   eax;
-	__asm        call   abs;
-	__asm        add    esp, 4;
-	__asm        mov    deltay, eax;
+	deltay = abs((nEndY - nStartY));
 // LINE 1684:
 	__asm        mov    eax, deltax;
 	__asm        cmp    deltay, eax;

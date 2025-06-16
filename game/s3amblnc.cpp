@@ -528,21 +528,10 @@ public:
 // FUNCTION: COPTER_D 0x005358a0
 int32_t CreateAmbulanceInstance(int32_t instanceID) {
 // LINE 77:
-	__asm        mov    eax, instanceID;
-	__asm        push   eax;
-	__asm        call   AmbulanceClass::CreateInstance;
-	__asm        add    esp, 4;
-	__asm        test   eax, eax;
-	__asm        je     _T24;
-
-	__asm        mov    eax, 1;
-	__asm        jmp    _T26;
 _T24:
-	__asm        xor    eax, eax;
 _T26:
-	__asm        jmp    __RETURN;
+	return (AmbulanceClass::CreateInstance(instanceID) == 0x0);
 // LINE 78:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x005358d0
@@ -995,11 +984,7 @@ _T204:
 // LINE 357:
 	vec.z = (ViewState.world_pos.z - this->autoDynomitor.loc.z);
 // LINE 358:
-	__asm        lea    eax, vec.x;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
-	__asm        mov    dist, eax;
+	dist = MTNormalize(vec.x);
 // LINE 359:
 	__asm        mov    eax, AutomobileClass::ambSirenDist;
 	__asm        cmp    dist, eax;

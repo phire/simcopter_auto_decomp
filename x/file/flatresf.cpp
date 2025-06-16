@@ -406,13 +406,7 @@ _T222:
 // LINE 132:
 	mapSize -= 0x2;
 // LINE 134:
-	__asm        push   0;
-	__asm        mov    eax, mapSize;
-	__asm        push   eax;
-	__asm        call   Memory::HAlloc;
-	__asm        add    esp, 8;
-	__asm        mov    ecx, newMap;
-	__asm        mov    [ecx], eax;
+	newMap-> = Memory::HAlloc(0x0, mapSize);
 // LINE 135:
 	__asm        call   Memory::Error;
 	__asm        mov    err, eax;
@@ -424,12 +418,7 @@ _T222:
 	__asm        jmp    error;
 // LINE 136:
 _T25b:
-	__asm        mov    eax, newMap;
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        call   Memory::HLock;
-	__asm        add    esp, 4;
-	__asm        mov    resMapPtr, eax;
+	resMapPtr = Memory::HLock(newMap->);
 // LINE 137:
 	__asm        call   Memory::Error;
 	__asm        mov    err, eax;
@@ -529,12 +518,7 @@ long FlatResFile::Open(char * name) {
 	__asm        jmp    _T5f;
 // LINE 167:
 _T4a:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   ResMap::Get;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x114], eax;
+	this->fError = ResMap::Get(this);
 // LINE 170:
 _T5f:
 	return this->fError;
@@ -562,12 +546,7 @@ long FlatResFile::Open(unsigned char * name) {
 	__asm        jmp    _T5f;
 // LINE 188:
 _T4a:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   ResMap::Get;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x114], eax;
+	this->fError = ResMap::Get(this);
 // LINE 191:
 _T5f:
 	return this->fError;
@@ -619,8 +598,7 @@ short FlatResFile::CheckForLeaks() {
 	/*bp-0x4*/   short total;
 
 // LINE 260:
-	__asm        call   ResMap::CheckForLeaks;
-	__asm        mov    total, ax;
+	total = ResMap::CheckForLeaks();
 // LINE 261:
 	__asm        call   FlatFile::CheckForLeaks;
 	__asm        movsx  eax, ax;
@@ -1687,17 +1665,12 @@ _T76:
 	__asm        jmp    __RETURN;
 // LINE 771:
 _Ta7:
-	__asm        mov    eax, newMap;
-	__asm        push   eax;
-	__asm        call   Memory::Stash;
-	__asm        add    esp, 4;
-	__asm        mov    resPtr, eax;
+	resPtr = Memory::Stash(newMap);
 // LINE 772:
 	__asm        cmp    resPtr, 0;
 	__asm        jne    _Tca;
 
-	__asm        call   Memory::Error;
-	__asm        jmp    __RETURN;
+	return Memory::Error();
 // LINE 774:
 _Tca:
 	__asm        push   0x20;

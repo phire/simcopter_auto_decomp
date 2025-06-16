@@ -1660,10 +1660,7 @@ _T5e:
 // Block start:
 	/*bp-0x4*/   char * szNewStringPointer;
 	/*bp-0x8*/   /*packed*/ struct tagLogString *newLogString;
-	__asm        push   0x14;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    newLogString, eax;
+	newLogString = operator new(0x14);
 // LINE 229:
 	__asm        mov    edi, newLogString;
 	__asm        mov    esi, logData;
@@ -1771,10 +1768,7 @@ _T179:
 // LINE 236:
 // Block start:
 	/*bp-0xc*/   /*packed*/ struct tagLogMissionEvent *newLogMissionEvent;
-	__asm        push   0x14;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    newLogMissionEvent, eax;
+	newLogMissionEvent = operator new(0x14);
 // LINE 237:
 	__asm        mov    edi, newLogMissionEvent;
 	__asm        mov    esi, logData;
@@ -1845,10 +1839,7 @@ _T24c:
 // LINE 241:
 // Block start:
 	/*bp-0x10*/  /*packed*/ struct tagLogCityEnterExit *newLogCityEnterExit;
-	__asm        push   0x30;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    newLogCityEnterExit, eax;
+	newLogCityEnterExit = operator new(0x30);
 // LINE 242:
 	__asm        mov    edi, newLogCityEnterExit;
 	__asm        mov    esi, logData;
@@ -1916,10 +1907,7 @@ _T329:
 // Block start:
 	/*bp-0x14*/  /*packed*/ struct tagLogBase *newLogBase;
 _T32e:
-	__asm        push   0xC;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    newLogBase, eax;
+	newLogBase = operator new(0xc);
 // LINE 247:
 	__asm        mov    eax, logData;
 	__asm        mov    ecx, newLogBase;
@@ -3637,18 +3625,9 @@ _T3fb:
 	/*bp-0x25c*/ const /*packed*/ struct tagLogMissionEvent *lME;
 	lME = logData;
 // LINE 387:
-	__asm        mov    eax, lME;
-	__asm        push   eax;
-	__asm        call   LogManager::GetStringIDFromLogEvent;
-	__asm        add    esp, 4;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LogManager::GetStringIDFromLogEvent(lME);
 // LINE 388:
-	__asm        push   0;
-	__asm        mov    eax, nFullStringID;
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, nFullStringID);
 // LINE 389:
 	__asm        push   0xFFF;
 	__asm        lea    eax, szBuffer[0];
@@ -3714,20 +3693,12 @@ _T4ed:
 	__asm        cmp    dword ptr [eax+0xC], 0;
 	__asm        jne    _T52c;
 // LINE 394:
-	__asm        push   0;
-	__asm        push   0x216;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x216);
 // LINE 395:
 	__asm        jmp    _T541;
 // LINE 396:
 _T52c:
-	__asm        push   0;
-	__asm        push   0x217;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x217);
 // LINE 397:
 _T541:
 	__asm        push   0xFFF;
@@ -3793,11 +3764,7 @@ _T5e1:
 	__asm        jmp    _T6de;
 // LINE 401:
 _T606:
-	__asm        push   0;
-	__asm        push   0x215;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x215);
 // LINE 402:
 	__asm        push   0xFFF;
 	__asm        lea    eax, szBuffer1[0];

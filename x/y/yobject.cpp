@@ -3376,13 +3376,8 @@ _T205:
 // FUNCTION: COPTER_D 0x0054454e
 unsigned short GetOutOfHeli(long personID) {
 // LINE 167:
-	__asm        mov    eax, personID;
-	__asm        push   eax;
-	__asm        call   cYObject::GetOutOfHeli;
-	__asm        add    esp, 4;
-	__asm        jmp    __RETURN;
+	return cYObject::GetOutOfHeli(personID);
 // LINE 168:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0054456a
@@ -4066,30 +4061,9 @@ _T1ce:
 // LINE 273:
 	newloc.z += offsetz;
 // LINE 278:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x34];
-	__asm        push   eax;
-	__asm        lea    eax, offset.x;
-	__asm        push   eax;
-	__asm        mov    eax, master;
-	__asm        add    eax, 0x24;
-	__asm        push   eax;
-	__asm        mov    eax, master;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   VRGetDyObjAlt;
-	__asm        add    esp, 0x10;
-	__asm        mov    objheight, eax;
+	objheight = VRGetDyObjAlt(this->fDyn.radius, offset.x, (master + 0x24), master->mesh);
 // LINE 280:
-	__asm        mov    eax, newloc.z;
-	__asm        push   eax;
-	__asm        mov    eax, newloc.y;
-	__asm        push   eax;
-	__asm        mov    eax, newloc.x;
-	__asm        push   eax;
-	__asm        call   S3PUtilsGetAlt;
-	__asm        add    esp, 0xC;
-	__asm        mov    groundheight, eax;
+	groundheight = S3PUtilsGetAlt(newloc.z, newloc.y, newloc.x);
 // LINE 282:
 	newloc.y = ((groundheight + objheight) + 0x30000);
 // LINE 284:
@@ -5282,21 +5256,9 @@ _Tbc0:
 // LINE 395:
 // Block end:
 _Tc1c:
-	__asm        mov    eax, centcelly;
-	__asm        push   eax;
-	__asm        mov    eax, centcellx;
-	__asm        push   eax;
-	__asm        call   cYObject::GetLocType;
-	__asm        add    esp, 8;
-	__asm        mov    cellcenterloctype, eax;
+	cellcenterloctype = cYObject::GetLocType(centcelly, centcellx);
 // LINE 396:
-	__asm        mov    eax, offcelly;
-	__asm        push   eax;
-	__asm        mov    eax, offcellx;
-	__asm        push   eax;
-	__asm        call   cYObject::GetLocType;
-	__asm        add    esp, 8;
-	__asm        mov    celloffsetloctype, eax;
+	celloffsetloctype = cYObject::GetLocType(offcelly, offcellx);
 // LINE 397:
 	__asm        mov    eax, cellcenterloctype;
 	__asm        cmp    celloffsetloctype, eax;
@@ -5921,11 +5883,7 @@ int32_t IsThisABadGuy(/*unpacked*/ struct _DYOBJ_INST *guy) {
 	/*bp-0x8*/   enum MissionSupertype mt;
 
 // LINE 497:
-	__asm        mov    eax, guy;
-	__asm        push   eax;
-	__asm        call   cYObject::GetObjectA;
-	__asm        add    esp, 4;
-	__asm        mov    obj, eax;
+	obj = cYObject::GetObjectA(guy);
 // LINE 498:
 	__asm        mov    eax, obj;
 	__asm        movsx  eax, word ptr [eax+0xDA];
@@ -6590,11 +6548,7 @@ _Te7:
 	return 0x0;
 // LINE 683:
 _Tee:
-	__asm        mov    eax, dyobj;
-	__asm        push   eax;
-	__asm        call   S3HeliGetDataByDyObj;
-	__asm        add    esp, 4;
-	__asm        mov    hd, eax;
+	hd = S3HeliGetDataByDyObj(dyobj);
 // LINE 684:
 	__asm        cmp    hd, 0;
 	__asm        jne    _T10e;
@@ -6985,11 +6939,7 @@ _Tbb:
 	__asm        jmp    _Tc8;
 // LINE 734:
 _Tc8:
-	__asm        movsx  eax, id;
-	__asm        push   eax;
-	__asm        call   S3ObjGetLandingZone;
-	__asm        add    esp, 4;
-	__asm        mov    li, eax;
+	li = S3ObjGetLandingZone(reinterpret_cast<int16_t>(id));
 // LINE 735:
 	__asm        cmp    li, 0;
 	__asm        jne    _Tfe;
@@ -7158,23 +7108,7 @@ _T135:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 763:
-	__asm        lea    eax, loc.x;
-	__asm        push   eax;
-	__asm        mov    eax, onTopOf;
-	__asm        push   eax;
-	__asm        movsx  eax, missionid;
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(celly);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(cellx);
-	__asm        push   eax;
-	__asm        mov    eax, missiontype;
-	__asm        push   eax;
-	__asm        mov    eax, persontype;
-	__asm        push   eax;
-	__asm        call   StartPerson;
-	__asm        add    esp, 0x1C;
-	__asm        mov    ret, ax;
+	ret = StartPerson(loc.x, onTopOf, reinterpret_cast<int16_t>(missionid), reinterpret_cast<uint32_t>(celly), reinterpret_cast<uint32_t>(cellx), missiontype, persontype);
 // LINE 764:
 	__asm        movsx  eax, ret;
 	__asm        cmp    eax, 0xFFFFFFFF;
@@ -7454,17 +7388,10 @@ _T1e2:
 	__asm        test   eax, eax;
 	__asm        je     _T23a;
 
-	__asm        push   0xA;
-	__asm        call   SRand;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, newperson;
-	__asm        mov    [ecx+0xF0], ax;
+	newperson->fData[16] = SRand(0xa);
 // LINE 820:
 _T23a:
-	__asm        push   0xA;
-	__asm        call   SRand;
-	__asm        add    esp, 4;
-	__asm        mov    fieldershift, ax;
+	fieldershift = SRand(0xa);
 // LINE 822:
 	__asm        call   cYObject::GetSleepingPerson;
 	__asm        mov    newperson, eax;
@@ -8083,8 +8010,7 @@ void MakeAllPeople() {
 // LINE 921:
 	__asm        call   cYObject::MakePlebes;
 // LINE 923:
-	__asm        call   cAvatar::MakeAvatar;
-	__asm        mov    gAvatar, eax;
+	gAvatar = cAvatar::MakeAvatar();
 // LINE 926:
 	return;
 }
@@ -10746,8 +10672,7 @@ short StartPerson(enum PersonType persontype, enum MissionType mission, short ce
 // LINE 1466:
 	ret = 0xffff;
 // LINE 1467:
-	__asm        call   cYObject::GetSleepingPerson;
-	__asm        mov    newperson, eax;
+	newperson = cYObject::GetSleepingPerson();
 // LINE 1470:
 	__asm        cmp    newperson, 0;
 	__asm        je     _T5e;
@@ -11174,11 +11099,7 @@ _Tbd:
 // LINE 1546:
 // Block start:
 	/*bp-0xc*/   /*unpacked*/ struct _LZ_INFO *li;
-	__asm        movsx  eax, scurkID;
-	__asm        push   eax;
-	__asm        call   S3ObjGetLandingZone;
-	__asm        add    esp, 4;
-	__asm        mov    li, eax;
+	li = S3ObjGetLandingZone(reinterpret_cast<int16_t>(scurkID));
 // LINE 1547:
 	__asm        cmp    li, 0;
 	__asm        je     _Tf0;
@@ -11196,13 +11117,7 @@ _Tf0:
 	/*bp-0x10*/  enum cYObject::LocationType loctype;
 	/*bp-0x14*/  short count;
 _Tfb:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(celly);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(cellx);
-	__asm        push   eax;
-	__asm        call   cYObject::GetLocType;
-	__asm        add    esp, 8;
-	__asm        mov    loctype, eax;
+	loctype = cYObject::GetLocType(reinterpret_cast<uint32_t>(celly), reinterpret_cast<uint32_t>(cellx));
 // LINE 1551:
 	__asm        mov    count, 0;
 	__asm        jmp    _T11d;
@@ -11406,13 +11321,7 @@ _T26a:
 // LINE 1589:
 // Block start:
 	/*bp-0x18*/  enum cYObject::LocationType loctype;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(celly);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(cellx);
-	__asm        push   eax;
-	__asm        call   cYObject::GetLocType;
-	__asm        add    esp, 8;
-	__asm        mov    loctype, eax;
+	loctype = cYObject::GetLocType(reinterpret_cast<uint32_t>(celly), reinterpret_cast<uint32_t>(cellx));
 // LINE 1591:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(celly);
 	__asm        push   eax;
@@ -11751,13 +11660,7 @@ _T673:
 // LINE 1650:
 // Block start:
 	/*bp-0x2c*/  enum cYObject::LocationType loctype;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(celly);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(cellx);
-	__asm        push   eax;
-	__asm        call   cYObject::GetLocType;
-	__asm        add    esp, 8;
-	__asm        mov    loctype, eax;
+	loctype = cYObject::GetLocType(reinterpret_cast<uint32_t>(celly), reinterpret_cast<uint32_t>(cellx));
 // LINE 1653:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(celly);
 	__asm        push   eax;
@@ -11832,13 +11735,7 @@ _T749:
 // LINE 1663:
 // Block start:
 	/*bp-0x58*/  enum cYObject::LocationType loctype2;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(destcelly);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(destcellx);
-	__asm        push   eax;
-	__asm        call   cYObject::GetLocType;
-	__asm        add    esp, 8;
-	__asm        mov    loctype2, eax;
+	loctype2 = cYObject::GetLocType(reinterpret_cast<uint32_t>(destcelly), reinterpret_cast<uint32_t>(destcellx));
 // LINE 1665:
 	__asm        jmp    _T76e;
 _T76e:
@@ -13724,16 +13621,7 @@ _T446:
 	__asm        call   S3DSSetFile;
 	__asm        add    esp, 8;
 // LINE 2013:
-	__asm        mov    eax, flags;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x3C;
-	__asm        push   eax;
-	__asm        movsx  eax, actualSoundChannel;
-	__asm        push   eax;
-	__asm        call   S3DSPlay;
-	__asm        add    esp, 0xC;
-	__asm        mov    success, eax;
+	success = S3DSPlay(flags, (this + 0x3c), reinterpret_cast<int16_t>(actualSoundChannel));
 // LINE 2014:
 	__asm        movsx  eax, freqadj;
 	__asm        push   eax;
@@ -15008,15 +14896,7 @@ unsigned short cYObject::GetNeutralLoc(int32_t * cellx, int32_t * celly, int32_t
 	__asm        mov    ecx, celly;
 	__asm        mov    [ecx], eax;
 // LINE 2246:
-	__asm        mov    eax, celly;
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        mov    eax, cellx;
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        call   cYObject::GetLocType;
-	__asm        add    esp, 8;
-	__asm        mov    loctype, eax;
+	loctype = cYObject::GetLocType(celly[0], cellx[0]);
 // LINE 2251:
 	__asm        mov    word ptr [ebp-0x68], 0;
 	__asm        jmp    _T8a;
@@ -15765,12 +15645,7 @@ _T1d3:
 // LINE 2330:
 // Block end:
 _T23d:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x3C;
-	__asm        push   eax;
-	__asm        call   S3PersonGetLandedHeli;
-	__asm        add    esp, 4;
-	__asm        mov    hd, eax;
+	hd = S3PersonGetLandedHeli((this + 0x3c));
 // LINE 2332:
 	__asm        cmp    hd, 0;
 	__asm        je     _T41f;
@@ -15926,11 +15801,7 @@ _T41f:
 // LINE 2363:
 // Block start:
 	/*bp-0x2c*/  /*unpacked*/ class cYObject *person;
-	__asm        mov    eax, moveinfo.dyBlock;
-	__asm        push   eax;
-	__asm        call   cYObject::GetObjectA;
-	__asm        add    esp, 4;
-	__asm        mov    person, eax;
+	person = cYObject::GetObjectA(moveinfo.dyBlock);
 // LINE 2364:
 	__asm        cmp    person, 0;
 	__asm        jne    _T45e;
@@ -17788,14 +17659,7 @@ void cYObject::SetCellAndLoc(/*unpacked*/ struct Point3d loc, unsigned char x, u
 	__asm        sar    eax, 0x16;
 	__asm        mov    loccelly, ax;
 // LINE 2549:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(loccelly);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(loccellx);
-	__asm        push   eax;
-	__asm        call   cYObject::GetLocType;
-	__asm        add    esp, 8;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xAC], eax;
+	this->fCurLocType = cYObject::GetLocType(reinterpret_cast<uint32_t>(loccelly), reinterpret_cast<uint32_t>(loccellx));
 // LINE 2551:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0x48;
@@ -18544,11 +18408,7 @@ _T57d:
 	__asm        cmp    eax, 0xFFFFFFFF;
 	__asm        jne    _T5a4;
 // LINE 2732:
-	__asm        push   0xE;
-	__asm        call   SRand;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xF0], ax;
+	this->fData[16] = SRand(0xe);
 // LINE 2735:
 _T5a4:
 	return;
@@ -19026,12 +18886,7 @@ void cYObject::InitForEngine(short id) {
 	/*bp-0x24*/  /*unpacked*/ struct VRFaceInfo finfo; // 0x20 bytes
 
 // LINE 2845:
-	__asm        push   0x16;
-	__asm        push   1;
-	__asm        call   VRObjCreatePoint;
-	__asm        add    esp, 8;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x2C], eax;
+	this->fDyn.mesh = VRObjCreatePoint(0x16, 0x1);
 // LINE 2846:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x2C], 0;
@@ -19378,11 +19233,7 @@ void cYObject::Reset() {
 // LINE 2945:
 	this->fData[2] = 0x6;
 // LINE 2946:
-	__asm        push   8;
-	__asm        call   SRand;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xD0], ax;
+	this->fData[0] = SRand(0x8);
 // LINE 2947:
 	__asm        push   0xFFFFFFFF;
 	__asm        mov    ecx, this;
@@ -20302,14 +20153,7 @@ int32_t S3PUtilsGetAlt(int32_t x, int32_t y, int32_t z) {
 	__asm        cmp    cptr, 0;
 	__asm        jne    _T59;
 
-	__asm        push   0;
-	__asm        mov    eax, z;
-	__asm        push   eax;
-	__asm        mov    eax, x;
-	__asm        push   eax;
-	__asm        call   S3TerrPrecisionAlt;
-	__asm        add    esp, 0xC;
-	__asm        jmp    __RETURN;
+	return S3TerrPrecisionAlt(0x0, z, x);
 // LINE 3163:
 _T59:
 	__asm        mov    eax, x;
@@ -20345,23 +20189,7 @@ _Ta6:
 // LINE 3172:
 	color = 0x200;
 // LINE 3173:
-	__asm        push   0;
-	__asm        push   0;
-	__asm        push   0;
-	__asm        lea    eax, color;
-	__asm        push   eax;
-	__asm        mov    eax, normz;
-	__asm        push   eax;
-	__asm        mov    eax, normy;
-	__asm        push   eax;
-	__asm        mov    eax, normx;
-	__asm        push   eax;
-	__asm        mov    eax, stobj;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        call   VRGetObjAlt;
-	__asm        add    esp, 0x20;
-	__asm        mov    objy, eax;
+	objy = VRGetObjAlt(0x0, 0x0, 0x0, color, normz, normy, normx, stobj->mesh);
 // LINE 3174:
 	__asm        mov    eax, objy;
 	__asm        cmp    maxobjy, eax;
@@ -20378,14 +20206,7 @@ _Tfe:
 	__asm        cmp    maxobjy, 0;
 	__asm        jne    _T122;
 // LINE 3183:
-	__asm        push   0;
-	__asm        mov    eax, z;
-	__asm        push   eax;
-	__asm        mov    eax, x;
-	__asm        push   eax;
-	__asm        call   S3TerrPrecisionAlt;
-	__asm        add    esp, 0xC;
-	__asm        mov    alt, eax;
+	alt = S3TerrPrecisionAlt(0x0, z, x);
 // LINE 3184:
 	__asm        jmp    _T132;
 // LINE 3185:
@@ -20399,7 +20220,6 @@ _T122:
 _T132:
 	return alt;
 // LINE 3188:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00551d36

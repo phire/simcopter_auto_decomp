@@ -157,13 +157,7 @@ _T70:
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        jle    _T18c;
 // LINE 143:
-	__asm        mov    eax, i;
-	__asm        push   eax;
-	__asm        mov    eax, res;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    bhdr, eax;
+	bhdr = VRInt2BmpHdr(i, res);
 // LINE 146:
 	__asm        mov    eax, bhdr;
 	__asm        movsx  eax, word ptr [eax+8];
@@ -615,12 +609,7 @@ _T70:
 	__asm        jmp    next_face;
 // LINE 411:
 _T75:
-	__asm        mov    eax, fh;
-	__asm        mov    eax, [eax+0xC];
-	__asm        push   eax;
-	__asm        call   VRGetColorShade;
-	__asm        add    esp, 4;
-	__asm        mov    cptr, eax;
+	cptr = VRGetColorShade(fh->Attrib2);
 // LINE 412:
 	__asm        cmp    cptr, 0;
 	__asm        jne    _T96;
@@ -837,12 +826,7 @@ _T84:
 	__asm        jmp    next_face;
 // LINE 505:
 _T89:
-	__asm        mov    eax, fh;
-	__asm        mov    eax, [eax+0xC];
-	__asm        push   eax;
-	__asm        call   VRGetColorShade;
-	__asm        add    esp, 4;
-	__asm        mov    cptr, eax;
+	cptr = VRGetColorShade(fh->Attrib2);
 // LINE 506:
 	__asm        cmp    cptr, 0;
 	__asm        jne    _Taa;
@@ -1080,15 +1064,7 @@ _Ta4:
 	__asm        call   VRFaceSetTexColor;
 	__asm        add    esp, 4;
 // LINE 599:
-	__asm        mov    eax, fh;
-	__asm        mov    eax, [eax+0x24];
-	__asm        push   eax;
-	__asm        mov    eax, res;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    ecx, fh;
-	__asm        mov    [ecx+0x24], eax;
+	fh->Bitmap = VRInt2BmpHdr(fh->Bitmap, res);
 // LINE 600:
 }
 
@@ -1126,12 +1102,7 @@ _T21:
 	__asm        jmp    next_face;
 // LINE 625:
 _T42:
-	__asm        mov    eax, fh;
-	__asm        mov    eax, [eax+0xC];
-	__asm        push   eax;
-	__asm        call   VRGetColorShade;
-	__asm        add    esp, 4;
-	__asm        mov    cptr, eax;
+	cptr = VRGetColorShade(fh->Attrib2);
 // LINE 626:
 	__asm        cmp    cptr, 0;
 	__asm        jne    _T63;
@@ -1298,13 +1269,7 @@ void VRObjSetTranslucent(int32_t obj, /*packed*/ struct VRResource *res, int32_t
 // LINE 699:
 	oh = obj;
 // LINE 705:
-	__asm        mov    eax, bitmap;
-	__asm        push   eax;
-	__asm        mov    eax, res;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    bhdr, eax;
+	bhdr = VRInt2BmpHdr(bitmap, res);
 // LINE 708:
 	fh = oh->FacePtr;
 // LINE 709:

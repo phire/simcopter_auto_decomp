@@ -204,23 +204,11 @@ _T39:
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 117:
-	__asm        push   0x64;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    ecx, ed;
-	__asm        mov    [ecx+0x20], eax;
+	ed->dy2d = S2Alloc(0x64, G_dyobjmempool);
 // LINE 118:
 	ed->dy2d->flags = 0x61;
 // LINE 120:
-	__asm        mov    eax, size;
-	__asm        push   eax;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    mem, eax;
+	mem = S2Alloc(size, G_dyobjmempool);
 // LINE 121:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -287,25 +275,13 @@ _T17d:
 // LINE 144:
 	sd->timetolive = 0x0;
 // LINE 147:
-	__asm        push   0x64;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    ecx, sd;
-	__asm        mov    [ecx+4], eax;
+	sd->dysmoke = S2Alloc(0x64, G_dyobjmempool);
 // LINE 148:
 	sd->dysmoke->flags = 0x61;
 // LINE 149:
 	sd->dysmoke->radius = 0x200000;
 // LINE 152:
-	__asm        mov    eax, size;
-	__asm        push   eax;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    mem, eax;
+	mem = S2Alloc(size, G_dyobjmempool);
 // LINE 153:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -340,68 +316,23 @@ _T17d:
 	__asm        jmp    _T176;
 // LINE 162:
 _T236:
-	__asm        push   0xF;
-	__asm        mov    eax, G_restex;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    S_explseq[0], eax;
+	S_explseq[0] = VRInt2BmpHdr(0xf, G_restex);
 // LINE 163:
-	__asm        push   0x10;
-	__asm        mov    eax, G_restex;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    S_explseq[1], eax;
+	S_explseq[1] = VRInt2BmpHdr(0x10, G_restex);
 // LINE 164:
-	__asm        push   0x11;
-	__asm        mov    eax, G_restex;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    S_explseq[2], eax;
+	S_explseq[2] = VRInt2BmpHdr(0x11, G_restex);
 // LINE 165:
-	__asm        push   0x12;
-	__asm        mov    eax, G_restex;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    S_explseq[3], eax;
+	S_explseq[3] = VRInt2BmpHdr(0x12, G_restex);
 // LINE 166:
-	__asm        push   0x19;
-	__asm        mov    eax, G_restex;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    S_explseq[4], eax;
+	S_explseq[4] = VRInt2BmpHdr(0x19, G_restex);
 // LINE 167:
-	__asm        push   0x1A;
-	__asm        mov    eax, G_restex;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    S_explseq[5], eax;
+	S_explseq[5] = VRInt2BmpHdr(0x1a, G_restex);
 // LINE 168:
-	__asm        push   0x1B;
-	__asm        mov    eax, G_restex;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    S_explseq[6], eax;
+	S_explseq[6] = VRInt2BmpHdr(0x1b, G_restex);
 // LINE 169:
-	__asm        push   0x1C;
-	__asm        mov    eax, G_restex;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    S_explseq[7], eax;
+	S_explseq[7] = VRInt2BmpHdr(0x1c, G_restex);
 // LINE 170:
-	__asm        push   0x1D;
-	__asm        mov    eax, G_restex;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    S_explseq[8], eax;
+	S_explseq[8] = VRInt2BmpHdr(0x1d, G_restex);
 // LINE 173:
 	__asm        mov    eax, 0x59B4F8;
 	__asm        mov    ecx, 0x62A988;

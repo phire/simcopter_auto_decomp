@@ -864,13 +864,7 @@ _T36:
 	__asm        mov    ax, [eax+0x7C];
 	__asm        mov    reinterpret_cast<uint16_t>(here.x), ax;
 // LINE 159:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(there.x);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(here.x);
-	__asm        push   eax;
-	__asm        call   Distance;
-	__asm        add    esp, 8;
-	__asm        mov    dist, eax;
+	dist = Distance(reinterpret_cast<uint32_t>(there.x), reinterpret_cast<uint32_t>(here.x));
 // LINE 160:
 	__asm        mov    eax, minDist;
 	__asm        cmp    dist, eax;
@@ -921,13 +915,7 @@ _Te4:
 	__asm        mov    ax, [eax+0x7C];
 	__asm        mov    reinterpret_cast<uint16_t>(here.x), ax;
 // LINE 180:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(there.x);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(here.x);
-	__asm        push   eax;
-	__asm        call   Distance;
-	__asm        add    esp, 8;
-	__asm        mov    dist, eax;
+	dist = Distance(reinterpret_cast<uint32_t>(there.x), reinterpret_cast<uint32_t>(here.x));
 // LINE 181:
 	__asm        mov    eax, minDist;
 	__asm        cmp    dist, eax;
@@ -978,13 +966,7 @@ _T192:
 	__asm        mov    ax, [eax+0x7C];
 	__asm        mov    reinterpret_cast<uint16_t>(here.x), ax;
 // LINE 201:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(there.x);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(here.x);
-	__asm        push   eax;
-	__asm        call   Distance;
-	__asm        add    esp, 8;
-	__asm        mov    dist, eax;
+	dist = Distance(reinterpret_cast<uint32_t>(there.x), reinterpret_cast<uint32_t>(here.x));
 // LINE 202:
 	__asm        mov    eax, minDist;
 	__asm        cmp    dist, eax;
@@ -1035,13 +1017,7 @@ _T240:
 	__asm        mov    ax, [eax+0x7C];
 	__asm        mov    reinterpret_cast<uint16_t>(here.x), ax;
 // LINE 222:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(there.x);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(here.x);
-	__asm        push   eax;
-	__asm        call   Distance;
-	__asm        add    esp, 8;
-	__asm        mov    dist, eax;
+	dist = Distance(reinterpret_cast<uint32_t>(there.x), reinterpret_cast<uint32_t>(here.x));
 // LINE 223:
 	__asm        mov    eax, minDist;
 	__asm        cmp    dist, eax;
@@ -1153,21 +1129,10 @@ _T22:
 // FUNCTION: COPTER_D 0x00501b3c
 int32_t CreateAutomobileInstance(int32_t instanceID) {
 // LINE 304:
-	__asm        mov    eax, instanceID;
-	__asm        push   eax;
-	__asm        call   AutomobileClass::CreateInstance;
-	__asm        add    esp, 4;
-	__asm        test   eax, eax;
-	__asm        je     _T24;
-
-	__asm        mov    eax, 1;
-	__asm        jmp    _T26;
 _T24:
-	__asm        xor    eax, eax;
 _T26:
-	__asm        jmp    __RETURN;
+	return (AutomobileClass::CreateInstance(instanceID) == 0x0);
 // LINE 305:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00501b6c
@@ -1742,13 +1707,7 @@ _T6c:
 	__asm        add    ecx, eax;
 	__asm        mov    personLoc.z, ecx;
 // LINE 763:
-	__asm        mov    eax, personLoc.z;
-	__asm        push   eax;
-	__asm        mov    eax, personLoc.x;
-	__asm        push   eax;
-	__asm        call   S3ObjectPrecisionAlt;
-	__asm        add    esp, 8;
-	__asm        mov    personLoc.y, eax;
+	personLoc.y = S3ObjectPrecisionAlt(personLoc.z, personLoc.x);
 // LINE 766:
 	__asm        lea    eax, personLoc.x;
 	__asm        push   eax;
@@ -1940,12 +1899,7 @@ _T1c9:
 	__asm        cmp    dword ptr [ebp-0x44], 0;
 	__asm        jne    _T219;
 // LINE 855:
-	__asm        mov    eax, carblock;
-	__asm        mov    eax, [eax+0x10E];
-	__asm        push   eax;
-	__asm        call   S3MissionGetByID;
-	__asm        add    esp, 4;
-	__asm        mov    md, eax;
+	md = S3MissionGetByID(carblock->missionId);
 // LINE 859:
 	__asm        cmp    md, 0;
 	__asm        je     _T214;
@@ -2012,11 +1966,7 @@ _T29c:
 	__asm        sub    eax, edx;
 	__asm        jne    _T2fd;
 // LINE 872:
-	__asm        push   0x800;
-	__asm        call   S3MissionStartDirect;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x10E], eax;
+	this->missionId = S3MissionStartDirect(0x800);
 // LINE 873:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10E], 0xFFFFFFFF;
@@ -2097,11 +2047,7 @@ _T3b5:
 	__asm        sub    eax, edx;
 	__asm        jne    _T416;
 // LINE 898:
-	__asm        push   0x800;
-	__asm        call   S3MissionStartDirect;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x10E], eax;
+	this->missionId = S3MissionStartDirect(0x800);
 // LINE 899:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10E], 0xFFFFFFFF;
@@ -2182,11 +2128,7 @@ _T4ce:
 	__asm        sub    eax, edx;
 	__asm        jne    _T52f;
 // LINE 925:
-	__asm        push   0x800;
-	__asm        call   S3MissionStartDirect;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x10E], eax;
+	this->missionId = S3MissionStartDirect(0x800);
 // LINE 926:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x10E], 0xFFFFFFFF;
@@ -2579,14 +2521,7 @@ _Td5:
 //   _Tb8
 // LINE 1107:
 _Tf9:
-	__asm        mov    eax, z;
-	__asm        push   eax;
-	__asm        mov    eax, x;
-	__asm        push   eax;
-	__asm        call   S3ObjectPrecisionAlt;
-	__asm        add    esp, 8;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC2], eax;
+	this->m_cellBaseY = S3ObjectPrecisionAlt(z, x);
 // LINE 1109:
 // Block end:
 _T112:
@@ -4465,12 +4400,7 @@ _T10d:
 // LINE 1921:
 	this->autoDynomitor.radius = objectInfo.Radius;
 // LINE 1922:
-	__asm        mov    eax, object;
-	__asm        push   eax;
-	__asm        call   VRObjGetHeight;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x20], eax;
+	this->autoDynomitor.height = VRObjGetHeight(object);
 // LINE 1925:
 	this->flags = 0x0;
 // LINE 1926:
@@ -7218,29 +7148,15 @@ void AutoHitDispatch(long hitter_type, /*packed*/ struct _DYOBJ_INST *dyhitter, 
 // FUNCTION: COPTER_D 0x0050657f
 int32_t AutoMissionStartFire(long mission_id, /*packed*/ struct Point2d *celloc) {
 // LINE 3098:
-	__asm        mov    eax, celloc;
-	__asm        push   eax;
-	__asm        mov    eax, mission_id;
-	__asm        push   eax;
-	__asm        call   AutomobileClass::MissionStartFire;
-	__asm        add    esp, 8;
-	__asm        jmp    __RETURN;
+	return AutomobileClass::MissionStartFire(celloc, mission_id);
 // LINE 3099:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0050659f
 int32_t AutoMissionStartJam(long mission_id, /*packed*/ struct Point2d *celloc) {
 // LINE 3111:
-	__asm        mov    eax, celloc;
-	__asm        push   eax;
-	__asm        mov    eax, mission_id;
-	__asm        push   eax;
-	__asm        call   AutomobileClass::MissionStartJam;
-	__asm        add    esp, 8;
-	__asm        jmp    __RETURN;
+	return AutomobileClass::MissionStartJam(celloc, mission_id);
 // LINE 3112:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x005065bf
@@ -9520,13 +9436,7 @@ _T7fb:
 // LINE 4004:
 	this->directionVector.z = (nextFineLocation.z - this->autoDynomitor.loc.z);
 // LINE 4005:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0xA2;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xEA], eax;
+	this->currDist = MTNormalize((this + 0xa2));
 // LINE 4010:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0xA2;
@@ -10724,25 +10634,15 @@ _T45:
 // FUNCTION: COPTER_D 0x00509007
 int32_t S3AutoMIFFLoad(void * __ptr32 miffReader) {
 // LINE 4518:
-	__asm        mov    eax, miffReader;
-	__asm        push   eax;
-	__asm        call   AutomobileClass::MIFFLoad;
-	__asm        add    esp, 4;
-	__asm        jmp    __RETURN;
+	return AutomobileClass::MIFFLoad(miffReader);
 // LINE 4519:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00509023
 int32_t S3AutoMIFFSave(void * __ptr32 miffWriter) {
 // LINE 4531:
-	__asm        mov    eax, miffWriter;
-	__asm        push   eax;
-	__asm        call   AutomobileClass::MIFFSave;
-	__asm        add    esp, 4;
-	__asm        jmp    __RETURN;
+	return AutomobileClass::MIFFSave(miffWriter);
 // LINE 4532:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0050903f
@@ -10751,14 +10651,7 @@ int32_t AutomobileClass::MIFFLoad(void * __ptr32 miffReader) {
 	/*bp-0x8*/   int32_t i;
 
 // LINE 4549:
-	__asm        push   0x344;
-	__asm        push   0x608C28;
-	__asm        push   0x4155544F;
-	__asm        mov    eax, miffReader;
-	__asm        push   eax;
-	__asm        call   ReadFirstMIFFChunk;
-	__asm        add    esp, 0x10;
-	__asm        mov    ret, eax;
+	ret = ReadFirstMIFFChunk(0x344, 0x608c28, 0x4155544f, miffReader);
 // LINE 4550:
 	__asm        cmp    ret, 0;
 	__asm        jne    _T38;
@@ -10782,14 +10675,7 @@ _T47:
 	__asm        mov    ecx, cars[0][eax*4];
 	__asm        call   dword ptr [edx+0x18];
 // LINE 4561:
-	__asm        push   0x344;
-	__asm        push   0x608C28;
-	__asm        push   0x4155544F;
-	__asm        mov    eax, miffReader;
-	__asm        push   eax;
-	__asm        call   ReadNextMIFFChunk;
-	__asm        add    esp, 0x10;
-	__asm        mov    ret, eax;
+	ret = ReadNextMIFFChunk(0x344, 0x608c28, 0x4155544f, miffReader);
 // LINE 4563:
 	__asm        cmp    ret, 0;
 	__asm        jne    _Ta8;
@@ -10829,14 +10715,7 @@ _T18:
 	__asm        mov    ecx, cars[0][eax*4];
 	__asm        call   dword ptr [edx+0x14];
 // LINE 4588:
-	__asm        push   0x344;
-	__asm        push   0x608C28;
-	__asm        push   0x4155544F;
-	__asm        mov    eax, miffWriter;
-	__asm        push   eax;
-	__asm        call   WriteMIFFChunk;
-	__asm        add    esp, 0x10;
-	__asm        mov    ret, eax;
+	ret = WriteMIFFChunk(0x344, 0x608c28, 0x4155544f, miffWriter);
 // LINE 4589:
 	__asm        cmp    ret, 0;
 	__asm        jne    _T6f;

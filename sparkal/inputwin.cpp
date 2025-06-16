@@ -2791,23 +2791,11 @@ int32_t KeyboardWindow::Initialize() {
 	__asm        call   LoadListFromResource;
 	__asm        add    esp, 8;
 // LINE 94:
-	__asm        push   0x90;
-	__asm        call   Keyboard::IsToggleKeySet;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xA4], eax;
+	this->bNumLockLastSetting = Keyboard::IsToggleKeySet(0x90);
 // LINE 95:
-	__asm        push   0x14;
-	__asm        call   Keyboard::IsToggleKeySet;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xA8], eax;
+	this->bCapsLockLastSetting = Keyboard::IsToggleKeySet(0x14);
 // LINE 96:
-	__asm        push   0x91;
-	__asm        call   Keyboard::IsToggleKeySet;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xAC], eax;
+	this->bScrollLockLastSetting = Keyboard::IsToggleKeySet(0x91);
 // LINE 97:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xA4], 0;
@@ -3314,14 +3302,7 @@ int32_t KeyboardWindow::ConvertKeyToString(int32_t nLanguage, long lKey, /*packe
 	/*bp-0x4*/   int32_t nFullStringID;
 
 // LINE 165:
-	__asm        mov    eax, nLanguage;
-	__asm        push   eax;
-	__asm        mov    eax, lKey;
-	__asm        add    eax, 0x2BC;
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(nLanguage, (lKey + 0x2bc));
 // LINE 166:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x1004];
@@ -4412,11 +4393,7 @@ _T43:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 295:
-	__asm        push   0x90;
-	__asm        call   Keyboard::IsToggleKeySet;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xA4], eax;
+	this->bNumLockLastSetting = Keyboard::IsToggleKeySet(0x90);
 // LINE 296:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0xA4], 0;
@@ -4430,17 +4407,9 @@ _T8c:
 	this->myCurrentlyUsedNumLockHotSpotList = (this + 0x84);
 // LINE 300:
 _T9d:
-	__asm        push   0x14;
-	__asm        call   Keyboard::IsToggleKeySet;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xA8], eax;
+	this->bCapsLockLastSetting = Keyboard::IsToggleKeySet(0x14);
 // LINE 301:
-	__asm        push   0x91;
-	__asm        call   Keyboard::IsToggleKeySet;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xAC], eax;
+	this->bScrollLockLastSetting = Keyboard::IsToggleKeySet(0x91);
 // LINE 302:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -5619,22 +5588,11 @@ _T11:
 	__asm        mov    ecx, this;
 	__asm        cmp    eax, [ecx+0xA8];
 	__asm        jne    _T6f;
-
-	__asm        push   0x91;
-	__asm        call   Keyboard::IsToggleKeySet;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        cmp    eax, [ecx+0xAC];
-	__asm        je     _T79;
 _T6f:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T7b;
 _T79:
-	__asm        xor    eax, eax;
 _T7b:
-	__asm        jmp    __RETURN;
+	return (Keyboard::IsToggleKeySet(0x91) == this->bScrollLockLastSetting);
 // LINE 497:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00404485
@@ -8674,11 +8632,7 @@ _T37e:
 	__asm        mov    ecx, [eax+0x80];
 	__asm        call   dword ptr [edx+0x12C];
 // LINE 1121:
-	__asm        push   0;
-	__asm        push   6;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x6);
 // LINE 1122:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x10DC];
@@ -8946,11 +8900,7 @@ _T83b:
 	tempButtonWindow = 0x0;
 // LINE 1133:
 _T842:
-	__asm        push   0;
-	__asm        push   0x14;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x14);
 // LINE 1134:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x20FC];
@@ -9164,11 +9114,7 @@ _Tb44:
 	tempButtonWindow = 0x0;
 // LINE 1141:
 _Tb4b:
-	__asm        push   0;
-	__asm        push   0x15;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x15);
 // LINE 1142:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x311C];
@@ -9382,11 +9328,7 @@ _Te4d:
 	tempButtonWindow = 0x0;
 // LINE 1149:
 _Te54:
-	__asm        push   0;
-	__asm        push   8;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x8);
 // LINE 1150:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x413C];
@@ -9600,11 +9542,7 @@ _T1156:
 	tempButtonWindow = 0x0;
 // LINE 1157:
 _T115d:
-	__asm        push   0;
-	__asm        push   5;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x5);
 // LINE 1158:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x515C];
@@ -10740,11 +10678,7 @@ void UserInputWindow::AddJoystickTwinCommand(long lCommand, long lDevice, long l
 	/*bp-0x1c*/  long lTwinCommand;
 
 // LINE 1344:
-	__asm        mov    eax, lCommand;
-	__asm        push   eax;
-	__asm        call   GetJoystickCommandTwin;
-	__asm        add    esp, 4;
-	__asm        mov    lTwinCommand, eax;
+	lTwinCommand = GetJoystickCommandTwin(lCommand);
 // LINE 1346:
 	__asm        cmp    lTwinCommand, 0;
 	__asm        je     _T312;
@@ -10987,11 +10921,7 @@ void UserInputWindow::RemoveJoystickTwinCommand(long lCommand, long lDevice, lon
 	/*bp-0x4*/   long lTwinCommand;
 
 // LINE 1366:
-	__asm        mov    eax, lCommand;
-	__asm        push   eax;
-	__asm        call   GetJoystickCommandTwin;
-	__asm        add    esp, 4;
-	__asm        mov    lTwinCommand, eax;
+	lTwinCommand = GetJoystickCommandTwin(lCommand);
 // LINE 1368:
 	__asm        cmp    lTwinCommand, 0;
 	__asm        je     _T39;
@@ -12734,11 +12664,7 @@ int32_t UserInputWindow::DoesTwinCommandExistForShortcut(long lDevice, long lCom
 	/*bp-0x8*/   long lTwinCommand;
 
 // LINE 1695:
-	__asm        mov    eax, lCommand;
-	__asm        push   eax;
-	__asm        call   GetJoystickCommandTwin;
-	__asm        add    esp, 4;
-	__asm        mov    lTwinCommand, eax;
+	lTwinCommand = GetJoystickCommandTwin(lCommand);
 // LINE 1697:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xA0];
@@ -13014,11 +12940,7 @@ _T1e9:
 	__asm        jmp    _T1ee;
 // LINE 1744:
 _T1ee:
-	__asm        push   0;
-	__asm        push   9;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x9);
 // LINE 1745:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x10D4];
@@ -13323,13 +13245,7 @@ _T88:
 	__asm        cmp    i, 0x21;
 	__asm        jge    _T3a9;
 // LINE 1773:
-	__asm        push   0;
-	__asm        mov    eax, i;
-	__asm        add    eax, 0x96;
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, (i + 0x96));
 // LINE 1774:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x1060];
@@ -14148,11 +14064,7 @@ _T91:
 	__asm        mov    ecx, this;
 	__asm        call   GraphicWindow::Initialize;
 // LINE 1871:
-	__asm        push   0;
-	__asm        push   0xDC;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0xdc);
 // LINE 1872:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x10BC];
@@ -14370,11 +14282,7 @@ _T35e:
 	__asm        mov    ecx, tempTextWindow;
 	__asm        call   dword ptr [eax+0x3C];
 // LINE 1880:
-	__asm        push   0;
-	__asm        push   0xDF;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0xdf);
 // LINE 1881:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x20D4];
@@ -14582,11 +14490,7 @@ _T61b:
 	__asm        mov    ecx, tempTextWindow;
 	__asm        call   dword ptr [eax+0x28];
 // LINE 1888:
-	__asm        push   0;
-	__asm        push   0xE0;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0xe0);
 // LINE 1889:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x30EC];
@@ -14976,11 +14880,7 @@ _Tafd:
 	__asm        mov    ecx, [eax+0x7C];
 	__asm        call   dword ptr [edx+0x12C];
 // LINE 1913:
-	__asm        push   0;
-	__asm        push   0xDD;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0xdd);
 // LINE 1914:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x4104];
@@ -15832,13 +15732,7 @@ void ControlDisplayWindow::GetCommandString(/*packed*/ class basic_string<char>&
 	/*bp-0x4*/   uint32_t nFullStringID;
 
 // LINE 2046:
-	__asm        push   0;
-	__asm        mov    eax, lCommand;
-	__asm        add    eax, 0x96;
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, (lCommand + 0x96));
 // LINE 2047:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x1004];
@@ -16388,11 +16282,7 @@ _Tc4:
 	__asm        cmp    nKeyIndex, 0;
 	__asm        je     _T208;
 // LINE 2062:
-	__asm        push   0;
-	__asm        push   0xE1;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0xe1);
 // LINE 2063:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x104C];
@@ -16488,11 +16378,7 @@ _T1f0:
 	__asm        jmp    _T208;
 // LINE 2068:
 _T208:
-	__asm        push   0;
-	__asm        push   0xE2;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0xe2);
 // LINE 2069:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x2050];
@@ -16567,11 +16453,7 @@ _T2f5:
 // LINE 2073:
 	bAtLeastOneModifierFoundAlready = 0x1;
 // LINE 2074:
-	__asm        push   0;
-	__asm        push   0xE3;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0xe3);
 // LINE 2075:
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
@@ -16629,11 +16511,7 @@ _T395:
 _T3b2:
 	bAtLeastOneModifierFoundAlready = 0x1;
 // LINE 2083:
-	__asm        push   0;
-	__asm        push   0xE4;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0xe4);
 // LINE 2084:
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
@@ -16676,11 +16554,7 @@ _T416:
 _T433:
 	bAtLeastOneModifierFoundAlready = 0x1;
 // LINE 2092:
-	__asm        push   0;
-	__asm        push   0xE5;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0xe5);
 // LINE 2093:
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
@@ -16718,13 +16592,7 @@ _T48d:
 	__asm        jmp    _T4aa;
 // LINE 2099:
 _T4aa:
-	__asm        push   0;
-	__asm        mov    eax, lKey;
-	__asm        add    eax, 0x2BC;
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, (lKey + 0x2bc));
 // LINE 2100:
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;

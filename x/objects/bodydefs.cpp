@@ -488,23 +488,11 @@ _T2c:
 	/*bp-0x4*/   /*unpacked*/ struct TinyXZY txzy;
 
 // LINE 130:
-	__asm        mov    eax, dxzy.x;
-	__asm        push   eax;
-	__asm        call   Float_2_Byte;
-	__asm        add    esp, 4;
-	__asm        mov    txzy.x, al;
+	txzy.x = Float_2_Byte(dxzy.x);
 // LINE 131:
-	__asm        mov    eax, dxzy.z;
-	__asm        push   eax;
-	__asm        call   Float_2_Byte;
-	__asm        add    esp, 4;
-	__asm        mov    txzy.z, al;
+	txzy.z = Float_2_Byte(dxzy.z);
 // LINE 132:
-	__asm        mov    eax, dxzy.y;
-	__asm        push   eax;
-	__asm        call   Float_2_Byte;
-	__asm        add    esp, 4;
-	__asm        mov    txzy.y, al;
+	txzy.y = Float_2_Byte(dxzy.y);
 // LINE 133:
 	return reinterpret_cast<uint32_t>(txzy.x);
 // LINE 134:

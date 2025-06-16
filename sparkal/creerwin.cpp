@@ -661,11 +661,7 @@ _T136:
 	tempButtonWindow1 = 0x0;
 // LINE 116:
 _T140:
-	__asm        push   0;
-	__asm        push   0x51;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x51);
 // LINE 117:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x12A8];
@@ -880,11 +876,7 @@ _T45b:
 	tempButtonWindow2 = 0x0;
 // LINE 125:
 _T465:
-	__asm        push   0;
-	__asm        push   0x52;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x52);
 // LINE 126:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x22C8];
@@ -1105,11 +1097,7 @@ _T785:
 	tempButtonWindow1 = 0x0;
 // LINE 135:
 _T78f:
-	__asm        push   0;
-	__asm        push   0x51;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x51);
 // LINE 136:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x32E8];
@@ -1277,12 +1265,7 @@ _T99b:
 _T9df:
 	lCityNameString = (this->lCities[0] + 0xf0);
 // LINE 144:
-	__asm        push   0;
-	__asm        mov    eax, lCityNameString;
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, lCityNameString);
 // LINE 145:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x4300];
@@ -1506,12 +1489,7 @@ _Td16:
 	__asm        add    eax, 0x122;
 	__asm        mov    lCityLevelString, eax;
 // LINE 155:
-	__asm        push   0;
-	__asm        mov    eax, lCityLevelString;
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, lCityLevelString);
 // LINE 156:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x5318];

@@ -501,13 +501,7 @@ _T230:
 // LINE 120:
 	tempVRAppInitThreadStruct.nCurrentPercentageComplete = 0x0;
 // LINE 122:
-	__asm        lea    eax, tempVRAppInitThreadStruct.nReturnValue;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        push   0x4BC3DB;
-	__asm        call   _beginthread;
-	__asm        add    esp, 0xC;
-	__asm        mov    hAppInitThread, eax;
+	hAppInitThread = _beginthread(tempVRAppInitThreadStruct.nReturnValue, 0x0, 0x4bc3db);
 // LINE 127:
 	__asm        mov    byte ptr [ebp-0x4B8], 0;
 	__asm        mov    byte ptr [ebp-0x4B7], 0;
@@ -553,13 +547,7 @@ _T2c5:
 // LINE 132:
 	__asm        shl    lCurrentInitializationFlag, 1;
 // LINE 133:
-	__asm        push   0;
-	__asm        mov    eax, lCurrentInitializationIndex;
-	__asm        add    eax, 0x289;
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    lFullStringIndex, eax;
+	lFullStringIndex = LanguageManager::GetFullStringID(0x0, (lCurrentInitializationIndex + 0x289));
 // LINE 134:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x1510];

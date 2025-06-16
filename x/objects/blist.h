@@ -331,12 +331,7 @@ void cBList<class cCopterAnim>::LoadAll(void) cBList<cCopterAnim>::LoadAll() {
 	__asm        add    esp, 0x10;
 // LINE 182:
 _T53:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        push   eax;
-	__asm        call   OpenFile;
-	__asm        add    esp, 4;
-	__asm        mov    fileOpened, ax;
+	fileOpened = OpenFile(this-><cBList<cCopterAnim>+0x0c:4>);
 // LINE 183:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0xC];

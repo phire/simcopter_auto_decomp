@@ -106,12 +106,7 @@ void Version::Version() {
 	__asm        cmp    dwVersionInfoSize, 0;
 	__asm        je     _T120;
 // LINE 39:
-	__asm        mov    eax, dwVersionInfoSize;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+8], eax;
+	this->lpFVData = operator new(dwVersionInfoSize);
 // LINE 40:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];

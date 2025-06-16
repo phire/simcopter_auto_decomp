@@ -829,15 +829,8 @@ __RETURN:
 // FUNCTION: COPTER_D 0x0052e16c
 /*packed*/ class TrainClass* TrainClass::CreateInstance(int32_t instanceID) {
 // LINE 362:
-	__asm        mov    eax, instanceID;
-	__asm        push   eax;
-	__asm        push   0xFFFFFFFF;
-	__asm        push   0xFFFFFFFF;
-	__asm        call   TrainClass::CreateInstance;
-	__asm        add    esp, 0xC;
-	__asm        jmp    __RETURN;
+	return TrainClass::CreateInstance(instanceID, -0x1, -0x1);
 // LINE 422:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0052e18c
@@ -1223,11 +1216,7 @@ _T68:
 // LINE 795:
 	vec.z = (ViewState.world_pos.z - this->dyObj1.loc.z);
 // LINE 796:
-	__asm        lea    eax, vec.x;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
-	__asm        mov    dist, eax;
+	dist = MTNormalize(vec.x);
 // LINE 798:
 	__asm        cmp    dist, 0x7800000;
 	__asm        jge    _T116;
@@ -7488,13 +7477,7 @@ _T56a:
 // LINE 3626:
 	this->directionVector.z = (nextFineLocation.z - this->leadcar->loc.z);
 // LINE 3627:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x15;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x21], eax;
+	this->remainingDist = MTNormalize((this + 0x15));
 // LINE 3632:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x1CD];
@@ -8904,26 +8887,11 @@ _T152:
 // LINE 4503:
 	this->dyObj3.radius = objectInfo.Radius;
 // LINE 4504:
-	__asm        mov    eax, object1;
-	__asm        push   eax;
-	__asm        call   VRObjGetHeight;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xB5], eax;
+	this->dyObj1.height = VRObjGetHeight(object1);
 // LINE 4505:
-	__asm        mov    eax, object2;
-	__asm        push   eax;
-	__asm        call   VRObjGetHeight;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x119], eax;
+	this->dyObj2.height = VRObjGetHeight(object2);
 // LINE 4506:
-	__asm        mov    eax, object3;
-	__asm        push   eax;
-	__asm        call   VRObjGetHeight;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x17D], eax;
+	this->dyObj3.height = VRObjGetHeight(object3);
 // LINE 4507:
 	this->leadcar = (this + 0xa1);
 // LINE 4508:
@@ -9082,21 +9050,10 @@ short GetMaximumNumberOfTrains() {
 // FUNCTION: COPTER_D 0x005342ef
 int32_t CreateTrainInstance(int32_t instanceID) {
 // LINE 4626:
-	__asm        mov    eax, instanceID;
-	__asm        push   eax;
-	__asm        call   TrainClass::CreateInstance;
-	__asm        add    esp, 4;
-	__asm        test   eax, eax;
-	__asm        je     _T24;
-
-	__asm        mov    eax, 1;
-	__asm        jmp    _T26;
 _T24:
-	__asm        xor    eax, eax;
 _T26:
-	__asm        jmp    __RETURN;
+	return (TrainClass::CreateInstance(instanceID) == 0x0);
 // LINE 4627:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0053431f
@@ -9118,27 +9075,15 @@ void ItterateAllTrains() {
 // FUNCTION: COPTER_D 0x00534349
 int32_t S3TrainCrashWhenReady(long mission_id) {
 // LINE 4689:
-	__asm        mov    eax, mission_id;
-	__asm        push   eax;
-	__asm        call   TrainClass::FindTrainToCrash;
-	__asm        add    esp, 4;
-	__asm        jmp    __RETURN;
+	return TrainClass::FindTrainToCrash(mission_id);
 // LINE 4690:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00534365
 int32_t S3TrainStartRescue(long mission_id, int32_t timetolive) {
 // LINE 4710:
-	__asm        mov    eax, timetolive;
-	__asm        push   eax;
-	__asm        mov    eax, mission_id;
-	__asm        push   eax;
-	__asm        call   TrainClass::FindTrainForRescue;
-	__asm        add    esp, 8;
-	__asm        jmp    __RETURN;
+	return TrainClass::FindTrainForRescue(timetolive, mission_id);
 // LINE 4711:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00534385
@@ -9326,25 +9271,15 @@ _T1d1:
 // FUNCTION: COPTER_D 0x0053456c
 int32_t S3TrainMIFFLoad(void * __ptr32 miffReader) {
 // LINE 4826:
-	__asm        mov    eax, miffReader;
-	__asm        push   eax;
-	__asm        call   TrainClass::MIFFLoad;
-	__asm        add    esp, 4;
-	__asm        jmp    __RETURN;
+	return TrainClass::MIFFLoad(miffReader);
 // LINE 4827:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00534588
 int32_t S3TrainMIFFSave(void * __ptr32 miffWriter) {
 // LINE 4839:
-	__asm        mov    eax, miffWriter;
-	__asm        push   eax;
-	__asm        call   TrainClass::MIFFSave;
-	__asm        add    esp, 4;
-	__asm        jmp    __RETURN;
+	return TrainClass::MIFFSave(miffWriter);
 // LINE 4840:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x005345a4
@@ -9354,14 +9289,7 @@ int32_t TrainClass::MIFFLoad(void * __ptr32 miffReader) {
 	/*bp-0xc*/   int32_t i;
 
 // LINE 4858:
-	__asm        push   0x1D9;
-	__asm        push   0x62B7B8;
-	__asm        push   0x5452414E;
-	__asm        mov    eax, miffReader;
-	__asm        push   eax;
-	__asm        call   ReadFirstMIFFChunk;
-	__asm        add    esp, 0x10;
-	__asm        mov    ret, eax;
+	ret = ReadFirstMIFFChunk(0x1d9, 0x62b7b8, 0x5452414e, miffReader);
 // LINE 4859:
 	__asm        cmp    ret, 0;
 	__asm        jne    _T38;
@@ -9596,14 +9524,7 @@ _T2bb:
 	__asm        call   TrainClass::LinkToCell;
 // LINE 4909:
 _T315:
-	__asm        push   0x1D9;
-	__asm        push   0x62B7B8;
-	__asm        push   0x5452414E;
-	__asm        mov    eax, miffReader;
-	__asm        push   eax;
-	__asm        call   ReadNextMIFFChunk;
-	__asm        add    esp, 0x10;
-	__asm        mov    ret, eax;
+	ret = ReadNextMIFFChunk(0x1d9, 0x62b7b8, 0x5452414e, miffReader);
 // LINE 4911:
 	__asm        cmp    ret, 0;
 	__asm        jne    _T34e;

@@ -759,13 +759,7 @@ _T1f:
 	__asm        add    esp, 0x10;
 // LINE 431:
 _T48:
-	__asm        movsx  eax, facenum;
-	__asm        push   eax;
-	__asm        mov    eax, G_restex;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    bhdr, eax;
+	bhdr = VRInt2BmpHdr(reinterpret_cast<int16_t>(facenum), G_restex);
 // LINE 432:
 	__asm        cmp    bhdr, 0;
 	__asm        jne    _T84;

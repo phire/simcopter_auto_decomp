@@ -383,13 +383,7 @@ _T43:
 	__asm        add    esp, 0x10;
 // LINE 107:
 _T5c:
-	__asm        push   0x59A13C;
-	__asm        push   3;
-	__asm        lea    eax, szFullSkyImagePath[0];
-	__asm        push   eax;
-	__asm        call   VRLoadResource;
-	__asm        add    esp, 0xC;
-	__asm        mov    vrResource, eax;
+	vrResource = VRLoadResource(0x59a13c, 0x3, szFullSkyImagePath[0]);
 // LINE 108:
 	__asm        cmp    vrResource, 0;
 	__asm        jne    _T8c;
@@ -397,12 +391,7 @@ _T5c:
 	return 0x0;
 // LINE 112:
 _T8c:
-	__asm        push   0;
-	__asm        mov    eax, vrResource;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    bmpHeader, eax;
+	bmpHeader = VRInt2BmpHdr(0x0, vrResource);
 // LINE 113:
 	pSourceImage = bmpHeader;
 // LINE 114:
@@ -466,23 +455,13 @@ _T173:
 	__asm        cmp    G_restex, 0;
 	__asm        je     _T354;
 // LINE 136:
-	__asm        push   2;
-	__asm        mov    eax, G_restex;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    bmpHeader, eax;
+	bmpHeader = VRInt2BmpHdr(0x2, G_restex);
 // LINE 137:
 	pDestinationImage = bmpHeader;
 // LINE 138:
 	pDestinationImage += 0x40c;
 // LINE 141:
-	__asm        push   1;
-	__asm        mov    eax, vrResource;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    bmpHeader, eax;
+	bmpHeader = VRInt2BmpHdr(0x1, vrResource);
 // LINE 142:
 	pSourceImage = bmpHeader;
 // LINE 143:
@@ -496,23 +475,13 @@ _T173:
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 149:
-	__asm        push   0x27;
-	__asm        mov    eax, G_restex;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    bmpHeader, eax;
+	bmpHeader = VRInt2BmpHdr(0x27, G_restex);
 // LINE 150:
 	pDestinationImage = bmpHeader;
 // LINE 151:
 	pDestinationImage += 0x40c;
 // LINE 154:
-	__asm        push   2;
-	__asm        mov    eax, vrResource;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    bmpHeader, eax;
+	bmpHeader = VRInt2BmpHdr(0x2, vrResource);
 // LINE 155:
 	pSourceImage = bmpHeader;
 // LINE 156:
@@ -526,23 +495,13 @@ _T173:
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 162:
-	__asm        push   0x28;
-	__asm        mov    eax, G_restex;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    bmpHeader, eax;
+	bmpHeader = VRInt2BmpHdr(0x28, G_restex);
 // LINE 163:
 	pDestinationImage = bmpHeader;
 // LINE 164:
 	pDestinationImage += 0x40c;
 // LINE 167:
-	__asm        push   3;
-	__asm        mov    eax, vrResource;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    bmpHeader, eax;
+	bmpHeader = VRInt2BmpHdr(0x3, vrResource);
 // LINE 168:
 	pSourceImage = bmpHeader;
 // LINE 169:
@@ -556,21 +515,11 @@ _T173:
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 176:
-	__asm        push   0x14;
-	__asm        mov    eax, G_restex;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    bmpHeader, eax;
+	bmpHeader = VRInt2BmpHdr(0x14, G_restex);
 // LINE 177:
 	pDestinationImage = bmpHeader-><VRBmpHdr+0x10>;
 // LINE 180:
-	__asm        push   4;
-	__asm        mov    eax, vrResource;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    bmpHeader, eax;
+	bmpHeader = VRInt2BmpHdr(0x4, vrResource);
 // LINE 181:
 	pSourceImage = bmpHeader;
 // LINE 182:
@@ -584,23 +533,13 @@ _T173:
 	__asm        call   memcpy;
 	__asm        add    esp, 0xC;
 // LINE 188:
-	__asm        push   0xD;
-	__asm        mov    eax, G_restex;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    bmpHeader, eax;
+	bmpHeader = VRInt2BmpHdr(0xd, G_restex);
 // LINE 189:
 	pDestinationImage = bmpHeader;
 // LINE 190:
 	pDestinationImage += 0x40c;
 // LINE 193:
-	__asm        push   5;
-	__asm        mov    eax, vrResource;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    bmpHeader, eax;
+	bmpHeader = VRInt2BmpHdr(0x5, vrResource);
 // LINE 194:
 	pSourceImage = bmpHeader;
 // LINE 195:

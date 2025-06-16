@@ -3849,11 +3849,7 @@ _T54:
 	__asm        cmp    dword ptr [eax+0x72], 0;
 	__asm        jne    _T71;
 // LINE 1501:
-	__asm        push   0x5C;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x72], eax;
+	this->lpStreamBufferInfo = operator new(0x5c);
 // LINE 1502:
 _T71:
 	__asm        mov    eax, this;
@@ -4232,22 +4228,7 @@ _T122:
 _T143:
 	__asm        jmp    _T148;
 _T148:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x40;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        push   eax;
-	__asm        call   WaveOpenFile;
-	__asm        add    esp, 0x10;
-	__asm        mov    nError, eax;
+	nError = WaveOpenFile((this->lpStreamBufferInfo + 0x18), (this + 0x40), this->lpStreamBufferInfo, this->sSoundFile.c_str_ptr);
 // LINE 1607:
 	__asm        cmp    nError, 0;
 	__asm        je     _T183;
@@ -4255,20 +4236,7 @@ _T148:
 	return 0x0;
 // LINE 1612:
 _T183:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        add    eax, 4;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        push   eax;
-	__asm        call   WaveStartDataRead;
-	__asm        add    esp, 0xC;
-	__asm        mov    nError, eax;
+	nError = WaveStartDataRead((this->lpStreamBufferInfo + 0x18), (this->lpStreamBufferInfo + 0x4), this->lpStreamBufferInfo);
 // LINE 1613:
 	__asm        cmp    nError, 0;
 	__asm        je     _T1c9;
@@ -4332,23 +4300,7 @@ _T24e:
 	__asm        cmp    dwLength1, 0;
 	__asm        je     _T39d;
 // LINE 1636:
-	__asm        lea    eax, nActualBytesRead;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        add    eax, 4;
-	__asm        push   eax;
-	__asm        mov    eax, lpWrite1;
-	__asm        push   eax;
-	__asm        mov    eax, dwLength1;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        call   WaveReadFile;
-	__asm        add    esp, 0x14;
-	__asm        mov    nError, eax;
+	nError = WaveReadFile(nActualBytesRead, (this->lpStreamBufferInfo + 0x4), lpWrite1, dwLength1, this->lpStreamBufferInfo->hmmio);
 // LINE 1637:
 	__asm        cmp    nError, 0;
 	__asm        je     _T2c2;
@@ -4952,23 +4904,7 @@ _T287:
 	__asm        cmp    dword ptr [eax+0x40], 0;
 	__asm        jne    _T448;
 // LINE 1909:
-	__asm        lea    eax, nActualBytesRead;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        add    eax, 4;
-	__asm        push   eax;
-	__asm        mov    eax, lpWrite1;
-	__asm        push   eax;
-	__asm        mov    eax, dwLength1;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        call   WaveReadFile;
-	__asm        add    esp, 0x14;
-	__asm        mov    nError, eax;
+	nError = WaveReadFile(nActualBytesRead, (this->lpStreamBufferInfo + 0x4), lpWrite1, dwLength1, this->lpStreamBufferInfo->hmmio);
 // LINE 1910:
 	__asm        cmp    nError, 0;
 	__asm        je     _T319;
@@ -5078,38 +5014,9 @@ _T3d7:
 	__asm        neg    eax;
 	__asm        sub    dwLength1, eax;
 // LINE 1949:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        add    eax, 4;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        push   eax;
-	__asm        call   WaveStartDataRead;
-	__asm        add    esp, 0xC;
-	__asm        mov    nError, eax;
+	nError = WaveStartDataRead((this->lpStreamBufferInfo + 0x18), (this->lpStreamBufferInfo + 0x4), this->lpStreamBufferInfo);
 // LINE 1951:
-	__asm        lea    eax, nActualBytesRead;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        add    eax, 4;
-	__asm        push   eax;
-	__asm        mov    eax, lpTemp;
-	__asm        push   eax;
-	__asm        mov    eax, dwLength1;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        call   WaveReadFile;
-	__asm        add    esp, 0x14;
-	__asm        mov    nError, eax;
+	nError = WaveReadFile(nActualBytesRead, (this->lpStreamBufferInfo + 0x4), lpTemp, dwLength1, this->lpStreamBufferInfo->hmmio);
 // LINE 1952:
 	__asm        mov    eax, nActualBytesRead;
 	__asm        cmp    dwLength1, eax;
@@ -5150,23 +5057,7 @@ _T489:
 	__asm        cmp    dword ptr [eax+0x40], 0;
 	__asm        jne    _T679;
 // LINE 1968:
-	__asm        lea    eax, nActualBytesRead;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        add    eax, 4;
-	__asm        push   eax;
-	__asm        mov    eax, lpWrite2;
-	__asm        push   eax;
-	__asm        mov    eax, dwLength2;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        call   WaveReadFile;
-	__asm        add    esp, 0x14;
-	__asm        mov    nError, eax;
+	nError = WaveReadFile(nActualBytesRead, (this->lpStreamBufferInfo + 0x4), lpWrite2, dwLength2, this->lpStreamBufferInfo->hmmio);
 // LINE 1969:
 	__asm        cmp    nError, 0;
 	__asm        je     _T51b;
@@ -5294,38 +5185,9 @@ _T608:
 	__asm        neg    eax;
 	__asm        sub    dwLength2, eax;
 // LINE 2008:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        add    eax, 4;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        push   eax;
-	__asm        call   WaveStartDataRead;
-	__asm        add    esp, 0xC;
-	__asm        mov    nError, eax;
+	nError = WaveStartDataRead((this->lpStreamBufferInfo + 0x18), (this->lpStreamBufferInfo + 0x4), this->lpStreamBufferInfo);
 // LINE 2011:
-	__asm        lea    eax, nActualBytesRead;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        add    eax, 4;
-	__asm        push   eax;
-	__asm        mov    eax, lpTemp;
-	__asm        push   eax;
-	__asm        mov    eax, dwLength2;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        call   WaveReadFile;
-	__asm        add    esp, 0x14;
-	__asm        mov    nError, eax;
+	nError = WaveReadFile(nActualBytesRead, (this->lpStreamBufferInfo + 0x4), lpTemp, dwLength2, this->lpStreamBufferInfo->hmmio);
 // LINE 2012:
 	__asm        mov    eax, nActualBytesRead;
 	__asm        cmp    dwLength2, eax;

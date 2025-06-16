@@ -528,21 +528,10 @@ public:
 // FUNCTION: COPTER_D 0x00536100
 int32_t CreateFireTruckInstance(int32_t instanceID) {
 // LINE 77:
-	__asm        mov    eax, instanceID;
-	__asm        push   eax;
-	__asm        call   FireEngineClass::CreateInstance;
-	__asm        add    esp, 4;
-	__asm        test   eax, eax;
-	__asm        je     _T24;
-
-	__asm        mov    eax, 1;
-	__asm        jmp    _T26;
 _T24:
-	__asm        xor    eax, eax;
 _T26:
-	__asm        jmp    __RETURN;
+	return (FireEngineClass::CreateInstance(instanceID) == 0x0);
 // LINE 78:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00536130
@@ -971,11 +960,7 @@ _T1b2:
 // LINE 315:
 	vec.z = (ViewState.world_pos.z - this->autoDynomitor.loc.z);
 // LINE 316:
-	__asm        lea    eax, vec.x;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
-	__asm        mov    dist, eax;
+	dist = MTNormalize(vec.x);
 // LINE 317:
 	__asm        mov    eax, AutomobileClass::fireSirenDist;
 	__asm        cmp    dist, eax;
@@ -1147,11 +1132,7 @@ _Tf7:
 // LINE 394:
 	vec.z = (ViewState.world_pos.z - this->autoDynomitor.loc.z);
 // LINE 395:
-	__asm        lea    eax, vec.x;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
-	__asm        mov    dist, eax;
+	dist = MTNormalize(vec.x);
 // LINE 396:
 	__asm        mov    eax, AutomobileClass::fireHoseDist;
 	__asm        cmp    dist, eax;
@@ -1428,13 +1409,7 @@ _Tfe:
 	__asm        mov    ecx, this;
 	__asm        sub    [ecx+0x2B8], eax;
 // LINE 540:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x2B0;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x2AC], eax;
+	this->distToFire = MTNormalize((this + 0x2b0));
 // LINE 542:
 	return;
 }

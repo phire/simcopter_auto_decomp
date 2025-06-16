@@ -3454,13 +3454,8 @@ _T41:
 // FUNCTION: COPTER_D 0x004a2a1b
 int32_t GraphicWindowManager::IsWindowValid(/*unpacked*/ class GraphicWindow *windowToTestForValidity) {
 // LINE 415:
-	__asm        mov    eax, windowToTestForValidity;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::FindWindowA;
-	__asm        add    esp, 4;
-	__asm        jmp    __RETURN;
+	return GraphicWindow::FindWindowA(windowToTestForValidity);
 // LINE 416:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a2a3f

@@ -5420,11 +5420,7 @@ int32_t S3DSPlay(int32_t nSoundIndex, /*packed*/ struct Point3d *loc, int32_t nF
 // LINE 505:
 	viewvect.z = (loc->z - ViewState.world_pos.z);
 // LINE 506:
-	__asm        lea    eax, viewvect.x;
-	__asm        push   eax;
-	__asm        call   MTMagnitude;
-	__asm        add    esp, 4;
-	__asm        mov    fpDistance, eax;
+	fpDistance = MTMagnitude(viewvect.x);
 // LINE 508:
 	__asm        cmp    fpDistance, 0x7800000;
 	__asm        jl     _T65;

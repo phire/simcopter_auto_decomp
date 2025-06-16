@@ -116,11 +116,7 @@ _T74:
 	return 0x0;
 // LINE 169:
 _Tad:
-	__asm        mov    eax, file;
-	__asm        push   eax;
-	__asm        call   _filelength;
-	__asm        add    esp, 4;
-	__asm        mov    s, eax;
+	s = _filelength(file);
 // LINE 176:
 	__asm        mov    eax, s;
 	__asm        push   eax;
@@ -440,8 +436,7 @@ int32_t VRLoadAlignedBmp(char * name, /*packed*/ struct VRResource *res, int32_t
 	/*bp-0x20*/  int32_t file;
 
 // LINE 391:
-	__asm        call   S2AllocAligned;
-	__asm        mov    alignptr, eax;
+	alignptr = S2AllocAligned();
 // LINE 392:
 	__asm        cmp    alignptr, 0;
 	__asm        jne    _T22;
@@ -545,14 +540,7 @@ _T122:
 	__asm        call   _read;
 	__asm        add    esp, 0xC;
 // LINE 482:
-	__asm        push   0x10000;
-	__asm        mov    eax, alignptr;
-	__asm        push   eax;
-	__asm        mov    eax, file;
-	__asm        push   eax;
-	__asm        call   _read;
-	__asm        add    esp, 0xC;
-	__asm        mov    r, eax;
+	r = _read(0x10000, alignptr, file);
 // LINE 483:
 	__asm        cmp    r, 0x10000;
 	__asm        je     _T179;

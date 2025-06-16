@@ -1459,11 +1459,7 @@ _T145:
 	__asm        idiv   ecx;
 	__asm        mov    lNewRadioStationVolume, eax;
 // LINE 212:
-	__asm        mov    eax, lNewRadioStationVolume;
-	__asm        push   eax;
-	__asm        call   SoundSettingsWindow::ConvertSliderValueToSoundValue;
-	__asm        add    esp, 4;
-	__asm        mov    lNewRadioStationVolume, eax;
+	lNewRadioStationVolume = SoundSettingsWindow::ConvertSliderValueToSoundValue(lNewRadioStationVolume);
 // LINE 214:
 	__asm        cmp    lNewRadioStationVolume, 0x9C4;
 	__asm        jg     _T1e4;
@@ -1759,11 +1755,7 @@ void RadioCompassWindow::SetNewRadioStationVolume(long lNewRadioStationVolume) {
 	/*bp-0x4*/   int32_t nVolumeYPosition;
 
 // LINE 286:
-	__asm        mov    eax, lNewRadioStationVolume;
-	__asm        push   eax;
-	__asm        call   SoundSettingsWindow::ConvertSoundValueToSliderValue;
-	__asm        add    esp, 4;
-	__asm        mov    lNewRadioStationVolume, eax;
+	lNewRadioStationVolume = SoundSettingsWindow::ConvertSoundValueToSliderValue(lNewRadioStationVolume);
 // LINE 287:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -4429,19 +4421,9 @@ _Ta7d:
 	__asm        je     _Tb04;
 // LINE 728:
 _Taa4:
-	__asm        call   GetUserMoney;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x180], eax;
+	this->lCurrentMoney = GetUserMoney();
 // LINE 729:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x180];
-	__asm        push   eax;
-	__asm        push   0x59906C;
-	__asm        lea    eax, szMoneyString[0];
-	__asm        push   eax;
-	__asm        call   sprintf;
-	__asm        add    esp, 0xC;
-	__asm        mov    lStringLength, eax;
+	lStringLength = sprintf(this->lCurrentMoney, 0x59906c, szMoneyString[0]);
 // LINE 731:
 	__asm        push   8;
 	__asm        mov    eax, lStringLength;
@@ -4605,9 +4587,7 @@ _Tced:
 	__asm        mov    iGuageEnd, 0xF;
 	__asm        mov    nYPosition, 0x25;
 // LINE 760:
-	__asm        call   GetUserPoints;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x184], eax;
+	this->lCurrentPoints = GetUserPoints();
 // LINE 761:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x184], 0x3E8;
@@ -5883,14 +5863,7 @@ _T27f:
 _T284:
 	tempHeliPassengerData = (G_uheli + 0x1c4);
 // LINE 1036:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x94];
-	__asm        push   eax;
-	__asm        mov    eax, tempHeliPassengerData;
-	__asm        push   eax;
-	__asm        call   HeliPassengerGetIndexInHeli;
-	__asm        add    esp, 8;
-	__asm        mov    lPassengerIndex, eax;
+	lPassengerIndex = HeliPassengerGetIndexInHeli(this->lPassengerDraggedID, tempHeliPassengerData);
 // LINE 1037:
 	__asm        jmp    _T2af;
 _T2af:
@@ -6313,23 +6286,11 @@ _T11:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x74], 0;
 	__asm        je     _T56;
-
-	__asm        mov    eax, G_uheli;
-	__asm        add    eax, 0x1C4;
-	__asm        push   eax;
-	__asm        call   HeliPassengerHasChanged;
-	__asm        add    esp, 4;
-	__asm        test   eax, eax;
-	__asm        je     _T60;
 _T56:
-	__asm        mov    eax, 1;
-	__asm        jmp    _T62;
 _T60:
-	__asm        xor    eax, eax;
 _T62:
-	__asm        jmp    __RETURN;
+	return (HeliPassengerHasChanged((G_uheli + 0x1c4)) == 0x0);
 // LINE 1147:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0044ccdf
@@ -7496,16 +7457,7 @@ long MapWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long __forma
 	__asm        cmp    S_bordermax.y, eax;
 	__asm        jl     _Tb6;
 // LINE 1492:
-	__asm        mov    eax, nCursorY;
-	__asm        sub    eax, S_bordermin.y;
-	__asm        push   eax;
-	__asm        mov    eax, nCursorX;
-	__asm        sub    eax, S_bordermin.x;
-	__asm        push   eax;
-	__asm        call   S3MapCursorDown;
-	__asm        add    esp, 8;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x84], eax;
+	this->nCurrentAutoID = S3MapCursorDown((nCursorY - S_bordermin.y), (nCursorX - S_bordermin.x));
 // LINE 1493:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x84], 0;

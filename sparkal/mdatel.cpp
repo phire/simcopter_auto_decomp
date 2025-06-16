@@ -688,20 +688,7 @@ void MDateLocalized::MDateLocalized(uint32_t day, char * monthName, uint32_t yea
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F3D0;
 // LINE 138:
-	__asm        mov    eax, year;
-	__asm        push   eax;
-	__asm        mov    eax, day;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        mov    eax, monthName;
-	__asm        push   eax;
-	__asm        call   MDateLocalized::IndexOfMonthLocalized;
-	__asm        add    esp, 8;
-	__asm        push   eax;
-	__asm        call   MDate::Jday;
-	__asm        add    esp, 0xC;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->Julnum = MDate::Jday(year, day, 0x0, monthName, MDateLocalized::IndexOfMonthLocalized(year, day, 0x0, monthName));
 // LINE 139:
 	return;
 
@@ -902,13 +889,7 @@ _T1f:
 	nLanguageToUse = gDefaultLanguage;
 // LINE 227:
 _T31:
-	__asm        mov    eax, nLanguageToUse;
-	__asm        push   eax;
-	__asm        mov    eax, dayName;
-	__asm        push   eax;
-	__asm        call   MDateLocalized::DayOfWeekLocalized;
-	__asm        add    esp, 8;
-	__asm        mov    day, eax;
+	day = MDateLocalized::DayOfWeekLocalized(nLanguageToUse, dayName);
 // LINE 228:
 	__asm        cmp    day, 0;
 	__asm        je     _T66;
@@ -1018,14 +999,7 @@ char * MDateLocalized::DayNameLocalized(uint32_t weekDayNumber, char * szDayName
 // LINE 288:
 	weekDayNumber--;
 // LINE 289:
-	__asm        mov    eax, nLanguageToUse;
-	__asm        push   eax;
-	__asm        mov    eax, weekDayNumber;
-	__asm        add    eax, 0x1F4;
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(nLanguageToUse, (weekDayNumber + 0x1f4));
 // LINE 290:
 	__asm        push   0xFFF;
 	__asm        mov    eax, szDayName;
@@ -1072,14 +1046,7 @@ char * MDateLocalized::MonthNameLocalized(uint32_t monthNumber, char * szMonthNa
 // LINE 308:
 	monthNumber--;
 // LINE 309:
-	__asm        mov    eax, nLanguageToUse;
-	__asm        push   eax;
-	__asm        mov    eax, monthNumber;
-	__asm        add    eax, 0x1FE;
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(nLanguageToUse, (monthNumber + 0x1fe));
 // LINE 310:
 	__asm        push   0xFFF;
 	__asm        mov    eax, szMonthName;

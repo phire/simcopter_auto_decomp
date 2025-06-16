@@ -273,13 +273,7 @@ int32_t HeliPassengerSetExpression(/*packed*/ struct tagHeliPassengerData *heliP
 	/*bp-0x4*/   int32_t i;
 
 // LINE 160:
-	__asm        mov    eax, id;
-	__asm        push   eax;
-	__asm        mov    eax, heliPassengerData;
-	__asm        push   eax;
-	__asm        call   HeliPassengerGetIndexInHeli;
-	__asm        add    esp, 8;
-	__asm        mov    i, eax;
+	i = HeliPassengerGetIndexInHeli(id, heliPassengerData);
 // LINE 162:
 	__asm        cmp    i, 0xFFFFFFFF;
 	__asm        je     _T43;
@@ -303,13 +297,7 @@ int32_t HeliPassengerRemove(/*packed*/ struct tagHeliPassengerData *heliPassenge
 	/*bp-0x4*/   int32_t i;
 
 // LINE 174:
-	__asm        mov    eax, id;
-	__asm        push   eax;
-	__asm        mov    eax, heliPassengerData;
-	__asm        push   eax;
-	__asm        call   HeliPassengerGetIndexInHeli;
-	__asm        add    esp, 8;
-	__asm        mov    i, eax;
+	i = HeliPassengerGetIndexInHeli(id, heliPassengerData);
 // LINE 176:
 	__asm        cmp    i, 0xFFFFFFFF;
 	__asm        je     _Tb8;
@@ -407,18 +395,7 @@ _T41:
 	__asm        cmp    dword ptr [eax+ecx+0x1C], 0xFFFFFFFF;
 	__asm        je     _T9f;
 // LINE 225:
-	__asm        lea    eax, bSeats[0];
-	__asm        push   eax;
-	__asm        mov    eax, heliPassengerData;
-	__asm        mov    eax, [eax+0x14];
-	__asm        push   eax;
-	__asm        mov    eax, heliPassengerData;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        push   1;
-	__asm        call   FindFreeSeatForPassenger;
-	__asm        add    esp, 0x10;
-	__asm        mov    nSeat, eax;
+	nSeat = FindFreeSeatForPassenger(bSeats[0], heliPassengerData->lRowWidth, heliPassengerData->lSeatsTotal, 0x1);
 // LINE 226:
 	__asm        mov    eax, nSeat;
 	__asm        mov    dword ptr [ebp+eax*4-0x40], 1;

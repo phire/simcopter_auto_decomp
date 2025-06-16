@@ -143,15 +143,7 @@ _T6a:
 	__asm        add    eax, GridRotate;
 	__asm        mov    GridRotateEnd, eax;
 // LINE 203:
-	__asm        push   0;
-	__asm        mov    eax, goff;
-	__asm        push   eax;
-	__asm        push   0x59D2E4;
-	__asm        mov    eax, S_gridmempool;
-	__asm        push   eax;
-	__asm        call   S2AllocMem1;
-	__asm        add    esp, 0x10;
-	__asm        mov    GridProject, eax;
+	GridProject = S2AllocMem1(0x0, goff, 0x59d2e4, S_gridmempool);
 // LINE 204:
 	GridProjectEnd = (goff + GridProject);
 // LINE 206:
@@ -221,15 +213,7 @@ _T6a:
 	__asm        add    eax, WhereIsIt;
 	__asm        mov    WhereIsItEnd, eax;
 // LINE 215:
-	__asm        push   0;
-	__asm        mov    eax, GridNVerts;
-	__asm        push   eax;
-	__asm        push   0x59D320;
-	__asm        mov    eax, S_gridmempool;
-	__asm        push   eax;
-	__asm        call   S2AllocMem1;
-	__asm        add    esp, 0x10;
-	__asm        mov    IsRotated, eax;
+	IsRotated = S2AllocMem1(0x0, GridNVerts, 0x59d320, S_gridmempool);
 // LINE 216:
 	IsRotatedEnd = (GridNVerts + IsRotated);
 // LINE 218:
@@ -639,11 +623,7 @@ void InitGridPool() {
 	__asm        add    eax, GridPoolSize;
 	__asm        mov    GridPoolSize, eax;
 // LINE 412:
-	__asm        mov    eax, GridPoolSize;
-	__asm        push   eax;
-	__asm        call   S2AllocPool;
-	__asm        add    esp, 4;
-	__asm        mov    S_gridmempool, eax;
+	S_gridmempool = S2AllocPool(GridPoolSize);
 // LINE 413:
 }
 

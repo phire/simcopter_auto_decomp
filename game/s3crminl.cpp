@@ -431,39 +431,17 @@ public:
 // FUNCTION: COPTER_D 0x005349c0
 int32_t CreateCriminalCarInstance(int32_t instanceID) {
 // LINE 82:
-	__asm        mov    eax, instanceID;
-	__asm        push   eax;
-	__asm        call   CriminalEvaderCarClass::CreateInstance;
-	__asm        add    esp, 4;
-	__asm        test   eax, eax;
-	__asm        je     _T24;
-
-	__asm        mov    eax, 1;
-	__asm        jmp    _T26;
 _T24:
-	__asm        xor    eax, eax;
 _T26:
-	__asm        jmp    __RETURN;
+	return (CriminalEvaderCarClass::CreateInstance(instanceID) == 0x0);
 // LINE 83:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x005349f0
 int32_t S3CriminalMissionStart(short mID, short mType, long x, long y) {
 // LINE 88:
-	__asm        mov    eax, y;
-	__asm        push   eax;
-	__asm        mov    eax, x;
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(mType);
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(mID);
-	__asm        push   eax;
-	__asm        call   CriminalEvaderCarClass::StartCriminalMission;
-	__asm        add    esp, 0x10;
-	__asm        jmp    __RETURN;
+	return CriminalEvaderCarClass::StartCriminalMission(y, x, reinterpret_cast<uint32_t>(mType), reinterpret_cast<uint32_t>(mID));
 // LINE 89:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00534a18

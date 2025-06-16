@@ -764,11 +764,7 @@ _T8d:
 _T99:
 	szVersionInformation = 0x0;
 // LINE 118:
-	__asm        push   0;
-	__asm        push   4;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x4);
 // LINE 119:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x12AC];
@@ -924,11 +920,7 @@ _T27a:
 	__asm        test   eax, eax;
 	__asm        je     _T3da;
 // LINE 125:
-	__asm        push   0;
-	__asm        push   0x175;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x175);
 // LINE 126:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x22B0];
@@ -1021,11 +1013,7 @@ _T3da:
 	__asm        test   eax, eax;
 	__asm        je     _T513;
 // LINE 132:
-	__asm        push   0;
-	__asm        push   0x176;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x176);
 // LINE 133:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x32B4];
@@ -1111,16 +1099,9 @@ _T4de:
 	__asm        add    esp, 8;
 // LINE 140:
 _T513:
-	__asm        call   Version::GetSystemType;
-	__asm        mov    lSystemType, eax;
+	lSystemType = Version::GetSystemType();
 // LINE 141:
-	__asm        push   0;
-	__asm        mov    eax, lSystemType;
-	__asm        add    eax, 0x177;
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, (lSystemType + 0x177));
 // LINE 142:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x42B8];
@@ -1231,11 +1212,7 @@ _T60c:
 	__asm        div    ecx;
 	__asm        mov    lPhysicalMemory, eax;
 // LINE 156:
-	__asm        push   0;
-	__asm        push   0x174;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x174);
 // LINE 157:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x52BC];
@@ -1320,16 +1297,9 @@ _T77e:
 	__asm        call   strcat;
 	__asm        add    esp, 8;
 // LINE 162:
-	__asm        call   Version::GetCPUVersion;
-	__asm        mov    lCPUVersion, eax;
+	lCPUVersion = Version::GetCPUVersion();
 // LINE 163:
-	__asm        push   0;
-	__asm        mov    eax, lCPUVersion;
-	__asm        add    eax, 0x168;
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, (lCPUVersion + 0x168));
 // LINE 164:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x62C0];
@@ -1405,17 +1375,12 @@ _T8b2:
 	__asm        call   strcat;
 	__asm        add    esp, 8;
 // LINE 168:
-	__asm        call   Version::GetCPUSpeed;
-	__asm        mov    lCPUSpeed, eax;
+	lCPUSpeed = Version::GetCPUSpeed();
 // LINE 169:
 	__asm        cmp    lCPUSpeed, 0;
 	__asm        je     _Ta04;
 // LINE 170:
-	__asm        push   0;
-	__asm        push   0x173;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x173);
 // LINE 171:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x72C4];
@@ -2025,12 +1990,7 @@ _T6d:
 	__asm        jmp    _T79;
 // LINE 284:
 _T79:
-	__asm        push   0;
-	__asm        mov    eax, nStringID;
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, nStringID);
 // LINE 285:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x102C];
@@ -2897,8 +2857,7 @@ _T250:
 // LINE 398:
 // Block start:
 	/*bp-0x18*/  /*packed*/ struct Point2d *position2d;
-	__asm        call   S3HeliGetFreePad;
-	__asm        mov    position2d, eax;
+	position2d = S3HeliGetFreePad();
 // LINE 399:
 	__asm        push   0x50000;
 	__asm        push   0x50000;
@@ -3391,11 +3350,7 @@ _T984:
 	__asm        add    esp, 0xC;
 // LINE 439:
 _T99e:
-	__asm        lea    eax, szCareerLevel[0];
-	__asm        push   eax;
-	__asm        call   atoi;
-	__asm        add    esp, 4;
-	__asm        mov    nNewCareerLevel, eax;
+	nNewCareerLevel = atoi(szCareerLevel[0]);
 // LINE 440:
 	__asm        cmp    nNewCareerLevel, 1;
 	__asm        jge    _T9c1;
@@ -3587,11 +3542,7 @@ _Tc2e:
 	__asm        add    esp, 0xC;
 // LINE 462:
 _Tc48:
-	__asm        lea    eax, szBucks[0];
-	__asm        push   eax;
-	__asm        call   atoi;
-	__asm        add    esp, 4;
-	__asm        mov    nNewBucks, eax;
+	nNewBucks = atoi(szBucks[0]);
 // LINE 463:
 	__asm        cmp    nNewBucks, 0;
 	__asm        jg     _Tc6e;

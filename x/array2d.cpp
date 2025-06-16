@@ -388,22 +388,11 @@ void _cArray::FromDiskCreate(void * __ptr32 hArray, /*unpacked*/ class ResFile *
 // LINE 30:
 	this->fFile = pFile;
 // LINE 31:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x24];
-	__asm        push   eax;
-	__asm        call   OpenFile;
-	__asm        add    esp, 4;
-	__asm        mov    fileOpened, ax;
+	fileOpened = OpenFile(this->fFile);
 // LINE 33:
 	this->fDataHandle = hArray;
 // LINE 34:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   Memory::HGetSize;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x1C], eax;
+	this->fDataHandleSize = Memory::HGetSize(this->fDataHandle);
 // LINE 37:
 	__asm        jmp    _T7c;
 
@@ -473,24 +462,12 @@ _T11f:
 	__asm        call   Memory::BlockMove;
 	__asm        add    esp, 0xC;
 // LINE 62:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x3C;
-	__asm        push   eax;
-	__asm        call   PStr2Long;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x4C], eax;
+	this->fTinyName = PStr2Long((this + 0x3c));
 // LINE 63:
 	__asm        mov    ecx, this;
 	__asm        call   _cArray::CheckIntoTable;
 // LINE 67:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   Memory::Stash;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], eax;
+	this->fDataPtr = Memory::Stash(this->fDataHandle);
 // LINE 68:
 	header = this->fDataPtr;
 // LINE 70:
@@ -691,13 +668,7 @@ _T39:
 	__asm        call   Memory::BlockMove;
 	__asm        add    esp, 0xC;
 // LINE 136:
-	__asm        mov    eax, this;
-	__asm        add    eax, 0x3C;
-	__asm        push   eax;
-	__asm        call   PStr2Long;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x4C], eax;
+	this->fTinyName = PStr2Long((this + 0x3c));
 // LINE 139:
 	__asm        mov    ecx, this;
 	__asm        call   _cArray::CheckIntoTable;
@@ -827,10 +798,7 @@ void _cArray::MakeTable() {
 // LINE 196:
 // Block start:
 	/*bp-0x4*/   long count;
-	__asm        push   0x1000;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    _cArray::sArrayTable, eax;
+	_cArray::sArrayTable = operator new(0x1000);
 // LINE 197:
 	__asm        cmp    _cArray::sArrayTable, 0;
 	__asm        jne    _T51;
@@ -978,12 +946,7 @@ void _cArray::FillHeader() {
 	/*bp-0x8*/   unsigned long debugsize;
 
 // LINE 305:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   Memory::HGetSize;
-	__asm        add    esp, 4;
-	__asm        mov    debugsize, eax;
+	debugsize = Memory::HGetSize(this->fDataHandle);
 // LINE 306:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, debugsize;
@@ -1111,12 +1074,7 @@ _T26:
 _T2b:
 	begin = this->fDataPtr;
 // LINE 335:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   Memory::HGetSize;
-	__asm        add    esp, 4;
-	__asm        mov    debugsize, eax;
+	debugsize = Memory::HGetSize(this->fDataHandle);
 // LINE 336:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, debugsize;
@@ -2074,14 +2032,7 @@ _T9c:
 	__asm        add    esp, 0x10;
 // LINE 506:
 _Tee:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        push   eax;
-	__asm        call   Memory::HAlloc;
-	__asm        add    esp, 8;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+8], eax;
+	this->fDataHandle = Memory::HAlloc(0x0, this->fDataHandleSize);
 // LINE 507:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -2095,13 +2046,7 @@ _Tee:
 	__asm        add    esp, 0x10;
 // LINE 509:
 _T12e:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   Memory::Stash;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], eax;
+	this->fDataPtr = Memory::Stash(this->fDataHandle);
 // LINE 511:
 	return 0x1;
 // LINE 512:
@@ -2179,12 +2124,7 @@ void _cArray::CopyFrom(unsigned long oldname) {
 	/*bp-0x4*/   /*unpacked*/ class _cArray *src;
 
 // LINE 543:
-	__asm        push   0xFFFFFFFF;
-	__asm        mov    eax, oldname;
-	__asm        push   eax;
-	__asm        call   _cArray::GetArray;
-	__asm        add    esp, 8;
-	__asm        mov    src, eax;
+	src = _cArray::GetArray(-0x1, oldname);
 // LINE 544:
 	__asm        mov    eax, src;
 	__asm        push   eax;
@@ -2383,12 +2323,7 @@ void _cArray::CopyTo(unsigned long oldname) {
 	/*bp-0x4*/   /*unpacked*/ class _cArray *dest;
 
 // LINE 581:
-	__asm        push   0xFFFFFFFF;
-	__asm        mov    eax, oldname;
-	__asm        push   eax;
-	__asm        call   _cArray::GetArray;
-	__asm        add    esp, 8;
-	__asm        mov    dest, eax;
+	dest = _cArray::GetArray(-0x1, oldname);
 // LINE 582:
 	__asm        mov    eax, dest;
 	__asm        push   eax;
@@ -2701,11 +2636,7 @@ void _cArray::LoadAllArrays(/*unpacked*/ class ResFile *pFile, unsigned long rTy
 	__asm        add    esp, 0x10;
 // LINE 712:
 _T44:
-	__asm        push   0;
-	__asm        push   0;
-	__asm        call   _cArray::GetLoadedIndex;
-	__asm        add    esp, 8;
-	__asm        mov    foundcount, ax;
+	foundcount = _cArray::GetLoadedIndex(0x0, 0x0);
 // LINE 713:
 	__asm        movsx  eax, foundcount;
 	__asm        cmp    eax, 0xFFFFFFFF;
@@ -2731,11 +2662,7 @@ _T7d:
 	__asm        mov    [edx], eax;
 	__asm        mov    [edx+4], ecx;
 // LINE 717:
-	__asm        mov    eax, pFile;
-	__asm        push   eax;
-	__asm        call   OpenFile;
-	__asm        add    esp, 4;
-	__asm        mov    fileOpened, ax;
+	fileOpened = OpenFile(pFile);
 // LINE 721:
 	__asm        mov    eax, rType;
 	__asm        push   eax;
@@ -2777,11 +2704,7 @@ _Tce:
 	__asm        add    esp, 0x10;
 // LINE 727:
 _T119:
-	__asm        mov    eax, hArray;
-	__asm        push   eax;
-	__asm        call   Memory::HLock;
-	__asm        add    esp, 4;
-	__asm        mov    dataPtr, eax;
+	dataPtr = Memory::HLock(hArray);
 // LINE 728:
 	header = dataPtr;
 // LINE 729:

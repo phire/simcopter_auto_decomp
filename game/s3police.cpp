@@ -560,21 +560,10 @@ public:
 // FUNCTION: COPTER_D 0x00536e00
 int32_t CreatePoliceCarInstance(int32_t instanceID) {
 // LINE 90:
-	__asm        mov    eax, instanceID;
-	__asm        push   eax;
-	__asm        call   PoliceCarClass::CreateInstance;
-	__asm        add    esp, 4;
-	__asm        test   eax, eax;
-	__asm        je     _T24;
-
-	__asm        mov    eax, 1;
-	__asm        jmp    _T26;
 _T24:
-	__asm        xor    eax, eax;
 _T26:
-	__asm        jmp    __RETURN;
+	return (PoliceCarClass::CreateInstance(instanceID) == 0x0);
 // LINE 91:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00536e30
@@ -1098,11 +1087,7 @@ _T3cd:
 // LINE 371:
 	vec.z = (ViewState.world_pos.z - this->autoDynomitor.loc.z);
 // LINE 372:
-	__asm        lea    eax, vec.x;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
-	__asm        mov    dist, eax;
+	dist = MTNormalize(vec.x);
 // LINE 373:
 	__asm        mov    eax, dist;
 	__asm        cmp    AutomobileClass::policeSirenDist, eax;
@@ -1331,11 +1316,7 @@ _T6ca:
 // LINE 455:
 	vec.z = (ViewState.world_pos.z - this->autoDynomitor.loc.z);
 // LINE 456:
-	__asm        lea    eax, vec.x;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
-	__asm        mov    dist, eax;
+	dist = MTNormalize(vec.x);
 // LINE 457:
 	__asm        mov    eax, dist;
 	__asm        cmp    AutomobileClass::policeSirenDist, eax;
@@ -1470,11 +1451,7 @@ _T859:
 // LINE 516:
 	vec.z = (ViewState.world_pos.z - this->autoDynomitor.loc.z);
 // LINE 517:
-	__asm        lea    eax, vec.x;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
-	__asm        mov    dist, eax;
+	dist = MTNormalize(vec.x);
 // LINE 518:
 	__asm        mov    eax, dist;
 	__asm        cmp    AutomobileClass::policeSirenDist, eax;

@@ -417,11 +417,7 @@ _T1b8:
 // LINE 253:
 	vec.z = (ViewState.world_pos.z - S_last_viewpos.z);
 // LINE 254:
-	__asm        lea    eax, vec.x;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
-	__asm        mov    S_posdelta, eax;
+	S_posdelta = MTNormalize(vec.x);
 // LINE 257:
 	__asm        mov    eax, S_last_viewvect.z;
 	__asm        push   eax;
@@ -627,11 +623,7 @@ _T22:
 	lValue = 0x64;
 // LINE 329:
 _T33:
-	__asm        mov    eax, lValue;
-	__asm        push   eax;
-	__asm        call   ConvertGUIBackPlaneValueToRender;
-	__asm        add    esp, 4;
-	__asm        mov    nConvertedValue, eax;
+	nConvertedValue = ConvertGUIBackPlaneValueToRender(lValue);
 // LINE 332:
 	__asm        mov    eax, nConvertedValue;
 	__asm        push   eax;

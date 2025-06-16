@@ -182,12 +182,7 @@ _Tf9:
 	__asm        mov    eax, mwindow.WindowHigh;
 	__asm        mov    mwindow.RenderHigh, eax;
 // LINE 228:
-	__asm        push   3;
-	__asm        mov    eax, G_restex;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    bhdr, eax;
+	bhdr = VRInt2BmpHdr(0x3, G_restex);
 // LINE 229:
 	ptr = bhdr;
 // LINE 230:
@@ -218,12 +213,7 @@ _T1b0:
 	__asm        jmp    _T1ad;
 // LINE 245:
 _T1d4:
-	__asm        push   0xC;
-	__asm        mov    eax, G_restex;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    bhdr, eax;
+	bhdr = VRInt2BmpHdr(0xc, G_restex);
 // LINE 246:
 	ptr = bhdr;
 // LINE 247:
@@ -2473,8 +2463,7 @@ void S3MapDrawPosLines(long posx, long posy) {
 // LINE 975:
 	__asm        and    posx, 0xFF;
 // LINE 987:
-	__asm        call   S3MissionGetCurrDestMapLoc;
-	__asm        mov    maploc, eax;
+	maploc = S3MissionGetCurrDestMapLoc();
 // LINE 988:
 	__asm        cmp    maploc, 0;
 	__asm        je     _Te6;
@@ -2546,8 +2535,7 @@ _Tb1:
 	__asm        jmp    _T19a;
 // LINE 1003:
 _Te6:
-	__asm        call   S3MissionGetCurrMapLoc;
-	__asm        mov    maploc, eax;
+	maploc = S3MissionGetCurrMapLoc();
 // LINE 1004:
 	__asm        cmp    maploc, 0;
 	__asm        je     _T19a;
@@ -2617,8 +2605,7 @@ _T16a:
 	__asm        add    esp, 0x10;
 // LINE 1019:
 _T19a:
-	__asm        call   S3MissionGetCurrPickupLoc;
-	__asm        mov    maploc, eax;
+	maploc = S3MissionGetCurrPickupLoc();
 // LINE 1020:
 	__asm        cmp    maploc, 0;
 	__asm        je     _T24e;
@@ -3552,8 +3539,7 @@ void S3MapDrawMissionIcons(long posx, long posy) {
 	/*bp-0x14*/  /*packed*/ struct MISSION_DATA *md;
 
 // LINE 1508:
-	__asm        call   S3MissionGetCurr;
-	__asm        mov    currmd, eax;
+	currmd = S3MissionGetCurr();
 // LINE 1510:
 	__asm        mov    i, 0;
 	__asm        jmp    _T20;
@@ -3563,11 +3549,7 @@ _T20:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    __RETURN;
 // LINE 1512:
-	__asm        mov    eax, i;
-	__asm        push   eax;
-	__asm        call   S3MissionGetDataByIndex;
-	__asm        add    esp, 4;
-	__asm        mov    md, eax;
+	md = S3MissionGetDataByIndex(i);
 // LINE 1516:
 	__asm        cmp    md, 0;
 	__asm        je     _T69;
@@ -4232,13 +4214,7 @@ _T4e:
 // LINE 1843:
 	to.y = y2;
 // LINE 1846:
-	__asm        lea    eax, to.x;
-	__asm        push   eax;
-	__asm        lea    eax, from.x;
-	__asm        push   eax;
-	__asm        call   MTCheapDist2D;
-	__asm        add    esp, 8;
-	__asm        mov    dist1, eax;
+	dist1 = MTCheapDist2D(to.x, from.x);
 // LINE 1850:
 	__asm        cmp    x1, 0x7F;
 	__asm        jle    _T8a;
@@ -4252,13 +4228,7 @@ _T8a:
 	from.y -= 0x100;
 // LINE 1854:
 _T9b:
-	__asm        lea    eax, to.x;
-	__asm        push   eax;
-	__asm        lea    eax, from.x;
-	__asm        push   eax;
-	__asm        call   MTCheapDist2D;
-	__asm        add    esp, 8;
-	__asm        mov    dist2, eax;
+	dist2 = MTCheapDist2D(to.x, from.x);
 // LINE 1857:
 	__asm        mov    eax, dist1;
 	__asm        cmp    dist2, eax;

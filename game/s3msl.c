@@ -323,13 +323,7 @@ _T39:
 // LINE 215:
 	md->speed = 0x0;
 // LINE 217:
-	__asm        push   0x64;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x28], eax;
+	md->dymissile = S2Alloc(0x64, G_dyobjmempool);
 // LINE 218:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, md;
@@ -340,13 +334,7 @@ _T39:
 // LINE 220:
 	md->dymissile->radius = 0x60000;
 // LINE 222:
-	__asm        mov    eax, size;
-	__asm        push   eax;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    mem, eax;
+	mem = S2Alloc(size, G_dyobjmempool);
 // LINE 223:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -396,13 +384,7 @@ _T121:
 // LINE 241:
 	md->speed = 0x0;
 // LINE 243:
-	__asm        push   0x64;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x28], eax;
+	md->dymissile = S2Alloc(0x64, G_dyobjmempool);
 // LINE 244:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, md;
@@ -413,13 +395,7 @@ _T121:
 // LINE 246:
 	md->dymissile->radius = 0x60000;
 // LINE 248:
-	__asm        mov    eax, size;
-	__asm        push   eax;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    mem, eax;
+	mem = S2Alloc(size, G_dyobjmempool);
 // LINE 249:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -469,13 +445,7 @@ _T20c:
 // LINE 266:
 	md->speed = 0x0;
 // LINE 268:
-	__asm        push   0x64;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x28], eax;
+	md->dymissile = S2Alloc(0x64, G_dyobjmempool);
 // LINE 269:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, md;
@@ -486,13 +456,7 @@ _T20c:
 // LINE 271:
 	md->dymissile->radius = 0x30000;
 // LINE 273:
-	__asm        mov    eax, size;
-	__asm        push   eax;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    mem, eax;
+	mem = S2Alloc(size, G_dyobjmempool);
 // LINE 274:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -549,13 +513,7 @@ _T2de:
 // LINE 294:
 	md->speed = 0x0;
 // LINE 296:
-	__asm        push   0x64;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x28], eax;
+	md->dymissile = S2Alloc(0x64, G_dyobjmempool);
 // LINE 297:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, md;
@@ -566,13 +524,7 @@ _T2de:
 // LINE 299:
 	md->dymissile->radius = 0x30000;
 // LINE 301:
-	__asm        mov    eax, size;
-	__asm        push   eax;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    mem, eax;
+	mem = S2Alloc(size, G_dyobjmempool);
 // LINE 302:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -617,13 +569,7 @@ _T3db:
 // LINE 317:
 	md->speed = 0x0;
 // LINE 319:
-	__asm        push   0x64;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x28], eax;
+	md->dymissile = S2Alloc(0x64, G_dyobjmempool);
 // LINE 320:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, md;
@@ -636,11 +582,7 @@ _T3db:
 // LINE 323:
 	md->dymissile->radius = 0x140000;
 // LINE 326:
-	__asm        push   0x17;
-	__asm        push   3;
-	__asm        call   VRObjCreatePoint;
-	__asm        add    esp, 8;
-	__asm        mov    obj, eax;
+	obj = VRObjCreatePoint(0x17, 0x3);
 // LINE 327:
 	__asm        cmp    obj, 0;
 	__asm        jne    _T47b;
@@ -724,13 +666,7 @@ _T52e:
 // LINE 363:
 	md->speed = 0x0;
 // LINE 365:
-	__asm        push   0x64;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x28], eax;
+	md->dymissile = S2Alloc(0x64, G_dyobjmempool);
 // LINE 366:
 	__asm        mov    eax, i;
 	__asm        mov    ecx, md;
@@ -741,11 +677,7 @@ _T52e:
 // LINE 368:
 	md->dymissile->radius = 0x10000;
 // LINE 371:
-	__asm        push   0x17;
-	__asm        push   1;
-	__asm        call   VRObjCreatePoint;
-	__asm        add    esp, 8;
-	__asm        mov    obj, eax;
+	obj = VRObjCreatePoint(0x17, 0x1);
 // LINE 372:
 	__asm        cmp    obj, 0;
 	__asm        jne    _T5c1;
@@ -2489,13 +2421,7 @@ _T4c1:
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x18], eax;
 // LINE 1073:
-	__asm        mov    eax, md;
-	__asm        add    eax, 0x10;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0xC], eax;
+	md->speed = MTNormalize((md + 0x10));
 // LINE 1076:
 	__asm        mov    eax, G_AvLoopTime;
 	__asm        push   eax;
@@ -2750,14 +2676,7 @@ _T891:
 	cptr->dyptr = md->dymissile;
 // LINE 1156:
 _T8b1:
-	__asm        push   0;
-	__asm        mov    eax, newloc.z;
-	__asm        push   eax;
-	__asm        mov    eax, newloc.x;
-	__asm        push   eax;
-	__asm        call   S3TerrPrecisionAlt;
-	__asm        add    esp, 0xC;
-	__asm        mov    alt, eax;
+	alt = S3TerrPrecisionAlt(0x0, newloc.z, newloc.x);
 // LINE 1157:
 	__asm        mov    eax, alt;
 	__asm        cmp    newloc.y, eax;
@@ -3016,13 +2935,7 @@ _Tb7f:
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x18], eax;
 // LINE 1242:
-	__asm        mov    eax, md;
-	__asm        add    eax, 0x10;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0xC], eax;
+	md->speed = MTNormalize((md + 0x10));
 // LINE 1245:
 	__asm        mov    eax, G_AvLoopTime;
 	__asm        push   eax;
@@ -3328,14 +3241,7 @@ _Tff2:
 	cptr->dyptr = md->dymissile;
 // LINE 1342:
 _T1012:
-	__asm        push   0;
-	__asm        mov    eax, newloc.z;
-	__asm        push   eax;
-	__asm        mov    eax, newloc.x;
-	__asm        push   eax;
-	__asm        call   S3TerrPrecisionAlt;
-	__asm        add    esp, 0xC;
-	__asm        mov    alt, eax;
+	alt = S3TerrPrecisionAlt(0x0, newloc.z, newloc.x);
 // LINE 1343:
 	__asm        mov    eax, alt;
 	__asm        cmp    newloc.y, eax;
@@ -4153,13 +4059,7 @@ _T19d9:
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x18], eax;
 // LINE 1613:
-	__asm        mov    eax, md;
-	__asm        add    eax, 0x10;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0xC], eax;
+	md->speed = MTNormalize((md + 0x10));
 // LINE 1615:
 	__asm        jmp    _T1bd9;
 _T1ab4:
@@ -4219,13 +4119,7 @@ _T1ab4:
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x18], eax;
 // LINE 1623:
-	__asm        mov    eax, md;
-	__asm        add    eax, 0x10;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0xC], eax;
+	md->speed = MTNormalize((md + 0x10));
 // LINE 1625:
 	__asm        jmp    _T1bd9;
 _T1b8f:
@@ -4563,13 +4457,7 @@ _T1f1d:
 	__asm        mov    ecx, md;
 	__asm        mov    [ecx+0x18], eax;
 // LINE 1734:
-	__asm        mov    eax, md;
-	__asm        add    eax, 0x10;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0xC], eax;
+	md->speed = MTNormalize((md + 0x10));
 // LINE 1737:
 	__asm        mov    eax, G_AvLoopTime;
 	__asm        push   eax;
@@ -4706,14 +4594,7 @@ _T214a:
 	md->gas_on = 0x1;
 // LINE 1769:
 _T21a3:
-	__asm        push   0;
-	__asm        mov    eax, newloc.z;
-	__asm        push   eax;
-	__asm        mov    eax, newloc.x;
-	__asm        push   eax;
-	__asm        call   S3TerrPrecisionAlt;
-	__asm        add    esp, 0xC;
-	__asm        mov    alt, eax;
+	alt = S3TerrPrecisionAlt(0x0, newloc.z, newloc.x);
 // LINE 1770:
 	__asm        mov    eax, alt;
 	__asm        cmp    newloc.y, eax;
@@ -4938,47 +4819,12 @@ _T1fc:
 	__asm        test   ah, 0x10;
 	__asm        je     _T251;
 // LINE 1914:
-	__asm        mov    eax, dyobj;
-	__asm        mov    eax, [eax+0x10];
-	__asm        add    eax, 0xF0000;
-	__asm        push   eax;
-	__asm        mov    eax, dyobj;
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        mov    eax, dist;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        add    eax, 0x10;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        call   S3MissileSphereHit;
-	__asm        add    esp, 0x14;
-	__asm        mov    newdist, eax;
+	newdist = S3MissileSphereHit((dyobj->radius + 0xf0000), (dyobj + 0x18), dist, (md + 0x10), (md->dymissile + 0x18));
 // LINE 1916:
 	__asm        jmp    _T282;
 // LINE 1923:
 _T251:
-	__asm        mov    eax, dyobj;
-	__asm        mov    eax, [eax+0x10];
-	__asm        push   eax;
-	__asm        mov    eax, dyobj;
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        mov    eax, dist;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        add    eax, 0x10;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        call   S3MissileSphereHit;
-	__asm        add    esp, 0x14;
-	__asm        mov    newdist, eax;
+	newdist = S3MissileSphereHit(dyobj->radius, (dyobj + 0x18), dist, (md + 0x10), (md->dymissile + 0x18));
 // LINE 1926:
 _T282:
 	__asm        cmp    newdist, 0;
@@ -5178,45 +5024,12 @@ _T45f:
 // LINE 2005:
 	oloc.z += center.z;
 // LINE 2011:
-	__asm        mov    eax, oinfo.Radius;
-	__asm        push   eax;
-	__asm        lea    eax, oloc.x;
-	__asm        push   eax;
-	__asm        mov    eax, dist;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        add    eax, 0x10;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        call   S3MissileSphereHit;
-	__asm        add    esp, 0x14;
-	__asm        mov    newdist, eax;
+	newdist = S3MissileSphereHit(oinfo.Radius, oloc.x, dist, (md + 0x10), (md->dymissile + 0x18));
 // LINE 2015:
 	__asm        cmp    newdist, 0;
 	__asm        jl     _T53c;
 // LINE 2022:
-	__asm        lea    eax, norm;
-	__asm        push   eax;
-	__asm        mov    eax, stobj;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        lea    eax, cloc.x;
-	__asm        push   eax;
-	__asm        mov    eax, dist;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        add    eax, 0x10;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        call   VRStObjPolyHit;
-	__asm        add    esp, 0x18;
-	__asm        mov    newdist, eax;
+	newdist = VRStObjPolyHit(norm, stobj->mesh, cloc.x, dist, (md + 0x10), (md->dymissile + 0x18));
 // LINE 2025:
 _T53c:
 	__asm        cmp    newdist, 0;
@@ -5345,15 +5158,7 @@ _T65e:
 	__asm        test   eax, eax;
 	__asm        jne    _T6d2;
 // LINE 2053:
-	__asm        push   1;
-	__asm        mov    eax, celloc.y;
-	__asm        push   eax;
-	__asm        mov    eax, celloc.x;
-	__asm        push   eax;
-	__asm        call   S3MissionStart;
-	__asm        add    esp, 0xC;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x40], eax;
+	md->mission_id = S3MissionStart(0x1, celloc.y, celloc.x);
 // LINE 2056:
 _T6d2:
 	__asm        jmp    _T72f;
@@ -5608,20 +5413,7 @@ _T983:
 	__asm        jmp    _T45f;
 // LINE 2157:
 _T990:
-	__asm        lea    eax, cloc.x;
-	__asm        push   eax;
-	__asm        mov    eax, dist;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        add    eax, 0x10;
-	__asm        push   eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x28];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        call   S3MissileGroundHit;
-	__asm        add    esp, 0x10;
-	__asm        mov    newdist, eax;
+	newdist = S3MissileGroundHit(cloc.x, dist, (md + 0x10), (md->dymissile + 0x18));
 // LINE 2158:
 	__asm        cmp    newdist, 0;
 	__asm        jle    _Td1a;
@@ -5797,15 +5589,7 @@ _Tb93:
 	__asm        test   eax, eax;
 	__asm        jne    _Tbff;
 // LINE 2201:
-	__asm        push   1;
-	__asm        mov    eax, celloc.y;
-	__asm        push   eax;
-	__asm        mov    eax, celloc.x;
-	__asm        push   eax;
-	__asm        call   S3MissionStart;
-	__asm        add    esp, 0xC;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x40], eax;
+	md->mission_id = S3MissionStart(0x1, celloc.y, celloc.x);
 // LINE 2203:
 	__asm        jmp    _Tbff;
 // LINE 2208:
@@ -5925,16 +5709,7 @@ int32_t S3MissileGroundHit(/*packed*/ struct Point3d *sp, /*packed*/ struct Poin
 	/*bp-0x14*/  int32_t alt;
 
 // LINE 2262:
-	__asm        push   0;
-	__asm        mov    eax, sp;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        mov    eax, sp;
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        call   S3TerrPrecisionAlt;
-	__asm        add    esp, 0xC;
-	__asm        mov    alt, eax;
+	alt = S3TerrPrecisionAlt(0x0, sp->z, sp->x);
 // LINE 2263:
 	__asm        mov    eax, sp;
 	__asm        mov    eax, [eax+4];
@@ -5990,14 +5765,7 @@ _T5f:
 	__asm        add    ecx, eax;
 	__asm        mov    endp.z, ecx;
 // LINE 2278:
-	__asm        push   0;
-	__asm        mov    eax, endp.z;
-	__asm        push   eax;
-	__asm        mov    eax, endp.x;
-	__asm        push   eax;
-	__asm        call   S3TerrPrecisionAlt;
-	__asm        add    esp, 0xC;
-	__asm        mov    alt2, eax;
+	alt2 = S3TerrPrecisionAlt(0x0, endp.z, endp.x);
 // LINE 2283:
 	__asm        mov    eax, endp.y;
 	__asm        sub    eax, 0x40000;
@@ -6506,15 +6274,7 @@ int32_t S3MissileMIFFLoad(void * __ptr32 miffReader) {
 	/*bp-0x10*/  /*packed*/ struct _MISSILE_DATA *md;
 
 // LINE 2785:
-	__asm        push   0x48;
-	__asm        push   0x62A530;
-	__asm        mov    eax, tgMIFFID;
-	__asm        push   eax;
-	__asm        mov    eax, miffReader;
-	__asm        push   eax;
-	__asm        call   ReadFirstMIFFChunk;
-	__asm        add    esp, 0x10;
-	__asm        mov    ret, eax;
+	ret = ReadFirstMIFFChunk(0x48, 0x62a530, tgMIFFID, miffReader);
 // LINE 2786:
 	__asm        cmp    ret, 0;
 	__asm        jne    _T36;
@@ -6623,15 +6383,7 @@ _T4e:
 	S_num_active_teargas++;
 // LINE 2822:
 _T18b:
-	__asm        push   0x48;
-	__asm        push   0x62A530;
-	__asm        mov    eax, tgMIFFID;
-	__asm        push   eax;
-	__asm        mov    eax, miffReader;
-	__asm        push   eax;
-	__asm        call   ReadNextMIFFChunk;
-	__asm        add    esp, 0x10;
-	__asm        mov    ret, eax;
+	ret = ReadNextMIFFChunk(0x48, 0x62a530, tgMIFFID, miffReader);
 // LINE 2823:
 	__asm        cmp    ret, 0;
 	__asm        jne    _T1c2;
@@ -6645,15 +6397,7 @@ _T1c2:
 	__asm        jmp    _T4b;
 // LINE 2831:
 _T1c7:
-	__asm        push   0x48;
-	__asm        push   0x62A530;
-	__asm        mov    eax, dbMIFFID;
-	__asm        push   eax;
-	__asm        mov    eax, miffReader;
-	__asm        push   eax;
-	__asm        call   ReadFirstMIFFChunk;
-	__asm        add    esp, 0x10;
-	__asm        mov    ret, eax;
+	ret = ReadFirstMIFFChunk(0x48, 0x62a530, dbMIFFID, miffReader);
 // LINE 2832:
 	__asm        cmp    ret, 0;
 	__asm        jne    _T1f4;
@@ -6762,15 +6506,7 @@ _T20c:
 	S_num_active_debris++;
 // LINE 2868:
 _T349:
-	__asm        push   0x48;
-	__asm        push   0x62A530;
-	__asm        mov    eax, dbMIFFID;
-	__asm        push   eax;
-	__asm        mov    eax, miffReader;
-	__asm        push   eax;
-	__asm        call   ReadNextMIFFChunk;
-	__asm        add    esp, 0x10;
-	__asm        mov    ret, eax;
+	ret = ReadNextMIFFChunk(0x48, 0x62a530, dbMIFFID, miffReader);
 // LINE 2869:
 	__asm        cmp    ret, 0;
 	__asm        jne    _T380;
@@ -6820,15 +6556,7 @@ _T18:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 2890:
-	__asm        push   0x48;
-	__asm        push   0x62A530;
-	__asm        mov    eax, tgMIFFID;
-	__asm        push   eax;
-	__asm        mov    eax, miffWriter;
-	__asm        push   eax;
-	__asm        call   WriteMIFFChunk;
-	__asm        add    esp, 0x10;
-	__asm        mov    ret, eax;
+	ret = WriteMIFFChunk(0x48, 0x62a530, tgMIFFID, miffWriter);
 // LINE 2891:
 	__asm        cmp    ret, 0;
 	__asm        jne    _T88;
@@ -6865,15 +6593,7 @@ _T9c:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 2906:
-	__asm        push   0x48;
-	__asm        push   0x62A530;
-	__asm        mov    eax, dbMIFFID;
-	__asm        push   eax;
-	__asm        mov    eax, miffWriter;
-	__asm        push   eax;
-	__asm        call   WriteMIFFChunk;
-	__asm        add    esp, 0x10;
-	__asm        mov    ret, eax;
+	ret = WriteMIFFChunk(0x48, 0x62a530, dbMIFFID, miffWriter);
 // LINE 2907:
 	__asm        cmp    ret, 0;
 	__asm        jne    _T10c;

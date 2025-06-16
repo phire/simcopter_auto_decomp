@@ -89,12 +89,7 @@ void S3ObjInit() {
 	/*bp-0xac*/  char msg[80]; // 0x50 bytes
 
 // LINE 390:
-	__asm        push   0x33;
-	__asm        mov    eax, G_restex;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    bhdr, eax;
+	bhdr = VRInt2BmpHdr(0x33, G_restex);
 // LINE 391:
 	G_blueshad = bhdr;
 // LINE 392:
@@ -104,12 +99,7 @@ void S3ObjInit() {
 	__asm        add    eax, 0xC;
 	__asm        add    G_blueshad, eax;
 // LINE 394:
-	__asm        push   0x34;
-	__asm        mov    eax, G_restex;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    bhdr, eax;
+	bhdr = VRInt2BmpHdr(0x34, G_restex);
 // LINE 395:
 	G_fireshad = bhdr;
 // LINE 396:
@@ -119,12 +109,7 @@ void S3ObjInit() {
 	__asm        add    eax, 0xC;
 	__asm        add    G_fireshad, eax;
 // LINE 398:
-	__asm        push   0x32;
-	__asm        mov    eax, G_restex;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    bhdr, eax;
+	bhdr = VRInt2BmpHdr(0x32, G_restex);
 // LINE 399:
 	G_smokshad = bhdr;
 // LINE 400:
@@ -134,12 +119,7 @@ void S3ObjInit() {
 	__asm        add    eax, 0xC;
 	__asm        add    G_smokshad, eax;
 // LINE 402:
-	__asm        push   1;
-	__asm        mov    eax, G_restex;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    bhdr, eax;
+	bhdr = VRInt2BmpHdr(0x1, G_restex);
 // LINE 403:
 	G_lightshad = bhdr;
 // LINE 404:
@@ -149,12 +129,7 @@ void S3ObjInit() {
 	__asm        add    eax, 0xC;
 	__asm        add    G_lightshad, eax;
 // LINE 406:
-	__asm        push   0x29;
-	__asm        mov    eax, G_restex;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    bhdr, eax;
+	bhdr = VRInt2BmpHdr(0x29, G_restex);
 // LINE 407:
 	G_darkshad = bhdr;
 // LINE 408:
@@ -164,23 +139,11 @@ void S3ObjInit() {
 	__asm        add    eax, 0xC;
 	__asm        add    G_darkshad, eax;
 // LINE 411:
-	__asm        mov    eax, G_resgeo1;
-	__asm        push   eax;
-	__asm        call   VRGetResObjectCnt;
-	__asm        add    esp, 4;
-	__asm        mov    objcount, eax;
+	objcount = VRGetResObjectCnt(G_resgeo1);
 // LINE 412:
-	__asm        mov    eax, G_resgeo2;
-	__asm        push   eax;
-	__asm        call   VRGetResObjectCnt;
-	__asm        add    esp, 4;
-	__asm        add    objcount, eax;
+	objcount += VRGetResObjectCnt(G_resgeo2);
 // LINE 413:
-	__asm        mov    eax, G_resgeo3;
-	__asm        push   eax;
-	__asm        call   VRGetResObjectCnt;
-	__asm        add    esp, 4;
-	__asm        add    objcount, eax;
+	objcount += VRGetResObjectCnt(G_resgeo3);
 // LINE 418:
 	__asm        mov    i, 0;
 	__asm        jmp    _T12f;
@@ -7736,23 +7699,11 @@ _T37:
 	__asm        add    esp, 0x10;
 // LINE 4160:
 _T53:
-	__asm        mov    eax, G_resgeo1;
-	__asm        push   eax;
-	__asm        call   VRGetResObjectCnt;
-	__asm        add    esp, 4;
-	__asm        mov    objcount, eax;
+	objcount = VRGetResObjectCnt(G_resgeo1);
 // LINE 4161:
-	__asm        mov    eax, G_resgeo2;
-	__asm        push   eax;
-	__asm        call   VRGetResObjectCnt;
-	__asm        add    esp, 4;
-	__asm        add    objcount, eax;
+	objcount += VRGetResObjectCnt(G_resgeo2);
 // LINE 4162:
-	__asm        mov    eax, G_resgeo3;
-	__asm        push   eax;
-	__asm        call   VRGetResObjectCnt;
-	__asm        add    esp, 4;
-	__asm        add    objcount, eax;
+	objcount += VRGetResObjectCnt(G_resgeo3);
 // LINE 4167:
 	__asm        mov    i, 0;
 	__asm        jmp    _T95;

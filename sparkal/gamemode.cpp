@@ -1286,20 +1286,9 @@ _Ta1:
 	__asm        call   GetPathForFile;
 	__asm        add    esp, 0x10;
 // LINE 420:
-	__asm        mov    eax, SZ_VR_APP_PALETTE_CHUNK_TYPE;
-	__asm        push   eax;
-	__asm        push   4;
-	__asm        lea    eax, szPath[0];
-	__asm        push   eax;
-	__asm        call   VRLoadResource;
-	__asm        add    esp, 0xC;
-	__asm        mov    G_respal, eax;
+	G_respal = VRLoadResource(SZ_VR_APP_PALETTE_CHUNK_TYPE, 0x4, szPath[0]);
 // LINE 421:
-	__asm        mov    eax, G_respal;
-	__asm        push   eax;
-	__asm        call   VRGetPalFromResource;
-	__asm        add    esp, 4;
-	__asm        mov    S_pal, eax;
+	S_pal = VRGetPalFromResource(G_respal);
 // LINE 424:
 _Tf6:
 	pPalettePosition = S_pal;
@@ -2409,8 +2398,7 @@ _T2f:
 	__asm        jmp    _T34;
 // LINE 642:
 _T34:
-	__asm        call   GetCurrentUserPersonalInfo;
-	__asm        mov    userPersonalInfo, eax;
+	userPersonalInfo = GetCurrentUserPersonalInfo();
 // LINE 644:
 	__asm        cmp    gameResolution, 1;
 	__asm        jne    _Tcd;

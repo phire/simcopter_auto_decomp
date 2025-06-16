@@ -26,12 +26,7 @@ struct VRResource{ // packed(0x10 bytes) TI: 0x18ae
 	/*bp-0x4*/   /*packed*/ struct CMAP_Resource *res;
 
 // LINE 56:
-	__asm        push   0x310;
-	__asm        mov    eax, G_currmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    res, eax;
+	res = S2Alloc(0x310, G_currmempool);
 // LINE 57:
 	__asm        cmp    res, 0;
 	__asm        jne    _T3a;

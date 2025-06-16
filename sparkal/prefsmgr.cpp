@@ -366,13 +366,7 @@ void PreferenceItem::PreferenceItem(const /*packed*/ class PreferenceItem& P1) {
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     _T88;
 // LINE 36:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+8], eax;
+	this->chPreferenceData = operator new(this->lPreferenceDataLength);
 // LINE 37:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -441,13 +435,7 @@ _T34:
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        je     _T88;
 // LINE 68:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+8], eax;
+	this->chPreferenceData = operator new(this->lPreferenceDataLength);
 // LINE 69:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -543,13 +531,7 @@ _T3a:
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     _Te1;
 // LINE 136:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, prefItemReturn;
-	__asm        mov    [ecx+8], eax;
+	prefItemReturn->chPreferenceData = operator new(this->lPreferenceDataLength);
 // LINE 137:
 	__asm        mov    eax, prefItemReturn;
 	__asm        cmp    dword ptr [eax+8], 0;
@@ -1389,11 +1371,7 @@ _T104:
 // LINE 294:
 	tempPrefItem.lPreferenceDataLength = lRecordDataSize;
 // LINE 295:
-	__asm        mov    eax, lRecordDataSize;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    tempPrefItem.chPreferenceData, eax;
+	tempPrefItem.chPreferenceData = operator new(lRecordDataSize);
 // LINE 296:
 	__asm        mov    eax, lRecordDataSize;
 	__asm        push   eax;
@@ -1848,12 +1826,7 @@ char * PreferenceManager::GetPrefDataCopy(long lPrefType) {
 	__asm        cmp    prefItemTemp, 0;
 	__asm        je     _T5c;
 // LINE 428:
-	__asm        mov    eax, prefItemTemp;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    chDataCopy, eax;
+	chDataCopy = operator new(prefItemTemp->lPreferenceDataLength);
 // LINE 430:
 	__asm        mov    eax, prefItemTemp;
 	__asm        mov    eax, [eax+4];
@@ -1925,12 +1898,7 @@ _T45:
 // LINE 476:
 	prefItemToSet->lPreferenceDataLength = lSizeofPref;
 // LINE 477:
-	__asm        mov    eax, lSizeofPref;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, prefItemToSet;
-	__asm        mov    [ecx+8], eax;
+	prefItemToSet->chPreferenceData = operator new(lSizeofPref);
 // LINE 478:
 	__asm        mov    eax, prefItemToSet;
 	__asm        cmp    dword ptr [eax+8], 0;

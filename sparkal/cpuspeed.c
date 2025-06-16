@@ -60,11 +60,9 @@ int32_t DllMain(void * __ptr32 hDLL, unsigned long dwReason, void * __ptr32 lpRe
 	/*bp-0x58*/  int32_t tries;
 
 // LINE 96:
-	__asm        call   wincpuid;
-	__asm        mov    processor, ax;
+	processor = wincpuid();
 // LINE 98:
-	__asm        call   wincpufeatures;
-	__asm        mov    features, eax;
+	features = wincpufeatures();
 // LINE 108:
 	freq = 0x0;
 // LINE 109:
@@ -455,13 +453,7 @@ _T409:
 // LINE 404:
 	cpu_speed.raw_freq = freq;
 // LINE 405:
-	__asm        mov    eax, freq;
-	__asm        push   eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(processor);
-	__asm        push   eax;
-	__asm        call   NormFreq;
-	__asm        add    esp, 8;
-	__asm        mov    cpu_speed.norm_freq, eax;
+	cpu_speed.norm_freq = NormFreq(freq, reinterpret_cast<uint32_t>(processor));
 // LINE 407:
 	__asm        lea    eax, cpu_speed.in_cycles;
 	__asm        mov    ecx, [ebp+8];

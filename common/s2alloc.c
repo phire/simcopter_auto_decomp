@@ -92,16 +92,9 @@ static /*packed*/ struct alloc_hdr_s* S2AllocHdr(unsigned long size) {
 	/*bp-0x8*/   char * block;
 
 // LINE 238:
-	__asm        mov    eax, size;
-	__asm        push   eax;
-	__asm        call   malloc;
-	__asm        add    esp, 4;
-	__asm        mov    block, eax;
+	block = malloc(size);
 // LINE 239:
-	__asm        push   0x10;
-	__asm        call   malloc;
-	__asm        add    esp, 4;
-	__asm        mov    hdr, eax;
+	hdr = malloc(0x10);
 // LINE 241:
 	__asm        cmp    hdr, 0;
 	__asm        je     _T39;
@@ -180,13 +173,7 @@ _T54:
 	return 0xffffffff;
 // LINE 308:
 _T68:
-	__asm        mov    eax, poolsize;
-	__asm        push   eax;
-	__asm        mov    eax, index;
-	__asm        push   eax;
-	__asm        call   S2AllocInit;
-	__asm        add    esp, 8;
-	__asm        mov    lastPool, eax;
+	lastPool = S2AllocInit(poolsize, index);
 // LINE 310:
 	__asm        mov    eax, index;
 	__asm        mov    eax, root[0][eax*4];
@@ -243,21 +230,12 @@ _T7c:
 	__asm        cmp    size, 0x2000;
 	__asm        jle    _T9f;
 // LINE 361:
-	__asm        mov    eax, size;
-	__asm        push   eax;
-	__asm        call   S2AllocHdr;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, hdr;
-	__asm        mov    [ecx], eax;
+	hdr->next = S2AllocHdr(size);
 // LINE 362:
 	__asm        jmp    _Tb1;
 // LINE 363:
 _T9f:
-	__asm        push   0x2000;
-	__asm        call   S2AllocHdr;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, hdr;
-	__asm        mov    [ecx], eax;
+	hdr->next = S2AllocHdr(0x2000);
 // LINE 364:
 _Tb1:
 	__asm        mov    eax, hdr;
@@ -289,17 +267,8 @@ _Te9:
 // FUNCTION: COPTER_D 0x004cb5ab
 char * S2AllocMem1(int32_t index, char * name, int32_t size, unsigned short protMem) {
 // LINE 399:
-	__asm        mov    eax, size;
-	__asm        push   eax;
-	__asm        mov    eax, name;
-	__asm        push   eax;
-	__asm        mov    eax, index;
-	__asm        push   eax;
-	__asm        call   S2AllocMem;
-	__asm        add    esp, 0xC;
-	__asm        jmp    __RETURN;
+	return S2AllocMem(size, name, index);
 // LINE 400:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004cb5cf
@@ -307,13 +276,7 @@ char * S2AllocMem(int32_t index, char * name, int32_t size) {
 	/*bp-0x4*/   char * ptr;
 
 // LINE 416:
-	__asm        mov    eax, size;
-	__asm        push   eax;
-	__asm        mov    eax, index;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    ptr, eax;
+	ptr = S2Alloc(size, index);
 // LINE 423:
 	return ptr;
 // LINE 424:
@@ -468,10 +431,8 @@ _T9e:
 // FUNCTION: COPTER_D 0x004cb7a5
 void * __ptr32 S2AllocAligned() {
 // LINE 591:
-	__asm        call   DOSAllocAlignedHack;
-	__asm        jmp    __RETURN;
+	return DOSAllocAlignedHack();
 // LINE 592:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004cb7ba
@@ -479,10 +440,7 @@ void * __ptr32 DOSAllocAlignedHack() {
 	/*bp-0x4*/   void * __ptr32 retaddr;
 
 // LINE 753:
-	__asm        push   0x20000;
-	__asm        call   malloc;
-	__asm        add    esp, 4;
-	__asm        mov    retaddr, eax;
+	retaddr = malloc(0x20000);
 // LINE 754:
 	__asm        cmp    retaddr, 0;
 	__asm        jne    _T2a;

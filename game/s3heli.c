@@ -619,85 +619,25 @@ _T2ee:
 _T326:
 	hd->flags = 0x0;
 // LINE 564:
-	__asm        push   0x64;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    ecx, hd;
-	__asm        mov    [ecx+0xA4], eax;
+	hd->dyheli = S2Alloc(0x64, G_dyobjmempool);
 // LINE 566:
-	__asm        push   0x64;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    ecx, hd;
-	__asm        mov    [ecx+0xBC], eax;
+	hd->dybucket = S2Alloc(0x64, G_dyobjmempool);
 // LINE 568:
-	__asm        push   0x64;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    ecx, hd;
-	__asm        mov    [ecx+0xA8], eax;
+	hd->dyshadow = S2Alloc(0x64, G_dyobjmempool);
 // LINE 570:
-	__asm        push   0x64;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    ecx, hd;
-	__asm        mov    [ecx+0xC0], eax;
+	hd->dyspot = S2Alloc(0x64, G_dyobjmempool);
 // LINE 572:
-	__asm        push   0x64;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    ecx, hd;
-	__asm        mov    [ecx+0xAC], eax;
+	hd->dyrotor = S2Alloc(0x64, G_dyobjmempool);
 // LINE 574:
-	__asm        push   0x64;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    ecx, hd;
-	__asm        mov    [ecx+0xB0], eax;
+	hd->dyrotortl = S2Alloc(0x64, G_dyobjmempool);
 // LINE 576:
-	__asm        push   0x64;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    ecx, hd;
-	__asm        mov    [ecx+0xB4], eax;
+	hd->dyrotshadow = S2Alloc(0x64, G_dyobjmempool);
 // LINE 578:
-	__asm        push   0x64;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    ecx, hd;
-	__asm        mov    [ecx+0xC4], eax;
+	hd->dybracket = S2Alloc(0x64, G_dyobjmempool);
 // LINE 580:
-	__asm        push   0x64;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    ecx, hd;
-	__asm        mov    [ecx+0xB8], eax;
+	hd->dyrope = S2Alloc(0x64, G_dyobjmempool);
 // LINE 582:
-	__asm        push   0x64;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    ecx, hd;
-	__asm        mov    [ecx+0xA0], eax;
+	hd->dycannon = S2Alloc(0x64, G_dyobjmempool);
 // LINE 591:
 	__asm        mov    eax, htd;
 	__asm        cmp    dword ptr [eax], 0;
@@ -709,13 +649,7 @@ _T326:
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 594:
-	__asm        mov    eax, size;
-	__asm        push   eax;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    mem, eax;
+	mem = S2Alloc(size, G_dyobjmempool);
 // LINE 595:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -742,13 +676,7 @@ _T326:
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 599:
-	__asm        mov    eax, size;
-	__asm        push   eax;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    mem, eax;
+	mem = S2Alloc(size, G_dyobjmempool);
 // LINE 600:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -775,13 +703,7 @@ _T326:
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 604:
-	__asm        mov    eax, size;
-	__asm        push   eax;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    mem, eax;
+	mem = S2Alloc(size, G_dyobjmempool);
 // LINE 605:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -808,13 +730,7 @@ _T326:
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 609:
-	__asm        mov    eax, size;
-	__asm        push   eax;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    mem, eax;
+	mem = S2Alloc(size, G_dyobjmempool);
 // LINE 610:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -858,13 +774,7 @@ _T5e3:
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 628:
-	__asm        mov    eax, size;
-	__asm        push   eax;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    mem, eax;
+	mem = S2Alloc(size, G_dyobjmempool);
 // LINE 629:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -897,13 +807,7 @@ _T5e3:
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 634:
-	__asm        mov    eax, size;
-	__asm        push   eax;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    mem, eax;
+	mem = S2Alloc(size, G_dyobjmempool);
 // LINE 635:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -932,13 +836,7 @@ _T5e3:
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 639:
-	__asm        mov    eax, size;
-	__asm        push   eax;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    mem, eax;
+	mem = S2Alloc(size, G_dyobjmempool);
 // LINE 640:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -969,13 +867,7 @@ _T5e3:
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 644:
-	__asm        mov    eax, size;
-	__asm        push   eax;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    mem, eax;
+	mem = S2Alloc(size, G_dyobjmempool);
 // LINE 645:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -1006,13 +898,7 @@ _T5e3:
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 650:
-	__asm        mov    eax, size;
-	__asm        push   eax;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    mem, eax;
+	mem = S2Alloc(size, G_dyobjmempool);
 // LINE 651:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -1043,13 +929,7 @@ _T5e3:
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 655:
-	__asm        mov    eax, size;
-	__asm        push   eax;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    mem, eax;
+	mem = S2Alloc(size, G_dyobjmempool);
 // LINE 656:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -1132,33 +1012,13 @@ _T898:
 	__asm        call   0x004D2094;
 	__asm        add    esp, 0xC;
 // LINE 675:
-	__asm        push   8;
-	__asm        mov    eax, G_restex;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    S_spotlevels[0], eax;
+	S_spotlevels[0] = VRInt2BmpHdr(0x8, G_restex);
 // LINE 676:
-	__asm        push   9;
-	__asm        mov    eax, G_restex;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    S_spotlevels[1], eax;
+	S_spotlevels[1] = VRInt2BmpHdr(0x9, G_restex);
 // LINE 677:
-	__asm        push   0xA;
-	__asm        mov    eax, G_restex;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    S_spotlevels[2], eax;
+	S_spotlevels[2] = VRInt2BmpHdr(0xa, G_restex);
 // LINE 678:
-	__asm        push   0xB;
-	__asm        mov    eax, G_restex;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    S_spotlevels[3], eax;
+	S_spotlevels[3] = VRInt2BmpHdr(0xb, G_restex);
 // LINE 684:
 _T9c4:
 	__asm        mov    eax, hdindex;
@@ -1179,15 +1039,7 @@ _T9c4:
 // LINE 687:
 	hd->dyheli->radius = oinfo.Radius;
 // LINE 688:
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   VRObjGetHeight;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, hd;
-	__asm        mov    ecx, [ecx+0xA4];
-	__asm        mov    [ecx+0x14], eax;
+	hd->dyheli->height = VRObjGetHeight(hd->dyheli->mesh);
 // LINE 693:
 	__asm        mov    eax, hdindex;
 	__asm        mov    ecx, hd;
@@ -1207,15 +1059,7 @@ _T9c4:
 // LINE 696:
 	hd->dybucket->radius = oinfo.Radius;
 // LINE 697:
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0xBC];
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   VRObjGetHeight;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, hd;
-	__asm        mov    ecx, [ecx+0xBC];
-	__asm        mov    [ecx+0x14], eax;
+	hd->dybucket->height = VRObjGetHeight(hd->dybucket->mesh);
 // LINE 702:
 	__asm        mov    eax, hdindex;
 	__asm        mov    ecx, hd;
@@ -1343,13 +1187,7 @@ _T9c4:
 // LINE 753:
 	hd->dycannon->radius = oinfo.Radius;
 // LINE 760:
-	__asm        mov    eax, RopeSeg;
-	__asm        push   eax;
-	__asm        push   0x78;
-	__asm        push   0x14;
-	__asm        call   VRObjCreateRope;
-	__asm        add    esp, 0xC;
-	__asm        mov    obj, eax;
+	obj = VRObjCreateRope(RopeSeg, 0x78, 0x14);
 // LINE 761:
 	__asm        cmp    obj, 0;
 	__asm        jne    _Tcb1;
@@ -1799,12 +1637,7 @@ _T61:
 // LINE 949:
 	hd->vector.z = 0x10000;
 // LINE 952:
-	__asm        push   6;
-	__asm        mov    eax, G_restex;
-	__asm        push   eax;
-	__asm        call   VRInt2BmpHdr;
-	__asm        add    esp, 8;
-	__asm        mov    S_shadbmp, eax;
+	S_shadbmp = VRInt2BmpHdr(0x6, G_restex);
 // LINE 954:
 	__asm        mov    eax, hd;
 	__asm        add    eax, 0xE0;
@@ -2111,8 +1944,7 @@ _T1f4:
 	__asm        mov    eax, hd;
 	__asm        and    dword ptr [eax+8], 0xFFFFFFFE;
 // LINE 1089:
-	__asm        call   S3HeliGetFreePad;
-	__asm        mov    freepad, eax;
+	freepad = S3HeliGetFreePad();
 // LINE 1090:
 	__asm        push   0x50000;
 	__asm        push   0x50000;
@@ -2154,29 +1986,7 @@ _T2ac:
 // LINE 1108:
 	hd->damage = htd->max_damage;
 // LINE 1119:
-	__asm        push   0xFFFFFFFF;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0x128];
-	__asm        push   eax;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        push   eax;
-	__asm        push   1;
-	__asm        mov    eax, hd;
-	__asm        add    eax, 0x100;
-	__asm        push   eax;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        mov    eax, hd;
-	__asm        add    eax, 0x18;
-	__asm        push   eax;
-	__asm        push   8;
-	__asm        call   S3MissileStart;
-	__asm        add    esp, 0x20;
-	__asm        mov    ecx, hd;
-	__asm        mov    [ecx+0x168], eax;
+	hd->crash_traj = S3MissileStart(-0x1, hd->fwd_speed, hd->dyheli, 0x1, (hd + 0x100), (hd->dyheli + 0x18), (hd + 0x18), 0x8);
 // LINE 1122:
 _T33a:
 	__asm        mov    eax, hd;
@@ -3379,11 +3189,7 @@ _T140:
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 1491:
-	__asm        mov    eax, hd;
-	__asm        push   eax;
-	__asm        call   GetCopterBldAlt;
-	__asm        add    esp, 4;
-	__asm        mov    alt, eax;
+	alt = GetCopterBldAlt(hd);
 // LINE 1493:
 	__asm        lea    eax, saveloc.x;
 	__asm        mov    ecx, hd;
@@ -3437,11 +3243,7 @@ int32_t S3HeliHeadToLocXZ(/*packed*/ struct _HELI_DATA *hd, /*packed*/ struct Po
 // LINE 1526:
 	newvect.x = (loc->x - hd->dyheli->loc.x);
 // LINE 1529:
-	__asm        lea    eax, newvect.x;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
-	__asm        mov    dist, eax;
+	dist = MTNormalize(newvect.x);
 // LINE 1532:
 	__asm        cmp    dist, 0x140000;
 	__asm        jg     _T96;
@@ -3485,17 +3287,7 @@ _T96:
 	hd->pitch = 0x0;
 // LINE 1558:
 _Tfd:
-	__asm        lea    eax, alt;
-	__asm        push   eax;
-	__asm        lea    eax, dist;
-	__asm        push   eax;
-	__asm        lea    eax, newvect.x;
-	__asm        push   eax;
-	__asm        mov    eax, hd;
-	__asm        push   eax;
-	__asm        call   S3HeliGetDeflection;
-	__asm        add    esp, 0x10;
-	__asm        mov    deflectangle, eax;
+	deflectangle = S3HeliGetDeflection(alt, dist, newvect.x, hd);
 // LINE 1559:
 	__asm        cmp    deflectangle, 0;
 	__asm        jle    _T188;
@@ -3512,11 +3304,7 @@ _Tfd:
 // LINE 1565:
 	tmpvect.z = 0x0;
 // LINE 1566:
-	__asm        lea    eax, tmpvect.x;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
-	__asm        mov    dist, eax;
+	dist = MTNormalize(tmpvect.x);
 // LINE 1567:
 	__asm        mov    eax, tmpvect.y;
 	__asm        push   eax;
@@ -3553,12 +3341,7 @@ _T188:
 	__asm        jmp    _T217;
 // LINE 1587:
 _T1b8:
-	__asm        mov    eax, newyaw;
-	__asm        sub    eax, curryaw;
-	__asm        push   eax;
-	__asm        call   MTAngleBounds;
-	__asm        add    esp, 4;
-	__asm        mov    deltayaw, eax;
+	deltayaw = MTAngleBounds((newyaw - curryaw));
 // LINE 1591:
 	__asm        cmp    G_AvLoopTime, 0x400;
 	__asm        jge    _T1f9;
@@ -3840,11 +3623,7 @@ _Ta8:
 	__asm        sar    pitchrate, 1;
 // LINE 1723:
 _Td5:
-	__asm        push   7;
-	__asm        push   6;
-	__asm        call   GetJoystickValueEither;
-	__asm        add    esp, 8;
-	__asm        mov    lJoystickLeftRightValue, eax;
+	lJoystickLeftRightValue = GetJoystickValueEither(0x7, 0x6);
 // LINE 1724:
 	__asm        push   0x1A;
 	__asm        call   GetJoystickValue;
@@ -5330,13 +5109,7 @@ _T2d8:
 	__asm        mov    ecx, hd;
 	__asm        add    [ecx+0xE8], eax;
 // LINE 2161:
-	__asm        mov    eax, hd;
-	__asm        add    eax, 0xE0;
-	__asm        push   eax;
-	__asm        call   MTMagnitude;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, hd;
-	__asm        mov    [ecx+0xDC], eax;
+	hd->heli_p.Vmag = MTMagnitude((hd + 0xe0));
 // LINE 2163:
 	__asm        push   0x9C40;
 	__asm        mov    eax, G_AvLoopTime;
@@ -5381,19 +5154,9 @@ void S3HeliMoveY(/*packed*/ struct _HELI_DATA *hd) {
 // LINE 2182:
 	htd = BinaryOp(add, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, BinaryOp(add, hd->type, BinaryOp(mul, hd->type, Const(4))), Const(2))), Const(8)), Const(5982584));
 // LINE 2187:
-	__asm        mov    eax, hd;
-	__asm        push   eax;
-	__asm        call   GetCopterTerAlt;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, hd;
-	__asm        mov    [ecx+0x150], eax;
+	hd->terralt = GetCopterTerAlt(hd);
 // LINE 2189:
-	__asm        mov    eax, hd;
-	__asm        push   eax;
-	__asm        call   GetCopterBldAlt;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, hd;
-	__asm        mov    [ecx+0x154], eax;
+	hd->buildalt = GetCopterBldAlt(hd);
 // LINE 2193:
 	__asm        xor    eax, eax;
 	__asm        mov    ecx, S_turbpitch[0];
@@ -6714,14 +6477,7 @@ _T2c8:
 	__asm        call   0x004D8781;
 	__asm        add    esp, 0xC;
 // LINE 2633:
-	__asm        push   0;
-	__asm        mov    eax, pos.loc.z;
-	__asm        push   eax;
-	__asm        mov    eax, pos.loc.x;
-	__asm        push   eax;
-	__asm        call   S3TerrPrecisionAlt;
-	__asm        add    esp, 0xC;
-	__asm        mov    galt, eax;
+	galt = S3TerrPrecisionAlt(0x0, pos.loc.z, pos.loc.x);
 // LINE 2634:
 	__asm        mov    eax, cptr;
 	__asm        push   eax;
@@ -7269,11 +7025,7 @@ void NormalizeXZVector(/*packed*/ struct Point3d *vector) {
 	__asm        add    esp, 0xC;
 // LINE 2847:
 _T42:
-	__asm        mov    eax, vector;
-	__asm        push   eax;
-	__asm        call   MTMagnitude;
-	__asm        add    esp, 4;
-	__asm        mov    length, eax;
+	length = MTMagnitude(vector);
 // LINE 2848:
 	__asm        cmp    length, 0x10000;
 	__asm        jge    _T128;
@@ -7596,26 +7348,7 @@ _T2b4:
 // LINE 2984:
 	flags = stobj->user1;
 // LINE 2985:
-	__asm        push   0;
-	__asm        push   0;
-	__asm        mov    eax, RopeDim;
-	__asm        push   eax;
-	__asm        mov    eax, RopeDim;
-	__asm        push   eax;
-	__asm        lea    eax, flags;
-	__asm        push   eax;
-	__asm        mov    eax, normz;
-	__asm        push   eax;
-	__asm        mov    eax, normy;
-	__asm        push   eax;
-	__asm        mov    eax, normx;
-	__asm        push   eax;
-	__asm        mov    eax, stobj;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        call   VRGetObjAlt2;
-	__asm        add    esp, 0x24;
-	__asm        mov    objy, eax;
+	objy = VRGetObjAlt2(0x0, 0x0, RopeDim, RopeDim, flags, normz, normy, normx, stobj->mesh);
 // LINE 2986:
 	__asm        mov    eax, objy;
 	__asm        cmp    maxobjy, eax;
@@ -7663,19 +7396,7 @@ _T37b:
 // LINE 3011:
 	oloc.z = (ploc.z - dyobj->loc.z);
 // LINE 3016:
-	__asm        mov    eax, RopeDim;
-	__asm        push   eax;
-	__asm        lea    eax, oloc.x;
-	__asm        push   eax;
-	__asm        mov    eax, dyobj;
-	__asm        add    eax, 0x24;
-	__asm        push   eax;
-	__asm        mov    eax, dyobj;
-	__asm        mov    eax, [eax+8];
-	__asm        push   eax;
-	__asm        call   VRGetDyObjAlt;
-	__asm        add    esp, 0x10;
-	__asm        mov    objy, eax;
+	objy = VRGetDyObjAlt(RopeDim, oloc.x, (dyobj + 0x24), dyobj->mesh);
 // LINE 3017:
 	__asm        mov    eax, objy;
 	__asm        cmp    maxobjy, eax;
@@ -7814,20 +7535,7 @@ int32_t GetCopterTerAlt(/*packed*/ struct _HELI_DATA *hd) {
 	/*bp-0x4*/   int32_t alt;
 
 // LINE 3327:
-	__asm        mov    eax, hd;
-	__asm        add    eax, 0x13C;
-	__asm        push   eax;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        mov    eax, [eax+0x20];
-	__asm        push   eax;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        mov    eax, [eax+0x18];
-	__asm        push   eax;
-	__asm        call   S3TerrPrecisionAlt;
-	__asm        add    esp, 0xC;
-	__asm        mov    alt, eax;
+	alt = S3TerrPrecisionAlt((hd + 0x13c), hd->dyheli->loc.z, hd->dyheli->loc.x);
 // LINE 3329:
 	return alt;
 // LINE 3331:
@@ -7899,32 +7607,7 @@ _T9c:
 // LINE 3357:
 	flags = stobj->user1;
 // LINE 3363:
-	__asm        lea    eax, landable;
-	__asm        push   eax;
-	__asm        lea    eax, vec.x;
-	__asm        push   eax;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        mov    eax, [eax+0x14];
-	__asm        push   eax;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        mov    eax, [eax+0x10];
-	__asm        push   eax;
-	__asm        lea    eax, flags;
-	__asm        push   eax;
-	__asm        mov    eax, normz;
-	__asm        push   eax;
-	__asm        mov    eax, normy;
-	__asm        push   eax;
-	__asm        mov    eax, normx;
-	__asm        push   eax;
-	__asm        mov    eax, stobj;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        call   VRGetObjAlt2;
-	__asm        add    esp, 0x24;
-	__asm        mov    objy, eax;
+	objy = VRGetObjAlt2(landable, vec.x, hd->dyheli->height, hd->dyheli->radius, flags, normz, normy, normx, stobj->mesh);
 // LINE 3364:
 	__asm        mov    eax, objy;
 	__asm        cmp    maxobjy, eax;
@@ -7955,18 +7638,7 @@ _T146:
 	__asm        cmp    maxobjy, 0;
 	__asm        jne    _T17c;
 // LINE 3378:
-	__asm        push   0;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        mov    eax, [eax+0x20];
-	__asm        push   eax;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0xA4];
-	__asm        mov    eax, [eax+0x18];
-	__asm        push   eax;
-	__asm        call   S3TerrPrecisionAlt;
-	__asm        add    esp, 0xC;
-	__asm        mov    alt, eax;
+	alt = S3TerrPrecisionAlt(0x0, hd->dyheli->loc.z, hd->dyheli->loc.x);
 // LINE 3379:
 	__asm        jmp    _T18c;
 // LINE 3380:
@@ -8364,11 +8036,7 @@ int32_t S3HeliTakeOff(/*packed*/ struct _HELI_DATA *hd) {
 	return 0x0;
 // LINE 3615:
 _T4e:
-	__asm        mov    eax, hd;
-	__asm        push   eax;
-	__asm        call   GetCopterBldAlt;
-	__asm        add    esp, 4;
-	__asm        mov    alt, eax;
+	alt = GetCopterBldAlt(hd);
 // LINE 3616:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0xA4];
@@ -8461,11 +8129,7 @@ _T6c:
 _Tc1:
 	lcptr = cptr;
 // LINE 3693:
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        call   S3HeliHighestBuildAlt;
-	__asm        add    esp, 4;
-	__asm        mov    maxradius, eax;
+	maxradius = S3HeliHighestBuildAlt(cptr);
 // LINE 3694:
 	__asm        mov    eax, hd;
 	__asm        mov    ecx, maxradius;
@@ -8708,11 +8372,7 @@ _T6c:
 // LINE 3871:
 	viewvect.z = (hd->dyheli->loc.z - ViewState.world_pos.z);
 // LINE 3872:
-	__asm        lea    eax, viewvect.x;
-	__asm        push   eax;
-	__asm        call   MTMagnitude;
-	__asm        add    esp, 4;
-	__asm        mov    dist, eax;
+	dist = MTMagnitude(viewvect.x);
 // LINE 3873:
 	__asm        mov    eax, dist;
 	__asm        cmp    closest, eax;
@@ -8751,11 +8411,7 @@ _T133:
 // LINE 3897:
 	viewvect.z = (hd->dyheli->loc.z - ViewState.world_pos.z);
 // LINE 3898:
-	__asm        lea    eax, viewvect.x;
-	__asm        push   eax;
-	__asm        call   MTMagnitude;
-	__asm        add    esp, 4;
-	__asm        mov    dist, eax;
+	dist = MTMagnitude(viewvect.x);
 // LINE 3901:
 	__asm        cmp    dist, 0x7800000;
 	__asm        jge    _T1be;
@@ -9001,16 +8657,7 @@ _Td4:
 	__asm        mov    eax, G_omap[0][0][ecx+eax*4];
 	__asm        mov    ncptr, eax;
 // LINE 4008:
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        push   0x200000;
-	__asm        lea    eax, svec.x;
-	__asm        push   eax;
-	__asm        lea    eax, loc.x;
-	__asm        push   eax;
-	__asm        call   S3HeliSpotDistance;
-	__asm        add    esp, 0x10;
-	__asm        mov    dist, eax;
+	dist = S3HeliSpotDistance(cptr, 0x200000, svec.x, loc.x);
 // LINE 4010:
 	__asm        cmp    dist, 0;
 	__asm        jle    _T173;
@@ -9024,16 +8671,7 @@ _T173:
 	__asm        cmp    ncptr, eax;
 	__asm        je     _T19b;
 // LINE 4018:
-	__asm        mov    eax, ncptr;
-	__asm        push   eax;
-	__asm        push   0x200000;
-	__asm        lea    eax, svec.x;
-	__asm        push   eax;
-	__asm        lea    eax, loc.x;
-	__asm        push   eax;
-	__asm        call   S3HeliSpotDistance;
-	__asm        add    esp, 0x10;
-	__asm        mov    dist, eax;
+	dist = S3HeliSpotDistance(ncptr, 0x200000, svec.x, loc.x);
 // LINE 4019:
 _T19b:
 	__asm        cmp    dist, 0;
@@ -9358,38 +8996,12 @@ _T39:
 // LINE 4168:
 	oloc.z += center.z;
 // LINE 4174:
-	__asm        mov    eax, oinfo.Radius;
-	__asm        push   eax;
-	__asm        lea    eax, oloc.x;
-	__asm        push   eax;
-	__asm        mov    eax, dist;
-	__asm        push   eax;
-	__asm        mov    eax, spotvec;
-	__asm        push   eax;
-	__asm        mov    eax, spotloc;
-	__asm        push   eax;
-	__asm        call   S3MissileSphereHit;
-	__asm        add    esp, 0x14;
-	__asm        mov    newdist, eax;
+	newdist = S3MissileSphereHit(oinfo.Radius, oloc.x, dist, spotvec, spotloc);
 // LINE 4178:
 	__asm        cmp    newdist, 0;
 	__asm        jle    _Tde;
 // LINE 4185:
-	__asm        push   0;
-	__asm        mov    eax, stobj;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        lea    eax, cloc.x;
-	__asm        push   eax;
-	__asm        mov    eax, dist;
-	__asm        push   eax;
-	__asm        mov    eax, spotvec;
-	__asm        push   eax;
-	__asm        mov    eax, spotloc;
-	__asm        push   eax;
-	__asm        call   VRStObjPolyHit;
-	__asm        add    esp, 0x18;
-	__asm        mov    newdist, eax;
+	newdist = VRStObjPolyHit(0x0, stobj->mesh, cloc.x, dist, spotvec, spotloc);
 // LINE 4188:
 _Tde:
 	__asm        cmp    newdist, 0;
@@ -9403,17 +9015,7 @@ _Tf0:
 	__asm        jmp    _T39;
 // LINE 4203:
 _Tfd:
-	__asm        lea    eax, cloc.x;
-	__asm        push   eax;
-	__asm        mov    eax, dist;
-	__asm        push   eax;
-	__asm        mov    eax, spotvec;
-	__asm        push   eax;
-	__asm        mov    eax, spotloc;
-	__asm        push   eax;
-	__asm        call   S3MissileGroundHit;
-	__asm        add    esp, 0x10;
-	__asm        mov    newdist, eax;
+	newdist = S3MissileGroundHit(cloc.x, dist, spotvec, spotloc);
 // LINE 4204:
 	__asm        cmp    newdist, 0;
 	__asm        jle    _T12a;
@@ -9544,13 +9146,7 @@ void S3HeliTurbulence(/*packed*/ struct _HELI_DATA *hd) {
 	__asm        sub    eax, ecx;
 	__asm        mov    loc.z, eax;
 // LINE 4306:
-	__asm        lea    eax, loc.x;
-	__asm        push   eax;
-	__asm        mov    eax, cptr;
-	__asm        push   eax;
-	__asm        call   S3FireGetAltitude;
-	__asm        add    esp, 8;
-	__asm        mov    firealt, eax;
+	firealt = S3FireGetAltitude(loc.x, cptr);
 // LINE 4307:
 	__asm        cmp    firealt, 0;
 	__asm        je     _Tf9;
@@ -10622,19 +10218,11 @@ long S3GetFullRepairCost(/*packed*/ struct _HELI_DATA *hd) {
 	/*bp-0xc*/   int32_t max_damage;
 
 // LINE 4784:
-	__asm        mov    eax, hd;
-	__asm        push   eax;
-	__asm        call   S3HeliGetRepairRate;
-	__asm        add    esp, 4;
-	__asm        mov    repair_rate, eax;
+	repair_rate = S3HeliGetRepairRate(hd);
 // LINE 4785:
 	current_damage = hd->damage;
 // LINE 4786:
-	__asm        mov    eax, hd;
-	__asm        push   eax;
-	__asm        call   S3HeliGetMaximumDamage;
-	__asm        add    esp, 4;
-	__asm        mov    max_damage, eax;
+	max_damage = S3HeliGetMaximumDamage(hd);
 // LINE 4787:
 	__asm        mov    eax, repair_rate;
 	__asm        push   eax;
@@ -10657,19 +10245,11 @@ void S3HeliPurchaseRepairs(/*packed*/ struct _HELI_DATA *hd, long lPurchaseBucks
 	/*bp-0xc*/   int32_t max_damage;
 
 // LINE 4804:
-	__asm        mov    eax, hd;
-	__asm        push   eax;
-	__asm        call   S3HeliGetRepairRate;
-	__asm        add    esp, 4;
-	__asm        mov    repair_rate, eax;
+	repair_rate = S3HeliGetRepairRate(hd);
 // LINE 4805:
 	current_damage = hd->damage;
 // LINE 4806:
-	__asm        mov    eax, hd;
-	__asm        push   eax;
-	__asm        call   S3HeliGetMaximumDamage;
-	__asm        add    esp, 4;
-	__asm        mov    max_damage, eax;
+	max_damage = S3HeliGetMaximumDamage(hd);
 // LINE 4808:
 	__asm        mov    eax, repair_rate;
 	__asm        push   eax;
@@ -10700,19 +10280,11 @@ long S3GetFullRefuelCost(/*packed*/ struct _HELI_DATA *hd) {
 	/*bp-0xc*/   int32_t max_fuel;
 
 // LINE 4824:
-	__asm        mov    eax, hd;
-	__asm        push   eax;
-	__asm        call   S3HeliGetFuelRate;
-	__asm        add    esp, 4;
-	__asm        mov    fuel_purchase_rate, eax;
+	fuel_purchase_rate = S3HeliGetFuelRate(hd);
 // LINE 4825:
 	current_fuel = hd->fuel;
 // LINE 4826:
-	__asm        mov    eax, hd;
-	__asm        push   eax;
-	__asm        call   S3HeliGetMaximumFuel;
-	__asm        add    esp, 4;
-	__asm        mov    max_fuel, eax;
+	max_fuel = S3HeliGetMaximumFuel(hd);
 // LINE 4827:
 	__asm        mov    eax, fuel_purchase_rate;
 	__asm        push   eax;
@@ -10734,19 +10306,11 @@ void S3HeliPurchaseFuel(/*packed*/ struct _HELI_DATA *hd, long lPurchaseBucks) {
 	/*bp-0xc*/   int32_t max_fuel;
 
 // LINE 4843:
-	__asm        mov    eax, hd;
-	__asm        push   eax;
-	__asm        call   S3HeliGetFuelRate;
-	__asm        add    esp, 4;
-	__asm        mov    fuel_purchase_rate, eax;
+	fuel_purchase_rate = S3HeliGetFuelRate(hd);
 // LINE 4844:
 	current_fuel = hd->fuel;
 // LINE 4845:
-	__asm        mov    eax, hd;
-	__asm        push   eax;
-	__asm        call   S3HeliGetMaximumFuel;
-	__asm        add    esp, 4;
-	__asm        mov    max_fuel, eax;
+	max_fuel = S3HeliGetMaximumFuel(hd);
 // LINE 4847:
 	__asm        mov    eax, fuel_purchase_rate;
 	__asm        push   eax;
@@ -11384,8 +10948,7 @@ _T3ec:
 	__asm        jmp    _T3b9;
 // LINE 5089:
 _T3f1:
-	__asm        call   GetCurrentUserPersonalInfo;
-	__asm        mov    up, eax;
+	up = GetCurrentUserPersonalInfo();
 // LINE 5090:
 	__asm        mov    eax, 1;
 	__asm        mov    edx, hd;
@@ -11403,8 +10966,7 @@ _T3f1:
 	__asm        call   S3DSStopPlay;
 	__asm        add    esp, 4;
 // LINE 5098:
-	__asm        call   S3HeliGetFreePad;
-	__asm        mov    freepad, eax;
+	freepad = S3HeliGetFreePad();
 // LINE 5102:
 	__asm        mov    eax, freepad;
 	__asm        mov    ecx, [eax];
@@ -11961,11 +11523,7 @@ long S3HeliGetCurrentValue(long lHeliType) {
 	/*bp-0xc*/   /*packed*/ struct _HELI_TYPE_DATA *htd;
 
 // LINE 5439:
-	__asm        mov    eax, lHeliType;
-	__asm        push   eax;
-	__asm        call   S3HeliGetDataForType;
-	__asm        add    esp, 4;
-	__asm        mov    hd, eax;
+	hd = S3HeliGetDataForType(lHeliType);
 // LINE 5440:
 	htd = BinaryOp(add, BinaryOp(mul, BinaryOp(add, lHeliType, BinaryOp(mul, BinaryOp(add, lHeliType, BinaryOp(mul, lHeliType, Const(4))), Const(2))), Const(8)), Const(5982584));
 // LINE 5443:
@@ -12098,14 +11656,9 @@ void S3HeliMakeHelicopter(long lHeliType) {
 	/*bp-0xc*/   /*packed*/ struct tagUserPersonalInfo *up;
 
 // LINE 5529:
-	__asm        mov    eax, lHeliType;
-	__asm        push   eax;
-	__asm        call   S3HeliGetDataForType;
-	__asm        add    esp, 4;
-	__asm        mov    hd, eax;
+	hd = S3HeliGetDataForType(lHeliType);
 // LINE 5534:
-	__asm        call   GetCurrentUserPersonalInfo;
-	__asm        mov    up, eax;
+	up = GetCurrentUserPersonalInfo();
 // LINE 5537:
 	__asm        mov    eax, up;
 	__asm        mov    edx, 1;
@@ -12128,8 +11681,7 @@ _T3b:
 	__asm        jmp    _T6a;
 // LINE 5543:
 _T62:
-	__asm        call   S3HeliGetFreePad;
-	__asm        mov    freepad, eax;
+	freepad = S3HeliGetFreePad();
 // LINE 5545:
 _T6a:
 	__asm        mov    eax, 1;
@@ -12159,11 +11711,7 @@ void S3HeliRemoveHelicopter(long lHeliType) {
 	/*bp-0x10*/  /*packed*/ struct _CELL_INFO *cptr;
 
 // LINE 5557:
-	__asm        mov    eax, lHeliType;
-	__asm        push   eax;
-	__asm        call   S3HeliGetDataForType;
-	__asm        add    esp, 4;
-	__asm        mov    hd, eax;
+	hd = S3HeliGetDataForType(lHeliType);
 // LINE 5563:
 	__asm        cmp    hd, 0;
 	__asm        jne    _T27;
@@ -12171,8 +11719,7 @@ void S3HeliRemoveHelicopter(long lHeliType) {
 	return;
 // LINE 5566:
 _T27:
-	__asm        call   GetCurrentUserPersonalInfo;
-	__asm        mov    up, eax;
+	up = GetCurrentUserPersonalInfo();
 // LINE 5569:
 	__asm        mov    i, 0;
 	__asm        jmp    _T3e;
@@ -12442,15 +11989,7 @@ int32_t S3HeliMIFFLoad(void * __ptr32 miffReader) {
 	/*bp-0xc*/   /*packed*/ struct _HELI_DATA *hd;
 
 // LINE 5702:
-	__asm        push   0x32C;
-	__asm        push   0x606EB0;
-	__asm        mov    eax, HeliMIFFID;
-	__asm        push   eax;
-	__asm        mov    eax, miffReader;
-	__asm        push   eax;
-	__asm        call   ReadFirstMIFFChunk;
-	__asm        add    esp, 0x10;
-	__asm        mov    ret, eax;
+	ret = ReadFirstMIFFChunk(0x32c, 0x606eb0, HeliMIFFID, miffReader);
 // LINE 5703:
 	__asm        cmp    ret, 0;
 	__asm        jne    _T39;
@@ -12482,15 +12021,7 @@ _T48:
 	__asm        mov    ecx, 0x57;
 	__asm        rep movsd;
 // LINE 5723:
-	__asm        push   0x32C;
-	__asm        push   0x606EB0;
-	__asm        mov    eax, HeliMIFFID;
-	__asm        push   eax;
-	__asm        mov    eax, miffReader;
-	__asm        push   eax;
-	__asm        call   ReadNextMIFFChunk;
-	__asm        add    esp, 0x10;
-	__asm        mov    ret, eax;
+	ret = ReadNextMIFFChunk(0x32c, 0x606eb0, HeliMIFFID, miffReader);
 // LINE 5724:
 	__asm        cmp    ret, 0;
 	__asm        jne    _Tf4;
@@ -12522,22 +12053,7 @@ _T18:
 	__asm        cmp    i, 0xA;
 	__asm        jge    _T6a;
 // LINE 5742:
-	__asm        push   0x32C;
-	__asm        mov    eax, i;
-	__asm        mov    ecx, eax;
-	__asm        lea    eax, [eax+eax*4];
-	__asm        lea    eax, [eax+eax*8];
-	__asm        lea    eax, [eax+eax*8];
-	__asm        add    eax, ecx;
-	__asm        lea    eax, G_helidata[0].type[eax*2];
-	__asm        push   eax;
-	__asm        mov    eax, HeliMIFFID;
-	__asm        push   eax;
-	__asm        mov    eax, miffWriter;
-	__asm        push   eax;
-	__asm        call   WriteMIFFChunk;
-	__asm        add    esp, 0x10;
-	__asm        mov    ret, eax;
+	ret = WriteMIFFChunk(0x32c, BinaryOp(add, BinaryOp(mul, (BinaryOp(add, BinaryOp(add, BinaryOp(add, i, BinaryOp(mul, i, Const(4))), BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, i, Const(4))), Const(8))), BinaryOp(mul, BinaryOp(add, BinaryOp(add, i, BinaryOp(mul, i, Const(4))), BinaryOp(mul, BinaryOp(add, i, BinaryOp(mul, i, Const(4))), Const(8))), Const(8))) + i), Const(2)), Const(7074256)), HeliMIFFID, miffWriter);
 // LINE 5743:
 	__asm        cmp    ret, 0;
 	__asm        jne    _T65;
@@ -12622,13 +12138,7 @@ _T63:
 	__asm        add    ecx, eax;
 	__asm        mov    personLoc.z, ecx;
 // LINE 5775:
-	__asm        mov    eax, personLoc.z;
-	__asm        push   eax;
-	__asm        mov    eax, personLoc.x;
-	__asm        push   eax;
-	__asm        call   S3ObjectPrecisionAlt;
-	__asm        add    esp, 8;
-	__asm        mov    personLoc.y, eax;
+	personLoc.y = S3ObjectPrecisionAlt(personLoc.z, personLoc.x);
 // LINE 5781:
 	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0x154];

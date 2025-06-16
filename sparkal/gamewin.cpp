@@ -315,11 +315,7 @@ _T32:
 	__asm        jmp    _Td1;
 // LINE 49:
 _Ta7:
-	__asm        push   4;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x98], eax;
+	this->szCaption = operator new(0x4);
 // LINE 50:
 	__asm        push   0x599314;
 	__asm        mov    eax, this;

@@ -545,12 +545,7 @@ void MTApply_Friction(int32_t F, /*packed*/ struct mv *p, int32_t t) {
 	/*bp-0x10*/  int32_t j;
 
 // LINE 284:
-	__asm        mov    eax, p;
-	__asm        add    eax, 8;
-	__asm        push   eax;
-	__asm        call   MTMagnitude;
-	__asm        add    esp, 4;
-	__asm        mov    v, eax;
+	v = MTMagnitude((p + 0x8));
 // LINE 287:
 	__asm        cmp    v, 0;
 	__asm        jle    _T36;
@@ -697,11 +692,7 @@ int32_t MTApply_Friction1D(int32_t F, int32_t M, int32_t V, int32_t t) {
 	__asm        jge    _T87;
 // LINE 362:
 _T1d:
-	__asm        mov    eax, V;
-	__asm        push   eax;
-	__asm        call   abs;
-	__asm        add    esp, 4;
-	__asm        mov    absV, eax;
+	absV = abs(V);
 // LINE 363:
 	__asm        mov    eax, M;
 	__asm        push   eax;
@@ -1736,23 +1727,9 @@ int32_t MTCheapDist2D(/*packed*/ struct Point2d *p1, /*packed*/ struct Point2d *
 	/*bp-0xc*/   int32_t xdiff;
 
 // LINE 721:
-	__asm        mov    eax, p1;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, p2;
-	__asm        sub    eax, [ecx];
-	__asm        push   eax;
-	__asm        call   abs;
-	__asm        add    esp, 4;
-	__asm        mov    xdiff, eax;
+	xdiff = abs((p1->x - p2->x));
 // LINE 722:
-	__asm        mov    eax, p1;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, p2;
-	__asm        sub    eax, [ecx+4];
-	__asm        push   eax;
-	__asm        call   abs;
-	__asm        add    esp, 4;
-	__asm        mov    ydiff, eax;
+	ydiff = abs((p1->y - p2->y));
 // LINE 723:
 	__asm        mov    eax, ydiff;
 	__asm        cmp    xdiff, eax;

@@ -2024,8 +2024,7 @@ _T199:
 	__asm        call   srand;
 	__asm        add    esp, 4;
 // LINE 272:
-	__asm        call   DDEnable;
-	__asm        mov    hResult, eax;
+	hResult = DDEnable();
 // LINE 273:
 	__asm        cmp    hResult, 0;
 	__asm        je     _T4c3;
@@ -2038,11 +2037,7 @@ _T1d1:
 	__asm        lea    ecx, [ebp-0x128];
 	__asm        call   DirectDrawError::DisplayError;
 // LINE 275:
-	__asm        push   0;
-	__asm        push   0x21;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x21);
 // LINE 276:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x11E8];
@@ -2110,11 +2105,7 @@ _T2cf:
 	__asm        jmp    _T2d4;
 // LINE 277:
 _T2d4:
-	__asm        push   0;
-	__asm        push   4;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x4);
 // LINE 278:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x21EC];
@@ -2246,11 +2237,7 @@ _T4b8:
 	__asm        jmp    __RETURN;
 // LINE 284:
 _T4c3:
-	__asm        push   0;
-	__asm        push   4;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x4);
 // LINE 285:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x31F0];
@@ -2568,11 +2555,7 @@ _T91a:
 	__asm        test   eax, eax;
 	__asm        jne    _Tb3f;
 // LINE 330:
-	__asm        push   0;
-	__asm        push   0x23;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x23);
 // LINE 331:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x41F4];
@@ -2640,11 +2623,7 @@ _Ta25:
 	__asm        jmp    _Ta2a;
 // LINE 332:
 _Ta2a:
-	__asm        push   0;
-	__asm        push   4;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x4);
 // LINE 333:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x51F8];
@@ -3031,10 +3010,7 @@ _T35:
 	__asm        jmp    _T32;
 // LINE 396:
 _T52:
-	__asm        push   0x105;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    gszAppDirectory, eax;
+	gszAppDirectory = operator new(0x105);
 // LINE 398:
 	__asm        push   0x104;
 	__asm        mov    eax, gszAppDirectory;
@@ -3121,9 +3097,7 @@ _T15c:
 	__asm        call   DebugOutput;
 	__asm        add    esp, 4;
 // LINE 430:
-	__asm        call   LanguageManager::GetCurrentSystemLocale;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x4324], eax;
+	this-><CGameApp+0x4324:4> = LanguageManager::GetCurrentSystemLocale();
 // LINE 431:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -3251,15 +3225,9 @@ _T320:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x1C];
 // LINE 480:
-	__asm        push   0x10000;
-	__asm        call   S2AllocPool;
-	__asm        add    esp, 4;
-	__asm        mov    MainPoolIndex, eax;
+	MainPoolIndex = S2AllocPool(0x10000);
 // LINE 481:
-	__asm        push   0x10000;
-	__asm        call   S2AllocPool;
-	__asm        add    esp, 4;
-	__asm        mov    ScratchPoolIndex, eax;
+	ScratchPoolIndex = S2AllocPool(0x10000);
 // LINE 484:
 	__asm        call   TWKGameInit;
 // LINE 487:
@@ -3516,11 +3484,7 @@ _T228:
 	__asm        test   eax, eax;
 	__asm        je     _T28c;
 // LINE 553:
-	__asm        lea    eax, szCommandValue[0];
-	__asm        push   eax;
-	__asm        call   atoi;
-	__asm        add    esp, 4;
-	__asm        mov    lValue, eax;
+	lValue = atoi(szCommandValue[0]);
 // LINE 554:
 	__asm        cmp    lValue, 0xC;
 	__asm        jle    _T26a;
@@ -3545,11 +3509,7 @@ _T28c:
 	__asm        test   eax, eax;
 	__asm        je     _T2f0;
 // LINE 565:
-	__asm        lea    eax, szCommandValue[0];
-	__asm        push   eax;
-	__asm        call   atoi;
-	__asm        add    esp, 4;
-	__asm        mov    lValue, eax;
+	lValue = atoi(szCommandValue[0]);
 // LINE 566:
 	__asm        cmp    lValue, 4;
 	__asm        jle    _T2ce;

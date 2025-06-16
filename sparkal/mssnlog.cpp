@@ -795,11 +795,7 @@ _Tf0:
 	tempButtonWindow = 0x0;
 // LINE 76:
 _Tf7:
-	__asm        push   0;
-	__asm        push   0x212;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x212);
 // LINE 77:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x107C];
@@ -989,11 +985,7 @@ _T38c:
 	tempButtonWindow = 0x0;
 // LINE 84:
 _T393:
-	__asm        push   0;
-	__asm        push   0x213;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x213);
 // LINE 85:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x2094];
@@ -1106,11 +1098,7 @@ _T506:
 	tempButtonWindow = 0x0;
 // LINE 92:
 _T50d:
-	__asm        push   0;
-	__asm        push   0x214;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x214);
 // LINE 93:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x3098];
@@ -1516,24 +1504,10 @@ _Te9:
 _T10a:
 	__asm        jmp    _T10f;
 _T10f:
-	__asm        mov    eax, pColorTable;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x64];
-	__asm        push   eax;
-	__asm        call   CBackBuffer::GetPaletteFromImage;
-	__asm        add    esp, 8;
-	__asm        test   eax, eax;
-	__asm        jne    _T134;
-
-	__asm        mov    eax, 1;
-	__asm        jmp    _T136;
 _T134:
-	__asm        xor    eax, eax;
 _T136:
-	__asm        jmp    __RETURN;
+	return (CBackBuffer::GetPaletteFromImage(pColorTable, this-><MissionLogWindow+0x64>) != 0x0);
 // LINE 120:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0046ca4c

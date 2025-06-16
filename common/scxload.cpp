@@ -1004,10 +1004,7 @@ int32_t ReadSCXFile(char * filePath) {
 // LINE 297:
 	__asm        call   S2CityAlloc;
 // LINE 299:
-	__asm        push   0xFFFF;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    scxbuf, eax;
+	scxbuf = operator new(0xffff);
 // LINE 301:
 	__asm        lea    ecx, fileStream<cLZAPFileBitStream+0x00>;
 	__asm        call   cLZAPFileBitStream::cLZAPFileBitStream;

@@ -2259,12 +2259,7 @@ _T3d0:
 	tempButtonWindow = 0x0;
 // LINE 122:
 _T3d7:
-	__asm        push   0;
-	__asm        mov    eax, nButtonStringID[0];
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, nButtonStringID[0]);
 // LINE 123:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x1090];
@@ -2567,12 +2562,7 @@ _T823:
 	tempButtonWindow = 0x0;
 // LINE 131:
 _T82a:
-	__asm        push   0;
-	__asm        mov    eax, nButtonStringID[1];
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, nButtonStringID[1]);
 // LINE 132:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x20A8];
@@ -2961,13 +2951,7 @@ _T41:
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jne    _T478;
 // LINE 239:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x74];
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, this->lMessageID);
 // LINE 240:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x1060];
@@ -3607,8 +3591,7 @@ _T57:
 	__asm        cmp    dword ptr [eax+0x78], 0;
 	__asm        jne    _T13a;
 // LINE 356:
-	__asm        call   GetMillisecondTimeLong;
-	__asm        mov    lMillisecondsCurrent, eax;
+	lMillisecondsCurrent = GetMillisecondTimeLong();
 // LINE 358:
 	this->lMillisecondsSinceLastFrame = (lMillisecondsCurrent - this->lMillisecondsOfLastFrame);
 // LINE 359:
@@ -4832,11 +4815,7 @@ _Td45:
 	tempButtonWindow = 0x0;
 // LINE 627:
 _Td4c:
-	__asm        push   0;
-	__asm        push   0x51;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x51);
 // LINE 628:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x11C8];
@@ -5274,11 +5253,7 @@ _T137a:
 	tempButtonWindow = 0x0;
 // LINE 635:
 _T1381:
-	__asm        push   0;
-	__asm        push   0x52;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x52);
 // LINE 636:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x2224];
@@ -8377,11 +8352,7 @@ _T78f:
 	tempButtonWindow1 = 0x0;
 // LINE 1098:
 _T796:
-	__asm        push   0;
-	__asm        push   0x8D;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x8d);
 // LINE 1099:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x110C];
@@ -8768,11 +8739,7 @@ _Td0b:
 	tempButtonWindow2 = 0x0;
 // LINE 1106:
 _Td12:
-	__asm        push   0;
-	__asm        push   0x8E;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x8e);
 // LINE 1107:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x2154];
@@ -9311,13 +9278,7 @@ void SoundSettingsWindow::GetCurrentVolumeSettings(/*packed*/ struct SoundPrefer
 	__asm        mov    ecx, currentSoundPreferences;
 	__asm        mov    [ecx], eax;
 // LINE 1189:
-	__asm        mov    eax, currentSoundPreferences;
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        call   SoundSettingsWindow::ConvertSliderValueToSoundValue;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, currentSoundPreferences;
-	__asm        mov    [ecx], eax;
+	currentSoundPreferences.lMasterVolume = SoundSettingsWindow::ConvertSliderValueToSoundValue(currentSoundPreferences.lMasterVolume);
 // LINE 1193:
 	return;
 }
@@ -9349,13 +9310,7 @@ _T52:
 	currentRadioPreferences.bPreferToBeOn = 0x0;
 // LINE 1205:
 _T5c:
-	__asm        mov    eax, currentRadioPreferences;
-	__asm        mov    eax, [eax];
-	__asm        push   eax;
-	__asm        call   SoundSettingsWindow::ConvertSliderValueToSoundValue;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, currentRadioPreferences;
-	__asm        mov    [ecx], eax;
+	currentRadioPreferences.lVolume = SoundSettingsWindow::ConvertSliderValueToSoundValue(currentRadioPreferences.lVolume);
 // LINE 1206:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, [eax+0x78];
@@ -10470,11 +10425,7 @@ _Td9a:
 	tempButtonWindow = 0x0;
 // LINE 1444:
 _Tda1:
-	__asm        push   0;
-	__asm        push   0x14B;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x14b);
 // LINE 1445:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x119C];
@@ -11056,11 +11007,7 @@ _T160a:
 	tempButtonWindow = 0x0;
 // LINE 1451:
 _T1611:
-	__asm        push   0;
-	__asm        push   0x14C;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x14c);
 // LINE 1452:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x2218];
@@ -16490,13 +16437,8 @@ _T4b:
 // FUNCTION: COPTER_D 0x0045cd68
 long BoneheadTextEditWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 2132:
-	__asm        mov    eax, this;
-	__asm        push   eax;
-	__asm        call   GraphicWindow::MakeFocus;
-	__asm        add    esp, 4;
-	__asm        jmp    __RETURN;
+	return GraphicWindow::MakeFocus(this);
 // LINE 2133:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0045cd8c
@@ -19016,11 +18958,7 @@ _Tc74:
 	tempButtonWindow = 0x0;
 // LINE 2519:
 _Tc7b:
-	__asm        push   0;
-	__asm        push   0x24A;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x24a);
 // LINE 2520:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x1174];
@@ -19546,11 +19484,7 @@ _T1405:
 	tempButtonWindow = 0x0;
 // LINE 2527:
 _T140c:
-	__asm        push   0;
-	__asm        push   0x24B;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x24b);
 // LINE 2528:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x21E4];
@@ -20157,11 +20091,7 @@ void CheckupWindow::SetAllControlValuesToDefaults() {
 	/*bp-0x4*/   long lValue;
 
 // LINE 2576:
-	__asm        mov    eax, G_uheli;
-	__asm        push   eax;
-	__asm        call   S3GetFullRepairCost;
-	__asm        add    esp, 4;
-	__asm        mov    lValue, eax;
+	lValue = S3GetFullRepairCost(G_uheli);
 // LINE 2577:
 	__asm        cmp    lValue, 0;
 	__asm        jge    _T2e;
@@ -20181,11 +20111,7 @@ _T2e:
 	__asm        mov    ecx, [eax+0x74];
 	__asm        call   SliderWindow::SetValue;
 // LINE 2582:
-	__asm        mov    eax, G_uheli;
-	__asm        push   eax;
-	__asm        call   S3GetFullRefuelCost;
-	__asm        add    esp, 4;
-	__asm        mov    lValue, eax;
+	lValue = S3GetFullRefuelCost(G_uheli);
 // LINE 2583:
 	__asm        cmp    lValue, 0;
 	__asm        jge    _T6e;
@@ -20209,10 +20135,7 @@ _T6e:
 	__asm        test   byte ptr [eax+0x48], 8;
 	__asm        je     _Tcb;
 // LINE 2589:
-	__asm        push   3;
-	__asm        call   S3HeliGetEquipmentNewValue;
-	__asm        add    esp, 4;
-	__asm        mov    lValue, eax;
+	lValue = S3HeliGetEquipmentNewValue(0x3);
 // LINE 2590:
 	__asm        mov    eax, lValue;
 	__asm        push   eax;

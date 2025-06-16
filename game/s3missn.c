@@ -348,8 +348,7 @@ void S3MissionGenerator() {
 	/*bp-0x30*/  long pct;
 
 // LINE 243:
-	__asm        call   GetCurrentCitySettings;
-	__asm        mov    currentCitySettings, eax;
+	currentCitySettings = GetCurrentCitySettings();
 // LINE 244:
 	__asm        lea    eax, currentCitySettingPercentages.lDifficulty;
 	__asm        push   eax;
@@ -392,8 +391,7 @@ _T89:
 	__asm        cmp    SpeederMissionActive, 0;
 	__asm        jne    _Ta0;
 // LINE 267:
-	__asm        call   S3StartSpeederMission;
-	__asm        mov    SpeederMissionActive, eax;
+	SpeederMissionActive = S3StartSpeederMission();
 // LINE 270:
 _Ta0:
 	__asm        cmp    S_mission_timer, 0;
@@ -1474,13 +1472,7 @@ _T3d1:
 // Block start:
 	/*bp-0x28*/  /*packed*/ struct _DYOBJ_INST *boat;
 _T3d6:
-	__asm        push   0x12C0000;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x24];
-	__asm        push   eax;
-	__asm        call   StartCapsizedBoat;
-	__asm        add    esp, 8;
-	__asm        mov    boat, eax;
+	boat = StartCapsizedBoat(0x12c0000, md->key);
 // LINE 780:
 	__asm        cmp    boat, 0;
 	__asm        jne    _T416;
@@ -2427,11 +2419,7 @@ __RETURN:
 	/*bp-0x8*/   /*packed*/ struct MISSION_DATA *md;
 
 // LINE 1075:
-	__asm        mov    eax, key;
-	__asm        push   eax;
-	__asm        call   S3MissionGetIDByKey;
-	__asm        add    esp, 4;
-	__asm        mov    mission_id, eax;
+	mission_id = S3MissionGetIDByKey(key);
 // LINE 1077:
 	__asm        cmp    mission_id, 0xFFFFFFFF;
 	__asm        jne    _T29;
@@ -2451,11 +2439,7 @@ _T29:
 	/*bp-0x8*/   /*packed*/ struct MISSION_DATA *md;
 
 // LINE 1102:
-	__asm        mov    eax, key;
-	__asm        push   eax;
-	__asm        call   S3MissionGetIDByKey;
-	__asm        add    esp, 4;
-	__asm        mov    mission_id, eax;
+	mission_id = S3MissionGetIDByKey(key);
 // LINE 1104:
 	__asm        cmp    mission_id, 0xFFFFFFFF;
 	__asm        jne    _T29;
@@ -2482,11 +2466,7 @@ _T58:
 	/*bp-0x8*/   /*packed*/ struct MISSION_DATA *md;
 
 // LINE 1133:
-	__asm        mov    eax, key;
-	__asm        push   eax;
-	__asm        call   S3MissionGetIDByKey;
-	__asm        add    esp, 4;
-	__asm        mov    mission_id, eax;
+	mission_id = S3MissionGetIDByKey(key);
 // LINE 1135:
 	__asm        cmp    mission_id, 0xFFFFFFFF;
 	__asm        jne    _T29;
@@ -2989,11 +2969,7 @@ __RETURN:
 	/*bp-0x4*/   long mission_id;
 
 // LINE 1436:
-	__asm        mov    eax, key;
-	__asm        push   eax;
-	__asm        call   S3MissionGetIDByKey;
-	__asm        add    esp, 4;
-	__asm        mov    mission_id, eax;
+	mission_id = S3MissionGetIDByKey(key);
 // LINE 1438:
 	__asm        cmp    mission_id, 0xFFFFFFFF;
 	__asm        jne    _T29;
@@ -3722,11 +3698,7 @@ int32_t S3MissionIsType(long key, long mission_type) {
 	/*bp-0x8*/   /*packed*/ struct MISSION_DATA *md;
 
 // LINE 1674:
-	__asm        mov    eax, key;
-	__asm        push   eax;
-	__asm        call   S3MissionGetIDByKey;
-	__asm        add    esp, 4;
-	__asm        mov    mission_id, eax;
+	mission_id = S3MissionGetIDByKey(key);
 // LINE 1676:
 	__asm        cmp    mission_id, 0xFFFFFFFF;
 	__asm        jne    _T29;
@@ -4241,13 +4213,7 @@ void S3MissionScoreUpdate(/*packed*/ struct _MISSION_PARMS *mp, long * mission_i
 // LINE 2018:
 	key = 0xffffffff;
 // LINE 2020:
-	__asm        mov    eax, mp;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        call   S3MissionGetIDByKey;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, mission_id;
-	__asm        mov    [ecx], eax;
+	mission_id[0] = S3MissionGetIDByKey(mp->id);
 // LINE 2023:
 	__asm        mov    eax, mp;
 	__asm        test   byte ptr [eax+0x14], 1;
@@ -5285,15 +5251,7 @@ int32_t S3MissionMIFFLoad(void * __ptr32 miffReader) {
 	/*bp-0xc*/   /*packed*/ struct MISSION_DATA *md;
 
 // LINE 2494:
-	__asm        push   0x1910;
-	__asm        push   0x6072B8;
-	__asm        mov    eax, missionMIFFID;
-	__asm        push   eax;
-	__asm        mov    eax, miffReader;
-	__asm        push   eax;
-	__asm        call   ReadFirstMIFFChunk;
-	__asm        add    esp, 0x10;
-	__asm        mov    ret, eax;
+	ret = ReadFirstMIFFChunk(0x1910, 0x6072b8, missionMIFFID, miffReader);
 // LINE 2495:
 	__asm        cmp    ret, 0;
 	__asm        jne    _T39;
@@ -5338,15 +5296,7 @@ int32_t S3MissionMIFFSave(void * __ptr32 miffWriter) {
 	/*bp-0x4*/   long ret;
 
 // LINE 2523:
-	__asm        push   0x1910;
-	__asm        push   0x6072B8;
-	__asm        mov    eax, missionMIFFID;
-	__asm        push   eax;
-	__asm        mov    eax, miffWriter;
-	__asm        push   eax;
-	__asm        call   WriteMIFFChunk;
-	__asm        add    esp, 0x10;
-	__asm        mov    ret, eax;
+	ret = WriteMIFFChunk(0x1910, 0x6072b8, missionMIFFID, miffWriter);
 // LINE 2524:
 	__asm        cmp    ret, 0;
 	__asm        jne    _T39;
@@ -5369,13 +5319,7 @@ void S3MissionDispatch(long x, long y, long type) {
 // LINE 2556:
 	sid3 = 0xffffffff;
 // LINE 2557:
-	__asm        mov    eax, y;
-	__asm        push   eax;
-	__asm        mov    eax, x;
-	__asm        push   eax;
-	__asm        call   S3MissionGetSoundQuadrant;
-	__asm        add    esp, 8;
-	__asm        mov    sid2, eax;
+	sid2 = S3MissionGetSoundQuadrant(y, x);
 // LINE 2560:
 	__asm        mov    eax, type;
 	__asm        mov    [ebp-0x10], eax;

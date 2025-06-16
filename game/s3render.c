@@ -156,13 +156,7 @@ _T64:
 	__asm        call   GetPathForFile;
 	__asm        add    esp, 0x10;
 // LINE 277:
-	__asm        push   0x5B47B0;
-	__asm        push   3;
-	__asm        lea    eax, szFilePath[0];
-	__asm        push   eax;
-	__asm        call   VRLoadResource;
-	__asm        add    esp, 0xC;
-	__asm        mov    G_restex, eax;
+	G_restex = VRLoadResource(0x5b47b0, 0x3, szFilePath[0]);
 // LINE 279:
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
@@ -172,13 +166,7 @@ _T64:
 	__asm        call   GetPathForFile;
 	__asm        add    esp, 0x10;
 // LINE 280:
-	__asm        push   0x5B47C0;
-	__asm        push   1;
-	__asm        lea    eax, szFilePath[0];
-	__asm        push   eax;
-	__asm        call   VRLoadResource;
-	__asm        add    esp, 0xC;
-	__asm        mov    G_resgeo1, eax;
+	G_resgeo1 = VRLoadResource(0x5b47c0, 0x1, szFilePath[0]);
 // LINE 282:
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
@@ -188,13 +176,7 @@ _T64:
 	__asm        call   GetPathForFile;
 	__asm        add    esp, 0x10;
 // LINE 283:
-	__asm        push   0x5B47D4;
-	__asm        push   1;
-	__asm        lea    eax, szFilePath[0];
-	__asm        push   eax;
-	__asm        call   VRLoadResource;
-	__asm        add    esp, 0xC;
-	__asm        mov    G_resgeo2, eax;
+	G_resgeo2 = VRLoadResource(0x5b47d4, 0x1, szFilePath[0]);
 // LINE 285:
 	__asm        lea    eax, szFilePath[0];
 	__asm        push   eax;
@@ -204,13 +186,7 @@ _T64:
 	__asm        call   GetPathForFile;
 	__asm        add    esp, 0x10;
 // LINE 286:
-	__asm        push   0x5B47E8;
-	__asm        push   1;
-	__asm        lea    eax, szFilePath[0];
-	__asm        push   eax;
-	__asm        call   VRLoadResource;
-	__asm        add    esp, 0xC;
-	__asm        mov    G_resgeo3, eax;
+	G_resgeo3 = VRLoadResource(0x5b47e8, 0x1, szFilePath[0]);
 // LINE 305:
 	__asm        cmp    G_restex, 0;
 	__asm        je     _T1bd;
@@ -305,11 +281,7 @@ _T29c:
 	__asm        mov    eax, mem2d;
 	__asm        mov    memxf, eax;
 // LINE 339:
-	__asm        mov    eax, G_resgeo1;
-	__asm        push   eax;
-	__asm        call   VRGetResObjectCnt;
-	__asm        add    esp, 4;
-	__asm        mov    i, eax;
+	i = VRGetResObjectCnt(G_resgeo1);
 // LINE 340:
 	__asm        mov    j, 0;
 	__asm        jmp    _T2db;
@@ -320,13 +292,7 @@ _T2db:
 	__asm        cmp    j, eax;
 	__asm        jge    _T373;
 // LINE 342:
-	__asm        mov    eax, j;
-	__asm        push   eax;
-	__asm        mov    eax, G_resgeo1;
-	__asm        push   eax;
-	__asm        call   VRGetResObject;
-	__asm        add    esp, 8;
-	__asm        mov    obj, eax;
+	obj = VRGetResObject(j, G_resgeo1);
 // LINE 343:
 	__asm        mov    eax, obj;
 	__asm        push   eax;
@@ -357,11 +323,7 @@ _T36e:
 	__asm        jmp    _T2d5;
 // LINE 349:
 _T373:
-	__asm        mov    eax, G_resgeo2;
-	__asm        push   eax;
-	__asm        call   VRGetResObjectCnt;
-	__asm        add    esp, 4;
-	__asm        mov    i, eax;
+	i = VRGetResObjectCnt(G_resgeo2);
 // LINE 350:
 	__asm        mov    j, 0;
 	__asm        jmp    _T39c;
@@ -372,13 +334,7 @@ _T39c:
 	__asm        cmp    j, eax;
 	__asm        jge    _T434;
 // LINE 352:
-	__asm        mov    eax, j;
-	__asm        push   eax;
-	__asm        mov    eax, G_resgeo2;
-	__asm        push   eax;
-	__asm        call   VRGetResObject;
-	__asm        add    esp, 8;
-	__asm        mov    obj, eax;
+	obj = VRGetResObject(j, G_resgeo2);
 // LINE 353:
 	__asm        mov    eax, obj;
 	__asm        push   eax;
@@ -409,11 +365,7 @@ _T42f:
 	__asm        jmp    _T396;
 // LINE 360:
 _T434:
-	__asm        mov    eax, G_resgeo3;
-	__asm        push   eax;
-	__asm        call   VRGetResObjectCnt;
-	__asm        add    esp, 4;
-	__asm        mov    i, eax;
+	i = VRGetResObjectCnt(G_resgeo3);
 // LINE 361:
 	__asm        mov    j, 0;
 	__asm        jmp    _T45d;
@@ -424,13 +376,7 @@ _T45d:
 	__asm        cmp    j, eax;
 	__asm        jge    _T4f5;
 // LINE 363:
-	__asm        mov    eax, j;
-	__asm        push   eax;
-	__asm        mov    eax, G_resgeo3;
-	__asm        push   eax;
-	__asm        call   VRGetResObject;
-	__asm        add    esp, 8;
-	__asm        mov    obj, eax;
+	obj = VRGetResObject(j, G_resgeo3);
 // LINE 364:
 	__asm        mov    eax, obj;
 	__asm        push   eax;
@@ -463,13 +409,7 @@ _T4f0:
 _T4f5:
 	__asm        shl    mem2d, 3;
 // LINE 374:
-	__asm        mov    eax, mem2d;
-	__asm        push   eax;
-	__asm        mov    eax, memxf;
-	__asm        push   eax;
-	__asm        call   VRCreateMemPool;
-	__asm        add    esp, 8;
-	__asm        mov    G_main_mp, eax;
+	G_main_mp = VRCreateMemPool(mem2d, memxf);
 // LINE 375:
 	__asm        cmp    G_main_mp, 0;
 	__asm        jne    _T531;
@@ -550,10 +490,7 @@ _T531:
 // LINE 408:
 	__asm        call   S3ObjLinkLowRes;
 // LINE 413:
-	__asm        push   0x10000;
-	__asm        call   S2AllocPool;
-	__asm        add    esp, 4;
-	__asm        mov    G_dyobjmempool, eax;
+	G_dyobjmempool = S2AllocPool(0x10000);
 // LINE 416:
 	__asm        or     G_InitializationProgress, 0x80;
 // LINE 417:
@@ -806,12 +743,8 @@ _T944:
 // LINE 527:
 	G_VRAppInitCalled = 0x1;
 // LINE 529:
-	__asm        push   0;
-	__asm        call   VRAppCityInit;
-	__asm        add    esp, 4;
-	__asm        jmp    __RETURN;
+	return VRAppCityInit(0x0);
 // LINE 530:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004eb5ca
@@ -947,8 +880,7 @@ _T194:
 	G_uheli->flags = 0x1;
 // LINE 647:
 _T1a0:
-	__asm        call   GetCurrentUserPersonalInfo;
-	__asm        mov    up, eax;
+	up = GetCurrentUserPersonalInfo();
 // LINE 648:
 	__asm        mov    i, 0;
 	__asm        jmp    _T1b7;
@@ -1011,8 +943,7 @@ _T24e:
 	__asm        test   [eax+0x44], edx;
 	__asm        je     _T299;
 // LINE 672:
-	__asm        call   S3HeliGetFreePad;
-	__asm        mov    pad, eax;
+	pad = S3HeliGetFreePad();
 // LINE 673:
 	__asm        mov    eax, pad;
 	__asm        mov    eax, [eax+4];

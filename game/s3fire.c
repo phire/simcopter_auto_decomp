@@ -263,25 +263,13 @@ _T72:
 // LINE 163:
 	fd->elevation = 0x0;
 // LINE 165:
-	__asm        push   0x10;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    ecx, fd;
-	__asm        mov    [ecx+0x20], eax;
+	fd->stptr = S2Alloc(0x10, G_dyobjmempool);
 // LINE 166:
 	fd->stptr->user1 = 0x1;
 // LINE 167:
 	fd->stptr->user2 = fd;
 // LINE 169:
-	__asm        mov    eax, size;
-	__asm        push   eax;
-	__asm        mov    eax, G_dyobjmempool;
-	__asm        push   eax;
-	__asm        call   S2Alloc;
-	__asm        add    esp, 8;
-	__asm        mov    mem, eax;
+	mem = S2Alloc(size, G_dyobjmempool);
 // LINE 170:
 	__asm        mov    eax, mem;
 	__asm        push   eax;
@@ -577,10 +565,7 @@ void S3FireDriver() {
 // LINE 322:
 	fireloopsound = 0x0;
 // LINE 325:
-	__asm        push   0xD;
-	__asm        call   S3SoundIsPlaying;
-	__asm        add    esp, 4;
-	__asm        mov    fireloopsound, eax;
+	fireloopsound = S3SoundIsPlaying(0xd);
 // LINE 328:
 	__asm        cmp    S_fire_count, 0;
 	__asm        jne    _T43;
@@ -650,13 +635,7 @@ _T9b:
 // LINE 360:
 	loc.z = (ViewState.world_pos.z - floc.z);
 // LINE 361:
-	__asm        mov    eax, fd;
-	__asm        add    eax, 0x8C;
-	__asm        push   eax;
-	__asm        push   0x6BF188;
-	__asm        call   MTCheapDist2D;
-	__asm        add    esp, 8;
-	__asm        mov    dist, eax;
+	dist = MTCheapDist2D((fd + 0x8c), 0x6bf188);
 // LINE 362:
 	__asm        mov    eax, dist;
 	__asm        cmp    mindist, eax;
@@ -713,18 +692,7 @@ _T185:
 	__asm        test   byte ptr [eax], 2;
 	__asm        je     _T1e2;
 // LINE 397:
-	__asm        push   0x20000;
-	__asm        push   0xFFFFFFFF;
-	__asm        mov    eax, loc.y;
-	__asm        push   eax;
-	__asm        mov    eax, loc.x;
-	__asm        push   eax;
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x94];
-	__asm        push   eax;
-	__asm        call   VRGetObjZdist;
-	__asm        add    esp, 0x14;
-	__asm        mov    newcoord, eax;
+	newcoord = VRGetObjZdist(0x20000, -0x1, loc.y, loc.x, fd->building);
 // LINE 398:
 	loc.z = newcoord;
 // LINE 400:
@@ -734,18 +702,7 @@ _T1e2:
 	__asm        test   byte ptr [eax], 4;
 	__asm        je     _T21d;
 // LINE 407:
-	__asm        push   0x20000;
-	__asm        push   1;
-	__asm        mov    eax, loc.y;
-	__asm        push   eax;
-	__asm        mov    eax, loc.x;
-	__asm        push   eax;
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x94];
-	__asm        push   eax;
-	__asm        call   VRGetObjZdist;
-	__asm        add    esp, 0x14;
-	__asm        mov    newcoord, eax;
+	newcoord = VRGetObjZdist(0x20000, 0x1, loc.y, loc.x, fd->building);
 // LINE 408:
 	loc.z = newcoord;
 // LINE 410:
@@ -755,18 +712,7 @@ _T21d:
 	__asm        test   byte ptr [eax], 8;
 	__asm        je     _T258;
 // LINE 417:
-	__asm        push   0x20000;
-	__asm        push   0xFFFFFFFF;
-	__asm        mov    eax, loc.z;
-	__asm        push   eax;
-	__asm        mov    eax, loc.y;
-	__asm        push   eax;
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x94];
-	__asm        push   eax;
-	__asm        call   VRGetObjXdist;
-	__asm        add    esp, 0x14;
-	__asm        mov    newcoord, eax;
+	newcoord = VRGetObjXdist(0x20000, -0x1, loc.z, loc.y, fd->building);
 // LINE 418:
 	loc.x = newcoord;
 // LINE 420:
@@ -776,18 +722,7 @@ _T258:
 	__asm        test   byte ptr [eax], 0x10;
 	__asm        je     _T28e;
 // LINE 427:
-	__asm        push   0x20000;
-	__asm        push   1;
-	__asm        mov    eax, loc.z;
-	__asm        push   eax;
-	__asm        mov    eax, loc.y;
-	__asm        push   eax;
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x94];
-	__asm        push   eax;
-	__asm        call   VRGetObjXdist;
-	__asm        add    esp, 0x14;
-	__asm        mov    newcoord, eax;
+	newcoord = VRGetObjXdist(0x20000, 0x1, loc.z, loc.y, fd->building);
 // LINE 428:
 	loc.x = newcoord;
 // LINE 431:
@@ -931,12 +866,7 @@ _T3bf:
 	__asm        call   S3MissionUpdate;
 	__asm        add    esp, 4;
 // LINE 491:
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x9C];
-	__asm        push   eax;
-	__asm        call   S3MissionGetMapLoc;
-	__asm        add    esp, 4;
-	__asm        mov    missloc, eax;
+	missloc = S3MissionGetMapLoc(fd->mission_id);
 // LINE 492:
 	__asm        cmp    missloc, 0;
 	__asm        je     _T4fc;
@@ -953,12 +883,7 @@ _T3bf:
 	__asm        cmp    [eax+4], ecx;
 	__asm        jne    _T4fc;
 // LINE 494:
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x9C];
-	__asm        push   eax;
-	__asm        call   S3FireGetByMission;
-	__asm        add    esp, 4;
-	__asm        mov    nfd, eax;
+	nfd = S3FireGetByMission(fd->mission_id);
 // LINE 495:
 	__asm        cmp    nfd, 0;
 	__asm        jne    _T4c8;
@@ -1151,8 +1076,7 @@ _Tde:
 	__asm        jmp    _Ta2;
 // LINE 605:
 _Te3:
-	__asm        call   S3FireGetCellData;
-	__asm        mov    cfd, eax;
+	cfd = S3FireGetCellData();
 // LINE 606:
 	cfd->cptr = cptr;
 // LINE 607:
@@ -1432,12 +1356,7 @@ _T1f2:
 	__asm        call   S3MissionUpdate;
 	__asm        add    esp, 4;
 // LINE 750:
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x9C];
-	__asm        push   eax;
-	__asm        call   S3MissionGetMapLoc;
-	__asm        add    esp, 4;
-	__asm        mov    missloc, eax;
+	missloc = S3MissionGetMapLoc(fd->mission_id);
 // LINE 751:
 	__asm        cmp    missloc, 0;
 	__asm        je     _T329;
@@ -1454,12 +1373,7 @@ _T1f2:
 	__asm        cmp    [eax+4], ecx;
 	__asm        jne    _T329;
 // LINE 753:
-	__asm        mov    eax, fd;
-	__asm        mov    eax, [eax+0x9C];
-	__asm        push   eax;
-	__asm        call   S3FireGetByMission;
-	__asm        add    esp, 4;
-	__asm        mov    nfd, eax;
+	nfd = S3FireGetByMission(fd->mission_id);
 // LINE 754:
 	__asm        cmp    nfd, 0;
 	__asm        jne    _T2f5;
@@ -3963,15 +3877,7 @@ int32_t S3FireMIFFLoad(void * __ptr32 miffReader) {
 	/*bp-0xc*/   long i;
 
 // LINE 1626:
-	__asm        push   0xA0;
-	__asm        push   0x62B550;
-	__asm        mov    eax, FireMIFFID;
-	__asm        push   eax;
-	__asm        mov    eax, miffReader;
-	__asm        push   eax;
-	__asm        call   ReadFirstMIFFChunk;
-	__asm        add    esp, 0x10;
-	__asm        mov    ret, eax;
+	ret = ReadFirstMIFFChunk(0xa0, 0x62b550, FireMIFFID, miffReader);
 // LINE 1627:
 	__asm        cmp    ret, 0;
 	__asm        jne    _T39;
@@ -4031,15 +3937,7 @@ _T48:
 	__asm        mov    [edx], ecx;
 	__asm        mov    [edx+4], eax;
 // LINE 1653:
-	__asm        push   0xA0;
-	__asm        push   0x62B550;
-	__asm        mov    eax, FireMIFFID;
-	__asm        push   eax;
-	__asm        mov    eax, miffReader;
-	__asm        push   eax;
-	__asm        call   ReadNextMIFFChunk;
-	__asm        add    esp, 0x10;
-	__asm        mov    ret, eax;
+	ret = ReadNextMIFFChunk(0xa0, 0x62b550, FireMIFFID, miffReader);
 // LINE 1654:
 	__asm        cmp    ret, 0;
 	__asm        jne    _T14c;
@@ -4053,15 +3951,7 @@ _T14c:
 	__asm        jmp    _T45;
 // LINE 1662:
 _T151:
-	__asm        push   8;
-	__asm        push   0x62B548;
-	__asm        mov    eax, CfdMIFFID;
-	__asm        push   eax;
-	__asm        mov    eax, miffReader;
-	__asm        push   eax;
-	__asm        call   ReadFirstMIFFChunk;
-	__asm        add    esp, 0x10;
-	__asm        mov    ret, eax;
+	ret = ReadFirstMIFFChunk(0x8, 0x62b548, CfdMIFFID, miffReader);
 // LINE 1663:
 	__asm        cmp    ret, 0;
 	__asm        jne    _T17e;
@@ -4081,15 +3971,7 @@ _T18d:
 	__asm        mov    ecx, i;
 	__asm        mov    S_cfdata[0].fire_count[ecx*8], eax;
 // LINE 1678:
-	__asm        push   8;
-	__asm        push   0x62B548;
-	__asm        mov    eax, CfdMIFFID;
-	__asm        push   eax;
-	__asm        mov    eax, miffReader;
-	__asm        push   eax;
-	__asm        call   ReadNextMIFFChunk;
-	__asm        add    esp, 0x10;
-	__asm        mov    ret, eax;
+	ret = ReadNextMIFFChunk(0x8, 0x62b548, CfdMIFFID, miffReader);
 // LINE 1679:
 	__asm        cmp    ret, 0;
 	__asm        jne    _T1e3;
@@ -4278,15 +4160,7 @@ _T18:
 	__asm        mov    [ecx+8], eax;
 // LINE 1749:
 _T92:
-	__asm        push   0xA0;
-	__asm        push   0x62B550;
-	__asm        mov    eax, FireMIFFID;
-	__asm        push   eax;
-	__asm        mov    eax, miffWriter;
-	__asm        push   eax;
-	__asm        call   WriteMIFFChunk;
-	__asm        add    esp, 0x10;
-	__asm        mov    ret, eax;
+	ret = WriteMIFFChunk(0xa0, 0x62b550, FireMIFFID, miffWriter);
 // LINE 1750:
 	__asm        cmp    ret, 0;
 	__asm        jne    _Tc2;
@@ -4294,17 +4168,7 @@ _T92:
 	return 0x0;
 // LINE 1757:
 _Tc2:
-	__asm        push   8;
-	__asm        mov    eax, i;
-	__asm        lea    eax, S_cfdata[0].cptr[eax*8];
-	__asm        push   eax;
-	__asm        mov    eax, CfdMIFFID;
-	__asm        push   eax;
-	__asm        mov    eax, miffWriter;
-	__asm        push   eax;
-	__asm        call   WriteMIFFChunk;
-	__asm        add    esp, 0x10;
-	__asm        mov    ret, eax;
+	ret = WriteMIFFChunk(0x8, BinaryOp(add, BinaryOp(mul, i, Const(8)), Const(6733456)), CfdMIFFID, miffWriter);
 // LINE 1758:
 	__asm        cmp    ret, 0;
 	__asm        jne    _Tf5;

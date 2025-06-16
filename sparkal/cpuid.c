@@ -71,8 +71,7 @@ unsigned short wincpuid() {
 	__asm        test   eax, eax;
 	__asm        je     _T27;
 // LINE 112:
-	__asm        call   check_IDProc;
-	__asm        mov    cpuid, ax;
+	cpuid = check_IDProc();
 // LINE 114:
 	__asm        jmp    end;
 // LINE 116:
@@ -81,8 +80,7 @@ _T27:
 	__asm        movzx  eax, ax;
 	__asm        mov    clone_flag, eax;
 // LINE 118:
-	__asm        call   check_8086;
-	__asm        mov    cpuid, ax;
+	cpuid = check_8086();
 // LINE 119:
 	__asm        test   reinterpret_cast<uint32_t>(cpuid), 0xFFFF;
 	__asm        jne    _T4f;
@@ -90,8 +88,7 @@ _T27:
 	__asm        jmp    end;
 // LINE 121:
 _T4f:
-	__asm        call   check_80286;
-	__asm        mov    cpuid, ax;
+	cpuid = check_80286();
 // LINE 122:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(cpuid);
 	__asm        and    eax, 0xFFFF;
@@ -101,8 +98,7 @@ _T4f:
 	__asm        jmp    end;
 // LINE 124:
 _T6e:
-	__asm        call   check_80386;
-	__asm        mov    cpuid, ax;
+	cpuid = check_80386();
 // LINE 125:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(cpuid);
 	__asm        and    eax, 0xFFFF;
@@ -217,8 +213,7 @@ end_cpuidext:
 	__asm        jmp    _Tde;
 // LINE 208:
 _Tc6:
-	__asm        call   wincpuid;
-	__asm        mov    cpu_type, ax;
+	cpu_type = wincpuid();
 // LINE 209:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(cpu_type);
 	__asm        and    eax, 0xFFFF;
@@ -324,8 +319,7 @@ _Tba:
 	/*bp-0xc*/   /*packed*/ struct TIME_STAMP timestamp; // 0x8 bytes
 
 // LINE 324:
-	__asm        call   wincpufeatures;
-	__asm        mov    features, eax;
+	features = wincpufeatures();
 // LINE 326:
 	timestamp.Low = 0x0;
 // LINE 327:

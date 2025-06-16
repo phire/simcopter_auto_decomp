@@ -731,11 +731,7 @@ _T455:
 	__asm        call   dword ptr [eax+0x40];
 // LINE 203:
 _T4da:
-	__asm        lea    eax, szCityPath[0];
-	__asm        push   eax;
-	__asm        call   PFile::Checksum;
-	__asm        add    esp, 4;
-	__asm        mov    lActualCityFileChecksum, eax;
+	lActualCityFileChecksum = PFile::Checksum(szCityPath[0]);
 // LINE 204:
 	__asm        cmp    lActualCityFileChecksum, 0;
 	__asm        je     _T52d;
@@ -979,11 +975,7 @@ _T2b8:
 	return 0x7;
 // LINE 283:
 _T31e:
-	__asm        mov    eax, szCityPath;
-	__asm        push   eax;
-	__asm        call   PFile::Checksum;
-	__asm        add    esp, 4;
-	__asm        mov    lActualCityFileChecksum, eax;
+	lActualCityFileChecksum = PFile::Checksum(szCityPath);
 // LINE 284:
 	__asm        push   4;
 	__asm        lea    eax, lActualCityFileChecksum;
@@ -1234,11 +1226,7 @@ _T30c:
 	__asm        call   strcpy;
 	__asm        add    esp, 8;
 // LINE 341:
-	__asm        push   0;
-	__asm        push   0x32;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x32);
 // LINE 342:
 	__asm        push   0xFFF;
 	__asm        lea    eax, szNewDirectory[0];
@@ -1562,30 +1550,11 @@ _T830:
 	nFullFilterID = 0x2b;
 // LINE 362:
 _T844:
-	__asm        push   0;
-	__asm        mov    eax, nFullTitleID;
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullTitleID, eax;
+	nFullTitleID = LanguageManager::GetFullStringID(0x0, nFullTitleID);
 // LINE 363:
-	__asm        push   0;
-	__asm        mov    eax, nFullFilterID;
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullFilterID, eax;
+	nFullFilterID = LanguageManager::GetFullStringID(0x0, nFullFilterID);
 // LINE 365:
-	__asm        push   0;
-	__asm        mov    eax, nFullFilterID;
-	__asm        push   eax;
-	__asm        mov    eax, nFullTitleID;
-	__asm        push   eax;
-	__asm        lea    eax, szGameFileSavePath[0];
-	__asm        push   eax;
-	__asm        call   GetSaveFilePath;
-	__asm        add    esp, 0x10;
-	__asm        mov    nResult, eax;
+	nResult = GetSaveFilePath(0x0, nFullFilterID, nFullTitleID, szGameFileSavePath[0]);
 // LINE 366:
 	__asm        cmp    nResult, 0;
 	__asm        je     _T8ae;

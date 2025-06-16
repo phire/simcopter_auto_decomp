@@ -230,13 +230,7 @@ _Tcc:
 	__asm        cmp    y, 0x80;
 	__asm        jge    _T19f;
 // LINE 193:
-	__asm        mov    eax, y;
-	__asm        push   eax;
-	__asm        mov    eax, x;
-	__asm        push   eax;
-	__asm        call   GetAltitude;
-	__asm        add    esp, 8;
-	__asm        mov    alt, ax;
+	alt = GetAltitude(y, x);
 // LINE 195:
 	__asm        mov    eax, x;
 	__asm        mov    eax, TerrainMap[eax*4];
@@ -1953,13 +1947,7 @@ _T1670:
 //  [0, 0, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2]
 // LINE 562:
 _T16be:
-	__asm        mov    eax, y;
-	__asm        push   eax;
-	__asm        mov    eax, x;
-	__asm        push   eax;
-	__asm        call   GetAltitude;
-	__asm        add    esp, 8;
-	__asm        mov    alt, ax;
+	alt = GetAltitude(y, x);
 // LINE 563:
 	__asm        mov    eax, x;
 	__asm        mov    eax, TerrainMap[eax*4];
@@ -6535,24 +6523,7 @@ _T79:
 // LINE 1844:
 	flags = stobj->user1;
 // LINE 1850:
-	__asm        push   0;
-	__asm        push   0;
-	__asm        push   5;
-	__asm        push   3;
-	__asm        lea    eax, flags;
-	__asm        push   eax;
-	__asm        mov    eax, normz;
-	__asm        push   eax;
-	__asm        mov    eax, normy;
-	__asm        push   eax;
-	__asm        mov    eax, normx;
-	__asm        push   eax;
-	__asm        mov    eax, stobj;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        call   VRGetObjAlt2;
-	__asm        add    esp, 0x24;
-	__asm        mov    objy, eax;
+	objy = VRGetObjAlt2(0x0, 0x0, 0x5, 0x3, flags, normz, normy, normx, stobj->mesh);
 // LINE 1852:
 	__asm        mov    eax, objy;
 	__asm        cmp    maxobjy, eax;
@@ -6569,14 +6540,7 @@ _Td5:
 	__asm        cmp    maxobjy, 0;
 	__asm        jne    _Tf9;
 // LINE 1861:
-	__asm        push   0;
-	__asm        mov    eax, cityy;
-	__asm        push   eax;
-	__asm        mov    eax, cityx;
-	__asm        push   eax;
-	__asm        call   S3TerrPrecisionAlt;
-	__asm        add    esp, 0xC;
-	__asm        mov    alt, eax;
+	alt = S3TerrPrecisionAlt(0x0, cityy, cityx);
 // LINE 1862:
 	__asm        jmp    _T109;
 // LINE 1863:

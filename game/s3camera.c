@@ -90,8 +90,7 @@ void S3CameraMove(/*packed*/ struct Point3d *P) {
 	__asm        cmp    G_camera_mode, 3;
 	__asm        jne    _Tfe;
 // LINE 129:
-	__asm        call   GetAvatarDYOBJ;
-	__asm        mov    u_dyobj, eax;
+	u_dyobj = GetAvatarDYOBJ();
 // LINE 130:
 	__asm        mov    eax, u_dyobj;
 	__asm        add    eax, 0x24;
@@ -108,12 +107,7 @@ void S3CameraMove(/*packed*/ struct Point3d *P) {
 // LINE 133:
 	Viewer.pos.z = (u_dyobj->loc.z + viewerPos.z);
 // LINE 136:
-	__asm        mov    eax, 0x6C12A0;
-	__asm        add    eax, 0x78;
-	__asm        push   eax;
-	__asm        call   S3CameraGetBldAlt;
-	__asm        add    esp, 4;
-	__asm        mov    alt, eax;
+	alt = S3CameraGetBldAlt((0x6c12a0 + 0x78));
 // LINE 137:
 	__asm        cmp    alt, 0x500000;
 	__asm        jle    _T9c;
@@ -121,15 +115,7 @@ void S3CameraMove(/*packed*/ struct Point3d *P) {
 	alt = 0x500000;
 // LINE 140:
 _T9c:
-	__asm        push   0;
-	__asm        mov    eax, Viewer.pos.z;
-	__asm        push   eax;
-	__asm        mov    eax, Viewer.pos.x;
-	__asm        push   eax;
-	__asm        call   S3TerrPrecisionAlt;
-	__asm        add    esp, 0xC;
-	__asm        add    eax, 0xA0000;
-	__asm        add    alt, eax;
+	alt += (S3TerrPrecisionAlt(0x0, Viewer.pos.z, Viewer.pos.x) + 0xa0000);
 // LINE 141:
 	altdiff = (alt - Viewer.pos.y);
 // LINE 142:
@@ -204,15 +190,7 @@ _T1f2:
 // LINE 170:
 	Viewer.pos.z = G_uheli->dyheli->loc.z;
 // LINE 172:
-	__asm        push   0;
-	__asm        mov    eax, Viewer.pos.z;
-	__asm        push   eax;
-	__asm        mov    eax, Viewer.pos.x;
-	__asm        push   eax;
-	__asm        call   S3TerrPrecisionAlt;
-	__asm        add    esp, 0xC;
-	__asm        add    eax, 0x3200000;
-	__asm        mov    Viewer.pos.y, eax;
+	Viewer.pos.y = (S3TerrPrecisionAlt(0x0, Viewer.pos.z, Viewer.pos.x) + 0x3200000);
 // LINE 174:
 _T238:
 	return;
@@ -283,11 +261,7 @@ _T2d2:
 // LINE 240:
 	CameraVector.y = 0x0;
 // LINE 243:
-	__asm        lea    eax, CameraVector.x;
-	__asm        push   eax;
-	__asm        call   MTNormalize;
-	__asm        add    esp, 4;
-	__asm        mov    Velocity, eax;
+	Velocity = MTNormalize(CameraVector.x);
 // LINE 244:
 	__asm        lea    eax, CameraVector.x;
 	__asm        push   eax;
@@ -336,22 +310,9 @@ _T3b4:
 // LINE 261:
 	Viewer.pos.z = (CameraDelta.z + viewerPos.z);
 // LINE 264:
-	__asm        mov    eax, 0x6C12A0;
-	__asm        add    eax, 0x78;
-	__asm        push   eax;
-	__asm        call   S3CameraGetBldAlt;
-	__asm        add    esp, 4;
-	__asm        mov    alt, eax;
+	alt = S3CameraGetBldAlt((0x6c12a0 + 0x78));
 // LINE 270:
-	__asm        push   0;
-	__asm        mov    eax, Viewer.pos.z;
-	__asm        push   eax;
-	__asm        mov    eax, Viewer.pos.x;
-	__asm        push   eax;
-	__asm        call   S3TerrPrecisionAlt;
-	__asm        add    esp, 0xC;
-	__asm        add    eax, 0xA0000;
-	__asm        add    alt, eax;
+	alt += (S3TerrPrecisionAlt(0x0, Viewer.pos.z, Viewer.pos.x) + 0xa0000);
 // LINE 271:
 	altdiff = (alt - Viewer.pos.y);
 // LINE 272:
@@ -639,11 +600,7 @@ void CalcCameraAngles(/*packed*/ struct Point3d *Vector) {
 // LINE 436:
 	WorkVector.z = Vector->z;
 // LINE 438:
-	__asm        lea    eax, WorkVector.x;
-	__asm        push   eax;
-	__asm        call   MTMagnitude;
-	__asm        add    esp, 4;
-	__asm        mov    LengthXZ, eax;
+	LengthXZ = MTMagnitude(WorkVector.x);
 // LINE 439:
 	__asm        cmp    LengthXZ, 0;
 	__asm        jne    _T66;
@@ -692,11 +649,7 @@ _T8c:
 // LINE 465:
 	WorkVector.y = Vector->y;
 // LINE 466:
-	__asm        lea    eax, WorkVector.x;
-	__asm        push   eax;
-	__asm        call   MTMagnitude;
-	__asm        add    esp, 4;
-	__asm        mov    LengthXYZ, eax;
+	LengthXYZ = MTMagnitude(WorkVector.x);
 // LINE 468:
 	__asm        cmp    LengthXYZ, 0;
 	__asm        jne    _Tee;
@@ -1105,8 +1058,7 @@ void S3CameraRotate() {
 // LINE 608:
 // Block start:
 	/*bp-0x18*/  /*packed*/ struct _DYOBJ_INST *dyobj;
-	__asm        call   GetAvatarDYOBJ;
-	__asm        mov    dyobj, eax;
+	dyobj = GetAvatarDYOBJ();
 // LINE 613:
 	cameraDelta.x = (dyobj->loc.x - Viewer.pos.x);
 // LINE 614:
@@ -1412,24 +1364,7 @@ _T9d:
 // LINE 839:
 	flags = stobj->user1;
 // LINE 845:
-	__asm        push   0;
-	__asm        push   0;
-	__asm        push   0x10000;
-	__asm        push   0x10000;
-	__asm        lea    eax, flags;
-	__asm        push   eax;
-	__asm        mov    eax, normz;
-	__asm        push   eax;
-	__asm        mov    eax, normy;
-	__asm        push   eax;
-	__asm        mov    eax, normx;
-	__asm        push   eax;
-	__asm        mov    eax, stobj;
-	__asm        mov    eax, [eax+4];
-	__asm        push   eax;
-	__asm        call   VRGetObjAlt2;
-	__asm        add    esp, 0x24;
-	__asm        mov    objy, eax;
+	objy = VRGetObjAlt2(0x0, 0x0, 0x10000, 0x10000, flags, normz, normy, normx, stobj->mesh);
 // LINE 846:
 	__asm        mov    eax, objy;
 	__asm        cmp    maxobjy, eax;

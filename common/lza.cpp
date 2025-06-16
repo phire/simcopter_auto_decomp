@@ -84,10 +84,7 @@ short LZACompress(/*packed*/ class cGZXBitstream *inStream, /*packed*/ class cGZ
 // LINE 653:
 	cSize[0] = 0x0;
 // LINE 655:
-	__asm        push   0x53C0;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    model, eax;
+	model = operator new(0x53c0);
 // LINE 656:
 	__asm        cmp    model, 0;
 	__asm        jne    _T50;
@@ -99,10 +96,7 @@ short LZACompress(/*packed*/ class cGZXBitstream *inStream, /*packed*/ class cGZ
 	__asm        jmp    CompressDone;
 // LINE 660:
 _T50:
-	__asm        push   0xD44F;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    forest, eax;
+	forest = operator new(0xd44f);
 // LINE 661:
 	__asm        cmp    forest, 0;
 	__asm        jne    _T7a;
@@ -114,10 +108,7 @@ _T50:
 	__asm        jmp    CompressDone;
 // LINE 665:
 _T7a:
-	__asm        push   0x20;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    state, eax;
+	state = operator new(0x20);
 // LINE 666:
 	__asm        cmp    state, 0;
 	__asm        jne    _Ta1;
@@ -182,15 +173,7 @@ _Ta1:
 	__asm        jmp    CompressDone;
 // LINE 693:
 _T15e:
-	__asm        mov    eax, state;
-	__asm        push   eax;
-	__asm        mov    eax, forest;
-	__asm        push   eax;
-	__asm        mov    eax, model;
-	__asm        push   eax;
-	__asm        call   Encode;
-	__asm        add    esp, 0xC;
-	__asm        mov    retVal, ax;
+	retVal = Encode(state, forest, model);
 // LINE 695:
 	__asm        movsx  eax, retVal;
 	__asm        test   eax, eax;
@@ -1538,13 +1521,8 @@ _T46:
 	return 0x2;
 // LINE 419:
 _T6c:
-	__asm        mov    eax, dest;
-	__asm        push   eax;
-	__asm        call   FlushBitBuffer;
-	__asm        add    esp, 4;
-	__asm        jmp    __RETURN;
+	return FlushBitBuffer(dest);
 // LINE 420:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004d0216
@@ -1561,12 +1539,7 @@ _T18:
 	__asm        cmp    i, 7;
 	__asm        jge    _T4e;
 // LINE 150:
-	__asm        mov    eax, dest;
-	__asm        push   eax;
-	__asm        push   0;
-	__asm        call   PutBit;
-	__asm        add    esp, 8;
-	__asm        mov    retVal, ax;
+	retVal = PutBit(dest, 0x0);
 // LINE 151:
 	__asm        movsx  eax, retVal;
 	__asm        test   eax, eax;
@@ -1590,10 +1563,7 @@ short LZAExpand(/*packed*/ class cGZXBitstream *inStream, /*packed*/ class cGZXB
 	/*bp-0x10*/  /*packed*/ struct tLZSSBinaryForest *forest;
 
 // LINE 737:
-	__asm        push   0x53C0;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    model, eax;
+	model = operator new(0x53c0);
 // LINE 738:
 	__asm        cmp    model, 0;
 	__asm        jne    _T33;
@@ -1605,10 +1575,7 @@ short LZAExpand(/*packed*/ class cGZXBitstream *inStream, /*packed*/ class cGZXB
 	__asm        jmp    ExpandDone;
 // LINE 742:
 _T33:
-	__asm        push   0xD44F;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    forest, eax;
+	forest = operator new(0xd44f);
 // LINE 743:
 	__asm        cmp    forest, 0;
 	__asm        jne    _T5d;
@@ -1620,10 +1587,7 @@ _T33:
 	__asm        jmp    ExpandDone;
 // LINE 747:
 _T5d:
-	__asm        push   0x20;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    state, eax;
+	state = operator new(0x20);
 // LINE 748:
 	__asm        cmp    state, 0;
 	__asm        jne    _T84;
@@ -1659,15 +1623,7 @@ _T84:
 // LINE 765:
 	state->getMask = 0x0;
 // LINE 767:
-	__asm        mov    eax, state;
-	__asm        push   eax;
-	__asm        mov    eax, forest;
-	__asm        push   eax;
-	__asm        mov    eax, model;
-	__asm        push   eax;
-	__asm        call   Decode;
-	__asm        add    esp, 0xC;
-	__asm        mov    retVal, ax;
+	retVal = Decode(state, forest, model);
 // LINE 770:
 ExpandDone:
 	__asm        mov    eax, model;
@@ -1776,13 +1732,7 @@ _T9e:
 	__asm        cmp    [eax+0x10], ecx;
 	__asm        jbe    _T1c5;
 // LINE 606:
-	__asm        mov    eax, state;
-	__asm        push   eax;
-	__asm        mov    eax, model;
-	__asm        push   eax;
-	__asm        call   DecodeChar;
-	__asm        add    esp, 8;
-	__asm        mov    c, eax;
+	c = DecodeChar(state, model);
 // LINE 607:
 	__asm        cmp    c, 0x100;
 	__asm        jge    _T119;
@@ -2057,15 +2007,7 @@ _T114:
 // LINE 485:
 	model->high += model->high;
 // LINE 486:
-	__asm        mov    eax, src;
-	__asm        push   eax;
-	__asm        call   GetBit;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, model;
-	__asm        mov    ecx, [ecx+8];
-	__asm        lea    eax, [eax+ecx*2];
-	__asm        mov    ecx, model;
-	__asm        mov    [ecx+8], eax;
+	model->value = BinaryOp(add, GetBit(src), BinaryOp(mul, model->value, Const(2)));
 // LINE 487:
 	__asm        jmp    _T8d;
 // LINE 488:
@@ -2218,15 +2160,7 @@ _T114:
 // LINE 516:
 	model->high += model->high;
 // LINE 517:
-	__asm        mov    eax, src;
-	__asm        push   eax;
-	__asm        call   GetBit;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, model;
-	__asm        mov    ecx, [ecx+8];
-	__asm        lea    eax, [eax+ecx*2];
-	__asm        mov    ecx, model;
-	__asm        mov    [ecx+8], eax;
+	model->value = BinaryOp(add, GetBit(src), BinaryOp(mul, model->value, Const(2)));
 // LINE 518:
 	__asm        jmp    _T8d;
 // LINE 519:

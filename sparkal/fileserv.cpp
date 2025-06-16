@@ -1145,11 +1145,7 @@ _T267:
 	__asm        jne    _T520;
 // LINE 56:
 _T286:
-	__asm        push   0;
-	__asm        push   0x24;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x24);
 // LINE 57:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x106C];
@@ -1217,11 +1213,7 @@ _T36b:
 	__asm        jmp    _T370;
 // LINE 58:
 _T370:
-	__asm        push   0;
-	__asm        push   4;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x4);
 // LINE 59:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x2070];
@@ -1435,12 +1427,7 @@ int32_t FileServices::FindRemotePath() {
 	__asm        cmp    lDriveStringLength, 0;
 	__asm        jle    _T696;
 // LINE 98:
-	__asm        mov    eax, lDriveStringLength;
-	__asm        add    eax, 2;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    szDriveStrings, eax;
+	szDriveStrings = operator new((lDriveStringLength + 0x2));
 // LINE 99:
 	__asm        cmp    szDriveStrings, 0;
 	__asm        je     _T696;

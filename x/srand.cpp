@@ -297,17 +297,9 @@ unsigned short SGIRand(unsigned short limit) {
 	/*bp-0x8*/   unsigned short z;
 
 // LINE 135:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(limit);
-	__asm        push   eax;
-	__asm        call   SRand;
-	__asm        add    esp, 4;
-	__asm        mov    z, ax;
+	z = SRand(reinterpret_cast<uint32_t>(limit));
 // LINE 136:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(limit);
-	__asm        push   eax;
-	__asm        call   SRand;
-	__asm        add    esp, 4;
-	__asm        mov    x, ax;
+	x = SRand(reinterpret_cast<uint32_t>(limit));
 // LINE 137:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(z);
 	__asm        and    eax, 0xFFFF;
@@ -332,17 +324,9 @@ unsigned short SGRand(unsigned short limit) {
 	/*bp-0x8*/   unsigned short z;
 
 // LINE 150:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(limit);
-	__asm        push   eax;
-	__asm        call   SRand;
-	__asm        add    esp, 4;
-	__asm        mov    z, ax;
+	z = SRand(reinterpret_cast<uint32_t>(limit));
 // LINE 151:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(limit);
-	__asm        push   eax;
-	__asm        call   SRand;
-	__asm        add    esp, 4;
-	__asm        mov    x, ax;
+	x = SRand(reinterpret_cast<uint32_t>(limit));
 // LINE 152:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(z);
 	__asm        and    eax, 0xFFFF;
@@ -367,17 +351,9 @@ short SGSRand(unsigned short limit) {
 	/*bp-0x8*/   short z;
 
 // LINE 165:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(limit);
-	__asm        push   eax;
-	__asm        call   SRand;
-	__asm        add    esp, 4;
-	__asm        mov    z, ax;
+	z = SRand(reinterpret_cast<uint32_t>(limit));
 // LINE 166:
-	__asm        mov    eax, reinterpret_cast<uint32_t>(limit);
-	__asm        push   eax;
-	__asm        call   SRand;
-	__asm        add    esp, 4;
-	__asm        mov    x, ax;
+	x = SRand(reinterpret_cast<uint32_t>(limit));
 // LINE 167:
 	__asm        movsx  eax, z;
 	__asm        movsx  ecx, x;

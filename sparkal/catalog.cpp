@@ -1394,11 +1394,7 @@ _Tfc3:
 	__asm        jmp    _Tfc0;
 // LINE 87:
 _T1035:
-	__asm        push   0;
-	__asm        push   0x1AE;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1ae);
 // LINE 88:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x1168];
@@ -1469,11 +1465,7 @@ _T1138:
 	__asm        jmp    _T113d;
 // LINE 89:
 _T113d:
-	__asm        push   0;
-	__asm        push   0x1AF;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1af);
 // LINE 90:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x216C];
@@ -1544,11 +1536,7 @@ _T1240:
 	__asm        jmp    _T1245;
 // LINE 91:
 _T1245:
-	__asm        push   0;
-	__asm        push   0x1B0;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1b0);
 // LINE 92:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x3170];
@@ -1619,11 +1607,7 @@ _T1348:
 	__asm        jmp    _T134d;
 // LINE 93:
 _T134d:
-	__asm        push   0;
-	__asm        push   0x1B1;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1b1);
 // LINE 94:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x4174];
@@ -1694,11 +1678,7 @@ _T1450:
 	__asm        jmp    _T1455;
 // LINE 95:
 _T1455:
-	__asm        push   0;
-	__asm        push   0x1B2;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1b2);
 // LINE 96:
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
@@ -1708,11 +1688,7 @@ _T1455:
 	__asm        call   SetStringFromStringResource;
 	__asm        add    esp, 8;
 // LINE 97:
-	__asm        push   0;
-	__asm        push   0x1B3;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1b3);
 // LINE 98:
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
@@ -1722,11 +1698,7 @@ _T1455:
 	__asm        call   SetStringFromStringResource;
 	__asm        add    esp, 8;
 // LINE 99:
-	__asm        push   0;
-	__asm        push   0x1B4;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1b4);
 // LINE 100:
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
@@ -1736,11 +1708,7 @@ _T1455:
 	__asm        call   SetStringFromStringResource;
 	__asm        add    esp, 8;
 // LINE 101:
-	__asm        push   0;
-	__asm        push   0x1B5;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1b5);
 // LINE 102:
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
@@ -1750,11 +1718,7 @@ _T1455:
 	__asm        call   SetStringFromStringResource;
 	__asm        add    esp, 8;
 // LINE 103:
-	__asm        push   0;
-	__asm        push   0x1B6;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1b6);
 // LINE 104:
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
@@ -1764,11 +1728,7 @@ _T1455:
 	__asm        call   SetStringFromStringResource;
 	__asm        add    esp, 8;
 // LINE 105:
-	__asm        push   0;
-	__asm        push   0x1B7;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1b7);
 // LINE 106:
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
@@ -1778,11 +1738,7 @@ _T1455:
 	__asm        call   SetStringFromStringResource;
 	__asm        add    esp, 8;
 // LINE 107:
-	__asm        push   0;
-	__asm        push   0x1B8;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1b8);
 // LINE 108:
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
@@ -1792,11 +1748,7 @@ _T1455:
 	__asm        call   SetStringFromStringResource;
 	__asm        add    esp, 8;
 // LINE 109:
-	__asm        push   0;
-	__asm        push   0x1B9;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1b9);
 // LINE 110:
 	__asm        mov    eax, nFullStringID;
 	__asm        push   eax;
@@ -2273,11 +2225,7 @@ _Tf9:
 	this->buttonWindowBuy = 0x0;
 // LINE 140:
 _T109:
-	__asm        push   0;
-	__asm        push   0x1BA;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1ba);
 // LINE 141:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x1060];
@@ -2395,11 +2343,7 @@ _T2a9:
 	this->buttonWindowSell = 0x0;
 // LINE 147:
 _T2b9:
-	__asm        push   0;
-	__asm        push   0x1BB;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1bb);
 // LINE 148:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x2064];
@@ -2594,11 +2538,7 @@ _T57b:
 	this->buttonWindowDone = 0x0;
 // LINE 154:
 _T58b:
-	__asm        push   0;
-	__asm        push   0x1BC;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1bc);
 // LINE 155:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x307C];
@@ -2910,8 +2850,7 @@ _T2db:
 	__asm        jmp    _T2e0;
 // LINE 178:
 _T2e0:
-	__asm        call   GetCurrentUserPersonalInfo;
-	__asm        mov    currentUserPersonalInfo, eax;
+	currentUserPersonalInfo = GetCurrentUserPersonalInfo();
 // LINE 179:
 	__asm        jmp    _T2f0;
 _T2f0:
@@ -3352,14 +3291,7 @@ _T8f9:
 	__asm        lea    ecx, tempTabBuffer<CBackBuffer+0x00:None>;
 	__asm        call   CBackBuffer::Compose;
 // LINE 205:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14E];
-	__asm        add    eax, 0x1CC;
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, (this->lCurrentTab + 0x1cc));
 // LINE 206:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x1954];
@@ -3512,14 +3444,7 @@ _Tb9c:
 	__asm        jmp    _Tba1;
 // LINE 207:
 _Tba1:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14E];
-	__asm        add    eax, 0x1D6;
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, (this->lCurrentTab + 0x1d6));
 // LINE 208:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x296C];
@@ -3672,14 +3597,7 @@ _Te09:
 	__asm        jmp    _Te0e;
 // LINE 209:
 _Te0e:
-	__asm        push   0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14E];
-	__asm        add    eax, 0x1E0;
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, (this->lCurrentTab + 0x1e0));
 // LINE 210:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x3984];
@@ -4919,13 +4837,7 @@ _T213c:
 	__asm        cmp    i, 5;
 	__asm        jge    _T245a;
 // LINE 301:
-	__asm        push   0;
-	__asm        mov    eax, i;
-	__asm        add    eax, 0x1EA;
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, (i + 0x1ea));
 // LINE 302:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x499C];
@@ -6177,8 +6089,7 @@ void CatalogWindow::SetNewEquipmentSelection(long lNewEquipmentSelection) {
 	/*bp-0x14*/  /*packed*/ struct tagUserPersonalInfo *currentUserPersonalInfo;
 
 // LINE 443:
-	__asm        call   GetCurrentUserPersonalInfo;
-	__asm        mov    currentUserPersonalInfo, eax;
+	currentUserPersonalInfo = GetCurrentUserPersonalInfo();
 // LINE 444:
 	__asm        jmp    _T19;
 _T19:
@@ -6971,24 +6882,10 @@ _Te9:
 _T10a:
 	__asm        jmp    _T10f;
 _T10f:
-	__asm        mov    eax, pColorTable;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x64];
-	__asm        push   eax;
-	__asm        call   CBackBuffer::GetPaletteFromImage;
-	__asm        add    esp, 8;
-	__asm        test   eax, eax;
-	__asm        jne    _T134;
-
-	__asm        mov    eax, 1;
-	__asm        jmp    _T136;
 _T134:
-	__asm        xor    eax, eax;
 _T136:
-	__asm        jmp    __RETURN;
+	return (CBackBuffer::GetPaletteFromImage(pColorTable, this-><CatalogWindow+0x64>) != 0x0);
 // LINE 523:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0047aaf5
@@ -7309,8 +7206,7 @@ void CatalogWindow::SetButtonStates() {
 	/*bp-0x4*/   const /*packed*/ struct tagUserPersonalInfo *currentUserPersonalInfo;
 
 // LINE 655:
-	__asm        call   GetCurrentUserPersonalInfo;
-	__asm        mov    currentUserPersonalInfo, eax;
+	currentUserPersonalInfo = GetCurrentUserPersonalInfo();
 // LINE 657:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14E], 8;
@@ -7637,8 +7533,7 @@ int32_t CatalogWindow::CanUserBuy() {
 	/*bp-0x8*/   long lCurrentValue;
 
 // LINE 766:
-	__asm        call   GetUserMoney;
-	__asm        mov    lCurrentFunds, eax;
+	lCurrentFunds = GetUserMoney();
 // LINE 767:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14E], 8;
@@ -7679,8 +7574,7 @@ int32_t CatalogWindow::CanUserSell() {
 	/*bp-0x4*/   const /*packed*/ struct tagUserPersonalInfo *currentUserPersonalInfo;
 
 // LINE 784:
-	__asm        call   GetCurrentUserPersonalInfo;
-	__asm        mov    currentUserPersonalInfo, eax;
+	currentUserPersonalInfo = GetCurrentUserPersonalInfo();
 // LINE 786:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x14E], 8;
@@ -7727,8 +7621,7 @@ int32_t CatalogWindow::DoCatalogWindowBuy() {
 	/*bp-0x14*/  /*packed*/ struct tagUserPersonalInfo *currentUserPersonalInfo;
 
 // LINE 804:
-	__asm        call   GetCurrentUserPersonalInfo;
-	__asm        mov    currentUserPersonalInfo, eax;
+	currentUserPersonalInfo = GetCurrentUserPersonalInfo();
 // LINE 807:
 	__asm        mov    ecx, this;
 	__asm        call   CatalogWindow::CanUserBuy;
@@ -7738,8 +7631,7 @@ int32_t CatalogWindow::DoCatalogWindowBuy() {
 	return 0x0;
 // LINE 810:
 _T2b:
-	__asm        call   GetUserMoney;
-	__asm        mov    lCurrentFunds, eax;
+	lCurrentFunds = GetUserMoney();
 // LINE 811:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x152];
@@ -7752,11 +7644,7 @@ _T2b:
 	__asm        cmp    dword ptr [eax+0x14E], 8;
 	__asm        jne    _T90;
 // LINE 813:
-	__asm        mov    eax, lFixedCurrentEquipmentSelection;
-	__asm        push   eax;
-	__asm        call   S3HeliGetEquipmentNewValue;
-	__asm        add    esp, 4;
-	__asm        mov    lCurrentValue, eax;
+	lCurrentValue = S3HeliGetEquipmentNewValue(lFixedCurrentEquipmentSelection);
 // LINE 814:
 	__asm        mov    eax, 1;
 	__asm        mov    cl, reinterpret_cast<uint8_t>(lFixedCurrentEquipmentSelection);
@@ -7780,11 +7668,7 @@ _T90:
 	__asm        call   CatalogWindow::GetHelicopterFromTab;
 	__asm        mov    lCurrentHelicopter, eax;
 // LINE 820:
-	__asm        mov    eax, lCurrentHelicopter;
-	__asm        push   eax;
-	__asm        call   S3HeliGetNewValue;
-	__asm        add    esp, 4;
-	__asm        mov    lCurrentValue, eax;
+	lCurrentValue = S3HeliGetNewValue(lCurrentHelicopter);
 // LINE 821:
 	__asm        mov    eax, lCurrentHelicopter;
 	__asm        push   eax;
@@ -7823,8 +7707,7 @@ int32_t CatalogWindow::DoCatalogWindowSell() {
 	/*bp-0x14*/  /*packed*/ struct tagUserPersonalInfo *currentUserPersonalInfo;
 
 // LINE 836:
-	__asm        call   GetCurrentUserPersonalInfo;
-	__asm        mov    currentUserPersonalInfo, eax;
+	currentUserPersonalInfo = GetCurrentUserPersonalInfo();
 // LINE 840:
 	__asm        mov    ecx, this;
 	__asm        call   CatalogWindow::CanUserSell;
@@ -7834,8 +7717,7 @@ int32_t CatalogWindow::DoCatalogWindowSell() {
 	return 0x0;
 // LINE 843:
 _T2b:
-	__asm        call   GetUserMoney;
-	__asm        mov    lCurrentFunds, eax;
+	lCurrentFunds = GetUserMoney();
 // LINE 844:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x152];
@@ -7848,11 +7730,7 @@ _T2b:
 	__asm        cmp    dword ptr [eax+0x14E], 8;
 	__asm        jne    _T92;
 // LINE 847:
-	__asm        mov    eax, lFixedCurrentEquipmentSelection;
-	__asm        push   eax;
-	__asm        call   S3HeliGetEquipmentCurrentValue;
-	__asm        add    esp, 4;
-	__asm        mov    lCurrentValue, eax;
+	lCurrentValue = S3HeliGetEquipmentCurrentValue(lFixedCurrentEquipmentSelection);
 // LINE 848:
 	__asm        mov    eax, 1;
 	__asm        mov    cl, reinterpret_cast<uint8_t>(lFixedCurrentEquipmentSelection);
@@ -7877,11 +7755,7 @@ _T92:
 	__asm        call   CatalogWindow::GetHelicopterFromTab;
 	__asm        mov    lCurrentHelicopter, eax;
 // LINE 854:
-	__asm        mov    eax, lCurrentHelicopter;
-	__asm        push   eax;
-	__asm        call   S3HeliGetCurrentValue;
-	__asm        add    esp, 4;
-	__asm        mov    lCurrentValue, eax;
+	lCurrentValue = S3HeliGetCurrentValue(lCurrentHelicopter);
 // LINE 855:
 	__asm        mov    eax, lCurrentHelicopter;
 	__asm        push   eax;

@@ -1953,26 +1953,11 @@ void PolarDouble2Incs(float phi, float psi, float tau, short latincs, short lngi
 	__asm        fmul   trqsPerRadian;
 	__asm        fstp   dtrq;
 // LINE 662:
-	__asm        mov    eax, dlat;
-	__asm        push   eax;
-	__asm        call   Round;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, lat;
-	__asm        mov    [ecx], ax;
+	lat[0] = Round(dlat);
 // LINE 663:
-	__asm        mov    eax, dlng;
-	__asm        push   eax;
-	__asm        call   Round;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, lng;
-	__asm        mov    [ecx], ax;
+	lng[0] = Round(dlng);
 // LINE 664:
-	__asm        mov    eax, dtrq;
-	__asm        push   eax;
-	__asm        call   Round;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, trq;
-	__asm        mov    [ecx], ax;
+	trq[0] = Round(dtrq);
 // LINE 665:
 	__asm        mov    eax, lat;
 	__asm        movsx  eax, word ptr [eax];

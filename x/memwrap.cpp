@@ -179,11 +179,7 @@ _T80:
 // LINE 172:
 // Block start:
 	/*bp-0xc*/   unsigned char * p;
-	__asm        mov    eax, mem;
-	__asm        push   eax;
-	__asm        call   Memory::HLock;
-	__asm        add    esp, 4;
-	__asm        mov    p, eax;
+	p = Memory::HLock(mem);
 // LINE 173:
 	__asm        cmp    p, 0;
 	__asm        je     _Tc6;
@@ -270,11 +266,7 @@ void Memory::HFree(void * __ptr32 mem) {
 	__asm        push   0;
 	__asm        call   dword ptr ds:[0x6C3720];
 // LINE 225:
-	__asm        mov    eax, mem;
-	__asm        push   eax;
-	__asm        call   Memory::HLock;
-	__asm        add    esp, 4;
-	__asm        mov    p, eax;
+	p = Memory::HLock(mem);
 // LINE 226:
 	__asm        cmp    p, 0;
 	__asm        je     _T59;
@@ -494,13 +486,8 @@ unsigned char * Memory::Stash(void * __ptr32 h) {
 	__asm        add    esp, 0x10;
 // LINE 363:
 _T5c:
-	__asm        mov    eax, h;
-	__asm        push   eax;
-	__asm        call   Memory::HLock;
-	__asm        add    esp, 4;
-	__asm        jmp    __RETURN;
+	return Memory::HLock(h);
 // LINE 364:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00554b76
@@ -705,11 +692,7 @@ unsigned short Memory::HIsLocked(void * __ptr32 h) {
 	/*bp-0x4*/   long state;
 
 // LINE 455:
-	__asm        mov    eax, h;
-	__asm        push   eax;
-	__asm        call   Memory::HGetState;
-	__asm        add    esp, 4;
-	__asm        mov    state, eax;
+	state = Memory::HGetState(h);
 // LINE 456:
 _T2b:
 _T2e:

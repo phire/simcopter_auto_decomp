@@ -2129,12 +2129,7 @@ int32_t CDebugWindow::Save(char * filePath) {
 	/*bp-0x14*/  /*packed*/ struct _iobuf *file;
 
 // LINE 153:
-	__asm        push   0x5973E8;
-	__asm        mov    eax, filePath;
-	__asm        push   eax;
-	__asm        call   fopen;
-	__asm        add    esp, 8;
-	__asm        mov    file, eax;
+	file = fopen(0x5973e8, filePath);
 // LINE 154:
 	__asm        cmp    file, 0;
 	__asm        jne    _T31;

@@ -522,12 +522,7 @@ void Apply_Friction(int32_t F, /*packed*/ struct mv *p, int32_t t) {
 	/*bp-0x10*/  int32_t j;
 
 // LINE 265:
-	__asm        mov    eax, p;
-	__asm        add    eax, 8;
-	__asm        push   eax;
-	__asm        call   Magnitude;
-	__asm        add    esp, 4;
-	__asm        mov    v, eax;
+	v = Magnitude((p + 0x8));
 // LINE 267:
 	__asm        cmp    v, 0;
 	__asm        jle    __RETURN;

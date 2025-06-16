@@ -1781,9 +1781,7 @@ __RETURN:
 // FUNCTION: COPTER_D 0x0054241d
 void EmergencyVehicleClass::ArriveOnScene() {
 // LINE 921:
-	__asm        call   clock;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x122], eax;
+	this->timeOfArrival = clock();
 // LINE 922:
 	__asm        mov    eax, this;
 	__asm        mov    ax, [eax+0x11C];

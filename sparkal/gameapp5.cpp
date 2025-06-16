@@ -768,8 +768,7 @@ _T112:
 	__asm        mov    ecx, [eax+0x54];
 	__asm        call   dword ptr [edx+0x4C];
 // LINE 319:
-	__asm        call   S3MissionGetCurr;
-	__asm        mov    md, eax;
+	md = S3MissionGetCurr();
 // LINE 320:
 	__asm        cmp    md, 0;
 	__asm        je     _T292;

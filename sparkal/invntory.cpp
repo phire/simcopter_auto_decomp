@@ -1159,13 +1159,7 @@ _T33:
 	__asm        cmp    i, 9;
 	__asm        jge    _T2bd;
 // LINE 88:
-	__asm        push   0;
-	__asm        mov    eax, i;
-	__asm        add    eax, 0x190;
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, (i + 0x190));
 // LINE 89:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x100C];
@@ -1329,11 +1323,7 @@ _T2b8:
 	__asm        jmp    _T30;
 // LINE 92:
 _T2bd:
-	__asm        push   0;
-	__asm        push   0x1A4;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1a4);
 // LINE 93:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x2024];
@@ -1486,11 +1476,7 @@ _T50f:
 	__asm        jmp    _T514;
 // LINE 95:
 _T514:
-	__asm        push   0;
-	__asm        push   0x1A5;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1a5);
 // LINE 96:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x303C];
@@ -1561,11 +1547,7 @@ _T617:
 	__asm        jmp    _T61c;
 // LINE 98:
 _T61c:
-	__asm        push   0;
-	__asm        push   0x1A6;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, 0x1a6);
 // LINE 99:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x4040];
@@ -1726,13 +1708,7 @@ _T882:
 	__asm        cmp    i, 5;
 	__asm        jge    _T9a9;
 // LINE 102:
-	__asm        push   0;
-	__asm        mov    eax, i;
-	__asm        add    eax, 0x19A;
-	__asm        push   eax;
-	__asm        call   LanguageManager::GetFullStringID;
-	__asm        add    esp, 8;
-	__asm        mov    nFullStringID, eax;
+	nFullStringID = LanguageManager::GetFullStringID(0x0, (i + 0x19a));
 // LINE 103:
 	__asm        push   0xFFF;
 	__asm        lea    eax, [ebp-0x5058];
@@ -1908,24 +1884,10 @@ _Te9:
 _T10a:
 	__asm        jmp    _T10f;
 _T10f:
-	__asm        mov    eax, pColorTable;
-	__asm        push   eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x64];
-	__asm        push   eax;
-	__asm        call   CBackBuffer::GetPaletteFromImage;
-	__asm        add    esp, 8;
-	__asm        test   eax, eax;
-	__asm        jne    _T134;
-
-	__asm        mov    eax, 1;
-	__asm        jmp    _T136;
 _T134:
-	__asm        xor    eax, eax;
 _T136:
-	__asm        jmp    __RETURN;
+	return (CBackBuffer::GetPaletteFromImage(pColorTable, this-><InventoryWindow+0x64>) != 0x0);
 // LINE 114:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004a995f
@@ -2660,8 +2622,7 @@ _T39:
 	__asm        jmp    _T3e;
 // LINE 213:
 _T3e:
-	__asm        call   GetCurrentUserPersonalInfo;
-	__asm        mov    currentUserPersonalInfo, eax;
+	currentUserPersonalInfo = GetCurrentUserPersonalInfo();
 // LINE 214:
 	__asm        mov    lCurrentHeliType, 0;
 	__asm        mov    lCurrentRow, 0;

@@ -114,12 +114,7 @@ void ResourceRCData::ResourceRCData(/*packed*/ class ResourceRCData& resData) {
 	__asm        call   ResourceRCData::DataSize;
 	__asm        mov    nAllocationSize, eax;
 // LINE 61:
-	__asm        mov    eax, nAllocationSize;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+8], eax;
+	this->chData = operator new(nAllocationSize);
 // LINE 62:
 	__asm        mov    eax, nAllocationSize;
 	__asm        push   eax;
@@ -180,12 +175,7 @@ _T20:
 	__asm        call   ResourceRCData::DataSize;
 	__asm        mov    nAllocationSize, eax;
 // LINE 91:
-	__asm        mov    eax, nAllocationSize;
-	__asm        push   eax;
-	__asm        call   operator new;
-	__asm        add    esp, 4;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+8], eax;
+	this->chData = operator new(nAllocationSize);
 // LINE 92:
 	__asm        mov    eax, nAllocationSize;
 	__asm        push   eax;
