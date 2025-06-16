@@ -59,9 +59,8 @@ void S3ViewerInit() {
 // LINE 123:
 	Viewer.mode = 0x1;
 // LINE 126:
-	__asm        mov    ViewState.init_vect.y, 0;
-	__asm        mov    eax, ViewState.init_vect.y;
-	__asm        mov    ViewState.init_vect.x, eax;
+	ViewState.init_vect.y = 0x0;
+	ViewState.init_vect.x = ViewState.init_vect.y;
 // LINE 127:
 	ViewState.init_vect.z = 0x10000;
 // LINE 128:
@@ -186,9 +185,8 @@ _T25:
 	timerDelay = LoopTime;
 // LINE 183:
 _T2d:
-	__asm        mov    roty, 0;
-	__asm        mov    eax, roty;
-	__asm        mov    rotx, eax;
+	roty = 0x0;
+	rotx = roty;
 // LINE 186:
 	__asm        push   0x26;
 	__asm        call   IsEventSet;

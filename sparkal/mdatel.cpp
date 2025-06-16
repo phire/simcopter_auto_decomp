@@ -721,10 +721,8 @@ void MDateLocalized::MDateLocalized(/*unpacked*/ class istream& s) {
 	__asm        call   MDate::ParseFrom;
 	__asm        jmp    _T26;
 _T26:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F3D0;
+	this->nLanguage = 0x0;
+	this-><MDateLocalized+0x00> = 0x58f3d0;
 // LINE 155:
 	return;
 

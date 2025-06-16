@@ -3362,8 +3362,8 @@ _T1c4:
 	__asm        jb     _T205;
 // LINE 159:
 _T1e3:
-	__asm        mov    gXTimer.lTotalElapsedTime, 0;
-	__asm        mov    gXTimer.lStartTime, 0;
+	gXTimer.lTotalElapsedTime = 0x0;
+	gXTimer.lStartTime = 0x0;
 	__asm        jmp    _T1fc;
 // LINE 160:
 _T1fc:
@@ -3952,9 +3952,8 @@ _Td7:
 	__asm        test   eax, eax;
 	__asm        jne    _Tf5;
 
-	__asm        mov    offsetz, 0;
-	__asm        mov    eax, offsetz;
-	__asm        mov    offsetx, eax;
+	offsetz = 0x0;
+	offsetx = offsetz;
 	__asm        jmp    _T1c9;
 _Tf5:
 	__asm        movsx  ebx, radius;
@@ -4026,11 +4025,9 @@ _T1c9:
 	__asm        jmp    _T1ce;
 // LINE 270:
 _T1ce:
-	__asm        mov    eax, offsetx;
-	__asm        mov    offset.x, eax;
-	__asm        mov    offset.y, 0;
-	__asm        mov    eax, offsetz;
-	__asm        mov    offset.z, eax;
+	offset.x = offsetx;
+	offset.y = 0x0;
+	offset.z = offsetz;
 // LINE 271:
 	__asm        mov    eax, master;
 	__asm        add    eax, 0x18;
@@ -4341,12 +4338,8 @@ _Tea:
 	__asm        test   eax, eax;
 	__asm        jne    _T125;
 
-	__asm        mov    eax, offsetz;
-	__asm        mov    dword ptr [eax], 0;
-	__asm        mov    eax, offsetz;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, offsetx;
-	__asm        mov    [ecx], eax;
+	offsetz[0] = 0x0;
+	offsetx[0] = offsetz[0];
 	__asm        jmp    _T1d8;
 _T125:
 	__asm        movsx  ebx, halfwidth;
@@ -4412,12 +4405,8 @@ _T1dd:
 	__asm        test   eax, eax;
 	__asm        jne    _T201;
 
-	__asm        mov    eax, offsetz;
-	__asm        mov    dword ptr [eax], 0;
-	__asm        mov    eax, offsetz;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, offsetx;
-	__asm        mov    [ecx], eax;
+	offsetz[0] = 0x0;
+	offsetx[0] = offsetz[0];
 	__asm        jmp    _T2e9;
 _T201:
 	__asm        movsx  ebx, halfwidth;
@@ -4626,12 +4615,8 @@ _T468:
 	__asm        test   eax, eax;
 	__asm        jne    _T499;
 
-	__asm        mov    eax, offsetz;
-	__asm        mov    dword ptr [eax], 0;
-	__asm        mov    eax, offsetz;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, offsetx;
-	__asm        mov    [ecx], eax;
+	offsetz[0] = 0x0;
+	offsetx[0] = offsetz[0];
 	__asm        jmp    _T581;
 _T499:
 	__asm        movsx  ebx, halfwidth;
@@ -4840,12 +4825,8 @@ _T700:
 	__asm        test   eax, eax;
 	__asm        jne    _T731;
 
-	__asm        mov    eax, offsetz;
-	__asm        mov    dword ptr [eax], 0;
-	__asm        mov    eax, offsetz;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, offsetx;
-	__asm        mov    [ecx], eax;
+	offsetz[0] = 0x0;
+	offsetx[0] = offsetz[0];
 	__asm        jmp    _T819;
 _T731:
 	__asm        movsx  ebx, halfwidth;
@@ -5305,10 +5286,10 @@ _T5d:
 // LINE 413:
 	__asm        call   MakeAllPeople;
 // LINE 417:
-	__asm        mov    reinterpret_cast<uint32_t>(x), 0;
-	__asm        mov    *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&x) + 4), 0x40240000;
-	__asm        mov    reinterpret_cast<uint32_t>(y), 0x66666666;
-	__asm        mov    *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&y) + 4), 0x402A6666;
+	reinterpret_cast<uint32_t>(x) = 0x0;
+	*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&x) + 4) = 0x40240000;
+	reinterpret_cast<uint32_t>(y) = 0x66666666;
+	*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&y) + 4) = 0x402a6666;
 // LINE 419:
 	__asm        fld    x;
 	__asm        fdiv   y;
@@ -8016,9 +7997,9 @@ void cYObject::MakePlebes() {
 	/*bp-0x14*/  int32_t newnum;
 
 // LINE 947:
-	__asm        mov    p.x, 0;
-	__asm        mov    p.y, 0;
-	__asm        mov    p.z, 0;
+	p.x = 0x0;
+	p.y = 0x0;
+	p.z = 0x0;
 // LINE 950:
 	pindex = 0x0;
 	__asm        jmp    _T2d;
@@ -12037,12 +12018,8 @@ _Taec:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _Tb1c:
-	__asm        mov    al, reinterpret_cast<uint8_t>(cellx);
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x88], al;
-	__asm        mov    al, reinterpret_cast<uint8_t>(celly);
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x89], al;
+	this->fCellX = reinterpret_cast<uint8_t>(cellx);
+	this->fCellY = reinterpret_cast<uint8_t>(celly);
 	__asm        jmp    _Tb3f;
 // LINE 1760:
 _Tb3f:
@@ -17637,12 +17614,8 @@ _Tc9:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _Tf6:
-	__asm        mov    al, reinterpret_cast<uint8_t>(loccellx);
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x88], al;
-	__asm        mov    al, reinterpret_cast<uint8_t>(loccelly);
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x89], al;
+	this->fCellX = reinterpret_cast<uint8_t>(loccellx);
+	this->fCellY = reinterpret_cast<uint8_t>(loccelly);
 	__asm        jmp    _T113;
 // LINE 2556:
 _T113:
@@ -17894,8 +17867,8 @@ _T9b:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0xD6], ax;
 // LINE 2627:
-	__asm        mov    freqadj, 0;
-	__asm        mov    frequnit, 0x1E;
+	freqadj = 0x0;
+	frequnit = 0x1e;
 // LINE 2628:
 	__asm        mov    eax, type;
 	__asm        mov    [ebp-0x44], eax;
@@ -18590,9 +18563,9 @@ _Ta4:
 
 	// Function registers exception cleanup function at 0x005509b2
 // LINE 2818:
-	__asm        mov    p.x, 0;
-	__asm        mov    p.y, 0;
-	__asm        mov    p.z, 0;
+	p.x = 0x0;
+	p.y = 0x0;
+	p.z = 0x0;
 // LINE 2819:
 	__asm        push   0x180;
 	__asm        call   operator new;
@@ -19051,17 +19024,9 @@ _T120:
 // LINE 2905:
 	this->fbLinked = 0x0;
 // LINE 2907:
-	__asm        mov    ax, id;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x32], ax;
-	__asm        mov    eax, this;
-	__asm        mov    ax, [eax+0x32];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xDE], ax;
-	__asm        mov    eax, this;
-	__asm        mov    ax, [eax+0xDE];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xBC], ax;
+	this->fDyn.user1 = id;
+	this->fData[7] = this->fDyn.user1;
+	this->fID = this->fData[7];
 // LINE 2911:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(id);
 	__asm        push   eax;

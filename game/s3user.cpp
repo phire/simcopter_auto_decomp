@@ -549,9 +549,9 @@ _T27:
 	__asm        call   S3SetDayNight;
 	__asm        add    esp, 4;
 // LINE 324:
-	__asm        mov    gGraduationState.nGraduationState, 0;
-	__asm        mov    gGraduationState.timerGraduationState.lTotalElapsedTime, 0;
-	__asm        mov    gGraduationState.timerGraduationState.lStartTime, 0;
+	gGraduationState.nGraduationState = 0x0;
+	gGraduationState.timerGraduationState.lTotalElapsedTime = 0x0;
+	gGraduationState.timerGraduationState.lStartTime = 0x0;
 	__asm        jmp    _T114;
 _T114:
 	__asm        jmp    _T119;
@@ -680,9 +680,9 @@ _Tdf:
 	__asm        call   S3SetDayNight;
 	__asm        add    esp, 4;
 // LINE 369:
-	__asm        mov    gGraduationState.nGraduationState, 0;
-	__asm        mov    gGraduationState.timerGraduationState.lTotalElapsedTime, 0;
-	__asm        mov    gGraduationState.timerGraduationState.lStartTime, 0;
+	gGraduationState.nGraduationState = 0x0;
+	gGraduationState.timerGraduationState.lTotalElapsedTime = 0x0;
+	gGraduationState.timerGraduationState.lStartTime = 0x0;
 	__asm        jmp    _T117;
 _T117:
 	__asm        jmp    _T11c;
@@ -792,9 +792,9 @@ void MoveToNextCareerCity(long lNewCareerCityIndex) {
 	__asm        call   S3SetDayNight;
 	__asm        add    esp, 4;
 // LINE 406:
-	__asm        mov    gGraduationState.nGraduationState, 0;
-	__asm        mov    gGraduationState.timerGraduationState.lTotalElapsedTime, 0;
-	__asm        mov    gGraduationState.timerGraduationState.lStartTime, 0;
+	gGraduationState.nGraduationState = 0x0;
+	gGraduationState.timerGraduationState.lTotalElapsedTime = 0x0;
+	gGraduationState.timerGraduationState.lStartTime = 0x0;
 	__asm        jmp    _Tc2;
 _Tc2:
 	__asm        jmp    _Tc7;

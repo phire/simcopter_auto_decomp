@@ -1546,11 +1546,8 @@ void Station::StationHeapInsert(const /*packed*/ struct _StationHeapStruct *pIns
 	/*bp-0xc*/   int32_t index;
 
 // LINE 252:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0xC];
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    index, eax;
+	this->stationHeapSize++;
+	index = this->stationHeapSize;
 // LINE 255:
 	__asm        mov    eax, pInsertStruct;
 	__asm        mov    ecx, [eax];
@@ -1633,11 +1630,8 @@ void Station::StationHeapRemove(/*packed*/ struct _StationHeapStruct *pRemovedSt
 	/*bp-0x14*/  int32_t index;
 
 // LINE 278:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    index, eax;
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0xC];
+	index = this->stationHeapSize;
+	this->stationHeapSize--;
 // LINE 279:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+8];
@@ -1767,11 +1761,8 @@ void Station::VehicleHeapInsert(const /*packed*/ struct _VehicleHeapStruct *pIns
 	/*bp-0x10*/  int32_t index;
 
 // LINE 318:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x14];
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        mov    index, eax;
+	this->vehicleHeapSize++;
+	index = this->vehicleHeapSize;
 // LINE 321:
 	__asm        mov    eax, pInsertStruct;
 	__asm        mov    ecx, this;
@@ -1871,11 +1862,8 @@ void Station::VehicleHeapRemove(/*packed*/ struct _VehicleHeapStruct *pRemovedSt
 	/*bp-0x18*/  int32_t index;
 
 // LINE 344:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x14];
-	__asm        mov    index, eax;
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+0x14];
+	index = this->vehicleHeapSize;
+	this->vehicleHeapSize--;
 // LINE 345:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x10];

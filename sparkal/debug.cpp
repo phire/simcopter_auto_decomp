@@ -713,9 +713,9 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 	/*bp-0x14*/  /*packed*/ struct debug_command **it;
 
 // LINE 26:
-	__asm        mov    commands.start, 0;
-	__asm        mov    commands.finish, 0;
-	__asm        mov    commands.end_of_storage, 0;
+	commands.start = 0x0;
+	commands.finish = 0x0;
+	commands.end_of_storage = 0x0;
 	__asm        jmp    _T2c;
 // LINE 27:
 _T2c:
@@ -1248,24 +1248,16 @@ void CDebugWindow::CDebugWindow() {
 	;
 
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
+	this->m_strings.start.current = 0x0;
+	this->m_strings.start.first = 0x0;
+	this->m_strings.start.last = 0x0;
+	this->m_strings.start.node = 0x0;
 	__asm        jmp    _T38;
 _T38:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1C], 0;
+	this->m_strings.finish.current = 0x0;
+	this->m_strings.finish.first = 0x0;
+	this->m_strings.finish.last = 0x0;
+	this->m_strings.finish.node = 0x0;
 	__asm        jmp    _T65;
 _T65:
 	__asm        mov    eax, this;
@@ -1302,12 +1294,9 @@ _Tc3:
 _Td2:
 	__asm        jmp    _Td7;
 _Td7:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x2C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x30], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x34], 0;
+	this->m_commands.start = 0x0;
+	this->m_commands.finish = 0x0;
+	this->m_commands.end_of_storage = 0x0;
 	__asm        jmp    _Tfa;
 // LINE 59:
 _Tfa:
@@ -2487,10 +2476,10 @@ void CDebugWindow::OnPaint() {
 	__asm        call   dword ptr ds:[0x6C3834];
 	__asm        mov    scrollStart, eax;
 // LINE 203:
-	__asm        mov    it.current, 0;
-	__asm        mov    it.first, 0;
-	__asm        mov    it.last, 0;
-	__asm        mov    it.node, 0;
+	it.current = 0x0;
+	it.first = 0x0;
+	it.last = 0x0;
+	it.node = 0x0;
 	__asm        jmp    _T86;
 // LINE 204:
 _T86:
@@ -3067,10 +3056,8 @@ _T23e:
 _T263:
 	__asm        jmp    _T268;
 _T268:
-	__asm        mov    eax, this;
-	__asm        add    dword ptr [eax+0x10], 8;
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+0x20];
+	this->m_strings.finish.current += 0x8;
+	this->m_strings.length++;
 	__asm        jmp    _T280;
 // LINE 253:
 _T280:
@@ -3545,9 +3532,9 @@ _T1c2:
 	__asm        jmp    _T1d1;
 // LINE 314:
 _T1d1:
-	__asm        mov    command_vector.start, 0;
-	__asm        mov    command_vector.finish, 0;
-	__asm        mov    command_vector.end_of_storage, 0;
+	command_vector.start = 0x0;
+	command_vector.finish = 0x0;
+	command_vector.end_of_storage = 0x0;
 	__asm        jmp    _T1f4;
 // LINE 315:
 _T1f4:

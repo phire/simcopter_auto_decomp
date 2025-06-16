@@ -372,12 +372,8 @@ void PreferenceItem::PreferenceItem(const /*packed*/ class PreferenceItem& P1) {
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        jne    _T66;
 // LINE 38:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx], eax;
+	this->lPreferenceDataLength = 0x0;
+	this->lPreferenceType = this->lPreferenceDataLength;
 // LINE 41:
 _T66:
 	__asm        mov    eax, this;
@@ -441,12 +437,8 @@ _T34:
 	__asm        cmp    dword ptr [eax+8], 0;
 	__asm        jne    _T66;
 // LINE 70:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx], eax;
+	this->lPreferenceDataLength = 0x0;
+	this->lPreferenceType = this->lPreferenceDataLength;
 // LINE 73:
 _T66:
 	__asm        mov    eax, this;
@@ -996,9 +988,9 @@ _T1ed:
 _T1f2:
 	__asm        jmp    _T19c;
 _T1f7:
-	__asm        mov    list<PreferenceItem>::free_list, 0;
-	__asm        mov    list<PreferenceItem>::next_avail, 0;
-	__asm        mov    list<PreferenceItem>::last, 0;
+	list<PreferenceItem>::free_list = 0x0;
+	list<PreferenceItem>::next_avail = 0x0;
+	list<PreferenceItem>::last = 0x0;
 	__asm        jmp    _T21a;
 _T21a:
 	return;

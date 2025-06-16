@@ -362,8 +362,8 @@ _T1fd:
 	__asm        cmp    x, 0x80;
 	__asm        jge    _T47d;
 // LINE 120:
-	__asm        mov    y, 0;
-	__asm        mov    yindex, 0;
+	y = 0x0;
+	yindex = 0x0;
 	__asm        jmp    _T21d;
 _T21a:
 	y++;
@@ -2237,15 +2237,8 @@ _T11d:
 KlugeFirstStepIsAnIntersection:
 // Block start:
 	/*bp-0x18*/  int32_t yindex;
-	__asm        mov    eax, returnDir;
-	__asm        sub    eax, 2;
-	__asm        and    eax, 3;
-	__asm        mov    ecx, goal;
-	__asm        mov    [ecx+0x12], eax;
-	__asm        mov    eax, goal;
-	__asm        mov    eax, [eax+0x12];
-	__asm        mov    ecx, goal;
-	__asm        mov    [ecx+0xE], eax;
+	goal.direction = ((returnDir - 0x2) & 0x3);
+	goal.edgeIndex = goal.direction;
 // LINE 683:
 	__asm        xor    eax, eax;
 	__asm        mov    al, here.y;

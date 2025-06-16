@@ -1460,12 +1460,12 @@ void ResMap::ResMap(short refNum, short numTypes, void * __ptr32 resMap, unsigne
 // LINE 690:
 	typeList = mapStart;
 // LINE 691:
-	__asm        mov    typeCnt, 0;
-	__asm        mov    total, 0;
+	typeCnt = 0x0;
+	total = 0x0;
 	__asm        jmp    _T6f;
 _T67:
-	__asm        inc    typeCnt;
-	__asm        add    typeList, 8;
+	typeCnt++;
+	typeList += 0x8;
 _T6f:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+6];
@@ -1495,8 +1495,8 @@ _Ta5:
 	resCnt = 0x0;
 	__asm        jmp    _Td3;
 _Tcb:
-	__asm        inc    resCnt;
-	__asm        add    resList, 0xC;
+	resCnt++;
+	resList += 0xc;
 _Td3:
 	__asm        movsx  eax, resCnt;
 	__asm        movsx  ecx, total;

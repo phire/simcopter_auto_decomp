@@ -128,9 +128,8 @@ _T4b:
 // LINE 88:
 	pcx.encoding = 0x1;
 // LINE 89:
-	__asm        mov    pcx.ymin, 0;
-	__asm        mov    ax, pcx.ymin;
-	__asm        mov    pcx.xmin, ax;
+	pcx.ymin = 0x0;
+	pcx.xmin = pcx.ymin;
 // LINE 90:
 	__asm        mov    eax, xdim;
 	__asm        dec    eax;
@@ -260,9 +259,9 @@ int32_t S3WritePCXLine(/*packed*/ struct _iobuf *fp, char * p, unsigned short n)
 	/*bp-0xc*/   unsigned short j;
 
 // LINE 137:
-	__asm        mov    i, 0;
-	__asm        mov    j, 0;
-	__asm        mov    t, 0;
+	i = 0x0;
+	j = 0x0;
+	t = 0x0;
 // LINE 140:
 _T1b:
 	i = 0x0;

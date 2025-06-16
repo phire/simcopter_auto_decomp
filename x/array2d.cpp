@@ -649,12 +649,8 @@ _T39:
 // LINE 129:
 	this->fEntrySize = entrySize;
 // LINE 132:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 0xFFFFFFFF;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x14], eax;
+	this->fySize = 0xffffffff;
+	this->fxSize = this->fySize;
 // LINE 133:
 	__asm        cmp    name, 0;
 	__asm        je     _Tab;
@@ -1988,12 +1984,8 @@ _T33:
 	__asm        add    esp, 4;
 // LINE 501:
 _T69:
-	__asm        mov    eax, newySize;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x10], eax;
-	__asm        mov    eax, newxSize;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x14], eax;
+	this->fySize = newySize;
+	this->fxSize = newxSize;
 // LINE 503:
 	__asm        jmp    _T9c;
 
@@ -2648,10 +2640,8 @@ _T44:
 	__asm        add    esp, 0x10;
 // LINE 714:
 _T7d:
-	__asm        mov    eax, pFile;
-	__asm        mov    ft.file, eax;
-	__asm        mov    eax, rType;
-	__asm        mov    ft.type, eax;
+	ft.file = pFile;
+	ft.type = rType;
 // LINE 715:
 	__asm        mov    eax, ft.file;
 	__asm        mov    ecx, ft.type;
@@ -2830,10 +2820,8 @@ short _cArray::GetLoadedIndex(/*unpacked*/ class ResFile *pFile, unsigned long r
 // LINE 779:
 	foundcount = 0xffff;
 // LINE 780:
-	__asm        mov    eax, pFile;
-	__asm        mov    ft.file, eax;
-	__asm        mov    eax, rType;
-	__asm        mov    ft.type, eax;
+	ft.file = pFile;
+	ft.type = rType;
 // LINE 781:
 	cnt = 0x0;
 	__asm        jmp    _T2a;

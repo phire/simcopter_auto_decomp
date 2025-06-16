@@ -993,10 +993,8 @@ int32_t PStrCompare(void * __ptr32 voidFirst, void * __ptr32 voidSecond) {
 	/*bp-0x18*/  unsigned char char2;
 
 // LINE 907:
-	__asm        mov    eax, voidFirst;
-	__asm        mov    first, eax;
-	__asm        mov    eax, voidSecond;
-	__asm        mov    second, eax;
+	first = voidFirst;
+	second = voidSecond;
 // LINE 911:
 	__asm        mov    eax, first;
 	__asm        movzx  ax, byte ptr [eax];

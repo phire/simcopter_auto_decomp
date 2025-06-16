@@ -2360,10 +2360,8 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 	__asm        mov    eax, [eax+8];
 	__asm        mov    [ecx+8], eax;
 // LINE 403:
-	__asm        mov    eax, dx;
-	__asm        add    newloc.x, eax;
-	__asm        mov    eax, dz;
-	__asm        add    newloc.z, eax;
+	newloc.x += dx;
+	newloc.z += dz;
 // LINE 404:
 	__asm        test   reinterpret_cast<uint32_t>(mastermove), 0xFFFF;
 	__asm        je     _T4d;
@@ -2392,15 +2390,9 @@ _T4d:
 	/*bp-0x40*/  /*unpacked*/ struct Point3d offset; // 0xc bytes
 	master = this->fPointers[0];
 // LINE 414:
-	__asm        mov    eax, newloc.x;
-	__asm        mov    ecx, master;
-	__asm        sub    eax, [ecx+0x18];
-	__asm        mov    offset.x, eax;
-	__asm        mov    offset.y, 0;
-	__asm        mov    eax, newloc.z;
-	__asm        mov    ecx, master;
-	__asm        sub    eax, [ecx+0x20];
-	__asm        mov    offset.z, eax;
+	offset.x = (newloc.x - master->loc.x);
+	offset.y = 0x0;
+	offset.z = (newloc.z - master->loc.z);
 // LINE 419:
 	masterheight = VRGetDyObjAlt(this->fDyn.radius, offset.x, (master + 0x24), master->mesh);
 // LINE 420:
@@ -3077,12 +3069,8 @@ _T983:
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 _T9b3:
-	__asm        mov    al, ncellx;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x88], al;
-	__asm        mov    al, ncelly;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x89], al;
+	this->fCellX = ncellx;
+	this->fCellY = ncelly;
 	__asm        jmp    _T9d6;
 _T9d6:
 	__asm        mov    ecx, this;
@@ -3309,8 +3297,8 @@ __RETURN:
 // LINE 662:
 	numcounted = 0x0;
 // LINE 663:
-	__asm        mov    overallcellx, 0;
-	__asm        mov    overallcelly, 0;
+	overallcellx = 0x0;
+	overallcelly = 0x0;
 // LINE 666:
 	count = 0x0;
 	__asm        jmp    _T2c;
@@ -3454,11 +3442,11 @@ void cYObject::GetSurroundingRiotInfo(short todist, short * avgriotval, short * 
 // LINE 688:
 	numcounted = 0x0;
 // LINE 689:
-	__asm        mov    reinterpret_cast<uint32_t>(overallxloc), 0;
-	__asm        mov    *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&overallxloc) + 4), 0;
+	reinterpret_cast<uint32_t>(overallxloc) = 0x0;
+	*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&overallxloc) + 4) = 0x0;
 // LINE 690:
-	__asm        mov    reinterpret_cast<uint32_t>(overallzloc), 0;
-	__asm        mov    *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&overallzloc) + 4), 0;
+	reinterpret_cast<uint32_t>(overallzloc) = 0x0;
+	*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&overallzloc) + 4) = 0x0;
 // LINE 692:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -4579,10 +4567,8 @@ enum TreeSim::ReturnCode cYObject::iIdle(/*unpacked*/ struct TreeSim::StackElem 
 	/*bp-0xc*/   /*unpacked*/ struct YObjLang::IdleParam param;
 
 // LINE 900:
-	__asm        mov    eax, node;
-	__asm        add    eax, 4;
-	__asm        mov    nparam, eax;
-	__asm        mov    result, 0xFFFFFFFF;
+	nparam = (node + 0x4);
+	result = 0xffffffff;
 // LINE 901:
 	param.decTemp = nparam-><YObjLang::Param+0x00:2>;
 // LINE 902:
@@ -4667,10 +4653,8 @@ enum TreeSim::ReturnCode cYObject::iSetAnim(/*unpacked*/ struct TreeSim::StackEl
 	/*bp-0xc*/   /*unpacked*/ struct YObjLang::SetAnimParam param;
 
 // LINE 912:
-	__asm        mov    result, 0xFFFFFFFF;
-	__asm        mov    eax, node;
-	__asm        add    eax, 4;
-	__asm        mov    nparam, eax;
+	result = 0xffffffff;
+	nparam = (node + 0x4);
 // LINE 913:
 	param.animname = nparam-><YObjLang::Param+0x00:4>;
 // LINE 914:
@@ -4728,10 +4712,8 @@ enum TreeSim::ReturnCode cYObject::iAttr(/*unpacked*/ struct TreeSim::StackElem 
 	/*bp-0x8*/   /*unpacked*/ union YObjLang::Param *nparam;
 
 // LINE 921:
-	__asm        mov    result, 0xFFFFFFFF;
-	__asm        mov    eax, node;
-	__asm        add    eax, 4;
-	__asm        mov    nparam, eax;
+	result = 0xffffffff;
+	nparam = (node + 0x4);
 // LINE 922:
 	__asm        mov    eax, nparam;
 	__asm        push   eax;
@@ -4755,10 +4737,8 @@ enum TreeSim::ReturnCode cYObject::iWalk(/*unpacked*/ struct TreeSim::StackElem 
 	/*bp-0x2c*/  short movespeed;
 
 // LINE 928:
-	__asm        mov    result, 0xFFFFFFFF;
-	__asm        mov    eax, node;
-	__asm        add    eax, 4;
-	__asm        mov    nparam, eax;
+	result = 0xffffffff;
+	nparam = (node + 0x4);
 // LINE 929:
 	movecode = 0xffffffff;
 // LINE 930:
@@ -4861,10 +4841,8 @@ enum TreeSim::ReturnCode cYObject::iSetBody(/*unpacked*/ struct TreeSim::StackEl
 	/*bp-0xc*/   /*unpacked*/ struct YObjLang::SetBodyParam param;
 
 // LINE 967:
-	__asm        mov    result, 0xFFFFFFFF;
-	__asm        mov    eax, node;
-	__asm        add    eax, 4;
-	__asm        mov    nparam, eax;
+	result = 0xffffffff;
+	nparam = (node + 0x4);
 // LINE 968:
 	param.bodyname = nparam-><YObjLang::Param+0x00:4>;
 // LINE 969:
@@ -5018,10 +4996,8 @@ enum TreeSim::ReturnCode cYObject::iRandom(/*unpacked*/ struct TreeSim::StackEle
 	/*bp-0x14*/  /*unpacked*/ struct YObjLang::RandomParam rand; // 0x6 bytes
 
 // LINE 977:
-	__asm        mov    result, 0xFFFFFFFF;
-	__asm        mov    eax, node;
-	__asm        add    eax, 4;
-	__asm        mov    nparam, eax;
+	result = 0xffffffff;
+	nparam = (node + 0x4);
 // LINE 978:
 	__asm        mov    eax, nparam;
 	__asm        lea    ecx, rand.destTemp;
@@ -5105,10 +5081,8 @@ enum TreeSim::ReturnCode cYObject::iWalkToAndGrabOntoStackObject(/*unpacked*/ st
 	/*bp-0x24*/  /*unpacked*/ union YObjLang::Param *nparam;
 
 // LINE 990:
-	__asm        mov    result, 0xFFFFFFFF;
-	__asm        mov    eax, node;
-	__asm        add    eax, 4;
-	__asm        mov    nparam, eax;
+	result = 0xffffffff;
+	nparam = (node + 0x4);
 // LINE 991:
 	__asm        mov    eax, elem;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -5373,10 +5347,8 @@ enum TreeSim::ReturnCode cYObject::iUpdateMyMission(/*unpacked*/ struct TreeSim:
 	/*bp-0xc*/   /*unpacked*/ struct YObjLang::UpdateMyMissionParam param;
 
 // LINE 1034:
-	__asm        mov    result, 0xFFFFFFFF;
-	__asm        mov    eax, node;
-	__asm        add    eax, 4;
-	__asm        mov    nparam, eax;
+	result = 0xffffffff;
+	nparam = (node + 0x4);
 // LINE 1035:
 	param.updateLiteral = nparam-><YObjLang::Param+0x00:2>;
 // LINE 1036:
@@ -5401,10 +5373,8 @@ enum TreeSim::ReturnCode cYObject::iCheckForTrue(/*unpacked*/ struct TreeSim::St
 	/*bp-0xc*/   /*unpacked*/ struct YObjLang::CheckForTrueParam param;
 
 // LINE 1044:
-	__asm        mov    result, 0xFFFFFFFF;
-	__asm        mov    eax, node;
-	__asm        add    eax, 4;
-	__asm        mov    nparam, eax;
+	result = 0xffffffff;
+	nparam = (node + 0x4);
 // LINE 1045:
 	param.whatLiteral = nparam-><YObjLang::Param+0x00:2>;
 // LINE 1046:
@@ -5651,10 +5621,8 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(/*unpacked*/ struct TreeSim
 	/*bp-0x20*/  /*unpacked*/ struct Point2d destloc; // 0x8 bytes
 
 // LINE 1110:
-	__asm        mov    result, 0xFFFFFFFF;
-	__asm        mov    eax, node;
-	__asm        add    eax, 4;
-	__asm        mov    nparam, eax;
+	result = 0xffffffff;
+	nparam = (node + 0x4);
 // LINE 1111:
 	__asm        mov    eax, nparam;
 	__asm        lea    ecx, param.withWhatLiteral;
@@ -6280,10 +6248,8 @@ enum TreeSim::ReturnCode cYObject::iIsThisLocType(/*unpacked*/ struct TreeSim::S
 	/*bp-0x10*/  /*unpacked*/ struct YObjLang::IsThisLocTypeParam param;
 
 // LINE 1276:
-	__asm        mov    result, 0xFFFFFFFF;
-	__asm        mov    eax, node;
-	__asm        add    eax, 4;
-	__asm        mov    nparam, eax;
+	result = 0xffffffff;
+	nparam = (node + 0x4);
 // LINE 1277:
 	param.locTypeLiteral = nparam-><YObjLang::Param+0x00:2>;
 // LINE 1278:
@@ -6405,10 +6371,8 @@ enum TreeSim::ReturnCode cYObject::iCheckForSpotlightInMyCell(/*unpacked*/ struc
 	/*bp-0x14*/  /*unpacked*/ struct YObjLang::CheckForSpotParam param;
 
 // LINE 1312:
-	__asm        mov    result, 0xFFFFFFFF;
-	__asm        mov    eax, node;
-	__asm        add    eax, 4;
-	__asm        mov    nparam, eax;
+	result = 0xffffffff;
+	nparam = (node + 0x4);
 // LINE 1313:
 	reinterpret_cast<uint32_t>(param.brightnessTemp) = nparam-><YObjLang::Param+0x00:4>;
 // LINE 1315:
@@ -6536,10 +6500,8 @@ enum TreeSim::ReturnCode cYObject::iIncrementRiotVal(/*unpacked*/ struct TreeSim
 	/*bp-0xc*/   /*unpacked*/ struct YObjLang::IncrementRiotValParam param;
 
 // LINE 1329:
-	__asm        mov    result, 0xFFFFFFFF;
-	__asm        mov    eax, node;
-	__asm        add    eax, 4;
-	__asm        mov    nparam, eax;
+	result = 0xffffffff;
+	nparam = (node + 0x4);
 // LINE 1330:
 	param.riotValLiteral = nparam-><YObjLang::Param+0x00:2>;
 // LINE 1331:
@@ -6588,10 +6550,8 @@ enum TreeSim::ReturnCode cYObject::iGetSurroundingRiotVal(/*unpacked*/ struct Tr
 	/*bp-0x20*/  short numcounted;
 
 // LINE 1339:
-	__asm        mov    result, 0xFFFFFFFF;
-	__asm        mov    eax, node;
-	__asm        add    eax, 4;
-	__asm        mov    nparam, eax;
+	result = 0xffffffff;
+	nparam = (node + 0x4);
 // LINE 1340:
 	__asm        mov    eax, nparam;
 	__asm        mov    ecx, [eax];
@@ -6764,10 +6724,8 @@ enum TreeSim::ReturnCode cYObject::iIsThisScurkID(/*unpacked*/ struct TreeSim::S
 	/*bp-0x10*/  short scurkID;
 
 // LINE 1355:
-	__asm        mov    result, 0xFFFFFFFF;
-	__asm        mov    eax, node;
-	__asm        add    eax, 4;
-	__asm        mov    nparam, eax;
+	result = 0xffffffff;
+	nparam = (node + 0x4);
 // LINE 1356:
 	param.scurkIDLiteral = nparam-><YObjLang::Param+0x00:2>;
 // LINE 1357:
@@ -6962,11 +6920,9 @@ enum TreeSim::ReturnCode cYObject::iJoinRiot(/*unpacked*/ struct TreeSim::StackE
 	/*bp-0x18*/  /*unpacked*/ struct tagLogString lstr; // 0x14 bytes
 
 // LINE 1390:
-	__asm        mov    result, 0xFFFFFFFF;
-	__asm        mov    lstr.nType, 1;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        mov    lstr.nMissionID, eax;
+	result = 0xffffffff;
+	lstr.nType = 0x1;
+	lstr.nMissionID = this->fMissionID;
 // LINE 1391:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xD2];
@@ -7333,10 +7289,8 @@ enum TreeSim::ReturnCode cYObject::iSetDirection(/*unpacked*/ struct TreeSim::St
 	/*bp-0x10*/  /*unpacked*/ struct YObjLang::SetDirectionParam param;
 
 // LINE 1406:
-	__asm        mov    result, 0xFFFFFFFF;
-	__asm        mov    eax, node;
-	__asm        add    eax, 4;
-	__asm        mov    nparam, eax;
+	result = 0xffffffff;
+	nparam = (node + 0x4);
 // LINE 1407:
 	param.dirTemp = nparam-><YObjLang::Param+0x00:2>;
 // LINE 1408:
@@ -7775,10 +7729,8 @@ enum TreeSim::ReturnCode cYObject::iGetOutOfRoadEtc(/*unpacked*/ struct TreeSim:
 	/*bp-0x14*/  /*unpacked*/ struct YObjLang::GetOutOfRoadParam getoutofroad;
 
 // LINE 1476:
-	__asm        mov    result, 0xFFFFFFFF;
-	__asm        mov    eax, node;
-	__asm        add    eax, 4;
-	__asm        mov    nparam, eax;
+	result = 0xffffffff;
+	nparam = (node + 0x4);
 // LINE 1477:
 	getoutofroad.decTemp = nparam-><YObjLang::Param+0x00:2>;
 // LINE 1479:
@@ -7951,11 +7903,9 @@ enum TreeSim::ReturnCode cYObject::iGenerateMedevacAndSetSelfAsVictim(/*unpacked
 	/*bp-0x18*/  /*unpacked*/ struct tagLogString lstr; // 0x14 bytes
 
 // LINE 1531:
-	__asm        mov    result, 0xFFFFFFFF;
-	__asm        mov    lstr.nType, 1;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        mov    lstr.nMissionID, eax;
+	result = 0xffffffff;
+	lstr.nType = 0x1;
+	lstr.nMissionID = this->fMissionID;
 // LINE 1533:
 	__asm        mov    lstr.szLogString, 0x5BD244;
 	__asm        push   1;
@@ -7982,10 +7932,8 @@ enum TreeSim::ReturnCode cYObject::iTurnToNearbyFire(/*unpacked*/ struct TreeSim
 	/*bp-0x14*/  /*unpacked*/ struct YObjLang::TurnToFireParam param;
 
 // LINE 1544:
-	__asm        mov    result, 0xFFFFFFFF;
-	__asm        mov    eax, node;
-	__asm        add    eax, 4;
-	__asm        mov    nparam, eax;
+	result = 0xffffffff;
+	nparam = (node + 0x4);
 // LINE 1545:
 	reinterpret_cast<uint32_t>(param.xdistloc) = nparam-><YObjLang::Param+0x00:4>;
 // LINE 1547:
@@ -8140,11 +8088,9 @@ enum TreeSim::ReturnCode cYObject::iDie(/*unpacked*/ struct TreeSim::StackElem *
 	/*bp-0x18*/  /*unpacked*/ struct tagLogString lstr; // 0x14 bytes
 
 // LINE 1561:
-	__asm        mov    result, 0xFFFFFFFF;
-	__asm        mov    lstr.nType, 1;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        mov    lstr.nMissionID, eax;
+	result = 0xffffffff;
+	lstr.nType = 0x1;
+	lstr.nMissionID = this->fMissionID;
 // LINE 1562:
 	__asm        mov    lstr.szLogString, 0x5BD250;
 	__asm        push   1;
@@ -8184,10 +8130,8 @@ enum TreeSim::ReturnCode cYObject::iPutObjIntoTreeNum(/*unpacked*/ struct TreeSi
 	/*bp-0x10*/  /*unpacked*/ class cYObject *obj;
 
 // LINE 1577:
-	__asm        mov    result, 0xFFFFFFFF;
-	__asm        mov    eax, node;
-	__asm        add    eax, 4;
-	__asm        mov    nparam, eax;
+	result = 0xffffffff;
+	nparam = (node + 0x4);
 // LINE 1578:
 	__asm        mov    eax, elem;
 	__asm        mov    eax, [eax+4];
@@ -9263,10 +9207,8 @@ enum TreeSim::ReturnCode cYObject::iGetNumSpacesOnStackObject(/*unpacked*/ struc
 	/*bp-0xc*/   short localnum;
 
 // LINE 1706:
-	__asm        mov    result, 0xFFFFFFFF;
-	__asm        mov    eax, node;
-	__asm        add    eax, 4;
-	__asm        mov    nparam, eax;
+	result = 0xffffffff;
+	nparam = (node + 0x4);
 // LINE 1707:
 	__asm        mov    eax, elem;
 	__asm        cmp    dword ptr [eax+4], 0;
@@ -9557,10 +9499,8 @@ enum TreeSim::ReturnCode cYObject::iSetMyExpression(/*unpacked*/ struct TreeSim:
 	/*bp-0xc*/   short expressionnum;
 
 // LINE 1763:
-	__asm        mov    result, 0xFFFFFFFF;
-	__asm        mov    eax, node;
-	__asm        add    eax, 4;
-	__asm        mov    nparam, eax;
+	result = 0xffffffff;
+	nparam = (node + 0x4);
 // LINE 1765:
 	expressionnum = nparam-><YObjLang::Param+0x00:2>;
 // LINE 1767:
@@ -9597,10 +9537,8 @@ enum TreeSim::ReturnCode cYObject::iGetHeliSpeedPlusDamage(/*unpacked*/ struct T
 	/*bp-0x18*/  float damage;
 
 // LINE 1776:
-	__asm        mov    result, 0xFFFFFFFF;
-	__asm        mov    eax, node;
-	__asm        add    eax, 4;
-	__asm        mov    nparam, eax;
+	result = 0xffffffff;
+	nparam = (node + 0x4);
 // LINE 1778:
 	__asm        mov    eax, G_uheli;
 	__asm        mov    eax, [eax+0x128];
@@ -9737,10 +9675,8 @@ enum TreeSim::ReturnCode cYObject::iPlaySound(/*unpacked*/ struct TreeSim::Stack
 	/*bp-0xc*/   unsigned short playforsure;
 
 // LINE 1806:
-	__asm        mov    result, 0xFFFFFFFF;
-	__asm        mov    eax, node;
-	__asm        add    eax, 4;
-	__asm        mov    nparam, eax;
+	result = 0xffffffff;
+	nparam = (node + 0x4);
 // LINE 1807:
 	playforsure = nparam-><YObjLang::Param+0x02:2>;
 // LINE 1808:
@@ -9891,10 +9827,8 @@ enum TreeSim::ReturnCode cYObject::iTellStartingObjectTrueOrFalse(/*unpacked*/ s
 	/*bp-0xc*/   short truefalse;
 
 // LINE 1868:
-	__asm        mov    result, 0xFFFFFFFF;
-	__asm        mov    eax, node;
-	__asm        add    eax, 4;
-	__asm        mov    nparam, eax;
+	result = 0xffffffff;
+	nparam = (node + 0x4);
 // LINE 1869:
 	truefalse = nparam-><YObjLang::Param+0x00:2>;
 // LINE 1870:
@@ -10718,16 +10652,8 @@ _Ta0:
 	__asm        jmp    tree_error;
 // LINE 2136:
 _Tc4:
-	__asm        movsx  eax, dataField;
-	__asm        add    eax, eax;
-	__asm        add    eax, this;
-	__asm        add    eax, 0xD0;
-	__asm        mov    ecx, dataRef;
-	__asm        mov    [ecx], eax;
-	__asm        mov    eax, dataRef;
-	__asm        mov    eax, [eax];
-	__asm        mov    ax, [eax];
-	__asm        mov    data, ax;
+	dataRef-> = (((reinterpret_cast<int16_t>(dataField) + reinterpret_cast<int16_t>(dataField)) + this) + 0xd0);
+	data = dataRef;
 // LINE 2137:
 	__asm        jmp    _T21d;
 // LINE 2139:

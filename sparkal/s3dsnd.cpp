@@ -5690,9 +5690,8 @@ _T25:
 	__asm        mov    positionRelative.z, eax;
 	__asm        jmp    _Tf5;
 _Te8:
-	__asm        mov    positionRelative.z, 0;
-	__asm        mov    eax, positionRelative.z;
-	__asm        mov    positionRelative.x, eax;
+	positionRelative.z = 0x0;
+	positionRelative.x = positionRelative.z;
 _Tf5:
 	__asm        fld    qword ptr [ebp-0x34];
 	__asm        fmul   qword ptr ds:[0x58F5D0];

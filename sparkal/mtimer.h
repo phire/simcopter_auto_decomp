@@ -60,10 +60,8 @@ void MTimer::SetResolution(enum MTimer::TimerResolution nNewTimerResolution) {
 	__asm        jmp    _T59;
 // LINE 94:
 _T59:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
+	this->lTotalElapsedTime = 0x0;
+	this->lStartTime = 0x0;
 	__asm        jmp    _T72;
 // LINE 96:
 _T72:

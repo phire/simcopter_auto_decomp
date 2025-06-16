@@ -5,12 +5,9 @@ void cGZXParamBitstream<t_alloc,t_free>::cGZXParamBitstream<t_alloc,t_free>(uint
 	this-><cGZXParamBitstream<t_alloc,t_free>+0x00> = 0x5923f8;
 	__asm        jmp    _T23;
 _T23:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x16], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1A], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1E], 0;
+	this->nodeList.start = 0x0;
+	this->nodeList.finish = 0x0;
+	this->nodeList.end_of_storage = 0x0;
 	__asm        jmp    _T4f;
 _T4f:
 	__asm        mov    dword ptr [ebp-0x1C], 0;
@@ -70,19 +67,11 @@ _Tfa:
 	__asm        jmp    _T125;
 // LINE 235:
 _T125:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->markPos = 0x0;
+	this->curPos = this->markPos;
 // LINE 236:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0xE], 0;
-	__asm        mov    eax, this;
-	__asm        mov    ax, [eax+0xE];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], ax;
+	this->markNode = 0x0;
+	this->nodeNo = this->markNode;
 // LINE 237:
 	this->maxNode = 0x0;
 // LINE 238:
@@ -699,10 +688,8 @@ _T9af:
 // FUNCTION: COPTER_D 0x004cdf70
 void cGZXParamBitstream<t_alloc,t_free>::Rewind() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0xC], 0;
+	this->curPos = 0x0;
+	this->nodeNo = 0x0;
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -711,14 +698,8 @@ __RETURN:
 // FUNCTION: COPTER_D 0x004cdfa0
 void cGZXParamBitstream<t_alloc,t_free>::RewindToMark() {
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, this;
-	__asm        mov    ax, [eax+0xE];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], ax;
+	this->curPos = this->markPos;
+	this->nodeNo = this->markNode;
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -727,14 +708,8 @@ __RETURN:
 // FUNCTION: COPTER_D 0x004cdfd0
 void cGZXParamBitstream<t_alloc,t_free>::Mark() {
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+8], eax;
-	__asm        mov    eax, this;
-	__asm        mov    ax, [eax+0xC];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xE], ax;
+	this->markPos = this->curPos;
+	this->markNode = this->nodeNo;
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -812,19 +787,11 @@ _Tb9:
 	__asm        jmp    _T18;
 // LINE 373:
 _Tc8:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->markPos = 0x0;
+	this->curPos = this->markPos;
 // LINE 374:
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+0xE], 0;
-	__asm        mov    eax, this;
-	__asm        mov    ax, [eax+0xE];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], ax;
+	this->markNode = 0x0;
+	this->nodeNo = this->markNode;
 // LINE 375:
 	return;
 }

@@ -1114,9 +1114,9 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x00450065
 static void $E65() {
 
-	__asm        mov    colorTextGamePaletteNormal.Blue, 0xA;
-	__asm        mov    colorTextGamePaletteNormal.Green, 0x85;
-	__asm        mov    colorTextGamePaletteNormal.Red, 0xDA;
+	colorTextGamePaletteNormal.Blue = 0xa;
+	colorTextGamePaletteNormal.Green = 0x85;
+	colorTextGamePaletteNormal.Red = 0xda;
 	__asm        jmp    _T20;
 _T20:
 	return;
@@ -1135,9 +1135,9 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x004500a4
 static void $E68() {
 
-	__asm        mov    colorTextGamePaletteHighlighted.Blue, 0x6F;
-	__asm        mov    colorTextGamePaletteHighlighted.Green, 0xDA;
-	__asm        mov    colorTextGamePaletteHighlighted.Red, 0xFF;
+	colorTextGamePaletteHighlighted.Blue = 0x6f;
+	colorTextGamePaletteHighlighted.Green = 0xda;
+	colorTextGamePaletteHighlighted.Red = 0xff;
 	__asm        jmp    _T20;
 _T20:
 	return;
@@ -1286,12 +1286,8 @@ _T1e0:
 	this->sAnimationImageFileName.c_str_ptr = 0x0;
 	__asm        jmp    _T1f2;
 _T1f2:
-	__asm        mov    eax, lNewType;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x90], eax;
-	__asm        mov    eax, bNewSelfDeleting;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x94], eax;
+	this->lType = lNewType;
+	this->bSelfDeleting = bNewSelfDeleting;
 	__asm        jmp    _T20f;
 _T20f:
 	__asm        jmp    _T214;
@@ -1614,13 +1610,8 @@ _T132:
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     _T15c;
 
-	__asm        mov    eax, sNewMessage;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x7C], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x7C];
-	__asm        inc    dword ptr [eax+0xC];
+	this->sMessage.reference = sNewMessage.reference;
+	this->sMessage.reference-><basic_string_ref<char>+0x0c:4>++;
 	__asm        jmp    _T23e;
 _T15c:
 	__asm        push   0x10;
@@ -1759,12 +1750,8 @@ _T325:
 	this->sAnimationImageFileName.c_str_ptr = 0x0;
 	__asm        jmp    _T337;
 _T337:
-	__asm        mov    eax, lNewType;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x90], eax;
-	__asm        mov    eax, bNewSelfDeleting;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x94], eax;
+	this->lType = lNewType;
+	this->bSelfDeleting = bNewSelfDeleting;
 	__asm        jmp    _T354;
 _T354:
 	__asm        jmp    _T359;
@@ -2097,27 +2084,27 @@ _T16a:
 	__asm        cmp    nButtonCount, 1;
 	__asm        jne    _T19a;
 // LINE 113:
-	__asm        mov    rectButtons[0].left, 0xF4;
-	__asm        mov    rectButtons[0].top, 0x100;
-	__asm        mov    rectButtons[0].right, 0xF5;
-	__asm        mov    rectButtons[0].bottom, 0x101;
+	rectButtons[0].left = 0xf4;
+	rectButtons[0].top = 0x100;
+	rectButtons[0].right = 0xf5;
+	rectButtons[0].bottom = 0x101;
 	__asm        jmp    _T195;
 // LINE 114:
 _T195:
 	__asm        jmp    _T1dc;
 // LINE 115:
 _T19a:
-	__asm        mov    rectButtons[0].left, 0xC2;
-	__asm        mov    rectButtons[0].top, 0x100;
-	__asm        mov    rectButtons[0].right, 0xC3;
-	__asm        mov    rectButtons[0].bottom, 0x101;
+	rectButtons[0].left = 0xc2;
+	rectButtons[0].top = 0x100;
+	rectButtons[0].right = 0xc3;
+	rectButtons[0].bottom = 0x101;
 	__asm        jmp    _T1bb;
 // LINE 116:
 _T1bb:
-	__asm        mov    rectButtons[1].left, 0x126;
-	__asm        mov    rectButtons[1].top, 0x100;
-	__asm        mov    rectButtons[1].right, 0x127;
-	__asm        mov    rectButtons[1].bottom, 0x101;
+	rectButtons[1].left = 0x126;
+	rectButtons[1].top = 0x100;
+	rectButtons[1].right = 0x127;
+	rectButtons[1].bottom = 0x101;
 	__asm        jmp    _T1dc;
 // LINE 121:
 _T1dc:
@@ -2929,10 +2916,10 @@ void MessageBoxWindow::DrawTextOntoBox() {
 // LINE 236:
 	__asm        jmp    _T1b;
 _T1b:
-	__asm        mov    rectText.left, 0x62;
-	__asm        mov    rectText.top, 0x4E;
-	__asm        mov    rectText.right, 0x170;
-	__asm        mov    rectText.bottom, 0xC8;
+	rectText.left = 0x62;
+	rectText.top = 0x4e;
+	rectText.right = 0x170;
+	rectText.bottom = 0xc8;
 	__asm        jmp    _T3c;
 // LINE 238:
 _T3c:
@@ -3872,10 +3859,8 @@ void RenderSettingsWindow::RenderSettingsWindow(/*packed*/ class MRect& rectNewP
 _T12c:
 	__asm        jmp    _T131;
 _T131:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xB4], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58FC20;
+	this->lSkyImagePanX = 0x0;
+	this-><RenderSettingsWindow+0x00> = 0x58fc20;
 // LINE 504:
 	return;
 
@@ -5660,10 +5645,8 @@ _T18d0:
 	__asm        mov    [ecx+0xB0], eax;
 	__asm        jmp    _T197b;
 _T197b:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xAC], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xA8], 0;
+	this->mySkyTimer.lTotalElapsedTime = 0x0;
+	this->mySkyTimer.lStartTime = 0x0;
 	__asm        jmp    _T19a0;
 _T19a0:
 	__asm        jmp    _T19a5;
@@ -6002,10 +5985,8 @@ _T18e:
 	__asm        mov    ecx, [eax+0xA0];
 	__asm        call   dword ptr [edx+0xC];
 // LINE 705:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xAC], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xA8], 0;
+	this->mySkyTimer.lTotalElapsedTime = 0x0;
+	this->mySkyTimer.lStartTime = 0x0;
 	__asm        jmp    _T1f0;
 _T1f0:
 	__asm        jmp    _T1f5;
@@ -12232,9 +12213,9 @@ _T239:
 _T23e:
 	__asm        jmp    _T1e8;
 _T243:
-	__asm        mov    list<basic_string<char>>::free_list, 0;
-	__asm        mov    list<basic_string<char>>::next_avail, 0;
-	__asm        mov    list<basic_string<char>>::last, 0;
+	list<basic_string<char>>::free_list = 0x0;
+	list<basic_string<char>>::next_avail = 0x0;
+	list<basic_string<char>>::last = 0x0;
 	__asm        jmp    _T266;
 _T266:
 	return;
@@ -14865,12 +14846,9 @@ void BoneheadTextEditWindow::BoneheadTextEditWindow() {
 _T86:
 	__asm        jmp    _T8b;
 _T8b:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xB8], 0xAAE60;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xBC], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5900F0;
+	this->lCaretTimerPeriod = 0xaae60;
+	this->bCaretTimerExpired = 0x0;
+	this-><BoneheadTextEditWindow+0x00> = 0x5900f0;
 // LINE 1964:
 	return;
 
@@ -14920,14 +14898,10 @@ void BoneheadTextEditWindow::BoneheadTextEditWindow(/*packed*/ class MRect& rect
 _T9e:
 	__asm        jmp    _Ta3;
 _Ta3:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xB8], 0xAAE60;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xBC], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC0], 0x100;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5900F0;
+	this->lCaretTimerPeriod = 0xaae60;
+	this->bCaretTimerExpired = 0x0;
+	this->lCharacterCountLimit = 0x100;
+	this-><BoneheadTextEditWindow+0x00> = 0x5900f0;
 // LINE 1978:
 	__asm        cmp    szNewImageFileName, 0;
 	__asm        je     _T337;
@@ -15846,10 +15820,8 @@ _T91:
 	chCaret[0] = 0x20;
 // LINE 2067:
 _T97:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xB0], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xAC], 0;
+	this->myCaretTimer.lTotalElapsedTime = 0x0;
+	this->myCaretTimer.lStartTime = 0x0;
 	__asm        jmp    _Tb6;
 _Tb6:
 	__asm        jmp    _Tbb;
@@ -16969,13 +16941,8 @@ _Tb1:
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     _Tdb;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    ecx, sText;
-	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, sText;
-	__asm        mov    eax, [eax+4];
-	__asm        inc    dword ptr [eax+0xC];
+	sText.reference = this-><BoneheadTextEditWindow+0x0c>;
+	sText.reference-><basic_string_ref<char>+0x0c:4>++;
 	__asm        jmp    _T1ce;
 _Tdb:
 	__asm        push   0x10;
@@ -17602,20 +17569,14 @@ _T58:
 	__asm        mov    dword ptr [eax+0x7C], 0;
 	__asm        jmp    _T97;
 _T97:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x80], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x84], 0;
+	this->lFirstStringToDraw = 0x0;
+	this->lTopOfVisibleTextArea = 0x0;
 	__asm        jmp    _Tb6;
 _Tb6:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x88], 0x28;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x8C], 0x28;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x90], 0x1F4;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x94], 0x1CC;
+	this->rectVisibleTextArea.left = 0x28;
+	this->rectVisibleTextArea.top = 0x28;
+	this->rectVisibleTextArea.right = 0x1f4;
+	this->rectVisibleTextArea.bottom = 0x1cc;
 	__asm        jmp    _Tef;
 _Tef:
 	__asm        mov    ecx, this;
@@ -17645,12 +17606,9 @@ _Tef:
 _T162:
 	__asm        jmp    _T167;
 _T167:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC4], 0x2710;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC8], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5902D8;
+	this->lScrollTimerPeriod = 0x2710;
+	this->bScrollTimerExpired = 0x0;
+	this-><ScrollingCreditWindow+0x00> = 0x5902d8;
 // LINE 2320:
 	return;
 
@@ -17966,9 +17924,9 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x0045e13b
 static void $E71() {
 
-	__asm        mov    colorTextCheckupNormal.Blue, 0x40;
-	__asm        mov    colorTextCheckupNormal.Green, 0;
-	__asm        mov    colorTextCheckupNormal.Red, 0;
+	colorTextCheckupNormal.Blue = 0x40;
+	colorTextCheckupNormal.Green = 0x0;
+	colorTextCheckupNormal.Red = 0x0;
 	__asm        jmp    _T20;
 _T20:
 	return;
@@ -17987,9 +17945,9 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x0045e17a
 static void $E74() {
 
-	__asm        mov    colorTextCheckupHighlighted.Blue, 0xEF;
-	__asm        mov    colorTextCheckupHighlighted.Green, 0xC5;
-	__asm        mov    colorTextCheckupHighlighted.Red, 0xC5;
+	colorTextCheckupHighlighted.Blue = 0xef;
+	colorTextCheckupHighlighted.Green = 0xc5;
+	colorTextCheckupHighlighted.Red = 0xc5;
 	__asm        jmp    _T20;
 _T20:
 	return;

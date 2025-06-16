@@ -277,9 +277,8 @@ _T214:
 	__asm        add    esp, 4;
 // LINE 337:
 _T29c:
-	__asm        mov    mem2d, 0;
-	__asm        mov    eax, mem2d;
-	__asm        mov    memxf, eax;
+	mem2d = 0x0;
+	memxf = mem2d;
 // LINE 339:
 	i = VRGetResObjectCnt(G_resgeo1);
 // LINE 340:

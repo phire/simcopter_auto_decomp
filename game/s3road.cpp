@@ -64,8 +64,8 @@ void S3RoadDataInit() {
 	/*bp-0x34*/  int32_t dir;
 
 // LINE 53:
-	__asm        mov    reinterpret_cast<uint32_t>(straightLegSize), 0x9999999A;
-	__asm        mov    *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&straightLegSize) + 4), 0x40199999;
+	reinterpret_cast<uint32_t>(straightLegSize) = 0x9999999a;
+	*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&straightLegSize) + 4) = 0x40199999;
 // LINE 54:
 	leg = 0x0;
 	__asm        jmp    _T29;
@@ -336,8 +336,8 @@ _T19a:
 	__asm        fsub   OT[0].x;
 	__asm        fstp   turnRadius;
 // LINE 152:
-	__asm        mov    reinterpret_cast<uint32_t>(turnAngle), 0x769A7903;
-	__asm        mov    *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&turnAngle) + 4), 0x3FC41B2F;
+	reinterpret_cast<uint32_t>(turnAngle) = 0x769a7903;
+	*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&turnAngle) + 4) = 0x3fc41b2f;
 // LINE 153:
 	leg = 0x0;
 	__asm        jmp    _T433;
@@ -483,8 +483,8 @@ _T614:
 	__asm        fsub   LRT[0].x;
 	__asm        fstp   turnRadius;
 // LINE 177:
-	__asm        mov    reinterpret_cast<uint32_t>(turnAngle), 0x769A7903;
-	__asm        mov    *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&turnAngle) + 4), 0x3FC41B2F;
+	reinterpret_cast<uint32_t>(turnAngle) = 0x769a7903;
+	*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&turnAngle) + 4) = 0x3fc41b2f;
 // LINE 178:
 	leg = 0x0;
 	__asm        jmp    _T640;
@@ -626,11 +626,11 @@ _T7b4:
 	__asm        jmp    _T7b1;
 // LINE 201:
 _T82d:
-	__asm        mov    reinterpret_cast<uint32_t>(turnRadius), 0;
-	__asm        mov    *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&turnRadius) + 4), 0x40200000;
+	reinterpret_cast<uint32_t>(turnRadius) = 0x0;
+	*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&turnRadius) + 4) = 0x40200000;
 // LINE 202:
-	__asm        mov    reinterpret_cast<uint32_t>(turnAngle), 0x54411744;
-	__asm        mov    *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&turnAngle) + 4), 0x3FD921FB;
+	reinterpret_cast<uint32_t>(turnAngle) = 0x54411744;
+	*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&turnAngle) + 4) = 0x3fd921fb;
 // LINE 204:
 	__asm        fld    OT[0].x;
 	__asm        fmul   qword ptr ds:[0x593400];

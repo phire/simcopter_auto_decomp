@@ -3,10 +3,8 @@
 cBList<class cCopterAnim>::cBList<class cCopterAnim>(void) cBList<cCopterAnim>::cBList<cCopterAnim>() {
 	// Function registers exception cleanup function at 0x0055e8ad
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
-	__asm        mov    eax, this;
-	__asm        mov    word ptr [eax+8], 0;
+	this-><cBList<cCopterAnim>+0x04:4> = 0x0;
+	this-><cBList<cCopterAnim>+0x08:2> = 0x0;
 	__asm        jmp    _T39;
 _T39:
 	__asm        mov    dword ptr [ebp-4], 0;

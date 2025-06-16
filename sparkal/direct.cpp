@@ -724,13 +724,8 @@ _Ta9:
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     _Td3;
 
-	__asm        mov    eax, sNewName;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+8], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        inc    dword ptr [eax+0xC];
+	this->sName.reference = sNewName.reference;
+	this->sName.reference-><basic_string_ref<char>+0x0c:4>++;
 	__asm        jmp    _T1b5;
 _Td3:
 	__asm        push   0x10;
@@ -1043,13 +1038,8 @@ _T28a:
 _T28f:
 	__asm        jmp    _T294;
 _T294:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, sEntryExtension;
-	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, sEntryExtension;
-	__asm        mov    eax, [eax+4];
-	__asm        add    dword ptr [eax+0xC], 1;
+	sEntryExtension.reference = this->sName.reference;
+	sEntryExtension.reference-><basic_string_ref<char>+0x0c:4> += 0x1;
 	__asm        jmp    _T3ef;
 _T2af:
 	__asm        jmp    _T2b4;
@@ -1552,13 +1542,8 @@ _T27a:
 _T27f:
 	__asm        jmp    _T284;
 _T284:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, sEntryMinusExtension;
-	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, sEntryMinusExtension;
-	__asm        mov    eax, [eax+4];
-	__asm        add    dword ptr [eax+0xC], 1;
+	sEntryMinusExtension.reference = this->sName.reference;
+	sEntryMinusExtension.reference-><basic_string_ref<char>+0x0c:4> += 0x1;
 	__asm        jmp    _T2e5;
 _T29f:
 	__asm        jmp    _T2a4;
@@ -1654,13 +1639,8 @@ _T3a2:
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     _T3cd;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, sEntryMinusExtension;
-	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, sEntryMinusExtension;
-	__asm        mov    eax, [eax+4];
-	__asm        add    dword ptr [eax+0xC], 1;
+	sEntryMinusExtension.reference = this->sName.reference;
+	sEntryMinusExtension.reference-><basic_string_ref<char>+0x0c:4> += 0x1;
 	__asm        jmp    _T498;
 _T3cd:
 	__asm        push   0x10;
@@ -3018,12 +2998,8 @@ _T4c2:
 	this-><Directory+0x10:4> = 0x0;
 	__asm        jmp    _T4d1;
 _T4d1:
-	__asm        mov    eax, bNewAllowParentDirectoryAsEntry;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x18], eax;
-	__asm        mov    eax, bNewAllowCurrentDirectoryAsEntry;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x1C], eax;
+	this-><Directory+0x18:4> = bNewAllowParentDirectoryAsEntry;
+	this-><Directory+0x1c:4> = bNewAllowCurrentDirectoryAsEntry;
 // LINE 199:
 	__asm        mov    ecx, this;
 	__asm        call   Directory::MakeSurePathEndsWithSeparator;
@@ -3961,10 +3937,8 @@ _Tdd1:
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     _Tdfb;
 
-	__asm        mov    eax, sParentDirectory.reference;
-	__asm        mov    directoryEntryCurrent.sName.reference, eax;
-	__asm        mov    eax, directoryEntryCurrent.sName.reference;
-	__asm        inc    dword ptr [eax+0xC];
+	directoryEntryCurrent.sName.reference = sParentDirectory.reference;
+	directoryEntryCurrent.sName.reference-><basic_string_ref<char>+0x0c:4>++;
 	__asm        jmp    _Te50;
 _Tdfb:
 	__asm        push   0x10;
@@ -6665,13 +6639,8 @@ _T128:
 _T179:
 	__asm        jmp    _T17e;
 _T17e:
-	__asm        mov    eax, sPath;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, sFirstPart;
-	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, sFirstPart;
-	__asm        mov    eax, [eax+4];
-	__asm        inc    dword ptr [eax+0xC];
+	sFirstPart.reference = sPath.reference;
+	sFirstPart.reference-><basic_string_ref<char>+0x0c:4>++;
 	__asm        jmp    _T1de;
 _T198:
 	__asm        jmp    _T19d;
@@ -6788,13 +6757,8 @@ _T289:
 _T2da:
 	__asm        jmp    _T2df;
 _T2df:
-	__asm        mov    eax, sPath;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, sLastPart;
-	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, sLastPart;
-	__asm        mov    eax, [eax+4];
-	__asm        inc    dword ptr [eax+0xC];
+	sLastPart.reference = sPath.reference;
+	sLastPart.reference-><basic_string_ref<char>+0x0c:4>++;
 	__asm        jmp    _T343;
 _T2f9:
 	__asm        jmp    _T2fe;
@@ -7033,13 +6997,8 @@ _T577:
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     _T5a1;
 
-	__asm        mov    eax, sPath;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, sLastPart;
-	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, sLastPart;
-	__asm        mov    eax, [eax+4];
-	__asm        inc    dword ptr [eax+0xC];
+	sLastPart.reference = sPath.reference;
+	sLastPart.reference-><basic_string_ref<char>+0x0c:4>++;
 	__asm        jmp    _T5ea;
 _T5a1:
 	__asm        push   0x10;

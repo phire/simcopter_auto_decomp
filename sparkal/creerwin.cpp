@@ -380,9 +380,9 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x0047de95
 static void $E63() {
 
-	__asm        mov    colorTextGamePaletteNormal.Blue, 0xA;
-	__asm        mov    colorTextGamePaletteNormal.Green, 0x85;
-	__asm        mov    colorTextGamePaletteNormal.Red, 0xDA;
+	colorTextGamePaletteNormal.Blue = 0xa;
+	colorTextGamePaletteNormal.Green = 0x85;
+	colorTextGamePaletteNormal.Red = 0xda;
 	__asm        jmp    _T20;
 _T20:
 	return;
@@ -401,9 +401,9 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x0047ded4
 static void $E66() {
 
-	__asm        mov    colorTextGamePaletteHighlighted.Blue, 0x6F;
-	__asm        mov    colorTextGamePaletteHighlighted.Green, 0xDA;
-	__asm        mov    colorTextGamePaletteHighlighted.Red, 0xFF;
+	colorTextGamePaletteHighlighted.Blue = 0x6f;
+	colorTextGamePaletteHighlighted.Green = 0xda;
+	colorTextGamePaletteHighlighted.Red = 0xff;
 	__asm        jmp    _T20;
 _T20:
 	return;
@@ -460,44 +460,28 @@ _T7d:
 _T9a:
 	__asm        jmp    _T9f;
 _T9f:
-	__asm        mov    eax, myNewPlatformWindow;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x830], eax;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x83C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x590E30;
+	this->myPlatformWindow = myNewPlatformWindow;
+	this->mySelectionImage = 0x0;
+	this-><CareerWindow+0x00> = 0x590e30;
 // LINE 64:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x78], 0x4D;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x7C], 0x47;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x80], 0x115;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x84], 0xB3;
+	this->rectCities[0].left = 0x4d;
+	this->rectCities[0].top = 0x47;
+	this->rectCities[0].right = 0x115;
+	this->rectCities[0].bottom = 0xb3;
 	__asm        jmp    _Tf4;
 // LINE 65:
 _Tf4:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x88], 0x153;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x8C], 0x47;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x90], 0x21B;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x94], 0xB3;
+	this->rectCities[1].left = 0x153;
+	this->rectCities[1].top = 0x47;
+	this->rectCities[1].right = 0x21b;
+	this->rectCities[1].bottom = 0xb3;
 	__asm        jmp    _T12d;
 // LINE 66:
 _T12d:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x98], 0x4D;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x9C], 0xF9;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xA0], 0x115;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xA4], 0x165;
+	this->rectCities[2].left = 0x4d;
+	this->rectCities[2].top = 0xf9;
+	this->rectCities[2].right = 0x115;
+	this->rectCities[2].bottom = 0x165;
 	__asm        jmp    _T166;
 // LINE 68:
 _T166:

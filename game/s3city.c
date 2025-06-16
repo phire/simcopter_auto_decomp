@@ -300,11 +300,9 @@ _T1be:
 	__asm        call   0x004D1FF1;
 	__asm        add    esp, 4;
 // LINE 282:
-	__asm        mov    S_terr_pos.loc.z, 0;
-	__asm        mov    eax, S_terr_pos.loc.z;
-	__asm        mov    S_terr_pos.loc.y, eax;
-	__asm        mov    eax, S_terr_pos.loc.y;
-	__asm        mov    S_terr_pos.loc.x, eax;
+	S_terr_pos.loc.z = 0x0;
+	S_terr_pos.loc.y = S_terr_pos.loc.z;
+	S_terr_pos.loc.x = S_terr_pos.loc.y;
 // LINE 288:
 	S_last_pos.x = 0x80;
 // LINE 289:
@@ -9007,16 +9005,14 @@ void S3CityDyObjFixup(/*packed*/ struct _CELL_INFO **endcptrptr, /*packed*/ stru
 	/*bp-0xa0*/  /*packed*/ struct _CELL_INFO **cptrptr1;
 
 // LINE 3970:
-	__asm        mov    i, 0;
-	__asm        mov    eax, endcptrptr;
-	__asm        mov    cptrptr1, eax;
-	__asm        mov    eax, endcaddr;
-	__asm        mov    caddr1, eax;
+	i = 0x0;
+	cptrptr1 = endcptrptr;
+	caddr1 = endcaddr;
 	__asm        jmp    _T35;
 _T27:
-	__asm        inc    i;
-	__asm        sub    cptrptr1, 4;
-	__asm        sub    caddr1, 4;
+	i++;
+	cptrptr1 -= 0x4;
+	caddr1 -= 0x4;
 _T35:
 	__asm        mov    eax, GridNSortCells;
 	__asm        cmp    i, eax;
@@ -9216,14 +9212,12 @@ _T144:
 	__asm        jmp    next_dyobj;
 // LINE 4086:
 _T2b2:
-	__asm        mov    eax, endcptrptr;
-	__asm        mov    cptrptr2, eax;
-	__asm        mov    eax, endcaddr;
-	__asm        mov    caddr2, eax;
+	cptrptr2 = endcptrptr;
+	caddr2 = endcaddr;
 	__asm        jmp    _T2cb;
 _T2c3:
-	__asm        sub    cptrptr2, 4;
-	__asm        sub    caddr2, 4;
+	cptrptr2 -= 0x4;
+	caddr2 -= 0x4;
 _T2cb:
 	__asm        mov    eax, cptrptr1;
 	__asm        cmp    cptrptr2, eax;
@@ -11539,10 +11533,8 @@ _T319:
 // LINE 5151:
 	sptr->user2 = 0x0;
 // LINE 5156:
-	__asm        mov    eax, x;
-	__asm        mov    px, eax;
-	__asm        mov    eax, y;
-	__asm        mov    py, eax;
+	px = x;
+	py = y;
 	__asm        jmp    _T41d;
 _T41a:
 	px++;
@@ -11616,11 +11608,8 @@ _T52d:
 	__asm        jmp    _T41a;
 // LINE 5186:
 _T532:
-	__asm        mov    eax, x;
-	__asm        mov    px, eax;
-	__asm        mov    eax, y;
-	__asm        add    eax, 3;
-	__asm        mov    py, eax;
+	px = x;
+	py = (y + 0x3);
 	__asm        jmp    _T549;
 _T546:
 	px++;

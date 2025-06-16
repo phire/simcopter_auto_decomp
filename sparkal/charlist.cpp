@@ -66,16 +66,9 @@ void CharList::CharList() {
 // LINE 25:
 	this->nCharDataCount = 0x0;
 // LINE 28:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+8], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->presentCharData = 0x0;
+	this->lastCharData = this->presentCharData;
+	this->firstCharData = this->lastCharData;
 // LINE 29:
 	return;
 
@@ -190,12 +183,8 @@ void CharList::DeleteItem(/*packed*/ class CharData *charDataToDelete) {
 	__asm        cmp    dword ptr [eax], 1;
 	__asm        jne    _T33;
 // LINE 81:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->lastCharData = 0x0;
+	this->firstCharData = this->lastCharData;
 // LINE 82:
 	__asm        jmp    _T8d;
 // LINE 83:
@@ -329,18 +318,13 @@ _T40:
 	return 0x0;
 // LINE 136:
 _T21:
-	__asm        mov    nPresentIndex, 0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], eax;
+	nPresentIndex = 0x0;
+	this->presentCharData = this->firstCharData;
 // LINE 138:
 	__asm        jmp    _T45;
 _T39:
-	__asm        inc    nPresentIndex;
-	__asm        mov    eax, nextCharData;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], eax;
+	nPresentIndex++;
+	this->presentCharData = nextCharData;
 _T45:
 	__asm        mov    eax, nIndex;
 	__asm        cmp    nPresentIndex, eax;

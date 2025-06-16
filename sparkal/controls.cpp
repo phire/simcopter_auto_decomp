@@ -1078,22 +1078,12 @@ void BoxWindow::BoxWindow() {
 	__asm        mov    dword ptr [eax+0x78], 0;
 	__asm        jmp    _T2d;
 _T2d:
-	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexWhite;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x80], eax;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5919C0;
+	this->nPaletteIndexFill = GraphicWindow::colorConstants.nPaletteIndexWhite;
+	this-><BoxWindow+0x00> = 0x5919c0;
 // LINE 29:
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x7C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x7C];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x7D], al;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x7D];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x7E], al;
+	this->colorOutline.Blue = 0x0;
+	this->colorOutline.Green = this->colorOutline.Blue;
+	this->colorOutline.Red = this->colorOutline.Green;
 // LINE 30:
 	return;
 
@@ -1121,22 +1111,12 @@ void BoxWindow::BoxWindow(/*packed*/ class MRect& rectNewWindow, int32_t nNewID,
 	__asm        mov    dword ptr [eax+0x78], 0;
 	__asm        jmp    _T41;
 _T41:
-	__asm        mov    eax, GraphicWindow::colorConstants.nPaletteIndexWhite;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x80], eax;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5919C0;
+	this->nPaletteIndexFill = GraphicWindow::colorConstants.nPaletteIndexWhite;
+	this-><BoxWindow+0x00> = 0x5919c0;
 // LINE 44:
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x7C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x7C];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x7D], al;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x7D];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x7E], al;
+	this->colorOutline.Blue = 0x0;
+	this->colorOutline.Green = this->colorOutline.Blue;
+	this->colorOutline.Red = this->colorOutline.Green;
 // LINE 45:
 	return;
 
@@ -1214,17 +1194,9 @@ _T19:
 // LINE 96:
 	this->bDrawOpaqueBackground = 0x0;
 // LINE 99:
-	__asm        mov    al, reinterpret_cast<uint8_t>(GraphicWindow::colorConstants.nPaletteIndexBlack);
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x78], al;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x78];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x79], al;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x79];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x7A], al;
+	this->colorFont.Blue = reinterpret_cast<uint8_t>(GraphicWindow::colorConstants.nPaletteIndexBlack);
+	this->colorFont.Green = this->colorFont.Blue;
+	this->colorFont.Red = this->colorFont.Green;
 // LINE 100:
 	this->nBackgroundPaletteIndex = GraphicWindow::colorConstants.nPaletteIndexWhite;
 // LINE 101:
@@ -1271,16 +1243,9 @@ _T2d:
 // LINE 114:
 	this->bDrawOpaqueBackground = 0x0;
 // LINE 117:
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x78], 0;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x78];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x79], al;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x79];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x7A], al;
+	this->colorFont.Blue = 0x0;
+	this->colorFont.Green = this->colorFont.Blue;
+	this->colorFont.Red = this->colorFont.Green;
 // LINE 118:
 	this->nBackgroundPaletteIndex = GraphicWindow::colorConstants.nPaletteIndexWhite;
 // LINE 119:
@@ -1325,16 +1290,9 @@ _T2d:
 // LINE 132:
 	this->bDrawOpaqueBackground = 0x0;
 // LINE 135:
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x78], 0;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x78];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x79], al;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x79];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x7A], al;
+	this->colorFont.Blue = 0x0;
+	this->colorFont.Green = this->colorFont.Blue;
+	this->colorFont.Red = this->colorFont.Green;
 // LINE 136:
 	this->nBackgroundPaletteIndex = GraphicWindow::colorConstants.nPaletteIndexWhite;
 // LINE 137:
@@ -2622,28 +2580,19 @@ void ButtonWindow::ButtonWindow() {
 	__asm        mov    dword ptr [eax+0x7C], 0;
 	__asm        jmp    _T37;
 _T37:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x80], 2;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x84], 2;
+	this->sizeTextOffset.cx = 0x2;
+	this->sizeTextOffset.cy = 0x2;
 	__asm        jmp    _T56;
 _T56:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x88], 0;
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x8C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x8D], 0;
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x8E], 0;
+	this->bBusySettingState = 0x0;
+	this->colorFont.Blue = 0x0;
+	this->colorFont.Green = 0x0;
+	this->colorFont.Red = 0x0;
 	__asm        jmp    _T86;
 _T86:
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x90], 0;
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x91], 0;
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x92], 0;
+	this->colorFontHighlighted.Blue = 0x0;
+	this->colorFontHighlighted.Green = 0x0;
+	this->colorFontHighlighted.Red = 0x0;
 	__asm        jmp    _Ta9;
 _Ta9:
 	__asm        mov    eax, this;
@@ -2796,28 +2745,19 @@ void ButtonWindow::ButtonWindow(/*packed*/ class MRect& rectNewWindow, int32_t n
 	__asm        mov    dword ptr [eax+0x7C], 0;
 	__asm        jmp    _T4b;
 _T4b:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x80], 2;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x84], 2;
+	this->sizeTextOffset.cx = 0x2;
+	this->sizeTextOffset.cy = 0x2;
 	__asm        jmp    _T6a;
 _T6a:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x88], 0;
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x8C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x8D], 0;
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x8E], 0;
+	this->bBusySettingState = 0x0;
+	this->colorFont.Blue = 0x0;
+	this->colorFont.Green = 0x0;
+	this->colorFont.Red = 0x0;
 	__asm        jmp    _T9a;
 _T9a:
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x90], 0;
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x91], 0;
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x92], 0;
+	this->colorFontHighlighted.Blue = 0x0;
+	this->colorFontHighlighted.Green = 0x0;
+	this->colorFontHighlighted.Red = 0x0;
 	__asm        jmp    _Tbd;
 _Tbd:
 	this-><ButtonWindow+0x00> = 0x591b78;
@@ -5614,12 +5554,9 @@ _T232:
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    _T25d;
 _T25d:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x7C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x80], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x591E20;
+	this-><ButtonGroup+0x7c:4> = 0x0;
+	this-><ButtonGroup+0x80:4> = 0x0;
+	this-><ButtonGroup+0x00:4> = 0x591e20;
 // LINE 857:
 	return;
 
@@ -5831,12 +5768,9 @@ _T26c:
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    _T297;
 _T297:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x7C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x80], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x591E20;
+	this-><ButtonGroup+0x7c:4> = 0x0;
+	this-><ButtonGroup+0x80:4> = 0x0;
+	this-><ButtonGroup+0x00:4> = 0x591e20;
 // LINE 869:
 	this-><ButtonGroup+0x54:4> = 0x0;
 	__asm        jmp    _T2c6;
@@ -6939,10 +6873,8 @@ _Ted:
 	this->sBackgroundFile.c_str_ptr = 0x0;
 	__asm        jmp    _Tff;
 _Tff:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xB0], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x591EE8;
+	this->bBusySettingValue = 0x0;
+	this-><SliderWindow+0x00> = 0x591ee8;
 // LINE 1110:
 	return;
 
@@ -7017,10 +6949,8 @@ _Tff:
 	this->sBackgroundFile.c_str_ptr = 0x0;
 	__asm        jmp    _T111;
 _T111:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xB0], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x591EE8;
+	this->bBusySettingValue = 0x0;
+	this-><SliderWindow+0x00> = 0x591ee8;
 // LINE 1134:
 	__asm        cmp    szThumbImageFileName, 0;
 	__asm        je     _T15c;
@@ -8853,10 +8783,8 @@ void ScrollBarWindow::ScrollBarWindow() {
 _T79:
 	__asm        jmp    _T7e;
 _T7e:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xD0], 1;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x591FC0;
+	this->bCursorIsOnInitialHitTestResult = 0x1;
+	this-><ScrollBarWindow+0x00> = 0x591fc0;
 // LINE 1547:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x7C];
@@ -9121,21 +9049,11 @@ void ScrollBarWindow::ScrollBarWindow(/*packed*/ class MRect& rectNewWindow, int
 _T99:
 	__asm        jmp    _T9e;
 _T9e:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xD0], 1;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x591FC0;
+	this->bCursorIsOnInitialHitTestResult = 0x1;
+	this-><ScrollBarWindow+0x00> = 0x591fc0;
 // LINE 1566:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x7C];
-	__asm        mov    ecx, this;
-	__asm        sub    eax, [ecx+0x78];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xB8], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xB8];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xB4], eax;
+	this->lPageCount = (this->lSliderMaximumValue - this->lSliderMinimumValue);
+	this->lLineCount = this->lPageCount;
 // LINE 1567:
 	this->lThumbLimitIndentation = 0x0;
 // LINE 1569:
@@ -11039,27 +10957,13 @@ _T261:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5920C8;
 // LINE 2079:
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x7C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x7C];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x7D], al;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x7D];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x7E], al;
+	this->colorFont.Blue = 0x0;
+	this->colorFont.Green = this->colorFont.Blue;
+	this->colorFont.Red = this->colorFont.Green;
 // LINE 2082:
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x80], 0xFF;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x80];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x81], al;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x81];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x82], al;
+	this->colorFontHighlighted.Blue = 0xff;
+	this->colorFontHighlighted.Green = this->colorFontHighlighted.Blue;
+	this->colorFontHighlighted.Red = this->colorFontHighlighted.Green;
 // LINE 2083:
 	this->nBackgroundIndex = GraphicWindow::colorConstants.nPaletteIndexWhite;
 // LINE 2084:
@@ -11302,27 +11206,13 @@ _T275:
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x5920C8;
 // LINE 2108:
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x7C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x7C];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x7D], al;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x7D];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x7E], al;
+	this->colorFont.Blue = 0x0;
+	this->colorFont.Green = this->colorFont.Blue;
+	this->colorFont.Red = this->colorFont.Green;
 // LINE 2111:
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+0x80], 0xFF;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x80];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x81], al;
-	__asm        mov    eax, this;
-	__asm        mov    al, [eax+0x81];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x82], al;
+	this->colorFontHighlighted.Blue = 0xff;
+	this->colorFontHighlighted.Green = this->colorFontHighlighted.Blue;
+	this->colorFontHighlighted.Red = this->colorFontHighlighted.Green;
 // LINE 2112:
 	this->nBackgroundIndex = GraphicWindow::colorConstants.nPaletteIndexWhite;
 // LINE 2113:

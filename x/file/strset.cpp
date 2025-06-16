@@ -293,12 +293,8 @@ _T29:
 	return 0x0;
 // LINE 74:
 _T49:
-	__asm        mov    ax, which;
-	__asm        mov    cnt, ax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        add    eax, 2;
-	__asm        mov    str, eax;
+	cnt = which;
+	str = (this->fStringPtr + 0x2);
 	__asm        jmp    _T66;
 _T62:
 	cnt--;

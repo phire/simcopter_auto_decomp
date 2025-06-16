@@ -1818,9 +1818,9 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x00401295
 static void $E96() {
 
-	__asm        mov    colorTextGamePaletteNormal.Blue, 0xA;
-	__asm        mov    colorTextGamePaletteNormal.Green, 0x85;
-	__asm        mov    colorTextGamePaletteNormal.Red, 0xDA;
+	colorTextGamePaletteNormal.Blue = 0xa;
+	colorTextGamePaletteNormal.Green = 0x85;
+	colorTextGamePaletteNormal.Red = 0xda;
 	__asm        jmp    _T20;
 _T20:
 	return;
@@ -1839,9 +1839,9 @@ __RETURN:
 // SYNTHETIC: COPTER_D 0x004012d4
 static void $E99() {
 
-	__asm        mov    colorTextGamePaletteHighlighted.Blue, 0x6F;
-	__asm        mov    colorTextGamePaletteHighlighted.Green, 0xDA;
-	__asm        mov    colorTextGamePaletteHighlighted.Red, 0xFF;
+	colorTextGamePaletteHighlighted.Blue = 0x6f;
+	colorTextGamePaletteHighlighted.Green = 0xda;
+	colorTextGamePaletteHighlighted.Red = 0xff;
 	__asm        jmp    _T20;
 _T20:
 	return;
@@ -2352,14 +2352,10 @@ _T734:
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    _T780;
 _T780:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x98], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x9C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xA0], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F058;
+	this->myKeyLightImage = 0x0;
+	this->myNonTextKeyImage = 0x0;
+	this->mFontToUse = 0x0;
+	this-><KeyboardWindow+0x00> = 0x58f058;
 // LINE 69:
 	return;
 
@@ -2589,9 +2585,9 @@ _T2d6:
 _T2db:
 	__asm        jmp    _T285;
 _T2e0:
-	__asm        mov    list<HotSpot>::free_list, 0;
-	__asm        mov    list<HotSpot>::next_avail, 0;
-	__asm        mov    list<HotSpot>::last, 0;
+	list<HotSpot>::free_list = 0x0;
+	list<HotSpot>::next_avail = 0x0;
+	list<HotSpot>::last = 0x0;
 	__asm        jmp    _T303;
 _T303:
 	__asm        jmp    _T308;
@@ -4177,14 +4173,10 @@ int32_t KeyboardWindow::GetRectOfNonTextImage(long lKey, /*packed*/ class MRect&
 	__asm        cmp    lKey, 9;
 	__asm        jne    _T47;
 // LINE 254:
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax], 0;
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax+4], 0;
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax+8], 0xD;
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax+0xC], 0xA;
+	rectImage.left = 0x0;
+	rectImage.top = 0x0;
+	rectImage.right = 0xd;
+	rectImage.bottom = 0xa;
 	__asm        jmp    _T42;
 // LINE 255:
 _T42:
@@ -4197,14 +4189,10 @@ _T47:
 	__asm        jne    _T8c;
 // LINE 256:
 _T5b:
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax], 0xD;
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax+4], 0;
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax+8], 0x1A;
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax+0xC], 0xA;
+	rectImage.left = 0xd;
+	rectImage.top = 0x0;
+	rectImage.right = 0x1a;
+	rectImage.bottom = 0xa;
 	__asm        jmp    _T87;
 // LINE 257:
 _T87:
@@ -4217,14 +4205,10 @@ _T8c:
 	__asm        jne    _Td1;
 // LINE 258:
 _Ta0:
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax], 0x1A;
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax+4], 0;
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax+8], 0x27;
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax+0xC], 0xA;
+	rectImage.left = 0x1a;
+	rectImage.top = 0x0;
+	rectImage.right = 0x27;
+	rectImage.bottom = 0xa;
 	__asm        jmp    _Tcc;
 // LINE 259:
 _Tcc:
@@ -4233,14 +4217,10 @@ _Td1:
 	__asm        cmp    lKey, 0xD;
 	__asm        jne    _T10c;
 // LINE 260:
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax], 0x27;
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax+4], 0;
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax+8], 0x34;
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax+0xC], 0xA;
+	rectImage.left = 0x27;
+	rectImage.top = 0x0;
+	rectImage.right = 0x34;
+	rectImage.bottom = 0xa;
 	__asm        jmp    _T107;
 // LINE 261:
 _T107:
@@ -4249,14 +4229,10 @@ _T10c:
 	__asm        cmp    lKey, 0x28;
 	__asm        jne    _T147;
 // LINE 262:
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax], 0x34;
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax+4], 0;
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax+8], 0x41;
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax+0xC], 0xA;
+	rectImage.left = 0x34;
+	rectImage.top = 0x0;
+	rectImage.right = 0x41;
+	rectImage.bottom = 0xa;
 	__asm        jmp    _T142;
 // LINE 263:
 _T142:
@@ -4265,14 +4241,10 @@ _T147:
 	__asm        cmp    lKey, 0x27;
 	__asm        jne    _T182;
 // LINE 264:
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax], 0x41;
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax+4], 0;
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax+8], 0x4E;
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax+0xC], 0xA;
+	rectImage.left = 0x41;
+	rectImage.top = 0x0;
+	rectImage.right = 0x4e;
+	rectImage.bottom = 0xa;
 	__asm        jmp    _T17d;
 // LINE 265:
 _T17d:
@@ -4281,14 +4253,10 @@ _T182:
 	__asm        cmp    lKey, 0x6F;
 	__asm        jne    _T1bd;
 // LINE 266:
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax], 0x4E;
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax+4], 0;
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax+8], 0x5B;
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax+0xC], 0xA;
+	rectImage.left = 0x4e;
+	rectImage.top = 0x0;
+	rectImage.right = 0x5b;
+	rectImage.bottom = 0xa;
 	__asm        jmp    _T1b8;
 // LINE 267:
 _T1b8:
@@ -4297,14 +4265,10 @@ _T1bd:
 	__asm        cmp    lKey, 0x6A;
 	__asm        jne    _T1f8;
 // LINE 268:
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax], 0x5B;
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax+4], 0;
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax+8], 0x68;
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax+0xC], 0xA;
+	rectImage.left = 0x5b;
+	rectImage.top = 0x0;
+	rectImage.right = 0x68;
+	rectImage.bottom = 0xa;
 	__asm        jmp    _T1f3;
 // LINE 269:
 _T1f3:
@@ -4313,14 +4277,10 @@ _T1f8:
 	__asm        cmp    lKey, 0x6D;
 	__asm        jne    _T233;
 // LINE 270:
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax], 0x68;
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax+4], 0;
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax+8], 0x75;
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax+0xC], 0xA;
+	rectImage.left = 0x68;
+	rectImage.top = 0x0;
+	rectImage.right = 0x75;
+	rectImage.bottom = 0xa;
 	__asm        jmp    _T22e;
 // LINE 271:
 _T22e:
@@ -4329,14 +4289,10 @@ _T233:
 	__asm        cmp    lKey, 0x6B;
 	__asm        jne    _T26e;
 // LINE 272:
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax], 0x75;
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax+4], 0;
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax+8], 0x82;
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax+0xC], 0xA;
+	rectImage.left = 0x75;
+	rectImage.top = 0x0;
+	rectImage.right = 0x82;
+	rectImage.bottom = 0xa;
 	__asm        jmp    _T269;
 // LINE 273:
 _T269:
@@ -4345,14 +4301,10 @@ _T26e:
 	__asm        cmp    lKey, 0x20;
 	__asm        jne    _T2a9;
 // LINE 274:
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax], 0;
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax+4], 0;
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax+8], 1;
-	__asm        mov    eax, rectImage;
-	__asm        mov    dword ptr [eax+0xC], 1;
+	rectImage.left = 0x0;
+	rectImage.top = 0x0;
+	rectImage.right = 0x1;
+	rectImage.bottom = 0x1;
 	__asm        jmp    _T2a4;
 // LINE 275:
 _T2a4:
@@ -5871,16 +5823,11 @@ _Tb8:
 _Td2:
 	__asm        jmp    _Td7;
 _Td7:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1CE], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1D2], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1D6], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1DA], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F140;
+	this->myButtonImage = 0x0;
+	this->mySliderImage = 0x0;
+	this->myHandleImage = 0x0;
+	this->myHandleBaseImage = 0x0;
+	this-><JoystickWindow+0x00> = 0x58f140;
 // LINE 615:
 	i = 0x0;
 	__asm        jmp    _T123;
@@ -5901,190 +5848,122 @@ _T123:
 	__asm        jmp    _T120;
 // LINE 620:
 _T14e:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xBE], 0x16;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC2], 0x72;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC6], 0x30;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xCA], 0x89;
+	this->rectButtons[0].left = 0x16;
+	this->rectButtons[0].top = 0x72;
+	this->rectButtons[0].right = 0x30;
+	this->rectButtons[0].bottom = 0x89;
 	__asm        jmp    _T187;
 // LINE 621:
 _T187:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xCE], 0x32;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xD2], 0x7C;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xD6], 0x4C;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xDA], 0x93;
+	this->rectButtons[1].left = 0x32;
+	this->rectButtons[1].top = 0x7c;
+	this->rectButtons[1].right = 0x4c;
+	this->rectButtons[1].bottom = 0x93;
 	__asm        jmp    _T1c0;
 // LINE 622:
 _T1c0:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xDE], 0x4E;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xE2], 0x86;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xE6], 0x68;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xEA], 0x9D;
+	this->rectButtons[2].left = 0x4e;
+	this->rectButtons[2].top = 0x86;
+	this->rectButtons[2].right = 0x68;
+	this->rectButtons[2].bottom = 0x9d;
 	__asm        jmp    _T1f9;
 // LINE 623:
 _T1f9:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xEE], 0x6A;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xF2], 0x90;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xF6], 0x84;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xFA], 0xA7;
+	this->rectButtons[3].left = 0x6a;
+	this->rectButtons[3].top = 0x90;
+	this->rectButtons[3].right = 0x84;
+	this->rectButtons[3].bottom = 0xa7;
 	__asm        jmp    _T232;
 // LINE 624:
 _T232:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xFE], 0xC;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x102], 0x86;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x106], 0x26;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10A], 0x9D;
+	this->rectButtons[4].left = 0xc;
+	this->rectButtons[4].top = 0x86;
+	this->rectButtons[4].right = 0x26;
+	this->rectButtons[4].bottom = 0x9d;
 	__asm        jmp    _T26b;
 // LINE 625:
 _T26b:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10E], 0x28;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x112], 0x90;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x116], 0x42;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x11A], 0xA7;
+	this->rectButtons[5].left = 0x28;
+	this->rectButtons[5].top = 0x90;
+	this->rectButtons[5].right = 0x42;
+	this->rectButtons[5].bottom = 0xa7;
 	__asm        jmp    _T2a4;
 // LINE 626:
 _T2a4:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x11E], 0x46;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x122], 0x9A;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x126], 0x60;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x12A], 0xB1;
+	this->rectButtons[6].left = 0x46;
+	this->rectButtons[6].top = 0x9a;
+	this->rectButtons[6].right = 0x60;
+	this->rectButtons[6].bottom = 0xb1;
 	__asm        jmp    _T2dd;
 // LINE 627:
 _T2dd:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x12E], 0x60;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x132], 0xA4;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x136], 0x7A;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x13A], 0xBB;
+	this->rectButtons[7].left = 0x60;
+	this->rectButtons[7].top = 0xa4;
+	this->rectButtons[7].right = 0x7a;
+	this->rectButtons[7].bottom = 0xbb;
 	__asm        jmp    _T316;
 // LINE 629:
 _T316:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x13E], 0x22;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x142], 0x37;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x146], 0x3F;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14A], 0x6B;
+	this->rectSliders[0].left = 0x22;
+	this->rectSliders[0].top = 0x37;
+	this->rectSliders[0].right = 0x3f;
+	this->rectSliders[0].bottom = 0x6b;
 	__asm        jmp    _T34f;
 // LINE 630:
 _T34f:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14E], 0x2D;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x152], 0x3A;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x156], 0x4A;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x15A], 0x6E;
+	this->rectSliders[1].left = 0x2d;
+	this->rectSliders[1].top = 0x3a;
+	this->rectSliders[1].right = 0x4a;
+	this->rectSliders[1].bottom = 0x6e;
 	__asm        jmp    _T388;
 // LINE 631:
 _T388:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x15E], 0x77;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x162], 0x54;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x166], 0x94;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x16A], 0x88;
+	this->rectSliders[2].left = 0x77;
+	this->rectSliders[2].top = 0x54;
+	this->rectSliders[2].right = 0x94;
+	this->rectSliders[2].bottom = 0x88;
 	__asm        jmp    _T3c1;
 // LINE 632:
 _T3c1:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x16E], 0x82;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x172], 0x56;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x176], 0x9F;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x17A], 0x8A;
+	this->rectSliders[3].left = 0x82;
+	this->rectSliders[3].top = 0x56;
+	this->rectSliders[3].right = 0x9f;
+	this->rectSliders[3].bottom = 0x8a;
 	__asm        jmp    _T3fa;
 // LINE 634:
 _T3fa:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x17E], 0x1D;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x182], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x186], 0x1E;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18A], 1;
+	this->rectHandle.left = 0x1d;
+	this->rectHandle.top = 0x0;
+	this->rectHandle.right = 0x1e;
+	this->rectHandle.bottom = 0x1;
 	__asm        jmp    _T433;
 // LINE 636:
 _T433:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18E], 0x44;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x192], 0x58;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x196], 0x57;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x19A], 0x63;
+	this->rectHandleBaseGraphics[0].left = 0x44;
+	this->rectHandleBaseGraphics[0].top = 0x58;
+	this->rectHandleBaseGraphics[0].right = 0x57;
+	this->rectHandleBaseGraphics[0].bottom = 0x63;
 	__asm        jmp    _T46c;
 // LINE 637:
 _T46c:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x19E], 0x67;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1A2], 0x5C;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1A6], 0x7F;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1AA], 0x71;
+	this->rectHandleBaseGraphics[1].left = 0x67;
+	this->rectHandleBaseGraphics[1].top = 0x5c;
+	this->rectHandleBaseGraphics[1].right = 0x7f;
+	this->rectHandleBaseGraphics[1].bottom = 0x71;
 	__asm        jmp    _T4a5;
 // LINE 638:
 _T4a5:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1AE], 0x52;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1B2], 0x63;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1B6], 0x67;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1BA], 0x7D;
+	this->rectHandleBaseGraphics[2].left = 0x52;
+	this->rectHandleBaseGraphics[2].top = 0x63;
+	this->rectHandleBaseGraphics[2].right = 0x67;
+	this->rectHandleBaseGraphics[2].bottom = 0x7d;
 	__asm        jmp    _T4de;
 // LINE 639:
 _T4de:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1BE], 0x67;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1C2], 0x50;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1C6], 0x73;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1CA], 0x5C;
+	this->rectHandleBaseGraphics[3].left = 0x67;
+	this->rectHandleBaseGraphics[3].top = 0x50;
+	this->rectHandleBaseGraphics[3].right = 0x73;
+	this->rectHandleBaseGraphics[3].bottom = 0x5c;
 	__asm        jmp    _T517;
 // LINE 640:
 _T517:
@@ -7240,25 +7119,17 @@ void JoystickWindow::GetSourceHandleBaseRects(/*packed*/ class MRect *rectHandle
 	__asm        test   eax, eax;
 	__asm        jne    _T7c;
 // LINE 873:
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax], 0;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+4], 0;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+8], 0x13;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0xC], 0xB;
+	rectHandleBaseSources->left = 0x0;
+	rectHandleBaseSources->top = 0x0;
+	rectHandleBaseSources->right = 0x13;
+	rectHandleBaseSources->bottom = 0xb;
 	__asm        jmp    _T4a;
 // LINE 874:
 _T4a:
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x10], 0;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x14], 0x31;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x18], 0x18;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x1C], 0x46;
+	rectHandleBaseSources-><MRect+0x10> = 0x0;
+	rectHandleBaseSources-><MRect+0x14> = 0x31;
+	rectHandleBaseSources-><MRect+0x18> = 0x18;
+	rectHandleBaseSources-><MRect+0x1c> = 0x46;
 	__asm        jmp    _T77;
 // LINE 876:
 _T77:
@@ -7269,50 +7140,34 @@ _T7c:
 	__asm        cmp    eax, 1;
 	__asm        jne    _Ted;
 // LINE 877:
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax], 0x18;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+4], 0;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+8], 0x2B;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0xC], 0xB;
+	rectHandleBaseSources->left = 0x18;
+	rectHandleBaseSources->top = 0x0;
+	rectHandleBaseSources->right = 0x2b;
+	rectHandleBaseSources->bottom = 0xb;
 	__asm        jmp    _Tbb;
 // LINE 878:
 _Tbb:
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x10], 0x18;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x14], 0x31;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x18], 0x30;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x1C], 0x46;
+	rectHandleBaseSources-><MRect+0x10> = 0x18;
+	rectHandleBaseSources-><MRect+0x14> = 0x31;
+	rectHandleBaseSources-><MRect+0x18> = 0x30;
+	rectHandleBaseSources-><MRect+0x1c> = 0x46;
 	__asm        jmp    _Te8;
 // LINE 880:
 _Te8:
 	__asm        jmp    _T146;
 // LINE 881:
 _Ted:
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax], 0x30;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+4], 0;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+8], 0x43;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0xC], 0xB;
+	rectHandleBaseSources->left = 0x30;
+	rectHandleBaseSources->top = 0x0;
+	rectHandleBaseSources->right = 0x43;
+	rectHandleBaseSources->bottom = 0xb;
 	__asm        jmp    _T119;
 // LINE 882:
 _T119:
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x10], 0x30;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x14], 0x31;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x18], 0x48;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x1C], 0x46;
+	rectHandleBaseSources-><MRect+0x10> = 0x30;
+	rectHandleBaseSources-><MRect+0x14> = 0x31;
+	rectHandleBaseSources-><MRect+0x18> = 0x48;
+	rectHandleBaseSources-><MRect+0x1c> = 0x46;
 	__asm        jmp    _T146;
 // LINE 886:
 _T146:
@@ -7321,25 +7176,17 @@ _T146:
 	__asm        test   eax, eax;
 	__asm        jne    _T1b7;
 // LINE 887:
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x20], 0;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x24], 0xB;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x28], 0x15;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x2C], 0x25;
+	rectHandleBaseSources-><MRect+0x20> = 0x0;
+	rectHandleBaseSources-><MRect+0x24> = 0xb;
+	rectHandleBaseSources-><MRect+0x28> = 0x15;
+	rectHandleBaseSources-><MRect+0x2c> = 0x25;
 	__asm        jmp    _T185;
 // LINE 888:
 _T185:
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x30], 0;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x34], 0x25;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x38], 0xC;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x3C], 0x31;
+	rectHandleBaseSources-><MRect+0x30> = 0x0;
+	rectHandleBaseSources-><MRect+0x34> = 0x25;
+	rectHandleBaseSources-><MRect+0x38> = 0xc;
+	rectHandleBaseSources-><MRect+0x3c> = 0x31;
 	__asm        jmp    _T1b2;
 // LINE 890:
 _T1b2:
@@ -7350,50 +7197,34 @@ _T1b7:
 	__asm        cmp    eax, 1;
 	__asm        jne    _T229;
 // LINE 891:
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x20], 0x18;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x24], 0xB;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x28], 0x2D;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x2C], 0x25;
+	rectHandleBaseSources-><MRect+0x20> = 0x18;
+	rectHandleBaseSources-><MRect+0x24> = 0xb;
+	rectHandleBaseSources-><MRect+0x28> = 0x2d;
+	rectHandleBaseSources-><MRect+0x2c> = 0x25;
 	__asm        jmp    _T1f7;
 // LINE 892:
 _T1f7:
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x30], 0x18;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x34], 0x25;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x38], 0x24;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x3C], 0x31;
+	rectHandleBaseSources-><MRect+0x30> = 0x18;
+	rectHandleBaseSources-><MRect+0x34> = 0x25;
+	rectHandleBaseSources-><MRect+0x38> = 0x24;
+	rectHandleBaseSources-><MRect+0x3c> = 0x31;
 	__asm        jmp    _T224;
 // LINE 894:
 _T224:
 	__asm        jmp    _T283;
 // LINE 895:
 _T229:
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x20], 0x30;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x24], 0xB;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x28], 0x45;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x2C], 0x25;
+	rectHandleBaseSources-><MRect+0x20> = 0x30;
+	rectHandleBaseSources-><MRect+0x24> = 0xb;
+	rectHandleBaseSources-><MRect+0x28> = 0x45;
+	rectHandleBaseSources-><MRect+0x2c> = 0x25;
 	__asm        jmp    _T256;
 // LINE 896:
 _T256:
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x30], 0x30;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x34], 0x25;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x38], 0x3C;
-	__asm        mov    eax, rectHandleBaseSources;
-	__asm        mov    dword ptr [eax+0x3C], 0x31;
+	rectHandleBaseSources-><MRect+0x30> = 0x30;
+	rectHandleBaseSources-><MRect+0x34> = 0x25;
+	rectHandleBaseSources-><MRect+0x38> = 0x3c;
+	rectHandleBaseSources-><MRect+0x3c> = 0x31;
 	__asm        jmp    _T283;
 // LINE 898:
 _T283:
@@ -8328,12 +8159,9 @@ _T78d:
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    _T7d9;
 _T7d9:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xA8], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xAC], 1;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F228;
+	this->bCommandsHaveChanged = 0x0;
+	this->bInitializing = 0x1;
+	this-><UserInputWindow+0x00> = 0x58f228;
 // LINE 1079:
 	return;
 
@@ -12746,8 +12574,8 @@ void UserInputWindow::ClearDeviceArea() {
 // LINE 1717:
 	__asm        jmp    _T17;
 _T17:
-	__asm        mov    ptDeviceArea.x, 0x28;
-	__asm        mov    ptDeviceArea.y, 9;
+	ptDeviceArea.x = 0x28;
+	ptDeviceArea.y = 0x9;
 	__asm        jmp    _T30;
 // LINE 1720:
 _T30:

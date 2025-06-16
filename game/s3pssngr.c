@@ -80,10 +80,8 @@ void HeliPassengerInit(/*packed*/ struct tagHeliPassengerData *heliPassengerData
 	__asm        mov    ecx, heliPassengerData;
 	__asm        mov    [ecx+4], eax;
 // LINE 64:
-	__asm        mov    lRowWidth, 5;
-	__asm        mov    eax, lRowWidth;
-	__asm        mov    ecx, heliPassengerData;
-	__asm        mov    [ecx+0x14], eax;
+	lRowWidth = 0x5;
+	heliPassengerData->lRowWidth = lRowWidth;
 // LINE 73:
 	__asm        mov    eax, lSeatsTotal;
 	__asm        cdq;

@@ -90,18 +90,12 @@ protected:
 // FUNCTION: COPTER_D 0x0048f120
 void IFlatImage::IFlatImage() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x591050;
+	this->mLockCount = 0x0;
+	this->mWidth = 0x0;
+	this->mHeight = 0x0;
+	this->mpBits = 0x0;
+	this->mStride = 0x0;
+	this-><vftable> = 0x591050;
 // LINE 27:
 	return;
 
@@ -231,11 +225,8 @@ _T131:
 	__asm        cmp    XCount, eax;
 	__asm        jge    _T16b;
 // LINE 74:
-	__asm        mov    eax, pSourceBits;
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, pDestBits;
-	__asm        mov    [ecx], al;
-	__asm        inc    pDestBits;
+	pDestBits[0] = pSourceBits[0];
+	pDestBits++;
 // LINE 77:
 	XError += SourceWidth;
 // LINE 78:
@@ -562,13 +553,10 @@ _T8b:
 	__asm        jmp    _Ta9;
 // LINE 223:
 _T90:
-	__asm        mov    Bottom, 0;
-	__asm        mov    eax, Bottom;
-	__asm        mov    Right, eax;
-	__asm        mov    eax, Right;
-	__asm        mov    Top, eax;
-	__asm        mov    eax, Top;
-	__asm        mov    Left, eax;
+	Bottom = 0x0;
+	Right = Bottom;
+	Top = Right;
+	Left = Top;
 // LINE 225:
 _Ta9:
 	__asm        mov    eax, this;
@@ -1056,12 +1044,8 @@ _T370:
 	__asm        cmp    dword ptr [eax+0x18], 0;
 	__asm        jne    _T393;
 // LINE 326:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+8], eax;
+	this-><CFlatImage+0x0c> = 0x0;
+	this-><CFlatImage+0x08> = this-><CFlatImage+0x0c>;
 // LINE 328:
 _T393:
 	this-><CFlatImage+0x10> = 0x0;

@@ -2612,8 +2612,8 @@ _T39:
 _T3e:
 	currentUserPersonalInfo = GetCurrentUserPersonalInfo();
 // LINE 214:
-	__asm        mov    lCurrentHeliType, 0;
-	__asm        mov    lCurrentRow, 0;
+	lCurrentHeliType = 0x0;
+	lCurrentRow = 0x0;
 	__asm        jmp    _T5c;
 _T59:
 	lCurrentHeliType++;
@@ -3090,36 +3090,24 @@ _T27:
 // FUNCTION: COPTER_D 0x004aa722
 void InventoryWindow::GetTitleAndAddressRects(/*packed*/ class MRect& rectTitle, /*packed*/ class MRect& rectAddress1, /*packed*/ class MRect& rectAddress2) {
 // LINE 378:
-	__asm        mov    eax, rectTitle;
-	__asm        mov    dword ptr [eax], 0xE8;
-	__asm        mov    eax, rectTitle;
-	__asm        mov    dword ptr [eax+4], 0x68;
-	__asm        mov    eax, rectTitle;
-	__asm        mov    dword ptr [eax+8], 0x1A6;
-	__asm        mov    eax, rectTitle;
-	__asm        mov    dword ptr [eax+0xC], 0x9C;
+	rectTitle.left = 0xe8;
+	rectTitle.top = 0x68;
+	rectTitle.right = 0x1a6;
+	rectTitle.bottom = 0x9c;
 	__asm        jmp    _T38;
 // LINE 379:
 _T38:
-	__asm        mov    eax, rectAddress1;
-	__asm        mov    dword ptr [eax], 0xAE;
-	__asm        mov    eax, rectAddress1;
-	__asm        mov    dword ptr [eax+4], 0x6C;
-	__asm        mov    eax, rectAddress1;
-	__asm        mov    dword ptr [eax+8], 0xFE;
-	__asm        mov    eax, rectAddress1;
-	__asm        mov    dword ptr [eax+0xC], 0xA2;
+	rectAddress1.left = 0xae;
+	rectAddress1.top = 0x6c;
+	rectAddress1.right = 0xfe;
+	rectAddress1.bottom = 0xa2;
 	__asm        jmp    _T64;
 // LINE 380:
 _T64:
-	__asm        mov    eax, rectAddress2;
-	__asm        mov    dword ptr [eax], 0x184;
-	__asm        mov    eax, rectAddress2;
-	__asm        mov    dword ptr [eax+4], 0x6C;
-	__asm        mov    eax, rectAddress2;
-	__asm        mov    dword ptr [eax+8], 0x1D4;
-	__asm        mov    eax, rectAddress2;
-	__asm        mov    dword ptr [eax+0xC], 0xA2;
+	rectAddress2.left = 0x184;
+	rectAddress2.top = 0x6c;
+	rectAddress2.right = 0x1d4;
+	rectAddress2.bottom = 0xa2;
 	__asm        jmp    _T90;
 // LINE 381:
 _T90:

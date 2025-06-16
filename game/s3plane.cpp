@@ -1880,12 +1880,8 @@ _T26c:
 	__asm        mov    ecx, this;
 	__asm        call   PlaneClass::UnlinkFromCell;
 // LINE 1459:
-	__asm        mov    eax, newpos.x;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x20], eax;
-	__asm        mov    eax, newpos.y;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x24], eax;
+	this->currentLocation.x = newpos.x;
+	this->currentLocation.y = newpos.y;
 	__asm        jmp    _T292;
 // LINE 1460:
 _T292:
@@ -3388,12 +3384,8 @@ _T2f0:
 // LINE 2190:
 	this->flags[1] = 0x1;
 // LINE 2195:
-	__asm        mov    eax, beampoint.x;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x20], eax;
-	__asm        mov    eax, beampoint.y;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x24], eax;
+	this->currentLocation.x = beampoint.x;
+	this->currentLocation.y = beampoint.y;
 	__asm        jmp    _T318;
 // LINE 2199:
 _T318:
@@ -3631,9 +3623,8 @@ _T34:
 	__asm        cmp    dword ptr [eax+0x48], 0;
 	__asm        jge    _T9b;
 // LINE 2491:
-	__asm        mov    vec.z, 0;
-	__asm        mov    eax, vec.z;
-	__asm        mov    vec.x, eax;
+	vec.z = 0x0;
+	vec.x = vec.z;
 // LINE 2492:
 	vec.y = 0xffff0000;
 // LINE 2494:

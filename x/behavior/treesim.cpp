@@ -260,14 +260,9 @@ public:
 // FUNCTION: COPTER_D 0x0055cb10
 void TreeSim::TreeSim(short maxStackSize, short startTreeID, /*unpacked*/ class Behavior *startBehavior, short * autoStackArea) {
 
-	__asm        mov    ax, maxStackSize;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xA], ax;
-	__asm        mov    eax, autoStackArea;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x10], eax;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x593630;
+	this->fMaxStackSize = maxStackSize;
+	this->fAutoStackArea = autoStackArea;
+	this-><vftable> = 0x593630;
 // LINE 13:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xA];
@@ -309,14 +304,9 @@ _T51:
 // FUNCTION: COPTER_D 0x0055cba5
 void TreeSim::TreeSim(short maxStackSize, short * autoStackArea) {
 
-	__asm        mov    ax, maxStackSize;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xA], ax;
-	__asm        mov    eax, autoStackArea;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x10], eax;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x593630;
+	this->fMaxStackSize = maxStackSize;
+	this->fAutoStackArea = autoStackArea;
+	this-><vftable> = 0x593630;
 // LINE 26:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xA];

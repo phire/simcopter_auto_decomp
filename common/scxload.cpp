@@ -1052,8 +1052,8 @@ _Tc4:
 	__asm        jmp    __RETURN;
 // LINE 314:
 _Te2:
-	__asm        mov    memstrm.curPos, 0;
-	__asm        mov    memstrm.nodeNo, 0;
+	memstrm.curPos = 0x0;
+	memstrm.nodeNo = 0x0;
 	__asm        jmp    _Tf4;
 // LINE 317:
 _Tf4:

@@ -618,9 +618,8 @@ _T152:
 	__asm        jmp    _T1cf;
 // LINE 206:
 _T17b:
-	__asm        mov    lCurrentValue, 0;
-	__asm        mov    eax, lCurrentValue;
-	__asm        mov    lIndex, eax;
+	lCurrentValue = 0x0;
+	lIndex = lCurrentValue;
 	__asm        jmp    _T196;
 _T190:
 	lIndex++;

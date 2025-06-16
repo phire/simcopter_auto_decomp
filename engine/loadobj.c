@@ -546,8 +546,8 @@ _T10d:
 _T168:
 	ObjectPtr->FacePtr = dataptr;
 // LINE 460:
-	__asm        mov    x, 0;
-	__asm        mov    VertCount, 0;
+	x = 0x0;
+	VertCount = 0x0;
 	__asm        jmp    _T193;
 _T18d:
 	x++;
@@ -1106,17 +1106,13 @@ _T12d:
 // LINE 836:
 	vertno = faceptr->PlyVerts;
 // LINE 839:
-	__asm        mov    minz, 0x75300000;
-	__asm        mov    eax, minz;
-	__asm        mov    miny, eax;
-	__asm        mov    eax, miny;
-	__asm        mov    minx, eax;
+	minz = 0x75300000;
+	miny = minz;
+	minx = miny;
 // LINE 840:
-	__asm        mov    maxz, 0x8AD00000;
-	__asm        mov    eax, maxz;
-	__asm        mov    maxy, eax;
-	__asm        mov    eax, maxy;
-	__asm        mov    maxx, eax;
+	maxz = 0x8ad00000;
+	maxy = maxz;
+	maxx = maxy;
 // LINE 845:
 	j = 0x0;
 	__asm        jmp    _T175;
@@ -1728,17 +1724,13 @@ _T143:
 // LINE 1158:
 	vertno = faceptr->PlyVerts;
 // LINE 1161:
-	__asm        mov    minz, 0x75300000;
-	__asm        mov    eax, minz;
-	__asm        mov    miny, eax;
-	__asm        mov    eax, miny;
-	__asm        mov    minx, eax;
+	minz = 0x75300000;
+	miny = minz;
+	minx = miny;
 // LINE 1162:
-	__asm        mov    maxz, 0x8AD00000;
-	__asm        mov    eax, maxz;
-	__asm        mov    maxy, eax;
-	__asm        mov    eax, maxy;
-	__asm        mov    maxx, eax;
+	maxz = 0x8ad00000;
+	maxy = maxz;
+	maxx = maxy;
 // LINE 1167:
 	j = 0x0;
 	__asm        jmp    _T18b;
@@ -2322,17 +2314,13 @@ _Ta4:
 // LINE 1457:
 	vertno = dataptr;
 // LINE 1460:
-	__asm        mov    minz, 0x75300000;
-	__asm        mov    eax, minz;
-	__asm        mov    miny, eax;
-	__asm        mov    eax, miny;
-	__asm        mov    minx, eax;
+	minz = 0x75300000;
+	miny = minz;
+	minx = miny;
 // LINE 1461:
-	__asm        mov    maxz, 0x8AD00000;
-	__asm        mov    eax, maxz;
-	__asm        mov    maxy, eax;
-	__asm        mov    eax, maxy;
-	__asm        mov    maxx, eax;
+	maxz = 0x8ad00000;
+	maxy = maxz;
+	maxx = maxy;
 // LINE 1466:
 	j = 0x0;
 	__asm        jmp    _Te9;
@@ -2521,17 +2509,13 @@ _Ta2:
 // LINE 1559:
 	vertno = dataptr;
 // LINE 1562:
-	__asm        mov    minz, 0x75300000;
-	__asm        mov    eax, minz;
-	__asm        mov    miny, eax;
-	__asm        mov    eax, miny;
-	__asm        mov    minx, eax;
+	minz = 0x75300000;
+	miny = minz;
+	minx = miny;
 // LINE 1563:
-	__asm        mov    maxz, 0x8AD00000;
-	__asm        mov    eax, maxz;
-	__asm        mov    maxy, eax;
-	__asm        mov    eax, maxy;
-	__asm        mov    maxx, eax;
+	maxz = 0x8ad00000;
+	maxy = maxz;
+	maxx = maxy;
 // LINE 1568:
 	j = 0x0;
 	__asm        jmp    _Te7;
@@ -2738,14 +2722,12 @@ void VR3dObjLocate(int32_t obj, int32_t x, int32_t y, int32_t z) {
 // LINE 1685:
 	oh = obj;
 // LINE 1689:
-	__asm        mov    i, 0;
-	__asm        mov    eax, oh;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    vert, eax;
+	i = 0x0;
+	vert = oh->VertsPtr;
 	__asm        jmp    _T2b;
 _T24:
-	__asm        inc    i;
-	__asm        add    vert, 0xC;
+	i++;
+	vert += 0xc;
 _T2b:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
@@ -2781,14 +2763,12 @@ int32_t VRObjGetHeight(int32_t obj) {
 // LINE 1716:
 	maxy = 0x80000000;
 // LINE 1718:
-	__asm        mov    i, 0;
-	__asm        mov    eax, oh;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    vert, eax;
+	i = 0x0;
+	vert = oh->VertsPtr;
 	__asm        jmp    _T32;
 _T2b:
-	__asm        inc    i;
-	__asm        add    vert, 0xC;
+	i++;
+	vert += 0xc;
 _T32:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
@@ -3008,16 +2988,9 @@ _T43:
 	__asm        jmp    _T40;
 // LINE 1858:
 _T8a:
-	__asm        mov    eax, obj;
-	__asm        mov    dword ptr [eax+0x20], 0;
-	__asm        mov    eax, obj;
-	__asm        mov    eax, [eax+0x20];
-	__asm        mov    ecx, obj;
-	__asm        mov    [ecx+0x1C], eax;
-	__asm        mov    eax, obj;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        mov    ecx, obj;
-	__asm        mov    [ecx+0x18], eax;
+	obj->CenterOrg.z = 0x0;
+	obj->CenterOrg.y = obj->CenterOrg.z;
+	obj->CenterOrg.x = obj->CenterOrg.y;
 // LINE 1859:
 }
 
@@ -3537,16 +3510,9 @@ _T7e:
 	__asm        add    eax, vnorms;
 	__asm        mov    vn, eax;
 // LINE 2121:
-	__asm        mov    eax, vn;
-	__asm        mov    dword ptr [eax+8], 0;
-	__asm        mov    eax, vn;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, vn;
-	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, vn;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, vn;
-	__asm        mov    [ecx], eax;
+	vn->z = 0x0;
+	vn->y = vn->z;
+	vn->x = vn->y;
 // LINE 2129:
 	__asm        mov    eax, i;
 	__asm        shl    eax, 4;
@@ -3824,12 +3790,8 @@ _T115:
 	__asm        cmp    nverts, eax;
 	__asm        jle    _T14e;
 // LINE 2274:
-	__asm        mov    eax, vert;
-	__asm        mov    dword ptr [eax+8], 0;
-	__asm        mov    eax, vert;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, vert;
-	__asm        mov    [ecx], eax;
+	vert->z = 0x0;
+	vert->x = vert->z;
 // LINE 2275:
 	__asm        mov    eax, seglen;
 	__asm        imul   eax, i;
@@ -3999,16 +3961,9 @@ _T10c:
 	__asm        cmp    nverts, eax;
 	__asm        jle    _T141;
 // LINE 2379:
-	__asm        mov    eax, vert;
-	__asm        mov    dword ptr [eax+8], 0;
-	__asm        mov    eax, vert;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, vert;
-	__asm        mov    [ecx], eax;
-	__asm        mov    eax, vert;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, vert;
-	__asm        mov    [ecx+4], eax;
+	vert->z = 0x0;
+	vert->x = vert->z;
+	vert->y = vert->x;
 // LINE 2380:
 	vert += 0xc;
 // LINE 2381:
@@ -4270,10 +4225,8 @@ int32_t VRStObjPolyHit(/*packed*/ struct Point3d *sloc, /*packed*/ struct Point3
 	i = 0x0;
 	__asm        jmp    _T5a;
 _T4f:
-	__asm        inc    i;
-	__asm        mov    eax, fh;
-	__asm        mov    eax, [eax];
-	__asm        mov    fh, eax;
+	i++;
+	fh = fh->NextFace;
 _T5a:
 	__asm        mov    eax, oh;
 	__asm        mov    ecx, i;
@@ -4434,17 +4387,13 @@ _T1a7:
 	__asm        add    ecx, eax;
 	__asm        mov    iloc.z, ecx;
 // LINE 2587:
-	__asm        mov    minz, 0x7FF80000;
-	__asm        mov    eax, minz;
-	__asm        mov    miny, eax;
-	__asm        mov    eax, miny;
-	__asm        mov    minx, eax;
+	minz = 0x7ff80000;
+	miny = minz;
+	minx = miny;
 // LINE 2588:
-	__asm        mov    maxz, 0x80080000;
-	__asm        mov    eax, maxz;
-	__asm        mov    maxy, eax;
-	__asm        mov    eax, maxy;
-	__asm        mov    maxx, eax;
+	maxz = 0x80080000;
+	maxy = maxz;
+	maxx = maxy;
 // LINE 2593:
 	vertno = fh->PlyVerts;
 // LINE 2594:

@@ -170,12 +170,12 @@ void S3FireReset() {
 // LINE 105:
 	S_fire_count = 0x0;
 // LINE 111:
-	__asm        mov    i, 0;
-	__asm        mov    fd, 0x6666F0;
+	i = 0x0;
+	fd = 0x6666f0;
 	__asm        jmp    _T30;
 _T26:
-	__asm        inc    i;
-	__asm        add    fd, 0xA0;
+	i++;
+	fd += 0xa0;
 _T30:
 	__asm        cmp    i, 0x8C;
 	__asm        jge    _T4b;
@@ -239,12 +239,12 @@ void S3FireInit() {
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 154:
-	__asm        mov    i, 0;
-	__asm        mov    fd, 0x6666F0;
+	i = 0x0;
+	fd = 0x6666f0;
 	__asm        jmp    _T72;
 _T68:
-	__asm        inc    i;
-	__asm        add    fd, 0xA0;
+	i++;
+	fd += 0xa0;
 _T72:
 	__asm        cmp    i, 0x8C;
 	__asm        jge    _T16a;
@@ -331,12 +331,12 @@ int32_t S3FireStart(/*packed*/ struct _CELL_FIRE_DATA *cfd, long cellx, long cel
 	/*bp-0x50*/  /*packed*/ struct _CELL_INFO *cptr;
 
 // LINE 213:
-	__asm        mov    i, 0;
-	__asm        mov    fd, 0x6666F0;
+	i = 0x0;
+	fd = 0x6666f0;
 	__asm        jmp    _T26;
 _T1c:
-	__asm        inc    i;
-	__asm        add    fd, 0xA0;
+	i++;
+	fd += 0xa0;
 _T26:
 	__asm        cmp    i, 0x8C;
 	__asm        jge    _T49;
@@ -583,12 +583,12 @@ _T3e:
 _T43:
 	mindist = 0x7d00;
 // LINE 341:
-	__asm        mov    i, 0;
-	__asm        mov    fd, 0x6666F0;
+	i = 0x0;
+	fd = 0x6666f0;
 	__asm        jmp    _T67;
 _T5d:
-	__asm        inc    i;
-	__asm        add    fd, 0xA0;
+	i++;
+	fd += 0xa0;
 _T67:
 	__asm        cmp    i, 0x8C;
 	__asm        jge    _T585;
@@ -1050,12 +1050,12 @@ _T7d:
 	return;
 // LINE 599:
 _T8f:
-	__asm        mov    i, 0;
-	__asm        mov    tfd, 0x6666F0;
+	i = 0x0;
+	tfd = 0x6666f0;
 	__asm        jmp    _Tac;
 _Ta2:
-	__asm        inc    i;
-	__asm        add    tfd, 0xA0;
+	i++;
+	tfd += 0xa0;
 _Tac:
 	__asm        cmp    i, 0x8C;
 	__asm        jge    _Te3;
@@ -2593,12 +2593,12 @@ _Taf5:
 	/*bp-0x8*/   long i;
 
 // LINE 947:
-	__asm        mov    i, 0;
-	__asm        mov    fd, 0x6666F0;
+	i = 0x0;
+	fd = 0x6666f0;
 	__asm        jmp    _T26;
 _T1c:
-	__asm        inc    i;
-	__asm        add    fd, 0xA0;
+	i++;
+	fd += 0xa0;
 _T26:
 	__asm        cmp    i, 0x8C;
 	__asm        jge    _T5e;
@@ -3985,12 +3985,12 @@ _T1e3:
 _T1e8:
 	S_fire_count = 0x0;
 // LINE 1686:
-	__asm        mov    i, 0;
-	__asm        mov    fd, 0x6666F0;
+	i = 0x0;
+	fd = 0x6666f0;
 	__asm        jmp    _T20f;
 _T205:
-	__asm        inc    i;
-	__asm        add    fd, 0xA0;
+	i++;
+	fd += 0xa0;
 _T20f:
 	__asm        cmp    i, 0x8C;
 	__asm        jge    _T396;

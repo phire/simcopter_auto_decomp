@@ -806,16 +806,12 @@ _T397:
 	this->mySecondImage = 0x0;
 	__asm        jmp    _T3a9;
 _T3a9:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x122], 0xFFFFFFFF;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x126], 0xFFFFFFFF;
+	this->ptSavedCursorPosition.x = 0xffffffff;
+	this->ptSavedCursorPosition.y = 0xffffffff;
 	__asm        jmp    _T3c8;
 _T3c8:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x12A], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x590C20;
+	this->lWindowPositionInHangar = 0x0;
+	this-><HangarWindow+0x00> = 0x590c20;
 // LINE 54:
 	__asm        cmp    G_daynight, 0;
 	__asm        jne    _T3fd;
@@ -1028,9 +1024,9 @@ _T213:
 _T218:
 	__asm        jmp    _T1c2;
 _T21d:
-	__asm        mov    list<HotSpot>::free_list, 0;
-	__asm        mov    list<HotSpot>::next_avail, 0;
-	__asm        mov    list<HotSpot>::last, 0;
+	list<HotSpot>::free_list = 0x0;
+	list<HotSpot>::next_avail = 0x0;
+	list<HotSpot>::last = 0x0;
 	__asm        jmp    _T240;
 _T240:
 	__asm        jmp    _T245;
@@ -2391,12 +2387,9 @@ _T57:
 	this->nScrollingHangar = 0x0;
 // LINE 268:
 _T64:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xFE], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10E], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10A], 0;
+	this->bTestedHotspotsAlready = 0x0;
+	this->myTimer.lTotalElapsedTime = 0x0;
+	this->myTimer.lStartTime = 0x0;
 	__asm        jmp    _T90;
 _T90:
 	__asm        jmp    _T95;
@@ -2873,12 +2866,9 @@ _T86:
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x30];
 // LINE 323:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xFE], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10E], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10A], 0;
+	this->bTestedHotspotsAlready = 0x0;
+	this->myTimer.lTotalElapsedTime = 0x0;
+	this->myTimer.lStartTime = 0x0;
 	__asm        jmp    _Tc1;
 _Tc1:
 	__asm        jmp    _Tc6;

@@ -195,12 +195,12 @@ void S3MissileReset() {
 // LINE 121:
 	S_num_active_lasers = 0x0;
 // LINE 128:
-	__asm        mov    i, 0;
-	__asm        mov    md, 0x66C2F0;
+	i = 0x0;
+	md = 0x66c2f0;
 	__asm        jmp    _T59;
 _T52:
-	__asm        inc    i;
-	__asm        add    md, 0x48;
+	i++;
+	md += 0x48;
 _T59:
 	__asm        cmp    i, 0xA;
 	__asm        jge    _T71;
@@ -210,12 +210,12 @@ _T59:
 	__asm        jmp    _T52;
 // LINE 138:
 _T71:
-	__asm        mov    i, 0;
-	__asm        mov    md, 0x66C5C0;
+	i = 0x0;
+	md = 0x66c5c0;
 	__asm        jmp    _T8b;
 _T84:
-	__asm        inc    i;
-	__asm        add    md, 0x48;
+	i++;
+	md += 0x48;
 _T8b:
 	__asm        cmp    i, 0xA;
 	__asm        jge    _Ta3;
@@ -225,12 +225,12 @@ _T8b:
 	__asm        jmp    _T84;
 // LINE 149:
 _Ta3:
-	__asm        mov    i, 0;
-	__asm        mov    md, 0x66E270;
+	i = 0x0;
+	md = 0x66e270;
 	__asm        jmp    _Tbd;
 _Tb6:
-	__asm        inc    i;
-	__asm        add    md, 0x48;
+	i++;
+	md += 0x48;
 _Tbd:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    _Td5;
@@ -240,12 +240,12 @@ _Tbd:
 	__asm        jmp    _Tb6;
 // LINE 159:
 _Td5:
-	__asm        mov    i, 0;
-	__asm        mov    md, 0x66DFA0;
+	i = 0x0;
+	md = 0x66dfa0;
 	__asm        jmp    _Tef;
 _Te8:
-	__asm        inc    i;
-	__asm        add    md, 0x48;
+	i++;
+	md += 0x48;
 _Tef:
 	__asm        cmp    i, 0xA;
 	__asm        jge    _T107;
@@ -255,12 +255,12 @@ _Tef:
 	__asm        jmp    _Te8;
 // LINE 169:
 _T107:
-	__asm        mov    i, 0;
-	__asm        mov    md, 0x66C890;
+	i = 0x0;
+	md = 0x66c890;
 	__asm        jmp    _T121;
 _T11a:
-	__asm        inc    i;
-	__asm        add    md, 0x48;
+	i++;
+	md += 0x48;
 _T121:
 	__asm        cmp    i, 2;
 	__asm        jge    _T139;
@@ -270,12 +270,12 @@ _T121:
 	__asm        jmp    _T11a;
 // LINE 179:
 _T139:
-	__asm        mov    i, 0;
-	__asm        mov    md, 0x66C920;
+	i = 0x0;
+	md = 0x66c920;
 	__asm        jmp    _T153;
 _T14c:
-	__asm        inc    i;
-	__asm        add    md, 0x48;
+	i++;
+	md += 0x48;
 _T153:
 	__asm        cmp    i, 0x50;
 	__asm        jge    __RETURN;
@@ -307,12 +307,12 @@ void S3MissileInit() {
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 210:
-	__asm        mov    i, 0;
-	__asm        mov    md, 0x66C890;
+	i = 0x0;
+	md = 0x66c890;
 	__asm        jmp    _T39;
 _T32:
-	__asm        inc    i;
-	__asm        add    md, 0x48;
+	i++;
+	md += 0x48;
 _T39:
 	__asm        cmp    i, 2;
 	__asm        jge    _Tee;
@@ -368,12 +368,12 @@ _Tee:
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 236:
-	__asm        mov    i, 0;
-	__asm        mov    md, 0x66C2F0;
+	i = 0x0;
+	md = 0x66c2f0;
 	__asm        jmp    _T121;
 _T11a:
-	__asm        inc    i;
-	__asm        add    md, 0x48;
+	i++;
+	md += 0x48;
 _T121:
 	__asm        cmp    i, 0xA;
 	__asm        jge    _T1d9;
@@ -429,12 +429,12 @@ _T1d9:
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 261:
-	__asm        mov    i, 0;
-	__asm        mov    md, 0x66C5C0;
+	i = 0x0;
+	md = 0x66c5c0;
 	__asm        jmp    _T20c;
 _T205:
-	__asm        inc    i;
-	__asm        add    md, 0x48;
+	i++;
+	md += 0x48;
 _T20c:
 	__asm        cmp    i, 0xA;
 	__asm        jge    _T2c4;
@@ -482,12 +482,12 @@ _T20c:
 	__asm        jmp    _T205;
 // LINE 283:
 _T2c4:
-	__asm        mov    i, 0;
-	__asm        mov    md, 0x66E270;
+	i = 0x0;
+	md = 0x66e270;
 	__asm        jmp    _T2de;
 _T2d7:
-	__asm        inc    i;
-	__asm        add    md, 0x48;
+	i++;
+	md += 0x48;
 _T2de:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    _T3c1;
@@ -551,12 +551,12 @@ _T2de:
 	__asm        jmp    _T2d7;
 // LINE 311:
 _T3c1:
-	__asm        mov    i, 0;
-	__asm        mov    md, 0x66C920;
+	i = 0x0;
+	md = 0x66c920;
 	__asm        jmp    _T3db;
 _T3d4:
-	__asm        inc    i;
-	__asm        add    md, 0x48;
+	i++;
+	md += 0x48;
 _T3db:
 	__asm        cmp    i, 0x50;
 	__asm        jge    _T514;
@@ -648,12 +648,12 @@ _T503:
 	__asm        jmp    _T3d4;
 // LINE 357:
 _T514:
-	__asm        mov    i, 0;
-	__asm        mov    md, 0x66DFA0;
+	i = 0x0;
+	md = 0x66dfa0;
 	__asm        jmp    _T52e;
 _T527:
-	__asm        inc    i;
-	__asm        add    md, 0x48;
+	i++;
+	md += 0x48;
 _T52e:
 	__asm        cmp    i, 0xA;
 	__asm        jge    __RETURN;
@@ -739,12 +739,12 @@ __RETURN:
 _T2a:
 	S_msl_fire_delay = 0x3333;
 // LINE 424:
-	__asm        mov    i, 0;
-	__asm        mov    md, 0x66C2F0;
+	i = 0x0;
+	md = 0x66c2f0;
 	__asm        jmp    _T54;
 _T4a:
-	__asm        inc    i;
-	__asm        add    md, 0x48;
+	i++;
+	md += 0x48;
 _T54:
 	__asm        cmp    i, 0xA;
 	__asm        jge    _T77;
@@ -781,12 +781,12 @@ _Tab:
 	__asm        cmp    msl_type, 0xB;
 	__asm        jne    _T12c;
 // LINE 446:
-	__asm        mov    i, 0;
-	__asm        mov    md, 0x66C890;
+	i = 0x0;
+	md = 0x66c890;
 	__asm        jmp    _Td5;
 _Tcb:
-	__asm        inc    i;
-	__asm        add    md, 0x48;
+	i++;
+	md += 0x48;
 _Td5:
 	__asm        cmp    i, 2;
 	__asm        jge    _Tf8;
@@ -823,12 +823,12 @@ _T12c:
 	__asm        cmp    msl_type, 2;
 	__asm        jne    _T29b;
 // LINE 468:
-	__asm        mov    i, 0;
-	__asm        mov    md, 0x66C920;
+	i = 0x0;
+	md = 0x66c920;
 	__asm        jmp    _T156;
 _T14c:
-	__asm        inc    i;
-	__asm        add    md, 0x48;
+	i++;
+	md += 0x48;
 _T156:
 	__asm        cmp    i, 0x50;
 	__asm        jge    _T179;
@@ -910,9 +910,8 @@ _T1ff:
 	__asm        jmp    _T260;
 // LINE 505:
 _T23b:
-	__asm        mov    eax, S_tracer;
-	__asm        mov    finfo.Bitmap, eax;
-	__asm        inc    S_tracer;
+	finfo.Bitmap = S_tracer;
+	S_tracer++;
 // LINE 506:
 	__asm        cmp    S_tracer, 0x20;
 	__asm        jl     _T260;
@@ -945,12 +944,12 @@ _T29b:
 	__asm        cmp    msl_type, 5;
 	__asm        jne    _T3d3;
 // LINE 518:
-	__asm        mov    i, 0;
-	__asm        mov    md, 0x66C920;
+	i = 0x0;
+	md = 0x66c920;
 	__asm        jmp    _T2c5;
 _T2bb:
-	__asm        inc    i;
-	__asm        add    md, 0x48;
+	i++;
+	md += 0x48;
 _T2c5:
 	__asm        cmp    i, 0x50;
 	__asm        jge    _T2e8;
@@ -1051,12 +1050,12 @@ _T3d3:
 	__asm        cmp    msl_type, 6;
 	__asm        jne    _T4e9;
 // LINE 559:
-	__asm        mov    i, 0;
-	__asm        mov    md, 0x66C920;
+	i = 0x0;
+	md = 0x66c920;
 	__asm        jmp    _T3fd;
 _T3f3:
-	__asm        inc    i;
-	__asm        add    md, 0x48;
+	i++;
+	md += 0x48;
 _T3fd:
 	__asm        cmp    i, 0x50;
 	__asm        jge    _T420;
@@ -1143,12 +1142,12 @@ _T4e9:
 	__asm        cmp    msl_type, 7;
 	__asm        jne    _T5ff;
 // LINE 592:
-	__asm        mov    i, 0;
-	__asm        mov    md, 0x66C920;
+	i = 0x0;
+	md = 0x66c920;
 	__asm        jmp    _T513;
 _T509:
-	__asm        inc    i;
-	__asm        add    md, 0x48;
+	i++;
+	md += 0x48;
 _T513:
 	__asm        cmp    i, 0x50;
 	__asm        jge    _T536;
@@ -1235,12 +1234,12 @@ _T5ff:
 	__asm        cmp    msl_type, 9;
 	__asm        jne    _T792;
 // LINE 625:
-	__asm        mov    i, 0;
-	__asm        mov    md, 0x66C920;
+	i = 0x0;
+	md = 0x66c920;
 	__asm        jmp    _T629;
 _T61f:
-	__asm        inc    i;
-	__asm        add    md, 0x48;
+	i++;
+	md += 0x48;
 _T629:
 	__asm        cmp    i, 0x50;
 	__asm        jge    _T64c;
@@ -1378,12 +1377,12 @@ _T792:
 _T7b0:
 	S_msl_fire_delay = 0x3333;
 // LINE 681:
-	__asm        mov    i, 0;
-	__asm        mov    md, 0x66C5C0;
+	i = 0x0;
+	md = 0x66c5c0;
 	__asm        jmp    _T7da;
 _T7d0:
-	__asm        inc    i;
-	__asm        add    md, 0x48;
+	i++;
+	md += 0x48;
 _T7da:
 	__asm        cmp    i, 0xA;
 	__asm        jge    _T7fd;
@@ -1437,12 +1436,12 @@ _T879:
 	__asm        cmp    msl_type, 4;
 	__asm        jne    _T96d;
 // LINE 706:
-	__asm        mov    i, 0;
-	__asm        mov    md, 0x66E270;
+	i = 0x0;
+	md = 0x66e270;
 	__asm        jmp    _T8a3;
 _T899:
-	__asm        inc    i;
-	__asm        add    md, 0x48;
+	i++;
+	md += 0x48;
 _T8a3:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    _T8c6;
@@ -1513,12 +1512,12 @@ _T96d:
 	__asm        cmp    msl_type, 0xA;
 	__asm        jne    _Ta39;
 // LINE 739:
-	__asm        mov    i, 0;
-	__asm        mov    md, 0x66E270;
+	i = 0x0;
+	md = 0x66e270;
 	__asm        jmp    _T997;
 _T98d:
-	__asm        inc    i;
-	__asm        add    md, 0x48;
+	i++;
+	md += 0x48;
 _T997:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    _T9ba;
@@ -1576,12 +1575,12 @@ _Ta39:
 	__asm        cmp    msl_type, 8;
 	__asm        jne    _Taaf;
 // LINE 773:
-	__asm        mov    i, 0;
-	__asm        mov    md, 0x66DFA0;
+	i = 0x0;
+	md = 0x66dfa0;
 	__asm        jmp    _Ta63;
 _Ta59:
-	__asm        inc    i;
-	__asm        add    md, 0x48;
+	i++;
+	md += 0x48;
 _Ta63:
 	__asm        cmp    i, 0xA;
 	__asm        jge    _Ta86;
@@ -2051,12 +2050,12 @@ _T58:
 	__asm        add    esp, 4;
 // LINE 948:
 _T87:
-	__asm        mov    i, 0;
-	__asm        mov    md, 0x66E270;
+	i = 0x0;
+	md = 0x66e270;
 	__asm        jmp    _Ta7;
 _T9d:
-	__asm        inc    i;
-	__asm        add    md, 0x48;
+	i++;
+	md += 0x48;
 _Ta7:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    _Ta26;
@@ -2802,12 +2801,12 @@ _Ta21:
 	__asm        jmp    _T9d;
 // LINE 1194:
 _Ta26:
-	__asm        mov    i, 0;
-	__asm        mov    md, 0x66C5C0;
+	i = 0x0;
+	md = 0x66c5c0;
 	__asm        jmp    _Ta46;
 _Ta3c:
-	__asm        inc    i;
-	__asm        add    md, 0x48;
+	i++;
+	md += 0x48;
 _Ta46:
 	__asm        cmp    i, 0xA;
 	__asm        jge    _T1121;
@@ -3339,12 +3338,12 @@ _T111c:
 	__asm        jmp    _Ta3c;
 // LINE 1368:
 _T1121:
-	__asm        mov    i, 0;
-	__asm        mov    md, 0x66C2F0;
+	i = 0x0;
+	md = 0x66c2f0;
 	__asm        jmp    _T1141;
 _T1137:
-	__asm        inc    i;
-	__asm        add    md, 0x48;
+	i++;
+	md += 0x48;
 _T1141:
 	__asm        cmp    i, 0xA;
 	__asm        jge    _T151c;
@@ -3652,12 +3651,12 @@ _T1517:
 	__asm        jmp    _T1137;
 // LINE 1477:
 _T151c:
-	__asm        mov    i, 0;
-	__asm        mov    md, 0x66C890;
+	i = 0x0;
+	md = 0x66c890;
 	__asm        jmp    _T153c;
 _T1532:
-	__asm        inc    i;
-	__asm        add    md, 0x48;
+	i++;
+	md += 0x48;
 _T153c:
 	__asm        cmp    i, 2;
 	__asm        jge    _T18d5;
@@ -3944,12 +3943,12 @@ _T18d0:
 	__asm        jmp    _T1532;
 // LINE 1576:
 _T18d5:
-	__asm        mov    i, 0;
-	__asm        mov    md, 0x66C920;
+	i = 0x0;
+	md = 0x66c920;
 	__asm        jmp    _T18f5;
 _T18eb:
-	__asm        inc    i;
-	__asm        add    md, 0x48;
+	i++;
+	md += 0x48;
 _T18f5:
 	__asm        cmp    i, 0x50;
 	__asm        jge    _T1e8e;
@@ -4379,12 +4378,12 @@ _T1e89:
 	__asm        jmp    _T18eb;
 // LINE 1712:
 _T1e8e:
-	__asm        mov    i, 0;
-	__asm        mov    md, 0x66DFA0;
+	i = 0x0;
+	md = 0x66dfa0;
 	__asm        jmp    _T1eae;
 _T1ea4:
-	__asm        inc    i;
-	__asm        add    md, 0x48;
+	i++;
+	md += 0x48;
 _T1eae:
 	__asm        cmp    i, 0xA;
 	__asm        jge    _T2202;
@@ -6007,8 +6006,8 @@ _T2a2:
 	__asm        test   ah, 1;
 	__asm        je     _T2ca;
 
-	__asm        mov    reinterpret_cast<uint32_t>(newdist), 0;
-	__asm        mov    *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&newdist) + 4), 0x3FE00000;
+	reinterpret_cast<uint32_t>(newdist) = 0x0;
+	*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&newdist) + 4) = 0x3fe00000;
 // LINE 2580:
 _T2ca:
 	__asm        mov    eax, dist;
@@ -6107,12 +6106,12 @@ _T9e:
 	/*bp-0x8*/   /*packed*/ struct _MISSILE_DATA *md;
 
 // LINE 2667:
-	__asm        mov    i, 0;
-	__asm        mov    md, 0x66E270;
+	i = 0x0;
+	md = 0x66e270;
 	__asm        jmp    _T23;
 _T1c:
-	__asm        inc    i;
-	__asm        add    md, 0x48;
+	i++;
+	md += 0x48;
 _T23:
 	__asm        cmp    i, 0x1E;
 	__asm        jge    _T55;

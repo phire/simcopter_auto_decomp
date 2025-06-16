@@ -3684,13 +3684,8 @@ _Ta95:
 	__asm        jmp    _Ta9a;
 // LINE 1582:
 _Ta9a:
-	__asm        mov    eax, dirIndex;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x7E], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x7E];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x82], eax;
+	this->goal.edgeIndex = dirIndex;
+	this->goal.direction = this->goal.edgeIndex;
 // LINE 1583:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x7E];
@@ -5391,10 +5386,8 @@ _T55:
 	diagRoad = 0x2;
 // LINE 2381:
 _T5c:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xEE], 0xA;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xE6], 0;
+	this->legOfTurn = 0xa;
+	this->turnIndex = 0x0;
 // LINE 2382:
 	__asm        mov    eax, diagRoad;
 	__asm        lea    eax, [eax+eax*2];
@@ -5418,10 +5411,8 @@ _Tb6:
 	diagRoad = 0x3;
 // LINE 2386:
 _Tbd:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xEE], 0xA;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xE6], 0;
+	this->legOfTurn = 0xa;
+	this->turnIndex = 0x0;
 // LINE 2387:
 	__asm        mov    eax, diagRoad;
 	__asm        lea    eax, [eax+eax*2];
@@ -5445,10 +5436,8 @@ _T117:
 	diagRoad = 0x0;
 // LINE 2391:
 _T11e:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xEE], 0xA;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xE6], 0;
+	this->legOfTurn = 0xa;
+	this->turnIndex = 0x0;
 // LINE 2392:
 	__asm        mov    eax, diagRoad;
 	__asm        lea    eax, [eax+eax*2];
@@ -5472,10 +5461,8 @@ _T178:
 	diagRoad = 0x1;
 // LINE 2396:
 _T17f:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xEE], 0xA;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xE6], 0;
+	this->legOfTurn = 0xa;
+	this->turnIndex = 0x0;
 // LINE 2397:
 	__asm        mov    eax, diagRoad;
 	__asm        lea    eax, [eax+eax*2];

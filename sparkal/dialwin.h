@@ -2,36 +2,24 @@
 // FUNCTION: COPTER_D 0x0044fce0
 void DialHand::DialHand() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 1;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0xFFFFFFFF;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0x2710;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 2;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18], 1;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1C], 0x3F800000;
+	this->bHasChangedSinceLastDraw = 0x1;
+	this->lCurrentValue = 0x0;
+	this->nDialDirection = 0xffffffff;
+	this->lMaxValue = 0x2710;
+	this->lStartAngle = 0x0;
+	this->lDialLength = 0x2;
+	this->lDialWidth = 0x1;
+	this->fAnglePerValue = 0x3f800000;
 	__asm        jmp    _T60;
 _T60:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x20], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x24], 0;
+	this->ptPosition.x = 0x0;
+	this->ptPosition.y = 0x0;
 	__asm        jmp    _T79;
 _T79:
 	__asm        jmp    _T7e;
 _T7e:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x28], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x2C], 0;
+	this->ptEndPosition.x = 0x0;
+	this->ptEndPosition.y = 0x0;
 	__asm        jmp    _T97;
 // LINE 342:
 _T97:

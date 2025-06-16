@@ -4726,17 +4726,11 @@ _T5c:
 	__asm        mov    ecx, windowToDestroy;
 	__asm        call   RenderSettingsWindow::GetCurrentSettings;
 // LINE 709:
-	__asm        mov    eax, bShowBuildingTextures;
-	__asm        mov    G_texobjs, eax;
-	__asm        mov    eax, G_texobjs;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x4328], eax;
+	G_texobjs = bShowBuildingTextures;
+	this-><CGameApp+0x4328:4> = G_texobjs;
 // LINE 710:
-	__asm        mov    eax, bShowGroundTextures;
-	__asm        mov    G_texterr, eax;
-	__asm        mov    eax, G_texterr;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x432C], eax;
+	G_texterr = bShowGroundTextures;
+	this-><CGameApp+0x432c:4> = G_texterr;
 // LINE 711:
 	this-><CGameApp+0x4330:4> = bShowSkyAndClouds;
 // LINE 712:
@@ -4880,13 +4874,10 @@ _Te8:
 	__asm        jmp    _T17f;
 // LINE 750:
 _T166:
-	__asm        mov    tempSoundPreferences.lVehicleVolume, 0x2710;
-	__asm        mov    eax, tempSoundPreferences.lVehicleVolume;
-	__asm        mov    tempSoundPreferences.lSoundEffectsVolume, eax;
-	__asm        mov    eax, tempSoundPreferences.lSoundEffectsVolume;
-	__asm        mov    tempSoundPreferences.lDispatchVolume, eax;
-	__asm        mov    eax, tempSoundPreferences.lDispatchVolume;
-	__asm        mov    tempSoundPreferences.lMasterVolume, eax;
+	tempSoundPreferences.lVehicleVolume = 0x2710;
+	tempSoundPreferences.lSoundEffectsVolume = tempSoundPreferences.lVehicleVolume;
+	tempSoundPreferences.lDispatchVolume = tempSoundPreferences.lSoundEffectsVolume;
+	tempSoundPreferences.lMasterVolume = tempSoundPreferences.lDispatchVolume;
 // LINE 752:
 _T17f:
 	__asm        lea    eax, tempSoundPreferences.lMasterVolume;

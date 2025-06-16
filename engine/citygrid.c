@@ -435,17 +435,11 @@ _T4e2:
 	__asm        jmp    _T61c;
 // LINE 317:
 _T52d:
-	__asm        mov    eax, CVerts[0][0];
-	__asm        add    eax, ul;
-	__asm        mov    ecx, iptr;
-	__asm        mov    [ecx], eax;
-	__asm        add    iptr, 4;
+	iptr[0] = (CVerts[0][0] + ul);
+	iptr += 0x4;
 // LINE 318:
-	__asm        mov    eax, CVerts[0][1];
-	__asm        add    eax, ul;
-	__asm        mov    ecx, iptr;
-	__asm        mov    [ecx], eax;
-	__asm        add    iptr, 4;
+	iptr[0] = (CVerts[0][1] + ul);
+	iptr += 0x4;
 // LINE 319:
 	iptr[0] = (CVerts[1][0] + ul);
 // LINE 320:
@@ -468,17 +462,11 @@ _T52d:
 	__asm        jmp    _T635;
 // LINE 330:
 _T5a2:
-	__asm        mov    eax, CVerts[0][1];
-	__asm        add    eax, ul;
-	__asm        mov    ecx, iptr;
-	__asm        mov    [ecx], eax;
-	__asm        add    iptr, 4;
+	iptr[0] = (CVerts[0][1] + ul);
+	iptr += 0x4;
 // LINE 331:
-	__asm        mov    eax, CVerts[1][1];
-	__asm        add    eax, ul;
-	__asm        mov    ecx, iptr;
-	__asm        mov    [ecx], eax;
-	__asm        add    iptr, 4;
+	iptr[0] = (CVerts[1][1] + ul);
+	iptr += 0x4;
 // LINE 332:
 	iptr[0] = (CVerts[1][0] + ul);
 // LINE 333:
@@ -529,11 +517,9 @@ _T644:
 	__asm        call   0x004D1FF1;
 	__asm        add    esp, 4;
 // LINE 353:
-	__asm        mov    GridPos.loc.z, 0;
-	__asm        mov    eax, GridPos.loc.z;
-	__asm        mov    GridPos.loc.y, eax;
-	__asm        mov    eax, GridPos.loc.y;
-	__asm        mov    GridPos.loc.x, eax;
+	GridPos.loc.z = 0x0;
+	GridPos.loc.y = GridPos.loc.z;
+	GridPos.loc.x = GridPos.loc.y;
 // LINE 354:
 	b_FirstTime = 0x0;
 // LINE 357:

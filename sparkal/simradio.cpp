@@ -917,14 +917,10 @@ struct bidirectional_iterator<basic_string<char>,int>{ // packed(0x1 bytes) TI: 
 // FUNCTION: COPTER_D 0x00433120
 void RadioStation::RadioStation() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 1;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 0;
+	this->bPlaying = 0x1;
+	this->myRadioStationState.CycleArray.start = 0x0;
+	this->myRadioStationState.CycleArray.finish = 0x0;
+	this->myRadioStationState.CycleArray.end_of_storage = 0x0;
 	__asm        jmp    _T39;
 _T39:
 	__asm        push   1;
@@ -1024,24 +1020,11 @@ _T194:
 	this->sMusicDirectory.c_str_ptr = 0x0;
 	__asm        jmp    _T1a3;
 _T1a3:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x54], 0;
-	__asm        inc    list<basic_string<char>>::number_of_lists;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x50;
-	__asm        call   list<basic_string<char>>::get_node;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x50], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x50];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x50];
-	__asm        mov    [ecx], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x50];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x50];
-	__asm        mov    [ecx+4], eax;
+	this->musicSelectionList.length = 0x0;
+	list<basic_string<char>>::number_of_lists++;
+	this->musicSelectionList.node = (this + 0x50)->list<basic_string<char>>::get_node();
+	this->musicSelectionList.node->next = this->musicSelectionList.node;
+	this->musicSelectionList.node->prev = this->musicSelectionList.node;
 	__asm        jmp    _T1e6;
 _T1e6:
 	__asm        jmp    _T1eb;
@@ -1075,24 +1058,11 @@ _T248:
 	this->sDJDirectory.c_str_ptr = 0x0;
 	__asm        jmp    _T257;
 _T257:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x68], 0;
-	__asm        inc    list<basic_string<char>>::number_of_lists;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x64;
-	__asm        call   list<basic_string<char>>::get_node;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x64], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x64];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x64];
-	__asm        mov    [ecx], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x64];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x64];
-	__asm        mov    [ecx+4], eax;
+	this->djSelectionList.length = 0x0;
+	list<basic_string<char>>::number_of_lists++;
+	this->djSelectionList.node = (this + 0x64)->list<basic_string<char>>::get_node();
+	this->djSelectionList.node->next = this->djSelectionList.node;
+	this->djSelectionList.node->prev = this->djSelectionList.node;
 	__asm        jmp    _T29a;
 _T29a:
 	__asm        jmp    _T29f;
@@ -1126,24 +1096,11 @@ _T2fc:
 	this->sCommercialDirectory.c_str_ptr = 0x0;
 	__asm        jmp    _T30b;
 _T30b:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x7C], 0;
-	__asm        inc    list<basic_string<char>>::number_of_lists;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x78;
-	__asm        call   list<basic_string<char>>::get_node;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x78], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x78];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x78];
-	__asm        mov    [ecx], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x78];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x78];
-	__asm        mov    [ecx+4], eax;
+	this->commercialSelectionList.length = 0x0;
+	list<basic_string<char>>::number_of_lists++;
+	this->commercialSelectionList.node = (this + 0x78)->list<basic_string<char>>::get_node();
+	this->commercialSelectionList.node->next = this->commercialSelectionList.node;
+	this->commercialSelectionList.node->prev = this->commercialSelectionList.node;
 	__asm        jmp    _T34e;
 _T34e:
 	__asm        jmp    _T353;
@@ -1166,24 +1123,11 @@ _T38d:
 	this->sJingleDirectory.c_str_ptr = 0x0;
 	__asm        jmp    _T39f;
 _T39f:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x90], 0;
-	__asm        inc    list<basic_string<char>>::number_of_lists;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x8C;
-	__asm        call   list<basic_string<char>>::get_node;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x8C], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x8C];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x8C];
-	__asm        mov    [ecx], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x8C];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x8C];
-	__asm        mov    [ecx+4], eax;
+	this->jingleSelectionList.length = 0x0;
+	list<basic_string<char>>::number_of_lists++;
+	this->jingleSelectionList.node = (this + 0x8c)->list<basic_string<char>>::get_node();
+	this->jingleSelectionList.node->next = this->jingleSelectionList.node;
+	this->jingleSelectionList.node->prev = this->jingleSelectionList.node;
 	__asm        jmp    _T3f7;
 _T3f7:
 	__asm        jmp    _T3fc;
@@ -1267,12 +1211,9 @@ _T4ad:
 // FUNCTION: COPTER_D 0x00433605
 void RadioStation::RadioStation(const /*packed*/ class RadioStation& copyRadioStation) {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 0;
+	this->myRadioStationState.CycleArray.start = 0x0;
+	this->myRadioStationState.CycleArray.finish = 0x0;
+	this->myRadioStationState.CycleArray.end_of_storage = 0x0;
 	__asm        jmp    _T2f;
 _T2f:
 	__asm        push   1;
@@ -1368,24 +1309,11 @@ _T176:
 	this->sMusicDirectory.c_str_ptr = 0x0;
 	__asm        jmp    _T185;
 _T185:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x54], 0;
-	__asm        inc    list<basic_string<char>>::number_of_lists;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x50;
-	__asm        call   list<basic_string<char>>::get_node;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x50], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x50];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x50];
-	__asm        mov    [ecx], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x50];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x50];
-	__asm        mov    [ecx+4], eax;
+	this->musicSelectionList.length = 0x0;
+	list<basic_string<char>>::number_of_lists++;
+	this->musicSelectionList.node = (this + 0x50)->list<basic_string<char>>::get_node();
+	this->musicSelectionList.node->next = this->musicSelectionList.node;
+	this->musicSelectionList.node->prev = this->musicSelectionList.node;
 	__asm        jmp    _T1c8;
 _T1c8:
 	__asm        jmp    _T1cd;
@@ -1408,24 +1336,11 @@ _T201:
 	this->sDJDirectory.c_str_ptr = 0x0;
 	__asm        jmp    _T210;
 _T210:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x68], 0;
-	__asm        inc    list<basic_string<char>>::number_of_lists;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x64;
-	__asm        call   list<basic_string<char>>::get_node;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x64], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x64];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x64];
-	__asm        mov    [ecx], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x64];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x64];
-	__asm        mov    [ecx+4], eax;
+	this->djSelectionList.length = 0x0;
+	list<basic_string<char>>::number_of_lists++;
+	this->djSelectionList.node = (this + 0x64)->list<basic_string<char>>::get_node();
+	this->djSelectionList.node->next = this->djSelectionList.node;
+	this->djSelectionList.node->prev = this->djSelectionList.node;
 	__asm        jmp    _T253;
 _T253:
 	__asm        jmp    _T258;
@@ -1448,24 +1363,11 @@ _T28c:
 	this->sCommercialDirectory.c_str_ptr = 0x0;
 	__asm        jmp    _T29b;
 _T29b:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x7C], 0;
-	__asm        inc    list<basic_string<char>>::number_of_lists;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x78;
-	__asm        call   list<basic_string<char>>::get_node;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x78], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x78];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x78];
-	__asm        mov    [ecx], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x78];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x78];
-	__asm        mov    [ecx+4], eax;
+	this->commercialSelectionList.length = 0x0;
+	list<basic_string<char>>::number_of_lists++;
+	this->commercialSelectionList.node = (this + 0x78)->list<basic_string<char>>::get_node();
+	this->commercialSelectionList.node->next = this->commercialSelectionList.node;
+	this->commercialSelectionList.node->prev = this->commercialSelectionList.node;
 	__asm        jmp    _T2de;
 _T2de:
 	__asm        jmp    _T2e3;
@@ -1488,24 +1390,11 @@ _T31d:
 	this->sJingleDirectory.c_str_ptr = 0x0;
 	__asm        jmp    _T32f;
 _T32f:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x90], 0;
-	__asm        inc    list<basic_string<char>>::number_of_lists;
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0x8C;
-	__asm        call   list<basic_string<char>>::get_node;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x8C], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x8C];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x8C];
-	__asm        mov    [ecx], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x8C];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x8C];
-	__asm        mov    [ecx+4], eax;
+	this->jingleSelectionList.length = 0x0;
+	list<basic_string<char>>::number_of_lists++;
+	this->jingleSelectionList.node = (this + 0x8c)->list<basic_string<char>>::get_node();
+	this->jingleSelectionList.node->next = this->jingleSelectionList.node;
+	this->jingleSelectionList.node->prev = this->jingleSelectionList.node;
 	__asm        jmp    _T387;
 _T387:
 	__asm        jmp    _T38c;
@@ -1568,13 +1457,8 @@ _T43a:
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     _T464;
 
-	__asm        mov    eax, copyRadioStation;
-	__asm        mov    eax, [eax+0x3C];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x3C], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x3C];
-	__asm        inc    dword ptr [eax+0xC];
+	this->sCallSign.reference = copyRadioStation.sCallSign.reference;
+	this->sCallSign.reference-><basic_string_ref<char>+0x0c:4>++;
 	__asm        jmp    _T4b0;
 _T464:
 	__asm        push   0x10;
@@ -1622,13 +1506,8 @@ _T4d9:
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     _T503;
 
-	__asm        mov    eax, copyRadioStation;
-	__asm        mov    eax, [eax+0x44];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x44], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x44];
-	__asm        inc    dword ptr [eax+0xC];
+	this->sStationBaseDirectory.reference = copyRadioStation.sStationBaseDirectory.reference;
+	this->sStationBaseDirectory.reference-><basic_string_ref<char>+0x0c:4>++;
 	__asm        jmp    _T54f;
 _T503:
 	__asm        push   0x10;
@@ -1814,13 +1693,8 @@ _T100:
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     _T12a;
 
-	__asm        mov    eax, copyRadioStation;
-	__asm        mov    eax, [eax+0x3C];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x3C], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x3C];
-	__asm        inc    dword ptr [eax+0xC];
+	this->sCallSign.reference = copyRadioStation.sCallSign.reference;
+	this->sCallSign.reference-><basic_string_ref<char>+0x0c:4>++;
 	__asm        jmp    _T176;
 _T12a:
 	__asm        push   0x10;
@@ -1888,13 +1762,8 @@ _T1da:
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     _T204;
 
-	__asm        mov    eax, copyRadioStation;
-	__asm        mov    eax, [eax+0x44];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x44], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x44];
-	__asm        inc    dword ptr [eax+0xC];
+	this->sStationBaseDirectory.reference = copyRadioStation.sStationBaseDirectory.reference;
+	this->sStationBaseDirectory.reference-><basic_string_ref<char>+0x0c:4>++;
 	__asm        jmp    _T250;
 _T204:
 	__asm        push   0x10;
@@ -1942,13 +1811,8 @@ _T279:
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     _T2a3;
 
-	__asm        mov    eax, copyRadioStation;
-	__asm        mov    eax, [eax+0x4C];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x4C], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x4C];
-	__asm        inc    dword ptr [eax+0xC];
+	this->sMusicDirectory.reference = copyRadioStation.sMusicDirectory.reference;
+	this->sMusicDirectory.reference-><basic_string_ref<char>+0x0c:4>++;
 	__asm        jmp    _T2ef;
 _T2a3:
 	__asm        push   0x10;
@@ -2005,13 +1869,8 @@ _T336:
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     _T360;
 
-	__asm        mov    eax, copyRadioStation;
-	__asm        mov    eax, [eax+0x60];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x60], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x60];
-	__asm        inc    dword ptr [eax+0xC];
+	this->sDJDirectory.reference = copyRadioStation.sDJDirectory.reference;
+	this->sDJDirectory.reference-><basic_string_ref<char>+0x0c:4>++;
 	__asm        jmp    _T3ac;
 _T360:
 	__asm        push   0x10;
@@ -2068,13 +1927,8 @@ _T3f3:
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     _T41d;
 
-	__asm        mov    eax, copyRadioStation;
-	__asm        mov    eax, [eax+0x74];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x74], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x74];
-	__asm        inc    dword ptr [eax+0xC];
+	this->sCommercialDirectory.reference = copyRadioStation.sCommercialDirectory.reference;
+	this->sCommercialDirectory.reference-><basic_string_ref<char>+0x0c:4>++;
 	__asm        jmp    _T469;
 _T41d:
 	__asm        push   0x10;
@@ -2131,13 +1985,8 @@ _T4be:
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     _T4f4;
 
-	__asm        mov    eax, copyRadioStation;
-	__asm        mov    eax, [eax+0x88];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x88], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x88];
-	__asm        inc    dword ptr [eax+0xC];
+	this->sJingleDirectory.reference = copyRadioStation.sJingleDirectory.reference;
+	this->sJingleDirectory.reference-><basic_string_ref<char>+0x0c:4>++;
 	__asm        jmp    _T54b;
 _T4f4:
 	__asm        push   0x10;
@@ -2847,10 +2696,8 @@ _T369:
 // LINE 259:
 	this->myRadioStationState.bPaused = 0x1;
 // LINE 260:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x28], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x24], 0;
+	this->myRadioStationState.timerPause.lTotalElapsedTime = 0x0;
+	this->myRadioStationState.timerPause.lStartTime = 0x0;
 	__asm        jmp    _T3a9;
 // LINE 261:
 _T3a9:
@@ -5137,9 +4984,9 @@ _T3e:
 	__asm        jmp    _T43;
 // LINE 416:
 _T43:
-	__asm        mov    stringArray.start, 0;
-	__asm        mov    stringArray.finish, 0;
-	__asm        mov    stringArray.end_of_storage, 0;
+	stringArray.start = 0x0;
+	stringArray.finish = 0x0;
+	stringArray.end_of_storage = 0x0;
 	__asm        jmp    _T5d;
 // LINE 419:
 _T5d:
@@ -5715,13 +5562,8 @@ _Tb1:
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     _Tdb;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x3C];
-	__asm        mov    ecx, sStationCallSign;
-	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, sStationCallSign;
-	__asm        mov    eax, [eax+4];
-	__asm        inc    dword ptr [eax+0xC];
+	sStationCallSign.reference = this->sCallSign.reference;
+	sStationCallSign.reference-><basic_string_ref<char>+0x0c:4>++;
 	__asm        jmp    _T1ce;
 _Tdb:
 	__asm        push   0x10;
@@ -6789,12 +6631,9 @@ __RETURN:
 // FUNCTION: COPTER_D 0x00437b10
 void Radio::Radio() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
+	this-><Radio+0x04:4> = 0x0;
+	this-><Radio+0x08:4> = 0x0;
+	this-><Radio+0x0c:4> = 0x0;
 	__asm        jmp    _T2f;
 _T2f:
 	__asm        mov    eax, this;

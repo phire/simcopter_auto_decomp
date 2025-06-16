@@ -481,46 +481,46 @@ static unsigned long NormFreq(unsigned short processor, unsigned long freq) {
 	/*bp-0x50*/  unsigned short iPentiumSpeeds[12]; // 0x18 bytes
 
 // LINE 431:
-	__asm        mov    i386Speeds[0], 0x10;
-	__asm        mov    i386Speeds[1], 0x14;
-	__asm        mov    i386Speeds[2], 0x19;
-	__asm        mov    i386Speeds[3], 0x21;
-	__asm        mov    i386Speeds[4], 0x28;
-	__asm        mov    i386Speeds[5], 0;
+	i386Speeds[0] = 0x10;
+	i386Speeds[1] = 0x14;
+	i386Speeds[2] = 0x19;
+	i386Speeds[3] = 0x21;
+	i386Speeds[4] = 0x28;
+	i386Speeds[5] = 0x0;
 // LINE 432:
-	__asm        mov    i486Speeds[0], 0x19;
-	__asm        mov    i486Speeds[1], 0x21;
-	__asm        mov    i486Speeds[2], 0x32;
-	__asm        mov    i486Speeds[3], 0x42;
-	__asm        mov    i486Speeds[4], 0x4B;
-	__asm        mov    i486Speeds[5], 0x64;
-	__asm        mov    i486Speeds[6], 0;
+	i486Speeds[0] = 0x19;
+	i486Speeds[1] = 0x21;
+	i486Speeds[2] = 0x32;
+	i486Speeds[3] = 0x42;
+	i486Speeds[4] = 0x4b;
+	i486Speeds[5] = 0x64;
+	i486Speeds[6] = 0x0;
 // LINE 433:
-	__asm        mov    iPentiumSpeeds[0], 0x3C;
-	__asm        mov    iPentiumSpeeds[1], 0x42;
-	__asm        mov    iPentiumSpeeds[2], 0x4B;
-	__asm        mov    iPentiumSpeeds[3], 0x5A;
-	__asm        mov    iPentiumSpeeds[4], 0x64;
-	__asm        mov    iPentiumSpeeds[5], 0x78;
-	__asm        mov    iPentiumSpeeds[6], 0x85;
+	iPentiumSpeeds[0] = 0x3c;
+	iPentiumSpeeds[1] = 0x42;
+	iPentiumSpeeds[2] = 0x4b;
+	iPentiumSpeeds[3] = 0x5a;
+	iPentiumSpeeds[4] = 0x64;
+	iPentiumSpeeds[5] = 0x78;
+	iPentiumSpeeds[6] = 0x85;
 // LINE 434:
-	__asm        mov    iPentiumSpeeds[7], 0x96;
-	__asm        mov    iPentiumSpeeds[8], 0xA6;
-	__asm        mov    iPentiumSpeeds[9], 0xB9;
-	__asm        mov    iPentiumSpeeds[10], 0xC8;
-	__asm        mov    iPentiumSpeeds[11], 0;
+	iPentiumSpeeds[7] = 0x96;
+	iPentiumSpeeds[8] = 0xa6;
+	iPentiumSpeeds[9] = 0xb9;
+	iPentiumSpeeds[10] = 0xc8;
+	iPentiumSpeeds[11] = 0x0;
 // LINE 435:
-	__asm        mov    iPentiumProSpeeds[0], 0x85;
-	__asm        mov    iPentiumProSpeeds[1], 0x96;
-	__asm        mov    iPentiumProSpeeds[2], 0xA7;
-	__asm        mov    iPentiumProSpeeds[3], 0xB9;
-	__asm        mov    iPentiumProSpeeds[4], 0xC8;
+	iPentiumProSpeeds[0] = 0x85;
+	iPentiumProSpeeds[1] = 0x96;
+	iPentiumProSpeeds[2] = 0xa7;
+	iPentiumProSpeeds[3] = 0xb9;
+	iPentiumProSpeeds[4] = 0xc8;
 // LINE 436:
-	__asm        mov    iPentiumProSpeeds[5], 0xDC;
-	__asm        mov    iPentiumProSpeeds[6], 0xF0;
-	__asm        mov    iPentiumProSpeeds[7], 0x10A;
-	__asm        mov    iPentiumProSpeeds[8], 0x12C;
-	__asm        mov    iPentiumProSpeeds[9], 0;
+	iPentiumProSpeeds[5] = 0xdc;
+	iPentiumProSpeeds[6] = 0xf0;
+	iPentiumProSpeeds[7] = 0x10a;
+	iPentiumProSpeeds[8] = 0x12c;
+	iPentiumProSpeeds[9] = 0x0;
 // LINE 438:
 	ptr = 0x0;
 // LINE 440:

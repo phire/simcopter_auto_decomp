@@ -739,10 +739,8 @@ void S3AddLogEntry(/*packed*/ struct tagLogBase *logData, int32_t bShowUserMessa
 // FUNCTION: COPTER_D 0x004ebc4f
 void LogManager::LogManager() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0x1F4;
+	this->myMessageDisplayManager = 0x0;
+	this->lMaxEntries = 0x1f4;
 // LINE 47:
 	__asm        push   8;
 	__asm        call   operator new;
@@ -1094,9 +1092,9 @@ _T1a5:
 _T1aa:
 	__asm        jmp    _T154;
 _T1af:
-	__asm        mov    list<tagLogBase *>::free_list, 0;
-	__asm        mov    list<tagLogBase *>::next_avail, 0;
-	__asm        mov    list<tagLogBase *>::last, 0;
+	list<tagLogBase *>::free_list = 0x0;
+	list<tagLogBase *>::next_avail = 0x0;
+	list<tagLogBase *>::last = 0x0;
 	__asm        jmp    _T1d2;
 _T1d2:
 	__asm        jmp    _T1d7;
@@ -3352,8 +3350,8 @@ void LogManager::MakeStringFromLogData(/*packed*/ struct tagLogBase *logData, /*
 	__asm        mov    tempTime<MTimeLocalized+0x04>, eax;
 	__asm        jmp    _T8a;
 _T8a:
-	__asm        mov    tempTime.nLanguage, 0;
-	__asm        mov    tempTime<vftable>, 0x592680;
+	tempTime.nLanguage = 0x0;
+	tempTime<vftable> = 0x592680;
 	__asm        jmp    _Ta3;
 // LINE 372:
 _Ta3:

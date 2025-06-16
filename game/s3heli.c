@@ -1627,21 +1627,11 @@ _T61:
 // LINE 941:
 	hd->dybracket->vnext = 0x0;
 // LINE 944:
-	__asm        movsx  eax, reinterpret_cast<uint16_t>(mapx);
-	__asm        mov    ecx, hd;
-	__asm        mov    [ecx+0x18], eax;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0x18];
-	__asm        mov    ecx, hd;
-	__asm        mov    [ecx+0x10], eax;
+	hd->currpos.x = reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(mapx));
+	hd->lastpos.x = hd->currpos.x;
 // LINE 945:
-	__asm        movsx  eax, reinterpret_cast<uint16_t>(mapy);
-	__asm        mov    ecx, hd;
-	__asm        mov    [ecx+0x1C], eax;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        mov    ecx, hd;
-	__asm        mov    [ecx+0x14], eax;
+	hd->currpos.y = reinterpret_cast<int16_t>(reinterpret_cast<uint16_t>(mapy));
+	hd->lastpos.y = hd->currpos.y;
 // LINE 947:
 	hd->vector.x = 0x0;
 // LINE 948:
@@ -3525,16 +3515,8 @@ _T68:
 // LINE 1664:
 	pos.loc.y = S_shadalt;
 // LINE 1667:
-	__asm        mov    eax, pos.loc.y;
-	__asm        mov    ecx, hd;
-	__asm        mov    ecx, [ecx+0xB4];
-	__asm        mov    [ecx+0x1C], eax;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0xB4];
-	__asm        mov    eax, [eax+0x1C];
-	__asm        mov    ecx, hd;
-	__asm        mov    ecx, [ecx+0xA8];
-	__asm        mov    [ecx+0x1C], eax;
+	hd->dyrotshadow->loc.y = pos.loc.y;
+	hd->dyshadow->loc.y = hd->dyrotshadow->loc.y;
 // LINE 1670:
 	alt = (hd->dyheli->loc.y - alt);
 // LINE 1672:
@@ -7238,14 +7220,12 @@ _T8a:
 	__asm        mov    absdz, eax;
 // LINE 2924:
 _T9c:
-	__asm        mov    c, 0;
-	__asm        mov    eax, hd;
-	__asm        mov    eax, [eax+0x178];
-	__asm        mov    vert, eax;
+	c = 0x0;
+	vert = hd->rinfo.verts;
 	__asm        jmp    _Tbb;
 _Tb4:
-	__asm        inc    c;
-	__asm        add    vert, 0xC;
+	c++;
+	vert += 0xc;
 _Tbb:
 	__asm        mov    eax, hd;
 	__asm        mov    eax, [eax+0x1AC];
@@ -7253,16 +7233,9 @@ _Tbb:
 	__asm        cmp    eax, c;
 	__asm        jle    _Tf4;
 // LINE 2926:
-	__asm        mov    eax, vert;
-	__asm        mov    dword ptr [eax+8], 0;
-	__asm        mov    eax, vert;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, vert;
-	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, vert;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, vert;
-	__asm        mov    [ecx], eax;
+	vert->z = 0x0;
+	vert->y = vert->z;
+	vert->x = vert->y;
 // LINE 2927:
 	__asm        jmp    _Tb4;
 // LINE 2930:
@@ -7289,9 +7262,9 @@ _Tf4:
 	__asm        mov    c, eax;
 	__asm        jmp    _T148;
 _T13d:
-	__asm        inc    c;
-	__asm        add    vert, 0xC;
-	__asm        add    pvert, 0xC;
+	c++;
+	vert += 0xc;
+	pvert += 0xc;
 _T148:
 	__asm        cmp    c, 0x14;
 	__asm        jge    __RETURN;
@@ -8157,11 +8130,9 @@ int32_t S3HeliGetDeflection(/*packed*/ struct _HELI_DATA *hd, /*packed*/ struct 
 	i = 0x0;
 	__asm        jmp    _T6c;
 _T5d:
-	__asm        inc    i;
-	__asm        mov    eax, deltax;
-	__asm        add    fx, eax;
-	__asm        mov    eax, deltaz;
-	__asm        add    fz, eax;
+	i++;
+	fx += deltax;
+	fz += deltaz;
 _T6c:
 	__asm        cmp    i, 0x50;
 	__asm        jge    _Tf2;
@@ -8628,11 +8599,9 @@ void S3HeliSetSpotlite(/*packed*/ struct _HELI_DATA *hd, int32_t maxobjy, int32_
 	return;
 // LINE 3983:
 _T1e:
-	__asm        mov    color, 1;
-	__asm        mov    eax, color;
-	__asm        mov    maxobjy, eax;
-	__asm        mov    eax, maxobjy;
-	__asm        mov    alt, eax;
+	color = 0x1;
+	maxobjy = color;
+	alt = maxobjy;
 // LINE 3985:
 	__asm        push   0;
 	__asm        mov    eax, hd;
@@ -8927,12 +8896,9 @@ _T31d:
 	scale = 0x4ccc;
 // LINE 4095:
 _T3e6:
-	__asm        mov    eax, scale;
-	__asm        mov    pos.scale.z, eax;
-	__asm        mov    eax, pos.scale.z;
-	__asm        mov    pos.scale.y, eax;
-	__asm        mov    eax, pos.scale.y;
-	__asm        mov    pos.scale.x, eax;
+	pos.scale.z = scale;
+	pos.scale.y = pos.scale.z;
+	pos.scale.x = pos.scale.y;
 // LINE 4096:
 	__asm        mov    eax, hd;
 	__asm        mov    esi, [eax+0xC0];
@@ -9426,11 +9392,9 @@ _T30f:
 	__asm        shl    eax, 0x10;
 	__asm        mov    S_turbpitch[9], eax;
 // LINE 4385:
-	__asm        mov    yaw, 0;
-	__asm        mov    eax, yaw;
-	__asm        mov    pitch, eax;
-	__asm        mov    eax, pitch;
-	__asm        mov    slide, eax;
+	yaw = 0x0;
+	pitch = yaw;
+	slide = pitch;
 // LINE 4386:
 	i = 0x1;
 	__asm        jmp    _T352;

@@ -215,16 +215,9 @@ int32_t Normalize(/*packed*/ struct Point3d *V) {
 	__asm        jmp    _Tdd;
 // LINE 85:
 _Tbc:
-	__asm        mov    eax, V;
-	__asm        mov    dword ptr [eax+8], 0;
-	__asm        mov    eax, V;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, V;
-	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, V;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, V;
-	__asm        mov    [ecx], eax;
+	V->z = 0x0;
+	V->y = V->z;
+	V->x = V->y;
 // LINE 87:
 _Tdd:
 	__asm        fld    r;
@@ -284,15 +277,9 @@ int32_t SideOfPlane(/*packed*/ struct Point3d *V, /*packed*/ struct Point3d *p, 
 	/*bp-0x20*/  /*packed*/ struct Plane plane; // 0x10 bytes
 
 // LINE 134:
-	__asm        mov    eax, p;
-	__asm        mov    eax, [eax];
-	__asm        mov    d.x, eax;
-	__asm        mov    eax, p;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    d.y, eax;
-	__asm        mov    eax, p;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    d.z, eax;
+	d.x = p->x;
+	d.y = p->y;
+	d.z = p->z;
 // LINE 135:
 	__asm        lea    eax, d.x;
 	__asm        push   eax;

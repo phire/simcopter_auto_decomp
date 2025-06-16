@@ -578,22 +578,16 @@ _T7a:
 	__asm        call   GraphicWindow::GraphicWindow;
 	__asm        jmp    _Ta1;
 _Ta1:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x74], 0x50;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x78], 0x1A4;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x7C], 0x226;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x80], 0x1CC;
+	this->rectTabs.left = 0x50;
+	this->rectTabs.top = 0x1a4;
+	this->rectTabs.right = 0x226;
+	this->rectTabs.bottom = 0x1cc;
 	__asm        jmp    _Tdd;
 _Tdd:
 	__asm        jmp    _Te2;
 _Te2:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x84], 0x3C;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x88], 0x42;
+	this->ptHelicopterMainGraphic.x = 0x3c;
+	this->ptHelicopterMainGraphic.y = 0x42;
 	__asm        jmp    _T107;
 _T107:
 	__asm        mov    dword ptr [ebp-0x110], 3;
@@ -682,108 +676,73 @@ _T284:
 	__asm        call   MFont::MFont;
 	__asm        jmp    _T2a8;
 _T2a8:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x182], 0x46;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x186], 0x140;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18A], 0x138;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18E], 0x168;
+	this->rectHistoryText.left = 0x46;
+	this->rectHistoryText.top = 0x140;
+	this->rectHistoryText.right = 0x138;
+	this->rectHistoryText.bottom = 0x168;
 	__asm        jmp    _T2ed;
 _T2ed:
 	__asm        jmp    _T2f2;
 _T2f2:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x192], 0x46;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x196], 0x176;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x19A], 0xC28;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x19E], 0x19A;
+	this->rectSpecialtiesText.left = 0x46;
+	this->rectSpecialtiesText.top = 0x176;
+	this->rectSpecialtiesText.right = 0xc28;
+	this->rectSpecialtiesText.bottom = 0x19a;
 	__asm        jmp    _T337;
 _T337:
 	__asm        jmp    _T33c;
 _T33c:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1A2], 0x14E;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1A6], 0x140;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1AA], 0x24E;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1AE], 0x19A;
+	this->rectDescriptionText.left = 0x14e;
+	this->rectDescriptionText.top = 0x140;
+	this->rectDescriptionText.right = 0x24e;
+	this->rectDescriptionText.bottom = 0x19a;
 	__asm        jmp    _T381;
 _T381:
 	__asm        jmp    _T386;
 _T386:
 	__asm        jmp    _T38b;
 _T38b:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1C2], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1C6], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1CA], 0;
+	this->buttonWindowBuy = 0x0;
+	this->buttonWindowSell = 0x0;
+	this->buttonWindowDone = 0x0;
 	__asm        jmp    _T3c0;
 _T3c0:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1CE], 0x4A;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1D2], 0x12E;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1D6], 0x138;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1DA], 0x140;
+	this->rectHelicopterHistoryTitle.left = 0x4a;
+	this->rectHelicopterHistoryTitle.top = 0x12e;
+	this->rectHelicopterHistoryTitle.right = 0x138;
+	this->rectHelicopterHistoryTitle.bottom = 0x140;
 	__asm        jmp    _T405;
 _T405:
 	__asm        jmp    _T40a;
 _T40a:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1DE], 0x4A;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1E2], 0x166;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1E6], 0x138;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1EA], 0x178;
+	this->rectHelicopterSpecialtiesTitle.left = 0x4a;
+	this->rectHelicopterSpecialtiesTitle.top = 0x166;
+	this->rectHelicopterSpecialtiesTitle.right = 0x138;
+	this->rectHelicopterSpecialtiesTitle.bottom = 0x178;
 	__asm        jmp    _T44f;
 _T44f:
 	__asm        jmp    _T454;
 _T454:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1EE], 0x150;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1F2], 0x12E;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1F6], 0x24E;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1FA], 0x140;
+	this->rectHelicopterDescriptionTitle.left = 0x150;
+	this->rectHelicopterDescriptionTitle.top = 0x12e;
+	this->rectHelicopterDescriptionTitle.right = 0x24e;
+	this->rectHelicopterDescriptionTitle.bottom = 0x140;
 	__asm        jmp    _T499;
 _T499:
 	__asm        jmp    _T49e;
 _T49e:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1FE], 0x200;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x202], 0x48;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x206], 0x24E;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x20A], 0x6A;
+	this->rectHelicopterCurrentFundsTitle.left = 0x200;
+	this->rectHelicopterCurrentFundsTitle.top = 0x48;
+	this->rectHelicopterCurrentFundsTitle.right = 0x24e;
+	this->rectHelicopterCurrentFundsTitle.bottom = 0x6a;
 	__asm        jmp    _T4e3;
 _T4e3:
 	__asm        jmp    _T4e8;
 _T4e8:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x20E], 0x200;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x212], 0x8C;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x216], 0x24E;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x21A], 0xB2;
+	this->rectHelicopterItemCostTitle.left = 0x200;
+	this->rectHelicopterItemCostTitle.top = 0x8c;
+	this->rectHelicopterItemCostTitle.right = 0x24e;
+	this->rectHelicopterItemCostTitle.bottom = 0xb2;
 	__asm        jmp    _T52d;
 _T52d:
 	__asm        push   0x10;
@@ -4013,10 +3972,10 @@ _T1446:
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+0x48];
 // LINE 229:
-	__asm        mov    rectFundsText.left, 0x206;
-	__asm        mov    rectFundsText.top, 0x6A;
-	__asm        mov    rectFundsText.right, 0x250;
-	__asm        mov    rectFundsText.bottom, 0x86;
+	rectFundsText.left = 0x206;
+	rectFundsText.top = 0x6a;
+	rectFundsText.right = 0x250;
+	rectFundsText.bottom = 0x86;
 	__asm        jmp    _T14bb;
 // LINE 230:
 _T14bb:
@@ -4142,14 +4101,10 @@ _T163d:
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+0x48];
 // LINE 237:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1B2], 0x206;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1B6], 0xB0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1BA], 0x250;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1BE], 0xCC;
+	this->rectCostText.left = 0x206;
+	this->rectCostText.top = 0xb0;
+	this->rectCostText.right = 0x250;
+	this->rectCostText.bottom = 0xcc;
 	__asm        jmp    _T16ca;
 // LINE 238:
 _T16ca:
@@ -4690,38 +4645,38 @@ _T1e69:
 	__asm        lea    ecx, tempTabBuffer<CBackBuffer+0x00:None>;
 	__asm        call   CBackBuffer::Compose;
 // LINE 285:
-	__asm        mov    rectEquipmentDescriptionTitles[0].left, 0xA2;
-	__asm        mov    rectEquipmentDescriptionTitles[0].top, 0x62;
-	__asm        mov    rectEquipmentDescriptionTitles[0].right, 0x144;
-	__asm        mov    rectEquipmentDescriptionTitles[0].bottom, 0x70;
+	rectEquipmentDescriptionTitles[0].left = 0xa2;
+	rectEquipmentDescriptionTitles[0].top = 0x62;
+	rectEquipmentDescriptionTitles[0].right = 0x144;
+	rectEquipmentDescriptionTitles[0].bottom = 0x70;
 	__asm        jmp    _T1ed1;
 // LINE 286:
 _T1ed1:
-	__asm        mov    rectEquipmentDescriptionTitles[1].left, 0xA2;
-	__asm        mov    rectEquipmentDescriptionTitles[1].top, 0xCF;
-	__asm        mov    rectEquipmentDescriptionTitles[1].right, 0x144;
-	__asm        mov    rectEquipmentDescriptionTitles[1].bottom, 0xDE;
+	rectEquipmentDescriptionTitles[1].left = 0xa2;
+	rectEquipmentDescriptionTitles[1].top = 0xcf;
+	rectEquipmentDescriptionTitles[1].right = 0x144;
+	rectEquipmentDescriptionTitles[1].bottom = 0xde;
 	__asm        jmp    _T1efe;
 // LINE 287:
 _T1efe:
-	__asm        mov    rectEquipmentDescriptionTitles[2].left, 0xA2;
-	__asm        mov    rectEquipmentDescriptionTitles[2].top, 0x136;
-	__asm        mov    rectEquipmentDescriptionTitles[2].right, 0x144;
-	__asm        mov    rectEquipmentDescriptionTitles[2].bottom, 0x144;
+	rectEquipmentDescriptionTitles[2].left = 0xa2;
+	rectEquipmentDescriptionTitles[2].top = 0x136;
+	rectEquipmentDescriptionTitles[2].right = 0x144;
+	rectEquipmentDescriptionTitles[2].bottom = 0x144;
 	__asm        jmp    _T1f2b;
 // LINE 288:
 _T1f2b:
-	__asm        mov    rectEquipmentDescriptionTitles[3].left, 0x1B6;
-	__asm        mov    rectEquipmentDescriptionTitles[3].top, 0x62;
-	__asm        mov    rectEquipmentDescriptionTitles[3].right, 0x24A;
-	__asm        mov    rectEquipmentDescriptionTitles[3].bottom, 0x70;
+	rectEquipmentDescriptionTitles[3].left = 0x1b6;
+	rectEquipmentDescriptionTitles[3].top = 0x62;
+	rectEquipmentDescriptionTitles[3].right = 0x24a;
+	rectEquipmentDescriptionTitles[3].bottom = 0x70;
 	__asm        jmp    _T1f58;
 // LINE 289:
 _T1f58:
-	__asm        mov    rectEquipmentDescriptionTitles[4].left, 0x1B6;
-	__asm        mov    rectEquipmentDescriptionTitles[4].top, 0xCF;
-	__asm        mov    rectEquipmentDescriptionTitles[4].right, 0x24A;
-	__asm        mov    rectEquipmentDescriptionTitles[4].bottom, 0xDE;
+	rectEquipmentDescriptionTitles[4].left = 0x1b6;
+	rectEquipmentDescriptionTitles[4].top = 0xcf;
+	rectEquipmentDescriptionTitles[4].right = 0x24a;
+	rectEquipmentDescriptionTitles[4].bottom = 0xde;
 	__asm        jmp    _T1f85;
 // LINE 290:
 _T1f85:
@@ -4777,38 +4732,38 @@ _T1ff4:
 	__asm        jmp    _T1f94;
 // LINE 295:
 _T2046:
-	__asm        mov    rectEquipmentDescriptions[0].left, 0xA6;
-	__asm        mov    rectEquipmentDescriptions[0].top, 0x72;
-	__asm        mov    rectEquipmentDescriptions[0].right, 0x148;
-	__asm        mov    rectEquipmentDescriptions[0].bottom, 0xB8;
+	rectEquipmentDescriptions[0].left = 0xa6;
+	rectEquipmentDescriptions[0].top = 0x72;
+	rectEquipmentDescriptions[0].right = 0x148;
+	rectEquipmentDescriptions[0].bottom = 0xb8;
 	__asm        jmp    _T2073;
 // LINE 296:
 _T2073:
-	__asm        mov    rectEquipmentDescriptions[1].left, 0xA6;
-	__asm        mov    rectEquipmentDescriptions[1].top, 0xDC;
-	__asm        mov    rectEquipmentDescriptions[1].right, 0x148;
-	__asm        mov    rectEquipmentDescriptions[1].bottom, 0x122;
+	rectEquipmentDescriptions[1].left = 0xa6;
+	rectEquipmentDescriptions[1].top = 0xdc;
+	rectEquipmentDescriptions[1].right = 0x148;
+	rectEquipmentDescriptions[1].bottom = 0x122;
 	__asm        jmp    _T20a0;
 // LINE 297:
 _T20a0:
-	__asm        mov    rectEquipmentDescriptions[2].left, 0xA6;
-	__asm        mov    rectEquipmentDescriptions[2].top, 0x146;
-	__asm        mov    rectEquipmentDescriptions[2].right, 0x148;
-	__asm        mov    rectEquipmentDescriptions[2].bottom, 0x18E;
+	rectEquipmentDescriptions[2].left = 0xa6;
+	rectEquipmentDescriptions[2].top = 0x146;
+	rectEquipmentDescriptions[2].right = 0x148;
+	rectEquipmentDescriptions[2].bottom = 0x18e;
 	__asm        jmp    _T20cd;
 // LINE 298:
 _T20cd:
-	__asm        mov    rectEquipmentDescriptions[3].left, 0x1B8;
-	__asm        mov    rectEquipmentDescriptions[3].top, 0x72;
-	__asm        mov    rectEquipmentDescriptions[3].right, 0x24C;
-	__asm        mov    rectEquipmentDescriptions[3].bottom, 0xB8;
+	rectEquipmentDescriptions[3].left = 0x1b8;
+	rectEquipmentDescriptions[3].top = 0x72;
+	rectEquipmentDescriptions[3].right = 0x24c;
+	rectEquipmentDescriptions[3].bottom = 0xb8;
 	__asm        jmp    _T20fa;
 // LINE 299:
 _T20fa:
-	__asm        mov    rectEquipmentDescriptions[4].left, 0x1B8;
-	__asm        mov    rectEquipmentDescriptions[4].top, 0xDC;
-	__asm        mov    rectEquipmentDescriptions[4].right, 0x24C;
-	__asm        mov    rectEquipmentDescriptions[4].bottom, 0x122;
+	rectEquipmentDescriptions[4].left = 0x1b8;
+	rectEquipmentDescriptions[4].top = 0xdc;
+	rectEquipmentDescriptions[4].right = 0x24c;
+	rectEquipmentDescriptions[4].bottom = 0x122;
 	__asm        jmp    _T2127;
 // LINE 300:
 _T2127:
@@ -5017,14 +4972,10 @@ _T2407:
 	__asm        jmp    _T2136;
 // LINE 309:
 _T245a:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x25E], 0x152;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x262], 0x13A;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x266], 0x1CA;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x26A], 0x14C;
+	this->rectEquipmentCurrentFundsTitle.left = 0x152;
+	this->rectEquipmentCurrentFundsTitle.top = 0x13a;
+	this->rectEquipmentCurrentFundsTitle.right = 0x1ca;
+	this->rectEquipmentCurrentFundsTitle.bottom = 0x14c;
 	__asm        jmp    _T249f;
 // LINE 312:
 _T249f:
@@ -5068,14 +5019,10 @@ _T24ec:
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+0x48];
 // LINE 315:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x26E], 0x152;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x272], 0x14A;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x276], 0x1CA;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x27A], 0x156;
+	this->rectEquipmentItemCostTitle.left = 0x152;
+	this->rectEquipmentItemCostTitle.top = 0x14a;
+	this->rectEquipmentItemCostTitle.right = 0x1ca;
+	this->rectEquipmentItemCostTitle.bottom = 0x156;
 	__asm        jmp    _T2579;
 // LINE 318:
 _T2579:
@@ -5201,14 +5148,10 @@ _T2709:
 	__asm        add    esp, 0xC;
 // LINE 327:
 _T273f:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1B2], 0x1CC;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1B6], 0x14A;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1BA], 0x244;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1BE], 0x15A;
+	this->rectCostText.left = 0x1cc;
+	this->rectCostText.top = 0x14a;
+	this->rectCostText.right = 0x244;
+	this->rectCostText.bottom = 0x15a;
 	__asm        jmp    _T2784;
 // LINE 329:
 _T2784:
@@ -5269,10 +5212,10 @@ _T2814:
 	__asm        mov    ecx, [eax+0x40];
 	__asm        call   dword ptr [edx+0x48];
 // LINE 331:
-	__asm        mov    rectFundsText.left, 0x1CC;
-	__asm        mov    rectFundsText.top, 0x13A;
-	__asm        mov    rectFundsText.right, 0x244;
-	__asm        mov    rectFundsText.bottom, 0x14C;
+	rectFundsText.left = 0x1cc;
+	rectFundsText.top = 0x13a;
+	rectFundsText.right = 0x244;
+	rectFundsText.bottom = 0x14c;
 	__asm        jmp    _T2889;
 // LINE 332:
 _T2889:
@@ -5877,12 +5820,12 @@ _T17:
 _T1c:
 	nColorArraySize = 0x6;
 // LINE 399:
-	__asm        mov    lIndexArray[0], 0x4F;
-	__asm        mov    lIndexArray[1], 0x5B;
-	__asm        mov    lIndexArray[2], 0x90;
-	__asm        mov    lIndexArray[3], 0x54;
-	__asm        mov    lIndexArray[4], 0x9F;
-	__asm        mov    lIndexArray[5], 0xC7;
+	lIndexArray[0] = 0x4f;
+	lIndexArray[1] = 0x5b;
+	lIndexArray[2] = 0x90;
+	lIndexArray[3] = 0x54;
+	lIndexArray[4] = 0x9f;
+	lIndexArray[5] = 0xc7;
 // LINE 404:
 	nColorArrayCurrentIndex += nColorDirection;
 // LINE 405:
@@ -5919,10 +5862,10 @@ _Ta4:
 	__asm        jne    _T1c5;
 // LINE 411:
 _Tca:
-	__asm        mov    rectOutline.left, 0x3D;
-	__asm        mov    rectOutline.top, 0x65;
-	__asm        mov    rectOutline.right, 0x140;
-	__asm        mov    rectOutline.bottom, 0xC3;
+	rectOutline.left = 0x3d;
+	rectOutline.top = 0x65;
+	rectOutline.right = 0x140;
+	rectOutline.bottom = 0xc3;
 	__asm        jmp    _Teb;
 _Teb:
 	__asm        mov    eax, rectOutline.bottom;
@@ -5956,10 +5899,10 @@ _T125:
 	__asm        mov    ecx, [eax+0x44];
 	__asm        call   dword ptr [edx+0x5C];
 // LINE 415:
-	__asm        mov    rectOutline.left, 0x149;
-	__asm        mov    rectOutline.top, 0x65;
-	__asm        mov    rectOutline.right, 0x24E;
-	__asm        mov    rectOutline.bottom, 0xC3;
+	rectOutline.left = 0x149;
+	rectOutline.top = 0x65;
+	rectOutline.right = 0x24e;
+	rectOutline.bottom = 0xc3;
 	__asm        jmp    _T163;
 _T163:
 	__asm        mov    eax, rectOutline.bottom;
@@ -5999,10 +5942,10 @@ _T1c5:
 	__asm        cmp    dword ptr [eax+0x152], 1;
 	__asm        jne    _T1fe;
 // LINE 422:
-	__asm        mov    rectOutline.left, 0x3D;
-	__asm        mov    rectOutline.top, 0xCF;
-	__asm        mov    rectOutline.right, 0x140;
-	__asm        mov    rectOutline.bottom, 0x12D;
+	rectOutline.left = 0x3d;
+	rectOutline.top = 0xcf;
+	rectOutline.right = 0x140;
+	rectOutline.bottom = 0x12d;
 	__asm        jmp    _T1f9;
 // LINE 423:
 _T1f9:
@@ -6012,10 +5955,10 @@ _T1fe:
 	__asm        cmp    dword ptr [eax+0x152], 2;
 	__asm        jne    _T237;
 // LINE 424:
-	__asm        mov    rectOutline.left, 0x3D;
-	__asm        mov    rectOutline.top, 0x137;
-	__asm        mov    rectOutline.right, 0x140;
-	__asm        mov    rectOutline.bottom, 0x199;
+	rectOutline.left = 0x3d;
+	rectOutline.top = 0x137;
+	rectOutline.right = 0x140;
+	rectOutline.bottom = 0x199;
 	__asm        jmp    _T232;
 // LINE 425:
 _T232:
@@ -6025,10 +5968,10 @@ _T237:
 	__asm        cmp    dword ptr [eax+0x152], 4;
 	__asm        jne    _T26b;
 // LINE 426:
-	__asm        mov    rectOutline.left, 0x149;
-	__asm        mov    rectOutline.top, 0xCF;
-	__asm        mov    rectOutline.right, 0x24E;
-	__asm        mov    rectOutline.bottom, 0x12D;
+	rectOutline.left = 0x149;
+	rectOutline.top = 0xcf;
+	rectOutline.right = 0x24e;
+	rectOutline.bottom = 0x12d;
 	__asm        jmp    _T26b;
 // LINE 428:
 _T26b:
@@ -6341,21 +6284,21 @@ void CatalogWindow::GetCurrentGraphicsFileNames(/*packed*/ class basic_string<ch
 	/*bp-0x48*/  char * szTabFileNames[9]; // 0x24 bytes
 
 // LINE 506:
-	__asm        mov    szHelicopterFileNames[0], 0x5998CC;
-	__asm        mov    szHelicopterFileNames[1], 0x5998DC;
-	__asm        mov    szHelicopterFileNames[2], 0x5998E8;
-	__asm        mov    szHelicopterFileNames[3], 0x5998F8;
+	szHelicopterFileNames[0] = 0x5998cc;
+	szHelicopterFileNames[1] = 0x5998dc;
+	szHelicopterFileNames[2] = 0x5998e8;
+	szHelicopterFileNames[3] = 0x5998f8;
 // LINE 507:
-	__asm        mov    szHelicopterFileNames[4], 0x599908;
-	__asm        mov    szHelicopterFileNames[5], 0x599914;
-	__asm        mov    szHelicopterFileNames[6], 0x599924;
-	__asm        mov    szHelicopterFileNames[7], 0x599930;
-	__asm        mov    szHelicopterFileNames[8], 0x59993C;
+	szHelicopterFileNames[4] = 0x599908;
+	szHelicopterFileNames[5] = 0x599914;
+	szHelicopterFileNames[6] = 0x599924;
+	szHelicopterFileNames[7] = 0x599930;
+	szHelicopterFileNames[8] = 0x59993c;
 // LINE 509:
-	__asm        mov    szTabFileNames[0], 0x599940;
-	__asm        mov    szTabFileNames[1], 0x599950;
-	__asm        mov    szTabFileNames[2], 0x599960;
-	__asm        mov    szTabFileNames[3], 0x599970;
+	szTabFileNames[0] = 0x599940;
+	szTabFileNames[1] = 0x599950;
+	szTabFileNames[2] = 0x599960;
+	szTabFileNames[3] = 0x599970;
 // LINE 510:
 	__asm        mov    szTabFileNames[4], 0x599980;
 	__asm        mov    szTabFileNames[5], 0x599990;
@@ -6926,43 +6869,43 @@ int32_t CatalogWindow::DoesCursorHitEquipmentSelection(long lXPosition, long lYP
 // LINE 560:
 	__asm        jmp    _T11;
 _T11:
-	__asm        mov    rectEquipment[0].left, 0x3A;
-	__asm        mov    rectEquipment[0].top, 0x62;
-	__asm        mov    rectEquipment[0].right, 0x146;
-	__asm        mov    rectEquipment[0].bottom, 0xC8;
+	rectEquipment[0].left = 0x3a;
+	rectEquipment[0].top = 0x62;
+	rectEquipment[0].right = 0x146;
+	rectEquipment[0].bottom = 0xc8;
 	__asm        jmp    _T32;
 _T32:
 	__asm        jmp    _T37;
 _T37:
-	__asm        mov    rectEquipment[1].left, 0x3A;
-	__asm        mov    rectEquipment[1].top, 0xCD;
-	__asm        mov    rectEquipment[1].right, 0x146;
-	__asm        mov    rectEquipment[1].bottom, 0x12F;
+	rectEquipment[1].left = 0x3a;
+	rectEquipment[1].top = 0xcd;
+	rectEquipment[1].right = 0x146;
+	rectEquipment[1].bottom = 0x12f;
 	__asm        jmp    _T58;
 _T58:
 	__asm        jmp    _T5d;
 _T5d:
-	__asm        mov    rectEquipment[2].left, 0x3A;
-	__asm        mov    rectEquipment[2].top, 0x136;
-	__asm        mov    rectEquipment[2].right, 0x146;
-	__asm        mov    rectEquipment[2].bottom, 0x19A;
+	rectEquipment[2].left = 0x3a;
+	rectEquipment[2].top = 0x136;
+	rectEquipment[2].right = 0x146;
+	rectEquipment[2].bottom = 0x19a;
 	__asm        jmp    _T7e;
 // LINE 561:
 _T7e:
 	__asm        jmp    _T83;
 _T83:
-	__asm        mov    rectEquipment[3].left, 0x148;
-	__asm        mov    rectEquipment[3].top, 0x62;
-	__asm        mov    rectEquipment[3].right, 0x250;
-	__asm        mov    rectEquipment[3].bottom, 0xC8;
+	rectEquipment[3].left = 0x148;
+	rectEquipment[3].top = 0x62;
+	rectEquipment[3].right = 0x250;
+	rectEquipment[3].bottom = 0xc8;
 	__asm        jmp    _Ta4;
 _Ta4:
 	__asm        jmp    _Ta9;
 _Ta9:
-	__asm        mov    rectEquipment[4].left, 0x148;
-	__asm        mov    rectEquipment[4].top, 0xCD;
-	__asm        mov    rectEquipment[4].right, 0x250;
-	__asm        mov    rectEquipment[4].bottom, 0x12F;
+	rectEquipment[4].left = 0x148;
+	rectEquipment[4].top = 0xcd;
+	rectEquipment[4].right = 0x250;
+	rectEquipment[4].bottom = 0x12f;
 	__asm        jmp    _Tca;
 // LINE 563:
 _Tca:
@@ -7474,15 +7417,15 @@ long CatalogWindow::GetHelicopterFromTab(long lTab) {
 	/*bp-0x20*/  const long lHelicopterTabs[8]; // 0x20 bytes
 
 // LINE 736:
-	__asm        mov    lHelicopterTabs[0], 3;
-	__asm        mov    lHelicopterTabs[1], 5;
-	__asm        mov    lHelicopterTabs[2], 1;
-	__asm        mov    lHelicopterTabs[3], 6;
+	lHelicopterTabs[0] = 0x3;
+	lHelicopterTabs[1] = 0x5;
+	lHelicopterTabs[2] = 0x1;
+	lHelicopterTabs[3] = 0x6;
 // LINE 737:
-	__asm        mov    lHelicopterTabs[4], 8;
-	__asm        mov    lHelicopterTabs[5], 4;
-	__asm        mov    lHelicopterTabs[6], 7;
-	__asm        mov    lHelicopterTabs[7], 0;
+	lHelicopterTabs[4] = 0x8;
+	lHelicopterTabs[5] = 0x4;
+	lHelicopterTabs[6] = 0x7;
+	lHelicopterTabs[7] = 0x0;
 // LINE 738:
 	__asm        mov    eax, lTab;
 	__asm        mov    eax, [ebp+eax*4-0x20];
@@ -7496,12 +7439,12 @@ long CatalogWindow::GetEquipmentFromSelectionIndex(long lSelectionIndex) {
 	/*bp-0x14*/  const long lEquipmentChoices[5]; // 0x14 bytes
 
 // LINE 747:
-	__asm        mov    lEquipmentChoices[0], 0;
-	__asm        mov    lEquipmentChoices[1], 1;
-	__asm        mov    lEquipmentChoices[2], 3;
+	lEquipmentChoices[0] = 0x0;
+	lEquipmentChoices[1] = 0x1;
+	lEquipmentChoices[2] = 0x3;
 // LINE 748:
-	__asm        mov    lEquipmentChoices[3], 0;
-	__asm        mov    lEquipmentChoices[4], 2;
+	lEquipmentChoices[3] = 0x0;
+	lEquipmentChoices[4] = 0x2;
 // LINE 749:
 	__asm        mov    eax, lSelectionIndex;
 	__asm        mov    eax, [ebp+eax*4-0x14];

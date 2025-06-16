@@ -611,40 +611,25 @@ _Td5:
 	this->sFontBitmapFile.c_str_ptr = 0x0;
 	__asm        jmp    _Te4;
 _Te4:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x20], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x28], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x2C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x30], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x34], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x38], 0;
+	this->myFontImage = 0x0;
+	this->lLanguage = 0x0;
+	this->lCharacterSet = 0x0;
+	this->lPitchType = 0x0;
+	this->nStartCharacter = 0x0;
+	this->nCharacterCount = 0x0;
+	this->rectCharacterCells.start = 0x0;
+	this->rectCharacterCells.finish = 0x0;
+	this->rectCharacterCells.end_of_storage = 0x0;
 	__asm        jmp    _T143;
 _T143:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x3C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x40], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x44], 0;
+	this->rectCharacters.start = 0x0;
+	this->rectCharacters.finish = 0x0;
+	this->rectCharacters.end_of_storage = 0x0;
 	__asm        jmp    _T166;
 _T166:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x48], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x4C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x50], 0;
+	this->widthCharacters.start = 0x0;
+	this->widthCharacters.finish = 0x0;
+	this->widthCharacters.end_of_storage = 0x0;
 	__asm        jmp    _T189;
 _T189:
 	this-><vftable> = 0x5904d0;
@@ -711,13 +696,8 @@ _Ta1:
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     _Tcb;
 
-	__asm        mov    eax, sNewFontInfoPath;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+8], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        inc    dword ptr [eax+0xC];
+	this->sFontInfoFilePath.reference = sNewFontInfoPath.reference;
+	this->sFontInfoFilePath.reference-><basic_string_ref<char>+0x0c:4>++;
 	__asm        jmp    _T1ad;
 _Tcb:
 	__asm        push   0x10;
@@ -827,39 +807,24 @@ _T219:
 	this->sFontBitmapFile.c_str_ptr = 0x0;
 	__asm        jmp    _T228;
 _T228:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
-	__asm        mov    eax, lNewLanguage;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x18], eax;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x20], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x28], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x2C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x30], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x34], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x38], 0;
+	this->myFontImage = 0x0;
+	this->lLanguage = lNewLanguage;
+	this->lPitchType = 0x0;
+	this->nStartCharacter = 0x0;
+	this->nCharacterCount = 0x0;
+	this->rectCharacterCells.start = 0x0;
+	this->rectCharacterCells.finish = 0x0;
+	this->rectCharacterCells.end_of_storage = 0x0;
 	__asm        jmp    _T27c;
 _T27c:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x3C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x40], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x44], 0;
+	this->rectCharacters.start = 0x0;
+	this->rectCharacters.finish = 0x0;
+	this->rectCharacters.end_of_storage = 0x0;
 	__asm        jmp    _T29f;
 _T29f:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x48], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x4C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x50], 0;
+	this->widthCharacters.start = 0x0;
+	this->widthCharacters.finish = 0x0;
+	this->widthCharacters.end_of_storage = 0x0;
 	__asm        jmp    _T2c2;
 _T2c2:
 	this-><vftable> = 0x5904d0;
@@ -966,39 +931,24 @@ _T132:
 	this->sFontBitmapFile.c_str_ptr = 0x0;
 	__asm        jmp    _T141;
 _T141:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
-	__asm        mov    eax, lNewLanguage;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x18], eax;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x20], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x28], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x2C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x30], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x34], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x38], 0;
+	this->myFontImage = 0x0;
+	this->lLanguage = lNewLanguage;
+	this->lPitchType = 0x0;
+	this->nStartCharacter = 0x0;
+	this->nCharacterCount = 0x0;
+	this->rectCharacterCells.start = 0x0;
+	this->rectCharacterCells.finish = 0x0;
+	this->rectCharacterCells.end_of_storage = 0x0;
 	__asm        jmp    _T195;
 _T195:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x3C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x40], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x44], 0;
+	this->rectCharacters.start = 0x0;
+	this->rectCharacters.finish = 0x0;
+	this->rectCharacters.end_of_storage = 0x0;
 	__asm        jmp    _T1b8;
 _T1b8:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x48], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x4C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x50], 0;
+	this->widthCharacters.start = 0x0;
+	this->widthCharacters.finish = 0x0;
+	this->widthCharacters.end_of_storage = 0x0;
 	__asm        jmp    _T1db;
 _T1db:
 	this-><vftable> = 0x5904d0;
@@ -1837,10 +1787,8 @@ _T876:
 _T8a0:
 	chCurrentRectangle = chRectangleBuffer[0];
 // LINE 104:
-	__asm        mov    i, 0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        mov    iEnd, eax;
+	i = 0x0;
+	iEnd = this->nCharacterCount;
 	__asm        jmp    _T8d0;
 _T8ca:
 	i++;
@@ -2134,10 +2082,8 @@ _Tfe:
 	__asm        mov    al, [eax];
 	__asm        mov    nTransparentIndex, al;
 // LINE 149:
-	__asm        mov    i, 0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        mov    iEnd, eax;
+	i = 0x0;
+	iEnd = this->nCharacterCount;
 	__asm        jmp    _T12a;
 _T127:
 	i++;
@@ -2182,12 +2128,10 @@ _T17c:
 	__asm        sub    eax, [ecx+edx+4];
 	__asm        mov    yEnd, eax;
 // LINE 153:
-	__asm        mov    eax, xEnd;
-	__asm        mov    rectCurrent.left, eax;
-	__asm        mov    eax, yEnd;
-	__asm        mov    rectCurrent.top, eax;
-	__asm        mov    rectCurrent.right, 0;
-	__asm        mov    rectCurrent.bottom, 0;
+	rectCurrent.left = xEnd;
+	rectCurrent.top = yEnd;
+	rectCurrent.right = 0x0;
+	rectCurrent.bottom = 0x0;
 	__asm        jmp    _T1c4;
 // LINE 154:
 _T1c4:
@@ -2283,10 +2227,10 @@ _T2bd:
 	__asm        cmp    rectCurrent.right, eax;
 	__asm        jge    _T2ef;
 // LINE 171:
-	__asm        mov    rectCurrent.left, 0;
-	__asm        mov    rectCurrent.top, 0;
-	__asm        mov    rectCurrent.right, 0;
-	__asm        mov    rectCurrent.bottom, 0;
+	rectCurrent.left = 0x0;
+	rectCurrent.top = 0x0;
+	rectCurrent.right = 0x0;
+	rectCurrent.bottom = 0x0;
 	__asm        jmp    _T2ea;
 // LINE 172:
 _T2ea:

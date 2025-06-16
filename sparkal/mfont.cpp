@@ -129,14 +129,10 @@ _Tce:
 	this->sName.c_str_ptr = 0x0;
 	__asm        jmp    _Tdd;
 _Tdd:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0xC;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x591640;
+	this->lHeight = 0xc;
+	this->lWidth = 0x0;
+	this->lAttributes = 0x0;
+	this-><vftable> = 0x591640;
 // LINE 30:
 	this->hFont = 0x0;
 // LINE 32:
@@ -588,13 +584,8 @@ _Tca:
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     _Tf4;
 
-	__asm        mov    eax, copyMFont;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+8], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        inc    dword ptr [eax+0xC];
+	this->sName.reference = copyMFont.sName.reference;
+	this->sName.reference-><basic_string_ref<char>+0x0c:4>++;
 	__asm        jmp    _T1e7;
 _Tf4:
 	__asm        push   0x10;

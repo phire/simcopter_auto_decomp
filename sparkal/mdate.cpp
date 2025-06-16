@@ -278,10 +278,8 @@ void MDate::MDate() {
 	/*bp-0x8*/   /*packed*/ struct tm *now;
 
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F3E8;
+	this->PrintOption = 0x0;
+	this-><vftable> = 0x58f3e8;
 // LINE 76:
 	clk = time(0x0);
 // LINE 77:
@@ -311,10 +309,8 @@ void MDate::MDate() {
 // FUNCTION: COPTER_D 0x004bc4d1
 void MDate::MDate(uint32_t day, uint32_t year) {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F3E8;
+	this->PrintOption = 0x0;
+	this-><vftable> = 0x58f3e8;
 // LINE 95:
 	__asm        cmp    year, 0;
 	__asm        je     _T4a;
@@ -345,10 +341,8 @@ _T58:
 // FUNCTION: COPTER_D 0x004bc538
 void MDate::MDate(uint32_t day, char * monthName, uint32_t year) {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F3E8;
+	this->PrintOption = 0x0;
+	this-><vftable> = 0x58f3e8;
 // LINE 113:
 	this->Julnum = MDate::Jday(year, day, monthName, MDate::IndexOfMonth(year, day, monthName));
 // LINE 114:
@@ -360,10 +354,8 @@ void MDate::MDate(uint32_t day, char * monthName, uint32_t year) {
 // FUNCTION: COPTER_D 0x004bc589
 void MDate::MDate(uint32_t day, uint32_t month, uint32_t year) {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F3E8;
+	this->PrintOption = 0x0;
+	this-><vftable> = 0x58f3e8;
 // LINE 128:
 	this->Julnum = MDate::Jday(year, day, month);
 // LINE 129:
@@ -1603,10 +1595,8 @@ _T97:
 	__asm        cmp    eax, p;
 	__asm        je     _Tce;
 // LINE 554:
-	__asm        mov    al, c;
-	__asm        mov    ecx, p;
-	__asm        mov    [ecx], al;
-	__asm        inc    p;
+	p[0] = c;
+	p++;
 // LINE 555:
 	__asm        lea    eax, c;
 	__asm        push   eax;

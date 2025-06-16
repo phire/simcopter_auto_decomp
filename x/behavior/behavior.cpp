@@ -242,12 +242,9 @@ public:
 // FUNCTION: COPTER_D 0x00560290
 void Behavior::Behavior(/*unpacked*/ class Language *lang, /*unpacked*/ class NResFile *globFile, /*unpacked*/ class NResFile *privFile) {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5936D8;
+	this->fGlobalTrees = 0x0;
+	this->fPrivateTrees = 0x0;
+	this-><vftable> = 0x5936d8;
 // LINE 17:
 	this->fLanguage = lang;
 // LINE 18:

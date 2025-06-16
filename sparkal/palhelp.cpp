@@ -145,17 +145,10 @@ public:
 // FUNCTION: COPTER_D 0x004963b0
 void SparkalPalette::SparkalPalette(/*packed*/ struct SparkalColor *pNewColors, int32_t bNewOwnColors, unsigned long lNewColors) {
 
-	__asm        mov    eax, pNewColors;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, lNewColors;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+8], eax;
-	__asm        mov    eax, bNewOwnColors;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], eax;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5910F8;
+	this->pColors = pNewColors;
+	this->lColors = lNewColors;
+	this->bOwnColors = bNewOwnColors;
+	this-><vftable> = 0x5910f8;
 // LINE 31:
 	return;
 
@@ -165,14 +158,10 @@ void SparkalPalette::SparkalPalette(/*packed*/ struct SparkalColor *pNewColors, 
 // FUNCTION: COPTER_D 0x004963ef
 void SparkalPalette::SparkalPalette() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5910F8;
+	this->pColors = 0x0;
+	this->lColors = 0x0;
+	this->bOwnColors = 0x0;
+	this-><vftable> = 0x5910f8;
 // LINE 41:
 	return;
 
@@ -216,9 +205,8 @@ void SparkalPalette::GetNearestIndex(/*packed*/ struct SparkalColor& colorValue,
 // LINE 67:
 	lClosestDistance = 0xffffffff;
 // LINE 70:
-	__asm        mov    nCurrentBestMatch, 0;
-	__asm        mov    eax, nCurrentBestMatch;
-	__asm        mov    i, eax;
+	nCurrentBestMatch = 0x0;
+	i = nCurrentBestMatch;
 	__asm        jmp    _T28;
 _T25:
 	i++;
@@ -420,8 +408,8 @@ _T154:
 	__asm        cmp    i, 0x40;
 	__asm        jge    _T442;
 // LINE 127:
-	__asm        mov    timerFade.lTotalElapsedTime, 0;
-	__asm        mov    timerFade.lStartTime, 0;
+	timerFade.lTotalElapsedTime = 0x0;
+	timerFade.lStartTime = 0x0;
 	__asm        jmp    _T177;
 _T177:
 	__asm        jmp    _T17c;
@@ -744,8 +732,8 @@ _T154:
 	__asm        cmp    i, 0x40;
 	__asm        jge    _T41e;
 // LINE 216:
-	__asm        mov    timerFade.lTotalElapsedTime, 0;
-	__asm        mov    timerFade.lStartTime, 0;
+	timerFade.lTotalElapsedTime = 0x0;
+	timerFade.lStartTime = 0x0;
 	__asm        jmp    _T177;
 _T177:
 	__asm        jmp    _T17c;
@@ -1060,8 +1048,8 @@ _T154:
 	__asm        cmp    i, 0x40;
 	__asm        jge    _T471;
 // LINE 305:
-	__asm        mov    timerFade.lTotalElapsedTime, 0;
-	__asm        mov    timerFade.lStartTime, 0;
+	timerFade.lTotalElapsedTime = 0x0;
+	timerFade.lStartTime = 0x0;
 	__asm        jmp    _T177;
 _T177:
 	__asm        jmp    _T17c;
@@ -1492,8 +1480,8 @@ _T1ca:
 	__asm        cmp    i, eax;
 	__asm        jge    _T4b8;
 // LINE 420:
-	__asm        mov    timerFade.lTotalElapsedTime, 0;
-	__asm        mov    timerFade.lStartTime, 0;
+	timerFade.lTotalElapsedTime = 0x0;
+	timerFade.lStartTime = 0x0;
 	__asm        jmp    _T1e9;
 _T1e9:
 	__asm        jmp    _T1ee;

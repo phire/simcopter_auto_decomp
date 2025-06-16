@@ -1509,23 +1509,14 @@ _T63:
 	__asm        mov    baseYear, ax;
 	__asm        inc    ix;
 // LINE 648:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    simCycle, eax;
-	__asm        inc    ix;
+	simCycle = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 649:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    TotalFunds, eax;
-	__asm        inc    ix;
+	TotalFunds = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 650:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    TotalBonds, eax;
-	__asm        inc    ix;
+	TotalBonds = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 651:
 	__asm        movsx  eax, ix;
 	__asm        mov    ecx, MiscInfo;
@@ -1539,83 +1530,44 @@ _T63:
 	__asm        mov    CityStatus, ax;
 	__asm        inc    ix;
 // LINE 653:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    CityValue, eax;
-	__asm        inc    ix;
+	CityValue = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 654:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    LandValue, eax;
-	__asm        inc    ix;
+	LandValue = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 655:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    CrimeCount, eax;
-	__asm        inc    ix;
+	CrimeCount = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 656:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    TrafficCount, eax;
-	__asm        inc    ix;
+	TrafficCount = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 657:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    Pollution, eax;
-	__asm        inc    ix;
+	Pollution = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 658:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    CityFame, eax;
-	__asm        inc    ix;
+	CityFame = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 659:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    Advertising, eax;
-	__asm        inc    ix;
+	Advertising = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 660:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    Garbage, eax;
-	__asm        inc    ix;
+	Garbage = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 661:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    WorkerPercent, eax;
-	__asm        inc    ix;
+	WorkerPercent = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 662:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    WorkerHealth, eax;
-	__asm        inc    ix;
+	WorkerHealth = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 663:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    WorkerEducate, eax;
-	__asm        inc    ix;
+	WorkerEducate = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 664:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    NationalPop, eax;
-	__asm        inc    ix;
+	NationalPop = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 665:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    NationalValue, eax;
-	__asm        inc    ix;
+	NationalValue = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 666:
 	__asm        movsx  eax, ix;
 	__asm        mov    ecx, MiscInfo;
@@ -1659,17 +1611,11 @@ _T63:
 	__asm        mov    NewDisaster, ax;
 	__asm        inc    ix;
 // LINE 673:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    oldResPop, eax;
-	__asm        inc    ix;
+	oldResPop = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 677:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    lval, eax;
-	__asm        inc    ix;
+	lval = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 679:
 	ToolActive[5] = lval;
 // LINE 685:
@@ -1682,29 +1628,14 @@ _T31a:
 	__asm        cmp    eax, 0x14;
 	__asm        jge    _T386;
 // LINE 686:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        movsx  ecx, i;
-	__asm        mov    edx, PopRatio;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	PopRatio[reinterpret_cast<int16_t>(i)] = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 687:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        movsx  ecx, i;
-	__asm        mov    edx, EducateRatio;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	EducateRatio[reinterpret_cast<int16_t>(i)] = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 688:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        movsx  ecx, i;
-	__asm        mov    edx, HealthRatio;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	HealthRatio[reinterpret_cast<int16_t>(i)] = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 689:
 	__asm        jmp    _T316;
 // LINE 691:
@@ -1734,13 +1665,8 @@ _T395:
 	__asm        mov    [edx+ecx*2], ax;
 	__asm        inc    ix;
 // LINE 694:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        movsx  ecx, i;
-	__asm        mov    edx, IndRatio;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	IndRatio[reinterpret_cast<int16_t>(i)] = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 695:
 	__asm        jmp    _T391;
 // LINE 697:
@@ -1773,13 +1699,8 @@ _T454:
 	__asm        cmp    eax, 8;
 	__asm        jge    _T484;
 // LINE 701:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        movsx  ecx, i;
-	__asm        mov    edx, ZonePop;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	ZonePop[reinterpret_cast<int16_t>(i)] = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 702:
 	__asm        jmp    _T450;
 // LINE 704:
@@ -1867,29 +1788,14 @@ _T541:
 	__asm        mov    Neighbor[0][ecx], al;
 // LINE 720:
 _T58e:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        movsx  ecx, i;
-	__asm        mov    edx, NeighborPop;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	NeighborPop[reinterpret_cast<int16_t>(i)] = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 721:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        movsx  ecx, i;
-	__asm        mov    edx, NeighborValue;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	NeighborValue[reinterpret_cast<int16_t>(i)] = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 722:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        movsx  ecx, i;
-	__asm        mov    edx, NeighborFame;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	NeighborFame[reinterpret_cast<int16_t>(i)] = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 723:
 	__asm        jmp    _T4cd;
 // LINE 725:
@@ -2165,17 +2071,11 @@ _T8d0:
 	__asm        jmp    _T8cc;
 // LINE 766:
 _T99d:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    Ordinances, eax;
-	__asm        inc    ix;
+	Ordinances = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 767:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    unemployed, eax;
-	__asm        inc    ix;
+	unemployed = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 769:
 	i = 0x0;
 	__asm        jmp    _T9d8;
@@ -2256,11 +2156,8 @@ _Ta09:
 	__asm        mov    PaperChoice, ax;
 	__asm        inc    ix;
 // LINE 787:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    lval, eax;
-	__asm        inc    ix;
+	lval = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 789:
 	__asm        cmp    lval, 0xFFFFFFFF;
 	__asm        jne    _Tb24;
@@ -2299,11 +2196,8 @@ _Tb3c:
 	__asm        mov    CityCentY, ax;
 	__asm        inc    ix;
 // LINE 801:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    GlobalArcoPop, eax;
-	__asm        inc    ix;
+	GlobalArcoPop = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 802:
 	__asm        movsx  eax, ix;
 	__asm        mov    ecx, MiscInfo;
@@ -2317,11 +2211,8 @@ _Tb3c:
 	__asm        mov    TeamsActive, ax;
 	__asm        inc    ix;
 // LINE 804:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    TotalPop, eax;
-	__asm        inc    ix;
+	TotalPop = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 805:
 	__asm        movsx  eax, ix;
 	__asm        mov    ecx, MiscInfo;
@@ -2377,35 +2268,20 @@ _Tb3c:
 	__asm        mov    CommerceConnect, ax;
 	__asm        inc    ix;
 // LINE 814:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    BusTrips, eax;
-	__asm        inc    ix;
+	BusTrips = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 815:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    RailTrips, eax;
-	__asm        inc    ix;
+	RailTrips = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 816:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    SubTrips, eax;
-	__asm        inc    ix;
+	SubTrips = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 817:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    PowerUse, eax;
-	__asm        inc    ix;
+	PowerUse = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 818:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    WaterUse, eax;
-	__asm        inc    ix;
+	WaterUse = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 821:
 	__asm        movsx  eax, ix;
 	__asm        mov    ecx, MiscInfo;
@@ -2419,41 +2295,23 @@ _Tb3c:
 	__asm        mov    ScenarioData.TimeLimit, ax;
 	__asm        inc    ix;
 // LINE 823:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ScenarioData.Size, eax;
-	__asm        inc    ix;
+	ScenarioData.Size = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 824:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ScenarioData.Res, eax;
-	__asm        inc    ix;
+	ScenarioData.Res = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 825:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ScenarioData.Com, eax;
-	__asm        inc    ix;
+	ScenarioData.Com = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 826:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ScenarioData.Ind, eax;
-	__asm        inc    ix;
+	ScenarioData.Ind = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 827:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ScenarioData.Cash, eax;
-	__asm        inc    ix;
+	ScenarioData.Cash = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 828:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ScenarioData.Value, eax;
-	__asm        inc    ix;
+	ScenarioData.Value = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 829:
 	__asm        movsx  eax, ix;
 	__asm        mov    ecx, MiscInfo;
@@ -2467,23 +2325,14 @@ _Tb3c:
 	__asm        mov    ScenarioData.Education, ax;
 	__asm        inc    ix;
 // LINE 831:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ScenarioData.Pollute, eax;
-	__asm        inc    ix;
+	ScenarioData.Pollute = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 832:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ScenarioData.Crime, eax;
-	__asm        inc    ix;
+	ScenarioData.Crime = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 833:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    ScenarioData.Traffic, eax;
-	__asm        inc    ix;
+	ScenarioData.Traffic = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 834:
 	__asm        movsx  eax, ix;
 	__asm        mov    ecx, MiscInfo;
@@ -2527,11 +2376,8 @@ _Tb3c:
 	__asm        mov    FloodCycle, ax;
 	__asm        inc    ix;
 // LINE 841:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        mov    TotalRate, eax;
-	__asm        inc    ix;
+	TotalRate = MiscInfo[reinterpret_cast<int16_t>(ix)];
+	ix++;
 // LINE 845:
 	return 0x1;
 // LINE 846:
@@ -2656,11 +2502,9 @@ _T35:
 	return 0x0;
 // LINE 930:
 _T6f:
-	__asm        mov    tp, 0;
-	__asm        mov    eax, tp;
-	__asm        mov    dp, eax;
-	__asm        mov    eax, dp;
-	__asm        mov    ix, eax;
+	tp = 0x0;
+	dp = tp;
+	ix = dp;
 // LINE 932:
 	count = dataSize;
 // LINE 933:
@@ -3492,9 +3336,8 @@ _T7f:
 	__asm        add    esp, 8;
 // LINE 1214:
 _Ta5:
-	__asm        mov    dp, 0;
-	__asm        mov    eax, dp;
-	__asm        mov    tp, eax;
+	dp = 0x0;
+	tp = dp;
 // LINE 1216:
 _Tb2:
 	__asm        mov    eax, count;
@@ -3747,148 +3590,77 @@ static unsigned short S2CityMiscWrite(/*packed*/ struct _iobuf *filNum) {
 // LINE 1303:
 	ix = 0x0;
 // LINE 1304:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    dword ptr [ecx+eax*4], 0x122;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = 0x122;
+	ix++;
 // LINE 1307:
-	__asm        movsx  eax, GameMode;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = reinterpret_cast<int16_t>(GameMode);
+	ix++;
 // LINE 1308:
-	__asm        movsx  eax, Compass;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = reinterpret_cast<int16_t>(Compass);
+	ix++;
 // LINE 1309:
-	__asm        movsx  eax, baseYear;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = reinterpret_cast<int16_t>(baseYear);
+	ix++;
 // LINE 1310:
-	__asm        mov    eax, simCycle;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = simCycle;
+	ix++;
 // LINE 1311:
-	__asm        mov    eax, TotalFunds;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = TotalFunds;
+	ix++;
 // LINE 1312:
-	__asm        mov    eax, TotalBonds;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = TotalBonds;
+	ix++;
 // LINE 1313:
-	__asm        movsx  eax, GameLevel;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = reinterpret_cast<int16_t>(GameLevel);
+	ix++;
 // LINE 1314:
-	__asm        movsx  eax, CityStatus;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = reinterpret_cast<int16_t>(CityStatus);
+	ix++;
 // LINE 1315:
-	__asm        mov    eax, CityValue;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = CityValue;
+	ix++;
 // LINE 1316:
-	__asm        mov    eax, LandValue;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = LandValue;
+	ix++;
 // LINE 1317:
-	__asm        mov    eax, CrimeCount;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = CrimeCount;
+	ix++;
 // LINE 1318:
-	__asm        mov    eax, TrafficCount;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = TrafficCount;
+	ix++;
 // LINE 1319:
-	__asm        mov    eax, Pollution;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = Pollution;
+	ix++;
 // LINE 1320:
-	__asm        mov    eax, CityFame;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = CityFame;
+	ix++;
 // LINE 1321:
-	__asm        mov    eax, Advertising;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = Advertising;
+	ix++;
 // LINE 1322:
-	__asm        mov    eax, Garbage;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = Garbage;
+	ix++;
 // LINE 1323:
-	__asm        mov    eax, WorkerPercent;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = WorkerPercent;
+	ix++;
 // LINE 1324:
-	__asm        mov    eax, WorkerHealth;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = WorkerHealth;
+	ix++;
 // LINE 1325:
-	__asm        mov    eax, WorkerEducate;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = WorkerEducate;
+	ix++;
 // LINE 1326:
-	__asm        mov    eax, NationalPop;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = NationalPop;
+	ix++;
 // LINE 1327:
-	__asm        mov    eax, NationalValue;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = NationalValue;
+	ix++;
 // LINE 1328:
-	__asm        movsx  eax, NationalTax;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = reinterpret_cast<int16_t>(NationalTax);
+	ix++;
 // LINE 1329:
-	__asm        movsx  eax, NationalTrend;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = reinterpret_cast<int16_t>(NationalTrend);
+	ix++;
 // LINE 1330:
 	__asm        xor    eax, eax;
 	__asm        mov    al, heat;
@@ -3918,11 +3690,8 @@ static unsigned short S2CityMiscWrite(/*packed*/ struct _iobuf *filNum) {
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1334:
-	__asm        movsx  eax, NewDisaster;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = reinterpret_cast<int16_t>(NewDisaster);
+	ix++;
 // LINE 1335:
 	__asm        mov    eax, GraphData[1];
 	__asm        mov    eax, [eax+4];
@@ -3931,11 +3700,8 @@ static unsigned short S2CityMiscWrite(/*packed*/ struct _iobuf *filNum) {
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1336:
-	__asm        mov    eax, ToolActive[5];
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = ToolActive[5];
+	ix++;
 // LINE 1339:
 	i = 0x0;
 	__asm        jmp    _T2e2;
@@ -3946,29 +3712,14 @@ _T2e2:
 	__asm        cmp    eax, 0x14;
 	__asm        jge    _T34e;
 // LINE 1340:
-	__asm        movsx  eax, i;
-	__asm        mov    ecx, PopRatio;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = PopRatio[reinterpret_cast<int16_t>(i)];
+	ix++;
 // LINE 1341:
-	__asm        movsx  eax, i;
-	__asm        mov    ecx, EducateRatio;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = EducateRatio[reinterpret_cast<int16_t>(i)];
+	ix++;
 // LINE 1342:
-	__asm        movsx  eax, i;
-	__asm        mov    ecx, HealthRatio;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = HealthRatio[reinterpret_cast<int16_t>(i)];
+	ix++;
 // LINE 1343:
 	__asm        jmp    _T2de;
 // LINE 1344:
@@ -3998,13 +3749,8 @@ _T35d:
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1347:
-	__asm        movsx  eax, i;
-	__asm        mov    ecx, IndRatio;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = IndRatio[reinterpret_cast<int16_t>(i)];
+	ix++;
 // LINE 1348:
 	__asm        jmp    _T359;
 // LINE 1349:
@@ -4038,13 +3784,8 @@ _T41e:
 	__asm        cmp    eax, 8;
 	__asm        jge    _T44e;
 // LINE 1352:
-	__asm        movsx  eax, i;
-	__asm        mov    ecx, ZonePop;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = ZonePop[reinterpret_cast<int16_t>(i)];
+	ix++;
 	__asm        jmp    _T41a;
 // LINE 1353:
 _T44e:
@@ -4083,29 +3824,14 @@ _T49b:
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1357:
-	__asm        movsx  eax, i;
-	__asm        mov    ecx, NeighborPop;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = NeighborPop[reinterpret_cast<int16_t>(i)];
+	ix++;
 // LINE 1358:
-	__asm        movsx  eax, i;
-	__asm        mov    ecx, NeighborValue;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = NeighborValue[reinterpret_cast<int16_t>(i)];
+	ix++;
 // LINE 1359:
-	__asm        movsx  eax, i;
-	__asm        mov    ecx, NeighborFame;
-	__asm        mov    eax, [ecx+eax*4];
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = NeighborFame[reinterpret_cast<int16_t>(i)];
+	ix++;
 // LINE 1360:
 	__asm        jmp    _T497;
 // LINE 1361:
@@ -4241,11 +3967,8 @@ _T6be:
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1377:
-	__asm        movsx  eax, GlobalSeaLevel;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = reinterpret_cast<int16_t>(GlobalSeaLevel);
+	ix++;
 // LINE 1378:
 	__asm        xor    eax, eax;
 	__asm        mov    ax, terCoast;
@@ -4394,17 +4117,11 @@ _T81c:
 	__asm        jmp    _T818;
 // LINE 1400:
 _T8f1:
-	__asm        mov    eax, Ordinances;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = Ordinances;
+	ix++;
 // LINE 1401:
-	__asm        mov    eax, unemployed;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = unemployed;
+	ix++;
 // LINE 1403:
 	i = 0x0;
 	__asm        jmp    _T92c;
@@ -4433,11 +4150,8 @@ _T95f:
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1409:
-	__asm        movsx  eax, GameSpeed;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = reinterpret_cast<int16_t>(GameSpeed);
+	ix++;
 // LINE 1410:
 	__asm        xor    eax, eax;
 	__asm        mov    ax, AutoBudget;
@@ -4488,70 +4202,38 @@ _T95f:
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1417:
-	__asm        movsx  eax, PaperChoice;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = reinterpret_cast<int16_t>(PaperChoice);
+	ix++;
 // LINE 1425:
-	__asm        movsx  eax, ix;
-	__asm        mov    ecx, MiscInfo;
-	__asm        mov    dword ptr [ecx+eax*4], 0;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = 0x0;
+	ix++;
 // LINE 1426:
-	__asm        movsx  eax, Scale;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = reinterpret_cast<int16_t>(Scale);
+	ix++;
 // LINE 1427:
-	__asm        movsx  eax, CityCentX;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = reinterpret_cast<int16_t>(CityCentX);
+	ix++;
 // LINE 1428:
-	__asm        movsx  eax, CityCentY;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = reinterpret_cast<int16_t>(CityCentY);
+	ix++;
 // LINE 1429:
-	__asm        mov    eax, GlobalArcoPop;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = GlobalArcoPop;
+	ix++;
 // LINE 1430:
-	__asm        movsx  eax, ConnectTiles;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = reinterpret_cast<int16_t>(ConnectTiles);
+	ix++;
 // LINE 1431:
-	__asm        movsx  eax, TeamsActive;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = reinterpret_cast<int16_t>(TeamsActive);
+	ix++;
 // LINE 1432:
-	__asm        mov    eax, TotalPop;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = TotalPop;
+	ix++;
 // LINE 1433:
-	__asm        movsx  eax, IndustryBonus;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = reinterpret_cast<int16_t>(IndustryBonus);
+	ix++;
 // LINE 1434:
-	__asm        movsx  eax, PolluteBonus;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = reinterpret_cast<int16_t>(PolluteBonus);
+	ix++;
 // LINE 1435:
 	__asm        xor    eax, eax;
 	__asm        mov    ax, oldArrest;
@@ -4560,23 +4242,14 @@ _T95f:
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1436:
-	__asm        movsx  eax, PoliceBonus;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = reinterpret_cast<int16_t>(PoliceBonus);
+	ix++;
 // LINE 1437:
-	__asm        movsx  eax, DisasterObject;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = reinterpret_cast<int16_t>(DisasterObject);
+	ix++;
 // LINE 1438:
-	__asm        movsx  eax, CurrentDisaster;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = reinterpret_cast<int16_t>(CurrentDisaster);
+	ix++;
 // LINE 1439:
 	__asm        xor    eax, eax;
 	__asm        mov    ax, GoDisaster;
@@ -4585,11 +4258,8 @@ _T95f:
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1440:
-	__asm        movsx  eax, SewerBonus;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = reinterpret_cast<int16_t>(SewerBonus);
+	ix++;
 // LINE 1443:
 	__asm        xor    eax, eax;
 	__asm        mov    ax, CommerceConnect;
@@ -4598,35 +4268,20 @@ _T95f:
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1444:
-	__asm        mov    eax, BusTrips;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = BusTrips;
+	ix++;
 // LINE 1445:
-	__asm        mov    eax, RailTrips;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = RailTrips;
+	ix++;
 // LINE 1446:
-	__asm        mov    eax, SubTrips;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = SubTrips;
+	ix++;
 // LINE 1447:
-	__asm        mov    eax, PowerUse;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = PowerUse;
+	ix++;
 // LINE 1448:
-	__asm        mov    eax, WaterUse;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = WaterUse;
+	ix++;
 // LINE 1451:
 	__asm        xor    eax, eax;
 	__asm        mov    ax, Scenario;
@@ -4635,77 +4290,41 @@ _T95f:
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1452:
-	__asm        movsx  eax, ScenarioData.TimeLimit;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = reinterpret_cast<int16_t>(ScenarioData.TimeLimit);
+	ix++;
 // LINE 1453:
-	__asm        mov    eax, ScenarioData.Size;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = ScenarioData.Size;
+	ix++;
 // LINE 1454:
-	__asm        mov    eax, ScenarioData.Res;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = ScenarioData.Res;
+	ix++;
 // LINE 1455:
-	__asm        mov    eax, ScenarioData.Com;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = ScenarioData.Com;
+	ix++;
 // LINE 1456:
-	__asm        mov    eax, ScenarioData.Ind;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = ScenarioData.Ind;
+	ix++;
 // LINE 1457:
-	__asm        mov    eax, ScenarioData.Cash;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = ScenarioData.Cash;
+	ix++;
 // LINE 1458:
-	__asm        mov    eax, ScenarioData.Value;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = ScenarioData.Value;
+	ix++;
 // LINE 1459:
-	__asm        movsx  eax, ScenarioData.Health;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = reinterpret_cast<int16_t>(ScenarioData.Health);
+	ix++;
 // LINE 1460:
-	__asm        movsx  eax, ScenarioData.Education;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = reinterpret_cast<int16_t>(ScenarioData.Education);
+	ix++;
 // LINE 1461:
-	__asm        mov    eax, ScenarioData.Pollute;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = ScenarioData.Pollute;
+	ix++;
 // LINE 1462:
-	__asm        mov    eax, ScenarioData.Crime;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = ScenarioData.Crime;
+	ix++;
 // LINE 1463:
-	__asm        mov    eax, ScenarioData.Traffic;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = ScenarioData.Traffic;
+	ix++;
 // LINE 1464:
 	__asm        xor    eax, eax;
 	__asm        mov    al, ScenarioData.BuildOne;
@@ -4721,41 +4340,23 @@ _T95f:
 	__asm        mov    [edx+ecx*4], eax;
 	__asm        inc    ix;
 // LINE 1466:
-	__asm        movsx  eax, ScenarioData.NBCount1;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = reinterpret_cast<int16_t>(ScenarioData.NBCount1);
+	ix++;
 // LINE 1467:
-	__asm        movsx  eax, ScenarioData.NBCount2;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = reinterpret_cast<int16_t>(ScenarioData.NBCount2);
+	ix++;
 // LINE 1469:
-	__asm        movsx  eax, CivilizedTiles;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = reinterpret_cast<int16_t>(CivilizedTiles);
+	ix++;
 // LINE 1470:
-	__asm        movsx  eax, HurricaneCnt;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = reinterpret_cast<int16_t>(HurricaneCnt);
+	ix++;
 // LINE 1471:
-	__asm        movsx  eax, FloodCycle;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = reinterpret_cast<int16_t>(FloodCycle);
+	ix++;
 // LINE 1473:
-	__asm        mov    eax, TotalRate;
-	__asm        movsx  ecx, ix;
-	__asm        mov    edx, MiscInfo;
-	__asm        mov    [edx+ecx*4], eax;
-	__asm        inc    ix;
+	MiscInfo[reinterpret_cast<int16_t>(ix)] = TotalRate;
+	ix++;
 // LINE 1476:
 	__asm        jmp    _Te47;
 _Te43:
@@ -6771,12 +6372,9 @@ _T42:
 	__asm        cmp    eax, 0x5F;
 	__asm        je     _T183;
 // LINE 2364:
-	__asm        mov    eax, s;
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, r;
-	__asm        mov    [ecx], al;
-	__asm        inc    s;
-	__asm        inc    r;
+	r[0] = s[0];
+	s++;
+	r++;
 // LINE 2365:
 	__asm        jmp    _T186;
 // LINE 2366:
@@ -6834,12 +6432,9 @@ _T42:
 	__asm        cmp    eax, 0x20;
 	__asm        je     _T75;
 // LINE 2398:
-	__asm        mov    eax, s;
-	__asm        mov    al, [eax];
-	__asm        mov    ecx, r;
-	__asm        mov    [ecx], al;
-	__asm        inc    s;
-	__asm        inc    r;
+	r[0] = s[0];
+	s++;
+	r++;
 // LINE 2399:
 	__asm        jmp    _T78;
 // LINE 2400:

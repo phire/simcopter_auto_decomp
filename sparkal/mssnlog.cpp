@@ -1323,11 +1323,9 @@ _T7af:
 	__asm        jmp    _T820;
 // LINE 103:
 _T820:
-	__asm        mov    tempSparkalColor.Blue, 0;
-	__asm        mov    al, tempSparkalColor.Blue;
-	__asm        mov    tempSparkalColor.Green, al;
-	__asm        mov    al, tempSparkalColor.Green;
-	__asm        mov    tempSparkalColor.Red, al;
+	tempSparkalColor.Blue = 0x0;
+	tempSparkalColor.Green = tempSparkalColor.Blue;
+	tempSparkalColor.Red = tempSparkalColor.Green;
 // LINE 104:
 	__asm        lea    eax, tempSparkalColor.Blue;
 	__asm        push   eax;
@@ -1681,9 +1679,9 @@ void MissionLogWindow::DrawBackground() {
 	/*bp-0xc*/   long y;
 
 // LINE 192:
-	__asm        mov    i, 0;
-	__asm        mov    x, 0x42;
-	__asm        mov    y, 0x50;
+	i = 0x0;
+	x = 0x42;
+	y = 0x50;
 	__asm        jmp    _T29;
 _T26:
 	i++;
@@ -2323,10 +2321,8 @@ void MessageDisplayManager::MessageDisplayManager() {
 
 	__asm        jmp    _T11;
 _T11:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0x14;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0x14;
+	this->ptFirstMessage.x = 0x14;
+	this->ptFirstMessage.y = 0x14;
 	__asm        jmp    _T2a;
 _T2a:
 	__asm        mov    eax, this;
@@ -2980,10 +2976,8 @@ _T32d:
 	return;
 // LINE 336:
 _T345:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18], 0;
+	this->timerMessageDisplay.lTotalElapsedTime = 0x0;
+	this->timerMessageDisplay.lStartTime = 0x0;
 	__asm        jmp    _T35e;
 _T35e:
 	__asm        jmp    _T363;
@@ -3320,10 +3314,8 @@ _T2a0:
 	__asm        jmp    _T2a5;
 // LINE 366:
 _T2a5:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18], 0;
+	this->timerMessageDisplay.lTotalElapsedTime = 0x0;
+	this->timerMessageDisplay.lStartTime = 0x0;
 	__asm        jmp    _T2c4;
 _T2c4:
 	__asm        jmp    _T2c9;
@@ -3482,10 +3474,8 @@ _T49b:
 _T4a0:
 	this->lCurrentDisplayedMessageCount = 0x1;
 // LINE 371:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18], 0;
+	this->timerMessageDisplay.lTotalElapsedTime = 0x0;
+	this->timerMessageDisplay.lStartTime = 0x0;
 	__asm        jmp    _T4cc;
 _T4cc:
 	__asm        jmp    _T4d1;

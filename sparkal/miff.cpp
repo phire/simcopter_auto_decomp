@@ -221,15 +221,11 @@ __RETURN:
 // FUNCTION: COPTER_D 0x004ab5e4
 void MIFF::MIFF() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x108], 0xFFFFFFFF;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x590468;
-	__asm        mov    _fmode, 0x8000;
-	__asm        mov    eax, this;
-	__asm        mov    byte ptr [eax+4], 0;
+	this->Handle = 0xffffffff;
+	this->ShouldClose = 0x0;
+	this-><MIFF+0x00> = 0x590468;
+	_fmode = 0x8000;
+	this->szFilePath[0] = 0x0;
 	__asm        jmp    _T45;
 _T45:
 	this-><MIFF+0x00> = 0x591950;

@@ -538,12 +538,9 @@ _Ta3:
 _Ta8:
 	__asm        jmp    _Tad;
 _Tad:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC8], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xCC], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xD0], 0;
+	this->myTextWindowPtrArray.start = 0x0;
+	this->myTextWindowPtrArray.finish = 0x0;
+	this->myTextWindowPtrArray.end_of_storage = 0x0;
 	__asm        jmp    _Td9;
 _Td9:
 	__asm        mov    eax, this;
@@ -862,13 +859,8 @@ _T1ed:
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     _T217;
 
-	__asm        mov    eax, newUserMenuWindowDescription;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x78], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x78];
-	__asm        inc    dword ptr [eax+0xC];
+	this->myUserMenuWindowDescription.sImageFileName.reference = newUserMenuWindowDescription.sImageFileName.reference;
+	this->myUserMenuWindowDescription.sImageFileName.reference-><basic_string_ref<char>+0x0c:4>++;
 	__asm        jmp    _T2f9;
 _T217:
 	__asm        push   0x10;
@@ -1023,12 +1015,9 @@ _T308:
 	__asm        mov    [ecx+0xC4], eax;
 	__asm        jmp    _T406;
 _T406:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC8], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xCC], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xD0], 0;
+	this->myTextWindowPtrArray.start = 0x0;
+	this->myTextWindowPtrArray.finish = 0x0;
+	this->myTextWindowPtrArray.end_of_storage = 0x0;
 	__asm        jmp    _T432;
 _T432:
 	__asm        mov    eax, this;
@@ -4259,8 +4248,8 @@ void CopterPlayMenu::DrawRatchet() {
 // LINE 678:
 	__asm        jmp    _T11;
 _T11:
-	__asm        mov    ptDestinationBackground.x, 0x1E;
-	__asm        mov    ptDestinationBackground.y, 0x23;
+	ptDestinationBackground.x = 0x1e;
+	ptDestinationBackground.y = 0x23;
 	__asm        jmp    _T24;
 // LINE 679:
 _T24:

@@ -206,13 +206,8 @@ void ConvertCitySettingsToSteppedPercentages(/*packed*/ struct tagCitySettings *
 	/*bp-0x8*/   float fSumOfAllValues;
 
 // LINE 182:
-	__asm        mov    eax, citySettingsIn;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, citySettingsOut;
-	__asm        mov    [ecx], eax;
-	__asm        mov    eax, citySettingsOut;
-	__asm        mov    eax, [eax];
-	__asm        mov    G_diff_level, eax;
+	citySettingsOut->lDifficulty = citySettingsIn->lDifficulty;
+	G_diff_level = citySettingsOut->lDifficulty;
 // LINE 185:
 	G_diff_level++;
 // LINE 193:
@@ -1217,10 +1212,8 @@ _T7e:
 // LINE 686:
 	md->timer = 0x0;
 // LINE 687:
-	__asm        mov    eax, S_mstatics.key_ctr;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x24], eax;
-	__asm        inc    S_mstatics.key_ctr;
+	md->key = S_mstatics.key_ctr;
+	S_mstatics.key_ctr++;
 // LINE 689:
 	__asm        mov    eax, type;
 	__asm        mov    [ebp-0x2C], eax;
@@ -1333,20 +1326,10 @@ _T214:
 	__asm        mov    [ecx], eax;
 	__asm        mov    [ecx+4], edx;
 // LINE 727:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x34], 0xFFFFFFFF;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x34];
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x30], eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x30];
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x3C], eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x3C];
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x38], eax;
+	md->destmaploc.y = 0xffffffff;
+	md->destmaploc.x = md->destmaploc.y;
+	md->pickuploc.y = md->destmaploc.x;
+	md->pickuploc.x = md->pickuploc.y;
 // LINE 728:
 	__asm        mov    eax, S_mstatics.riot_ctr;
 	__asm        push   eax;
@@ -1356,10 +1339,8 @@ _T214:
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 729:
-	__asm        mov    eax, S_mstatics.riot_ctr;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x20], eax;
-	__asm        inc    S_mstatics.riot_ctr;
+	md->type_ctr = S_mstatics.riot_ctr;
+	S_mstatics.riot_ctr++;
 // LINE 731:
 	__asm        mov    eax, type;
 	__asm        push   eax;
@@ -1382,20 +1363,10 @@ _T2a3:
 // LINE 741:
 	md->maploc.y = y;
 // LINE 745:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x34], 0xFFFFFFFF;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x34];
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x30], eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x30];
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x3C], eax;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x3C];
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x38], eax;
+	md->destmaploc.y = 0xffffffff;
+	md->destmaploc.x = md->destmaploc.y;
+	md->pickuploc.y = md->destmaploc.x;
+	md->pickuploc.x = md->pickuploc.y;
 // LINE 747:
 	__asm        call   rand;
 	__asm        mov    ecx, 3;
@@ -1452,10 +1423,8 @@ _T361:
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 764:
-	__asm        mov    eax, S_mstatics.rescue_ctr;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x20], eax;
-	__asm        inc    S_mstatics.rescue_ctr;
+	md->type_ctr = S_mstatics.rescue_ctr;
+	S_mstatics.rescue_ctr++;
 // LINE 767:
 	__asm        mov    eax, type;
 	__asm        push   eax;
@@ -1501,12 +1470,8 @@ _T3d6:
 	__asm        jmp    __RETURN;
 // LINE 785:
 _T416:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x30], 0xFFFFFFFF;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x30];
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x38], eax;
+	md->destmaploc.x = 0xffffffff;
+	md->pickuploc.x = md->destmaploc.x;
 // LINE 786:
 	__asm        mov    eax, S_mstatics.rescue_ctr;
 	__asm        push   eax;
@@ -1516,10 +1481,8 @@ _T416:
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 787:
-	__asm        mov    eax, S_mstatics.rescue_ctr;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x20], eax;
-	__asm        inc    S_mstatics.rescue_ctr;
+	md->type_ctr = S_mstatics.rescue_ctr;
+	S_mstatics.rescue_ctr++;
 // LINE 789:
 	__asm        mov    eax, type;
 	__asm        push   eax;
@@ -1555,12 +1518,8 @@ _T473:
 	__asm        jmp    __RETURN;
 // LINE 802:
 _T4ae:
-	__asm        mov    eax, md;
-	__asm        mov    dword ptr [eax+0x30], 0xFFFFFFFF;
-	__asm        mov    eax, md;
-	__asm        mov    eax, [eax+0x30];
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x38], eax;
+	md->destmaploc.x = 0xffffffff;
+	md->pickuploc.x = md->destmaploc.x;
 // LINE 803:
 	__asm        mov    eax, S_mstatics.rescue_ctr;
 	__asm        push   eax;
@@ -1570,10 +1529,8 @@ _T4ae:
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 804:
-	__asm        mov    eax, S_mstatics.rescue_ctr;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x20], eax;
-	__asm        inc    S_mstatics.rescue_ctr;
+	md->type_ctr = S_mstatics.rescue_ctr;
+	S_mstatics.rescue_ctr++;
 // LINE 806:
 	__asm        mov    eax, type;
 	__asm        push   eax;
@@ -1662,10 +1619,8 @@ _T5d9:
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 844:
-	__asm        mov    eax, S_mstatics.medevac_ctr;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x20], eax;
-	__asm        inc    S_mstatics.medevac_ctr;
+	md->type_ctr = S_mstatics.medevac_ctr;
+	S_mstatics.medevac_ctr++;
 // LINE 847:
 	__asm        mov    eax, type;
 	__asm        push   eax;
@@ -1751,10 +1706,8 @@ _T6bd:
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 876:
-	__asm        mov    eax, S_mstatics.transport_ctr;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x20], eax;
-	__asm        inc    S_mstatics.transport_ctr;
+	md->type_ctr = S_mstatics.transport_ctr;
+	S_mstatics.transport_ctr++;
 // LINE 879:
 	__asm        mov    eax, type;
 	__asm        push   eax;
@@ -1791,10 +1744,8 @@ _T748:
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 889:
-	__asm        mov    eax, S_mstatics.fire_ctr;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x20], eax;
-	__asm        inc    S_mstatics.fire_ctr;
+	md->type_ctr = S_mstatics.fire_ctr;
+	S_mstatics.fire_ctr++;
 // LINE 890:
 	__asm        call   S3FireGetCellData;
 	__asm        mov    cfd, eax;
@@ -1871,10 +1822,8 @@ _T830:
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 907:
-	__asm        mov    eax, S_mstatics.plane_ctr;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x20], eax;
-	__asm        inc    S_mstatics.plane_ctr;
+	md->type_ctr = S_mstatics.plane_ctr;
+	S_mstatics.plane_ctr++;
 // LINE 908:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x24];
@@ -1909,10 +1858,8 @@ _T8a3:
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 917:
-	__asm        mov    eax, S_mstatics.train_ctr;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x20], eax;
-	__asm        inc    S_mstatics.train_ctr;
+	md->type_ctr = S_mstatics.train_ctr;
+	S_mstatics.train_ctr++;
 // LINE 918:
 	__asm        mov    eax, md;
 	__asm        mov    eax, [eax+0x24];
@@ -1947,10 +1894,8 @@ _T916:
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 927:
-	__asm        mov    eax, S_mstatics.crime_ctr;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x20], eax;
-	__asm        inc    S_mstatics.crime_ctr;
+	md->type_ctr = S_mstatics.crime_ctr;
+	S_mstatics.crime_ctr++;
 // LINE 928:
 	__asm        mov    eax, y;
 	__asm        push   eax;
@@ -2042,10 +1987,8 @@ _Ta34:
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 954:
-	__asm        mov    eax, S_mstatics.crime_ctr;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x20], eax;
-	__asm        inc    S_mstatics.crime_ctr;
+	md->type_ctr = S_mstatics.crime_ctr;
+	S_mstatics.crime_ctr++;
 // LINE 956:
 	__asm        mov    eax, type;
 	__asm        push   eax;
@@ -2112,10 +2055,8 @@ _Tb12:
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 980:
-	__asm        mov    eax, S_mstatics.crime_ctr;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x20], eax;
-	__asm        inc    S_mstatics.crime_ctr;
+	md->type_ctr = S_mstatics.crime_ctr;
+	S_mstatics.crime_ctr++;
 // LINE 982:
 	__asm        mov    eax, type;
 	__asm        push   eax;
@@ -2182,10 +2123,8 @@ _Tbf0:
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 1006:
-	__asm        mov    eax, S_mstatics.crime_ctr;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x20], eax;
-	__asm        inc    S_mstatics.crime_ctr;
+	md->type_ctr = S_mstatics.crime_ctr;
+	S_mstatics.crime_ctr++;
 // LINE 1008:
 	__asm        mov    eax, type;
 	__asm        push   eax;
@@ -2230,10 +2169,8 @@ _Tc81:
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 1018:
-	__asm        mov    eax, S_mstatics.traffic_ctr;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x20], eax;
-	__asm        inc    S_mstatics.traffic_ctr;
+	md->type_ctr = S_mstatics.traffic_ctr;
+	S_mstatics.traffic_ctr++;
 // LINE 1021:
 	__asm        mov    eax, type;
 	__asm        push   eax;
@@ -2277,10 +2214,8 @@ _Td02:
 	__asm        call   sprintf;
 	__asm        add    esp, 0xC;
 // LINE 1031:
-	__asm        mov    eax, S_mstatics.traffic_ctr;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x20], eax;
-	__asm        inc    S_mstatics.traffic_ctr;
+	md->type_ctr = S_mstatics.traffic_ctr;
+	S_mstatics.traffic_ctr++;
 // LINE 1032:
 	md->state = 0x2;
 // LINE 1036:
@@ -4034,10 +3969,8 @@ _T77:
 // LINE 1921:
 	md->timer = 0x0;
 // LINE 1922:
-	__asm        mov    eax, S_mstatics.key_ctr;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x24], eax;
-	__asm        inc    S_mstatics.key_ctr;
+	md->key = S_mstatics.key_ctr;
+	S_mstatics.key_ctr++;
 // LINE 1924:
 	__asm        mov    eax, type;
 	__asm        mov    [ebp-0xC], eax;
@@ -4174,10 +4107,8 @@ _T26a:
 // LINE 1958:
 	md->state = 0x2;
 // LINE 1959:
-	__asm        mov    eax, S_mstatics.traffic_ctr;
-	__asm        mov    ecx, md;
-	__asm        mov    [ecx+0x20], eax;
-	__asm        inc    S_mstatics.traffic_ctr;
+	md->type_ctr = S_mstatics.traffic_ctr;
+	S_mstatics.traffic_ctr++;
 // LINE 1960:
 	__asm        jmp    _T36d;
 // LINE 1962:

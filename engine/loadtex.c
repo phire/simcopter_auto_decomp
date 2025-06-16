@@ -302,12 +302,8 @@ int32_t VRSetBmpToTiled(/*packed*/ struct VRResource *res, int32_t mask, int32_t
 _T2a:
 	notiles = 0x40;
 // LINE 306:
-	__asm        mov    eax, bhdr;
-	__asm        mov    dword ptr [eax+4], 0x20;
-	__asm        mov    eax, bhdr;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, bhdr;
-	__asm        mov    [ecx], eax;
+	bhdr->info.height = 0x20;
+	bhdr->info.width = bhdr->info.height;
 // LINE 307:
 	colmask = 0x7;
 // LINE 308:
@@ -318,12 +314,8 @@ _T2a:
 _T59:
 	notiles = 0x10;
 // LINE 312:
-	__asm        mov    eax, bhdr;
-	__asm        mov    dword ptr [eax+4], 0x40;
-	__asm        mov    eax, bhdr;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, bhdr;
-	__asm        mov    [ecx], eax;
+	bhdr->info.height = 0x40;
+	bhdr->info.width = bhdr->info.height;
 // LINE 313:
 	colmask = 0x3;
 // LINE 314:
@@ -334,12 +326,8 @@ _T59:
 _T88:
 	notiles = 0x4;
 // LINE 318:
-	__asm        mov    eax, bhdr;
-	__asm        mov    dword ptr [eax+4], 0x80;
-	__asm        mov    eax, bhdr;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, bhdr;
-	__asm        mov    [ecx], eax;
+	bhdr->info.height = 0x80;
+	bhdr->info.width = bhdr->info.height;
 // LINE 319:
 	colmask = 0x1;
 // LINE 320:

@@ -279,10 +279,8 @@ _T28:
 _T2d:
 	__asm        jmp    _T32;
 _T32:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x98], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x590470;
+	this->szCaption = 0x0;
+	this-><GameWindow+0x00> = 0x590470;
 // LINE 40:
 	this->mWidth = Width;
 // LINE 41:
@@ -1373,26 +1371,14 @@ _T75:
 	lpMinMaxInfo->ptMaxTrackSize.x = (this->rectWindowDesired.right - this->rectWindowDesired.left);
 	__asm        jmp    _T92;
 _T92:
-	__asm        mov    eax, lpMinMaxInfo;
-	__asm        mov    eax, [eax+0x20];
-	__asm        mov    ecx, lpMinMaxInfo;
-	__asm        mov    [ecx+0x18], eax;
-	__asm        mov    eax, lpMinMaxInfo;
-	__asm        mov    eax, [eax+0x18];
-	__asm        mov    ecx, lpMinMaxInfo;
-	__asm        mov    [ecx+8], eax;
+	lpMinMaxInfo->ptMinTrackSize.x = lpMinMaxInfo->ptMaxTrackSize.x;
+	lpMinMaxInfo->ptMaxSize.x = lpMinMaxInfo->ptMinTrackSize.x;
 // LINE 523:
 	lpMinMaxInfo->ptMaxTrackSize.y = (this->rectWindowDesired.bottom - this->rectWindowDesired.top);
 	__asm        jmp    _Tc1;
 _Tc1:
-	__asm        mov    eax, lpMinMaxInfo;
-	__asm        mov    eax, [eax+0x24];
-	__asm        mov    ecx, lpMinMaxInfo;
-	__asm        mov    [ecx+0x1C], eax;
-	__asm        mov    eax, lpMinMaxInfo;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        mov    ecx, lpMinMaxInfo;
-	__asm        mov    [ecx+0xC], eax;
+	lpMinMaxInfo->ptMinTrackSize.y = lpMinMaxInfo->ptMaxTrackSize.y;
+	lpMinMaxInfo->ptMaxSize.y = lpMinMaxInfo->ptMinTrackSize.y;
 // LINE 527:
 	lpMinMaxInfo->ptMaxPosition.x = this->rectWindowDesired.left;
 // LINE 528:

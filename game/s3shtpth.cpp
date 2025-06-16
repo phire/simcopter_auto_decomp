@@ -706,11 +706,8 @@ void ShortestPath::PriorityHeapInsert(const /*packed*/ struct _FringeHeapNode *p
 	/*bp-0x10*/  int32_t index;
 
 // LINE 255:
-	__asm        mov    eax, this;
-	__asm        inc    dword ptr [eax+4];
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    index, eax;
+	this->heapSize++;
+	index = this->heapSize;
 // LINE 258:
 	__asm        mov    eax, pInsertNode;
 	__asm        mov    ecx, index;
@@ -805,11 +802,8 @@ void ShortestPath::PriorityHeapRemove(/*packed*/ struct _FringeHeapNode *pRemove
 	/*bp-0x18*/  int32_t index;
 
 // LINE 281:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    index, eax;
-	__asm        mov    eax, this;
-	__asm        dec    dword ptr [eax+4];
+	index = this->heapSize;
+	this->heapSize--;
 // LINE 282:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];

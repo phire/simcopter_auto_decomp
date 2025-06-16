@@ -705,13 +705,10 @@ void CGameApp::GetSoundPreferences() {
 	return;
 // LINE 161:
 _T7c:
-	__asm        mov    tempSoundPreferences.lVehicleVolume, 0x2710;
-	__asm        mov    eax, tempSoundPreferences.lVehicleVolume;
-	__asm        mov    tempSoundPreferences.lSoundEffectsVolume, eax;
-	__asm        mov    eax, tempSoundPreferences.lSoundEffectsVolume;
-	__asm        mov    tempSoundPreferences.lDispatchVolume, eax;
-	__asm        mov    eax, tempSoundPreferences.lDispatchVolume;
-	__asm        mov    tempSoundPreferences.lMasterVolume, eax;
+	tempSoundPreferences.lVehicleVolume = 0x2710;
+	tempSoundPreferences.lSoundEffectsVolume = tempSoundPreferences.lVehicleVolume;
+	tempSoundPreferences.lDispatchVolume = tempSoundPreferences.lSoundEffectsVolume;
+	tempSoundPreferences.lMasterVolume = tempSoundPreferences.lDispatchVolume;
 // LINE 163:
 	__asm        push   0x10;
 	__asm        lea    eax, tempSoundPreferences.lMasterVolume;
@@ -966,10 +963,8 @@ _T10a:
 // LINE 227:
 	lFramesSinceLastSecond = 0x0;
 // LINE 229:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x416C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x4168], 0;
+	this-><CGameApp+0x416c:4> = 0x0;
+	this-><CGameApp+0x4168:4> = 0x0;
 	__asm        jmp    _T163;
 _T163:
 	__asm        jmp    _T168;
@@ -1577,9 +1572,9 @@ _Tf8:
 	__asm        cmp    gGraduationState.nGraduationState, 0;
 	__asm        jne    _T1cb;
 // LINE 425:
-	__asm        mov    gGraduationState.nGraduationState, 1;
-	__asm        mov    gGraduationState.timerGraduationState.lTotalElapsedTime, 0;
-	__asm        mov    gGraduationState.timerGraduationState.lStartTime, 0;
+	gGraduationState.nGraduationState = 0x1;
+	gGraduationState.timerGraduationState.lTotalElapsedTime = 0x0;
+	gGraduationState.timerGraduationState.lStartTime = 0x0;
 	__asm        jmp    _T128;
 _T128:
 	__asm        jmp    _T12d;
@@ -1849,9 +1844,9 @@ _T485:
 	__asm        cmp    lEventValue, 3;
 	__asm        jne    _T542;
 // LINE 451:
-	__asm        mov    gGraduationState.nGraduationState, 2;
-	__asm        mov    gGraduationState.timerGraduationState.lTotalElapsedTime, 0;
-	__asm        mov    gGraduationState.timerGraduationState.lStartTime, 0;
+	gGraduationState.nGraduationState = 0x2;
+	gGraduationState.timerGraduationState.lTotalElapsedTime = 0x0;
+	gGraduationState.timerGraduationState.lStartTime = 0x0;
 	__asm        jmp    _T4b2;
 _T4b2:
 	__asm        jmp    _T4b7;
@@ -5280,9 +5275,9 @@ _T54:
 	__asm        jmp    __RETURN;
 // LINE 1192:
 _T74:
-	__asm        mov    gGraduationState.nGraduationState, 0;
-	__asm        mov    gGraduationState.timerGraduationState.lTotalElapsedTime, 0;
-	__asm        mov    gGraduationState.timerGraduationState.lStartTime, 0;
+	gGraduationState.nGraduationState = 0x0;
+	gGraduationState.timerGraduationState.lTotalElapsedTime = 0x0;
+	gGraduationState.timerGraduationState.lStartTime = 0x0;
 	__asm        jmp    _T97;
 _T97:
 	__asm        jmp    _T9c;

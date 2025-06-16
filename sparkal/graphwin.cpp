@@ -1048,9 +1048,9 @@ _T193:
 _T198:
 	__asm        jmp    _T142;
 _T19d:
-	__asm        mov    list<GraphicWindow *>::free_list, 0;
-	__asm        mov    list<GraphicWindow *>::next_avail, 0;
-	__asm        mov    list<GraphicWindow *>::last, 0;
+	list<GraphicWindow *>::free_list = 0x0;
+	list<GraphicWindow *>::next_avail = 0x0;
+	list<GraphicWindow *>::last = 0x0;
 	__asm        jmp    _T1c0;
 _T1c0:
 	__asm        jmp    _T1c5;
@@ -1401,9 +1401,9 @@ _T193:
 _T198:
 	__asm        jmp    _T142;
 _T19d:
-	__asm        mov    list<GraphicWindow *>::free_list, 0;
-	__asm        mov    list<GraphicWindow *>::next_avail, 0;
-	__asm        mov    list<GraphicWindow *>::last, 0;
+	list<GraphicWindow *>::free_list = 0x0;
+	list<GraphicWindow *>::next_avail = 0x0;
+	list<GraphicWindow *>::last = 0x0;
 	__asm        jmp    _T1c0;
 _T1c0:
 	__asm        jmp    _T1c5;
@@ -1754,9 +1754,9 @@ _T193:
 _T198:
 	__asm        jmp    _T142;
 _T19d:
-	__asm        mov    list<GraphicWindow *>::free_list, 0;
-	__asm        mov    list<GraphicWindow *>::next_avail, 0;
-	__asm        mov    list<GraphicWindow *>::last, 0;
+	list<GraphicWindow *>::free_list = 0x0;
+	list<GraphicWindow *>::next_avail = 0x0;
+	list<GraphicWindow *>::last = 0x0;
 	__asm        jmp    _T1c0;
 _T1c0:
 	__asm        jmp    _T1c5;
@@ -2151,9 +2151,9 @@ _T18a:
 _T18f:
 	__asm        jmp    _T139;
 _T194:
-	__asm        mov    list<GraphicWindow *>::free_list, 0;
-	__asm        mov    list<GraphicWindow *>::next_avail, 0;
-	__asm        mov    list<GraphicWindow *>::last, 0;
+	list<GraphicWindow *>::free_list = 0x0;
+	list<GraphicWindow *>::next_avail = 0x0;
+	list<GraphicWindow *>::last = 0x0;
 	__asm        jmp    _T1b7;
 _T1b7:
 	return;
@@ -3493,26 +3493,18 @@ _T77:
 _T86:
 	__asm        jmp    _T8b;
 _T8b:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1C], 0;
+	this-><GraphicWindow+0x10:4> = 0x0;
+	this-><GraphicWindow+0x14:4> = 0x0;
+	this-><GraphicWindow+0x18:4> = 0x0;
+	this-><GraphicWindow+0x1c:4> = 0x0;
 	__asm        jmp    _Tb8;
 _Tb8:
 	__asm        jmp    _Tbd;
 _Tbd:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x20], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x24], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x28], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x2C], 0;
+	this-><GraphicWindow+0x20:4> = 0x0;
+	this-><GraphicWindow+0x24:4> = 0x0;
+	this-><GraphicWindow+0x28:4> = 0x0;
+	this-><GraphicWindow+0x2c:4> = 0x0;
 	__asm        jmp    _Tea;
 _Tea:
 	__asm        mov    eax, this;

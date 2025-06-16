@@ -262,10 +262,8 @@ _T11a:
 	err = 0xffffffce;
 // LINE 85:
 _T121:
-	__asm        inc    FlatFile::sLastFileID;
-	__asm        mov    eax, FlatFile::sLastFileID;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x108], eax;
+	FlatFile::sLastFileID++;
+	this->fFileID = FlatFile::sLastFileID;
 	__asm        jmp    _T13d;
 // LINE 87:
 // Block end:

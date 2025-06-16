@@ -498,16 +498,11 @@ _T22:
 // FUNCTION: COPTER_D 0x004bd72d
 void GameModeCoreData::GameModeCoreData() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x5923C0;
+	this->lPauseCount = 0x0;
+	this->pColorTable = 0x0;
+	this->pGameApp = 0x0;
+	this->pScreenWindow = 0x0;
+	this-><vftable> = 0x5923c0;
 // LINE 133:
 	return;
 
@@ -1910,59 +1905,59 @@ _T62:
 	__asm        cmp    gameResolution, 1;
 	__asm        jne    _T17c;
 // LINE 565:
-	__asm        mov    rectPanel0.left, 0;
-	__asm        mov    rectPanel0.top, 0;
-	__asm        mov    rectPanel0.right, 0x10;
-	__asm        mov    rectPanel0.bottom, 0x10;
+	rectPanel0.left = 0x0;
+	rectPanel0.top = 0x0;
+	rectPanel0.right = 0x10;
+	rectPanel0.bottom = 0x10;
 	__asm        jmp    _T90;
 // LINE 566:
 _T90:
-	__asm        mov    rectPanel1.left, 0x1EE;
-	__asm        mov    rectPanel1.top, 0;
-	__asm        mov    rectPanel1.right, 0x22C;
-	__asm        mov    rectPanel1.bottom, 0x3E;
+	rectPanel1.left = 0x1ee;
+	rectPanel1.top = 0x0;
+	rectPanel1.right = 0x22c;
+	rectPanel1.bottom = 0x3e;
 	__asm        jmp    _Tb1;
 // LINE 567:
 _Tb1:
-	__asm        mov    rectPanel2.left, 0x22C;
-	__asm        mov    rectPanel2.top, 0;
-	__asm        mov    rectPanel2.right, 0x280;
-	__asm        mov    rectPanel2.bottom, 0x124;
+	rectPanel2.left = 0x22c;
+	rectPanel2.top = 0x0;
+	rectPanel2.right = 0x280;
+	rectPanel2.bottom = 0x124;
 	__asm        jmp    _Td2;
 // LINE 568:
 _Td2:
-	__asm        mov    rectPanel3.left, 0x212;
-	__asm        mov    rectPanel3.top, 0x3E;
-	__asm        mov    rectPanel3.right, 0x22C;
-	__asm        mov    rectPanel3.bottom, 0x124;
+	rectPanel3.left = 0x212;
+	rectPanel3.top = 0x3e;
+	rectPanel3.right = 0x22c;
+	rectPanel3.bottom = 0x124;
 	__asm        jmp    _Tf3;
 // LINE 569:
 _Tf3:
-	__asm        mov    rectPanel4.left, 0;
-	__asm        mov    rectPanel4.top, 0x163;
-	__asm        mov    rectPanel4.right, 0x1C8;
-	__asm        mov    rectPanel4.bottom, 0x18E;
+	rectPanel4.left = 0x0;
+	rectPanel4.top = 0x163;
+	rectPanel4.right = 0x1c8;
+	rectPanel4.bottom = 0x18e;
 	__asm        jmp    _T114;
 // LINE 570:
 _T114:
-	__asm        mov    rectPanel5.left, 0x1C7;
-	__asm        mov    rectPanel5.top, 0x122;
-	__asm        mov    rectPanel5.right, 0x280;
-	__asm        mov    rectPanel5.bottom, 0x1B6;
+	rectPanel5.left = 0x1c7;
+	rectPanel5.top = 0x122;
+	rectPanel5.right = 0x280;
+	rectPanel5.bottom = 0x1b6;
 	__asm        jmp    _T135;
 // LINE 571:
 _T135:
-	__asm        mov    rectPanel6.left, 0;
-	__asm        mov    rectPanel6.top, 0x18E;
-	__asm        mov    rectPanel6.right, 0x1C8;
-	__asm        mov    rectPanel6.bottom, 0x1E0;
+	rectPanel6.left = 0x0;
+	rectPanel6.top = 0x18e;
+	rectPanel6.right = 0x1c8;
+	rectPanel6.bottom = 0x1e0;
 	__asm        jmp    _T156;
 // LINE 572:
 _T156:
-	__asm        mov    rectPassengerWindow.left, 0x1C6;
-	__asm        mov    rectPassengerWindow.top, 0x1B5;
-	__asm        mov    rectPassengerWindow.right, 0x280;
-	__asm        mov    rectPassengerWindow.bottom, 0x1E0;
+	rectPassengerWindow.left = 0x1c6;
+	rectPassengerWindow.top = 0x1b5;
+	rectPassengerWindow.right = 0x280;
+	rectPassengerWindow.bottom = 0x1e0;
 	__asm        jmp    _T177;
 // LINE 574:
 _T177:
@@ -2403,31 +2398,31 @@ _T34:
 	__asm        cmp    gameResolution, 1;
 	__asm        jne    _Tcd;
 // LINE 645:
-	__asm        mov    rectFlap0.left, 0x1F6;
-	__asm        mov    rectFlap0.top, 0x18;
-	__asm        mov    rectFlap0.right, 0x280;
-	__asm        mov    rectFlap0.bottom, 0x52;
+	rectFlap0.left = 0x1f6;
+	rectFlap0.top = 0x18;
+	rectFlap0.right = 0x280;
+	rectFlap0.bottom = 0x52;
 	__asm        jmp    _T6a;
 // LINE 646:
 _T6a:
-	__asm        mov    rectFlap1.left, 0x1F6;
-	__asm        mov    rectFlap1.top, 0x5A;
-	__asm        mov    rectFlap1.right, 0x280;
-	__asm        mov    rectFlap1.bottom, 0x94;
+	rectFlap1.left = 0x1f6;
+	rectFlap1.top = 0x5a;
+	rectFlap1.right = 0x280;
+	rectFlap1.bottom = 0x94;
 	__asm        jmp    _T8b;
 // LINE 647:
 _T8b:
-	__asm        mov    rectFlap2.left, 0x1F6;
-	__asm        mov    rectFlap2.top, 0x9C;
-	__asm        mov    rectFlap2.right, 0x280;
-	__asm        mov    rectFlap2.bottom, 0xD6;
+	rectFlap2.left = 0x1f6;
+	rectFlap2.top = 0x9c;
+	rectFlap2.right = 0x280;
+	rectFlap2.bottom = 0xd6;
 	__asm        jmp    _Tac;
 // LINE 648:
 _Tac:
-	__asm        mov    rectFlap3.left, 0x1F6;
-	__asm        mov    rectFlap3.top, 0xDE;
-	__asm        mov    rectFlap3.right, 0x280;
-	__asm        mov    rectFlap3.bottom, 0x118;
+	rectFlap3.left = 0x1f6;
+	rectFlap3.top = 0xde;
+	rectFlap3.right = 0x280;
+	rectFlap3.bottom = 0x118;
 	__asm        jmp    _Tcd;
 // LINE 651:
 _Tcd:

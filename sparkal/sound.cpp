@@ -669,13 +669,8 @@ ERROR_CLEANUP:
 	__asm        mov    ecx, [eax+8];
 	__asm        call   dword ptr [edx+0x74];
 // LINE 203:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+8];
-	__asm        mov    [ecx+0x52], eax;
+	this->lpPrimarySound = 0x0;
+	this->primarySound->lpSound[0] = this->lpPrimarySound;
 // LINE 205:
 _T263:
 	__asm        mov    eax, this;
@@ -690,10 +685,8 @@ _T263:
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+8];
 // LINE 207:
-	__asm        mov    DigitalSound::lpDirectSound, 0;
-	__asm        mov    eax, DigitalSound::lpDirectSound;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x10], eax;
+	DigitalSound::lpDirectSound = 0x0;
+	this->lpDirectSound = DigitalSound::lpDirectSound;
 // LINE 216:
 END_OF_ROUTINE:
 	return bReturnValue;
@@ -1280,13 +1273,8 @@ _Tf2:
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     _T11c;
 
-	__asm        mov    eax, newSound;
-	__asm        mov    eax, [eax+0x18];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x18], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x18];
-	__asm        inc    dword ptr [eax+0xC];
+	this->sSoundFile.reference = newSound.sSoundFile.reference;
+	this->sSoundFile.reference-><basic_string_ref<char>+0x0c:4>++;
 	__asm        jmp    _T20f;
 _T11c:
 	__asm        push   0x10;
@@ -1645,13 +1633,8 @@ _Tb1:
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     _Tdb;
 
-	__asm        mov    eax, sNewSoundFile;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x18], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x18];
-	__asm        inc    dword ptr [eax+0xC];
+	this->sSoundFile.reference = sNewSoundFile.reference;
+	this->sSoundFile.reference-><basic_string_ref<char>+0x0c:4>++;
 	__asm        jmp    _T1ce;
 _Tdb:
 	__asm        push   0x10;
@@ -1877,13 +1860,8 @@ _Te9:
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     _T113;
 
-	__asm        mov    eax, sNewSoundFile;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x18], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x18];
-	__asm        inc    dword ptr [eax+0xC];
+	this->sSoundFile.reference = sNewSoundFile.reference;
+	this->sSoundFile.reference-><basic_string_ref<char>+0x0c:4>++;
 	__asm        jmp    _T206;
 _T113:
 	__asm        push   0x10;
@@ -2104,13 +2082,8 @@ _Tb1:
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     _Tdb;
 
-	__asm        mov    eax, sNewSoundFile;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x18], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x18];
-	__asm        inc    dword ptr [eax+0xC];
+	this->sSoundFile.reference = sNewSoundFile.reference;
+	this->sSoundFile.reference-><basic_string_ref<char>+0x0c:4>++;
 	__asm        jmp    _T1ce;
 _Tdb:
 	__asm        push   0x10;
@@ -4448,21 +4421,9 @@ _T39d:
 	return 0x0;
 // LINE 1685:
 _T3e0:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    dword ptr [eax+0x3C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    eax, [eax+0x3C];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x72];
-	__asm        mov    [ecx+0x38], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    eax, [eax+0x38];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x72];
-	__asm        mov    [ecx+0x34], eax;
+	this->lpStreamBufferInfo->dwProgress = 0x0;
+	this->lpStreamBufferInfo->dwPlayLast = this->lpStreamBufferInfo->dwProgress;
+	this->lpStreamBufferInfo->dwNextWriteOffset = this->lpStreamBufferInfo->dwPlayLast;
 // LINE 1686:
 	this->lpStreamBufferInfo->bDonePlaying = 0x0;
 // LINE 1690:
@@ -4533,15 +4494,8 @@ _T484:
 	__asm        mov    eax, [eax];
 	__asm        call   dword ptr [eax+0x48];
 // LINE 1711:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    dword ptr [eax+0x50], 0;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x72];
-	__asm        mov    eax, [eax+0x50];
-	__asm        mov    ecx, this;
-	__asm        mov    ecx, [ecx+0x72];
-	__asm        mov    [ecx+0x54], eax;
+	this->lpStreamBufferInfo->bTimerInstalled = 0x0;
+	this->lpStreamBufferInfo->bStreamPlaying = this->lpStreamBufferInfo->bTimerInstalled;
 // LINE 1712:
 	return 0x0;
 // LINE 1714:

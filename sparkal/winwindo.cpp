@@ -304,12 +304,10 @@ _T196:
 	__asm        or     dwWindowsStyle, 0x30000;
 // LINE 124:
 _T1a7:
-	__asm        mov    WindowRect.left, 0;
-	__asm        mov    WindowRect.top, 0;
-	__asm        mov    eax, Width;
-	__asm        mov    WindowRect.right, eax;
-	__asm        mov    eax, Height;
-	__asm        mov    WindowRect.bottom, eax;
+	WindowRect.left = 0x0;
+	WindowRect.top = 0x0;
+	WindowRect.right = Width;
+	WindowRect.bottom = Height;
 // LINE 125:
 	__asm        push   0;
 	__asm        mov    eax, dwWindowsStyle;
@@ -793,12 +791,8 @@ _T41:
 	__asm        jmp    _T9b;
 // LINE 288:
 _T81:
-	__asm        mov    eax, pHeight;
-	__asm        mov    dword ptr [eax], 0;
-	__asm        mov    eax, pHeight;
-	__asm        mov    eax, [eax];
-	__asm        mov    ecx, pWidth;
-	__asm        mov    [ecx], eax;
+	pHeight[0] = 0x0;
+	pWidth[0] = pHeight[0];
 // LINE 289:
 	Error = 0x80000000;
 // LINE 292:

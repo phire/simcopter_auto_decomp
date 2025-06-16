@@ -76,11 +76,11 @@ short LZACompress(/*packed*/ class cGZXBitstream *inStream, /*packed*/ class cGZ
 	/*bp-0x18*/  /*packed*/ struct tLZSSBinaryForest *forest;
 
 // LINE 648:
-	__asm        mov    header[0], 0;
-	__asm        mov    header[1], 0;
-	__asm        mov    header[2], 0;
-	__asm        mov    header[3], 0;
-	__asm        mov    header[4], 0;
+	header[0] = 0x0;
+	header[1] = 0x0;
+	header[2] = 0x0;
+	header[3] = 0x0;
+	header[4] = 0x0;
 // LINE 653:
 	cSize[0] = 0x0;
 // LINE 655:
@@ -290,8 +290,8 @@ static short Encode(/*packed*/ struct tACompModel *model, /*packed*/ struct tLZS
 	__asm        call   InitTree;
 	__asm        add    esp, 4;
 // LINE 536:
-	__asm        mov    s, 0;
-	__asm        mov    r, 0xFC4;
+	s = 0x0;
+	r = 0xfc4;
 // LINE 537:
 	i = s;
 	__asm        jmp    _T55;
@@ -2041,8 +2041,8 @@ static long BinarySearchSym(unsigned long x, /*packed*/ struct tACompModel *mode
 	/*bp-0xc*/   long k;
 
 // LINE 429:
-	__asm        mov    i, 1;
-	__asm        mov    j, 0x13A;
+	i = 0x1;
+	j = 0x13a;
 // LINE 430:
 _T17:
 	__asm        mov    eax, i;
@@ -2190,8 +2190,8 @@ static long BinarySearchPos(unsigned long x, /*packed*/ struct tACompModel *mode
 	/*bp-0xc*/   long k;
 
 // LINE 445:
-	__asm        mov    i, 1;
-	__asm        mov    j, 0x1000;
+	i = 0x1;
+	j = 0x1000;
 // LINE 446:
 _T17:
 	__asm        mov    eax, i;

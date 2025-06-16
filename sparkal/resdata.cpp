@@ -40,20 +40,13 @@ protected:
 // FUNCTION: COPTER_D 0x004477b0
 void ResourceRCData::ResourceRCData() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F648;
+	this->nResource = 0x0;
+	this->chData = 0x0;
+	this->bWeOwnTheData = 0x0;
+	this->hFoundResource = 0x0;
+	this->hInstance = 0x0;
+	this->hResource = 0x0;
+	this-><vftable> = 0x58f648;
 // LINE 27:
 	return;
 
@@ -63,15 +56,10 @@ void ResourceRCData::ResourceRCData() {
 // FUNCTION: COPTER_D 0x0044780e
 void ResourceRCData::ResourceRCData(int32_t nTheResource, int32_t bLoadNow) {
 
-	__asm        mov    eax, nTheResource;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F648;
+	this->nResource = nTheResource;
+	this->chData = 0x0;
+	this->bWeOwnTheData = 0x0;
+	this-><vftable> = 0x58f648;
 // LINE 40:
 	this->hInstance = _ghWindowsInstance;
 // LINE 41:

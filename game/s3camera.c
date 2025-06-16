@@ -829,11 +829,9 @@ _T116:
 // LINE 506:
 	Viewer.matrix[2][3] = 0x0;
 // LINE 510:
-	__asm        mov    Viewer.matrix[3][2], 0;
-	__asm        mov    eax, Viewer.matrix[3][2];
-	__asm        mov    Viewer.matrix[3][1], eax;
-	__asm        mov    eax, Viewer.matrix[3][1];
-	__asm        mov    Viewer.matrix[3][0], eax;
+	Viewer.matrix[3][2] = 0x0;
+	Viewer.matrix[3][1] = Viewer.matrix[3][2];
+	Viewer.matrix[3][0] = Viewer.matrix[3][1];
 // LINE 511:
 	Viewer.matrix[3][3] = 0x10000;
 // LINE 515:
@@ -1031,16 +1029,9 @@ void S3AngleRotMat(int32_t *matrix[4], int32_t Yaw, int32_t Pitch, int32_t Roll)
 // LINE 554:
 	matrix[11] = 0x0;
 // LINE 558:
-	__asm        mov    eax, matrix;
-	__asm        mov    dword ptr [eax+0x38], 0;
-	__asm        mov    eax, matrix;
-	__asm        mov    eax, [eax+0x38];
-	__asm        mov    ecx, matrix;
-	__asm        mov    [ecx+0x34], eax;
-	__asm        mov    eax, matrix;
-	__asm        mov    eax, [eax+0x34];
-	__asm        mov    ecx, matrix;
-	__asm        mov    [ecx+0x30], eax;
+	matrix[14] = 0x0;
+	matrix[13] = matrix[14];
+	matrix[12] = matrix[13];
 // LINE 559:
 	matrix[15] = 0x10000;
 // LINE 561:

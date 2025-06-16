@@ -320,16 +320,11 @@ struct SparkalPoint{ // packed(0x8 bytes) TI: 0x1a54
 // FUNCTION: COPTER_D 0x004b9040
 void HotSpot::HotSpot() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 0;
+	this->lID = 0x0;
+	this->lType = 0x0;
+	this->pointArray.start = 0x0;
+	this->pointArray.finish = 0x0;
+	this->pointArray.end_of_storage = 0x0;
 	__asm        jmp    _T42;
 // LINE 26:
 _T42:
@@ -341,12 +336,9 @@ _T42:
 // FUNCTION: COPTER_D 0x004b908f
 void HotSpot::HotSpot(const /*packed*/ class HotSpot& newHotSpot) {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 0;
+	this->pointArray.start = 0x0;
+	this->pointArray.finish = 0x0;
+	this->pointArray.end_of_storage = 0x0;
 	__asm        jmp    _T2f;
 // LINE 35:
 _T2f:
@@ -704,18 +696,11 @@ void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long *lCoordin
 	/*bp-0x4*/   int32_t i;
 
 
-	__asm        mov    eax, lNewID;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx], eax;
-	__asm        mov    eax, lNewType;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 0;
+	this->lID = lNewID;
+	this->lType = lNewType;
+	this->pointArray.start = 0x0;
+	this->pointArray.finish = 0x0;
+	this->pointArray.end_of_storage = 0x0;
 	__asm        jmp    _T55;
 // LINE 50:
 _T55:
@@ -1100,12 +1085,9 @@ void HotSpot::HotSpot(/*packed*/ struct HotSpotResourceRecord *hotSpotResourceRe
 	/*bp-0x8*/   int32_t i;
 
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 0;
+	this->pointArray.start = 0x0;
+	this->pointArray.finish = 0x0;
+	this->pointArray.end_of_storage = 0x0;
 	__asm        jmp    _T3e;
 // LINE 66:
 _T3e:
@@ -1493,17 +1475,11 @@ _T4f0:
 // FUNCTION: COPTER_D 0x004b9e75
 void HotSpot::HotSpot(long lNewID, /*packed*/ struct SparkalRect& rectHotspot) {
 
-	__asm        mov    eax, lNewID;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx], eax;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 1;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 0;
+	this->lID = lNewID;
+	this->lType = 0x1;
+	this->pointArray.start = 0x0;
+	this->pointArray.finish = 0x0;
+	this->pointArray.end_of_storage = 0x0;
 	__asm        jmp    _T56;
 _T56:
 	__asm        mov    eax, rectHotspot;
@@ -2892,9 +2868,8 @@ _T1b:
 	__asm        mov    j, eax;
 	__asm        jmp    _T50;
 _T47:
-	__asm        mov    eax, i;
-	__asm        mov    j, eax;
-	__asm        inc    i;
+	j = i;
+	i++;
 _T50:
 	__asm        mov    eax, i;
 	__asm        cmp    nVertices, eax;
@@ -3177,20 +3152,10 @@ _T1d5:
 	__asm        cmp    nPointCount, 0;
 	__asm        jg     _T228;
 // LINE 236:
-	__asm        mov    eax, rectBounds;
-	__asm        mov    dword ptr [eax+0xC], 0;
-	__asm        mov    eax, rectBounds;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    ecx, rectBounds;
-	__asm        mov    [ecx+8], eax;
-	__asm        mov    eax, rectBounds;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, rectBounds;
-	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, rectBounds;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, rectBounds;
-	__asm        mov    [ecx], eax;
+	rectBounds.bottom = 0x0;
+	rectBounds.right = rectBounds.bottom;
+	rectBounds.top = rectBounds.right;
+	rectBounds.left = rectBounds.top;
 	__asm        jmp    _T223;
 // LINE 237:
 _T223:
@@ -3201,23 +3166,15 @@ _T228:
 _T22d:
 	__asm        jmp    _T232;
 _T232:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    eax, [eax];
-	__asm        mov    nMaxX, eax;
-	__asm        mov    eax, nMaxX;
-	__asm        mov    nMinX, eax;
+	nMaxX = this->pointArray.start->x;
+	nMinX = nMaxX;
 // LINE 240:
 	__asm        jmp    _T248;
 _T248:
 	__asm        jmp    _T24d;
 _T24d:
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    eax, [eax+4];
-	__asm        mov    nMaxY, eax;
-	__asm        mov    eax, nMaxY;
-	__asm        mov    nMinY, eax;
+	nMaxY = this->pointArray.start->y;
+	nMinY = nMaxY;
 // LINE 242:
 	i = 0x1;
 	__asm        jmp    _T26e;
@@ -3330,20 +3287,10 @@ _T363:
 	return;
 // LINE 261:
 _T38b:
-	__asm        mov    eax, rectBounds;
-	__asm        mov    dword ptr [eax+0xC], 0;
-	__asm        mov    eax, rectBounds;
-	__asm        mov    eax, [eax+0xC];
-	__asm        mov    ecx, rectBounds;
-	__asm        mov    [ecx+8], eax;
-	__asm        mov    eax, rectBounds;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, rectBounds;
-	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, rectBounds;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, rectBounds;
-	__asm        mov    [ecx], eax;
+	rectBounds.bottom = 0x0;
+	rectBounds.right = rectBounds.bottom;
+	rectBounds.top = rectBounds.right;
+	rectBounds.left = rectBounds.top;
 	__asm        jmp    _T3bd;
 // LINE 262:
 _T3bd:

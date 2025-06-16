@@ -238,16 +238,9 @@ int32_t MTNormalize(/*packed*/ struct Point3d *V) {
 	__asm        jmp    _Te6;
 // LINE 97:
 _Tc5:
-	__asm        mov    eax, V;
-	__asm        mov    dword ptr [eax+8], 0;
-	__asm        mov    eax, V;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, V;
-	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, V;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, V;
-	__asm        mov    [ecx], eax;
+	V->z = 0x0;
+	V->y = V->z;
+	V->x = V->y;
 // LINE 99:
 _Te6:
 	__asm        fld    r;
@@ -307,15 +300,9 @@ int32_t MTSideOfPlane(/*packed*/ struct Point3d *V, /*packed*/ struct Point3d *p
 	/*bp-0x20*/  /*packed*/ struct Plane plane; // 0x10 bytes
 
 // LINE 148:
-	__asm        mov    eax, p;
-	__asm        mov    eax, [eax];
-	__asm        mov    d.x, eax;
-	__asm        mov    eax, p;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    d.y, eax;
-	__asm        mov    eax, p;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    d.z, eax;
+	d.x = p->x;
+	d.y = p->y;
+	d.z = p->z;
 // LINE 149:
 	__asm        lea    eax, d.x;
 	__asm        push   eax;
@@ -921,28 +908,12 @@ void MTArbRotMat(int32_t *mat[4], int32_t Angle, /*packed*/ struct Point3d *V) {
 // LINE 439:
 	mat[10] = (VzzCos + Cos);
 // LINE 445:
-	__asm        mov    eax, mat;
-	__asm        mov    dword ptr [eax+0x38], 0;
-	__asm        mov    eax, mat;
-	__asm        mov    eax, [eax+0x38];
-	__asm        mov    ecx, mat;
-	__asm        mov    [ecx+0x34], eax;
-	__asm        mov    eax, mat;
-	__asm        mov    eax, [eax+0x34];
-	__asm        mov    ecx, mat;
-	__asm        mov    [ecx+0x30], eax;
-	__asm        mov    eax, mat;
-	__asm        mov    eax, [eax+0x30];
-	__asm        mov    ecx, mat;
-	__asm        mov    [ecx+0x2C], eax;
-	__asm        mov    eax, mat;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        mov    ecx, mat;
-	__asm        mov    [ecx+0x1C], eax;
-	__asm        mov    eax, mat;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        mov    ecx, mat;
-	__asm        mov    [ecx+0xC], eax;
+	mat[14] = 0x0;
+	mat[13] = mat[14];
+	mat[12] = mat[13];
+	mat[11] = mat[12];
+	mat[7] = mat[11];
+	mat[3] = mat[7];
 // LINE 446:
 	mat[15] = 0x10000;
 // LINE 447:
@@ -1490,28 +1461,12 @@ void MTCreateDOF4x4(int32_t *mat[4], /*packed*/ struct Point3d *dv) {
 // LINE 604:
 	mat[10] = dv->z;
 // LINE 610:
-	__asm        mov    eax, mat;
-	__asm        mov    dword ptr [eax+0x38], 0;
-	__asm        mov    eax, mat;
-	__asm        mov    eax, [eax+0x38];
-	__asm        mov    ecx, mat;
-	__asm        mov    [ecx+0x34], eax;
-	__asm        mov    eax, mat;
-	__asm        mov    eax, [eax+0x34];
-	__asm        mov    ecx, mat;
-	__asm        mov    [ecx+0x30], eax;
-	__asm        mov    eax, mat;
-	__asm        mov    eax, [eax+0x30];
-	__asm        mov    ecx, mat;
-	__asm        mov    [ecx+0x2C], eax;
-	__asm        mov    eax, mat;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        mov    ecx, mat;
-	__asm        mov    [ecx+0x1C], eax;
-	__asm        mov    eax, mat;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        mov    ecx, mat;
-	__asm        mov    [ecx+0xC], eax;
+	mat[14] = 0x0;
+	mat[13] = mat[14];
+	mat[12] = mat[13];
+	mat[11] = mat[12];
+	mat[7] = mat[11];
+	mat[3] = mat[7];
 // LINE 611:
 	mat[15] = 0x10000;
 // LINE 612:
@@ -1569,28 +1524,12 @@ void MTCreateDOF4x4Y(int32_t *mat[4], /*packed*/ struct Point3d *dv) {
 // LINE 664:
 	mat[10] = zv.z;
 // LINE 670:
-	__asm        mov    eax, mat;
-	__asm        mov    dword ptr [eax+0x38], 0;
-	__asm        mov    eax, mat;
-	__asm        mov    eax, [eax+0x38];
-	__asm        mov    ecx, mat;
-	__asm        mov    [ecx+0x34], eax;
-	__asm        mov    eax, mat;
-	__asm        mov    eax, [eax+0x34];
-	__asm        mov    ecx, mat;
-	__asm        mov    [ecx+0x30], eax;
-	__asm        mov    eax, mat;
-	__asm        mov    eax, [eax+0x30];
-	__asm        mov    ecx, mat;
-	__asm        mov    [ecx+0x2C], eax;
-	__asm        mov    eax, mat;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        mov    ecx, mat;
-	__asm        mov    [ecx+0x1C], eax;
-	__asm        mov    eax, mat;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        mov    ecx, mat;
-	__asm        mov    [ecx+0xC], eax;
+	mat[14] = 0x0;
+	mat[13] = mat[14];
+	mat[12] = mat[13];
+	mat[11] = mat[12];
+	mat[7] = mat[11];
+	mat[3] = mat[7];
 // LINE 671:
 	mat[15] = 0x10000;
 // LINE 672:
@@ -1692,28 +1631,12 @@ void MTCreateReflection4x4(int32_t *mat[4], /*packed*/ struct Point3d *norm) {
 	__asm        mov    ecx, mat;
 	__asm        mov    [ecx+0x24], eax;
 // LINE 706:
-	__asm        mov    eax, mat;
-	__asm        mov    dword ptr [eax+0x38], 0;
-	__asm        mov    eax, mat;
-	__asm        mov    eax, [eax+0x38];
-	__asm        mov    ecx, mat;
-	__asm        mov    [ecx+0x34], eax;
-	__asm        mov    eax, mat;
-	__asm        mov    eax, [eax+0x34];
-	__asm        mov    ecx, mat;
-	__asm        mov    [ecx+0x30], eax;
-	__asm        mov    eax, mat;
-	__asm        mov    eax, [eax+0x30];
-	__asm        mov    ecx, mat;
-	__asm        mov    [ecx+0x2C], eax;
-	__asm        mov    eax, mat;
-	__asm        mov    eax, [eax+0x2C];
-	__asm        mov    ecx, mat;
-	__asm        mov    [ecx+0x1C], eax;
-	__asm        mov    eax, mat;
-	__asm        mov    eax, [eax+0x1C];
-	__asm        mov    ecx, mat;
-	__asm        mov    [ecx+0xC], eax;
+	mat[14] = 0x0;
+	mat[13] = mat[14];
+	mat[12] = mat[13];
+	mat[11] = mat[12];
+	mat[7] = mat[11];
+	mat[3] = mat[7];
 // LINE 707:
 	mat[15] = 0x10000;
 // LINE 708:

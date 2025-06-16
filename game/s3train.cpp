@@ -8237,12 +8237,8 @@ foundCell:
 // LINE 3950:
 	this->flags[8] = 0x0;
 // LINE 3955:
-	__asm        mov    eax, beampoint.x;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x35], eax;
-	__asm        mov    eax, beampoint.y;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x39], eax;
+	this->currentLocation1.x = beampoint.x;
+	this->currentLocation1.y = beampoint.y;
 	__asm        jmp    _T4a5;
 // LINE 3959:
 _T4a5:
@@ -8652,12 +8648,8 @@ foundCell:
 // LINE 4115:
 	this->flags[8] = 0x0;
 // LINE 4120:
-	__asm        mov    eax, beampoint.x;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x35], eax;
-	__asm        mov    eax, beampoint.y;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x39], eax;
+	this->currentLocation1.x = beampoint.x;
+	this->currentLocation1.y = beampoint.y;
 	__asm        jmp    _T34b;
 // LINE 4124:
 _T34b:

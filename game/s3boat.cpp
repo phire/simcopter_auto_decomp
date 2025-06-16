@@ -4150,12 +4150,8 @@ _T3fa:
 // LINE 2330:
 	this->flags[1] = 0x1;
 // LINE 2335:
-	__asm        mov    eax, beampoint.x;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x33], eax;
-	__asm        mov    eax, beampoint.y;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x37], eax;
+	this->currentLocation.x = beampoint.x;
+	this->currentLocation.y = beampoint.y;
 	__asm        jmp    _T42c;
 // LINE 2339:
 _T42c:
@@ -4913,12 +4909,8 @@ _T845:
 	this->flags[1] = 0x1;
 // LINE 2522:
 _T84f:
-	__asm        mov    eax, beampoint.x;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x33], eax;
-	__asm        mov    eax, beampoint.y;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x37], eax;
+	this->currentLocation.x = beampoint.x;
+	this->currentLocation.y = beampoint.y;
 	__asm        jmp    _T86c;
 // LINE 2526:
 _T86c:

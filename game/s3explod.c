@@ -121,12 +121,12 @@ void S3ExplosionReset() {
 // LINE 60:
 	S_num_smoke = 0x0;
 // LINE 63:
-	__asm        mov    i, 0;
-	__asm        mov    ed, 0x62A578;
+	i = 0x0;
+	ed = 0x62a578;
 	__asm        jmp    _T37;
 _T30:
-	__asm        inc    i;
-	__asm        add    ed, 0x34;
+	i++;
+	ed += 0x34;
 _T37:
 	__asm        cmp    i, 0x14;
 	__asm        jge    _T4f;
@@ -136,12 +136,12 @@ _T37:
 	__asm        jmp    _T30;
 // LINE 70:
 _T4f:
-	__asm        mov    i, 0;
-	__asm        mov    sd, 0x62AA58;
+	i = 0x0;
+	sd = 0x62aa58;
 	__asm        jmp    _T69;
 _T62:
-	__asm        inc    i;
-	__asm        add    sd, 0x1C;
+	i++;
+	sd += 0x1c;
 _T69:
 	__asm        cmp    i, 0x64;
 	__asm        jge    __RETURN;
@@ -172,12 +172,12 @@ void S3ExplosionInit() {
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 103:
-	__asm        mov    i, 0;
-	__asm        mov    ed, 0x62A578;
+	i = 0x0;
+	ed = 0x62a578;
 	__asm        jmp    _T39;
 _T32:
-	__asm        inc    i;
-	__asm        add    ed, 0x34;
+	i++;
+	ed += 0x34;
 _T39:
 	__asm        cmp    i, 0x14;
 	__asm        jge    _T14a;
@@ -261,12 +261,12 @@ _T14a:
 	__asm        add    esp, 4;
 	__asm        mov    size, eax;
 // LINE 140:
-	__asm        mov    i, 0;
-	__asm        mov    sd, 0x62AA58;
+	i = 0x0;
+	sd = 0x62aa58;
 	__asm        jmp    _T17d;
 _T176:
-	__asm        inc    i;
-	__asm        add    sd, 0x1C;
+	i++;
+	sd += 0x1c;
 _T17d:
 	__asm        cmp    i, 0x64;
 	__asm        jge    _T236;
@@ -603,12 +603,12 @@ void S3ExplosionStart(/*packed*/ struct _CELL_INFO *cptr, int32_t x, int32_t y, 
 	/*bp-0x2c*/  /*packed*/ struct _EXPLODE_DATA *ed;
 
 // LINE 240:
-	__asm        mov    i, 0;
-	__asm        mov    ed, 0x62A578;
+	i = 0x0;
+	ed = 0x62a578;
 	__asm        jmp    _T23;
 _T1c:
-	__asm        inc    i;
-	__asm        add    ed, 0x34;
+	i++;
+	ed += 0x34;
 _T23:
 	__asm        cmp    i, 0x14;
 	__asm        jge    _T43;
@@ -743,12 +743,12 @@ void S3ExplosionSmokeStart(/*packed*/ struct _CELL_INFO *cptr, /*packed*/ struct
 	/*bp-0x28*/  long i;
 
 // LINE 319:
-	__asm        mov    i, 0;
-	__asm        mov    sd, 0x62AA58;
+	i = 0x0;
+	sd = 0x62aa58;
 	__asm        jmp    _T23;
 _T1c:
-	__asm        inc    i;
-	__asm        add    sd, 0x1C;
+	i++;
+	sd += 0x1c;
 _T23:
 	__asm        cmp    i, 0x64;
 	__asm        jge    _T43;
@@ -903,12 +903,12 @@ void S3ExplosionDriver() {
 	/*bp-0x94*/  /*packed*/ struct _EXPLODE_DATA *ed;
 
 // LINE 410:
-	__asm        mov    i, 0;
-	__asm        mov    ed, 0x62A578;
+	i = 0x0;
+	ed = 0x62a578;
 	__asm        jmp    _T2c;
 _T22:
-	__asm        inc    i;
-	__asm        add    ed, 0x34;
+	i++;
+	ed += 0x34;
 _T2c:
 	__asm        cmp    S_num_expls, 0;
 	__asm        jle    _T218;
@@ -1061,12 +1061,12 @@ _T17e:
 	__asm        jmp    _T22;
 // LINE 472:
 _T218:
-	__asm        mov    i, 0;
-	__asm        mov    sd, 0x62AA58;
+	i = 0x0;
+	sd = 0x62aa58;
 	__asm        jmp    _T232;
 _T22b:
-	__asm        inc    i;
-	__asm        add    sd, 0x1C;
+	i++;
+	sd += 0x1c;
 _T232:
 	__asm        cmp    S_num_smoke, 0;
 	__asm        jle    _T347;

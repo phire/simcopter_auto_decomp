@@ -498,9 +498,8 @@ _Tea:
 	return 0x6;
 // LINE 143:
 _T150:
-	__asm        mov    bSaveGameInfoFound, 0;
-	__asm        mov    eax, bSaveGameInfoFound;
-	__asm        mov    bPathInfoFound, eax;
+	bSaveGameInfoFound = 0x0;
+	bPathInfoFound = bSaveGameInfoFound;
 // LINE 144:
 	__asm        mov    ecx, this;
 	__asm        mov    eax, this;

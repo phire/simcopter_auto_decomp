@@ -32,10 +32,8 @@ public:
 // FUNCTION: COPTER_D 0x0043e160
 void NotificationItem::NotificationItem() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
+	this->lPreferenceType = 0x0;
+	this->myNotificationSink = 0x0;
 // LINE 10:
 	return;
 
@@ -58,12 +56,8 @@ void NotificationItem::NotificationItem(const /*packed*/ class NotificationItem&
 // FUNCTION: COPTER_D 0x0043e1b3
 void NotificationItem::NotificationItem(long lNewPreferenceType, /*packed*/ class NotificationSink *newNotificationSink) {
 
-	__asm        mov    eax, lNewPreferenceType;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx], eax;
-	__asm        mov    eax, newNotificationSink;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+4], eax;
+	this->lPreferenceType = lNewPreferenceType;
+	this->myNotificationSink = newNotificationSink;
 // LINE 20:
 	return;
 

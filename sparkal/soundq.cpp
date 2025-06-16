@@ -523,13 +523,8 @@ _T125:
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     _T14f;
 
-	__asm        mov    eax, sNewSoundFile;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0xC], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0xC];
-	__asm        inc    dword ptr [eax+0xC];
+	this->sSoundFile.reference = sNewSoundFile.reference;
+	this->sSoundFile.reference-><basic_string_ref<char>+0x0c:4>++;
 	__asm        jmp    _T242;
 _T14f:
 	__asm        push   0x10;
@@ -1296,12 +1291,9 @@ _T22a:
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    _T255;
 _T255:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x58F3F0;
+	this->bOK = 0x0;
+	this->bMutex = 0x0;
+	this-><vftable> = 0x58f3f0;
 // LINE 146:
 	this->nWaitTimerSet = 0x0;
 // LINE 148:
@@ -1450,9 +1442,9 @@ _T194:
 _T199:
 	__asm        jmp    _T143;
 _T19e:
-	__asm        mov    list<SoundQueueItem *>::free_list, 0;
-	__asm        mov    list<SoundQueueItem *>::next_avail, 0;
-	__asm        mov    list<SoundQueueItem *>::last, 0;
+	list<SoundQueueItem *>::free_list = 0x0;
+	list<SoundQueueItem *>::next_avail = 0x0;
+	list<SoundQueueItem *>::last = 0x0;
 	__asm        jmp    _T1c1;
 _T1c1:
 	return;

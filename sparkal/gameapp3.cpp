@@ -559,10 +559,10 @@ _T8f:
 	__asm        cmp    gameResolution, 1;
 	__asm        jne    _Te5;
 // LINE 227:
-	__asm        mov    rectScreenWindow.left, 0;
-	__asm        mov    rectScreenWindow.top, 0;
-	__asm        mov    rectScreenWindow.right, 0x280;
-	__asm        mov    rectScreenWindow.bottom, 0x1E0;
+	rectScreenWindow.left = 0x0;
+	rectScreenWindow.top = 0x0;
+	rectScreenWindow.right = 0x280;
+	rectScreenWindow.bottom = 0x1e0;
 	__asm        jmp    _Te0;
 // LINE 228:
 _Te0:
@@ -571,10 +571,10 @@ _Te5:
 	__asm        cmp    gameResolution, 2;
 	__asm        jne    _T118;
 // LINE 229:
-	__asm        mov    rectScreenWindow.left, 0;
-	__asm        mov    rectScreenWindow.top, 0;
-	__asm        mov    rectScreenWindow.right, 0x320;
-	__asm        mov    rectScreenWindow.bottom, 0x258;
+	rectScreenWindow.left = 0x0;
+	rectScreenWindow.top = 0x0;
+	rectScreenWindow.right = 0x320;
+	rectScreenWindow.bottom = 0x258;
 	__asm        jmp    _T113;
 // LINE 230:
 _T113:
@@ -583,10 +583,10 @@ _T118:
 	__asm        cmp    gameResolution, 3;
 	__asm        jne    _T146;
 // LINE 231:
-	__asm        mov    rectScreenWindow.left, 0;
-	__asm        mov    rectScreenWindow.top, 0;
-	__asm        mov    rectScreenWindow.right, 0x400;
-	__asm        mov    rectScreenWindow.bottom, 0x300;
+	rectScreenWindow.left = 0x0;
+	rectScreenWindow.top = 0x0;
+	rectScreenWindow.right = 0x400;
+	rectScreenWindow.bottom = 0x300;
 	__asm        jmp    _T146;
 // LINE 232:
 _T146:

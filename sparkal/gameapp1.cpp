@@ -1059,22 +1059,14 @@ __RETURN:
 // FUNCTION: COPTER_D 0x00487b0f
 void GamePreferences::GamePreferences() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 1;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x10], 1;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x18], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x1C], 0;
+	this->lQuadPixelType = 0x1;
+	this->bShowingPalette = 0x0;
+	this->bShowingDebugWindow = 0x0;
+	this->bPlayingSoundTrack = 0x0;
+	this->lStartupMode = 0x1;
+	this->lProcessPriority = 0x0;
+	this->lThreadPriority = 0x0;
+	this->lLanguage = 0x0;
 // LINE 97:
 	return;
 
@@ -1084,14 +1076,10 @@ void GamePreferences::GamePreferences() {
 // FUNCTION: COPTER_D 0x00487b77
 void RenderPreferences::RenderPreferences() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 1;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+4], 1;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+8], 1;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0xC], 1;
+	this->bShowObjectTexture = 0x1;
+	this->bShowGroundTexture = 0x1;
+	this->bShowSky = 0x1;
+	this->bShowPanelsWhenInHelicopter = 0x1;
 // LINE 106:
 	return;
 
@@ -1350,10 +1338,8 @@ _T34f:
 	__asm        mov    [ecx+4], eax;
 	__asm        jmp    _T389;
 _T389:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x590F38;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0x590F30;
+	this-><CGameApp+0x00:4> = 0x590f38;
+	this-><CGameApp+0x14:4> = 0x590f30;
 // LINE 120:
 	__asm        mov    ecx, this;
 	__asm        call   CGameApp::InitializeMemberVariables;
@@ -1370,10 +1356,8 @@ _T389:
 // FUNCTION: COPTER_D 0x00487f72
 void CGameApp::~CGameApp() {
 
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax], 0x590F38;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x14], 0x590F30;
+	this-><CGameApp+0x00:4> = 0x590f38;
+	this-><CGameApp+0x14:4> = 0x590f30;
 // LINE 137:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x50], 0;
@@ -3260,10 +3244,8 @@ _T320:
 	__asm        mov    [ecx+0x4170], eax;
 	__asm        jmp    _T42e;
 _T42e:
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x416C], 0;
-	__asm        mov    eax, this;
-	__asm        mov    dword ptr [eax+0x4168], 0;
+	this-><CGameApp+0x416c:4> = 0x0;
+	this-><CGameApp+0x4168:4> = 0x0;
 	__asm        jmp    _T453;
 _T453:
 	__asm        jmp    _T458;
@@ -3581,10 +3563,8 @@ _T71:
 	__asm        cmp    eax, 0x39;
 	__asm        jg     _T9c;
 // LINE 607:
-	__asm        mov    al, chSwitchToCheck;
-	__asm        mov    chUpperToCheck, al;
-	__asm        mov    al, chUpperToCheck;
-	__asm        mov    chLowerToCheck, al;
+	chUpperToCheck = chSwitchToCheck;
+	chLowerToCheck = chUpperToCheck;
 // LINE 609:
 	__asm        jmp    _Ta3;
 // LINE 610:
@@ -3640,8 +3620,8 @@ _T12f:
 // LINE 619:
 	__asm        jmp    _T157;
 _T14f:
-	__asm        inc    k;
-	__asm        inc    j;
+	k++;
+	j++;
 _T157:
 	__asm        movsx  eax, j;
 	__asm        movsx  eax, gszCommandLine[eax];

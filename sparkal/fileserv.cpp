@@ -1056,13 +1056,8 @@ _T13f:
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     _T175;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x10], eax;
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10];
-	__asm        inc    dword ptr [eax+0xC];
+	this->sRemoteDirectoryBase.reference = this->sLocalDirectoryBase.reference;
+	this->sRemoteDirectoryBase.reference-><basic_string_ref<char>+0x0c:4>++;
 	__asm        jmp    _T1d6;
 _T175:
 	__asm        push   0x10;
@@ -2010,11 +2005,8 @@ _Tc2:
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     _Tec;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+0x10];
-	__asm        mov    sTempValidationFilePath.reference, eax;
-	__asm        mov    eax, sTempValidationFilePath.reference;
-	__asm        inc    dword ptr [eax+0xC];
+	sTempValidationFilePath.reference = this->sRemoteDirectoryBase.reference;
+	sTempValidationFilePath.reference-><basic_string_ref<char>+0x0c:4>++;
 	__asm        jmp    _T136;
 _Tec:
 	__asm        push   0x10;
@@ -2385,17 +2377,11 @@ void FileServices::RefreshLocalPathCache(/*packed*/ class basic_string<char>& sD
 	__asm        lea    ecx, tempDirectory<Directory+0x00:None>;
 	__asm        call   Directory::Directory;
 // LINE 166:
-	__asm        mov    tempStringListDirectories.length, 0;
-	__asm        inc    list<basic_string<char>>::number_of_lists;
-	__asm        lea    ecx, tempStringListDirectories.node;
-	__asm        call   list<basic_string<char>>::get_node;
-	__asm        mov    tempStringListDirectories.node, eax;
-	__asm        mov    eax, tempStringListDirectories.node;
-	__asm        mov    ecx, tempStringListDirectories.node;
-	__asm        mov    [ecx], eax;
-	__asm        mov    eax, tempStringListDirectories.node;
-	__asm        mov    ecx, tempStringListDirectories.node;
-	__asm        mov    [ecx+4], eax;
+	tempStringListDirectories.length = 0x0;
+	list<basic_string<char>>::number_of_lists++;
+	tempStringListDirectories.node = tempStringListDirectories.node->list<basic_string<char>>::get_node();
+	tempStringListDirectories.node->next = tempStringListDirectories.node;
+	tempStringListDirectories.node->prev = tempStringListDirectories.node;
 	__asm        jmp    _T52;
 // LINE 167:
 _T52:
@@ -4673,11 +4659,8 @@ _T19f8:
 	__asm        cmp    dword ptr [eax+0xC], 0xFFFFFFFF;
 	__asm        je     _T1a23;
 
-	__asm        mov    eax, this;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    sTemp.reference, eax;
-	__asm        mov    eax, sTemp.reference;
-	__asm        add    dword ptr [eax+0xC], 1;
+	sTemp.reference = this->sLocalDirectoryBase.reference;
+	sTemp.reference-><basic_string_ref<char>+0x0c:4> += 0x1;
 	__asm        jmp    _T1b44;
 _T1a23:
 	__asm        push   0x10;

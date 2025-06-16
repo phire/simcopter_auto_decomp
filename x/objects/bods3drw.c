@@ -502,8 +502,8 @@ _T430:
 	__asm        test   ah, 1;
 	__asm        je     _T480;
 // LINE 256:
-	__asm        mov    reinterpret_cast<uint32_t>(bandSize), 0;
-	__asm        mov    *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&bandSize) + 4), 0x3FF00000;
+	reinterpret_cast<uint32_t>(bandSize) = 0x0;
+	*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&bandSize) + 4) = 0x3ff00000;
 // LINE 258:
 _T480:
 	__asm        fld    bandSize;
@@ -1238,8 +1238,8 @@ _Tc6:
 	__asm        test   ah, 1;
 	__asm        je     _Te8;
 
-	__asm        mov    reinterpret_cast<uint32_t>(mydir), 0;
-	__asm        mov    *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&mydir) + 4), 0xC0080000;
+	reinterpret_cast<uint32_t>(mydir) = 0x0;
+	*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&mydir) + 4) = 0xc0080000;
 // LINE 616:
 _Te8:
 	__asm        fld    mydir;
@@ -1248,8 +1248,8 @@ _Te8:
 	__asm        test   ah, 0x41;
 	__asm        jne    _T10a;
 
-	__asm        mov    reinterpret_cast<uint32_t>(mydir), 0;
-	__asm        mov    *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&mydir) + 4), 0x40100000;
+	reinterpret_cast<uint32_t>(mydir) = 0x0;
+	*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&mydir) + 4) = 0x40100000;
 // LINE 626:
 _T10a:
 	__asm        fld    mydir;
@@ -1314,10 +1314,8 @@ void DrawTaperedLine(/*unpacked*/ struct Point3d startPt, /*unpacked*/ struct Po
 // LINE 648:
 	error = 0x0;
 // LINE 656:
-	__asm        mov    eax, *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&G_figureShadeSpread) + 4);
-	__asm        mov    *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&colorLimit) + 4), eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(G_figureShadeSpread);
-	__asm        mov    reinterpret_cast<uint32_t>(colorLimit), eax;
+	*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&colorLimit) + 4) = *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&G_figureShadeSpread) + 4);
+	reinterpret_cast<uint32_t>(colorLimit) = reinterpret_cast<uint32_t>(G_figureShadeSpread);
 // LINE 659:
 	__asm        cmp    width, 0x19;
 	__asm        jle    _T32;
@@ -1771,10 +1769,8 @@ void DrawLine(/*unpacked*/ struct Point3d startPt, /*unpacked*/ struct Point3d e
 // LINE 833:
 	error = 0x0;
 // LINE 836:
-	__asm        mov    eax, *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&G_figureShadeSpread) + 4);
-	__asm        mov    *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&colorLimit) + 4), eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(G_figureShadeSpread);
-	__asm        mov    reinterpret_cast<uint32_t>(colorLimit), eax;
+	*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&colorLimit) + 4) = *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&G_figureShadeSpread) + 4);
+	reinterpret_cast<uint32_t>(colorLimit) = reinterpret_cast<uint32_t>(G_figureShadeSpread);
 // LINE 848:
 	__asm        cmp    width, 0x19;
 	__asm        jle    _T2f;
@@ -2165,13 +2161,11 @@ void DrawHorzLinePat(long startX, long endX, long yPos, unsigned char * pixPtr, 
 	/*bp-0x3c*/  double stride1; // 0x8 bytes
 
 // LINE 989:
-	__asm        mov    reinterpret_cast<uint32_t>(curPatOffset), 0;
-	__asm        mov    *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&curPatOffset) + 4), 0;
+	reinterpret_cast<uint32_t>(curPatOffset) = 0x0;
+	*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&curPatOffset) + 4) = 0x0;
 // LINE 991:
-	__asm        mov    eax, *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&xStride) + 4);
-	__asm        mov    *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&stride1) + 4), eax;
-	__asm        mov    eax, reinterpret_cast<uint32_t>(xStride);
-	__asm        mov    reinterpret_cast<uint32_t>(stride1), eax;
+	*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&stride1) + 4) = *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&xStride) + 4);
+	reinterpret_cast<uint32_t>(stride1) = reinterpret_cast<uint32_t>(xStride);
 // LINE 992:
 	__asm        fld    xStride;
 	__asm        fmul   qword ptr ds:[0x5939C0];
@@ -2497,10 +2491,8 @@ _T113:
 	return;
 // LINE 1112:
 _T146:
-	__asm        mov    al, color;
-	__asm        mov    ecx, writeBuffer;
-	__asm        mov    [ecx], al;
-	__asm        inc    writeBuffer;
+	writeBuffer[0] = color;
+	writeBuffer++;
 // LINE 1113:
 	__asm        jmp    _T113;
 // LINE 1115:

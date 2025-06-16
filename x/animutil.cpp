@@ -299,18 +299,14 @@ void XY2Cartesian(float radius, float phi, float psi, float * xres, float * zres
 	__asm        call   doAssert;
 	__asm        add    esp, 0x10;
 // LINE 79:
-	__asm        mov    x, 0;
-	__asm        mov    z, 0;
-	__asm        mov    eax, radius;
-	__asm        mov    y, eax;
+	x = 0x0;
+	z = 0x0;
+	y = radius;
 // LINE 80:
-	__asm        mov    eax, x;
-	__asm        mov    dpt.x, eax;
-	__asm        mov    eax, z;
-	__asm        mov    dpt.z, eax;
-	__asm        mov    eax, y;
-	__asm        mov    dpt.y, eax;
-	__asm        mov    dpt.info, 0;
+	dpt.x = x;
+	dpt.z = z;
+	dpt.y = y;
+	dpt.info = 0x0;
 // LINE 81:
 	__asm        lea    eax, transformed.x;
 	__asm        push   eax;
@@ -405,12 +401,9 @@ void XYIncrementCartesian(float sinXangle, float cosXangle, float sinYangle, flo
 // FUNCTION: COPTER_D 0x00562950
 void TransformToAxes(/*unpacked*/ struct DXZY *xAxis, /*unpacked*/ struct DXZY *zAxis, /*unpacked*/ struct DXZY *yAxis, /*unpacked*/ struct DXZY prist, /*unpacked*/ struct DXZY *real) {
 // LINE 103:
-	__asm        mov    eax, real;
-	__asm        mov    dword ptr [eax], 0;
-	__asm        mov    eax, real;
-	__asm        mov    dword ptr [eax+4], 0;
-	__asm        mov    eax, real;
-	__asm        mov    dword ptr [eax+8], 0;
+	real->x = 0x0;
+	real->z = 0x0;
+	real->y = 0x0;
 // LINE 104:
 	__asm        mov    eax, xAxis;
 	__asm        fld    dword ptr [eax];
@@ -1487,43 +1480,27 @@ void IncrementAngles(float incPhi, float incPsi, float pivotPhi, float pivotPsi,
 	/*bp-0x48*/  /*unpacked*/ struct Polar pivot; // 0x18 bytes
 
 // LINE 570:
-	__asm        mov    eax, phi;
-	__asm        mov    eax, [eax];
-	__asm        mov    polar.phi, eax;
-	__asm        mov    eax, psi;
-	__asm        mov    eax, [eax];
-	__asm        mov    polar.psi, eax;
-	__asm        mov    polar.tau, 0;
+	polar.phi = phi[0];
+	polar.psi = psi[0];
+	polar.tau = 0x0;
 // LINE 571:
-	__asm        mov    eax, incPhi;
-	__asm        mov    inc.phi, eax;
-	__asm        mov    eax, incPsi;
-	__asm        mov    inc.psi, eax;
-	__asm        mov    inc.tau, 0;
+	inc.phi = incPhi;
+	inc.psi = incPsi;
+	inc.tau = 0x0;
 // LINE 572:
-	__asm        mov    eax, pivotPhi;
-	__asm        mov    pivot.phi, eax;
-	__asm        mov    eax, pivotPsi;
-	__asm        mov    pivot.psi, eax;
-	__asm        mov    pivot.tau, 0;
+	pivot.phi = pivotPhi;
+	pivot.psi = pivotPsi;
+	pivot.tau = 0x0;
 // LINE 573:
-	__asm        mov    polar.trq, 0;
-	__asm        mov    ax, polar.trq;
-	__asm        mov    polar.lng, ax;
-	__asm        mov    ax, polar.lng;
-	__asm        mov    polar.lat, ax;
-	__asm        mov    ax, polar.lat;
-	__asm        mov    pivot.trq, ax;
-	__asm        mov    ax, pivot.trq;
-	__asm        mov    pivot.lng, ax;
-	__asm        mov    ax, pivot.lng;
-	__asm        mov    pivot.lat, ax;
-	__asm        mov    ax, pivot.lat;
-	__asm        mov    inc.trq, ax;
-	__asm        mov    ax, inc.trq;
-	__asm        mov    inc.lng, ax;
-	__asm        mov    ax, inc.lng;
-	__asm        mov    inc.lat, ax;
+	polar.trq = 0x0;
+	polar.lng = polar.trq;
+	polar.lat = polar.lng;
+	pivot.trq = polar.lat;
+	pivot.lng = pivot.trq;
+	pivot.lat = pivot.lng;
+	inc.trq = pivot.lat;
+	inc.lng = inc.trq;
+	inc.lat = inc.lng;
 // LINE 575:
 	__asm        test   reinterpret_cast<uint32_t>(polarAngles), 0xFFFF;
 	__asm        je     _Tb2;
@@ -1548,12 +1525,8 @@ _Tb2:
 	__asm        add    esp, 8;
 // LINE 579:
 _Tc2:
-	__asm        mov    eax, phi;
-	__asm        mov    ecx, polar.phi;
-	__asm        mov    [eax], ecx;
-	__asm        mov    eax, psi;
-	__asm        mov    ecx, polar.psi;
-	__asm        mov    [eax], ecx;
+	phi[0] = polar.phi;
+	psi[0] = polar.psi;
 // LINE 580:
 	return;
 }
@@ -1851,16 +1824,9 @@ _T71:
 // FUNCTION: COPTER_D 0x005637d3
 void SnapToIncs(/*unpacked*/ struct Polar *polar, short latIncs, short lngIncs, short trqIncs) {
 // LINE 640:
-	__asm        mov    eax, polar;
-	__asm        mov    word ptr [eax+0x14], 0;
-	__asm        mov    eax, polar;
-	__asm        mov    ax, [eax+0x14];
-	__asm        mov    ecx, polar;
-	__asm        mov    [ecx+0x10], ax;
-	__asm        mov    eax, polar;
-	__asm        mov    ax, [eax+0x10];
-	__asm        mov    ecx, polar;
-	__asm        mov    [ecx+0x12], ax;
+	polar->trq = 0x0;
+	polar->lng = polar->trq;
+	polar->lat = polar->lng;
 // LINE 641:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(trqIncs);
 	__asm        push   eax;
@@ -1873,16 +1839,9 @@ void SnapToIncs(/*unpacked*/ struct Polar *polar, short latIncs, short lngIncs, 
 	__asm        call   FillLatLngTrq;
 	__asm        add    esp, 0x10;
 // LINE 642:
-	__asm        mov    eax, polar;
-	__asm        mov    dword ptr [eax+8], 0;
-	__asm        mov    eax, polar;
-	__asm        mov    ecx, polar;
-	__asm        mov    eax, [eax+8];
-	__asm        mov    [ecx+4], eax;
-	__asm        mov    eax, polar;
-	__asm        mov    ecx, polar;
-	__asm        mov    eax, [eax+4];
-	__asm        mov    [ecx], eax;
+	polar->tau = 0x0;
+	polar->psi = polar->tau;
+	polar->phi = polar->psi;
 // LINE 643:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(trqIncs);
 	__asm        push   eax;
@@ -2289,8 +2248,8 @@ _T2a:
 	__asm        test   ah, 0x40;
 	__asm        je     _T54;
 // LINE 746:
-	__asm        mov    reinterpret_cast<uint32_t>(projrad), 0;
-	__asm        mov    *reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&projrad) + 4), 0;
+	reinterpret_cast<uint32_t>(projrad) = 0x0;
+	*reinterpret_cast<uint32_t*>(reinterpret_cast<char*>(&projrad) + 4) = 0x0;
 // LINE 747:
 	__asm        jmp    _T73;
 // LINE 748:
@@ -2447,10 +2406,8 @@ void IncrementXYTorque(float dinc, /*unpacked*/ struct Polar *parentPolar, /*unp
 	__asm        mov    ecx, 6;
 	__asm        rep movsd;
 // LINE 957:
-	__asm        mov    eax, parPolar.phi;
-	__asm        mov    parX20, eax;
-	__asm        mov    eax, parPolar.psi;
-	__asm        mov    parY20, eax;
+	parX20 = parPolar.phi;
+	parY20 = parPolar.psi;
 // LINE 958:
 	__asm        mov    inc.trq, 0;
 	__asm        mov    ax, inc.trq;
@@ -2478,10 +2435,8 @@ void IncrementXYTorque(float dinc, /*unpacked*/ struct Polar *parentPolar, /*unp
 	__asm        mov    eax, childPolar;
 	__asm        fstp   dword ptr [eax+4];
 // LINE 961:
-	__asm        mov    eax, parY20;
-	__asm        mov    inc.psi, eax;
-	__asm        mov    eax, parX20;
-	__asm        mov    inc.phi, eax;
+	inc.psi = parY20;
+	inc.phi = parX20;
 // LINE 962:
 	__asm        mov    eax, childPolar;
 	__asm        push   eax;
