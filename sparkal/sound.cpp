@@ -1985,10 +1985,7 @@ _T231:
 	__asm        cmp    dword ptr [eax+0x34], 2;
 	__asm        jne    _T24c;
 // LINE 579:
-	__asm        mov    ecx, this;
-	__asm        call   DigitalSound::ShouldWeStream;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x20], eax;
+	this->bStreaming = this->DigitalSound::ShouldWeStream();
 // LINE 580:
 _T24c:
 	__asm        mov    i, 0;

@@ -5181,11 +5181,8 @@ int32_t RadioButtonWindow::Initialize() {
 	__asm        call   ButtonGroup::AddButton;
 // LINE 713:
 _T2e:
-	__asm        mov    ecx, this;
-	__asm        call   ButtonWindow::Initialize;
-	__asm        jmp    __RETURN;
+	return this->ButtonWindow::Initialize();
 // LINE 714:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004afd6a
@@ -10313,10 +10310,7 @@ void ScrollBarWindow::MoveLinePrevious() {
 	__asm        cmp    [eax+0x78], ecx;
 	__asm        jge    _T6c;
 // LINE 1805:
-	__asm        mov    ecx, this;
-	__asm        call   SliderWindow::GetValue;
-	__asm        sub    eax, lValueDelta;
-	__asm        mov    lNewValue, eax;
+	lNewValue = (this->SliderWindow::GetValue() - lValueDelta);
 // LINE 1806:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, lNewValue;
@@ -10356,11 +10350,7 @@ void ScrollBarWindow::MoveLineNext() {
 	__asm        cmp    [eax+0x7C], ecx;
 	__asm        jle    _T6e;
 // LINE 1823:
-	__asm        mov    ecx, this;
-	__asm        call   SliderWindow::GetValue;
-	__asm        mov    ecx, lValueDelta;
-	__asm        add    ecx, eax;
-	__asm        mov    lNewValue, ecx;
+	lNewValue = (lValueDelta + this->SliderWindow::GetValue());
 // LINE 1824:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, lNewValue;
@@ -10400,10 +10390,7 @@ void ScrollBarWindow::MovePagePrevious() {
 	__asm        cmp    [eax+0x80], ecx;
 	__asm        jle    _T6c;
 // LINE 1840:
-	__asm        mov    ecx, this;
-	__asm        call   SliderWindow::GetValue;
-	__asm        sub    eax, lValueDelta;
-	__asm        mov    lNewValue, eax;
+	lNewValue = (this->SliderWindow::GetValue() - lValueDelta);
 // LINE 1841:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, lNewValue;
@@ -10443,11 +10430,7 @@ void ScrollBarWindow::MovePageNext() {
 	__asm        cmp    [eax+0x7C], ecx;
 	__asm        jle    _T6e;
 // LINE 1857:
-	__asm        mov    ecx, this;
-	__asm        call   SliderWindow::GetValue;
-	__asm        mov    ecx, lValueDelta;
-	__asm        add    ecx, eax;
-	__asm        mov    lNewValue, ecx;
+	lNewValue = (lValueDelta + this->SliderWindow::GetValue());
 // LINE 1858:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, lNewValue;
@@ -11417,11 +11400,8 @@ int32_t ListBoxWindow::Initialize() {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x28];
 // LINE 2134:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::Initialize;
-	__asm        jmp    __RETURN;
+	return this->GraphicWindow::Initialize();
 // LINE 2135:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004b4822
@@ -15695,9 +15675,7 @@ int32_t PopupMenuWindow::Initialize() {
 	/*bp-0x4*/   int32_t nReturnValue;
 
 // LINE 3067:
-	__asm        mov    ecx, this;
-	__asm        call   ListBoxWindow::Initialize;
-	__asm        mov    nReturnValue, eax;
+	nReturnValue = this->ListBoxWindow::Initialize();
 // LINE 3068:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];

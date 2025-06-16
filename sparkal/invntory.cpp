@@ -1147,9 +1147,7 @@ int32_t InventoryWindow::Initialize() {
 	/*bp-0xc*/   int32_t nReturnValue;
 
 // LINE 81:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::Initialize;
-	__asm        mov    nReturnValue, eax;
+	nReturnValue = this->GraphicWindow::Initialize();
 // LINE 87:
 	__asm        mov    i, 0;
 	__asm        jmp    _T33;

@@ -1075,10 +1075,7 @@ _T37e:
 	__asm        jmp    _T3cd;
 // LINE 365:
 _T3bc:
-	__asm        mov    ecx, this;
-	__asm        call   PoliceCarClass::ChangeEmergencyLocationToSpotlightLocation;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x31E], eax;
+	this->foundRoad = this->PoliceCarClass::ChangeEmergencyLocationToSpotlightLocation();
 // LINE 369:
 _T3cd:
 	vec.x = (ViewState.world_pos.x - this->autoDynomitor.loc.x);

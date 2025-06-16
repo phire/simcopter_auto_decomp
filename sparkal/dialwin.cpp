@@ -8282,11 +8282,8 @@ int32_t EquipmentPanelWindow::Initialize() {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x10];
 // LINE 1701:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::Initialize;
-	__asm        jmp    __RETURN;
+	return this->GraphicWindow::Initialize();
 // LINE 1702:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0044e74b
@@ -8595,9 +8592,7 @@ _Ta6:
 _Tab:
 	lFrameCounter++;
 // LINE 1788:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::DoesWindowNeedUpdating;
-	__asm        jmp    __RETURN;
+	return this->GraphicWindow::DoesWindowNeedUpdating();
 // LINE 1789:
 __RETURN:
 }

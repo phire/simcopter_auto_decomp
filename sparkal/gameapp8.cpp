@@ -1781,9 +1781,7 @@ _T7d:
 	__asm        jmp    __RETURN;
 // LINE 433:
 _Ta8:
-	__asm        lea    ecx, myMIFF<MIFF+0x00>;
-	__asm        call   MIFF::ReadFileType;
-	__asm        mov    lFileType, eax;
+	lFileType = myMIFF<MIFF+0x00>->MIFF::ReadFileType();
 // LINE 435:
 	__asm        cmp    lFileType, 0x43524552;
 	__asm        je     _Tfb;

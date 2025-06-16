@@ -3371,13 +3371,9 @@ int32_t LoadListFromResource(/*packed*/ class list<HotSpot>& hotSpotList, int32_
 	__asm        lea    ecx, resourceHangarHotspots<vftable>;
 	__asm        call   ResourceRCData::ResourceRCData;
 // LINE 278:
-	__asm        lea    ecx, resourceHangarHotspots<vftable>;
-	__asm        call   ResourceRCData::DataReference;
-	__asm        mov    fileImage, eax;
+	fileImage = resourceHangarHotspots<vftable>->ResourceRCData::DataReference();
 // LINE 279:
-	__asm        lea    ecx, resourceHangarHotspots<vftable>;
-	__asm        call   ResourceRCData::DataReference;
-	__asm        mov    chFileImage, eax;
+	chFileImage = resourceHangarHotspots<vftable>->ResourceRCData::DataReference();
 // LINE 280:
 	__asm        cmp    fileImage, 0;
 	__asm        jne    _T51;

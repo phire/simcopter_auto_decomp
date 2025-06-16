@@ -446,15 +446,9 @@ __RETURN:
 	__asm        stosw;
 	__asm        stosb;
 // LINE 52:
-	__asm        mov    ecx, t;
-	__asm        add    ecx, 4;
-	__asm        call   MTime::Hour;
-	__asm        mov    hh, eax;
+	hh = (t + 0x4)->MTime::Hour();
 // LINE 53:
-	__asm        mov    ecx, t;
-	__asm        add    ecx, 4;
-	__asm        call   MTime::Minute;
-	__asm        mov    mm, eax;
+	mm = (t + 0x4)->MTime::Minute();
 // LINE 54:
 	nLanguageToUse = t.nLanguage;
 // LINE 56:
@@ -769,18 +763,8 @@ _T1f:
 	nLanguageToUse = gDefaultLanguage;
 // LINE 176:
 _T31:
-	__asm        mov    eax, nLanguageToUse;
-	__asm        push   eax;
-	__asm        mov    eax, szDayName;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   MDate::WeekDay;
-	__asm        push   eax;
-	__asm        call   MDateLocalized::DayNameLocalized;
-	__asm        add    esp, 0xC;
-	__asm        jmp    __RETURN;
+	return MDateLocalized::DayNameLocalized(nLanguageToUse, szDayName, this->MDate::WeekDay(nLanguageToUse, szDayName));
 // LINE 177:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0042004a
@@ -798,18 +782,8 @@ _T1f:
 	nLanguageToUse = gDefaultLanguage;
 // LINE 189:
 _T31:
-	__asm        mov    eax, nLanguageToUse;
-	__asm        push   eax;
-	__asm        mov    eax, szMonthName;
-	__asm        push   eax;
-	__asm        mov    ecx, this;
-	__asm        call   MDate::Month;
-	__asm        push   eax;
-	__asm        call   MDateLocalized::MonthNameLocalized;
-	__asm        add    esp, 0xC;
-	__asm        jmp    __RETURN;
+	return MDateLocalized::MonthNameLocalized(nLanguageToUse, szMonthName, this->MDate::Month(nLanguageToUse, szMonthName));
 // LINE 190:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004200a0

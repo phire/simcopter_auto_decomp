@@ -112,9 +112,7 @@ _Ta4:
 	__asm        add    esp, 0x10;
 // LINE 1024:
 _T32:
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::GetToted;
-	__asm        mov    obj, eax;
+	obj = this->cYObject::GetToted();
 // LINE 1025:
 	__asm        cmp    obj, 0;
 	__asm        je     _T1cc;

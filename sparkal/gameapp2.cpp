@@ -1831,10 +1831,7 @@ _T44b:
 // Block start:
 	/*bp-0x8*/   long lEventValue;
 _T450:
-	__asm        mov    ecx, this;
-	__asm        add    ecx, 0xA0;
-	__asm        call   GameModePlayData::TestForUserInHelicopter;
-	__asm        mov    lEventValue, eax;
+	lEventValue = (this + 0xa0)->GameModePlayData::TestForUserInHelicopter();
 // LINE 446:
 	__asm        cmp    lEventValue, 1;
 	__asm        jne    _T485;
@@ -6438,10 +6435,7 @@ _T8a4:
 	__asm        test   eax, eax;
 	__asm        jne    _T94c;
 // LINE 1411:
-	__asm        mov    ecx, this;
-	__asm        sub    ecx, 0x14;
-	__asm        call   CGameApp::DoSaveGameAs;
-	__asm        mov    nResult, eax;
+	nResult = (this - 0x14)->CGameApp::DoSaveGameAs();
 // LINE 1412:
 	__asm        cmp    nResult, 0;
 	__asm        je     _T91f;
@@ -6980,9 +6974,7 @@ _T149:
 	__asm        test   eax, eax;
 	__asm        jne    _T18d;
 // LINE 1609:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::DoSaveGameAs;
-	__asm        mov    nResult, eax;
+	nResult = this->CGameApp::DoSaveGameAs();
 // LINE 1610:
 	__asm        cmp    nResult, 0;
 	__asm        je     _T188;
@@ -7031,9 +7023,7 @@ _T1e4:
 	__asm        cmp    lResult, 5;
 	__asm        jne    _T24f;
 // LINE 1627:
-	__asm        mov    ecx, this;
-	__asm        call   CGameApp::DoSaveGameAs;
-	__asm        mov    nResult, eax;
+	nResult = this->CGameApp::DoSaveGameAs();
 // LINE 1628:
 	__asm        cmp    nResult, 0;
 	__asm        je     _T225;

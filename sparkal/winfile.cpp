@@ -258,9 +258,7 @@ void FixResourceFilterString(/*packed*/ class basic_string<char>& sFilter, char 
 // LINE 34:
 	i = 0x0;
 // LINE 36:
-	__asm        mov    ecx, sFilter;
-	__asm        call   basic_string<char>::c_str;
-	__asm        mov    szString, eax;
+	szString = sFilter->basic_string<char>::c_str();
 // LINE 38:
 	__asm        jmp    _T20;
 _T20:

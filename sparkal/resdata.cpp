@@ -110,9 +110,7 @@ void ResourceRCData::ResourceRCData(/*packed*/ class ResourceRCData& resData) {
 // LINE 60:
 // Block start:
 	/*bp-0x4*/   uint32_t nAllocationSize;
-	__asm        mov    ecx, resData;
-	__asm        call   ResourceRCData::DataSize;
-	__asm        mov    nAllocationSize, eax;
+	nAllocationSize = resData->ResourceRCData::DataSize();
 // LINE 61:
 	this->chData = operator new(nAllocationSize);
 // LINE 62:
@@ -171,9 +169,7 @@ _T20:
 // LINE 90:
 // Block start:
 	/*bp-0x4*/   uint32_t nAllocationSize;
-	__asm        mov    ecx, resData;
-	__asm        call   ResourceRCData::DataSize;
-	__asm        mov    nAllocationSize, eax;
+	nAllocationSize = resData->ResourceRCData::DataSize();
 // LINE 91:
 	this->chData = operator new(nAllocationSize);
 // LINE 92:

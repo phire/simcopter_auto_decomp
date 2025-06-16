@@ -184,9 +184,7 @@ int32_t Keyboard::IsKeyDown(unsigned char chKey, unsigned char chModifiers) {
 	return 0x0;
 // LINE 57:
 _T27:
-	__asm        mov    ecx, this;
-	__asm        call   Keyboard::GetCurrentModifierState;
-	__asm        mov    chCurrentModifiers, al;
+	chCurrentModifiers = this->Keyboard::GetCurrentModifierState();
 // LINE 58:
 	__asm        movsx  eax, chCurrentModifiers;
 	__asm        xor    ecx, ecx;

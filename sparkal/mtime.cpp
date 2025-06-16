@@ -1345,9 +1345,7 @@ __RETURN:
 	__asm        call   ostream::operator<<;
 // LINE 420:
 _T59:
-	__asm        mov    ecx, t;
-	__asm        call   MTime::Hour;
-	__asm        mov    hh, eax;
+	hh = t->MTime::Hour();
 // LINE 423:
 	__asm        cmp    hh, 0xC;
 	__asm        jbe    _T88;

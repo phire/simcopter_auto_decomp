@@ -1339,9 +1339,7 @@ _T500:
 	__asm        jmp    __RETURN;
 // LINE 65:
 _T508:
-	__asm        mov    ecx, this;
-	__asm        call   FileServices::FindRemotePath;
-	__asm        mov    bRemotePathFound, eax;
+	bRemotePathFound = this->FileServices::FindRemotePath();
 // LINE 66:
 	__asm        cmp    bRemotePathFound, 0;
 	__asm        je     _T286;

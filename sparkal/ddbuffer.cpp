@@ -1192,9 +1192,7 @@ _Tc6:
 	__asm        mov    ecx, fileImage;
 	__asm        call   PFile::Open;
 // LINE 318:
-	__asm        mov    ecx, fileImage;
-	__asm        call   PFile::Length;
-	__asm        mov    nFileLength, eax;
+	nFileLength = fileImage->PFile::Length();
 // LINE 319:
 	__asm        mov    eax, fileImage;
 	__asm        cmp    dword ptr [eax+0x108], 0xFFFFFFFF;
@@ -1263,9 +1261,7 @@ _T1b8:
 _T1bd:
 	nPosition = _tell(fileImage->Handle);
 // LINE 330:
-	__asm        mov    ecx, fileImage;
-	__asm        call   PFile::Length;
-	__asm        mov    nFileLength, eax;
+	nFileLength = fileImage->PFile::Length();
 // LINE 335:
 	__asm        cmp    biHeader.biClrUsed, 0;
 	__asm        jne    _T1fd;
@@ -1296,9 +1292,7 @@ _T234:
 _T239:
 	nPosition = _tell(fileImage->Handle);
 // LINE 340:
-	__asm        mov    ecx, fileImage;
-	__asm        call   PFile::Length;
-	__asm        mov    nFileLength, eax;
+	nFileLength = fileImage->PFile::Length();
 // LINE 344:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax];
@@ -1315,9 +1309,7 @@ _T239:
 	__asm        imul   eax, [ecx+0x14];
 	__asm        add    biData, eax;
 // LINE 350:
-	__asm        mov    ecx, fileImage;
-	__asm        call   PFile::Length;
-	__asm        mov    nFileLength, eax;
+	nFileLength = fileImage->PFile::Length();
 // LINE 351:
 	__asm        jmp    _T2ab;
 _T2ab:
@@ -1349,9 +1341,7 @@ _T2cf:
 	__asm        jmp    _T310;
 // LINE 354:
 _T310:
-	__asm        mov    ecx, fileImage;
-	__asm        call   PFile::Length;
-	__asm        mov    nFileLength, eax;
+	nFileLength = fileImage->PFile::Length();
 // LINE 355:
 	__asm        jmp    _T320;
 _T320:

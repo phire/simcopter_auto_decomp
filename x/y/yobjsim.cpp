@@ -4372,9 +4372,7 @@ _T145:
 	/*bp-0x4*/   /*unpacked*/ class cYObject *obj;
 
 // LINE 837:
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::GetToted;
-	__asm        mov    obj, eax;
+	obj = this->cYObject::GetToted();
 // LINE 838:
 	__asm        cmp    obj, 0;
 	__asm        je     _T9d;
@@ -8482,9 +8480,7 @@ enum TreeSim::ReturnCode cYObject::iMakeMyMedevacVictimVisible(/*unpacked*/ stru
 // LINE 1599:
 	result = 0xffffffff;
 // LINE 1600:
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::GetToted;
-	__asm        mov    obj, eax;
+	obj = this->cYObject::GetToted();
 // LINE 1601:
 	__asm        cmp    obj, 0;
 	__asm        jne    _T44;
@@ -9417,9 +9413,7 @@ enum TreeSim::ReturnCode cYObject::iDropToted(/*unpacked*/ struct TreeSim::Stack
 // LINE 1723:
 	result = 0xffffffff;
 // LINE 1724:
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::DropToted;
-	__asm        mov    obj, eax;
+	obj = this->cYObject::DropToted();
 // LINE 1725:
 	__asm        cmp    obj, 0;
 	__asm        je     _T40;

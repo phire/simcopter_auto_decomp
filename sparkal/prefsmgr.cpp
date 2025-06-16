@@ -1775,9 +1775,7 @@ _Td5:
 	__asm        cmp    prefItemTemp, 0;
 	__asm        je     _T3b;
 // LINE 381:
-	__asm        mov    ecx, prefItemTemp;
-	__asm        call   PreferenceItem::DuplicatePointer;
-	__asm        mov    prefItemReturn, eax;
+	prefItemReturn = prefItemTemp->PreferenceItem::DuplicatePointer();
 // LINE 382:
 	return prefItemReturn;
 // LINE 384:

@@ -7685,11 +7685,7 @@ _T89:
 	__asm        cmp    lMessage, 0x10001;
 	__asm        jne    _Tb5;
 // LINE 903:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x94];
-	__asm        call   ButtonGroup::GetSelectionIndex;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x80], eax;
+	this->lQuadPixelType = this->myDisplayResolutionButtonGroup->ButtonGroup::GetSelectionIndex();
 // LINE 904:
 	__asm        mov    ecx, this;
 	__asm        call   RenderSettingsWindow::DrawPreviewBasedOnCurrentSettings;
@@ -9272,11 +9268,7 @@ _Tf6:
 // FUNCTION: COPTER_D 0x004570a4
 void SoundSettingsWindow::GetCurrentVolumeSettings(/*packed*/ struct SoundPreferences& currentSoundPreferences) {
 // LINE 1187:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x74];
-	__asm        call   SliderWindow::GetValue;
-	__asm        mov    ecx, currentSoundPreferences;
-	__asm        mov    [ecx], eax;
+	currentSoundPreferences.lMasterVolume = this->myMasterVolumeSliderWindow->SliderWindow::GetValue();
 // LINE 1189:
 	currentSoundPreferences.lMasterVolume = SoundSettingsWindow::ConvertSliderValueToSoundValue(currentSoundPreferences.lMasterVolume);
 // LINE 1193:
@@ -9286,11 +9278,7 @@ void SoundSettingsWindow::GetCurrentVolumeSettings(/*packed*/ struct SoundPrefer
 // FUNCTION: COPTER_D 0x004570df
 void SoundSettingsWindow::GetCurrentRadioSettings(/*packed*/ struct RadioPreferences& currentRadioPreferences) {
 // LINE 1200:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x7C];
-	__asm        call   SliderWindow::GetValue;
-	__asm        mov    ecx, currentRadioPreferences;
-	__asm        mov    [ecx], eax;
+	currentRadioPreferences.lVolume = this->myRadioVolumeSliderWindow->SliderWindow::GetValue();
 // LINE 1201:
 	__asm        mov    eax, currentRadioPreferences;
 	__asm        cmp    dword ptr [eax], 0x258;
@@ -9312,11 +9300,7 @@ _T52:
 _T5c:
 	currentRadioPreferences.lVolume = SoundSettingsWindow::ConvertSliderValueToSoundValue(currentRadioPreferences.lVolume);
 // LINE 1206:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x78];
-	__asm        call   SliderWindow::GetValue;
-	__asm        mov    ecx, currentRadioPreferences;
-	__asm        mov    [ecx+8], eax;
+	currentRadioPreferences.lCurrentStation = this->myRadioStationSliderWindow->SliderWindow::GetValue();
 // LINE 1207:
 	__asm        mov    eax, this;
 	__asm        mov    ecx, this;
@@ -11649,53 +11633,21 @@ void CitySettingsWindow::SetCurrentCitySettings(/*packed*/ struct tagCitySetting
 // FUNCTION: COPTER_D 0x004592ab
 void CitySettingsWindow::GetCurrentCitySettings(/*packed*/ struct tagCitySettings *currentCitySettings) {
 // LINE 1486:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x74];
-	__asm        call   SliderWindow::GetValue;
-	__asm        mov    ecx, currentCitySettings;
-	__asm        mov    [ecx], eax;
+	currentCitySettings->lDifficulty = this->mySliderWindows[0]->SliderWindow::GetValue();
 // LINE 1487:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x78];
-	__asm        call   SliderWindow::GetValue;
-	__asm        mov    ecx, currentCitySettings;
-	__asm        mov    [ecx+4], eax;
+	currentCitySettings->lMissionFrequencyFire = this->mySliderWindows[1]->SliderWindow::GetValue();
 // LINE 1488:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x7C];
-	__asm        call   SliderWindow::GetValue;
-	__asm        mov    ecx, currentCitySettings;
-	__asm        mov    [ecx+8], eax;
+	currentCitySettings->lMissionFrequencyCrime = this->mySliderWindows[2]->SliderWindow::GetValue();
 // LINE 1489:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x80];
-	__asm        call   SliderWindow::GetValue;
-	__asm        mov    ecx, currentCitySettings;
-	__asm        mov    [ecx+0xC], eax;
+	currentCitySettings->lMissionFrequencyRescue = this->mySliderWindows[3]->SliderWindow::GetValue();
 // LINE 1490:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x84];
-	__asm        call   SliderWindow::GetValue;
-	__asm        mov    ecx, currentCitySettings;
-	__asm        mov    [ecx+0x10], eax;
+	currentCitySettings->lMissionFrequencyRiot = this->mySliderWindows[4]->SliderWindow::GetValue();
 // LINE 1491:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x88];
-	__asm        call   SliderWindow::GetValue;
-	__asm        mov    ecx, currentCitySettings;
-	__asm        mov    [ecx+0x14], eax;
+	currentCitySettings->lMissionFrequencyTraffic = this->mySliderWindows[5]->SliderWindow::GetValue();
 // LINE 1492:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x8C];
-	__asm        call   SliderWindow::GetValue;
-	__asm        mov    ecx, currentCitySettings;
-	__asm        mov    [ecx+0x18], eax;
+	currentCitySettings->lMissionFrequencyMedEvac = this->mySliderWindows[6]->SliderWindow::GetValue();
 // LINE 1493:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x90];
-	__asm        call   SliderWindow::GetValue;
-	__asm        mov    ecx, currentCitySettings;
-	__asm        mov    [ecx+0x1C], eax;
+	currentCitySettings->lMissionFrequencyTransport = this->mySliderWindows[7]->SliderWindow::GetValue();
 // LINE 1494:
 	return;
 }
@@ -12318,11 +12270,8 @@ int32_t PopupMenuExtra::Initialize() {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0x15C];
 // LINE 1572:
-	__asm        mov    ecx, this;
-	__asm        call   PopupMenuWindow::Initialize;
-	__asm        jmp    __RETURN;
+	return this->PopupMenuWindow::Initialize();
 // LINE 1573:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00459afd
@@ -14280,11 +14229,8 @@ int32_t TooltipWindow::Initialize() {
 	__asm        mov    ecx, this;
 	__asm        call   dword ptr [eax+0xE8];
 // LINE 1837:
-	__asm        mov    ecx, this;
-	__asm        call   GraphicWindow::Initialize;
-	__asm        jmp    __RETURN;
+	return this->GraphicWindow::Initialize();
 // LINE 1838:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x0045b3a5
@@ -20065,23 +20011,11 @@ void CheckupWindow::SetCurrentSettings(long * lNewSettings) {
 // FUNCTION: COPTER_D 0x0045fe78
 void CheckupWindow::GetCurrentSettings(long * lCurrentSettings) {
 // LINE 2563:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x74];
-	__asm        call   SliderWindow::GetValue;
-	__asm        mov    ecx, lCurrentSettings;
-	__asm        mov    [ecx], eax;
+	lCurrentSettings[0] = this->mySliderWindows[0]->SliderWindow::GetValue();
 // LINE 2564:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x78];
-	__asm        call   SliderWindow::GetValue;
-	__asm        mov    ecx, lCurrentSettings;
-	__asm        mov    [ecx+4], eax;
+	lCurrentSettings[4] = this->mySliderWindows[1]->SliderWindow::GetValue();
 // LINE 2565:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+0x7C];
-	__asm        call   SliderWindow::GetValue;
-	__asm        mov    ecx, lCurrentSettings;
-	__asm        mov    [ecx+8], eax;
+	lCurrentSettings[8] = this->mySliderWindows[2]->SliderWindow::GetValue();
 // LINE 2566:
 	return;
 }

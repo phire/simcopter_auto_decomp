@@ -11385,9 +11385,7 @@ _T300:
 	__asm        mov    ecx, this;
 	__asm        call   cYObject::SetPersonType;
 // LINE 1599:
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::JoinRiot;
-	__asm        mov    testID, eax;
+	testID = this->cYObject::JoinRiot();
 // LINE 1600:
 	__asm        cmp    testID, 0xFFFFFFFF;
 	__asm        jne    _T36b;
@@ -15634,9 +15632,7 @@ _T1d3:
 // LINE 2324:
 // Block start:
 	/*bp-0x20*/  /*unpacked*/ class cYObject *person;
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::GetToted;
-	__asm        mov    person, eax;
+	person = this->cYObject::GetToted();
 // LINE 2325:
 	__asm        cmp    person, 0;
 	__asm        jne    _T23d;
@@ -15654,9 +15650,7 @@ _T23d:
 	/*bp-0x24*/  /*unpacked*/ class cYObject *person;
 	G_uheli = hd;
 // LINE 2334:
-	__asm        mov    ecx, this;
-	__asm        call   cYObject::GetToted;
-	__asm        mov    person, eax;
+	person = this->cYObject::GetToted();
 // LINE 2337:
 	__asm        cmp    person, 0;
 	__asm        je     _T309;

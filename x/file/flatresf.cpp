@@ -568,10 +568,7 @@ long ResFile::OpenFromOtherFile(/*unpacked*/ class ResFile *otherFile) {
 // FUNCTION: COPTER_D 0x00552f5f
 long FlatResFile::Close() {
 // LINE 207:
-	__asm        mov    ecx, this;
-	__asm        call   FlatFile::Close;
-	__asm        mov    ecx, this;
-	__asm        mov    [ecx+0x114], eax;
+	this->fError = this->FlatFile::Close();
 // LINE 208:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x114], 0;
@@ -1660,9 +1657,7 @@ _T76:
 	__asm        test   eax, eax;
 	__asm        je     _Ta7;
 
-	__asm        mov    ecx, fromFile;
-	__asm        call   FlatResFile::GetError;
-	__asm        jmp    __RETURN;
+	return fromFile->FlatResFile::GetError();
 // LINE 771:
 _Ta7:
 	resPtr = Memory::Stash(newMap);
@@ -1721,7 +1716,7 @@ _L27101:
 // No fallthrough
 	__asm        mov    eax, 0x595F80;
 	__asm        jmp    near ptr 0x0056F590;
-__RETURN:
+
 	__asm        mov    ecx, [ebp-0xC];
 	__asm        mov    fs:[0], ecx;
 }
@@ -2052,9 +2047,7 @@ _T251:
 	__asm        mov    ecx, file;
 	__asm        call   FlatFile::ReadBlock;
 // LINE 873:
-	__asm        mov    ecx, file;
-	__asm        call   FlatResFile::GetError;
-	__asm        mov    err, eax;
+	err = file->FlatResFile::GetError();
 // LINE 876:
 done:
 // Block end:

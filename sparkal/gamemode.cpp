@@ -3635,9 +3635,7 @@ _T39:
 // LINE 1020:
 	this->bUserWasInHelicopterOnLastCheck = 0x1;
 // LINE 1021:
-	__asm        mov    ecx, this;
-	__asm        call   GameModePlayData::ProcessUserJustJumpedIntoHelicopter;
-	__asm        jmp    __RETURN;
+	return this->GameModePlayData::ProcessUserJustJumpedIntoHelicopter();
 // LINE 1024:
 _T5d:
 	__asm        jmp    _T86;
@@ -3649,14 +3647,11 @@ _T62:
 // LINE 1030:
 	this->bUserWasInHelicopterOnLastCheck = 0x0;
 // LINE 1031:
-	__asm        mov    ecx, this;
-	__asm        call   GameModePlayData::ProcessUserJustJumpedOutOfHelicopter;
-	__asm        jmp    __RETURN;
+	return this->GameModePlayData::ProcessUserJustJumpedOutOfHelicopter();
 // LINE 1034:
 _T86:
 	return lReturnValue;
 // LINE 1035:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004bff6b

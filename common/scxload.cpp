@@ -600,15 +600,11 @@ long cLZAPFileBitStream::Size() {
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        je     _T29;
 // LINE 142:
-	__asm        mov    eax, this;
-	__asm        mov    ecx, [eax+4];
-	__asm        call   PFile::Length;
-	__asm        jmp    __RETURN;
+	return this->m_file->PFile::Length();
 // LINE 143:
 _T29:
 	return 0x0;
 // LINE 144:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x004cbc42

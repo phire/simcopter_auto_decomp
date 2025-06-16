@@ -1773,9 +1773,7 @@ _T26:
 	__asm        jmp    _T41;
 // LINE 742:
 _T41:
-	__asm        mov    ecx, this;
-	__asm        call   PFile::Length;
-	__asm        mov    lFileLength, eax;
+	lFileLength = this->PFile::Length();
 // LINE 743:
 	__asm        push   0;
 	__asm        push   0x14;

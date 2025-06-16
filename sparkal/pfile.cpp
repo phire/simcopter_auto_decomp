@@ -553,9 +553,7 @@ _T6a:
 	__asm        test   eax, eax;
 	__asm        je     _T1da;
 // LINE 184:
-	__asm        lea    ecx, tempPFile<vftable>;
-	__asm        call   PFile::Length;
-	__asm        mov    lFileLength, eax;
+	lFileLength = tempPFile<vftable>->PFile::Length();
 // LINE 186:
 	chBuffer = operator new(0x7d00);
 // LINE 187:

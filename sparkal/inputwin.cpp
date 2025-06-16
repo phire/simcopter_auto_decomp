@@ -10078,9 +10078,7 @@ _T2c:
 	__asm        inc    eax;
 	__asm        mov    lDevice, eax;
 // LINE 1263:
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::GetCurrentCommand;
-	__asm        mov    lCurrentCommand, eax;
+	lCurrentCommand = this->UserInputWindow::GetCurrentCommand();
 // LINE 1264:
 	__asm        mov    eax, lDevice;
 	__asm        push   eax;
@@ -10977,9 +10975,7 @@ _T61:
 	__asm        cmp    tempKeyUsageType, 0;
 	__asm        jne    _T3bf;
 // LINE 1394:
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::GetCurrentCommand;
-	__asm        mov    lCurrentCommand, eax;
+	lCurrentCommand = this->UserInputWindow::GetCurrentCommand();
 // LINE 1395:
 	__asm        lea    eax, lIgnoreModifiers;
 	__asm        push   eax;
@@ -11233,9 +11229,7 @@ _T3bf:
 	__asm        cmp    tempKeyUsageType, 2;
 	__asm        jne    _T418;
 // LINE 1408:
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::GetCurrentCommand;
-	__asm        mov    lCurrentCommand, eax;
+	lCurrentCommand = this->UserInputWindow::GetCurrentCommand();
 // LINE 1409:
 	__asm        mov    eax, lKey;
 	__asm        push   eax;
@@ -11328,9 +11322,7 @@ enum UserInputWindow::KeyUsageType UserInputWindow::GetKeyUsageType(long lKey, l
 	return 0x1;
 // LINE 1449:
 _T34:
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::GetCurrentCommand;
-	__asm        mov    lCurrentCommand, eax;
+	lCurrentCommand = this->UserInputWindow::GetCurrentCommand();
 // LINE 1450:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xA0];
@@ -11440,9 +11432,7 @@ _T152:
 // Block start:
 	/*bp-0xc*/   /*packed*/ class list<Shortcut>::iterator iterator;
 _T161:
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::GetCurrentCommand;
-	__asm        mov    lCurrentCommand, eax;
+	lCurrentCommand = this->UserInputWindow::GetCurrentCommand();
 // LINE 1465:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xA0];
@@ -11871,9 +11861,7 @@ void UserInputWindow::UpdateDisplay(int32_t bRedrawBackground) {
 	/*bp-0x6c*/  long lCurrentCommand;
 
 // LINE 1593:
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::GetCurrentDevice;
-	__asm        mov    lCurrentDevice, eax;
+	lCurrentDevice = this->UserInputWindow::GetCurrentDevice();
 // LINE 1594:
 	__asm        cmp    lCurrentDevice, 0xFFFFFFFF;
 	__asm        jne    _T2f;
@@ -11881,9 +11869,7 @@ void UserInputWindow::UpdateDisplay(int32_t bRedrawBackground) {
 	return;
 // LINE 1596:
 _T2f:
-	__asm        mov    ecx, this;
-	__asm        call   UserInputWindow::GetCurrentCommand;
-	__asm        mov    lCurrentCommand, eax;
+	lCurrentCommand = this->UserInputWindow::GetCurrentCommand();
 // LINE 1597:
 	__asm        cmp    lCurrentCommand, 0;
 	__asm        jne    _T4c;

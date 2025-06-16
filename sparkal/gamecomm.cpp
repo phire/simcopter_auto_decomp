@@ -1484,9 +1484,7 @@ _T94:
 	__asm        cmp    currentCharData, 0;
 	__asm        je     _T136;
 // LINE 436:
-	__asm        mov    ecx, 0x5C34F0;
-	__asm        call   Keyboard::GetCurrentModifierState;
-	__asm        mov    chTempModifierState, al;
+	chTempModifierState = 0x5c34f0->Keyboard::GetCurrentModifierState();
 // LINE 438:
 	__asm        movsx  eax, chTempModifierState;
 	__asm        and    eax, 7;
@@ -1544,9 +1542,7 @@ _T136:
 	__asm        jmp    _T1e9;
 // LINE 448:
 _T13b:
-	__asm        mov    ecx, 0x5C34F0;
-	__asm        call   Keyboard::GetCurrentModifierState;
-	__asm        mov    chTempModifierState, al;
+	chTempModifierState = 0x5c34f0->Keyboard::GetCurrentModifierState();
 // LINE 449:
 	__asm        movsx  eax, chTempModifierState;
 	__asm        and    eax, 7;
@@ -1662,9 +1658,7 @@ _T82:
 	__asm        cmp    currentCharData, 0;
 	__asm        je     _T124;
 // LINE 498:
-	__asm        mov    ecx, 0x5C34F0;
-	__asm        call   Keyboard::GetCurrentModifierState;
-	__asm        mov    chTempModifierState, al;
+	chTempModifierState = 0x5c34f0->Keyboard::GetCurrentModifierState();
 // LINE 500:
 	__asm        movsx  eax, chTempModifierState;
 	__asm        and    eax, 7;
@@ -1722,9 +1716,7 @@ _T124:
 	__asm        jmp    _T1a3;
 // LINE 512:
 _T129:
-	__asm        mov    ecx, 0x5C34F0;
-	__asm        call   Keyboard::GetCurrentModifierState;
-	__asm        mov    chTempModifierState, al;
+	chTempModifierState = 0x5c34f0->Keyboard::GetCurrentModifierState();
 // LINE 513:
 	__asm        movsx  eax, chTempModifierState;
 	__asm        and    eax, 7;

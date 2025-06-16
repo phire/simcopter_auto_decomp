@@ -1028,11 +1028,8 @@ __RETURN:
 // FUNCTION: COPTER_D 0x0049853d
 int32_t VRSmackerNextFrame(void * __ptr32 pVRSmacker) {
 // LINE 446:
-	__asm        mov    ecx, pVRSmacker;
-	__asm        call   VRBmpSmackerBuffer::Compose;
-	__asm        jmp    __RETURN;
+	return pVRSmacker->VRBmpSmackerBuffer::Compose();
 // LINE 447:
-__RETURN:
 }
 
 // FUNCTION: COPTER_D 0x00498555
