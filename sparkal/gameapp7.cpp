@@ -1133,7 +1133,21 @@ _T607:
 	__asm        jmp    _T60c;
 // LINE 144:
 _T60c:
-	sprintf(Version::GetSystemVersion(0x1), 0x0, Version::GetSystemVersion(Version::GetSystemVersion(0x1), 0x0), sMessage.c_str_ptr->basic_string<char>::c_str(Version::GetSystemVersion(0x1), 0x0, Version::GetSystemVersion(Version::GetSystemVersion(0x1), 0x0)), szUnformattedVersionInformation[0]);
+	__asm        push   1;
+	__asm        call   Version::GetSystemVersion;
+	__asm        add    esp, 4;
+	__asm        push   eax;
+	__asm        push   0;
+	__asm        call   Version::GetSystemVersion;
+	__asm        add    esp, 4;
+	__asm        push   eax;
+	__asm        lea    ecx, sMessage.c_str_ptr;
+	__asm        call   basic_string<char>::c_str;
+	__asm        push   eax;
+	__asm        lea    eax, szUnformattedVersionInformation[0];
+	__asm        push   eax;
+	__asm        call   sprintf;
+	__asm        add    esp, 0x10;
 // LINE 145:
 	strcat(szUnformattedVersionInformation[0], szFormattedVersionInformation[0]);
 // LINE 146:

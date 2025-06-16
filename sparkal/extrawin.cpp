@@ -16099,7 +16099,9 @@ _T338:
 	__asm        mov    chCharacter, eax;
 // LINE 2107:
 _T34a:
-	chCharacter[0] = reinterpret_cast<uint8_t>(lCharacter);
+	__asm        mov    al, reinterpret_cast<uint8_t>(lCharacter);
+	__asm        mov    ecx, chCharacter;
+	__asm        mov    [ecx], al;
 // LINE 2108:
 	__asm        push   1;
 	__asm        push   1;

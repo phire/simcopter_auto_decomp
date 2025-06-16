@@ -1086,7 +1086,10 @@ _T58:
 	__asm        jmp    __RETURN;
 // LINE 445:
 _T89:
-	id[0] = entry->id;
+	__asm        mov    eax, entry;
+	__asm        mov    ax, [eax];
+	__asm        mov    ecx, id;
+	__asm        mov    [ecx], ax;
 // LINE 446:
 	return;
 __RETURN:
@@ -1405,9 +1408,13 @@ void ResMap::ResMap(short refNum, short numTypes, void * __ptr32 resMap, unsigne
 // LINE 672:
 	this-><ResMap+0x08:4> = resMap;
 // LINE 673:
-	this-><ResMap+0x06:2> = numTypes;
+	__asm        mov    ax, numTypes;
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+6], ax;
 // LINE 674:
-	this-><ResMap+0x04:2> = refNum;
+	__asm        mov    ax, refNum;
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+4], ax;
 // LINE 675:
 	this-><ResMap+0x18:4> = dataLoc;
 // LINE 676:
@@ -2030,7 +2037,9 @@ short ResMap::Count(unsigned long type) {
 // LINE 896:
 	typeList = this-><ResMap+0x0c:4>;
 // LINE 897:
-	cnt = this-><ResMap+0x06:2>;
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+6];
+	__asm        mov    cnt, ax;
 // LINE 899:
 _T20:
 	__asm        movsx  eax, cnt;
@@ -2079,7 +2088,9 @@ unsigned long ResMap::FindType(/*unpacked*/ struct ResMap::Entry *entry) {
 // LINE 914:
 	typeList = this-><ResMap+0x0c:4>;
 // LINE 915:
-	cnt = this-><ResMap+0x06:2>;
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+6];
+	__asm        mov    cnt, ax;
 // LINE 919:
 _T27:
 	__asm        movsx  eax, cnt;
@@ -2173,7 +2184,9 @@ struct ResMap::Entry * ResMap::FindEntry(unsigned long type, short id) {
 // LINE 950:
 	typeList = this-><ResMap+0x0c:4>;
 // LINE 951:
-	cnt = this-><ResMap+0x06:2>;
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+6];
+	__asm        mov    cnt, ax;
 // LINE 953:
 _T27:
 	__asm        movsx  eax, cnt;
@@ -2251,7 +2264,9 @@ struct ResMap::Entry * ResMap::FindEntry(unsigned long type, unsigned char * nam
 // LINE 978:
 	typeList = this-><ResMap+0x0c:4>;
 // LINE 979:
-	cnt = this-><ResMap+0x06:2>;
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+6];
+	__asm        mov    cnt, ax;
 // LINE 981:
 _T27:
 	__asm        movsx  eax, cnt;
@@ -2345,7 +2360,9 @@ struct ResMap::Entry * ResMap::FindIndEntry(unsigned long type, short index) {
 // LINE 1010:
 	typeList = this-><ResMap+0x0c:4>;
 // LINE 1011:
-	cnt = this-><ResMap+0x06:2>;
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+6];
+	__asm        mov    cnt, ax;
 // LINE 1013:
 _T27:
 	__asm        movsx  eax, cnt;
@@ -2472,15 +2489,21 @@ void ResMap::SwapResEntry(/*unpacked*/ struct ResMap::Entry *resEntry) {
 // LINE 1088:
 	bptr = dataLoc;
 // LINE 1089:
-	hiWord = bptr[0];
+	__asm        mov    eax, bptr;
+	__asm        mov    al, [eax];
+	__asm        mov    hiWord, al;
 // LINE 1091:
 	bptr++;
 // LINE 1092:
-	midWord = bptr[0];
+	__asm        mov    eax, bptr;
+	__asm        mov    al, [eax];
+	__asm        mov    midWord, al;
 // LINE 1094:
 	bptr++;
 // LINE 1095:
-	loWord = bptr[0];
+	__asm        mov    eax, bptr;
+	__asm        mov    al, [eax];
+	__asm        mov    loWord, al;
 // LINE 1097:
 	__asm        xor    eax, eax;
 	__asm        mov    al, midWord;

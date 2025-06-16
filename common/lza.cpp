@@ -1299,7 +1299,9 @@ _T1e:
 	__asm        cmp    dword ptr [eax+4], 0;
 	__asm        jne    _T7c;
 // LINE 129:
-	tempByte = reinterpret_cast<uint8_t>(dest->putBuffer);
+	__asm        mov    eax, dest;
+	__asm        mov    al, [eax];
+	__asm        mov    tempByte, al;
 // LINE 130:
 	__asm        push   1;
 	__asm        lea    eax, tempByte;
@@ -1680,7 +1682,8 @@ _T9e:
 	__asm        cmp    c, 0x100;
 	__asm        jge    _T119;
 // LINE 608:
-	tempByte = reinterpret_cast<uint8_t>(c);
+	__asm        mov    al, reinterpret_cast<uint8_t>(c);
+	__asm        mov    tempByte, al;
 // LINE 609:
 	__asm        push   1;
 	__asm        lea    eax, tempByte;
@@ -1741,7 +1744,8 @@ _T152:
 	__asm        mov    dl, [eax+ecx];
 	__asm        mov    c, edx;
 // LINE 620:
-	tempByte = reinterpret_cast<uint8_t>(c);
+	__asm        mov    al, reinterpret_cast<uint8_t>(c);
+	__asm        mov    tempByte, al;
 // LINE 621:
 	__asm        push   1;
 	__asm        lea    eax, tempByte;

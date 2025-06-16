@@ -815,15 +815,21 @@ _T9b:
 // LINE 139:
 	__asm        jmp    _Tad;
 _Tad:
-	chCurrentChar = reinterpret_cast<uint8_t>(tempShortcutListIterator.node->data.lKey);
+	__asm        mov    eax, tempShortcutListIterator.node;
+	__asm        mov    al, [eax+0x10];
+	__asm        mov    chCurrentChar, al;
 // LINE 140:
 	__asm        jmp    _Tbb;
 _Tbb:
-	chCurrentCommand = reinterpret_cast<uint8_t>(tempShortcutListIterator.node->data.lCommand);
+	__asm        mov    eax, tempShortcutListIterator.node;
+	__asm        mov    al, [eax+0xC];
+	__asm        mov    chCurrentCommand, al;
 // LINE 141:
 	__asm        jmp    _Tc9;
 _Tc9:
-	chCurrentModifiers = reinterpret_cast<uint8_t>(tempShortcutListIterator.node->data.lModifiers);
+	__asm        mov    eax, tempShortcutListIterator.node;
+	__asm        mov    al, [eax+0x14];
+	__asm        mov    chCurrentModifiers, al;
 // LINE 143:
 	__asm        xor    eax, eax;
 	__asm        mov    al, chCurrentCommand;

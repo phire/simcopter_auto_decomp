@@ -205,8 +205,11 @@ _T131:
 	__asm        cmp    XCount, eax;
 	__asm        jge    _T16b;
 // LINE 74:
-	pDestBits[0] = pSourceBits[0];
-	pDestBits++;
+	__asm        mov    eax, pSourceBits;
+	__asm        mov    al, [eax];
+	__asm        mov    ecx, pDestBits;
+	__asm        mov    [ecx], al;
+	__asm        inc    pDestBits;
 // LINE 77:
 	XError += SourceWidth;
 // LINE 78:

@@ -1259,15 +1259,23 @@ void IncrementAngles(float incPhi, float incPsi, float pivotPhi, float pivotPsi,
 	pivot.psi = pivotPsi;
 	pivot.tau = 0x0;
 // LINE 573:
-	polar.trq = 0x0;
-	polar.lng = polar.trq;
-	polar.lat = polar.lng;
-	pivot.trq = polar.lat;
-	pivot.lng = pivot.trq;
-	pivot.lat = pivot.lng;
-	inc.trq = pivot.lat;
-	inc.lng = inc.trq;
-	inc.lat = inc.lng;
+	__asm        mov    polar.trq, 0;
+	__asm        mov    ax, polar.trq;
+	__asm        mov    polar.lng, ax;
+	__asm        mov    ax, polar.lng;
+	__asm        mov    polar.lat, ax;
+	__asm        mov    ax, polar.lat;
+	__asm        mov    pivot.trq, ax;
+	__asm        mov    ax, pivot.trq;
+	__asm        mov    pivot.lng, ax;
+	__asm        mov    ax, pivot.lng;
+	__asm        mov    pivot.lat, ax;
+	__asm        mov    ax, pivot.lat;
+	__asm        mov    inc.trq, ax;
+	__asm        mov    ax, inc.trq;
+	__asm        mov    inc.lng, ax;
+	__asm        mov    ax, inc.lng;
+	__asm        mov    inc.lat, ax;
 // LINE 575:
 	__asm        test   reinterpret_cast<uint32_t>(polarAngles), 0xFFFF;
 	__asm        je     _Tb2;
@@ -1479,9 +1487,16 @@ _T71:
 // FUNCTION: COPTER_D 0x005637d3
 void SnapToIncs(/*unpacked*/ struct Polar *polar, short latIncs, short lngIncs, short trqIncs) {
 // LINE 640:
-	polar->trq = 0x0;
-	polar->lng = polar->trq;
-	polar->lat = polar->lng;
+	__asm        mov    eax, polar;
+	__asm        mov    word ptr [eax+0x14], 0;
+	__asm        mov    eax, polar;
+	__asm        mov    ax, [eax+0x14];
+	__asm        mov    ecx, polar;
+	__asm        mov    [ecx+0x10], ax;
+	__asm        mov    eax, polar;
+	__asm        mov    ax, [eax+0x10];
+	__asm        mov    ecx, polar;
+	__asm        mov    [ecx+0x12], ax;
 // LINE 641:
 	FillLatLngTrq(reinterpret_cast<uint32_t>(trqIncs), reinterpret_cast<uint32_t>(lngIncs), reinterpret_cast<uint32_t>(latIncs), polar);
 // LINE 642:
@@ -1582,7 +1597,9 @@ void PolarDouble2Incs(float phi, float psi, float tau, short latincs, short lngi
 // Block start:
 	/*bp-0x1c*/  short trouble;
 _T117:
-	trouble = trq[0];
+	__asm        mov    eax, trq;
+	__asm        mov    ax, [eax];
+	__asm        mov    trouble, ax;
 // LINE 667:
 // Block end:
 _T121:

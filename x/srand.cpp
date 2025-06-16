@@ -351,7 +351,8 @@ short SGSRand(unsigned short limit) {
 	__asm        cmp    eax, ecx;
 	__asm        jge    _T41;
 // LINE 168:
-	x = z;
+	__asm        mov    ax, z;
+	__asm        mov    x, ax;
 // LINE 169:
 _T41:
 	__asm        call   SRand2;

@@ -2718,7 +2718,8 @@ _T2a:
 	__asm        cmp    eax, 0xFFFF;
 	__asm        je     _Teb;
 // LINE 1811:
-	ThisIndex = BSPIndex;
+	__asm        mov    ax, BSPIndex;
+	__asm        mov    ThisIndex, ax;
 // LINE 1812:
 	BSPIndex++;
 // LINE 1813:

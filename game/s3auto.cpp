@@ -826,9 +826,11 @@ __RETURN:
 // LINE 142:
 	minDist = 0x7d00;
 // LINE 147:
-	there.x = reinterpret_cast<uint8_t>(cellx);
+	__asm        mov    al, reinterpret_cast<uint8_t>(cellx);
+	__asm        mov    there.x, al;
 // LINE 148:
-	there.y = reinterpret_cast<uint8_t>(celly);
+	__asm        mov    al, reinterpret_cast<uint8_t>(celly);
+	__asm        mov    there.y, al;
 // LINE 150:
 	__asm        mov    eax, cartype;
 	__asm        mov    [ebp-0x1C], eax;
@@ -2238,7 +2240,10 @@ _T6ce:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::LinkToCell;
 // LINE 981:
-	reinterpret_cast<uint16_t>(this->currentLocation.x) = reinterpret_cast<uint16_t>(this->nextLocation.x);
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0xD4];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xD2], ax;
 // LINE 983:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0xD2;
@@ -2798,9 +2803,13 @@ int32_t AutomobileClass::BeamToLocation(const /*packed*/ struct _GridCoordinates
 	/*bp-0x7c*/  unsigned short tile;
 
 // LINE 1284:
-	reinterpret_cast<uint16_t>(scanLoc.x) = reinterpret_cast<uint16_t>(cell.x);
+	__asm        mov    eax, cell;
+	__asm        mov    ax, [eax];
+	__asm        mov    reinterpret_cast<uint16_t>(scanLoc.x), ax;
 // LINE 1285:
-	reinterpret_cast<uint16_t>(prevGridLoc.x) = reinterpret_cast<uint16_t>(this->goal.gridLoc.x);
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0x7C];
+	__asm        mov    reinterpret_cast<uint16_t>(prevGridLoc.x), ax;
 // LINE 1289:
 	__asm        push   9;
 	__asm        lea    ecx, scan.currDist;
@@ -3180,9 +3189,13 @@ _T53c:
 // LINE 1494:
 	this->hiwaydir = 0x0;
 // LINE 1496:
-	this->currentLocation.x = scanLoc.x;
+	__asm        mov    al, scanLoc.x;
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xD2], al;
 // LINE 1497:
-	this->currentLocation.y = scanLoc.y;
+	__asm        mov    al, scanLoc.y;
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xD3], al;
 // LINE 1501:
 	__asm        mov    eax, this;
 	__asm        add    eax, 0xD2;
@@ -3978,7 +3991,9 @@ void AutomobileClass::PullOverCiviliansInWay() {
 	__asm        lea    ecx, spiral.currDist;
 	__asm        call   SpiralScan::SpiralScan;
 // LINE 1810:
-	reinterpret_cast<uint16_t>(scanLoc.x) = reinterpret_cast<uint16_t>(this->goal.gridLoc.x);
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0x7C];
+	__asm        mov    reinterpret_cast<uint16_t>(scanLoc.x), ax;
 // LINE 1815:
 _T21:
 	__asm        xor    eax, eax;
@@ -7623,7 +7638,10 @@ void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
 // LINE 3624:
 	i = 0x0;
 // LINE 3626:
-	reinterpret_cast<uint16_t>(this->nextLocation.x) = reinterpret_cast<uint16_t>(this->currentLocation.x);
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0xD2];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xD4], ax;
 // LINE 3627:
 	this->hiwaydir = 0x0;
 // LINE 3631:
@@ -9023,7 +9041,10 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(/*packed*/
 	/*bp-0x18*/  unsigned short southTile;
 
 // LINE 4045:
-	this->northCell.x = point.x;
+	__asm        mov    eax, point;
+	__asm        mov    al, [eax];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xD6], al;
 // LINE 4046:
 	__asm        mov    eax, point;
 	__asm        xor    ecx, ecx;
@@ -9032,7 +9053,10 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(/*packed*/
 	__asm        mov    eax, this;
 	__asm        mov    [eax+0xD7], cl;
 // LINE 4047:
-	this->southCell.x = point.x;
+	__asm        mov    eax, point;
+	__asm        mov    al, [eax];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xD8], al;
 // LINE 4048:
 	__asm        mov    eax, point;
 	__asm        xor    ecx, ecx;
@@ -9048,7 +9072,10 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(/*packed*/
 	__asm        mov    eax, this;
 	__asm        mov    [eax+0xDA], cl;
 // LINE 4050:
-	this->eastCell.y = point.y;
+	__asm        mov    eax, point;
+	__asm        mov    al, [eax+1];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xDB], al;
 // LINE 4051:
 	__asm        mov    eax, point;
 	__asm        xor    ecx, ecx;
@@ -9057,7 +9084,10 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(/*packed*/
 	__asm        mov    eax, this;
 	__asm        mov    [eax+0xDC], cl;
 // LINE 4052:
-	this->westCell.y = point.y;
+	__asm        mov    eax, point;
+	__asm        mov    al, [eax+1];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xDD], al;
 // LINE 4055:
 	__asm        mov    eax, point;
 	__asm        xor    ecx, ecx;
@@ -9971,7 +10001,10 @@ void AutomobileClass::GoStraight() {
 	__asm        test   byte ptr [eax+0xCE], 1;
 	__asm        je     _T35;
 // LINE 4350:
-	reinterpret_cast<uint16_t>(this->nextLocation.x) = reinterpret_cast<uint16_t>(this->northCell.x);
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0xD6];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xD4], ax;
 // LINE 4352:
 	__asm        jmp    _Td1;
 _T35:
@@ -9979,7 +10012,10 @@ _T35:
 	__asm        test   byte ptr [eax+0xCE], 4;
 	__asm        je     _T5e;
 // LINE 4355:
-	reinterpret_cast<uint16_t>(this->nextLocation.x) = reinterpret_cast<uint16_t>(this->southCell.x);
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0xD8];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xD4], ax;
 // LINE 4357:
 	__asm        jmp    _Td1;
 _T5e:
@@ -9987,7 +10023,10 @@ _T5e:
 	__asm        test   byte ptr [eax+0xCE], 2;
 	__asm        je     _T87;
 // LINE 4360:
-	reinterpret_cast<uint16_t>(this->nextLocation.x) = reinterpret_cast<uint16_t>(this->eastCell.x);
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0xDA];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xD4], ax;
 // LINE 4362:
 	__asm        jmp    _Td1;
 _T87:
@@ -9995,7 +10034,10 @@ _T87:
 	__asm        test   byte ptr [eax+0xCE], 8;
 	__asm        je     _Tb0;
 // LINE 4365:
-	reinterpret_cast<uint16_t>(this->nextLocation.x) = reinterpret_cast<uint16_t>(this->westCell.x);
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0xDC];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xD4], ax;
 // LINE 4367:
 	__asm        jmp    _Td1;
 // LINE 4369:
@@ -10016,7 +10058,10 @@ void AutomobileClass::TurnLeft() {
 	__asm        test   byte ptr [eax+0xCE], 1;
 	__asm        je     _T35;
 // LINE 4396:
-	reinterpret_cast<uint16_t>(this->nextLocation.x) = reinterpret_cast<uint16_t>(this->westCell.x);
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0xDC];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xD4], ax;
 // LINE 4398:
 	__asm        jmp    _Td1;
 _T35:
@@ -10024,7 +10069,10 @@ _T35:
 	__asm        test   byte ptr [eax+0xCE], 4;
 	__asm        je     _T5e;
 // LINE 4401:
-	reinterpret_cast<uint16_t>(this->nextLocation.x) = reinterpret_cast<uint16_t>(this->eastCell.x);
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0xDA];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xD4], ax;
 // LINE 4403:
 	__asm        jmp    _Td1;
 _T5e:
@@ -10032,7 +10080,10 @@ _T5e:
 	__asm        test   byte ptr [eax+0xCE], 2;
 	__asm        je     _T87;
 // LINE 4406:
-	reinterpret_cast<uint16_t>(this->nextLocation.x) = reinterpret_cast<uint16_t>(this->northCell.x);
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0xD6];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xD4], ax;
 // LINE 4408:
 	__asm        jmp    _Td1;
 _T87:
@@ -10040,7 +10091,10 @@ _T87:
 	__asm        test   byte ptr [eax+0xCE], 8;
 	__asm        je     _Tb0;
 // LINE 4411:
-	reinterpret_cast<uint16_t>(this->nextLocation.x) = reinterpret_cast<uint16_t>(this->southCell.x);
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0xD8];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xD4], ax;
 // LINE 4413:
 	__asm        jmp    _Td1;
 // LINE 4415:
@@ -10061,7 +10115,10 @@ void AutomobileClass::TurnRight() {
 	__asm        test   byte ptr [eax+0xCE], 1;
 	__asm        je     _T35;
 // LINE 4443:
-	reinterpret_cast<uint16_t>(this->nextLocation.x) = reinterpret_cast<uint16_t>(this->eastCell.x);
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0xDA];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xD4], ax;
 // LINE 4446:
 	__asm        jmp    _Td1;
 _T35:
@@ -10069,7 +10126,10 @@ _T35:
 	__asm        test   byte ptr [eax+0xCE], 4;
 	__asm        je     _T5e;
 // LINE 4449:
-	reinterpret_cast<uint16_t>(this->nextLocation.x) = reinterpret_cast<uint16_t>(this->westCell.x);
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0xDC];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xD4], ax;
 // LINE 4452:
 	__asm        jmp    _Td1;
 _T5e:
@@ -10077,7 +10137,10 @@ _T5e:
 	__asm        test   byte ptr [eax+0xCE], 2;
 	__asm        je     _T87;
 // LINE 4455:
-	reinterpret_cast<uint16_t>(this->nextLocation.x) = reinterpret_cast<uint16_t>(this->southCell.x);
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0xD8];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xD4], ax;
 // LINE 4458:
 	__asm        jmp    _Td1;
 _T87:
@@ -10085,7 +10148,10 @@ _T87:
 	__asm        test   byte ptr [eax+0xCE], 8;
 	__asm        je     _Tb0;
 // LINE 4461:
-	reinterpret_cast<uint16_t>(this->nextLocation.x) = reinterpret_cast<uint16_t>(this->northCell.x);
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0xD6];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xD4], ax;
 // LINE 4464:
 	__asm        jmp    _Td1;
 // LINE 4466:
@@ -10310,17 +10376,35 @@ void AutomobileClass::SetSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) {
 // LINE 4618:
 	sd->hiwaydir = this->hiwaydir;
 // LINE 4619:
-	reinterpret_cast<uint16_t>(sd->currentLocation.x) = reinterpret_cast<uint16_t>(this->currentLocation.x);
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0xD2];
+	__asm        mov    ecx, sd;
+	__asm        mov    [ecx+0xC8], ax;
 // LINE 4620:
-	reinterpret_cast<uint16_t>(sd->nextLocation.x) = reinterpret_cast<uint16_t>(this->nextLocation.x);
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0xD4];
+	__asm        mov    ecx, sd;
+	__asm        mov    [ecx+0xCA], ax;
 // LINE 4621:
-	reinterpret_cast<uint16_t>(sd->northCell.x) = reinterpret_cast<uint16_t>(this->northCell.x);
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0xD6];
+	__asm        mov    ecx, sd;
+	__asm        mov    [ecx+0xCC], ax;
 // LINE 4622:
-	reinterpret_cast<uint16_t>(sd->eastCell.x) = reinterpret_cast<uint16_t>(this->eastCell.x);
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0xDA];
+	__asm        mov    ecx, sd;
+	__asm        mov    [ecx+0xD0], ax;
 // LINE 4623:
-	reinterpret_cast<uint16_t>(sd->westCell.x) = reinterpret_cast<uint16_t>(this->westCell.x);
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0xDC];
+	__asm        mov    ecx, sd;
+	__asm        mov    [ecx+0xD2], ax;
 // LINE 4624:
-	reinterpret_cast<uint16_t>(sd->southCell.x) = reinterpret_cast<uint16_t>(this->southCell.x);
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0xD8];
+	__asm        mov    ecx, sd;
+	__asm        mov    [ecx+0xCE], ax;
 // LINE 4625:
 	sd->speed = this->speed;
 // LINE 4626:
@@ -10352,9 +10436,17 @@ void AutomobileClass::SetSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) {
 	__asm        test   byte ptr [eax+8], 2;
 	__asm        je     _T2ff;
 // LINE 4641:
-	sd->goalpRGVFixup.x = this->goal.pRGV->x;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x70];
+	__asm        mov    al, [eax];
+	__asm        mov    ecx, sd;
+	__asm        mov    [ecx+0x92], al;
 // LINE 4642:
-	sd->goalpRGVFixup.y = this->goal.pRGV->y;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x70];
+	__asm        mov    al, [eax+1];
+	__asm        mov    ecx, sd;
+	__asm        mov    [ecx+0x93], al;
 // LINE 4643:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0xF2];
@@ -10371,12 +10463,18 @@ void AutomobileClass::SetSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) {
 	__asm        test   byte ptr [eax+9], 8;
 	__asm        je     _T2ee;
 // LINE 4648:
-	reinterpret_cast<uint16_t>(sd->cptrfixup.x) = reinterpret_cast<uint16_t>(this->currentLocation.x);
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0xD2];
+	__asm        mov    ecx, sd;
+	__asm        mov    [ecx+0x108], ax;
 // LINE 4650:
 	__asm        jmp    _T2ff;
 // LINE 4652:
 _T2ee:
-	reinterpret_cast<uint16_t>(sd->cptrfixup.x) = reinterpret_cast<uint16_t>(this->goal.gridLoc.x);
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0x7C];
+	__asm        mov    ecx, sd;
+	__asm        mov    [ecx+0x108], ax;
 // LINE 4655:
 _T2ff:
 	return;
@@ -10435,17 +10533,35 @@ _T1d:
 // LINE 4687:
 	this->hiwaydir = sd->hiwaydir;
 // LINE 4688:
-	reinterpret_cast<uint16_t>(this->currentLocation.x) = reinterpret_cast<uint16_t>(sd->currentLocation.x);
+	__asm        mov    eax, sd;
+	__asm        mov    ax, [eax+0xC8];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xD2], ax;
 // LINE 4689:
-	reinterpret_cast<uint16_t>(this->nextLocation.x) = reinterpret_cast<uint16_t>(sd->nextLocation.x);
+	__asm        mov    eax, sd;
+	__asm        mov    ax, [eax+0xCA];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xD4], ax;
 // LINE 4690:
-	reinterpret_cast<uint16_t>(this->northCell.x) = reinterpret_cast<uint16_t>(sd->northCell.x);
+	__asm        mov    eax, sd;
+	__asm        mov    ax, [eax+0xCC];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xD6], ax;
 // LINE 4691:
-	reinterpret_cast<uint16_t>(this->eastCell.x) = reinterpret_cast<uint16_t>(sd->eastCell.x);
+	__asm        mov    eax, sd;
+	__asm        mov    ax, [eax+0xD0];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xDA], ax;
 // LINE 4692:
-	reinterpret_cast<uint16_t>(this->westCell.x) = reinterpret_cast<uint16_t>(sd->westCell.x);
+	__asm        mov    eax, sd;
+	__asm        mov    ax, [eax+0xD2];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xDC], ax;
 // LINE 4693:
-	reinterpret_cast<uint16_t>(this->southCell.x) = reinterpret_cast<uint16_t>(sd->southCell.x);
+	__asm        mov    eax, sd;
+	__asm        mov    ax, [eax+0xCE];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xD8], ax;
 // LINE 4694:
 	this->speed = sd->speed;
 // LINE 4695:

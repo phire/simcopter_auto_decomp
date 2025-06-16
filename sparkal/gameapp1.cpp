@@ -3420,7 +3420,8 @@ int32_t CGameApp::IsSwitchPresent(char chSwitchToCheck, char * szResult) {
 	__asm        cmp    eax, 0x5A;
 	__asm        jg     _T42;
 // LINE 599:
-	chUpperToCheck = chSwitchToCheck;
+	__asm        mov    al, chSwitchToCheck;
+	__asm        mov    chUpperToCheck, al;
 // LINE 600:
 	__asm        movsx  eax, chSwitchToCheck;
 	__asm        add    eax, 0x20;
@@ -3436,7 +3437,8 @@ _T42:
 	__asm        cmp    eax, 0x7A;
 	__asm        jg     _T71;
 // LINE 603:
-	chLowerToCheck = chSwitchToCheck;
+	__asm        mov    al, chSwitchToCheck;
+	__asm        mov    chLowerToCheck, al;
 // LINE 604:
 	__asm        movsx  eax, chSwitchToCheck;
 	__asm        sub    eax, 0x20;
@@ -3452,8 +3454,10 @@ _T71:
 	__asm        cmp    eax, 0x39;
 	__asm        jg     _T9c;
 // LINE 607:
-	chUpperToCheck = chSwitchToCheck;
-	chLowerToCheck = chUpperToCheck;
+	__asm        mov    al, chSwitchToCheck;
+	__asm        mov    chUpperToCheck, al;
+	__asm        mov    al, chUpperToCheck;
+	__asm        mov    chLowerToCheck, al;
 // LINE 609:
 	__asm        jmp    _Ta3;
 // LINE 610:

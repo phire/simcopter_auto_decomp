@@ -941,7 +941,10 @@ _T131:
 	return;
 // LINE 920:
 _T16b:
-	ptr[0] = reinterpret_cast<uint8_t>(blit->user1);
+	__asm        mov    eax, blit;
+	__asm        mov    al, [eax+0xC];
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 922:
 	__asm        mov    eax, winheight;
 	__asm        dec    eax;
@@ -967,7 +970,10 @@ _T19c:
 	__asm        cmp    eax, x;
 	__asm        jle    __RETURN;
 // LINE 932:
-	ptr[0] = reinterpret_cast<uint8_t>(blit->user1);
+	__asm        mov    eax, blit;
+	__asm        mov    al, [eax+0xC];
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 933:
 	__asm        mov    eax, winheight;
 	__asm        dec    eax;
@@ -1433,7 +1439,9 @@ _T4e2:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1255:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1256:
 	__asm        jmp    _T22d6;
 // LINE 1258:
@@ -1444,7 +1452,9 @@ _T4fe:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1259:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1260:
 	ptr++;
 // LINE 1261:
@@ -1454,13 +1464,17 @@ _T4fe:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1262:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1263:
 	__asm        mov    eax, bufwidth;
 	__asm        dec    eax;
 	__asm        add    ptr, eax;
 // LINE 1264:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1265:
 	ptr++;
 // LINE 1266:
@@ -1470,7 +1484,9 @@ _T4fe:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1267:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1268:
 	__asm        jmp    _T22d6;
 // LINE 1270:
@@ -1481,15 +1497,21 @@ _T55d:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1271:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1272:
 	ptr++;
 // LINE 1273:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1274:
 	ptr++;
 // LINE 1276:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1277:
 	ptr += (bufwidth - 0x2);
 // LINE 1278:
@@ -1499,11 +1521,15 @@ _T55d:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1279:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1280:
 	ptr++;
 // LINE 1282:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1283:
 	ptr++;
 // LINE 1284:
@@ -1513,7 +1539,9 @@ _T55d:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1285:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1286:
 	ptr += (bufwidth - 0x2);
 // LINE 1287:
@@ -1523,11 +1551,15 @@ _T55d:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1288:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1289:
 	ptr++;
 // LINE 1291:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1292:
 	ptr++;
 // LINE 1293:
@@ -1537,7 +1569,9 @@ _T55d:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1294:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1295:
 	__asm        jmp    _T22d6;
 // LINE 1297:
@@ -1548,11 +1582,15 @@ _T619:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1298:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1299:
 	ptr++;
 // LINE 1301:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1302:
 	ptr++;
 // LINE 1303:
@@ -1562,11 +1600,15 @@ _T619:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1304:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1305:
 	ptr++;
 // LINE 1307:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1308:
 	ptr += (bufwidth - 0x3);
 // LINE 1309:
@@ -1576,15 +1618,21 @@ _T619:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1310:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1311:
 	ptr++;
 // LINE 1313:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1314:
 	ptr++;
 // LINE 1316:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1317:
 	ptr++;
 // LINE 1318:
@@ -1594,7 +1642,9 @@ _T619:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1319:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1320:
 	ptr += (bufwidth - 0x3);
 // LINE 1321:
@@ -1604,15 +1654,21 @@ _T619:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1322:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1323:
 	ptr++;
 // LINE 1325:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1326:
 	ptr++;
 // LINE 1328:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1329:
 	ptr++;
 // LINE 1330:
@@ -1622,11 +1678,15 @@ _T619:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1331:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1332:
 	ptr += (bufwidth - 0x3);
 // LINE 1334:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1335:
 	ptr++;
 // LINE 1336:
@@ -1636,7 +1696,9 @@ _T619:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1337:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1338:
 	ptr++;
 // LINE 1339:
@@ -1646,11 +1708,15 @@ _T619:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1340:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1341:
 	ptr++;
 // LINE 1343:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1344:
 	__asm        jmp    _T22d6;
 // LINE 1346:
@@ -1661,7 +1727,9 @@ _T755:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1347:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1348:
 	ptr++;
 // LINE 1349:
@@ -1671,11 +1739,15 @@ _T755:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1350:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1351:
 	ptr++;
 // LINE 1353:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1354:
 	ptr++;
 // LINE 1355:
@@ -1685,19 +1757,27 @@ _T755:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1356:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1357:
 	ptr++;
 // LINE 1359:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1360:
 	ptr += (bufwidth - 0x4);
 // LINE 1362:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1363:
 	ptr++;
 // LINE 1365:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1366:
 	ptr++;
 // LINE 1367:
@@ -1707,7 +1787,9 @@ _T755:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1368:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1369:
 	ptr++;
 // LINE 1370:
@@ -1717,7 +1799,9 @@ _T755:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1371:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1372:
 	ptr++;
 // LINE 1373:
@@ -1727,11 +1811,15 @@ _T755:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1374:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1375:
 	ptr += (bufwidth - 0x4);
 // LINE 1377:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1378:
 	ptr++;
 // LINE 1379:
@@ -1741,19 +1829,27 @@ _T755:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1380:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1381:
 	ptr++;
 // LINE 1383:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1384:
 	ptr++;
 // LINE 1386:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1387:
 	ptr++;
 // LINE 1389:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1390:
 	ptr += (bufwidth - 0x4);
 // LINE 1391:
@@ -1763,11 +1859,15 @@ _T755:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1392:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1393:
 	ptr++;
 // LINE 1395:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1396:
 	ptr++;
 // LINE 1397:
@@ -1777,7 +1877,9 @@ _T755:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1398:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1399:
 	ptr++;
 // LINE 1400:
@@ -1787,7 +1889,9 @@ _T755:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1401:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1402:
 	ptr++;
 // LINE 1403:
@@ -1797,19 +1901,27 @@ _T755:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1404:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1405:
 	ptr += (bufwidth - 0x4);
 // LINE 1407:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1408:
 	ptr++;
 // LINE 1410:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1411:
 	ptr++;
 // LINE 1413:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1414:
 	ptr++;
 // LINE 1415:
@@ -1819,11 +1931,15 @@ _T755:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1416:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1417:
 	ptr++;
 // LINE 1419:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1420:
 	__asm        jmp    _T22d6;
 // LINE 1422:
@@ -1834,7 +1950,9 @@ _T936:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1423:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1424:
 	ptr++;
 // LINE 1425:
@@ -1844,11 +1962,15 @@ _T936:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1426:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1427:
 	ptr++;
 // LINE 1429:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1430:
 	ptr++;
 // LINE 1431:
@@ -1858,7 +1980,9 @@ _T936:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1432:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1433:
 	ptr++;
 // LINE 1434:
@@ -1868,19 +1992,27 @@ _T936:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1435:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1436:
 	ptr++;
 // LINE 1438:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1439:
 	ptr += (bufwidth - 0x5);
 // LINE 1441:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1442:
 	ptr++;
 // LINE 1444:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1445:
 	ptr++;
 // LINE 1446:
@@ -1890,7 +2022,9 @@ _T936:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1447:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1448:
 	ptr++;
 // LINE 1449:
@@ -1900,7 +2034,9 @@ _T936:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1450:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1451:
 	ptr++;
 // LINE 1452:
@@ -1910,7 +2046,9 @@ _T936:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1453:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1454:
 	ptr++;
 // LINE 1455:
@@ -1920,19 +2058,27 @@ _T936:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1456:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1457:
 	ptr += (bufwidth - 0x5);
 // LINE 1459:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1460:
 	ptr++;
 // LINE 1462:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1463:
 	ptr++;
 // LINE 1465:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1466:
 	ptr++;
 // LINE 1467:
@@ -1942,7 +2088,9 @@ _T936:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1468:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1469:
 	ptr++;
 // LINE 1470:
@@ -1952,7 +2100,9 @@ _T936:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1471:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1472:
 	ptr++;
 // LINE 1473:
@@ -1962,7 +2112,9 @@ _T936:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1474:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1475:
 	ptr += (bufwidth - 0x5);
 // LINE 1476:
@@ -1972,11 +2124,15 @@ _T936:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1477:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1478:
 	ptr++;
 // LINE 1480:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1481:
 	ptr++;
 // LINE 1482:
@@ -1986,7 +2142,9 @@ _T936:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1483:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1484:
 	ptr++;
 // LINE 1485:
@@ -1996,11 +2154,15 @@ _T936:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1486:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1487:
 	ptr++;
 // LINE 1489:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1490:
 	ptr++;
 // LINE 1491:
@@ -2010,7 +2172,9 @@ _T936:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1492:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1493:
 	ptr += (bufwidth - 0x5);
 // LINE 1494:
@@ -2020,7 +2184,9 @@ _T936:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1495:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1496:
 	ptr++;
 // LINE 1497:
@@ -2030,15 +2196,21 @@ _T936:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1498:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1499:
 	ptr++;
 // LINE 1501:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1502:
 	ptr++;
 // LINE 1504:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1505:
 	ptr++;
 // LINE 1506:
@@ -2048,7 +2220,9 @@ _T936:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1507:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1508:
 	ptr++;
 // LINE 1509:
@@ -2058,11 +2232,15 @@ _T936:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1510:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1511:
 	ptr += (bufwidth - 0x5);
 // LINE 1513:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1514:
 	ptr++;
 // LINE 1515:
@@ -2072,11 +2250,15 @@ _T936:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1516:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1517:
 	ptr++;
 // LINE 1519:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1520:
 	ptr++;
 // LINE 1521:
@@ -2086,11 +2268,15 @@ _T936:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1522:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1523:
 	ptr++;
 // LINE 1525:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1526:
 	ptr++;
 // LINE 1527:
@@ -2100,7 +2286,9 @@ _T936:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1528:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1529:
 	__asm        jmp    _T22d6;
 // LINE 1531:
@@ -2111,11 +2299,15 @@ _Tc2c:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1532:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1533:
 	ptr++;
 // LINE 1535:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1536:
 	ptr++;
 // LINE 1537:
@@ -2125,7 +2317,9 @@ _Tc2c:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1538:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1539:
 	ptr++;
 // LINE 1540:
@@ -2135,15 +2329,21 @@ _Tc2c:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1541:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1542:
 	ptr++;
 // LINE 1544:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1545:
 	ptr++;
 // LINE 1547:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1548:
 	ptr++;
 // LINE 1549:
@@ -2153,15 +2353,21 @@ _Tc2c:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1550:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1551:
 	ptr += (bufwidth - 0x6);
 // LINE 1553:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1554:
 	ptr++;
 // LINE 1556:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1557:
 	ptr++;
 // LINE 1558:
@@ -2171,11 +2377,15 @@ _Tc2c:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1559:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1560:
 	ptr++;
 // LINE 1562:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1563:
 	ptr++;
 // LINE 1564:
@@ -2185,7 +2395,9 @@ _Tc2c:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1565:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1566:
 	ptr++;
 // LINE 1567:
@@ -2195,19 +2407,27 @@ _Tc2c:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1568:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1569:
 	ptr++;
 // LINE 1571:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1572:
 	ptr += (bufwidth - 0x6);
 // LINE 1574:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1575:
 	ptr++;
 // LINE 1577:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1578:
 	ptr++;
 // LINE 1579:
@@ -2217,7 +2437,9 @@ _Tc2c:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1580:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1581:
 	ptr++;
 // LINE 1582:
@@ -2227,11 +2449,15 @@ _Tc2c:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1583:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1584:
 	ptr++;
 // LINE 1586:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1587:
 	ptr++;
 // LINE 1588:
@@ -2241,11 +2467,15 @@ _Tc2c:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1589:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1590:
 	ptr++;
 // LINE 1592:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1593:
 	ptr += (bufwidth - 0x6);
 // LINE 1594:
@@ -2255,11 +2485,15 @@ _Tc2c:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1595:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1596:
 	ptr++;
 // LINE 1598:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1599:
 	ptr++;
 // LINE 1600:
@@ -2269,19 +2503,27 @@ _Tc2c:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1601:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1602:
 	ptr++;
 // LINE 1604:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1605:
 	ptr++;
 // LINE 1607:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1608:
 	ptr++;
 // LINE 1610:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1611:
 	ptr++;
 // LINE 1612:
@@ -2291,7 +2533,9 @@ _Tc2c:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1613:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1614:
 	ptr += (bufwidth - 0x6);
 // LINE 1615:
@@ -2301,7 +2545,9 @@ _Tc2c:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1616:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1617:
 	ptr++;
 // LINE 1618:
@@ -2311,7 +2557,9 @@ _Tc2c:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1619:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1620:
 	ptr++;
 // LINE 1621:
@@ -2321,11 +2569,15 @@ _Tc2c:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1622:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1623:
 	ptr++;
 // LINE 1625:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1626:
 	ptr++;
 // LINE 1627:
@@ -2335,15 +2587,21 @@ _Tc2c:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1628:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1629:
 	ptr++;
 // LINE 1631:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1632:
 	ptr++;
 // LINE 1634:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1635:
 	ptr += (bufwidth - 0x6);
 // LINE 1636:
@@ -2353,7 +2611,9 @@ _Tc2c:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1637:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1638:
 	ptr++;
 // LINE 1639:
@@ -2363,19 +2623,27 @@ _Tc2c:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1640:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1641:
 	ptr++;
 // LINE 1643:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1644:
 	ptr++;
 // LINE 1646:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1647:
 	ptr++;
 // LINE 1649:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1650:
 	ptr++;
 // LINE 1651:
@@ -2385,11 +2653,15 @@ _Tc2c:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1652:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1653:
 	ptr++;
 // LINE 1655:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1656:
 	ptr += (bufwidth - 0x6);
 // LINE 1657:
@@ -2399,11 +2671,15 @@ _Tc2c:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1658:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1659:
 	ptr++;
 // LINE 1661:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1662:
 	ptr++;
 // LINE 1663:
@@ -2413,7 +2689,9 @@ _Tc2c:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1664:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1665:
 	ptr++;
 // LINE 1666:
@@ -2423,11 +2701,15 @@ _Tc2c:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1667:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1668:
 	ptr++;
 // LINE 1670:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1671:
 	ptr++;
 // LINE 1672:
@@ -2437,7 +2719,9 @@ _Tc2c:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1673:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1674:
 	ptr++;
 // LINE 1675:
@@ -2447,7 +2731,9 @@ _Tc2c:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1676:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1677:
 	__asm        jmp    _T22d6;
 // LINE 1679:
@@ -2458,11 +2744,15 @@ _Tfe4:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1680:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1681:
 	ptr++;
 // LINE 1683:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1684:
 	ptr++;
 // LINE 1685:
@@ -2472,11 +2762,15 @@ _Tfe4:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1686:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1687:
 	ptr++;
 // LINE 1689:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1690:
 	ptr++;
 // LINE 1691:
@@ -2486,7 +2780,9 @@ _Tfe4:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1692:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1693:
 	ptr++;
 // LINE 1694:
@@ -2496,23 +2792,33 @@ _Tfe4:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1695:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1696:
 	ptr++;
 // LINE 1698:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1699:
 	ptr++;
 // LINE 1701:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1702:
 	ptr += (bufwidth - 0x7);
 // LINE 1704:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1705:
 	ptr++;
 // LINE 1707:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1708:
 	ptr++;
 // LINE 1709:
@@ -2522,7 +2828,9 @@ _Tfe4:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1710:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1711:
 	ptr++;
 // LINE 1712:
@@ -2532,7 +2840,9 @@ _Tfe4:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1713:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1714:
 	ptr++;
 // LINE 1715:
@@ -2542,11 +2852,15 @@ _Tfe4:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1716:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1717:
 	ptr++;
 // LINE 1719:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1720:
 	ptr++;
 // LINE 1721:
@@ -2556,7 +2870,9 @@ _Tfe4:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1722:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1723:
 	ptr++;
 // LINE 1724:
@@ -2566,15 +2882,21 @@ _Tfe4:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1725:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1726:
 	ptr += (bufwidth - 0x7);
 // LINE 1728:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1729:
 	ptr++;
 // LINE 1731:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1732:
 	ptr++;
 // LINE 1733:
@@ -2584,19 +2906,27 @@ _Tfe4:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1734:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1735:
 	ptr++;
 // LINE 1737:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1738:
 	ptr++;
 // LINE 1740:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1741:
 	ptr++;
 // LINE 1743:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1744:
 	ptr++;
 // LINE 1745:
@@ -2606,7 +2936,9 @@ _Tfe4:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1746:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1747:
 	ptr++;
 // LINE 1748:
@@ -2616,19 +2948,27 @@ _Tfe4:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1749:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1750:
 	ptr += (bufwidth - 0x7);
 // LINE 1752:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1753:
 	ptr++;
 // LINE 1755:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1756:
 	ptr++;
 // LINE 1758:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1759:
 	ptr++;
 // LINE 1760:
@@ -2638,11 +2978,15 @@ _Tfe4:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1761:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1762:
 	ptr++;
 // LINE 1764:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1765:
 	ptr++;
 // LINE 1766:
@@ -2652,19 +2996,27 @@ _Tfe4:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1767:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1768:
 	ptr++;
 // LINE 1770:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1771:
 	ptr++;
 // LINE 1773:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1774:
 	ptr += (bufwidth - 0x7);
 // LINE 1776:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1777:
 	ptr++;
 // LINE 1778:
@@ -2674,7 +3026,9 @@ _Tfe4:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1779:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1780:
 	ptr++;
 // LINE 1781:
@@ -2684,15 +3038,21 @@ _Tfe4:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1782:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1783:
 	ptr++;
 // LINE 1785:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1786:
 	ptr++;
 // LINE 1788:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1789:
 	ptr++;
 // LINE 1790:
@@ -2702,7 +3062,9 @@ _Tfe4:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1791:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1792:
 	ptr++;
 // LINE 1793:
@@ -2712,7 +3074,9 @@ _Tfe4:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1794:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1795:
 	ptr++;
 // LINE 1796:
@@ -2722,19 +3086,27 @@ _Tfe4:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1797:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1798:
 	ptr += (bufwidth - 0x7);
 // LINE 1800:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1801:
 	ptr++;
 // LINE 1803:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1804:
 	ptr++;
 // LINE 1806:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1807:
 	ptr++;
 // LINE 1808:
@@ -2744,7 +3116,9 @@ _Tfe4:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1809:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1810:
 	ptr++;
 // LINE 1811:
@@ -2754,7 +3128,9 @@ _Tfe4:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1812:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1813:
 	ptr++;
 // LINE 1814:
@@ -2764,19 +3140,27 @@ _Tfe4:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1815:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1816:
 	ptr++;
 // LINE 1818:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1819:
 	ptr++;
 // LINE 1821:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1822:
 	ptr += (bufwidth - 0x7);
 // LINE 1824:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1825:
 	ptr++;
 // LINE 1826:
@@ -2786,7 +3170,9 @@ _Tfe4:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1827:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1828:
 	ptr++;
 // LINE 1829:
@@ -2796,19 +3182,27 @@ _Tfe4:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1830:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1831:
 	ptr++;
 // LINE 1833:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1834:
 	ptr++;
 // LINE 1836:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1837:
 	ptr++;
 // LINE 1839:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1840:
 	ptr++;
 // LINE 1841:
@@ -2818,7 +3212,9 @@ _Tfe4:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1842:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1843:
 	ptr++;
 // LINE 1844:
@@ -2828,7 +3224,9 @@ _Tfe4:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1845:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1846:
 	ptr += (bufwidth - 0x7);
 // LINE 1847:
@@ -2838,11 +3236,15 @@ _Tfe4:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1848:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1849:
 	ptr++;
 // LINE 1851:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1852:
 	ptr++;
 // LINE 1853:
@@ -2852,7 +3254,9 @@ _Tfe4:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1854:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1855:
 	ptr++;
 // LINE 1856:
@@ -2862,7 +3266,9 @@ _Tfe4:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1857:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1858:
 	ptr++;
 // LINE 1859:
@@ -2872,11 +3278,15 @@ _Tfe4:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1860:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1861:
 	ptr++;
 // LINE 1863:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1864:
 	ptr++;
 // LINE 1865:
@@ -2886,7 +3296,9 @@ _Tfe4:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1866:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1867:
 	ptr++;
 // LINE 1868:
@@ -2896,7 +3308,9 @@ _Tfe4:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1869:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1870:
 	__asm        jmp    _T22d6;
 // LINE 1872:
@@ -2907,7 +3321,9 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1873:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1874:
 	ptr++;
 // LINE 1875:
@@ -2917,23 +3333,33 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1876:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1877:
 	ptr++;
 // LINE 1879:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1880:
 	ptr++;
 // LINE 1882:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1883:
 	ptr++;
 // LINE 1885:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1886:
 	ptr++;
 // LINE 1888:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1889:
 	ptr++;
 // LINE 1890:
@@ -2943,7 +3369,9 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1891:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1892:
 	ptr++;
 // LINE 1893:
@@ -2953,15 +3381,21 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1894:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1895:
 	ptr++;
 // LINE 1897:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1898:
 	ptr += (bufwidth - 0x8);
 // LINE 1900:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1901:
 	ptr++;
 // LINE 1902:
@@ -2971,7 +3405,9 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1903:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1904:
 	ptr++;
 // LINE 1905:
@@ -2981,11 +3417,15 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1906:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1907:
 	ptr++;
 // LINE 1909:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1910:
 	ptr++;
 // LINE 1911:
@@ -2995,11 +3435,15 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1912:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1913:
 	ptr++;
 // LINE 1915:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1916:
 	ptr++;
 // LINE 1917:
@@ -3009,11 +3453,15 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1918:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1919:
 	ptr++;
 // LINE 1921:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1922:
 	ptr++;
 // LINE 1923:
@@ -3023,7 +3471,9 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1924:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1925:
 	ptr += (bufwidth - 0x8);
 // LINE 1926:
@@ -3033,11 +3483,15 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1927:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1928:
 	ptr++;
 // LINE 1930:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1931:
 	ptr++;
 // LINE 1932:
@@ -3047,7 +3501,9 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1933:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1934:
 	ptr++;
 // LINE 1935:
@@ -3057,11 +3513,15 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1936:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1937:
 	ptr++;
 // LINE 1939:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1940:
 	ptr++;
 // LINE 1941:
@@ -3071,7 +3531,9 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1942:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1943:
 	ptr++;
 // LINE 1944:
@@ -3081,11 +3543,15 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1945:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1946:
 	ptr++;
 // LINE 1948:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1949:
 	ptr++;
 // LINE 1950:
@@ -3095,7 +3561,9 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1951:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1952:
 	ptr += (bufwidth - 0x8);
 // LINE 1953:
@@ -3105,11 +3573,15 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1954:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1955:
 	ptr++;
 // LINE 1957:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1958:
 	ptr++;
 // LINE 1959:
@@ -3119,11 +3591,15 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1960:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1961:
 	ptr++;
 // LINE 1963:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1964:
 	ptr++;
 // LINE 1965:
@@ -3133,7 +3609,9 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1966:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1967:
 	ptr++;
 // LINE 1968:
@@ -3143,11 +3621,15 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1969:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1970:
 	ptr++;
 // LINE 1972:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1973:
 	ptr++;
 // LINE 1974:
@@ -3157,7 +3639,9 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1975:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1976:
 	ptr++;
 // LINE 1977:
@@ -3167,7 +3651,9 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1978:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1979:
 	ptr += (bufwidth - 0x8);
 // LINE 1980:
@@ -3177,7 +3663,9 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1981:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1982:
 	ptr++;
 // LINE 1983:
@@ -3187,11 +3675,15 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1984:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1985:
 	ptr++;
 // LINE 1987:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1988:
 	ptr++;
 // LINE 1989:
@@ -3201,7 +3693,9 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1990:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1991:
 	ptr++;
 // LINE 1992:
@@ -3211,7 +3705,9 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1993:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1994:
 	ptr++;
 // LINE 1995:
@@ -3221,27 +3717,39 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 1996:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 1997:
 	ptr++;
 // LINE 1999:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2000:
 	ptr++;
 // LINE 2002:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2003:
 	ptr++;
 // LINE 2005:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2006:
 	ptr += (bufwidth - 0x8);
 // LINE 2008:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2009:
 	ptr++;
 // LINE 2011:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2012:
 	ptr++;
 // LINE 2013:
@@ -3251,7 +3759,9 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2014:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2015:
 	ptr++;
 // LINE 2016:
@@ -3261,7 +3771,9 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2017:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2018:
 	ptr++;
 // LINE 2019:
@@ -3271,7 +3783,9 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2020:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2021:
 	ptr++;
 // LINE 2022:
@@ -3281,15 +3795,21 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2023:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2024:
 	ptr++;
 // LINE 2026:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2027:
 	ptr++;
 // LINE 2029:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2030:
 	ptr++;
 // LINE 2031:
@@ -3299,11 +3819,15 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2032:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2033:
 	ptr += (bufwidth - 0x8);
 // LINE 2035:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2036:
 	ptr++;
 // LINE 2037:
@@ -3313,7 +3837,9 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2038:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2039:
 	ptr++;
 // LINE 2040:
@@ -3323,7 +3849,9 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2041:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2042:
 	ptr++;
 // LINE 2043:
@@ -3333,7 +3861,9 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2044:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2045:
 	ptr++;
 // LINE 2046:
@@ -3343,19 +3873,27 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2047:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2048:
 	ptr++;
 // LINE 2050:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2051:
 	ptr++;
 // LINE 2053:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2054:
 	ptr++;
 // LINE 2056:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2057:
 	ptr++;
 // LINE 2058:
@@ -3365,7 +3903,9 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2059:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2060:
 	ptr += (bufwidth - 0x8);
 // LINE 2061:
@@ -3375,7 +3915,9 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2062:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2063:
 	ptr++;
 // LINE 2064:
@@ -3385,7 +3927,9 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2065:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2066:
 	ptr++;
 // LINE 2067:
@@ -3395,23 +3939,33 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2068:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2069:
 	ptr++;
 // LINE 2071:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2072:
 	ptr++;
 // LINE 2074:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2075:
 	ptr++;
 // LINE 2077:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2078:
 	ptr++;
 // LINE 2080:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2081:
 	ptr++;
 // LINE 2082:
@@ -3421,7 +3975,9 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2083:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2084:
 	ptr++;
 // LINE 2085:
@@ -3431,7 +3987,9 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2086:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2087:
 	ptr += (bufwidth - 0x8);
 // LINE 2088:
@@ -3441,7 +3999,9 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2089:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2090:
 	ptr++;
 // LINE 2091:
@@ -3451,15 +4011,21 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2092:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2093:
 	ptr++;
 // LINE 2095:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2096:
 	ptr++;
 // LINE 2098:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2099:
 	ptr++;
 // LINE 2100:
@@ -3469,7 +4035,9 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2101:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2102:
 	ptr++;
 // LINE 2103:
@@ -3479,7 +4047,9 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2104:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2105:
 	ptr++;
 // LINE 2106:
@@ -3489,15 +4059,21 @@ _T14b0:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2107:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2108:
 	ptr++;
 // LINE 2110:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2111:
 	ptr++;
 // LINE 2113:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2115:
 _T1b0a:
 	__asm        mov    eax, ptr;
@@ -3506,19 +4082,27 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2116:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2117:
 	ptr++;
 // LINE 2119:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2120:
 	ptr++;
 // LINE 2122:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2123:
 	ptr++;
 // LINE 2125:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2126:
 	ptr++;
 // LINE 2127:
@@ -3528,7 +4112,9 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2128:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2129:
 	ptr++;
 // LINE 2130:
@@ -3538,7 +4124,9 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2131:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2132:
 	ptr++;
 // LINE 2133:
@@ -3548,23 +4136,33 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2134:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2135:
 	ptr++;
 // LINE 2137:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2138:
 	ptr++;
 // LINE 2140:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2141:
 	ptr++;
 // LINE 2143:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2144:
 	ptr += (bufwidth - 0x9);
 // LINE 2146:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2147:
 	ptr++;
 // LINE 2148:
@@ -3574,7 +4172,9 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2149:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2150:
 	ptr++;
 // LINE 2151:
@@ -3584,7 +4184,9 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2152:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2153:
 	ptr++;
 // LINE 2154:
@@ -3594,7 +4196,9 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2155:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2156:
 	ptr++;
 // LINE 2157:
@@ -3604,7 +4208,9 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2158:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2159:
 	ptr++;
 // LINE 2160:
@@ -3614,15 +4220,21 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2161:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2162:
 	ptr++;
 // LINE 2164:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2165:
 	ptr++;
 // LINE 2167:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2168:
 	ptr++;
 // LINE 2169:
@@ -3632,7 +4244,9 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2170:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2171:
 	ptr++;
 // LINE 2172:
@@ -3642,7 +4256,9 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2173:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2174:
 	ptr += (bufwidth - 0x9);
 // LINE 2175:
@@ -3652,11 +4268,15 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2176:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2177:
 	ptr++;
 // LINE 2179:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2180:
 	ptr++;
 // LINE 2181:
@@ -3666,19 +4286,27 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2182:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2183:
 	ptr++;
 // LINE 2185:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2186:
 	ptr++;
 // LINE 2188:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2189:
 	ptr++;
 // LINE 2191:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2192:
 	ptr++;
 // LINE 2193:
@@ -3688,7 +4316,9 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2194:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2195:
 	ptr++;
 // LINE 2196:
@@ -3698,7 +4328,9 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2197:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2198:
 	ptr++;
 // LINE 2199:
@@ -3708,15 +4340,21 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2200:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2201:
 	ptr++;
 // LINE 2203:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2204:
 	ptr += (bufwidth - 0x9);
 // LINE 2206:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2207:
 	ptr++;
 // LINE 2208:
@@ -3726,7 +4364,9 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2209:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2210:
 	ptr++;
 // LINE 2211:
@@ -3736,7 +4376,9 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2212:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2213:
 	ptr++;
 // LINE 2214:
@@ -3746,7 +4388,9 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2215:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2216:
 	ptr++;
 // LINE 2217:
@@ -3756,11 +4400,15 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2218:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2219:
 	ptr++;
 // LINE 2221:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2222:
 	ptr++;
 // LINE 2223:
@@ -3770,7 +4418,9 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2224:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2225:
 	ptr++;
 // LINE 2226:
@@ -3780,11 +4430,15 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2227:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2228:
 	ptr++;
 // LINE 2230:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2231:
 	ptr++;
 // LINE 2232:
@@ -3794,7 +4448,9 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2233:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2234:
 	ptr += (bufwidth - 0x9);
 // LINE 2235:
@@ -3804,19 +4460,27 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2236:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2237:
 	ptr++;
 // LINE 2239:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2240:
 	ptr++;
 // LINE 2242:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2243:
 	ptr++;
 // LINE 2245:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2246:
 	ptr++;
 // LINE 2247:
@@ -3826,15 +4490,21 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2248:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2249:
 	ptr++;
 // LINE 2251:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2252:
 	ptr++;
 // LINE 2254:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2255:
 	ptr++;
 // LINE 2256:
@@ -3844,7 +4514,9 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2257:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2258:
 	ptr++;
 // LINE 2259:
@@ -3854,7 +4526,9 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2260:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2261:
 	ptr++;
 // LINE 2262:
@@ -3864,23 +4538,33 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2263:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2264:
 	ptr += (bufwidth - 0x9);
 // LINE 2266:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2267:
 	ptr++;
 // LINE 2269:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2270:
 	ptr++;
 // LINE 2272:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2273:
 	ptr++;
 // LINE 2275:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2276:
 	ptr++;
 // LINE 2277:
@@ -3890,7 +4574,9 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2278:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2279:
 	ptr++;
 // LINE 2280:
@@ -3900,7 +4586,9 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2281:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2282:
 	ptr++;
 // LINE 2283:
@@ -3910,7 +4598,9 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2284:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2285:
 	ptr++;
 // LINE 2286:
@@ -3920,15 +4610,21 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2287:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2288:
 	ptr++;
 // LINE 2290:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2291:
 	ptr++;
 // LINE 2293:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2294:
 	ptr += (bufwidth - 0x9);
 // LINE 2295:
@@ -3938,7 +4634,9 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2296:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2297:
 	ptr++;
 // LINE 2298:
@@ -3948,15 +4646,21 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2299:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2300:
 	ptr++;
 // LINE 2302:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2303:
 	ptr++;
 // LINE 2305:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2306:
 	ptr++;
 // LINE 2307:
@@ -3966,7 +4670,9 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2308:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2309:
 	ptr++;
 // LINE 2310:
@@ -3976,11 +4682,15 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2311:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2312:
 	ptr++;
 // LINE 2314:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2315:
 	ptr++;
 // LINE 2316:
@@ -3990,19 +4700,27 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2317:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2318:
 	ptr++;
 // LINE 2320:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2321:
 	ptr++;
 // LINE 2323:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2324:
 	ptr += (bufwidth - 0x9);
 // LINE 2326:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2327:
 	ptr++;
 // LINE 2328:
@@ -4012,7 +4730,9 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2329:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2330:
 	ptr++;
 // LINE 2331:
@@ -4022,7 +4742,9 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2332:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2333:
 	ptr++;
 // LINE 2334:
@@ -4032,19 +4754,27 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2335:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2336:
 	ptr++;
 // LINE 2338:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2339:
 	ptr++;
 // LINE 2341:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2342:
 	ptr++;
 // LINE 2344:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2345:
 	ptr++;
 // LINE 2346:
@@ -4054,7 +4784,9 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2347:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2348:
 	ptr++;
 // LINE 2349:
@@ -4064,15 +4796,21 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2350:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2351:
 	ptr++;
 // LINE 2353:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2354:
 	ptr += (bufwidth - 0x9);
 // LINE 2356:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2357:
 	ptr++;
 // LINE 2358:
@@ -4082,7 +4820,9 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2359:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2360:
 	ptr++;
 // LINE 2361:
@@ -4092,15 +4832,21 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2362:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2363:
 	ptr++;
 // LINE 2365:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2366:
 	ptr++;
 // LINE 2368:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2369:
 	ptr++;
 // LINE 2370:
@@ -4110,7 +4856,9 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2371:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2372:
 	ptr++;
 // LINE 2373:
@@ -4120,15 +4868,21 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2374:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2375:
 	ptr++;
 // LINE 2377:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2378:
 	ptr++;
 // LINE 2380:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2381:
 	ptr++;
 // LINE 2382:
@@ -4138,7 +4892,9 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2383:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2384:
 	ptr += (bufwidth - 0x9);
 // LINE 2385:
@@ -4148,15 +4904,21 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2386:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2387:
 	ptr++;
 // LINE 2389:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2390:
 	ptr++;
 // LINE 2392:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2393:
 	ptr++;
 // LINE 2394:
@@ -4166,7 +4928,9 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2395:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2396:
 	ptr++;
 // LINE 2397:
@@ -4176,7 +4940,9 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2398:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2399:
 	ptr++;
 // LINE 2400:
@@ -4186,19 +4952,27 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2401:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2402:
 	ptr++;
 // LINE 2404:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2405:
 	ptr++;
 // LINE 2407:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2408:
 	ptr++;
 // LINE 2410:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2411:
 	ptr++;
 // LINE 2412:
@@ -4208,7 +4982,9 @@ _T1b0a:
 	__asm        mov    al, [eax+ecx];
 	__asm        mov    color, al;
 // LINE 2413:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2414:
 	__asm        jmp    _T22d6;
 _T229a:
@@ -4317,7 +5093,9 @@ _T23a9:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 2445:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2446:
 	__asm        jmp    _T3dcb;
 // LINE 2449:
@@ -4329,11 +5107,15 @@ _T23d0:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 2450:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2451:
 	ptr += 0x2;
 // LINE 2453:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2454:
 	__asm        mov    eax, S_color_no;
 	__asm        and    eax, 7;
@@ -4344,11 +5126,15 @@ _T23d0:
 // LINE 2455:
 	ptr += ((bufwidth + bufwidth) - 0x2);
 // LINE 2456:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2457:
 	ptr += 0x2;
 // LINE 2459:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2460:
 	__asm        jmp    _T3dcb;
 // LINE 2463:
@@ -4360,19 +5146,27 @@ _T243c:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 2464:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2465:
 	ptr += 0x2;
 // LINE 2466:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2467:
 	ptr += 0x2;
 // LINE 2469:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2470:
 	ptr += ((bufwidth + bufwidth) - 0x4);
 // LINE 2472:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2473:
 	__asm        mov    eax, S_color_no;
 	__asm        and    eax, 7;
@@ -4383,15 +5177,21 @@ _T243c:
 // LINE 2474:
 	ptr += 0x2;
 // LINE 2476:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2477:
 	ptr += 0x2;
 // LINE 2479:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2480:
 	ptr += ((bufwidth + bufwidth) - 0x4);
 // LINE 2482:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2483:
 	__asm        mov    eax, S_color_no;
 	__asm        and    eax, 7;
@@ -4402,11 +5202,15 @@ _T243c:
 // LINE 2484:
 	ptr += 0x2;
 // LINE 2486:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2487:
 	ptr += 0x2;
 // LINE 2489:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2490:
 	__asm        jmp    _T3dcb;
 // LINE 2493:
@@ -4418,19 +5222,27 @@ _T2505:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 2494:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2495:
 	ptr += 0x2;
 // LINE 2497:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2498:
 	ptr += 0x2;
 // LINE 2500:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2501:
 	ptr += 0x2;
 // LINE 2503:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2504:
 	__asm        mov    eax, S_color_no;
 	__asm        and    eax, 7;
@@ -4441,23 +5253,33 @@ _T2505:
 // LINE 2505:
 	ptr += ((bufwidth + bufwidth) - 0x6);
 // LINE 2507:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2508:
 	ptr += 0x2;
 // LINE 2510:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2511:
 	ptr += 0x2;
 // LINE 2513:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2514:
 	ptr += 0x2;
 // LINE 2516:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2517:
 	ptr += ((bufwidth + bufwidth) - 0x6);
 // LINE 2519:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2520:
 	ptr += 0x2;
 // LINE 2522:
@@ -4468,23 +5290,33 @@ _T2505:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 2523:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2524:
 	ptr += 0x2;
 // LINE 2526:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2527:
 	ptr += 0x2;
 // LINE 2529:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2530:
 	ptr += ((bufwidth + bufwidth) - 0x6);
 // LINE 2532:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2533:
 	ptr += 0x2;
 // LINE 2535:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2536:
 	__asm        mov    eax, S_color_no;
 	__asm        and    eax, 7;
@@ -4495,11 +5327,15 @@ _T2505:
 // LINE 2537:
 	ptr += 0x2;
 // LINE 2539:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2540:
 	ptr += 0x2;
 // LINE 2542:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2543:
 	__asm        jmp    _T3dcb;
 // LINE 2546:
@@ -4511,19 +5347,27 @@ _T2643:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 2547:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2548:
 	ptr += 0x2;
 // LINE 2550:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2551:
 	ptr += 0x2;
 // LINE 2553:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2554:
 	ptr += 0x2;
 // LINE 2556:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2557:
 	ptr += 0x2;
 // LINE 2558:
@@ -4534,23 +5378,33 @@ _T2643:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 2560:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2561:
 	ptr += ((bufwidth + bufwidth) - 0x8);
 // LINE 2563:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2564:
 	ptr += 0x2;
 // LINE 2566:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2567:
 	ptr += 0x2;
 // LINE 2569:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2570:
 	ptr += 0x2;
 // LINE 2572:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2573:
 	ptr += 0x2;
 // LINE 2574:
@@ -4561,19 +5415,27 @@ _T2643:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 2576:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2577:
 	ptr += ((bufwidth + bufwidth) - 0x8);
 // LINE 2579:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2580:
 	ptr += 0x2;
 // LINE 2582:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2583:
 	ptr += 0x2;
 // LINE 2585:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2586:
 	ptr += 0x2;
 // LINE 2587:
@@ -4584,19 +5446,27 @@ _T2643:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 2589:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2590:
 	ptr += 0x2;
 // LINE 2592:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2593:
 	ptr += ((bufwidth + bufwidth) - 0x8);
 // LINE 2595:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2596:
 	ptr += 0x2;
 // LINE 2598:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2599:
 	ptr += 0x2;
 // LINE 2601:
@@ -4607,35 +5477,51 @@ _T2643:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 2602:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2603:
 	ptr += 0x2;
 // LINE 2605:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2606:
 	ptr += 0x2;
 // LINE 2608:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2609:
 	ptr += ((bufwidth + bufwidth) - 0x8);
 // LINE 2611:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2612:
 	ptr += 0x2;
 // LINE 2614:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2615:
 	ptr += 0x2;
 // LINE 2617:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2618:
 	ptr += 0x2;
 // LINE 2620:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2621:
 	ptr += 0x2;
 // LINE 2623:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2624:
 	__asm        jmp    _T3dcb;
 // LINE 2627:
@@ -4647,11 +5533,15 @@ _T280e:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 2628:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2629:
 	ptr += 0x2;
 // LINE 2631:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2632:
 	ptr += 0x2;
 // LINE 2633:
@@ -4662,19 +5552,27 @@ _T280e:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 2635:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2636:
 	ptr += 0x2;
 // LINE 2638:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2639:
 	ptr += 0x2;
 // LINE 2641:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2642:
 	ptr += 0x2;
 // LINE 2644:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2645:
 	ptr += ((bufwidth + bufwidth) - 0xa);
 // LINE 2647:
@@ -4685,27 +5583,39 @@ _T280e:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 2648:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2649:
 	ptr += 0x2;
 // LINE 2651:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2652:
 	ptr += 0x2;
 // LINE 2654:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2655:
 	ptr += 0x2;
 // LINE 2657:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2658:
 	ptr += 0x2;
 // LINE 2660:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2661:
 	ptr += 0x2;
 // LINE 2663:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2664:
 	ptr += ((bufwidth + bufwidth) - 0xa);
 // LINE 2666:
@@ -4716,27 +5626,39 @@ _T280e:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 2667:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2668:
 	ptr += 0x2;
 // LINE 2670:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2671:
 	ptr += 0x2;
 // LINE 2673:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2674:
 	ptr += 0x2;
 // LINE 2676:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2677:
 	ptr += 0x2;
 // LINE 2679:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2680:
 	ptr += 0x2;
 // LINE 2682:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2683:
 	__asm        mov    eax, S_color_no;
 	__asm        and    eax, 7;
@@ -4747,27 +5669,39 @@ _T280e:
 // LINE 2684:
 	ptr += ((bufwidth + bufwidth) - 0xa);
 // LINE 2686:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2687:
 	ptr += 0x2;
 // LINE 2689:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2690:
 	ptr += 0x2;
 // LINE 2692:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2693:
 	ptr += 0x2;
 // LINE 2695:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2696:
 	ptr += 0x2;
 // LINE 2698:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2699:
 	ptr += 0x2;
 // LINE 2701:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2702:
 	ptr += ((bufwidth + bufwidth) - 0xa);
 // LINE 2704:
@@ -4778,27 +5712,39 @@ _T280e:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 2705:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2706:
 	ptr += 0x2;
 // LINE 2708:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2709:
 	ptr += 0x2;
 // LINE 2711:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2712:
 	ptr += 0x2;
 // LINE 2714:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2715:
 	ptr += 0x2;
 // LINE 2717:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2718:
 	ptr += 0x2;
 // LINE 2720:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2721:
 	ptr += ((bufwidth + bufwidth) - 0xa);
 // LINE 2722:
@@ -4809,27 +5755,39 @@ _T280e:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 2724:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2725:
 	ptr += 0x2;
 // LINE 2727:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2728:
 	ptr += 0x2;
 // LINE 2730:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2731:
 	ptr += 0x2;
 // LINE 2733:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2734:
 	ptr += 0x2;
 // LINE 2736:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2737:
 	ptr += 0x2;
 // LINE 2739:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2740:
 	__asm        jmp    _T3dcb;
 // LINE 2743:
@@ -4841,23 +5799,33 @@ _T2a98:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 2744:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2745:
 	ptr += 0x2;
 // LINE 2747:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2748:
 	ptr += 0x2;
 // LINE 2750:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2751:
 	ptr += 0x2;
 // LINE 2753:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2754:
 	ptr += 0x2;
 // LINE 2756:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2757:
 	ptr += 0x2;
 // LINE 2759:
@@ -4868,39 +5836,57 @@ _T2a98:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 2760:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2761:
 	ptr += 0x2;
 // LINE 2763:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2764:
 	ptr += ((bufwidth + bufwidth) - 0xc);
 // LINE 2766:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2767:
 	ptr += 0x2;
 // LINE 2769:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2770:
 	ptr += 0x2;
 // LINE 2772:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2773:
 	ptr += 0x2;
 // LINE 2775:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2776:
 	ptr += 0x2;
 // LINE 2778:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2779:
 	ptr += 0x2;
 // LINE 2781:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2782:
 	ptr += 0x2;
 // LINE 2784:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2785:
 	__asm        mov    eax, S_color_no;
 	__asm        and    eax, 7;
@@ -4911,19 +5897,27 @@ _T2a98:
 // LINE 2786:
 	ptr += ((bufwidth + bufwidth) - 0xc);
 // LINE 2788:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2789:
 	ptr += 0x2;
 // LINE 2791:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2792:
 	ptr += 0x2;
 // LINE 2794:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2795:
 	ptr += 0x2;
 // LINE 2797:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2798:
 	ptr += 0x2;
 // LINE 2800:
@@ -4934,39 +5928,57 @@ _T2a98:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 2801:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2802:
 	ptr += 0x2;
 // LINE 2804:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2805:
 	ptr += 0x2;
 // LINE 2807:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2808:
 	ptr += ((bufwidth + bufwidth) - 0xc);
 // LINE 2810:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2811:
 	ptr += 0x2;
 // LINE 2813:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2814:
 	ptr += 0x2;
 // LINE 2816:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2817:
 	ptr += 0x2;
 // LINE 2819:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2820:
 	ptr += 0x2;
 // LINE 2822:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2823:
 	ptr += 0x2;
 // LINE 2825:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2826:
 	ptr += 0x2;
 // LINE 2828:
@@ -4977,15 +5989,21 @@ _T2a98:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 2829:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2830:
 	ptr += ((bufwidth + bufwidth) - 0xc);
 // LINE 2832:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2833:
 	ptr += 0x2;
 // LINE 2835:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2836:
 	__asm        mov    eax, S_color_no;
 	__asm        and    eax, 7;
@@ -4996,31 +6014,45 @@ _T2a98:
 // LINE 2837:
 	ptr += 0x2;
 // LINE 2839:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2840:
 	ptr += 0x2;
 // LINE 2842:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2843:
 	ptr += 0x2;
 // LINE 2845:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2846:
 	ptr += 0x2;
 // LINE 2848:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2849:
 	ptr += 0x2;
 // LINE 2851:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2852:
 	ptr += ((bufwidth + bufwidth) - 0xc);
 // LINE 2854:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2855:
 	ptr += 0x2;
 // LINE 2857:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2858:
 	ptr += 0x2;
 // LINE 2859:
@@ -5031,31 +6063,45 @@ _T2a98:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 2861:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2862:
 	ptr += 0x2;
 // LINE 2864:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2865:
 	ptr += 0x2;
 // LINE 2867:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2868:
 	ptr += 0x2;
 // LINE 2870:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2871:
 	ptr += 0x2;
 // LINE 2873:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2874:
 	ptr += ((bufwidth + bufwidth) - 0xc);
 // LINE 2876:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2877:
 	ptr += 0x2;
 // LINE 2879:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2880:
 	__asm        mov    eax, S_color_no;
 	__asm        and    eax, 7;
@@ -5066,23 +6112,33 @@ _T2a98:
 // LINE 2881:
 	ptr += 0x2;
 // LINE 2883:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2884:
 	ptr += 0x2;
 // LINE 2886:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2887:
 	ptr += 0x2;
 // LINE 2889:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2890:
 	ptr += 0x2;
 // LINE 2892:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2893:
 	ptr += 0x2;
 // LINE 2895:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2896:
 	__asm        jmp    _T3dcb;
 // LINE 2899:
@@ -5094,11 +6150,15 @@ _T2ddf:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 2900:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2901:
 	ptr += 0x2;
 // LINE 2903:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2904:
 	__asm        mov    eax, S_color_no;
 	__asm        and    eax, 7;
@@ -5109,31 +6169,45 @@ _T2ddf:
 // LINE 2905:
 	ptr += 0x2;
 // LINE 2907:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2908:
 	ptr += 0x2;
 // LINE 2910:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2911:
 	ptr += 0x2;
 // LINE 2913:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2914:
 	ptr += 0x2;
 // LINE 2916:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2917:
 	ptr += 0x2;
 // LINE 2919:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2920:
 	ptr += 0x2;
 // LINE 2922:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2923:
 	ptr += ((bufwidth + bufwidth) - 0xe);
 // LINE 2925:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2926:
 	__asm        mov    eax, S_color_no;
 	__asm        and    eax, 7;
@@ -5144,11 +6218,15 @@ _T2ddf:
 // LINE 2927:
 	ptr += 0x2;
 // LINE 2929:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2930:
 	ptr += 0x2;
 // LINE 2932:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2933:
 	ptr += 0x2;
 // LINE 2935:
@@ -5159,19 +6237,27 @@ _T2ddf:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 2936:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2937:
 	ptr += 0x2;
 // LINE 2939:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2940:
 	ptr += 0x2;
 // LINE 2942:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2943:
 	ptr += 0x2;
 // LINE 2945:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2946:
 	ptr += 0x2;
 // LINE 2948:
@@ -5182,39 +6268,57 @@ _T2ddf:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 2949:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2950:
 	ptr += ((bufwidth + bufwidth) - 0xe);
 // LINE 2952:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2953:
 	ptr += 0x2;
 // LINE 2955:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2956:
 	ptr += 0x2;
 // LINE 2958:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2959:
 	ptr += 0x2;
 // LINE 2961:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2962:
 	ptr += 0x2;
 // LINE 2964:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2965:
 	ptr += 0x2;
 // LINE 2967:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2968:
 	ptr += 0x2;
 // LINE 2970:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2971:
 	ptr += 0x2;
 // LINE 2973:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2974:
 	__asm        mov    eax, S_color_no;
 	__asm        and    eax, 7;
@@ -5225,27 +6329,39 @@ _T2ddf:
 // LINE 2975:
 	ptr += ((bufwidth + bufwidth) - 0xe);
 // LINE 2977:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2978:
 	ptr += 0x2;
 // LINE 2980:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2981:
 	ptr += 0x2;
 // LINE 2983:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2984:
 	ptr += 0x2;
 // LINE 2986:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2987:
 	ptr += 0x2;
 // LINE 2989:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2990:
 	ptr += 0x2;
 // LINE 2992:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2993:
 	ptr += 0x2;
 // LINE 2994:
@@ -5256,31 +6372,45 @@ _T2ddf:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 2996:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 2997:
 	ptr += 0x2;
 // LINE 2999:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3000:
 	ptr += ((bufwidth + bufwidth) - 0xe);
 // LINE 3002:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3003:
 	ptr += 0x2;
 // LINE 3005:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3006:
 	ptr += 0x2;
 // LINE 3008:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3009:
 	ptr += 0x2;
 // LINE 3011:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3012:
 	ptr += 0x2;
 // LINE 3014:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3015:
 	ptr += 0x2;
 // LINE 3017:
@@ -5291,27 +6421,39 @@ _T2ddf:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 3018:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3019:
 	ptr += 0x2;
 // LINE 3021:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3022:
 	ptr += 0x2;
 // LINE 3024:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3025:
 	ptr += ((bufwidth + bufwidth) - 0xe);
 // LINE 3027:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3028:
 	ptr += 0x2;
 // LINE 3030:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3031:
 	ptr += 0x2;
 // LINE 3033:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3034:
 	ptr += 0x2;
 // LINE 3035:
@@ -5322,27 +6464,39 @@ _T2ddf:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 3037:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3038:
 	ptr += 0x2;
 // LINE 3040:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3041:
 	ptr += 0x2;
 // LINE 3043:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3044:
 	ptr += 0x2;
 // LINE 3046:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3047:
 	ptr += 0x2;
 // LINE 3049:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3050:
 	ptr += ((bufwidth + bufwidth) - 0xe);
 // LINE 3052:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3053:
 	__asm        mov    eax, S_color_no;
 	__asm        and    eax, 7;
@@ -5353,11 +6507,15 @@ _T2ddf:
 // LINE 3054:
 	ptr += 0x2;
 // LINE 3056:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3057:
 	ptr += 0x2;
 // LINE 3059:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3060:
 	ptr += 0x2;
 // LINE 3062:
@@ -5368,55 +6526,81 @@ _T2ddf:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 3063:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3064:
 	ptr += 0x2;
 // LINE 3066:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3067:
 	ptr += 0x2;
 // LINE 3069:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3070:
 	ptr += 0x2;
 // LINE 3072:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3073:
 	ptr += 0x2;
 // LINE 3075:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3076:
 	ptr += ((bufwidth + bufwidth) - 0xe);
 // LINE 3078:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3079:
 	ptr += 0x2;
 // LINE 3081:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3082:
 	ptr += 0x2;
 // LINE 3084:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3085:
 	ptr += 0x2;
 // LINE 3087:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3088:
 	ptr += 0x2;
 // LINE 3090:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3091:
 	ptr += 0x2;
 // LINE 3093:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3094:
 	ptr += 0x2;
 // LINE 3096:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3097:
 	ptr += 0x2;
 // LINE 3099:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3100:
 	__asm        jmp    _T3dcb;
 // LINE 3103:
@@ -5428,27 +6612,39 @@ _T322f:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 3104:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3105:
 	ptr += 0x2;
 // LINE 3107:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3108:
 	ptr += 0x2;
 // LINE 3110:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3111:
 	ptr += 0x2;
 // LINE 3113:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3114:
 	ptr += 0x2;
 // LINE 3116:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3117:
 	ptr += 0x2;
 // LINE 3119:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3120:
 	ptr += 0x2;
 // LINE 3121:
@@ -5459,31 +6655,45 @@ _T322f:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 3123:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3124:
 	ptr += 0x2;
 // LINE 3126:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3127:
 	ptr += 0x2;
 // LINE 3129:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3130:
 	ptr += ((bufwidth + bufwidth) - 0x10);
 // LINE 3132:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3133:
 	ptr += 0x2;
 // LINE 3135:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3136:
 	ptr += 0x2;
 // LINE 3138:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3139:
 	ptr += 0x2;
 // LINE 3141:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3142:
 	__asm        mov    eax, S_color_no;
 	__asm        and    eax, 7;
@@ -5494,7 +6704,9 @@ _T322f:
 // LINE 3143:
 	ptr += 0x2;
 // LINE 3145:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3146:
 	ptr += 0x2;
 // LINE 3147:
@@ -5505,43 +6717,63 @@ _T322f:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 3149:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3150:
 	ptr += 0x2;
 // LINE 3152:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3153:
 	ptr += 0x2;
 // LINE 3155:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3156:
 	ptr += 0x2;
 // LINE 3158:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3159:
 	ptr += ((bufwidth + bufwidth) - 0x10);
 // LINE 3161:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3162:
 	ptr += 0x2;
 // LINE 3164:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3165:
 	ptr += 0x2;
 // LINE 3167:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3168:
 	ptr += 0x2;
 // LINE 3170:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3171:
 	ptr += 0x2;
 // LINE 3173:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3174:
 	ptr += 0x2;
 // LINE 3176:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3177:
 	ptr += 0x2;
 // LINE 3178:
@@ -5552,39 +6784,57 @@ _T322f:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 3180:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3181:
 	ptr += 0x2;
 // LINE 3183:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3184:
 	ptr += 0x2;
 // LINE 3186:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3187:
 	ptr += ((bufwidth + bufwidth) - 0x10);
 // LINE 3189:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3190:
 	ptr += 0x2;
 // LINE 3192:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3193:
 	ptr += 0x2;
 // LINE 3195:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3196:
 	ptr += 0x2;
 // LINE 3198:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3199:
 	ptr += 0x2;
 // LINE 3201:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3202:
 	ptr += 0x2;
 // LINE 3204:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3205:
 	ptr += 0x2;
 // LINE 3206:
@@ -5595,55 +6845,81 @@ _T322f:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 3208:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3209:
 	ptr += 0x2;
 // LINE 3211:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3212:
 	ptr += 0x2;
 // LINE 3214:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3215:
 	ptr += ((bufwidth + bufwidth) - 0x10);
 // LINE 3217:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3218:
 	ptr += 0x2;
 // LINE 3220:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3221:
 	ptr += 0x2;
 // LINE 3223:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3224:
 	ptr += 0x2;
 // LINE 3226:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3227:
 	ptr += 0x2;
 // LINE 3229:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3230:
 	ptr += 0x2;
 // LINE 3232:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3233:
 	ptr += 0x2;
 // LINE 3235:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3236:
 	ptr += 0x2;
 // LINE 3238:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3239:
 	ptr += 0x2;
 // LINE 3241:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3242:
 	ptr += ((bufwidth + bufwidth) - 0x10);
 // LINE 3244:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3245:
 	__asm        mov    eax, S_color_no;
 	__asm        and    eax, 7;
@@ -5654,27 +6930,39 @@ _T322f:
 // LINE 3246:
 	ptr += 0x2;
 // LINE 3248:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3249:
 	ptr += 0x2;
 // LINE 3251:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3252:
 	ptr += 0x2;
 // LINE 3254:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3255:
 	ptr += 0x2;
 // LINE 3257:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3258:
 	ptr += 0x2;
 // LINE 3260:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3261:
 	ptr += 0x2;
 // LINE 3263:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3264:
 	ptr += 0x2;
 // LINE 3266:
@@ -5685,31 +6973,45 @@ _T322f:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 3267:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3268:
 	ptr += 0x2;
 // LINE 3270:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3271:
 	ptr += ((bufwidth + bufwidth) - 0x10);
 // LINE 3273:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3274:
 	ptr += 0x2;
 // LINE 3276:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3277:
 	ptr += 0x2;
 // LINE 3279:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3280:
 	ptr += 0x2;
 // LINE 3282:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3283:
 	ptr += 0x2;
 // LINE 3285:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3286:
 	ptr += 0x2;
 // LINE 3287:
@@ -5720,43 +7022,63 @@ _T322f:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 3289:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3290:
 	ptr += 0x2;
 // LINE 3292:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3293:
 	ptr += 0x2;
 // LINE 3295:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3296:
 	ptr += 0x2;
 // LINE 3298:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3299:
 	ptr += ((bufwidth + bufwidth) - 0x10);
 // LINE 3301:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3302:
 	ptr += 0x2;
 // LINE 3304:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3305:
 	ptr += 0x2;
 // LINE 3307:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3308:
 	ptr += 0x2;
 // LINE 3310:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3311:
 	ptr += 0x2;
 // LINE 3313:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3314:
 	ptr += 0x2;
 // LINE 3316:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3317:
 	ptr += 0x2;
 // LINE 3318:
@@ -5767,31 +7089,45 @@ _T322f:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 3320:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3321:
 	ptr += 0x2;
 // LINE 3323:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3324:
 	ptr += 0x2;
 // LINE 3326:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3327:
 	ptr += ((bufwidth + bufwidth) - 0x10);
 // LINE 3329:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3330:
 	ptr += 0x2;
 // LINE 3332:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3333:
 	ptr += 0x2;
 // LINE 3335:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3336:
 	ptr += 0x2;
 // LINE 3338:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3339:
 	__asm        mov    eax, S_color_no;
 	__asm        and    eax, 7;
@@ -5802,23 +7138,33 @@ _T322f:
 // LINE 3340:
 	ptr += 0x2;
 // LINE 3342:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3343:
 	ptr += 0x2;
 // LINE 3345:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3346:
 	ptr += 0x2;
 // LINE 3348:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3349:
 	ptr += 0x2;
 // LINE 3351:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3352:
 	ptr += 0x2;
 // LINE 3354:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3357:
 _T374d:
 	__asm        mov    eax, S_color_no;
@@ -5828,39 +7174,57 @@ _T374d:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 3358:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3359:
 	ptr += 0x2;
 // LINE 3361:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3362:
 	ptr += 0x2;
 // LINE 3364:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3365:
 	ptr += 0x2;
 // LINE 3367:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3368:
 	ptr += 0x2;
 // LINE 3370:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3371:
 	ptr += 0x2;
 // LINE 3373:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3374:
 	ptr += 0x2;
 // LINE 3376:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3377:
 	ptr += 0x2;
 // LINE 3379:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3380:
 	ptr += 0x2;
 // LINE 3382:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3383:
 	ptr += 0x2;
 // LINE 3384:
@@ -5871,23 +7235,33 @@ _T374d:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 3386:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3387:
 	ptr += ((bufwidth + bufwidth) - 0x12);
 // LINE 3389:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3390:
 	ptr += 0x2;
 // LINE 3392:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3393:
 	ptr += 0x2;
 // LINE 3395:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3396:
 	ptr += 0x2;
 // LINE 3398:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3399:
 	ptr += 0x2;
 // LINE 3400:
@@ -5898,27 +7272,39 @@ _T374d:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 3402:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3403:
 	ptr += 0x2;
 // LINE 3405:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3406:
 	ptr += 0x2;
 // LINE 3408:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3409:
 	ptr += 0x2;
 // LINE 3411:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3412:
 	ptr += 0x2;
 // LINE 3414:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3415:
 	ptr += 0x2;
 // LINE 3417:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3418:
 	ptr += ((bufwidth + bufwidth) - 0x12);
 // LINE 3419:
@@ -5929,27 +7315,39 @@ _T374d:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 3421:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3422:
 	ptr += 0x2;
 // LINE 3424:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3425:
 	ptr += 0x2;
 // LINE 3427:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3428:
 	ptr += 0x2;
 // LINE 3430:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3431:
 	ptr += 0x2;
 // LINE 3433:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3434:
 	ptr += 0x2;
 // LINE 3436:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3437:
 	ptr += 0x2;
 // LINE 3438:
@@ -5960,35 +7358,51 @@ _T374d:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 3440:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3441:
 	ptr += 0x2;
 // LINE 3443:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3444:
 	ptr += 0x2;
 // LINE 3446:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3447:
 	ptr += 0x2;
 // LINE 3449:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3450:
 	ptr += ((bufwidth + bufwidth) - 0x12);
 // LINE 3452:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3453:
 	ptr += 0x2;
 // LINE 3455:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3456:
 	ptr += 0x2;
 // LINE 3458:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3459:
 	ptr += 0x2;
 // LINE 3461:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3462:
 	ptr += 0x2;
 // LINE 3464:
@@ -5999,63 +7413,93 @@ _T374d:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 3465:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3466:
 	ptr += 0x2;
 // LINE 3468:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3469:
 	ptr += 0x2;
 // LINE 3471:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3472:
 	ptr += 0x2;
 // LINE 3474:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3475:
 	ptr += 0x2;
 // LINE 3477:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3478:
 	ptr += 0x2;
 // LINE 3480:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3481:
 	ptr += ((bufwidth + bufwidth) - 0x12);
 // LINE 3483:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3484:
 	ptr += 0x2;
 // LINE 3486:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3487:
 	ptr += 0x2;
 // LINE 3489:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3490:
 	ptr += 0x2;
 // LINE 3492:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3493:
 	ptr += 0x2;
 // LINE 3495:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3496:
 	ptr += 0x2;
 // LINE 3498:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3499:
 	ptr += 0x2;
 // LINE 3501:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3502:
 	ptr += 0x2;
 // LINE 3504:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3505:
 	ptr += 0x2;
 // LINE 3507:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3508:
 	ptr += 0x2;
 // LINE 3510:
@@ -6066,35 +7510,51 @@ _T374d:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 3511:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3512:
 	ptr += ((bufwidth + bufwidth) - 0x12);
 // LINE 3514:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3515:
 	ptr += 0x2;
 // LINE 3517:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3518:
 	ptr += 0x2;
 // LINE 3520:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3521:
 	ptr += 0x2;
 // LINE 3523:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3524:
 	ptr += 0x2;
 // LINE 3526:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3527:
 	ptr += 0x2;
 // LINE 3529:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3530:
 	ptr += 0x2;
 // LINE 3532:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3533:
 	ptr += 0x2;
 // LINE 3534:
@@ -6105,23 +7565,33 @@ _T374d:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 3536:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3537:
 	ptr += 0x2;
 // LINE 3539:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3540:
 	ptr += 0x2;
 // LINE 3542:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3543:
 	ptr += ((bufwidth + bufwidth) - 0x12);
 // LINE 3545:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3546:
 	ptr += 0x2;
 // LINE 3548:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3549:
 	__asm        mov    eax, S_color_no;
 	__asm        and    eax, 7;
@@ -6132,15 +7602,21 @@ _T374d:
 // LINE 3550:
 	ptr += 0x2;
 // LINE 3552:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3553:
 	ptr += 0x2;
 // LINE 3555:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3556:
 	ptr += 0x2;
 // LINE 3558:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3559:
 	ptr += 0x2;
 // LINE 3561:
@@ -6151,35 +7627,51 @@ _T374d:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 3562:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3563:
 	ptr += 0x2;
 // LINE 3565:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3566:
 	ptr += 0x2;
 // LINE 3568:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3569:
 	ptr += 0x2;
 // LINE 3571:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3572:
 	ptr += 0x2;
 // LINE 3574:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3575:
 	ptr += ((bufwidth + bufwidth) - 0x12);
 // LINE 3577:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3578:
 	ptr += 0x2;
 // LINE 3580:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3581:
 	ptr += 0x2;
 // LINE 3583:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3584:
 	__asm        mov    eax, S_color_no;
 	__asm        and    eax, 7;
@@ -6190,47 +7682,69 @@ _T374d:
 // LINE 3585:
 	ptr += 0x2;
 // LINE 3587:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3588:
 	ptr += 0x2;
 // LINE 3590:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3591:
 	ptr += 0x2;
 // LINE 3593:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3594:
 	ptr += 0x2;
 // LINE 3596:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3597:
 	ptr += 0x2;
 // LINE 3599:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3600:
 	ptr += 0x2;
 // LINE 3602:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3603:
 	ptr += 0x2;
 // LINE 3605:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3606:
 	ptr += ((bufwidth + bufwidth) - 0x12);
 // LINE 3608:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3609:
 	ptr += 0x2;
 // LINE 3611:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3612:
 	ptr += 0x2;
 // LINE 3614:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3615:
 	ptr += 0x2;
 // LINE 3617:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3618:
 	ptr += 0x2;
 // LINE 3619:
@@ -6241,31 +7755,45 @@ _T374d:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 3621:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3622:
 	ptr += 0x2;
 // LINE 3624:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3625:
 	ptr += 0x2;
 // LINE 3627:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3628:
 	ptr += 0x2;
 // LINE 3630:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3631:
 	ptr += 0x2;
 // LINE 3633:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3634:
 	ptr += 0x2;
 // LINE 3636:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3637:
 	ptr += ((bufwidth + bufwidth) - 0x12);
 // LINE 3639:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3640:
 	ptr += 0x2;
 // LINE 3641:
@@ -6276,39 +7804,57 @@ _T374d:
 	__asm        mov    color, al;
 	__asm        inc    S_color_no;
 // LINE 3643:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3644:
 	ptr += 0x2;
 // LINE 3646:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3647:
 	ptr += 0x2;
 // LINE 3649:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3650:
 	ptr += 0x2;
 // LINE 3652:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3653:
 	ptr += 0x2;
 // LINE 3655:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3656:
 	ptr += 0x2;
 // LINE 3658:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3659:
 	ptr += 0x2;
 // LINE 3661:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3662:
 	ptr += 0x2;
 // LINE 3664:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3665:
 	ptr += 0x2;
 // LINE 3667:
-	ptr[0] = color;
+	__asm        mov    al, color;
+	__asm        mov    ecx, ptr;
+	__asm        mov    [ecx], al;
 // LINE 3668:
 	__asm        jmp    _T3dcb;
 _T3d8f:

@@ -655,7 +655,20 @@ void MDateLocalized::MDateLocalized(uint32_t day, char * monthName, uint32_t yea
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax], 0x58F3D0;
 // LINE 138:
-	this->Julnum = MDate::Jday(year, day, 0x0, monthName, MDateLocalized::IndexOfMonthLocalized(year, day, 0x0, monthName));
+	__asm        mov    eax, year;
+	__asm        push   eax;
+	__asm        mov    eax, day;
+	__asm        push   eax;
+	__asm        push   0;
+	__asm        mov    eax, monthName;
+	__asm        push   eax;
+	__asm        call   MDateLocalized::IndexOfMonthLocalized;
+	__asm        add    esp, 8;
+	__asm        push   eax;
+	__asm        call   MDate::Jday;
+	__asm        add    esp, 0xC;
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+4], eax;
 // LINE 139:
 	return;
 

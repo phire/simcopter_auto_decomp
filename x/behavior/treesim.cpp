@@ -260,9 +260,14 @@ public:
 // FUNCTION: COPTER_D 0x0055cb10
 void TreeSim::TreeSim(short maxStackSize, short startTreeID, /*unpacked*/ class Behavior *startBehavior, short * autoStackArea) {
 
-	this->fMaxStackSize = maxStackSize;
-	this->fAutoStackArea = autoStackArea;
-	this-><vftable> = 0x593630;
+	__asm        mov    ax, maxStackSize;
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xA], ax;
+	__asm        mov    eax, autoStackArea;
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x10], eax;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax], 0x593630;
 // LINE 13:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xA];
@@ -299,9 +304,14 @@ _T51:
 // FUNCTION: COPTER_D 0x0055cba5
 void TreeSim::TreeSim(short maxStackSize, short * autoStackArea) {
 
-	this->fMaxStackSize = maxStackSize;
-	this->fAutoStackArea = autoStackArea;
-	this-><vftable> = 0x593630;
+	__asm        mov    ax, maxStackSize;
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xA], ax;
+	__asm        mov    eax, autoStackArea;
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x10], eax;
+	__asm        mov    eax, this;
+	__asm        mov    dword ptr [eax], 0x593630;
 // LINE 26:
 	__asm        mov    eax, this;
 	__asm        movsx  eax, word ptr [eax+0xA];
@@ -359,7 +369,9 @@ _T41:
 // LINE 47:
 	bottom = this->fStack;
 // LINE 48:
-	bottom->treeID = startTreeID;
+	__asm        mov    ax, startTreeID;
+	__asm        mov    ecx, bottom;
+	__asm        mov    [ecx], ax;
 // LINE 49:
 	bottom->nodeNum = 0x0;
 // LINE 50:
@@ -521,7 +533,9 @@ unsigned short TreeSim::Gosub(/*unpacked*/ class Behavior *pTransfer, short * st
 	__asm        add    eax, [ecx+4];
 	__asm        mov    fill, eax;
 // LINE 87:
-	fill->treeID = treeID;
+	__asm        mov    ax, treeID;
+	__asm        mov    ecx, fill;
+	__asm        mov    [ecx], ax;
 // LINE 88:
 	fill->nodeNum = 0x0;
 // LINE 89:
@@ -598,7 +612,8 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 // LINE 123:
 	this->fIterations = 0x0;
 // LINE 124:
-	done = bOnceOnly;
+	__asm        mov    ax, bOnceOnly;
+	__asm        mov    done, ax;
 // LINE 127:
 _T23:
 	__asm        mov    eax, this;
@@ -650,7 +665,9 @@ _T23:
 _Ta0:
 	stackPass = 0x0;
 // LINE 134:
-	treeID = node->treeID;
+	__asm        mov    eax, node;
+	__asm        mov    ax, [eax];
+	__asm        mov    treeID, ax;
 // LINE 135:
 	__asm        mov    eax, node;
 	__asm        cmp    dword ptr [eax+4], 0xFFFFFFFF;
@@ -869,11 +886,15 @@ _T49:
 	__asm        test   reinterpret_cast<uint32_t>(success), 0xFFFF;
 	__asm        je     _Ta0;
 
-	trans = node->trueTrans;
+	__asm        mov    eax, node;
+	__asm        mov    al, [eax+2];
+	__asm        mov    trans, al;
 // LINE 212:
 	__asm        jmp    _Ta9;
 _Ta0:
-	trans = node->falseTrans;
+	__asm        mov    eax, node;
+	__asm        mov    al, [eax+3];
+	__asm        mov    trans, al;
 // LINE 214:
 _Ta9:
 	__asm        movsx  eax, trans;
@@ -956,9 +977,15 @@ _T69:
 	__asm        add    eax, [ecx+4];
 	__asm        mov    elem, eax;
 // LINE 245:
-	treeID[0] = elem->treeID;
+	__asm        mov    eax, elem;
+	__asm        mov    ax, [eax];
+	__asm        mov    ecx, treeID;
+	__asm        mov    [ecx], ax;
 // LINE 246:
-	nodeNum[0] = elem->nodeNum;
+	__asm        mov    eax, elem;
+	__asm        mov    ax, [eax+2];
+	__asm        mov    ecx, nodeNum;
+	__asm        mov    [ecx], ax;
 // LINE 247:
 	return;
 }
@@ -1006,15 +1033,29 @@ unsigned short ExtSim::Simulate(long ticks, unsigned short bOnceOnly) {
 // LINE 272:
 	savestack = this->fExt->fStack;
 // LINE 273:
-	savestacksize = this->fExt->fStackSize;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x14];
+	__asm        mov    ax, [eax+8];
+	__asm        mov    savestacksize, ax;
 // LINE 274:
-	savemaxstacksize = this->fExt->fMaxStackSize;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x14];
+	__asm        mov    ax, [eax+0xA];
+	__asm        mov    savemaxstacksize, ax;
 // LINE 276:
 	this->fExt->fStack = this->fStack;
 // LINE 277:
-	this->fExt->fStackSize = this->fStackSize;
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+8];
+	__asm        mov    ecx, this;
+	__asm        mov    ecx, [ecx+0x14];
+	__asm        mov    [ecx+8], ax;
 // LINE 278:
-	this->fExt->fMaxStackSize = this->fMaxStackSize;
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0xA];
+	__asm        mov    ecx, this;
+	__asm        mov    ecx, [ecx+0x14];
+	__asm        mov    [ecx+0xA], ax;
 // LINE 280:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(bOnceOnly);
 	__asm        push   eax;
@@ -1026,9 +1067,15 @@ unsigned short ExtSim::Simulate(long ticks, unsigned short bOnceOnly) {
 // LINE 282:
 	this->fExt->fStack = savestack;
 // LINE 283:
-	this->fExt->fStackSize = savestacksize;
+	__asm        mov    ax, savestacksize;
+	__asm        mov    ecx, this;
+	__asm        mov    ecx, [ecx+0x14];
+	__asm        mov    [ecx+8], ax;
 // LINE 284:
-	this->fExt->fMaxStackSize = savemaxstacksize;
+	__asm        mov    ax, savemaxstacksize;
+	__asm        mov    ecx, this;
+	__asm        mov    ecx, [ecx+0x14];
+	__asm        mov    [ecx+0xA], ax;
 // LINE 286:
 	return ret;
 // LINE 287:

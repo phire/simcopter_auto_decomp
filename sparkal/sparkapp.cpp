@@ -347,7 +347,8 @@ int32_t CSparkalApp::DecideRuntimePlatform() {
 	__asm        call   dword ptr ds:[0x6C3644];
 	__asm        mov    Version, eax;
 // LINE 66:
-	WinMajor = reinterpret_cast<uint8_t>(Version);
+	__asm        mov    al, reinterpret_cast<uint8_t>(Version);
+	__asm        mov    WinMajor, al;
 // LINE 67:
 	__asm        mov    eax, Version;
 	__asm        mov    WinMinor, ah;

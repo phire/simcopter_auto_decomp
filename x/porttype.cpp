@@ -242,7 +242,9 @@ _T2e:
 	__asm        call   Memory::BlockMove;
 	__asm        add    esp, 0xC;
 // LINE 56:
-	cstr[0] = reinterpret_cast<uint8_t>(len);
+	__asm        mov    al, reinterpret_cast<uint8_t>(len);
+	__asm        mov    ecx, cstr;
+	__asm        mov    [ecx], al;
 // LINE 57:
 	return;
 }
@@ -553,13 +555,21 @@ _T32:
 // FUNCTION: COPTER_D 0x00566f42
 void SetRect(/*unpacked*/ struct Rect *rect, short left, short top, short right, short bottom) {
 // LINE 165:
-	rect->left = left;
+	__asm        mov    ax, left;
+	__asm        mov    ecx, rect;
+	__asm        mov    [ecx+2], ax;
 // LINE 166:
-	rect->top = top;
+	__asm        mov    ax, top;
+	__asm        mov    ecx, rect;
+	__asm        mov    [ecx], ax;
 // LINE 167:
-	rect->right = right;
+	__asm        mov    ax, right;
+	__asm        mov    ecx, rect;
+	__asm        mov    [ecx+6], ax;
 // LINE 168:
-	rect->bottom = bottom;
+	__asm        mov    ax, bottom;
+	__asm        mov    ecx, rect;
+	__asm        mov    [ecx+4], ax;
 // LINE 169:
 	return;
 }
@@ -574,12 +584,18 @@ void UnionRect(/*unpacked*/ struct Rect *rect1, /*unpacked*/ struct Rect *rect2,
 	__asm        cmp    eax, ecx;
 	__asm        jle    _T2b;
 // LINE 174:
-	result->top = rect1->top;
+	__asm        mov    eax, rect1;
+	__asm        mov    ax, [eax];
+	__asm        mov    ecx, result;
+	__asm        mov    [ecx], ax;
 // LINE 175:
 	__asm        jmp    _T37;
 // LINE 176:
 _T2b:
-	result->top = rect2->top;
+	__asm        mov    eax, rect2;
+	__asm        mov    ax, [eax];
+	__asm        mov    ecx, result;
+	__asm        mov    [ecx], ax;
 // LINE 178:
 _T37:
 	__asm        mov    eax, rect2;
@@ -589,12 +605,18 @@ _T37:
 	__asm        cmp    eax, ecx;
 	__asm        jle    _T60;
 // LINE 179:
-	result->left = rect1->left;
+	__asm        mov    eax, rect1;
+	__asm        mov    ax, [eax+2];
+	__asm        mov    ecx, result;
+	__asm        mov    [ecx+2], ax;
 // LINE 180:
 	__asm        jmp    _T6e;
 // LINE 181:
 _T60:
-	result->left = rect2->left;
+	__asm        mov    eax, rect2;
+	__asm        mov    ax, [eax+2];
+	__asm        mov    ecx, result;
+	__asm        mov    [ecx+2], ax;
 // LINE 183:
 _T6e:
 	__asm        mov    eax, rect2;
@@ -604,12 +626,18 @@ _T6e:
 	__asm        cmp    eax, ecx;
 	__asm        jge    _T97;
 // LINE 184:
-	result->right = rect1->right;
+	__asm        mov    eax, rect1;
+	__asm        mov    ax, [eax+6];
+	__asm        mov    ecx, result;
+	__asm        mov    [ecx+6], ax;
 // LINE 185:
 	__asm        jmp    _Ta5;
 // LINE 186:
 _T97:
-	result->right = rect2->right;
+	__asm        mov    eax, rect2;
+	__asm        mov    ax, [eax+6];
+	__asm        mov    ecx, result;
+	__asm        mov    [ecx+6], ax;
 // LINE 188:
 _Ta5:
 	__asm        mov    eax, rect2;
@@ -619,12 +647,18 @@ _Ta5:
 	__asm        cmp    eax, ecx;
 	__asm        jge    _Tce;
 // LINE 189:
-	result->bottom = rect1->bottom;
+	__asm        mov    eax, rect1;
+	__asm        mov    ax, [eax+4];
+	__asm        mov    ecx, result;
+	__asm        mov    [ecx+4], ax;
 // LINE 190:
 	__asm        jmp    _Tdc;
 // LINE 191:
 _Tce:
-	result->bottom = rect2->bottom;
+	__asm        mov    eax, rect2;
+	__asm        mov    ax, [eax+4];
+	__asm        mov    ecx, result;
+	__asm        mov    [ecx+4], ax;
 // LINE 192:
 _Tdc:
 	return;

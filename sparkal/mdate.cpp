@@ -344,7 +344,19 @@ void MDate::MDate(uint32_t day, char * monthName, uint32_t year) {
 	this->PrintOption = 0x0;
 	this-><vftable> = 0x58f3e8;
 // LINE 113:
-	this->Julnum = MDate::Jday(year, day, monthName, MDate::IndexOfMonth(year, day, monthName));
+	__asm        mov    eax, year;
+	__asm        push   eax;
+	__asm        mov    eax, day;
+	__asm        push   eax;
+	__asm        mov    eax, monthName;
+	__asm        push   eax;
+	__asm        call   MDate::IndexOfMonth;
+	__asm        add    esp, 4;
+	__asm        push   eax;
+	__asm        call   MDate::Jday;
+	__asm        add    esp, 0xC;
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+4], eax;
 // LINE 114:
 	return;
 
@@ -1575,8 +1587,10 @@ _T97:
 	__asm        cmp    eax, p;
 	__asm        je     _Tce;
 // LINE 554:
-	p[0] = c;
-	p++;
+	__asm        mov    al, c;
+	__asm        mov    ecx, p;
+	__asm        mov    [ecx], al;
+	__asm        inc    p;
 // LINE 555:
 	__asm        lea    eax, c;
 	__asm        push   eax;

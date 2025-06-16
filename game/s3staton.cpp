@@ -839,7 +839,9 @@ int32_t Station::FindNearestRoadToStation(/*packed*/ struct _GridCoordinates& lo
 	__asm        and    ecx, 3;
 	__asm        mov    direction, ecx;
 // LINE 82:
-	reinterpret_cast<uint16_t>(center.x) = reinterpret_cast<uint16_t>(loc.x);
+	__asm        mov    eax, loc;
+	__asm        mov    ax, [eax];
+	__asm        mov    reinterpret_cast<uint16_t>(center.x), ax;
 // LINE 85:
 	__asm        mov    eax, loc;
 	__asm        xor    ecx, ecx;
@@ -2172,9 +2174,11 @@ _T96:
 	__asm        add    esp, 4;
 // LINE 450:
 _Tca:
-	destLoc.x = reinterpret_cast<uint8_t>(mapx);
+	__asm        mov    al, reinterpret_cast<uint8_t>(mapx);
+	__asm        mov    destLoc.x, al;
 // LINE 451:
-	destLoc.y = reinterpret_cast<uint8_t>(mapy);
+	__asm        mov    al, reinterpret_cast<uint8_t>(mapy);
+	__asm        mov    destLoc.y, al;
 // LINE 454:
 	__asm        mov    eax, vehicleListLength;
 	__asm        push   eax;
@@ -2616,7 +2620,9 @@ _T6b3:
 	__asm        mov    ecx, 0x5C3828;
 	__asm        call   RoadGraph::FindIntersections;
 // LINE 501:
-	startVertex.x = startGoal1.pRGV->x;
+	__asm        mov    eax, startGoal1.pRGV;
+	__asm        mov    al, [eax];
+	__asm        mov    startVertex.x, al;
 // LINE 502:
 	__asm        mov    eax, startGoal1.pRGV;
 	__asm        xor    ecx, ecx;
@@ -2630,7 +2636,9 @@ _T6b3:
 	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    startVertex.yindex, al;
 // LINE 504:
-	destVert.x = destGoal1.pRGV->x;
+	__asm        mov    eax, destGoal1.pRGV;
+	__asm        mov    al, [eax];
+	__asm        mov    destVert.x, al;
 // LINE 505:
 	__asm        mov    eax, destGoal1.pRGV;
 	__asm        xor    ecx, ecx;
@@ -2775,7 +2783,9 @@ _T873:
 	__asm        mov    eax, [eax+ecx];
 	__asm        mov    pRGV, eax;
 // LINE 546:
-	startVertex.x = pRGV->x;
+	__asm        mov    eax, pRGV;
+	__asm        mov    al, [eax];
+	__asm        mov    startVertex.x, al;
 // LINE 547:
 	__asm        mov    eax, pRGV;
 	__asm        xor    ecx, ecx;
@@ -2789,7 +2799,9 @@ _T873:
 	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    startVertex.yindex, al;
 // LINE 549:
-	destVert.x = destGoal1.pRGV->x;
+	__asm        mov    eax, destGoal1.pRGV;
+	__asm        mov    al, [eax];
+	__asm        mov    destVert.x, al;
 // LINE 550:
 	__asm        mov    eax, destGoal1.pRGV;
 	__asm        xor    ecx, ecx;
@@ -3375,9 +3387,13 @@ _T254:
 	__asm        mov    ecx, pStation;
 	__asm        mov    [ecx+0x59], al;
 // LINE 675:
-	pStation->nearestRoadTile.x = workingLoc.x;
+	__asm        mov    al, workingLoc.x;
+	__asm        mov    ecx, pStation;
+	__asm        mov    [ecx+0x5A], al;
 // LINE 676:
-	pStation->nearestRoadTile.y = workingLoc.y;
+	__asm        mov    al, workingLoc.y;
+	__asm        mov    ecx, pStation;
+	__asm        mov    [ecx+0x5B], al;
 // LINE 677:
 	pStation->quanVehiclesDispatched = 0x0;
 // LINE 678:

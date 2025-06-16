@@ -834,7 +834,9 @@ _T4d:
 	__asm        jmp    _T96f;
 // LINE 276:
 _Td4:
-	reinterpret_cast<uint16_t>(badGuyLoc.x) = reinterpret_cast<uint16_t>(this->goal.gridLoc.x);
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0x7C];
+	__asm        mov    reinterpret_cast<uint16_t>(badGuyLoc.x), ax;
 // LINE 277:
 	__asm        lea    eax, badGuyLoc.x;
 	__asm        push   eax;
@@ -938,7 +940,9 @@ _T211:
 _T22b:
 	this->EmergencyVehicleClass::PositionIcon();
 // LINE 320:
-	reinterpret_cast<uint16_t>(badGuyLoc.x) = reinterpret_cast<uint16_t>(this->goal.gridLoc.x);
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0x7C];
+	__asm        mov    reinterpret_cast<uint16_t>(badGuyLoc.x), ax;
 // LINE 321:
 	__asm        lea    eax, badGuyLoc.x;
 	__asm        push   eax;
@@ -1032,13 +1036,17 @@ _T379:
 	__asm        jmp    _T538;
 // LINE 356:
 _T37e:
-	reinterpret_cast<uint16_t>(oldemergencyloc.x) = reinterpret_cast<uint16_t>(this->emergencyLocation.x);
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0x11C];
+	__asm        mov    reinterpret_cast<uint16_t>(oldemergencyloc.x), ax;
 // LINE 358:
 	__asm        mov    eax, this;
 	__asm        cmp    dword ptr [eax+0x322], 0;
 	__asm        je     _T3bc;
 // LINE 360:
-	reinterpret_cast<uint16_t>(this->emergencyLocation.x) = reinterpret_cast<uint16_t>(badGuyLoc.x);
+	__asm        mov    ax, reinterpret_cast<uint16_t>(badGuyLoc.x);
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x11C], ax;
 // LINE 361:
 	this->foundRoad = 0x1;
 // LINE 363:
@@ -1213,7 +1221,9 @@ _T5cb:
 	__asm        mov    eax, this;
 	__asm        and    dword ptr [eax+8], 0xFFFFFFFB;
 // LINE 417:
-	reinterpret_cast<uint16_t>(badGuyLoc.x) = reinterpret_cast<uint16_t>(this->goal.gridLoc.x);
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0x7C];
+	__asm        mov    reinterpret_cast<uint16_t>(badGuyLoc.x), ax;
 // LINE 418:
 	__asm        lea    eax, badGuyLoc.x;
 	__asm        push   eax;
@@ -1378,7 +1388,9 @@ _T854:
 	__asm        jmp    _T96f;
 // LINE 509:
 _T859:
-	reinterpret_cast<uint16_t>(badGuyLoc.x) = reinterpret_cast<uint16_t>(this->goal.gridLoc.x);
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0x7C];
+	__asm        mov    reinterpret_cast<uint16_t>(badGuyLoc.x), ax;
 // LINE 510:
 	__asm        lea    eax, badGuyLoc.x;
 	__asm        push   eax;
@@ -1469,9 +1481,12 @@ enum TurnIndex PoliceCarClass::PickTurnDir(/*packed*/ struct Goal *pGoal) {
 // Block start:
 	/*bp-0x8*/   /*packed*/ struct _RGIndex startVertex;
 	/*bp-0xc*/   /*packed*/ struct _RGIndex destVertex;
-	reinterpret_cast<uint16_t>(startLoc.x) = reinterpret_cast<uint16_t>(this->goal.gridLoc.x);
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0x7C];
+	__asm        mov    reinterpret_cast<uint16_t>(startLoc.x), ax;
 // LINE 555:
-	startVertex.x = startLoc.x;
+	__asm        mov    al, startLoc.x;
+	__asm        mov    startVertex.x, al;
 // LINE 556:
 	__asm        xor    eax, eax;
 	__asm        mov    al, startLoc.y;
@@ -1660,7 +1675,10 @@ _T28d:
 	__asm        jmp    _T2ce;
 // LINE 595:
 _T2ce:
-	destVertex.x = this->currDestGoal.pRGV->x;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x2A0];
+	__asm        mov    al, [eax];
+	__asm        mov    destVertex.x, al;
 // LINE 596:
 	__asm        mov    eax, this;
 	__asm        mov    eax, [eax+0x2A0];
@@ -1842,7 +1860,9 @@ _Te4:
 	__asm        cmp    dword ptr [ebp-0x24], 0;
 	__asm        je     _T110;
 // LINE 655:
-	reinterpret_cast<uint16_t>(this->emergencyLocation.x) = reinterpret_cast<uint16_t>(loc.x);
+	__asm        mov    ax, reinterpret_cast<uint16_t>(loc.x);
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x11C], ax;
 // LINE 656:
 	__asm        mov    dword ptr [ebp-0x18], 1;
 	__asm        jmp    _T108;
@@ -2041,17 +2061,41 @@ void PoliceCarClass::SetSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) {
 	__asm        test   byte ptr [eax+8], 2;
 	__asm        je     _Tf7;
 // LINE 739:
-	sd->p.currpRGVFixup.x = this->currDestGoal.pRGV->x;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x2A0];
+	__asm        mov    al, [eax];
+	__asm        mov    ecx, sd;
+	__asm        mov    [ecx+0x2E6], al;
 // LINE 740:
-	sd->p.currpRGVFixup.y = this->currDestGoal.pRGV->y;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x2A0];
+	__asm        mov    al, [eax+1];
+	__asm        mov    ecx, sd;
+	__asm        mov    [ecx+0x2E7], al;
 // LINE 741:
-	sd->p.dest1pRGVFixup.x = this->destGoal1.pRGV->x;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x2CA];
+	__asm        mov    al, [eax];
+	__asm        mov    ecx, sd;
+	__asm        mov    [ecx+0x312], al;
 // LINE 742:
-	sd->p.dest1pRGVFixup.y = this->destGoal1.pRGV->y;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x2CA];
+	__asm        mov    al, [eax+1];
+	__asm        mov    ecx, sd;
+	__asm        mov    [ecx+0x313], al;
 // LINE 743:
-	sd->p.dest2pRGVFixup.x = this->destGoal2.pRGV->x;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x2F4];
+	__asm        mov    al, [eax];
+	__asm        mov    ecx, sd;
+	__asm        mov    [ecx+0x33E], al;
 // LINE 744:
-	sd->p.dest2pRGVFixup.y = this->destGoal2.pRGV->y;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+0x2F4];
+	__asm        mov    al, [eax+1];
+	__asm        mov    ecx, sd;
+	__asm        mov    [ecx+0x33F], al;
 // LINE 748:
 _Tf7:
 	__asm        mov    eax, sd;
@@ -2211,7 +2255,9 @@ _Td8:
 	__asm        mov    ecx, this;
 	__asm        mov    [ecx+0x2F4], eax;
 // LINE 805:
-	reinterpret_cast<uint16_t>(badGuyLoc.x) = reinterpret_cast<uint16_t>(this->goal.gridLoc.x);
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0x7C];
+	__asm        mov    reinterpret_cast<uint16_t>(badGuyLoc.x), ax;
 // LINE 806:
 	__asm        lea    eax, badGuyLoc.x;
 	__asm        push   eax;

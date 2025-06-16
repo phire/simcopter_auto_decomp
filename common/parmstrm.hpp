@@ -70,8 +70,12 @@ _T125:
 	this->markPos = 0x0;
 	this->curPos = this->markPos;
 // LINE 236:
-	this->markNode = 0x0;
-	this->nodeNo = this->markNode;
+	__asm        mov    eax, this;
+	__asm        mov    word ptr [eax+0xE], 0;
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0xE];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xC], ax;
 // LINE 237:
 	this->maxNode = 0x0;
 // LINE 238:
@@ -698,8 +702,14 @@ __RETURN:
 // FUNCTION: COPTER_D 0x004cdfa0
 void cGZXParamBitstream<t_alloc,t_free>::RewindToMark() {
 
-	this->curPos = this->markPos;
-	this->nodeNo = this->markNode;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+8];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+4], eax;
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0xE];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xC], ax;
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -708,8 +718,14 @@ __RETURN:
 // FUNCTION: COPTER_D 0x004cdfd0
 void cGZXParamBitstream<t_alloc,t_free>::Mark() {
 
-	this->markPos = this->curPos;
-	this->markNode = this->nodeNo;
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+4];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+8], eax;
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0xC];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xE], ax;
 	__asm        jmp    __RETURN;
 __RETURN:
 }
@@ -790,8 +806,12 @@ _Tc8:
 	this->markPos = 0x0;
 	this->curPos = this->markPos;
 // LINE 374:
-	this->markNode = 0x0;
-	this->nodeNo = this->markNode;
+	__asm        mov    eax, this;
+	__asm        mov    word ptr [eax+0xE], 0;
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0xE];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xC], ax;
 // LINE 375:
 	return;
 }
@@ -905,7 +925,10 @@ _T2f:
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
 	__asm        jne    _T5e6;
 // LINE 312:
-	this->maxNode = this->nodeNo;
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0xC];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x10], ax;
 // LINE 313:
 	this->maxPos = 0x0;
 // LINE 314:
@@ -1355,7 +1378,10 @@ _T62a:
 	__asm        cmp    dword ptr [ecx+eax*8], 0;
 	__asm        jne    _Tc8c;
 // LINE 329:
-	this->maxNode = this->nodeNo;
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0xC];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x10], ax;
 // LINE 330:
 	this->maxPos = 0x0;
 // LINE 332:

@@ -652,7 +652,9 @@ _T28:
 // LINE 271:
 // Block start:
 	/*bp-0xc*/   /*packed*/ struct Edge *pEdge;
-	startIndex.x = startGoal1.pRGV->x;
+	__asm        mov    eax, startGoal1.pRGV;
+	__asm        mov    al, [eax];
+	__asm        mov    startIndex.x, al;
 // LINE 272:
 	__asm        mov    eax, startGoal1.pRGV;
 	__asm        xor    ecx, ecx;
@@ -665,7 +667,9 @@ _T28:
 	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    startIndex.yindex, al;
 // LINE 273:
-	destIndex.x = destGoal1.pRGV->x;
+	__asm        mov    eax, destGoal1.pRGV;
+	__asm        mov    al, [eax];
+	__asm        mov    destIndex.x, al;
 // LINE 274:
 	__asm        mov    eax, destGoal1.pRGV;
 	__asm        xor    ecx, ecx;
@@ -872,7 +876,9 @@ _T28f:
 	__asm        jmp    _T2b0;
 // LINE 343:
 _T2b0:
-	reinterpret_cast<uint16_t>(this->emergencyLocation.x) = reinterpret_cast<uint16_t>(destLoc.x);
+	__asm        mov    ax, reinterpret_cast<uint16_t>(destLoc.x);
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x11C], ax;
 // LINE 345:
 	this->currDist = 0x0;
 // LINE 346:
@@ -933,7 +939,9 @@ _T34:
 	__asm        cmp    result.pRGV, 0;
 	__asm        jne    _Ta8;
 // LINE 379:
-	stationIndex.x = stationGoal1.pRGV->x;
+	__asm        mov    eax, stationGoal1.pRGV;
+	__asm        mov    al, [eax];
+	__asm        mov    stationIndex.x, al;
 // LINE 380:
 	__asm        mov    eax, stationGoal1.pRGV;
 	__asm        xor    ecx, ecx;
@@ -946,7 +954,9 @@ _T34:
 	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    stationIndex.yindex, al;
 // LINE 381:
-	destIndex.x = destGoal1.pRGV->x;
+	__asm        mov    eax, destGoal1.pRGV;
+	__asm        mov    al, [eax];
+	__asm        mov    destIndex.x, al;
 // LINE 382:
 	__asm        mov    eax, destGoal1.pRGV;
 	__asm        xor    ecx, ecx;
@@ -967,9 +977,13 @@ _T34:
 	__asm        call   EmergencyVehicleClass::BuildPath;
 // LINE 388:
 _Ta8:
-	reinterpret_cast<uint16_t>(this->emergencyLocation.x) = reinterpret_cast<uint16_t>(destLoc.x);
+	__asm        mov    ax, reinterpret_cast<uint16_t>(destLoc.x);
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x11C], ax;
 // LINE 389:
-	reinterpret_cast<uint16_t>(this->baseLocation.x) = reinterpret_cast<uint16_t>(stationLoc.x);
+	__asm        mov    ax, reinterpret_cast<uint16_t>(stationLoc.x);
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x11A], ax;
 // LINE 393:
 	__asm        mov    eax, this;
 	__asm        test   byte ptr [eax+8], 2;
@@ -1447,7 +1461,9 @@ void EmergencyVehicleClass::GoBackToStation() {
 	__asm        mov    ecx, 0x5C3828;
 	__asm        call   RoadGraph::FindIntersections;
 // LINE 544:
-	startVertex.x = startGoal1.pRGV->x;
+	__asm        mov    eax, startGoal1.pRGV;
+	__asm        mov    al, [eax];
+	__asm        mov    startVertex.x, al;
 // LINE 545:
 	__asm        mov    eax, startGoal1.pRGV;
 	__asm        xor    ecx, ecx;
@@ -1461,7 +1477,9 @@ void EmergencyVehicleClass::GoBackToStation() {
 	__asm        call   RoadGraph::FindYIndexToVertex;
 	__asm        mov    startVertex.yindex, al;
 // LINE 546:
-	destVertex.x = destGoal1.pRGV->x;
+	__asm        mov    eax, destGoal1.pRGV;
+	__asm        mov    al, [eax];
+	__asm        mov    destVertex.x, al;
 // LINE 547:
 	__asm        mov    eax, destGoal1.pRGV;
 	__asm        xor    ecx, ecx;
@@ -1982,7 +2000,8 @@ void EmergencyVehicleClass::BuildPath(/*packed*/ struct _RGIndex startVertex, /*
 // LINE 1409:
 	this->dispatchPathLength = 0x1;
 // LINE 1411:
-	reinterpret_cast<uint16_t>(index.x) = reinterpret_cast<uint16_t>(destVertex.x);
+	__asm        mov    ax, reinterpret_cast<uint16_t>(destVertex.x);
+	__asm        mov    reinterpret_cast<uint16_t>(index.x), ax;
 // LINE 1412:
 _T1e:
 	__asm        xor    eax, eax;
@@ -2012,9 +2031,13 @@ _T42:
 	__asm        add    eax, ecx;
 	__asm        mov    pRGV, eax;
 // LINE 1415:
-	index.x = pRGV->xPrev;
+	__asm        mov    eax, pRGV;
+	__asm        mov    al, [eax+0x2D];
+	__asm        mov    index.x, al;
 // LINE 1416:
-	index.yindex = pRGV->yindexPrev;
+	__asm        mov    eax, pRGV;
+	__asm        mov    al, [eax+0x2C];
+	__asm        mov    index.yindex, al;
 // LINE 1417:
 	__asm        xor    eax, eax;
 	__asm        mov    al, index.x;
@@ -2037,7 +2060,8 @@ _Tb6:
 	__asm        jmp    _T1e;
 // LINE 1432:
 _Tc4:
-	reinterpret_cast<uint16_t>(index.x) = reinterpret_cast<uint16_t>(destVertex.x);
+	__asm        mov    ax, reinterpret_cast<uint16_t>(destVertex.x);
+	__asm        mov    reinterpret_cast<uint16_t>(index.x), ax;
 // LINE 1433:
 	__asm        mov    eax, this;
 	__asm        xor    ecx, ecx;
@@ -2063,9 +2087,13 @@ _Te5:
 	__asm        add    eax, ecx;
 	__asm        mov    pRGV, eax;
 // LINE 1437:
-	index.x = pRGV->xPrev;
+	__asm        mov    eax, pRGV;
+	__asm        mov    al, [eax+0x2D];
+	__asm        mov    index.x, al;
 // LINE 1438:
-	index.yindex = pRGV->yindexPrev;
+	__asm        mov    eax, pRGV;
+	__asm        mov    al, [eax+0x2C];
+	__asm        mov    index.yindex, al;
 // LINE 1439:
 	__asm        mov    eax, pRGV;
 	__asm        mov    al, [eax+0x2E];
@@ -2210,9 +2238,15 @@ _T95:
 // FUNCTION: COPTER_D 0x00542a75
 void EmergencyVehicleClass::SetSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) {
 // LINE 1508:
-	reinterpret_cast<uint16_t>(sd->e.baseLocation.x) = reinterpret_cast<uint16_t>(this->baseLocation.x);
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0x11A];
+	__asm        mov    ecx, sd;
+	__asm        mov    [ecx+0x11E], ax;
 // LINE 1509:
-	reinterpret_cast<uint16_t>(sd->e.emergencyLocation.x) = reinterpret_cast<uint16_t>(this->emergencyLocation.x);
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0x11C];
+	__asm        mov    ecx, sd;
+	__asm        mov    [ecx+0x120], ax;
 // LINE 1510:
 	sd->e.emergencyType = this->emergencyType;
 // LINE 1511:
@@ -2234,9 +2268,15 @@ void EmergencyVehicleClass::SetSaveData(/*packed*/ struct _AUTO_LOAD_SAVE *sd) {
 	__asm        mov    ecx, 0x40;
 	__asm        rep movsd;
 // LINE 1515:
-	sd->e.dispatchPathIndex = this->dispatchPathIndex;
+	__asm        mov    eax, this;
+	__asm        mov    al, [eax+0x292];
+	__asm        mov    ecx, sd;
+	__asm        mov    [ecx+0x296], al;
 // LINE 1516:
-	sd->e.dispatchPathLength = this->dispatchPathLength;
+	__asm        mov    eax, this;
+	__asm        mov    al, [eax+0x293];
+	__asm        mov    ecx, sd;
+	__asm        mov    [ecx+0x297], al;
 // LINE 1517:
 	sd->e.emergencyState = this->emergencyState;
 // LINE 1518:
@@ -2274,9 +2314,15 @@ _T1d:
 	__asm        mov    ecx, this;
 	__asm        call   AutomobileClass::LoadSaveData;
 // LINE 1556:
-	reinterpret_cast<uint16_t>(this->baseLocation.x) = reinterpret_cast<uint16_t>(sd->e.baseLocation.x);
+	__asm        mov    eax, sd;
+	__asm        mov    ax, [eax+0x11E];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x11A], ax;
 // LINE 1557:
-	reinterpret_cast<uint16_t>(this->emergencyLocation.x) = reinterpret_cast<uint16_t>(sd->e.emergencyLocation.x);
+	__asm        mov    eax, sd;
+	__asm        mov    ax, [eax+0x120];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x11C], ax;
 // LINE 1558:
 	this->emergencyType = sd->e.emergencyType;
 // LINE 1559:
@@ -2291,9 +2337,15 @@ _T1d:
 	__asm        mov    ecx, 0x40;
 	__asm        rep movsd;
 // LINE 1562:
-	this->dispatchPathIndex = sd->e.dispatchPathIndex;
+	__asm        mov    eax, sd;
+	__asm        mov    al, [eax+0x296];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x292], al;
 // LINE 1563:
-	this->dispatchPathLength = sd->e.dispatchPathLength;
+	__asm        mov    eax, sd;
+	__asm        mov    al, [eax+0x297];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x293], al;
 // LINE 1564:
 	this->emergencyState = sd->e.emergencyState;
 // LINE 1565:

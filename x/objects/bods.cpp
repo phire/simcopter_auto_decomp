@@ -1330,7 +1330,10 @@ _T240:
 // LINE 2229:
 	reinterpret_cast<uint32_t>(transinfo->startPoint.v) = reinterpret_cast<uint32_t>(parenttransinfo->endPoint.v);
 // LINE 2230:
-	transinfo->startDepth = parenttransinfo->endDepth;
+	__asm        mov    eax, parenttransinfo;
+	__asm        mov    ax, [eax+0xA];
+	__asm        mov    ecx, transinfo;
+	__asm        mov    [ecx+8], ax;
 // LINE 2231:
 	transinfo->bStartTransformed = 0x1;
 // LINE 2234:
@@ -1385,11 +1388,17 @@ _T3d3:
 _T45e:
 	reinterpret_cast<uint32_t>(part->tmpCenterPt.v) = reinterpret_cast<uint32_t>(transinfo->startPoint.v);
 // LINE 2264:
-	part->tmpCenterDepth = transinfo->startDepth;
+	__asm        mov    eax, transinfo;
+	__asm        mov    ax, [eax+8];
+	__asm        mov    ecx, part;
+	__asm        mov    [ecx+0x18], ax;
 // LINE 2265:
 	reinterpret_cast<uint32_t>(part->tmpEndPt.v) = reinterpret_cast<uint32_t>(transinfo->endPoint.v);
 // LINE 2266:
-	part->tmpEndDepth = transinfo->endDepth;
+	__asm        mov    eax, transinfo;
+	__asm        mov    ax, [eax+0xA];
+	__asm        mov    ecx, part;
+	__asm        mov    [ecx+0x1A], ax;
 // LINE 2268:
 	__asm        mov    eax, part;
 	__asm        mov    ecx, drawordercount;

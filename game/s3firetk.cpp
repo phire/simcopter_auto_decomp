@@ -1133,7 +1133,8 @@ int32_t FireEngineClass::ScanForFire(/*packed*/ struct _GridCoordinates fireloc)
 // LINE 425:
 	fires_found = 0x0;
 // LINE 426:
-	reinterpret_cast<uint16_t>(dyfireloc.x) = reinterpret_cast<uint16_t>(fireloc.x);
+	__asm        mov    ax, reinterpret_cast<uint16_t>(fireloc.x);
+	__asm        mov    reinterpret_cast<uint16_t>(dyfireloc.x), ax;
 // LINE 429:
 	this->currentFire = 0x0;
 // LINE 430:

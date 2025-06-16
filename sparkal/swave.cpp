@@ -208,7 +208,9 @@ _T132:
 _T15c:
 	memcpy(0x10, pcmWaveFormat.wf.wFormatTag, pwfxInfo);
 // LINE 111:
-	pwfxInfo->cbSize = cbExtraAlloc;
+	__asm        mov    ax, cbExtraAlloc;
+	__asm        mov    ecx, pwfxInfo;
+	__asm        mov    [ecx+0x10], ax;
 // LINE 126:
 	__asm        push   0;
 	__asm        lea    eax, ckIn.ckid;

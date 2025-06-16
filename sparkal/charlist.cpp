@@ -54,7 +54,9 @@ void CharData::CharData() {
 // FUNCTION: COPTER_D 0x0043d40f
 void CharData::CharData(unsigned char chNewValue) {
 // LINE 15:
-	this->chValue = chNewValue;
+	__asm        mov    al, chNewValue;
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx], al;
 // LINE 16:
 	return;
 

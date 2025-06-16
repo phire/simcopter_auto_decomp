@@ -356,13 +356,25 @@ static long stol(char * tag) {
 // LINE 249:
 	s = buildval;
 // LINE 251:
-	s[0] = tag[0];
+	__asm        mov    eax, tag;
+	__asm        mov    al, [eax];
+	__asm        mov    ecx, s;
+	__asm        mov    [ecx], al;
 // LINE 252:
-	s[1] = tag[1];
+	__asm        mov    eax, tag;
+	__asm        mov    al, [eax+1];
+	__asm        mov    ecx, s;
+	__asm        mov    [ecx+1], al;
 // LINE 253:
-	s[2] = tag[2];
+	__asm        mov    eax, tag;
+	__asm        mov    al, [eax+2];
+	__asm        mov    ecx, s;
+	__asm        mov    [ecx+2], al;
 // LINE 254:
-	s[3] = tag[3];
+	__asm        mov    eax, tag;
+	__asm        mov    al, [eax+3];
+	__asm        mov    ecx, s;
+	__asm        mov    [ecx+3], al;
 // LINE 256:
 	return swizzle_long(buildval);
 // LINE 257:
@@ -4304,7 +4316,10 @@ _T2a:
 	__asm        cmp    count, eax;
 	__asm        jle    __RETURN;
 // LINE 1563:
-	sval = sptr[i];
+	__asm        mov    eax, i;
+	__asm        mov    ecx, sptr;
+	__asm        mov    ax, [ecx+eax*2];
+	__asm        mov    sval, ax;
 // LINE 1564:
 	sptr[i] = swizzle_short(reinterpret_cast<uint32_t>(sval));
 // LINE 1565:
@@ -4321,11 +4336,18 @@ short swizzle_short(short svalue) {
 // LINE 1585:
 	byteptr = svalue;
 // LINE 1587:
-	cval = byteptr[1];
+	__asm        mov    eax, byteptr;
+	__asm        mov    al, [eax+1];
+	__asm        mov    cval, al;
 // LINE 1588:
-	byteptr[1] = byteptr[0];
+	__asm        mov    eax, byteptr;
+	__asm        mov    al, [eax];
+	__asm        mov    ecx, byteptr;
+	__asm        mov    [ecx+1], al;
 // LINE 1589:
-	byteptr[0] = cval;
+	__asm        mov    al, cval;
+	__asm        mov    ecx, byteptr;
+	__asm        mov    [ecx], al;
 // LINE 1591:
 	return svalue;
 // LINE 1592:
@@ -4339,11 +4361,18 @@ long swap_long(long lvalue) {
 // LINE 1610:
 	shortptr = lvalue;
 // LINE 1612:
-	sval = shortptr[2];
+	__asm        mov    eax, shortptr;
+	__asm        mov    ax, [eax+2];
+	__asm        mov    sval, ax;
 // LINE 1613:
-	shortptr[2] = shortptr[0];
+	__asm        mov    eax, shortptr;
+	__asm        mov    ax, [eax];
+	__asm        mov    ecx, shortptr;
+	__asm        mov    [ecx+2], ax;
 // LINE 1614:
-	shortptr[0] = sval;
+	__asm        mov    ax, sval;
+	__asm        mov    ecx, shortptr;
+	__asm        mov    [ecx], ax;
 // LINE 1617:
 	return lvalue;
 // LINE 1618:
@@ -4357,17 +4386,31 @@ long swizzle_long(long lvalue) {
 // LINE 1636:
 	byteptr = lvalue;
 // LINE 1638:
-	cval = byteptr[3];
+	__asm        mov    eax, byteptr;
+	__asm        mov    al, [eax+3];
+	__asm        mov    cval, al;
 // LINE 1639:
-	byteptr[3] = byteptr[0];
+	__asm        mov    eax, byteptr;
+	__asm        mov    al, [eax];
+	__asm        mov    ecx, byteptr;
+	__asm        mov    [ecx+3], al;
 // LINE 1640:
-	byteptr[0] = cval;
+	__asm        mov    al, cval;
+	__asm        mov    ecx, byteptr;
+	__asm        mov    [ecx], al;
 // LINE 1642:
-	cval = byteptr[2];
+	__asm        mov    eax, byteptr;
+	__asm        mov    al, [eax+2];
+	__asm        mov    cval, al;
 // LINE 1643:
-	byteptr[2] = byteptr[1];
+	__asm        mov    eax, byteptr;
+	__asm        mov    al, [eax+1];
+	__asm        mov    ecx, byteptr;
+	__asm        mov    [ecx+2], al;
 // LINE 1644:
-	byteptr[1] = cval;
+	__asm        mov    al, cval;
+	__asm        mov    ecx, byteptr;
+	__asm        mov    [ecx+1], al;
 // LINE 1647:
 	return lvalue;
 // LINE 1648:
@@ -5410,7 +5453,9 @@ void PStringToCString(char * string) {
 	/*bp-0x8*/   int32_t i;
 
 // LINE 1980:
-	sizePString = string[0];
+	__asm        mov    eax, string;
+	__asm        mov    al, [eax];
+	__asm        mov    sizePString, al;
 // LINE 1983:
 	i = 0x0;
 	__asm        jmp    _T20;
@@ -5473,7 +5518,9 @@ _T3b:
 	__asm        jmp    _T38;
 // LINE 2002:
 _T5d:
-	string[0] = reinterpret_cast<uint8_t>(sizeCString);
+	__asm        mov    al, reinterpret_cast<uint8_t>(sizeCString);
+	__asm        mov    ecx, string;
+	__asm        mov    [ecx], al;
 // LINE 2003:
 }
 
@@ -5488,7 +5535,10 @@ void CopyPString(char * stringDestination, char * stringSource) {
 	__asm        inc    eax;
 	__asm        mov    iEnd, eax;
 // LINE 2014:
-	stringDestination[0] = stringSource[0];
+	__asm        mov    eax, stringSource;
+	__asm        mov    al, [eax];
+	__asm        mov    ecx, stringDestination;
+	__asm        mov    [ecx], al;
 // LINE 2015:
 	i = 0x1;
 	__asm        jmp    _T2c;
@@ -6135,9 +6185,12 @@ _T42:
 	__asm        cmp    eax, 0x5F;
 	__asm        je     _T183;
 // LINE 2364:
-	r[0] = s[0];
-	s++;
-	r++;
+	__asm        mov    eax, s;
+	__asm        mov    al, [eax];
+	__asm        mov    ecx, r;
+	__asm        mov    [ecx], al;
+	__asm        inc    s;
+	__asm        inc    r;
 // LINE 2365:
 	__asm        jmp    _T186;
 // LINE 2366:
@@ -6190,9 +6243,12 @@ _T42:
 	__asm        cmp    eax, 0x20;
 	__asm        je     _T75;
 // LINE 2398:
-	r[0] = s[0];
-	s++;
-	r++;
+	__asm        mov    eax, s;
+	__asm        mov    al, [eax];
+	__asm        mov    ecx, r;
+	__asm        mov    [ecx], al;
+	__asm        inc    s;
+	__asm        inc    r;
 // LINE 2399:
 	__asm        jmp    _T78;
 // LINE 2400:

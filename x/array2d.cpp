@@ -995,7 +995,9 @@ _T143:
 	doAssert(0x8c085, 0x5bfcbc, 0x15c, 0x5bfcd8);
 // LINE 350:
 _T15f:
-	fillPtr[0] = zeropad;
+	__asm        mov    al, zeropad;
+	__asm        mov    ecx, fillPtr;
+	__asm        mov    [ecx], al;
 // LINE 351:
 	fillPtr++;
 // LINE 352:
@@ -1247,7 +1249,8 @@ _T7c:
 // LINE 419:
 // Block start:
 	/*bp-0x14*/  short count;
-	count = which;
+	__asm        mov    ax, which;
+	__asm        mov    count, ax;
 	__asm        jmp    _T9a;
 _T96:
 	count++;
@@ -1358,7 +1361,8 @@ _T8b:
 // LINE 442:
 // Block start:
 	/*bp-0x18*/  short ycount;
-	ycount = which;
+	__asm        mov    ax, which;
+	__asm        mov    ycount, ax;
 	__asm        jmp    _Tac;
 _Ta8:
 	ycount++;
@@ -2234,7 +2238,9 @@ _T119:
 // LINE 728:
 	header = dataPtr;
 // LINE 729:
-	diskEntrySize = header->entrySize;
+	__asm        mov    eax, header;
+	__asm        mov    ax, [eax];
+	__asm        mov    diskEntrySize, ax;
 // LINE 730:
 	Swizzle2(diskEntrySize);
 // LINE 731:
@@ -2372,7 +2378,8 @@ _T2a:
 	doAssert(0x8c085, 0x5c04c4, 0x311, 0x5c04ec);
 // LINE 787:
 _T9c:
-	foundcount = cnt;
+	__asm        mov    ax, cnt;
+	__asm        mov    foundcount, ax;
 // LINE 792:
 _Ta4:
 	__asm        jmp    _T26;

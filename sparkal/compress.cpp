@@ -807,8 +807,10 @@ _T65:
 // LINE 169:
 	pCompressedBits = (this->mpLockedImage + 0x8);
 // LINE 171:
-	TransparentColor = pCompressedBits[0];
-	pCompressedBits++;
+	__asm        mov    eax, pCompressedBits;
+	__asm        mov    al, [eax];
+	__asm        mov    TransparentColor, al;
+	__asm        inc    pCompressedBits;
 // LINE 173:
 _Tc8:
 	__asm        mov    eax, Top;
@@ -988,11 +990,15 @@ _T27:
 	__asm        jmp    _T175;
 // LINE 352:
 _T66:
-	token = pSource[0];
-	pSource++;
+	__asm        mov    eax, pSource;
+	__asm        mov    al, [eax];
+	__asm        mov    token, al;
+	__asm        inc    pSource;
 // LINE 353:
-	data = pSource[0];
-	pSource++;
+	__asm        mov    eax, pSource;
+	__asm        mov    al, [eax];
+	__asm        mov    data, al;
+	__asm        inc    pSource;
 // LINE 355:
 	__asm        xor    eax, eax;
 	__asm        mov    al, token;
@@ -1019,8 +1025,10 @@ _Tb7:
 	__asm        inc    eax;
 	__asm        mov    counter, eax;
 // LINE 368:
-	data = pSource[0];
-	pSource++;
+	__asm        mov    eax, pSource;
+	__asm        mov    al, [eax];
+	__asm        mov    data, al;
+	__asm        inc    pSource;
 // LINE 371:
 	__asm        mov    eax, counter;
 	__asm        push   eax;
@@ -1065,7 +1073,10 @@ _T103:
 	__asm        cmp    ecx, eax;
 	__asm        je     _T134;
 // LINE 386:
-	pDest[0] = pSource[0];
+	__asm        mov    eax, pSource;
+	__asm        mov    al, [eax];
+	__asm        mov    ecx, pDest;
+	__asm        mov    [ecx], al;
 // LINE 388:
 _T134:
 	pDest++;
@@ -1159,11 +1170,15 @@ _T31:
 	__asm        jmp    _T323;
 // LINE 439:
 _T7a:
-	token = pSource[0];
-	pSource++;
+	__asm        mov    eax, pSource;
+	__asm        mov    al, [eax];
+	__asm        mov    token, al;
+	__asm        inc    pSource;
 // LINE 440:
-	data = pSource[0];
-	pSource++;
+	__asm        mov    eax, pSource;
+	__asm        mov    al, [eax];
+	__asm        mov    data, al;
+	__asm        inc    pSource;
 // LINE 442:
 	__asm        xor    eax, eax;
 	__asm        mov    al, token;
@@ -1218,9 +1233,12 @@ _Tfc:
 	__asm        cmp    eax, ecx;
 	__asm        jle    _T132;
 // LINE 472:
-	pDest[0] = pSource[0];
-	pSource++;
-	pDest++;
+	__asm        mov    eax, pSource;
+	__asm        mov    al, [eax];
+	__asm        mov    ecx, pDest;
+	__asm        mov    [ecx], al;
+	__asm        inc    pSource;
+	__asm        inc    pDest;
 // LINE 473:
 	counter--;
 // LINE 474:
@@ -1237,8 +1255,10 @@ _T137:
 	__asm        inc    eax;
 	__asm        mov    counter, eax;
 // LINE 480:
-	data = pSource[0];
-	pSource++;
+	__asm        mov    eax, pSource;
+	__asm        mov    al, [eax];
+	__asm        mov    data, al;
+	__asm        inc    pSource;
 // LINE 482:
 	__asm        movsx  eax, PixelCount;
 	__asm        test   eax, eax;
@@ -1276,8 +1296,10 @@ _T192:
 	__asm        cmp    eax, ecx;
 	__asm        jle    _T1c3;
 // LINE 503:
-	pDest[0] = data;
-	pDest++;
+	__asm        mov    al, data;
+	__asm        mov    ecx, pDest;
+	__asm        mov    [ecx], al;
+	__asm        inc    pDest;
 // LINE 504:
 	counter--;
 // LINE 505:
@@ -1386,7 +1408,10 @@ _T28d:
 	__asm        cmp    ecx, eax;
 	__asm        je     _T2c5;
 // LINE 561:
-	pDest[0] = pSource[0];
+	__asm        mov    eax, pSource;
+	__asm        mov    al, [eax];
+	__asm        mov    ecx, pDest;
+	__asm        mov    [ecx], al;
 // LINE 563:
 _T2c5:
 	pDest++;

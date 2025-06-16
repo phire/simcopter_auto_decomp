@@ -532,9 +532,11 @@ int32_t CriminalEvaderCarClass::StartCriminalMission(short mID, short mType, lon
 	/*bp-0x20*/  /*packed*/ struct _MISSION_PARMS mp; // 0x18 bytes
 
 // LINE 159:
-	startLoc.x = reinterpret_cast<uint8_t>(x);
+	__asm        mov    al, reinterpret_cast<uint8_t>(x);
+	__asm        mov    startLoc.x, al;
 // LINE 160:
-	startLoc.y = reinterpret_cast<uint8_t>(y);
+	__asm        mov    al, reinterpret_cast<uint8_t>(y);
+	__asm        mov    startLoc.y, al;
 // LINE 165:
 	i = 0x0;
 	__asm        jmp    _T24;
@@ -1035,7 +1037,9 @@ int32_t CriminalEvaderCarClass::NearToBuilding() {
 	__asm        lea    ecx, scan.currDist;
 	__asm        call   SpiralScan::SpiralScan;
 // LINE 443:
-	reinterpret_cast<uint16_t>(scanLoc.x) = reinterpret_cast<uint16_t>(this->goal.gridLoc.x);
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0x7C];
+	__asm        mov    reinterpret_cast<uint16_t>(scanLoc.x), ax;
 // LINE 447:
 // Block start:
 	/*bp-0x18*/  unsigned short tt;

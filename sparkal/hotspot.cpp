@@ -2750,7 +2750,34 @@ _T52:
 _T57:
 	__asm        jmp    _T5c;
 _T5c:
-	nRadiusOfCircle = (((this->pointArray.start->y - this->pointArray.start-><MPoint+0x0c>) * (this->pointArray.start->y - this->pointArray.start-><MPoint+0x0c>)) + ((this->pointArray.start->x - this->pointArray.start-><MPoint+0x08>) * (this->pointArray.start->x - this->pointArray.start-><MPoint+0x08>)));
+	__asm        mov    eax, this;
+	__asm        mov    eax, [eax+8];
+	__asm        mov    eax, [eax+4];
+	__asm        mov    ecx, this;
+	__asm        mov    ecx, [ecx+8];
+	__asm        sub    eax, [ecx+0xC];
+	__asm        mov    ecx, this;
+	__asm        mov    ecx, [ecx+8];
+	__asm        mov    ecx, [ecx+4];
+	__asm        mov    edx, this;
+	__asm        mov    edx, [edx+8];
+	__asm        sub    ecx, [edx+0xC];
+	__asm        imul   eax, ecx;
+	__asm        mov    ecx, this;
+	__asm        mov    ecx, [ecx+8];
+	__asm        mov    ecx, [ecx];
+	__asm        mov    edx, this;
+	__asm        mov    edx, [edx+8];
+	__asm        sub    ecx, [edx+8];
+	__asm        mov    edx, this;
+	__asm        mov    edx, [edx+8];
+	__asm        mov    edx, [edx];
+	__asm        mov    ebx, this;
+	__asm        mov    ebx, [ebx+8];
+	__asm        sub    edx, [ebx+8];
+	__asm        imul   ecx, edx;
+	__asm        add    eax, ecx;
+	__asm        mov    nRadiusOfCircle, eax;
 // LINE 165:
 	__asm        jmp    _Tb2;
 _Tb2:

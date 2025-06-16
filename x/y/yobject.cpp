@@ -6481,7 +6481,9 @@ _T90:
 	doAssert(0x8c085, 0x5b8d34, 0x2d1, 0x5b8d3c);
 // LINE 722:
 _Tac:
-	this->fData[22] = scurkID;
+	__asm        mov    ax, scurkID;
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xFC], ax;
 // LINE 724:
 	__asm        mov    ax, treeID;
 	__asm        mov    ecx, this;
@@ -6742,7 +6744,9 @@ _T250:
 	doAssert(0x8c085, 0x5b8e7c, 0x302, 0x5b8e84);
 // LINE 771:
 _T276:
-	obj->fData[22] = id;
+	__asm        mov    ax, id;
+	__asm        mov    ecx, obj;
+	__asm        mov    [ecx+0xFC], ax;
 // LINE 774:
 	return;
 }
@@ -6951,7 +6955,9 @@ _T23a:
 	__asm        test   eax, eax;
 	__asm        je     _T29a;
 
-	newperson->fData[16] = fieldershift;
+	__asm        mov    ax, fieldershift;
+	__asm        mov    ecx, newperson;
+	__asm        mov    [ecx+0xF0], ax;
 // LINE 823:
 _T29a:
 	__asm        call   cYObject::GetSleepingPerson;
@@ -6976,7 +6982,9 @@ _T29a:
 	__asm        test   eax, eax;
 	__asm        je     _T2ec;
 
-	newperson->fData[16] = fieldershift;
+	__asm        mov    ax, fieldershift;
+	__asm        mov    ecx, newperson;
+	__asm        mov    [ecx+0xF0], ax;
 // LINE 824:
 _T2ec:
 	__asm        call   cYObject::GetSleepingPerson;
@@ -7001,7 +7009,9 @@ _T2ec:
 	__asm        test   eax, eax;
 	__asm        je     _T33e;
 
-	newperson->fData[16] = fieldershift;
+	__asm        mov    ax, fieldershift;
+	__asm        mov    ecx, newperson;
+	__asm        mov    [ecx+0xF0], ax;
 // LINE 825:
 _T33e:
 	__asm        call   cYObject::GetSleepingPerson;
@@ -7026,7 +7036,9 @@ _T33e:
 	__asm        test   eax, eax;
 	__asm        je     _T390;
 
-	newperson->fData[16] = fieldershift;
+	__asm        mov    ax, fieldershift;
+	__asm        mov    ecx, newperson;
+	__asm        mov    [ecx+0xF0], ax;
 // LINE 826:
 _T390:
 	__asm        call   cYObject::GetSleepingPerson;
@@ -7051,7 +7063,9 @@ _T390:
 	__asm        test   eax, eax;
 	__asm        je     _T3e2;
 
-	newperson->fData[16] = fieldershift;
+	__asm        mov    ax, fieldershift;
+	__asm        mov    ecx, newperson;
+	__asm        mov    [ecx+0xF0], ax;
 // LINE 827:
 _T3e2:
 	__asm        call   cYObject::GetSleepingPerson;
@@ -7076,7 +7090,9 @@ _T3e2:
 	__asm        test   eax, eax;
 	__asm        je     _T434;
 
-	newperson->fData[16] = fieldershift;
+	__asm        mov    ax, fieldershift;
+	__asm        mov    ecx, newperson;
+	__asm        mov    [ecx+0xF0], ax;
 // LINE 828:
 _T434:
 	__asm        call   cYObject::GetSleepingPerson;
@@ -7101,7 +7117,9 @@ _T434:
 	__asm        test   eax, eax;
 	__asm        je     _T486;
 
-	newperson->fData[16] = fieldershift;
+	__asm        mov    ax, fieldershift;
+	__asm        mov    ecx, newperson;
+	__asm        mov    [ecx+0xF0], ax;
 // LINE 829:
 _T486:
 	__asm        jmp    _T4ed;
@@ -7168,9 +7186,11 @@ _T24:
 	return;
 // LINE 847:
 _T71:
-	sAvLastCellX = cellx;
+	__asm        mov    ax, cellx;
+	__asm        mov    sAvLastCellX, ax;
 // LINE 848:
-	sAvLastCellY = celly;
+	__asm        mov    ax, celly;
+	__asm        mov    sAvLastCellY, ax;
 // LINE 853:
 	__asm        movsx  eax, cellx;
 	__asm        movsx  ecx, cYObject::sScurkRectRad;
@@ -7192,9 +7212,11 @@ _T71:
 	__asm        add    eax, ecx;
 	__asm        mov    r.bottom, ax;
 // LINE 857:
-	cellx = r.left;
+	__asm        mov    ax, r.left;
+	__asm        mov    cellx, ax;
 // LINE 858:
-	celly = r.top;
+	__asm        mov    ax, r.top;
+	__asm        mov    celly, ax;
 // LINE 859:
 	__asm        movsx  eax, cYObject::sScurkRectRad;
 	__asm        add    eax, eax;
@@ -7255,7 +7277,8 @@ _T0f:
 // Block start:
 	/*bp-0x8*/   short lastnumawake;
 	/*bp-0xc*/   short id;
-	lastnumawake = cYObject::sNumAmbientAwake;
+	__asm        mov    ax, cYObject::sNumAmbientAwake;
+	__asm        mov    lastnumawake, ax;
 // LINE 875:
 	id = StartPerson(0x0, 0x0, -0x1, -0x1, -0x1, 0x0, -0x1);
 	__asm        jmp    _T67;
@@ -9686,7 +9709,9 @@ short StartPerson(enum PersonType persontype, enum MissionType mission, short ce
 	__asm        test   eax, eax;
 	__asm        je     _T5e;
 // LINE 1471:
-	ret = newperson->fID;
+	__asm        mov    eax, newperson;
+	__asm        mov    ax, [eax+0xBC];
+	__asm        mov    ret, ax;
 // LINE 1472:
 _T5e:
 	return ret;
@@ -10446,7 +10471,10 @@ _T55c:
 	__asm        test   al, 0x10;
 	__asm        je     _T5d5;
 
-	this->fData[24] = onTopOf->user1;
+	__asm        mov    eax, onTopOf;
+	__asm        mov    ax, [eax+0xE];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x100], ax;
 	__asm        jmp    _T5e9;
 
 	__asm        jmp    _T5e9;
@@ -10892,8 +10920,12 @@ _Taec:
 
 	doAssert(0x8c085, 0x5bbbb8, 0x210, 0x5bba14);
 _Tb1c:
-	this->fCellX = reinterpret_cast<uint8_t>(cellx);
-	this->fCellY = reinterpret_cast<uint8_t>(celly);
+	__asm        mov    al, reinterpret_cast<uint8_t>(cellx);
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x88], al;
+	__asm        mov    al, reinterpret_cast<uint8_t>(celly);
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x89], al;
 	__asm        jmp    _Tb3f;
 // LINE 1760:
 _Tb3f:
@@ -10971,7 +11003,10 @@ _Tbb9:
 	__asm        test   al, 0x10;
 	__asm        je     _Tc3c;
 
-	this->fData[24] = onTopOf->user1;
+	__asm        mov    eax, onTopOf;
+	__asm        mov    ax, [eax+0xE];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x100], ax;
 	__asm        jmp    _Tc50;
 
 	__asm        jmp    _Tc50;
@@ -11036,7 +11071,10 @@ _Tc95:
 	__asm        test   al, 0x10;
 	__asm        je     _Td0a;
 
-	this->fData[24] = onTopOf->user1;
+	__asm        mov    eax, onTopOf;
+	__asm        mov    ax, [eax+0xE];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x100], ax;
 	__asm        jmp    _Td1e;
 
 	__asm        jmp    _Td1e;
@@ -11730,7 +11768,8 @@ short cYObject::DistributeSoundChannels(short rad, short firstsoundchannel) {
 	/*bp-0xc*/   /*unpacked*/ class cYObject *obj;
 
 // LINE 1865:
-	soundchannel = firstsoundchannel;
+	__asm        mov    ax, firstsoundchannel;
+	__asm        mov    soundchannel, ax;
 // LINE 1866:
 	count = 0x0;
 // LINE 1869:
@@ -11905,7 +11944,9 @@ _Tce:
 	__asm        movsx  eax, soundchannel;
 	__asm        mov    cYObject::sSoundChannels[eax*2], 1;
 // LINE 1893:
-	this->fData[25] = soundchannel;
+	__asm        mov    ax, soundchannel;
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x102], ax;
 // LINE 1894:
 	return;
 }
@@ -12071,7 +12112,9 @@ _T20a:
 // LINE 1924:
 	loop = 0x0;
 // LINE 1925:
-	freqadj = this->fData[28];
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0x108];
+	__asm        mov    freqadj, ax;
 // LINE 1926:
 	__asm        mov    eax, soundnum;
 	__asm        mov    [ebp-0x34], eax;
@@ -15825,8 +15868,12 @@ _Tc9:
 
 	doAssert(0x8c085, 0x5bbbb8, 0x210, 0x5bba14);
 _Tf6:
-	this->fCellX = reinterpret_cast<uint8_t>(loccellx);
-	this->fCellY = reinterpret_cast<uint8_t>(loccelly);
+	__asm        mov    al, reinterpret_cast<uint8_t>(loccellx);
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x88], al;
+	__asm        mov    al, reinterpret_cast<uint8_t>(loccelly);
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x89], al;
 	__asm        jmp    _T113;
 // LINE 2556:
 _T113:
@@ -16326,7 +16373,9 @@ _T309:
 //   _T2c7
 // LINE 2725:
 _T365:
-	this->fData[28] = freqadj;
+	__asm        mov    ax, freqadj;
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x108], ax;
 // LINE 2726:
 	__asm        mov    eax, cCopterBody::fsList;
 	__asm        mov    [ebp-0x3C], eax;
@@ -16471,7 +16520,9 @@ _T542:
 	__asm        cmp    eax, 0x7D00;
 	__asm        je     _T57d;
 // LINE 2730:
-	this->fFace = faceindex;
+	__asm        mov    ax, faceindex;
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x9C], ax;
 	__asm        jmp    _T57d;
 // LINE 2731:
 _T57d:
@@ -17100,7 +17151,9 @@ void cYObject::cYObject(short type, /*unpacked*/ class Behavior *pBehavior, /*un
 	__asm        mov    eax, this;
 	__asm        mov    dword ptr [eax+0x14], 0x5935C8;
 // LINE 2886:
-	this->fDefinition.type = type;
+	__asm        mov    ax, type;
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x15A], ax;
 // LINE 2888:
 	__asm        lea    eax, loc.x;
 	__asm        mov    ecx, this;
@@ -17154,9 +17207,17 @@ _T120:
 // LINE 2905:
 	this->fbLinked = 0x0;
 // LINE 2907:
-	this->fDyn.user1 = id;
-	this->fData[7] = this->fDyn.user1;
-	this->fID = this->fData[7];
+	__asm        mov    ax, id;
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0x32], ax;
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0x32];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xDE], ax;
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0xDE];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xBC], ax;
 // LINE 2911:
 	__asm        mov    eax, reinterpret_cast<uint32_t>(id);
 	__asm        push   eax;
@@ -17394,7 +17455,10 @@ _T330:
 	__asm        jmp    _T33d;
 // LINE 2952:
 _T33d:
-	this->fData[7] = this->fID;
+	__asm        mov    eax, this;
+	__asm        mov    ax, [eax+0xBC];
+	__asm        mov    ecx, this;
+	__asm        mov    [ecx+0xDE], ax;
 // LINE 2953:
 	this->fData[6] = 0x0;
 // LINE 2954:

@@ -368,7 +368,10 @@ _T131:
 // LINE 349:
 	col = (colmask & i);
 // LINE 350:
-	row = (i >> reinterpret_cast<uint8_t>(rowshift));
+	__asm        mov    eax, i;
+	__asm        mov    cl, reinterpret_cast<uint8_t>(rowshift);
+	__asm        sar    eax, cl;
+	__asm        mov    row, eax;
 // LINE 353:
 	tptr = ((((bhdr->info.width * row) << 0x8) + (bhdr->info.width * col)) + baseptr);
 // LINE 354:

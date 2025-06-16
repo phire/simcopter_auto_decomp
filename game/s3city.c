@@ -2221,7 +2221,9 @@ _T12df:
 	__asm        sub    eax, 0x1FE0;
 	__asm        mov    i, ax;
 // LINE 1127:
-	cptr->x = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+2], ax;
 // LINE 1128:
 	__asm        mov    eax, 0x2000;
 	__asm        mov    ecx, y;
@@ -2230,11 +2232,17 @@ _T12df:
 	__asm        sub    eax, 0x20;
 	__asm        mov    i, ax;
 // LINE 1129:
-	cptr->z = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+6], ax;
 // LINE 1130:
-	cptr->y = alt;
+	__asm        mov    ax, alt;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+4], ax;
 // LINE 1131:
-	cptr->size = size;
+	__asm        mov    ax, size;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+8], ax;
 // LINE 1132:
 	cptr->flags = 0x0;
 // LINE 1133:
@@ -2279,7 +2287,9 @@ _T13d4:
 	__asm        sub    eax, 0x1FE0;
 	__asm        mov    i, ax;
 // LINE 1149:
-	cptr->x = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+2], ax;
 // LINE 1150:
 	__asm        mov    eax, 0x2000;
 	__asm        mov    ecx, y;
@@ -2288,11 +2298,17 @@ _T13d4:
 	__asm        sub    eax, 0x20;
 	__asm        mov    i, ax;
 // LINE 1151:
-	cptr->z = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+6], ax;
 // LINE 1152:
-	cptr->y = alt;
+	__asm        mov    ax, alt;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+4], ax;
 // LINE 1153:
-	cptr->size = size;
+	__asm        mov    ax, size;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+8], ax;
 // LINE 1154:
 	cptr->flags = 0x0;
 // LINE 1155:
@@ -2336,7 +2352,9 @@ _T14c9:
 	__asm        sub    eax, 0x1FE0;
 	__asm        mov    i, ax;
 // LINE 1171:
-	cptr->x = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+2], ax;
 // LINE 1172:
 	__asm        mov    eax, 0x2000;
 	__asm        mov    ecx, y;
@@ -2346,11 +2364,17 @@ _T14c9:
 	__asm        sub    eax, 0x20;
 	__asm        mov    i, ax;
 // LINE 1173:
-	cptr->z = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+6], ax;
 // LINE 1174:
-	cptr->y = alt;
+	__asm        mov    ax, alt;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+4], ax;
 // LINE 1175:
-	cptr->size = size;
+	__asm        mov    ax, size;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+8], ax;
 // LINE 1176:
 	cptr->flags = 0x0;
 // LINE 1177:
@@ -2394,7 +2418,9 @@ _T15be:
 	__asm        sub    eax, 0x1FE0;
 	__asm        mov    i, ax;
 // LINE 1193:
-	cptr->x = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+2], ax;
 // LINE 1194:
 	__asm        mov    eax, 0x2000;
 	__asm        mov    ecx, y;
@@ -2404,11 +2430,17 @@ _T15be:
 	__asm        sub    eax, 0x20;
 	__asm        mov    i, ax;
 // LINE 1195:
-	cptr->z = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+6], ax;
 // LINE 1196:
-	cptr->y = alt;
+	__asm        mov    ax, alt;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+4], ax;
 // LINE 1197:
-	cptr->size = size;
+	__asm        mov    ax, size;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+8], ax;
 // LINE 1198:
 	cptr->flags = 0x0;
 // LINE 1199:
@@ -4531,7 +4563,9 @@ _T3846:
 	__asm        sub    eax, 0x1FE0;
 	__asm        mov    i, ax;
 // LINE 2027:
-	cptr->x = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+2], ax;
 // LINE 2028:
 	__asm        mov    eax, 0x2000;
 	__asm        mov    ecx, y;
@@ -4540,7 +4574,9 @@ _T3846:
 	__asm        sub    eax, 0x20;
 	__asm        mov    i, ax;
 // LINE 2029:
-	cptr->z = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+6], ax;
 // LINE 2030:
 	__asm        jmp    _T3d67;
 // LINE 2032:
@@ -4586,7 +4622,9 @@ _T38a3:
 	__asm        sub    eax, 0x1FC0;
 	__asm        mov    i, ax;
 // LINE 2038:
-	cptr->x = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+2], ax;
 // LINE 2039:
 	__asm        mov    eax, 0x2000;
 	__asm        mov    ecx, y;
@@ -4595,7 +4633,9 @@ _T38a3:
 	__asm        sub    eax, 0x40;
 	__asm        mov    i, ax;
 // LINE 2040:
-	cptr->z = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+6], ax;
 // LINE 2041:
 	__asm        jmp    _T3d67;
 // LINE 2043:
@@ -4689,7 +4729,9 @@ _T3961:
 	__asm        sub    eax, 0x1FA0;
 	__asm        mov    i, ax;
 // LINE 2054:
-	cptr->x = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+2], ax;
 // LINE 2055:
 	__asm        mov    eax, 0x2000;
 	__asm        mov    ecx, y;
@@ -4698,7 +4740,9 @@ _T3961:
 	__asm        sub    eax, 0x60;
 	__asm        mov    i, ax;
 // LINE 2056:
-	cptr->z = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+6], ax;
 // LINE 2057:
 	__asm        jmp    _T3d67;
 // LINE 2059:
@@ -4860,7 +4904,9 @@ _T3ace:
 	__asm        sub    eax, 0x1F80;
 	__asm        mov    i, ax;
 // LINE 2077:
-	cptr->x = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+2], ax;
 // LINE 2078:
 	__asm        mov    eax, 0x2000;
 	__asm        mov    ecx, y;
@@ -4869,7 +4915,9 @@ _T3ace:
 	__asm        sub    eax, 0x80;
 	__asm        mov    i, ax;
 // LINE 2079:
-	cptr->z = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+6], ax;
 // LINE 2080:
 	__asm        jmp    _T3d67;
 // LINE 2083:
@@ -4890,11 +4938,17 @@ _T3d40:
 //   _T3ace
 // LINE 2086:
 _T3d67:
-	cptr->y = alt;
+	__asm        mov    ax, alt;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+4], ax;
 // LINE 2087:
-	cptr->size = size;
+	__asm        mov    ax, size;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+8], ax;
 // LINE 2088:
-	cptr->flags = flags;
+	__asm        mov    ax, flags;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx], ax;
 // LINE 2089:
 	__asm        cmp    G_artmode, 1;
 	__asm        jne    _T3da3;
@@ -5098,7 +5152,9 @@ _T3fed:
 	__asm        sub    eax, 0x1FE0;
 	__asm        mov    i, ax;
 // LINE 2173:
-	cptr->x = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+2], ax;
 // LINE 2174:
 	__asm        mov    eax, 0x2000;
 	__asm        mov    ecx, y;
@@ -5107,7 +5163,9 @@ _T3fed:
 	__asm        sub    eax, 0x20;
 	__asm        mov    i, ax;
 // LINE 2175:
-	cptr->z = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+6], ax;
 // LINE 2176:
 	__asm        jmp    _T4514;
 // LINE 2178:
@@ -5153,7 +5211,9 @@ _T404a:
 	__asm        sub    eax, 0x1FC0;
 	__asm        mov    i, ax;
 // LINE 2184:
-	cptr->x = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+2], ax;
 // LINE 2185:
 	__asm        mov    eax, 0x2000;
 	__asm        mov    ecx, y;
@@ -5162,7 +5222,9 @@ _T404a:
 	__asm        sub    eax, 0x40;
 	__asm        mov    i, ax;
 // LINE 2186:
-	cptr->z = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+6], ax;
 // LINE 2187:
 	__asm        jmp    _T4514;
 // LINE 2189:
@@ -5256,7 +5318,9 @@ _T4108:
 	__asm        sub    eax, 0x1FA0;
 	__asm        mov    i, ax;
 // LINE 2200:
-	cptr->x = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+2], ax;
 // LINE 2201:
 	__asm        mov    eax, 0x2000;
 	__asm        mov    ecx, y;
@@ -5265,7 +5329,9 @@ _T4108:
 	__asm        sub    eax, 0x60;
 	__asm        mov    i, ax;
 // LINE 2202:
-	cptr->z = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+6], ax;
 // LINE 2203:
 	__asm        jmp    _T4514;
 // LINE 2205:
@@ -5427,7 +5493,9 @@ _T4275:
 	__asm        sub    eax, 0x1F80;
 	__asm        mov    i, ax;
 // LINE 2223:
-	cptr->x = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+2], ax;
 // LINE 2224:
 	__asm        mov    eax, 0x2000;
 	__asm        mov    ecx, y;
@@ -5436,7 +5504,9 @@ _T4275:
 	__asm        sub    eax, 0x80;
 	__asm        mov    i, ax;
 // LINE 2225:
-	cptr->z = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+6], ax;
 // LINE 2226:
 	__asm        jmp    _T4514;
 // LINE 2228:
@@ -5487,9 +5557,13 @@ _T4562:
 	__asm        add    eax, 0x20;
 	__asm        mov    alt, ax;
 // LINE 2241:
-	cptr->y = alt;
+	__asm        mov    ax, alt;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+4], ax;
 // LINE 2242:
-	cptr->size = size;
+	__asm        mov    ax, size;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+8], ax;
 // LINE 2243:
 	cptr->flags = 0x0;
 // LINE 2244:
@@ -5575,7 +5649,9 @@ _T469a:
 	__asm        sub    eax, 0x1E00;
 	__asm        mov    i, ax;
 // LINE 2277:
-	cptr->x = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+2], ax;
 // LINE 2278:
 	__asm        mov    eax, 0x2000;
 	__asm        mov    ecx, y;
@@ -5584,7 +5660,9 @@ _T469a:
 	__asm        sub    eax, 0x200;
 	__asm        mov    i, ax;
 // LINE 2279:
-	cptr->z = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+6], ax;
 // LINE 2280:
 	__asm        mov    eax, y;
 	__asm        add    eax, 4;
@@ -5691,7 +5769,9 @@ _T4848:
 	__asm        sub    eax, 0x1E00;
 	__asm        mov    i, ax;
 // LINE 2315:
-	cptr->x = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+2], ax;
 // LINE 2316:
 	__asm        mov    eax, 0x2000;
 	__asm        mov    ecx, y;
@@ -5700,7 +5780,9 @@ _T4848:
 	__asm        sub    eax, 0x200;
 	__asm        mov    i, ax;
 // LINE 2317:
-	cptr->z = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+6], ax;
 // LINE 2318:
 	__asm        mov    eax, y;
 	__asm        add    eax, 4;
@@ -10509,7 +10591,8 @@ _T3a:
 	__asm        cmp    eax, ecx;
 	__asm        jge    _T97;
 // LINE 4952:
-	minalt = alt;
+	__asm        mov    ax, alt;
+	__asm        mov    minalt, ax;
 // LINE 4953:
 _T97:
 	__asm        jmp    _T37;
@@ -11051,7 +11134,9 @@ _T319:
 	__asm        sub    eax, 0x1FC0;
 	__asm        mov    i, ax;
 // LINE 5129:
-	cptr->x = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+2], ax;
 // LINE 5130:
 	__asm        mov    eax, 0x2000;
 	__asm        mov    ecx, y;
@@ -11061,9 +11146,13 @@ _T319:
 	__asm        sub    eax, 0x40;
 	__asm        mov    i, ax;
 // LINE 5131:
-	cptr->z = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+6], ax;
 // LINE 5134:
-	cptr->y = alt;
+	__asm        mov    ax, alt;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+4], ax;
 // LINE 5135:
 	cptr->size = 0x2;
 // LINE 5136:
@@ -11131,7 +11220,9 @@ _T41d:
 	__asm        sub    eax, 0x1FE0;
 	__asm        mov    i, ax;
 // LINE 5163:
-	cptr->x = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+2], ax;
 // LINE 5164:
 	__asm        mov    eax, 0x2000;
 	__asm        mov    ecx, py;
@@ -11140,9 +11231,13 @@ _T41d:
 	__asm        sub    eax, 0x20;
 	__asm        mov    i, ax;
 // LINE 5165:
-	cptr->z = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+6], ax;
 // LINE 5167:
-	cptr->y = alt;
+	__asm        mov    ax, alt;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+4], ax;
 // LINE 5168:
 	cptr->size = 0x1;
 // LINE 5169:
@@ -11206,7 +11301,9 @@ _T549:
 	__asm        sub    eax, 0x1FE0;
 	__asm        mov    i, ax;
 // LINE 5193:
-	cptr->x = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+2], ax;
 // LINE 5194:
 	__asm        mov    eax, 0x2000;
 	__asm        mov    ecx, py;
@@ -11215,9 +11312,13 @@ _T549:
 	__asm        sub    eax, 0x20;
 	__asm        mov    i, ax;
 // LINE 5195:
-	cptr->z = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+6], ax;
 // LINE 5197:
-	cptr->y = alt;
+	__asm        mov    ax, alt;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+4], ax;
 // LINE 5198:
 	cptr->size = 0x1;
 // LINE 5199:
@@ -11276,7 +11377,9 @@ _T65e:
 	__asm        sub    eax, 0x1FE0;
 	__asm        mov    i, ax;
 // LINE 5223:
-	cptr->x = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+2], ax;
 // LINE 5224:
 	__asm        mov    eax, 0x2000;
 	__asm        mov    ecx, py;
@@ -11285,9 +11388,13 @@ _T65e:
 	__asm        sub    eax, 0x20;
 	__asm        mov    i, ax;
 // LINE 5225:
-	cptr->z = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+6], ax;
 // LINE 5227:
-	cptr->y = alt;
+	__asm        mov    ax, alt;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+4], ax;
 // LINE 5228:
 	cptr->size = 0x1;
 // LINE 5229:
@@ -11341,7 +11448,9 @@ _T76c:
 	__asm        sub    eax, 0x1FE0;
 	__asm        mov    i, ax;
 // LINE 5251:
-	cptr->x = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+2], ax;
 // LINE 5252:
 	__asm        mov    eax, 0x2000;
 	__asm        mov    ecx, py;
@@ -11350,9 +11459,13 @@ _T76c:
 	__asm        sub    eax, 0x20;
 	__asm        mov    i, ax;
 // LINE 5253:
-	cptr->z = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+6], ax;
 // LINE 5255:
-	cptr->y = alt;
+	__asm        mov    ax, alt;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+4], ax;
 // LINE 5256:
 	cptr->size = 0x1;
 // LINE 5257:
@@ -11408,7 +11521,9 @@ _T87c:
 	__asm        sub    eax, 0x1FE0;
 	__asm        mov    i, ax;
 // LINE 5279:
-	cptr->x = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+2], ax;
 // LINE 5280:
 	__asm        mov    eax, 0x2000;
 	__asm        mov    ecx, py;
@@ -11417,9 +11532,13 @@ _T87c:
 	__asm        sub    eax, 0x20;
 	__asm        mov    i, ax;
 // LINE 5281:
-	cptr->z = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+6], ax;
 // LINE 5283:
-	cptr->y = alt;
+	__asm        mov    ax, alt;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+4], ax;
 // LINE 5284:
 	cptr->size = 0x1;
 // LINE 5285:
@@ -11473,7 +11592,9 @@ _T98d:
 	__asm        sub    eax, 0x1FE0;
 	__asm        mov    i, ax;
 // LINE 5307:
-	cptr->x = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+2], ax;
 // LINE 5308:
 	__asm        mov    eax, 0x2000;
 	__asm        mov    ecx, py;
@@ -11482,9 +11603,13 @@ _T98d:
 	__asm        sub    eax, 0x20;
 	__asm        mov    i, ax;
 // LINE 5309:
-	cptr->z = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+6], ax;
 // LINE 5311:
-	cptr->y = alt;
+	__asm        mov    ax, alt;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+4], ax;
 // LINE 5312:
 	cptr->size = 0x1;
 // LINE 5313:
@@ -11713,7 +11838,9 @@ _Tb0d:
 	__asm        sub    eax, 0x1F80;
 	__asm        mov    i, ax;
 // LINE 5357:
-	cptr->x = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+2], ax;
 // LINE 5358:
 	__asm        mov    eax, 0x2000;
 	__asm        mov    ecx, py;
@@ -11722,9 +11849,13 @@ _Tb0d:
 	__asm        sub    eax, 0x80;
 	__asm        mov    i, ax;
 // LINE 5359:
-	cptr->z = i;
+	__asm        mov    ax, i;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+6], ax;
 // LINE 5360:
-	cptr->y = alt;
+	__asm        mov    ax, alt;
+	__asm        mov    ecx, cptr;
+	__asm        mov    [ecx+4], ax;
 // LINE 5363:
 	cptr->size = 0x4;
 // LINE 5364:

@@ -123,8 +123,9 @@ _T4b:
 // LINE 88:
 	pcx.encoding = 0x1;
 // LINE 89:
-	pcx.ymin = 0x0;
-	pcx.xmin = pcx.ymin;
+	__asm        mov    pcx.ymin, 0;
+	__asm        mov    ax, pcx.ymin;
+	__asm        mov    pcx.xmin, ax;
 // LINE 90:
 	__asm        mov    eax, xdim;
 	__asm        dec    eax;
